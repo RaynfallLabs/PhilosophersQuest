@@ -170,13 +170,13 @@
   },
   {
     "tier": 2,
-    "question": "A blue whale strains krill through comb-like plates in its mouth, so it is a baleen whale; a dolphin is a toothed whale. A whale-watcher can tell one kind from the other by its spout. A dolphin's spout comes from a single hole. How many blowholes does a baleen whale have?",
+    "question": "A blue whale strains krill through comb-like plates in its mouth, so it is a baleen whale; a dolphin is a toothed whale. A whale-watcher can tell one kind from the other by its spout. How many blowholes does a baleen whale have?",
     "answer": "Two",
     "choices": [
       "Two",
       "One",
       "Four",
-      "None - it uses gills"
+      "Three"
     ],
     "context": "Baleen whales (like the blue whale) have two blowholes; toothed whales (like dolphins) have just one. Neither has gills - both are air-breathing mammals. Source: Wikipedia 'Blowhole (anatomy)'; Whale & Dolphin Conservation (us.whales.org).",
     "topic": "air-breathers-in-water-lungs-where-youd-expect-gills"
@@ -189,9 +189,9 @@
       "It has a true lung and gulps air",
       "It absorbs it through its scales",
       "It filters it from mud, not water",
-      "It needs no oxygen at all"
+      "It swallows air into its gut"
     ],
-    "context": "The African lungfish (Protopterus) has a true lung and gulps air at the surface. It breathes air the way we do, not through gills like other fish - so with no access to air, it drowns. Source: education.nationalgeographic.org 'West African lungfish'; Britannica 'lungfish'.",
+    "context": "The African lungfish (Protopterus) has a true lung and gulps air at the surface. It breathes air much as a land animal does instead of relying on gills like most fish, so with no access to air it drowns. Source: education.nationalgeographic.org 'West African lungfish'; Britannica 'lungfish'.",
     "topic": "air-breathers-in-water-lungs-where-youd-expect-gills"
   },
   {
@@ -210,14 +210,14 @@
   {
     "tier": 3,
     "question": "The electric eel of the Amazon stuns its prey with jolts of its own electricity, and it lives underwater on gills so feeble they are almost useless. It gets about 80 percent of the oxygen it needs from air gulped into a spongy lining in its mouth, and an eel kept from the surface drowns. About how often must it rise for a breath?",
-    "answer": "Every ten minutes or so",
+    "answer": "About every two minutes",
     "choices": [
-      "Every ten minutes or so",
+      "About every two minutes",
       "Once a day",
       "Only when the water warms up",
-      "Never - it uses its gills"
+      "About once an hour"
     ],
-    "context": "The electric eel is an obligate air-breather: it must surface roughly every ten minutes, getting about 80% of its oxygen from air. Its gills are so poorly developed that trapped underwater with no air, it drowns. Source: Wikipedia 'Electric eel'; seriouslyfish.com 'Electrophorus electricus'.",
+    "context": "The electric eel is an obligate air-breather: it gets about 80% of its oxygen from air gulped into its mouth and must surface for a breath about every two minutes. Its gills are so poorly developed that trapped underwater with no air, it drowns. Source: Wikipedia 'Electric eel' ('About every two minutes, the fish takes in air through the mouth'); Johansen et al. 1968, Z. vergl. Physiol. 61:137 (doi 10.1007/BF00341112), free-swimming eels rarely went more than two minutes between breaths.",
     "topic": "air-breathers-in-water-lungs-where-youd-expect-gills"
   },
   {
@@ -243,7 +243,7 @@
       "Eat a second time to make heat",
       "Dive again to escape the wind"
     ],
-    "context": "The marine iguana dives around 15 meters (about 50 feet) on a single breath to graze underwater algae. Because it is cold-blooded, the cold ocean drains its heat, so afterward it must haul out onto black rocks to bake in the sun before it can move well again. Source: gogalapagos.com; everywherewild.com. (legend-flavored wonder)",
+    "context": "The marine iguana dives around 15 meters (about 50 feet) on a single breath to graze underwater algae. Because it is cold-blooded, the cold ocean drains its heat, so afterward it must haul out onto black rocks to bake in the sun before it can move well again. Source: gogalapagos.com; everywherewild.com.",
     "topic": "air-breathers-in-water-lungs-where-youd-expect-gills"
   },
   {
@@ -256,7 +256,7 @@
       "It breathes dissolved oxygen straight through its legs",
       "It surfaces for every single breath, all day long"
     ],
-    "context": "The diving bell spider (Argyroneta aquatica) builds a dome of silk anchored to water plants and fills it with air carried down from the surface - a shimmering underwater 'diving bell' where it lives its whole life below the water. Source: Wikipedia 'Diving bell spider'; wildlifetrusts.org 'water spider'. (wonder-flagged legend)",
+    "context": "The diving bell spider (Argyroneta aquatica) builds a dome of silk anchored to water plants and fills it with air carried down from the surface - a shimmering underwater 'diving bell' where it lives its whole life below the water. Source: Wikipedia 'Diving bell spider'; wildlifetrusts.org 'water spider'.",
     "topic": "air-breathers-in-water-lungs-where-youd-expect-gills"
   },
   {
@@ -269,7 +269,7 @@
       "Roughly two months",
       "A single day"
     ],
-    "context": "Sealed in its mud cocoon, the lungfish can wait out drought for months - and some have been documented surviving dried, buried, and dormant for up to four years, then waking and swimming away when the rains return. This months-long dormancy is called aestivation. Source: oxsci.org; the-scientist.com 'Lungfish cocoons are alive, sort of'. (legend-tier wonder)",
+    "context": "Sealed in its mud cocoon, the lungfish can wait out drought for months - and some have been documented surviving dried, buried, and dormant for up to four years, then waking and swimming away when the rains return. This months-long dormancy is called aestivation. Source: oxsci.org; the-scientist.com 'Lungfish cocoons are alive, sort of'.",
     "topic": "air-breathers-in-water-lungs-where-youd-expect-gills"
   },
   {
@@ -308,12 +308,12 @@
       "Around 50 meters down",
       "Just past 1 kilometer down"
     ],
-    "context": "Cuvier's beaked whale holds the mammal record: one dive lasted 222 minutes (3 hours 42 minutes) on a single breath, and another reached 2,992 meters - nearly 3 km, about 9,800 feet - beating even the sperm whale and elephant seal. Source: sciencenews.org 'Cuvier's beaked whale longest record dive'; Wikipedia. (legend-tier record)",
+    "context": "Cuvier's beaked whale holds the mammal record: one dive lasted 222 minutes (3 hours 42 minutes) on a single breath, and another reached 2,992 meters - nearly 3 km, about 9,800 feet - beating even the sperm whale and elephant seal. Source: sciencenews.org 'Cuvier's beaked whale longest record dive'; Wikipedia.",
     "topic": "air-breathers-in-water-lungs-where-youd-expect-gills"
   },
   {
     "tier": 5,
-    "question": "A sperm whale dives a kilometer down on one breath, yet its lungs are only about 3% of its body cavity and collapse near-empty under the pressure. So the breath keeping it alive can't be stored there. A clue sits in its dark flesh, stained by ten times the oxygen-binding protein packed into human tissue. Where does this whale actually stockpile the oxygen it dives on?",
+    "question": "A sperm whale dives a kilometer down on one breath, yet its lungs are small for its size, filling roughly 3 percent of the body cavity, far too little to hold the oxygen it needs. A clue sits in its dark flesh, stained by ten times the oxygen-binding protein packed into human tissue. Where does this whale actually stockpile the oxygen it dives on?",
     "answer": "Bound up inside its muscle",
     "choices": [
       "Bound up inside its muscle",
@@ -334,7 +334,7 @@
       "The bichir",
       "The mudskipper"
     ],
-    "context": "Whole-genome analysis put the question to rest: the lungfish, not the coelacanth, is the closest living relative of every land vertebrate - meaning our own deepest fishy cousin is the same air-gulping fish that survives droughts sealed in a mucus cocoon in the mud. The lungfish genome turned out to be a monster in its own right: the South American Lepidosiren paradoxa carries over 90 billion DNA base pairs, about thirty times the human genome and the largest of any animal yet sequenced, bloated by 'jumping genes' copying themselves. Sources: Amemiya et al. 2013, Nature 496:311 (nature.com/articles/nature12027) and Brinkmann/Takezaki nuclear-gene analyses; genome size via Schartl et al. 2024, Nature (uni-wuerzburg.de).  (Legend.)",
+    "context": "Whole-genome analysis put the question to rest: the lungfish, not the coelacanth, is the closest living relative of every land vertebrate - meaning the deepest fishy cousin of every four-legged animal, humans included, is the same air-gulping fish that survives droughts sealed in a mucus cocoon in the mud. The lungfish genome turned out to be a monster in its own right: the South American Lepidosiren paradoxa carries over 90 billion DNA base pairs, about thirty times the human genome and the largest of any animal yet sequenced, bloated by 'jumping genes' copying themselves. Sources: Amemiya et al. 2013, Nature 496:311 (nature.com/articles/nature12027) and Brinkmann/Takezaki nuclear-gene analyses; genome size via Schartl et al. 2024, Nature (uni-wuerzburg.de).",
     "topic": "air-breathers-in-water-lungs-where-youd-expect-gills"
   },
   {
@@ -404,7 +404,7 @@
   },
   {
     "tier": 4,
-    "question": "Researchers fitted wandering albatrosses with GPS trackers to see just how far they roam over the Southern Ocean. One tracked bird made a complete loop right around the continent of Antarctica without ever touching land. How long did the whole circuit take?",
+    "question": "Croxall's team tagged grey-headed albatrosses, smaller cousins of the wandering albatross, on their nesting island of South Georgia and followed them between breeding seasons. Some flew right around the world over the Southern Ocean without touching land. How long did the fastest full circuit take?",
     "answer": "Just 46 days",
     "choices": [
       "Just 46 days",
@@ -412,12 +412,12 @@
       "Nearly 200 days",
       "About one week"
     ],
-    "context": "A GPS-tracked wandering albatross circumnavigated Antarctica in just 46 days, covering about 11,600 km without landing. Source: British Antarctic Survey GPS-logger study (2013-2021).  (Legend.)",
+    "context": "Croxall and colleagues (Science, 2005) tracked grey-headed albatrosses from South Georgia through the months between breeding seasons. Several circled the globe, some more than once, and the fastest made the trip, at least 22,000 km, in just 46 days. Source: Croxall et al. 2005, 'Global circumnavigations: tracking year-round ranges of nonbreeding albatrosses,' Science; https://www.nbcnews.com/id/wbna6822563",
     "topic": "albatross"
   },
   {
     "tier": 4,
-    "question": "Biologists banded a female Laysan albatross, a smaller Pacific cousin of the wandering albatross, on Midway Atoll west of Hawaii in 1956, and they nicknamed her Wisdom. Decades later she is still alive, still returning to the same atoll to raise chicks. What record does Wisdom now hold?",
+    "question": "Biologists banded a female Laysan albatross, a smaller Pacific cousin of the wandering albatross, on Midway Atoll west of Hawaii in 1956, and they nicknamed her Wisdom. Nearly seventy years later she was still alive, still returning to the same atoll to raise chicks. What record does Wisdom hold?",
     "answer": "Oldest known wild bird in the world",
     "choices": [
       "Oldest known wild bird in the world",
@@ -425,7 +425,7 @@
       "Largest clutch ever laid by a seabird",
       "Fastest bird over open water"
     ],
-    "context": "Wisdom, banded with red ankle band #Z333 by biologist Chandler Robbins in 1956, is at least 74 years old, making her the oldest known wild bird in the world. She has hatched an estimated 30+ chicks. Source: USGS / Wikipedia (Wisdom the albatross); Smithsonian Magazine.  (Legend.)",
+    "context": "Wisdom was first banded, as #Z333, by the biologist Chandler Robbins on Midway in 1956, when she was already thought to be about five years old. She was at least 74 in 2025, when she was seen back on Midway with her new mate, which makes her the oldest known wild bird in the world. She has hatched an estimated 30 or more chicks. Source: https://en.wikipedia.org/wiki/Wisdom_(albatross); Grokipedia 'Wisdom (albatross)'.",
     "topic": "albatross"
   },
   {
@@ -522,14 +522,14 @@
   {
     "tier": 3,
     "question": "A female ocean sunfish, Mola mola, drifts through open water and does the opposite of a guarding octopus mother: she gives her young no care at all and bets everything on sheer numbers. In a single spawning, how many eggs can she release?",
-    "answer": "Up to about 300 million — more than any known vertebrate",
+    "answer": "Up to about 300 million",
     "choices": [
-      "Up to about 300 million — more than any known vertebrate",
-      "A neat clutch of around 100, hidden in kelp",
-      "Roughly 10 thousand, glued to a floating log",
-      "Two large eggs she shelters under a fin"
+      "Up to about 300 million",
+      "Up to about 30 million",
+      "Up to about 3 million",
+      "Up to about 300,000"
     ],
-    "context": "The female ocean sunfish (Mola mola) can release up to 300 million eggs at a time — more than any other known vertebrate — each only about 0.13 cm across, and gives no care at all. Nearly all are eaten; a few survive. This is the number-as-wonder because the contrast with the octopus makes it mean something. Source: Wikipedia, Ocean sunfish; Animal Diversity Web, Mola mola.  (Legend.)",
+    "context": "The female ocean sunfish (Mola mola) can release up to 300 million eggs at a time, more than any other known vertebrate, each only about 0.13 cm across, and gives no care at all. Nearly all are eaten; a few survive. Source: Wikipedia, Ocean sunfish; Animal Diversity Web, Mola mola.",
     "topic": "all-in-vs-none-parental-investment"
   },
   {
@@ -539,7 +539,7 @@
     "choices": [
       "Back inside her own mouth",
       "Under a flat rock she guards",
-      "Inside an empty snail shell",
+      "Under their father's fins",
       "Beneath a raft of algae"
     ],
     "context": "In many mouthbrooding cichlids the mother scoops her fertilized eggs into her mouth and holds them — and later the hatched fry — for up to about two weeks, not eating the whole time, letting them dart back into her mouth when danger threatens. Source: Wikipedia, Mouthbrooder; Natural History Museum.",
@@ -581,7 +581,7 @@
       "Around 500",
       "Around 900"
     ],
-    "context": "Only about 1 in 1,000 sea turtle hatchlings survives to adulthood — the 'make thousands, tend none' bet works only because so many are laid. The number is the payoff: the question builds the expectation the answer shatters. Source: Loggerhead Marinelife Center; SEE Turtles life cycle.",
+    "context": "Only about 1 in 1,000 sea turtle hatchlings survives to adulthood; the 'make thousands, tend none' bet works only because so many are laid. Source: Loggerhead Marinelife Center; SEE Turtles life cycle.",
     "topic": "all-in-vs-none-parental-investment"
   },
   {
@@ -683,7 +683,7 @@
       "As much as an elephant, 5 to 8 tonnes",
       "As much as a cow, under 1 tonne",
       "As much as a blue whale, over 100 tonnes",
-      "As much as a house cat, a few kilograms"
+      "As much as a rhino, about 2 tonnes"
     ],
     "context": "At 6 to 8 meters (20 to 26 feet) long and perhaps 5 to 8 tonnes, Ankylosaurus carried roughly an elephant's weight in body plus bony armor. Source: Wikipedia, 'Ankylosaurus' (6-8 m long, 4.8-8 t).",
     "topic": "ankylosaurus"
@@ -1431,20 +1431,20 @@
   },
   {
     "tier": 3,
-    "question": "Argentinosaurus lumbered across South America about 95 million years ago, stretching roughly 30 to 35 meters from snout to tail-tip, one of the largest animals that ever walked on land. Yet no one has dug up a whole skeleton, only a few pieces: some huge vertebrae, a shin bone, a rib. How did paleontologists work out its total length from so little?",
-    "answer": "They scaled up its whole body from a handful of its own bones",
+    "question": "Argentinosaurus lumbered across South America about 95 million years ago, stretching roughly 30 to 35 meters from snout to tail-tip, one of the largest animals that ever walked on land. Yet no one has dug up a whole skeleton, only a few pieces: some huge vertebrae from its back, part of its hips, a rib and a leg bone. How did paleontologists work out its total length from so little?",
+    "answer": "They matched its bones to fuller skeletons of its kin",
     "choices": [
-      "They scaled up its whole body from a handful of its own bones",
-      "They scaled it up from a close relative's complete skeleton",
+      "They matched its bones to fuller skeletons of its kin",
+      "They counted the growth rings in its leg bone",
       "They measured the stride length in a fossil trackway",
       "They compared it to the largest living whale"
     ],
-    "context": "Argentinosaurus is known from only a handful of bones, about seven back vertebrae, some ribs, a shinbone and a hip bone, so its 30-35 m length and 70-plus-ton weight are reconstructed by scaling up the whole animal from those few fragments, not measured from a complete skeleton. Honest paleontology flags the uncertainty. Source: https://en.wikipedia.org/wiki/Argentinosaurus  (Legend.)",
+    "context": "Argentinosaurus is known from only a handful of bones: about seven back vertebrae, part of the hip, a piece of rib and a slender leg bone first taken for a shinbone. Its 30-35 m length and 70-plus-ton weight are reconstructed mostly by fitting those fragments to the fuller skeletons of related titanosaurs such as Saltasaurus and Futalognkosaurus, not measured from a whole skeleton. Honest paleontology flags the uncertainty. Source: https://en.wikipedia.org/wiki/Argentinosaurus",
     "topic": "argentinosaurus"
   },
   {
     "tier": 3,
-    "question": "A full-grown Argentinosaurus could stretch about thirty meters from nose to tail, yet every one began life inside a leathery egg small enough for a person to cradle in two hands. From hatchling to full size, a giant like this multiplied its length by roughly what factor?",
+    "question": "A full-grown Argentinosaurus could stretch about thirty meters from nose to tail, yet every one began life inside an egg small enough for a person to cradle in two hands. From hatchling to full size, a giant like this multiplied its length by roughly what factor?",
     "answer": "About 100 times longer",
     "choices": [
       "About 100 times longer",
@@ -1457,7 +1457,7 @@
   },
   {
     "tier": 4,
-    "question": "Across Patagonia, in southern Argentina, Argentinosaurus hauled 65 to 80 tons on four legs about 95 million years ago. When paleontologists sectioned its giant back bones and neck bones, they found a feature that surprised them. What was inside those bones?",
+    "question": "Across Patagonia, in southern Argentina, Argentinosaurus hauled 65 to 80 tons on four legs about 95 million years ago. When paleontologists looked inside its giant back and hip vertebrae, they found a feature that surprised them. What was inside those bones?",
     "answer": "Air-filled chambers",
     "choices": [
       "Air-filled chambers",
@@ -1491,7 +1491,7 @@
       "Which was discovered and formally named first",
       "Which came from the more complete adult skeleton"
     ],
-    "context": "In 2017 Carballido and colleagues argued that Patagotitan (about 37 m, roughly 69 tonnes) edged out Argentinosaurus by about 10 percent, using the cross-sectional area of its front back-vertebrae. In 2019 Gregory Paul countered that Argentinosaurus was still larger because its dorsal (back-bone) column was considerably longer, and several later analyses again favor Argentinosaurus as the biggest known titanosaur. Which one ranks first genuinely flips depending on which bones you measure. Source: Wikipedia 'Argentinosaurus' and 'Patagotitan', citing Carballido et al. 2017 and Paul 2019 (https://en.wikipedia.org/wiki/Argentinosaurus); SV-POW analysis (https://svpow.com/2017/08/09/dont-believe-the-hype-patagotitan-was-not-bigger-than-argentinosaurus/).",
+    "context": "In 2017 Carballido and colleagues argued that Patagotitan (about 37 m, roughly 69 tonnes) edged out Argentinosaurus by about 10 percent, using the cross-sectional area of its front back-vertebrae. In 2019 Gregory Paul countered that Argentinosaurus was still larger because its dorsal (back-bone) column was considerably longer, and several later analyses again favor Argentinosaurus as the biggest known titanosaur. Which one ranks first genuinely flips depending on which bones are measured. Source: Wikipedia 'Argentinosaurus' and 'Patagotitan', citing Carballido et al. 2017 and Paul 2019 (https://en.wikipedia.org/wiki/Argentinosaurus); SV-POW analysis (https://svpow.com/2017/08/09/dont-believe-the-hype-patagotitan-was-not-bigger-than-argentinosaurus/).",
     "topic": "argentinosaurus"
   },
   {
@@ -1613,11 +1613,11 @@
   },
   {
     "tier": 4,
-    "question": "A turtle builds its shell out of its own body, and the job shoves one bone into a spot that no other backboned animal uses. In a mouse or a whale, the bones that anchor the front limbs and the hips sit outside the ribcage. Which one ends up inside the ribs in a turtle?",
+    "question": "A turtle builds its shell out of its own body, and the job shoves one bone into a spot that no other backboned animal uses. In a mouse or a whale, that bone lies outside the ribcage. Which bone ends up inside the ribs in a turtle?",
     "answer": "its shoulder blades",
     "choices": [
       "its shoulder blades",
-      "its hip bones",
+      "its kneecaps",
       "its collarbone",
       "its breastbone"
     ],
@@ -2113,7 +2113,7 @@
       "piercing up through the skin on top of its snout",
       "jutting sideways past its fleshy cheeks",
       "curving down below its lower jaw",
-      "fusing into a single bony ridge along its back"
+      "hooking forward out past the tip of its snout"
     ],
     "context": "The male's upper canines don't exit the mouth at all — they grow straight UP, pushing through the skin on top of the snout, then curve backward over the face toward the forehead. It is one of the strangest sets of teeth in the animal kingdom. Source: https://en.wikipedia.org/wiki/Babirusa  (Legend.)",
     "topic": "babirusa"
@@ -2185,15 +2185,15 @@
   },
   {
     "tier": 3,
-    "question": "Robison and Reisenbichler watched a barreleye feeding and found that it cannot just swivel its tubular eyes forward on their own. The eyes reach the forward-pointing position only when the fish makes one particular move. What must it do to swing them forward?",
-    "answer": "Roll its whole body from horizontal to vertical",
+    "question": "Bruce Robison and Kim Reisenbichler watched a living barreleye feed, from robot submarines and in a lab tank. Its tubular eyes turned inside the clear dome in step with one particular move of its whole body. What was that move?",
+    "answer": "Tipping its body from horizontal to vertical",
     "choices": [
-      "Roll its whole body from horizontal to vertical",
-      "Beat its tail hard three times",
-      "Drift into a shaft of brighter light",
-      "Press its snout against the prey"
+      "Tipping its body from horizontal to vertical",
+      "Beating its tail hard three times",
+      "Drifting into a shaft of brighter light",
+      "Pressing its snout against the prey"
     ],
-    "context": "Robison and Reisenbichler watched a live specimen rotate its tubular eyes from pointing up to pointing forward as it tipped its body from horizontal to vertical to feed — the eyes turn as the whole fish rolls upright, so the eye rotation is coupled to the body's roll rather than happening on its own. Source: ScienceDaily 2009; Robison & Reisenbichler 2008.",
+    "context": "Robison and Reisenbichler saw the tubular eyes rotate inside the dome from pointing up to pointing forward as the fish tipped its body from horizontal to vertical to feed: the eyes swing like binoculars as the whole fish turns upright. Source: Wikipedia 'Macropinna microstoma' (https://en.wikipedia.org/wiki/Macropinna_microstoma); Robison & Reisenbichler 2008, Copeia.",
     "topic": "barreleye-macropinna-microstoma"
   },
   {
@@ -2527,7 +2527,7 @@
     "answer": "The smallest beaks, better on the seeds left over",
     "choices": [
       "The smallest beaks, better on the seeds left over",
-      "The biggest beaks, same as the 1977 winners",
+      "The widest beaks, for scooping up fallen fruit",
       "The longest beaks, for probing cactus flowers",
       "The most hooked beaks, for tearing tough husks"
     ],
@@ -2605,9 +2605,9 @@
     "answer": "Its lips close behind the front teeth",
     "choices": [
       "Its lips close behind the front teeth",
-      "It blocks its throat with its tongue",
-      "It swims with the branch held in a paw",
-      "It keeps the branch pinched above water"
+      "It breathes out bubbles to keep water out",
+      "Its cheeks hold a pocket of trapped air",
+      "Thick saliva plugs the back of its mouth"
     ],
     "context": "Before diving, a beaver seals itself shut: valve-like muscles clamp the nostrils and ears closed, and its lips close BEHIND the front teeth, so it can carry a branch underwater without swallowing water. It can stay under for about 15 minutes. Source: https://beaversinengland.com/beaver-biology/beaver-biology-2/",
     "topic": "beaver"
@@ -2620,7 +2620,7 @@
       "About 800 meters, eight football fields",
       "About 80 meters, one football field",
       "About 8 kilometers across a valley",
-      "About 8 meters, a garden hedge"
+      "About 300 meters, three football fields"
     ],
     "context": "The largest known beaver dam stretches about 800 meters, the length of eight football fields, hidden in Wood Buffalo National Park. It was so big it showed up on satellite imagery in 2007. Source: https://parks.canada.ca/pn-np/nt/woodbuffalo/nature/beaver_gallery  (Legend.)",
     "topic": "beaver"
@@ -2840,8 +2840,8 @@
     "choices": [
       "Worse than the Portuguese man o' war it ate",
       "About the same as a mild mosquito bite",
-      "Not at all — it has no sting of its own",
-      "Only a faint tingle you'd barely notice"
+      "Like a bee sting, sharp but soon over",
+      "Only a faint tingle, barely noticed"
     ],
     "context": "Despite being smaller than a grape, the blue dragon can sting a human worse than the man o' war did, causing nausea, pain, and vomiting. It concentrates the venom it steals, so the thief becomes deadlier than its victim. Source: https://en.wikipedia.org/wiki/Glaucus_atlanticus  (Legend.)",
     "topic": "blue-dragon-nudibranch-glaucus-atlanticus"
@@ -2875,14 +2875,14 @@
   {
     "tier": 4,
     "question": "A blue dragon, a little sea slug that eats the Portuguese man o' war and keeps its stingers, washes up dead and drying on a warm beach, a few centimeters of beautiful electric blue. A curious child reaches for the pretty shape. Why should the child not touch it?",
-    "answer": "Its stingers still fire on contact days after death",
+    "answer": "Its stolen stingers still fire on contact after it dies",
     "choices": [
-      "Its stingers still fire on contact days after death",
+      "Its stolen stingers still fire on contact after it dies",
       "Its drying body puffs out a cloud of toxic spores",
       "Its skin turns acidic and burns whatever touches it",
       "Its blue pigment soaks in and poisons through the skin"
     ],
-    "context": "The blue dragon's venom stays active even after the slug is DEAD — a washed-up blue dragon on the beach can still sting you, because the borrowed stinging cells fire on contact. Source: https://www.australiangeographic.com.au/fact-file/fact-file-blue-dragon-glaucus-atlanticus/  (Legend.)",
+    "context": "The blue dragon's venom stays active even after the slug is dead: a washed-up blue dragon on the beach can still sting a person, because the borrowed stinging cells fire on contact. Source: https://www.australiangeographic.com.au/fact-file/fact-file-blue-dragon-glaucus-atlanticus/",
     "topic": "blue-dragon-nudibranch-glaucus-atlanticus"
   },
   {
@@ -2945,7 +2945,7 @@
       "Kill more than twenty adult humans within minutes",
       "Dissolve a crab's shell in seconds",
       "Stun every fish in a small tide pool",
-      "Glow brightly enough to read by"
+      "Numb a diver's hand for an hour"
     ],
     "context": "The blue-ringed octopus is only about 12-20 cm including its arms, yet one carries enough venom to kill over 20 adults within minutes. Source: Wikipedia, 'Blue-ringed octopus'.  (Legend.)",
     "topic": "blue-ringed-octopus-hapalochlaena"
@@ -2992,10 +2992,10 @@
   {
     "tier": 4,
     "question": "A blue-ringed octopus subdues a crab with one venom, but researchers have found that it stores a second, different venom in a separate gland. Each kind does its own job. Besides subduing prey, what job does the two-venom system handle?",
-    "answer": "Fighting off predators, separate from the prey venom",
+    "answer": "Fighting off predators",
     "choices": [
-      "Fighting off predators, separate from the prey venom",
-      "Digesting the crab once it is dead",
+      "Fighting off predators",
+      "Marking its den against rivals",
       "Sealing the wound the beak makes",
       "Coloring the warning rings blue"
     ],
@@ -3017,7 +3017,7 @@
   },
   {
     "tier": 5,
-    "question": "A blue-ringed octopus carries tetrodotoxin in its bite, a poison that kills by jamming the sodium channels nerves and muscles run on, yet it never paralyzes itself. In 2019 researchers sequenced the gene for the octopus's own sodium channel. What keeps it from poisoning itself?",
+    "question": "A blue-ringed octopus carries tetrodotoxin in its bite, a poison that can paralyze a grown person, yet it never paralyzes itself. In 2019 researchers sequenced the octopus's own gene for the very protein the toxin latches onto. What keeps it from poisoning itself?",
     "answer": "Three swapped amino acids reshape the docking site so the toxin slips off",
     "choices": [
       "Three swapped amino acids reshape the docking site so the toxin slips off",
@@ -3083,25 +3083,25 @@
   {
     "tier": 3,
     "question": "Visitors to the Royal Ontario Museum in Toronto can stand beside a preserved blue whale heart. Counting the aorta, the giant blood vessel above it, the heart stands nearly six and a half feet tall and weighs almost four hundred pounds. Museum staff joked that it was big enough to do what?",
-    "answer": "Fit a person squeezed inside a Smart car",
+    "answer": "Hold a person squeezed in, like a Smart car",
     "choices": [
-      "Fit a person squeezed inside a Smart car",
+      "Hold a person squeezed in, like a Smart car",
       "Fill an entire swimming pool",
       "Pump a bathtub of blood each beat",
       "Be lifted only by a forklift"
     ],
-    "context": "The preserved heart weighs nearly 400 pounds and stands roughly six and a half feet tall with the aorta — staff quipped you could 'squeeze into a Smart car.' Source: Smithsonian Magazine 'The Painstaking Process of Preserving a 400-Pound Blue Whale Heart'; Royal Ontario Museum.  (Legend.)",
+    "context": "The preserved heart weighs nearly 400 pounds and stands roughly six and a half feet tall with the aorta, and staff joked that a person could squeeze inside it as if into a Smart car. Source: Smithsonian Magazine 'The Painstaking Process of Preserving a 400-Pound Blue Whale Heart'; Royal Ontario Museum.",
     "topic": "blue-whale"
   },
   {
     "tier": 3,
-    "question": "In storybooks, a child crawls right through a blue whale's aorta, the main artery that carries blood out of its heart. The real aorta is much narrower than that. Roughly how wide across is this biggest blood vessel in any animal?",
+    "question": "In storybooks, a child crawls right through a blue whale's aorta, the main artery that carries blood out of a heart weighing nearly 400 pounds. Roughly how wide across is the real aorta, the biggest blood vessel of any animal?",
     "answer": "About a dinner plate",
     "choices": [
       "About a dinner plate",
       "About a doorway",
       "About a manhole cover",
-      "About a dinner fork"
+      "About a coffee mug"
     ],
     "context": "The blue whale's aorta is roughly 9 inches across — about the width of a dinner plate. That is huge for a blood vessel, but far too narrow for a child to crawl through. Source: funfactz.com 'Blue Whale Aorta Size'; whalefacts.org 'The Blue Whale's Heart'; ROM specimen reporting.",
     "topic": "blue-whale"
@@ -3182,19 +3182,6 @@
       "It shrank down from far larger ancestors and has been getting smaller ever since"
     ],
     "context": "For most of whale history the biggest baleen whales were only about 10 m long. The jump to today's ~30 m happened rapidly and independently on several branches of the family tree around 4.5 million years ago, when the first ice ages began concentrating krill into dense patches through wind-driven coastal upwelling — suddenly it paid to be a colossal filter feeder. The blue whale is the biggest animal ever, yet its body plan is evolutionarily recent and was reinvented more than once. Source: Slater, Goldbogen & Pyenson, 'Independent evolution of baleen whale gigantism linked to Plio-Pleistocene ocean dynamics,' Proceedings of the Royal Society B 284:20170546 (2017); Smithsonian Institution news release (2017).",
-    "topic": "blue-whale"
-  },
-  {
-    "tier": 4,
-    "question": "A blue whale gulps a swimming-pool of water and must strain out the krill through hundreds of fringed baleen plates. The obvious picture is water pushing straight through the fringe like a kitchen sieve — but flow-tank studies showed that picture is wrong. How does the water actually move through the rack?",
-    "answer": "It flows lengthwise along the inside of the plates, sweeping krill to the back of the mouth",
-    "choices": [
-      "It flows lengthwise along the inside of the plates, sweeping krill to the back of the mouth",
-      "It is forced head-on through the fringe, which clogs and must be cleared between gulps",
-      "It is spat back out the same way it came in, leaving the krill stuck to the outer fringe",
-      "It is pumped through tiny pores in every plate the way a sponge draws water inward"
-    ],
-    "context": "This is cross-flow filtration. Instead of dead-end straining, where water pushes straight through and quickly clogs the fringe, the water slides sideways along the inner face of the baleen rack, carrying trapped krill backward to gather at the rear of the mouth for swallowing while keeping the ~0.5–2 mm bristles clear. Flow-tank experiments (first on bowhead baleen) overturned the intuitive sieve model. Source: Werth et al., 'Baleen Hydrodynamics and Morphology of Cross-Flow Filtration in Balaenid Whale Suspension Feeding,' PLOS ONE (2016) (PMC4769178); Frontiers in Marine Science, 'Dynamic filtration in baleen whales' (2024).",
     "topic": "blue-whale"
   },
   {
@@ -3381,7 +3368,7 @@
   },
   {
     "tier": 4,
-    "question": "Thomas Eisner's team at Cornell aimed a high-speed camera at firing bombardier beetles in the 1990s. Scientists had long assumed the scalding spray came out in one steady stream, but the film showed a rapid machine-gun burst of separate blasts, about 70 of them per firing. Roughly how fast is that pulsing?",
+    "question": "Thomas Eisner's team at Cornell aimed a high-speed camera at firing bombardier beetles for a 1990 study. Scientists had long assumed the scalding spray came out in one steady stream, but the film showed a rapid machine-gun burst of separate blasts, about 70 of them per firing. Roughly how fast is that pulsing?",
     "answer": "About 500 pulses per second",
     "choices": [
       "About 500 pulses per second",
@@ -3398,9 +3385,9 @@
     "answer": "Vomited the beetle back up alive",
     "choices": [
       "Vomited the beetle back up alive",
-      "Grew immune and ate more beetles",
+      "Passed it out whole in their droppings",
       "Fell asleep for the rest of the day",
-      "Changed color from the beetle's dye"
+      "Stopped digesting until its spray ran out"
     ],
     "context": "Toads that swallowed bombardier beetles heard a faint 'bu' or 'vu' pop from inside their own stomach, and 43% vomited the beetle back up -- sometimes over 90 minutes later. Beetles spent 12 to 107 minutes inside, scuttled off covered in slime, and nearly all survived; one lived at least 562 more days. Source: Sugiura & Sato, 'Successful escape of bombardier beetles from predator digestive systems,' Biology Letters (2018).  (Legend.)",
     "topic": "bombardier-beetle"
@@ -4039,7 +4026,7 @@
       "The eyes flash a bright color to freeze the prey",
       "The eyes retract deep into the skull for safety"
     ],
-    "context": "When a chameleon locks on, both eyes fix forward on the same target for depth perception precise to within a few millimeters, because once the tongue fires there is no chance to correct its aim. Source: animalsaroundtheglobe.com; AskNature 'Eyes Give 360-degree Vision'.",
+    "context": "When a chameleon locks on, both eyes fix forward on the same target, and it judges the distance to within a few millimeters, because once the tongue fires there is no chance to correct its aim. Source: animalsaroundtheglobe.com; AskNature 'Eyes Give 360-degree Vision'.",
     "topic": "chameleon"
   },
   {
@@ -4088,7 +4075,7 @@
     "choices": [
       "It may be the smallest reptile on Earth",
       "It is the smallest chameleon but not the smallest reptile",
-      "It is the smallest reptile that lays eggs",
+      "It is the smallest lizard, though a snake is smaller",
       "It is the smallest land animal with a backbone"
     ],
     "context": "The nano-chameleon Brookesia nana from Madagascar has a body just over half an inch long (male body 13.5 mm, total ~22 mm) and may be the smallest reptile on Earth. Source: Mongabay 2021; Wikipedia 'Brookesia nana'; discovered by Frank Glaw's team.  (Legend.)",
@@ -4153,10 +4140,10 @@
     "choices": [
       "It focuses that eye and reads the focus setting as the distance",
       "It clocks how fast the bug drifts across the eye as the head sways",
-      "It swings both turret eyes forward to lock on an instant before striking",
+      "It judges how bright the bug looks against the leaves behind it",
       "It matches the bug against a remembered size to estimate range"
     ],
-    "context": "This deepens the older 'both eyes snap forward to triangulate' picture. A chameleon judges depth by monocular corneal accommodation: it focuses one eye and reads the focal setting as a distance. Its eye pairs a negative (concave) lens behind a strongly positive (convex) cornea, enlarging the retinal image so tiny focus changes are readable, and it can shift focus about 60 diopters per second with an amplitude near 45 diopters, faster and more precise than any other reptile. This makes the chameleon the only vertebrate that can judge depth with a single eye. Source: Harkness 1977, Nature 267:346 (https://www.nature.com/articles/267346a0); Ott, Schaeffel & Kirmse 1998, J. Comp. Physiol. A (https://link.springer.com/article/10.1007/s003590050182).",
+    "context": "A chameleon judges depth by monocular corneal accommodation: it focuses one eye and reads the focal setting as a distance. Its eye pairs a negative (concave) lens behind a strongly positive (convex) cornea, enlarging the retinal image so tiny focus changes are readable, and it can shift focus about 60 diopters per second with an amplitude near 45 diopters, faster and more precise than any other reptile. Source: Harkness 1977, Nature 267:346 (https://www.nature.com/articles/267346a0); Ott, Schaeffel & Kirmse 1998, J. Comp. Physiol. A (https://link.springer.com/article/10.1007/s003590050182).",
     "topic": "chameleon"
   },
   {
@@ -4205,7 +4192,7 @@
     "choices": [
       "An audible click",
       "A faint buzz",
-      "A sharp snap of the legs",
+      "A soft hiss of air",
       "A high whine"
     ],
     "context": "The froghopper locks its cocked legs with microscopic teeth (microtrichia) and fires with an audible click as the latch releases. Source: BMC Biology 6:41 (Burrows, Shaw & Sutton 2008).  (Legend.)",
@@ -4265,15 +4252,15 @@
   },
   {
     "tier": 4,
-    "question": "A trap-jaw ant can slam its spring-loaded jaws against the ground and fling itself into the air. Larabee and Suarez pitted these ants against pit-digging antlions, then glued some ants' jaws shut to test whether the jump really helps them escape. What did gluing the jaws do?",
-    "answer": "Cut their escape rate to a quarter",
+    "question": "A trap-jaw ant slides down the loose sand of an antlion's pit, and the hidden hunter below flicks grains up to bring it tumbling down. Larabee and Suarez staged such encounters, then glued some ants' jaws shut to test whether the jaws help them escape. What did gluing the jaws do?",
+    "answer": "Far fewer of them escaped the pits",
     "choices": [
-      "Cut their escape rate to a quarter",
-      "Left their escape rate unchanged",
-      "Made them slightly faster on foot",
-      "Turned the jump into a courting dance"
+      "Far fewer of them escaped the pits",
+      "About as many escaped as before",
+      "More of them escaped, running instead",
+      "They learned to steer clear of pits"
     ],
-    "context": "The trap-jaw ant Odontomachus latches its mandibles open under spring tension, then releases them in one of the fastest movements in the animal kingdom -- fast enough that slamming the jaws against the ground hurls the ant clear of danger. Larabee and Suarez staged encounters with pit-digging antlions, predators that ambush ants sliding into their sand pits. Ants with working jaws escaped 60 to 79 percent of the time; ants whose mandibles were glued shut escaped only 26 percent -- making the jaw-jump roughly 2.3 to 4.7 times more likely to save the ant. The ants use two launch styles: a steep vertical 'escape jump' (take-off angle around 76 degrees) to flee the pit, and a low 'bouncer defense' jump (around 27 degrees) that knocks the ant backward off an attacker. Source: Larabee & Suarez 2015, 'Mandible-Powered Escape Jumps in Trap-Jaw Ants Increase Survival Rates during Predator-Prey Encounters', PLOS ONE 10(5):e0124871 -- https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0124871 ; Patek et al. 2006, PNAS on ballistic jaw propulsion -- https://www.pnas.org/doi/10.1073/pnas.0604290103",
+    "context": "The trap-jaw ant Odontomachus latches its mandibles open under spring tension, then releases them in one of the fastest movements in the animal kingdom, fast enough that slamming the jaws against the ground hurls the ant clear of danger. Larabee and Suarez staged encounters with pit-digging antlions, predators that ambush ants sliding into their sand pits. Ants with free jaws escaped the pits significantly more often than ants whose jaws were glued shut, which the study put at 4.7 times more likely to escape. The ants use two launch styles: a steep vertical 'escape jump' (take-off angle around 76 degrees) to flee the pit, and a low 'bouncer defense' jump (around 27 degrees) that knocks the ant backward off an attacker. Source: Larabee & Suarez 2015, 'Mandible-Powered Escape Jumps in Trap-Jaw Ants Increase Survival Rates during Predator-Prey Encounters', PLOS ONE 10(5):e0124871 -- https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0124871 ; Patek et al. 2006, PNAS on ballistic jaw propulsion -- https://www.pnas.org/doi/10.1073/pnas.0604290103",
     "topic": "champion-jumpers"
   },
   {
@@ -4967,7 +4954,7 @@
   },
   {
     "tier": 2,
-    "question": "A see-through ocean animal up to 1.5 meters long, about 5 feet, swims on beating hairs called cilia, the way microscopic bacteria do. No bigger animal on Earth gets around like this. Which is it?",
+    "question": "A see-through ocean animal up to 1.5 meters long, about 5 feet, swims on beating hairs called cilia, the way many single-celled creatures do. No bigger animal on Earth gets around like this. Which is it?",
     "answer": "The comb jelly",
     "choices": [
       "The comb jelly",
@@ -4994,14 +4981,14 @@
   {
     "tier": 3,
     "question": "Beroe, a glassy drifter of the open sea, has no tentacles at all, though most of its relatives trail long sticky ones to snag their food. Its body is little more than a huge gaping mouth. What does Beroe hunt, and how?",
-    "answer": "Swallows other comb jellies whole with giant teeth in its mouth",
+    "answer": "Swallows other comb jellies whole",
     "choices": [
-      "Swallows other comb jellies whole with giant teeth in its mouth",
+      "Swallows other comb jellies whole",
       "Drills into fish eggs and sucks out the yolk",
       "Filters clouds of plankton through a fine mesh",
       "Ambushes sleeping shrimp buried in the sand"
     ],
-    "context": "Beroe hunts by swallowing other comb jellies whole, using giant 'macrocilia' teeth in its mouth. Comb jellies are voracious predators that eat each other. Source: WHOI (whoi.edu/ctenophores); Shape of Life.",
+    "context": "Beroe hunts by swallowing other comb jellies whole, gripping them with stiff, tooth-like bundles of hairs called macrocilia that line its mouth. Comb jellies are voracious predators that eat each other. Source: WHOI (whoi.edu/ctenophores); Shape of Life.",
     "topic": "comb-jelly-ctenophora"
   },
   {
@@ -5040,7 +5027,7 @@
       "The sea anemone",
       "The tiny water bear"
     ],
-    "context": "Legend/unsettled: some studies argue the comb jelly, not the sponge, was the first branch to split off from all other animals. Whether comb jellies or sponges are the 'sister to all other animals' is still a live, unsettled scientific debate. Source: Nature 2023 (nature.com/articles/s41586-023-05936-6); Nature Ecology & Evolution 2017 (Whelan et al.).",
+    "context": "Some studies argue the comb jelly, not the sponge, was the first branch to split off from all other animals. Whether comb jellies or sponges are the 'sister to all other animals' is still a live, unsettled scientific debate. Source: Nature 2023 (nature.com/articles/s41586-023-05936-6); Nature Ecology & Evolution 2017 (Whelan et al.).",
     "topic": "comb-jelly-ctenophora"
   },
   {
@@ -5062,7 +5049,7 @@
     "answer": "A shriveled barrel called a 'tun'",
     "choices": [
       "A shriveled barrel called a 'tun'",
-      "A hard sealed sphere called a 'cyst'",
+      "A hard sealed ball called a 'pellet'",
       "A flat papery disc called a 'scute'",
       "A coiled spring called a 'spiral'"
     ],
@@ -5148,19 +5135,6 @@
     "topic": "coming-back-from-dry-death-cryptobiosis"
   },
   {
-    "tier": 3,
-    "question": "A tardigrade dried out in its moss powers down so far it seems dead for years, then wakes when water returns. Biologists find the same shutdown, which they call cryptobiosis, carries such animals through two other killers besides drought. Which two?",
-    "answer": "Freezing solid or running out of oxygen",
-    "choices": [
-      "Freezing solid or running out of oxygen",
-      "Blistering heat or blinding UV light",
-      "Salt so high it burns or total darkness",
-      "Crushing deep-sea pressure or acid water"
-    ],
-    "context": "Cryptobiosis ('hidden life') is the umbrella term for going dormant to survive drought, freezing, or lack of oxygen; the drying-out version specifically is anhydrobiosis, 'life without water.' Source: https://en.wikipedia.org/wiki/Cryptobiosis",
-    "topic": "coming-back-from-dry-death-cryptobiosis"
-  },
-  {
     "tier": 5,
     "question": "Ralph Hengherr heated nine species of dried tardigrade in 2009 to test their famous toughness. A dried tardigrade can take a quick scald, and headlines say it survives 150 degrees Celsius, but revival stayed high only up to about 80 degrees and then fell steeply. What happens to the dried animal at that point?",
     "answer": "Its protective inner glass softens and melts",
@@ -5170,7 +5144,7 @@
       "Its stored trehalose caramelizes to syrup",
       "Its curled body unrolls and floods with air"
     ],
-    "context": "The 'survives 150 C' headline hides a ceiling written into the very glass that protects the animal. Using calorimetry, Hengherr et al. measured each species' glass-transition temperature — the point where the solid inner glass softens back toward a liquid — at roughly 35 to 87 C depending on species. Revival stayed high up to about 80 C and then dropped steeply, and that steep drop lined up with the glass transition: once the glass un-sets, the frozen-in protection is lost and the cell is exposed. So the tun can take a quick pass through a flame, but sustained real heat melts the very thing keeping it alive — a sharper and more honest limit than the folklore number. Source: Hengherr et al. 2009, Physiological and Biochemical Zoology 82(6):749-755, 'High-Temperature Tolerance in Anhydrobiotic Tardigrades Is Limited by Glass Transition' (https://www.journals.uchicago.edu/doi/10.1086/605954; https://pubmed.ncbi.nlm.nih.gov/19732016/).",
+    "context": "The 'survives 150 C' headline hides a ceiling written into the very glass that protects the animal. Using calorimetry, Hengherr et al. measured each species' glass-transition temperature — the point where the solid inner glass softens back toward a liquid — at roughly 35 to 87 C depending on species. Revival stayed high up to about 80 C and then dropped steeply, and that steep drop lined up with the glass transition: once the glass un-sets, the frozen-in protection is lost and the cell is exposed. So the tun can survive a brief scald, but sustained heat melts the very thing keeping it alive. Source: Hengherr et al. 2009, Physiological and Biochemical Zoology 82(6):749-755, 'High-Temperature Tolerance in Anhydrobiotic Tardigrades Is Limited by Glass Transition' (https://www.journals.uchicago.edu/doi/10.1086/605954; https://pubmed.ncbi.nlm.nih.gov/19732016/).",
     "topic": "coming-back-from-dry-death-cryptobiosis"
   },
   {
@@ -5465,7 +5439,7 @@
     "answer": "Up to about two hours",
     "choices": [
       "Up to about two hours",
-      "About ten seconds",
+      "Up to about forty minutes",
       "Around four minutes",
       "Roughly fifteen minutes"
     ],
@@ -5547,7 +5521,7 @@
       "Fat globules clogging the fine vessels of the lungs, with no free gas",
       "Pitted dead patches in the leg and arm bones from a lifetime of diving"
     ],
-    "context": "Whether beaked whales are truly immune to the bends is a real, unsettled debate. Jepson and colleagues (Nature, 2003) found gas-bubble lesions in the tissues of beaked whales that mass-stranded during naval sonar exercises -- evidence of in-vivo bubble formation, essentially decompression sickness, in animals long assumed protected from it. The leading hypothesis is that loud mid-frequency sonar triggers a panicked change in dive behavior, surfacing too fast or altering depth profiles, so dissolved nitrogen bubbles out of blood and fat. The finding overturned the flat 'whales can't get decompression sickness' dogma and remains debated and controversial -- the counter-argument to the 'never gets the bends' idea in these questions. Source: Jepson et al. 2003, Nature, 'Gas-bubble lesions in stranded cetaceans' (https://www.nature.com/articles/425575a); follow-up 'Whales, sonar and decompression sickness' (https://pubmed.ncbi.nlm.nih.gov/15085881/).",
+    "context": "Whether beaked whales are truly immune to the bends is a real, unsettled debate. Jepson and colleagues (Nature, 2003) found gas-bubble lesions in the tissues of beaked whales that mass-stranded during naval sonar exercises -- evidence of in-vivo bubble formation, essentially decompression sickness, in animals long assumed protected from it. The leading hypothesis is that loud mid-frequency sonar triggers a panicked change in dive behavior, surfacing too fast or altering depth profiles, so dissolved nitrogen bubbles out of blood and fat. The finding overturned the flat 'whales can't get decompression sickness' dogma and remains debated and controversial. Source: Jepson et al. 2003, Nature, 'Gas-bubble lesions in stranded cetaceans' (https://www.nature.com/articles/425575a); follow-up 'Whales, sonar and decompression sickness' (https://pubmed.ncbi.nlm.nih.gov/15085881/).",
     "topic": "deep-diving-bodies"
   },
   {
@@ -5851,15 +5825,15 @@
   },
   {
     "tier": 2,
-    "question": "With jaws built for crushing, the dire wolf brought down giant plant-eaters in ice-age America. Paleontologists studying its prey find one menu of big ice-age animals turning up again and again. Which set of prey did it specialize in?",
-    "answer": "Ancient bison, western horses, ground sloths, and camels",
+    "question": "With jaws built for crushing, the dire wolf brought down giant plant-eaters in ice-age America. Paleontologists studying its prey find one menu of big ice-age animals turning up again and again. Which animals did it mostly hunt?",
+    "answer": "Ancient bison, horses, ground sloths, and camels",
     "choices": [
-      "Ancient bison, western horses, ground sloths, and camels",
+      "Ancient bison, horses, ground sloths, and camels",
       "Woolly mammoths, mastodons, and giant beavers",
-      "Musk oxen, caribou, and Arctic hares of the far north",
-      "Glyptodonts, giant ground sloths, and long-horned bison"
+      "Musk oxen, caribou, and moose of the far north",
+      "Woolly rhinos, cave bears, and giant elk"
     ],
-    "context": "The dire wolf hunted huge ice-age plant-eaters: ancient bison, western horses, ground sloths, and camels. When those big animals died out at the end of the ice age, the dire wolf vanished with them, while smaller, more flexible true wolves survived. Source: https://en.wikipedia.org/wiki/Dire_wolf",
+    "context": "The dire wolf hunted huge ice-age plant-eaters: ancient bison, western horses, ground sloths and camels, with pronghorn and peccaries also suggested. When those big animals died out at the end of the ice age, the dire wolf vanished with them, while smaller, more flexible true wolves survived. Source: https://en.wikipedia.org/wiki/Dire_wolf",
     "topic": "dire-wolf"
   },
   {
@@ -5873,19 +5847,6 @@
       "It was a dog line domesticated by early Americans, then gone wild again"
     ],
     "context": "The 2021 ancient-DNA study found the dire wolf was not a close relative of the gray wolf, and it was reclassified into its own genus, Aenocyon dirus. Source: https://www.scientificamerican.com/article/dire-wolves-were-not-really-wolves-new-genetic-clues-reveal/  (Legend.)",
-    "topic": "dire-wolf"
-  },
-  {
-    "tier": 4,
-    "question": "Dire wolves hunted ice-age America on a branch of the family tree that had split off by itself about 5.7 million years earlier, ancient DNA shows. After so long apart they were unable to breed with gray wolves. Which living animals are their closest relatives?",
-    "answer": "African jackals",
-    "choices": [
-      "African jackals",
-      "Dholes of Asia",
-      "African wild dogs",
-      "Golden jackals of Eurasia"
-    ],
-    "context": "Separated for millions of years, the dire wolf could not interbreed with gray wolves and the DNA showed no mixing. Its closest living relatives are African jackals, not wolves — its wolf-like look was convergent evolution. Source: https://tarpits.org/stories/our-evolving-understanding-dire-wolves  (Legend.)",
     "topic": "dire-wolf"
   },
   {
@@ -5904,9 +5865,9 @@
   {
     "tier": 3,
     "question": "Paleontologists digging in Los Angeles's La Brea tar pits pulled up thousands of dire wolf skeletons, far more than an occasional unlucky misstep into the sticky asphalt could explain. What kept luring dire wolves into the pits, again and again?",
-    "answer": "A trapped plant-eater's cries drew the predators, who came to feed and got stuck too",
+    "answer": "Trapped plant-eaters drew them in to feed, and they stuck too",
     "choices": [
-      "A trapped plant-eater's cries drew the predators, who came to feed and got stuck too",
+      "Trapped plant-eaters drew them in to feed, and they stuck too",
       "Whole packs deliberately denned in the warm asphalt through winter",
       "Floods swept dead wolves from miles around into one low pit",
       "The wolves drank from the shiny asphalt, mistaking it for water"
@@ -6437,9 +6398,9 @@
   {
     "tier": 3,
     "question": "A female dumbo octopus drifts over the pitch-black ocean floor thousands of meters down. Most shallow-water octopus mothers lay one big clutch of eggs and then die guarding it, but she handles her eggs in a way that surprised the scientists who studied her. How does she manage them?",
-    "answer": "She carries eggs at every stage of ripeness at once",
+    "answer": "She carries eggs at many stages of ripeness at once",
     "choices": [
-      "She carries eggs at every stage of ripeness at once",
+      "She carries eggs at many stages of ripeness at once",
       "She lays every egg together in a single spring batch",
       "She waits years and then dies after one huge clutch",
       "She glues her whole clutch to a rock and guards it till it hatches"
@@ -6487,19 +6448,6 @@
     "topic": "dung-beetle"
   },
   {
-    "tier": 2,
-    "question": "Along the Nile, the ancient Egyptians watched a small black beetle push its ball of dung across the ground day after day. They worshipped it as the sacred scarab, because its daily labor looked like an echo of something enormous crossing the sky. What did they see in the rolling ball?",
-    "answer": "The sun, pushed across the heavens each day",
-    "choices": [
-      "The sun, pushed across the heavens each day",
-      "The moon, dragged through its monthly phases",
-      "A seed that would sprout the first green fields",
-      "A boulder sealing the doorway of the underworld"
-    ],
-    "context": "Egyptians pictured the god Khepri rolling the sun across the sky just as the beetle rolls its ball, making the scarab a symbol of rebirth and the rising sun. Legend/belief framed as such. Source: Britannica (Khepri) + Wikipedia (Scarab artifact).",
-    "topic": "dung-beetle"
-  },
-  {
     "tier": 3,
     "question": "A dung beetle on the sunlit African plains must roll its ball of fresh dung away fast, before a rival can steal it. Before setting off, it climbs on top of the ball and turns a slow full circle there, a strange little dance in place. Scientists who filmed the spin found it does one crucial job. What is the beetle doing up there?",
     "answer": "Storing a snapshot of the sky to hold a straight bearing",
@@ -6509,7 +6457,7 @@
       "Softening the ball's surface so it packs tighter",
       "Warming its wings for a quick escape flight if attacked"
     ],
-    "context": "Atop the ball the beetle does a spinning 'dance,' storing a single snapshot of the sky in its brain to lock in a straight bearing before rolling. Legend-tier wonder. Source: Lund University, https://www.lunduniversity.lu.se/article/when-dung-beetles-dance-they-photograph-firmament",
+    "context": "Atop the ball the beetle does a spinning 'dance,' storing a single snapshot of the sky in its brain to lock in a straight bearing before rolling. Source: Lund University, https://www.lunduniversity.lu.se/article/when-dung-beetles-dance-they-photograph-firmament",
     "topic": "dung-beetle"
   },
   {
@@ -6522,7 +6470,7 @@
       "The greenish shimmer of the northern lights",
       "The dim afterglow left along the horizon"
     ],
-    "context": "On moonless nights dung beetles steer by the diffuse band of the Milky Way — the only animal known to navigate by the galaxy. Marie Dacke's team confirmed it in a planetarium, where beetles rolled just as straight with only the Milky Way's band showing. Legend-tier wonder. Source: Science/AAAS on Dacke et al. 2013.",
+    "context": "On moonless nights dung beetles steer by the diffuse band of the Milky Way, the first animal shown to navigate by the galaxy. Marie Dacke's team confirmed it in a planetarium, where beetles rolled just as straight with only the Milky Way's band showing. Source: Science/AAAS on Dacke et al. 2013.",
     "topic": "dung-beetle"
   },
   {
@@ -6540,7 +6488,7 @@
   },
   {
     "tier": 2,
-    "question": "Dunkleosteus, a fish as long as a bus, ruled the Late Devonian seas about 380 million years ago, in the stretch of time known as the Age of Fishes. Its head and shoulders were sheathed in thick, joined plates fitted like tank armor. What were the plates made of?",
+    "question": "Dunkleosteus, a fish as long as a small car, ruled the Late Devonian seas about 380 million years ago, in the stretch of time known as the Age of Fishes. Its head and shoulders were sheathed in thick, joined plates fitted like tank armor. What were the plates made of?",
     "answer": "Bone",
     "choices": [
       "Bone",
@@ -6553,7 +6501,7 @@
   },
   {
     "tier": 2,
-    "question": "With a bite harder than a great white shark's, Dunkleosteus sheared through even heavily armored prey. Yet a look inside its huge open mouth shows that one thing every shark has today is missing entirely. What did Dunkleosteus lack?",
+    "question": "With one of the strongest bites ever estimated for a fish, Dunkleosteus sheared through armored prey. Yet a look inside its huge open mouth shows that one thing every shark has today is missing entirely. What did Dunkleosteus lack?",
     "answer": "Teeth",
     "choices": [
       "Teeth",
@@ -6566,28 +6514,15 @@
   },
   {
     "tier": 4,
-    "question": "A great white shark bites with roughly 4,000 newtons of bone-cracking force. When Anderson and Westneat modeled Dunkleosteus in 2007, they found it concentrated an even fiercer force at the very tip of its bony blade. How hard did that blade tip bite?",
-    "answer": "About 5,300 newtons",
+    "question": "Hall and colleagues examined the fossil head plates of the armored fish Dunkleosteus, top predator of the Late Devonian seas, and found some marked with deep punctures and scrapes. Something had broken right through that thick armor. Which kind of attacker do those wounds fit?",
+    "answer": "One of its own kind",
     "choices": [
-      "About 5,300 newtons",
-      "About 4,400 newtons",
-      "About 2,500 newtons",
-      "About 8,000 newtons"
+      "One of its own kind",
+      "A large early shark",
+      "A giant sea scorpion",
+      "A big lobe-finned fish"
     ],
-    "context": "Anderson & Westneat (2007) modelled about 4,400 N (989 lb) at the cusps and 5,300 N (1,200 lb) at the blade tip — enough to snap through armor and bone. Source: Royal Society, Biology Letters, doi:10.1098/rsbl.2006.0569",
-    "topic": "dunkleosteus"
-  },
-  {
-    "tier": 4,
-    "question": "Hall and colleagues examined the fossil head plates of the armored fish Dunkleosteus and found some marked with deep punctures and scrapes. Those wounds fit the blade-edged jaws of another Dunkleosteus exactly. What does the evidence reveal about this top predator?",
-    "answer": "It ate its own kind",
-    "choices": [
-      "It ate its own kind",
-      "They locked jaws in ritual combat",
-      "They fought over shared carcasses",
-      "Mothers shielded young in their jaws"
-    ],
-    "context": "Hall et al. (2016) documented scrape and puncture marks on Dunkleosteus armor left by other Dunkleosteus — evidence it bit through the armor of its own kind, i.e. cannibalism. Source: fossilguy.com/gallery/vert/placoderm/dunkleosteus",
+    "context": "Hall and colleagues (2016) described scrape and puncture marks on Dunkleosteus head armor that match the bladed jaws of other Dunkleosteus, so it attacked its own kind. Their report offered the wounds as possible evidence of cannibalism, though fights between rivals could also explain them. Source: Hall et al. 2016, 'Possible evidence for cannibalism in the giant arthrodire Dunkleosteus' (conference abstract); Wikipedia 'Dunkleosteus' (puncture damage from the bony fangs of other Dunkleosteus); fossilguy.com/gallery/vert/placoderm/dunkleosteus",
     "topic": "dunkleosteus"
   },
   {
@@ -6956,7 +6891,7 @@
   },
   {
     "tier": 2,
-    "question": "A monotreme mother lays eggs the way a reptile does, yet scientists are certain she is a true mammal. Once her eggs hatch, she does one very mammal thing that settles the matter. What does she do for her young?",
+    "question": "An echidna mother lays an egg the way a reptile does, yet scientists are certain she is a true mammal. Once her egg hatches, she does one very mammal thing that settles the matter. What does she do for her young?",
     "answer": "Feeds her young on milk",
     "choices": [
       "Feeds her young on milk",
@@ -6973,9 +6908,9 @@
     "answer": "Up to about 2,000",
     "choices": [
       "Up to about 2,000",
-      "About 3 or 4",
-      "Exactly 12",
-      "Around 50"
+      "Up to about 200",
+      "Up to about 20",
+      "Up to about 20,000"
     ],
     "context": "A single male seahorse can release up to about 2,000 young at once, shooting them out of his brood pouch in bursts over hours of labour. Source: University of Sydney; Biology Insights 'How Many Babies Do Seahorses Give Birth To?'.  (Legend.)",
     "topic": "eggs-vs-live-birth"
@@ -7034,7 +6969,7 @@
   },
   {
     "tier": 4,
-    "question": "A frog stays chained to its pond because its naked jelly eggs dry out in the open. Then the first reptiles evolved an egg sealed inside a shell with four inner membranes, carrying its own supply within. That one invention branched into three great groups of backboned animals alive today. Which three?",
+    "question": "A frog stays chained to its pond because its naked jelly eggs dry out in the open. Then some early four-legged animals evolved an egg sealed inside a shell with four inner membranes, carrying its own supply within. That one invention branched into three great groups of backboned animals alive today. Which three?",
     "answer": "Reptiles, birds, and mammals",
     "choices": [
       "Reptiles, birds, and mammals",
@@ -7079,7 +7014,7 @@
       "Prey up to half its own size",
       "Only tiny insects and worms",
       "Prey no bigger than its barbels",
-      "Just algae scraped off rocks"
+      "Prey even larger than itself"
     ],
     "context": "The catfish hunts in the dark: it has tiny eyes and comes out for about 4 to 5 hours after sunset, firing bursts of shocks to paralyze fish, frogs, and other prey — and it can swallow prey up to half its own size. Source: Animal Diversity Web, Malapterurus electricus.",
     "topic": "electric-catfish-malapteruridae"
@@ -7108,19 +7043,6 @@
       "Its skin scales"
     ],
     "context": "Its electric organ evolved out of ordinary body muscle, turning millions of stacked flat cells called electroplaques into a shock-producing sheet (derived from anterior body musculature). Source: Wikipedia, Electric catfish; en-academic.com electric catfish entry.",
-    "topic": "electric-catfish-malapteruridae"
-  },
-  {
-    "tier": 3,
-    "question": "Egypt's very first pharaoh united the two lands around 3100 BC. His famous Narmer Palette carries his royal name spelled with just two picture-signs, an animal and a chisel. Which creature is that first sign, making the founder-king literally '_____-Chisel'?",
-    "answer": "A catfish",
-    "choices": [
-      "A catfish",
-      "A crocodile",
-      "A heron",
-      "A hippopotamus"
-    ],
-    "context": "Egypt's first pharaoh, Narmer (around 3100 BC), was named after a catfish: his name is written with two signs, 'n'r' (catfish) and 'mr' (chisel) — so the first king of a united Egypt was literally 'Catfish-Chisel,' and the catfish appears on his famous Narmer Palette. Egyptians recorded the electric catfish this early — carving it into tomb walls at Saqqara, including the Mastaba of Ti, more than 4,000 years ago — long before anyone understood electricity. Source: Wikipedia, Narmer Palette; National Geographic, 'Egypt's first pharaohs loved catfish — and worshipped them.'  (Legend.)",
     "topic": "electric-catfish-malapteruridae"
   },
   {
@@ -7242,15 +7164,15 @@
   },
   {
     "tier": 5,
-    "question": "Alexander von Humboldt wrote of electric eels leaping from a pool at about 30 horses driven into it, two of which were stunned and drowned. That was in 1800, and for roughly 200 years scientists dismissed the tale. What finally became of Humboldt's story?",
-    "answer": "Catania's leaping study proved it true",
+    "question": "Alexander von Humboldt told how, in 1800, electric eels leaped from a pool at about 30 horses driven into it, and two of the horses were stunned and drowned. For roughly 200 years scientists dismissed the tale. What finally became of Humboldt's story?",
+    "answer": "Catania's study showed it could be true",
     "choices": [
-      "Catania's leaping study proved it true",
+      "Catania's study showed it could be true",
       "New records proved it exaggerated",
       "It was traced to a mistranslation",
       "No eel was ever found there again"
     ],
-    "context": "Humboldt's account of eels battling horses was mocked as 'tommyrot' for two centuries, until Kenneth Catania's discovery that electric eels leap to shock threats above the water showed the story was plausible after all. Source: PNAS, Leaping eels electrify threats (https://www.pnas.org/doi/10.1073/pnas.1604009113).  (Legend.)",
+    "context": "Humboldt's account of eels battling horses was dismissed for two centuries, until Kenneth Catania's discovery that electric eels leap to shock threats above the water showed the story was plausible after all. Source: Catania 2016, PNAS, 'Leaping eels electrify threats, supporting Humboldt's account of a battle with horses' (https://www.pnas.org/doi/10.1073/pnas.1604009113).",
     "topic": "electric-eel"
   },
   {
@@ -7281,15 +7203,15 @@
   },
   {
     "tier": 3,
-    "question": "A great white shark closes on a thrashing seal, a camera fixed to its body recording every frame of the strike. In the last instant before its jaws close, it does something that looks reckless, giving up one of its senses just when it seems to need it most. What does the shark do just before the bite?",
-    "answer": "It snaps its eyes shut and finishes the strike blind",
+    "question": "A great white shark closes on a thrashing seal, a camera recording every frame of the strike. In the last instant before its jaws close, it does something that looks reckless, giving up one of its senses just when it seems to need it most. What does the shark do just before the bite?",
+    "answer": "It shields its eyes and finishes the strike blind",
     "choices": [
-      "It snaps its eyes shut and finishes the strike blind",
+      "It shields its eyes and finishes the strike blind",
       "It rolls completely upside down",
       "It stops swimming and drifts in",
       "It flares its gills wide open"
     ],
-    "context": "In the final second before biting, a shark often closes its eyes to protect them from a thrashing meal — a protective reflex filmed by high-speed cameras. With its vision shut off, it steers the last strike purely by the electric sense of its ampullae. LEGEND. Source: americanscientist.org, 'The Discovery of the Shark's Electric Sense'.",
+    "context": "In the final second before biting, a shark shields its eyes from a thrashing meal, a protective reflex caught on camera. With its vision shut off, it steers the last strike by the electric sense of its ampullae. Source: americanscientist.org, 'The Discovery of the Shark's Electric Sense'.",
     "topic": "electroreception-reading-the-body-electric"
   },
   {
@@ -7307,7 +7229,7 @@
   },
   {
     "tier": 4,
-    "question": "A bumblebee lands on a flower that carries a faint static charge, and the bee can tell. Clarke's team showed in 2013 that bumblebees sense that weak charge, the first electric sense ever found in an insect. Through what part of its body does the bee detect it?",
+    "question": "A bumblebee lands on a flower that carries a faint static charge, and the bee can tell. Clarke's team showed in 2013 that bumblebees sense that weak charge, and in 2016 the same Bristol group found out how. Through what part of its body does the bee detect it?",
     "answer": "Its body hairs, which bend in the presence of the charge",
     "choices": [
       "Its body hairs, which bend in the presence of the charge",
@@ -7315,20 +7237,20 @@
       "Its compound eyes, which see the charge as a glow",
       "Its wings, which vibrate faster near a charge"
     ],
-    "context": "Clarke, Whitney, Sutton and Robert reported in Science (2013) that bumblebees sense the weak static electric charge a flower carries — the first electroreception ever shown in an insect — detected through their body hairs, which bend in the charge's presence. LEGEND. Source: Clarke et al., 'Detection and Learning of Floral Electric Fields by Bumblebees', Science (Apr 5, 2013).",
+    "context": "Clarke, Whitney, Sutton and Robert reported in Science (2013) that bumblebees sense the weak static charge a flower carries. In 2016 Sutton, Clarke, Morley and Robert showed in PNAS that the bee's mechanosensory body hairs bend in the field and fire nerve signals; the antennae move less and send no signal. Source: Clarke et al., 'Detection and Learning of Floral Electric Fields by Bumblebees', Science (2013); Sutton et al., 'Mechanosensory hairs in bumblebees (Bombus terrestris) detect weak electric fields', PNAS 113:7261 (2016).",
     "topic": "electroreception-reading-the-body-electric"
   },
   {
     "tier": 5,
     "question": "Josberger and colleagues tested the clear jelly that fills the ampullae of Lorenzini, the pores that carry a shark's electric sense inward. The jelly is about 97 percent water, yet their 2016 measurement of how well it moves electric charge gave a result nobody expected from ordinary animal goo. What did they find?",
-    "answer": "It conducts protons better than almost any material on Earth, rivaling engineered fuel-cell polymer",
+    "answer": "It conducts protons better than any other biological material that scientists have yet tested",
     "choices": [
-      "It conducts protons better than almost any material on Earth, rivaling engineered fuel-cell polymer",
+      "It conducts protons better than any other biological material that scientists have yet tested",
       "It conducts electrons swiftly yet blocks protons entirely, unlike any known biological tissue",
       "It insulates so completely that the signal must instead creep along the walls of the pore",
       "It shuttles charge only in one direction, acting like a living diode that bars any reverse flow"
     ],
-    "context": "The jelly filling the ampullae of Lorenzini is about 97% water, yet Josberger et al. (2016) measured its proton conductivity at only ~40 times below Nafion, the best synthetic proton-conducting polymer humans have engineered for fuel cells - making it the most proton-conductive biological material ever found. The conduction comes from a polyglycan, keratan sulfate, donating protons into the watery gel. So the shark's electric antenna is wired with a natural super-conductor of protons. Source: Josberger, Hassanzadeh, Deng, Sohn, Rego, Amemiya & Rolandi (2016), 'Proton conductivity in ampullae of Lorenzini jelly', Science Advances 2:e1600112, https://www.science.org/doi/10.1126/sciadv.1600112 ; UW News https://www.washington.edu/news/2016/05/13/proton-conducting-material-found-in-jelly-that-fills-organs-of-sharks-skates-and-rays/",
+    "context": "The jelly filling the ampullae of Lorenzini is about 97% water, yet Josberger et al. (2016) measured its proton conductivity at only ~40 times below Nafion, the best synthetic proton-conducting polymer humans have engineered for fuel cells - making it the most proton-conductive biological material ever found. The conduction comes from a polyglycan, keratan sulfate, donating protons into the watery gel. Source: Josberger, Hassanzadeh, Deng, Sohn, Rego, Amemiya & Rolandi (2016), 'Proton conductivity in ampullae of Lorenzini jelly', Science Advances 2:e1600112, https://www.science.org/doi/10.1126/sciadv.1600112 ; UW News https://www.washington.edu/news/2016/05/13/proton-conducting-material-found-in-jelly-that-fills-organs-of-sharks-skates-and-rays/",
     "topic": "electroreception-reading-the-body-electric"
   },
   {
