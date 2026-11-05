@@ -9140,15 +9140,15 @@
   },
   {
     "tier": 3,
-    "question": "A teacher types up a list of deadlines four ways. Which version punctuates the list correctly?",
-    "answer": "'Deadlines are July 4, 1776; December 7, 1941; and September 11, 2001.'",
+    "question": "A teacher types up the dates for a history quiz four ways. Which version punctuates the list correctly?",
+    "answer": "'The quiz covers July 4, 1776; December 7, 1941; and September 11, 2001.'",
     "choices": [
-      "'Deadlines are July 4, 1776; December 7, 1941; and September 11, 2001.'",
-      "'Deadlines are July 4, 1776, December 7, 1941, and September 11, 2001.'",
-      "'Deadlines are July 4, 1776: December 7, 1941: and September 11, 2001.'",
-      "'Deadlines are July 4, 1776. December 7, 1941. And September 11, 2001.'"
+      "'The quiz covers July 4, 1776; December 7, 1941; and September 11, 2001.'",
+      "'The quiz covers July 4, 1776, December 7, 1941, and September 11, 2001.'",
+      "'The quiz covers July 4, 1776: December 7, 1941: and September 11, 2001.'",
+      "'The quiz covers July 4, 1776. December 7, 1941. And September 11, 2001.'"
     ],
-    "context": "Dates contain commas (July 4, 1776). Using commas between them too would blur the boundaries. Semicolons keep the three deadlines distinct. Source: Chicago Manual of Style 17e section 6.60.",
+    "context": "Dates contain commas (July 4, 1776). Using commas between them too would blur the boundaries. Semicolons keep the three dates distinct. Source: Chicago Manual of Style 17e section 6.60.",
     "topic": "semicolons-as-super-commas-in-complex-lists"
   },
   {
@@ -11655,7 +11655,7 @@
       "mathematics (\"mathematics IS my favorite subject\")",
       "politics (\"politics ARE always about people\")",
       "acoustics (\"the acoustics ARE good in here\")",
-      "ethics (\"ethics ARE relative\")"
+      "ethics (\"ethics ARE a required course\")"
     ],
     "context": "-ICS subject names look plural but are singular: MATHEMATICS IS, PHYSICS IS, POLITICS IS. Also THE NEWS IS ON at six.",
     "topic": "titles-of-works-the-new-york-times-is-a-newspaper"
