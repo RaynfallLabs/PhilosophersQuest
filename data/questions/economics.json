@@ -9270,19 +9270,6 @@
   },
   {
     "tier": 1,
-    "question": "An inventor calling himself Satoshi Nakamoto set Bitcoin running in January 2009. It exists only as computer code, no government issues it, and machines solving math puzzles keep its ledger instead of a bank. What is money like that called?",
-    "answer": "Cryptocurrency",
-    "choices": [
-      "Cryptocurrency",
-      "A stablecoin",
-      "A stock",
-      "A treasury bond"
-    ],
-    "context": "Hal Finney (1956-2014) was a cryptographer at PGP Corporation who had spent the 1990s and 2000s writing PGP's encryption code. His January 11 2009 tweet: 'Running bitcoin.' Source: en.wikipedia.org/wiki/Hal_Finney_(computer_scientist).",
-    "topic": "hal-finney-first-node-first-transaction-final-letter"
-  },
-  {
-    "tier": 1,
     "question": "Hal Finney posted a two-word tweet on January 11, 2009, about what his computer was busy doing. The Bitcoin network had gone live only days earlier. What did the tweet say?",
     "answer": "Running bitcoin",
     "choices": [
@@ -9300,11 +9287,11 @@
     "answer": "It proved the new digital money actually worked as designed",
     "choices": [
       "It proved the new digital money actually worked as designed",
-      "It made both programmers instantly rich forever",
-      "It was declared legal currency by the United States",
-      "It replaced credit cards worldwide within a month"
+      "It set the first price for bitcoin in US dollars",
+      "It was the first purchase of real goods with bitcoin",
+      "It moved the first coins onto a trading exchange"
     ],
-    "context": "Block 170 contains the first Bitcoin transaction between two distinct parties (Satoshi to Finney, 10 BTC). Every earlier transaction had been Satoshi mining and paying himself. Source: blockchain.info/block-height/170.",
+    "context": "Block 170 holds the first Bitcoin transaction between two different people: Satoshi sent Finney 10 BTC on January 12, 2009. Every earlier coin had come from mining. Bitcoin's first dollar price and its first purchase of goods, two pizzas in May 2010, came later. Source: en.wikipedia.org/wiki/Hal_Finney_(computer_scientist).",
     "topic": "hal-finney-first-node-first-transaction-final-letter"
   },
   {
@@ -9335,15 +9322,15 @@
   },
   {
     "tier": 5,
-    "question": "Hal Finney had been there at Bitcoin's very start, receiving the first bitcoins ever sent from one person to another, so many accused him of secretly being Satoshi Nakamoto himself. Two lines of evidence rule that out. Which pair?",
-    "answer": "His own explicit denial, plus timeline evidence that he was training for a marathon while Satoshi was posting",
+    "question": "Hal Finney had been there at Bitcoin's very start, receiving the first bitcoins ever sent from one person to another, so many accused him of secretly being Satoshi Nakamoto himself. Two lines of evidence weigh hard against it. Which pair?",
+    "answer": "His own plain denial, plus a 10-mile race he ran while Satoshi was sending emails",
     "choices": [
-      "His own explicit denial, plus timeline evidence that he was training for a marathon while Satoshi was posting",
+      "His own plain denial, plus a 10-mile race he ran while Satoshi was sending emails",
       "His documented US citizenship, plus the fact that Satoshi's writing style was clearly non-American",
       "His public retirement announcement, plus his stated preference for gold-backed money over digital cash",
       "His employer's NDA obligations, plus his lack of interest in cryptographic proofs"
     ],
-    "context": "Finney explicitly denied being Satoshi. Timing evidence: he was training for a marathon and posting run-times during periods Satoshi was posting emails elsewhere; forensic-text analysis has not matched. Source: newyorker.com (Andy Greenberg profile, 2014).",
+    "context": "Finney denied plainly that he was Satoshi. In 2023 the Bitcoin developer Jameson Lopp set the results of a 10-mile race Finney ran in Santa Barbara on April 18, 2009 beside emails Satoshi was sending in the same hour. Andy Greenberg, who read Finney's emails with Satoshi for Forbes in 2014, also concluded that Finney was telling the truth. Source: blog.lopp.net/hal-finney-was-not-satoshi-nakamoto/.",
     "topic": "hal-finney-first-node-first-transaction-final-letter"
   },
   {
@@ -9426,28 +9413,28 @@
   },
   {
     "tier": 1,
-    "question": "Satoshi Nakamoto wrote a rule into Bitcoin's code: about every four years, the reward a miner earns for adding a block of transactions shrinks automatically, on a schedule anyone can see decades ahead. What is this scheduled event called?",
-    "answer": "The halving",
+    "question": "Bitcoin's price has swung on a rough four-year beat since 2012, its biggest peaks mostly coming a year or so after one scheduled event. Which event?",
+    "answer": "The halving of the miners' reward",
     "choices": [
-      "The halving",
-      "The retarget",
-      "The airdrop",
-      "The fork"
+      "The halving of the miners' reward",
+      "A scheduled upgrade of Bitcoin's code",
+      "The renewal of the miners' licenses",
+      "The regular reset of mining difficulty"
     ],
-    "context": "The halvings occurred in November 2012 (50 to 25 BTC per block), July 2016 (25 to 12.5), May 2020 (12.5 to 6.25), and April 2024 (6.25 to 3.125). The schedule caps the total supply at 21 million. Source: grokipedia.com/page/Bitcoin_halving.",
+    "context": "The halvings came in November 2012, July 2016, May 2020 and April 2024, each cutting the new coins paid for a block in half, and the big price peaks mostly followed a halving by twelve to eighteen months. Mining difficulty, by contrast, resets about every two weeks. Source: grokipedia.com/page/Bitcoin_halving.",
     "topic": "halving-cycles-and-market-patterns"
   },
   {
     "tier": 2,
-    "question": "An analyst marks five big peaks on a chart of Bitcoin's price since 2009, in a rough four-year rhythm, most of them a year to a year and a half after a halving of the mining reward. Which sequence gives the approximate peak prices in the right years?",
-    "answer": "About $30 in 2011, $1,100 in 2013, $20,000 in 2017, $69,000 in 2021, over $100,000 in 2024",
+    "question": "An analyst marks five big peaks on a chart of Bitcoin's price since 2009, in a rough four-year rhythm. Which sequence gives the approximate peak prices in the right years?",
+    "answer": "About $30 in 2011, $1,100 in 2013, $20,000 in 2017, $69,000 in 2021, $126,000 in 2025",
     "choices": [
-      "About $30 in 2011, $1,100 in 2013, $20,000 in 2017, $69,000 in 2021, over $100,000 in 2024",
-      "About $500 in 2011, $5,000 in 2013, $50,000 in 2017, $500,000 in 2021, $1 million in 2024",
-      "About $30 in 2015, $1,000 in 2018, $20,000 in 2020, $69,000 in 2022, $100,000 in 2025",
-      "About $100 in 2011, $10,000 in 2013, $100,000 in 2017, $500,000 in 2021, $1 million in 2024"
+      "About $30 in 2011, $1,100 in 2013, $20,000 in 2017, $69,000 in 2021, $126,000 in 2025",
+      "About $500 in 2011, $5,000 in 2013, $50,000 in 2017, $500,000 in 2021, $1 million in 2025",
+      "About $30 in 2010, $1,100 in 2012, $20,000 in 2016, $69,000 in 2020, $126,000 in 2024",
+      "About $100 in 2011, $10,000 in 2013, $100,000 in 2017, $500,000 in 2021, $1 million in 2025"
     ],
-    "context": "Each peak followed a halving by roughly 12-18 months, until the 2024-25 cycle, which peaked faster (about 8 months after the April 2024 halving) partly due to spot ETF flows. Source: grokipedia.com/page/History_of_Bitcoin.",
+    "context": "The peaks of 2013, 2017 and 2021 each followed a halving by roughly 12 to 18 months, and so did the record of about $126,000 on October 6, 2025, some 18 months after the April 2024 halving. What was new in 2024 is that Bitcoin passed its 2021 record in March, a month before the halving, which no earlier cycle had done, helped by buying through the new US spot ETFs. Source: grokipedia.com/page/Bitcoin.",
     "topic": "halving-cycles-and-market-patterns"
   },
   {
@@ -9478,15 +9465,15 @@
   },
   {
     "tier": 3,
-    "question": "A first-time Bitcoin holder in 2025 notices that big rallies have come near each halving, on a rough four-year beat since 2012. He asks whether that past pattern guarantees another peak on schedule. What is the honest analytical answer?",
-    "answer": "The past cycles are real observations, but the 2024-25 cycle already broke the pattern -- past patterns do not guarantee future ones",
+    "question": "A first-time Bitcoin holder in 2025 reads that the coin's big rallies have come on a rough four-year beat since 2012, and he wonders whether he can count on the next one. He asks whether that past pattern guarantees another peak on schedule. What is the honest analytical answer?",
+    "answer": "The cycles are real, but the latest broke the pattern; the past guarantees nothing",
     "choices": [
-      "The past cycles are real observations, but the 2024-25 cycle already broke the pattern -- past patterns do not guarantee future ones",
-      "The pattern is mathematically certain and holders can time purchases from the halving date",
-      "The pattern was refuted by the stock-to-flow model and Bitcoin is now in permanent decline",
-      "The pattern only applies to gold, not to Bitcoin, so no forecast is possible"
+      "The cycles are real, but the latest broke the pattern; the past guarantees nothing",
+      "The pattern is mathematically certain, so holders can time buys from the halving",
+      "The stock-to-flow model refuted the pattern, so Bitcoin is in permanent decline",
+      "The pattern applies only to gold, not to Bitcoin, so no forecast is possible"
     ],
-    "context": "Recognizing the historical shape is teachable; treating it as a guaranteed forecast is not. The 2024-25 cycle compressed the timing and added spot-ETF demand as a structural factor prior cycles lacked. Source: grokipedia.com/page/Bitcoin.",
+    "context": "Recognizing the historical shape is teachable; treating it as a guaranteed forecast is not. The 2024 cycle broke the old pattern by setting a record before its halving, though its October 2025 top came on the old schedule, and it added spot-ETF demand as a structural factor earlier cycles lacked. Source: grokipedia.com/page/Bitcoin.",
     "topic": "halving-cycles-and-market-patterns"
   },
   {
@@ -9608,15 +9595,15 @@
   },
   {
     "tier": 1,
-    "question": "Ludwig von Mises put a hard challenge to the socialists in 1920. Abolish markets and prices, and one office in the capital must decide each year how many boots, coats, tractors and pencils the whole nation will make. With nothing bought or sold, the officials cannot tell what people want or which materials run short. What is this obstacle called?",
+    "question": "Ludwig von Mises challenged the socialists in 1920. Abolish markets and prices, and one office in the capital must decide each year how many boots, coats, tractors and pencils the nation makes. Which problem did Mises say that office could never solve?",
     "answer": "The calculation problem",
     "choices": [
       "The calculation problem",
+      "The incentive problem",
       "The free-rider problem",
-      "The bank-run problem",
-      "The population problem"
+      "The principal-agent problem"
     ],
-    "context": "Hayek, teaching at LSE since 1931, assembled and edited the volume Collectivist Economic Planning (Routledge, 1935) to bring the German-language debate into English. Source: grokipedia.com/page/Collectivist_Economic_Planning.",
+    "context": "Mises argued in 1920 that without market prices for factories, machines and materials, a planning office has no way to compare one use of them with another, so it cannot plan rationally: the calculation problem. Hayek brought the essay into English in Collectivist Economic Planning (Routledge, 1935). Source: grokipedia.com/page/Collectivist_Economic_Planning.",
     "topic": "hayeks-collectivist-economic-planning-1935"
   },
   {
@@ -9638,9 +9625,9 @@
     "answer": "No planner could ever gather all that information in time",
     "choices": [
       "No planner could ever gather all that information in time",
-      "The equations worked perfectly whenever tried",
-      "Computers turned out to be too fast for it",
-      "Prices set themselves without any effort"
+      "Workers would not toil without the hope of profit",
+      "Officials would bend the prices to favor their friends",
+      "Foreign trade would upset any plan the board made"
     ],
     "context": "Enrico Barone's 1908 essay outlined an equilibrium theory of a planned economy that Lange would later develop; Barone was actually closer to the eventual market-socialist reply than to Mises's position. Source: grokipedia.com/page/Collectivist_Economic_Planning.",
     "topic": "hayeks-collectivist-economic-planning-1935"
@@ -9660,20 +9647,7 @@
   },
   {
     "tier": 1,
-    "question": "A Newsweek reader opened the magazine in 1966 to Henry Hazlitt's Business Tides column, as readers had for twenty years. He could cancel his subscription on any day and take his money elsewhere. What system, built on voluntary buying and selling, kept the magazine working so hard to please him?",
-    "answer": "Market competition",
-    "choices": [
-      "Market competition",
-      "Central planning",
-      "A government subsidy",
-      "A price ceiling"
-    ],
-    "context": "Hazlitt's 'Business Tides' column ran in Newsweek from 1946 to 1966; Milton Friedman later took a similar Newsweek slot in 1966, calling Hazlitt the model. Source: mises.org/library/portrait-henry-hazlitt.",
-    "topic": "hazlitts-economics-in-one-lesson-bastiat-in-american-english"
-  },
-  {
-    "tier": 2,
-    "question": "Henry Hazlitt dedicated a short book to Frédéric Bastiat in 1946, nearly a century after the French pamphleteer died. It walked Bastiat's test of hidden costs through New Deal and postwar policy, one chapter at a time, and it has sold over a million copies and stayed in print ever since. What is the book?",
+    "question": "Henry Hazlitt, a newspaperman, named Frédéric Bastiat his greatest debt in a short book of 1946 that has sold over a million copies and never gone out of print. What is the book?",
     "answer": "Economics in One Lesson",
     "choices": [
       "Economics in One Lesson",
@@ -9681,7 +9655,7 @@
       "The Failure of the New Economics",
       "The Foundations of Morality"
     ],
-    "context": "First issued by Harper & Brothers in 1946, then Arlington House in 1979; the dedication reads 'To Frederic Bastiat, 1801-1850.' It is Bastiat's essay 'That Which is Seen and That Which is Not Seen' in modern American English, and it has never gone out of print.",
+    "context": "First issued by Harper & Brothers in 1946, with a revised edition from Arlington House in 1979. In the preface Hazlitt names Bastiat's essay What Is Seen and What Is Not Seen as his greatest debt for the book's framework, and the book carries that method into modern American English. Source: fee.org/ebooks/economics-in-one-lesson/.",
     "topic": "hazlitts-economics-in-one-lesson-bastiat-in-american-english"
   },
   {
@@ -9707,7 +9681,7 @@
       "The Way to Will Power",
       "The Great Idea"
     ],
-    "context": "The 1959 book is the closest thing to a full Austrian-tradition rebuttal of the General Theory, section by section; Hazlitt also edited The Critics of Keynesian Economics (1960), an anthology of every major published critique. Source: mises.org/library/failure-new-economics.",
+    "context": "The 1959 book is the closest thing to a full Austrian-tradition rebuttal of the General Theory, section by section; Hazlitt also edited The Critics of Keynesian Economics (1960), an anthology of earlier critiques. Source: mises.org/library/failure-new-economics.",
     "topic": "hazlitts-economics-in-one-lesson-bastiat-in-american-english"
   },
   {
@@ -9720,20 +9694,20 @@
       "A necessary reminder",
       "A worthy attempt"
     ],
-    "context": "John Chamberlain gave it the Wall Street Journal review; F.A. Hayek's 'a brilliant performance' has adorned the back cover of most editions since. Source: fee.org/resources/economics-in-one-lesson.",
+    "context": "F.A. Hayek's verdict, 'a brilliant performance', has been printed on later editions of the book. Source: fee.org/resources/economics-in-one-lesson.",
     "topic": "hazlitts-economics-in-one-lesson-bastiat-in-american-english"
   },
   {
     "tier": 3,
-    "question": "Milton Friedman and Ron Paul each told newcomers to start with Henry Hazlitt's short book of 1946. Hazlitt had taken Frédéric Bastiat's hunt for hidden costs and boiled it down to one rule in a single sentence. What does the rule tell a reader to do with any proposed policy?",
-    "answer": "Trace the consequences not just for one group and not just at the immediate moment, but for all groups over time",
+    "question": "Henry Hazlitt, a New York Times editorial writer, carried Frédéric Bastiat's method into a short book of 1946, and he boiled the whole method down to one rule in a single sentence. What does the rule tell a reader to do with any proposed policy?",
+    "answer": "Trace its effects not only on one group or right away, but on all groups and over time",
     "choices": [
-      "Trace the consequences not just for one group and not just at the immediate moment, but for all groups over time",
-      "Sum the private benefits and subtract them from the private costs the sponsors disclose in advance",
-      "Compare the proposed policy against a randomly-selected historical policy of the same category",
-      "Accept the sponsors' stated aggregate multiplier and evaluate against that benchmark"
+      "Trace its effects not only on one group or right away, but on all groups and over time",
+      "Judge it by the good its sponsors intend for the group it was written to help",
+      "Count every dollar it spends as new income that ripples out through the economy",
+      "Test it first in one town and spread it only if the results hold up"
     ],
-    "context": "This is Hazlitt's 'one lesson' verbatim from chapter 1: extend the analysis in TIME (past the immediate effect) and in SCOPE (past the visible group). The mistake it warns against is judging a policy only by its short-term help to one favored group; every remaining chapter applies it to a New Deal or postwar policy.",
+    "context": "Hazlitt's 'one lesson' from chapter 1, in paraphrase: look past the immediate effect of a policy to its longer effects, and past the favored group to all groups. Every later chapter applies it to a New Deal or postwar policy. Source: en.wikipedia.org/wiki/Economics_in_One_Lesson.",
     "topic": "hazlitts-economics-in-one-lesson-bastiat-in-american-english"
   },
   {
@@ -9881,28 +9855,15 @@
   },
   {
     "tier": 4,
-    "question": "Ludwig von Mises reached America in 1940 and took an unpaid visiting post at New York University, since his views were out of fashion in the academy. For many years the William Volker Fund covered his salary instead. What is this way of paying a scholar the universities will not pay called?",
-    "answer": "Private philanthropy",
-    "choices": [
-      "Private philanthropy",
-      "Government grant funding",
-      "Student tuition",
-      "Corporate advertising"
-    ],
-    "context": "The Kansas City-based William Volker Fund quietly financed several classical-liberal appointments (Hayek at Chicago's Committee on Social Thought, Mises at NYU) that the mainstream foundations would not touch. The Rockefeller, Ford, and Carnegie foundations were the era's dominant funders but tilted toward the postwar Keynesian and behavioral-science consensus. Source: mises.org/mises-wire/anonymous-funding-academic-right-william-volker-and-henry-earhart.",
-    "topic": "human-action-1949-misess-magnum-opus"
-  },
-  {
-    "tier": 4,
     "question": "Murray Rothbard and his teacher Ludwig von Mises argued that a truly lasting monopoly is almost always the child of government. Suppose no law blocks rivals, and one giant company keeps its prices very high. What tends to happen next in the market?",
     "answer": "New competitors enter and undercut the price",
     "choices": [
       "New competitors enter and undercut the price",
-      "The company holds high prices forever",
-      "The government must always break it up first",
-      "Prices only rise even faster"
+      "The giant's size keeps any rival from starting up",
+      "Buyers keep paying, since they have nowhere to go",
+      "The giant buys up each rival as soon as it appears"
     ],
-    "context": "Murray Rothbard's Man, Economy, and State (1962) was the direct fruit of the NYU seminar and the Volker commission. The Constitution of Liberty (1960) was Hayek's; Prices and Production (1931) was Hayek's LSE lectures; Capital and Interest (1884-1889) was Boehm-Bawerk's earlier three-volume work. Source: en.wikipedia.org/wiki/Man,_Economy,_and_State.",
+    "context": "Mises and Rothbard argued that high prices and fat profits draw in new rivals unless a law keeps them out, so a monopoly that lasts is almost always one the state protects. Source: en.wikipedia.org/wiki/Man,_Economy,_and_State.",
     "topic": "human-action-1949-misess-magnum-opus"
   },
   {
@@ -9928,67 +9889,41 @@
       "the compendium",
       "the manifesto"
     ],
-    "context": "The book's subtitle already announced it ('A Treatise on Economics'); inside the tradition the definite article is enough. Ayn Rand's Atlas Shrugged is 'the novel'; Marx's Capital is 'Kapital'; Mises's Human Action is 'the treatise.' Source: fee.org/articles/ludwig-von-misess-human-action-a-50th-anniversary-appreciation.",
+    "context": "The book's subtitle already announced it ('A Treatise on Economics'); inside the tradition the definite article is enough. Source: fee.org/articles/ludwig-von-misess-human-action-a-50th-anniversary-appreciation.",
     "topic": "human-action-1949-misess-magnum-opus"
   },
   {
     "tier": 1,
-    "question": "The Reagan administration held back in 1981 from taxing every imported car, though Japanese compacts from Toyota and Honda were selling in record numbers and Detroit was cutting jobs. It pressed Japan to cap its own shipments instead, and Japan agreed. What kind of trade limit is this?",
+    "question": "The Reagan administration held back in 1981 from taxing every imported car, though Japanese compacts were selling in record numbers and Detroit was cutting jobs. It pressed Japan to cap its own shipments instead, and Japan agreed. What kind of trade limit is this?",
     "answer": "A voluntary export restraint",
     "choices": [
       "A voluntary export restraint",
-      "A blockade",
-      "A currency swap",
-      "A patent"
+      "A domestic-content law",
+      "A trade embargo",
+      "An export subsidy"
     ],
     "context": "Called 'voluntary' because Japan self-imposed the cap under diplomatic pressure, avoiding a formal US tariff. The cap was renegotiated upward through the 1980s and formally ended in 1994. Source: grokipedia.com/page/Voluntary_export_restraint.",
     "topic": "import-quotas-the-1980s-japanese-auto-ver"
   },
   {
-    "tier": 2,
-    "question": "Detroit's big automakers, losing sales fast to Toyota, Honda and Nissan, asked Washington for help around 1980. In 1981 Japan agreed, under pressure from the Reagan administration, to a hard yearly cap on the cars it shipped to America. About how many cars a year did the cap allow at first?",
-    "answer": "About 1.68 million",
-    "choices": [
-      "About 1.68 million",
-      "About 500,000",
-      "About 3.2 million",
-      "About 800,000"
-    ],
-    "context": "Below the roughly 1.9 million Japanese cars sold in the US in 1980. The cap was raised to 1.85 million in 1984 and to 2.3 million in 1985 as Detroit stabilized. Source: grokipedia.com/page/Voluntary_export_restraint.",
-    "topic": "import-quotas-the-1980s-japanese-auto-ver"
-  },
-  {
-    "tier": 2,
-    "question": "American politicians pushed Japan in 1981 to cap how many of its cars could be sold in America each year. The cap protected three home-grown giants of Detroit, which were losing sales to cheaper, fuel-efficient imports like the Toyota Corolla and the Honda Civic. Which three companies were being protected?",
-    "answer": "General Motors, Ford, and Chrysler",
-    "choices": [
-      "General Motors, Ford, and Chrysler",
-      "Boeing, Lockheed, and Northrop",
-      "US Steel, Bethlehem, and Republic",
-      "Kodak, Polaroid, and Xerox"
-    ],
-    "context": "Detroit's Big Three. United Auto Workers jobs in Michigan, Ohio, and Indiana were the politically visible beneficiaries; the Reagan administration framed the deal as breathing space for domestic industry. Source: grokipedia.com/page/Trade_policy_of_the_Reagan_administration.",
-    "topic": "import-quotas-the-1980s-japanese-auto-ver"
-  },
-  {
     "tier": 3,
-    "question": "Robert Crandall, an economist at the Brookings Institution, worked out in 1987 how much Japan's 1981 cap on car shipments to America had raised what Americans paid for an average car. In 1983 dollars, about how much was it per car?",
-    "answer": "About $1,000 per car",
+    "question": "Japan capped its car shipments to America in 1981, and Japanese cars grew dearer. Families who bought a Ford or a Chevrolet instead paid more as well, though no tax had touched their cars. Why did Detroit's own cars cost more?",
+    "answer": "With fewer imports to fear, Detroit could raise its prices",
     "choices": [
-      "About $1,000 per car",
-      "About $50 per car",
-      "About $200 per car",
-      "About $8,000 per car"
+      "With fewer imports to fear, Detroit could raise its prices",
+      "A steel shortage raised the cost of building every car",
+      "Autoworkers won big raises in new contracts",
+      "A falling dollar made every car dearer to build"
     ],
-    "context": "Later Feenstra work and the Berry-Levinsohn-Pakes 1999 AER paper put the total consumer cost at $5-8 billion per year. Domestic makers raised prices under the umbrella of reduced import competition. Source: grokipedia.com/page/Robert_Crandall.",
+    "context": "Robert Crandall of the Brookings Institution estimated that the restraint raised the prices of American-made cars as well as Japanese ones: with fewer Japanese cars to compete against, Detroit could charge more. Later studies put the total cost to American buyers in the billions of dollars. Source: en.wikipedia.org/wiki/Voluntary_export_restraint.",
     "topic": "import-quotas-the-1980s-japanese-auto-ver"
   },
   {
     "tier": 4,
     "question": "Robert Feenstra documented in 1988 how Honda's Accord, Toyota's Camry and Nissan's Maxima grew bigger, plusher and costlier under Japan's cap on car shipments to America, while the cheap little hatchback nearly vanished. Which feature of the cap caused that shift?",
-    "answer": "The cap was set in vehicles rather than in dollars, so each unit had to earn more profit",
+    "answer": "The cap counted cars, not dollars, so each car had to earn more profit",
     "choices": [
-      "The cap was set in vehicles rather than in dollars, so each unit had to earn more profit",
+      "The cap counted cars, not dollars, so each car had to earn more profit",
       "A separate side-agreement banned imports below a set retail price",
       "American dealers refused to stock any small Japanese cars",
       "The Reagan administration imposed emissions rules only on smaller vehicles"
@@ -10002,11 +9937,11 @@
     "answer": "To the foreign carmakers as extra profit per car",
     "choices": [
       "To the foreign carmakers as extra profit per car",
-      "To the buying country's treasury as import tax",
-      "To car dealerships as sales commissions",
-      "To the buying country's autoworker union"
+      "To Japan's government as a fee on each car",
+      "To Detroit's carmakers as a share of each sale",
+      "To the autoworkers' union as a jobs fund"
     ],
-    "context": "This is called quota rent. Feenstra estimated roughly $2,000 of quota rent per car flowed to the Japanese producers. An equivalent tariff would have collected the same revenue for the US Treasury; the VER simply transferred it to the foreign producers the policy claimed to punish. Source: grokipedia.com/page/Voluntary_export_restraint.",
+    "context": "This is called quota rent. An equivalent tariff would have sent that money to the US Treasury; under the restraint, the scarcity premium on each car went to the Japanese companies, the very producers the policy was meant to hold back. Source: grokipedia.com/page/Voluntary_export_restraint.",
     "topic": "import-quotas-the-1980s-japanese-auto-ver"
   },
   {
@@ -10021,19 +9956,6 @@
     ],
     "context": "Bastiat's 1850 essay 'That Which Is Seen and That Which Is Not Seen' set the pattern: any policy has a visible beneficiary and an invisible one who bears the cost. The auto VER had three unseens (buyer, low-income buyer priced out of the small-car segment, quota rent to Japan). Source: grokipedia.com/page/Fr%C3%A9d%C3%A9ric_Bastiat.",
     "topic": "import-quotas-the-1980s-japanese-auto-ver"
-  },
-  {
-    "tier": 1,
-    "question": "A business owner waits for yet another official's stamp: he already has permits to open and to hire workers, and now needs one to buy foreign parts and another to change his prices. What is a system like this called?",
-    "answer": "Central planning",
-    "choices": [
-      "Central planning",
-      "Free markets",
-      "A stock exchange",
-      "A tax refund"
-    ],
-    "context": "'License Raj' -- 'rule by permits' -- described the system in which Indian firms needed government approval to open a factory, expand capacity, import a machine, hire above a certain scale, produce a new product, or set prices. Often 80 or more separate approvals were required. Source: en.wikipedia.org/wiki/Licence_Raj.",
-    "topic": "indias-license-raj-1947-1991"
   },
   {
     "tier": 1,
@@ -10062,29 +9984,16 @@
     "topic": "indias-license-raj-1947-1991"
   },
   {
-    "tier": 3,
-    "question": "Manmohan Singh, finance minister under Prime Minister Narasimha Rao, began tearing down India's permit system in 1991, when the country could barely pay for its imports. Until then companies needed government approval for almost every business choice. What happened once the licenses were gone?",
-    "answer": "New businesses could start much more easily and the economy grew faster",
-    "choices": [
-      "New businesses could start much more easily and the economy grew faster",
-      "All existing businesses were forced to close",
-      "The government took over every farm",
-      "India stopped trading with every other country"
-    ],
-    "context": "Manmohan Singh (Finance Minister 1991-96, later Prime Minister 2004-14) worked with Prime Minister P.V. Narasimha Rao to enact the reforms. The July 24, 1991 budget speech is the landmark. Source: en.wikipedia.org/wiki/Manmohan_Singh.",
-    "topic": "indias-license-raj-1947-1991"
-  },
-  {
     "tier": 4,
-    "question": "Narasimha Rao's finance minister, Manmohan Singh, set about cutting back the License Raj in 1991. In the three decades that followed, India's real income per head climbed year after year, and hundreds of millions escaped extreme poverty. By 2020, roughly what multiple of the 1991 level had income per person reached?",
-    "answer": "More than four times its 1991 level",
+    "question": "Narasimha Rao's finance minister, Manmohan Singh, set about cutting back the License Raj in 1991. In the three decades that followed, India's real income per head climbed decade after decade, and hundreds of millions escaped extreme poverty. By 2020, roughly what multiple of the 1991 level had income per person reached?",
+    "answer": "More than three times its 1991 level",
     "choices": [
-      "More than four times its 1991 level",
+      "More than three times its 1991 level",
       "About double its 1991 level",
       "About 15 percent higher than 1991",
       "About the same as 1991"
     ],
-    "context": "India's real per-capita income more than quadrupled 1991-2020. Growth rates approximately doubled after 1991 and accelerated further in the 2000s. Hundreds of millions rose out of extreme poverty. Source: World Bank India data.",
+    "context": "On World Bank constant-dollar figures, India's GDP per person in 2020, a pandemic year, stood at about 3.4 times its 1991 level, and in 2019 at about 3.6 times. Growth rates roughly doubled after 1991, and hundreds of millions rose out of extreme poverty. Source: fred.stlouisfed.org/data/NYGDPPCAPKDIND.",
     "topic": "indias-license-raj-1947-1991"
   },
   {
@@ -10180,7 +10089,7 @@
   },
   {
     "tier": 1,
-    "question": "Milton Friedman of Chicago, a Nobel winner, repeated one line for three decades: inflation, he said, is 'always and everywhere' one kind of phenomenon, not a wage story and not a supply story. Which kind did his famous line name?",
+    "question": "Milton Friedman of Chicago, a Nobel winner, repeated one line about rising prices for three decades. Inflation, he said, is 'always and everywhere' one kind of phenomenon. Which kind did his famous line name?",
     "answer": "A monetary phenomenon",
     "choices": [
       "A monetary phenomenon",
@@ -10188,7 +10097,7 @@
       "A wage-push phenomenon",
       "A supply-shock phenomenon"
     ],
-    "context": "'Inflation is always and everywhere a monetary phenomenon' -- Milton Friedman's most-repeated sentence, first delivered in his 1963 LSE lecture 'The Counter-Revolution in Monetary Theory,' repeated across three decades. Source: Friedman, 'The Counter-Revolution in Monetary Theory' (IEA 1970 publication of 1963 lecture).",
+    "context": "'Inflation is always and everywhere a monetary phenomenon' -- Milton Friedman's most-repeated sentence. It appears in his 1963 talk Inflation: Causes and Consequences and again in The Counter-Revolution in Monetary Theory, his 1970 lecture in London. Source: cafehayek.com/2022/07/quotation-of-the-day-3969.html.",
     "topic": "inflation-is-always-and-everywhere-a-monetary-phenomenon"
   },
   {
@@ -10214,46 +10123,20 @@
       "Marxist labor theory of value",
       "Physiocratic agricultural economics"
     ],
-    "context": "Friedman's 1963 LSE lecture called for overturning the Keynesian consensus that had governed US monetary policy since WWII. Keynesians treated the money supply as mostly passive; Friedman argued it was the driver. Source: Friedman, IEA (1970) publication of 1963 lecture.",
-    "topic": "inflation-is-always-and-everywhere-a-monetary-phenomenon"
-  },
-  {
-    "tier": 3,
-    "question": "Milton Friedman had predicted what the 1970s brought: prices and unemployment climbing together, which older textbooks ruled out and which reporters began calling stagflation. Professors slowly updated their textbooks to his monetarist view. In which decade had most textbooks come round?",
-    "answer": "The 1980s",
-    "choices": [
-      "The 1980s",
-      "The 1950s",
-      "The 1990s",
-      "The 2010s"
-    ],
-    "context": "By the mid-1980s the economics profession had substantially accepted the monetarist critique of the stable Phillips curve, though not every technical detail. Friedman was the intellectual victor of the 1960s-80s macroeconomic debate. Source: Blinder, 'The Monetarist Counterrevolution' (JEP 2001).",
+    "context": "Friedman gave the lecture at the University of London's Senate House on 16 September 1970, as the first Wincott Memorial Lecture, and the Institute of Economic Affairs published it that year. It called for overturning the Keynesian consensus of the postwar years: Keynesians treated the money supply as mostly passive, and Friedman argued it was the driver. Source: libcat.library.tamu.edu/Record/in00000229507.",
     "topic": "inflation-is-always-and-everywhere-a-monetary-phenomenon"
   },
   {
     "tier": 4,
-    "question": "Milton Friedman, who spent decades arguing that inflation comes from money, named three people as the roots of his framework, careful never to take the credit alone. Which trio did he name?",
-    "answer": "Henry Simons, Clark Warburton, and Anna Schwartz",
+    "question": "Milton Friedman and the Austrians Ludwig von Mises and Friedrich Hayek agreed on where lasting inflation comes from, and all three looked past greedy firms and unions for its cause. They parted ways on the details. Which claim best marks the split?",
+    "answer": "Friedman watched total money growth; Austrians watched how new credit warps investment",
     "choices": [
-      "Henry Simons, Clark Warburton, and Anna Schwartz",
-      "John Maynard Keynes, Michal Kalecki, and Piero Sraffa",
-      "Karl Marx, Rosa Luxemburg, and Louis Althusser",
-      "Aristotle, Aquinas, and Adam Smith"
+      "Friedman watched total money growth; Austrians watched how new credit warps investment",
+      "Friedman wanted a gold standard; Austrians wanted steady growth of paper money",
+      "Friedman trusted central bankers' judgment; Austrians wanted fixed rules for them",
+      "Friedman saw inflation as short-lived; Austrians saw it as lasting for decades"
     ],
-    "context": "Friedman credited his Chicago mentor Henry Simons, Clark Warburton (a pre-Friedman quantitative monetarist), and his co-author Anna Schwartz for pieces of the framework. His claim was demonstration with US century-long data, not invention. Source: Friedman, autobiographical Nobel essay (1976); IEA 1970 lecture.",
-    "topic": "inflation-is-always-and-everywhere-a-monetary-phenomenon"
-  },
-  {
-    "tier": 4,
-    "question": "Milton Friedman argued that inflation is monetary, not a matter of wages or supply, and Ludwig von Mises and Friedrich Hayek argued the same, but they parted ways with him on the details. Which claim best marks the split?",
-    "answer": "Friedman focuses on aggregate money supply growth; Austrians focus on credit-driven malinvestment structure",
-    "choices": [
-      "Friedman focuses on aggregate money supply growth; Austrians focus on credit-driven malinvestment structure",
-      "Friedman believes inflation is caused by unions; Austrians believe it is caused by monopolies",
-      "Friedman rejects the concept of money supply entirely",
-      "Friedman advocates commodity money exclusively"
-    ],
-    "context": "Both traditions agree on the monetary origin of inflation. They differ on transmission and business-cycle dynamics: Friedman focuses on aggregate M vs Y; Austrian ABCT (Mises-Hayek-Rothbard) focuses on the structure of malinvestment produced by artificially low interest rates. Source: Rothbard, America's Great Depression (1963); Friedman, IEA (1970).",
+    "context": "Both traditions agree that inflation comes from money. Friedman watched the growth of the total money supply and wanted a steady, fixed rule for it; the Austrians (Mises, Hayek, Rothbard) studied how new central-bank credit and artificially low interest rates warp the structure of investment into booms that bust. Source: Rothbard, America's Great Depression (1963); Friedman, IEA (1970).",
     "topic": "inflation-is-always-and-everywhere-a-monetary-phenomenon"
   },
   {
@@ -10263,7 +10146,7 @@
     "choices": [
       "Greedy businesses, unions demanding wages, and oil sheikhs",
       "The Federal Reserve and its money-printing",
-      "Consumers who chose too many local products",
+      "Foreign governments dumping cheap goods in America",
       "The old gold standard's tight limits on the money supply"
     ],
     "context": "Popular explanations in the 1970s recycled corporate greed, union wage demands, and OPEC as inflation causes. Friedman's move: point at the multi-year monetary expansion behind them all. The specific blame targets are effects, not causes. Source: Friedman, IEA (1970).",
@@ -10271,29 +10154,16 @@
   },
   {
     "tier": 5,
-    "question": "Milton Friedman insisted that his famous line on the cause of inflation was a tested finding, not an armchair truth or a mere slogan. Which body of evidence did he rest it on?",
-    "answer": "A century of US money-supply-and-inflation data documented in A Monetary History",
+    "question": "Milton Friedman's critics called his famous line on the cause of inflation a mere slogan. Friedman insisted it was a finding, and he pointed to one large body of work whenever he defended it. What did he rest it on?",
+    "answer": "A century of US money and price data in A Monetary History",
     "choices": [
-      "A century of US money-supply-and-inflation data documented in A Monetary History",
-      "A single laboratory experiment run in Chicago in 1961",
-      "A theological argument from natural law",
-      "A survey of contemporary US Federal Reserve staff"
+      "A century of US money and price data in A Monetary History",
+      "A logical proof built from the axiom of human action",
+      "Opinion surveys of what shoppers expected prices to do",
+      "The record of one hyperinflation, Germany's in 1923"
     ],
     "context": "Friedman's empirical basis was the 1867-1960 US data he and Anna Schwartz assembled and analyzed in A Monetary History. That century of correlation is the evidentiary claim behind 'always and everywhere.' Source: Friedman + Schwartz, A Monetary History (Princeton 1963).",
     "topic": "inflation-is-always-and-everywhere-a-monetary-phenomenon"
-  },
-  {
-    "tier": 1,
-    "question": "A girl sees that the cafeteria at her school offers nothing but cold juice and soda, even on freezing winter mornings. She sells hot cocoa from a large thermos at a dollar a cup and, after paying for it all, has money over. What is someone called who spots a need like that and starts a business to fill it?",
-    "answer": "An entrepreneur",
-    "choices": [
-      "An entrepreneur",
-      "A regulator",
-      "A landlord",
-      "A tax collector"
-    ],
-    "context": "Israel Meir Kirzner, born London 1930, moved to South Africa at age 10, then to the United States for graduate work at NYU. Rothbard took his Ph.D. at Columbia in 1956 (under Arthur Burns, not Mises); Boettke and Hoppe are younger scholars trained in the Kirzner-Rothbard generation's wake. Source: Wikipedia, Israel Kirzner.",
-    "topic": "israel-kirzner-alertness-and-entrepreneurship"
   },
   {
     "tier": 2,
@@ -10322,8 +10192,8 @@
     "topic": "israel-kirzner-alertness-and-entrepreneurship"
   },
   {
-    "tier": 2,
-    "question": "Two boys pass the same empty lot each day. One sees that families on their way to the park on hot days would buy cold lemonade; he sets up a stand, and it does well. Israel Kirzner named what that boy had, and the other lacked, in a single word. What was it?",
+    "tier": 1,
+    "question": "Two boys pass the same empty lot daily. One sees that families heading for the park on hot days would pay for cold lemonade; his stand does well. Israel Kirzner named, in one word, what that boy had and the other lacked. What was it?",
     "answer": "Alertness",
     "choices": [
       "Alertness",
@@ -10331,7 +10201,7 @@
       "Caution",
       "Luck"
     ],
-    "context": "Alertness -- attention to hitherto-unnoticed opportunities -- is the load-bearing concept in Competition and Entrepreneurship. Innovation is Schumpeter's key term; prudence is Aristotelian; foresight belongs to Frank Knight's risk-bearing entrepreneur. Source: Econlib biography, Israel Kirzner.",
+    "context": "Alertness -- attention to opportunities no one has yet noticed -- is the load-bearing concept in Competition and Entrepreneurship. Source: Econlib biography, Israel Kirzner.",
     "topic": "israel-kirzner-alertness-and-entrepreneurship"
   },
   {
@@ -10344,7 +10214,7 @@
       "Rent-seeking",
       "Moral hazard"
     ],
-    "context": "Schumpeter's Theory of Economic Development (1911) and Capitalism, Socialism and Democracy (1942) present the entrepreneur as disruptive innovator; Kirzner's 1973 book is the deliberate Austrian counter-account. Knight (1921) emphasized uncertainty-bearing; Drucker was a management theorist; Coase worked on transaction costs. Source: mises.org, 'Schumpeter vs. Kirzner on Entrepreneurs'.",
+    "context": "Schumpeter cast the entrepreneur as a disruptive innovator in The Theory of Economic Development (1911) and made the phrase creative destruction famous in Capitalism, Socialism and Democracy (1942). Kirzner's 1973 book is the deliberate Austrian counter-account. Source: mises.org, 'Schumpeter vs. Kirzner on Entrepreneurs'.",
     "topic": "israel-kirzner-alertness-and-entrepreneurship"
   },
   {
@@ -10353,9 +10223,9 @@
     "answer": "Discovers opportunities that were already there",
     "choices": [
       "Discovers opportunities that were already there",
-      "Invents opportunities from nothing",
-      "Manufactures opportunities in a factory",
-      "Passes laws to make opportunities exist"
+      "Bears the risks that others will not take on",
+      "Organizes land, labor and capital to produce",
+      "Saves for years to build up the capital he needs"
     ],
     "context": "Kirzner's language of DISCOVERY versus Schumpeter's CREATION is the standard shorthand for the two accounts in the entrepreneurship literature. Source: mises.org, 'Schumpeter vs. Kirzner on Entrepreneurs'.",
     "topic": "israel-kirzner-alertness-and-entrepreneurship"
@@ -10366,11 +10236,11 @@
     "answer": "The Global Award for Entrepreneurship Research",
     "choices": [
       "The Global Award for Entrepreneurship Research",
-      "The John Bates Clark Medal",
-      "The Adam Smith Prize",
-      "The Templeton Prize"
+      "The Schumpeter Prize of the Schumpeter Society",
+      "The Templeton Prize for progress in religion",
+      "The John Bates Clark Medal in economics"
     ],
-    "context": "Awarded in Stockholm 2006 by the Global Award Foundation -- the entrepreneurship field's senior prize, sometimes called 'the Nobel of entrepreneurship.' The John Bates Clark Medal is for American economists under 40; the Adam Smith Prize is a Cambridge undergraduate award; the Bank of Sweden Prize is the Nobel in Economics itself. Source: Wikipedia, Israel Kirzner.",
+    "context": "The Global Award for Entrepreneurship Research, presented in Stockholm, went to Kirzner in 2006; it is often called the top honor in the study of entrepreneurs. Source: Wikipedia, Israel Kirzner.",
     "topic": "israel-kirzner-alertness-and-entrepreneurship"
   },
   {
@@ -10392,11 +10262,11 @@
     "answer": "That resources were being wasted in the low-value place",
     "choices": [
       "That resources were being wasted in the low-value place",
-      "That the mover has broken a fair-price law and should be fined",
-      "That the price gap was the government's plan all along",
+      "That he has cheated the town where he bought cheap",
+      "That oranges cost more to grow in the dearer town",
       "That prices between towns can never be equal in a free market"
     ],
-    "context": "Kirzner is an Orthodox rabbi; his father was a well-known rabbi and Talmudist, and Kirzner has written on ethics and enterprise from within that tradition. The other three are distinct American Jewish movements. Source: Encyclopedia.com, 'Kirzner, Israel M(ayer) 1930-'.",
+    "context": "In Kirzner's account a price gap is a sign that goods are not where people value them most. The trader's profit rewards him for noticing it and tells others the gap is there, and each crate he moves shifts oranges toward the town that values them more, narrowing the gap. Source: Kirzner, Competition and Entrepreneurship (1973).",
     "topic": "israel-kirzner-alertness-and-entrepreneurship"
   },
   {
@@ -10415,9 +10285,9 @@
   {
     "tier": 2,
     "question": "Warren Nutter and James Buchanan set up a research center at the University of Virginia in 1957. They named it for a champion of small farmers and of government kept small. What did they call it?",
-    "answer": "The Thomas Jefferson Center for Political Economy",
+    "answer": "The Thomas Jefferson Center",
     "choices": [
-      "The Thomas Jefferson Center for Political Economy",
+      "The Thomas Jefferson Center",
       "The Mercatus Center",
       "The Center for Study of Public Choice",
       "The Cato Institute"
@@ -10431,9 +10301,9 @@
     "answer": "They respond to incentives, just like people in business do",
     "choices": [
       "They respond to incentives, just like people in business do",
-      "They always act only for the public good",
-      "They follow whatever economists tell them",
-      "They ignore money and power completely"
+      "They mostly act on party ideology, not self-interest",
+      "They know too little to manage what they control",
+      "They mostly follow the experts on their staffs"
     ],
     "context": "Public choice is politics without romance. Buchanan's contribution: strip the assumption that politicians act from pure public spirit; treat them as ordinary humans responding to ordinary incentives. The Center moved to George Mason University in Fairfax, Virginia, in 1983.",
     "topic": "james-m-buchanan-tennessee-farm-boy-to-nobel-laureate"
@@ -10441,27 +10311,14 @@
   {
     "tier": 3,
     "question": "Luigi Einaudi, a former president of Italy, was among the public-finance scholars James Buchanan met on a Fulbright year in 1955-56. They wanted limits on spending set in a country's constitution, above everyday politics. Why not simply trust politicians to hold the line?",
-    "answer": "Politicians face short-term pressure to spend and print money, and firm rules bind them",
+    "answer": "Politicians face short-term pressure to spend and print money",
     "choices": [
-      "Politicians face short-term pressure to spend and print money, and firm rules bind them",
-      "Constitutions must be written in gold letters",
-      "Only a constitution is allowed to raise taxes",
-      "Politicians never read a constitution"
+      "Politicians face short-term pressure to spend and print money",
+      "Elected leaders lack the expertise to draw up a budget",
+      "Courts move too slowly to stop a bad spending bill",
+      "Parliaments change too often for any plan to last"
     ],
     "context": "Buchanan spent 1955-56 in Italy on a Fulbright, working with Luigi Einaudi (former President of Italy 1948-55) and the Italian public-finance tradition. He credited that year with shaping his constitutional-fiscal focus. Source: Buchanan, Better than Plowing (1992).",
-    "topic": "james-m-buchanan-tennessee-farm-boy-to-nobel-laureate"
-  },
-  {
-    "tier": 4,
-    "question": "At the Stockholm ceremonies for his 1986 Nobel, James Buchanan, the Tennessee farm boy turned economist, made sure one thing was displayed beside him. It honored the man whose course had once changed his thinking. What was it?",
-    "answer": "A portrait of Frank Knight",
-    "choices": [
-      "A portrait of Frank Knight",
-      "A page from Adam Smith's Wealth of Nations",
-      "A Tennessee state flag",
-      "A copy of the Constitution of the United States"
-    ],
-    "context": "Buchanan brought Frank Knight's portrait to the Stockholm ceremonies and referred to Knight as his intellectual father. The gesture was widely reported. Source: Buchanan Nobel-week press coverage; Boettke + Marciano biography.",
     "topic": "james-m-buchanan-tennessee-farm-boy-to-nobel-laureate"
   },
   {
@@ -10483,11 +10340,11 @@
     "answer": "He was a Southern rural Democrat sympathetic to redistribution",
     "choices": [
       "He was a Southern rural Democrat sympathetic to redistribution",
-      "He was a Chicago-machine urban liberal",
-      "He was already a doctrinaire Austrian",
-      "He was a Trotskyist committed to permanent revolution"
+      "He was a Northern union organizer drawn to the Socialist Party",
+      "He was a Midwestern farm-state Republican wary of the New Deal",
+      "He was a New York progressive loyal to Roosevelt's brain trust"
     ],
-    "context": "Buchanan was the son of Tennessee farming Democrats, sympathetic to New Deal redistribution when he arrived at Chicago. The 'libertarian socialist' label was his own description of that starting point. Do not overstate an early conservatism -- he had none. Source: Buchanan, Better than Plowing (1992).",
+    "context": "Buchanan was the son of Tennessee farming Democrats and sympathized with New Deal redistribution when he arrived at Chicago; he had no early conservatism. The 'libertarian socialist' label was his own description of that starting point. Source: Buchanan, Better than Plowing (1992).",
     "topic": "james-m-buchanan-tennessee-farm-boy-to-nobel-laureate"
   },
   {
@@ -10557,41 +10414,15 @@
   },
   {
     "tier": 1,
-    "question": "Senator Nelson Aldrich led a handful of America's most powerful bankers by private railroad car to Jekyll Island, a hunting retreat for millionaires off Georgia, in November 1910. In secret they drafted a central bank, the plan that became the Federal Reserve. What is a central bank's main job?",
-    "answer": "Managing a country's money supply",
-    "choices": [
-      "Managing a country's money supply",
-      "Running the army",
-      "Building highways",
-      "Writing school textbooks"
-    ],
-    "context": "The Jekyll Island Club, off the Georgia coast, was owned by a small group of America's richest families. The November 1910 meeting produced the blueprint for what became the Federal Reserve. Source: Grokipedia 'Jekyll Island Club' (2026-09-05).",
-    "topic": "jekyll-island-the-secret-meeting-that-drafted-the-fed"
-  },
-  {
-    "tier": 1,
-    "question": "Bankers and a senator spent about nine days in secret on Jekyll Island, off the Georgia coast, in November 1910, drafting a plan for a new American central bank. Only one body in Washington could turn a plan like that into law. Which branch of government had to pass it?",
+    "question": "Bankers and a senator spent about nine days in secret on Jekyll Island, off the Georgia coast, in November 1910, drafting a plan for a new American central bank. Only one body could make such a plan law. Which body had to pass it?",
     "answer": "Congress",
     "choices": [
       "Congress",
-      "The Supreme Court",
-      "The Army",
-      "The state governors"
+      "The Treasury",
+      "The courts",
+      "The states"
     ],
-    "context": "Nelson Aldrich (R-Rhode Island) chaired the National Monetary Commission and was the political sponsor of the plan that emerged from the meeting. His daughter Abby married John D. Rockefeller Jr. in 1901. Source: Grokipedia 'Nelson Aldrich' (2026-09-05).",
-    "topic": "jekyll-island-the-secret-meeting-that-drafted-the-fed"
-  },
-  {
-    "tier": 2,
-    "question": "A handful of America's richest bankers boarded a private train for Jekyll Island, Georgia, in November 1910, calling themselves a duck-shooting party so nobody would ask questions. In secret they drew up the plan that became the Federal Reserve Act of 1913. What central worry did critics later raise about a plan made that way?",
-    "answer": "A powerful money system was designed by insiders, not by the public",
-    "choices": [
-      "A powerful money system was designed by insiders, not by the public",
-      "They forgot to invite any economists at all",
-      "The bank cannot legally exist without a public vote first",
-      "The public will refuse to spend the new money at all"
-    ],
-    "context": "Warburg (1868-1932) brought the expertise on European central-banking design that shaped the American plan. He later became one of the first members of the Federal Reserve Board. Source: Grokipedia 'Paul Warburg' (2026-09-05).",
+    "context": "The plan went to Congress as the Aldrich Plan and stalled; Congress then passed a modified version as the Federal Reserve Act, which President Woodrow Wilson signed on December 23, 1913. Nelson Aldrich, the senator who led the party, chaired the National Monetary Commission. Source: en.wikipedia.org/wiki/Federal_Reserve_Act.",
     "topic": "jekyll-island-the-secret-meeting-that-drafted-the-fed"
   },
   {
@@ -10604,12 +10435,12 @@
       "First National Bank of New York",
       "Bankers Trust"
     ],
-    "context": "Frank Vanderlip led National City Bank of New York -- the Rockefeller bank, later Citibank and eventually Citigroup. His Jekyll Island participation was carefully hidden until his 1935 confession. Source: Grokipedia 'Frank Vanderlip' (2026-09-05).",
+    "context": "Frank Vanderlip led National City Bank of New York -- the Rockefeller bank, later Citibank and eventually Citigroup. His part in the Jekyll Island trip was kept quiet for years; he told his side in a 1935 magazine article. Source: Grokipedia 'Frank Vanderlip' (2026-09-05).",
     "topic": "jekyll-island-the-secret-meeting-that-drafted-the-fed"
   },
   {
     "tier": 3,
-    "question": "Henry Davison wrote up most of the plan at Jekyll Island in November 1910. His companions included Senator Nelson Aldrich of Rhode Island, Kuhn Loeb's Paul Warburg, Frank Vanderlip and Benjamin Strong of Bankers Trust. What post did Davison hold on Wall Street?",
+    "question": "Henry Davison rode with the party to Jekyll Island in November 1910. His companions included Senator Nelson Aldrich of Rhode Island, Kuhn Loeb's Paul Warburg, Frank Vanderlip and the Treasury's Piatt Andrew. What post did Davison hold on Wall Street?",
     "answer": "Senior partner at J.P. Morgan and Company",
     "choices": [
       "Senior partner at J.P. Morgan and Company",
@@ -10617,38 +10448,25 @@
       "Chairman of Kuhn Loeb and Company",
       "President of First National Bank of New York"
     ],
-    "context": "Henry Davison was a senior partner at J.P. Morgan and Company. The Jekyll Island meeting essentially assembled the leadership of the New York financial establishment plus one German-American central-banking specialist. Source: Grokipedia 'Henry Pomeroy Davison' (2026-09-05).",
+    "context": "Henry Davison was a senior partner at J.P. Morgan and Company, there for the House of Morgan. Source: Grokipedia 'Henry Pomeroy Davison' (2026-09-05).",
     "topic": "jekyll-island-the-secret-meeting-that-drafted-the-fed"
   },
   {
     "tier": 3,
-    "question": "Benjamin Strong of Bankers Trust, Frank Vanderlip and the other bankers at Jekyll Island in November 1910 drew up, in private, the plan that would pass in modified form as the Federal Reserve Act. Why do public-choice economists think it matters that those bankers wrote it?",
-    "answer": "The people being regulated helped write the rules that would govern them",
+    "question": "Paul Warburg, Frank Vanderlip and the other bankers at Jekyll Island in November 1910 drew up, in private, the plan that would pass in modified form as the Federal Reserve Act. Why do public-choice economists think it matters that those bankers wrote it?",
+    "answer": "The regulated helped write the rules that would govern them",
     "choices": [
-      "The people being regulated helped write the rules that would govern them",
-      "Private islands are legally not part of the country",
-      "The meeting was too short for the plan to work",
-      "Bankers do not understand how banks actually work"
+      "The regulated helped write the rules that would govern them",
+      "No small group could know enough to design a money system",
+      "Rules drafted in secret can never be legally binding",
+      "Bankers lacked the training to design a central bank"
     ],
-    "context": "A. Piatt Andrew was serving as Assistant Treasury Secretary under Franklin MacVeagh. His presence gave the meeting official Treasury representation without formal Treasury endorsement. Source: Grokipedia 'A. Piatt Andrew' (2026-09-05).",
-    "topic": "jekyll-island-the-secret-meeting-that-drafted-the-fed"
-  },
-  {
-    "tier": 4,
-    "question": "The men at Jekyll Island in November 1910 used first names only in front of the servants and drew the curtains. For years none of them said a word in public about what they had drafted. Frank Vanderlip was the first to tell the story in print. When did he tell it?",
-    "answer": "1935, in a Saturday Evening Post article",
-    "choices": [
-      "1935, in a Saturday Evening Post article",
-      "1913, at the passage of the Federal Reserve Act",
-      "1920, in his memoir",
-      "1928, in a Senate hearing"
-    ],
-    "context": "Vanderlip's 1935 Saturday Evening Post article 'From Farm Boy to Financier' was the first public acknowledgment of the meeting -- 25 years after it happened. The other participants had died or maintained the sworn secrecy. Source: Grokipedia 'Jekyll Island (Federal Reserve)' (2026-09-05).",
+    "context": "Public-choice economists, following George Stigler's theory of regulatory capture, expect the industry a regulator oversees to shape its rules. At Jekyll Island the bankers who would live under the new system drafted it themselves, with Senator Aldrich and A. Piatt Andrew, an Assistant Treasury Secretary, beside them. Source: federalreservehistory.org/essays/jekyll-island-conference.",
     "topic": "jekyll-island-the-secret-meeting-that-drafted-the-fed"
   },
   {
     "tier": 5,
-    "question": "Frank Vanderlip of the Jekyll Island party finally told its story in print, and he described his own conduct on the trip in blunt terms. Which phrase did he use?",
+    "question": "Frank Vanderlip, president of a great New York bank and one of the Jekyll Island party, told his own side of the story in print in 1935, and he described his conduct on the trip in blunt terms. Which phrase did he use?",
     "answer": "Furtive, as any conspirator",
     "choices": [
       "Furtive, as any conspirator",
@@ -10656,7 +10474,7 @@
       "Cheerful, as a social gathering",
       "Studious, as an academic seminar"
     ],
-    "context": "Vanderlip's 1935 article: 'I was as secretive -- indeed as furtive -- as any conspirator... our secret expedition to Jekyll Island as the occasion of the actual conception of what eventually became the Federal Reserve System.' Source: Grokipedia 'Jekyll Island (Federal Reserve)' (2026-09-05).",
+    "context": "Vanderlip wrote in the Saturday Evening Post of February 9, 1935: 'I was as secretive -- indeed as furtive -- as any conspirator', and he called the trip the actual conception of what became the Federal Reserve System. Source: saturdayeveningpost.com (From Farm Boy to Financier).",
     "topic": "jekyll-island-the-secret-meeting-that-drafted-the-fed"
   },
   {
@@ -10790,46 +10608,20 @@
     "topic": "jiaozi-and-kublai-khan-the-first-paper-money-bubbles"
   },
   {
-    "tier": 1,
-    "question": "John Law, a Scottish gambler, won the trust of France's regent after Louis XIV died in 1715 and left the country nearly bankrupt from his wars. Law promised to cure those debts by printing paper money. What is it called when a flood of printed money makes each note buy less and less?",
-    "answer": "Inflation",
-    "choices": [
-      "Inflation",
-      "A tariff",
-      "A dividend",
-      "A tax cut"
-    ],
-    "context": "John Law (1671-1729), a Scot who had fled London after killing a man in a duel, arrived in France in 1715 and won the ear of Philippe, Duke of Orleans, regent for the child-king Louis XV. Source: Antoin Murphy, John Law: Economic Theorist and Policy-Maker (1997).",
-    "topic": "john-law-and-the-mississippi-bubble-1716-1720"
-  },
-  {
-    "tier": 1,
-    "question": "John Law launched the Mississippi Company in Paris in 1717, with a monopoly on trade with France's Louisiana territory. Shares in it climbed wildly on easy money in 1719 and then collapsed in 1720. What is an episode like that called?",
-    "answer": "A bubble",
-    "choices": [
-      "A bubble",
-      "A subsidy",
-      "A rebate",
-      "A dividend"
-    ],
-    "context": "Founded in 1717 as the Compagnie d'Occident and quickly known as the Compagnie du Mississippi, it held the exclusive right to develop the vast French Louisiana territory. Source: Grokipedia 'Mississippi Company' (2026-09-05).",
-    "topic": "john-law-and-the-mississippi-bubble-1716-1720"
-  },
-  {
     "tier": 2,
     "question": "John Law talked the French regent into letting him found the Banque Generale in Paris in 1716, a bank that issued paper notes. Two years later the king's government took it over, gave it a new name, the Banque Royale, and let it issue notes with no real limit. What happened next to Law's paper money?",
     "answer": "It crashed, and people lost their savings in a giant bubble",
     "choices": [
       "It crashed, and people lost their savings in a giant bubble",
-      "It stayed steady for hundreds of years without any trouble",
-      "It became the strongest currency in the world",
-      "It was quietly replaced by silver coins with no bubble"
+      "It held its value, since the crown backed every note",
+      "It was swapped for silver coin at full value",
+      "It kept circulating for decades at a small discount"
     ],
     "context": "Law founded the Banque Generale in 1716. In 1718 the crown nationalized it and renamed it the Banque Royale, guaranteeing its notes as legal tender. Banque de France (a different institution) was founded by Napoleon in 1800. Source: Grokipedia 'Banque Royale' (2026-09-05).",
     "topic": "john-law-and-the-mississippi-bubble-1716-1720"
   },
   {
-    "tier": 2,
+    "tier": 1,
     "question": "Small investors in Paris piled into John Law's Mississippi Company in 1719, and many of them grew rich on paper as its shares soared. The French language coined a brand-new word for these newly rich shareholders. Which word came out of the mania?",
     "answer": "Millionaire",
     "choices": [
@@ -10881,27 +10673,14 @@
     "topic": "john-law-and-the-mississippi-bubble-1716-1720"
   },
   {
-    "tier": 5,
-    "question": "Leaders of the French Revolution seized the church's lands in 1789 and printed paper money, the assignats, on the promise that the land stood behind it. To pay the state's bills they printed more and more, and within five years the paper was worth almost nothing. What is the general term for what happened to its value?",
-    "answer": "Hyperinflation — prices exploding as money loses value",
-    "choices": [
-      "Hyperinflation — prices exploding as money loses value",
-      "Deflation — prices falling because money is scarce",
-      "Deleveraging — households and firms paying off debts",
-      "Devaluation — a government cutting a fixed exchange rate"
-    ],
-    "context": "The 1789-1796 Assignat was the second modern paper-money experiment in France, backed by seized Church lands. It hyperinflated just as Law's system had, confirming the pattern. Source: Grokipedia 'Assignat' (2026-09-05).",
-    "topic": "john-law-and-the-mississippi-bubble-1716-1720"
-  },
-  {
     "tier": 4,
     "question": "Ludwig von Mises later explained a pattern of boom and bust, and the Austrian economists who follow him call John Law's Mississippi scheme of 1719 and 1720 its earliest modern case. Paris filled with new fortunes on paper, and then it all went bust in 1720. Which Austrian reading fits Law's scheme most exactly?",
-    "answer": "Credit expansion produces malinvestment concentrated in one sector, then collapses when redemption is demanded",
+    "answer": "Easy credit floods one favored venture, then collapses when holders demand real money",
     "choices": [
-      "Credit expansion produces malinvestment concentrated in one sector, then collapses when redemption is demanded",
-      "Government spending stimulates aggregate demand and drives permanent growth",
-      "A fixed money supply causes deflation and long-run unemployment",
-      "Free banking causes an excess of small denominations to circulate"
+      "Easy credit floods one favored venture, then collapses when holders demand real money",
+      "Government spending lifts total demand and drives growth that lasts for good",
+      "A fixed supply of money brings falling prices and long-lasting unemployment",
+      "Free banking floods the country with an excess of small paper notes"
     ],
     "context": "The Austrian business-cycle pattern: newly created money distorts capital toward a favored project (Louisiana), the boom looks like prosperity, and when holders of the new money try to convert it back to real goods or hard money, the whole edifice collapses. Ludwig von Mises named the mechanism in 1912. Source: Mises, Theory of Money and Credit (1912).",
     "topic": "john-law-and-the-mississippi-bubble-1716-1720"
@@ -11003,35 +10782,35 @@
     "answer": "Judge policies by their results, not their intentions",
     "choices": [
       "Judge policies by their results, not their intentions",
-      "Judge policies by the party that sponsors them",
-      "Judge policies by their popularity in the polls",
-      "Judge policies by their moral rhetoric"
+      "Judge policies by their fairness, not their cost",
+      "Judge policies by experts' forecasts, not by polls",
+      "Judge policies by their aims, not their side effects"
     ],
-    "context": "'One of the great mistakes is to judge policies and programs by their intentions rather than their results' -- Milton Friedman, spoken repeatedly in interviews including the 1975 Richard Heffner Open Mind interview, and written in Free to Choose (1980). Source: pbs.org (Free to Choose archive).",
+    "context": "'One of the great mistakes is to judge policies and programs by their intentions rather than their results' -- Milton Friedman, in his 1975 interview with Richard Heffner on The Open Mind, a line he repeated often. Source: pbs.org (Free to Choose archive).",
     "topic": "judge-by-results-not-intentions"
   },
   {
     "tier": 4,
     "question": "Milton Friedman took aim at the old American welfare system that ran from the 1960s through the 1990s. Its rules, he argued, quietly damaged family structure among the poor. What flaw did he find built into them?",
-    "answer": "A marriage penalty embedded in household-income aggregation rules",
+    "answer": "A marriage penalty in how household income was counted",
     "choices": [
-      "A marriage penalty embedded in household-income aggregation rules",
-      "A required 40-hour work week for all beneficiaries",
-      "A ban on any bank account with a balance over one dollar",
-      "A prohibition on private tutoring for beneficiaries' children"
+      "A marriage penalty in how household income was counted",
+      "A rule ending aid once a child turned twelve years old",
+      "A rule paying more to families who moved to big cities",
+      "A rule barring grandparents from raising children on aid"
     ],
-    "context": "The pre-reform welfare system counted household income for eligibility; a two-parent household could lose more benefits from marrying than the added income was worth. Friedman documented this in Capitalism and Freedom and Free to Choose. Source: Friedman + Friedman, Free to Choose (1980), Chapter 4.",
+    "context": "The pre-reform welfare system counted household income for eligibility, so a two-parent household could lose more in benefits by marrying than the added income was worth. Friedman pressed the point in Free to Choose. Source: Friedman + Friedman, Free to Choose (1980), Chapter 4.",
     "topic": "judge-by-results-not-intentions"
   },
   {
     "tier": 5,
     "question": "Thomas Sowell, Milton Friedman's student at Chicago, added two questions of his own to his teacher's rule for weighing a policy, and together they make a three-part test. Which sentence states it?",
-    "answer": "What does the policy INTEND, what does it actually DO, and at what COST compared to what alternative",
+    "answer": "What does it intend, what does it actually do, and at what cost compared to what alternative",
     "choices": [
-      "What does the policy INTEND, what does it actually DO, and at what COST compared to what alternative",
-      "Which political party sponsors it, which lobbyists supported it, and which president signed it",
-      "How long is the statute, who wrote it, and when was it introduced",
-      "How much does it cost, how much does it raise in revenue, and how much does the CBO score it"
+      "What does it intend, what does it actually do, and at what cost compared to what alternative",
+      "Which party sponsors it, which lobbyists back it, and which president signed it",
+      "Is it legal, is it popular with voters, and can it pass both houses of Congress",
+      "How much does it cost, how much revenue does it raise, and what do budget forecasters say"
     ],
     "context": "The Friedman-Sowell three-part diagnostic: (a) intended outcome; (b) actual result; (c) cost, compared to the honest alternative. Skipping any of the three is standard practice in unserious policy debate. Source: Sowell + Friedman across their popular books.",
     "topic": "judge-by-results-not-intentions"
@@ -11454,19 +11233,6 @@
   },
   {
     "tier": 1,
-    "question": "Carl Menger's son took a doctorate in mathematics in Vienna in 1924 instead of following his father, who had launched the Austrian school, into economics. The son grew up to be one of the twentieth century's great mathematicians. What was the son's first name?",
-    "answer": "Karl",
-    "choices": [
-      "Karl",
-      "Hans",
-      "Otto",
-      "Josef"
-    ],
-    "context": "Karl Menger the younger (1902-1985) was born when his father Carl Menger was 62. Father became the economist; son became the mathematician. Source: grokipedia.com/page/Karl_Menger.",
-    "topic": "karl-menger-the-younger-the-mathematician-son-and-the-vienna"
-  },
-  {
-    "tier": 1,
     "question": "A young Vienna mathematician, son of the Austrian school's founder, described a strange solid in 1926. He bored a square tunnel through the middle of each face of a cube, then did the same to every smaller cube left, forever. What is the shape called?",
     "answer": "The Menger sponge",
     "choices": [
@@ -11505,47 +11271,34 @@
     "topic": "karl-menger-the-younger-the-mathematician-son-and-the-vienna"
   },
   {
-    "tier": 3,
-    "question": "Kurt Gödel laid out part of his incompleteness work at a gathering of mathematicians in interwar Vienna, while Ludwig von Mises and Friedrich Hayek worked on economics down the street. A group's arguing can harden, over the years, into shared instincts and the same first questions. What is the result called?",
-    "answer": "A school of thought",
-    "choices": [
-      "A school of thought",
-      "A trading company",
-      "A stock exchange",
-      "A budget office"
-    ],
-    "context": "The Vienna Circle of logical positivists was the philosophy scene through which Menger's mathematics work interacted with Godel, Carnap, and Wittgenstein-as-influence. Source: grokipedia.com/page/Vienna_Circle.",
-    "topic": "karl-menger-the-younger-the-mathematician-son-and-the-vienna"
-  },
-  {
     "tier": 5,
     "question": "Karl Menger the younger wrote late in life about the two worlds he had lived in: the logical positivists whose meetings he sat in on, and the mathematicians, Kurt Gödel among them, who argued at his own gathering. The book came out in 1994, after his death. What is it called?",
-    "answer": "Reminiscences of the Vienna Circle and the Mathematical Colloquium",
+    "answer": "Reminiscences of the Vienna Circle",
     "choices": [
-      "Reminiscences of the Vienna Circle and the Mathematical Colloquium",
-      "Human Action",
+      "Reminiscences of the Vienna Circle",
       "The Open Society and Its Enemies",
-      "Notes on Godel's Theorems"
+      "Logical Syntax of Language",
+      "Wittgenstein's Vienna"
     ],
-    "context": "Menger's 1994 memoir is one of the best insider accounts of Vienna's twin scientific-philosophical circles. Source: grokipedia.com/page/Karl_Menger.",
+    "context": "Menger's memoir, Reminiscences of the Vienna Circle and the Mathematical Colloquium (Kluwer, 1994), is one of the best insider accounts of Vienna's twin scientific-philosophical circles. Source: grokipedia.com/page/Karl_Menger.",
     "topic": "karl-menger-the-younger-the-mathematician-son-and-the-vienna"
   },
   {
     "tier": 1,
-    "question": "Two foreign ministers met on August 23, 1939, in Moscow and signed a non-aggression pact for two governments that for years had denounced each other. A hidden clause split Poland, the Baltic states and a slice of Romania between them. Which two countries signed?",
-    "answer": "Nazi Germany and the Soviet Union",
+    "question": "Molotov and Ribbentrop, the foreign ministers of Stalin and Hitler, signed a pact in Moscow late in August 1939, and its public text pledged peace between their two countries. What did its secret protocol do?",
+    "answer": "Divided Poland and the Baltics between the two",
     "choices": [
-      "Nazi Germany and the Soviet Union",
-      "Nazi Germany and Fascist Italy",
-      "The Soviet Union and Republican Spain",
-      "The Soviet Union and the United Kingdom"
+      "Divided Poland and the Baltics between the two",
+      "Pledged a joint war against Britain and France",
+      "Promised to leave Poland's borders untouched",
+      "Set up a joint navy to patrol the Baltic Sea"
     ],
-    "context": "The signers were Nazi Foreign Minister Joachim von Ribbentrop and Soviet Foreign Minister Vyacheslav Molotov; the treaty is universally known as the Molotov-Ribbentrop Pact. Source: grokipedia.com/page/Molotov%E2%80%93Ribbentrop_Pact.",
+    "context": "The public treaty promised non-aggression; a secret protocol, whose existence Moscow denied until 1989, split Poland, the Baltic states, Finland and Romania's Bessarabia into German and Soviet spheres. Germany invaded Poland on September 1 and the Soviet Union on September 17. Source: grokipedia.com/page/Molotov%E2%80%93Ribbentrop_Pact.",
     "topic": "katyn-1940-and-the-molotov-ribbentrop-pact-1939"
   },
   {
     "tier": 2,
-    "question": "Hitler sent his armies over Poland's western border on September 1, 1939, starting the war in Europe. Sixteen days later, on September 17, a second great power invaded Poland from the east; the two invaders then carved the country up between them. Which power came from the east?",
+    "question": "Hitler sent his armies over Poland's western border on September 1, 1939, starting the war in Europe. Sixteen days later, on September 17, a second great power invaded Poland from the east. Which power came from the east?",
     "answer": "The Soviet Union",
     "choices": [
       "The Soviet Union",
@@ -11562,9 +11315,9 @@
     "answer": "Educated people can organize resistance to the new rulers",
     "choices": [
       "Educated people can organize resistance to the new rulers",
-      "Educated people eat much more food than others",
-      "Educated people cannot do farm work",
-      "Educated people spread disease"
+      "Educated people owned the land the state meant to seize",
+      "Educated prisoners could fetch a ransom from the West",
+      "Educated people were the likeliest to flee abroad"
     ],
     "context": "Katyn was one of three main execution sites; the other two were the NKVD facilities at Kalinin and Kharkiv. The category of victim was deliberately chosen to decapitate Polish national leadership. Source: grokipedia.com/page/Katyn_massacre.",
     "topic": "katyn-1940-and-the-molotov-ribbentrop-pact-1939"
@@ -11627,9 +11380,9 @@
     "answer": "The Soviet Union was a co-belligerent of Nazi Germany from August 1939 to June 1941",
     "choices": [
       "The Soviet Union was a co-belligerent of Nazi Germany from August 1939 to June 1941",
-      "The Soviet Union was neutral throughout World War II",
+      "The Soviet Union stayed neutral, acting only to defend its own borders",
       "The Soviet Union was allied with the United Kingdom throughout 1939-41",
-      "The Soviet Union invaded no other country between 1939 and 1945"
+      "The Soviet Union was itself at war with Germany from 1939 onward"
     ],
     "context": "The pact and its secret territorial protocol, the September 1939 Soviet invasion of Poland, the June 1940 annexation of the Baltics, and the 1940 Katyn massacre are one continuous historical arc. Source: grokipedia.com/page/Molotov%E2%80%93Ribbentrop_Pact.",
     "topic": "katyn-1940-and-the-molotov-ribbentrop-pact-1939"
@@ -11779,32 +11532,6 @@
   },
   {
     "tier": 2,
-    "question": "Kenneth Arrow wrote down a short list of rules of fairness that every method of counting votes should meet. One covers an election in which each and every voter ranks option A above option B: the group's ranking must then put A above B too. What is this rule called?",
-    "answer": "Pareto efficiency (or unanimity)",
-    "choices": [
-      "Pareto efficiency (or unanimity)",
-      "Independence of irrelevant alternatives",
-      "Non-dictatorship",
-      "Universal domain"
-    ],
-    "context": "Arrow's five criteria include unanimity (if all voters rank A above B, so does the group), independence of irrelevant alternatives, universal domain, transitivity, and non-dictatorship. The theorem proves no method satisfies all simultaneously. Source: Arrow, Social Choice and Individual Values (1951/1963).",
-    "topic": "kenneth-arrows-impossibility-theorem-1951"
-  },
-  {
-    "tier": 2,
-    "question": "Kenneth Arrow ruled out, in his 1951 list of fairness rules for voting, any method that hands one voter the power to settle the group's ranking, no matter what everyone else wants. What did he call that rule?",
-    "answer": "Non-dictatorship",
-    "choices": [
-      "Non-dictatorship",
-      "Anonymity",
-      "Neutrality",
-      "Monotonicity"
-    ],
-    "context": "The non-dictatorship condition rules out any voting method that always follows one specified voter. Arrow proved that dropping this condition is the only way to make the other criteria consistent -- which is why the theorem is so provocative. Source: Arrow, Social Choice and Individual Values (1951).",
-    "topic": "kenneth-arrows-impossibility-theorem-1951"
-  },
-  {
-    "tier": 2,
     "question": "A group of friends ranks pepperoni, cheese and mushrooms for a pizza, and the votes go round in a circle: each topping beats one rival and loses to the other, and no clear winner emerges. Kenneth Arrow's mathematics speaks to cases like theirs. What does it show about a flawless way of counting votes, fair to every group?",
     "answer": "No such perfect voting rule exists",
     "choices": [
@@ -11813,7 +11540,7 @@
       "Ranked-choice voting solves every possible case",
       "It works only if every voter is completely honest"
     ],
-    "context": "Arrow's Impossibility Theorem: for any group of three or more voters facing three or more alternatives, no method can satisfy the five fairness criteria simultaneously. Source: Arrow, Social Choice and Individual Values (1951).",
+    "context": "Arrow's impossibility theorem: once a group faces three or more alternatives, no method of ranking them can meet all of his fairness conditions at once. Source: Arrow, Social Choice and Individual Values (1951).",
     "topic": "kenneth-arrows-impossibility-theorem-1951"
   },
   {
@@ -11826,20 +11553,7 @@
       "Five",
       "Seven"
     ],
-    "context": "With only two alternatives, majority rule satisfies every Arrow criterion. The impossibility applies for any group of three or more voters facing three or more alternatives. The classic Condorcet paradox is a three-voter, three-option case. Source: Arrow, Social Choice and Individual Values (1951).",
-    "topic": "kenneth-arrows-impossibility-theorem-1951"
-  },
-  {
-    "tier": 4,
-    "question": "A young doctoral student at Columbia University proved in 1951 that no method of turning each voter's ranked choices into one group choice can obey a short list of basic fairness rules all at once. The proof counted toward his 1972 Nobel Prize, which he shared with John Hicks. What is his result called?",
-    "answer": "Arrow's impossibility theorem",
-    "choices": [
-      "Arrow's impossibility theorem",
-      "The median voter theorem",
-      "The invisible hand principle",
-      "The efficient markets hypothesis"
-    ],
-    "context": "John Hicks and Kenneth Arrow shared the 1972 Nobel 'for their pioneering contributions to general economic equilibrium theory and welfare theory.' Source: nobelprize.org (1972 Economic Sciences).",
+    "context": "With only two alternatives, majority rule satisfies every Arrow condition. The impossibility appears once voters face three or more alternatives; the classic Condorcet paradox is a case of three voters and three options. Source: Arrow, Social Choice and Individual Values (1951).",
     "topic": "kenneth-arrows-impossibility-theorem-1951"
   },
   {
@@ -11869,65 +11583,39 @@
     "topic": "kenneth-arrows-impossibility-theorem-1951"
   },
   {
+    "tier": 2,
+    "question": "Steve Jobs brought Apple's iPhone to market in June 2007, when BlackBerry, Nokia and Motorola led the phone market and all three kept their old designs. In Israel Kirzner's terms, what opportunity had Jobs noticed?",
+    "answer": "A touchscreen, music player and phone could be one product",
+    "choices": [
+      "A touchscreen, music player and phone could be one product",
+      "Phones would sell best with bigger physical keyboards",
+      "Cheap phones for poorer countries were the real market",
+      "Music players would soon replace phones altogether"
+    ],
+    "context": "Jobs unveiled the iPhone in January 2007 and it went on sale that June. Touchscreens (LG Prada 2006), music players (Apple's iPod since 2001) and phones (Nokia, BlackBerry, Motorola) all existed; the Kirznerian alertness was seeing they could be combined. BlackBerry's Jim Balsillie publicly brushed off the iPhone in 2007. Source: Isaacson, Steve Jobs (Simon & Schuster 2011).",
+    "topic": "kirznerian-entrepreneurship-applied-jobs-musk-bezos"
+  },
+  {
     "tier": 1,
-    "question": "Israel Kirzner published Competition and Entrepreneurship in 1973 to settle what an entrepreneur really is. Frank Knight had seen him chiefly as a risk-taker; Joseph Schumpeter, as an inventor whose new products wreck old industries. Kirzner disagreed with both. What did he say the entrepreneur really is?",
-    "answer": "Someone alert to profit opportunities others missed",
+    "question": "Elon Musk set up SpaceX in 2002 to go after a chance that the big rocket makers had walked past for forty years. What was it?",
+    "answer": "Rockets that land and fly again",
     "choices": [
-      "Someone alert to profit opportunities others missed",
-      "Someone who assembles the largest possible capital",
-      "Someone who lobbies government for protective regulation",
-      "Someone who monopolizes an existing market"
-    ],
-    "context": "Kirzner separates alertness from Knight's risk-bearing and Schumpeter's creative-destruction innovation. The entrepreneur perceives an opportunity in the flow of prices and technology that competitors with the same information failed to see. Source: Kirzner, Competition and Entrepreneurship (Chicago 1973).",
-    "topic": "kirznerian-entrepreneurship-applied-jobs-musk-bezos"
-  },
-  {
-    "tier": 2,
-    "question": "Steve Jobs unveiled Apple's iPhone in June 2007, when BlackBerry, Nokia and Motorola led the phone market and all three kept their old designs. In Israel Kirzner's terms, what did Jobs see that his rivals did not act on?",
-    "answer": "That touchscreens, music players, and phones could be integrated into one mass-market product",
-    "choices": [
-      "That touchscreens, music players, and phones could be integrated into one mass-market product",
-      "That mobile phones should be limited to voice calls only",
-      "That physical keyboards would dominate for the next thirty years",
-      "That personal computers should replace all mobile devices"
-    ],
-    "context": "Jobs saw the integration opportunity. Touchscreens (LG Prada 2006), music players (Apple's iPod since 2001), and phones (Nokia, BlackBerry, Motorola) all existed. The Kirznerian alertness was seeing they could combine. BlackBerry's Jim Balsillie publicly derided the iPhone in 2007. Source: Isaacson, Steve Jobs (Simon & Schuster 2011).",
-    "topic": "kirznerian-entrepreneurship-applied-jobs-musk-bezos"
-  },
-  {
-    "tier": 2,
-    "question": "Elon Musk founded SpaceX in 2002. NASA, Boeing and Lockheed Martin had tossed out every rocket after a single flight for forty years, like burning a jetliner after landing it once, and Musk built his company to go after what they had overlooked. What was that chance?",
-    "answer": "Reusable orbital rockets that land and fly again",
-    "choices": [
-      "Reusable orbital rockets that land and fly again",
-      "Traditional expendable rockets built cheaper offshore",
-      "Government-funded space colonies on Mars",
-      "Suborbital tourism using balloons"
+      "Rockets that land and fly again",
+      "Rockets built more cheaply overseas",
+      "Rockets launched from ships at sea",
+      "Rockets powered by nuclear engines"
     ],
     "context": "The launch industry had assumed rockets were disposable for decades. Musk's insight was that per-launch cost drops dramatically if the first stage lands and is reused. Falcon 9's first successful landing was December 21, 2015. Source: spacex.com (Falcon 9 mission archive).",
     "topic": "kirznerian-entrepreneurship-applied-jobs-musk-bezos"
   },
   {
     "tier": 3,
-    "question": "Elon Musk's SpaceX landed its first Falcon 9 booster in December 2015. Over the following decade or so the company kept landing first stages and flying them again, as Musk had bet it could. About how many such landings and reuses had SpaceX made by then?",
-    "answer": "Over 300",
-    "choices": [
-      "Over 300",
-      "About 10",
-      "About 30",
-      "About 3,000"
-    ],
-    "context": "By 2024 SpaceX had landed and reused Falcon 9 first stages over 300 times, some individual boosters twenty times or more. It has driven launch prices down substantially and captured most of the commercial launch market. Source: spacex.com (launch archive).",
-    "topic": "kirznerian-entrepreneurship-applied-jobs-musk-bezos"
-  },
-  {
-    "tier": 3,
     "question": "Jeff Bezos started Amazon out of a garage outside Seattle in July 1994, selling just one kind of product at first rather than everything. His choice is a test case for Israel Kirzner's theory of the entrepreneur. What made that category the perfect launch point for an internet store?",
-    "answer": "Books are standardized, durable, easily shipped, with a long-tail catalog",
+    "answer": "Books are identical copies that ship well, from a vast catalog",
     "choices": [
-      "Books are standardized, durable, easily shipped, with a long-tail catalog",
-      "Books have the highest per-unit profit margins in all of retail",
-      "Books face no competition from physical bookstores",
+      "Books are identical copies that ship well, from a vast catalog",
+      "Books have the highest per-unit profit margins in retail",
+      "Publishers gave web stores deeper discounts than shops",
       "Books are exempt from state sales tax on federal statute"
     ],
     "context": "Bezos's Kirznerian alertness: books were the perfect starting product for internet-scale retail. No physical bookstore could stock the long-tail catalog. Chain bookstores had the same information but did not move decisively online. Source: Stone, The Everything Store (Little Brown 2013).",
@@ -11936,12 +11624,12 @@
   {
     "tier": 5,
     "question": "A student of Israel Kirzner's theory sizes up Jeff Bezos at Amazon, Elon Musk at SpaceX and Steve Jobs with the iPhone. The theory boils down to a single question for each of them. What question does it put to a founder?",
-    "answer": "What did the founder see that competitors with the same technology and capital did not act on",
+    "answer": "What did the founder see that rivals with the same tools missed",
     "choices": [
-      "What did the founder see that competitors with the same technology and capital did not act on",
-      "How much capital did the founder inherit from family",
-      "Which lobbying firm secured the founder's early contracts",
-      "How many patents did the founder personally hold"
+      "What did the founder see that rivals with the same tools missed",
+      "How much money did the founder raise before launch",
+      "Which rivals did the founder buy out or drive off",
+      "How many patents did the founder hold on the technology"
     ],
     "context": "Kirznerian analysis: technology and capital are usually accessible to many; alertness is not. The reason a new firm succeeds where competitors failed is usually a specific perception of an integration or application others considered impossible. Source: Kirzner (1973), Chapter 2.",
     "topic": "kirznerian-entrepreneurship-applied-jobs-musk-bezos"
@@ -11949,28 +11637,15 @@
   {
     "tier": 5,
     "question": "Israel Kirzner offered a third picture of the entrepreneur beside Frank Knight's bearer of true uncertainty and Joseph Schumpeter's inventor of new combinations that destroy old industries. Real founders such as Elon Musk and Steve Jobs mix all three. What is gained by pulling the three theories apart when studying one founder?",
-    "answer": "It clarifies which theory fits which specific move being analyzed",
+    "answer": "It shows which theory fits which particular move",
     "choices": [
-      "It clarifies which theory fits which specific move being analyzed",
-      "It proves one of the three theories is always correct",
-      "It refutes the other two theories permanently",
-      "It replaces the need to look at any actual data"
+      "It shows which theory fits which particular move",
+      "It shows which single theory fits the founder best",
+      "It shows how much of the success was simple luck",
+      "It shows which founder took the biggest risk"
     ],
     "context": "The point is not that a founder is 'a Kirznerian' or 'a Schumpeterian' in every action. The point is that different moves within a founder's career fit different theories: Bezos's book-choice was Kirznerian alertness; Musk's Mars ambition is Schumpeterian innovation; both took Knightian risks. Source: Kirzner (1973); Schumpeter (1911); Knight (1921).",
     "topic": "kirznerian-entrepreneurship-applied-jobs-musk-bezos"
-  },
-  {
-    "tier": 1,
-    "question": "Friedrich Hayek pointed out that the facts an economy runs on, who wants what, who can make it, which materials lie near, which machines have broken, how a neighbor's harvest looks this year, are scattered among millions of ordinary people. What follows from that, in his argument?",
-    "answer": "No small group of planners can know enough to run the whole economy",
-    "choices": [
-      "No small group of planners can know enough to run the whole economy",
-      "The government should hire more economists",
-      "Only computers can plan an economy",
-      "People should stop specializing at all"
-    ],
-    "context": "Thomas Sowell published Knowledge and Decisions with Basic Books in 1980; it ran 422 pages in hardcover and won that year's Law and Economics Center Prize. Stigler, Becker and Friedman were all Chicago colleagues of his. Sources: Grokipedia, 'Knowledge and Decisions' (https://grokipedia.com/page/Knowledge_and_Decisions); Hoover Institution book page (https://www.hoover.org/research/knowledge-and-decisions).",
-    "topic": "knowledge-and-decisions-1980"
   },
   {
     "tier": 2,
@@ -11986,8 +11661,8 @@
     "topic": "knowledge-and-decisions-1980"
   },
   {
-    "tier": 2,
-    "question": "An interviewer asked Thomas Sowell in 2018, as he neared his eighty-eighth birthday, which of his own books was his personal favorite. Sowell passed over his huge economics books and named a shorter, more readable one from 1987. Which book did he name?",
+    "tier": 1,
+    "question": "An interviewer asked Thomas Sowell in 2018, as he neared eighty-eight, which of his own books he liked best. He passed over his big economics books and named a shorter one from 1987. Which book did he name?",
     "answer": "A Conflict of Visions",
     "choices": [
       "A Conflict of Visions",
@@ -12073,7 +11748,7 @@
       "How thinly the process spreads its costs and how narrowly it piles up its benefits",
       "Which rival process would otherwise do the same job, and how badly it would do it"
     ],
-    "context": "This is why the book is not a market-versus-state pamphlet: Sowell asks the identical question of every institution, markets included, and the answers come out different by institution rather than by team. The other three choices are real analytic moves too -- Sowell's own 'compared to what?', Mancur Olson's dispersed costs and concentrated benefits, and Milton Friedman's 'judge by results, not intentions.' Sources: Grokipedia, 'Knowledge and Decisions'; Wikipedia, 'Knowledge and Decisions'.",
+    "context": "This is why the book is not a market-versus-state pamphlet: Sowell asks the identical question of every institution, markets included, and the answers come out different by institution rather than by team. Sowell's own 'compared to what?', Mancur Olson's dispersed costs and concentrated benefits, and Milton Friedman's 'judge by results, not intentions' are real analytic moves too, but none of them is the book's single test. Sources: Grokipedia, 'Knowledge and Decisions'; Wikipedia, 'Knowledge and Decisions'.",
     "topic": "knowledge-and-decisions-1980"
   },
   {
@@ -12086,21 +11761,8 @@
       "Whether the programme's faculty would end up marking this student harder than the others",
       "How many students from the same background that programme had already admitted before"
     ],
-    "context": "Sowell calls this mismatch. It grew out of what he saw teaching at Cornell in the late 1960s, where students admitted under preferences were disproportionately on academic probation -- not, he argued, because they could not do college work, but because the fit was wrong. He made the case at book length in Affirmative Action Around the World: An Empirical Study (Yale University Press, 2004). Note carefully what the argument is and is not: it is a claim about what admissions data can and cannot tell you, not a claim about who deserves a place. Sources: H-Net Reviews, DasGupta on Sowell, 'Affirmative Action Around the World'; Claremont Review of Books, Sowell, 'The Perversity of Diversity'.",
+    "context": "Sowell calls this mismatch. It grew out of what he saw teaching at Cornell in the late 1960s, where students admitted under preferences were disproportionately on academic probation -- not, he argued, because they could not do college work, but because the fit was wrong. He made the case at book length in Affirmative Action Around the World: An Empirical Study (Yale University Press, 2004). The argument is a claim about what admissions data can and cannot tell an admissions office, not a claim about who deserves a place. Sources: H-Net Reviews, DasGupta on Sowell, 'Affirmative Action Around the World'; Claremont Review of Books, Sowell, 'The Perversity of Diversity'.",
     "topic": "knowledge-and-decisions-1980"
-  },
-  {
-    "tier": 1,
-    "question": "Thomas Sowell opened Basic Economics, his textbook in plain language, with his first rule of the subject: each choice gives up the best alternative left unchosen. College costs the wages a student could have earned; a late movie costs sleep. What do economists call that sacrifice?",
-    "answer": "Opportunity cost",
-    "choices": [
-      "Opportunity cost",
-      "Sunk cost",
-      "Fixed cost",
-      "Marginal cost"
-    ],
-    "context": "Basic Books published it. Sowell followed it in 2001 with 'The Einstein Syndrome: Bright Children Who Talk Late.' The subject was well outside his usual economics beat and became his most personal work. Source: grokipedia.com/page/The_Einstein_Syndrome.",
-    "topic": "late-talking-children-1997-and-the-einstein-syndrome"
   },
   {
     "tier": 2,
@@ -12116,8 +11778,8 @@
     "topic": "late-talking-children-1997-and-the-einstein-syndrome"
   },
   {
-    "tier": 3,
-    "question": "Thomas Sowell gathered stories from other families with late-talking children and brought out Late-Talking Children in 1997. He saw a pattern: the bright ones often had a gift for math and music, with engineers, scientists and musicians among their relatives. Four years later he named the pattern after a famous physicist whose family said he spoke no full sentences until he was about three. What did Sowell call it?",
+    "tier": 1,
+    "question": "Thomas Sowell named a pattern he found in bright late-talking children after a famous physicist whose family said he spoke no full sentences until he was about three. What did Sowell call it?",
     "answer": "The Einstein Syndrome",
     "choices": [
       "The Einstein Syndrome",
@@ -12131,38 +11793,25 @@
   {
     "tier": 4,
     "question": "Thomas Sowell argued, in two books on late-talking children, that the professionals who assess such children were not impartial judges: pediatricians, speech therapists and the special-education offices of schools. Their work, he said, ran on one particular incentive. What incentive did he point to?",
-    "answer": "Institutions had incentives to categorize children into named conditions with named interventions and named funding",
+    "answer": "To sort children into named conditions, each with its own funding",
     "choices": [
-      "Institutions had incentives to categorize children into named conditions with named interventions and named funding",
-      "Institutions had a legal obligation to diagnose all children with a specific developmental syndrome",
-      "Institutions had a financial incentive to refuse to diagnose any child under age 5",
-      "Institutions had no diagnostic incentive of any kind"
+      "To sort children into named conditions, each with its own funding",
+      "To avoid lawsuits by never naming any condition at all",
+      "To pass each child on to the cheapest specialist",
+      "To keep waiting lists short by sending children home"
     ],
     "context": "Sowell's argument is a Hayekian knowledge-problem move applied to a medical-institutional case. No single specialist could see the pattern because it crossed specialties, and the incentives inside each specialty rewarded diagnosis-and-treatment over watchful waiting. Source: grokipedia.com/page/The_Einstein_Syndrome.",
     "topic": "late-talking-children-1997-and-the-einstein-syndrome"
   },
   {
-    "tier": 4,
-    "question": "Thomas Sowell argued that programs designed by experts far from the scene tend to leave problems worse than they found them, even when those experts are neither wicked nor insincere. He traced the failure to one plain fact. What was his main reason such experts so often fail?",
-    "answer": "They lack the specific local knowledge that people on the ground actually have",
-    "choices": [
-      "They lack the specific local knowledge that people on the ground actually have",
-      "They secretly do not care about the people they are trying to help",
-      "They are almost always dishonest about their own motives",
-      "They rely too much on old-fashioned technology"
-    ],
-    "context": "Camarata's academic research provided a scholarly counterpart to Sowell's more accessible books. His own 'Late-Talking Children' (Broadway, 2014) drew on his Vanderbilt clinical practice. Source: grokipedia.com/page/The_Einstein_Syndrome.",
-    "topic": "late-talking-children-1997-and-the-einstein-syndrome"
-  },
-  {
     "tier": 5,
     "question": "Thomas Sowell, writing two books on late-talking children, carried one reasoning move he had long used on markets into pediatric medicine, a subject far from his usual economics. Which move carried over?",
-    "answer": "The knowledge-problem move: no single specialist could see the cross-specialty pattern, and the incentives inside each specialty rewarded intervention over waiting",
+    "answer": "Hayek's knowledge problem: no single specialist sees the whole pattern",
     "choices": [
-      "The knowledge-problem move: no single specialist could see the cross-specialty pattern, and the incentives inside each specialty rewarded intervention over waiting",
-      "The revealed-preference move: parents' choice of schools reveals their true valuation of education",
-      "The comparative-advantage move: economies specialize according to relative production costs",
-      "The efficient-markets move: all public information is instantly priced in"
+      "Hayek's knowledge problem: no single specialist sees the whole pattern",
+      "Comparative advantage: each specialist sticks to what he does best",
+      "Revealed preference: parents' choices show what they truly value",
+      "Collective action: small groups organize while large ones cannot"
     ],
     "context": "The same Hayekian analytical style Sowell applies to economic-policy questions carries over to a medical-institutional question. The books are often the first Sowell book recommended to non-economists because they show his method on a subject no one has a political axe about. Source: grokipedia.com/page/The_Einstein_Syndrome.",
     "topic": "late-talking-children-1997-and-the-einstein-syndrome"
@@ -12234,28 +11883,15 @@
   },
   {
     "tier": 4,
-    "question": "Friedrich Hayek argued in his trilogy of the 1970s that calling a market's results unfair is a category mistake: only the deliberate act of a person can be unfair. To make the point he chose an everyday scene in which nature spoils someone's plans, a misfortune nobody chose. Which scene did Hayek pick?",
-    "answer": "A rainstorm ruining a picnic",
-    "choices": [
-      "A rainstorm ruining a picnic",
-      "A wolf carrying off a lamb",
-      "A river flooding a farmer's field",
-      "A rockfall blocking a mountain path"
-    ],
-    "context": "Hayek's picnic-and-rainstorm illustration: no one designed the weather to spoil your afternoon, so calling it 'unjust' misuses the concept of justice; his claim is that market outcomes are analogous. The wolf-and-lamb is Aesop and La Fontaine; river and traveler examples belong to other authors. Source: Libertarianism.org, review of Volume 2.",
-    "topic": "law-legislation-and-liberty-1973-1979-and-spontaneous"
-  },
-  {
-    "tier": 4,
     "question": "Adam Ferguson, a Scottish philosopher, wrote a line in 1767 on where things such as language, money and law come from, and Friedrich Hayek quoted it often. What does the line teach about how such systems come about?",
-    "answer": "They grow up from many small everyday choices, without any one person planning the whole thing",
+    "answer": "They grow from many small choices, with no one planning the whole",
     "choices": [
-      "They grow up from many small everyday choices, without any one person planning the whole thing",
+      "They grow from many small choices, with no one planning the whole",
       "A wise ruler must sit down and design them from the top",
       "They need central experts to keep them working properly",
       "Only a written national constitution can ever create them"
     ],
-    "context": "The exact phrase comes from Part III of Ferguson's 1767 Essay: nations 'stumble upon establishments, which are indeed the result of human action, but not the execution of any human design.' Smith wrote The Wealth of Nations (1776); Hume died 1776; Hutcheson was Smith's teacher but did not coin this phrase. Source: Online Library of Liberty, Adam Ferguson quote page.",
+    "context": "The phrase comes from Part III of Ferguson's 1767 Essay on the History of Civil Society: nations 'stumble upon establishments, which are indeed the result of human action, but not the execution of any human design.' Source: Online Library of Liberty, Adam Ferguson quote page.",
     "topic": "law-legislation-and-liberty-1973-1979-and-spontaneous"
   },
   {
@@ -12300,14 +11936,14 @@
   {
     "tier": 5,
     "question": "An experienced doctor glances at a patient and knows at once that it is appendicitis, yet she cannot spell out on paper all that told her. A carpenter knows how to steady a warped board but cannot put every finger position into words. Michael Polanyi named this kind of skill, genuine and handed on by practice, and Friedrich Hayek took it as further evidence that no one place can hold all an economy knows. What did Polanyi call it?",
-    "answer": "Tacit knowledge — real skill you cannot fully write down",
+    "answer": "Tacit knowledge",
     "choices": [
-      "Tacit knowledge — real skill you cannot fully write down",
-      "Analytic proof — a claim demonstrated step by logical step",
-      "Explicit rules — a written instruction anyone can follow",
-      "Formal theory — a general model with clearly stated axioms"
+      "Tacit knowledge",
+      "Practical wisdom",
+      "Analytic proof",
+      "Formal theory"
     ],
-    "context": "Michael Polanyi (1891-1976), in Personal Knowledge (1958) and The Tacit Dimension (1966), argued that we know more than we can tell -- a claim Hayek treated as complementary to his own case that dispersed knowledge cannot be aggregated by a central planner. Popper, Berlin, and Russell were contemporaries in Hayek's circle but on other questions. Source: Wikipedia, Law, Legislation and Liberty; standard secondary literature on Hayek and Polanyi.",
+    "context": "Michael Polanyi (1891-1976), in Personal Knowledge (1958) and The Tacit Dimension (1966), argued that 'we can know more than we can tell', a claim Hayek treated as support for his own case that dispersed knowledge cannot be gathered by a central planner. Source: Wikipedia, Law, Legislation and Liberty.",
     "topic": "law-legislation-and-liberty-1973-1979-and-spontaneous"
   },
   {
@@ -12404,12 +12040,12 @@
   {
     "tier": 3,
     "question": "Two friends expect to trade often over Bitcoin's fast second layer. Their first step is to lock some bitcoin into a joint account on the main chain; from then on they can send payments back and forth off the chain, and when they stop, only the closing balance goes onto the main chain. What is that first step called?",
-    "answer": "Opening a payment channel with a funding transaction",
+    "answer": "Opening a payment channel",
     "choices": [
-      "Opening a payment channel with a funding transaction",
-      "Broadcasting a proof-of-stake attestation",
-      "Registering with the Federal Reserve",
-      "Purchasing a Bitcoin ETF share"
+      "Opening a payment channel",
+      "Making an atomic swap",
+      "Running a full node",
+      "Mining a fresh block"
     ],
     "context": "The funding transaction commits Bitcoin to a two-party multisignature address. Off-chain updates rebalance the split without touching the chain. When the channel closes, only the final balance is settled on-chain. Source: grokipedia.com/page/Lightning_Network.",
     "topic": "lightning-network-micropayments-on-top-of-bitcoin"
@@ -12417,27 +12053,14 @@
   {
     "tier": 3,
     "question": "Alice and Bob have a channel between them on Bitcoin's fast second layer, and so do Bob and Carol. Alice has none with Carol, yet she can still pay Carol by sending the money through Bob. What does Bob get for passing the payment along?",
-    "answer": "A small routing fee, paid by the sender to each intermediary along the path",
+    "answer": "A small routing fee, paid by the sender",
     "choices": [
-      "A small routing fee, paid by the sender to each intermediary along the path",
-      "A block reward paid out of Bitcoin's monetary base",
-      "A transaction subsidy from the Lightning Labs company",
-      "An interest charge added to Carol's balance at settlement"
+      "A small routing fee, paid by the sender",
+      "A share of the next block reward",
+      "A subsidy from the Lightning Labs company",
+      "An interest charge on Carol's balance"
     ],
     "context": "Routing fees are voluntary market prices set by each node. The network structure depends on nodes with well-funded channels making themselves available for routing. Source: grokipedia.com/page/Lightning_Network.",
-    "topic": "lightning-network-micropayments-on-top-of-bitcoin"
-  },
-  {
-    "tier": 4,
-    "question": "President Nayib Bukele announced in June 2021 a law giving Bitcoin official standing beside the US dollar in El Salvador, with the developer Jack Mallers at his side, and the government's Chivo phone wallet handed each adult $30 in bitcoin. What is the term for money a government officially accepts for paying debts and taxes?",
-    "answer": "Legal tender",
-    "choices": [
-      "Legal tender",
-      "Reserve currency",
-      "Fiat money",
-      "Central bank money"
-    ],
-    "context": "The wallet was called Chivo. Same-day the government issued each adult citizen a $30 Bitcoin allocation to encourage adoption. The rollout had bugs but demonstrated Lightning at national retail scale for the first time. Source: grokipedia.com/page/Bitcoin_in_El_Salvador.",
     "topic": "lightning-network-micropayments-on-top-of-bitcoin"
   },
   {
@@ -12456,12 +12079,12 @@
   {
     "tier": 5,
     "question": "A high-school student buys a two-dollar coffee in San Salvador with a Bitcoin app on her phone, and the payment settles in under a second for a fraction of a cent. An economist in Hayek's tradition finds a quiet feat in that purchase. Which problem does he say Bitcoin's fast layer has solved?",
-    "answer": "How to preserve auditable Bitcoin settlement while enabling coffee-sized payments no central rate-setter could price",
+    "answer": "Keeping settlement auditable while competing nodes price tiny payments",
     "choices": [
-      "How to preserve auditable Bitcoin settlement while enabling coffee-sized payments no central rate-setter could price",
-      "How to eliminate all fees on international wire transfers by legislative decree",
-      "How to guarantee a fixed exchange rate between Bitcoin and the US dollar",
-      "How to compel merchants worldwide to accept a single national currency"
+      "Keeping settlement auditable while competing nodes price tiny payments",
+      "Letting one central body set a fair fee for every small payment",
+      "Fixing bitcoin's dollar price so a coffee always costs the same",
+      "Writing every small payment onto the main chain within a second"
     ],
     "context": "Lightning fees are set by node operators competing for routing volume, not by any central body. Bitcoin's settlement layer stays fully auditable. The design is analogous to how the internet has TCP/IP at the base and higher-level protocols on top. Source: grokipedia.com/page/Lightning_Network.",
     "topic": "lightning-network-micropayments-on-top-of-bitcoin"
@@ -12472,24 +12095,24 @@
     "answer": "Complex math models don't guarantee safety in markets",
     "choices": [
       "Complex math models don't guarantee safety in markets",
-      "Only Nobel winners should run hedge funds",
-      "All hedge funds always fail eventually",
-      "Government funds are always safe"
+      "Options can't be priced with math",
+      "Big funds ride out panics best",
+      "Bond price gaps always close in time"
     ],
     "context": "LTCM's founder team included Nobel laureates Myron Scholes and Robert Merton, who had won the 1997 Nobel Prize in Economics for their work on options pricing (the Black-Scholes model). Source: Grokipedia 'Long-Term Capital Management' (2026-09-05).",
     "topic": "long-term-capital-management-and-the-1998-rescue"
   },
   {
     "tier": 1,
-    "question": "John Meriwether, a former Salomon Brothers bond trader, founded Long-Term Capital Management in 1994. The fund came to hold bets worth about $125 billion while owning only some $4.7 billion itself, about twenty-seven borrowed dollars for each dollar it owned. What is that borrowed-money strategy called?",
-    "answer": "Leverage",
+    "question": "Long-Term Capital Management held about $125 billion of bets on only $4.7 billion in capital, so it owed some twenty-seven dollars for each dollar it owned. What does borrowing like that do to a fund's gains and losses?",
+    "answer": "It magnifies both",
     "choices": [
-      "Leverage",
-      "Inflation",
-      "Arbitrage",
-      "Diversification"
+      "It magnifies both",
+      "It shrinks both",
+      "It shrinks losses only",
+      "It locks in gains"
     ],
-    "context": "LTCM held roughly $125 billion in positions against only $4.7 billion in capital -- a leverage ratio of about 27 to 1 (and much higher when derivative exposures were counted). For four years (1994-97) the strategy produced spectacular returns of 40%+ annually. Source: Grokipedia 'Long-Term Capital Management' (2026-09-05).",
+    "context": "LTCM held roughly $125 billion in positions against only $4.7 billion in capital, a ratio of about 27 to 1. Using borrowed money to multiply a bet this way is called leverage: it multiplied the fund's gains in its good years and its losses in 1998, when the loans still had to be repaid. Source: Grokipedia 'Long-Term Capital Management' (2026-09-05).",
     "topic": "long-term-capital-management-and-the-1998-rescue"
   },
   {
@@ -12498,11 +12121,11 @@
     "answer": "It nearly went bankrupt and had to be rescued to prevent wider damage",
     "choices": [
       "It nearly went bankrupt and had to be rescued to prevent wider damage",
-      "It doubled its money because prices moved exactly as expected",
-      "It quietly closed with no losses and moved to a new office",
-      "It bought the country's debt and forgave it as charity"
+      "It lost a little but recovered within weeks on its own",
+      "It was shut by regulators and its partners were jailed",
+      "It sold its bets at once and returned the cash to investors"
     ],
-    "context": "The Russian government defaulted on August 17 1998, devaluing the ruble and defaulting on domestic debt. The resulting flight to quality made LTCM's leveraged spread bets go against them across every desk. Source: Grokipedia '1998 Russian financial crisis' (2026-09-05).",
+    "context": "The Russian government defaulted on August 17, 1998, devaluing the ruble and defaulting on domestic debt. The flight to safety that followed made LTCM's leveraged spread bets go against the fund across every desk. Source: Grokipedia '1998 Russian financial crisis' (2026-09-05).",
     "topic": "long-term-capital-management-and-the-1998-rescue"
   },
   {
@@ -12534,12 +12157,12 @@
   {
     "tier": 3,
     "question": "Federal Reserve officials in New York stepped in when the hedge fund Long-Term Capital Management collapsed in September 1998, though it had no depositors, no branches and no small savers to protect, nothing the Fed is supposed to backstop. They gave one specific reason for stepping in. What was it?",
-    "answer": "LTCM's counterparty banks were so exposed that a disorderly unwind could cascade into the banking system",
+    "answer": "The banks that traded with it could be dragged down in a fire sale",
     "choices": [
-      "LTCM's counterparty banks were so exposed that a disorderly unwind could cascade into the banking system",
-      "LTCM held over $10 billion in FDIC-insured deposits",
-      "LTCM's Nobel-laureate advisors deserved public defense",
-      "LTCM's collapse would trigger a Russian government invasion of Ukraine"
+      "The banks that traded with it could be dragged down in a fire sale",
+      "Its partners had broken federal law and had to be stopped",
+      "Its trades had pushed interest rates above the Fed's target",
+      "Its Russian bonds had to be kept out of hostile hands"
     ],
     "context": "The 1998 justification: LTCM's counterparties (the 14 banks that would organize the rescue) were also its potential victims. A disorderly unwind of $125 billion in leveraged positions could damage them enough to trigger a broader crisis. Source: Grokipedia 'Long-Term Capital Management' (2026-09-05).",
     "topic": "long-term-capital-management-and-the-1998-rescue"
@@ -12547,12 +12170,12 @@
   {
     "tier": 4,
     "question": "Warren Buffett, with the insurer American International Group and Goldman Sachs beside him, offered $250 million in September 1998 to take over the collapsing hedge fund Long-Term Capital Management, an offer that would have left its partners with nothing. The talks broke down, and a rescue by other banks came instead. Free-market critics wish Buffett's offer had gone through. Why do they prefer private buyouts over rescues the government organizes?",
-    "answer": "Private buyouts do not teach big firms that the government will always save them next time",
+    "answer": "They do not teach big firms that the government will save them",
     "choices": [
-      "Private buyouts do not teach big firms that the government will always save them next time",
-      "Private buyouts always pay much more money than government rescues do",
-      "Government rescues are always against federal law",
-      "Private investors have unlimited money to spend"
+      "They do not teach big firms that the government will save them",
+      "They settle a failure faster than a meeting of rival banks",
+      "They keep the deal secret from markets until it is done",
+      "They make sure investors get back every dollar they put in"
     ],
     "context": "Warren Buffett's Berkshire Hathaway, together with AIG and Goldman Sachs, offered $250 million for LTCM's positions in early September 1998. The offer would have wiped out the LTCM partners entirely. Negotiations broke down; the Fed rescue came days later. Source: Grokipedia 'Long-Term Capital Management' (2026-09-05).",
     "topic": "long-term-capital-management-and-the-1998-rescue"
@@ -12563,11 +12186,11 @@
     "answer": "Rare events are not as rare as models built on calm years suggest",
     "choices": [
       "Rare events are not as rare as models built on calm years suggest",
-      "Nobel Prizes prove a model is correct in every market",
-      "Only unregulated funds ever lose their investors' money",
-      "The Federal Reserve can always predict the next crisis"
+      "The fund's computers were too slow to trade in a panic",
+      "The firm's traders ignored the models when it mattered",
+      "Russia's bonds carried no risk because Russia was so big"
     ],
-    "context": "Scholes and Merton won the 1997 Nobel Prize in Economics for the Black-Scholes options-pricing model. Less than a year later, the fund they advised was near-insolvent. It is one of the most-cited coincidences in modern finance. Source: Grokipedia 'Myron Scholes' (2026-09-05).",
+    "context": "LTCM's risk models, fitted to years of calm markets, treated a move as large as August 1998's as a once-in-centuries event. Real markets produce such big moves far more often than those models allow, a pattern known as fat tails. Scholes and Merton had won the Nobel less than a year before. Source: Grokipedia 'Long-Term Capital Management' (2026-09-05).",
     "topic": "long-term-capital-management-and-the-1998-rescue"
   },
   {
@@ -12576,16 +12199,16 @@
     "answer": "The circle of firms treated as too big to fail quietly grows over time",
     "choices": [
       "The circle of firms treated as too big to fail quietly grows over time",
-      "Only small commercial banks ever get government protection",
+      "Each rescue was a true one-off with its own special cause",
       "The government can protect big firms while still keeping others cautious",
-      "Private funds never receive help from federal regulators"
+      "Rescues shift over time from big firms toward small ones"
     ],
     "context": "The LTCM pattern extended through AIG (2008), the Reserve Primary Fund (2008), and eventually to any entity whose failure would cascade into the banking system. The Continental Illinois principle grew steadily across categories over four decades. Source: Grokipedia 'Too big to fail' (2026-09-05).",
     "topic": "long-term-capital-management-and-the-1998-rescue"
   },
   {
     "tier": 1,
-    "question": "Ludwig Lachmann, a student of Hayek's who spent some forty years teaching in Johannesburg, published a short, influential book in 1956 about lathes, trucks and factory buildings and the particular ways such tools fit together. What did he title it?",
+    "question": "Ludwig Lachmann, a student of Hayek's who spent over twenty years teaching in Johannesburg, published a short, influential book in 1956 about lathes, trucks and factory buildings and the ways such tools fit together. What did he title it?",
     "answer": "Capital and Its Structure",
     "choices": [
       "Capital and Its Structure",
@@ -12612,11 +12235,11 @@
   {
     "tier": 2,
     "question": "Frank Knight drew a line in 1921 between risk that can be measured and real uncertainty, and Ludwig Lachmann took it up against the rational-expectations school of the 1970s, which pictured business owners working out tomorrow by the laws of probability. Which view did Lachmann defend?",
-    "answer": "The future is genuinely unknowable, so different entrepreneurs form different expectations",
+    "answer": "The future is truly unknowable, so entrepreneurs reasonably expect different things",
     "choices": [
-      "The future is genuinely unknowable, so different entrepreneurs form different expectations",
-      "The future is a well-defined probability distribution known to all entrepreneurs",
-      "The future is known perfectly through central-planner announcements",
+      "The future is truly unknowable, so entrepreneurs reasonably expect different things",
+      "The future is unknowable, so entrepreneurs all copy the market leader",
+      "The future follows long cycles that careful study can predict",
       "The future is irrelevant because entrepreneurs only respond to present prices"
     ],
     "context": "Lachmann invoked Frank Knight's 1921 distinction between measurable risk and genuine uncertainty; there is no such thing as 'the' rational expectation of a market participant. Source: grokipedia.com/page/Ludwig_Lachmann.",
@@ -12625,12 +12248,12 @@
   {
     "tier": 3,
     "question": "George Shackle and Ludwig Lachmann argued that the economic future is not risky the way a dice roll is. Dice have known odds; tomorrow will bring inventions, firms and decisions no one has made yet, and nobody can put fair odds on what does not exist. If they are right, what follows for ten-year economic forecasts?",
-    "answer": "They are basically guesses and should not be trusted like weather reports",
+    "answer": "They are basically guesses, not to be trusted like weather reports",
     "choices": [
-      "They are basically guesses and should not be trusted like weather reports",
-      "They are perfectly accurate if the model has enough data",
-      "They only work inside communist economies",
-      "They only work during wartime"
+      "They are basically guesses, not to be trusted like weather reports",
+      "They grow more accurate the further ahead they look",
+      "They are reliable once enough past data is fed in",
+      "They work as long as forecasters agree with each other"
     ],
     "context": "'From Mises to Shackle: An Essay on Austrian Economics and the Kaleidic Society' (JEL, 1976) argued the tradition should follow Shackle's radical-uncertainty picture rather than any equilibration story. Source: jstor.org/stable/2722553.",
     "topic": "ludwig-lachmann-radical-subjectivism-and-expectations"
@@ -12649,42 +12272,16 @@
     "topic": "ludwig-lachmann-radical-subjectivism-and-expectations"
   },
   {
-    "tier": 5,
-    "question": "Max Weber traced in 1905 how a Protestant culture's teachings, hard work, thrift and keeping one's word among them, went hand in hand with the growth of capitalism. Ludwig Lachmann returned to Weber in 1971 in The Legacy of Max Weber. What broad claim was Weber making?",
-    "answer": "Culture and shared habits shape a market as much as its rules do",
-    "choices": [
-      "Culture and shared habits shape a market as much as its rules do",
-      "Only written laws matter — culture is only decoration",
-      "Only natural resources decide how rich a country becomes",
-      "Markets grow at the same speed everywhere regardless of habit"
-    ],
-    "context": "The Legacy of Max Weber (1971) applied Austrian ideas about individual choice under uncertainty to Weberian action-theory sociology. Source: grokipedia.com/page/Ludwig_Lachmann.",
-    "topic": "ludwig-lachmann-radical-subjectivism-and-expectations"
-  },
-  {
     "tier": 1,
     "question": "A planner in a communist ministry sets prices by decree, with no free market to tell him anything. Ludwig von Mises taught that every free price tells two things at the same time: what buyers want and what the goods cost to produce. What goes wrong for that planner?",
-    "answer": "Planners can't tell what is scarce or what people really need",
+    "answer": "He can't tell what is scarce or what people need",
     "choices": [
-      "Planners can't tell what is scarce or what people really need",
-      "Factories run out of workers to hire",
-      "People stop having children",
-      "The government becomes too popular"
+      "He can't tell what is scarce or what people need",
+      "Shoppers refuse to pay legal prices",
+      "Prices rise each month whatever he does",
+      "Workers quit once wages are equal"
     ],
-    "context": "Mises (1881-1973) fled Vienna via Geneva in 1934 and Europe in 1940. Hayek left Vienna for London in 1931, not New York; Schumpeter had moved to Harvard in 1932 with a full professorship; Machlup emigrated in 1933 and held paid chairs at Buffalo, Johns Hopkins, and Princeton. Source: en.wikipedia.org/wiki/Ludwig_von_Mises.",
-    "topic": "ludwig-von-mises-who-he-was"
-  },
-  {
-    "tier": 1,
-    "question": "Ludwig von Mises argued that no committee of officials could ever run an economy from the top, because what it would need to know never sits in one office. In a free economy, he said, that knowledge comes from one everyday place. Where does it come from?",
-    "answer": "Prices set by millions of buyers and sellers making their own choices",
-    "choices": [
-      "Prices set by millions of buyers and sellers making their own choices",
-      "Government surveys once a year",
-      "University economics departments",
-      "News reports on TV"
-    ],
-    "context": "Mises was born in Lemberg, then the capital of Austrian Galicia -- today Lviv, western Ukraine's largest city. The city was Polish (Lwow) between the wars, Soviet after 1945, and Ukrainian since 1991. Source: en.wikipedia.org/wiki/Ludwig_von_Mises.",
+    "context": "Mises held that a free price carries two messages at once: how much buyers want a thing and what it costs to make. A price set by decree carries neither, so the planner cannot tell what is scarce or what people need. Source: en.wikipedia.org/wiki/Ludwig_von_Mises.",
     "topic": "ludwig-von-mises-who-he-was"
   },
   {
@@ -12716,14 +12313,14 @@
   {
     "tier": 4,
     "question": "Ludwig von Mises published a paper in 1920 attacking the whole idea of full socialism, on economic rather than moral grounds. Under full socialism the state owns every factory, farm and tool, so none of them ever changes hands in a market and none has a genuine price tag. Why, in his argument, are the planners then stuck when they decide what to produce and how?",
-    "answer": "Without real prices, planners cannot tell which uses of resources create the most value",
+    "answer": "Without real prices, they cannot tell which uses create the most value",
     "choices": [
-      "Without real prices, planners cannot tell which uses of resources create the most value",
-      "Workers get lazy when everyone earns the same wage",
-      "Inflation always makes long-term planning impossible",
-      "Central bankers can never agree on interest rates"
+      "Without real prices, they cannot tell which uses create the most value",
+      "Workers grow lazy once everyone is paid the same wage",
+      "Inflation makes any long-term plan impossible to keep",
+      "Central bankers can never agree on the rate of interest"
     ],
-    "context": "Margit Sereny (1890-1993) had been a Hamburg actress before her first marriage; she met Ludwig in Vienna in 1925 and married him in 1938 as Nazi pressure closed in. She wrote the 1976 memoir 'My Years With Ludwig von Mises' (Arlington House) and helped Lew Rockwell found the Mises Institute in 1982. The other three names are inventions. Source: mises.org/library/book/my-years-ludwig-von-mises.",
+    "context": "Mises's 1920 essay, Economic Calculation in the Socialist Commonwealth, argued that when the state owns all the means of production they are never bought or sold, so they carry no market prices, and planners have no way to compare one use of resources with another. Source: en.wikipedia.org/wiki/Ludwig_von_Mises.",
     "topic": "ludwig-von-mises-who-he-was"
   },
   {
@@ -12884,19 +12481,6 @@
   },
   {
     "tier": 1,
-    "question": "Congress passes a law that gives a million extra dollars a year to each of a hundred sugar growers, and every one of a hundred million taxpayers pays a dollar a year toward it. Mancur Olson made patterns like this famous. What is the pattern called?",
-    "answer": "Concentrated benefits and dispersed costs",
-    "choices": [
-      "Concentrated benefits and dispersed costs",
-      "Perfect competition",
-      "The invisible hand",
-      "Sunk cost"
-    ],
-    "context": "Mancur Olson Jr. (1932-1998) earned his PhD at Harvard and taught for most of his career at the University of Maryland. Source: en.wikipedia.org/wiki/Mancur_Olson.",
-    "topic": "mancur-olson-the-logic-of-collective-action-1965"
-  },
-  {
-    "tier": 1,
     "question": "A young economist raised on a farm in North Dakota published a short book about groups with Harvard University Press in 1965, and it reshaped what economists and political scientists believed about them. His name was Mancur Olson. What did he title the book?",
     "answer": "The Logic of Collective Action",
     "choices": [
@@ -12949,15 +12533,15 @@
   },
   {
     "tier": 3,
-    "question": "A couple signs up for one huge American group, mostly for its cheap insurance, hotel deals, travel discounts and low-priced prescription drugs. Tens of millions of members have joined for the same perks, and Mancur Olson made the group his classic case of members drawn in by private benefits rather than shared political passion. Which group is it?",
+    "question": "A couple signs up for one huge American group, mostly for its cheap insurance, hotel deals, travel discounts and low-priced prescription drugs. Tens of millions of members have joined for the same perks, and scholars applying Mancur Olson's idea hold the group up as a classic case of members drawn in by private benefits rather than shared political passion. Which group is it?",
     "answer": "AARP",
     "choices": [
       "AARP",
-      "The American Legion",
-      "The Rotary Club",
-      "The League of Women Voters"
+      "The Elks",
+      "The Grange",
+      "The Lions"
     ],
-    "context": "AARP offers its members insurance and travel discounts as selective incentives; these private benefits sustain what would otherwise be an under-organized dispersed group of older Americans. Source: Olson, Logic (1965); Skocpol, Diminished Democracy (Oklahoma 2003).",
+    "context": "AARP offers its members insurance and travel discounts as selective incentives, private benefits that sustain what would otherwise be an under-organized group of older Americans. Olson's own 1965 example was the Farm Bureau, which drew farmers with cheap auto insurance into a lobby for farm subsidies. Source: econlib.org/library/Enc/bios/Olson.html.",
     "topic": "mancur-olson-the-logic-of-collective-action-1965"
   },
   {
@@ -12975,13 +12559,13 @@
   },
   {
     "tier": 4,
-    "question": "Mancur Olson worked through the arithmetic of policies that give a large gain to a few people and a small loss to each of millions, even where the total cost exceeds the total benefit. What did he say such policies do, in one word?",
+    "question": "Mancur Olson worked through the arithmetic of policies that give a large gain to a few people and a small loss to each of millions, even where the total cost exceeds the total benefit. What did he say becomes of such policies?",
     "answer": "They survive",
     "choices": [
       "They survive",
       "They accelerate",
       "They collapse",
-      "They rotate"
+      "They backfire"
     ],
     "context": "The beneficiaries organize to defend the policy; the victims never organize to oppose it. Farm subsidies, sugar tariffs, occupational licensing, and thousands of similar policies survive for decades despite failing cost-benefit tests. Source: Olson, Logic of Collective Action (1965).",
     "topic": "mancur-olson-the-logic-of-collective-action-1965"
@@ -13009,7 +12593,7 @@
       "Politicians act from pure public spirit rather than self-interest",
       "Voting systems always produce coherent group preferences"
     ],
-    "context": "Pre-Olson pluralist theory (David Truman, Arthur Bentley) assumed shared interests produce organization. Olson showed the opposite: shared interest is not enough; you need selective incentives OR small numbers OR compulsion. Source: Olson, Logic of Collective Action (1965), preface.",
+    "context": "Pre-Olson pluralist theory (David Truman, Arthur Bentley) assumed shared interests produce organization. Olson showed the opposite: shared interest is not enough; a large group needs selective incentives, small numbers or compulsion. Source: Olson, Logic of Collective Action (1965), preface.",
     "topic": "mancur-olson-the-logic-of-collective-action-1965"
   },
   {
@@ -13044,9 +12628,9 @@
     "answer": "Prices in the economy rise as more dollars chase the same goods",
     "choices": [
       "Prices in the economy rise as more dollars chase the same goods",
-      "Prices in the economy stay flat because dollars are magic",
-      "Everyone becomes richer without any cost to anyone",
-      "The government cancels all taxes because it no longer needs them"
+      "Banks sit on the new money, so prices fall for years",
+      "The dollar grows too strong for American exporters",
+      "Wages race ahead of prices and workers grow richer"
     ],
     "context": "The March 23 2020 announcement removed any dollar cap on Treasury and mortgage-backed-security purchases. It also launched unprecedented new lending facilities. Source: Grokipedia 'Quantitative easing' (2026-09-05).",
     "topic": "march-2020-emergency-cuts-and-unlimited-qe"
@@ -13057,11 +12641,11 @@
     "answer": "The central bank was now picking which companies to prop up",
     "choices": [
       "The central bank was now picking which companies to prop up",
-      "The central bank ran out of gold to back its dollars",
-      "The central bank had never bought any kind of bond before",
-      "The central bank was banned by law from touching bonds"
+      "Buying company bonds would push interest rates up",
+      "The companies would owe the Fed their future profits",
+      "The Fed was buying only from foreign bondholders"
     ],
-    "context": "The Primary Market Corporate Credit Facility and Secondary Market Corporate Credit Facility allowed the Fed to buy corporate bonds directly for the first time. Previously the Fed had bought only Treasuries and agency debt. Source: Grokipedia 'Federal Reserve response to the COVID-19 pandemic' (2026-09-05).",
+    "context": "The Primary and Secondary Market Corporate Credit Facilities let the Fed buy corporate bonds directly for the first time; before, it had bought only Treasuries and agency debt. On April 9, 2020 it also opened a Municipal Liquidity Facility for state and city bonds, so the central bank itself was choosing which borrowers got credit, a job traditionally left to legislatures. Source: Grokipedia 'Federal Reserve response to the COVID-19 pandemic' (2026-09-05).",
     "topic": "march-2020-emergency-cuts-and-unlimited-qe"
   },
   {
@@ -13075,19 +12659,6 @@
       "Widow-makers"
     ],
     "context": "The April 9 2020 expansion covered 'fallen angels' -- formerly investment-grade debt now trading as high yield. The Fed had crossed the line from Treasury-and-agency-only purchases into direct corporate credit allocation, including junk. Source: Grokipedia 'Fallen angel (finance)' (2026-09-05).",
-    "topic": "march-2020-emergency-cuts-and-unlimited-qe"
-  },
-  {
-    "tier": 3,
-    "question": "A city treasurer found a new buyer for her city's bonds on April 9, 2020, when the Federal Reserve opened a facility to buy them, beside its new programs for company bonds. The Fed had now taken on a task traditionally left to legislatures. Which line had the Fed crossed?",
-    "answer": "Direct corporate and municipal credit allocation by the central bank",
-    "choices": [
-      "Direct corporate and municipal credit allocation by the central bank",
-      "Guaranteeing all US mortgages",
-      "Setting long-term interest rates directly by yield-curve control",
-      "Issuing central-bank digital currency to households"
-    ],
-    "context": "For the first time in its history the Fed was directly choosing which private and municipal borrowers received support. This is credit allocation -- traditionally a legislative function, not a central-bank function. Source: Grokipedia 'Federal Reserve response to the COVID-19 pandemic' (2026-09-05).",
     "topic": "march-2020-emergency-cuts-and-unlimited-qe"
   },
   {
@@ -13119,14 +12690,14 @@
   {
     "tier": 5,
     "question": "A Mises Institute economist sets the Federal Reserve's programs of March 2020 beside its rescues of 2008 to 2014 and finds them far larger. He draws a lasting lesson about what an emergency leaves behind. What is his point?",
-    "answer": "Emergency-era programs establish new institutional baselines, and next-crisis responses start from the elevated baseline rather than returning to normal",
+    "answer": "Emergency programs set a new baseline that the next crisis starts from",
     "choices": [
-      "Emergency-era programs establish new institutional baselines, and next-crisis responses start from the elevated baseline rather than returning to normal",
-      "Emergency-era programs are always fully unwound within two years",
-      "Emergency-era programs affect only asset prices, not consumer prices",
-      "Emergency-era programs are politically neutral and do not affect distribution"
+      "Emergency programs set a new baseline that the next crisis starts from",
+      "Emergency programs are always fully unwound within two years",
+      "Emergency programs affect only asset prices, not consumer prices",
+      "Emergency programs are politically neutral and leave incomes alone"
     ],
-    "context": "The Fed's 2020 balance sheet ($8.9T peak) is now the reference point. Any future crisis will be met with something at least as large. The Cantillon-effect distribution to first receivers -- asset holders, primary dealers, government contractors -- was correspondingly larger. Source: Ammous, The Fiat Standard (2021).",
+    "context": "The Fed's 2020 balance sheet ($8.9T at its 2022 peak) became the new reference point; on this reading, any future crisis response starts from at least that level. The Cantillon-effect gains to the first receivers of new money (asset holders, primary dealers, government contractors) were correspondingly larger. Source: Ammous, The Fiat Standard (2021).",
     "topic": "march-2020-emergency-cuts-and-unlimited-qe"
   },
   {
@@ -13143,34 +12714,8 @@
     "topic": "marginal-revolution-and-mru-cowen-and-tabarrok-at-gmu"
   },
   {
-    "tier": 2,
-    "question": "James Buchanan took the Nobel Prize in 1986 for a blunt idea he shared with Gordon Tullock. Everyone in government, from a congressman to an agency clerk, chases votes, bigger budgets and promotions like anyone else; no one turns selfless on taking office. What does the idea say about a politician's choices?",
-    "answer": "The politician often picks what helps his or her own career, not the general good",
-    "choices": [
-      "The politician often picks what helps his or her own career, not the general good",
-      "The politician always picks the option that helps everyone equally",
-      "The politician has no personal interests once elected to office",
-      "The politician cares only about his or her salary and nothing else"
-    ],
-    "context": "GMU became the successor institutional home of James Buchanan's Center for Study of Public Choice in 1983. Cowen directs the Mercatus Center at GMU; Tabarrok holds the Bartley J. Madden chair at Mercatus. Source: grokipedia.com/page/Tyler_Cowen.",
-    "topic": "marginal-revolution-and-mru-cowen-and-tabarrok-at-gmu"
-  },
-  {
     "tier": 3,
-    "question": "Two George Mason economists who had blogged together daily since 2003 opened Marginal Revolution University in 2012: a free online library of short economics videos, where millions have since enrolled. What matters most about lessons like these for someone setting out to learn the subject?",
-    "answer": "Anyone with an internet connection can learn without paying college tuition",
-    "choices": [
-      "Anyone with an internet connection can learn without paying college tuition",
-      "Only students already at top colleges are allowed to watch them",
-      "You must be over 30 years old to watch them",
-      "The lessons cost more than college but are shorter"
-    ],
-    "context": "MRU has millions of enrolled students as of the 2020s and is widely used in home-school and secondary-school economics. Its scene-led case-study style is directly modeled on Sowell's Basic Economics approach. Source: grokipedia.com/page/Marginal_Revolution_(blog).",
-    "topic": "marginal-revolution-and-mru-cowen-and-tabarrok-at-gmu"
-  },
-  {
-    "tier": 3,
-    "question": "Tyler Cowen looked back, in The Great Stagnation of 2011, at the airplane, the car, electricity and indoor plumbing, all arriving before the 1970s, and argued that inventions on that scale have been far rarer since. What did he say the shortage of big new inventions has caused?",
+    "question": "A George Mason economist looked back, in The Great Stagnation of 2011, at the airplane, the car, electricity and indoor plumbing, all arriving before the 1970s, and argued that inventions on that scale have been far rarer since. What did he say the shortage of big new inventions has caused?",
     "answer": "A slowdown in productivity growth",
     "choices": [
       "A slowdown in productivity growth",
@@ -13197,12 +12742,12 @@
   {
     "tier": 5,
     "question": "James Buchanan and Gordon Tullock brought their center for public choice to George Mason University in 1983 and built the school's academic structure there. A generation later two economists there, the pair behind the Marginal Revolution blog, added something of their own. What did the pair add to the Mason tradition?",
-    "answer": "They moved the reasoning-move tradition online and into the popular economics conversation",
+    "answer": "They carried its reasoning online and into popular debate",
     "choices": [
-      "They moved the reasoning-move tradition online and into the popular economics conversation",
-      "They rejected the public-choice framework in favor of Keynesian macroeconomics",
-      "They took over the editorship of the American Economic Review",
-      "They served consecutively as chair of the Federal Reserve"
+      "They carried its reasoning online and into popular debate",
+      "They swapped public choice for Keynesian economics",
+      "They took over editing the profession's leading journal",
+      "They moved the public-choice center to Washington"
     ],
     "context": "Where Buchanan and Tullock built the academic apparatus, Cowen and Tabarrok made the reasoning-move tradition accessible to a general reader without a degree -- through Marginal Revolution (daily blog since 2003), MRU (free courses since 2012), Cowen's podcast (since 2015), and their principles textbook. Source: grokipedia.com/page/Tyler_Cowen.",
     "topic": "marginal-revolution-and-mru-cowen-and-tabarrok-at-gmu"
@@ -13210,14 +12755,14 @@
   {
     "tier": 1,
     "question": "Milton Friedman argued in his 1962 book Capitalism and Freedom that a state license to practice medicine shields doctors from competition as well as protecting patients. In each American state, who decides who gets that license?",
-    "answer": "The state medical board, staffed largely by physicians",
+    "answer": "The state medical board",
     "choices": [
-      "The state medical board, staffed largely by physicians",
-      "The federal Department of Health and Human Services",
-      "The American Bar Association",
+      "The state medical board",
+      "The US Department of Health",
+      "The American Medical Association",
       "The Federal Trade Commission"
     ],
-    "context": "State medical boards, majority-populated by licensed physicians, control entry to the profession within each state. Friedman's diagnosis: this is a classic Stigler-captured licensing body. Source: Friedman, Capitalism and Freedom (Chicago 1962), Chapter 9.",
+    "context": "State medical boards, staffed largely by licensed physicians, control entry to the profession within each state. Friedman argued that boards run by the profession use entry rules to hold down competition, a pattern George Stigler later built into his theory of regulatory capture. Source: Friedman, Capitalism and Freedom (Chicago 1962), Chapter 9.",
     "topic": "medical-licensing-friedmans-capitalism-and-freedom-chapter-9"
   },
   {
@@ -13226,58 +12771,32 @@
     "answer": "It pushed prices higher because fewer new doctors entered the field",
     "choices": [
       "It pushed prices higher because fewer new doctors entered the field",
-      "It pushed prices lower because doctors were more educated",
-      "It kept prices the same for a full century",
-      "It made all doctor visits completely free of charge"
+      "It pushed prices lower as doctors grew better trained",
+      "It left prices flat as surviving schools grew",
+      "It pushed prices lower by driving out quacks"
     ],
-    "context": "The Flexner Report (Abraham Flexner for the Carnegie Foundation, 1910) recommended consolidating US medical education on the Johns Hopkins model. Between 1904 and 1935 the number of US medical schools fell from 160 to 76. Source: en.wikipedia.org/wiki/Flexner_Report.",
-    "topic": "medical-licensing-friedmans-capitalism-and-freedom-chapter-9"
-  },
-  {
-    "tier": 2,
-    "question": "A student hoping to train as a doctor in 1935 found far fewer American medical schools to choose from than in 1904, after Abraham Flexner had told the states in 1910 to close the small ones that fell short of strict new standards. About how did the number of schools change between 1904 and 1935?",
-    "answer": "From about 160 to about 76",
-    "choices": [
-      "From about 160 to about 76",
-      "From about 500 to about 300",
-      "From about 76 to about 160",
-      "From about 40 to about 200"
-    ],
-    "context": "US medical schools dropped from about 160 in 1904 to about 76 by 1935. Enrollment fell correspondingly; physician incomes rose relative to comparable professions across the same period. Source: Starr, The Social Transformation of American Medicine (Basic 1982).",
+    "context": "The Flexner Report (Abraham Flexner for the Carnegie Foundation, 1910) recommended consolidating US medical education on the Johns Hopkins model. The number of US medical schools fell from 160 in 1904 to 85 by 1920 and 66 by 1935. Source: en.wikipedia.org/wiki/Flexner_Report.",
     "topic": "medical-licensing-friedmans-capitalism-and-freedom-chapter-9"
   },
   {
     "tier": 3,
     "question": "A hair braider in one American state applied for a government license before she could charge her neighbors for braiding their hair. Morris Kleiner, a labor economist, has spent years measuring what rules like that do to pay. What do his studies find about the pay of workers who already hold a license?",
-    "answer": "License holders earn more, because new competitors are kept out",
+    "answer": "Wages rise, because new competitors are kept out",
     "choices": [
-      "License holders earn more, because new competitors are kept out",
+      "Wages rise, because new competitors are kept out",
       "Wages drop, because rules push customers away",
       "Wages stay the same, since customers do not notice",
-      "Wages rise only during a recession"
+      "Wages rise only for the newest license holders"
     ],
-    "context": "Morris Kleiner, Licensing Occupations: Ensuring Quality or Restricting Competition? (Upjohn Institute, 2006). His subsequent 2013 Journal of Labor Economics paper with Alan Krueger extended the analysis. Source: upjohn.org (Kleiner 2006).",
-    "topic": "medical-licensing-friedmans-capitalism-and-freedom-chapter-9"
-  },
-  {
-    "tier": 3,
-    "question": "Morris Kleiner tallied the spread of job licensing in America: in the 1950s a license was needed by one worker in twenty, and now about a quarter need one, hair braiders and interior designers among them. He found little measurable gain in quality for all of it. In his findings, whose interests does licensing mostly serve?",
-    "answer": "Existing practitioners",
-    "choices": [
-      "Existing practitioners",
-      "New entrants",
-      "Low-income consumers",
-      "The uninsured"
-    ],
-    "context": "Kleiner estimates about a quarter of the US workforce now needs a state license to work legally. Licensed-worker wages are approximately 15% higher on average, with little measurable improvement in service quality. Source: Kleiner + Krueger, Journal of Labor Economics (2013).",
+    "context": "Morris Kleiner, in Licensing Occupations: Ensuring Quality or Restricting Competition? (Upjohn Institute, 2006), estimates that licensed workers earn about 15 percent more on average, with little measurable gain in quality. With Alan Krueger he found in 2013 that the share of American workers needing a license had risen from about one in twenty in the 1950s to more than one in four by 2008. Source: Kleiner and Krueger, Journal of Labor Economics (2013).",
     "topic": "medical-licensing-friedmans-capitalism-and-freedom-chapter-9"
   },
   {
     "tier": 4,
     "question": "A nurse practitioner, a nurse with advanced clinical training, opened her own primary-care clinic with no doctor supervising her, in one of about half the states that allowed it by 2024. Researchers compared those states with the ones where only a physician could run such a clinic. What did they keep finding?",
-    "answer": "Lower primary-care prices with no measurable quality difference from physician-only states",
+    "answer": "Lower primary-care prices and no measurable change in quality",
     "choices": [
-      "Lower primary-care prices with no measurable quality difference from physician-only states",
+      "Lower primary-care prices and no measurable change in quality",
       "Sharply worse patient outcomes and higher malpractice rates",
       "Sharply higher primary-care prices and lower quality",
       "Identical prices and quality but shorter waits"
@@ -13287,7 +12806,7 @@
   },
   {
     "tier": 5,
-    "question": "A patient choosing a doctor deserved, in Milton Friedman's view, to know who was well trained, yet Friedman did not want a state board deciding who may practice at all. He set out his alternative in Capitalism and Freedom in 1962. What did he propose in place of licensing?",
+    "question": "A patient choosing a doctor deserved, in Milton Friedman's view, to know who was well trained, yet Friedman did not want the state deciding who may practice at all. He set out his alternative in Capitalism and Freedom in 1962. What did he propose in place of licensing?",
     "answer": "Certification rather than licensing",
     "choices": [
       "Certification rather than licensing",
@@ -13300,13 +12819,13 @@
   },
   {
     "tier": 5,
-    "question": "A state licensing board sits down to write its entry rules, and nearly every seat at the table belongs to a member of the profession it oversees: dentists judging dentists, lawyers judging lawyers. Public-choice economists have a default rule for a board like this. What should a reader suspect first about the rules it writes?",
-    "answer": "That entry restrictions serve incumbent incomes more than public safety",
+    "question": "The people who write a profession's entry rules in one state are nearly all members of that profession: dentists judging dentists, lawyers judging lawyers. Public-choice economists have a default rule for a body like this. What should a reader suspect first about the rules it writes?",
+    "answer": "That its entry limits protect members' incomes more than safety",
     "choices": [
-      "That entry restrictions serve incumbent incomes more than public safety",
-      "That the board will always adopt the safest possible rules",
-      "That state legislatures will oversee it closely",
-      "That patients enjoy full transparency into board decisions"
+      "That its entry limits protect members' incomes more than safety",
+      "That its rules will be the strictest and safest that can be had",
+      "That the state legislature will watch its every decision closely",
+      "That patients can see exactly how every one of its rules is made"
     ],
     "context": "The Stigler-Olson combined move: incumbents are the concentrated beneficiary organized to write the entry rules; patients are the dispersed party unable to organize. The default should be suspicion; specific safety justifications must be shown, not assumed. Source: Friedman (1962); Stigler (1971); Kleiner (2006).",
     "topic": "medical-licensing-friedmans-capitalism-and-freedom-chapter-9"
