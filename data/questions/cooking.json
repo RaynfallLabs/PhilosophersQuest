@@ -5001,7 +5001,7 @@
       "to scare rivals away from the cliffs",
       "to please a powerful king"
     ],
-    "context": "Pure marketing. Middlemen invented the 'cinnamon bird' to hide the real source and charge staggering prices; the Roman writer Pliny the Elder scoffed that such tales were 'invented by the natives to raise the price of their commodities.' Herodotus recorded the meat-bait version around 440 BCE (Histories 3.111). (Sources: Wikipedia, 'Cinnamon bird'; Herodotus 3.111.)  (Legend.)",
+    "context": "Pure marketing. Middlemen invented the 'cinnamon bird' to hide the real source and charge staggering prices; the Roman writer Pliny the Elder scoffed that such tales were a traders' fiction, made up to raise the price. Herodotus recorded the meat-bait version around 440 BCE (Histories 3.111). (Sources: Wikipedia, 'Cinnamon bird'; Herodotus 3.111.)  (Legend.)",
     "topic": "cinnamon-the-bark-from-ceylon-and-the-bird-that-never-was"
   },
   {
@@ -5019,13 +5019,13 @@
   },
   {
     "tier": 3,
-    "question": "A Dutch sea captain made a boast about Ceylon after his countrymen seized the cinnamon island in the 1600s. A passing ship, he claimed, could tell the island was near from eight leagues out, about 24 miles. In his words, what gave the island away?",
-    "answer": "you could smell it on the wind",
+    "question": "A Dutch sea captain made a boast about Ceylon after his countrymen seized the cinnamon island in the 1600s. A passing ship, he claimed, could tell the island was near from eight leagues out, about 24 miles. By his account, what gave the island away?",
+    "answer": "its scent drifting on the wind",
     "choices": [
-      "you could smell it on the wind",
-      "you could hear surf on its reefs",
-      "you could see smoke over its hills",
-      "you could spot its flocks of seabirds"
+      "its scent drifting on the wind",
+      "its surf booming on the reefs",
+      "its smoke rising over the hills",
+      "its seabirds wheeling overhead"
     ],
     "context": "A Dutch captain wrote that 'when one is downwind of the island, one can still smell cinnamon eight leagues out to sea' — roughly 24 miles. Ceylon's air was famously thick with the spice. (Source: Wikipedia, 'Cinnamon.')",
     "topic": "cinnamon-the-bark-from-ceylon-and-the-bird-that-never-was"
@@ -5304,19 +5304,6 @@
     "topic": "cloves-the-unopened-flower-bud"
   },
   {
-    "tier": 2,
-    "question": "The dried clove in a spice jar has nothing to do with a clove of garlic. Its name traces back to the Old French clou and, before that, the Latin clavus, each the name of one small, everyday object. What does the word 'clove' mean?",
-    "answer": "A nail",
-    "choices": [
-      "A nail",
-      "A screw",
-      "A hook",
-      "A bolt"
-    ],
-    "context": "Clavus is Latin for 'nail,' and the medieval French called the spice 'clou de girofle' -- the nail of the clove tree -- because a dried clove really is shaped like a tiny brown nail with a bulbous head and a slim stem. Source: Wikipedia, 'Clove'; McCormick Science Institute, 'Cloves'.",
-    "topic": "cloves-the-unopened-flower-bud"
-  },
-  {
     "tier": 3,
     "question": "Traders prized a handful of tiny volcanic islands so highly that they called them the Spice Islands, for every clove on Earth came from there and grew nowhere else for hundreds of years. Which country are those islands part of today?",
     "answer": "Indonesia",
@@ -5409,15 +5396,15 @@
   },
   {
     "tier": 3,
-    "question": "For the most traditional Yucatán pork dish of all, cooks skip the kitchen oven: they line a pit with hardwood and stones and burn a fire in it until the stones glow red-hot. Then they rake the coals aside, lay the wrapped bundle of meat on the stones and cover it with earth to steam-roast low and slow. What do the Maya call this buried oven?",
-    "answer": "piib",
+    "question": "Cochinita pibil owes the last part of its name to the piib, the oven Maya cooks used long before the Spanish reached the Yucatán. The pork goes in wrapped in leaves and comes out hours later, tender enough to fall apart. What kind of oven is a piib?",
+    "answer": "A pit of hot stones, covered over with earth",
     "choices": [
-      "piib",
-      "imu",
-      "hangi",
-      "curanto"
+      "A pit of hot stones, covered over with earth",
+      "A clay dome heated by a fire inside it",
+      "A flat stone griddle set over the coals",
+      "A smokehouse of poles roofed with leaves"
     ],
-    "context": "The Maya pit oven is called a piib: a hole lined with hardwood and hot stones, covered over with earth so food cooks low and slow. 'Piib' means 'buried' or 'earth oven' in Maya, and it is the root of the '-pibil' in the dish's name. (Imu is Hawaiian, hangi is Maori, and curanto is Chilean, all earth ovens.) Source: Wikipedia, 'Piib.'",
+    "context": "The Maya earth oven, the piib, is a hole lined with hardwood and stones and fired until the stones glow; the leaf-wrapped meat goes onto the stones and the pit is covered over with earth, so the food cooks low and slow underground. 'Piib' means 'buried' in Maya, and it is the root of the '-pibil' in the dish's name. Source: Wikipedia, 'Piib'; Wikipedia, 'Cochinita pibil.'",
     "topic": "cochinita-pibil-and-the-underground-oven"
   },
   {
@@ -5508,7 +5495,7 @@
       "a seed-pod, which growers call a hull",
       "a flower bud, which growers call a pip"
     ],
-    "context": "The 'bean' you grind is really the seed hidden inside that little red fruit, the coffee cherry. Most cherries hold TWO seeds pressed flat against each other, which is why a roasted bean has one rounded side and one flat side; some varieties ripen yellow or orange instead of red (like Yellow Bourbon). Source: jayarr.coffee, 'Coffee Cherry Anatomy Explained' (Grokipedia checked first, HTTP 403).",
+    "context": "The 'bean' a coffee drinker grinds is really the seed hidden inside that little red fruit, the coffee cherry. Some varieties ripen yellow or orange instead of red (like Yellow Bourbon). Source: jayarr.coffee, 'Coffee Cherry Anatomy Explained.'",
     "topic": "coffees-hidden-ferment-your-morning-bean-was-fermented-too"
   },
   {
@@ -5526,15 +5513,15 @@
   },
   {
     "tier": 4,
-    "question": "A roaster sorting a sack of roasted coffee sees that most beans share one flat face, pressed there by a twin seed that grew beside it. Now and then a bean comes out small and fully round, with no flat side, because no twin ever formed and it grew alone. What do roasters call these solo, rounded beans?",
-    "answer": "peaberries",
+    "question": "A roaster tips a sack of roasted coffee onto a tray. Nearly every bean is rounded on one side and flat on the other, though now and then one comes out small and round all over. What pressed the flat face onto most of the beans?",
+    "answer": "A twin seed growing pressed against it",
     "choices": [
-      "peaberries",
-      "monsoon beans",
-      "quakers",
-      "shells"
+      "A twin seed growing pressed against it",
+      "The hot drum of the roasting machine",
+      "The rollers that peeled off its skin",
+      "The patio floor where it dried in sun"
     ],
-    "context": "When two seeds share a cherry they press flat against each other, which is what gives an ordinary coffee bean its one flat side. But sometimes only a single seed develops, and with no twin to flatten it, that seed grows into a small round bead — the peaberry. They show up in only a small share of any harvest, so growers often sort them out and sell them on their own; some roasters insist the rounder bean roasts more evenly, though that claim is more coffee-lore than settled science. Source: jayarr.coffee, 'Coffee Cherry Anatomy Explained.'",
+    "context": "Most coffee cherries hold two seeds pressed flat against each other, and that pressure gives an ordinary bean its one flat face. Now and then only a single seed develops, and with no twin to flatten it, the seed grows into a small round bead called a peaberry. Peaberries show up in only a small share of any harvest, so growers often sort them out and sell them on their own; some roasters insist the rounder bean roasts more evenly, though that claim is more coffee-lore than settled science. Source: jayarr.coffee, 'Coffee Cherry Anatomy Explained.'",
     "topic": "coffees-hidden-ferment-your-morning-bean-was-fermented-too"
   },
   {
@@ -5664,20 +5651,7 @@
       "Lisbon cooks, tasting the burn, swore the pods came off the black-pepper vine",
       "Magellan's crew, trading in Asia, brought the pods home as an Eastern 'pepper'"
     ],
-    "context": "Columbus was hunting Asia's black pepper (Piper nigrum, an Asian vine, whose bite comes from piperine). The fiery pods he carried home were an unrelated New World plant — chili, a Capsicum, whose burn comes from capsaicin — that he misnamed 'pepper' because it was hot like the peppercorns he knew. That single guess is why we still call chilies 'peppers,' 'pimiento' and 'Pfeffer' around the world. Source: Atlas Obscura, 'Why called pepper'; Wikipedia, Chili pepper.",
-    "topic": "columbus-sailed-for-spices-and-hit-a-hemisphere"
-  },
-  {
-    "tier": 3,
-    "question": "Diego Alvarez Chanca sailed as ship's doctor on Columbus's second voyage and sent word home of a new spice: the islanders used fiery pods on their bread and fish. They had their own name for the pods long before Europeans called them 'pepper.' What did the Taino call the chili?",
-    "answer": "Aji",
-    "choices": [
-      "Aji",
-      "Cayenne",
-      "Chipotle",
-      "Serrano"
-    ],
-    "context": "Columbus slapped the label 'pepper' onto the fiery Caribbean pods, but the Taino islanders already had their own word for it — 'aji' (also spelled axi). The word 'chili' came later, from the Aztec (Nahuatl) 'chilli.' In 1494 Diego Alvarez Chanca, the physician on Columbus's 1493 second voyage, wrote home that the islanders seasoned their bread and fish with 'aji' — the earliest eyewitness account of anyone cooking with chili. Source: Wikipedia, Chili pepper; Diego Alvarez Chanca.",
+    "context": "Columbus was hunting Asia's black pepper (Piper nigrum, an Asian vine, whose bite comes from piperine). The fiery pods he carried home were an unrelated New World plant — chili, a Capsicum, whose burn comes from capsaicin — that he misnamed 'pepper' because it was hot like the peppercorns he knew. That single guess is why chilies are still called 'peppers,' 'pimiento' and 'Pfeffer' around the world. Source: Atlas Obscura, 'Why called pepper'; Wikipedia, Chili pepper.",
     "topic": "columbus-sailed-for-spices-and-hit-a-hemisphere"
   },
   {
@@ -5911,7 +5885,7 @@
       "Longer guts — fermenting raw fiber needs room",
       "Sharper teeth — slicing raw meat needs blades"
     ],
-    "context": "4.7%, against the chimpanzee's 48% — an order of magnitude. Humans are the outlier of the whole primate order, because our food arrives pre-broken-down. Richard Wrangham's version of the same gap: wild chimps burn 5-7 hours a day feeding, and cooking hands those hours back for something other than chewing. Harvard Gazette, 'Big gains in better chewing' (March 2016), reporting Zink & Lieberman — https://news.harvard.edu/gazette/story/2016/03/big-gains-in-better-chewing/",
+    "context": "Humans spend about 4.7% of their day feeding, against the roughly 48% predicted for a primate of human size, an order of magnitude less. Humans are the outlier of the whole primate order, because their food arrives pre-broken-down. Richard Wrangham's version of the same gap: wild chimps burn 5-7 hours a day feeding, and cooking hands those hours back for something other than chewing. Organ, Nunn, Machanda & Wrangham, 'Phylogenetic rate shifts in feeding time during the evolution of Homo', PNAS (2011); Harvard Gazette, 'Big gains in better chewing' (March 2016), reporting Zink & Lieberman — https://news.harvard.edu/gazette/story/2016/03/big-gains-in-better-chewing/",
     "topic": "cooking-made-us-human-the-fire-hypothesis"
   },
   {
@@ -5955,15 +5929,15 @@
   },
   {
     "tier": 3,
-    "question": "Rachel Carmody gave her mice the same three foods, meat, sweet potato and peanuts, raw to some and cooked to others. Over four days the cooked-meat mice ate less than the raw-meat mice, about 54 grams against 65. Then she put both groups on the scales. What did the weights show?",
-    "answer": "The cooked-food mice held their weight; the raw-food mice lost it",
+    "question": "Rachel Carmody fed lab mice lean beef, raw to some and cooked to others. Over four days the mice on cooked beef ate less than those on raw, about 54 grams against 65. Then she put both groups on the scales. What did the weights show?",
+    "answer": "The cooked-meat mice lost less weight",
     "choices": [
-      "The cooked-food mice held their weight; the raw-food mice lost it",
-      "The raw-food mice held their weight; the cooked-food mice lost it",
-      "Both groups held their weight, with nothing to separate them",
-      "Both groups lost weight, with nothing to separate them"
+      "The cooked-meat mice lost less weight",
+      "The raw-meat mice lost less weight",
+      "Both groups lost the same weight",
+      "Both groups gained a little weight"
     ],
-    "context": "Mice on raw meat, raw sweet potato or raw peanuts lost weight; mice on the cooked versions maintained it. The kicker is the portion size — the cooked-meat mice ate 53.7 g against the raw group's 64.5 g and still did better. The smaller cooked meal delivered more energy than the bigger raw one. Carmody, Weintraub & Wrangham, 'Energetic consequences of thermal and nonthermal food processing', PNAS 108(48):19199-19203 (2011) — https://pmc.ncbi.nlm.nih.gov/articles/PMC3228431/",
+    "context": "On beef, every group of mice lost weight, but cooking cut the loss; on sweet potato, the raw-fed mice lost weight while the cooked-fed mice held theirs. The cooked-meat mice ate 53.7 g against the raw group's 64.5 g and still did better: the smaller cooked meal delivered more energy than the bigger raw one. Carmody, Weintraub & Wrangham, 'Energetic consequences of thermal and nonthermal food processing', PNAS 108(48):19199-19203 (2011) — https://pmc.ncbi.nlm.nih.gov/articles/PMC3228431/",
     "topic": "cooking-made-us-human-the-fire-hypothesis"
   },
   {
@@ -5976,7 +5950,7 @@
       "The daily count fell by nearly a fifth; the force of each chew held",
       "Both the force of each chew and the daily count held firm"
     ],
-    "context": "Nearly 20% off both the muscular effort per chew and the number of chews a day — about 2.5 million fewer chews a year, bought with a sharp flake and no fire at all. Raw unsliced meat, by contrast, is 'like chewing gum': you can chew it forever and it won't break down. That is why our ancestors reached for a stone flake long before they reached for a hearth. Zink & Lieberman, 'Impact of meat and Lower Palaeolithic food processing techniques on chewing in humans', Nature 531:500-503 (2016) — https://www.nature.com/articles/nature16990; figures via https://news.harvard.edu/gazette/story/2016/03/big-gains-in-better-chewing/ and https://www.sciencedaily.com/releases/2016/03/160309135656.htm",
+    "context": "Nearly 20% off both the muscular effort per chew and the number of chews a day — about 2.5 million fewer chews a year, bought with a sharp flake and no fire at all. Raw unsliced meat, by contrast, is 'like chewing gum': it can be chewed for ages without breaking down. In Lieberman's reading, that is why early humans reached for a stone flake long before they reached for a hearth. Zink & Lieberman, 'Impact of meat and Lower Palaeolithic food processing techniques on chewing in humans', Nature 531:500-503 (2016) — https://www.nature.com/articles/nature16990; figures via https://news.harvard.edu/gazette/story/2016/03/big-gains-in-better-chewing/ and https://www.sciencedaily.com/releases/2016/03/160309135656.htm",
     "topic": "cooking-made-us-human-the-fire-hypothesis"
   },
   {
@@ -5989,7 +5963,7 @@
       "About 1.9 kg — right on the prediction",
       "About 2.6 kg — well over the prediction"
     ],
-    "context": "About 1.1 kg against a predicted 1.88 kg — roughly 60%, a ~40% reduction. Our gut is stunted for an ape, and it only works because our food arrives easy to digest. Aiello and Wheeler also found a hard rule running the other way: across 18 primate species relative brain size correlates negatively with relative gut size (r = -0.69, p < 0.001) — the bigger a primate's gut, the smaller its brain. The gorilla sits at the far end, eating low-quality leaves, running an enormous fermenting gut to break them down, and carrying a brain small for its body; frugivores and omnivores like the chimpanzee, living on richer food, run smaller guts and bigger brains. The human sits at the opposite extreme. Aiello & Wheeler, 'The Expensive-Tissue Hypothesis: The Brain and the Digestive System in Human and Primate Evolution', Current Anthropology 36(2):199-221 (1995) — https://web.math.princeton.edu/~sswang/literature_general_unsorted/aiello_wheeler95_curr_anthropol.pdf; summarized at https://grokipedia.com/page/expensive_tissue_hypothesis",
+    "context": "About 1.1 kg against a predicted 1.88 kg — roughly 60%, a ~40% reduction. The human gut is stunted for an ape, and it only works because human food arrives easy to digest. Aiello and Wheeler also found a hard rule running the other way: across 18 primate species relative brain size correlates negatively with relative gut size (r = -0.69, p < 0.001) — the bigger a primate's gut, the smaller its brain. The gorilla sits at the far end, eating low-quality leaves, running an enormous fermenting gut to break them down, and carrying a brain small for its body; frugivores and omnivores like the chimpanzee, living on richer food, run smaller guts and bigger brains. The human sits at the opposite extreme. Aiello & Wheeler, 'The Expensive-Tissue Hypothesis: The Brain and the Digestive System in Human and Primate Evolution', Current Anthropology 36(2):199-221 (1995) — https://web.math.princeton.edu/~sswang/literature_general_unsorted/aiello_wheeler95_curr_anthropol.pdf; summarized at https://grokipedia.com/page/expensive_tissue_hypothesis",
     "topic": "cooking-made-us-human-the-fire-hypothesis"
   },
   {
@@ -6008,14 +5982,14 @@
   {
     "tier": 4,
     "question": "A 65 kg human carries a brain about 0.85 kg heavier than a primate that size should have, and running it costs some 9.5 extra watts. Leslie Aiello and Peter Wheeler added up the body's costly organs, brain, gut, heart, liver and kidneys, and set the total against what a 65 kg primate carries. What did it come to?",
-    "answer": "About 4.3 kg — exactly what a primate our size carries",
+    "answer": "About 4.3 kg — exactly what a primate that size carries",
     "choices": [
-      "About 4.3 kg — exactly what a primate our size carries",
-      "About 5.2 kg — a fifth over what our size predicts",
-      "About 6.1 kg — half again what our size predicts",
-      "About 3.4 kg — a fifth under what our size predicts"
+      "About 4.3 kg — exactly what a primate that size carries",
+      "About 5.2 kg — a fifth over what that size predicts",
+      "About 6.1 kg — half again what that size predicts",
+      "About 3.4 kg — a fifth under what that size predicts"
     ],
-    "context": "The books balance. The gut, running at 60% of its predicted size, saves almost exactly the 9.5 watts the oversized brain costs, so total expensive-organ mass in a 65 kg human stays ~4.3 kg — the same as any primate our weight. A shrinking gut paid for a growing brain, and the bill came out even. The brain is the priciest tissue per gram: 2% of body mass, 16-20% of resting energy, burning about nine times faster than the body average (11.1 W/kg vs ~1.2 W/kg). Aiello & Wheeler, Current Anthropology 36(2):199-221 (1995) — https://web.math.princeton.edu/~sswang/literature_general_unsorted/aiello_wheeler95_curr_anthropol.pdf; figures as summarized at https://grokipedia.com/page/expensive_tissue_hypothesis",
+    "context": "The books balance. The gut, running at 60% of its predicted size, saves almost exactly the 9.5 watts the oversized brain costs, so total expensive-organ mass in a 65 kg human stays ~4.3 kg — the same as any primate of that weight. A shrinking gut paid for a growing brain, and the bill came out even. The brain is the priciest tissue per gram: 2% of body mass, 16-20% of resting energy, burning about nine times faster than the body average (11.1 W/kg vs ~1.2 W/kg). Aiello & Wheeler, Current Anthropology 36(2):199-221 (1995) — https://web.math.princeton.edu/~sswang/literature_general_unsorted/aiello_wheeler95_curr_anthropol.pdf; figures as summarized at https://grokipedia.com/page/expensive_tissue_hypothesis",
     "topic": "cooking-made-us-human-the-fire-hypothesis"
   },
   {
@@ -6363,8 +6337,8 @@
     "choices": [
       "a thousand leaves",
       "a hundred folds",
-      "the golden crown",
-      "the baker's kiss"
+      "a thousand pillows",
+      "a hundred blankets"
     ],
     "context": "'Mille-feuille' means 'a thousand leaves' (feuille = leaf or sheet) -- the name is the lamination trick in three words. North Americans call it a Napoleon; the British call it a vanilla or custard slice; it's the same crisp puff-pastry stack. Source: Wikipedia 'Mille-feuille.'",
     "topic": "croissant-lamination-and-viennoiserie"
@@ -6379,7 +6353,7 @@
       "folded corner-to-corner, like a napkin",
       "folded back and forth, like an accordion fan"
     ],
-    "context": "Each 'turn' is a letter fold -- folding the dough in thirds, like a letter tucked into a business envelope. King Arthur notes that a single letter fold makes almost three times as many layers as you started with, so just a few folds explode into dozens of paper-thin sheets. Source: King Arthur Baking, 'When less is more.'",
+    "context": "Each 'turn' is a letter fold -- folding the dough in thirds, like a letter tucked into a business envelope. King Arthur notes that a single letter fold makes almost three times as many layers as the dough started with, so just a few folds explode into dozens of paper-thin sheets. Source: King Arthur Baking, 'When less is more.'",
     "topic": "croissant-lamination-and-viennoiserie"
   },
   {
@@ -6392,7 +6366,7 @@
       "as small cold cubes worked into the dough",
       "as warm melted butter brushed across the dough"
     ],
-    "context": "You laminate by locking one flat slab of cold butter inside a sheet of dough -- bakers call it the 'lock-in' -- then rolling it flat and folding, spreading that single block into ever-thinner alternating sheets with each turn. One slab becomes dozens of layers. Source: The Culinary Pro, 'Laminated Dough.'",
+    "context": "Lamination begins by locking one flat slab of cold butter inside a sheet of dough -- bakers call it the 'lock-in' -- then rolling it flat and folding, spreading that single block into ever-thinner alternating sheets with each turn. One slab becomes dozens of layers. Source: The Culinary Pro, 'Laminated Dough.'",
     "topic": "croissant-lamination-and-viennoiserie"
   },
   {
@@ -6422,16 +6396,16 @@
     "topic": "croissant-lamination-and-viennoiserie"
   },
   {
-    "tier": 4,
-    "question": "Neither plain bread nor plain pastry, the croissant and the pain au chocolat belong to a family of their own in a French bakery. Their dough rises with yeast like bread and is rich with butter and eggs like pastry, and the family is named for the city of Vienna. What is it called?",
-    "answer": "viennoiserie",
+    "tier": 3,
+    "question": "Croissants and puff pastry come out of the same French bakery, both built from thin layers. A croissant bakes soft and springy inside; puff pastry bakes into crisp flakes all through. What does croissant dough rise with that puff pastry never uses?",
+    "answer": "Yeast, the way bread dough does",
     "choices": [
-      "viennoiserie",
-      "patisserie",
-      "boulangerie",
-      "charcuterie"
+      "Yeast, the way bread dough does",
+      "Baking soda, the way soda bread does",
+      "Baking powder, the way a scone does",
+      "Egg whites, the way a soufflé does"
     ],
-    "context": "'Viennoiserie' means 'things in the style of Vienna' -- the yeast-leavened, butter-enriched family (croissants, pain au chocolat) that sits between bread and pastry. Raised with yeast like bread AND flaked from laminated butter, a croissant gets a double lift. The phrase 'patisseries viennoises' first appeared in print in an 1877 Alphonse Daudet novel. Source: Wikipedia 'Viennoiserie.'",
+    "context": "Viennoiserie means 'things in the style of Vienna': the yeast-raised, butter-rich family of croissants and pain au chocolat that sits between bread and pastry. Puff pastry is laminated the same way but has no yeast at all; it rises only on the steam from the butter's water. A croissant gets a double lift, from yeast and from its laminated butter. The phrase 'patisseries viennoises' first appeared in print in an 1877 Alphonse Daudet novel. Source: Wikipedia, 'Viennoiserie'; Wikipedia, 'Puff pastry.'",
     "topic": "croissant-lamination-and-viennoiserie"
   },
   {
@@ -6444,16 +6418,16 @@
       "Turkey",
       "Belgium"
     ],
-    "context": "The croissant descends from the Austrian kipferl. An Austrian officer, August Zang, opened the Boulangerie Viennoise at 92 rue de Richelieu in Paris in 1838-39, selling kipferl and Vienna loaves; French bakers copied him. The buttery LAMINATED croissant we know today is an early-1900s French refinement. Source: Wikipedia 'Croissant.'",
+    "context": "The croissant descends from the Austrian kipferl. An Austrian officer, August Zang, opened the Boulangerie Viennoise at 92 rue de Richelieu in Paris in 1838-39, selling kipferl and Vienna loaves; French bakers copied him. The buttery LAMINATED croissant of today is an early-1900s French refinement. Source: Wikipedia 'Croissant.'",
     "topic": "croissant-lamination-and-viennoiserie"
   },
   {
     "tier": 5,
-    "question": "Alfred Gottschalk, a twentieth-century writer, spread a favorite tale: that Viennese bakers invented the croissant in 1683, shaped like the crescent on the Turkish flag, to celebrate the city's victory over the invading Ottoman army. Historians call it a legend. What hard evidence sinks it?",
+    "question": "Alfred Gottschalk, a twentieth-century writer, spread a favorite tale: that Viennese bakers invented the croissant in 1683, shaped like the Ottoman crescent, to celebrate the city's victory over the invading Ottoman army. Historians call it a legend. What hard evidence sinks it?",
     "answer": "crescent rolls were already eaten in Vienna centuries before 1683",
     "choices": [
       "crescent rolls were already eaten in Vienna centuries before 1683",
-      "the Ottoman army's banners never carried a crescent moon",
+      "the famous 1683 battle was really fought far from Vienna",
       "no bakery existed anywhere in Vienna until after 1700",
       "wheat flour didn't reach Austria until long after that"
     ],
@@ -6580,14 +6554,14 @@
   {
     "tier": 1,
     "question": "A diner pulls meat from a lobster's tail. Her own skeleton sits deep inside her, under muscle and skin. On a lobster, crab or shrimp, what is the hard frame that holds the whole body up?",
-    "answer": "Its shell — the hard outside you crack is the skeleton.",
+    "answer": "Its shell, worn outside like armor.",
     "choices": [
-      "Its shell — the hard outside you crack is the skeleton.",
+      "Its shell, worn outside like armor.",
       "A stiff spine buried along its tail.",
       "A ring of little bones around its gut.",
       "A cage of ribs just under the surface."
     ],
-    "context": "Shrimp, prawns, crabs, lobsters and crayfish are 'decapods' — crustaceans that wear their skeleton on the OUTSIDE as a hard shell (an exoskeleton). Instead of bones inside like ours, the shell is both armor and frame, which is why eating them means cracking and peeling to reach the muscle. Source: en.wikipedia.org/wiki/Decapoda",
+    "context": "Shrimp, prawns, crabs, lobsters and crayfish are 'decapods' — crustaceans that wear their skeleton on the OUTSIDE as a hard shell (an exoskeleton). Instead of bones inside like a human's, the shell is both armor and frame, which is why eating them means cracking and peeling to reach the muscle. Source: en.wikipedia.org/wiki/Decapoda",
     "topic": "crustaceans-on-the-plate-shrimp-crab-lobster"
   },
   {
@@ -6626,7 +6600,7 @@
       "Waves it gently to steer as it strolls away.",
       "Puffs it up with water to look too big to eat."
     ],
-    "context": "A lobster flees with a 'tail-flip': it contracts the muscles on the underside of its abdomen to curl the fan-shaped tail and shoot backward, away from danger. That hard-working muscle is exactly the firm, sweet meat we prize. Source: en.wikipedia.org/wiki/Caridoid_escape_reaction",
+    "context": "A lobster flees with a 'tail-flip': it contracts the muscles on the underside of its abdomen to curl the fan-shaped tail and shoot backward, away from danger. That hard-working muscle is exactly the firm, sweet meat diners prize. Source: en.wikipedia.org/wiki/Caridoid_escape_reaction",
     "topic": "crustaceans-on-the-plate-shrimp-crab-lobster"
   },
   {
@@ -6761,7 +6735,7 @@
   },
   {
     "tier": 5,
-    "question": "In the hills around Parma in northern Italy, a whole raw pork leg becomes prosciutto, silky ruby-pink slices that a diner eats without ever cooking them. There is no smoke, no vinegar and no fire. What two simple things, given more than a year, make the raw ham safe?",
+    "question": "In the hills around Parma in northern Italy, a whole raw pork leg becomes prosciutto: silky, ruby-pink slices that a diner eats without ever cooking them. Each leg hangs for more than a year before anyone slices it. What two simple things make the raw ham safe to eat?",
     "answer": "Salt and months of cool air",
     "choices": [
       "Salt and months of cool air",
@@ -6930,7 +6904,7 @@
   },
   {
     "tier": 2,
-    "question": "In a Japanese home kitchen, a cook starts nearly every meal with dashi, warming a strip of dried kelp in a pot of water. As it warms, the kelp releases one compound that scientists call the real carrier of the broth's deep savory taste. What is that compound?",
+    "question": "In a Japanese home kitchen, a cook starts nearly every meal with dashi, warming a strip of dried seaweed in a pot of water. As it warms, the seaweed releases one compound that scientists call the real carrier of the broth's deep savory taste. What is that compound?",
     "answer": "glutamate",
     "choices": [
       "glutamate",
@@ -6939,19 +6913,6 @@
       "glycerin"
     ],
     "context": "The kelp supplies umami through glutamate, an amino acid (a building block of protein). In 2000, researchers at the University of Miami even found the tongue's dedicated umami receptor, proving it's a genuine basic taste with its own sensor. Source: PMC 'Umami the Fifth Basic Taste'; umamiinfo.com 'What is Dashi'.",
-    "topic": "dashi-and-the-discovery-of-umami"
-  },
-  {
-    "tier": 2,
-    "question": "Kikunae Ikeda, a chemist in Tokyo, tasted his wife's kelp soup in 1908 and named its savory depth umami. He built the word from mi, 'taste,' and umai, an everyday Japanese word a diner might exclaim at the table. What does umai mean?",
-    "answer": "delicious",
-    "choices": [
-      "delicious",
-      "filling",
-      "healthy",
-      "fresh"
-    ],
-    "context": "'Umami' means roughly 'pleasant savory taste' or 'deliciousness.' Accuracy rail: Ikeda, working at Tokyo Imperial University, isolated brown crystals of glutamate from a batch of kombu broth and IDENTIFIED and NAMED the taste that had always been there -- he did not invent it. Before Ikeda it simply had no name. Source: en.wikipedia.org/wiki/Kikunae_Ikeda; en.wikipedia.org/wiki/Umami.  (Legend.)",
     "topic": "dashi-and-the-discovery-of-umami"
   },
   {
@@ -6969,7 +6930,7 @@
   },
   {
     "tier": 4,
-    "question": "His wife's kelp broth set Kikunae Ikeda hunting, in 1908, for the source of its rich savory kick. He pulled out the compound, named the taste umami, and then argued that humans evolved to enjoy it because it reliably points to one key nutrient in food. Which nutrient?",
+    "question": "A bowl of his wife's broth set Kikunae Ikeda hunting in 1908 for the source of its rich savory kick. He pulled out the compound, named the taste umami, and then argued that humans evolved to enjoy it because it reliably points to one key nutrient in food. Which nutrient?",
     "answer": "protein",
     "choices": [
       "protein",
@@ -6990,12 +6951,12 @@
       "A concentrated powder of the spices typical of Chinese restaurant cooking.",
       "A chemical relative of table salt that does nothing but add saltiness."
     ],
-    "context": "MSG is simply that same glutamate isolated as a salt -- the identical molecule in kombu, tomato, and parmesan. Ikeda patented mass-production in 1909 and branded it 'Ajinomoto' ('essence of taste'). The mid-century 'Chinese Restaurant Syndrome' scare traces to a single 1968 letter (whose author even named salt and cooking wine as suspects too) and was never substantiated by controlled studies; MSG has held the FDA's 'Generally Recognized As Safe' status since the late 1950s. The tell: tomato-and-parmesan is one of the richest natural free-glutamate combos on Earth, yet nobody ever blamed lasagne for 'trattoria syndrome.' Source: en.wikipedia.org/wiki/Kikunae_Ikeda; msgdish.com; sites.bu.edu gastronomy blog.  (Legend.)",
+    "context": "MSG is simply that same glutamate isolated as a salt -- the identical molecule in kombu, tomato, and parmesan. Ikeda patented his method in 1908, and from 1909 it was sold under the brand 'Ajinomoto' ('essence of taste'). The mid-century 'Chinese Restaurant Syndrome' scare traces to a single 1968 letter (whose author even named salt and cooking wine as suspects too) and was never substantiated by controlled studies; MSG has held the FDA's 'Generally Recognized As Safe' status since the late 1950s. The tell: tomato-and-parmesan is one of the richest natural free-glutamate combos on Earth, yet nobody ever blamed lasagne for 'trattoria syndrome.' Source: en.wikipedia.org/wiki/Kikunae_Ikeda; msgdish.com; sites.bu.edu gastronomy blog.",
     "topic": "dashi-and-the-discovery-of-umami"
   },
   {
     "tier": 5,
-    "question": "Bonito fish spends weeks in smoke and months curing with mold in the sun before it becomes katsuobushi, the heart of dashi. By then it is so tough that it holds a Guinness record: hardest food on Earth. How does a cook get any of it into the soup pot?",
+    "question": "Bonito fish spends weeks in smoke and months curing with mold in the sun before it becomes katsuobushi, the heart of dashi. By then it is so tough that many call it the hardest food on Earth. How does a cook get any of it into the soup pot?",
     "answer": "Shaves off paper-thin curls with a blade, as if planing wood.",
     "choices": [
       "Shaves off paper-thin curls with a blade, as if planing wood.",
@@ -7003,7 +6964,7 @@
       "Grates it against rough stone into a fine, sandy powder.",
       "Soaks it overnight until it swells back into soft, fresh fish."
     ],
-    "context": "Katsuobushi is simmered, smoked for weeks, sprayed with a koji-relative mold, then cycled between a humid fermentation room and the sun for months until it turns wood-like -- Guinness's hardest food -- and must be shaved paper-thin like whittling wood (a special plane called a kezuriki does the job). The processing concentrates it fiercely: protein climbs from about 25% in raw bonito to about 77% in the finished block. Source: tofugu.com 'Katsuobushi'; umamiinfo.com 'Katsuobushi'.  (Legend.)",
+    "context": "Katsuobushi is simmered, smoked for weeks, sprayed with a koji-relative mold, then cycled between a humid fermentation room and the sun for months until it turns wood-like, often called the world's hardest food, and must be shaved paper-thin like whittling wood (a special plane called a kezuriki does the job). The processing concentrates it fiercely: protein climbs from about 25% in raw bonito to about 77% in the finished block. Source: tofugu.com 'Katsuobushi'; umamiinfo.com 'Katsuobushi'.",
     "topic": "dashi-and-the-discovery-of-umami"
   },
   {
@@ -7533,21 +7494,21 @@
     "choices": [
       "Eat food. Not too much. Mostly plants.",
       "Everything in moderation and nothing in excess.",
-      "Fresh, balanced meals keep your body strong.",
-      "Count the calories and watch your portions."
+      "Fresh, balanced meals keep the body strong.",
+      "Count the calories and watch the portions."
     ],
     "context": "Pollan opened his 2008 book 'In Defense of Food: An Eater's Manifesto' with this line and called it his whole eating philosophy. The trick, he said, hides in the first two words: by 'food' he means real, whole food, not the engineered products that fill the middle aisles. The rule began as his 2007 essay 'Unhappy Meals.' Source: Michael Pollan, 'Unhappy Meals,' New York Times Magazine, Jan 28 2007; In Defense of Food (2008).",
     "topic": "eat-food-mostly-plants-the-whole-food-idea"
   },
   {
     "tier": 2,
-    "question": "Suppose you push a cart through a supermarket with Michael Pollan's test in mind. You picture one particular old woman walking the aisles beside you, and you buy nothing she would not recognize as food. Who is she?",
-    "answer": "Your great-grandmother.",
+    "question": "A shopper pushes her cart through a supermarket with Michael Pollan's test in mind. She pictures one particular old woman walking the aisles beside her and buys nothing that woman would not recognize as food. Who is the old woman?",
+    "answer": "Her great-grandmother.",
     "choices": [
-      "Your great-grandmother.",
-      "Your family doctor.",
-      "Your favorite TV chef.",
-      "Your own grandmother."
+      "Her great-grandmother.",
+      "Her family doctor.",
+      "Her favorite TV chef.",
+      "Her own grandmother."
     ],
     "context": "Pollan's rule: 'Don't eat anything your great-grandmother wouldn't recognize as food' (in the original essay he wrote 'great-great-grandmother'). His point: Great-Grandmother never cooked with guar gum, carrageenan, xanthan gum, or soy lecithin — the additives listed on a processed-food label. The test is not a nutrition expert but an ordinary cook from before the food-science era. Source: Michael Pollan, 'Unhappy Meals,' New York Times Magazine, 2007.",
     "topic": "eat-food-mostly-plants-the-whole-food-idea"
@@ -7568,25 +7529,25 @@
   {
     "tier": 3,
     "question": "A shopper following the supermarket rules in Michael Pollan's book In Defense of Food picks up a packaged product from the shelf and trusts it less, not more, because of one thing its box does. What does the box do?",
-    "answer": "Boasts that it's good for your health.",
+    "answer": "Boasts about its health benefits.",
     "choices": [
-      "Boasts that it's good for your health.",
+      "Boasts about its health benefits.",
       "Costs more than the store brand.",
       "Shows a friendly cartoon mascot.",
       "Sits right at eye level."
     ],
-    "context": "Pollan's counterintuitive tell: 'Avoid food products that make health claims,' because 'a health claim on a food product is a good indication that it's not really food.' In the aisle, processed cereals scream about their whole-grain goodness while the fresh produce, making no claims at all, sits silent. The louder the health claim, the more suspicious you should be. Source: Michael Pollan, 'Unhappy Meals,' New York Times Magazine, 2007.",
+    "context": "Pollan's counterintuitive tell: 'Avoid food products that make health claims,' because 'a health claim on a food product is a good indication that it's not really food.' In the aisle, processed cereals scream about their whole-grain goodness while the fresh produce, making no claims at all, sits silent. The louder the health claim, the more suspicious a shopper should be. Source: Michael Pollan, 'Unhappy Meals,' New York Times Magazine, 2007.",
     "topic": "eat-food-mostly-plants-the-whole-food-idea"
   },
   {
     "tier": 3,
-    "question": "A box of sugary cereal shouts 'Fat-free!', 'now with added vitamins!', 'extra fiber!', and shoppers buy it, sure that a food's health is just the sum of the good and bad things on its label. Michael Pollan, borrowing a term from Gyorgy Scrinis, a sociologist, named this way of thinking. What did he call it?",
-    "answer": "Nutritionism.",
+    "question": "A box of sugary cereal shouts 'Fat-free!', 'Now with added vitamins!' and 'Extra fiber!', and shoppers trust it. Michael Pollan, borrowing a word from the sociologist Gyorgy Scrinis, calls this habit of judging a food by its listed nutrients nutritionism. What does Pollan say the habit misses?",
+    "answer": "A whole food is more than the sum of its nutrients",
     "choices": [
-      "Nutritionism.",
-      "Vegetarianism.",
-      "Vitaminism.",
-      "Consumerism."
+      "A whole food is more than the sum of its nutrients",
+      "Labels list too few nutrients to judge a food by",
+      "Calories matter far more than any single nutrient",
+      "Vitamins added in a factory are worth nothing"
     ],
     "context": "'Nutritionism' — coined by sociologist Gyorgy Scrinis and made famous by Pollan — is his critique of judging a food by its isolated nutrients (fat-free! added vitamins!) instead of as a whole food. His claim: a real food is 'more than the sum of its parts.' It is a framework for thinking about eating, not a lab-proven mechanism. Source: Wikipedia, 'Nutritionism'; Michael Pollan, In Defense of Food (2008).",
     "topic": "eat-food-mostly-plants-the-whole-food-idea"
@@ -7866,7 +7827,7 @@
   },
   {
     "tier": 1,
-    "question": "A boy slices an apple at breakfast and leaves it on the counter. By lunch the cut face is brown, with no stove anywhere near it. The instant the knife bared the flesh, the fruit's own enzyme started building the brown. What did it react with?",
+    "question": "A boy slices an apple at breakfast and leaves it out. By lunch the cut face is brown, with no stove anywhere near it. The instant the knife bared the flesh, the fruit's own chemistry started building the brown. What did it react with?",
     "answer": "oxygen from the air",
     "choices": [
       "oxygen from the air",
@@ -7939,12 +7900,12 @@
       "chlorophyll",
       "collagen"
     ],
-    "context": "Melanin — the browning enzyme turns the fruit's colorless phenols into colorless o-quinones, which then link up into brown melanin, the same pigment family that colors human skin, hair, and a suntan. A browned apple is pigmented, not spoiled. Source: Polyphenol oxidase, Wikipedia (en.wikipedia.org).",
+    "context": "Melanin — the browning enzyme turns the fruit's colorless phenols into o-quinones, which then link up into brown melanin, the same pigment family that colors human skin, hair, and a suntan. A browned apple is pigmented, not spoiled. Source: Polyphenol oxidase, Wikipedia (en.wikipedia.org).",
     "topic": "enzymatic-browning-why-cut-apples-and-avocados-go-brown"
   },
   {
     "tier": 5,
-    "question": "Crushed fresh green leaves lie spread out to darken, while the same enzyme that browns a cut apple turns them from bright green to brown-black. The browning is done on purpose, to make one popular everyday drink. Which drink is made this way?",
+    "question": "Crushed fresh green leaves lie spread out to darken, while the same chemistry that browns a cut apple turns them from bright green to brown-black. The browning is done on purpose, to make one popular everyday drink. Which drink is made this way?",
     "answer": "black tea",
     "choices": [
       "black tea",
@@ -7970,20 +7931,20 @@
   },
   {
     "tier": 2,
-    "question": "Auguste Escoffier ran some of the grandest kitchens in London and Paris in the late 1800s, and he split the cooking into stations. One cook handled only fish, another only roasts, another only desserts, and each plate was built up as it passed down the line. What did Escoffier call this system?",
-    "answer": "The brigade de cuisine",
+    "question": "Auguste Escoffier ran some of the grandest hotel kitchens of London and Paris in the late 1800s, and he reorganized their cooks into what he called the brigade de cuisine. Under that system, what did each cook do through a night's service?",
+    "answer": "Cooked one kind of food at one station",
     "choices": [
-      "The brigade de cuisine",
-      "The mise en place",
-      "The service à la carte",
-      "The table d'hôte"
+      "Cooked one kind of food at one station",
+      "Cooked whole meals start to finish for a table",
+      "Moved to a new station every hour or so",
+      "Took each order straight from the diners"
     ],
     "context": "Escoffier's brigade de cuisine split a busy kitchen into more than 20 specialized stations — a poissonnier who cooks only fish, a pâtissier who makes only desserts — so each cook masters one job and a single plate is built up as it moves down the line. (Source: Wikipedia, 'Auguste Escoffier')",
     "topic": "escoffier-and-the-kitchen-brigade"
   },
   {
     "tier": 2,
-    "question": "A strict chain of command ran through Escoffier's kitchen, each cook holding one assigned post and taking orders down the line. He had learned this way of running men in the nearly seven years he spent cooking inside one institution. Which institution was it?",
+    "question": "A strict chain of command ran through Escoffier's kitchen, every cook answering to the one above him and taking orders down the line. He had learned this way of running men in the nearly seven years he spent cooking inside one institution. Which institution was it?",
     "answer": "The army",
     "choices": [
       "The army",
@@ -8295,7 +8256,7 @@
   },
   {
     "tier": 1,
-    "question": "A salmon fillet glistens on ice at the fish counter. About 7 in every 10 salmon eaten today never swam wild in a river or ocean, but grew up by the thousand, side by side, near a shoreline. Where was this fillet most likely raised or caught?",
+    "question": "A salmon fillet glistens on ice at a supermarket fish counter, pink and fresh under the bright lights. Where did that salmon most likely grow up?",
     "answer": "A netted pen in a coastal bay",
     "choices": [
       "A netted pen in a coastal bay",
@@ -8309,14 +8270,14 @@
   {
     "tier": 1,
     "question": "A home cook reads that ocean-caught shrimp tastes sweeter than pond-raised and hunts his grocery store for a bag marked 'wild-caught'. Bag after bag in the freezer says 'farm-raised', and the fresh case holds no wild shrimp at all. What is the main reason?",
-    "answer": "Nearly all shrimp sold is raised on farms",
+    "answer": "Most shrimp sold is raised on farms",
     "choices": [
-      "Nearly all shrimp sold is raised on farms",
+      "Most shrimp sold is raised on farms",
       "Wild shrimp costs far too much to stock",
       "Wild shrimp is banned from most shops",
       "Wild shrimp spoils within a single hour"
     ],
-    "context": "Nearly all shrimp sold today is farmed, and most reaches shops frozen, shipped from farms in Asia and Ecuador — so genuinely wild-caught shrimp is only a small slice of the market, and a single farmed species dominates the world's supply. Source: Wikipedia, 'Whiteleg shrimp'; Sustainable Fisheries UW, 'Overview of Shrimp Sustainability 2024'.",
+    "context": "Most shrimp sold today is farmed, about seven-tenths of the world's shrimp by weight, and most reaches shops frozen, shipped from farms in Asia and Ecuador, so wild-caught shrimp is the smaller slice of the market, and a single farmed species dominates the farmed supply. Source: Faunalytics / Rethink Priorities, 'How Many Shrimps Are Killed For Food?'; Wikipedia, 'Whiteleg shrimp'.",
     "topic": "farmed-vs-wild-where-your-fish-comes-from"
   },
   {
@@ -8355,7 +8316,7 @@
       "The Pacific oyster",
       "The bay scallop"
     ],
-    "context": "The whiteleg shrimp (Penaeus vannamei) is likely the most-farmed animal on the planet by sheer headcount — an estimated 300 to 620 billion individuals raised every year, dwarfing any farmed land animal in numbers. It also makes up close to 90% of the world's farmed shrimp. Source: Wikipedia, 'Whiteleg shrimp'.",
+    "context": "The whiteleg shrimp (Penaeus vannamei) is likely the most-farmed animal on the planet by sheer headcount. Shrimp farms raise an estimated 300 to 620 billion shrimp a year, several times the number of farmed chickens, and the whiteleg makes up most of that farmed shrimp. Source: Faunalytics / Rethink Priorities, 'How Many Shrimps Are Killed For Food?'; https://grokipedia.com/page/Whiteleg_shrimp",
     "topic": "farmed-vs-wild-where-your-fish-comes-from"
   },
   {
@@ -8386,7 +8347,7 @@
   },
   {
     "tier": 4,
-    "question": "A wild salmon turns its flesh bright pink-orange by eating shrimp and other tiny sea creatures packed with a natural pigment. A farmed salmon eats none of that, only dry feed pellets, and on that diet its flesh would come out plain grey, a color no supermarket shopper will buy. How do farmers give the fillet its familiar pink?",
+    "question": "Wild salmon flesh glows a bright pink-orange on the fishmonger's ice. A farmed salmon raised on plain feed pellets would turn out a dull grey instead, a color no supermarket shopper will buy. How do farmers give the farmed fillet its familiar pink?",
     "answer": "They add a pigment to the fish's feed",
     "choices": [
       "They add a pigment to the fish's feed",
@@ -8529,20 +8490,20 @@
   },
   {
     "tier": 1,
-    "question": "Suppose you pinch the soft layer just under your skin: that is subcutaneous fat. Most people think of it only as spare fuel saved for a hungry day, but doctors point to two other jobs it does for you every day. Which pair?",
-    "answer": "Keeping you warm and cushioning your organs",
+    "question": "A nurse pinches the soft layer just under a patient's skin: that is subcutaneous fat. Most people think of it only as spare fuel saved for a hungry day, but doctors point to two other jobs it does every day. Which pair?",
+    "answer": "Keeping warm and cushioning organs",
     "choices": [
-      "Keeping you warm and cushioning your organs",
-      "Filtering your blood and making urine",
-      "Carrying oxygen and clotting your cuts",
-      "Digesting your food and killing germs"
+      "Keeping warm and cushioning organs",
+      "Filtering the blood and making urine",
+      "Carrying oxygen and clotting cuts",
+      "Digesting food and killing germs"
     ],
-    "context": "The fat just under your skin — subcutaneous fat — insulates you and helps regulate your body temperature, and it also pads and cushions your organs against knocks and shocks. Source: Wikipedia, 'Fat' (insulate organs against shock, regulate body temperature).",
+    "context": "The fat just under the skin, subcutaneous fat, insulates the body and helps regulate its temperature, and it also pads and cushions the organs against knocks and shocks. Source: Wikipedia, 'Fat' (insulate organs against shock, regulate body temperature).",
     "topic": "fat-is-not-the-enemy-what-fat-actually-does"
   },
   {
     "tier": 2,
-    "question": "A chef sears a steak, splashes wine into the hot pan and scrapes up the brown bits. At the very end she swirls in a little cold butter, a finish French chefs call monter au beurre, and the sauce tastes richer than water could ever make it. What is the fat doing to the flavor?",
+    "question": "A cook swirls a knob of cold butter into a pan of tomato sauce just before serving, and the sauce suddenly tastes fuller and rounder than it did a minute before. What is the fat doing to the flavor?",
     "answer": "Dissolving and carrying the sauce's flavor and aroma",
     "choices": [
       "Dissolving and carrying the sauce's flavor and aroma",
@@ -8550,7 +8511,7 @@
       "Killing off the bacteria that dull the flavor",
       "Soaking up and hiding the sauce's extra salt"
     ],
-    "context": "Many of the compounds that give food its taste and aroma are fat-soluble — they dissolve into fat but barely into water — so fat carries flavor and smell across your tongue. Strip the fat out of a food and you strip out much of its taste, which is why finishing a sauce with butter deepens it. Source: Wikipedia, 'Fat' (dietary fats carry flavor and aroma compounds).",
+    "context": "Many of the compounds that give food its taste and aroma are fat-soluble: they dissolve into fat but barely into water, so fat carries flavor and smell across the tongue. Strip the fat out of a food and much of its taste goes with it, which is why finishing a sauce with butter deepens it. Source: Wikipedia, 'Fat' (dietary fats carry flavor and aroma compounds).",
     "topic": "fat-is-not-the-enemy-what-fat-actually-does"
   },
   {
@@ -8576,7 +8537,7 @@
       "A shell of hard calcium",
       "A weave of sugar strands"
     ],
-    "context": "Every cell is enclosed by a cell membrane — a double layer of fat molecules called a phospholipid bilayer — that separates and protects the cell's interior and controls what enters and leaves. No dietary fat, no cell walls: fat is structure, not just fuel. Source: Wikipedia, 'Cell membrane.'",
+    "context": "Every cell is enclosed by a cell membrane — a double layer of fat molecules called a phospholipid bilayer — that separates and protects the cell's interior and controls what enters and leaves. Fat is structure, not just fuel. Source: Wikipedia, 'Cell membrane.'",
     "topic": "fat-is-not-the-enemy-what-fat-actually-does"
   },
   {
@@ -8589,7 +8550,7 @@
       "The liver",
       "The kidneys"
     ],
-    "context": "Your brain is the fattiest organ in the body — roughly 60% fat by dry weight. There the fat isn't fuel; it's the structural material the brain is built from, since phospholipids form the shell of every brain cell. Source: ScienceDirect and Nature (lipids make up ~50-60% of dry brain mass).",
+    "context": "The brain is the fattiest organ in the body — roughly 60% fat by dry weight. There the fat isn't fuel; it's the structural material the brain is built from, since phospholipids form the shell of every brain cell. Source: ScienceDirect and Nature (lipids make up ~50-60% of dry brain mass).",
     "topic": "fat-is-not-the-enemy-what-fat-actually-does"
   },
   {
@@ -8602,7 +8563,7 @@
       "Slow right down to keep its place in line",
       "Turn back when it meets a blockage"
     ],
-    "context": "The insulation around your nerves, called myelin, is 60-75% fat by dry weight. Like the plastic coating on an electrical wire, this fatty sheath lets the nerve signal jump from gap to gap — 'saltatory conduction' — instead of crawling steadily along, so signals travel far faster. Source: Wikipedia, 'Myelin.'",
+    "context": "The insulation around nerves, called myelin, is 60-75% fat by dry weight. Like the plastic coating on an electrical wire, this fatty sheath lets the nerve signal jump from gap to gap — 'saltatory conduction' — instead of crawling steadily along, so signals travel far faster. Source: Wikipedia, 'Myelin.'",
     "topic": "fat-is-not-the-enemy-what-fat-actually-does"
   },
   {
@@ -8615,7 +8576,7 @@
       "Releases quick sugar and satisfies the brain fast",
       "Soaks up stomach acid and settles the hunger"
     ],
-    "context": "When fat reaches the small intestine it slows the stomach from emptying and triggers appetite-quieting gut hormones — which is why a fatty meal keeps hunger away for hours, while a fat-free snack leaves you hungry again soon. Source: Cambridge, Proceedings of the Nutrition Society (fat in the small intestine slows gastric emptying and suppresses appetite).",
+    "context": "When fat reaches the small intestine it slows the stomach from emptying and triggers appetite-quieting gut hormones — which is why a fatty meal keeps hunger away for hours, while a fat-free snack leaves its eater hungry again soon. Source: Cambridge, Proceedings of the Nutrition Society (fat in the small intestine slows gastric emptying and suppresses appetite).",
     "topic": "fat-is-not-the-enemy-what-fat-actually-does"
   },
   {
@@ -8628,7 +8589,7 @@
       "Caffeine",
       "Alcohol"
     ],
-    "context": "Fat became the diet villain through real science, not from nowhere: in the 1950s physiologist Ancel Keys pushed the 'diet-heart' idea that fat caused heart disease, and in 1977 Senator George McGovern's 'Dietary Goals for the United States' told Americans to eat less fat — the first such advice from the U.S. government. Later critics argued that his focus on fat overlooked sugar's role, and that his country comparison left out high-fat, low-heart-disease France. Steel-manned honestly there were real reasons for the low-fat advice — but many now argue fat was over-vilified. Source: Wikipedia, 'Ancel Keys'; MDPI Nutrients (Lipid-Heart Hypothesis and the 1977 Dietary Goals).",
+    "context": "Fat became the diet villain through real science, not from nowhere: in the 1950s physiologist Ancel Keys pushed the 'diet-heart' idea that fat caused heart disease, and in 1977 Senator George McGovern's 'Dietary Goals for the United States' told Americans to eat less fat — the first such advice from the U.S. government. Later critics argued that his focus on fat overlooked sugar's role, and that his country comparison left out high-fat, low-heart-disease France. There were real reasons for the low-fat advice, but many now argue fat was over-vilified. Source: Wikipedia, 'Ancel Keys'; MDPI Nutrients (Lipid-Heart Hypothesis and the 1977 Dietary Goals).",
     "topic": "fat-is-not-the-enemy-what-fat-actually-does"
   },
   {
@@ -8698,7 +8659,7 @@
   },
   {
     "tier": 2,
-    "question": "Volunteers at Iowa State University ate hearty salads of spinach, romaine, carrots and tomatoes, but poured on fat-free dressing. Careful blood tests afterward gave a startling result about the vegetables' fat-soluble vitamins. What had happened to them?",
+    "question": "Volunteers at Iowa State University ate hearty salads of spinach, romaine, carrots and tomatoes, but poured on fat-free dressing. Careful blood tests afterward gave a startling result about the carotenoids, the orange and red plant pigments, some of which become vitamin A inside the body. What had happened to them?",
     "answer": "almost none of them reached their blood",
     "choices": [
       "almost none of them reached their blood",
@@ -8706,7 +8667,7 @@
       "about a quarter of them reached their blood",
       "about as many as usual reached their blood"
     ],
-    "context": "With fat-free dressing, essentially no carotenoids -- alpha-carotene, beta-carotene, lycopene -- showed up in the volunteers' blood; the vegetables' provitamin A passed straight through, and absorption was called 'negligible.' You can eat the vitamin and still absorb almost none of it. Source: Brown et al., American Journal of Clinical Nutrition 80(2):396-403, 2004 (PubMed 15277161).",
+    "context": "With fat-free dressing, essentially no carotenoids -- alpha-carotene, beta-carotene, lycopene -- showed up in the volunteers' blood; the vegetables' provitamin A passed straight through, and absorption was called 'negligible.' A diner can eat the pigment and still absorb almost none of it. Source: Brown et al., American Journal of Clinical Nutrition 80(2):396-403, 2004 (PubMed 15277161).",
     "topic": "fat-soluble-vitamins-need-fat-eat-the-butter-with-the-veg"
   },
   {
@@ -8724,15 +8685,15 @@
   },
   {
     "tier": 4,
-    "question": "Mario Ferruzzi, a food scientist at Purdue, fed volunteers the exact same salad with different fatty dressings, and the kind of fat mattered greatly. With one kind, the vegetables' vitamins came through on just a few grams of fat, while the others needed considerably more to accomplish the same job. Which dressing worked with the least fat?",
-    "answer": "olive oil",
+    "question": "Mario Ferruzzi, a food scientist at Purdue, fed volunteers the same salad with dressings made from different fats, and the kind of fat made a difference. With one, the vegetables' carotenoids came through on just a few grams of fat, while the others took more fat to match it. Which dressing worked with the least fat?",
+    "answer": "canola oil",
     "choices": [
-      "coconut oil",
-      "olive oil",
-      "corn oil",
-      "soybean oil"
+      "canola oil",
+      "butter",
+      "soybean oil",
+      "coconut oil"
     ],
-    "context": "In Ferruzzi's Purdue feeding trials the kind of fat changed how efficiently the body absorbed the vegetables' carotenoids. Monounsaturated dressings -- olive and canola oil -- delivered full absorption at just 3 grams of fat, while saturated fat (butter) and polyunsaturated fat (corn oil) needed more to catch up. Full-fat beat fat-reduced beat fat-free, and among the fats, monounsaturated olive oil did the most with the least. Source: Ferruzzi et al. (Purdue), Molecular Nutrition & Food Research, 2012 (29 subjects; reported medicalnewstoday.com/articles/247010).",
+    "context": "In Ferruzzi's Purdue feeding trial, published by Goltz and colleagues in 2012, 29 volunteers ate salads dressed with butter, canola oil or a polyunsaturated oil at 3, 8 or 20 grams of fat. The monounsaturated canola dressing gave about the same carotenoid absorption at 3 grams as at 20, while the butter and the polyunsaturated oil needed more fat to catch up; overall the authors found the amount of fat mattered more than its source, and more fat generally meant more absorption. Source: Goltz et al. (Purdue), Molecular Nutrition & Food Research, 2012; Purdue news release, June 2012 (purdue.edu/newsroom/research/2012/120619FerruzziSalad.html).",
     "topic": "fat-soluble-vitamins-need-fat-eat-the-butter-with-the-veg"
   },
   {
@@ -8762,19 +8723,6 @@
     "topic": "fat-the-sixth-basic-taste"
   },
   {
-    "tier": 1,
-    "question": "Richard Mattes and his food scientists at Purdue made a bold claim about fat in 2015, and like any discoverers they gave their find a name of its own. What did they call the taste of fat?",
-    "answer": "Oleogustus",
-    "choices": [
-      "Oleogustus",
-      "Pinguis",
-      "Liparon",
-      "Umami"
-    ],
-    "context": "Oleogustus comes from Latin oleo, 'oily,' plus gustus, 'taste.' Pinguis (Latin for 'fatty') and liparon (Greek for 'fatty') were older names proposed for a fat taste; umami is the savory fifth taste that oleogustus hopes to join. Source: Purdue University newsroom, 2015 (purdue.edu).",
-    "topic": "fat-the-sixth-basic-taste"
-  },
-  {
     "tier": 2,
     "question": "Scientists had volunteers sample pure fat with its smell and its silky feel both taken away, and everyone expected something as good as butter, bacon or cream. Instead it was startlingly bad. What did the pure taste of fat taste like?",
     "answer": "like something rancid and spoiled",
@@ -8784,7 +8732,7 @@
       "like something sour and vinegary",
       "like something salty and briny"
     ],
-    "context": "Richard Mattes described pure fat-taste as tasting like rancid oil — 'very unpleasant... a warning signal telling you this is not the best thing to eat.' The idea: your tongue senses free fatty acids so it can catch fat that has spoiled. Source: National Geographic and Purdue University newsroom, 2015.",
+    "context": "Richard Mattes described pure fat-taste as tasting like rancid oil — 'very unpleasant... a warning signal telling you this is not the best thing to eat.' The idea: the tongue senses free fatty acids so it can catch fat that has spoiled. Source: National Geographic and Purdue University newsroom, 2015.",
     "topic": "fat-the-sixth-basic-taste"
   },
   {
@@ -8797,7 +8745,7 @@
       "sour",
       "sweet"
     ],
-    "context": "Bitterness is the classic 'love it in small doses' taste: a strong hit makes you recoil, but a little is exactly what makes coffee, dark chocolate, and red wine so good. Scientists found fat-taste behaves the same way — repellent when strong, appealing when faint. Source: Purdue University newsroom, 2015 (purdue.edu).",
+    "context": "Bitterness is the classic 'love it in small doses' taste: a strong hit makes a taster recoil, but a little is exactly what makes coffee, dark chocolate, and red wine so good. Scientists found fat-taste behaves the same way — repellent when strong, appealing when faint. Source: Purdue University newsroom, 2015 (purdue.edu).",
     "topic": "fat-the-sixth-basic-taste"
   },
   {
@@ -8810,7 +8758,7 @@
       "it coats the tongue with a thick, oily film",
       "it cancels out bitterness so nothing tastes harsh"
     ],
-    "context": "Kokumi compounds — like glutathione, found in garlic, onions, and aged cheese — are nearly tasteless on their own. They switch on a sensor on your taste cells (the calcium-sensing receptor) that amplifies salty, sweet, and umami, which is why a long-simmered broth or aged cheese tastes so full and satisfying. Source: 'Kokumi Substances, Enhancers of Basic Tastes' (PMC3325276).",
+    "context": "Kokumi compounds — like glutathione, found in garlic, onions, and aged cheese — are nearly tasteless on their own. They switch on a sensor on the taste cells (the calcium-sensing receptor) that amplifies salty, sweet, and umami, which is why a long-simmered broth or aged cheese tastes so full and satisfying. Source: 'Kokumi Substances, Enhancers of Basic Tastes' (PMC3325276).",
     "topic": "fat-the-sixth-basic-taste"
   },
   {
@@ -8823,46 +8771,33 @@
       "the omega-6 and omega-9 families",
       "the saturated and trans families"
     ],
-    "context": "The only two fats the human body can't build for itself are alpha-linolenic acid (parent of the omega-3 family) and linoleic acid (parent of the omega-6 family) — the 'essential' fatty acids. Everything else, including omega-9, your body makes from carbs, protein, or other fats. Source: Linus Pauling Institute, 'Essential Fatty Acids'; Wikipedia, 'Essential fatty acid.'",
-    "topic": "fats-what-they-do-and-the-seed-oil-debate"
-  },
-  {
-    "tier": 2,
-    "question": "A stick of butter, a spoonful of coconut oil and a chunk of beef tallow sit side by side on a kitchen counter, all three firm and solid at ordinary room temperature. Food scientists group fats like these under one family name, because their molecules pack together tightly. Which family is it?",
-    "answer": "saturated",
-    "choices": [
-      "saturated",
-      "monounsaturated",
-      "polyunsaturated",
-      "omega-3"
-    ],
-    "context": "Saturated fats stay solid at room temperature because their straight, unkinked molecular chains pack together tightly. Butter, beef tallow, lard, and coconut oil are the classic examples. Source: Mayo Clinic, 'Dietary fats: Know which to choose'; Bastyr University, 'The difference between solid and liquid fats.'",
+    "context": "The only two fats the human body can't build for itself are alpha-linolenic acid (parent of the omega-3 family) and linoleic acid (parent of the omega-6 family) — the 'essential' fatty acids. Everything else, including omega-9, the body makes from carbs, protein, or other fats. Source: Linus Pauling Institute, 'Essential Fatty Acids'; Wikipedia, 'Essential fatty acid.'",
     "topic": "fats-what-they-do-and-the-seed-oil-debate"
   },
   {
     "tier": 3,
-    "question": "Olive oil pours from the bottle onto a spoon in a smooth, glossy stream at room temperature. Left in the fridge overnight, the same oil turns cloudy and half-solid, thick like slush. That behavior is the fingerprint of one family of fats, named for how many bendable chemical bonds sit inside their molecules. Which family?",
-    "answer": "monounsaturated",
+    "question": "Most of the fat in olive oil is monounsaturated, each molecule bent by a single kink, and the oil pours in a smooth, glossy stream at room temperature. A cook leaves a bottle in the fridge overnight. How does the oil look the next morning?",
+    "answer": "Cloudy and thick, like slush",
     "choices": [
-      "monounsaturated",
-      "saturated",
-      "polyunsaturated",
-      "hydrogenated"
+      "Cloudy and thick, like slush",
+      "Clear and runny, just as before",
+      "Frozen into a hard white block",
+      "Split into oily and watery layers"
     ],
     "context": "Monounsaturated fat — the main fat in olive oil (oleic acid) — has a single double bond that puts ONE kink in the chain. That kink keeps it liquid at room temperature but lets it turn cloudy and semi-solid when chilled, so the fridge is a handy test for it. Source: Mayo Clinic, 'Dietary fats'; Graza, 'Does olive oil solidify?'",
     "topic": "fats-what-they-do-and-the-seed-oil-debate"
   },
   {
     "tier": 3,
-    "question": "A cook takes a bottle of fish oil and a bottle of corn oil from the refrigerator, and both still pour freely despite the cold. Fish oil carries omega-3 fats and corn oil omega-6, yet both belong to one stubborn family of fats. Which family is it?",
-    "answer": "polyunsaturated",
+    "question": "Fish oil stays pourable even straight from a cold fridge, because it belongs to the polyunsaturated fats, whose molecules are kinked in several places. One common kitchen oil, rich in omega-6 fat, belongs to the same family and pours just as freely when chilled. Which oil is it?",
+    "answer": "corn oil",
     "choices": [
-      "polyunsaturated",
-      "saturated",
-      "monounsaturated",
-      "hydrogenated"
+      "corn oil",
+      "olive oil",
+      "avocado oil",
+      "palm oil"
     ],
-    "context": "Polyunsaturated fats have several double bonds — several kinks — so the molecules can't pack together, and they stay liquid even in the fridge. Both the omega-3s in fish and the omega-6s in seed oils are polyunsaturated. Source: Mayo Clinic, 'Dietary fats'; Sciencing, 'Why are unsaturated fats liquid at room temperature?'",
+    "context": "Polyunsaturated fats have several double bonds, several kinks, so the molecules can't pack together, and they stay liquid even in the fridge. Corn oil, like the other seed oils, is mostly polyunsaturated omega-6 fat; fish oil's omega-3s belong to the same family. Olive and avocado oil are mostly monounsaturated, and palm oil is about half saturated. Source: Mayo Clinic, 'Dietary fats'; Wikipedia, 'Corn oil'.",
     "topic": "fats-what-they-do-and-the-seed-oil-debate"
   },
   {
@@ -8914,7 +8849,7 @@
       "the color and the flavor, not fat itself",
       "the calories and the salt, not fat itself"
     ],
-    "context": "The honest crux of the seed-oil fight is three things: heavy industrial processing, whether repeatedly heating fragile omega-6 fats oxidizes them into reactive compounds, and the lopsided omega-6-to-omega-3 balance of the modern diet. The human evidence genuinely disagrees — the Minnesota Coronary Experiment and Sydney Diet Heart Study found no benefit (even worse outcomes) from swapping saturated fat for high-omega-6 oil, while the American Heart Association points to trials showing about 30% less heart disease and Stanford's Dr. Christopher Gardner says the oils 'are not to be feared.' The fight is over the crux, not over whether fat itself is bad. Source: 2025 narrative synthesis (pmc.ncbi.nlm.nih.gov/articles/PMC12923254); AHA, 'There's no reason to avoid seed oils' (2024).",
+    "context": "The honest crux of the seed-oil fight is three things: heavy industrial processing, whether repeatedly heating fragile omega-6 fats oxidizes them into reactive compounds, and the lopsided omega-6-to-omega-3 balance of the modern diet. The human evidence genuinely disagrees — the Minnesota Coronary Experiment and Sydney Diet Heart Study found no benefit (even worse outcomes) from swapping saturated fat for high-omega-6 oil, while the American Heart Association points to trials showing about 30% less heart disease and Stanford's Christopher Gardner argues the oils need not be feared. The fight is over the crux, not over whether fat itself is bad. Source: 2025 narrative synthesis (pmc.ncbi.nlm.nih.gov/articles/PMC12923254); AHA, 'There's no reason to avoid seed oils' (2024).",
     "topic": "fats-what-they-do-and-the-seed-oil-debate"
   },
   {
@@ -9044,7 +8979,7 @@
       "It slowly melted into a warm olive-flavored cream.",
       "It fizzed away into a puff of olive-scented air."
     ],
-    "context": "The 'liquid olive' (2005) was created by Ferran Adria and his brother Albert at elBulli. It is not an olive at all -- it is real olive juice held inside a skin so thin it bursts the moment you bite. The trick is called spherification. Source: molecularrecipes.com (el-bulli-spherification-history); thebazaar.com 'Bazaar Classics: Liquid Olives'.  (Legend.)",
+    "context": "The 'liquid olive' (2005) was created by Ferran Adria and his brother Albert at elBulli. It is not an olive at all: it is real olive juice held inside a skin so thin it bursts the moment a diner bites. The trick is called spherification. Source: molecularrecipes.com (el-bulli-spherification-history); thebazaar.com 'Bazaar Classics: Liquid Olives'.",
     "topic": "ferran-adria-reinvents-the-dish"
   },
   {
@@ -9057,7 +8992,7 @@
       "bitter dark chocolate",
       "sharp fresh lemon"
     ],
-    "context": "This was 'melon caviar' (2003), Ferran Adria's first spherified dish at elBulli on Spain's Catalan coast: dozens of tiny orange beads of sweet cantaloupe-melon juice made to look exactly like fish caviar. Spherification turns a plain liquid into a soft little sphere with a skin that holds until it pops in your mouth; Adria didn't invent it, he made it world-famous. Source: theworlds50best.com '12 iconic dishes of elBulli'; molecularrecipes.com el-bulli-spherification-history.",
+    "context": "This was 'melon caviar' (2003), Ferran Adria's first spherified dish at elBulli on Spain's Catalan coast: dozens of tiny orange beads of sweet cantaloupe-melon juice made to look exactly like fish caviar. Spherification turns a plain liquid into a soft little sphere with a skin that holds until it pops in the mouth; Adria didn't invent it, he made it world-famous. Source: theworlds50best.com '12 iconic dishes of elBulli'; molecularrecipes.com el-bulli-spherification-history.",
     "topic": "ferran-adria-reinvents-the-dish"
   },
   {
@@ -9075,15 +9010,15 @@
   },
   {
     "tier": 4,
-    "question": "Suppose you order the Spanish potato omelette at elBulli: it arrives as three warm layers in a tall glass, onion, then liquid egg, then potato foam, to be eaten with a spoon. Ferran Adrià kept every flavor of the familiar dish and rebuilt only its form, an idea known as deconstruction. What did he say happens to the omelette?",
-    "answer": "The omelette finishes being made in your mouth.",
+    "question": "A diner orders the Spanish potato omelette at elBulli, and it arrives as three warm layers in a tall glass, onion, then liquid egg, then potato foam, to be eaten with a spoon. Ferran Adrià kept every flavor of the familiar dish and rebuilt only its form, an idea known as deconstruction. What did he say happens to the omelette?",
+    "answer": "It finishes being made in the diner's mouth.",
     "choices": [
-      "The omelette finishes being made in your mouth.",
-      "The omelette tastes hotter with every spoonful.",
-      "The omelette slowly turns sweeter as you eat.",
-      "The omelette reminds you of your grandmother's."
+      "It finishes being made in the diner's mouth.",
+      "It grows hotter with every spoonful.",
+      "It turns slowly sweeter as it is eaten.",
+      "It tastes like a grandmother's tortilla."
     ],
-    "context": "Adria called this his deconstructed Spanish omelette (tortilla de patatas): confited onion, a liquid-egg layer, and warm potato foam, spooned up from the bottom so the flavors combine only as you eat -- 'the tortilla finishes being made in your mouth.' His very first deconstructed dish was a chicken curry (1995), served with every ingredient separate on the plate. Source: eldiario.es (Adria's tortilla); theworlds50best.com '12 iconic dishes of elBulli'.",
+    "context": "Adria called this his deconstructed Spanish omelette (tortilla de patatas): confited onion, a liquid-egg layer, and warm potato foam, spooned up from the bottom so the flavors combine only as the diner eats: 'the tortilla finishes being made in your mouth.' His very first deconstructed dish was a chicken curry (1995), served with every ingredient separate on the plate. Source: eldiario.es (Adria's tortilla); theworlds50best.com '12 iconic dishes of elBulli'.",
     "topic": "ferran-adria-reinvents-the-dish"
   },
   {
@@ -9096,7 +9031,7 @@
       "Touring the world's great kitchens to learn other chefs' recipes.",
       "Tending the gardens that grew the restaurant's own produce."
     ],
-    "context": "To keep inventing, Ferran Adria closed elBulli for about six months every year so his team could experiment full-time at a Barcelona workshop, elBulliTaller (started 1994), where they created hundreds of brand-new dishes before each season. That flood of invention is how a single dinner could reach more than 40 courses. Source: finedininglovers.com '12 ways elBulli changed the food world'; en.wikipedia.org 'El Bulli'.",
+    "context": "To keep inventing, Ferran Adria closed elBulli for about six months every year so his team could experiment full-time at a Barcelona workshop, elBulliTaller, where they created hundreds of brand-new dishes before each season. That flood of invention is how a single dinner could reach more than 40 courses. Source: finedininglovers.com '12 ways elBulli changed the food world'; en.wikipedia.org 'El Bulli'.",
     "topic": "ferran-adria-reinvents-the-dish"
   },
   {
@@ -9369,7 +9304,7 @@
       "pink",
       "blue"
     ],
-    "context": "A head of broccoli is a mass of unopened flower buds, so you're eating the plant before it can bloom; unpicked, it opens into small four-petaled yellow flowers. The name comes from the Italian broccolo, 'the flowering crest of a cabbage.' Source: https://en.wikipedia.org/wiki/Broccoli",
+    "context": "A head of broccoli is a mass of unopened flower buds, so a diner is eating the plant before it can bloom; unpicked, it opens into small four-petaled yellow flowers. The name comes from the Italian broccolo, 'the flowering crest of a cabbage.' Source: https://en.wikipedia.org/wiki/Broccoli",
     "topic": "flowers-on-the-plate-the-buds-and-blooms-we-eat"
   },
   {
@@ -9395,7 +9330,7 @@
       "a bramble",
       "a burdock"
     ],
-    "context": "The artichoke is the immature flower bud of a cultivated thistle. You eat the fleshy base of the bracts (the 'scales') and the receptacle at the base — the 'heart.' The bud you buy is only a few inches across, but the thistle that grows it can tower to about 2 metres (6+ feet). Source: https://en.wikipedia.org/wiki/Artichoke",
+    "context": "The artichoke is the immature flower bud of a cultivated thistle. A diner eats the fleshy base of the bracts (the 'scales') and the receptacle at the base — the 'heart.' The bud on sale is only a few inches across, but the thistle that grows it can tower to about 2 metres (6+ feet). Source: https://en.wikipedia.org/wiki/Artichoke",
     "topic": "flowers-on-the-plate-the-buds-and-blooms-we-eat"
   },
   {
@@ -9434,7 +9369,7 @@
       "white",
       "orange"
     ],
-    "context": "Left unharvested, the artichoke bud opens into a large thistle flower. The fuzzy 'choke' at the bud's center — the part you scoop out and discard — is a cluster of immature florets, and those florets bloom a vivid purple. Source: https://en.wikipedia.org/wiki/Artichoke",
+    "context": "Left unharvested, the artichoke bud opens into a large thistle flower. The fuzzy 'choke' at the bud's center — the part cooks scoop out and discard — is a cluster of immature florets, and those florets bloom a vivid purple. Source: https://en.wikipedia.org/wiki/Artichoke",
     "topic": "flowers-on-the-plate-the-buds-and-blooms-we-eat"
   },
   {
@@ -9512,7 +9447,7 @@
       "The seed",
       "The flower"
     ],
-    "context": "Folate comes from the Latin 'folium,' meaning 'leaf' — chosen because the vitamin was first isolated from dark-green leafy vegetables like spinach. The same root gives us the word 'foliage.' Source: en.wikipedia.org/wiki/Folate",
+    "context": "Folate comes from the Latin 'folium,' meaning 'leaf' — chosen because the vitamin was first isolated from dark-green leafy vegetables like spinach. The same root gives English the word 'foliage.' Source: en.wikipedia.org/wiki/Folate",
     "topic": "folate-the-leaf-vitamin"
   },
   {
@@ -9561,7 +9496,7 @@
     "choices": [
       "pure flavor, the same as the meat's own crust",
       "burnt residue that only makes a sauce bitter",
-      "grease you should pour off and discard",
+      "grease that should be poured off and discarded",
       "raw juices that might still carry bacteria"
     ],
     "context": "That stuck-on crust is flavor, not garbage — it's the very same browning that forms the tasty crust on the seared meat, just glued to the metal instead. Scrubbing it off sends great flavor down the drain. Source: Chowhound, 'What It Means To Deglaze Your Pan's Fond.'",
@@ -9608,7 +9543,7 @@
   },
   {
     "tier": 4,
-    "question": "A cook who has seared a steak passes over the wine, the broth and plain water, any of which would lift the browned bits into a quick sauce, and pours cream into the scorching pan instead. What happens to the dairy the moment it lands?",
+    "question": "A cook who has seared a steak passes over the wine, the broth and plain water, any of which would lift the browned bits into a quick sauce, and pours cream into the scorching pan instead. What can happen to the cream the moment it lands?",
     "answer": "it curdles into grainy little lumps",
     "choices": [
       "it curdles into grainy little lumps",
@@ -9616,7 +9551,7 @@
       "it hardens into a rubbery skin",
       "it strips the nonstick off the pan"
     ],
-    "context": "Milk and cream can curdle — split into grainy little curds — the instant they hit the high heat of the pan, wrecking a smooth sauce. That's why the safe deglazing liquids are wine, broth or stock, and water, never dairy. Source: Chowhound; Wikipedia, 'Deglazing (cooking).'",
+    "context": "Milk and cream can curdle, splitting into grainy little curds, when they hit the high heat of the pan, wrecking a smooth sauce. That is why cooks deglaze with wine, broth, stock or water rather than dairy. Source: Wikipedia, 'Deglazing (cooking)' (dairy 'may curdle when added to high heat'); Chowhound.",
     "topic": "fond-deglaze-and-the-pan-sauce"
   },
   {
@@ -9716,9 +9651,9 @@
     "answer": "its stomach",
     "choices": [
       "its stomach",
-      "its lungs",
-      "its heart",
-      "its brain"
+      "its wax glands",
+      "its venom sac",
+      "its pollen baskets"
     ],
     "context": "That organ is the honey crop, or 'honey stomach,' which holds only about 40 mg of nectar. Back at the hive the bee brings the load up and passes it mouth-to-mouth to hive-mates, who add enzymes and fan it dry with their wings. Source: Wikipedia, 'Honey'.",
     "topic": "foods-that-are-secretly-made-from-animals"
@@ -10025,14 +9960,14 @@
   {
     "tier": 2,
     "question": "A butter-maker scoops soft, loose grains of fresh butter from the churn. Before shaping them into a block, she presses and kneads the whole mass with two flat wooden paddles, a step called 'working' the butter. What is all that pressing meant to do?",
-    "answer": "Force out the last of the watery liquid still trapped inside.",
+    "answer": "Squeeze out leftover liquid still trapped in the grains.",
     "choices": [
-      "Force out the last of the watery liquid still trapped inside.",
+      "Squeeze out leftover liquid still trapped in the grains.",
       "Whip in air so the finished block turns light and fluffy.",
       "Warm the fat so it will spread more easily once chilled.",
-      "Blend the sprinkled salt evenly all through the block."
+      "Stretch the fat into long strands, the way dough is kneaded."
     ],
-    "context": "Freshly churned grains still hold pockets of that watery liquid; 'working' the butter, pressing and kneading it, traditionally with flat wooden paddles called Scotch hands, squeezes those pockets out. Source: Wikipedia, 'Butter'; corroborated by cdr.wisc.edu, 'Butter Science 101.'",
+    "context": "Freshly churned grains still hold pockets of that watery liquid; 'working' the butter, pressing and kneading it, traditionally with flat wooden paddles called Scotch hands, squeezes much of it out, presses the grains into one solid mass and breaks the water that stays into tiny droplets. Source: Wikipedia, 'Butter'; cdr.wisc.edu, 'Butter Science 101.'",
     "topic": "from-milk-to-butter-the-cream-emulsion"
   },
   {
@@ -10101,16 +10036,16 @@
     "topic": "from-milk-to-butter-the-cream-emulsion"
   },
   {
-    "tier": 4,
-    "question": "On a warm kitchen counter, a stick of butter holds its shape as a firm block while a puddle of olive oil spreads out beside it, though both are almost entirely fat. What makes butterfat stay solid at room temperature while olive oil stays liquid?",
-    "answer": "Butterfat's straight molecules pack together tightly.",
+    "tier": 3,
+    "question": "A cook drops a cold pat of butter into a very hot skillet for an omelette. Before it starts to brown, it hisses, foams up and spits tiny hot drops across the stove top. What makes the butter spatter like that?",
+    "answer": "Its hidden water flashing into steam",
     "choices": [
-      "Butterfat's straight molecules pack together tightly.",
-      "Butterfat is much heavier and denser than the oil is.",
-      "Butterfat holds more water, and the water stiffens it.",
-      "Butterfat is laced with milk solids that set it firm."
+      "Its hidden water flashing into steam",
+      "The fat itself boiling into vapor",
+      "Its salt crystals cracking in the heat",
+      "Its milk proteins scorching on the metal"
     ],
-    "context": "Butterfat is far more saturated than vegetable oil (about 70% of milkfat is saturated fat). Saturated fat molecules are straight and stack together tightly into a solid, while the 'kinked' unsaturated molecules that dominate vegetable oils can't pack close, so they stay liquid. Source: cdr.wisc.edu, 'Butter Science 101.'",
+    "context": "Butter is only about four-fifths fat; roughly 16 percent of it is water, held as tiny droplets inside the fat. In a very hot pan those droplets flash into steam and burst up through the melting fat, so the butter hisses, foams and spatters. Once the water has boiled off the foaming dies down, and only then do the milk solids begin to brown; ghee, with its water cooked out, barely spatters at all. Source: Wikipedia, 'Butter'; cdr.wisc.edu, 'Butter Science 101.'",
     "topic": "from-milk-to-butter-the-cream-emulsion"
   },
   {
@@ -10422,7 +10357,7 @@
       "Melting the fat so it holds together",
       "Beating in air to make the dough puff"
     ],
-    "context": "Kneading hydrates and works the flour's proteins until they link into a stretchy, springy network. That network is gluten - you don't pour it in, you BUILD it by working flour and water together. Source: en.wikipedia.org/wiki/Gluten.",
+    "context": "Kneading hydrates and works the flour's proteins until they link into a stretchy, springy network. That network is gluten: a baker does not pour it in but BUILDS it by working flour and water together. Source: en.wikipedia.org/wiki/Gluten.",
     "topic": "gluten-and-flour-strength-bread-vs-cake"
   },
   {
@@ -10453,19 +10388,6 @@
   },
   {
     "tier": 3,
-    "question": "A miller sorts wheat into grades long before any of it is ground into flour. One grade goes into chewy bread flour and another into tender cake flour, and each has a simple one-word nickname. What does the miller call the grade for bread?",
-    "answer": "Hard",
-    "choices": [
-      "Hard",
-      "Red",
-      "Whole",
-      "Spring"
-    ],
-    "context": "High-protein wheat (~10-13%) is 'hard' wheat, milled into strong bread flour; low-protein wheat (~8-10%) is 'soft' wheat for tender cake and pastry flour. A wheat's 'hardness' really means its protein - and gluten - potential. Source: kingarthurbaking.com; en.wikipedia.org/wiki/Wheat_flour.",
-    "topic": "gluten-and-flour-strength-bread-vs-cake"
-  },
-  {
-    "tier": 3,
     "question": "A New York bagel baker boils each ring in a big kettle of water before it goes into the oven, and the bagel comes out with a dense, springy chew no soft dinner roll can match. He gets that chew from a special flour, chosen over ordinary bread flour. Which flour?",
     "answer": "High-gluten flour",
     "choices": [
@@ -10474,20 +10396,7 @@
       "Pastry flour",
       "Self-rising flour"
     ],
-    "context": "Bagels use high-gluten flour - about 14% protein (King Arthur's is named 'Sir Lancelot'). That extra gluten is exactly what gives a bagel its dense, springy, tear-with-your-teeth chew. Source: shop.kingarthurbaking.com/items/high-gluten-flour.",
-    "topic": "gluten-and-flour-strength-bread-vs-cake"
-  },
-  {
-    "tier": 4,
-    "question": "A cook boils a handful of spaghetti that has sat dry in the pantry for months, and it comes up firm and springy instead of collapsing into mush. It owes that toughness to the hardest, most protein-packed wheat there is, a wheat so strong it holds its shape dry. What is this wheat called?",
-    "answer": "Durum",
-    "choices": [
-      "Durum",
-      "Spelt",
-      "Emmer",
-      "Einkorn"
-    ],
-    "context": "Durum is the hardest of all wheats - so packed with protein it survives being dried, boiled, and still stays firm (al dente). Dry pasta and semolina are made almost entirely from durum. 'Durum' is Latin for 'hard.' Source: en.wikipedia.org/wiki/Durum.",
+    "context": "Bagels use high-gluten flour - about 14% protein (King Arthur's is named 'Sir Lancelot'). That extra gluten is exactly what gives a bagel its dense, springy, tear-with-the-teeth chew. Source: shop.kingarthurbaking.com/items/high-gluten-flour.",
     "topic": "gluten-and-flour-strength-bread-vs-cake"
   },
   {
@@ -10531,7 +10440,7 @@
   },
   {
     "tier": 5,
-    "question": "Whole aisles of a supermarket are lined with gluten-free products, though for most people gluten is simply the wheat protein that makes bread behave like bread. Roughly 1 in 50 people truly must avoid it, because eating it turns their own immune system against the lining of their small intestine. What is the condition called?",
+    "question": "Whole aisles of a supermarket are lined with gluten-free products, though for most people gluten is simply the wheat protein that makes bread behave like bread. Roughly one person in a hundred truly must avoid it, because eating it turns the immune system against the inner wall of the small intestine. What is the condition called?",
     "answer": "Celiac disease",
     "choices": [
       "Celiac disease",
@@ -10539,7 +10448,7 @@
       "Lactose intolerance",
       "Acid reflux"
     ],
-    "context": "Celiac disease is a genuine chronic autoimmune disorder - gluten damages the small intestine - affecting about 1-2% of people. For everyone else, gluten is just the wheat protein that makes bread behave like bread; most people have no need to avoid it. Source: en.wikipedia.org/wiki/Gluten.",
+    "context": "Celiac disease is a genuine chronic autoimmune disorder - gluten damages the small intestine - affecting about 1% of people. For everyone else, gluten is just the wheat protein that makes bread behave like bread; most people have no need to avoid it. Source: en.wikipedia.org/wiki/Gluten.",
     "topic": "gluten-and-flour-strength-bread-vs-cake"
   },
   {
@@ -17850,7 +17759,7 @@
   },
   {
     "tier": 2,
-    "question": "Archaeologists studying a stone mortar in Raqefet Cave, a site near Haifa in modern Israel, found starchy residue some 13,000 years old in the burial ground of the Natufian people. It is the oldest fermented food yet discovered, older than farming itself: someone was brewing before wheat was sown. What was this ancient ferment?",
+    "question": "Archaeologists studying a stone mortar in Raqefet Cave, a site near Haifa in modern Israel, found residue left some 13,000 years ago in a burial ground of the Natufian people. It is among the oldest traces of fermenting yet found, older than farming itself. What had the Natufians made?",
     "answer": "A pot of gruel-like beer",
     "choices": [
       "A pot of gruel-like beer",
@@ -17871,7 +17780,7 @@
       "Yeast and mold",
       "Bacteria and algae"
     ],
-    "context": "That mat is a SCOBY, a Symbiotic Culture Of Bacteria And Yeast. The yeast eat the sugar and make the fizz plus a trace of alcohol; acetic-acid bacteria then convert that alcohol into tangy sour acid. It's a whole tiny two-partner ecosystem in a jar, and you can reuse the mat to brew batch after batch. Source: en.wikipedia.org/wiki/Kombucha",
+    "context": "That mat is a SCOBY, a Symbiotic Culture Of Bacteria And Yeast. The yeast eat the sugar and make the fizz plus a trace of alcohol; acetic-acid bacteria then convert that alcohol into tangy sour acid. It's a whole tiny two-partner ecosystem in a jar, and a brewer can reuse the mat to brew batch after batch. Source: en.wikipedia.org/wiki/Kombucha",
     "topic": "fermentation-rot-you-can-eat-on-purpose"
   },
   {
@@ -24584,7 +24493,7 @@
   },
   {
     "tier": 1,
-    "question": "A cook leaves milk out, and it turns into tangy yogurt; cabbage packed in a jar becomes sour sauerkraut. It looks like plain spoilage, but something is busy making these new foods. What is turning the milk and cabbage into them?",
+    "question": "Warm milk turns thick and tangy as it becomes yogurt, and cabbage packed in a jar turns sour as it becomes sauerkraut. It looks like plain spoilage, but something is busy making these new foods. What is turning the milk and cabbage into them?",
     "answer": "tiny microbes eating the food's sugars",
     "choices": [
       "tiny microbes eating the food's sugars",
