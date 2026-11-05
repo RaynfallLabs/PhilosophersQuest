@@ -45158,7 +45158,7 @@
       "about one half",
       "about one twentieth"
     ],
-    "context": "Roughly eight hours out of every twenty-four -- about one-third of a life -- spent unconscious and vulnerable. Whatever sleep does for us, evolution keeps paying that steep cost, in humans and in essentially every animal with a nervous system. Source: https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.0060106",
+    "context": "Roughly eight hours out of every twenty-four -- about one-third of a life -- spent unconscious and vulnerable. Whatever sleep does, evolution keeps paying that steep cost, in humans and in essentially every animal with a nervous system. Source: https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.0060106",
     "topic": "why-we-sleep-a-third-of-your-life-unexplained"
   },
   {
@@ -45180,8 +45180,8 @@
     "answer": "the evolutionary process",
     "choices": [
       "the evolutionary process",
-      "the digestive process",
-      "the industrial process",
+      "the circadian process",
+      "the homeostatic process",
       "the metabolic process"
     ],
     "context": "Rechtschaffen's line -- 'If sleep does not serve an absolutely vital function, then it is the biggest mistake the evolutionary process has ever made' -- captures the mystery. The cost is obvious; the payoff is not. Source: Rechtschaffen 1971/1978, cited in Sleep Research Society retrospectives.",
@@ -45215,15 +45215,15 @@
   },
   {
     "tier": 5,
-    "question": "Alexey Guzey, an independent writer, put out a line-by-line critique of Matthew Walker's bestseller 'Why We Sleep' late in 2019. He showed misquoted studies and even a bar quietly removed from a copied graph. What check does this show a curious reader can do on any popular science book?",
+    "question": "Alexey Guzey, an independent writer, put out a line-by-line critique of Matthew Walker's bestseller 'Why We Sleep' late in 2019. He found claim after claim that did not hold up, and even a bar quietly removed from a copied graph. What check does this show a curious reader can do on any popular science book?",
     "answer": "Follow the citations back to the original studies and see if they say what the book claims",
     "choices": [
       "Follow the citations back to the original studies and see if they say what the book claims",
-      "Trust the sales rank -- bestselling means well-checked",
-      "Compare the book to whatever a search engine says first",
-      "Assume peer-reviewed sources are always faithfully summarized"
+      "Check the author's degrees, job and standing in the field before trusting a word",
+      "Compare its claims with what the other bestselling books on the same topic say",
+      "Look for the publisher's note that outside experts vetted the book before print"
     ],
-    "context": "Andrew Gelman's blog 'Statistical Modeling, Causal Inference, and Social Science' ran a detailed post in November 2019 walking through Guzey's claims and finding most held up. Ioannidis, Simonsohn and Silver are all serious living critics of published-science quality -- the point is that Gelman was the specific one who took the time. The episode is a Discovery-Pattern reminder: even bestselling popular science gets audited. Sources: https://guzey.com/books/why-we-sleep/ and https://statmodeling.stat.columbia.edu/2019/11/18/is-matthew-walkers-why-we-sleep-riddled-with-scientific-and-factual-errors/",
+    "context": "Guzey posted his critique on 15 November 2019. Within days the statistician Andrew Gelman took it up on his blog, and he went on to back it, above all on the graph with the missing bar; in 2020 the two wrote about it together in the statistics magazine Chance. Walker's professorship at Berkeley and the book's place on the bestseller lists had not caught the errors; going back to the cited studies did. Sources: https://guzey.com/books/why-we-sleep/ and https://en.wikipedia.org/wiki/Matthew_Walker_(scientist)",
     "topic": "why-we-sleep-a-third-of-your-life-unexplained"
   },
   {
@@ -45236,7 +45236,7 @@
       "memory and glymphatic are both proven",
       "all five are proven"
     ],
-    "context": "There is no single accepted answer to why we sleep. Every candidate has supporting evidence, none has closed the case, and several may turn out to be simultaneously true. This is one of biology's most durable open questions. Source: https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.0060106",
+    "context": "There is no single accepted answer to why animals sleep. Every candidate has supporting evidence, none has closed the case, and several may turn out to be simultaneously true. This is one of biology's most durable open questions. Source: https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.0060106",
     "topic": "why-we-sleep-a-third-of-your-life-unexplained"
   },
   {
@@ -45254,7 +45254,7 @@
   },
   {
     "tier": 2,
-    "question": "A collector lays out the 15 sheets of William Smith's 1815 map, a life's work of walking English hills. They fit together into one map more than eight feet by six feet, at a scale of five miles to the inch, and historians credit it as the first of its kind ever made for a whole nation. What did the map show?",
+    "question": "A collector lays out the 15 sheets of William Smith's 1815 map, a life's work of walking English hills. Together they make one map about eight feet by six, and historians call it the first of its kind to cover so large an area in such detail. What did the map show?",
     "answer": "The rocks and strata of England and Wales",
     "choices": [
       "The rocks and strata of England and Wales",
@@ -45262,7 +45262,7 @@
       "A gazetteer of mineral-ore locations",
       "The canals and coalfields of the realm"
     ],
-    "context": "The full title was 'A Delineation of the Strata of England and Wales, with part of Scotland'. Soil, mineral-locality, and canal maps had earlier precedents; what Smith produced -- rocks by kind and age across a whole country -- was new. Source: en.wikipedia.org/wiki/William_Smith_(geologist).",
+    "context": "The full title was 'A Delineation of the Strata of England and Wales, with part of Scotland'. Soil, mineral-locality and canal maps had earlier precedents, and William Maclure had published a rougher geological map of the United States in 1809; no one had yet mapped rocks by kind and age in such detail over so large an area. Source: https://en.wikipedia.org/wiki/William_Smith_(geologist)",
     "topic": "william-smith-maps-a-nation"
   },
   {
@@ -45306,15 +45306,15 @@
   },
   {
     "tier": 5,
-    "question": "George Bellas Greenough brought out his rival map only in May 1820, current scholarship shows, after William Smith was already out of debtors' prison. A popular story says the Geological Society stole Smith's famous 1815 map. What does this correction show about the popular 'plagiarism' story?",
-    "answer": "The dramatic timing that makes the plagiarism story feel powerful does not match the actual dates",
+    "question": "A popular telling of William Smith's fall says that George Bellas Greenough and the Geological Society brought out a rival copy of Smith's 1815 map, undercut his sales and drove him into a debtors' prison in 1819. Historians who went back to the record found that one link in that chain cannot hold. Which link?",
+    "answer": "The rival map undercutting Smith's sales before his jailing",
     "choices": [
-      "The dramatic timing that makes the plagiarism story feel powerful does not match the actual dates",
-      "Smith actually plagiarized Greenough, not the other way around",
-      "Greenough was later stripped of all his honors for the theft",
-      "The Geological Society formally apologized to Smith in 1820"
+      "The rival map undercutting Smith's sales before his jailing",
+      "The Geological Society putting out a rival map",
+      "Smith being sent to a debtors' prison in the summer of 1819",
+      "Smith's own map selling poorly in those years"
     ],
-    "context": "Sedgwick would later crown Smith 'the Father of English Geology' with the first Wollaston Medal in 1831; Bakewell and Buckland were contemporary geological writers with their own agendas. Farey Sr., sympathetic to Smith, is now seen by historians as the main amplifier of the plagiarism story. Both maps, incidentally, sold badly. Source: en.wikipedia.org/wiki/William_Smith_(geologist).",
+    "context": "Greenough's map is dated 1819 but came out only in May 1820, after Smith had left the King's Bench on 31 August 1819; it also cost more than Smith's and shared few of his subscribers, so it cannot have run up the debts that jailed him. Smith's map did sell poorly, but so did Greenough's. Smith's debts came from the failed Bath stone quarry and what he owed its co-investor. Much of the feud story traces to Smith's champion John Farey Sr., who used Smith's cause to air his own grievances against the Society in the Philosophical Magazine. In 1831 the Society gave Smith its first Wollaston Medal, and its president, Adam Sedgwick, called him the Father of English Geology. Source: https://en.wikipedia.org/wiki/William_Smith_(geologist)",
     "topic": "william-smith-maps-a-nation"
   },
   {
@@ -45327,7 +45327,7 @@
       "the ague",
       "the falling sickness"
     ],
-    "context": "The dropsy was the eighteenth-century name for the massive fluid retention (edema) we now most often trace to congestive heart failure. The consumption was tuberculosis, the ague was malarial fever, the falling sickness was epilepsy -- three real terrors of the era. Standard 1775 treatments for dropsy also included tapping (draining) the swollen abdomen with a hollow needle called a trocar -- none of it addressed the failing heart. Source: hektoen international -- Withering and the foxglove; en.wikipedia.org/wiki/William_Withering.",
+    "context": "The dropsy was the eighteenth-century name for the massive fluid retention (edema) now most often traced to congestive heart failure. The consumption was tuberculosis, the ague was malarial fever, the falling sickness was epilepsy -- three real terrors of the era. Standard 1775 treatments for dropsy also included tapping (draining) the swollen abdomen with a hollow needle called a trocar -- none of it addressed the failing heart. Source: hektoen international -- Withering and the foxglove; en.wikipedia.org/wiki/William_Withering.",
     "topic": "withering-and-the-foxglove"
   },
   {
@@ -45345,28 +45345,28 @@
   },
   {
     "tier": 3,
-    "question": "William Withering published An Account of the Foxglove after ten years of dosing patient after patient with dried, weighed leaf. The 1785 book made him the father of modern drug testing. What did the 163 case histories in it do that no earlier drug book had done?",
+    "question": "William Withering published An Account of the Foxglove after ten years of dosing patient after patient with dried, weighed leaf. The 1785 book is counted among the founding works of drug testing. What did its 163 case histories do that earns it that place?",
     "answer": "included every patient the drug did nothing for or harmed",
     "choices": [
       "included every patient the drug did nothing for or harmed",
       "compared the drug against an inert pill from the same jar",
-      "hid the identity of the plant to protect his practice",
+      "gave every patient the very same fixed dose of the leaf",
       "randomly assigned each patient to a different dose"
     ],
-    "context": "Withering's 163 cases -- 156 from his private practice and 7 from the Birmingham Hospital -- included the ones where the leaf did nothing and the ones where it made the patient worse. Publishing your negative results is the move that separates a drug from a nostrum. The other choices are the real inventions that came later: the placebo-controlled trial (twentieth century), the trade-secret nostrum tradition Withering was consciously breaking with, and the randomised controlled trial (Bradford Hill, 1948). Source: hektoen international -- Withering and the foxglove.",
+    "context": "Withering's 163 cases -- 156 from his own practice and 7 from the Birmingham hospital -- included the ones where the leaf did nothing and the ones where it made the patient worse. His preface says that giving only select cases would have been easy and flattering to his reputation, 'But Truth and Science would condemn the procedure.' Publishing negative results is the move that separates a drug from a nostrum. The book did none of the other things: Withering raised each patient's dose step by step, and comparison against a dummy pill and random allocation came much later (the Medical Research Council's streptomycin trial of 1948 is the landmark randomised one). Source: Withering 1785, Project Gutenberg 24886 (https://www.gutenberg.org/ebooks/24886).",
     "topic": "withering-and-the-foxglove"
   },
   {
     "tier": 4,
-    "question": "William Withering wrote that his hedgerow flower could rescue a swollen, dying patient, but a little higher up the dose it would prove fatal. So he published a strict prescription his readers had to obey: start with a small amount, use dried leaf so the potency stayed even, and raise the dose gradually. At the first sign of what were they to stop at once?",
-    "answer": "sickness, giddiness, or objects appearing green or yellow",
+    "question": "William Withering wrote that his hedgerow flower could rescue a swollen, dying patient, yet a little higher up the dose it would kill. His 1785 book listed what very large, quickly repeated doses do, from sickness and giddiness to a pulse slowed to 35 beats a minute. One strange sign on that list is still a classic clue to overdose. What is it?",
+    "answer": "objects appearing green or yellow",
     "choices": [
-      "sickness, giddiness, or objects appearing green or yellow",
-      "a nosebleed or bleeding from the gums",
-      "cold hands, cold feet, and blue lips",
-      "a rash spreading down the arms"
+      "objects appearing green or yellow",
+      "bleeding from the nose or the gums",
+      "ringing in the ears that will not fade",
+      "red blotches spreading down the arms"
     ],
-    "context": "The 1785 book puts it directly: 'Foxglove, when given in very large and repeated doses, occasions sickness, vomiting, purging, giddiness, confused vision, objects appearing green or yellow.' Withering had figured out digitalis toxicity from bedside notebooks alone; the yellow-green tint to vision is a distinctive modern clinical sign of glycoside overdose. The other choices are real early-warning signs of other drug toxicities (aspirin or warfarin bleeding, shock, allergic rash). Note: foxglove is a common garden plant and eating any part can kill -- this whole story is a look-don't-touch wonder, never a try-it-yourself one. Source: Withering 1785, Project Gutenberg 24886.",
+    "context": "The 1785 book: 'The Foxglove when given in very large and quickly-repeated doses, occasions sickness, vomiting, purging, giddiness, confused vision, objects appearing green or yellow', and on through a slow pulse, cold sweats and convulsions to death. His stopping rule came well before that: give the leaf only until it acts on the kidneys, the stomach, the pulse or the bowels, and stop at the first appearance of any one of those effects. The yellow-green tint to vision is still a classic clinical sign of digitalis overdose. Bleeding from the nose and gums is a sign of too much blood thinner, ringing ears of too much aspirin or quinine, and spreading red blotches of a drug allergy. Foxglove is a common garden plant and eating any part of it can kill: this is a look-don't-touch wonder, never a try-it-yourself one. Source: Withering 1785, Project Gutenberg 24886 (https://www.gutenberg.org/ebooks/24886).",
     "topic": "withering-and-the-foxglove"
   },
   {
@@ -45384,7 +45384,7 @@
   },
   {
     "tier": 5,
-    "question": "A doctor hands a digitalis drug to a patient with a weakened heart. Chemistry took about a century and a half to catch up with William Withering's leaf. In heart-muscle cells, digitalis latches onto one specific membrane pump and jams it, letting calcium build up inside the cell so the muscle fibres pull harder. Which membrane pump does the drug jam?",
+    "question": "A doctor hands a digitalis drug to a patient with a weakened heart. Chemistry took more than a century and a half to catch up with William Withering's leaf. In heart-muscle cells, digitalis latches onto one specific membrane pump and jams it, letting calcium build up inside the cell so the muscle fibres pull harder. Which membrane pump does the drug jam?",
     "answer": "the sodium-potassium pump",
     "choices": [
       "the sodium-potassium pump",
@@ -45392,11 +45392,11 @@
       "the muscle calcium reuptake pump",
       "the sweat-gland chloride pump"
     ],
-    "context": "Digitalis blocks Na+/K+-ATPase on the heart cell membrane. Sodium builds up inside the cell, which stalls a second exchanger that would normally pump calcium out in trade for sodium in; calcium therefore accumulates too, and calcium is what makes the muscle fibres contract harder. The other choices are all real membrane pumps: the proton pump is the target of omeprazole (heartburn); SERCA sequesters calcium after each beat (a mutation in it causes Darier disease); CFTR is the chloride channel broken in cystic fibrosis. Source: cvpharmacology.com -- digitalis.",
+    "context": "Digitalis blocks Na+/K+-ATPase on the heart cell membrane. Sodium builds up inside the cell, which stalls a second exchanger that would normally pump calcium out in trade for sodium in; calcium therefore accumulates too, and calcium is what makes the muscle fibres contract harder. Hans Schatzmann showed in 1953 that cardiac glycosides block this pump, 168 years after Withering's book. The other choices are real membrane transporters: the proton pump is the target of omeprazole (heartburn); SERCA sequesters calcium after each beat (a mutation in it causes Darier disease); CFTR is the chloride channel broken in cystic fibrosis. Sources: cvpharmacology.com -- digitalis; https://link.springer.com/article/10.1007/s00210-021-02191-2",
     "topic": "withering-and-the-foxglove"
   },
   {
-    "tier": 5,
+    "tier": 3,
     "question": "Dr Sydney Smith at Burroughs Wellcome isolated a purified cardiac glycoside in 1930 from the leaf of the woolly foxglove, a different species from William Withering's flower. Doctors still prescribe it today for heart failure and for slowing certain irregular heartbeats. What is that drug called?",
     "answer": "digoxin",
     "choices": [
@@ -45405,7 +45405,7 @@
       "quinidine",
       "atropine"
     ],
-    "context": "Digoxin comes from Digitalis lanata; the closely related digitoxin comes from Withering's purple foxglove (Digitalis purpurea). The other choices are all real heart-era drugs: warfarin (a blood thinner from spoiled sweet-clover), quinidine (an antiarrhythmic from cinchona bark, cousin to the malaria drug quinine), and atropine (from the deadly nightshade of another question, used to speed a dangerously slow heart). A hedgerow flower is on the modern drug list because one physician measured it instead of believing it. Source: American Chemical Society -- Molecule of the Week: Digoxin.",
+    "context": "Digoxin comes from Digitalis lanata; the closely related digitoxin comes from Withering's purple foxglove (Digitalis purpurea). The other choices are all real heart-era drugs: warfarin (a blood thinner from spoiled sweet-clover), quinidine (an antiarrhythmic from cinchona bark, cousin to the malaria drug quinine), and atropine (from deadly nightshade, used to speed a dangerously slow heart). A hedgerow flower is on the modern drug list because one physician measured it instead of believing it. Source: American Chemical Society -- Molecule of the Week: Digoxin.",
     "topic": "withering-and-the-foxglove"
   },
   {
@@ -45566,7 +45566,7 @@
   },
   {
     "tier": 1,
-    "question": "A boy at the kitchen table sticks a paper straw into a tall glass of cold milk and takes a long sip. All his cheeks and tongue do is thin out the air trapped inside his mouth. What actually sends the milk up the straw to his lips?",
+    "question": "A boy at the kitchen table sticks a paper straw into a tall glass of cold milk and takes a long sip. What actually sends the milk up the straw to his lips?",
     "answer": "The outside air, pressing down on the surface of the milk",
     "choices": [
       "The outside air, pressing down on the surface of the milk",
@@ -45587,16 +45587,16 @@
       "The drink rises only as far as the pin-hole and then stops there",
       "The drink rises briefly, then chokes off once the mouth pressure equalises"
     ],
-    "context": "The pin-hole is the ten-second proof that YOU never pull the liquid - the atmosphere lifts it, and only when the tube is sealed above the liquid line. Source: tec-science.com, How does a drinking straw work.",
+    "context": "The pin-hole is the ten-second proof that nobody ever pulls the liquid - the atmosphere lifts it, and only when the tube is sealed above the liquid line. Source: tec-science.com, How does a drinking straw work.",
     "topic": "you-never-suck-a-drink-up-a-straw"
   },
   {
     "tier": 2,
-    "question": "A schoolteacher hands out plastic straws twelve metres long and tells the class to drink orange juice through them from a bucket on the floor. Sucking drops the air pressure in a mouth so the atmosphere outside can press a drink up the tube, yet the kids all fail, no matter how hard they suck. What ceiling has the teacher run them into?",
+    "question": "A schoolteacher hands out plastic straws twelve metres long and tells the class to drink orange juice through them from a bucket on the floor. Every child fails, however hard each one sucks. What ceiling has the teacher run them into?",
     "answer": "The atmosphere can only push water up about ten metres, even against a perfect vacuum",
     "choices": [
       "The atmosphere can only push water up about ten metres, even against a perfect vacuum",
-      "Human lungs cannot generate more than half an atmosphere of pull",
+      "Surface tension holds the juice back once a tube passes ten metres",
       "Juice viscosity is too high for a tube that long to conduct",
       "Static electricity along a long plastic tube stalls the flow"
     ],
@@ -45605,28 +45605,28 @@
   },
   {
     "tier": 3,
-    "question": "A pump salesman visits a farm and boasts that his new 20-horsepower pump can suck water up a 15-metre pipe. A physics teacher shakes her head: no matter how powerful the motor, a suction pump can only raise water about 10 metres. Which fixed quantities decide the ceiling, no matter how strong the pump?",
+    "question": "A pump salesman visits a farm and boasts that his new 20-horsepower pump can suck water up a 15-metre pipe from the bottom of an old well. A physics teacher listening in shakes her head: a suction pump can only raise water about 10 metres. Which quantities set that ceiling?",
     "answer": "Atmospheric pressure, water density, and the strength of gravity",
     "choices": [
       "Atmospheric pressure, water density, and the strength of gravity",
       "Motor horsepower, pipe diameter, and pump-seal tightness",
-      "Water temperature, salinity, and the intake filter's mesh",
-      "Impeller speed, pipe material, and elevation above sea level"
+      "Valve size, intake-filter mesh, and the shape of the pump casing",
+      "Impeller speed, pipe material, and the number of pump stages"
     ],
-    "context": "Only three ingredients set the limit - and a manufacturer controls none of them. h = P / (rho * g) gives 101,325 / 9,810 = 10.33 m. Real pumps do worse, around 6-7 m, because of cavitation and friction; the 20 HP claim is snake oil. Source: scienceabc.com.",
+    "context": "Only three ingredients set the limit - and a manufacturer controls none of them. h = P / (rho * g) gives 101,325 / 9,810 = 10.33 m. Up a mountain the ceiling drops, because the air pressure itself is lower. Real pumps do worse, around 6-7 m, because of cavitation and friction; the 20 HP claim is snake oil. Source: scienceabc.com.",
     "topic": "you-never-suck-a-drink-up-a-straw"
   },
   {
     "tier": 4,
-    "question": "Galileo took up the complaint of well-diggers in Florence in his Two New Sciences of 1638, and he got it wrong. They had reported to the Grand Duke of Tuscany in the 1630s that their suction pumps refused to lift water past about ten metres, however well built. What explanation did Galileo publish for the ten-metre ceiling?",
+    "question": "Galileo took up the complaint of well-diggers in Florence in his Two New Sciences of 1638, and he got it wrong. By one account they had carried it to the Grand Duke of Tuscany in the 1630s: their suction pumps refused to lift water past about ten metres, however well built. What explanation did Galileo publish for the ten-metre ceiling?",
     "answer": "That water, like a rope, has a breaking strength and snaps under its own weight",
     "choices": [
       "That water, like a rope, has a breaking strength and snaps under its own weight",
-      "That the atmosphere has weight and pushes down on the surface of the water",
       "That the pump seals leak invisibly at any height above ten metres",
-      "That the sun's heat evaporates the water column before it reaches the top"
+      "That friction along the pipe walls drags the rising water back down",
+      "That the column grows too heavy for any pump handle to lift"
     ],
-    "context": "Galileo put the limit near 18 braccia (~10.5 m) and treated the column as a self-hanging rope of water. It was a genius's wrong answer. Sources: en.wikipedia.org/wiki/Two_New_Sciences; encyclopedia.com, Torricelli.",
+    "context": "Galileo put the limit near 18 braccia (~10.5 m) and treated the column as a self-hanging rope of water. It was a genius's wrong answer. The right one came from Torricelli in 1644: the weight of the air outside pushes the water up, and it can balance only about ten metres of it. Sources: en.wikipedia.org/wiki/Two_New_Sciences; encyclopedia.com, Torricelli; https://en.wikipedia.org/wiki/Evangelista_Torricelli",
     "topic": "you-never-suck-a-drink-up-a-straw"
   },
   {
