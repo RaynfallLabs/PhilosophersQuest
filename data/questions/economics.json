@@ -1,15 +1,15 @@
 [
   {
     "tier": 1,
-    "question": "Frédéric Bastiat, a Paris journalist and deputy, spent the late 1840s fighting the heavy charges France laid on iron, cloth and grain arriving from abroad. Those charges let French producers raise their prices and still keep their buyers. What is a tax like that called?",
-    "answer": "A tariff",
+    "question": "Frédéric Bastiat, a Paris journalist and deputy, spent the late 1840s fighting the heavy tariffs France laid on iron, cloth and grain from abroad. The tariffs let French makers raise their prices and still keep their buyers. Who paid the hidden cost?",
+    "answer": "French households, through higher prices",
     "choices": [
-      "A tariff",
-      "A subsidy",
-      "A minimum wage",
-      "A quota"
+      "French households, through higher prices",
+      "Foreign makers, out of their own profits",
+      "The state, through the cost of customs posts",
+      "French makers, through higher wages"
     ],
-    "context": "A tariff is a tax on imports. The July Monarchy applied heavy tariffs on iron, textiles, and grain to protect French producers. Bastiat's Economic Sophisms (1845, 1848) is the classical satirical field guide to the protectionist arguments that defended those tariffs in the Chamber. Source: http://davidmhart.com/liberty/Papers/Bastiat/EconomicSophisms/Hart_BastiatsSophismsAug2011.html.",
+    "context": "A tariff is a tax on imports. The July Monarchy laid heavy tariffs on iron, textiles and grain to protect French producers. Bastiat's point was that the shelter was paid for by every French buyer, who paid more for the protected goods, while the gain went to a few producers everyone could see. His Economic Sophisms (1845, 1848) is the classic satirical field guide to the protectionist arguments of the day. Source: http://davidmhart.com/liberty/Papers/Bastiat/EconomicSophisms/Hart_BastiatsSophismsAug2011.html.",
     "topic": "1840s-france-the-socialists-bastiat-was-answering"
   },
   {
@@ -28,12 +28,12 @@
   {
     "tier": 2,
     "question": "Louis Blanc saw his National Workshops open to every jobless man in February 1848, and by May more than 100,000 had enrolled, their wages paid out of taxes. Digging holes and filling them in again would not count as work. What is the built-in trouble with a guaranteed-job scheme on that scale?",
-    "answer": "There is not enough real work, so most enrolled people are paid to do very little",
+    "answer": "Too little real work, so most are paid to do almost nothing",
     "choices": [
-      "There is not enough real work, so most enrolled people are paid to do very little",
-      "All find real jobs matched to their skills",
-      "The program pays for itself right away",
-      "Fewer people sign up than expected"
+      "Too little real work, so most are paid to do almost nothing",
+      "The workshops make so many goods that prices fall",
+      "So many enroll that the city runs out of tools",
+      "Private firms match the wage, and prices soar"
     ],
     "context": "The National Workshops (Ateliers nationaux) opened in late February 1848 and grew past 100,000 enrollees by May. The treasury could not pay them for real work, and wages became a straight welfare payment. Louis Blanc had originally wanted them run as producer cooperatives; the actual implementation, under minister Marie, was mostly digging and hauling. Source: https://en.wikipedia.org/wiki/National_Workshops.",
     "topic": "1840s-france-the-socialists-bastiat-was-answering"
@@ -41,12 +41,12 @@
   {
     "tier": 2,
     "question": "A man rakes leaves on a city payroll, one of 100,000 people hired for busywork like raking, filing and painting benches, all paid from the city budget. After a few years the money runs out, and one morning the whole scheme shuts at once. What usually happens in the streets right after?",
-    "answer": "The suddenly unpaid workers riot, because their income has been cut off",
+    "answer": "The suddenly unpaid workers riot over their lost income",
     "choices": [
-      "The suddenly unpaid workers riot, because their income has been cut off",
-      "Everyone quietly finds new jobs the next day",
-      "Business owners protest the closure",
-      "Prices drop across the city"
+      "The suddenly unpaid workers riot over their lost income",
+      "The streets go quiet as the men head home to the villages",
+      "Crowds line up quietly at private hiring halls",
+      "The workers march peacefully and petition the city"
     ],
     "context": "The June Days (Journees de Juin, June 23-26, 1848) followed the closure of the National Workshops and were suppressed by General Louis-Eugene Cavaignac with heavy casualties. Louis Blanc, tainted by his association with the workshops, fled to England, where he lived in exile for 22 years. Source: https://en.wikipedia.org/wiki/National_Workshops.",
     "topic": "1840s-france-the-socialists-bastiat-was-answering"
@@ -72,22 +72,9 @@
       "They fell apart within a few years from fighting and shortages",
       "They grew into huge successful cities within twenty years",
       "They were shut down by the US government for being illegal",
-      "They still run today as the largest farms in Illinois"
+      "They were bought out by railroads building lines across the West"
     ],
     "context": "Etienne Cabet (1788-1856) published Voyage en Icarie in 1839, then led the Icarian emigration in 1848; the settlement eventually landed at Nauvoo, Illinois after the Mormons had abandoned it. Fourier (phalansteres) and Saint-Simon (industrial technocracy) were the earlier utopian-socialist generation whose ideas fed into the 1848 moment. Source: https://en.wikipedia.org/wiki/%C3%89tienne_Cabet.",
-    "topic": "1840s-france-the-socialists-bastiat-was-answering"
-  },
-  {
-    "tier": 5,
-    "question": "Karl Marx and Friedrich Engels, two German exiles in London, published a twenty-three-page pamphlet in February 1848. It called on workers everywhere to unite and take the factories and the land from their owners. It became the founding text of a cause whose regimes, by the reckoning in The Black Book of Communism, killed 65 to 100 million people in the following century. What is it called?",
-    "answer": "The Communist Manifesto",
-    "choices": [
-      "The Communist Manifesto",
-      "The Wealth of Nations",
-      "The Prince",
-      "The Social Contract"
-    ],
-    "context": "Karl Marx and Friedrich Engels published Manifest der Kommunistischen Partei in London in February 1848, the same month the February Revolution broke out in Paris. Marx's tradition was distinct from Louis Blanc's state-socialism, Proudhon's mutualism, and Cabet's utopianism, but it addressed the same crisis moment. Bastiat's 'The State,' September 1848, is his answer inside the French debate. Source: https://en.wikipedia.org/wiki/Fr%C3%A9d%C3%A9ric_Bastiat.",
     "topic": "1840s-france-the-socialists-bastiat-was-answering"
   },
   {
@@ -109,9 +96,9 @@
     "answer": "Long lines form and pumps run empty faster",
     "choices": [
       "Long lines form and pumps run empty faster",
-      "All drivers drive less on their own",
-      "New oil wells suddenly open near town",
-      "The gas stations start giving fuel away"
+      "Drivers buy less, so the fuel lasts longer",
+      "Stations ship in extra fuel to meet the rush",
+      "Everyone gets a fair share, so no one waits"
     ],
     "context": "Odd-even license-plate rationing rules meant drivers with odd-ending plates could only buy on odd-numbered dates; even-ending plates on even dates. Stations posted 'NO GAS' signs when empty. Source: energyhistory.yale.edu.",
     "topic": "1973-oil-shock-and-us-gasoline-price-controls"
@@ -145,12 +132,12 @@
   {
     "tier": 3,
     "question": "Frederic Bastiat taught that every policy has two sides: the Seen, its obvious effects, and the Unseen, the hidden costs everyone forgets. Murray Rothbard's 1974 essay 'The Energy Fiasco' turned that frame on America's gasoline lines of 1973, when federal price controls held pump prices low. What did Rothbard call the Seen and the Unseen of those controls?",
-    "answer": "Seen: the low pump price. Unseen: hours in line, imports not brought in at a loss, deliveries not made",
+    "answer": "Seen: the low pump price. Unseen: hours in line and fuel never brought in",
     "choices": [
-      "Seen: the low pump price. Unseen: hours in line, imports not brought in at a loss, deliveries not made",
-      "Seen: OPEC greed. Unseen: US oil imports rising",
-      "Seen: rising gas taxes. Unseen: falling road maintenance",
-      "Seen: consumer thrift. Unseen: producer overproduction"
+      "Seen: the low pump price. Unseen: hours in line and fuel never brought in",
+      "Seen: OPEC's greed. Unseen: the oil imports America kept buying",
+      "Seen: rising gas taxes. Unseen: the road repairs they never paid for",
+      "Seen: drivers' thrift. Unseen: refiners making more fuel than anyone bought"
     ],
     "context": "Rothbard's Bastiatian argument: the low pump price is what people saw; what was hidden was the time-cost paid in the line, the private importers unwilling to bring in gasoline at a loss, and the deliveries that did not happen. Source: mises.org/library/energy-fiasco.",
     "topic": "1973-oil-shock-and-us-gasoline-price-controls"
@@ -165,7 +152,7 @@
       "Farmers would grow exactly the right amount because their instructions would be clearer",
       "Grocery stores would run more smoothly with simpler prices"
     ],
-    "context": "Free to Choose (PBS 1980, tie-in book by Milton and Rose Friedman) devoted a segment to the 1973-74 gasoline lines as an illustration of price-ceiling shortages. Source: freetochoosenetwork.org.",
+    "context": "Friedrich Hayek's 1945 essay The Use of Knowledge in Society argued that the knowledge an economy runs on, of particular circumstances of time and place, is scattered among millions of people and is never given to any single mind. Prices gather it: shoppers' choices tell the grocer, and the grocer's orders tell the farmer. An office that replaced those choices with a plan would lack that knowledge and guess wrong, leaving shortages in one place and waste in another. Milton and Rose Friedman later made the 1973-74 gas lines a showcase of price-control shortages in Free to Choose (1980). Source: https://grokipedia.com/page/The_Use_of_Knowledge_in_Society.",
     "topic": "1973-oil-shock-and-us-gasoline-price-controls"
   },
   {
@@ -191,7 +178,7 @@
       "Lines grew much worse because prices spiked forever",
       "Lines returned until the government built more oil wells"
     ],
-    "context": "Reagan's January 28, 1981 executive order lifted the remaining federal price controls on domestic crude oil. Within months, gasoline lines disappeared even though world prices remained elevated. Source: reaganlibrary.gov executive orders.",
+    "context": "Reagan's Executive Order 12287 of January 28, 1981 ended the remaining federal price and allocation controls on domestic crude oil and refined products. The gas lines of 1973-74 and 1979 never returned, and oil prices, which peaked about then, fell through the first half of the 1980s. Source: https://www.archives.gov/federal-register/codification/executive-order/12287.html.",
     "topic": "1973-oil-shock-and-us-gasoline-price-controls"
   },
   {
@@ -204,7 +191,7 @@
       "Its truck-driver strike blocked deliveries",
       "Its harbor unions refused to unload tankers"
     ],
-    "context": "California's 1979 lines returned because state-level price controls were still in force even as federal controls were unwinding. The natural experiment inside the US confirmed the price-ceiling-produces-lines mechanism a second time. Source: energyhistory.yale.edu.",
+    "context": "In spring 1979 federal price controls on crude oil and gasoline were still in force, and the Department of Energy allotted gasoline by a formula tied to how much each buyer had used in an earlier base period (1972 until March 1979, then 1978). President Carter said on May 16, 1979 that the formula had not been able to reflect California's rapid growth, so the state's allotment fell short and its lines were among the worst in the country. The natural experiment confirmed the price-ceiling-produces-lines mechanism a second time. Source: https://www.presidency.ucsb.edu/documents/gasoline-shortages-california-statement-the-president-0.",
     "topic": "1973-oil-shock-and-us-gasoline-price-controls"
   },
   {
@@ -222,15 +209,15 @@
   },
   {
     "tier": 1,
-    "question": "Two friends argue about a city's traffic. Anna wants to hand the job to smart planners who will get it right. Ben shakes his head: no small group could know enough about all the drivers, streets and daily changes to plan a city. Which one word fits Ben's view?",
-    "answer": "Skeptical",
+    "question": "Anna wants planners to run the city's traffic; Ben doubts they could ever know enough. Thomas Sowell called the rival pictures behind quarrels like theirs visions. Why that word?",
+    "answer": "They come before any argument",
     "choices": [
-      "Skeptical",
-      "Confident",
-      "Selfish",
-      "Angry"
+      "They come before any argument",
+      "They are dreams of utopia",
+      "They are forecasts of the future",
+      "They come from studying data"
     ],
-    "context": "Thomas Sowell, A Conflict of Visions: Ideological Origins of Political Struggles (William Morrow, 1987; revised editions 2002, 2007). Sowell developed the framework across a trilogy over the next twelve years. Source: basicbooks.com (Sowell 1987).",
+    "context": "In A Conflict of Visions (1987) Thomas Sowell used the word vision for a sense of how the world works that comes before any theory is built. The constrained and unconstrained visions, he argued, decide which policies feel obviously right to each side and which feel naive, before a single fact is weighed. Ben's doubt about planners is the constrained vision speaking. Source: https://en.wikipedia.org/wiki/A_Conflict_of_Visions.",
     "topic": "a-conflict-of-visions-1987-constrained-vs-unconstrained"
   },
   {
@@ -314,14 +301,14 @@
   {
     "tier": 1,
     "question": "Adam Back proposed in 1997 that every email carry a small puzzle costing the sender's computer about half a second of work, a scheme he called Hashcash. Twenty emails a day would cost a person ten seconds. What would happen to a spammer sending a million?",
-    "answer": "He could not afford to keep spamming -- the puzzles would take hours",
+    "answer": "He gives up -- a million puzzles would take days",
     "choices": [
-      "He could not afford to keep spamming -- the puzzles would take hours",
-      "Nothing would change -- spammers have faster computers",
-      "He would send twice as much spam",
-      "Regular users would stop being able to send email"
+      "He gives up -- a million puzzles would take days",
+      "Nothing changes -- spammers have faster computers",
+      "Nothing -- he sends the puzzles along unsolved",
+      "Users suffer -- they can no longer send email"
     ],
-    "context": "Adam Back proposed Hashcash in 1997. SpamAssassin is a 2001 Bayesian filter; SPF is a 2003 email-authentication record; DomainKeys is a 2004 Yahoo predecessor of DKIM. None used proof-of-work. Source: https://en.wikipedia.org/wiki/Hashcash.",
+    "context": "Adam Back proposed Hashcash in 1997. At half a second a message, a person's twenty emails a day cost ten seconds, but a million messages would cost a spammer's computer some 500,000 seconds, nearly six days of work, while the receiving computer checks each stamp in an instant and throws out any message without one. Source: https://en.wikipedia.org/wiki/Hashcash.",
     "topic": "adam-back-s-hashcash-and-reference-6"
   },
   {
@@ -334,7 +321,7 @@
       "proof-of-authority",
       "zero-knowledge proof"
     ],
-    "context": "'Proof-of-work' is the general name for an asymmetric puzzle (search-cost >> verification-cost) that predates Hashcash by a few years (Dwork & Naor 1993 used the term). Proof-of-stake, proof-of-authority, and zero-knowledge proofs are separate cryptographic ideas. Source: https://en.wikipedia.org/wiki/Proof_of_work.",
+    "context": "'Proof-of-work' is the general name for a lopsided puzzle that costs far more to solve than to check. Cynthia Dwork and Moni Naor proposed the idea against junk mail in a paper presented in 1992 and published in 1993; the name itself was coined by Markus Jakobsson and Ari Juels in 1999. Proof-of-stake, proof-of-authority and zero-knowledge proofs are separate cryptographic ideas. Source: https://grokipedia.com/page/Proof_of_work.",
     "topic": "adam-back-s-hashcash-and-reference-6"
   },
   {
@@ -365,19 +352,6 @@
   },
   {
     "tier": 4,
-    "question": "Satoshi Nakamoto posted his nine-page Bitcoin white paper on Halloween 2008, after asking Adam Back in August to look over a draft. The paper ends by citing eight earlier papers he had drawn on, and Back's Hashcash paper is one of them. Where in that list does it sit?",
-    "answer": "Reference 6",
-    "choices": [
-      "Reference 6",
-      "Reference 1",
-      "Reference 3",
-      "Reference 8"
-    ],
-    "context": "Hashcash appears as Reference 6 in the Bitcoin white paper. Reference 1 is Wei Dai's b-money; Reference 3 is Haber & Stornetta's 1991 timestamping paper; the reference list ends at 8. Source: https://bitcoin.org/bitcoin.pdf.",
-    "topic": "adam-back-s-hashcash-and-reference-6"
-  },
-  {
-    "tier": 4,
     "question": "Adam Back helped found a company, Blockstream, in 2014, and it became one of the teams contributing to Bitcoin Core. Yet Bitcoin itself has no chief executive and no owner, and its code is open to the public. What does that open code mean in practice?",
     "answer": "Anyone can improve the network, and competing teams keep each other honest",
     "choices": [
@@ -386,7 +360,7 @@
       "A Bitcoin foundation must approve every new feature before release",
       "Governments choose which teams may work on the software"
     ],
-    "context": "Adam Back co-founded Blockstream in 2014 and became its CEO; Blockstream contributes heavily to Bitcoin Core development and runs the Liquid sidechain. Chainalysis is a blockchain-analytics firm; Coinbase is an exchange; Ripple Labs runs the XRP payment network. Source: https://en.wikipedia.org/wiki/Adam_Back.",
+    "context": "Adam Back co-founded Blockstream in 2014 and later became its chief executive; the company's developers contribute to Bitcoin Core, and it runs the Liquid sidechain. Bitcoin Core's code is open source: anyone may read it, propose a change or run it, and no company, foundation or government owns the network or approves its releases. Source: https://en.wikipedia.org/wiki/Adam_Back.",
     "topic": "adam-back-s-hashcash-and-reference-6"
   },
   {
@@ -442,21 +416,8 @@
     "topic": "agency-budget-maximization-tsa-irs-and-the-niskanen-pattern"
   },
   {
-    "tier": 2,
-    "question": "Congress passed the Inflation Reduction Act in August 2022, and tucked inside it was some $80 billion, spread over ten years, for the Internal Revenue Service, the federal tax collector. Most of the money was meant for people rather than machines. Roughly how many new hires was it meant to pay for?",
-    "answer": "About 87,000",
-    "choices": [
-      "About 87,000",
-      "About 8,000",
-      "About 800,000",
-      "About 500"
-    ],
-    "context": "The IRA authorized approximately 87,000 additional IRS hires over ten years, alongside $80B in supplemental funding. Later legislation and rescissions modified the totals; the initial authorization figure was 87,000. Source: irs.gov; cbo.gov (IRA scoring documents).",
-    "topic": "agency-budget-maximization-tsa-irs-and-the-niskanen-pattern"
-  },
-  {
     "tier": 3,
-    "question": "Ronald Reagan campaigned to abolish the Department of Education, and failed. Meanwhile what American public schools spent on each pupil, after inflation, more than doubled from 1970 to 2010. What do the nation's long-term reading and math tests for high-school seniors show from 1979 to 2019?",
+    "question": "Ronald Reagan campaigned to abolish the Department of Education, and failed. Meanwhile what American public schools spent on each pupil, after inflation, more than doubled from 1970 to 2010. What do the nation's long-term reading and math tests for 17-year-olds show between the early 1970s and 2012?",
     "answer": "Scores stay roughly flat, even though spending has gone way up",
     "choices": [
       "Scores stay roughly flat, even though spending has gone way up",
@@ -464,18 +425,18 @@
       "Scores double, matching the rise in per-student funding",
       "Scores fall by about half within the first ten years"
     ],
-    "context": "NAEP long-term-trend twelfth-grade reading and math scores changed very little from 1979 to 2019 despite decades of increased federal education spending. Source: nces.ed.gov (NAEP long-term-trend reports).",
+    "context": "Average long-term-trend NAEP reading and math scores for 17-year-olds did not change significantly between the early 1970s and 2012, the last year those tests were given, despite decades of increased education spending. Source: https://www.nationsreportcard.gov/ltt_2012/.",
     "topic": "agency-budget-maximization-tsa-irs-and-the-niskanen-pattern"
   },
   {
     "tier": 2,
     "question": "Jimmy Carter created the Department of Education in October 1979. Set its officials beside the airport screeners and the tax collectors of the Internal Revenue Service, and one pattern runs through all three over the decades. What is it?",
-    "answer": "Staff and budget grow while the results the agency should deliver do not clearly improve",
+    "answer": "Staff and budget grow, but results do not clearly improve",
     "choices": [
-      "Staff and budget grow while the results the agency should deliver do not clearly improve",
-      "Staff and budget shrink whenever a new president takes office",
-      "The results triple every ten years no matter what",
-      "Congress shuts each agency down within twenty years"
+      "Staff and budget grow, but results do not clearly improve",
+      "Staff and budget grow, and results rise with every dollar",
+      "Staff and budget shrink once the founding crisis fades",
+      "Staff stays level while budgets go to buildings and machines"
     ],
     "context": "The recurring pattern across all three: growing staff, growing budget, and difficulty demonstrating proportional improvement on the metric the agency was created to move. Niskanen's model predicts exactly this. Source: Niskanen (1971); GAO agency performance reports.",
     "topic": "agency-budget-maximization-tsa-irs-and-the-niskanen-pattern"
@@ -499,11 +460,11 @@
     "answer": "Show that the last ten percent of prior budget produced roughly ten percent of the output",
     "choices": [
       "Show that the last ten percent of prior budget produced roughly ten percent of the output",
-      "Show that the agency's staff outnumber the affected industry's staff",
-      "Show that the agency's building is smaller than the average corporate headquarters",
-      "Show that the agency chief holds a doctorate in public administration"
+      "Show that its whole budget, taken together, bought more than a dollar of results per dollar",
+      "Show that its budget has grown no faster than the national economy as a whole",
+      "Show that most citizens surveyed approve of the job the agency is doing"
     ],
-    "context": "The marginal-cost / marginal-product test: if the last dollar of prior spending was well below its cost in output, adding more is even less likely to be worthwhile. Niskanen predicts agencies systematically resist any measurement scheme that would allow this comparison. Source: Niskanen (1971), Chapter 5.",
+    "context": "The marginal-cost / marginal-product test: if the last dollar of prior spending bought well under a dollar of output, adding more is even less likely to be worthwhile. A bureau prefers to defend its total budget against its total output, which can look good even when the last dollars bought little. Niskanen predicts agencies systematically resist any measurement scheme that would allow the marginal comparison. Source: Niskanen (1971), Chapter 5.",
     "topic": "agency-budget-maximization-tsa-irs-and-the-niskanen-pattern"
   },
   {
@@ -516,7 +477,7 @@
       "The Bureau of Bureaucratic Review",
       "The Council on Public Administration Reform"
     ],
-    "context": "The Department of Government Efficiency (DOGE) proposal was announced in December 2024 as a modern institutional attempt to apply Niskanen-style diagnosis to federal agency growth. The acronym echoed a viral meme. Source: contemporary press coverage 2024-25.",
+    "context": "Donald Trump announced the Department of Government Efficiency (DOGE) on November 12, 2024, with Elon Musk and Vivek Ramaswamy to lead a hunt for waste in federal agencies. Ramaswamy left on January 20, 2025, the day the effort was formally set up, and Musk left at the end of May 2025. The initials echoed a famous internet meme. Source: https://grokipedia.com/page/Department_of_Government_Efficiency.",
     "topic": "agency-budget-maximization-tsa-irs-and-the-niskanen-pattern"
   },
   {
@@ -846,19 +807,6 @@
   },
   {
     "tier": 1,
-    "question": "Nicholas Biddle took charge in 1823 of a giant Philadelphia bank that Congress had chartered in 1816, after the War of 1812. Its notes passed all over the country, and it held the Treasury's money. What was the bank called?",
-    "answer": "The Second Bank of the United States",
-    "choices": [
-      "The Second Bank of the United States",
-      "The First Bank of the United States",
-      "The Bank of New York",
-      "The Bank of Massachusetts"
-    ],
-    "context": "The Second Bank of the United States was chartered for a 20-year term in 1816 as the follow-on to Hamilton's First Bank (which had expired in 1811). Biddle ran it from 1823. Source: Grokipedia 'Second Bank of the United States' (2026-09-05).",
-    "topic": "andrew-jackson-vetoes-the-second-bank-of-the-united-states"
-  },
-  {
-    "tier": 1,
     "question": "Andrew Jackson, a frontier general turned president in 1828, threw much of his two terms into a fight to kill the Second Bank of the United States. Its owners were wealthy Easterners and foreign investors. What danger did Jackson see in that?",
     "answer": "A small group having control over the whole country's money",
     "choices": [
@@ -881,19 +829,6 @@
       "Encouraged wasteful government spending in Washington"
     ],
     "context": "Jackson's July 10 1832 veto message named the Bank as a threat to democratic equality: 'The rich and powerful too often bend the acts of government to their selfish purposes... make the rich richer and the potent more powerful.' Source: Grokipedia 'Bank War' (2026-09-05).",
-    "topic": "andrew-jackson-vetoes-the-second-bank-of-the-united-states"
-  },
-  {
-    "tier": 2,
-    "question": "Andrew Jackson and Nicholas Biddle fought from 1832 until the charter of Biddle's bank ran out in 1836, after Jackson refused to renew it. What simple two-word name is the long struggle remembered by?",
-    "answer": "The Bank War",
-    "choices": [
-      "The Bank War",
-      "The Currency Feud",
-      "The Chesapeake Crisis",
-      "The Nullification Dispute"
-    ],
-    "context": "The Bank War lasted from Jackson's 1829 first attack through the 1836 expiration of the Bank's charter. It shaped American politics for a generation. Source: Grokipedia 'Bank War' (2026-09-05).",
     "topic": "andrew-jackson-vetoes-the-second-bank-of-the-united-states"
   },
   {
@@ -924,15 +859,15 @@
   },
   {
     "tier": 4,
-    "question": "A delegation of directors from the Second Bank of the United States came to plead with Andrew Jackson in 1834, the story goes, hoping to save the Bank's charter. Jackson is said to have answered with a furious line that is still quoted, though historians dispute its exact source. Which line is he said to have used?",
-    "answer": "You are a den of vipers and thieves; I intend to rout you out",
+    "question": "A delegation of directors from the Second Bank of the United States came to plead with Andrew Jackson in 1834, the story goes, hoping to save the Bank's charter. Jackson is said to have answered with a furious insult that is still quoted, though historians dispute its exact source. What is he said to have called them?",
+    "answer": "A den of vipers and thieves he meant to rout out",
     "choices": [
-      "You are a den of vipers and thieves; I intend to rout you out",
-      "You are a cabal of foreign agents against liberty",
-      "You are a class of noble beggars deserving pity",
-      "You are the true rulers of this republic"
+      "A den of vipers and thieves he meant to rout out",
+      "A cabal of foreign agents he meant to expose",
+      "A pack of moneychangers he meant to drive out",
+      "A gang of swindlers he meant to see in prison"
     ],
-    "context": "The 'den of vipers' quote is traditionally attributed to Jackson. The exact primary source is contested by modern historians, but it captures the tone of his 1832-1834 public statements about the Bank. Source: Grokipedia 'Andrew Jackson' (2026-09-05).",
+    "context": "Tradition gives the line as 'You are a den of vipers and thieves. I intend to rout you out.' It is traditionally attributed to Jackson, but modern historians dispute its exact primary source; it captures the tone of his 1832-1834 public statements about the Bank. Source: Grokipedia 'Andrew Jackson' (2026-09-05).",
     "topic": "andrew-jackson-vetoes-the-second-bank-of-the-united-states"
   },
   {
@@ -951,12 +886,12 @@
   {
     "tier": 5,
     "question": "Richard Lawrence came at Andrew Jackson at the Capitol on January 30, 1835, with two pistols. Jackson went after him with his cane before bystanders pinned the man down, and later blamed friends of the Bank for the attack. What went wrong with the two pistols?",
-    "answer": "Both pistols misfired -- the caps ignited but neither pistol discharged its main charge",
+    "answer": "Both caps fired, but neither pistol's main charge went off",
     "choices": [
-      "Both pistols misfired -- the caps ignited but neither pistol discharged its main charge",
-      "Both pistols were unloaded, as an intended demonstration",
-      "Both pistols exploded, injuring only the assassin",
-      "Both pistols were bumped aside by a bystander"
+      "Both caps fired, but neither pistol's main charge went off",
+      "Both pistols jammed before Lawrence could cock them",
+      "Both pistols burst in his hands, hurting only Lawrence",
+      "Both shots went wide after a bystander knocked his arm"
     ],
     "context": "Lawrence's percussion-cap pistols both misfired on January 30 1835, an event so improbable that it was calculated at odds of about 125,000 to 1. Jackson attacked Lawrence with his cane; bystanders subdued him. Source: Grokipedia 'Attempted assassination of Andrew Jackson' (2026-09-05).",
     "topic": "andrew-jackson-vetoes-the-second-bank-of-the-united-states"
@@ -964,12 +899,12 @@
   {
     "tier": 5,
     "question": "Andrew Jackson killed the Second Bank of the United States by 1836, with his veto pen and by pulling out the federal deposits. The country then went generations without a national central bank before Congress created another. What does the whole Jackson-versus-Bank episode show about central banks?",
-    "answer": "A central bank's existence is always a political choice, not a technical necessity; it can be killed by a determined executive and revived only by a later political consensus",
+    "answer": "Whether to have one is a political choice, not a technical necessity",
     "choices": [
-      "A central bank's existence is always a political choice, not a technical necessity; it can be killed by a determined executive and revived only by a later political consensus",
-      "Central banks are always eventually re-established because they are technically necessary",
-      "The absence of a central bank produces immediate hyperinflation",
-      "Presidents cannot legally veto the recharter of a federal bank"
+      "Whether to have one is a political choice, not a technical necessity",
+      "An economy cannot run long without one, so one always returns",
+      "Without one, a country slides quickly into runaway inflation",
+      "Each one lasts only as long as its own bankers keep it sound"
     ],
     "context": "The 77-year gap between the Second Bank's expiration and the Federal Reserve Act shows the country could and did operate without a central bank. The choice to have one is political and reversible in principle. Source: Grokipedia 'Bank War' (2026-09-05).",
     "topic": "andrew-jackson-vetoes-the-second-bank-of-the-united-states"
@@ -977,12 +912,12 @@
   {
     "tier": 1,
     "question": "Two rival companies want the only government license to import a certain good, and each pours a million dollars into lawyers and lobbyists to talk officials into granting it. In the end one company wins and the other loses. Did the country as a whole get any richer from all that spending?",
-    "answer": "No -- they made nothing new; they only fought over a government favor",
+    "answer": "No -- they only fought over a government favor",
     "choices": [
-      "No -- they made nothing new; they only fought over a government favor",
-      "Yes -- lawyers are very productive workers",
-      "Yes -- it doubled the country's total output",
-      "It depends on the color of the license"
+      "No -- they only fought over a government favor",
+      "Yes -- the lawyers' fees count as new income",
+      "Yes -- the winner's license paid for the spending",
+      "Partly -- only the loser's money was wasted"
     ],
     "context": "Anne Osborn Krueger's June 1974 AER paper 'The Political Economy of the Rent-Seeking Society' gave a permanent name to Tullock 1967's concept. Krueger later served as World Bank Chief Economist 1982-86 and IMF First Deputy Managing Director 2001-06. Source: en.wikipedia.org/wiki/Anne_Krueger.",
     "topic": "anne-krueger-1974-rent-seeking-gets-its-name"
@@ -1015,15 +950,15 @@
   },
   {
     "tier": 4,
-    "question": "Anne Krueger added a new reason to the list of why nations stay poor, a list that until then named mostly too little capital or too little education. She came to it after studying firms in India and Turkey that chased government privileges. What did her 1974 paper add?",
+    "question": "Anne Krueger added a new reason to the list of why nations stay poor, a list that until then named mostly too little capital or too little education. She came to it after studying India and Turkey in the early 1970s. What did her 1974 paper add?",
     "answer": "A large fraction of measured 'economic activity' in state-led economies is unproductive rent-seeking",
     "choices": [
       "A large fraction of measured 'economic activity' in state-led economies is unproductive rent-seeking",
-      "Poor countries are poor because their populations are too young",
-      "Poor countries are poor because their weather is variable",
-      "Poor countries are poor because their soils are exhausted"
+      "Falling prices for raw-material exports keep shrinking poor countries' earnings",
+      "Fast-growing populations in poor countries eat up every gain in output",
+      "Colonial-era borders split peoples apart and keep civil wars burning"
     ],
-    "context": "Krueger's insight transformed development economics: fix the rent-creating rules and the wasted effort redirects itself to actual production. Poor countries are poor because their institutions burn resources chasing privileges. Source: aeaweb.org (Krueger 1974).",
+    "context": "Krueger's insight transformed development economics. In her account, part of the poverty of state-led economies comes from institutions that burn resources chasing privileges: fix the rent-creating rules, and the wasted effort turns back toward production. Source: aeaweb.org (Krueger 1974).",
     "topic": "anne-krueger-1974-rent-seeking-gets-its-name"
   },
   {
@@ -1041,15 +976,15 @@
   },
   {
     "tier": 5,
-    "question": "Anne Krueger wrote a paper on the firms of India and Turkey that poured their effort into chasing import licenses. Her paper ranks among the most-cited economics articles ever published, and other economists built on it. Which later concept grew directly out of her work?",
-    "answer": "Bhagwati's directly-unproductive-profit-seeking (DUPS, 1982)",
+    "question": "Anne Krueger's paper on Indian and Turkish firms that poured their effort into chasing import licenses is cited by economists everywhere. Later another economist widened her idea to all ways of making money without making anything, from theft and lawsuits to lobbying for tariffs. Who was he?",
+    "answer": "Jagdish Bhagwati",
     "choices": [
-      "Bhagwati's directly-unproductive-profit-seeking (DUPS, 1982)",
-      "Solow's growth residual (1957)",
-      "Akerlof's lemons (1970)",
-      "Coase's transaction costs (1937)"
+      "Jagdish Bhagwati",
+      "Amartya Sen",
+      "Deepak Lal",
+      "Peter Bauer"
     ],
-    "context": "Jagdish Bhagwati's 1982 JPE paper 'Directly-Unproductive, Profit-Seeking (DUP) Activities' generalized Krueger's mechanism to any activity that yields income without producing goods -- theft, tariff-seeking, litigation, etc. Source: en.wikipedia.org/wiki/Rent-seeking.",
+    "context": "Jagdish Bhagwati's 1982 paper in the Journal of Political Economy, 'Directly-Unproductive, Profit-Seeking (DUP) Activities', generalized Krueger's mechanism to any activity that yields income without producing goods: theft, tariff-seeking, litigation and more. Source: en.wikipedia.org/wiki/Rent-seeking.",
     "topic": "anne-krueger-1974-rent-seeking-gets-its-name"
   },
   {
@@ -1159,12 +1094,12 @@
   {
     "tier": 2,
     "question": "A third-party candidate on the campaign trail complains about the two big parties in US politics. Anthony Downs's model, in which both parties chase the citizen at the exact center of opinion, explains his complaint. Which pattern does it explain?",
-    "answer": "Two major American parties on many issues look similar at election time",
+    "answer": "The two big parties sound alike on many issues by voting day",
     "choices": [
-      "Two major American parties on many issues look similar at election time",
-      "The two parties diverge sharply on every issue",
-      "The two parties become identical in name",
-      "The two parties dissolve after each election"
+      "The two big parties sound alike on many issues by voting day",
+      "The two big parties pull further apart with every election",
+      "The two big parties win by firing up voters at the extremes",
+      "The two big parties take turns in power, term after term"
     ],
     "context": "The convergence prediction: both parties chase the median voter, ending up close together on many issues. This explains the 'not a dime's worth of difference' complaint often voiced by third-party advocates. Source: Downs, An Economic Theory of Democracy (1957).",
     "topic": "anthony-downs-and-the-median-voter-theorem"
@@ -1211,14 +1146,14 @@
   {
     "tier": 1,
     "question": "A trucker heard that a hurricane had knocked out a town's power for days, leaving food to spoil in warm refrigerators. He bought 19 generators hundreds of miles away, drove them into the disaster zone and priced them at about double what he had paid. What good did his high prices do the town?",
-    "answer": "They made it worth his trip -- the town now has generators it would not have had",
+    "answer": "They made the trip worth it -- so the town got generators at all",
     "choices": [
-      "They made it worth his trip -- the town now has generators it would not have had",
-      "Nothing -- he should have given them away for free",
-      "They caused the hurricane to last longer",
-      "They lowered the price of every other item in town"
+      "They made the trip worth it -- so the town got generators at all",
+      "Nothing -- they only moved the town's money to him",
+      "Little -- so few could pay that most went unsold",
+      "Cheaper goods -- local shops had to cut their prices"
     ],
-    "context": "Hurricane Frances hit Florida on September 4-5, 2004. Shepperson brought 19 generators to affected areas to sell at roughly double his cost. Source: Munger, 'They Clapped: Can Price Gouging Laws Prohibit Scarcity?' (Cato Unbound, 2007).",
+    "context": "Hurricane Katrina struck the Gulf Coast at the end of August 2005. John Shepperson of Kentucky bought 19 generators, rented a truck, drove them to Mississippi and planned to sell them for about twice what he had paid. Without that price the long drive would not have paid, and the generators would have stayed in Kentucky. Source: Munger, 'They Clapped: Can Price-Gouging Laws Prohibit Scarcity?' (Cato Unbound, 2007); https://clips.cato.org/sites/default/files/Vandoren_reason_reg.pdf.",
     "topic": "anti-price-gouging-laws-michael-munger-john-shepperson-and-t"
   },
   {
@@ -1237,12 +1172,12 @@
   {
     "tier": 2,
     "question": "Ice runs out in a town that a hurricane has left without power, and a man drives sixteen hours through the wreckage with a truckful to sell. He asks three times the normal price, enough to pay for his gas, his hours and his risk. Police arrest him for price gouging. Which hidden cost do economists see in the arrest?",
-    "answer": "Fewer people bring in emergency supplies next time, because the trip does not pay",
+    "answer": "Next time, fewer people bring in supplies, since the trip will not pay",
     "choices": [
-      "Fewer people bring in emergency supplies next time, because the trip does not pay",
-      "Ice always shows up on its own during disasters",
-      "The hurricane damage gets fixed faster",
-      "Local stores stop selling ice for good"
+      "Next time, fewer people bring in supplies, since the trip will not pay",
+      "Next time, insurers raise their rates for every town in the storm's path",
+      "Next time, the town's own shops raise their prices to match his",
+      "Next time, the federal government pays for every truck of ice sent in"
     ],
     "context": "Michael Munger (Duke University, formerly chair of political science) wrote 'They Clapped: Can Price Gouging Laws Prohibit Scarcity?' (Cato Unbound, 2007). It is the standard reference for the Shepperson story. Source: cato-unbound.org (Munger 2007).",
     "topic": "anti-price-gouging-laws-michael-munger-john-shepperson-and-t"
@@ -1250,14 +1185,14 @@
   {
     "tier": 3,
     "question": "John Shepperson drove 19 generators from Kentucky to Mississippi, where Hurricane Katrina had cut power to thousands of homes, hoping to sell them at a big markup, until the state's anti-gouging law stopped him. Read the way Friedrich Hayek read markets, what had Shepperson's trip really done?",
-    "answer": "He moved scarce capital from a low-value use to a high-value use using the price signal",
+    "answer": "He moved scarce capital from a low-value use to a high-value one, guided by price",
     "choices": [
-      "He moved scarce capital from a low-value use to a high-value use using the price signal",
-      "He engaged in fraud against desperate consumers",
-      "He violated federal interstate-commerce rules",
-      "He operated without a state contractor's license"
+      "He moved scarce capital from a low-value use to a high-value one, guided by price",
+      "He took advantage of a shortage that his own high price made worse",
+      "He drained Kentucky of generators that its own buyers needed more",
+      "He charged far more than the generators were really worth to anyone"
     ],
-    "context": "The elevated Florida price told Shepperson that generators were desperately needed there. His willingness to make the 600-mile trip depended on the elevated price making the effort worthwhile. Anti-gouging laws sever the signal and prevent the coordination they claim to enable. Source: Munger, Cato Unbound (2007).",
+    "context": "The high price in Mississippi told Shepperson, hundreds of miles away in Kentucky, that generators were desperately needed there, and his 600-mile trip made sense only because that price made the effort worthwhile. In Munger's reading, anti-gouging laws cut the signal and prevent the very coordination they claim to protect. Source: Munger, Cato Unbound (2007).",
     "topic": "anti-price-gouging-laws-michael-munger-john-shepperson-and-t"
   },
   {
@@ -1279,11 +1214,11 @@
     "answer": "Local managers had authority to act without waiting for headquarters",
     "choices": [
       "Local managers had authority to act without waiting for headquarters",
-      "The chain had a secret contract with the president",
-      "The chain owned trucks that could drive on water",
-      "The government told the chain exactly what to do"
+      "Its headquarters planned every shipment from one central office",
+      "Federal law gave its trucks first use of the damaged roads",
+      "The government had paid it in advance to stock the region"
     ],
-    "context": "Sobel and Leeson documented Walmart's post-Katrina supply-chain response as delivering food, water, and supplies to affected areas faster than federal agencies. Source: Sobel + Leeson, 'The Use of Knowledge in Natural-Disaster Relief Management,' Independent Review (2007).",
+    "context": "Sobel and Leeson documented Walmart's post-Katrina supply-chain response as delivering food, water, and supplies to affected areas faster than federal agencies. They traced the gap to knowledge and incentives: managers on the spot knew what their own towns needed and had the authority to act on it. Source: Sobel + Leeson, 'The Use of Knowledge in Natural-Disaster Relief Management,' Independent Review (2007).",
     "topic": "anti-price-gouging-laws-michael-munger-john-shepperson-and-t"
   },
   {
@@ -1302,14 +1237,14 @@
   {
     "tier": 1,
     "question": "A sugar grower collects his government bonus, and so do a few thousand other sugar and cotton farmers; the bill is spread over every shopper in the country at a few pennies each. Why does a rule like this almost never get repealed once it passes?",
-    "answer": "The farmers fight hard to keep it; each taxpayer barely notices the cost",
+    "answer": "The few farmers fight for it; the many taxpayers barely notice",
     "choices": [
-      "The farmers fight hard to keep it; each taxpayer barely notices the cost",
-      "Farmers do not vote in elections",
-      "All taxpayers live in the same town",
-      "The rule expires by itself every year"
+      "The few farmers fight for it; the many taxpayers barely notice",
+      "Voters like farmers and are glad to keep paying them",
+      "Each farmer gains too little to bother defending it",
+      "Courts treat a farm payment as a right once paid"
     ],
-    "context": "Roughly 2 million US farms receive federal subsidies funded by about 130 million taxpaying households. The Agricultural Adjustment Act of 1933 created the modern structure; each Farm Bill preserves it. Source: usda.gov farm bill history.",
+    "context": "The modern structure of federal farm support dates from the Agricultural Adjustment Act of 1933, and every Farm Bill since has kept it. Mancur Olson's The Logic of Collective Action (1965) explains why such programs last: the few who gain a lot organize to keep them, while the millions who each lose a little never bother. Source: usda.gov farm bill history; Olson (1965).",
     "topic": "applied-olson-farm-subsidies-sugar-tariffs-occupational-lice"
   },
   {
@@ -1318,11 +1253,11 @@
     "answer": "Farmers grow more of it than the market would want on its own",
     "choices": [
       "Farmers grow more of it than the market would want on its own",
-      "Farmers stop growing it entirely",
-      "The crop becomes illegal to sell",
-      "Nothing changes about how much is grown"
+      "Farmers grow less of it, since the subsidy replaces their income",
+      "Farmers grow the same amount, since buyers decide what is planted",
+      "Farmers switch to other crops the government does not pay for"
     ],
-    "context": "The Farm Bill is the general term for the periodic reauthorization of USDA programs. Most recent: 2018 Agriculture Improvement Act and its 2024 continuing resolutions. Source: usda.gov farm bill.",
+    "context": "A subsidy lifts what a farmer earns on each bushel above the price buyers alone would pay, so he plants more of that crop than the market would call for. The Farm Bill is the general name for the law Congress passes every few years to renew such programs. Source: usda.gov farm bill.",
     "topic": "applied-olson-farm-subsidies-sugar-tariffs-occupational-lice"
   },
   {
@@ -1396,9 +1331,9 @@
     "answer": "Constitutional-level rules, judicial review, sunset clauses",
     "choices": [
       "Constitutional-level rules, judicial review, sunset clauses",
-      "Executive orders and administrative rulings",
-      "Tariff hikes and export subsidies",
-      "Referendums and initiative petitions"
+      "Executive orders, administrative rulings, emergency decrees",
+      "Tariff hikes, export subsidies, price supports",
+      "Referendums, initiative petitions, recall votes"
     ],
     "context": "The remedies fit Buchanan's constitutional-political-economy tradition: move the decision from ordinary politics (where the sugar lobby wins) to constitutional-level rules or automatic sunset clauses that force periodic re-litigation with the dispersed group's attention gathered. Source: Buchanan + Wagner, Democracy in Deficit.",
     "topic": "applied-olson-farm-subsidies-sugar-tariffs-occupational-lice"
@@ -1457,19 +1392,6 @@
   },
   {
     "tier": 3,
-    "question": "Javier Milei, within his first three weeks as Argentina's president, signed a sweeping emergency order in late December 2023 that struck down or reshaped hundreds of laws in one go, the 2020 rent law among them. What is that kind of Argentine presidential order called?",
-    "answer": "A Decreto de Necesidad y Urgencia (DNU)",
-    "choices": [
-      "A Decreto de Necesidad y Urgencia (DNU)",
-      "A Presidential Executive Order",
-      "A Ministerial Rule",
-      "A National Emergency Decree"
-    ],
-    "context": "DNU 70/2023, signed December 29, 2023, repealed or amended hundreds of Argentine laws including Ley 27.551 rent control. It was constitutionally challenged; the rent-decontrol portion survived. Source: boletinoficial.gob.ar (DNU 70/2023).",
-    "topic": "argentinas-2020-rent-control-law-and-its-2023-repeal"
-  },
-  {
-    "tier": 3,
     "question": "Landlords across Buenos Aires watched the rent caps fall away on December 29, 2023, when Javier Milei's decree took effect. What happened over the next few months to rental listings in the city, and to their rents?",
     "answer": "Supply tripled and real rents on new listings fell",
     "choices": [
@@ -1484,12 +1406,12 @@
   {
     "tier": 4,
     "question": "Javier Milei lifted Argentina's rent caps at the end of 2023, after Congress had imposed them in June 2020, so one rental market felt the caps both go on and come off. Set side by side, what plain economic lesson do the two halves teach?",
-    "answer": "An intervention that reduces the profitability of supplying rental housing will reduce the quantity supplied",
+    "answer": "Make supplying rental housing less profitable, and less of it is supplied",
     "choices": [
-      "An intervention that reduces the profitability of supplying rental housing will reduce the quantity supplied",
-      "Interventions raise both supply and demand simultaneously",
-      "Interventions are always redistributive but never allocative",
-      "Interventions can outrun market signals indefinitely"
+      "Make supplying rental housing less profitable, and less of it is supplied",
+      "Cap rents, and tenants gain while the housing supply stays the same",
+      "Lift the caps, and rents soar so high that fewer people find homes",
+      "Rental supply follows only inflation, never the rules for leases"
     ],
     "context": "The Argentine sequence -- supply falls when the ceiling comes on, supply rises when it comes off -- confirms the standard supply-response prediction with unusual clarity because the natural experiment happened both ways within four years. Source: mises.org/library/rent-control.",
     "topic": "argentinas-2020-rent-control-law-and-its-2023-repeal"
@@ -1505,19 +1427,6 @@
       "The country simultaneously changed currencies"
     ],
     "context": "Most rent-control historical cases run one way (ceiling imposed, decades of decay). Argentina's clean off-switch in December 2023 lets researchers observe both directions of the mechanism. Source: CEMA studies.",
-    "topic": "argentinas-2020-rent-control-law-and-its-2023-repeal"
-  },
-  {
-    "tier": 5,
-    "question": "Opponents took Javier Milei's sweeping December 2023 decree to court, where judges froze some of its parts. Among the hundreds of rules the decree reached was Argentina's 2020 rent-control law, Ley 27,551. What became of that law?",
-    "answer": "Repealed and rental market operates under general contract law",
-    "choices": [
-      "Repealed and rental market operates under general contract law",
-      "Reinstated by the Supreme Court",
-      "Suspended pending review",
-      "Amended to add stronger tenant protections"
-    ],
-    "context": "The rent-decontrol portion of DNU 70/2023 survived legal challenges. As of 2026, Argentine rentals operate under general contract law, with lease terms freely negotiated. Source: CEMA policy briefs 2024-25.",
     "topic": "argentinas-2020-rent-control-law-and-its-2023-repeal"
   },
   {
@@ -1640,12 +1549,12 @@
   {
     "tier": 3,
     "question": "A Bitcoin miner unplugged his old rig and switched on a chip built for narrower work, as miners did at every step from 2009 to 2013. Each generation drove the older one out of the race. Why did each new step win?",
-    "answer": "Each step used less energy per calculation, so older miners could not cover their power bill",
+    "answer": "Each step used less power per calculation, so old rigs lost money",
     "choices": [
-      "Each step used less energy per calculation, so older miners could not cover their power bill",
-      "Each step was easier to buy at a normal computer store",
-      "Each step used less internet bandwidth per hour",
-      "Each step earned larger block rewards from the network"
+      "Each step used less power per calculation, so old rigs lost money",
+      "Each step was cheaper to buy at an ordinary computer shop",
+      "Each step earned bigger block rewards from the network",
+      "Each step needed less internet bandwidth to stay connected"
     ],
     "context": "An FPGA can be reprogrammed after manufacture to perform a specific circuit. FPGA mining lasted only about a year (roughly 2012) before purpose-built ASICs arrived. Source: grokipedia.com/page/Bitcoin_mining.",
     "topic": "asic-evolution-cpu-to-specialized-silicon"
@@ -1669,35 +1578,35 @@
     "answer": "Purpose-built mining chips are thousands of times faster than home computers",
     "choices": [
       "Purpose-built mining chips are thousands of times faster than home computers",
-      "The Bitcoin network banned home computers by rule",
-      "Governments taxed home mining out of existence",
-      "Home computers refused to run the mining software"
+      "The network capped how many coins one home computer could earn",
+      "Home electricity prices doubled in most countries by 2015",
+      "Mining pools began refusing to pay out to small home miners"
     ],
     "context": "MicroBT (Whatsminer) and Canaan (AvalonMiner) are Bitmain's principal competitors, both also Chinese. Butterfly Labs was an early US ASIC shop notorious for shipping delays and later shut down. Source: grokipedia.com/page/Bitmain.",
     "topic": "asic-evolution-cpu-to-specialized-silicon"
   },
   {
     "tier": 4,
-    "question": "A mining company sinks millions into chips that can compute Bitcoin's puzzle and nothing else: they cannot run a video game, browse the web or edit a photo. Critics call such narrow hardware centralization. Why does that narrowness make Bitcoin more secure?",
+    "question": "A mining company sinks millions into chips that can compute Bitcoin's puzzle and nothing else: they cannot run a video game, browse the web or edit a photo. Critics call such narrow hardware centralization; Bitcoin's defenders answer that it makes the network more secure. What is the defenders' reasoning?",
     "answer": "Miners have no way to abandon Bitcoin and reuse their expensive hardware",
     "choices": [
       "Miners have no way to abandon Bitcoin and reuse their expensive hardware",
-      "The chips are impossible for hackers to copy or steal",
-      "Governments cannot ban a chip that only does math",
-      "The chips use zero electricity when they are idle"
+      "Hackers cannot copy or steal chips built for a single task",
+      "Governments cannot ban hardware that only does arithmetic",
+      "Narrow chips spread mining evenly among many small miners"
     ],
     "context": "This is a commitment property. Every ASIC owner is economically committed to Bitcoin's survival: if the network died, the hardware is scrap. Critics call this centralization; defenders call it aligned incentives. Source: grokipedia.com/page/Application-specific_integrated_circuit.",
     "topic": "asic-evolution-cpu-to-specialized-silicon"
   },
   {
     "tier": 5,
-    "question": "Miners in China packed up millions of machines after Beijing banned Bitcoin mining outright in June 2021. Over half of all the computing power securing Bitcoin had been running inside China, and the move took months. Which set of destinations absorbed most of the migrating machines?",
-    "answer": "Texas, Kazakhstan, Iceland, and Paraguay (Itaipu Dam hydroelectric)",
+    "question": "Miners in China packed up millions of machines after Beijing banned Bitcoin mining outright in June 2021. Over half of all the computing power securing Bitcoin had been running inside China, and the move took months. Which set of places took in many of the migrating machines?",
+    "answer": "Texas, Kazakhstan, Iceland and Paraguay",
     "choices": [
-      "Texas, Kazakhstan, Iceland, and Paraguay (Itaipu Dam hydroelectric)",
-      "France, Germany, and the United Kingdom",
-      "Japan, South Korea, and Taiwan",
-      "Australia, New Zealand, and Chile"
+      "Texas, Kazakhstan, Iceland and Paraguay",
+      "France, Germany, Italy and the United Kingdom",
+      "Japan, South Korea, Taiwan and Singapore",
+      "Australia, New Zealand, Chile and Peru"
     ],
     "context": "Each destination offered cheap and often stranded electricity: Texas wind and gas, Kazakhstan coal, Iceland geothermal, Paraguay hydro. Total hash power reached new all-time highs within nine months of the China exit. Source: grokipedia.com/page/Bitcoin_mining.",
     "topic": "asic-evolution-cpu-to-specialized-silicon"
@@ -1716,19 +1625,6 @@
     "topic": "austrian-business-cycle-theory-abct"
   },
   {
-    "tier": 1,
-    "question": "Ludwig von Mises first set out his account of boom and bust in a 1912 book. Friedrich Hayek built on it in two books of his own, the second of which made him famous worldwide at thirty-two. In which two decades did Hayek publish them?",
-    "answer": "The 1920s and 1930s",
-    "choices": [
-      "The 1920s and 1930s",
-      "The 1890s and 1900s",
-      "The 1940s and 1950s",
-      "The 1960s and 1970s"
-    ],
-    "context": "Hayek published Monetary Theory and the Trade Cycle in 1929 (in German) and Prices and Production in 1931 (in English, based on his LSE lectures). Prices and Production made him world-famous at 32 and launched the great 1930s debate against Keynes. He was 46 when The Road to Serfdom appeared in 1944 and 75 when he won the Nobel in 1974. Source: mises.org/library/book/monetary-theory-and-trade-cycle.",
-    "topic": "austrian-business-cycle-theory-abct"
-  },
-  {
     "tier": 2,
     "question": "Ludwig von Mises refused a senior job at Austria's great Kreditanstalt bank in 1929, and told his fiancée why: a great crash was on its way. The bank collapsed in May 1931, setting off a banking crisis across Europe. Which of his own theories lay behind the forecast?",
     "answer": "Austrian business cycle theory",
@@ -1738,7 +1634,7 @@
       "Efficient markets",
       "The Keynesian multiplier"
     ],
-    "context": "Kreditanstalt collapsed in May 1931, its failure rippling through central European banking and deepening the Great Depression across the continent. Mises had read the ABCT tea leaves correctly. The Wall Street crash was October 1929; the US bank-holiday crisis was 1933; the second-dip Roosevelt Recession was 1937. Source: mises.org/online-book/skyscraper-curse-and-how-austrian-economists-predicted-every-major-economic-crisis-last-century/chapter-13-who-predicted-great-depression.",
+    "context": "Kreditanstalt, Austria's largest bank, collapsed in May 1931, and its failure rippled through central European banking and deepened the Great Depression across the continent. Mises's warning rested on his business cycle theory: years of cheap credit had paid for a boom that real savings could not support, so a bust had to follow. The story of the refused post comes from Margit von Mises, the fiancée in question, in her memoir My Years with Ludwig von Mises (1976). Source: mises.org/online-book/skyscraper-curse-and-how-austrian-economists-predicted-every-major-economic-crisis-last-century/chapter-13-who-predicted-great-depression.",
     "topic": "austrian-business-cycle-theory-abct"
   },
   {
@@ -1788,9 +1684,9 @@
       "The natural rate of interest",
       "The federal funds rate",
       "The prime rate",
-      "The Wicksellian target rate"
+      "The risk-free rate"
     ],
-    "context": "Mises and Hayek inherit the 'natural rate' concept from the Swedish economist Knut Wicksell (Interest and Prices, 1898): it is the interest rate at which voluntary saving and voluntary investment would balance in the absence of monetary distortion. When the central-bank rate is BELOW the natural rate, credit expands beyond real saving and malinvestment follows. The federal funds rate is the Fed's actual operating target; the prime rate is a commercial bank benchmark; 'Wicksellian target' is not a standard term. Source: en.wikipedia.org/wiki/Austrian_business_cycle_theory.",
+    "context": "Mises and Hayek inherit the 'natural rate' concept from the Swedish economist Knut Wicksell (Interest and Prices, 1898): it is the interest rate at which voluntary saving and voluntary investment would balance in the absence of monetary distortion. When the central-bank rate is BELOW the natural rate, credit expands beyond real saving and malinvestment follows. The federal funds rate is the Fed's actual operating target, the prime rate is a commercial-bank benchmark, and the risk-free rate is the yield on the safest government debt. Source: en.wikipedia.org/wiki/Austrian_business_cycle_theory.",
     "topic": "austrian-business-cycle-theory-abct"
   },
   {
@@ -1825,9 +1721,9 @@
     "answer": "No graphs, no equations, no algebra anywhere in the book",
     "choices": [
       "No graphs, no equations, no algebra anywhere in the book",
-      "Every chapter is written entirely in verse",
-      "The entire book is presented in dialogue form",
-      "Every example is drawn from ancient Rome"
+      "A short biography of a famous economist opens every chapter",
+      "Every case is drawn from a single country's history",
+      "Each chapter ends with graded homework problems and answers"
     ],
     "context": "Sowell's earlier 1971 textbook 'Economics: Analysis and Issues' had used the traditional graph-and-equation format. Basic Economics was his conscious departure from that model, aimed at a working adult reader without prior training. Source: grokipedia.com/page/Basic_Economics.",
     "topic": "basic-economics-2000-800-pages-no-graphs"
@@ -1835,12 +1731,12 @@
   {
     "tier": 3,
     "question": "Thomas Sowell filled Basic Economics with real cases: Ghana's rice farms, American rent control, apartheid's labor rules, post-Soviet Europe. Rather than march through theories one at a time, Sowell grouped his chapters another way. How did the book group them?",
-    "answer": "Organization by institution -- Prices, Production, Work and Pay, Time and Risk, National, International",
+    "answer": "By institution, such as prices, production, and work and pay",
     "choices": [
-      "Organization by institution -- Prices, Production, Work and Pay, Time and Risk, National, International",
-      "Organization by year of publication of the underlying research",
-      "Organization by geographic region only (Africa, Asia, Europe, Americas)",
-      "Organization alphabetically by economist name"
+      "By institution, such as prices, production, and work and pay",
+      "By region of the world, from Africa and Asia to the Americas",
+      "By era, from the ancient world to the post-Soviet economies",
+      "By difficulty, from the simplest ideas to the hardest ones"
     ],
     "context": "Each chapter examines the institution through case studies, then returns repeatedly to the same handful of questions: What are the trade-offs? At what cost? Compared to what? What are the incentives? Who bears the unseen costs? Source: grokipedia.com/page/Basic_Economics.",
     "topic": "basic-economics-2000-800-pages-no-graphs"
@@ -1856,19 +1752,6 @@
       "A vote where the majority always gets more"
     ],
     "context": "Robbins's 1932 'An Essay on the Nature and Significance of Economic Science' put the scarcity-with-alternative-uses definition into the modern discipline's vocabulary. Sowell adopts and popularizes it. Source: grokipedia.com/page/Lionel_Robbins.",
-    "topic": "basic-economics-2000-800-pages-no-graphs"
-  },
-  {
-    "tier": 5,
-    "question": "Thomas Sowell, an economist at the Hoover Institution who writes for ordinary readers, published Basic Economics in 2000. It has since become the book people most often recommend to a high schooler as a first serious economics read. What is one specific reason for that reach?",
-    "answer": "It has been translated into eight or more languages and is widely used in home-school economics curricula",
-    "choices": [
-      "It has been translated into eight or more languages and is widely used in home-school economics curricula",
-      "It is required reading in every US public high school by federal mandate",
-      "It is bundled free with every US passport issued since 2020",
-      "It has never been published in any language other than English"
-    ],
-    "context": "The no-graphs-no-equations design makes translation easier and makes the book accessible to students without a math background. Home-school networks, in particular, have used it as a primary economics text. Source: grokipedia.com/page/Basic_Economics.",
     "topic": "basic-economics-2000-800-pages-no-graphs"
   },
   {
@@ -1938,15 +1821,15 @@
   },
   {
     "tier": 1,
-    "question": "Victor Schoelcher, an abolitionist of twenty years' standing, drafted the decree that ended slavery on Martinique, Guadeloupe and Réunion and in French Guiana. France's new Second Republic issued it from Paris. On what date was it issued?",
-    "answer": "April 27, 1848",
+    "question": "A decree issued in Paris on April 27, 1848 freed every enslaved person on Martinique, Guadeloupe and Réunion and in French Guiana. Its author, a junior minister for the colonies, had fought slavery for twenty years. Who drafted it?",
+    "answer": "Victor Schoelcher",
     "choices": [
-      "April 27, 1848",
-      "July 14, 1789",
-      "August 4, 1789",
-      "February 22, 1848"
+      "Victor Schoelcher",
+      "Alexis de Tocqueville",
+      "Victor Hugo",
+      "Frédéric Bastiat"
     ],
-    "context": "The abolition decree of April 27, 1848 covered Martinique, Guadeloupe, French Guiana, and Reunion; it was the second and definitive French colonial abolition after Napoleon had reversed the first (1794) in 1802. Source: grokipedia.com/page/Abolition_of_slavery_in_France.",
+    "context": "Victor Schoelcher (1804-1893), under-secretary of state for the Navy and Colonies in the Provisional Government, drafted the decree of April 27, 1848, which covered Martinique, Guadeloupe, French Guiana and Réunion. It was France's second and final colonial abolition, after Napoleon had restored slavery in 1802. Source: grokipedia.com/page/Victor_Schœlcher.",
     "topic": "bastiat-and-slavery-the-1848-abolition-vote"
   },
   {
@@ -1957,7 +1840,7 @@
       "More productive -- people work harder when they choose the work and keep the pay",
       "Exactly the same -- pay and freedom do not affect effort",
       "Less productive -- nobody works without being forced",
-      "Impossible -- no country has ever tried it"
+      "Less steady -- free workers keep quitting for better pay"
     ],
     "context": "Victor Schoelcher (1804-1893) drafted and championed the April 27, 1848 decree. Source: grokipedia.com/page/Victor_Schoelcher.",
     "topic": "bastiat-and-slavery-the-1848-abolition-vote"
@@ -2081,20 +1964,20 @@
   },
   {
     "tier": 1,
-    "question": "A young French printer's apprentice named Pierre-Joseph Proudhon put a question on the cover of a small book in 1840: what is property? He answered it in three words, and the line has been quoted ever since. What was his answer?",
-    "answer": "'Property is theft'",
+    "question": "Pierre-Joseph Proudhon, a printer from Besançon, put a question on the cover of a small book in 1840: what is property? He answered it in three words, and the line has been quoted ever since. What was his answer?",
+    "answer": "That property is theft",
     "choices": [
-      "'Property is theft'",
-      "'Property is liberty'",
-      "'Property is order'",
-      "'Property is labour'"
+      "That property is theft",
+      "That property is sacred",
+      "That property is order",
+      "That property is labour"
     ],
-    "context": "Proudhon (1809-1865) meant the phrase strictly of ABSENTEE property that draws rent or interest without labour, not of a workman's tools -- a distinction later socialists frequently blurred. The 1840 book was Qu'est-ce que la propriete? (What is Property?). Source: en.wikipedia.org 'Pierre-Joseph Proudhon'.",
+    "context": "Proudhon's answer, 'La propriété, c'est le vol' (property is theft), comes from his 1840 book Qu'est-ce que la propriété? (What Is Property?). He meant the phrase strictly of ABSENTEE property that draws rent or interest without labour, not of a workman's tools -- a distinction later socialists frequently blurred. Source: en.wikipedia.org 'Pierre-Joseph Proudhon'.",
     "topic": "bastiat-vs-proudhon-the-1849-50-debate-on-interest"
   },
   {
     "tier": 2,
-    "question": "Pierre-Joseph Proudhon opened a lending house in Paris in late January 1849 to lend to workers at zero interest, using notes its members could trade for one another's goods. About 3,600 people signed up and put in some 18,000 francs. Then Proudhon was jailed and it was shut down. What was it called?",
+    "question": "Pierre-Joseph Proudhon opened a lending house in Paris in late January 1849 to lend to workers at zero interest, using notes its members could trade for one another's goods. Thousands joined but put in only some 18,000 francs, and within months a court sent its founder to prison. What was the house called?",
     "answer": "The Bank of the People",
     "choices": [
       "The Bank of the People",
@@ -2212,12 +2095,12 @@
   {
     "tier": 1,
     "question": "The banks that lend a Wall Street investment firm enormous sums every night, just to keep it running the next day, take fright one Monday and stop lending. What is likely to happen to the firm by Friday?",
-    "answer": "It collapses -- it cannot last a few days without the borrowed money",
+    "answer": "It collapses -- it cannot last days without the borrowed money",
     "choices": [
-      "It collapses -- it cannot last a few days without the borrowed money",
-      "Nothing -- companies do not really need to borrow",
-      "It grows twice as big overnight",
-      "It quietly turns into a farm"
+      "It collapses -- it cannot last days without the borrowed money",
+      "It carries on -- its own cash can cover months of business",
+      "It carries on -- the law obliges the Fed to lend it the money",
+      "It shrinks -- but keeps running on its daily profits"
     ],
     "context": "Bear Stearns, founded in 1923, was heavily exposed to subprime mortgages and mortgage-backed securities. Its two internal hedge funds collapsed in July-August 2007, previewing the firm's own collapse eight months later. Source: Grokipedia 'Bear Stearns' (2026-09-05).",
     "topic": "bear-stearns-and-the-2-share-weekend-rescue"
@@ -2225,14 +2108,14 @@
   {
     "tier": 1,
     "question": "US officials spent one weekend in March 2008 rushing to find a buyer for the collapsing investment bank Bear Stearns before Monday's trading began. JPMorgan Chase agreed to buy it, with the Federal Reserve's help. Why did officials hurry to arrange the sale?",
-    "answer": "To keep the collapse from spreading and scaring every other bank",
+    "answer": "To keep the collapse from scaring every other bank",
     "choices": [
-      "To keep the collapse from spreading and scaring every other bank",
-      "To collect all the pens from the bank's desks",
-      "Because the government already owns the bank",
-      "To lower the price of coffee at the bank"
+      "To keep the collapse from scaring every other bank",
+      "To make sure the shareholders lost nothing",
+      "To let the government run the bank itself",
+      "To punish its leaders before markets opened"
     ],
-    "context": "JPMorgan Chase, led by Jamie Dimon, was the buyer. The Fed's involvement made the sale possible on a compressed timeline. Source: Grokipedia 'JPMorgan Chase acquisition of Bear Stearns' (2026-09-05).",
+    "context": "JPMorgan Chase, led by Jamie Dimon, was the buyer, and the Fed's help made the sale possible on a compressed timeline. Officials feared that a Bear failure on Monday, with its web of lenders and trading partners, would spread panic to every bank that dealt with it. Bear's shareholders were nearly wiped out. Source: Grokipedia 'JPMorgan Chase acquisition of Bear Stearns' (2026-09-05).",
     "topic": "bear-stearns-and-the-2-share-weekend-rescue"
   },
   {
@@ -2303,12 +2186,12 @@
   {
     "tier": 5,
     "question": "Bankers saw the Federal Reserve save Bear Stearns in March 2008 and let Lehman Brothers fail that September, and Lehman's fall was violent. Austrian-school critics draw one lesson from the pair of decisions. What lesson?",
-    "answer": "Each rescue changes the expectations for the next crisis; the sudden removal of an expected rescue can cause the panic the earlier rescue was meant to prevent",
+    "answer": "Each rescue resets what markets expect, so pulling an expected rescue can set off the panic it meant to prevent",
     "choices": [
-      "Each rescue changes the expectations for the next crisis; the sudden removal of an expected rescue can cause the panic the earlier rescue was meant to prevent",
-      "Rescues always work as intended and stabilize markets permanently",
-      "Rescues fail only when the Fed misprices the collateral for its loan",
-      "Rescues encourage moral hazard only when they involve foreign banks"
+      "Each rescue resets what markets expect, so pulling an expected rescue can set off the panic it meant to prevent",
+      "Each rescue should go to the biggest banks first, since size alone is what spreads a panic",
+      "Each rescue breeds moral hazard only when the bank being saved is foreign rather than American",
+      "Each rescue works only if a buyer is strong enough to absorb all of the failing bank's losses"
     ],
     "context": "The Bear rescue trained markets to expect the Lehman rescue; the September 15 Lehman failure violated that trained expectation. The Fed's discretionary rescue policy is not neutral -- each intervention writes the script for the next crisis. Source: Grokipedia 'Bankruptcy of Lehman Brothers' (2026-09-05).",
     "topic": "bear-stearns-and-the-2-share-weekend-rescue"
@@ -2319,9 +2202,9 @@
     "answer": "Top leaders can lose touch with what is really happening inside their own firm",
     "choices": [
       "Top leaders can lose touch with what is really happening inside their own firm",
-      "Card games improve executive decision-making under stress",
-      "Big banks always have perfect information about their own risk",
-      "Employees will always cover for a distracted boss"
+      "A firm's fate is set by the markets, not by what its leaders do",
+      "Losses in a firm's hedge funds rarely threaten the firm itself",
+      "Leaders who delegate freely keep their firms safer, not riskier"
     ],
     "context": "Jimmy Cayne, then Bear's chairman, was playing at a bridge tournament while the July 2007 collapse of Bear's internal hedge funds unfolded. The anecdote became emblematic of Wall Street executive detachment during the run-up to the crisis. Source: Grokipedia 'James Cayne' (2026-09-05).",
     "topic": "bear-stearns-and-the-2-share-weekend-rescue"
@@ -2334,7 +2217,7 @@
       "Open market operations",
       "Reserve requirements",
       "The discount window",
-      "Quantitative easing"
+      "Margin requirements"
     ],
     "context": "Open market operations became the Fed's most important standing tool. Strong built the New York Fed's Open Market Committee into the operational center of American monetary policy. Source: Grokipedia 'Open market operation' (2026-09-05).",
     "topic": "benjamin-strong-and-the-coup-de-whiskey-of-1927"
@@ -2358,11 +2241,11 @@
     "answer": "Montagu Norman of Britain, Charles Rist of France, and Hjalmar Schacht of Germany",
     "choices": [
       "Montagu Norman of Britain, Charles Rist of France, and Hjalmar Schacht of Germany",
-      "John Maynard Keynes of Britain, Rene Coty of France, and Konrad Adenauer of Germany",
-      "Winston Churchill of Britain, Georges Clemenceau of France, and Otto von Bismarck of Germany",
-      "Nicholas Biddle of Britain, Charles de Gaulle of France, and Otto von Habsburg of Germany"
+      "John Maynard Keynes of Britain, Raymond Poincaré of France, and Hans Luther of Germany",
+      "Winston Churchill of Britain, Aristide Briand of France, and Gustav Stresemann of Germany",
+      "Reginald McKenna of Britain, Joseph Caillaux of France, and Rudolf Hilferding of Germany"
     ],
-    "context": "The July 1927 Long Island meeting brought together the heads of the four leading Western central banks. It produced the rate cut that Austrian economists later blamed for the final phase of the 1920s boom. Source: Grokipedia 'Benjamin Strong Jr.' (2026-09-05).",
+    "context": "The July 1927 Long Island meeting brought Benjamin Strong together with Montagu Norman of the Bank of England, Hjalmar Schacht of Germany's Reichsbank and Charles Rist, deputy governor of the Bank of France, sent by its governor, Émile Moreau. It produced the rate cut that Austrian economists later blamed for the final phase of the 1920s boom. Source: Grokipedia 'Benjamin Strong Jr.' (2026-09-05).",
     "topic": "benjamin-strong-and-the-coup-de-whiskey-of-1927"
   },
   {
@@ -2397,9 +2280,9 @@
     "answer": "They fueled a stock-market bubble that later burst",
     "choices": [
       "They fueled a stock-market bubble that later burst",
-      "They cured European unemployment permanently",
-      "They prevented all future bank failures",
-      "They set the natural rate of interest"
+      "They pulled gold out of London and toward New York",
+      "They cooled Wall Street by sending money abroad",
+      "They helped Europe and left America's economy untouched"
     ],
     "context": "Adolph Miller, a Fed Board member 1914-1936, was the dissenter on the 1927 rate cut and later Senate witness against Strong's legacy. His testimony is the traceable source of the 'coup de whiskey' quote. Source: Grokipedia 'Adolph Miller' (2026-09-05).",
     "topic": "benjamin-strong-and-the-coup-de-whiskey-of-1927"
@@ -2407,12 +2290,12 @@
   {
     "tier": 5,
     "question": "Winston Churchill put Britain back on gold in 1925 at a rate that overvalued the pound, and gold threatened to flow out of London toward New York. Benjamin Strong held American interest rates low to keep the gold in London, and cut them further in 1927. What does the episode show about central banks working together across borders?",
-    "answer": "Coordinated easing among central banks to defend a fixed exchange rate can produce asset-price inflation in the country doing the easing, even when its own economy does not need easing",
+    "answer": "Easing to defend another country's currency can inflate asset prices at home",
     "choices": [
-      "Coordinated easing among central banks to defend a fixed exchange rate can produce asset-price inflation in the country doing the easing, even when its own economy does not need easing",
-      "International central-bank coordination is always fiscally neutral for the cooperating countries",
-      "Central banks never coordinate policy in secret",
-      "International cooperation always prevents financial crises"
+      "Easing to defend another country's currency can inflate asset prices at home",
+      "Easing to defend another country's currency leaves the easing country untouched",
+      "Central banks working together can keep any fixed exchange rate safe for good",
+      "Cooperation across borders works only when every central bank eases at once"
     ],
     "context": "Strong cut US rates in 1927 to help Britain defend the pound. The unintended domestic consequence was a US stock-market bubble that broke in 1929. International cooperation solved one problem by creating another. Source: Rothbard, America's Great Depression (1963).",
     "topic": "benjamin-strong-and-the-coup-de-whiskey-of-1927"
@@ -2557,7 +2440,7 @@
       "Debt-to-equity",
       "Money velocity"
     ],
-    "context": "Ammous's argument: gold's stock-to-flow is about 60 (years of annual production to equal above-ground stock); Bitcoin's rises past gold after each halving and approaches infinity as issuance approaches zero around 2140. Source: saifedean.com/thebitcoinstandard.",
+    "context": "Ammous's argument: gold's stock-to-flow is about 60, meaning some sixty years of mining at the present pace would match the gold already above ground. Bitcoin's ratio jumps at every halving and climbs toward infinity as new issuance approaches zero around 2140. Source: saifedean.com/thebitcoinstandard.",
     "topic": "bitcoin-as-a-scarce-digital-commodity-the-21m-cap-in-monetar"
   },
   {
@@ -2588,15 +2471,15 @@
   },
   {
     "tier": 1,
-    "question": "A Bitcoin wallet guards a secret number far too long to memorize or copy by hand without mistakes. So every modern wallet turns it into a friendlier backup: a short list of everyday words its owner can write on paper and lock in a safe. What is that backup called?",
-    "answer": "a seed phrase of 12 or 24 English words",
+    "question": "A Bitcoin wallet guards a secret number far too long to memorize or copy by hand without mistakes. So nearly every wallet turns it into a friendlier backup: a short list of everyday words to write down and lock away. What is that backup called?",
+    "answer": "a seed phrase",
     "choices": [
-      "a seed phrase of 12 or 24 English words",
-      "a QR code printed on plastic",
-      "a fingerprint scan",
-      "a nine-digit PIN"
+      "a seed phrase",
+      "a private key",
+      "a public key",
+      "a wallet address"
     ],
-    "context": "Bitcoin wallets convert the underlying 256-bit key into a mnemonic seed phrase -- typically 12 or 24 English words -- from which every derived key can be regenerated. QR codes are just visual encodings; biometrics and PINs are device unlocks, not the key material itself. Source: https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki.",
+    "context": "Bitcoin wallets turn the underlying secret into a mnemonic seed phrase, usually 12 or 24 English words, from which every key in the wallet can be rebuilt (the BIP-39 standard). The private key is the secret number itself; the public key is derived from it, and a wallet address is a short code made from the public key for receiving coins. Source: https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki.",
     "topic": "bitcoin-as-fifth-amendment-money-the-memorizable-seed-phrase"
   },
   {
@@ -2670,11 +2553,11 @@
     "answer": "A scam -- no real business can pay that much",
     "choices": [
       "A scam -- no real business can pay that much",
-      "A safe, boring savings account",
-      "A charity",
-      "A regular government bond"
+      "A breakthrough -- new tech beats bank rates",
+      "A gamble -- risky, but honest about its odds",
+      "A promotion -- a bonus rate for new customers"
     ],
-    "context": "BitConnect was a supposed 'lending platform' launched in 2016 promising ~1% daily returns via a proprietary trading bot. Chainlink, Litecoin, and Cardano are separate cryptocurrency projects with different histories. Source: https://en.wikipedia.org/wiki/BitConnect.",
+    "context": "A promise of 1 percent a day compounds $100 into about $3,700 in a year, while a United States Treasury bond pays about 4 percent a year. No real business earns that much, so such a promise almost always means a scam. BitConnect, launched in 2016, made just this kind of promise, claiming its returns came from a secret trading bot. Source: https://en.wikipedia.org/wiki/BitConnect.",
     "topic": "bitconnect-and-onecoin-the-pure-ponzi-altcoin-foils"
   },
   {
@@ -2713,15 +2596,15 @@
       "The scheme was audited by real accountants",
       "Every investor got paid back at the end"
     ],
-    "context": "Ruja Ignatova launched OneCoin in 2014 and marketed it worldwide as the Cryptoqueen. Elizabeth Holmes ran Theranos (unrelated blood-testing fraud); Cheung and Wojcicki are unrelated executives. Source: https://en.wikipedia.org/wiki/OneCoin.",
+    "context": "Ruja Ignatova launched OneCoin around 2014 and styled herself the Cryptoqueen. Like Charles Ponzi's scheme of 1920, OneCoin paid its early investors with money from later ones rather than from real earnings, so it needed an ever-growing stream of new recruits. Source: https://en.wikipedia.org/wiki/OneCoin.",
     "topic": "bitconnect-and-onecoin-the-pure-ponzi-altcoin-foils"
   },
   {
     "tier": 3,
-    "question": "Investigators finally took OneCoin apart after Ruja Ignatova, a Bulgarian-born businesswoman with a Frankfurt law degree, had sold it worldwide as the next Bitcoin and packed London's Wembley Arena for its promotions. They found one piece missing that every real cryptocurrency needs. What did OneCoin lack?",
-    "answer": "any working blockchain -- the ledger was just an internal database",
+    "question": "Investigators finally took OneCoin apart after Ruja Ignatova, a Bulgarian-born businesswoman with a German doctorate in law, had sold it worldwide as the next Bitcoin and packed London's Wembley Arena for its promotions. They found one piece missing that every real cryptocurrency needs. What did OneCoin lack?",
+    "answer": "any working blockchain behind the coins it said it issued",
     "choices": [
-      "any working blockchain -- the ledger was just an internal database",
+      "any working blockchain behind the coins it said it issued",
       "any independent trading pair on any external exchange venue",
       "any legally registered corporate address or filing history",
       "any bug-bounty program or third-party security review"
@@ -2757,7 +2640,7 @@
   },
   {
     "tier": 4,
-    "question": "Ruja Ignatova, the self-styled Cryptoqueen behind OneCoin, had been missing since a flight out of Sofia in 2017. On June 30, 2022, American authorities gave her a status that only a small handful of fugitives in American history have ever held. What did she receive that day?",
+    "question": "Ruja Ignatova, the self-styled Cryptoqueen behind OneCoin, had been missing since a flight out of Sofia in 2017, with investigators in several countries still on her trail. On June 30, 2022, American authorities gave her a new status in the hunt. What did she receive that day?",
     "answer": "placement on the FBI's Ten Most Wanted Fugitives list",
     "choices": [
       "placement on the FBI's Ten Most Wanted Fugitives list",
@@ -2765,15 +2648,15 @@
       "an Interpol Blue Notice",
       "designation as a specially designated national by the US Treasury"
     ],
-    "context": "The FBI added Ignatova to its Ten Most Wanted Fugitives list on June 30, 2022. Federal indictments against her had already been unsealed; other legal tools exist but the specific 2022 event was the Ten Most Wanted listing. Source: https://www.fbi.gov/wanted/topten/ruja-ignatova.",
+    "context": "The FBI added Ruja Ignatova to its Ten Most Wanted Fugitives list on June 30, 2022. Federal indictments against her had already been unsealed. Source: https://www.fbi.gov/wanted/topten/ruja-ignatova.",
     "topic": "bitconnect-and-onecoin-the-pure-ponzi-altcoin-foils"
   },
   {
     "tier": 5,
     "question": "Andreas Antonopoulos, who wrote Mastering Bitcoin, the standard technical book on the protocol, objects whenever reporters lump every coin together under the single word crypto. He and other longtime Bitcoin teachers say the word blurs a real distinction. Which point do they insist reporters recognize?",
-    "answer": "That Bitcoin -- a specific 2009 protocol with a proven fixed supply -- is not the same category of thing as most projects that call themselves 'crypto'",
+    "answer": "That Bitcoin, a 2009 protocol with a fixed supply, is a different thing from most 'crypto'",
     "choices": [
-      "That Bitcoin -- a specific 2009 protocol with a proven fixed supply -- is not the same category of thing as most projects that call themselves 'crypto'",
+      "That Bitcoin, a 2009 protocol with a fixed supply, is a different thing from most 'crypto'",
       "That all cryptocurrency including Bitcoin should be regulated identically by financial authorities",
       "That any project using a blockchain is legitimate regardless of its economics",
       "That the SEC alone should decide which cryptocurrencies are legitimate"
@@ -2917,11 +2800,11 @@
     "answer": "They can afford the switch, but smaller rivals cannot",
     "choices": [
       "They can afford the switch, but smaller rivals cannot",
-      "Big carmakers always fight new rules",
-      "The rule bans them from selling any cars at all",
-      "The rule forces them to shrink their factories"
+      "They had already sold more electric cars than any rival",
+      "The state paid them a bonus for every gas car they dropped",
+      "Their buyers had already stopped wanting gas-powered cars"
     ],
-    "context": "Large incumbent automakers (GM, Ford, Stellantis) publicly backed the ACC II timeline. Their compliance capital is a moat: smaller automakers and independent parts suppliers who cannot afford the transition are the unrepresented losers. Source: reuters.com (2022 CARB rulemaking coverage).",
+    "context": "Large incumbent automakers such as GM and Ford publicly backed the goal when California's air board approved the Advanced Clean Cars II rule in August 2022. Their compliance capital is a moat: smaller automakers and independent parts suppliers who cannot afford the transition are the unrepresented losers. In June 2025 President Trump signed resolutions of Congress revoking the federal waiver that let California enforce the rule, and California sued. Source: reuters.com (2022 CARB rulemaking coverage); https://www.dwt.com/blogs/energy--environmental-law-blog/2025/06/california-epa-clean-air-emission-waivers-lawsuit.",
     "topic": "bootleggers-and-baptists-in-the-modern-era-marijuana-ev-mand"
   },
   {
@@ -2930,9 +2813,9 @@
     "answer": "Large brick-and-mortar retailers and Amazon",
     "choices": [
       "Large brick-and-mortar retailers and Amazon",
-      "Small independent Etsy sellers",
-      "State university bookstores",
-      "Rural post-office contractors"
+      "Online marketplaces such as eBay and Etsy",
+      "Overnight shippers such as UPS and FedEx",
+      "Card networks such as Visa and Mastercard"
     ],
     "context": "Wayfair was a classic Bootleggers-and-Baptists case: state revenue officials and 'level-playing-field' advocates (Baptists) with big-box retailers and Amazon (Bootleggers, since both already had physical nexus and were already collecting). Small e-commerce sellers now face 45+ state sales-tax regimes. Source: supremecourt.gov (Wayfair 585 US ___).",
     "topic": "bootleggers-and-baptists-in-the-modern-era-marijuana-ev-mand"
@@ -2978,15 +2861,15 @@
   },
   {
     "tier": 1,
-    "question": "Delegates of forty-four Allied nations gathered at a grand hotel among the White Mountains for three weeks of July 1944, with World War II almost won. Their job was to design the money system the world would run on after the war. In which hotel did they meet?",
+    "question": "Delegates of forty-four Allied nations gathered at a grand mountain resort hotel for three weeks of July 1944, with World War II almost won. Their job was to design the money system the world would run on after the war. In which hotel did they meet?",
     "answer": "the Mount Washington Hotel in Bretton Woods, New Hampshire",
     "choices": [
       "the Mount Washington Hotel in Bretton Woods, New Hampshire",
-      "the Waldorf Astoria in New York City",
-      "the Willard Hotel in Washington, DC",
-      "the Palmer House in Chicago, Illinois"
+      "the Greenbrier in White Sulphur Springs, West Virginia",
+      "the Homestead in Hot Springs, Virginia",
+      "the Balsams in Dixville Notch, New Hampshire"
     ],
-    "context": "The July 1-22, 1944 Bretton Woods Conference was held at the Mount Washington Hotel in the White Mountains of New Hampshire. The Waldorf, Willard and Palmer House were sites of other 20th-century political events but not the Bretton Woods Conference. Source: https://en.wikipedia.org/wiki/Bretton_Woods_Conference.",
+    "context": "The July 1-22, 1944 Bretton Woods Conference was held at the Mount Washington Hotel in the White Mountains of New Hampshire. The Greenbrier, the Homestead and the Balsams were grand mountain resorts of the same era; the Homestead hosted the 1943 Allied food conference, not the money one. Source: https://en.wikipedia.org/wiki/Bretton_Woods_Conference.",
     "topic": "bretton-woods-1944-the-dollar-gold-anchor"
   },
   {
@@ -3036,9 +2919,9 @@
       "To keep exchange rates steady and stop countries from printing money without limit",
       "To let each country's currency float freely against every other",
       "To create a single world currency to replace all national money",
-      "To end all international trade for twenty years"
+      "To make the dollar the only money allowed in world trade"
     ],
-    "context": "Harry Dexter White drafted the winning US plan for Bretton Woods. Morgenthau was Treasury Secretary (his subordinate); Acheson was at State; Harriman was Ambassador to the USSR and later a Cabinet officer. Source: https://en.wikipedia.org/wiki/Harry_Dexter_White.",
+    "context": "Harry Dexter White's plan pegged each Allied currency to the dollar at a fixed rate and the dollar to gold at $35 an ounce. Fixed rates were meant to give postwar trade steady prices, and the gold link was meant to stop governments from printing money without limit: a country that inflated would see its currency strain against its peg. Source: https://en.wikipedia.org/wiki/Bretton_Woods_system.",
     "topic": "bretton-woods-1944-the-dollar-gold-anchor"
   },
   {
@@ -3060,11 +2943,11 @@
     "answer": "A few insiders with hidden agendas can steer rules that bind everyone else",
     "choices": [
       "A few insiders with hidden agendas can steer rules that bind everyone else",
-      "Only elected representatives ever help design money systems",
-      "Every design decision was open to public vote from the start",
-      "Insiders always openly share every belief that they hold"
+      "Fixed exchange rates can hide a currency's weakness until it breaks",
+      "A single reserve currency hands its issuer a privilege over all others",
+      "Rules drafted in wartime may not suit the needs of peacetime trade"
     ],
-    "context": "Whittaker Chambers named White during 1948 HUAC testimony. Alger Hiss was the more famous Chambers-named State Department official; Bentley named other Soviet sources; Hoover was FBI Director, not a witness. Source: https://en.wikipedia.org/wiki/Harry_Dexter_White.",
+    "context": "Whittaker Chambers named Harry Dexter White before the House Un-American Activities Committee on August 3, 1948. White denied the charge before the committee on August 13 and died of a heart attack three days later. The Venona decrypts released from 1995 identified him as a Soviet source under the code names Jurist and Richard. Source: https://grokipedia.com/page/Harry_Dexter_White.",
     "topic": "bretton-woods-1944-the-dollar-gold-anchor"
   },
   {
@@ -3077,7 +2960,7 @@
       "That the peg was purely a matter of international communication and could have been sustained by careful rhetoric and coordinated central-bank statements to hold public confidence",
       "That the peg was an accidental byproduct of postwar chaos rather than a deliberately designed monetary system and had no coherent architecture to defend once challenged"
     ],
-    "context": "The Austrian argument (Rothbard, Ammous): the Bretton Woods gold-exchange standard collapsed by arithmetic. Once US dollar issuance outran gold reserves, the peg could not survive any test. The other options mistake the failure for discretion, rhetoric, or accident. Source: Rothbard, A History of Money and Banking in the United States; Ammous, The Fiat Standard (2021).",
+    "context": "The Austrian argument (Rothbard, Ammous): the Bretton Woods gold-exchange standard collapsed by arithmetic. Once the dollars the United States owed abroad outran its gold, the peg could not survive any test, whatever leaders said or did. Source: Rothbard, A History of Money and Banking in the United States; Ammous, The Fiat Standard (2021).",
     "topic": "bretton-woods-1944-the-dollar-gold-anchor"
   },
   {
@@ -3112,9 +2995,9 @@
     "answer": "Huge populations and lots of room to catch up to richer countries",
     "choices": [
       "Huge populations and lots of room to catch up to richer countries",
-      "They all spoke the same language",
-      "They all had winter Olympics that year",
-      "They all shared one central bank"
+      "Vast oil and gas reserves that would pay for their growth",
+      "Democratic governments with strong courts and a free press",
+      "Close trade ties through a shared customs union"
     ],
     "context": "Goldman Sachs economist Jim O'Neill coined the term BRIC in a 2001 paper titled 'Building Better Global Economic BRICs.' The label described projected economic weight; the actual political group formed later. Source: Grokipedia 'BRICS' (2026-09-05).",
     "topic": "brics-and-the-dollar-alternative-movement"
@@ -3125,9 +3008,9 @@
     "answer": "They fear the US could freeze their dollar reserves if it disagrees with them",
     "choices": [
       "They fear the US could freeze their dollar reserves if it disagrees with them",
-      "Their people prefer paper money over any digital system",
-      "They want to share a single central bank with the US",
-      "They believe the dollar has too little inflation"
+      "Their central banks are barred by law from holding foreign money",
+      "Their exporters are now paid in gold, so they no longer need dollars",
+      "Their own currencies already pay higher interest than the dollar"
     ],
     "context": "The January 1 2024 expansion added Egypt, Ethiopia, Iran, and the UAE. The expanded group is often called BRICS+ and represents roughly 45% of global population and 35% of world GDP. Source: Grokipedia 'BRICS+' (2026-09-05).",
     "topic": "brics-and-the-dollar-alternative-movement"
@@ -3168,7 +3051,7 @@
       "The Great Moderation",
       "The deflationary spiral"
     ],
-    "context": "US federal debt held by the public is roughly 120% of GDP in 2025, up from about 79% in 2019. The combination of high debt and demonstrated willingness to weaponize the dollar drives reserve diversification. Source: Congressional Budget Office 2025 Long-Term Budget Outlook.",
+    "context": "Mises described the crack-up boom in Human Action (1949): once people expect prices to keep rising without end, they rush to swap their money for real goods at any price, and the currency breaks down. By the Congressional Budget Office's count, US federal debt held by the public was about 100 percent of GDP in 2025, up from about 79 percent in 2019; high debt and the freezing of Russia's reserves both push central banks to diversify. Source: Mises, Human Action (1949); Congressional Budget Office, The Long-Term Budget Outlook: 2025 to 2055 (https://www.cbo.gov/publication/61187).",
     "topic": "brics-and-the-dollar-alternative-movement"
   },
   {
@@ -3294,22 +3177,22 @@
     "answer": "Signaling",
     "choices": [
       "Signaling",
-      "Inflation",
-      "Rent control",
-      "Free trade"
+      "Human capital",
+      "Credential inflation",
+      "Moral hazard"
     ],
-    "context": "Bryan Caplan (b. April 8, 1971) took his Princeton PhD in 1997 under Gene Grossman and is a professor at GMU and Mercatus senior fellow. Source: bcaplan.com; en.wikipedia.org/wiki/Bryan_Caplan.",
+    "context": "Michael Spence modeled job-market signaling in 1973: a credential pays because it tells employers something about its holder, not because of what it taught. Bryan Caplan, an economist at George Mason University, argues in The Case Against Education (2018) that most of college's payoff works this way. Human capital theory, the usual rival account, says the extra pay rewards skills learned. Source: https://en.wikipedia.org/wiki/Signalling_(economics).",
     "topic": "bryan-caplan-education-signaling-and-rational-irrationality"
   },
   {
     "tier": 1,
     "question": "A student weighs four years of classes against the diploma at the end. Bryan Caplan argues that a diploma pays off mostly by proving to employers that its holder is bright and patient, not by teaching job skills. If so, what will students pay dearly to get?",
-    "answer": "The degree itself -- even if the actual classes taught nothing useful",
+    "answer": "The degree, even if the classes taught nothing useful",
     "choices": [
-      "The degree itself -- even if the actual classes taught nothing useful",
-      "Only the things learned in class, never the paper degree",
-      "Nothing to do with school at all",
-      "Only a PhD, never a bachelor's"
+      "The degree, even if the classes taught nothing useful",
+      "The hardest courses, which teach the most skills",
+      "The cheapest school, since diplomas all look alike",
+      "The internships, which employers check most"
     ],
     "context": "Bryan Caplan, The Case Against Education: Why the Education System Is a Waste of Time and Money (Princeton UP, 2018). Source: press.princeton.edu (Caplan 2018).",
     "topic": "bryan-caplan-education-signaling-and-rational-irrationality"
@@ -3398,9 +3281,9 @@
     "answer": "Reaching general readers who do not read academic prose",
     "choices": [
       "Reaching general readers who do not read academic prose",
-      "Meeting APA citation standards",
-      "Substituting for peer review in economics",
-      "Replacing the referees of academic journals"
+      "Presenting the data more precisely than tables can",
+      "Making the argument harder for critics to quote out of context",
+      "Letting the author skip the notes a scholarly book needs"
     ],
     "context": "Popularization is the specific problem. Caplan's graphic-novel books on open borders and housing deregulation are aimed at readers who would never open a Princeton UP monograph, extending public-choice arguments to a wider audience. Source: Caplan blog Bet On It; interviews 2019-24.",
     "topic": "bryan-caplan-education-signaling-and-rational-irrationality"
@@ -3512,12 +3395,12 @@
   {
     "tier": 1,
     "question": "The Swedish academy chose the words of its citation carefully when it gave James Buchanan the 1986 economics Nobel, the first for the public-choice school. The citation named the idea beneath his work, not the school. What did it honor him for?",
-    "answer": "The contractual and constitutional bases for the theory of economic and political decision-making",
+    "answer": "The contractual and constitutional bases of political decision-making",
     "choices": [
-      "The contractual and constitutional bases for the theory of economic and political decision-making",
-      "The empirical study of federal fiscal policy",
-      "The macroeconomic foundations of economic growth",
-      "The mathematical formalization of equilibrium theory"
+      "The contractual and constitutional bases of political decision-making",
+      "The empirical study of federal tax and spending policy",
+      "The mathematical theory of general market equilibrium",
+      "The saving and technology behind economic growth"
     ],
     "context": "The 1986 Nobel citation, October 16, 1986: 'for his development of the contractual and constitutional bases for the theory of economic and political decision-making.' The committee generalized rather than saying 'public choice.'",
     "topic": "buchanans-1986-nobel-prize"
@@ -3550,15 +3433,15 @@
   },
   {
     "tier": 4,
-    "question": "A senator weighs a spending bill that would build a bridge back in his home state. The bridge would be a windfall for a few local firms, and its bill would land on taxpayers in every state, a few dollars each. Public-choice economists, Mancur Olson and James Buchanan among them, expect him to vote yes. Why would he?",
+    "question": "A senator weighs a bill to build a costly bridge in his home state, paid for out of federal taxes, though engineers rank it far down the nation's list of needs. Public-choice economists, Mancur Olson and James Buchanan among them, expect him to vote yes. Why would he?",
     "answer": "The benefits are focused on a few, while the costs are spread thin over many",
     "choices": [
       "The benefits are focused on a few, while the costs are spread thin over many",
+      "He expects the bridge to pay back more than it costs the nation",
       "Voters everywhere always want more spending, so he obeys them",
-      "The senator does not understand the true cost of the bill",
-      "Federal law forces him to vote yes on any spending request"
+      "The senator does not understand the true cost of the bill"
     ],
-    "context": "Gordon Tullock had co-authored The Calculus of Consent (1962) with Buchanan and pioneered rent-seeking analysis in 1967. His never receiving a Nobel became a persistent complaint among public-choice scholars. Source: en.wikipedia.org/wiki/Gordon_Tullock.",
+    "context": "This is Mancur Olson's logic of concentrated benefits and dispersed costs: the few local firms that gain from the bridge notice, organize and reward the senator, while taxpayers who each lose a few dollars barely notice. Home-state projects of this kind are called pork-barrel spending. Source: Olson, The Logic of Collective Action (1965).",
     "topic": "buchanans-1986-nobel-prize"
   },
   {
@@ -3645,11 +3528,11 @@
     "answer": "Fixed rules limit favoritism and let people plan ahead",
     "choices": [
       "Fixed rules limit favoritism and let people plan ahead",
-      "Officials always make wiser choices than any rule can",
-      "Rules only work for small towns, not big countries",
-      "Case-by-case choices are always faster to make"
+      "Fixed rules give the best result in every single case",
+      "Fixed rules cost less to enforce than hiring skilled officials",
+      "Fixed rules remove any need for courts to settle disputes"
     ],
-    "context": "Geoffrey Brennan (Australian National University philosopher-economist) co-authored The Power to Tax (1980) and The Reason of Rules (1985) with Buchanan. Source: philosophy.cass.anu.edu.au.",
+    "context": "In The Reason of Rules (1985), Geoffrey Brennan and James Buchanan argue that a known, fixed rule leaves officials little room to favor friends and lets citizens plan, since they know in advance how it will apply; wide discretion invites the abuse of power. Brennan, a philosopher-economist at the Australian National University, also wrote The Power to Tax (1980) with Buchanan. Source: Brennan + Buchanan, The Reason of Rules (1985).",
     "topic": "buchanans-constitutional-political-economy-rules-vs-outcomes"
   },
   {
@@ -3689,19 +3572,6 @@
       "Ludwig von Mises"
     ],
     "context": "Eugen von Boehm-Bawerk published 'Kapital und Kapitalzins' in three volumes: Volume 1 in 1884, Volume 2 in 1889, Volume 3 posthumously in 1921. Menger was his teacher; Wieser his brother-in-law; Mises his student a generation later. Source: Wikipedia, 'Capital and Interest' (https://en.wikipedia.org/wiki/Capital_and_Interest).",
-    "topic": "capital-and-interest--1884-1909---the-roundabout-production-"
-  },
-  {
-    "tier": 2,
-    "question": "Eugen von Böhm-Bawerk asked in 1889 why a loaf in hand is worth more to people than the same loaf a year away. He gave three grounds, among them that people expect to be better off later and tend to undervalue wants that lie in the future. What did he say the three grounds together explain?",
-    "answer": "Interest",
-    "choices": [
-      "Interest",
-      "Profit",
-      "Rent",
-      "Wages"
-    ],
-    "context": "The three grounds Boehm-Bawerk offers in Volume 2 -- expectation of future prosperity, systematic underestimation of future wants, and the technical superiority of longer production processes -- are his positive theory of INTEREST specifically, the price the market pays for the postponement of consumption. Rent, profit, and wages are separately theorised elsewhere in the Austrian tradition. Source: Encyclopedia.com, 'Eugen Von Boehm-Bawerk' (https://www.encyclopedia.com/people/social-sciences-and-law/economics-biographies/eugen-von-bohm-bawerk).",
     "topic": "capital-and-interest--1884-1909---the-roundabout-production-"
   },
   {
