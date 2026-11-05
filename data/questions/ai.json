@@ -638,15 +638,15 @@
   },
   {
     "tier": 1,
-    "question": "Yoshua Bengio founded a big AI research lab called Mila and stayed in academia, while the two men who shared the 2018 Turing Award with him went to Big Tech. He teaches at a large university on the Saint Lawrence River, in a city that speaks French, and the lab stands there too. Which city is it?",
-    "answer": "Montreal",
+    "question": "Geoffrey Hinton, Yann LeCun and Yoshua Bengio shared the 2018 Turing Award for the work behind modern AI. Hinton had gone to work for Google, and LeCun for Facebook. Which road did Bengio take?",
+    "answer": "He stayed at his university and built the Mila institute there",
     "choices": [
-      "Montreal",
-      "Madrid",
-      "Manchester",
-      "Mumbai"
+      "He stayed at his university and built the Mila institute there",
+      "He joined Microsoft's research lab in Seattle full time",
+      "He moved across to Google's research office in Zurich",
+      "He left research to run a Canadian government agency"
     ],
-    "context": "Yoshua Bengio is a professor at the University of Montreal. He shared the 2018 Turing Award with Geoffrey Hinton and Yann LeCun for foundational deep-learning work. Unlike LeCun, Bengio has voiced concerns about advanced AI risk; unlike Hinton, he stayed in academia rather than leaving a big tech company.",
+    "context": "Yoshua Bengio is a professor at the University of Montreal, where he founded the Mila institute. He shared the 2018 Turing Award with Geoffrey Hinton and Yann LeCun for foundational deep-learning work. Hinton worked for Google from 2013 to 2023, and LeCun led Facebook's AI research from 2013.",
     "topic": "yoshua-bengio"
   },
   {
@@ -11354,9 +11354,9 @@
     "answer": "That AI safety concern and active AI research are not exclusive positions — a researcher can advocate caution about deployment while continuing technical work on the systems",
     "choices": [
       "That AI safety concern and active AI research are not exclusive positions — a researcher can advocate caution about deployment while continuing technical work on the systems",
-      "That Quebec law forbids AI researchers from holding any opinion on AI policy — provincial regulations from 2019 mandate strict professional silence on the topic",
-      "That all AI researchers are required to publicly endorse one extreme position — the IEEE professional code of conduct mandates a binary choice for every member",
-      "That Bengio's actual research has been classified as state secret — the Canadian government has prevented public discussion of his work since 2022 under federal law"
+      "That his warnings must be for show — a researcher who truly feared advanced AI would have stopped building the systems and shut down his own institute",
+      "That safety only becomes a real question once research is finished — caution belongs to the companies that ship products, not to the scientists who study them",
+      "That a scientist's warnings count only if he leaves the field — staying on at a lab means his public concern about deployment cannot be taken seriously"
     ],
     "context": "Bengio's posture is closer to Hinton's than to LeCun's, but distinct from Yudkowsky's. He has supported safety governance, signed open letters, and emphasized risks — while continuing technical research. The position is sometimes called 'cautious development' or 'differential progress on safety.' Recognition skill: the binary framing ('doomers vs accelerationists') hides a wider range of positions held by serious researchers. Bengio sits in a middle ground that's worth recognizing — the existence of that ground undercuts the most extreme claims on both sides.",
     "topic": "yoshua-bengio"
