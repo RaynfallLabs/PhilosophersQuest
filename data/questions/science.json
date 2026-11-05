@@ -158,12 +158,12 @@
   {
     "tier": 4,
     "question": "A lawyer takes on a family's claim in the vaccine court that the 1986 Act created. In a normal injury suit his pay would come out of the winnings, but Congress banned that here: he cannot take a share of the family's award or charge the family any other fee. Who pays that lawyer, and when?",
-    "answer": "The programme pays the lawyer, win or lose",
+    "answer": "The programme pays him, win or lose",
     "choices": [
-      "The programme pays the lawyer, win or lose",
-      "The programme pays them only if the family wins",
-      "The manufacturer pays them, win or lose",
-      "The manufacturer pays them only if the family wins"
+      "The programme pays him, win or lose",
+      "The programme pays him only if the family wins",
+      "The manufacturer pays him, win or lose",
+      "The manufacturer pays him only if the family wins"
     ],
     "context": "HRSA: attorneys 'are eligible for reasonable attorneys' fees, whether or not the petitioner is awarded compensation by the Court, if certain minimal requirements are met,' and 'by statute, attorneys may not charge any other fee, including a contingency fee.' The Justice Department adds that fees are available on denied claims so long as the claim was filed in good faith and with a reasonable basis. Sources: hrsa.gov/vaccine-compensation/data; justice.gov/civil/vicp.",
     "topic": "1986-what-happens-when-you-take-away-the-lawsuits"
@@ -534,7 +534,7 @@
   },
   {
     "tier": 2,
-    "question": "Ernst Abbe worked out a hard rule for microscope makers in 1873: no light microscope can separate two dots closer together than about half the wavelength of its light, however perfect the lens. Visible light runs about 400 to 700 nanometres, violet to red. About how close is it for a plain visible-light microscope?",
+    "question": "Ernst Abbe worked out a hard rule for microscope makers in 1873: no light microscope can separate two dots closer together than about half the wavelength of its light, however perfect the lens. With visible light, the wall falls near the width of the tiniest bacteria. About where does that wall stand?",
     "answer": "Around 200 nanometres",
     "choices": [
       "Around 2 nanometres",
@@ -656,7 +656,7 @@
     "choices": [
       "Philipp Bouhler, head of Hitler's Chancellery, and Karl Brandt, Hitler's personal physician",
       "Reinhard Heydrich, head of the SD, and Rudolf Hess, Deputy Fuehrer",
-      "Heinrich Himmler, Reichsfuehrer-SS, and Albert Speer, then a junior architect",
+      "Heinrich Himmler, Reichsfuehrer-SS, and Albert Speer, Hitler's chief architect",
       "Hermann Goering, head of the Luftwaffe, and Joseph Goebbels, Propaganda Minister"
     ],
     "context": "Brandt was later hanged at Nuremberg on the strength of the Doctors' Trial evidence. The chain of authority ran through a personal physician and a chancellery clerk, not through health ministers or army generals -- part of why the atrocity could stay filed as private and 'charitable' for years. Source: USHMM Holocaust Encyclopedia.",
@@ -690,7 +690,7 @@
   },
   {
     "tier": 4,
-    "question": "A Catholic churchman stood in his own cathedral on August 3, 1941, after two years of T4 killing, and condemned the program in public. Copies of the sermon travelled hand to hand, and British aircraft later scattered it as leaflets. Hitler left the preacher free rather than risk an open clash with the Church. Who preached it?",
+    "question": "A German churchman stood in his pulpit on August 3, 1941, after two years of T4 killing, and condemned the program in public. Copies of the sermon travelled hand to hand, and British aircraft later scattered it as leaflets. Hitler left the preacher free rather than risk an open clash with his church. Who preached it?",
     "answer": "Bishop Clemens August von Galen",
     "choices": [
       "Bishop Clemens August von Galen",
@@ -828,7 +828,7 @@
       "He had backed the formless-juice account of new cells",
       "He had backed the starch-grain account of new cells"
     ],
-    "context": "Remak's evidence and arguments for animal cell division were poorly received and failed to achieve general acceptance until Virchow forcefully promulgated the idea -- and Virchow had initially doubted the evidence for cell division before changing his mind. The two men were appointed to the Berlin faculty in the same year, 1847, and worked in the same laboratory. Sources: Marine Biological Laboratory, 'Seeing Cells'; Wikipedia, Rudolf Virchow; Ribatti, 'An historical note on the cell theory', Exp Cell Res 2018.",
+    "context": "Remak's evidence and arguments for animal cell division were poorly received and failed to achieve general acceptance until Virchow forcefully promulgated the idea -- and Virchow had initially doubted the evidence for cell division before changing his mind. The two men were appointed to the Berlin faculty in the same year, 1847. Sources: Marine Biological Laboratory, 'Seeing Cells'; Wikipedia, Rudolf Virchow; Ribatti, 'An historical note on the cell theory', Exp Cell Res 2018.",
     "topic": "all-cells-from-cells-and-the-man-who-got-no-credit"
   },
   {
@@ -910,19 +910,6 @@
     "topic": "aluminium-from-an-emperors-cutlery-to-a-throwaway-can"
   },
   {
-    "tier": 2,
-    "question": "Friedrich Wohler prepared urea in a glass flask in 1828, starting from ammonium cyanate, a year after he produced the first solid sample of aluminium. He stunned the field. Why did that flask of urea shake up chemistry?",
-    "answer": "It broke the idea that only living things could make 'organic' molecules",
-    "choices": [
-      "It broke the idea that only living things could make 'organic' molecules",
-      "It proved urea was poisonous to bacteria",
-      "It showed the glass flask itself was alive",
-      "It let doctors finally treat kidney disease"
-    ],
-    "context": "Wohler followed up Hans Christian Orsted's 1825 attempt (which no one else could reproduce) and produced a fine grey powder on 22 October 1827. In 1828 he synthesised urea from ammonium cyanate, breaking the barrier between 'organic' and 'inorganic' chemistry. Source: https://rinconeducativo.org/en/recursos-educativos/friedrich-wohler-first-isolate-beryllium-and-aluminium-metal/",
-    "topic": "aluminium-from-an-emperors-cutlery-to-a-throwaway-can"
-  },
-  {
     "tier": 3,
     "question": "Visitors filed past twelve small ingots of a silvery-white metal at the 1855 Paris fair, set beside the French Crown Jewels. The label described them as 'silver from clay.' Emperor Napoleon III paid for their production, hoping to arm his soldiers with lightweight equipment. What was the metal, and who produced the ingots?",
     "answer": "Aluminium ingots, produced by Henri Sainte-Claire Deville by reducing aluminium chloride with sodium",
@@ -984,7 +971,7 @@
       "oceanographers and marine zoologists",
       "microbiologists and physiologists"
     ],
-    "context": "The whole cruise was funded by the National Science Foundation and staffed by geologists and geochemists -- not a single biologist was aboard when the vent ecosystem was found. The rule of biology got overturned by rock hunters. Source: https://www.whoi.edu/feature/history-hydrothermal-vents/discovery/1977.html  (Legend.)",
+    "context": "The whole cruise was funded by the National Science Foundation and staffed by geologists and geochemists -- not a single biologist was aboard when the vent ecosystem was found; Woods Hole's own history says no one imagined any need for one. The rule of biology got overturned by rock hunters. Source: https://www.whoi.edu/feature/history-hydrothermal-vents/discovery/1977.html",
     "topic": "alvins-lights-on-the-galapagos-rift"
   },
   {
@@ -1034,9 +1021,9 @@
       "Russian vodka bought on the way through Panama",
       "shipboard isopropyl alcohol from the medical kit",
       "ice-chilled seawater in sealed glass jars",
-      "diesel fuel drawn from the engine room"
+      "a strong brine made from the galley's salt"
     ],
-    "context": "The vodka story is a widely retold expedition anecdote -- flagged legend. Isopropyl alcohol is too dilute and denatures proteins wrong; iced seawater rots specimens fast; diesel would destroy tissue outright. The point of the question is the improvisation, not the chemistry. Source: https://scienceblog.com/t-deep-sea-dive-hydrothermal-vents-ecosystem-without-sunlight/",
+    "context": "Woods Hole Oceanographic Institution, which ran Alvin, tells the story in its own history of the 1977 dives. A student had brought a little formaldehyde, nowhere near enough for every specimen, so the scientists turned to the closest thing on board: strong Russian vodka bought in Panama. Nobody had imagined a biologist would be needed. Source: https://www.whoi.edu/feature/history-hydrothermal-vents/discovery/1977.html",
     "topic": "alvins-lights-on-the-galapagos-rift"
   },
   {
@@ -1080,15 +1067,15 @@
   },
   {
     "tier": 5,
-    "question": "Explorers aboard the submarine Alvin came on a field of chalk-white carbonate chimneys near the Mid-Atlantic Ridge on 4 December 2000, driven by no volcanic magma at all. The tallest chimney in the field is startling in scale. About how tall does it rise?",
-    "answer": "About 60 metres",
+    "question": "A team exploring the Mid-Atlantic Ridge came on a field of chalk-white carbonate chimneys on 4 December 2000, the tallest standing some 60 metres high. No volcanic magma lies beneath them, and the water seeping out runs at a mere 40 to 90 degrees Celsius, yet it is rich in hydrogen and methane. What drives the field?",
+    "answer": "Seawater reacting chemically with mantle rock",
     "choices": [
-      "About 60 metres",
-      "About 6 metres",
-      "About 600 metres",
-      "About 6,000 metres"
+      "Seawater reacting chemically with mantle rock",
+      "Heat from uranium decaying in the crust",
+      "Friction from faults grinding past each other",
+      "Methane ice melting out of the seafloor mud"
     ],
-    "context": "Lost City is alkaline, its fluids only 40-90 C, and it is powered by SERPENTINIZATION -- seawater reacting with olivine in mantle rock to produce hydrogen and methane, no magma heat needed. Its chimneys are aragonite, brucite and calcite. Snake Pit and Rainbow are real Mid-Atlantic vent fields but different sites. Source: https://en.wikipedia.org/wiki/Lost_City_Hydrothermal_Field",
+    "context": "The process is called serpentinization: seawater soaks into olivine-rich rock from the mantle and reacts with it, giving off heat, hydrogen and methane, with no magma needed. Lost City is alkaline, its chimneys are aragonite, brucite and calcite, and the tallest, Poseidon, rises about 60 metres. Source: https://en.wikipedia.org/wiki/Lost_City_Hydrothermal_Field",
     "topic": "alvins-lights-on-the-galapagos-rift"
   },
   {
@@ -1717,15 +1704,15 @@
   },
   {
     "tier": 3,
-    "question": "Richmann, a physicist in St Petersburg, was measuring the electricity of the air with an iron rod in his own house during a thunderstorm on August 6, 1753, building on Benjamin Franklin's kite work. Something hit him in the head and killed him at once. What rare event killed him?",
+    "question": "Richmann, a physicist in St Petersburg, was measuring the electricity of the air with an iron rod in his own house during a thunderstorm on August 6, 1753, building on Benjamin Franklin's kite work. Something hit him in the head and killed him at once. What struck him?",
     "answer": "Ball lightning",
     "choices": [
       "Ball lightning",
-      "A hail-stone strike",
-      "A small tornado",
-      "A meteor fragment"
+      "St Elmo's fire",
+      "A Leyden jar's spark",
+      "A red sprite"
     ],
-    "context": "Richmann's engraver companion was knocked unconscious; a red spot was left on Richmann's forehead, his left shoe blown open, and the doorframe was torn from its hinges. He is generally considered the first person killed while doing electrical research - and one of the first documented cases of ball lightning taking a life. Franklin's kite experiment had made the topic fashionable that decade; the danger was not.",
+    "context": "Richmann's engraver companion was knocked unconscious; a red spot was left on Richmann's forehead, his left shoe blown open, and the doorframe was torn from its hinges. He is generally considered the first person killed while doing electrical research - and one of the first documented cases of ball lightning taking a life. St Elmo's fire is a harmless glow that clings to masts and wingtips, and red sprites flash far above the clouds, out of reach of anyone on the ground. Franklin's kite experiment had made the topic fashionable that decade; the danger was not.",
     "topic": "ball-lightning-the-anomaly-in-the-unexplained-drawer"
   },
   {
@@ -2224,15 +2211,15 @@
   },
   {
     "tier": 3,
-    "question": "Zabdiel Boylston, the one Boston doctor who agreed to try inoculation in the 1721 epidemic, tallied every one of his 282 inoculated patients and every death among the 5,759 who caught the disease naturally. What did that tally make his report?",
-    "answer": "The first statistical clinical trial",
+    "question": "Zabdiel Boylston was the one Boston doctor willing to try inoculation in the 1721 smallpox epidemic. He kept a record of all 282 of his own patients, and of the 5,759 people in town who caught the disease the ordinary way. Why do medical historians still single out his report?",
+    "answer": "It let counted deaths, not expert opinion, make the case",
     "choices": [
-      "The first statistical clinical trial",
-      "The first double-blind study",
-      "The first placebo-controlled trial",
-      "The first randomized trial"
+      "It let counted deaths, not expert opinion, make the case",
+      "It was the first to blame smallpox on a germ",
+      "It swapped live smallpox for the milder cowpox",
+      "It proved that inoculation carried no risk at all"
     ],
-    "context": "Boylston counted 6 deaths among 282 inoculated versus 844 deaths among 5,759 who caught natural smallpox. It is one of the earliest quantitative comparisons in medicine -- numbers, not authority, decided the argument. He presented the volume to the Royal Society in London in 1726. Source: James Lind Library.",
+    "context": "Boylston counted 6 deaths among his 282 inoculated patients against 844 among the 5,759 who caught smallpox naturally: about 2 in 100 against nearly 15. It is one of the earliest quantitative comparisons in medicine, numbers set against the authority of the town's physicians, and he presented the account to the Royal Society in London in 1726. It did not make the method safe, since it used real smallpox, and Edward Jenner's cowpox and the germ theory both came long afterwards. Sources: James Lind Library; Encyclopedia.com, 'Boylston, Zabdiel'.",
     "topic": "before-jenner-montagu-onesimus-and-boylstons-arithmetic"
   },
   {
@@ -2293,8 +2280,8 @@
     "answer": "The replication crisis",
     "choices": [
       "The replication crisis",
-      "The Human Genome Project",
-      "The dark-matter debate",
+      "The Ganzfeld psi debate",
+      "The open-access movement",
       "The cold-fusion scare"
     ],
     "context": "The paper was titled 'Feeling the Future: Experimental Evidence for Anomalous Retroactive Influences on Cognition and Affect'. Source: https://en.wikipedia.org/wiki/Daryl_Bem",
@@ -2393,7 +2380,7 @@
   },
   {
     "tier": 3,
-    "question": "The odd fallen flask went into Edouard Benedictus's notebook in 1903, with its dried film of cellulose nitrate on the inside, and for six years he did nothing with it. The accident sat waiting for a use. What finally sent him back to the flask in 1909?",
+    "question": "Edouard Benedictus noted the odd fallen flask in 1903, with its dried film of cellulose nitrate on the inside, and for six years did nothing with it. The accident sat waiting for a use. What finally sent him back to the flask in 1909?",
     "answer": "Newspaper reports of drivers cut by broken car windshields",
     "choices": [
       "Newspaper reports of drivers cut by broken car windshields",
@@ -2457,14 +2444,14 @@
     "topic": "benedictuss-flask"
   },
   {
-    "tier": 2,
+    "tier": 1,
     "question": "An astronomer spoke the vivid phrase 'this big bang idea' on British Broadcasting Corporation radio in March 1949, and the name would eventually stick to the leading theory of how the universe began. Who spoke the phrase on air that night?",
-    "answer": "Fred Hoyle, then a leading proponent of the rival steady-state cosmology",
+    "answer": "Fred Hoyle, champion of the rival steady-state theory",
     "choices": [
-      "Fred Hoyle, then a leading proponent of the rival steady-state cosmology",
-      "Georges Lemaitre, the Belgian priest whose primeval-atom paper Hubble later cited",
-      "Edwin Hubble, whose redshift-distance measurements first showed cosmic expansion",
-      "George Gamow, whose team calculated a hot early universe and its relic radiation"
+      "Fred Hoyle, champion of the rival steady-state theory",
+      "Georges Lemaitre, priest of the primeval-atom idea",
+      "Edwin Hubble, who charted the galaxies flying apart",
+      "George Gamow, who calculated a hot early universe"
     ],
     "context": "Hoyle was a co-author of the steady-state theory; he spoke on the BBC Third Programme on 28 March 1949 and later said he chose the phrase for its striking visual image over radio. The name did not catch on until the 1970s, after the theory it named had won. Source: Kragh 2013, 'Big Bang: the etymology of a name', Astronomy & Geophysics 54(2).",
     "topic": "big-bang-was-the-rivals-word"
@@ -2506,19 +2493,6 @@
       "Hoyle's late-life papers were reviewed by Ryle himself, who signed off on their mathematical soundness in print"
     ],
     "context": "In 1957 Hoyle co-authored the B2FH paper 'Synthesis of the Elements in Stars' with Margaret Burbidge, Geoffrey Burbidge, and William Fowler, establishing stellar nucleosynthesis. Fowler alone received the 1983 Nobel Prize for that work; Hoyle was pointedly omitted, a decision widely regarded as a snub. Theories rarely die because their authors give up. Source: Burbidge, Burbidge, Fowler & Hoyle, Rev. Mod. Phys. 29, 547 (1957).",
-    "topic": "big-bang-was-the-rivals-word"
-  },
-  {
-    "tier": 3,
-    "question": "A leading opponent of the idea spoke the phrase 'big bang' on air in March 1949, and the label went on to name the theory. George Gamow and his colleagues long preferred other terms. Roughly when did the phrase finally catch on as the standard tag among working cosmologists?",
-    "answer": "In the 1970s, well after the theory it named had already been vindicated by the microwave hiss",
-    "choices": [
-      "In the 1970s, well after the theory it named had already been vindicated by the microwave hiss",
-      "In the 1950s, during the same run of Cambridge radio surveys that first embarrassed the rival",
-      "In the 1960s, right after the theory's central prediction was confirmed at Bell Labs",
-      "In the 1980s, after Fowler's Nobel Prize for stellar nucleosynthesis restored Hoyle's standing"
-    ],
-    "context": "Historian Helge Kragh documents that early Big Bang theorists did not much use the phrase; Gamow and colleagues stuck with 'primeval atom' and 'dynamic evolution' for years. The rival's insult (that wasn't an insult) only became the theory's own name once the theory had already won. Source: Kragh 2013, Astronomy & Geophysics 54(2).",
     "topic": "big-bang-was-the-rivals-word"
   },
   {
@@ -2644,9 +2618,9 @@
     "answer": "Whether atoms really exist as real objects",
     "choices": [
       "Whether atoms really exist as real objects",
-      "Whether light travels as a wave",
-      "Whether cells contain DNA",
-      "Whether Earth orbits the Sun"
+      "Whether heat is a fluid called caloric",
+      "Whether light needs an ether to travel",
+      "Whether life can spring from lifeless matter"
     ],
     "context": "Perrin's Brownian-motion work won him the 1926 Nobel Prize in Physics. His careful measurements matched Einstein's formula and yielded Avogadro's number - even Ostwald conceded atoms after Perrin's data. Source: advlabs.aapt.org/bfy/files/AJPBrownianPaper.pdf.",
     "topic": "boltzmann-the-atom-and-the-gravestone"
@@ -2679,15 +2653,15 @@
   },
   {
     "tier": 2,
-    "question": "Cecil Salmon, an American, shipped a semi-dwarf wheat home from occupied Japan after World War II, and in 1953 Norman Borlaug got hold of it. Borlaug had not invented short wheat. What was that Japanese variety called?",
-    "answer": "Norin 10",
+    "question": "Norman Borlaug's high-yield wheat of the 1960s was short and stiff, but he had not invented its shortness. The dwarfing genes reached him in 1953, from seed first collected by Cecil Salmon, an American farm scientist, in a country under postwar military occupation. Where had that short wheat been bred?",
+    "answer": "Japan",
     "choices": [
-      "Norin 10",
-      "Kanto 107",
-      "Sonora 64",
-      "Marquis 44"
+      "Japan",
+      "Germany",
+      "Austria",
+      "Korea"
     ],
-    "context": "Gonjiro Inazuka released Norin 10 in Japan in 1935; Salmon collected it in 1946 for the USDA; Orville Vogel at Washington State bred it further and passed seed to Borlaug in 1953. Its Rht1 and Rht2 genes now sit in more than seventy percent of the world's commercial wheat. Sources: Wikipedia 'Norin 10 wheat', 'Cecil Salmon', 'Orville Vogel'.",
+    "context": "The variety was Norin 10, released in Japan by Gonjiro Inazuka in 1935. Salmon collected it in 1946 for the USDA, and Orville Vogel at Washington State bred it further and passed seed to Borlaug in 1953. Its Rht1 and Rht2 genes now sit in more than seventy percent of the world's commercial wheat. Sources: Wikipedia 'Norin 10 wheat', 'Cecil Salmon', 'Orville Vogel'.",
     "topic": "borlaugs-dwarf-wheat-and-the-famine-that-did-not-come"
   },
   {
@@ -2783,15 +2757,15 @@
   },
   {
     "tier": 4,
-    "question": "Franciscus Linus, a Jesuit in Robert Boyle's day, looked at the pumped-out glass and refused to accept that it was really empty. He proposed an invisible substance still filling the space and defying the pump. What Latin name did he give it?",
-    "answer": "the funiculus",
+    "question": "Franciscus Linus, a Jesuit in Robert Boyle's day, looked at the pumped-out glass and refused to accept that it was really empty. He proposed an invisible substance still filling the space and defying the pump. What did he think that substance was like?",
+    "answer": "An invisible stretched thread, a little rope",
     "choices": [
-      "the funiculus",
-      "the plenum",
-      "the aether",
-      "the horror vacui"
+      "An invisible stretched thread, a little rope",
+      "A fluid far thinner and lighter than any air",
+      "A cloud of dust too fine for any eye to see",
+      "A cold fire that gave off no heat at all"
     ],
-    "context": "Funiculus is Latin for 'little rope' -- Linus imagined it as a stretched thread. The other choices: plenum = Descartes's fully-packed cosmos; aether = the light-carrying medium killed off by Michelson-Morley 1887; horror vacui = the Aristotelian idea that nature abhors a vacuum. Source: https://plato.stanford.edu/archives/spr2021/entries/hobbes-science/",
+    "context": "Linus called it the funiculus, Latin for 'little rope', and pictured it as a thread stretched taut inside the glass. Boyle answered him, as he answered Hobbes, with more experiments rather than more argument. Source: https://plato.stanford.edu/archives/spr2021/entries/hobbes-science/",
     "topic": "boyle-hooke-and-the-spring-of-the-air"
   },
   {
@@ -3697,11 +3671,11 @@
     "answer": "Three generations of imbeciles are enough.",
     "choices": [
       "Three generations of imbeciles are enough.",
-      "Separate but equal is inherently unequal.",
+      "Our Constitution is color-blind.",
       "The power to tax involves the power to destroy.",
       "A thing is worth what it will bring in the market."
     ],
-    "context": "Buck v. Bell, 274 U.S. 200 (1927). The sentence closes Holmes's majority opinion and is the ruling's most-quoted line. Source: https://www.law.cornell.edu/supremecourt/text/274/200",
+    "context": "Buck v. Bell, 274 U.S. 200 (1927). The sentence closes Holmes's majority opinion and is the ruling's most-quoted line. The other two court lines are real but belong to other cases: 'Our Constitution is color-blind' comes from Justice John Marshall Harlan's dissent in Plessy v. Ferguson (1896), and the power-to-tax line from Chief Justice John Marshall in McCulloch v. Maryland (1819). Sources: https://www.law.cornell.edu/supremecourt/text/274/200; https://en.wikipedia.org/wiki/Plessy_v._Ferguson",
     "topic": "carrie-buck-and-the-rigged-test-case"
   },
   {
@@ -3819,19 +3793,6 @@
       "Adds a second copy from a healthy donor"
     ],
     "context": "BCL11A is a transcription factor that switches off fetal hemoglobin (HbF) after birth. Casgevy uses CRISPR-Cas9 to cut BCL11A's red-cell-specific enhancer; with the switch broken, HbF returns and takes over the job the sickling adult hemoglobin was failing at. Source: NEJM, 'Exagamglogene Autotemcel for Severe Sickle Cell Disease' (2023).",
-    "topic": "casgevy-the-first-crispr-cure"
-  },
-  {
-    "tier": 5,
-    "question": "One country's drug regulators signed off on Casgevy in November 2023, ahead of all the others. It was the first treatment approved anywhere to use molecular scissors (CRISPR), working on a sickle-cell patient's own bone-marrow cells. Which agency was the first to approve it?",
-    "answer": "the UK's MHRA",
-    "choices": [
-      "the UK's MHRA",
-      "the US FDA",
-      "the European Medicines Agency",
-      "Japan's PMDA"
-    ],
-    "context": "The UK's Medicines and Healthcare products Regulatory Agency approved Casgevy for both sickle-cell disease and transfusion-dependent beta thalassemia in November 2023. The US FDA followed for sickle-cell in December 2023 and for beta thalassemia in January 2024. Source: MHRA news release, November 2023.",
     "topic": "casgevy-the-first-crispr-cure"
   },
   {
@@ -4057,19 +4018,6 @@
   },
   {
     "tier": 3,
-    "question": "Henry Cavendish published his answer for 'weighing the world' in June 1798, in a 57-page paper in the Philosophical Transactions. The answer was one ratio: the Earth's mean density against that of water. Which value did he print?",
-    "answer": "5.48",
-    "choices": [
-      "5.48",
-      "4.5",
-      "5.514",
-      "5.448"
-    ],
-    "context": "The modern accepted value is 5.514. Cavendish had come within about 1.2% of the right answer, from a garden shed, in 1798. Baily's 1821 re-average of Cavendish's own tables gave 5.448; Maskelyne's earlier Schiehallion result had been about 4.5. Source: American Journal of Physiology, Vol. 307 (2014) -- 'Cavendish and weighing the world'; APS News, June 2008.",
-    "topic": "cavendish-weighs-the-world"
-  },
-  {
-    "tier": 3,
     "question": "Francis Baily sat down in 1821 and re-averaged Henry Cavendish's tables by hand. Cavendish had measured the density of the whole Earth in a sealed shed, weighing lead spheres against the tiny pulls they exerted on one another, and he had made 29 tries before printing his number. What did Baily find?",
     "answer": "a small arithmetic slip in Cavendish's own average",
     "choices": [
@@ -4078,7 +4026,7 @@
       "a transcription error introduced by the printer of the paper",
       "no mistake at all -- the tables checked out perfectly"
     ],
-    "context": "Cavendish had published 5.48; Baily's corrected average from the same 29 measurements was 5.448, actually closer to the modern 5.514. John Henry Poynting confirmed the re-check decades later. Source: APS News, June 2008.",
+    "context": "Cavendish had published 5.48; Baily's corrected average of the same 29 measurements was 5.448. As it happens, the slip had flattered him: the printed 5.48 sits nearer today's 5.514 than the corrected figure does. Sources: APS News, June 2008; https://en.wikipedia.org/wiki/Cavendish_experiment",
     "topic": "cavendish-weighs-the-world"
   },
   {
@@ -4187,28 +4135,28 @@
   },
   {
     "tier": 3,
-    "question": "Cecilia Payne read Henry Norris Russell's letter and feared her whole thesis would be thrown out. She added a hedging sentence at an advisor's urging, while her calculated numbers stayed in the text. Which sentence did she add?",
-    "answer": "'The enormous abundance derived for these elements is almost certainly not real.'",
+    "question": "Cecilia Payne read Henry Norris Russell's letter and feared her whole thesis would be thrown out. Pressed by her seniors, she added one hedging sentence, while her calculated numbers stayed in the text. What did that sentence say about her enormous hydrogen figures?",
+    "answer": "That they were almost certainly not real",
     "choices": [
-      "'The enormous abundance derived for these elements is almost certainly not real.'",
-      "'The strength of the hydrogen lines has probably been overestimated by the plates.'",
-      "'A revised temperature scale would very likely bring these numbers back into line with the Earth.'",
-      "'The excess of hydrogen appears to be a peculiarity of the hottest stars alone.'"
+      "That they were almost certainly not real",
+      "That the plates had probably overstated them",
+      "That a revised temperature scale would shrink them",
+      "That they held only for the very hottest stars"
     ],
-    "context": "At Russell and Shapley's urging, Payne inserted the sentence 'The enormous abundance derived for [hydrogen and helium] is almost certainly not real' into the published thesis -- but she left the calculated numbers themselves standing. The finding was softened in prose, never in the data. Source: https://www.aps.org/apsnews/2015/01/cecilia-payne-gaposchkin-universe-changed  (Legend.)",
+    "context": "At Russell's and Shapley's urging, Payne wrote into the published thesis that the enormous abundance she had derived was 'almost certainly not real', but she left the calculated numbers themselves standing. The finding was softened in prose, never in the data. Source: https://www.aps.org/apsnews/2015/01/cecilia-payne-gaposchkin-universe-changed",
     "topic": "cecilia-payne-and-the-hydrogen-sun"
   },
   {
-    "tier": 4,
-    "question": "Henry Norris Russell wrote his own paper on the Sun's atmosphere in 1929, four years after Cecilia Payne's thesis. He reached the same hydrogen-heavy answer by a different route and listed its ratios by volume. Much of the public credit for the discovery drifted to him. What breakdown did his paper publish?",
-    "answer": "About 60 parts hydrogen, 2 helium, 2 oxygen, 1 metallic vapors, 0.8 free electrons",
+    "tier": 3,
+    "question": "Henry Norris Russell of Princeton wrote his own paper on the Sun's atmosphere in 1929, four years after Cecilia Payne's thesis, and listed its make-up by volume. He reached the same hydrogen-heavy answer by a different route. What became of the public credit for the discovery?",
+    "answer": "Much of it drifted to Russell",
     "choices": [
-      "About 60 parts hydrogen, 2 helium, 2 oxygen, 1 metallic vapors, 0.8 free electrons",
-      "About 40 parts hydrogen, 20 helium, 10 oxygen, 5 metallic vapors, 2 free electrons",
-      "About 30 parts hydrogen, 30 helium, 5 oxygen, 3 metallic vapors, 1 free electrons",
-      "About 90 parts hydrogen, 1 helium, 1 oxygen, 0.5 metallic vapors, 0.2 free electrons"
+      "Much of it drifted to Russell",
+      "Nearly all of it stayed with Payne",
+      "Most of it went to Meghnad Saha",
+      "Most of it went to Harlow Shapley"
     ],
-    "context": "Russell, 'On the Composition of the Sun's Atmosphere,' Astrophysical Journal vol. 70, p. 11 (1929) -- four years after Payne's thesis. He estimated the Sun's atmosphere as roughly 60 parts hydrogen by volume, 2 helium, 2 oxygen, 1 metallic vapors, and 0.8 free electrons -- publicly settling that hydrogen was by far the dominant element, four years after Payne had said so. Source: https://ui.adsabs.harvard.edu/abs/1929ApJ....70...11R/abstract",
+    "context": "Russell, 'On the Composition of the Sun's Atmosphere,' Astrophysical Journal vol. 70, p. 11 (1929). He put the solar atmosphere at roughly 60 parts hydrogen by volume to 2 helium, 2 oxygen, 1 metallic vapours and 0.8 free electrons. Coming from the most powerful astronomer in America, the result settled the question, and much of the credit went with it, though Payne had reached the answer four years earlier. Source: https://ui.adsabs.harvard.edu/abs/1929ApJ....70...11R/abstract",
     "topic": "cecilia-payne-and-the-hydrogen-sun"
   },
   {
@@ -4309,10 +4257,10 @@
     "choices": [
       "An electric current creates a magnetic field around the wire",
       "A moving magnet produces an electric current in a coil",
-      "Copper conducts electricity better than iron does",
-      "Batteries lose voltage steadily as they warm up"
+      "The wire's heat bends the Earth's magnetism near it",
+      "A compass needle holds a hidden electric charge"
     ],
-    "context": "Orsted had spent years expecting a link between electricity and magnetism, and in 1820 the anomaly finally arrived. A prepared mind is not a lucky mind - it is a mind with an expectation already loaded, waiting for an anomaly to fit. Berzelius was the great Swedish chemist of the era, Forchhammer a Danish geologist-chemist, Schumacher a Danish astronomer - all contemporaries. Source: APS News, 'July 1820: Orsted & Electromagnetism' (https://www.aps.org/apsnews/2008/07/1820-oersted-electromagnetism).",
+    "context": "Orsted had spent years expecting a link between electricity and magnetism, and in 1820 the anomaly finally arrived: the needle swung because the current wrapped the wire in a magnetic field. A prepared mind is not a lucky mind - it is a mind with an expectation already loaded, waiting for an anomaly to fit. The reverse effect, a moving magnet driving a current through a coil, waited for Michael Faraday in 1831. Source: APS News, 'July 1820: Orsted & Electromagnetism' (https://www.aps.org/apsnews/2008/07/1820-oersted-electromagnetism).",
     "topic": "chance-favors-the-prepared-mind"
   },
   {
@@ -4338,7 +4286,7 @@
       "It splits down the middle into two smaller stars",
       "It swells outward forever into a huge nebula"
     ],
-    "context": "All four are real Indian physicists of that generation. Chandrasekhar was on his way to graduate work at Cambridge. Source: Wikipedia, Chandrasekhar limit.",
+    "context": "Chandrasekhar was on his way to graduate work at Cambridge. Above roughly 1.4 Suns, the squeezed electrons can no longer hold a dead star's core up against its own gravity, so it keeps collapsing, into a neutron star or a black hole. Source: https://en.wikipedia.org/wiki/Chandrasekhar_limit",
     "topic": "chandrasekhars-limit-and-eddingtons-law-of-nature"
   },
   {
@@ -4369,33 +4317,33 @@
   },
   {
     "tier": 4,
-    "question": "Chandrasekhar calculated in 1930 that a white dwarf, the hot, dense ember the size of Earth left when a Sun-like star runs out of fuel, can balance against its own gravity only below a limit measured in suns. Where did his calculation place that upper limit?",
+    "question": "A white dwarf, the Earth-sized ember a Sun-like star leaves when its fuel runs out, already holds roughly the Sun's mass. Older theory let such embers grow to any mass and stay steady. Subrahmanyan Chandrasekhar's 1930 calculation set a ceiling instead. Where did he put it?",
     "answer": "About 1.4 suns",
     "choices": [
       "About 1.4 suns",
-      "About half a sun",
+      "About 100 suns",
       "About 3 suns",
       "About 10 suns"
     ],
-    "context": "Chandrasekhar had seen the program and knew Eddington would speak next, but the content had not been shared. Eddington was the most famous astrophysicist alive at the time. Chandrasekhar left depressed.",
+    "context": "Chandrasekhar's ceiling sits at roughly 1.4 times the Sun's mass, now usually given as about 1.44. Because a white dwarf already holds about one Sun, the margin is small: add a little more and the electrons, driven toward the speed of light, can no longer push back hard enough. The limit now carries his name. Source: https://en.wikipedia.org/wiki/Chandrasekhar_limit",
     "topic": "chandrasekhars-limit-and-eddingtons-law-of-nature"
   },
   {
     "tier": 5,
-    "question": "Arthur Eddington rose in London in January 1935, before the Royal Astronomical Society, and attacked Subrahmanyan Chandrasekhar's result in public: any dying star above a certain mass cannot settle as a stable white dwarf and must keep collapsing. In The Observatory that year he put his objection in print. What did he write?",
-    "answer": "'There should be a law of Nature to prevent a star from behaving in this absurd way.'",
+    "question": "Arthur Eddington rose in London in January 1935, before the Royal Astronomical Society, and attacked Subrahmanyan Chandrasekhar's result in public: any dying star above a certain mass cannot settle as a stable white dwarf and must keep collapsing. In The Observatory that year he put his objection in print. What did his printed objection say?",
+    "answer": "That a law of Nature ought to stop a star from behaving in so absurd a way",
     "choices": [
-      "'There should be a law of Nature to prevent a star from behaving in this absurd way.'",
-      "'Chandrasekhar's arithmetic is beyond reproach; his physics is not yet.'",
-      "'Above such a mass, the star must first shed matter to save itself.'",
-      "'The equation is correct but the boundary conditions of a real star will never touch it.'"
+      "That a law of Nature ought to stop a star from behaving in so absurd a way",
+      "That Chandrasekhar's arithmetic was sound but his physics not yet settled",
+      "That a star above that mass would first shed matter and so save itself",
+      "That the equation held, but no real star would ever reach its boundary"
     ],
-    "context": "The consequence Eddington could not accept: above the limit, nothing was left to halt total collapse -- a star crushed to a few kilometers or to a point. He preferred to think the equation itself must be wrong. Only the first is his real 1935 quote.",
+    "context": "The consequence Eddington could not accept: above the limit, nothing was left to halt total collapse -- a star crushed to a few kilometers or to a point. He preferred to think the equation itself must be wrong. His words in The Observatory (1935): 'There should be a law of Nature to prevent a star from behaving in this absurd way.'",
     "topic": "chandrasekhars-limit-and-eddingtons-law-of-nature"
   },
   {
     "tier": 5,
-    "question": "Landau, a Soviet physicist, made a bold proposal early in 1932: squeezing a star's core hard enough would make it behave like one giant atomic nucleus. That idea led him to speculate about one kind of collapsed star, decades before any were confirmed. What kind?",
+    "question": "Landau, a Soviet physicist, put a bold idea in print early in 1932: a star's core, squeezed hard enough, would behave like one giant atomic nucleus. Historians now read it as an early forecast of one kind of collapsed star, found only decades later. Which kind?",
     "answer": "A neutron star",
     "choices": [
       "A neutron star",
@@ -4403,7 +4351,7 @@
       "A brown dwarf",
       "A red giant"
     ],
-    "context": "Landau was working with only protons in his atomic-nucleus picture because he did not yet know neutrons existed. After Chadwick's discovery he became the first to speculate seriously about a star made entirely of neutrons. All four names are real Soviet-era physicists.",
+    "context": "Landau wrote the paper in Zurich in 1931, before the neutron was discovered; it appeared in February 1932, the same month Chadwick announced the neutron, and the matching dates later fed a mistaken story that Landau had been answering Chadwick. Historians read his dense stars that look like one giant nucleus as an early anticipation of neutron stars, which Walter Baade and Fritz Zwicky proposed by name in 1934 and astronomers first found, as pulsars, in 1967. White dwarfs were already known, a red giant is swollen rather than collapsed, and a brown dwarf is too small ever to fuse ordinary hydrogen. Source: Yakovlev, Haensel, Baym and Pethick, 'Lev Landau and the conception of neutron stars', Physics-Uspekhi 56 (2013), https://arxiv.org/abs/1210.0682",
     "topic": "chandrasekhars-limit-and-eddingtons-law-of-nature"
   },
   {
@@ -4492,9 +4440,9 @@
       "That rocks really do fall to Earth from space",
       "That meteors are burning volcanic dust",
       "That shooting stars are optical illusions",
-      "That comet tails leave rocky debris"
+      "That lightning forges stones inside storm clouds"
     ],
-    "context": "Lavoisier had died on the guillotine in 1794, the same year Chladni's book appeared; Cuvier and Laplace were French Academy figures of the same period, but the L'Aigle investigation went to Biot. Thousands of stones fell in broad daylight in front of hundreds of witnesses. Source: https://en.wikipedia.org/wiki/Meteorite",
+    "context": "More than three thousand fragments fell on L'Aigle in Normandy on 26 April 1803, in broad daylight and in front of hundreds of witnesses. The French Academy sent the young Jean-Baptiste Biot, whose careful fieldwork on the stones and the witnesses convinced the learned world that rocks really do arrive from space, and Chladni's laughed-at claim of 1794 was vindicated. Until then most scholars followed Aristotle, for whom meteors were vapours from the Earth itself that caught fire in the air. Source: https://en.wikipedia.org/wiki/L%27Aigle_(meteorite)",
     "topic": "chladnis-sand-figures-making-sound-visible"
   },
   {
