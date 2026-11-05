@@ -26859,13 +26859,13 @@
   },
   {
     "tier": 3,
-    "question": "George Gamow, a young visitor working with Max Born at Gottingen, cracked a puzzle open since 1911 in the summer of 1928. An alpha particle sits inside a nucleus behind an electric wall taller than its own energy, yet uranium still decays. He showed the alpha 'leaks through' the wall as a quantum wave. What is this effect called?",
-    "answer": "Quantum tunneling",
+    "question": "George Gamow, a 24-year-old summer visitor at Göttingen, used the brand-new wave mechanics in 1928 to crack an old puzzle. Ronald Gurney and Edward Condon cracked the same puzzle in America that year, and the effect all three relied on is now called quantum tunnelling. What had they explained?",
+    "answer": "How an alpha particle escapes from a uranium nucleus",
     "choices": [
-      "Quantum tunneling",
-      "Radioactive fission",
-      "Nuclear fusion",
-      "Beta decay"
+      "How an alpha particle escapes from a uranium nucleus",
+      "How light knocks electrons loose from a metal plate",
+      "How X-rays pass through flesh but not through bone",
+      "How a hot wire boils electrons off into a vacuum"
     ],
     "context": "George Gamow, born 4 March 1904 in Odessa, was twenty-four and a summer visitor at Gottingen when he worked out that the alpha particle escapes by tunnelling through the Coulomb barrier. He was not alone: Ronald Gurney and Edward Condon published 'Wave Mechanics and Radioactive Disintegration' in Nature that same year (vol. 122, p. 439, 1928), arguing that radioactive decay follows from the ordinary laws of quantum mechanics with no special hypothesis added; Leonid Mandelstam and Mikhail Leontovich hit on tunnelling independently in 1928 as well; and J. Robert Oppenheimer's two 1928 papers on field emission were the same physics under a different name. Nobody even called it tunnelling yet — the German Tunneleffekt appears with Walter Schottky in 1931, and the English 'tunnel effect' entered use in 1932 via Yakov Frenkel's textbook. SOURCE: Grokipedia 'George Gamow' (grokipedia.com/page/George_Gamow) — born 4 March 1904 in Odessa, age 24 at Gottingen under Max Born in summer 1928. Nature 122, 439 (1928), Gurney and Condon (nature.com/articles/122439a0). Mandelstam/Leontovich, Oppenheimer, and the naming dates: en.wikipedia.org/wiki/Quantum_tunnelling.",
     "topic": "quantum-tunnelling-why-the-sun-shines-and-your-flash-drive-r"
@@ -26982,7 +26982,7 @@
       "It creeps slowly along the nerves toward the brain",
       "It hides in the bloodstream for months without moving",
       "It waits in the liver until the next fever",
-      "It becomes dangerous only during a full moon"
+      "It lingers in the lymph glands for half a year"
     ],
     "context": "The nerve journey typically takes weeks to months. A vaccine started after a bite can still teach the immune system in time. Modern rabies post-exposure prophylaxis works on exactly this principle. Source: Utah Poison Control, 'Rabies Post-Exposure Prophylaxis'.",
     "topic": "rabies-and-the-boy-pasteur-was-not-allowed-to-inject"
@@ -27027,19 +27027,6 @@
     "topic": "rabies-and-the-boy-pasteur-was-not-allowed-to-inject"
   },
   {
-    "tier": 5,
-    "question": "Eugene Wollman wrote in his diary about the death of Joseph Meister, the Pasteur Institute's caretaker, in June 1940. The famous legend says Meister shot himself rather than open Pasteur's crypt for occupying German soldiers. The diary and Meister's granddaughter tell a different story. What did they actually record?",
-    "answer": "He killed himself with gas, believing his family had been captured",
-    "choices": [
-      "He killed himself with gas, believing his family had been captured",
-      "He was shot by the Germans at the crypt door on 14 June",
-      "He died of a heart attack on the day Paris fell",
-      "He escaped to Switzerland and died there years later"
-    ],
-    "context": "Wollman's diary dates the suicide 24 June 1940 and specifies gas, not a gunshot. Meister had sent his family away for safety, then heard news that made him believe they had been taken; his family in fact returned a few hours after he died. Source: Nature news feature, 'Louis Pasteur: The war on rabies', 2013.  (Legend.)",
-    "topic": "rabies-and-the-boy-pasteur-was-not-allowed-to-inject"
-  },
-  {
     "tier": 3,
     "question": "The Russian tsar and the emperor of Brazil were among the foreign heads of state who sent donations to Paris once news of the treatment spread. Thousands of bitten patients arrived too. In 1888 the French president opened what all that money had built. What was it?",
     "answer": "A brand-new research institute in Paris devoted to infectious disease",
@@ -27071,9 +27058,9 @@
     "answer": "Asking anyone at all for an explanation",
     "choices": [
       "Asking anyone at all for an explanation",
-      "Formally claiming priority for a discovery",
-      "Retracting an earlier density paper",
-      "Announcing a new prize for young chemists"
+      "Asking other labs to repeat his weighings",
+      "Withdrawing an earlier density figure",
+      "Warning chemists off a faulty method"
     ],
     "context": "The letter is Nature vol. 46, p. 512 (1892). A Nobel-caliber physicist openly saying 'help' is a small piece of the scientific method most textbooks skip.",
     "topic": "ramsay-finds-a-whole-column-nobody-suspected"
@@ -27502,9 +27489,9 @@
       "That the patient's body becomes resistant to the drug",
       "That the virus causing the illness becomes resistant",
       "That the antibiotic itself weakens with repeated use",
-      "That resistance is inherited from your own parents"
+      "That resistance is inherited from a person's parents"
     ],
-    "context": "Your body never becomes resistant to an antibiotic -- the bacteria do, and then they travel to other people. The same survey found 66% believed they were personally safe as long as they took antibiotics exactly as prescribed, and 44% thought resistance only threatened people who take antibiotics often. It is a population's germs that change, not one patient's flesh. Source: WHO multi-country survey, 16 November 2015 (paho.org; iris.who.int).",
+    "context": "A patient's body never becomes resistant to an antibiotic -- the bacteria do, and then they travel to other people. The same survey found 66% believed they were personally safe as long as they took antibiotics exactly as prescribed, and 44% thought resistance only threatened people who take antibiotics often. It is a population's germs that change, not one patient's flesh. Source: WHO multi-country survey, 16 November 2015 (paho.org; iris.who.int).",
     "topic": "resistance-evolution-you-can-watch-in-a-hospital"
   },
   {
@@ -27704,7 +27691,7 @@
   },
   {
     "tier": 4,
-    "question": "A boy warms his face at a 250-watt red heat lamp for hours, pleasantly. Twenty minutes in bright noon sunlight, at roughly the same total wattage on his skin, can leave him visibly sunburned. The Sun's ultraviolet does the burning, though the lamp puts more total warmth on him. What sets a single ultraviolet particle of light apart from a red-lamp one?",
+    "question": "A boy warms his face at a 250-watt red heat lamp for hours, pleasantly. Twenty minutes in bright noon sunlight can leave him visibly sunburned, though over those hours the lamp puts more total warmth on him. The Sun's ultraviolet does the burning. What sets a single ultraviolet particle of light apart from a red-lamp one?",
     "answer": "It carries more energy per particle -- enough to break chemical bonds in skin",
     "choices": [
       "It carries more energy per particle -- enough to break chemical bonds in skin",
@@ -27912,26 +27899,13 @@
   },
   {
     "tier": 2,
-    "question": "Howard Scott promised to get rid of politicians and money itself in the winter of 1932-33, when a quarter of America was out of work. His movement briefly beat every other Depression fix and would have handed the continent to engineers. What did the movement call itself?",
-    "answer": "Technocracy",
+    "question": "Howard Scott, an American engineer, set out in the 1930s to abolish money. Every citizen would get energy certificates instead, a share of the continent's power output, and Scott gave them one rule for any certificate its owner left unspent. What was the rule?",
+    "answer": "It expired at the end of its period",
     "choices": [
-      "Technocracy",
-      "Corporatism",
-      "The Grange",
-      "Distributism"
-    ],
-    "context": "Formally the Committee on Technocracy, founded in 1932 by Howard Scott and Columbia's Walter Rautenstrauch. At its peak in early 1933 as many as a quarter-million Americans belonged to Technocracy clubs. See https://en.wikipedia.org/wiki/Technocracy_movement",
-    "topic": "rule-by-the-experts-technocracy-inc-to-ostroms-canals"
-  },
-  {
-    "tier": 2,
-    "question": "Howard Scott, an American engineer, set out in the 1930s to replace the dollar itself with a ration slip given to every citizen. His slip was counted not in money but in a physical amount, measurable in theory for the whole continent at once. What did he call the slip?",
-    "answer": "The energy certificate",
-    "choices": [
-      "The energy certificate",
-      "The labour hour",
-      "The greenback ration",
-      "The producer note"
+      "It expired at the end of its period",
+      "It lost a little value every month",
+      "It could be cashed in for gold",
+      "It could be lent out at interest"
     ],
     "context": "Every citizen's certificates were to be worth an equal share of the year's power output. Unspent certificates would expire so no one could hoard. Scott argued this would settle 'the price problem' by removing prices altogether. See https://www.americanheritage.com/howard-scott-and-his-technocratic-utopia",
     "topic": "rule-by-the-experts-technocracy-inc-to-ostroms-canals"
@@ -27964,15 +27938,15 @@
   },
   {
     "tier": 4,
-    "question": "Garrett Hardin imagined a village pasture open to every herdsman in his 1968 essay 'The Tragedy of the Commons'. Each one, he argued, would keep adding cattle until the grass was destroyed, because each extra animal was pure profit for him while the cost of overgrazing was shared by all. Later critics said no real village of shepherds is like that. What does his parable quietly assume about the herdsmen?",
+    "question": "Garrett Hardin imagined a pasture open to every herdsman in his 1968 essay 'The Tragedy of the Commons'. Each one, he argued, would keep adding cattle until the grass was destroyed, because each extra animal was pure profit for him while the cost of overgrazing was shared by all. Critics later found an assumption tucked inside the parable. What does it quietly assume about the herdsmen?",
     "answer": "That the herdsmen cannot talk to each other, watch each other, or punish each other",
     "choices": [
       "That the herdsmen cannot talk to each other, watch each other, or punish each other",
       "That the pasture regrows at the same rate no matter how much has been eaten",
-      "That the herdsmen own their cattle privately rather than as a village herd",
-      "That the price of beef is fixed and does not rise as more animals go to market"
+      "That the herdsmen have no idea that too many cattle will ruin the grass",
+      "That the price of beef holds steady however many animals go to market"
     ],
-    "context": "Real users of a shared resource in fact talk, watch, and punish, and that single missing feature is the difference between Hardin's thought experiment and a law of nature. Once you put the herdsmen in a village together, the arithmetic changes. See https://aeon.co/essays/the-tragedy-of-the-commons-is-a-false-and-dangerous-myth",
+    "context": "Real users of a shared resource often do talk, watch and punish one another, as Elinor Ostrom's fieldwork went on to document, and that changes the arithmetic. Where users truly cannot, on a resource open to all with no rules, Hardin's tragedy can still play out. See https://aeon.co/essays/the-tragedy-of-the-commons-is-a-false-and-dangerous-myth",
     "topic": "rule-by-the-experts-technocracy-inc-to-ostroms-canals"
   },
   {
@@ -28011,7 +27985,7 @@
       "Milton Friedman: a planner underestimates how long monetary policy takes to bite",
       "Joseph Schumpeter: a planner cannot predict which innovations will destroy the old order"
     ],
-    "context": "The essay was 'The Use of Knowledge in Society'. Written in the middle of the socialist-calculation debate, it is Ostrom's canals with a title page: the man walking the field notebooks along the Torbel meadows was collecting exactly the knowledge Hayek said no central desk could ever hold. See https://en.wikipedia.org/wiki/The_Use_of_Knowledge_in_Society",
+    "context": "The essay was 'The Use of Knowledge in Society'. Written in the middle of the socialist-calculation debate, it is Ostrom's canals with a title page: the fieldworkers who walked the Torbel meadows with notebooks were collecting exactly the knowledge Hayek said no central desk could ever hold. See https://en.wikipedia.org/wiki/The_Use_of_Knowledge_in_Society",
     "topic": "rule-by-the-experts-technocracy-inc-to-ostroms-canals"
   },
   {
@@ -28224,15 +28198,15 @@
   },
   {
     "tier": 4,
-    "question": "A shipyard crew bolts a block of a different metal to the outside of a steel hull, and home water heaters have a rod of the same metal screwed into the tank. The block or rod slowly corrodes away and is replaced on a schedule, while the steel beside it stays untouched. What is the block, and why does it corrode in place of the steel?",
-    "answer": "Zinc, because zinc gives up electrons more readily than iron (-0.76 V against -0.44 V), so the surface battery eats zinc and spares steel",
+    "question": "A shipyard crew bolts blocks of a different metal to the outside of a steel hull. Over the months the blocks slowly corrode away and are replaced on a schedule, while the steel beside them stays sound. What are the blocks, and why do they corrode in place of the steel?",
+    "answer": "Zinc, because zinc gives up electrons more readily than iron, so the surface battery eats zinc and spares steel",
     "choices": [
-      "Copper, because copper conducts electricity better than steel and short-circuits any corrosion current running along the hull",
-      "Lead, because lead is denser than steel and settles a heavy protective coating over the hull under water",
-      "Zinc, because zinc gives up electrons more readily than iron (-0.76 V against -0.44 V), so the surface battery eats zinc and spares steel",
-      "Tin, because tin has a lower melting point than steel and forms a soft sealing layer around the hull below water"
+      "Zinc, because zinc gives up electrons more readily than iron, so the surface battery eats zinc and spares steel",
+      "Copper, because copper conducts electricity better than steel and short-circuits any corrosion current along the hull",
+      "Lead, because lead's heavy oxide spreads over the nearby hull and seals the steel away from the seawater",
+      "Nickel, because nickel resists seawater far better than steel and lends that resistance to the hull it touches"
     ],
-    "context": "They are called sacrificial anodes. Zinc's standard reduction potential is more negative than iron's, so in a shared electrolyte the zinc becomes the anode and dissolves while the iron becomes the cathode and is protected. Galvanising is the same bargain painted on as a thin zinc coating. Source: https://www.marineinsight.com/understanding-sacrificial-anodes-on-ships/",
+    "context": "They are called sacrificial anodes. Zinc's standard reduction potential, -0.76 volts against iron's -0.44, is the more negative, so in a shared electrolyte the zinc becomes the anode and dissolves while the iron becomes the cathode and is protected. Galvanising is the same bargain applied as a thin zinc coating. Source: https://www.marineinsight.com/understanding-sacrificial-anodes-on-ships/",
     "topic": "rust-fire-running-in-slow-motion"
   },
   {
@@ -28380,20 +28354,20 @@
   },
   {
     "tier": 1,
-    "question": "'A fire-breathing dragon lives in my garage,' says the friend Carl Sagan imagined. Camera? She's invisible. Flour for footprints? She floats. Infrared for the fire? The fire is heatless. Spray paint? She's incorporeal. What is Sagan's own closing question?",
+    "question": "'A fire-breathing dragon lives in my garage,' Carl Sagan imagines telling a reader in all seriousness. Camera? She's invisible. Flour for footprints? She floats. Infrared for the fire? The fire is heatless. Spray paint? She's incorporeal. What is Sagan's own closing question?",
     "answer": "what is the difference between this dragon and no dragon",
     "choices": [
       "what is the difference between this dragon and no dragon",
-      "why should we bother believing you at all",
+      "why should anyone believe such a claim at all",
       "what test could still catch her out",
-      "why does your neighbour also claim one"
+      "who else has ever seen this dragon"
     ],
     "context": "Sagan's exact wording: 'Now, what's the difference between an invisible, incorporeal, floating dragon who spits heatless fire and no dragon at all?' Source: The Demon-Haunted World, 1995.",
     "topic": "sagans-dragon-in-the-garage"
   },
   {
     "tier": 2,
-    "question": "Carl Sagan's imagined friend meets every test of his garage dragon with an excuse, and each excuse shows up only after the test is proposed. The camera fails, so she is invisible; the flour fails, so she floats; the heat sensor fails, so the fire is cold. A claim rebuilt for each new test has quietly done what?",
+    "question": "Carl Sagan plays the believer in his own garage-dragon parable, meeting each test with an excuse invented only after the test is proposed. The camera fails, so she is invisible; the flour fails, so she floats; the heat sensor fails, so her fire is cold. A claim rebuilt for each test has done what?",
     "answer": "stopped predicting anything at all",
     "choices": [
       "stopped predicting anything at all",
@@ -28401,7 +28375,7 @@
       "become simpler to prove wrong",
       "gained more evidence in its favour"
     ],
-    "context": "A claim that predicts nothing cannot be checked by anyone, including you; that is the whole point of the parable. Source: Carl Sagan, The Demon-Haunted World, 1995.",
+    "context": "A claim that predicts nothing cannot be checked by anyone, including the person making it; that is the whole point of the parable. Source: Carl Sagan, The Demon-Haunted World, 1995.",
     "topic": "sagans-dragon-in-the-garage"
   },
   {
@@ -28432,7 +28406,7 @@
   },
   {
     "tier": 5,
-    "question": "Carl Sagan set a pair of scientific habits at the heart of his tools for spotting bad arguments in his 1995 book The Demon-Haunted World. The two must be held together, he wrote. Drop either half, he warned, and science breaks down. Which pair did he name?",
+    "question": "Carl Sagan wrote in his 1995 book The Demon-Haunted World that a pair of habits sits at the heart of science, and that the two must be held together. Drop either half, he warned, and science breaks down. Which pair did he name?",
     "answer": "openness to new ideas AND ruthless scrutiny of them",
     "choices": [
       "openness to new ideas AND ruthless scrutiny of them",
@@ -28440,7 +28414,7 @@
       "humility about ignorance AND confidence in method",
       "trust in experts AND respect for laypeople"
     ],
-    "context": "Sagan's full line: without openness of the near-limitless kind, science ossifies; without ruthlessly skeptical scrutiny, it drowns in dragons and every other seductive claim. The balance is the whole game. Source: The Demon-Haunted World, 1995.",
+    "context": "Sagan's point, in paraphrase: openness alone cannot tell a good idea from a bad one, and scrutiny alone lets no new idea in, so a thinker who can manage only one of the two is in deep trouble. The balance is the whole game. Source: The Demon-Haunted World, 1995.",
     "topic": "sagans-dragon-in-the-garage"
   },
   {
@@ -28653,7 +28627,7 @@
   },
   {
     "tier": 4,
-    "question": "Erwin Schrodinger paused deep inside his 1935 paper on the cat to single out one feature of quantum theory. He called it the characteristic trait of quantum mechanics, the one that pulls it entirely away from classical thinking, and he gave it a new name. Today it is the working substance of quantum computing. What did he name?",
+    "question": "Erwin Schrodinger singled out one feature of quantum theory in 1935, the same year he built his cat. He called it the characteristic trait of quantum mechanics, the one that pulls it entirely away from classical thinking, and he gave it a new name. Today it is the working substance of quantum computing. What did he name?",
     "answer": "Entanglement",
     "choices": [
       "Entanglement",
@@ -28661,20 +28635,7 @@
       "Uncertainty",
       "Complementarity"
     ],
-    "context": "Schrodinger's German word was Verschrankung. In the same paper meant to embarrass the theory he named its crown jewel; today entanglement is the resource behind quantum cryptography and every serious quantum computer design. Source: Karol Zyczkowski lecture notes, https://chaos.if.uj.edu.pl/~karol/GQS2_16.pdf",
-    "topic": "schrodingers-cat-was-a-rebuke"
-  },
-  {
-    "tier": 4,
-    "question": "Erwin Schrodinger went to a workshop trade in 1935 for a German word, 'Verschrankung', to describe how quantum particles stay linked. He did not build it from Greek roots: in the trade it names a specific way of locking two pieces of material together so they cannot easily come apart. Which craft did the word come from?",
-    "answer": "A joiner's dovetail in wooden furniture",
-    "choices": [
-      "A joiner's dovetail in wooden furniture",
-      "A smith's weld along an iron seam",
-      "A weaver's cross of two threads at a loom",
-      "A mason's mortared bond between two bricks"
-    ],
-    "context": "In a joiner's dovetail, two boards interlock with wedge-shaped teeth so that pulling them apart is nearly impossible; Schrodinger liked that as a picture for how two quantum states become inseparable. The metaphor still holds up: measure one particle and the other's outcome is locked in, even far apart. Source: Scientific American on entanglement, https://www.scientificamerican.com/article/quantum-entanglement-isnt-all-that-spooky-after-all1/",
+    "context": "Schrodinger's German word was Verschrankung, and he rendered it himself as 'entanglement'; the 'characteristic trait' line comes from his English paper of 1935 on separated systems. In the same year he built a thought experiment to embarrass the theory, he named its crown jewel; today entanglement is the resource behind quantum cryptography and every serious quantum computer design. Source: https://en.wikipedia.org/wiki/Quantum_entanglement",
     "topic": "schrodingers-cat-was-a-rebuke"
   },
   {
@@ -28701,19 +28662,6 @@
       "A neutron held in a magnetic bottle inside a lead shield"
     ],
     "context": "The cavity was about 2.7 cm long, its curved mirrors superconducting and chilled almost to absolute zero, and rubidium atoms in a quantum superposition were shot through it one at a time to count the photons without destroying them. The bigger the 'cat', the faster it died: exactly what the theory predicted. Haroche shared the 2012 Nobel Prize in Physics with David Wineland for this work. Source: APS Physics, https://physics.aps.org/articles/v5/114",
-    "topic": "schrodingers-cat-was-a-rebuke"
-  },
-  {
-    "tier": 3,
-    "question": "Erwin Schrodinger published the paper that introduced his famous cat in 1935. It is a classic of physics now, but the fame took its time. Roughly how many times had it been cited by 1975?",
-    "answer": "About 26 times in forty years",
-    "choices": [
-      "About 26 times in forty years",
-      "About 260 times in forty years",
-      "About 2,600 times in forty years",
-      "It topped the citation list every year"
-    ],
-    "context": "The paper drew only around 26 citations in its first forty years. The cat escaped into pop culture from the 1970s onward, largely through popularizations and science-fiction writers, long after Schrodinger's original argument was mostly forgotten by physicists themselves. Source: Wikipedia, https://en.wikipedia.org/wiki/Schr%C3%B6dinger%27s_cat",
     "topic": "schrodingers-cat-was-a-rebuke"
   },
   {
@@ -28791,7 +28739,7 @@
       "Sprayed it back at the surface to write atomic-scale patterns",
       "Compared it to a beam of X-rays to build a hologram of the surface"
     ],
-    "context": "This is the scanning tunnelling microscope. Because the tunnelling current shrinks exponentially with distance, holding it constant while scanning turns the tip's height record into an atomic-height map. Binnig and Rohrer shared the 1986 Nobel Prize in Physics with Ernst Ruska for the design. Source: https://www.nobelprize.org/uploads/2018/06/rohrer-lecture.pdf",
+    "context": "This is the scanning tunnelling microscope. Because the tunnelling current shrinks exponentially with distance, holding it constant while scanning turns the tip's height record into an atomic-height map. Binnig and Rohrer won half of the 1986 Nobel Prize in Physics for the design; the other half went to Ernst Ruska for the electron microscope. Source: https://www.nobelprize.org/uploads/2018/06/rohrer-lecture.pdf",
     "topic": "seeing-one-atom-and-then-picking-it-up"
   },
   {
@@ -28822,7 +28770,7 @@
   },
   {
     "tier": 5,
-    "question": "Gerd Binnig and Heinrich Rohrer built their first scanning microscope in 1981. A machine of that kind shows what look like round bumps in a neat grid, the individual atoms of a metal surface. People often say the machine 'photographs' the atoms, and the two men insist that word is wrong. Their instrument's pictures are not photographs at all. Why not?",
+    "question": "Gerd Binnig and Heinrich Rohrer built their first scanning microscope in 1981. A machine of that kind shows what look like round bumps in a neat grid, the individual atoms of a metal surface. People often say it 'photographs' the atoms, but strictly its pictures are not photographs at all. Why not?",
     "answer": "The images are built from a tunnelling current, not light through a lens",
     "choices": [
       "The images are built from a tunnelling current, not light through a lens",
@@ -28991,15 +28939,15 @@
   },
   {
     "tier": 5,
-    "question": "Ignaz Semmelweis's wife Maria and his colleagues, Ferdinand von Hebra among them, brought him to Döbling outside Vienna on 30 July 1865, telling him it was a rest cure. He worked out where he was and refused to stay; the guards beat him and shut him in a darkened cell. He was dead fourteen days later, aged 47. What did the autopsy find had killed him?",
+    "question": "Ferdinand von Hebra lured Ignaz Semmelweis into a Vienna institution on 30 July 1865, saying he wanted to show him one of his new institutes. Semmelweis worked out where he was and tried to leave; the guards beat him and shut him in a darkened cell. He was dead fourteen days later, aged 47. What did the autopsy find had killed him?",
     "answer": "Blood poisoning from a gangrenous wound on his right hand",
     "choices": [
       "A stroke brought on by the beating the guards gave him",
-      "Starvation and exhaustion after refusing the asylum's food",
+      "Starvation and exhaustion after refusing all his food",
       "Blood poisoning from a gangrenous wound on his right hand",
       "Tuberculosis of the kind then sweeping the Vienna wards"
     ],
-    "context": "He died on 13 August 1865 of pyaemia -- blood poisoning -- from a gangrenous wound on his right hand taken in the beating, treated with none of the antisepsis he had spent eighteen years demanding; the autopsy found an extensive abscess in the chest wall that had perforated into the chest cavity and reached the sac around the heart. He was killed by the same family of infection that killed his patients, in a hospital that would not wash its hands. A popular retelling has him cutting himself on a cadaver on purpose to prove his point; that is not what the record says. What historians do still argue over is the breakdown that came first -- syphilis, blood poisoning, bipolar illness, early Alzheimer's and sheer exhaustion have all been proposed, and nobody knows. Sources: grokipedia.com/page/Ignaz_Semmelweis; en.wikipedia.org/wiki/Ignaz_Semmelweis; pbs.org/newshour/health/ignaz-semmelweis-doctor-prescribed-hand-washing",
+    "context": "He died on 13 August 1865 of pyaemia -- blood poisoning -- from a gangrenous wound on his right hand, possibly taken in the struggle with the guards, treated with none of the antisepsis he had spent eighteen years demanding; the autopsy found an extensive abscess in the chest wall that had perforated into the chest cavity and reached the sac around the heart. He was killed by the same family of infection that killed his patients, in a hospital that would not wash its hands. A popular retelling has him cutting himself on a cadaver on purpose to prove his point; that is not what the record says. What historians do still argue over is the breakdown that came first -- syphilis, blood poisoning, bipolar illness, early Alzheimer's and sheer exhaustion have all been proposed, and nobody knows. Sources: grokipedia.com/page/Ignaz_Semmelweis; en.wikipedia.org/wiki/Ignaz_Semmelweis; pbs.org/newshour/health/ignaz-semmelweis-doctor-prescribed-hand-washing",
     "topic": "semmelweis-and-the-two-wards"
   },
   {
@@ -29056,11 +29004,11 @@
   },
   {
     "tier": 4,
-    "question": "Roger Penrose worked out in 1974 how to tile any floor endlessly with true fivefold symmetry, using just two simple shapes that never fall into a repeating pattern. Mathematicians had believed a flat floor could be tiled forever only with a handful of simple regular shapes: squares, triangles and hexagons. Which pair of shapes did his most famous version use?",
+    "question": "Roger Penrose worked out in 1974 how to tile a floor endlessly with true fivefold symmetry, using just two simple shapes that never fall into a repeating pattern. Only three regular shapes tile a floor on their own: squares, triangles and hexagons. None of them shows fivefold symmetry. Which pair of shapes did one of his best-known versions use?",
     "answer": "Two rhombuses, one thin and one thick",
     "choices": [
       "Two rhombuses, one thin and one thick",
-      "Two isoceles triangles, one narrow and one wide",
+      "Two trapezoids, one tall and one short",
       "A regular decagon paired with a thin rhombus",
       "A regular pentagon paired with a five-pointed star"
     ],
@@ -29199,28 +29147,15 @@
   },
   {
     "tier": 2,
-    "question": "Bilkisunnessa, an eight-year-old girl in Bangladesh, reported a sick child named Rahima Banu in 1975. Rahima turned out to be the last natural case anywhere of variola major, the deadlier form of smallpox. How many taka did that report earn Bilkisunnessa?",
-    "answer": "250",
+    "question": "A global health team hunting smallpox in the 1970s faced two forms of the virus. On the skin they looked alike, and their DNA was nearly the same, yet one, variola major, was far deadlier than the other, variola minor. Roughly what share of its victims did each kill?",
+    "answer": "Major about one in three; minor about one in a hundred",
     "choices": [
-      "250",
-      "20",
-      "1000",
-      "5000"
+      "Major about one in three; minor about one in a hundred",
+      "Major about one in three; minor about one in ten",
+      "Major about one in ten; minor about one in a thousand",
+      "Major about two in three; minor about one in five"
     ],
-    "context": "An eight-year-old earned 250 taka - the price of ending variola major forever. Banu was isolated at home under 24-hour guard while a house-to-house ring vaccination campaign inside a mile-and-a-half radius stamped out the last natural chain of the deadly form. Source: en.wikipedia.org/wiki/Rahima_Banu",
-    "topic": "smallpox-eradication-honestly-told"
-  },
-  {
-    "tier": 2,
-    "question": "A global health team closed in on smallpox in the late 1970s, a virus that had killed hundreds of millions across history. Its two forms looked alike but killed very differently: variola minor about 1 in 100, variola major roughly 1 in 3. In 1980 an international public-health body declared it eradicated from the wild worldwide. Which one made that certification?",
-    "answer": "The World Health Organization",
-    "choices": [
-      "The World Health Organization",
-      "The Red Cross",
-      "The League of Nations",
-      "The Rockefeller Foundation"
-    ],
-    "context": "Variola major and variola minor share about 98 percent of their DNA yet had case fatality rates of 30 percent and 1 percent respectively. The hemorrhagic and flat presentations of major were nearly always fatal. Source: programs.fas.org/bio/factsheets/smallpoxfs.html",
+    "context": "Variola major and variola minor are two strains of one virus, near-identical in their DNA, yet their case fatality rates were about 30 percent and 1 percent or less. The hemorrhagic and flat presentations of major were nearly always fatal. Source: programs.fas.org/bio/factsheets/smallpoxfs.html",
     "topic": "smallpox-eradication-honestly-told"
   },
   {
@@ -29394,7 +29329,7 @@
   },
   {
     "tier": 2,
-    "question": "Soviet officials guarded Sputnik 1's launch as a state secret, yet a small Soviet magazine called Radio ran a technical note about the coming spacecraft in June 1957. Radio Moscow repeated the same detail three days before launch. What had been given away, so that ham radio operators worldwide could tune in from the first beep?",
+    "question": "Soviet officials guarded Sputnik 1's launch as a state secret, yet a small Soviet magazine called Radio ran a technical note about the coming spacecraft in June 1957. Radio Moscow repeated the same detail three days before launch. What had been given away, so that ham radio operators worldwide were ready from the first beep?",
     "answer": "The frequencies the transmitters would use",
     "choices": [
       "The frequencies the transmitters would use",
@@ -29447,12 +29382,12 @@
   {
     "tier": 4,
     "question": "William Guier and George Weiffenbach ran their tapes of Sputnik's rising and falling tone through a newly delivered Univac computer and proved something nobody had claimed. A single overhead pass holds enough information to fix a satellite's whole orbit. But the proof came with one strict condition attached. What was it?",
-    "answer": "You needed nearly the whole curve, horizon to horizon",
+    "answer": "It needed nearly the whole curve, horizon to horizon",
     "choices": [
-      "You needed nearly the whole curve, horizon to horizon",
-      "You needed the transmitter's exact frequency known beforehand",
-      "You needed the satellite's altitude known to a few kilometres",
-      "You needed each beep timed to a thousandth of a second"
+      "It needed nearly the whole curve, horizon to horizon",
+      "It needed the transmitter's exact frequency known beforehand",
+      "It needed the satellite's altitude known to a few kilometres",
+      "It needed each beep timed to a thousandth of a second"
     ],
     "context": "Nine unknowns came out of one pass at once: six orbital parameters plus three system parameters -- a correction for the satellite's oscillator frequency, its drift, and a one-parameter model of the electron density of the upper air. That last one they had not gone looking for; the ionosphere fell out of the arithmetic as a free bonus. Source: Guier & Weiffenbach, 'Genesis of Satellite Navigation,' JHU APL Technical Digest. (The machine was a Univac 1200F, not the 1103A that some secondary accounts name.)",
     "topic": "sputniks-beep-and-the-accidental-invention-of-satellite-navi"
@@ -29485,7 +29420,7 @@
   },
   {
     "tier": 5,
-    "question": "Frank McClure asked William Guier and George Weiffenbach to flip their problem, known orbit and unknown listener, and he expected the new problem to be more accurate. Their first solve, one pass of data in and one satellite's orbit out, had to pin down every unknown at once. McClure was right: their tests came back with what they called 'unbelievable accuracy'. What made the flipped problem the easier one?",
+    "question": "Frank McClure asked William Guier and George Weiffenbach to flip their problem, known orbit and unknown listener, and he expected the new problem to be more accurate. He was right: their tests came back with what they called 'unbelievable accuracy'. What made the flipped problem the easier one?",
     "answer": "Five unknowns to solve from the same data, not nine",
     "choices": [
       "Five unknowns to solve from the same data, not nine",
@@ -30396,14 +30331,14 @@
   {
     "tier": 5,
     "question": "A drug trial reports a positive effect only on left-handed women over sixty. The obvious worry: the researchers hunted through the data until they found a subgroup that worked. Modern journals demand a discipline called preregistration to block exactly this move. What does preregistration actually require?",
-    "answer": "Committing publicly to your analysis plan before you see the data",
+    "answer": "Committing publicly to an analysis plan before seeing the data",
     "choices": [
-      "Committing publicly to your analysis plan before you see the data",
+      "Committing publicly to an analysis plan before seeing the data",
       "Hiding which patients got the drug from the doctors running the trial",
       "Assigning patients to treatment or placebo by coin flip",
       "Sending the finished manuscript to two independent expert reviewers"
     ],
-    "context": "Preregistration locks the analysis in advance, so a null result cannot quietly disappear into the file drawer and a subgroup 'finding' cannot be quietly invented. The other three choices are real, distinct disciplines -- blinding, randomization, peer review -- worth telling apart. It is the same rule Wald was reaching for: decide what counts BEFORE you see who survived. Source: https://en.wikipedia.org/wiki/Preregistration_(science)",
+    "context": "Preregistration locks the analysis in advance, so a null result cannot quietly disappear into the file drawer and a subgroup 'finding' cannot be quietly invented. Blinding, randomization and peer review are real, distinct disciplines worth telling apart from it. It is the same rule Wald was reaching for: decide what counts BEFORE seeing who survived. Source: https://en.wikipedia.org/wiki/Preregistration_(science)",
     "topic": "survivorship-bias-walds-bombers-and-the-missing-data"
   },
   {
@@ -30758,19 +30693,6 @@
     "topic": "thalidomide-one-molecule-two-hands"
   },
   {
-    "tier": 4,
-    "question": "Frances Kelsey, a new Food and Drug Administration (FDA) medical officer, took up the thalidomide file in August 1960 and kept turning down the company over missing safety data. The United States was mostly spared the disaster. Elsewhere the main defect the drug caused in babies fell on one part of the body. Which part?",
-    "answer": "The arms and legs",
-    "choices": [
-      "The arms and legs",
-      "The heart",
-      "The eyes",
-      "The kidneys"
-    ],
-    "context": "Kelsey delayed the Kevadon application through more than a year of 60-day rebuffs. Richardson-Merrell had, in the meantime, distributed about 2.5 million tablets in the US as 'investigational' samples; confirmed US birth-defect cases came to about 17. Kennedy gave her the President's Award for Distinguished Federal Civilian Service in August 1962. Rosalind Franklin was Photo 51; McClintock the corn geneticist; Elion the drug designer who made azathioprine and acyclovir. Source: en.wikipedia.org/wiki/Frances_Oldham_Kelsey.",
-    "topic": "thalidomide-one-molecule-two-hands"
-  },
-  {
     "tier": 5,
     "question": "A leprosy patient swallows thalidomide under strict pregnancy-prevention rules, for a painful problem called erythema nodosum leprosum. The same molecule has come back into medicine a second way: since 2006 the Food and Drug Administration (FDA) has approved it, given with dexamethasone, for one blood cancer. Which cancer?",
     "answer": "multiple myeloma",
@@ -31045,19 +30967,6 @@
   },
   {
     "tier": 3,
-    "question": "Athanasius Kircher, a German Jesuit scholar, and Magdeburg's mayor, Otto von Guericke, each put a ringing bell inside a glass jar in the mid-1600s and pumped the air out. Both reported they could still hear the bell ring faintly, and both did have leaky pumps. A second, hidden flaw would have fooled them even with a perfectly airtight vacuum. What was it?",
-    "answer": "Their bells were bolted to the vessel, so vibration walked out through the metal",
-    "choices": [
-      "Their bells were bolted to the vessel, so vibration walked out through the metal",
-      "The glass jars amplified any faint sound like a lens focuses light",
-      "Their bells were tuned too high for the human ear to catch",
-      "Their ears grew more sensitive as the jar was pumped down"
-    ],
-    "context": "Solid contact between the ringing body and the vessel routes sound through the walls of the container. Kircher was defeated by his own apparatus, not his reasoning; the demo only works when the source is suspended clear of the vessel and the pump seals well. Source: Museo Galileo biography, https://catalogue.museogalileo.it/biography/AthanasiusKircher.html",
-    "topic": "the-bell-that-fell-silent-in-the-jar"
-  },
-  {
-    "tier": 3,
     "question": "Robert Boyle refused to declare the case closed in 1660. His ticking watch, hung inside the glass vessel of his new air pump, had hinted that sound cannot cross a vacuum, but he had two honest reasons for holding back a verdict. Which pair kept him cautious?",
     "answer": "His pump still leaked, and the suspending thread might be carrying the ticking itself",
     "choices": [
@@ -31101,11 +31010,11 @@
     "answer": "age",
     "choices": [
       "age",
+      "sex",
       "blood type",
-      "handedness",
-      "eye colour"
+      "weight"
     ],
-    "context": "O'Driscoll and colleagues, in Nature in early 2021, found the lowest infection fatality rate in children aged 5-9 and a log-linear rise above age 30. That is the fact this whole story rests on: schools were closed for the age group least at risk from the disease schools were closed for. Source: O'Driscoll et al., Nature (2021).",
+    "context": "O'Driscoll and colleagues, in Nature in early 2021, found the lowest infection fatality rate in children aged 5-9 and a log-linear rise above age 30. That is the fact this whole story rests on: schools were closed for the age group least at risk from the disease. Source: O'Driscoll et al., Nature (2021).",
     "topic": "the-bill-for-the-closed-classroom"
   },
   {
@@ -31213,29 +31122,16 @@
     "topic": "the-bill-for-the-closed-classroom"
   },
   {
-    "tier": 2,
-    "question": "Elon Musk began handing a social-media company's internal emails and Slack messages to outside reporters in December 2022, weeks after he bought it. Matt Taibbi got them first, then Bari Weiss and Michael Shellenberger. The batch of releases got one shared name. What was it?",
-    "answer": "The Twitter Files",
-    "choices": [
-      "The Twitter Files",
-      "The Panama Papers",
-      "The Pentagon Papers",
-      "The Facebook Files"
-    ],
-    "context": "Musk let the journalists publish what they found on the platform itself, forcing the story into the same feeds whose posts the internal tools had been shaping. The Facebook Files (a 2021 Wall Street Journal series) and the earlier Panama and Pentagon papers were all real disclosures -- knowing WHICH is the point.",
-    "topic": "the-blacklists-and-the-courtroom-twitter-files-to-murthy-v-m"
-  },
-  {
     "tier": 3,
-    "question": "Bhattacharya, a Stanford professor, argued that COVID lockdowns would harm children, and his account went on a 'Trends Blacklist'. Bari Weiss named him in her thread on Twitter's private files. He was not banned, and his follower count stayed exactly the same. What is this practice called?",
-    "answer": "Shadow-banning",
+    "question": "Bari Weiss's thread on Twitter's private files named a Stanford professor whose account sat on a 'Trends Blacklist'. He had argued that COVID lockdowns would harm children. Twitter never banned him and never touched his follower count. Who was he?",
+    "answer": "Jay Bhattacharya",
     "choices": [
-      "Shadow-banning",
-      "Deplatforming",
-      "Rate-limiting",
-      "Doxing"
+      "Jay Bhattacharya",
+      "John Ioannidis",
+      "Michael Levitt",
+      "Scott Atlas"
     ],
-    "context": "Bhattacharya had co-authored the Great Barrington Declaration in October 2020. The three other choices -- Atlas, Ioannidis and Prasad -- were all real Stanford or Stanford-adjacent COVID commentators, so knowing which one Weiss actually named is the point.",
+    "context": "Bhattacharya had co-authored the Great Barrington Declaration in October 2020. Twitter quietly kept him out of trends, the practice called shadow-banning. John Ioannidis and Michael Levitt, both Stanford professors, and Scott Atlas of Stanford's Hoover Institution were lockdown critics too, but Weiss's thread named Bhattacharya.",
     "topic": "the-blacklists-and-the-courtroom-twitter-files-to-murthy-v-m"
   },
   {
@@ -31253,28 +31149,15 @@
   },
   {
     "tier": 4,
-    "question": "Two state attorneys general filed a lawsuit on 5 May 2022 that would eventually produce, through pre-trial discovery, most of the emails in which White House staff pressed Facebook and Twitter to pull posts. The suit began under one attorney general's name and was met in court by the federal government. Which two states brought the case?",
-    "answer": "Missouri and Louisiana",
+    "question": "A Rhode Island book distributor in the late 1950s opens a state commission's warning letter on official stationery, listing 'objectionable' titles. No one is arrested and no law is passed, yet he stops selling the books. In 1963 the Supreme Court took up the letters in Bantam Books v. Sullivan. What did it rule?",
+    "answer": "The letters were censorship even without any law behind them",
     "choices": [
-      "Missouri and Louisiana",
-      "Texas and Florida",
-      "Ohio and Kentucky",
-      "Arizona and Georgia"
+      "The letters were censorship even without any law behind them",
+      "The letters were the state's own speech, and so lawful",
+      "The letters were lawful, since he was free to ignore them",
+      "The letters were unlawful only because they named titles"
     ],
-    "context": "The case ran first as Missouri v. Biden and later as Murthy v. Missouri when it reached the Supreme Court. In discovery, emails from White House digital-strategy director Rob Flaherty pressing Facebook and Twitter for takedowns first became public.",
-    "topic": "the-blacklists-and-the-courtroom-twitter-files-to-murthy-v-m"
-  },
-  {
-    "tier": 4,
-    "question": "A Rhode Island bookseller in the late 1950s opens a state commission's warning letter on official stationery, listing 'objectionable' titles. No one is arrested and no statute passes. The Supreme Court still strikes the practice down as unconstitutional censorship in 1963, in Bantam Books v. Sullivan. What is the one-word name for this kind of unlegislated pressure a government puts on a private party?",
-    "answer": "Jawboning",
-    "choices": [
-      "Jawboning",
-      "Filibustering",
-      "Redlining",
-      "Gerrymandering"
-    ],
-    "context": "Bantam Books is the 1963 precedent the 2022-24 social-media cases turned on: a government need not pass a statute to violate the First Amendment -- an official threat is enough. The word 'jawboning' names exactly that pressure.",
+    "context": "The Court called the commission's notices a 'system of informal censorship': a government need not pass a statute to violate the First Amendment, and official pressure on a private party can be enough. Lawyers call that kind of pressure jawboning, and Bantam Books is the precedent the challengers in the 2022-24 social-media cases leaned on. Source: https://en.wikipedia.org/wiki/Bantam_Books,_Inc._v._Sullivan",
     "topic": "the-blacklists-and-the-courtroom-twitter-files-to-murthy-v-m"
   },
   {
@@ -31287,20 +31170,20 @@
       "Election integrity",
       "Presidential authority"
     ],
-    "context": "Doughty also wrote that the government 'seems to have assumed a role similar to an Orwellian Ministry of Truth'. These are the district court's own words -- attribute them to the ruling, not to this question. The injunction blocked most of the administration from contacting social-media platforms about constitutionally protected speech.",
+    "context": "Doughty also wrote that the government 'seems to have assumed a role similar to an Orwellian Ministry of Truth'. These are the district court's own words, not a finding the Supreme Court adopted. The injunction blocked most of the administration from contacting social-media platforms about constitutionally protected speech.",
     "topic": "the-blacklists-and-the-courtroom-twitter-files-to-murthy-v-m"
   },
   {
     "tier": 5,
-    "question": "Six justices of the Supreme Court decided Murthy v. Missouri on 26 June 2024 without ruling on whether the government had censored anyone, one way or the other. They said the people suing could not prove a direct enough injury from the alleged censorship to sue at all. What is this threshold requirement to bring a lawsuit called?",
-    "answer": "Standing",
+    "question": "The Supreme Court took up Murthy v. Missouri in 2024, after a lower court found that federal officials had pressed social-media platforms to take posts down. In June six justices ruled against the states and users who had sued. What did the six actually decide?",
+    "answer": "That the challengers could not sue, so censorship went undecided",
     "choices": [
-      "Standing",
-      "Mootness",
-      "Sovereign immunity",
-      "Res judicata"
+      "That the challengers could not sue, so censorship went undecided",
+      "That the officials had persuaded the platforms, never coerced them",
+      "That the platforms had acted alone, with no pressure from officials",
+      "That the officials' pressure was lawful because it served public health"
     ],
-    "context": "Article III standing requires a plaintiff to show a concrete injury the court can redress. Barrett's opinion held the plaintiffs could not tie particular takedowns to particular government demands, so the courts had no injury to remedy -- the underlying record was not disputed, the case simply never reached the merits. Alito warned the ruling would 'be seen by some as giving the Government a green light to use heavy-handed tactics to skew the presentation of views'.",
+    "context": "The ground was Article III standing, the threshold requirement to sue: a plaintiff must show a concrete injury a court can redress. Justice Barrett's majority held that the challengers could not tie particular takedowns to particular government demands, so the case never reached the merits; in a footnote she added that many of the lower court's factual findings 'unfortunately appear to be clearly erroneous.' Justice Alito, dissenting with Thomas and Gorsuch, wrote that the Court 'unjustifiably refuses to address this serious threat to the First Amendment.' Sources: https://www.supremecourt.gov/opinions/23pdf/23-411_3dq3.pdf ; https://constitutioncenter.org/blog/the-supreme-court-rules-on-government-pressure-websites-to-moderate-content",
     "topic": "the-blacklists-and-the-courtroom-twitter-files-to-murthy-v-m"
   },
   {
@@ -32093,7 +31976,7 @@
       "1 in 70",
       "1 in 256"
     ],
-    "context": "There are exactly 70 ways to choose 4 cups from 8, so a lucky guesser has a 1-in-70 chance of getting all four right. Witnesses (including Fisher's daughter Joan Fisher Box) reported Bristol did in fact get all eight cups right, though Fisher's book presents the design without stating the outcome. Source: https://en.wikipedia.org/wiki/Lady_tasting_tea  (Legend.)",
+    "context": "There are exactly 70 ways to choose 4 cups from 8, so a lucky guesser has a 1-in-70 chance of getting all four right. Fisher's colleague H. Fairfield Smith later said, as the statistician David Salsburg reports, that Bristol did in fact get all eight cups right, though Fisher's book presents the design without stating the outcome. Source: https://en.wikipedia.org/wiki/Lady_tasting_tea  (Legend.)",
     "topic": "the-control-group-from-linds-six-pairs-to-the-randomized-tri"
   },
   {
@@ -32119,7 +32002,7 @@
       "The referring GP choosing which hospital to send the patient to",
       "The enrolling doctor deciding whom to admit next"
     ],
-    "context": "Allocation concealment protects against the enrolling doctor gaming the sequence -- if they can guess which arm the next envelope holds, they can quietly wait for a sicker or healthier patient before enrolling, and the whole trial rots. It is a separate safeguard from double-blinding, which hides which arm a patient is in AFTER enrolment. Source: https://www.jameslindlibrary.org/articles/why-the-1948-mrc-trial-of-streptomycin-used-treatment-allocation-based-on-random-numbers/",
+    "context": "Allocation concealment protects against the enrolling doctor gaming the sequence: a doctor who can guess which arm the next envelope holds can quietly wait for a sicker or healthier patient before enrolling, and the whole trial rots. It is a separate safeguard from double-blinding, which hides which arm a patient is in AFTER enrolment. Source: https://www.jameslindlibrary.org/articles/why-the-1948-mrc-trial-of-streptomycin-used-treatment-allocation-based-on-random-numbers/",
     "topic": "the-control-group-from-linds-six-pairs-to-the-randomized-tri"
   },
   {
@@ -32180,11 +32063,11 @@
     "answer": "In the country's nursing and care homes",
     "choices": [
       "In the country's nursing and care homes",
-      "Among primary-school teachers",
-      "Among healthy adults under forty",
-      "Among tourists returning from ski holidays"
+      "In the country's hospital intensive-care wards",
+      "Among the country's bus and taxi drivers",
+      "Among the country's primary-school teachers"
     ],
-    "context": "The Corona Commission report of 15 December 2020 named hospital discharge policies that did not require testing, lack of PPE, and staffing and organizational problems as drivers; the government and the Public Health Agency both admitted the attempt to shield the elderly had failed. The school decision was vindicated by measurement; the care-home decision was not. Source: The Local, Oct 2021; PMC PMC8436291.",
+    "context": "The Corona Commission report of 15 December 2020 named hospital discharge policies that did not require testing, lack of PPE, and staffing and organizational problems as drivers; the government and the Public Health Agency both admitted the attempt to shield the elderly had failed. The other half of the ledger: across 2020 to 2022 taken together, most methods put Sweden, beside its Nordic neighbours, among the European countries with the lowest excess mortality, though the ranking shifts with the method. The school decision was vindicated by measurement; the care-home decision was not. Sources: The Local, Oct 2021 and March 2023; PMC PMC8436291.",
     "topic": "the-country-that-kept-the-schools-open"
   },
   {
