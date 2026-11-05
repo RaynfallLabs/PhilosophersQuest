@@ -32319,7 +32319,7 @@
   },
   {
     "tier": 2,
-    "question": "Surgeon General Leonard Scheele had a manufacturing and oversight failure on his hands, not evidence that a killed-virus vaccine cannot work. Cutter Laboratories' lots had paralysed dozens of children and had been withdrawn by early May, and no other maker's product had been tied to a single case of paralysis. He acted anyway on 8 May 1955. What did he order?",
+    "question": "Cutter's vaccine had paralysed dozens of children by early May 1955 and been withdrawn. That was a breakdown in making and checking the vaccine, not proof that a killed-virus vaccine cannot work, and no other maker's lots were tied to any case. Surgeon General Leonard Scheele acted anyway on 8 May. What did he order?",
     "answer": "Every polio vaccination in the country stopped.",
     "choices": [
       "Every polio vaccination in the country stopped.",
@@ -32405,7 +32405,7 @@
       "41 paralysed and 5 dead.",
       "300 paralysed and 12 dead."
     ],
-    "context": "On this narrower per-group accounting the bystanders were about two-thirds of all the paralysis - 113 of 169 - so more of the permanently crippled were people who never received the vaccine than were vaccinated children. Keep it separate from the headline figure usually quoted (roughly 120,000 defective doses, over 200,000 children vaccinated in five states, about 40,000 ill, about 200 paralytic cases with over 160 permanent, 10 deaths), which counts vaccinees and contacts together. Source: en.wikipedia.org/wiki/Cutter_Laboratories, citing Nathanson N. & Langmuir A.D., Am. J. Hyg. 1963;78:29-60, and Offit P.A., N Engl J Med 2005;352:1411-1412.",
+    "context": "On this narrower per-group accounting the bystanders were about two-thirds of all the paralysis - 113 of 169 - so more of the paralysed were people who never received the vaccine than were vaccinated children. Keep it separate from the headline figure usually quoted (roughly 120,000 defective doses, over 200,000 children vaccinated in five states, about 40,000 ill, about 200 paralytic cases with over 160 permanent, 10 deaths), which counts vaccinees and contacts together. Source: en.wikipedia.org/wiki/Cutter_Laboratories, citing Nathanson N. & Langmuir A.D., Am. J. Hyg. 1963;78:29-60, and Offit P.A., N Engl J Med 2005;352:1411-1412.",
     "topic": "the-cutter-incident-1955"
   },
   {
@@ -32541,12 +32541,12 @@
   {
     "tier": 3,
     "question": "An engineer heats PTFE (polytetrafluoroethylene) and finds the price of its inertness: it never really flows. Its melt viscosity is around 10^11 pascal-seconds, so it barely moves at all. How do factories shape the loose powder into gaskets and sheet?",
-    "answer": "They press the powder in a mould and fire it, the way you fire a ceramic.",
+    "answer": "They press the powder in a mould and bake it, the way a ceramic is fired.",
     "choices": [
-      "They press the powder in a mould and fire it, the way you fire a ceramic.",
-      "They dissolve the powder in solvent and cast it, the way you cast varnish.",
-      "They soften the powder in steam and roll it, the way you roll rubber.",
-      "They compress the powder cold and bond the layers, the way you press plywood."
+      "They press the powder in a mould and bake it, the way a ceramic is fired.",
+      "They dissolve the powder in solvent and pour it, the way varnish is poured.",
+      "They soften the powder in steam and roll it, the way rubber is rolled.",
+      "They compress the powder cold and glue the layers, the way plywood is pressed."
     ],
     "context": "The process is called sintering: the powder is compacted in a mould and held at 360-380 degrees C, fusing without ever melting, exactly the way a ceramic is fired. Because its melt viscosity is on the order of 10^11 Pa.s, PTFE cannot be injection-moulded like an ordinary plastic. Its inertness was itself the first engineering problem it created. Source: Grokipedia, 'Polytetrafluoroethylene'; Grokipedia, 'Roy J. Plunkett'.",
     "topic": "the-cylinder-that-wasnt-empty"
@@ -32600,7 +32600,7 @@
       "He pulled in short repeated tugs instead of one long draw.",
       "He twisted the rod as he pulled instead of pulling straight."
     ],
-    "context": "The result is expanded PTFE, or ePTFE: microporous, about 70 per cent air, and the basis of Gore-Tex fabric, vascular grafts and Elixir guitar strings. The trick was the speed of the pull - the opposite of what patience would tell you to do. Source: Science History Institute, 'Robert W. Gore'; invent.org, 'Robert W. Gore'.",
+    "context": "The result is expanded PTFE, or ePTFE: microporous, about 70 per cent air, and the basis of Gore-Tex fabric, vascular grafts and Elixir guitar strings. The trick was the speed of the pull - the opposite of what patience would suggest. Source: Science History Institute, 'Robert W. Gore'; invent.org, 'Robert W. Gore'.",
     "topic": "the-cylinder-that-wasnt-empty"
   },
   {
@@ -32990,12 +32990,12 @@
       "A soft red glow that fades evenly outward",
       "A bright ring circling one dark centre spot"
     ],
-    "context": "Babinet's principle: the diffraction pattern from an opaque body is identical to that from a hole of the same size and shape, apart from the forward beam. So a hair paints the same stripes a slit of its width would. The classroom demo uses a wire about 0.1 mm thick; a human hair is roughly 0.05-0.1 mm, the same scale. And it is measurable: bright-fringe spacing follows beta = lambda x L / d (wavelength times distance to the wall, divided by the separation), so with the pointer's wavelength and a pace-count to the wall, a ruler across the stripes lets you work back to the thickness of your own hair. Safety, per the standard protocols: avoid direct eye exposure, use a low-power pointer, block the beam past the wall. Sources: Wikipedia, 'Babinet's principle'; Grokipedia, 'Diffraction' and 'Double-slit experiment' (Standard Experimental Apparatus).",
+    "context": "Babinet's principle: the diffraction pattern from an opaque body is identical to that from a hole of the same size and shape, apart from the forward beam. So a hair paints the same stripes a slit of its width would. The classroom demo uses a wire about 0.1 mm thick; a human hair is roughly 0.05-0.1 mm, the same scale. And it is measurable: bright-fringe spacing follows beta = lambda x L / d (wavelength times distance to the wall, divided by the separation), so with the pointer's wavelength and a pace-count to the wall, a ruler across the stripes lets the girl work back to the thickness of her own hair. Safety, per the standard protocols: avoid direct eye exposure, use a low-power pointer, block the beam past the wall. Sources: Wikipedia, 'Babinet's principle'; Grokipedia, 'Diffraction' and 'Double-slit experiment' (Standard Experimental Apparatus).",
     "topic": "the-double-slit-one-particle-interfering-with-itself"
   },
   {
     "tier": 1,
-    "question": "Thomas Young sent sunlight through a pinhole around 1801 to make one clean beam, then split that beam in two so the halves overlapped further on. The pattern on a distant screen gave him wavelengths close to modern values. What split the beam?",
+    "question": "Thomas Young sent sunlight through a pinhole to make one clean beam, then split that beam in two so the halves overlapped further on. The pattern on a screen, reported in his 1803 lecture, gave him wavelengths close to modern values. What split the beam?",
     "answer": "A thin card held edgewise in the beam",
     "choices": [
       "A thin card held edgewise in the beam",
@@ -33003,7 +33003,7 @@
       "A sewing needle stood upright in the beam",
       "A fine wire of drawn gold stretched across it"
     ],
-    "context": "Almost everyone pictures two slits. Young used a card about one-thirtieth of an inch wide, held edge-on in the sunbeam so its two sides acted as the pair of coherent sources. Careful with the dating: the November 1801 Bakerian Lecture was 'On the theory of light and colours' (Phil. Trans. R. Soc. 92, 12-48), while the card experiment and the wavelength calculations appear in 'Experiments and calculations relative to physical optics', the 1803 Bakerian Lecture (Phil. Trans. 94, 1-16), and Physics World notes Young published no full account until his 1807 Lectures on Natural Philosophy. Sources: Grokipedia, 'Double-slit experiment' (Origins in Classical Optics); Physics World, 'The double-slit experiment' (reference list); Grokipedia, 'Thomas Young (scientist)'.",
+    "context": "Almost everyone pictures two slits. Young used a card about one-thirtieth of an inch wide, held edge-on in the sunbeam so its two sides acted as the pair of coherent sources. The card experiment and the wavelength calculations appear in 'Experiments and calculations relative to physical optics', his Bakerian Lecture read on 24 November 1803 (Phil. Trans. R. Soc. 94, 1-16, printed 1804). His earlier Bakerian Lecture, 'On the theory of light and colours' (Phil. Trans. 92, 12-48), was read in November 1801, and Physics World notes Young published no full account of the experiments until his 1807 Lectures on Natural Philosophy. Sources: Phil. Trans. 94 (1804), 1-16; Physics World, 'The double-slit experiment' (reference list); Grokipedia, 'Thomas Young (scientist)'.",
     "topic": "the-double-slit-one-particle-interfering-with-itself"
   },
   {
@@ -33133,7 +33133,7 @@
       "A dimmed flame emits its photons in a strict even drumbeat",
       "A dimmed flame emits its photons in one continuous stream"
     ],
-    "context": "Attenuated thermal light keeps photon-number statistics that allow coincidences, so two photons could still overlap in the apparatus; by modern standards Taylor's conditions were not sufficient to demonstrate genuine single-photon interference. Safe phrasing for his run is 'on average roughly one photon at a time'. The airtight version came in 1986, when Philippe Grangier, Gerard Roger and Alain Aspect used heralded single photons — each one announced by the detection of its twin — in an interferometer equivalent to a double slit, with interference visibility close to 100%. Checking your own strongest claim hardest is the point, not a footnote. Sources: Wikipedia, 'G. I. Taylor' (explicit caveat); Grokipedia, 'Double-slit experiment' (Single-Particle Interference).",
+    "context": "Attenuated thermal light keeps photon-number statistics that allow coincidences, so two photons could still overlap in the apparatus; by modern standards Taylor's conditions were not sufficient to demonstrate genuine single-photon interference. Safe phrasing for his run is 'on average roughly one photon at a time'. The airtight version came in 1986, when Philippe Grangier, Gerard Roger and Alain Aspect used heralded single photons — each one announced by the detection of its twin — in an interferometer equivalent to a double slit, with interference visibility close to 100%. Checking the strongest claim hardest is the point, not a footnote. Sources: Wikipedia, 'G. I. Taylor' (explicit caveat); Grokipedia, 'Double-slit experiment' (Single-Particle Interference).",
     "topic": "the-double-slit-one-particle-interfering-with-itself"
   },
   {
@@ -33159,7 +33159,7 @@
       "Sharp fringes that appear the moment the partner is destroyed",
       "A smooth blur that sharpens into fringes all by itself"
     ],
-    "context": "This is the question that kills the myth. Kim's setup used entangled pairs from spontaneous parametric down-conversion and gave coincidence-counted interference with 95% visibility when path information was erased, and none when it was path-marked, despite the 8 ns delay. But as the sources put it, no information travels backward in time: the overall data show no interference until conditioned on the eraser outcome, reflecting the experimenter's choice of analysis rather than any alteration of past events. The signal-photon screen never shows stripes. The stripes appear only when you take hits already recorded and sort them by which detector the partner landed in. Nothing in the past was changed; a subset was selected. Sources: Grokipedia, 'Quantum eraser experiment'; Grokipedia, 'Double-slit experiment'.",
+    "context": "This is the result that kills the myth. Kim's setup used entangled pairs from spontaneous parametric down-conversion and gave coincidence-counted interference with 95% visibility when path information was erased, and none when it was path-marked, despite the 8 ns delay. But as the sources put it, no information travels backward in time: the overall data show no interference until conditioned on the eraser outcome, reflecting the experimenter's choice of analysis rather than any alteration of past events. The signal-photon screen never shows stripes. The stripes appear only when hits already recorded are sorted by which detector the partner landed in. Nothing in the past was changed; a subset was selected. Sources: Grokipedia, 'Quantum eraser experiment'; Grokipedia, 'Double-slit experiment'.",
     "topic": "the-double-slit-one-particle-interfering-with-itself"
   },
   {
@@ -33367,7 +33367,7 @@
       "They refused to try the puzzle at all",
       "They solved a modified version faster"
     ],
-    "context": "Baumeister concluded willpower was like a fuel tank you could run dry -- he called it 'ego depletion'. The idea would govern self-help and academic psychology for fifteen years. Source: Baumeister et al., JPSP 1998.",
+    "context": "Baumeister concluded willpower was like a fuel tank that could run dry -- he called it 'ego depletion'. The idea would govern self-help and academic psychology for fifteen years. Source: Baumeister et al., JPSP 1998.",
     "topic": "the-effects-that-dissolved-on-re-test"
   },
   {
@@ -33385,15 +33385,15 @@
   },
   {
     "tier": 4,
-    "question": "Carter and McCullough reanalysed the 2010 meta-analysis of ego depletion in 2014 and printed an early alarm. They corrected for a well-known statistical distortion, and the effect shrank to something nobody could tell apart from zero. What was the distortion they corrected for?",
-    "answer": "Publication bias",
+    "question": "Carter and McCullough went back over the 2010 meta-analysis of ego depletion in 2014 and printed an early alarm. Once they corrected for one well-known distortion in the pool of studies, the effect shrank until nobody could tell it apart from zero. What was the distortion?",
+    "answer": "Failed studies left unpublished in file drawers",
     "choices": [
-      "Publication bias",
-      "Randomisation failure",
-      "Regression to the mean",
-      "Instrument miscalibration"
+      "Failed studies left unpublished in file drawers",
+      "Students not split into groups at random",
+      "Lucky early results drifting back to average",
+      "Stopwatches running slow in some of the labs"
     ],
-    "context": "Once you account for studies that get filed in a drawer when they don't work, the big pooled effect (d ~ 0.6) collapsed to around d = 0.2 or lower. The signal was in the publishing, not the biology. Source: Carter & McCullough, Frontiers in Psychology 2014.",
+    "context": "The distortion is called publication bias: studies that do not work get filed in a drawer instead of printed. Once those missing studies are accounted for, the big pooled effect (d ~ 0.6) collapses to around d = 0.2 or lower. The signal was in the publishing, not the biology. Source: Carter & McCullough, Frontiers in Psychology 2014.",
     "topic": "the-effects-that-dissolved-on-re-test"
   },
   {
@@ -33416,7 +33416,7 @@
     "choices": [
       "No difference in walking speed between the groups",
       "A much bigger walking-speed difference than Bargh had",
-      "The primed group walked FASTER, not slower, to the door",
+      "The primed group walked faster, not slower, to the door",
       "Only the female participants slowed down after priming"
     ],
     "context": "They swapped the human stopwatch for infrared beams that timed the 120 walkers with no observer bias. The Bargh effect vanished. Source: Doyen et al., PLOS ONE 2012.",
@@ -33424,28 +33424,28 @@
   },
   {
     "tier": 5,
-    "question": "Ten experimenters took stopwatches into the corridor for Stephane Doyen's repeat of John Bargh's elderly-priming walk, each told in advance which condition each student was in, so half expected a slow walk and half did not. Infrared beams still saw no priming effect. Something did happen on the human stopwatches. What?",
-    "answer": "The slow walk appeared only when experimenters expected slowness",
+    "question": "Stéphane Doyen ran John Bargh's elderly-priming walk a second time with ten experimenters, each holding a stopwatch while infrared beams timed the same corridor. Half had been told the primed students would walk slowly, half that they would speed up. What did the timings show?",
+    "answer": "A slow walk only for experimenters who expected one",
     "choices": [
-      "The slow walk appeared only when experimenters expected slowness",
-      "The slow walk appeared only when experimenters expected quickness",
-      "Both stopwatches and beams now showed the priming effect equally",
-      "The stopwatches showed the primed subjects walking faster, not slower"
+      "A slow walk only for experimenters who expected one",
+      "A slow walk for every experimenter alike",
+      "A slow walk on the stopwatches but never on the beams",
+      "No slow walk for any of the ten experimenters"
     ],
-    "context": "The Bargh effect was living in the experimenter's thumb, not in the participants' feet. This is why every good behavioural test today is blinded -- neither subject nor tester knows the condition. Source: Doyen et al., PLOS ONE 2012.",
+    "context": "On the infrared beams the primed students walked slower (6.95 against 6.52 seconds) only with experimenters who expected slowness; with experimenters who expected speed there was no difference. On those experimenters' stopwatches primed students were even clocked as faster, which the team put down to errors in working the stopwatch. Doyen concluded that both priming and the experimenters' expectations were instrumental, as if the testers' beliefs reached the students. This is why every good behavioural test today is blinded -- neither subject nor tester knows the condition. Source: Doyen et al., PLOS ONE 2012.",
     "topic": "the-effects-that-dissolved-on-re-test"
   },
   {
     "tier": 5,
-    "question": "Daniel Kahneman sent an open letter to the leading researchers in social psychology in late September 2012, warning of 'a train wreck looming.' His own bestseller had praised priming. He urged them to organize a ring before outside skeptics did the job for them. What kind of ring?",
-    "answer": "A replication ring",
+    "question": "Daniel Kahneman emailed the leading priming researchers in late September 2012, warning of 'a train wreck looming.' His own bestseller had praised their work. He urged them to act before outside skeptics did. What did he propose they set up?",
+    "answer": "A chain of labs, each repeating a neighbour's result",
     "choices": [
-      "A replication ring",
-      "A peer-review ring",
-      "A funding ring",
-      "A citation ring"
+      "A chain of labs, each repeating a neighbour's result",
+      "A one-year halt on publishing new priming papers",
+      "A panel of senior editors to audit priming data",
+      "One giant priming study run by a single lab"
     ],
-    "context": "Kahneman had praised priming studies in his own bestseller Thinking, Fast and Slow (2011). The letter went to leading priming researchers directly and became one of the founding documents of psychology's replication reform. Source: Kahneman open letter, 26 September 2012.",
+    "context": "Kahneman had praised priming studies in his own bestseller Thinking, Fast and Slow (2011). His own term was a 'daisy chain' of replications: each lab would try to repeat a priming effect from the next lab along, with someone from the original lab supervising. The letter went to leading priming researchers directly and became one of the founding documents of psychology's replication reform. Sources: Kahneman open letter, 26 September 2012; Nature news, 3 October 2012.",
     "topic": "the-effects-that-dissolved-on-re-test"
   },
   {
@@ -33510,7 +33510,7 @@
       "four of five rose sharply",
       "all five had roughly held their value"
     ],
-    "context": "A clean sweep. Chromium, copper, nickel, tin and tungsten each cost less in real, inflation-adjusted terms in 1990 than they had at the signing. Source: en.wikipedia.org/wiki/Simon-Ehrlich_wager.",
+    "context": "A clean sweep. Chromium, copper, nickel, tin and tungsten each cost less in real, inflation-adjusted terms in 1990 than they had at the signing. The honest caveat is timing: a 2010 study by Kiel and colleagues reran the bet over every ten-year span from 1900 to 2008 and found Simon would have won only about 38 percent of them, and it ranked 1980 to 1990 among the fifteen worst spans in the whole record for Ehrlich's side. Source: en.wikipedia.org/wiki/Simon-Ehrlich_wager.",
     "topic": "the-ehrlich-simon-wager"
   },
   {
@@ -33536,7 +33536,7 @@
       "Simon had used inflation numbers rigged in his favour",
       "he had never agreed to the bet in the first place"
     ],
-    "context": "Documented at the time. Ehrlich's paid graciously, but held the failed forecast harmless. The wager settled the price question and left the deeper argument untouched -- for him. Source: spiked-online.com/2015/09/29/the-simon-ehrlich-wager-25-years-on/.",
+    "context": "Documented at the time. Ehrlich paid promptly and in full, but held that the failed forecast proved nothing. The wager settled the price question and left the deeper argument untouched -- for him. Source: spiked-online.com/2015/09/29/the-simon-ehrlich-wager-25-years-on/.",
     "topic": "the-ehrlich-simon-wager"
   },
   {
@@ -33545,7 +33545,7 @@
     "answer": "The bond in a metal points in no particular direction; the bond in salt does",
     "choices": [
       "The bond in a metal points in no particular direction; the bond in salt does",
-      "The copper is much warmer than the salt at the moment you hit it",
+      "The copper is much warmer than the salt when the hammer falls",
       "The salt is much more crystalline than the copper is",
       "The copper is much denser than the salt and absorbs the blow"
     ],
@@ -33627,7 +33627,7 @@
       "Bright orange",
       "Pure white"
     ],
-    "context": "Reflected and transmitted light see the electron sea differently. Gold reflects the yellow-red end strongly; the wavelengths it does NOT reflect leak through, giving transmitted light a striking bluish-green tint. You can see it in gilded stained-glass work and museum leaf demonstrations. Source: https://www.webexhibits.org/causesofcolor/9.html",
+    "context": "Reflected and transmitted light see the electron sea differently. Gold reflects the yellow-red end strongly; the wavelengths it does NOT reflect leak through, giving transmitted light a striking bluish-green tint. It shows in gilded stained-glass work and museum leaf demonstrations. Source: https://www.webexhibits.org/causesofcolor/9.html",
     "topic": "the-electron-sea-why-metal-bends-where-salt-shatters"
   },
   {
@@ -33679,7 +33679,7 @@
       "The glass fogged over and hid the ether level",
       "The sponge dried out before the cutting ended"
     ],
-    "context": "Morton fitted one-way inhale and exhale valves on 17 October 1846, the day after the demonstration. The glass was the other clever part of the design: you could watch the ether level drop and judge the dose by eye. Source: Grokipedia, 'Ether Dome' -- https://grokipedia.com/page/Ether_Dome (section: \"Morton's Ether Inhaler\").",
+    "context": "Morton fitted one-way inhale and exhale valves on 17 October 1846, the day after the demonstration. The glass was the other clever part of the design: the operator could watch the ether level drop and judge the dose by eye. Source: Grokipedia, 'Ether Dome' -- https://grokipedia.com/page/Ether_Dome (section: \"Morton's Ether Inhaler\").",
     "topic": "the-ether-dome-16-october-1846"
   },
   {
@@ -34225,7 +34225,7 @@
       "81.2 per 100,000 -- well above the dummy-shot children's rate",
       "16.9 per 100,000 -- roughly the rate among the vaccinated children"
     ],
-    "context": "The full Francis Report table for the randomised districts: 200,745 vaccinated children, 33 paralytic cases, 16.4 per 100,000; 201,229 placebo children, 115 cases, 57.1 per 100,000 -- two groups matched to within 484 children out of four hundred thousand, which is what randomisation buys you. And 338,778 not-inoculated children, 121 cases, 35.7 per 100,000. Francis's own report said out loud that the two kinds of family were not alike: 'Marked sociological differences were noted by the U-M's Survey Research Center among the participating and non-participating children in the study. For example, there was a higher proportion of children participating who had been vaccinated against small-pox, diphtheria, and whooping cough than among the non-participants.' Sources: randomservices.org/random/data/Polio.html; sph.umich.edu/polio.",
+    "context": "The full Francis Report table for the randomised districts: 200,745 vaccinated children, 33 paralytic cases, 16.4 per 100,000; 201,229 placebo children, 115 cases, 57.1 per 100,000 -- two groups matched to within 484 children out of four hundred thousand, which is what randomisation buys. And 338,778 not-inoculated children, 121 cases, 35.7 per 100,000. Francis's own report said out loud that the two kinds of family were not alike: 'Marked sociological differences were noted by the U-M's Survey Research Center among the participating and non-participating children in the study. For example, there was a higher proportion of children participating who had been vaccinated against small-pox, diphtheria, and whooping cough than among the non-participants.' Sources: randomservices.org/random/data/Polio.html; sph.umich.edu/polio.",
     "topic": "the-francis-field-trial-what-a-good-test-looks-like"
   },
   {
@@ -34243,15 +34243,15 @@
   },
   {
     "tier": 5,
-    "question": "Thomas Francis Jr. found a result in the trial that looks backwards: the better-educated, better-off families were the likeliest to sign their children up, yet among children with no protection from any vaccine, theirs proved the higher-risk group. Why did coming from such a family raise a child's risk of paralysis?",
-    "answer": "Cleaner plumbing meant less early exposure and so less natural immunity",
+    "question": "Thomas Francis Jr.'s report found that the families who signed their children up for the 1954 polio trial were wealthier and better educated than those who refused. What did such a home do to an unvaccinated child's risk of paralysis, and why?",
+    "answer": "Raised it: cleaner plumbing meant less early exposure and less immunity",
     "choices": [
-      "Cleaner plumbing meant less early exposure and so less natural immunity",
-      "Bigger houses meant more brothers and sisters sharing the same rooms",
-      "Better food meant a stronger fever response to any infection at all",
-      "More travelling meant more contact with children from other towns"
+      "Raised it: cleaner plumbing meant less early exposure and less immunity",
+      "Raised it: more travel meant more contact with children from other towns",
+      "Lowered it: better food meant a stronger fever response to infection",
+      "Lowered it: bigger houses meant fewer children sharing the same rooms"
     ],
-    "context": "This is the whole case against the observed-control design in one number. Volunteering families were not a random slice of the country, and the bias ran the opposite way to intuition: better sanitation delayed a child's first meeting with poliovirus past infancy, when infection is far likelier to paralyse, so the most comfortable families had the most vulnerable children. A design that compares volunteers with non-volunteers is therefore comparing unlike groups -- which is exactly why the observed-control districts' controls (45.5 per 100,000) sat well below the randomised districts' placebo children (57.1), diluting the measured benefit. Only the random draw makes the two groups alike in everything except the injection. Sources: blog.rootsofprogress.org/polio-and-the-controversy-over-randomized-clinical-trials; randomservices.org/random/data/Polio.html.",
+    "context": "It raised the risk, and the reason runs opposite to intuition: better sanitation delayed a child's first meeting with poliovirus past infancy, when infection is far likelier to paralyse, so the most comfortable families had the most vulnerable children. Volunteering families were not a random slice of the country, so a design that compares volunteers with non-volunteers compares unlike groups -- which is exactly why the observed-control districts' controls (45.5 per 100,000) sat well below the randomised districts' placebo children (57.1), diluting the measured benefit. Only the random draw makes the two groups alike in everything except the injection. Sources: blog.rootsofprogress.org/polio-and-the-controversy-over-randomized-clinical-trials; randomservices.org/random/data/Polio.html.",
     "topic": "the-francis-field-trial-what-a-good-test-looks-like"
   },
   {
@@ -34269,15 +34269,15 @@
   },
   {
     "tier": 1,
-    "question": "A chemistry teacher shows a class a party balloon, an old diner sign and a light bulb. The gas in each sits in one column of the periodic table, and for sixty years everyone taught that this whole column combined with nothing at all. What was the column called?",
-    "answer": "the inert gases",
+    "question": "A teacher shows a class a party balloon, an old diner sign and a light bulb. The gas in each sits in one column of the periodic table, long called the inert gases, since none seemed ever to react. Why do their atoms resist reacting?",
+    "answer": "Their outer electron shells are already full",
     "choices": [
-      "the inert gases",
-      "the alkali metals",
-      "the halogens",
-      "the transition metals"
+      "Their outer electron shells are already full",
+      "Their atoms are too small to reach a partner",
+      "Their atoms carry a charge that repels others",
+      "Their atoms are too light to hold onto a bond"
     ],
-    "context": "The balloon is helium, the sign is neon, and old-style incandescent bulbs were filled with argon to stop the tungsten filament burning up. The column was called 'inert' - meaning refusing to react at all - and every high-school textbook printed before 1962 said so. After Bartlett they were quietly renamed 'noble' instead. Source: en.wikipedia.org/wiki/Noble_gas.",
+    "context": "The balloon is helium, the sign is neon, and old-style incandescent bulbs were filled with argon to stop the tungsten filament burning up. A full outer shell has no electron to spare and no room to take one, so the atom gains nothing by bonding; that is why the column was called 'inert', and why textbooks printed before 1962 said these gases never react. After Bartlett they were renamed 'noble' instead. Source: en.wikipedia.org/wiki/Noble_gas.",
     "topic": "the-full-shell-and-the-evening-xenon-broke-the-rule"
   },
   {
@@ -34325,11 +34325,11 @@
     "answer": "Linus Pauling",
     "choices": [
       "Linus Pauling",
-      "Fritz Haber",
+      "Robert Mulliken",
       "Glenn Seaborg",
-      "Dmitri Mendeleev"
+      "Harold Urey"
     ],
-    "context": "Pauling's 1933 prediction was based on his own theory of the chemical bond; his 1961 retraction was based on how firmly the 'inert' consensus had settled in the decades between - a warning about how even a founder can drift with a paradigm. Source: en.wikipedia.org/wiki/Noble_gas_compound.",
+    "context": "Pauling's 1933 prediction came from his own theory of the chemical bond, and that year, at his suggestion, Yost and Kaye tried to make xenon react with fluorine and failed. By 1961 he was writing that xenon was 'completely unreactive chemically'. Source: en.wikipedia.org/wiki/Noble_gas_compound.",
     "topic": "the-full-shell-and-the-evening-xenon-broke-the-rule"
   },
   {
@@ -34347,7 +34347,7 @@
   },
   {
     "tier": 5,
-    "question": "Neil Bartlett made the very first noble-gas compound in 1962, and killed the rule chemists had taught: that full electron shells kept these gases from ever reacting at all. The first compounds did not come from the whole column. Which noble gases formed them?",
+    "question": "Neil Bartlett made the very first noble-gas compound in 1962 and broke a rule chemists had taught for sixty years: that these gases never react at all. The first compounds did not come from the whole column. Which noble gases formed them?",
     "answer": "the heaviest ones (xenon, krypton, radon)",
     "choices": [
       "the heaviest ones (xenon, krypton, radon)",
@@ -34394,7 +34394,7 @@
       "heavy elements at the core slowly decaying",
       "the Sun's rotation being braked by its magnetic field"
     ],
-    "context": "Eddington was proposing what we now call hydrogen fusion, more than a decade before anyone worked out the reactions. His only clue was Aston's 0.7 percent of missing mass. Source: https://bfschutz.com/2020/08/24/eddington-in-cardiff-100-years-ago-today-the-first-proposal-that-stars-are-powered-by-fusion/  (Legend.)",
+    "context": "Eddington was proposing what is now called hydrogen fusion, more than a decade before anyone worked out the reactions. His only clue was Aston's 0.7 percent of missing mass. Source: https://bfschutz.com/2020/08/24/eddington-in-cardiff-100-years-ago-today-the-first-proposal-that-stars-are-powered-by-fusion/  (Legend.)",
     "topic": "the-furnace-we-can-never-open"
   },
   {
@@ -34407,7 +34407,7 @@
       "he proposed the Sun ran on gravity instead",
       "he said the missing heat came from radioactivity"
     ],
-    "context": "The full line: 'The helium which we handle must have been put together at some time and some place. We do not argue with the critic who urges that the stars are not hot enough for this process; we tell him to go and find a hotter place.' ACCURACY NOTE: the wording is documented, but the citation that can be confirmed is Eddington's book The Internal Constitution of the Stars (1926); his 1920 Cardiff address carries the same title, which is very likely why the line is so often dated to 1920. The CLAIM is firmly 1920 — delivered 24 August 1920 at the British Association in Cardiff and printed in Nature a week later (vol. 106, p. 14). And here is the wonder: Eddington was right for a reason that did not exist yet. Tunnelling was not worked out until 1927–28, seven or eight years after he made the claim. In 1929 Robert d'Escourt Atkinson and Fritz Houtermans picked up Gamow's brand-new result and applied it to stars, showing that light nuclei could indeed fuse at the modest temperatures Eddington had calculated rather than the impossible ones his critics demanded. He won the argument before anyone knew why he should. Source: en.wikiquote.org/wiki/Arthur_Stanley_Eddington (exact wording, cited to The Internal Constitution of the Stars, 1926); Bernard Schutz, 'Eddington in Cardiff 100 years ago today' (bfschutz.com) — address 24 August 1920, Nature vol. 106, p. 14, Aston mass deficit about 1 part in 120; Atkinson and Houtermans 1929: en.wikipedia.org/wiki/Robert_d%27Escourt_Atkinson; The Observatory, October 1920.",
+    "context": "The full line: 'The helium which we handle must have been put together at some time and some place. We do not argue with the critic who urges that the stars are not hot enough for this process; we tell him to go and find a hotter place.' The wording is documented in Eddington's book The Internal Constitution of the Stars (1926); his 1920 Cardiff address carried the same title, which is very likely why the line is so often dated to 1920. The CLAIM is firmly 1920 — delivered 24 August 1920 at the British Association in Cardiff and printed in Nature a week later (vol. 106, p. 14). The wonder is that Eddington was right for a reason that did not exist yet. Tunnelling was not worked out until 1927–28, seven or eight years after he made the claim. In 1929 Robert d'Escourt Atkinson and Fritz Houtermans picked up Gamow's brand-new result and applied it to stars, showing that light nuclei could indeed fuse at the modest temperatures Eddington had calculated rather than the impossible ones his critics demanded. He won the argument before anyone knew why he should. Source: en.wikiquote.org/wiki/Arthur_Stanley_Eddington (exact wording, cited to The Internal Constitution of the Stars, 1926); Bernard Schutz, 'Eddington in Cardiff 100 years ago today' (bfschutz.com) — address 24 August 1920, Nature vol. 106, p. 14, Aston mass deficit about 1 part in 120; Atkinson and Houtermans 1929: en.wikipedia.org/wiki/Robert_d%27Escourt_Atkinson; the 1920 address as printed in The Observatory, October 1920.",
     "topic": "the-furnace-we-can-never-open"
   },
   {
@@ -34439,27 +34439,14 @@
   {
     "tier": 4,
     "question": "Fred Hoyle pressed William Fowler's Caltech nuclear lab in 1953 to look for something nobody had seen: a specific unknown energy level in carbon-12, close to 7.68 million electron-volts. It was one of the strangest successful predictions in the history of physics. What reason did Hoyle give for insisting the level had to be there?",
-    "answer": "carbon exists in huge abundance and we are made of it",
+    "answer": "carbon is plentiful, so stars must have a way to make it",
     "choices": [
-      "carbon exists in huge abundance and we are made of it",
+      "carbon is plentiful, so stars must have a way to make it",
       "the beryllium-8 measurement demanded a matching state",
       "quantum mechanics forbade any other stable resonance",
       "the Sun's spectrum showed a carbon line at that energy"
     ],
-    "context": "Hoyle's argument was blunt: carbon is plainly here in vast quantity, so the nuclear physics must permit its formation. If the resonance did not exist, we would not exist to look for it. This kind of reasoning is often called anthropic. Source: https://en.wikipedia.org/wiki/Triple-alpha_process  (Legend.)",
-    "topic": "the-furnace-we-can-never-open"
-  },
-  {
-    "tier": 4,
-    "question": "Ward Whaling took an old Van de Graaff particle accelerator at Caltech and, within months of Fred Hoyle's prediction, found the energy level in carbon-12 almost exactly where Hoyle had said it would be, near 7.65 million electron-volts. What is this level now called?",
-    "answer": "the Hoyle state",
-    "choices": [
-      "the Hoyle state",
-      "the Fowler state",
-      "the Whaling state",
-      "the Bethe state"
-    ],
-    "context": "The predicted level was near 7.68 MeV; the measured level came in near 7.65 MeV. Every carbon atom in your body slipped through this narrow doorway inside a dying star. Source: https://en.wikipedia.org/wiki/Triple-alpha_process  (Legend.)",
+    "context": "Hoyle's argument was blunt: carbon is plainly here in vast quantity, so the nuclear physics must permit its formation. Reasoning of this kind is often called anthropic, since without the level there would be no carbon-based life to look for it. Within months Ward Whaling's team, on an old Van de Graaff accelerator in William Fowler's Caltech lab, found the level near 7.65 MeV, almost exactly where Hoyle had said; it is now called the Hoyle state. Source: https://en.wikipedia.org/wiki/Triple-alpha_process  (Legend.)",
     "topic": "the-furnace-we-can-never-open"
   },
   {
@@ -34503,15 +34490,15 @@
   },
   {
     "tier": 2,
-    "question": "Martin Kulldorff of Harvard, Sunetra Gupta of Oxford and Jay Bhattacharya of Stanford signed a one-page open letter in October 2020. They argued that shielding the old and the sick hard was a better COVID plan than locking everyone down. What name did their letter give this idea?",
-    "answer": "Focused protection",
+    "question": "Martin Kulldorff of Harvard, Sunetra Gupta of Oxford and Jay Bhattacharya of Stanford signed a one-page open letter in October 2020 with a different plan for COVID. Critics often called it 'let it rip.' What did the letter itself propose?",
+    "answer": "Shield the old and sick harder; let others resume normal life",
     "choices": [
-      "Focused protection",
-      "Zero COVID",
-      "Herd immunity",
-      "Ring vaccination"
+      "Shield the old and sick harder; let others resume normal life",
+      "Let the virus spread freely so herd immunity comes fast",
+      "Keep schools shut but reopen shops, offices and gyms",
+      "Test everyone each week and isolate every positive case"
     ],
-    "context": "The distinction matters: focused protection called for HARDER shielding of nursing homes and the immunocompromised than generic lockdowns actually achieved, not for ignoring the virus. Critics often conflated it with 'let it rip'. The letter is named for the small Massachusetts town where the three met and signed.",
+    "context": "The distinction matters: focused protection, the letter's name for its plan, called for HARDER shielding of nursing homes and the immunocompromised than generic lockdowns actually achieved, not for ignoring the virus. Critics often conflated it with 'let it rip'. The letter is named for the small Massachusetts town where the three met and signed.",
     "topic": "the-great-barrington-takedown"
   },
   {
@@ -34542,7 +34529,7 @@
   },
   {
     "tier": 4,
-    "question": "Another group of scientists gave the Great Barrington Declaration a real scientific reply in the medical journal The Lancet days later: the John Snow Memorandum. The declaration wanted the vulnerable shielded while lower-risk people went back to ordinary life. The memorandum made two big objections, and one was that shielding the vulnerable could not really be done in practice. What was its second main objection?",
+    "question": "Another group of scientists answered the Great Barrington Declaration days later in the medical journal The Lancet: the John Snow Memorandum, a real scientific reply. It made two big objections, and one was that the declaration's plan could not really be carried out in practice. What was its second main objection?",
     "answer": "Uncontrolled spread would overwhelm hospitals",
     "choices": [
       "Uncontrolled spread would overwhelm hospitals",
@@ -34574,7 +34561,7 @@
       "The National Institutes of Health",
       "The Food and Drug Administration",
       "The Centers for Disease Control",
-      "The World Health Organization"
+      "The Office of the Surgeon General"
     ],
     "context": "The vote was 53-47, on party lines. Bhattacharya took office on 1 April 2025. Marty Makary, the Johns Hopkins surgeon, was confirmed to lead the FDA the same week. Whatever else it was, it was not vindication of the declaration as a whole -- but the man they had called fringe now ran the agency.",
     "topic": "the-great-barrington-takedown"
@@ -34589,7 +34576,7 @@
       "The five-day post-symptom isolation window",
       "The three-foot classroom-cohort rule"
     ],
-    "context": "In deposition and interviews Collins said he had never seen any evidence supporting the six-foot figure. In the same period he acknowledged that ignoring lockdown side-effects had been 'really unfortunate' and that calling Kulldorff, Bhattacharya and Gupta 'fringe' had been a mistake.",
+    "context": "In a January 2024 transcribed interview with a House subcommittee, Collins said he did not recall seeing any evidence that supported the six-foot figure. Earlier, at a Braver Angels event in July 2023, he had called public-health leaders' neglect of the side-effects of their rules 'really unfortunate', and said of his response to the declaration, 'I regret that I used some terminology that I probably shouldn't.'",
     "topic": "the-great-barrington-takedown"
   },
   {
@@ -34642,19 +34629,6 @@
       "Optically stimulated luminescence of quartz"
     ],
     "context": "U-Pb via CA-ID-TIMS on zircons gives precision at the tens-of-thousands-of-years level even at 252 Ma. Carbon-14 dies at ~50,000 years old -- useless in deep time. K-Ar and OSL cannot approach this precision at this age. Source: en.wikipedia.org/wiki/Permian-Triassic_extinction_event.",
-    "topic": "the-great-dying"
-  },
-  {
-    "tier": 4,
-    "question": "A fossil hunter in the earliest Triassic bone beds of South Africa digs up one stubby tusked plant-eater after another. It makes up as much as 90 percent of the land vertebrate fossils there. What is such a lone survivor called, when it suddenly rules the fossil record after a mass extinction?",
-    "answer": "A disaster taxon",
-    "choices": [
-      "A disaster taxon",
-      "An apex predator",
-      "A keystone species",
-      "An index fossil"
-    ],
-    "context": "Dimetrodon is early Permian and long gone by 252 Ma. Cynognathus and Thrinaxodon are later Triassic cynodonts. Lystrosaurus's runaway abundance is the pattern signature of a disaster taxon: empty niches, few competitors, one lineage inheriting the earth. Full land faunas took about 30 million years to rebuild. Source: nature.com/articles/s41467-020-15243-7.",
     "topic": "the-great-dying"
   },
   {
@@ -34767,11 +34741,11 @@
     "answer": "an anaesthetist",
     "choices": [
       "an anaesthetist",
-      "a radiologist",
-      "a paramedic",
-      "a dentist"
+      "a surgeon",
+      "a neurologist",
+      "a radiologist"
     ],
-    "context": "General anaesthesia is the most repeated, most routine consciousness experiment on the planet, and neither the drug companies nor the neuroscientists can tell you what it is doing to the felt world. Source: iep.utm.edu/hard-problem-of-conciousness.",
+    "context": "General anaesthesia is the most repeated, most routine consciousness experiment on the planet, and neither the drug companies nor the neuroscientists can say what it is doing to the felt world. Source: iep.utm.edu/hard-problem-of-conciousness.",
     "topic": "the-hard-problem-why-anything-feels-like-anything"
   },
   {
@@ -34862,18 +34836,18 @@
       "religion",
       "philosophy"
     ],
-    "context": "Christof Koch and Anil Seth answered in print defending IIT; this is a live public fight about where the border of science actually runs. Source: nature.com/articles/d41586-023-02971-1.",
+    "context": "Christof Koch, an IIT proponent, answered that the theory may be empirically wrong but states its assumptions clearly; Anil Seth, who is not an IIT proponent, still called the pseudoscience label inflammatory. This is a live public fight about where the border of science actually runs. Sources: nature.com/articles/d41586-023-02971-1; scientificamerican.com/article/prominent-consciousness-theory-is-slammed-as-bogus-science.",
     "topic": "the-hard-problem-why-anything-feels-like-anything"
   },
   {
     "tier": 5,
-    "question": "Roger Penrose, a mathematical physicist, and his collaborator Stuart Hameroff put forward a bold rival to Higher-Order Thought and predictive-processing views. They placed consciousness in quantum-scale collapses happening inside one specific part of a brain cell. Which cell part?",
-    "answer": "microtubules inside neurons",
+    "question": "Roger Penrose, a mathematical physicist, and his collaborator Stuart Hameroff put forward a bold rival to the leading theories of consciousness. They placed consciousness in quantum-scale collapses happening inside one specific part of a brain cell. Which part of the cell did they pick?",
+    "answer": "the microtubules",
     "choices": [
-      "microtubules inside neurons",
-      "the myelin sheath",
-      "ribosomes",
-      "the synaptic cleft"
+      "the microtubules",
+      "the mitochondria",
+      "the ribosomes",
+      "the myelin sheath"
     ],
     "context": "Their theory is called Orchestrated Objective Reduction, or 'Orch-OR'; most consciousness scientists reject it, but it is a serious, real, published rival, not a joke. Source: en.wikipedia.org/wiki/Integrated_information_theory (rivals section).",
     "topic": "the-hard-problem-why-anything-feels-like-anything"
@@ -34940,7 +34914,7 @@
       "his mechanism replaced Einstein's theory of gravity",
       "the maths could build a much better transistor"
     ],
-    "context": "That paragraph is why we now say 'the Higgs boson'. Physical Review Letters accepted the second version. The other 1964 papers by Englert-Brout and by Guralnik-Hagen-Kibble had the mechanism but not the explicit prediction of a new particle -- Higgs's rejection-driven addendum put a target on the wall for the next forty-eight years. Source: en.wikipedia.org/wiki/Peter_Higgs.",
+    "context": "That paragraph is why the particle is called 'the Higgs boson'. Physical Review Letters accepted the second version. The other 1964 papers by Englert-Brout and by Guralnik-Hagen-Kibble had the mechanism but not the explicit prediction of a new particle -- Higgs's rejection-driven addendum put a target on the wall for the next forty-eight years. Source: en.wikipedia.org/wiki/Peter_Higgs.",
     "topic": "the-higgs-a-forty-eight-year-wait-for-one-particle"
   },
   {
@@ -34966,33 +34940,20 @@
       "the gravitational self-attraction of the proton itself",
       "the sea of neutrinos passing constantly through it"
     ],
-    "context": "A proton is three quarks and a boiling sea of gluons bound by the strong force. Einstein's E = mc squared runs both directions: the tremendous binding energy of that churn shows up as mass. So most of your body weight is not the Higgs -- it is quantum chromodynamics doing its work inside every proton and neutron you are made of. Source: en.wikipedia.org/wiki/Higgs_boson.",
-    "topic": "the-higgs-a-forty-eight-year-wait-for-one-particle"
-  },
-  {
-    "tier": 3,
-    "question": "Two detector teams showed their results one after the other at the European Organization for Nuclear Research (CERN) on 4 July 2012. The lab had kept the two experiments deliberately apart, so neither team could see the other's data before the day. Both saw the same bump at a mass of about 125 GeV. What are the two detectors called?",
-    "answer": "ATLAS and CMS",
-    "choices": [
-      "ATLAS and CMS",
-      "LHCb and ALICE",
-      "COMPASS and NA62",
-      "DELPHI and OPAL"
-    ],
-    "context": "ATLAS (A Toroidal LHC Apparatus) and CMS (Compact Muon Solenoid) are separate collaborations of thousands of physicists, sitting on opposite sides of the 27-km ring. Independent analyses of independent detectors seeing the same particle within days of each other -- that is what discovery looks like when the community insists on replication. Source: en.wikipedia.org/wiki/Higgs_boson.",
+    "context": "A proton is three quarks and a boiling sea of gluons bound by the strong force. Einstein's E = mc squared runs both directions: the tremendous binding energy of that churn shows up as mass. So most of a person's body weight is not the Higgs -- it is quantum chromodynamics doing its work inside every proton and neutron in the body. Source: en.wikipedia.org/wiki/Higgs_boson.",
     "topic": "the-higgs-a-forty-eight-year-wait-for-one-particle"
   },
   {
     "tier": 4,
     "question": "Peter Higgs, 83, sat in a seminar room at the European Organization for Nuclear Research (CERN) near Geneva on 4 July 2012, forty-eight years after his 1964 paper. Two detector teams at the Large Hadron Collider showed the same bump at a mass of about 125 GeV. Asked for a reaction on camera as he wiped his eyes, what did Higgs say?",
-    "answer": "'really an incredible thing that it's happened in my lifetime'",
+    "answer": "That it was incredible it had happened in his lifetime",
     "choices": [
-      "'really an incredible thing that it's happened in my lifetime'",
-      "'this is the beginning of a new physics'",
-      "'I told you so, and it took you long enough'",
-      "'the goddamn particle turned out to exist after all'"
+      "That it was incredible it had happened in his lifetime",
+      "That it marked the beginning of a whole new physics",
+      "That it was the greatest find since the splitting of the atom",
+      "That the result still needed another year of checking"
     ],
-    "context": "Higgs, born 1929, was visibly emotional -- he wiped his eyes during the presentation. He shared the 2013 Nobel with Francois Englert; Robert Brout, the third author of the earliest 1964 paper, had died in 2011 and Nobels are not awarded posthumously. Higgs himself died in April 2024. Source: en.wikipedia.org/wiki/Peter_Higgs.",
+    "context": "His words to the camera: 'It's really an incredible thing that it's happened in my lifetime.' Higgs, born 1929, was visibly emotional -- he wiped his eyes during the presentation. He shared the 2013 Nobel with Francois Englert; Robert Brout, the third author of the earliest 1964 paper, had died in 2011 and Nobels are not awarded posthumously. Higgs himself died in April 2024. Source: en.wikipedia.org/wiki/Peter_Higgs.",
     "topic": "the-higgs-a-forty-eight-year-wait-for-one-particle"
   },
   {
@@ -35174,7 +35135,7 @@
       "toxic masculinity in the boardrooms of Silicon Valley",
       "gendered patterns of household electricity consumption"
     ],
-    "context": "The full title was 'Human reactions to rape culture and queer performativity at urban dog parks in Portland, Oregon.' The reviewer's phrase 'incredibly innovative' is the one quoted here - because it is documented, not caricatured. Source: https://en.wikipedia.org/wiki/Grievance_studies_affair",
+    "context": "The full title was 'Human reactions to rape culture and queer performativity at urban dog parks in Portland, Oregon.' The reviewer's words are documented: the three authors published the reviews with each paper. Source: https://en.wikipedia.org/wiki/Grievance_studies_affair",
     "topic": "the-hoax-papers-sokal-1996-and-the-grievance-studies-affair"
   },
   {
@@ -35200,7 +35161,7 @@
       "was Helen Wilson listed in the copyright registry",
       "was Helen Wilson current on the article-processing fee"
     ],
-    "context": "She was not. The Wall Street Journal broke the story on October 2, 2018. The dinner-test payoff of the whole affair is exactly this: the hoax survived peer review and died the moment someone requested proof that the author existed. Source: https://en.wikipedia.org/wiki/Grievance_studies_affair",
+    "context": "She was not. The Wall Street Journal broke the story on October 2, 2018. The whole affair turns on this: the hoax survived peer review and died the moment someone asked for proof that the author existed. Source: https://en.wikipedia.org/wiki/Grievance_studies_affair",
     "topic": "the-hoax-papers-sokal-1996-and-the-grievance-studies-affair"
   },
   {
@@ -35213,7 +35174,7 @@
       "a Chinese paper-mill was caught forging 400 peer-review reports",
       "the Bogdanov brothers had their physics dissertations annulled"
     ],
-    "context": "SCIgen is a random paper generator built at MIT using a context-free grammar; Cyril Labbe of Grenoble catalogued its output across more than 30 peer-reviewed conference proceedings from 2008 to 2013. The lesson: a hoax measures what a review system catches. It cannot, by itself, tell you whether the underlying field is right or wrong. Here are the finding and the objection; weigh them yourself. Source: https://retractionwatch.com/2014/02/24/springer-ieee-withdrawing-more-than-120-nonsense-papers/",
+    "context": "SCIgen is a random paper generator built at MIT using a context-free grammar; Cyril Labbe of Grenoble catalogued its output across more than 30 peer-reviewed conference proceedings from 2008 to 2013. The lesson: a hoax measures what a review system catches. It cannot, by itself, show whether the underlying field is right or wrong. The finding and the objection both stand, for a reader to weigh. Source: https://retractionwatch.com/2014/02/24/springer-ieee-withdrawing-more-than-120-nonsense-papers/",
     "topic": "the-hoax-papers-sokal-1996-and-the-grievance-studies-affair"
   },
   {
@@ -35252,7 +35213,7 @@
       "That the Medieval Warm Period had never happened anywhere outside Europe",
       "That sea level would rise by a full metre before the end of this century"
     ],
-    "context": "The wording was that it was 'likely that, in the Northern Hemisphere, the 1990s was the warmest decade and 1998 the warmest year' of the past thousand years. The 1999 paper itself had described the millennium as a long slow cooling of roughly 0.02 degrees C per century, interrupted by the modern rise. Once a research figure is a backdrop at a televised launch it stops being easy to revise, which is the whole trouble these questions are about. Source: Wikipedia, 'Hockey stick graph (global temperature)', quoting the IPCC Third Assessment Report Summary for Policymakers; Grokipedia, 'Hockey stick graph (global temperature)'.",
+    "context": "The wording was that it was 'likely that, in the Northern Hemisphere, the 1990s was the warmest decade and 1998 the warmest year' of the past thousand years. The 1999 paper itself had described the millennium as a long slow cooling of roughly 0.02 degrees C per century, interrupted by the modern rise. Once a research figure is a backdrop at a televised launch it stops being easy to revise, which is the whole trouble this fight is about. Source: Wikipedia, 'Hockey stick graph (global temperature)', quoting the IPCC Third Assessment Report Summary for Policymakers; Grokipedia, 'Hockey stick graph (global temperature)'.",
     "topic": "the-hockey-stick-fight"
   },
   {
@@ -35655,7 +35616,7 @@
       "Plasmablasts and neutrophils",
       "Regulatory T cells and NK cells"
     ],
-    "context": "This is ordinary textbook immunology, uncontroversial since the mid-twentieth century. Memory B cells rapidly re-secrete antibody on a second encounter; memory T cells recognize protein fragments displayed on infected cells and kill them. Vaccines exist because they can train these two populations without exposing you to the pathogen. Source: Cell/Immunity review S1074-7613(21)00037-6.",
+    "context": "This is ordinary textbook immunology, uncontroversial since the mid-twentieth century. Memory B cells rapidly re-secrete antibody on a second encounter; memory T cells recognize protein fragments displayed on infected cells and kill them. Vaccines exist because they can train these two populations without exposing a person to the pathogen. Source: Cell/Immunity review S1074-7613(21)00037-6.",
     "topic": "the-immunity-that-was-already-there"
   },
   {
@@ -35668,33 +35629,20 @@
       "About 15%",
       "Essentially zero"
     ],
-    "context": "The meta-analysis reported protection against severe disease of about 88.9% (84.7-90.9) at 40 weeks for Omicron BA.1, and above 78% for all earlier variants. The T-cell arm of adaptive immunity holds up well against severe outcomes even as new variants appear. Source: The Lancet, IHME COVID-19 Forecasting Team, 16 Feb 2023.",
-    "topic": "the-immunity-that-was-already-there"
-  },
-  {
-    "tier": 3,
-    "question": "A man who recovered from COVID forty weeks earlier catches the Omicron BA.1 variant. A 2023 meta-analysis in The Lancet pooled dozens of studies and found a split: a past infection still guarded well against severe disease, but its protection against simply catching the virus again, strong against earlier variants, had collapsed against Omicron. What is a variant's ability to slip past prior immunity, vaccine-built or infection-built, called?",
-    "answer": "Immune escape",
-    "choices": [
-      "Immune escape",
-      "Cytokine storm",
-      "Antibody-dependent enhancement",
-      "Original antigenic sin"
-    ],
-    "context": "Protection against reinfection at 40 weeks fell to about 29.0% for Omicron BA.1, though about 78.2% for ancestral, Alpha and Delta variants. Both results -- strong protection against severe disease AND weak protection against reinfection -- were true at the same time; headlines in both directions reported only one. Source: The Lancet, IHME COVID-19 Forecasting Team, 16 Feb 2023.",
+    "context": "The meta-analysis reported protection against severe disease of about 88.9% (84.7-90.9) at 40 weeks for Omicron BA.1, and about 90.2% for ancestral, Alpha and Delta; the T-cell arm of adaptive immunity holds up well against severe outcomes even as new variants appear. The other question had a different answer: protection against reinfection at 40 weeks fell to about 36.1% for Omicron BA.1, though it held at about 78.6% for ancestral, Alpha and Delta, because Omicron could slip past earlier immunity, an ability called immune escape. Both results were true at the same time; headlines in both directions reported only one. Source: The Lancet, IHME COVID-19 Forecasting Team, 16 Feb 2023.",
     "topic": "the-immunity-that-was-already-there"
   },
   {
     "tier": 4,
     "question": "Staff at the US Centers for Disease Control split California and New York into four groups by shot status and by prior infection, and in January 2022 they published the COVID case rates for May to November 2021. The group with both did best. Two others stood side by side in that autumn's Delta wave: a past infection but no shot, and the shot but no past infection. How did their rates of catching the virus compare?",
-    "answer": "Prior infection produced LOWER case rates than vaccination alone",
+    "answer": "Past infection alone gave lower case rates than the shot alone",
     "choices": [
-      "Prior infection produced LOWER case rates than vaccination alone",
-      "Vaccination alone produced lower case rates than prior infection",
-      "The two groups had essentially identical case rates",
-      "Neither group's rate was low enough to distinguish from the unvaccinated-no-prior baseline"
+      "Past infection alone gave lower case rates than the shot alone",
+      "The shot alone gave lower case rates than past infection alone",
+      "The two groups had almost exactly the same case rates",
+      "Both groups' rates matched those of people with neither"
     ],
-    "context": "In the Delta-dominant week of 3 Oct 2021, unvaccinated persons with prior infection had case rates 29.0-fold lower (California) and 14.7-fold lower (New York) than unvaccinated persons without prior infection -- lower than the vaccinated-only cohort in the same weeks. The study covered 1,108,600 incident cases. The hybrid group (vaccinated AND prior infection) was lowest of all. Source: MMWR 71(4), 28 Jan 2022.",
+    "context": "In the Delta-dominant week of 3 Oct 2021, unvaccinated persons with prior infection had case rates 29.0-fold lower (California) and 14.7-fold lower (New York) than unvaccinated persons without prior infection -- lower than the vaccinated-only cohort in the same weeks. The study covered 1,108,600 incident cases. The hybrid group (vaccinated AND prior infection) was lowest of all. Before Delta took over that summer, the order had run the other way: case rates were higher among survivors of a previous infection than among the vaccinated alone. Source: MMWR 71(4), 28 Jan 2022.",
     "topic": "the-immunity-that-was-already-there"
   },
   {
@@ -35707,7 +35655,7 @@
       "A full course; it counted as complete",
       "More than a full course; it counted as booster-equivalent"
     ],
-    "context": "Prior-infection status was almost universally excluded from mandate compliance in the United States and most of Western Europe through this period, despite the MMWR and Lancet measurements. The policy set aside a measured immune status that its own agencies were publishing. Source: MMWR 71(4), 28 Jan 2022.",
+    "context": "Prior-infection status was almost universally excluded from mandate compliance in the United States through this period, despite the MMWR and Lancet measurements; the European Union's Digital COVID Certificate, by contrast, accepted a documented recovery for a limited time. The US policy set aside a measured immune status that its own agencies were publishing. Sources: MMWR 71(4), 28 Jan 2022; en.wikipedia.org/wiki/EU_Digital_COVID_Certificate.",
     "topic": "the-immunity-that-was-already-there"
   },
   {
@@ -35725,7 +35673,7 @@
   },
   {
     "tier": 3,
-    "question": "A medical student traces the wiring of the knee-jerk, about the shortest in the human body. The sensory fibre from the thigh comes in low in the back and reaches its motor partner almost instantly. How many synapses, the junctions between nerve cells, sit between the two?",
+    "question": "A medical student traces the wiring of the knee-jerk in the spinal cord. The sensory fibre from the thigh's stretch sensor comes in low in the back and reaches the motor neuron that fires the thigh muscle. How many synapses, the junctions between nerve cells, sit between the two?",
     "answer": "One",
     "choices": [
       "One",
@@ -35777,19 +35725,6 @@
   },
   {
     "tier": 2,
-    "question": "Amos Tversky and Daniel Kahneman handed out a short quiz at a big meeting of expert psychologists in 1971. The answers showed the experts treating a 20-person study the way a gambler talks about a hot streak, as if a tiny sample had to mirror the whole world. What sharp title did the two authors give their paper on it?",
-    "answer": "Belief in the Law of Small Numbers",
-    "choices": [
-      "Belief in the Law of Small Numbers",
-      "Judgment under Uncertainty",
-      "Prospect Theory",
-      "The Framing of Decisions"
-    ],
-    "context": "Tversky & Kahneman, 'Belief in the Law of Small Numbers,' Psychological Bulletin 76(2), 105-110, 1971. The other three titles are real Tversky-Kahneman papers on other topics, which makes the recognition an actual test of the paper's provenance.",
-    "topic": "the-law-of-small-numbers"
-  },
-  {
-    "tier": 2,
     "question": "Daniel Kahneman and Amos Tversky put a puzzle to their colleagues. A town has two hospitals: about 45 babies are born each day in the larger one and about 15 in the smaller one. Over a year, which hospital would record more days on which over 60 percent of the babies were boys?",
     "answer": "The smaller hospital",
     "choices": [
@@ -35811,7 +35746,7 @@
       "Simpson's paradox reversed the direction inside each county",
       "Selection bias dropped the middle counties from the survey"
     ],
-    "context": "Rural life cannot cause and prevent the same cancer. Rural counties simply have small populations, and small samples yield extreme results in both directions more often than large samples. The three other choices are real statistical ideas, and none is what is happening here. Kahneman, 'Thinking, Fast and Slow' Ch. 10, citing Wainer & Zwerling.",
+    "context": "Rural life cannot cause and prevent the same cancer. Rural counties simply have small populations, and small samples yield extreme results in both directions more often than large samples. Regression to the mean, Simpson's paradox and selection bias are real statistical ideas, but none is what is happening here. Kahneman, 'Thinking, Fast and Slow' Ch. 10, citing Wainer & Zwerling.",
     "topic": "the-law-of-small-numbers"
   },
   {
@@ -35829,7 +35764,7 @@
   },
   {
     "tier": 4,
-    "question": "One American donor poured huge money into building small schools, sometimes by splitting big ones apart, on the very ranking pattern Howard Wainer and Harris Zwerling had warned about in the early 2000s as the noise of tiny samples. Which donor was it?",
+    "question": "One American donor poured huge money into building small schools, sometimes by splitting big ones apart, on the very ranking pattern that Howard Wainer and Harris Zwerling later showed to be the noise of tiny samples. Which donor was it?",
     "answer": "The Bill and Melinda Gates Foundation",
     "choices": [
       "The Bill and Melinda Gates Foundation",
@@ -35837,7 +35772,7 @@
       "The Rockefeller Foundation",
       "The Carnegie Corporation of New York"
     ],
-    "context": "Kahneman names the Gates Foundation in 'Thinking, Fast and Slow' Ch. 10 as the funder that acted on the small-schools ranking. The other three foundations are real education funders which makes the recognition specific rather than generic.",
+    "context": "Kahneman names the Gates Foundation in 'Thinking, Fast and Slow' Ch. 10 as the funder that acted on the small-schools ranking.",
     "topic": "the-law-of-small-numbers"
   },
   {
@@ -35939,7 +35874,7 @@
       "About 25 years later",
       "Within the same year",
       "About 5 years later",
-      "About 100 years later"
+      "About 40 years later"
     ],
     "context": "Governor Mark Warner apologized in May 2002; Oregon Governor John Kitzhaber followed the same year, and California's Gray Davis apologized in 2003. In 2013 North Carolina became the first state to actually pay living victims -- a $10 million fund. Sources: UPI, May 2002; WUNC 2014.",
     "topic": "the-laws-that-outlived-the-science"
@@ -35954,33 +35889,20 @@
       "how did they affect mental health",
       "how well were the rules obeyed"
     ],
-    "context": "The narrow, quantitative framing is what made the whole project auditable; every one of the other three questions is a real research question but they measured only the first. Their paper is explicit that this is the BENEFIT side of a cost-benefit question - the other side was not their subject. Source: Herby, Jonung and Hanke, Public Choice (2024).",
+    "context": "The narrow, quantitative framing is what made the whole project auditable; cost, mental health and compliance are real research questions too, but the three measured only deaths. Their paper is explicit that this is the BENEFIT side of a cost-benefit question - the other side was not their subject. Source: Herby, Jonung and Hanke, Public Choice (2024).",
     "topic": "the-lockdown-meta-analysis-that-corrected-itself"
   },
   {
     "tier": 3,
-    "question": "Steve Hanke and his two co-authors began their meta-analysis, a blend of many past studies into one careful estimate, with 19,646 papers. They set out to measure how much COVID-19 lockdowns had actually reduced deaths, and they screened those papers in three tough rounds. How many made their final shortlist?",
-    "answer": "32",
+    "question": "Lars Jonung and his two co-authors set one strict rule for which studies of the spring 2020 lockdowns their meta-analysis would count. Under that rule even Imperial College London's famous Report 9 had to go. What kind of study did the rule exclude?",
+    "answer": "Any study built on a computer simulation of the spread",
     "choices": [
-      "32",
-      "96",
-      "320",
-      "3,200"
+      "Any study built on a computer simulation of the spread",
+      "Any study written before the lockdowns had ended",
+      "Any study paid for by a government health agency",
+      "Any study counting deaths outside of hospitals"
     ],
-    "context": "Of those 32, estimates from 22 could be converted to a common standardised effect size and entered the pooled result. The wide funnel and narrow spout is exactly the shape a serious systematic review looks like: thousands screened, dozens read, a handful used. Source: Herby, Jonung and Hanke, Public Choice (2024).",
-    "topic": "the-lockdown-meta-analysis-that-corrected-itself"
-  },
-  {
-    "tier": 3,
-    "question": "Lars Jonung and his two co-authors set a strict rule for their study of the spring 2020 lockdowns. They tossed out every paper based on a computer simulation of how a virus might spread, including the famous Imperial College London Report 9. They kept only papers that compared real places living under different rules. What research design did every one of those kept papers share?",
-    "answer": "difference-in-differences",
-    "choices": [
-      "difference-in-differences",
-      "randomised control trial",
-      "regression discontinuity",
-      "propensity score matching"
-    ],
-    "context": "Difference-in-differences compares the change in one group before and after a policy against the change in a comparison group that never got the policy, so any common time-trend drops out and only the policy effect remains. That single rule excluded every study whose counterfactual was a model output - Imperial College's Report 9 among them. Source: Herby, Jonung and Hanke, Public Choice (2024).",
+    "context": "The rule was a design rule: they kept only studies using difference-in-differences, which compare the change in one group before and after a policy against the change in a comparison group that never got the policy, so any common time-trend drops out and only the policy effect remains. That excluded every study whose counterfactual was a model output - Imperial College's Report 9 among them. Source: Herby, Jonung and Hanke, Public Choice (2024).",
     "topic": "the-lockdown-meta-analysis-that-corrected-itself"
   },
   {
@@ -35993,7 +35915,7 @@
       "0.03%",
       "95%"
     ],
-    "context": "Their second, upper-bound estimate - built from nine specific interventions such as school closures and business closures - came out at 10.6%. Both numbers are on the low end of what supporters of mandates argued in 2020; both are far from zero. Source: Herby, Jonung and Hanke, Public Choice, vol. 203 (2025), pp. 337-367.",
+    "context": "Their second, upper-bound estimate - built from nine specific interventions such as school closures and business closures - came out at 10.7 percent. Both numbers are on the low end of what supporters of mandates argued in 2020; both are far from zero. Source: Herby, Jonung and Hanke, Public Choice 203 (2025), 337-367, published online November 2024.",
     "topic": "the-lockdown-meta-analysis-that-corrected-itself"
   },
   {
@@ -36006,7 +35928,7 @@
       "lung cancer",
       "heart disease"
     ],
-    "context": "Ordinary-year influenza kills roughly 72,000 people in Europe and 38,000 in the United States, so the estimated benefit of the average spring-2020 lockdown was of a similar magnitude to about a month of one bad flu season. The comparison is cited here because that is what the authors used, and because a number without a scale is not information. Source: Herby, Jonung and Hanke, Public Choice (2024).",
+    "context": "Ordinary-year influenza kills roughly 72,000 people in Europe and 38,000 in the United States, so the estimated benefit of the average spring-2020 lockdown came to about a twelfth of a year's flu deaths in Europe and about a tenth in the United States. The flu figures are the authors' own; a number without a scale is not information. Source: Herby, Jonung and Hanke, Public Choice (2024).",
     "topic": "the-lockdown-meta-analysis-that-corrected-itself"
   },
   {
@@ -36032,7 +35954,7 @@
       "1.3 million",
       "310,000"
     ],
-    "context": "The Flaxman paper's central estimate was 3.1 million averted deaths across 11 European countries (95% credible interval 2.8-3.5 million). The Herby-Jonung-Hanke number for Europe was in the thousands. Both are given here; a set of questions that hides the strongest opposing estimate has argued instead of taught. Source: Flaxman et al., Nature (2020).",
+    "context": "The Flaxman paper's central estimate was 3.1 million averted deaths across 11 European countries (95% credible interval 2.8-3.5 million). The Herby-Jonung-Hanke number for Europe was in the thousands. Both belong in the record; a record that hides the strongest opposing estimate has argued instead of taught. Source: Flaxman et al., Nature (2020).",
     "topic": "the-lockdown-meta-analysis-that-corrected-itself"
   },
   {
@@ -36045,7 +35967,7 @@
       "prior natural immunity",
       "faster hospital care"
     ],
-    "context": "Their point is that when a virus becomes visible and dangerous, people change what they do - stop shaking hands, stop crowded indoors, watch the sick - before and after any order tells them to; that voluntary shift shows up in every dataset. It is why open-school, light-restriction Sweden's death curve did not diverge wildly from its neighbours'. The finding is 'the mandate added less than you were told', not 'the virus was mild'. Source: Herby, Jonung and Hanke, Public Choice (2024).",
+    "context": "Their point is that when a virus becomes visible and dangerous, people change what they do - stop shaking hands, stop crowding indoors, avoid the sick - before and after any order tells them to; that voluntary shift shows up in the data. The finding is that the mandates added less than promised, not that the virus was mild. Source: Herby, Jonung and Hanke, Public Choice (2024).",
     "topic": "the-lockdown-meta-analysis-that-corrected-itself"
   },
   {
@@ -36058,7 +35980,7 @@
       "both benefit and cost",
       "the compliance side only"
     ],
-    "context": "The costs - lost schooling, mental-health harm, business collapse, deferred cancer diagnoses, elderly people dying alone - were left for other researchers to measure. The paper's honest self-limitation is what lets it function as evidence rather than advocacy: 'this is what we measured, this is what we did not, and here is a number a reader can now check.' Source: Herby, Jonung and Hanke, Public Choice (2024).",
+    "context": "The costs - lost schooling, mental-health harm, business collapse, deferred cancer diagnoses, elderly people dying alone - were left for other researchers to measure. The paper's honest self-limitation is what lets it work as evidence rather than advocacy: it says what was measured and what was not, and gives a number a reader can check. Source: Herby, Jonung and Hanke, Public Choice (2024).",
     "topic": "the-lockdown-meta-analysis-that-corrected-itself"
   },
   {
@@ -36153,11 +36075,11 @@
     "topic": "the-machinery-the-trusted-news-initiative-and-the-disinforma"
   },
   {
-    "tier": 5,
+    "tier": 3,
     "question": "Alejandro Mayorkas, the US Homeland Security secretary, told a House committee on 27 April 2022 that he was setting up a brand-new working group. It was meant to help the federal government with one job. In plain terms, what job was it going to do?",
-    "answer": "Sorting true from false information for the public",
+    "answer": "Helping judge which online claims were true or false",
     "choices": [
-      "Sorting true from false information for the public",
+      "Helping judge which online claims were true or false",
       "Defending computer networks from foreign hackers",
       "Investigating cross-border smuggling cases",
       "Coordinating federal disaster relief"
@@ -36175,7 +36097,7 @@
       "It was moved into the FBI",
       "It was made permanent by Congress"
     ],
-    "context": "The Council, co-chaired for this review by former DHS Secretary Michael Chertoff and former Deputy Attorney General Jamie Gorelick, unanimously recommended dissolution. This is the honest end of the story: the machinery was stopped in public, by ordinary argument, in under four months -- and the ordinary body that stopped it is worth knowing by name. Sources: CNN, August 2022; First Amendment Encyclopedia (MTSU).",
+    "context": "The Homeland Security Advisory Council, co-chaired for this review by former DHS Secretary Michael Chertoff and former Deputy Attorney General Jamie Gorelick, unanimously recommended dissolution. This is the honest end of the story: the machinery was stopped in public, by ordinary argument, in under four months -- and the ordinary body that stopped it is worth knowing by name. Sources: CNN, August 2022; First Amendment Encyclopedia (MTSU).",
     "topic": "the-machinery-the-trusted-news-initiative-and-the-disinforma"
   },
   {
@@ -36193,26 +36115,13 @@
   },
   {
     "tier": 3,
-    "question": "Paul Ehrlich picked a family of arsenic compounds, made and numbered them one at a time, and tested each on an infected rabbit. It was slow and boring, and this systematic hunt needed a name no one had needed before. What word did he coin for it?",
-    "answer": "Chemotherapy",
-    "choices": [
-      "Chemotherapy",
-      "Serotherapy",
-      "Immunotherapy",
-      "Phototherapy"
-    ],
-    "context": "Chemotherapy first meant the systematic hunt for antibacterial drugs -- one chemical after another until one hits the invader but not the patient. The word only later broadened to cancer drugs. The rival 1900s -therapy words were real too: serotherapy (antitoxin serums), immunotherapy (immune-system approaches), and Finsen's Nobel-winning phototherapy. Source: https://centennial.rucares.org/index.php?page=Chemotherapy",
-    "topic": "the-magic-bullet-hunt-from-a-dye-that-stains-to-a-drug-that"
-  },
-  {
-    "tier": 3,
     "question": "Paul Ehrlich's Frankfurt laboratory made Compound 606 in 1907, the 606th of its numbered arsenic compounds, and set it aside on the shelf as a failure. It would one day be sold as Salvarsan against the deadly disease syphilis, but it was almost thrown away. What eventually rescued it?",
     "answer": "Sahachiro Hata retested it two years later at Ehrlich's insistence",
     "choices": [
       "Sahachiro Hata retested it two years later at Ehrlich's insistence",
       "Alfred Bertheim spilled it onto a rabbit that was infected anyway",
       "Emil von Behring re-synthesised it and got the credit for the cure",
-      "Fritz Schaudinn injected himself with it and reported he had been cured"
+      "Robert Koch retested it in Berlin and vouched for its safety"
     ],
     "context": "Ehrlich's Japanese bacteriologist Sahachiro Hata reran the test with more care and better records; the drug that had been called useless turned out to be the first real chemical cure. A 'negative result' can be a badly run test. Source: https://en.wikipedia.org/wiki/Arsphenamine",
     "topic": "the-magic-bullet-hunt-from-a-dye-that-stains-to-a-drug-that"
@@ -36452,29 +36361,16 @@
     "topic": "the-missing-mass-zwicky-rubin-and-an-honest-hole-in-physics"
   },
   {
-    "tier": 2,
-    "question": "Kent Ford built the key tool for his study of Andromeda with Vera Rubin, a special spectrograph that could catch the light of faint outer gas clouds in about a tenth the time an old photographic plate needed. What kind of spectrograph was it?",
-    "answer": "an image-tube spectrograph",
-    "choices": [
-      "an image-tube spectrograph",
-      "an echelle spectrograph",
-      "a prism spectrograph",
-      "a grating spectrograph"
-    ],
-    "context": "Ford's image tube was an early image intensifier -- a vacuum device that amplified the trickle of photons from faint targets before they hit the recording medium. Echelle, prism, and grating spectrographs are all standard designs, but none of them boost dim signals; Ford's intensifier is what turned nights-long exposures into feasible ones, which is why Rubin and Ford could survey dozens of spirals and see the flat-curve pattern repeat almost every time. Source: https://carnegiescience.edu/vera-rubin-opening-doors-dark-matter-and-women-stem",
-    "topic": "the-missing-mass-zwicky-rubin-and-an-honest-hole-in-physics"
-  },
-  {
     "tier": 3,
-    "question": "Fritz Zwicky measured how fast the galaxies inside the Coma Cluster were flying around in 1933, using a rule of physics called the virial theorem. The cluster needed way more mass than its stars could account for, he found, or it would fly apart. What did he name the missing stuff?",
-    "answer": "Dark matter",
+    "question": "Fritz Zwicky clocked the galaxies of the Coma Cluster in 1933 and worked out, with the virial theorem, that the cluster held some 400 times more mass than its glowing matter showed. Modern measurements still find hidden mass there, but far less. What had inflated Zwicky's figure?",
+    "answer": "A value of the Hubble constant far too large",
     "choices": [
-      "Dark matter",
-      "Antimatter",
-      "Dark energy",
-      "The luminiferous ether"
+      "A value of the Hubble constant far too large",
+      "Milky Way stars mistaken for cluster members",
+      "A slipped decimal point in his own arithmetic",
+      "Dim gas clouds counted as extra galaxies"
     ],
-    "context": "Zwicky's paper 'Die Rotverschiebung von extragalaktischen Nebeln' appeared in Helvetica Physica Acta 6:110-127; he called the missing stuff 'dunkle Materie'. His headline factor -- roughly 400 times the visible mass -- relied on an era estimate of the Hubble constant that was much too large; modern Coma numbers put the mass-to-light ratio far lower (around 30 solar units, up to a few hundred by some estimates), so the true missing-mass factor is smaller than his figure -- but the missing-mass problem itself is real. Jan Oort had hinted at unseen mass in the Milky Way disk in 1932. Source: https://en.wikipedia.org/wiki/Fritz_Zwicky ; https://ned.ipac.caltech.edu/level5/Biviano/Biviano3_3.html",
+    "context": "Zwicky's paper 'Die Rotverschiebung von extragalaktischen Nebeln' appeared in Helvetica Physica Acta 6:110-127, and he called the missing stuff 'dunkle Materie', dark matter. His estimates were off by more than an order of magnitude, mainly because the era's value of the Hubble constant was much too large; modern Coma numbers put the mass-to-light ratio far lower (around 30 solar units, up to a few hundred by some estimates). The missing-mass problem itself is real. Jan Oort had hinted at unseen mass in the Milky Way disk in 1932. Source: https://en.wikipedia.org/wiki/Dark_matter ; https://ned.ipac.caltech.edu/level5/Biviano/Biviano3_3.html",
     "topic": "the-missing-mass-zwicky-rubin-and-an-honest-hole-in-physics"
   },
   {
@@ -36513,7 +36409,7 @@
       "wide binary star pairs",
       "the cosmic microwave background power spectrum"
     ],
-    "context": "MOND's tuning acceleration a0 is about 1.2 x 10^-10 metres per second squared -- roughly the acceleration you feel from a car speeding up by one metre per second every 260 years. Dwarf spheroidals, wide binaries, and the CMB power spectrum are all regimes where MOND has been argued about in the literature -- but rich clusters are the toughest case: a residual mass discrepancy remains even after MOND is applied, and the Bullet Cluster's clean separation of visible and gravitational mass is very hard for a pure gravity-modification story to reproduce. Source: https://en.wikipedia.org/wiki/Modified_Newtonian_dynamics",
+    "context": "MOND's tuning acceleration a0 is about 1.2 x 10^-10 metres per second squared -- roughly the acceleration of a car that speeds up by one metre per second every 260 years. Dwarf spheroidals, wide binaries, and the CMB power spectrum are all regimes where MOND has been argued about in the literature -- but rich clusters are the toughest case: a residual mass discrepancy remains even after MOND is applied, and the Bullet Cluster's clean separation of visible and gravitational mass is very hard for a pure gravity-modification story to reproduce. Source: https://en.wikipedia.org/wiki/Modified_Newtonian_dynamics",
     "topic": "the-missing-mass-zwicky-rubin-and-an-honest-hole-in-physics"
   },
   {
@@ -36539,7 +36435,7 @@
       "they decay far too quickly to accumulate in halos",
       "they are far too heavy to have escaped particle detectors"
     ],
-    "context": "In cosmology talk, neutrinos are 'hot dark matter' -- they were still moving relativistically when structure began forming, so they would have streamed out of small clumps and smeared out the fine structure we actually see galaxies condensing from. The dark matter that fits the observed universe is 'cold': slow-moving, clumping easily. Vera Rubin herself did not treat any of this as settled -- she liked to say the ratio of dark to light matter in a spiral galaxy 'is about a factor of 10 -- that's probably a good number for the ratio of our ignorance to knowledge.' Source: https://en.wikipedia.org/wiki/Dark_matter",
+    "context": "In cosmology talk, neutrinos are 'hot dark matter' -- they were still moving relativistically when structure began forming, so they would have streamed out of small clumps and smeared out the fine structure from which galaxies are actually seen to condense. The dark matter that fits the observed universe is 'cold': slow-moving, clumping easily. Vera Rubin herself did not treat any of this as settled -- she liked to say the ratio of dark to light matter in a spiral galaxy 'is about a factor of 10 -- that's probably a good number for the ratio of our ignorance to knowledge.' Source: https://en.wikipedia.org/wiki/Dark_matter",
     "topic": "the-missing-mass-zwicky-rubin-and-an-honest-hole-in-physics"
   },
   {
