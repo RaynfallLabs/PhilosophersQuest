@@ -32916,19 +32916,6 @@
     "topic": "the-taklamakan"
   },
   {
-    "tier": 4,
-    "question": "The Tarim, the Hotan and the Yarkand rush down out of the mountains ringing the Taklamakan, fan out across the desert floor and then simply vanish, soaking away into the sand. Not one of them ever reaches an ocean. What word do geographers use for a basin like this, whose waters never escape to the sea?",
-    "answer": "endorheic",
-    "choices": [
-      "endorheic",
-      "aeolian",
-      "artesian",
-      "alluvial"
-    ],
-    "context": "The Tarim Basin is endorheic (Greek endon 'within' + rhein 'to flow') — it has no outlet to any sea. The Tarim, Hotan, and Yarkand run down from the mountains, feed oasis farms, then soak away and evaporate in the sand rather than ever reaching an ocean, making it one of the world's great inland-drainage basins. Sources: New World Encyclopedia 'Takla Makan Desert'; WorldAtlas.",
-    "topic": "the-taklamakan"
-  },
-  {
     "tier": 5,
     "question": "Chinese engineers drove a paved highway straight across hundreds of kilometres of live, shifting dunes to reach oilfields deep in the Taklamakan's heart, the longest road ever built over a moving-sand desert. The restless dunes kept creeping over it, threatening to bury it entirely. How did the engineers hold the sand back?",
     "answer": "They planted a living green belt along the road.",
@@ -33151,7 +33138,7 @@
   },
   {
     "tier": 4,
-    "question": "Sima Qian wrote that the First Emperor's sealed tomb near Mount Li held a model of his whole realm, its hundred rivers and seas recreated in miniature beneath a ceiling of painted stars and constellations. For 2,000 years scholars filed this under fairy tale. Then, in 2020, scientists measured the air over the tomb mound with a laser. What did they detect there at strangely high levels?",
+    "question": "Sima Qian wrote that the First Emperor's sealed tomb near Mount Li held a model of his whole realm, its hundred rivers and seas recreated in miniature beneath a ceiling of painted stars and constellations. Many scholars long took this for a tall tale. Then, in 2020, scientists measured the air over the tomb mound with a laser. What did they detect there at strangely high levels?",
     "answer": "mercury",
     "choices": [
       "mercury",
@@ -33229,7 +33216,7 @@
   },
   {
     "tier": 1,
-    "question": "Visitors at Iceland's Thingvellir walk a footpath down a deep canyon whose far wall is the Eurasian plate and whose near cliff is the North American. Nowhere else on land can people walk between two continents in the open air. What type of plate boundary runs through here?",
+    "question": "Visitors at Iceland's Thingvellir walk down into the Almannagjá gorge, whose tall western cliff marks the end of the North American plate. The Eurasian plate's edge rises on the far side of the sunken valley floor. What type of plate boundary runs through here?",
     "answer": "a divergent boundary",
     "choices": [
       "a divergent boundary",
@@ -33237,20 +33224,7 @@
       "a transform boundary",
       "a volcanic hotspot"
     ],
-    "context": "At Thingvellir the two plates spread apart about 2 cm a year; over the 10,000 years since the lava flowed there, the ground has widened roughly 70 m and dropped some 40 m. This is a DIVERGENT boundary -- the one place on land where you can walk inside the seam between two continents. (thingvellir.is/en/education/nature/tectonic-movements)",
-    "topic": "the-three-ways-plates-meet-a-plate-boundary-field-guide"
-  },
-  {
-    "tier": 1,
-    "question": "Divers at Silfra, in Iceland, drop into a flooded crack in the earth and float down its narrow gorge in glacier meltwater. As they go, they reach out and do something possible in almost no other spot on Earth. What can they do?",
-    "answer": "touch two tectonic plates at once",
-    "choices": [
-      "touch two tectonic plates at once",
-      "swim through a flooded lava tube",
-      "float in water too salty to sink",
-      "glide beneath the edge of a glacier"
-    ],
-    "context": "The Silfra fissure runs right through the rift between the North American and Eurasian plates -- stretch out your arms and a hand rests on each side. Its water is glacial melt filtered through porous lava for decades, giving visibility of around 100 m. (en.wikipedia.org/wiki/Silfra)",
+    "context": "The North American and Eurasian plates drift apart about 2 cm a year in all, and over the 10,000 years since lava flowed at Thingvellir the valley floor between the Almannagjá and Hrafnagjá faults has widened roughly 70 m and sunk some 40 m. This is a DIVERGENT boundary, one of the few places where the seam between two great plates lies open on dry land. Sources: thingvellir.is/en/education/nature/tectonic-movements ; grokipedia.com/page/Þingvellir",
     "topic": "the-three-ways-plates-meet-a-plate-boundary-field-guide"
   },
   {
@@ -33294,7 +33268,7 @@
   },
   {
     "tier": 4,
-    "question": "Every continent and every ocean floor rides on one of only about seven or eight great slabs of Earth's rocky shell. One of them dwarfs the others, spanning some 103 million square kilometres, larger than any continent. Which is Earth's largest tectonic plate?",
+    "question": "Earth's continents and ocean floors ride on a rocky shell broken into some seven or eight great slabs and about fifteen smaller ones. One of them dwarfs the rest, spanning some 103 million square kilometres, larger than any continent. Which is Earth's largest tectonic plate?",
     "answer": "the Pacific plate",
     "choices": [
       "the Pacific plate",
@@ -33359,15 +33333,15 @@
   },
   {
     "tier": 3,
-    "question": "Tide-watchers on the Bay of Fundy know two days each month well: the new Moon and the full Moon, when the Sun and the Moon line up and their pulls add together, lifting the tides to their very highest. What are these highest tides called?",
-    "answer": "spring tides",
+    "question": "Tide-watchers on the Bay of Fundy plan around the spring tides, the highest of each month, when the sea climbs farthest up the shore. The name has nothing to do with the season, for they come in December as surely as in May. When in the Moon's cycle do they arrive?",
+    "answer": "at the new Moon and the full Moon",
     "choices": [
-      "spring tides",
-      "flood tides",
-      "ebb tides",
-      "storm tides"
+      "at the new Moon and the full Moon",
+      "at the first and last quarter Moons",
+      "when the Moon swings farthest from Earth",
+      "when the Moon crosses over the equator"
     ],
-    "context": "'Spring' here means 'springing up' or bursting forth — the tide leaping to its peak — not the season. These highest tides come when the Sun and Moon pull in a straight line, at the new and full Moon. Source: en.wikipedia.org/wiki/Tide.",
+    "context": "Spring tides come twice a month, at the new and full Moon, when the Sun and the Moon fall into a straight line and their pulls add together. 'Spring' means springing up, the tide leaping to its peak, not the season. When the Moon swings farthest from Earth its pull, and with it the tide, is in fact a little weaker. Source: en.wikipedia.org/wiki/Tide.",
     "topic": "the-tides-and-the-record-breaking-bay-of-fundy"
   },
   {
@@ -33398,20 +33372,20 @@
   },
   {
     "tier": 4,
-    "question": "Even the mighty Bay of Fundy runs slack about a week after its highest tides, at the quarter Moon, when the Sun and the Moon pull crossways to each other and partly cancel out. The sea there barely rises and falls. What are these weakest tides called?",
-    "answer": "neap tides",
+    "question": "Twice a month even Canada's Bay of Fundy runs slack. For a few days its famous tides shrink, and the sea barely creeps up the shore and back again. Tide tables mark these feeble tides as neap tides. What robs the tides of their strength then?",
+    "answer": "the Sun and Moon pull at right angles",
     "choices": [
-      "neap tides",
-      "spring tides",
-      "flood tides",
-      "ebb tides"
+      "the Sun and Moon pull at right angles",
+      "the Sun and Moon pull from opposite sides",
+      "the Moon is new and hidden from sight",
+      "the Moon passes through Earth's shadow"
     ],
-    "context": "'Neap' is an old Anglo-Saxon word meaning roughly 'without the power.' At the quarter Moon the Sun's pull works crossways to the Moon's, so the two partly cancel and the tides run slack. (In line, at new and full Moon, they give the towering spring tides.) Source: en.wikipedia.org/wiki/Tide.",
+    "context": "At the first and last quarter Moons, about a week after the spring tides, the Sun pulls at right angles to the Moon, so the two partly cancel and the tides run slack. 'Neap' comes from an old Anglo-Saxon word read as something like 'without the power'. When the Sun and Moon line up instead, on the same side of Earth at new Moon or on opposite sides at full Moon, their pulls add up into the towering spring tides. Source: en.wikipedia.org/wiki/Tide.",
     "topic": "the-tides-and-the-record-breaking-bay-of-fundy"
   },
   {
     "tier": 4,
-    "question": "The Bay of Fundy, between Nova Scotia and New Brunswick, narrows like a long funnel, and its tides climb up to 16 metres, the highest on the planet. Many other bays are funnels too. What lucky coincidence makes Fundy the champion rather than one more funnel?",
+    "question": "Canada's Bay of Fundy, between Nova Scotia and New Brunswick, narrows like a long funnel, and its tides climb some 16 metres, as high as any on the planet. Many other bays are funnels too. What lucky coincidence makes Fundy a champion rather than one more funnel?",
     "answer": "its natural sloshing rhythm matches the tide's own beat",
     "choices": [
       "its natural sloshing rhythm matches the tide's own beat",
@@ -33419,20 +33393,7 @@
       "its rivers pour in more fresh water than any other bay",
       "it lies at the one latitude where the tides peak"
     ],
-    "context": "This lucky match is called tidal resonance: Fundy's water naturally sloshes back and forth on nearly the same ~12.5-hour rhythm as the tides, so each tide pushes at just the right moment — like timing shoves on a swing — building the water ever higher. Source: en.wikipedia.org/wiki/Bay_of_Fundy.",
-    "topic": "the-tides-and-the-record-breaking-bay-of-fundy"
-  },
-  {
-    "tier": 5,
-    "question": "Mark Whitbread and Colin Wessels, two surfers, caught the Bay of Fundy tide in July 2013 as it charged up the Petitcodiac River near Moncton, a bore rolling upstream as a single moving wall of water. Their ride set a North American record. For what feat?",
-    "answer": "the longest wave ever surfed",
-    "choices": [
-      "the longest wave ever surfed",
-      "the fastest surf ride ever clocked",
-      "the most surfers on one wave",
-      "the tallest bore wave ever ridden"
-    ],
-    "context": "Surfers Mark Whitbread and Colin Wessels rode the Petitcodiac bore about 29 km (18 miles) over two and a half hours — a North American record for the longest wave ever surfed. A tidal bore forms when a big incoming tide funnels into a narrowing river. Source: cbc.ca (Moncton tidal bore, July 2013).",
+    "context": "This lucky match is called tidal resonance: the water of the bay and the Gulf of Maine naturally sloshes from end to end in roughly 13 hours, close to the tide's own rhythm of about twelve and a half, so each tide pushes at just the right moment, like timing shoves on a swing, building the water ever higher. Sources: en.wikipedia.org/wiki/Bay_of_Fundy; Garrett (1972), 'Tidal resonance in the Bay of Fundy and Gulf of Maine', Nature.",
     "topic": "the-tides-and-the-record-breaking-bay-of-fundy"
   },
   {
@@ -33982,19 +33943,6 @@
     "topic": "the-yucatan-cenotes-and-the-dinosaur-crater"
   },
   {
-    "tier": 3,
-    "question": "Rainwater seeping into the soft limestone of Mexico's Yucatán Peninsula carries a little acid, and drop by drop, over thousands of years, it eats the rock hollow. The cenotes there were dissolved, never dug. What is this kind of landscape called?",
-    "answer": "karst",
-    "choices": [
-      "karst",
-      "tundra",
-      "badlands",
-      "delta"
-    ],
-    "context": "Karst is landscape shaped where water slowly dissolves soluble rock like limestone, riddling it with caves, sinkholes, and underground rivers. The Yucatan is one of the largest karst platforms on Earth, which is why its cenotes number in the thousands. Source: https://en.wikipedia.org/wiki/Cenote",
-    "topic": "the-yucatan-cenotes-and-the-dinosaur-crater"
-  },
-  {
     "tier": 4,
     "question": "A trained cave diver can slip into one Yucatán cenote and swim through drowned stone passages to cenotes far across the jungle, for beneath the surface they link up into flooded mazes. This hidden, water-filled network holds a world record. What record do the Yucatán's flooded caves hold?",
     "answer": "the longest underwater cave systems on Earth",
@@ -34165,7 +34113,7 @@
   },
   {
     "tier": 1,
-    "question": "Two great stone pyramids stand face to face across the Great Plaza of Tikal, in Guatemala. Archaeologists named the taller, eastern one, a steep royal tomb, for a fierce predator of the Petén jungle. Which animal gives Temple I its name, the 'Temple of the Great ___'?",
+    "question": "Two stone pyramids face each other across the Great Plaza of Tikal, in Guatemala. The taller, Temple I, a royal tomb, takes its name from a lintel carved with a king seated on the throne of a fierce jungle predator. Which predator is it?",
     "answer": "Jaguar",
     "choices": [
       "Jaguar",
@@ -34213,19 +34161,6 @@
       "The nine royal ancestors"
     ],
     "context": "Temple I's nine stepped terraces are widely thought to represent the nine levels of the Maya underworld. Its roof-comb is built as two parallel stone walls with a hollow vault between them, cutting the weight while giving a huge surface to carve the king's image. Source: en.wikipedia.org/wiki/Tikal_Temple_I  (Legend.)",
-    "topic": "tikal"
-  },
-  {
-    "tier": 3,
-    "question": "In the rainforests of northern Guatemala rise the towering limestone pyramids of a ruined Maya city. When its kings ruled it, over a thousand years ago, they probably called it Yax Mutal. Centuries after the jungle swallowed the temples, later Yucatec Maya speakers gave the abandoned place a new, plainer name — Tikal. What does 'Tikal' roughly mean?",
-    "answer": "At the waterhole",
-    "choices": [
-      "At the waterhole",
-      "Place of tall stones",
-      "City of the jaguar",
-      "Hill of the sunrise"
-    ],
-    "context": "'Tikal' is a later Yucatec Maya name meaning roughly 'at the waterhole' — a fitting name for a city with no rivers or lakes that lived and died by its rain-fed reservoirs. Its Classic-era name was likely 'Yax Mutal.' Source: en.wikipedia.org/wiki/Tikal",
     "topic": "tikal"
   },
   {
@@ -34399,28 +34334,15 @@
   },
   {
     "tier": 5,
-    "question": "Rows of palm-wood beams called toron jut straight out from the walls of Timbuktu's great mosques, in Mali, on the edge of the Sahara. They are no decoration: they let the whole town carry out one essential task together, once every year. What is that yearly task?",
-    "answer": "re-plastering the mosques",
+    "question": "Armed fighters seized Timbuktu in 2012 and began destroying anything they judged un-Islamic, and the city's ancient manuscripts were in serious danger. Abdel Kader Haidara, a quiet local librarian, ran a secret rescue that saved about 350,000 of them. How did he and his helpers keep them safe?",
+    "answer": "smuggling them south in metal trunks",
     "choices": [
-      "re-plastering the mosques",
-      "whitewashing them with lime",
-      "re-carpeting the prayer halls",
-      "regilding the mosque domes"
-    ],
-    "context": "The toron — projecting Rodier-palm beams — are permanent built-in scaffolding: the mud skin must be re-plastered by the whole town every year in a communal festival, the crépissage, or the seasonal rains would slowly dissolve the building. Sources: reviewofreligions.org, 'Places of Worship: Timbuktu Mosque'; grokipedia.com/page/Sudano-Sahelian_architecture.  (Legend.)",
-    "topic": "timbuktu"
-  },
-  {
-    "tier": 5,
-    "question": "Armed fighters seized Timbuktu in 2012 and began destroying anything they judged un-Islamic, and the city's ancient manuscripts were in serious danger. Abdel Kader Haidara, a quiet local librarian, ran a secret rescue that saved about 350,000 of them. How did he and his helpers get them out?",
-    "answer": "floating them downriver in metal trunks",
-    "choices": [
-      "floating them downriver in metal trunks",
+      "smuggling them south in metal trunks",
       "burying them in jars under the desert",
       "sealing them inside the mosque walls",
       "shipping them abroad to museums"
     ],
-    "context": "Librarian Abdel Kader Haidara and a network of helpers secretly smuggled roughly 350,000 manuscripts out in metal trunks and footlockers, spirited past checkpoints and floated down the Niger River by boat to safety in Bamako. It was a race against real destruction: on 25 January 2013 the retreating militants swept about 4,200 manuscripts off the tables of the Ahmed Baba Institute and set them on fire — only a fraction, because most had already been smuggled out. Sources: nationalgeographic.com, 'The Badass Librarians of Timbuktu'; en.wikipedia.org/wiki/Timbuktu.  (Legend.)",
+    "context": "Librarian Abdel Kader Haidara and a network of helpers secretly smuggled roughly 350,000 manuscripts out in metal trunks and footlockers: first by car past militant checkpoints, then, when the roads grew too dangerous, by boat on the Niger, to safety in Bamako in the south. It was a race against real destruction: on 25 January 2013 the retreating militants swept about 4,200 manuscripts off the tables of the Ahmed Baba Institute and set them on fire, only a fraction, because most had already been smuggled out. Sources: smithsonianmag.com, 'The Race to Save Mali's Priceless Artifacts'; en.wikipedia.org/wiki/Timbuktu_Manuscripts; nationalgeographic.com, 'The Badass Librarians of Timbuktu'.  (Legend.)",
     "topic": "timbuktu"
   },
   {
@@ -34434,19 +34356,6 @@
       "During the Inca empire itself"
     ],
     "context": "Tiwanaku flourished roughly AD 500-1000 and had collapsed by about AD 1000 -- centuries before the Inca empire arose in the 1400s. The two are a common mix-up because both centered on the Andes near Lake Titicaca. Source: Grokipedia: Pumapunku; Wikipedia: Tiwanaku.",
-    "topic": "tiwanaku-and-pumapunku"
-  },
-  {
-    "tier": 2,
-    "question": "The ruined Andean city of Tiwanaku sits on an enormous flat highland by Lake Titicaca, over two miles above the sea, a plateau that stretches across Bolivia and Peru and rises higher than most peaks in the Alps. Spanish-speaking geographers gave it a plain name that just means 'high plain.' What is it called?",
-    "answer": "the altiplano",
-    "choices": [
-      "the altiplano",
-      "the pampas",
-      "the paramo",
-      "the llanos"
-    ],
-    "context": "The altiplano is the widest high plateau on Earth outside Tibet. Tiwanaku sits on it at about 3,850 m (12,630 ft) above sea level, near the southern shore of Lake Titicaca -- a plain so lofty it rises above most European peaks. Source: Grokipedia: Pumapunku; Wikipedia: Pumapunku.",
     "topic": "tiwanaku-and-pumapunku"
   },
   {
@@ -34697,19 +34606,6 @@
     "topic": "tornado-alley-and-the-supercell"
   },
   {
-    "tier": 2,
-    "question": "Storm chasers wait each spring along an invisible line over the Texas Panhandle, where hot, dry desert air meets wet air from the Gulf. Step across it and the humidity plunges, and huge rotating storms often fire right along it. What do forecasters call this line?",
-    "answer": "a dryline",
-    "choices": [
-      "a dryline",
-      "a cold front",
-      "a warm front",
-      "a squall line"
-    ],
-    "context": "A dryline marks where hot, dry desert air meets Gulf moisture, often draped over the Texas Panhandle and western Plains in spring. Counterintuitively, the dry air is denser and wedges underneath the moist air, helping shove it upward into storms. Cross a dryline and the humidity - not the temperature - drops off a cliff. Source: https://en.wikipedia.org/wiki/Dryline",
-    "topic": "tornado-alley-and-the-supercell"
-  },
-  {
     "tier": 3,
     "question": "A colossal tornado dropped from a supercell thunderstorm on the evening of 31 May 2013 and tore across the flat farmland near El Reno, Oklahoma. Storm chasers driving portable Doppler radar dishes clocked the winds inside it past 300 miles per hour, and at one point it spread over 2.6 miles from edge to edge. Which world record does the El Reno tornado hold?",
     "answer": "the widest ever measured",
@@ -34724,15 +34620,15 @@
   },
   {
     "tier": 3,
-    "question": "Forecasters on the plains of Oklahoma and Kansas rank every twister by the wreckage it leaves behind. At 0 it snaps branches and peels shingles; at 5 it rips asphalt off the road and lifts a well-built house right off its base. What is this damage scale called?",
-    "answer": "the Fujita scale",
+    "question": "Ted Fujita, a scientist at the University of Chicago, drew up a scale in 1971 that still ranks the twisters of Oklahoma and Kansas from 0 to 5, in an updated form since 2007. What sets a tornado's rating on his scale?",
+    "answer": "the damage it leaves on the ground",
     "choices": [
-      "the Fujita scale",
-      "the Saffir-Simpson scale",
-      "the Richter scale",
-      "the Beaufort scale"
+      "the damage it leaves on the ground",
+      "the top wind speed clocked by radar",
+      "the width of its funnel at its base",
+      "the length of the track it carves"
     ],
-    "context": "Ted Fujita of the University of Chicago introduced his F scale in 1971; the Enhanced Fujita (EF) scale replaced it in the United States on February 1, 2007. An original F5 meant winds of roughly 261 to 318 mph - 'incredible damage.' Because the scale reads the wreckage on the ground rather than the wind directly, a ferociously fast tornado can still earn a middling rating if it stays over open country. Source: https://en.wikipedia.org/wiki/Fujita_scale",
+    "context": "Ted Fujita of the University of Chicago introduced his F scale in 1971; the Enhanced Fujita (EF) scale replaced it in the United States on February 1, 2007. Both rate a tornado by the wreckage it leaves: surveyors read the damage on the ground and estimate the winds from it, so a ferociously fast tornado can still earn a middling rating if it stays over open country, as El Reno's did in 2013. An original F5 meant winds of roughly 261 to 318 mph, 'incredible damage.' Source: https://en.wikipedia.org/wiki/Fujita_scale",
     "topic": "tornado-alley-and-the-supercell"
   },
   {
@@ -34772,19 +34668,6 @@
       "Green Lotus Peak"
     ],
     "context": "The spot is Yellow Cloth Shoal (Huangbu), just downstream of Xingping. It is named for a big flat beige slab of rock lying on the clear riverbed that looks like a sheet of yellow cloth spread out underwater; seven karst hills of different sizes stand around it, and it is famed for the finest peak-reflections on the whole Li River. Sources: lirivercruises.com (Li River 20-yuan note); topchinatravel.com (Li River).",
-    "topic": "tower-karst-stone-forests-and-drowned-dragons"
-  },
-  {
-    "tier": 2,
-    "question": "Fan Chengda, a Song-dynasty poet, judged the limestone thumb-hills around Guilin the finest scenery under heaven. The city stands at the head of the Li River in southern China, and its ancient name comes from a fragrant flowering tree that grew thick around it. What does the name 'Guilin' mean?",
-    "answer": "forest of sweet osmanthus",
-    "choices": [
-      "forest of sweet osmanthus",
-      "forest of tall bamboos",
-      "forest of jade peaks",
-      "forest of stone dragons"
-    ],
-    "context": "Guilin means 'forest of sweet osmanthus' — it was named for the fragrant osmanthus (cassia) trees that perfume the city each autumn. Its karst scenery was so admired that the Song-dynasty poet Fan Chengda praised it as the finest under heaven. Sources: Grokipedia 'Guilin'; Wikipedia 'Guilin' (Fan Chengda).",
     "topic": "tower-karst-stone-forests-and-drowned-dragons"
   },
   {
@@ -34906,7 +34789,7 @@
   },
   {
     "tier": 5,
-    "question": "Down the Jordan Rift Valley, the Arabian plate has ground about 105 km north past the African plate along one great sliding fault. Wherever the fault's line steps to one side, the crust caught between the steps has stretched and dropped into a deep pit, and the pits have filled with water. Which three bodies of water lie in them?",
+    "question": "Between the tip of the Sinai and the mountains of southern Turkey, the Arabian plate has ground about 105 km northward past the African plate along one great sliding fault. Wherever the fault's line steps to one side, the crust caught between the steps has stretched and dropped into a deep pit, and the pits have filled with water. Which three bodies of water lie in them?",
     "answer": "the Dead Sea, the Sea of Galilee, and the Gulf of Aqaba",
     "choices": [
       "the Dead Sea, the Sea of Galilee, and the Gulf of Aqaba",
@@ -35023,19 +34906,6 @@
   },
   {
     "tier": 4,
-    "question": "In the houses of one late layer at Hisarlik, colossal jars, some taller than a grown man, stood sunk deep into the clay floors to store grain, oil and water, as if the town were bracing for hard times. Archaeologists use a Greek name for giant storage jars of this kind. What are such jars called?",
-    "answer": "Pithoi",
-    "choices": [
-      "Pithoi",
-      "Amphorae",
-      "Kraters",
-      "Kylikes"
-    ],
-    "context": "Pithoi are giant storage jars; sunk into the Troy VIIa floors alongside rooms subdivided into cramped quarters, they read like a town packing in people and hoarding food -- bracing for a siege. Amphorae carried wine and oil, kraters mixed wine, and kylikes were drinking cups. (Wikipedia: Troy)",
-    "topic": "troy-the-mound-of-hisarlik"
-  },
-  {
-    "tier": 4,
     "question": "Homer's Iliad tells of a ten-year Greek siege of Troy, and in Homer's tale the city was at last stormed and put to the torch. In the mound of Hisarlik one layer reads like a 3,000-year-old crime scene: sealed under a black burn line, its lanes strewn with sling-stones and Greek-style bronze arrowheads, its dead left unburied where they fell. Which layer do archaeologists call the best match for Homer's sacked Troy?",
     "answer": "Troy VIIa",
     "choices": [
@@ -35101,13 +34971,13 @@
   },
   {
     "tier": 3,
-    "question": "Racing across deep water, the 2004 tsunami stood only about a meter tall. But when it swept into the shallows at Banda Aceh in Sumatra, the front slowed down. Water behind piled into it, and it reared up 15 to 30 meters high. What is this piling-up of a wave in shallow water called?",
-    "answer": "shoaling",
+    "question": "Racing across the deep Indian Ocean in December 2004, the tsunami stood only about a metre tall, with some 200 kilometres between one crest and the next. When it reached Banda Aceh in Sumatra, the same wave reared up 15 to 30 metres high. What turned a one-metre swell into such a wall of water?",
+    "answer": "it slowed in the shallows and the water behind piled into it",
     "choices": [
-      "shoaling",
-      "refraction",
-      "resonance",
-      "upwelling"
+      "it slowed in the shallows and the water behind piled into it",
+      "aftershocks from the quake kept shoving it higher and higher",
+      "the rising tide lifted it on top of the normal sea level",
+      "a strong onshore wind blew it up into a taller wall"
     ],
     "context": "In deep water a tsunami's crests can be 200 km apart yet only ~1 m tall; nearing shore, 'shoaling' slams on the brakes — speed falls from ~800 to under 80 km/h and the wavelength shrinks, so the trailing water piles the wave up into a towering wall. At Banda Aceh in 2004 it rose 15–30 m, with a maximum around 51 m. Source: en.wikipedia.org/wiki/Tsunami.",
     "topic": "tsunamis-the-wave-that-empties-the-sea-first"
@@ -35205,20 +35075,20 @@
   },
   {
     "tier": 1,
-    "question": "The forests run out in the far north of Siberia, Alaska and Canada, giving way to the treeless tundra. Beneath its thin summer layer of moss and grass the deeper soil never thaws, frozen solid all year, every year. What is this always-frozen ground called?",
-    "answer": "permafrost",
+    "question": "Each summer the tundra of northern Siberia thaws only in a thin top layer, about a metre and a half deep. Below it lies permafrost, ground frozen solid all year round. How far down does it go in parts of Siberia?",
+    "answer": "about 1,500 metres",
     "choices": [
-      "permafrost",
-      "bedrock",
-      "hardpan",
-      "subsoil"
+      "about 1,500 metres",
+      "about 15 metres",
+      "about 150 metres",
+      "about 15,000 metres"
     ],
     "context": "'Permafrost' means ground that stays at or below 0 C (32 F) for at least two years straight. Only a thin top 'active layer' — averaging about 1.5 m — thaws each summer; below that the freeze runs deep, reaching roughly 1,493 m down in Siberia's Lena and Yana river basins. About 15% of the Northern Hemisphere's land sits on permafrost. Source: en.wikipedia.org/wiki/Permafrost",
     "topic": "tundra-and-permafrost-the-frozen-ground"
   },
   {
     "tier": 2,
-    "question": "In the Siberian village of Oymyakon, drivers keep their engines running around the clock so the fuel won't freeze solid, and school carries on until the air sinks past -55 C. Only about 500 people endure winters like this, year after year. What record does Oymyakon hold?",
+    "question": "In the Siberian village of Oymyakon, drivers keep their engines running around the clock so the fuel won't freeze solid, and school carries on until the air sinks past -55 C. Only about 500 people endure winters like this, year after year. Which record does Oymyakon share with the Siberian town of Verkhoyansk?",
     "answer": "the coldest permanently inhabited place on Earth",
     "choices": [
       "the coldest permanently inhabited place on Earth",
@@ -35226,20 +35096,7 @@
       "the northernmost inhabited village on Earth",
       "the snowiest inhabited town on Earth"
     ],
-    "context": "Oymyakon, in Sakha (Yakutia), hit an official -67.7 C (-89.9 F) on 6 February 1933 — the coldest reading ever at a permanently inhabited place. (Antarctica's Vostok station is colder still, but no one lives there year-round.) The nearby town of Verkhoyansk is its twin 'Pole of Cold.' Oymyakon's yearly swing is astonishing: from that -67.7 C low up to +34.6 C one summer, over 100 C apart. Source: en.wikipedia.org/wiki/Oymyakon",
-    "topic": "tundra-and-permafrost-the-frozen-ground"
-  },
-  {
-    "tier": 3,
-    "question": "Where ice-rich permafrost thaws in the Arctic lowlands of Siberia and Alaska, the ice that held the soil grains together melts away and the land sags into a messy jumble of pits and hollows. Meltwater pools in the low spots. What do geologists call this pockmarked land?",
-    "answer": "thermokarst",
-    "choices": [
-      "thermokarst",
-      "karst",
-      "badlands",
-      "moraine"
-    ],
-    "context": "Thermokarst is named after 'karst' — the pitted, sinkhole-riddled landscape that limestone makes as it dissolves — because thawing permafrost leaves the same lumpy, sunken look. Water pooling in the hollows forms thermokarst lakes. Source: en.wikipedia.org/wiki/Thermokarst",
+    "context": "Oymyakon, in Sakha (Yakutia), hit an official -67.7 C (-89.9 F) on 6 February 1933; Verkhoyansk, its twin 'Pole of Cold', logged -67.8 C in February 1892, so the two share the title of coldest permanently inhabited place. (Antarctica's Vostok station is colder still, but no one lives there year-round.) Oymyakon's yearly swing is astonishing: from that -67.7 C low up to +34.6 C one summer, over 100 C apart. Source: en.wikipedia.org/wiki/Oymyakon",
     "topic": "tundra-and-permafrost-the-frozen-ground"
   },
   {
@@ -35265,7 +35122,7 @@
       "it stays at one fixed height at every latitude",
       "it drops away all at once at the Arctic Circle"
     ],
-    "context": "Alpine tundra sits above the treeline on tall mountains anywhere on Earth — the Andes, the Himalayas, even peaks in the tropics — while ARCTIC tundra lies at high latitude near the poles; both are treeless for the same reason (too cold, too short a growing season). As you move from the equator toward the poles, the alpine treeline drops lower and lower, until near the poles it reaches sea level and the mountain's alpine tundra merges with the polar tundra at the coast. (Chimborazo in Ecuador sits almost on the equator; Kilimanjaro lies about 3 degrees south, in the tropics.) Source: en.wikipedia.org/wiki/Alpine_tundra",
+    "context": "Alpine tundra sits above the treeline on tall mountains anywhere on Earth — the Andes, the Himalayas, even peaks in the tropics — while ARCTIC tundra lies at high latitude near the poles; both are treeless for the same reason (too cold, too short a growing season). Moving from the equator toward the poles, the alpine treeline drops lower and lower, until near the poles it reaches sea level and the mountain's alpine tundra merges with the polar tundra at the coast. (Chimborazo in Ecuador sits almost on the equator; Kilimanjaro lies about 3 degrees south, in the tropics.) Source: en.wikipedia.org/wiki/Alpine_tundra",
     "topic": "tundra-and-permafrost-the-frozen-ground"
   },
   {
@@ -35335,20 +35192,20 @@
   },
   {
     "tier": 3,
-    "question": "The lakes of Montana's Glacier National Park glow an unreal turquoise, and no dissolved mineral colours them. Melting ice keeps pouring in rock particles so fine that they never settle; they hang in the water and scatter the sunlight. What is this glacier-made sediment called?",
-    "answer": "glacial flour",
+    "question": "The lakes far below the peaks of Montana's Glacier National Park glow an unreal turquoise. Melting ice keeps pouring glacial flour into them, rock the glacier has ground into a powder finer than any sand. How does that flour give the lakes their colour?",
+    "answer": "it hangs in the water and scatters sunlight",
     "choices": [
-      "glacial flour",
-      "glacial till",
-      "glacial drift",
-      "glacial moraine"
+      "it hangs in the water and scatters sunlight",
+      "it dissolves and tints the water like a dye",
+      "it feeds algae that dye the water blue-green",
+      "it coats the lakebed in pale, sky-bright stone"
     ],
     "context": "Glacial flour is rock ground so fine by the ice that it never settles, staying suspended and scattering light into that turquoise glow. The park's namesake ice is fading fast — from about 150 glaciers in 1850 to roughly 25 by 2010. Source: https://en.wikipedia.org/wiki/Glacier_National_Park_(U.S.)",
     "topic": "u-shaped-valleys-and-hanging-valley-waterfalls"
   },
   {
     "tier": 3,
-    "question": "Staubbach Falls leaps 297 m off a sheer cliff in Switzerland's Lauterbrunnen Valley, the highest free-falling waterfall in the country, and the wind tears its water into drifting spray long before it reaches the ground. The Swiss named it for what that airborne water looks like. What does 'Staub' mean?",
+    "question": "Staubbach Falls leaps 297 m off a sheer cliff in Switzerland's Lauterbrunnen Valley, one of the highest free falls in the country, and the wind tears its water into drifting spray long before it reaches the ground. The Swiss named it for what that airborne water looks like. What does 'Staub' mean?",
     "answer": "dust",
     "choices": [
       "dust",
@@ -35356,7 +35213,7 @@
       "silver",
       "thunder"
     ],
-    "context": "Staubbach Falls plunges 297 m (974 ft) — Switzerland's highest free-falling waterfall — and pours, like Bridalveil, from a hanging valley. It falls so far that the wind scatters the water into drifting spray, so the Swiss named it 'Staubbach,' the 'dust brook.' Its ghostly mist has drawn writers for centuries — Goethe visited in 1779 and wrote 'Gesang der Geister über den Wassern' ('Song of the Spirits over the Waters'). Source: https://en.wikipedia.org/wiki/Staubbach_Falls",
+    "context": "Staubbach Falls plunges 297 m (974 ft), one of Switzerland's highest free-falling waterfalls (the nearby Mürrenbach Falls, dropping in stages, fall farther in all), and pours, like Bridalveil, from a hanging valley. It falls so far that the wind scatters the water into drifting spray, so the Swiss named it 'Staubbach,' the 'dust brook.' Its ghostly mist has drawn writers for centuries — Goethe visited in 1779 and wrote 'Gesang der Geister über den Wassern' ('Song of the Spirits over the Waters'). Source: https://en.wikipedia.org/wiki/Staubbach_Falls",
     "topic": "u-shaped-valleys-and-hanging-valley-waterfalls"
   },
   {
@@ -35421,7 +35278,7 @@
       "about 2.5 km (1.5 miles)",
       "about 42 km (a full marathon)"
     ],
-    "context": "The base walk around Uluru runs 9.4 km — nearly six miles just to circle one rock. Walking it gives a real sense of the monolith's bulk: what you see above ground is one continuous, unbroken hump of stone. Source: https://en.wikipedia.org/wiki/Uluru",
+    "context": "The base walk around Uluru runs 9.4 km — nearly six miles just to circle one rock. Walking it gives a real sense of the monolith's bulk: what shows above ground is one continuous, unbroken hump of stone. Source: https://en.wikipedia.org/wiki/Uluru",
     "topic": "uluru-and-kata-tjuta"
   },
   {
@@ -35504,13 +35361,13 @@
   },
   {
     "tier": 1,
-    "question": "One huge rock rises 348 metres straight up from the dead-flat desert in the red heart of Australia, with open plain running to the horizon in every direction. What do geographers call a lone rock mountain like Uluru, standing over a flat plain?",
-    "answer": "an inselberg",
+    "question": "One huge rock rises 348 metres from the dead-flat desert in the red heart of Australia, with open plain running to the horizon. Geographers call Uluru an inselberg, German for 'island mountain'. How did it come to stand alone on the plain?",
+    "answer": "the softer land around it wore away",
     "choices": [
-      "an inselberg",
-      "a butte",
-      "a mesa",
-      "a tor"
+      "the softer land around it wore away",
+      "a volcano pushed it up through the plain",
+      "a glacier dropped it there in an ice age",
+      "a meteor strike heaved it out of the ground"
     ],
     "context": "Uluru is the world's most famous inselberg (German for 'island mountain') — a mass of tough rock left standing when the softer land around it slowly wore away. It rises 348 m above the plain, measures 9.4 km around its base, and its summit reaches 863 m above sea level. Source: Wikipedia, 'Uluru'.",
     "topic": "uluru-and-the-red-centre"
@@ -35525,7 +35382,7 @@
       "which stars mark each season's turning",
       "how to heal sickness with desert plants"
     ],
-    "context": "Tjukurpa is the foundation of Aņangu culture — not written down but memorised and passed to the right people across tens of thousands of years. Its stories map ancestral events onto real places, but they also record how to travel and where and when to find water and food — practical survival knowledge woven into sacred law. Source: Parks Australia, uluru.gov.au (Tjukurpa).",
+    "context": "Tjukurpa is the foundation of Aṇangu culture — not written down but memorised and passed to the right people across tens of thousands of years. Its stories map ancestral events onto real places, but they also record how to travel and where and when to find water and food — practical survival knowledge woven into sacred law. Source: Parks Australia, uluru.gov.au (Tjukurpa).",
     "topic": "uluru-and-the-red-centre"
   },
   {
@@ -35538,7 +35395,7 @@
       "red algae has spread across it",
       "the sun's heat has scorched it"
     ],
-    "context": "Uluru glows red because iron in its outer rock has literally rusted — the red skin is oxidised iron. The fresh arkose underneath is actually grey, and you can still see that original grey colour inside Uluru's caves. Source: Australian Govt DCCEEW + uluru.gov.au (Geology).",
+    "context": "Uluru glows red because iron in its outer rock has literally rusted — the red skin is oxidised iron. The fresh arkose underneath is actually grey, and that original grey still shows inside Uluru's caves. Source: Australian Govt DCCEEW + uluru.gov.au (Geology).",
     "topic": "uluru-and-the-red-centre"
   },
   {
@@ -35551,12 +35408,12 @@
       "a goanna",
       "a dingo"
     ],
-    "context": "In Tjukurpa, Mutiṭjulu is the home of Wanampi, an ancestral water snake believed to guard the pool. Mutiṭjulu is the only permanent (year-round) waterhole at Uluru and was for centuries a key Aņangu campsite. Source: Parks Australia, uluru.gov.au (Water) + Australian Govt DCCEEW.  (Legend.)",
+    "context": "In Tjukurpa, Mutiṭjulu is the home of Wanampi, an ancestral water snake believed to guard the pool. Mutiṭjulu is the only permanent (year-round) waterhole at Uluru and was for centuries a key Aṇangu campsite. Source: Parks Australia, uluru.gov.au (Water) + Australian Govt DCCEEW.  (Legend.)",
     "topic": "uluru-and-the-red-centre"
   },
   {
     "tier": 4,
-    "question": "The Aṇangu closed the climb up Uluru for good on 26 October 2019. Outsiders took the reason for granted: the rock is sacred. But the sign the Aṇangu left at the base gave a different main reason, rooted in how they see their duty under Tjukurpa. What worried the Aṇangu most?",
+    "question": "The Aṇangu closed the climb up Uluru for good on 26 October 2019. Their law, Tjukurpa, did not permit the climb, but the sign they left at its base stressed a second reason, rooted in their duty as custodians. What did that sign say worried them?",
     "answer": "the safety of the visitors themselves",
     "choices": [
       "the safety of the visitors themselves",
@@ -35564,7 +35421,7 @@
       "disturbance to the local desert wildlife",
       "overcrowding at the narrow summit"
     ],
-    "context": "The Aņangu base sign read: 'This is our home. As custodians, we are responsible for your safety and behaviour. We worry about you and we worry about your family.' The climb closed on 26 October 2019 — the 34th anniversary of 'Handback', the 1985 return of the land to its traditional owners. Board chairman Sammy Wilson called it not a loss but a celebration: 'The land has law and Culture... Closing the climb is not something to feel upset about but a celebration.' Source: Parks Australia, uluru.gov.au (climb closure).",
+    "context": "Signs at the base asked visitors 'Please don't climb', and the Aṇangu message there said: 'As custodians, we are responsible for your safety and behaviour,' speaking too of their worry for climbers and their families. Under Tjukurpa the climb was not permitted, and in November 2017 the Aṇangu-majority board voted unanimously to close it; it closed on 26 October 2019, the 34th anniversary of 'Handback', the 1985 return of the land to its traditional owners. Sammy Wilson, then chairman of the board, called it not a loss: 'Closing the climb is not something to feel upset about but a cause for celebration.' Source: Parks Australia, uluru.gov.au/discover/culture/uluru-climb.",
     "topic": "uluru-and-the-red-centre"
   },
   {
@@ -35926,7 +35783,7 @@
       "The sirocco",
       "The khamsin",
       "The harmattan",
-      "The ghibli"
+      "The tramontana"
     ],
     "context": "Acqua alta ('high water') floods Venice when a high tide teams up with the sirocco — a warm south wind that shoves the Adriatic up into the lagoon. Low-lying St Mark's Square goes under first; today it floods more than 60 times a year. Source: https://en.wikipedia.org/wiki/1966_Venice_flood",
     "topic": "venice-the-city-on-a-sunken-forest"
@@ -35959,19 +35816,6 @@
   },
   {
     "tier": 4,
-    "question": "Italy spent decades building a barrier to shield Venice from the sea after the great flood of 1966, and switched it on in 2020 at the three inlets where the open Adriatic pours into the lagoon. What form does the barrier take?",
-    "answer": "Rows of separate steel flood-gates",
-    "choices": [
-      "Rows of separate steel flood-gates",
-      "One long fixed concrete sea-wall",
-      "A bank of giant harbour pumps",
-      "A deep flood-drainage tunnel"
-    ],
-    "context": "MOSE is a set of 78 hollow steel gates that lie flat on the seabed at the three inlets of the lagoon — Lido, Malamocco and Chioggia — invisible until they are needed. Source: https://en.wikipedia.org/wiki/MOSE",
-    "topic": "venice-the-city-on-a-sunken-forest"
-  },
-  {
-    "tier": 4,
     "question": "The whole of Venice keeps sinking into its lagoon as the sea creeps up, and the sinking sped up sharply in the 20th century, dropping the city several millimetres a year. Factories on the mainland at Marghera made it much worse. What did they do?",
     "answer": "Pumped the groundwater out from under it",
     "choices": [
@@ -35993,7 +35837,7 @@
       "Electric motors on the seabed slowly crank them up",
       "The rising tide itself pushes them upright"
     ],
-    "context": "Normally the gates sit full of water in seabed housings; when a high tide is forecast, compressed air is pumped in to blow the water out, and the buoyant gates swing up on their hinges to rise above the surface and wall off the sea. MOSE first held back a flood on 3 October 2020 and can seal the lagoon in about half an hour. Source: https://en.wikipedia.org/wiki/MOSE",
+    "context": "MOSE is a set of 78 hollow steel gates lying in housings on the floor of the lagoon's three inlets, Lido, Malamocco and Chioggia. Normally they sit full of water; when a high tide is forecast, compressed air is pumped in to blow the water out, and the buoyant gates swing up on their hinges to rise above the surface and wall off the sea. MOSE first held back a flood on 3 October 2020 and can seal the lagoon in about half an hour. Source: https://en.wikipedia.org/wiki/MOSE",
     "topic": "venice-the-city-on-a-sunken-forest"
   },
   {
@@ -36024,15 +35868,15 @@
   },
   {
     "tier": 2,
-    "question": "At least eight scorching clouds roared down the slopes of Vesuvius in AD 79, each about 300 degrees C and moving at up to 100 km/h, and swept through the streets of Pompeii, killing in seconds. Almost no one there died from lava. What do volcanologists call this kind of ground-hugging cloud?",
-    "answer": "a pyroclastic surge",
+    "question": "Almost no one at Pompeii died from lava. In AD 79 Vesuvius sent at least eight pyroclastic surges down its slopes, and those that reached the town killed in seconds. What poured through Pompeii's streets in each surge?",
+    "answer": "a ground-hugging cloud of scorching gas and ash",
     "choices": [
-      "a pyroclastic surge",
-      "a lahar",
-      "a tephra fall",
-      "a fumarole"
+      "a ground-hugging cloud of scorching gas and ash",
+      "a fast-moving flood of boiling volcanic mud",
+      "a torrent of scalding water from the crater",
+      "a cold, heavy cloud of choking volcanic gas"
     ],
-    "context": "A pyroclastic surge is a fast, ground-hugging avalanche of superheated gas and ash; at least eight swept Vesuvius's slopes in AD 79. A lahar is a volcanic mudflow, a tephra fall is debris raining from the sky, and a fumarole is a gas vent — all real volcanic features. Source: Wikipedia, 'Eruption of Mount Vesuvius in AD 79.'",
+    "context": "A pyroclastic surge is a fast, ground-hugging cloud of superheated gas and ash. At least eight raced down Vesuvius in AD 79, each about 300 °C and moving at up to 100 km/h, and those that reached Pompeii killed the people still in the town within seconds; lava played almost no part. A lahar, by contrast, is a flood of volcanic mud. Source: Wikipedia, 'Eruption of Mount Vesuvius in AD 79.'",
     "topic": "vesuvius-and-the-burial-of-pompeii"
   },
   {
@@ -36063,7 +35907,7 @@
   },
   {
     "tier": 3,
-    "question": "A slender column of ash and pumice rocketed tens of kilometres straight up out of Vesuvius in AD 79, then spread into a vast canopy at the very top. Volcanologists sort eruptions into named styles by how they behave, and they keep one name for this most violent, tall-column kind. What do they call it?",
+    "question": "A teenager watching from across the Bay of Naples in AD 79 saw a column of ash and pumice shoot tens of kilometres up out of Vesuvius, then spread into a vast canopy high above. Volcanologists keep one name for this most violent, tall-column kind of eruption. What is that style called?",
     "answer": "Plinian",
     "choices": [
       "Plinian",
@@ -36123,7 +35967,7 @@
       "The river that never sleeps",
       "The gorge of a thousand rainbows"
     ],
-    "context": "You see the towering spray-plume ('the smoke') on the horizon and hear the roar ('thunders') long before you reach the falls — the name captures both. David Livingstone renamed it for his queen on 16 November 1855, but Mosi-oa-Tunya came first and is still used; the site is UNESCO-listed under both names. Source: https://en.wikipedia.org/wiki/Victoria_Falls",
+    "context": "The towering spray plume ('the smoke') shows on the horizon and the roar ('thunders') carries long before a traveller reaches the falls — the name captures both. David Livingstone renamed it for his queen on 16 November 1855, but Mosi-oa-Tunya came first and is still used; the site is UNESCO-listed under both names. Source: https://en.wikipedia.org/wiki/Victoria_Falls",
     "topic": "victoria-falls"
   },
   {
@@ -36153,19 +35997,6 @@
     "topic": "victoria-falls"
   },
   {
-    "tier": 2,
-    "question": "Below Victoria Falls, on the border of Zambia and Zimbabwe, the Zambezi gathers in a churning pool at the foot of the drop before racing on down the gorge. The local Tonga people named that pool Shungu Namutitima long before European explorers came. What does the name mean?",
-    "answer": "Boiling Water",
-    "choices": [
-      "Boiling Water",
-      "Falling Mountain",
-      "Sleeping Giant",
-      "Silver Road"
-    ],
-    "context": "'Shungu Namutitima' — Boiling Water — describes the churning cauldron at the base of the drop. It sits alongside the older Kololo name Mosi-oa-Tunya, 'the smoke that thunders.' Source: https://en.wikipedia.org/wiki/Victoria_Falls",
-    "topic": "victoria-falls"
-  },
-  {
     "tier": 3,
     "question": "A rock rim rises at the very lip of Victoria Falls' 108-metre drop when the Zambezi runs low, holding back the current just enough for brave visitors to wade out and float in a natural pool at the cliff's edge. They can reach it only from Livingstone Island, on the Zambian side. What is this spot called?",
     "answer": "the Devil's Pool",
@@ -36176,19 +36007,6 @@
       "the Devil's Cataract"
     ],
     "context": "The Devil's Pool is swimmable only when the Zambezi drops — roughly mid-August to mid-January, best September to December; a single rock lip is all that separates the swimmer from the 108-metre plunge. The Angel's Pool, Boiling Pot, and Devil's Cataract are all real, separate features at the falls. Source: https://blog.rhinoafrica.com/2023/11/21/dare-to-take-a-dip-in-devils-pool/",
-    "topic": "victoria-falls"
-  },
-  {
-    "tier": 3,
-    "question": "On rare clear nights at Victoria Falls, hours after sunset, a faint glowing arc appears in the spray, though a rainbow should need sunlight. Victoria Falls is one of the few places on Earth where it shows up reliably. What is this night-time arc called?",
-    "answer": "a moonbow",
-    "choices": [
-      "a moonbow",
-      "a fogbow",
-      "a glory",
-      "a halo"
-    ],
-    "context": "A moonbow forms when moonlight — not sunlight — refracts through the falls' mist. It appears on only three nights a month (the night before, of, and after the full moon) and needs a clear sky; Victoria Falls' year-round spray makes it one of the most reliable places on Earth to catch one. Source: https://www.suninternational.com/stories/travel/the-moonbow-the-best-kept-secret-of-victoria-falls/",
     "topic": "victoria-falls"
   },
   {
@@ -36249,11 +36067,11 @@
     "answer": "the Riesenrad",
     "choices": [
       "the Riesenrad",
-      "the London Eye",
-      "the Singapore Flyer",
-      "the Tianjin Eye"
+      "the Blumenrad",
+      "the Liliputbahn",
+      "the Praterturm"
     ],
-    "context": "The Wiener Riesenrad opened in 1897, stands 64.75 m (212 ft) tall, and was built for the Golden Jubilee (50th year of reign) of Emperor Franz Josef I, engineered by the Englishman Lt. Walter Basset Bassett. It is one of the oldest Ferris wheels still operating on Earth. Source: https://en.wikipedia.org/wiki/Wiener_Riesenrad  (Legend.)",
+    "context": "The Wiener Riesenrad, the 'giant wheel', opened in 1897, stands 64.75 m (212 ft) tall, and was built for the Golden Jubilee (50th year of reign) of Emperor Franz Josef I. It is one of the oldest Ferris wheels still operating on Earth. The Prater's other rides include the Blumenrad, a newer and smaller wheel, the Liliputbahn miniature railway and the Praterturm, a 117 m swing ride. Source: https://en.wikipedia.org/wiki/Wiener_Riesenrad  (Legend.)",
     "topic": "vienna"
   },
   {
@@ -36266,12 +36084,12 @@
       "the tea house",
       "the wine tavern"
     ],
-    "context": "A single small coffee buys a marble-topped table for hours -- bentwood Thonet chairs, and international newspapers clipped onto wooden frames so you can read all afternoon. The Viennese coffee house is a place to linger, not to hurry. Source: https://en.wikipedia.org/wiki/Viennese_coffee_house_culture",
+    "context": "A single small coffee buys a marble-topped table for hours -- bentwood Thonet chairs, and international newspapers clipped onto wooden frames for reading all afternoon. The Viennese coffee house is a place to linger, not to hurry. Source: https://en.wikipedia.org/wiki/Viennese_coffee_house_culture",
     "topic": "vienna"
   },
   {
     "tier": 2,
-    "question": "A bold new dance set couples whirling through the ballrooms of Vienna in the 1800s, spinning so fast that some fainted, and critics called it improper. Which dance was born in those ballrooms?",
+    "question": "A bold new dance set couples whirling through the ballrooms of Vienna in the 1800s, spinning so fast that some fainted, and critics called it improper. Which dance was it?",
     "answer": "the waltz",
     "choices": [
       "the waltz",
@@ -36355,22 +36173,9 @@
       "the Hofburg",
       "Schonbrunn Palace",
       "the Belvedere",
-      "Prague Castle"
+      "the Augarten"
     ],
     "context": "The Hofburg was the winter seat of the Habsburg dynasty for over 600 years (roughly 636, from the 1270s-80s until the empire fell in 1918) -- some 2,600 rooms around 19 courtyards -- and today houses the office of Austria's president. Source: https://en.wikipedia.org/wiki/Hofburg",
-    "topic": "vienna"
-  },
-  {
-    "tier": 5,
-    "question": "The young Ludwig van Beethoven took lessons from Joseph Haydn in Vienna, where Haydn, Wolfgang Amadeus Mozart and Beethoven, three towering masters of the classical style, all lived and composed. Together they made Vienna a music capital for the whole world. Under what famous name do music historians group the three?",
-    "answer": "the First Viennese School",
-    "choices": [
-      "the First Viennese School",
-      "the Second Viennese School",
-      "the Mannheim School",
-      "the Notre-Dame School"
-    ],
-    "context": "The term 'First Viennese School' -- coined by musicologist R.G. Kiesewetter in 1834 -- groups Joseph Haydn, Wolfgang Amadeus Mozart and Ludwig van Beethoven, the masters of the Viennese classical style; the young Beethoven took lessons from Haydn. Source: https://en.wikipedia.org/wiki/First_Viennese_School  (Legend.)",
     "topic": "vienna"
   },
   {
@@ -36402,14 +36207,14 @@
   {
     "tier": 3,
     "question": "When the Philippines' Taal volcano erupted in 2020, its ash cloud flashed with dozens of lightning bolts a minute. Yet there was no rain and no ice cloud to make them the usual way. The ash grains build up their charge by the same everyday trick as which of these?",
-    "answer": "rubbing a balloon on your hair",
+    "answer": "rubbing a balloon on dry hair",
     "choices": [
-      "rubbing a balloon on your hair",
+      "rubbing a balloon on dry hair",
       "waving a magnet over nails",
       "warming a wire with a flame",
       "shining light on a solar cell"
     ],
-    "context": "The ash charges up through 'triboelectric charging' -- the same static-electricity effect as a balloon rubbed on your hair, only titanic, as jagged grains collide by the billion. Corrado Cimarelli's team proved it by firing real ash through a lab shock-tube and making tiny bolts, with no storm involved. Source: Wikipedia, 'Volcanic lightning'; Cimarelli et al., Geology, 'Experimental generation of volcanic lightning.'",
+    "context": "The ash charges up through 'triboelectric charging' -- the same static-electricity effect as a balloon rubbed on dry hair, only titanic, as jagged grains collide by the billion. Corrado Cimarelli's team proved it by firing real ash through a lab shock-tube and making tiny bolts, with no storm involved. Source: Wikipedia, 'Volcanic lightning'; Cimarelli et al., Geology, 'Experimental generation of volcanic lightning.'",
     "topic": "volcanic-lightning-the-ash-clouds-dirty-thunderstorm"
   },
   {
