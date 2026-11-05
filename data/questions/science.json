@@ -22152,14 +22152,14 @@
     "topic": "neil-fergusons-numbers-checked"
   },
   {
-    "tier": 5,
+    "tier": 3,
     "question": "Neil Ferguson's Imperial team advised the UK government in 2001, long before COVID, on a very different outbreak. Their models backed a 'kill the neighbours' cull rule, and more than six million farm animals were slaughtered. Which UK crisis was it?",
     "answer": "foot-and-mouth disease",
     "choices": [
       "foot-and-mouth disease",
       "mad cow disease",
       "avian influenza",
-      "the SARS outbreak"
+      "classical swine fever"
     ],
     "context": "Foot-and-mouth 2001: Imperial's models supported an aggressive contiguous-cull policy -- kill livestock on farms adjacent to any confirmed case -- that ended with over six million cattle and sheep destroyed. Giving evidence to the UK COVID-19 Inquiry in 2023, Ferguson drew the methodological line that is the rule worth carrying away: fitting a model to past data and forecasting the future are two different jobs, and semi-mechanistic models were reasonably calibrated at one-week horizons and unreliable at long ones. A claim about the future only counts as science if somebody writes the number down, dates it, and comes back to check -- exactly what Ferguson's published numbers (200 million H5N1, 50-50,000 vCJD, 65,000 H1N1) let the world do. Sources: Wikipedia, 'Neil Ferguson (epidemiologist)'; witness statement to the UK COVID-19 Inquiry (11 May 2023).",
     "topic": "neil-fergusons-numbers-checked"
@@ -22530,7 +22530,7 @@
   },
   {
     "tier": 2,
-    "question": "Isaac Newton darkened a room in 1666, bored a small hole in the shutter and sent a narrow beam through a prism. Others had seen that band of colours and said the glass tinted the light. One further step, his experimentum crucis, turned a pretty display into a proof. What did he set up?",
+    "question": "Isaac Newton darkened a room in 1666, bored a hole in the shutter and sent a beam through a prism. Others had seen that band of colours and said the glass tinted the light. One further step, his experimentum crucis or 'crucial experiment', turned a pretty display into a proof. What did he set up?",
     "answer": "two pierced boards, so one colour alone reached a second prism",
     "choices": [
       "two pierced boards, so one colour alone reached a second prism",
@@ -22699,7 +22699,7 @@
   },
   {
     "tier": 2,
-    "question": "Florence Nightingale came back to London from the army hospital at Scutari wanting ministers and Queen Victoria to face the numbers, and she knew a plain table would put them to sleep. So in 1858 she invented a bold picture for people not used to figures. What was it?",
+    "question": "Florence Nightingale came back to London from the army hospital at Scutari wanting ministers and Queen Victoria to face the numbers, and she knew a plain table would put them to sleep. So in 1858 she drew a bold picture for people not used to figures. What was it?",
     "answer": "A colored circle divided into twelve monthly wedges",
     "choices": [
       "A colored circle divided into twelve monthly wedges",
@@ -22712,15 +22712,15 @@
   },
   {
     "tier": 3,
-    "question": "A student redraws Florence Nightingale's 1858 rose diagram as a plain bar chart on graph paper. Each of the Crimean War's months had a pie-slice wedge, stretched outward from the centre by that month's death count: every wedge kept the same slice angle, and only the radius changed. She spots one honest flaw in that scheme. What does it do to the picture?",
-    "answer": "It exaggerates the bad months because area grows as the square of the radius",
+    "question": "A student checks Florence Nightingale's first polar chart, printed in 1858. Each month's line runs out from the centre in step with that month's death rate, yet the shading invites a reader to judge each month by its area. Nightingale soon caught the problem herself. What did the design do to the picture?",
+    "answer": "It made the worst months look far worse, since area grows as the square of the length",
     "choices": [
-      "It exaggerates the bad months because area grows as the square of the radius",
-      "It hides the winter months behind the taller summer wedges when printed",
-      "It swaps the disease and wound colors around when the page is printed small",
-      "It only works honestly when every month records exactly the same death count"
+      "It made the worst months look far worse, since area grows as the square of the length",
+      "It made the worst months look milder, since area grows more slowly than the length",
+      "It made every month look the same size, since each kept the same slice angle",
+      "It muddled the order of the months, since the circle had no marked start"
     ],
-    "context": "A kid with graph paper can redraw the same monthly counts as a plain bar chart and see the winter spike shrink to its true size. Source: Data Viz Catalogue, 'Nightingale Rose Chart'.",
+    "context": "Hugh Small, the historian of her diagrams, found that in this first chart, which he calls the bat's wing, the length of each month's radial line was proportional to the death rate, while both the text and the look of the chart implied that the shaded area was. Area grows with the square of the length, so the bad months looked far worse than they were. Nightingale recognised the error, inserted an erratum slip, and in later documents replaced the chart with her famous wedge diagram, in which areas carry the counts. A student with graph paper can test the rule: draw one wedge twice as long as another at the same angle and it covers four times the paper. Source: Hugh Small, 'Florence Nightingale's Statistical Diagrams' (1998), york.ac.uk/depts/maths/histstat/small.htm.",
     "topic": "nightingales-rose-diagram"
   },
   {
@@ -22817,19 +22817,19 @@
   {
     "tier": 4,
     "question": "Richard Feynman gave the commencement speech at Caltech in 1974, on scientific integrity. He named the first principle in one blunt line, and it pointed at the easiest person in the world for a scientist to fool. Who is that person?",
-    "answer": "Yourself",
+    "answer": "The scientist himself",
     "choices": [
-      "Yourself",
-      "Your rivals",
-      "Your critics",
-      "Your sponsors"
+      "The scientist himself",
+      "The scientist's rivals",
+      "The scientist's critics",
+      "The scientist's sponsors"
     ],
-    "context": "Feynman: 'The first principle is that you must not fool yourself -- and you are the easiest person to fool.' Nullius in verba turned inward: the first authority to distrust is your own. Source: https://calteches.library.caltech.edu/51/2/CargoCult.htm",
+    "context": "Feynman: 'The first principle is that you must not fool yourself -- and you are the easiest person to fool.' Nullius in verba turned inward: the first authority to distrust is one's own. Source: https://calteches.library.caltech.edu/51/2/CargoCult.htm",
     "topic": "nullius-in-verba-take-nobodys-word-for-it"
   },
   {
     "tier": 1,
-    "question": "Hans Christian Oersted sent a current through a wire at an evening lecture in Copenhagen in April 1820, and a nearby compass needle swung away from north. For the first time in history, electricity had moved a magnet. How did the audience react?",
+    "question": "Hans Christian Oersted sent a current through a wire at an evening lecture in Copenhagen in April 1820, and a nearby compass needle swung away from north. No one had ever seen a current move a magnet before. How did the audience react?",
     "answer": "They barely reacted; the twitch was too feeble to impress.",
     "choices": [
       "They barely reacted; the twitch was too feeble to impress.",
@@ -23030,7 +23030,7 @@
       "A voltaic pile whose output sagged noticeably as it ran.",
       "A friction machine that only sparked when the room was dry.",
       "A Leyden jar that discharged the moment he closed the circuit.",
-      "A steam-driven dynamo that surged whenever its boiler was stoked."
+      "An electrophorus that lost its charge with each spark drawn."
     ],
     "context": "Volta's stack of copper and zinc discs was the standard current source of the 1820s, but the chemistry drifted as it ran and no two readings taken an hour apart agreed. Ohm's friend Johann Christian Poggendorff pointed him at a way out. Source: hackaday.com/2021/07/20/the-story-behind-ohms-law .",
     "topic": "ohm-and-the-book-called-a-web-of-naked-fancies"
@@ -23141,7 +23141,7 @@
   },
   {
     "tier": 1,
-    "question": "Miners at Borrowdale in Cumbria cut a soft black mineral out of the hills in the 1560s, and its first name was plumbago, lead ore. English still says 'pencil lead', German Bleistift, Irish peann luaidhe: all three call it a lead pen. What is a pencil core made of?",
+    "question": "Miners at Borrowdale in Cumbria cut a soft black mineral in the 1560s, and its first name was plumbago, lead ore. English still says 'pencil lead', German Bleistift, Irish peann luaidhe: all three still name the metal. What is a pencil core made of?",
     "answer": "Graphite powder, mixed with clay and fired.",
     "choices": [
       "Graphite powder, mixed with clay and fired.",
@@ -23186,7 +23186,7 @@
       "Whole flat layers of atoms, sliding off intact.",
       "Single atoms, torn loose from the crystal.",
       "Fine dust, crumbled from broken crystal edges.",
-      "The clay binder, softened by your hand's warmth."
+      "The clay binder, softened by the hand's warmth."
     ],
     "context": "Three bonds per atom lay the carbons out in flat hexagonal sheets — a honeycomb lattice — stacked one above the next. Within a sheet the carbons are locked tight. Between the sheets there is only a feeble van der Waals attraction across a 0.335 nm gap, so the layers glide past one another and transfer wholesale onto the fibres of the paper. The same gliding is why graphite works as a dry lubricant — and why writing is, physically, just sheets of carbon changing address. Source: Wikipedia, 'Graphite'.",
     "topic": "one-atom-four-bonds-four-worlds"
@@ -23206,15 +23206,15 @@
   },
   {
     "tier": 3,
-    "question": "Antoine Lavoisier aimed a burning glass, a lens 89 cm across and weighing over 70 kg, at a diamond sealed under a glass bell jar in the gardens of the Louvre in 1773. Within minutes the stone at the focus had gone completely. He then weighed the whole sealed apparatus. What did the balance show?",
-    "answer": "It weighed exactly what it had weighed before, to the grain.",
+    "question": "Antoine Lavoisier and his fellow chemists turned a great burning lens, about 89 cm across, on diamonds under a glass bell jar over water in Paris in 1772, and the stones at the focus shrank away. Lavoisier then tested the air inside the jar with limewater. What had the air gained?",
+    "answer": "Fixed air, the gas a burning coal gives off",
     "choices": [
-      "It weighed exactly what it had weighed before, to the grain.",
-      "It had lost precisely the weight of the vanished diamond.",
-      "It had lost rather more than the diamond alone had weighed.",
-      "It had gained weight, by roughly a tenth of the diamond."
+      "Fixed air, the gas a burning coal gives off",
+      "Inflammable air, the gas iron gives off in acid",
+      "Vital air, the gas that keeps a candle burning",
+      "Marine acid air, the gas from salt and vitriol"
     ],
-    "context": "The diamond had not been destroyed. It had become a gas — carbon dioxide — still shut inside the jar, and the balance proved that nothing had left. Lavoisier's burning-lens campaign ran 192 experiments between 14 August and 17 October 1772 at the Academy of Sciences, using the Palais-Royal glass, a biconvex lens 89 cm across weighing over 70 kg. The 1772 run burned a diamond in an open crucible; the sealed bell-jar version, the one that could be weighed, followed in 1773. Sources: Wikipedia, 'Diamond'; D. Lewis, 'Priestley, Scheele, Lavoisier, and the Burning Lenses'.",
+    "context": "The limewater turned cloudy, the classic sign of fixed air, the gas now called carbon dioxide. Lavoisier's 1772 report to the Academy concluded that 'the air in which one has evaporated diamond acquires at least in part the properties of fixed air', and the water level inside the bell jar had risen. Fixed air was already known from burning charcoal and from breath, so the diamond had turned into the same gas a glowing coal gives off. The test is easy to repeat: breathe out through a straw into limewater and it clouds the same way. The 1772 burning-lens campaign ran 192 experiments between 14 August and 17 October. Sources: Gemmological Association of Australia, 'The early history of synthetic diamond' (gem.org.au); Sztejnberg, 'Priestley, Scheele, Lavoisier, and the Burning Lenses', Revista CENIC 2019; Wikipedia, 'Diamond'.",
     "topic": "one-atom-four-bonds-four-worlds"
   },
   {
@@ -23224,8 +23224,8 @@
     "choices": [
       "The LED lights, and dims as the gap between the clips grows.",
       "The LED lights, and brightens as the gap between the clips grows.",
-      "The LED lights just as brightly at every gap you try.",
-      "The LED stays dark at every gap you try: graphite blocks current."
+      "The LED lights just as brightly at every gap she tries.",
+      "The LED stays dark at every gap she tries: graphite blocks current."
     ],
     "context": "Graphite's fourth electron is delocalised across the whole sheet — the same roaming that chemists call aromaticity — so each sheet conducts, and a pencil line is simply a resistor whose resistance grows with its length. Conduction perpendicular to the sheets is about a thousand times worse than within them. Diamond, with every electron tied into a bond, has a 5.47 eV band gap and a resistivity of 10^13–10^16 ohm-cm. Practical note: on a 9 V battery, put a small resistor in series to protect the LED, and press hard enough to lay down a really dark line. Sources: Science Museum Group Learning, 'Graphite Circuits'; University of Washington Clean Energy Institute, 'Draw a Circuit: Fun with Graphite'; Grokipedia, 'Material properties of diamond'.",
     "topic": "one-atom-four-bonds-four-worlds"
@@ -23318,12 +23318,12 @@
       "0.168 nanometres — longer than diamond's, and weaker.",
       "0.335 nanometres — far longer, and far weaker."
     ],
-    "context": "This is the fact that kills the obvious explanation. Graphite is NOT soft because its bonds are weak — inside a sheet they are the stronger of the two, and one such sheet is described as probably the strongest two-dimensional network structure known. Bonding to three neighbours instead of four puts 33% s-character into each bond against diamond's 25%, contracting it, and a shared cloud of electrons stabilises it further; the length lands between a pure single bond (0.1544 nm) and a double bond (0.1334 nm). Graphite is soft because the sheets are held to each other by nothing stronger than van der Waals attraction across a 0.335 nm gap — the rejected fourth option is that gap — and so they slide. Sources: Wikipedia, 'Graphite'; Britannica, 'Carbon — Structure of carbon allotropes'; Asbury Advanced Materials, 'Graphite 101'.",
+    "context": "This is the fact that kills the obvious explanation. Graphite is NOT soft because its bonds are weak — inside a sheet they are the stronger of the two, and one such sheet is described as probably the strongest two-dimensional network structure known. Bonding to three neighbours instead of four puts 33% s-character into each bond against diamond's 25%, contracting it, and a shared cloud of electrons stabilises it further; the length lands between a pure single bond (0.1544 nm) and a double bond (0.1334 nm). Graphite is soft because the sheets are held to each other by nothing stronger than van der Waals attraction across a 0.335 nm gap, and so they slide. Sources: Wikipedia, 'Graphite'; Britannica, 'Carbon — Structure of carbon allotropes'; Asbury Advanced Materials, 'Graphite 101'.",
     "topic": "one-atom-four-bonds-four-worlds"
   },
   {
     "tier": 3,
-    "question": "James Herrick, a Chicago doctor, took in Walter Clement Noel in 1910, a twenty-year-old dental student from Grenada who was pale, out of breath and sore with leg ulcers. Herrick handed the case to his resident, Ernest Irons, who put Noel's blood under the microscope and saw a shape no textbook of the day showed. What did Irons see on the slide?",
+    "question": "James Herrick, a Chicago doctor, took in a twenty-year-old dental student from Grenada, Walter Clement Noel, in December 1904. Noel was pale, out of breath and sore with leg ulcers. Herrick handed the case to his resident, Ernest Irons, who put Noel's blood under the microscope and saw a shape no textbook of the day showed. What did Irons see on the slide?",
     "answer": "Red cells drawn out into long curved sickle shapes",
     "choices": [
       "Red cells with no nucleus and no shape at all",
@@ -23331,7 +23331,7 @@
       "Red cells clumped tightly around dark specks of parasite",
       "Red cells swollen to twice their normal round diameter"
     ],
-    "context": "Herrick's 1910 paper in the Archives of Internal Medicine was titled Peculiar Elongated and Sickle-Shaped Red Blood Corpuscles in a Case of Severe Anemia. It named a disease by the shape of the cell, four decades before anyone could say why the shape appeared. The resident Ernest Irons drew the sickles at the microscope; the attending Herrick wrote the paper. Source: https://scinfo.org/2016/06/14/early-history-of-sickle-cell-disease/",
+    "context": "Noel was admitted to Chicago's Presbyterian Hospital in December 1904, and Herrick published the case in 1910 in the Archives of Internal Medicine as Peculiar Elongated and Sickle-Shaped Red Blood Corpuscles in a Case of Severe Anemia. It named a disease by the shape of the cell, four decades before anyone could say why the shape appeared. The resident Ernest Irons drew the sickles at the microscope; the attending Herrick wrote the paper. Sources: https://scinfo.org/2016/06/14/early-history-of-sickle-cell-disease/ ; Wikipedia, 'Sickle cell disease'.",
     "topic": "one-letter-sickle-cell-from-herricks-slide-to-the-malaria-ba"
   },
   {
@@ -23383,7 +23383,7 @@
       "In cold blood, the greasy patches attract calcium that crystallises into needles inside the cell",
       "In acidic blood, the greasy patches pull water out of the cell so it shrinks to a curved sliver"
     ],
-    "context": "When haemoglobin has released its oxygen (in exercising muscle, high altitude, or the tissues generally), the beta-6 valine patch on one molecule sticks to a matching pocket on the next, and the molecules stack into long stiff polymer fibres. Those fibres physically push the red cell into the curved sickle shape Ernest Irons had drawn from Walter Noel's blood in 1910. That is why exercise, illness or altitude can trigger a crisis. Sources: https://homs.concord.org/sickle4.html; Wikipedia, 'Sickle cell disease'.",
+    "context": "When haemoglobin has released its oxygen (in exercising muscle, high altitude, or the tissues generally), the beta-6 valine patch on one molecule sticks to a matching pocket on the next, and the molecules stack into long stiff polymer fibres. Those fibres physically push the red cell into the curved sickle shape Ernest Irons had drawn from Walter Noel's blood. That is why exercise, illness or altitude can trigger a crisis. Sources: https://homs.concord.org/sickle4.html; Wikipedia, 'Sickle cell disease'.",
     "topic": "one-letter-sickle-cell-from-herricks-slide-to-the-malaria-ba"
   },
   {
@@ -23453,7 +23453,7 @@
   },
   {
     "tier": 5,
-    "question": "A doctor tells a family that two of gene therapy's first triumphs are literally 'one shot for life': a repeat dose of the same drug in the same patient largely will not work. Zolgensma, for spinal muscular atrophy in babies, and Luxturna, for one rare form of childhood blindness, both ferry a corrected gene into a patient's cells inside a harmless virus, adeno-associated virus (AAV). What is the biological reason a second dose bounces off?",
+    "question": "A doctor tells a family that Zolgensma, a gene therapy for babies with spinal muscular atrophy, is 'one shot for life': a second infusion of the same drug would largely fail. Zolgensma ferries a corrected gene into the baby's cells inside a harmless virus, adeno-associated virus (AAV). What is the biological reason a second dose bounces off?",
     "answer": "The immune system makes antibodies against that virus's coat",
     "choices": [
       "The immune system makes antibodies against that virus's coat",
@@ -23544,15 +23544,15 @@
   },
   {
     "tier": 1,
-    "question": "The team at the Jet Propulsion Laboratory in California built the little six-wheeled rover Opportunity for a short trip on flat ground. It landed on Mars in January 2004, inside a small crater called Eagle. How many Martian days, or sols, was it meant to last?",
-    "answer": "90 sols",
+    "question": "Opportunity rolled across Mars for more than fourteen Earth years after it landed in January 2004. The team at the Jet Propulsion Laboratory in California had built the six-wheeled rover for a far shorter job. How long was it designed to last?",
+    "answer": "About 90 sols, roughly three months",
     "choices": [
-      "90 sols",
-      "500 sols",
-      "1,000 sols",
-      "2,000 sols"
+      "About 90 sols, roughly three months",
+      "About 360 sols, roughly one Earth year",
+      "About 900 sols, roughly two and a half years",
+      "About 1,800 sols, roughly five Earth years"
     ],
-    "context": "It ran for 5,111 sols, about 14 years and 47 days. The team had a three-month field trip and got a career. Source: en.wikipedia.org/wiki/Opportunity_(rover).",
+    "context": "It was built for 90 sols, or Martian days of about 24 hours 40 minutes each, and it ran for 5,111 sols, about 14 years and 4 months. The team planned a three-month field trip and got a career. Source: en.wikipedia.org/wiki/Opportunity_(rover).",
     "topic": "opportunity-and-ingenuity-the-missions-that-outlived-their-o"
   },
   {
@@ -23609,15 +23609,15 @@
   },
   {
     "tier": 3,
-    "question": "NASA's rover team saw one of two identical golf-cart-sized rovers stick for good in 2009, when its wheels sank in soft iron-rich soil at a spot nicknamed Troy. The twins had landed three weeks apart in January 2004, on opposite sides of Mars, and the partner, Opportunity, kept rolling until 2018. What was the name of the stuck twin?",
-    "answer": "Spirit",
+    "question": "NASA landed twin golf-cart-sized rovers on opposite sides of Mars three weeks apart in January 2004. Opportunity kept rolling until 2018. Its twin, Spirit, stopped roving for good in 2009, at a spot nicknamed Troy. What ended Spirit's driving days?",
+    "answer": "It sank into soft soil and never drove free",
     "choices": [
-      "Spirit",
-      "Sojourner",
-      "Curiosity",
-      "Perseverance"
+      "It sank into soft soil and never drove free",
+      "A dust storm smothered its panels for good",
+      "It slid into a crater too steep to climb",
+      "A rock fall from a cliff crushed its mast"
     ],
-    "context": "Spirit landed on 4 January 2004, sank into the drift at Troy in May 2009, and NASA declared its mission complete in 2011. The twin rovers were engineered together; the fates diverged in the field. Source: en.wikipedia.org/wiki/Opportunity_(rover).",
+    "context": "Spirit landed on 4 January 2004 and bogged down in soft sand in May 2009; months of attempts to drive it out failed, and on 26 January 2010 NASA made it a stationary science platform. It fell silent on 22 March 2010, and its mission was declared complete in May 2011. A dust storm, not sand, ended Opportunity nine years after Spirit stuck. Source: en.wikipedia.org/wiki/Spirit_(rover).",
     "topic": "opportunity-and-ingenuity-the-missions-that-outlived-their-o"
   },
   {
@@ -23795,8 +23795,8 @@
     "answer": "'Hot Potato' by The Wiggles",
     "choices": [
       "'Hot Potato' by The Wiggles",
-      "'Baby Shark' by Pinkfong",
-      "'Old Town Road' by Lil Nas X",
+      "'Baby Beluga' by Raffi",
+      "'Rubber Duckie' by Sesame Street's Ernie",
       "'Yellow Submarine' by The Beatles"
     ],
     "context": "Study 1, Simmons Nelson Simonsohn 2011. Adjusted M = 2.54 vs 2.06 on a 1-5 subjective age scale, F(1,27) = 5.06, p = .033. Same ordinary analytic choices, second bogus 'finding' -- showing the Beatles result was not a one-off fluke but the predictable output of the flexibility itself.",
@@ -23860,37 +23860,11 @@
     "answer": "Many errors and manipulated data",
     "choices": [
       "Many errors and manipulated data",
-      "Only minor typos",
-      "That his student had lied to him",
-      "Perfectly honest analysis"
+      "A few typos and nothing worse",
+      "Sound numbers but overstated claims",
+      "Honest data but a weak control group"
     ],
-    "context": "Wansink ran Cornell's Food and Brand Lab and previously headed the USDA office that produced the 2010 Dietary Guidelines. Diederik Stapel (Tilburg social psychology), Marc Hauser (Harvard primatology) and Michael LaCour (UCLA political science) are real academic-misconduct cases in adjacent fields.",
-    "topic": "p-hacking-and-the-garden-of-forking-paths"
-  },
-  {
-    "tier": 5,
-    "question": "Tim van der Zee, Jordan Anaya and Nick Brown, three outside statisticians, went through Brian Wansink's pizza papers after his 'never said no' blog post. They looked for numbers that could not fit the reported design. About how many bad numbers did they find?",
-    "answer": "about 150",
-    "choices": [
-      "about 150",
-      "about 15",
-      "about 3",
-      "about 1,500"
-    ],
-    "context": "van der Zee, Anaya and Brown, 2017. Cornell's own committee confirmed academic misconduct on 20 September 2018; more than twenty Wansink papers were retracted or corrected and he resigned in 2019. Wansink admitted method failures but denied fraud.",
-    "topic": "p-hacking-and-the-garden-of-forking-paths"
-  },
-  {
-    "tier": 5,
-    "question": "Leslie John, George Loewenstein and Drazen Prelec surveyed more than 2,000 psychologists in 2012 using a truth-eliciting method. Over half admitted to not reporting every measure their study collected. What did the three authors call such habits?",
-    "answer": "Questionable research practices",
-    "choices": [
-      "Questionable research practices",
-      "Cognitive dissonance",
-      "Selection bias",
-      "Regression to the mean"
-    ],
-    "context": "John, Loewenstein and Prelec, Psychological Science, 2012. About half also admitted reporting only the analyses that 'worked' and about 70% admitted deciding on data-collection stopping in response to interim results. These were not rare crimes; they were normal practice.",
+    "context": "Tim van der Zee, Jordan Anaya and Nick Brown went through four of the pizza papers in 2017 and counted some 150 numbers that could not fit the reported design. Cornell's own committee confirmed academic misconduct on 20 September 2018; more than twenty Wansink papers were retracted or corrected and he resigned, effective mid-2019. Wansink admitted method failures but denied fraud. He ran Cornell's Food and Brand Lab and had earlier headed the USDA office that produced the 2010 Dietary Guidelines.",
     "topic": "p-hacking-and-the-garden-of-forking-paths"
   },
   {
@@ -23903,7 +23877,7 @@
       "an independent team reproduces the analysis on the same data",
       "the raw data and analysis code are posted publicly at submission"
     ],
-    "context": "Pre-registration. Simmons Nelson Simonsohn 2011 also pushed the second option (full disclosure of measures); Nosek's Center for Open Science built the third and fourth into standard practice. All four are real reforms of the replication crisis and each helps -- but only pre-registration can retroactively distinguish a prediction from a post-hoc story. The Registered Reports format built around it makes the plan public before data collection begins.",
+    "context": "Pre-registration. Simmons, Nelson and Simonsohn (2011) also pushed full disclosure of every measure collected; Nosek's Center for Open Science built independent reanalysis and open data and code into standard practice. All four are real reforms of the replication crisis and each helps, but only pre-registration lets an outside reader tell a prediction made in advance from a story told after the fact. The Registered Reports format built around it makes the plan public before data collection begins.",
     "topic": "p-hacking-and-the-garden-of-forking-paths"
   },
   {
@@ -24065,14 +24039,14 @@
   {
     "tier": 5,
     "question": "A mechanic presses the thin handle of a car jack and two tonnes of car rises. Pascal's law makes it work: pressure applied anywhere in a trapped liquid is passed on undiminished to every part of it, so a much wider piston turns a small push into a large lift. Nothing is created for free, though, and the machine takes its payment somewhere. Where?",
-    "answer": "In distance: your handle moves a metre to lift the car a couple of centimetres",
+    "answer": "In distance: the handle moves a metre to lift the car a couple of centimetres",
     "choices": [
-      "In distance: your handle moves a metre to lift the car a couple of centimetres",
+      "In distance: the handle moves a metre to lift the car a couple of centimetres",
       "In heat: the oil warms by several degrees with each stroke of the handle",
-      "In friction: the seals swallow about a fifth of every push you give it",
+      "In friction: the seals swallow about a fifth of every push he gives it",
       "In time: the car creeps up over fifty slow strokes, one after another"
     ],
-    "context": "The relation is F2/F1 = A2/A1: fifty times the area gives fifty times the force, but the small piston must travel fifty times as far -- 100 cm of stroke under your hand for 2 cm of lift under the car, which is exactly why a jack needs so many pumps to raise a car a few centimetres. Force is bought with distance, and no energy is manufactured anywhere in the machine. Pascal set the principle out in his Traite de l'equilibre des liqueurs, published after his death in 1663, and the SI unit of pressure now carries his name: 1 pascal = 1 newton per square metre, made official by the 14th General Conference on Weights and Measures in 1971. Standard sea-level pressure is 101,325 Pa, or 760 mm of mercury -- the ocean of air, weighed. Sources: Wikipedia, 'Pascal's law' (the 50x piston worked example, 100 cm for 2 cm); Grokipedia, 'Pascal's law'.",
+    "context": "The relation is F2/F1 = A2/A1: fifty times the area gives fifty times the force, but the small piston must travel fifty times as far -- 100 cm of stroke under the mechanic's hand for 2 cm of lift under the car, which is exactly why a jack needs so many pumps to raise a car a few centimetres. Force is bought with distance, and no energy is manufactured anywhere in the machine. Pascal set the principle out in his Traite de l'equilibre des liqueurs, published after his death in 1663, and the SI unit of pressure now carries his name: 1 pascal = 1 newton per square metre, made official by the 14th General Conference on Weights and Measures in 1971. Standard sea-level pressure is 101,325 Pa, or 760 mm of mercury -- the ocean of air, weighed. Sources: Wikipedia, 'Pascal's law' (the 50x piston worked example, 100 cm for 2 cm); Grokipedia, 'Pascal's law'.",
     "topic": "pascal-and-the-weight-of-fluids-the-claim-tested-on-a-mounta"
   },
   {
@@ -24467,7 +24441,7 @@
   },
   {
     "tier": 2,
-    "question": "A girl lies asleep at midnight while neutrinos from the Sun come up through her bed from below, after crossing the whole planet. About 60 billion cross each square centimetre of her skin every second. Fermilab says only a tiny handful will ever actually strike anything inside her. Over her whole lifetime, how many?",
+    "question": "A girl lies asleep at midnight while neutrinos from the Sun come up through her bed from below, after crossing the whole planet. About 65 billion cross each square centimetre of her skin every second. Fermilab says only a tiny handful will ever actually strike anything inside her. Over her whole lifetime, how many?",
     "answer": "About one or two",
     "choices": [
       "About one or two",
@@ -24649,7 +24623,7 @@
   },
   {
     "tier": 2,
-    "question": "Kary Mullis ran his first PCR (polymerase chain reaction) at midnight on 9 September 1983, on human DNA and two short primers aimed at a 400 base-pair piece of a gene. He heated the tube, cooled it, added the enzyme and drove home. At noon he ran it on a gel, where DNA of a given length shows as a band. What did the gel show?",
+    "question": "Kary Mullis set up his first PCR (polymerase chain reaction) near midnight in early September 1983: human DNA, two short primers aimed at a 400 base-pair target, one heating and cooling, then the enzyme. Next day it went on a gel, where DNA of one length makes a band. What did the gel show?",
     "answer": "no band at 400 base pairs",
     "choices": [
       "no band at 400 base pairs",
@@ -25923,15 +25897,15 @@
   },
   {
     "tier": 1,
-    "question": "William Crookes ran high voltage through near-empty glass tubes at Sheffield in 1879 and argued the glow, his 'radiant matter', was a new fourth state of matter. School posters show three. Lightning and neon signs fit none of them. What is the fourth called today?",
-    "answer": "Plasma",
+    "question": "William Crookes ran high voltage through near-empty glass tubes at Sheffield in 1879 and called their glow a fourth state of matter, beyond solid, liquid and gas. Today it is called plasma. Which of these is plasma?",
+    "answer": "A lightning bolt",
     "choices": [
-      "Plasma",
-      "Vapour",
-      "Aether",
-      "Superfluid"
+      "A lightning bolt",
+      "A red-hot coal",
+      "A flow of lava",
+      "A glow stick"
     ],
-    "context": "Lightning, neon signs, fluorescent tubes, the hottest part of a candle flame, the Sun and the aurora are all plasmas -- ionised matter with free electrons and positive ions. It is by far the most common state of ordinary matter in the visible universe, and it is the one most children never meet at school. Crookes was already famous for discovering thallium and inventing the Crookes radiometer. His mechanism was wrong -- he thought the glow was a stream of charged molecules, and Thomson later showed the rays were electrons -- but his intuition of a distinct fourth state stuck. Source: iter.org, 'Plasma: a strange state of matter'; sheffieldhistory.co.uk on the 1879 Sheffield lecture.",
+    "context": "Lightning is plasma: the bolt rips the air's atoms apart into free electrons and positive ions. A red-hot coal, flowing lava and a glow stick all give off light too, but they are a solid, a liquid and a liquid in a tube; glowing alone does not make a plasma. Neon signs, fluorescent tubes, the Sun and the aurora are plasmas, and plasma is by far the most common state of ordinary matter in the visible universe. Crookes, who called the glow radiant matter, was already famous for discovering thallium and inventing the Crookes radiometer. His mechanism was wrong -- he thought the glow was a stream of charged molecules, and Thomson later showed the rays were electrons -- but his intuition of a distinct fourth state stuck. Sources: iter.org, 'Plasma: a strange state of matter'; sheffieldhistory.co.uk on the 1879 Sheffield lecture.",
     "topic": "plasma-the-fourth-state-and-the-one-nobody-teaches"
   },
   {
@@ -25988,15 +25962,15 @@
   },
   {
     "tier": 2,
-    "question": "Working in Palermo, Giuseppe Piazzi found a body between Mars and Jupiter on 1 January 1801, and it was called the eighth planet for decades. Then dozens more of the same kind turned up in the same area, and by the 1850s astronomers had grouped them together. Pluto's story had played out once before. What was this new class of body called?",
-    "answer": "Asteroids",
+    "question": "Giuseppe Piazzi spotted a new world between Mars and Jupiter from Palermo on 1 January 1801, and it was counted as a planet for about fifty years. Then dozens more like it turned up nearby, and astronomers regrouped them all as asteroids. Pluto's story had played out once before. What was Piazzi's world called?",
+    "answer": "Ceres",
     "choices": [
-      "Asteroids",
-      "Moonlets",
-      "Nebulae",
-      "Comets"
+      "Ceres",
+      "Vesta",
+      "Pallas",
+      "Juno"
     ],
-    "context": "William Herschel coined 'asteroid' (star-like) for these small bodies in 1802; the label caught on as the belt filled up. Ceres, Pallas, Juno and Vesta were called planets for about fifty years before the reclassification. The same argument was waiting for Pluto. Source: en.wikipedia.org/wiki/Pluto",
+    "context": "Ceres was the first of them; Pallas (1802), Juno (1804) and Vesta (1807) followed, and all four were counted as planets for decades before the reclassification. William Herschel coined 'asteroid', star-like, for these small bodies in 1802. In 2006 the same vote that took Pluto off the list of planets made Ceres a dwarf planet, alongside Pluto and Eris. Sources: en.wikipedia.org/wiki/Ceres_(dwarf_planet); en.wikipedia.org/wiki/Pluto.",
     "topic": "plutos-demotion"
   },
   {
@@ -26066,13 +26040,13 @@
   },
   {
     "tier": 2,
-    "question": "Étienne-Louis Malus, a French army engineer, watched the sunset in the glass of a nearby palace in Paris in 1808. He held up a crystal called Iceland spar, which normally shows two of every scene. As he turned it, one of the two Suns faded away. What property of light had he found?",
-    "answer": "Polarisation",
+    "question": "Étienne-Louis Malus, a French army engineer, watched the sunset in the glass of a nearby palace in Paris in 1808. He held up a crystal called Iceland spar, which normally shows two of every scene. As he turned it, one of the two Suns faded away. What had the reflection done to the sunlight?",
+    "answer": "Lined up the direction in which it wobbles",
     "choices": [
-      "Polarisation",
-      "Diffraction",
-      "Refraction",
-      "Interference"
+      "Lined up the direction in which it wobbles",
+      "Sorted it into its separate colours",
+      "Slowed it to a fraction of its speed",
+      "Bent it round the edges of the panes"
     ],
     "context": "Malus, a Newtonian corpuscularist, coined the word 'polarization' to describe the effect -- he pictured the light particles as having sides or 'poles' that the reflection had lined up. He died just four years later, at 36, worn out by fever from Napoleon's Egyptian campaign. Source: en.wikipedia.org/wiki/Etienne-Louis_Malus ; polarization.com/history/history.html.",
     "topic": "polarization-the-hidden-direction-in-light"
@@ -26105,20 +26079,20 @@
   },
   {
     "tier": 4,
-    "question": "A boy stares steadily at a bright white patch on a liquid crystal display (LCD) screen, then at clear blue sky 90 degrees from the Sun. A faint yellowish bowtie shimmers at the centre of his vision. It rotates when he tilts his head, fades within seconds and comes back when he blinks. An Austrian mineralogist reported it in 1844. What is it called?",
-    "answer": "Haidinger's brush",
+    "question": "A boy stares steadily at a bright white patch on a liquid crystal display (LCD) screen, then at clear blue sky 90 degrees from the Sun. A faint yellowish bowtie shimmers at the centre of his vision, turning when he tilts his head and fading within seconds. Wilhelm Haidinger, an Austrian mineralogist, reported it in 1844. What is the boy's eye picking up?",
+    "answer": "The direction in which the light is wobbling",
     "choices": [
-      "Haidinger's brush",
-      "Purkinje's tree",
-      "Fraunhofer's fringe",
-      "Fresnel's shadow"
+      "The direction in which the light is wobbling",
+      "The shadows of blood vessels on his retina",
+      "Specks of debris drifting in his eye's jelly",
+      "An afterimage burned in by the bright screen"
     ],
-    "context": "The bowtie is caused by yellow pigment molecules in the macula that happen to lie in a radial pattern around the fovea -- they preferentially absorb the wobble-direction perpendicular to their alignment, so a uniformly polarized field paints a faint absorption cross on the retina. Most people go a lifetime without being told to look for it. Source: arxiv.org/pdf/2010.15252 ; Current Biology 2020 doi 10.1016/j.cub.2020.12.017.",
+    "context": "This is Haidinger's brush, and it means a human eye can, faintly, sense polarisation. The bowtie is caused by yellow pigment molecules in the macula that happen to lie in a radial pattern around the fovea -- they preferentially absorb the wobble-direction perpendicular to their alignment, so a uniformly polarized field paints a faint absorption cross on the retina. Most people go a lifetime without being told to look for it. Source: arxiv.org/pdf/2010.15252 ; Current Biology 2020 doi 10.1016/j.cub.2020.12.017.",
     "topic": "polarization-the-hidden-direction-in-light"
   },
   {
     "tier": 4,
-    "question": "Karl von Frisch pinned down in 1949 what a honeybee uses to fly a straight line home when the Sun is completely hidden behind cloud, and it helped win him the 1973 Nobel Prize in Physiology or Medicine. What is the bee steering by?",
+    "question": "Karl von Frisch pinned down in 1949 what a honeybee uses to fly a straight line home when the Sun itself is hidden from it, and the work helped win him the 1973 Nobel Prize in Physiology or Medicine. What is the bee steering by?",
     "answer": "The direction the sky's scattered daylight is wobbling in",
     "choices": [
       "The direction the sky's scattered daylight is wobbling in",
@@ -26135,11 +26109,11 @@
     "answer": "Not a single specimen has surfaced despite two centuries of Norse archaeology",
     "choices": [
       "Not a single specimen has surfaced despite two centuries of Norse archaeology",
-      "Only a handful of ambiguous calcite fragments, all from post-Viking contexts",
+      "A single cracked crystal, dug from a chieftain's grave on Iceland",
       "Two well-attested finds, both from ship burials at Oseberg and Gokstad",
       "Several sunstones, all recovered from Birka's navigator graves"
     ],
-    "context": "The only crystal actually recovered NEXT to navigation gear came from an English warship sunk off Alderney in 1592 -- five centuries after the Viking age. It is calcite; it does polarize; it sits in the same wreck as its ship's compasses. But it is Elizabethan, not Norse. The Norse archaeology gives us not a single sunstone. Plausible and testable, not proven -- there is no pretending otherwise. Source: livescience.com/27696-viking-sunstone-shipwreck.html ; science.org/content/article/scienceshot-sunstone-unearthed-shipwreck.  (Legend.)",
+    "context": "The only crystal actually recovered NEXT to navigation gear came from an English warship sunk off Alderney in 1592 -- five centuries after the Viking age. It is calcite; it does polarize; it sits in the same wreck as its ship's compasses. But it is Elizabethan, not Norse. The Norse archaeology gives us not a single sunstone. Plausible and testable, not proven -- there is no pretending otherwise. Source: livescience.com/27696-viking-sunstone-shipwreck.html ; science.org/content/article/scienceshot-sunstone-unearthed-shipwreck.",
     "topic": "polarization-the-hidden-direction-in-light"
   },
   {
@@ -26170,15 +26144,15 @@
   },
   {
     "tier": 1,
-    "question": "Louis Pasteur vaccinated half the sheep at Pouilly-le-Fort on 5 May 1881 with his weakened-anthrax preparation and left the others as controls. On 31 May every animal got a killing dose of live anthrax. The crowd walked into the paddock on 2 June. What did they see?",
-    "answer": "the unvaccinated flock dead, the vaccinated flock grazing",
+    "question": "Louis Pasteur vaccinated one flock of sheep at Pouilly-le-Fort on 5 May 1881 and kept a matching flock as controls. On 31 May both flocks got a killing dose of live anthrax. The crowd walked into the paddock on 2 June. What did they see?",
+    "answer": "the unvaccinated flock dead or dying, the vaccinated grazing",
     "choices": [
-      "the unvaccinated flock dead, the vaccinated flock grazing",
+      "the unvaccinated flock dead or dying, the vaccinated grazing",
       "the two flocks looking about equally sick",
-      "no visible difference between the flocks",
+      "both flocks grazing, the anthrax dose a dud",
       "the vaccinated flock dying, the unvaccinated flock well"
     ],
-    "context": "The result on 2 June was as clean as science ever gets in public: complete kill in the untreated animals, complete survival in the treated ones. It made Pasteur famous overnight. Source: https://en.wikipedia.org/wiki/Louis_Pasteur",
+    "context": "The farm supplied 58 sheep, 2 goats and 10 cattle. On 5 and 17 May, 24 sheep, a goat and 6 cattle were vaccinated, while 24 sheep, a goat and 4 cattle were left unvaccinated as controls; the remaining 10 sheep were kept aside untreated. The famous '25 and 25 sheep' rounds off those two groups of 24 sheep and a goat. On 2 June, before more than 200 spectators, every vaccinated sheep and goat was alive and the unvaccinated ones had died or were dying. It made Pasteur famous overnight. Sources: https://grokipedia.com/page/Louis_Pasteur ; https://en.wikipedia.org/wiki/Louis_Pasteur",
     "topic": "pouilly-le-fort-the-test-he-announced-in-advance"
   },
   {
@@ -26326,7 +26300,7 @@
   },
   {
     "tier": 5,
-    "question": "Julian Simon won his decade, but a decade is one sample. Economists later went back over metal prices and graded ten-year windows from 1910 to 2007, 98 of them, asking who would have won each one. If Simon and Paul Ehrlich had signed the same wager in a random window, what would the count say?",
+    "question": "Julian Simon won his decade, but a decade is one sample. Economists later went back over about a century of metal prices and graded 98 ten-year windows, asking who would have won each one. If Simon and Paul Ehrlich had signed the same wager in a random window, what would the count say?",
     "answer": "Ehrlich would have won most of the windows",
     "choices": [
       "Ehrlich would have won most of the windows",
@@ -26638,15 +26612,15 @@
   },
   {
     "tier": 4,
-    "question": "Gajdusek, an American doctor, worked out how a deadly shivering-and-laughing brain illness moved among the Fore people of Papua New Guinea, whose funerals included eating dead relatives' brains. It won him the 1976 Nobel Prize in Medicine, well before Stanley Prusiner's 1982 paper on prions. What was the disease called?",
-    "answer": "Kuru",
+    "question": "Daniel Carleton Gajdusek, an American doctor, studied kuru, a fatal shaking illness among the Fore people of Papua New Guinea, whose funeral rites included eating the dead. His 1976 Nobel Prize grew from a test showing that kuru was infectious, years before Stanley Prusiner's 1982 prion paper. What was the test?",
+    "answer": "Brain tissue from victims, injected into chimpanzees, gave them kuru",
     "choices": [
-      "Kuru",
-      "Rabies",
-      "Encephalitis",
-      "Meningitis"
+      "Brain tissue from victims, injected into chimpanzees, gave them kuru",
+      "Blood from victims, injected into mice, gave them kuru within days",
+      "Spinal fluid from victims, filtered of germs, still grew in a flask",
+      "Villagers who moved in with sick families went on to catch kuru"
     ],
-    "context": "Gajdusek spent years in the Papua New Guinea highlands and traced kuru to the Fore practice of eating deceased relatives at funerals (mostly women and children handled the bodies). He called the agent a 'slow virus'; Prusiner would later show it was a prion. Blumberg (hepatitis B), Lederberg (bacterial genetics), and Rous (tumour viruses) are also real Nobel medicine laureates.",
+    "context": "Gajdusek began studying kuru with the physician Vincent Zigas, and at the US National Institutes of Health he set up the first tests on chimpanzees, which Joe Gibbs monitored: within about two years a chimp named Daisy developed kuru, proof that an agent in the brain tissue could pass between primates. Gajdusek called it a 'slow virus'; Prusiner would later show it was a prion. Eating the dead was suspected from the start, but the anthropologist Robert Glasse first put the funeral-feast route forward as a formal hypothesis in 1967, and Mathews, Glasse and Shirley Lindenbaum set it out more fully in 1968; women and children, who usually ate the brain, fell ill far more often than men. Source: en.wikipedia.org/wiki/Kuru_(disease).",
     "topic": "prusiners-infection-with-no-genes"
   },
   {
