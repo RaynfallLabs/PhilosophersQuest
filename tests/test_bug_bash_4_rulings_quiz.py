@@ -183,11 +183,12 @@ def test_nixon_shock_ladder_keys_no_web_address():
     game. It now asks what the famous 1971 chart shows."""
     qs, blurbs = _econ()
     rungs = [q for q in qs if q.get('topic') == _NIXON]
-    assert len(rungs) == 11  # one rung dropped as a cross twin (economics voice pass, b018)
+    # 11 after the voice pass; the 2026-11 repair pass dropped three rote rungs and a twin.
+    assert len(rungs) == 7
     for q in rungs:
         assert not any(_DOMAIN.search(c) for c in q['choices']), q['choices']
         assert 'wtf' not in (q['question'] + q['context']).lower()
-    chart = [q for q in rungs if 'paid for that hour' in q['question']]
+    chart = [q for q in rungs if 'what they are paid for it' in q['question']]
     assert len(chart) == 1 and chart[0]['tier'] == 4
     assert 'Nixon' in chart[0]['question'] and '1971' in chart[0]['question']
     assert chart[0]['answer'] in chart[0]['choices']
@@ -203,6 +204,6 @@ def test_nixon_shock_card_teaches_the_chart_rung_and_sends_nobody_to_the_site():
     qs, blurbs = _econ()
     blurb = blurbs[_NIXON]['context_blurb'].lower()
     chart = next(q for q in qs if q.get('topic') == _NIXON
-                 and 'paid for that hour' in q['question'])
+                 and 'what they are paid for it' in q['question'])
     assert chart['answer'].lower() in blurb, 'the card should teach the chart rung'
     assert 'wtfhappenedin1971.com' not in __import__('fantasy_ui')._CONTENT_DOMAINS

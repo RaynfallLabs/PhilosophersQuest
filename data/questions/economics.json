@@ -22816,15 +22816,15 @@
   },
   {
     "tier": 1,
-    "question": "Eric Hughes and two friends met in Oakland in 1992 to put secret codes in ordinary hands. Why did they think it urgent?",
-    "answer": "A government that can read all your messages can control you",
+    "question": "Eric Hughes and two friends met in Oakland in 1992 to put secret codes in ordinary people's hands. Why did they think it was urgent?",
+    "answer": "A state that reads every message can control people",
     "choices": [
-      "A government that can read all your messages can control you",
-      "Because messages take up too much room",
-      "Because computers were too slow",
-      "Because letters are cheaper than emails"
+      "A state that reads every message can control people",
+      "Criminals were reading most email",
+      "Banks would not go online without codes",
+      "Spies were stealing trade secrets"
     ],
-    "context": "Jude Milhon (aka 'St Jude'), Mondo 2000 writer and hacker, coined the name 'cypherpunks' at one of the early meetings. William Gibson coined 'cyberpunk' but not 'cypherpunks'; May and Hughes were among those meeting but did not coin the name. Source: https://en.wikipedia.org/wiki/Cypherpunk.",
+    "context": "Their worry was power, not convenience: a state that can read what people say to their friends can decide which friends they keep. The group took its name from the hacker and writer Jude Milhon at one of the early meetings. Source: https://en.wikipedia.org/wiki/Cypherpunk.",
     "topic": "the-cypherpunk-mailing-list-hughes-may-gilmore-bay-area-1992"
   },
   {
@@ -22837,7 +22837,7 @@
       "the Electronic Frontier Foundation",
       "the Chaos Computer Club"
     ],
-    "context": "John Gilmore hosted the cypherpunk mailing list on toad.com from his personal server. Hughes and May co-founded the community but did not host the list; Zimmermann is the PGP author. Source: https://en.wikipedia.org/wiki/Cypherpunk.",
+    "context": "Jude Milhon, known as St. Jude, was a hacker and a writer for Mondo 2000; the name she coined at one of the early meetings joins 'cypher' to 'cyberpunk'. Source: https://en.wikipedia.org/wiki/Cypherpunk.",
     "topic": "the-cypherpunk-mailing-list-hughes-may-gilmore-bay-area-1992"
   },
   {
@@ -22859,55 +22859,42 @@
     "answer": "Ordinary people should be able to use unbreakable codes without asking permission",
     "choices": [
       "Ordinary people should be able to use unbreakable codes without asking permission",
-      "Only governments and militaries should be trusted with strong codes",
-      "Encryption should be banned so police can read every message",
-      "Only large banks should be allowed to use private codes"
+      "Code makers should leave a spare key with the courts for warrants",
+      "Strong codes should be licensed by the state to vetted citizens",
+      "Privacy should be won through new laws in Congress, not software"
     ],
-    "context": "Julian Assange (later WikiLeaks founder) was part of the cypherpunk mailing list in the 1990s. Jobs, Berners-Lee, and Brin were building different projects and were not on the cypherpunk list. Source: https://en.wikipedia.org/wiki/Cypherpunk.",
+    "context": "The claim was about permission: American export rules of the early 1990s counted strong encryption as a munition, and the cypherpunks wanted anyone free to use it. Many on the list fought the government's 1993 Clipper chip plan, which would have left a spare key with the authorities. Source: https://en.wikipedia.org/wiki/Cypherpunk.",
     "topic": "the-cypherpunk-mailing-list-hughes-may-gilmore-bay-area-1992"
   },
   {
     "tier": 4,
-    "question": "Eric Hughes and two friends held the group's first meetings in an Oakland house in the autumn of 1992. The spot was well chosen: within an hour's drive lay two of the world's best cryptography departments of that day, one where public-key cryptography was born and one where Hughes had studied. Which two universities were they?",
-    "answer": "Stanford and Berkeley",
+    "question": "Satoshi Nakamoto's white paper of 2008 credited earlier work by two regulars of the 1990s mailing list John Gilmore hosted: a proof-of-work stamp against email spam, and a sketch for a currency with no bank at all. Who wrote those two?",
+    "answer": "Adam Back and Wei Dai",
     "choices": [
-      "Stanford and Berkeley",
-      "Harvard and MIT",
-      "Caltech and UCLA",
-      "Princeton and Yale"
+      "Adam Back and Wei Dai",
+      "David Chaum and Stefan Brands",
+      "Phil Zimmermann and Bruce Schneier",
+      "Ralph Merkle and Whitfield Diffie"
     ],
-    "context": "Stanford (home of Diffie-Hellman and Hellman) and Berkeley (Hughes's own graduate department) were the two Bay Area cryptography centers within reach of the Oakland meetings. Harvard/MIT, Caltech/UCLA, and Princeton/Yale are in other regions. Source: https://en.wikipedia.org/wiki/Cypherpunk.",
-    "topic": "the-cypherpunk-mailing-list-hughes-may-gilmore-bay-area-1992"
-  },
-  {
-    "tier": 4,
-    "question": "Satoshi Nakamoto credited earlier work by regulars of the 1990s mailing list John Gilmore hosted. Before the decade was out its members included the makers of the parts of his system, among them the authors of a proof-of-work stamp for email and of a sketch for a currency with no bank. Who were they?",
-    "answer": "Adam Back, Wei Dai, Hal Finney, and Nick Szabo",
-    "choices": [
-      "Adam Back, Wei Dai, Hal Finney, and Nick Szabo",
-      "Vitalik Buterin and Charlie Lee",
-      "Michael Saylor and Peter Schiff",
-      "Do Kwon and Sam Bankman-Fried"
-    ],
-    "context": "The mid-1990s cypherpunk list included Back (Hashcash), Dai (b-money), Finney (RPOW), and Szabo (bit gold). Buterin and Lee are 2010s crypto figures; Saylor and Schiff are separate 2000s+ figures; Kwon and SBF are 2020s crypto collapses. Source: https://en.wikipedia.org/wiki/Cypherpunk.",
+    "context": "The white paper cites Wei Dai's b-money (1998) and Adam Back's Hashcash, a proof-of-work stamp against spam. Hal Finney (reusable proofs of work) and Nick Szabo (bit gold) were on the same list. Chaum's DigiCash needed a central mint; Zimmermann wrote PGP; Merkle and Diffie were public-key pioneers. Source: https://bitcoin.org/bitcoin.pdf; https://en.wikipedia.org/wiki/Cypherpunk.",
     "topic": "the-cypherpunk-mailing-list-hughes-may-gilmore-bay-area-1992"
   },
   {
     "tier": 5,
-    "question": "A coder calling himself Satoshi Nakamoto sent a message on 31 October 2008 to a cryptography mailing list descended from John Gilmore's old server, fifteen years after the first meetings in Oakland where Eric Hughes's circle began. What did his message carry?",
-    "answer": "a Bitcoin white paper describing a peer-to-peer electronic cash system with proof-of-work consensus",
+    "question": "Someone using a pen name sent a message on 31 October 2008 to a cryptography mailing list descended from John Gilmore's old server, sixteen years after Eric Hughes's circle first met in an Oakland house. What did the message carry?",
+    "answer": "A design for electronic cash passed peer to peer, with no bank in the middle",
     "choices": [
-      "a Bitcoin white paper describing a peer-to-peer electronic cash system with proof-of-work consensus",
-      "a proposal for a new US securities regulation covering internet-based investment platforms",
-      "an academic paper on the mathematics of prime-number distribution and the Riemann hypothesis",
-      "an anti-spam framework for consumer email extending the Hashcash and DomainKeys approaches"
+      "A design for electronic cash passed peer to peer, with no bank in the middle",
+      "A plan for digital coins issued jointly by a group of banks",
+      "A scheme for anonymous e-cash issued through one central mint",
+      "A proposal for digital money backed by gold held in a vault"
     ],
-    "context": "Satoshi's October 31, 2008 posting was 'Bitcoin: A Peer-to-Peer Electronic Cash System' to a cryptography mailing list descended from toad.com. Source: https://bitcoin.org/bitcoin.pdf.",
+    "context": "The message was Satoshi Nakamoto's white paper, 'Bitcoin: A Peer-to-Peer Electronic Cash System', whose abstract proposes cash sent directly from one party to another without going through a financial institution. Source: https://bitcoin.org/bitcoin.pdf.",
     "topic": "the-cypherpunk-mailing-list-hughes-may-gilmore-bay-area-1992"
   },
   {
     "tier": 5,
-    "question": "Three Bay Area engineers made a bet in an Oakland living room in the autumn of 1992, and it took fifteen years to pay off. Their mailing list went on to draw in the coders who would later design a new money. What proposition did they stake it on?",
+    "question": "Three Bay Area engineers made a bet in an Oakland living room in the autumn of 1992, and it took sixteen years to pay off. Their mailing list went on to draw in the coders who would later design a new money. What proposition did they stake it on?",
     "answer": "That mathematics and code could give ordinary people privacy the government could not take away",
     "choices": [
       "That mathematics and code could give ordinary people privacy the government could not take away",
@@ -22921,14 +22908,14 @@
   {
     "tier": 1,
     "question": "Richard Nixon put his name to the Endangered Species Act in December 1973. A farmer who spots a rare woodpecker or a desert tortoise on his land can be told he may no longer farm, log or build on that patch, and the government pays him nothing. What does rural folk wisdom tell him to do?",
-    "answer": "Shoot, shovel, and shut up -- so no one knows the animal was there",
+    "answer": "Shoot, shovel, and shut up",
     "choices": [
-      "Shoot, shovel, and shut up -- so no one knows the animal was there",
-      "Call the government right away to report it",
-      "Charge visitors money to see the animal",
-      "Move to a different state"
+      "Shoot, shovel, and shut up",
+      "Fence it, feed it, and forget it",
+      "Sell up, ship out, and start over",
+      "Call it in and claim the reward"
     ],
-    "context": "The Endangered Species Act of 1973 was signed by Nixon on December 28, 1973. Uncompensated use-restriction on private land is the structural feature that generates the perverse-incentive problem discussed in these questions. Source: fws.gov (ESA history).",
+    "context": "The Endangered Species Act of 1973 was signed by Nixon on December 28, 1973. Uncompensated use-restriction on private land is the structural feature that generates the perverse incentive. Source: fws.gov (ESA history).",
     "topic": "the-endangered-species-act-perverse-incentive-shoot-shovel-a"
   },
   {
@@ -22972,28 +22959,15 @@
   },
   {
     "tier": 3,
-    "question": "Jonathan Adler, a law professor, has argued for years that a paid landowner will guard a rare species instead of fighting it. A US law often bans owners from using parts of their land to protect such a species, without paying them a cent. One reform proposal says the government should pay them for the lost usage rights instead. What is the general name for such a paid agreement?",
-    "answer": "A conservation easement",
-    "choices": [
-      "A conservation easement",
-      "A property seizure order",
-      "A zoning fine",
-      "An eminent domain lawsuit"
-    ],
-    "context": "Jonathan Adler, 'Money or Nothing: The Adverse Environmental Consequences of Uncompensated Land-Use Controls' (Boston College Law Review, 2008). Adler argues compensation aligns landowner incentives with actual habitat preservation. Source: bc.edu/lawreview.",
-    "topic": "the-endangered-species-act-perverse-incentive-shoot-shovel-a"
-  },
-  {
-    "tier": 3,
     "question": "Elinor Ostrom studied how groups of people protect the resources they share. For saving a rare bird on private land, what kind of setup does her work favor?",
     "answer": "Local landowner cooperatives with genuine ownership of the conservation problem",
     "choices": [
       "Local landowner cooperatives with genuine ownership of the conservation problem",
-      "A single federal super-agency with global jurisdiction",
-      "Pure private-property regimes with no conservation role at all",
-      "State-owned nationalized wildlife reserves replacing all private land"
+      "A federal agency that buys and runs every habitat itself",
+      "Strict private ownership, with the state staying out entirely",
+      "National parks that take the land out of private hands"
     ],
-    "context": "Ostrom's polycentric design principles (Governing the Commons, 1990) apply directly: local user groups with clearly defined boundaries and shared stake outperform top-down uncompensated federal listing regimes. Source: Ostrom (1990); Anderson + Leal, Free Market Environmentalism (Palgrave 2001).",
+    "context": "Ostrom's design principles (Governing the Commons, 1990) favor control from close at hand: local user groups with clear boundaries, rules they write themselves and a shared stake. Anderson and Leal apply the same thinking to wildlife on private land. Source: Ostrom (1990); Anderson + Leal, Free Market Environmentalism (Palgrave 2001).",
     "topic": "the-endangered-species-act-perverse-incentive-shoot-shovel-a"
   },
   {
@@ -23012,14 +22986,14 @@
   {
     "tier": 5,
     "question": "Suppose you sit in a legislature and read about a law that forbids harming certain rare animals and lets the government freeze what an owner may do with land where one is found, with no payment. In real cases, owners quietly cleared their trees before a survey could find the animal. What public-choice lesson should you draw?",
-    "answer": "If you put the whole cost of a rule on one person, that person acts to avoid the rule before it hits",
+    "answer": "A rule that loads its whole cost on one owner makes him dodge it before it hits",
     "choices": [
-      "If you put the whole cost of a rule on one person, that person acts to avoid the rule before it hits",
-      "The government should ban all private ownership of land near listed species",
-      "Wildlife rules never need to consider what landowners might do next",
-      "Only the federal government should own any land where wildlife lives"
+      "A rule that loads its whole cost on one owner makes him dodge it before it hits",
+      "A rule works only if its fines outweigh what an owner gains by breaking it",
+      "A rule fails unless inspectors can survey land before owners hear of it",
+      "A rule loses public support once its benefits are spread thin over everyone"
     ],
-    "context": "The Adler-Lueck synthesis: uncompensated concentrated-cost regulations attract preemptive destructive behavior. Compensation aligns landowner incentives with the regulation's stated purpose. Australia's Bush Heritage Trust operates on this model. Source: Adler (2008); Lueck + Michael (2003).",
+    "context": "The Adler-Lueck synthesis: uncompensated concentrated-cost regulations attract preemptive destructive behavior, and clearing trees before a survey breaks no law, so larger fines would not touch it. Compensation aligns landowner incentives with the regulation's stated purpose. Source: Adler (2008); Lueck + Michael (2003).",
     "topic": "the-endangered-species-act-perverse-incentive-shoot-shovel-a"
   },
   {
@@ -23028,11 +23002,11 @@
     "answer": "It makes food-corn more expensive because so much corn is used as fuel",
     "choices": [
       "It makes food-corn more expensive because so much corn is used as fuel",
-      "It has no effect on corn prices",
-      "It makes food-corn free for shoppers",
-      "It only affects the price of gasoline"
+      "It makes food-corn cheaper because farmers plant much more corn",
+      "It leaves food-corn prices alone because the fuel corn is extra",
+      "It raises gasoline prices while food prices stay the same"
     ],
-    "context": "Abbreviated RFS. Its stated purposes were reducing dependence on imported oil and lowering greenhouse-gas emissions. Its principal beneficiaries were US corn growers and ethanol blenders (ADM, POET). Source: grokipedia.com/page/Renewable_Fuel_Standard_(United_States).",
+    "context": "The Renewable Fuel Standard (RFS) was set in 2005 and expanded in 2007. Its stated purposes were less dependence on imported oil and lower greenhouse-gas emissions; its chief beneficiaries were US corn growers and ethanol producers such as ADM and POET. Source: grokipedia.com/page/Renewable_Fuel_Standard_(United_States).",
     "topic": "the-ethanol-mandate-and-the-2007-guatemalan-tortilla-riots"
   },
   {
@@ -23067,9 +23041,9 @@
     "answer": "Biofuel mandates diverting food crops to fuel",
     "choices": [
       "Biofuel mandates diverting food crops to fuel",
-      "Drought caused by anthropogenic climate change",
       "Chinese state grain stockpiling",
-      "Panama Canal shipping bottlenecks"
+      "Cuts to European Union farm subsidies",
+      "Rich countries' cuts to food aid"
     ],
     "context": "Mitchell's memo (later leaked to the press) estimated biofuel demand accounted for a large share of the price rise. Drought and oil prices also mattered; but biofuel demand was the largest policy-driven contributor and could have been reversed by legislative action alone. Source: grokipedia.com/page/2007%E2%80%932008_world_food_price_crisis.",
     "topic": "the-ethanol-mandate-and-the-2007-guatemalan-tortilla-riots"
@@ -23077,12 +23051,12 @@
   {
     "tier": 4,
     "question": "A high-school student asks an economist in the tradition of Frederic Bastiat how a 2005 American law about gasoline could have set off food-price riots in another country's capital by 2007. The economist notes that American farmers moved huge fields out of food crops and into fuel corn. Which reasoning move does the economist press?",
-    "answer": "Seen-versus-unseen at planetary scale: US corn diverted to fuel raises world corn prices, and food-importing countries pay the invisible cost",
+    "answer": "Seen versus unseen: the farm boom is seen, the dearer food abroad is not",
     "choices": [
-      "Seen-versus-unseen at planetary scale: US corn diverted to fuel raises world corn prices, and food-importing countries pay the invisible cost",
-      "The Laffer curve applied to Mexican maize tariff revenue",
-      "The Coase theorem applied to farmer-consumer negotiations at the border",
-      "The Phillips curve applied to Mexican unemployment"
+      "Seen versus unseen: the farm boom is seen, the dearer food abroad is not",
+      "Moral hazard: insured farmers planted riskier crops than before",
+      "Crowding out: federal borrowing raised poor countries' interest rates",
+      "The Cantillon effect: new dollars reached Iowa before Mexico City"
     ],
     "context": "Applied Bastiat: seen is US energy-independence talking points and Iowa corn-farm prosperity; unseen is the Guatemalan or Mexican family whose staple food now costs twice as much because of a US law about motor fuel. The dispersed costs cross national borders. Source: grokipedia.com/page/2007%E2%80%932008_world_food_price_crisis.",
     "topic": "the-ethanol-mandate-and-the-2007-guatemalan-tortilla-riots"
@@ -23093,24 +23067,11 @@
     "answer": "Redesign its own plane to be more fuel-efficient",
     "choices": [
       "Redesign its own plane to be more fuel-efficient",
-      "Stop making planes altogether",
-      "Raise its prices to make more money",
-      "Ignore the rival completely"
+      "Cut its prices until the airlines came back",
+      "Leave the market for small jets to Airbus",
+      "Ask Washington to block sales of the Airbus"
     ],
     "context": "The Airbus A320neo (New Engine Option) launched in December 2010, forcing Boeing to respond quickly with the 737 MAX derivative rather than a clean-sheet replacement. The MAX entered service in May 2017. Source: boeing.com; airbus.com.",
-    "topic": "the-faa-and-boeing-737-max-certification-as-regulatory-captu"
-  },
-  {
-    "tier": 1,
-    "question": "A pilot opened the manual for Boeing's new 737 Max in 2017 and found no word of the software that could push the plane's nose down by itself. Boeing had left it out so that airlines could skip retraining their pilots. Two of the new planes later crashed. What does Boeing's rushed 737 story show?",
-    "answer": "Cutting corners to save money can cost lives",
-    "choices": [
-      "Cutting corners to save money can cost lives",
-      "Software always fixes hardware problems",
-      "Pilots never need any training",
-      "Bigger engines are always safer"
-    ],
-    "context": "MCAS (Maneuvering Characteristics Augmentation System) was designed to compensate for the MAX's altered high-angle-of-attack pitch behavior. Its single-sensor design and hidden nature became the central certification issue. Source: House T&I Report on 737 MAX (September 2020).",
     "topic": "the-faa-and-boeing-737-max-certification-as-regulatory-captu"
   },
   {
@@ -23124,19 +23085,6 @@
       "189"
     ],
     "context": "Lion Air 610 killed 189; Ethiopian 302 killed 157. Combined toll 346. Both crashes involved MCAS activation from erroneous angle-of-attack readings, with pilots unable to recover the automatic nose-down trim. Source: NTSB, KNKT (Indonesia), and ECAA (Ethiopia) final reports.",
-    "topic": "the-faa-and-boeing-737-max-certification-as-regulatory-captu"
-  },
-  {
-    "tier": 2,
-    "question": "Aviation regulators around the world grounded the Boeing 737 Max in March 2019, banning it from carrying passengers, after a Lion Air jet and an Ethiopian Airlines jet crashed within five months. The software had to be rewritten and the plane approved again. Roughly how long did that worldwide grounding last?",
-    "answer": "About 20 months",
-    "choices": [
-      "About 20 months",
-      "About 2 months",
-      "About 5 years",
-      "About 3 days"
-    ],
-    "context": "The 737 MAX was grounded worldwide from March 13, 2019 to November 18, 2020 -- approximately 20 months. Return-to-service required software revisions, additional training, and independent FAA re-certification. Source: faa.gov (737 MAX ungrounding record).",
     "topic": "the-faa-and-boeing-737-max-certification-as-regulatory-captu"
   },
   {
@@ -23158,9 +23106,9 @@
     "answer": "A culture of concealment",
     "choices": [
       "A culture of concealment",
-      "An engineering triumph",
-      "A safety renaissance",
-      "A regulatory partnership"
+      "A culture of carelessness",
+      "A culture of haste",
+      "A culture of arrogance"
     ],
     "context": "The House T&I Final Committee Report (September 16, 2020) documented what it called a 'grossly insufficient' certification process and 'a culture of concealment' at Boeing. Source: transportation.house.gov (Final 737 MAX Committee Report).",
     "topic": "the-faa-and-boeing-737-max-certification-as-regulatory-captu"
@@ -23184,9 +23132,9 @@
     "answer": "That cost cutting had undermined factory quality control",
     "choices": [
       "That cost cutting had undermined factory quality control",
-      "That pilots were being paid too much money",
-      "That jet fuel prices were rising too quickly",
-      "That airport security lines were too long"
+      "That its flight software could still push the nose down",
+      "That airlines were skipping required maintenance checks",
+      "That its new engines were shaking the airframe apart"
     ],
     "context": "Alaska Airlines Flight 1282 lost a plug-door in flight on January 5, 2024. The NTSB investigation revealed missing bolts and highlighted Boeing quality-control problems distinct from but adjacent to the 737 MAX certification story. Source: ntsb.gov (Flight 1282 preliminary report 2024).",
     "topic": "the-faa-and-boeing-737-max-certification-as-regulatory-captu"
@@ -23194,12 +23142,12 @@
   {
     "tier": 5,
     "question": "George Stigler predicted in 1971 that regulators would come to serve the firms they police. Public-choice writers call the 737 Max case, in which the US Federal Aviation Administration let Boeing itself sign off on the safety of its new plane, a 'structural' failure and not a bribery scandal. What does 'structural' mean here?",
-    "answer": "The people who actually know enough to check the design work for the company being checked",
+    "answer": "The people who know enough to check the design work for the company being checked",
     "choices": [
-      "The people who actually know enough to check the design work for the company being checked",
-      "Specific FAA workers were paid cash bribes by Boeing officials",
-      "Congress had banned the FAA from ever reviewing the new plane's flight software",
-      "Boeing's chief executive personally overturned FAA decisions"
+      "The people who know enough to check the design work for the company being checked",
+      "A few officials broke rules the system itself should have caught",
+      "Boeing's chief executive personally overturned FAA decisions",
+      "The 737's airframe was a 1960s design stretched past its limits"
     ],
     "context": "The Stigler capture prediction meets its structural limit case in aviation certification: the FAA regulates aircraft manufactured by very few US companies, and the depth of engineering knowledge required to certify a modern airliner exists overwhelmingly inside the manufacturer. ODA formalized this asymmetry. Source: Stigler, Bell Journal (1971); Levine + Forrence (1990).",
     "topic": "the-faa-and-boeing-737-max-certification-as-regulatory-captu"
@@ -23210,9 +23158,9 @@
     "answer": "Stronger independent FAA review of a manufacturer's own safety sign-offs",
     "choices": [
       "Stronger independent FAA review of a manufacturer's own safety sign-offs",
-      "A complete ban on the FAA reviewing any commercial airliner design",
-      "A rule that the FAA must publish every safety complaint within 24 hours",
-      "A rule that only the president can approve any new plane design"
+      "A ban on manufacturers' own engineers doing any certification work",
+      "A new independent agency to take over all aircraft certification",
+      "A rule that every new airliner be designed from a blank sheet"
     ],
     "context": "The Aircraft Certification, Safety, and Accountability Act (December 2020) reformed the ODA program, required additional whistleblower protections, and imposed new manufacturer-notification and FAA-oversight duties. Source: congress.gov (Public Law 116-260, Division V).",
     "topic": "the-faa-and-boeing-737-max-certification-as-regulatory-captu"
@@ -23263,8 +23211,8 @@
     "choices": [
       "Urban Democrats plus rural Republicans",
       "Urban Republicans plus rural Democrats",
-      "Coastal libertarians plus midwestern socialists",
-      "Southern populists plus Rocky Mountain progressives"
+      "Farm-state Democrats plus farm-state Republicans",
+      "Southern Democrats plus Northern Republicans"
     ],
     "context": "Urban and suburban Democrats have the votes for SNAP but not for farm subsidies; rural Republicans have the votes for farm subsidies but not for SNAP. Bundled in a single bill, each side votes for the other's priorities to secure its own. Source: Grokipedia 'Farm bill'; Sheingate, The Rise of the Agricultural Welfare State (Princeton 2001).",
     "topic": "the-farm-bill-and-snap-urban-rural-logrolling"
@@ -23327,11 +23275,11 @@
     "answer": "Each half alone could not get a majority, so bundling them creates one",
     "choices": [
       "Each half alone could not get a majority, so bundling them creates one",
-      "Congress does not have enough paper to print two separate bills",
-      "Bundling hides all federal spending from ordinary voters forever",
-      "Bundling is required to prevent the president from vetoing the bill"
+      "Both halves are run by one department, so one bill saves paperwork",
+      "Food prices and farm incomes move together, so one law can steady both",
+      "Courts have ruled that farm and food spending must share one statute"
     ],
-    "context": "Buchanan-Tullock logrolling operating as designed. The diagnostic question: what happens to the voting coalition if you unbundle? If it collapses, the bundle is the reason both halves pass. This is not corruption -- it is coalition mechanics. Source: Buchanan + Tullock (1962), Chapter 10.",
+    "context": "Buchanan-Tullock logrolling operating as designed. The diagnostic question: what happens to the voting coalition if the bill is unbundled? If it collapses, the bundle is the reason both halves pass. This is not corruption -- it is coalition mechanics. Source: Buchanan + Tullock (1962), Chapter 10.",
     "topic": "the-farm-bill-and-snap-urban-rural-logrolling"
   },
   {
@@ -23353,9 +23301,9 @@
     "answer": "They thought a small group could plan what millions of people need",
     "choices": [
       "They thought a small group could plan what millions of people need",
-      "They believed they were smarter than any king",
-      "They wore fancy clothes and lived in palaces",
-      "They spoke more languages than anyone else"
+      "They thought history itself was bound to prove them right",
+      "They thought workers alone should own every factory",
+      "They thought their party could never lose a vote"
     ],
     "context": "The Fatal Conceit was Volume 1 of the Collected Works of F. A. Hayek. The multi-decade Chicago project is now edited by Bruce Caldwell. Source: University of Chicago Press catalog page (https://press.uchicago.edu/ucp/books/book/chicago/F/bo3643985.html).",
     "topic": "the-fatal-conceit-1988-hayeks-last-book"
@@ -23375,13 +23323,13 @@
   },
   {
     "tier": 2,
-    "question": "Friedrich Hayek set out a big claim about morals in the first chapter of his final book: they are a third kind of guide for human action, set apart from two others. Old traditions and moral rules, he argued, carry a wisdom that neither of those two could invent. The chapter's title names both. What is it?",
-    "answer": "Between Instinct and Reason",
+    "question": "Friedrich Hayek opened his final book with a claim about morals: they are a third kind of guide for human action, separate from two others and not built out of either. Old traditions and moral rules, he argued, carry a wisdom neither of those two could invent. Between which two guides did he place them?",
+    "answer": "Instinct and reason",
     "choices": [
-      "Between Instinct and Reason",
-      "The Origins of Liberty, Property and Justice",
-      "The Extended Order and Population Growth",
-      "The Errors of Socialism"
+      "Instinct and reason",
+      "Faith and science",
+      "Law and conscience",
+      "Self-interest and duty"
     ],
     "context": "The opening chapter of The Fatal Conceit is 'Between Instinct and Reason.' Hayek: morals 'are not a creation of man's reason but a distinct second endowment conferred on him by cultural evolution.' Source: Reason magazine review 'The Moral Glue' (December 1988) (https://reason.com/1988/12/01/the-moral-glue1/).",
     "topic": "the-fatal-conceit-1988-hayeks-last-book"
@@ -23405,9 +23353,9 @@
     "answer": "Long-tested traditions can be wiser than any single clever planner",
     "choices": [
       "Long-tested traditions can be wiser than any single clever planner",
-      "A small expert group can design a better morality from scratch",
-      "Old rules should always be replaced by newer ones",
-      "Morality means whatever the government says it means today"
+      "Morals are only feelings, so no moral rule is truly better than another",
+      "Morals come from instinct, so teaching can never change them",
+      "Morals rest on faith alone, so reason must stay out of ethics"
     ],
     "context": "Hayek opens with David Hume's line 'the rules of morality are not the conclusions of our reason,' anchoring the book in the Scottish Enlightenment view (Hume, Ferguson, Smith, Mandeville) that a working society uses evolved rules its members did not invent. Source: Andrew J. Oliet substack review (https://andrewjoliet.substack.com/p/navigating-dual-moralities).",
     "topic": "the-fatal-conceit-1988-hayeks-last-book"
@@ -23461,25 +23409,25 @@
       "The Mint",
       "The Bank of America"
     ],
-    "context": "The Federal Reserve Act was signed on December 23, 1913, after most members of Congress had already left Washington for the holidays. Source: federalreservehistory.org/essays/federal_reserve_act_signed.",
+    "context": "Wilson signed the Federal Reserve Act on December 23, 1913, the day the Senate gave its final approval, 43 to 25; the House had approved the final version 298 to 60. Source: https://grokipedia.com/page/Federal_Reserve_Act.",
     "topic": "the-federal-reserve-act-of-december-23-1913"
   },
   {
     "tier": 2,
-    "question": "Lawmakers who wrote the Federal Reserve Act in 1913 spread the new central bank across the country, answering an old fear that one city would control the country's credit. Each district got a Reserve Bank of its own, belonging to the member banks there. How many districts did the Act create?",
+    "question": "Lawmakers who wrote the Federal Reserve Act in 1913 spread the new central bank across the country, answering an old fear that one city would control the nation's credit. Each district would get a Reserve Bank of its own, belonging to the member banks there. How many districts were drawn?",
     "answer": "Twelve",
     "choices": [
       "Twelve",
-      "One",
+      "Four",
       "Fifty",
       "Six"
     ],
-    "context": "Twelve regional Reserve Banks: Boston, New York, Philadelphia, Cleveland, Richmond, Atlanta, Chicago, St. Louis, Minneapolis, Kansas City, Dallas, San Francisco. Each was owned by its member commercial banks, not by the federal government. Source: federalreserve.gov/aboutthefed/structure-federal-reserve-banks.htm.",
+    "context": "The Act allowed not fewer than eight nor more than twelve districts; the Reserve Bank Organization Committee drew twelve in April 1914: Boston, New York, Philadelphia, Cleveland, Richmond, Atlanta, Chicago, St. Louis, Minneapolis, Kansas City, Dallas, San Francisco. Each Reserve Bank was owned by its member commercial banks. Source: https://grokipedia.com/page/Federal_Reserve_Act.",
     "topic": "the-federal-reserve-act-of-december-23-1913"
   },
   {
     "tier": 2,
-    "question": "Woodrow Wilson signed a banking law in December 1913, and after it no chartered bank could print its own bills. From then on the only legal paper money was the kind Americans still carry, backed by a central bank's assets rather than by any metal. What are those bills formally called?",
+    "question": "Woodrow Wilson signed a banking law in December 1913 that created a new kind of paper money, issued through the new central bank. Over the following decades it pushed the older kinds of paper dollar out of use, and it is the paper money Americans carry today. What are those bills formally called?",
     "answer": "Federal Reserve Notes",
     "choices": [
       "Federal Reserve Notes",
@@ -23487,7 +23435,7 @@
       "United States Notes",
       "National Bank Notes"
     ],
-    "context": "The dollar bills in circulation are Federal Reserve Notes, backed by the Fed's assets rather than by gold. Before 1913, national banks issued their own notes backed by Treasury bonds. Source: federalreserve.gov/faqs/currency.htm.",
+    "context": "Every dollar bill printed today is a Federal Reserve Note; National Bank Notes ended in 1935 and United States Notes in 1971. The first Federal Reserve Notes carried a 40 percent gold reserve; today they rest on the assets the Fed holds. Source: https://grokipedia.com/page/Federal_Reserve_Act; https://en.wikipedia.org/wiki/Federal_Reserve_Note.",
     "topic": "the-federal-reserve-act-of-december-23-1913"
   },
   {
@@ -23530,42 +23478,29 @@
     "topic": "the-federal-reserve-act-of-december-23-1913"
   },
   {
-    "tier": 4,
-    "question": "Senators passed the Federal Reserve Act on December 19, 1913, the final terms were settled on the 22nd, and Woodrow Wilson signed it on the 23rd. Critics said the calendar had cut the debate short. What was the practical effect of a signing so close to Christmas?",
-    "answer": "Most members of Congress had already left Washington for the holidays",
-    "choices": [
-      "Most members of Congress had already left Washington for the holidays",
-      "The stock exchanges were closed for holiday trading",
-      "European banks could not open new gold accounts",
-      "The federal budget deadline forced an immediate signature"
-    ],
-    "context": "The Senate passed the bill December 19; the conference report was finalized December 22; Wilson signed December 23. Many members had already headed home. Critics like Lindbergh treated the timing as evidence that debate had been foreshortened. Source: en.wikipedia.org/wiki/Federal_Reserve_Act.",
-    "topic": "the-federal-reserve-act-of-december-23-1913"
-  },
-  {
     "tier": 5,
     "question": "Woodrow Wilson signed the bill creating the Fed in 1913, and years after he died in 1924 a quotation spread in which he supposedly confessed, on his deathbed, that by creating it he had inadvertently destroyed his country. Which statement best describes the quote's documentary status?",
-    "answer": "The 'unwittingly ruined my country' portion has no verified primary source and is likely apocryphal",
+    "answer": "Its confession has no verified source and is likely invented",
     "choices": [
-      "The 'unwittingly ruined my country' portion has no verified primary source and is likely apocryphal",
-      "The full quote is documented in Wilson's collected papers at Princeton",
-      "The quote was published in the New York Times the week Wilson died",
-      "The quote comes from Wilson's 1913 book 'The New Freedom'"
+      "Its confession has no verified source and is likely invented",
+      "It is in Wilson's collected papers at Princeton",
+      "The New York Times printed it the week he died",
+      "It appears in Wilson's last annual message to Congress"
     ],
-    "context": "Historians (including Wilson biographer John Milton Cooper) have been unable to locate the 'unwittingly ruined' language in Wilson's papers. A separate passage about 'the invisible government by the money power' is authentic and appears in Wilson's pre-signing 1913 book 'The New Freedom'. Honesty rail: cite only what is verifiable. Source: princeton.edu/~mudd (Wilson papers).",
+    "context": "Historians have found no source for the deathbed confession ('I am a most unhappy man. I have unwittingly ruined my country'). The fake grew around a genuine line in Wilson's 1913 book The New Freedom: 'A great industrial nation is controlled by its system of credit. Our system of credit is privately concentrated.' Source: https://en.wikiquote.org/wiki/Woodrow_Wilson.",
     "topic": "the-federal-reserve-act-of-december-23-1913"
   },
   {
     "tier": 1,
-    "question": "Lawmakers rewrote the Federal Reserve's orders in a 1978 law. It told the bank to look after jobs and to look after the value of the dollar, with one institution answering for both. What are those orders usually called?",
-    "answer": "The dual mandate",
+    "question": "Congress gave the Fed two goals in the late 1970s that can pull apart. Critics say that makes the bank hard to hold to account. Why?",
+    "answer": "It can blame a miss on one goal on the other",
     "choices": [
-      "The dual mandate",
-      "The single mandate",
-      "The gold anchor",
-      "The Bretton Woods rule"
+      "It can blame a miss on one goal on the other",
+      "Courts cannot enforce goals so vague",
+      "Congress shares blame for any miss",
+      "Its two lobbies cancel each other out"
     ],
-    "context": "The Fed's 'dual mandate' is a shorthand for maximum employment plus stable prices, established by the Humphrey-Hawkins Full Employment and Balanced Growth Act of 1978. Source: federalreserve.gov/aboutthefed/section2a.htm.",
+    "context": "The pair is usually called the dual mandate: maximum employment and stable prices, first written into the Federal Reserve Act by the Federal Reserve Reform Act of 1977 and restated by the Humphrey-Hawkins Full Employment and Balanced Growth Act of 1978. When the two pull apart, a miss on either can be defended as service to the other. Source: federalreserve.gov/aboutthefed/section2a.htm; https://www.richmondfed.org/~/media/richmondfedorg/publications/research/economic_brief/2011/pdf/eb_11-12.pdf.",
     "topic": "the-feds-dual-mandate-and-the-austrian-critique"
   },
   {
@@ -23600,8 +23535,8 @@
     "answer": "The trade-off assumption had just been falsified by 1970s stagflation",
     "choices": [
       "The trade-off assumption had just been falsified by 1970s stagflation",
-      "The trade-off had just been confirmed by a decade of Keynesian success",
-      "The natural-rate concept had not yet been proposed",
+      "The economy was then enjoying its longest boom since the war",
+      "Inflation had just fallen to its lowest level in decades",
       "The Phillips curve was a brand-new discovery"
     ],
     "context": "By 1978 stagflation (simultaneous high inflation and unemployment) had made the naive Phillips-curve trade-off untenable. The dual mandate embedded the trade-off in statute at the very moment academic economics was walking away from it. Source: en.wikipedia.org/wiki/Phillips_curve.",
@@ -23623,25 +23558,25 @@
   {
     "tier": 4,
     "question": "A saver looks up the gauge behind the Federal Reserve's public aim of 2 percent yearly inflation. But 'inflation' can mean many things: housing prices, stock prices, the M2 money supply, or the price of what a family actually buys. The Fed has steered by one specific measure since 2012. Which measure does it track?",
-    "answer": "The core PCE price index",
+    "answer": "The PCE price index",
     "choices": [
-      "The core PCE price index",
+      "The PCE price index",
       "The Case-Shiller housing price index",
       "The S&P 500 total return",
       "The M2 money supply"
     ],
-    "context": "The Fed's 2% target is stated on core Personal Consumption Expenditures inflation. Austrian critics note that this leaves asset-price inflation (housing bubbles, stock booms) formally uncounted -- a lever the employment side of the mandate exploits. Source: federalreserve.gov/faqs/economy_14400.htm.",
+    "context": "Since January 2012 the Fed has stated its 2 percent goal in terms of the price index for personal consumption expenditures (PCE), a broad gauge of what households buy; officials also watch a 'core' version without food and energy. Austrian critics note that the target leaves house and share prices outside it. Source: federalreserve.gov/faqs/economy_14400.htm.",
     "topic": "the-feds-dual-mandate-and-the-austrian-critique"
   },
   {
     "tier": 4,
-    "question": "Jerome Powell, the Fed Chair, repeatedly called the price rises of 2021 'transitory,' meaning they would soon pass on their own. Gasoline, groceries and rent kept climbing, and in 2022 the Fed reversed course and hiked interest rates sharply. Austrian critics of the law that tells the Fed to fight both inflation and unemployment saw a pattern in the miss. What pattern did they see?",
+    "question": "Jerome Powell, then chair of the Fed, repeatedly called the price rises of 2021 'transitory,' meaning they would soon pass on their own. Gasoline, groceries and rent kept climbing, and in 2022 the Fed reversed course and hiked interest rates sharply. Austrian critics of the law that tells the Fed to fight both inflation and unemployment saw a pattern in the miss. What pattern did they see?",
     "answer": "The employment-side bias producing predictable inflation error",
     "choices": [
       "The employment-side bias producing predictable inflation error",
-      "The unusually rapid market response to Fed guidance",
-      "The success of forward-guidance communication tools",
-      "The dominance of monetary versus fiscal policy in modern practice"
+      "Supply shocks that no central bank could have foreseen",
+      "Federal spending that swamped whatever the Fed did",
+      "Big firms raising prices faster than their own costs"
     ],
     "context": "Fed leadership held rates near zero through most of 2021 while inflation ran above 5 percent, using the labor-market recovery as reason to delay. When the pivot came in March 2022, the Fed had to tighten unusually fast. Austrians treat this as the mandate's incentive structure playing out on schedule. Source: federalreserve.gov press releases 2021-22.",
     "topic": "the-feds-dual-mandate-and-the-austrian-critique"
@@ -23665,9 +23600,9 @@
     "answer": "Printing more money to lift employment tends to raise prices, which the same law says to keep stable",
     "choices": [
       "Printing more money to lift employment tends to raise prices, which the same law says to keep stable",
-      "Lower taxes always cause both goals to fail together",
-      "Full employment automatically causes deflation, which raises prices",
-      "Stable prices are always achieved without any change in employment"
+      "Cutting rates to lift employment weakens the dollar abroad, which the same law forbids",
+      "Holding prices steady needs a balanced federal budget, which only Congress can deliver",
+      "Putting more people to work pushes wages down, which drags prices below the target"
     ],
     "context": "Hubert Humphrey (D-MN, former Vice President under Johnson and 1968 Democratic presidential nominee) died January 13, 1978. Augustus Hawkins (D-CA), the House co-sponsor, lived until 2007. Source: en.wikipedia.org/wiki/Hubert_Humphrey.",
     "topic": "the-feds-dual-mandate-and-the-austrian-critique"
@@ -23695,7 +23630,7 @@
       "And then what happens? -- follow the chain past move one",
       "Compared to what? -- name the body that would actually run it"
     ],
-    "context": "Sowell's complaint in The Vision of the Anointed is that a claim gets accepted 'even though evidence is seldom asked or given'. Three people who feel helped tell you nothing about the people the programme missed, harmed, or would have helped anyway -- and those are the ones no reporter interviews.",
+    "context": "Sowell's complaint in The Vision of the Anointed is that a claim gets accepted 'even though evidence is seldom asked or given'. Three people who feel helped reveal nothing about the people the programme missed, harmed, or would have helped anyway, and those are the ones no reporter interviews.",
     "topic": "the-five-sowell-questions-a-distillation"
   },
   {
@@ -23747,7 +23682,7 @@
       "At what cost? -- name what the resources were doing before",
       "And then what happens? -- follow the chain past move one"
     ],
-    "context": "'There are no solutions. There are only trade-offs.' -- A Conflict of Visions (1987). The trade-off question is not the same as the cost question: cost asks what the resources gave up, trade-offs asks which problems you have agreed to accept in exchange for the ones you are removing. A programme with no downside is not a bargain a human being can strike.",
+    "context": "'There are no solutions. There are only trade-offs.' -- A Conflict of Visions (1987). The trade-off question is not the same as the cost question: cost asks what the resources gave up, trade-offs asks which problems a society agrees to accept in exchange for the ones it is removing. A programme with no downside is not a bargain a human being can strike.",
     "topic": "the-five-sowell-questions-a-distillation"
   },
   {
@@ -23786,15 +23721,15 @@
       "Graduates who repaid early petition Congress for equal treatment",
       "States cut their own university funding by the amount forgiven"
     ],
-    "context": "All four are second-round effects worth tracing; Sowell's question puts the incentive change first because it is the one that alters what people do from now on, rather than redistributing what has already happened. Note what the question does not do: it does not tell you the policy is wrong. It tells you which column of the ledger the proposal has left blank.",
+    "context": "All four are second-round effects worth tracing; Sowell's question puts the incentive change first because it is the one that alters what people do from now on, rather than redistributing what has already happened. The question does not say the policy is wrong; it shows which column of the ledger the proposal has left blank.",
     "topic": "the-five-sowell-questions-a-distillation"
   },
   {
     "tier": 5,
     "question": "Suppose you learn Thomas Sowell's five questions and run them on rent control, tariffs and the minimum wage, and you end up disagreeing with him about all three. The questions have still done their work. What is it that they actually deliver?",
-    "answer": "An account of what a policy costs and causes, which you then weigh yourself",
+    "answer": "An account of what a policy costs and causes, for each person to weigh",
     "choices": [
-      "An account of what a policy costs and causes, which you then weigh yourself",
+      "An account of what a policy costs and causes, for each person to weigh",
       "A ranking of policies from the most harmful down to the least harmful",
       "A test that every sound policy passes and every unsound one fails",
       "A method for predicting which policies a legislature will adopt"
@@ -23804,46 +23739,7 @@
   },
   {
     "tier": 1,
-    "question": "A bond trader waits for one vote from Washington. Inside the Federal Reserve, a single committee votes to raise, lower or hold the target interest rate. What four-letter name is that committee known by?",
-    "answer": "FOMC",
-    "choices": [
-      "FOMC",
-      "OCC",
-      "FDIC",
-      "CFPB"
-    ],
-    "context": "The Federal Open Market Committee sets the Fed funds rate target and directs open-market operations. Every 6-8 weeks its policy statement is the market-moving output. Source: federalreserve.gov/monetarypolicy/fomc.htm.",
-    "topic": "the-fomc-who-actually-decides-us-monetary-policy"
-  },
-  {
-    "tier": 1,
-    "question": "A reporter circles each date on the published calendar of the US central bank's rate-setting committee at the start of the year. The regular meetings are set well in advance. About how many does the committee hold in a year?",
-    "answer": "Eight",
-    "choices": [
-      "Eight",
-      "Two",
-      "Twenty",
-      "Fifty"
-    ],
-    "context": "The FOMC meets eight times a year on a published calendar, roughly every 6-8 weeks. Each meeting yields a policy statement, a chair press conference, and minutes released three weeks later. Source: federalreserve.gov/monetarypolicy/fomccalendars.htm.",
-    "topic": "the-fomc-who-actually-decides-us-monetary-policy"
-  },
-  {
-    "tier": 2,
-    "question": "A regional Reserve Bank president argued his case at a rate-setting meeting in Washington, though he had no vote that year. The ballots on American interest rates belong to members drawn from two Federal Reserve groups. How many voting seats are there at each meeting?",
-    "answer": "Twelve",
-    "choices": [
-      "Twelve",
-      "Seven",
-      "Five",
-      "Nineteen"
-    ],
-    "context": "Twelve voting seats: seven Board of Governors members in Washington plus five regional Reserve Bank presidents. Nineteen officials attend and speak, but only twelve vote. Source: federalreserve.gov/monetarypolicy/fomc.htm.",
-    "topic": "the-fomc-who-actually-decides-us-monetary-policy"
-  },
-  {
-    "tier": 2,
-    "question": "A new president took over one regional Reserve Bank and found he would vote at every rate-setting meeting, while his colleagues at the other regional banks waited their turns in a rotation. The seat has been permanent since 1913, a year when that bank's district was the country's largest. Which city hosts this bank?",
+    "question": "A new regional Reserve Bank president finds that he votes at every rate-setting meeting, while the presidents of the other regional banks take turns. His bank's seat has been permanent since 1942. Which city is his bank in?",
     "answer": "New York",
     "choices": [
       "New York",
@@ -23851,20 +23747,20 @@
       "San Francisco",
       "Dallas"
     ],
-    "context": "The New York Reserve Bank president holds a permanent FOMC vote; the other 11 regional presidents rotate through four voting seats on annual cycles. NY's permanent seat dates to the 1913 founding when it was the largest district. Source: federalreserve.gov/monetarypolicy/fomc.htm.",
+    "context": "The New York Fed president is a permanent voter and vice chair of the FOMC; the other eleven regional presidents rotate through four voting seats. New York's de facto permanent vote under the 1935 structure was made official in 1942, and the New York bank carries out the committee's trades in the markets. Source: https://www.kansascityfed.org/ten/looking-back-the-federal-open-market-committee-and-its-voting-rotation/; https://en.wikipedia.org/wiki/Federal_Reserve_Bank_of_New_York.",
     "topic": "the-fomc-who-actually-decides-us-monetary-policy"
   },
   {
     "tier": 3,
-    "question": "A new governor took her seat on the Federal Reserve's seven-member Board in Washington after a president picked her and the Senate approved her. To keep the Board out of daily politics and party swings, lawmakers in 1935 had given each governor a single very long term, much longer than a president's four years. How long is one governor's term?",
-    "answer": "Fourteen years",
+    "question": "A new president finds that most of the seven governors on the Federal Reserve Board in Washington were picked by his predecessors and will stay for years. Lawmakers in 1935 built the Board that way to keep it out of party swings. What keeps the governors in their seats?",
+    "answer": "Each serves a single fourteen-year term",
     "choices": [
-      "Fourteen years",
-      "Four years",
-      "Six years",
-      "Life"
+      "Each serves a single fourteen-year term",
+      "Each serves for life, like a Supreme Court justice",
+      "Each can be removed only by a two-thirds Senate vote",
+      "Each can be fired only by a vote of the other governors"
     ],
-    "context": "Fourteen-year non-renewable terms are the longest fixed terms of any federal position other than Supreme Court justices (who have life tenure). The length is set by the Federal Reserve Act to insulate governors from short-term political pressure. Source: federalreserve.gov/aboutthefed/structure-federal-reserve-board.htm.",
+    "context": "Governors are nominated by the president and confirmed by the Senate for single fourteen-year terms, staggered so that one ends every two years: the longest fixed terms in the federal government outside the Supreme Court's life tenure. A president may remove a governor only for cause. Source: federalreserve.gov/aboutthefed/structure-federal-reserve-board.htm.",
     "topic": "the-fomc-who-actually-decides-us-monetary-policy"
   },
   {
@@ -23873,8 +23769,8 @@
     "answer": "They take bigger risks, expecting the central bank to bail them out",
     "choices": [
       "They take bigger risks, expecting the central bank to bail them out",
-      "They stop investing entirely and buy only gold coins",
-      "They lend only to farmers and small shops",
+      "They pull their money out of stocks and into safe bonds",
+      "They hedge every bet more carefully than before",
       "They demand higher interest rates on every loan"
     ],
     "context": "Greenspan chaired the Fed 1987-2006 across the Black Monday 1987 crash, the 1998 LTCM rescue, the 2000 dot-com bust and the 2004-06 rate cycle. His dominance of FOMC agenda-setting became a case study in chair-driven committee dynamics. Source: en.wikipedia.org/wiki/Alan_Greenspan.",
@@ -23886,9 +23782,9 @@
     "answer": "The federal funds rate",
     "choices": [
       "The federal funds rate",
-      "The mortgage rate",
-      "The credit card rate",
-      "The savings account rate"
+      "The discount rate",
+      "The prime rate",
+      "The London interbank rate"
     ],
     "context": "The FOMC votes a target range for the federal funds rate -- the overnight rate at which banks lend reserves to each other. The New York Desk then conducts open-market operations to keep the effective rate in that range. Source: federalreserve.gov/monetarypolicy/fomc.htm.",
     "topic": "the-fomc-who-actually-decides-us-monetary-policy"
@@ -23912,11 +23808,11 @@
     "answer": "The Class B and Class C directors of that regional bank",
     "choices": [
       "The Class B and Class C directors of that regional bank",
-      "The Senate Banking Committee",
-      "The full Board of Governors alone",
-      "The President of the United States"
+      "All nine directors of that regional bank, bankers included",
+      "The Class A directors, the bankers on that regional board",
+      "The member banks of the district, voting directly"
     ],
-    "context": "Each regional bank has nine directors (three classes); the non-banker directors (Class B and C) select the regional president, with Board of Governors sign-off. There is no Senate confirmation. Public-choice critics call this a governance gap. Source: federalreserve.gov/aboutthefed/structure-federal-reserve-banks.htm.",
+    "context": "Each regional bank has nine directors in three classes. Since the Dodd-Frank Act of 2010 only the Class B and C directors, the non-bankers, choose the president, and the Board of Governors approves the choice; the Class B directors are elected by the member banks. There is no Senate confirmation. Source: https://www.stlouisfed.org/on-the-economy/2022/feb/role-bankers-on-federal-reserves-boards-directors.",
     "topic": "the-fomc-who-actually-decides-us-monetary-policy"
   },
   {
@@ -23931,19 +23827,6 @@
     ],
     "context": "'Fed watcher' names an entire subprofession -- economists at investment banks, journalists at Bloomberg and Reuters, and think-tank analysts whose full-time job is reading FOMC statements, minutes, and chair speeches for subtle shifts. Adjective changes ('appropriate', 'patient', 'accommodative') routinely move markets. Source: en.wikipedia.org/wiki/Fedspeak.",
     "topic": "the-fomc-who-actually-decides-us-monetary-policy"
-  },
-  {
-    "tier": 1,
-    "question": "Andrew Jackson killed the Second Bank of the United States in 1836. From then until the National Banking Acts of the Civil War, about twenty-seven years, American banks operated with no central authority above them, printing their own state-chartered notes. What do economists call this period?",
-    "answer": "The free-banking era",
-    "choices": [
-      "The free-banking era",
-      "The gold-standard era",
-      "The Progressive Era",
-      "The Populist era"
-    ],
-    "context": "Roughly 1837-1863, the 'free-banking' period followed Jackson's veto of the Second Bank in 1832 and his refusal to renew its charter. State laws let anyone meeting capital rules charter a bank. Source: en.wikipedia.org/wiki/Free_banking.",
-    "topic": "the-free-banking-era-and-the-national-banking-acts"
   },
   {
     "tier": 1,
@@ -23964,24 +23847,24 @@
     "answer": "The country had no single trusted paper currency",
     "choices": [
       "The country had no single trusted paper currency",
-      "Banks charged too much interest on farm loans",
-      "Coins were being melted down for jewelry",
-      "Silver mines had run out of ore"
+      "Farmers could not borrow to buy new machinery",
+      "The Treasury had no way to collect income taxes",
+      "Southern banks held most of the nation's gold"
     ],
     "context": "The National Banking Acts of 1863 and 1864 created federally-chartered national banks that could issue a uniform note backed by Treasury bonds held as reserves. Source: federalreservehistory.org/essays/national-banking-acts.",
     "topic": "the-free-banking-era-and-the-national-banking-acts"
   },
   {
     "tier": 2,
-    "question": "Lawmakers set out in 1865, right after the Civil War, to kill off state-chartered bank notes and push every bank into the new national system. They did not ban the state notes outright. They taxed them, heavily enough that the notes vanished within a couple of years. What was the tax rate?",
-    "answer": "10 percent",
+    "question": "Lawmakers set out in 1865, in the last months of the Civil War, to kill off state-chartered banknotes and push every bank into the new national system. They never banned the state notes, yet within a couple of years the notes had all but vanished. How did Congress drive them out?",
+    "answer": "It taxed the notes at 10 percent",
     "choices": [
-      "10 percent",
-      "1 percent",
-      "50 percent",
-      "3 percent"
+      "It taxed the notes at 10 percent",
+      "It made every state bank swap its notes for gold",
+      "It barred state notes from crossing state lines",
+      "It bought the notes up with greenbacks and burned them"
     ],
-    "context": "The 10 percent tax on state-bank notes made state-note issue commercially impossible. State banks that survived had to shift to deposit banking rather than note issue. Source: en.wikipedia.org/wiki/State_bank.",
+    "context": "The 10 percent tax on state-bank notes, passed in March 1865 and upheld by the Supreme Court in Veazie Bank v. Fenno (1869), made state note issue commercially pointless. State banks that survived shifted to deposit banking. Source: en.wikipedia.org/wiki/State_bank; en.wikipedia.org/wiki/Veazie_Bank_v._Fenno.",
     "topic": "the-free-banking-era-and-the-national-banking-acts"
   },
   {
@@ -24003,9 +23886,9 @@
     "answer": "To make it easier to borrow the huge sums a war costs",
     "choices": [
       "To make it easier to borrow the huge sums a war costs",
-      "To lower the price of bread for city families",
-      "To prevent farmers from planting new crops",
-      "To force citizens to save more of their allowance"
+      "To stop enemy agents from forging the nation's money",
+      "To hold down food prices for soldiers' families at home",
+      "To keep gold from leaving the country for the enemy"
     ],
     "context": "Salmon Chase (Treasury 1861-64, later Chief Justice of the United States) designed the National Banking system to help finance the Union war effort by creating a captive market for Treasury bonds. Source: en.wikipedia.org/wiki/Salmon_P._Chase.",
     "topic": "the-free-banking-era-and-the-national-banking-acts"
@@ -24030,8 +23913,8 @@
     "choices": [
       "A lender of last resort",
       "A gold standard",
-      "Uniform paper currency",
-      "Federal chartering of banks"
+      "Federal insurance of bank deposits",
+      "A single national clearinghouse"
     ],
     "context": "National banks could issue a uniform currency but no institution stood ready to supply emergency liquidity in a panic. Every major panic (1873, 1893, 1907) had to be handled by ad-hoc private rescues, culminating in Morgan's 1907 intervention. Source: federalreservehistory.org/essays/national-banking-acts.",
     "topic": "the-free-banking-era-and-the-national-banking-acts"
@@ -24051,13 +23934,13 @@
   },
   {
     "tier": 5,
-    "question": "A merchant who was offered a note from a shaky state bank priced it at a steep discount, and a printed guide listed the going rate. Hundreds of state-chartered banks issued their own notes from roughly 1837 to 1863, and note-holders had to know which were sound. Friedrich Hayek would later point to setups like this as classic examples. What kind of solution was it?",
-    "answer": "An emergent-order solution -- prices carrying reputational information",
+    "question": "A merchant who was offered a note from a shaky state bank priced it at a steep discount, and a printed guide listed the going rate. Hundreds of state-chartered banks issued their own notes from roughly 1837 to 1863, and note-holders had to know which were sound. Friedrich Hayek would describe this kind of order in his 1945 essay on prices. What kind of solution was it?",
+    "answer": "An emergent order, with prices carrying each bank's reputation",
     "choices": [
-      "An emergent-order solution -- prices carrying reputational information",
-      "A form of government price-fixing",
-      "A quota system administered by the Treasury",
-      "A gold-standard arbitrage arrangement"
+      "An emergent order, with prices carrying each bank's reputation",
+      "A cartel, with the big-city banks fixing every discount",
+      "A licensed utility, with each state approving the guides",
+      "A futures market, with traders betting on bank failures"
     ],
     "context": "The Hayekian reading: the banknote-reporter system was a decentralized market for reputation and risk information; discount prices carried the signal. This is a small-scale example of the price-system-as-knowledge-aggregator that Hayek 1945 would later theorize. Source: minneapolisfed.org/research/qr/qr731.pdf.",
     "topic": "the-free-banking-era-and-the-national-banking-acts"
@@ -24065,12 +23948,12 @@
   {
     "tier": 1,
     "question": "Friedrich Hayek called thirty-nine economists and thinkers to a Swiss mountain hotel above the village of Mont Pelerin in April 1947. Central planning was rising fast, in Stalin's Soviet Union and in the growing welfare states of Western Europe, and most university professors backed it. What older intellectual tradition did he call them together to defend?",
-    "answer": "Classical liberalism (limited government plus free markets)",
+    "answer": "Classical liberalism",
     "choices": [
-      "Classical liberalism (limited government plus free markets)",
-      "Socialism",
-      "Fascism",
-      "Anarchism"
+      "Classical liberalism",
+      "Utilitarianism",
+      "Tory conservatism",
+      "Mercantilism"
     ],
     "context": "Hayek convened the founding conference of the Mont Pelerin Society, April 1-10, 1947, at the Hotel du Parc in the village of Mont Pelerin near Vevey. Mises, Friedman and Robbins were all in the room; Hayek organised it and served as the society's first president, 1947-1961. Sources: Wikipedia, 'Mont Pelerin Society'; Grokipedia, 'Mont Pelerin Society'.",
     "topic": "the-friedman-hayek-relationship-and-mont-pelerin"
@@ -24090,15 +23973,15 @@
   },
   {
     "tier": 2,
-    "question": "Milton Friedman, at thirty-four, put his name to the Statement of Aims at Mont Pelerin in April 1947. Its opening lines warned that three things were disappearing across large parts of the Earth, swallowed by Communist and fascist states and by growing government planning in the West. Two of the three were personal liberty and voluntary teamwork. What was the third?",
-    "answer": "Private property",
+    "question": "Milton Friedman, thirty-four, was in the room when the Mont Pelerin scholars adopted their Statement of Aims in April 1947. It warned that in much of the world the conditions of human dignity and freedom had already gone, and that even 'that most precious possession of Western Man' was threatened. Which possession did it mean?",
+    "answer": "Freedom of thought and expression",
     "choices": [
-      "Private property",
-      "Freedom of religion",
-      "Representative government",
-      "The rule of law"
+      "Freedom of thought and expression",
+      "Private property and the free market",
+      "Freedom of worship and of conscience",
+      "The right to vote in free elections"
     ],
-    "context": "The Statement of Aims warned that 'the central values of civilization are in danger,' naming individual liberty, human cooperation by voluntary agreement, and private property, 'together with the institutions necessary to maintain these.' It went on to blame a decline of belief in private property and the rule of law. Source: Wikipedia, 'Mont Pelerin Society'.",
+    "context": "The Statement opens: 'The central values of civilization are in danger.' It names freedom of thought and expression as 'that most precious possession of Western Man,' threatened by creeds that seek to suppress all views but their own, and goes on to blame theories that question the rule of law and a decline of belief in private property and the competitive market. Source: https://www.montpelerin.org/statement-of-aims/.",
     "topic": "the-friedman-hayek-relationship-and-mont-pelerin"
   },
   {
@@ -24111,7 +23994,7 @@
       "A British government department",
       "A Vatican educational trust"
     ],
-    "context": "The Schweizerische Kreditanstalt -- today Credit Suisse -- paid 93 per cent of the conference costs. Smaller sums came from the William Volker Fund via Harold Luhnow, from the Bank of England via Alfred Suenson-Taylor, and from the Foundation for Economic Education. Source: Wikipedia, 'Mont Pelerin Society', citing Mirowski and Plehwe (2009), p. 15.",
+    "context": "The Schweizerische Kreditanstalt, later Credit Suisse (taken over by UBS in 2023), paid 93 per cent of the conference costs. Smaller sums came from the William Volker Fund via Harold Luhnow, from the Bank of England via Alfred Suenson-Taylor, and from the Foundation for Economic Education. Source: Wikipedia, 'Mont Pelerin Society', citing Mirowski and Plehwe (2009), p. 15.",
     "topic": "the-friedman-hayek-relationship-and-mont-pelerin"
   },
   {
@@ -24173,28 +24056,28 @@
     "choices": [
       "it can never be spent or moved to another address",
       "it can never be seen by other nodes",
-      "it can never be used as a mining reward",
-      "it can never be counted in the total supply"
+      "it can never be traced to the address it was paid to",
+      "it can never be read in the block's own data"
     ],
-    "context": "By a quirk of the original code, the genesis-block coinbase output was written such that it is unspendable -- the 50 BTC exists in the chain but can never be moved. Every full node sees it; miners still get later rewards; supply totals do include it. Source: https://en.bitcoin.it/wiki/Genesis_block.",
+    "context": "By a quirk of the original code the genesis-block coinbase output is unspendable: the 50 BTC sits in the chain, visible to every node, but can never be moved, so it never circulates. The 21-million cap, which follows from the halving schedule, is unchanged. Source: https://en.bitcoin.it/wiki/Genesis_block.",
     "topic": "the-genesis-block-and-the-times-headline"
   },
   {
     "tier": 2,
-    "question": "Satoshi Nakamoto hid a short line of text in January 2009 inside the coinbase transaction of Bitcoin's first block, the entry that creates new coins. It served no technical purpose whatsoever. It was a message meant to be read by whoever came looking. What did that message quote?",
-    "answer": "a January 3, 2009 headline from The Times of London",
+    "question": "Satoshi Nakamoto sealed a line of text into the coinbase transaction of Bitcoin's first block in January 2009, the entry that creates new coins. The line was a front-page headline, copied from a London newspaper printed that same morning. Which paper?",
+    "answer": "The Times",
     "choices": [
-      "a January 3, 2009 headline from The Times of London",
-      "a Bible verse from the book of Revelation",
-      "a passage from Ayn Rand's Atlas Shrugged",
-      "Ludwig von Mises's 1920 socialism-calculation essay"
+      "The Times",
+      "The Financial Times",
+      "The Guardian",
+      "The Daily Telegraph"
     ],
     "context": "The embedded text reads 'The Times 03/Jan/2009 Chancellor on brink of second bailout for banks' -- the actual front-page headline of the London Times that day. Source: https://en.bitcoin.it/wiki/Genesis_block.",
     "topic": "the-genesis-block-and-the-times-headline"
   },
   {
     "tier": 2,
-    "question": "Bitcoin's anonymous creator, Satoshi Nakamoto, mined his first block on 3 January 2009 and permanently embedded in it a real newspaper headline printed that same day. He wanted the world to see why he had built a currency no government could inflate. What did the headline talk about?",
+    "question": "Bitcoin's anonymous creator, Satoshi Nakamoto, mined his first block on 3 January 2009 and permanently embedded in it a real newspaper headline printed that same day. Many read it as his reason for building a currency no government could inflate. What did the headline talk about?",
     "answer": "the UK Chancellor preparing a second bailout for banks",
     "choices": [
       "the UK Chancellor preparing a second bailout for banks",
@@ -24215,20 +24098,7 @@
       "a mining-difficulty target for Block 1",
       "a signature identifying Satoshi's private key"
     ],
-    "context": "Including a January 3, 2009 headline proves the block could not have been mined earlier -- the same trick newspaper hostages hold up dated papers to prove the video is current. The Bitcoin protocol has separate difficulty and signature machinery. Source: https://en.bitcoin.it/wiki/Genesis_block.",
-    "topic": "the-genesis-block-and-the-times-headline"
-  },
-  {
-    "tier": 3,
-    "question": "A Bitcoin user opens the chain's very first block and reads the line of text Satoshi Nakamoto sealed into it in January 2009. One of its jobs was technical. The other was purely political, a message about what Bitcoin was fighting against. What stance does the community read into that choice?",
-    "answer": "a direct protest against the 2008-09 bank-bailout culture",
-    "choices": [
-      "a direct protest against the 2008-09 bank-bailout culture",
-      "a celebration of British monetary tradition",
-      "a warning about Chinese currency manipulation",
-      "an endorsement of European monetary union"
-    ],
-    "context": "The headline referenced a second bailout of failing UK banks weeks after the first; embedding it in Bitcoin's founding block was widely read as naming the political enemy: a monetary system in which banks fail and the state prints to rescue them. The other options are not supported by the text. Source: https://en.bitcoin.it/wiki/Genesis_block.",
+    "context": "Including a January 3, 2009 headline proves the block could not have been mined earlier, the same trick as a hostage holding up that day's newspaper to prove a video is new. The Bitcoin protocol has separate difficulty and signature machinery. Source: https://en.bitcoin.it/wiki/Genesis_block.",
     "topic": "the-genesis-block-and-the-times-headline"
   },
   {
@@ -24245,37 +24115,11 @@
     "topic": "the-genesis-block-and-the-times-headline"
   },
   {
-    "tier": 4,
-    "question": "Satoshi Nakamoto baked a line of news about the ruling class permanently into Bitcoin's very first block in January 2009, and no modern government currency had ever launched with anything of the kind. Bitcoin writers reach for one famous kind of document to describe the gesture. Which comparison do they use most?",
-    "answer": "a declaration of independence naming the adversary in one sentence",
-    "choices": [
-      "a declaration of independence naming the adversary in one sentence",
-      "a corporate mission statement filed with regulators",
-      "a monetary policy target set by a central bank",
-      "an academic dedication to a favorite teacher"
-    ],
-    "context": "The comparison in the Bitcoin literature (Ammous, Antonopoulos, Song, others) is to a declaration of independence: an act that both timestamps itself and names its adversary explicitly. No corporate filing, central-bank target, or academic dedication had ever served that purpose in a monetary system. Source: Ammous, The Bitcoin Standard (2018) chapter on Bitcoin.",
-    "topic": "the-genesis-block-and-the-times-headline"
-  },
-  {
-    "tier": 5,
-    "question": "A node operator opens Bitcoin's first block and sees the 50 bitcoins it paid sitting on the chain. A small quirk in Satoshi Nakamoto's original code left them out of the spendable ledger where normal block rewards go. What effect does that have on how many bitcoins will ever really circulate?",
-    "answer": "Fifty coins are permanently locked out of the circulating supply",
-    "choices": [
-      "Fifty coins are permanently locked out of the circulating supply",
-      "The next block's reward is doubled to make up for it",
-      "The first supply halving is delayed by 210,000 blocks",
-      "The overall 21-million cap is lowered by 50 coins"
-    ],
-    "context": "The 50 BTC of the genesis reward can never be moved, so the coins nominally exist in the chain but can never enter circulation. The supply cap arithmetic is not adjusted (21M is a mathematical limit from halving geometry); block-reward and halving schedule are unchanged. Source: https://en.bitcoin.it/wiki/Genesis_block.",
-    "topic": "the-genesis-block-and-the-times-headline"
-  },
-  {
     "tier": 5,
     "question": "Satoshi Nakamoto embedded a line of news in Bitcoin's first block, and Austrian-school writers in the tradition of Ludwig von Mises and Friedrich Hayek read it as a signal. It says, they argue, that Bitcoin can do something no government-issued fiat money can. Which move does their argument make?",
-    "answer": "That a monetary system can bind itself to a rule at issuance and refuse the political discretion to rescue any subsequent bank failure",
+    "answer": "That a monetary system can bind itself to a rule and refuse to rescue failed banks",
     "choices": [
-      "That a monetary system can bind itself to a rule at issuance and refuse the political discretion to rescue any subsequent bank failure",
+      "That a monetary system can bind itself to a rule and refuse to rescue failed banks",
       "That a monetary system can be democratically voted into and out of existence each cycle",
       "That a monetary system's founder must remain publicly known to legitimize it",
       "That a monetary system requires state backing to be trusted"
@@ -24289,11 +24133,11 @@
     "answer": "Farmers were forced off their own plots and had no reason to work hard",
     "choices": [
       "Farmers were forced off their own plots and had no reason to work hard",
-      "A hurricane wiped out the harvest three years in a row",
-      "Foreign countries blocked all food imports",
-      "A new plant disease killed most of the rice"
+      "Three years of drought and floods ruined the harvests",
+      "The Soviet Union cut off grain shipments after a quarrel",
+      "A plant disease spread through the rice fields"
     ],
-    "context": "The Great Leap Forward (1958-62) was Mao's attempt to overtake Britain in steel output within 15 years through people's communes and backyard industrial furnaces. It produced the deadliest famine in history. Source: en.wikipedia.org/wiki/Great_Leap_Forward.",
+    "context": "The Great Leap Forward (1958-62) was Mao's attempt to overtake Britain in steel output within 15 years through people's communes and backyard industrial furnaces. Beijing long blamed 'three years of natural disasters'; historians working in the archives put policy first. Source: en.wikipedia.org/wiki/Great_Leap_Forward; en.wikipedia.org/wiki/Great_Chinese_Famine.",
     "topic": "the-great-leap-forward-1958-62-the-deadliest-planning-failur"
   },
   {
@@ -24304,7 +24148,7 @@
       "People's communes",
       "Village councils",
       "Farm brigades",
-      "Rural collectives"
+      "Peasant soviets"
     ],
     "context": "People's communes of 5,000 households or more replaced smaller cooperatives in 1958. Private plots, tools, and cookware were absorbed. The commune was both economic unit and local government. Source: en.wikipedia.org/wiki/People%27s_commune.",
     "topic": "the-great-leap-forward-1958-62-the-deadliest-planning-failur"
@@ -24328,9 +24172,9 @@
     "answer": "It collapsed, and tens of millions starved",
     "choices": [
       "It collapsed, and tens of millions starved",
-      "It doubled, feeding the whole country",
-      "It stayed the same as before",
-      "It grew slowly for a decade"
+      "It fell slightly, and imported grain made up the gap",
+      "It held steady, because farmers quietly ignored the orders",
+      "It rose for a decade, though more slowly than promised"
     ],
     "context": "Lysenko's rejection of Mendelian genetics had been imposed on Soviet agriculture by Stalin. Chinese agriculture adopted Lysenkoist close-planting and deep-plowing techniques during the Great Leap, with disastrous results. Source: en.wikipedia.org/wiki/Lysenkoism.",
     "topic": "the-great-leap-forward-1958-62-the-deadliest-planning-failur"
@@ -24350,15 +24194,15 @@
   },
   {
     "tier": 3,
-    "question": "Peng Dehuai, one of Mao Zedong's own top generals, wrote him a private letter at Lushan in 1959. Peng admitted that the Great Leap Forward was failing and that Chinese peasants were starving in huge numbers. What usually happens to such a critic in a one-party state?",
-    "answer": "He is punished, purged, or silenced",
+    "question": "Peng Dehuai, one of Mao Zedong's own top generals, wrote him a private letter at the Lushan conference in July 1959. It criticized the Great Leap Forward: inflated harvest reports, labor wasted at the furnaces, hunger in the villages. What did Mao do with the letter?",
+    "answer": "He had it handed round the meeting and had Peng denounced",
     "choices": [
-      "He is punished, purged, or silenced",
-      "He is promoted for his honesty",
-      "He is asked to redesign the plan himself",
-      "He is given a raise and a public medal"
+      "He had it handed round the meeting and had Peng denounced",
+      "He burned it unread and kept Peng in his post",
+      "He accepted it and slowed the campaign for a year",
+      "He answered privately and sent Peng to inspect the famine"
     ],
-    "context": "Peng Dehuai's private letter at Lushan warned of the campaign's failure. Mao circulated it publicly, had Peng denounced and purged; Peng was later beaten to death during the Cultural Revolution. The moment Mao chose to defend the campaign over fixing it cost tens of millions more deaths. Source: en.wikipedia.org/wiki/Peng_Dehuai.",
+    "context": "Mao had Peng's letter circulated among the delegates on 17 July 1959, though Peng had tried to keep it private, then had him denounced and dismissed as defence minister. Jailed and beaten in the Cultural Revolution, Peng died in prison in 1974. Source: https://en.wikipedia.org/wiki/Peng_Dehuai.",
     "topic": "the-great-leap-forward-1958-62-the-deadliest-planning-failur"
   },
   {
@@ -24367,9 +24211,9 @@
     "answer": "Local Communist Party archives, once opened, showed the true numbers were hidden for decades",
     "choices": [
       "Local Communist Party archives, once opened, showed the true numbers were hidden for decades",
-      "Foreign newspapers of the 1960s already listed exact death numbers",
-      "Chinese families had to report every death to Beijing while it happened",
-      "The World Health Organization ran the Chinese census in 1960"
+      "Beijing released an official famine death count in the 1990s",
+      "Declassified spy-satellite photos showed villages emptied",
+      "Western aid agencies counted the dead as the famine unfolded"
     ],
     "context": "Frank Dikotter's Mao's Great Famine (Bloomsbury, 2010) drew on party archives to argue for a 45-million total. It won the Samuel Johnson Prize for non-fiction. Source: en.wikipedia.org/wiki/Mao%27s_Great_Famine.",
     "topic": "the-great-leap-forward-1958-62-the-deadliest-planning-failur"
@@ -24390,12 +24234,12 @@
   {
     "tier": 5,
     "question": "Ludwig von Mises published an essay in 1920 arguing that a socialist economy could not calculate rationally: without private property in the means of production there are no real market prices, so planners have no way to know which uses of steel or grain are wasteful. For his argument, Mao Zedong's Great Leap Forward is the largest single vindication in history. What mechanism did it demonstrate?",
-    "answer": "Without market prices there was no signal that the commune grain reports were fantasy until the granaries were empty",
+    "answer": "With nothing to check them against, false grain reports ran on until granaries emptied",
     "choices": [
-      "Without market prices there was no signal that the commune grain reports were fantasy until the granaries were empty",
-      "Without market prices industrial planning was more efficient than under capitalism",
-      "Without market prices agricultural output naturally rose",
-      "Without market prices international trade solved local shortages"
+      "With nothing to check them against, false grain reports ran on until granaries emptied",
+      "With no private plots, peasants had no reason to work for the commune",
+      "With no free elections, no official could be voted out for failing",
+      "With no free press, word of the hunger could not reach Beijing"
     ],
     "context": "Mises's 1920 argument at the largest possible scale: no market prices meant no way to correct commune-level lies about production before the empty stomachs did the correcting. Source: mises.org/library/economic-calculation-socialist-commonwealth.",
     "topic": "the-great-leap-forward-1958-62-the-deadliest-planning-failur"
@@ -24406,7 +24250,7 @@
     "answer": "Liu Shaoqi and Deng Xiaoping",
     "choices": [
       "Liu Shaoqi and Deng Xiaoping",
-      "Zhou Enlai and Chen Yun",
+      "Hua Guofeng and Wang Hongwen",
       "Lin Biao and Kang Sheng",
       "Jiang Qing and Zhang Chunqiao"
     ],
@@ -24415,39 +24259,13 @@
   },
   {
     "tier": 1,
-    "question": "Joseph Stalin ordered his police in 1937 and 1938 to arrest and shoot huge numbers of his own people, even loyal party members, army generals and factory bosses. Historians call it the Great Terror. What is a sudden mass roundup and killing like that called?",
-    "answer": "A purge",
+    "question": "Stalin's police sent each regional office an order on 30 July 1937 saying how many people there to shoot and how many to send to the camps. What kind of order was that?",
+    "answer": "A quota to fill, guilty or not",
     "choices": [
-      "A purge",
-      "A protest",
-      "A recall election",
-      "A boycott"
-    ],
-    "context": "The Great Terror (Bolshoy terror), July 1937 - November 1938, executed about 750,000 people in 18 months. Also called the Yezhovshchina after NKVD chief Nikolai Yezhov. Source: en.wikipedia.org/wiki/Great_Purge.",
-    "topic": "the-great-terror-1936-38-the-yezhovshchina"
-  },
-  {
-    "tier": 1,
-    "question": "Agents of Joseph Stalin's police force, the People's Commissariat for Internal Affairs, pounded on a family's door in the middle of the night and dragged a man away. They held him without trial and shipped him to a Siberian camp, and no judge could ask why. What is a police force like that called?",
-    "answer": "Secret police",
-    "choices": [
-      "Secret police",
-      "Traffic police",
-      "Court bailiffs",
-      "Border guards"
-    ],
-    "context": "Nikolai Yezhov ran the NKVD 1936-38. He was replaced by Lavrentiy Beria in November 1938, arrested in April 1939, and shot on February 4, 1940. His name was erased from photographs. Source: en.wikipedia.org/wiki/Nikolai_Yezhov.",
-    "topic": "the-great-terror-1936-38-the-yezhovshchina"
-  },
-  {
-    "tier": 2,
-    "question": "The chiefs of Stalin's police issued a numbered order on 30 July 1937. It told each regional office exactly how many people to shoot and how many to send to labor camps for a ten-year term. What kind of instruction was that?",
-    "answer": "A quota to fill, whether or not people were guilty",
-    "choices": [
-      "A quota to fill, whether or not people were guilty",
-      "A budget to spend on new prisons",
-      "A list of specific traitors caught in the act",
-      "A cap on how many arrests they were allowed"
+      "A quota to fill, guilty or not",
+      "A budget for new prisons",
+      "A list of traitors caught in the act",
+      "A verdict from a court after trial"
     ],
     "context": "NKVD Order 00447 (July 30, 1937) established 'first category' (execution) and 'second category' (10-year camp) quotas by region. Local officers were rewarded for exceeding the quota. Source: en.wikipedia.org/wiki/NKVD_Order_No._00447.",
     "topic": "the-great-terror-1936-38-the-yezhovshchina"
@@ -24455,14 +24273,14 @@
   {
     "tier": 2,
     "question": "Historians opened the Soviet archives after 1991 and got a firm count of the people Stalin's police shot from July 1937 to November 1938, the stretch Russians name after the police chief Nikolai Yezhov. Roughly how many were shot in that year and a half?",
-    "answer": "About 750,000",
+    "answer": "About 700,000",
     "choices": [
-      "About 750,000",
-      "About 75,000",
-      "About 7.5 million",
+      "About 700,000",
+      "About 70,000",
+      "About 7 million",
       "About 20,000"
     ],
-    "context": "About 750,000 shot -- roughly 1,000 per day for 18 months. About 1.5 million total were arrested. Figures are from opened NKVD archives after 1991. Source: memo.ru (Memorial archives). Conquest also estimated about 1.5 million arrests in the same window, and specifically documented the targeting of the Old Bolsheviks and Red Army officer corps. The figures were treated as Cold War inflation by much of the Western academic establishment. Source: grokipedia.com/page/The_Great_Terror.",
+    "context": "The NKVD's own records count 681,692 executions for 1937-38, more than a thousand a day, out of about one and a half million arrested; wider estimates of the purge's dead run from about 700,000 to 1.2 million. Western scholars who had dismissed the high estimates as Cold War inflation were answered by the archives. Source: https://en.wikipedia.org/wiki/Great_Purge.",
     "topic": "the-great-terror-1936-38-the-yezhovshchina"
   },
   {
@@ -24471,29 +24289,16 @@
     "answer": "They know his weaknesses and might replace him",
     "choices": [
       "They know his weaknesses and might replace him",
-      "They refuse to eat the same food as the workers",
-      "They lost too many chess matches at the palace",
-      "They are the only ones who can read foreign languages"
+      "Foreign powers pay them to turn against the revolution",
+      "They demand a share of the wealth the revolution seized",
+      "They lose faith in the revolution once it has won"
     ],
     "context": "Bukharin was tried in the March 1938 Trial of the Twenty-One and shot. He had been Lenin's designated 'darling of the party'. Trotsky had already been exiled (1929) and was assassinated in Mexico in 1940. Source: en.wikipedia.org/wiki/Trial_of_the_Twenty-One.",
     "topic": "the-great-terror-1936-38-the-yezhovshchina"
   },
   {
-    "tier": 3,
-    "question": "Robert Conquest published The Great Terror in 1968, and many Western professors mocked it and defended the Soviet record. When the Soviet archives opened after 1991, they proved him right on the numbers. Why do some scholars fight bad news about a system they admire?",
-    "answer": "They are more loyal to the theory than to the facts",
-    "choices": [
-      "They are more loyal to the theory than to the facts",
-      "They cannot read documents written in foreign languages",
-      "The archives were sealed by an international law",
-      "The evidence had not been discovered anywhere on earth"
-    ],
-    "context": "Robert Conquest's The Great Terror (Macmillan, 1968) was the pioneering account. A 1990 revised edition (Oxford UP) folded in the archival numbers. Conquest reportedly suggested titling the new edition 'I Told You So, You Fucking Fools'. Source: en.wikipedia.org/wiki/Robert_Conquest.",
-    "topic": "the-great-terror-1936-38-the-yezhovshchina"
-  },
-  {
     "tier": 4,
-    "question": "Joseph Stalin accused his senior Red Army officers of conspiring with Nazi Germany, and the killing tore through the army from marshals down to colonels, leaving it still rebuilding when Germany attacked in June 1941. At the start the army had five marshals, its highest rank. How many of those five were shot?",
+    "question": "Joseph Stalin accused his senior Red Army officers of conspiring with Nazi Germany, and the killing tore through the army from marshals down to colonels, leaving it still rebuilding when Germany attacked in June 1941. At the start the army had five marshals, its highest rank. How many of those five did the purge kill?",
     "answer": "Three of five",
     "choices": [
       "Three of five",
@@ -24501,7 +24306,7 @@
       "All five",
       "None"
     ],
-    "context": "Three of five marshals (Tukhachevsky, Blyukher, Yegorov) were shot; also 13 of 15 army commanders, 8 of 9 fleet admirals, and roughly half the officer corps. The Red Army was still recovering when Germany invaded in June 1941. Source: en.wikipedia.org/wiki/Case_of_Trotskyist_Anti-Soviet_Military_Organization.",
+    "context": "Tukhachevsky and Yegorov were shot; Blyukher died in custody under torture in November 1938. The purge also removed thirteen of fifteen army commanders and eight of nine fleet admirals, and some 35,000 officers in all, many of them executed. The Red Army was still recovering when Germany invaded in June 1941. Source: https://en.wikipedia.org/wiki/Great_Purge; https://en.wikipedia.org/wiki/Vasily_Blyukher.",
     "topic": "the-great-terror-1936-38-the-yezhovshchina"
   },
   {
@@ -24510,9 +24315,9 @@
     "answer": "Even the enforcers get killed once their work is done, so no one is ever safe",
     "choices": [
       "Even the enforcers get killed once their work is done, so no one is ever safe",
-      "Secret police chiefs almost always retired peacefully",
-      "The regime rewarded its most loyal servants for life",
-      "Only ordinary citizens were ever in danger under the terror"
+      "Killing the enforcers proved the regime was reforming itself",
+      "Only men who had lost the dictator's favour were ever in danger",
+      "The secret police, not the dictator, held the real power"
     ],
     "context": "Beria replaced Yezhov in November 1938 and ran the NKVD (later MVD) through Stalin's death in 1953. Beria himself was arrested and shot in December 1953. Source: en.wikipedia.org/wiki/Lavrentiy_Beria.",
     "topic": "the-great-terror-1936-38-the-yezhovshchina"
@@ -24523,24 +24328,11 @@
     "answer": "It could target people just for who their grandparents were, not for anything they had done",
     "choices": [
       "It could target people just for who their grandparents were, not for anything they had done",
-      "It only ever punished people who committed real crimes",
-      "It applied the same standard of evidence as an ordinary court",
-      "It never touched families of ordinary factory workers"
+      "It could punish people only for crimes their relatives had committed",
+      "It could arrest foreigners, but Soviet-born citizens were safe",
+      "It could strike only in lands where the Red Army had fought"
     ],
     "context": "NKVD Order 00485 (August 11, 1937) targeted ethnic Poles across the USSR. About 111,000 were shot in the Polish Operation. Similar orders targeted Germans, Latvians, Greeks, and other border-nation communities. Source: en.wikipedia.org/wiki/Polish_Operation_of_the_NKVD.",
-    "topic": "the-great-terror-1936-38-the-yezhovshchina"
-  },
-  {
-    "tier": 5,
-    "question": "Timothy Snyder laid Stalin's killing beside Hitler's in Bloodlands, his book of 2010, studying Ukraine, Belarus and Poland, the lands where both regimes struck. Between 1933 and 1945 the two together killed some fourteen million civilians there on purpose. What does reading both tolls side by side show?",
-    "answer": "Two very different ideologies can produce a similar scale of slaughter of ordinary people",
-    "choices": [
-      "Two very different ideologies can produce a similar scale of slaughter of ordinary people",
-      "The two regimes always cooperated as friendly allies",
-      "Only one of the two regimes actually killed civilians",
-      "Civilian deaths were rare in that region during those years"
-    ],
-    "context": "Bloodlands: Europe Between Hitler and Stalin (Basic Books, 2010) covers the 14 million civilians deliberately killed in the region between 1933 and 1945. It won the 2013 Hannah Arendt Prize. Source: en.wikipedia.org/wiki/Bloodlands.",
     "topic": "the-great-terror-1936-38-the-yezhovshchina"
   },
   {
@@ -24588,9 +24380,9 @@
     "answer": "To keep new supply scarce and predictable forever",
     "choices": [
       "To keep new supply scarce and predictable forever",
-      "To force miners to give up and go home",
-      "To make each transaction cost more to send",
-      "To let the government print extra coins later"
+      "To lower the fees users pay as the network grows",
+      "To cut the electricity that mining burns over time",
+      "To slow the network so blocks arrive less often"
     ],
     "context": "The April 2024 halving cut the reward to 3.125 BTC per block. The 2028 halving is expected to cut it to 1.5625 BTC. Source: https://en.bitcoin.it/wiki/Controlled_supply.",
     "topic": "the-halving-and-the-21-million-cap"
@@ -24622,19 +24414,6 @@
     "topic": "the-halving-and-the-21-million-cap"
   },
   {
-    "tier": 3,
-    "question": "A Bitcoin miner collects his reward for a new block, a reward that each halving cuts again on a curve fixed in the code, running down toward zero. When the curve reaches bottom, miners will earn only transaction fees. Following that curve, around what year will the last new bitcoin be mined?",
-    "answer": "About 2140",
-    "choices": [
-      "About 2140",
-      "About 2050",
-      "About 2200",
-      "About 2100"
-    ],
-    "context": "The block-reward halves every 210,000 blocks (~4 years); after about 33 halvings the reward rounds to zero and issuance ends, around 2140. Miners then earn only transaction fees.",
-    "topic": "the-halving-and-the-21-million-cap"
-  },
-  {
     "tier": 5,
     "question": "Milton Friedman argued for decades that when money grows faster than goods, prices must rise. He wanted a central bank bound by a rule; Bitcoin's design goes a step beyond. What property of Bitcoin's cap sets it apart from every money system before it?",
     "answer": "the cap cannot be raised by any committee, politician, or emergency vote",
@@ -24650,9 +24429,9 @@
   {
     "tier": 5,
     "question": "Paul Krugman and other Keynesian economists see Bitcoin's fixed cap as a serious flaw, not a strength. Their worry is not inflation but what a rigid money supply does in a slump, when spending is already falling. What is the main Keynesian complaint?",
-    "answer": "That a truly fixed supply forces the general price level to adjust downward during a recession, worsening debt burdens",
+    "answer": "That a fixed supply forces prices and wages down in a slump, making debts heavier",
     "choices": [
-      "That a truly fixed supply forces the general price level to adjust downward during a recession, worsening debt burdens",
+      "That a fixed supply forces prices and wages down in a slump, making debts heavier",
       "That a fixed supply automatically triggers hyperinflation whenever velocity falls",
       "That a fixed supply cannot be divided into small enough units for retail commerce",
       "That a fixed supply requires a central bank to enforce it"
@@ -24679,9 +24458,9 @@
     "answer": "Keynes said governments should spend more; Hayek said that would make things worse later",
     "choices": [
       "Keynes said governments should spend more; Hayek said that would make things worse later",
-      "Both agreed governments should print money without limit",
-      "Both agreed governments should shut down all banks",
-      "Keynes said abolish money; Hayek said abolish farms"
+      "Hayek said governments should spend more; Keynes said that would make things worse later",
+      "Keynes said balance the budget at once; Hayek said borrow to build roads",
+      "Keynes said cut wages to restore profits; Hayek said wages must never fall"
     ],
     "context": "Economica was the LSE journal that ran the Hayek review, Keynes's reply, and Hayek's rejoinder across four issues from August 1931 to February 1932. Keynes's own Cambridge-based Economic Journal ran a separate front in the debate (Sraffa's 1932 review of Hayek). Source: The Coolidge Review.",
     "topic": "the-hayek-keynes-exchange-1931-1932"
@@ -24718,9 +24497,9 @@
     "answer": "A well-placed critical review can shift a whole field's views",
     "choices": [
       "A well-placed critical review can shift a whole field's views",
-      "Only the most mathematical theory ever wins the debate",
-      "Book reviews never affect which theories professors teach",
-      "Whoever writes the longest book always wins the debate"
+      "A field changes its mind only when new evidence arrives",
+      "Opinion always follows the side that has more students",
+      "Personal attacks always backfire on whoever makes them"
     ],
     "context": "Piero Sraffa was an Italian-born Cambridge economist and a Keynes ally. His hostile 1932 review argued that without money there is a MULTIPLICITY of commodity own-rates and no unique natural rate of interest can be identified -- the concept of the 'own-rate of interest' was introduced (unnamed) in that review. Hayek replied in the Economic Journal in June 1932 with 'Money and Capital: A Reply to Mr. Sraffa.' Source: Wikipedia, 'Sraffa-Hayek debate' (https://en.wikipedia.org/wiki/Sraffa%E2%80%93Hayek_debate).",
     "topic": "the-hayek-keynes-exchange-1931-1932"
@@ -24765,29 +24544,16 @@
     "topic": "the-hayek-keynes-exchange-1931-1932"
   },
   {
-    "tier": 5,
-    "question": "Bruce Caldwell gathered the 1931-1932 Hayek and Keynes review essays, later correspondence between the two men and Piero Sraffa's 1932 attack into one volume of the University of Chicago Press's Collected Works of F. A. Hayek. It came out in 1995 under a pointed title. What is the volume titled?",
-    "answer": "Contra Keynes and Cambridge",
+    "tier": 3,
+    "question": "The Second World War drove the London School of Economics out to Cambridge, and Friedrich Hayek arrived in the town of the man he had spent the 1930s attacking in print. What did John Maynard Keynes do when his old opponent arrived?",
+    "answer": "He found Hayek rooms at King's College",
     "choices": [
-      "Contra Keynes and Cambridge",
-      "The Trend of Economic Thinking",
-      "Individualism and Economic Order",
-      "Studies in Philosophy Politics and Economics"
+      "He found Hayek rooms at King's College",
+      "He had Hayek barred from lecturing in Cambridge",
+      "He refused to meet Hayek for the rest of the war",
+      "He challenged Hayek to a public debate at the Union"
     ],
-    "context": "Contra Keynes and Cambridge, edited by Bruce Caldwell, was published in 1995 as Volume 9 of the Collected Works of F. A. Hayek. Its three parts cover Hayek's 1930s arrival at LSE, the direct exchanges with Keynes and Sraffa, and later essays -- including Hayek's previously unpublished 1963 memoir 'The Economics of the 1930s as Seen from London.' Source: University of Chicago Press catalog (https://press.uchicago.edu/ucp/books/book/chicago/C/bo3614356.html).",
-    "topic": "the-hayek-keynes-exchange-1931-1932"
-  },
-  {
-    "tier": 5,
-    "question": "John Maynard Keynes found Friedrich Hayek rooms at King's College when war drove the London School of Economics to Cambridge in 1940, and the two men stood fire-watch together at night. They had spent the 1930s arguing furiously in journals about how economies really work. What does this friendship show about honest disagreement?",
-    "answer": "People can differ deeply about ideas without becoming personal enemies",
-    "choices": [
-      "People can differ deeply about ideas without becoming personal enemies",
-      "Anyone who criticizes your ideas is your true enemy",
-      "Intellectuals never actually mean the criticisms they write in journals",
-      "Personal friendship always changes what people write in their journals"
-    ],
-    "context": "Keynes was a fellow of King's College, Cambridge; when LSE was evacuated to Cambridge in 1940, Keynes found Hayek a place at King's and Hayek's son Laurence a place at King's College School. Hayek and Keynes shared night fire-watch duty on the King's chapel roofs, and Hayek later called the wartime Cambridge hospitality one of the pleasantest memories of his life -- a striking coda to the 1931-1932 attack in Economica. Source: University of Cambridge Alumni magazine, 'City of refuge' (https://www.alumni.cam.ac.uk/magazine/issue-98/city-of-refuge).",
+    "context": "Keynes was a fellow of King's College, Cambridge. When the LSE was evacuated to Cambridge, where it stayed from 1939 to 1945, Keynes helped Hayek find rooms at King's and found Hayek's son Laurence a place at King's College School. The two men shared the night watch for fires from the college roofs, and Hayek later called the hospitality one of his pleasantest memories of the war, a striking coda to the 1931-1932 attack in Economica. Source: University of Cambridge Alumni magazine, 'City of refuge' (https://www.alumni.cam.ac.uk/magazine/issue-98/city-of-refuge).",
     "topic": "the-hayek-keynes-exchange-1931-1932"
   },
   {
@@ -24922,26 +24688,13 @@
   },
   {
     "tier": 1,
-    "question": "Communist fighters under Pol Pot, the Khmer Rouge, took Cambodia in April 1975. They emptied every city at gunpoint, banned money and private property, closed all the schools and killed anyone who seemed educated. In just four years about a quarter of all Cambodians were dead. What is the main lesson?",
-    "answer": "Trying to erase a whole society and start over causes mass death",
+    "question": "Pol Pot announced Year Zero when he took Cambodia in April 1975: history would start fresh from his victory. Custom, Buddhist religion, family bonds and all schooling were to be cleared away and built again from nothing. What did clearing the slate mean in practice?",
+    "answer": "Destroying the people and traditions that did not fit the plan",
     "choices": [
-      "Trying to erase a whole society and start over causes mass death",
-      "Banning money always makes a country richer",
-      "Emptying cities makes farms produce more food",
-      "Killing educated people helps the economy grow"
-    ],
-    "context": "The Khmer Rouge (Communist Party of Kampuchea), led by Pol Pot (born Saloth Sar), captured Phnom Penh April 17, 1975. Their rule ended with a Vietnamese invasion in December 1978 - January 1979. Source: en.wikipedia.org/wiki/Khmer_Rouge.",
-    "topic": "the-khmer-rouge-and-year-zero-1975-79"
-  },
-  {
-    "tier": 1,
-    "question": "Pol Pot announced Year Zero when he took Cambodia in April 1975: history would start fresh from his victory. Cambodian custom, Buddhist religion, family bonds and all schooling were to be cleared away and rebuilt from scratch. What is the danger of a government that thinks it can wipe the slate clean?",
-    "answer": "It usually has to destroy the people and traditions that do not fit its plan",
-    "choices": [
-      "It usually has to destroy the people and traditions that do not fit its plan",
-      "It always doubles the country's wealth in one year",
-      "It never affects normal families",
-      "It only changes flags and holidays, nothing else"
+      "Destroying the people and traditions that did not fit the plan",
+      "Rebuilding every city on a modern Soviet model",
+      "Asking foreign experts to redesign the farms",
+      "Letting the people vote on what to keep"
     ],
     "context": "Year Zero meant every trace of the previous urban-professional society was to be erased. Money was abolished, the central bank building blown up, private property abolished. Source: en.wikipedia.org/wiki/Year_Zero_(political_notion).",
     "topic": "the-khmer-rouge-and-year-zero-1975-79"
@@ -24974,20 +24727,7 @@
   },
   {
     "tier": 3,
-    "question": "Pol Pot's regime made Tuol Sleng, a former high school in Phnom Penh, a secret prison after emptying the capital in 1975. Inside its old classrooms, guards tortured and killed roughly 15,000 Cambodians. The dead included teachers, doctors, factory workers, even children. What does turning a school into a torture site reveal about that regime?",
-    "answer": "It sees ordinary life and learning as threats to its power",
-    "choices": [
-      "It sees ordinary life and learning as threats to its power",
-      "It needs the building because no others exist in the city",
-      "It is trying to teach the prisoners a new job skill",
-      "It is running short of workers to build fresh prisons"
-    ],
-    "context": "S-21, in a former Phnom Penh high school, was chief Kaing Guek Eav ('Duch')'s facility. The photographic and confession archive he kept became the evidence base for later trials. Source: en.wikipedia.org/wiki/Tuol_Sleng_Genocide_Museum.",
-    "topic": "the-khmer-rouge-and-year-zero-1975-79"
-  },
-  {
-    "tier": 3,
-    "question": "Pol Pot's Khmer Rouge emptied Cambodia's cities in 1975 and sent citizens to work camps and to hundreds of rural execution sites now known as the Killing Fields. Around a quarter of the country's people were murdered by the Khmer Rouge in only four years. What does mass killing on this scale usually require?",
+    "question": "Pol Pot's Khmer Rouge emptied Cambodia's cities in 1975 and sent citizens to work camps and to hundreds of rural execution sites now known as the Killing Fields. Roughly one Cambodian in every four or five died in only four years. What does mass killing on this scale usually require?",
     "answer": "A government with total power and no check on its rulers",
     "choices": [
       "A government with total power and no check on its rulers",
@@ -25030,9 +24770,9 @@
     "answer": "Being communist did not prevent wars between them",
     "choices": [
       "Being communist did not prevent wars between them",
-      "Communist countries always joined together against outside threats",
-      "Only western countries ever attacked communist regimes",
-      "Cambodia's own army overthrew the Khmer Rouge without outside help"
+      "Communist states fought each other only when the West stirred them up",
+      "Shared ideology kept the war short and the occupation brief",
+      "The Soviet bloc expelled Vietnam for attacking a fellow regime"
     ],
     "context": "The Vietnamese invasion began December 25, 1978 and captured Phnom Penh on January 7, 1979. Vietnam installed the Kampuchean People's Republic and occupied the country until 1989. Source: en.wikipedia.org/wiki/Cambodian%E2%80%93Vietnamese_War.",
     "topic": "the-khmer-rouge-and-year-zero-1975-79"
@@ -25049,19 +24789,6 @@
     ],
     "context": "The ECCC (Extraordinary Chambers in the Courts of Cambodia) convicted Duch (Kaing Guek Eav) in July 2010 and later convicted senior leaders Nuon Chea and Khieu Samphan. Pol Pot died under house arrest in 1998 without trial. Source: eccc.gov.kh.",
     "topic": "the-khmer-rouge-and-year-zero-1975-79"
-  },
-  {
-    "tier": 1,
-    "question": "Mexico's finance minister rang the US Treasury on August 12, 1982, with news that shook the world's banks. His government could not pay back the huge loans it had taken during the 1970s oil boom. What is the banking word for a failure like that?",
-    "answer": "A default",
-    "choices": [
-      "A default",
-      "A discount",
-      "A dividend",
-      "A donation"
-    ],
-    "context": "Finance Minister Jesus Silva Herzog called the US Treasury on August 12, 1982 to say Mexico could not service its dollar debt. Brazil, Argentina, and others followed within months. Source: federalreservehistory.org/essays/latin-american-debt-crisis.",
-    "topic": "the-latin-american-debt-crisis-and-brady-bonds"
   },
   {
     "tier": 1,
@@ -25090,27 +24817,14 @@
     "topic": "the-latin-american-debt-crisis-and-brady-bonds"
   },
   {
-    "tier": 2,
-    "question": "A Mexican family watched prices run wild and jobs vanish after the government stopped paying its foreign loans in August 1982. American banks had lent so much to Mexico, Brazil and Argentina that the debts topped the banks' own capital. The slump spread across the region, and regular families barely saw life improve through the 1980s. What is that slump remembered as?",
-    "answer": "The Lost Decade",
-    "choices": [
-      "The Lost Decade",
-      "The Long Depression",
-      "The Marshall Plan",
-      "The Great Society"
-    ],
-    "context": "The FDIC's 'History of the Eighties' documents the exposure. Marked to market, several of the largest US banks would have been technically insolvent had the Latin American loans been written down at the time. Source: fdic.gov/bank/historical/history. Per-capita GDP in Mexico did not regain 1981 levels until the mid-1990s. Inflation ran into the thousands of percent in Argentina, Brazil, and Peru during the 1980s. The World Bank and IDB use 'Lost Decade' as the standard term. Source: World Bank data.",
-    "topic": "the-latin-american-debt-crisis-and-brady-bonds"
-  },
-  {
     "tier": 3,
     "question": "Officials at the International Monetary Fund and the Federal Reserve leaned on American banks after Mexico stopped paying in 1982. Letting the loans fail was ruled out: the banks kept them on the books, advanced fresh credit and stretched the payments over many years. What is the main effect of pretending a shaky debt is still healthy?",
     "answer": "The pain is spread out but the bad loan never really goes away",
     "choices": [
       "The pain is spread out but the bad loan never really goes away",
-      "The borrower pays the loan off in half the time",
+      "The bank's shareholders swallow the whole loss at once",
       "The banks earn far more interest than they would have",
-      "The country suddenly becomes rich enough to repay everything"
+      "Growth soon pays the loan off, as if nothing happened"
     ],
     "context": "'Concerted lending' meant banks were pressured to keep extending fresh credit so that old loans could technically stay current. This bought time for bank balance sheets at the cost of years of Latin American recession. Source: federalreservehistory.org/essays/latin-american-debt-crisis.",
     "topic": "the-latin-american-debt-crisis-and-brady-bonds"
@@ -25118,9 +24832,9 @@
   {
     "tier": 4,
     "question": "Nicholas Brady, the US Treasury Secretary, proposed a swap in 1989 for the enormous sums Mexico, Brazil and other poor countries owed US commercial banks and could not pay. The banks would give up their old loans and take new paper, partly backed by the US Treasury. What was the main economic idea behind this Brady Plan?",
-    "answer": "Turn a bad loan you cannot sell into a bond you can sell to spread the loss",
+    "answer": "Turn unsellable bad loans into bonds that can be sold, spreading the loss",
     "choices": [
-      "Turn a bad loan you cannot sell into a bond you can sell to spread the loss",
+      "Turn unsellable bad loans into bonds that can be sold, spreading the loss",
       "Cancel every debt and start over from zero",
       "Force poor countries to hand over natural resources instead",
       "Have the US taxpayer directly pay off every foreign loan"
@@ -25143,7 +24857,7 @@
   },
   {
     "tier": 5,
-    "question": "Robert Higgs and other writers in the tradition of Ludwig von Mises read the Latin American debt workout of the 1980s as a classic case of privatized gains and socialized losses. The 1970s loans made Citibank and other US banks huge profits for years. Then Mexico stopped paying in 1982, and the workout protected one group and hurt another. Who paid the price, and who was let off the hook?",
+    "question": "Writers in the tradition of Ludwig von Mises read the Latin American debt workout of the 1980s as a classic case of privatized gains and socialized losses. The 1970s loans made Citibank and other US banks huge profits for years. Then Mexico stopped paying in 1982, and the workout protected one group and hurt another. Who paid the price, and who was let off the hook?",
     "answer": "Latin American publics bore stagnation; US banks were shielded from failure",
     "choices": [
       "Latin American publics bore stagnation; US banks were shielded from failure",
@@ -25156,7 +24870,7 @@
   },
   {
     "tier": 5,
-    "question": "Walter Wriston pushed Citibank into massive loans to Latin American governments in the 1970s, sure the lending was safe. When Mexico stopped paying in August 1982, the harm was extreme. Austrian critics later flagged one feature of that lending as the root of the damage. Which lending practice made the damage so bad?",
+    "question": "Walter Wriston pushed Citibank into massive loans to Latin American governments in the 1970s, sure the lending was safe. When Mexico stopped paying in August 1982, the harm was extreme. Economists later flagged one feature of that lending as the root of the damage. Which lending practice made the damage so bad?",
     "answer": "Dollar-denominated loans to sovereign borrowers",
     "choices": [
       "Dollar-denominated loans to sovereign borrowers",
@@ -25208,36 +24922,23 @@
   },
   {
     "tier": 3,
-    "question": "A French shopper of 1850 bought a coat at a price a tariff had pushed up, and the extra went to a sheltered producer at home. In The Law, Frédéric Bastiat named this as one of two French policies that used the law to take from some and give to others; the other was the national workshops, jobs funded from everyone's taxes. What did he call the first?",
-    "answer": "Protectionism",
+    "question": "A French shopper of 1850 paid extra for a coat because a tariff shielded its maker at home. In The Law, Frédéric Bastiat counted that tariff as plunder carried out by statute, and he set protectionism, socialism and communism side by side. Which image did he use to tie the three together?",
+    "answer": "One plant at three stages of its growth",
     "choices": [
-      "Protectionism",
-      "Free trade",
-      "Volunteer charity",
-      "Private savings"
+      "One plant at three stages of its growth",
+      "One beast with three hungry heads",
+      "One river split into three channels",
+      "One road with three tollgates on it"
     ],
-    "context": "The two French policies Bastiat names as legal plunder: PROTECTIONISM (tariffs transferring wealth from consumers to sheltered producers) and SOCIALISM (transfers from taxpayers to National Workshop beneficiaries). Source: fee.org/resources/the-law.",
-    "topic": "the-law-when-legal-force-is-used-for-plunder"
-  },
-  {
-    "tier": 3,
-    "question": "A Paris merchant weighed a shady deal in 1850 and asked only whether the law permitted it, not whether it was right. Frédéric Bastiat warned in The Law that a state which uses the law to take from some and give to others for long enough breeds that habit in its citizens, a rot in their everyday sense of right and wrong. What did he call it?",
-    "answer": "Corruption",
-    "choices": [
-      "Corruption",
-      "Progress",
-      "Balance",
-      "Freedom"
-    ],
-    "context": "Bastiat treats moral CORRUPTION as the largest unseen cost of legal plunder: legality replaces morality in the citizen's daily judgments. Source: mises.org/library/law.",
+    "context": "Bastiat writes that 'protectionism, socialism, and communism are basically the same plant in three different stages of its growth'; legal plunder is plainest in communism, where it is complete, and in protectionism, where it is limited to particular groups and industries. Source: Bastiat, The Law (1850), tr. Dean Russell (FEE, 1950); https://americanliterature.com/author/frederic-bastiat/book/the-law/three-systems-of-plunder",
     "topic": "the-law-when-legal-force-is-used-for-plunder"
   },
   {
     "tier": 1,
     "question": "An English reader went looking for Frederic Bastiat partway through the 1900s and found just three short works by the Frenchman: The Law, Economic Sophisms and Selected Essays on Political Economy. One small liberty-minded group in Irvington-on-Hudson, New York, published all three. Which group was it?",
-    "answer": "The Foundation for Economic Education (FEE)",
+    "answer": "The Foundation for Economic Education",
     "choices": [
-      "The Foundation for Economic Education (FEE)",
+      "The Foundation for Economic Education",
       "The Cato Institute",
       "The Ludwig von Mises Institute",
       "The Mont Pelerin Society"
@@ -25251,9 +24952,9 @@
     "answer": "Private funding keeping ideas alive across generations",
     "choices": [
       "Private funding keeping ideas alive across generations",
-      "A government-run textbook program",
-      "A public library system paid by taxes",
-      "A university tenure system"
+      "A commercial publisher printing whatever sells best",
+      "A collector buying up rare first editions",
+      "A government grant for reprinting the classics"
     ],
     "context": "Liberty Fund's Collected Works of Frederic Bastiat is projected to run to six volumes. Goodrich, an Indiana lawyer and businessman, endowed the foundation specifically to sustain the classical-liberal scholarly tradition. Source: grokipedia.com/page/Liberty_Fund.",
     "topic": "the-liberty-fund-collected-works-bastiat-in-modern-english"
@@ -25264,9 +24965,9 @@
     "answer": "'What Is Seen and What Is Not Seen'",
     "choices": [
       "'What Is Seen and What Is Not Seen'",
-      "'The General Theory'",
-      "'The Wealth of Nations'",
-      "'Das Kapital'"
+      "'Protectionism and Communism'",
+      "'Justice and Fraternity'",
+      "'Property and Plunder'"
     ],
     "context": "'Ce qu'on voit et ce qu'on ne voit pas' (1850). Volume 3 also contains the Economic Sophisms, Bastiat's satirical essays including the Petition of the Candlemakers demanding a law against the sun. Source: grokipedia.com/page/Fr%C3%A9d%C3%A9ric_Bastiat.",
     "topic": "the-liberty-fund-collected-works-bastiat-in-modern-english"
@@ -25274,40 +24975,27 @@
   {
     "tier": 5,
     "question": "David Hart, the English editor of Frederic Bastiat's collected works, also built a free online resource. It puts the whole of Bastiat, and hundreds of other classical-liberal texts, within reach of any reader with internet access, at zero cost. What is the resource called?",
-    "answer": "The Online Library of Liberty (oll.libertyfund.org)",
+    "answer": "The Online Library of Liberty",
     "choices": [
-      "The Online Library of Liberty (oll.libertyfund.org)",
+      "The Online Library of Liberty",
       "The Ludwig von Mises Institute online archive",
       "The Cato Institute policy library",
-      "The Federal Reserve archival collection"
+      "The Project Gutenberg library"
     ],
-    "context": "Any curious kid with internet access can now read every essay Bastiat ever wrote, in modern English, on a free website funded by a classical-liberal foundation. The tradition is being actively cultivated, not just preserved. Source: grokipedia.com/page/Liberty_Fund.",
+    "context": "The Online Library of Liberty (oll.libertyfund.org), run by the Liberty Fund, puts Bastiat's writings and hundreds of other classical-liberal texts online at no cost. The tradition is being cultivated, not just preserved. Source: grokipedia.com/page/Liberty_Fund.",
     "topic": "the-liberty-fund-collected-works-bastiat-in-modern-english"
   },
   {
     "tier": 1,
-    "question": "The nonpartisan watchdogs at OpenSecrets added up what companies and interest groups paid in 2023 to shape federal laws, rules and regulations. They had tracked that lobbying bill every year since 1998, and it had climbed steadily for a quarter century. About how much did federal lobbying cost in 2023?",
-    "answer": "About $4.1 billion",
+    "question": "The nonpartisan watchdogs at OpenSecrets added up what companies and interest groups paid in 2023 to shape federal laws, rules and regulations. They had tracked that lobbying bill every year since 1998, and the total had risen in most of those years. About how much did federal lobbying cost in 2023?",
+    "answer": "About $4.2 billion",
     "choices": [
-      "About $4.1 billion",
-      "About $410 million",
-      "About $41 billion",
-      "About $41 million"
+      "About $4.2 billion",
+      "About $420 million",
+      "About $42 billion",
+      "About $42 million"
     ],
-    "context": "Federal lobbying spending grew from ~$1.44B in 1998 to ~$4.1B in 2023 per opensecrets.org (Center for Responsive Politics). Registered federal lobbyists number ~11,000-14,000. Source: opensecrets.org (Lobbying Data).",
-    "topic": "the-lobbying-industry-1-4b-1998-to-4-1b-2023"
-  },
-  {
-    "tier": 1,
-    "question": "Gordon Tullock sat down in 1967 to ask what chasing government favors really costs a society. Some businesses, he saw, paid lobbyists, funded campaigns and filed lawsuits to change the rules instead of making better products. The resources burned could have built something real. What is that kind of waste called?",
-    "answer": "Deadweight loss",
-    "choices": [
-      "Deadweight loss",
-      "Sunk cost",
-      "Transfer payment",
-      "Opportunity income"
-    ],
-    "context": "Tullock's move: resources burned in the competition for privilege produce no goods or services; they only reshuffle existing wealth. The whole rectangle of resources burned is deadweight loss to society. Source: Tullock, Western Economic Journal (June 1967).",
+    "context": "Federal lobbying spending grew from about $1.4 billion in 1998 to a record of about $4.2 billion in 2023, by OpenSecrets' count (about $4.1 billion in 2022). Source: https://www.nbcnews.com/investigations/lobbyists-spent-record-42-billion-2023-federal-lawmakers-rcna135943.",
     "topic": "the-lobbying-industry-1-4b-1998-to-4-1b-2023"
   },
   {
@@ -25325,7 +25013,7 @@
   },
   {
     "tier": 2,
-    "question": "An OpenSecrets researcher ranking the biggest single lobbying spenders of 2023 put one large business federation first, at about $68 million. It has come out on top in most recent years, pressing federal officials for rules and spending that favor its members. Which group is it?",
+    "question": "An OpenSecrets researcher ranking the biggest single lobbying spenders of 2023 put one large business federation first, at close to $70 million. It has come out on top in most recent years, pressing federal officials for rules and spending that favor its members. Which group is it?",
     "answer": "The US Chamber of Commerce",
     "choices": [
       "The US Chamber of Commerce",
@@ -25333,7 +25021,7 @@
       "The American Bar Association",
       "The American Legion"
     ],
-    "context": "The US Chamber of Commerce has been the largest single-organization federal lobbying spender for most recent years -- ~$68M in 2023. National Association of Realtors (~$52M) and Meta Platforms (~$20M) round out the top individual spenders. Source: opensecrets.org (Top Organizations 2023).",
+    "context": "The US Chamber of Commerce has been the largest single-organization federal lobbying spender in most recent years; it and the National Association of Realtors have been the two top spenders across the years OpenSecrets has tracked. Source: opensecrets.org (Top Organizations); https://www.rawstory.com/lobbyist-washington-dc/.",
     "topic": "the-lobbying-industry-1-4b-1998-to-4-1b-2023"
   },
   {
@@ -25346,33 +25034,7 @@
       "Do Lobbyists Matter?",
       "Money and Influence"
     ],
-    "context": "Bertrand + Bombardini + Trebbi, 'Is It Whom You Know or What You Know? An Empirical Assessment of the Lobbying Process' (American Economic Review, December 2014). Answer: mostly whom. Source: aeaweb.org (Bertrand et al. 2014).",
-    "topic": "the-lobbying-industry-1-4b-1998-to-4-1b-2023"
-  },
-  {
-    "tier": 3,
-    "question": "Members of Congress watched Nazi Germany's propagandists working inside America in 1938 and passed a law in answer. Anyone lobbying for foreign governments, parties or companies now had to declare himself in public and disclose the money, whether the cash came from Berlin, Moscow or Beijing. Prosecutors still use the law today. What short name is it known by?",
-    "answer": "FARA",
-    "choices": [
-      "FARA",
-      "FLDA",
-      "USRA",
-      "FIDA"
-    ],
-    "context": "The Foreign Agents Registration Act (FARA), passed 1938, requires disclosure of foreign-government-directed lobbying. FARA disclosures in recent years total ~$500M/year, on top of the ~$4B/year in domestic-lobbying disclosure. Source: justice.gov/nsd-fara.",
-    "topic": "the-lobbying-industry-1-4b-1998-to-4-1b-2023"
-  },
-  {
-    "tier": 4,
-    "question": "A new lobbyist hunting for an office in downtown Washington keeps landing on the same street. So many lobbying firms and trade groups keep offices along it that its name, K Street, has become shorthand in the news for the whole American lobbying industry. What does that crowding on one street teach about how policy actually gets made?",
-    "answer": "Lobbyists cluster near power because access to lawmakers is valuable",
-    "choices": [
-      "Lobbyists cluster near power because access to lawmakers is valuable",
-      "Lobbying firms are legally required to share one office building",
-      "Lobbyists usually prefer to work far from all elected officials",
-      "The federal government owns all the offices near Congress"
-    ],
-    "context": "K Street NW in downtown Washington DC hosts many of the largest lobbying firms and trade associations. 'K Street' has become synonymous with the lobbying industry as an American shorthand. Source: Grokipedia 'K Street (Washington, D.C.)'.",
+    "context": "Bertrand + Bombardini + Trebbi, 'Is It Whom You Know or What You Know? An Empirical Assessment of the Lobbying Process' (American Economic Review, December 2014). Their finding: mostly whom. Source: aeaweb.org (Bertrand et al. 2014).",
     "topic": "the-lobbying-industry-1-4b-1998-to-4-1b-2023"
   },
   {
@@ -25382,8 +25044,8 @@
     "choices": [
       "Money is spent to capture specific rules, exemptions, subsidies, and enforcement decisions",
       "Money is spent purely to educate legislators about general policy tradeoffs",
-      "Money is spent on ceremonial political events with no material effect",
-      "Money is spent solely to comply with existing legal disclosures"
+      "Money is spent to win voters over to a party's whole program",
+      "Money is spent to keep lawmakers informed of what the public wants"
     ],
     "context": "Tullock's rent-seeking framework: $4B/year is not being spent to persuade Congress of general truths. It is being spent to capture concrete, industry-specific policy outcomes. The stated purpose (democratic participation) is not always false; the aggregate spending is not consistent with it either. Source: Tullock (1967); opensecrets.org.",
     "topic": "the-lobbying-industry-1-4b-1998-to-4-1b-2023"
@@ -25394,22 +25056,22 @@
     "answer": "The beneficiaries are the concentrated lobbying interests, not the dispersed public",
     "choices": [
       "The beneficiaries are the concentrated lobbying interests, not the dispersed public",
-      "The beneficiaries are always the retail voters who elected the sponsors",
-      "The statute is copied verbatim from a Nordic model",
-      "The statute was drafted overnight by a single ideologue"
+      "The statute fixes a problem the public has long complained about",
+      "The statute's costs fall mostly on the industry it targets",
+      "The statute is too technical for any lobbyist to have shaped"
     ],
-    "context": "When a proposed statute is complex, industry-specific, and heavily lobbied, the Tullock-Olson default is that the concentrated organized interests are the primary beneficiaries. The First Amendment protects petition; this question analyzes the aggregate incentive structure. Source: Tullock (1967); Olson (1965).",
+    "context": "When a proposed statute is complex, industry-specific, and heavily lobbied, the Tullock-Olson default is that the concentrated organized interests are the primary beneficiaries. The First Amendment protects petition; the point is the aggregate incentive structure, not anybody's honesty. Source: Tullock (1967); Olson (1965).",
     "topic": "the-lobbying-industry-1-4b-1998-to-4-1b-2023"
   },
   {
     "tier": 1,
     "question": "Suppose you are dying of thirst in a desert. Someone offers you a glass of water and you would trade almost anything for it. After four glasses, a fifth hardly tempts you. Why is the fifth glass worth so little to you next to the first?",
-    "answer": "You need it much less than the first one",
+    "answer": "Each extra glass meets a smaller need than the one before",
     "choices": [
-      "You need it much less than the first one",
-      "The water changes chemistry after four glasses",
-      "The seller has to lower the price by law",
-      "The government taxes extra glasses"
+      "Each extra glass meets a smaller need than the one before",
+      "The seller charges more for the fifth glass",
+      "Water is cheap everywhere, so no glass is worth much",
+      "A thirsty body can absorb only four glasses"
     ],
     "context": "Menger's Grundsaetze der Volkswirtschaftslehre insisted that value is subjective, ranked by an individual chooser, and always applies to a specific additional unit rather than to a good as a class. That single move dissolved a hundred years of classical puzzles. Source: Mises Institute, 'Carl Menger and the Sesquicentennial Founding of the Austrian School'.",
     "topic": "the-marginal-revolution-as-parallel-invention-menger-jevons"
@@ -25424,33 +25086,7 @@
       "They value it equally because it is the same coin",
       "Neither, because gold has no real value"
     ],
-    "context": "Jevons's The Theory of Political Economy appeared in London in 1871, the same year as Menger's Grundsaetze. Marshall would not publish his Principles until 1890; Mill and Senior belonged to the earlier classical generation. Source: Britannica, 'William Stanley Jevons'.",
-    "topic": "the-marginal-revolution-as-parallel-invention-menger-jevons"
-  },
-  {
-    "tier": 2,
-    "question": "William Stanley Jevons argued in England in 1871 that what a thing is worth depends on how much a person already has. With no apples, one more means a great deal; with twenty, one more means little. Carl Menger in Austria and Leon Walras in Switzerland were saying the same. What do economists call this idea?",
-    "answer": "Marginal utility",
-    "choices": [
-      "Marginal utility",
-      "The labor theory of value",
-      "The invisible hand",
-      "Comparative advantage"
-    ],
-    "context": "Jevons was Professor of Political Economy at Owens College, Manchester -- the institution that later became the University of Manchester. He wrote The Theory of Political Economy while holding that chair. Source: Britannica, 'William Stanley Jevons'.",
-    "topic": "the-marginal-revolution-as-parallel-invention-menger-jevons"
-  },
-  {
-    "tier": 2,
-    "question": "Leon Walras, a Frenchman at the University of Lausanne in Switzerland, went further in the 1870s than the other founders of modern economics. He built a mathematical model in which every price in every market is set at the same time, all linked together like one giant system of equations. What did Walras call this idea?",
-    "answer": "General equilibrium",
-    "choices": [
-      "General equilibrium",
-      "Partial equilibrium",
-      "The gold standard",
-      "Central planning"
-    ],
-    "context": "Walras published in Lausanne, using the French word 'rarete' for what English readers called marginal utility. Cournot preceded him with 1838 mathematical duopoly; Pareto succeeded him in the Lausanne chair after 1893; Bastiat was of an older generation and no marginalist. Source: Britannica, 'Leon Walras'.",
+    "context": "Marginal utility puts the coin's value in the next use each finder has for it: the boy's fare home ranks far above one more coin in a full drawer. Value lives in the chooser's ranking, not in the gold itself. Source: Mises Institute, 'Carl Menger and the Sesquicentennial Founding of the Austrian School'.",
     "topic": "the-marginal-revolution-as-parallel-invention-menger-jevons"
   },
   {
@@ -25459,24 +25095,24 @@
     "answer": "Real people change their minds and new products appear every day",
     "choices": [
       "Real people change their minds and new products appear every day",
-      "Computers today are still too slow to add up any prices",
-      "There is a law against writing equations about markets",
-      "Economists refuse to share their equations with each other"
+      "Mathematicians have proved the equations can have no solution",
+      "The model works only for an economy with a single currency",
+      "Real prices are set by law, so no equation can capture them"
     ],
     "context": "Walras held the chair of political economy at the Academie de Lausanne (later the University of Lausanne) from 1870; his book was printed there in 1874. The Lausanne School of general equilibrium takes its name from the city. Source: Wikipedia, 'Leon Walras'.",
     "topic": "the-marginal-revolution-as-parallel-invention-menger-jevons"
   },
   {
     "tier": 3,
-    "question": "Carl Menger published his new idea in Vienna in 1871, not knowing that William Stanley Jevons was landing on the same one in England. Leon Walras followed in Switzerland by 1874. Historians of economic thought call it one of the tightest cases of parallel invention ever. What name do they give this cluster?",
-    "answer": "The marginal revolution",
+    "question": "Carl Menger published his new idea about value in Vienna in 1871, not knowing that an economist in Manchester was landing on the same one that very year. Leon Walras followed in Lausanne by 1874. Who was the man in Manchester?",
+    "answer": "William Stanley Jevons",
     "choices": [
-      "The marginal revolution",
-      "The neoclassical synthesis",
-      "The Methodenstreit",
-      "The Keynesian revolution"
+      "William Stanley Jevons",
+      "Alfred Marshall",
+      "John Stuart Mill",
+      "Francis Edgeworth"
     ],
-    "context": "The Methodenstreit was the later Menger-Schmoller quarrel over historicist versus analytic method; the neoclassical synthesis was the mid-twentieth-century Samuelson fusion of Keynes and Walras; the Keynesian revolution was the 1930s reversal against neoclassical orthodoxy. Only the 1871-1874 cluster is called the marginal revolution. Source: cruel.org, 'Phases of the Marginalist Revolution'.",
+    "context": "Jevons's The Theory of Political Economy appeared in 1871, the same year as Menger's Principles; he held the chair of political economy at Owens College, Manchester. Marshall would not publish his Principles until 1890, Edgeworth's Mathematical Psychics came in 1881, and Mill belonged to the earlier classical generation. Historians call the 1871-1874 cluster the marginal revolution. Source: Britannica, 'William Stanley Jevons'.",
     "topic": "the-marginal-revolution-as-parallel-invention-menger-jevons"
   },
   {
@@ -25493,21 +25129,21 @@
     "topic": "the-marginal-revolution-as-parallel-invention-menger-jevons"
   },
   {
-    "tier": 5,
-    "question": "Hermann Heinrich Gossen, a German scholar, wrote down in an 1854 book that each extra unit of a good is worth less than the one before. Almost nobody noticed. Carl Menger, William Stanley Jevons and Leon Walras made the idea famous only in the 1870s. What does Gossen's earlier, ignored discovery show about economic ideas?",
-    "answer": "Big ideas often show up in more than one place before the world is ready to hear them",
+    "tier": 3,
+    "question": "Hermann Heinrich Gossen, a German civil servant, laid out the falling value of each extra unit in an 1854 book that sank almost without trace. In 1878 a scholar in Manchester found a surviving copy and told the English economist who had published the same idea in 1871. What did that economist do?",
+    "answer": "He credited Gossen in his own book's second edition",
     "choices": [
-      "Big ideas often show up in more than one place before the world is ready to hear them",
-      "Only one person can ever discover any economic idea",
-      "Economic ideas always come first from the most famous universities",
-      "Nobody thought about value at all before the year 1870"
+      "He credited Gossen in his own book's second edition",
+      "He bought up every copy to bury the rival claim",
+      "He accused Gossen of stealing ideas from English writers",
+      "He said nothing, and never mentioned Gossen's book"
     ],
     "context": "Gossen's 1854 Entwickelung der Gesetze des menschlichen Verkehrs laid down what are still called Gossen's Laws of diminishing marginal utility and equimarginal allocation. Robert Adamson of Manchester found the surviving copy in 1878 and Jevons publicly acknowledged Gossen's priority in the second edition of his own book. Source: Wikipedia, 'Gossen's laws'.",
     "topic": "the-marginal-revolution-as-parallel-invention-menger-jevons"
   },
   {
     "tier": 5,
-    "question": "Carl Menger argued in Vienna in the 1870s that what a good is worth hangs on the marginal unit, not the total, and William Stanley Jevons in England and Leon Walras in Switzerland landed on the same insight on their own. Once that move was on the table, a whole class of older classical theories collapsed at one stroke. Which theory did it most decisively dislodge?",
+    "question": "Carl Menger argued in Vienna in the 1870s that what a good is worth hangs on the marginal unit, not the total, and two other economists, in England and in Switzerland, landed on the same insight on their own. Once that move was on the table, a whole class of older classical theories collapsed at one stroke. Which theory did it most decisively dislodge?",
     "answer": "The labour theory of value shared by Ricardo, Mill and Marx",
     "choices": [
       "The labour theory of value shared by Ricardo, Mill and Marx",
@@ -25526,7 +25162,7 @@
       "Its identity is at least as much about method as about content",
       "It is primarily an empirical laboratory science like chemistry",
       "It is settled by mathematical proof once its axioms are stated",
-      "It has no genuine intellectual disagreements after 1874"
+      "Its schools differ mainly in which countries they study"
     ],
     "context": "The Austrian, Cambridge and Lausanne schools agreed on the marginal-utility insight but disagreed sharply about whether economics should be prose-based praxeology, partial-equilibrium diagrams, or systems of simultaneous equations. Those methodological choices still divide the profession. Source: Springer, 'Austrian School of Economics'.",
     "topic": "the-marginal-revolution-as-parallel-invention-menger-jevons"
@@ -25667,63 +25303,50 @@
     "answer": "Millions of people have information the planners never see",
     "choices": [
       "Millions of people have information the planners never see",
-      "The experts do not have enough calculators",
-      "The people refuse to obey any rules",
-      "The experts always lie about their plans"
+      "Planners are too few to watch every factory at once",
+      "Officials always end up favouring their own friends",
+      "No plan can survive a change of government"
     ],
-    "context": "Privatseminar (private + seminar) marks its outside-the-university status; Hauptseminar means main university seminar; Kolloquium is a formal academic colloquium (Karl Menger the younger ran a Mathematical Colloquium in the same Vienna years); Lehrstuhl means academic chair. The Privatseminar had no institutional home -- that was the point. Source: privatarchiv-mises.uni-graz.at/en/mises-private-archive/.",
+    "context": "Mises set out the case in his 1920 essay on economic calculation: without market prices for land, machines and materials, planners cannot tell waste from wise use, and those prices sum up what millions of people know. Hayek, a regular in the room, later stressed how scattered that knowledge is. Source: https://en.wikipedia.org/wiki/Economic_calculation_problem.",
     "topic": "the-mises-privatseminar-1920-1934-vienna-in-one-room"
   },
   {
     "tier": 2,
-    "question": "One regular of Ludwig von Mises's Vienna seminar won the 1974 Nobel Prize in economics for work on prices and knowledge, and another helped found game theory alongside the mathematician John von Neumann in 1944. Which pair from the seminar were they?",
+    "question": "One regular of Ludwig von Mises's Vienna seminar won a share of the 1974 Nobel Prize in economics, and another helped found game theory alongside the mathematician John von Neumann in 1944. Which pair from the seminar were they?",
     "answer": "Friedrich Hayek and Oskar Morgenstern",
     "choices": [
       "Friedrich Hayek and Oskar Morgenstern",
-      "Ludwig von Mises and Murray Rothbard",
-      "John Maynard Keynes and Joan Robinson",
-      "Milton Friedman and Anna Schwartz"
+      "Joseph Schumpeter and Karl Polanyi",
+      "Richard Strigl and Paul Rosenstein-Rodan",
+      "Felix Kaufmann and Eric Voegelin"
     ],
-    "context": "Hayek shared the 1974 Nobel with Gunnar Myrdal for his work on money and business cycles. Morgenstern co-authored Theory of Games and Economic Behavior with John von Neumann in 1944 -- the founding book of game theory. Both cut their teeth in Mises's Vienna office in the 1920s. Rothbard was Mises's New York student decades later; Keynes and Robinson were the Cambridge tradition; Friedman and Schwartz met at NBER in America. Sources: en.wikipedia.org/wiki/Ludwig_von_Mises; en.wikipedia.org/wiki/Oskar_Morgenstern.",
-    "topic": "the-mises-privatseminar-1920-1934-vienna-in-one-room"
-  },
-  {
-    "tier": 2,
-    "question": "Ludwig von Mises welcomed the young economists of his Privatseminar on a Friday evening in the 1920s to the office where he worked by day as an economist. Which Vienna institution did that office belong to?",
-    "answer": "The Austrian Chamber of Commerce (Handelskammer)",
-    "choices": [
-      "The Austrian Chamber of Commerce (Handelskammer)",
-      "The University of Vienna Faculty of Law",
-      "The Austrian National Bank",
-      "The Ministry of Finance"
-    ],
-    "context": "Mises never held a paid university chair in Vienna; the Faculty of Law let him teach as an unsalaried Privatdozent, but his day job -- and the seminar's meeting room -- was at the Handelskammer. The Austrian National Bank and the Ministry of Finance were separate institutions Mises advised as an outside expert. The choice of the Chamber of Commerce, not the university, was itself an emblem of the seminar's independent, non-academic character. Source: privatarchiv-mises.uni-graz.at/en/mises-private-archive/.",
+    "context": "Hayek shared the 1974 Nobel with Gunnar Myrdal, for work on money and economic fluctuations. Morgenstern co-authored Theory of Games and Economic Behavior with John von Neumann in 1944, the founding book of game theory. Both took part in Mises's seminar in the 1920s. Sources: en.wikipedia.org/wiki/Ludwig_von_Mises; en.wikipedia.org/wiki/Oskar_Morgenstern.",
     "topic": "the-mises-privatseminar-1920-1934-vienna-in-one-room"
   },
   {
     "tier": 3,
-    "question": "Lionel Robbins came from London in 1931 to sit in on Ludwig von Mises's seminar in Vienna, and one young Austrian there impressed him enough to win an offer. Friedrich Hayek soon took up a post at the London School of Economics, carrying the Austrian tradition into English. What lesson does Robbins's visit carry?",
-    "answer": "Personal contact and one open door can carry ideas across borders",
+    "question": "Friedrich Hayek, a regular of Ludwig von Mises's Vienna seminar, moved to the London School of Economics in 1931 and carried the Austrian tradition into English. A colleague there who wanted an alternative to Cambridge economics had invited him. Who was it?",
+    "answer": "Lionel Robbins",
     "choices": [
-      "Personal contact and one open door can carry ideas across borders",
-      "Ideas only travel through best-selling published books",
-      "Universities never share professors across national borders",
-      "Governments must approve every new economic theory first"
+      "Lionel Robbins",
+      "William Beveridge",
+      "Arnold Plant",
+      "Harold Laski"
     ],
-    "context": "Robbins was head of the LSE economics department and the author of An Essay on the Nature and Significance of Economic Science (1932), which carried strong Austrian influence. His invitation brought Hayek to LSE in 1931 and set up the famous Hayek-Keynes debates of the 1930s. Keynes was at Cambridge, not LSE; Pigou held the Cambridge chair; Beveridge was LSE Director but not the economist who spotted Hayek. Source: en.wikipedia.org/wiki/Ludwig_von_Mises.",
+    "context": "Lionel Robbins, head of economics at the LSE from 1929 and author of An Essay on the Nature and Significance of Economic Science (1932), invited Hayek, who joined the faculty in 1931; his LSE lectures became Prices and Production. Beveridge was the School's director, Plant a fellow economist, Laski its leading socialist political scientist. Source: https://en.wikipedia.org/wiki/Friedrich_Hayek.",
     "topic": "the-mises-privatseminar-1920-1934-vienna-in-one-room"
   },
   {
     "tier": 3,
-    "question": "Alfred Schuetz, a sociologist, sat among the economists of Ludwig von Mises's Vienna seminar and argued that economics rests on what people mean by their own actions. Philosophers and even art historians came too. Why can a mix of fields like that help an economist think better?",
-    "answer": "Other fields ask questions economics alone would never think to ask",
+    "question": "One regular of Ludwig von Mises's Vienna seminar was no economist: a bank lawyer by day and a sociologist by vocation, he argued that economics rests on what people mean by their own actions. Philosophers and even art historians came too. Who was the sociologist?",
+    "answer": "Alfred Schuetz",
     "choices": [
-      "Other fields ask questions economics alone would never think to ask",
-      "Economists cannot count above ten without a philosopher's help",
-      "Sociologists always agree with whatever an economist says",
-      "Only philosophers are allowed to publish economic papers"
+      "Alfred Schuetz",
+      "Otto Neurath",
+      "Moritz Schlick",
+      "Rudolf Carnap"
     ],
-    "context": "Schuetz (1899-1959) worked days as a bank lawyer and joined the Privatseminar in the 1920s; his book The Phenomenology of the Social World (1932) argued that economics rests on the meanings actors give their own actions -- a philosophical fit with Mises's methodological individualism. He escaped to New York in 1939. Popper, Neurath, and Schlick belonged to the neighboring Vienna Circle of logical positivists, not the Mises Kreis. Source: privatarchiv-mises.uni-graz.at/en/mises-private-archive/.",
+    "context": "Schuetz (1899-1959) worked days as a bank lawyer and joined the Privatseminar in the 1920s; his book The Phenomenology of the Social World (1932) argued that economics rests on the meanings actors give their own actions, a fit with Mises's methodological individualism. He escaped to New York in 1939. Neurath, Schlick and Carnap belonged to the neighbouring Vienna Circle of logical positivists, not the Mises circle. Source: privatarchiv-mises.uni-graz.at/en/mises-private-archive/.",
     "topic": "the-mises-privatseminar-1920-1934-vienna-in-one-room"
   },
   {
@@ -25753,27 +25376,14 @@
     "topic": "the-mises-privatseminar-1920-1934-vienna-in-one-room"
   },
   {
-    "tier": 5,
-    "question": "Fritz Machlup, a regular at Ludwig von Mises's Vienna seminar, took a Rockefeller fellowship to America in 1933 and stayed for good. He held chairs at three American universities and pioneered the economics of knowledge and information. Which three?",
-    "answer": "Johns Hopkins, Princeton, and New York University",
-    "choices": [
-      "Johns Hopkins, Princeton, and New York University",
-      "Harvard, Yale, and Columbia",
-      "Chicago, Stanford, and Berkeley",
-      "MIT, Cornell, and Brown"
-    ],
-    "context": "Machlup was Hutzler Professor at Johns Hopkins 1947-1960, Walker Professor at Princeton 1960-1971, and professor at NYU 1971-1983. His 1962 book The Production and Distribution of Knowledge in the United States is a founding text of information economics. Haberler went to Harvard; Morgenstern to Princeton; Hayek to LSE and later Chicago and Freiburg. Machlup's specific triangle -- Hopkins, Princeton, NYU -- is his own. Source: en.wikipedia.org/wiki/Fritz_Machlup.",
-    "topic": "the-mises-privatseminar-1920-1934-vienna-in-one-room"
-  },
-  {
     "tier": 1,
     "question": "A politician running for office promises voters free college for everyone, free health care for everyone and better pay for all workers. He says the rich will pay every last dollar. But even taking everything they own would not cover the tab. Who ends up paying the rest of the bill?",
     "answer": "Middle-class and poor families, through higher taxes or inflation",
     "choices": [
       "Middle-class and poor families, through higher taxes or inflation",
-      "No one; the money simply appears",
-      "Only foreign countries pay",
-      "Only big businesses; never families"
+      "Foreign lenders, who buy up the new government bonds",
+      "Nobody, since the spending pays for itself through growth",
+      "Big corporations, through a much higher profits tax"
     ],
     "context": "Senator Bernie Sanders of Vermont ran for the Democratic presidential nomination in 2016 and 2020, self-identifying as a democratic socialist. Source: en.wikipedia.org/wiki/Bernie_Sanders.",
     "topic": "the-modern-democratic-socialist-revival-and-the-reasoning-mo"
@@ -25814,20 +25424,20 @@
       "Moral hazard -- workers take on more risk",
       "Rent-seeking -- lobbyists capture the state"
     ],
-    "context": "Bastiat's method: the visible beneficiary is the worker whose wage rises; the invisible cost is the worker priced out of the labor market entirely. The critic named would be Milton Friedman. The kid names the MOVE; the verdict is the kid's own. Source: bastiat.org.",
+    "context": "Bastiat's method: the visible beneficiary is the worker whose wage rises; the invisible cost is the worker priced out of the labor market entirely. Milton Friedman pressed the same point against minimum-wage laws. Naming the move does not settle the verdict. Source: bastiat.org.",
     "topic": "the-modern-democratic-socialist-revival-and-the-reasoning-mo"
   },
   {
     "tier": 3,
     "question": "Milton Friedman and George Stigler published a famous pamphlet, Roofs or Ceilings?, in 1946, attacking rent control in postwar American cities. From that pamphlet down to today's Austrian writers, critics of rent control have pressed one argument above all the others. Which one is it?",
-    "answer": "The knowledge-problem and supply-response mechanism -- fewer apartments over time",
+    "answer": "The supply response: capped rents mean fewer apartments over time",
     "choices": [
-      "The knowledge-problem and supply-response mechanism -- fewer apartments over time",
-      "The Cantillon effect on housing money",
-      "The Phillips curve trade-off",
-      "The gold-standard critique"
+      "The supply response: capped rents mean fewer apartments over time",
+      "The Cantillon effect: cheap credit reaches landlords first",
+      "Moral hazard: tenants take less care of cheaply rented flats",
+      "Regulatory capture: big landlords end up writing the caps"
     ],
-    "context": "The critic's move: rent below cost reduces the profitability of supplying rental housing; supply falls; future tenants pay the hidden cost. This is the reasoning move -- the kid decides the verdict. Source: Friedman-Stigler, Roofs or Ceilings? (1946).",
+    "context": "The critic's move: rent held below cost makes supplying rental housing less profitable; supply falls, and future tenants pay the hidden cost. Source: Friedman-Stigler, Roofs or Ceilings? (1946).",
     "topic": "the-modern-democratic-socialist-revival-and-the-reasoning-mo"
   },
   {
@@ -25836,50 +25446,37 @@
     "answer": "A mechanical argument about the informational role of prices",
     "choices": [
       "A mechanical argument about the informational role of prices",
-      "A moral argument about human freedom",
-      "A political argument about elections",
-      "A theological argument about property"
+      "A historical argument about how such states had fared",
+      "A psychological argument about workers' effort",
+      "A demographic argument about feeding a growing population"
     ],
     "context": "Mises 1920's move: prices carry information (about scarcity, urgency, tastes) that no committee can substitute for. This is a mechanical claim about how information is aggregated -- it does not depend on any political verdict. Source: mises.org/library/economic-calculation.",
     "topic": "the-modern-democratic-socialist-revival-and-the-reasoning-mo"
   },
   {
     "tier": 4,
-    "question": "A debater sits down with two columns on democratic socialism, one for and one against, and wants to take them apart before he picks a side. One analytical habit does that work, whoever is making the claim. Which habit is it?",
-    "answer": "Identify the reasoning move a specific critic would press, without having to share that critic's verdict",
-    "choices": [
-      "Identify the reasoning move a specific critic would press, without having to share that critic's verdict",
-      "Automatically oppose any government policy",
-      "Automatically support any market-based approach",
-      "Reject any moral evaluation of policy"
-    ],
-    "context": "The Recognition-not-verdict move: the answer names the CRITIC'S move (Friedman on minimum wage, Hayek on drug pricing, Buchanan on deficit); the answer never names 'the policy is bad' or 'socialism is wrong'. Source: bank_pipeline framing rules.",
-    "topic": "the-modern-democratic-socialist-revival-and-the-reasoning-mo"
-  },
-  {
-    "tier": 4,
     "question": "Bernie Sanders has run for president as a democratic socialist without proposing Soviet-style central planning of every factory and farm. A careful reader does not treat his program and the Soviet system as identical. What is the key difference between them?",
-    "answer": "No state ownership of means of production; the systematic replacement of market prices with government-set prices in specific sectors",
+    "answer": "His plan sets prices in some sectors but leaves ownership private",
     "choices": [
-      "No state ownership of means of production; the systematic replacement of market prices with government-set prices in specific sectors",
-      "Full nationalization of all industry",
-      "Formal Communist Party rule",
-      "Abolition of private consumption"
+      "His plan sets prices in some sectors but leaves ownership private",
+      "His plan nationalizes industry but leaves prices to the market",
+      "His plan keeps one-party rule but allows private shops",
+      "His plan plans every sector, but through elected councils"
     ],
     "context": "The distinction matters for accuracy: 2020s democratic socialism as advocated in America does not propose Gosplan-style planning. It DOES propose replacing market prices with government-set ones in labor, housing, healthcare, education, energy. The reasoning moves against Gosplan apply less catastrophically in scale but by the same mechanism. Source: dsausa.org platform.",
     "topic": "the-modern-democratic-socialist-revival-and-the-reasoning-mo"
   },
   {
     "tier": 5,
-    "question": "Medicare officials sit down with a drug company to 'negotiate' the price of a medicine for America's seniors. A critic who has read Friedrich Hayek's 1945 essay says the government is really setting the price. Which classical Austrian reasoning move most directly applies to Medicare drug-price setting?",
-    "answer": "The knowledge-problem applied to pharmaceutical R&D and marginal-drug innovation",
+    "question": "Medicare officials sit down with a drug company to negotiate the price of a medicine for America's seniors. A critic who has read Friedrich Hayek's 1945 essay says the government is really setting the price. Which classical Austrian reasoning move most directly applies to Medicare drug-price setting?",
+    "answer": "The knowledge problem, applied to which new drugs get researched",
     "choices": [
-      "The knowledge-problem applied to pharmaceutical R&D and marginal-drug innovation",
-      "The Cantillon effect on medical inflation",
-      "The Phillips curve applied to drug prices",
-      "The natural rate applied to prescriptions"
+      "The knowledge problem, applied to which new drugs get researched",
+      "Moral hazard, applied to patients who overuse cheap medicine",
+      "Regulatory capture, applied to drug firms that write the rules",
+      "The Cantillon effect, applied to new money spent on health care"
     ],
-    "context": "The critic's move: without price signals, planners cannot know which future drug lines to invest in; below-market negotiated prices reduce the incentive for marginal innovation. The kid names the move; the verdict is the kid's own. Source: mises.org/library/pharma-pricing.",
+    "context": "The critic's move: without price signals, planners cannot know which future drug lines are worth the research; negotiated prices below what the market would pay cut the reward for marginal innovation. Source: mises.org/library/pharma-pricing.",
     "topic": "the-modern-democratic-socialist-revival-and-the-reasoning-mo"
   },
   {
@@ -25892,12 +25489,12 @@
       "The reasoning moves apply only if the policy is unpopular",
       "The reasoning moves depend on the political party proposing them"
     ],
-    "context": "Mises 1920 was a mechanical argument about prices, not a political attack. The reasoning moves apply to any policy that suppresses a price signal, regardless of whether the label is 'socialism', 'progressive reform', 'social democracy', or 'consumer protection'. Source: bank framework rules.",
+    "context": "Mises 1920 was a mechanical argument about prices, not a political attack. The reasoning moves apply to any policy that suppresses a price signal, regardless of whether the label is 'socialism', 'progressive reform', 'social democracy', or 'consumer protection'. Source: Mises, Economic Calculation in the Socialist Commonwealth (1920).",
     "topic": "the-modern-democratic-socialist-revival-and-the-reasoning-mo"
   },
   {
     "tier": 1,
-    "question": "A town on a new railway between two major hubs demands a law, in a joke Frederic Bastiat wrote in 1845: every train must stop there for a whole day, so local hands get paid to unload and reload every crate. Who really wins and who really loses if the law passes?",
+    "question": "A Bordeaux newspaper writer wanted a railway between two distant cities broken at his own, so local hands would unload every crate and every traveler would stop over. Frederic Bastiat answered with a joke. Who would really win from the break, and who would lose?",
     "answer": "The town's workers win; travelers and both big cities lose time and money",
     "choices": [
       "The town's workers win; travelers and both big cities lose time and money",
@@ -25905,25 +25502,25 @@
       "Only the government wins from new taxes",
       "The train companies win by charging more for tickets"
     ],
-    "context": "Bastiat's original text names Bordeaux specifically; it is the port on the Garonne midway between Paris and the Spanish border. Source: fee.org/resources/economic-sophisms.",
+    "context": "Bastiat's essay names Bordeaux, the port on the Garonne on the line between Paris and the Spanish border, and the writer, M. Simiot. Source: https://mises.org/online-book/bastiat-collection/17-negative-railway.",
     "topic": "the-negative-railway-break-every-rail-line-to-create-jobs"
   },
   {
     "tier": 1,
-    "question": "A lawmaker from Bordeaux stands up in the French legislature in Frederic Bastiat's 1845 'negative railway' story. He demands that the new rail line from Paris pause a whole day at his city so local hands can unload the freight. The forced stop, he says, would make honest work for three trades. Which three does he name?",
-    "answer": "Porters, innkeepers, and warehousemen",
+    "question": "A Bordeaux newspaper writer, quoted by Frederic Bastiat, wanted the planned line broken at his city, so freight would come off the trains and travelers would stop over. The break, he said, would bring work to local trades. Which trades were among those he named?",
+    "answer": "Boatmen, porters and hotel-keepers",
     "choices": [
-      "Porters, innkeepers, and warehousemen",
-      "Blacksmiths, farriers, and wheelwrights",
-      "Bakers, butchers, and vintners",
-      "Weavers, dyers, and tailors"
+      "Boatmen, porters and hotel-keepers",
+      "Blacksmiths, farriers and wheelwrights",
+      "Bakers, butchers and vintners",
+      "Weavers, dyers and tailors"
     ],
-    "context": "Bastiat names PORTERS (to move the freight around the break), INNKEEPERS (to house travellers forced to stop), and WAREHOUSEMEN (to store the goods) as the three visible beneficiaries; every other city then has the same claim. Source: mises.org/library/economic-sophisms.",
+    "context": "Bastiat quotes the list: boatmen (or bargemen), porters, commission agents, hotel-keepers and so on, every trade that lives off a break in the line; every other town on the route then has the same claim. Translations differ in the wording. Source: https://mises.org/online-book/bastiat-collection/17-negative-railway.",
     "topic": "the-negative-railway-break-every-rail-line-to-create-jobs"
   },
   {
     "tier": 2,
-    "question": "Frederic Bastiat mocked the deputies from French towns along a planned railway in his 1845 book Economic Sophisms, with a joke, the 'negative railway.' The line itself was real, a plan to link two European capitals. Which two cities was that railway going to link?",
+    "question": "Frederic Bastiat mocked a Bordeaux newspaper writer in Economic Sophisms with a joke, the 'negative railway.' The writer wanted a planned line broken at his city; the line itself was real, a plan to link two European capitals. Which two?",
     "answer": "Paris and Madrid",
     "choices": [
       "Paris and Madrid",
@@ -25931,12 +25528,12 @@
       "Paris and Vienna",
       "Paris and Berlin"
     ],
-    "context": "The 1840s Paris-Madrid trunk line was a live political question in Bastiat's Chamber; Bastiat wrote the piece precisely because deputies from cities along the route were carving up the line with local-benefit arguments. Source: fee.org/resources/economic-sophisms.",
+    "context": "Bastiat quotes the question M. Simiot put in a Bordeaux newspaper: should the proposed railway from Paris to Madrid have a break at Bordeaux? Source: https://mises.org/online-book/bastiat-collection/17-negative-railway.",
     "topic": "the-negative-railway-break-every-rail-line-to-create-jobs"
   },
   {
     "tier": 2,
-    "question": "Frederic Bastiat took a Bordeaux lawmaker at his word in 1845, in a joke mocking protectionists who wanted deliberate inefficiencies to 'create jobs.' If breaking the Paris rail line at Bordeaux would help the local trades, he asked, why not break it at every stop on the way to Spain? What is left if the joke is followed all the way through?",
+    "question": "Frederic Bastiat took a Bordeaux newspaper writer at his word, mocking protectionists who wanted deliberate inefficiencies to 'create jobs.' If breaking the line at Bordeaux would help the local trades, he asked, why not break it at every town along the route? What is left if the joke is followed all the way through?",
     "answer": "A series of unconnected roads that is not a railway at all",
     "choices": [
       "A series of unconnected roads that is not a railway at all",
@@ -25962,33 +25559,20 @@
   },
   {
     "tier": 3,
-    "question": "Frederic Bastiat told a story in his 1845 book Economic Sophisms: someone argues that extra stops and toll booths along a train line will boost the economy, because more towns will sell food and lodging to passing travelers. Bastiat called this the 'negative railway.' What is wrong with treating those stops as a benefit?",
+    "question": "Frederic Bastiat told a story in his Economic Sophisms: someone argues that extra stops along a train line will boost the economy, because more towns will sell food and lodging to passing travelers. Bastiat called this the 'negative railway.' What is wrong with treating those stops as a benefit?",
     "answer": "Delays and extra costs make trade worse, not better",
     "choices": [
       "Delays and extra costs make trade worse, not better",
-      "The train will run out of coal from the extra stops",
-      "The towns will refuse to sell to passing travelers",
-      "The train will start rolling downhill in the wrong direction"
+      "The towns would earn too little to make the stops worthwhile",
+      "Travelers would switch to coaches to avoid the stops",
+      "The stops would push the line's building costs too high"
     ],
-    "context": "The Bordeaux deputy's whole argument treats extra HANDLING (friction) as extra income; Bastiat's reductio is that if friction were income, the ideal railway would be no railway at all. Source: mises.org/library/economic-sophisms.",
+    "context": "The Bordeaux writer's whole argument treats extra HANDLING (friction) as extra income; Bastiat's reductio is that if friction were income, the ideal railway would be no railway at all. Source: https://mises.org/online-book/bastiat-collection/17-negative-railway.",
     "topic": "the-negative-railway-break-every-rail-line-to-create-jobs"
   },
   {
     "tier": 4,
-    "question": "Frederic Bastiat pushed his 'negative railway' joke further still. If breaking a rail line to give more work to the trades along the way made sense, he answered, humanity would also have to smash two of its oldest labor-saving tools. Which two did he name?",
-    "answer": "The spade and the wheel",
-    "choices": [
-      "The spade and the wheel",
-      "The plow and the loom",
-      "The knife and the fire",
-      "The pot and the basket"
-    ],
-    "context": "The spade replaced people who dug with sticks; the wheel replaced people who dragged loads on sledges. The negative-railway reductio: if every labor-saving tool destroys jobs, we should have banned all of them. Source: cato.org/commentary/luddite-arguments-then-and-now.",
-    "topic": "the-negative-railway-break-every-rail-line-to-create-jobs"
-  },
-  {
-    "tier": 4,
-    "question": "A new machine arrives, and someone stands up to give the speech Frederic Bastiat wrote as a joke in 1845 for his Bordeaux lawmaker. The seen loss is the work the machine now does; the unseen part is what those spare hours go on to produce and the cheaper goods everyone else can buy. The newest version of that speech runs almost word for word the same. Which modern scare is it?",
+    "question": "A new machine arrives, and someone makes the case Frederic Bastiat mocked in a Bordeaux newspaper writer. The seen loss is the work the machine now does; the unseen part is what the spare hours go on to make and the cheaper goods everyone can buy. The newest version runs almost word for word the same. Which modern scare is it?",
     "answer": "That artificial-intelligence tools destroy writing jobs",
     "choices": [
       "That artificial-intelligence tools destroy writing jobs",
@@ -26000,55 +25584,16 @@
     "topic": "the-negative-railway-break-every-rail-line-to-create-jobs"
   },
   {
-    "tier": 5,
-    "question": "Workers fix a town's damaged bridge quickly with a new machine, which frees them to build a new school. A politician says, 'No, tear the machine out, we need those workers stuck fixing the bridge forever so nobody loses a job.' What is the general name for a policy that keeps a job going just to keep the job going?",
-    "answer": "Make-work",
-    "choices": [
-      "Make-work",
-      "Full-employment",
-      "Countercyclical",
-      "Automatic-stabilizer"
-    ],
-    "context": "'Make-work' is the term Sowell, Friedman, and every Austrian textbook use for policies that treat friction, breakage, or wasted effort as a job-creation benefit; Bastiat's negative-railway is the canonical refutation. Source: en.wikipedia.org/wiki/Make-work_job.",
-    "topic": "the-negative-railway-break-every-rail-line-to-create-jobs"
-  },
-  {
-    "tier": 1,
-    "question": "Richard Nixon broke into Bonanza on the evening of Sunday, August 15, 1971, to address the country. He announced big changes to fight inflation, and buried among them he ended the last link between the US dollar and gold. What is that announcement usually called today?",
-    "answer": "The Nixon shock",
-    "choices": [
-      "The Nixon shock",
-      "The Nixon doctrine",
-      "The Nixon plan",
-      "The Nixon accord"
-    ],
-    "context": "August 15, 1971. Nixon's Sunday-evening address preempted network shows to announce closing the gold window, a wage-price freeze, and an import surcharge. Journalists called it the Nixon shock immediately. Source: en.wikipedia.org/wiki/Nixon_shock.",
-    "topic": "the-nixon-shock-august-15-1971-and-the-birth-of-pure-fiat"
-  },
-  {
     "tier": 1,
     "question": "Richard Nixon shut a door on live television in August 1971. Foreign countries had been able to send dollars to the US Treasury and get real gold back; after his speech, they could not. What did the change mean for the dollar from then on?",
     "answer": "The dollar was backed only by trust in the government, not by gold",
     "choices": [
       "The dollar was backed only by trust in the government, not by gold",
-      "The dollar became worth more gold than before",
-      "Every American got a free gold coin",
-      "Nothing changed at all"
+      "The dollar was tied to a basket of foreign currencies instead",
+      "The dollar was tied to silver in place of gold",
+      "The dollar could be swapped for gold only by Americans"
     ],
-    "context": "The Nixon speech interrupted NBC's Bonanza (running its 13th season in 1971). Journalists still cite the Bonanza-preemption as the pop-culture shorthand for the significance of the announcement. Source: whitehousehistory.org (Nixon presidential timeline).",
-    "topic": "the-nixon-shock-august-15-1971-and-the-birth-of-pure-fiat"
-  },
-  {
-    "tier": 2,
-    "question": "Treasury officials in Washington stopped one old transaction in August 1971, on the orders of Richard Nixon. Since 1944 it had let foreign governments swap their dollars for metal at a fixed rate of $35 per ounce, and the world's money system rested on it. What is the short phrase for the mechanism he closed?",
-    "answer": "The gold window",
-    "choices": [
-      "The gold window",
-      "The dollar peg",
-      "The reserve currency swap",
-      "The IMF quota"
-    ],
-    "context": "Closing the gold window meant suspending the US Treasury's commitment to convert dollars held by foreign central banks into gold at $35 an ounce. Bretton Woods had rested on that promise since 1944. Source: federalreservehistory.org/essays/gold-convertibility-ends.",
+    "context": "Closing the gold window ended the Bretton Woods promise that foreign central banks could turn dollars into gold at $35 an ounce; from then on the dollar's value rested on the issuing government alone. Americans themselves had not been allowed to hold monetary gold since 1933. Source: federalreservehistory.org/essays/gold-convertibility-ends.",
     "topic": "the-nixon-shock-august-15-1971-and-the-birth-of-pure-fiat"
   },
   {
@@ -26070,9 +25615,9 @@
     "answer": "The country that issues it can print more and let others feel the pain",
     "choices": [
       "The country that issues it can print more and let others feel the pain",
-      "Foreign banks are legally required to burn old U.S. dollars",
-      "Reserve currencies always trade one-to-one with gold",
-      "Only countries with no army can hold the reserve currency"
+      "The issuer must defend its currency's value for the sake of others",
+      "Holders of the currency can force the issuer to redeem it",
+      "A reserve currency's value is set by the countries holding it"
     ],
     "context": "Connally (Treasury 1971-72) delivered the line at a Group of Ten finance-ministers meeting in Rome, November 1971. He later switched parties to Republican and ran briefly for president in 1980. Source: en.wikipedia.org/wiki/John_Connally.",
     "topic": "the-nixon-shock-august-15-1971-and-the-birth-of-pure-fiat"
@@ -26080,11 +25625,11 @@
   {
     "tier": 3,
     "question": "Richard Nixon accused Japan and West Germany on August 15, 1971, of keeping their currencies artificially cheap so their exports would beat American ones. His speech that night also shut off foreign access to US gold and fought inflation at home. Against those trade partners he took a third step. What was it?",
-    "answer": "A 10 percent import surcharge",
+    "answer": "A surcharge on imports",
     "choices": [
-      "A 10 percent import surcharge",
-      "A gold export ban",
-      "A commercial tariff on farm goods",
+      "A surcharge on imports",
+      "A ban on gold exports",
+      "A quota on Japanese cars",
       "A freeze on foreign investment"
     ],
     "context": "The 10 percent import surcharge was intended to force partners (chiefly West Germany and Japan) to revalue their currencies upward against the dollar. It was lifted that December after the Smithsonian Agreement adjusted parities. Source: federalreservehistory.org/essays/gold-convertibility-ends.",
@@ -26096,16 +25641,16 @@
     "answer": "The government can print far more money without a hard limit",
     "choices": [
       "The government can print far more money without a hard limit",
-      "Every dollar is instantly worth ten times as much gold",
-      "Foreign banks are forced to burn all their dollar reserves",
-      "The country must switch to using only copper coins"
+      "The dollar's value is pegged to the price of oil instead",
+      "Foreign banks can no longer use dollars for trade",
+      "Prices fall, since money is no longer tied to scarce metal"
     ],
     "context": "The August 13-15, 1971 Camp David weekend brought Fed chair Arthur Burns, Connally, George Shultz, Paul Volcker (then Treasury undersecretary), and others together to plan the announcement. Safire's memoir 'Before the Fall' documents the weekend. Source: en.wikipedia.org/wiki/Nixon_shock.",
     "topic": "the-nixon-shock-august-15-1971-and-the-birth-of-pure-fiat"
   },
   {
     "tier": 4,
-    "question": "A Bitcoin fan passes around a chart with two lines on it, one for how much American workers make in an hour and one for how much they are paid for that hour. For a quarter-century after World War II the two lines climbed side by side. Bitcoin fans call August 15, 1971, when Richard Nixon ended the dollar's last tie to gold, the birthday of the fiat-money problem. What happened to the lines after 1971?",
+    "question": "A Bitcoin fan shares a chart with two lines: what American workers produce in an hour, and what they are paid for it. For a quarter-century after World War II the two lines climbed side by side. Bitcoin fans call August 15, 1971, when Richard Nixon ended the dollar's last tie to gold, the birthday of the fiat-money problem. What happened to the lines after 1971?",
     "answer": "Output per hour kept rising, but pay almost stalled",
     "choices": [
       "Output per hour kept rising, but pay almost stalled",
@@ -26118,19 +25663,6 @@
   },
   {
     "tier": 4,
-    "question": "A saver counts his dollars today, and no metal in any vault stands behind them. Richard Nixon cut the dollar loose from gold on August 15, 1971. No earlier American peacetime stretch of unbacked money lasted so long; the Civil War greenback interruption ran seventeen years. About how many years has the dollar been unbacked?",
-    "answer": "More than 54 years",
-    "choices": [
-      "More than 54 years",
-      "About 30 years",
-      "About 15 years",
-      "More than 100 years"
-    ],
-    "context": "From August 15, 1971 to 2026 is 54-55 years -- longer than any earlier pure-fiat regime in US peacetime history. The 1862-79 greenback interruption during and after the Civil War lasted 17 years. Source: federalreservehistory.org/essays/gold-convertibility-ends.",
-    "topic": "the-nixon-shock-august-15-1971-and-the-birth-of-pure-fiat"
-  },
-  {
-    "tier": 4,
     "question": "Delegates from 44 Allied nations gathered at a hotel in a small New Hampshire town in July 1944, as World War II was winding down. They designed a new world money system: every foreign currency pegged to the US dollar, and the dollar pegged to gold at $35 an ounce. Richard Nixon ordered the US Treasury to stop trading dollars for gold on August 15, 1971, killing that last gold link. Which 1944 system did his move destroy?",
     "answer": "Bretton Woods",
     "choices": [
@@ -26139,20 +25671,7 @@
       "The Marshall Plan",
       "The Basel Accords"
     ],
-    "context": "Nixon won re-election in November 1972 carrying 49 states. Wage-price controls kept CPI appearances calm through the campaign; inflation exploded in 1973-74 after the controls unravelled. Source: en.wikipedia.org/wiki/1972_United_States_presidential_election.",
-    "topic": "the-nixon-shock-august-15-1971-and-the-birth-of-pure-fiat"
-  },
-  {
-    "tier": 5,
-    "question": "An anonymous programmer using the name Satoshi Nakamoto posted a white paper in October 2008 proposing Bitcoin, a fixed-supply digital money no government could inflate. Many Bitcoin fans trace decades of inflation to the night in August 1971 when Richard Nixon severed the dollar from gold, leaving the world on pure fiat money. About how long before Nakamoto's paper did Nixon act?",
-    "answer": "Thirty-seven years",
-    "choices": [
-      "Thirty-seven years",
-      "Eight years",
-      "Ninety years",
-      "Fifty-five years"
-    ],
-    "context": "August 1971 to October 2008 is 37 years. The Bitcoin white paper proposed a fixed-supply digital money as an alternative to central-bank-managed fiat -- an answer, in its authors' framing, to the political-money problem that Nixon inaugurated. Source: bitcoin.org/bitcoin.pdf.",
+    "context": "The July 1944 conference met at the Mount Washington Hotel in Bretton Woods, New Hampshire. Its system was a gold-exchange standard: foreign governments, not ordinary holders, could turn dollars into gold at $35 an ounce, unlike the classical gold standard, under which anyone could redeem notes for coin. Source: https://en.wikipedia.org/wiki/Bretton_Woods_system.",
     "topic": "the-nixon-shock-august-15-1971-and-the-birth-of-pure-fiat"
   },
   {
