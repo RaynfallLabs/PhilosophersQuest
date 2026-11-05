@@ -19462,20 +19462,7 @@
   },
   {
     "tier": 1,
-    "question": "Across northern Siberia, Canada and Alaska the soil stays frozen through summer and winter for two years in a row or more, and parts of it have not thawed in tens of thousands of years. About how much of the Northern Hemisphere's land lies over this permafrost?",
-    "answer": "Roughly a quarter",
-    "choices": [
-      "Roughly a quarter",
-      "About a tenth",
-      "Roughly half",
-      "Nearly all of it"
-    ],
-    "context": "The U.S. National Snow and Ice Data Center estimates permafrost underlies about 23 million square kilometers - roughly a quarter of the exposed land in the Northern Hemisphere, spread across Siberia, Canada, and Alaska. Permafrost simply means ground that stays at or below freezing for at least two years running. Source: https://nsidc.org/learn/parts-cryosphere/frozen-ground-permafrost/quick-facts-frozen-ground",
-    "topic": "permafrost-and-siberias-frozen-ground"
-  },
-  {
-    "tier": 2,
-    "question": "A reindeer herder by Siberia's Yuribei River found Lyuba, a baby woolly mammoth, in 2007, and she was no heap of old bones. After more than 40,000 years her skin and organs were whole and her last meal was still in her stomach. What had kept her soft body so perfect?",
+    "question": "A reindeer herder by Siberia's Yuribei River found Lyuba, a baby woolly mammoth, in 2007. After more than 40,000 years her skin and organs were whole, and her last meal was still in her stomach. What had kept her soft body so perfect?",
     "answer": "The permanently frozen ground",
     "choices": [
       "The permanently frozen ground",
@@ -19696,7 +19683,7 @@
   },
   {
     "tier": 4,
-    "question": "Xenophon, a Greek soldier who served in Persia, carried home the Old Persian word for the walled gardens that Persian garden carpets copy: pairidaeza, from pairi, 'around', and daeza, 'wall', a walled-around place. From Greek it moved through the Bible into English. What everyday English word grew from it?",
+    "question": "Xenophon, a Greek soldier who served in Persia, carried home the Persians' word for the walled gardens that Persian garden carpets copy. Its old Iranian form, pairidaeza, joins pairi, 'around', and daeza, 'wall': a walled-around place. From Greek it moved through the Bible into English. What everyday English word grew from it?",
     "answer": "paradise",
     "choices": [
       "paradise",
@@ -19704,7 +19691,7 @@
       "orchard",
       "bazaar"
     ],
-    "context": "Xenophon, a Greek who served in Persia, wrote the word down as 'paradeisos' for the walled royal parks; it passed through Greek and the Bible into English as 'paradise.' pairi = 'around,' daeza = 'wall.' Source: etymonline.com/word/paradise",
+    "context": "Xenophon, a Greek who served in Persia, wrote the word down as 'paradeisos' for the walled royal parks; it passed through Greek and the Bible into English as 'paradise.' pairi = 'around,' daeza = 'wall.' The form pairi-daeza is Avestan, an old Iranian language; Old Persian had paridaida. Sources: etymonline.com/word/paradise; en.wikipedia.org/wiki/Paradise",
     "topic": "persian-carpets-irans-woven-gardens"
   },
   {
@@ -19995,13 +19982,13 @@
   },
   {
     "tier": 5,
-    "question": "The 16th-century San Guillermo Church in Bacolor, near Mount Pinatubo, now stands sunk to half its 12-metre height in grey volcanic mud, and worshippers step inside through what were its upper windows. The mud buried the town in 1995, four years after the eruption, when monsoon rain stirred the mountain's loose ash into a fast river. What is this kind of volcanic mudflow called?",
+    "question": "Worshippers at the 16th-century San Guillermo Church in Bacolor, near Mount Pinatubo in the Philippines, step inside through what were once its upper windows, for grey volcanic mud fills it to half its 12-metre height. The flow that buried the town struck in 1995, four years after the eruption. What do volcano scientists call such a flow?",
     "answer": "A lahar",
     "choices": [
       "A lahar",
       "A pyroclastic flow",
       "A debris avalanche",
-      "A mudslide"
+      "A jökulhlaup"
     ],
     "context": "For years after 1991, monsoon rains kept remobilizing Pinatubo's loose ash into lahars — churning rivers of volcanic mud (not lava) that buried whole towns downstream. On 3 September 1995 a lahar filled San Guillermo Church in Bacolor, Pampanga; parishioners still worship inside, entering near the old upper windows. Source: Wikipedia, '1991 eruption of Mount Pinatubo' and 'San Guillermo Parish Church (Bacolor)'; VERA Files.",
     "topic": "pinatubo-1991-the-eruption-that-cooled-the-planet"
@@ -20016,7 +20003,7 @@
       "its old pagoda",
       "its temple hall"
     ],
-    "context": "Pingyao's wall was rebuilt in gray brick over rammed earth in 1370, the third year of the Ming Hongwu Emperor — about 6,163 m (6.2 km) around and roughly 12 m high. While nearly every other old Chinese city eventually tore its walls down, Pingyao kept its entire Ming wall intact. Today around 20,000 people still live inside, and you can walk the full unbroken loop atop it; UNESCO named the town a World Heritage Site in 1997. Source: https://en.wikipedia.org/wiki/Pingyao",
+    "context": "Pingyao's wall was rebuilt in gray brick over rammed earth in 1370, the third year of the Ming Hongwu Emperor — about 6,163 m (6.2 km) around and roughly 12 m high. While nearly every other old Chinese city eventually tore its walls down, Pingyao kept its entire Ming wall intact. Today around 20,000 people still live inside, and visitors can walk the full unbroken loop atop it; UNESCO named the town a World Heritage Site in 1997. Source: https://en.wikipedia.org/wiki/Pingyao",
     "topic": "pingyao-the-frozen-ming-city"
   },
   {
@@ -20216,7 +20203,7 @@
   },
   {
     "tier": 5,
-    "question": "The island of Raiatea in the Society group is remembered across the whole Pacific as 'Hawaiki,' the ancestral homeland the voyagers set out from. On it stands the grandest temple in Polynesia. It is a vast open-air platform of stone where navigators gathered before a voyage and chiefs sailed in from far-off islands to worship. Now a World Heritage site, what is this great marae called?",
+    "question": "The island of Raiatea in the Society group is remembered across the Pacific as 'Hawaiki,' the ancestral homeland the voyagers set out from. On it stands the grandest temple in Polynesia. It is a vast open-air platform of stone where navigators gathered before a voyage and chiefs sailed in from far-off islands to worship. It is now a World Heritage site. What is this great marae called?",
     "answer": "Taputapuātea",
     "choices": [
       "Taputapuātea",
@@ -20255,15 +20242,15 @@
   },
   {
     "tier": 1,
-    "question": "Metres of ash from Vesuvius buried the Roman town of Pompeii in a single day in AD 79, and the town vanished from memory. It stayed lost until diggers struck a stone carved with its name. About how long had Pompeii lain forgotten?",
-    "answer": "About 1,700 years",
+    "question": "Metres of ash from Vesuvius buried the Roman town of Pompeii in AD 79, and for about 1,700 years it lay lost. Even after digging began there in 1748, years passed before the diggers knew which town they had found. What finally told them?",
+    "answer": "a stone carved with its name",
     "choices": [
-      "About 1,700 years",
-      "About 200 years",
-      "About 500 years",
-      "About 4,000 years"
+      "a stone carved with its name",
+      "a coin stamped with its name",
+      "a map painted on a villa wall",
+      "a sailor's chart of the coast"
     ],
-    "context": "Vesuvius erupted in AD 79, burying Pompeii under about 4-6 meters (13-20 ft) of ash and pumice, then sealing it under scorching pyroclastic flows. The town lay lost for roughly 1,700 years until an inscription naming 'Pompeii' was uncovered in 1763. Source: https://en.wikipedia.org/wiki/Pompeii",
+    "context": "Digging at the site began in 1748, but the town was not identified until 20 August 1763, when the diggers uncovered an inscription naming the 'Rei Publicae Pompeianorum', the commonwealth of the Pompeians. Vesuvius had buried Pompeii in AD 79 under about 4-6 metres (13-20 ft) of ash and pumice, and it had lain lost for roughly 1,700 years. Source: https://en.wikipedia.org/wiki/Pompeii",
     "topic": "pompeii-and-herculaneum-frozen-by-vesuvius-ad-79"
   },
   {
@@ -20341,25 +20328,12 @@
       "Severus's taunt that Iris does not love his lovesick rival",
       "A campaign smear that only petty thieves back a candidate"
     ],
-    "context": "The full graffito, found scratched on several Pompeii walls, reads: 'I am amazed, O wall, that you have not collapsed, having to carry the tedious scribblings of so many writers.' It is an ancient complaint about graffiti -- written as graffiti. The other three choices are real Pompeii scrawls too: the weaver Successus and his rival Severus dueled on the walls over a barmaid named Iris ('you love Iris, but she does not love you'), and election notices claimed a rival was backed by the town's petty thieves. Source: https://www.smithsonianmag.com/history/pompeiis-graffiti-captures-every-joke-boast-and-argument-of-an-ancient-roman-city-frozen-in-time-180987831/",
+    "context": "The full graffito, found scratched on several Pompeii walls, reads: 'I am amazed, O wall, that you have not collapsed, having to carry the tedious scribblings of so many writers.' It is an ancient complaint about graffiti -- written as graffiti. Other walls carry real scrawls just as lively: the weaver Successus and his rival Severus dueled over a barmaid named Iris ('you love Iris, but she does not love you'), and election notices claimed a rival was backed by the town's petty thieves. Source: https://www.smithsonianmag.com/history/pompeiis-graffiti-captures-every-joke-boast-and-argument-of-an-ancient-roman-city-frozen-in-time-180987831/",
     "topic": "pompeii-and-herculaneum-frozen-by-vesuvius-ad-79"
   },
   {
     "tier": 4,
-    "question": "Herculaneum sat closer to Vesuvius than Pompeii did, and searing flows near 500 degrees Celsius buried it about 20 metres deep. That fierce heat did not destroy the town's wooden roofs, beds, doors and food; it blackened and hardened them, keeping them almost whole for 2,000 years. What is this heat-driven preservation called?",
-    "answer": "Carbonization",
-    "choices": [
-      "Carbonization",
-      "Fossilization",
-      "Petrification",
-      "Mummification"
-    ],
-    "context": "Herculaneum's deeper burial and hotter flows (near 500C) carbonized it -- driving off nearly everything but carbon, turning wood, food, and papyrus to charcoal that survived intact rather than being crushed. Source: https://en.wikipedia.org/wiki/Herculaneum",
-    "topic": "pompeii-and-herculaneum-frozen-by-vesuvius-ad-79"
-  },
-  {
-    "tier": 4,
-    "question": "About 300 people fled to the stone boat sheds on Herculaneum's ancient shoreline as Vesuvius erupted, crowding together there in the hope of rescue by sea. Archaeologists found them still huddled side by side. Most victims at Pompeii were buried under falling ash, but what killed this crowd?",
+    "question": "About 300 people fled to the stone boat sheds on Herculaneum's ancient shoreline as Vesuvius erupted, crowding together in the hope of rescue by sea. Archaeologists found them nearly two thousand years later, still huddled side by side. What killed this crowd?",
     "answer": "A blast of superheated air",
     "choices": [
       "A blast of superheated air",
@@ -20372,7 +20346,7 @@
   },
   {
     "tier": 4,
-    "question": "One grand seaside mansion at Herculaneum is now called the Villa of the Papyri. It once belonged to the family of Julius Caesar's father-in-law. It held about 1,800 papyrus scrolls that Vesuvius charred black. Why do scholars prize this find above nearly every other Roman one?",
+    "question": "One grand seaside mansion at Herculaneum is now called the Villa of the Papyri. It is thought to have belonged to Julius Caesar's father-in-law. It held about 1,800 papyrus scrolls that Vesuvius charred black. Why do scholars prize this find above nearly every other Roman one?",
     "answer": "The only library to survive intact from antiquity",
     "choices": [
       "The only library to survive intact from antiquity",
@@ -20385,7 +20359,7 @@
   },
   {
     "tier": 5,
-    "question": "The Villa of the Papyri's blackened scrolls crumble to dust the instant anyone tries to unroll them, so for 250 years no one could read a word. Beginning in 2023, the Vesuvius Challenge finally cracked the problem by studying the scrolls while they stayed rolled tightly shut. Which technology let the team see and read the hidden writing?",
+    "question": "Those who first tried to open the Villa of the Papyri's blackened scrolls destroyed many of them, and for 250 years no one could read the ones still rolled shut. Beginning in 2023, the Vesuvius Challenge cracked the problem by studying scrolls that stayed tightly rolled. Which technology let the team see and read the hidden writing?",
     "answer": "High-energy X-ray scans read by AI",
     "choices": [
       "High-energy X-ray scans read by AI",
@@ -20411,7 +20385,7 @@
   },
   {
     "tier": 1,
-    "question": "About 120,000 people crowded into the thin, icy air of Potosí, high in the Bolivian Andes, around 1600, making it one of the biggest cities on Earth. The only reason anyone lived there was what miners dug from the cone-shaped mountain above. What was it?",
+    "question": "More than 130,000 people crowded into the icy air of Potosí, high in the Bolivian Andes, around 1600, making it one of the biggest cities on Earth. The only reason anyone lived there was what miners dug from the cone-shaped mountain above. What was it?",
     "answer": "silver",
     "choices": [
       "silver",
@@ -20419,12 +20393,12 @@
       "copper",
       "tin"
     ],
-    "context": "Silver. The mountain was Cerro Rico ('Rich Hill'), and its silver made Potosi improbably huge: around 1600 the city held roughly 120,000 native Andeans plus about 6,000 Spaniards and 5,000 Africans -- the second-largest city on Earth after London, and one of the highest cities anywhere at about 4,067 m (13,343 ft). Tradition credits a Quechua herder, Diego de Huallpa, with first finding the silver in 1545. Source: en.wikipedia.org/wiki/Potosi.",
+    "context": "Silver. The mountain was Cerro Rico ('Rich Hill'), and its silver made Potosi improbably huge: an account of 1603 counts at least 120,000 native Andeans, about 6,000 Spaniards and other Europeans and 5,000 Africans, making it one of the largest cities in the world at the time and one of the highest anywhere, at about 4,067 m (13,343 ft). Tradition credits a Quechua herder, Diego de Huallpa, with first finding the silver in 1545. Source: en.wikipedia.org/wiki/Potosi.",
     "topic": "potosi"
   },
   {
     "tier": 2,
-    "question": "Spanish speakers still use the name of a cold Bolivian mining city in a common saying, 'vale un Potosí', and Cervantes worked the phrase into Don Quixote. When a Spanish speaker says a thing 'vale un Potosí', what does he mean?",
+    "question": "Spanish speakers still use the name of a cold Bolivian mining city in a common saying, 'vale un Potosí', and Cervantes named the city in Don Quixote. When a Spanish speaker says a thing 'vale un Potosí', what does he mean?",
     "answer": "that it's worth a fortune",
     "choices": [
       "that it's worth a fortune",
@@ -20601,7 +20575,7 @@
       "a wreath of three lilies",
       "a circle of twelve flames"
     ],
-    "context": "The five stars recall the legend that five lights appeared on the Vltava where John of Nepomuk drowned in 1393, on the order of King Wenceslaus IV. His 1683 bronze is the oldest statue on Charles Bridge, and touching the plaque beneath it is the tradition said to bring you back to Prague. Source: https://en.wikipedia.org/wiki/John_of_Nepomuk",
+    "context": "The five stars recall the legend that five lights appeared on the Vltava where John of Nepomuk drowned in 1393, on the order of King Wenceslaus IV. His 1683 bronze is the oldest statue on Charles Bridge, and touching the plaque beneath it is said to bring a visitor back to Prague. Source: https://en.wikipedia.org/wiki/John_of_Nepomuk",
     "topic": "prague"
   },
   {
@@ -20705,7 +20679,7 @@
       "the first town Europeans fortified here",
       "the biggest town the French ever built"
     ],
-    "context": "Old Quebec is the only intact fortified colonial town in North America north of Mexico — about 4.6 km of ramparts you can walk atop, pierced by old gates. Most walled cities elsewhere pulled their walls down for traffic; Quebec's survived, and in 1985 UNESCO named the old town a World Heritage Site. Source: Wikipedia, 'Ramparts of Quebec City' / 'Old Quebec.'",
+    "context": "Old Quebec is the only intact fortified colonial town in North America north of Mexico — about 4.6 km of ramparts that visitors can walk atop, pierced by old gates. Most walled cities elsewhere pulled their walls down for traffic; Quebec's survived, and in 1985 UNESCO named the old town a World Heritage Site. Source: Wikipedia, 'Ramparts of Quebec City' / 'Old Quebec.'",
     "topic": "quebec-city"
   },
   {
@@ -20770,7 +20744,7 @@
       "the demolition crews hit bedrock and gave up",
       "the walls proved too costly to tear down"
     ],
-    "context": "The walls standing today are the masonry ramparts an engineer, Gaspard-Joseph Chaussegros de Lery, raised in 1745. When the British garrison left in the 1870s, Quebec nearly demolished them for road traffic — until Governor General Lord Dufferin intervened around 1871, even having grand gates rebuilt, so the fortifications would survive. That rescue is why Old Quebec is a walled city at all. Source: Wikipedia, 'Ramparts of Quebec City.'",
+    "context": "The walls standing today are the masonry ramparts an engineer, Gaspard-Joseph Chaussegros de Lery, raised in 1745. When the British garrison left in 1871, Quebec began demolishing them for road traffic, until Lord Dufferin, Governor General from 1872, intervened, even having grand new gates built in the late 1870s, so the fortifications would survive. That rescue is why Old Quebec is a walled city at all. Source: Wikipedia, 'Ramparts of Quebec City'; ville.quebec.qc.ca (history 1867-1945).",
     "topic": "quebec-city"
   },
   {
@@ -20970,7 +20944,7 @@
   },
   {
     "tier": 2,
-    "question": "Norse settlers rowed into a bay on Iceland's southwest coast around the year 874 and saw pale plumes rising from the ground, steam venting from hot springs. They gave their settlement a plain name built from two Norse words, one for the curling steam and one for the bay. What does the name Reykjavik mean?",
+    "question": "Norse settlers rowed into a bay on Iceland's southwest coast around the year 874 and saw pale plumes rising from the ground, steam venting from hot springs. They named the place for what they took the plumes to be, joined to their word for a bay. What does the name Reykjavik mean?",
     "answer": "Smoky Bay",
     "choices": [
       "Smoky Bay",
@@ -21005,19 +20979,6 @@
       "warm winds blowing up from mainland Europe"
     ],
     "context": "The warm water of the North Atlantic (an arm of the Gulf Stream system) washes Iceland's coast and keeps Reykjavik's winters mild -- rarely below minus 15 degrees C, sometimes milder than places far to its south. Source: https://en.wikipedia.org/wiki/Reykjav%C3%ADk",
-    "topic": "reykjavik"
-  },
-  {
-    "tier": 4,
-    "question": "Residents of Reykjavik mow their lawns and kick footballs late into the night in high summer, the sky still glowing at 1 a.m., because the sun barely dips below the horizon and the nights never grow fully dark. Near midwinter, though, the city has under five hours of dim light a day. What is this bright summer daylight called?",
-    "answer": "the midnight sun",
-    "choices": [
-      "the midnight sun",
-      "the summer solstice",
-      "the spring equinox",
-      "the polar night"
-    ],
-    "context": "Because Reykjavik lies so far north, from about May 20 to July 24 the sun never sinks more than 5 degrees below the horizon, so summer nights never go fully dark -- the 'midnight sun.' The flip side comes near midwinter (about Dec 2 to Jan 10), when the city gets fewer than five hours of daylight and the sun climbs only about 3 degrees above the horizon. Source: https://en.wikipedia.org/wiki/Reykjav%C3%ADk",
     "topic": "reykjavik"
   },
   {
@@ -21057,58 +21018,6 @@
       "a domed loaf"
     ],
     "context": "Refined sugar in that era was boiled down and molded into a tall cone -- a 'sugarloaf' -- for storage and shipping. Portuguese traders thought the bare 396 m granite dome at the bay's mouth looked just like one, so they named it Pao de Acucar; in English, Sugarloaf Mountain. Source: en.wikipedia.org/wiki/Sugarloaf_Mountain",
-    "topic": "rio-de-janeiro"
-  },
-  {
-    "tier": 2,
-    "question": "A little cog railway has climbed 3.8 km through Rio's Tijuca Forest since 1884 to the top of a granite peak the Portuguese named Corcovado. The name is a blunt joke about the mountain's shape. What does Corcovado mean in Portuguese?",
-    "answer": "hunchback",
-    "choices": [
-      "hunchback",
-      "sugarloaf",
-      "sharp-tooth",
-      "twin-peak"
-    ],
-    "context": "'Corcovado' is Portuguese for 'hunchback,' after the peak's bent, humped profile. Since 1884 the Corcovado Rack Railway, a cog train, has climbed 3.8 km up through the Tijuca Forest to the summit that Christ the Redeemer now crowns. Source: en.wikipedia.org/wiki/Corcovado; britannica.com/place/Mount-Corcovado",
-    "topic": "rio-de-janeiro"
-  },
-  {
-    "tier": 3,
-    "question": "The engineer Augusto Ferreira Ramos built the Bondinho, a small cable car that has carried riders up Rio's Sugarloaf since 1912. It climbs in two stages, pausing at Morro da Urca before rising to the 396-metre top. It was very early for such a machine. Counting from the world's first, where did it reportedly rank among passenger cableways?",
-    "answer": "third",
-    "choices": [
-      "third",
-      "twelfth",
-      "fortieth",
-      "hundredth"
-    ],
-    "context": "The Sugarloaf cable car -- the Bondinho -- opened in 1912, reportedly only the third cableway ever built anywhere in the world. Dreamed up by engineer Augusto Ferreira Ramos, it climbs in two stages, pausing at Morro da Urca (220 m) before rising to the 396 m summit. Source: en.wikipedia.org/wiki/Sugarloaf_Cable_Car",
-    "topic": "rio-de-janeiro"
-  },
-  {
-    "tier": 3,
-    "question": "Sugarloaf stands guard over the mouth of Rio's Guanabara Bay, a gap just 1.5 km wide; beyond it the water spreads 31 km inland among more than 130 islands. The bay began as a river valley on dry land, until meltwater from the last Ice Age lifted the sea and saltwater climbed the valley and drowned it. What do geographers call a coastal inlet drowned this way?",
-    "answer": "a ria",
-    "choices": [
-      "a ria",
-      "a fjord",
-      "an estuary",
-      "a lagoon"
-    ],
-    "context": "A drowned river valley like this is called a 'ria' -- an old river-carved valley flooded when seas rose after the last Ice Age (unlike a fjord, whose valley was carved by a glacier). Guanabara Bay runs about 31 km inland, up to 28 km wide, narrows to a ~1.5 km mouth guarded by Sugarloaf, and holds more than 130 islands. Source: en.wikipedia.org/wiki/Guanabara_Bay",
-    "topic": "rio-de-janeiro"
-  },
-  {
-    "tier": 4,
-    "question": "Sugarloaf and Corcovado tower bald over Rio, cores of tough granite left standing after ages of weathering stripped away the softer rock that once buried them. Geologists have one word for a lone hard-rock mass exhumed and left rising this way. Which term names it?",
-    "answer": "bornhardt",
-    "choices": [
-      "bornhardt",
-      "nunatak",
-      "whaleback",
-      "yardang"
-    ],
-    "context": "Such isolated bald domes are called bornhardts -- a dome-shaped kind of 'inselberg' (German for 'island mountain'). Geologist Wilhelm Bornhardt coined the idea in 1900 for the rock-islands he saw rising from African plains: a core of especially resistant granite is left standing as the softer rock around it weathers away. Source: en.wikipedia.org/wiki/Inselberg; en.wikipedia.org/wiki/Sugarloaf_Mountain",
     "topic": "rio-de-janeiro"
   },
   {
@@ -22412,19 +22321,6 @@
     "topic": "shanghai-the-bund-facing-the-future"
   },
   {
-    "tier": 3,
-    "question": "British traders who built Shanghai's treaty-port waterfront gave it a name borrowed from a language spoken elsewhere in Britain's empire, a word meaning an embankment or dyke. The Chinese call the same shore Waitan, the outer bank. Which language gave the waterfront its name?",
-    "answer": "Hindustani, from India",
-    "choices": [
-      "Hindustani, from India",
-      "Malay, from Malaya",
-      "Tamil, from Ceylon",
-      "Swahili, from East Africa"
-    ],
-    "context": "'Bund' entered English from Hindustani, meaning an embankment or dyke, and traveled the British trade routes to Shanghai; the Chinese name, Waitan, means 'outer bank.' Foreigners built the waterfront after China's defeat opened the treaty ports. Source: en.wikipedia.org/wiki/The_Bund",
-    "topic": "shanghai-the-bund-facing-the-future"
-  },
-  {
     "tier": 4,
     "question": "A train with no wheels glides just above its guideway on magnets, then streaks along at 431 km/h (268 mph) — for seventeen years the fastest passenger train in regular service anywhere on Earth. This Shanghai maglev was built to whisk travellers to a single destination. Where does it race?",
     "answer": "Pudong International Airport",
@@ -22741,12 +22637,12 @@
     "question": "Rain that falls on the great glass dome of Jewel Changi Airport, in Singapore, pours down through a round opening in its roof, and terraced gardens of ferns and palms ring the falling water. The cascade is called the Rain Vortex. Which world record does it hold?",
     "answer": "the world's tallest indoor waterfall",
     "choices": [
-      "the world's largest indoor waterfall",
+      "the world's one and only indoor waterfall",
       "the world's tallest indoor waterfall",
       "the world's oldest indoor waterfall",
       "the world's most powerful indoor waterfall"
     ],
-    "context": "Jewel Changi Airport's Rain Vortex, opened in 2019, drops 40 m and can flow up to ~37,850 litres a minute. Its Guinness record is specifically for height — the world's tallest indoor waterfall — not for age, size, or power. By comparison, outdoor giants like Venezuela's Angel Falls (~980 m) tower far higher, but no indoor cascade falls farther than the Rain Vortex. Source: en.wikipedia.org/wiki/Jewel_Changi_Airport",
+    "context": "Jewel Changi Airport's Rain Vortex, opened in 2019, drops 40 m and can flow at up to about 37,850 litres a minute. Guinness lists it as the world's tallest indoor waterfall. Outdoor giants like Venezuela's Angel Falls (about 980 m) fall far farther, but no indoor cascade drops farther than the Rain Vortex. Source: en.wikipedia.org/wiki/Jewel_Changi_Airport",
     "topic": "singapore"
   },
   {
@@ -23232,7 +23128,7 @@
   },
   {
     "tier": 3,
-    "question": "One of the twentieth century's most famous rock singers began life in 1946 in an ordinary house in Stone Town's alleys -- born Farrokh Bulsara to Parsi parents, before his family left the island while he was still a boy. His birthplace is now a small museum on the visitor trail. Which rock star was born there?",
+    "question": "One of the twentieth century's most famous rock singers began life in 1946 in an ordinary house in Stone Town's alleys -- born Farrokh Bulsara to Parsi parents, before his family left the island for England when he was 17. His birthplace is now a small museum on the visitor trail. Which rock star was born there?",
     "answer": "Freddie Mercury",
     "choices": [
       "Freddie Mercury",
@@ -23487,7 +23383,7 @@
       "Only the mountain's priests may ascend above the clouds",
       "Fires are lit around its base but never its peak"
     ],
-    "context": "Mount Fuji (3,776 m / 12,389 ft), Japan's highest peak and an active volcano, is sacred in Shinto to the goddess Konohanasakuya-hime, with shrines at its summit. Rather than forbidding the top, it invites pilgrims up: an official season runs July to early September, and about 300,000 people climb each year as an act of devotion. Some sacred mountains you must not touch; others you climb to worship. Source: en.wikipedia.org/wiki/Mount_Fuji",
+    "context": "Mount Fuji (3,776 m / 12,389 ft), Japan's highest peak and an active volcano, is sacred in Shinto to the goddess Konohanasakuya-hime, with shrines at its summit. Rather than forbidding the top, it invites pilgrims up: an official season runs July to early September, and about 300,000 people climb each year as an act of devotion. Some sacred mountains must never be touched; others are climbed in worship. Source: en.wikipedia.org/wiki/Mount_Fuji",
     "topic": "summits-left-unclimbed-out-of-reverence"
   },
   {
@@ -23683,19 +23579,6 @@
       "tore down the official banner overhead"
     ],
     "context": "Before Premier Lang could cut the ribbon, de Groot galloped up and slashed it with his cavalry sword, declaring the bridge open 'in the name of the people.' He was arrested and the ribbon retied for the official ceremony. Source: en.wikipedia.org/wiki/Sydney_Harbour_Bridge",
-    "topic": "sydney"
-  },
-  {
-    "tier": 4,
-    "question": "Sydney's sea cliffs, the rocky Heads at its harbour mouth, and its grand old buildings all glow the same warm honey-gold, cut from the local stone the whole city rests on. Braided rivers laid down this sandstone grain by grain around 230 million years ago, when the very first dinosaurs were appearing. In which geological period did that happen?",
-    "answer": "the Triassic",
-    "choices": [
-      "the Triassic",
-      "the Jurassic",
-      "the Cretaceous",
-      "the Cambrian"
-    ],
-    "context": "Sydney rests on Hawkesbury sandstone, laid down by braided rivers ~230-240 million years ago in the Triassic. Quarried for the city's cliffs, harbor 'Heads,' and grand old buildings, its warm color earned nicknames like 'yellowblock' and 'yellow gold.' Source: en.wikipedia.org/wiki/Hawkesbury_sandstone",
     "topic": "sydney"
   },
   {
@@ -23920,14 +23803,14 @@
     "topic": "tallinn"
   },
   {
-    "tier": 4,
-    "question": "A pale limestone cliff-line, the Baltic Klint, runs for hundreds of kilometres along Estonia's coast, and Tallinn's upper town, Toompea, stands on its tip. A drop of 20 to 30 metres handed the town a ready-made wall of rock. What is the general geographic name for such a long, steep cliff-line?",
-    "answer": "an escarpment",
+    "tier": 3,
+    "question": "Tallinn's upper town, Toompea, stands on the tip of the Baltic Klint, a pale limestone cliff-line that runs for hundreds of kilometres along Estonia's coast and drops 20 to 30 metres to the lower town. Long before any stone wall went up, what did that drop give the rulers on the hill?",
+    "answer": "A natural wall of rock around the hilltop",
     "choices": [
-      "an escarpment",
-      "a plateau",
-      "a headland",
-      "a moraine"
+      "A natural wall of rock around the hilltop",
+      "A harbour deep enough for warships",
+      "A spring of fresh water inside the town",
+      "Soil rich enough to farm on the hill"
     ],
     "context": "Toompea's hill is part of the North Estonian Klint, a subsection of the Baltic Klint -- a pale limestone escarpment that runs for hundreds of km along the coast. 'Klint' is the local name for this kind of long cliff-line; geographers call it an escarpment (a long steep face where higher ground drops to lower). Rising 20-30 m above the lower town, it gave the upper town a natural rampart before a single wall was built. Source: Wikipedia, 'Toompea'.",
     "topic": "tallinn"
@@ -24025,19 +23908,6 @@
   },
   {
     "tier": 1,
-    "question": "A weaver in the Scottish Highlands builds a tartan's whole criss-cross design from a single small block of coloured stripes, repeated over and over across the cloth. Once that block is fixed, the whole pattern follows. What do weavers call the block?",
-    "answer": "the sett",
-    "choices": [
-      "the sett",
-      "the warp",
-      "the weft",
-      "the twill"
-    ],
-    "context": "The repeating block is the 'sett' — fix the sett and the whole tartan follows, since the same sequence of stripes just repeats across the cloth. Warp and weft are the lengthwise and crosswise threads; twill is the diagonal 2/2 weave tartan is woven in. Source: https://en.wikipedia.org/wiki/Tartan",
-    "topic": "tartan-and-the-kilt-highland-scotland"
-  },
-  {
-    "tier": 1,
     "question": "A Highland clansman caught on the open hills on a cold night needed no blanket: tradition pictures him unbelting the long tartan he had worn wrapped around him all day and rolling himself up in its folds to sleep. Which garment was it?",
     "answer": "the great kilt",
     "choices": [
@@ -24085,7 +23955,7 @@
       "branded on the cheek with hot iron",
       "flogged through the public streets"
     ],
-    "context": "A first offence under the Dress Act meant six months in prison; a second meant being 'transported to any of His Majesty's plantations beyond the seas' for seven years — exile for the crime of wearing your own clan's cloth. The ban ran 36 years before its repeal in 1782. Source: https://en.wikipedia.org/wiki/Dress_Act_1746",
+    "context": "A first offence under the Dress Act meant six months in prison; a second meant being 'transported to any of His Majesty's plantations beyond the seas' for seven years — exile for the crime of wearing Highland dress. The ban ran 36 years before its repeal in 1782. Source: https://en.wikipedia.org/wiki/Dress_Act_1746",
     "topic": "tartan-and-the-kilt-highland-scotland"
   },
   {
@@ -24311,15 +24181,15 @@
   },
   {
     "tier": 5,
-    "question": "Modern Mexico City stands where the Aztecs' island capital once rose from its lake. As the ground beneath it dries and squeezes together, parts of the city drop by as much as 50 centimetres a year, and the great Metropolitan Cathedral visibly leans. What is the geologist's single word for this slow sinking of the land?",
-    "answer": "subsidence",
+    "question": "Parts of Mexico City, built where the Aztecs' island capital of Tenochtitlan once rose from its lake, sink by as much as 50 centimetres a year, and the great Metropolitan Cathedral visibly leans. Geologists call this slow sinking subsidence. What mainly drives it?",
+    "answer": "wells pumping water out of the clay",
     "choices": [
-      "subsidence",
-      "erosion",
-      "liquefaction",
-      "subduction"
+      "wells pumping water out of the clay",
+      "limestone caves collapsing far below",
+      "a buried volcano slowly caving in",
+      "hot springs dissolving the deep rock"
     ],
-    "context": "Subsidence — the gradual sinking of ground — has lowered parts of Mexico City more than 10 metres in a century as the drained lakebed compacts. Erosion wears land away, liquefaction turns soil to slurry in an earthquake, and subduction is one tectonic plate sliding beneath another. (Tenochtitlan's peak population, an estimated 200,000–400,000, is a modern estimate, not a census.) Source: ScienceAlert, 'How fast Mexico City is sinking'; Grokipedia, 'Sinking cities'.",
+    "context": "Mexico City stands on the heavily saturated clay of the old bed of Lake Texcoco. Pumping groundwater out faster than rain refills it makes the clay compact, so the ground sinks: some areas have dropped as much as nine metres since the early 1900s, and parts of the city still sink almost 50 centimetres a year. Source: https://en.wikipedia.org/wiki/Mexico_City",
     "topic": "tenochtitlan"
   },
   {
@@ -24376,7 +24246,7 @@
   },
   {
     "tier": 3,
-    "question": "The Aztecs came upon the empty ruins of Teotihuacan, in the Valley of Mexico, centuries after the city fell. Grander than anything they knew, the ruins earned a lofty name in the Aztecs' own Nahuatl language. What does 'Teotihuacan' mean?",
+    "question": "The Aztecs came upon the empty ruins of Teotihuacan, in the Valley of Mexico, centuries after the city fell. Grander than anything they knew, the ruins earned a lofty name in the Aztecs' own Nahuatl language. What is 'Teotihuacan' usually taken to mean?",
     "answer": "birthplace of the gods",
     "choices": [
       "birthplace of the gods",
@@ -24394,7 +24264,7 @@
     "choices": [
       "it shimmered green",
       "it glinted red",
-      "it sparkled with gold",
+      "it glowed blue",
       "it looked like ice"
     ],
     "context": "The Sierra de Pachuca yielded a rare golden-green obsidian found almost nowhere else in Mesoamerica. Teotihuacan controlled its supply, working it into blades, mirrors and ornaments that traveled hundreds of miles in trade -- a signature of the city's reach. Source: Ponomarenko 2004; Tulane University research on Pachuca green obsidian.",
@@ -24610,19 +24480,6 @@
   },
   {
     "tier": 1,
-    "question": "The snowy peaks of the Alps curve for about 1,200 km across the heart of Europe, from tiny Monaco on the Mediterranean coast all the way east to Slovenia, and no single nation owns them. How many countries does the range touch in all?",
-    "answer": "eight",
-    "choices": [
-      "two",
-      "four",
-      "eight",
-      "fifteen"
-    ],
-    "context": "The Alps run in a crescent through eight nations — Monaco, France, Switzerland, Italy, Liechtenstein, Germany, Austria, and Slovenia — one great mountain wall shared across the center of Europe. Source: en.wikipedia.org/wiki/Alps",
-    "topic": "the-alps"
-  },
-  {
-    "tier": 1,
     "question": "One white dome of ice and rock rises above every other peak of the Alps, high on the border where France, Italy and Switzerland meet. At 4,808 metres it is the highest point in Western Europe. Which peak is this rooftop of the West?",
     "answer": "Mont Blanc",
     "choices": [
@@ -24688,7 +24545,7 @@
   },
   {
     "tier": 4,
-    "question": "Horace-Bénédict de Saussure of Geneva chased the summit of Western Europe's highest peak for years and even offered a cash prize, back in 1760, for the first person to reach it. In 1787, once the prize had been claimed, Saussure made the climb himself and spent four days on the mountain while porters hauled a heavy load up the ice. What did they haul to the summit?",
+    "question": "Horace-Bénédict de Saussure of Geneva chased the summit of Western Europe's highest peak for years and even offered a cash prize, back in 1760, for the first person to reach it. In 1787, once the prize had been claimed, Saussure made the climb himself, with porters hauling a heavy load up the ice. What did they haul to the summit?",
     "answer": "cases of scientific instruments",
     "choices": [
       "cases of scientific instruments",
@@ -24696,7 +24553,7 @@
       "a carved altar of white marble",
       "casks of strong Alpine wine"
     ],
-    "context": "Saussure reached the summit of Mont Blanc on 3 August 1787 with porters and instruments, spending days taking scientific measurements on top. Decades earlier, in 1760, he had funded the cash prize whose lure helped spur the first ascent in 1786. Source: en.wikipedia.org/wiki/Horace-Benedict_de_Saussure",
+    "context": "Saussure left Chamonix on 1 August 1787 and reached the summit of Mont Blanc on 3 August, with porters carrying barometers, hygrometers and other instruments, and spent hours taking scientific measurements on top. Decades earlier, in 1760, he had funded the cash prize whose lure helped spur the first ascent in 1786. Source: lindahall.org (Scientist of the Day, Horace-Benedict de Saussure); en.wikipedia.org/wiki/Horace-Benedict_de_Saussure",
     "topic": "the-alps"
   },
   {
@@ -24709,7 +24566,7 @@
       "about 5,300 years ago",
       "about 30,000 years ago"
     ],
-    "context": "Hikers Erika and Helmut Simon found the body in the Ötztal Alps; dating showed 'Ötzi' died about 5,300 years ago — the oldest known intact human mummy, preserved on ice since the Stone Age. He is now displayed in Bolzano, Italy. Source: iceman.it",
+    "context": "Hikers Erika and Helmut Simon found the body in the Ötztal Alps; dating showed 'Ötzi' died about 5,300 years ago — Europe's oldest known natural human mummy, kept in the ice since the Copper Age. He is now displayed in Bolzano, Italy. Source: iceman.it; https://en.wikipedia.org/wiki/%C3%96tzi",
     "topic": "the-alps"
   },
   {
@@ -24883,7 +24740,7 @@
   },
   {
     "tier": 2,
-    "question": "Andean peoples have held the cold, deep-blue water of Lake Titicaca sacred for thousands of years, high on the plateau at 3,810 metres, where Bolivia meets Peru. Across all of South America, what record does the lake hold?",
+    "question": "Andean peoples have held the cold, deep-blue water of Lake Titicaca sacred for thousands of years, high on the plateau at 3,812 metres, where Bolivia meets Peru. Across all of South America, what record does the lake hold?",
     "answer": "the largest lake on the continent",
     "choices": [
       "the largest lake on the continent",
@@ -24891,7 +24748,7 @@
       "the saltiest lake on the continent",
       "the youngest lake on the continent"
     ],
-    "context": "By surface area Titicaca is the biggest lake in South America, and it is also widely described as the highest large lake in the world that boats can still navigate, sitting some 3,810 m above the sea. Reed boats and even 19th-century steamships have crossed its waters. Source: en.wikipedia.org/wiki/Altiplano ('the largest lake in South America'); navigable-lake claim widely reported.",
+    "context": "By surface area Titicaca is the biggest lake in South America, and it is also widely described as the highest large lake in the world that boats can still navigate, sitting some 3,812 m above the sea. Reed boats and even 19th-century steamships have crossed its waters. Source: en.wikipedia.org/wiki/Lake_Titicaca; en.wikipedia.org/wiki/Altiplano ('the largest lake in South America').",
     "topic": "the-andes"
   },
   {
@@ -24909,7 +24766,7 @@
   },
   {
     "tier": 2,
-    "question": "On the lonely, lofty border between Chile and Argentina, the huge cone of Ojos del Salado rises above the desert among the fire-born peaks of the Andes, its crater under snow the year round. Among all the volcanoes on the planet, what record does this Andean giant hold?",
+    "question": "On the lonely, lofty border between Chile and Argentina, the huge cone of Ojos del Salado rises above the desert among the fire-born peaks of the Andes, its slopes nearly bare of snow in the bone-dry air. Among all the volcanoes on the planet, what record does this Andean giant hold?",
     "answer": "the highest volcano on Earth",
     "choices": [
       "the highest volcano on Earth",
