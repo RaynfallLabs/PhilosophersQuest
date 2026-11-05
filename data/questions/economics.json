@@ -12831,19 +12831,6 @@
     "topic": "medical-licensing-friedmans-capitalism-and-freedom-chapter-9"
   },
   {
-    "tier": 1,
-    "question": "Karl Marx leaned heavily, in his class analysis, on a method that treats groups, classes and societies as units acting in their own right. Economists of the Austrian school reject it. What is the method called?",
-    "answer": "Methodological holism",
-    "choices": [
-      "Methodological holism",
-      "Methodological individualism",
-      "Praxeology",
-      "Utilitarianism"
-    ],
-    "context": "Methodological holism (sometimes 'organicism') is the position Mises argued against. Marxist statements like 'the bourgeoisie exploits the proletariat' are the paradigm case. Source: grokipedia.com/page/Methodological_holism.",
-    "topic": "methodological-individualism"
-  },
-  {
     "tier": 2,
     "question": "Ludwig von Mises laid one rule about method at the foundation of his great treatise of 1949, and Murray Rothbard opened his own treatise of 1962 the same way. Where did that rule say the study of economics has to begin?",
     "answer": "With the choices of individual people acting on purpose",
@@ -12857,14 +12844,14 @@
     "topic": "methodological-individualism"
   },
   {
-    "tier": 2,
-    "question": "A news report says a country has decided something, and an Austrian-school economist stops to ask who, exactly, decided. From Carl Menger to Ludwig von Mises and Friedrich Hayek, the school holds that only persons act or choose, and that a nation or a class is only a short name for its people. What is that rule called?",
+    "tier": 1,
+    "question": "A news report says a country has decided something, and an Austrian-school economist stops at once to ask who, exactly, did the deciding. Which founding rule of his school makes him ask?",
     "answer": "Methodological individualism",
     "choices": [
       "Methodological individualism",
-      "Collective rationalism",
-      "Central planning theory",
-      "Social holism"
+      "Methodological holism",
+      "Structural functionalism",
+      "Popperian falsificationism"
     ],
     "context": "Karl Popper's The Open Society and Its Enemies (Routledge, 1945) uses the same phrase and endorses the same doctrine from outside the Austrian tradition. Source: grokipedia.com/page/The_Open_Society_and_Its_Enemies.",
     "topic": "methodological-individualism"
@@ -12909,19 +12896,6 @@
     "topic": "microstrategy-the-first-corporate-treasury-bet"
   },
   {
-    "tier": 1,
-    "question": "Michael Saylor shocked Wall Street in 2020 by turning company cash into Bitcoin at MicroStrategy. He was guarding, he said, against what a government's endless printing of new money does to each dollar a company holds in reserve. What is that problem usually called?",
-    "answer": "Inflation",
-    "choices": [
-      "Inflation",
-      "Deflation",
-      "Recession",
-      "Tariffs"
-    ],
-    "context": "Michael Saylor founded MicroStrategy in 1989 while at MIT. He stepped down as CEO in 2022 to become executive chairman but remained the public face of the Bitcoin strategy. Source: en.wikipedia.org/wiki/Michael_Saylor.",
-    "topic": "microstrategy-the-first-corporate-treasury-bet"
-  },
-  {
     "tier": 2,
     "question": "The dollar was a losing bet, Michael Saylor said in August 2020, as his software company, MicroStrategy, began holding Bitcoin in its place. He laid the blame on one pandemic-era policy of the Federal Reserve. Which Fed policy did Saylor blame?",
     "answer": "Trillion-dollar balance-sheet expansion",
@@ -12962,26 +12936,13 @@
   },
   {
     "tier": 4,
-    "question": "Michael Saylor chose in August 2020 to keep MicroStrategy's cash reserves in Bitcoin rather than dollars, to shield them from the debasement he expected after the Fed's pandemic printing, and other companies have since copied him. What is the practice called when a company parks its cash reserves in Bitcoin?",
-    "answer": "A Bitcoin treasury strategy",
-    "choices": [
-      "A Bitcoin treasury strategy",
-      "Bitcoin mining",
-      "Bitcoin arbitrage",
-      "Bitcoin day-trading"
-    ],
-    "context": "As of early 2026 MicroStrategy is the largest CORPORATE Bitcoin holder in the world by a wide margin; other categories (individual wallets, exchange custodians, sovereign holdings) are larger overall but no single company approaches MicroStrategy's public treasury holding. Source: bitcointreasuries.net.",
-    "topic": "microstrategy-the-first-corporate-treasury-bet"
-  },
-  {
-    "tier": 4,
-    "question": "Michael Saylor's MicroStrategy built its whole identity around Bitcoin: it put on a logo in Bitcoin orange in February 2025, and that August it took the legal name Strategy. Saylor tells shareholders the company does not hold Bitcoin as a trading chip. What kind of asset does he say it holds Bitcoin as?",
+    "question": "Michael Saylor's MicroStrategy built its whole identity around Bitcoin: it put on a logo in Bitcoin orange in February 2025, and that August it took the legal name Strategy. What does Saylor tell shareholders the company holds its Bitcoin as?",
     "answer": "A long-term store of value",
     "choices": [
       "A long-term store of value",
-      "A short-term trading chip",
-      "A daily payment currency only",
-      "A speculative penny stock"
+      "A short-term trading position",
+      "A payment currency for customers",
+      "A hedge to sell once inflation cools"
     ],
     "context": "The rebrand was announced February 5 2025 and the legal name change to Strategy Inc took effect August 11 2025; the MSTR ticker was retained. Source: cnbc.com/2025/02/05/bitcoin-treasury-pioneer-microstrategy-rebrands-with-a-new-name-strategy.html.",
     "topic": "microstrategy-the-first-corporate-treasury-bet"
@@ -13001,7 +12962,7 @@
   },
   {
     "tier": 5,
-    "question": "A company's chief executive tweeted early in 2021 that it had sunk about $1.5 billion into Bitcoin, following the path Michael Saylor's MicroStrategy had opened, and the price jumped. Within months the company had sold much of the stash. Which company made that quick retreat?",
+    "question": "A company disclosed in a regulatory filing early in 2021 that it had put about $1.5 billion into Bitcoin, following the path Michael Saylor's MicroStrategy had opened, and the price jumped. Within a year and a half it had sold off about three-quarters of the stash. Which company was it?",
     "answer": "Tesla",
     "choices": [
       "Tesla",
@@ -13009,20 +12970,20 @@
       "Marathon Digital",
       "Coinbase"
     ],
-    "context": "Tesla bought $1.5B in Bitcoin in January 2021 and sold roughly 75% of the holding within 18 months, taking the position mostly off its balance sheet. Block (formerly Square) and Marathon kept theirs. Source: sec.gov (Tesla 10-K filings 2021-22).",
+    "context": "Tesla disclosed the $1.5 billion purchase in its 10-K filing of February 8, 2021, sold about a tenth of the coins in the first quarter of 2021, and by the end of June 2022 had converted about 75 percent of its Bitcoin purchases into dollars. Block (formerly Square) and Marathon kept theirs. Source: theblock.co (Tesla sold $936 million in bitcoin in the second quarter, July 2022).",
     "topic": "microstrategy-the-first-corporate-treasury-bet"
   },
   {
     "tier": 1,
-    "question": "Rose Friedman, a trained economist herself, and her husband Milton carried one claim about spending to readers and television viewers in 1980: no one watches someone else's money as closely as his own. Letting people spend their own money, they argued, beats what?",
-    "answer": "Letting government experts spend it for them",
+    "question": "Rose Friedman, a trained economist herself, and her husband Milton carried one claim about spending to readers and television viewers in 1980: no one watches someone else's money as closely as his own. Whose spending did they set out to rein in?",
+    "answer": "Government officials spending taxpayers' money",
     "choices": [
-      "Letting government experts spend it for them",
-      "Letting big companies spend it for them",
-      "Nobody spending it at all",
-      "Letting neighbors spend it for them"
+      "Government officials spending taxpayers' money",
+      "Banks lending out their depositors' money",
+      "Charities spending their donors' money",
+      "Insurers investing their customers' premiums"
     ],
-    "context": "Rose Director Friedman was a Chicago-trained economist in her own right; in the mid-1930s she worked on the National Resources Committee's nationwide survey of consumer purchases. Reid and Brady were real consumption economists whose work fed into Milton's; Joan Robinson was the Cambridge economist. Source: Grokipedia, 'Rose Friedman' (https://grokipedia.com/page/Rose_Friedman).",
+    "context": "Free to Choose (1980) sorted spending into four kinds and held that spending other people's money on other people, as government does with taxes, is the least careful of all. Rose Director Friedman was a Chicago-trained economist in her own right. Source: Grokipedia, 'Free to Choose' (https://grokipedia.com/page/Free_to_Choose).",
     "topic": "milton-friedman-brooklyn-to-nobel-1976"
   },
   {
@@ -13041,14 +13002,14 @@
   {
     "tier": 2,
     "question": "General William Westmoreland, Army chief of staff, told a commission on ending the draft that he did not want to lead an army of mercenaries. Richard Nixon had set it up under Thomas Gates in 1969. Milton Friedman, a member, answered with one question. What did Friedman ask?",
-    "answer": "General, would you rather command an army of slaves?",
+    "answer": "Whether he would rather command an army of slaves",
     "choices": [
-      "General, would you rather command an army of slaves?",
-      "General, what would you pay to keep the men you now command?",
-      "General, what price does your own patriotism carry today?",
-      "General, who is paying for the army you command right now?"
+      "Whether he would rather command an army of slaves",
+      "What he would pay to keep the men he commanded",
+      "What price his own patriotism carried",
+      "Who was paying for the army he commanded"
     ],
-    "context": "Westmoreland objected that he did not like hearing patriotic volunteers called slaves; Friedman answered that he did not like hearing them called mercenaries -- 'If they are mercenaries, then I, sir, am a mercenary professor, and you, sir, are a mercenary general.' The commission's February 21 1970 report unanimously recommended ending conscription. Sources: Friedman and Friedman, Two Lucky People; Duke HOPE working paper, 'Slaves or Mercenaries'; Cato Institute centennial appreciation.",
+    "context": "Friedman's words were 'General, would you rather command an army of slaves?' Westmoreland objected that he did not like hearing patriotic volunteers called slaves; Friedman answered that he did not like hearing them called mercenaries -- 'If they are mercenaries, then I, sir, am a mercenary professor, and you, sir, are a mercenary general.' The commission's February 21 1970 report unanimously recommended ending conscription. Sources: Friedman and Friedman, Two Lucky People; Duke HOPE working paper, 'Slaves or Mercenaries'; Cato Institute centennial appreciation.",
     "topic": "milton-friedman-brooklyn-to-nobel-1976"
   },
   {
@@ -13087,20 +13048,20 @@
       "The cheque is funded by borrowing that households expect to repay in later taxes anyway",
       "The cheque means far more to a poor household than a rich one, so the average misleads"
     ],
-    "context": "This is the permanent income hypothesis doing policy work. Friedman's charge against Keynes was precise: Keynes had related consumption to measured income without separating transitory income from permanent income. The argument says the rebate will move spending less than its sponsors expect, not that the sponsors are acting in bad faith. The three other choices are also real arguments made about rebates -- the lag problem, Ricardian equivalence, and distributional averaging -- each pressed by real economists.",
+    "context": "This is the permanent income hypothesis doing policy work. Friedman's charge against Keynes was precise: Keynes had related consumption to measured income without separating transitory income from permanent income. The argument says the rebate will move spending less than its sponsors expect, not that the sponsors are acting in bad faith. Other real arguments about rebates, each pressed by real economists, include the lag problem, Ricardian equivalence and distributional averaging.",
     "topic": "milton-friedman-brooklyn-to-nobel-1976"
   },
   {
     "tier": 5,
     "question": "Ludwig von Mises and Milton Friedman agreed that central banks had made the century's worst slumps deeper, but neither trusted the other's method. Mises built on principles of human action and held that no statistic could overturn them. What did Friedman insist an economic claim must do instead?",
-    "answer": "Stand or fall on measured series -- money stock, prices, output -- that another researcher could check",
+    "answer": "Stand or fall on measured data series that another researcher could check",
     "choices": [
-      "Stand or fall on measured series -- money stock, prices, output -- that another researcher could check",
+      "Stand or fall on measured data series that another researcher could check",
       "Rest on a written constitution that binds the central bank before any downturn actually begins",
       "Begin from what a policymaker intends, since intentions determine which levers ever get pulled",
       "Be reducible to a single equation, since anything not written as one cannot be argued about clearly"
     ],
-    "context": "This is why Friedman must not be filed as an Austrian. He was a Chicago-school monetarist and a methodological empiricist: A Monetary History is a hundred years of data, not a chain of deductions. Austrians answer that human action is not laboratory chemistry and that the data themselves only mean anything inside a theory -- a live argument, not a settled one. Choice two is closer to James Buchanan's constitutional political economy. Sources: Grokipedia, 'Monetarism' and 'Chicago school of economics'.",
+    "context": "This is why Friedman must not be filed as an Austrian. He was a Chicago-school monetarist and a methodological empiricist: A Monetary History is a hundred years of data, not a chain of deductions. Austrians answer that human action is not laboratory chemistry and that the data themselves only mean anything inside a theory -- a live argument, not a settled one. Sources: Grokipedia, 'Monetarism' and 'Chicago school of economics'.",
     "topic": "milton-friedman-brooklyn-to-nobel-1976"
   },
   {
@@ -13118,7 +13079,7 @@
   },
   {
     "tier": 1,
-    "question": "Milton Friedman wrote a Newsweek column in 1966 and, with his wife Rose, the best seller Free to Choose in 1980. In both he put in one blunt line what a minimum wage law, rightly described, orders employers to do. Which line did he use?",
+    "question": "Milton Friedman put it in one blunt line on television and again, with his wife Rose, in their 1980 best seller Free to Choose: what a minimum wage law, rightly described, orders employers to do. Which line did he use?",
     "answer": "A law saying employers must discriminate against people who have low skills",
     "choices": [
       "A law saying employers must discriminate against people who have low skills",
@@ -13126,7 +13087,7 @@
       "A law saying government fixes the price of labor for all industries",
       "A law saying workers cannot bargain individually for wages"
     ],
-    "context": "Friedman's exact 1966 Newsweek line, quoted again in Free to Choose (1980): the minimum wage forbids hiring low-skill workers at a wage that would clear the market. Source: fee.org/articles/milton-friedman-on-the-minimum-wage.",
+    "context": "Friedman said it in a television interview, and Free to Choose (1980) says the law requires employers to discriminate against persons with low skills. His 1966 Newsweek column had already argued that the floor shuts the least skilled, black teenagers above all, out of work. Source: cafehayek.com/2013/11/quotation-of-the-day-800.html.",
     "topic": "minimum-wage-the-teenager-whose-job-is-priced-out"
   },
   {
@@ -13143,19 +13104,6 @@
     "topic": "minimum-wage-the-teenager-whose-job-is-priced-out"
   },
   {
-    "tier": 2,
-    "question": "A fast-food owner brought in machines to do work his cashiers had done, once Seattle's $15 minimum wage took full effect for the city's big employers; a machine draws no wage, and the cashiers had come to cost more. Economists use cases like his as a clean textbook example. What is that move called?",
-    "answer": "Capital-for-labor substitution",
-    "choices": [
-      "Capital-for-labor substitution",
-      "Labor-supply elasticity",
-      "Income-effect dominance",
-      "Cross-price complementarity"
-    ],
-    "context": "Employers substitute capital equipment (kiosks) for labor (cashiers) once the relative price of labor rises above the price of the capital that can replace it. This is standard price-theory in every textbook including Sowell's Basic Economics. Source: en.wikipedia.org/wiki/Marginal_rate_of_technical_substitution.",
-    "topic": "minimum-wage-the-teenager-whose-job-is-priced-out"
-  },
-  {
     "tier": 3,
     "question": "David Card and Alan Krueger phoned managers and counted staff on both sides of a state line for a famous paper of 1994. One state had lifted its minimum wage shortly before; the other had not. Jobs, they reported, had barely fallen in the short run on the side that raised it. Which two states did the paper make famous?",
     "answer": "New Jersey vs Pennsylvania fast-food",
@@ -13165,7 +13113,7 @@
       "New York vs Connecticut retail",
       "Texas vs Oklahoma construction"
     ],
-    "context": "Card & Krueger 1994 became the standard mainstream citation for 'minimum wage does not cost jobs'; the paper is the reason Card later shared the 2021 Nobel Memorial Prize. Source: American Economic Review 84(4), 1994.",
+    "context": "Card & Krueger 1994 became the standard mainstream citation for 'minimum wage does not cost jobs', and empirical work of this kind won Card a share of the 2021 Nobel Memorial Prize. Source: American Economic Review 84(4), 1994.",
     "topic": "minimum-wage-the-teenager-whose-job-is-priced-out"
   },
   {
@@ -13183,54 +13131,41 @@
   },
   {
     "tier": 4,
-    "question": "Thomas Sowell asks in his textbook Basic Economics who truly pays when a law lifts the lowest wage an employer may offer. His answer passes over the people most readers would name first. Where does he say the real cost of a minimum wage lands?",
-    "answer": "The chronically-unemployed teenager",
-    "choices": [
-      "The chronically-unemployed teenager",
-      "The rising cost of restaurant meals",
-      "The shrinking size of retail chains",
-      "The falling profit margin of employers"
-    ],
-    "context": "Sowell's summary: there is no employer who 'refuses to pay a decent wage'; there are only employers who value particular workers below the floor and hire NO ONE at that skill. The unemployed teenager is the price. Source: Sowell, Basic Economics, 5th ed., chapter on price floors.",
-    "topic": "minimum-wage-the-teenager-whose-job-is-priced-out"
-  },
-  {
-    "tier": 4,
     "question": "Friedrich Hayek argued that no distant planner can gather the knowledge scattered across a whole country, and the minimum wage's critics turn his argument on the wage floor. One floor, set far away, covers every worker in every town. What does the owner of the shop know that the lawmakers do not?",
-    "answer": "What each specific worker is actually worth at that specific job in that specific town",
+    "answer": "What each worker is worth in that job and town",
     "choices": [
-      "What each specific worker is actually worth at that specific job in that specific town",
-      "The total number of workers across the entire country",
-      "The average wage paid across every US industry",
-      "The interest rate set by the central bank"
+      "What each worker is worth in that job and town",
+      "How many workers the whole country employs",
+      "What the average wage is across every industry",
+      "Where the central bank will set interest rates"
     ],
     "context": "Hayek's 1945 knowledge-in-society argument applied to labor: the employer's local knowledge of a worker's productivity in a specific job is not available to a legislator setting a single national floor. This is the Hayekian bite of the minimum-wage debate. Source: fee.org/articles/hayek-and-the-minimum-wage.",
     "topic": "minimum-wage-the-teenager-whose-job-is-priced-out"
   },
   {
     "tier": 5,
-    "question": "Walter Williams anchored the minimum-wage debate on one number in his 2011 book Race and Economics. He looked back to the 1950s, when the federal wage floor, adjusted for prices, was low. About what was the teenage unemployment rate in America then?",
-    "answer": "About 10 percent",
+    "question": "Walter Williams set two eras side by side in his 2011 book Race and Economics: the 1950s, when the federal wage floor was low once prices are counted, and the decades after the floor was raised again and again from the 1970s. What did he find had happened to teenage unemployment?",
+    "answer": "It rose from about 10 percent to between 15 and 20, higher still for black teens",
     "choices": [
-      "About 10 percent",
-      "About 25 percent",
-      "About 40 percent",
-      "About 55 percent"
+      "It rose from about 10 percent to between 15 and 20, higher still for black teens",
+      "It held near 10 percent in both eras, for black and white teens alike",
+      "It fell from about 20 percent to 10, as higher pay drew teens into work",
+      "It rose from about 10 percent to 12, with no gap between black and white"
     ],
-    "context": "US teenage unemployment averaged around 10% in the 1950s at a low real federal minimum wage; the rate averaged 15-20% after repeated 1970s+ increases, with especially high rates in black-teen cohorts (per Williams, Race and Economics 2011). Source: bls.gov historical LFS data.",
+    "context": "Williams's account: US teenage unemployment averaged around 10 percent in the 1950s, when the real federal minimum was low, and 15 to 20 percent after the repeated increases from the 1970s on, with far higher rates among black teenagers. Sources: Walter E. Williams, Race and Economics (Hoover Institution Press, 2011); bls.gov historical labor-force data.",
     "topic": "minimum-wage-the-teenager-whose-job-is-priced-out"
   },
   {
     "tier": 1,
-    "question": "A Czech programmer known online as Slush set up a new service in November 2010 that let small Bitcoin miners join their machines' power and divide each prize. Each got a small, steady trickle instead of a rare jackpot. What is such a setup called?",
-    "answer": "A mining pool",
+    "question": "Slush, a Czech programmer, opened a service in November 2010 that let small Bitcoin miners combine their machines' power and split every prize they won. Which older arrangement works the same way?",
+    "answer": "A lottery syndicate splitting its winnings",
     "choices": [
-      "A mining pool",
-      "A crypto exchange",
-      "A hardware wallet",
-      "A stablecoin issuer"
+      "A lottery syndicate splitting its winnings",
+      "A cartel fixing one price for its members",
+      "A bank lending out its savers' deposits",
+      "A union bargaining for all its workers"
     ],
-    "context": "The service was originally called Slush Pool and is now Braiins Pool. It solved the variance problem: as the network grew, a solo miner might wait years between block wins even with steady hashing effort. Source: grokipedia.com/page/Braiins_Pool.",
+    "context": "The service was first called Slush Pool and runs today as Braiins Pool. Like a syndicate's members, each miner gives up his slim chance of a whole prize alone for a steady share of the group's wins. Source: grokipedia.com/page/Braiins_Pool.",
     "topic": "mining-pools-from-solo-miners-to-global-cooperatives"
   },
   {
@@ -13252,22 +13187,22 @@
     "answer": "Alone he may go months or years without ever winning a block reward",
     "choices": [
       "Alone he may go months or years without ever winning a block reward",
-      "Solo mining is banned by Bitcoin's code",
-      "Pools give miners access to secret shortcuts",
-      "Solo miners must pay a fee to the government"
+      "A pool's blocks carry a larger prize than any solo miner's",
+      "The pool's operator pays the electricity bill for his machines",
+      "Pooled machines solve each puzzle with far less work"
     ],
-    "context": "Foundry USA rose to prominence after the 2021 China mining exodus. Other leaders include Antpool (Bitmain-affiliated), F2Pool (originally China, now Singapore), ViaBTC, and Binance Pool. Market shares rotate. Source: grokipedia.com/page/Mining_pool.",
+    "context": "With one block found about every ten minutes across the network, a miner holding a sliver of the total hash power can wait months or years between wins; a pool smooths that into small regular payouts, minus a fee. Foundry USA, Antpool, F2Pool and ViaBTC are among today's largest pools, and their shares rotate. Source: grokipedia.com/page/Mining_pool.",
     "topic": "mining-pools-from-solo-miners-to-global-cooperatives"
   },
   {
     "tier": 4,
     "question": "The operators of GHash.io, one of Bitcoin's big pools, watched it pass half of all the hashing power on the network for a short time in the summer of 2014. A pool that big could in theory rewrite recent blocks and spend coins twice over, yet neither a court nor a regulator stepped in. What happened next?",
-    "answer": "Individual miners voluntarily left the pool, and the pool operators publicly asked users to switch away",
+    "answer": "Miners pulled their machines out, and its operators urged users to leave",
     "choices": [
-      "Individual miners voluntarily left the pool, and the pool operators publicly asked users to switch away",
-      "The Bitcoin Foundation banned GHash.io from participating in the network",
-      "The US Securities and Exchange Commission ordered GHash.io to close",
-      "GHash.io launched a coordinated double-spend attack against Coinbase"
+      "Miners pulled their machines out, and its operators urged users to leave",
+      "Bitcoin's developers rewrote the code to cap any one pool's share",
+      "The Bitcoin Foundation expelled GHash.io from the network",
+      "Rival pools bought GHash.io out and broke up its machines"
     ],
     "context": "The incident demonstrated that a mining pool's power depends on user trust. Pool operators knew that keeping >51 percent would undermine the network their own hardware depended on, so they chose to shrink. Source: grokipedia.com/page/51%25_attack.",
     "topic": "mining-pools-from-solo-miners-to-global-cooperatives"
@@ -13275,12 +13210,12 @@
   {
     "tier": 5,
     "question": "A high-school student worries that the GHash.io scare of 2014 shows Bitcoin is fragile, now that a handful of big pools direct the bulk of the world's mining. An economist trained in public choice answers that the episode itself shows why the danger has limits. What is his reasoning move?",
-    "answer": "Pool operators' economic value depends on the network's honesty, so they have private incentive to avoid the attack",
+    "answer": "An attack would ruin the value of the operators' own machines and fees",
     "choices": [
-      "Pool operators' economic value depends on the network's honesty, so they have private incentive to avoid the attack",
-      "The US Federal Reserve directly regulates pool concentration and would prevent an attack",
-      "The 51-percent scenario is mathematically impossible because of Bitcoin's block reward",
-      "Miners are legally required by international treaty to leave any pool above 40 percent"
+      "An attack would ruin the value of the operators' own machines and fees",
+      "Regulators in each pool's home country would shut any pool past half",
+      "The next halving would cut the reward and starve an oversized pool",
+      "Rival pools would join forces and outvote any attacker's blocks"
     ],
     "context": "This is incentive recognition -- the kind of analysis Buchanan and Tullock applied to political actors. Pool operators are not benevolent; they are self-interested actors whose interests align with network security. Source: grokipedia.com/page/Mining_pool.",
     "topic": "mining-pools-from-solo-miners-to-global-cooperatives"
@@ -13399,7 +13334,7 @@
       "Bureaucracy and the Free Market",
       "The Anti-Capitalistic Mentality"
     ],
-    "context": "The Commercial and Financial Chronicle first printed the address on May 4, 1950. The Libertarian Press then made it the opening essay of Planning for Freedom in 1952, and it has been the single most-quoted Mises text on the interventionist ratchet ever since. Source: Mises Institute, 'Middle-of-the-Road Policy Leads to Socialism'.",
+    "context": "The Commercial and Financial Chronicle first printed the address on May 4, 1950, and the Libertarian Press collected it in Planning for Freedom in 1952. It remains one of the most quoted short statements of his case against the interventionist ratchet. Source: Mises Institute, 'Middle-of-the-Road Policy Leads to Socialism'.",
     "topic": "mises-s-critique-of-interventionism"
   },
   {
@@ -13412,7 +13347,7 @@
       "Coal",
       "Rental housing"
     ],
-    "context": "Mises walked from a milk-price ceiling to feed prices, then to cattle prices, then to farm-labor wages, showing that every remedy for the previous shortage required an additional decree until the state was directing every price in the economy. He picked milk because a New York audience in 1950 remembered wartime dairy controls vividly. Source: FEE, 'Middle-of-the-Road Policy Leads to Socialism'.",
+    "context": "Mises walked from a milk-price ceiling to caps on what goes into milk, then on what goes into those, until the government was fixing, step by step, the prices of all consumers' goods and of all factors of production. Source: FEE, 'Middle-of-the-Road Policy Leads to Socialism'.",
     "topic": "mises-s-critique-of-interventionism"
   },
   {
@@ -13447,11 +13382,11 @@
     "answer": "Germany's progression to the 1917 Hindenburg Plan",
     "choices": [
       "Germany's progression to the 1917 Hindenburg Plan",
-      "Britain's slide into the 1918 Defence of the Realm Act",
+      "Britain's slide under the 1914 Defence of the Realm Act",
       "France's move to the 1916 Loucheur decrees",
       "Austria-Hungary's Kriegswirtschaft of 1915"
     ],
-    "context": "The Hindenburg Programme of 1916-17, formally directed by General Erich Ludendorff, subordinated the whole German economy to munitions production. Mises's point was that Germany did not vote for the Hindenburg Plan in 1914; each intervening step looked reasonable given the last one, and the accumulated total was total control. Source: Mises Institute, 'Middle-of-the-Road Policy Leads to Socialism'.",
+    "context": "The Hindenburg Programme of 1916-17, driven by General Erich Ludendorff, subordinated the whole German economy to munitions production. Mises's point was that Germany did not vote for the Hindenburg Plan in 1914; each intervening step looked reasonable given the last one, and the accumulated total was total control. Source: Mises Institute, 'Middle-of-the-Road Policy Leads to Socialism'.",
     "topic": "mises-s-critique-of-interventionism"
   },
   {
@@ -13464,7 +13399,7 @@
       "Spiral",
       "Escalator"
     ],
-    "context": "Higgs's Crisis and Leviathan: Critical Episodes in the Growth of American Government (Oxford, 1987) surveys WWI, the Great Depression, WWII, the Cold War and the post-1960s regulatory expansion, showing that the same governments that grew fastest in the emergency also grew fastest in the calm that followed. The historical documentation is the American case for Mises's 1929 prediction. Source: Wikipedia, 'Crisis and Leviathan'.",
+    "context": "Higgs's Crisis and Leviathan: Critical Episodes in the Growth of American Government (Oxford, 1987) surveys the First World War, the Great Depression, the Second World War and the Cold War, showing that after each emergency the government shrank back only partway, so each crisis left it larger than before. Source: Wikipedia, 'Crisis and Leviathan'.",
     "topic": "mises-s-critique-of-interventionism"
   },
   {
@@ -13478,19 +13413,6 @@
       "Rationing consumer purchases to draw down accumulated stocks"
     ],
     "context": "The Agricultural Adjustment Act of 1933 first paid farmers to plow crops under; postwar set-aside acreage programs and the 1983 Payment-in-Kind program paid producers in surplus grain not to grow more of it. Ninety years later the policy is still running -- exactly the ratchet Mises described in 1929: the intervention that fixed the last intervention's malfunction generates the next malfunction to fix. Source: Mises Institute, 'Farm Bill Folly'.",
-    "topic": "mises-s-critique-of-interventionism"
-  },
-  {
-    "tier": 4,
-    "question": "Ludwig von Mises made his positive case in a book of 1927, two years before his German book of 1929 on the mixed economy. He defended the tradition that runs from John Locke through Adam Smith to Thomas Jefferson. What is that tradition called?",
-    "answer": "Classical liberalism",
-    "choices": [
-      "Classical liberalism",
-      "Progressive statism",
-      "Democratic socialism",
-      "Mercantilism"
-    ],
-    "context": "Liberalismus (1927) argued the political and moral case for a market economy; Kritik des Interventionismus (1929) collected the economic essays showing that the halfway house between that market economy and full socialism was inherently unstable. Together they form the pair Mises's students, Hayek and Rothbard among them, later called the interventionist trilogy with Socialism (1922). Source: David M Hart, 'Ludwig von Mises: Interventionismus (1926)'.",
     "topic": "mises-s-critique-of-interventionism"
   },
   {
@@ -13577,24 +13499,11 @@
     "answer": "Prices go up and people's savings lose value",
     "choices": [
       "Prices go up and people's savings lose value",
-      "Factories run out of workers to hire",
-      "Trees stop growing in the country",
-      "Weather gets much colder"
+      "Everyone grows richer as more money circulates",
+      "Prices fall as shops compete for the new cash",
+      "Factories run out of workers to hire"
     ],
     "context": "Mises accepted a professorship at the Graduate Institute of International Studies in Geneva, Switzerland in 1934. Source: grokipedia.com/page/Ludwig_von_Mises.",
-    "topic": "misess-emigration-vienna-to-geneva-to-new-york"
-  },
-  {
-    "tier": 1,
-    "question": "Ludwig von Mises left Geneva in the summer of 1940 and crossed a continent at war to reach New York, where he settled for the rest of his life. Which economic system did he defend there, as he had in Vienna and Geneva?",
-    "answer": "Free-market capitalism",
-    "choices": [
-      "Free-market capitalism",
-      "Central government planning",
-      "Fascism",
-      "Communism"
-    ],
-    "context": "The Mises escape route ran Geneva - occupied France by train - Lisbon by ship - New York on August 2, 1940. Source: grokipedia.com/page/Ludwig_von_Mises.",
     "topic": "misess-emigration-vienna-to-geneva-to-new-york"
   },
   {
@@ -13607,20 +13516,20 @@
       "Warsaw",
       "Leningrad"
     ],
-    "context": "The Mises papers sat in a Moscow archive for 50 years and were returned to the Mises Institute in 1996. Source: mises.org/library/mises-lost-papers.",
+    "context": "The papers sat in a secret Moscow archive for about fifty years. In October 1996 the economist Richard Ebeling, then teaching at Hillsdale College, reached them and brought back photocopies of almost the whole collection, some ten thousand pages by his own count, for Hillsdale. Source: fee.org (Ebeling, 'Mission to Moscow: The Mystery of the Lost Papers of Ludwig von Mises').",
     "topic": "misess-emigration-vienna-to-geneva-to-new-york"
   },
   {
     "tier": 3,
-    "question": "Ludwig von Mises found safety in America in 1940, but not a job: not one major university offered him a post, and other Austrian exiles of that decade met the same cold reception. Why did the leading universities keep the Austrians at arm's length?",
-    "answer": "Their views clashed with the mainstream Keynesian consensus of the day",
+    "question": "Ludwig von Mises found safety in America in 1940, but not a job: no major American university offered him a paid post, and he had to start over in New York with almost nothing. Why, in most accounts, did the leading economics departments keep him at arm's length?",
+    "answer": "His views clashed with the Keynesian consensus of the day",
     "choices": [
-      "Their views clashed with the mainstream Keynesian consensus of the day",
-      "Austrian economists refused to speak English",
-      "US law banned foreign professors before 1950",
-      "They demanded salaries higher than any US professor"
+      "His views clashed with the Keynesian consensus of the day",
+      "He would lecture only in German, never in English",
+      "He refused any post outside New York City",
+      "He asked for a salary above any American professor's"
     ],
-    "context": "Mises's NYU seminar ran from 1945 to 1969; NYU carried his Visiting Professor title but paid nothing. Source: grokipedia.com/page/Ludwig_von_Mises.",
+    "context": "Mises held an unpaid visiting professorship at NYU from 1945 until 1969 and ran his seminar there; private backers, the businessman Lawrence Fertig among them, paid his salary. Source: grokipedia.com/page/Ludwig_von_Mises.",
     "topic": "misess-emigration-vienna-to-geneva-to-new-york"
   },
   {
@@ -13644,7 +13553,7 @@
       "Printing extra money causes inflation, which hurts savers and the poor",
       "Printing extra money makes exports too cheap for foreign buyers",
       "Printing extra money forces banks to raise interest rates too much",
-      "Printing extra money confuses foreign investors who prefer coins"
+      "Printing extra money pushes the dollar's value up abroad"
     ],
     "context": "Kelton's The Deficit Myth: Modern Monetary Theory and the Birth of the People's Economy (PublicAffairs, 2020) reached the New York Times bestseller list. Its argument was that the traditional view of federal deficits as a constraint is a myth. Source: Grokipedia 'The Deficit Myth' (2026-09-05).",
     "topic": "mmt-rise-and-fall-stephanie-keltons-deficit-myth"
@@ -13656,7 +13565,7 @@
     "choices": [
       "Inflation and real resources",
       "Foreign lender willingness and gold reserves",
-      "Tax revenue and treasury solvency",
+      "Bond markets and credit ratings",
       "Interest rates and unemployment"
     ],
     "context": "MMT says deficit financing is fine as long as excess capacity exists; taxes are for controlling inflation and redistributing resources, not for 'paying for' spending. The framing sounds new but is a modern repackaging of an old inflationist position. Source: Kelton, The Deficit Myth (2020).",
@@ -13664,7 +13573,7 @@
   },
   {
     "tier": 3,
-    "question": "Larry Summers, a former Treasury secretary and a Democrat, went after Modern Monetary Theory in 2019 with an old insult. George H. W. Bush had thrown it at Ronald Reagan's tax cuts in the 1980 campaign. Which nickname did Summers reuse for the theory?",
+    "question": "Larry Summers, a former Treasury secretary and a Democrat, went after Modern Monetary Theory in 2019 by likening it to an old target. George H. W. Bush had thrown an insult at Ronald Reagan's tax cuts in the 1980 campaign. Which insult did Summers call back?",
     "answer": "Voodoo economics",
     "choices": [
       "Voodoo economics",
@@ -13672,20 +13581,20 @@
       "Zombie economics",
       "Snake-oil economics"
     ],
-    "context": "Larry Summers's February 4 2019 Washington Post op-ed called MMT 'the new voodoo economics' -- echoing the George H.W. Bush attack on Reagan supply-side economics. Summers was a Democratic economist speaking against a left-favored school. Source: Washington Post (February 4 2019).",
+    "context": "Summers's Washington Post op-ed of March 4, 2019, 'The left's embrace of modern monetary theory is a recipe for disaster', set MMT beside the supply-side economics George H. W. Bush had mocked as voodoo economics in 1980, and headlines reported it as Summers calling MMT voodoo economics. Summers was a Democratic economist speaking against a left-favored school. Sources: hks.harvard.edu (op-ed listing); bloomberg.com (Tom Orlik, March 11, 2019).",
     "topic": "mmt-rise-and-fall-stephanie-keltons-deficit-myth"
   },
   {
     "tier": 3,
     "question": "Robert Murphy, an Austrian-school economist, took aim at one claim of Modern Monetary Theory (MMT): that new money is safe while a country has unused capacity, with idle workers, empty factories and machines standing still. What objection did he and other Austrians press?",
-    "answer": "There is no such thing at that scale; prices rise instead of production",
+    "answer": "No idle pool exists economy-wide, so new money bids prices up",
     "choices": [
-      "There is no such thing at that scale; prices rise instead of production",
-      "Unused capacity only exists during wars",
-      "Capacity is measured only in barrels of oil",
-      "Only communist countries ever have unused capacity"
+      "No idle pool exists economy-wide, so new money bids prices up",
+      "Idle capacity exists, but new money reaches it only after long lags",
+      "Unused capacity is too small to matter, so new money mostly gets saved",
+      "New money flows abroad first, so it lifts import prices, not output"
     ],
-    "context": "The Austrian point (Bob Murphy, Peter Schiff, Steve Hanke): the notion of aggregate unused capacity is a Keynesian fiction. In reality, resources are always in some use and monetary expansion always bids competing uses higher. Prices adjust to absorb the excess. Source: Murphy, Contra Krugman (podcast archive 2019-2021).",
+    "context": "The Austrian point (Bob Murphy, Peter Schiff): an economy-wide pool of unused capacity is a Keynesian fiction. Resources are always in some use, so monetary expansion bids competing uses higher, and prices adjust to absorb the excess. Source: Murphy, Contra Krugman (podcast archive 2019-2021).",
     "topic": "mmt-rise-and-fall-stephanie-keltons-deficit-myth"
   },
   {
@@ -13694,9 +13603,9 @@
     "answer": "The worst US price inflation in about forty years",
     "choices": [
       "The worst US price inflation in about forty years",
-      "Prices dropped as workers spent more freely",
-      "Nothing at all — the money vanished into savings",
-      "The dollar became the strongest currency in world history"
+      "The worst US price inflation since the Civil War",
+      "A rise that never passed 4 percent a year",
+      "A rise smaller than the one of the late 1980s"
     ],
     "context": "The American Rescue Plan Act, signed March 11 2021 at $1.9 trillion, was an MMT-adjacent bet that fiscal stimulus of that size would not overheat prices. Summers had warned publicly against it in February 2021. Source: Grokipedia 'American Rescue Plan Act of 2021' (2026-09-05).",
     "topic": "mmt-rise-and-fall-stephanie-keltons-deficit-myth"
@@ -13717,38 +13626,38 @@
   {
     "tier": 5,
     "question": "Critics of Modern Monetary Theory (MMT) looked back on the price surge of 2021 and 2022, which followed the theory's rise in the late 2010s, and drew a broad lesson about how schools of economics rise and fall. What lesson did they draw?",
-    "answer": "A live test in the real economy can disprove a school of thought faster than years of debate",
+    "answer": "Schools fall fastest when a live test in the real economy goes against them",
     "choices": [
-      "A live test in the real economy can disprove a school of thought faster than years of debate",
-      "Schools of thought always survive real-world setbacks",
-      "Being popular with politicians makes a theory correct",
-      "Academic economists always predict inflation correctly"
+      "Schools fall fastest when a live test in the real economy goes against them",
+      "Schools fall fastest when a rival wins the argument in the journals",
+      "Schools fall fastest when a new generation of professors replaces the old",
+      "Schools fall fastest when they lose the backing of a major party"
     ],
-    "context": "Twelve months of 8-9% inflation did what a decade of Austrian critique could not. The 2021-22 experience settled the empirical question and drained the political oxygen from the movement. Source: Grokipedia 'Modern Monetary Theory' (2026-09-05).",
+    "context": "In the critics' telling, a year of inflation above 7 percent did what a decade of Austrian critique could not: it settled the empirical question and drained the political oxygen from the movement. Source: Grokipedia 'Modern Monetary Theory' (2026-09-05).",
     "topic": "mmt-rise-and-fall-stephanie-keltons-deficit-myth"
   },
   {
     "tier": 3,
     "question": "Warren Mosler, who traded bonds before he ran a hedge fund, argued in a pamphlet of the 1990s, Soft Currency Economics, that a government which prints its own currency can never run out of it. Mainstream economists accepted the narrow claim but threw out the sweeping version. Why did they throw it out?",
-    "answer": "A government can always print more money, but each new bill buys less — inflation is the limit",
+    "answer": "Each new bill buys less, so inflation is the real limit",
     "choices": [
-      "A government can always print more money, but each new bill buys less — inflation is the limit",
-      "Governments actually do run out of paper to print money on",
-      "Only foreign countries are allowed to print more currency",
-      "Currency traders are never allowed to write about money"
+      "Each new bill buys less, so inflation is the real limit",
+      "Each new bill needs gold behind it, so gold is the real limit",
+      "Each new bill must be taxed back, so taxes are the real limit",
+      "Each new bill cheapens exports, so trade is the real limit"
     ],
-    "context": "Warren Mosler's 1996 Soft Currency Economics is the founding text. The term 'MMT' itself was popularized by Australian economist Bill Mitchell at the University of Newcastle. Source: Grokipedia 'Warren Mosler' (2026-09-05).",
+    "context": "Warren Mosler's Soft Currency Economics, from the 1990s, is the founding text. The term 'MMT' itself was popularized by the Australian economist Bill Mitchell at the University of Newcastle. Source: Grokipedia 'Warren Mosler' (2026-09-05).",
     "topic": "mmt-rise-and-fall-stephanie-keltons-deficit-myth"
   },
   {
     "tier": 1,
     "question": "Mt Gox's customers learned in February 2014 that about 850,000 of the bitcoins they had left in its accounts were gone. The Tokyo exchange had carried the bulk of the world's Bitcoin trading. What blunt lesson did Bitcoiners draw from the loss?",
-    "answer": "If you don't hold your own coins yourself, someone else can lose them",
+    "answer": "Coins left with someone else are only as safe as that someone",
     "choices": [
-      "If you don't hold your own coins yourself, someone else can lose them",
-      "Bitcoin itself was broken and had to be rebuilt",
-      "Only rich people should be allowed to buy Bitcoin",
-      "Trading websites always pay everyone back after a crash"
+      "Coins left with someone else are only as safe as that someone",
+      "Bitcoin's own code was broken and had to be rewritten",
+      "Exchanges must hold a government license to keep coins",
+      "Big exchanges are safest, since their size proves honesty"
     ],
     "context": "Mt Gox at its 2013 peak handled roughly 70-80 percent of global Bitcoin trading volume. The bankruptcy set the world's expectations of what could go wrong with a centralized custodian. Source: grokipedia.com/page/Mt._Gox.",
     "topic": "mt-gox-the-first-great-custody-catastrophe"
@@ -13768,54 +13677,41 @@
   },
   {
     "tier": 3,
-    "question": "A Mt Gox customer tried to withdraw his bitcoins one day in 2014 and found every withdrawal frozen, blamed on technical problems. The site went dark on February 24; a bankruptcy filing in Tokyo followed on the 28th. On which day did the freeze begin?",
-    "answer": "February 7, 2014",
+    "question": "Mt Gox's customers had lost about 850,000 bitcoins when the Tokyo exchange collapsed in February 2014, and a hunt for them began at once. Weeks later its staff reported finding some 200,000 of the coins. Where had those coins been sitting?",
+    "answer": "In an old offline wallet nobody had checked",
     "choices": [
-      "February 7, 2014",
-      "January 3, 2014",
-      "December 24, 2013",
-      "March 15, 2014"
+      "In an old offline wallet nobody had checked",
+      "In a hacker's account that police had seized",
+      "In Mark Karpeles's own private trading account",
+      "In a rival exchange that had borrowed them"
     ],
-    "context": "The site went dark February 24 and the Tokyo bankruptcy petition was filed February 28. Karpeles had reassured customers that withdrawal issues were transient, but roughly 850,000 BTC were already missing. Source: grokipedia.com/page/Mt._Gox.",
-    "topic": "mt-gox-the-first-great-custody-catastrophe"
-  },
-  {
-    "tier": 3,
-    "question": "Mt Gox's staff found some of the 850,000 missing bitcoins weeks after the collapse of February 2014, forgotten in an old offline wallet, the kind Bitcoiners call cold storage. Roughly how many of the missing coins were in it?",
-    "answer": "About 200,000",
-    "choices": [
-      "About 200,000",
-      "About 800,000",
-      "About 50",
-      "None -- all were permanently lost"
-    ],
-    "context": "The trustee retained the recovered coins for a decade of legal proceedings. Distribution to creditors finally began in 2024. Source: grokipedia.com/page/Mt._Gox.",
+    "context": "Mt Gox reported in a court disclosure of March 20, 2014 that it had found about 200,000 bitcoins in an old digital wallet. The trustee held the recovered coins through a decade of legal proceedings, and repayments began in July 2024. Source: grokipedia.com/page/Mt._Gox.",
     "topic": "mt-gox-the-first-great-custody-catastrophe"
   },
   {
     "tier": 4,
     "question": "Jed McCaleb, an American programmer, registered Mt Gox in 2007 as a site for trading Magic: The Gathering cards, turned it over to Bitcoin trading in 2010, and sold it a year later. He kept building. Which two projects did he co-found afterward?",
-    "answer": "Ripple (XRP) in 2012 and Stellar (XLM) in 2014",
+    "answer": "Ripple in 2012 and Stellar in 2014",
     "choices": [
-      "Ripple (XRP) in 2012 and Stellar (XLM) in 2014",
+      "Ripple in 2012 and Stellar in 2014",
       "Ethereum in 2015 and Cardano in 2017",
       "Binance in 2017 and FTX in 2019",
       "Coinbase in 2012 and Kraken in 2013"
     ],
-    "context": "McCaleb had left Mt Gox by 2011. His Ripple and Stellar projects took a very different approach from Bitcoin -- centralized ledgers rather than proof-of-work. Source: grokipedia.com/page/Jed_McCaleb.",
+    "context": "McCaleb had sold Mt Gox by 2011. Ripple and Stellar run on ledgers kept by networks of validators that vote, not on proof-of-work mining. Source: grokipedia.com/page/Jed_McCaleb.",
     "topic": "mt-gox-the-first-great-custody-catastrophe"
   },
   {
     "tier": 5,
     "question": "The trustee named by a Tokyo court began repaying Mt Gox's creditors from the salvaged coins in 2024, a decade after the exchange collapsed. One fact eased the years of waiting for the customers who had lost their bitcoin. What was it?",
-    "answer": "Bitcoin's price had risen so much that the recovered coins were worth many times their 2014 dollar value",
+    "answer": "The recovered coins were worth many times their 2014 dollar value",
     "choices": [
-      "Bitcoin's price had risen so much that the recovered coins were worth many times their 2014 dollar value",
-      "The trustee added a 500-percent bonus in newly minted coin",
-      "The Japanese government reimbursed all lost dollar value in yen",
-      "The Federal Reserve issued a targeted grant to Mt Gox creditors"
+      "The recovered coins were worth many times their 2014 dollar value",
+      "The Japanese government covered every creditor's loss in yen",
+      "An insurer paid each creditor the full value of his lost coins",
+      "Mark Karpeles repaid the losses from his own fortune"
     ],
-    "context": "Creditors who accepted repayment in Bitcoin (an option the trustee offered) received far more purchasing power than they had lost. The lesson survived: not-your-keys-not-your-coins is real, but so is Bitcoin's long-run monetary premium. Source: grokipedia.com/page/Mt._Gox.",
+    "context": "Creditors could take repayment in bitcoin, and most did, so the coins they received were worth far more than the 2014 dollar value of their losses. The custody lesson held, but so did Bitcoin's long climb. Source: grokipedia.com/page/Mt._Gox.",
     "topic": "mt-gox-the-first-great-custody-catastrophe"
   },
   {
@@ -13828,7 +13724,7 @@
       "The Keynesian school",
       "The behavioral school"
     ],
-    "context": "Rothbard entered Columbia at 16 in 1942 and took the doctorate under Joseph Dorfman. Kirzner also attended the Mises NYU seminar but took his PhD under Mises at NYU, not Columbia; Hazlitt was a journalist with no doctorate; Lachmann was an LSE-trained German Austrian. Source: Wikipedia, Murray Rothbard.",
+    "context": "Rothbard enrolled at Columbia at sixteen in 1942 and took his doctorate there in 1956; Mises's New York seminar made him an Austrian for life. Source: grokipedia.com/page/Murray_Rothbard.",
     "topic": "murray-rothbard-who-he-was"
   },
   {
@@ -13841,7 +13737,7 @@
       "Vienna, in Leopoldstadt",
       "Boston, in Back Bay"
     ],
-    "context": "Rothbard's father David was a chemist who had emigrated from Poland; the family were Jewish immigrants to the Bronx. Vienna Leopoldstadt is the classic wrong answer since so many first-generation Austrians (Mises, Hayek, Machlup) came from there; Chicago and Boston place two rival American economics traditions. Source: Wikipedia, Murray Rothbard.",
+    "context": "Rothbard was born in the Bronx on March 2, 1926; his father David was a chemist who had emigrated from Poland, and the family were Jewish immigrants. Source: Wikipedia, Murray Rothbard.",
     "topic": "murray-rothbard-who-he-was"
   },
   {
@@ -13854,12 +13750,12 @@
       "The Long Depression of 1873",
       "The Panic of 1907"
     ],
-    "context": "Rothbard argued the Panic of 1819 followed the credit expansion of the Second Bank of the United States, a foreshadowing of his later Austrian Business Cycle Theory application to 1929. Dorfman was his adviser. The three other choices are all real 19th- and early-20th-century American financial crises. Source: Mises Institute, 'Toward a Science of Liberty' (Salerno).",
+    "context": "Rothbard argued the Panic of 1819 followed the credit expansion of the Second Bank of the United States, a foreshadowing of his later Austrian account of 1929. His dissertation, The Panic of 1819: Reactions and Policies, came out as a book from Columbia University Press in 1962. Source: grokipedia.com/page/Murray_Rothbard.",
     "topic": "murray-rothbard-who-he-was"
   },
   {
     "tier": 2,
-    "question": "Murray Rothbard became a regular at a weekly economics seminar while he was still a graduate student. Its leader had fled Europe in 1940, and the leader's salary came quietly from the William Volker Fund. Which seminar did Rothbard attend?",
+    "question": "Murray Rothbard became a regular at a weekly economics seminar while he was still a graduate student, and the William Volker Fund was quietly paying its leader's salary. Which seminar did Rothbard attend?",
     "answer": "Ludwig von Mises's private seminar at NYU",
     "choices": [
       "Ludwig von Mises's private seminar at NYU",
@@ -13867,20 +13763,20 @@
       "Kenneth Arrow's Stanford theory workshop",
       "John Kenneth Galbraith's Harvard institutional seminar"
     ],
-    "context": "Mises ran the seminar at NYU from 1948 to 1969, paid for by the William Volker Fund. Rothbard became his most influential American disciple. Friedman's Chicago workshop was the methodological opposite; Arrow at Stanford and Galbraith at Harvard were mainstream mid-century venues. Source: Wikipedia, Murray Rothbard.",
+    "context": "Mises ran the seminar at NYU until 1969, his salary paid by private backers, the William Volker Fund among them. Rothbard became his most influential American follower. Source: grokipedia.com/page/Ludwig_von_Mises.",
     "topic": "murray-rothbard-who-he-was"
   },
   {
     "tier": 3,
     "question": "Murray Rothbard called taxation theft, and to the economics profession he was far too radical. Despite his Columbia doctorate, no leading economics faculty would hire him for twenty years. Where did he teach from 1966 to 1986?",
-    "answer": "Brooklyn Polytechnic Institute -- an engineering school, not an economics department",
+    "answer": "Brooklyn Polytechnic Institute, an engineering school in New York",
     "choices": [
-      "Brooklyn Polytechnic Institute -- an engineering school, not an economics department",
-      "Grove City College's small economics program in western Pennsylvania",
-      "Auburn University's Department of Economics in Alabama",
-      "George Mason University's newly-founded Austrian economics group"
+      "Brooklyn Polytechnic Institute, an engineering school in New York",
+      "Grove City College, a small Christian college in Pennsylvania",
+      "Auburn University, a large state university in Alabama",
+      "George Mason University, a state university in Virginia"
     ],
-    "context": "Rothbard taught part-time at Brooklyn Poly from 1966 to 1986 -- twenty years as an engineering-school instructor while writing the Austrian tradition's flagship American treatise. Grove City housed Hans Sennholz; George Mason built its Austrian program later (1980s onward); Auburn is where the Mises Institute would later be based, but Rothbard never taught for Auburn University itself. Source: Wikipedia, Murray Rothbard.",
+    "context": "Rothbard taught part-time at Brooklyn Poly from 1966 to 1986, an engineering-school post, while he wrote For a New Liberty (1973) and the four volumes of Conceived in Liberty. Grove City housed Hans Sennholz; George Mason built its Austrian program later; Auburn is where the Mises Institute would later be based, but Rothbard never taught for Auburn University itself. Source: Wikipedia, Murray Rothbard.",
     "topic": "murray-rothbard-who-he-was"
   },
   {
@@ -13893,7 +13789,7 @@
       "F.A. Hayek Chair in Political Economy at George Mason University",
       "Adam Smith Chair in Free Enterprise at Auburn University"
     ],
-    "context": "UNLV hired Rothbard in 1986 into the S.J. Hall chair; he taught there until his heart attack in January 1995. The three other chairs are plausibly-named posts at institutions that had ties to Austrian or Chicago-adjacent economics but were not where Rothbard actually landed. Source: Wikipedia, Murray Rothbard.",
+    "context": "UNLV hired Rothbard in 1986 into the S.J. Hall chair, and he taught there until his death from a heart attack in January 1995. Source: Wikipedia, Murray Rothbard.",
     "topic": "murray-rothbard-who-he-was"
   },
   {
@@ -13925,14 +13821,14 @@
   {
     "tier": 2,
     "question": "Ludwig von Mises printed a thick German treatise, Nationalökonomie, in 1940, with Europe at war. His books had been blacklisted in Nazi Germany since 1933. What became of the book?",
-    "answer": "It attracted almost no readership -- Germany and Austria were closed to it and Switzerland was neutral but small",
+    "answer": "Almost no one read it, with its German-speaking market closed or small",
     "choices": [
-      "It attracted almost no readership -- Germany and Austria were closed to it and Switzerland was neutral but small",
-      "It sold half a million copies within its first year",
-      "It was banned by every European government",
-      "It won the Nobel Prize in Literature the year it appeared"
+      "Almost no one read it, with its German-speaking market closed or small",
+      "It sold widely in Switzerland and was smuggled into Germany",
+      "It was translated into English and French within two years",
+      "It became the standard economics text in Swiss universities"
     ],
-    "context": "Mises himself said later that Nationaloekonomie 'attracted no attention.' His works had been on the Nazi blacklist since 1933; Europe was at war; the German-speaking world was under Nazi occupation or blockade. Source: grokipedia.com/page/Nationalokonomie.",
+    "context": "Mises's works had been blacklisted in Nazi Germany since 1933, Europe was at war, and neutral Switzerland was too small a market for a thick German treatise, so the book found almost no readers. Source: mises.org (Nationalökonomie: Theorie des Handelns und Wirtschaftens).",
     "topic": "nationaloekonomie-1940-the-german-precursor-to-human-action"
   },
   {
@@ -13950,41 +13846,15 @@
   },
   {
     "tier": 4,
-    "question": "A reader who sets Ludwig von Mises's German treatise of 1940 beside the English one he later published with Yale University Press finds that the two are not the same book in two languages. How are they related?",
-    "answer": "The two cover the same terrain (praxeology, calculation, cycle, interventionism) but Human Action is longer, more polished, and updated for postwar American debates",
+    "question": "Ludwig von Mises wrote a thick German treatise in neutral Geneva in 1940 and then, after his escape to America, brought the book out again in English through Yale University Press. A reader sets the two side by side. How are the two books related?",
+    "answer": "Same ground, but the English book is longer, more polished and answers postwar debates",
     "choices": [
-      "The two cover the same terrain (praxeology, calculation, cycle, interventionism) but Human Action is longer, more polished, and updated for postwar American debates",
-      "Human Action's chapters were translated word-for-word from Nationaloekonomie with no additions",
-      "Human Action rejects the arguments of Nationaloekonomie and defends the opposite conclusions",
-      "Human Action is a condensed abridgment removing more than half the German original"
+      "Same ground, but the English book is longer, more polished and answers postwar debates",
+      "A word-for-word translation of the German chapters, with nothing added",
+      "The English book rejects the German one's arguments and argues the opposite",
+      "The English book is a short abridgment that cuts over half the German original"
     ],
     "context": "Nationaloekonomie is the tighter German-language original; Human Action is the mature English restatement. Scholars now read both to trace how Mises's arguments evolved between Geneva 1940 and New York 1949. Source: grokipedia.com/page/Human_Action.",
-    "topic": "nationaloekonomie-1940-the-german-precursor-to-human-action"
-  },
-  {
-    "tier": 5,
-    "question": "A German publisher reprinted Nationalökonomie in 1980, forty years after the treatise first came out; for most of those decades the original had been almost impossible to find. One American group has since put it online free for any reader. Which group?",
-    "answer": "The Ludwig von Mises Institute",
-    "choices": [
-      "The Ludwig von Mises Institute",
-      "The Cato Institute",
-      "The Foundation for Economic Education",
-      "The Hoover Institution"
-    ],
-    "context": "The Mises Institute, founded in 1982 by Lew Rockwell and Murray Rothbard, republished (or facilitated republication of) the German original as a scholarly reference in 1980. Jorg Guido Hulsmann's 2007 Mises biography and Joseph Salerno's introductions draw on the text. Source: grokipedia.com/page/Nationalokonomie.",
-    "topic": "nationaloekonomie-1940-the-german-precursor-to-human-action"
-  },
-  {
-    "tier": 5,
-    "question": "Ludwig von Mises wrote one treatise in German in 1940 and later wrote the whole book again in English, for a new world. What lesson about the history of books do the two teach when they are read side by side?",
-    "answer": "A great book's initial reception can be nearly nil and still be preserved by a single author's determination to rewrite it in a new language and context",
-    "choices": [
-      "A great book's initial reception can be nearly nil and still be preserved by a single author's determination to rewrite it in a new language and context",
-      "A great book always finds its readership within a year of publication",
-      "A great book is best measured by its sales in the first six months",
-      "A great book must be translated by an official state translator to have influence"
-    ],
-    "context": "Mises's determination -- he was in his sixties, a Jewish refugee starting over in New York -- turned a nearly-unread 1940 German treatise into the 1949 English classic that shaped a whole revival of Austrian economics. Source: grokipedia.com/page/Ludwig_von_Mises.",
     "topic": "nationaloekonomie-1940-the-german-precursor-to-human-action"
   },
   {
@@ -13998,19 +13868,6 @@
       "Salary cap"
     ],
     "context": "The National Collegiate Athletic Association, founded 1906, governed approximately 500,000 US college athletes across ~1,100 member institutions. Its amateurism rules held from founding through 2021. Source: en.wikipedia.org/wiki/National_Collegiate_Athletic_Association.",
-    "topic": "ncaa-amateurism-as-cartel-obannon-v-ncaa-2014-and-the-2021-n"
-  },
-  {
-    "tier": 1,
-    "question": "A college quarterback drew the crowds that made his sport rich, at a time when college athletics took in about 18 billion dollars a year, mostly from television deals. About how much of that money reached players like him in cash?",
-    "answer": "Basically none of it",
-    "choices": [
-      "Basically none of it",
-      "About a tenth of it",
-      "About a third of it",
-      "About half of it"
-    ],
-    "context": "Under amateurism, athletes received scholarships, room and board, and small stipends but no cash compensation. The gap between labor value and cash compensation is the structural feature economists had long identified as cartel behavior. Source: NCAA financial reports 2018-19.",
     "topic": "ncaa-amateurism-as-cartel-obannon-v-ncaa-2014-and-the-2021-n"
   },
   {
@@ -14029,40 +13886,14 @@
   {
     "tier": 2,
     "question": "Ed O'Bannon, who had starred in basketball for the University of California, Los Angeles, sat in a friend's living room and saw his own face and jersey number in a college basketball video game. Millions of copies had sold, and he had never seen a penny of it. He sued. What did his case rest on?",
-    "answer": "People own their own name and likeness, so a company that sells them owes payment",
+    "answer": "People own their name and likeness, so a seller of them owes payment",
     "choices": [
-      "People own their own name and likeness, so a company that sells them owes payment",
-      "The company should have used a made-up player instead of a real one",
-      "Video game money always belongs half to the athletes",
-      "College sports rules ban all video games about players"
+      "People own their name and likeness, so a seller of them owes payment",
+      "A college owns a player's likeness only while he is enrolled",
+      "Game makers must ask the NCAA before showing any real team",
+      "A player's likeness belongs to whoever films his games"
     ],
     "context": "O'Bannon v. NCAA (Ninth Circuit, August 8, 2015, upholding partial 2014 district-court ruling by Judge Claudia Wilken). Wilken held NCAA amateurism rules violated Sherman Section 1 as an unreasonable restraint of trade. Source: en.wikipedia.org/wiki/O%27Bannon_v._NCAA.",
-    "topic": "ncaa-amateurism-as-cartel-obannon-v-ncaa-2014-and-the-2021-n"
-  },
-  {
-    "tier": 3,
-    "question": "All nine justices of the Supreme Court voted against the National Collegiate Athletic Association in the Alston case of June 2021, striking down its caps on the education benefits a college could give its athletes. Why does a unanimous ruling like that carry more weight than a close five-to-four?",
-    "answer": "It signals that even judges who usually disagree see the issue the same way",
-    "choices": [
-      "It signals that even judges who usually disagree see the issue the same way",
-      "It doubles the punishment for the losing side",
-      "It automatically overturns all past court rulings",
-      "It skips the appeals process forever"
-    ],
-    "context": "NCAA v. Alston, 594 US ___ (2021), was decided 9-0 with Justice Gorsuch writing for the Court. The decision affirmed that NCAA restrictions on education-related benefits violated Sherman Section 1. Source: supremecourt.gov (Alston 594 US).",
-    "topic": "ncaa-amateurism-as-cartel-obannon-v-ncaa-2014-and-the-2021-n"
-  },
-  {
-    "tier": 3,
-    "question": "Justice Brett Kavanaugh joined the other eight against the National Collegiate Athletic Association (NCAA) in the Alston case of 2021 and wrote a separate opinion going further. He warned that 'the NCAA is not above the law' and suggested that its whole no-pay system acted like an illegal cartel. What did he mean by a cartel?",
-    "answer": "A group of sellers that agree to fix prices or limit competition",
-    "choices": [
-      "A group of sellers that agree to fix prices or limit competition",
-      "A single buyer with no other competitors",
-      "A government agency that reviews mergers",
-      "A tax on imported goods"
-    ],
-    "context": "Justice Kavanaugh's concurrence in Alston explicitly extended the reasoning: 'The NCAA is not above the law.' The concurrence signaled that the whole amateurism edifice was legally vulnerable. Source: Alston, 594 US ___ (2021), Kavanaugh concurrence.",
     "topic": "ncaa-amateurism-as-cartel-obannon-v-ncaa-2014-and-the-2021-n"
   },
   {
@@ -14071,24 +13902,11 @@
     "answer": "Some stay longer because they can earn real money without turning pro",
     "choices": [
       "Some stay longer because they can earn real money without turning pro",
-      "All players immediately drop out to play professionally",
-      "Colleges instantly become bankrupt",
-      "The number of college teams drops to zero"
+      "Most leave sooner, using their NIL fame to go pro early",
+      "Nothing has changed, since NIL money is too small to matter",
+      "Most must leave, since NIL deals end college eligibility"
     ],
     "context": "NIL (Name, Image, Likeness) compensation became legal for college athletes on July 1, 2021. Within three years the NIL market was estimated at over $1 billion annually flowing to athletes from endorsement deals. Source: ncaa.org (NIL policy history).",
-    "topic": "ncaa-amateurism-as-cartel-obannon-v-ncaa-2014-and-the-2021-n"
-  },
-  {
-    "tier": 4,
-    "question": "A federal judge signed off in June 2025 on a settlement in the House case that lets each college pay its athletes a share of its revenue, some $20 million a school each year. What basic economic point did the settlement concede?",
-    "answer": "The people creating the value should be allowed to earn from it",
-    "choices": [
-      "The people creating the value should be allowed to earn from it",
-      "Only owners and coaches actually create value in sports",
-      "Free labor makes sports leagues fairer for fans",
-      "Athletes should pay the schools for the honor of playing"
-    ],
-    "context": "The House v. NCAA settlement, approved June 6, 2025 by Judge Wilken, created a revenue-sharing framework of approximately $20-22M per school per year. It effectively converted college athletes into compensated labor. Source: reuters.com (House settlement coverage June 2025).",
     "topic": "ncaa-amateurism-as-cartel-obannon-v-ncaa-2014-and-the-2021-n"
   },
   {
@@ -14110,42 +13928,16 @@
     "answer": "The legal or cultural rule holding the low price in place will eventually break",
     "choices": [
       "The legal or cultural rule holding the low price in place will eventually break",
-      "The rule will only get stronger over time",
-      "The workers will disappear from the industry",
-      "The federal government will formally endorse the low price"
+      "The rule will hold for good, since the buyers who gain from it organize",
+      "The buyers will raise the price by choice once shortages bite",
+      "The government will step in and set a fair price by statute"
     ],
     "context": "The amateurism-as-noble-tradition framing was a cultural prop for the price-fixing structure. Once courts began applying standard antitrust analysis, the prop eroded and the cartel collapsed within about a decade. Source: Zimbalist (1999); Alston (2021); House settlement (2025).",
     "topic": "ncaa-amateurism-as-cartel-obannon-v-ncaa-2014-and-the-2021-n"
   },
   {
     "tier": 1,
-    "question": "A New York tenant found his rent frozen by a wartime order from Washington, a measure intended for the emergency alone. The war ended; the freeze did not. What is a law like that called?",
-    "answer": "Rent control",
-    "choices": [
-      "Rent control",
-      "Rent inflation",
-      "Free rent",
-      "Rent tax"
-    ],
-    "context": "November 1943 federal rent freeze on New York City marks the start of continuous US residential rent regulation. The freeze was handed off to New York State, then to NYC itself in successive laws. Source: hcr.ny.gov (rent regulation history).",
-    "topic": "new-york-citys-rent-control-since-1943"
-  },
-  {
-    "tier": 1,
-    "question": "New York's lawmakers passed a stabilization law in 1969 to keep alive the rent controls that Washington had first ordered as an emergency measure in wartime. No other American city has capped rents as long. About how long has New York's rent control been running?",
-    "answer": "Over 80 years",
-    "choices": [
-      "Over 80 years",
-      "About 10 years",
-      "About 20 years",
-      "About 200 years"
-    ],
-    "context": "From November 1943 to 2026 is 82-83 years. The 'temporary' program has been extended through several successor statutes -- the Emergency Housing Rent Control Law 1946, the Rent Stabilization Law 1969, the Emergency Tenant Protection Act 1974, and the 2019 Housing Stability and Tenant Protection Act. Source: hcr.ny.gov.",
-    "topic": "new-york-citys-rent-control-since-1943"
-  },
-  {
-    "tier": 2,
-    "question": "Assar Lindbeck, who taught at Stockholm University and stood on Sweden's democratic left, wrote in 1971 that one popular housing policy seemed the most efficient way known to destroy a city, short of dropping bombs on it. In cities no bomb had touched, apartments stood empty and fell apart while young families found nowhere to live. Which policy was he attacking?",
+    "question": "Assar Lindbeck, who stood on Sweden's democratic left, wrote in 1971 that one housing policy seemed the most efficient way known to destroy a city, except for bombing it. Which policy did he mean?",
     "answer": "Rent control",
     "choices": [
       "Rent control",
@@ -14153,18 +13945,18 @@
       "Zoning height limits",
       "Property taxes"
     ],
-    "context": "Assar Lindbeck, in The Political Economy of the New Left (1971). Lindbeck was a lifelong democratic-socialist and Nobel-committee-adjacent figure, not a right-winger -- his line is cited across the political spectrum. Source: Lindbeck (1971).",
+    "context": "Assar Lindbeck, The Political Economy of the New Left (1971): 'In many cases rent control appears to be the most efficient technique presently known to destroy a city—except for bombing.' Lindbeck was a Social Democrat until he left the party in 1982 and later chaired the committee for the economics Nobel, so his line is cited across the political spectrum. Source: en.wikipedia.org/wiki/Assar_Lindbeck.",
     "topic": "new-york-citys-rent-control-since-1943"
   },
   {
     "tier": 2,
     "question": "Frédéric Bastiat taught readers to weigh every policy by what is seen and what is not. Turned on New York's rent control, his test finds the seen on a lucky tenant's lease: the low rent printed there. What does it find in the unseen?",
-    "answer": "The apartments never built, landlords deferring maintenance, and vacant units held off market",
+    "answer": "Apartments never built, repairs put off, units kept off the market",
     "choices": [
-      "The apartments never built, landlords deferring maintenance, and vacant units held off market",
-      "The government revenue from tenant leases",
-      "The reduced traffic congestion in the borough",
-      "The higher property taxes on landlords"
+      "Apartments never built, repairs put off, units kept off the market",
+      "New towers rising as builders compete for rent-capped tenants",
+      "Lower rents spreading to the uncontrolled apartments nearby",
+      "Bigger landlord profits from tenants who never move out"
     ],
     "context": "Bastiat's method: the visible benefit was to the specific rent-regulated tenant; the hidden cost was future tenants who could not find apartments, current tenants of deteriorating buildings, and landlords who warehoused units. Source: bastiat.org, mercatus.org.",
     "topic": "new-york-citys-rent-control-since-1943"
@@ -14176,10 +13968,10 @@
     "choices": [
       "The incentive to burn a rent-controlled building for the insurance",
       "The lack of fire-code enforcement in regulated buildings",
-      "The higher smoker rate in rent-regulated apartments",
+      "The crowding of extra boarders into cheap regulated flats",
       "The greater density of gas heaters in old apartments"
     ],
-    "context": "Rent-controlled buildings that could not cover their mortgage and maintenance costs became liabilities. Insurance payouts on total loss exceeded the market value of an ongoing rent-controlled property. The South Bronx arson wave of the 1970s is the exhibit. Source: en.wikipedia.org/wiki/South_Bronx.",
+    "context": "In the critics' account, a controlled building that could not cover its mortgage and upkeep became a liability, and an insurance payout on a total loss could be worth more than the building itself. They point to the South Bronx arson wave of the 1970s. Source: en.wikipedia.org/wiki/South_Bronx.",
     "topic": "new-york-citys-rent-control-since-1943"
   },
   {
@@ -14192,7 +13984,7 @@
       "Faster tenant turnover across boroughs",
       "Reduced construction permit backlogs"
     ],
-    "context": "Landlords held rent-regulated units off market ('warehoused') rather than accept new indexed tenancies. New rental construction in NYC dropped. The 2019 tightening's predictable supply effects matched the seen-vs-unseen analysis. Source: Rent Stabilization Association analyses 2020-22.",
+    "context": "Critics of the 2019 law, the landlords' Rent Stabilization Association among them, reported regulated units held off the market ('warehoused') rather than renovated for capped rents, and a drop in new rental construction. Source: Rent Stabilization Association analyses 2020-22.",
     "topic": "new-york-citys-rent-control-since-1943"
   },
   {
@@ -14218,18 +14010,18 @@
       "A digital receipt",
       "A payment plan"
     ],
-    "context": "Nick Szabo coined 'smart contracts' in a 1996 essay. Vitalik Buterin later built Ethereum around a smart-contract virtual machine (2015); Hal Finney built RPOW; Adam Back built Hashcash. Source: https://en.wikipedia.org/wiki/Nick_Szabo.",
+    "context": "Nick Szabo coined the term smart contract in essays of the mid-1990s. Vitalik Buterin later built Ethereum (2015) around smart contracts. Source: https://en.wikipedia.org/wiki/Nick_Szabo.",
     "topic": "nick-szabo-s-bit-gold-1998"
   },
   {
     "tier": 2,
-    "question": "Nick Szabo sketched bit gold in 1998, a digital money a decade ahead of Bitcoin, and one trait of it mattered to him more than any other. Which trait was it?",
-    "answer": "a supply whose growth rate is governed by fixed technical difficulty, not by any issuer's discretion",
+    "question": "Nick Szabo sketched bit gold in 1998, a digital money a decade ahead of Bitcoin. Dollars and yen multiply at a central bank's say-so, but one trait of bit gold mattered to him more than any other. Which trait was it?",
+    "answer": "Its supply grows only as fast as fixed puzzle difficulty allows",
     "choices": [
-      "a supply whose growth rate is governed by fixed technical difficulty, not by any issuer's discretion",
-      "an instant settlement guarantee with no per-transaction processing delay or waiting period at any point",
-      "a reversible-transaction rule for fraud protection that lets any user recall a mistaken transfer within a set window",
-      "a printed physical note that an ordinary citizen can hold in the hand and verify by touch and weight"
+      "Its supply grows only as fast as fixed puzzle difficulty allows",
+      "Its payments settle instantly, with no waiting at any point",
+      "Its transfers can be recalled within a set window if mistaken",
+      "Its tokens can be printed as notes to hold in the hand"
     ],
     "context": "Szabo argues bit gold's supply is governed by puzzle difficulty, not by any issuer's discretion; fiat has always been discretionary. Instant settlement, reversibility, and physical notes are properties the essay does not claim as the differentiator. Source: https://unenumerated.blogspot.com/2005/12/bit-gold.html.",
     "topic": "nick-szabo-s-bit-gold-1998"
@@ -14245,19 +14037,6 @@
       "the ring-signature transaction hider that later cryptocurrencies would adopt for privacy"
     ],
     "context": "Satoshi's longest-chain rule with proof-of-work as the tiebreaker specifically resolves the consensus problem bit gold left open. Blind signatures (Chaum) required a bank; RPOW (Finney) required a central server; ring signatures came later and hide senders, not resolve ordering. Source: Nakamoto 2008 sec 4.",
-    "topic": "nick-szabo-s-bit-gold-1998"
-  },
-  {
-    "tier": 4,
-    "question": "Nick Szabo earned a law degree on top of his training in computer science, and his essays, read across the cypherpunk world, blend code, law and monetary history. At which American university did he earn the degree?",
-    "answer": "George Washington University",
-    "choices": [
-      "George Washington University",
-      "Harvard University",
-      "Yale University",
-      "Stanford University"
-    ],
-    "context": "Szabo earned his JD from George Washington University Law School. Harvard, Yale, and Stanford Law are frequently guessed as elite law schools but none is Szabo's. Source: https://en.wikipedia.org/wiki/Nick_Szabo.",
     "topic": "nick-szabo-s-bit-gold-1998"
   },
   {
@@ -14287,42 +14066,16 @@
     "topic": "nick-szabo-s-bit-gold-1998"
   },
   {
-    "tier": 4,
-    "question": "A Bitcoin historian sets bit gold, the design Nick Szabo sketched in 1998, beside Satoshi Nakamoto's Bitcoin of 2008. Szabo's design was never built, for one problem had been left unsolved, and the historian sums up the difference in a single line. What does the historian say?",
-    "answer": "That bit gold is Bitcoin minus the consensus mechanism -- and consensus was the single hard piece the field had left open until Satoshi",
-    "choices": [
-      "That bit gold is Bitcoin minus the consensus mechanism -- and consensus was the single hard piece the field had left open until Satoshi",
-      "That bit gold is Bitcoin minus the proof-of-work mechanism -- Szabo left the puzzle chain unspecified and Satoshi added it",
-      "That bit gold is Bitcoin minus the digital signatures -- Szabo did not use signed transactions and Satoshi added them",
-      "That bit gold and Bitcoin are cryptographically unrelated designs that arrived at similar shapes by coincidence rather than lineage"
-    ],
-    "context": "The bit-gold-vs-Bitcoin move (Song, Antonopoulos, Ammous): Szabo had PoW, chained puzzles, digital signatures and a plan for issuance; the piece he could not close was distributed consensus, which is exactly what Satoshi's longest-chain rule solved. Source: https://unenumerated.blogspot.com/2005/12/bit-gold.html; Nakamoto white paper.",
-    "topic": "nick-szabo-s-bit-gold-1998"
-  },
-  {
     "tier": 1,
     "question": "Homeowners in a small California town packed with jobs turn out to vote down one more plan for new houses and apartments, while people keep moving to the area for work. What is probably happening to the price of the houses already standing?",
-    "answer": "It keeps going way up -- some homes cost millions",
+    "answer": "It keeps climbing, as more buyers chase the same houses",
     "choices": [
-      "It keeps going way up -- some homes cost millions",
-      "It stays flat forever no matter what",
-      "It drops until houses are almost free",
-      "It changes only if the mayor announces a new price"
+      "It keeps climbing, as more buyers chase the same houses",
+      "It holds steady, since blocking projects leaves supply unchanged",
+      "It falls, since less building means less activity in town",
+      "It rises only if the town raises its property taxes"
     ],
-    "context": "Palo Alto's median home price approached $3M in 2024 (Zillow/CoreLogic). About 94% of its residential land is zoned for single-family detached homes; apartment construction has been effectively frozen for decades. Source: paloaltoonline.com; zillow.com.",
-    "topic": "nimby-political-economy-palo-alto-zoning-as-concentrated-ben"
-  },
-  {
-    "tier": 1,
-    "question": "Neighbors crowd into a hearing in a growing town to block the new apartments planned nearby, saying the buildings will change the neighborhood. People call them by a short nickname, NIMBY. What do the letters stand for?",
-    "answer": "Not In My Backyard",
-    "choices": [
-      "Not In My Backyard",
-      "New In My Backyard",
-      "No Money Big Yield",
-      "Never In My Building Year"
-    ],
-    "context": "NIMBY (Not In My Backyard) describes the political pattern in which existing local homeowners organize to block new housing in their neighborhoods, even when a region's overall housing shortage produces high rents and long commutes. Source: Grokipedia 'NIMBY.'",
+    "context": "Palo Alto's median home price approached $3M in 2024 (Zillow/CoreLogic). By one local count about nine-tenths of the land it zones for housing is single-family only. Sources: paloaltoonline.com; zillow.com; paloaltoforward.nationbuilder.com/fact_check.",
     "topic": "nimby-political-economy-palo-alto-zoning-as-concentrated-ben"
   },
   {
@@ -14335,7 +14088,7 @@
       "Mixed-use zoning",
       "Transit-oriented zoning"
     ],
-    "context": "About 94% of Palo Alto's residential land is single-family only. This is the structural feature that makes multi-family projects require special approvals and lengthy hearings each time. Source: Palo Alto General Plan; ABAG regional data.",
+    "context": "By one local count about nine-tenths of the land Palo Alto zones for housing is single-family only, so a multi-family project needs special approvals and long hearings each time. Sources: Palo Alto Comprehensive Plan via paloaltoforward.nationbuilder.com/fact_check.",
     "topic": "nimby-political-economy-palo-alto-zoning-as-concentrated-ben"
   },
   {
@@ -14378,32 +14131,6 @@
     "topic": "nimby-political-economy-palo-alto-zoning-as-concentrated-ben"
   },
   {
-    "tier": 3,
-    "question": "A California homeowner won the right in 2021 to divide his lot and build a duplex where only one house had been allowed, though many local governments objected. What is the state law that gave him that right?",
-    "answer": "SB 9",
-    "choices": [
-      "SB 9",
-      "SB 35",
-      "AB 5",
-      "AB 32"
-    ],
-    "context": "SB 9 (2021) allowed by-right duplex construction on many single-family lots across California, over the strenuous objections of many local governments. It attacked the rule-selection game at state level. Source: leginfo.legislature.ca.gov (SB 9, 2021).",
-    "topic": "nimby-political-economy-palo-alto-zoning-as-concentrated-ben"
-  },
-  {
-    "tier": 4,
-    "question": "Minneapolis passed its Minneapolis 2040 plan in 2018, doing away with single-family-only zoning citywide: any residential lot could now hold up to three homes. What did the change do to the supply of homes the city could add?",
-    "answer": "More units per lot became legal, so more homes could be built",
-    "choices": [
-      "More units per lot became legal, so more homes could be built",
-      "Every existing home was torn down overnight",
-      "People were banned from moving into the city",
-      "Everyone was forced into apartments the government owns"
-    ],
-    "context": "The Minneapolis 2040 Comprehensive Plan (2018) eliminated single-family-only residential zoning citywide. It was the first US big-city plan to do so, and later became a model for other cities. Source: minneapolismn.gov (2040 Plan).",
-    "topic": "nimby-political-economy-palo-alto-zoning-as-concentrated-ben"
-  },
-  {
     "tier": 4,
     "question": "A builder in Austin, Texas, opened one more apartment block in a city that added a flood of them between about 2019 and 2024. Some people had argued that new buildings only pull in more demand and drive rents up. What happened to Austin's rents as the new apartments opened?",
     "answer": "Rents fell as more apartments were built",
@@ -14418,26 +14145,13 @@
   },
   {
     "tier": 5,
-    "question": "A public-choice economist looks at Palo Alto's zoning, which has dragged down a whole region for decades and still refuses to die. He reaches for a general rule that Austrian economists share with his school. What does it tell him to look for?",
-    "answer": "Existing incumbent asset-holders whose wealth was created by the policy's restriction",
-    "choices": [
-      "Existing incumbent asset-holders whose wealth was created by the policy's restriction",
-      "A single hidden corrupt payment to a legislator",
-      "A federal preemption blocking local action",
-      "A recent Supreme Court decision requiring the policy"
-    ],
-    "context": "The zoning wedge is a multi-trillion-dollar wealth transfer to existing homeowners in constrained cities. That concentrated wealth is what organizes to defend the restrictive rule against reform. Source: Glaeser + Gyourko (2002); Olson (1965) as applied.",
-    "topic": "nimby-political-economy-palo-alto-zoning-as-concentrated-ben"
-  },
-  {
-    "tier": 5,
     "question": "A developer in Tokyo puts up a new apartment block under zoning rules set by Japan's national government, and the city can do little to stop him. Tokyo, home to some 37 million people, adds new apartments every year. What has happened to its real housing prices over the long run?",
     "answer": "They have been comparatively stable",
     "choices": [
       "They have been comparatively stable",
       "They have tripled over the past decade",
-      "They exceed Palo Alto's per-square-foot prices",
-      "They have collapsed to near zero"
+      "They have risen faster than San Francisco's",
+      "They have doubled every decade since 1980"
     ],
     "context": "Japan's national zoning system permits substantial by-right housing construction, and Tokyo's real housing prices have been comparatively stable despite continued metropolitan-area growth. It is the international contrast that Bay Area reformers frequently cite. Source: Grokipedia 'Housing in Japan.'",
     "topic": "nimby-political-economy-palo-alto-zoning-as-concentrated-ben"
@@ -14462,8 +14176,8 @@
     "choices": [
       "Juche",
       "Songun",
-      "Chuche-hop",
-      "Bogus"
+      "Chollima",
+      "Byungjin"
     ],
     "context": "Juche was formally systematized by Kim Il-sung in speeches from 1955 onward. It emphasizes political independence, economic self-reliance, and military self-defense. Source: en.wikipedia.org/wiki/Juche.",
     "topic": "north-korea-the-arduous-march-and-the-ongoing-camps"
@@ -14478,7 +14192,7 @@
       "About 60,000 to 250,000",
       "About 6 million to 25 million"
     ],
-    "context": "Andrew Natsios's The Great North Korean Famine (2001) argued for the upper end (2-3 million); Marcus Noland's demographic reconstruction argues for the lower end (600K-1M). Out of a population of about 22 million. Source: uspicedu (KEI) reports.",
+    "context": "Andrew Natsios's The Great North Korean Famine (2001) argued for the upper end (2-3 million); Marcus Noland and Stephan Haggard's demographic reconstruction argues for the lower end (600,000 to 1 million). Out of a population of about 22 million. Sources: Natsios (2001); Haggard and Noland, Famine in North Korea (2007).",
     "topic": "north-korea-the-arduous-march-and-the-ongoing-camps"
   },
   {
@@ -14523,14 +14237,14 @@
   {
     "tier": 4,
     "question": "South Koreans picked markets, trade and private firms after the 38th parallel split Korea in two at the end of the Second World War, while the North chose full planning. Both halves started from similar living standards. About seventy-five years later, how much richer is the average South Korean than the average North Korean?",
-    "answer": "About 40 times richer",
+    "answer": "About 30 times richer",
     "choices": [
-      "About 40 times richer",
-      "About 4 times richer",
-      "About 400 times richer",
+      "About 30 times richer",
+      "About 3 times richer",
+      "About 300 times richer",
       "About the same"
     ],
-    "context": "South Korea's per-capita GDP is roughly 40 times North Korea's on standard estimates (both PPP and nominal). This is one of the largest cross-border prosperity gaps ever recorded between countries with the same starting culture and geography. Source: Bank of Korea and World Bank estimates.",
+    "context": "The Bank of Korea put North Korea's income per head in 2024 at about 3.4 percent of the South's, so the average South Korean is roughly 29 times richer. Other estimates run higher or lower, but all of them show one of the widest gaps ever recorded between two countries with the same starting culture and geography. Sources: keia.org; koreatimes.co.kr (Bank of Korea, August 2025).",
     "topic": "north-korea-the-arduous-march-and-the-ongoing-camps"
   },
   {
@@ -14549,41 +14263,15 @@
   {
     "tier": 5,
     "question": "A North Korean planner sets one more price, as the country's planners have done since its founding in 1948. No country has run pure central planning for longer. What has the experiment produced over more than seventy years?",
-    "answer": "Chronic food shortages and famine, decade after decade",
+    "answer": "Chronic food shortages and a great famine",
     "choices": [
-      "Chronic food shortages and famine, decade after decade",
-      "Rapid economic growth that outpaces its neighbors",
-      "A booming private trading sector",
-      "A famous stock market with worldwide investors"
+      "Chronic food shortages and a great famine",
+      "Growth that has kept pace with South Korea's",
+      "Steady grain surpluses sold abroad",
+      "A middle class on a par with China's"
     ],
     "context": "The DPRK was founded September 9, 1948, one month after the Republic of Korea in the South (August 15, 1948). Kim Il-sung had returned from Soviet-army training in 1945. The Korean War (1950-53) hardened the division. Source: en.wikipedia.org/wiki/History_of_North_Korea.",
     "topic": "north-korea-the-arduous-march-and-the-ongoing-camps"
-  },
-  {
-    "tier": 5,
-    "question": "Deng Xiaoping opened China to private business from 1978, and Vietnam launched the reforms it calls Doi Moi in 1986, both under one-party Communist rule. Cuba's Communist Party, too, now lets some citizens run small businesses. Which statement best describes the communist states now?",
-    "answer": "Only North Korea stays pure command; China, Vietnam, and Cuba allow markets under Party rule",
-    "choices": [
-      "Only North Korea stays pure command; China, Vietnam, and Cuba allow markets under Party rule",
-      "Cuba is still a pure command economy alongside North Korea",
-      "Vietnam has ended Communist Party rule entirely",
-      "China now has fully private ownership of all industry"
-    ],
-    "context": "China (1978), Vietnam (1986 Doi Moi), and Cuba (partial reforms from 1993) all adopted some market pricing. The DPRK remains the outlier -- the calculation-debate case that never took Mises's advice. Source: en.wikipedia.org/wiki/Economy_of_North_Korea.",
-    "topic": "north-korea-the-arduous-march-and-the-ongoing-camps"
-  },
-  {
-    "tier": 1,
-    "question": "A North Korean worker skipped a Party rally, and his family's share of grain and oil from the state outlet shrank. Each family's share went by a person's job and by his apparent loyalty to the Party. What kind of system handed out the food?",
-    "answer": "A government rationing system",
-    "choices": [
-      "A government rationing system",
-      "A free market",
-      "A farmer's market",
-      "A private grocery chain"
-    ],
-    "context": "The Public Distribution System (PDS) was the DPRK's principal food-allocation mechanism. Private markets were essentially banned outside a narrow set of state-approved farmers' markets. Source: en.wikipedia.org/wiki/Public_Distribution_System_(North_Korea).",
-    "topic": "north-koreas-public-distribution-system-collapse-the-arduous"
   },
   {
     "tier": 1,
@@ -14591,16 +14279,16 @@
     "answer": "To hide who is to blame and make the disaster sound noble",
     "choices": [
       "To hide who is to blame and make the disaster sound noble",
-      "To warn other countries about the weather",
-      "To make sure historians write the truth",
-      "To pay the farmers back for lost crops"
+      "To warn its people that harvests would stay poor for years",
+      "To show foreign donors how badly it needed food aid",
+      "To admit plainly that its planning had failed"
     ],
-    "context": "'Gonan-ui Haenggun' (Arduous March, Kojein Haenggun) was the state's stoic official term for the 1993-98 famine. The regime has never acknowledged a death toll. Source: en.wikipedia.org/wiki/North_Korean_famine.",
+    "context": "Gonanui haenggun, the Arduous March, was the state's name for the famine of the mid-1990s, borrowed from a tale of Kim Il-sung's days as a guerrilla commander against Japan. The regime has never acknowledged a death toll. Source: en.wikipedia.org/wiki/North_Korean_famine.",
     "topic": "north-koreas-public-distribution-system-collapse-the-arduous"
   },
   {
     "tier": 2,
-    "question": "Two economists pieced the famine's toll together for their 2007 book, Famine in North Korea, from refugee interviews, satellite crop readings and records of cross-border trade with China. Their count ran from 600,000 to 2.5 million dead in a nation of some 22 million. Who were they?",
+    "question": "Two economists pieced the famine's toll together for their 2007 book, Famine in North Korea, from refugee interviews, satellite crop readings and records of cross-border trade with China, and put the dead at 600,000 to a million. Who were they?",
     "answer": "Marcus Noland and Stephan Haggard",
     "choices": [
       "Marcus Noland and Stephan Haggard",
@@ -14626,7 +14314,7 @@
   },
   {
     "tier": 3,
-    "question": "Two young women who escaped North Korea published memoirs in 2015 of surviving the famine of the 1990s. Both told of the hours their mothers and grandmothers walked to the illegal markets to buy rice the state had failed to deliver. Which two escapees wrote them?",
+    "question": "Two young women who escaped North Korea by way of China published memoirs in 2015 about growing up there in the famine years, while illegal markets sprang up in place of the rations the state no longer delivered. Which two escapees wrote them?",
     "answer": "Yeonmi Park and Hyeonseo Lee",
     "choices": [
       "Yeonmi Park and Hyeonseo Lee",
@@ -14639,7 +14327,7 @@
   },
   {
     "tier": 3,
-    "question": "North Korea's rulers stopped sending central grain to the northeastern provinces first when the food system collapsed in the 1990s, and hunger struck hardest there. The weather and the sanctions hit every province alike. What does that pattern of deaths show?",
+    "question": "Andrew Natsios, an American aid official, reported that North Korea's rulers stopped sending central grain to the northeastern provinces first when the food system collapsed in the 1990s, to keep the capital, Pyongyang, fed. Hunger struck hardest in the northeast. What does that pattern of deaths show?",
     "answer": "Central-distribution failure is itself a famine mechanism",
     "choices": [
       "Central-distribution failure is itself a famine mechanism",
@@ -14647,7 +14335,7 @@
       "International sanctions caused most deaths",
       "Chinese aid cuts were the sole trigger"
     ],
-    "context": "Noland and Haggard's finding: regions closest to Pyongyang's central distribution suffered less; regions farthest and most PDS-dependent suffered worst. The mechanism is Mises 1920 in its most literal form -- central distribution cannot substitute for market allocation. Source: Noland-Haggard (2007).",
+    "context": "Andrew Natsios reported that the regime appears to have triaged the northeast, shutting down the public distribution system there to keep Pyongyang fed, and the deaths followed the cut-off. The mechanism is Mises 1920 in its most literal form: central distribution cannot substitute for market allocation. Sources: Natsios, USIP Special Report (1999); Noland-Haggard (2007).",
     "topic": "north-koreas-public-distribution-system-collapse-the-arduous"
   },
   {
@@ -14691,19 +14379,6 @@
   },
   {
     "tier": 1,
-    "question": "Melony Armstrong set out to open a hair-braiding shop in Mississippi. First the state made her sit through about 300 hours of expensive classes meant for a related trade, and none of them taught braiding. What is a rule like that called?",
-    "answer": "An occupational license",
-    "choices": [
-      "An occupational license",
-      "A sales tax",
-      "A free market",
-      "A minimum wage"
-    ],
-    "context": "Mississippi's cosmetology code offered no category for African-style braiding, so braiders were funneled into a 300-hour wigology license. The Institute for Justice sued for Armstrong in April 2004 (Armstrong v. Lunsford); in April 2005 the governor signed a reform letting braiders register with the Board of Health for $25 and post sanitation guidelines. More than 6,700 braiders have registered since. Sources: Institute for Justice, 'Mississippi Hair Braiding' (https://ij.org/case/armstrong-v-lunsford/); Armstrong's written testimony to the U.S. House Small Business Committee, March 26, 2014.",
-    "topic": "occupational-licensing-1-600-hours-to-braid-hair"
-  },
-  {
-    "tier": 1,
     "question": "Morris Kleiner and Alan Krueger put out a survey in 2013 of how many American workers needed a government license to do their jobs. Back in the early 1950s, about one worker in twenty had needed one. What share did the 2013 survey report?",
     "answer": "About three in ten",
     "choices": [
@@ -14730,7 +14405,7 @@
   },
   {
     "tier": 3,
-    "question": "Sandy Meadows, a widow, lost her flower-arranging job in Louisiana for lacking a florist's license, and in 2003 the Institute for Justice, a public-interest law firm, took up her case along with two other women's. For years no other state required a license merely to sell arranged flowers. The case turned on the hands-on exam. What was wrong with it?",
+    "question": "Sandy Meadows, a widow, lost her flower-arranging job in Louisiana for lacking a florist's license, and in 2003 the Institute for Justice, a public-interest law firm, took up her case along with two other women's. For years no other state required a license merely to sell arranged flowers. The case turned on the state's hands-on florist exam. What was wrong with that exam?",
     "answer": "Licensed florists competing with the applicants graded the practical test",
     "choices": [
       "Licensed florists competing with the applicants graded the practical test",
@@ -14769,7 +14444,7 @@
   },
   {
     "tier": 5,
-    "question": "Milton Friedman opened his chapter on licensing in Capitalism and Freedom, in 1962, with doctors, calling the American Medical Association 'perhaps the strongest trade union in the country.' Friedman agreed that a bad doctor can hurt a patient, and he was against licensing even so. What did he propose instead, a plan to warn worried patients but still let them choose?",
+    "question": "Milton Friedman opened his chapter on licensing in Capitalism and Freedom, in 1962, with doctors, calling the American Medical Association perhaps the strongest trade union in the country. Friedman agreed that a bad doctor can hurt a patient, and he was against licensing even so. What did he propose instead, a plan to warn worried patients but still let them choose?",
     "answer": "State certification that a practitioner has met a published standard",
     "choices": [
       "State certification that a practitioner has met a published standard",
@@ -14777,33 +14452,20 @@
       "Compulsory malpractice insurance priced against each practitioner's record",
       "A national entry examination written by patients rather than by physicians"
     ],
-    "context": "Capitalism and Freedom, chapter 9, 'Occupational Licensure.' Friedman separated three levels of state involvement in a trade -- registration, certification and licensure -- and argued the justification weakens as you climb. Certification publishes who has met a standard while leaving the uncertified free to practice and the patient free to choose; licensure instead restricts the supply of practitioners and raises their incomes. The AMA has shaped entry into American medicine since its founding in 1847. Sources: Milton Friedman, Capitalism and Freedom (University of Chicago Press, 1962), ch. 9; https://en.wikipedia.org/wiki/Capitalism_and_Freedom.",
+    "context": "Capitalism and Freedom, chapter 9, 'Occupational Licensure.' Friedman separated three levels of state involvement in a trade -- registration, certification and licensure -- and argued the case for each grows weaker from the first to the third. Certification publishes who has met a standard while leaving the uncertified free to practice and the patient free to choose; licensure instead restricts the supply of practitioners and raises their incomes. The AMA has shaped entry into American medicine since its founding in 1847. Sources: Milton Friedman, Capitalism and Freedom (University of Chicago Press, 1962), ch. 9; https://en.wikipedia.org/wiki/Capitalism_and_Freedom.",
     "topic": "occupational-licensing-1-600-hours-to-braid-hair"
   },
   {
     "tier": 1,
-    "question": "A cobbler in a village with no money wants bread, so he offers the baker a pair of shoes for a loaf. Every trade in the village goes the same way: goods for goods, and never a coin. What do economists call trading like this?",
-    "answer": "barter",
-    "choices": [
-      "barter",
-      "banking",
-      "usury",
-      "arbitrage"
-    ],
-    "context": "BARTER is direct goods-for-goods exchange with no medium of exchange. The obvious problem it faces is called the DOUBLE COINCIDENCE OF WANTS: the shoemaker needs a baker who happens to want shoes AT THAT MOMENT. Solving that problem is what money is for. Source: link.springer.com/article/10.1007/s11138-022-00600-0.",
-    "topic": "on-the-origin-of-money--1892---money-as-the-most-saleable-co"
-  },
-  {
-    "tier": 1,
     "question": "Carl Menger, founder of the Austrian school, set out in 1892 to explain how money began, in a short essay printed in The Economic Journal. Where did he say money came from?",
-    "answer": "Regular people trading with each other, not a king or government",
+    "answer": "Ordinary people trading with one another, over generations",
     "choices": [
-      "Regular people trading with each other, not a king or government",
-      "A king who invented coins one day",
-      "A single scientist who wrote a plan for it",
-      "A big meeting of bank owners in Europe"
+      "Ordinary people trading with one another, over generations",
+      "Temple priests who kept accounts of debts in grain",
+      "A guild of merchants who agreed on one standard coin",
+      "Early bankers who issued paper receipts for deposits"
     ],
-    "context": "Menger's essay appeared in The Economic Journal, Volume 2, June 1892, pages 239-255 -- then a very young journal, founded three years earlier by the British Economic Association (later the Royal Economic Society). The American Economic Review dates from 1911; the JPE from 1892 but published in Chicago; the QJE from 1886. Source: scispace.com/papers/on-the-origin-of-money-4ddier28ke.",
+    "context": "Menger's essay appeared in The Economic Journal, volume 2, June 1892, pages 239-255, in a journal the British Economic Association had launched in 1891 (it later became the Royal Economic Society). Source: scispace.com/papers/on-the-origin-of-money-4ddier28ke.",
     "topic": "on-the-origin-of-money--1892---money-as-the-most-saleable-co"
   },
   {
@@ -14829,20 +14491,7 @@
       "the free-rider problem",
       "the winner's curse"
     ],
-    "context": "The DOUBLE COINCIDENCE OF WANTS -- both traders must simultaneously desire what the other offers -- is the obstacle barter cannot solve, and why every historical trading society has evolved SOME most-saleable good as an indirect medium. Menger's 1892 essay is the classic account of how that emergence happens. Source: moneyness.ca/2012/01/menger-and-origins-of-money.html.",
-    "topic": "on-the-origin-of-money--1892---money-as-the-most-saleable-co"
-  },
-  {
-    "tier": 3,
-    "question": "A cow, Carl Menger argued in 1892, changes hands more readily than a clay pot; silver beats the cow, and a little silver coin beats a bar of silver. The good that passes most easily of all becomes money. What English word names the trait at the center of his essay?",
-    "answer": "saleability",
-    "choices": [
-      "saleability",
-      "durability",
-      "convertibility",
-      "solvency"
-    ],
-    "context": "SALEABILITY (also spelled 'salability' in American English) is Menger's translation of Absatzfaehigkeit -- how easily a good can be traded away again for what the holder actually wants, at little loss of price. It is the master concept of the whole essay. Source: moneyness.ca/2012/01/menger-and-origins-of-money.html.",
+    "context": "The DOUBLE COINCIDENCE OF WANTS -- both traders must want what the other offers, at the same moment -- is the obstacle barter keeps running into, and in Menger's account it is why traders came to use some most-saleable good as a go-between. Menger's 1892 essay is the classic account of how that emergence happens. Source: moneyness.ca/2012/01/menger-and-origins-of-money.html.",
     "topic": "on-the-origin-of-money--1892---money-as-the-most-saleable-co"
   },
   {
@@ -14851,37 +14500,11 @@
     "answer": "scarcity",
     "choices": [
       "scarcity",
-      "beauty",
-      "warmth",
-      "colour"
+      "hardness",
+      "usefulness",
+      "conductivity"
     ],
     "context": "SCARCITY -- a low and predictable supply that cannot be casually expanded -- is what keeps a monetary good's purchasing power stable over time. Copper is too abundant; gold has held ~1.5%/year new-supply growth for centuries; Bitcoin's hard 21-million cap makes it (per Saifedean Ammous's Bitcoin Standard) the modern digital reinvention. Source: arxiv.org/pdf/2512.07840.",
-    "topic": "on-the-origin-of-money--1892---money-as-the-most-saleable-co"
-  },
-  {
-    "tier": 4,
-    "question": "Georg Friedrich Knapp, a German economist, called money a creature of law in a book of 1905. He founded a doctrine holding that a money owes its value to the government that issues it and takes it back in taxes, the ancestor of Modern Monetary Theory. What is the doctrine called?",
-    "answer": "chartalism",
-    "choices": [
-      "chartalism",
-      "monetarism",
-      "bullionism",
-      "mercantilism"
-    ],
-    "context": "CHARTALISM (from Latin charta = token) is the doctrine that money's value comes from state issuance and tax-acceptance, not from spontaneous market emergence. Knapp founded it in 1905; today's MMT (Kelton, Wray, Mosler) is its direct descendant. Monetarism is Friedman's quantity-theory tradition; bullionism and mercantilism are early-modern doctrines. Source: en.wikipedia.org/wiki/Georg_Friedrich_Knapp.",
-    "topic": "on-the-origin-of-money--1892---money-as-the-most-saleable-co"
-  },
-  {
-    "tier": 5,
-    "question": "Ludwig von Mises built on Carl Menger's essay in a book of 1912. He traced a money's buying power today to its buying power the day before, and so on back to the days before anyone used the good as money, when it was prized only as a plain commodity. What is this argument called?",
-    "answer": "the regression theorem",
-    "choices": [
-      "the regression theorem",
-      "the impossibility theorem",
-      "the equivalence theorem",
-      "the invariance theorem"
-    ],
-    "context": "Mises's REGRESSION THEOREM (1912) chains money's exchange value back in time to a first day of non-monetary commodity value -- solving the circularity of 'money is valuable because it buys things and it buys things because it is valuable.' Bitcoiners argue Bitcoin's initial commodity-value was its cypherpunk demand for a censorship-resistant messaging token, which the theorem then permits. Source: en.wikipedia.org/wiki/The_Theory_of_Money_and_Credit.",
     "topic": "on-the-origin-of-money--1892---money-as-the-most-saleable-co"
   },
   {
@@ -14898,27 +14521,14 @@
     "topic": "on-the-origin-of-money--1892---money-as-the-most-saleable-co"
   },
   {
-    "tier": 5,
-    "question": "Carl Menger condensed a longer German article into his English essay of 1892. He had written the original for the Handwörterbuch der Staatswissenschaften, a great German encyclopedia of political science. Under what single plain heading did the entry appear?",
-    "answer": "Geld",
-    "choices": [
-      "Geld",
-      "Kapital",
-      "Preis",
-      "Zins"
-    ],
-    "context": "Menger's article was the 'Geld' (Money) entry in the Handwoerterbuch der Staatswissenschaften. The 1892 Economic Journal essay condensed and translated it for the new English-language audience of British and American economists. Kapital, Preis, and Zins (capital, price, interest) were separate entries by other authors. Source: link.springer.com/article/10.1007/s11138-022-00600-0.",
-    "topic": "on-the-origin-of-money--1892---money-as-the-most-saleable-co"
-  },
-  {
     "tier": 1,
     "question": "A borrower heard in September 2011 that the Federal Reserve was trying an unusual maneuver, nicknamed Operation Twist, to push down what long loans cost. It was a special move, not the Fed's daily habit. What is the ordinary lever the Fed pulls every day?",
     "answer": "Trading government bonds to move interest rates",
     "choices": [
       "Trading government bonds to move interest rates",
-      "Sending checks to every family",
-      "Passing laws about hiring",
-      "Building new banks"
+      "Lending directly to families and small firms",
+      "Setting the price of gold each morning",
+      "Setting the tax rates that banks must pay"
     ],
     "context": "The 2011 program borrowed its name from a Kennedy-era Treasury-Fed program of 1961 that had first tried the yield-curve-flattening technique. Source: Grokipedia 'Operation Twist' (2026-09-05).",
     "topic": "operation-twist-and-qe3-2011-14"
@@ -14929,50 +14539,24 @@
     "answer": "Printing lots of new money makes prices go up",
     "choices": [
       "Printing lots of new money makes prices go up",
-      "It slows the internet down",
-      "It makes it illegal to save money",
-      "It automatically pays off the national debt"
+      "Buying bonds sends interest rates sharply up",
+      "Buying bonds makes the dollar too strong abroad",
+      "Creating money shrinks the cash people hold"
     ],
     "context": "QE3 initially committed the Fed to $40 billion per month in mortgage-backed-security purchases with no announced cap. Its open-ended structure was the key novelty. Source: Grokipedia 'Quantitative easing' (2026-09-05).",
     "topic": "operation-twist-and-qe3-2011-14"
   },
   {
-    "tier": 2,
-    "question": "Ben Bernanke's Fed was already buying mortgage bonds every month in its third round of quantitative easing when, in December 2012, it added another $45 billion a month in longer-term Treasury bonds. What was the combined monthly pace of its bond buying after that?",
-    "answer": "$85 billion per month",
-    "choices": [
-      "$85 billion per month",
-      "$40 billion per month",
-      "$120 billion per month",
-      "$25 billion per month"
-    ],
-    "context": "The December 2012 expansion added Treasuries to the mortgage-backed-security purchases already underway, hitting a $85B/month combined pace. The open-ended commitment meant the balance sheet grew steadily every month for two years. Source: Grokipedia 'Quantitative easing' (2026-09-05).",
-    "topic": "operation-twist-and-qe3-2011-14"
-  },
-  {
-    "tier": 2,
-    "question": "Janet Yellen, first woman ever to lead the Federal Reserve, saw its bond buying end in October 2014. The Fed had judged the emergency after the 2008 crash over, and instead of halting all at once, it had shrunk the purchases a little each month. What did it call that slow ending?",
-    "answer": "Tapering",
-    "choices": [
-      "Tapering",
-      "Deflating",
-      "Rebasing",
-      "Unpegging"
-    ],
-    "context": "Yellen took the chair on February 3 2014, becoming the first woman to lead the Federal Reserve. She served through February 2018. Source: Grokipedia 'Janet Yellen' (2026-09-05).",
-    "topic": "operation-twist-and-qe3-2011-14"
-  },
-  {
     "tier": 3,
     "question": "Ben Bernanke set the Federal Reserve on a third round of quantitative easing (QE) in September 2012, buying mortgage bonds with newly created money, and unlike the rounds before it, this one had no end date. Commentators in the markets called it QE Infinity. What fear did that nickname point at?",
-    "answer": "Money printing might never stop, meaning the currency is being debased forever",
+    "answer": "That the printing might never stop, debasing the dollar for good",
     "choices": [
-      "Money printing might never stop, meaning the currency is being debased forever",
-      "The Fed will pay off every American's mortgage",
-      "Interest rates will rise to 20 percent by next month",
-      "Every bank in the country will close within a week"
+      "That the printing might never stop, debasing the dollar for good",
+      "That the buying would end suddenly and crash bond prices",
+      "That the Fed would lend without limit to failing banks",
+      "That Congress would spend without limit on new programs"
     ],
-    "context": "Boockvar, then chief investment officer at Bleakley Advisory Group, coined 'QE Infinity' to capture the program's open-ended nature. The label stuck across financial media. Source: Grokipedia 'Quantitative easing' (2026-09-05).",
+    "context": "The nickname spread across financial media because QE3, unlike QE1 and QE2, set no end date and no total. Source: Grokipedia 'Quantitative easing' (2026-09-05).",
     "topic": "operation-twist-and-qe3-2011-14"
   },
   {
@@ -14990,26 +14574,26 @@
   },
   {
     "tier": 4,
-    "question": "Peter Schiff and Jim Grant, two Austrian analysts, warned in the 2010s that the Federal Reserve's new money would reach store prices one day, though so far those prices had barely moved. Much of the money, critics explained, was sitting idle in bank reserves, not being spent. What is the word for how fast money changes hands?",
-    "answer": "Velocity",
+    "question": "Peter Schiff and Jim Grant, two analysts in the Austrian tradition, kept warning through the 2010s that the Federal Reserve's flood of new money would reach store prices one day. Yet year after year those prices barely moved. How did the critics explain the delay?",
+    "answer": "Much of the money sat in bank reserves and changed hands slowly",
     "choices": [
-      "Velocity",
-      "Gravity",
-      "Elasticity",
-      "Density"
+      "Much of the money sat in bank reserves and changed hands slowly",
+      "The Fed sold the bonds back before the money could spread",
+      "Congress taxed the new money away as fast as it was made",
+      "Banks lent it all abroad, so none reached American shops"
     ],
-    "context": "Austrian analysts (Peter Schiff, Bob Murphy, Jim Grant) argued the enormous base-money expansion was held in check only by depressed velocity and international dollar demand. When velocity recovered, prices would adjust. Velocity finally recovered in 2020-21. Source: Grokipedia 'Velocity of money' (2026-09-05).",
+    "context": "In the critics' account the huge expansion of base money was held in check by low velocity, the speed at which money changes hands, and by world demand for dollars. M2 velocity in fact fell to a record low in 2020, just before store prices jumped in 2021. Source: fred.stlouisfed.org/series/M2V.",
     "topic": "operation-twist-and-qe3-2011-14"
   },
   {
     "tier": 5,
     "question": "Critics in the public-choice tradition pointed to the size of the Federal Reserve's bond buying in 2013: in a year it bought more, with newly created money, than many a small country's whole economy produces. The Fed called it a technical policy to steer growth. What do the critics say a program that big does?",
-    "answer": "A program that big picks winners and losers across the economy — that is political, not technical",
+    "answer": "It picks winners and losers, which makes it a political choice",
     "choices": [
-      "A program that big picks winners and losers across the economy — that is political, not technical",
-      "Buying that many bonds has no effect on wealth distribution",
-      "Fed actions are always neutral because they target interest rates",
-      "Central bank programs of any size are always short-lived"
+      "It picks winners and losers, which makes it a political choice",
+      "It spreads its gains evenly, so it stays a technical tool",
+      "It cancels out, since the Fed later sells what it buys",
+      "It matters little, since bond prices are set abroad"
     ],
     "context": "When central-bank monthly purchases exceed the annual GDP of Bulgaria or Bolivia, the choice of which assets to buy is inescapably political. Austrian analysts press this against the Fed's self-image as a technical body making neutral adjustments. Source: Ammous, The Fiat Standard (2021).",
     "topic": "operation-twist-and-qe3-2011-14"
@@ -15163,24 +14747,24 @@
     "answer": "Push interest rates way up so people borrowed and spent less",
     "choices": [
       "Push interest rates way up so people borrowed and spent less",
-      "Print lots more money to give to families",
-      "Ban stores from raising any prices",
-      "Give away free gasoline coupons"
+      "Freeze wages and prices by law, as Nixon had in 1971",
+      "Cut interest rates so firms could produce more goods",
+      "Cut taxes so families could keep up with prices"
     ],
     "context": "Volcker took the Fed chair in August 1979. He was tall (6 feet 7 inches), smoked cigars, and became personally identified with the inflation fight for the rest of his career. Source: Grokipedia 'Paul Volcker' (2026-09-05).",
     "topic": "paul-volcker-20-rates-and-breaking-the-1970s-inflation"
   },
   {
-    "tier": 1,
-    "question": "Paul Volcker moved fast. On a Saturday evening in 1979 his Fed said it would aim at how fast bank reserves grew and let interest rates go as high as that took them. Reporters called it the Saturday Night Special. On what date did it come?",
-    "answer": "October 6 1979",
+    "tier": 2,
+    "question": "Paul Volcker moved fast. On a Saturday evening in October 1979 his Fed said it would aim at how fast bank reserves grew and let interest rates go as high as that took them. Reporters gave the surprise a nickname. What did they call it?",
+    "answer": "The Saturday Night Special",
     "choices": [
-      "October 6 1979",
-      "August 15 1971",
-      "March 15 1980",
-      "November 22 1979"
+      "The Saturday Night Special",
+      "The Weekend Squeeze",
+      "The Midnight Rate Raid",
+      "The Black Saturday Order"
     ],
-    "context": "The October 6 1979 Saturday-night announcement was a monetarist experiment influenced by Milton Friedman's arguments. The Fed committed to controlling the money supply and letting rates settle wherever necessary. Source: Grokipedia 'Paul Volcker' (2026-09-05).",
+    "context": "The announcement came on Saturday, October 6, 1979: a monetarist experiment influenced by Milton Friedman's arguments, in which the Fed committed to controlling the money supply and letting rates settle wherever necessary. Source: Grokipedia 'Paul Volcker' (2026-09-05).",
     "topic": "paul-volcker-20-rates-and-breaking-the-1970s-inflation"
   },
   {
@@ -15211,28 +14795,15 @@
   },
   {
     "tier": 3,
-    "question": "A tall, cigar-smoking Federal Reserve chairman picked by Jimmy Carter raised interest rates so high that the prime rate touched 21.5 percent. A sharp recession followed, and inflation fell from 13.5 percent in 1980 to about 3 percent by 1983. Who was the chairman?",
-    "answer": "Paul Volcker",
+    "question": "The prime rate touched 21.5 percent under Paul Volcker's Federal Reserve, factories closed, and the sharpest recession since the 1930s followed. Consumer prices had climbed 13.5 percent in 1980. How fast were they climbing by 1983, once the cure had taken hold?",
+    "answer": "About 3 percent a year",
     "choices": [
-      "Paul Volcker",
-      "Alan Greenspan",
-      "Ben Bernanke",
-      "Arthur Burns"
+      "About 3 percent a year",
+      "About 8 percent a year",
+      "About 11 percent a year",
+      "About 16 percent a year"
     ],
-    "context": "US CPI inflation fell from 13.5% in 1980 to 3.2% by 1983 -- a stunning victory. Volcker had destroyed the inflation expectations that had built up over 15 years and restored the Fed's credibility. Source: Grokipedia 'Great Inflation' (2026-09-05).",
-    "topic": "paul-volcker-20-rates-and-breaking-the-1970s-inflation"
-  },
-  {
-    "tier": 4,
-    "question": "Paul Volcker broke American inflation in the early 1980s, and a long calm followed: for roughly twenty years, from the mid-1980s until 2007, American prices held low and steady. What do economists call that stretch?",
-    "answer": "The Great Moderation",
-    "choices": [
-      "The Great Moderation",
-      "The Long Boom",
-      "The New Economy",
-      "The Silent Era"
-    ],
-    "context": "The Great Moderation (roughly 1985-2007) was the era of low inflation and low output volatility that followed Volcker's disinflation. It ended with the 2008 crisis, which some analysts trace to the excessive risk-taking the Great Moderation encouraged. Source: Grokipedia 'Great Moderation' (2026-09-05).",
+    "context": "Annual CPI inflation fell from 13.5 percent in 1980 to 3.2 percent in 1983. Volcker had broken the inflation expectations that had built up over fifteen years and restored the Fed's credibility. Source: Grokipedia 'Great Inflation' (2026-09-05).",
     "topic": "paul-volcker-20-rates-and-breaking-the-1970s-inflation"
   },
   {
@@ -15241,24 +14812,11 @@
     "answer": "The central bank should be free of daily political pressure",
     "choices": [
       "The central bank should be free of daily political pressure",
-      "The central bank should always match the president's mood",
-      "Inflation is only a problem in election years",
-      "Recessions are caused only by presidential speeches"
+      "The central bank should answer to the president in a crisis",
+      "The central bank should let Congress set its interest rates",
+      "The central bank should time its moves to the election calendar"
     ],
     "context": "Reagan, though a Republican who had campaigned on ending stagflation, gave Volcker the political space to see the tightening through. Reagan reappointed Volcker in 1983 despite the recession's political cost. Source: Grokipedia 'Paul Volcker' (2026-09-05).",
-    "topic": "paul-volcker-20-rates-and-breaking-the-1970s-inflation"
-  },
-  {
-    "tier": 5,
-    "question": "Paul Volcker drove interest rates toward 20 percent to break an inflation of more than 13 percent, and the worst recession since the Great Depression followed. Ronald Reagan never attacked the Fed in public through the slump, and in 1983 he kept Volcker on. What does the whole story point to about what it takes, politically, to break stubborn double-digit inflation?",
-    "answer": "Breaking a serious inflation requires a Fed chair willing to accept severe recession plus a president willing to provide political cover for the recession's cost",
-    "choices": [
-      "Breaking a serious inflation requires a Fed chair willing to accept severe recession plus a president willing to provide political cover for the recession's cost",
-      "Inflation can always be broken through communication and expectations management alone",
-      "The Fed can break inflation without any political cost",
-      "Presidential support is irrelevant to whether the Fed can succeed against inflation"
-    ],
-    "context": "Volcker's success depended on both his own willingness to see the recession through and Reagan's willingness not to attack the Fed publicly. Either failure alone would have collapsed the effort. The two-part condition is the essential lesson. Source: Grokipedia 'Paul Volcker' (2026-09-05).",
     "topic": "paul-volcker-20-rates-and-breaking-the-1970s-inflation"
   },
   {
@@ -15355,27 +14913,14 @@
   {
     "tier": 1,
     "question": "A gold fan weighs a coin and points out that men have used gold as money since ancient times. Bitcoin, he complains, lacks something every gold coin has. What is it?",
-    "answer": "A physical thing you can hold in your hand",
+    "answer": "A physical body a person can hold",
     "choices": [
-      "A physical thing you can hold in your hand",
-      "A shiny yellow color",
-      "A ticker symbol on the news",
-      "A place to store it online"
+      "A physical body a person can hold",
+      "A price quoted every trading day",
+      "Buyers and sellers worldwide",
+      "A supply that is hard to increase"
     ],
-    "context": "Peter Schiff runs Euro Pacific Capital and has been a public gold-bull since the early 2000s. Michael Saylor is Bitcoin's most prominent corporate advocate; Cramer runs Mad Money on CNBC; Buffett is a Bitcoin skeptic but not from the sound-money-Austrian tradition. Source: https://en.wikipedia.org/wiki/Peter_Schiff.",
-    "topic": "peter-schiff-and-the-gold-versus-bitcoin-debate"
-  },
-  {
-    "tier": 1,
-    "question": "Irwin Schiff, a writer of the Austrian school and the father of the stockbroker Peter Schiff, would not pay federal income tax, claiming the law that levied it broke the Constitution. What usually happens to tax protesters who argue that before a judge?",
-    "answer": "They lose in court and can be sent to federal prison",
-    "choices": [
-      "They lose in court and can be sent to federal prison",
-      "The judge cancels the tax law immediately",
-      "Nothing happens -- federal tax is optional",
-      "The government pays them extra money for asking"
-    ],
-    "context": "Irwin Schiff (1928-2015) was an Austrian-economics writer whose tax-protester positions led to his imprisonment; he died in federal custody in 2015. Ron Paul, Murray Rothbard, and Lew Rockwell are separate Austrian figures unrelated by family to Peter. Source: https://en.wikipedia.org/wiki/Peter_Schiff.",
+    "context": "Gold's fans, Peter Schiff loudest among them, point to five thousand years of gold as money; a bitcoin exists only as an entry in a shared digital ledger. Source: https://en.wikipedia.org/wiki/Peter_Schiff.",
     "topic": "peter-schiff-and-the-gold-versus-bitcoin-debate"
   },
   {
@@ -15388,7 +14933,7 @@
       "the 1987 Black Monday crash",
       "the 2020 pandemic crash"
     ],
-    "context": "Schiff warned about the coming US housing crash repeatedly on 2006-07 CNBC panels; the videos went viral after the crash arrived in 2007-08. His book 'Crash Proof' (2007) laid out the argument in detail. The other crashes predate or postdate the specific prediction videos. Source: https://en.wikipedia.org/wiki/Peter_Schiff.",
+    "context": "Schiff warned about the coming US housing crash repeatedly on 2006-07 CNBC panels; the videos went viral after the crash arrived in 2007-08. His book Crash Proof (2007) laid out the argument in detail. Source: https://en.wikipedia.org/wiki/Peter_Schiff.",
     "topic": "peter-schiff-and-the-gold-versus-bitcoin-debate"
   },
   {
@@ -15397,48 +14942,35 @@
     "answer": "Cheap credit fuels booms that must end in busts",
     "choices": [
       "Cheap credit fuels booms that must end in busts",
-      "Higher interest rates always mean lower house prices right away",
-      "Big banks control the whole housing market at all times",
-      "House prices only go down when the president says so"
+      "Bubbles grow from crowd mania, not from interest rates",
+      "Prices are set by building costs, not by credit",
+      "Housing busts come only after unemployment rises"
     ],
-    "context": "Peter Schiff, 'Crash Proof: How to Profit from the Coming Economic Collapse' (2007). Michael Lewis wrote 'The Big Short' (2010) about the same crash from a different angle; Nassim Taleb wrote 'The Black Swan' (2007) and 'Fooled by Randomness' (2001) on general market unpredictability. Source: https://www.wiley.com/en-us/Crash+Proof-p-9780470043608.",
+    "context": "Peter Schiff, Crash Proof: How to Profit from the Coming Economic Collapse (Wiley, 2007). Its case follows the Austrian account of the business cycle: credit made artificially cheap feeds a boom that has to end in a bust. Source: https://www.wiley.com/en-us/Crash+Proof-p-9780470043608.",
     "topic": "peter-schiff-and-the-gold-versus-bitcoin-debate"
   },
   {
     "tier": 3,
     "question": "Peter Schiff began attacking Bitcoin around 2013 and became the most persistent critic in the sound-money camp, though, like the Bitcoiners, he distrusted government paper money. His main argument pointed to one thing gold has and Bitcoin lacks. What was it?",
-    "answer": "intrinsic non-monetary value: gold has jewelry and industrial uses, Bitcoin has none of that",
+    "answer": "Intrinsic value from its uses in jewelry and industry",
     "choices": [
-      "intrinsic non-monetary value: gold has jewelry and industrial uses, Bitcoin has none of that",
-      "cryptographic security against tampering, forgery, or double-spending in the underlying ledger",
-      "portability across international borders without triggering physical searches or seizure risk",
-      "recognizability by international courts as a legally protected form of property in every jurisdiction"
+      "Intrinsic value from its uses in jewelry and industry",
+      "A place in the reserves of the world's central banks",
+      "Safety from hackers who could steal it from afar",
+      "Coins stamped and guaranteed by national mints"
     ],
-    "context": "Schiff's central claim is that gold has intrinsic value (jewelry, industrial uses, 5,000 years of recognition) while Bitcoin has none, so Bitcoin is a pure speculative bubble. He does not dispute Bitcoin's cryptographic security, portability, or courtroom recognition -- he argues those are insufficient without intrinsic value. Source: https://www.schiffgold.com/; various Schiff-Saylor debate transcripts.",
-    "topic": "peter-schiff-and-the-gold-versus-bitcoin-debate"
-  },
-  {
-    "tier": 3,
-    "question": "A software chief who had put more Bitcoin into his firm's treasury than any other public company sat down across from Peter Schiff for one more debate, as he had again and again since 2020. Schiff called Bitcoin worthless. Who was Schiff's opponent?",
-    "answer": "Michael Saylor of MicroStrategy",
-    "choices": [
-      "Michael Saylor of MicroStrategy",
-      "Brian Armstrong of Coinbase",
-      "Changpeng Zhao of Binance",
-      "Vitalik Buterin of the Ethereum Foundation"
-    ],
-    "context": "Michael Saylor of MicroStrategy (renamed Strategy) is Schiff's usual debate opponent since 2020, when Saylor began the corporate treasury Bitcoin accumulation. Armstrong runs an exchange; CZ runs another exchange; Buterin runs Ethereum, not a Bitcoin-focused position. Source: https://en.wikipedia.org/wiki/Michael_J._Saylor.",
+    "context": "Schiff's central claim is that gold has intrinsic value from jewelry, industry and five thousand years of recognition, while Bitcoin has none, so in his view Bitcoin's price rests on speculation alone. Source: https://www.schiffgold.com/; various Schiff-Saylor debate transcripts.",
     "topic": "peter-schiff-and-the-gold-versus-bitcoin-debate"
   },
   {
     "tier": 4,
     "question": "Michael Saylor conceded to Peter Schiff, in one of their many debates over gold and Bitcoin, that Bitcoin is new and has not been tested by history. Then Saylor made his case for Bitcoin on other ground. What was Saylor's main move?",
-    "answer": "that monetary value comes from properties like scarcity, divisibility, portability and verifiability, and Bitcoin dominates gold on each of those measures except historical duration",
+    "answer": "That monetary properties such as scarcity and portability make money, and Bitcoin wins on them",
     "choices": [
-      "that monetary value comes from properties like scarcity, divisibility, portability and verifiability, and Bitcoin dominates gold on each of those measures except historical duration",
-      "that intrinsic value is entirely irrelevant to all economic reasoning about money, so gold's jewelry and industrial uses have never mattered to its role as a store of wealth",
-      "that gold has no non-monetary uses of significance and never has, so the whole gold-vs-Bitcoin debate is really about which useless object is scarcer",
-      "that only government-issued money can serve as a durable store of value, so both gold and Bitcoin will eventually be replaced by state currency systems"
+      "That monetary properties such as scarcity and portability make money, and Bitcoin wins on them",
+      "That intrinsic value never matters to money, so gold's jewelry uses are beside the point",
+      "That gold has no real uses outside money, so the debate is over which useless thing is scarcer",
+      "That only state money lasts, so gold and Bitcoin will both give way to government currency"
     ],
     "context": "Saylor's argument: monetary properties (scarcity, divisibility, portability, verifiability, durability) determine what becomes money, not jewelry uses; on those measures Bitcoin dominates gold, with duration the one property gold currently leads on. He does not deny gold's non-monetary uses or dismiss intrinsic-value theory categorically. Source: Schiff-Saylor debate transcripts 2021-24.",
     "topic": "peter-schiff-and-the-gold-versus-bitcoin-debate"
@@ -15458,19 +14990,6 @@
   },
   {
     "tier": 5,
-    "question": "A Bitcoin teacher sums up the long, public quarrel between Peter Schiff and Michael Saylor: unsettled, though both gold and Bitcoin have risen sharply since 2020. The teacher calls the argument worth having anyway. What reason does the teacher give?",
-    "answer": "That both men articulate their arguments honestly, in public, in a financial-media environment where that is unusually rare",
-    "choices": [
-      "That both men articulate their arguments honestly, in public, in a financial-media environment where that is unusually rare",
-      "That the debate has convinced most governments to accept Bitcoin as legal tender",
-      "That the debate has been settled definitively by peer-reviewed economics papers",
-      "That the debate has ended with a formal apology from Schiff"
-    ],
-    "context": "The point here: the value of the Schiff-Saylor exchange is that both men state and defend their positions publicly rather than through carefully-cropped soundbites. No government adoption cascade, definitive academic resolution, or Schiff apology has occurred. Source: Schiff-Saylor debate transcripts.",
-    "topic": "peter-schiff-and-the-gold-versus-bitcoin-debate"
-  },
-  {
-    "tier": 5,
     "question": "Michael Saylor took one of Peter Schiff's arguments seriously, though the two men disagreed on how it applied to Bitcoin. Schiff kept pressing it in their debates over gold and Bitcoin. Which argument was it?",
     "answer": "the Mises regression theorem: a money must be traceable to a prior non-monetary demand",
     "choices": [
@@ -15484,19 +15003,6 @@
   },
   {
     "tier": 1,
-    "question": "Phil Zimmermann finished a free program in 1991 that let anyone scramble an email so that only a reader with the right secret key could make sense of it. What is that kind of scrambling called?",
-    "answer": "Encryption",
-    "choices": [
-      "Encryption",
-      "Deletion",
-      "Advertising",
-      "Downloading"
-    ],
-    "context": "Phil Zimmermann wrote PGP in 1991. Gates and Wozniak were building operating systems and personal computers; Torvalds released the Linux kernel that same year but did not write PGP. Source: https://en.wikipedia.org/wiki/Phil_Zimmermann.",
-    "topic": "phil-zimmermann-pgp-and-the-munitions-list-investigation"
-  },
-  {
-    "tier": 1,
     "question": "An American programmer gave the free email program he released in 1991 a deliberately modest name, three words long. He was Phil Zimmermann, and he wanted ordinary people, not just spy agencies, to be able to keep messages secret. What was the name?",
     "answer": "Pretty Good Privacy",
     "choices": [
@@ -15505,7 +15011,7 @@
       "Private Global Post",
       "Perfect Guard Program"
     ],
-    "context": "PGP stands for Pretty Good Privacy -- Zimmermann's deliberately modest name for a program that gave ordinary users email cryptography previously available only to governments. The other expansions are fabrications. Source: https://en.wikipedia.org/wiki/Pretty_Good_Privacy.",
+    "context": "PGP stands for Pretty Good Privacy, Zimmermann's deliberately modest name for a program that gave ordinary users email cryptography once available only to governments. Source: https://en.wikipedia.org/wiki/Pretty_Good_Privacy.",
     "topic": "phil-zimmermann-pgp-and-the-munitions-list-investigation"
   },
   {
@@ -15518,7 +15024,7 @@
       "He patented it and licensed only US citizens",
       "He handed it out only on floppy disks inside the US"
     ],
-    "context": "Zimmermann uploaded PGP to the internet in 1991; within weeks it was on servers in every country including US-embargoed states. Selling to DoD, patenting for US-only licensing, or floppy-only distribution are the opposite of what he did. Source: https://en.wikipedia.org/wiki/Phil_Zimmermann.",
+    "context": "Zimmermann released PGP in 1991, and within weeks copies had spread to computers abroad. Selling it to the Pentagon, patenting it for US-only licensing or handing it out on floppy disks would have done the opposite. Source: https://en.wikipedia.org/wiki/Phil_Zimmermann.",
     "topic": "phil-zimmermann-pgp-and-the-munitions-list-investigation"
   },
   {
@@ -15540,11 +15046,11 @@
     "answer": "A rifle or a missile",
     "choices": [
       "A rifle or a missile",
-      "A tax form",
-      "A patent application",
-      "A public library book"
+      "A stack of classified papers",
+      "A crate of untaxed liquor",
+      "A batch of counterfeit bills"
     ],
-    "context": "Strong cryptography above certain key lengths appeared on the US Munitions List (USML) governed by the Arms Export Control Act. The Entity List (Commerce Department), SDN (Treasury), and OFAC country sanctions are different and specifically about persons, entities, and territories. Source: https://en.wikipedia.org/wiki/Export_of_cryptography_from_the_United_States.",
+    "context": "Strong cryptography above certain key lengths sat on the US Munitions List under the Arms Export Control Act, so sending it abroad without a license was, in law, an arms export. Source: https://en.wikipedia.org/wiki/Export_of_cryptography_from_the_United_States.",
     "topic": "phil-zimmermann-pgp-and-the-munitions-list-investigation"
   },
   {
@@ -15557,7 +15063,7 @@
       "an unclassified summary of the Arms Export Control Act",
       "a public directory of PGP users worldwide"
     ],
-    "context": "MIT Press published PGP's entire source code as a printed book in 1995 -- because books, as speech, are protected by the First Amendment. A foreign purchaser could scan or OCR the pages to recover the software. The other options were not the specific counter-move. Source: https://mitpress.mit.edu/9780262240390/pgp-source-code-and-internals/.",
+    "context": "MIT Press published PGP's entire source code as a printed book in 1995 -- because books, as speech, are protected by the First Amendment. A foreign purchaser could scan the pages to recover the software. Source: https://mitpress.mit.edu/9780262240390/pgp-source-code-and-internals/.",
     "topic": "phil-zimmermann-pgp-and-the-munitions-list-investigation"
   },
   {
@@ -15579,24 +15085,24 @@
     "answer": "Dropped the case without ever filing charges",
     "choices": [
       "Dropped the case without ever filing charges",
-      "Put him in prison for ten years",
-      "Fined him one billion dollars",
-      "Forced him to delete every copy of the software"
+      "Charged him, then lost the case before a jury",
+      "Settled after he agreed to stop giving PGP away",
+      "Took a guilty plea from him in return for a fine"
     ],
-    "context": "DOJ dropped the investigation in January 1996 without charges. The 1993 date is when the investigation opened; the US relaxed cryptography export controls in 1999; and 2001 is unrelated. Source: https://en.wikipedia.org/wiki/Phil_Zimmermann.",
+    "context": "The Justice Department closed the investigation in January 1996 without filing charges, and Washington loosened its export controls on cryptography in the late 1990s. Source: https://en.wikipedia.org/wiki/Phil_Zimmermann.",
     "topic": "phil-zimmermann-pgp-and-the-munitions-list-investigation"
   },
   {
     "tier": 5,
     "question": "Phil Zimmermann released a free email program in 1991 that Washington wanted kept at home. The cypherpunks learned something about timing from the long fight that followed. What was the lesson?",
-    "answer": "Once software is already everywhere, the government has no way left to take it back",
+    "answer": "Once software is everywhere, no government can take it back",
     "choices": [
-      "Once software is already everywhere, the government has no way left to take it back",
-      "Petitioning legislators one by one always saves privacy tools",
-      "A well-funded lobbying group is required before shipping any code",
-      "Patenting the software is the best defense for open-source privacy tools"
+      "Once software is everywhere, no government can take it back",
+      "Wait for the courts to clear a program before publishing it",
+      "Release code only after Congress has changed the export law",
+      "Keep code private until a big company agrees to back it"
     ],
-    "context": "The PGP argument: releasing the software worldwide before the state could stop it removed the state's suppression leverage; you cannot un-publish a program on ten thousand servers. Legislative petitioning, lobbying groups, and patents are the opposite of the shipping-first strategy the fight vindicated. Source: https://en.wikipedia.org/wiki/Phil_Zimmermann.",
+    "context": "The PGP argument: releasing the software worldwide before the state could stop it removed the state's power to suppress it, because nobody can un-publish a program on ten thousand servers. Source: https://en.wikipedia.org/wiki/Phil_Zimmermann.",
     "topic": "phil-zimmermann-pgp-and-the-munitions-list-investigation"
   },
   {
@@ -15711,9 +15217,9 @@
       "It contracted by about 12 percent",
       "It rose by about 12 percent",
       "It stayed nearly flat",
-      "It doubled"
+      "It contracted by about half"
     ],
-    "context": "GDP contracted about 12% in 1990 and again in 1991. Unemployment rose from nominal Communist-era full employment to over 12%. Inflation initially spiked. Political heat was intense. Source: World Bank Poland historical data.",
+    "context": "By official figures real GDP fell about 11.6 percent in 1990 and about 7 percent more in 1991, and registered unemployment rose from zero in 1989 to nearly 12 percent by 1991. Source: grokipedia.com/page/Balcerowicz_Plan.",
     "topic": "polands-balcerowicz-plan-1990-shock-therapy-that-worked"
   },
   {
@@ -15726,7 +15232,7 @@
       "The Solidarity boom",
       "The great planned expansion"
     ],
-    "context": "Poland grew continuously 1992-2008, an unmatched European record. By 2019 real per-capita GDP had roughly tripled from its 1990 low. Warsaw modernized; the country joined the EU in 2004. Source: World Bank Poland data.",
+    "context": "Poland grew every year from 1992 until the pandemic year of 2020 and avoided recession in 2008-09, an unmatched European record. Warsaw modernized, and the country joined the EU in 2004. Source: grokipedia.com/page/Balcerowicz_Plan.",
     "topic": "polands-balcerowicz-plan-1990-shock-therapy-that-worked"
   },
   {
@@ -15739,31 +15245,31 @@
       "About the same",
       "About ten times bigger"
     ],
-    "context": "Poland's real per-capita GDP had roughly tripled from its 1990 low by 2019. The stretch of continuous growth 1992-2008 and steady recovery after the 2008 crisis produced the largest sustained gain among post-communist economies. Source: World Bank Poland data.",
+    "context": "Poland's real per-capita GDP had roughly tripled from its 1990 low by 2019, after unbroken growth from 1992 that carried straight through the 2008 crisis, the largest sustained gain among post-communist economies. Source: World Bank Poland data.",
     "topic": "polands-balcerowicz-plan-1990-shock-therapy-that-worked"
   },
   {
     "tier": 4,
-    "question": "Boris Yeltsin gave every Russian citizen paper vouchers in the early 1990s, each standing for a slice of state industry, after the Soviet Union broke apart. Russia's path ended very differently from Poland's. What is the standard critique of Russia's path?",
-    "answer": "Gradual measures were captured by insiders, producing the oligarch collapse",
+    "question": "Boris Yeltsin gave every Russian citizen paper vouchers in the early 1990s, each standing for a slice of state industry, after the Soviet Union broke apart. Russia's path ended very differently from Poland's. What critique of it do defenders of Poland's plan make?",
+    "answer": "Halfway reforms let insiders buy up vouchers and become oligarchs",
     "choices": [
-      "Gradual measures were captured by insiders, producing the oligarch collapse",
-      "The reforms were too fast, producing hyperinflation",
-      "The government stayed too socialist, producing shortage",
-      "The state privatized only strategic industries, producing distortion"
+      "Halfway reforms let insiders buy up vouchers and become oligarchs",
+      "The reforms went too fast, so prices exploded out of control",
+      "Foreign buyers took the vouchers and carried off Russian industry",
+      "Privatization went too far, leaving the state without revenue"
     ],
-    "context": "Russia's voucher privatization was captured by well-positioned insiders who accumulated stakes cheaply. Without hard-budget discipline, the result was oligarch-owned enterprises rather than a genuine market. The comparison with Poland became the standard case for the coherent-package view. Source: aslund.org, Russia After Communism.",
+    "context": "Russia's voucher privatization was captured by well-placed insiders who gathered up stakes cheaply. Defenders of the Polish plan, Anders Aslund among them, blame delayed and partial reform without hard budgets; others, such as Joseph Stiglitz, blamed reform that went too fast. Sources: grokipedia.com/page/Balcerowicz_Plan; aslund.org, Russia After Communism.",
     "topic": "polands-balcerowicz-plan-1990-shock-therapy-that-worked"
   },
   {
     "tier": 5,
     "question": "Leszek Balcerowicz insisted that his reforms launch all together or not at all, a lesson that echoes the calculation debate between Ludwig von Mises and the central planners. Poland's plan of 1990 put the lesson to work. Which package did he insist must start together?",
-    "answer": "Price liberalization plus hard-budget constraints plus currency convertibility plus trade opening",
+    "answer": "Freed prices, hard budgets, a convertible currency and open trade",
     "choices": [
-      "Price liberalization plus hard-budget constraints plus currency convertibility plus trade opening",
-      "Price liberalization alone plus foreign aid",
-      "Currency convertibility plus state industrial policy",
-      "Trade opening plus continued state pricing"
+      "Freed prices, hard budgets, a convertible currency and open trade",
+      "Freed prices, wage subsidies, a convertible currency and open trade",
+      "Freed prices, hard budgets, a gold-backed currency and open trade",
+      "Freed prices, hard budgets, a convertible currency and farm price floors"
     ],
     "context": "Balcerowicz's insight: nominal price liberalization without hard-budget constraints (no state bailouts of failing SOEs) does not produce market discipline. A coherent package with all four elements enables the Mises-Hayek mechanism to work. Source: Balcerowicz, Socialism, Capitalism, Transformation (1995).",
     "topic": "polands-balcerowicz-plan-1990-shock-therapy-that-worked"
@@ -15787,9 +15293,9 @@
     "answer": "Getting elected again",
     "choices": [
       "Getting elected again",
-      "Winning international awards",
-      "Being liked by other lawmakers",
-      "Reading more textbooks"
+      "Winning a cabinet post",
+      "Passing the laws they promised",
+      "Earning a bigger salary"
     ],
     "context": "Nordhaus's model: an incumbent seeking reelection benefits from a pre-election boom (voters observe strong economy, incumbent gets credit) and can defer the post-election bust past the election-day judgment. Source: Nordhaus, Review of Economic Studies (1975).",
     "topic": "political-business-cycles-nordhaus-1975-burns-nixon-1972-gre"
@@ -15800,9 +15306,9 @@
     "answer": "Inflation that shows up soon after the election",
     "choices": [
       "Inflation that shows up soon after the election",
-      "A sudden drop in unemployment that lasts forever",
-      "Foreign countries permanently raising their tariffs",
-      "A rise in gold prices that the president can easily reverse"
+      "Falling prices once the votes are counted",
+      "Lasting growth that pays for itself over time",
+      "A strong dollar that makes imports cheaper"
     ],
     "context": "Arthur Burns chaired the Federal Reserve from February 1970 through January 1978. The Nixon White House tapes -- partially transcribed in Burton Abrams's 2006 Journal of Economic Perspectives article -- document Nixon pressing Burns for easier money before the 1972 election. Source: aeaweb.org (Abrams 2006).",
     "topic": "political-business-cycles-nordhaus-1975-burns-nixon-1972-gre"
@@ -15813,7 +15319,7 @@
     "answer": "A 49-state landslide reelection",
     "choices": [
       "A 49-state landslide reelection",
-      "A narrow one-state victory",
+      "A narrow win decided by a few states",
       "A loss to George McGovern",
       "A defeat by a third-party candidate"
     ],
@@ -15839,9 +15345,9 @@
     "answer": "A central bank can defy the political calendar when it chooses to",
     "choices": [
       "A central bank can defy the political calendar when it chooses to",
-      "Central banks always follow the president's wishes",
-      "Recessions never happen during election years",
-      "Fighting inflation always guarantees the president wins"
+      "A president's own appointee will always ease before a vote",
+      "Tight money before an election is the way to win it",
+      "The Fed tightens only when Congress orders it to"
     ],
     "context": "Paul Volcker's 1979-82 tightening produced a deep recession that helped defeat Jimmy Carter in 1980. Volcker's willingness to accept that cost is the counter-example that shows independent-central-banker behavior is possible when the incentives allow it. Source: Volcker, Keeping At It (Public Affairs 2018).",
     "topic": "political-business-cycles-nordhaus-1975-burns-nixon-1972-gre"
@@ -15865,9 +15371,9 @@
     "answer": "Fed independence is a legal structure, not necessarily an incentive structure",
     "choices": [
       "Fed independence is a legal structure, not necessarily an incentive structure",
-      "The Fed is always corrupt regardless of who chairs it",
-      "Fed independence is a myth invented after 1913",
-      "The Fed is always politically neutral in practice"
+      "Fed independence works only when a chair serves a single long term",
+      "Fed independence matters less than the expertise of its staff",
+      "Fed independence is secured once its budget is free of Congress"
     ],
     "context": "Buchanan's move: examine the specific chair's reappointment prospects, congressional-relationship incentives, and post-Fed career prospects. Legal independence is compatible with substantial de facto political responsiveness. Source: Buchanan, 'Politics Without Romance' (1979) applied.",
     "topic": "political-business-cycles-nordhaus-1975-burns-nixon-1972-gre"
@@ -15913,7 +15419,7 @@
   },
   {
     "tier": 3,
-    "question": "The founders of public choice coined a two-word term for a policy that goes wrong because of what the people running it stand to gain or lose. James Buchanan and Gordon Tullock built the school to take those rewards seriously. What is the term?",
+    "question": "James Buchanan and Gordon Tullock built public choice to take seriously what officials stand to gain or lose, the same way economists treat buyers and firms. What two-word term does the school use for a policy that goes wrong because of those rewards?",
     "answer": "Government failure",
     "choices": [
       "Government failure",
@@ -15926,15 +15432,15 @@
   },
   {
     "tier": 3,
-    "question": "Gordon Tullock and Mancur Olson joined James Buchanan in listing the ways governments fail because of the rewards that leaders and voters face. Which idea describes how markets coordinate people instead, and so has no place on their list?",
-    "answer": "The invisible hand of consumer sovereignty",
+    "question": "Public-choice economists such as James Buchanan, a Nobel laureate of 1986, and Gordon Tullock catalogue the many ways a government fails because of the rewards its officials and voters face. Which idea has no place at all in that catalogue?",
+    "answer": "The invisible hand that guides self-interest",
     "choices": [
-      "The invisible hand of consumer sovereignty",
+      "The invisible hand that guides self-interest",
       "Regulatory capture by concentrated industries",
       "Rent-seeking by lobbyists competing for privilege",
       "Rational ignorance by voters with low per-capita stakes"
     ],
-    "context": "The invisible hand describes a MARKET mechanism, not a government-failure mode. The other three -- capture (Stigler), rent-seeking (Tullock), rational ignorance (Downs) -- are core public-choice mechanisms. Source: Buchanan, 'Politics Without Romance' (1979).",
+    "context": "The invisible hand describes a MARKET mechanism, not a way governments fail. Capture (Stigler), rent-seeking (Tullock) and rational ignorance (Downs) are core public-choice mechanisms. Source: Buchanan, 'Politics Without Romance' (1979).",
     "topic": "politics-without-romance-buchanans-nobel-lecture-phrase"
   },
   {
