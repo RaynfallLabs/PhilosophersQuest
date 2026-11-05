@@ -14,13 +14,13 @@
   },
   {
     "tier": 2,
-    "question": "When Heloise bore Abelard a son, the couple passed over the usual family names for a startling one. They named the boy after a real tool for plotting the stars at night and fixing a traveler's place under the sky. What kind of object did they name him after?",
-    "answer": "A scientific instrument",
+    "question": "When Heloise bore Abelard a son, the couple passed over the usual family names for a startling one. They named the boy after a scientific instrument for plotting the stars at night and fixing a traveler's place under the sky. What did they call him?",
+    "answer": "Astrolabe",
     "choices": [
-      "A scientific instrument",
-      "A saint from Heloise's family line",
-      "A fortress on the Seine river",
-      "A hymn from the Paris cathedral"
+      "Astrolabe",
+      "Sextant",
+      "Quadrant",
+      "Compass"
     ],
     "context": "They named the child Astrolabe, after the star-charting instrument a navigator used to fix his position on Earth. Abelard later wrote him a poem of fatherly advice, the Carmen ad Astrolabium. Source: Wikipedia 'Heloise' (names Astrolabe, explains the device); Toronto DLB Abelard biography.",
     "topic": "abelard-and-heloise"
@@ -326,10 +326,10 @@
   },
   {
     "tier": 3,
-    "question": "A city councilman argues that the town should build a new downtown gathering hall. An opponent replies, 'His argument is no good — he owns property nearby and would get rich if it's built.' The opponent never addresses traffic, cost, or need. The councilman's stake is worth knowing, but what has the opponent failed to do?",
-    "answer": "Show that the convention center is actually a bad idea on its own merits",
+    "question": "A city councilman argues that the town should build a new convention center downtown. An opponent replies, 'His argument is no good — he owns property nearby and would get rich if it's built.' The opponent never addresses traffic, cost, or need. The councilman's stake is worth knowing, but what has the opponent failed to do?",
+    "answer": "Show that the project itself is a bad idea on its own merits",
     "choices": [
-      "Show that the convention center is actually a bad idea on its own merits",
+      "Show that the project itself is a bad idea on its own merits",
       "Prove that the councilman truly owns the nearby property he mentioned",
       "Find a second councilman who would also profit from the project",
       "Insult the councilman harshly enough for the crowd to turn on him"
@@ -833,7 +833,7 @@
   },
   {
     "tier": 2,
-    "question": "Karl Marx walked through England's new industrial cities in the 1800s. He watched factory workers make fine goods they could never afford, then trudge home to cramped rented rooms. This was no mere bad luck or low pay, he argued. What did Marx say the scene revealed about the worker's labour?",
+    "question": "Karl Marx was twenty-six and living in Paris when he filled his 1844 notebooks on the lives of factory workers. They made fine goods they could never afford, then trudged home to cramped rooms. This was no mere bad luck or low pay, he argued. What did Marx say it revealed about their labour?",
     "answer": "The same labour that builds the rich man's world of beauty builds the worker's own ruin and poverty",
     "choices": [
       "The same labour that builds the rich man's world of beauty builds the worker's own ruin and poverty",
@@ -2146,7 +2146,7 @@
   },
   {
     "tier": 3,
-    "question": "A man on trial says, 'You can't prove I DIDN'T do it, so you must convict.' A juror objects that this would turn an empty file into a guilty verdict. Anglo-American criminal law sides with the juror and is built to block exactly this move. How does the law block it?",
+    "question": "A prosecutor tells the jury, 'He can't prove he DIDN'T do it, so you must convict.' A juror objects that this would turn an empty file into a guilty verdict. Anglo-American criminal law sides with the juror and is built to block exactly this move. How does the law block it?",
     "answer": "By presuming the defendant innocent and laying the burden of proof on the prosecution, so a missing file cannot count as guilt",
     "choices": [
       "By presuming the defendant innocent and laying the burden of proof on the prosecution, so a missing file cannot count as guilt",
@@ -3876,10 +3876,10 @@
   {
     "tier": 4,
     "question": "Suppose you are busy at something, a free subject, unselfconscious, when you suddenly feel another person's eyes on you. Jean-Paul Sartre says that under that gaze something flips. According to Sartre, what does the other person's look do to you?",
-    "answer": "It freezes you into an object, a fixed thing seen from outside as they decide you are",
+    "answer": "It freezes you into an object, a thing seen from outside as the watcher decides you are",
     "choices": [
-      "It freezes you into an object, a fixed thing seen from outside as they decide you are",
-      "It forces you to perform, putting on a polished act to win their good opinion",
+      "It freezes you into an object, a thing seen from outside as the watcher decides you are",
+      "It forces you to perform, putting on a polished act to win the watcher's good opinion",
       "It reminds you that you will be judged later, by a court or by God, for your deeds",
       "It makes you copy the watcher, slowly reshaping yourself to resemble whoever observes you"
     ],
@@ -4045,12 +4045,12 @@
   {
     "tier": 4,
     "question": "Frédéric Bastiat wrote his sharpest work while he was dying. A wasting disease had ruined his throat, and when he could no longer give speeches in France's National Assembly, he spent his last strength on the page. He died in Rome on Christmas Eve, 1850. What single word is he said to have repeated at the end?",
-    "answer": "''Truth''",
+    "answer": "'Truth'",
     "choices": [
-      "''Truth''",
-      "''Liberty''",
-      "''Justice''",
-      "''Forward''"
+      "'Truth'",
+      "'Liberty'",
+      "'Justice'",
+      "'Forward'"
     ],
     "context": "Claude-Frederic Bastiat (1801-1850), French economist and deputy in the National Assembly after the 1848 revolution, wrote both the seen/unseen essay and 'The Law' in 1850, the last year of his life. Dying of throat tuberculosis, he reportedly repeated 'Truth, truth' at the end. Joseph Schumpeter later called him 'the most brilliant economic journalist who ever lived.' (The last words are a reported account.) Source: fee.org/articles/the-life-of-frederic-bastiat; en.wikipedia.org/wiki/Frederic_Bastiat; Schumpeter, 'History of Economic Analysis' (1954), p. 500.",
     "topic": "bastiats-broken-window-the-seen-and-the-unseen"
@@ -5298,7 +5298,7 @@
       "The cared-for receives the care and responds to the one who gave it",
       "The one-caring must give up something real and costly in the giving",
       "The one-caring must act from the plain duty any decent person feels",
-      "The cared-for ends up better off whether or not they ever notice"
+      "The cared-for ends up better off whether or not it is ever noticed"
     ],
     "context": "For Noddings, caring is a completed relation between two people, not a one-way feeling: a baby smiling back, a student trying harder. The receiving and response from the cared-for is what closes the loop. (She also calls 'engrossment' the act of setting your own view aside to truly receive the other's reality.) Source: https://iep.utm.edu/care-ethics/",
     "topic": "care-ethics"
@@ -6306,7 +6306,7 @@
   },
   {
     "tier": 5,
-    "question": "The everyday rule 'If it rained last night, then the grass is wet' points in one direction only. Of four moves someone might make from it, three secretly run it backward and prove nothing at all. Logicians call the one airtight move modus tollens. Which move is it?",
+    "question": "The everyday rule 'If it rained last night, then the grass is wet' points in one direction only. Of four moves someone might make from it, three prove nothing at all. Logicians call the one airtight move modus tollens. Which move is it?",
     "answer": "The grass is dry, so it did not rain.",
     "choices": [
       "The grass is dry, so it did not rain.",
@@ -6540,7 +6540,7 @@
   },
   {
     "tier": 5,
-    "question": "Smoking and lung cancer were once 'just a correlation' too, and the tobacco industry used that to wave the danger away for years. Sir Austin Bradford Hill argued in 1965 that one pattern is the strongest sign a link is a real cause, not coincidence. Which finding would best support the claim that smoking causes lung cancer?",
+    "question": "Smoking and lung cancer were once 'just a correlation' too, and the tobacco industry used that to wave the danger away for years. Sir Austin Bradford Hill replied in 1965 with a list of tests for telling a real cause from coincidence. Which finding would best support the claim that smoking causes lung cancer?",
     "answer": "Heavier smokers get lung cancer at steadily climbing rates -- the more cigarettes a person smokes, the more cancer",
     "choices": [
       "Heavier smokers get lung cancer at steadily climbing rates -- the more cigarettes a person smokes, the more cancer",
@@ -6548,7 +6548,7 @@
       "Most people who developed lung cancer turned out to have taken up smoking at some point earlier in their lives",
       "Lung cancer became far more common in the same decades that cigarettes were first sold widely to the public"
     ],
-    "context": "This is Hill's 'dose-response' (biological-gradient) test: more exposure should bring more disease. His other tests include strength (smokers' lung-cancer death ran 10-30x non-smokers'), temporality (cause before effect), and consistency across studies. A correlation surviving all of them has earned the word 'cause.' Statistician Ronald Fisher argued the tobacco industry's side. Source: A. B. Hill, 1965; Bradford Hill criteria, NCBI Bookshelf.",
+    "context": "This is Hill's 'dose-response' (biological-gradient) test: more exposure should bring more disease. His other tests include strength (smokers' lung-cancer death ran 10-30x non-smokers'), temporality (cause before effect), and consistency across studies. Hill ranked none of his nine viewpoints as decisive on its own; together they build the case for a cause. Statistician Ronald Fisher argued the tobacco industry's side. Source: A. B. Hill, 1965; Bradford Hill criteria, NCBI Bookshelf.",
     "topic": "correlation-vs-causation-the-lurking-third-cause"
   },
   {
@@ -6878,12 +6878,12 @@
   },
   {
     "tier": 4,
-    "question": "Alan Turing, in his 1950 paper on whether machines can think, weighs an objection: \"If each man followed a fixed set of rules for living, he would be no better than a machine; but there are no such rules, so men cannot be machines.\" Turing dismisses the reasoning as faulty. What is the gap in it?",
-    "answer": "A man without fixed rules could still be a machine some other way.",
+    "question": "Alan Turing, in his 1950 paper on whether machines can think, sums up an objection: \"If each man had a definite set of rules of conduct by which he regulated his life he would be no better than a machine. But there are no such rules, so men cannot be machines.\" Turing calls the reasoning faulty. What is the gap in it?",
+    "answer": "A man without such rules could still be a machine some other way.",
     "choices": [
-      "A man without fixed rules could still be a machine some other way.",
+      "A man without such rules could still be a machine some other way.",
       "Some machines very plainly do live by a fixed set of rules.",
-      "Whether men truly follow fixed rules is something no one can know.",
+      "Whether men truly follow such rules is something no one can know.",
       "If men really were machines, they would have to follow fixed rules."
     ],
     "context": "This is denying the antecedent (the inverse error): the rule ran only 'fixed rules, then machine-like,' so the absence of fixed rules cannot establish 'not a machine'; being no better than a machine could be reached another way. Turing quotes the objection in the 'Argument from Informality of Behaviour' and dismisses its reasoning as faulty; in the paper he labels the flaw an 'undistributed middle,' while modern logic texts classify this same form as denying the antecedent. The question asks only about the logical flaw and takes no stand on whether minds are machines.",
@@ -7794,7 +7794,7 @@
       "The sorrowing man's, because he stays alive from duty alone, with no love of life left to prompt him",
       "The cheerful man's, because a healthy delight in being alive is the most natural reason of all to go on",
       "Both men's, because each one chooses life over death, and choosing to live is good however it is felt",
-      "Neither man's, because merely staying alive is not yet a moral act until you do some good with the time"
+      "Neither man's, because merely staying alive is not a moral act until a man does some good with his time"
     ],
     "context": "One of Kant's most jarring examples: a man so crushed by 'adversity and hopeless sorrow' that he longs for death yet 'preserves his life without loving it, not from inclination or fear, but from duty.' Kant says THIS man's self-preservation finally has moral worth, while the cheerful man who clings to life merely from a natural love of living has none — because only the first acts from duty rather than feeling. Kant, Groundwork, Abbott trans., Gutenberg #5682, First Section (preservation-of-life example).",
     "topic": "duty-vs-inclination-the-good-will"
@@ -8490,7 +8490,7 @@
   },
   {
     "tier": 5,
-    "question": "Shakespeare's Macbeth has a drunken Porter sneer at 'an equivocator... who could not equivocate to heaven.' The jab was aimed at Father Henry Garnet, a Jesuit hanged in 1606 after the Gunpowder Plot, who at his trial defended a 'doctrine of equivocation.' What did that doctrine actually permit him to do?",
+    "question": "Shakespeare's Macbeth has a drunken Porter sneer at 'an equivocator... who could not equivocate to heaven.' The jab is usually read as aimed at Father Henry Garnet, a Jesuit hanged in 1606 after the Gunpowder Plot, who at his trial defended a 'doctrine of equivocation.' What did that doctrine actually permit him to do?",
     "answer": "Speak a true-sounding answer while keeping its real meaning secret in his mind, misleading without an outright lie.",
     "choices": [
       "Speak a true-sounding answer while keeping its real meaning secret in his mind, misleading without an outright lie.",
@@ -8628,7 +8628,7 @@
       "Both alike, since at the end of the day neither the rock nor the hawk can see anything at all",
       "Neither one, because seeing is a rare gift and going without it can never really count as a loss"
     ],
-    "context": "Augustine drew exactly this line: blindness in a creature built to see is a real privation, while a stone's not-seeing is mere absence, no evil at all. Evil is not just any lack; it is a missing good that OUGHT to be there. Source: Wikipedia, 'Absence of good'; Augustine on privation.",
+    "context": "Aristotle drew this line: a privation is the lack of something a thing by its nature should have, so blindness in a creature built to see is a real privation, while a stone's not-seeing is mere absence. Thomas Aquinas carried it into Augustine's account of evil: evil is not just any lack; it is a missing good that OUGHT to be there. Source: Aristotle, Categories 10 (12a); Grokipedia, 'Absence of good'.",
     "topic": "evil-as-privation-the-absence-of-good"
   },
   {
@@ -12109,7 +12109,7 @@
     "choices": [
       "Its proofs run on the meanings of the ideas, so a measured shape can neither back them up nor break them",
       "Its proofs are really just very old measurements, so a careful enough new one could one day correct them",
-      "Its proofs describe perfect shapes in another realm, which our drawn figures can only ever approximate",
+      "Its proofs describe perfect shapes in another realm, which real drawn figures can only ever approximate",
       "Its proofs fit ideal figures alone, so real shapes obey them merely roughly and never quite exactly"
     ],
     "context": "Hume's line: 'Though there never were a circle or triangle in nature, the truths, demonstrated by Euclid, would for ever retain their certainty and evidence.' For Hume, geometry is a relation of ideas — known a priori, by thought alone — so no observation could confirm or overturn it; a sloppy real drawing reflects on the draftsman, never on the theorem. The other choices are real rival pictures Hume rejects: that math is just compressed measurement (the empiricist view), that proofs report perfect shapes in a separate Platonic realm, and that theorems only ever hold approximately of physical figures. Source: Hume, Enquiry Concerning Human Understanding, Sec. 4, Part 1.",
@@ -12434,7 +12434,7 @@
     "choices": [
       "People have watched countless houses get built by builders, but no one ever watched a universe get built",
       "A house is small and a universe is vast, and such conclusions only hold for objects of a modest size",
-      "A house is made by humans we can question, while a universe's maker could never be found or named",
+      "A house is made by humans who can be questioned, while a universe's maker could never be found or named",
       "A house has a plain inside and outside, while a universe has no edges, so it is not really an object"
     ],
     "context": "Philo's actual words: 'If we see a house, Cleanthes, we conclude, with the greatest certainty, that it had an architect or builder; because this is precisely that species of effect, which we have experienced to proceed from that species of cause.' The house inference is strong because we have a huge track record of seeing houses being built by builders. We have NO such experience of universes being built -- we've only ever been inside one, and never watched one get made -- so the same move that nails the house has nothing to stand on for the cosmos. Source: David Hume, Dialogues Concerning Natural Religion (1779), Part 2 (Philo, D 2.8).",
@@ -12580,7 +12580,7 @@
       "Set its real existence aside and describe only how it shows up to you.",
       "Throw out every belief about the chair that could possibly be false."
     ],
-    "context": "'Epoche' is Greek for 'holding back' or abstention; Husserl borrowed it. This move is also called 'bracketing': you set the question of the chair's real existence aside and describe instead how it shows up to you, its mode of appearance. People often confuse this with Rene Descartes, who tried to DOUBT every belief that could possibly be false (option D here) — but Husserl insisted the epoche is NEITHER an affirmation NOR a denial of the world's existence. You do not doubt the chair, and you do not declare it a mere idea; you simply stop asking whether it is really out there. (Source: IEP: The Phenomenological Reduction, iep.utm.edu/phen-red/; SEP: Phenomenology.)",
+    "context": "'Epoche' is Greek for 'holding back' or abstention; Husserl borrowed it. This move is also called 'bracketing': you set the question of the chair's real existence aside and describe instead how it shows up to you, its mode of appearance. People often confuse this with Rene Descartes, who tried to DOUBT every belief that could possibly be false — but Husserl insisted the epoche is NEITHER an affirmation NOR a denial of the world's existence. You do not doubt the chair, and you do not declare it a mere idea; you simply stop asking whether it is really out there. (Source: IEP: The Phenomenological Reduction, iep.utm.edu/phen-red/; SEP: Phenomenology.)",
     "topic": "husserl-and-phenomenology"
   },
   {
@@ -13383,7 +13383,7 @@
     "choices": [
       "That he will somehow get Isaac back alive in this very life",
       "That God will praise him among men for his obedient heart",
-      "That a ram will be sent to take his sons place on the altar",
+      "That a ram will be sent to take his son's place on the altar",
       "That his grief will fade once the hard deed is finally done"
     ],
     "context": "Kierkegaard calls this faith 'by virtue of the absurd': believing the impossible promise even while raising the knife. The same book names the 'teleological suspension of the ethical' — the idea that the religious can override ordinary morality for a higher purpose. Source: Soren Kierkegaard (as Johannes de Silentio), Fear and Trembling; D. Anthony Storm's Commentary (sorenkierkegaard.org); Internet Encyclopedia of Philosophy: Kierkegaard.",
@@ -13553,7 +13553,7 @@
       "Space itself bends, and time runs differently for different observers",
       "Space and time trade places, so distance now measures how long things last",
       "Space vanishes entirely, leaving only time to govern all motion",
-      "Time freezes still, while space alone stretches and shifts around us"
+      "Time freezes solid, while space alone keeps stretching and shifting"
     ],
     "context": "Mercury's odd orbit and the constant speed of light were the anomalies that cracked Newton's picture. Kuhn noted that even the word 'mass' means something different for Newton than for Einstein. Source: Stanford Encyclopedia of Philosophy, 'Scientific Revolutions'; Kuhn, Structure, pp.101-102.",
     "topic": "kuhn-paradigm-shifts"
