@@ -196,15 +196,15 @@
   },
   {
     "tier": 3,
-    "question": "The seer Calchas told the Greek chieftains gathered at Aulis that Troy could not fall unless one specific warrior sailed with them -- and that warrior was hidden somewhere in the world, dressed as a girl. The chieftains chose one man to go find him. Whom did they send?",
+    "question": "The seer Calchas told the Greek chieftains gathered at Aulis that Troy could not fall unless one specific warrior sailed with them -- and that warrior was hidden somewhere in the world, dressed as a girl. The chieftains picked a man to lead the search for him. Whom did they send?",
     "answer": "Odysseus of Ithaca",
     "choices": [
       "Odysseus of Ithaca",
       "Menelaus of Sparta",
-      "Diomedes of Argos",
+      "Ajax of Salamis",
       "Nestor of Pylos"
     ],
-    "context": "The errand needed a trick, and Odysseus's tricks are why the assignment fell to him. Source: Apollodorus, Epitome 3.13-14; Statius, Achilleid.  (Legend.)",
+    "context": "The errand needed a trick, and Odysseus's tricks are why the assignment fell to him; in Statius's telling, Diomedes rides along as his companion. Source: Apollodorus, Library 3.13.8; Statius, Achilleid 1.  (Legend.)",
     "topic": "achilles-among-the-daughters-of-lycomedes-the-merchants-tric"
   },
   {
@@ -217,20 +217,20 @@
       "A bow and a quiver",
       "A sword and a scabbard"
     ],
-    "context": "In the Apollodorus version, one 'daughter' ignored the pretty things and reached for these two -- and Odysseus had his man. Source: Apollodorus, Epitome 3.13-14.  (Legend.)",
+    "context": "In Statius's telling, and in Hyginus's, one 'daughter' ignored the pretty things and reached for these two -- and Odysseus had his man. Source: Statius, Achilleid 1; Hyginus, Fabulae 96.  (Legend.)",
     "topic": "achilles-among-the-daughters-of-lycomedes-the-merchants-tric"
   },
   {
     "tier": 4,
-    "question": "Apollodorus, the Greek writer, tells the unmasking of Achilles another way. As the daughters of King Lycomedes fingered the wares, Odysseus had one battle-signal sounded outside. The girls scattered, and one 'daughter' turned toward the fight as a soldier would. What signal did Odysseus have sounded?",
+    "question": "Apollodorus, the Greek writer, tells the unmasking of Achilles more simply. Odysseus tracked him down to the court of King Lycomedes and had one battle-signal sounded there, and the hidden young warrior gave himself away. What signal did Odysseus have sounded?",
     "answer": "A war-trumpet blast",
     "choices": [
       "A war-trumpet blast",
       "A war-drum roll",
-      "A battle-horn from the walls",
+      "A war-cry from his sailors",
       "A clash of shield on shield"
     ],
-    "context": "Some vase paintings show the trumpet version rather than the shield-reach; either way, only Achilles reacts as a fighter. Source: Wikipedia, Achilles on Skyros.  (Legend.)",
+    "context": "Apollodorus, Library 3.13.8: Odysseus found Achilles living among the women and unmasked him by sounding a trumpet. Some vase paintings show the trumpet version rather than the shield-reach; either way, only Achilles reacts as a fighter.  (Legend.)",
     "topic": "achilles-among-the-daughters-of-lycomedes-the-merchants-tric"
   },
   {
@@ -261,13 +261,13 @@
   },
   {
     "tier": 1,
-    "question": "Hector comes home from a day of battle outside Troy in Book 6 of Homer's Iliad, and his wife Andromache meets him at the gate holding their baby son. When he reaches for the child, the baby screams, not at his father but at the tall horsehair crest waving on his father's bronze war-helmet. What does Hector do?",
-    "answer": "Takes the helmet off and laughs",
+    "question": "Hector came in from battle in Book 6 of the Iliad, and Andromache met him at the gate with a nurse holding their baby son. When Hector reached out, the baby shrank back screaming from his helmet's horsehair crest. What did Hector do?",
+    "answer": "Took the helmet off and laughed",
     "choices": [
-      "Takes the helmet off and laughs",
-      "Sings the baby a battle hymn",
-      "Presses the baby to the helmet plume",
-      "Hands the baby back and leaves at once"
+      "Took the helmet off and laughed",
+      "Sang the baby a battle hymn",
+      "Pressed the baby to the helmet plume",
+      "Handed the baby back and left at once"
     ],
     "context": "Iliad 6.466-473. One of the tenderest scenes in Homer; the emotional weight the death-scene later cashes in. Source: Wikipedia, Andromache.  (Legend.)",
     "topic": "achilles-drags-hector-round-the-walls-of-troy"
@@ -321,7 +321,7 @@
       "Deiphobus and Zeus",
       "Helenus and Poseidon"
     ],
-    "context": "Iliad 22.359-360. The prophecy is fulfilled: Paris later shoots Achilles with a bow, Apollo guiding the arrow. Source: Homer, Iliad Book 22.  (Legend.)",
+    "context": "Iliad 22.359-360. The prophecy comes true after the poem ends: in later tellings Paris shoots Achilles with a bow, Apollo guiding the arrow. Source: Homer, Iliad Book 22.  (Legend.)",
     "topic": "achilles-drags-hector-round-the-walls-of-troy"
   },
   {
@@ -444,9 +444,9 @@
   {
     "tier": 3,
     "question": "Anchises, old and lame, finally agrees to leave burning Troy on the last night of the war, but his small grandson cannot keep up in the smoke. His son Aeneas is a strong young warrior in full armour. How does Aeneas get his father out of Troy?",
-    "answer": "He hoists Anchises onto his own shoulders",
+    "answer": "He hoists him onto his own shoulders",
     "choices": [
-      "He hoists Anchises onto his own shoulders",
+      "He hoists him onto his own shoulders",
       "He carries him in a litter with three servants",
       "He puts him on a horse and leads it by the reins",
       "He drags him on a shield across the flagstones"
@@ -508,7 +508,7 @@
   },
   {
     "tier": 1,
-    "question": "A young god of the Tuatha De Danann falls asleep and dreams of the most beautiful woman he has ever seen, standing at the foot of his bed. He reaches for her and she vanishes, and she comes back every night for a full year. He is the Irish god of love and youth. Who is he?",
+    "question": "A young god of the Tuatha De Danann, the Irish god of love and youth, dreams of a woman standing at the head of his bed. She vanishes when he reaches for her, but comes back every night for a year. Who is he?",
     "answer": "Aengus",
     "choices": [
       "Aengus",
@@ -520,21 +520,8 @@
     "topic": "aengus-and-the-dream-the-swan-maiden-of-loch-bel-dracon"
   },
   {
-    "tier": 1,
-    "question": "Aengus, the young god of love among the Tuatha De Danann, goes home to a great grass-covered stone mound in what is now County Meath. Archaeologists say it was built around 3200 BC, five centuries before the Egyptian pyramids. Tourists today call it Newgrange. What did the ancient Irish call it?",
-    "answer": "Bru na Boinne",
-    "choices": [
-      "Bru na Boinne",
-      "Emain Macha",
-      "Tara",
-      "Dun Aengus"
-    ],
-    "context": "Bru na Boinne means 'the Dwelling of the Boyne'. Emain Macha is the Ulster capital; Tara is the seat of the High King; Dun Aengus is a cliff-fort on Inishmore (unrelated despite the name). Wikipedia: Bru na Boinne.  (Legend.)",
-    "topic": "aengus-and-the-dream-the-swan-maiden-of-loch-bel-dracon"
-  },
-  {
     "tier": 2,
-    "question": "Boann searches Ireland for a year for the vanishing woman of her son's nightly dream and finds nothing. Her son Aengus has fallen so sick that he cannot eat and will not speak. His father the Dagda searches for another year. At last they call on the king of the sidhe, the fairy mounds, of Munster, and he finds the woman after a third year. Who is this king?",
+    "question": "Boann searches Ireland for a year for the woman of her son's dream and finds nothing, while Aengus grows too sick to eat or speak. At last the Dagda sends to Munster, to the king of its sidhe, the fairy mounds, who finds her after a year's search of his own. Who is this king?",
     "answer": "Bodb Derg",
     "choices": [
       "Bodb Derg",
@@ -547,15 +534,15 @@
   },
   {
     "tier": 2,
-    "question": "Four small creatures circle the head of the beautiful young god Aengus as he walks out of his great mound. The Irish poets say they are his own kisses, turned by his love-power into living things. What kind of creatures circle Aengus?",
+    "question": "The Irish poets say the young god Aengus can shape his own kisses into four small living creatures. In one old place-name tale he sends the four to follow a king and mock him every morning before sunrise, until the king's druid finds a way to catch them. What kind of creatures are they?",
     "answer": "four birds",
     "choices": [
       "four birds",
       "four white hounds",
-      "four salmon",
+      "four hares",
       "four butterflies"
     ],
-    "context": "The Dindsenchas records the four kiss-birds; a druid later traps them out of a tree. This is the root of a long strand in Irish poetry about love-as-birds. Wikipedia: Aengus.  (Legend.)",
+    "context": "The Dindsenchas tells how Aengus shaped his kisses into four birds that followed a king named Cairbre and mocked him each day before sunrise, until Cairbre's druid sang a tree up so tall that it caught and held them. In later Scottish folklore, kisses become invisible birds that follow lovers home, singing. Wikipedia: Aengus.  (Legend.)",
     "topic": "aengus-and-the-dream-the-swan-maiden-of-loch-bel-dracon"
   },
   {
@@ -599,15 +586,15 @@
   },
   {
     "tier": 4,
-    "question": "The woman of Aengus's dreams hears him call from the edge of Loch Bel Dracon, on the morning of the change, as she floats among the flock on the water. She answers that she will come to him on one condition, something he must do before she will leave the lake with him. What is the condition?",
-    "answer": "he must turn himself into a swan too",
+    "question": "The woman of Aengus's dreams floats among the flock on Loch Bel Dracon on the morning of the change. He calls to her from the shore, and she comes to him. To go away with her, Aengus does one thing first. What does he do?",
+    "answer": "he takes the shape of a swan himself",
     "choices": [
-      "he must turn himself into a swan too",
-      "he must strike off her silver chain with his own sword",
-      "he must fast for three days and three nights",
-      "he must give up his home at Bru na Boinne"
+      "he takes the shape of a swan himself",
+      "he strikes off her silver chain with a sword",
+      "he fasts on the shore three days and nights",
+      "he gives up his home at Bru na Boinne"
     ],
-    "context": "The condition is transformation, not payment or oath -- Aengus must MEET her in her other shape. He does, and joins her on the water. Wikipedia: Caer Ibormeith; Mythical Ireland: Aislinge Oengusso.  (Legend.)",
+    "context": "Aislinge Oenguso: when Aengus calls, Caer comes to him (in one translation only after he gives his word that she may go back to the lake), and the two sleep in the shape of swans and circle the lake three times before they fly off together. Wikipedia: Caer Ibormeith; Mythical Ireland: Aislinge Oengusso.  (Legend.)",
     "topic": "aengus-and-the-dream-the-swan-maiden-of-loch-bel-dracon"
   },
   {
@@ -659,7 +646,7 @@
       "Rusticus",
       "Anullinus"
     ],
-    "context": "Quintianus is the prefect of Sicily in the Passio Agathae. The three other choices are all real Roman officials who prosecuted OTHER famous early martyrs: Aspasius prosecuted Vincent of Saragossa, Rusticus was the prefect of Rome who condemned Justin Martyr, and Anullinus prosecuted Felix of Thibiuca in North Africa. Real names, wrong martyr.  (Legend.)",
+    "context": "Quintianus is the prefect of Sicily in the Passio Agathae. Aspasius, Rusticus and Anullinus were all real Roman officials, but they judged OTHER famous early martyrs: Aspasius Paternus was the proconsul who sent Cyprian of Carthage into exile, Rusticus was the prefect of Rome who condemned Justin Martyr, and Anullinus prosecuted Felix of Thibiuca in North Africa. Real names, wrong martyr.  (Legend.)",
     "topic": "agatha-of-sicily-the-tongs-and-the-earthquake"
   },
   {
@@ -677,20 +664,20 @@
   },
   {
     "tier": 3,
-    "question": "Agatha lay alone in agony in her cell the night after her worst torture, the story says. An old man appeared at the door, followed by a small boy carrying one object. The old man would not leave until he had healed her wounds. What was the boy carrying?",
-    "answer": "a lamp",
+    "question": "Agatha lay alone in agony in her cell the night after her worst torture, the story says. Then an old man came to her, a small boy walking ahead of him carrying one thing. The old man had come to heal her wounds. What was the boy carrying?",
+    "answer": "a light",
     "choices": [
-      "a lamp",
-      "a torch",
-      "a candle",
-      "a brazier"
+      "a light",
+      "a loaf",
+      "a cross",
+      "a scroll"
     ],
-    "context": "Legenda Aurea, 'Saint Agatha': the old man is followed 'by a young man carrying a lamp'. The lamp is the classic hagiographic image for a night visitor in a martyr's cell. A torch would suit an outdoor procession; a candle would suit a liturgy; a brazier is a fire-basin for warmth or incense. The lamp is the object named in the Passio.",
+    "context": "The Golden Legend says that an old man came to her cell, a child going before him bearing a light, and offered to heal her wounds as a surgeon would. When she answered that Christ alone would heal her if he willed it, he named himself as Christ's apostle, and she was made whole. Retellings often make the light a lamp.  (Legend.)",
     "topic": "agatha-of-sicily-the-tongs-and-the-earthquake"
   },
   {
     "tier": 3,
-    "question": "An old man visited the prison cell of the young Christian Agatha in Sicily around the year 251, the story says, and refused to leave until he had healed her wounds. Then he told her he was one of the twelve apostles of Jesus. Which apostle did he say he was?",
+    "question": "An old man visited the prison cell of the young Christian Agatha in Sicily around the year 251, the story says, and offered to heal the wounds of her torture. Then he told her he was one of the twelve apostles of Jesus. Which apostle did he say he was?",
     "answer": "Peter",
     "choices": [
       "Peter",
@@ -698,7 +685,7 @@
       "John",
       "James"
     ],
-    "context": "In the Passio the old man reveals himself as Saint Peter the apostle and heals her wounds so completely that when the jailers open the cell in the morning she is untouched. Andrew is Peter's own brother and was crucified on the X-cross of Patras; John lived to old age on Patmos; James son of Zebedee was the first apostle martyred, beheaded under Herod Agrippa. Real apostles all, but Peter is the visitor named in Agatha's Passio.  (Legend.)",
+    "context": "In the Passio the old man reveals himself as Saint Peter the apostle and heals her wounds so completely that when the jailers open the cell in the morning she is untouched. Andrew is Peter's own brother and was crucified on the X-cross of Patras; John was exiled to Patmos and lived to old age; James son of Zebedee was the first apostle martyred, beheaded under Herod Agrippa. Real apostles all, but Peter is the visitor named in Agatha's Passio.  (Legend.)",
     "topic": "agatha-of-sicily-the-tongs-and-the-earthquake"
   },
   {
@@ -716,7 +703,7 @@
   },
   {
     "tier": 5,
-    "question": "The archbishop of Agatha's city walked out in the winter of 1886 to meet a lava flow crawling down Etna's south flank, carrying her veil before him. The lava, by tradition, halted at the outer walls of the village it had almost reached. Which village did the veil save, by that tradition?",
+    "question": "The archbishop of Agatha's city walked out in May 1886 to meet a lava flow crawling down Etna's south flank, carrying her veil before him. The lava, by tradition, halted at the outer walls of the village it had almost reached. Which village did the veil save, by that tradition?",
     "answer": "Nicolosi",
     "choices": [
       "Nicolosi",
@@ -815,7 +802,7 @@
       "the bishop of Rome Damasus",
       "the eastern emperor Valens"
     ],
-    "context": "Gratian was the Western Roman emperor in 374 and Ambrose's civil superior; his letter approving the acclamation ended Ambrose's resistance. Julian had died in Persia in 363; Damasus was the bishop of Rome but had no authority to command a Milanese governor; Valens ruled the East. Source: en.wikipedia.org/wiki/Ambrose.",
+    "context": "Valentinian I was the senior emperor in the West in 374, and Ambrose served as one of his governors; the emperor approved the people's choice of his own official, and that ended Ambrose's resistance. Julian had died in Persia in 363; Damasus was the bishop of Rome but had no authority to command a Milanese governor; Valens, Valentinian's brother, ruled the East. Source: Paulinus, Life of Ambrose 8.",
     "topic": "ambrose-of-milan-acclaimed-bishop-before-he-was-baptised"
   },
   {
@@ -1085,10 +1072,10 @@
     "choices": [
       "a fish",
       "a frog",
-      "an eel",
+      "a water-snake",
       "a swan"
     ],
-    "context": "Volsunga Saga ch. 14: Andvari was in the shape of a fish (a pike, in most tellings). Loki caught him in a net borrowed from the goddess Ran, who used the same net to drown drowning sailors. Frogs and eels and swans do not appear in the story.  (Legend.)",
+    "context": "Volsunga Saga ch. 14: Andvari was in the shape of a fish (a pike, in most tellings). Loki caught him in a net borrowed from the sea goddess Ran, the net in which she gathers drowning sailors. Frogs, water-snakes and swans do not appear in the story.  (Legend.)",
     "topic": "andvaris-ring-the-cursed-gold-that-starts-the-story"
   },
   {
@@ -1099,14 +1086,14 @@
       "Andvaranaut",
       "Draupnir",
       "Sviagris",
-      "Hnitudr"
+      "Brisingamen"
     ],
-    "context": "Volsunga Saga ch. 14 and Reginsmal prose: the ring is Andvaranaut, which means 'Andvari's gift.' Draupnir is Odin's arm-ring, which drips eight new rings every ninth night. Sviagris is the boar-ring of the Swedish king Adils in Snorri's Skaldskaparmal. Hnitudr is a ring named in Gudrunarkvida II. Wagner later renamed Andvaranaut 'the Ring of the Nibelung' and Tolkien built the One Ring on the same model -- but Andvaranaut is the Norse original.  (Legend.)",
+    "context": "Volsunga Saga ch. 14 and Reginsmal prose: the ring is Andvaranaut, which means 'Andvari's gift.' Draupnir is Odin's arm-ring, which drips eight new rings every ninth night. Sviagris is the boar-ring of the Swedish king Adils in Snorri's Skaldskaparmal. Brisingamen is Freyja's necklace, forged by four dwarves. Wagner later built his Ring of the Nibelung on Andvari's ring, and readers often see its pattern in Tolkien's One Ring -- but Andvaranaut is the Norse original.  (Legend.)",
     "topic": "andvaris-ring-the-cursed-gold-that-starts-the-story"
   },
   {
     "tier": 4,
-    "question": "The trickster god Loki caught a dwarf at his hidden waterfall and forced him to hand over his entire hoard of gold, down to his last ring. As the ring left his hand, the dwarf spoke aloud over it, and the Poetic Edda poem Reginsmal preserves his words. He cursed the ring and the whole hoard together. What fate did the curse promise every future holder of the ring?",
+    "question": "The trickster god Loki caught a dwarf at his hidden waterfall and forced him to hand over his entire hoard of gold, down to his last ring. As the ring left his hand, the dwarf spoke aloud over it, and the Volsunga saga preserves his words. He cursed the ring and the whole hoard together. What fate did the curse promise every future holder of the ring?",
     "answer": "it would be the death of whoever owned it",
     "choices": [
       "it would be the death of whoever owned it",
@@ -1114,7 +1101,7 @@
       "it would turn whoever wore it into a slave",
       "it would burn whoever touched it to ashes"
     ],
-    "context": "Reginsmal 4: 'This ring, and all this gold with it, shall be the death of whoever owns it.' Andvari's curse-line is one of the most-quoted in Norse poetry. It is close enough to Tolkien's curse-language on the One Ring that scholars flag the influence -- Andvari's ring is a direct ancestor of Sauron's ring.  (Legend.)",
+    "context": "Volsunga saga: the dwarf went into a hollow of the rocks and cried out that the ring, and all the gold with it, should be the bane of every man who owned it. In the Edda poem Reginsmal his curse comes in verse instead: the gold will bring death to two brothers and strife to eight princes. Readers have long set Andvari's cursed ring beside Tolkien's One Ring.  (Legend.)",
     "topic": "andvaris-ring-the-cursed-gold-that-starts-the-story"
   },
   {
@@ -1132,7 +1119,7 @@
   },
   {
     "tier": 5,
-    "question": "The wizard took the gold and the ring as the blood-price for his son, and the curse soon struck. He was stabbed to death in his sleep, and one figure took the whole hoard alone and drove the surviving kin off empty-handed. Who killed the wizard for the cursed gold?",
+    "question": "The wizard took the gold and the ring as the blood-price for his son, and in the Edda poem Reginsmal the curse soon struck. He was stabbed to death in his sleep, and one figure took the whole hoard alone and drove the surviving kin off empty-handed. Who killed the wizard for the cursed gold?",
     "answer": "his own son Fafnir in a rage",
     "choices": [
       "his own son Fafnir in a rage",
@@ -1140,7 +1127,7 @@
       "the dwarf Andvari come for revenge",
       "the god Loki come back for the ring"
     ],
-    "context": "Volsunga Saga ch. 14 and Reginsmal prose: Fafnir murdered his own father in the night, drove Regin off, and took the whole treasure to himself. Regin will later plot twenty years of revenge. Andvari never leaves his waterfall. Loki does not come back for the ring -- he is out of the story once the ransom is paid. The curse claims its first life within a day of leaving Andvari's hand.  (Legend.)",
+    "context": "Reginsmal prose: Fafnir ran his sword through his father as he slept and took all the gold, and when Regin asked for his share of the inheritance, Fafnir refused him. The Volsunga saga has Fafnir slay his father too. (In Snorri's Prose Edda the two brothers plot the killing together.) Regin will later plot his revenge. Andvari never leaves his waterfall. Loki does not come back for the ring -- he is out of the story once the ransom is paid. The curse claims its first life soon after the ring leaves Andvari's hand.  (Legend.)",
     "topic": "andvaris-ring-the-cursed-gold-that-starts-the-story"
   },
   {
@@ -1153,7 +1140,7 @@
       "a stone giant",
       "an eagle"
     ],
-    "context": "Volsunga Saga ch. 14: Fafnir became a dragon (in Old Norse ormr, sometimes translated 'serpent' or 'worm'). Wolves belong to Fenrir; stone giants to Hrungnir; the eagle at Gnitaheid is a different figure. Regin will spend twenty years plotting revenge and eventually foster the boy Sigurd, who will kill the dragon Fafnir with the sword Gram -- and take the cursed ring for himself, and die of it too.  (Legend.)",
+    "context": "Volsunga Saga ch. 14: Fafnir became a dragon (in Old Norse ormr, sometimes translated 'serpent' or 'worm'). Wolves belong to Fenrir; stone giants to Hrungnir; the eagle is the shape the giant Thiazi wears when he carries off Loki. Regin will nurse his grudge for years and eventually foster the boy Sigurd, who will kill the dragon Fafnir with the sword Gram -- and take the cursed ring for himself, and die of it too.  (Legend.)",
     "topic": "andvaris-ring-the-cursed-gold-that-starts-the-story"
   },
   {
@@ -1210,7 +1197,7 @@
   },
   {
     "tier": 3,
-    "question": "Jormungandr, the serpent child of Loki and the giantess, sinks into the great ocean that goes all the way round the world of men and starts to grow. He grows so long that he wraps the whole world, and he does one memorable thing with his own body. What does he do?",
+    "question": "Odin hurls Jormungandr, the serpent child of Loki and the giantess, into the great ocean that runs all the way round Midgard, the world of men, where the serpent starts to grow. He grows so long that he wraps the whole world, and he does one memorable thing with his own body. What does he do?",
     "answer": "bites his own tail",
     "choices": [
       "bites his own tail",
@@ -1275,7 +1262,7 @@
   },
   {
     "tier": 1,
-    "question": "Anthony, a rich young orphan in a village near the Nile, heard the gospel in church one Sunday around the year 270: 'sell what you have and give to the poor.' That same week he sold the family land, gave the money away and walked out of the village for good. Where did he go?",
+    "question": "Anthony, an orphan in a Nile village, heard the gospel read around 270: 'sell what you have and give to the poor.' He gave his land to his neighbours, sold the rest for the poor, and later left for good. Where did he go?",
     "answer": "Into the Egyptian desert",
     "choices": [
       "Into the Egyptian desert",
@@ -1284,19 +1271,6 @@
       "Across the sea to Rome"
     ],
     "context": "The verse was Matthew 19:21: 'If thou wilt be perfect, go and sell what thou hast, and give to the poor.' Anthony (c. 251-356 CE) becomes the most famous of the Desert Fathers and the founding figure of Christian monasticism. Source: Wikipedia, Anthony the Great.",
-    "topic": "anthony-of-the-desert-the-demons-and-paul-the-hermit"
-  },
-  {
-    "tier": 2,
-    "question": "The bishop Athanasius wrote the life of Anthony, a wealthy young Egyptian who gave everything away in the third century, and monks in East and West took it as their pattern. The word 'monasticism' itself comes from a Greek root that names what makes Anthony's choice so extreme. What does the Greek monos mean?",
-    "answer": "Alone",
-    "choices": [
-      "Alone",
-      "Silent",
-      "Barefoot",
-      "Poor"
-    ],
-    "context": "MONOS is Greek for 'alone'; a MONACHOS is 'one who lives alone.' Anthony is the model for the whole tradition of hermits and (later) monasteries, though the word originally meant strict solitude, not community. Source: Wikipedia, Anthony the Great.",
     "topic": "anthony-of-the-desert-the-demons-and-paul-the-hermit"
   },
   {
@@ -1361,7 +1335,7 @@
       "Bears",
       "Bulls"
     ],
-    "context": "Jerome, Vita Pauli 16. Two lions come, whimper over Paul's corpse, then dig a hole 'just large enough to hold a man.' Anthony wraps Paul in a tunic that had been given to him by the bishop Athanasius of Alexandria. Legend. Source: New Advent, Jerome Vita Pauli.",
+    "context": "Jerome, Vita Pauli 16. Two lions come, whimper over Paul's corpse, then dig a hole 'just large enough to hold a man.' Anthony wraps Paul in the cloak that had been given to him by the bishop Athanasius of Alexandria. Legend. Source: New Advent, Jerome Vita Pauli.",
     "topic": "anthony-of-the-desert-the-demons-and-paul-the-hermit"
   },
   {
@@ -1417,19 +1391,6 @@
     "topic": "aphrodite-born-from-the-sea-foam"
   },
   {
-    "tier": 1,
-    "question": "Aphrodite kept her love-affairs, her marriage to the smith-god and her son Cupid when the Romans retold her stories in Latin. But they gave the goddess of love a name of their own. What did the Romans call her?",
-    "answer": "Venus",
-    "choices": [
-      "Venus",
-      "Juno",
-      "Minerva",
-      "Diana"
-    ],
-    "context": "Aphrodite = Venus. Hera = Juno. Athena = Minerva. Artemis = Diana. Venus's name lives on in the planet Venus and in the word 'venereal.'  (Legend.)",
-    "topic": "aphrodite-born-from-the-sea-foam"
-  },
-  {
     "tier": 2,
     "question": "In Hesiod's Theogony, the Titan Cronus took a sharp sickle to his own father Ouranos, god of the sky, and hurled the cut part far out into the sea. Where it fell, white foam spread across the water, and out of that foam a full-grown goddess rose up onto the waves. Which Olympian was born this way?",
     "answer": "Aphrodite",
@@ -1444,7 +1405,7 @@
   },
   {
     "tier": 2,
-    "question": "Zephyr, the west wind, blew the foam-born goddess across the water, and she came to shore first on a small Aegean island called Cythera, then on a larger island whose name became one of her most-used titles. On which larger island did she land?",
+    "question": "In Hesiod's Theogony, the foam-born goddess drifted over the sea and reached the small island of Cythera before going on to a larger island, whose name became one of her most-used titles. On which larger island did she come ashore?",
     "answer": "Cyprus",
     "choices": [
       "Cyprus",
@@ -1452,12 +1413,12 @@
       "Rhodes",
       "Lesbos"
     ],
-    "context": "Hesiod, Theogony 192-200. From this landing come her epithets Cypris (Lady of Cyprus) and Cyprogenes (Cyprus-born). Cythera also gave her the epithet Cytherea. The temple of Aphrodite at Paphos on Cyprus was one of the great cult centres of the ancient world.  (Legend.)",
+    "context": "Hesiod, Theogony 192-200. From this landing come her epithets Cypris (Lady of Cyprus) and Cyprogenes (Cyprus-born); Cythera gave her the epithet Cytherea. In the sixth Homeric Hymn it is Zephyr, the west wind, whose breath wafts her over the waves to Cyprus. The temple of Aphrodite at Paphos on Cyprus was one of the great cult centres of the ancient world.  (Legend.)",
     "topic": "aphrodite-born-from-the-sea-foam"
   },
   {
     "tier": 3,
-    "question": "Aphrodite rose full-grown from the foam of the sea and came ashore, and ancient statues and later paintings almost always showed her standing on the same kind of seashell. Artists made that shell her badge, and centuries later pilgrims to Santiago de Compostela took it up as theirs. What kind of shell was it?",
+    "question": "Aphrodite rose full-grown from the foam of the sea and came ashore, and ancient statues and later paintings often showed her standing on the same kind of seashell. Artists made that shell her badge, and centuries later pilgrims to Santiago de Compostela took it up as theirs. What kind of shell was it?",
     "answer": "A scallop shell",
     "choices": [
       "A scallop shell",
@@ -1465,18 +1426,18 @@
       "An oyster shell",
       "A nautilus shell"
     ],
-    "context": "The scallop shell became the signature emblem of the goddess in art from antiquity onward, and later of pilgrims to her shrine at Cyprus. The same scallop shell also became the badge of Christian pilgrims to Santiago de Compostela -- an odd echo across the traditions.  (Legend.)",
+    "context": "The scallop shell became the signature emblem of the goddess in art from antiquity onward, though Hesiod himself mentions no shell. The same scallop shell later became the badge of Christian pilgrims to Santiago de Compostela -- an odd echo across the traditions.  (Legend.)",
     "topic": "aphrodite-born-from-the-sea-foam"
   },
   {
     "tier": 3,
     "question": "The foam-born goddess of love and beauty stepped onto the beach of her island at last, in Hesiod's telling, and something remarkable happened to the earth wherever her bare feet touched it. What happened beneath her feet?",
-    "answer": "Fresh grass and flowers grew up out of the soil",
+    "answer": "Fresh green grass sprang up out of the soil",
     "choices": [
-      "Fresh grass and flowers grew up out of the soil",
+      "Fresh green grass sprang up out of the soil",
       "Salt crystals hardened out of the sea-spray",
       "Wet footprints appeared that would never fade",
-      "Silver coins bubbled up struck with her likeness"
+      "Springs of fresh water welled up from the sand"
     ],
     "context": "Hesiod, Theogony 194-195: 'grass grew up about her beneath her shapely feet.' The scene is the origin of the tradition, in painters from Botticelli to the modern age, of scattering roses and myrtles around her feet.  (Legend.)",
     "topic": "aphrodite-born-from-the-sea-foam"
@@ -1491,7 +1452,7 @@
       "Demeter",
       "Thetis"
     ],
-    "context": "Homer, Iliad 14.214-217. Hera wanted to draw Zeus's attention away from the battlefield so the Greeks could regain ground; she borrowed the kestos himas (embroidered girdle) from Aphrodite, and Zeus was undone. Hera and Zeus made love hidden in a golden cloud on the summit of Ida. Leto, Demeter, and Thetis all have their own stories with Zeus but none borrow the girdle.  (Legend.)",
+    "context": "Homer, Iliad 14.214-217. Hera wanted to draw Zeus's attention away from the battlefield so the Greeks could regain ground; she borrowed the kestos himas (embroidered girdle) from Aphrodite, and Zeus was undone: beguiled, he fell asleep in a golden cloud on the summit of Ida. Leto, Demeter, and Thetis all have their own stories with Zeus but none borrow the girdle.  (Legend.)",
     "topic": "aphrodite-born-from-the-sea-foam"
   },
   {
@@ -1504,7 +1465,7 @@
       "Themis",
       "Metis"
     ],
-    "context": "Homer, Iliad 5.370-430. In Homer's genealogy, Aphrodite is simply the daughter of Zeus and Dione -- one of the older Titanesses, in some traditions the wife of the oracle at Dodona. So the ancient world had two Aphrodites side by side: Hesiod's foam-born Heavenly one (Urania), and Homer's Zeus-daughter Common one (Pandemos). Plato in the Symposium makes both of them serious.  (Legend.)",
+    "context": "Homer, Iliad 5.370-430. In Homer's genealogy, Aphrodite is simply the daughter of Zeus and Dione -- one of the older Titanesses, worshipped beside Zeus at his oracle of Dodona. So the ancient world had two Aphrodites side by side: Hesiod's foam-born Heavenly one (Urania), and Homer's Zeus-daughter Common one (Pandemos). Plato in the Symposium makes both of them serious.  (Legend.)",
     "topic": "aphrodite-born-from-the-sea-foam"
   },
   {
@@ -2232,7 +2193,7 @@
       "a serving-maid of Freyja",
       "a raven from Odin"
     ],
-    "context": "Snorri, Gylfaginning 49: Loki takes the form of an old woman and visits Frigg at Fensalir. He wonders aloud whether truly EVERYTHING has sworn -- and Frigg, unguarded, mentions the young mistletoe east of Valhalla. Loki goes straight there to cut it. Loki does take other shapes in other tales (a mare, a salmon, a fly) but never a skald, a serving-maid, or Odin's raven. Source: en.wikipedia.org/wiki/Baldr  (Legend.)",
+    "context": "Snorri, Gylfaginning 49: Loki takes the form of an old woman and visits Frigg at Fensalir. He wonders aloud whether truly EVERYTHING has sworn -- and Frigg, unguarded, mentions the young mistletoe east of Valhalla. Loki goes straight there to cut it. Loki wears other shapes in other tales (a mare, a salmon, a fly, and a bride's maid beside Thor in Thrymskvida), but at Fensalir he comes as an old woman. Source: en.wikipedia.org/wiki/Baldr  (Legend.)",
     "topic": "baldrs-death-mistletoe-hodr-and-the-giantess-who-would-not-w"
   },
   {
@@ -2315,7 +2276,7 @@
   },
   {
     "tier": 2,
-    "question": "Balor went to battle unable to lift his own eyelid, so thick and heavy had the poison inside made it. Whenever he needed the eye open, a team of warriors had to haul the lid up by a ring set into it, using hooks and ropes. How many warriors did it take?",
+    "question": "Balor went to battle unable to lift his own eyelid, so thick and heavy had the poison inside made it. Whenever he needed the eye open, a team of warriors had to haul the lid up by a smooth handle passed through it. How many warriors did it take?",
     "answer": "four",
     "choices": [
       "four",
@@ -2323,7 +2284,7 @@
       "seven",
       "twelve"
     ],
-    "context": "The Cath Maige Tuired and Donegal folk-tradition agree: four warriors, hauling by a ring in the lid. Wikipedia: Balor; Cath Maige Tuired.  (Legend.)",
+    "context": "Cath Maige Tuired: four men lifted the lid by a polished handle passed through it (Gray's translation calls it a polished ring in the lid), and the Donegal folk tradition keeps the four. Wikipedia: Balor; Cath Maige Tuired.  (Legend.)",
     "topic": "balor-of-the-evil-eye-and-the-eyelid-four-men-had-to-lift"
   },
   {
@@ -2362,12 +2323,12 @@
       "Inishmore",
       "Rathlin Island"
     ],
-    "context": "Tory Island (Toraigh), off the coast of Donegal in northwestern Ireland, is Balor's stronghold in every version of the tale; the ruins on the island are still called Balor's Fort. Skellig Michael is off Kerry, Inishmore is one of the Aran Islands off Galway, Rathlin is off Antrim -- all real Irish islands, none Balor's. Wikipedia: Balor; Tory Island.  (Legend.)",
+    "context": "Tory Island (Toraigh), off the coast of Donegal in northwestern Ireland, is Balor's stronghold in the folk tales; the ruins on the island are still called Balor's Fort. Skellig Michael is off Kerry, Inishmore is one of the Aran Islands off Galway, Rathlin is off Antrim -- all real Irish islands, none Balor's. Wikipedia: Balor; Tory Island.  (Legend.)",
     "topic": "balor-of-the-evil-eye-and-the-eyelid-four-men-had-to-lift"
   },
   {
     "tier": 4,
-    "question": "A druidess named Birog carried a young warrior of the rival Tuatha De Danann across the sea on a magic cloak, to the crystal tower where Balor had locked away his daughter Ethlinn. The warrior reached her, and the son born to them was Lugh. Who was the warrior?",
+    "question": "A druidess named Birog carried a young warrior of the rival Tuatha De Danann across the sea to the crystal tower where Balor had locked away his daughter Ethlinn. The warrior reached her, and the son born to them was Lugh. Who was the warrior?",
     "answer": "Cian mac Cainte",
     "choices": [
       "Cian mac Cainte",
@@ -2401,7 +2362,7 @@
       "Balor's own daughter Ethlinn watching from the tower",
       "no one -- the eye is destroyed by the stone"
     ],
-    "context": "This is the strangest and most memorable image in the whole battle: the stone drove the eye backwards through Balor's skull, so the death-gaze fired the wrong way and killed the Fomorian ranks standing behind their own king. The prophecy is fulfilled and the Fomorians are broken forever. Wikipedia: Balor; Cath Maige Tuired.  (Legend.)",
+    "context": "This is the strangest and most memorable image in the whole battle: the stone drove the eye backwards through Balor's skull, so the death-gaze fired the wrong way and fell on the Fomorian ranks standing behind their own king. The prophecy comes true and the Fomorians are broken forever. Wikipedia: Balor; Cath Maige Tuired.  (Legend.)",
     "topic": "balor-of-the-evil-eye-and-the-eyelid-four-men-had-to-lift"
   },
   {
@@ -2462,7 +2423,7 @@
     "answer": "He was flayed alive and then beheaded",
     "choices": [
       "He was flayed alive and then beheaded",
-      "He was crucified upside down like Peter",
+      "He was sawn in half like Isaiah",
       "He was stoned like Stephen",
       "He was thrown from a high tower"
     ],
@@ -2496,19 +2457,6 @@
     "topic": "bartholomew-flayed-alive-in-armenia"
   },
   {
-    "tier": 1,
-    "question": "Jesus chose Bartholomew as one of the Twelve, and Christians gave him one of their oldest apostle days, in August. Mary's feast fell on the 15th, Augustine's on the 28th and John the Baptist's beheading on the 29th. Which August date was Bartholomew's?",
-    "answer": "24 August",
-    "choices": [
-      "24 August",
-      "10 August",
-      "6 August",
-      "1 August"
-    ],
-    "context": "10 August is Lawrence, roasted on his gridiron; 6 August is the Transfiguration; 1 August is Lammas (loaf-mass). Bartholomew's 24 August is one of the oldest apostle-days in the calendar.",
-    "topic": "bartholomew-flayed-alive-in-armenia"
-  },
-  {
     "tier": 2,
     "question": "The English monk Bede finished his greatest book around the year 731 at the monastery of Jarrow in northern England. It was the 'Ecclesiastical History of the English People', in five volumes. He dedicated it to the king of Northumbria, who had already read an early draft. Which king was this?",
     "answer": "Ceolwulf",
@@ -2536,7 +2484,7 @@
   },
   {
     "tier": 3,
-    "question": "A pope walked through the Roman slave market in a story Bede repeats, saw fair-haired boys for sale from Britain, and made a pun on their tribe: 'Not Angles, but angels.' The pun is said to have inspired the mission that sent Augustine to Canterbury. Which pope does Bede name?",
+    "question": "A pope walked through the Roman slave market in a story Bede repeats, saw fair-haired boys for sale from Britain, and made a pun on their tribe that was remembered ever after as 'Not Angles, but angels.' The pun is said to have inspired the mission that sent Augustine to Canterbury. Which pope does Bede name?",
     "answer": "Gregory the Great",
     "choices": [
       "Gregory the Great",
@@ -2544,7 +2492,7 @@
       "Nicholas the Great",
       "Sylvester the First"
     ],
-    "context": "Bede records the story at HE II.1: Gregory saw the boys, asked their people, and said 'Non Angli, sed angeli' ('Not Angles, but angels'). He then sent the Roman mission under Augustine to Kent in 597. Leo the Great faced Attila at the walls of Rome; Nicholas the Great was a strong 9th-century pope; Sylvester the First baptized Constantine in later legend. Source: en.wikipedia.org/wiki/Bede.",
+    "context": "Bede records the story at HE II.1: told that the boys were Angles, Gregory answered that it was fitting, for they had the faces of angels; later tellers boiled his words down to 'Non Angli, sed angeli' ('Not Angles, but angels'). He then sent the Roman mission under Augustine to Kent in 597. Leo the Great faced Attila at the walls of Rome; Nicholas the Great was a strong 9th-century pope; Sylvester the First baptized Constantine in later legend. Source: en.wikipedia.org/wiki/Bede.",
     "topic": "bede-the-venerable-at-jarrow-the-church-history-of-the-engli"
   },
   {
@@ -2562,7 +2510,7 @@
   },
   {
     "tier": 4,
-    "question": "Bede did not stay at Jarrow after his death: his relics were moved in the Middle Ages to the Galilee Chapel of a great English cathedral. A Latin epitaph carved over his stone tomb there reads 'Hac sunt in fossa Bedae venerabilis ossa' ('Here in this grave are the bones of the venerable Bede'). In which cathedral does that tomb stand?",
+    "question": "A priest named Alfred, son of Westou, who collected the bones of saints, is said to have carried Bede's remains away from Jarrow in the 11th century. They lie now in the Galilee Chapel of a great English cathedral, under the Latin epitaph 'Hac sunt in fossa Bedae venerabilis ossa' ('Here in this grave are the bones of the venerable Bede'). In which cathedral?",
     "answer": "Durham Cathedral",
     "choices": [
       "Durham Cathedral",
@@ -2570,7 +2518,7 @@
       "Canterbury Cathedral",
       "Winchester Cathedral"
     ],
-    "context": "Bede's bones were moved to Durham in the 11th century and now rest in the Galilee Chapel at the west end of the nave, with the Latin epitaph carved on the tomb slab. Pope Leo XIII declared Bede a Doctor of the Church in 1899, the only native of Britain to hold that title. York Minster was Alcuin's cathedral; Canterbury was Augustine's see; Winchester held the West Saxon kings. Source: en.wikipedia.org/wiki/Bede.",
+    "context": "Symeon of Durham tells how Alfred, son of Westou, a Durham priest who gathered relics, slipped away early from Jarrow one year after keeping the feast of Bede's death, and afterwards hinted that Bede's bones now lay in Cuthbert's shrine at Durham; some historians doubt the story. They rest now in the Galilee Chapel at the west end of the cathedral, under the Latin epitaph. Pope Leo XIII declared Bede a Doctor of the Church in 1899, the only native of Britain to hold that title. York Minster was Alcuin's cathedral; Canterbury was Augustine's see; Winchester held the West Saxon kings. Source: en.wikipedia.org/wiki/Alfred_Westou; en.wikipedia.org/wiki/Bede.",
     "topic": "bede-the-venerable-at-jarrow-the-church-history-of-the-engli"
   },
   {
@@ -2583,7 +2531,7 @@
       "the Book of Acts",
       "the Letter to the Romans"
     ],
-    "context": "Cuthbert's Epistola de Obitu Bedae is the eyewitness source. Bede had reached the last chapters of John when the boy scribe Wilberht told him one sentence remained. The other three are all plausible New Testament books but the letter specifies John. Source: christianity.com Venerable Bede article.",
+    "context": "Cuthbert's Epistola de Obitu Bedae is the eyewitness source. In his last days Bede was turning John's gospel into English, and Cuthbert says he had got as far as the verse 'But what are they among so many?' (John 6:9). Matthew, Acts and Romans were not the books he was translating. Source: Cuthbert, Letter on the Death of Bede.",
     "topic": "bede-the-venerable-at-jarrow-the-church-history-of-the-engli"
   },
   {
@@ -2965,7 +2913,7 @@
   },
   {
     "tier": 5,
-    "question": "A woman who headed a community of women close to Monte Cassino sat down with her twin brother Benedict at a house halfway between their two communities, as the pair did once a year, to talk about God. What was her name?",
+    "question": "In Gregory the Great's Dialogues, a woman who had given her life to God from childhood came once a year to see her brother Benedict near Monte Cassino. He went down to meet her in a house just outside his monastery, and the two of them spent the day talking about God. What was her name?",
     "answer": "Scholastica",
     "choices": [
       "Scholastica",
@@ -2973,12 +2921,12 @@
       "Hilda",
       "Etheldreda"
     ],
-    "context": "Scholastica is buried in the same tomb as her brother at Monte Cassino. Her feast day is 10 February, Benedict's 11 July. Radegund, Hilda and Etheldreda are all real historical women who founded major sixth- and seventh-century monasteries (Poitiers, Whitby, Ely), but the twin sister on the hill was Scholastica.",
+    "context": "Scholastica is buried in the same tomb as her brother at Monte Cassino. Her feast day is 10 February, Benedict's 11 July; later tradition makes her his twin. Radegund, Hilda and Etheldreda are all real historical women who founded major sixth- and seventh-century monasteries (Poitiers, Whitby, Ely), but the sister on the hill was Scholastica.",
     "topic": "benedict-of-nursia-the-raven-the-cup-and-monte-cassino"
   },
   {
     "tier": 5,
-    "question": "In Gregory the Great's Dialogues, Benedict's twin sister begged him at their last meeting to stay and talk all night. He said no, because his Rule forbade it. She prayed, and a fierce storm kept him there. Three days later she died. From his cell at Monte Cassino, Benedict saw her soul rise in the form of what animal?",
+    "question": "In Gregory the Great's Dialogues, Benedict's sister begged him at their last meeting to stay and talk all night. He said no, because his Rule forbade it. She prayed, and a fierce storm kept him there. Three days later she died. From his cell at Monte Cassino, Benedict saw her soul rise in the form of what animal?",
     "answer": "a dove",
     "choices": [
       "a dove",
@@ -3021,11 +2969,11 @@
     "answer": "Grendel uses no weapons himself, and Beowulf takes no advantage",
     "choices": [
       "Grendel uses no weapons himself, and Beowulf takes no advantage",
-      "iron cannot cut Grendel's skin, so a sword is useless",
+      "he meant to take Grendel alive as a gift for King Hrothgar",
       "his king has forbidden him to draw a blade in a foreign hall",
       "his sword was lost overboard on the voyage to Denmark"
     ],
-    "context": "Beowulf 677-687: Beowulf refuses the advantage because Grendel scorns weapons. Iron does turn out to fail against Grendel's hide -- the poet mentions this LATER, after the fight -- but Beowulf's stated reason for lying down unarmed is honour, not futility. The other reasons are not in the poem.  (Legend.)",
+    "context": "Beowulf 677-687: Beowulf refuses the advantage because Grendel scorns weapons. Later the poet adds that no blade on earth could have bitten Grendel anyway, for the monster had laid a spell on every edge -- but Beowulf's stated reason for lying down unarmed is honour. The other reasons are not in the poem.  (Legend.)",
     "topic": "beowulf-tears-off-grendels-arm"
   },
   {
@@ -3095,15 +3043,15 @@
   },
   {
     "tier": 5,
-    "question": "Beowulf and Grendel nearly vanished together in 1731. Their fight had come down across about a thousand years in one single book, and that year the book was almost destroyed. What happened in 1731 that almost cost the world the poem forever?",
+    "question": "The whole poem of Beowulf, the fight with Grendel included, survives in just one book, copied out by Anglo-Saxon scribes about a thousand years ago. In 1731 that single book came close to being lost, and the poem with it. What nearly destroyed the book that year?",
     "answer": "a fire at Ashburnham House scorched the manuscript",
     "choices": [
       "a fire at Ashburnham House scorched the manuscript",
-      "a Danish raid burned the monastery library",
-      "a monk erased the vellum to reuse the parchment",
-      "a shipwreck lost the copy sent to France"
+      "a flood in the library cellar soaked the vellum",
+      "a thief cut out its pages to sell abroad",
+      "a ship carrying it to France ran aground"
     ],
-    "context": "The Nowell Codex (Cotton Vitellius A.xv), containing the only copy of Beowulf, was in the Ashburnham House library when it caught fire on 23 October 1731. The manuscript survived but was scorched at the edges; every page has some fire-damage, and some words are lost to the burn. The Grendel-fight passage sits on folios 143r-146v of this single scorched book, now kept in the British Library.",
+    "context": "The Nowell Codex (Cotton Vitellius A.xv), containing the only copy of Beowulf, was in the Ashburnham House library when it caught fire on 23 October 1731. The manuscript survived but was scorched at the edges; every page has some fire-damage, and some words are lost to the burn. That single scorched book is now kept in the British Library.",
     "topic": "beowulf-tears-off-grendels-arm"
   },
   {
@@ -3220,7 +3168,7 @@
       "a saddle-bag",
       "a threshing floor"
     ],
-    "context": "A manger is a feeding trough for animals -- kids eat, animals eat, and the same Latin root ('manducare', to eat) gives us the word. Luke's choice of that particular object is why the ox and the donkey later get pulled into the picture from Isaiah 1:3, though Luke himself never mentions them.",
+    "context": "A manger is a feeding trough for animals; the word comes through French from the Latin 'manducare', to eat. Luke's choice of that object is why the ox and the donkey later get pulled into the picture from Isaiah 1:3, though Luke himself never mentions them.",
     "topic": "bethlehem-the-manger-and-the-shepherds"
   },
   {
@@ -3251,7 +3199,7 @@
   },
   {
     "tier": 4,
-    "question": "The shepherds ran to town after the angel's news, found Mary and Joseph and the baby, and told everyone in the house what the angel had said out in the field. Luke then paused on Mary alone, in one gentle verse about her response. What did Luke say Mary did?",
+    "question": "The shepherds ran to town after the angel's news, found Mary and Joseph and the baby, and spread abroad what the angel had told them out in the field. Luke then paused on Mary alone, in one gentle verse about her response. What did Luke say Mary did?",
     "answer": "kept all these things, and pondered them in her heart",
     "choices": [
       "kept all these things, and pondered them in her heart",
@@ -3415,12 +3363,12 @@
       "her voice, her sight, and her memory",
       "her cloak, her sword, and her name"
     ],
-    "context": "Metrical Dindshenchas of Boann: the risen waters tore off Boann's arm, her leg, and her eye as they pursued her -- the classic Irish triple-blemish, the same body-perfection-broken that puts a king off the throne (Nuada's hand, Bres's boils). She drowned in the flood; the flood kept running and became the river.  (Legend.)",
+    "context": "Metrical Dindshenchas of Boann: the risen waters tore off Boann's arm, her leg, and her eye as they pursued her -- the classic Irish triple-blemish, the same body-perfection-broken that puts a king off the throne (as Nuada's lost hand did). She drowned in the flood; the flood kept running and became the river.  (Legend.)",
     "topic": "boann-and-the-river-boyne-the-well-of-segais"
   },
   {
     "tier": 4,
-    "question": "The Dagda, great chief of the Tuatha De Danann, stopped the sun in the sky for nine months to hide his lover Boann's pregnancy from her husband Nechtan. The child came into the world in what looked like one day. He grew up to be one of the most beloved figures of Irish myth, and the owner of the great mound at Newgrange on the Boyne. Who was that son?",
+    "question": "In the tale called The Wooing of Etain, the Dagda, chief of the Tuatha De Danann, stopped the sun in the sky for nine months so that Boann's husband Elcmar would not see her pregnancy. The child seemed to be born in a single day. He grew up to own the great mound at Newgrange on the Boyne, one of the best-loved figures of Irish myth. Who was that son?",
     "answer": "Aengus",
     "choices": [
       "Aengus",
@@ -3428,25 +3376,12 @@
       "Ogma",
       "Manannan"
     ],
-    "context": "Aengus (Aengus Og, 'Aengus the Young') is the son of the Dagda and Boann. The Dagda made the sun stand still for nine months so Boann's husband would not notice the pregnancy: Aengus is thus born in the space of a day. Lugh is a later Tuatha De hero (grandson of Balor); Ogma is the god of eloquence and inventor of ogham writing; Manannan mac Lir is the sea-god.  (Legend.)",
-    "topic": "boann-and-the-river-boyne-the-well-of-segais"
-  },
-  {
-    "tier": 5,
-    "question": "A medieval Irish poet told how the goddess Boann drowned and how her torn body became the River Boyne. His verses belong to a whole body of Irish place-name origin-tales, one for every hill, lake, ford, and river of importance, gathering the story of how each landmark got its name. What is that body of lore called?",
-    "answer": "the Dindshenchas",
-    "choices": [
-      "the Dindshenchas",
-      "the Annals of the Four Masters",
-      "the Fenian Cycle",
-      "the Cath Maige Tuired"
-    ],
-    "context": "The Dindshenchas ('lore of places') is the medieval Irish body of place-name origin-tales, preserved in prose and metrical (verse) forms in the Book of Leinster and other manuscripts. The Annals of the Four Masters is a much later (17th-century) chronicle of Irish history; the Fenian Cycle is the Fionn stories; the Cath Maige Tuired is one specific battle-tale, not a whole genre.  (Legend.)",
+    "context": "Aengus (Aengus Og, 'Aengus the Young') is the son of the Dagda and Boann. In Tochmarc Etaine the Dagda made the sun stand still for nine months so Boann's husband Elcmar would not notice the pregnancy, and Aengus was born in the space of a day; in the Dindshenchas, Boann's husband is Nechtan. Lugh is a later Tuatha De hero (grandson of Balor); Ogma is the god of eloquence and inventor of ogham writing; Manannan mac Lir is the sea-god.  (Legend.)",
     "topic": "boann-and-the-river-boyne-the-well-of-segais"
   },
   {
     "tier": 1,
-    "question": "An English monk named Winfrid crossed the Rhine into Germany in the early 700s, to preach to the still-pagan Franks and Hessians. The pope in Rome gave him a new Latin name meaning roughly 'good-doer.' What name did the pope give him?",
+    "question": "An English monk named Winfrid crossed the Rhine into Germany in the early 700s, to preach to the still-pagan Hessians and Thuringians. The pope in Rome gave him a new Latin name meaning roughly 'good-doer.' What name did the pope give him?",
     "answer": "Boniface",
     "choices": [
       "Boniface",
@@ -3590,14 +3525,14 @@
   {
     "tier": 3,
     "question": "Fionn finds out what the jealous Uchtdealb has done and forces her to lift the spell, and the mother is a woman again. But her two whelps stay hounds for the rest of their lives. Why can the spell on them not be undone?",
-    "answer": "they had been conceived and born entirely under the enchantment",
+    "answer": "they were born while their mother was a hound",
     "choices": [
-      "they had been conceived and born entirely under the enchantment",
+      "they were born while their mother was a hound",
       "they had drunk from a faery well after birth",
       "they had been named by Fionn before their mother was freed",
       "the Sidhe queen had bound them separately with a golden collar"
     ],
-    "context": "Uirne was already pregnant when she was transformed; the whelps were shaped as hounds from their first breath, and the enchantment could not be lifted from a body that had never known any other. It is the rule of shape-magic in the Fenian tales. The other three are inventions of the choices.  (Legend.)",
+    "context": "Uirne was already carrying the pups when she was transformed, and she gave birth to them as a hound. When the spell on the mother was broken, James Stephens's retelling says, the enchantment on the two whelps could not be. No faery well, collar or naming plays any part in the tale.  (Legend.)",
     "topic": "bran-and-sceolang-fionns-hounds-who-were-his-own-cousins"
   },
   {
@@ -3610,7 +3545,7 @@
       "a black horse with a red mane",
       "a giant hare"
     ],
-    "context": "The half-black, half-white deer of the Chase of Thrush Glen was an enchanted creature, and Sceolang died in the chase. Enchanted deer run through many Fenian tales, echoing the shape of Fionn's own wife Sadhbh. The boar of Ben Bulben kills Diarmuid, not the hounds; the black horse with red mane is a horse-of-the-Sidhe motif but not the quarry here; a giant hare belongs to Welsh Mabinogi tales, not to Bran and Sceolang.  (Legend.)",
+    "context": "The half-black, half-white deer of the Chase of Thrush Glen was an enchanted creature, and Sceolang died in the chase. Enchanted deer run through many Fenian tales, echoing the shape of Fionn's own wife Sadhbh. The boar of Ben Bulben kills Diarmuid, not the hounds; the black horse with red mane is a horse-of-the-Sidhe motif but not the quarry here; no giant hare runs in this chase.  (Legend.)",
     "topic": "bran-and-sceolang-fionns-hounds-who-were-his-own-cousins"
   },
   {
@@ -3675,20 +3610,20 @@
       "the first curse ever cast in Ireland",
       "the first lament ever wept in Ireland"
     ],
-    "context": "Cath Maige Tuired sec 39 and the medieval Irish tradition on satire: Cairpre's poem against Bres is said to be the first satire (Irish aer) ever composed in Ireland. Satire in old Irish law was so feared that satirists had legal protection and named damages; the story of Bres is the mythic charter for that whole power.  (Legend.)",
+    "context": "Cath Maige Tuired sec 39 and the medieval Irish tradition on satire: Coirpre's poem against Bres (the name is also spelled Cairpre) is said to be the first satire (Irish aer) ever composed in Ireland. Satire in old Irish law was so feared that satirists had legal protection and named damages; the story of Bres is the mythic charter for that whole power.  (Legend.)",
     "topic": "bres-the-beautiful-the-half-fomorian-tyrant"
   },
   {
     "tier": 4,
-    "question": "King Bres insulted the poet Coirpre with a mean welcome, and Coirpre spoke a poem against him. The instant the poem was spoken, something appeared on Bres's face that Irish law refused to accept in a king, the same kind of unfitness that had put Nuada off the throne when he lost his hand. What broke out on Bres?",
-    "answer": "red boils",
+    "question": "King Bres gave the poet Coirpre a mean welcome, and in the morning Coirpre spoke a poem against him. In Charles Squire's 1905 retelling, something then broke out on the king's face that Irish law refused to accept in a king, the same kind of unfitness that had put Nuada off the throne when he lost his hand. What broke out on Bres?",
+    "answer": "red blotches",
     "choices": [
-      "red boils",
+      "red blotches",
       "leprosy",
       "black scars",
       "open wounds"
     ],
-    "context": "Cath Maige Tuired: at Cairpre's word red boils sprang up on Bres's face. Old Irish law required a king to be bodily perfect -- ainmech ('a blemish') of any kind was disqualifying, which is why Nuada had to step down for his lost hand. Bres was deposed on the spot: the first Irish king brought down by a poem.  (Legend.)",
+    "context": "Cath Maige Tuired itself says only that there was blight on Bres from that hour; the Tuatha De soon demanded that he give up the kingship, and he begged seven years' grace. The great red blotches come from Charles Squire's retelling, The Mythology of the British Islands (1905), which follows the old Irish belief that a poet's satire could raise blotches on its victim's face. Old Irish law required a king to be unblemished, which is why Nuada had to step down for his lost hand.  (Legend.)",
     "topic": "bres-the-beautiful-the-half-fomorian-tyrant"
   },
   {
@@ -3875,7 +3810,7 @@
   },
   {
     "tier": 1,
-    "question": "Young Sigurd, fresh from killing the dragon Fafnir and the smith Regin, rode up a great mountain toward the crown of the peak. From miles away he could see the summit ringed by a fire so tall that no bird flew through it. What was the mountain called?",
+    "question": "Young Sigurd, fresh from killing the dragon Fafnir and the smith Regin, rode up a great mountain. From far off he saw a great light on its summit, as if a fire were blazing up to the sky. What was the mountain called?",
     "answer": "Hindarfjall",
     "choices": [
       "Hindarfjall",
@@ -3888,7 +3823,7 @@
   },
   {
     "tier": 1,
-    "question": "Odin himself picked Sigurd's horse out of a whole herd of mountain stallions, and only that horse in all the north would leap through fire without flinching. Sigurd rode it straight at the wall of flame ringing the mountaintop. What was the name of Sigurd's horse?",
+    "question": "Odin himself, in the shape of an old greybeard, helped young Sigurd choose a grey colt from a herd of horses. In a later adventure that horse alone would carry a rider through a wall of flame. What was the name of Sigurd's horse?",
     "answer": "Grani",
     "choices": [
       "Grani",
@@ -3896,12 +3831,12 @@
       "Gullfaxi",
       "Hofvarpnir"
     ],
-    "context": "Volsunga Saga ch. 13-21: Grani is Sigurd's horse, chosen for him by Odin in disguise as an old man, and descended from Odin's own eight-legged steed Sleipnir. Sleipnir belongs to Odin, not Sigurd. Gullfaxi is the golden-maned horse of the giant Hrungnir, later given to Thor's son Magni. Hofvarpnir is the goddess Gna's horse. Grani leaps through Hindarfjall's fire because Sleipnir's blood is in him.  (Legend.)",
+    "context": "Volsunga Saga ch. 13-21: Grani is Sigurd's horse, chosen for him by Odin in disguise as an old man, and descended from Odin's own eight-legged steed Sleipnir. Sleipnir belongs to Odin, not Sigurd. Gullfaxi is the golden-maned horse of the giant Hrungnir, later given to Thor's son Magni. Hofvarpnir is the goddess Gna's horse. Later, when Sigurd rides to win Brynhild for Gunnar, Gunnar's own horse balks at her wall of fire and Grani will not stir under Gunnar; only with Sigurd in the saddle does Grani leap the flames.  (Legend.)",
     "topic": "brynhild-in-the-ring-of-fire"
   },
   {
     "tier": 2,
-    "question": "Sigurd came down unharmed beyond the flames and found a hall. Inside, a figure lay in full war-armour, helm on the head, sword at the side. He bent to unlace the helm, expecting to see a slain warrior's face. What did Sigurd find under the helm?",
+    "question": "Sigurd reached the summit and found a hall walled with shields. Inside, a figure lay in full war-armour, helm on the head, sword at the side. He bent to unlace the helm, expecting to see a slain warrior's face. What did Sigurd find under the helm?",
     "answer": "a woman, sleeping",
     "choices": [
       "a woman, sleeping",
@@ -3914,7 +3849,7 @@
   },
   {
     "tier": 2,
-    "question": "The sleeper in the mail-coat would not wake for Sigurd, by touch or by voice. Only when he slit the mail-coat open with his sword Gram, 'as though cutting cloth,' the saga says, did she open her eyes. She spoke first: 'Who has broken the byrnie and waked me from long sleep?' What was her name?",
+    "question": "The sleeper in the mail-coat lay as if she would never wake. Only when Sigurd slit the mail open with his sword, the blade biting 'as if it were cloth,' did she open her eyes and ask what thing of great might had drawn her from her sleep. What was her name?",
     "answer": "Brynhild",
     "choices": [
       "Brynhild",
@@ -3922,7 +3857,7 @@
       "Sigrun",
       "Skuld"
     ],
-    "context": "Volsunga Saga ch. 21; Sigrdrifumal prose 5. She names herself Brynhild. Freyja is the Vanir goddess of love and battle who owns half of Valhalla's slain. Sigrun and Skuld are two other named Valkyries from the Norse corpus. Brynhild is the specific Valkyrie of this story.  (Legend.)",
+    "context": "Volsunga Saga ch. 21: the saga calls her Brynhild. In the Eddic poem Sigrdrifumal the sleeper names herself Sigrdrifa, and the saga takes her to be Brynhild. Freyja is the Vanir goddess of love and battle who owns half of Valhalla's slain. Sigrun and Skuld are two other named Valkyries from the Norse corpus. Brynhild is the specific Valkyrie of this story.  (Legend.)",
     "topic": "brynhild-in-the-ring-of-fire"
   },
   {
@@ -3940,19 +3875,6 @@
   },
   {
     "tier": 5,
-    "question": "A 19th-century composer took Sigurd's climb through the fire to the Valkyrie and made it the climax of an opera, staged in 1876 as the third part of a four-opera cycle. He renamed the hero Siegfried and the Valkyrie Brunnhilde. Who composed the opera?",
-    "answer": "Richard Wagner",
-    "choices": [
-      "Richard Wagner",
-      "Giuseppe Verdi",
-      "Georges Bizet",
-      "Modest Mussorgsky"
-    ],
-    "context": "The opera is Siegfried (1876), the third of Wagner's four-opera Ring cycle Der Ring des Nibelungen. Verdi wrote Italian operas (Aida, La Traviata). Bizet wrote Carmen. Mussorgsky wrote Boris Godunov. Wagner's ring-cycle is the reason so many modern audiences meet Brynhild first as Brunnhilde on a stage-mountain with a stage-fire.",
-    "topic": "brynhild-in-the-ring-of-fire"
-  },
-  {
-    "tier": 5,
     "question": "Sigurd meets the Valkyrie in an old poem of the Poetic Edda, and the poem breaks off in mid-sentence inside the single manuscript that carries it. Scholars have to finish his story from a later prose saga. What has happened to the manuscript at that exact spot?",
     "answer": "a whole gathering of pages is missing",
     "choices": [
@@ -3966,15 +3888,15 @@
   },
   {
     "tier": 1,
-    "question": "Gudrun and Brynhild go down to the river one morning to wash their hair, and there the two queens quarrel. Gudrun is Sigurd's wife and Brynhild is Gunnar's. What do they quarrel about?",
+    "question": "Gudrun and Brynhild go down to the river one day to bathe, and there the two queens quarrel. Gudrun is Sigurd's wife and Brynhild is Gunnar's. What do they quarrel about?",
     "answer": "whose husband is the greater warrior",
     "choices": [
       "whose husband is the greater warrior",
-      "which queen may bathe upstream",
+      "which queen is the more beautiful",
       "which brother should sit on the high seat",
       "who owns the golden hoard of Fafnir"
     ],
-    "context": "Volsunga Saga chapter 30: the argument at the river is a rivalry over the husbands' honour -- whose man is greater. The bathing-place quarrel is a folktale echo but not this scene's substance. The high-seat quarrel comes at Atli's court later. Fafnir's hoard is owned by Gjuki's sons jointly and is not what they dispute. It is the boast about husbands that starts the whole doom.  (Legend.)",
+    "context": "Volsunga Saga, the queens' quarrel: Brynhild wades farther out into the river than Gudrun, and when Gudrun asks why, the rivalry comes out as a contest over the husbands' honour -- whose man is greater, and who rode the flaming fire. It is the boast about husbands that starts the whole doom.  (Legend.)",
     "topic": "brynhilds-revenge-guttorm-kills-sigurd-in-bed"
   },
   {
@@ -3992,15 +3914,15 @@
   },
   {
     "tier": 2,
-    "question": "Brynhild goes straight home from the quarrel at the river and lies down on her bed. She has been tricked into marrying Gunnar, while the hero she loved has married Gunnar's sister Gudrun. For three whole days she does one thing that shocks the entire household. What does she do for those three days?",
-    "answer": "refuses to speak",
+    "question": "Brynhild goes straight home from the quarrel at the river and takes to her bed. She has been tricked into marrying Gunnar, while the hero she loved has married Gunnar's sister Gudrun. For seven days and seven nights she does one thing that frightens the entire household. What does she do?",
+    "answer": "refuses to speak to anyone",
     "choices": [
-      "refuses to speak",
-      "weeps without stopping",
+      "refuses to speak to anyone",
+      "walks the fells by night",
       "sharpens her sword in silence",
-      "burns her wedding-gifts on the hearth"
+      "burns her wedding-gifts"
     ],
-    "context": "Volsunga Saga ch. 30-31: Brynhild lies down and will not speak or eat for three days. In the saga her silence is more terrifying than shouting -- everyone in the hall knows something dreadful is coming. She does not weep openly, does not sharpen a blade, and does not burn her goods. The muteness is the specific detail the saga returns to.  (Legend.)",
+    "context": "Volsunga Saga: Brynhild takes to her bed and lies there as if dead; she answers Gunnar nothing and drinks neither mead nor wine, and Gudrun says that for seven days and seven nights no one has dared to wake her. When Sigurd at last asks why she will not speak to anyone, her fury breaks out.  (Legend.)",
     "topic": "brynhilds-revenge-guttorm-kills-sigurd-in-bed"
   },
   {
@@ -4013,7 +3935,7 @@
       "that Sigurd surrender Fafnir's gold",
       "that Sigurd swear a new oath in her presence"
     ],
-    "context": "Volsunga Saga ch. 31: Brynhild tells Gunnar: 'Sigurd betrayed both of us. I want him dead, or I will die myself. Choose.' She does not ask for exile, for the gold, or for a fresh oath -- only for his death. The rest of the cycle turns on Gunnar's answer.  (Legend.)",
+    "context": "Volsunga Saga: Brynhild tells Gunnar that Sigurd has betrayed them both and that it shall be Sigurd's death, or Gunnar's, or her own; then she warns that she will go home to her kin unless he kills Sigurd and Sigurd's young son. She does not ask for exile, for the gold, or for a fresh oath -- only for his death. The rest of the cycle turns on Gunnar's answer.  (Legend.)",
     "topic": "brynhilds-revenge-guttorm-kills-sigurd-in-bed"
   },
   {
@@ -4031,7 +3953,7 @@
   },
   {
     "tier": 4,
-    "question": "A boy named Guttorm, the youngest brother of Gunnar and Hogni, will not lift a sword against the greatest hero in the north on his own. To make him wild enough for the deed, his brothers prepare a stew of two animals' flesh mixed with beer and feed it to him. What two kinds of flesh go into the stew?",
+    "question": "A boy named Guttorm, the youngest brother of Gunnar and Hogni, will not lift a sword against the greatest hero in the north on his own. To make him wild enough for the deed, his brothers seethe the flesh of two creatures together and feed it to him. What two kinds of flesh go into the dish?",
     "answer": "wolf and serpent",
     "choices": [
       "wolf and serpent",
@@ -4039,25 +3961,25 @@
       "hare and salmon",
       "bear and stag"
     ],
-    "context": "Volsunga Saga ch. 32: the stew is wolf-flesh mixed with serpent-flesh, boiled with beer. Raven and goat, hare and salmon, and bear and stag are all Norse animals but not this recipe. The saga calls the concoction geri-flesh -- one of the very few named magical foods in Norse myth, and the sole reason Guttorm is fierce enough that night to walk into the bedroom of Sigurd Fafnir-slayer with a drawn blade.  (Legend.)",
+    "context": "Volsunga Saga: the brothers take a serpent and some wolf's flesh, seethe them together and give them to Guttorm to eat, and the verse the saga quotes sets the dish in his wine. That and his mother Grimhild's urging make him wild enough to walk into the bedroom of Sigurd Fafnir-slayer with a drawn blade. Raven and goat, hare and salmon, and bear and stag are all Norse animals but not this recipe.  (Legend.)",
     "topic": "brynhilds-revenge-guttorm-kills-sigurd-in-bed"
   },
   {
     "tier": 5,
     "question": "The dying Sigurd hurls his sword after Guttorm, the youngest brother of King Gunnar, as the boy flees the bedchamber. The blade catches him from behind and cleaves him clean in two. The saga preserves the exact place on his body where it struck. Where does the sword strike Guttorm?",
-    "answer": "between the shoulders",
+    "answer": "across the middle of his back",
     "choices": [
-      "between the shoulders",
+      "across the middle of his back",
       "at the base of the skull",
       "through the heart from behind",
       "behind the knees"
     ],
-    "context": "Volsunga Saga ch. 32: Gram catches Guttorm between the shoulders and cuts him clean in two -- one half falling forward into the hall, one half falling backward into the bedroom where Sigurd lies dying. It is one of the most-remembered images in the whole saga.  (Legend.)",
+    "context": "Volsunga Saga: Gram strikes Guttorm in the back and cuts him asunder in the middle, so that his feet and legs fall one way and his head and hands fall back into the room where Sigurd lies dying. It is one of the most-remembered images in the whole saga.  (Legend.)",
     "topic": "brynhilds-revenge-guttorm-kills-sigurd-in-bed"
   },
   {
     "tier": 5,
-    "question": "Brynhild does not weep on the evening the hero she loved dies. She stands in the hall, laughs once aloud, dresses herself in her finest clothes, takes up a sword and stabs herself through the chest. Before she dies she asks a favour of her people. What does Brynhild ask them to do with her body?",
+    "question": "Brynhild laughs once aloud on the day the hero she loved dies, when she hears his widow moan. Later she hands out her gold to anyone who will take it and turns a sword on herself. Before she dies she asks a favour of her people. What does Brynhild ask them to do with her body?",
     "answer": "to burn her on Sigurd's funeral pyre",
     "choices": [
       "to burn her on Sigurd's funeral pyre",
@@ -4066,19 +3988,6 @@
       "to place her body back inside the ring of fire"
     ],
     "context": "Volsunga Saga ch. 33 and Sigurdarkvida hin skamma stanzas 49-71: Brynhild asks to be burned on the same pyre with Sigurd, and asks that the sword Gram be laid unsheathed between their bodies -- as it had lain between them on the shape-swap night when Sigurd first slept beside her wearing Gunnar's face. She is not buried at Hindarfjall, not sent to Uppsala, and not returned to the ring of fire. The pyre-with-sword-between-them is the specific request the saga preserves.  (Legend.)",
-    "topic": "brynhilds-revenge-guttorm-kills-sigurd-in-bed"
-  },
-  {
-    "tier": 5,
-    "question": "Richard Wagner ends his great four-opera cycle, first staged in 1876, on Sigurd's murder, a story retold across medieval Germanic literature. The murder closes the fourth and final opera. What is the name of that opera?",
-    "answer": "Gotterdammerung",
-    "choices": [
-      "Gotterdammerung",
-      "Siegfried",
-      "Die Walkure",
-      "Das Rheingold"
-    ],
-    "context": "Gotterdammerung ('Twilight of the Gods'), 1876, is the fourth opera in Wagner's Der Ring des Nibelungen. Siegfried is the third opera, which ends with the wake-scene on Hindarfjall. Die Walkure is the second, and Das Rheingold is the first. All four together make up the Ring cycle -- and the murder Guttorm strikes here is the climax of Gotterdammerung.",
     "topic": "brynhilds-revenge-guttorm-kills-sigurd-in-bed"
   },
   {
@@ -4096,7 +4005,7 @@
   },
   {
     "tier": 1,
-    "question": "The Norman poet Wace gave a plain reason around 1155 for the shape of King Arthur's Round Table. Uther Pendragon, Arthur's father, had suffered one ugly problem at every feast, Wace said, and Arthur meant to end it. What problem was the table built to stop?",
+    "question": "The Norman poet Wace gave a plain reason around 1155 for the shape of King Arthur's Round Table. Arthur's court suffered one ugly problem at its feasts, Wace said, and the king meant to end it. What problem was the table built to stop?",
     "answer": "barons quarrelling over who sat highest",
     "choices": [
       "barons quarrelling over who sat highest",
@@ -4104,7 +4013,7 @@
       "spies overhearing counsel through open doors",
       "poison being slipped along the high table"
     ],
-    "context": "Wace, Roman de Brut (c.1155): 'Arthur created the Round Table to prevent quarrels among his barons, none of whom would accept a lower place than the others.' A round table has no head and no foot, so every seat is equal in dignity. Assassins, spies, and poisoners are all real medieval court-worries, but the Round Table specifically solves the seating-rank problem.  (Legend.)",
+    "context": "Wace, Roman de Brut (c.1155): each of Arthur's noble barons thought himself the best, and none would accept a lower seat than another, so Arthur made the Round Table, where all sat as equals. A round table has no head and no foot, so every seat is equal in dignity. Assassins, spies, and poisoners are all real medieval court-worries, but the Round Table specifically solves the seating-rank problem.  (Legend.)",
     "topic": "camelot-and-the-round-table"
   },
   {
@@ -4130,33 +4039,20 @@
       "twenty-four",
       "three hundred"
     ],
-    "context": "Malory, Le Morte d'Arthur Book III ch.1: Leodegrance sends the Table 'and a hundred knights' with it -- Arthur later fills the remaining seats, and Malory gives 150 as the count of the fellowship at its full strength. Twelve is the round number of Charlemagne's Twelve Peers of France, not Arthur's fellowship. Twenty-four fits the smaller Arthurian jousting-lists, not the Table itself. Three hundred is the count of Roman senators.  (Legend.)",
+    "context": "Malory, Le Morte d'Arthur Book III ch.1: Leodegrance sends the Table 'and a hundred knights' with it -- Arthur later fills the remaining seats, and Malory gives 150 as the count of the fellowship at its full strength. Twelve is the round number of Charlemagne's Twelve Peers of France, not Arthur's fellowship. Twenty-four is the number of knights' places painted on the Winchester table, not Malory's count. Three hundred is the count of Roman senators.  (Legend.)",
     "topic": "camelot-and-the-round-table"
   },
   {
     "tier": 3,
-    "question": "King Arthur's knights sat down at the Round Table in Malory's telling, each at a place marked with his name in letters of gold, and one seat among them stayed empty, as it always did. It was not kept out of respect for an absent knight. What was that seat called?",
-    "answer": "the Siege Perilous",
+    "question": "One seat at King Arthur's Round Table stood empty year after year in Malory's telling, waiting for a knight who had not yet come. Merlin, who made it, warned what would happen to any other knight bold enough to sit there. What fate did he foretell for such a knight?",
+    "answer": "he would be destroyed where he sat",
     "choices": [
-      "the Siege Perilous",
-      "the Siege of Judas",
-      "the Perilous Bed",
-      "the seat of Uther Pendragon"
+      "he would be destroyed where he sat",
+      "he would be struck blind for life",
+      "he would be turned to stone",
+      "he would be cast out of the fellowship"
     ],
-    "context": "Malory, Le Morte d'Arthur Book XIII ch.4; Vulgate Cycle 'Queste del Saint Graal' (c.1220). 'Siege' comes from Old French 'sege' meaning seat or throne; 'perilous' is the modern English word. The Siege of Judas is the empty place at the Last Supper that the Vulgate Queste explicitly says the Siege Perilous mirrors. The Perilous Bed is Chretien's 'lit merveilleux' from Perceval, a magical bed that hurls spears at whoever lies on it. Uther Pendragon had his own high seat, but it is not the deadly one.  (Legend.)",
-    "topic": "camelot-and-the-round-table"
-  },
-  {
-    "tier": 4,
-    "question": "One poet of the 1170s, telling how Lancelot rode to rescue Guinevere from the kingdom of Gorre, gave King Arthur's capital a name that the first Arthurian books never used. The legend was older than the name. Who first named the city?",
-    "answer": "Chretien de Troyes",
-    "choices": [
-      "Chretien de Troyes",
-      "Wace",
-      "Geoffrey of Monmouth",
-      "Wolfram von Eschenbach"
-    ],
-    "context": "Wikipedia: Camelot; Wikipedia: Lancelot, the Knight of the Cart. Chretien de Troyes coins 'Camelot' in his 1170s poem 'Lancelot, the Knight of the Cart'. Wace (Roman de Brut, c.1155) invented the Round Table motif but never used the name Camelot. Geoffrey of Monmouth (Historia Regum Britanniae, c.1136) placed Arthur's court at Caerleon, not Camelot. Wolfram von Eschenbach wrote Parzival (c.1210), long after Chretien.",
+    "context": "Malory, Le Morte d'Arthur: the seat was the Siege Perilous, and Merlin warned that if any knight but the one destined for it dared to sit there, he would be destroyed. At Pentecost Galahad came, his name appeared in letters of gold on the seat, and he sat in it unharmed. 'Siege' is Old French for seat or throne.  (Legend.)",
     "topic": "camelot-and-the-round-table"
   },
   {
@@ -4195,7 +4091,7 @@
       "Sir Bors",
       "Sir Kay"
     ],
-    "context": "Malory, Books XX-XXI. Gawain leads the party demanding Lancelot's punishment after Lancelot kills Gawain's brothers Gareth and Gaheris in the rescue of Guinevere from the stake. Sir Bors is Lancelot's own kinsman and stays loyal to him. Percival has gone on the Grail quest. Kay has faded by the end of the book. The Gawain-Lancelot feud is what ends the Round Table.  (Legend.)",
+    "context": "Malory, Books XX-XXI. Gawain leads the party demanding Lancelot's punishment after Lancelot kills Gawain's brothers Gareth and Gaheris in the rescue of Guinevere from the stake. Sir Bors is Lancelot's own kinsman and stays loyal to him. Percival died in the East after the Grail quest. Kay has faded by the end of the book. The Gawain-Lancelot feud is what ends the Round Table.  (Legend.)",
     "topic": "camelot-and-the-round-table"
   },
   {
@@ -4408,15 +4304,15 @@
   },
   {
     "tier": 1,
-    "question": "Pope Leo III came up behind the kneeling Frankish king at Mass in St. Peter's, set a crown on his head and hailed him Emperor of the Romans. Charlemagne later claimed, his biographer Einhard says, that he would not have entered the church if he had known. On what day of the year 800 did this happen?",
-    "answer": "Christmas Day",
+    "question": "Pope Leo III crowned the kneeling Frankish king at Christmas Mass in St. Peter's in 800 and hailed him Emperor of the Romans. Einhard, his biographer, records what Charlemagne later said about that day. What did he claim?",
+    "answer": "He would not have gone in had he known",
     "choices": [
-      "Christmas Day",
-      "Easter Sunday",
-      "All Saints' Day",
-      "Ascension Day"
+      "He would not have gone in had he known",
+      "He had begged the pope for it for years",
+      "He had dreamed of it the night before",
+      "He had picked Christmas so Rome would see"
     ],
-    "context": "Leo III crowned Charlemagne emperor during Christmas Mass at St. Peter's on 25 December 800. Einhard reports Charlemagne's later claim of surprise. Source: Britannica; Wikipedia.",
+    "context": "Einhard, Life of Charlemagne 28: the emperor said that he would not have set foot in the church that day, great feast though it was, if he could have foreseen the pope's plan. Historians still argue over how real the surprise was. Source: Einhard, Vita Karoli Magni 28.",
     "topic": "charlemagne-and-alcuin-at-aachen-the-palace-school"
   },
   {
@@ -4447,7 +4343,7 @@
   },
   {
     "tier": 3,
-    "question": "Alcuin went by Albinus at Charlemagne's palace school at Aachen around the year 800, and the court poet Angilbert went by Homer. The scholars there gave each other classical or biblical nicknames for fun. Charlemagne himself took the name of a great biblical king of Israel. Which king?",
+    "question": "Alcuin went by Flaccus, after the Roman poet Horace, at Charlemagne's palace school at Aachen around the year 800, and the court poet Angilbert went by Homer. The scholars there gave each other classical or biblical nicknames for fun. Charlemagne himself took the name of a great biblical king of Israel. Which king?",
     "answer": "David",
     "choices": [
       "David",
@@ -4455,7 +4351,7 @@
       "Josiah",
       "Hezekiah"
     ],
-    "context": "Charlemagne = David in the court's poetry; Alcuin = Albinus / Flaccus; Angilbert = Homer. The comparison flattered Charlemagne as the ideal warrior-king united with his priest (Alcuin/Nathan). Source: Medievalists.net (Garrison, 'Nicknames at the Carolingian Court').",
+    "context": "Charlemagne = David in the court's poetry; Alcuin = Flaccus (his Latin name was Albinus); Angilbert = Homer. The comparison flattered Charlemagne as the ideal warrior-king united with his priest (Alcuin/Nathan). Source: Medievalists.net (Garrison, 'Nicknames at the Carolingian Court').",
     "topic": "charlemagne-and-alcuin-at-aachen-the-palace-school"
   },
   {
@@ -4533,7 +4429,7 @@
       "Ogier",
       "Oliver"
     ],
-    "context": "Song of Roland laisses 273-291: Thierry, Roland's kinsman, argues that Ganelon's revenge is treason and offers his body against Ganelon's champion. Naimon is Charlemagne's wise old counsellor (already retired from the fighting); Ogier the Dane is another peer; Oliver is Roland's sworn brother, already dead at Roncesvalles.  (Legend.)",
+    "context": "Song of Roland laisses 273-291: Thierry, Roland's kinsman, argues that Ganelon's revenge is treason and offers his body against Ganelon's champion. Naimon is Charlemagne's wise old counsellor; Ogier the Dane is another peer; Oliver is Roland's sworn brother, already dead at Roncesvalles.  (Legend.)",
     "topic": "charlemagnes-revenge-hanging-ganelon-and-mourning-at-aachen"
   },
   {
