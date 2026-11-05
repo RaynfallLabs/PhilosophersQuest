@@ -8946,9 +8946,9 @@
   {
     "tier": 4,
     "question": "A pilot climbs the Vomit Comet, a weightlessness trainer flown by the American space program, at a forty-five degree angle, with everyone aboard pressed down at nearly twice normal weight. The pilot then cuts thrust entirely and pushes over the top about eight kilometers above the ground. For the next twenty-five seconds every person and every loose tool inside floats freely. What path is the aircraft tracing through the atmosphere during that stretch?",
-    "answer": "The exact arc a stone would follow if you threw it.",
+    "answer": "The exact arc a stone would follow if it were thrown.",
     "choices": [
-      "The exact arc a stone would follow if you threw it.",
+      "The exact arc a stone would follow if it were thrown.",
       "A circle of one fixed radius, held all the way over.",
       "A curve flattened at the top to hold one steady speed.",
       "A curve steepened at the top to match the cabin's weight."
@@ -8972,9 +8972,9 @@
   {
     "tier": 5,
     "question": "An astronaut floats aboard the space station with nine-tenths of Earth's pull still reaching her, and NASA's word for her condition is microgravity, never zero gravity. The word is not only about the pull that remains. That pull is also not quite the same at every point inside the station. Which effect chiefly accounts for the difference?",
-    "answer": "An astronaut's feet sit nearer Earth than their head, so they are pulled harder.",
+    "answer": "Her feet sit nearer Earth than her head, so the feet are pulled harder.",
     "choices": [
-      "An astronaut's feet sit nearer Earth than their head, so they are pulled harder.",
+      "Her feet sit nearer Earth than her head, so the feet are pulled harder.",
       "The station's metal hull shields its innermost modules from part of the pull.",
       "The station's own mass tugs loose objects toward its heaviest section.",
       "The Sun pulls hardest on whichever end of the station is turned toward it."
@@ -9062,7 +9062,7 @@
   },
   {
     "tier": 2,
-    "question": "A machine charged a wooden cube twelve feet on a side until it threw sparks, in the Royal Institution's lecture room in January 1836, and Michael Faraday stood inside with lighted candles. He had set the cube on glass insulators and covered it with copper netting and bands of tin foil. What happened to the candle flames?",
+    "question": "Michael Faraday stood inside a wooden cube twelve feet on a side in January 1836, holding lighted candles, while a machine charged the outside until it threw sparks. He had set the cube on glass insulators and covered it with copper netting and bands of tin foil. What happened to the candle flames?",
     "answer": "They stood perfectly still.",
     "choices": [
       "They stood perfectly still.",
@@ -9166,15 +9166,15 @@
   },
   {
     "tier": 5,
-    "question": "William Gladstone, the best-loved story goes, asked Michael Faraday what use his electrical toy could possibly be, and Faraday answered, 'One day, sir, you may tax it.' No letter, newspaper or biography from Faraday's own lifetime carries the tale. Which checkable date shows the story cannot be true as told?",
-    "answer": "Gladstone first became Prime Minister the year after Faraday died.",
+    "question": "The best-loved story has Michael Faraday showing his electrical apparatus to the prime minister, William Gladstone, who asks what use it could possibly be. 'One day, sir, you may tax it,' Faraday answers. No letter, newspaper or biography from Faraday's own lifetime carries the tale. Which checkable date shows it cannot be true as told?",
+    "answer": "Gladstone took that office only in the year after Faraday died.",
     "choices": [
-      "Gladstone first became Prime Minister the year after Faraday died.",
+      "Gladstone took that office only in the year after Faraday died.",
       "The same exchange appears in a French almanac printed in 1789.",
       "Britain had already been taxing electricity since the year 1852.",
       "Faraday's electrical work was all done before Gladstone was born."
     ],
-    "context": "Faraday died on 25 August 1867, and William Gladstone did not become Prime Minister until 1868 -- so the story's own casting breaks on a date anyone can look up. Snopes can find the tale in no account by Faraday or by any contemporary -- no letter, no newspaper, no biography -- and it surfaces only well after his death; it is also told with the answer 'Of what use is a new-born baby?'. It looks invented later to score a point against short-sighted politicians. Faraday is worth loving without it -- and checking a beloved story against a date is exactly what he would have done. Source: Snopes fact-check, 'Michael Faraday Tax Quote'; Grokipedia, Michael Faraday.  (Legend.)",
+    "context": "Faraday died on 25 August 1867, and William Gladstone did not become Prime Minister until December 1868 -- so the favourite casting breaks on a date anyone can look up. Gladstone had been Chancellor of the Exchequer for years while Faraday lived, so only the prime-minister version is impossible. The earliest known telling, in W. E. H. Lecky's Democracy and Liberty (1899), more than thirty years after Faraday's death, names no office for Gladstone and never mentions electricity; the tidy line 'One day, sir, you may tax it' turns up later still. Snopes can find the tale in no account by Faraday or any contemporary. Faraday is worth loving without it -- and checking a beloved story against a date is exactly what he would have done. Sources: Wikiquote, 'Michael Faraday' (Disputed); Snopes, 'Long Ago and Faraday'.  (Legend.)",
     "topic": "faraday-the-bookbinders-apprentice"
   },
   {
@@ -9374,7 +9374,7 @@
   },
   {
     "tier": 2,
-    "question": "Engineers photographed icicles hanging from the launch tower at Kennedy Space Center on the morning of 28 January 1986, as Challenger waited through Florida's hard freeze. Every earlier shuttle flight had lifted off at 53 degrees Fahrenheit (about 12 Celsius) or warmer. About what was the outside temperature when Challenger finally lifted off?",
+    "question": "Engineers photographed icicles hanging from the launch tower at Kennedy Space Center on the morning of 28 January 1986, as Challenger waited through Florida's hard freeze. Every earlier shuttle flight had lifted off in air above 50 degrees Fahrenheit (10 Celsius). About what was the outside temperature when Challenger finally lifted off?",
     "answer": "about 36 degrees Fahrenheit",
     "choices": [
       "about 36 degrees Fahrenheit",
@@ -9382,7 +9382,7 @@
       "about 22 degrees Fahrenheit",
       "about 42 degrees Fahrenheit"
     ],
-    "context": "The air at liftoff was 36 F, some 15 F colder than any previous launch; overnight pad temperatures had bottomed out in the 20s and the right booster joint, sitting in shade, is estimated to have been near 28 F. Source: NASA weather logs cited in AccuWeather retrospective.",
+    "context": "The air at liftoff was 36 F, about 15 F colder than any previous launch by the Rogers Commission's count; the coldest booster seals on any earlier flight, in January 1985, had been at a calculated 53 F. Overnight pad temperatures had bottomed out in the 20s and the right booster joint, sitting in shade, is estimated to have been near 28 F. Sources: Rogers Commission report, Vol. II, Appendix M (nasa.gov/history/rogersrep/v2appm.htm); Wikipedia, 'Space Shuttle Challenger disaster'; AccuWeather retrospective.",
     "topic": "feynman-the-o-ring-and-the-glass-of-ice-water"
   },
   {
@@ -9452,20 +9452,20 @@
   },
   {
     "tier": 5,
-    "question": "Diane Vaughan dug into how the Challenger launch was approved and published her findings in 1996 as 'The Challenger Launch Decision.' Her book has since given every engineering-failure classroom the same short phrase for the pattern it describes. What is that phrase?",
-    "answer": "normalization of deviance",
+    "question": "Diane Vaughan, a sociologist, dug through the records asking how careful people at NASA and Morton Thiokol had talked themselves into launching Challenger. Flight after flight had come home with scorched O-rings, and none had ended in disaster. By her 1996 account, what had those safe returns done?",
+    "answer": "Each pushed the line of acceptable damage a little further out",
     "choices": [
-      "normalization of deviance",
-      "erosion of vigilance",
-      "drift of the acceptable",
-      "collapse of oversight"
+      "Each pushed the line of acceptable damage a little further out",
+      "Each convinced the engineers that the cold played no part",
+      "Each was kept from the managers by engineers afraid to speak",
+      "Each led NASA to set a stricter rule for launching in cold"
     ],
-    "context": "Vaughan traced how each flight that came back with singed rubber and did not blow up nudged the acceptable damage line a little further out; the joint was 'flying', so the damage must be tolerable. 'Normalization of deviance' is now standard usage in engineering failure analysis. The other three are plausible-sounding coinages invented here, not real terms of art.",
+    "context": "Vaughan's name for that slow drift is normalization of deviance, now standard usage wherever engineers study failure. She traced how each flight that came back with singed rubber and did not blow up nudged the acceptable damage line a little further out; the joint was 'flying', so the damage must be tolerable. Source: Diane Vaughan, The Challenger Launch Decision (University of Chicago Press, 1996); Wikipedia, 'Normalization of deviance'.",
     "topic": "feynman-the-o-ring-and-the-glass-of-ice-water"
   },
   {
     "tier": 5,
-    "question": "Challenger vanished in a huge white plume of smoke and gas seventy-three seconds after leaving Florida on 28 January 1986, and all seven astronauts were killed. Almost all who watched live still call what they saw an 'explosion.' The Rogers Commission found that a cold-hardened rubber O-ring had let hot gas leak out and cut through the main external fuel tank, but it was more precise about what destroyed the orbiter itself. What destroyed it?",
+    "question": "Challenger vanished into a huge white plume seventy-three seconds after leaving Florida on 28 January 1986, and all seven astronauts were killed. Nearly everyone who watched still calls it an explosion. The Rogers Commission traced the start to a cold-hardened O-ring that let hot gas burn into the external fuel tank, but it was more exact about what destroyed the orbiter. What destroyed it?",
     "answer": "aerodynamic forces tore the orbiter apart after the external tank ruptured",
     "choices": [
       "aerodynamic forces tore the orbiter apart after the external tank ruptured",
@@ -9556,19 +9556,6 @@
   },
   {
     "tier": 4,
-    "question": "Richard Feynman asked the Caltech graduates for a duty stricter than ordinary honesty: a scientist who publishes a result must report every alternative that could make him wrong, every check that didn't quite work, everything he cannot rule out. Feynman gave this duty a short memorable phrase. Which phrase did he use?",
-    "answer": "leaning over backwards",
-    "choices": [
-      "leaning over backwards",
-      "showing your working",
-      "opening the notebook",
-      "burning the bridges"
-    ],
-    "context": "Feynman: 'It's a kind of scientific integrity, a principle of scientific thought that corresponds to a kind of utter honesty -- a kind of leaning over backwards.' The other three are plausible-sounding idioms invented for this question, not real Feynman terms.",
-    "topic": "feynmans-cargo-cult-science"
-  },
-  {
-    "tier": 4,
     "question": "The makers of Wesson cooking oil boasted in a print advertisement that their oil did not seep into anything fried in it. Richard Feynman quoted the boast in his 1974 Caltech commencement speech to show that a claim can be technically true and still dishonest. He said the statement was literally true and yet completely misleading. Why?",
     "answer": "At that temperature no oil soaks through food, so Wesson has claimed no real advantage.",
     "choices": [
@@ -9595,10 +9582,10 @@
   },
   {
     "tier": 5,
-    "question": "Followers of real Melanesian religious movements that grew up around the Second World War built airstrips and mock control towers to summon the American cargo back, and Richard Feynman took the phrase 'cargo cult' from them. One movement, a serious anti-colonial religion centered on a figure called John Frum, is still practiced today. On which South Pacific island did it take root?",
-    "answer": "Tanna, in Vanuatu",
+    "question": "Villagers in Melanesia built airstrips and mock control towers around the time of the Second World War, hoping to call the American cargo planes back. Their movements came to be called cargo cults, and Richard Feynman borrowed the name. One, a serious anti-colonial religion centred on a figure called John Frum, is still practised today. On which South Pacific island did it take root?",
+    "answer": "Tanna, in southern Vanuatu",
     "choices": [
-      "Tanna, in Vanuatu",
+      "Tanna, in southern Vanuatu",
       "Guadalcanal, in the Solomons",
       "Bougainville, in Papua New Guinea",
       "New Britain, in Papua New Guinea"
@@ -9746,7 +9733,7 @@
       "A green line no catalogued element could claim",
       "A violet line no catalogued element could claim"
     ],
-    "context": "Between them Bunsen and Kirchhoff had already catalogued the line patterns of every element then known, and this pair matched nothing in it: 455.5 and 459.3 nanometres, sitting near a blue line of strontium. Bunsen named the new element caesium, from the Latin caesius, the word the ancients used for sky-blue. It was the first element in history discovered by its light - it existed as two blue lines long before it existed as anything you could hold. Carl Setterberg, working under Bunsen at Heidelberg, finally got beads of the metal in 1882, twenty-two years later. (Grokipedia: Caesium; Bunsen and Kirchhoff, 1861.)",
+    "context": "Between them Bunsen and Kirchhoff had already catalogued the line patterns of every element then known, and this pair matched nothing in it: 455.5 and 459.3 nanometres, sitting near a blue line of strontium. Bunsen named the new element caesium, from the Latin caesius, the word the ancients used for sky-blue. It was the first element in history discovered by its light - it existed as two blue lines long before it existed as anything a chemist could hold. Carl Setterberg, working under Bunsen at Heidelberg, finally got beads of the metal in 1882, twenty-two years later. (Grokipedia: Caesium; Bunsen and Kirchhoff, 1861.)",
     "topic": "flame-tests-the-fingerprint-in-the-fire"
   },
   {
@@ -9764,7 +9751,7 @@
   },
   {
     "tier": 5,
-    "question": "Niels Bohr published his model of the atom in 1913, and it answered a question that mineralogists and metal works had left open for roughly fifty years. They named elements every day from the sharp coloured lines each one painted in a flame through a prism, and nobody could say why a given element gives those lines and no others. What did Bohr say the lines were?",
+    "question": "Niels Bohr published his model of the atom in 1913, and it answered a question that chemists and mineralogists had left open for roughly fifty years. They named elements every day from the sharp coloured lines each one painted in a flame through a prism, and nobody could say why a given element gives those lines and no others. What did Bohr say the lines were?",
     "answer": "Electrons dropping between fixed energy levels",
     "choices": [
       "Atoms vibrating at their own natural frequencies",
@@ -10141,19 +10128,6 @@
   },
   {
     "tier": 2,
-    "question": "George Stokes shone sunlight through blue-violet glass onto a jar of quinine solution at Cambridge in 1852 and watched a strange blue glow appear where the invisible beam entered. He wrote it up and made a new word for the glow, taken from a mineral with the same trick. What word did he coin?",
-    "answer": "Fluorescence",
-    "choices": [
-      "Fluorescence",
-      "Phosphorescence",
-      "Luminescence",
-      "Iridescence"
-    ],
-    "context": "Stokes coined 'fluorescence' in a footnote on p.479 of his 1852 paper (Phil. Trans. Roy. Soc.), noting that opalescence was named after opal so this deserved a mineral-based name too -- after fluorspar (calcium fluoride), which does the same thing. The 'Stokes shift' between absorbed and emitted wavelengths still carries his name. Source: mindat.org (David Carter); royalsocietypublishing.org rsta.2020.0105.",
-    "topic": "fluorescence-light-that-comes-back-changed"
-  },
-  {
-    "tier": 2,
     "question": "A girl with a blacklight and no lab redoes George Stokes's 1852 experiment on quinine water in five minutes, aiming the light along a row of drinks from the store. One of them glows electric blue. Which drink is it?",
     "answer": "Tonic water",
     "choices": [
@@ -10205,16 +10179,16 @@
     "topic": "fluorescence-light-that-comes-back-changed"
   },
   {
-    "tier": 5,
-    "question": "Osamu Shimomura gathered jellyfish by the tens of thousands off Washington state and isolated a glowing protein. Martin Chalfie spliced its gene next to another gene and turned a living cell into a self-labelling lantern, Roger Tsien engineered new colours from it, and cell biology became something a camera could film. What is the jellyfish's own protein called, by its three-letter abbreviation?",
-    "answer": "GFP (Green Fluorescent Protein)",
+    "tier": 4,
+    "question": "Osamu Shimomura gathered jellyfish by the tens of thousands off Washington state and isolated their glowing green protein. Martin Chalfie then spliced the protein's gene beside another gene in living cells, and Roger Tsien later coaxed new colours from it. What did Chalfie's splice let biologists do?",
+    "answer": "See where and when the other gene is at work in a living cell",
     "choices": [
-      "GFP (Green Fluorescent Protein)",
-      "RFP (Red Fluorescent Protein)",
-      "YFP (Yellow Fluorescent Protein)",
-      "CFP (Cyan Fluorescent Protein)"
+      "See where and when the other gene is at work in a living cell",
+      "Make the cell shine in total darkness, with no lamp on it",
+      "Make the other gene work far harder than it did before",
+      "Kill off every cell that was carrying the other gene"
     ],
-    "context": "Green Fluorescent Protein (GFP) let biologists watch a neuron fire, a tumour spread, or a virus enter a cell in real colour. Chalfie showed it worked as a genetic tag; Tsien engineered a rainbow of variants (cyan, yellow, red) so multiple processes could be tracked at once. Source: nobelprize.org chemistry 2008.",
+    "context": "The jellyfish's own protein is green fluorescent protein, GFP. Chalfie showed in 1994 that it works as a genetic tag: spliced beside another gene, it glows wherever that gene is switched on, and later fusions let biologists watch a neuron fire, a tumour spread or a virus enter a cell. Like any fluorescent molecule it glows only while light shines on it. Tsien engineered a rainbow of variants (cyan, yellow, red) so several processes could be tracked at once, and the three men shared the 2008 Nobel Prize in Chemistry. Source: nobelprize.org chemistry 2008.",
     "topic": "fluorescence-light-that-comes-back-changed"
   },
   {
@@ -10235,12 +10209,12 @@
     "question": "Alfred Wegener, a German weather scientist, said in 1912 that the continents, once joined, had drifted apart, matching coastlines and fossils across the Atlantic. Geologists said no for about fifty years, and their one solid objection was a legitimate one. What could he not tell them?",
     "answer": "Any force strong enough to move a continent",
     "choices": [
-      "The names of the two former super-continents",
       "Any force strong enough to move a continent",
-      "The direction the continents were drifting",
-      "The century in which the split had ended"
+      "Any rock layers that matched across the ocean",
+      "Any sign that ancient climates had shifted",
+      "Any era in which the continents had split"
     ],
-    "context": "Wegener proposed tidal effects and centrifugal forces from Earth's rotation as the drivers, and geophysicists showed those forces were orders of magnitude too weak. The objection was scientifically legitimate; the personal ridicule was not. Vindication came in the 1960s with symmetrical seafloor magnetic stripes -- decades after Wegener died on the Greenland ice sheet in November 1930. Source: https://www.aps.org/apsnews/2019/01/alfred-wegener-theory-continental-drift",
+    "context": "Wegener proposed tidal effects and centrifugal forces from Earth's rotation as the drivers, and geophysicists showed those forces were orders of magnitude too weak. He did bring matching rock formations, evidence of ancient climates and an order of events for the break-up; what he lacked was the engine. The objection was scientifically legitimate; the personal ridicule was not. Vindication came in the 1960s with symmetrical seafloor magnetic stripes -- decades after Wegener died on the Greenland ice sheet in November 1930. Source: https://www.aps.org/apsnews/2019/01/alfred-wegener-theory-continental-drift",
     "topic": "follow-the-science-versus-the-dissent-tradition"
   },
   {
@@ -10284,28 +10258,28 @@
   },
   {
     "tier": 1,
-    "question": "Léon Foucault hung a 28 kg lead bob on a 67-metre wire under the dome of the Panthéon in Paris on 26 March 1851. The crowd watched the swing do something never before demonstrated in a room. What did they see?",
+    "question": "Léon Foucault hung a 28 kg lead bob on a 67-metre wire under the Panthéon's dome on 26 March 1851. Astronomers had reasoned out the Earth's daily spin, but nobody had ever watched it in a room. What did the crowd see the swing do?",
     "answer": "The plane crept round and knocked over pegs set in a floor ring",
     "choices": [
       "The plane crept round and knocked over pegs set in a floor ring",
       "The bob slowed to a halt despite no visible source of friction",
-      "The bob swung higher and higher as the dome quieted the air",
-      "The swing quickened whenever the crowd pressed near the wire"
+      "The swing held one line over the same pegs from dawn to dusk",
+      "The bob swung higher on one side, flung by the spinning Earth"
     ],
     "context": "The pendulum swung in a fixed plane, but the floor and the whole city rotated underneath it, so the plane appeared to sweep round the ring hour by hour and topple pegs one by one. It was the first time a person could walk into a room and watch the Earth turn -- until then, Earth's rotation had only been inferred from astronomy. Source: en.wikipedia.org/wiki/Foucault_pendulum",
     "topic": "foucaults-pendulum-walk-in-and-watch-the-planet-turn"
   },
   {
     "tier": 4,
-    "question": "Léon Foucault built a second instrument in 1852 to make the pendulum's point without any swing at all: a rapidly spinning wheel, suspended so that its axis stayed fixed in space while Paris turned underneath. He coined a Greek-rooted name for it, still in use today. What is that name?",
-    "answer": "The gyroscope",
+    "question": "Léon Foucault worried that critics could explain his Panthéon pendulum away. So in 1852 he built a second proof that needed no swinging: a heavy wheel spun fast inside a frame free to turn any way. He named it the gyroscope, from Greek for 'to see the turning.' How did the wheel show the Earth turning?",
+    "answer": "Its axis held one direction in space while Paris turned round it",
     "choices": [
-      "The gyroscope",
-      "The heliostat",
-      "The spectroscope",
-      "The chronometer"
+      "Its axis held one direction in space while Paris turned round it",
+      "Its spin slowed and quickened in step with the Earth's turning",
+      "Its frame crept round, dragged by the slowly turning room air",
+      "Its wheel spun on for days, driven by the Earth's own spin"
     ],
-    "context": "Foucault felt his pendulum was too easily explained away, so he built a spinning-wheel apparatus whose axis stayed fixed while the Earth rotated, and named it 'gyroscope' from Greek gyros (circle) and skopein (to see) -- literally 'a device to see the turning.' The instrument is now inside every phone, drone, and spacecraft. Source: en.wikipedia.org/wiki/Foucault's_gyroscope",
+    "context": "Foucault felt his pendulum was too easily explained away, so he built a spinning-wheel apparatus whose axis stayed fixed in space while the Earth rotated beneath it; watched against the room, the axis seemed to drift, just as the pendulum's swing had crept round its pegs. He named it 'gyroscope' from Greek gyros (circle) and skopein (to see) -- literally 'a device to see the turning.' Its descendants now sit inside every phone, drone and spacecraft. Source: en.wikipedia.org/wiki/Foucault's_gyroscope",
     "topic": "foucaults-pendulum-walk-in-and-watch-the-planet-turn"
   },
   {
@@ -10487,7 +10461,7 @@
       "A steady rate of about 40 a year throughout.",
       "A fall from about 90 a year to about 60."
     ],
-    "context": "Peltzman's count is the second edge of this story, and both edges are true. Demanding proof is what kept thalidomide away from American mothers. Demanding proof also costs time that sick people do not always have: critics of the 1962 amendments point to a 'drug lag' in which new therapies reached European patients years before American ones. The point is not that the regulator is always right - Kelsey herself said her objections were theoretical. The point is that a claim with no evidence behind it is not yet knowledge, whoever is making it and whichever answer you were hoping for. Source: Grokipedia 'Kefauver-Harris Amendment', Criticisms and Controversies - https://grokipedia.com/page/Kefauver%E2%80%93Harris_Amendment",
+    "context": "Peltzman's count is the second edge of this story, and both edges are true. Demanding proof is what kept thalidomide away from American mothers. Demanding proof also costs time that sick people do not always have: critics of the 1962 amendments point to a 'drug lag' in which new therapies reached European patients years before American ones. The point is not that the regulator is always right - Kelsey herself said her objections were theoretical. The point is that a claim with no evidence behind it is not yet knowledge, whoever is making it and whichever answer its hearer was hoping for. Source: Grokipedia 'Kefauver-Harris Amendment', Criticisms and Controversies - https://grokipedia.com/page/Kefauver%E2%80%93Harris_Amendment",
     "topic": "frances-kelsey-says-no"
   },
   {
@@ -10791,19 +10765,6 @@
   },
   {
     "tier": 1,
-    "question": "Albert Einstein wrote to Max Born in 1947 about the one quantum idea he never accepted: that two linked particles stay tied together, so that a reading on one says what the other will show, however far apart they are. His phrase for it stuck. What did he call it?",
-    "answer": "Spooky action at a distance",
-    "choices": [
-      "Spooky action at a distance",
-      "Ghostly signals across the void",
-      "Telepathy between distant twins",
-      "Instant conspiracy of the pair"
-    ],
-    "context": "Einstein wrote it in German: 'spukhafte Fernwirkung', from 'Spuk', a haunting. 'Spukhaft' means ghostly or eerie rather than spooky in the cartoon sense, so the famous English phrase is a little softer than what he actually said. His sentence to Born was that he could not seriously believe in quantum mechanics, because the theory could not be reconciled with the idea that physics should represent a reality in space and time, free from spooky action at a distance. Sources: Born-Einstein Letters, 3 March 1947, quoted at en.wiktionary.org, 'spooky action at a distance'; Sabine Hossenfelder, backreaction.blogspot.com, 'What did Einstein mean by spooky action at a distance?'",
-    "topic": "from-einsteins-spooky-action-to-the-2022-nobel-a-philosophic"
-  },
-  {
-    "tier": 1,
     "question": "Readers of the New York Times met the headline 'Einstein Attacks Quantum Theory' on 4 May 1935. The article behind it, by Einstein, Boris Podolsky and Nathan Rosen, was still eleven days from print. How had the newspaper got the story?",
     "answer": "Podolsky had given the contents to a reporter",
     "choices": [
@@ -10886,7 +10847,7 @@
     "answer": "That he had wasted money and should do real physics",
     "choices": [
       "That he had wasted money and should do real physics",
-      "That the answer was known and he had proved nothing",
+      "That the result was surely a fluke and must be rerun",
       "That he should now chase the loopholes still open",
       "That the gamble had paid off and he should press on"
     ],
@@ -10986,19 +10947,6 @@
   },
   {
     "tier": 3,
-    "question": "Raffaele Piria got salicylic acid from willow bark in 1838, the bark people had long brewed into a bitter tea against aches and fevers. Chemists at Bayer set out to tame that harsh acid and, around 1897, changed the compound slightly. What is that modified drug called today?",
-    "answer": "Aspirin",
-    "choices": [
-      "Aspirin",
-      "Ibuprofen",
-      "Acetaminophen",
-      "Morphine"
-    ],
-    "context": "The Italian chemist Raffaele Piria then made salicylic acid from salicin in 1838. By the 1870s salicylic acid was a real fever and rheumatism drug - and a real stomach-burner. Source: Pharmaceutical Journal, 'A History of Aspirin'.",
-    "topic": "from-willow-bark-to-the-pill-in-the-cupboard"
-  },
-  {
-    "tier": 3,
     "question": "A doctor in the 1870s gave a rheumatism patient salicylic acid, the fever-and-pain compound drawn from willow bark and one of the first drugs that actually worked on that painful joint disease. It had just one fault, so bad that many patients quit the drug rather than go on taking it. What was the fault?",
     "answer": "It burned the stomach lining",
     "choices": [
@@ -11026,25 +10974,25 @@
   {
     "tier": 4,
     "question": "Arthur Eichengrun, head of Bayer's pharmaceutical laboratory, said afterwards that he had directed the aspirin bench work, though Bayer's own history names Felix Hoffmann. Eichengrun's name was written out of that official history around 1934, and his own account appeared only in 1949. Why was he erased from Bayer's story?",
-    "answer": "He was Jewish, and Nazi Germany was purging Jewish contributions to German science",
+    "answer": "He was Jewish, and the Nazis were purging Jewish names from science",
     "choices": [
-      "He was Jewish, and Nazi Germany was purging Jewish contributions to German science",
-      "He had left Bayer to work for a rival company",
-      "His method had been proven incorrect",
-      "He had retired and given up his claim"
+      "He was Jewish, and the Nazis were purging Jewish names from science",
+      "His records of the bench work had been lost in a lab fire",
+      "Later chemists had shown that his method was badly flawed",
+      "He had retired and signed away any claim to the discovery"
     ],
     "context": "Eichengrun was a Jewish chemist; a 1999 re-examination by the historian Walter Sneader argued he was the true director of the aspirin project. Bayer's official history still names Hoffmann. Source: Wikipedia, 'Arthur Eichengrun'.",
     "topic": "from-willow-bark-to-the-pill-in-the-cupboard"
   },
   {
     "tier": 5,
-    "question": "John Vane, a British pharmacologist, worked out in 1971, over a single weekend, why aspirin stops pain, fevers and swelling. It had sat on shelves everywhere for some seven decades with nobody understanding why. He found that it blocks the making of a family of hormone-like signalling molecules. What family?",
-    "answer": "Prostaglandins",
+    "question": "John Vane, a British pharmacologist, worked out in 1971, over a single weekend, why aspirin stops pain, fevers and swelling. The drug had sat on shelves everywhere for some seven decades with nobody knowing how it worked. What did he find it does inside the body?",
+    "answer": "It jams an enzyme the body needs to make its pain signals",
     "choices": [
-      "Prostaglandins",
-      "Histamines",
-      "Cytokines",
-      "Steroids"
+      "It jams an enzyme the body needs to make its pain signals",
+      "It numbs the nerves that carry pain up to the brain",
+      "It locks onto the brain's own receptors for pain",
+      "It kills the germs that inflame and swell a sore spot"
     ],
     "context": "Vane showed aspirin blocks the enzyme cyclooxygenase (COX), which manufactures prostaglandins - the local chemical signals of pain, fever and inflammation. He shared the 1982 Nobel with Bergstrom and Samuelsson. Source: Nobel Prize 1982 in Physiology or Medicine.",
     "topic": "from-willow-bark-to-the-pill-in-the-cupboard"
@@ -11064,15 +11012,15 @@
   },
   {
     "tier": 5,
-    "question": "A mother reaches for the aspirin for her feverish son and stops at the warning on the label, which singles out children and teenagers with a fever or a viral illness. Behind it lies a rare but very severe reaction of the brain and liver, first described in 1963. What is the reaction called?",
-    "answer": "Reye's syndrome",
+    "question": "A mother reaches for the aspirin for her feverish son and stops at the label. It warns that the drug is not for children and teenagers with a fever or a viral illness, though adults take it freely. What danger is the warning about?",
+    "answer": "A rare but savage illness of the liver and brain",
     "choices": [
-      "Reye's syndrome",
-      "Guillain-Barre syndrome",
-      "Kawasaki disease",
-      "Wilson's disease"
+      "A rare but savage illness of the liver and brain",
+      "Bleeding in a stomach too young to bear the acid",
+      "A dose too strong for a child's smaller body",
+      "An allergy that strikes the young far more often"
     ],
-    "context": "After the FDA required a warning label in 1986, US cases dropped from hundreds a year to a handful. Adult aspirin is common; children with a fever get paracetamol or ibuprofen instead. Source: American Family Physician, 'Aspirin Use in Children for Fever or Viral Syndromes'.",
+    "context": "It is Reye's syndrome, first described in 1963. After the FDA required a warning label in 1986, US cases dropped from hundreds a year to a handful. Adult aspirin is common; children with a fever get paracetamol or ibuprofen instead. Source: American Family Physician, 'Aspirin Use in Children for Fever or Viral Syndromes'.",
     "topic": "from-willow-bark-to-the-pill-in-the-cupboard"
   },
   {
@@ -11538,7 +11486,7 @@
       "Formal heresy of the first degree",
       "Vehement suspicion of heresy",
       "Contempt of the Inquisition's officers",
-      "Wilful violation of the 1616 admonition"
+      "Blasphemy against the Pope himself"
     ],
     "context": "The sentence of 22 June 1633: 'we pronounce, judge, and declare, that you, the said Galileo ... have rendered yourself vehemently suspected by this Holy Office of heresy, that is, of having believed and held the doctrine (which is false and contrary to the Holy and Divine Scriptures) that the sun is the center of the world, and that it does not move from east to west, and that the earth does move, and is not the center of the world.' He was made to abjure on his knees the same day. Source: https://hti.osu.edu/sites/default/files/documents_in_the_case_of_galileo.pdf",
     "topic": "galileos-trial-when-authority-overruled-the-telescope"
@@ -11583,32 +11531,6 @@
     "topic": "galloping-gertie-the-picture-every-textbook-got-wrong"
   },
   {
-    "tier": 2,
-    "question": "A driver crossing the Tacoma Narrows Bridge in a strong wind in 1940 watched the car ahead vanish behind a rising crest, as the roadway rippled like slow ocean swells. The workmen who built it already had an affectionate pet name for the bridge. What did the workmen call it?",
-    "answer": "Galloping Gertie",
-    "choices": [
-      "Galloping Gertie",
-      "The Whipping Post",
-      "Windy Bridge",
-      "The Skinny Lady"
-    ],
-    "context": "Construction workers coined the nickname during the build. The rolling motion was vertical and had been present for months before the November collapse; that morning it changed character into a violent twist. Source: Wikipedia, https://en.wikipedia.org/wiki/Tacoma_Narrows_Bridge_(1940)",
-    "topic": "galloping-gertie-the-picture-every-textbook-got-wrong"
-  },
-  {
-    "tier": 2,
-    "question": "Leon Moisseiff designed the deck of the Tacoma Narrows Bridge so slim and shallow that it looked like a ribbon draped between the towers, across a main span of 2,800 feet. The bridge opened in July 1940, and four months later, in a stiff November wind, that deck twisted itself apart on film. How deep was the deck girder that carried the roadway?",
-    "answer": "Eight feet",
-    "choices": [
-      "Eight feet",
-      "Forty feet",
-      "Twelve feet",
-      "Twenty-five feet"
-    ],
-    "context": "Designer Leon Moisseiff made the deck 39 feet wide and only 8 feet deep, giving a span-to-depth ratio of about 350 to 1: nearly twice as slender as any long-span bridge before it. That slimness was the point of the design and the reason the deck could twist so easily. Source: Wikipedia, https://en.wikipedia.org/wiki/Tacoma_Narrows_Bridge_(1940)",
-    "topic": "galloping-gertie-the-picture-every-textbook-got-wrong"
-  },
-  {
     "tier": 3,
     "question": "Leonard Coatsworth was out on the Tacoma Narrows Bridge on the morning of 7 November 1940, the deck heaving up and down as it had for four months, when the motion suddenly changed character. Within an hour the bridge was gone. What did the deck begin doing that morning that it had not done before?",
     "answer": "Twisting so hard the two lanes went in opposite directions",
@@ -11629,7 +11551,7 @@
       "Classical forced resonance",
       "Metal fatigue in the cables",
       "The Bernoulli effect on the deck",
-      "Vortex-shedding drag"
+      "Thermal expansion of the steel"
     ],
     "context": "The paper was titled 'Resonance, Tacoma Narrows Bridge Failure, and Undergraduate Physics Textbooks'. It named the actual books and showed that the bridge's failure was not the swing-being-pumped kind of resonance most students were taught. Source: Billah and Scanlan 1991, American Journal of Physics, https://www.semanticscholar.org/paper/Resonance,-Tacoma-Narrows-bridge-failure,-and-Billah-Scanlan/937cd56aca1ebe07044f87f96630cda82f723d0c",
     "topic": "galloping-gertie-the-picture-every-textbook-got-wrong"
@@ -11640,7 +11562,7 @@
     "answer": "Air peeled off the tilted deck and locked in step with the twist",
     "choices": [
       "Air peeled off the tilted deck and locked in step with the twist",
-      "Vortices spun off the towers arrived in step with the wobble",
+      "The wind's push simply grew past what the deck could bear",
       "Long ocean swell shoved the roadway upward in bursts",
       "Suspender cables stored and released energy like rubber bands"
     ],
@@ -11741,12 +11663,12 @@
   {
     "tier": 4,
     "question": "Henry E. Armstrong, an old-guard chemist, fired back in Nature in 1927 with a one-page piece headed 'Poor Common Salt!' Lawrence Bragg, who had read the crystal with X-rays, had announced that salt holds no NaCl molecules at all: the equal numbers of the two atoms fall out of how the crystal packs, not from atoms pairing off. How is Armstrong reported to have swatted the physicists' picture aside?",
-    "answer": "He said that chemistry is neither chess nor geometry",
+    "answer": "By insisting that chemistry is neither chess nor geometry",
     "choices": [
-      "He said that chemistry is neither chess nor geometry",
-      "He said X-rays could see only the crystal's outer faces",
-      "He said the salt in the experiment must have been impure",
-      "He said the molecules were hiding inside the pattern"
+      "By insisting that chemistry is neither chess nor geometry",
+      "By insisting X-rays could see only the crystal's outer faces",
+      "By insisting the salt in the experiment must have been impure",
+      "By insisting the molecules were hiding inside the pattern"
     ],
     "context": "Sodium chloride was the first crystal structure ever determined by X-ray diffraction, published in 1913 by W. Lawrence Bragg with his father W. H. Bragg ('The Structure of Some Crystals as indicated by their Diffraction of X-rays', Proc. Roy. Soc.); it showed crystals are repeating ATOMIC lattices, not stacks of molecules. Von Laue, Friedrich and Knipping had only discovered X-ray diffraction by crystals in April 1912. Father and son shared the 1915 Nobel Prize in Physics; Lawrence was 25 and remains the youngest science laureate ever. Bragg had written: 'In sodium chloride there appear to be no molecules represented by NaCl... it is a result of geometry and not of a pairing-off of the atoms.' Armstrong's furious reply protested 'the unjustified aspersion of the molecular character of our most necessary condiment'. Flagged as legend because the exact wording of his chess-and-geometry line is corroborated through a secondary source rather than the Nature page itself. Sources: H. E. Armstrong, 'Poor Common Salt!', Nature 120, 478 (1927) - https://www.nature.com/articles/120478b0 ; wording corroborated via RSC Chem. Educ. Res. Pract. accepted manuscript; OUPblog centenary piece; Wikipedia 'William Lawrence Bragg'.",
     "topic": "give-it-away-or-share-it-the-two-ways-atoms-hold-on"
@@ -11987,7 +11909,7 @@
   },
   {
     "tier": 3,
-    "question": "A Swiss plant scientist stood among yellow rice plants on the front cover of Time magazine on 31 July 2000. The rice had been genetically engineered to carry beta-carotene, the orange nutrient the body turns into vitamin A, and it was aimed at children in poor countries who go blind from lacking it. What did the cover line above him promise?",
+    "question": "A German plant scientist stood among yellow rice plants on the front cover of Time magazine on 31 July 2000. The rice had been genetically engineered to carry beta-carotene, the orange nutrient the body turns into vitamin A, and it was aimed at children in poor countries who go blind from lacking it. What did the cover line above him promise?",
     "answer": "This rice could save a million kids a year",
     "choices": [
       "This rice could save a million kids a year",
@@ -12026,7 +11948,7 @@
   },
   {
     "tier": 4,
-    "question": "Sir Richard Roberts of New England Biolabs published an open letter in late June 2016, signed by Nobel prize winners. It urged one campaign group to stop opposing Golden Rice, the rice engineered to carry vitamin A to poor children. That group's stated worry was corporate control of seed and ecological unknowns. Which group was named, and about how many laureates signed at launch?",
+    "question": "Sir Richard Roberts published an open letter in late June 2016, signed by Nobel prize winners, urging one campaign group to stop opposing Golden Rice, the rice engineered to carry vitamin A to poor children. The group fought all patented engineered crops and warned that Golden Rice would pave the way for more. Which group was it, and about how many laureates signed at launch?",
     "answer": "Greenpeace, about 107 laureates",
     "choices": [
       "Greenpeace, about 107 laureates",
@@ -12039,15 +11961,15 @@
   },
   {
     "tier": 5,
-    "question": "Judges of the Philippine Court of Appeals took back the 2021 commercial permit for Golden Rice in April 2024. They cited the country's precautionary rule in the constitution and conflicting views among scientists on long-term safety, and they used a special writ made for cases where harm to the environment crosses regions. What is the writ called?",
-    "answer": "The Writ of Kalikasan",
+    "question": "Judges of the Philippine Court of Appeals revoked the commercial permit for Golden Rice in April 2024, three years after the Philippines had become the first country to approve it for growing. They ruled under a special writ for large environmental cases. What reason did they give?",
+    "answer": "Conflicting scientific views on its long-term safety",
     "choices": [
-      "The Writ of Kalikasan",
-      "The Writ of Amparo",
-      "The Writ of Habeas Data",
-      "The Writ of Continuing Mandamus"
+      "Conflicting scientific views on its long-term safety",
+      "Its vitamin dose was too low to help any child",
+      "Its seed patents belonged to a foreign company",
+      "It had failed the country's own food-safety tests"
     ],
-    "context": "'Kalikasan' is Filipino for 'nature'. The writ was created by the Philippine Supreme Court in 2010 for large-scale environmental cases. Amparo (life/liberty/security), Habeas Data (privacy), and Continuing Mandamus (ongoing agency compliance) are all real Philippine constitutional writs -- just aimed at different harms. The court's Golden Rice ruling cited conflicting scientific views on long-term safety. Source: phys.org, 'Philippine court blocks GMO golden rice production over safety fears'.",
+    "context": "The writ was the Writ of Kalikasan, 'kalikasan' being Filipino for 'nature', a remedy the Philippine Supreme Court created in 2010 for large-scale environmental cases. The court cited a lack of full scientific certainty about the rice's effects on health and the environment, found no scientific consensus on its safety, and leaned on the constitution's precautionary principle. The low-dose objection had been answered by Golden Rice 2 back in 2005. Sources: Wikipedia, 'Golden rice'; phys.org, 'Philippine court blocks GMO golden rice production over safety fears'.",
     "topic": "golden-rice-twenty-one-years-in-a-greenhouse"
   },
   {
@@ -12138,7 +12060,7 @@
       "A drop of weak acid turned the rubber soft again.",
       "A rag soaked in lamp oil lifted the finish clean off."
     ],
-    "context": "The quicklime bath 'appeared to have the effect of tanning the gum, and destroying its viscous property' -- and then a drop of weak acid neutralised the alkali and the rubber went soft again. Goodyear broke his own triumph, which is the first scientific virtue: the person you most need to be skeptical of is yourself. The graveyard of his other fixes is just as instructive. Magnesia, up to a pound of it to a pound of gum, gave him rubber that came out WHITE, a genuine novelty since 'no India rubber goods except black had before that time been made in the United States,' but it did not last. Quicklime stirred straight into the gum was 'too powerfully caustic to be worked by hand.' And his nitric-acid 'acid gas' process cured only the skin: a US Government mail-bag order made with it was treated across the trade as the test of the invention, and the bags rotted in the warm season because the acid had 'not changed far below the surface.' The compound he happened to test on the stove was the same one that had decomposed in those mail-bags. Source: Charles Goodyear, 'Gum-Elastic and Its Varieties' (1853), pp. 100-110, 115-118, archive.org/details/gumelasticitsva121853good.",
+    "context": "The quicklime bath 'appeared to have the effect of tanning the gum, and destroying its viscous property' -- and then a drop of weak acid neutralised the alkali and the rubber went soft again. Goodyear broke his own triumph, which is the first scientific virtue: the first person an experimenter must doubt is himself. The graveyard of his other fixes is just as instructive. Magnesia, up to a pound of it to a pound of gum, gave him rubber that came out WHITE, a genuine novelty since 'no India rubber goods except black had before that time been made in the United States,' but it did not last. Quicklime stirred straight into the gum was 'too powerfully caustic to be worked by hand.' And his nitric-acid 'acid gas' process cured only the skin: a US Government mail-bag order made with it was treated across the trade as the test of the invention, and the bags rotted in the warm season because the acid had 'not changed far below the surface.' The compound he happened to test on the stove was the same one that had decomposed in those mail-bags. Source: Charles Goodyear, 'Gum-Elastic and Its Varieties' (1853), pp. 100-110, 115-118, archive.org/details/gumelasticitsva121853good.",
     "topic": "goodyears-stove"
   },
   {
@@ -12507,11 +12429,11 @@
   },
   {
     "tier": 5,
-    "question": "A boy throws a ball across a garden, and it arcs back down to the grass. General relativity swaps the pull of gravity for a bending of spacetime, and Kelly Foyle and Philip Freeman stress its two halves: a mass curves nearby space, so a passing radio signal has further to travel, and it stretches nearby time, so a clock ticks slower. For an everyday arc like that ball's, what does the work?",
-    "answer": "The warping of time — the warping of space adds very little.",
+    "question": "A boy throws a ball, and it arcs back down to the grass. General relativity swaps gravity's pull for bent spacetime with two halves: a mass curves nearby space, so a passing radio signal has further to travel, and it stretches nearby time, so a clock ticks slower. Kelly Foyle and Philip Freeman weigh the two halves. For an everyday arc like that ball's, which does the work?",
+    "answer": "The warping of time, while the warping of space adds very little.",
     "choices": [
-      "The warping of time — the warping of space adds very little.",
-      "The warping of space — the warping of time adds very little.",
+      "The warping of time, while the warping of space adds very little.",
+      "The warping of space, while the warping of time adds very little.",
       "The warping of time and of space, in roughly equal measure.",
       "The warping of space when a body moves, of time when it rests."
     ],
@@ -12598,15 +12520,15 @@
   },
   {
     "tier": 2,
-    "question": "Nicole-Reine Lepaute and two fellow calculators, Clairaut and Lalande, told the Paris Academy in November 1758 how far Jupiter and Saturn would delay Halley's comet. They named mid-April 1759 for its closest pass to the Sun and stated their uncertainty openly. About how big a window did they admit their answer might be off by?",
-    "answer": "About a month",
+    "question": "Nicole-Reine Lepaute, with Clairaut and Lalande, told the Paris Academy in November 1758 how long Jupiter and Saturn would delay Halley's comet. They named mid-April 1759 for its pass round the Sun and openly stated a margin of error. When did it actually round the Sun?",
+    "answer": "In mid-March, a month early and inside their margin",
     "choices": [
-      "About a month",
-      "About three days",
-      "About half a year",
-      "About two full years"
+      "In mid-March, a month early and inside their margin",
+      "In mid-April, the very week their sums had named",
+      "In late June, two months late, outside their margin",
+      "In spring 1760, nearly a year behind their forecast"
     ],
-    "context": "Clairaut reported to the Academy on 14 November 1758 that the giant planets would delay the comet by about 618 days, giving a perihelion of mid-April 1759 with a stated month of uncertainty. It arrived 13 March 1759 -- a month early, and inside the declared error. Teaching error bars without the word. Source: cosmosmagazine.com/science/mathematics/the-comet-calculator-nicole-reine-lepaute/",
+    "context": "Clairaut reported to the Academy on 14 November 1758 that the giant planets would delay the comet by about 618 days, giving a perihelion of mid-April 1759 with a stated month of uncertainty. It arrived 13 March 1759 -- a month early, and inside the declared error. Source: cosmosmagazine.com/science/mathematics/the-comet-calculator-nicole-reine-lepaute/",
     "topic": "halleys-comet-keeps-its-appointment"
   },
   {
@@ -12684,33 +12606,33 @@
       "Genetic, moral or educational",
       "Cognitive, physical or emotional"
     ],
-    "context": "Full quote: 'people devoid of any economic, political or even artistic value, who contribute nothing to the prosperity, power and glory of society.' Every noun measures output. Here is the sentence; you decide what to make of the vocabulary. Source: Homo Deus (2016).",
+    "context": "Full quote: 'people devoid of any economic, political or even artistic value, who contribute nothing to the prosperity, power and glory of society.' Every noun measures output, and the sentence stands on the record for any reader to weigh. Source: Homo Deus (2016).",
     "topic": "hararis-documented-sentences"
   },
   {
     "tier": 4,
     "question": "An economist opens Homo Deus, the 2016 book in which Yuval Noah Harari writes that one problem may be the most important question in 21st-century economics. It arises if artificial intelligence and robots become better than humans at almost every kind of work. What is the problem he names?",
-    "answer": "What society should do with people whose labor is no longer needed",
+    "answer": "What to do with all the people whose work is no longer needed",
     "choices": [
-      "What society should do with people whose labor is no longer needed",
-      "How to stop AI from becoming conscious",
-      "How to fairly tax AI-owning corporations",
-      "How to teach AI to obey human values"
+      "What to do with all the people whose work is no longer needed",
+      "How to stop thinking machines from becoming conscious",
+      "How to tax the corporations that own the smartest machines",
+      "How to teach machines to obey human values and laws"
     ],
-    "context": "'What should we do with all the superfluous people...' - the language of surplus applied to human beings. Harari says he is warning; his critics answer that the choice of word is itself the turn, whatever the intent. Source: Homo Deus (2016).",
+    "context": "The sentence in Homo Deus: 'The most important question in twenty-first-century economics may well be what to do with all the superfluous people.' The language of surplus applied to human beings. Harari says he is warning; his critics answer that the choice of word is itself the turn, whatever the intent. Source: Yuval Noah Harari, Homo Deus (2016), as quoted in Goodreads author-blog review, 'Homo Deus by Yuval Harari (part 2 of 3)'.",
     "topic": "hararis-documented-sentences"
   },
   {
     "tier": 4,
-    "question": "An audience at a public talk on liberal democracy heard Yuval Noah Harari argue that the whole system rests on ideas from one earlier century, especially the idea of free will. He thinks that idea was once a useful shortcut but is now running out. Which century's ideas did he name?",
-    "answer": "The eighteenth century",
+    "question": "Readers of the Guardian on 14 September 2018 found Yuval Noah Harari arguing that the belief in free will had suddenly become dangerous, since the easiest people to manipulate are those who hold it. In the same essay he said what free will itself is. What did he call it?",
+    "answer": "A myth inherited from Christian theology",
     "choices": [
-      "The eighteenth century",
-      "The sixteenth century",
-      "The nineteenth century",
-      "The twentieth century"
+      "A myth inherited from Christian theology",
+      "A tale told by kings to keep subjects docile",
+      "A legal fiction first written by the courts",
+      "A fact that brain science has now proved"
     ],
-    "context": "Harari's claim is not that free will is real or unreal; it is that BELIEVING in it was, until now, a practical shortcut for treating humans as too complicated to decipher. Source: Harari public talks and interviews on liberal democracy and big data.",
+    "context": "Harari's words: 'Unfortunately, \"free will\" isn't a scientific reality. It is a myth inherited from Christian theology.' Then: 'now the belief in \"free will\" suddenly becomes dangerous', because 'the easiest people to manipulate will be those who believe in free will.' Critics dispute the premise; the sentences, venue and date are on the record. Source: Yuval Noah Harari, 'The myth of freedom', The Guardian, 14 September 2018; quoted at whyevolutionistrue.com, 16 September 2018.",
     "topic": "hararis-documented-sentences"
   },
   {
@@ -12723,7 +12645,7 @@
       "The framing of humans as data",
       "The rhetoric of inevitability"
     ],
-    "context": "Both readings are on the record, and you can judge. Critics argue that words like 'superfluous' and 'useless' pre-decide how the reader learns to see the people so labelled, however the framing is presented. Source: reviews and criticism collected on Harari's Wikipedia page and Brownstone Institute article.",
+    "context": "Both readings are on the record for any reader to judge. Critics argue that words like 'superfluous' and 'useless' pre-decide how the reader learns to see the people so labelled, however the framing is presented. Source: reviews and criticism collected on Harari's Wikipedia page and Brownstone Institute article.",
     "topic": "hararis-documented-sentences"
   },
   {
