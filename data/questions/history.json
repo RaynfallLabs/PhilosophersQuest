@@ -9165,7 +9165,7 @@
     "topic": "charles-lindbergh-and-the-age-of-flight"
   },
   {
-    "tier": 4,
+    "tier": 2,
     "question": "Geoffrey Chaucer, a courtier of the late 1300s, moved among lords who spoke French and churchmen who wrote their books in Latin. Then he set his own pilgrims on the road to Canterbury in a long story, told in a language of his choosing, with a famous beginning. Which line opens his Canterbury Tales?",
     "answer": "Whan that Aprille with his shoures soote",
     "choices": [
@@ -9185,7 +9185,7 @@
       "the bones of a pig",
       "a splinter of the True Cross",
       "a lock of an angel's hair",
-      "a vial of holy water"
+      "the bones of a dog"
     ],
     "context": "The Pardoner sells pig bones in a glass jar as saints' bones, along with a fake-jeweled brass cross and a pillowcase he calls Mary's veil -- all while preaching the Latin text 'Radix malorum est cupiditas' (greed is the root of all evil), the very sin he commits. Source: https://www.litcharts.com/lit/the-canterbury-tales/the-pardoner-s-tale and https://www.shmoop.com/study-guides/literature/pardoners-tale/analysis/relics-and-pardons",
     "topic": "chaucer-s-canterbury-tales"
@@ -9218,13 +9218,13 @@
   },
   {
     "tier": 2,
-    "question": "Sarah Gooder, eight years old, told inspectors that she worked in a coal pit without a light, and that she was scared. Her job, like that of children as young as five, was to sit alone and pull a rope to open a wooden air door every time a coal cart rumbled past. What were these children called?",
-    "answer": "Trappers",
+    "question": "Sarah Gooder, eight years old, told inspectors that she worked in a coal pit without a light, and that she was scared. She was a trapper, sitting alone in the dark to pull open a wooden door whenever a cart of coal rumbled by, then letting it swing shut. What was that door for?",
+    "answer": "It kept fresh air moving so deadly gas could not build up",
     "choices": [
-      "Trappers",
-      "Sweepers",
-      "Stokers",
-      "Carters"
+      "It kept fresh air moving so deadly gas could not build up",
+      "It held back floodwater seeping in from the old workings",
+      "It kept the loaded carts from rolling loose down the slope",
+      "It stopped thieves slipping in to carry off the mined coal"
     ],
     "context": "Eight-year-old Sarah Gooder, a trapper in the Gawber pit, told the 1842 Royal Commission: 'I have to trap without a light and I'm scared.' The door she worked controlled the air flow that kept the mine from filling with deadly gas. (Ashley's Mines Commission, 1842; victorianweb.org/history/ashley.html)",
     "topic": "child-labor-and-industrial-working-conditions"
@@ -9250,7 +9250,7 @@
       "So the boys could feel the rock by touch and pick faster",
       "Because gloves were far too costly to buy in bulk",
       "So the boys could not hide stolen coal inside them",
-      "Because the breaker rules demanded bare hands"
+      "Because the owners thought gloves made the boys lazy"
     ],
     "context": "Breaker boys breathed coal dust all day, and sulphuric acid washed off the wet coal burned and cracked their hands. A boy who slipped could be pulled into the gears. (en.wikipedia.org/wiki/Breaker_boy; wynninghistory.com)",
     "topic": "child-labor-and-industrial-working-conditions"
@@ -9270,7 +9270,7 @@
   },
   {
     "tier": 3,
-    "question": "Patience Kershaw was seventeen and hauled coal carts deep under Halifax. When she was brought before the 1842 Commission, the gentlemen could not stop staring at one strange mark on her body: a bald patch worn clean across the top of her head. How had years of underground labor rubbed her scalp bare?",
+    "question": "Patience Kershaw was seventeen and hauled coal carts deep under Halifax. She told the 1842 Commission about one strange mark on her body: a bald patch worn clean across the top of her head. How had years of underground labor rubbed her scalp bare?",
     "answer": "From shoving the loaded carts forward with her head",
     "choices": [
       "From shoving the loaded carts forward with her head",
@@ -9343,7 +9343,7 @@
       "'The Mill Baron'",
       "'The People's Knight'"
     ],
-    "context": "Shaftesbury took up the cause, he said, 'after meditation and prayer,' and acted at real political cost. His 1842 Act banned all women and girls from working underground and set a minimum age of ten for boys. (britannica.com, Shaftesbury; christianity.org.uk/article/lord-shaftesbury)",
+    "context": "Shaftesbury later said he took up the cause after meditation and prayer, and he acted at real political cost. His 1842 Act banned all women and girls from working underground and set a minimum age of ten for boys. (britannica.com, Shaftesbury; christianity.org.uk/article/lord-shaftesbury)",
     "topic": "child-labor-and-industrial-working-conditions"
   },
   {
@@ -9388,12 +9388,12 @@
   {
     "tier": 3,
     "question": "Aztec farmers worked long green strips of cropland on the shallow waters of Lake Xochimilco around the year 1500. The Spanish took them for 'floating gardens,' yet a chinampa never floated at all. How did the farmers really build one?",
-    "answer": "They packed layers of lake mud and rotting plants between staked reeds until solid ground rose above the water",
+    "answer": "They piled lake mud and rotting plants inside walls of staked reeds until solid ground rose",
     "choices": [
-      "They packed layers of lake mud and rotting plants between staked reeds until solid ground rose above the water",
-      "They lashed hollow reed rafts together so the beds rode loose on the lake's surface",
+      "They piled lake mud and rotting plants inside walls of staked reeds until solid ground rose",
       "They quarried stone blocks and sank them to make islands that broke the waterline",
-      "They let mats of tangled waterweed drift until enough silt collected to plant on"
+      "They dammed off part of the lake and let the sun dry the bed out for planting",
+      "They dredged up gravel and shells and heaped them into long, low banks"
     ],
     "context": "Farmers staked out a rectangle of shallow lakebed, wove reeds and branches between the stakes, and piled in alternating layers of mud and decaying vegetation until the bed sat solid and rooted to the bottom. \"Floating gardens\" is a charming mistake. Sources: worldhistory.org/Chinampas/; anthrome.wordpress.com/2011/04/24/chinampa-raised-bed-hydrological-agriculture/",
     "topic": "chinampas-the-aztec-floating-gardens"
@@ -9401,14 +9401,14 @@
   {
     "tier": 4,
     "question": "Aztec farmers in the Valley of Mexico had to anchor the edges of every chinampa, because loose soil beside open water washes away easily. Along each plot's border grew one particular tree whose roots gripped the soil and stopped it eroding, while its leaves kept the crops in shade. Which tree held the islands together?",
-    "answer": "The ahuejote willow, grown straight from the construction stakes",
+    "answer": "The ahuejote willow, planted beside the stakes",
     "choices": [
-      "The ahuejote willow, grown straight from the construction stakes",
-      "The Montezuma cypress, planted in rings around each plot",
+      "The ahuejote willow, planted beside the stakes",
+      "The ceiba, planted at each corner of the plot",
       "The mangrove, whose stilt roots gripped the lakebed",
       "The mesquite, set deep to anchor the bank"
     ],
-    "context": "The stakes farmers drove in to build the plot sprouted into ahuejote willows (Salix bonplandiana). Their roots bound the soil against erosion while their canopy shaded the crops and cut evaporation. The willows quite literally held the islands together. Sources: worldhistory.org/Chinampas/; hilo.hawaii.edu/nihopeku/2018/02/02/chinampa-an-ancient-agricultural-system/",
+    "context": "Farmers planted ahuejote willows (Salix bonplandiana) beside the posts along each plot's edge. Their roots bound the soil against erosion while their canopy shaded the crops and cut evaporation. The willows quite literally held the islands together. Sources: worldhistory.org/Chinampas/; hilo.hawaii.edu/nihopeku/2018/02/02/chinampa-an-ancient-agricultural-system/",
     "topic": "chinampas-the-aztec-floating-gardens"
   },
   {
@@ -9738,15 +9738,15 @@
   },
   {
     "tier": 3,
-    "question": "Roland Freisler, a Nazi judge, condemned Sophie Scholl to death for helping the White Rose spread leaflets against Hitler. Minutes before she went to the guillotine on 22 February 1943, the 21-year-old student looked up at the sky and spoke a few quiet words that are still remembered. What did Sophie say?",
+    "question": "Roland Freisler, a Nazi judge, condemned Sophie Scholl to death on 22 February 1943 for helping the White Rose spread leaflets against Hitler. The 21-year-old went to the guillotine that same afternoon. Witnesses' reports of her final words vary, but one short line is remembered above the rest. What was it?",
     "answer": "The sun is still shining.",
     "choices": [
       "The sun is still shining.",
       "The sky has never looked clearer.",
       "Let them see I was not afraid.",
-      "I would do it all again."
+      "Spring will come again to Germany."
     ],
-    "context": "'Die Sonne scheint noch.' She added, 'What does my death matter, if through us thousands of people are awakened and stirred to action?' She, Hans, and Christoph Probst were tried before the screaming Nazi judge Roland Freisler and guillotined the same day, 22 February 1943. Sources: theepochtimes.com/bright/the-suns-still-shining-the-courage-of-sophie-scholl-3665966 ; en.wikiquote.org/wiki/Sophie_Scholl",
+    "context": "'Die Sonne scheint noch' ('The sun is still shining') is the best-known version; another account gives her last words as 'God, my refuge unto eternity.' Her cellmate Else Gebel remembered her asking what her death mattered if through them thousands of people were awakened and stirred to action. She, Hans, and Christoph Probst were tried before the screaming Nazi judge Roland Freisler and guillotined the same day, 22 February 1943. Sources: en.wikipedia.org/wiki/Sophie_Scholl ; en.wikiquote.org/wiki/Sophie_Scholl",
     "topic": "christian-and-student-resistance-of-conscience-b"
   },
   {
@@ -9770,13 +9770,13 @@
       "Baptism into the church and his first communion",
       "A blessing and absolution for his sins",
       "A psalm read over him and a wooden cross",
-      "The last rites and prayers for the dying"
+      "A rosary and a blessing for his family"
     ],
     "context": "Probst had no church baptism, but at the threshold of death he asked for it, and the priest baptized him and gave him communion minutes before he was beheaded. Sources: newworldencyclopedia.org/entry/Christoph_Probst ; aleteia.org/2018/12/07/this-friend-of-sophie-scholl-became-catholic-moments-before-his-martyrdom",
     "topic": "christian-and-student-resistance-of-conscience-b"
   },
   {
-    "tier": 5,
+    "tier": 3,
     "question": "As Hitler's crimes grew, Dietrich Bonhoeffer, a Lutheran pastor who had once leaned close to pacifism and believed a Christian should not kill, decided that his faith now demanded action. He joined a secret group plotting one particular deed. What had the pastor signed on to do?",
     "answer": "Assassinate Adolf Hitler",
     "choices": [
@@ -9789,7 +9789,7 @@
     "topic": "christian-and-student-resistance-of-conscience-b"
   },
   {
-    "tier": 5,
+    "tier": 2,
     "question": "Dietrich Bonhoeffer wrote a book in 1937 attacking what he called 'cheap grace': forgiveness offered with no repentance and no cross, religion made easy. Against it he set a demanding opposite, the grace that claims a person's whole life. What did Bonhoeffer name that opposite?",
     "answer": "Costly grace",
     "choices": [
@@ -9980,7 +9980,7 @@
       "Cicero's nose",
       "Cicero's lips"
     ],
-    "context": "Legend recorded by Cassius Dio: Fulvia jabbed her hairpins into the dead orator's tongue — final revenge for the speeches it had spoken against Antony. Marked as legend (ancient testimony, not forensic fact). Imperium Romanum, 'Death of Cicero.'",
+    "context": "Legend recorded by Cassius Dio: Fulvia jabbed her hairpins into the dead orator's tongue — final revenge for the speeches it had spoken against Antony. It rests on ancient testimony, not proven fact. Imperium Romanum, 'Death of Cicero.'",
     "topic": "cicero-orator-statesman-voice-of-the-republic"
   },
   {
@@ -10024,11 +10024,11 @@
   },
   {
     "tier": 2,
-    "question": "Alexander the Great's general Ptolemy seized Egypt when Alexander died, and his family ruled it for almost three hundred years. Legend made Cleopatra, the last of that line, an Egyptian queen, but her family were outsiders in the land they ruled. By blood, what was she?",
+    "question": "Cleopatra's family had ruled Egypt for almost three hundred years, ever since its founder seized the land when the conqueror he served died. Legend made Cleopatra an Egyptian queen, but her family were outsiders in the land they ruled. By blood, what was she?",
     "answer": "Greek",
     "choices": [
       "Greek",
-      "Egyptian",
+      "Nubian",
       "Persian",
       "Phoenician"
     ],
@@ -10110,7 +10110,7 @@
       "A broad flat nose",
       "A long straight nose"
     ],
-    "context": "Her coins show a sharp, hooked-nosed profile with a jutting chin — no great beauty. Plutarch agreed her looks were 'not altogether incomparable,' crediting instead her charm, wit, and a 'mellifluous' voice. Source: History.com, '10 Little-Known Facts About Cleopatra'; Plutarch, Life of Antony 27.",
+    "context": "Her coins show a sharp, hooked-nosed profile with a jutting chin — no great beauty. Plutarch agreed her looks were 'not altogether incomparable,' crediting instead her charm, her wit and the sweetness of her voice. Source: History.com, '10 Little-Known Facts About Cleopatra'; Plutarch, Life of Antony 27.",
     "topic": "cleopatra-and-the-end-of-ancient-egypt"
   },
   {
@@ -10141,7 +10141,7 @@
   },
   {
     "tier": 5,
-    "question": "Arius Didymus, a scholar who stood at Octavian's side after Cleopatra's death, urged him to have her son Caesarion hunted down and killed. Caesarion, about seventeen, was Julius Caesar's one true son, and Octavian wanted no rival left alive. Arius pressed his case with a grim joke that twisted a line of the poet Homer. What did he say?",
+    "question": "Arius Didymus, a scholar who stood at Octavian's side after Cleopatra's death, urged him to have her son Caesarion hunted down and killed. Caesarion, about seventeen, was Julius Caesar's only known son, and Octavian wanted no rival left alive. Arius pressed his case with a grim joke that twisted a line of the poet Homer. What did he say?",
     "answer": "'It is not good to have too many Caesars.'",
     "choices": [
       "'It is not good to have too many Caesars.'",
@@ -10149,7 +10149,7 @@
       "'A dead lion no longer bites.'",
       "'Rome has room for only one heir.'"
     ],
-    "context": "Arius Didymus punned on Homer to justify the killing; with about-17-year-old Caesarion's death ended the last claim of Caesar's true blood-heir. His murder closed the Ptolemaic line and roughly 3,000 years of Egyptian pharaohs as Egypt became a Roman province. Source: Plutarch, Life of Antony 81-82; Wikipedia, Caesarion and Arius Didymus.",
+    "context": "Arius Didymus punned on Homer to justify the killing. With the death of Caesarion, about 17, Caesar's only known son and heir by blood was gone. His murder closed the Ptolemaic line and roughly 3,000 years of Egyptian pharaohs as Egypt became a Roman province. Source: Plutarch, Life of Antony 81-82; Wikipedia, Caesarion and Arius Didymus.",
     "topic": "cleopatra-and-the-end-of-ancient-egypt"
   },
   {
@@ -10207,19 +10207,19 @@
   {
     "tier": 3,
     "question": "The Maya left their great jungle cities in the southern lowlands one by one in the 800s, as the building stopped and their god-kings lost their power. Many say the Maya mysteriously 'vanished.' But the people did not disappear. What is true of the Maya today?",
-    "answer": "About seven million people still speak Mayan languages in Mesoamerica",
+    "answer": "At least six million people still speak Mayan languages",
     "choices": [
-      "About seven million people still speak Mayan languages in Mesoamerica",
-      "Their language survives only in carvings no living person can read",
-      "A single elderly speaker of Mayan remained when Spain arrived",
-      "Every Maya community was wiped out within a century of the collapse"
+      "At least six million people still speak Mayan languages",
+      "Only a few thousand descendants live on in remote villages",
+      "Their descendants live on, but none speaks a Mayan tongue",
+      "Their languages survive only in prayers chanted by priests"
     ],
-    "context": "It was the great Classic-era CITIES that emptied, not the people. Around 800-900 CE the southern lowland cities went quiet one after another until roughly 60,000 square miles of jungle held only deserted pyramids. But millions of Maya descendants still live in the Yucatan, Guatemala, and southern Mexico, and about seven million people speak Mayan languages today. Source: World History Encyclopedia, 'The Classic Maya Collapse' (worldhistory.org/article/759).",
+    "context": "It was the great Classic-era cities that emptied, not the people. Around 800-900 CE the southern lowland cities went quiet one after another. But millions of Maya descendants still live in the Yucatan, Guatemala, and southern Mexico, and at least six million people speak Mayan languages today. Source: World History Encyclopedia, 'The Classic Maya Collapse' (worldhistory.org/article/759); Wikipedia, 'Mayan languages'.",
     "topic": "collapse-of-the-classic-maya"
   },
   {
     "tier": 4,
-    "question": "The Maya carved Long Count dates into their monuments for some 700 years, but the carving trailed off as the southern cities emptied: they finished some forty a year around 750, only ten a year by 800. Monument 101 at Tonina carries one from January 909. What became of the 700-year tradition after that carving?",
+    "question": "The Maya carved Long Count dates into their monuments for more than six centuries, but the carving trailed off as the southern cities emptied: they finished some forty a year around 750, only ten a year by 800. Monument 101 at Tonina carries one from January 909. What became of the tradition after that carving?",
     "answer": "No Maya city ever carved a Long Count date again",
     "choices": [
       "No Maya city ever carved a Long Count date again",
@@ -10227,15 +10227,15 @@
       "The Spanish recorded it from Maya scribes in the 1500s",
       "It shifted from stone monuments onto painted pottery"
     ],
-    "context": "Monument 101 at Tonina, dated 10.4.0.0.0 (January 909 CE), bears the last Long Count date the Maya ever carved; the 700-year tradition simply stopped. The fall is visible in the numbers: the Maya carved about 40 dated monuments a year around 750 CE, but the count dropped to ten by 800 and to zero by 900. Tikal's last dated stela went up in 869 CE. Sources: Encyclopedia.com 'Tonina'; Wikipedia 'Classic Maya collapse'; American Scientist, 'Climate and the Collapse of Maya Civilization'.",
+    "context": "Monument 101 at Tonina, dated 10.4.0.0.0 (January 909 CE), bears the last known Long Count date on any Maya monument; the centuries-old tradition simply stopped. The fall is visible in the numbers: the Maya carved about 40 dated monuments a year around 750 CE, but the count dropped to ten by 800 and to almost none by 900. Tikal's last dated stela went up in 869 CE. Sources: Encyclopedia.com 'Tonina'; Wikipedia 'Classic Maya collapse'; American Scientist, 'Climate and the Collapse of Maya Civilization'.",
     "topic": "collapse-of-the-classic-maya"
   },
   {
     "tier": 5,
     "question": "Scientists drilled long cores of mud from the bottom of Lake Chichancanab in the Yucatan and read in them a chemical record of the 800s, the century when the southern Maya cities were dying. Scholars still argue over why the cities emptied, and the lake gave one clue. What did its mud reveal about those years?",
-    "answer": "A drought so severe that yearly rainfall fell by half or more",
+    "answer": "A drought so severe that yearly rainfall fell by about half",
     "choices": [
-      "A drought so severe that yearly rainfall fell by half or more",
+      "A drought so severe that yearly rainfall fell by about half",
       "A run of floods that drowned the lowland cornfields",
       "A sudden cold snap that froze the tropical lowlands",
       "A layer of volcanic ash that buried the farmland"
@@ -11688,13 +11688,13 @@
   },
   {
     "tier": 1,
-    "question": "David Ben-Gurion rose in a museum hall in Tel Aviv on 14 May 1948 and read out a paper founding a new country in the ancient Jewish homeland. He ended the meeting with a few bold words. What did he say?",
+    "question": "David Ben-Gurion rose in a museum hall in Tel Aviv on 14 May 1948 and read out a paper founding a new country in the ancient Jewish homeland. His closing words that afternoon are still remembered. What did he say?",
     "answer": "\"The State of Israel is established! This meeting is adjourned!\"",
     "choices": [
       "\"The State of Israel is established! This meeting is adjourned!\"",
-      "\"Let every nation now witness the birth of our people.\"",
-      "\"We have come home at last, and here we will remain.\"",
-      "\"From this day the long exile of our people is over.\""
+      "\"Let every nation now witness the birth of our people!\"",
+      "\"We have come home at last, and here we will remain!\"",
+      "\"From this day the long exile of our people is over!\""
     ],
     "context": "Ben-Gurion read the whole Declaration of Independence aloud in just 16 minutes and ended with this line. When he first struck his gavel to open, the guests spontaneously began singing the anthem Hatikvah. Source: https://en.wikipedia.org/wiki/Israeli_Declaration_of_Independence",
     "topic": "creation-of-israel-1948"
@@ -11727,7 +11727,7 @@
   },
   {
     "tier": 3,
-    "question": "Crowds danced in the streets of Tel Aviv on 14 May 1948, when David Ben-Gurion declared the founding of Israel, a Jewish homeland born in the shadow of the Holocaust, in which six million Jews had just been murdered in Europe. But that night, in his private diary, Ben-Gurion wrote a strikingly sombre line. What did he write?",
+    "question": "Crowds danced in the streets of Tel Aviv on 14 May 1948, when David Ben-Gurion declared the founding of Israel. He knew that the armies of its Arab neighbours were about to invade. That night, in his private diary, he wrote a strikingly sombre line. What did he write?",
     "answer": "\"I mourn among the joyful.\"",
     "choices": [
       "\"I mourn among the joyful.\"",
@@ -11735,7 +11735,7 @@
       "\"We have only begun the harder fight.\"",
       "\"The world will never forgive us this.\""
     ],
-    "context": "Israel's Declaration explicitly invokes the Nazi catastrophe as the reason for an urgent Jewish homeland. Amid the public celebration, Ben-Gurion privately recorded his grief that the homeland came too late for the murdered millions. Source: https://www.timesofisrael.com/ben-gurion-diary-entries-on-day-of-independence-revealed-i-mourn-among-the-joyful/",
+    "context": "The entry reads, in translation: 'Across the land, there is joy and profound happiness, and again I mourn among the joyful, as on November 29,' the day of the UN partition vote. He wrote it the night before five Arab armies invaded. Israel's Declaration itself names the Nazi murder of millions of Jews in Europe as proof that a Jewish state was urgent. Source: https://www.timesofisrael.com/ben-gurion-diary-entries-on-day-of-independence-revealed-i-mourn-among-the-joyful/",
     "topic": "creation-of-israel-1948"
   },
   {
@@ -11783,7 +11783,7 @@
     "answer": "Down the valley at the massed Russian battery",
     "choices": [
       "Down the valley at the massed Russian battery",
-      "Up the heights at the captured British guns",
+      "Out toward the far-off walls of Sevastopol",
       "Back toward the British camp at Balaclava",
       "Across the river at the Russian infantry"
     ],
@@ -11961,7 +11961,7 @@
   },
   {
     "tier": 2,
-    "question": "Fidel Castro sailed from Mexico for Cuba late in 1956 with 82 fighters, set on overthrowing Cuba's American-backed dictator, Fulgencio Batista. Their boat was a little pleasure yacht meant to carry only 25 people, so it was dangerously overloaded, and only about 20 of the men survived the landing. What was the yacht called?",
+    "question": "Fidel Castro sailed from Mexico for Cuba late in 1956 with 81 other fighters to overthrow the dictator Fulgencio Batista. Their boat was a pleasure yacht meant to carry only about a dozen people, so it was overloaded, and only a small band of the men survived the landing. What was the yacht called?",
     "answer": "Granma",
     "choices": [
       "Granma",
@@ -11974,7 +11974,7 @@
   },
   {
     "tier": 2,
-    "question": "Che Guevara had only about 300 fighters outside Santa Clara late in 1958, in the last months of the Cuban revolution. The dictator Fulgencio Batista rushed an armored train there with 3,500 fresh soldiers and heavy guns. Che had a captured bulldozer and some dynamite. What did his band do to the train?",
+    "question": "Che Guevara had about 300 fighters outside Santa Clara late in 1958. The dictator Fulgencio Batista held the city with thousands of troops and sent in an armored train loaded with soldiers and heavy guns. Che had a captured bulldozer. What did his band do to the train?",
     "answer": "Tore up the tracks and derailed it, then seized its weapons",
     "choices": [
       "Tore up the tracks and derailed it, then seized its weapons",
@@ -11982,12 +11982,12 @@
       "Set it ablaze and drove the troops out into open fields",
       "Sealed the tunnel ahead so it sat trapped in the dark"
     ],
-    "context": "Che's men ripped up the railway with the bulldozer, derailed the armored reinforcement train, and captured the soldiers along with all their guns. Santa Clara fell, and within hours Batista decided to flee Cuba. Sources: en.wikipedia.org/wiki/Battle_of_Santa_Clara; worldpolitics.substack.com/p/battle-santa-clara-che-guevara-fidel-castro-cuba-revolution",
+    "context": "Che's men ripped up the railway with the bulldozer, derailed the armored reinforcement train, and captured its 350 or so soldiers along with all their guns. Santa Clara fell, and within hours Batista decided to flee Cuba. Sources: en.wikipedia.org/wiki/Battle_of_Santa_Clara; grokipedia.com/page/Battle_of_Santa_Clara",
     "topic": "cuban-revolution-fidel-castro"
   },
   {
     "tier": 3,
-    "question": "Fidel Castro, a young lawyer, led about 160 rebels in an attack on the Moncada army barracks in Santiago de Cuba on 26 July 1953, and the attack failed. Put on trial, he acted as his own defense lawyer and kept talking for nearly four hours. He closed with one defiant line that became the slogan of his whole revolution. How did he end the speech?",
+    "question": "Fidel Castro, a young lawyer, led about 160 rebels in an attack on the Moncada army barracks in Santiago de Cuba on 26 July 1953, and the attack failed. Put on trial, he acted as his own defense lawyer and kept talking for hours. He closed with one defiant line that became the slogan of his whole revolution. How did he end the speech?",
     "answer": "Condemn me, it does not matter; history will absolve me.",
     "choices": [
       "Condemn me, it does not matter; history will absolve me.",
@@ -11995,7 +11995,7 @@
       "Judge me as you wish; the people have already judged you.",
       "Kill the man before you; you can never kill the idea behind him."
     ],
-    "context": "\"History Will Absolve Me\" became the manifesto of Castro's cause. He was sentenced to 15 years but freed after just 22 months under public pressure (May 1955). Sources: en.wikipedia.org/wiki/History_Will_Absolve_Me; en.wikipedia.org/wiki/Cuban_Revolution",
+    "context": "\"History Will Absolve Me\" became the manifesto of Castro's cause. No court transcript survives: the text comes from Castro himself, who rebuilt the speech from memory in prison and had it smuggled out, and one witness said the speech he heard ran under two hours. Castro was sentenced to 15 years but freed after just 22 months under public pressure (May 1955). Sources: grokipedia.com/page/History_Will_Absolve_Me; en.wikipedia.org/wiki/History_Will_Absolve_Me",
     "topic": "cuban-revolution-fidel-castro"
   },
   {
@@ -12014,9 +12014,9 @@
   {
     "tier": 4,
     "question": "Che Guevara, the young Argentine doctor whose face became a romantic icon on countless T-shirts, set down in 1967 exactly what he believed a true revolutionary had to become. He wrote it in his own words, in his 'Message to the Tricontinental.' Which phrase did he use?",
-    "answer": "A cold-blooded, violent, selective killing machine",
+    "answer": "A violent, selective, cold-blooded killing machine",
     "choices": [
-      "A cold-blooded, violent, selective killing machine",
+      "A violent, selective, cold-blooded killing machine",
       "A patient, humble, tireless teacher of the people",
       "A gentle, selfless servant of the poor and the landless",
       "A fearless, loyal, sleepless soldier for the cause"
@@ -12034,7 +12034,7 @@
       "About 40,000 Cubans crossed, most of them riding homemade rafts.",
       "About 250,000 Cubans crossed in one frantic opening week."
     ],
-    "context": "They were nicknamed 'Marielitos' after the port of Mariel and sailed the 90-mile crossing to Key West in some 1,700 boats. The exodus never really stopped: 35,000 more 'balseros' fled on rafts in 1994, and since 1959 roughly 2.9 million Cubans have emigrated, most settling around Miami. Sources: history.com/articles/mariel-boatlift-castro-carter-cold-war; en.wikipedia.org/wiki/Cuban_post-revolution_exodus",
+    "context": "They were nicknamed 'Marielitos' after the port of Mariel and sailed the 90-mile crossing to Key West in some 1,700 boats. The exodus never really stopped: 35,000 more 'balseros' fled on rafts in 1994, and since 1959 more than a million Cubans have emigrated, many settling around Miami. Sources: history.com/articles/mariel-boatlift-castro-carter-cold-war; en.wikipedia.org/wiki/Cuban_exodus",
     "topic": "cuban-revolution-fidel-castro"
   },
   {
@@ -12195,15 +12195,15 @@
   },
   {
     "tier": 3,
-    "question": "Cyril, a Byzantine monk, travelled north from Constantinople to Great Moravia in 863, sent by Emperor Michael III at the request of Prince Rastislav. Rastislav wanted the Slavs of his land to hear Scripture in their own tongue, but Slavic had never been written down, and there were no letters at all for its sounds. What did Cyril do so the Slavs could read Scripture?",
-    "answer": "He invented a brand-new alphabet from scratch, the oldest known Slavic script",
+    "question": "Cyril, a Byzantine monk, travelled north from Constantinople to Great Moravia in 863, sent by Emperor Michael III at the request of Prince Rastislav. Rastislav wanted the Slavs of his land to hear Scripture in their own tongue, but Slavic had never been written down. What did Cyril do so the Slavs could read Scripture?",
+    "answer": "He invented a brand-new alphabet for it from scratch",
     "choices": [
-      "He invented a brand-new alphabet from scratch, the oldest known Slavic script",
-      "He borrowed the Hebrew letters and read them backwards",
-      "He carved word-pictures into wood the way the Egyptians did",
-      "He wrote the Slavic sounds using only Latin letters"
+      "He invented a brand-new alphabet for it from scratch",
+      "He wrote the Slavic sounds using only Latin letters",
+      "He spelled out the Slavic words in Greek letters",
+      "He adapted the Hebrew letters to the Slavic sounds"
     ],
-    "context": "Cyril created the Glagolitic alphabet, the oldest known Slavic script, with 41 letters. Its very first letter, azu, was shaped like a cross, marking the script as a Christian creation. The name Glagolitic comes from the Old Church Slavonic word glagol, meaning 'word' or 'to utter.' Source: Wikipedia, Glagolitic script.",
+    "context": "Cyril created the Glagolitic alphabet, the oldest known Slavic script; 41 of its letters are known today. Its first letter, az, looks like a cross, which some scholars read as a sign of the script's Christian purpose. The name Glagolitic comes from the Old Church Slavonic word glagol, meaning 'word' or 'to utter.' Source: Wikipedia, Glagolitic script.",
     "topic": "cyril-methodius-and-the-cyrillic-alphabet"
   },
   {
@@ -12546,15 +12546,15 @@
   },
   {
     "tier": 4,
-    "question": "The Fon of Dahomey believed their departed rulers still held court in a spirit world the living could not see, and sometimes the living king needed to send them a message. At the yearly Customs, he whispered it to a condemned prisoner. According to European eyewitnesses, what happened to the prisoner then?",
-    "answer": "He was sent with a knife across the throat to carry the words to the dead kings",
+    "question": "The Fon of Dahomey believed their departed rulers still held court in a spirit world the living could not see, and sometimes the living king needed to send them a message. At the yearly Customs, he gave it to a prisoner. According to European eyewitnesses, what happened to the prisoner then?",
+    "answer": "He was killed so that his spirit could carry the words to the dead kings",
     "choices": [
-      "He was sent with a knife across the throat to carry the words to the dead kings",
-      "He was sealed alive inside an old king's tomb to deliver the words below",
+      "He was killed so that his spirit could carry the words to the dead kings",
       "He was set loose to climb the sacred hill and shout the words to the sky",
-      "He was burned at the festival fire so the smoke would lift the words upward"
+      "He was freed and sent to repeat the words aloud at the old kings' tombs",
+      "He was shut in a royal tomb overnight to speak the words to the dead"
     ],
-    "context": "The Fon held that the visible world was only part of a larger reality. At the Customs the king dispatched 'messengers' to the council of dead kings: the message was whispered to a condemned prisoner, who was then killed with a knife across the throat so he could carry the words to the ancestors. The British explorer Richard Francis Burton was sent to King Gelele in 1863-64 to protest the killings and wrote them up in 'A Mission to Gelele, King of Dahome' (1864). Source: en.wikipedia.org/wiki/Annual_Customs_of_Dahomey.",
+    "context": "The Fon held that the visible world was only part of a larger reality. At the Customs the king dispatched 'messengers' to the council of dead kings: he charged a prisoner with a message and had him killed, so that his spirit could carry the words to the ancestors. The British explorer Richard Francis Burton, sent to King Gelele in 1863-64 to protest the killings, wrote them up in 'A Mission to Gelele, King of Dahome' (1864), and noted that even the king's most trivial doings, such as inventing a new drum, had to be reported to his dead father by such a messenger. Source: Burton, A Mission to Gelele, vol. 2; en.wikipedia.org/wiki/Annual_Customs_of_Dahomey.",
     "topic": "dahomey-benin-human-sacrifice-altars"
   },
   {
@@ -12585,7 +12585,7 @@
   },
   {
     "tier": 2,
-    "question": "Satan stood at the very bottom of Dante's Hell, locked in ice up to his waist, a three-faced giant chewing a famous traitor in each of his mouths. Dante crammed the worst traitor of all in head-first, with only his kicking legs left sticking out. Who was it?",
+    "question": "Satan stood at the very bottom of Dante's Hell, locked in ice up to his chest, a three-faced giant chewing a famous traitor in each of his mouths. Dante crammed the worst traitor of all in head-first, with only his kicking legs left sticking out. Who was it?",
     "answer": "Judas Iscariot",
     "choices": [
       "Marcus Brutus",
@@ -12845,7 +12845,7 @@
   },
   {
     "tier": 2,
-    "question": "Charles Darwin, home in England after his voyage, drew a small branching sketch in a secret notebook in 1837, showing species splitting apart from common ancestors. It was the first tree of life. Over the sketch Darwin scrawled two cautious words that became famous. What were they?",
+    "question": "Charles Darwin, home in England after his voyage, drew a small branching sketch in a secret notebook in 1837, showing species splitting apart from common ancestors. It was his first tree of life. Over the sketch Darwin scrawled two cautious words that became famous. What were they?",
     "answer": "I think",
     "choices": [
       "I think",
@@ -12853,12 +12853,12 @@
       "Who knows",
       "Not sure"
     ],
-    "context": "The sketch on page 36 of Notebook B (1837) is the first 'tree of life' diagram, with the tentative 'I think' written above it, a sign of how unsure Darwin still was. Years later the only illustration in the whole Origin of Species would be a single branching tree showing the same idea.",
+    "context": "The sketch on page 36 of Notebook B (1837) is Darwin's first 'tree of life' diagram, with the tentative 'I think' written above it, a sign of how unsure Darwin still was. Years later the only illustration in the whole Origin of Species would be a single branching tree showing the same idea.",
     "topic": "darwin-and-evolution-by-natural-selection"
   },
   {
     "tier": 5,
-    "question": "John Gould, a bird expert in England, examined the birds Charles Darwin had brought home from the Galapagos in March 1837. On the islands themselves the finches had not given Darwin his big idea, and he had taken the varied birds for unrelated kinds. What did Gould tell him about those birds?",
+    "question": "John Gould, a bird expert in England, examined the birds Charles Darwin had brought home from the Galapagos early in 1837. On the islands themselves the finches had not given Darwin his big idea, and he had taken the varied birds for unrelated kinds. What did Gould tell him about those birds?",
     "answer": "They were actually one closely related group",
     "choices": [
       "They were actually one closely related group",
@@ -12871,7 +12871,7 @@
   },
   {
     "tier": 2,
-    "question": "Nicholas Lawson, the vice-governor of the Galapagos, made a boast to the young Charles Darwin on the island of Floreana. Hand him any giant tortoise, he said, and from just one feature he could name the island it came from. Which feature gave each island's tortoises away?",
+    "question": "Nicholas Lawson, the vice-governor of the Galapagos, made a boast to the young Charles Darwin on the island of Floreana. Hand him any giant tortoise, he said, and he could name the island it came from. Which feature most plainly tells one island's tortoise from another's?",
     "answer": "the shape of its shell",
     "choices": [
       "the shape of its shell",
@@ -12916,7 +12916,7 @@
       "a clever man who used his gifts to ridicule serious science",
       "a bishop who mistook a fine joke for a real argument",
       "a gentleman who feared the truth about his own family",
-      "a scholar who preached on a subject he never studied"
+      "a nobleman who owed his rank to his birth alone"
     ],
     "context": "Huxley was nicknamed 'Darwin's Bulldog' for fighting these battles in Darwin's place. The exchange with 'Soapy Sam' Wilberforce is the most retold moment of the whole evolution fight — though accounts of the exact words differ, so it is remembered as legend more than transcript. Source: Wikipedia, '1860 Oxford evolution debate,' https://en.wikipedia.org/wiki/1860_Oxford_evolution_debate",
     "topic": "darwin-and-on-the-origin-of-species"
@@ -13269,20 +13269,20 @@
       "That he build a great library for the poor",
       "That he hand over his finest royal robe"
     ],
-    "context": "Offered the wealth of an empire, Diogenes asked only that Alexander stop blocking his sunlight. Alexander was so struck he reportedly said, 'If I were not Alexander, I would wish to be Diogenes' -- and Diogenes shot back, 'If I were not Diogenes, I would also wish to be Diogenes.' Source: Diogenes Laertius, Lives of Eminent Philosophers VI.38, via Wikiquote; World History Encyclopedia.",
+    "context": "Offered anything he wished, Diogenes asked only that Alexander stop blocking his sunlight. Alexander was so struck he reportedly said, 'If I were not Alexander, I would wish to be Diogenes.' Source: Plutarch, Life of Alexander 14; Diogenes Laertius, Lives of Eminent Philosophers VI.38.",
     "topic": "diogenes-the-cynic-and-the-barrel"
   },
   {
     "tier": 4,
     "question": "Plato won applause in Athens for defining a human being as 'an animal, two-footed and featherless.' Diogenes the Cynic did not argue with him. The story goes that he marched into Plato's lecture room instead, carrying something to hold up for everyone to see. What did he hold up?",
-    "answer": "A plucked chicken, calling out 'Behold -- Plato's man!'",
+    "answer": "A plucked chicken, calling out 'Behold, Plato's man!'",
     "choices": [
-      "A plucked chicken, calling out 'Behold -- Plato's man!'",
-      "A bronze mirror, calling out 'Behold -- Plato's soul!'",
+      "A plucked chicken, calling out 'Behold, Plato's man!'",
+      "A bronze mirror, calling out 'Behold, Plato's soul!'",
       "A clay storage jar he carried on his back",
       "A lamp he had lit in the middle of the day"
     ],
-    "context": "A featherless two-legged creature is exactly a plucked chicken -- so Diogenes mocked Plato's tidy definition by carrying one into the lecture hall. (Diogenes really did live in a clay jar and really did carry a lamp in daylight 'looking for an honest man' -- those are separate famous deeds, not this one.) Source: Diogenes Laertius, Lives of Eminent Philosophers VI.40, via Wikiquote.",
+    "context": "A featherless two-legged creature is exactly a plucked chicken -- so Diogenes mocked Plato's tidy definition by carrying one into the lecture hall. (Diogenes really did live in a clay jar and really did carry a lamp in daylight, saying he was 'looking for a man' -- those are separate famous deeds, not this one.) Source: Diogenes Laertius, Lives of Eminent Philosophers VI.40, via Wikiquote.",
     "topic": "diogenes-the-cynic-and-the-barrel"
   },
   {
@@ -13352,19 +13352,6 @@
   },
   {
     "tier": 2,
-    "question": "The Tamzine joined the rescue at Dunkirk in 1940 as the smallest of its hundreds of boats. She had been built at Margate in 1937 from Canadian spruce and was barely fourteen and a half feet long, and London's Imperial War Museum still keeps her. What sort of boat was the Tamzine?",
-    "answer": "An open fishing dinghy",
-    "choices": [
-      "An open fishing dinghy",
-      "A small open rowing skiff",
-      "A little single-masted sailing boat",
-      "A narrow canvas-and-wood canoe"
-    ],
-    "context": "Tamzine measured just 14 feet 7.5 inches from end to end, the smallest vessel in the whole operation. She is preserved at the Imperial War Museum. Source: Wikipedia, Tamzine (en.wikipedia.org/wiki/Tamzine).",
-    "topic": "dunkirk-evacuation"
-  },
-  {
-    "tier": 2,
     "question": "Bertram Ramsay, a vice-admiral, directed the rescue of the trapped army at Dunkirk in 1940 from a room dug into the chalk beneath Dover Castle. One machine hummed and thumped in a corner of that room, and it gave the whole plan its code-name. What was the machine?",
     "answer": "A dynamo — an electrical generator",
     "choices": [
@@ -13383,7 +13370,7 @@
     "choices": [
       "The East Mole, a narrow concrete-and-timber breakwater",
       "A floating bridge built from lashed-together rowing boats",
-      "A long pier of sunken lorries driven into the surf",
+      "A causeway of sandbags piled out into the shallows",
       "A railway viaduct that ran out across the dunes"
     ],
     "context": "The East Mole was a breakwater about 1,400 yards long. Nearly 200,000 men were taken off from it, far more than from the open beaches everyone pictures. Source: The Second World War Org, Operation Dynamo: the Mole (thesecondworldwar.org); Wikipedia, William Tennant (RN officer).",
@@ -13391,7 +13378,7 @@
   },
   {
     "tier": 3,
-    "question": "Stuka dive-bombers screamed down on the men waiting on the Dunkirk beaches in 1940. The Germans had fitted the planes with air-driven sirens so that the dive itself would terrify the troops below, and one survivor said they sounded like a flock of huge, wicked seagulls. What were the sirens nicknamed?",
+    "question": "Stuka dive-bombers screamed down on the men waiting on the Dunkirk beaches in 1940. The Germans had fitted the planes with air-driven sirens so that the dive itself would terrify the troops below, and witnesses likened the wail to a flock of huge, infernal seagulls. What were the sirens nicknamed?",
     "answer": "The Jericho Trumpet",
     "choices": [
       "The Jericho Trumpet",
@@ -13412,7 +13399,7 @@
       "Worshippers filing into church",
       "Crowds at a football turnstile"
     ],
-    "context": "Baldwin said the men stood in the water 'as if standing for a bus. There was no pushing or shoving.' The calm discipline on the beaches became part of the legend of Dunkirk. Source: History Hit, Facts about the Miracle of Dunkirk (historyhit.com).",
+    "context": "Baldwin, a signaller, recalled: 'You had the impression of people standing waiting for a bus. There was no pushing or shoving.' The calm discipline on the beaches became part of the legend of Dunkirk. Source: History Hit, Facts about the Miracle of Dunkirk (historyhit.com).",
     "topic": "dunkirk-evacuation"
   },
   {
@@ -13469,25 +13456,25 @@
   },
   {
     "tier": 5,
-    "question": "James Campbell Clouston, a Canadian commander in the Royal Navy, served as pier-master at Dunkirk, sending about 2,000 men an hour aboard the waiting ships through his megaphone. When a knot of panicking soldiers tried to rush one ship and swamp it, he drew his revolver and stopped them with a calm threat. What did Clouston tell them?",
+    "question": "James Campbell Clouston, a Canadian commander in the Royal Navy, served as pier-master at Dunkirk, sending about 2,000 men an hour aboard the waiting ships through his megaphone. When panicking soldiers began to break away from the pier, Clouston pulled out his revolver and stopped them with a calm threat. What did Clouston tell them?",
     "answer": "'I have six shots here and I am not a bad shot. The lieutenant behind me is an even better one.'",
     "choices": [
       "'I have six shots here and I am not a bad shot. The lieutenant behind me is an even better one.'",
       "'Get back in line now. The next man to break it stays here when we sail.'",
       "'Sit down, every one of you. No one boards until I say, and I will not say twice.'",
-      "'Hold fast where you stand. The first man on that gangway uninvited is a dead man.'"
+      "'Hold fast where you stand. The first man to run from this pier is a dead man.'"
     ],
-    "context": "Clouston's full line opened, 'We have come to take you back to the UK.' Days later, on 2 June, Stukas sank the boat carrying him back to Dunkirk; he gave up his place in the one rescue dinghy to stay with his men in the water and died of cold and exhaustion. Source: Wikipedia, James Campbell Clouston (en.wikipedia.org/wiki/James_Campbell_Clouston).",
+    "context": "Clouston's full line opened, 'We have come to take you back to the UK.' On 2 June, Stukas sank the boat carrying him back to Dunkirk; he refused rescue by the other boat, ordered it on to Dunkirk, and died of cold and exhaustion in the water with his men. Source: Wikipedia, James Campbell Clouston (en.wikipedia.org/wiki/James_Campbell_Clouston).",
     "topic": "dunkirk-evacuation"
   },
   {
     "tier": 5,
-    "question": "Royal Air Force pilots flew more than 3,500 missions to shield the evacuation at Dunkirk in 1940 and lost about 145 planes shielding the evacuation. Yet many of the rescued soldiers came home grumbling that the air force had abandoned them. Why did the men on the sand believe it?",
+    "question": "Royal Air Force pilots flew more than 3,500 missions over Dunkirk in 1940 and lost about 145 planes shielding the evacuation. Yet many of the rescued soldiers came home grumbling that the air force had abandoned them. Why did the men on the sand believe it?",
     "answer": "Its air battles were fought far inland, out of sight of the men below",
     "choices": [
       "Its air battles were fought far inland, out of sight of the men below",
       "Its planes had all been grounded by the bad Channel weather",
-      "It had been ordered to save its fighters for the defence of Britain",
+      "Its fighters flew only by night, unseen in the dark sky",
       "Its aircraft had been painted to look like German machines"
     ],
     "context": "The RAF intercepted German bombers well before they reached the coast, so the dogfights happened beyond the soldiers' view; more than 40 of the lost aircraft were Spitfires. Source: Wikipedia, Dunkirk evacuation; RAF Benevolent Fund, How the Battle of Dunkirk unfolded (rafbf.org).",
@@ -13521,13 +13508,13 @@
   },
   {
     "tier": 3,
-    "question": "The people of Rapa Nui always said their giant moai had walked from the quarry to their platforms near the coast, and for years outsiders called it a myth. Two archaeologists, Carl Lipo and Terry Hunt, tested the story in 2012 on a replica of 4.35 tons, with eighteen people and three ropes. How did they move it 100 meters?",
-    "answer": "They rocked it upright side to side so it wobbled forward, like walking a refrigerator",
+    "question": "The people of Rapa Nui always said their giant moai had walked from the quarry to their platforms near the coast, and for years outsiders called it a myth. Two archaeologists, Carl Lipo and Terry Hunt, tested the story in 2012 on a replica of 4.35 tons, with eighteen people. How did they make it walk 100 meters?",
+    "answer": "They rocked it from side to side with ropes so it waddled forward",
     "choices": [
-      "They rocked it upright side to side so it wobbled forward, like walking a refrigerator",
-      "They laid it flat on wooden rollers and dragged it along on log tracks",
-      "They floated it on a raft through a flooded canal cut across the slope",
-      "They balanced it on a giant sledge that teams of oxen hauled uphill"
+      "They rocked it from side to side with ropes so it waddled forward",
+      "They tipped it end over end, flipping it from face to back",
+      "They levered it ahead a few inches at a time with wooden poles",
+      "They slid it upright along a track of wet clay and crushed reeds"
     ],
     "context": "With one rope on each side to rock it and one behind to keep its built-in forward lean, 18 people walked the multi-ton statue 100 meters in 40 minutes — upright, exactly as the islanders had said for generations. The moai's wide D-shaped base and 5–15 degree lean are the very shape that makes this work. Source: https://www.binghamton.edu/news/story/5830/easter-islands-statues-actually-walked-and-physics-backs-it-up",
     "topic": "easter-island-rapa-nui-moai"
@@ -14177,7 +14164,7 @@
       "Planters and blacksmiths simply built their own copies",
       "The machine turned out not to work in humid weather",
       "He gave the design away for free to help poor farmers",
-      "A factory fire destroyed his entire first shipment"
+      "Congress refused to grant him a patent on it"
     ],
     "context": "The gin was so simple that planters and blacksmiths built their own copies, many improved, rather than pay Whitney's fees; before he could even deliver his machines the South was already awash with illegal replications. He had as many as sixty infringement suits pending at once and still came away with practically nothing. Source: New Georgia Encyclopedia, georgiaencyclopedia.org; History.com, history.com/articles/cotton-gin-and-eli-whitney.",
     "topic": "eli-whitney-cotton-gin-and-interchangeable-parts"
@@ -14205,7 +14192,7 @@
       "John Adams",
       "Alexander Hamilton"
     ],
-    "context": "Jefferson, then U.S. ambassador to France, witnessed Blanc's July 8, 1785 demonstration in the courtyard of the Chateau de Vincennes and tried unsuccessfully to bring Blanc to America. Years later the same Jefferson marveled that Whitney's parts were 'so exactly equal' they could be 'put together as well by taking the first pieces which come to hand.' Source: Wikipedia 'Interchangeable parts' and 'Honore Blanc', en.wikipedia.org/wiki/Interchangeable_parts; American Heritage, americanheritage.com/eli-whitneys-other-talent.",
+    "context": "Jefferson, then U.S. minister to France, witnessed Blanc's July 8, 1785 demonstration in the courtyard of the Chateau de Vincennes and tried unsuccessfully to bring Blanc to America. Years later the same Jefferson marveled that Whitney's parts were 'so exactly equal' they could be 'put together as well by taking the first pieces which come to hand.' Source: Wikipedia 'Interchangeable parts' and 'Honore Blanc', en.wikipedia.org/wiki/Interchangeable_parts; American Heritage, americanheritage.com/eli-whitneys-other-talent.",
     "topic": "eli-whitney-cotton-gin-and-interchangeable-parts"
   },
   {
@@ -14717,7 +14704,7 @@
   },
   {
     "tier": 3,
-    "question": "Voltaire, the most famous intellectual in Europe, came to live at Frederick the Great's court in 1750, but the friendship soon soured. Voltaire griped that the king made him wash his dirty linen by fixing his clumsy French verse. How did Frederick belittle his worn-out guest in return?",
+    "question": "Voltaire, the most famous intellectual in Europe, came to live at Frederick the Great's court in 1750, but the friendship soon soured. Voltaire griped that the king made him wash his dirty linen by fixing his clumsy French verse. What was Frederick reported to have said of his worn-out guest?",
     "answer": "He said one squeezes the orange and throws away the peel",
     "choices": [
       "He said one squeezes the orange and throws away the peel",
@@ -14725,7 +14712,7 @@
       "He said a guest, like fish, begins to stink on the third day",
       "He said the bee is welcome only until the honey is taken"
     ],
-    "context": "Voltaire fled Prussia in 1753, and Frederick had him briefly detained at Frankfurt. The break had blown up over Voltaire's pamphlet savaging Maupertuis, head of Frederick's Berlin Academy. Source: National Geographic, 'Frederick the Great, King of Prussia.'",
+    "context": "The philosopher La Mettrie passed the orange remark on to Voltaire in the autumn of 1751. Voltaire fled Prussia in 1753, and Frederick had him briefly detained at Frankfurt. The break had blown up over Voltaire's pamphlet savaging Maupertuis, head of Frederick's Berlin Academy. Source: National Geographic, 'Frederick the Great, King of Prussia'; Encyclopaedia Britannica 1911, 'Voltaire'.",
     "topic": "enlightened-despots"
   },
   {
@@ -14756,7 +14743,7 @@
   },
   {
     "tier": 4,
-    "question": "Joseph II of Austria poured out about 6,000 imperial decrees in a single decade, setting serfs free and ordering religious toleration. Then Hungary's nobles made him undo almost every reform before he died. He composed his own epitaph. What did it say?",
+    "question": "Joseph II of Austria poured out about 6,000 imperial decrees in a single decade, setting serfs free and ordering religious toleration. Then the nobles of Hungary made him undo almost every reform there before he died. He composed his own epitaph. What did it say?",
     "answer": "That he meant well but failed in everything he tried",
     "choices": [
       "That he meant well but failed in everything he tried",
@@ -14951,12 +14938,12 @@
   },
   {
     "tier": 5,
-    "question": "Euclid built his Elements on five starting rules. Four felt clean and obvious, but the fifth was clumsy: through a point, only one line can run parallel to a given line. For over 2,000 years mathematicians tried to prove it from the other four and failed, until Lobachevsky, Bolyai and Gauss found a way nobody expected. What did they discover could be done with the fifth rule?",
-    "answer": "DENY it and still build a consistent geometry",
+    "question": "Euclid built his Elements on five starting rules. Four felt clean and obvious, but the fifth, about parallel lines, was long and clumsy. For over 2,000 years mathematicians tried to prove it from the other four and failed, until Lobachevsky, Bolyai and Gauss found a way nobody expected. What did they discover could be done with the fifth rule?",
+    "answer": "Deny it and still build a consistent geometry",
     "choices": [
-      "DENY it and still build a consistent geometry",
+      "Deny it and still build a consistent geometry",
       "Prove it cleanly using only the first four",
-      "Replace it with a simpler equivalent rule",
+      "Derive it from the definition of a straight line",
       "Remove it without changing any theorem"
     ],
     "context": "Denying the parallel postulate created non-Euclidean geometry, which later helped Einstein describe curved space. The lesson: a rule unprovable from the others wasn't a flaw but a choice. Source: mathshistory.st-andrews.ac.uk/HistTopics/Non-Euclidean_geometry/",
@@ -14965,14 +14952,14 @@
   {
     "tier": 5,
     "question": "Euclid proved a famous fact about the prime numbers in Book IX of the Elements, with a trick still taught today. Suppose you had a finite list of every prime. Multiply them all together and add 1. What did Euclid show must be true of this brand-new number?",
-    "answer": "It has a prime factor missing from your list",
+    "answer": "It has a prime factor missing from the list",
     "choices": [
-      "It has a prime factor missing from your list",
+      "It has a prime factor missing from the list",
       "It is always divisible by the largest prime",
       "It must itself be an even number",
-      "It equals the sum of the primes you listed"
+      "It equals the sum of the listed primes"
     ],
-    "context": "Proposition 20 of Book IX. The new number is either prime itself or has a prime factor not on your list, so no finite list can ever hold them all. Source: mathcs.clarku.edu/~djoyce/java/elements/bookIX/propIX20.html; en.wikipedia.org/wiki/Euclid's_theorem",
+    "context": "Proposition 20 of Book IX. The new number is either prime itself or has a prime factor not on the list, so no finite list can ever hold them all. Source: mathcs.clarku.edu/~djoyce/java/elements/bookIX/propIX20.html; en.wikipedia.org/wiki/Euclid's_theorem",
     "topic": "euclid-and-the-elements-geometry"
   },
   {
