@@ -111,3 +111,27 @@ def test_bought_arrows_split_into_singles_never_return_more_than_half_the_price(
         got += g.player_gold - gold
     assert got <= paid * economy.RESALE_CAP_OF_PAID
     assert m is g._shop_merchant
+
+
+def test_a_ware_set_at_your_feet_keeps_its_price_for_the_resale_cap(monkeypatch):
+    """Bought on floor 3 and too heavy to carry; carried down to floor 40 and
+    sold, it fetched four times what it cost."""
+    g = _game()
+    g.dungeon_level = 3
+    import traders
+    armour = copy.copy(next(a for a in items.load_items('armor')
+                            if getattr(a, 'slot', '') == 'body' and not traders.is_quest_piece(a)))
+    armour.identified = True
+    _trader(g, [armour])
+    g.player_gold = 10000
+    paid = g._trader_price(0)
+    monkeypatch.setattr(g.player, 'add_to_inventory', lambda item: False)
+    g._trader_buy(0)
+    assert any(i is armour for i in g.ground_items)          # at the hero's feet
+    assert getattr(armour, '_bought_for', None) == paid
+    monkeypatch.undo()
+    g.dungeon_level = 40                                      # carried deep, sold there
+    _trader(g, [])
+    g.player.inventory.append(armour)
+    offer, why = g._trader_offer(armour)
+    assert why is None and offer <= paid * economy.RESALE_CAP_OF_PAID
