@@ -124,5 +124,8 @@ def test_a_multi_hit_spell_shares_one_casts_damage_between_its_hits():
     """Each missile used to carry the whole cast: Force Storm's seven were
     2.2 weapon attacks while the audit, counting one, said 0.31."""
     src = open(os.path.join(ROOT, 'src', 'game_magic.py'), encoding='utf-8').read()
-    assert 'self._spell_damage(base_dmg, chain) // missiles' in src
+    # Magic missile reckons the volley's rolls in one call (bug bash 3.3.1,
+    # so the Heart of Ahriman's charge is the whole volley's) and shares it:
+    # sum/missiles**2 is the old f(roll)/missiles per missile.
+    assert 'self._spell_damage(sum(_rolls), chain) // (missiles * missiles)' in src
     assert 'self._spell_damage(base_dmg, chain) // shots' in src
