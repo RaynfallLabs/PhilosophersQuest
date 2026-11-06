@@ -1922,14 +1922,22 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             except ImportError:
                 pass
 
-        # Trainer's Cap (bond_check): on floor entry, grant the FIRST pet +1 level.
+        # Trainer's Cap (bond_check): on floor entry, the first pet that can
+        # still level gains one.
         # "I choose you" — the bond strengthens with each floor cleared.
         try:
             from armor_procs import player_has_armor_proc as _pap_bc
             # A new floor only: five trips up and down one stair gave five levels.
             if (_pap_bc(self.player, 'bond_check') and getattr(self, 'pets', None)
                     and self.player.deepest_floor_reached > _was_deepest):
-                _first_pet = next((p for p in self.pets if getattr(p, 'alive', False)), None)
+                # The first pet that can still grow: Dad, Fenrir, the unicorn
+                # and a sketched pet never level, and the cap went to the first
+                # pet in the list whatever it was ("grows stronger!", nothing).
+                from pet_system import Pet as _BasePet
+                _first_pet = next((p for p in self.pets
+                                   if getattr(p, 'alive', False)
+                                   and getattr(type(p), 'gain_xp', None) is _BasePet.gain_xp
+                                   and int(getattr(p, 'level', 100) or 100) < 100), None)
                 if _first_pet is not None and hasattr(_first_pet, 'gain_xp'):
                     # Grant a level by feeding enough xp for one level-up.
                     _xpn = _first_pet._xp_to_next() if hasattr(_first_pet, '_xp_to_next') else 100
@@ -2232,8 +2240,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     # Remove this item.
                     if _slot_kind == 'weapon':
                         self.player.weapon = None
+                        self.player.shed_weapon_grants(_item)
                     elif _slot_kind == 'ranged_weapon':
                         self.player.ranged_weapon = None
+                        self.player.shed_weapon_grants(_item)
                     else:
                         try:
                             self.player.inventory.remove(_item)
@@ -4322,8 +4332,13 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 _it.x, _it.y = min(_lie, key=lambda t: abs(t[0] - _it.x) + abs(t[1] - _it.y))
         try:
             self._bring_within_reach()
-        except Exception:
-            pass
+        except Exception as e:
+            # Never silent: a quest piece left out of reach is a lost run.
+            try:
+                from game_log import log_error
+                log_error(f"_bring_within_reach raised: {e!r}")
+            except Exception:
+                pass
 
     def _reap_unnoticed_kills(self):
         """Anything that died without its death being handled is handled

@@ -208,3 +208,42 @@ def test_a_saved_wrong_answer_takes_no_warmup_head_start():
     m = _monster(tag_kind)
     assert combat.effective_chain(p, m, harpe, 0, consume=False) == 1
     assert combat.effective_chain(p, m, harpe, 1, consume=False) == 2
+
+
+# ------------------------------------------- the Trainer's Cap's new level
+def _wear_trainers_cap(p):
+    from items import ARMOR_SLOTS
+    cap = next(a for a in items.load_items('armor') if a.id == 'trainers_cap')
+    p.armor_slots[ARMOR_SLOTS.index(cap.slot)] = cap
+    return cap
+
+
+def test_trainers_cap_levels_a_pet_that_can_grow_not_dad():
+    from pet_system import DadPet, Pet
+    from armor_procs import player_has_armor_proc
+    g = _game()
+    _wear_trainers_cap(g.player)
+    assert player_has_armor_proc(g.player, 'bond_check')
+    dad = DadPet(g.player.x + 1, g.player.y, duration=500)
+    pup = Pet('fire', g.player.x - 1, g.player.y, level=3)
+    g.pets = [dad, pup]
+    g._change_level(g.dungeon_level + 1, enter_from_top=True)
+    assert pup.level == 4, "the cap's level went to Dad, who never levels"
+
+
+# --------------------------------- a weapon taken away sheds what it lent
+def test_a_weapon_taken_by_a_story_takes_its_passives_and_status():
+    g = _game()
+    p = g.player
+    hofud = _weapon('hofud')
+    p._apply_weapon_passives(hofud)
+    p.weapon = hofud
+    per = p.PER
+    assert g._npc_remove_item_by_id('hofud')
+    assert p.weapon is None
+    assert p.PER == per - 2, "Hofud's +2 PER stayed after the story took it"
+    storm = _weapon('stormbringer')
+    p.weapon = storm
+    p.status_effects['berserk'] = -1
+    assert g._npc_remove_item_by_id('stormbringer')
+    assert 'berserk' not in p.status_effects

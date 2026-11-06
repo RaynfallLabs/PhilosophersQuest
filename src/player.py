@@ -2031,6 +2031,23 @@ class Player:
                 'dragon', 'fey', 'aberration',
             ])
 
+    def shed_weapon_grants(self, weapon) -> None:
+        """Everything a weapon lent while wielded comes off with it, whichever
+        way it leaves the hand (the weapon counterpart of shed_worn_grants):
+        its chain-equip tier bonuses, its while-equipped passives and its
+        status. Assumes the weapon is already out of its slot. A weapon taken
+        by a story or by Chandrahasa's return to Shiva skipped all three."""
+        if weapon is None:
+            return
+        try:
+            from chain_equip import is_chain_equip, revert_tier_bonuses
+            if is_chain_equip(weapon) and int(getattr(weapon, 'achieved_tier', 0) or 0) > 0:
+                revert_tier_bonuses(self, weapon)
+        except ImportError:
+            pass
+        self._remove_weapon_passives(weapon)
+        self.drop_worn_status(getattr(weapon, 'on_equip_status', ''), weapon)
+
     def _remove_weapon_passives(self, weapon) -> None:
         """Reverse weapon-equip-side passives when a weapon is taken off."""
         if weapon is None:
