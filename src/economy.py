@@ -152,9 +152,10 @@ def merchant_price(item, level: int = 1, markup: float = 1.0, *, worth: float | 
 
 def stock_price(item, level: int = 1, markup: float = 1.0) -> int:
     """What a trader asks for a thing on his table. As merchant_price, except
-    that an unknown potion, scroll or wand is never marked below its class's
-    common band (data/item_worth.json "shop_worth_floor"): a price no longer
-    flags the junk, though the great things still cost more."""
+    that an unknown potion, scroll, wand, ring or amulet is never marked
+    below its class's common band (data/item_worth.json "shop_worth_floor"):
+    a price no longer flags the junk, though the great things still cost
+    more."""
     floor_w = (worth_table().get('shop_worth_floor') or {}).get(getattr(item, 'item_class', ''))
     if isinstance(floor_w, (int, float)):
         return merchant_price(item, level, markup, worth=max(item_worth(item), float(floor_w)))

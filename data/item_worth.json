@@ -130,10 +130,11 @@
     "master_hearth_sphere": 7.0
   },
   "shop_worth_floor": {
-    "_doc": "Playtest 2026-10-24: every junk potion cost 5 gp, so price told the hero which unknown potions were safe for free. A trader now marks his unknown potions, scrolls and wands no lower than this worth (the common band, Healing's 1.0). Price still tells the great ones (they cost more) but no longer flags the junk. Only the trader's SALE price; selling to him is unchanged.",
+    "_doc": "Playtest 2026-10-24: every junk potion cost 5 gp, so price told the hero which unknown potions were safe for free. A trader now marks his unknown potions, scrolls and wands no lower than this worth (the common band, Healing's 1.0). Price still tells the great ones (they cost more) but no longer flags the junk. Only the trader's SALE price; selling to him is unchanged. Bug bash 3.3.1: rings and amulets too; a curse ring was priced at a tenth of any other ring, so the tag named the curse.",
     "potion": 1.0,
     "scroll": 1.0,
-    "wand": 1.0
+    "wand": 1.0,
+    "accessory": 1.0
   },
   "_note_permanent_potions": "2026-10-24: the potions that give a permanent level or stats (Gain Level, Soma, Elixir of Gilgamesh, Fafnir's Blood) went from 4-6 to 8-10 (the top of the 0.1-10 worth range), about one floor of income where they are sold: 'too easy to get good stuff cheap' (playtest)."
 }

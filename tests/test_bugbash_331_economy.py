@@ -113,6 +113,24 @@ def test_bought_arrows_split_into_singles_never_return_more_than_half_the_price(
     assert m is g._shop_merchant
 
 
+@pytest.mark.parametrize('level', [1, 10, 40, 90])
+def test_a_traders_price_never_names_a_curse_ring(level):
+    """C8: unknown rings cost 1,050-2,650 on floor 10 and a curse ring 105,
+    so the tag told the hero which ring was a curse (the leak shop_worth_floor
+    closed for potions, scrolls and wands in 2026-10). No ware sells for less
+    than the hero is offered for it unknown."""
+    accs = items.load_items('accessory')
+    common = [a for a in accs if economy.item_worth(a) == 1.0 and not getattr(a, 'is_unique', False)]
+    for a in accs:
+        if getattr(a, 'is_unique', False):
+            continue
+        same_tier = [c for c in common if economy._item_tier(c) == economy._item_tier(a)]
+        if same_tier:
+            assert economy.stock_price(a, level) >= economy.stock_price(same_tier[0], level), a.id
+        assert economy.stock_price(a, level) >= economy.sell_offer(
+            a, level, known=False, identified=False), a.id
+
+
 def test_a_ware_set_at_your_feet_keeps_its_price_for_the_resale_cap(monkeypatch):
     """Bought on floor 3 and too heavy to carry; carried down to floor 40 and
     sold, it fetched four times what it cost."""
