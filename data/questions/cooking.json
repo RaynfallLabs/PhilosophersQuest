@@ -13802,7 +13802,7 @@
       "À la carte",
       "Au gratin"
     ],
-    "context": "'Mise en place' is French for 'putting in place' — from the verb mettre, 'to put.' It names the whole ready-first routine: read the recipe, gather your tools, measure each ingredient into its own container, and finish all the chopping before any heat goes on. Sources: en.wikipedia.org/wiki/Mise_en_place; escoffier.edu.",
+    "context": "'Mise en place' is French for 'putting in place' — from the verb mettre, 'to put.' It names the whole ready-first routine: read the recipe, gather the tools, measure each ingredient into its own container, and finish all the chopping before any heat goes on. Sources: en.wikipedia.org/wiki/Mise_en_place; escoffier.edu.",
     "topic": "mise-en-place-everything-in-its-place-before-the-burner"
   },
   {
@@ -13815,7 +13815,7 @@
       "Measuring everything first means fewer dirty bowls and faster cleanup afterward.",
       "Cutting it all ahead lets the flavors blend together before they reach the heat."
     ],
-    "context": "Once food is on the heat, time turns precious and stopping becomes impossible — you can't pause to mince garlic without scorching the sauce already in the pan. That's the whole point of mise en place: finish every cut and measure before the burner ever comes on. One chef-instructor put it simply: 'Preparation calms me down.' Sources: guide.michelin.com; escoffier.edu.",
+    "context": "Once food is on the heat, time turns precious and stopping becomes impossible — a cook can't pause to mince garlic without scorching the sauce already in the pan. That's the whole point of mise en place: finish every cut and measure before the burner ever comes on. Sources: guide.michelin.com; escoffier.edu.",
     "topic": "mise-en-place-everything-in-its-place-before-the-burner"
   },
   {
@@ -13837,7 +13837,7 @@
     "answer": "Stains the tablecloth",
     "choices": [
       "Stains the tablecloth",
-      "Reddens your fingers",
+      "Reddens the fingers",
       "Wakes the dead",
       "Feeds the saints"
     ],
@@ -13872,7 +13872,7 @@
   },
   {
     "tier": 4,
-    "question": "Made by hand, a true Oaxacan mole can swallow a whole day in the kitchen, yet the simmer itself barely takes an hour. The long, tiring stretch comes first, in how the cook handles each of the twenty-plus ingredients, every chile, seed, nut and spice, one by one. How does a mole cook prep each ingredient?",
+    "question": "Made by hand, a true Oaxacan mole can swallow a whole day in the kitchen, and the simmer is not what takes so long. The long, tiring stretch comes first, in how the cook handles each of the twenty-plus ingredients, every chile, seed, nut and spice, one by one. How does a mole cook prep each ingredient?",
     "answer": "Toasts each one separately",
     "choices": [
       "Toasts each one separately",
@@ -13884,7 +13884,7 @@
     "topic": "mole-pueblas-poblano-vs-oaxacas-black-mole"
   },
   {
-    "tier": 5,
+    "tier": 3,
     "question": "On a Mexican table, a bowl of guacamole sits beside a pot of mole, and the two names share an old word. Both come from Nahuatl, the language the Aztecs spoke more than five hundred years ago, and both end in the little piece 'molli.' What does 'molli' mean in that language?",
     "answer": "Sauce",
     "choices": [
@@ -13963,15 +13963,15 @@
   },
   {
     "tier": 1,
-    "question": "A girl unwraps a fresh steak, and her little brother recoils at the red liquid pooled in the tray: 'Gross, that's blood!' She tells him nearly all the blood was drained at slaughter, so the puddle is mostly water plus one protein from the muscle. What is that protein called?",
-    "answer": "myoglobin",
+    "question": "A girl unwraps a fresh steak, and her little brother recoils at the red liquid pooled in the tray: 'Gross, that's blood!' Their father, a cook, knows exactly what it is. What is the red puddle mostly made of?",
+    "answer": "Water, tinted red by a muscle protein",
     "choices": [
-      "myoglobin",
-      "collagen",
-      "gelatin",
-      "keratin"
+      "Water, tinted red by a muscle protein",
+      "Blood left behind in the meat",
+      "Melted fat, tinted red by the meat",
+      "Red dye the packer sprays on"
     ],
-    "context": "Nearly all the blood is drained at slaughter. The red juice in a steak package is mostly water — meat is roughly 75% water — plus myoglobin, a muscle protein whose iron turns red when it grabs oxygen. So the 'blood' on your plate isn't blood at all. Source: beardedbutchers.com — 'What Is the Red Juice in Steak.'",
+    "context": "Nearly all the blood is drained at slaughter. The red juice in a steak package is mostly water — meat is roughly 75% water — plus myoglobin, a muscle protein whose iron turns red when it grabs oxygen. So the 'blood' on the plate isn't blood at all. Source: beardedbutchers.com — 'What Is the Red Juice in Steak.'",
     "topic": "myoglobin-the-blood-that-isnt"
   },
   {
@@ -14257,7 +14257,7 @@
       "Popcorn",
       "Baby corn"
     ],
-    "context": "A corn tortilla starts from hard, dried field corn (also called dent corn), a starchy grain far too tough to eat straight off the plant - not the tender sweet corn you eat off the cob in summer. Source: honest-food.net (Hank Shaw); tortillaworld.com.",
+    "context": "A corn tortilla starts from hard, dried field corn (also called dent corn), a starchy grain far too tough to eat straight off the plant - not the tender sweet corn eaten off the cob in summer. Source: honest-food.net (Hank Shaw); tortillaworld.com.",
     "topic": "nixtamalization-the-alkali-secret-of-corn-masa-and-the-torti"
   },
   {
@@ -14266,11 +14266,11 @@
     "answer": "A dried corn husk",
     "choices": [
       "A dried corn husk",
-      "A banana leaf",
+      "A grape leaf",
       "A sheet of pastry",
       "A cabbage leaf"
     ],
-    "context": "A tamale is masa dough steamed inside a dried corn husk - the husk is the wrapper, peeled off and discarded, not the food. Source: masaamerica.com; queue scope.",
+    "context": "A tamale is masa dough most often steamed inside a dried corn husk (in parts of southern Mexico, a banana leaf) - the husk is the wrapper, peeled off and discarded, not the food. Source: masaamerica.com.",
     "topic": "nixtamalization-the-alkali-secret-of-corn-masa-and-the-torti"
   },
   {
@@ -14279,7 +14279,7 @@
     "answer": "Slaked lime",
     "choices": [
       "Slaked lime",
-      "Baking soda",
+      "Powdered alum",
       "Table salt",
       "Cream of tartar"
     ],
@@ -14301,19 +14301,6 @@
   },
   {
     "tier": 3,
-    "question": "The first cooks to soak corn in alkaline water had no shop selling bags of cal; they used a free material found in every home. The scientific-sounding Nahuatl word for their method still remembers it. What does nixtamalization plainly translate to?",
-    "answer": "Ash-corn-dough",
-    "choices": [
-      "Ash-corn-dough",
-      "Sacred-corn-bread",
-      "Golden-sun-cake",
-      "Stone-ground-meal"
-    ],
-    "context": "It joins Nahuatl 'nextli' (the lime ashes) and 'tamalli' (unformed corn dough) - literally 'ash-corn-dough.' Source: en.wikipedia.org/wiki/Nixtamalization (etymology); fritinancy.substack.com.",
-    "topic": "nixtamalization-the-alkali-secret-of-corn-masa-and-the-torti"
-  },
-  {
-    "tier": 3,
     "question": "Only a little lime goes into the corn pot, about a hundredth as much as the corn, yet that much alkali changes the kernels' color. Yellow corn comes out deeper, and deep red corn comes out startlingly different. What color does the red corn turn?",
     "answer": "Nearly black",
     "choices": [
@@ -14327,7 +14314,7 @@
   },
   {
     "tier": 3,
-    "question": "A bowl of Mexican pozole comes to the table with fat white kernels of lime-soaked corn bobbing in the soup, left whole instead of ground. Dried and ground coarse, the same kernels become the breakfast grits of the American South. What are the whole treated kernels called?",
+    "question": "A bowl of Mexican pozole comes to the table with fat white kernels of lime-soaked corn bobbing in the soup, left whole instead of ground. Dried and ground coarse, the same kernels make one kind of grits in the American South. What are the whole treated kernels called?",
     "answer": "Hominy",
     "choices": [
       "Hominy",
@@ -14378,14 +14365,14 @@
     "topic": "nixtamalization-the-alkali-secret-of-corn-masa-and-the-torti"
   },
   {
-    "tier": 5,
+    "tier": 3,
     "question": "A cook in El Salvador folds cheese, beans or pork inside a ball of masa and cooks it on a hot griddle into a thick, plump, stuffed flatbread. El Salvador claims it as its national dish. What is it called?",
     "answer": "Pupusa",
     "choices": [
       "Pupusa",
-      "Paella",
-      "Pierogi",
-      "Pretzel"
+      "Gordita",
+      "Tlacoyo",
+      "Memela"
     ],
     "context": "One alkali-treated dough feeds a whole cuisine: flat tortillas, husk-steamed tamales, and thick stuffed pupusas, the national dish of El Salvador. Source: masienda.com/blogs/learn/masa-guide; 196flavors.com/pupusa/.",
     "topic": "nixtamalization-the-alkali-secret-of-corn-masa-and-the-torti"
@@ -14405,7 +14392,7 @@
   },
   {
     "tier": 1,
-    "question": "A boy spends a miserable night with a vomiting-and-diarrhea bug that folks call the 24-hour flu, like millions of Americans every year. Scientists who traced food poisoning across the country found one kind of germ behind about six cases in every ten. What kind of germ is it?",
+    "question": "A boy spends a miserable night with a vomiting-and-diarrhea stomach bug, like millions of Americans every year. Scientists who traced food poisoning across the country found one kind of germ behind about six cases in every ten. What kind of germ is it?",
     "answer": "A virus",
     "choices": [
       "A bacterium",
@@ -14413,7 +14400,7 @@
       "A mold",
       "A parasite"
     ],
-    "context": "That germ is norovirus — the 'stomach bug.' The CDC estimates it causes about 58% of foodborne illnesses caught in the US: roughly 19 to 21 million illnesses and 2,500 outbreaks every year. Here's the tell that marks it as a virus rather than a bacterium like Salmonella — antibiotics do nothing against it. There's no drug that cures norovirus; you just have to ride it out. Source: CDC, Norovirus Facts and Stats (cdc.gov/norovirus).",
+    "context": "That germ is norovirus, the 'stomach bug.' The CDC estimates it causes about 58% of the foodborne illnesses caught in the US, and, counting every way it spreads, some 19 to 21 million illnesses and about 2,500 reported outbreaks every year. The tell that marks it as a virus rather than a bacterium like Salmonella: antibiotics do nothing against it. No drug cures norovirus; the sick person simply has to ride it out. Source: CDC, Norovirus Facts and Stats (cdc.gov/norovirus).",
     "topic": "norovirus-and-the-sick-cook-rule"
   },
   {
@@ -14426,7 +14413,7 @@
       "A sick cook handling ready-to-eat food with bare hands",
       "A cutting board shared between raw and cooked meat"
     ],
-    "context": "The culprit is a sick food worker. In CDC reviews of food-service norovirus outbreaks, an infected worker was implicated in 364 of 520 cases (about 70%) — and in more than half of those, the worker had touched ready-to-eat food like salads, raw fruit, and garnishes with bare hands. Norovirus is astonishingly contagious: as few as ~18 virus particles can make you sick, while a sick person sheds billions per gram — a speck too small to see is enough. So the rules are strict: food workers must stay home while ill AND for at least 48 hours after symptoms stop (a person stays contagious for days after feeling better), and bare hands stay off ready-to-eat food. CDC's Aron Hall warned that workers who come in sick 'risk contaminating food that many people will eat.' One more twist — alcohol hand sanitizer does NOT reliably kill norovirus; only scrubbing with soap and water washes it away, which is why the stomach bug races through sanitizer-everywhere places like cruise ships. Sources: CDC Newsroom (2014); CDC Facts for Food Workers.",
+    "context": "The culprit is a sick food worker. In CDC reviews of food-service norovirus outbreaks, an infected worker was implicated in 364 of 520 cases (about 70%) — and in more than half of those, the worker had touched ready-to-eat food like salads, raw fruit, and garnishes with bare hands. Norovirus is astonishingly contagious: as few as ~18 virus particles can make a person sick, while a sick person sheds billions per gram — a speck too small to see is enough. So the rules are strict: food workers must stay home while ill AND for at least 48 hours after symptoms stop (a person stays contagious for days after feeling better), and bare hands stay off ready-to-eat food. CDC's Aron Hall warned that workers who come in sick 'risk contaminating food that many people will eat.' One more twist — alcohol hand sanitizer does NOT reliably kill norovirus; only scrubbing with soap and water washes it away, which is why the stomach bug races through sanitizer-everywhere places like cruise ships. Sources: CDC Newsroom (2014); CDC Facts for Food Workers.",
     "topic": "norovirus-and-the-sick-cook-rule"
   },
   {
@@ -14439,7 +14426,7 @@
       "It passes straight through without being trapped",
       "It survives only on the shell, not inside the meat"
     ],
-    "context": "Because an oyster concentrates whatever floats in its water, a raw one grown in sewage-polluted water can hold MORE norovirus than the seawater around it — a build-up called bioaccumulation. That's why raw oysters are a classic carrier of the stomach bug. The key word is RAW: cooking oysters all the way through — to about 145°F (63°C) inside — kills the virus, so this is a raw-only gamble, not an unkillable food (a quick steaming isn't enough; only thorough cooking is reliable). A US risk assessment estimated about one norovirus illness for every ~1,000 raw-oyster meals — roughly 60,000 cases a year — with the risk highest in winter, the same cold season the stomach bug peaks on land. In 2023–24, oysters harvested from polluted waters in Mexico were traced to norovirus outbreaks in California. Sources: PMC, Risk Assessment of Norovirus Illness from Raw Oysters; WA State Dept of Health; CDC MMWR (2025).",
+    "context": "Because an oyster concentrates whatever floats in its water, a raw one grown in sewage-polluted water can hold MORE norovirus than the seawater around it, a build-up called bioaccumulation. That's why raw oysters are a classic carrier of the stomach bug. Cooking oysters all the way through, to about 145°F (63°C) inside, kills the virus, so this is a raw-only gamble, not an unkillable food (a quick steaming isn't enough; only thorough cooking is reliable). Sources: PMC, Risk Assessment of Norovirus Illness from Raw Oysters; WA State Dept of Health.",
     "topic": "norovirus-and-the-sick-cook-rule"
   },
   {
@@ -14457,33 +14444,20 @@
   },
   {
     "tier": 2,
-    "question": "Cooks in India's cooler, cattle-rich north simmer their rich gravies, butter chicken among them, in ghee, butter and cream. Along the palm-lined coasts of Kerala and Tamil Nadu in the hot, wet south, cooks reach for a fat from a nearby crop for almost every dish, even for blooming spices. Which fat do they use?",
+    "question": "Cooks in India's cooler, cattle-rich north simmer their rich gravies, butter chicken among them, in ghee, butter and cream. Along the palm-lined coast of Kerala in the hot, wet south, cooks reach for a fat from a nearby crop for almost every dish, even for blooming spices. Which fat do they use?",
     "answer": "Coconut oil",
     "choices": [
       "Coconut oil",
       "Olive oil",
       "Mustard oil",
-      "Peanut oil"
+      "Canola oil"
     ],
-    "context": "The fat follows the farm. The cattle-and-dairy north cooks in ghee (clarified butter), butter, cream, yogurt, and paneer, giving rich dairy gravies. The coconut-growing south cooks in coconut oil, grated coconut, and coconut milk — coconut wherever the north would reach for cream. Source: littleindiaofdenver.com/blog/differences-between-north-south-indian-cuisine",
-    "topic": "north-vs-south-india-two-plates-set-by-what-grows-where"
-  },
-  {
-    "tier": 2,
-    "question": "A cook in northern India bakes naan without a tray. He presses each flat round of dough against the blazing inner wall of a tall clay oven, hot enough to reach 900°F, where it sticks and bakes in about a minute before he peels it off and brushes it with ghee. What is that oven called?",
-    "answer": "A tandoor",
-    "choices": [
-      "A tandoor",
-      "A tagine",
-      "A hibachi",
-      "A kiln"
-    ],
-    "context": "A tandoor is a tall cylindrical clay oven, fired by charcoal or wood, whose walls can reach about 480°C (900°F). The cook slaps the flattened naan dough onto the inner wall; it bakes in a minute or two, then gets brushed with ghee. Source: en.wikipedia.org/wiki/Naan",
+    "context": "The fat follows the farm. The cattle-and-dairy north cooks in ghee (clarified butter), butter, cream, yogurt, and paneer, giving rich dairy gravies. The coconut-growing south, above all Kerala, cooks in coconut oil, grated coconut, and coconut milk — coconut wherever the north would reach for cream. Source: littleindiaofdenver.com/blog/differences-between-north-south-indian-cuisine",
     "topic": "north-vs-south-india-two-plates-set-by-what-grows-where"
   },
   {
     "tier": 3,
-    "question": "A South Indian cook grinds soaked black gram, a kind of lentil, with soaked grains into a smooth batter and leaves the bowl out on the counter overnight. By morning the batter has doubled, foamy, bubbly and gently sour, ready to be steamed or crisped on a griddle for breakfast. What put the bubbles in it?",
+    "question": "A South Indian cook grinds soaked black gram, a kind of lentil, with soaked grains into a smooth batter and leaves the bowl out on the counter overnight. By morning the batter has doubled, foamy, bubbly and gently sour, ready for breakfast. What put the bubbles in it?",
     "answer": "Wild microbes already in the batter",
     "choices": [
       "Wild microbes already in the batter",
@@ -14496,26 +14470,26 @@
   },
   {
     "tier": 3,
-    "question": "From one bowl of fermented batter, ground from soaked grain and black gram, a cook in Tamil Nadu makes two breakfasts. Poured thick into little round moulds and steamed, it puffs into soft, spongy white idli. Thinned and swirled across a hot griddle, it turns into a huge golden crepe with lacy edges. What is that crepe called?",
-    "answer": "A dosa",
+    "question": "In Tamil Nadu one bowl of fermented batter, ground from soaked grain and black gram, makes two breakfasts: idli, small soft white cakes, and dosa, a big crisp golden crepe with lacy edges. The batter is the same for both. What turns it into two such different dishes?",
+    "answer": "Idli is steamed in moulds; dosa is spread thin on a griddle",
     "choices": [
-      "A dosa",
-      "An appam",
-      "A vada",
-      "An uttapam"
+      "Idli is steamed in moulds; dosa is spread thin on a griddle",
+      "Idli is deep-fried in oil; dosa is baked in a clay oven",
+      "Idli batter is beaten with egg; dosa batter with milk",
+      "Idli cooks over a wood fire; dosa cooks over charcoal"
     ],
     "context": "Ground urad dal releases a natural mucilage that traps the fermentation gas. A thicker batter steamed in moulds sets into the soft, spongy idli cake; a thinner batter spread on a hot griddle crisps into the lacy dosa crepe. One batter, two textures. Source: boombay.in/blogs/articles/idli-vs-dosa",
     "topic": "north-vs-south-india-two-plates-set-by-what-grows-where"
   },
   {
     "tier": 4,
-    "question": "A northern Indian family scoops up dal, spiced lentils, with torn pieces of roti. Families in the south eat a different everyday counterpart: a sour, tangy stew of vegetables and pigeon peas, sharpened with tamarind and ladled out hot. What is that southern stew called?",
-    "answer": "Sambar",
+    "question": "A northern Indian family scoops up dal, spiced lentils, with torn pieces of roti. A family in the south ladles out sambar instead: a hot stew of vegetables and pigeon peas with a sharp, sour edge. Which ingredient gives sambar its sourness?",
+    "answer": "Tamarind",
     "choices": [
-      "Sambar",
-      "Rasam",
-      "Biryani",
-      "Korma"
+      "Tamarind",
+      "Lime juice",
+      "Yogurt",
+      "Vinegar"
     ],
     "context": "Sambar is the everyday southern counterpart to a northern dal-and-roti plate: a tangy lentil-and-vegetable stew built on toor dal (pigeon peas) and soured with tamarind, ladled over rice rather than scooped with bread. Source: en.wikipedia.org/wiki/Sambar_(dish)",
     "topic": "north-vs-south-india-two-plates-set-by-what-grows-where"
@@ -14647,7 +14621,7 @@
       "a strip of bark",
       "a root"
     ],
-    "context": "Nutmeg grows inside a fleshy fruit that looks like a small yellow apricot; when ripe, the husk splits along a ridge to reveal the shiny purple-brown seed, which you grate fresh rather than grind from a powder. (Cinnamon is bark, cloves are dried flower buds, ginger is a root — so all four are real spice-plant parts.) Source: https://en.wikipedia.org/wiki/Myristica_fragrans",
+    "context": "Nutmeg grows inside a fleshy fruit that looks like a small yellow apricot; when ripe, the husk splits along a ridge to reveal the shiny purple-brown seed, which many cooks grate fresh rather than buy ready-ground. (Cinnamon is bark and cloves are dried flower buds, so other spices do come from those parts.) Source: https://en.wikipedia.org/wiki/Myristica_fragrans",
     "topic": "nutmeg-and-the-banda-islands-the-spice-that-bought-manhattan"
   },
   {
@@ -14660,7 +14634,7 @@
       "saffron",
       "allspice"
     ],
-    "context": "That lacy red net around the seed is called the aril; peeled off and dried, it becomes mace, a milder, more delicate cousin of nutmeg. Nutmeg is famously the only fruit that yields two separate spices. Source: https://en.wikipedia.org/wiki/Nutmeg",
+    "context": "That lacy red net around the seed is called the aril; peeled off and dried, it becomes mace, a milder, more delicate cousin of nutmeg. So one fruit yields two separate spices. Source: https://en.wikipedia.org/wiki/Nutmeg",
     "topic": "nutmeg-and-the-banda-islands-the-spice-that-bought-manhattan"
   },
   {
@@ -14730,13 +14704,13 @@
   },
   {
     "tier": 4,
-    "question": "Dutch traders on the Banda docks coated every nutmeg in white lime powder before a single barrel left for Europe in the 1600s. It was a deliberate step, not sloppy packing: the Dutch East India Company held every nutmeg tree on Earth and meant to keep it that way. What did the lime do to each nutmeg?",
-    "answer": "it kept the seed from sprouting",
+    "question": "Dutch traders on the Banda docks coated every nutmeg in white lime powder before a single barrel left for Europe in the 1600s. It was a deliberate step, not sloppy packing: the Dutch East India Company held every nutmeg tree on Earth and guarded every step of the trade. What did the lime do to each nutmeg?",
+    "answer": "it kept the nutmeg from sprouting",
     "choices": [
-      "it kept the seed from sprouting",
-      "it preserved the seed against mold",
-      "it bleached the seed pale white",
-      "it strengthened the seed's aroma"
+      "it kept the nutmeg from sprouting",
+      "it made the nutmeg weigh more for sale",
+      "it deepened the nutmeg's warm aroma",
+      "it kept the nutmeg's color bright"
     ],
     "context": "A limed nutmeg couldn't sprout, so even a stolen seed was useless for starting a rival grove somewhere else. The Dutch guarded their monopoly this way for over a century. Source: https://www.cooksinfo.com/nutmeg",
     "topic": "nutmeg-and-the-banda-islands-the-spice-that-bought-manhattan"
@@ -14751,7 +14725,7 @@
       "Barbados",
       "Trinidad"
     ],
-    "context": "That Caribbean foothold is why Grenada is nicknamed the 'Isle of Spice.' It's now the world's second-largest nutmeg exporter (after Indonesia), and its flag, adopted in 1974, proudly shows a split-open nutmeg. Source: https://en.wikipedia.org/wiki/Flag_of_Grenada",
+    "context": "That Caribbean foothold is why Grenada is nicknamed the 'Isle of Spice.' It has long ranked among the world's leading nutmeg growers, and its flag, adopted in 1974, proudly shows a split-open nutmeg. Source: https://en.wikipedia.org/wiki/Flag_of_Grenada",
     "topic": "nutmeg-and-the-banda-islands-the-spice-that-bought-manhattan"
   },
   {
@@ -14790,7 +14764,7 @@
       "The Maldive Islands",
       "The Galapagos Islands"
     ],
-    "context": "The Banda Islands are a tiny volcanic cluster in the Maluku province of eastern Indonesia - for centuries the only place on Earth the nutmeg tree grew. People have used Banda nutmeg for a very long time: burnt nutmeg residue found on pottery from Pulau Ai dates back about 3,500 years. Source: https://en.wikipedia.org/wiki/Nutmeg",
+    "context": "The Banda Islands are a tiny volcanic cluster in the Maluku province of eastern Indonesia - for centuries the only place on Earth the nutmeg tree grew. People have used Banda nutmeg for a very long time: nutmeg residue found on pottery from Pulau Ai dates back about 3,500 years. Source: https://en.wikipedia.org/wiki/Nutmeg",
     "topic": "nutmeg-mace-and-the-spice-islands"
   },
   {
@@ -14835,28 +14809,15 @@
   {
     "tier": 5,
     "question": "Nathaniel Courthope, an English captain, and a few dozen of his men dug in on Run to defy the Dutch East India Company, the mightiest sea power of the age. Run is a nutmeg island about three kilometres from end to end, and everyone expected Courthope to fall within weeks. How long did he hold it before he was killed?",
-    "answer": "More than four years",
+    "answer": "About four years",
     "choices": [
-      "More than four years",
+      "About four years",
       "About three weeks",
       "A single night",
       "Nearly ten years"
     ],
-    "context": "Nathaniel Courthope fortified tiny Run and held it for England against the Dutch for over 1,500 days (1616-1620) until he was killed in a Dutch attack. Run is astonishingly small - about 3 km long and under 1 km wide - yet its nutmeg made it worth fighting over for years. Source: https://en.wikipedia.org/wiki/Run_(island)  (Legend.)",
+    "context": "Nathaniel Courthope fortified tiny Run and held it for England against the Dutch from Christmas 1616 until he was killed in a Dutch attack in 1620, about four years (some accounts count 1,540 days). Run is astonishingly small, about 3 km long and under 1 km wide, yet its nutmeg made it worth fighting over for years. Source: https://en.wikipedia.org/wiki/Run_(island)",
     "topic": "nutmeg-mace-and-the-spice-islands"
-  },
-  {
-    "tier": 1,
-    "question": "A boy cracks open a regular can of soda: about 140 calories, nearly all of them from sugar, with no real vitamins, minerals, protein or fiber along for the ride. Nutritionists have a short, two-word nickname for calories like these. What is that nickname?",
-    "answer": "empty calories",
-    "choices": [
-      "empty calories",
-      "burnt calories",
-      "loose calories",
-      "silent calories"
-    ],
-    "context": "\"Empty calories\" means energy that comes almost entirely from sugar or fat, with little or no vitamins, minerals, fiber, or protein. The idea being taught is nutrition PER calorie, not calories alone. A 12-oz can of regular soda is the classic example: roughly 140 calories from about 40 grams of added sugar, with essentially no measurable vitamins or minerals. Source: en.wikipedia.org/wiki/Empty_calories.",
-    "topic": "nutrient-density-liver-natures-multivitamin"
   },
   {
     "tier": 1,
@@ -14868,12 +14829,12 @@
       "a handful of gummy candy",
       "a glass of lemonade"
     ],
-    "context": "An egg is low in calories but nutrient-packed — most of its vitamin A, B12, D, choline, iron, zinc and selenium ride in the food, not just energy. That is nutrient density: beneficial nutrients relative to the calories. A boiled egg easily beats a soda of the same calories, while gummy candy and lemonade are, like soda, mostly sugar. Source: healthline.com/nutrition/egg-whites-nutrition.",
+    "context": "An egg is low in calories but nutrient-packed: along with its energy it carries vitamins A, B12 and D, choline, iron, zinc and selenium. That is nutrient density: beneficial nutrients relative to the calories. A boiled egg easily beats a soda of the same calories, while gummy candy and lemonade are, like soda, mostly sugar. Source: healthline.com/nutrition/egg-whites-nutrition.",
     "topic": "nutrient-density-liver-natures-multivitamin"
   },
   {
     "tier": 2,
-    "question": "American mothers after World War II pressed one cheap food on their children as the classic eat-this-and-grow-strong meal. Ounce for ounce it packs more vitamins and minerals than almost any other food on Earth, and traditional cooks nicknamed it 'nature's multivitamin.' Which food is it?",
+    "question": "American mothers after World War II pressed one cheap food on their children as the classic eat-this-and-grow-strong meal. Ounce for ounce it packs more vitamins and minerals than almost any other food on Earth, and modern fans of old-fashioned foods have nicknamed it 'nature's multivitamin.' Which food is it?",
     "answer": "a slice of beef liver",
     "choices": [
       "a slice of beef liver",
@@ -14899,15 +14860,15 @@
   },
   {
     "tier": 3,
-    "question": "A girl munches a carrot, and her body must first convert its orange pigment, beta-carotene, before using any of its vitamin A. Her brother eats liver and skips that step, because liver's vitamin A arrives ready to use. What is that ready form called?",
-    "answer": "retinol",
+    "question": "A girl munches a carrot, rich in orange beta-carotene, which her body has to turn into vitamin A first. Her brother eats liver, which hands over vitamin A ready to use, as retinol, with no converting needed. Which other food also delivers retinol ready-made?",
+    "answer": "Egg yolks",
     "choices": [
-      "retinol",
-      "niacin",
-      "lecithin",
-      "keratin"
+      "Egg yolks",
+      "Sweet potatoes",
+      "Spinach leaves",
+      "Ripe mangoes"
     ],
-    "context": "Liver's headline nutrient is vitamin A in its ready-to-use form, retinol (also called preformed vitamin A). Animal foods like liver and eggs give retinol directly; plants only give provitamin A carotenoids such as beta-carotene, which the body must first convert into vitamin A in the intestine. So liver's vitamin A needs no conversion. Source: ods.od.nih.gov, Vitamin A fact sheet.",
+    "context": "Liver's headline nutrient is vitamin A in its ready-to-use form, retinol (also called preformed vitamin A). Animal foods such as liver, egg yolks and dairy give retinol directly; plants, sweet potatoes, spinach and mangoes among them, give only provitamin A carotenoids such as beta-carotene, which the body must first convert into vitamin A in the intestine. Source: ods.od.nih.gov, Vitamin A fact sheet.",
     "topic": "nutrient-density-liver-natures-multivitamin"
   },
   {
@@ -14998,25 +14959,25 @@
       "A woven mat of fine roots",
       "A layer of protective bark"
     ],
-    "context": "Walnuts and pecans aren't true nuts - they're the seeds of drupes. The green outer husk is the fleshy fruit part; the wrinkled brown 'shell' we crack sits inside that husk, and the edible kernel lies within the shell in two halves. Botanists call the walnut a 'drupe-like nut,' since its husk is technically an involucre - but the plain point holds: not a true nut. Source: https://en.wikipedia.org/wiki/Walnut",
+    "context": "Walnuts and pecans aren't true nuts - they're the seeds of drupes. The green outer husk is the fleshy fruit part; the wrinkled brown 'shell' people crack sits inside that husk, and the edible kernel lies within the shell in two halves. Botanists call the walnut a 'drupe-like nut,' since its husk is technically an involucre - but the plain point holds: not a true nut. Source: https://en.wikipedia.org/wiki/Walnut",
     "topic": "nuts-that-arent-nuts"
   },
   {
     "tier": 4,
-    "question": "High on the palm, a coconut grows as a smooth green fruit the size of a football. Workers strip off its thick fibrous husk for doormats and rope, and inside lies a woody shell, the brown, hairy coconut sold in shops, wrapped around a single seed. What kind of fruit do botanists class the coconut as?",
-    "answer": "A drupe",
+    "question": "High on the palm, a coconut grows as a smooth green fruit the size of a football. Workers strip off its thick fibrous husk for doormats and rope, and inside lies the brown, hairy shell sold in shops. Botanists say the coconut is built like which juicy fruit?",
+    "answer": "A plum",
     "choices": [
-      "A drupe",
-      "A true nut",
-      "A berry",
-      "A pome"
+      "A plum",
+      "A melon",
+      "An orange",
+      "A pomegranate"
     ],
     "context": "A coconut is a drupe - the same fruit type as a peach or plum - not a nut at all. Like every drupe it has three layers: a smooth exocarp (skin), a fibrous mesocarp (the coir husk used for mats and rope), and a hard endocarp - the woody stone about 4 mm thick around the seed. The brown, hairy 'coconut' sold in shops is just that inner stone. Source: https://en.wikipedia.org/wiki/Coconut",
     "topic": "nuts-that-arent-nuts"
   },
   {
     "tier": 4,
-    "question": "A botanist sorts a bag of trail mix by her strict rule: only a fruit with a hard shell, grown from a single ovary, that never splits open by itself to free its seed counts as a true nut. Most of the 'nuts' in the bag fail, but a few everyday ones pass. Which of these is a real nut?",
+    "question": "A botanist sorts a bag of trail mix by her strict rule: only a fruit with a hard shell, grown from a single ovary, that never splits open by itself to free its seed counts as a true nut. Most of the 'nuts' in the bag fail, but a few everyday ones pass. Which everyday nut passes her test?",
     "answer": "The hazelnut",
     "choices": [
       "The hazelnut",
@@ -15042,7 +15003,7 @@
   },
   {
     "tier": 1,
-    "question": "A miller strips one big piece off every raw oat before a single flake reaches a breakfast bowl, and throws it away. It can be as much as a third of the oat's weight, so tough and woody that neither a person nor a cow can chew it. Which part of the oat is it?",
+    "question": "A miller strips one big piece off every raw oat before it becomes breakfast. It can be a third of the oat's weight, so tough and woody that the human gut cannot break it down. Which part of the oat is it?",
     "answer": "the hull",
     "choices": [
       "the hull",
@@ -15050,15 +15011,15 @@
       "the germ",
       "the endosperm"
     ],
-    "context": "Strip off that inedible hull — the papery husk — and what's left is the oat GROAT: the whole kernel, with its bran, germ, and starchy endosperm still intact. That's why every kind of oatmeal, even the fastest instant packet, still counts as a whole grain. And the hull is no small thing — roughly a quarter to a third of the raw grain's weight is husk that never reaches your bowl. Sources: nutritionsource.hsph.harvard.edu/food-features/oats; ncbi.nlm.nih.gov/pmc/articles/PMC9497932.",
+    "context": "Strip off that inedible hull — the papery husk — and what's left is the oat GROAT: the whole kernel, with its bran, germ, and starchy endosperm still intact. That's why every kind of oatmeal, even the fastest instant packet, still counts as a whole grain. And the hull is no small thing — roughly a quarter to a third of the raw grain's weight is husk that never reaches the bowl. Sources: nutritionsource.hsph.harvard.edu/food-features/oats; ncbi.nlm.nih.gov/pmc/articles/PMC9497932.",
     "topic": "oats-steel-cut-vs-rolled-vs-instant"
   },
   {
     "tier": 2,
     "question": "A cook stirs a pot of Irish oatmeal, the chewiest, nuttiest kind, for a slow half-hour, and it never turns to mush. It is made from whole oat groats with only one simple thing done to them at the mill. What has been done to the groats?",
-    "answer": "chopped into pebbly bits by steel blades",
+    "answer": "chopped into two or three pebbly bits",
     "choices": [
-      "chopped into pebbly bits by steel blades",
+      "chopped into two or three pebbly bits",
       "toasted whole over a low, dry flame",
       "soaked in warm water until they sprouted",
       "ground down into a coarse, sandy flour"
@@ -15089,7 +15050,7 @@
       "they're a different, cheaper grain that only looks similar",
       "they're actually richer in fiber, concentrated by the processing"
     ],
-    "context": "Weigh out the same 40-gram serving of steel-cut, rolled, or quick oats and you get almost identical nutrition — about 150 calories, 27g carbs, 5g protein, and 4g fiber. Instant oats are just steamed the longest, pre-cooked, dried, and rolled thinnest of all, so in the bowl you're basically re-wetting oats that are already cooked — ready in a minute or two. More processing buys speed, not 'junk.' (Flavored instant packets can add sugar, but that's the flavoring, not the oat.) Sources: healthline.com/nutrition/rolled-vs-steel-cut-oats; medicalnewstoday.com/articles/rolled-vs-steel-cut-oats.",
+    "context": "Weigh out the same 40-gram serving of steel-cut, rolled, or quick oats and the nutrition comes out almost identical — about 150 calories, 27g carbs, 5g protein, and 4g fiber. Instant oats are just steamed the longest, pre-cooked, dried, and rolled thinnest of all, so in the bowl the cook is basically re-wetting oats that are already cooked — ready in a minute or two. More processing buys speed, not 'junk.' (Flavored instant packets can add sugar, but that's the flavoring, not the oat.) Sources: healthline.com/nutrition/rolled-vs-steel-cut-oats; medicalnewstoday.com/articles/rolled-vs-steel-cut-oats.",
     "topic": "oats-steel-cut-vs-rolled-vs-instant"
   },
   {
@@ -15102,12 +15063,12 @@
       "a sticky protein called avenin",
       "a plant wax called cutin"
     ],
-    "context": "Beta-glucan is a soluble fiber packed into the oat (about 4 grams in every 100 grams of dry oats). As oats cook, it dissolves into a thick gel — that's the creamy, gluey texture. That same gel does the cholesterol trick: in your gut it traps cholesterol-rich bile acids and carries them out as waste, so your liver has to pull cholesterol out of your blood to brew fresh bile, and your blood cholesterol drops. One fiber, both famous powers. Sources: en.wikipedia.org/wiki/Oat; nutritionsource.hsph.harvard.edu/food-features/oats.",
+    "context": "Beta-glucan is a soluble fiber packed into the oat (about 4 grams in every 100 grams of dry oats). As oats cook, it dissolves into a thick gel — that's the creamy, gluey texture. That same gel does the cholesterol trick: in the gut it traps cholesterol-rich bile acids and carries them out as waste, so the liver has to pull cholesterol out of the blood to brew fresh bile, and blood cholesterol drops. One fiber, both famous powers. Sources: en.wikipedia.org/wiki/Oat; nutritionsource.hsph.harvard.edu/food-features/oats.",
     "topic": "oats-steel-cut-vs-rolled-vs-instant"
   },
   {
     "tier": 1,
-    "question": "At a Mexican taqueria, the hand-lettered menu lists carne asada, al pastor and one favorite made from a single beef cut simmered low and slow for hours until fork-tender. The cook chops it, piles it into a warm corn tortilla and tops it with cilantro and diced onion. Which part of the cow is it?",
+    "question": "A Mexican taqueria lists carne asada, al pastor and one beef favorite, simmered for hours until fork-tender. The cook peels off its rough outer skin, chops the meat and piles it into tortillas topped with cilantro and onion. Which part of the cow is it?",
     "answer": "The tongue",
     "choices": [
       "The tongue",
@@ -15115,20 +15076,7 @@
       "The shank",
       "The brisket"
     ],
-    "context": "These are 'tacos de lengua' — lengua is Spanish for tongue. Beef tongue, boiled for hours until fork-tender, is prized across Mexico and beyond. It's one of the 'variety meats,' or offal: the edible inside parts of an animal that aren't the muscle you'd get in a steak. Source: https://www.mylatinatable.com/make-authentic-beef-tongue-tacos-de-lengua/",
-    "topic": "offal-nose-to-tail"
-  },
-  {
-    "tier": 2,
-    "question": "A butcher calls the liver, kidneys, heart and other inside parts of an animal offal, a plain, honest word with nothing fancy about it. The name comes from an old word that describes these bits by one simple fact about them. According to that old word, what do they do?",
-    "answer": "Fall off the carcass",
-    "choices": [
-      "Fall off the carcass",
-      "Rot before the meat",
-      "Sell for the least",
-      "Weigh next to nothing"
-    ],
-    "context": "'Offal' comes straight from 'off-fall' — literally the bits that fall off when a butcher breaks down an animal. It reached English from the Middle Dutch 'afval' (af 'off' + vallen 'to fall'). And despite sounding identical, it has nothing to do with 'awful,' which first meant 'full of awe.' Source: https://en.wikipedia.org/wiki/Offal",
+    "context": "These are 'tacos de lengua' — lengua is Spanish for tongue. Beef tongue, boiled for hours until fork-tender and then peeled of its rough skin, is prized across Mexico and beyond. It's one of the 'variety meats,' or offal: the edible inside parts of an animal that aren't the muscle of a steak. Source: https://www.mylatinatable.com/make-authentic-beef-tongue-tacos-de-lengua/",
     "topic": "offal-nose-to-tail"
   },
   {
@@ -15224,15 +15172,15 @@
   },
   {
     "tier": 4,
-    "question": "An Indian cook melts butter gently and keeps it on the heat until the specks at the bottom of the pan turn brown, then strains the clear golden fat away from them. The fat still tastes richly of butter but now shrugs off heat above 450°F without scorching. What is it called?",
-    "answer": "Ghee",
+    "question": "An Indian cook makes ghee. A cook making plain clarified butter would strain off the melted fat as soon as it separates, but she keeps the pan simmering until the specks at the bottom turn brown, and only then pours off the golden fat. What does that longer simmer give ghee?",
+    "answer": "A nutty, toasty aroma",
     "choices": [
-      "Ghee",
-      "Margarine",
-      "Lard",
-      "Whey"
+      "A nutty, toasty aroma",
+      "A thick, creamy body",
+      "A sharp, cheesy tang",
+      "A salty, briny bite"
     ],
-    "context": "Straining the burnable milk solids out of melted butter leaves clarified butter; cooking it a little longer so those solids brown first makes ghee, with a nutty flavor. Free of the milk solids, ghee's smoke point leaps to about 450-485 F (230-252 C) -- a 100-plus degree jump over plain butter -- with the same buttery taste and a longer shelf life. Source: VomFass; Wikipedia, 'Clarified butter.'",
+    "context": "Straining the burnable milk solids out of melted butter leaves clarified butter; simmering it longer, until those solids brown, makes ghee, and the longer simmer leaves it nutty-tasting and aromatic. Free of the milk solids, ghee's smoke point leaps to about 450-485 F (230-252 C), a 100-plus degree jump over plain butter. Source: Wikipedia, 'Ghee'; Wikipedia, 'Clarified butter.'",
     "topic": "oil-smoke-points-why-butter-burns-but-ghee-doesnt"
   },
   {
@@ -15251,14 +15199,14 @@
   {
     "tier": 1,
     "question": "A boy tries salmon at dinner and finds it rich and buttery, almost as if it had been cooked in cream. The next night his mother serves cod, and it tastes mild and clean, almost plain. Both are fish from the sea. What makes the salmon taste so much richer than the cod?",
-    "answer": "Salmon packs fat right into the flesh you eat",
+    "answer": "Salmon stores its fat right in its flesh",
     "choices": [
-      "Salmon packs fat right into the flesh you eat",
+      "Salmon stores its fat right in its flesh",
       "Salmon is always cooked in more butter and oil",
       "Salmon is a far older and tougher fish",
       "Salmon soaks up salt before it reaches the shop"
     ],
-    "context": "Salmon, mackerel, sardines and herring are called 'oily fish' because they store their fat right in the muscle you eat — which is why the fillet looks glossy and moist and tastes rich and strong. Lean fish like cod keep almost none there. Source: Wikipedia, 'Oily fish' (en.wikipedia.org/wiki/Oily_fish).",
+    "context": "Salmon, mackerel, sardines and herring are called 'oily fish' because they store their fat right in the muscle people eat — which is why the fillet looks glossy and moist and tastes rich and strong. Lean fish like cod keep almost none there. Source: Wikipedia, 'Oily fish' (en.wikipedia.org/wiki/Oily_fish).",
     "topic": "oily-fish-vs-lean-the-fat-that-flavors-and-spoils"
   },
   {
@@ -15284,33 +15232,33 @@
       "Gives off a slow, steady warmth",
       "Stores spare oxygen for cold water"
     ],
-    "context": "Fish pack their fat with omega-3s precisely because these oils stay fluid at temperatures that would turn a land animal's fat rock-solid — so the fish keeps moving in near-freezing seas. Biologists call this staying-flexible trick homeoviscous adaptation, and the colder the water, the more omega-3 a fish tends to carry. One of them, DHA, is the most unsaturated (most bendable) fat found in any living thing. Source: MSU Extension, 'Omega-3 fatty acids in fish from the Great Lakes' (canr.msu.edu).",
+    "context": "Fish pack their fat with omega-3s precisely because these oils stay fluid at temperatures that would turn a land animal's fat rock-solid — so the fish keeps moving in near-freezing seas. Biologists call this staying-flexible trick homeoviscous adaptation, and the colder the water, the more omega-3 a fish tends to carry. One of them, DHA, is among the most unsaturated (most bendable) fats in nature. Source: MSU Extension, 'Omega-3 fatty acids in fish from the Great Lakes' (canr.msu.edu).",
     "topic": "oily-fish-vs-lean-the-fat-that-flavors-and-spoils"
   },
   {
     "tier": 4,
-    "question": "A woman pulls an old tin of sardines from the back of the pantry, pops the lid, and the reek hits her across the room. The fish is not rotting from bacteria; oxygen and warmth have been attacking the long chains of its fat day after day, snapping pieces off. What is her nose catching in that rancid stink?",
+    "question": "A woman walks into a warm kitchen where a bottle of fish oil has sat uncapped for months, and the reek hits her across the room. Oxygen and warmth have been attacking the long chains of its fat day after day, snapping pieces off. What is her nose catching in that rancid stink?",
     "answer": "Brand-new molecules torn out of the spoiled fat",
     "choices": [
       "Brand-new molecules torn out of the spoiled fat",
-      "The fish's own oil, grown stronger as it sat",
+      "The oil's fishy smell, grown stronger as it sat",
       "Bacteria feeding on the fat and breathing out gas",
-      "The oil's own smell, freed as the fat breaks apart"
+      "Mold spores growing across the surface of the oil"
     ],
-    "context": "When the fat oxidizes, oxygen breaks it into brand-new molecules — peroxides and aldehydes — and THOSE are the sharp 'fish gone bad' smell your nose recoils from. The original oil barely smells at all. Source: OmegaQuant, 'How to tell if fish oil is rancid' (omegaquant.com); Omega3 Innovations, 'Is your fish oil rancid?'.",
+    "context": "When the fat oxidizes, oxygen breaks it into brand-new molecules, peroxides and aldehydes, and THOSE are the sharp 'fish gone bad' smell a nose recoils from. The original oil barely smells at all. Source: OmegaQuant, 'How to tell if fish oil is rancid' (omegaquant.com); Omega3 Innovations, 'Is your fish oil rancid?'.",
     "topic": "oily-fish-vs-lean-the-fat-that-flavors-and-spoils"
   },
   {
     "tier": 5,
-    "question": "Sailors and villagers once packed fish in barrels of coarse salt for long voyages, and the salt pulled water out of the flesh so nothing could rot. The trick worked beautifully on lean cod, but on a fat-rich oily fish it fails, however much salt goes in. What is it about an oily fish that defeats the salt?",
-    "answer": "Its fat blocks the salt from soaking into the meat",
+    "question": "Sailors and villagers once buried lean cod in coarse salt, which pulled the water out of the flesh, and then dried it hard enough to keep for months. Treat a fat-rich oily fish the same way and it spoils, however much salt goes in. What goes wrong with the oily fish?",
+    "answer": "Its fat turns rancid long before the fish is dry",
     "choices": [
-      "Its fat blocks the salt from soaking into the meat",
+      "Its fat turns rancid long before the fish is dry",
       "Its fat melts in the salt and drips away uselessly",
       "Its flesh is simply too tough for salt to enter",
       "Its bones soak up all the salt before the meat can"
     ],
-    "context": "Salt-curing barely works on an oily fish: the fat physically blocks the salt from soaking in, and the fat itself turns rancid — so you can't just salt a fatty mackerel and ship it around the world. Source: Portugal.com, 'Bacalhau' (oils and fats prevent salt from preserving fish).",
+    "context": "Dry salting and drying suit lean white fish such as cod. In an oily fish the fat slows the salt as it soaks in, while salt and air speed up the fat's oxidation, so it turns rancid; oily fish such as herring and mackerel are kept instead by pickling in brine, smoking or canning. Sources: vikaspedia.in, 'Spoilage of fish products'; agritech.tnau.ac.in, 'Fish spoilage'.",
     "topic": "oily-fish-vs-lean-the-fat-that-flavors-and-spoils"
   },
   {
@@ -15328,15 +15276,15 @@
   },
   {
     "tier": 1,
-    "question": "Olives hang plump on the trees of a sun-baked Greek grove at harvest time, looking as ripe and inviting as purple grapes. Suppose you pluck one straight off the branch and pop it into your mouth. What happens next?",
-    "answer": "It's so bitter you pucker up and spit it right out",
+    "question": "Olives hang plump on the trees of a sun-baked Greek grove at harvest time, looking as ripe and inviting as purple grapes. A tourist plucks one straight off the branch and pops it into his mouth. What happens next?",
+    "answer": "It's so bitter he puckers up and spits it right out",
     "choices": [
-      "It's so bitter you pucker up and spit it right out",
-      "It's so sweet and juicy you finish it like a ripe plum",
+      "It's so bitter he puckers up and spits it right out",
+      "It's so sweet and juicy he finishes it like a ripe plum",
       "It's so rich and buttery it tastes just like olive oil",
-      "It's so bland and watery you barely taste a thing"
+      "It's so bland and watery he barely tastes a thing"
     ],
-    "context": "A fresh, uncured olive is so bitter and mouth-puckering it's basically inedible — you genuinely cannot just eat one straight off the tree. Source: en.wikipedia.org/wiki/Oleuropein; chowhound.com black-vs-green-olive.",
+    "context": "A fresh, uncured olive is so bitter and mouth-puckering it's basically inedible: nobody can just eat one straight off the tree. Source: en.wikipedia.org/wiki/Oleuropein; chowhound.com black-vs-green-olive.",
     "topic": "olive-oil-the-mediterraneans-liquid-gold"
   },
   {
@@ -15367,20 +15315,20 @@
   },
   {
     "tier": 2,
-    "question": "A crate of raw olives sits fresh from the tree, so bitter that nobody can stand to chew one. Suppose you want to eat them anyway. You turn to the trick that has made olives edible around the Mediterranean since ancient times. What do you do to them?",
-    "answer": "You soak them for weeks in salty brine so the bitterness leaches out",
+    "question": "A crate of raw olives sits fresh from the tree, so bitter that nobody can stand to chew one. A cook wants to eat them anyway, so she turns to the trick that has made olives edible around the Mediterranean since ancient times. What does she do to them?",
+    "answer": "She soaks them for weeks in salty brine so the bitterness leaches out",
     "choices": [
-      "You soak them for weeks in salty brine so the bitterness leaches out",
-      "You roast them at high heat until the bitterness cooks away",
-      "You freeze them solid, which breaks down the bitter compound",
-      "You let them dry in the sun until they sweeten like raisins"
+      "She soaks them for weeks in salty brine so the bitterness leaches out",
+      "She roasts them at high heat until the bitterness cooks away",
+      "She freezes them solid, which breaks down the bitter compound",
+      "She coats them in honey until the sweetness hides the bitter taste"
     ],
-    "context": "To make olives edible you cure them — soak for weeks in salty brine (or in lye, or in plain water changed daily) so the bitter oleuropein slowly leaches out. It's slow: water-cured olives need fresh water daily for about two weeks, and brined olives can sit for weeks up to six months. Source: en.wikipedia.org/wiki/Oleuropein; masterclass.com how-to-cure-olives; homegrownhappiness.com salt-brine-cured-olives.",
+    "context": "To make olives edible, cooks cure them: they soak them for weeks in salty brine (or in lye, or in plain water changed daily) so the bitter oleuropein slowly leaches out. It's slow: water-cured olives need fresh water daily for about two weeks, and brined olives can sit for weeks up to six months. Source: en.wikipedia.org/wiki/Oleuropein; masterclass.com how-to-cure-olives; homegrownhappiness.com salt-brine-cured-olives.",
     "topic": "olive-oil-the-mediterraneans-liquid-gold"
   },
   {
     "tier": 3,
-    "question": "A shopper scans the oil aisle, where every bottle of olive oil wears a grade on its label: 'refined,' 'pure,' 'virgin,' 'extra virgin.' Extra virgin sits at the top, the most peppery, the greenest and by far the priciest, and it earns that grade not by taste alone but by how the oil left the fruit. What earns a batch of olive oil the 'extra virgin' rating?",
+    "question": "A shopper scans the oil aisle, where every bottle of olive oil wears a grade on its label: 'refined,' 'pure,' 'virgin,' 'extra virgin.' Extra virgin sits at the top, the most peppery, the greenest and by far the priciest, and it earns that grade not by taste alone but by how the oil left the fruit. What must be true of every batch that earns that rating?",
     "answer": "The oil was pressed from the fruit by crushing alone, no heat or chemicals",
     "choices": [
       "The oil was pressed from the fruit by crushing alone, no heat or chemicals",
@@ -15419,15 +15367,15 @@
   },
   {
     "tier": 3,
-    "question": "Crowds in ancient Israel and Greece gathered to watch a new king or a high priest be anointed, and the word was no poetic phrase. The title Christ comes from the Greek Christos, 'the anointed one.' Suppose you were the one being made king. What was done to you before the people?",
-    "answer": "Sacred olive oil was poured over your head",
+    "question": "Crowds in ancient Israel gathered to watch a king or a high priest take office, in a rite so central that the Greek word for such a man, Christos, became the title Christ. What was done to the new king in that rite?",
+    "answer": "Sacred olive oil was poured over his head",
     "choices": [
-      "Sacred olive oil was poured over your head",
-      "A crown of gold was set upon your brow",
-      "A holy sword was laid across your shoulders",
-      "Your name was carved into the temple wall"
+      "Sacred olive oil was poured over his head",
+      "His feet were washed in the Jordan River",
+      "A holy sword was laid across his shoulders",
+      "His name was carved into the temple wall"
     ],
-    "context": "Olive oil was the sacred 'anointing' oil of the ancient world — poured on kings and priests. The Greek word 'Christos' (Christ) literally means 'the anointed one,' one anointed with holy oil. Source: en.wikipedia.org/wiki/Holy_anointing_oil.",
+    "context": "Olive oil was the sacred anointing oil of ancient Israel, poured on the heads of kings and priests. The Greek word 'Christos' (Christ) literally means 'the anointed one,' one anointed with holy oil. Source: en.wikipedia.org/wiki/Holy_anointing_oil.",
     "topic": "olive-oil-the-mediterraneans-liquid-gold"
   },
   {
@@ -15436,7 +15384,7 @@
     "answer": "It still produces olives that people harvest and press into oil",
     "choices": [
       "It still produces olives that people harvest and press into oil",
-      "It still sends up brand-new trunks that split off and root nearby",
+      "It still drops every leaf each autumn and grows them back",
       "It still doubles its own height in a single growing season",
       "It still flowers, but has been barren of fruit for centuries"
     ],
@@ -15489,7 +15437,7 @@
     "choices": [
       "Its omega-3 is a 'starter' the body barely turns into the usable kind",
       "Its omega-3 gets destroyed the moment the oil hits a hot pan",
-      "Its omega-3 only absorbs if you eat the flax alongside fish",
+      "Its omega-3 only absorbs if the flax is eaten with fish",
       "Its omega-3 is really an omega-6 wearing a disguise"
     ],
     "context": "The plant omega-3 (called ALA, in flax, chia, and walnuts) is only a 'starter': the body converts it to the usable fish forms - EPA and DHA, the brain-and-heart fats - very poorly (reported under ~15%, and to DHA often under 5%). Oily fish delivers EPA and DHA ready-made, which is why 'eat oily fish' beats 'drink flax oil.' Source: NIH Office of Dietary Supplements, Omega-3 Fatty Acids fact sheet (https://ods.od.nih.gov/factsheets/Omega3FattyAcids-HealthProfessional/).",
@@ -15514,7 +15462,7 @@
     "answer": "It nudges the body toward a low-grade, simmering inflammation",
     "choices": [
       "It nudges the body toward a low-grade, simmering inflammation",
-      "It spikes your blood sugar the way pure candy does",
+      "It spikes blood sugar the way pure candy does",
       "It starves the brain of the fat it needs to focus",
       "It clogs the gut so no other fat gets absorbed"
     ],
@@ -15523,7 +15471,7 @@
   },
   {
     "tier": 4,
-    "question": "Hans Olaf Bang and Jørn Dyerberg, two Danish scientists, travelled to Greenland in the early 1970s to study the Inuit, who lived on seal and fatty fish yet seldom developed heart disease. When they tested the Inuit's blood, one strange property stood out. What was it?",
+    "question": "Hans Olaf Bang and Jørn Dyerberg, two Danish scientists, travelled to Greenland in the early 1970s to study the Inuit, who lived on seal and fatty fish yet were reported to suffer little heart disease. When the two tested Inuit blood, one strange property stood out. What was it?",
     "answer": "It took nearly twice as long to clot",
     "choices": [
       "It took nearly twice as long to clot",
@@ -15531,20 +15479,20 @@
       "It was far thicker than a Dane's",
       "It held almost no iron at all"
     ],
-    "context": "This 'Eskimo paradox' first put omega-3 on the world map. The Inuit ate roughly 4-5 grams a day of the usable omega-3s (versus under 1 gram for Danes); their slow-clotting blood hinted that omega-3 helped keep their arteries clear despite an extremely fatty diet. Sources: NutraIngredients, '50-year anniversary of Dyerberg and Bang's omega-3 discoveries'; OmegaQuant.  (Legend.)",
+    "context": "This 'Eskimo paradox' first put omega-3 on the world map: the Inuit's slow-clotting blood hinted that omega-3 helped keep their arteries clear despite an extremely fatty diet. The heart-disease report itself is disputed: a 2014 review by George Fodor and colleagues found most studies showed Greenland Inuit with heart disease about as often as other peoples, and Dyerberg rejected that critique. Sources: NutraIngredients, '50-year anniversary of Dyerberg and Bang's omega-3 discoveries'; Fodor et al., Canadian Journal of Cardiology (2014).",
     "topic": "omega-3-vs-omega-6-the-fish-and-seed-oil-balance"
   },
   {
     "tier": 5,
-    "question": "Suppose you set two plates side by side with the same ratio of omega-6 to omega-3: one starved of both fats, the other rich in both. Mainstream scientists who push back on the ratio camp point to exactly this, that the number reads the same on both plates. What do they say matters more than the ratio itself?",
-    "answer": "How much omega-3 you actually eat",
+    "question": "Two plates sit side by side with the same ratio of omega-6 to omega-3: one starved of both fats, the other rich in both. Mainstream scientists who push back on the ratio camp point to exactly this, that the number reads the same on both plates. What do they say matters more than the ratio itself?",
+    "answer": "How much omega-3 a person actually eats",
     "choices": [
-      "How much omega-3 you actually eat",
-      "How much omega-6 you manage to cut",
-      "How much you vary your cooking oils",
-      "How much fat you eat before noon"
+      "How much omega-3 a person actually eats",
+      "How much omega-6 a person manages to cut",
+      "How often a cook switches cooking oils",
+      "How much fat a person eats before noon"
     ],
-    "context": "Mainstream experts argue the same ratio can hide wildly different absolute amounts, so total omega-3 intake matters more than the ratio. In randomized trials, adding linoleic acid did NOT raise inflammatory markers (only a tiny fraction converts to arachidonic acid), and a 2025 analysis of blood from nearly 1,900 people linked higher linoleic acid to LOWER inflammation and better cardiometabolic health. Sources: Eufic, 'Do seed oils cause inflammation?'; ScienceDaily, 21 June 2025 (medium confidence).",
+    "context": "Mainstream experts argue the same ratio can hide wildly different absolute amounts, so total omega-3 intake matters more than the ratio. In randomized trials, adding linoleic acid did NOT raise inflammatory markers (only a tiny fraction converts to arachidonic acid), and a 2025 analysis of blood from nearly 1,900 people linked higher linoleic acid to LOWER inflammation and better cardiometabolic health. Sources: Eufic, 'Do seed oils cause inflammation?'; ScienceDaily, 21 June 2025.",
     "topic": "omega-3-vs-omega-6-the-fish-and-seed-oil-balance"
   },
   {
@@ -15704,19 +15652,6 @@
     "topic": "one-wild-plant-a-whole-produce-aisle-brassica-oleracea"
   },
   {
-    "tier": 4,
-    "question": "Writing On the Origin of Species, Charles Darwin needed familiar examples to make his case. He pointed to the many different forms of the garden cabbage, and set it beside two everyday animals that people had bred into countless shapes. Which pair did Darwin name alongside the cabbage?",
-    "answer": "dog breeds and fancy pigeons",
-    "choices": [
-      "dog breeds and fancy pigeons",
-      "horse breeds and prize goldfish",
-      "sheep breeds and giant rabbits",
-      "cattle breeds and show canaries"
-    ],
-    "context": "In On the Origin of Species, Darwin cited 'the several races of the cabbage' right alongside dog breeds and fancy pigeons — everyday proof of how much change selection can produce, the same Brassica oleracea diversity these questions are built on. Source: en.wikipedia.org/wiki/On_the_Origin_of_Species; en.wikipedia.org/wiki/Cabbage.",
-    "topic": "one-wild-plant-a-whole-produce-aisle-brassica-oleracea"
-  },
-  {
     "tier": 5,
     "question": "Nagaharu U, a botanist mapping how the garden vegetables are related, proved in 1935 that the rutabaga was no pure ancient species. Long ago two different vegetable plants crossed and doubled their chromosomes, and the rutabaga is that natural hybrid. Which two plants crossed to make it?",
     "answer": "a cabbage and a turnip",
@@ -15752,20 +15687,7 @@
       "lemon juice",
       "green mango"
     ],
-    "context": "Tamarind — the sour pulp from a tropical pod — is pad thai's signature tang; without it you'd just have a sweet stir-fry. Fish sauce brings the salt and palm sugar the sweet, and a squeeze of lime at the table finishes the balance. (Wikipedia, 'Pad thai'; Hot Thai Kitchen)",
-    "topic": "pad-thai-the-noodle-a-prime-minister-pushed-on-a-nation"
-  },
-  {
-    "tier": 3,
-    "question": "Thailand was remaking itself as a modern nation in the late 1930s, and its leader decided that every Thai family needed one shared signature dish. Most national dishes take generations to grow up in home kitchens; this one was chosen. He picked pad thai and spread its recipes across the whole country. Who pushed it into that role?",
-    "answer": "the nation's prime minister",
-    "choices": [
-      "the nation's prime minister",
-      "a celebrated royal chef",
-      "Bangkok's noodle vendors",
-      "a royal wedding banquet"
-    ],
-    "context": "The man was Plaek Phibunsongkhram — 'Phibun' — who governed Thailand from 1938 to 1944 and used food as a nation-building tool, declaring pad thai the national dish. It was created by government promotion, not old tradition. (Smithsonian Magazine; Mental Floss)",
+    "context": "Tamarind — the sour pulp from a tropical pod — is pad thai's signature tang; without it the plate would be just a sweet stir-fry. Fish sauce brings the salt and palm sugar the sweet, and a squeeze of lime at the table finishes the balance. (Wikipedia, 'Pad thai'; Hot Thai Kitchen)",
     "topic": "pad-thai-the-noodle-a-prime-minister-pushed-on-a-nation"
   },
   {
@@ -16017,20 +15939,7 @@
   },
   {
     "tier": 2,
-    "question": "Fur traders paddling canoes and polar explorers hauling sledges needed a food that never spoiled and packed a lot of energy into little weight. Native Americans made just that: dried meat pounded with melted fat, often with dried berries pressed in. What is this trail food called?",
-    "answer": "Pemmican",
-    "choices": [
-      "Pemmican",
-      "Beef jerky",
-      "Salt pork",
-      "Hardtack"
-    ],
-    "context": "Pemmican is dried, pounded meat mixed with melted (rendered) animal fat, often with dried berries like saskatoon or cranberry pressed in. Native Americans made it; fur traders and, later, polar explorers adopted it as the ultimate trail food. Source: en.wikipedia.org/wiki/Pemmican",
-    "topic": "pemmican-and-hardtack-the-food-that-moved-armies-and-explore"
-  },
-  {
-    "tier": 2,
-    "question": "Native peoples of the plains pounded dried meat, berries and hot rendered fat into pemmican, a dense cake that fed hunters and trappers for months on the trail. The word comes from the Cree language, from the root 'pimi,' which names one of the three ingredients in every batch. Which ingredient is pimi?",
+    "question": "Hunters and fur traders on the plains lived for months on pemmican, a dense trail cake first made by Native peoples. The word comes from the Cree language, built on the root 'pimi', which names one of the things that go into it. Which ingredient does pimi name?",
     "answer": "The fat",
     "choices": [
       "The fat",
@@ -16051,25 +15960,25 @@
       "Soaking it in preserving vinegar",
       "Feeding helpful bacteria that guard it"
     ],
-    "context": "The rendered fat and dried meat are mixed at roughly 1:1 by weight; the fat coats the meat and seals out air and moisture, so it keeps for years. British pemmican rations from the Boer War were said to 'keep in perfect condition for decades.' And a single pound packs 3,000+ calories - which is why pemmican is called the original energy bar. Source: en.wikipedia.org/wiki/Pemmican",
+    "context": "The rendered fat and dried meat are mixed at roughly 1:1 by weight; the fat coats the meat and seals out air and moisture, so it keeps for years. British pemmican rations from the Boer War were said to 'keep in perfect condition for decades.' And a single pound packs about 3,000 calories - which is why pemmican is called the original energy bar. Source: en.wikipedia.org/wiki/Pemmican",
     "topic": "pemmican-and-hardtack-the-food-that-moved-armies-and-explore"
   },
   {
     "tier": 4,
-    "question": "The governor of the Red River Colony ordered in 1814 that no one could carry pemmican out of the district. The fur companies were so enraged that the fight that followed is still called the Pemmican War. Why would grown men go to war over dried meat?",
-    "answer": "It was the only food that could fuel their long canoe brigades",
+    "question": "The governor of the Red River Colony ordered in 1814 that no one could carry pemmican out of the district. The fur traders and the Métis who made it were so enraged that the fight that followed is still called the Pemmican War. Why would grown men go to war over dried meat?",
+    "answer": "It fed the canoe brigades that carried their furs",
     "choices": [
-      "It was the only food that could fuel their long canoe brigades",
-      "It was the only thing Native nations would take as payment",
-      "It was the sole cure for scurvy anywhere on the plains",
-      "It was the one food that could survive an ocean voyage"
+      "It fed the canoe brigades that carried their furs",
+      "It was the pay Native nations asked for their furs",
+      "It was the medicine that kept scurvy off the plains",
+      "It was the food that kept their ships' crews alive"
     ],
-    "context": "Pemmican was so vital to the fur trade that the Metis carried it in 90-pound buffalo-hide bags called 'taureaux' (French for 'bulls'). An 1814 order banning its export from the Red River Colony - the Pemmican Proclamation - helped spark the 'Pemmican War.' Source: en.wikipedia.org/wiki/Pemmican",
+    "context": "Pemmican was so vital to the fur trade that the Metis carried it in 90-pound buffalo-hide bags called 'taureaux' (French for 'bulls'), and the fur trade's canoe brigades carried it as their trail food. An 1814 order banning its export from the Red River Colony - the Pemmican Proclamation - helped spark the 'Pemmican War.' Source: en.wikipedia.org/wiki/Pemmican",
     "topic": "pemmican-and-hardtack-the-food-that-moved-armies-and-explore"
   },
   {
     "tier": 3,
-    "question": "Soldiers on long marches and sailors on wooden warships lived for weeks on hardtack, a cheap biscuit of flour and water baked hard as a plank so it would keep for months. The men called it 'tooth dullers' and 'sheet iron crackers,' since a dry bite could chip a tooth. What did they usually do to a piece before eating it?",
+    "question": "Soldiers on long marches and sailors on wooden warships lived for weeks on hardtack, a cheap biscuit of flour and water baked hard as a plank so it would keep for months. The men called it 'tooth dullers' and 'sheet iron,' since a dry bite could chip a tooth. What did they usually do to a piece before eating it?",
     "answer": "Soak it in coffee, water, or soup",
     "choices": [
       "Soak it in coffee, water, or soup",
@@ -16077,7 +15986,7 @@
       "Leave it out overnight in the dew",
       "Rub it all over with melted fat"
     ],
-    "context": "Hardtack (ship's biscuit) was made from almost nothing - flour and water, sometimes a little salt - baked bone-hard so it wouldn't mold; kept dry, it lasted for years. Soldiers nicknamed it 'tooth dullers,' 'molar breakers,' and 'sheet iron crackers,' and one account called it 'nearly dense enough to stop a musket ball.' You had to soak it in coffee, water, or soup before you could bite it. Source: en.wikipedia.org/wiki/Hardtack; militaryhistorynow.com",
+    "context": "Hardtack (ship's biscuit) was made from almost nothing - flour and water, sometimes a little salt - baked bone-hard so it wouldn't mold; kept dry, it lasted for years. Soldiers nicknamed it 'tooth dullers,' 'molar breakers,' and 'sheet iron.' It had to be soaked in coffee, water, or soup before anyone could bite it. Source: en.wikipedia.org/wiki/Hardtack; militaryhistorynow.com",
     "topic": "pemmican-and-hardtack-the-food-that-moved-armies-and-explore"
   },
   {
@@ -16116,7 +16025,7 @@
       "To pick while young",
       "To toss with pasta"
     ],
-    "context": "Pestare traces back to the Latin pistare/pinsere, 'to pound' — the very same root that gives us the word 'pestle,' the club-shaped tool you crush things with. So pesto is literally named after the action used to make it, not after any place or plant. Source: https://en.wikipedia.org/wiki/Pesto",
+    "context": "Pestare traces back to the Latin pistare/pinsere, 'to pound' — the very same root that gives English the word 'pestle,' the club-shaped tool used to crush things. So pesto is literally named after the action used to make it, not after any place or plant. Source: https://en.wikipedia.org/wiki/Pesto",
     "topic": "pesto-alla-genovese"
   },
   {
@@ -16160,7 +16069,7 @@
   },
   {
     "tier": 2,
-    "question": "One dried pod of a single spice goes into about four litres of simmering pho stock in a traditional Hanoi kitchen, and the cook stops there. Its licorice-sweet scent perfumes the whole broth; any more and the soup turns medicinal. Which spice is it?",
+    "question": "Just a few dried pods of one spice go into a big pot of pho stock in a traditional Hanoi kitchen, and the cook is careful to stop there. Their licorice-sweet scent perfumes the whole broth; too many and the soup turns harsh and medicinal. Which spice is it?",
     "answer": "Star anise",
     "choices": [
       "Star anise",
@@ -16168,7 +16077,7 @@
       "Whole cloves",
       "Black cardamom"
     ],
-    "context": "Star anise is pho's signature aroma, and a light hand is the rule — a traditional Hanoi pot may use only about one whole star anise per 4 liters of broth. Too heavy and the broth turns medicinal. Source: alibaba.com product-insights; en.wikipedia.org/wiki/Pho",
+    "context": "Star anise is pho's signature aroma, and a light hand is the rule: a few whole pods perfume a big pot of broth, and too many make it harsh and medicinal. Sources: vietworldkitchen.com; en.wikipedia.org/wiki/Pho",
     "topic": "pho-france-and-china-meet-in-a-vietnamese-bowl"
   },
   {
@@ -16225,7 +16134,7 @@
   },
   {
     "tier": 5,
-    "question": "Andrea Nguyen, a pho expert, and a dictionary from 1931 both trace the word pho to one part of the bowl itself. A charming rival story ties it to the French word feu, 'fire,' the feu of pot-au-feu. Scholars call that unproven, pot-au-feu being a stew of root vegetables like carrots and turnips. Which part of the bowl do Nguyen and the dictionary point to?",
+    "question": "A Vietnamese dictionary of 1931, the first to define pho as a soup, traces the word to one part of the bowl itself. A charming rival story ties it to the French word feu, 'fire,' the feu of pot-au-feu. Scholars call that unproven, pot-au-feu being a stew of root vegetables like carrots and turnips. Which part of the bowl does the dictionary point to?",
     "answer": "The flat rice noodle",
     "choices": [
       "The flat rice noodle",
@@ -16233,7 +16142,7 @@
       "The fresh herbs",
       "The whole spices"
     ],
-    "context": "The 'feu' story is popular but disputed — pot-au-feu is a stew of root vegetables like carrots and turnips, unlike pho. Pho expert Andrea Nguyen and a 1931 dictionary trace 'pho' instead to 'phấn/phan,' the Chinese-derived name for the flat rice noodle. Source: languagelog.ldc.upenn.edu; en.wikipedia.org/wiki/Pho  (Legend.)",
+    "context": "The 'feu' story is popular but disputed: pot-au-feu is a stew of root vegetables like carrots and turnips, unlike pho. A 1931 Vietnamese dictionary, the first to define phở as a soup, says it comes 'from the word phấn', the Chinese-derived name for the flat rice noodle, and some scholars trace it to ngưu nhục phấn, 'beef noodles.' Source: en.wikipedia.org/wiki/Pho  (Legend.)",
     "topic": "pho-france-and-china-meet-in-a-vietnamese-bowl"
   },
   {
@@ -16272,20 +16181,20 @@
       "Traveling merchants",
       "Cloistered monks"
     ],
-    "context": "Pizza began in Naples as cheap street food, sold hot from open stalls for the poor to eat on the go. By the late 1700s it was common for Naples's poor to add tomato to their yeast flatbread; in 1830 Antica Pizzeria Port'Alba became the first sit-down pizzeria, turning street food into restaurant fare. Source: Wikipedia, 'History of pizza.'",
+    "context": "Pizza began in Naples as cheap street food, sold hot from open stalls for the poor to eat on the go. By the late 1700s it was common for Naples's poor to add tomato to their yeast flatbread; in 1830 Antica Pizzeria Port'Alba opened, often called the first sit-down pizzeria, turning street food into restaurant fare. Source: Wikipedia, 'History of pizza.'",
     "topic": "pizza-margherita-and-naples"
   },
   {
     "tier": 3,
-    "question": "A Neapolitan pizzaiolo slides a pie into a wood-fired oven so hot, about 900°F, that it bakes in a minute or so. The fierce heat swells the outer edge into a puffy, blistered rim with leopard spots of char, the part pizza lovers prize. What do Italians call that puffed rim?",
-    "answer": "Cornicione",
+    "question": "A frozen pizza needs about a quarter of an hour in a home oven. A Neapolitan pizzaiolo slides his Margherita into a wood-fired oven at about 900°F, a heat so fierce it puffs the rim into the blistered, leopard-spotted cornicione. How long does his pizza take to bake?",
+    "answer": "About a minute",
     "choices": [
-      "Cornicione",
-      "Crosta",
-      "Mollica",
-      "Scorza"
+      "About a minute",
+      "About five minutes",
+      "About fifteen minutes",
+      "About half an hour"
     ],
-    "context": "The puffed, charred rim is the 'cornicione.' Under the rules of the Associazione Verace Pizza Napoletana, the dough is shaped by hand — no rolling pin — and left no thicker than about a quarter-centimeter. Source: Wikipedia, 'Neapolitan pizza.'",
+    "context": "A Neapolitan pizza bakes for only 60 to 90 seconds at about 485°C (905°F), and the blast of heat puffs the rim into the charred 'cornicione.' Under the rules of the Associazione Verace Pizza Napoletana, the dough is shaped by hand, no rolling pin, and left no thicker than about a quarter-centimeter. Source: Wikipedia, 'Neapolitan pizza.'",
     "topic": "pizza-margherita-and-naples"
   },
   {
@@ -16532,20 +16441,20 @@
       "Simple sugars",
       "Nucleotides"
     ],
-    "context": "The units are amino acids — the letters that spell out every protein. Your body pulls apart the protein in your food and stitches the freed amino acids into brand-new proteins of its own: muscle, skin, hair, and the enzymes that keep you running. (Source: https://en.wikipedia.org/wiki/Essential_amino_acid)",
+    "context": "The units are amino acids, the letters that spell out every protein. The body pulls apart the protein in food and stitches the freed amino acids into brand-new proteins of its own: muscle, skin, hair, and the enzymes that keep it running. (Source: https://en.wikipedia.org/wiki/Essential_amino_acid)",
     "topic": "protein-the-bodys-building-blocks"
   },
   {
     "tier": 2,
-    "question": "Suppose you eat a huge steak, far more protein than your body needs right now. Spare fat gets tucked into fat tissue, and spare carbohydrate is stashed as glycogen in the muscles and liver for later. What happens to the protein's spare building blocks that your body cannot use yet?",
-    "answer": "They're broken down, and the leftover nitrogen leaves in your urine.",
+    "question": "A hungry wrestler eats a huge steak, far more protein than his body needs right now. Spare fat gets tucked into fat tissue, and spare carbohydrate is stashed as glycogen in the muscles and liver for later. What happens to the protein's spare building blocks that his body cannot use yet?",
+    "answer": "They're broken down, and the leftover nitrogen leaves in urine.",
     "choices": [
-      "They're broken down, and the leftover nitrogen leaves in your urine.",
+      "They're broken down, and the leftover nitrogen leaves in urine.",
       "They're saved in a protein reserve, and drawn on for a hungry day.",
-      "They're stored as body fat, and tucked into your fat tissue.",
-      "They're turned into muscle, and added straight to your frame."
+      "They pass through unused, and leave with the meal's waste.",
+      "They're turned into muscle, and added straight to his frame."
     ],
-    "context": "Fat and carbs get storage tanks; protein doesn't. Any surplus is dismantled — the usable part burned for energy, the leftover nitrogen shipped out as urea in your urine. Because there's no reserve to lean on, your body recycles nonstop, tearing down and rebuilding about half a pound (250–300 grams) of its own protein every single day. (Sources: https://chem.libretexts.org/Courses/Brevard_College/CHE_301_Biochemistry/10:_Metabolism_of_Amino_Acids/10.01:_Proteins_metabolism ; https://study.com/academy/lesson/protein-turnover-balance.html)",
+    "context": "Fat and carbs get storage tanks; protein doesn't. Any surplus is dismantled — the usable part burned for energy, the leftover nitrogen shipped out as urea in the urine. Because there's no reserve to lean on, the body recycles nonstop, tearing down and rebuilding about half a pound (250–300 grams) of its own protein every single day. (Sources: https://chem.libretexts.org/Courses/Brevard_College/CHE_301_Biochemistry/10:_Metabolism_of_Amino_Acids/10.01:_Proteins_metabolism ; https://study.com/academy/lesson/protein-turnover-balance.html)",
     "topic": "protein-the-bodys-building-blocks"
   },
   {
@@ -16558,7 +16467,7 @@
       "The most protein a body can safely take.",
       "The special high amount only athletes need."
     ],
-    "context": "It's a minimum to avoid running short — not a build-muscle target. For a 140-pound person that floor is only about 50 grams a day. Growing kids and hard-training athletes aim far higher (roughly 1.2–1.5 grams per kilogram): the tested idea is 'more for growth and training,' not one magic number. (Sources: https://nutritionsource.hsph.harvard.edu/what-should-you-eat/protein/ ; https://share.upmc.com/2025/11/young-athletes-protein/)",
+    "context": "It's a minimum to avoid running short — not a build-muscle target. For a 140-pound person that floor is only about 50 grams a day. Growing kids and hard-training athletes aim far higher (roughly 1.2–1.5 grams per kilogram). (Sources: https://nutritionsource.hsph.harvard.edu/what-should-you-eat/protein/ ; https://share.upmc.com/2025/11/young-athletes-protein/)",
     "topic": "protein-the-bodys-building-blocks"
   },
   {
@@ -16571,7 +16480,7 @@
       "getting more sleep",
       "taking vitamin pills"
     ],
-    "context": "The American Academy of Pediatrics puts it bluntly: 'Exercise, not dietary protein, increases muscle mass.' Protein supplies the bricks, but working the muscle is what tells the body to lay them down — and most teens already eat plenty of protein without any shakes. (Source: https://www.healthychildren.org/English/ages-stages/teen/nutrition/Pages/Protein-for-the-Teen-Athlete.aspx)",
+    "context": "The American Academy of Pediatrics puts it bluntly: 'Exercise, not dietary protein, increases muscle mass.' Protein supplies the bricks, but working the muscle is what tells the body to lay them down. (Source: https://www.healthychildren.org/English/ages-stages/teen/nutrition/Pages/Protein-for-the-Teen-Athlete.aspx)",
     "topic": "protein-the-bodys-building-blocks"
   },
   {
@@ -16597,7 +16506,7 @@
       "Fat",
       "Fiber"
     ],
-    "context": "Protein is a structural part of nearly every tissue you own — skin, muscle, blood, and bone — which is why meat, eggs, and fish are grouped as the plate's grow-and-repair food. Source: Wikipedia, 'Protein (nutrient).'",
+    "context": "Protein is a structural part of nearly every tissue in the body — skin, muscle, blood, and bone — which is why meat, eggs, and fish are grouped as the plate's grow-and-repair food. Source: Wikipedia, 'Protein (nutrient).'",
     "topic": "protein-the-bodys-repair-and-build-crew"
   },
   {
@@ -16610,46 +16519,46 @@
       "Skin",
       "Gristle"
     ],
-    "context": "That 'grain' you pull apart is bundled muscle: muscle is built from long fibers called myofibrils, made of the proteins actin and myosin. Eating meat is literally eating another animal's muscle. Source: Wikipedia, 'Myofibril.'",
+    "context": "That 'grain' a fork pulls apart is bundled muscle: muscle is built from long fibers called myofibrils, made of the proteins actin and myosin. Eating meat is literally eating another animal's muscle. Source: Wikipedia, 'Myofibril.'",
     "topic": "protein-the-bodys-repair-and-build-crew"
   },
   {
     "tier": 2,
-    "question": "Suppose you look over your own body for parts built mostly of protein. Protein does far more than build arm and leg muscles; long chains of it make everyday parts you see and touch without a thought for what they are made of. Which of these is made mostly of protein?",
-    "answer": "Your fingernails",
+    "question": "A girl looks over her own body for parts built mostly of protein. Protein does far more than build arm and leg muscles; long chains of it make everyday parts she sees and touches without a thought for what they are made of. Which part of her is made mostly of protein?",
+    "answer": "Her fingernails",
     "choices": [
-      "Your fingernails",
-      "Your tooth enamel",
-      "Your earwax",
-      "Your sweat"
+      "Her fingernails",
+      "Her tooth enamel",
+      "Her tears",
+      "Her sweat"
     ],
-    "context": "Hair, fingernails, and the tough outer layer of skin are all built from keratin, a structural protein — one more reason 'eat your protein' isn't only about muscle. (Tooth enamel is mostly mineral, earwax is waxy oils, and sweat is basically salty water.) Source: Wikipedia, 'Keratin.'",
+    "context": "Hair, fingernails, and the tough outer layer of skin are all built from keratin, a structural protein, one more reason protein isn't only about muscle. (Tooth enamel is mostly mineral, and tears and sweat are mostly salty water.) Source: Wikipedia, 'Keratin.'",
     "topic": "protein-the-bodys-repair-and-build-crew"
   },
   {
     "tier": 3,
-    "question": "A cut on a cook's finger does not stay open: repair cells rush in and weave a fresh mesh of the body's most abundant protein, which hardens into a scar she can still see months later. The same protein is the main stuff of skin, tendons and bone. Which protein is it?",
-    "answer": "Collagen",
+    "question": "A cut on a cook's finger does not stay open: new collagen, the body's most abundant protein, knits across the wound and hardens into a scar she can see months later. Collagen does far more than mend cuts. What is it the main material of?",
+    "answer": "Skin, tendons and ligaments",
     "choices": [
-      "Collagen",
-      "Keratin",
-      "Insulin",
-      "Myosin"
+      "Skin, tendons and ligaments",
+      "Hair, nails and tooth enamel",
+      "Muscle, nerves and brain",
+      "Blood, lymph and marrow"
     ],
-    "context": "Collagen is the most abundant protein in the human body — roughly a quarter to a third of all your protein — and the main stuff of skin, tendons, ligaments, cartilage, and bone. A wound first lays down softer type III collagen, then swaps it for tougher type I collagen, which becomes the scar. Source: Wikipedia, 'Collagen.'",
+    "context": "Collagen is the most abundant protein in the human body, roughly a quarter to a third of all its protein, and the main stuff of skin, tendons and ligaments, and the framework of cartilage and bone. A wound first lays down softer type III collagen, then swaps it for tougher type I collagen, which becomes the scar. Source: Wikipedia, 'Collagen.'",
     "topic": "protein-the-bodys-repair-and-build-crew"
   },
   {
-    "tier": 5,
-    "question": "A kid home sick with a cold has no appetite, but a parent still pushes broth and eggs, and with reason. When a virus invades, the body's defenses answer by building millions of Y-shaped defenders that latch onto the invader and mark it for destruction. They are made of protein, so a poorly fed body struggles to make enough. What are they called?",
-    "answer": "Antibodies",
+    "tier": 3,
+    "question": "A kid home sick with a cold has no appetite, but his mother serves him broth and eggs. His body is fighting back by building millions of antibodies, Y-shaped defenders that latch onto the virus and mark it for destruction. Why does the protein in those eggs matter to that fight?",
+    "answer": "The antibodies are themselves built from protein",
     "choices": [
-      "Antibodies",
-      "Platelets",
-      "Enzymes",
-      "Hormones"
+      "The antibodies are themselves built from protein",
+      "Protein is the fuel antibodies burn for energy",
+      "Protein carries the antibodies through the blood",
+      "Protein coats the throat so the virus slips off"
     ],
-    "context": "Antibodies (immunoglobulins) are Y-shaped proteins your immune system makes to bind bacteria and viruses — blocking them or tagging them for other immune cells to finish off. Because they're built from protein, bouncing back from illness really does depend on eating enough of it. Source: Wikipedia, 'Antibody.'",
+    "context": "Antibodies (immunoglobulins) are Y-shaped proteins the immune system makes to bind bacteria and viruses, blocking them or tagging them for other immune cells to finish off. Because they're built from protein, a poorly fed body struggles to make enough of them. Source: Wikipedia, 'Antibody.'",
     "topic": "protein-the-bodys-repair-and-build-crew"
   },
   {
@@ -16680,13 +16589,13 @@
   },
   {
     "tier": 3,
-    "question": "A cook pours buckwheat seeds into her palm, small and three-cornered. Despite its name, buckwheat is no kin to wheat and not even a grass. That three-cornered shape reminded early growers of one forest tree's little nut and gave the plant its name. Which tree?",
-    "answer": "Beech",
+    "question": "A cook pours buckwheat seeds into her palm, small and three-cornered like tiny beech nuts. Despite its name, buckwheat is no kin to wheat and not even a grass; it belongs to another plant family altogether. Which garden plant is one of its close cousins?",
+    "answer": "Rhubarb",
     "choices": [
-      "Beech",
-      "Oak",
-      "Birch",
-      "Hazel"
+      "Rhubarb",
+      "Cabbage",
+      "Lettuce",
+      "Celery"
     ],
     "context": "Buckwheat's name is a worn-down form of 'beech wheat': its small, three-cornered seeds resemble tiny beech nuts, and it was cooked like wheat. Botanically it's in the knotweed family — a cousin of rhubarb and sorrel — and, being no grass at all, it's naturally gluten-free. Source: en.wikipedia.org/wiki/Buckwheat.",
     "topic": "quinoa-and-the-pseudocereals"
@@ -16841,23 +16750,10 @@
     "choices": [
       "Cook each vegetable separately first, then combine them",
       "Add the vegetables in strict order, hardest ones first",
-      "Salt and drain every vegetable to firm it up first",
+      "Bake it all under a crust of crumbs and cheese",
       "Cook the whole pot fast over very high heat"
     ],
     "context": "Larousse Gastronomique puts it plainly: 'according to the purists, the different vegetables should be cooked separately, then combined and cooked slowly together until they attain a smooth, creamy consistency.' Cooking each on its own first lets every vegetable hold its texture. Source: Wikipedia, 'Ratatouille' (quoting Larousse Gastronomique).",
-    "topic": "ratatouille-and-provence"
-  },
-  {
-    "tier": 2,
-    "question": "French writers who first used the word ratatouille, from the Occitan for stirring, early in the nineteenth century meant something quite different from the stew of today. What did the word mean to them?",
-    "answer": "A cheap, coarse stew, close to slop",
-    "choices": [
-      "A cheap, coarse stew, close to slop",
-      "A humble hash of yesterday's leftovers",
-      "A plain gruel ladled out to marching soldiers",
-      "A prized dish for grand wedding feasts"
-    ],
-    "context": "'Ratatouille' comes from Occitan ratatolha / French touiller, 'to stir.' In the early 1800s the word carried a pejorative sting - a term for coarse, cheap stew, closer to 'slop' than to anything fancy. Source: Wikipedia, 'Ratatouille' (etymology).",
     "topic": "ratatouille-and-provence"
   },
   {
@@ -17065,7 +16961,7 @@
       "The flavor left as steam, and the water stayed behind",
       "The hot metal pot leaked its own flavor into the stock"
     ],
-    "context": "Cooks sum the whole trick up in a single line: 'Water leaves; everything else stays.' Simmering uncovered, the water escapes into the air as steam while the flavor, natural sugars and body all stay in the pot and grow more concentrated — you added nothing, you only took water away. Source: chefapprovedtools.com; en.wikipedia.org/wiki/Reduction_(cooking).",
+    "context": "Cooks sum the whole trick up in a single line: 'Water leaves; everything else stays.' Simmering uncovered, the water escapes into the air as steam while the flavor, natural sugars and body all stay in the pot and grow more concentrated — nothing was added; only water was taken away. Source: chefapprovedtools.com; en.wikipedia.org/wiki/Reduction_(cooking).",
     "topic": "reduction-boiling-flavor-down"
   },
   {
@@ -17078,7 +16974,7 @@
       "The lid blocks the fresh air the sauce needs in order to boil",
       "The lid presses down and keeps the bubbles from ever rising"
     ],
-    "context": "That is exactly why you always reduce with the pot UNcovered. Leave it open and the steam carries the water out of the pan for good; clamp a lid on and the trapped steam condenses against the cool lid and rains straight back down, so the water never actually leaves. Source: cookist.com.",
+    "context": "That is exactly why cooks always reduce with the pot UNcovered. Leave it open and the steam carries the water out of the pan for good; clamp a lid on and the trapped steam condenses against the cool lid and rains straight back down, so the water never actually leaves. Source: cookist.com.",
     "topic": "reduction-boiling-flavor-down"
   },
   {
@@ -17096,15 +16992,15 @@
   },
   {
     "tier": 3,
-    "question": "Auguste Escoffier wrote down how to make it in Le Guide Culinaire: take a big pot of rich brown veal stock and boil it gently down for hours on a low fire. Quarts shrink to a small pool of dark, glossy syrup that coats a spoon, the base of classics such as bordelaise. What is this deeply reduced sauce called?",
+    "question": "Auguste Escoffier set the recipe down in Le Guide Culinaire: rich brown stock and brown sauce, simmered together for hours on a low fire until they reduce to a dark, glossy sauce that coats a spoon. It is the base of classics such as bordelaise. What is this reduced sauce called?",
     "answer": "Demi-glace",
     "choices": [
       "Demi-glace",
-      "Espagnole",
+      "Coulis",
       "Velouté",
       "Consommé"
     ],
-    "context": "Demi-glace is French for 'half glaze.' Auguste Escoffier codified it in classical French cooking in the early 1900s, and it is the base for sauces like bordelaise. Reduce it even further — until only about a tenth is left — and it becomes glace de viande, a 'meat glaze' so intense it is used a teaspoon at a time. Source: billyparisi.com/demi-glace.",
+    "context": "Demi-glace is French for 'half glaze': traditionally one part espagnole (brown sauce) to one part brown stock, reduced by half. Auguste Escoffier codified it in classical French cooking in the early 1900s, and it is the base for sauces like bordelaise. Boil brown stock down further still and it becomes glace de viande, a 'meat glaze' about twice as concentrated as demi-glace. Sources: en.wikipedia.org/wiki/Demi-glace; en.wikipedia.org/wiki/Glace_de_viande.",
     "topic": "reduction-boiling-flavor-down"
   },
   {
@@ -17117,7 +17013,7 @@
       "Salt it midway, right when it's half reduced",
       "Stir a pinch of sugar in at the end to mask the salt"
     ],
-    "context": "Because reduction concentrates the salt right along with the flavor, seasoned cooks salt a reducing sauce at the very END. Salt it to taste before it boils down and it can finish far too salty to eat — so you wait, reduce first, then season. Boiling harder won't help: salt doesn't leave as steam the way water does. Source: chefapprovedtools.com.",
+    "context": "Because reduction concentrates the salt right along with the flavor, seasoned cooks salt a reducing sauce at the very END. Salt it to taste before it boils down and it can finish far too salty to eat — so the cook waits, reduces first, then seasons. Boiling harder won't help: salt doesn't leave as steam the way water does. Source: chefapprovedtools.com.",
     "topic": "reduction-boiling-flavor-down"
   },
   {
@@ -17221,7 +17117,7 @@
       "small, pearly grains",
       "plump, oval grains"
     ],
-    "context": "Long-grain Indica rice such as basmati cooks up dry and fluffy in separate grains, while short, round Japonica grains like sushi rice turn sticky. The grain shape you can see in the bag really does predict how it behaves on the plate. Source: en.wikipedia.org/wiki/Rice",
+    "context": "Long-grain Indica rice such as basmati cooks up dry and fluffy in separate grains, while short, round Japonica grains like sushi rice turn sticky. The grain shape visible in the bag really does predict how it behaves on the plate. Source: en.wikipedia.org/wiki/Rice",
     "topic": "rice-why-some-stays-separate-and-some-sticks"
   },
   {
@@ -17252,7 +17148,7 @@
   },
   {
     "tier": 2,
-    "question": "A family in one small Southeast Asian country rolls sticky rice into balls by hand at breakfast, lunch and dinner, dunking them in curry and grilled meat. There, sticky rice is no special treat but the everyday meal, and people eat more rice per head than anywhere else on Earth. Which country is it?",
+    "question": "A family in one small Southeast Asian country rolls sticky rice into balls by hand at breakfast, lunch and dinner, dunking them in curry and grilled meat. There, sticky rice is no special treat but the everyday meal, and people eat more sticky rice per head than anywhere else on Earth. Which country is it?",
     "answer": "Laos",
     "choices": [
       "Laos",
@@ -17260,7 +17156,7 @@
       "Vietnam",
       "Cambodia"
     ],
-    "context": "About 85% of the rice grown in Laos is glutinous, and people there eat roughly 171 kg of rice per person each year — the highest on Earth. Laos even holds the world's largest known collection of sticky-rice varieties, over 13,500 samples. Source: en.wikipedia.org/wiki/Glutinous_rice",
+    "context": "About 85% of the rice grown in Laos is glutinous, and sticky-rice consumption there, about 171 kg a person a year, is the highest on Earth. Collectors trained by the International Rice Research Institute have gathered over 13,500 rice samples in Laos alone. Source: en.wikipedia.org/wiki/Glutinous_rice",
     "topic": "rice-why-some-stays-separate-and-some-sticks"
   },
   {
@@ -17299,12 +17195,12 @@
       "'glutinous' is a mix-up of an old word for 'glossy'",
       "'glutinous' once meant 'grown in flooded paddies'"
     ],
-    "context": "'Glutinous' comes from Latin glutinosus, 'glue-like' — it describes the sticky texture, not gluten. Like all rice, glutinous rice contains no dietary gluten and is safe on a gluten-free diet. The dinner-table payoff: 'glutinous' is about glue, never gluten. Source: en.wikipedia.org/wiki/Glutinous_rice",
+    "context": "'Glutinous' comes from Latin glutinosus, 'glue-like' — it describes the sticky texture, not gluten. Like all rice, glutinous rice contains no dietary gluten and is safe on a gluten-free diet. So 'glutinous' is about glue, never gluten. Source: en.wikipedia.org/wiki/Glutinous_rice",
     "topic": "rice-why-some-stays-separate-and-some-sticks"
   },
   {
     "tier": 4,
-    "question": "A doctor at a family dinner eats from two bowls of white rice, one of basmati and one of sticky sushi rice. She points out that the basmati barely nudges her blood sugar, while the sticky rice sends it climbing within minutes. What about the basmati keeps her blood sugar so steady?",
+    "question": "A doctor at a family dinner eats from two bowls of white rice, one of basmati and one of sticky sushi rice. She points out that the basmati lifts her blood sugar gently, while the sticky rice sends it climbing fast. What about the basmati keeps her blood sugar steadier?",
     "answer": "it has more firming starch, which digests more slowly",
     "choices": [
       "it has more firming starch, which digests more slowly",
@@ -17322,7 +17218,7 @@
     "choices": [
       "a broken gene can't make the amylose-building enzyme",
       "its starch enzyme makes sugar instead of amylose",
-      "over centuries, farmers bred the amylose out of it",
+      "its roots can't draw up the minerals amylose needs",
       "the plant reabsorbs its amylose before harvest"
     ],
     "context": "Sticky rice is amylose-free because of a loss-of-function mutation in the 'Waxy' gene, which normally codes for the enzyme (GBSSI) that builds amylose. With no working enzyme, the plant makes zero amylose — only sticky amylopectin. Source: pmc.ncbi.nlm.nih.gov/articles/PMC5938116/",
