@@ -1568,7 +1568,15 @@ class EncountersMixin:
         if not removed:
             p = self.player
             if p.weapon and getattr(p.weapon, 'id', '') == item_id:
+                old = p.weapon
                 p.weapon = None
+                p.shed_weapon_grants(old)       # what it lent goes with it
+                removed = True
+            elif (getattr(p, 'ranged_weapon', None)
+                  and getattr(p.ranged_weapon, 'id', '') == item_id):
+                old = p.ranged_weapon
+                p.ranged_weapon = None
+                p.shed_weapon_grants(old)
                 removed = True
             elif p.shield and getattr(p.shield, 'id', '') == item_id:
                 old = p.shield
