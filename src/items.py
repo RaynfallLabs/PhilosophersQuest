@@ -211,19 +211,29 @@ def _material_resists(mat: dict) -> dict:
     return {}
 
 
-def effective_enchant_cap(player, slot_name: str) -> int:
+def effective_enchant_cap(player, slot_name: str, item=None) -> int:
     """ENCHANT_CAP lookup that respects Panoply of Hephaestus (divine_smithing).
 
     Panoply raises the weapon cap by `divine_smithing` (1 by default). Engine
     wave 5: the panoply at AC 8 was numerically mythic but mechanically generic.
     The forge-god's cross-slot bonus is what makes it legendary.
+
+    `item` is the weapon being enchanted. Without it the wielded melee
+    weapon is assumed, which read the hand's cap for the bow as well: Fail-not
+    (its own cap 4) reached +5, and with Broken Gram (0) in hand no bow could
+    be enchanted at all.
     """
     cap = ENCHANT_CAP.get(slot_name, 1)
     if player is None:
         return cap
     # An item's own `max_enchant` lowers the cap for it (Broken Gram and Dad's
     # punch say 0); it never raises it above the slot's.
-    _own = getattr(player, 'weapon', None) if slot_name == 'weapon' else None
+    if slot_name != 'weapon':
+        _own = None
+    elif item is not None:
+        _own = item
+    else:
+        _own = getattr(player, 'weapon', None)
     _own_cap = getattr(_own, 'max_enchant_own', None)
     if _own_cap is not None:
         cap = min(cap, int(_own_cap))
