@@ -14,7 +14,7 @@
   },
   {
     "tier": 3,
-    "question": "A brood of billions of periodical cicadas crawls out of the ground on nearly the same day, all across a huge stretch of the eastern United States, after 13 or 17 years as pale nymphs sucking sap from tree roots. For decades biologists wondered how insects buried so far down all know when to come out. What environmental signal tells them the moment has come?",
+    "question": "A brood of periodical cicadas crawls out of one forest's soil within the same few nights, billions strong, after 13 or 17 years as pale nymphs sucking sap from tree roots. For decades biologists wondered how insects buried so deep all know when to come out. What signal tells them the moment has come?",
     "answer": "The soil 8 inches down warming to about 64 degrees F",
     "choices": [
       "The soil 8 inches down warming to about 64 degrees F",
@@ -22,12 +22,12 @@
       "The scent of new tree blossoms overhead",
       "A sudden spring rain soaking the ground"
     ],
-    "context": "A whole generation surfaces together when the soil 8 inches (20 cm) down warms to about 64°F (17.9°C). Underground, the nymphs appear to 'count' the years by sensing seasonal changes in the tree's xylem sap — an internal calendar with no clock. Source: https://en.wikipedia.org/wiki/Periodical_cicadas",
+    "context": "A whole generation surfaces together when the soil 8 inches (20 cm) down warms to about 64°F (17.9°C). Because the cue is soil warmth, broods in the south surface weeks before broods in the north. Underground, the nymphs appear to 'count' the years by sensing seasonal changes in the tree's xylem sap, an internal calendar with no clock. Source: https://en.wikipedia.org/wiki/Periodical_cicadas",
     "topic": "17-year-cicada"
   },
   {
     "tier": 3,
-    "question": "A male cicada crawls out of the dirt of an American forest after 17 years underground and starts to sing. He is barely the size of a thumb, yet his song carries across the whole forest, one of the loudest calls any insect makes. His tymbals, ribbed membranes on his sides, buckle hundreds of times a second to make the clicks. What lets so small a body throw that sound so far?",
+    "question": "A male cicada crawls out of the dirt after 17 years underground and starts to sing. He is barely the size of a thumb, yet his song carries across the whole forest, one of the loudest calls any insect makes. His tymbals, ribbed membranes on his sides, buckle hundreds of times a second to make the clicks. What lets so small a body throw that sound so far?",
     "answer": "His hollow abdomen works as a resonating chamber that amplifies the clicks into a roar",
     "choices": [
       "His hollow abdomen works as a resonating chamber that amplifies the clicks into a roar",
@@ -35,7 +35,7 @@
       "His stiffened outer shell rings like a bell each time a tymbal snaps",
       "His crowd of neighbors all click in unison to stack the sound louder"
     ],
-    "context": "Only male cicadas sing, using a tymbal — a stiff, ribbed membrane on each side of the hollow abdomen, snapped in and out by muscles so fast the clicks blur into a continuous song. The hollow abdomen acts as a resonating chamber, helping make a cicada chorus one of the loudest sounds in the insect world, around 100 decibels — often called the loudest male chorus on Earth. Source: https://www.themarginalian.org/2024/05/05/cicadas/",
+    "context": "Only male cicadas sing, using a tymbal, a stiff, ribbed membrane on each side of the hollow abdomen, snapped in and out by muscles so fast the clicks blur into a continuous song. The hollow abdomen acts as a resonating chamber, and a big chorus can reach about 100 decibels close by, among the loudest sounds in the insect world. Source: https://en.wikipedia.org/wiki/Periodical_cicadas",
     "topic": "17-year-cicada"
   },
   {
@@ -53,12 +53,12 @@
   },
   {
     "tier": 4,
-    "question": "Broods of periodical cicadas wait 13 or 17 years underground before they surface, never 12, 15 or 18. Stephen Jay Gould found it striking that both numbers are prime. What survival edge is that oddly chosen wait thought to give the cicadas?",
-    "answer": "A predator on its own 2-, 3-, or 4-year cycle can almost never peak in the same year the cicadas emerge",
+    "question": "Broods of periodical cicadas wait 13 or 17 years underground before they surface, never 12, 15 or 18. Both numbers are prime, and Stephen Jay Gould made famous an idea about why. In that idea, what survival edge does such an odd wait give the cicadas?",
+    "answer": "Predators on 2-, 3- or 4-year cycles rarely peak in an emergence year",
     "choices": [
-      "A predator on its own 2-, 3-, or 4-year cycle can almost never peak in the same year the cicadas emerge",
+      "Predators on 2-, 3- or 4-year cycles rarely peak in an emergence year",
       "The long wait starves out any predator that had specialized in eating cicadas",
-      "Neighboring broods on different primes never surface together and compete for food",
+      "It lines their emergence up with the rare, extra-wet summers",
       "The gap outlasts the memory any single predator can pass to its young"
     ],
     "context": "This is a leading hypothesis, not proven fact: a prime, indivisible cycle makes it nearly impossible for any predator with a shorter life cycle to line up and feast every time. It was first formally proposed by entomologists Monte Lloyd and Henry Dybas in a 1966 paper and later popularized by evolutionary biologist Stephen Jay Gould in a 1977 essay. Source: https://en.wikipedia.org/wiki/Periodical_cicadas",
@@ -92,7 +92,7 @@
   },
   {
     "tier": 2,
-    "question": "An aardvark noses through the African night with a pig-like snout, tall rabbit ears and a sticky, ropy tongue for lapping up ants and termites. It looks like an anteater wearing a pig's face, but its genes tell a different story: it belongs to Afrotheria, an ancient group of African animals. Which modern animals turn out to be its closest cousins?",
+    "question": "An aardvark noses through the African night with a pig-like snout, tall rabbit ears and a sticky, ropy tongue for lapping up ants and termites. It looks like an anteater wearing a pig's face, but its genes place it in Afrotheria, an ancient group of African mammals. Which familiar animals share that group with it?",
     "answer": "Elephants and manatees",
     "choices": [
       "Elephants and manatees",
@@ -100,12 +100,12 @@
       "Anteaters and pangolins",
       "Armadillos and sloths"
     ],
-    "context": "Despite the anteater-with-a-pig-snout look, the aardvark belongs to the African superorder Afrotheria, alongside elephants, manatees (sea cows), and hyraxes. Its resemblance to South American anteaters is convergent evolution: the same ant-eating body plan arising independently in unrelated lineages, not shared ancestry. Source: https://en.wikipedia.org/wiki/Aardvark",
+    "context": "Despite the anteater-with-a-pig-snout look, the aardvark belongs to the African superorder Afrotheria, alongside elephants, manatees (sea cows) and hyraxes; within that group its very closest living relatives are the elephant shrews, tenrecs and golden moles. Its resemblance to South American anteaters is convergent evolution: the same ant-eating body plan arising independently in unrelated lineages, not shared ancestry. Source: https://en.wikipedia.org/wiki/Aardvark",
     "topic": "aardvark"
   },
   {
     "tier": 3,
-    "question": "An aardvark feeding on ants and termites carries teeth so strange that biologists named its whole order of mammals after them: Tubulidentata, 'tube-toothed.' Each tooth is a bundle of thousands of thin, hexagonal tubes cemented together into a rootless column with no crown at the top. What do these tube-teeth completely lack?",
+    "question": "An aardvark feeding on ants and termites carries teeth so strange that biologists named its whole order of mammals after them: Tubulidentata, 'tube-toothed.' Each tooth is a rootless column of as many as 1,500 thin, hexagonal tubes packed side by side. What do these tube-teeth completely lack?",
     "answer": "Enamel",
     "choices": [
       "Enamel",
@@ -119,10 +119,10 @@
   {
     "tier": 2,
     "question": "An aardvark rips open a rock-hard termite mound with its shovel-like front claws, and the panicked insects flee deep into their tunnels. In a single night it can gather as many as 50,000 of them. What body part does it use to reach inside the tunnels and gather them up?",
-    "answer": "A sticky snakelike tongue up to 30 cm long",
+    "answer": "A sticky, snakelike tongue",
     "choices": [
-      "A sticky snakelike tongue up to 30 cm long",
-      "A pair of long grasping front claws",
+      "A sticky, snakelike tongue",
+      "A thin, hooked probing finger",
       "A narrow retractable snout-tube",
       "A row of fine comb-like teeth"
     ],
@@ -131,11 +131,11 @@
   },
   {
     "tier": 3,
-    "question": "Night after night an aardvark digs fresh burrows across the African savanna, and many of them it never returns to. Biologists rank the aardvark a keystone species of the savanna. Which effect of the aardvark's life earns it that title?",
+    "question": "An aardvark tears up the African savanna night after night, tunneling a yard in five minutes or so and carving fresh burrows wherever it feeds. Ecologists call it a keystone species of the savanna. Which effect of all that digging earns it the title?",
     "answer": "Its abandoned burrows shelter warthogs, hyenas, owls, and pythons",
     "choices": [
       "Its abandoned burrows shelter warthogs, hyenas, owls, and pythons",
-      "Its constant digging aerates and fertilizes the whole grassland soil",
+      "Its digging exposes salt licks that the grazing herds visit",
       "It eats enough termites to keep whole mounds from overrunning the plain",
       "Its tunnels channel rainwater into pools the herds drink from"
     ],
@@ -144,15 +144,15 @@
   },
   {
     "tier": 4,
-    "question": "Camera traps set beside patches of buried melons watched seven kinds of mammal pass by in a 2025 study. The melons belong to the aardvark cucumber, the only cucumber in the world that pushes its fruit about a foot underground to ripen out of sight. Only the aardvark, the ant-eating night burrower, reliably came away with the fruit. What did it manage that no other mammal could?",
-    "answer": "Locate and dig up the buried fruit, then spread its seeds in its dung",
+    "question": "Camera traps in central Namibia watched seven kinds of mammal pass patches of the aardvark cucumber in a 2025 study. It is the only cucumber that pushes its fruit about a foot underground to ripen out of sight. What part did the aardvark play that no other mammal there could?",
+    "answer": "It dug up the buried fruit and planted the seeds in its dung",
     "choices": [
-      "Locate and dig up the buried fruit, then spread its seeds in its dung",
-      "Crack the tough rind open with its tube-teeth once it surfaced",
-      "Pollinate the hidden flower by brushing past it in the dark",
-      "Carry the whole melon back to line the floor of its burrow"
+      "It dug up the buried fruit and planted the seeds in its dung",
+      "It pollinated the flowers and carried pollen to the next vine",
+      "It stored the melons in its burrow and let the seeds sprout there",
+      "It hid the melons in termite mounds, where the seeds sprouted"
     ],
-    "context": "The aardvark cucumber grows its fruit about a foot underground and is the only cucumber species with buried fruit. The aardvark digs it up for the moisture, then passes the undigested seeds in its dung, replanting them with fertilizer. A 2025 study of seven mammal species found the aardvark was the ONLY one able to locate and reach the buried melons, confirming the plant depends on it. Source: https://news.mongabay.com/short-article/2025/02/study-confirms-that-ant-eating-aardvarks-have-a-craving-for-buried-melons/",
+    "context": "The aardvark cucumber grows its fruit about a foot underground and is the only cucumber species with buried fruit. The aardvark sniffs it out, digs it up for the moisture, and passes the seeds whole in its dung, replanting them with fertilizer. In the 2025 study (Johnson, Eichhoff & Midgley, Plants, People, Planet) the aardvark was the only one of seven mammals able to locate and reach the buried melons; porcupines ate the fruit only when it lay near the surface, and they destroyed the seeds. Source: https://botany.one/2025/07/unearthing-the-old-mystery-of-underground-melons/ ; https://news.mongabay.com/short-article/2025/02/study-confirms-that-ant-eating-aardvarks-have-a-craving-for-buried-melons/",
     "topic": "aardvark"
   },
   {
@@ -607,20 +607,20 @@
       "Salmon and trout",
       "Pike and perch"
     ],
-    "context": "Despite the name, the electric eel (order Gymnotiformes) is a knifefish, far closer to catfish and carp than to true eels like the moray. A fun teach-before-test correction. Source: Wikipedia, Electric eel; Mongabay 2019.",
+    "context": "Despite the name, the electric eel (order Gymnotiformes) is a knifefish, far closer to catfish and carp than to true eels like the moray. Source: Wikipedia, Electric eel; Mongabay 2019.",
     "topic": "animals-that-generate-electricity"
   },
   {
     "tier": 2,
-    "question": "Thousands of flat cells sit stacked and wired end to end down each side of an electric eel's body as it hunts the murky Amazon. The eel builds them from the same kind of cell that, in most animals, only makes a muscle twitch. What is one of these stacked cells called?",
-    "answer": "An electrocyte",
+    "question": "Thousands of flat cells sit stacked end to end down each side of an electric eel's body, wired like batteries in a row, as it hunts the murky Amazon. Each one is a remodeled version of an ordinary kind of cell. Which kind of cell does the eel rebuild into these living batteries?",
+    "answer": "A muscle cell",
     "choices": [
-      "An electrocyte",
-      "A motor end plate",
-      "A Sachs' organ cell",
-      "An ampulla of Lorenzini"
+      "A muscle cell",
+      "A nerve cell",
+      "A skin cell",
+      "A fat cell"
     ],
-    "context": "Roughly 6,000 electrocytes sit end-to-end in a stack like batteries wired in series, with about 35 stacks in parallel down each side of the eel's long body. Source: Wikipedia, Electric eel.",
+    "context": "These stacked cells, called electrocytes, are modified muscle cells. Roughly 6,000 sit end-to-end in a stack like batteries wired in series, with about 35 stacks in parallel down each side of the eel's long body. Source: https://en.wikipedia.org/wiki/Electric_eel",
     "topic": "animals-that-generate-electricity"
   },
   {
@@ -651,15 +651,15 @@
   },
   {
     "tier": 5,
-    "question": "An elephantnose fish builds its power organ from ordinary muscle cells, just as an electric eel and a torpedo ray do, though their lineages split long before any of them could shock. A 2014 genome study found this organ was reinvented at least six separate times in fishes. What astonished the team about how those unrelated fish each built it?",
-    "answer": "They all recruited the very same set of genes and developmental pathways",
+    "question": "An elephantfish of African rivers and an electric eel of the Amazon both build electric organs, though their lineages split long before either had one. Such organs evolved at least six separate times in fishes. What did a 2014 study comparing the genes of three unrelated electric lineages find about how each built its organ?",
+    "answer": "They drew on a similar set of genes and developmental pathways",
     "choices": [
-      "They all recruited the very same set of genes and developmental pathways",
-      "They each borrowed the necessary genes from prey they had eaten",
-      "They independently invented six completely unrelated genetic recipes",
-      "They pooled their genes by interbreeding across the separate lineages"
+      "They drew on a similar set of genes and developmental pathways",
+      "They each borrowed the needed genes from prey they had eaten",
+      "Each invented its own unrelated genetic recipe from scratch",
+      "They pooled their genes by interbreeding across the lineages"
     ],
-    "context": "The myogenic electric organ is one of evolution's favorite reruns: a 2014 genomic study (Science, June 27, 2014; co-led by Jason Gallant, Michael Sussman and Harold Zakon, and including the first full electric-eel genome) found it evolved INDEPENDENTLY at least six separate times in fishes. Every time, unrelated lineages converted ordinary muscle cells into giant electricity-making electrocytes — and each reached for the SAME 'genetic toolbox,' recruiting the same set of genes and developmental pathways despite millions of years of separate evolution. Source: Gallant, Traeger et al. (2014), 'Genomic basis for the convergent evolution of electric organs,' Science 344(6191):1522 — https://www.science.org/doi/10.1126/science.1254432 ; https://www.sciencedaily.com/releases/2014/06/140626141652.htm",
+    "context": "The muscle-built electric organ is one of evolution's favorite reruns: it evolved independently at least six times in fishes. Gallant, Traeger and colleagues (Science, 2014) assembled the first electric-eel genome and compared electric organ with muscle in three lineages that evolved electric organs on their own, and found that each had leveraged similar transcription factors and developmental and cellular pathways to turn muscle into electrocytes. Source: Gallant et al. 2014, 'Genomic basis for the convergent evolution of electric organs,' Science 344:1522, https://pubmed.ncbi.nlm.nih.gov/24970089/",
     "topic": "animals-that-generate-electricity"
   },
   {
@@ -781,15 +781,15 @@
   },
   {
     "tier": 2,
-    "question": "Anomalocaris prowled the Cambrian seas about 500 million years ago, long before dinosaurs, sharks or even fish. Its squashed fossils turn up in the Burgess Shale, a slab of dark rock high in the mountains of British Columbia, Canada, where scientists can measure the whole animal from head to tail. How long could this ancient hunter grow?",
-    "answer": "Up to about a meter",
+    "question": "Anomalocaris prowled the Cambrian seas about 500 million years ago, long before dinosaurs or sharks, when most animals around it were no longer than a finger. Its squashed fossils turn up in the Burgess Shale of British Columbia, Canada. How long could its body grow?",
+    "answer": "Up to about 38 centimeters",
     "choices": [
-      "Up to about a meter",
-      "Up to about a centimeter",
-      "Up to about ten meters",
-      "Up to about thirty meters"
+      "Up to about 38 centimeters",
+      "Up to about 12 centimeters",
+      "Up to about 1.5 meters",
+      "Up to about 4 meters"
     ],
-    "context": "At up to about 1 meter (100 cm) long, Anomalocaris was the largest predator of the Burgess Shale and a giant of its day. Most Cambrian animals were only a few centimeters, so it towered over its whole world. Source: Royal Ontario Museum, Burgess Shale (burgess-shale.rom.on.ca/fossils/anomalocaris-canadensis/).",
+    "context": "Anomalocaris canadensis is estimated at about 34 to 38 cm long, not counting its grasping arms and tail fan; an older estimate of up to 1 meter is now thought unlikely. Most Cambrian animals were only a few centimeters long, so it was one of the giants of its world. Source: https://en.wikipedia.org/wiki/Anomalocaris",
     "topic": "anomalocaris"
   },
   {
@@ -798,7 +798,7 @@
     "answer": "Flexible flaps",
     "choices": [
       "Flexible flaps",
-      "Beating gills",
+      "Armored plates",
       "Suction discs",
       "Jointed paddle-legs"
     ],
@@ -819,32 +819,6 @@
     "topic": "anomalocaris"
   },
   {
-    "tier": 3,
-    "question": "The mouth of Anomalocaris was a circle of hard, overlapping plates ringed with tooth-like points, and it clamped shut to grip and crush whatever the two grabbing arms curled into it. Seen head-on in the fossil, what everyday object is that ring-shaped mouth shaped like?",
-    "answer": "A pineapple slice",
-    "choices": [
-      "A pineapple slice",
-      "A closed fist",
-      "A hinged beak",
-      "A drinking straw"
-    ],
-    "context": "Its mouth was a strange ring of hard overlapping plates, a circular 'oral cone' shaped like a pineapple slice and ringed with teeth-like points, which it clamped shut on prey to grip and crush it. Source: Royal Ontario Museum, Burgess Shale; Wikipedia (en.wikipedia.org/wiki/Anomalocaris).",
-    "topic": "anomalocaris"
-  },
-  {
-    "tier": 3,
-    "question": "Joseph Whiteaves dug up a single spiny grasping limb of Anomalocaris in 1892, long before anyone understood the whole animal it came from. With only that fragment, he mistook it for a shrimp's curled-up tail, and that old mistake is baked right into the animal's Latin name. What does Anomalocaris mean?",
-    "answer": "Odd shrimp",
-    "choices": [
-      "Odd shrimp",
-      "Ring mouth",
-      "Giant hunter",
-      "Spiny claw"
-    ],
-    "context": "The name 'Anomalocaris' means 'odd shrimp' (or 'abnormal shrimp'). In 1892 Joseph Whiteaves found only a detached grasping arm and thought it was the tail of a shrimp or lobster, so the whole animal ended up named after a single misread body part. Source: Wikipedia, Anomalocaris (en.wikipedia.org/wiki/Anomalocaris); UC Berkeley Understanding Science (undsci.berkeley.edu/this-is-not-the-shrimp-youre-looking-for/).",
-    "topic": "anomalocaris"
-  },
-  {
     "tier": 4,
     "question": "A rare fossil of a whole Anomalocaris eye, pulled from the shale of South Australia in 2011, came out still perfectly preserved. When scientists counted the lenses packed onto that single eye, they realized its vision had already been as sharp as a modern dragonfly's half a billion years ago. Roughly how many lenses did that one eye hold?",
     "answer": "About 16,000",
@@ -858,34 +832,21 @@
     "topic": "anomalocaris"
   },
   {
-    "tier": 4,
-    "question": "Charles Walcott catalogued a ring-shaped fossil as a very different kind of animal, long before anyone knew it was the mouth of Anomalocaris. Until 1985 the creature's parts were scattered through the fossil record under different names, each thought to be its own animal. What had Walcott classified that mouth as?",
-    "answer": "A jellyfish",
-    "choices": [
-      "A jellyfish",
-      "A sea urchin",
-      "A coiled worm",
-      "A snail shell"
-    ],
-    "context": "Anomalocaris's pieces were first mistaken for separate creatures: the grasping arm as a shrimp, the body as a sponge or sea cucumber (Laggania), and the ring-shaped mouth catalogued by Charles Walcott as a jellyfish, which he named Peytoia. Not until 1985 did Harry Whittington and Derek Briggs find the pieces joined and realize they were one animal. Source: Whittington & Briggs 1985; Wikipedia, Anomalocaris; UC Berkeley Understanding Science.",
-    "topic": "anomalocaris"
-  },
-  {
     "tier": 5,
     "question": "A team of scientists built a digital model of an Anomalocaris grasping arm in 2023 and loaded it with stress, testing the century-old picture of the animal as a terror that pried open trilobites. Against mineralized armor, the thin gripping spines bent and snapped. What did the test conclude those arms were actually built to catch?",
-    "answer": "Soft-bodied prey",
+    "answer": "Soft-bodied swimmers",
     "choices": [
-      "Soft-bodied prey",
+      "Soft-bodied swimmers",
       "Armored trilobites",
       "Buried burrowers",
-      "Drifting plankton"
+      "Shelled brachiopods"
     ],
-    "context": "The old reputation wasn't baseless: Cameron Nedin's 1999 paper pointed to real clues -- Cambrian trilobites with round and W-shaped healed bite wounds, and large fossil fecal pellets stuffed with crushed shell -- and proposed Anomalocaris rocked a trilobite back and forth in its mouth until the armor failed. But Bicknell et al. (2023, Proc. R. Soc. B 290:20230638) ran finite-element analysis on a 3D model of the frontal appendage and found the ventral gripping spines (endites) would suffer high stress and plastic deformation against a hard trilobite shell -- they would bend and break. Combined with the soft oral cone showing no wear from armored prey, the study concluded the grasping arms of Anomalocaris canadensis were built for soft-bodied prey, not shell-crushing. Whether some radiodonts still tackled hard prey remains debated. Source: Bicknell et al. 2023, https://pmc.ncbi.nlm.nih.gov/articles/PMC10320336/ ; Nedin 1999, Geology 27:987-990.",
+    "context": "The old reputation wasn't baseless: Cameron Nedin's 1999 paper pointed to real clues, Cambrian trilobites with round and W-shaped healed bite wounds and large fossil fecal pellets stuffed with crushed shell, and proposed Anomalocaris rocked a trilobite back and forth in its mouth until the armor failed. But Bicknell et al. (2023, Proc. R. Soc. B 290:20230638) ran finite-element analysis on a 3D model of the frontal appendage and found the ventral gripping spines (endites) would suffer high stress and bend or break against a hard trilobite shell. With an oral cone of pliable, weakly hardened plates that could not close fully, the study concluded Anomalocaris canadensis was an agile open-water hunter of soft-bodied swimming prey, not a shell-crusher. Whether some radiodonts still tackled hard prey remains debated. Source: Bicknell et al. 2023, https://pmc.ncbi.nlm.nih.gov/articles/PMC10320336/ ; Nedin 1999, Geology 27:987-990.",
     "topic": "anomalocaris"
   },
   {
     "tier": 4,
-    "question": "Anomalocaris rippled through Cambrian seas on rows of soft swimming flaps, already carrying the stalked compound eyes that mark its cousins the arthropods. Yet one hallmark of every living arthropod, from crab to beetle, never appears anywhere on its body, which is why it sits just outside them. What did it never grow?",
+    "question": "Anomalocaris hunted the Cambrian seas with stalked compound eyes, the kind that mark many of its cousins the arthropods. Yet one hallmark of every living arthropod, from crab to beetle, never appears anywhere on its body, which is why it sits just outside them. What did it never grow?",
     "answer": "Jointed trunk limbs",
     "choices": [
       "Jointed trunk limbs",
@@ -911,7 +872,7 @@
   },
   {
     "tier": 3,
-    "question": "A notothenioid fish cruises the Antarctic sea at about minus 1.9°C, colder than the point where an ordinary fish's blood would freeze into slush. Its family makes up almost every fish in those icy waters, and none of them turns solid. When a tiny ice crystal sneaks into its blood, what do its antifreeze proteins do to it?",
+    "question": "A notothenioid fish cruises the Antarctic sea at about minus 1.9°C, colder than the point where an ordinary fish's blood would freeze into slush. Its kin make up most of the fish in those icy waters, and none of them turns solid. When a tiny ice crystal sneaks into its blood, what do its antifreeze proteins do to it?",
     "answer": "Grip it so it can't grow",
     "choices": [
       "Grip it so it can't grow",
@@ -925,27 +886,27 @@
   {
     "tier": 4,
     "question": "A little brown wood frog lies under the Canadian leaf litter through January with everything stopped: no heartbeat, no breath, no brain activity, its whole body frozen into a lump of ice for months. In April the warming soil finally thaws its blood, and the frog stirs back to life. Once thawed, roughly how long does it take to be hopping around and behaving normally again?",
-    "answer": "About 10 hours",
+    "answer": "About one day",
     "choices": [
-      "About 10 hours",
-      "About 10 minutes",
+      "About one day",
+      "About a minute",
       "About 10 days",
       "About 10 weeks"
     ],
-    "context": "The heart and brain restart on their own after months of silence, and within about 10 hours the frog is back to normal. Source: Discover Wildlife, 'This strange animal survives winter by stopping its heart'; Blue Ridge Discovery Center, 'Frozen Frogs'.",
+    "context": "The heart starts beating again even before the frog has fully thawed, but its leg muscles take more than five hours to regain some function, and it needs up to about a day to show normal posture and coordinated movement. Source: Wisconsin Wetlands Association, 'The Symphony of Spring' (https://www.wisconsinwetlands.org/updates/the-symphony-of-spring/); Storey Lab, wood frog freeze tolerance.",
     "topic": "antifreeze-blood-and-freezing-solid"
   },
   {
     "tier": 4,
-    "question": "A fly larva hides inside a round swelling on a goldenrod stem and freezes on purpose all winter. In autumn it floods itself with glycerol; then, as the cold deepens, it brews a second protectant that pushes its survival down to about minus 40°C. What is that second substance?",
-    "answer": "Sorbitol",
+    "question": "A fly larva spends the winter inside a round swelling on a goldenrod stem, with only a thin wall of plant tissue between it and the frost. In autumn it loads its body with glycerol, then adds a second protectant as the cold deepens. What do those chemicals let it do?",
+    "answer": "Freeze solid and thaw again, over and over",
     "choices": [
-      "Sorbitol",
-      "More glycerol",
-      "Seawater",
-      "Melted fat"
+      "Freeze solid and thaw again, over and over",
+      "Stay liquid far below zero all winter",
+      "Burn sugar to keep its body warm",
+      "Dry out like a seed until spring"
     ],
-    "context": "The goldenrod gall fly larva (Eurosta solidaginis) adds sorbitol as a second cryoprotectant when it gets colder, surviving frozen down to about minus 40 C and thawing over and over all winter. Source: Storey Lab, 'Goldenrod gall fly'; JEB 221(15):jeb177956.",
+    "context": "The goldenrod gall fly larva (Eurosta solidaginis) is freeze-tolerant: rather than staying liquid, it lets its body freeze, protected first by glycerol and then by sorbitol, surviving frozen down to about minus 40 C and thawing and refreezing all winter. Source: https://en.wikipedia.org/wiki/Eurosta_solidaginis ; Storey Lab, 'Goldenrod gall fly'; JEB 221(15):jeb177956.",
     "topic": "antifreeze-blood-and-freezing-solid"
   },
   {
@@ -990,14 +951,14 @@
   {
     "tier": 5,
     "question": "A crocodile icefish swims right beside its red-blooded cousins in the same Antarctic water, though its own blood carries barely a tenth of the oxygen theirs does. Biologists still argue over why it lost its red blood cells at all. Which explanation does Sidell and O'Brien's leading 2006 review defend?",
-    "answer": "No measured benefit -- a mutation that stuck only because cold, predator-poor water relaxed selection",
+    "answer": "No measured benefit: a fluke that cold, oxygen-rich water let survive",
     "choices": [
-      "No measured benefit -- a mutation that stuck only because cold, predator-poor water relaxed selection",
+      "No measured benefit: a fluke that cold, oxygen-rich water let survive",
       "Clear blood raised oxygen delivery in the thick, frigid Antarctic water",
       "Thinner, cell-free blood cut the heart's pumping cost in the cold",
       "Scrapping red cells freed up iron the fish reused in other tissues"
     ],
-    "context": "A genuine, still-live scientific debate. Sidell & O'Brien's 2006 review argues there is no measured fitness advantage to being white-blooded: icefish live right alongside red-blooded cousins, and their clear blood carries only about 10 percent of the oxygen. The hemoglobin-loss mutation likely survived only because frigid, isolated, predator-poor Antarctic waters relaxed the pressure long enough for extreme compensations -- an enormous heart, huge blood volume, and scaleless skin that soaks oxygen straight from the water -- to evolve and keep the fish alive. Whether the loss was ever adaptive at all is still argued. Source: Sidell & O'Brien, 'When bad things happen to good fish: the loss of hemoglobin and myoglobin expression in Antarctic icefishes,' J. Exp. Biol. 209:1791 (2006) -- https://www.researchgate.net/publication/7129088",
+    "context": "A genuine, still-live scientific debate. Sidell & O'Brien's 2006 review argues there is no measured fitness advantage to being white-blooded: icefish live right alongside red-blooded cousins, and their clear blood carries only about 10 percent of the oxygen. The hemoglobin-loss mutation likely survived only because frigid, oxygen-rich Antarctic waters, emptied of many competitors, relaxed the pressure long enough for extreme compensations, an enormous heart, huge blood volume and scaleless skin that soaks oxygen straight from the water, to evolve and keep the fish alive. Whether the loss was ever adaptive at all is still argued. Source: Sidell & O'Brien, 'When bad things happen to good fish: the loss of hemoglobin and myoglobin expression in Antarctic icefishes,' J. Exp. Biol. 209:1791 (2006); https://www.scientificamerican.com/blog/brainwaves/how-the-antarctic-icefish-lost-its-red-blood-cells-but-survived-anyway/",
     "topic": "antifreeze-blood-and-freezing-solid"
   },
   {
@@ -1021,22 +982,22 @@
       "Flicks sand up at the ant to trigger tiny landslides",
       "Squirts a jet of sticky glue up the wall",
       "Vibrates the whole pit like a drumhead",
-      "Whistles to summon other larvae"
+      "Lunges halfway up the wall to seize it"
     ],
     "context": "With violent jerks of its head the antlion showers the climbing ant with flung sand, setting off little avalanches that carry the ant back down into its jaws. Source: https://en.wikipedia.org/wiki/Antlion",
     "topic": "antlion-the-larva-that-digs-a-sand-death-trap"
   },
   {
     "tier": 2,
-    "question": "A young antlion crawls across dry sand hunting for a good spot to dig its pit, leaving squiggly, winding doodle-trails behind it. Its whole body is built to travel in only one direction; its legs and jaws point the wrong way for the other. Which way can the antlion larva move?",
-    "answer": "Only backward",
+    "question": "A young antlion crawls across dry sand hunting for a good spot to dig its pit, and it leaves squiggly, winding doodle-trails behind it. The way it moves is one of the oddest things about it. Which way does the larva walk?",
+    "answer": "Backward, rear end first",
     "choices": [
-      "Only backward",
-      "Only forward",
-      "Only sideways, like a crab",
-      "Only in tight circles"
+      "Backward, rear end first",
+      "Forward, jaws first",
+      "Sideways, like a crab",
+      "In tight, spinning circles"
     ],
-    "context": "The antlion larva can only walk backward. Wandering backward in search of a spot to dig, it leaves squiggly winding trails in the sand — which is why in North America it's nicknamed the 'doodlebug'. Source: https://en.wikipedia.org/wiki/Antlion",
+    "context": "A pit-digging antlion larva walks backward. Wandering in reverse in search of a spot to dig, it leaves squiggly winding trails in the sand, which is why in North America it is nicknamed the 'doodlebug'. Source: https://en.wikipedia.org/wiki/Antlion",
     "topic": "antlion-the-larva-that-digs-a-sand-death-trap"
   },
   {
@@ -1060,7 +1021,7 @@
       "It has no anus at all",
       "Its food leaves no solid waste behind",
       "It sheds its whole gut with each molt",
-      "It turns all its waste into silk"
+      "It sweats its waste out through its skin"
     ],
     "context": "The larva has no anus and cannot expel waste; everything from years of hunting is stored inside its body and only released after it becomes an adult. Source: https://en.wikipedia.org/wiki/Antlion",
     "topic": "antlion-the-larva-that-digs-a-sand-death-trap"
@@ -1068,23 +1029,23 @@
   {
     "tier": 2,
     "question": "A raven-sized Archaeopteryx lived 150 million years ago in what is now southern Germany, and it looked like two creatures glued together. It had true feathers and a wishbone like a bird, but also small pointed teeth, clawed fingers and a long bony tail. Which two great animal groups does this one fossil famously bridge?",
-    "answer": "Meat-eating dinosaurs and birds",
+    "answer": "Dinosaurs and birds",
     "choices": [
-      "Meat-eating dinosaurs and birds",
-      "Fish and amphibians",
-      "Reptiles and mammals",
-      "Insects and spiders"
+      "Dinosaurs and birds",
+      "Pterosaurs and birds",
+      "Lizards and birds",
+      "Crocodiles and birds"
     ],
     "context": "Birds ARE living dinosaurs, and Archaeopteryx sits on that road as a creature part dinosaur, part bird, preserved in the fine Solnhofen limestone of southern Germany. Source: UCMP Berkeley 'Archaeopteryx: An Early Bird'; National Geographic (2014); Britannica 'Archaeopteryx'.",
     "topic": "archaeopteryx-dinosaur-becomes-bird"
   },
   {
     "tier": 2,
-    "question": "An Archaeopteryx skeleton came out of the quarry with its feathers only faintly preserved, and the first scientists to see it missed the feather marks altogether. They filed the fossil under the wrong animal entirely. What did they first catalog it as?",
+    "question": "An Archaeopteryx skeleton came out of the quarry with its feathers only faintly preserved, and the people who first examined it missed the feather marks altogether. They filed the fossil under the wrong animal entirely. What did they first catalog it as?",
     "answer": "A small bipedal dinosaur (a Compsognathus)",
     "choices": [
       "A small bipedal dinosaur (a Compsognathus)",
-      "A flying reptile (a pterosaur)",
+      "A lizard-like reptile (a Homoeosaurus)",
       "A fossil fish (a Leedsichthys)",
       "An early crocodile (a Goniopholis)"
     ],
@@ -1098,7 +1059,7 @@
     "choices": [
       "Evolution swapped one system at a time, not all at once",
       "The switch happened in a single dramatic generation",
-      "The tail shortened before any feathers grew",
+      "Dinosaurs and early birds traded traits by interbreeding",
       "Each animal reshaped its own body as it grew"
     ],
     "context": "Because it mixes traits, the transition proceeded piecemeal: feathers and a wishbone arrived while teeth, clawed hands, and a bony tail were still hanging around. Source: NCBI/PMC5418581 'Mosaic evolution in an asymmetrically feathered troodontid'; Wikipedia 'Archaeopteryx'.",
@@ -1106,28 +1067,15 @@
   },
   {
     "tier": 3,
-    "question": "A beautifully preserved Archaeopteryx had long feathers running from head all the way to foot, even covering its legs like a pair of trousers. Yet the animal was a poor flier at best. What were the feathers most likely used for before flight?",
+    "question": "A beautifully preserved Archaeopteryx had feathers from head to foot, even long ones wrapping its legs like a pair of trousers. Feathers like these also grew on its dinosaur relatives that never flew. What were such feathers most likely first used for?",
     "answer": "Warmth or showing off",
     "choices": [
       "Warmth or showing off",
       "Rowing through shallow water",
-      "Grabbing and holding prey",
-      "Filtering food from mud"
+      "Netting insects out of the air",
+      "Steering during fast sprints"
     ],
     "context": "Paleontologist Oliver Rauhut: 'The only thing we can say with some certainty is that [feathers] did not primarily evolve for flight, as it was long believed.' The scientists summed up the sequence as 'First show off, then take-off.' Source: National Geographic (2014); ScienceDaily '140703091959' and 'First show off, then take-off' (2014).",
-    "topic": "archaeopteryx-dinosaur-becomes-bird"
-  },
-  {
-    "tier": 4,
-    "question": "Mark Norell of the American Museum of Natural History was asked how well Archaeopteryx could really fly. Modern birds anchor their big flight muscles to a deep keeled breastbone that juts out like the keel of a boat, but Archaeopteryx had only a flat sternum with no keel at all. How did Norell describe its actual flying?",
-    "answer": "Maybe like a turkey if it really tried",
-    "choices": [
-      "Maybe like a turkey if it really tried",
-      "A smooth soaring glide for miles",
-      "A hovering hummingbird beat",
-      "No airborne ability whatsoever"
-    ],
-    "context": "Without the keel, Archaeopteryx was 'probably not a strong flier.' Norell said it 'probably didn't fly like a bird at all, maybe like a turkey if it really tried.' Source: UCMP Berkeley; National Geographic (2014, Mark Norell quote); Wikipedia 'Archaeopteryx'.",
     "topic": "archaeopteryx-dinosaur-becomes-bird"
   },
   {
@@ -1145,12 +1093,12 @@
   },
   {
     "tier": 2,
-    "question": "Quarry workers at Solnhofen in southern Germany lifted a crow-sized creature out of the fine, pale limestone in 1861, an animal from 150 million years ago. Named Archaeopteryx, 'ancient wing,' it stunned the scientific world. What did this animal wear that no reptile before it had grown?",
+    "question": "Quarry workers at Solnhofen in southern Germany lifted a crow-sized creature out of the fine, pale limestone in 1861, an animal from 150 million years ago. Named Archaeopteryx, 'ancient wing,' it stunned the scientific world. What covered its body?",
     "answer": "A full coat of true feathers",
     "choices": [
       "A full coat of true feathers",
       "A shell of bony plates",
-      "A crest of spines",
+      "Rows of spiny scales",
       "A layer of thick fur"
     ],
     "context": "Archaeopteryx lived on a tropical archipelago of low islands that is now the Solnhofen region of southern Germany, in the Late Jurassic. It is one of the most famous 'transitional fossils' ever found. Source: UCMP Berkeley - Archaeopteryx: An Early Bird; Wikipedia - Archaeopteryx.",
@@ -1158,7 +1106,7 @@
   },
   {
     "tier": 2,
-    "question": "Archaeopteryx carried true feathers along its arms and long tail in what is now Germany, 150 million years ago, and it looked so bird-like that scientists crowned it the Urvogel, German for 'primeval bird.' Yet its jaws held a clear holdover from its reptile ancestors, something no bird alive today has in its mouth. What lined its jaws?",
+    "question": "Archaeopteryx carried true feathers along its arms and long tail in what is now Germany, 150 million years ago, and it looked so bird-like that scientists crowned it the Urvogel, German for 'primeval bird.' Yet its jaws held a clear holdover from its reptile ancestors. What did its jaws hold?",
     "answer": "Rows of small sharp teeth",
     "choices": [
       "Rows of small sharp teeth",
@@ -1171,7 +1119,7 @@
   },
   {
     "tier": 3,
-    "question": "A modern robin, pigeon, or eagle ends each wing in a smooth feathered tip. But Archaeopteryx, the 150-million-year-old feathered fossil animal from Germany, still carried something at each wingtip that no living bird has. What did each wing of Archaeopteryx bear at its tip?",
+    "question": "A modern robin, pigeon or eagle ends each wing in a smooth feathered tip. But Archaeopteryx, the 150-million-year-old feathered fossil animal from Germany, still carried something at each wingtip that robins and eagles lack. What did each wing of Archaeopteryx bear at its tip?",
     "answer": "Three clawed fingers",
     "choices": [
       "Three clawed fingers",
@@ -1184,12 +1132,12 @@
   },
   {
     "tier": 4,
-    "question": "The fine Solnhofen mud of southern Germany kept an Archaeopteryx feather so sharply that scientists could study its vane, the flat part running along each side of the shaft. In a bird that takes to the sky, one side of the vane is wider than the other, a lopsided shape that helps the feather grip the air; an ostrich, which never flies, grows feathers with even sides. Which pattern did the 150-million-year-old feather match?",
+    "question": "The fine Solnhofen mud of southern Germany kept an Archaeopteryx feather so sharply that scientists could study its vane, the flat part along each side of the shaft. In a bird that flies, one side of the vane is wider than the other, a lopsided shape that helps the feather grip the air; an ostrich, which never flies, grows feathers with even sides. Which pattern did the 150-million-year-old feather match?",
     "answer": "Lopsided vanes, like a flying bird",
     "choices": [
       "Lopsided vanes, like a flying bird",
       "Even vanes, like an ostrich",
-      "A bare shaft with no vane",
+      "Loose, hairlike barbs, like down",
       "Twin shafts sharing one base"
     ],
     "context": "The Archaeopteryx flight feather had asymmetric vanes - narrow on one edge, wide on the other - the lopsided shape that in modern birds pushes air for lift, hinting the wing was built to fly, not just for show. Source: Feduccia & Tordoff, 'Feathers of Archaeopteryx: asymmetric vanes indicate aerodynamic function' (PubMed 17811125); NHM dino-directory.",
@@ -1216,7 +1164,7 @@
       "A row of long tertial feathers",
       "A flap of bare gliding skin",
       "A second short pair of wings",
-      "A fringe of stiff tail plumes"
+      "A cluster of short, fluffy down"
     ],
     "context": "The 14th Archaeopteryx skeleton, the 'Chicago specimen' at the Field Museum, was described in Nature in 2025 by Jingmai O'Connor and colleagues using UV light and CT scans. It preserved long tertial feathers on the upper arm for the first time in any Archaeopteryx. Because its humerus is unusually long, those tertials are exactly what fills the leak-prone gap between wing and body, letting the wing act as one continuous airfoil. Closely related feathered dinosaurs have wing feathers that stop at the elbow with no tertials, which is a big reason they could not fly and Archaeopteryx could. Source: https://www.sci.news/paleontology/chicago-archaeopteryx-13912.html ; https://www.fieldmuseum.org/about/press/uv-light-and-ct-scans-helped-scientists-unlock-hidden-details ; Nature 2025, s41586-025-08912-4.",
     "topic": "archaeopteryx"
@@ -1231,15 +1179,15 @@
       "The same rate, but no yearly rings",
       "Slower, but grown within one year"
     ],
-    "context": "A 2009 study led by Gregory Erickson, with Mark Norell and others (PLOS ONE), thin-sectioned Archaeopteryx bone and found poorly vascularized, parallel-fibered 'reptilian-grade' tissue with growth lines (LAGs, annual rings) in the larger London and Solnhofen specimens. Those rings show it kept growing across the second and third years of life, pausing each year like a small non-avian dinosaur, at roughly three times slower than modern precocial birds of similar size (maximal rates of 1.87-2.2 g/day, about a third of the rate for extant precocial land birds). So despite its feathers and wings, its metabolism and growth were still dinosaur-like, not fully bird-like, which is why the plain 'twice as fast', 'same rate', and 'grown within one year' answers are all wrong. Source: https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0007390 (Erickson et al., PLOS ONE, 2009); https://www.amnh.org/research/science-news/2009/archaeopteryx-lacked-rapid-bone-growth-the-hallmark-of-birds.",
+    "context": "A 2009 study led by Gregory Erickson, with Mark Norell and others (PLOS ONE), thin-sectioned Archaeopteryx bone and found poorly vascularized, parallel-fibered 'reptilian-grade' tissue with growth lines (LAGs, annual rings) in the larger London and Solnhofen specimens. Those rings show it kept growing across the second and third years of life, pausing each year like a small non-avian dinosaur, at roughly three times slower than modern precocial birds of similar size (maximal rates of 1.87-2.2 g/day, about a third of the rate for extant precocial land birds). So despite its feathers and wings, its metabolism and growth were still dinosaur-like, not fully bird-like. Source: https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0007390 (Erickson et al., PLOS ONE, 2009); https://www.amnh.org/research/science-news/2009/archaeopteryx-lacked-rapid-bone-growth-the-hallmark-of-birds.",
     "topic": "archaeopteryx"
   },
   {
     "tier": 1,
     "question": "A slim, silver fish striped in black patrols a shallow mangrove creek in Southeast Asia. It eats crickets, ants and spiders perched on leaves above the water, insects it can never reach. How does it bring down a bug on a branch above the water?",
-    "answer": "It spits a jet of water to knock the bug into the pond",
+    "answer": "It spits a jet of water that knocks the bug into the creek",
     "choices": [
-      "It spits a jet of water to knock the bug into the pond",
+      "It spits a jet of water that knocks the bug into the creek",
       "It leaps and snatches the bug from the branch with its fins",
       "It lures the bug down by wiggling like a floating seed",
       "It waits for wind to shake the bug loose from the leaf"
@@ -1289,14 +1237,14 @@
   {
     "tier": 4,
     "question": "A distant bug takes a hard-hitting blast from an archerfish, though the fish's mouth muscles are far too weak to fire a shot that strong. The punch is built in mid-air, after the water leaves its mouth. What makes the flying jet stronger than the fish that fired it?",
-    "answer": "Water shot later races ahead and bunches the jet into one slug",
+    "answer": "Water shot later catches up and bunches the jet into one slug",
     "choices": [
-      "Water shot later races ahead and bunches the jet into one slug",
+      "Water shot later catches up and bunches the jet into one slug",
       "The jet spins like a rifle bullet and drills through the air",
       "A pocket of air behind the water pushes it faster as it flies",
       "The jet freezes into a tiny bead that strikes like a pebble"
     ],
-    "context": "LEGEND-level physics: water shot later travels faster than the water shot first, so the back of the jet catches the front mid-flight and bunches into one compact, hard-hitting slug, about six times more powerful than the fish's mouth muscles alone, the same physics as a drop-on-demand inkjet printer. Source: https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0047867 (Vailati et al. 2012, PLOS ONE)",
+    "context": "Water shot later travels faster than the water shot first, so the back of the jet catches the front mid-flight and bunches into one compact, hard-hitting slug, by one calculated estimate about six times more powerful than the fish's mouth muscles alone could deliver, the same physics as a drop-on-demand inkjet printer. Source: https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0047867 (Vailati et al. 2012, PLOS ONE)",
     "topic": "archerfish"
   },
   {
@@ -1309,21 +1257,8 @@
       "A knack for the skill they were simply hatched already knowing",
       "A chemical cue in the tank water that carried the trick between fish"
     ],
-    "context": "LEGEND-level cognition: in Schuster's 2006 study, archerfish that never fired during training suddenly shot almost as well as the experts once given a turn, learning to hit fast-flying targets purely by observing other fish. Source: https://www.cell.com/current-biology/fulltext/S0960-9822(06)01013-X (Schuster, Current Biology 2006)",
+    "context": "In Schuster's 2006 study, archerfish that never fired during training suddenly shot almost as well as the experts once given a turn, learning to hit fast-flying targets purely by observing other fish. Source: https://www.cell.com/current-biology/fulltext/S0960-9822(06)01013-X (Schuster, Current Biology 2006)",
     "topic": "archerfish"
-  },
-  {
-    "tier": 2,
-    "question": "Along a cold northern coast patrols the Arctic tern, a slender seabird with a black cap pulled down over its head, white cheeks and a deeply forked swallow's tail. Only two parts of the bird are painted a striking color that jumps out against all that white and gray. What color are the Arctic tern's bill and feet?",
-    "answer": "Blood-red",
-    "choices": [
-      "Blood-red",
-      "Bright yellow",
-      "Slate-gray",
-      "Jet-black"
-    ],
-    "context": "The Arctic tern has a blood-red beak and blood-red feet, set against a black crown, white cheeks, and a deeply forked tail. Source: Wikipedia, Arctic tern.",
-    "topic": "arctic-tern"
   },
   {
     "tier": 2,
@@ -1340,7 +1275,7 @@
   },
   {
     "tier": 3,
-    "question": "An Arctic tern raises its chicks near the North Pole, then crosses the entire globe to spend the rest of the year near the South Pole. What does chasing the sun this way give it that likely no other creature gets?",
+    "question": "An Arctic tern raises its chicks near the North Pole, then crosses the entire globe to spend the rest of the year near the South Pole. What does living at the two ends of the Earth this way give it that likely no other creature gets?",
     "answer": "Two summers and more daylight than any animal alive",
     "choices": [
       "Two summers and more daylight than any animal alive",
@@ -1349,19 +1284,6 @@
       "Fewer predators at both ends"
     ],
     "context": "Because it lives in perpetual summer at both poles, the Arctic tern sees two summers a year and very likely more daylight than any other animal on Earth. Source: Wikipedia, Arctic tern; discoverwildlife.com. LEGEND.",
-    "topic": "arctic-tern"
-  },
-  {
-    "tier": 3,
-    "question": "Egevang and colleagues tracked Arctic terns in 2010 and found that the birds do not fly straight south at all: their route curves down the Atlantic in a great zigzagging S-shaped loop. How far does one bird actually travel in a single year?",
-    "answer": "About 70,900 km (~44,000 miles)",
-    "choices": [
-      "About 70,900 km (~44,000 miles)",
-      "About 12,000 km (~7,500 miles)",
-      "About 250,000 km (~155,000 miles)",
-      "About 5,000 km (~3,000 miles)"
-    ],
-    "context": "Because it loops rather than flying a straight line, the true round trip averages about 70,900 km a year (range 59,500–81,600 km). Source: Egevang et al. 2010, PNAS.",
     "topic": "arctic-tern"
   },
   {
@@ -1388,19 +1310,6 @@
       "Counterclockwise around both the South and North Atlantic"
     ],
     "context": "The tern's sigmoidal route runs counterclockwise around the South Atlantic gyre and clockwise around the North Atlantic gyre, riding each ocean's prevailing winds rather than fighting a straight-line crossing. Source: Egevang et al. 2010, PNAS.",
-    "topic": "arctic-tern"
-  },
-  {
-    "tier": 4,
-    "question": "Before following Arctic terns from pole to pole, a team of researchers needed a tracking tag light enough for a bird of about 100 grams to carry without being weighed down. The team glued a tiny geolocator to each bird's leg band. How heavy was each geolocator?",
-    "answer": "Just 1.4 grams",
-    "choices": [
-      "Just 1.4 grams",
-      "About 20 grams",
-      "About 100 grams",
-      "About half a gram"
-    ],
-    "context": "The team fitted 1.4-gram geolocators to 11 birds (10 from Greenland, 1 from Iceland) — light enough not to burden a bird that weighs only about 100 grams. Source: Egevang et al. 2010, PNAS; National Geographic.",
     "topic": "arctic-tern"
   },
   {
@@ -1496,7 +1405,7 @@
   },
   {
     "tier": 1,
-    "question": "A mongoose corners an armadillo girdled lizard on a rock in South Africa, far from any crack. The lizard cannot outrun it, so it turns its body into a spiny ball no teeth can bite. What does it do?",
+    "question": "A mongoose corners an armadillo girdled lizard on a rock in South Africa, far from any crack to hide in. The lizard is too slow to outrun it. What does it do?",
     "answer": "It grabs its own tail in its mouth and curls into a ring",
     "choices": [
       "It grabs its own tail in its mouth and curls into a ring",
@@ -1522,19 +1431,6 @@
   },
   {
     "tier": 2,
-    "question": "In the hand, an armadillo girdled lizard feels less like a soft little reptile than something rigid and hard-cased. Its back and tail are so stiffly protected that a predator's teeth simply slide off. What is this natural covering most like?",
-    "answer": "The riveted plate armor of a knight",
-    "choices": [
-      "The riveted plate armor of a knight",
-      "The fused bony dome of a tortoise shell",
-      "The overlapping plates of a pangolin",
-      "The bristling quills of a porcupine"
-    ],
-    "context": "Rows of thick, squarish, spiny keeled scales cover the lizard's back and tail like plate armor. That armor, plus the ball-curling, is why it is named after the armadillo. Source: https://en.wikipedia.org/wiki/Armadillo_girdled_lizard",
-    "topic": "armadillo-girdled-lizard-the-lizard-that-bites-its-own-tail"
-  },
-  {
-    "tier": 2,
     "question": "The armadillo girdled lizard of South Africa produces just one or two young a year, and the way they enter the world is rare among lizards. Even rarer, the mother may stay and tend them afterward. How do her young arrive?",
     "answer": "The female gives birth to live, wriggling babies",
     "choices": [
@@ -1548,13 +1444,13 @@
   },
   {
     "tier": 3,
-    "question": "An armadillo girdled lizard hunts insects by day among the rocks of South Africa's western coast and shelters in the cracks between the stones. Most lizards live alone, but this one has a social habit almost no other lizard shares. What does its living arrangement look like?",
-    "answer": "Colonies of 30 to 60 packed into one crevice",
+    "question": "An armadillo girdled lizard hunts insects by day among the rocks of South Africa's western coast and shelters in the cracks between the stones. Most lizards live alone, but this one does not. What does its living arrangement look like?",
+    "answer": "A crowd of all ages packed into one crevice",
     "choices": [
-      "Colonies of 30 to 60 packed into one crevice",
-      "A bonded pair that defends one crevice for life",
-      "A mother alone with her single yearly hatchling",
-      "Rival males each guarding a separate sun-rock"
+      "A crowd of all ages packed into one crevice",
+      "A bonded pair that shares one crevice for life",
+      "A loose band that moves to a new rock each night",
+      "A hunting pack that herds insects together"
     ],
     "context": "Instead of living alone like most lizards, the armadillo girdled lizard lives in social groups packed into rock cracks - colonies of up to 30 to 60 individuals of all ages sharing the same crevice, which is highly unusual for a reptile. Source: https://en.wikipedia.org/wiki/Armadillo_girdled_lizard",
     "topic": "armadillo-girdled-lizard-the-lizard-that-bites-its-own-tail"
@@ -1639,13 +1535,13 @@
   },
   {
     "tier": 2,
-    "question": "Deep in the rainforest, a colony of army ants never digs a burrow or builds a mound. When the marching stops for the night, hundreds of thousands of workers hook leg to leg and become the shelter itself, walling in the queen and young. What do biologists call this temporary ant-built structure?",
-    "answer": "A bivouac",
+    "question": "Deep in the rainforest, a colony of army ants marches all day and never keeps a permanent nest. When the colony stops marching at nightfall, the queen and the young still need shelter. What do the workers build it from?",
+    "answer": "Their own bodies, hooked leg to leg",
     "choices": [
-      "A bivouac",
-      "A formicary",
-      "A carton nest",
-      "A royal cell"
+      "Their own bodies, hooked leg to leg",
+      "Leaves stitched together with larval silk",
+      "Chewed wood pulp shaped into paper walls",
+      "Mud pellets packed into a hollow dome"
     ],
     "context": "Army ants have no fixed nest. The workers grip each other with hooked feet to form a temporary living nest, called a bivouac, that shelters the queen and brood inside. Source: Discover Magazine, 'How Army Ants Build City-Like Nests Using Their Own Bodies' / Nature Communications s41467-022-28773-z.",
     "topic": "army-ants"
@@ -1673,7 +1569,7 @@
       "A raft of floating leaves",
       "A tunnel dug under the gap"
     ],
-    "context": "Army ants build living bridges from their own bodies, hooking together with tarsal claws so nestmates can cross rough ground without slowing. Source: Powell & Franks, PNAS 'Army ants dynamically adjust living bridges' (2015) / AntWiki, 'The Ants Chapter 16'.",
+    "context": "Army ants build living bridges from their own bodies, hooking together with tarsal claws so nestmates can cross rough ground without slowing. Source: Reid et al. 2015, PNAS 112:15113, 'Army ants dynamically adjust living bridges in response to a cost-benefit trade-off' (https://www.pnas.org/doi/10.1073/pnas.1512241112) / AntWiki, 'The Ants Chapter 16'.",
     "topic": "army-ants"
   },
   {
@@ -1691,7 +1587,7 @@
   },
   {
     "tier": 4,
-    "question": "A colony of army ants spends the night in a nest made of nothing but its own living bodies, clinging together around the queen. As the outside air heats and cools, the workers hold the core of that cluster steady near 28.5 degrees Celsius. How do they manage this in a nest made only of themselves?",
+    "question": "A colony of army ants spends the night in its bivouac, a temporary nest wrapped around the queen and her young. As the outside air heats and cools, the workers hold the core of that nest steady near 28.5 degrees Celsius. How do they manage it?",
     "answer": "Opening and closing air passages through the mass",
     "choices": [
       "Opening and closing air passages through the mass",
@@ -1704,13 +1600,13 @@
   },
   {
     "tier": 2,
-    "question": "Arthropleura, a giant relative of the millipedes, scuttled across the floor of a Carboniferous coal-swamp forest 326 million years ago, long before the first dinosaurs. It was longer than a grown man is tall, and then some. Just how long did the biggest ones grow?",
-    "answer": "About 2.7 metres, over 8 feet",
+    "question": "Arthropleura, a giant relative of the millipedes, scuttled across the floor of a Carboniferous coal-swamp forest 326 million years ago, long before the first dinosaurs. The biggest millipedes alive today stretch about a foot long. How long did the biggest Arthropleura grow?",
+    "answer": "About 2.7 metres, the length of a small car",
     "choices": [
-      "About 2.7 metres, over 8 feet",
-      "About 40 centimetres, ankle height",
-      "About 1 metre, knee height",
-      "About 6 metres, bus length"
+      "About 2.7 metres, the length of a small car",
+      "About 40 centimetres, the length of a cat",
+      "About 1 metre, the length of a big dog",
+      "About 6 metres, the length of a van"
     ],
     "context": "Arthropleura is the largest land invertebrate ever known to have lived. The biggest reached about 2.6 to 2.7 metres (over 8 feet) long, roughly the length of a small car, and weighed around 50 kilograms. Source: University of Cambridge, 'Millipedes as big as cars once roamed England'; Natural History Museum (2021).",
     "topic": "arthropleura"
@@ -1747,7 +1643,7 @@
     "answer": "Munching rotting logs, leaf litter, and seeds",
     "choices": [
       "Munching rotting logs, leaf litter, and seeds",
-      "Ambushing amphibians in the shallows",
+      "Grazing algae from the swamp's pools",
       "Sucking sap from giant tree ferns",
       "Filtering plankton from swamp water"
     ],
@@ -1783,11 +1679,11 @@
   {
     "tier": 2,
     "question": "The nymph of the assassin bug Acanthaspis petax drains ants dry, then does something ghoulish with the empty husks. It glues them together with sticky threads from its own belly into a walking pile it carries around. Where does that pile of dead ants ride?",
-    "answer": "Stacked on its own back as a disguise",
+    "answer": "Heaped on top of its own back",
     "choices": [
-      "Stacked on its own back as a disguise",
+      "Heaped on top of its own back",
       "Wedged inside its hollow beak",
-      "Buried in a hidden pantry underground",
+      "Slung beneath its belly",
       "Strung along a silk line behind it"
     ],
     "context": "The nymph secretes sticky threads from special abdominal hairs and cements the drained ant carcasses into a heap on its back that can hold roughly a dozen or more bodies - a mound of its own victims worn as camouflage. Source: Acanthaspis petax - Wikipedia; Newsweek 'Assassin Bug Stacks Its Victims on Its Back'. (Legend-status wonder.)",
@@ -1825,9 +1721,9 @@
     "answer": "Nearly a foot across",
     "choices": [
       "Nearly a foot across",
-      "About the width of a coin",
-      "Roughly a hand-span, tip to tail",
-      "Barely wider than a thumbnail"
+      "About four inches across",
+      "Nearly two feet across",
+      "About three feet across"
     ],
     "context": "An atlas moth's wingspan reaches about 25-30 cm - up to nearly a foot across - and by wing surface area it has more total wing than almost any insect on Earth. Source: Natural History Museum, London - Spotlight: the atlas moth.",
     "topic": "atlas-moth-one-of-the-biggest-moths-with-snake-head-wingtips"
@@ -1861,12 +1757,12 @@
   {
     "tier": 3,
     "question": "A female atlas moth barely moves after hatching - she clings near her old cocoon and releases a faint chemical scent into the night air. A male can find her from kilometers away across dark forest. What lets him track that scent from so far?",
-    "answer": "Huge feathery antennae that catch her scent",
+    "answer": "Huge, feathery antennae on his head",
     "choices": [
-      "Huge feathery antennae that catch her scent",
-      "Large eyes that see her glowing in the dark",
-      "A long tongue that tastes her on the breeze",
-      "Sharp ears tuned to the beat of her wings"
+      "Huge, feathery antennae on his head",
+      "A long tongue that tastes the breeze",
+      "Taste sensors on the tips of his feet",
+      "Scent pits hidden along his wings"
     ],
     "context": "The male atlas moth has enormous, feathery antennae that detect a female's pheromones from kilometers away and home in on her. The female is larger and stays put near her cocoon, releasing scent, while the smaller male does the flying. Source: Animal Diversity Web / Wikipedia - Attacus atlas.",
     "topic": "atlas-moth-one-of-the-biggest-moths-with-snake-head-wingtips"
@@ -1891,7 +1787,7 @@
     "choices": [
       "Just the upturned shape of its mouth",
       "A puff of air held in its cheeks",
-      "A ring of muscle it flexes to greet you",
+      "A ring of muscle it flexes at visitors",
       "Rows of tiny teeth showing through"
     ],
     "context": "The pale-pink, black-eyed axolotl isn't feeling anything by its grin — the smile is simply the fixed upturned shape of its face. Source: https://en.wikipedia.org/wiki/Axolotl",
@@ -1912,26 +1808,26 @@
   },
   {
     "tier": 2,
-    "question": "Millions of pink axolotls swim in biology labs and home aquariums all over the world. Yet in nature the wild axolotl is critically endangered, squeezed into one tiny corner of a single old lake system near Mexico City. Where does the last wild population still cling on?",
-    "answer": "The canals of Lake Xochimilco",
+    "question": "Millions of pink axolotls swim in biology labs and home aquariums all over the world. Yet in nature the wild axolotl is critically endangered, clinging on in just a few scraps of water. Where do the last wild axolotls survive?",
+    "answer": "The old lake canals of Mexico City",
     "choices": [
-      "The canals of Lake Xochimilco",
+      "The old lake canals of Mexico City",
       "A hot spring in the Sierra Madre",
       "The mouth of the Rio Grande",
       "A flooded quarry near Veracruz"
     ],
-    "context": "Pollution and sewage crashed the wild population 99% between 1998 and 2014; perhaps 50 to 1,000 axolotls survive, only in the canals of Lake Xochimilco — an animal nearly extinct in nature yet everywhere in captivity. Source: https://en.wikipedia.org/wiki/Axolotl",
+    "context": "Pollution and sewage crashed the wild population by about 99% between 1998 and 2014; perhaps 50 to 1,000 adults survive, nearly all in the canals of Xochimilco in Mexico City, the last scrap of its old lakes, with a few confirmed in the city's Chapultepec park. An animal nearly extinct in nature is everywhere in captivity. Source: https://en.wikipedia.org/wiki/Axolotl",
     "topic": "axolotl"
   },
   {
     "tier": 3,
-    "question": "A tankmate bites off an axolotl's leg. A human cut would seal fast with tough collagen that hardens into a scar, but the axolotl's stump first clears away the debris; then its cells refuse to scar and switch back into a mode a human body last used before birth. What mode is that?",
-    "answer": "Embryo-style growth",
+    "question": "A tankmate bites off an axolotl's leg. A human cut would seal fast with tough collagen that hardens into a scar, but the axolotl's stump first clears away the debris. Then its cells refuse to scar. What do those cells do instead?",
+    "answer": "Switch back to the growth they used as an embryo",
     "choices": [
-      "Embryo-style growth",
-      "Rapid collagen sealing",
-      "A slow dormant standstill",
-      "Hard shell-like plating"
+      "Switch back to the growth they used as an embryo",
+      "Rest in a dormant standstill for many months",
+      "Harden into a bony knob that caps the stump",
+      "Turn into fat that pads the healed stump"
     ],
     "context": "Instead of scarring, the axolotl's wound pauses, clears the debris, and reverts to embryo-style growth — so it rebuilds the part perfectly with no scar. A biology legend. Source: https://siliconcanals.com/sc-c-axolotls-can-regrow-entire-limbs-parts-of-their-heart-sections-of-their-spinal-cord-and-even-portions-of-their-brain-and-they-do-it-without-forming-scar-tissue-which-is-why-labs-from-vienna-to-bo/",
     "topic": "axolotl"
@@ -1951,28 +1847,28 @@
   },
   {
     "tier": 3,
-    "question": "A scientist doses an axolotl with thyroid hormone, the same hormone a human thyroid gland pumps out. Until now the axolotl has kept its baby form, with feathery pink gills, a soft larval body and no land-going adult stage at all. What does the hormone turn it into?",
+    "question": "A scientist doses an axolotl with thyroid hormone, the same hormone a human thyroid gland pumps out. Until now the axolotl has kept its baby form all its life, with feathery pink gills and a soft larval body. What does the hormone turn it into?",
     "answer": "A land-crawling salamander with no gills",
     "choices": [
       "A land-crawling salamander with no gills",
       "A giant twice its normal size",
       "A blind, cave-dwelling drifter",
-      "A hard-shelled bottom-crawler"
+      "A larger larva with even longer gills"
     ],
     "context": "Given thyroid hormone, the axolotl loses its gills, its tail fin shrinks, and it crawls onto land looking almost exactly like its cousin the tiger salamander. A biology legend. Source: https://www.frontiersin.org/journals/endocrinology/articles/10.3389/fendo.2019.00237/full",
     "topic": "axolotl"
   },
   {
     "tier": 4,
-    "question": "Researchers grafted a second whole head onto an axolotl and wrote up the result in Science in 1968. The extra head survived and grew, but the strangest part was what it did all on its own. What did the grafted head do?",
-    "answer": "Snapped at and fed on passing prey by itself",
+    "question": "N. J. de Both, working with European laboratory axolotls, transplanted a whole head from one animal onto another's back and reported the result in the journal Science in 1968. Few animals would accept a graft like that. What became of the extra head?",
+    "answer": "It grew and acted on its own, apart from its host",
     "choices": [
-      "Snapped at and fed on passing prey by itself",
-      "Slowly shrank until it was reabsorbed",
-      "Fused its brain into the original head",
-      "Grew a third head budding from its base"
+      "It grew and acted on its own, apart from its host",
+      "It slowly shrank until the host absorbed it",
+      "Its brain fused into the host's own brain",
+      "It sprouted a third head from its base"
     ],
-    "context": "In the 1968 experiment ('Transplantation of Axolotl Heads,' Science) the grafted second head not only survived without rejection but grew and behaved like a normal head — snapping at and feeding on prey independently of the host. A biology legend. Source: https://www.science.org/doi/10.1126/science.162.3852.460 (Science, 1968, 'Transplantation of Axolotl Heads')",
+    "context": "In de Both's 1968 experiment ('Transplantation of Axolotl Heads,' Science 162:460), heads grafted onto the backs of other axolotls survived because the hosts showed no graft rejection; they grew rapidly, showed many of the reactions of a normal axolotl head, and behaved independently of the host animal. Source: https://www.science.org/doi/10.1126/science.162.3852.460",
     "topic": "axolotl"
   },
   {
@@ -1990,15 +1886,15 @@
   },
   {
     "tier": 5,
-    "question": "Scientists who read the axolotl's genome in 2018 found the biggest ever assembled, some 32 billion letters long, over ten times the size of a human's. It hid a shock, too: a gene long thought essential for building every other backboned animal was simply not there. Which gene had gone missing?",
-    "answer": "Pax3, with a cousin gene covering its job",
+    "question": "Scientists who read the axolotl's genome in 2018 found the biggest animal genome anyone had assembled at the time, some 32 billion letters long, over ten times the size of a human's. It also held a shock about a gene long thought essential for building every other backboned animal. What had become of that gene?",
+    "answer": "It was missing, and a cousin gene did its job",
     "choices": [
-      "Pax3, with a cousin gene covering its job",
-      "Sox2, replaced by an ancient viral insert",
-      "Hox13, the limb-tip patterning master",
-      "Myf5, the muscle-founder switch gene"
+      "It was missing, and a cousin gene did its job",
+      "It had been copied hundreds of times over",
+      "It worked only in the larva, then shut down",
+      "It was split in two across separate chromosomes"
     ],
-    "context": "At about 32 gigabases, over ten times the human genome and roughly 19 Gb of repetitive junk-like DNA, the axolotl genome needed a purpose-built assembler (MARVEL). The find that stunned developmental biologists: Pax3, considered indispensable in all other vertebrates, is absent, and its close relative Pax7 has taken over its role. Mutating Pax7 in axolotls reproduces the very defects mice suffer when they lose Pax3. Source: Nowoshilow et al., \"The axolotl genome and the evolution of key tissue formation regulators,\" Nature 2018 (https://www.nature.com/articles/nature25458).",
+    "context": "At about 32 gigabases, over ten times the human genome and the largest animal genome assembled at the time, the axolotl genome needed a purpose-built assembler (MARVEL). The find that stunned developmental biologists: Pax3, considered indispensable in all other vertebrates, is absent, and its close relative Pax7 has taken over its role. Mutating Pax7 in axolotls reproduces the very defects mice suffer when they lose Pax3. Source: Nowoshilow et al., 'The axolotl genome and the evolution of key tissue formation regulators,' Nature 2018 (https://www.nature.com/articles/nature25458); https://en.wikipedia.org/wiki/Axolotl",
     "topic": "axolotl"
   },
   {
@@ -2009,35 +1905,35 @@
       "the aye-aye",
       "the slow loris",
       "the tarsier",
-      "the sugar glider"
+      "the mouse lemur"
     ],
     "context": "The aye-aye (Daubentonia madagascariensis) runs about 15 inches of body with a bushy tail even longer than that, weighing roughly 4-6 pounds. Source: https://en.wikipedia.org/wiki/Aye-aye",
     "topic": "aye-aye"
   },
   {
     "tier": 2,
-    "question": "At night in a Madagascar rainforest, an aye-aye raps on a tree trunk with its skinny middle finger, up to eight times a second, its huge bat-like ears pressed close to the wood. No other primate hunts this way. What is the aye-aye sensing beneath the bark as it taps?",
+    "question": "At night in a Madagascar rainforest, an aye-aye raps on a tree trunk with its skinny middle finger, up to eight times a second, then pauses with its head close to the bark. No other primate hunts this way. What is the aye-aye sensing beneath the bark as it taps?",
     "answer": "a hollow echo where a grub tunnel runs",
     "choices": [
       "a hollow echo where a grub tunnel runs",
       "sap rising through the trunk",
       "the scent of insect eggs",
-      "the tree's own heartbeat"
+      "the warmth of a hidden grub"
     ],
     "context": "Tap-scanning fills between 5 and 41 percent of the aye-aye's foraging time; it listens for the hollow echo that betrays a grub tunnel hidden under the bark. Source: https://en.wikipedia.org/wiki/Aye-aye",
     "topic": "aye-aye"
   },
   {
     "tier": 2,
-    "question": "As an aye-aye taps along a branch, tall ridges of bone inside each of its oversized, bat-like ears go to work on the faint sound coming back through the wood. What do those ridges do to that sound?",
-    "answer": "focus and funnel it toward the eardrum",
+    "question": "As an aye-aye taps along a branch, ridges lining the inside of each of its oversized, bat-like ears go to work on the faint sound coming back through the wood. What do those ridges do to that sound?",
+    "answer": "focus it, the way a lens focuses light",
     "choices": [
-      "focus and funnel it toward the eardrum",
+      "focus it, the way a lens focuses light",
       "split it into two delayed signals",
       "cancel out its own tapping noise",
       "amplify only the highest frequencies"
     ],
-    "context": "The ridges work like a lens, funneling the faint echo of the aye-aye's own taps and the movement of larvae under the bark, so it can pinpoint prey it cannot see. Source: https://factanimal.com/aye-aye/",
+    "context": "The ridges on the inner surface of the ear work like an acoustic lens, sharply focusing both the echo of the aye-aye's own taps and the faint sounds of larvae moving under the bark, so it can pinpoint prey it cannot see. Source: https://en.wikipedia.org/wiki/Aye-aye",
     "topic": "aye-aye"
   },
   {
@@ -2046,8 +1942,8 @@
     "answer": "they never stop growing for its whole life",
     "choices": [
       "they never stop growing for its whole life",
-      "they are coated in venom",
-      "they glow to lure insects",
+      "they sit in a second row like a shark's",
+      "they close sideways like an insect's jaws",
       "they fall out and regrow yearly"
     ],
     "context": "These rodent-like, ever-growing incisors are unique among primates and are the reason early naturalists mistook the aye-aye for a rodent. Source: https://en.wikipedia.org/wiki/Aye-aye",
@@ -2082,12 +1978,12 @@
   {
     "tier": 4,
     "question": "Edwin Dickinson and Adam Hartstone-Rose solved a puzzle about the aye-aye in 2019. Its fingers are so specialized for fishing grubs out of bark that they grip a branch poorly, yet it climbs just fine. How does it hold on?",
-    "answer": "a whole extra thumb of bone and cartilage grew just for gripping",
+    "answer": "a hidden extra thumb of bone and cartilage, with its own muscles",
     "choices": [
-      "a whole extra thumb of bone and cartilage grew just for gripping",
+      "a hidden extra thumb of bone and cartilage, with its own muscles",
       "its long claws hook over the branch and lock in place",
       "its long bushy tail coils around the branch like a fifth limb",
-      "its hind feet grip while its hands stay free to work"
+      "its palms are padded with sticky, suction-cup-like skin"
     ],
     "context": "NC State researchers Adam Hartstone-Rose and Edwin Dickinson found the aye-aye has a hidden sixth digit, a 'pseudothumb' with its own fingerprint. Hartstone-Rose: 'It has both a bone and cartilaginous extension and three distinct muscles that move it.' Source: https://news.ncsu.edu/2019/10/aye-aye-extra-finger/",
     "topic": "aye-aye"
@@ -2237,13 +2133,13 @@
   },
   {
     "tier": 1,
-    "question": "Startled beside a Central American stream, a green basilisk rears up on its two back legs and sprints across the water without sinking. Onlookers think of the Bible story of Jesus walking across the Sea of Galilee. What nickname has that earned the lizard?",
-    "answer": "the Jesus Christ lizard",
+    "question": "A slim green lizard rears up on its two back legs beside a Central American stream and dashes away across the surface of the water without sinking. Which lizard pulls off this famous escape?",
+    "answer": "The basilisk",
     "choices": [
-      "the Jesus Christ lizard",
-      "the water dragon",
-      "the mangrove skater",
-      "the pond skimmer"
+      "The basilisk",
+      "The green iguana",
+      "The frilled lizard",
+      "The marine iguana"
     ],
     "context": "The basilisk (genus Basiliscus) of Central and South American rainforest streams dashes across the surface of a pond or stream on its hind legs without sinking, so it looks like it is running on top of the water — hence the 'Jesus Christ lizard' nickname. Source: National Geographic — Green basilisk lizard.",
     "topic": "basilisk-the-lizard-that-runs-on-water"
@@ -2263,51 +2159,38 @@
   },
   {
     "tier": 3,
-    "question": "A young basilisk, small and light, dashes 10 to 20 meters across a Central American stream on top of the water before it slows down. A full-grown adult, several times heavier, tries the very same crossing. How far does the heavy adult get before it sinks?",
-    "answer": "only a few meters",
+    "question": "Basilisks of every age bolt across Central American streams on their hind legs to escape predators, but they do not all get equally far. Some get 10 to 20 meters over open water, while others sink within a few meters. Which basilisks run on water best?",
+    "answer": "The small, light youngsters",
     "choices": [
-      "only a few meters",
-      "the same 10 to 20 meters",
-      "roughly 50 meters",
-      "the full width — an adult never sinks"
+      "The small, light youngsters",
+      "Big adult males with long legs",
+      "Crested males with tall sail-backs",
+      "Long-tailed adults that balance best"
     ],
     "context": "Only the light young pull it off well: juvenile basilisks can sprint 10 to 20 m (33-66 ft) across open water, while heavy adults manage only a few meters before their weight breaks them through the surface and they sink. Source: Wikipedia — Common basilisk; Biology Insights.",
     "topic": "basilisk-the-lizard-that-runs-on-water"
   },
   {
     "tier": 3,
-    "question": "A basilisk flees across a pond, sprinting on top of the water. Each foot slaps down and pushes off again before the surface can give way, so its legs are a blur, and if it slowed for even a heartbeat a foot would break through. How many times a second do its feet hit the water?",
-    "answer": "up to about 20 times",
+    "question": "A basilisk flees across a pond on its two hind legs, sprinting on top of the water. Water cannot hold up a lizard standing still, so the trick lies in how each foot strikes and leaves the surface. What keeps each foot from sinking?",
+    "answer": "It slaps down and lifts away before the water closes over it",
     "choices": [
-      "up to about 20 times",
-      "about 3 times",
-      "about 100 times",
-      "about 500 times"
+      "It slaps down and lifts away before the water closes over it",
+      "Oil on its soles repels the water like a duck's feathers",
+      "Its hollow bones make it light enough to float",
+      "Its tail beats the water to push its body upward"
     ],
-    "context": "A basilisk running on water takes up to 20 footsteps per second, slapping so fast that each foot pushes off before the water can close over it. Source: Biology Insights — How Basilisk Lizard Feet Enable Running on Water; National Geographic.",
-    "topic": "basilisk-the-lizard-that-runs-on-water"
-  },
-  {
-    "tier": 4,
-    "question": "Glasheen and McMahon worked out whether a person could ever sprint across a lake the way a basilisk sprints across a pond. To hold up an average person's weight, the runner's feet would have to hit the water at over 30 meters per second. How much more muscle power would that take than a person has?",
-    "answer": "about 15 times as much",
-    "choices": [
-      "about 15 times as much",
-      "about twice as much",
-      "about a tenth more",
-      "no more than we already have"
-    ],
-    "context": "Glasheen and McMahon calculated that to hold up our weight a human would have to slap the water faster than 30 m/s, needing roughly 15 times the muscle power a person actually has — so no human can do it. Source: Glasheen & McMahon 1996, Nature 380:340-342, as summarized in water-running scaling literature.",
+    "context": "Each foot slaps down hard, opening a pocket of air in the water, then strokes back and pulls free before that pocket can collapse over it; long, fringed hind toes widen each foot as it strikes. Source: National Geographic, Green basilisk lizard (https://www.nationalgeographic.com/animals/reptiles/facts/green-basilisk-lizard); Glasheen & McMahon 1996, Journal of Experimental Biology.",
     "topic": "basilisk-the-lizard-that-runs-on-water"
   },
   {
     "tier": 1,
     "question": "Off the coast of Scotland, a diver hangs still in the green sea as a basking shark, the second-largest fish in the world, glides straight at him with its mouth hanging wide open. What does the shark do to him?",
-    "answer": "Nothing at all -- it is a harmless giant",
+    "answer": "Nothing: it is harmless to people",
     "choices": [
-      "Nothing at all -- it is a harmless giant",
+      "Nothing: it is harmless to people",
       "Delivers a crushing, bone-breaking bite",
-      "Wraps and squeezes prey like a python",
+      "Swallows him whole in one gulp",
       "Stings with venom-tipped fin spurs"
     ],
     "context": "The basking shark (Cetorhinus maximus) is completely harmless to people; despite its huge size and gaping mouth it is a gentle, non-aggressive giant. Source: https://en.wikipedia.org/wiki/Basking_shark",
@@ -2354,15 +2237,15 @@
   },
   {
     "tier": 3,
-    "question": "The crew of the Japanese trawler Zuiyo-maru, fishing off New Zealand in 1977, hauled up the rotting body of an animal with a small head on a 1.5-meter neck and four flipper-like limbs. They photographed and measured it as a plesiosaur, a long-necked sea reptile thought to have died out with the dinosaurs, then dumped it overboard. What did tests on tissue they kept show it to be?",
-    "answer": "A decayed basking shark",
+    "question": "The crew of the Japanese trawler Zuiyo-maru, fishing off New Zealand in 1977, hauled up a decaying body with a tiny head, a 1.5-meter neck and four flipper-like limbs, and took it for a plesiosaur. Tests on its tissue pointed instead to a decayed basking shark. How does a rotting basking shark come to look like a long-necked reptile?",
+    "answer": "Its jaw and gills fall away first, leaving a thin neck",
     "choices": [
-      "A decayed basking shark",
-      "A true surviving plesiosaur",
-      "A giant deep-sea squid",
-      "An unknown long-necked seal"
+      "Its jaw and gills fall away first, leaving a thin neck",
+      "Gas swells its belly into four limb-like lumps",
+      "Its tail curls forward over its back like a neck",
+      "Its skin shrinks tight over a reptile-like skull"
     ],
-    "context": "A rotting basking shark loses its lower jaw, gills and fins first, leaving a 'head' on a long 'neck' -- so decayed ones repeatedly get mistaken for plesiosaurs (a 'pseudo-plesiosaur'). Amino-acid tests on saved Zuiyo-maru tissue showed it was a dead basking shark. Legend. Source: https://en.wikipedia.org/wiki/Zuiyo-maru_carcass",
+    "context": "A rotting basking shark loses its lower jaw, gill area and its dorsal and tail fins first, leaving the small skull and backbone looking like a head on a long neck, so decayed ones are repeatedly mistaken for plesiosaurs. Amino-acid tests on the saved Zuiyo-maru tissue pointed to a basking shark as the most likely identity. Source: https://en.wikipedia.org/wiki/Zuiyo-maru_carcass",
     "topic": "basking-shark-cetorhinus-maximus"
   },
   {
@@ -2380,7 +2263,7 @@
   },
   {
     "tier": 4,
-    "question": "Off County Clare, Ireland, drones filmed something no one had ever recorded for this species. Up to two dozen mature basking sharks slowly wheeled nose-to-tail, gently rolling belly-up and brushing fin to body as they turned. What were the sharks doing in that stacked, doughnut-shaped ring?",
+    "question": "Off County Clare, Ireland, drones filmed something no one had ever recorded for this species. Up to two dozen mature basking sharks slowly wheeled nose-to-tail, gently rolling belly-up and brushing fin to body as they turned. What were the sharks most likely doing in that stacked, doughnut-shaped ring?",
     "answer": "Courting -- each sizing up many possible mates at once",
     "choices": [
       "Courting -- each sizing up many possible mates at once",
@@ -2627,7 +2510,7 @@
   },
   {
     "tier": 1,
-    "question": "A shaggy, black, cat-sized mammal prowls the rainforest canopy of South and Southeast Asia. It is often called the bearcat, though it is no bear and no cat but a cousin of the civets. What is this tree-dweller?",
+    "question": "A shaggy, black mammal that weighs as much as a mid-sized dog prowls the rainforest canopy of South and Southeast Asia. It is often called the bearcat, though it is no bear and no cat but a cousin of the civets. What is this tree-dweller?",
     "answer": "The binturong",
     "choices": [
       "The binturong",
@@ -2640,7 +2523,7 @@
   },
   {
     "tier": 2,
-    "question": "A zookeeper walking past a binturong, a shaggy tree-dweller of Southeast Asia, caught an odd smell, like something from a kitchen. Chemists expected an exotic civet compound, but a Duke University study in 2016 found a molecule people had been smelling at home for years. Which foods share the binturong's scent molecule?",
+    "question": "A zookeeper walking past a binturong, a shaggy tree-dweller of Southeast Asia, catches an odd smell, like something from a kitchen. A Duke University study in 2016 traced it to a molecule people smell at home all the time. Which foods share the binturong's scent molecule?",
     "answer": "Popcorn and cooked jasmine rice",
     "choices": [
       "Popcorn and cooked jasmine rice",
@@ -2653,10 +2536,10 @@
   },
   {
     "tier": 3,
-    "question": "Christine Drea's team at Duke University found a molecule with a cooking smell in binturong urine. In a kitchen it forms only under high heat, when sugars and amino acids react together, so Drea asked how an animal could make a cooking smell without ever cooking. Where does her team think the compound comes from?",
-    "answer": "Bacteria living on the animal's skin, fur, or gut make it as the urine passes",
+    "question": "Christine Drea's team at Duke University found a molecule with a cooking smell in binturong urine. In popcorn it forms under high heat, when sugars and amino acids react together, so Drea asked how an animal could make a cooking smell without ever cooking. Where does her team think the compound comes from?",
+    "answer": "Microbes on its skin, fur or gut make it as urine passes",
     "choices": [
-      "Bacteria living on the animal's skin, fur, or gut make it as the urine passes",
+      "Microbes on its skin, fur or gut make it as urine passes",
       "A special heat-producing gland warms the urine to 'cook' it",
       "The animal eats fermenting fruit that already contains it",
       "Its liver synthesizes the finished molecule directly"
@@ -2666,15 +2549,15 @@
   },
   {
     "tier": 2,
-    "question": "High in a Southeast Asian rainforest, a binturong climbs down from its tree headfirst, walking straight down the trunk without slipping. A squirrel or a cat coming down a tree usually has to slide, twist or leap. What lets the binturong make a headfirst descent?",
-    "answer": "Its hind ankles rotate a full 180 degrees to keep the claws hooked",
+    "question": "High in a Southeast Asian rainforest, a binturong climbs down from its tree headfirst, walking straight down the trunk without slipping. A cat coming down a tree usually has to back down or leap. What lets the binturong make a headfirst descent?",
+    "answer": "Its hind ankles twist 180 degrees so the claws stay hooked",
     "choices": [
-      "Its hind ankles rotate a full 180 degrees to keep the claws hooked",
+      "Its hind ankles twist 180 degrees so the claws stay hooked",
       "Suction pads on the soles of its feet grip the bark",
       "It descends by hanging from its tail and letting go in stages",
       "Backward-curving spines along its belly catch the trunk"
     ],
-    "context": "The binturong can rotate its hind ankles a full 180 degrees, so its claws stay hooked into the bark even while it climbs down a trunk head-first — a trick most tree mammals can't manage. It also has a fully prehensile tail it uses as a fifth limb to anchor and balance in the trees. Source: https://a-z-animals.com/animals/binturong/ ; https://en.wikipedia.org/wiki/Binturong",
+    "context": "The binturong can rotate its hind ankles a full 180 degrees, so its claws stay hooked into the bark even while it climbs down a trunk head-first. It also has a fully prehensile tail it uses as a fifth limb to anchor and balance in the trees. Source: San Diego Zoo Wildlife Alliance, Binturong (https://animals.sandiegozoo.org/animals/binturong); https://en.wikipedia.org/wiki/Binturong",
     "topic": "binturong"
   },
   {
@@ -2693,19 +2576,19 @@
   {
     "tier": 1,
     "question": "A hungry tuna closes in on a female blanket octopus, a soft octopus with no shell, and she has only the sheets of iridescent purple webbing strung between her arms to save herself. What does she do with that webbing?",
-    "answer": "Snaps it open like a giant iridescent cape to look enormous and terrifying",
+    "answer": "Spreads it wide to look suddenly enormous",
     "choices": [
-      "Snaps it open like a giant iridescent cape to look enormous and terrifying",
+      "Spreads it wide to look suddenly enormous",
       "Wraps herself into a tight armored ball",
       "Catches the current with it to outrun the tuna",
-      "Scoops the tuna into it like a net and eats it"
+      "Flashes it in pulses to dazzle the tuna"
     ],
     "context": "The female unfurls a huge iridescent 'blanket' — sheets of webbing strung between her arms — and spreads it so she suddenly looks enormous and scary, ballooning out to intimidate tuna, sailfish and even sharks. Source: https://octonation.com/fun-facts-about-the-female-blanket-octopus/",
     "topic": "blanket-octopus-tremoctopus"
   },
   {
     "tier": 2,
-    "question": "A blanket octopus swims right up to a Portuguese man o' war, a drifting jelly-like creature whose long trailing threads carry venom strong enough to kill a swimmer. Rather than flee the danger, it rips pieces off. What does it do with the stolen venomous strands?",
+    "question": "A blanket octopus swims right up to a Portuguese man o' war, a drifting jelly-like creature whose long trailing threads carry a sting that can put a swimmer in hospital. Rather than flee the danger, it rips pieces off. What does it do with the stolen venomous strands?",
     "answer": "Holds the stinging tentacles in its arms as venomous whips",
     "choices": [
       "Holds the stinging tentacles in its arms as venomous whips",
@@ -2718,33 +2601,20 @@
   },
   {
     "tier": 3,
-    "question": "A full-grown female blanket octopus drifts through the warm sea, her shimmering web stretched about 2 meters across, roughly the height of a doorway. The male of the same species is so much smaller that for centuries no one saw the two together. What everyday object is the male about the size of?",
-    "answer": "A walnut",
+    "question": "A full-grown female blanket octopus drifts through the warm sea, her shimmering web stretched about 2 meters across, roughly the height of a doorway. Few people have ever seen the male of the same species alive. How big is a grown male?",
+    "answer": "About the size of a walnut",
     "choices": [
-      "A walnut",
-      "A grape",
-      "A paperclip",
-      "A thumbtack"
+      "About the size of a walnut",
+      "About the size of a dinner plate",
+      "About half her size",
+      "About the size of a house cat"
     ],
     "context": "Legendary. The blanket octopus shows one of the most extreme size gaps in the animal kingdom: the female can reach about 2 meters (6.6 ft), while the male is only about 2.4 cm — roughly the size of a walnut. Source: https://www.iflscience.com/the-blanket-octopus-has-the-most-extreme-sexual-dimorphism-in-the-animal-kingdom-80008",
     "topic": "blanket-octopus-tremoctopus"
   },
   {
     "tier": 4,
-    "question": "Trawl nets and plankton samples turned up only dead male blanket octopuses for centuries, each a dwarf beside females that stretch to about 2 meters. No one had watched a living adult male in the ocean. When and where did scientists first see one alive?",
-    "answer": "In 2002, off Australia's Great Barrier Reef",
-    "choices": [
-      "In 2002, off Australia's Great Barrier Reef",
-      "In 1902, in a European aquarium",
-      "In the 1850s, during a deep-sea dredging voyage",
-      "In the 1970s, from a research submarine"
-    ],
-    "context": "The dwarf male was such a puzzle that no living one was seen until 2002, when Mark Norman and colleagues found the world's first live adult male off Australia's Great Barrier Reef, calling it 'the world's most sexually size-dimorphic large animal.' Source: https://www.tandfonline.com/doi/abs/10.1080/00288330.2002.9517126",
-    "topic": "blanket-octopus-tremoctopus"
-  },
-  {
-    "tier": 4,
-    "question": "Naturalists of the 1820s kept turning up a squirming thread inside female blanket octopuses and argonauts, and Georges Cuvier named it Hectocotylus octopodis, a new parasitic worm. In the 1840s Heinrich Müller and Albert von Kölliker studied whole dwarf males. What did the thread turn out to be?",
+    "question": "For much of the 1800s, naturalists turned up a wriggling thread inside female argonauts and blanket octopuses. Georges Cuvier named it Hectocotylus in 1829, taking it for a parasitic worm. Only in the early 1850s did naturalists work out what it really was. What was the thread?",
     "answer": "The dwarf male's own detachable arm, left behind after mating",
     "choices": [
       "The dwarf male's own detachable arm, left behind after mating",
@@ -2752,15 +2622,15 @@
       "A coiled string of the female's own unfertilized eggs",
       "A stinging thread stripped from a Portuguese man o' war"
     ],
-    "context": "One of biology's great mistaken-identity blunders. Cuvier described the severed hectocotylus as its own parasitic worm species. In the 1840s Albert von Kolliker (examining both argonaut and blanket-octopus specimens) and Heinrich Muller -- who found whole dwarf males whose enlarged arm dropped off when touched -- proved the \"worm\" was really the male's own detached mating arm. The tiny male mates by handing over that whole detachable arm, the hectocotylus, which he packs with sperm and gives to the female; the male almost certainly dies shortly after. Source: OctoNation, \"How Male Argonauts Taught Scientists About Octopus Sex\"; Wikipedia \"Hectocotylus\"; https://en.wikipedia.org/wiki/Blanket_octopus; Della Chiaje/Cuvier historical record.",
+    "context": "One of biology's great mistaken-identity blunders. Cuvier described the severed hectocotylus as a parasitic worm; in the 1840s Albert von Kölliker, who found such threads in argonauts and blanket octopuses, took them for tiny degenerate males. In 1852-53 Jean-Baptiste Vérany and Carl Vogt, and Heinrich Müller, showed the 'worm' was really the male's own detached mating arm, the hectocotylus, which he packs with sperm and hands to the female; the male almost certainly dies shortly after. Source: https://en.wikipedia.org/wiki/Hectocotylus ; Darwin Correspondence Project note (https://darwin-editorial.darwinproject.ac.uk/view/letters/DCP-LETT-1435) ; Müller 1853, Zeitschrift für wissenschaftliche Zoologie 4.",
     "topic": "blanket-octopus-tremoctopus"
   },
   {
     "tier": 5,
     "question": "A blanket octopus can tear a stinger from a Portuguese man o' war and carry it as a weapon, but no blanket octopus over about 7 centimeters long has ever been seen with one. The carriers are all tiny males or small young females. What is thought to stop a bigger octopus from carrying one?",
-    "answer": "A bigger octopus's larger suckers can't grip the narrow stinger without tearing it",
+    "answer": "A bigger octopus's larger suckers can no longer grip the narrow stinger",
     "choices": [
-      "A bigger octopus's larger suckers can't grip the narrow stinger without tearing it",
+      "A bigger octopus's larger suckers can no longer grip the narrow stinger",
       "Larger octopuses lose their immunity to the man o' war's venom as they mature",
       "The stinger's venom breaks down too fast to be useful on a slow-moving adult",
       "Bigger octopuses can no longer swim close enough to a man o' war to harvest one"
@@ -2805,19 +2675,6 @@
       "it scrapes algae off rocks with a rasping tongue"
     ],
     "context": "Strong bones and big muscles cost energy the food-poor deep can't spare, so the blobfish hovers nearly motionless and swallows small crustaceans, sea snails, and drifting scraps, 'whatever passes right in front of them.' As one expert put it, 'Being lazy is a survival strategy.' Source: BBC Science Focus (sciencefocus.com); Australian Museum, fathead / Mr Blobby page.",
-    "topic": "blobfish-psychrolutes-marcidus"
-  },
-  {
-    "tier": 3,
-    "question": "The Ugly Animal Preservation Society, a British comedy group, crowned the blobfish the World's Ugliest Animal in an online vote in 2013. The mournful photo everyone shares shows one museum specimen, kept in Australia's national fish collection and nicknamed Mr Blobby. What made his face droop even sadder than a freshly caught blobfish's?",
-    "answer": "preserving him in alcohol tightened his skin and shrank his nose",
-    "choices": [
-      "preserving him in alcohol tightened his skin and shrank his nose",
-      "years drying out in a display jar cracked and slackened his face",
-      "the trawl net's crushing haul mangled his features on the way up",
-      "a rare skin disease had melted his features before capture"
-    ],
-    "context": "'Mr Blobby' (specimen AMS I.42771-001) was netted by trawl on the 2003 NORFANZ expedition on the Norfolk Ridge northwest of New Zealand. Preserving him in alcohol tightened his skin and shrank his nose, exaggerating the sad droopy look, and a tiny parasitic copepod was found clinging to his mouth. Source: Australian Museum, 'Blobfish (aka Mr Blobby)' (australian.museum); Wikipedia, Ugly Animal Preservation Society.",
     "topic": "blobfish-psychrolutes-marcidus"
   },
   {
@@ -3200,9 +3057,9 @@
   {
     "tier": 1,
     "question": "Only the head of a bobbit worm shows above the sandy seabed; almost all of its body hides below. The longest one ever measured, stretched out flat, was about as long as what?",
-    "answer": "A grown man lying down, nearly 10 feet",
+    "answer": "A small car, nearly 10 feet",
     "choices": [
-      "A grown man lying down, nearly 10 feet",
+      "A small car, nearly 10 feet",
       "A dinner fork, about 8 inches",
       "A garden snake, about 2 feet",
       "A school bus, about 40 feet"
@@ -3212,7 +3069,7 @@
   },
   {
     "tier": 2,
-    "question": "A fish swims past a patch of seabed where a bobbit worm waits buried, and in less than a hundredth of a second the worm strikes and yanks its catch down under the sand. What can its scissor-like jaws sometimes do to a fish in that strike?",
+    "question": "A fish swims past a patch of seabed where a bobbit worm waits buried, and in a split second the worm strikes and yanks its catch down under the sand. What can its scissor-like jaws sometimes do to a fish in that strike?",
     "answer": "Slice it clean in two",
     "choices": [
       "Slice it clean in two",
@@ -3220,33 +3077,7 @@
       "Tear off a chunk and let the rest flee",
       "Pin it against the sand and swallow it whole"
     ],
-    "context": "The strike is so fast the fish gets only milliseconds to flee. The worm's razor-sharp jaws can sometimes slice the prey clean in two before dragging it down into the sand. Those jaws are paired mandibles and larger serrated, hooked maxillae that snap shut like scissors. Source: BBC Science Focus, 'What is a bobbit worm?' — https://www.sciencefocus.com/nature/what-is-a-bobbit-worm",
-    "topic": "bobbit-worm-eunice-aphroditois"
-  },
-  {
-    "tier": 2,
-    "question": "A bobbit worm bursts from the seabed and seizes a fish far bigger than itself in its jaws, dragging it down toward its burrow. Holding on to something big and thrashing is a problem. What does the worm do to keep such a large meal from struggling?",
-    "answer": "Injects a toxin that stuns or kills it",
-    "choices": [
-      "Injects a toxin that stuns or kills it",
-      "Squeezes it until it stops moving",
-      "Drowns it by holding it under the sand",
-      "Waits days for it to tire itself out"
-    ],
-    "context": "After grabbing prey, the bobbit worm injects a toxin that stuns or kills it, letting the worm subdue and digest animals far larger than itself, which it drags underground to eat. Source: ScienceInsights, 'What Is a Bobbit Worm? The Ferocious Ambush Predator' — https://scienceinsights.org/what-is-a-bobbit-worm-the-ferocious-ambush-predator/",
-    "topic": "bobbit-worm-eunice-aphroditois"
-  },
-  {
-    "tier": 3,
-    "question": "Staff at the Blue Reef Aquarium in Newquay, England, kept finding fish missing from one reef tank and the coral torn up overnight. For weeks their baited traps came up empty, so at last they took the whole display apart, rock by rock. What had been hiding in the tank?",
-    "answer": "A 1.2-metre bobbit worm named 'Barry'",
-    "choices": [
-      "A 1.2-metre bobbit worm named 'Barry'",
-      "An escaped moray eel from a nearby tank",
-      "A cluster of hungry crown-of-thorns starfish",
-      "A venomous stonefish buried in the gravel"
-    ],
-    "context": "Staff noticed coral being shredded overnight and fish vanishing, and baited traps came up empty for weeks. The culprit was a 1.2-metre bobbit worm the staff named 'Barry'. To catch him they dismantled the reef display rock by rock; when cornered, the worm bit clean through a 20-pound fishing line before they pulled him out. Source: BBC Science Focus + The Misfits Pair archive — https://themisfitspair.com/2009/04/01/barry-the-giant-sea-worm-discovered-by-aquarium-staff-after-mysterious-attacks-on-coral-reef/",
+    "context": "The strike comes so fast that the fish has no time to flee. The worm's razor-sharp jaws can sometimes slice the prey clean in two before dragging it down into the sand. Those jaws are paired mandibles and larger serrated, hooked maxillae that snap shut like scissors. Source: BBC Science Focus, 'What is a bobbit worm?' — https://www.sciencefocus.com/nature/what-is-a-bobbit-worm",
     "topic": "bobbit-worm-eunice-aphroditois"
   },
   {
@@ -3256,7 +3087,7 @@
     "choices": [
       "He hitchhiked in as a tiny juvenile inside 'live rock'",
       "He crawled up a drainpipe from the sea outside",
-      "He was slipped in as a prank by a departing worker",
+      "He arrived inside a delivery of frozen fish food",
       "He hatched from eggs stuck to a new fish's fins"
     ],
     "context": "Barry had hitchhiked in as a tiny juvenile hidden inside a piece of 'live rock' the aquarium had bought, then grew undetected in the tank, possibly for years — one reason a bobbit worm can go unseen for so long is that it recoils and vanishes down its burrow whenever a bright light hits it. Source: BBC Science Focus + The Misfits Pair archive — https://themisfitspair.com/2009/04/01/barry-the-giant-sea-worm-discovered-by-aquarium-staff-after-mysterious-attacks-on-coral-reef/",
@@ -3269,20 +3100,20 @@
     "choices": [
       "The L-shaped burrow the worm hunted from",
       "A cast of the worm’s serrated jaws",
-      "The mucus coating its whole body",
+      "A trail of its scattered bristles",
       "A tangle of shed skins and molts"
     ],
-    "context": "This is one of the rare cases where a predator's BEHAVIOR fossilized rather than its body. Yu-Yen Pan and colleagues named the trace fossil Pennichnus formosae from ~20-million-year-old Miocene rock (Taliao Formation) in northeast Taiwan — L-shaped burrows up to 2 m long and only 2–3 cm wide, the buried lair of an ancient bobbit-type worm. Near the top of each burrow, X-ray scans show an abrupt spike in iron: chemical residue of the worm's mucus, which fed sulfate-reducing bacteria that built iron-sulfide minerals as the worm rebuilt and reinforced its lair after each violent strike. Repeated dragging of prey down the funnel left distinctive 'feather-like' collapse structures at the mouth. (A jaw cast would seem a fair guess — bobbit-worm jaws DO survive elsewhere as fossils called scolecodonts — but here it was the burrow, not the animal, that was preserved.) Source: Pan et al., Scientific Reports 11:1174 (2021), via PMC7820589 and Nature s41598-020-79311-0.",
+    "context": "This is one of the rare cases where a predator's BEHAVIOR fossilized rather than its body. Yu-Yen Pan and colleagues named the trace fossil Pennichnus formosae from ~20-million-year-old Miocene rock (Taliao Formation) in northeast Taiwan: L-shaped burrows up to 2 m long and only 2-3 cm wide, the buried lair of an ancient bobbit-type worm. Near the top of each burrow, X-ray scans show an abrupt spike in iron: chemical residue of the worm's mucus, which fed bacteria that built iron minerals as the worm rebuilt and reinforced its lair after each violent strike. Repeated dragging of prey down the funnel left distinctive 'feather-like' collapse structures at the mouth. Bobbit-worm jaws do survive elsewhere as fossils called scolecodonts, but here only the burrow was preserved. Source: Pan et al., Scientific Reports 11:1174 (2021), via PMC7820589 and Nature s41598-020-79311-0.",
     "topic": "bobbit-worm-eunice-aphroditois"
   },
   {
     "tier": 4,
-    "question": "Buried head-up in the sand, a bobbit worm strikes at passing fish faster than almost any other invertebrate can move. Yet its jaws sit at the front of a soft, boneless body, with no arm or claw to swing them forward. How does the worm launch its jaws at its prey?",
+    "question": "Buried head-up in the sand, a bobbit worm strikes at passing fish in a blur. Yet its jaws sit at the front of a soft, boneless body, with no arm or claw to swing them forward. How does the worm launch its jaws at its prey?",
     "answer": "It turns its throat inside-out, hurling the jaws forward",
     "choices": [
       "It turns its throat inside-out, hurling the jaws forward",
       "It coils and snaps a muscular tail like a whip",
-      "It fires the jaws on a jet of pressurized water",
+      "It flicks them out on the tip of a long, sticky tongue",
       "It rams its whole burrow upward against the fish"
     ],
     "context": "The strike is powered by pharynx eversion: the worm turns its muscular throat inside-out, flinging the jaw apparatus — interlocking mandibles plus serrated maxillae — forward like a spring-loaded gin trap, then retracts the whole thing to drag prey underground. Having no hard skeleton, the worm holds its long shape with a hydrostatic (fluid-pressure) skeleton — the same pressurized-fluid trick that powers the launch. The record wild specimen measured 299 cm (about 9.8 ft) yet was only ~25.5 mm wide, making it the longest known polychaete; despite the fearsome hunting it also scavenges algae and dead matter and lives only about 3–5 years. Source: en.wikipedia.org/wiki/Eunice_aphroditois, with strike-eversion mechanics corroborated by ScienceInsights and BiologyInsights secondary summaries.",
@@ -3290,13 +3121,13 @@
   },
   {
     "tier": 1,
-    "question": "At night a female bolas spider dangles from a branch on one silk thread with a sticky glue ball at its tip. It builds no web. When a moth flies past, the spider swings the ball at it. What is it copying with that swing?",
-    "answer": "A cowboy's bolas, a weighted throwing rope",
+    "question": "A female bolas spider hunts moths at night without building any web at all. She dangles from a branch on a single silk thread. When a moth flutters close, how does she catch it?",
+    "answer": "She swings a sticky glue ball on a thread at it",
     "choices": [
-      "A cowboy's bolas, a weighted throwing rope",
-      "A frog's tongue, flicked and retracted",
-      "A spider's usual flat orb web",
-      "A bat's wide-mouthed mid-air scoop"
+      "She swings a sticky glue ball on a thread at it",
+      "She leaps off her thread and grabs it in midair",
+      "She casts a small silk net over it",
+      "She spits sticky silk at it from a distance"
     ],
     "context": "The spider swings her single glue-tipped line like a bolas — a South American throwing weapon of weights on cords — to snag moths right out of the air, which is how the spider got its name. Source: https://spiderbytes.org/2015/03/17/bolas-spiders-masters-of-deception/",
     "topic": "bolas-spider-the-spider-that-fishes-with-a-glue-ball"
@@ -3316,15 +3147,15 @@
   },
   {
     "tier": 3,
-    "question": "A North American bolas spider, Mastophora hutchinsoni, swings its sticky glue ball all night, luring moths in with a fake female-moth scent. The moths stuck to its ball before 11 p.m. belong to one species, and those caught after 11 p.m. to an entirely different one. What does it do at 11 p.m. to cause the switch?",
-    "answer": "It changes the exact scent it fakes, matching a second moth species",
+    "question": "A North American bolas spider, Mastophora hutchinsoni, hunts moths all night, luring them in with a fake female-moth scent. The moths caught before 11 p.m. belong to one species, and those caught after 11 p.m. to an entirely different one. What does the spider itself change as the night goes on?",
+    "answer": "It tones down one moth's scent, so its blend suits the later moth",
     "choices": [
-      "It changes the exact scent it fakes, matching a second moth species",
-      "It swings the ball faster to snag the bigger moths flying late",
+      "It tones down one moth's scent, so its blend suits the later moth",
+      "It swings its line faster to snag the bigger moths flying late",
       "It creeps to a fresh leaf where the later moths gather",
-      "It brightens the glue ball so the later moths can see it"
+      "It brightens its lure so the later moths can see it"
     ],
-    "context": "Mastophora hutchinsoni fakes one moth species' pheromone early in the evening, then switches to a completely different species' scent after 11 p.m., matching whichever moths are flying at that hour — so the species stuck to its glue ball changes as the night goes on. Source: https://link.springer.com/article/10.1007/s00049-002-8332-2",
+    "context": "Mastophora hutchinsoni gives off a blend that mimics the sex scents of two moths: the bristly cutworm, which flies early in the evening, and the smoky tetanolita, which flies late at night. As the night goes on, the spider cuts back the cutworm scent, which would otherwise put off the later moth, so the species stuck to its glue ball changes through the night. Source: Haynes et al. 2002, Chemoecology 12:99-105, https://link.springer.com/article/10.1007/s00049-002-8332-2",
     "topic": "bolas-spider-the-spider-that-fishes-with-a-glue-ball"
   },
   {
@@ -3394,7 +3225,7 @@
   },
   {
     "tier": 2,
-    "question": "Glossy blue-black with bright violet eyes, a male satin bowerbird gathers treasures for the small stage he has built on the floor of an eastern Australian forest. He will raid other males' stages to steal them, and he hoards objects of only one color, the one that matches him. Which color does he collect?",
+    "question": "A male satin bowerbird gathers treasures for the small stage he has built on the floor of an eastern Australian forest. He will raid other males' stages to steal them, and he prizes objects of one color above all others. Which color does he collect?",
     "answer": "Blue",
     "choices": [
       "Blue",
@@ -3402,7 +3233,7 @@
       "Yellow",
       "White"
     ],
-    "context": "The satin bowerbird is obsessed with blue, decorating his bower with blue clothes pegs, drinking straws, bottle tops and blue parrot feathers, stealing objects from as far as 12 kilometers away because blue matches his own glossy blue-black plumage and violet-blue iris. Source: Australian Museum, Satin Bowerbird; Coffs Botanic Garden 'Bower Power'.",
+    "context": "The satin bowerbird is obsessed with blue, decorating his bower with blue clothes pegs, drinking straws, bottle tops and blue parrot feathers, and stealing blue objects from rival bowers; blue is also the color of his own glossy plumage and violet-blue eyes. Source: Australian Museum, Satin Bowerbird; Coffs Botanic Garden 'Bower Power'.",
     "topic": "bowerbird"
   },
   {
@@ -3432,19 +3263,6 @@
     "topic": "bowerbird"
   },
   {
-    "tier": 4,
-    "question": "In the rainforest of northeastern Australia, a young male golden bowerbird takes over an old bower, twin towers of sticks joined at the base, and rebuilds it on the exact same spot, as males have done there for generations. No bird builds taller bowers. Approximately how old is the oldest known bower?",
-    "answer": "Over forty years old",
-    "choices": [
-      "Over forty years old",
-      "About one year old",
-      "Over a hundred years old",
-      "Exactly ten years old"
-    ],
-    "context": "Golden bowerbirds build the tallest bower structures known, twin maypole towers that are inherited and rebuilt across generations, with the oldest recorded bowers over 40 years old and more than 2 meters tall. Source: Nature.org 'Kleptomaniac Love Architects'.",
-    "topic": "bowerbird"
-  },
-  {
     "tier": 1,
     "question": "A sea creature moves through the warm shallows off northern Australia. Its clear, jelly-like bell is not the rounded dome of most jellyfish but a cube with four flat sides, and a bundle of tentacles trails from each corner. What is this square-shaped creature called?",
     "answer": "The box jellyfish",
@@ -3459,13 +3277,13 @@
   },
   {
     "tier": 2,
-    "question": "A box jellyfish in the warm water off northern Australia squeezes its cube-shaped bell like a fist and jets away, steering where it wants to go, while ordinary jellyfish drift wherever the current pushes them. How fast can it go, and how sharply can it turn?",
-    "answer": "About 1.5 metres per second, whipping a 180-degree turn in a few beats of its bell",
+    "question": "A box jellyfish in the warm water off northern Australia squeezes its cube-shaped bell like a fist and jets off at around 1.5 meters a second, while ordinary jellyfish drift wherever the current pushes them. How sharply can it turn?",
+    "answer": "A full 180-degree turn in a few beats of its bell",
     "choices": [
-      "About 1.5 metres per second, whipping a 180-degree turn in a few beats of its bell",
-      "About 1.5 metres per second, but it can only ever swim in a straight line",
-      "So slowly it can't beat the current, so it still just drifts like other jellyfish",
-      "Fast in bursts, but only backwards, tentacles first"
+      "A full 180-degree turn in a few beats of its bell",
+      "Only in a slow, wide arc over several minutes",
+      "Only by drifting until the current turns it",
+      "It can't; it swims in straight lines only"
     ],
     "context": "A box jellyfish does not just drift like most jellyfish; it actively swims, reaching about 1.5 metres per second and rapidly turning up to 180 degrees in just a few contractions of its bell. Source: https://en.wikipedia.org/wiki/Box_jellyfish",
     "topic": "box-jellyfish"
@@ -3486,10 +3304,10 @@
   {
     "tier": 3,
     "question": "An Australian box jellyfish swims with no brain at all, just a simple ring of nerves around the rim of its cube-shaped bell. Even so, eyes stare out from its four little sensory pods, and not all of them work the same way. Some are simple pigmented patches that respond only to light; a few are far more advanced. What kind of eyes are those?",
-    "answer": "True camera eyes with real lenses, corneas, and retinas that form an image",
+    "answer": "Camera eyes with lenses that form an image",
     "choices": [
-      "True camera eyes with real lenses, corneas, and retinas that form an image",
-      "Bare pits that can only tell light from dark",
+      "Camera eyes with lenses that form an image",
+      "Infrared pits that sense body heat",
       "Compound eyes, thousands of tiny units like a fly's",
       "Mirror eyes that reflect light instead of focusing it"
     ],
@@ -3502,7 +3320,7 @@
     "answer": "Sensing the chemicals on skin, not touch alone",
     "choices": [
       "Sensing the chemicals on skin, not touch alone",
-      "Any touch at all, driftwood or skin",
+      "The faint electric field of living flesh",
       "A change in water temperature nearby",
       "The shadow of prey passing overhead"
     ],
@@ -3516,8 +3334,8 @@
     "choices": [
       "Stop the heart, killing untreated victims within two to five minutes",
       "Cause hours of full-body paralysis while the victim stays conscious",
-      "Blind a victim, though it is almost never fatal",
-      "Only a painful welt, dangerous just to small children"
+      "Blind the victim for weeks before the eyes recover",
+      "Shut down the kidneys slowly over several days"
     ],
     "context": "Chironex fleckeri is among the most venomous animals alive; a serious sting can cause the heart to stop, and untreated victims have died within two to five minutes. Source: https://en.wikipedia.org/wiki/Chironex_fleckeri; https://pmc.ncbi.nlm.nih.gov/articles/PMC7285912/",
     "topic": "box-jellyfish"
@@ -3525,9 +3343,9 @@
   {
     "tier": 4,
     "question": "An Australian box jellyfish's clear cube-shaped bell tumbles and tilts every which way as it swims through the water, so its eyes are constantly being rolled around. Inside each of the four sensory pods hanging off the sides of the bell, a heavy crystal weight called a statolith dangles at the end of a flexible stalk. What job does that little dangling weight do for the jellyfish's vision?",
-    "answer": "Pulled straight down by gravity, it keeps the eyes aimed up-and-down however the bell rolls",
+    "answer": "Gravity hangs it straight down, keeping the eyes aimed the same way",
     "choices": [
-      "Pulled straight down by gravity, it keeps the eyes aimed up-and-down however the bell rolls",
+      "Gravity hangs it straight down, keeping the eyes aimed the same way",
       "It stores light like a battery so the eyes can still work in the dark",
       "It adds ballast so the jellyfish can sink to the bottom to hunt",
       "It grinds against the nerve ring to signal when prey drifts near"
@@ -3589,25 +3407,12 @@
   },
   {
     "tier": 2,
-    "question": "A lizard on a riverbank breathes air while a fish below pulls water across its gills. The water carries far less dissolved oxygen than an equal amount of air does, so the fish must work harder for every breath. Compared with the same volume of air, roughly how much less oxygen does water hold?",
-    "answer": "Around thirty times less",
-    "choices": [
-      "Around thirty times less",
-      "Around a hundred times less",
-      "Around five times less",
-      "About half as much"
-    ],
-    "context": "Air packs roughly 30 times more oxygen per unit volume than water - which is why a fish must pass an enormous amount of water over its gills just to get by. Source: http://www.howfishbehave.ca/pdf/oxygen.pdf",
-    "topic": "breathing-water-how-gills-pull-oxygen-from-the-sea"
-  },
-  {
-    "tier": 2,
     "question": "Out in the open sea a tuna powers along at speed, while a fish of similar size spends its whole life resting on the seafloor. One of the two has unmistakably richer gills, with denser comb-like red filaments crowding each gill arch. Which fish has the richer gills, and why?",
     "answer": "The tuna's - a relentless swimmer needs far more surface to feed its muscles",
     "choices": [
       "The tuna's - a relentless swimmer needs far more surface to feed its muscles",
       "The bottom-dweller's - lying still, it must hoard every scrap of oxygen",
-      "Neither - gill development is fixed at birth and identical in both",
+      "The bottom-dweller's - the still water near the seafloor is poorer in oxygen",
       "The tuna's - fast water flow scours its filaments larger over time"
     ],
     "context": "Bony fish carry four pairs of gill arches lined with comb-like filaments, and the more active the swimmer, the more developed those combs become - a hard-driving tuna packs far denser filaments than a fish that rests on the bottom. Source: https://australian.museum/learn/animals/fishes/fish-dissections/",
@@ -3649,25 +3454,25 @@
       "It must return to shallow water each night",
       "It can never swim faster than its own gill-pumping"
     ],
-    "context": "This is ram ventilation - the tuna rams water through its gills by moving forward, so if it ever stops swimming, the flow stops and it drowns. Great white, mako, salmon, and whale sharks live under the same sentence. Source: https://poseidonsweb.com/how-fish-breathe-ram-ventilation-buccal-pumping/",
+    "context": "This is ram ventilation - the tuna rams water through its gills by moving forward, so if it ever stops swimming, the flow stops and it drowns. Great white, mako and salmon sharks live under the same sentence. Source: https://poseidonsweb.com/how-fish-breathe-ram-ventilation-buccal-pumping/",
     "topic": "breathing-water-how-gills-pull-oxygen-from-the-sea"
   },
   {
     "tier": 4,
-    "question": "A nurse shark lies motionless on the seafloor for hours at a stretch, sometimes with its mouth buried in the sand, and it does not need to swim to keep water flowing over its gills. How does it keep breathing without moving?",
-    "answer": "It pumps water in through small holes behind its eyes",
+    "question": "A nurse shark lies motionless on the sandy floor of a warm Atlantic reef for hours at a stretch, its tail still and its long body flat against the bottom. It does not need to swim to stay alive. How does it keep breathing without moving?",
+    "answer": "It pumps water over its gills with its cheek muscles",
     "choices": [
-      "It pumps water in through small holes behind its eyes",
+      "It pumps water over its gills with its cheek muscles",
       "It absorbs oxygen straight through its skin",
       "It surfaces every few minutes to gulp air",
       "It slows its heart until it barely needs oxygen"
     ],
-    "context": "The nurse shark uses cheek muscles to pump water over its gills (buccal pumping), and when its mouth is buried it draws water through spiracles - small openings behind the eyes - a trick that lets it rest where ram-ventilating sharks never could. Source: https://theliquidearth.org/2025/09/meet-the-buccal-pumpers-sharks-that-mastered-the-art-of-staying-still/",
+    "context": "The nurse shark breathes by buccal pumping: its cheek muscles draw water into its mouth and force it out again over the gills, so the gills stay supplied with oxygen even while it rests on the bottom, where a ram-ventilating shark would suffocate. Source: Shark Trust, 'Creature Feature: Nurse Sharks' (https://www.sharktrust.org/blog/creature-feature-nurse-sharks)",
     "topic": "breathing-water-how-gills-pull-oxygen-from-the-sea"
   },
   {
     "tier": 4,
-    "question": "The red feathery gill grabs oxygen - but tucked among that same tissue sit special cells busy with a second job that has nothing to do with breathing. A shark in the sea and a trout in a river both carry them, each tuned to its own water. What quiet task are these cells performing?",
+    "question": "The red feathery gill grabs oxygen - but tucked among that same tissue sit special cells busy with a second job that has nothing to do with breathing. A cod in the sea and a trout in a river both carry them, each tuned to its own water. What quiet task are these cells performing?",
     "answer": "Holding the blood at the right saltiness against the water outside",
     "choices": [
       "Holding the blood at the right saltiness against the water outside",
@@ -3679,27 +3484,14 @@
     "topic": "breathing-water-how-gills-pull-oxygen-from-the-sea"
   },
   {
-    "tier": 2,
-    "question": "Justin Schmidt let stinging insects sting him on purpose to score each one's pain on a scale topping out at 4, and he gave the huge black bullet ant a full 4. In his 2016 book The Sting of the Wild, he reached for one searing image of that pain. How did he describe it?",
-    "answer": "Like walking over flaming charcoal with a nail in your heel",
-    "choices": [
-      "Like walking over flaming charcoal with a nail in your heel",
-      "Like a lit blowtorch held against bare skin",
-      "Like a hot iron rod driven through the wrist",
-      "Like acid poured into an open wound"
-    ],
-    "context": "Schmidt called it 'pure, intense, brilliant pain... like walking over flaming charcoal with a three-inch nail embedded in your heel' in The Sting of the Wild (2016). Source: https://en.wikipedia.org/wiki/Schmidt_sting_pain_index",
-    "topic": "bullet-ant-the-worst-sting-on-the-schmidt-index"
-  },
-  {
     "tier": 3,
-    "question": "A single sting from the giant black bullet ant of the South American rainforest brings waves of burning, throbbing agony that keep pounding through the victim's arm or leg long after the ant itself is gone. In Venezuela, where the ant is common, local people gave it a blunt nickname stating exactly how long the ordeal drags on. What do they call it?",
-    "answer": "The 24-hour ant",
+    "question": "A single sting from the giant black bullet ant of the South American rainforest brings waves of burning, throbbing agony that keep pounding through the victim's arm or leg long after the ant itself is gone. How long can the pain of one sting go on?",
+    "answer": "Up to a full day",
     "choices": [
-      "The 24-hour ant",
-      "The three-day ant",
-      "The one-hour ant",
-      "The all-week ant"
+      "Up to a full day",
+      "About ten minutes",
+      "About one hour",
+      "Up to a full week"
     ],
     "context": "The pain can continue unabated for up to a full day, which is why Venezuelans call it 'hormiga veinticuatro,' the 24-hour ant. Source: https://en.wikipedia.org/wiki/Paraponera_clavata",
     "topic": "bullet-ant-the-worst-sting-on-the-schmidt-index"
