@@ -211,7 +211,7 @@ Chain-mode math quiz accepts answers continuously. The strike LANDS when:
 | Timer expires | Lands at current chain | Full chain mult |
 | Chain reaches `_max_chain` (legacy path only) | Auto-lands | Peak mult |
 
-Chain **resets to 0 at every new attack** — no stockpiling between attacks. Parashu's `chain_no_reset_on_tag` is the one carry-forward exception, and it only carries ONE attack and only when the previous kill matched a tag.
+Chain **resets to 0 at every new attack** — no stockpiling between attacks. Parashu's `chain_no_reset_on_tag` is the one carry-forward exception: a kill of a matching-tag target keeps the chain that blow earned (not the carry on top, so it never grows), and the next attack adds it only if it lands (score ≥ 1) and only with the Parashu in hand. The next attack spends it, hit or miss; putting the axe down or changing floor clears it (`combat._chain_carry_for`, bug bash 3.3.1).
 
 ## UI — combat HUD inside the quiz modal
 

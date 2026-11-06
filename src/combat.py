@@ -974,6 +974,18 @@ def weapon_type_multiplier(weapon, monster, blessed: bool | None = None) -> tupl
     return form, substance
 
 
+def _chain_carry_for(player, weapon, score: int) -> int:
+    """The rungs the Parashu's kept rhythm adds to a blow at quiz ``score``.
+
+    Nothing on a miss (added to a chain of 0 it turned every wrong first
+    answer into a hit) and nothing with any other weapon in hand: the
+    rhythm is the axe's. It is cleared when the axe is put down and on every
+    floor change (chain_passives.reset_per_floor_charges)."""
+    if score < 1 or not getattr(weapon, 'chain_no_reset_on_tag', None):
+        return 0
+    return max(0, int(getattr(player, '_chain_carry', 0) or 0))
+
+
 def effective_chain(player, monster, weapon, score: int, consume: bool = True) -> int:
     """The chain a blow lands at: the quiz score plus every head start the
     gear, quirks and passives give. 0 is a miss.
@@ -999,14 +1011,13 @@ def effective_chain(player, monster, weapon, score: int, consume: bool = True) -
             pass
 
     # Parashu (engine wave 3): chain_no_reset_on_tag carry. After a kill
-    # of a matching-tag target, the next attack starts at the same
-    # chain rung instead of restarting. Consumed immediately so a
-    # second attack restarts normally.
-    _carry = int(getattr(player, '_chain_carry', 0) or 0)
-    if _carry > 0:
-        chain += _carry
-        if consume:
-            player._chain_carry = 0
+    # of a matching-tag target, the next attack starts at the rung the kill
+    # was struck at instead of restarting. Only on a blow that lands and
+    # only with the Parashu in hand (_chain_carry_for). The next attack
+    # spends it whether it lands or not, so a second attack restarts.
+    chain += _chain_carry_for(player, weapon, score)
+    if consume and getattr(player, '_chain_carry', 0):
+        player._chain_carry = 0
 
     # Jormungandr quirk: with the weapon the quirk was earned on, any
     # attack that lands at all counts as one link longer. (The old
@@ -1721,6 +1732,10 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None,
                 _fe_spend.spend_chain_forgive(player, monster)
             except ImportError:
                 pass
+        # The Parashu's carried rungs, read before effective_chain spends
+        # them: a kill keeps the chain this blow earned, not the carry on top
+        # (stored boosted, it grew with every kill).
+        _carried = _chain_carry_for(player, weapon, result.score)
         chain = effective_chain(player, monster, weapon, result.score, consume=True)
 
         # Cursed weapon backlash on miss (Tyrfing).
@@ -1938,15 +1953,14 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None,
 
         # Parashu (engine wave 3): chain_no_reset_on_tag. When killing a
         # matching-tag target, mark the player so the next attack starts at
-        # the same chain rung instead of from 1. Combat-side reads
-        # _chain_carry to bump chain at the START of the next quiz, but the
-        # carry only persists turn-to-turn so it's safe to set here.
+        # the rung this blow earned instead of from 1 (effective_chain adds
+        # it to the next blow that lands, and the next attack spends it).
         _chain_no_reset = getattr(weapon, 'chain_no_reset_on_tag', None) or [] \
             if weapon else []
         if _chain_no_reset and monster.is_dead():
             for _tg in _chain_no_reset:
                 if _tag_match(monster, _tg):
-                    player._chain_carry = chain
+                    player._chain_carry = max(0, chain - _carried)
                     break
 
         # Meleager's Boar-Spear (engine wave 3): reveal_tag_on_chain_5_kill.

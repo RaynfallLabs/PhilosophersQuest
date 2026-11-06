@@ -124,8 +124,13 @@ def _ensure_run_set(player) -> set:
 
 
 def reset_per_floor_charges(player) -> None:
-    """Wipe all per-floor charge flags. Called on _change_level."""
+    """Wipe all per-floor charge flags. Called on _change_level.
+
+    The Parashu's kept rhythm (combat._chain_carry_for) ends here too: it
+    carries from one kill to the next blow, not from one floor to the next.
+    (It is not a charge, so a floor already visited does not give it back.)"""
     player._chain_passive_charges = {}
+    player._chain_carry = 0
 
 
 def is_charge_available(player, flag: str) -> bool:

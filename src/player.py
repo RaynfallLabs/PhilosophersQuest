@@ -1978,6 +1978,10 @@ class Player:
             self.STR += 1
             self.max_hp = max(1, self.max_hp - 2)
             self.hp = min(self.hp, self.max_hp)
+        # Parashu: the kept rhythm (combat._chain_carry_for) is the axe's.
+        # Put it down and it is lost.
+        if getattr(weapon, 'chain_no_reset_on_tag', None):
+            self._chain_carry = 0
         # prophecy_blade declaration is run-permanent — does NOT reverse.
 
     def _apply_equip(self, item):
