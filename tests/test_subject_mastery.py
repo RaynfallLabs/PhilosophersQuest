@@ -141,11 +141,15 @@ def test_fully_mastered_escalator_threshold_succeeds_sphinx_mjolnir():
 
 
 def test_mastery_persists_across_save_load_within_a_run():
-    e = _engine('s', [_q('a', 1), _q('b', 1)])
-    e._retired = {('s', 1): {'a'}}
+    # A restored tier stays mastered only while the bank's questions at that
+    # tier are all answered (bug bash 3.3.1, tests/test_bugbash_331_mastery.py):
+    # the loading engine has the same bank, and tier 2 really is cleared.
+    qs = [_q('a', 1), _q('b', 1), _q('c', 2)]
+    e = _engine('s', qs)
+    e._retired = {('s', 1): {'a'}, ('s', 2): {'c'}}
     e._mastered = {('s', 2)}
     state = e.get_deck_state()
-    e2 = QuizEngine()
+    e2 = _engine('s', qs)
     e2.restore_deck_state(state)
     assert e2._retired.get(('s', 1)) == {'a'}
     assert e2.is_mastered('s', 2)
