@@ -1661,11 +1661,7 @@ class Monster:
 
         # --- Ranged AI: shoot from distance, maintain range ---
         if self.ai_pattern == 'ranged':
-            dist_r = abs(self.x - player.x) + abs(self.y - player.y)
-            if dist_r <= 8 or player.has_effect('aggravated'):
-                self._aware = True
-            if not getattr(self, '_aware', False) and not self._alerted:
-                self._wander(dungeon, all_monsters, extra_occupied, player)
+            if not self._spots_player(player, dungeon, all_monsters, extra_occupied):
                 return False
             return self._ranged_turn(player, dungeon, all_monsters, extra_occupied)
 
@@ -1683,43 +1679,9 @@ class Monster:
                 self._aware = True
 
         # --- Detection range: per-monster perception_range (default 8) ---
-        # Once a monster spots the player, it stays aware permanently.
-        # Aggravated status makes ALL monsters aware immediately.
+        if not self._spots_player(player, dungeon, all_monsters, extra_occupied):
+            return False
         dist_to_player = abs(self.x - player.x) + abs(self.y - player.y)
-        detection_range = getattr(self, 'perception_range', 8)
-        # Hand of Glory (passive_silent_walk): halves a monster's perception
-        # against the wearer (rounded down, min 1). Already-aware monsters
-        # keep their target via the _aware flag, so silent_walk only helps
-        # AVOID first detection — once seen, you're seen.
-        try:
-            for _acc in player.equipped_accessories:
-                if getattr(_acc, 'passive_silent_walk', False):
-                    detection_range = max(1, detection_range // 2)
-                    break
-        except AttributeError:
-            pass
-        # Chain-equip passives: invisible_to_undead / stealth_in_dark /
-        # unseen_when_still — if any applies, the monster cannot acquire
-        # the player this turn (existing _aware/_alerted is preserved).
-        try:
-            from chain_passives import is_player_hidden_from
-            hidden = is_player_hidden_from(player, self, dungeon)
-        except ImportError:
-            hidden = False
-        if not hidden and (dist_to_player <= detection_range or player.has_effect('aggravated')):
-            self._aware = True
-        if hidden and not self._alerted:
-            # Player is hidden from this monster: it wanders / stays put even
-            # if it had previously seen the player.
-            if self.ai_pattern not in ('sessile', 'ambush', 'cowardly'):
-                self._wander(dungeon, all_monsters, extra_occupied, player)
-            return False
-        if not getattr(self, '_aware', False) and not self._alerted:
-            # Beyond detection range and never spotted the player.
-            # Behavior depends on base AI: sessile/ambush wait, others wander.
-            if self.ai_pattern not in ('sessile', 'ambush', 'cowardly'):
-                self._wander(dungeon, all_monsters, extra_occupied, player)
-            return False
 
         # --- Phase-blink: chance to teleport adjacent to player when at distance ---
         # Applied AFTER detection/awareness so unaware monsters don't teleport.
@@ -1782,6 +1744,53 @@ class Monster:
             return True  # reached player during double-move
 
         return False
+
+    def _spots_player(self, player, dungeon, all_monsters, extra_occupied) -> bool:
+        """The one detection check for a monster that hunts the hero: True
+        when it goes on to act on him this turn, False when it has spent the
+        turn wandering or keeping still. The healer, summoner and ranged
+        patterns used to skip it: a summoner never became aware and never
+        summoned, healers saw through the Helm of Darkness, and archers
+        ignored every piece of stealth gear (bug bash 3.3.1).
+
+        Once a monster spots the player, it stays aware permanently.
+        Aggravated status makes ALL monsters aware immediately."""
+        dist_to_player = abs(self.x - player.x) + abs(self.y - player.y)
+        detection_range = getattr(self, 'perception_range', 8)
+        # Hand of Glory (passive_silent_walk): halves a monster's perception
+        # against the wearer (rounded down, min 1). Already-aware monsters
+        # keep their target via the _aware flag, so silent_walk only helps
+        # AVOID first detection — once seen, you're seen.
+        try:
+            for _acc in player.equipped_accessories:
+                if getattr(_acc, 'passive_silent_walk', False):
+                    detection_range = max(1, detection_range // 2)
+                    break
+        except AttributeError:
+            pass
+        # Chain-equip passives: invisible_to_undead / stealth_in_dark /
+        # unseen_when_still — if any applies, the monster cannot acquire
+        # the player this turn (existing _aware/_alerted is preserved).
+        try:
+            from chain_passives import is_player_hidden_from
+            hidden = is_player_hidden_from(player, self, dungeon)
+        except ImportError:
+            hidden = False
+        if not hidden and (dist_to_player <= detection_range or player.has_effect('aggravated')):
+            self._aware = True
+        if hidden and not self._alerted:
+            # Player is hidden from this monster: it wanders / stays put even
+            # if it had previously seen the player.
+            if self.ai_pattern not in ('sessile', 'ambush', 'cowardly'):
+                self._wander(dungeon, all_monsters, extra_occupied, player)
+            return False
+        if not getattr(self, '_aware', False) and not self._alerted:
+            # Beyond detection range and never spotted the player.
+            # Behavior depends on base AI: sessile/ambush wait, others wander.
+            if self.ai_pattern not in ('sessile', 'ambush', 'cowardly'):
+                self._wander(dungeon, all_monsters, extra_occupied, player)
+            return False
+        return True
 
     def _standard_move(self, player, dungeon, all_monsters, extra_occupied, effective_pattern):
         """Standard movement logic used by aggressive/cowardly AI."""
@@ -2468,6 +2477,10 @@ class Monster:
             self._heal_amount = actual
             return False  # no attack — used the turn to heal
 
+        # Mending a friend needs no sight of the hero; going after him does.
+        if not self._spots_player(player, dungeon, all_monsters, extra_occupied):
+            return False
+
         # No wounded ally to heal — behave as ranged if possible, else aggressive.
         # C09: "possible" means it HAS a distance attack; a healer whose two
         # attacks are both melee used to club the player from 2-6 tiles.
@@ -2484,6 +2497,10 @@ class Monster:
         existing Abaddon locust-spawn pattern."""
         self._wants_summon = False
         self._summon_turn_counter += 1
+        # It summons only once it has spotted the hero (this sets _aware;
+        # nothing did for a summoner, so none ever summoned).
+        if not self._spots_player(player, dungeon, all_monsters, extra_occupied):
+            return False
         eligible_to_summon = (
             self.summon_kind
             and self._summons_made < self.summon_max
