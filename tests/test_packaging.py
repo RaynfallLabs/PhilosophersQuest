@@ -193,7 +193,7 @@ _BUNDLED_DIR_ALLOWED = {
     "data/questions":          {".json"},
     "data/question_contexts":  {".json"},
     "data/templates":          {".json"},
-    "assets/fonts":            {".ttf", ".otf"},
+    "assets/fonts":            {".ttf", ".otf", ".txt"},   # .txt: the OFL licence each font must ship with
     "assets/tiles":            {".png"},
     # The UI art kit ships runtime art + its manifest only. Its README
     # (the asset contract) stays in the repo but is in the spec's
