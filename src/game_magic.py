@@ -926,15 +926,18 @@ class MagicMixin:
                 _is_panic_wave = (getattr(wand, 'id', '') == 'wand_of_panic_wave')
                 is_boss = _is_big_foe(target)
                 dur = self._wand_effect_duration(wand, 8)
+                # The 'feared' status is the flight (Monster.take_turn, every
+                # AI pattern). These used to set ai_pattern 'cowardly' too,
+                # which never wore off: the creature fled for good.
                 if _is_panic_wave:
                     hit = 0
                     for m in self.monsters:
                         if not m.alive or (m.x, m.y) not in self.visible:
                             continue
-                        if _is_big_foe(m) or getattr(m, 'fearless', False):
+                        if (_is_big_foe(m) or getattr(m, 'fearless', False)
+                                or m.resists_control('feared')):
                             continue
                         m.add_effect('feared', dur)
-                        m.ai_pattern = 'cowardly'
                         hit += 1 if _hero_sees(self, m) else 0
                     self.add_message(
                         f"A wave of panic sweeps the floor! ({hit} creature{'s' if hit != 1 else ''} flee for {dur} turns)",
@@ -944,9 +947,10 @@ class MagicMixin:
                 elif getattr(target, 'fearless', False):
                     # The galla: nothing frightens them (MON-06).
                     self.add_message(f"{the_name(target)} knows no fear!", 'warning')
+                elif target.resists_control('feared'):
+                    self.add_message(f"{the_name(target)} has no mind to frighten.", 'warning')
                 else:
                     target.add_effect('feared', dur)
-                    target.ai_pattern = 'cowardly'
                     self.add_message(f"{the_name(target)} turns and flees in terror! ({dur} turns)", 'success')
 
             elif effect == 'charm_monster':
@@ -2312,10 +2316,13 @@ class MagicMixin:
                     self.add_message(f"{the_name(target)} is too powerful to frighten!", 'warning')
                 elif getattr(target, 'fearless', False):
                     self.add_message(f"{the_name(target)} knows no fear!", 'warning')
+                elif target.resists_control('feared'):
+                    self.add_message(f"{the_name(target)} has no mind to frighten.", 'warning')
                 else:
+                    # The status is the flight; no ai_pattern change (it never
+                    # wore off, so the creature fled for good).
                     dur = max(3, int(10 * chain_scale))
                     target.add_effect('feared', dur)
-                    target.ai_pattern = 'cowardly'
                     self.add_message(
                         f"{the_name(target)} turns and flees in terror for {dur} turns!", 'success')
             elif effect == 'polymorph_spell':

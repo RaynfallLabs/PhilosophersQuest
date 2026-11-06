@@ -131,6 +131,60 @@ def test_b1_charm_wand_tells_the_truth_about_the_undead():
     assert sk.ai_pattern != 'sessile'
 
 
+# ---------------------------------------------------------------------------
+# B2: fear
+# ---------------------------------------------------------------------------
+
+def _flees_then_returns(g, m, dur):
+    assert 0 < dur < 1000
+    for _ in range(dur):
+        _turn(g, m)
+    assert not m.has_effect('feared')
+    assert m.ai_pattern != 'cowardly', "fear must not re-pattern the creature for good"
+    m.x, m.y = g.player.x + 1, g.player.y
+    assert _turn(g, m) is True, "once the fear is over it fights again"
+
+
+def test_b2_fear_wand_lasts_the_turns_it_promises():
+    g = _game(seed=21)
+    _open_floor(g)
+    rat = _spawn(g, 'giant_rat')
+    _zap(g, 'wand_of_fear', rat)
+    _flees_then_returns(g, rat, rat.status_effects.get('feared', 0))
+
+
+def test_b2_panic_wave_lasts_the_turns_it_promises():
+    g = _game(seed=22)
+    _open_floor(g)
+    rat = _spawn(g, 'giant_rat', dx=2)
+    g.visible = set(g.visible) | {(rat.x, rat.y)}
+    _zap(g, 'wand_of_panic_wave', rat)
+    _flees_then_returns(g, rat, rat.status_effects.get('feared', 0))
+
+
+def test_b2_fear_spell_lasts_the_turns_it_promises():
+    g = _game(seed=23)
+    _open_floor(g)
+    rat = _spawn(g, 'giant_rat')
+    g._apply_spell_effect({'effect': 'fear_monster_spell', 'power': '', 'tier': 2,
+                           'name': 'Fear'}, rat)
+    _flees_then_returns(g, rat, rat.status_effects.get('feared', 0))
+
+
+def test_b2_nothing_in_src_repatterns_a_frightened_or_charmed_creature():
+    """Every source of fear or charm leaves ai_pattern alone (the status is
+    the behaviour). A grep guard over src/."""
+    import re
+    src = os.path.join(ROOT, 'src')
+    bad = []
+    for fn in os.listdir(src):
+        if not fn.endswith('.py'):
+            continue
+        with open(os.path.join(src, fn), encoding='utf-8') as f:
+            for i, line in enumerate(f, 1):
+                if re.search(r"ai_pattern\s*=\s*['\"](cowardly|sessile)['\"]", line):
+                    bad.append(f"{fn}:{i}: {line.strip()}")
+    assert not bad, bad
 
 
 def test_b1_a_rooted_creature_charmed_holds_its_blow():
