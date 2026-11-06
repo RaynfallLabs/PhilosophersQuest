@@ -20,6 +20,7 @@ constants owned exclusively by handlers in this module (``_MOVE_KEYS`` and
 from __future__ import annotations
 
 import os
+import time
 
 import pygame
 
@@ -88,7 +89,10 @@ class InputMixin:
                 # Remember where we were: cancelling the dialog must put the
                 # player back in the same state. Dropping to STATE_PLAYER
                 # abandoned an in-progress quiz without firing its callback.
+                # And when: a timed question's clock does not stop for the
+                # dialog (_leave_confirm_exit charges the time it was up).
                 self._state_before_exit = self.state
+                self._exit_dialog_opened_at = time.monotonic()
                 self.state = STATE_CONFIRM_EXIT
             return True
         if event.type in (pygame.WINDOWRESIZED, pygame.WINDOWSIZECHANGED):
@@ -152,9 +156,12 @@ class InputMixin:
                     # unfinished recital counts as a failure).
                     self._necro_complete()
                 elif self.quiz_engine.state == QuizState.ASKING:
-                    # Give up on the question being asked. Chain quizzes
-                    # keep the chain already earned.
-                    self.quiz_engine._end(success=False)
+                    # Give up on the question being asked: a forfeit, the
+                    # same one an exit save settles. Chain quizzes keep the
+                    # chain already earned; in a play-all quiz (senet) this
+                    # round and every one still to come is lost and pays
+                    # its cost. Ending the quiz outright skipped those.
+                    self.quiz_engine.forfeit()
                 elif self.quiz_engine.state in (QuizState.COMPLETE, QuizState.IDLE):
                     # Safety net: the quiz is over but a callback forgot to
                     # leave STATE_QUIZ. Never trap the player here.
@@ -744,6 +751,18 @@ class InputMixin:
         prior = getattr(self, '_state_before_exit', None)
         self._state_before_exit = None
         self.state = prior if prior and prior != STATE_CONFIRM_EXIT else STATE_PLAYER
+        # The quiz clock is ticked only on the quiz screens, so a question
+        # left open behind the dialog kept all its seconds: the window's X,
+        # then "Keep playing", was a pause as long and as often as wanted.
+        # The time the dialog was up is the question's time. (The context
+        # card's own once-a-question pause still holds: update() keeps it.)
+        opened = getattr(self, '_exit_dialog_opened_at', None)
+        self._exit_dialog_opened_at = None
+        qe = getattr(self, 'quiz_engine', None)
+        if (opened is not None and qe is not None
+                and self.state in (STATE_QUIZ, STATE_QUIZ_CONTEXT)
+                and qe.state == QuizState.ASKING and getattr(qe, 'timed', False)):
+            qe.update(max(0.0, time.monotonic() - opened))
 
     def _exit_quest_input(self, key: int):
         """Player has the Stone and is at the L1 exit."""
