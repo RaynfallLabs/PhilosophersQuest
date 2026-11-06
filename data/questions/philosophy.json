@@ -10045,20 +10045,20 @@
       "Numbers too large for it to write down",
       "Questions that take forever to compute"
     ],
-    "context": "This is the first incompleteness theorem, told through its consequence: a consistent system strong enough for arithmetic always harbors statements that are TRUE but unprovable within it. It is not a flaw or an inconsistency (the tempting wrong choice) and not about size or speed -- it is a permanent limit on what proof can reach. Goedel's own words on why: 'the concept of arithmetic truth cannot be defined in arithmetic. If it were possible to define truth in the system itself, we would have something like the liar paradox, showing the system to be inconsistent.' Truth outruns proof -- there is always more that is true than the system can prove.",
+    "context": "This is the first incompleteness theorem, told through its consequence: a consistent system strong enough for arithmetic always harbors statements that are TRUE but unprovable within it. It is not a flaw or an inconsistency (the tempting wrong choice) and not about size or speed; it is a permanent limit on what proof can reach. Goedel later named the true reason for undecidable sentences: the truth of a system's own sentences cannot be defined inside that system, for if it could, a liar sentence ('this statement is not true') could be built inside it. Truth outruns proof: there is always more that is true than the system can prove. Source: Goedel's 1966 letter, quoted at math.mcgill.ca/rags/JAC/124/nothing.html; Wikipedia, Tarski's undefinability theorem.",
     "topic": "g-dels-incompleteness-theorems"
   },
   {
     "tier": 2,
-    "question": "Bertrand Russell and Alfred North Whitehead spent about ten years on their Principia Mathematica, trying to grow all of mathematics from pure logic; their proof that 1+1=2 did not arrive until page 379. Then in 1931 Kurt Goedel proved that no such system could ever be both complete and consistent. What became of their project?",
-    "answer": "It was over -- the dream could not be done",
+    "question": "Bertrand Russell and Alfred North Whitehead spent a decade on Principia Mathematica, trying to grow all of mathematics from logic; by page 379 they had still only set up the proof that 1+1=2. In 1931 Kurt Goedel proved that a system like theirs can never be both complete and consistent. What became of their project?",
+    "answer": "Its dream was shown to be impossible",
     "choices": [
-      "It was over -- the dream could not be done",
-      "It was finished and published in full",
-      "It was handed to Goedel to complete",
-      "It was rebuilt without any logic at all"
+      "Its dream was shown to be impossible",
+      "It was finished by their students instead",
+      "It was saved by one extra axiom",
+      "It was handed to Goedel to finish"
     ],
-    "context": "Principia Mathematica (1910-1913) tried to derive all of mathematics from logic; the proof of 1+1=2 lands around page 379. Goedel's 1931 result showed no such system could be both complete and consistent, so the decade-long dream of proving all of math's truths from logic was finished. Source: Wikipedia, Principia Mathematica / Goedel's incompleteness theorems; Univ. of Michigan Historical Math Collection (Principia, p. 379).",
+    "context": "Principia Mathematica (1910-1913) tried to derive all of mathematics from logic. On page 379 of the first volume it notes only that 1+1=2 will follow once addition has been defined; the proof itself is finished in the second volume. Goedel's 1931 result showed no such system could be both complete and consistent, so the decade-long dream of proving all of math's truths from logic was over, and no extra axiom can rescue it, since every stronger system has unprovable truths of its own. Source: Wikipedia, Principia Mathematica / Goedel's incompleteness theorems.",
     "topic": "g-dels-incompleteness-theorems"
   },
   {
@@ -10069,22 +10069,9 @@
       "That it is consistent",
       "That it is finished",
       "That it is useful",
-      "That it is correct"
+      "That it can do sums"
     ],
     "context": "The second incompleteness theorem: a system strong enough for arithmetic cannot prove its OWN consistency -- to trust it, you must step outside it. The first theorem gives unprovable statements; the second turns that blade on the system's faith in itself. (A system being 'consistent' means it is free of contradiction -- it never proves both a statement and its opposite.) Source: SEP, Goedel's Incompleteness Theorems (Raatikainen); Wikipedia, Goedel's incompleteness theorems.",
-    "topic": "g-dels-incompleteness-theorems"
-  },
-  {
-    "tier": 2,
-    "question": "Years after his famous proof, Kurt Goedel walked home from the Institute in Princeton with a friend, trading ideas on politics, philosophy and physics along the way. The friend once said he kept going to his own office mainly for the joy of those walks. Who was Goedel's walking companion?",
-    "answer": "Albert Einstein",
-    "choices": [
-      "Albert Einstein",
-      "Bertrand Russell",
-      "David Hilbert",
-      "John von Neumann"
-    ],
-    "context": "At Princeton's Institute for Advanced Study, Einstein said he kept coming to the office mainly 'just to have the privilege of walking home with Kurt Goedel.' The two took a roughly half-hour walk together, talking politics, philosophy, and physics. Source: Palle Yourgrau, A World Without Time (via Futility Closet, 'Footwork'); Medium, 'Einstein and Goedel's Thoughtful Walks in Princeton.'",
     "topic": "g-dels-incompleteness-theorems"
   },
   {
@@ -10101,32 +10088,6 @@
     "topic": "g-dels-incompleteness-theorems"
   },
   {
-    "tier": 3,
-    "question": "Only one person in the Koenigsberg audience grasped what the unknown young Kurt Goedel had just done. He was there representing Hilbert's own program, yet he pulled Goedel aside afterward and saw at once that the program he had come to champion was finished. Who understood Goedel's result on the spot?",
-    "answer": "John von Neumann",
-    "choices": [
-      "John von Neumann",
-      "Bertrand Russell",
-      "Alfred North Whitehead",
-      "Emil du Bois-Reymond"
-    ],
-    "context": "Von Neumann, attending for Hilbert's program, was the only one who immediately understood -- he pulled Goedel aside afterward and realized Hilbert's program was over. He later helped Goedel secure a permanent post at the Institute for Advanced Study. Source: Wikipedia, Goedel's incompleteness theorems; privatdozent.co, 'Kurt Goedel's Brilliant Madness.'",
-    "topic": "g-dels-incompleteness-theorems"
-  },
-  {
-    "tier": 4,
-    "question": "David Hilbert ended his 1930 radio address in Koenigsberg with a defiant motto about the reach of human knowledge, and the very same words were later carved onto his gravestone in Goettingen. Which line did Hilbert choose as his creed?",
-    "answer": "We must know, we shall know",
-    "choices": [
-      "We must know, we shall know",
-      "Mathematics is the queen of the sciences",
-      "The book of nature is written in mathematics",
-      "Doubt is the beginning of all wisdom"
-    ],
-    "context": "'Wir muessen wissen, wir werden wissen' -- 'We must know, we shall know' -- was Hilbert's answer to the gloomy maxim 'ignoramus et ignorabimus' ('we do not know, and we shall not know'). The six words were carved on his Goettingen gravestone, even though the unknown young man one neighborhood away had already shown the dream behind them was impossible. Source: Mind Matters (mindmatters.ai); 'A Mathematical History Tour: David Hilbert' (mathsab.blogspot.com).",
-    "topic": "g-dels-incompleteness-theorems"
-  },
-  {
     "tier": 4,
     "question": "John von Neumann, one of the fastest minds alive, kept turning Kurt Goedel's proof over and raced toward a second result. On November 20, 1930 he wrote excitedly to Goedel to announce it. The letter won him nothing. Why did von Neumann get no credit for the discovery?",
     "answer": "Goedel had already found it and mailed his finished paper",
@@ -10137,19 +10098,6 @@
       "The two men had secretly agreed to share authorship"
     ],
     "context": "Von Neumann's Nov. 20, 1930 letter announced the second incompleteness theorem -- but Goedel had already discovered the same thing and mailed off his final paper, which now contained it. Goedel beat one of the fastest minds alive by a matter of weeks. Source: ananyo.substack.com, 'Was Goedel's second incompleteness theorem really von Neumann's?'; SEP, Goedel's Incompleteness Theorems.",
-    "topic": "g-dels-incompleteness-theorems"
-  },
-  {
-    "tier": 4,
-    "question": "The one man in the Koenigsberg audience who grasped Kurt Goedel's result on the spot never lost his awe at it. He called Goedel's achievement a landmark 'which will remain visible far in space and time,' and went further, naming Goedel the one living mathematician he would say this of. What was the singular claim he made for Goedel?",
-    "answer": "That he was absolutely irreplaceable",
-    "choices": [
-      "That he was absolutely irreplaceable",
-      "That he was the greatest teacher alive",
-      "That he had solved every open problem",
-      "That he would surely win a Nobel Prize"
-    ],
-    "context": "Von Neumann said: 'Goedel is absolutely irreplaceable; he is the only mathematician alive about whom I would dare make this statement.' He called the work a landmark 'which will remain visible far in space and time.' Source: privatdozent.co, 'Kurt Goedel's Brilliant Madness' (von Neumann quotes); SEP, Kurt Goedel.",
     "topic": "g-dels-incompleteness-theorems"
   },
   {
@@ -10206,20 +10154,7 @@
   },
   {
     "tier": 2,
-    "question": "Merchants of Galileo's day used small spyglasses to spot ships, always pointed at the horizon. Galileo did not invent the telescope, but he ground better lenses until his could magnify twenty to thirty times. Then he aimed it somewhere the merchants never bothered to look. Where did he aim it?",
-    "answer": "Straight up at the night sky",
-    "choices": [
-      "Straight up at the night sky",
-      "Far out across the open sea",
-      "Down onto the crowded docks",
-      "Over at a rival's workshop"
-    ],
-    "context": "By turning the telescope on the heavens instead of the horizon, Galileo transformed an instrument first sold to spot ships into the tool that remade our picture of the universe. Source: Museo Galileo, history of the telescope (brunelleschi.imss.fi.it).",
-    "topic": "galileo-authority-vs-observation"
-  },
-  {
-    "tier": 2,
-    "question": "The Roman Inquisition put Galileo on trial in 1633 for saying the Earth moves around the Sun. Forced to his knees, he signed a statement cursing his own teaching. Then the Inquisition handed down its sentence. What was Galileo's punishment?",
+    "question": "The Roman Inquisition put Galileo on trial in 1633 for saying the Earth moves around the Sun. Forced to his knees, he signed a statement cursing his own teaching. Then the Inquisition handed down its sentence. What punishment did Galileo end up serving?",
     "answer": "House arrest at his own villa",
     "choices": [
       "House arrest at his own villa",
@@ -10227,7 +10162,7 @@
       "Lifelong exile from Italy",
       "A dungeon cell in the Vatican"
     ],
-    "context": "The Inquisition found Galileo 'vehemently suspect of heresy.' He spent his last years under house arrest at his villa in Arcetri, near Florence, going blind, until his death in 1642. Source: Stanford Encyclopedia of Philosophy, 'Galileo' (quoting Shea and Artigas 2003); Smithsonian Magazine.",
+    "context": "The Inquisition found Galileo 'vehemently suspect of heresy' and sentenced him to formal imprisonment; the next day the sentence was commuted to house arrest. After a stay in Siena he spent his last years under house arrest at his villa in Arcetri, near Florence, going blind, until his death in 1642. Source: Wikipedia, 'Galileo affair'; Stanford Encyclopedia of Philosophy, 'Galileo'.",
     "topic": "galileo-authority-vs-observation"
   },
   {
@@ -10271,15 +10206,15 @@
   },
   {
     "tier": 3,
-    "question": "Under threat of torture, Galileo Galilei stood before the Roman Inquisition in 1633 and formally took back his claim that the Earth circles the Sun. A famous legend says that the moment he signed, he rose from his knees and muttered a few defiant words under his breath. What, according to the legend, did he mutter?",
-    "answer": "And yet it moves.",
+    "question": "Galileo knelt before the Roman Inquisition in 1633 and formally took back his claim that the Earth circles the Sun. A famous story says he then rose and muttered, 'And yet it moves.' Historians treat the line as a legend, not a fact. What is the main reason for their doubt?",
+    "answer": "It was first printed over a century later",
     "choices": [
-      "And yet it moves.",
-      "Yet still it turns.",
-      "God knows the truth.",
-      "Time proves me right."
+      "It was first printed over a century later",
+      "He denied saying it in a letter to a friend",
+      "His enemies made it up to paint him as defiant",
+      "The trial notary wrote down different words"
     ],
-    "context": "Historians treat 'Eppur si muove' - 'And yet it moves' - as a later legend, not fact. Galileo's own disciple Vincenzo Viviani, who wrote the first biography in 1655-56, never mentions it, and it appears in no trial record. The line first showed up in print over a century later, reported by Giuseppe Baretti in 1757. Source: Wikipedia, 'And yet it moves' (citing Viviani 1655-56 and Baretti 1757).",
+    "context": "Historians treat 'Eppur si muove' ('And yet it moves') as a later legend. Galileo's disciple Vincenzo Viviani, whose biography of 1655-56 is the earliest, never mentions it, and it appears in no trial record. It was first reported in print in 1757, by Giuseppe Baretti in London, more than a century after the trial. A painting bearing the words, dated to the 1640s, is doubted by some art experts to be that old. Source: Wikipedia, 'And yet it moves'.",
     "topic": "galileo-authority-vs-observation"
   },
   {
@@ -10311,14 +10246,14 @@
   {
     "tier": 5,
     "question": "A favorite tale has Galileo offering to show people the moons and craters for themselves, and narrow-minded Catholic priests refusing even to look through his telescope, afraid the Bible would be proven wrong. Historians who went back to the original records found the story mostly wrong. What did the records show?",
-    "answer": "The two who refused were rival professors, not priests; Jesuit astronomers agreed",
+    "answer": "The two who refused were rival professors, not priests; Jesuit astronomers confirmed his sightings",
     "choices": [
-      "The two who refused were rival professors, not priests; Jesuit astronomers agreed",
-      "The two who refused were jealous bishops, not scholars; the universities agreed",
-      "The ones who refused were Galileo's own students, not foes; the Pope agreed",
-      "The two who refused were court physicians, not churchmen; the cardinals agreed"
+      "The two who refused were rival professors, not priests; Jesuit astronomers confirmed his sightings",
+      "The two who refused were jealous bishops, not scholars; the universities confirmed his sightings",
+      "The ones who refused were Galileo's own students, not foes; the Pope confirmed his sightings",
+      "The two who refused were court physicians, not churchmen; the cardinals confirmed his sightings"
     ],
-    "context": "The two who declined were the scholastic philosophers Cesare Cremonini and Giulio Libri, Galileo's academic rivals, not clergy. Cremonini complained the blurry view only gave him a headache. The Jesuit astronomers Christopher Clavius and Christopher Grienberger looked, confirmed what Galileo saw, and came around to his view. The real fight was over received Aristotelian authority versus the evidence of one's own eyes. Source: The Renaissance Mathematicus, 'Refusing to look'; catholiceducation.org, 'The Galileo Legend.'",
+    "context": "The two who declined were the scholastic philosophers Cesare Cremonini and Giulio Libri, Galileo's academic rivals, not clergy. Cremonini complained the blurry view only gave him a headache. The Jesuit astronomers Christopher Clavius and Christopher Grienberger looked and confirmed what Galileo saw. The real fight was over received Aristotelian authority versus the evidence of one's own eyes. Source: The Renaissance Mathematicus, 'Refusing to look'; catholiceducation.org, 'The Galileo Legend.'",
     "topic": "galileo-authority-vs-observation"
   },
   {
@@ -10349,15 +10284,15 @@
   },
   {
     "tier": 2,
-    "question": "Diogenes the Cynic slept in a barrel in Athens and mocked every polite custom of the city. People said he walked its streets in broad daylight holding a lit lantern up to the faces of passersby, a scene Nietzsche's madman would echo centuries later. What did Diogenes claim he was hunting for?",
-    "answer": "An honest man",
+    "question": "Diogenes the Cynic lived in a tub in Athens and mocked every polite custom of the city. As Diogenes Laertius tells it, he went about in broad daylight carrying a lit lamp, a scene Nietzsche's madman would echo centuries later. What did Diogenes say he was looking for?",
+    "answer": "A true human being",
     "choices": [
-      "An honest man",
+      "A true human being",
       "A patch of shade",
       "An escaped slave",
-      "A lost lawmaker"
+      "A god in disguise"
     ],
-    "context": "By legend Diogenes lit his lamp by day because honesty was so rare he needed light even at noon to find it. Nietzsche reworks the gag: his madman hunts for God instead of an honest man. Source: Diogenes Laertius; Aeon, 'What Nietzsche learnt from Diogenes the Cynic.'",
+    "context": "As Diogenes Laertius tells it (Lives VI.41, Hicks trans.): 'He lit a lamp in broad daylight and said, as he went about, \"I am looking for a man.\"' Later retellings made it 'an honest man.' Nietzsche reworks the gag: his madman hunts for God instead of a human being. Source: Diogenes Laertius, Lives of the Eminent Philosophers VI.41, en.wikisource.org; Aeon, 'What Nietzsche learnt from Diogenes the Cynic.'",
     "topic": "god-is-dead"
   },
   {
@@ -10375,10 +10310,10 @@
   },
   {
     "tier": 3,
-    "question": "God did not die of old age in Friedrich Nietzsche's story of the madman, nor of sickness, nor by any slow fading away. The madman, crying in the marketplace that God is dead, gives a far more shocking account. According to him, who is responsible for God's death?",
-    "answer": "We killed him — you and I, all of us",
+    "question": "God did not die of old age in Friedrich Nietzsche's story of the madman, nor of sickness, nor by any slow fading away. The madman, crying in the marketplace that God is dead, gives a far more shocking account. What does he say happened to God?",
+    "answer": "Humanity killed him, every last person",
     "choices": [
-      "We killed him — you and I, all of us",
+      "Humanity killed him, every last person",
       "He withdrew from a world gone wrong",
       "He was never really there at all",
       "He sleeps and will wake in time"
@@ -10389,14 +10324,14 @@
   {
     "tier": 3,
     "question": "The crowd in the marketplace only stares and laughs at Nietzsche's madman as he cries out that God is dead. Then he falls silent and throws his lantern to the ground so that it shatters. The deed has truly happened, he says, but the people standing right there cannot yet feel it. How does he explain their failure to understand?",
-    "answer": "\"I have come too early; my time is not yet.\"",
+    "answer": "He has come too early; his time is not yet",
     "choices": [
-      "\"I have come too early; my time is not yet.\"",
-      "\"You were never meant to understand me.\"",
-      "\"The truth has been hidden from you by priests.\"",
-      "\"Only the dead could ever grasp this.\""
+      "He has come too early; his time is not yet",
+      "They were never meant to understand him",
+      "Priests have hidden the truth from them",
+      "Only the dead could ever grasp it"
     ],
-    "context": "He says the deed 'is still more distant from them than the most distant stars — and yet they have done it themselves.' For Nietzsche the death of God had already happened, but it would take generations for people to feel the ground move. Source: Nietzsche, The Gay Science 125 (Kaufmann trans.).",
+    "context": "'I have come too early,' he says; 'my time is not yet.' The deed, he adds, 'is still more distant from them than most distant stars — and yet they have done it themselves.' For Nietzsche the death of God had already happened, but it would take generations for people to feel the ground move. Source: Nietzsche, The Gay Science 125 (Kaufmann trans.).",
     "topic": "god-is-dead"
   },
   {
@@ -10407,7 +10342,7 @@
       "He turned a known saying into the diagnosis of his age",
       "He translated it for the first time into German",
       "He proved with arguments that no God exists",
-      "He buried it so no one would repeat it"
+      "He mocked it as a worn-out poet's phrase"
     ],
     "context": "The line predates him: Hegel (crediting Pascal), Nerval's 1854 poem 'Le Christ aux oliviers,' and Romantics like Jean Paul and Heine used it. Nietzsche took a familiar literary image and made it a verdict on his whole civilization. Source: Wikipedia 'God is dead'; Pro-Fil, 'The History of the Dead God.'",
     "topic": "god-is-dead"
@@ -10444,7 +10379,7 @@
     "answer": "The news of God's death never reached him",
     "choices": [
       "The news of God's death never reached him",
-      "He clings to a God the world has abandoned",
+      "He knows God is dead but hides it",
       "He has found a peace Zarathustra still lacks",
       "He worships out of fear of being alone"
     ],
@@ -10479,7 +10414,7 @@
   },
   {
     "tier": 5,
-    "question": "The death of God was not only terror for Friedrich Nietzsche. In The Gay Science he wrote of a bold few who feel the same event as a wide-open horizon: 'our sea lies open again; perhaps there has never yet been such an open sea.' What did Nietzsche say the crisis also is?",
+    "question": "The death of God was not only terror for Friedrich Nietzsche. In The Gay Science he wrote of a bold few who feel the same event as a wide-open horizon, for whom 'the sea, our sea, lies open again.' What did Nietzsche say the crisis also is?",
     "answer": "A frightening new freedom",
     "choices": [
       "A frightening new freedom",
@@ -10487,7 +10422,7 @@
       "A punishment for the proud",
       "A harmless change of mood"
     ],
-    "context": "Nietzsche addresses this to the bold 'free spirits.' In Gay Science 343 he shows the flip side: with the old certainties gone, everything is suddenly open, unmapped, dangerous — 'such an open sea.' The death of God is at once a dread and an invitation to set sail. Source: Nietzsche, The Gay Science 343 (Kaufmann trans.).",
+    "context": "Nietzsche addresses this to the bold 'free spirits.' In Gay Science 343 he shows the flip side: with the old certainties gone, everything is suddenly open, unmapped, dangerous; perhaps there has never yet been such an 'open sea.' The death of God is at once a dread and an invitation to set sail. Source: Nietzsche, The Gay Science 343 (Kaufmann trans.).",
     "topic": "god-is-dead"
   },
   {
@@ -10513,7 +10448,7 @@
       "Speech borrows its whole force from the gods, so a soul carried off by words was in truth being steered by a god",
       "Speech moves only by showing what is real, so a soul carried off by words was simply following the plain truth"
     ],
-    "context": "In the Encomium of Helen (section 6), Gorgias names the four causes in his signature ornate, rhyming style: she acted 'by will of Fate and decision of the gods and vote of Necessity... or by force reduced or by words seduced or by love possessed.' That cascading near-rhyme -- reduced, seduced, possessed -- is a trademark of the 'Gorgianic' style. The sneaky payoff: since he had already declared speech 'a powerful lord' that no soul can resist, calling it the cause makes Helen a victim of an irresistible force, so a courtroom defense of Helen is really a hymn to the power of rhetoric. Source: Gorgias, Encomium of Helen Sec.6 (gpullman.com / Barney trans.), via Internet Encyclopedia of Philosophy, https://iep.utm.edu/gorgias/",
+    "context": "In the Encomium of Helen (section 6), Gorgias names the four causes in his signature ornate, rhyming style; in George Kennedy's translation she acted 'by will of Fate and decision of the gods and vote of Necessity... or by force reduced or by words seduced or by love possessed.' That cascading near-rhyme (reduced, seduced, possessed) is a trademark of the 'Gorgianic' style. The sly payoff: Gorgias calls speech 'a powerful lord' that no soul can resist, so if words moved her, Helen was the victim of an irresistible force, and a defense of Helen becomes a hymn to the power of rhetoric. Source: Gorgias, Encomium of Helen 6 and 8 (trans. George Kennedy, in Sprague, The Older Sophists; gpullman.com/8170/Gorgias_Helen.php); Internet Encyclopedia of Philosophy, https://iep.utm.edu/gorgias/",
     "topic": "gorgias-the-rhetorician"
   },
   {
@@ -10570,12 +10505,12 @@
   },
   {
     "tier": 5,
-    "question": "Adorno and Horkheimer, Jürgen Habermas's own teachers, reached a dark verdict in Dialectic of Enlightenment: human reason itself had turned into a tool of control, so reason had failed and could not be saved. Habermas refused to give up on reason, yet he could not simply deny that it had been used to dominate. His way out rested on a distinction his teachers had missed. What was their mistake?",
+    "question": "Adorno and Horkheimer, Jürgen Habermas's teachers, reached a dark verdict in Dialectic of Enlightenment: reason itself had turned into a tool of control, and their book seemed to leave no way to save it. Habermas refused to give up on reason, yet he could not simply deny that it had been used to dominate. His way out rested on a distinction his teachers had missed. What was their mistake?",
     "answer": "They treated the logic of control as if it were the whole of reason",
     "choices": [
       "They treated the logic of control as if it were the whole of reason",
       "They assumed reason could never safely be trusted again",
-      "They believed only cold science, never conversation, could count as reason",
+      "They hoped science alone would free people from control",
       "They claimed reason had always been a mask for raw power"
     ],
     "context": "Habermas argued his elders had confused ONE kind of reason -- instrumental reason, the cold logic of means-to-ends and control -- with reason as such. There is another kind, communicative reason, aimed at understanding one another rather than controlling things. So you do not abandon reason; you build conversations that run on the better-reason kind. This is why he is called the optimist who defended 'the unfinished emancipatory project of the Enlightenment.' Source: IEP, 'Habermas'; SEP, 'Habermas'.",
@@ -10595,19 +10530,6 @@
     "topic": "hasty-generalization"
   },
   {
-    "tier": 1,
-    "question": "In an old tale, blind men each touch one part of an elephant. One, at its broad side, says it is like a wall; one holding the trunk, a snake; one at a leg, a pillar. What mistake do they all share?",
-    "answer": "Each judges the whole animal from the one small part he happened to touch",
-    "choices": [
-      "Each judges the whole animal from the one small part he happened to touch",
-      "Each is lying about what he felt in order to win the argument with the others",
-      "None of them had ever been taught the correct name for the animal before",
-      "They forgot that an elephant changes its shape depending on where you stand"
-    ],
-    "context": "Told as legend. This is one of the oldest pictures of a too-small, partial sample — each man generalizes the whole beast from his one patch. The story appears in the Buddhist Tittha Sutta (Udana 6.4), around 500 BCE, and across Jain, Hindu, and Sufi tradition. Source: Wikipedia, 'Blind men and an elephant'; Tittha Sutta, Udana 6.4.",
-    "topic": "hasty-generalization"
-  },
-  {
     "tier": 2,
     "question": "At a conference, a man meets three visitors from China and all three happen to be afraid of dogs. He goes home and tells people that most of China's population is afraid of dogs. China has about 1.4 billion people. Why does his conclusion outrun what he actually saw?",
     "answer": "Three nervous guests say nothing about how more than a billion others feel",
@@ -10617,7 +10539,7 @@
       "He cannot draw any conclusion about a country he has never visited himself",
       "A conference is the one place travelers hide their true feelings about dogs"
     ],
-    "context": "Three out of 1.4 billion is a vanishingly thin sample — the named fallacy is HASTY GENERALIZATION. Note option three is the wrong lesson: you CAN reason about a country you haven't visited, IF your sample is large and representative. The error here is only the tiny count. Source: Scribbr, 'Hasty Generalization Fallacy: Definition & Examples,' scribbr.com/fallacies/hasty-generalization-fallacy/.",
+    "context": "Three out of 1.4 billion is a vanishingly thin sample; the named fallacy is HASTY GENERALIZATION. The 'never visited' answer teaches the wrong lesson: a person CAN reason soundly about a country he has never visited, if his sample is large and representative. The error here is only the tiny count. Source: Scribbr, 'Hasty Generalization Fallacy: Definition & Examples,' scribbr.com/fallacies/hasty-generalization-fallacy/.",
     "topic": "hasty-generalization"
   },
   {
@@ -10626,16 +10548,16 @@
     "answer": "Boiling noodles cook the same all through, but an unstirred soup differs top to bottom, so a sip tells only its own spot",
     "choices": [
       "Boiling noodles cook the same all through, but an unstirred soup differs top to bottom, so a sip tells only its own spot",
-      "Boiling water surrounds every noodle and cooks it evenly, while a soup off the heat stops moving and settles out",
+      "A single noodle is a far bigger share of its pot than one small sip is of a whole pot of soup",
       "Pasta is one ingredient and a soup is many blended together, so no single spoonful can carry every flavor at once",
       "She tasted the soup too soon, before the salt had time to spread all the way through the rest of the pot"
     ],
-    "context": "Same act — sampling one — opposite validity. The difference is whether the population is uniform (the identical noodles) or mixed (the settled soup). A sample of one is fine for something perfectly uniform and a HASTY GENERALIZATION for something uneven. Source: The Fallacy Files, 'Hasty Generalization,' fallacyfiles.org/hastygen.html.",
+    "context": "Same act (sampling one), opposite validity. The difference is whether the population is uniform (the identical noodles) or mixed (the settled soup). One strand is a tiny share of its pot too; what matters is not the share but how evenly the whole is mixed. A sample of one is fine for something perfectly uniform and a HASTY GENERALIZATION for something uneven. Source: The Fallacy Files, 'Hasty Generalization,' fallacyfiles.org/hastygen.html.",
     "topic": "hasty-generalization"
   },
   {
     "tier": 3,
-    "question": "Europeans declared all swans white for some 1,500 years; the Romans even called a black swan a thing as impossible as a flying pig. They had seen thousands of swans, every one white. Then the explorer Willem de Vlamingh sailed up a river in Western Australia in 1697 and found it teeming with black swans. Why was the old claim wrong despite so vast a tally of white birds?",
+    "question": "Europeans declared all swans white for some 1,500 years; the Roman poet Juvenal used a black swan as his picture of a bird too rare to exist. They had seen thousands of swans, every one white. Then Willem de Vlamingh sailed up a river in Western Australia in 1697 and found it teeming with black swans. Why was the old claim wrong despite so vast a tally?",
     "answer": "No one had checked the far side of the world, so a huge count still missed a whole kind of swan",
     "choices": [
       "No one had checked the far side of the world, so a huge count still missed a whole kind of swan",
@@ -10643,7 +10565,7 @@
       "A black swan is not truly a swan but a separate bird that only resembles one from afar",
       "The birds de Vlamingh found had been stained dark by the muddy river he sailed up"
     ],
-    "context": "The swan is the sharpest proof that the error is the LEAP, not the sample size — the European tally was enormous yet geographically biased, blind to the Southern Hemisphere. A million white swans can never PROVE 'all swans are white,' but one black swan disproves it forever; John Stuart Mill used exactly this in the 19th century. De Vlamingh named the spot the Swan River. Source: Wikipedia, 'Black swan theory' and 'Willem de Vlamingh.'",
+    "context": "The swan is the sharpest proof that the error is the LEAP, not the sample size: the European tally was enormous yet geographically biased, blind to the Southern Hemisphere. Juvenal's 'rara avis in terris nigroque simillima cygno' (a bird as rare on earth as a black swan) named a thing presumed not to exist. A million white swans can never PROVE 'all swans are white,' but one black swan disproves it forever; John Stuart Mill used exactly this in the 19th century. De Vlamingh named the spot the Swan River. Source: Wikipedia, 'Black swan theory' and 'Willem de Vlamingh.'",
     "topic": "hasty-generalization"
   },
   {
@@ -10661,15 +10583,15 @@
   },
   {
     "tier": 4,
-    "question": "The magazine Literary Digest mailed out 10 million mock ballots in 1936, got 2.4 million back, a colossal sample, and confidently predicted that Alf Landon would crush Franklin Roosevelt. Roosevelt won in a landslide. The Digest had drawn its names from telephone listings, car registrations and country-club rolls. In the depths of the Great Depression, what flaw doomed that giant sample?",
-    "answer": "It reached only people rich enough to own a phone, a car, or a club seat, missing the poorer voters",
+    "question": "The Literary Digest polled ten million Americans in 1936, heard back from about 2.4 million, and forecast that Alf Landon would crush Franklin Roosevelt. Roosevelt won in a landslide. The magazine's lists of car and telephone owners leaned toward the better-off, and Landon's backers were likelier to mail their ballots back. What does the fiasco show about samples?",
+    "answer": "Sheer size cannot rescue a lopsided sample",
     "choices": [
-      "It reached only people rich enough to own a phone, a car, or a club seat, missing the poorer voters",
-      "It was simply too small a fraction of the tens of millions who would actually vote that year",
-      "It counted each returned ballot twice, doubling the apparent margin and erasing the real contest",
-      "It mailed the ballots too late for most replies to arrive before the newspapers went to print"
+      "Sheer size cannot rescue a lopsided sample",
+      "Mail-in polls can never predict a vote",
+      "Two million replies were still too few",
+      "Voters lie to pollsters about their choice"
     ],
-    "context": "The greatest biased-sample disaster on record. In the Depression, owning a phone, car, or club membership marked you as rich, and the rich favored Landon; the poor who backed the New Deal were invisible to the list. The mistake was not too few people — it was the WRONG people, multiplied millions of times. George Gallup called it right with only about 50,000 well-chosen replies. A bigger sample cannot fix a biased one. Source: U. Penn Math 170 Case Study I; Emory MathCenter, 'Famous Statistical Blunders.'",
+    "context": "The textbook biased-sample disaster. The Digest drew its names from its own readers and from lists of car owners and telephone users, groups well above average income in the Depression, and later research found an even bigger culprit: people who strongly disliked Roosevelt were more likely to send their ballots back. The mistake was never too few people; it was the WRONG people, multiplied millions of times. George Gallup called the race right with only about 50,000 well-chosen replies. Source: Wikipedia, 'The Literary Digest' (sampling and nonresponse bias, citing Squire 1988).",
     "topic": "hasty-generalization"
   },
   {
@@ -10682,7 +10604,7 @@
       "Engine armor was lighter and cheaper to install than the broad plating the wings would have needed",
       "Enemy gunners had simply been trained that year to aim for the wings rather than the engine block"
     ],
-    "context": "Wald worked for the Statistical Research Group at Columbia. His line: 'The missing bullet holes were on the missing planes.' Counting only the planes that came back is a biased sample — the deadliest hits are exactly the ones you never see. This is survivorship bias, the same trap as the Literary Digest's giant-but-skewed list. Source: Jordan Ellenberg, 'How Not to Be Wrong'; War History Online, 'Abraham Wald.'",
+    "context": "Wald worked for the Statistical Research Group at Columbia. Jordan Ellenberg sums up the insight in one line: 'The missing bullet holes were on the missing planes.' Counting only the planes that came back is a biased sample: the deadliest hits are exactly the ones nobody gets to see. This is survivorship bias, the same trap as the Literary Digest's giant-but-skewed list. Source: Jordan Ellenberg, 'How Not to Be Wrong'; War History Online, 'Abraham Wald.'",
     "topic": "hasty-generalization"
   },
   {
@@ -10695,7 +10617,7 @@
       "She trusted a saying she heard secondhand instead of testing the matter for herself first",
       "She compared two kinds of creature that are too unlike each other to be judged together"
     ],
-    "context": "The named cousin is CONVERSE ACCIDENT — generalizing from the exceptions instead of the typical cases. The trap here is option two: a dead turtle is indeed one case, so it LOOKS like an ordinary small-sample slip, but the real flaw is that she chose a freak rather than a representative example. Hasty generalization leaps from too few; converse accident leaps from the wrong, atypical ones. Both outrun their evidence. Source: Internet Encyclopedia of Philosophy, 'Fallacies' (Converse Accident), iep.utm.edu/fallacy/.",
+    "context": "The named cousin is CONVERSE ACCIDENT: generalizing from the exceptions instead of the typical cases. The trap is the 'too small a sample' answer: a dead turtle is indeed one case, so it LOOKS like an ordinary small-sample slip, but the real flaw is that she built her rule on a freak rather than a representative example. Hasty generalization leaps from too few; converse accident leaps from the wrong, atypical ones. Both outrun their evidence. Source: Internet Encyclopedia of Philosophy, 'Fallacies' (Converse Accident), iep.utm.edu/fallacy/.",
     "topic": "hasty-generalization"
   },
   {
@@ -10708,7 +10630,7 @@
       "Every worker who touched it understood the whole process",
       "A single great factory produces it from raw materials to box"
     ],
-    "context": "Leonard E. Read, 'I, Pencil' (The Freeman, 1958). The pencil traces wood, graphite from Ceylon, eraser rubber from the Dutch East Indies, brass, and lacquer — 'millions of human beings have had a hand,' yet none contributes 'more than a tiny, infinitesimal bit of know-how.' Milton Friedman retold it on TV in 'Free to Choose' (1980) as the showcase of Hayek's insight that the knowledge to make even a pencil is scattered, never held in one head. Source: https://www.econlib.org/library/Essays/rdPncl.html ; https://en.wikipedia.org/wiki/I,_Pencil",
+    "context": "Leonard E. Read, 'I, Pencil' (The Freeman, 1958). The pencil traces wood, graphite from Ceylon, rape-seed oil from the Dutch East Indies for its eraser, brass, and lacquer: 'millions of human beings have had a hand,' yet none contributes 'more than a tiny, infinitesimal bit of know-how.' Milton Friedman retold it on TV in 'Free to Choose' (1980) as the showcase of Hayek's insight that the knowledge to make even a pencil is scattered, never held in one head. Source: https://www.econlib.org/library/Essays/rdPncl.html ; https://en.wikipedia.org/wiki/I,_Pencil",
     "topic": "hayek-and-the-knowledge-problem"
   },
   {
@@ -10747,20 +10669,7 @@
       "The instructions wired to him each morning by a planning office",
       "Whatever the single largest firm in his industry decides to do"
     ],
-    "context": "Hayek, 'The Use of Knowledge in Society' (American Economic Review, 1945), pp.526-527. Verbatim on tin: 'All that the users of tin need to know is that some of the tin they used to consume is now more profitably employed elsewhere and that, in consequence, they must economize tin.' His striking point -- 'it does not matter, and it is very significant that it does not matter,' WHY tin got scarce; almost no one cutting back ever learns the cause, and no order is issued. He called the price system 'a kind of machinery for registering change, or a system of telecommunications' that lets producers 'watch merely the movement of a few pointers, as an engineer might watch the hands of a few dials, in order to adjust their activities to changes of which they may never know more than is reflected in the price movement.' The actor watches one number, not the whole world. The rival pictures: a planner tries to COMPUTE who should use less; a price GATHERS that adjustment from the crowd.",
-    "topic": "hayek-and-the-knowledge-problem"
-  },
-  {
-    "tier": 3,
-    "question": "No one in the 20th century attacked state-run economies more fiercely than Friedrich Hayek, and in 1974 he won the Nobel Memorial Prize in Economics. But he had to share it, split right down the middle, with a co-winner who made the pairing ironic. Who was the co-winner?",
-    "answer": "Gunnar Myrdal, a Swedish socialist who spent his career designing the planned welfare state",
-    "choices": [
-      "Gunnar Myrdal, a Swedish socialist who spent his career designing the planned welfare state",
-      "Ludwig von Mises, the old mentor whose argument Hayek had merely carried forward for decades",
-      "Milton Friedman, a fellow free-market champion who agreed with Hayek about nearly everything",
-      "Jan Tinbergen, a physicist honored for running the whole economy through his mathematical models"
-    ],
-    "context": "Hayek shared the 1974 Nobel Memorial Prize in Economic Sciences with the Swedish socialist Gunnar Myrdal, a champion of the central planning Hayek spent his career arguing was impossible. The citation honored 'their pioneering work in the theory of money and economic fluctuations and... their penetrating analysis of the interdependence of economic, social and institutional phenomena.' Source: https://iea.org.uk/hayek-and-the-nobel-prize-50-years-on/ ; https://en.wikipedia.org/wiki/Gunnar_Myrdal",
+    "context": "Hayek, 'The Use of Knowledge in Society' (American Economic Review, 1945), pp.526-527. Verbatim on tin: 'All that the users of tin need to know is that some of the tin they used to consume is now more profitably employed elsewhere and that, in consequence, they must economize tin.' His striking point: 'It does not matter for our purpose—and it is very significant that it does not matter—which of these two causes has made tin more scarce.' Almost no one cutting back ever learns the cause, and no order is issued. He called the price system 'a kind of machinery for registering change, or a system of telecommunications' that lets producers 'watch merely the movement of a few pointers, as an engineer might watch the hands of a few dials, in order to adjust their activities to changes of which they may never know more than is reflected in the price movement.' The actor watches one number, not the whole world. The rival pictures: a planner tries to COMPUTE who should use less; a price GATHERS that adjustment from the crowd.",
     "topic": "hayek-and-the-knowledge-problem"
   },
   {
@@ -10799,25 +10708,25 @@
       "The political will to enforce the production orders the central planning office issued",
       "Accurate maps showing where each mine and factory across the country was located"
     ],
-    "context": "Ludwig von Mises, 'Economic Calculation in the Socialist Commonwealth' (1920). If the state owns all capital goods, they are never traded, so they have no market price — and without prices the planners cannot tell whether building a railway from steel or from aluminium wastes resources. They are 'groping in the dark.' Hayek's knowledge problem grew out of re-circulating this argument in the 1930s. Source: https://mises.org/mises-daily/end-socialism-and-calculation-debate-revisited",
+    "context": "Ludwig von Mises, 'Economic Calculation in the Socialist Commonwealth' (1920). If the state owns all capital goods, they are never traded, so they have no market price, and without prices the planners cannot tell whether a new railway should be built at all, or which of several possible routes would waste the fewest resources. In S. Adler's translation: 'There is only groping in the dark.' Hayek's knowledge problem grew out of the debate this essay started. Source: Mises, Economic Calculation in the Socialist Commonwealth (1920), trans. S. Adler (Mises Institute edition); https://mises.org/mises-daily/end-socialism-and-calculation-debate-revisited",
     "topic": "hayek-and-the-knowledge-problem"
   },
   {
     "tier": 4,
-    "question": "An army drawn up for battle and a living language are both orders, Friedrich Hayek said, but of different kinds. The army is built on purpose toward a chosen goal. The language grows out of many people each following their own rules, a pattern 'not the result of human design,' like the market or the common law. What mistake about the two did Hayek say ruins planners?",
+    "question": "An army drawn up for battle and a living language are both orders, Friedrich Hayek said, but of different kinds. The army is built on purpose toward a chosen goal. The language grows out of many people each following their own rules, a pattern no one designed, like the market or the common law. What mistake about the two did Hayek say ruins planners?",
     "answer": "Treating a grown order as if it could be commanded into shape like a built one",
     "choices": [
       "Treating a grown order as if it could be commanded into shape like a built one",
       "Refusing to let any built organizations exist inside a free society",
-      "Believing a language or a market was secretly designed by someone",
+      "Leaving a built order to run with no one in command of it",
       "Assuming a built order can never serve a useful purpose"
     ],
-    "context": "Hayek, 'Law, Legislation and Liberty,' ch. 2, 'Cosmos and Taxis.' A TAXIS is a made order — his image is 'an order of battle' arranged by a commander (an organization, a factory, an army). A COSMOS is a grown, spontaneous order that emerges from people following rules but 'is not the result of human design' (a language, the common law, the market). The fatal mistake is treating a cosmos as if it were a taxis — trying to command a grown thing into shape. Source: https://allenmendenhallblog.com/2019/04/03/taxis-and-cosmos-a-clarifying-table/",
+    "context": "Hayek, 'Law, Legislation and Liberty,' ch. 2, 'Cosmos and Taxis.' A TAXIS is a made order; his image is 'an order of battle' arranged by a commander (an organization, a factory, an army). A COSMOS is a grown, spontaneous order that emerges from people following rules, in the phrase Hayek took from Adam Ferguson the result of human action but not of human design (a language, the common law, the market). The fatal mistake is treating a cosmos as if it were a taxis: trying to command a grown thing into shape. Source: https://allenmendenhallblog.com/2019/04/03/taxis-and-cosmos-a-clarifying-table/ ; https://en.wikipedia.org/wiki/Spontaneous_order",
     "topic": "hayek-and-the-knowledge-problem"
   },
   {
     "tier": 4,
-    "question": "The word 'economy' never suited the market, Friedrich Hayek thought. It comes from the Greek for running one household toward a single shared goal, and a market has no single goal. So he coined a replacement, 'catallaxy,' from a Greek verb he loved because it meant far more than 'to exchange.' What deeper meaning made him pick it?",
+    "question": "The word 'economy' never suited the market, Friedrich Hayek thought. It comes from the Greek for running one household toward a single shared goal, and a market has no single goal. So he coined a replacement, 'catallaxy,' from a Greek verb whose meaning went far beyond 'to exchange.' What deeper meaning made him pick it?",
     "answer": "To turn an enemy into a friend and admit a stranger into the community",
     "choices": [
       "To turn an enemy into a friend and admit a stranger into the community",
@@ -10825,7 +10734,7 @@
       "To measure the worth of a thing in exact units of gold",
       "To divide spoils fairly among the members of a tribe"
     ],
-    "context": "Hayek coined 'catallaxy' (from the Greek katallattein/katallassein) because the verb meant not only 'to exchange' but also 'to admit into the community' and 'to turn from an enemy into a friend' — a meaning he 'fell somewhat in love with.' His point: the market is not a cold machine but the way strangers who will never meet, and might otherwise be rivals, are turned into cooperating partners by trade. He preferred it to 'economy' (oikonomia = household management), which wrongly implies one shared purpose. Source: https://en.wikipedia.org/wiki/Catallaxy",
+    "context": "Hayek coined 'catallaxy' (from the Greek katallattein/katallassein) because the verb meant not only 'to exchange' but also 'to admit into the community' and 'to change from enemy into friend.' His point: the market is not a cold machine but the way strangers who will never meet, and might otherwise be rivals, are turned into cooperating partners by trade. He preferred it to 'economy' (oikonomia = household management), which wrongly implies one shared purpose. Source: https://en.wikipedia.org/wiki/Catallaxy",
     "topic": "hayek-and-the-knowledge-problem"
   },
   {
@@ -10873,7 +10782,7 @@
     "answer": "From the specific content, which forces the next step.",
     "choices": [
       "From the specific content, which forces the next step.",
-      "From a fixed sequence laid over any topic you please.",
+      "From a fixed sequence laid over any topic at all.",
       "From the philosopher's free choice of where to start.",
       "From always beginning with the simplest possible idea."
     ],
@@ -10890,7 +10799,7 @@
       "To begin something and to finish it, both at the very same time.",
       "To hide something and to reveal it, both at the very same time."
     ],
-    "context": "In Hegel's own words, aufheben 'has a doubled meaning: it means both to cancel (or negate) AND to preserve at the same time.' The later step doesn't trash the earlier claim - it cancels its claim to be the final word while keeping what was true in it, folded into something bigger. Source: Stanford Encyclopedia of Philosophy, 'Hegel's Dialectics' (PhG sec. 113; SL-M 107) - https://plato.stanford.edu/entries/hegel-dialectics/",
+    "context": "The Stanford Encyclopedia sums up Hegel's point: aufheben 'has a doubled meaning: it means both to cancel (or negate) and to preserve at the same time.' The later step does not trash the earlier claim; it cancels its claim to be the final word while keeping what was true in it, folded into something bigger. Source: Stanford Encyclopedia of Philosophy, 'Hegel's Dialectics' (citing PhG sec. 113; SL-M 107) - https://plato.stanford.edu/entries/hegel-dialectics/",
     "topic": "hegels-dialectic"
   },
   {
@@ -10913,7 +10822,7 @@
     "choices": [
       "Not a breakdown of reason but the way thought climbs to a deeper view.",
       "Plain proof that reason, on its own, can settle the deepest questions.",
-      "A breakdown that proves reason can never settle the biggest questions.",
+      "A verbal muddle that vanishes once the terms are made precise.",
       "A sign that one of Kant's two proofs always hides a simple mistake."
     ],
     "context": "Kant - not Hegel - is where 'thesis' and 'antithesis' actually appear as a paired structure: in the Antinomies of the Critique of Pure Reason, reason can prove both a thesis and its opposing antithesis (e.g. the world has a beginning in time vs. it has no beginning). Kant treated this collision as a warning that reason had overreached. Hegel's twist was to say the collision isn't a failure of reason - it's how thought legitimately MOVES to a deeper view. Source: Stanford Encyclopedia of Philosophy, 'Hegel's Dialectics' (background on Kant's antinomies) - https://plato.stanford.edu/entries/hegel-dialectics/",
@@ -10960,7 +10869,7 @@
   },
   {
     "tier": 3,
-    "question": "Hegel was living and working in Jena in October 1806, when French troops occupied the town. He watched Napoleon ride out of it on horseback, and sent a friend a line that became one of philosophy's most famous sentences. What did Hegel call the man on the horse?",
+    "question": "Hegel was living and working in Jena in October 1806, when French troops occupied the town. He watched Napoleon ride out of it on horseback, and sent a friend a line that became one of philosophy's most famous sentences. What did Hegel see in the man on the horse?",
     "answer": "The very world-soul, gathered into a single man",
     "choices": [
       "The very world-soul, gathered into a single man",
@@ -11000,9 +10909,9 @@
   {
     "tier": 4,
     "question": "Napoleon's army was pouring into Jena in October 1806, and Hegel was gripped by a private terror that had nothing to do with the soldiers in the streets. Days earlier he had dropped a parcel in the post, and now he feared the war would destroy it before it arrived. What had he just mailed?",
-    "answer": "The only manuscript of the book that would launch his whole philosophy",
+    "answer": "The manuscript of the book that would launch his whole philosophy",
     "choices": [
-      "The only manuscript of the book that would launch his whole philosophy",
+      "The manuscript of the book that would launch his whole philosophy",
       "A desperate letter begging the French to spare his small town",
       "His life savings in coin, sent away for safekeeping from looters",
       "A signed plea for a teaching post at a safer, distant university"
@@ -11020,15 +10929,15 @@
       "It lets him retire into a contented sage who teaches what he learned",
       "It leaves him hooked on conquest, unable ever to stop himself"
     ],
-    "context": "This is the dark flip side of the cunning of reason. Hegel said these great men were not happy men: 'They died early like Alexander, they are murdered like Caesar, transported to Saint Helena like Napoleon.' Once the deed history needed was done, 'they fall off like empty hulls from the kernel.' Of Caesar's victory Hegel said it was 'not his private gain merely, but an unconscious impulse that occasioned the accomplishment of that for which the time was ripe.' Source: Hegel, Lectures on the Philosophy of History, Introduction, secs. 32 and Part III sec. 2.",
+    "context": "This is the dark flip side of the cunning of reason. Hegel said these great men were not happy men: 'They die early, like Alexander; they are murdered, like Caesar; transported to St. Helena, like Napoleon.' When their object is attained, 'they fall off like empty hulls from the kernel.' Of Caesar's victory Hegel said it was 'not his private gain merely, but an unconscious impulse that occasioned the accomplishment of that for which the time was ripe.' Source: Hegel, Lectures on the Philosophy of History, Introduction (Sibree trans.), marxists.org/reference/archive/hegel/works/hi/history3.htm.",
     "topic": "hegels-philosophy-of-history"
   },
   {
     "tier": 2,
     "question": "Heidegger noticed how often people say things like 'they say it's rude' or 'that's just how one does it.' Suppose you try to pin down who exactly this 'they' is, the one that hands down all the rules. What did Heidegger decide you would find?",
-    "answer": "It turns out to be no one in particular — an 'anyone' and 'everyone' that is really nobody at all",
+    "answer": "It turns out to be no one in particular, an 'anyone' and 'everyone' that is really nobody at all",
     "choices": [
-      "It turns out to be no one in particular — an 'anyone' and 'everyone' that is really nobody at all",
+      "It turns out to be no one in particular, an 'anyone' and 'everyone' that is really nobody at all",
       "It is really the small circle of powerful people who quietly set the customs that everyone else follows",
       "It is your own parents and teachers speaking, the grown-up voices you soaked up while growing up",
       "It is the unwritten wisdom of the ancestors, the old customs handed down across the generations"
@@ -11039,9 +10948,9 @@
   {
     "tier": 3,
     "question": "Suppose you freeze at the top of a dark stairwell. Heidegger would say you are afraid of something definite there, just as you can be afraid of a dog or of a test. But he set apart another, dizzier kind of dread that people mistake for fear. What makes that dread different?",
-    "answer": "It fastens onto nothing in particular — the whole world goes flat and you cannot say what you dread",
+    "answer": "It fastens onto nothing in particular, the whole world goes flat and you cannot say what you dread",
     "choices": [
-      "It fastens onto nothing in particular — the whole world goes flat and you cannot say what you dread",
+      "It fastens onto nothing in particular, the whole world goes flat and you cannot say what you dread",
       "It fastens onto everything at once, as if every object in the room had suddenly turned threatening",
       "It is simply fear felt far more intensely, the same alarm turned up well past what the danger warrants",
       "It is fear of something too shameful to admit, so the mind hides the real object away from you"
@@ -11072,7 +10981,7 @@
       "Comfort the grieving around him by reminding them that death is the common lot of every living thing",
       "Shrink his own fear by naming the scary thing plainly, the way describing a nightmare can defuse it"
     ],
-    "context": "Heidegger catches the exact dodge people use to NOT think about death. 'The They' converts it into the third person — 'one dies' — and tacks on a quiet escape clause: in his words, ''one dies' too, sometime, but proximally not yet.' By saying 'people die' instead of 'I will die,' you file your own death under 'happens to somebody else, later.' Source: Heidegger, Being and Time (Macquarrie & Robinson trans.), p. 256; SEP main entry (third-person 'one dies / people die').",
+    "context": "Heidegger catches the exact dodge people use to NOT think about death. 'The They' turns it into the third person, 'one dies', and tacks on a quiet escape clause: sometime, but not yet. By saying 'people die' instead of 'I will die', the speaker files his own death under 'happens to somebody else, later.' Source: Heidegger, Being and Time, section 51 (on everyday being-toward-death); SEP main entry (third-person 'one dies / people die').",
     "topic": "heidegger-being-toward-death-and-the-they"
   },
   {
@@ -11085,7 +10994,7 @@
       "You meet death inside your own mind, a place no other living person can ever enter alongside you",
       "No one else can carry the memory of your death, so it vanishes the very moment your awareness ends"
     ],
-    "context": "Heidegger's central move on death: you can hire someone to do almost anything for you, but you cannot send a substitute to do your dying. In his exact words, 'No one can take the Other's dying away from him' — and 'By its very essence, death is in every case mine.' This is 'being-toward-death.' Note: the mourner's 'great equalizer' view is a real, respectable position Heidegger is countering, not one this question marks as false — it simply keys what Heidegger himself argued. Source: Heidegger, Being and Time (Macquarrie & Robinson trans.), p. 240; corroborated by that-which.com 'Heidegger on Death in Being and Time'.",
+    "context": "Heidegger's central move on death: a person can hire someone to do almost anything for him, but he cannot send a substitute to do his dying. In Heidegger's words, 'No one can take the Other's dying away from him,' and 'By its very essence, death is in every case mine.' This is 'being-toward-death.' The mourner's 'great equalizer' view is a real, respectable position, and it is the one Heidegger is answering. Source: Heidegger, Being and Time (Macquarrie & Robinson trans.), p. 240; corroborated by that-which.com 'Heidegger on Death in Being and Time'.",
     "topic": "heidegger-being-toward-death-and-the-they"
   },
   {
@@ -11259,15 +11168,15 @@
   },
   {
     "tier": 2,
-    "question": "Between a happy, simple life and a troubled but thoughtful one, John Stuart Mill sided with the thinker, though he granted that the thinker suffers more along the way. He put his verdict in a line that became famous. What were Mill's exact words?",
-    "answer": "\"Better to be Socrates dissatisfied than a fool satisfied\"",
+    "question": "John Stuart Mill admitted that a thinking person can suffer more than a simple one. Yet he wrote: 'It is better to be a human being dissatisfied than a pig satisfied; better to be Socrates dissatisfied than a fool satisfied.' What point lets him say both?",
+    "answer": "Being happy is not the same as being content",
     "choices": [
-      "\"Better to be Solomon troubled than a simpleton at peace\"",
-      "\"Better to be Socrates dissatisfied than a fool satisfied\"",
-      "\"Better to be Diogenes restless than a sluggard at ease\"",
-      "\"Better to be a wakeful sage than a dreaming dunce\""
+      "Being happy is not the same as being content",
+      "Suffering is good for a person in itself",
+      "The thinker is secretly the more content",
+      "A fool's pleasures do not count at all"
     ],
-    "context": "Mill's full line: 'It is better to be a human being dissatisfied than a pig satisfied; better to be Socrates dissatisfied than a fool satisfied.' His point: a creature with higher faculties would rather be unhappy WITH them than content without them. Source: J.S. Mill, Utilitarianism (1861), Ch. 2; Collected Works X:212; gutenberg.org/files/11224/11224-h/11224-h.htm",
+    "context": "Mill's line comes from Utilitarianism (1861), ch. 2. Just before it he answers the charge that the higher life costs happiness: whoever thinks so 'confounds the two very different ideas, of happiness, and content.' The simple creature is easier to satisfy, but his contentment is not the greater happiness. And if the fool or the pig disagrees, Mill adds, 'it is because they only know their own side of the question.' Source: J.S. Mill, Utilitarianism (1861), Ch. 2; gutenberg.org/files/11224/11224-h/11224-h.htm",
     "topic": "higher-and-lower-pleasures"
   },
   {
@@ -11280,7 +11189,7 @@
       "A pleasure's worth comes from its rarity, so the uncommon pleasure outranks the common one",
       "A pleasure's worth comes from its result, so only useful pleasures count at all"
     ],
-    "context": "Bentham's own line: 'The quantity of pleasure being equal, push-pin is as good as poetry.' A child's game ranks with great verse if it yields equal pleasure -- flat quantitative hedonism. That equality is exactly what Mill set out to deny. Source: Jeremy Bentham, The Rationale of Reward (1825); discussed in SEP 'Mill' (plato.stanford.edu/entries/mill) and Britannica 'Utilitarianism'.",
+    "context": "Bentham's own words, in The Rationale of Reward (1825): 'Prejudice apart, the game of push-pin is of equal value with the arts and sciences of music and poetry.' Mill, in his 1838 essay on Bentham, boiled it down to the line now usually credited to Bentham himself: 'quantity of pleasure being equal, push-pin is as good as poetry.' A child's game ranks with great verse if it yields equal pleasure: flat quantitative hedonism. That equality is exactly what Mill set out to deny. Source: Wikipedia, 'Push-pin (game)'; laits.utexas.edu/poltheory/bentham/rr/; SEP 'Mill'.",
     "topic": "higher-and-lower-pleasures"
   },
   {
@@ -11311,7 +11220,7 @@
   },
   {
     "tier": 4,
-    "question": "The thoughtful life, John Stuart Mill granted, brings sharper pain and harder wants than a simple one. Yet people who live it would never agree to sink to a lower, easier existence, and Mill named the feeling that holds them back. What did he call it?",
+    "question": "The thoughtful life, John Stuart Mill granted, brings sharper pain and harder wants than a simple one. Yet people who live it would never agree to sink to a lower, easier existence, and Mill gave a reason for their refusal. What did he say holds them back?",
     "answer": "A sense of dignity that they will not trade away",
     "choices": [
       "A sense of dignity that they will not trade away",
@@ -11436,28 +11345,28 @@
       "That it described the past well but refused to predict the future",
       "That it rested on economics, a field still far too young to trust"
     ],
-    "context": "Popper argued historical materialism is unfalsifiable: a theory flexible enough to explain any result by pointing back to class interest can never be shown wrong, and a claim nothing could refute isn't doing scientific work. The reply: a lens that reliably surfaces hidden interests can still be a real insight even if it isn't a testable prediction. No verdict is imposed here - weigh both. Source: SEP, Karl Popper; Philosophy Now, 'Popper on Marx on History.'",
+    "context": "Popper argued that historical materialism, as its followers came to defend it, is unfalsifiable: a theory flexible enough to explain any result by pointing back to class interest can never be shown wrong, and a claim nothing could refute is not doing scientific work. He added that Marx's early forecasts had been testable, and that when they failed his followers reinterpreted the theory instead of giving it up. The reply: a lens that reliably surfaces hidden interests can still be a real insight even if it makes no testable prediction. Source: SEP, Karl Popper; Philosophy Now, 'Popper on Marx on History.'",
     "topic": "historical-materialism-and-class-struggle"
   },
   {
     "tier": 2,
-    "question": "Thomas Hobbes painted a bleak picture of life with no government to keep everyone in awe: no farming, no building, no trade, no learning, and worst of all 'continual fear, and danger of violent death.' He summed up that life in five famous words. How did Hobbes say life would be?",
-    "answer": "Solitary, poor, nasty, brutish, and short",
+    "question": "Thomas Hobbes pictured life with no government to keep everyone in awe: no farming, no building, no trade, and the life of man 'solitary, poor, nasty, brutish, and short.' Why, by his account, would no one bother to farm or build?",
+    "answer": "No one could count on keeping what he grew or built",
     "choices": [
-      "Solitary, poor, nasty, brutish, and short",
-      "Brutal, fearful, lonely, savage, and brief",
-      "Cruel, hungry, hunted, joyless, and grim",
-      "Wild, godless, violent, friendless, and doomed"
+      "No one could count on keeping what he grew or built",
+      "Too few people would survive to do the work",
+      "No one would know how without a ruler's orders",
+      "People are too lazy to work unless forced"
     ],
-    "context": "This is the most quoted line in all of political philosophy. In Leviathan Ch. 13, Hobbes describes life with no common power to keep men in awe, listing everything that vanishes ('no Arts; no Letters; no Society') before the famous verdict. Source: Hobbes, Leviathan (1651), Ch. XIII, verified verbatim via Project Gutenberg (gutenberg.org/cache/epub/3207).",
+    "context": "Hobbes, Leviathan ch. XIII: in that condition 'there is no place for Industry; because the fruit thereof is uncertain,' and so no farming, no building, no trade, no learning, and worst of all continual fear and danger of violent death, so that the life of man is 'solitary, poore, nasty, brutish, and short.' Without a common power, no one can count on keeping what he makes, so no one makes anything. Source: Hobbes, Leviathan (1651), Ch. XIII, Project Gutenberg #3207.",
     "topic": "hobbes-and-the-leviathan"
   },
   {
     "tier": 2,
     "question": "Readers said Thomas Hobbes slandered humanity, and he answered by pointing to what they do rather than what they say. Suppose you arm yourself for a trip, lock the doors when you go to bed, and even lock your chests inside your own house. What did Hobbes say that everyday caution proves?",
-    "answer": "By locking up, you accuse your fellow men just as much as he does",
+    "answer": "That by locking up, you accuse mankind as much as his book does",
     "choices": [
-      "By locking up, you accuse your fellow men just as much as he does",
+      "That by locking up, you accuse mankind as much as his book does",
       "That laws and officers have already made people perfectly safe",
       "That people are naturally generous but stay cautious out of habit",
       "That fear of robbery is something only the rich ever feel"
@@ -11519,7 +11428,7 @@
   },
   {
     "tier": 4,
-    "question": "A commonwealth, Thomas Hobbes said, is created by a promise each person makes to every other: 'I give up my right of governing myself to this man or group, on condition that you give up your right to him.' What does each person get in return for giving up the right to govern himself?",
+    "question": "A commonwealth, Thomas Hobbes said, is created by a promise each person makes to every other: he gives up his right of governing himself to one man or one assembly, on condition that every other person does the same. What does each person get in return for giving up the right to govern himself?",
     "answer": "Peace and security for everyone alike",
     "choices": [
       "Peace and security for everyone alike",
@@ -11550,7 +11459,7 @@
     "choices": [
       "Fight back against his own executioner",
       "Appeal his sentence to a higher court",
-      "Refuse to confess to the crime charged",
+      "Plead his case again before the ruler",
       "Curse aloud the ruler who condemned him"
     ],
     "context": "Hobbes says a man cannot lay down 'the right of resisting them, that assault him by force, to take away his life' — because you only ever give up a right for some good to yourself, and there is no good in letting yourself be killed. So even a condemned man may fight the executioner. Source: Hobbes, Leviathan (1651), Ch. XIV, verbatim via Project Gutenberg; SEP confirms a right of self-defense against the sovereign (plato.stanford.edu/entries/hobbes-moral).",
@@ -11566,7 +11475,7 @@
       "They must revolt whenever the ruler makes taxes too heavy",
       "They may revolt the moment a simple majority votes to do so"
     ],
-    "context": "This is the live Hobbes-vs-Locke debate, with no winner declared. Same premise, opposite conclusions: Hobbes's war of all against all leads him to grant the sovereign absolute power and allow no right to revolt; Locke's relatively peaceful state of nature, with natural rights, makes government rest on consent and lets the people overthrow a ruler who abuses them. Source: Britannica 'state of nature' (britannica.com/topic/state-of-nature-political-theory); American Battlefield Trust 'Hobbes, Locke, and the Social Contract'.",
+    "context": "The Hobbes-versus-Locke dispute is still live. Same premise, opposite conclusions: Hobbes's war of all against all leads him to grant the sovereign absolute power and allow no right to revolt; Locke's relatively peaceful state of nature, with natural rights, makes government rest on consent and lets the people overthrow a ruler who abuses them. Source: Britannica 'state of nature' (britannica.com/topic/state-of-nature-political-theory); American Battlefield Trust 'Hobbes, Locke, and the Social Contract'.",
     "topic": "hobbes-and-the-leviathan"
   },
   {
@@ -11585,9 +11494,9 @@
   {
     "tier": 3,
     "question": "David Hume watched one billiard ball roll across the table and strike a second, which then rolled away. He granted that the whole scene is plain to the eye, one event truly following the other. Yet there is one thing in it, he insisted, that the eye never once catches, however closely it looks. What did he say no one ever sees?",
-    "answer": "The first ball MAKING the second move — the force passing between them",
+    "answer": "The first ball making the second move — the force passing between them",
     "choices": [
-      "The first ball MAKING the second move — the force passing between them",
+      "The first ball making the second move — the force passing between them",
       "The first ball touch the second ball — the contact at the moment of impact",
       "The second ball begin to roll — the instant it leaves its resting spot",
       "The first ball slow down — just as the second one speeds away from it"
@@ -11628,18 +11537,18 @@
     "choices": [
       "A flawless pattern is exactly what a coincidence and a real cause share, so the pattern alone proves nothing",
       "The boy has the order backwards, since the crow really comes a split second after the first light of dawn",
-      "The boy cannot rule out that some third hidden thing makes the rooster crow and the sun climb together",
+      "The boy has not watched long enough, and a longer record would settle whether the crowing causes it",
       "The boy should test it by silencing the rooster one morning to see whether the sun still rises on its own"
     ],
-    "context": "The rooster crows because dawn is coming; the earth's rotation raises the sun. Constant conjunction is precisely what a coincidence and a genuine cause have in common, which is why conjunction alone can never prove causation. This is the post hoc ergo propter hoc fallacy — 'after this, therefore because of this' (en.wikipedia.org/wiki/Post_hoc_ergo_propter_hoc).",
+    "context": "The rooster crows because dawn is coming; the earth's rotation raises the sun. Constant conjunction is precisely what a coincidence and a genuine cause have in common, which is why conjunction alone can never prove causation, and why a longer record of the same flawless pattern would settle nothing. This is the post hoc ergo propter hoc fallacy, 'after this, therefore because of this' (en.wikipedia.org/wiki/Post_hoc_ergo_propter_hoc).",
     "topic": "hume-on-causation-constant-conjunction"
   },
   {
     "tier": 4,
     "question": "A man sees one ball strike one ball a single time, and he gets, David Hume said, no idea of any connection between them. Then he watches it happen over and over, and now he calls the two events 'connected.' What did Hume say had changed to give him that idea?",
-    "answer": "Nothing in the balls changed — only that the man now FEELS the events linked in his mind",
+    "answer": "Nothing in the balls changed — only that the man now feels the events linked in his mind",
     "choices": [
-      "Nothing in the balls changed — only that the man now FEELS the events linked in his mind",
+      "Nothing in the balls changed — only that the man now feels the events linked in his mind",
       "The balls themselves changed — slowly revealing a hidden force once struck enough times",
       "The man's eyesight changed — finally letting him see the link clearly in the quick motion",
       "The repeated motion left a mark — wearing a visible groove between the two events over time"
@@ -11662,7 +11571,7 @@
   },
   {
     "tier": 5,
-    "question": "One of David Hume's definitions of a cause runs: 'an object, followed by another, and whose appearance always conveys the thought to that other.' Its words are about where the thought goes. Where, then, does this definition locate a cause: out in the world, or in the workings of the mind?",
+    "question": "One of David Hume's definitions of a cause runs: 'an object, followed by another, and whose appearance always conveys the thought to that other.' Its words are about where the thought goes. Where does it look to say what makes something a cause: the world or the mind?",
     "answer": "In the mind — it is the thought's own habit of leaping to the effect the moment the cause appears",
     "choices": [
       "In the mind — it is the thought's own habit of leaping to the effect the moment the cause appears",
@@ -11676,27 +11585,14 @@
   {
     "tier": 5,
     "question": "People use 'conjoined' and 'connected' as if they meant the same thing, but David Hume drew a careful line between them. Two events may pair up morning after morning in all of a man's experience. One word, Hume said, fairly describes that pairing; the other claims far more than anyone has ever observed. How did he sort the two words?",
-    "answer": "He grants conjoined — always FOUND paired in experience; the other wrongly claims a real power binds them, which we never see",
+    "answer": "He grants conjoined — always found paired in experience; the other wrongly claims a real power binds them, which we never see",
     "choices": [
-      "He grants conjoined — always FOUND paired in experience; the other wrongly claims a real power binds them, which we never see",
+      "He grants conjoined — always found paired in experience; the other wrongly claims a real power binds them, which we never see",
       "He grants connected — a real power binds them in the world; the other wrongly claims they are merely found paired in experience",
       "He grants conjoined — they strike at the very same instant; the other wrongly claims one always comes a clear moment before the other",
       "He grants connected — careful science has proven the real link; the other wrongly claims the pairing is only a trick of the imagination"
     ],
     "context": "Hume's cleanest one-line verdict was 'They seem conjoined, but never connected' (Enquiry, Section VII, E 7.26, davidhume.org/texts/e/7). 'Conjoined' = paired in our experience, again and again — that he grants. 'Connected' would mean truly bound by a power we could observe — that we only ever assume. The pattern is in view; the power never is.",
-    "topic": "hume-on-causation-constant-conjunction"
-  },
-  {
-    "tier": 5,
-    "question": "One billiard ball strikes another, and anyone watching expects the second to move. David Hume insisted this is no logical deduction, since there is nothing contradictory in picturing the second ball simply staying still. If the expectation is not reasoning, what did Hume say all such guesses from experience really are?",
-    "answer": "Effects of custom — a trained reflex of the imagination built by seeing it happen before",
-    "choices": [
-      "Effects of custom — a trained reflex of the imagination built by seeing it happen before",
-      "Effects of memory — a stored record of past cases the mind consults before each new shot",
-      "Effects of perception — a direct sight of the force as it passes from one ball to the next",
-      "Effects of instinct — a certainty about the outcome that we were simply born already having"
-    ],
-    "context": "Hume's verdict on inference (Enquiry, Section V, E 5.5, davidhume.org/texts/e/5): 'All inferences from experience, therefore, are effects of custom, not of reasoning.' Because the second ball staying still is no contradiction, your confidence cannot be logic — it is a habit of imagination trained by past repetition. (Memory merely stores the past cases; custom is the trained leap to the future that those cases produce.)",
     "topic": "hume-on-causation-constant-conjunction"
   },
   {
@@ -11709,7 +11605,7 @@
       "Not at all, since wildly incredible claims almost never turn out to be true",
       "However strongly your gut happens to react the very moment you first hear it"
     ],
-    "context": "Hume's whole essay runs on this one line: 'A wise man, therefore, proportions his belief to the evidence' (Enquiry 10.4). Belief is a dial, not a switch: you set it to match how strong the evidence is, then subtract whatever evidence points the other way. This is the transferable move the kid can reuse on any wild claim. Source: David Hume, Enquiry Concerning Human Understanding, Section X (E 10.4, SBN 110), davidhume.org/texts/e/10.",
+    "context": "Hume's whole essay runs on this one line: 'A wise man, therefore, proportions his belief to the evidence' (Enquiry 10.4). Belief is a dial, not a switch: it is set to match how strong the evidence is, after subtracting whatever evidence points the other way. The same move works on any wild claim. Source: David Hume, Enquiry Concerning Human Understanding, Section X (E 10.4, SBN 110), davidhume.org/texts/e/10.",
     "topic": "hume-on-miracles"
   },
   {
@@ -11753,7 +11649,7 @@
   },
   {
     "tier": 3,
-    "question": "Tacitus, the Roman historian, records that the emperor Vespasian healed two men in Alexandria, a blind man and a lame one. David Hume called it one of the best pagan miracle reports, with good eyewitnesses who had no reason to lie, and he still rejected it. What did Vespasian use to cure the blind man?",
+    "question": "Tacitus, the Roman historian, records that the emperor Vespasian healed two men in Alexandria, a blind man and a man with a crippled hand. David Hume called it one of the best pagan miracle reports, with good eyewitnesses who had no reason to lie, and he still rejected it. What did Vespasian use to cure the blind man?",
     "answer": "By means of his own spittle",
     "choices": [
       "By means of his own spittle",
@@ -11761,7 +11657,7 @@
       "With water drawn from the Nile",
       "By the breath from his mouth"
     ],
-    "context": "Tacitus reports Vespasian 'cured a blind man in Alexandria, by means of his spittle, and a lame man by the mere touch of his foot.' Hume picks it precisely because the testimony is gold-standard, eyewitnesses, learned age, no motive, and then rejects it anyway: that is the point, that even the best testimony loses to the prior improbability. The foot-touch was the cure for the lame man, not the blind one. Source: David Hume, Enquiry, Section X (Part II); verbatim quote confirmed at ourcivilisation.com/smartboard/shop/humed/enquiry/chap10.htm.",
+    "context": "Hume, retelling Tacitus, says Vespasian 'cured a blind man in Alexandria, by means of his spittle, and a lame man by the mere touch of his foot.' (Tacitus himself, Histories 4.81, has the second man's hand crippled, restored when Vespasian trod on it.) Hume picks the case precisely because the testimony is gold-standard (eyewitnesses, a learned age, no motive to lie) and then rejects it anyway: even the best testimony loses to the prior improbability. The foot was for the crippled hand, not the blind man. Source: David Hume, Enquiry, Section X (Part II), ourcivilisation.com/smartboard/shop/humed/enquiry/chap10.htm; Tacitus, Histories 4.81, penelope.uchicago.edu.",
     "topic": "hume-on-miracles"
   },
   {
@@ -11779,15 +11675,15 @@
   },
   {
     "tier": 4,
-    "question": "Richard Price pushed back on David Hume in 1777, arguing that Hume had quietly rigged his own scales. 'We have never seen a dead man rise,' Price granted, but that, he said, is not the damning thing Hume needs it to be. What did Price say Hume wrongly took it for?",
-    "answer": "Evidence against it, as if we had tested for it and failed",
+    "question": "Richard Price pushed back on David Hume in 1767, arguing that Hume had quietly rigged his own scales. No one has ever seen a dead man rise, Price granted, but that, he said, is not the damning thing Hume needs it to be. What did Price say Hume wrongly took it for?",
+    "answer": "Evidence against it, as if the test had been run and failed",
     "choices": [
-      "Evidence against it, as if we had tested for it and failed",
+      "Evidence against it, as if the test had been run and failed",
       "A reason to demand more witnesses, not fewer, before believing",
       "A private feeling of doubt rather than a public, shared fact",
       "A merely rare event rather than a strictly impossible one"
     ],
-    "context": "Price's reply is the standard rebuttal: Hume slides from 'different from experience' to 'contrary to experience.' Never having SEEN a resurrection is just an absence in our experience; it is not the same as having tested for one and gotten a failure. An empty space in the record is not a vote against, the way a failed experiment would be. The lesson stays no-verdict: this is the live answer to Hume, not proof that miracles happen. Source: Richard Price, Four Dissertations (1777), summarized in Stanford Encyclopedia of Philosophy 'Miracles', plato.stanford.edu/entries/miracles.",
+    "context": "Price's reply is the standard rebuttal: Hume slides from 'different from experience' to 'contrary to experience.' Never having SEEN a resurrection is just an absence in human experience; it is not the same as having tested for one and gotten a failure. An empty space in the record is not a vote against, the way a failed experiment would be. This is the live answer to Hume, not proof that miracles happen. Source: Richard Price, Four Dissertations (1767), Dissertation IV; Stanford Encyclopedia of Philosophy 'Miracles', plato.stanford.edu/entries/miracles.",
     "topic": "hume-on-miracles"
   },
   {
@@ -11831,15 +11727,15 @@
   },
   {
     "tier": 4,
-    "question": "Perceptions race through the mind one after another at incredible speed, in constant flux, David Hume granted. The question that splits thinkers is what, if anything, holds those perceptions together as one mind. What did Hume say holds them together?",
-    "answer": "Nothing holds them together, there is only the parade of perceptions itself",
+    "question": "Perceptions race through the mind one after another at incredible speed, in constant flux, David Hume granted. The question that splits thinkers is whether anything stands behind those perceptions as the one who has them. What did Hume say stands behind them?",
+    "answer": "Nothing does, there is only the parade of perceptions passing by",
     "choices": [
-      "Nothing holds them together, there is only the parade of perceptions itself",
+      "Nothing does, there is only the parade of perceptions passing by",
       "A single soul stays fixed in place while the perceptions pour on through it",
       "A running memory gathers up the perceptions and stamps each one as mine",
       "One unchanging viewpoint looks on, the place out of which they are all seen"
     ],
-    "context": "Hume holds that humans are 'nothing but a bundle or collection of different perceptions, which succeed each other with an inconceivable rapidity, and are in a perpetual flux and movement.' The radical claim is the absence of anything that HAS the perceptions. This echoes the Buddhist no-self (anatta): in the Questions of King Milinda, the monk Nagasena argues that 'Nagasena,' like 'chariot,' is only a name for assembled parts, with no permanent owner behind them. Source: Hume, Treatise I.iv.6, davidhume.org/texts/t/1/4/6.",
+    "context": "Hume holds that humans are 'nothing but a bundle or collection of different perceptions, which succeed each other with an inconceivable rapidity, and are in a perpetual flux and movement.' The radical claim is the absence of anything that HAS the perceptions. (He does say they are linked to one another by cause and effect, T 1.4.6.19, but no owner stands behind them.) This echoes the Buddhist no-self (anatta): in the Questions of King Milinda, the monk Nagasena argues that 'Nagasena,' like 'chariot,' is only a name for assembled parts, with no permanent owner behind them. Source: Hume, Treatise I.iv.6, davidhume.org/texts/t/1/4/6.",
     "topic": "humes-bundle-theory-of-the-self"
   },
   {
@@ -11865,7 +11761,7 @@
       "Any director shaping the action, the scenes are left to simply run themselves",
       "Any players of its own, the perceptions are all borrowed from the world outside"
     ],
-    "context": "Hume first writes that 'the mind is a kind of theatre, where several perceptions successively make their appearance,' then immediately undoes it: 'The comparison of the theatre must not mislead us. They are the successive perceptions only, that constitute the mind; nor have we the most distant notion of the place where these scenes are represented, or of the materials of which it is composed.' No stage, no building, no audience, the 'where' of the play does not exist. Source: Hume, Treatise I.iv.6, davidhume.org/texts/t/1/4/6.",
+    "context": "Hume first writes that 'the mind is a kind of theatre, where several perceptions successively make their appearance,' then immediately undoes it: 'The comparison of the theatre must not mislead us. They are the successive perceptions only, that constitute the mind; nor have we the most distant notion of the place, where these scenes are represented, or of the materials, of which it is compos'd.' No stage, no building, no audience: the 'where' of the play does not exist. Source: Hume, Treatise I.iv.6, davidhume.org/texts/t/1/4/6.",
     "topic": "humes-bundle-theory-of-the-self"
   },
   {
@@ -11973,16 +11869,16 @@
     "topic": "humes-fork-relations-of-ideas-vs-matters-of-fact"
   },
   {
-    "tier": 3,
-    "question": "A debate coach writes four sentences on the board. Three of them, she says, describe how the world is, and one quietly tells the reader what to do: 'Water boils at 100 degrees,' 'Most families share three meals a day,' 'Honey will never spoil in the jar' and 'You should keep the promise you made.' Which one is the odd one out because it lays a duty on someone?",
+    "tier": 1,
+    "question": "A debate coach tells her class that a sentence can report a plain fact or else lay a duty on someone. She writes four sentences on the board. Which one lays a duty on someone?",
     "answer": "'You should keep the promise you made'",
     "choices": [
       "'You should keep the promise you made'",
-      "'Honey will never spoil in the jar'",
+      "'Honey keeps for years in a sealed jar'",
       "'Most families share three meals a day'",
-      "'Water boils at 100 degrees in the pot'"
+      "'Water boils at 100 degrees at sea level'"
     ],
-    "context": "This is the is/ought distinction at its plainest. An 'is' statement describes how the world stands; an 'ought' statement tells you what to do. The first three report facts; only the last carries a duty. David Hume's claim is that a pile of is-statements, however tall and however true, never by itself entails a single ought -- you always need a value already among the premises. Source: SEP, Hume's Moral Philosophy (plato.stanford.edu/entries/hume-moral/); Wikipedia, Is-ought problem.",
+    "context": "This is the is/ought distinction at its plainest. An 'is' statement describes how the world stands; an 'ought' statement lays a duty on someone. The water, meal and honey sentences report facts; only the promise sentence carries a duty. David Hume's claim is that a pile of is-statements, however tall and however true, never by itself entails a single ought: a value must already be among the premises. Source: SEP, Hume's Moral Philosophy (plato.stanford.edu/entries/hume-moral/); Wikipedia, Is-ought problem.",
     "topic": "humes-is-ought-gap"
   },
   {
@@ -11993,9 +11889,9 @@
       "That whatever is natural is therefore good",
       "That anything our bodies want must be good for them",
       "That a thing with no artificial parts must be safe",
-      "That what feels natural to do is right to do"
+      "That the root was tested and found safe"
     ],
-    "context": "This is the appeal to nature: 'this is natural, therefore good.' The hidden premise -- 'whatever is natural is good' -- is itself a value claim, not a fact, and the whole argument leans on it unstated. Naming the root natural is just a fact about the root; it cannot by itself reach 'we ought to allow it.' The other three are real value-claims a smart person might mistake for the bridge, but they are not what his words assert. No verdict here on whether the root is actually fine to eat -- only that the leap needs a value the speaker never proved. Source: Wikipedia, Appeal to nature; Effectiviology, The Appeal to Nature Fallacy.",
+    "context": "This is the appeal to nature: 'this is natural, therefore good.' The hidden premise, 'whatever is natural is good', is itself a value claim, not a fact, and the whole argument leans on it unstated. Calling the root natural is just a fact about the root; it cannot by itself reach 'we ought to allow it.' The other choices are nearby claims a smart person might mistake for the bridge, but his case rests on naturalness alone. Whether the root is actually fine to eat is a separate question; the leap needs a value the speaker never proved. Source: Wikipedia, Appeal to nature; Effectiviology, The Appeal to Nature Fallacy.",
     "topic": "humes-is-ought-gap"
   },
   {
@@ -12019,9 +11915,9 @@
       "That a long-standing custom ought to continue",
       "That older customs are wiser than newer ones",
       "That breaking from the village would cause harm",
-      "That what the ancestors chose must have been right"
+      "That the custom does no harm to anyone"
     ],
-    "context": "This is the appeal to tradition: the leap from a fact about the past ('this is how it's always been') to a duty about the present ('so we should continue'). The missing premise -- 'whatever has long been done ought to continue' -- is a value claim doing all the work while pretending to be just history. Longevity is a fact; it is not yet a reason. The other choices are genuine rival values a person might lean on, but none of them is the specific bridge from 'always done' to 'ought to do.' No verdict on the custom itself. Source: Wikipedia, Appeal to nature; Effectiviology, The Appeal to Nature Fallacy.",
+    "context": "This is the appeal to tradition: the leap from a fact about the past ('this is how it's always been') to a duty about the present ('so we should continue'). The missing premise, 'whatever has long been done ought to continue', is a value claim doing all the work while pretending to be just history. Longevity is a fact; it is not yet a reason. The other choices are values or facts a person might lean on, but none of them is the bridge from 'always done' to 'ought to do.' Source: Wikipedia, Appeal to tradition.",
     "topic": "humes-is-ought-gap"
   },
   {
@@ -12047,12 +11943,12 @@
       "Hard proof that each of his facts is true",
       "A second witness to back all of his facts"
     ],
-    "context": "Hume says the leap from is to ought 'seems altogether inconceivable' unless the speaker can show how a duty is deduced from premises 'entirely different from it.' Facts that are entirely different from a duty cannot by themselves deliver one; the speaker owes a missing value premise. Notice the answer is not 'that's the is-ought fallacy' -- naming the move is shallow. The substance is the specific thing the argument lacks. Source: Hume, Treatise III.i.1 (hume.ucdavis.edu).",
+    "context": "Hume says the leap from is to ought 'seems altogether inconceivable' unless the speaker can show how a duty is deduced from premises 'entirely different from it.' Facts that are entirely different from a duty cannot by themselves deliver one; the speaker owes a missing value premise. Source: Hume, Treatise III.i.1 (hume.ucdavis.edu).",
     "topic": "humes-is-ought-gap"
   },
   {
     "tier": 5,
-    "question": "David Hume and G. E. Moore both faulted the claim that 'good' just means 'whatever people desire.' Hume's objection was about a missing step: no duty follows from plain facts unless a value is already among the premises. Moore, in his Principia Ethica of 1903, put the error further back, in how the word 'good' itself is handled. What did he say the argument gets wrong about 'good'?",
+    "question": "David Hume and G. E. Moore both took aim at arguments that slide from what people desire to what is good. Hume's objection was about a missing step: no duty follows from plain facts unless a value is already among the premises. Moore, in Principia Ethica (1903), put the error further back, in how the word 'good' is handled. What did he say the argument gets wrong about 'good'?",
     "answer": "That 'good' can be defined as a plain natural property",
     "choices": [
       "That 'good' can be defined as a plain natural property",
@@ -12070,18 +11966,18 @@
     "choices": [
       "That any promise made ought to be kept",
       "That saying the words always makes a real promise",
-      "That being under an obligation means you must act on it",
+      "That Jones meant every word he said",
       "That a debt of money must always be paid"
     ],
-    "context": "In 'How to Derive Ought from Is' (The Philosophical Review, 1964) Searle argued that the institution of promising is built from 'constitutive rules,' so the duty falls out of the plain facts of what was said. Critics reply that the chain only moves if you already accept a hidden norm -- 'one ought to keep promises.' So the value premise is still smuggled in, just one level down, at the institution itself. The other choices are real candidate norms in the chain, but the value critics name as the smuggled one is that promises ought to be kept. The gap reappears. Source: Searle, 'How to Derive Ought from Is' (1964); SEP and secondary discussion.",
+    "context": "In 'How to Derive Ought from Is' (The Philosophical Review, 1964) Searle argued that the institution of promising is built from 'constitutive rules,' so the duty falls out of the plain facts of what was said. Critics reply that the chain only moves if one already accepts a hidden norm: one ought to keep promises. So the value premise is still smuggled in, just one level down, at the institution itself. A promise binds whether or not the promiser meant it, and the remaining candidates are rules about words or debts, not the value the critics name. The gap reappears. Source: Searle, 'How to Derive Ought from Is' (1964); SEP and secondary discussion.",
     "topic": "humes-is-ought-gap"
   },
   {
     "tier": 4,
     "question": "The mind, David Hume argued, invents nothing from scratch: every idea is a faint replay of something the senses delivered first. To prove it he pointed to the wildest thing imaginable, a golden mountain, and insisted that even this is secondhand. No eye has ever seen a golden mountain. How, on Hume's account, did the mind build one?",
-    "answer": "It joined gold and mountain — two things the senses HAD already delivered",
+    "answer": "It joined gold and a mountain, two things the senses had already delivered",
     "choices": [
-      "It joined gold and mountain — two things the senses HAD already delivered",
+      "It joined gold and a mountain, two things the senses had already delivered",
       "It stretched one ordinary mountain it had seen until the rock turned gold",
       "It averaged every shiny thing and every tall thing the senses had logged",
       "It sharpened a half-remembered mountain until the gold swam into focus"
@@ -12092,9 +11988,9 @@
   {
     "tier": 5,
     "question": "David Hume set a trap for his own Copy Principle, the rule that every idea is a worn copy of some earlier sensation. A man has seen every shade of blue but one, and in a row of blues from lightest to darkest he spots the gap. Hume granted that he could probably summon the missing blue anyway. If so, what has the case done to the principle?",
-    "answer": "Slipped one idea past it that no sensation ever stamped in",
+    "answer": "Breached it — one idea slipped past with no sensation behind it",
     "choices": [
-      "Slipped one idea past it that no sensation ever stamped in",
+      "Breached it — one idea slipped past with no sensation behind it",
       "Upheld it — the man only blended the two blues flanking the blank",
       "Sidestepped it — a hunch about the gap is not yet a real idea",
       "Satisfied it — a sensation gave the man the shade once and he forgot"
@@ -12131,9 +12027,9 @@
   {
     "tier": 2,
     "question": "David Hume picked a homely example: bread. Suppose you have been fed by it a thousand times, and you sit down sure that today's loaf will feed you too. Hume agreed that it almost surely will. What, he asked, does the record of past loaves really prove about the very next bite?",
-    "answer": "By itself, nothing at all -- the past record cannot reach forward and settle it",
+    "answer": "By itself nothing at all, since the past record cannot reach forward to settle it",
     "choices": [
-      "By itself, nothing at all -- the past record cannot reach forward and settle it",
+      "By itself nothing at all, since the past record cannot reach forward to settle it",
       "That the next bite is now overwhelmingly likely, which counts as proof enough",
       "That the next bite simply must nourish you, since nature never breaks its old habits",
       "That bread holds a hidden power which you have now confirmed a full thousand times over"
@@ -12144,12 +12040,12 @@
   {
     "tier": 3,
     "question": "The chicken in Bertrand Russell's fable is fed faithfully every day, until the unhappy morning the farmer has other plans. Then Russell turned the knife: the fable is not really about birds but about people, who feel sure the sun will rise tomorrow for the same reason the chicken felt sure of its breakfast. What unsettling point did he draw about human confidence?",
-    "answer": "We may be in no better a position than the chicken whose neck gets wrung",
+    "answer": "People may be no better placed than the chicken whose neck gets wrung",
     "choices": [
-      "We may be in no better a position than the chicken whose neck gets wrung",
-      "We reason far more carefully than any mere animal could ever manage to",
-      "Our long experience does at last make tomorrow's sunrise genuinely certain",
-      "The sunrise is perfectly safe, because the whole universe was made for us"
+      "People may be no better placed than the chicken whose neck gets wrung",
+      "People reason far more carefully than any mere animal could manage",
+      "Long human experience does make tomorrow's sunrise certain at last",
+      "The sunrise is safe, because the whole universe was made for people"
     ],
     "context": "Russell's words: 'Our instincts certainly cause us to believe the sun will rise to-morrow, but we may be in no better a position than the chicken which unexpectedly has its neck wrung.' The point is not that the sun WON'T rise -- it is that our certainty rests on the same footing the chicken's did. Source: Bertrand Russell, The Problems of Philosophy (1912), Ch. VI, ditext.com/russell/rus6.html.",
     "topic": "humes-problem-of-induction"
@@ -12168,24 +12064,11 @@
     "topic": "humes-problem-of-induction"
   },
   {
-    "tier": 3,
-    "question": "Lightning flashes, then thunder rolls; a cook sets a pot on the flame, then the water heats. David Hume pressed a hard question about what the eyes and ears ever actually deliver in scenes like these. No one, he argued, ever witnesses the thing people assume they see. What did he say the senses actually show?",
-    "answer": "Only that one event keeps following another -- never the link that ties them",
-    "choices": [
-      "Only that one event keeps following another -- never the link that ties them",
-      "The hidden force itself, passing visibly from the first event into the second",
-      "A faint glimpse of the necessity, just enough to confirm the cause is real",
-      "Nothing trustworthy at all, since the senses are simply not to be relied on"
-    ],
-    "context": "Hume called this bare pattern 'constant conjunction': we see flame, then heat; lightning, then thunder -- but never any wire connecting them. 'From causes which appear similar we expect similar effects. This is the sum of all our experimental conclusions.' The expectation is built from repetition alone, not from glimpsing any necessity. Source: David Hume, An Enquiry Concerning Human Understanding (1748), Section IV Part 2, philolibrary.crc.nd.edu/article/the-problem-of-induction/.",
-    "topic": "humes-problem-of-induction"
-  },
-  {
     "tier": 4,
     "question": "Anyone who tries to prove that the future will resemble the past has only one piece of evidence: it always has before, and every past tomorrow turned out like the days before it. David Hume showed that this proof, which sounds like plain common sense, quietly cheats. Where is the cheat hidden?",
-    "answer": "The 'so it always will' step only works if the future copies the past -- the very point at issue",
+    "answer": "The 'so it always will' step only works if the future copies the past, the very point at issue",
     "choices": [
-      "The 'so it always will' step only works if the future copies the past -- the very point at issue",
+      "The 'so it always will' step only works if the future copies the past, the very point at issue",
       "It leans on just a small handful of past cases when far more would be needed to be sure of it",
       "It quietly treats a claim about the natural world as though it were a claim about pure mathematics",
       "It mistakes a strong inner feeling of certainty for a genuine step-by-step logical demonstration"
@@ -12196,9 +12079,9 @@
   {
     "tier": 4,
     "question": "A flame appears and the mind expects heat; snow falls and it expects cold, all with no pause to think. David Hume asked what part of the mind produces that leap from past cases to expectation, and his answer was not the noble one most philosophers had guessed. What did he say carries the mind across?",
-    "answer": "Plain habit -- sheer repetition trains the mind to expect it, with no reasoning at all",
+    "answer": "Plain habit, since sheer repetition trains the mind to expect it with no reasoning at all",
     "choices": [
-      "Plain habit -- sheer repetition trains the mind to expect it, with no reasoning at all",
+      "Plain habit, since sheer repetition trains the mind to expect it with no reasoning at all",
       "A careful logical proof that we simply run through far too quickly to notice doing",
       "A direct inner glimpse of the necessary link that genuinely binds the two events",
       "A deliberate calculation of the odds, which we make before we let ourselves believe"
@@ -12468,15 +12351,15 @@
   },
   {
     "tier": 3,
-    "question": "Milton Friedman waved a pencil on his TV series and brought 'I, Pencil' to millions, decades after the little essay first appeared in 1958. In it a humble pencil insists that not one person on Earth knows how to make it from scratch. So many met the essay through that broadcast that its real author is often forgotten. Who wrote it?",
-    "answer": "Leonard Read, who founded a free-market institute",
+    "question": "Milton Friedman brought Leonard Read's 1958 essay 'I, Pencil' to millions when he waved a pencil on television in 1980. After tracing its own making, the pencil closes with a lesson for those who make a society's laws. What does it urge them to do?",
+    "answer": "Leave creative energies free and clear the obstacles away",
     "choices": [
-      "Leonard Read, who founded a free-market institute",
-      "Milton Friedman, who won a Nobel Prize in economics",
-      "Adam Smith, who first taught of an invisible hand",
-      "Friedrich Hayek, who showed all knowledge is scattered"
+      "Leave creative energies free and clear the obstacles away",
+      "Appoint expert planners to steer each step of the work",
+      "Teach every worker the whole craft from start to finish",
+      "Shield the pencil makers from cheaper foreign rivals"
     ],
-    "context": "Leonard E. Read wrote 'I, Pencil' and published it in December 1958 in The Freeman, the magazine of the Foundation for Economic Education (FEE), the free-market group he had founded. Milton Friedman only popularized it 22 years later, holding up a pencil on his 1980 PBS series 'Free to Choose.' The pencil-as-narrator is Read's; the held-up pencil on TV is Friedman's. A common mistake is to credit the essay itself to Friedman. Source: https://en.wikipedia.org/wiki/I,_Pencil ; https://en.wikipedia.org/wiki/Leonard_Read",
+    "context": "Leonard E. Read, 'I, Pencil' (The Freeman, December 1958), closing lines: 'The lesson I have to teach is this: Leave all creative energies uninhibited. Merely organize society to act in harmony with this lesson. Let society's legal apparatus remove all obstacles the best it can. Permit these creative know-hows freely to flow.' Milton Friedman brought the essay to a mass audience in 1980 on his PBS series Free to Choose; the essay itself is Read's, and Friedman only popularized it. Source: https://fee.org/resources/i-pencil ; https://en.wikipedia.org/wiki/I,_Pencil",
     "topic": "i-pencil-spontaneous-coordination"
   },
   {
@@ -12637,12 +12520,12 @@
   },
   {
     "tier": 2,
-    "question": "A single bond with an Arabic name stands at the center of Ibn Khaldun's science of history. It drives a tough, hard-pressed group all the way to a throne, then quietly fades once the group has won, and he called it the basic motive force of history. What bond did he mean?",
+    "question": "A single bond with an Arabic name stands at the center of Ibn Khaldun's science of history. It drives a tough, hard-pressed group all the way to a throne, then quietly fades once the group has won, and on his account it is the engine of history itself. What bond did he mean?",
     "answer": "A group solidarity that fuses men into one body",
     "choices": [
       "A group solidarity that fuses men into one body",
       "A shared religious faith uniting many strangers",
-      "Kinship and blood ties within a single family",
+      "Loyalty bought by a ruler with gold and gifts",
       "The personal pull of one charismatic leader"
     ],
     "context": "The Arabic word is 'asabiyyah — usually translated 'group feeling,' 'solidarity,' or 'esprit de corps.' For Ibn Khaldun it is the fundamental bond of human society: the thing that makes men act as one body and put the group ahead of their own comfort. It is what carries a ruling group to power. A shared religious cause can intensify and enlarge it, but the bond itself is the group solidarity. Source: Wikipedia, 'Asabiyyah' and 'Muqaddimah.'",
@@ -12723,7 +12606,7 @@
       "Desert tribes had fierce loyalty and rich arts; cities had soft loyalty and few crafts",
       "Desert tribes had soft loyalty and few crafts; cities had fierce loyalty and rich arts"
     ],
-    "context": "Ibn Khaldun called the nomadic desert (Bedouin) phase BADAWA and the settled city phase HADARA, also called 'umran. Desert tribesmen have strong asabiyyah but few crafts; city dwellers have weak asabiyyah but highly developed arts and sciences. Badawa is the earlier, tougher phase — hadara is its luxurious destination, and its grave. Source: historiafactory.wordpress.com, 'Badawa and Hadhara'; Wikipedia, 'Muqaddimah.'",
+    "context": "Ibn Khaldun called the nomadic desert (Bedouin) phase BADAWA and the settled city phase HADARA; both are forms of 'umran, civilization. Desert tribesmen have strong asabiyyah but few crafts; city dwellers have weak asabiyyah but highly developed arts and sciences. Badawa is the earlier, tougher phase; hadara is its luxurious destination, and its grave. Source: historiafactory.wordpress.com, 'Badawa and Hadhara'; Wikipedia, 'Muqaddimah.'",
     "topic": "ibn-khalduns-asabiyyah-and-the-cycle-of-empires"
   },
   {
@@ -12741,23 +12624,10 @@
   },
   {
     "tier": 4,
-    "question": "Luxury drew a harsh and specific verdict from Ibn Khaldun. Once a people come to value material comfort above everything else, he argued, the bond that held them together does not merely weaken: it twists into something new and is destroyed altogether. What did he say that group loyalty turns into?",
-    "answer": "Individualism and factionalism, each man for himself",
-    "choices": [
-      "Individualism and factionalism, each man for himself",
-      "Devotion to the ruler in place of devotion to the group",
-      "A craving for ever more luxury that consumes everything",
-      "Quiet resignation, with people simply ceasing to care"
-    ],
-    "context": "Ibn Khaldun wrote that the pursuit of comfort convinces a people to 'value material comfort above all else and prefer their individual interests over the interests of others' — at which point 'asabiyyah turns into individualism and factionalism' and is 'altogether destroyed.' He added that such a people even grows physically weaker and less able to survive a drought or famine. Source: The Fountain Magazine, 'Ibn Khaldun on Luxury and the Destruction of Civilizations.'",
-    "topic": "ibn-khalduns-asabiyyah-and-the-cycle-of-empires"
-  },
-  {
-    "tier": 4,
     "question": "Ibn Khaldun spotted a pattern in taxes six hundred years before modern economists drew it on a graph. Early in a dynasty, he wrote, the rulers keep the tax burden light, and the treasury still fills handsomely. Late in a dynasty the rulers crank the rates far higher. What happens then to the treasury's total take?",
-    "answer": "It brings in LESS than the old low rates ever did",
+    "answer": "It brings in less than the old low rates ever did",
     "choices": [
-      "It brings in LESS than the old low rates ever did",
+      "It brings in less than the old low rates ever did",
       "It brings in much more, exactly as the rulers expect",
       "It holds perfectly steady no matter the rate",
       "It briefly spikes upward, then settles back down"
@@ -12767,15 +12637,15 @@
   },
   {
     "tier": 2,
-    "question": "The Buddha lay dying among his monks at Kushinagar, and they leaned in for one last secret. Instead he gave them a teaching and a charge: the truth his own death was about to prove, and what to do in its light. What were his last words?",
-    "answer": "Everything built up will fall apart, so strive on with care",
+    "question": "The Buddha lay dying among his monks at Kushinagar, and they leaned in for one last secret. Instead he gave them a teaching and a charge: the truth his own death was about to prove, and what to do in its light. What did he tell them?",
+    "answer": "That all built things decay, so they must strive on with care",
     "choices": [
-      "Everything built up will fall apart, so strive on with care",
-      "No comfort here can be kept, so let go of all you hold",
-      "Walk on as one road-worn band, so keep faith with each other",
-      "Treasure the years we shared, so carry the road on in me"
+      "That all built things decay, so they must strive on with care",
+      "That the order needs a head, so they must choose a new teacher",
+      "That he would still hear them, so they could call on him when gone",
+      "That grief honors the dead, so they must mourn him well"
     ],
-    "context": "His last words in the Mahaparinibbana Sutta (DN 16) were 'All conditioned things are impermanent -- strive on with diligence,' spoken at Kushinagar. Even his own passing was offered as the lesson. Source: Dhamma Wiki, The Buddha's Last Words; Mahaparinibbana Sutta (DN 16).",
+    "context": "His last words in the Mahaparinibbana Sutta (DN 16), in the Vajira and Story translation: 'All compounded things are subject to vanish. Strive with earnestness.' Shortly before, he told Ananda that the Dhamma and the Discipline he had taught would be their master once he was gone, so the order needed no new teacher. Even his own passing was offered as the lesson. Source: Mahaparinibbana Sutta (DN 16), accesstoinsight.org; Dhamma Wiki, The Buddha's Last Words.",
     "topic": "impermanence-karma-samsara-and-nirvana"
   },
   {
@@ -12810,8 +12680,8 @@
     "answer": "A flame going out once its fuel is gone",
     "choices": [
       "A flame going out once its fuel is gone",
-      "A fever breaking and the body cooling at last",
-      "A knot in a rope finally worked loose",
+      "A seed waking into a green shoot",
+      "A door opening onto a bright garden",
       "A caged bird flying free at the open door"
     ],
     "context": "Nirvana (Pali nibbana) literally means 'blowing out' -- nir- 'out' plus va 'to blow' -- the image of removing the fuel so a fire dies. It names the extinguishing of the three fires of craving, aversion, and delusion: a state of mind, not a place. Source: Internet Encyclopedia of Philosophy: Buddha; Wikipedia: Nirvana (Buddhism).",
@@ -12827,29 +12697,29 @@
       "A ledger the gods keep of every life",
       "The fate fixed for you before you were born"
     ],
-    "context": "'It is intention, monks, that I call action (karma). Having intended, one acts through body, speech, and mind' (AN 6.63 / A.III.415). Only willed acts make karma, and past karma never locks your fate, since the will is always free to change course -- the opposite of a fixed cosmic ledger. Source: Internet Encyclopedia of Philosophy: Buddha, quoting A.III.415.",
+    "context": "'It is intention, monks, that I call action (karma). Having intended, one acts through body, speech, and mind' (AN 6.63 / A.III.415). Only willed acts make karma, and past karma never locks a person's fate: the Buddha rejected the teaching that everything a person experiences is caused by what he did in the past. That is the opposite of a fixed cosmic ledger. Source: Internet Encyclopedia of Philosophy: Buddha, quoting A.III.415; AN 3.61 (Tittha Sutta), accesstoinsight.org.",
     "topic": "impermanence-karma-samsara-and-nirvana"
   },
   {
     "tier": 4,
-    "question": "Every realm of existence in the painted Buddhist Wheel of Life, gods, humans and animals alike, is clenched in the fangs and claws of one fearsome figure who grips the whole turning wheel. Off to the side, outside his grasp, the Buddha is painted pointing at the moon, to say there is a way out. Who is the figure holding the wheel?",
-    "answer": "Yama, the Lord of Death",
+    "question": "Every realm of existence in the painted Buddhist Wheel of Life, gods, humans and animals alike, is clenched in the fangs and claws of one fearsome figure who grips the whole turning wheel. Off to the side, outside his grasp, the Buddha is painted pointing at the moon, to say there is a way out. What does the figure gripping the wheel stand for?",
+    "answer": "Death and impermanence, which grip every realm",
     "choices": [
-      "Yama, the Lord of Death",
-      "Mara, the tempter of desire",
-      "Indra, the king of the gods",
-      "Brahma, the maker of worlds"
+      "Death and impermanence, which grip every realm",
+      "A creator god who made and rules every realm",
+      "The sun, whose light lets every realm live",
+      "The heaven that waits for the faithful at the end"
     ],
-    "context": "Yama, the Lord of Death, clutches the whole Bhavachakra in his fangs and claws -- he embodies impermanence, gripping every realm. The Buddha outside the wheel points to the moon to show the way out is real. Source: Lion's Roar, What is the Wheel of Life, or Bhavacakra?",
+    "context": "The fearsome figure clutching the whole Bhavachakra in his fangs and claws is often read as Yama, the Lord of Death, or as Mara, the tempter; either way he embodies impermanence, gripping every realm. The Buddha outside the wheel points to the moon to show the way out is real. Source: Wikipedia, 'Bhavacakra'; Lion's Roar, What is the Wheel of Life, or Bhavacakra?",
     "topic": "impermanence-karma-samsara-and-nirvana"
   },
   {
     "tier": 4,
-    "question": "A wanderer pressed the Buddha to say whether an enlightened person lives on after death, blinks out, both, or neither. Rather than answer, the Buddha pointed to a small fire burning between them and asked whether, once it died, anyone could say it had gone east, west, north or south. Which reply fits the Buddha's point?",
-    "answer": "None of those -- a fire that goes out hasn't gone anywhere at all",
+    "question": "A wanderer pressed the Buddha to say whether an enlightened person lives on after death, blinks out, both, or neither. Rather than answer, the Buddha asked him: if a fire were burning in front of him and then went out, could anyone say it had gone east, west, north or south? Which reply fits the Buddha's point?",
+    "answer": "None of those, since a fire that goes out has not gone anywhere at all",
     "choices": [
-      "None of those -- a fire that goes out hasn't gone anywhere at all",
-      "To the east, since that is where all flames lean as they fade",
+      "None of those, since a fire that goes out has not gone anywhere at all",
+      "Into the air, as smoke that carries the flame's heat far away",
       "Upward, because fire by its nature always rises toward the sky",
       "Back to the great hidden fire from which every small flame is lit"
     ],
@@ -12877,7 +12747,7 @@
       "Nothing at all, since none of them can see",
       "The size of the beast, but not its true shape",
       "The part he touched, but not the whole animal",
-      "Everything, because elephants are unknowable"
+      "Its texture, but nothing of its shape"
     ],
     "context": "The point is not that the men are stupid or lying — each is honestly reporting exactly what he felt, and each is partly right about his own piece. They quarrel only because each mistakes his single fragment for the whole. The recognition the parable teaches: everyone holds a piece of the truth and no one holds all of it, and you reach the real elephant only by putting the pieces together. Source: https://en.wikipedia.org/wiki/Blind_men_and_an_elephant  (Legend.)",
     "topic": "jainism-ahimsa-and-the-blind-men-and-the-elephant"
@@ -13067,19 +12937,19 @@
   {
     "tier": 2,
     "question": "For twenty years Friedrich Engels fed Karl Marx's family and bankrolled the writing of Das Kapital, and to the Marx household he was known as the General. His money came from exactly the kind of business Marx spent his life attacking. Where did it come from?",
-    "answer": "His wealthy family cotton mill",
+    "answer": "His wealthy family's cotton mill",
     "choices": [
-      "His wealthy family cotton mill",
+      "His wealthy family's cotton mill",
       "A country estate he had inherited",
       "Royalties from his bestselling novels",
       "His salary as a government minister"
     ],
-    "context": "Engels, son of a wealthy cotton-mill owner, worked at the family firm Ermen & Engels in Manchester and over about twenty years funneled an estimated 3,000 to 4,000 pounds to the Marx family, effectively funding Das Kapital. In the Marx household he was nicknamed 'The General.' Source: Wikipedia 'Friedrich Engels'; Jacobin.",
+    "context": "Engels, son of a wealthy cotton-mill owner, worked at the family firm Ermen & Engels in Manchester and for about twenty years sent the Marx family regular sums, effectively funding Das Kapital. In the Marx household he was nicknamed 'The General.' Source: Britannica, 'Karl Marx: Early years in London'; Wikipedia 'Friedrich Engels'.",
     "topic": "karl-marx-and-the-communist-manifesto"
   },
   {
     "tier": 2,
-    "question": "The Communist Manifesto did not spring from one lonely burst of inspiration. A small group of German workers in London, the Communist League, hired the young Karl Marx and Friedrich Engels in 1847 to draft a document for the whole movement, due that December. What were the two young radicals hired to write?",
+    "question": "The Communist Manifesto did not spring from one lonely burst of inspiration. A small group of German workers in London, the Communist League, hired the young Karl Marx and Friedrich Engels late in 1847 to draft a document for the whole movement. What were the two young radicals hired to write?",
     "answer": "An official program for the movement",
     "choices": [
       "An official program for the movement",
@@ -13087,12 +12957,12 @@
       "A newspaper to rally factory workers",
       "A history of past failed revolts"
     ],
-    "context": "The Communist League hired Marx and Engels to write its program; Marx drafted it in German in January 1848 (drawing on an earlier tract by Engels) and it was published anonymously in London just weeks before the French Revolution of February 1848. Marx was 29. Source: Wikipedia 'The Communist Manifesto'; History.com.",
+    "context": "The Communist League's congress of late 1847 commissioned Marx and Engels to write its program. Marx wrote it over some six or seven weeks, under a League deadline of 1 February 1848, drawing on an earlier tract by Engels, and it was published anonymously in London in late February 1848, just as revolution broke out in France. Marx was 29. Source: Wikipedia 'The Communist Manifesto'.",
     "topic": "karl-marx-and-the-communist-manifesto"
   },
   {
     "tier": 2,
-    "question": "Two squalid rooms on Dean Street, in Soho, were home to Karl Marx and his wife Jenny in the 1850s. They were so broke that debt collectors once carried off their furniture and even their infant's cradle, and the poverty did more than humiliate them. What did those years of hunger and cold cost the family?",
+    "question": "Two squalid rooms on Dean Street, in Soho, were home to Karl Marx and his wife Jenny in the 1850s. Bailiffs at their earlier lodging had already carried off their beds and even their infant's cradle, and the poverty did more than humiliate them. What did those years of hunger and cold cost the family?",
     "answer": "The lives of several of their young children",
     "choices": [
       "The lives of several of their young children",
@@ -13100,7 +12970,7 @@
       "Their last ties to relatives back in Prussia",
       "Their standing in the revolutionary movement"
     ],
-    "context": "Several Marx children died young in London, including baby Franziska, born at Dean Street and dead within about a year, and his son Edgar in 1855. Jenny called the Dean Street rooms 'the evil frightful rooms which encompassed all our joy and all our pain.' Source: Spartacus Educational 'Karl Marx'; English Heritage blue plaque.",
+    "context": "Several Marx children died young in London, including baby Franziska, born at Dean Street and dead within about a year, and his son Edgar in 1855. Earlier, in May 1850, Jenny wrote that bailiffs had seized their beds, linen and clothes, even her baby's cradle. She called the Dean Street rooms 'the evil frightful rooms which encompassed all our joy and all our pain.' Source: Jenny Marx to Joseph Weydemeyer, 20 May 1850 (MECW 38); English Heritage blue plaque, 'Karl Marx'.",
     "topic": "karl-marx-and-the-communist-manifesto"
   },
   {
@@ -13118,32 +12988,6 @@
   },
   {
     "tier": 3,
-    "question": "Agonizing boils called carbuncles covered Karl Marx's skin for years while he wrote Das Kapital. He turned even that sickness into a jab in the class war when he wrote to Friedrich Engels about it. What did he call his illness?",
-    "answer": "A truly proletarian disease",
-    "choices": [
-      "A truly proletarian disease",
-      "A curse from his cruel landlords",
-      "The price of his honest labor",
-      "A fittingly bourgeois affliction"
-    ],
-    "context": "Marx complained to Engels that the carbuncles were 'a truly proletarian disease' and quipped, 'I hope the bourgeoisie will remember my carbuncles until their dying day.' Source: Spartacus Educational 'Karl Marx' (confidence: medium).",
-    "topic": "karl-marx-and-the-communist-manifesto"
-  },
-  {
-    "tier": 3,
-    "question": "When Karl Marx died in 1883, only about a dozen mourners gathered at his graveside in Highgate Cemetery. There his friend Friedrich Engels rose to speak, and opened the eulogy by fixing the exact moment of the death with a single grand claim about the man in the grave. How did Engels begin?",
-    "answer": "The greatest living thinker had ceased to think",
-    "choices": [
-      "The greatest living thinker had ceased to think",
-      "The truest friend the workers ever had was gone",
-      "A fire that had lit all of Europe was now out",
-      "The bravest enemy of the rich had fallen at last"
-    ],
-    "context": "Engels opened his Highgate burial speech: 'On the 14th of March, at a quarter to three in the afternoon, the greatest living thinker ceased to think.' Only about a dozen mourners (estimates run from about 11 to two dozen) stood at the graveside on March 17, 1883. Source: marxists.org, Engels' burial speech.",
-    "topic": "karl-marx-and-the-communist-manifesto"
-  },
-  {
-    "tier": 3,
     "question": "Karl Marx lies under a great stone at Highgate Cemetery carved with a line that sums up his whole demand on philosophy. For ages, he said, thinkers had merely interpreted the world in various ways. According to that carved line, what is the real point instead?",
     "answer": "To change it",
     "choices": [
@@ -13152,7 +12996,7 @@
       "To endure it",
       "To worship it"
     ],
-    "context": "The back of Marx's Highgate tomb carries the close of his Theses on Feuerbach: 'The philosophers have only interpreted the world in various ways; the point however is to change it.' The Eleventh Thesis was written in Brussels in 1845 and published only after his death; the front of the tomb reads 'Workers of all lands unite.' Source: Wikipedia 'Tomb of Karl Marx'; Wikipedia 'Theses on Feuerbach'.",
+    "context": "The front of Marx's Highgate tomb carries the close of his Theses on Feuerbach: 'The philosophers have only interpreted the world in various ways; the point however is to change it.' The Eleventh Thesis was written in Brussels in 1845 and published only after his death; the same face of the tomb bears the Manifesto's 'Workers of all lands unite.' Source: Wikipedia 'Tomb of Karl Marx'; Wikipedia 'Theses on Feuerbach'.",
     "topic": "karl-marx-and-the-communist-manifesto"
   },
   {
@@ -13269,12 +13113,12 @@
       "By choosing whichever side argues its case most elegantly",
       "By trusting whatever the senses report and never doubting it"
     ],
-    "context": "This is Bacon's core move in the Novum Organum (1620): induction. Instead of reasoning from accepted authority about how nature ought to behave, you gather many particular observations, then carefully generalize. As he put it in Aphorism I.10, 'We are not to imagine or suppose, but to discover, what nature does or may be made to do.' Note that Bacon distrusted the unaided senses too — he called them 'an enchanted glass' — which is why the false option of 'never doubting' what you first see is a real trap, not a throwaway. Source: Stanford Encyclopedia of Philosophy, 'Francis Bacon'; todayinsci.com Bacon quotations (Novum Organum I.10).",
+    "context": "This is Bacon's core move in the Novum Organum (1620): induction. Instead of reasoning from accepted authority about how nature ought to behave, the inquirer gathers many particular observations, then carefully generalizes. As Bacon put it, 'we are not to imagine or suppose, but to discover, what nature does or may be made to do.' Bacon distrusted the unaided senses too, and he called the untrained mind 'an enchanted glass, full of superstition and imposture' (The Advancement of Learning, 1605), so trusting whatever the senses report is a real trap, not a throwaway. Source: Stanford Encyclopedia of Philosophy, 'Francis Bacon'; todayinsci.com Bacon quotations; Bacon, The Advancement of Learning, Book II.",
     "topic": "knowledge-is-power-and-the-experimental-method"
   },
   {
     "tier": 2,
-    "question": "Snow lay over Highgate, north of London, late in March 1626, when Francis Bacon, riding through in his coach, was struck by a question: could cold preserve meat? He stopped the coach, bought a hen from a local woman and packed it with snow with his own bare hands. What did the experiment cost him?",
+    "question": "Snow lay over Highgate late in March 1626, when Francis Bacon, riding through in his coach, was struck by a question: could cold preserve meat? As John Aubrey tells it, he stopped the coach, bought a hen from a local woman and helped pack it with snow himself. What did the experiment cost him?",
     "answer": "The chill led to pneumonia, and within days it killed him",
     "choices": [
       "The chill led to pneumonia, and within days it killed him",
@@ -13282,20 +13126,20 @@
       "The hen spoiled anyway, disproving the very idea he was testing",
       "He was mocked in Parliament and stripped of his title over it"
     ],
-    "context": "The man literally tested his theory in person and it killed him — arguably the first frozen chicken. The chill made him too ill to go home; he was taken to the Earl of Arundel's house, put in a damp unused bed, caught pneumonia, and died on 9 April 1626, aged 65, with the King's physician Dr Witherborne having been with him on the ride. (The wrong choice about being stripped of his title points at a real event — his 1621 bribery disgrace — but that was years earlier, not the chicken.) Source: the-microbiologist.com 'Ice, ice, maybe?'; mentalfloss.com Highgate ghost chicken; tracing to John Aubrey's Brief Lives.",
+    "context": "The man tested his idea in person and, as the story goes, it killed him. The chill made him too ill to go home; he was taken to the Earl of Arundel's house, put in a damp unused bed, caught pneumonia, and died on 9 April 1626, aged 65, with the King's physician Dr Witherborne having been with him on the ride. The account comes from John Aubrey's Brief Lives, who had it from Thomas Hobbes. (His real disgrace came in 1621, when a bribery scandal cost him the Lord Chancellorship, years before the hen.) Source: Wikipedia, 'Francis Bacon'; the-microbiologist.com 'Ice, ice, maybe?'; John Aubrey, Brief Lives.",
     "topic": "knowledge-is-power-and-the-experimental-method"
   },
   {
     "tier": 2,
-    "question": "Reading is a kind of eating in Francis Bacon's essay Of Studies, which tells a thoughtful reader how to take in his books. Which line about books did Bacon write?",
-    "answer": "Some books are to be tasted, others swallowed, and a few chewed and digested",
+    "question": "Francis Bacon's essay Of Studies treats reading as a kind of eating: 'Some books are to be tasted, others to be swallowed, and some few to be chewed and digested.' In the same essay he says what a reader should read for. What is it?",
+    "answer": "To weigh and consider what he reads",
     "choices": [
-      "Some books are to be tasted, others swallowed, and a few chewed and digested",
-      "Every book should be swallowed whole, as fast as you can manage",
-      "The best books are nibbled, the dull ones spat out, the rest left untouched",
-      "A book is a feast — eat all of it, or none of it, but never half"
+      "To weigh and consider what he reads",
+      "To win arguments by refuting others",
+      "To believe what learned authors say",
+      "To gather things to talk about"
     ],
-    "context": "From Of Studies (Essays, 1597): 'Some books are to be tasted, others to be swallowed, and some few to be chewed and digested.' The same anti-authority instinct that drives his whole method shows up in how he says to read — in the same essay: 'Read not to contradict and confute, nor to believe and take for granted... but to weigh and consider.' Don't swallow a claim whole; weigh it. Source: Wikiquote, Francis Bacon (Of Studies, Essays, 1597).",
+    "context": "From Of Studies (Essays, 1625): 'Read not to contradict and confute; nor to believe and take for granted; nor to find talk and discourse; but to weigh and consider.' The other answers are the very aims Bacon rules out. The same anti-authority instinct that drives his method shows up in how he says to read: some books to be tasted, others swallowed, a few chewed and digested. Source: Wikiquote, Francis Bacon (Of Studies, Essays).",
     "topic": "knowledge-is-power-and-the-experimental-method"
   },
   {
@@ -13334,7 +13178,7 @@
       "It gathers evidence but lets reasoning overrule it whenever the two clash",
       "It waits for flashes of insight rather than following any method at all"
     ],
-    "context": "The third creature is the BEE (Novum Organum I.95): it gathers material from the flowers — observation — and then 'converts and digests it' with reason working on real evidence. Bacon's method marries experiment and thought, against both the crude fact-hoarder (the ant) and the system-spinner (the spider, the dogmatic Aristotelians who 'spin webs from their own entrails'). The sharpest wrong answer here is the near-miss that lets reasoning overrule the evidence — the bee does the reverse, letting the world correct the mind. Source: Stanford Encyclopedia of Philosophy, 'Francis Bacon' (Novum Organum I.95).",
+    "context": "The third creature is the BEE (Novum Organum I.95). In the standard translation, 'the reasoners resemble spiders, who make cobwebs out of their own substance. But the bee takes a middle course: it gathers its material from the flowers of the garden and of the field, but transforms and digests it by a power of its own.' Bacon's method marries experiment and thought, against both the crude fact-hoarder (the ant) and the system-spinner (the spider). The near-miss that lets reasoning overrule the evidence gets the bee backwards: the bee lets the world correct the mind. Source: Bacon, Novum Organum I.95 (trans. Spedding, Ellis and Heath); Stanford Encyclopedia of Philosophy, 'Francis Bacon'.",
     "topic": "knowledge-is-power-and-the-experimental-method"
   },
   {
@@ -13468,32 +13312,6 @@
     "topic": "laozi-and-the-dao-de-jing"
   },
   {
-    "tier": 1,
-    "question": "One slim book of short, riddling sayings is all Laozi left the world, so the legend goes, before he rode away west and was never seen again. That book is now one of the most translated works anywhere. What is it called?",
-    "answer": "The Dao De Jing",
-    "choices": [
-      "The Dao De Jing",
-      "The Analects",
-      "The Art of War",
-      "The Book of Changes"
-    ],
-    "context": "The text he left became the Dao De Jing, the 'Classic of the Way and Virtue,' the founding book of Daoism -- said to be composed in one session before he retired into the western wilderness. (The other choices are real Chinese classics: the Analects of Confucius, Sunzi's Art of War, and the I Ching / Book of Changes.) Source: SEP: Laozi (plato.stanford.edu/entries/laozi/); Wikipedia: Laozi -- composed 'in a single session before retiring into the western wilderness'.  (Legend.)",
-    "topic": "laozi-and-the-dao-de-jing"
-  },
-  {
-    "tier": 2,
-    "question": "Sima Qian, the great Han historian, wrote that the archivist of the Zhou court was really named Li Er. Almost nobody called him that. People knew him instead as Laozi, a fond nickname that stuck so hard it buried his real name for good. What does the nickname Laozi mean?",
-    "answer": "Old Master",
-    "choices": [
-      "Old Master",
-      "Cloud Rider",
-      "First Teacher",
-      "Gate Keeper"
-    ],
-    "context": "Sima Qian's biography gives his family name as Li and his given name as Er (also called Dan); 'Laozi' is an honorific meaning 'Old Master,' and he served as keeper of the archival records at the court of Zhou. Source: SEP: Laozi and IEP: Laozi -- 'Family name: Li; Given name: Er; also called Dan... Laozi means Old Master'; 'keeper of archival records at the court of Zhou'.",
-    "topic": "laozi-and-the-dao-de-jing"
-  },
-  {
     "tier": 3,
     "question": "Few first lines in philosophy are quoted as often as the Dao De Jing's. The book is built around the Dao, the Way that runs through everything, and its opening sets the tone for all it says about the Way and its name. How does it begin?",
     "answer": "The Way that can be told is not the eternal Way; the name that can be named is not the eternal Name",
@@ -13542,7 +13360,7 @@
       "Meadow grass",
       "Falling snow"
     ],
-    "context": "The book's signature image is water: 'Nothing in the world is softer or weaker than water, yet nothing is better at wearing down the hard and the strong.' It yields to everything and in the end carves stone -- the soft overcomes the hard, the weak overcomes the strong. Source: Tao Te Ching Chapter 78, translations of Wing-Tsit Chan (1963), David Hinton, and Stephen Addis (1993), compiled at egreenway.com/taoism/ttclz78.htm.",
+    "context": "The book's signature image is water: chapter 78 says nothing in the world is softer or weaker than water, yet nothing does better at attacking the hard and the strong. It yields to everything and in the end carves stone; the soft overcomes the hard, the weak overcomes the strong. Source: Tao Te Ching Chapter 78, translations of Wing-Tsit Chan (1963), David Hinton, and Stephen Addis (1993), compiled at egreenway.com/taoism/ttclz78.htm.",
     "topic": "laozi-and-the-dao-de-jing"
   },
   {
@@ -13555,7 +13373,7 @@
       "Old custom carried us",
       "Nothing troubled us"
     ],
-    "context": "Chapter 17: 'The best leader is one the people barely know exists... When the best leader's work is done, the people say: We did it ourselves.' The surprise is the specific claim of agency -- not vague good luck, good times, old custom, or merely being left alone, but the people taking the credit themselves. Greatness here is being almost invisible. Source: Tao Te Ching Chapter 17, translations of Witter Bynner (1944) and Sanderson Beck (1996), compiled at egreenway.com/taoism/ttclz17.htm.",
+    "context": "Chapter 17 ranks rulers from the despised and the feared up to the loved, and puts above them all the ruler the people barely know is there: when his work is done, the people say they did it themselves. The surprise is the specific claim of agency, not vague good luck, good times, old custom, or merely being left alone, but the people taking the credit themselves. Greatness here is being almost invisible. Source: Tao Te Ching Chapter 17, translations of Witter Bynner (1944) and Sanderson Beck (1996), compiled at egreenway.com/taoism/ttclz17.htm.",
     "topic": "laozi-and-the-dao-de-jing"
   },
   {
@@ -13566,9 +13384,9 @@
       "A dragon riding the clouds into the heavens",
       "A phoenix rising reborn from its own ashes",
       "A qilin appearing once in a sage's lifetime",
-      "A thunderbird whose cry splits the open sky"
+      "A tiger crouching unseen in the mountain mist"
     ],
-    "context": "In Sima Qian's telling, Confucius said: 'Birds fly, fishes swim, animals run... what runs can be trapped, what swims can be netted, what flies can be shot. But a Dragon riding the clouds into the Heavens -- that is beyond me. Today I have seen Laozi. He is like a Dragon!' The orderly Confucius could not categorize him. (The other choices -- phoenix, qilin, thunderbird -- are other mythic creatures, so the answer is not the only 'uncatchable' option.) Source: Sima Qian, Shiji, translated and quoted at LitHub, 'Did Lao-Tzu and Confucius Know Each Other?' (lithub.com).  (Legend.)",
+    "context": "In Sima Qian's telling, Confucius said: 'Birds fly, fishes swim, animals run... what runs can be trapped, what swims can be netted, what flies can be shot. But a Dragon riding the clouds into the Heavens -- that is beyond me. Today I have seen Laozi. He is like a Dragon!' The orderly Confucius could not categorize him. Source: Sima Qian, Shiji, translated and quoted at LitHub, 'Did Lao-Tzu and Confucius Know Each Other?' (lithub.com).  (Legend.)",
     "topic": "laozi-and-the-dao-de-jing"
   },
   {
@@ -13586,25 +13404,12 @@
   },
   {
     "tier": 3,
-    "question": "Pierre-Simon Laplace imagined a mind so complete that, knowing every atom and every law of nature at one instant, it could compute the whole future of the universe. The world now calls that mind a demon, but the dramatic word came from later writers. What single word did Laplace use for it in his own 1814 essay?",
-    "answer": "Intelligence",
-    "choices": [
-      "Intelligence",
-      "Apparition",
-      "Calculator",
-      "Magician"
-    ],
-    "context": "In his 1814 Philosophical Essay on Probabilities, Laplace wrote only of 'an intelligence' (une intelligence) that, knowing every force and position, could 'embrace in a single formula the movements of the greatest bodies of the universe and those of the tiniest atom.' The word 'demon' was a later embellishment by others. Source: Laplace, A Philosophical Essay on Probabilities (1814), quoted in Wikipedia 'Laplace's demon' and SEP 'Causal Determinism'.",
-    "topic": "laplaces-demon"
-  },
-  {
-    "tier": 3,
     "question": "A boy hears about Laplace's demon, the mind that could work out the whole future, and shrugs: no machine that huge could ever be built, so who cares. His father says he has missed the point, because the thought experiment was never about whether the calculator could be built. What unsettling question is it really driving at?",
-    "answer": "Whether your every choice was already settled before you were born",
+    "answer": "Whether every choice a person makes was settled before his birth",
     "choices": [
-      "Whether your every choice was already settled before you were born",
+      "Whether every choice a person makes was settled before his birth",
       "Whether anyone could ever truly know a fact about every atom at once",
-      "Whether the universe runs on strict laws or on hidden chance",
+      "Whether God already knows everything that will happen next",
       "Whether a foretold future can still be changed once it is known"
     ],
     "context": "The demon is a vivid way of asking about total determinism: if the state of the world before you were born already fixes exactly one future, are any of your choices free? The calculator's actual buildability is beside the point. Source: SEP 'Causal Determinism'; IEP 'Free Will'.",
@@ -13616,9 +13421,9 @@
     "answer": "The entire past, read backward as easily as the future",
     "choices": [
       "The entire past, read backward as easily as the future",
-      "The single moment when the universe will finally end",
-      "The exact spot in space where the universe first began",
-      "The total count of every atom the universe contains"
+      "The purpose the whole universe is moving toward",
+      "The reason the laws of nature are as they are",
+      "Events in other universes beyond this one"
     ],
     "context": "Because the laws of classical mechanics are time-reversible, the demon could run them backward as easily as forward. Laplace called the present 'the effect of its past and the cause of its future' — so the demon reads history as surely as it foretells it. Source: Laplace, A Philosophical Essay on Probabilities (1814); SEP 'Causal Determinism'.",
     "topic": "laplaces-demon"
@@ -13629,7 +13434,7 @@
     "answer": "Its strict determinism, which the failed forecast never disproves",
     "choices": [
       "Its strict determinism, which the failed forecast never disproves",
-      "Its predictability, still open to anyone holding exact data",
+      "Its long forecasts, for anyone with very good data",
       "Its physical laws, all of which dissolve once paths diverge",
       "Its randomness, the real reason any long forecast must fail"
     ],
@@ -13655,11 +13460,11 @@
     "answer": "On your act springing from your own reasons and wants",
     "choices": [
       "On your act springing from your own reasons and wants",
-      "On your act being one you could in principle have done differently",
+      "On a soul that stands outside the laws of nature",
       "On blind chance, not your character, picking your act",
       "On the future staying open until you commit to the act"
     ],
-    "context": "This is the compatibilist reply: a choice is free when it flows from your own desires and reasons, and the bare fact that a demon could have foreseen it doesn't mean anything reached in and forced your hand. You would still have chosen otherwise had your reasons been otherwise. (Real rivals disagree — some hold chance must reopen the future, some that freedom requires you could have done otherwise — and the question stays contested.) Source: IEP 'Free Will'; SEP 'Compatibilism'.",
+    "context": "This is the compatibilist reply: a choice is free when it flows from the chooser's own desires and reasons, and the bare fact that a demon could have foreseen it does not mean anything reached in and forced his hand. Had his reasons been otherwise, he would have chosen otherwise. Real rivals disagree: some hold that chance must reopen the future, some that freedom needs a soul outside nature's laws or a power to do otherwise that no prediction could capture, and the question stays contested. Source: IEP 'Free Will'; SEP 'Compatibilism'.",
     "topic": "laplaces-demon"
   },
   {
