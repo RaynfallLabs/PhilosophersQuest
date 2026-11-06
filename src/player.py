@@ -2072,13 +2072,17 @@ class Player:
                         self.status_effects.pop(old_status, None)
                     self._remove_weapon_passives(self.weapon)
                     self.inventory.append(self.weapon)
-                # Unequip shield if switching to 2H melee
+                # Unequip shield if switching to 2H melee. Everything it lent
+                # comes off with it (shed_worn_grants), as when it is taken
+                # off by hand: an attuned shield kept its tier bonuses and
+                # they stacked on every re-attune (Aegis magic resist 2, 4, 6).
                 if getattr(item, 'two_handed', False) and self.shield:
                     ok, msg = self.try_unequip_slot(self.shield)
                     if not ok:
                         return
-                    self.inventory.append(self.shield)
-                    self.shield = None
+                    old_shield, self.shield = self.shield, None
+                    self.shed_worn_grants(old_shield)
+                    self.inventory.append(old_shield)
                 self.weapon = item
                 new_status = getattr(item, 'on_equip_status', '')
                 if new_status:
