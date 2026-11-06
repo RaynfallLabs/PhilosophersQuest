@@ -8438,7 +8438,7 @@
   },
   {
     "tier": 3,
-    "question": "A programmer's bug log reads, 'The compiler flags a segmentation fault at line 47.' Which register does that sentence use?",
+    "question": "A programmer's bug log reads, 'The debugger traces a segmentation fault to line 47.' Which register does that sentence use?",
     "answer": "Technical",
     "choices": [
       "Technical",
@@ -8446,7 +8446,7 @@
       "Formal",
       "Casual"
     ],
-    "context": "'Compiler,' 'segmentation fault,' 'line 47' -- specialized vocabulary for a specific field (programming). Technical register is used in manuals, specifications, and engineering documents. Source: Chicago Manual of Style 17th edition section 5.220.",
+    "context": "'Debugger,' 'segmentation fault,' 'line 47' -- specialized vocabulary for a specific field (programming). A segmentation fault is a crash while a program runs, so the debugger finds it, not the compiler. Technical register is used in manuals, specifications, and engineering documents.",
     "topic": "register-casual-formal-academic-technical-literary"
   },
   {
@@ -8465,38 +8465,38 @@
   {
     "tier": 5,
     "question": "A student opens a school research paper with 'So basically what this paper's gonna be about is how kids sleep matters a bunch for memory and stuff.' What is the main problem?",
-    "answer": "The register is CASUAL -- contractions and slang do not fit an academic essay",
+    "answer": "The register is casual -- slang like 'gonna' does not suit an essay",
     "choices": [
-      "The register is CASUAL -- contractions and slang do not fit an academic essay",
-      "The subject is wrong -- essays cannot discuss sleep",
-      "The tense is wrong -- academic essays must use past tense",
-      "The length is wrong -- essay openings must fill at least half a page"
+      "The register is casual -- slang like 'gonna' does not suit an essay",
+      "The voice is passive -- the opener hides who did the study",
+      "The sentence is a fragment -- it never reaches a main verb",
+      "The tense is wrong -- a research paper must use the past tense"
     ],
-    "context": "'Basically,' 'gonna,' 'kids,' 'a bunch,' 'and stuff' are the casual register. An academic essay needs precise vocabulary and third-person voice. Source: Chicago Manual of Style 17th edition section 5.220.",
+    "context": "'Basically,' 'gonna,' 'kids,' 'a bunch,' 'and stuff' are the casual register. An academic essay needs precise vocabulary and third-person voice. The sentence is not passive, it has a main verb ('is'), and no rule forces a research paper into the past tense.",
     "topic": "register-casual-formal-academic-technical-literary"
   },
   {
     "tier": 1,
-    "question": "A yearbook caption reads, 'She is one of the students who ___ hard.' Which verb form fits?",
-    "answer": "work (WHO refers to 'students', a plural)",
+    "question": "A yearbook caption reads, 'She is one of the students who ___ hard.' Which verb form does the traditional rule call for?",
+    "answer": "work",
     "choices": [
-      "work (WHO refers to 'students', a plural)",
+      "work",
       "works",
-      "worked",
-      "either"
+      "has worked",
+      "is working"
     ],
-    "context": "The relative-clause agreement rule: the verb inside the relative clause agrees with the noun the relative pronoun refers to. 'Who' → 'students' (plural) → 'work'. Chicago 5.66.",
+    "context": "The traditional rule: the verb inside the relative clause agrees with the noun the relative pronoun refers to. 'Who' -> 'students' (plural) -> 'work'. Chicago keeps this rule; Merriam-Webster's usage dictionary also allows a singular verb when the writer is thinking of the one person.",
     "topic": "relative-clauses-verb-agrees-with-the-noun-who-that-refers-t"
   },
   {
     "tier": 2,
     "question": "A principal's award letter reads, 'She is the only one of the students who ___ hard.' Which verb form fits?",
-    "answer": "works (WHO now refers to 'one'; ONLY ONE narrows to a singular)",
+    "answer": "works",
     "choices": [
-      "works (WHO now refers to 'one'; ONLY ONE narrows to a singular)",
+      "works",
       "work",
-      "worked",
-      "either"
+      "have worked",
+      "are working"
     ],
     "context": "'THE ONLY ONE' shifts the relative reference to 'one' (singular). Compare 'one of the students who work' (plural) vs 'the only one of the students who works' (singular). Chicago 5.66.",
     "topic": "relative-clauses-verb-agrees-with-the-noun-who-that-refers-t"
@@ -8504,12 +8504,12 @@
   {
     "tier": 2,
     "question": "A boy leaves a note for his sister: 'The book that ___ on the table is mine.' Which verb fits?",
-    "answer": "is (THAT refers to 'book', singular)",
+    "answer": "is",
     "choices": [
-      "is (THAT refers to 'book', singular)",
+      "is",
       "are",
       "were",
-      "either"
+      "sit"
     ],
     "context": "The relative pronoun THAT refers to its antecedent BOOK (singular). Verb agrees with BOOK → 'is'. Not with any other noun in the sentence.",
     "topic": "relative-clauses-verb-agrees-with-the-noun-who-that-refers-t"
@@ -8517,53 +8517,53 @@
   {
     "tier": 3,
     "question": "A shop owner's inventory report reads, 'The list of items that ___ missing is long.' Which verb fits?",
-    "answer": "are (THAT refers to 'items', plural)",
+    "answer": "are -- agrees with 'items'",
     "choices": [
-      "are (THAT refers to 'items', plural)",
-      "is (agrees with 'list')",
-      "was",
-      "were"
+      "are -- agrees with 'items'",
+      "is -- agrees with 'list'",
+      "is -- agrees with 'items'",
+      "are -- agrees with 'list'"
     ],
     "context": "'That' refers to ITEMS (plural), so verb inside the relative clause is 'are'. The main clause verb 'is' agrees with LIST (singular). Two separate agreements in one sentence.",
     "topic": "relative-clauses-verb-agrees-with-the-noun-who-that-refers-t"
   },
   {
     "tier": 3,
-    "question": "A best man's toast begins, 'He is one of those people who ___ never late.' Which verb fits?",
-    "answer": "are (WHO refers to 'people', plural)",
+    "question": "A best man's toast begins, 'He is one of those people who ___ never late.' Which verb does the traditional rule call for?",
+    "answer": "are",
     "choices": [
-      "are (WHO refers to 'people', plural)",
+      "are",
       "is",
       "was",
-      "either"
+      "seems"
     ],
-    "context": "The classic 'one of those...who' construction. WHO refers to PEOPLE (plural), so verb is plural. 'One of those runners who never quit'; 'one of those songs that stay in your head'.",
+    "context": "The classic 'one of those...who' construction. WHO refers to PEOPLE (plural), so the traditional rule wants a plural verb. 'One of those runners who never quit'; 'one of those songs that stay in a listener's head'.",
     "topic": "relative-clauses-verb-agrees-with-the-noun-who-that-refers-t"
   },
   {
     "tier": 4,
-    "question": "An editor tries one line of a magazine profile four ways, each with a relative clause after 'writers.' Which version is correct?",
+    "question": "An editor tries one line of a magazine profile four ways, each with a relative clause after 'writers.' Which version follows the traditional rule?",
     "answer": "She is one of the writers who work at night.",
     "choices": [
       "She is one of the writers who work at night.",
       "She is one of the writers who works at night.",
-      "She is one of the writers whom works at night.",
-      "She is one of the writers whose works at night."
+      "She is one of the writers that works at night.",
+      "She is one of the writers who is working at night."
     ],
-    "context": "WHO refers to 'writers' (plural) → 'work'. The 'one of the X who' construction takes plural verb because WHO refers to X. 'The only one of the writers who works' would be singular.",
+    "context": "WHO refers to 'writers' (plural) -> 'work'. The traditional rule gives 'one of the X who' a plural verb because WHO refers to X, and THAT follows the same rule. 'The only one of the writers who works' would be singular.",
     "topic": "relative-clauses-verb-agrees-with-the-noun-who-that-refers-t"
   },
   {
     "tier": 5,
     "question": "A family's road-trip diary reads, 'A box of chocolates that ___ melting in the sun sat on the dashboard.' Which verb fits?",
-    "answer": "were (THAT refers to 'chocolates', plural)",
+    "answer": "were -- agrees with 'chocolates'",
     "choices": [
-      "were (THAT refers to 'chocolates', plural)",
-      "was (agrees with 'box')",
-      "is",
-      "are"
+      "were -- agrees with 'chocolates'",
+      "was -- agrees with 'box'",
+      "are -- agrees with 'chocolates'",
+      "is -- agrees with 'box'"
     ],
-    "context": "'That' inside the relative clause refers to BOOKS (plural) → 'were falling'. The main clause verb 'sat' has 'pile' (singular) as subject. Two verbs, two different agreements.",
+    "context": "'That' inside the relative clause refers to CHOCOLATES (plural): the chocolates are what melt, so 'were melting'. The main clause verb 'sat' has 'box' (singular) as its subject. 'Are' and 'is' break the past tense the diary is told in. Two verbs, two different agreements.",
     "topic": "relative-clauses-verb-agrees-with-the-noun-who-that-refers-t"
   },
   {
@@ -8803,14 +8803,14 @@
   {
     "tier": 2,
     "question": "A writer in the 1500s called God 'awful' and meant no insult by it. What did 'awful' mean then?",
-    "answer": "Full of awe -- awe-inspiring, majestic",
+    "answer": "Awe-inspiring and majestic",
     "choices": [
-      "Full of awe -- awe-inspiring, majestic",
+      "Awe-inspiring and majestic",
       "Angry and vengeful",
       "Distant and cold",
-      "Small and unnoticed"
+      "Hidden and unknowable"
     ],
-    "context": "AWFUL = 'full of awe.' Today the meaning has flipped -- AWFUL means bad, and AWESOME took over the positive sense. Source: OED 'awful.'",
+    "context": "AWFUL began as awe + full: inspiring awe. Today the meaning has flipped -- AWFUL means bad, and AWESOME took over the positive sense. Source: OED 'awful.'",
     "topic": "semantic-shift-nice-used-to-mean-foolish"
   },
   {
@@ -8836,7 +8836,7 @@
       "A queen's attendant",
       "A blood relative in one's own household"
     ],
-    "context": "GIRL narrowed to 'young female' by the 1500s. Bill Bryson uses this in 'Mother Tongue' (1990) as a favorite example of semantic NARROWING -- a word whose meaning shrinks. Source: OED 'girl'; Bryson (1990).",
+    "context": "GIRL narrowed to 'young female' by the 1500s, a textbook case of semantic NARROWING -- a word whose meaning shrinks. Source: OED 'girl.'",
     "topic": "semantic-shift-nice-used-to-mean-foolish"
   },
   {
@@ -8854,7 +8854,7 @@
   },
   {
     "tier": 5,
-    "question": "A lord called his young male servant his 'cniht' in Old English, simply a boy. Today a 'knight' is a noble warrior with lands and a title. Which category of semantic shift is this?",
+    "question": "A lord called his young male servant his 'cniht' in Old English, simply a boy. Centuries later a 'knight' was a noble warrior in armor. Which category of semantic shift is this?",
     "answer": "Amelioration -- the meaning became more positive",
     "choices": [
       "Amelioration -- the meaning became more positive",
@@ -9349,9 +9349,9 @@
   {
     "tier": 1,
     "question": "A novelist ends a chapter with 'She laughed.' What type of sentence is this?",
-    "answer": "simple (one independent clause)",
+    "answer": "simple",
     "choices": [
-      "simple (one independent clause)",
+      "simple",
       "compound",
       "complex",
       "compound-complex"
@@ -9362,9 +9362,9 @@
   {
     "tier": 1,
     "question": "A love story's draft reads, 'She laughed, and he smiled.' What type of sentence is this?",
-    "answer": "compound (two independent clauses joined by coordinating conjunction)",
+    "answer": "compound",
     "choices": [
-      "compound (two independent clauses joined by coordinating conjunction)",
+      "compound",
       "simple",
       "complex",
       "fragment"
@@ -9375,9 +9375,9 @@
   {
     "tier": 2,
     "question": "A school play's script has the line 'When she saw him, she laughed.' What type of sentence is this?",
-    "answer": "complex (one independent + one dependent clause)",
+    "answer": "complex",
     "choices": [
-      "complex (one independent + one dependent clause)",
+      "complex",
       "simple",
       "compound",
       "compound-complex"
@@ -9388,9 +9388,9 @@
   {
     "tier": 2,
     "question": "A romance writer tries out the line 'When she saw him, she laughed, and he smiled.' What type of sentence is this?",
-    "answer": "compound-complex (independent + independent + dependent)",
+    "answer": "compound-complex",
     "choices": [
-      "compound-complex (independent + independent + dependent)",
+      "compound-complex",
       "compound",
       "complex",
       "simple"
@@ -9401,9 +9401,9 @@
   {
     "tier": 3,
     "question": "A mail carrier's complaint form reads, 'The dog barked at the mailman because it was hungry.' What type of sentence is this?",
-    "answer": "complex (independent + dependent 'because' clause)",
+    "answer": "complex",
     "choices": [
-      "complex (independent + dependent 'because' clause)",
+      "complex",
       "simple",
       "compound",
       "compound-complex"
@@ -9413,10 +9413,10 @@
   },
   {
     "tier": 3,
-    "question": "A sports page reports, 'It rained; the game was cancelled.' What type of sentence is this?",
-    "answer": "compound (two independent clauses joined by semicolon)",
+    "question": "A sports page reports, 'It rained; the game was canceled.' What type of sentence is this?",
+    "answer": "compound",
     "choices": [
-      "compound (two independent clauses joined by semicolon)",
+      "compound",
       "simple",
       "complex",
       "fragment"
@@ -9427,9 +9427,9 @@
   {
     "tier": 4,
     "question": "A fan's blog says, 'Although it rained, the game continued, and the crowd stayed loyal.' What type of sentence is this?",
-    "answer": "compound-complex (dependent + independent + independent)",
+    "answer": "compound-complex",
     "choices": [
-      "compound-complex (dependent + independent + independent)",
+      "compound-complex",
       "compound",
       "complex",
       "simple"
@@ -9440,9 +9440,9 @@
   {
     "tier": 5,
     "question": "A pet sitter's report reads, 'The cat, which had been sleeping, jumped up and ran.' What type of sentence is this?",
-    "answer": "complex (independent clause with an embedded relative clause)",
+    "answer": "complex",
     "choices": [
-      "complex (independent clause with an embedded relative clause)",
+      "complex",
       "simple",
       "compound",
       "fragment"
@@ -9531,11 +9531,11 @@
   {
     "tier": 1,
     "question": "Cinderella's Fairy Godmother tells her, \"You shall go to the ball.\" What does 'shall' signal there?",
-    "answer": "a promise or command (emphasis / determination)",
+    "answer": "a promise or command",
     "choices": [
-      "a promise or command (emphasis / determination)",
+      "a promise or command",
       "a plain future statement",
-      "a permission request",
+      "a polite offer",
       "a hypothetical statement"
     ],
     "context": "The traditional British rule: SHALL with YOU/HE/SHE/THEY signals emphasis or promise. Fairy Godmother's promise.",
@@ -9544,12 +9544,12 @@
   {
     "tier": 1,
     "question": "A British schoolmaster teaches the old rule for a plain future: 'shall' goes with some pronouns and not others. Which pronouns take it?",
-    "answer": "I and WE (as in \"I shall arrive tomorrow\")",
+    "answer": "I and WE",
     "choices": [
-      "I and WE (as in \"I shall arrive tomorrow\")",
+      "I and WE",
       "YOU only",
-      "HE, SHE, THEY only",
-      "all pronouns take SHALL"
+      "HE, SHE and IT",
+      "YOU and THEY"
     ],
     "context": "Traditional British: I/WE take SHALL for plain futures. YOU/HE/SHE/THEY take WILL for plain futures.",
     "topic": "shall-vs-will-the-nearly-extinct-distinction"
@@ -9561,8 +9561,8 @@
     "choices": [
       "I WILL arrive (determined); YOU SHALL arrive (command)",
       "I SHALL arrive (determined); YOU WILL arrive (command)",
-      "both stay the same for emphasis",
-      "both drop entirely in emphatic speech"
+      "I WILL arrive (command); YOU SHALL arrive (determined)",
+      "I SHALL arrive (command); YOU WILL arrive (determined)"
     ],
     "context": "For emphasis, swap: WILL with I/WE = determined; SHALL with YOU/HE/SHE = command/promise. That is Cinderella's pattern.",
     "topic": "shall-vs-will-the-nearly-extinct-distinction"
@@ -9570,14 +9570,14 @@
   {
     "tier": 3,
     "question": "A British visitor to the United States listens for 'shall' all week. What has become of the word in modern American English?",
-    "answer": "Americans use WILL for almost all futures; SHALL survives in legal writing and fixed phrases",
+    "answer": "WILL covers nearly every future; SHALL survives in law and set phrases",
     "choices": [
-      "Americans use WILL for almost all futures; SHALL survives in legal writing and fixed phrases",
-      "Americans use SHALL exclusively for polite futures",
-      "Americans never use SHALL at all",
-      "SHALL replaced WILL entirely in American English"
+      "WILL covers nearly every future; SHALL survives in law and set phrases",
+      "SHALL still pairs with I and WE, exactly as in the old British rule",
+      "SHALL has died out completely, even in contracts and statutes",
+      "SHALL marks every polite future, and WILL marks all the rest"
     ],
-    "context": "Since the mid-1900s SHALL faded in American English. It survives in contracts (\"the tenant shall pay rent\") and phrases like \"shall we dance?\"",
+    "context": "SHALL has long been fading from American English. It survives in contracts (\"the tenant shall pay rent\") and phrases like \"shall we dance?\"",
     "topic": "shall-vs-will-the-nearly-extinct-distinction"
   },
   {
@@ -9609,11 +9609,11 @@
   {
     "tier": 1,
     "question": "A text to a sister reads, 'I should of gone.' What is wrong with that sentence?",
-    "answer": "'of' should be 'have' (contraction: 'should've')",
+    "answer": "'of' should be 'have'",
     "choices": [
-      "'of' should be 'have' (contraction: 'should've')",
+      "'of' should be 'have'",
       "'should' should be 'would'",
-      "the tense is wrong",
+      "'gone' should be 'went'",
       "nothing is wrong"
     ],
     "context": "'Should've' (contraction of 'should have') SOUNDS identical to 'should of' when spoken -- but 'of' is a preposition and cannot follow modal verbs. Written correctly: 'should have' or 'should've'.",
@@ -9622,10 +9622,10 @@
   {
     "tier": 1,
     "question": "A track coach's email says, 'She could of won that race.' What is the correct written form?",
-    "answer": "could have (or the contraction could've)",
+    "answer": "could have",
     "choices": [
-      "could have (or the contraction could've)",
-      "could of (as spoken)",
+      "could have",
+      "could of",
       "could had",
       "coulda"
     ],
@@ -9635,12 +9635,12 @@
   {
     "tier": 2,
     "question": "A boy writes 'should of' in his essay and swears it sounds right. Why does it sound right to so many speakers?",
-    "answer": "the contraction 'should've' is pronounced identically to 'should of'",
+    "answer": "the contraction 'should've' sounds just like 'should of'",
     "choices": [
-      "the contraction 'should've' is pronounced identically to 'should of'",
-      "'of' has changed meaning",
-      "it is a British-only form",
-      "nothing sounds right about it"
+      "the contraction 'should've' sounds just like 'should of'",
+      "'of' once served as a helping verb in older English",
+      "'should of' is the standard form in British English",
+      "it copies the pattern of phrases like 'kind of'"
     ],
     "context": "The reduced schwa sound of contracted 'have' (should've = /ʃʊdəv/) is identical to unstressed 'of' (/əv/). The ear hears them the same. Only writing exposes the mistake.",
     "topic": "should-of-could-of-would-of-the-impossible-verb"
@@ -9648,9 +9648,9 @@
   {
     "tier": 2,
     "question": "A tutor lists the modal verbs 'should,' 'could,' 'would' and 'might' on a card. Which word follows them in the perfect tense?",
-    "answer": "have (should have gone, could have won)",
+    "answer": "have",
     "choices": [
-      "have (should have gone, could have won)",
+      "have",
       "of",
       "had",
       "did"
@@ -9661,9 +9661,9 @@
   {
     "tier": 3,
     "question": "A mother's text reads, 'she must of forgotten.' What is the correct written form of 'must of'?",
-    "answer": "'must have' (or 'must've')",
+    "answer": "'must have'",
     "choices": [
-      "'must have' (or 'must've')",
+      "'must have'",
       "'must of'",
       "'must has'",
       "'must had'"
@@ -9674,10 +9674,10 @@
   {
     "tier": 3,
     "question": "A teenager texts back, 'I would of if I could of.' How many corrections does that sentence need?",
-    "answer": "two: 'would have if I could have'",
+    "answer": "two",
     "choices": [
-      "two: 'would have if I could have'",
-      "one: change 'of' to 'have' once",
+      "two",
+      "one",
       "three",
       "none"
     ],
@@ -9691,21 +9691,21 @@
     "choices": [
       "'She should have thought twice.'",
       "'She should of thought twice.'",
-      "'She should have have thought twice.'",
-      "'She should thought twice.'"
+      "'She should've of thought twice.'",
+      "'She should had thought twice.'"
     ],
-    "context": "Modal (should) + HAVE + past participle (thought). Both 'have' and 'of' cannot appear -- 'have' is the auxiliary, 'of' has no grammatical role. Doubled auxiliary is a hypercorrection.",
+    "context": "Modal (should) + HAVE + past participle (thought). 'Of' has no job after 'have', so it comes out. 'Should've of' adds the same slip to a contraction, and 'should had' uses the wrong form of 'have'.",
     "topic": "should-of-could-of-would-of-the-impossible-verb"
   },
   {
     "tier": 5,
     "question": "A novelist writes 'should of' into a line of dialogue, and her editor leaves it in. Why is that acceptable?",
-    "answer": "representing colloquial speech in fiction preserves the character's voice",
+    "answer": "the dialogue spells out how the character really talks",
     "choices": [
-      "representing colloquial speech in fiction preserves the character's voice",
-      "the rule has been relaxed",
-      "'of' is now a modal auxiliary",
-      "novels do not follow grammar rules"
+      "the dialogue spells out how the character really talks",
+      "'of' has become an accepted helping verb after modals",
+      "novels are exempt from the rules of standard English",
+      "editors now treat 'should of' as a correct spelling"
     ],
     "context": "Eye-dialect: fiction writers spell nonstandard speech phonetically ('should of', 'coulda', 'gonna') to signal a character's register. Legitimate device inside quoted speech; not acceptable in the narrator's voice.",
     "topic": "should-of-could-of-would-of-the-impossible-verb"
@@ -10015,9 +10015,9 @@
     "answer": "Move the adverb next to the verb it should modify",
     "choices": [
       "Move the adverb next to the verb it should modify",
-      "Add a comma before the adverb",
-      "Delete the adverb entirely",
-      "Move it to the end of the sentence with an exclamation point"
+      "Set the adverb off with a comma on each side",
+      "Swap the adverb for a stronger synonym",
+      "Turn the adverb into an adjective"
     ],
     "context": "Placement is the whole cure. 'The teacher OFTEN told the class to study' fixes one reading; 'The teacher told the class to study OFTEN' fixes the other. Source: Fowler's Modern English Usage, 'squinting adverbs.'",
     "topic": "squinting-modifiers-the-adverb-that-faces-both-ways"
@@ -10025,38 +10025,38 @@
   {
     "tier": 3,
     "question": "A school flyer promises, 'Students who study rarely fail the test.' What is the problem with that promise?",
-    "answer": "RARELY could mean 'students who rarely study' OR 'students who rarely fail'",
+    "answer": "RARELY is ambiguous -- it could go with STUDY or FAIL",
     "choices": [
-      "RARELY could mean 'students who rarely study' OR 'students who rarely fail'",
-      "STUDY should be STUDIED -- past tense required",
-      "STUDENTS should be STUDENT -- singular required",
-      "FAIL should be FAILED -- past tense required"
+      "RARELY is ambiguous -- it could go with STUDY or FAIL",
+      "STUDENTS needs an apostrophe -- it is possessive",
+      "WHO should be WHOM -- it is the verb's object",
+      "STUDY should be STUDIES -- the subject is singular"
     ],
-    "context": "RARELY sits between STUDY and FAIL -- either verb could take it. Fix by moving it, or add commas to force one reading. Source: Grokipedia 'Squinting modifier' (2026-09-05).",
+    "context": "RARELY sits between STUDY and FAIL -- either verb could take it. Moving it fixes the promise: 'Students who rarely study fail' or 'Students who study fail rarely.' Source: Grokipedia 'Squinting modifier' (2026-09-05).",
     "topic": "squinting-modifiers-the-adverb-that-faces-both-ways"
   },
   {
     "tier": 3,
     "question": "A gym's poster reads, 'The people who exercise regularly stay healthy.' Which two readings does its adverb allow?",
-    "answer": "'exercise regularly' (they work out often) vs 'regularly stay healthy' (they stay well as a rule)",
+    "answer": "they work out often, or they stay well as a rule",
     "choices": [
-      "'exercise regularly' (they work out often) vs 'regularly stay healthy' (they stay well as a rule)",
-      "'exercise heavily' vs 'exercise lightly'",
-      "'stay in shape' vs 'stay motivated'",
-      "'people who exercise' vs 'people who don't exercise'"
+      "they work out often, or they stay well as a rule",
+      "they work out often, or they work out hard",
+      "they are ordinary people, or they work out often",
+      "they work out often, or they eat healthy food"
     ],
-    "context": "REGULARLY sits between EXERCISE and STAY. It could modify either. Move it to fix the reading you want. Source: Chicago Manual of Style 17e section 5.171.",
+    "context": "REGULARLY sits between EXERCISE and STAY. It could modify either. Moving it next to the verb the writer means settles the reading.",
     "topic": "squinting-modifiers-the-adverb-that-faces-both-ways"
   },
   {
     "tier": 4,
     "question": "A grammar teacher writes 'squinting,' 'misplaced' and 'dangling' on the board as three related modifier bugs. How do they differ?",
-    "answer": "SQUINTING = ambiguous between TWO candidates in the sentence; MISPLACED = clearly attached to the wrong one; DANGLING = the doer is missing entirely",
+    "answer": "SQUINTING has two possible owners; MISPLACED, the wrong owner; DANGLING, none",
     "choices": [
-      "SQUINTING = ambiguous between TWO candidates in the sentence; MISPLACED = clearly attached to the wrong one; DANGLING = the doer is missing entirely",
-      "SQUINTING = missing subject; MISPLACED = missing verb; DANGLING = missing object",
-      "SQUINTING is past tense; MISPLACED is present tense; DANGLING is future tense",
-      "All three mean exactly the same thing"
+      "SQUINTING has two possible owners; MISPLACED, the wrong owner; DANGLING, none",
+      "SQUINTING has no owner; MISPLACED, two possible owners; DANGLING, the wrong owner",
+      "SQUINTING has the wrong owner; MISPLACED, no owner; DANGLING, two possible owners",
+      "SQUINTING has two possible owners; MISPLACED, no owner; DANGLING, the wrong owner"
     ],
     "context": "'Walking to school, the trees were beautiful' = DANGLING (who is walking?). 'I saw a horse riding to school' = MISPLACED (the horse is not riding). 'Students who study rarely fail' = SQUINTING (RARELY between STUDY and FAIL). Source: Chicago Manual of Style 17e sections 5.171-5.173.",
     "topic": "squinting-modifiers-the-adverb-that-faces-both-ways"
@@ -10071,20 +10071,20 @@
       "'I saw a horse riding down the street.'",
       "'She had a picture of her dog on her desk.'"
     ],
-    "context": "'After the game' squints between SAID (said after the game) and WOULD PRACTICE (practice after the game). The trees sentence is DANGLING; the horse sentence is MISPLACED; the dog-picture sentence is unambiguous. Source: Chicago Manual of Style 17e section 5.171.",
+    "context": "'After the game' squints between SAID (said after the game) and WOULD PRACTICE (practice after the game). The trees sentence is DANGLING; the horse sentence is MISPLACED; the dog-picture sentence is ambiguous too (is the dog or the picture on the desk?), but it has only one verb, so nothing in it can squint between two verbs.",
     "topic": "squinting-modifiers-the-adverb-that-faces-both-ways"
   },
   {
     "tier": 5,
     "question": "A nurse's note reads, 'The doctor said in the morning the patient would feel better.' Which two readings does 'in the morning' allow, and what is the fix?",
-    "answer": "'said in the morning' vs 'feel better in the morning' -- move 'in the morning' to whichever verb you mean",
+    "answer": "the saying or the recovery -- move the phrase beside one verb",
     "choices": [
-      "'said in the morning' vs 'feel better in the morning' -- move 'in the morning' to whichever verb you mean",
-      "'said' vs 'feel' should be swapped",
-      "'the doctor' should be 'the patient'",
-      "The sentence is unambiguous; no fix is needed"
+      "the saying or the recovery -- move the phrase beside one verb",
+      "the saying or the recovery -- set the phrase off with commas",
+      "the doctor or the patient -- swap the two nouns around",
+      "only the recovery -- the sentence needs no fix at all"
     ],
-    "context": "The phrase can modify either verb; only placement disambiguates. Move it before SAID or after BETTER. Source: Chicago Manual of Style 17e section 5.171.",
+    "context": "The phrase can modify either verb, the saying or the feeling better; placement settles it. Move it before SAID or after BETTER. Commas leave both readings standing.",
     "topic": "squinting-modifiers-the-adverb-that-faces-both-ways"
   },
   {
@@ -10093,9 +10093,9 @@
     "answer": "\"stationary\" (should be \"stationery\")",
     "choices": [
       "\"stationary\" (should be \"stationery\")",
-      "\"bought\" (should be \"buyed\")",
-      "\"thank-you\" (should be \"thankyou\")",
-      "\"cards\" (should be \"card\"s)"
+      "\"bought\" (should be \"brought\")",
+      "\"cards\" (should be \"card's\")",
+      "\"some\" (should be \"sum\")"
     ],
     "context": "STATIONERY (with -ery) = writing paper. STATIONARY (with -ary) = not moving. Cards need paper.",
     "topic": "stationary-vs-stationery-standing-still-vs-writing-paper"
@@ -10106,9 +10106,9 @@
     "answer": "a bike that doesn't move",
     "choices": [
       "a bike that doesn't move",
-      "a bike made of paper",
-      "a bike used for writing",
-      "a bike sold at a stationery shop"
+      "a bike with a single fixed gear",
+      "a bike sold at a stationery shop",
+      "a bike built for delivering mail"
     ],
     "context": "STATIONARY = still, not moving. Gym bike stays in one place.",
     "topic": "stationary-vs-stationery-standing-still-vs-writing-paper"
@@ -10119,11 +10119,11 @@
     "answer": "stationERy has E like Envelope; stationARy has A like stAy",
     "choices": [
       "stationERy has E like Envelope; stationARy has A like stAy",
-      "both spellings are correct in modern usage",
-      "stationERy is British; stationARy is American",
-      "stationERy is a verb; stationARy is a noun"
+      "stationARy has A like pAper; stationERy has E like stEady",
+      "stationERy has E like stEady; stationARy has A like cArd",
+      "stationARy has A like mAil; stationERy has E like rEst"
     ],
-    "context": "E for envelope/letter; A for stAy. The single letter tells you which meaning applies.",
+    "context": "E for envelope/letter; A for stAy. The single letter shows which meaning applies.",
     "topic": "stationary-vs-stationery-standing-still-vs-writing-paper"
   },
   {
@@ -10133,10 +10133,10 @@
     "choices": [
       "stationery",
       "stationary",
-      "staionary",
-      "stationarry"
+      "stationer",
+      "station"
     ],
-    "context": "STATIONERY = paper, envelopes, pens. The drawer holds writing supplies.",
+    "context": "STATIONERY = paper, envelopes, pens. The drawer holds writing supplies. A STATIONER is the person who sells them, and a STATION is a standing place.",
     "topic": "stationary-vs-stationery-standing-still-vs-writing-paper"
   },
   {
@@ -10155,22 +10155,22 @@
   {
     "tier": 4,
     "question": "A student finds 'stationary' beside its look-alike in a dictionary. Why did the two spellings split?",
-    "answer": "medieval paper-and-book sellers had fixed STATIONS -- their goods became STATIONERY",
+    "answer": "medieval booksellers kept fixed STATIONS, so their goods became STATIONERY",
     "choices": [
-      "medieval paper-and-book sellers had fixed STATIONS -- their goods became STATIONERY",
-      "the two words were invented at different times by different Latin poets",
-      "the E was added by a printer's error in 1811",
+      "medieval booksellers kept fixed STATIONS, so their goods became STATIONERY",
+      "the paper word came from French and the standing word from Latin",
+      "the E came from a printer's error in an early dictionary",
       "they are not actually related; the shared root is coincidence"
     ],
-    "context": "Medieval England: most merchants moved town to town, but paper-and-book sellers kept fixed stations. Their goods took the -ERY spelling to mark the paper trade.",
+    "context": "Medieval booksellers, unlike traveling peddlers, kept fixed stations, often near a university, and were called stationers. By the early 1700s their goods were called stationery, and the -ERY spelling came to mark the paper trade.",
     "topic": "stationary-vs-stationery-standing-still-vs-writing-paper"
   },
   {
     "tier": 1,
     "question": "A neighbor's note reads, 'The dog ___ barking.' Which verb form fits?",
-    "answer": "is (singular subject)",
+    "answer": "is",
     "choices": [
-      "is (singular subject)",
+      "is",
       "are",
       "were",
       "am"
@@ -10181,9 +10181,9 @@
   {
     "tier": 1,
     "question": "A boy texts from the yard, 'The dogs ___ barking.' Which verb form fits?",
-    "answer": "are (plural subject)",
+    "answer": "are",
     "choices": [
-      "are (plural subject)",
+      "are",
       "is",
       "was",
       "am"
@@ -10194,12 +10194,12 @@
   {
     "tier": 2,
     "question": "A mother frowns at a shopping note: 'The list of items ___ long.' Which verb form fits?",
-    "answer": "is (subject is LIST, singular; 'of items' is a prepositional phrase)",
+    "answer": "is",
     "choices": [
-      "is (subject is LIST, singular; 'of items' is a prepositional phrase)",
+      "is",
       "are",
       "were",
-      "either"
+      "seem"
     ],
     "context": "PREPOSITIONAL PHRASES DO NOT DETERMINE THE VERB. The subject is LIST (singular), not ITEMS. Common trap: the nearest noun is not always the subject.",
     "topic": "subject-verb-agreement-basics-singular-vs-plural"
@@ -10219,37 +10219,37 @@
   },
   {
     "tier": 3,
-    "question": "A first-grade worksheet reads, 'Two plus two ___ four.' Which verb fits?",
-    "answer": "is (mathematical equation treated as single unit)",
+    "question": "A first-grade worksheet reads, 'Two plus two ___ four.' Which verb do most usage guides prefer?",
+    "answer": "is",
     "choices": [
-      "is (mathematical equation treated as single unit)",
+      "is",
       "are",
       "were",
-      "either"
+      "am"
     ],
-    "context": "MATHEMATICAL expressions take singular verbs -- the sum is one thing. 'Two plus two is four'; 'ten divided by five is two'. Same rule: 'Twenty dollars is a lot of money' (an amount, one unit).",
+    "context": "Most usage guides prefer the singular for arithmetic, since the sum is one thing, though some accept 'two plus two are four' too. 'Ten divided by five is two.' Same idea: 'Twenty dollars is a lot of money' (an amount, one unit).",
     "topic": "subject-verb-agreement-basics-singular-vs-plural"
   },
   {
     "tier": 4,
     "question": "A boy haggling at a yard sale says, 'Ten dollars ___ enough.' Which verb fits?",
-    "answer": "is (amount is treated as a single unit)",
+    "answer": "is",
     "choices": [
-      "is (amount is treated as a single unit)",
+      "is",
       "are",
       "were",
-      "either"
+      "seem"
     ],
-    "context": "MONEY, TIME, DISTANCE amounts take singular verbs when treated as one quantity. 'Ten dollars is enough'; 'five miles is a long walk'; 'three hours is not enough time'. The mass exception again.",
+    "context": "MONEY, TIME, DISTANCE amounts take singular verbs when treated as one quantity. 'Ten dollars is enough'; 'five miles is a long walk'; 'three hours is not enough time'.",
     "topic": "subject-verb-agreement-basics-singular-vs-plural"
   },
   {
     "tier": 5,
     "question": "A project report reads, 'One of the reasons the plan failed ___ funding.' Which verb fits?",
-    "answer": "was (subject is ONE, singular)",
+    "answer": "was",
     "choices": [
-      "was (subject is ONE, singular)",
-      "were (agreeing with 'reasons')",
+      "was",
+      "were",
       "are",
       "have been"
     ],
@@ -10935,12 +10935,12 @@
   {
     "tier": 2,
     "question": "A spelling coach hangs a poster about \"then\" and \"than\" over the classroom door. What memory trick does it give?",
-    "answer": "thEn has an E like timE / sEquence; thAn has an A like compAre / contrAst",
+    "answer": "thEn has E like timE; thAn has A like compAre",
     "choices": [
-      "thEn has an E like timE / sEquence; thAn has an A like compAre / contrAst",
-      "thEn is British; thAn is American",
-      "thAn is only used in poetry",
-      "they are pronounced identically and interchangeable"
+      "thEn has E like timE; thAn has A like compAre",
+      "thEn has E like morE; thAn has A like lAter",
+      "thAn has A like pAst; thEn has E like bEtter",
+      "thEn has E like lEss; thAn has A like Afterward"
     ],
     "context": "E vowel maps to TIME words; A vowel maps to COMPARISON words. Reliable mnemonic.",
     "topic": "then-vs-than-time-vs-comparison"
@@ -10952,10 +10952,10 @@
     "choices": [
       "than",
       "then",
-      "thann",
-      "thenn"
+      "to",
+      "from"
     ],
-    "context": "The sentence compares pizza and salad. Comparison = THAN.",
+    "context": "The sentence compares pizza and salad. Comparison = THAN. ('Prefer' takes TO, as in 'I prefer pizza to salad,' but 'would rather' takes THAN.)",
     "topic": "then-vs-than-time-vs-comparison"
   },
   {
@@ -11103,13 +11103,13 @@
   },
   {
     "tier": 3,
-    "question": "A mother's note to her kids is missing one word: \"Please put the groceries over ___ on the counter.\" Which of the three spellings fills the blank?",
+    "question": "A mother's note to her kids is missing one word: \"Please put the groceries over ___ on the counter.\" Which spelling fills the blank?",
     "answer": "there -- points to a place",
     "choices": [
       "there -- points to a place",
       "their -- shows possession",
       "they're -- means 'they are'",
-      "thair -- older spelling"
+      "there's -- means 'there is'"
     ],
     "context": "'Over ___ on the counter' points to a location -- THERE (contains HERE). Source: Grokipedia 'There, their, they're' (2026-09-05).",
     "topic": "there-their-theyre-the-three-way-apostrophe-trap"
@@ -11298,15 +11298,15 @@
   },
   {
     "tier": 1,
-    "question": "A boy texts his mom from a birthday party, \"I want too pieces of cake to.\" Which usage is wrong?",
-    "answer": "\"too\" should be \"two\" (the number); \"to\" at the end should be \"too\"",
+    "question": "A boy texts his mom from a birthday party, \"I want too pieces of cake to.\" Which fix does the text need?",
+    "answer": "\"too\" should be \"two\"; \"to\" at the end should be \"too\"",
     "choices": [
-      "\"too\" should be \"two\" (the number); \"to\" at the end should be \"too\"",
+      "\"too\" should be \"two\"; \"to\" at the end should be \"too\"",
       "\"want\" should be \"wanted\"; \"pieces\" should be \"piece\"",
       "\"of\" should be \"off\"; \"cake\" should be \"cakes\"",
-      "both usages are correct as written"
+      "the text is correct as written"
     ],
-    "context": "TWO pieces of cake (number) TO eat (infinitive)... TOO (also) = \"I want two pieces to eat too.\"",
+    "context": "TWO is the number (two pieces), and TOO at the end means also: \"I want two pieces of cake too.\"",
     "topic": "to-too-two-three-tiny-words-three-jobs"
   },
   {
@@ -11325,12 +11325,12 @@
   {
     "tier": 2,
     "question": "An older sister gives her brother, who keeps writing \"to\" for \"too,\" a memory trick. What is the trick?",
-    "answer": "TOO has an EXTRA O because it means \"in excess\" or \"in addition\"",
+    "answer": "TOO has an extra O, as it means \"extra\" or \"also\"",
     "choices": [
-      "TOO has an EXTRA O because it means \"in excess\" or \"in addition\"",
-      "TOO is British; TO is American",
-      "TOO is a verb; TO is a preposition",
-      "TWO is Latin for \"double\""
+      "TOO has an extra O, as it means \"extra\" or \"also\"",
+      "TOO has two O's, so it is the word for the number 2",
+      "TOO ends like \"go,\" so it goes in front of a verb",
+      "TO is the short one, so it means \"a little\""
     ],
     "context": "The extra letter mirrors the extra meaning: also, excessively, in addition.",
     "topic": "to-too-two-three-tiny-words-three-jobs"
@@ -11364,12 +11364,12 @@
   {
     "tier": 4,
     "question": "Two editors argue over a line in a children's book, \"I want one, too,\" and whether its comma should stay. What is the rule on that comma?",
-    "answer": "acceptable but optional -- both \"one, too\" and \"one too\" are correct",
+    "answer": "optional -- either version is correct",
     "choices": [
-      "acceptable but optional -- both \"one, too\" and \"one too\" are correct",
-      "always required in formal writing",
-      "always forbidden -- comma before TOO is a bug",
-      "required in British but forbidden in American"
+      "optional -- either version is correct",
+      "required -- formal writing always needs it",
+      "forbidden -- a comma before TOO is an error",
+      "split -- required in British, forbidden in American"
     ],
     "context": "The comma adds a beat of pause for emphasis. Either form is accepted in modern style guides.",
     "topic": "to-too-two-three-tiny-words-three-jobs"
@@ -11731,7 +11731,7 @@
     "answer": "\"who's\" (should be \"whose\")",
     "choices": [
       "\"who's\" (should be \"whose\")",
-      "\"coat\" (should be \"cape\")",
+      "\"coat\" (should be \"coat's\")",
       "\"this\" (should be \"that\")",
       "\"is\" (should be \"was\")"
     ],
@@ -11745,8 +11745,8 @@
     "choices": [
       "who is",
       "who possesses",
-      "why does",
-      "when will"
+      "who was",
+      "who does"
     ],
     "context": "WHO'S = contraction of WHO IS (or WHO HAS). Apostrophe marks the missing letter.",
     "topic": "whose-vs-whos-the-possessive-pronoun-exception-again"
@@ -11754,12 +11754,12 @@
   {
     "tier": 2,
     "question": "A boy asks his tutor why \"whose\" takes no apostrophe. What is her answer?",
-    "answer": "possessive pronouns (his, hers, ours, theirs, whose) REFUSE the apostrophe",
+    "answer": "because possessive pronouns never take an apostrophe",
     "choices": [
-      "possessive pronouns (his, hers, ours, theirs, whose) REFUSE the apostrophe",
-      "because it comes from Old English and predates the apostrophe",
-      "because it is British English only",
-      "because it is always used with a noun"
+      "because possessive pronouns never take an apostrophe",
+      "because the apostrophe is kept for plural nouns",
+      "because 'whose' is always followed by a noun",
+      "because question words never take an apostrophe"
     ],
     "context": "The whole family of possessive pronouns skips the apostrophe. The apostrophe on WHO'S is saved for the contraction.",
     "topic": "whose-vs-whos-the-possessive-pronoun-exception-again"
@@ -11793,12 +11793,12 @@
   {
     "tier": 4,
     "question": "A coat-check attendant holds up a coat and asks, \"Who's the person whose coat this is?\" How does the question use both words correctly?",
-    "answer": "WHO'S = who is (asking about identity); WHOSE = shows possession of the coat",
+    "answer": "WHO'S stands for 'who is'; WHOSE marks the owner",
     "choices": [
-      "WHO'S = who is (asking about identity); WHOSE = shows possession of the coat",
-      "both forms are used but interchangeable",
-      "WHO'S is British; WHOSE is American",
-      "this is a trick question -- the sentence has an error"
+      "WHO'S stands for 'who is'; WHOSE marks the owner",
+      "WHO'S marks the owner; WHOSE stands for 'who is'",
+      "WHO'S stands for 'who has'; WHOSE stands for 'who is'",
+      "WHO'S and WHOSE both mark the owner here"
     ],
     "context": "The full sentence: \"Who is the person to whom this coat belongs?\" WHO'S = who is; WHOSE = possessive.",
     "topic": "whose-vs-whos-the-possessive-pronoun-exception-again"
@@ -11915,7 +11915,7 @@
       "YOUR should be YOU'RE -- a contraction of 'you are'",
       "YOUR should be YOU -- pronouns need no apostrophe",
       "YOUR is correct -- YOUR is a way of saying YOU ARE",
-      "BEST should be BESTEST -- superlatives take -EST"
+      "Add IS after YOUR -- the line is missing its verb"
     ],
     "context": "YOU'RE = you are (contraction, apostrophe). YOUR = possessive. The card was meant to say 'You are the best.' Source: Merriam-Webster usage note.",
     "topic": "your-vs-youre-the-possessive-apostrophe-punchline"
@@ -11923,12 +11923,12 @@
   {
     "tier": 2,
     "question": "A sister texts her brother, \"Your going to be late again.\" What is the correct fix?",
-    "answer": "Change YOUR to YOU'RE -- 'You are going to be late' works",
+    "answer": "Change YOUR to YOU'RE -- it stands for 'you are'",
     "choices": [
-      "Change YOUR to YOU'RE -- 'You are going to be late' works",
+      "Change YOUR to YOU'RE -- it stands for 'you are'",
       "Change GOING to GOES -- verb agreement error",
       "Add a comma after YOUR -- direct address",
-      "The sentence is fine as written"
+      "Keep YOUR -- the sentence is fine as written"
     ],
     "context": "'You are going to be late again' passes the swap test cleanly -- so YOU'RE (with apostrophe) is required. Source: Merriam-Webster usage note.",
     "topic": "your-vs-youre-the-possessive-apostrophe-punchline"
@@ -11936,12 +11936,12 @@
   {
     "tier": 3,
     "question": "A note on the fridge reads, \"YOU'RE dog is chasing the mailman!\" A boy checks it by reading \"you are\" in place of the first word. Which fix does the check call for?",
-    "answer": "Change YOU'RE to YOUR -- 'You are dog is chasing' fails the swap",
+    "answer": "Change YOU'RE to YOUR -- possession is meant",
     "choices": [
-      "Change YOU'RE to YOUR -- 'You are dog is chasing' fails the swap",
+      "Change YOU'RE to YOUR -- possession is meant",
       "Change DOG to DOGS -- plural required",
       "Change IS to ARE -- verb agreement error",
-      "The sentence is fine as written"
+      "Keep YOU'RE -- the sentence is fine as written"
     ],
     "context": "'You are dog is chasing the mailman' makes no sense -- so YOUR (possessive, no apostrophe) is what belongs here. Source: Grokipedia 'Your and you're' (2026-09-05).",
     "topic": "your-vs-youre-the-possessive-apostrophe-punchline"
@@ -11975,12 +11975,12 @@
   {
     "tier": 5,
     "question": "A student's academic paper opens with the line \"Ur going to enjoy this book.\" What is wrong here, and what is the fix?",
-    "answer": "UR is a texting register that does not belong in a formal essay -- write YOU'RE",
+    "answer": "UR is texting shorthand -- an essay needs YOU'RE",
     "choices": [
-      "UR is a texting register that does not belong in a formal essay -- write YOU'RE",
-      "UR is fine anywhere -- modern style guides accept it",
+      "UR is texting shorthand -- an essay needs YOU'RE",
+      "UR is fine anywhere -- style guides now accept it",
       "UR should be YOUR -- possession is meant",
-      "The sentence is correct as written"
+      "Keep UR -- the sentence is correct as written"
     ],
     "context": "UR is a texting shortcut for YOU or YOU ARE -- valid in that register, wrong for essays. In formal writing it belongs as YOU'RE. Source: Chicago Manual of Style 17e section 5.220-5.221.",
     "topic": "your-vs-youre-the-possessive-apostrophe-punchline"
@@ -12066,38 +12066,38 @@
   {
     "tier": 1,
     "question": "A card thanking a retired teacher ends, 'And I will never forget her kindness.' Is it a grammatical error to open a sentence with 'And'?",
-    "answer": "no -- 'never begin with And or But' is a zombie rule with no grammatical basis",
+    "answer": "no -- the ban is a classroom myth, not a rule",
     "choices": [
-      "no -- 'never begin with And or But' is a zombie rule with no grammatical basis",
-      "yes -- and cannot start a sentence",
-      "yes -- only in formal writing",
-      "it depends on the tense"
+      "no -- the ban is a classroom myth, not a rule",
+      "yes -- 'And' may only join words inside a sentence",
+      "yes -- but only in formal writing, not in a card",
+      "no -- but only because a card is informal writing"
     ],
     "context": "ZOMBIE RULE: 'never begin a sentence with And or But' is a schoolroom myth. Chicago Manual of Style 5.250 explicitly states 'a substantial percentage (often as many as 10 percent) of the sentences in first-rate writing begin with conjunctions.'",
     "topic": "zombie-rule-never-begin-a-sentence-with-and-or-but"
   },
   {
     "tier": 2,
-    "question": "Generations of students have been told never to begin a sentence with 'And' or 'But.' Where did that rule come from?",
-    "answer": "19th-century schoolteachers who wanted to stop overuse in beginner writing",
+    "question": "Generations of students have been told never to begin a sentence with 'And' or 'But.' Where did that rule most likely come from?",
+    "answer": "teachers trying to stop children's endless chains of 'and'",
     "choices": [
-      "19th-century schoolteachers who wanted to stop overuse in beginner writing",
-      "the Chicago Manual of Style",
-      "Strunk and White",
-      "Shakespeare"
+      "teachers trying to stop children's endless chains of 'and'",
+      "Latin grammarians, whose rules English writers copied",
+      "the dictionary makers of the 1700s",
+      "Strunk and White's 'The Elements of Style'"
     ],
-    "context": "The rule was invented as a teaching device to prevent young writers from starting every sentence with 'And'. It was never a real grammar rule -- most style guides now debunk it explicitly.",
+    "context": "The rule most likely began as a classroom device to stop young writers from starting every sentence with 'And'; Bryan Garner suggests schoolteachers laid it down for that reason. It was never a real grammar rule -- most style guides now debunk it explicitly.",
     "topic": "zombie-rule-never-begin-a-sentence-with-and-or-but"
   },
   {
     "tier": 2,
     "question": "A student who was told never to open a sentence with 'And' or 'But' goes through the classics on the shelf to check. Which writers does she catch doing it often?",
-    "answer": "all of them: Shakespeare, Bible translators (King James), Jane Austen, Charles Dickens",
+    "answer": "all of them, Shakespeare and Dickens included",
     "choices": [
-      "all of them: Shakespeare, Bible translators (King James), Jane Austen, Charles Dickens",
-      "only modern writers",
-      "only casual writers",
-      "none of them"
+      "all of them, Shakespeare and Dickens included",
+      "only the twentieth-century novelists",
+      "only the poets, for the sake of rhythm",
+      "only the Bible translators, not the novelists"
     ],
     "context": "The King James Bible begins many verses with 'And'. Shakespeare, Austen, Dickens routinely use sentence-initial And/But. The 'rule' contradicts centuries of respected English usage.",
     "topic": "zombie-rule-never-begin-a-sentence-with-and-or-but"
@@ -12105,53 +12105,53 @@
   {
     "tier": 3,
     "question": "The Chicago Manual of Style has a verdict on sentences that open with 'And' or 'But.' What does it call them?",
-    "answer": "common in first-rate writing (as many as 10 percent of sentences)",
+    "answer": "common in first-rate writing",
     "choices": [
-      "common in first-rate writing (as many as 10 percent of sentences)",
-      "always wrong",
+      "common in first-rate writing",
+      "a habit of careless writers",
       "acceptable only in dialogue",
-      "a British-only style"
+      "a mark of informal writing"
     ],
-    "context": "Chicago is emphatic: 'There is no historical or grammatical foundation for considering such usage a violation of any rule.' Bryan Garner's Modern English Usage says the same.",
+    "context": "Chicago calls the belief that such a sentence is an error one with 'no historical or grammatical foundation,' and it notes that often as many as 10 percent of the sentences in first-rate writing begin with a conjunction. Bryan Garner's Modern English Usage says the same.",
     "topic": "zombie-rule-never-begin-a-sentence-with-and-or-but"
   },
   {
     "tier": 3,
-    "question": "A teacher circles four sentence openers in a student's essay. Which one is a real grammar problem?",
-    "answer": "opening with a subordinating conjunction ('Because', 'Although') without a main clause = fragment",
+    "question": "A teacher circles four short sentences in a student's essay. Which one has a real grammar problem?",
+    "answer": "'Because the bus was late.'",
     "choices": [
-      "opening with a subordinating conjunction ('Because', 'Although') without a main clause = fragment",
-      "opening with And",
-      "opening with But",
-      "opening with However"
+      "'Because the bus was late.'",
+      "'And the bus was late.'",
+      "'But the bus was late.'",
+      "'However, the bus was late.'"
     ],
-    "context": "SUBORDINATING conjunctions (because, although, if, when) create dependent clauses. Starting with one requires a main clause to follow. 'Because it rained' is a fragment; 'And it rained' is a complete sentence.",
+    "context": "'Because the bus was late' is a fragment: BECAUSE, a subordinating conjunction, makes a dependent clause that needs a main clause to finish it. 'And the bus was late' and 'But the bus was late' are complete sentences, and so is 'However, the bus was late.'",
     "topic": "zombie-rule-never-begin-a-sentence-with-and-or-but"
   },
   {
     "tier": 4,
     "question": "A sportswriter opens a paragraph with 'But nobody expected her to win.' Why is that sentence grammatically sound?",
-    "answer": "BUT is a coordinating conjunction; using it to open a sentence signals contrast with a preceding thought",
+    "answer": "BUT is a coordinator, and a full main clause follows it",
     "choices": [
-      "BUT is a coordinating conjunction; using it to open a sentence signals contrast with a preceding thought",
-      "BUT is a subordinator",
-      "BUT cannot open sentences",
-      "should be 'However'"
+      "BUT is a coordinator, and a full main clause follows it",
+      "BUT is a subordinator, so it makes a dependent clause",
+      "BUT works as an adverb here, just like 'however'",
+      "BUT is allowed because sportswriting is informal"
     ],
-    "context": "Sentence-initial BUT (or AND) creates a strong connection to the previous sentence. Style guides warn against overuse but recognise it as legitimate. It is not a grammar error.",
+    "context": "Sentence-initial BUT (or AND) creates a strong connection to the previous sentence, and a full main clause follows it. Style guides warn against overuse but recognize it as legitimate, in formal writing too. It is not a grammar error.",
     "topic": "zombie-rule-never-begin-a-sentence-with-and-or-but"
   },
   {
     "tier": 5,
     "question": "A biography of a runner ends a chapter with 'She trained for months. And she won.' What effect does the 'And' at the start of the second sentence create?",
-    "answer": "emphasis and dramatic pacing -- more forceful than a comma or semicolon would be",
+    "answer": "emphasis -- the pause makes the win land harder",
     "choices": [
-      "emphasis and dramatic pacing -- more forceful than a comma or semicolon would be",
-      "grammatical error",
-      "run-on sentence",
-      "fragment"
+      "emphasis -- the pause makes the win land harder",
+      "a fragment -- 'And she won' cannot stand alone",
+      "a run-on -- the two sentences should be joined",
+      "a softer tone -- the 'And' blurs the contrast"
     ],
-    "context": "Rhetorical effect: sentence-initial AND emphasises what follows. 'She trained for months, and she won' feels smooth. 'She trained for months. And she won.' lands with a punch. Both are grammatical.",
+    "context": "Rhetorical effect: sentence-initial AND emphasizes what follows. 'She trained for months, and she won' feels smooth. 'She trained for months. And she won.' lands with a punch. Both are grammatical.",
     "topic": "zombie-rule-never-begin-a-sentence-with-and-or-but"
   },
   {
