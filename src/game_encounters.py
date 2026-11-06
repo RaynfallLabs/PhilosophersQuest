@@ -1923,10 +1923,16 @@ class EncountersMixin:
         elif rtype == 'enchant_weapon':
             w = self.player.weapon
             if w:
-                w.enchant_bonus += reward.get('amount', 1)
+                # Up to the blade's own cap (items.effective_enchant_cap), as
+                # a scroll of enchant weapon: it had none, so a story reward
+                # took Broken Gram (cap 0) to +1 and any blade past +5.
+                from items import effective_enchant_cap
+                old = int(getattr(w, 'enchant_bonus', 0) or 0)
+                cap = effective_enchant_cap(self.player, 'weapon', w)
+                w.enchant_bonus = max(old, min(cap, old + int(reward.get('amount', 1))))
                 # The number only when the weapon is identified: it named an
                 # unknown blade by its true name and told its enchantment.
-                if self._enchant_shown(w):
+                if self._enchant_shown(w) and w.enchant_bonus != old:
                     self.add_message(f"Your {self._bare_name(w)} is now {w.enchant_bonus:+d}!", 'success')
                 else:
                     self.add_message(f"Your {self._bare_name(w)} glows!", 'success')
