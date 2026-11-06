@@ -265,12 +265,12 @@ The v2.18.0 commit kept these on disk because migrating would break every pickle
 | pattern | count | dispatch | one-line behaviour |
 |---|---|---|---|
 | `aggressive` | 332 | fall-through to `_standard_move` after awareness/flee/charge gates | Approach player greedily, attack when adjacent. The default. |
-| `ranged` | 101 | `_ranged_turn` | Shoot from LOS at distance 2-6, retreat if too close, approach if too far. Will take a melee swing if cornered. Piercing-ranged monsters fire through intervening allies when blocked. |
+| `ranged` | 101 | `_spots_player` then `_ranged_turn` | Shoot from LOS at distance 2-6, retreat if too close, approach if too far. Will take a melee swing if cornered. Piercing-ranged monsters fire through intervening allies when blocked. |
 | `sessile` | 29 | returns False immediately | Rooted — only responds if `_alerted` or player is `aggravated` (treated as aggressive). Fungal / coral / mimic-adjacent. |
 | `ambush` | 23 | lurks at `dist > 5`, flips to `aggressive` once sprung | Invisible until player closes within 5 tiles. |
 | `hit_and_run` | 17 | `_hit_and_run_turn` (`hunting` → `retreating` → `hiding`) | Asterion-style. Attacks 1-2 times, retreats through phasing walls for 3 turns, then hides 4-6 turns before hunting again. |
-| `summoner` | 8 | `_summoner_turn` | Spawns a minion every `summon_cooldown` turns up to `summon_max`, otherwise behaves ranged. Sets `_wants_summon` for `main.py::_spawn_summoner_minion` to resolve. |
-| `healer` | 6 | `_healer_turn` | Heals the most-damaged adjacent same-kind/tag ally by `heal_amount_pct × max_hp`. Falls back to ranged / aggressive when nothing to heal. 6 monsters: `orc_priest`, `goblin_warpriest`, `cult_priest`, `viper_priestess`, `plague_witch`, `deep_one_priest`. |
+| `summoner` | 8 | `_summoner_turn` | Once it has spotted the hero (`_spots_player`, the same detection check as every hunter), spawns a minion every `summon_cooldown` turns up to `summon_max`, otherwise behaves ranged. Sets `_wants_summon` for `main.py::_spawn_summoner_minion` to resolve. |
+| `healer` | 6 | `_healer_turn` | Heals the most-damaged adjacent same-kind/tag ally by `heal_amount_pct × max_hp` (needs no sight of the hero). Falls back to ranged / aggressive when nothing to heal, once it has spotted the hero (`_spots_player`). 6 monsters: `orc_priest`, `goblin_warpriest`, `cult_priest`, `viper_priestess`, `plague_witch`, `deep_one_priest`. |
 | `cowardly` | 3 | `_standard_move` with inverted direction | Runs from the player; also the fallback for `pack_dependent` when alone. |
 | `dancer` | 2 | `_dancer_turn` | Medusa & Lamia. Approach normally when far; when adjacent, pick a *different* adjacent-to-player tile each turn before striking. Hard to pin without chokepoints. |
 | `mimic` | 2 | `_mimic_turn` | Inert until the player steps adjacent; then `_mimic_surprise = True`, pattern flips to `aggressive`, first attack lands at `×1.75` damage. |
