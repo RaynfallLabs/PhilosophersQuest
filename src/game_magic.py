@@ -2432,8 +2432,13 @@ class MagicMixin:
                 if (tags & BANISHABLE) and not is_boss:
                     target.alive = False
                     target.hp = 0
-                    # No treasure / on_killed callback — banished, not slain.
-                    # But a banished thief drops the hero's things here and
+                    # Sent away, not killed: _on_monster_killed (which the
+                    # next turn's reaper runs for it) leaves no corpse and
+                    # does not call it slain. What else a banishment earns
+                    # (its loot, the kill count, kill quirks, the Seeker's
+                    # kill) still goes through that handler: Brandon's ruling.
+                    target._banished = True
+                    # A banished thief drops the hero's things here and
                     # now: it does not take them to its home plane (CODE-03).
                     import theft as _theft
                     for _tmsg in _theft.give_back(self, target):
