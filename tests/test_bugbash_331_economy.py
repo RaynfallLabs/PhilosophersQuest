@@ -131,6 +131,62 @@ def test_a_traders_price_never_names_a_curse_ring(level):
             a, level, known=False, identified=False), a.id
 
 
+def _scribe(g):
+    """The bookseller (scribe service) beside the hero, a ring to study."""
+    from mystery_system import MerchantNPC, build_trader
+    g.ground_items = [i for i in g.ground_items if not isinstance(i, MerchantNPC)]
+    m = build_trader('bookseller', g.dungeon_level, random.Random(3))
+    m.x, m.y = g.player.x + 1, g.player.y
+    g.ground_items.append(m)
+    g._open_shop()
+    ring = copy.copy(next(a for a in items.load_items('accessory')
+                          if not getattr(a, 'is_unique', False) and hasattr(a, 'id_level')))
+    ring.identified = False
+    g.player.inventory.append(ring)
+    g.player_gold = 5000
+    return m, ring
+
+
+def test_odins_free_identify_takes_no_scribes_fee(monkeypatch):
+    """C9: the scribe's service ran the identify, the Cloak of Odin's free
+    identify answered it with no question, and the fee was taken anyway."""
+    import chain_passives
+    real = chain_passives.player_has_passive
+    monkeypatch.setattr(chain_passives, 'player_has_passive',
+                        lambda p, f: f == 'identify_one_per_floor_free' or real(p, f))
+    g = _game()
+    _m, ring = _scribe(g)
+    gold = g.player_gold
+    g._trader_service_on('id_retry', ring)
+    assert not g._needs_identify(ring)                     # Odin named it
+    assert g.player_gold == gold                           # and the scribe asked nothing
+    assert not chain_passives.is_charge_available(g.player, 'identify_one_per_floor_free')
+
+
+def test_the_scribe_is_paid_when_he_sits_in_on_a_question(monkeypatch):
+    import chain_passives
+    from quiz_engine import QuizState
+    g = _game()
+    _m, ring = _scribe(g)
+    gold = g.player_gold
+    g._trader_service_on('id_retry', ring)
+    assert g.quiz_engine.state == QuizState.ASKING         # a question is up
+    assert g.player_gold < gold
+
+
+def test_no_fee_when_a_mastered_tier_answers_for_you():
+    """A mastered philosophy tier auto-passes: no question, no scribe."""
+    import philosophy_mastery
+    g = _game()
+    _m, ring = _scribe(g)
+    tier = philosophy_mastery.identify_tier(ring, g.player)
+    g.quiz_engine._mastered.add(('philosophy', tier))
+    gold = g.player_gold
+    g._trader_service_on('id_retry', ring)
+    assert not g._needs_identify(ring)
+    assert g.player_gold == gold
+
+
 def test_a_ware_set_at_your_feet_keeps_its_price_for_the_resale_cap(monkeypatch):
     """Bought on floor 3 and too heavy to carry; carried down to floor 40 and
     sold, it fetched four times what it cost."""
