@@ -166,7 +166,8 @@ class QuirkSystem:
         ...) share their names with statuses that accessories grant. When
         such an accessory was unequipped, the game popped the status and
         the quirk's permanent reward went with it. The names recorded here
-        are skipped by Game._remove_status_if_no_other_grants.
+        are kept by Player.drop_worn_status (which every unequip path,
+        Game._remove_status_if_no_other_grants included, goes through).
         """
         pl = self._pl
         # Set aside what is already permanent, so a status the reward grants

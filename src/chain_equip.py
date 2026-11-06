@@ -99,6 +99,18 @@ def life_save_spent(player, item, bonuses: dict) -> bool:
     return True
 
 
+def grants_chain_status(player, item, status: str) -> bool:
+    """Does this worn item's attuned tier still lend ``status``? A life-save
+    it has spent stays listed (it comes off with the item) but is not lent:
+    it must not keep another item's ward alive (Player._still_granted)."""
+    if status not in (getattr(item, '_chain_statuses', None) or ()):
+        return False
+    if status == 'life_save':
+        tier = int(getattr(item, 'achieved_tier', 0) or 0)
+        return not life_save_spent(player, item, get_tier_bonuses(item, tier))
+    return True
+
+
 def apply_tier_bonuses(player, item, tier: int) -> None:
     """Apply this item's tier_bonuses[tier] to the player + override item fields.
 
@@ -224,9 +236,15 @@ def revert_tier_bonuses(player, item) -> None:
         player.mp = min(player.mp, player.max_mp)
         item._chain_mp_bonus = 0
 
-    # Drop statuses
+    # Drop statuses, each only if nothing else worn still grants it
+    # (Player.drop_worn_status): taking off an attuned Ring of Gawain took
+    # the Greaves of Hermes' haste with it.
+    _drop = getattr(player, 'drop_worn_status', None)
     for status_name in getattr(item, '_chain_statuses', []):
-        player.status_effects.pop(status_name, None)
+        if _drop is not None:
+            _drop(status_name, item)
+        else:
+            player.status_effects.pop(status_name, None)
 
     # Clear runtime tracking
     item.achieved_tier = 0
