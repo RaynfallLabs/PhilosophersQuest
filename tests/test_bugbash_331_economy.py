@@ -164,7 +164,6 @@ def test_odins_free_identify_takes_no_scribes_fee(monkeypatch):
 
 
 def test_the_scribe_is_paid_when_he_sits_in_on_a_question(monkeypatch):
-    import chain_passives
     from quiz_engine import QuizState
     g = _game()
     _m, ring = _scribe(g)
