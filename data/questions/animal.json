@@ -898,7 +898,7 @@
   },
   {
     "tier": 2,
-    "question": "Around Antarctica, a crocodile icefish glides through water so cold that most fish would die there. It is the only animal with a backbone that carries no red blood cells at all, not one. What does its blood look like when a scientist draws a sample?",
+    "question": "Around Antarctica, a crocodile icefish glides through water so cold that most fish would die there. It is one of the very few backboned animals known to live as an adult with no hemoglobin, and its blood holds few red cells or none. What does that blood look like when a scientist draws a sample?",
     "answer": "Clear and white",
     "choices": [
       "Clear and white",
@@ -906,7 +906,7 @@
       "Deep blue",
       "Dark green"
     ],
-    "context": "The crocodile icefish (family Channichthyidae) is the only vertebrate with no red blood cells and no hemoglobin -- the pigment that makes blood red -- so its blood runs clear and translucent white. Source: Quanta Magazine, 'Icefish Study Adds Another Color to the Story of Blood'; The Blood Project.  (Legend.)",
+    "context": "Crocodile icefishes (family Channichthyidae) live their adult lives without hemoglobin, the pigment that makes blood red; they were the only backboned animals known to do so until a 2025 study found the same loss in some Asian noodlefishes. Red blood cells are usually absent from icefish blood, or rare and defunct, so it runs clear and translucent white. Sources: https://en.wikipedia.org/wiki/Channichthyidae ; https://grokipedia.com/page/Channichthyidae ; https://news.northeastern.edu/2026/01/01/asian-noodlefish-red-blood-cells/",
     "topic": "antifreeze-blood-and-freezing-solid"
   },
   {
@@ -3121,7 +3121,7 @@
   },
   {
     "tier": 3,
-    "question": "A blue whale moans across the sea at around 188 decibels, louder than a jet engine and among the loudest sounds any living animal makes. Because the sound travels so well through water, distant whales can hear one another across a remarkable distance. How far?",
+    "question": "A blue whale moans across the sea at around 188 decibels, one of the loudest voices in the animal world. Because the sound travels so well through water, distant whales can hear one another across a remarkable distance. How far?",
     "answer": "Up to about 1,000 miles",
     "choices": [
       "Up to about 1,000 miles",
@@ -5448,20 +5448,7 @@
   },
   {
     "tier": 3,
-    "question": "A sperm whale about to dive more than a mile down blows most of the air out of its lungs, about nine-tenths of it, just when a human diver would gulp the biggest breath he could. Why does the whale empty its lungs on purpose?",
-    "answer": "So there is almost no gas left to be crushed or dissolved dangerously",
-    "choices": [
-      "So there is almost no gas left to be crushed or dissolved dangerously",
-      "So it can float higher and rest between dives",
-      "So it can call more loudly to the pod",
-      "So warm air does not chill its blood"
-    ],
-    "context": "By exhaling most of its air, the whale leaves little gas to be forced into its tissues under crushing pressure. Source: Biologyinsights.com, 'How Deep Can a Sperm Whale Dive?'.",
-    "topic": "deep-diving-bodies"
-  },
-  {
-    "tier": 3,
-    "question": "A sperm whale dives a mile down, where the water presses on it with some 200 times the pressure at the surface. Instead of snapping under that weight, its chest does something no human chest could survive. What happens to its ribs and lungs on the way down?",
+    "question": "A sperm whale dives a mile down, where the water presses on it with about 160 times the pressure at the surface. Instead of snapping under that weight, its chest does something no human chest could survive. What happens to its ribs and lungs on the way down?",
     "answer": "Its ribs hinge backward and its lungs collapse on purpose",
     "choices": [
       "Its ribs hinge backward and its lungs collapse on purpose",
@@ -6787,7 +6774,7 @@
   },
   {
     "tier": 5,
-    "question": "A sperm whale hunting squid far below the surface makes the loudest clicks of any animal, yet it has no voice box. It pushes air past a pair of lip-shaped flaps at the front of its huge skull, the flaps whalers nicknamed the monkey lips. What happens to that first pulse inside the whale's head before a full click shoots forward?",
+    "question": "A sperm whale hunts squid far below the surface by clicking, yet it has no voice box. It pushes air past a pair of lip-shaped flaps at the front of its huge skull, the flaps whalers nicknamed the monkey lips. What happens to that first pulse inside the whale's head before a full click shoots forward?",
     "answer": "It bounces between two air sacs in the head",
     "choices": [
       "It bounces between two air sacs in the head",
@@ -8061,7 +8048,7 @@
   },
   {
     "tier": 3,
-    "question": "A star-nosed mole tunnels blind through wet North American soil, feeling its way with the ring of pink feelers around its snout. When one feeler brushes something, the mole must decide whether it is food, usually a worm, and swallow it before it can wriggle free. It holds the record as the fastest-eating mammal on Earth. From first touch to swallow, how long does a meal take?",
+    "question": "A star-nosed mole tunnels blind through wet North American soil, feeling its way with the ring of pink feelers around its snout. When one feeler brushes something, the mole must decide whether it is food, usually a worm, and swallow it before it can wriggle free. It holds the record as the fastest-eating mammal on Earth. From first touch to swallow, how long does a typical meal take?",
     "answer": "About a quarter of a second",
     "choices": [
       "About a quarter of a second",
@@ -8069,7 +8056,7 @@
       "About ten seconds",
       "About half a minute"
     ],
-    "context": "Its fastest recorded meal is about 120 milliseconds, roughly a quarter of a second, quicker than a human blink. Guinness lists the star-nosed mole as the world's fastest forager. Packed into that tiny star are more than 25,000 microscopic touch sensors wired to over 100,000 nerve fibers, letting it identify a worm almost instantly in total darkness. Source: Wikipedia, Star-nosed mole (120 ms minimum; Guinness); Carnegie Museum, 'The Nose that Sees.'",
+    "context": "A typical meal takes about 227 milliseconds, roughly a quarter of a second, and the fastest recorded took just 120 milliseconds, about an eighth of a second. Guinness lists the star-nosed mole as the world's fastest forager. Packed into that tiny star are more than 25,000 microscopic touch sensors wired to over 100,000 nerve fibers, letting it identify a worm almost instantly in total darkness. Source: Grokipedia, Star-nosed mole (227 ms average, 120 ms minimum); Wikipedia, Star-nosed mole (Guinness); Carnegie Museum, 'The Nose that Sees.'",
     "topic": "feeling-in-the-dark-the-touch-specialists"
   },
   {
@@ -19423,7 +19410,7 @@
   },
   {
     "tier": 2,
-    "question": "A Virginia opossum, North America's only wild marsupial, delivers more than twenty babies in a single birth, far more than she can raise. The tiny newborns scramble blindly through her fur toward the pouch. What decides which of them survive?",
+    "question": "A Virginia opossum, the only marsupial found wild north of Mexico, can deliver twenty or more babies in a single birth, far more than she can raise. The tiny newborns scramble blindly through her fur toward the pouch. What decides which of them survive?",
     "answer": "Only those that reach one of her ~13 teats live",
     "choices": [
       "Only those that reach one of her ~13 teats live",
@@ -19431,7 +19418,7 @@
       "The first-born pushes the rest out of the pouch",
       "She raises whichever ones are largest at birth"
     ],
-    "context": "A Virginia opossum mother has about 13 teats, so of her 20-plus newborns only those that reach and latch onto a teat survive. Her pregnancy lasts just 12–13 days, one of the shortest of any mammal. Source: sdzwildlifeexplorers.org/animals/virginia-opossum",
+    "context": "A Virginia opossum mother has about 13 teats, so when she bears more young than that, as many as 20 or more in one litter, only those that reach and latch onto a teat survive. Her pregnancy lasts just 12-13 days, one of the shortest of any mammal. Sources: sdzwildlifeexplorers.org/animals/virginia-opossum ; https://grokipedia.com/page/Virginia_opossum",
     "topic": "pouches-and-tiny-newborns-marsupials"
   },
   {
@@ -22322,7 +22309,7 @@
   },
   {
     "tier": 3,
-    "question": "A Smilodon pinned its prey still before it sank its two curved fangs, each about seven inches long, into soft flesh. The fangs looked like fearsome daggers, but they were not built for crunching, and paleontologists call them fragile. What weakness made the cat hold its prey still first?",
+    "question": "A Smilodon pinned its prey still before it sank its two curved fangs, each up to 11 inches long, into soft flesh. The fangs looked like fearsome daggers, but they were not built for crunching, and paleontologists call them fragile. What weakness made the cat hold its prey still first?",
     "answer": "they snapped easily under sideways twisting",
     "choices": [
       "they snapped easily under sideways twisting",
@@ -24350,7 +24337,7 @@
   },
   {
     "tier": 4,
-    "question": "The saber-toothed cat Smilodon carried eight-inch upper canines, the kind of weapon that seems to call for a crushing bite. Yet biomechanical models put its jaw force at only about a third of a lion's, feeble for a cat its size. With so weak a jaw, how did it force those long blades deep into pinned prey?",
+    "question": "The saber-toothed cat Smilodon carried upper fangs up to 11 inches long, the kind of weapon that seems to call for a crushing bite. Yet biomechanical models put its jaw force at only about a third of a lion's, feeble for a cat its size. With so weak a jaw, how did it force those long blades deep into pinned prey?",
     "answer": "Powerful neck muscles hauled its skull down to sink them in",
     "choices": [
       "Powerful neck muscles hauled its skull down to sink them in",
