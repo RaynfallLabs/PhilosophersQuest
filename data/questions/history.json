@@ -2,14 +2,14 @@
   {
     "tier": 3,
     "question": "Abigail Adams ran the family farm at Braintree alone in the spring of 1776, while her husband John helped draft a new nation's laws at the Continental Congress. That March she wrote begging him to 'Remember the Ladies.' She did not ask out of mere kindness. What warning did she give him about the power husbands held over their wives?",
-    "answer": "'Remember all Men would be tyrants if they could.'",
+    "answer": "That all men would be tyrants if they could",
     "choices": [
-      "'Remember all Men would be tyrants if they could.'",
-      "'A wife's duty is obedience in all things.'",
-      "'Let the churches decide what is owed to women.'",
-      "'The colonies need every able hand at the loom.'"
+      "That all men would be tyrants if they could",
+      "That cruel husbands would answer to God for it",
+      "That husbands would squander their wives' property",
+      "That widows would be left to starve on the farms"
     ],
-    "context": "Abigail Adams pressed a natural-rights argument straight at the men writing the founding documents: do not put 'such unlimited power into the hands of the Husbands.' It is the most famous documented founding-era argument over women's place in the new republic, and it survives in her own handwriting. Source: Massachusetts Historical Society, Adams Family Papers, Letter from Abigail Adams to John Adams, 31 March–5 April 1776 (masshist.org/digitaladams/archive/doc?id=L17760331aa).",
+    "context": "Abigail Adams pressed a natural-rights argument straight at the men writing the founding documents: 'Do not put such unlimited power into the hands of the Husbands. Remember all Men would be tyrants if they could.' It is the most famous documented founding-era argument over women's place in the new republic, and it survives in her own handwriting. Source: Massachusetts Historical Society, Adams Family Papers, Letter from Abigail Adams to John Adams, 31 March–5 April 1776 (masshist.org/digitaladams/archive/doc?id=L17760331aa).",
     "topic": "abigail-adams-remember-the-ladies"
   },
   {
@@ -469,7 +469,7 @@
   },
   {
     "tier": 1,
-    "question": "In one of Aesop's fables, a speedy runner challenges a plodding rival to a race. The fast one, sure of winning, stops for a long nap partway through, and his rival plods steadily past him to the finish line. What is the fable called?",
+    "question": "In one of Aesop's fables, a speedy runner mocks a plodding rival, who challenges him to a race. The fast one, sure of winning, naps partway through, and his rival plods steadily past him to the finish line. What is the fable called?",
     "answer": "The Tortoise and the Hare",
     "choices": [
       "The Tortoise and the Hare",
@@ -500,7 +500,7 @@
     "choices": [
       "It drops pebbles in one by one",
       "It pecks a hole in the pitcher's side",
-      "It tips the pitcher onto its side",
+      "It waits for rain to fill the pitcher",
       "It calls other crows to lift it"
     ],
     "context": "The moral is 'Necessity is the mother of invention.' Cambridge researchers later showed real rooks can solve this exact puzzle. Source: americanliterature.com/author/aesop/short-story/the-crow-and-the-pitcher; cam.ac.uk/news/aesops-fable-the-crow-and-the-pitcher-more-fact-than-fiction.",
@@ -526,8 +526,8 @@
     "choices": [
       "A row of tiny Portuguese heads",
       "A row of tiny leopards, the royal beast",
-      "A row of tiny coral beads of office",
-      "A row of tiny mudfish, sign of the Oba"
+      "A row of tiny birds of prophecy",
+      "A row of tiny crocodiles, the sea god's beast"
     ],
     "context": "Nigeria chose this mask of Iyoba Idia as the official emblem of FESTAC '77, the great Black-and-African arts festival held in Lagos. The ring of carved Portuguese heads marks the bearded foreigners who had just arrived by sea. Source: https://www.metmuseum.org/art/collection/search/318622",
     "topic": "african-art-benin-bronzes-and-masks"
@@ -846,15 +846,15 @@
   },
   {
     "tier": 3,
-    "question": "A penniless orphan from the Caribbean island of Nevis reached New York in his teens with nothing and grew up to design America's whole system of money and credit. His face is on circulating U.S. money today, and apart from Benjamin Franklin he is the only man there who was never president. Which founder is he?",
+    "question": "A penniless orphan from the Caribbean island of Nevis reached New York in his teens with nothing and grew up to design America's whole system of money and credit. His face is on U.S. paper money today, and apart from Benjamin Franklin he is the only man on it who was never president. Which founder is he?",
     "answer": "Alexander Hamilton",
     "choices": [
       "Alexander Hamilton",
-      "Thomas Jefferson",
+      "Robert Morris",
       "Patrick Henry",
       "Samuel Adams"
     ],
-    "context": "Hamilton is on the modern ten-dollar bill — one of only two non-presidents (with Franklin) on circulating American money, and the only one born outside what is now the United States. https://en.wikipedia.org/wiki/United_States_ten-dollar_bill",
+    "context": "Hamilton is on the modern ten-dollar bill — one of only two non-presidents (with Franklin) on the paper money printed today, and the only one born outside what is now the United States. https://en.wikipedia.org/wiki/United_States_ten-dollar_bill",
     "topic": "alexander-hamilton-treasury-national-bank"
   },
   {
@@ -880,7 +880,7 @@
       "Control of the new national bank's headquarters",
       "A guarantee that slavery could never be taxed"
     ],
-    "context": "The 'dinner table bargain' of 20 June 1790, the Compromise of 1790: Madison let Hamilton's debt-assumption plan pass, and in return the permanent capital was placed on the Potomac River, which is why Washington, D.C. sits where it does. Jefferson later wrote that assumption was 'a bitter pill' for the South, so moving the seat of government there 'was a just measure.' Sources: https://www.battlefields.org/learn/articles/compromise-1790; https://en.wikipedia.org/wiki/Compromise_of_1790",
+    "context": "The 'dinner table bargain' of 20 June 1790, the Compromise of 1790: Madison let Hamilton's debt-assumption plan pass, and in return the permanent capital was placed on the Potomac River, which is why Washington, D.C. sits where it does. In Jefferson's later account, one of his two guests remarked that assumption would be a bitter pill for the South, and that moving the seat of government to the Potomac 'was a just measure.' Sources: https://www.battlefields.org/learn/articles/compromise-1790; https://en.wikipedia.org/wiki/Compromise_of_1790",
     "topic": "alexander-hamilton-treasury-national-bank"
   },
   {
@@ -898,20 +898,20 @@
   },
   {
     "tier": 5,
-    "question": "Thomas Jefferson called the national bank Alexander Hamilton wanted plainly unconstitutional. The Constitution listed the government's powers, he argued; those powers 'can all be carried into execution without a bank,' and the Tenth Amendment kept the rest for the states. Hamilton's reply won Washington over and still shapes how the Constitution is read. What was his core argument?",
-    "answer": "The Constitution grants implied powers, so the Necessary-and-Proper Clause lets Congress charter a bank",
+    "question": "Thomas Jefferson called the national bank Alexander Hamilton wanted plainly unconstitutional. The Constitution listed the government's powers, he argued; those powers 'can all be carried into execution without a bank,' and the proposed amendment that became the Tenth kept the rest for the states. Hamilton's reply won Washington over and still shapes how the Constitution is read. What was his core argument?",
+    "answer": "Congress holds implied powers, so it may charter a bank",
     "choices": [
-      "The Constitution grants implied powers, so the Necessary-and-Proper Clause lets Congress charter a bank",
+      "Congress holds implied powers, so it may charter a bank",
       "A wartime emergency let the president act without Congress",
       "The states had already surrendered all money powers to Congress",
       "Any law a majority of Congress passes is automatically constitutional"
     ],
-    "context": "This is the 'loose construction' doctrine: Hamilton argued the Constitution carries 'implied, as well as express powers,' so a bank was a reasonable means to a legitimate end. Washington sided with him on February 23, 1791. Jefferson's 'strict construction' held 'necessary' meant indispensable. https://billofrightsinstitute.org/essays/alexander-hamilton-and-the-national-bank/",
+    "context": "This is the 'loose construction' doctrine: Hamilton argued the Constitution carries 'implied, as well as express powers,' so a bank was a reasonable means to a legitimate end. Washington signed the bank bill on February 25, 1791. Jefferson's 'strict construction' held 'necessary' meant indispensable. https://billofrightsinstitute.org/essays/alexander-hamilton-and-the-national-bank/",
     "topic": "alexander-hamilton-treasury-national-bank"
   },
   {
     "tier": 1,
-    "question": "Alexander the Great, still a boy, watched his father King Philip's big black horse buck and rear at every rider. Alexander noticed that the horse was scared of its own moving shadow. What clever thing did he do to calm it before climbing on?",
+    "question": "Alexander the Great, still a boy, watched a big black horse, brought to sell to his father King Philip, buck and rear at every rider. He saw that it feared its own moving shadow. What did he do to calm it before mounting?",
     "answer": "Turned it to face the sun",
     "choices": [
       "Turned it to face the sun",
@@ -919,12 +919,12 @@
       "Sang to it until it grew still",
       "Fed it apples from his hand"
     ],
-    "context": "Alexander turned the stallion to face the sun so it could no longer see the shadow that frightened it, then quietly mounted and rode it. He named the horse Bucephalus — 'ox-head' — for a white mark on its brow, and rode it for decades. Source: Plutarch, Life of Alexander (via Livius.org); World History Encyclopedia 'Bucephalus'.",
+    "context": "Alexander turned the stallion to face the sun so it could no longer see the shadow that frightened it, then quietly mounted and rode it. The horse was already called Bucephalus, 'ox-head', perhaps for a brand or a white mark on its head, and Alexander rode it for nearly twenty years, until it died in India. Source: Plutarch, Life of Alexander (via Livius.org); World History Encyclopedia 'Bucephalus'.",
     "topic": "alexander-the-great-s-conquest-of-the-persian-em"
   },
   {
     "tier": 2,
-    "question": "A Persian noble's blade split Alexander the Great's helmet and cut his head beside the Granicus River in 334 BC, in his first big battle against Persia. As the young king swayed, another Persian raised a sword to strike him from behind. What saved Alexander's life at that instant?",
+    "question": "A Persian noble's blade split Alexander the Great's helmet beside the Granicus River in 334 BC, in his first big battle against Persia. In that same moment another Persian raised a sword to strike him from behind. What saved Alexander's life at that instant?",
     "answer": "Cleitus the Black sliced off the man's arm",
     "choices": [
       "Cleitus the Black sliced off the man's arm",
@@ -937,7 +937,7 @@
   },
   {
     "tier": 2,
-    "question": "Porus, a king in India, faced Alexander the Great at the Hydaspes River in 326 BC with a terrifying line of war elephants, and lost. Brought before Alexander wounded and in chains, he was asked how he wished to be treated. What did Porus say?",
+    "question": "Porus, a king in India, faced Alexander the Great at the Hydaspes River in 326 BC with a terrifying line of war elephants, and lost. Brought before Alexander wounded, he was asked how he wished to be treated. What did Porus say?",
     "answer": "Treat me as a king treats a king",
     "choices": [
       "Treat me as a king treats a king",
@@ -989,15 +989,15 @@
   },
   {
     "tier": 3,
-    "question": "Alexander the Great founded the city of Alexandria in Egypt. He then crossed 300 miles of desert to the oracle at Siwa. There the priest hailed him as the son of the god Zeus-Ammon. Alexander took it so much to heart that he changed how he was shown on his coins. What did his coins now show him wearing?",
+    "question": "Alexander the Great founded the city of Alexandria in Egypt. He then crossed 300 miles of desert to the oracle at Siwa, where the priest hailed him as the son of the god Zeus-Ammon. After his death, coins struck by his successors showed him with that god's sign. What did those coins show him wearing?",
     "answer": "Ram's horns curling from his head",
     "choices": [
       "Ram's horns curling from his head",
-      "A lion's mane around his face",
-      "A crown of golden sun-rays",
+      "A wreath of oak leaves",
+      "A Persian king's tall tiara",
       "An eagle perched on his helm"
     ],
-    "context": "The god Ammon was pictured with a ram's horns, so after Siwa hailed him as Ammon's son, Alexander's coins showed him wearing the ram's horns. Alexandria became the most famous of the many cities he named after himself. Source: World History Encyclopedia 'Alexander the Great'; TheCollector 'Alexander at the Oracle of Siwa'.",
+    "context": "The god Ammon was pictured with a ram's horns, so after his death coins struck by his old general Lysimachus showed Alexander, Ammon's son, wearing them. Alexandria became the most famous of the many cities he named after himself. Source: World History Encyclopedia 'Alexander the Great'; TheCollector 'Alexander at the Oracle of Siwa'.",
     "topic": "alexander-the-great-s-conquest-of-the-persian-em"
   },
   {
@@ -1107,14 +1107,14 @@
   {
     "tier": 2,
     "question": "George Patton carried two famous revolvers with ivory grips. When a reporter wrote that the grips were 'pearl-handled,' Patton exploded: they were ivory, not pearl. What kind of person, Patton said, carries a pearl-handled pistol?",
-    "answer": "\"A pimp from a cheap New Orleans whorehouse\"",
+    "answer": "A pimp from a cheap New Orleans brothel",
     "choices": [
-      "\"A pimp from a cheap New Orleans whorehouse\"",
-      "\"A gambler who never fired a shot in anger\"",
-      "\"A general who polishes medals he never earned\"",
-      "\"A coward who hides behind his own staff\""
+      "A pimp from a cheap New Orleans brothel",
+      "A dandy who never fired a shot in anger",
+      "A general who polishes medals he never earned",
+      "A coward who hides behind his own staff"
     ],
-    "context": "Patton bought the ivory-gripped Colt .45 Single Action Army in 1916 and notched it after killing a man in Mexico; he also carried a .357 Smith & Wesson. The pearl-handled insult is one of his most-quoted lines. https://www.wearethemighty.com/mighty-history/the-history-of-general-pattons-ivory-handled-revolvers/",
+    "context": "Patton bought the ivory-gripped Colt .45 Single Action Army in 1916 and notched it after killing a man in Mexico; he also carried a .357 Smith & Wesson. The pearl-handled insult is one of his most-quoted lines, though it is told in several wordings. https://www.wearethemighty.com/mighty-history/the-history-of-general-pattons-ivory-handled-revolvers/",
     "topic": "allied-commanders-eisenhower-patton-macarthur"
   },
   {
@@ -1133,14 +1133,14 @@
   {
     "tier": 5,
     "question": "Dwight Eisenhower handwrote a short note the night before D-Day, to be released only if the Normandy invasion failed. It said the troops had done all that bravery could do, and then it turned to the question of who was at fault. How did Eisenhower assign the blame in that note?",
-    "answer": "He wrote that any blame \"is mine alone.\"",
+    "answer": "He wrote that any blame was his alone.",
     "choices": [
-      "He wrote that any blame \"is mine alone.\"",
+      "He wrote that any blame was his alone.",
       "He blamed the unpredictable Channel weather.",
       "He blamed faulty intelligence reports.",
       "He left the question of blame unanswered."
     ],
-    "context": "His exact line: \"If any blame or fault attaches to the attempt it is mine alone.\" In his only slip of nerves he mis-dated it July 5 instead of June 5; he pocketed it after the landings succeeded, and an aide later rescued it from the trash. https://www.archives.gov/exhibits/american_originals_iv/images/d_day/eisenhower_note.html",
+    "context": "His exact line: \"If any blame or fault attaches to the attempt it is mine alone.\" In his only slip of nerves he mis-dated it July 5 instead of June 5; after the landings succeeded, his naval aide, Harry Butcher, saved it. https://www.archives.gov/exhibits/american_originals_iv/images/d_day/eisenhower_note.html",
     "topic": "allied-commanders-eisenhower-patton-macarthur"
   },
   {
@@ -1315,14 +1315,14 @@
   {
     "tier": 2,
     "question": "Edward Hopper painted Nighthawks in 1942: four people inside a brightly lit late-night diner, sealed behind one big curved sheet of glass. A viewer who looks hard at that diner notices something missing that every real diner has. What did Hopper leave out?",
-    "answer": "Any visible door to get in or out",
+    "answer": "Any visible door to the street",
     "choices": [
-      "Any visible door to get in or out",
+      "Any visible door to the street",
       "A clock on the wall above the counter",
       "A single empty seat at the counter",
       "The name of the diner over the entrance"
     ],
-    "context": "There is no entrance into or out of the Nighthawks diner at all — the glass is one seamless wedge, shutting the viewer out of the scene. Hopper finished it on January 21, 1942. Source: https://en.wikipedia.org/wiki/Nighthawks_(Hopper)",
+    "context": "No door to the street appears anywhere in the Nighthawks diner, only a kitchen door at the back; the glass is one seamless wedge, shutting the viewer out of the scene. Hopper finished it on January 21, 1942. Source: https://en.wikipedia.org/wiki/Nighthawks_(Hopper)",
     "topic": "american-modern-art-hopper-pollock-warhol"
   },
   {
@@ -1335,12 +1335,12 @@
       "\"My mother told me to.\"",
       "\"They sold well at the store.\""
     ],
-    "context": "There are exactly 32 canvases — one for each of the 32 soup flavors Campbell's sold then. MoMA bought all 32 together in 1996 and hangs them in four rows of eight. Source: https://en.wikipedia.org/wiki/Campbell%27s_Soup_Cans",
+    "context": "Blum told the story in a 2012 interview: \"I said, 'Why 32?' He said, 'There are 32 varieties.'\" There are exactly 32 canvases — one for each of the 32 soup flavors Campbell's sold then. MoMA bought all 32 together in 1996 and hangs them in four rows of eight. Source: https://en.wikipedia.org/wiki/Campbell%27s_Soup_Cans",
     "topic": "american-modern-art-hopper-pollock-warhol"
   },
   {
     "tier": 3,
-    "question": "Jackson Pollock turned his back on the upright easel that other painters stood at. 'I feel nearer, more part of the painting,' he explained in 1947; he wanted to 'literally be in the painting.' How did Pollock actually make his paintings?",
+    "question": "Jackson Pollock turned his back on the upright easel that other painters stood at. 'I feel nearer, more a part of the painting,' he explained in 1947; he wanted to 'literally be in the painting.' How did Pollock actually make his paintings?",
     "answer": "He spread the canvas flat and poured paint while walking around it",
     "choices": [
       "He spread the canvas flat and poured paint while walking around it",
@@ -1354,14 +1354,14 @@
   {
     "tier": 3,
     "question": "Andy Warhol painted Campbell's soup cans over and over, and critics read them as a cold joke about advertising. Warhol said his real reason was far simpler than that. Why did Warhol paint that soup?",
-    "answer": "He really ate it every day, the lunch his mother Julia made him",
+    "answer": "He had eaten it for lunch every day for twenty years",
     "choices": [
-      "He really ate it every day, the lunch his mother Julia made him",
+      "He had eaten it for lunch every day for twenty years",
       "He found an old crate of cans in his studio",
       "A company paid him to advertise the soup",
       "He thought it was the ugliest label he could find"
     ],
-    "context": "Warhol ate the same Campbell's soup lunch for about twenty years; his mother Julia made it for him. Source: https://www.thetakeout.com/2141649/andy-warhol-campbells-soup-lunch-twenty-years/",
+    "context": "Warhol told an interviewer in 1963 that he used to have the same lunch every day, for twenty years. He also remembered his mother, Julia, opening a can of Campbell's for him as a boy, because that was all the family could afford. Source: https://en.wikipedia.org/wiki/Campbell%27s_Soup_Cans",
     "topic": "american-modern-art-hopper-pollock-warhol"
   },
   {
@@ -1639,13 +1639,13 @@
   },
   {
     "tier": 4,
-    "question": "Suryavarman II, a Khmer king, built Angkor Wat in what is now Cambodia in the early 1100s: the largest religious building on Earth, ringed by a wide moat and covered in stone carvings. Most Khmer temples face east toward the rising sun, but Angkor Wat's main entrance faces west, the direction of death in Khmer belief. What do many scholars believe the king meant it to be as well?",
+    "question": "Suryavarman II, a Khmer king, built Angkor Wat in what is now Cambodia in the early 1100s: the largest religious building on Earth, ringed by a wide moat and covered in stone carvings. Most Khmer temples face east toward the rising sun, but Angkor Wat's main entrance faces west. What do many scholars believe the king meant it to be as well?",
     "answer": "His own funerary temple, a tomb for his death",
     "choices": [
       "His own funerary temple, a tomb for his death",
       "A fortress guarding the empire's western road",
-      "A market square for the capital's traders",
-      "A school for the kingdom's young priests"
+      "A royal palace where he would hold court",
+      "A coronation hall for the kings after him"
     ],
     "context": "Unlike most Khmer temples, which face east, Angkor Wat opens to the west — the direction associated with death — leading many scholars to argue Suryavarman II built it as his own funerary temple. The west-facing-tomb reading is a scholarly inference, not certain fact. https://angkorwatinhistory.wordpress.com/2017/11/15/construction-of-angkor-wat/",
     "topic": "angkor-wat-the-khmer-empire"
@@ -1670,10 +1670,10 @@
     "choices": [
       "Kitty",
       "Lotte",
-      "Emmy",
+      "Truus",
       "Greta"
     ],
-    "context": "Anne began her entries 'Dear Kitty.' She borrowed the name from a character in a series of Dutch novels by Cissy van Marxveldt that she was reading at the time. Source: Wikipedia, 'The Diary of a Young Girl'; Anne Frank House.",
+    "context": "Anne began her entries 'Dear Kitty.' She borrowed the name from a character in a series of Dutch novels by Cissy van Marxveldt that she was reading at the time. In her first notebook she also wrote to other made-up friends, such as Jettje and Marianne, before Kitty won out. Source: Wikipedia, 'The Diary of a Young Girl'; Anne Frank House.",
     "topic": "anne-frank-and-the-diary"
   },
   {
@@ -1704,7 +1704,7 @@
   },
   {
     "tier": 2,
-    "question": "Seagulls flashed silver past the attic window in February 1944, and Anne Frank, sitting there with her diary, wrote about them and about the dew. She also wrote about one tall thing outside that window, which she had already written about three times before. What was it?",
+    "question": "Seagulls flashed silver past the attic window in February 1944, and Anne Frank, sitting there with her diary, wrote about them and about the dew. She also wrote about one tall thing outside that window, and she came back to it twice in later entries. What was it?",
     "answer": "A chestnut tree",
     "choices": [
       "A chestnut tree",
@@ -1712,7 +1712,7 @@
       "A windmill",
       "A drawbridge"
     ],
-    "context": "The attic had the one window the hiders had not blacked out. Through it Anne could see the sky, the birds, and a tall chestnut tree she returned to again and again in her diary. Source: Anne Frank House, 'The chestnut tree.'",
+    "context": "The attic had the one window the hiders had not blacked out. Through it Anne could see the sky, the birds, and a tall chestnut tree she wrote about three times in her diary, first in that February entry. Source: Anne Frank House, 'The chestnut tree.'",
     "topic": "anne-frank-and-the-diary"
   },
   {
@@ -1723,14 +1723,14 @@
       "Death or being sent to a concentration camp",
       "A large fine and loss of ration books",
       "House arrest for the rest of the war",
-      "Forced labor in a German factory"
+      "Banishment from Amsterdam for life"
     ],
-    "context": "Miep Gies risked her life carrying supplies to the annex nearly every day for over two years. Anne's 'pack mule' line captures how much the hiders depended on her. Source: Anne Frank House, 'Miep Gies.'",
+    "context": "Miep Gies risked her life carrying supplies to the annex nearly every day for over two years. Anne called her a pack mule for all she fetched and carried, which shows how much the hiders depended on her. Source: Anne Frank House, 'Miep Gies.'",
     "topic": "anne-frank-and-the-diary"
   },
   {
     "tier": 3,
-    "question": "All day long the eight people in the Secret Annex had to be silent. They could not run water, flush the toilet, or speak above a whisper. They could move around only after dark. Who were they so afraid would hear them?",
+    "question": "All day long the eight people in the Secret Annex had to be silent. They could not run water, flush the toilet, or speak above a whisper. They could move around freely only in the evenings. Who were they so afraid would hear them?",
     "answer": "Warehouse workers in the rooms below",
     "choices": [
       "Warehouse workers in the rooms below",
@@ -1751,7 +1751,7 @@
       "'I want to write a hundred great books'",
       "'I want to be remembered for my courage'"
     ],
-    "context": "Anne believed her writing could survive her — and it did. That same entry holds the line 'I want to become a journalist... I know I can write.' Source: Wikipedia, Anne Frank (5 April 1944 entry).",
+    "context": "Anne believed her writing could survive her — and it did. In that same entry she resolved to keep up her schoolwork 'to become a journalist, because that's what I want!' and added, 'I know I can write.' Source: Wikipedia, Anne Frank (5 April 1944 entry).",
     "topic": "anne-frank-and-the-diary"
   },
   {
@@ -1769,7 +1769,7 @@
   },
   {
     "tier": 4,
-    "question": "Karl Josef Silberbauer, an SS officer, led a sudden police raid on the annex on the morning of 4 August 1944 and arrested all eight people hidden there, after more than two years in hiding. People have combed the records for decades since. What haunting question about that day has never been answered?",
+    "question": "Karl Josef Silberbauer, an SS sergeant, led a sudden police raid on the annex on the morning of 4 August 1944 and arrested all eight people hidden there, after more than two years in hiding. People have combed the records for decades since. What haunting question about that day has never been answered?",
     "answer": "Who tipped off the police has never been proven",
     "choices": [
       "Who tipped off the police has never been proven",
@@ -1777,12 +1777,12 @@
       "Why the raid came on that exact date stays unknown",
       "How long the officer had watched them is unrecorded"
     ],
-    "context": "The raid was led by SS officer Karl Josef Silberbauer; helpers Victor Kugler and Johannes Kleiman were arrested too. Who betrayed the annex remains an unsolved mystery to this day. Source: Wikipedia, Miep Gies; Anne Frank House.",
+    "context": "The raid was led by SS sergeant Karl Josef Silberbauer; helpers Victor Kugler and Johannes Kleiman were arrested too. Who betrayed the annex remains an unsolved mystery to this day. Source: Wikipedia, Miep Gies; Anne Frank House.",
     "topic": "anne-frank-and-the-diary"
   },
   {
     "tier": 4,
-    "question": "Typhus raged through Bergen-Belsen, a freezing, lice-ridden camp in northern Germany, after Anne Frank and her older sister Margot were moved there in November 1944. Both girls caught it and died within days of each other in February 1945. How close had they come to surviving?",
+    "question": "Typhus raged through Bergen-Belsen, a freezing, lice-ridden camp in northern Germany, after Anne Frank and her older sister Margot were moved there late in 1944. Both girls caught it and died within days of each other early in 1945. How close had they come to surviving?",
     "answer": "British troops freed the camp just weeks later",
     "choices": [
       "British troops freed the camp just weeks later",
@@ -1816,7 +1816,7 @@
       "Reading them would have broken a promise to Otto",
       "The police could have traced her own handwriting"
     ],
-    "context": "Miep and Bep Voskuijl found the papers together. The diary named all five helpers and the black-market suppliers — had Miep read it, she said, she'd have been forced to destroy it to protect them all. Source: Anne Frank House, 'Miep Gies'; Smithsonian, 'A Small Light.'",
+    "context": "Miep and Bep Voskuijl found the papers together. The diary named the helpers and the black-market suppliers — had Miep read it, she said, she'd have been forced to destroy it to protect them all. Source: Anne Frank House, 'Miep Gies'; Smithsonian, 'A Small Light.'",
     "topic": "anne-frank-and-the-diary"
   },
   {
@@ -1825,11 +1825,11 @@
     "answer": "Otto Frank, Anne's father",
     "choices": [
       "Otto Frank, Anne's father",
-      "Peter van Pels, the neighbors' son",
+      "Peter van Pels, the teenage boy",
       "Fritz Pfeffer, the dentist",
       "Hermann van Pels, Peter's father"
     ],
-    "context": "Miep gave Otto the saved diary on 5 July 1945, after learning Anne had died. He published it in 1947; it has since sold more than 30 million copies. The father who survived gave his daughter's voice to the world. Source: Anne Frank House, 'The publication of the diary.'",
+    "context": "Miep gave Otto the saved diary in July 1945, once Anne's death was confirmed. He published it in 1947; it has since sold more than 30 million copies. The father who survived gave his daughter's voice to the world. Source: Anne Frank House, 'The publication of the diary.'",
     "topic": "anne-frank-and-the-diary"
   },
   {
@@ -1842,7 +1842,7 @@
       "A map of the Richmond defenses",
       "A roster of a Virginia regiment"
     ],
-    "context": "On Sept 13, 1862, Corporal Barton W. Mitchell of the 27th Indiana found the cigars wrapped in a lost copy of Lee's Special Orders No. 191, which revealed Lee had split his army into four separate parts. A Union officer, Samuel Pittman, proved it was genuine by recognizing the handwriting of Lee's chief of staff, an old banking colleague. Source: American Battlefield Trust, 'Special Order 191: Lost and Found'.",
+    "context": "On Sept 13, 1862, Corporal Barton W. Mitchell of the 27th Indiana found the cigars wrapped in a lost copy of Lee's Special Orders No. 191, which revealed Lee had split his army into four separate parts. A Union officer, Samuel Pittman, proved it was genuine by recognizing the handwriting of Lee's chief of staff, Robert Chilton, whose signature he had often seen as a Detroit bank teller before the war, when Chilton was an army paymaster. Source: American Battlefield Trust, 'Special Order 191: Lost and Found'.",
     "topic": "antietam-the-bloodiest-single-day"
   },
   {
@@ -1886,7 +1886,7 @@
   },
   {
     "tier": 4,
-    "question": "On the south end of the Antietam battlefield, a few hundred Georgia riflemen on a high bluff held off Ambrose Burnside's force of more than 12,000 Union men for about four hours. The Union troops kept funneling onto one narrow stone bridge and were shot down in the open as they crossed. What could those men have done instead of crowding onto the bridge?",
+    "question": "On the south end of the Antietam battlefield, a few hundred Georgia riflemen on a high bluff held off Ambrose Burnside's force of more than 12,000 Union men for hours. The Union troops kept funneling onto one narrow stone bridge and were shot down in the open as they crossed. What could those men have done instead of crowding onto the bridge?",
     "answer": "Simply waded across the creek at shallow fords nearby",
     "choices": [
       "Simply waded across the creek at shallow fords nearby",
@@ -2021,7 +2021,7 @@
     "choices": [
       "466/64",
       "317/64",
-      "220/82",
+      "731/62",
       "108/76"
     ],
     "context": "It meant he was the 466th prisoner taken to Robben Island in 1964. He kept 466/64 until 1982, when he was moved to Pollsmoor Prison and renumbered 220/82. Source: Nelson Mandela Foundation, 'Prisoner 466/64'; Al Jazeera, 'How Mandela prison number became a brand'.",
@@ -2037,7 +2037,7 @@
       "Fly-half Joel Stransky's number 10",
       "Lock Kobus Wiese's number 4"
     ],
-    "context": "Wearing the captain's jersey, Mandela told the white Afrikaner team and crowd they belonged in the new South Africa too. South Africa beat New Zealand 15-12 in the final. Source: World Rugby, 'On this day in 1995: Mandela, Williams and Pienaar help unite South Africa'.",
+    "context": "Wearing the captain's jersey, Mandela showed the team and its mostly white fans that they belonged in the new South Africa too. South Africa beat New Zealand 15-12 in the final. Source: World Rugby, 'On this day in 1995: Mandela, Williams and Pienaar help unite South Africa'.",
     "topic": "apartheid-nelson-mandela"
   },
   {
@@ -2094,7 +2094,7 @@
   },
   {
     "tier": 4,
-    "question": "Some 60,000 white Afrikaners, the very people whose government had jailed Nelson Mandela, packed the stadium for the 1995 Rugby World Cup final against New Zealand. They watched him walk out in the Springbok jersey, and then the crowd began to chant. What did they chant?",
+    "question": "Some 60,000 fans, most of them white South Africans whose government had jailed Nelson Mandela, packed the stadium for the 1995 Rugby World Cup final against New Zealand. They watched him walk out in the Springbok jersey, and then the crowd began to chant. What did they chant?",
     "answer": "\"Nelson! Nelson! Nelson!\"",
     "choices": [
       "\"Nelson! Nelson! Nelson!\"",
@@ -2120,7 +2120,7 @@
   },
   {
     "tier": 4,
-    "question": "At night in his cell on Robben Island, Nelson Mandela wrote page by page, on smuggled paper, the manuscript of what would become his autobiography, Long Walk to Freedom. If the guards had found it, they would have destroyed it and doubled his punishment. When the pages were finished, where did he hide them?",
+    "question": "At night in his cell on Robben Island, Nelson Mandela wrote page by page, on smuggled paper, the manuscript of what would become his autobiography, Long Walk to Freedom. If the guards found it, they would destroy it and punish him. When the pages were finished, where did he hide them?",
     "answer": "In cocoa tins, in the prison garden",
     "choices": [
       "In cocoa tins, in the prison garden",
@@ -2128,12 +2128,12 @@
       "Inside the stuffing of his mattress",
       "Behind a loose tile, under his bed"
     ],
-    "context": "He sealed the pages in cocoa containers using tools made by fellow prisoner Jeff Masemola. Guards later found a copy while building a wall; Mandela, Sisulu and Kathrada lost study privileges for four years. The smuggled text became the 1994 book 'Long Walk to Freedom.' Source: Nelson Mandela Foundation, 'A Prisoner in the Garden'; BBC News Magazine, 'How a secret manuscript became a global bestseller'.",
+    "context": "He sealed the pages in cocoa containers using tools made by fellow prisoner Jeff Masemola. When digging began for a new wall, the authorities found part of the buried original; Mandela, Sisulu and Kathrada lost study privileges for four years. The smuggled text became the 1994 book 'Long Walk to Freedom.' Source: Nelson Mandela Foundation, 'A Prisoner in the Garden'; BBC News Magazine, 'How a secret manuscript became a global bestseller'.",
     "topic": "apartheid-nelson-mandela"
   },
   {
     "tier": 5,
-    "question": "Percy Yutar, the prosecutor at the Rivonia Trial, had pushed for Nelson Mandela to be hanged. Decades later, as president, Mandela reached out to the old man who had once tried to send him to the gallows, and he did something that left Yutar marvelling. What did Mandela do?",
+    "question": "Percy Yutar, the prosecutor at the Rivonia Trial, had pressed a case that could have sent Nelson Mandela to the gallows. Decades later, as president, Mandela reached out to the old man who had prosecuted him, and he did something that left Yutar marvelling. What did Mandela do?",
     "answer": "Invited Yutar to a private lunch",
     "choices": [
       "Invited Yutar to a private lunch",
@@ -2150,7 +2150,7 @@
     "answer": "\"That's one small step for man, one giant leap for mankind.\"",
     "choices": [
       "\"That's one small step for man, one giant leap for mankind.\"",
-      "\"Houston, Tranquility Base here. The Eagle has landed.\"",
+      "\"Today the whole human family stands here with us.\"",
       "\"For all the people on this Earth we are truly one.\"",
       "\"We came in peace for all mankind, July 1969.\""
     ],
@@ -2198,23 +2198,23 @@
   },
   {
     "tier": 2,
-    "question": "Apollo 11 left its launch pad in Florida on 16 July 1969 on top of a Saturn V, the tallest and most powerful rocket that had ever flown. Measured against a city skyscraper, how tall was the Saturn V?",
-    "answer": "Taller than a 36-story building.",
+    "question": "Apollo 11 left its launch pad in Florida on 16 July 1969 on top of a Saturn V, the tallest and most powerful rocket that had ever flown. Measured against an office building, how tall was the Saturn V?",
+    "answer": "About as tall as a 36-story building.",
     "choices": [
-      "Taller than a 36-story building.",
-      "About a 10-story tower.",
-      "Roughly a 5-story school.",
-      "Around a 20-story block."
+      "About as tall as a 36-story building.",
+      "About as tall as a 12-story building.",
+      "About as tall as a 20-story building.",
+      "About as tall as a 60-story building."
     ],
     "context": "The Saturn V stood 363 feet tall, and its five first-stage F-1 engines produced about 7.5 million pounds of thrust at liftoff. Source: https://airandspace.si.edu/explore/stories/apollo-11-launch-vehicle-and-spacecraft",
     "topic": "apollo-11-and-the-moon-landing"
   },
   {
     "tier": 3,
-    "question": "Buzz Aldrin climbed back into the lander after the first moonwalk and saw that his bulky backpack had broken off a small circuit breaker. That switch armed the engine that would lift them off the Moon, there was no spare, and metal in a live circuit was dangerous. How did Aldrin get the switch working again?",
-    "answer": "He pushed the broken breaker back in with the plastic tip of a felt-tip pen.",
+    "question": "Buzz Aldrin climbed back into the lander after the first moonwalk and saw that his bulky backpack had broken off a small circuit breaker. That switch armed the engine that would lift them off the Moon, and there was no spare. How did Aldrin get the switch working again?",
+    "answer": "He pushed it back in with the tip of a felt-tip pen.",
     "choices": [
-      "He pushed the broken breaker back in with the plastic tip of a felt-tip pen.",
+      "He pushed it back in with the tip of a felt-tip pen.",
       "He rewired the breaker using a strip of wire from his glove.",
       "He jammed a metal screwdriver into the open switch.",
       "He radioed Houston, who reset the breaker remotely from Earth."
@@ -2224,7 +2224,7 @@
   },
   {
     "tier": 3,
-    "question": "The lander's guidance computer flashed a 1202 alarm in the last minute of the descent: it had been handed more tasks than it could finish. In Houston, Jack Garman, an engineer of 24, had seconds to decide what the crew should be told. What was his call?",
+    "question": "The lander's guidance computer flashed a 1202 alarm about five minutes into the descent: it had been handed more tasks than it could finish. In Houston, Jack Garman, an engineer of 24, had seconds to decide what the crew should be told. What was his call?",
     "answer": "He said the alarm was harmless and gave a 'Go' to keep landing.",
     "choices": [
       "He said the alarm was harmless and gave a 'Go' to keep landing.",
@@ -2523,7 +2523,7 @@
   },
   {
     "tier": 2,
-    "question": "Wilmer McLean's farm at Manassas lay in the path of Bull Run, the Civil War's first great battle, and a shell crashed down his kitchen chimney. He moved to Appomattox Court House to escape the war, and in 1865 Lee surrendered to Grant in McLean's house. What did McLean say about the war?",
+    "question": "Wilmer McLean's farm at Manassas lay in the path of Bull Run, the Civil War's first great battle, and a shell crashed down his kitchen chimney. He moved to Appomattox Court House to escape the war, and in 1865 Lee surrendered to Grant in McLean's house. What did McLean reputedly say about the war?",
     "answer": "\"The war began in my front yard and ended in my parlor.\"",
     "choices": [
       "\"The war began in my front yard and ended in my parlor.\"",
@@ -2549,7 +2549,7 @@
   },
   {
     "tier": 3,
-    "question": "Ulysses S. Grant knew that most of the men Lee had just surrendered to him at Appomattox were small farmers, and the war had stripped their land bare. Without help they would go home to fields they could not plant. What did Grant's written terms let every Confederate soldier do?",
+    "question": "Ulysses S. Grant knew that most of the men Lee had just surrendered to him at Appomattox were small farmers, and the war had stripped their land bare. Without help they would go home to fields they could not plant. What did Grant agree to let every Confederate soldier do?",
     "answer": "Take his own horse or mule home to plant a spring crop",
     "choices": [
       "Take his own horse or mule home to plant a spring crop",
@@ -2563,14 +2563,14 @@
   {
     "tier": 3,
     "question": "Robert E. Lee admitted to Grant at Appomattox that his surrendered men were starving: they had marched and fought for days with almost nothing to eat. Grant asked how many of them needed feeding, and Lee answered, 'about twenty-five thousand.' What did the victorious Grant do at once?",
-    "answer": "Ordered rations from his own army sent over to feed Lee's men",
+    "answer": "Let Lee's men draw rations from trains Union cavalry had seized",
     "choices": [
-      "Ordered rations from his own army sent over to feed Lee's men",
+      "Let Lee's men draw rations from trains Union cavalry had seized",
       "Told Lee his men must forage for their own food on the march",
       "Held the food back until every Confederate had signed a parole",
       "Sent the hungry soldiers straight to the nearest Union prison camp"
     ],
-    "context": "Grant authorized 25,000 rations sent from Appomattox Station to feed the surrendered Confederate army. He later wrote that he felt 'sad and depressed... like anything rather than rejoicing at the downfall of a foe who had fought so long and valiantly.' Source: Personal Memoirs of U.S. Grant, Ch. LXVII (americanliterature.com).",
+    "context": "Grant authorized Lee's commissary officers to draw 25,000 rations from the supply trains Union cavalry had captured at Appomattox Station. He later wrote that he felt 'sad and depressed... like anything rather than rejoicing at the downfall of a foe who had fought so long and valiantly.' Source: Personal Memoirs of U.S. Grant, Ch. LXVII (americanliterature.com).",
     "topic": "appomattox-and-lee-s-surrender"
   },
   {
@@ -2583,7 +2583,7 @@
       "Rode down the line and shook the hand of every Union officer present",
       "Lowered the last Confederate battle flag and laid it across his saddle"
     ],
-    "context": "Chamberlain called it the 'last salute of the Army of Northern Virginia'; Gordon wheeled his horse, made it bow, and 'dropped his swordpoint to his toe in salutation.' About 27,000 stands of arms and roughly 100 battle flags were surrendered that day. Source: Chamberlain's own account, American Battlefield Trust, battlefields.org/learn/primary-sources/last-salute-army-northern-virginia; nps.gov/places/chamberlain-gordon-salute.htm.",
+    "context": "Chamberlain called it the 'last salute of the Army of Northern Virginia'; Gordon wheeled his horse, made it bow, and 'dropped his swordpoint to his toe in salutation.' Source: Chamberlain's own account, American Battlefield Trust, battlefields.org/learn/primary-sources/last-salute-army-northern-virginia; nps.gov/places/chamberlain-gordon-salute.htm.",
     "topic": "appomattox-and-lee-s-surrender"
   },
   {
@@ -2801,8 +2801,8 @@
     "choices": [
       "al-Khwarizmi",
       "Brahmagupta",
-      "Pythagoras",
-      "Archimedes"
+      "al-Kindi",
+      "Hunayn ibn Ishaq"
     ],
     "context": "His name was Latinized to \"Algoritmi\" in the title \"Algoritmi de numero Indorum\" (Algoritmi on the numbers of the Indians), and over time \"Algoritmi\" became the plain English word \"algorithm.\" Source: https://en.wikipedia.org/wiki/Muhammad_ibn_Musa_al-Khwarizmi",
     "topic": "arabic-numerals-and-the-spread-of-zero"
@@ -3381,15 +3381,15 @@
   },
   {
     "tier": 2,
-    "question": "Starving Armenian refugees lay scattered around Deir ez-Zor, a desert town on the Euphrates River, where the death marches ended. One foreign official kept count of the dying and reported about 150,000 of them around the town. Who was this witness keeping the tally?",
+    "question": "Starving Armenian refugees lay scattered across the Syrian desert, from Deir ez-Zor on the Euphrates River, where the death marches ended, to south of Damascus. One foreign official reckoned there were about 150,000 of them, nearly all destitute. Who was this witness keeping the tally?",
     "answer": "The American consul in the city of Aleppo",
     "choices": [
       "The American consul in the city of Aleppo",
-      "The Russian consul in the city of Tiflis",
+      "The Austrian consul in the city of Beirut",
       "The British consul in the city of Baghdad",
       "The German consul in the city of Mosul"
     ],
-    "context": "He was Jesse B. Jackson, the United States vice-consul at Aleppo, who funneled relief to survivors and documented the catastrophe. Deir ez-Zor, on the Euphrates, was the terminal point of the death marches; historians estimate roughly 192,000 Armenians perished in that area alone. Source: https://en.wikipedia.org/wiki/Deir_ez-Zor_camps",
+    "context": "He was Jesse B. Jackson, the United States consul at Aleppo, who funneled relief to survivors and documented the catastrophe. Deir ez-Zor, on the Euphrates, was the terminal point of the death marches; by one count more than 200,000 Armenians were killed there in the late summer of 1916 alone. Source: https://en.wikipedia.org/wiki/Deir_ez-Zor_camps",
     "topic": "armenian-genocide"
   },
   {
@@ -3415,7 +3415,7 @@
       "pogrom",
       "extermination"
     ],
-    "context": "Lemkin built it from the Greek 'genos' (race or tribe) and the Latin '-cide' (killing). He later said the Armenian case was directly on his mind when he made the word, and he was the first person ever to write the phrase 'Armenian Genocide.' Source: https://encyclopedia.ushmm.org/content/en/article/coining-a-word-and-championing-a-cause-the-story-of-raphael-lemkin",
+    "context": "Lemkin built it from the Greek 'genos' (race or tribe) and the Latin '-cide' (killing). He later said the Armenian case was directly on his mind when he made the word. Source: https://encyclopedia.ushmm.org/content/en/article/coining-a-word-and-championing-a-cause-the-story-of-raphael-lemkin",
     "topic": "armenian-genocide"
   },
   {
@@ -3433,15 +3433,15 @@
   },
   {
     "tier": 3,
-    "question": "Soghomon Tehlirian, a young Armenian survivor, shot and killed the exiled Talaat Pasha on a Berlin street in 1921. Talaat had directed the killing of the Armenians, and Tehlirian had lost dozens of relatives in the slaughter. Germany put him on trial. What became of him?",
-    "answer": "The German jury heard the genocide evidence and acquitted him",
+    "question": "Soghomon Tehlirian, a young Armenian, shot and killed the exiled Talaat Pasha on a Berlin street in 1921. Talaat had directed the killing of the Armenians, and Tehlirian had lost dozens of relatives in the slaughter. Germany put him on trial. What became of him?",
+    "answer": "A German jury acquitted him of murder",
     "choices": [
-      "The German jury heard the genocide evidence and acquitted him",
-      "He was hanged within a week of the shooting",
+      "A German jury acquitted him of murder",
+      "He was sentenced to death and hanged",
       "He was sentenced to life in a Prussian prison",
-      "He escaped Berlin before the trial could begin"
+      "He was jailed for ten years for manslaughter"
     ],
-    "context": "Nemesis was the Greek goddess of retribution. Because the men who ordered the killings were never tried, survivors set out to deliver justice themselves; Tehlirian used a Luger pistol and shot Talaat once in the back of the neck. Source: https://en.wikipedia.org/wiki/Soghomon_Tehlirian",
+    "context": "Tehlirian acted for Operation Nemesis, a plan to kill the leaders behind the genocide, named for the Greek goddess of retribution. An Ottoman court-martial had sentenced Talaat to death in his absence in 1919, but he had fled abroad. Source: https://en.wikipedia.org/wiki/Soghomon_Tehlirian",
     "topic": "armenian-genocide"
   },
   {
@@ -3459,7 +3459,7 @@
   },
   {
     "tier": 4,
-    "question": "Henry Morgenthau, America's ambassador in Constantinople, begged Talaat Pasha again and again in 1915 to stop the killing, while the Ottoman government marched whole Armenian villages into the Syrian desert to die of thirst, hunger and massacre. Talaat gave one short, cold answer and treated the matter as closed. What did he say?",
+    "question": "Germany's ambassador in Constantinople kept raising the fate of the Armenians with Talaat Pasha in 1918, long after the government had marched whole Armenian villages into the Syrian desert to die of thirst, hunger and massacre. Talaat gave one short, cold answer and treated the matter as closed. What did he say?",
     "answer": "There are no more Armenians.",
     "choices": [
       "There are no more Armenians.",
@@ -3467,12 +3467,12 @@
       "They will be returned after the war.",
       "We did only what Russia forced on us."
     ],
-    "context": "His full reply, recorded in Vahakn Dadrian's History of the Armenian Genocide, was: 'What on earth do you want? The question is settled. There are no more Armenians.' The flat finality of that line captures the intent behind the killing better than any statistic. Source: https://en.wikiquote.org/wiki/Mehmed_Talat",
+    "context": "He said it in 1918 to the German ambassador, who had raised the Armenians again and again; his full reply, recorded in Vahakn Dadrian's History of the Armenian Genocide, was: 'What on earth do you want? The question is settled. There are no more Armenians.' The flat finality of that line captures the intent behind the killing better than any statistic. Source: https://en.wikiquote.org/wiki/Mehmed_Talat",
     "topic": "armenian-genocide"
   },
   {
     "tier": 4,
-    "question": "Watching the Armenian deportations with his own eyes, Henry Morgenthau, the United States ambassador in the Ottoman capital, Constantinople, cabled Washington on 16 July 1915. His message named exactly what he believed was happening to the Armenian people. What phrase did he use?",
+    "question": "Henry Morgenthau, the United States ambassador in the Ottoman capital, Constantinople, gathered harrowing reports from eyewitnesses of the Armenian deportations and cabled Washington on 16 July 1915. His message named exactly what he believed was happening to the Armenian people. What phrase did he use?",
     "answer": "a campaign of race extermination is in progress",
     "choices": [
       "a campaign of race extermination is in progress",
@@ -3480,20 +3480,20 @@
       "a wartime disorder threatens the Christian population",
       "a forced migration of doubtful necessity is underway"
     ],
-    "context": "Morgenthau confronted the Ottoman leaders to their faces and later published what he saw in his 1918 book 'Ambassador Morgenthau's Story.' An American diplomat in the capital naming it 'race extermination' as it happened is among the clearest proofs that the killing was intended, not wartime chaos. Source: https://www.armenian-genocide.org/morgenthau.html",
+    "context": "Morgenthau confronted the Ottoman leaders to their faces and later published what he had learned in his 1918 book 'Ambassador Morgenthau's Story.' An American diplomat in the capital naming it 'race extermination' as it happened is among the clearest proofs that the killing was intended, not wartime chaos. Source: https://www.armenian-genocide.org/morgenthau.html",
     "topic": "armenian-genocide"
   },
   {
     "tier": 5,
     "question": "The Ottoman government gave its slaughter of the Armenians a legal disguise in May 1915. Its decree framed the round-ups not as murder but as a routine, lawful wartime measure, though the Syrian desert soon told the truth. What did the decree claim the Armenians were merely undergoing?",
-    "answer": "a temporary relocation for safety",
+    "answer": "a temporary relocation for security",
     "choices": [
-      "a temporary relocation for safety",
+      "a temporary relocation for security",
       "an emergency military draft",
       "a tax on enemy property",
       "a quarantine against disease"
     ],
-    "context": "The decree, passed May 29, 1915, is known as the Tehcir Law, or Temporary Deportation Law. Dressing genocide in the language of an orderly 'resettlement' is the trick later regimes copied: the paperwork said relocation, the desert held the truth. Source: https://en.wikipedia.org/wiki/Armenian_genocide",
+    "context": "The decree, passed by the Ottoman cabinet on 27 May 1915, is known as the Tehcir Law, or Temporary Deportation Law. Dressing genocide in the language of an orderly 'resettlement' is the trick later regimes copied: the paperwork said relocation, the desert held the truth. Source: https://en.wikipedia.org/wiki/Armenian_genocide",
     "topic": "armenian-genocide"
   },
   {
@@ -3524,7 +3524,7 @@
   },
   {
     "tier": 1,
-    "question": "The roaring guns finally went silent on the Western Front in 1918, ending a war that had killed millions. Officers said the moment was easy to remember, because it was built from a single number said three times over. What was that famous pattern?",
+    "question": "The roaring guns finally went silent on the Western Front in 1918, ending a war that had killed millions. The moment was easy to remember, because it was built from a single number said three times over. What was that famous pattern?",
     "answer": "The eleventh hour of the eleventh day of the eleventh month",
     "choices": [
       "The eleventh hour of the eleventh day of the eleventh month",
@@ -3563,7 +3563,7 @@
   },
   {
     "tier": 4,
-    "question": "Marcel Duchamp bought a plain porcelain urinal from a New York plumbing showroom in 1917, turned it on its back and signed it with the false name R. Mutt. He entered it in an art exhibition as a serious sculpture, mocking the whole idea of fine art. What one-word title did he give it?",
+    "question": "Marcel Duchamp, by the usual account, bought a plain porcelain urinal from a New York plumbing showroom in 1917, turned it on its back and signed it with the false name R. Mutt. He entered it in an art exhibition as a serious sculpture, mocking the whole idea of fine art. What one-word title did he give it?",
     "answer": "Fountain",
     "choices": [
       "Fountain",
@@ -3571,7 +3571,7 @@
       "Monument",
       "Spring"
     ],
-    "context": "Marcel Duchamp signed the urinal \"R. Mutt 1917\" and titled it Fountain, submitting it to the 1917 Society of Independent Artists exhibition in New York. The Society had promised to show any work by any artist who paid the fee — yet they rejected Fountain an hour before the show opened. Duchamp was secretly on the board himself and resigned in protest over his own anonymous urinal being thrown out. It became the most famous example of Dada \"anti-art.\" Source: https://en.wikipedia.org/wiki/Fountain_(Duchamp)",
+    "context": "The urinal was signed \"R. Mutt 1917\" and titled Fountain, and submitted to the 1917 Society of Independent Artists exhibition in New York. The Society had promised to show any work by any artist who paid the fee, yet Fountain was hidden behind a partition and never shown. Duchamp, a member of the board who had sent the piece in under the false name, resigned in protest. Some scholars argue that his friend, the artist Elsa von Freytag-Loringhoven, had a hand in it. It became the most famous example of Dada \"anti-art.\" Source: https://en.wikipedia.org/wiki/Fountain_(Duchamp)",
     "topic": "art-and-disillusionment-after-the-war"
   },
   {
@@ -3589,7 +3589,7 @@
   },
   {
     "tier": 4,
-    "question": "New Jersey had no great seaport of its own, and under the Articles of Confederation it was caught between New York's port to the north and Philadelphia's to the south, which drained its trade while the states taxed one another's goods like foreign rivals. Benjamin Franklin mocked its plight with one homely image. What was it?",
+    "question": "New Jersey had no great seaport of its own, and under the Articles of Confederation it was caught between New York's port to the north and Philadelphia's to the south, which drained its trade while the states taxed one another's goods like foreign rivals. A well-known jibe, later credited to Benjamin Franklin, mocked its plight with one homely image. What was it?",
     "answer": "a barrel tapped at both ends",
     "choices": [
       "a barrel tapped at both ends",
@@ -3597,7 +3597,7 @@
       "a coin worn smooth by two hands",
       "a candle burned at both ends"
     ],
-    "context": "Franklin likened New Jersey to a barrel tapped at both ends, its trade drained into New York and Philadelphia at once; the line is preserved in Abram Browning's 1876 Centennial speech. New Jersey struck back by taxing a New York-owned lighthouse on Sandy Hook. Source: libquotes.com (Franklin, via Browning 1876); Project MUSE, 'A Barrel Tapped at Both Ends.'",
+    "context": "Franklin is credited with likening New Jersey to a barrel tapped at both ends, its trade drained into New York and Philadelphia at once; the line is preserved in Abram Browning's 1876 Centennial speech. New Jersey struck back by taxing a New York-owned lighthouse on Sandy Hook. Source: libquotes.com (Franklin, via Browning 1876); Project MUSE, 'A Barrel Tapped at Both Ends.'",
     "topic": "articles-of-confederation-their-failures"
   },
   {
@@ -3881,7 +3881,7 @@
       "Bars of iron",
       "Tablets of clay",
       "Shells from the sea",
-      "Coins of silver"
+      "Slabs of stone"
     ],
     "context": "Sparta supposedly used heavy iron bars instead of gold or silver, on purpose, so that wealth was too cumbersome to pile up or trade with — killing greed and commerce in one stroke. (Plutarch credits the lawgiver Lycurgus, but the story is part legend; a real later law banning Spartans from owning gold and silver coins is genuinely attested.) Source: http://kiwihellenist.blogspot.com/2018/02/paying-iron-price-spartan-money.html",
     "topic": "athens-vs-sparta-two-rival-city-states-the-polis"
@@ -3896,7 +3896,7 @@
       "\"We make the stranger swear to our gods or leave\"",
       "\"We take the outsider's gold but never his counsel\""
     ],
-    "context": "Pericles boasted Athens 'throws open the city to the world and never by alien acts excludes a foreigner' — the open city. The other choices describe closed-city policies; Sparta really did expel foreigners (a practice called 'xenelasia'), the opposite of what Pericles celebrated. He also called Athens 'the school of Hellas [Greece].' Source: https://en.wikipedia.org/wiki/Pericles's_Funeral_Oration",
+    "context": "Pericles boasted Athens 'throws open the city to the world and never by alien acts excludes a foreigner' — the open city. Sparta really did expel foreigners (a practice called 'xenelasia'), the opposite of what Pericles celebrated. He also called Athens 'the school of Hellas [Greece].' Source: https://en.wikipedia.org/wiki/Pericles's_Funeral_Oration",
     "topic": "athens-vs-sparta-two-rival-city-states-the-polis"
   },
   {
@@ -3906,23 +3906,23 @@
     "choices": [
       "He climbed a platform and argued before the whole Assembly",
       "He elected a representative to cast the votes for him",
-      "He mailed a written petition to a council of old nobles",
-      "He whispered his view to a city magistrate once a year"
+      "He dropped a written vote in a box for officials to count",
+      "He asked a noble from his district to speak for him"
     ],
-    "context": "Athenian democracy was DIRECT, not representative: any adult male citizen could mount the speaker's platform (the 'bema') on the Pnyx and address the entire Assembly in person — no go-betweens. (Women, slaves, and foreigners, about three-quarters of the people there, had no vote.) Source: https://www.history.com/articles/ancient-greece-democracy",
+    "context": "Athenian democracy was DIRECT, not representative: any adult male citizen could mount the speaker's platform (the 'bema') on the Pnyx and address the entire Assembly in person — no go-betweens. (Women, slaves and foreigners, most of the people there, had no vote.) Source: https://www.history.com/articles/ancient-greece-democracy",
     "topic": "athens-vs-sparta-two-rival-city-states-the-polis"
   },
   {
     "tier": 3,
     "question": "An Athenian citizen who could not read handed his pottery shard to a stranger on the day of a banishment vote and asked him to scratch on the name Aristides. He did not know the stranger was Aristides himself. Athenians could send any man away for ten years this way, with no crime charged. Why did this man want Aristides gone?",
-    "answer": "He was simply tired of hearing him called \"the Just\"",
+    "answer": "He was simply tired of hearing him called the Just",
     "choices": [
-      "He was simply tired of hearing him called \"the Just\"",
+      "He was simply tired of hearing him called the Just",
       "He blamed him for a harsh tax that had ruined him",
       "He had lost an important lawsuit that Aristides judged",
       "He bitterly envied Aristides for his famous riches"
     ],
-    "context": "The man didn't even know Aristides by sight — he just said he was sick of everyone forever calling the fellow 'the Just.' Aristides quietly wrote his own name on the shard, handed it back, and was banished. This banishment-by-pottery is where our word 'ostracism' comes from. Source: https://www.perseus.tufts.edu/hopper/text?doc=Perseus:abo:tlg,0007,024:7",
+    "context": "The man didn't even know Aristides by sight — he just said he was sick of everyone forever calling the fellow 'the Just.' Aristides quietly wrote his own name on the shard, handed it back, and was banished. This banishment-by-pottery is where the English word 'ostracism' comes from. Source: https://www.perseus.tufts.edu/hopper/text?doc=Perseus:abo:tlg,0007,024:7",
     "topic": "athens-vs-sparta-two-rival-city-states-the-polis"
   },
   {
@@ -3932,7 +3932,7 @@
     "choices": [
       "It picked the day's jurors purely at random",
       "It tallied the votes the jurors cast at a trial",
-      "It decided guilt on its own once evidence was heard",
+      "It set the order in which the day's cases were heard",
       "It chose which rich citizens would pay for a trial"
     ],
     "context": "The kleroterion chose jurors purely by chance: citizens slotted in bronze name-tickets, and a white ball meant a whole row served that day. Random selection meant no bribe could pick a friendly jury — radical trust in ordinary citizens, the opposite of Sparta's rule by a council of elders. Source: https://en.wikipedia.org/wiki/Dikasterion",
@@ -3948,7 +3948,7 @@
       "It burned every farm in the Athenian countryside to starve them",
       "It bribed the Athenian generals into surrendering the city"
     ],
-    "context": "To beat Athens, Sparta had to fight at sea — so it took GOLD from Persia, the very empire Greeks had united to defeat, and built a navy. The Spartan admiral Lysander then destroyed 168 Athenian ships at Aegospotami in 405 BC and starved Athens into surrender. (Burning the Athenian farmland really happened early in the war, but didn't win it.) Source: https://en.wikipedia.org/wiki/Peloponnesian_War",
+    "context": "To beat Athens, Sparta had to fight at sea — so it took GOLD from Persia, the very empire Greeks had united to defeat, and built a navy. The Spartan admiral Lysander then captured or destroyed some 170 Athenian ships at Aegospotami in 405 BC and starved Athens into surrender. (Burning the Athenian farmland really happened early in the war, but didn't win it.) Source: https://en.wikipedia.org/wiki/Peloponnesian_War",
     "topic": "athens-vs-sparta-two-rival-city-states-the-polis"
   },
   {
@@ -4265,15 +4265,15 @@
   },
   {
     "tier": 4,
-    "question": "Ibn Sina, known in Europe as Avicenna, wrote the Canon of Medicine, a five-book encyclopedia of more than a million words. Universities such as Padua and Bologna were still teaching from it in the 1600s. Doctors put such faith in the book that they gave it a nickname. What did they call it?",
-    "answer": "The Medical Bible",
+    "question": "Ibn Sina, known in Europe as Avicenna, wrote the Canon of Medicine, a five-book encyclopedia of more than a million words. Universities such as Padua and Bologna were still teaching from it in the 1600s. Centuries later the physician William Osler wrote that no other work had served doctors so long in one role. What did Osler say it had been?",
+    "answer": "A medical bible",
     "choices": [
-      "The Medical Bible",
-      "The Doctor's Mirror",
-      "The Book of Cures",
-      "The Healer's Almanac"
+      "A medical bible",
+      "A doctor's mirror",
+      "A book of cures",
+      "A healer's almanac"
     ],
-    "context": "Avicenna's al-Qanun fi al-tibb was translated into Latin in the 12th century and remained a standard medical textbook in European universities for about 600 years, in use as late as 1650 — earning the nickname the 'Medical Bible.' A book written in the Islamic world taught Europe's doctors for six centuries. Sources: https://en.wikipedia.org/wiki/Avicenna ; https://www.newworldencyclopedia.org/entry/Avicenna",
+    "context": "Avicenna's al-Qanun fi al-tibb was translated into Latin in the Middle Ages and stayed a standard medical textbook in European universities for centuries; at Padua it was still read as late as 1715. William Osler called it 'the most famous medical textbook ever written' and said it remained 'a medical bible for a longer time than any other work.' A book written in the Islamic world taught Europe's doctors for centuries. Sources: https://en.wikipedia.org/wiki/The_Canon_of_Medicine",
     "topic": "avicenna-ibn-sina-and-islamic-medicine"
   },
   {
@@ -4845,7 +4845,7 @@
       "That the Indians should be left wholly alone, with no Spanish priest or settler ever sent",
       "That the Indians owed Spain nothing until the Pope himself had formally ruled on it"
     ],
-    "context": "Answering Sepúlveda point by point, Las Casas held that 'All the World is Human' — the Indians had reason and could rule themselves, so the category of 'natural slave' was a lie. The judges named no winner and both men claimed victory, but it stands as history's first formal debate over the rights of an indigenous people, and a root of the natural-rights tradition. Source: Gilder Lehrman Institute 'Las Casas debates the subjugation of the Indians, 1550'; History Today 'The Valladolid Debate'.",
+    "context": "Answering Sepúlveda point by point, Las Casas held that 'All the World is Human' — the Indians had reason and could rule themselves, so the category of 'natural slave' was a lie. The judges named no winner and both men claimed victory, but it stands as European history's first formal debate over the rights of an indigenous people, and a root of the natural-rights tradition. Source: Gilder Lehrman Institute 'Las Casas debates the subjugation of the Indians, 1550'; History Today 'The Valladolid Debate'.",
     "topic": "bartolom-de-las-casas"
   },
   {
@@ -4889,13 +4889,13 @@
   },
   {
     "tier": 5,
-    "question": "A shopkeeper's careless son broke a shop window, in a parable by Frédéric Bastiat, and onlookers cheered that it was good for trade, since the glazier would now earn six francs. Bastiat argued that the town was no richer at all, because everyone forgot one thing the shopkeeper could no longer do with those six francs. What was it?",
-    "answer": "Buy new shoes or another book",
+    "question": "A shopkeeper's careless son broke a shop window, in a parable by Frédéric Bastiat, and onlookers cheered that it was good for trade, since the glazier would now earn six francs. Bastiat argued that the town was no richer at all, because the onlookers saw only half the story. What did they fail to see?",
+    "answer": "That the six francs would have bought shoes or a book",
     "choices": [
-      "Buy new shoes or another book",
-      "Pay the glazier",
-      "Repair the window",
-      "Hire the careless boy"
+      "That the six francs would have bought shoes or a book",
+      "That the glazier would spend his six francs in town",
+      "That the new pane would be finer than the old one",
+      "That the boy would have to work off the cost"
     ],
     "context": "This is Bastiat's 'seen versus unseen': the SEEN is the glazier's six-franc job; the UNSEEN is that the same six francs would have bought the shopkeeper new shoes or another book for his library. The money is only moved, not created, so destruction never enriches a society. Bastiat, 'What Is Seen and What Is Not Seen' (1850), his last published work. https://www.econlib.org/library/Bastiat/basEss1.html",
     "topic": "bastiat-and-the-seen-versus-unseen-the-broken-wi"
@@ -4915,7 +4915,7 @@
   },
   {
     "tier": 5,
-    "question": "Masaharu Homma commanded the Japanese 14th Army in the Philippines in 1942, when his men drove about 76,000 surrendered American and Filipino prisoners some 65 miles north on the Bataan Death March. The guards beat, bayoneted or shot stragglers, and some seven to ten thousand prisoners died on the march. After the war Homma faced 43 charges and was held answerable for his troops' conduct. What was his fate?",
+    "question": "Masaharu Homma commanded the Japanese 14th Army in the Philippines in 1942, when his men drove about 76,000 American and Filipino prisoners some 65 miles north on the Bataan Death March. The guards beat, bayoneted or shot stragglers, and the dead are put at anywhere from about 5,500 to over 18,000. After the war Homma faced 43 charges and was held answerable for his troops' conduct. What was his fate?",
     "answer": "Executed by firing squad",
     "choices": [
       "Executed by firing squad",
@@ -4967,7 +4967,7 @@
   },
   {
     "tier": 2,
-    "question": "The Royal Air Force watched for German bombers in 1940 from a line of tall towers along Britain's south and east coasts, which could spot the raiders up to 200 miles away, while they were still climbing over France. What new invention let the towers see that far?",
+    "question": "The Royal Air Force watched for German bombers in 1940 from a line of tall towers along Britain's south and east coasts, which could spot the raiders up to 100 miles away, while they were still climbing over France. What new invention let the towers see that far?",
     "answer": "Radar",
     "choices": [
       "Radar",
@@ -4993,15 +4993,15 @@
   },
   {
     "tier": 3,
-    "question": "Pilots of No. 303 Squadron had fled when German armies conquered their homeland, and they joined the Battle of Britain two months late. Nearly one pilot in five in the battle was not British, yet this squadron finished with more German planes to its name than any other in Fighter Command. Which country's pilots flew it?",
+    "question": "Pilots of No. 303 Squadron had fled when German armies conquered their homeland, and they joined the Battle of Britain two months late. Nearly one pilot in five in the battle was not British, yet this squadron claimed more German planes than any other in Fighter Command. Which country's pilots flew it?",
     "answer": "Poland",
     "choices": [
       "Poland",
-      "New Zealand",
-      "Canada",
+      "Czechoslovakia",
+      "Belgium",
       "France"
     ],
-    "context": "About 595 of roughly 3,000 aircrew came from abroad, including 145 Poles and 88 Czechoslovaks. No. 303 Squadron joined two months late yet became the top-scoring RAF fighter unit, claiming 126 German aircraft in 42 days. Source: https://en.wikipedia.org/wiki/No._303_Squadron_RAF",
+    "context": "About 595 of roughly 3,000 aircrew came from abroad, including 145 Poles and 88 Czechoslovaks. No. 303 Squadron joined two months late yet claimed 126 German aircraft in six weeks, the most of any squadron, though later research has cut the verified figure. Source: https://en.wikipedia.org/wiki/No._303_Squadron_RAF",
     "topic": "battle-of-britain"
   },
   {
@@ -5041,19 +5041,6 @@
       "It turned its full weight onto the Royal Navy."
     ],
     "context": "The switch began on 7 September 1940, the first day of the Blitz on London. By taking the pressure off the airfields and radar stations, it gave Fighter Command exactly the time it needed to rebuild. Source: https://en.wikipedia.org/wiki/Battle_of_Britain",
-    "topic": "battle-of-britain"
-  },
-  {
-    "tier": 5,
-    "question": "Fighter Command's controllers guided British fighters onto about nine incoming raids in ten in 1940, with reports from coastal stations and ground observers routed through filter rooms. Before the war, commanders had expected fighters to catch only a third to a half of any raid. What did this do to Fighter Command's effective strength?",
-    "answer": "It roughly tripled it",
-    "choices": [
-      "It roughly tripled it",
-      "It roughly doubled it",
-      "It barely changed it",
-      "It cut it in half"
-    ],
-    "context": "The system lifted the interception rate to about 90 percent, against the 30-50 percent thought good before the war. In effect it tripled Fighter Command's strength, letting outnumbered British fighters keep beating larger German formations to the punch. Source: https://en.wikipedia.org/wiki/Dowding_system",
     "topic": "battle-of-britain"
   },
   {
@@ -5790,19 +5777,19 @@
     "answer": "Run herself aground on the beach and fight until destroyed",
     "choices": [
       "Run herself aground on the beach and fight until destroyed",
-      "Slip past the fleet and bombard the American landing zones",
+      "Lay mines across the American landing beaches",
       "Ferry reinforcements ashore under cover of darkness",
       "Lure the carriers into a trap for the waiting submarines"
     ],
-    "context": "The Yamato never reached Okinawa. On April 7, 1945, American carrier planes hit her with about a dozen bombs and many torpedoes; she rolled over and exploded, taking roughly 2,498 of her crew down with her. Sources: history.com/this-day-in-history/april-7/japanese-battleship-yamato-is-sunk-by-allied-forces; en.wikipedia.org/wiki/Japanese_battleship_Yamato",
+    "context": "The Yamato never reached Okinawa. On April 7, 1945, American carrier planes hit her with at least six bombs and eleven torpedoes; she rolled over and exploded, taking most of her crew of more than 3,000 down with her. Sources: history.com/this-day-in-history/april-7/japanese-battleship-yamato-is-sunk-by-allied-forces; en.wikipedia.org/wiki/Japanese_battleship_Yamato",
     "topic": "battle-of-okinawa"
   },
   {
     "tier": 5,
     "question": "Soldiers and Marines of the United States fought for Okinawa for 82 days in 1945, and more than 12,000 Americans died, along with roughly 90,000 to 110,000 Japanese soldiers and some 94,000 to 150,000 Okinawan civilians. American war planners studied that toll for one purpose. What did they use it to do?",
-    "answer": "Estimate the cost of invading mainland Japan, weighing the atomic-bomb decision",
+    "answer": "Estimate what invading mainland Japan would cost",
     "choices": [
-      "Estimate the cost of invading mainland Japan, weighing the atomic-bomb decision",
+      "Estimate what invading mainland Japan would cost",
       "Negotiate a ceasefire with the Japanese high command",
       "Redraw the postwar borders of the Ryukyu Islands",
       "Calculate pensions owed to the families of the fallen"
@@ -5820,15 +5807,15 @@
       "His own helmet",
       "A handful of soil"
     ],
-    "context": "Herodotus reports his words: \"With this pebble I give my vote not to run away from the strangers.\" In a Spartan assembly men voted by casting pebbles, so a soldier laying down a boulder-sized 'pebble' was a defiant joke and a vote rolled into one. Source: Herodotus, Histories Book 9.55 (Rawlinson translation).",
+    "context": "Herodotus reports his words: \"With this pebble I give my vote not to run away from the strangers.\" Greeks often voted by casting pebbles (Spartans themselves usually voted by shouting), so a soldier laying down a boulder-sized 'pebble' was a defiant joke and a vote rolled into one. Source: Herodotus, Histories Book 9.55 (Rawlinson translation).",
     "topic": "battle-of-plataea-479-bc-persia-driven-out"
   },
   {
     "tier": 5,
     "question": "Pausanias, the Spartan regent, crushed the Persians at Plataea in 479 BC and then ordered the cooks of the dead Persian general Mardonius to serve up the rich feast they had been making for their master. Beside it he had a plain Spartan supper set out. Then he laughed and made one joke about the two meals. What was his joke?",
-    "answer": "A man who ate this well was a fool to invade poor Greece to rob it",
+    "answer": "A man who dined so well was a fool to rob poor Greece",
     "choices": [
-      "A man who ate this well was a fool to invade poor Greece to rob it",
+      "A man who dined so well was a fool to rob poor Greece",
       "Spartan food would make the Persians too soft to fight",
       "The gods favored whichever side ate the simpler meal",
       "Greek cooks could never match such Persian splendor"
