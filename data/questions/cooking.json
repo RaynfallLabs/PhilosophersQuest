@@ -16680,7 +16680,7 @@
   },
   {
     "tier": 2,
-    "question": "Health investigators at the CDC went back over twenty years of American outbreaks traced to raw, unpasteurized milk, about 200 of them, and sorted every sick person by age. One age group made up nearly half of everyone who fell ill. Which group took the brunt of raw milk's germs?",
+    "question": "Health investigators at the CDC sorted by age every person sickened in the 75 American outbreaks traced to raw, unpasteurized milk from 2013 to 2018. One age group made up nearly half of the 675 who fell ill. Which group took the brunt of raw milk's germs?",
     "answer": "Kids and teens under 20",
     "choices": [
       "Kids and teens under 20",
@@ -16688,7 +16688,7 @@
       "Adults 40 to 64",
       "Seniors 65 and up"
     ],
-    "context": "In U.S. raw-milk outbreaks from 1998 to 2018 - about 202 outbreaks and 2,645 illnesses - 48% of the people sickened were under age 20, and Campylobacter was the single most common germ. That heavy toll on the young is the heart of the safety warning. Source: CDC/PMC 'Foodborne illness outbreaks linked to unpasteurised milk, United States, 1998-2018'.",
+    "context": "From 1998 to 2018, U.S. health departments linked 202 outbreaks and 2,645 illnesses to raw milk. In the 75 outbreaks of 2013 to 2018, 325 of the 675 people sickened (48%) were under age 20, and Campylobacter caused the most outbreaks and illnesses. That heavy toll on the young is the heart of the safety warning. Source: Koski et al., 'Foodborne illness outbreaks linked to unpasteurised milk and relationship to changes in state laws, United States, 1998-2018', Epidemiology & Infection 2022 (CDC; PMC9987020).",
     "topic": "raw-milk-vs-pasteurized"
   },
   {
@@ -16737,7 +16737,7 @@
     "choices": [
       "Keep avoiding raw milk since its risk is real",
       "Switch every child to raw milk right away",
-      "Drink raw milk only after boiling it first",
+      "Drink raw milk only from certified clean farms",
       "Give raw milk only to kids with asthma"
     ],
     "context": "Loss and colleagues held both truths at once: the allergy protection is real, yet raw milk 'cannot be recommended because it might contain pathogens.' The catch is that the protective proteins are heat-SENSITIVE, so ordinary pasteurized milk loses them along with the germs - a milk that is both safe AND protective doesn't yet exist on shelves. Tellingly, BOILED farm milk lost the protection, and higher bacterial counts did NOT predict it - pointing back to those fragile proteins. That unresolved tension is what makes raw vs. pasteurized a true dilemma. Source: Loss et al. 2011, GABRIELA study, J Allergy Clin Immunol; PubMed abstract.",
@@ -16805,7 +16805,7 @@
       "Blowing charcoal ash settles across the meat",
       "The marinade hardens into a crust on the meat"
     ],
-    "context": "PAHs (polycyclic aromatic hydrocarbons) form when fat and juices drip onto an open flame and the rising smoke coats the meat — so grilling directly over fire is a main source, separate from the HCAs that form inside the meat itself. The National Cancer Institute's fixes: keep meat off direct flame, flip it often, microwave it first, and trim the charred bits — so HOW you cook may matter more than that it's red. (Source: NCI 'Chemicals in Meat Cooked at High Temperatures'.)",
+    "context": "PAHs (polycyclic aromatic hydrocarbons) form when fat and juices drip onto an open flame and the rising smoke coats the meat — so grilling directly over fire is a main source, separate from the HCAs that form inside the meat itself. The National Cancer Institute's fixes: keep meat off direct flame, flip it often, microwave it first, and trim the charred bits — so how meat is cooked may matter too. (Source: NCI 'Chemicals in Meat Cooked at High Temperatures'.)",
     "topic": "red-meat-and-the-cancer-scare"
   },
   {
@@ -16818,7 +16818,7 @@
       "Potassium",
       "Zinc"
     ],
-    "context": "Iron is the core of hemoglobin, the protein in red blood cells that ferries oxygen from your lungs to every tissue in your body — so 'iron builds blood' is literally true. Red meat and liver are rich in it, which is why they're the old remedy for low, tired, pale blood. Source: NIH Office of Dietary Supplements, Iron Fact Sheet — https://ods.od.nih.gov/factsheets/Iron-HealthProfessional/",
+    "context": "Iron is the core of hemoglobin, the protein in red blood cells that ferries oxygen from the lungs to every tissue in the body — so 'iron builds blood' is literally true. Red meat and liver are rich in it, which is why they're the old remedy for low, tired, pale blood. Source: NIH Office of Dietary Supplements, Iron Fact Sheet — https://ods.od.nih.gov/factsheets/Iron-HealthProfessional/",
     "topic": "red-meats-hidden-payload-heme-iron-and-b12"
   },
   {
@@ -16831,7 +16831,7 @@
       "Vitamin K",
       "Vitamin E"
     ],
-    "context": "Segar gave Popeye spinach for its vitamin A (beta-carotene), never iron. Even the famous tale that 'a scientist misplaced a decimal point and overstated spinach's iron tenfold' is itself a myth — nutritionist Arnold Bender traced it to two studies he conflated in a 1972 lecture. Spinach truly holds iron; it's just the poorly-absorbed non-heme kind (its oxalate locks much of it up). Source: M. Sutton, Nottingham Trent University repository — https://irep.ntu.ac.uk/id/eprint/30230/1/7987_Sutton.pdf",
+    "context": "Segar gave Popeye spinach for its vitamin A (beta-carotene), never iron. Even the famous tale that 'a scientist misplaced a decimal point and overstated spinach's iron tenfold' is itself a myth: the criminologist Mike Sutton traced the story and found no evidence that any such slip ever happened. Spinach truly holds iron; it's just the poorly-absorbed non-heme kind (its oxalate locks much of it up). Source: M. Sutton, Nottingham Trent University repository — https://irep.ntu.ac.uk/id/eprint/30230/1/7987_Sutton.pdf",
     "topic": "red-meats-hidden-payload-heme-iron-and-b12"
   },
   {
@@ -16840,11 +16840,11 @@
     "answer": "Bowel cancer",
     "choices": [
       "Bowel cancer",
-      "Type 2 diabetes",
-      "High blood pressure",
-      "Kidney stones"
+      "Skin cancer",
+      "Bone cancer",
+      "Brain cancer"
     ],
-    "context": "This is the honest counter-case. Advisory boards don't deny red meat's iron and B12, but they link heavy intake of red and especially processed meats to a higher risk of bowel (colorectal) cancer, so they recommend moderation. Supporters of traditional diets counter that the well-absorbed iron and B12 are hard to match from plants alone. Here are both sides — you decide. Source: The Conversation, 'Is black pudding really a superfood?' — https://theconversation.com/is-black-pudding-really-a-superfood-err-no-53087",
+    "context": "This is the honest counter-case. Advisory boards don't deny red meat's iron and B12, but they link heavy intake of red and especially processed meats to a higher risk of bowel (colorectal) cancer, so they recommend moderation. Supporters of traditional diets counter that the well-absorbed iron and B12 are hard to match from plants alone. Both sides have a case. Source: The Conversation, 'Is black pudding really a superfood?' — https://theconversation.com/is-black-pudding-really-a-superfood-err-no-53087",
     "topic": "red-meats-hidden-payload-heme-iron-and-b12"
   },
   {
@@ -16935,7 +16935,7 @@
       "It softens into a jelly that sets when the pot cools.",
       "It stiffens into a sheet the cook lifts off the top."
     ],
-    "context": "Gribenes are crisp cracklings of chicken or goose skin, browned in the pot as the fat renders out and usually fried up with onion. Ashkenazi cooks ate them as a snack, on rye bread with salt, or stirred into chopped liver. The fat itself, schmaltz, sits at the heart of traditional Ashkenazi cooking -- matzo ball soup, chopped liver, latkes -- and the name comes straight from the German verb 'schmelzen,' meaning 'to melt,' named for exactly what you do to make it; it reached English through Yiddish-speaking Jews. Kosher law forbids mixing meat with dairy (so butter couldn't go near a meat meal) and forbids pork, so rendered poultry fat filled the gap in central and eastern Europe. Source: Wikipedia, 'Gribenes'; Wikipedia, 'Schmaltz'.",
+    "context": "Gribenes are crisp cracklings of chicken or goose skin, browned in the pot as the fat renders out and usually fried up with onion. Ashkenazi cooks ate them as a snack, on rye bread with salt, or stirred into chopped liver. The fat itself, schmaltz, sits at the heart of traditional Ashkenazi cooking -- matzo ball soup, chopped liver, latkes -- and the name comes straight from the German verb 'schmelzen,' meaning 'to melt,' named for exactly what a cook does to make it; it reached English through Yiddish-speaking Jews. Kosher law forbids mixing meat with dairy (so butter couldn't go near a meat meal) and forbids pork, so rendered poultry fat filled the gap in central and eastern Europe. Source: Wikipedia, 'Gribenes'; Wikipedia, 'Schmaltz'.",
     "topic": "rendering-fat-into-cooking-gold"
   },
   {
@@ -16961,7 +16961,7 @@
       "As it cools, the surface dries into a crust that dams the juice",
       "As it cools, the fat resets to solid and plugs the gaps"
     ],
-    "context": "The honest reason resting works is temperature, not migrating juice: water isn't compressible and muscle fibers shrink rather than balloon out (hence Dr. Antonio Mata's 'fibers are not balloons'). Straight off the heat the fibers are hot and clenched and squeeze juice the instant you cut; as they cool during the rest they relax and hold the liquid in. Source: AmazingRibs.com, 'The Science of Resting Meat' (Dr. Antonio Mata quote); Serious Eats Food Lab (J. Kenji Lopez-Alt).",
+    "context": "The honest reason resting works is temperature, not migrating juice: water isn't compressible and muscle fibers shrink rather than balloon out (hence Dr. Antonio Mata's 'fibers are not balloons'). Straight off the heat the fibers are hot and clenched and squeeze out juice the instant the knife goes in; as they cool during the rest they relax and hold the liquid in. Source: AmazingRibs.com, 'The Science of Resting Meat' (Dr. Antonio Mata quote); Serious Eats Food Lab (J. Kenji Lopez-Alt).",
     "topic": "resting-meat-why-patience-keeps-a-steak-juicy"
   },
   {
@@ -16987,7 +16987,7 @@
       "Poultry always needs more rest than beef, whatever the size",
       "Its skin seals in steam that must escape before carving"
     ],
-    "context": "Meat is roughly 75% water and 15% fat, and that watery, fatty makeup acts like insulation -- so a thick roast holds a big reservoir of heat and keeps rising 5-10F for well over an hour, while a thin skirt steak barely carries over at all. Rule of thumb chefs use: rest for about a third of the total cooking time. Source: AmazingRibs.com, 'Carryover Cooking'; Serious Eats Food Lab (J. Kenji Lopez-Alt).",
+    "context": "Meat is roughly 75% water and 15% fat, and that watery, fatty makeup acts like insulation -- so a thick roast holds a big reservoir of heat, keeps rising 5-10F after it leaves the oven and cools only slowly, while a thin skirt steak barely carries over at all. Rule of thumb chefs use: rest for about a third of the total cooking time. Source: AmazingRibs.com, 'Carryover Cooking'; Serious Eats Food Lab (J. Kenji Lopez-Alt).",
     "topic": "resting-meat-why-patience-keeps-a-steak-juicy"
   },
   {
@@ -17000,7 +17000,7 @@
       "Down through the thickest edge",
       "At a long, shallow bias angle"
     ],
-    "context": "Slicing across the grain chops the tough strands into short bundles your teeth hardly work through; cut the wrong way -- with the grain -- and the same meat can eat up to about four times as chewy. The classic analogy: shredding a 3-foot rope is brutal, but snip it into 1-inch pieces first and it's easy. Source: TheKitchn, 'How to Slice Meat Against the Grain'; TheMeatStick, 'Why Slicing Against the Grain Changes Everything.'",
+    "context": "Slicing across the grain chops the tough strands into short bundles the teeth hardly work through; cut the wrong way -- with the grain -- and the same meat can eat up to about four times as chewy. The classic analogy: shredding a 3-foot rope is brutal, but snip it into 1-inch pieces first and it's easy. Source: TheKitchn, 'How to Slice Meat Against the Grain'; TheMeatStick, 'Why Slicing Against the Grain Changes Everything.'",
     "topic": "resting-meat-why-patience-keeps-a-steak-juicy"
   },
   {
@@ -17650,7 +17650,7 @@
       "Beside a warm oven",
       "On a sunny windowsill"
     ],
-    "context": "The fridge is the no-planning default because it holds a safe, steady 40°F or below — cold enough that bacteria can't multiply. The catch is time: a pound of ground meat needs a full day, and a big turkey about a day for every 4 to 5 pounds. The other two safe methods — cold water in a sealed bag, or the microwave — are faster but need your attention. Source: USDA FSIS, 'The Big Thaw — Safe Defrosting Methods.'",
+    "context": "The fridge is the no-planning default because it holds a safe, steady 40°F or below — cold enough to keep bacteria from multiplying quickly. The catch is time: a pound of ground meat needs a full day, and a big turkey about a day for every 4 to 5 pounds. The other two safe methods — cold water in a sealed bag, or the microwave — are faster but need watching. Source: USDA FSIS, 'The Big Thaw — Safe Defrosting Methods.'",
     "topic": "safe-thawing-never-on-the-counter"
   },
   {
@@ -17682,14 +17682,14 @@
   {
     "tier": 4,
     "question": "Two raw chicken breasts thaw on the same day, one overnight in the cold fridge and the other all afternoon on the kitchen counter. Then dinner plans change. Food-safety experts say the fridge-thawed breast is safe to refreeze raw, but the counter-thawed one must be cooked or thrown out. Why is the fridge-thawed breast safe?",
-    "answer": "It never got warm enough for the bacteria to multiply",
+    "answer": "It never got warm enough for bacteria to multiply fast",
     "choices": [
-      "It never got warm enough for the bacteria to multiply",
+      "It never got warm enough for bacteria to multiply fast",
       "The cold actually killed off the bacteria already on it",
       "Its sealed bag kept new bacteria from getting in",
       "It thawed so fast the bacteria never caught up"
     ],
-    "context": "Because the fridge one never left refrigerator temperature, it stayed out of the danger zone the whole time, so it's safe to refreeze raw. The one trade-off is juiciness: slow thawing grows large ice crystals that rupture the meat's cells, so it 'drips' and cooks up a little drier — safe, just less juicy. The counter one, though, spent hours warming in the danger zone; refreezing would only lock the bacteria in. (Meat thawed by the cold-water or microwave methods can be refrozen too — but only after you cook it first.) Source: USDA FSIS, 'Freezing and Food Safety' and 'The Big Thaw.'",
+    "context": "Because the fridge one never left refrigerator temperature, it stayed out of the danger zone the whole time, so it's safe to refreeze raw. The one trade-off is juiciness: ice crystals from freezing rupture some of the meat's cells, so a refrozen piece 'drips' moisture as it thaws again and cooks up a little drier — safe, just less juicy. The counter one, though, spent hours warming in the danger zone; refreezing would only lock the bacteria in. (Meat thawed by the cold-water or microwave methods can be refrozen too — but only after it has been cooked.) Source: USDA FSIS, 'Freezing and Food Safety' and 'The Big Thaw.'",
     "topic": "safe-thawing-never-on-the-counter"
   },
   {
@@ -17702,12 +17702,12 @@
       "An iris",
       "A violet"
     ],
-    "context": "The saffron crocus, Crocus sativus, is a lilac-purple crocus that blooms in autumn; the red threads we call saffron are dried from its blossoms - and it is the priciest spice on Earth. (Wikipedia, 'Saffron')",
+    "context": "The saffron crocus, Crocus sativus, is a lilac-purple crocus that blooms in autumn; the red threads called saffron are dried from its blossoms - and it is the priciest spice on Earth. (Wikipedia, 'Saffron')",
     "topic": "saffron-the-spice-worth-more-than-gold"
   },
   {
     "tier": 2,
-    "question": "The royal house of Navarre paid eight times as much for a pound of saffron around 1300 as for a pound of black pepper, and merchants weighed the crimson threads almost ounce for ounce against gold. What do traders still call saffron?",
+    "question": "The royal house of Navarre, in the 1400s, paid eight times as much for saffron as for black pepper, itself a costly spice, and saffron has long been said to be worth its weight in gold. What do traders still call it?",
     "answer": "Red gold",
     "choices": [
       "Red gold",
@@ -17751,7 +17751,7 @@
     "choices": [
       "Safflower",
       "Sunflower",
-      "Marigold",
+      "Nasturtium",
       "Dandelion"
     ],
     "context": "Real saffron is whole, deep-crimson, trumpet-shaped threads; the common fake is safflower (Carthamus tinctorius), or powder cut with turmeric or paprika. Buying whole threads, not powder, is the best defense. (Roco Saffron)",
@@ -17806,7 +17806,7 @@
       "Grind the threads into the dry rice before adding any liquid.",
       "Sprinkle the whole threads on top just before serving."
     ],
-    "context": "Saffron's gold pigment, crocin, is water-soluble but won't release into fat - so you steep the threads in warm water, broth, or milk for 15-20 minutes and pour that golden liquid into the dish. Fried in oil, the color just scorches in spots. (Savory Spice Shop)",
+    "context": "Saffron's gold pigment, crocin, is water-soluble but won't release into fat - so cooks steep the threads in warm water, broth, or milk for 15-20 minutes and pour that golden liquid into the dish. Fried in oil, the color just scorches in spots. (Savory Spice Shop)",
     "topic": "saffron-the-spice-worth-more-than-gold"
   },
   {
@@ -17988,7 +17988,7 @@
       "Makes them taste more sour",
       "Makes them taste more bitter"
     ],
-    "context": "This is real and reproducible right at the table: the salt is kept far below the level where you'd taste 'salty,' and instead the sweetness pops — which is exactly why salted caramel and salt-on-watermelon are a thing. Salt adds no sweetness of its own; it's dialing something else down. Sources: culinarylore.com, 'why does salt make sweet foods taste sweeter'; science.org, 'Why adding salt makes fruit and candy sweeter.'",
+    "context": "This is real and reproducible right at the table: the salt is kept far below the level where a taster would notice 'salty,' and instead the sweetness pops — which is exactly why salted caramel and salt-on-watermelon are a thing. Salt adds no sweetness of its own; it's dialing something else down. Sources: culinarylore.com, 'why does salt make sweet foods taste sweeter'; science.org, 'Why adding salt makes fruit and candy sweeter.'",
     "topic": "salt-and-the-taste-dial-why-a-pinch-makes-sweet-sweeter"
   },
   {
@@ -17997,7 +17997,7 @@
     "answer": "A pinch of salt",
     "choices": [
       "A pinch of salt",
-      "A splash of vinegar",
+      "A drizzle of cream",
       "A spoonful of sugar",
       "A longer simmer"
     ],
@@ -18235,7 +18235,7 @@
       "Boiling had already driven the flavor out of the pasta",
       "Salt melts into pasta only under very high heat"
     ],
-    "context": "As the noodles hydrate and swell they absorb salted water all the way through, seasoning from the inside out — flavor you can never add back afterward, no matter how much you sprinkle on the finished plate. The old rule is to make the water 'taste like the sea,' roughly 1–2 tablespoons per pound of pasta. Source: The Culinary Center of Kansas City, 'You're Not Salting Your Pasta Water Enough' (kcculinary.com/blog/youre-not-salting-your-pasta-water-enough); Taste of Home, 'How to Season Pasta Water' (tasteofhome.com/article/how-to-season-pasta-water).",
+    "context": "As the noodles hydrate and swell they absorb salted water all the way through, seasoning from the inside out — flavor that can never be added back afterward, no matter how much salt goes on the finished plate. The old rule is to make the water 'taste like the sea,' roughly 1–2 tablespoons per pound of pasta. Source: The Culinary Center of Kansas City, 'You're Not Salting Your Pasta Water Enough' (kcculinary.com/blog/youre-not-salting-your-pasta-water-enough); Taste of Home, 'How to Season Pasta Water' (tasteofhome.com/article/how-to-season-pasta-water).",
     "topic": "salt-the-great-amplifier-and-when-to-salt"
   },
   {
@@ -18274,7 +18274,7 @@
       "Straight down, as gravity pulled the loose juices free",
       "Nowhere — the puddle is just the salt itself melting"
     ],
-    "context": "On a cut surface salt runs osmosis in reverse of seasoning: water is pulled OUT of the cells toward the salty surface. Within 30–60 minutes salted eggplant or cabbage visibly weeps beads of liquid, so you rinse and pat it dry to make it brown crisp instead of steaming. The same osmosis is why little beads of juice appear on a steak minutes after you salt it. Source: Food52, 'Do You Actually Need to Salt Eggplant in Advance?' (food52.com/story/26413); ScienceInsights, 'What Makes Eggplant Bitter and How to Avoid It' (scienceinsights.org/what-makes-eggplant-bitter-and-how-to-avoid-it).",
+    "context": "On a cut surface salt runs osmosis in reverse of seasoning: water is pulled OUT of the cells toward the salty surface. Within 30–60 minutes salted eggplant or cabbage visibly weeps beads of liquid, so cooks rinse and pat it dry to make it brown crisp instead of steaming. The same osmosis is why little beads of juice appear on a steak minutes after it is salted. Source: Food52, 'Do You Actually Need to Salt Eggplant in Advance?' (food52.com/story/26413); ScienceInsights, 'What Makes Eggplant Bitter and How to Avoid It' (scienceinsights.org/what-makes-eggplant-bitter-and-how-to-avoid-it).",
     "topic": "salt-the-great-amplifier-and-when-to-salt"
   },
   {
@@ -18287,7 +18287,7 @@
       "It drops, so the water boils at a cooler temperature",
       "It holds steady, but the salt makes bubbles form sooner"
     ],
-    "context": "Salt raises water's boiling point only a trace: a tablespoon lifts it under 0.5°C, and a normal ~1% pasta pot rises only about 0.17–0.3°C. You'd need roughly 60 grams per liter (about 4 tablespoons) to gain even 1°C, at which point the water is undrinkably salty. You salt pasta water purely for flavor, not speed. Source: The San Lupe Project, 'Boiling Point of Water Salt' (thesanlupeproject.org/boiling-point-water-salt-science); The Kitchn, 'Does Salting Pasta Water Have Any Scientific Merit?' (thekitchn.com/does-salting-pa-158293).",
+    "context": "Salt raises water's boiling point only a trace: a tablespoon lifts it under 0.5°C, and a normal ~1% pasta pot rises only about 0.17–0.3°C. It would take roughly 60 grams per liter (about 4 tablespoons) to gain even 1°C, at which point the water is undrinkably salty. Pasta water is salted purely for flavor, not speed. Source: The San Lupe Project, 'Boiling Point of Water Salt' (thesanlupeproject.org/boiling-point-water-salt-science); The Kitchn, 'Does Salting Pasta Water Have Any Scientific Merit?' (thekitchn.com/does-salting-pa-158293).",
     "topic": "salt-the-great-amplifier-and-when-to-salt"
   },
   {
@@ -18326,12 +18326,12 @@
       "Its crystals dissolve slowly, so less salt reaches the dish",
       "Its grains are churned with air, so each one weighs less"
     ],
-    "context": "Bigger crystals pack in loosely, so a spoonful weighs far LESS and it's much harder to over-salt. A tablespoon of Diamond Crystal kosher salt weighs about 10 grams; a tablespoon of fine table salt weighs about 23 grams — more than double — so table salt is roughly twice as salty by volume, and grabbing the wrong one can nearly double the saltiness. Source: America's Test Kitchen, 'Ask Paul: What's the Difference Between Table Salt, Kosher Salt...' (americastestkitchen.com/articles/4286); Jacobsen Salt Co., 'Table Salt Versus Kosher Salt' (jacobsensalt.com/blogs/resources/table-salt-versus-kosher-salt).",
+    "context": "Bigger crystals pack in loosely, so a spoonful weighs far LESS and it's much harder to over-salt. A tablespoon of Diamond Crystal kosher salt weighs about 10 grams; a tablespoon of fine table salt weighs about 23 grams — more than double — so table salt is roughly twice as salty by volume, and grabbing the wrong one can more than double the saltiness. Source: America's Test Kitchen, 'Ask Paul: What's the Difference Between Table Salt, Kosher Salt...' (americastestkitchen.com/articles/4286); Jacobsen Salt Co., 'Table Salt Versus Kosher Salt' (jacobsensalt.com/blogs/resources/table-salt-versus-kosher-salt).",
     "topic": "salt-the-great-amplifier-and-when-to-salt"
   },
   {
     "tier": 5,
-    "question": "J. Kenji López-Alt tests kitchen advice in his own lab, and on steak he is blunt: salt it right before it hits the hot pan or at least 40 minutes ahead. Salting 10 to 30 minutes ahead, he says, is the single worst choice a cook can make. What goes wrong in that middle window?",
+    "question": "J. Kenji López-Alt tests kitchen advice in his own lab, and on steak he is blunt: salt it right before it hits the hot pan or at least 40 minutes ahead. Salting anywhere from about 3 to 40 minutes ahead, he says, is the worst choice a cook can make. What goes wrong in that middle window?",
     "answer": "The juice has been pulled out but not back in, so the surface won't sear",
     "choices": [
       "The juice has been pulled out but not back in, so the surface won't sear",
@@ -18339,7 +18339,7 @@
       "The surface has set into a rubbery skin that won't take color",
       "The salt has half-dissolved into a gritty paste that steams in the pan"
     ],
-    "context": "The most retellable timing gem: salt a steak right before the pan OR at least ~40–45 minutes ahead, but the 10-to-30-minute window is the WORST — the salt has pulled juice to the surface but there hasn't been time for it to soak back in, leaving a wet surface that ruins the sear. Source: J. Kenji López-Alt (Serious Eats) via Tasting Table, 'Why You Should Always Salt Your Steak Before Cooking' (tastingtable.com/844510); Kenji López-Alt, TikTok @j.kenji.lopezalt video 7471317522248142110.",
+    "context": "The most retellable timing gem: salt a steak right before the pan OR at least ~40–45 minutes ahead, but anywhere in the window between, from about 3 to 40 minutes, is the WORST — the salt has pulled juice to the surface but there hasn't been time for it to soak back in, leaving a wet surface that ruins the sear. Source: J. Kenji López-Alt (Serious Eats) via Tasting Table, 'Why You Should Always Salt Your Steak Before Cooking' (tastingtable.com/844510); Kenji López-Alt, TikTok @j.kenji.lopezalt video 7471317522248142110.",
     "topic": "salt-the-great-amplifier-and-when-to-salt"
   },
   {
@@ -18578,15 +18578,15 @@
   },
   {
     "tier": 1,
-    "question": "A kid bakes brownies perfectly at 350 degrees for 25 minutes, then doubles the batter in one pan and bakes it at 350 for 50 minutes, sure twice the batter needs twice the time. The edges burn; the middle stays raw. What is the real rule for a doubled batch?",
-    "answer": "Keep the temperature the same, add only a little time",
+    "question": "A kid bakes brownies perfectly at 350 degrees for 25 minutes, then pours a double batch into the same pan and bakes it twice as long. The edges burn and the middle stays raw. What should the kid have done instead?",
+    "answer": "Spread it in a wider pan, as deep as before",
     "choices": [
-      "Keep the temperature the same, add only a little time",
-      "Keep the time the same, raise the temperature instead",
-      "Double the temperature and the time together",
-      "Halve the temperature and double the time"
+      "Spread it in a wider pan, as deep as before",
+      "Baked it in the same pan, in a hotter oven",
+      "Stirred the batter halfway through the bake",
+      "Added extra eggs to help the middle set"
     ],
-    "context": "Doubling the ingredients does not double the oven settings. The doubled batter just sits deeper in the pan, so 'bake twice as long' scorches the edges before the middle can cook. Keep the same temperature and expect only about 15 to 25 percent more time, and check the center with a toothpick, never the clock alone. Source: kitchenscience.scitoys.com/scaling.",
+    "context": "Doubling the batter in one pan doubles its depth, so heat has twice as far to travel to the middle, and 'bake twice as long' scorches the edges before the center can cook. A pan with about twice the floor area keeps the batter at its old depth, so it bakes in roughly the original time; check the center with a toothpick, never the clock alone. Source: kitchenscience.scitoys.com/scaling ('we can eliminate that third doubling by keeping the depth constant').",
     "topic": "scaling-a-recipe-why-baking-times-dont-scale"
   },
   {
@@ -18597,7 +18597,7 @@
       "About the same as one original pan",
       "About twice as long as one original pan",
       "About half as long as one original pan",
-      "A little longer than one original pan"
+      "About half again as long as one original pan"
     ],
     "context": "Each pan still holds the original DEPTH of batter, so heat has the same short distance to travel to each center, and the bake time barely changes. It is total depth, not total amount, that sets baking time. Pile the whole double batch into one deep pan instead and the center sits twice as far from the heat, baking unevenly. Source: kitchenscience.scitoys.com/scaling.",
     "topic": "scaling-a-recipe-why-baking-times-dont-scale"
@@ -18639,19 +18639,6 @@
       "The taller sides block the oven's heat from the top"
     ],
     "context": "Double every side and the VOLUME grows 2x2x2 = 8 times, while the SURFACE grows only 2x2 = 4 times, the square-cube idea. The surface is where heat enters, but now there is twice as much batter for every bit of crust, so the inside cannot cook before the outside dries and browns. Scitoys' example: a 5x4x8.5-inch loaf (about 3 quarts), doubled in every dimension to 10x8x17 inches, holds nearly 24 quarts, eight times the batter, with only four times the crust. Source: kitchenscience.scitoys.com/scaling.",
-    "topic": "scaling-a-recipe-why-baking-times-dont-scale"
-  },
-  {
-    "tier": 4,
-    "question": "A cake rockets up in the oven, then sinks into a dense, sunken middle with a faint metallic taste: its baker doubled the recipe and, to be safe, doubled the baking powder too. Why did doubling the baking powder backfire?",
-    "answer": "Too much gas built up for the batter to hold, and the bubbles burst",
-    "choices": [
-      "Too much gas built up for the batter to hold, and the bubbles burst",
-      "The extra powder soaked up the batter's liquid as it baked",
-      "The batter set on the outside long before the center did",
-      "The extra powder made the crumb tough and chewy"
-    ],
-    "context": "Double the baking powder and you make double the carbon-dioxide gas, but the batter's gluten net cannot hold the extra pressure, so the bubbles rupture and the cake collapses (and too much leavening can taste metallic). Bakers scale leavening to only about 1.5 times, or trim roughly an eighth of a teaspoon for every teaspoon. This is why baking is stricter than stovetop cooking: a stew forgives a rough double, just simmer longer and taste, but a cake's geometry, leavening, and browning all shift at once. Sources: mashed.com; pastrycal.com.",
     "topic": "scaling-a-recipe-why-baking-times-dont-scale"
   },
   {
@@ -18903,7 +18890,7 @@
   },
   {
     "tier": 1,
-    "question": "A week of chopping onions and carrots leaves a chef's knife feeling dull. The cook gives it a few strokes on a honing steel, grinding nothing away and barely warming the blade, and it slices through a tomato skin again. What did those strokes do to the edge?",
+    "question": "A week of chopping onions and carrots leaves a chef's knife feeling dull. The cook gives it a few quick strokes on a honing steel, and it slices through a tomato skin again. What did those strokes do to the edge?",
     "answer": "Bend the rolled-over edge back upright, straight and true",
     "choices": [
       "Bend the rolled-over edge back upright, straight and true",
@@ -18924,7 +18911,7 @@
       "Buffing a slick protective coat onto the edge",
       "Pressing the steel to pack the edge tighter"
     ],
-    "context": "A whetstone is a sharpening STONE, used wet — and unlike the steel, it actually removes a tiny bit of metal to grind a brand-new cutting edge (wetted, it 'acts like sand'). Because it takes metal off, you sharpen only occasionally, roughly every month or two of daily use, while honing is the quick fix in between. Source: Grokipedia 'Sharpening'; Borough Kitchen whetstone/steel guide.",
+    "context": "A whetstone is a sharpening STONE, used wet — and unlike the steel, it actually removes a tiny bit of metal to grind a brand-new cutting edge (wetted, it 'acts like sand'). Because it takes metal off, cooks sharpen only occasionally, roughly every month or two of daily use, while honing is the quick fix in between. Source: Grokipedia 'Sharpening'; Borough Kitchen whetstone/steel guide.",
     "topic": "sharpening-vs-honing-grinding-a-new-edge-vs-straightening-th"
   },
   {
@@ -18937,7 +18924,7 @@
       "Hard pressure bends the blade permanently out of line",
       "Hard pressure scrubs the grooves off the steel rod"
     ],
-    "context": "A honing steel's fine grooves catch the rolled edge and nudge it back into line — but only with a light touch. Four to six gentle, alternating strokes per side is plenty. Bear down too hard and you can microchip the fragile edge, breaking out tiny pieces instead of truing it. Source: XINZUO 'Honing Steel Guide'; TOG Knives 'How To Sharpen A Knife With A Steel'.",
+    "context": "A honing steel's fine grooves catch the rolled edge and nudge it back into line — but only with a light touch. Four to six gentle, alternating strokes per side is plenty. Bear down too hard and the steel can microchip the fragile edge, breaking out tiny pieces instead of truing it. Source: XINZUO 'Honing Steel Guide'; TOG Knives 'How To Sharpen A Knife With A Steel'.",
     "topic": "sharpening-vs-honing-grinding-a-new-edge-vs-straightening-th"
   },
   {
@@ -18950,7 +18937,7 @@
       "The edge has rusted over and now needs a good scrubbing",
       "The edge has bent back toward the spine instead"
     ],
-    "context": "Honing only works when there's a rolled edge to straighten. Once the apex itself wears away, there's nothing left to bend back — so honing stops doing anything. That's the tell it's finally time for the whetstone: when honing no longer restores the edge, you must sharpen. Source: Made In 'Honing vs. Sharpening'; Knife Depot 'Honing Rod vs Sharpening Stone'.",
+    "context": "Honing only works when there's a rolled edge to straighten. Once the apex itself wears away, there's nothing left to bend back — so honing stops doing anything. That's the tell it's finally time for the whetstone: when honing no longer restores the edge, the knife must be sharpened. Source: Made In 'Honing vs. Sharpening'; Knife Depot 'Honing Rod vs Sharpening Stone'.",
     "topic": "sharpening-vs-honing-grinding-a-new-edge-vs-straightening-th"
   },
   {
@@ -18963,20 +18950,20 @@
       "Start on 400's fine polish, finish on 6000's coarse bite",
       "Start on 6000's fine polish, finish on 400's coarse bite"
     ],
-    "context": "Whetstone grit works exactly like sandpaper: a LOW number means big abrasive particles that cut metal fast (coarse, to set the edge), and a HIGH number means fine particles that polish it. You climb from coarse to fine — which is why many stones are two-sided 'combination' whetstones, a coarse face on one side and a fine face on the other. Source: Sharpening Supplies 'Sharpening Stone Grit Chart'; Misen 'Understanding Whetstone Grit'.",
+    "context": "Whetstone grit works exactly like sandpaper: a LOW number means big abrasive particles that cut metal fast (coarse, to set the edge), and a HIGH number means fine particles that polish it. Sharpeners climb from coarse to fine — which is why many stones are two-sided 'combination' whetstones, a coarse face on one side and a fine face on the other. Source: Sharpening Supplies 'Sharpening Stone Grit Chart'; Misen 'Understanding Whetstone Grit'.",
     "topic": "sharpening-vs-honing-grinding-a-new-edge-vs-straightening-th"
   },
   {
     "tier": 4,
-    "question": "Suppose you are sharpening a chef's knife on a wet whetstone before dinner service, the blade laid at a low angle and one side of the edge dragged across the coarse grit, stroke after patient stroke. After many passes you slide a thumb gently across the edge and feel a tiny curl of bent metal running its length: the burr. Where on the blade does it show up?",
-    "answer": "On the far side, the one you are not grinding",
+    "question": "A cook sharpening a chef's knife on a wet whetstone before dinner service holds the blade at a low angle and drags one side of the edge across the coarse grit, stroke after patient stroke. After many passes he slides a thumb gently across the edge and feels a tiny curl of bent metal running its length: the burr. Where on the blade does it show up?",
+    "answer": "On the far side, the one not touching the stone",
     "choices": [
-      "On the far side, the one you are not grinding",
-      "On the same side you are grinding against the stone",
+      "On the far side, the one not touching the stone",
+      "On the same side that is grinding on the stone",
       "Along the spine, at the top of the blade",
       "Right at the tip, split down the centerline"
     ],
-    "context": "As you grind one side, the edge gets so thin the steel bends over rather than abrading cleanly, folding a wire lip onto the OPPOSITE face — the side you're not touching. That's the burr, or 'wire edge,' and finding it there is exactly what you want. Source: GearJunkie 'Fighting the Wire Edge'; Sharp Pebble 'Burr Removal'.",
+    "context": "As one side is ground, the edge gets so thin the steel bends over rather than abrading cleanly, folding a wire lip onto the OPPOSITE face — the side not touching the stone. That's the burr, or 'wire edge,' and finding it there is exactly what a sharpener wants. Source: GearJunkie 'Fighting the Wire Edge'; Sharp Pebble 'Burr Removal'.",
     "topic": "sharpening-vs-honing-grinding-a-new-edge-vs-straightening-th"
   },
   {
@@ -19015,12 +19002,12 @@
       "Sideways, edge-first across the leather's width",
       "Back and forth, edge leading on every pass"
     ],
-    "context": "On a strop you always drag the blade BACKWARD — spine leading, edge trailing. Pull it forward, edge-first, and the blade slices into the leather, wrecking both the strop and your edge; backward-only lets the leather wipe the edge clean without cutting. The strop wipes off the last clinging burr and the fine scratches the stone left, taking the blade from 'sharp' to 'scary-sharp' while removing almost no real metal. Source: Men's Journal 'How to Use a Leather Strop'; Work Sharp 'Mastering the Art of Knife Stropping'.",
+    "context": "On a strop the blade always travels BACKWARD — spine leading, edge trailing. Pull it forward, edge-first, and the blade slices into the leather, wrecking both the strop and the edge; backward-only lets the leather wipe the edge clean without cutting. The strop wipes off the last clinging burr and the fine scratches the stone left, taking the blade from 'sharp' to 'scary-sharp' while removing almost no real metal. Source: Men's Journal 'How to Use a Leather Strop'; Work Sharp 'Mastering the Art of Knife Stropping'.",
     "topic": "sharpening-vs-honing-grinding-a-new-edge-vs-straightening-th"
   },
   {
     "tier": 1,
-    "question": "A big pot of soup sits on the stove, and the recipe says to hold it at a bare simmer: not a rolling boil, and not just quietly warm. The cook leans over to check the surface. What should the liquid be doing?",
+    "question": "A big pot of soup sits on the stove, and the recipe says to hold it at a bare simmer for an hour. The cook leans over to check the surface. What should the liquid be doing?",
     "answer": "A few small bubbles rise slowly and only now and then break the surface.",
     "choices": [
       "Big, fast bubbles churn across the whole top and throw off clouds of steam.",
@@ -19041,7 +19028,7 @@
       "Exactly the same — both sit at about 212 F (100 C).",
       "Hotter and climbing, as high as the burner will push it."
     ],
-    "context": "This is the great crank-it-up myth: once water reaches its boiling point it can't get any hotter, no matter how high you turn the flame — at sea level a gentle boil and a violent rolling boil are BOTH about 212 F (100 C). A rolling boil is just far more agitation, not more heat. (Cooks say 'at sea level' because thinner mountain air lowers the boiling point.) Source: Food Network, 'What Is a Rolling Boil'; Quora, 'Is a rolling boil hotter than a lighter boil'.",
+    "context": "This is the great crank-it-up myth: once water reaches its boiling point it can't get any hotter, no matter how high the flame goes — at sea level a gentle boil and a violent rolling boil are BOTH about 212 F (100 C). A rolling boil is just far more agitation, not more heat. (Cooks say 'at sea level' because thinner mountain air lowers the boiling point.) Source: Food Network, 'What Is a Rolling Boil'; Quora, 'Is a rolling boil hotter than a lighter boil'.",
     "topic": "simmer-vs-rolling-boil-gentle-vs-violent-water"
   },
   {
@@ -19059,7 +19046,7 @@
   },
   {
     "tier": 3,
-    "question": "A raw egg cracked straight into the pot is about to be poached, the gentlest way of all to cook in water, gentler even than a simmer and kept for the most fragile foods. In a proper poach the water is only just warm on the stove. What is that barely heated water doing?",
+    "question": "A raw egg slips into a wide pan of water to poach, the way cooks handle the most fragile foods: eggs, fish, chicken. Too much heat would tear the white to rags, so the cook keeps a close eye on the surface. What should the water be doing?",
     "answer": "It only trembles and shivers, with no real bubbles breaking the top.",
     "choices": [
       "It shows a steady stream of small bubbles rising from the bottom.",
@@ -19080,7 +19067,7 @@
       "Into the roaring and splashing, lost as the loud sound of the boil.",
       "Into stronger currents that scrub and round off the potato's edges."
     ],
-    "context": "Once water hits its boiling point, every extra bit of burner energy goes not into a hotter pot but into ripping liquid water into steam — the 'latent heat of vaporization,' about 540 calories per gram. That's why a hard boil throws off clouds of steam and boils the pot dry so fast, yet hands the food the very same ~212 F a gentle simmer does; blasting past a boil just wastes heat, it doesn't cook the inside any quicker. Source: physics of latent heat (Britannica, 'latent heat'; PhysicsForums, 'vigorously boiling water').",
+    "context": "Once water hits its boiling point, every extra bit of burner energy goes not into a hotter pot but into ripping liquid water into steam — the 'latent heat of vaporization,' about 540 calories per gram. That's why a hard boil throws off clouds of steam and boils the pot dry so fast, yet hands the food the very same ~212 F a gentle boil does; blasting past a boil just wastes heat, it doesn't cook the inside any quicker. Source: physics of latent heat (Britannica, 'latent heat'; PhysicsForums, 'vigorously boiling water').",
     "topic": "simmer-vs-rolling-boil-gentle-vs-violent-water"
   },
   {
@@ -19392,20 +19379,20 @@
       "The fat has just reached its boiling point",
       "The fat is steaming off its trapped water"
     ],
-    "context": "The 'smoke point' is the temperature where a fat stops shimmering and gives off a steady bluish smoke — the sign it is chemically breaking down and will start to taste burnt. It is the practical rule for whether a fat can handle the heat you are about to give it. Source: Wikipedia, 'Smoke point' (https://en.wikipedia.org/wiki/Smoke_point).",
+    "context": "The 'smoke point' is the temperature where a fat stops shimmering and gives off a steady bluish smoke — the sign it is chemically breaking down and will start to taste burnt. It is the practical rule for whether a fat can handle the heat a cook is about to give it. Source: Wikipedia, 'Smoke point' (https://en.wikipedia.org/wiki/Smoke_point).",
     "topic": "smoke-point-picking-the-right-fat-for-the-heat"
   },
   {
     "tier": 4,
-    "question": "Extra-virgin olive oil warms gently in a sauté pan, well under its smoke point of about 190°C, and not a wisp of smoke rises. Cooks treat the smoke point as the safety line, yet the expensive oil in that quiet pan is already being wrecked. What has gone wrong in it?",
+    "question": "Extra-virgin olive oil warms gently in a sauté pan, well under its smoke point of about 190°C, and not a wisp of smoke rises. Cooks treat the smoke point as the safety line, yet the costly oil in that quiet pan is already losing something. What is happening in it?",
     "answer": "Its flavor and antioxidant compounds have started breaking apart",
     "choices": [
       "Its flavor and antioxidant compounds have started breaking apart",
-      "Its green color has started bleaching away to pale yellow",
+      "Its oil has started splitting into two separate layers",
       "Its trapped water has started boiling out and spitting",
       "Its fat has started soaking into the food instead of frying"
     ],
-    "context": "Extra-virgin olive oil smokes around 190C/374F, well below the refined oils, so it works as a finishing or medium-heat oil rather than a deep-fry oil. Its prized flavor compounds and antioxidant polyphenols are delicate and start degrading around 150-170C — below the smoke point — so blasting it with high heat wastes the very thing you paid for. Drizzle it raw or cook gently. Sources: Wikipedia, 'Template:Smoke point of cooking oils' (EVOO 190C/374F); aboutoliveoil.org (https://www.aboutoliveoil.org/does-olive-oil-lose-its-health-benefits-when-heated).",
+    "context": "Extra-virgin olive oil smokes around 190C/374F, well below the refined oils, so it works as a finishing or medium-heat oil rather than a deep-fry oil. Its prized flavor compounds and antioxidant polyphenols are delicate and start degrading well below the smoke point: in a 2020 study, sautéing at 120C cost about 40% of the polyphenols and at 170C about 75%, though the cooked oil still met the EU's health-claim standard. Drizzle it raw or cook it gently. Sources: Wikipedia, 'Template:Smoke point of cooking oils' (EVOO 190C/374F); Lozano-Castellón et al., 'Domestic Sautéing with EVOO: Change in the Phenolic Profile', Antioxidants 2020.",
     "topic": "smoke-point-picking-the-right-fat-for-the-heat"
   },
   {
@@ -19418,7 +19405,7 @@
       "It carries far more salt than it did on Monday",
       "It weighs noticeably less than it did on Monday"
     ],
-    "context": "A smoke point is not a fixed number stamped on the bottle — it depends on the condition of the oil. Old, dark, over-used fryer oil cracks into more free fatty acids with every session and so smokes sooner each time, which is why it eventually gets tossed rather than reused forever. And past the smoke point, the glycerol backbone of the fat dehydrates into acrolein — a volatile compound whose name fuses 'acrid' (its pungent smell) with the Latin oleum ('oil'), literally 'the acrid oil.' It is what stings your eyes over an over-hot pan. Sources: Wikipedia, 'Acrolein' (https://en.wikipedia.org/wiki/Acrolein); purimax.com on frying-oil breakdown (https://purimax.com/blogs/food-safety-compliance/why-does-frying-oil-turn-dark-the-science-behind-oil-discoloration).",
+    "context": "A smoke point is not a fixed number stamped on the bottle — it depends on the condition of the oil. Old, dark, over-used fryer oil cracks into more free fatty acids with every session and so smokes sooner each time, which is why it eventually gets tossed rather than reused forever. And past the smoke point, the glycerol backbone of the fat dehydrates into acrolein — a volatile compound whose name fuses 'acrid' (its pungent smell) with the Latin oleum ('oil'), literally 'the acrid oil.' It is what stings the eyes over an over-hot pan. Sources: Wikipedia, 'Acrolein' (https://en.wikipedia.org/wiki/Acrolein); purimax.com on frying-oil breakdown (https://purimax.com/blogs/food-safety-compliance/why-does-frying-oil-turn-dark-the-science-behind-oil-discoloration).",
     "topic": "smoke-point-picking-the-right-fat-for-the-heat"
   },
   {
@@ -19514,7 +19501,7 @@
   },
   {
     "tier": 2,
-    "question": "Slices of watermelon crowd a picnic table in the American South, a fruit that feels as homegrown as the Fourth of July. People first tamed it more than 4,000 years ago, though, on the far side of the world, and its closest wild relative, a hard, bitter melon, still grows in that homeland's deserts. Which country is it?",
+    "question": "Watermelon slices crowd a Southern picnic table, a fruit that feels as homegrown as the Fourth of July. People first tamed it more than 4,000 years ago, though, an ocean away, where its closest wild relative, a pale-fleshed melon with no bitter taste, still grows wild. Which country is home to that wild melon?",
     "answer": "Sudan",
     "choices": [
       "Sudan",
@@ -19522,7 +19509,7 @@
       "India",
       "China"
     ],
-    "context": "It's Sudan. Watermelon was domesticated in northeastern Africa more than 4,000 years ago, and its nearest wild relative is the Kordofan melon, which still grows in the deserts of Sudan — thousands of years and an ocean away from the Southern picnic tables the fruit eventually reached. Source: source.washu.edu/2021/05/a-seedy-slice-of-history-watermelons-actually-came-from-northeast-africa/",
+    "context": "It's Sudan. Watermelon was domesticated in northeastern Africa more than 4,000 years ago, and its nearest wild relative is the Kordofan melon, which still grows wild in Sudan and, unlike other wild melons, has whitish pulp that is not bitter, thousands of years and an ocean away from the Southern picnic tables the fruit eventually reached. Source: source.washu.edu/2021/05/a-seedy-slice-of-history-watermelons-actually-came-from-northeast-africa/",
     "topic": "soul-food-brilliance-from-the-scraps"
   },
   {
@@ -19548,7 +19535,7 @@
       "The pork fat had turned it into gravy",
       "It kept the cornbread from going stale"
     ],
-    "context": "As greens simmer for hours, their vitamins — A, C, and K — and their iron dissolve out of the leaves and into the water. Saving the 'potlikker' and sopping it with cornbread reclaimed the nourishment the greens gave up: frugal cooking that was also good nutrition. Source: en.wikipedia.org/wiki/Soul_food (via Tennessee Lookout reporting)",
+    "context": "As greens simmer for hours, their vitamins A and C and their iron dissolve out of the leaves and into the water. Saving the 'potlikker' and sopping it with cornbread reclaimed the nourishment the greens gave up: frugal cooking that was also good nutrition. Source: en.wikipedia.org/wiki/Soul_food (via Tennessee Lookout reporting)",
     "topic": "soul-food-brilliance-from-the-scraps"
   },
   {
@@ -19847,7 +19834,7 @@
       "Its seeds",
       "Its leaves"
     ],
-    "context": "Cinnamon is the dried inner bark of the tree. Workers strip off the tough outer bark, then pry the soft inner bark away in long strips; as those strips dry they curl into the tight rolls we call quills, or cinnamon sticks. Source: https://en.wikipedia.org/wiki/Cinnamon",
+    "context": "Cinnamon is the dried inner bark of the tree. Workers strip off the tough outer bark, then pry the soft inner bark away in long strips; as those strips dry they curl into the tight rolls known as quills, or cinnamon sticks. Source: https://en.wikipedia.org/wiki/Cinnamon",
     "topic": "spices-are-surprising-parts-of-a-plant"
   },
   {
@@ -19865,7 +19852,7 @@
   },
   {
     "tier": 3,
-    "question": "Workers walk the rows of a spiny Mediterranean bush before dawn, pinching off its tightest little green knobs. The bush grows on cliffs and old stone walls from Italy to Turkey, and the tiniest capers cost the most. Packed in brine, a caper is really the bush's what?",
+    "question": "Workers walk the rows of a spiny Mediterranean bush early each morning, pinching off its tightest little green knobs. The bush grows on cliffs and old stone walls from Italy to Turkey, and the tiniest capers cost the most. Packed in brine, a caper is really the bush's what?",
     "answer": "flower bud",
     "choices": [
       "flower bud",
@@ -19873,7 +19860,7 @@
       "seed pod",
       "wild berry"
     ],
-    "context": "A caper is an unopened flower bud, picked before it can bloom — much like a clove. If you leave a bud on the bush to open and set fruit, you get a 'caperberry,' a larger and completely different thing sold in its own jar. The smaller the bud, the pricier the caper. Source: https://en.wikipedia.org/wiki/Caper",
+    "context": "A caper is an unopened flower bud, picked before it can bloom — much like a clove. A bud left on the bush to open and set fruit becomes a 'caperberry,' a larger and completely different thing sold in its own jar. The smaller the bud, the pricier the caper. Source: https://en.wikipedia.org/wiki/Caper",
     "topic": "spices-are-surprising-parts-of-a-plant"
   },
   {
@@ -19925,7 +19912,7 @@
       "A woody shrub hung with red berries",
       "A climbing vine that grabs the fence"
     ],
-    "context": "Asparagus is a fast-growing STEM — a shoot we eat young. Left uncut, a spear rockets upward and 'ferns out' into a feathery plant about 3-5 ft (100-150 cm) tall, sometimes reaching 3.5 m. That's why growers cut spears while they're short, before they turn woody. Source: en.wikipedia.org/wiki/Asparagus",
+    "context": "Asparagus is a fast-growing STEM — a shoot eaten young. Left uncut, a spear rockets upward and 'ferns out' into a feathery plant about 3-5 ft (100-150 cm) tall, sometimes reaching 3.5 m. That's why growers cut spears while they're short, before they turn woody. Source: en.wikipedia.org/wiki/Asparagus",
     "topic": "stalks-and-shoots-the-stems-and-leaf-stalks-we-eat"
   },
   {
@@ -19938,20 +19925,20 @@
       "A flower bud — the part that opens up in spring",
       "A runner — the part that creeps out to make new plants"
     ],
-    "context": "Celery is a leaf-STALK — botanists call it a petiole — not a stem. Its job on the living plant is to hold a leaf out to catch sunlight. Those tough 'strings' you peel are bundles of cells running over the plant's water tubes; they both carry water up the stalk and stiffen it. Source: en.wikipedia.org/wiki/Celery",
+    "context": "Celery is a leaf-STALK — botanists call it a petiole — not a stem. Its job on the living plant is to hold a leaf out to catch sunlight. Those tough 'strings' a cook peels away are bundles of cells running over the plant's water tubes; they both carry water up the stalk and stiffen it. Source: en.wikipedia.org/wiki/Celery",
     "topic": "stalks-and-shoots-the-stems-and-leaf-stalks-we-eat"
   },
   {
     "tier": 2,
     "question": "A bundle of green asparagus steams on the stove, each spear capped with a tight, scaly tip, the part chefs prize as most tender. The overlapping scales look like a tiny green pinecone, and under them the spear guards the part it would unfurl if it were left to grow. Botanically, what are the scales?",
-    "answer": "Its folded, undeveloped leaves",
+    "answer": "Its true leaves, kept tiny",
     "choices": [
-      "Its folded, undeveloped leaves",
+      "Its true leaves, kept tiny",
       "Its unopened flower buds",
       "Its cap of tough, dead cells",
       "Its cluster of unripe seeds"
     ],
-    "context": "The scaly tip is the spear's folded-up baby foliage — tiny 'scale leaves.' Left uncut, they open into needle-like green shoots (cladodes) as the spear ferns out into a tall plant. Spears must be picked before those tip buds start to open, or they turn tough. Source: en.wikipedia.org/wiki/Asparagus",
+    "context": "The scaly tip is wrapped in the plant's true leaves, tiny 'scale leaves' that never grow larger. The feathery green 'needles' of the grown fern are not leaves at all but cladodes, little modified stems that sprout from beneath those scales as the spear ferns out. Spears must be picked before the tip starts to open, or they turn tough. Source: en.wikipedia.org/wiki/Asparagus (the 'leaves' are needle-like cladodes, modified stems, in the axils of scale leaves).",
     "topic": "stalks-and-shoots-the-stems-and-leaf-stalks-we-eat"
   },
   {
@@ -19964,12 +19951,12 @@
       "The leaves are tough — too stringy to chew",
       "The leaves are fragile — they rot within hours"
     ],
-    "context": "Only the reddish STALK is food — it's a leaf-stalk, like celery, and so tart it's usually cooked with sugar. Rhubarb's big leaves hold oxalic acid, a kidney-damaging poison, so they're always cut off and discarded. You'd have to eat a large amount of leaf to be badly harmed — but nobody eats them; the stalk is the only part on the plate. Source: en.wikipedia.org/wiki/Rhubarb",
+    "context": "Only the reddish STALK is food — it's a leaf-stalk, like celery, and so tart it's usually cooked with sugar. Rhubarb's big leaves hold oxalic acid, a kidney-damaging poison, so they're always cut off and discarded. A person would have to eat a large amount of leaf to be badly harmed — but nobody eats them; the stalk is the only part on the plate. Source: en.wikipedia.org/wiki/Rhubarb",
     "topic": "stalks-and-shoots-the-stems-and-leaf-stalks-we-eat"
   },
   {
     "tier": 3,
-    "question": "Piles of fat, ivory-white asparagus spears fill a German market stall in spring, priced at double the green ones, and shoppers snap them up for a seasonal soup. The white spears are no separate variety: they come from the very same plant that gives green ones. What makes a spear white?",
+    "question": "Piles of fat, ivory-white asparagus spears fill a German market stall in spring, the 'white gold' that shoppers wait for all year to make a seasonal soup. The white spears are no separate variety: they come from the very same plant that gives green ones. What makes a spear white?",
     "answer": "It's grown buried in soil, where no sunlight reaches it",
     "choices": [
       "It's grown buried in soil, where no sunlight reaches it",
@@ -19988,7 +19975,7 @@
       "Garlic and ginger",
       "Beef and chicken",
       "Broccoli and peppers",
-      "Scallions and sprouts"
+      "Sprouts and bok choy"
     ],
     "context": "The wok is so hot that timing is everything: aromatics like garlic and ginger go in first to flavour the oil, then the meat, then the sturdier vegetables, and the sauce is added last of all — so nothing ends up raw and nothing cooks to mush. Source: asianfoodshop.eu, 'Order of ingredients in a wok' (corroborated by thewoksoflife.com).",
     "topic": "stir-fry-logic-and-velveting"
@@ -19999,9 +19986,9 @@
     "answer": "The breath of the wok",
     "choices": [
       "The breath of the wok",
-      "The kiss of the flame",
-      "The fire of the dragon",
-      "The heart of the pan"
+      "The kiss of the wok",
+      "The heart of the wok",
+      "The song of the wok"
     ],
     "context": "'Wok hei' — the breath of the wok — is the smoky, charred, savoury aroma that only forms when food sears at blistering heat. Cantonese chefs treat it as the very soul of a good stir-fry, and it's the one thing a low-powered home stove struggles to reproduce. Source: formosamarket.com, 'The art of stir-frying: wok hei.'",
     "topic": "stir-fry-logic-and-velveting"
@@ -20038,11 +20025,11 @@
     "answer": "Its heated proteins can't clench tight and wring out the juice",
     "choices": [
       "Its heated proteins can't clench tight and wring out the juice",
-      "Its heated proteins swell up and soak the marinade water in",
+      "The alkali fizzes into gas that puffs the fibers apart",
       "The alkali melts the tough gristle into soft, silky gelatin",
       "The alkali burns off into a thin, crisp, juice-sealing crust"
     ],
-    "context": "Meat is naturally slightly acidic; in an alkaline environment its muscle proteins can't bond and coagulate as tightly when heated, so the fibres stay relaxed instead of clenching and squeezing out the juice. Baking-soda beef gives itself away — it turns freakishly bright red and, ear close, faintly fizzes as the alkali reacts; you use only a tiny sprinkle and rinse it well, or the meat tastes soapy and bitter. Because it relaxes the fibres, it even lets cheap, tough cuts like chuck go into a two-minute stir-fry and stay tender. Chinese restaurants reach for stronger alkalis still — sodium carbonate (baked baking soda) and 'kan sui' lye water — and sometimes the papaya enzyme papain. Sources: thekitchenpursuits.com; recipetineats.com; chinesecookingdemystified.substack.com.",
+    "context": "Meat is naturally slightly acidic; in an alkaline environment its muscle proteins can't bond and coagulate as tightly when heated, so the fibres stay relaxed instead of clenching and squeezing out the juice. Baking-soda beef gives itself away — it turns freakishly bright red and, ear close, faintly fizzes as the alkali reacts; cooks use only a tiny sprinkle and rinse it well, or the meat tastes soapy and bitter. Because it relaxes the fibres, it even lets cheap, tough cuts like chuck go into a two-minute stir-fry and stay tender. Chinese restaurants reach for stronger alkalis still — sodium carbonate (baked baking soda) and 'kan sui' lye water — and sometimes the papaya enzyme papain. Sources: thekitchenpursuits.com; recipetineats.com; chinesecookingdemystified.substack.com.",
     "topic": "stir-fry-logic-and-velveting"
   },
   {
@@ -20554,15 +20541,15 @@
   },
   {
     "tier": 2,
-    "question": "A supertaster at the dinner table pushes away the broccoli, kale and Brussels sprouts, whose bitterness hits a supertaster's tongue far harder than most people's. One common fruit carries the same bitter chemicals. Which fruit is it?",
+    "question": "A supertaster at dinner pushes away the broccoli and kale, whose bitterness hits her far harder than it hits most people. The touchy taste receptor behind that also catches a bitter compound in one common fruit. Which fruit is it?",
     "answer": "grapefruit",
     "choices": [
       "grapefruit",
-      "olive",
+      "pomegranate",
       "cranberry",
       "sour cherry"
     ],
-    "context": "The bitter-tasting compounds in broccoli, kale, and Brussels sprouts turn up in grapefruit as well, so the same sensitive bitter receptor that supertasters carry makes grapefruit taste especially sharp to them. Source: en.wikipedia.org, 'TAS2R38.'",
+    "context": "The bitter receptor behind supertasting, TAS2R38, picks up the sulfur compounds from glucosinolates that make broccoli, kale and Brussels sprouts bitter, and it also responds to limonin, a bitter compound of citrus fruits, which helps make grapefruit taste especially sharp to supertasters. Source: en.wikipedia.org, 'TAS2R38.'",
     "topic": "supertasters-and-the-bitter-gene"
   },
   {
@@ -20650,8 +20637,8 @@
     "choices": [
       "Nigiri",
       "Maki",
-      "Tempura",
-      "Miso"
+      "Temaki",
+      "Chirashi"
     ],
     "context": "'Nigiri' means 'to grip' or 'press' — the name is literally the hand-pressing that shapes it. The single topping laid over the rice is called the neta. Source: en.wikipedia.org/wiki/Sushi.",
     "topic": "sushi-from-preservation-to-nigiri"
@@ -20666,7 +20653,7 @@
       "Stretching a little fish to feed many",
       "Hiding the taste of cheap fish"
     ],
-    "context": "The earliest sushi was a preservation method, not a fresh food. Souring fish in salt and rice was how you kept a catch edible for months, long before refrigerators existed. Source: en.wikipedia.org/wiki/History_of_sushi; bokksu.com.",
+    "context": "The earliest sushi was a preservation method, not a fresh food. Souring fish in salt and rice was how fishermen kept a catch edible for months, long before refrigerators existed. Source: en.wikipedia.org/wiki/History_of_sushi; bokksu.com.",
     "topic": "sushi-from-preservation-to-nigiri"
   },
   {
@@ -20677,7 +20664,7 @@
       "The soured, fermented rice",
       "The salted, preserved fish",
       "The coarse packing salt",
-      "The cloudy pressed-out liquid"
+      "The fish's soft belly meat"
     ],
     "context": "For most of sushi's history the rice was only the fermenting agent — 'the rice used for fermentation is discarded and only the fish is eaten.' Eating the rice came many centuries later. Source: en.wikipedia.org/wiki/Funazushi; History_of_sushi.",
     "topic": "sushi-from-preservation-to-nigiri"
@@ -20703,7 +20690,7 @@
       "Rice vinegar",
       "Yuzu juice",
       "Plum brine",
-      "Sake lees"
+      "Soy sauce"
     ],
     "context": "This 'haya-zushi' (fast sushi) swapped slow fermentation for a direct splash of rice vinegar — the same sour tang with no waiting. It's why sushi rice is still vinegared today, and why the word 'sushi' traces to an old term for 'sour'. Source: en.wikipedia.org/wiki/History_of_sushi.",
     "topic": "sushi-from-preservation-to-nigiri"
@@ -20718,7 +20705,7 @@
       "Dissolves tiny fish bones",
       "Keeps the rice from drying out"
     ],
-    "context": "Wasabi contains allyl isothiocyanate, a compound with well-known antimicrobial properties — a natural safety match for raw fish in the centuries before refrigeration. The pickled ginger (gari) beside your sushi was used the same way. Source: en.wikipedia.org/wiki/Sushi; grokipedia.com/page/Gari_(ginger).",
+    "context": "Wasabi contains allyl isothiocyanate, a compound with well-known antimicrobial properties — a natural safety match for raw fish in the centuries before refrigeration. The pickled ginger (gari) beside the sushi was used the same way. Source: en.wikipedia.org/wiki/Sushi; grokipedia.com/page/Gari_(ginger).",
     "topic": "sushi-from-preservation-to-nigiri"
   },
   {
@@ -20853,7 +20840,7 @@
   },
   {
     "tier": 1,
-    "question": "People in the Fertile Crescent, the arc of green land from present-day Iraq through Syria to the eastern Mediterranean, began building pens about 10,500 years ago and keeping small herds instead of only hunting. Which two shaggy, sure-footed animals were the very first livestock?",
+    "question": "People in the Fertile Crescent, the arc of green land from present-day Iraq through Syria to the eastern Mediterranean, began building pens about 10,500 years ago and keeping small herds instead of only hunting. Which two animals were the very first livestock?",
     "answer": "goats and sheep",
     "choices": [
       "goats and sheep",
@@ -20910,10 +20897,10 @@
     "choices": [
       "tamed the same wild boar all over again, from scratch",
       "traded for Near Eastern piglets down a chain of villages",
-      "tamed a different wild pig native to their own forests",
+      "copied the idea from travellers' tales of Near Eastern pigs",
       "penned wild boar for meat but never bred them in captivity"
     ],
-    "context": "The pig (Sus scrofa) was domesticated from the wild boar twice, independently: in the Near East roughly 10,500-9,000 years ago and in China roughly 8,000 years ago. The same wild animal was tamed twice over by two peoples who never met — and both times it came out a pig. China did not import the idea or the animal down a trade chain, and did not start from some other wild pig; Chinese herders started from their own wild boar and did the whole job again from the beginning. Source: Grokipedia 'Pig' (https://grokipedia.com/page/Pig); Wikipedia 'Domestic pig' (https://en.wikipedia.org/wiki/Domestic_pig); Zeder, PNAS 2008 (https://pmc.ncbi.nlm.nih.gov/articles/PMC2575338/).",
+    "context": "The pig (Sus scrofa) was domesticated from the wild boar twice, independently: in the Near East roughly 10,500-9,000 years ago and in China roughly 8,000 years ago. The same wild animal was tamed twice over by two peoples who never met — and both times it came out a pig. China did not import the animal down a trade chain or copy the idea from far-off herders; Chinese farmers started from their own wild boar and did the whole job again from the beginning. Source: Grokipedia 'Pig' (https://grokipedia.com/page/Pig); Wikipedia 'Domestic pig' (https://en.wikipedia.org/wiki/Domestic_pig); Zeder, PNAS 2008 (https://pmc.ncbi.nlm.nih.gov/articles/PMC2575338/).",
     "topic": "taming-the-first-food-animals"
   },
   {
@@ -20931,7 +20918,7 @@
   },
   {
     "tier": 4,
-    "question": "Would-be herders tried for centuries to break the zebra, Africa's own horse, to harness, and failed; only 14 of the 148 big wild plant-eating land mammals on Earth ever became livestock. Set aside the zebra's bite and its refusal to take a human as herd boss. What does a captured zebra do that no herder can work around?",
+    "question": "Would-be herders have tried again and again to break the zebra, Africa's own horse, to harness, and failed; only 14 of the 148 big wild plant-eating land mammals on Earth ever became livestock. Set aside the zebra's bite and its refusal to take a human as herd boss. What does a captured zebra do that no herder can work around?",
     "answer": "it can panic itself to death in a pen",
     "choices": [
       "it can panic itself to death in a pen",
@@ -20939,7 +20926,7 @@
       "it refuses any plant it has not seen wild",
       "it grows too slowly to be worth feeding"
     ],
-    "context": "Of the world's 148 large wild plant-eating land mammals, only 14 were ever domesticated. Zebras fail Jared Diamond's criteria on several counts at once: they are aggressive, they refuse to accept a human at the top of the herd, and they suffer capture myopathy — heavy lion predation bred into them a panic response so violent that a captured zebra can kill itself with it. Gazelles failed too. Source: Wikipedia 'Domestication of animals' (https://en.wikipedia.org/wiki/Domestication_of_animals); Grokipedia 'Anna Karenina principle' + 'Zebra' (https://grokipedia.com/page/Zebra).",
+    "context": "By Jared Diamond's count, of the world's 148 large wild plant-eating land mammals, only 14 were ever domesticated. Zebras fail on several counts at once: they are aggressive, they resist human control of the herd, and their flight instinct, evolved to escape predators, makes them prone to capture myopathy, a stress-driven breakdown of the muscles that can kill a captured animal. Gazelles failed too. Source: Wikipedia 'Domestication of animals' (https://en.wikipedia.org/wiki/Domestication_of_animals); Grokipedia 'Zebra' (https://grokipedia.com/page/Zebra).",
     "topic": "taming-the-first-food-animals"
   },
   {
@@ -21121,7 +21108,7 @@
       "Simmer them in coconut milk until they collapse",
       "Grind them straight into a fine dry powder"
     ],
-    "context": "Green paste pounds in fresh green chilies straight off the plant, while red paste starts from dried red chilies soaked soft in water first. (Green paste also gets its color from fresh coriander, kaffir lime and Thai basil pounded in.) Source: siam.recipes/blogs/news/red-or-green-thai-curry-paste; corroborated by mekhalaliving.com.",
+    "context": "Green paste pounds in fresh green chilies straight off the plant, while red paste starts from dried red chilies soaked soft in water first. (Green paste also gets its color from fresh coriander, makrut lime and Thai basil pounded in.) Source: siam.recipes/blogs/news/red-or-green-thai-curry-paste; corroborated by mekhalaliving.com.",
     "topic": "thai-curry-pastes-why-green-out-burns-red"
   },
   {
@@ -21147,12 +21134,12 @@
       "A handful of ground almonds and raisins",
       "A pour of nutty toasted sesame oil"
     ],
-    "context": "Massaman is the odd one out among Thai curries — mild, not fiery, and packed with 'warm' dried spices you'd expect in a Middle-Eastern or Indian kitchen: cardamom, cinnamon, cloves, cumin and nutmeg (plus star anise, mace and bay). Those spices are foreign to most traditional Thai cooking. Source: en.wikipedia.org/wiki/Massaman_curry; corroborated by Grokipedia 'Massaman curry'.",
+    "context": "Massaman is the odd one out among Thai curries — mild, not fiery, and packed with 'warm' dried spices more at home in a Middle-Eastern or Indian kitchen: cardamom, cinnamon, cloves, cumin and nutmeg (plus star anise, mace and bay). Those spices are foreign to most traditional Thai cooking. Source: en.wikipedia.org/wiki/Massaman_curry; corroborated by Grokipedia 'Massaman curry'.",
     "topic": "thai-curry-pastes-why-green-out-burns-red"
   },
   {
     "tier": 4,
-    "question": "Persian traders carried massaman up the trade routes into the royal court of Ayutthaya in the 1600s, and the curry took its name from those newcomers: 'massaman' is a Thai reshaping of an old Persian word that named them by their faith. What did that word call them?",
+    "question": "Food historians disagree about where massaman curry began: one account has a Persian merchant bringing it to the royal court of Ayutthaya in the 1600s, while most root it in southern Thailand. Its name is a Thai reshaping of an old Persian word for the followers of one faith. Which believers did that word name?",
     "answer": "Muslims",
     "choices": [
       "Muslims",
@@ -21160,7 +21147,7 @@
       "Buddhists",
       "Christians"
     ],
-    "context": "'Massaman' comes from the Persian 'mosalman' — meaning Muslim — which 19th-century writers spelled 'Mussulman'; the dish was once literally called 'Mussulman curry.' The word entered Thai in the 1600s, when Persian and Muslim traders (later joined by Portuguese, Dutch and French merchants) carried their warm dried spices into the cosmopolitan royal court of Ayutthaya. Source: en.wikipedia.org/wiki/Massaman_curry; corroborated by Grokipedia 'Massaman curry'.",
+    "context": "'Massaman' comes from the Persian 'mosalman,' meaning Muslim, which mid-19th-century writers spelled 'Mussulman'; the dish was once called 'Mussulman curry.' Its origin is debated: one account has the Persian merchant Sheikh Ahmad Qomi bringing it to the cosmopolitan royal court of Ayutthaya in the 1600s, while most theories call it a southern Thai dish shaped by Malay and Indian cooking. Source: en.wikipedia.org/wiki/Massaman_curry; corroborated by Grokipedia 'Massaman curry'.",
     "topic": "thai-curry-pastes-why-green-out-burns-red"
   },
   {
@@ -21225,7 +21212,7 @@
       "covering up a mistake the cook made",
       "adding toppings the kitchen ran out of"
     ],
-    "context": "The caddy is the kruang prung — classically four pots, one per taste: fish sauce (often with chilies) for salty, sugar for sweet, toasted dried-chili flakes (prik pon) for smoky heat, and chilies in vinegar for sour. Because there's one condiment per taste, the diner finishes the balancing the cook began — you literally complete the dish yourself at the table. Sources: bangkokpost.com ('A noodle's tale'); messyvegancook.com (kway teow nam)",
+    "context": "The caddy is the kruang prung — classically four pots, one per taste: fish sauce (often with chilies) for salty, sugar for sweet, toasted dried-chili flakes (prik pon) for smoky heat, and chilies in vinegar for sour. Because there's one condiment per taste, the diner finishes the balancing the cook began — the diner literally completes the dish at the table. Sources: bangkokpost.com ('A noodle's tale'); messyvegancook.com (kway teow nam)",
     "topic": "thai-flavor-balance-four-tastes-in-one-bite"
   },
   {
@@ -21373,13 +21360,13 @@
   },
   {
     "tier": 1,
-    "question": "People in what is now Iraq, Syria and Jordan began sowing wild grasses on purpose some eleven thousand years ago, with chickpeas and lentils beside them. Their homeland curves like a moon between two great rivers. What do historians call this cradle of farming?",
+    "question": "Villagers in the ancient Middle East began sowing wild grasses on purpose some eleven thousand years ago, with chickpeas and lentils beside them. What do historians call this cradle of farming?",
     "answer": "The Fertile Crescent",
     "choices": [
       "The Fertile Crescent",
       "The Indus Valley",
       "The Nile Delta",
-      "The Great Rift Valley"
+      "The Arabian Peninsula"
     ],
     "context": "The Fertile Crescent curves through the Levant and Mesopotamia, from the Mediterranean toward the Persian Gulf. Farming was born here in the Pre-Pottery Neolithic, roughly 11,500–10,000 years ago, from a starter set of just eight 'founder crops' that launched agriculture. Source: https://en.wikipedia.org/wiki/Founder_crops",
     "topic": "the-agricultural-revolution-and-the-eight-founder-crops"
@@ -21412,7 +21399,7 @@
   },
   {
     "tier": 2,
-    "question": "Hikers in the Alps found Ötzi the Iceman in 1991, frozen into a glacier more than 5,300 years after he died, with his last meal still in his stomach. Part of it was bread made from the oldest, most primitive wheat ever farmed. Which ancient wheat had he eaten?",
+    "question": "Hikers in the Alps found Ötzi the Iceman in 1991, frozen into a glacier some 5,300 years after he died, with his last meal still in his stomach. Part of it was bread made from the oldest, most primitive wheat ever farmed. Which ancient wheat had he eaten?",
     "answer": "Einkorn",
     "choices": [
       "Einkorn",
@@ -21425,7 +21412,7 @@
   },
   {
     "tier": 3,
-    "question": "Bakers in ancient Egypt made their daily bread from emmer wheat, the grain that fed pharaohs and pyramid builders alike. Over thousands of years farmers bred it into durum, a tough, glassy 'hard wheat'. Today durum is grown mainly for one very Italian food. Which food is it made into?",
+    "question": "Bakers in ancient Egypt made their daily bread from emmer wheat, the grain that fed pharaohs and pyramid builders alike. Over thousands of years farmers bred it into durum, a tough, glassy 'hard wheat'. Today durum is grown mainly for one famous food. Which food is it made into?",
     "answer": "Pasta",
     "choices": [
       "Pasta",
@@ -21455,7 +21442,7 @@
     "answer": "The seed head held onto its grain instead of scattering it",
     "choices": [
       "The seed head held onto its grain instead of scattering it",
-      "The grain ripened across the whole field within one week",
+      "The stalks grew short so the wind could not flatten them",
       "The seeds grew a hard shell that kept out hungry insects",
       "The plant's roots reached deep to survive the dry summers"
     ],
@@ -21464,7 +21451,7 @@
   },
   {
     "tier": 4,
-    "question": "Bitter vetch grew beside the first farmers' grain as one of four founding pulses, and its seeds carried a natural toxin. A cook had to rinse them again and again before they were safe to eat, far too much fuss for a daily dinner. What did farmers mainly grow bitter vetch for instead?",
+    "question": "Bitter vetch grew beside the first farmers' grain as one of four founding pulses, and its seeds carried a natural toxin. A cook had to leach them in change after change of boiling water before people could eat them, far too much fuss for a daily dinner. What did farmers mainly grow bitter vetch for instead?",
     "answer": "As feed for their livestock",
     "choices": [
       "As feed for their livestock",
@@ -21472,7 +21459,7 @@
       "As a charm for good luck",
       "As oil for their lamps"
     ],
-    "context": "Bitter vetch (Vicia ervilia) is the odd one of the eight: its seeds contain the toxin canavanine and can cause paralysis unless rinsed many times, so it ended up mostly as animal fodder — a founder crop humans largely handed to their livestock. Source: https://ferrebeekeeper.wordpress.com/2011/01/28/the-bitter-vetch/",
+    "context": "Bitter vetch (Vicia ervilia) is the odd one of the eight: its seeds hold the toxin canavanine and stay bitter until leached in several changes of boiling water, so people ate it mainly in famine years and it ended up mostly as fodder, an excellent feed for sheep and cattle. Sources: https://en.wikipedia.org/wiki/Vicia_ervilia; Foods 2024, 13(16), 2528 (https://www.mdpi.com/2304-8158/13/16/2528).",
     "topic": "the-agricultural-revolution-and-the-eight-founder-crops"
   },
   {
