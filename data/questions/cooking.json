@@ -27488,10 +27488,10 @@
     "choices": [
       "deliciousness",
       "meatiness",
-      "saltiness",
+      "heartiness",
       "ripeness"
     ],
-    "context": "Japanese chemist Kikunae Ikeda coined 'umami' from 'umai' (delicious); it means 'deliciousness' or a pleasant savory taste — the deep note you meet in broth, aged parmesan, and a ripe tomato. Source: Wikipedia, 'Umami.'",
+    "context": "Japanese chemist Kikunae Ikeda coined 'umami' from 'umai' (delicious); it means 'deliciousness' or a pleasant savory taste, the deep note in broth, aged parmesan and a ripe tomato. Source: Wikipedia, 'Umami.'",
     "topic": "umami-the-savory-fifth-taste"
   },
   {
@@ -27535,7 +27535,7 @@
   },
   {
     "tier": 4,
-    "question": "A food scientist measures free glutamate, the natural substance behind umami's deep savory taste, in one milk after another. Most milks taste gentle and mildly sweet, not savory, yet one kind turns out to be a natural umami bomb, carrying roughly ten times the free glutamate of any of the others. Which milk is it?",
+    "question": "A food scientist measures free glutamate, the natural substance behind umami's deep savory taste, in one milk after another. Most milks taste gentle and mildly sweet, not savory, yet one kind turns out to be a natural umami bomb, much richer in free glutamate than the others. Which milk is it?",
     "answer": "a human mother's milk",
     "choices": [
       "a human mother's milk",
@@ -27543,12 +27543,12 @@
       "a mountain goat's milk",
       "a grazing sheep's milk"
     ],
-    "context": "Human breast milk carries about 22 mg of free glutamate per 100 g — roughly ten times cow's milk — and glutamate makes up about half of its free amino acids, so a baby's very first taste of food is umami. Source: Wikipedia, 'Glutamic acid (flavor)'; umamiinfo.com.",
+    "context": "Human breast milk carries roughly 20 mg of free glutamate per 100 g, more than twice the level in cow's milk and far more than in goat's or sheep's milk, and glutamate makes up about half of all its free amino acids, so a baby's very first taste of food is umami. Sources: Wikipedia, 'Umami'; Frontiers review of free amino acids in human milk (PMC7270293); Foods 2021, 10, 2431 (free amino acids in cow, sheep and goat milk).",
     "topic": "umami-the-savory-fifth-taste"
   },
   {
-    "tier": 4,
-    "question": "An Italian grandmother wants her pot of minestrone to taste rich, deep and almost meaty without a scrap of meat. She reaches for a trick Italian home cooks have used for centuries: the hard leftover rind of a famous aged Italian cheese, saved in the freezer for this, dropped into the simmering pot to melt slowly and release its savory umami. Which cheese's rind is the traditional choice?",
+    "tier": 2,
+    "question": "An Italian grandmother wants her minestrone rich and almost meaty without a scrap of meat. She drops in a trick home cooks have used for generations: the hard rind of a famous aged cheese, saved in the freezer and left to melt slowly into the pot. Which cheese's rind is the traditional choice?",
     "answer": "Parmesan",
     "choices": [
       "Parmesan",
@@ -27560,21 +27560,8 @@
     "topic": "umami-the-savory-fifth-taste"
   },
   {
-    "tier": 5,
-    "question": "A cook pairs a food full of glutamate with one rich in nucleotides, and the savoriness multiplies far beyond what either brings alone, a hidden umami synergy. Plenty of savory duos look as if they should pull off the same trick. Which pairing truly does?",
-    "answer": "tomato and parmesan",
-    "choices": [
-      "tomato and parmesan",
-      "tomato and kelp",
-      "kelp and soy sauce",
-      "parmesan and soy sauce"
-    ],
-    "context": "Tomato-and-parmesan, mushroom-and-meat, and ham-and-eggs each team a glutamate-rich food with a nucleotide-rich one, so the savoriness multiplies. Source: Wikipedia, 'Umami.'",
-    "topic": "umami-the-savory-fifth-taste"
-  },
-  {
     "tier": 1,
-    "question": "Vanilla for ice cream and birthday cake comes from a cured seed pod, which growers like to call a bean although it is nothing of the sort. It grows on a tropical climbing vine, the only member of an enormous flower family raised as a food crop. What kind of flower is it?",
+    "question": "Vanilla comes from a cured seed pod, which growers like to call a bean. It grows on a tropical climbing vine, the only member of an enormous flower family raised as a major food crop. What kind of flower is it?",
     "answer": "An orchid",
     "choices": [
       "An orchid",
@@ -27582,7 +27569,7 @@
       "A rose",
       "A jasmine"
     ],
-    "context": "Vanilla is the world's only orchid grown for food - of tens of thousands of orchid species, it's the single one whose fruit we eat, and one species, Vanilla planifolia, yields about 98% of it. That fragrant 'bean' is really its cured seed pod. Source: Wikipedia, 'Vanilla'; Rodelle Kitchen vanilla facts.  (Legend.)",
+    "context": "Vanilla is the only orchid grown as a major food crop: of tens of thousands of orchid species, it is the one whose cured pods flavor the world's cakes and ice cream, and one species, Vanilla planifolia, supplies most of it. That fragrant 'bean' is really its cured seed pod. Source: Wikipedia, 'Vanilla'; Rodelle Kitchen vanilla facts.",
     "topic": "vanilla-the-hand-pollinated-orchid"
   },
   {
@@ -27595,7 +27582,7 @@
       "Cardamom",
       "Nutmeg"
     ],
-    "context": "Saffron is the only spice pricier than vanilla; both are back-breaking, hand-worked crops, which is why every vanilla pod has to be pollinated and picked one flower at a time. Source: Wikipedia, 'Vanilla.'  (Legend.)",
+    "context": "Saffron is the only spice pricier than vanilla, gram for gram; both are back-breaking, hand-worked crops, and every vanilla flower has to be pollinated and every pod picked by hand. Source: Wikipedia, 'Vanilla.'",
     "topic": "vanilla-the-hand-pollinated-orchid"
   },
   {
@@ -27613,7 +27600,7 @@
   },
   {
     "tier": 2,
-    "question": "Colonists carried vanilla vines to tropical colonies in Asia and Africa after Spanish ships brought the pods to Europe in the 1500s. For three centuries the vines climbed and bloomed there, but not one ever made a pod, for the vine's partner in pollination lived only in Mexico. What was it?",
+    "question": "Vanilla reached Europe aboard Spanish ships in the 1500s, yet for three centuries Mexico remained its chief grower. When colonists took the vines to tropical islands far from Mexico in the early 1800s, they bloomed but never made a pod, for the vine's partner in pollination lived only in the Americas. What was it?",
     "answer": "A bee",
     "choices": [
       "A bee",
@@ -27621,7 +27608,7 @@
       "A hummingbird",
       "A beetle"
     ],
-    "context": "Only in its Mexican homeland did the wild vanilla orchid have its natural pollinator - traditionally said to be a stingless Melipona bee, though modern researchers now suspect orchid bees and treat the exact species as unsettled. The bee wasn't extinct, just local; with no pollinator abroad, the transplanted vines flowered but never fruited. Source: Wikipedia, 'Vanilla'; PLOS ONE (2024) Yucatan study.  (Legend.)",
+    "context": "Only in its American homeland did the wild vanilla orchid have its natural pollinators, long said to be stingless Melipona bees, though researchers have documented orchid bees, not Melipona, doing the work. The bees were not extinct, just absent abroad; with no pollinator, the transplanted vines flowered but never fruited. Source: Wikipedia, 'Vanilla'; PLOS ONE (2024) Yucatan study.",
     "topic": "vanilla-the-hand-pollinated-orchid"
   },
   {
@@ -27639,7 +27626,7 @@
   },
   {
     "tier": 3,
-    "question": "Vanilla vines outside Mexico had bloomed for three centuries without setting a pod when, in 1841 on the island of Réunion, someone cracked the problem with a splinter and a thumb. Growers still use that method on every vanilla flower today. Who worked it out?",
+    "question": "For three centuries Mexico had been the world's chief source of vanilla, and vines planted far away bloomed without a pod. Then, in 1841 on Réunion, someone cracked the problem with a splinter and a thumb, a method growers still use today. Who worked it out?",
     "answer": "An enslaved boy of twelve",
     "choices": [
       "An enslaved boy of twelve",
@@ -27652,15 +27639,15 @@
   },
   {
     "tier": 3,
-    "question": "A baker reaches for a bottle labeled Bourbon vanilla, the fancy kind said to be the finest in the world. It has nothing to do with Kentucky whiskey: it grows on tropical plantations far out at sea, and the name honors where it is grown. What is Bourbon vanilla named after?",
+    "question": "A baker reaches for a bottle labeled Bourbon vanilla, the fancy kind many cooks call the finest in the world. Despite the name, it has nothing to do with Kentucky whiskey, and the bottle never went near a distillery. What is Bourbon vanilla named after?",
     "answer": "An Indian Ocean island",
     "choices": [
       "An Indian Ocean island",
-      "A French royal house",
+      "A New Orleans street",
       "A Spanish spice galleon",
       "A Caribbean trading port"
     ],
-    "context": "'Bourbon vanilla' is named after Ile Bourbon, the old name of Reunion island - the same island where Edmond Albius cracked hand-pollination. Today only vanilla from Reunion, Madagascar, the Comoros, Mauritius, and the Seychelles may carry the label. Source: Wikipedia, 'Vanilla'; indian-ocean.com.",
+    "context": "'Bourbon vanilla' is named after Ile Bourbon, the old name of Reunion island, the same island where Edmond Albius cracked hand-pollination. Today the name covers vanilla from the Indian Ocean islands, Madagascar, the Comoros, Mauritius and Reunion, and is also used for the flavor of the Vanilla planifolia species itself. Source: Wikipedia, 'Vanilla'.",
     "topic": "vanilla-the-hand-pollinated-orchid"
   },
   {
@@ -27678,7 +27665,7 @@
   },
   {
     "tier": 4,
-    "question": "A poor harvest and a wave of thieves on the vines hit Madagascar, where most of the world's vanilla grows, in 2018, and top-grade beans climbed to around $600 a pound. Gram for gram, that made cured vanilla worth more than which precious material?",
+    "question": "A cyclone tore through Madagascar's vanilla country in 2017, thieves raided the vines that were left, and by 2018 top-grade beans sold for about $600 a kilogram. Madagascar grows most of the world's vanilla. Gram for gram, that price made cured vanilla worth more than which precious material?",
     "answer": "Silver",
     "choices": [
       "Silver",
@@ -27686,7 +27673,7 @@
       "Platinum",
       "Diamond"
     ],
-    "context": "In 2018, a poor harvest and a wave of theft from the vines in Madagascar - the source of most of the world's vanilla - pushed top-grade beans to around $600 a pound, worth more gram for gram than silver. Source: Marketplace (2018); Tasting Table, 'Why Madagascar Vanilla Is So Expensive.'  (Legend.)",
+    "context": "Cyclone Enawo wrecked Madagascar's vanilla plantations in 2017, and with theft from the vines on top, top-grade beans hit about $600 a kilogram in 2018, briefly worth more gram for gram than silver, which then sold for about $530 a kilogram. Sources: MoneyWeek, 'Chart of the week: vanilla is more valuable than silver' (2018); Marginal Revolution, 'Vanilla is worth more than silver' (2018).",
     "topic": "vanilla-the-hand-pollinated-orchid"
   },
   {
@@ -27912,7 +27899,7 @@
   },
   {
     "tier": 1,
-    "question": "A cook in Goa, where vindaloo was born on India's west coast, will say chili is not the dish's real trademark, whatever its Western fame as one of the fieriest curries on the menu. Which taste sets a real vindaloo apart from every other curry?",
+    "question": "A cook in Goa, where vindaloo was born on India's west coast, will say chili is not the dish's real signature, whatever its Western fame as one of the fieriest curries on the menu. Which taste is its true signature?",
     "answer": "sourness",
     "choices": [
       "sourness",
@@ -27920,12 +27907,12 @@
       "bitterness",
       "saltiness"
     ],
-    "context": "Authentic Goan vindaloo is only moderately hot — the West rebranded it as a heat challenge, but its true signature is a sharp vinegar tang. That sourness is what makes it stand out on any curry menu. Source: grubdaily.com, 'Vindaloo: the most misunderstood curry in the West.'",
+    "context": "Goan vindaloo is built on the sharp tang of vinegar, and that sourness is its signature; the West later turned it into a heat challenge. Source: grubdaily.com, 'Vindaloo: the most misunderstood curry in the West'; en.wikipedia.org, 'Vindaloo.'",
     "topic": "vindaloo-a-portuguese-recipe-hiding-in-an-indian-name"
   },
   {
     "tier": 2,
-    "question": "English speakers slurred the name of a Portuguese sailors' dish, carne de vinha d'alhos, into vindaloo, a word that sounds Indian but is not. The old name lists the two things the sailors' dish was soaked in. What does it mean?",
+    "question": "A Portuguese dish, carne de vinha d'alhos, came to Goa with the colonists, and its name wore down into vindaloo, a word that sounds Indian but is not. The old name lists what the meat was soaked in. What does it mean?",
     "answer": "meat in wine and garlic",
     "choices": [
       "meat in wine and garlic",
@@ -27933,7 +27920,7 @@
       "rice in broth and pepper",
       "meat in cream and onion"
     ],
-    "context": "'Carne de vinha d'alhos' means 'meat in wine and garlic.' English speakers slurred those Portuguese words into 'vindaloo,' which is how a Portuguese recipe ended up wearing an Indian-sounding name. Source: en.wikipedia.org, 'Vindaloo.'",
+    "context": "'Carne de vinha d'alhos' means meat in a marinade of wine and garlic. The Portuguese name wore down to vindalho in Goa and vindaloo in English, which is how a Portuguese recipe ended up wearing an Indian-sounding name. Source: en.wikipedia.org, 'Vindaloo.'",
     "topic": "vindaloo-a-portuguese-recipe-hiding-in-an-indian-name"
   },
   {
@@ -27951,7 +27938,7 @@
   },
   {
     "tier": 3,
-    "question": "Goan cooks making the Portuguese colonists' marinade found the grape wine it called for almost impossible to get, though the wine was what gave the old Portuguese recipe its bite. So they fermented a local ingredient into a tangy vinegar instead. What did they ferment?",
+    "question": "Goan cooks making the Portuguese colonists' marinade found the grape wine it called for almost impossible to get on India's west coast, half a world from Portugal's vineyards. So they fermented a local ingredient into vinegar instead. What did they ferment?",
     "answer": "the sap of the coconut palm",
     "choices": [
       "the sap of the coconut palm",
@@ -27972,7 +27959,7 @@
       "roughly half the dish",
       "more potato than meat"
     ],
-    "context": "None — despite the name. The '-aloo' isn't the Hindi 'aloo' (potato) at all; it's the Portuguese 'alhos,' meaning garlic, worn smooth by English mouths. The twist runs deeper: potatoes really did reach India aboard the same Portuguese ships in the 1500s, yet they were never part of vindaloo. The potato in some modern versions was added later, by cooks who took the name literally. Source: en.wikipedia.org, 'Vindaloo'; tasteoflisboa.com.",
+    "context": "None, despite the name. The '-aloo' isn't the Hindi 'aloo' (potato) at all; it's the Portuguese 'alhos,' meaning garlic. A traditional Goan vindalho has no potato; the potato in some modern versions was added later, by cooks who took the name literally. Source: en.wikipedia.org, 'Vindaloo'.",
     "topic": "vindaloo-a-portuguese-recipe-hiding-in-an-indian-name"
   },
   {
@@ -27985,20 +27972,7 @@
       "salt",
       "oil"
     ],
-    "context": "That sharp taste is acetic acid. Table vinegar is only about 4-8% acid mixed with water, which is why it's safe to splash on your food — vinegar is really just alcohol that fermented one step past the drink. Source: Wikipedia, 'Vinegar'.",
-    "topic": "vinegar-the-sour-that-comes-after-the-alcohol"
-  },
-  {
-    "tier": 2,
-    "question": "A French cook who leaves wine standing open too long ends up with vin aigre, the two words English borrowed whole as vinegar. Vin means wine. What does aigre mean?",
-    "answer": "sour",
-    "choices": [
-      "sour",
-      "red",
-      "spoiled",
-      "strong"
-    ],
-    "context": "'Vin aigre' means 'sour wine.' The name records precisely what vinegar is — wine gone tart. Source: Wikipedia, 'Vinegar'.  (Legend.)",
+    "context": "That sharp taste is acetic acid. Table vinegar is only about 4-8% acid mixed with water, which is why it's safe to splash on food; vinegar is really just alcohol that fermented one step past the drink. Source: Wikipedia, 'Vinegar'.",
     "topic": "vinegar-the-sour-that-comes-after-the-alcohol"
   },
   {
@@ -28011,7 +27985,7 @@
       "mildew",
       "algae"
     ],
-    "context": "Yeast can make alcohol but not vinegar. A different microbe — acetic-acid bacteria — takes the alcohol the final step into acid. That's why wine becomes wine vinegar and cider becomes cider vinegar: the drink you start with decides the vinegar you get. Source: Wikipedia, 'Vinegar'.",
+    "context": "Yeast can make alcohol but not vinegar. A different microbe, acetic-acid bacteria, takes the alcohol the final step into acid. That's why wine becomes wine vinegar and cider becomes cider vinegar: the starting drink decides the vinegar. Source: Wikipedia, 'Vinegar'.",
     "topic": "vinegar-the-sour-that-comes-after-the-alcohol"
   },
   {
@@ -28037,7 +28011,7 @@
       "salt",
       "sugar"
     ],
-    "context": "This is what makes vinegar the oddball of the ferment world. Bread, wine, and sauerkraut are anaerobic — they want no air — but acetic-acid bacteria are aerobic and can only turn alcohol into acid in the presence of oxygen. Vinegar is the one ferment that has to breathe. Source: Wikipedia, 'Acetobacter'.",
+    "context": "This is what makes vinegar the oddball of the ferment world. Bread, wine, and sauerkraut are anaerobic — they want no air — but acetic-acid bacteria are aerobic and can only turn alcohol into acid in the presence of oxygen. Vinegar is one of the few ferments that has to breathe. Source: Wikipedia, 'Acetobacter'.",
     "topic": "vinegar-the-sour-that-comes-after-the-alcohol"
   },
   {
@@ -28050,7 +28024,7 @@
       "skin of the vinegar",
       "heart of the barrel"
     ],
-    "context": "The floating raft is the 'mother of vinegar' — a jelly of cellulose and living bacteria. It looks unappetizing but is harmless, and you can scoop it into a fresh bottle of wine or cider to start a whole new batch, the way bakers hand down sourdough. Source: Wikipedia, 'Mother of vinegar'.",
+    "context": "The floating raft is the 'mother of vinegar', a jelly of cellulose and living bacteria. It looks unappetizing but is harmless, and a scoop of it added to a fresh bottle of wine or cider starts a whole new batch, the way bakers hand down sourdough. Source: Wikipedia, 'Mother of vinegar'.",
     "topic": "vinegar-the-sour-that-comes-after-the-alcohol"
   },
   {
@@ -28180,7 +28154,7 @@
       "a raw cucumber",
       "a raw celery stalk"
     ],
-    "context": "A raw red bell pepper holds about 128 mg of vitamin C per 100 g, more than double an orange's 53. Broccoli (about 90 mg) and blackcurrants (about 200 mg, the richest common source) also beat citrus. Source: en.wikipedia.org/wiki/Vitamin_C.",
+    "context": "A raw red bell pepper holds about 128 mg of vitamin C per 100 g, more than double an orange's 53. Broccoli (about 90 mg), blackcurrants (about 200 mg) and guava (about 228 mg) all beat citrus. Source: en.wikipedia.org/wiki/Vitamin_C.",
     "topic": "vitamin-c-scurvy-and-the-royal-navy"
   },
   {
@@ -28194,19 +28168,6 @@
       "a swab"
     ],
     "context": "'Limey' is short for 'lime-juicer.' From 1795 the Navy issued a daily citrus-juice ration — lemon first — after HMS Suffolk reached India in four months with no scurvy; later the juice was lime, and 'limey' stuck. Source: en.wikipedia.org/wiki/Limey; en.wikipedia.org/wiki/Scurvy.",
-    "topic": "vitamin-c-scurvy-and-the-royal-navy"
-  },
-  {
-    "tier": 3,
-    "question": "Sailors on long voyages lost their teeth and bled from the gums as scurvy took hold, for lack of one substance found in fresh food. Chemists who isolated it in the 1930s named it ascorbic acid, building the word from Latin. What does ascorbic mean?",
-    "answer": "against the disease it cures",
-    "choices": [
-      "against the disease it cures",
-      "from the sourness of citrus",
-      "for the surgeon who found it",
-      "from the ships that carried it"
-    ],
-    "context": "'Ascorbic' comes from a- ('no' or 'against') plus the Latin scorbutus ('scurvy'), so ascorbic acid literally means 'anti-scurvy.' The vitamin is named after the very disease it defeats. Source: en.wikipedia.org/wiki/Vitamin_C.",
     "topic": "vitamin-c-scurvy-and-the-royal-navy"
   },
   {
@@ -28245,18 +28206,18 @@
       "it draws vitamin C from seawater",
       "it needs no vitamin C to live"
     ],
-    "context": "Most mammals build their own vitamin C in the liver, but humans — along with other primates and guinea pigs — carry a broken copy of the final gene (called GULO), so we must eat it or sicken. A dog or cat simply makes its own. Source: en.wikipedia.org/wiki/L-gulonolactone_oxidase.",
+    "context": "Most mammals build their own vitamin C in the liver, but humans — along with other primates and guinea pigs — carry a broken copy of the final gene (called GULO), so humans must eat it or sicken. A dog or cat simply makes its own. Source: en.wikipedia.org/wiki/L-gulonolactone_oxidase.",
     "topic": "vitamin-c-scurvy-and-the-royal-navy"
   },
   {
     "tier": 4,
-    "question": "Fresh fruit rotted on long voyages, so James Lind, sure that it beat scurvy, strained the juice, boiled it down to a thick syrup he called rob and sealed it in casks for the fleet. To his bafflement, the rob barely worked. Which step had wrecked his cure?",
+    "question": "Fresh fruit rotted on long voyages, so James Lind, sure that it beat scurvy, strained the juice and boiled it down to a thick syrup he called rob, to keep for the fleet. At sea the rob worked far less well than fresh fruit. Which step had wrecked his cure?",
     "answer": "boiling the juice down destroyed its vitamin C",
     "choices": [
       "boiling the juice down destroyed its vitamin C",
       "straining the juice left the vitamin C in the pulp",
-      "sealing the casks let the vitamin C settle out",
-      "months at sea drained the vitamin C from the casks"
+      "storing the syrup let the vitamin C settle out",
+      "months at sea drained the vitamin C from the syrup"
     ],
     "context": "Lind never knew vitamin C existed — it wasn't isolated until long after his death. He only knew citrus worked, and vitamin C is fragile to heat, so boiling the juice into 'rob' wrecked the very thing that made it work, which helped his cure fall into doubt for years. Source: en.wikipedia.org/wiki/James_Lind.",
     "topic": "vitamin-c-scurvy-and-the-royal-navy"
@@ -28267,11 +28228,11 @@
     "answer": "the first vitamin ever made in a lab",
     "choices": [
       "the first vitamin ever made in a lab",
-      "the first vitamin ever found in fruit",
-      "the first vitamin ever proven to cure a disease",
-      "the first vitamin ever sold as a pill"
+      "the first vitamin ever given a letter",
+      "the first vitamin ever found in fish oil",
+      "the first vitamin ever found to dissolve in fat"
     ],
-    "context": "The scientist was Albert Szent-Gyorgyi, who isolated vitamin C between 1928 and 1933 — the first vitamin ever to be chemically produced in a lab. He won the 1937 Nobel Prize in Physiology or Medicine partly for the discovery. Source: en.wikipedia.org/wiki/Vitamin_C.",
+    "context": "Albert Szent-Gyorgyi isolated the substance between 1928 and 1933, and in 1933 vitamin C became the first vitamin ever chemically produced, made by Walter Haworth's team in Birmingham and, independently, by Tadeusz Reichstein in Zurich. Szent-Gyorgyi won the 1937 Nobel Prize in Physiology or Medicine partly for its discovery. (Vitamin A was the first to get a letter; it and vitamin D, the vitamins of fish oil, dissolve in fat, while vitamin C dissolves in water.) Source: en.wikipedia.org/wiki/Vitamin_C; en.wikipedia.org/wiki/Tadeusz_Reichstein.",
     "topic": "vitamin-c-scurvy-and-the-royal-navy"
   },
   {
@@ -28432,28 +28393,28 @@
   },
   {
     "tier": 3,
-    "question": "Ordinary steak fat stays solid at room temperature and needs a hot pan to melt, but wagyu fat gives way at a startlingly low warmth. Suppose you warm a slice of each: about how warm must the wagyu get before its fat starts to melt?",
-    "answer": "roughly the warmth of your own body",
+    "question": "Ordinary steak fat stays solid at room temperature and needs a hot pan to melt, but wagyu fat gives way at far less heat. A cook warms a slice of each side by side. About how warm must the wagyu get before its fat starts to melt?",
+    "answer": "roughly the warmth of a human body",
     "choices": [
-      "roughly the warmth of your own body",
+      "roughly the warmth of a human body",
       "roughly the chill of a spring morning",
-      "roughly the warmth of a summer room",
-      "roughly the heat of a very hot bath"
+      "roughly the heat of a cup of hot tea",
+      "roughly the heat of a simmering pot"
     ],
-    "context": "It's real, not just hype: wagyu's intramuscular fat can begin softening below 37°C — human body temperature — which is why a slice really can seem to 'melt in your mouth,' while ordinary beef fat stays firm until far hotter. Scientists even showed the low melt is inherited: in one sire study, which bull fathered a calf decided whether its fat melted this low. Sources: en.wikipedia.org/wiki/Wagyu; pubmed.ncbi.nlm.nih.gov/29201894/",
+    "context": "It's real, not just hype: wagyu's intramuscular fat can begin softening below 37°C, human body temperature, which is why a slice really can seem to 'melt in the mouth,' while ordinary beef fat stays firm until far hotter. The low melt runs in families: in large studies of Japanese Black cattle, the calves of different bulls differed in how low their fat melted. Sources: en.wikipedia.org/wiki/Wagyu; Lloyd et al. 2017 (Wagyu fat melting temperature by sire); Chikusan Gakkaishi 79(1) (sire groups and fat melting point, Japanese Black cattle).",
     "topic": "wagyu-marbling-the-fat-that-melts-on-your-tongue"
   },
   {
     "tier": 4,
-    "question": "A butcher sets a slab of wagyu beside an ordinary steak, and their fats are built from different molecules. Ordinary beef fat is packed with the hard, saturated kind, but wagyu's fat is dominated by a softer one, the same molecule that makes up most of one common kitchen oil. Which oil?",
+    "question": "A butcher sets a slab of wagyu beside an ordinary steak, and their fats are built from different molecules. Ordinary beef fat leans toward the hard, saturated kind, but wagyu's fat is dominated by a softer one, the same molecule that makes up most of one common kitchen oil. Which oil?",
     "answer": "olive oil",
     "choices": [
       "olive oil",
-      "sunflower oil",
+      "soybean oil",
       "corn oil",
       "sesame oil"
     ],
-    "context": "The soft fat is called monounsaturated fat, and its main ingredient — oleic acid — is the very same fat that keeps olive oil liquid. Wagyu fat is roughly 45–55% oleic acid, versus about 30% in ordinary beef, which also gives it that buttery, faintly sweet richness. Soft fats like this melt at lower temperatures than the hard, saturated fat in normal beef. Sources: en.wikipedia.org/wiki/Wagyu; secondcityprime.com",
+    "context": "The soft fat is called monounsaturated fat, and its main ingredient — oleic acid — is the very same fat that keeps olive oil liquid. Wagyu fat is roughly 45–55% oleic acid, versus roughly 40% in grain-fed Angus beef, which also gives it that buttery, faintly sweet richness. Soft fats like this melt at lower temperatures than the hard, saturated fat in normal beef. Sources: en.wikipedia.org/wiki/Wagyu; PMC10000121 (Wagyu vs Angus fatty acids)",
     "topic": "wagyu-marbling-the-fat-that-melts-on-your-tongue"
   },
   {
@@ -28567,7 +28528,7 @@
     "choices": [
       "Fast-growing green grass of spring",
       "Lush clover pasture of high summer",
-      "Fresh green regrowth of autumn rain",
+      "Dry, sun-cured grass of late summer",
       "Damp shaded grass of valley floors"
     ],
     "context": "The golden color was the tell. Price found the level of his mystery nutrient in butterfat varied up to fifty-fold with how fast the grass was growing and how mineral-rich the soil was — the richest, most golden butter came from cows on rapidly growing green spring pasture. Source: Weston A. Price Foundation, 'On the Trail of the Elusive X-Factor.'",
@@ -28575,20 +28536,20 @@
   },
   {
     "tier": 3,
-    "question": "In nearly every healthy people he visited, Weston Price met the same custom: a few foods were held almost sacred and kept back for expectant mothers and growing children. He measured them as carrying up to ten times the nutrients of everyday food. What sort of foods were they?",
+    "question": "In nearly every healthy people he visited, Weston Price met the same custom: a few kinds of food were held almost sacred and kept back for expectant mothers and growing children, and some groups saved them for couples about to marry. What sort of foods were they?",
     "answer": "Organ meats, fish eggs, and shellfish",
     "choices": [
       "Organ meats, fish eggs, and shellfish",
       "Lean muscle meat, tallow, and gelatin",
-      "Fresh blood, bone marrow, and tripe",
+      "Wild honey, nuts, and ripe fruit",
       "Aged cheese, dried fish, and lard"
     ],
-    "context": "The 'sacred foods' were animal foods rich in fat-soluble vitamins — organ meats, fish eggs (roe), shellfish, fish liver oils, and rich butter from grass-fed cows; it was those fat-soluble vitamins that Price measured at up to ten times the level of everyday food. Many groups set them aside deliberately for pregnant and nursing mothers and for young couples before marriage — a kind of 'pre-conception nutrition,' generations before science named the vitamins involved. Source: Weston A. Price Foundation, 'Weston A. Price, DDS.'",
+    "context": "The 'sacred foods' were animal foods rich in fat-soluble vitamins: organ meats, fish eggs (roe), shellfish, fish liver oils, and rich butter from grass-fed cows. Price reported that many groups set them aside for pregnant and nursing mothers and for young couples before marriage, generations before science named the vitamins involved. By his count, the traditional diets built on such foods carried about ten times the fat-soluble vitamins of the American diet of his day. Source: Weston A. Price Foundation, 'Weston A. Price, DDS'; WAPF, 'Principles of Healthy Diets.'",
     "topic": "weston-price-and-the-traditional-foods-idea"
   },
   {
     "tier": 3,
-    "question": "Gaelic islanders on Scotland's storm-battered Isle of Lewis kept famously strong teeth on a diet of oatcakes and seafood, cod and other fish pulled from the cold Atlantic. One unusual dish was saved as a special food to help their children grow. What was it?",
+    "question": "Weston Price reported that Gaelic islanders on Scotland's storm-battered Isle of Lewis kept their teeth strong on oatcakes and seafood, cod and other fish from the cold Atlantic. He also recorded one unusual dish saved as a special food to help their children grow. What was it?",
     "answer": "Fish heads stuffed with oats",
     "choices": [
       "Fish heads stuffed with oats",
@@ -28596,7 +28557,7 @@
       "Boiled cod livers on toast",
       "Seaweed baked into flat bread"
     ],
-    "context": "On the Isle of Lewis, fish heads stuffed with oats were considered a prized dish for growing children — pairing oats with the fat-soluble vitamins concentrated in the fish. When bakeries and shops brought in white bread and jam, the islanders' famously good teeth began to rot. Source: Weston A. Price Foundation, 'Weston A. Price, DDS.'",
+    "context": "On the Isle of Lewis, Price reported, fish heads stuffed with oats were a prized dish for growing children, pairing oats with the fat-soluble vitamins concentrated in the fish. He also reported that when bakeries and shops brought in white bread and jam, the islanders' good teeth began to decay. Source: Weston A. Price Foundation, 'Weston A. Price, DDS'; Price, Nutrition and Physical Degeneration (1939).",
     "topic": "weston-price-and-the-traditional-foods-idea"
   },
   {
@@ -28613,16 +28574,16 @@
     "topic": "weston-price-and-the-traditional-foods-idea"
   },
   {
-    "tier": 5,
-    "question": "Sally Fallon wrote a bestselling cookbook, Nourishing Traditions, and with it and the Weston A. Price Foundation, today's traditional-foods movement was launched in 1999 on the strength of Price's findings. What style of eating does the movement champion?",
+    "tier": 3,
+    "question": "Sally Fallon's bestselling cookbook, Nourishing Traditions, and the Weston A. Price Foundation she co-founded with Mary Enig set off the traditional-foods movement in 1999, built on what Price saw among the healthy peoples he visited. What way of eating does it champion?",
     "answer": "Whole-fat dairy, bone broth, and fermented foods",
     "choices": [
       "Whole-fat dairy, bone broth, and fermented foods",
-      "Cured meats, sourdough bread, and olive oil",
-      "Grass-fed steak, tallow, and pickled eggs",
-      "Raw juices, sprouted nuts, and sea vegetables"
+      "Skim milk, egg-white omelets, and lean poultry",
+      "Raw vegetable juices, tofu, and soy milk",
+      "Margarine, bran cereal, and low-fat yogurt"
     ],
-    "context": "In 1999 Sally Fallon Morell and nutritionist Mary Enig founded the Weston A. Price Foundation. Fallon's cookbook 'Nourishing Traditions' (1996, over 750,000 copies sold) champions whole-fat dairy, bone broth, organ meats, and lacto-fermented foods like sauerkraut, natto, and yogurt — plus grains that are soaked or soured before cooking, the way Price's healthy peoples prepared them. How solid is the science underneath it? Price's own evidence was observational travel fieldwork from short visits, not controlled trials: a 1981 review by William Jarvis in Nutrition Today called it a classic 'myth of the healthy savage,' and a JAMA review judged Price 'observant but not wholly unbiased' and 'evangelistic rather than scientific.' Yet his core insight — that whole traditional foods beat a diet of white flour and sugar — is widely accepted today. The broader disease claims remain debated, and no standardized 'Weston Price diet' has ever been tested in a randomized trial. Sources: Wikipedia, 'Weston A. Price Foundation'; Wikipedia, 'Weston A. Price.'",
+    "context": "In 1999 Sally Fallon Morell and nutritionist Mary Enig founded the Weston A. Price Foundation. Fallon's cookbook 'Nourishing Traditions', a bestseller, champions whole-fat dairy, bone broth, organ meats, and lacto-fermented foods like sauerkraut, natto, and yogurt — plus grains that are soaked or soured before cooking, the way Price's healthy peoples prepared them. How solid is the science underneath it? Price's own evidence was observational travel fieldwork from short visits, not controlled trials: a 1981 review by William Jarvis in Nutrition Today called it a classic 'myth of the healthy savage,' and a JAMA review judged Price 'observant but not wholly unbiased' and 'evangelistic rather than scientific.' Yet his core insight — that whole traditional foods beat a diet of white flour and sugar — is widely accepted today. The broader disease claims remain debated, and no standardized 'Weston Price diet' has ever been tested in a randomized trial. Sources: Wikipedia, 'Weston A. Price Foundation'; Wikipedia, 'Weston A. Price.'",
     "topic": "weston-price-and-the-traditional-foods-idea"
   },
   {
@@ -28666,7 +28627,7 @@
   },
   {
     "tier": 4,
-    "question": "Harry Baker, an insurance salesman in Los Angeles, baked his chiffon cake for Hollywood stars at the Brown Derby and told no one his method for twenty years. Then, in the 1940s, he sold the recipe to General Mills. His trick, for a cake lighter and moister than any butter cake, was to swap the butter for something cakes had never used. What did he use instead?",
+    "question": "Harry Baker, an insurance salesman in Los Angeles, baked his chiffon cake for Hollywood stars at the Brown Derby and told no one his method for twenty years. Then, in the 1940s, he sold the recipe to General Mills. His trick, for a cake lighter and moister than any butter cake, was to swap the butter for one surprising ingredient. What did he use instead?",
     "answer": "Vegetable oil.",
     "choices": [
       "Vegetable oil.",
@@ -28679,15 +28640,15 @@
   },
   {
     "tier": 5,
-    "question": "In a hot pan, a plain beaten egg scrambles firm almost at once. A pastry cook stirs the same egg into milk and sugar for a custard, and now it refuses to thicken until it is heated far hotter and more slowly, which keeps the baked custard silky instead of rubbery. Which ingredient makes the egg set at a higher temperature?",
+    "question": "In a hot pan, a plain beaten egg scrambles firm almost at once. A pastry cook beats the same egg into milk for a baked custard, then adds one more ingredient that pushes its setting point higher still, so it thickens slowly and stays silky instead of rubbery. Which ingredient does that?",
     "answer": "The sugar.",
     "choices": [
       "The sugar.",
-      "The milk.",
-      "The cream.",
-      "The salt."
+      "The vanilla.",
+      "The nutmeg.",
+      "The cloves."
     ],
-    "context": "Sugar raises the temperature an egg needs to set, while acid lowers it. A plain egg white coagulates at about 144-149°F, but an egg-milk-sugar custard won't thicken until roughly 176-185°F — hotter than a plain egg. Bakers use this to keep custards tender and smooth rather than rubbery. Source: American Egg Board — coagulation/thickening; opentextbc.ca modern pastry.",
+    "context": "Sugar raises the temperature an egg needs to set, and diluting the egg with milk raises it too; a little vanilla, nutmeg or clove changes nothing. A plain egg white coagulates at about 144-149°F, but an egg-milk-sugar custard won't thicken until roughly 175-185°F. Bakers use this to keep custards tender and smooth rather than rubbery. Source: Iowa State University, FSHN 115, 'Eggs: Custards' (iastate.pressbooks.pub); Experimental Cookery, 'Properties of Egg Proteins' (chestofbooks.com).",
     "topic": "what-an-egg-does-in-a-batter"
   },
   {
@@ -28700,7 +28661,7 @@
       "The white and yolk cook at different speeds, so beating them apart bakes the crumb more evenly.",
       "The white and yolk each weigh the same, so beating them apart makes the batter easier to measure."
     ],
-    "context": "Whites and yolks pull in opposite directions: the white is nearly fat-free structure that whips into an airy foam for lift, while the yolk is fat, richness and moisture. Split them and a baker gets both at once — airy whipped whites folded into rich yolk batter — which is exactly why a chiffon or sponge recipe tells you to 'separate the eggs.' Source: Baking Sense — baking-sense.com/baking-school/baking-science/ingredients/eggs/",
+    "context": "Whites and yolks pull in opposite directions: the white is nearly fat-free structure that whips into an airy foam for lift, while the yolk is fat, richness and moisture. Split them and a baker gets both at once — airy whipped whites folded into rich yolk batter — which is exactly why a chiffon or sponge recipe tells the baker to 'separate the eggs.' Source: Baking Sense — baking-sense.com/baking-school/baking-science/ingredients/eggs/",
     "topic": "what-an-egg-does-in-a-batter"
   },
   {
@@ -28718,7 +28679,7 @@
   },
   {
     "tier": 2,
-    "question": "A cook boils one batch of broccoli and loses more than half of a fragile vitamin in it. She cooks a second batch a different way and keeps nearly all of it. Which cooking method protects the vegetable's vitamins best?",
+    "question": "A cook boils one batch of broccoli and loses more than half of a fragile vitamin in it. She cooks a second batch a different way and keeps most of it. Which cooking method protects the vegetable's vitamins best?",
     "answer": "Steaming",
     "choices": [
       "Steaming",
@@ -28731,7 +28692,7 @@
   },
   {
     "tier": 2,
-    "question": "A cook who fears for her vegetables' vitamins shuns one common kitchen appliance, sure it zaps them out of food even worse than a long boil in a pot of water. Food scientists who have measured it say she has it backward: it is among the very best at saving them. Which appliance is the surprise vitamin-saver?",
+    "question": "A cook who fears for her vegetables' vitamins shuns one common kitchen appliance, sure it strips them out of food worse than a long boil. Food scientists who have measured it say she has it backward: it is among the best at saving them. Which appliance is the surprise vitamin-saver?",
     "answer": "The microwave",
     "choices": [
       "The microwave",
@@ -28739,7 +28700,7 @@
       "The pressure canner",
       "The deep fryer"
     ],
-    "context": "Microwaving is one of the best ways to keep vitamins, not the worst, because it uses barely any water and a short cooking time. Cornell scientists found spinach cooked in a microwave kept almost all of its folate and held on to over 90% of its vitamin C, while boiling the same spinach in water lost nearly 80% of that folate. Source: Have A Plant / Produce for Better Health Foundation (Cornell finding on microwaved vs. boiled spinach) — https://fruitsandveggies.org/blog/about-the-buzz-microwaving-fruits-vegetables-kills-all-their-essential-nutrientss/",
+    "context": "Microwaving is one of the best ways to keep vitamins, not the worst, because it uses barely any water and a short cooking time. In one review of cooking studies, spinach and green beans kept up to 79% of their vitamin C in the microwave, against 66% when boiled. Source: Leskova et al. 2006, Journal of Food Composition and Analysis, via Produce for Better Health Foundation (fruitsandveggies.org); Harvard Health, 'Microwave cooking and nutrition.'",
     "topic": "what-cooking-does-to-vitamins-why-steaming-beats-boiling"
   },
   {
@@ -28752,20 +28713,7 @@
       "Vitamin B1",
       "Vitamin B6"
     ],
-    "context": "Here's the rule that explains it all. Water-soluble vitamins — vitamin C and the whole B group — dissolve into the cooking water AND break down in heat, so boiling is a double loss. The fat-soluble vitamins — A, D, E and K — don't dissolve in water and shrug off heat far better; they're only lost in fat that gets drained away. Vitamin K is especially tough and holds up well through cooking. Source: Food Safety Institute, 'Functions and Applications of Water-Soluble Vitamins,' and Farm Forum, 'Cooking methods and vitamin loss' — https://foodsafety.institute/food-fundamentals-chemistry/functions-applications-water-soluble-vitamins/",
-    "topic": "what-cooking-does-to-vitamins-why-steaming-beats-boiling"
-  },
-  {
-    "tier": 3,
-    "question": "A Southern cook simmers a huge batch of collard greens for hours, and she never pours away the dark broth left in the pot: she sips it from a cup like tea or sops it up with cornbread. What do Southern cooks call that broth?",
-    "answer": "Pot liquor",
-    "choices": [
-      "Pot liquor",
-      "Greens gravy",
-      "Kettle stock",
-      "Collard cream"
-    ],
-    "context": "In the American South this leftover green-cooking water is called 'pot liquor' (or 'pot likker'), traditionally sipped like tea or sopped up with cornbread — and it's the smart move, because it's loaded with what leached out of the greens: boiling releases roughly 50% of their flavonoids and 60% of their vitamin C into that liquid. Source: NPR, The Salt, 'Pot Liquor: A Southern Tip To Save Nutritious Broth From Greens' — https://www.npr.org/sections/thesalt/2013/08/06/209543044/pot-liquor-a-southern-tip-to-save-nutritious-broth-from-greens",
+    "context": "Here's the rule that explains it all. Water-soluble vitamins — vitamin C and the whole B group — dissolve into the cooking water AND break down in heat, so boiling is a double loss. The fat-soluble vitamins — A, D, E and K — don't dissolve in water and shrug off heat far better; they're lost mainly in fat that gets drained away. Vitamin K is especially tough and holds up well through cooking. Source: Food Safety Institute, 'Functions and Applications of Water-Soluble Vitamins,' and Farm Forum, 'Cooking methods and vitamin loss' — https://foodsafety.institute/food-fundamentals-chemistry/functions-applications-water-soluble-vitamins/",
     "topic": "what-cooking-does-to-vitamins-why-steaming-beats-boiling"
   },
   {
@@ -28778,7 +28726,7 @@
       "How fresh the food is at the store",
       "How many calories the food has"
     ],
-    "context": "The USDA Organic seal certifies HOW produce is grown — without synthetic pesticides, without synthetic fertilizers, and without GMOs (genetic engineering is expressly prohibited). It makes no promise at all about vitamins or nutrition. Source: USDA, 'Organic 101: What the USDA Organic Label Means' / USDA AMS Organic Basics (ams.usda.gov).",
+    "context": "The USDA Organic seal certifies HOW produce is grown — without most synthetic pesticides and fertilizers, and without GMOs (genetic engineering is expressly prohibited). It makes no promise at all about vitamins or nutrition. Source: USDA, 'Organic 101: What the USDA Organic Label Means' / USDA AMS Organic Basics (ams.usda.gov).",
     "topic": "what-organic-really-means"
   },
   {
@@ -28796,7 +28744,7 @@
   },
   {
     "tier": 2,
-    "question": "Researchers at Stanford University pooled 237 separate studies in 2012 to test the benefits shoppers hope for when they pay almost twice as much for organic food: tastier, safer, more nutritious. Just one claim came out clearly backed up. Which claim did the pooled evidence support?",
+    "question": "Stanford researchers pooled 237 studies in 2012 to weigh what shoppers hope for when they pay almost twice as much for organic fruit and vegetables. For the produce itself, just one hoped-for benefit came out clearly backed up. Which one?",
     "answer": "It carries fewer pesticide residues",
     "choices": [
       "It carries fewer pesticide residues",
@@ -28817,12 +28765,12 @@
       "Organic eggs and milk — a much longer shelf life",
       "Organic fish and shellfish — far lower mercury levels"
     ],
-    "context": "Hunting for a nutritional edge, the 2012 Stanford review of 237 studies came up nearly empty on produce — only phosphorus edged higher, which the authors judged clinically unimportant, and lead author Crystal Smith-Spangler said the team was 'a little surprised.' The one clearer win beyond fruit and vegetables: organic chicken and pork carried a lower risk of antibiotic-resistant bacteria — though the authors cautioned its real-world health significance is unclear. (A 2014 British review did find organic crops modestly higher in antioxidants, which is why 'organic is more nutritious' stays contested.) Source: Smith-Spangler, Bravata et al. 2012, Annals of Internal Medicine; Stanford Medicine news release; Baranski et al. 2014, British Journal of Nutrition.",
+    "context": "Hunting for a nutritional edge, the 2012 Stanford review of 237 studies came up nearly empty on produce — only phosphorus edged higher, which the authors judged clinically unimportant, and lead author Crystal Smith-Spangler said the team was 'a little surprised.' The one clearer win beyond fruit and vegetables: organic chicken and pork carried a lower risk of antibiotic-resistant bacteria — though the authors cautioned its real-world health significance is unclear. (A 2014 British review by Marcin Baranski and colleagues did find organic crops higher in several antioxidants, by roughly 20 to 70 per cent depending on the compound, which is why 'organic is more nutritious' stays contested.) Source: Smith-Spangler, Bravata et al. 2012, Annals of Internal Medicine; Stanford Medicine news release; Baranski et al. 2014, British Journal of Nutrition.",
     "topic": "what-organic-really-means"
   },
   {
     "tier": 4,
-    "question": "An organic grower walks his rows with a sprayer, because 'organic' does not mean pesticide-free: he may use approved natural bug-killers. One popular one, pyrethrin, is pressed straight from the petals of a common garden flower. Which flower?",
+    "question": "An organic grower walks his rows of vegetables with a sprayer, because 'organic' does not mean pesticide-free: he may use approved natural bug-killers. One popular one, pyrethrin, is extracted from the dried flower heads of a common garden flower. Which flower?",
     "answer": "Chrysanthemum",
     "choices": [
       "Chrysanthemum",
@@ -28830,12 +28778,12 @@
       "Marigold",
       "Lavender"
     ],
-    "context": "'Organic' does not mean pesticide-free. Organic growers spray approved NATURAL pesticides — pyrethrin, pressed from chrysanthemum flowers; neem oil, from the seeds of the neem tree; and Bt, made by a soil bacterium. The Stanford researchers noted organic foods are 'not necessarily 100 percent free of pesticides' — the residues are simply lower. Source: Rodale Institute, 'Wait, Organic Farmers Use Pesticides?' (rodaleinstitute.org); Stanford Medicine news release, 2012.",
+    "context": "'Organic' does not mean pesticide-free. Organic growers spray approved NATURAL pesticides — pyrethrin, extracted from dried chrysanthemum flowers; neem oil, from the seeds of the neem tree; and Bt, made by a soil bacterium. The Stanford researchers noted organic foods are 'not necessarily 100 percent free of pesticides' — the residues are simply lower. Source: Rodale Institute, 'Wait, Organic Farmers Use Pesticides?' (rodaleinstitute.org); Stanford Medicine news release, 2012.",
     "topic": "what-organic-really-means"
   },
   {
     "tier": 4,
-    "question": "On his organic fields, a farmer fighting a plant disease may reach for copper sulfate, but only as a documented last resort, because copper builds up in the soil and in the body. On the U.S. Department of Agriculture's official list of what organic farms may use, how is copper sulfate itself classified?",
+    "question": "On his organic fields, a farmer fighting a plant disease may reach for copper sulfate, but only as a documented last resort, used sparingly so copper does not pile up in the soil. On the U.S. Department of Agriculture's official list of what organic farms may use, how is copper sulfate itself classified?",
     "answer": "As a synthetic chemical, made in a factory",
     "choices": [
       "As a synthetic chemical, made in a factory",
@@ -28843,18 +28791,18 @@
       "As a plant extract, pressed from seeds",
       "As a living microbe, grown in soil"
     ],
-    "context": "Copper builds up in soil and the body and never breaks down, so organic rules let farmers use copper-based fungicides only with a documented need, after other options fail — proof that 'natural' doesn't automatically mean safer. The real twist: copper sulfate is technically SYNTHETIC, yet the USDA's National List specifically permits it — one of about 25 synthetic substances allowed in organic crop production — because no natural alternative controls the same plant diseases as well. Source: USDA National List of Allowed and Prohibited Substances; Rodale Institute; AGDAILY, 'The list of organic pesticides approved by the USDA' (agdaily.com).",
+    "context": "Copper is an element, so it never breaks down: organic rules let farmers use copper sulfate only when other methods have failed, documented in the farm's organic plan, and in a way that keeps copper from building up in the soil. The real twist: copper sulfate is classed as SYNTHETIC, yet the USDA's National List specifically permits it, one of a short list of synthetic substances allowed in organic crop production. Source: USDA National List, 7 CFR 205.601 and 205.206 (ecfr.gov); Rodale Institute.",
     "topic": "what-organic-really-means"
   },
   {
     "tier": 1,
-    "question": "A cook cracks open a coconut and finds four very different parts: a fibrous brown husk, a hard woody shell, watery juice sloshing inside and a pale, solid lining pressed against the shell. Around a thousand coconuts go into just a few bottles of coconut oil, all of it from one part. Which part is pressed?",
-    "answer": "firm white 'meat'",
+    "question": "A cook cracks open a coconut and finds four parts: a fibrous brown husk, a hard woody shell, watery juice sloshing inside and a pale, solid lining pressed against the shell. All its oil comes from one of them. Which part is pressed?",
+    "answer": "the firm white meat",
     "choices": [
-      "firm white 'meat'",
-      "watery juice inside",
-      "fibrous brown husk",
-      "hard woody shell"
+      "the firm white meat",
+      "the watery juice inside",
+      "the fibrous brown husk",
+      "the hard woody shell"
     ],
     "context": "Coconut oil comes from the white flesh, or 'meat,' of the coconut, the flesh of a fruit rather than a seed, which puts it in the same family as olive and avocado oil. Below about 25C (77F) it sits as a solid white fat and melts to a clear liquid just above. Source: Wikipedia, 'Coconut oil'.",
     "topic": "where-cooking-oils-come-from"
@@ -28886,29 +28834,16 @@
     "topic": "where-cooking-oils-come-from"
   },
   {
-    "tier": 2,
-    "question": "Canadian plant scientists took a wild weed in the 1970s and spent years cross-breeding it to strip out a bitter oil compound that upset stomachs, until a mild, safe cooking oil was left. They named the new crop canola, joining 'Canadian oil' to two words for the trait they had bred in. What were those two words?",
-    "answer": "'Low Acid'",
-    "choices": [
-      "'Low Acid'",
-      "'Light Amber'",
-      "'Low Allergy'",
-      "'Lasting Aroma'"
-    ],
-    "context": "'Canola' is short for 'CANadian Oil, Low Acid.' Scientists bred rapeseed to strip out its bitter, once-toxic erucic acid; to be sold as food, canola must contain less than 2% of it. The crushed seed left after pressing becomes animal feed. Source: Wikipedia, 'Canola oil'.",
-    "topic": "where-cooking-oils-come-from"
-  },
-  {
     "tier": 5,
-    "question": "On a shop shelf, a bottle of olive oil stamped 'First Cold Pressed' costs half again as much as the plain extra virgin oil beside it. A working olive miller would say the word 'first' on that fancy label is worth nothing. Why is it an empty boast?",
-    "answer": "the olives are never pressed a second time",
+    "question": "On a shop shelf, a bottle of olive oil stamped 'First Cold Pressed' costs half again as much as a plain bottle of the same top grade beside it. A working olive miller would say the word 'first' on that fancy label is worth nothing. Why is it an empty boast?",
+    "answer": "every extra virgin oil is a first pressing",
     "choices": [
-      "the olives are never pressed a second time",
+      "every extra virgin oil is a first pressing",
       "the second pressing makes the finer oil",
       "the first pressing is mostly olive water",
       "the mill blends the pressings together"
     ],
-    "context": "'First press' is really just marketing; there is no genuine 'second press' of virgin oil. 'Cold pressed' does mean something: the oil was squeezed below about 27C (80F) so heat can't cook off its flavor. 'Extra virgin' is the top grade: cold mechanical pressing only, no chemicals, no taste defects, and very low acidity (no more than 0.8%). Plain 'virgin' allows more acidity and minor faults, while 'refined' oils were cleaned up with heat or solvents. Source: Wikipedia, 'Olive oil'.",
+    "context": "'First press' is really just marketing: every extra virgin oil is a first pressing by definition, since oil wrung a second time from the leftover paste could never pass the extra virgin grade. 'Cold pressed' does mean something: the oil was squeezed below about 27C (80F) so heat can't cook off its flavor. 'Extra virgin' is the top grade: cold mechanical pressing only, no chemicals, no taste defects, and very low acidity (no more than 0.8%). Plain 'virgin' allows more acidity and minor faults, while 'refined' oils were cleaned up with heat or solvents. Source: Wikipedia, 'Olive oil'.",
     "topic": "where-cooking-oils-come-from"
   },
   {
@@ -28921,7 +28856,7 @@
       "A nut, like a peanut",
       "A shellfish, like a clam"
     ],
-    "context": "A truffle is the fruiting body of a fungus in the genus Tuber; the white Alba truffle's scientific name is Tuber magnatum. Unlike the mushrooms you know that push up into the air, a truffle ripens its whole life underground and never breaks the surface. Source: en.wikipedia.org/wiki/Tuber_magnatum",
+    "context": "A truffle is the fruiting body of a fungus in the genus Tuber; the white Alba truffle's scientific name is Tuber magnatum. Unlike familiar mushrooms that push up into the air, a truffle ripens its whole life underground and never breaks the surface. Source: en.wikipedia.org/wiki/Tuber_magnatum",
     "topic": "white-alba-truffle-the-treasure-you-cannot-farm"
   },
   {
@@ -28966,45 +28901,45 @@
   {
     "tier": 4,
     "question": "Stanley Ho, a casino billionaire from Macau, paid US$330,000 in December 2007 for a single white truffle dug up near Pisa, one of the biggest found in decades and worth far more than its weight in gold. A truffle that dear is rare for one particular reason. Why does a fine white truffle command such a price?",
-    "answer": "It has defied every attempt to farm it",
+    "answer": "Growers have almost never managed to farm it",
     "choices": [
-      "It has defied every attempt to farm it",
+      "Growers have almost never managed to farm it",
       "It rots almost as soon as it is dug up",
       "It grows only in the deepest old forests",
       "It must be eaten the very day it is found"
     ],
-    "context": "For more than a century the white truffle beat every attempt to farm it, even after growers planted hundreds of thousands of seedlings laced with its spores. Only in 2021 did French scientists (INRAE, with the ROBIN nursery) harvest the first few cultivated white truffles, so it remains, for now, essentially a wild treasure. Stanley Ho's 1.5-kilogram truffle sold for about US$330,000. Sources: inrae.fr; en.wikipedia.org/wiki/Tuber_magnatum",
+    "context": "For decades the white truffle beat every attempt to farm it, even after growers planted hundreds of thousands of seedlings laced with its spores. Only in 2019 did French scientists (INRAE, with the Robin nursery) harvest the first few cultivated white truffles, announced in 2021, so it remains, for now, essentially a wild treasure. Stanley Ho's 1.5-kilogram truffle sold for about US$330,000. Sources: inrae.fr, 'Controlled production of white truffles Made in France: a global first'; en.wikipedia.org/wiki/Tuber_magnatum",
     "topic": "white-alba-truffle-the-treasure-you-cannot-farm"
   },
   {
     "tier": 5,
     "question": "A chef in an Italian restaurant unwraps a knobby white truffle worth more per gram than gold. Over a plate of hot buttered pasta he shaves it into paper-thin, see-through slices that fall raw onto the steaming noodles, and it never goes near a hot pan or an oven. Why does he refuse to cook such a costly ingredient?",
-    "answer": "Heat destroys its delicate aroma in seconds",
+    "answer": "Heat quickly destroys its delicate aroma",
     "choices": [
-      "Heat destroys its delicate aroma in seconds",
+      "Heat quickly destroys its delicate aroma",
       "Cooking turns its flesh bitter and hard",
       "The slices are too thin to survive a pan",
       "Heat makes it shrink away to nothing"
     ],
-    "context": "The white truffle's scent is so fragile that a flame destroys it, so it is never cooked. Shaved raw in almost transparent slices, it lands on hot buttered pasta, risotto, or fried eggs, and the warmth of the dish, not a fire, coaxes out its powerful garlic-and-cheese aroma. Sources: en.wikipedia.org/wiki/Tuber_magnatum; geographical.co.uk 'Unravelling the mystery of the white truffle'",
+    "context": "The white truffle's scent is so fragile that a flame destroys it, so it is almost never cooked. Shaved raw in almost transparent slices, it lands on hot buttered pasta, risotto, or fried eggs, and the warmth of the dish, not a fire, coaxes out its powerful garlic-and-cheese aroma. Sources: en.wikipedia.org/wiki/Tuber_magnatum; geographical.co.uk 'Unravelling the mystery of the white truffle'",
     "topic": "white-alba-truffle-the-treasure-you-cannot-farm"
   },
   {
     "tier": 2,
-    "question": "Suppose you eat carrots and sweet potatoes every day for years: you will never be poisoned by vitamin A, yet a megadose vitamin A pill from a supplement bottle can poison you. Nutritionists say a clever built-in switch keeps the carrots safe. What is that switch?",
-    "answer": "Your body slows its conversion of beta-carotene once vitamin A stores are full.",
+    "question": "A girl eats carrots and sweet potatoes every day for years and is never poisoned by vitamin A, yet a megadose vitamin A pill can poison a person. Nutritionists say a clever built-in switch keeps the carrots safe. What is that switch?",
+    "answer": "Her body slows its conversion of beta-carotene once vitamin A stores are full.",
     "choices": [
-      "Your body slows its conversion of beta-carotene once vitamin A stores are full.",
-      "Your stomach destroys any beta-carotene beyond the first serving.",
+      "Her body slows its conversion of beta-carotene once vitamin A stores are full.",
+      "Her stomach destroys any beta-carotene beyond the first serving.",
       "Carrots carry only trace amounts, far too little to ever build up.",
-      "Your kidneys flush the surplus vitamin A out within hours."
+      "Her kidneys flush the surplus vitamin A out within hours."
     ],
-    "context": "From food, the body throttles its own beta-carotene-to-vitamin-A conversion once levels are high enough, so you cannot overdose on vitamin A by eating vegetables — a built-in brake. A fixed high-dose pill bypasses that brake. Source: Cleveland Clinic (health.clevelandclinic.org/beta-carotene).",
+    "context": "From food, the body throttles its own beta-carotene-to-vitamin-A conversion once levels are high enough, so a person cannot overdose on vitamin A by eating vegetables — a built-in brake. A fixed high-dose pill bypasses that brake. Source: Cleveland Clinic (health.clevelandclinic.org/beta-carotene).",
     "topic": "whole-food-vs-the-pill"
   },
   {
     "tier": 3,
-    "question": "Researchers running a big American trial in the 1990s gave tens of thousands of smokers a daily high-dose pill of beta-carotene, the orange pigment of carrots and sweet potatoes, hoping it would guard them against cancer. The results grew so alarming that the trial was stopped early. What had the pills done to the smokers?",
+    "question": "A big American trial in the 1990s gave some 18,000 smokers, former smokers and asbestos workers a daily high-dose pill of beta-carotene, the orange pigment of carrots, with vitamin A, hoping to guard them against cancer. The results grew so alarming that the trial was stopped early. What had the pills done?",
     "answer": "Given them more lung cancer, not less.",
     "choices": [
       "Given them more lung cancer, not less.",
@@ -29012,31 +28947,18 @@
       "Triggered dangerous bleeding by thinning their blood.",
       "Ruined their night vision within a year."
     ],
-    "context": "Two big trials tested the bet that a beta-carotene pill would prevent lung cancer. In Finland's ATBC trial (NEJM 1994), 29,133 male smokers on 20 mg/day got about 18% MORE lung cancer and an 8% higher death rate. The U.S. CARET trial (Omenn et al., JNCI/NEJM 1996) gave smokers and asbestos-exposed workers 30 mg beta-carotene plus vitamin A and was halted in January 1996 after 28% more lung cancers and 17% more deaths. ACCURACY RAIL: this harm appeared only in SMOKERS taking a high-dose isolated pill — it does NOT mean carrots are dangerous or that 'vitamins cause cancer.' Whole-food beta-carotene never showed this harm. Sources: NEJM 1994 (ATBC); Omenn et al., PubMed 8901853 (CARET).",
-    "topic": "whole-food-vs-the-pill"
-  },
-  {
-    "tier": 3,
-    "question": "James Lind, a naval surgeon, ran one of history's first controlled experiments in 1747 on sailors dying of scurvy, the disease of rotting gums and old wounds splitting open. Scurvy once killed more of Britain's seamen than enemy cannon fire ever did, and Lind found the cure sitting in the ship's own stores. What brought the dying men back?",
-    "answer": "A ration of fresh lemons.",
-    "choices": [
-      "A ration of fresh lemons.",
-      "An extra measure of rum.",
-      "A portion of salted beef.",
-      "A serving of ship's biscuit."
-    ],
-    "context": "James Lind's 1747 trial is remembered as one of the first controlled experiments: the sailors given citrus recovered fastest. Scurvy is caused by a lack of vitamin C — though that vitamin was not identified until the 20th century, long after Lind. Scurvy is estimated to have killed more British sailors than all their naval battles combined. Source: Wikipedia, James Lind.",
+    "context": "Two big trials tested the bet that a beta-carotene pill would prevent lung cancer. In Finland's ATBC trial (NEJM 1994), 29,133 male smokers on 20 mg/day got about 18% MORE lung cancer and an 8% higher death rate. The U.S. CARET trial (Omenn et al., NEJM 1996) gave 18,314 smokers, former smokers and asbestos-exposed workers 30 mg beta-carotene plus vitamin A and was halted in January 1996 after 28% more lung cancers and 17% more deaths. The harm appeared in smokers taking a high-dose isolated pill; it does NOT mean carrots are dangerous or that 'vitamins cause cancer,' and whole-food beta-carotene never showed this harm. Sources: NEJM 1994 (ATBC); Omenn et al., PubMed 8901853 (CARET).",
     "topic": "whole-food-vs-the-pill"
   },
   {
     "tier": 4,
-    "question": "A carrot and a pill of the beta-carotene pulled from it read the same on a label, yet they behave very differently in the body. Smokers given beta-carotene pills at high doses every day in trials of the 1990s were harmed, though eating carrots had never shown such harm. What do scientists see as the leading reason?",
+    "question": "A carrot and a pill of the beta-carotene pulled from it read the same on a label, yet they behave very differently in the body. Smokers given beta-carotene pills at high doses every day in trials of the 1990s were harmed, though eating carrots had never shown such harm. What do scientists see as one leading reason?",
     "answer": "In the whole carrot it arrives bundled with fiber and hundreds of interacting compounds.",
     "choices": [
       "In the whole carrot it arrives bundled with fiber and hundreds of interacting compounds.",
       "The extraction process quietly destroys most of the pill's beta-carotene.",
       "Supplement beta-carotene is synthetic and the body simply cannot absorb it.",
-      "Cooking always strips a carrot's beta-carotene out before you eat it."
+      "Cooking always strips a carrot's beta-carotene out before it is eaten."
     ],
     "context": "Nutrition scientists call this the 'food matrix' or food synergy: in a whole food a nutrient arrives packaged with fiber and hundreds of other compounds that regulate and interact with it, so the whole is greater than any single nutrient pulled out and megadosed. The carrot is not the pill. Source: Jacobs et al., 'Food synergy,' Am J Clin Nutr (PMC2731586).",
     "topic": "whole-food-vs-the-pill"
@@ -29051,7 +28973,7 @@
       "thiamine",
       "riboflavin"
     ],
-    "context": "Folic acid is a supplement that clearly works because it fills a real gap: about 400 micrograms daily around conception can cut neural-tube defects like spina bifida by up to roughly 70%. It is the honest counterweight to 'food first' — other fair uses of a pill include vitamin D in high-latitude winters (when UVB is too weak for skin to make any) and vitamin B12 for long-term vegans (B12 is found almost only in animal foods). The fair rule is 'food first, pills to fix a real gap,' not 'all supplements are useless.' Sources: CDC (cdc.gov/folic-acid); Rashid et al., Eur J Haematol 2021 (vegan B12); UK winter vitamin D review (PMC6121420).",
+    "context": "Folic acid is a supplement that clearly works because it fills a real gap: about 400 micrograms daily around conception can cut neural-tube defects like spina bifida by up to roughly 70%. It is the honest counterweight to 'food first' — other fair uses of a pill include vitamin D in high-latitude winters (when UVB is too weak for skin to make much) and vitamin B12 for long-term vegans (B12 is found almost only in animal foods). The fair rule is 'food first, pills to fix a real gap,' not 'all supplements are useless.' Sources: CDC (cdc.gov/folic-acid); Rashid et al., Eur J Haematol 2021 (vegan B12); UK winter vitamin D review (PMC6121420).",
     "topic": "whole-food-vs-the-pill"
   },
   {
@@ -29095,19 +29017,6 @@
   },
   {
     "tier": 3,
-    "question": "White flour leaves the mill as nearly one part of the wheat grain and nothing else. The mill strips away the grain's nutritious outer layers and keeps only the big, pale, starchy core, the food the seed packed away for the plant it would become. What is that core called?",
-    "answer": "the endosperm",
-    "choices": [
-      "the endosperm",
-      "the bran",
-      "the germ",
-      "the husk"
-    ],
-    "context": "The starchy core is the endosperm — the seed's own energy store. White flour and white rice are mostly pure endosperm, because milling scrapes off the fiber-rich bran and the vitamin-rich germ and keeps the bland, long-lasting starch. Source: en.wikipedia.org/wiki/Cereal_germ",
-    "topic": "whole-vs-refined-grain-whats-hidden-in-the-bran"
-  },
-  {
-    "tier": 3,
     "question": "Families across Asia who lived on rice fell ill with beriberi in the late 1800s, a crippling disease of the nerves and heart that brought numb legs, racing hearts and sometimes sudden death. What simple change to the rice cured it?",
     "answer": "switching to plain brown rice",
     "choices": [
@@ -29142,12 +29051,12 @@
       "the thiamine",
       "the niacin"
     ],
-    "context": "Since the 1940s (the U.S. Army required enriched flour in 1942), mills add back thiamine, riboflavin, niacin, folic acid, and iron. But the fiber lived in the bran that milling throws away, and no one sprays fiber back on — it is the one thing refining takes that fortification cannot return. Source: en.wikipedia.org/wiki/Enriched_flour",
+    "context": "Since the 1940s (the U.S. Army required enriched flour in 1942), mills have added back thiamine, riboflavin, niacin and iron, and since 1998 folic acid too. But the fiber lived in the bran that milling throws away, and no one sprays fiber back on — it is the one thing refining takes that fortification cannot return. Source: en.wikipedia.org/wiki/Enriched_flour",
     "topic": "whole-vs-refined-grain-whats-hidden-in-the-bran"
   },
   {
     "tier": 5,
-    "question": "A Japanese Navy training ship limped home in 1883 from a nine-month voyage. Fed on nothing but polished white rice, 169 of its 376 sailors had come down with beriberi and 25 were dead. Takaki Kanehiro, the navy's doctor, suspected the diet, and the following year he sent another ship on the identical route with the meals overhauled. Not one man died of beriberi. Besides rice, what had he added?",
+    "question": "A Japanese Navy training ship limped home in 1883 from a nine-month voyage. Fed mostly on polished white rice, 169 of its 376 sailors had come down with beriberi and 25 were dead. Takaki Kanehiro, the navy's doctor, blamed the diet and the next year sent another ship on the same route with new meals. Not one man died of beriberi. Besides rice, what had he added?",
     "answer": "barley, meat, and milk",
     "choices": [
       "barley, meat, and milk",
@@ -29155,20 +29064,20 @@
       "tea, wine, and spices",
       "cabbage, beets, and turnips"
     ],
-    "context": "Most doctors then blamed an invisible germ, but Takaki Kanehiro had shown it was the food: polished white rice was stripped of thiamine (vitamin B1), and the added barley, meat, and milk restored it. His two-voyage test — same route, different diet — was decades ahead of its time, and it traced the sickness back to the bran the mills polished away. Source: en.wikipedia.org/wiki/Takaki_Kanehiro",
+    "context": "Most doctors then blamed an invisible germ, but Takaki Kanehiro's two-voyage test, same route and different diet, showed that the cause lay in the food. His new menu added barley, meat and milk, with bread and vegetables, and on the second voyage only sixteen of 333 men fell ill. Decades later scientists found the missing nutrient: thiamine (vitamin B1), stripped from white rice with the bran the mills polished away. Source: en.wikipedia.org/wiki/Takaki_Kanehiro",
     "topic": "whole-vs-refined-grain-whats-hidden-in-the-bran"
   },
   {
     "tier": 1,
     "question": "A chef sears a thick steak brown outside, leaves it pink and rare in the middle, and serves it safely. A hamburger patty ground from the same cow's beef is held to a different rule. To be safe, how must the patty be cooked?",
-    "answer": "All the way through, until no pink is left",
+    "answer": "All the way through, to the very center",
     "choices": [
-      "All the way through, until no pink is left",
+      "All the way through, to the very center",
       "Rare in the center, just like the steak",
       "Seared outside, still red in the middle",
       "Barely warmed, so it stays soft"
     ],
-    "context": "This is the whole puzzle in one bite: same beef, opposite rules. A whole steak is treated as safe cooked rare, but a burger made of ground beef is not. The reason has nothing to do with ground beef being somehow dirtier; it is entirely about WHERE the bacteria sit. Source: Tasting Table, 'A Rare Steak Is Safer To Eat Than A Rare Burger. Here's Why' (tastingtable.com/1236087).",
+    "context": "This is the whole puzzle in one bite: same beef, opposite rules. A whole steak is treated as safe cooked rare, but a burger made of ground beef is not. The reason has nothing to do with ground beef being somehow dirtier; it is entirely about WHERE the bacteria sit. The USDA's target for ground beef is 160°F (71°C) in the center, checked with a food thermometer, because a patty can turn brown inside before it is safe. Sources: Tasting Table, 'A Rare Steak Is Safer To Eat Than A Rare Burger. Here's Why' (tastingtable.com/1236087); USDA FSIS, 'Ground Beef and Food Safety'.",
     "topic": "why-a-burger-cant-be-rare"
   },
   {
@@ -29199,7 +29108,7 @@
   },
   {
     "tier": 4,
-    "question": "A shopper picks up a supermarket steak in ordinary packaging, looking just like the rest of the case. Food-safety experts warn that this kind of steak should be treated like a ground-beef burger, never served rare. What has been done to it at the meat plant?",
+    "question": "A shopper picks up a supermarket steak that looks just like every other steak in the case. Food-safety experts warn that this kind of steak should be treated like a ground-beef burger, never served rare. What has been done to it at the meat plant?",
     "answer": "It has been blade-tenderized with rows of needles",
     "choices": [
       "It has been blade-tenderized with rows of needles",
@@ -29207,12 +29116,12 @@
       "It has been flash-frozen and then thawed",
       "It has been marinated in vinegar and garlic"
     ],
-    "context": "Blade- or needle-tenderizing drives rows of thin blades through a steak to soften it, and they drag surface bacteria down into the middle, exactly like grinding does. These steaks have caused real outbreaks: in 2009, 21 people across 16 states were infected with E. coli O157 traced to blade-tenderized steaks; 9 were hospitalized and one developed hemolytic uremic syndrome, a kind of kidney failure. The CDC has linked at least six such outbreaks since 2000. USDA advises cooking these to 145F with a 3-minute rest, and some experts say treat them like a burger. Sources: USDA FSIS 'Mechanically Tenderized Beef'; PBS NewsHour; Northeastern University News (2024).",
+    "context": "Blade- or needle-tenderizing drives rows of thin blades through a steak to soften it, and they drag surface bacteria down into the middle, exactly like grinding does. These steaks have caused real outbreaks: in 2009, 21 people across 16 states were infected with E. coli O157 traced to blade-tenderized steaks; 9 were hospitalized and one developed hemolytic uremic syndrome, a kind of kidney failure. The CDC has linked at least six such outbreaks since 2000. Since 2016 USDA has required such steaks to be labeled 'mechanically tenderized', and it advises cooking them to 145F with a 3-minute rest; some experts say treat them like a burger. Sources: USDA FSIS 'Mechanically Tenderized Beef'; PBS NewsHour; Northeastern University News (2024).",
     "topic": "why-a-burger-cant-be-rare"
   },
   {
     "tier": 5,
-    "question": "Undercooked hamburgers from a fast-food chain sickened more than 700 people across the western United States in 1992 and 1993 and killed four children. The disaster was so severe that U.S. regulators took a drastic step for hamburger meat. What did they do?",
+    "question": "Hamburgers from the Jack in the Box chain, served undercooked and tainted with the germ E. coli O157:H7, made more than 700 people ill across the western United States in 1992 and 1993, and four children died. The disaster was so severe that U.S. regulators took a drastic step for hamburger meat. What did they do?",
     "answer": "Outlawed selling ground beef contaminated with the germ",
     "choices": [
       "Outlawed selling ground beef contaminated with the germ",
@@ -29239,27 +29148,27 @@
   {
     "tier": 2,
     "question": "A high-school lifter finishes a hard set of squats, and his coach shoves a chicken sandwich into his hands. Coaches push protein right after a hard workout, because a muscle only grows bigger once the training has first changed it in some way. What does hard lifting do to the muscle in the moment?",
-    "answer": "It tears tiny fibers, which then rebuild thicker and stronger than before.",
+    "answer": "It loads the fibers with tension, a signal to build them thicker.",
     "choices": [
-      "It tears tiny fibers, which then rebuild thicker and stronger than before.",
+      "It loads the fibers with tension, a signal to build them thicker.",
       "It stretches the fibers, which then set at that new, greater length.",
       "It floods the fibers with blood, which then stays locked in as bulk.",
       "It drains the fibers of fuel, which the body then refills to overflow."
     ],
-    "context": "Hard training -- lifting, sprinting -- tears tiny muscle fibers, and the damage is worst on the lowering (eccentric) half of a lift, like slowly lowering a curl. The body then rebuilds each fiber thicker and stronger, but only if protein is on hand to do the rebuilding -- which is the whole reason for the 'eat protein after your workout' rule. The repair stays switched on for up to about 48 hours afterward. Source: House of Hypertrophy, 'Do Microtears in the Muscle Cause Growth?'; NASM, 'The Power of Protein.'",
+    "context": "Lifting loads muscle fibers with heavy tension, and that mechanical strain is the main signal for growth: the body builds extra protein into each fiber so it thickens. A popular idea credited tiny tears in the muscle, but studies such as Damas et al. (2016) found no sign that the damage itself drives growth. Muscle building stays switched on for up to about 48 hours, and only works if protein is on hand. Sources: Damas et al., Journal of Physiology 2016; Examine.com, 'Do I need to get sore after resistance exercise to build muscle?'; NASM, 'The Power of Protein.'",
     "topic": "why-a-growing-kid-and-an-athlete-need-more-protein"
   },
   {
     "tier": 4,
-    "question": "A pregnant woman sits down to dinner with her big husband, yet she needs more protein each day than he does. Nutritionists' tables show her daily need jumping well above a normal grown adult's. What is her body doing through those nine months that runs up such a protein bill?",
-    "answer": "Growing a whole second person -- its placenta and extra blood as well.",
+    "question": "A pregnant woman sits down to dinner with her husband, and by the standard nutrition tables she now needs more protein each day than he does, her own need up by about half. What is her body doing through those nine months that runs up such a protein bill?",
+    "answer": "Growing a second person, plus a placenta and extra blood of her own.",
     "choices": [
-      "Growing a whole second person -- its placenta and extra blood as well.",
+      "Growing a second person, plus a placenta and extra blood of her own.",
       "Storing a protein reserve to get her through the hard work of labor.",
       "Replacing the protein she loses to months of morning-sickness nausea.",
       "Padding on fat stores that the baby will draw down after it is born."
     ],
-    "context": "A pregnant mother's protein target climbs from about 0.8 up to roughly 1.1 grams per kilogram of bodyweight a day, because the baby, its placenta, and her own extra blood are all newly built tissue. A nursing mother needs even more -- about 25 extra grams a day -- because she is making milk out of her own body. Source: WeNatal, 'The Hidden Protein Needs of Pregnancy'; PMC5104202, 'Nutrition Recommendations in Pregnancy and Lactation.'",
+    "context": "A pregnant mother's protein target climbs from about 0.8 up to roughly 1.1 grams per kilogram of bodyweight a day (in the U.S. tables, from 46 to 71 grams, against 56 for a man), because the baby, its placenta, and her own extra blood are all newly built tissue. A nursing mother needs the same extra 25 grams or so a day, because she is making milk out of her own body. Source: WeNatal, 'The Hidden Protein Needs of Pregnancy'; PMC5104202, 'Nutrition Recommendations in Pregnancy and Lactation.'",
     "topic": "why-a-growing-kid-and-an-athlete-need-more-protein"
   },
   {
@@ -29541,11 +29450,11 @@
     "answer": "Contact with the air",
     "choices": [
       "Contact with the air",
-      "Heat from the kitchen",
+      "Light from the kitchen window",
       "The metal of the knife",
-      "The water left on the leaves"
+      "Germs landing on the cut edges"
     ],
-    "context": "It's oxidation — the same browning you see on a sliced apple left out on the counter. Slicing ruptures the leaf's cells, and once the exposed insides meet the oxygen in the air, they darken within a few hours. Sources: calitaliafood.com; chefapprovedtools.com; jessicagavin.com.",
+    "context": "It's oxidation, the same browning that turns a sliced apple brown on the counter. Slicing ruptures the leaf's cells, and once the exposed insides meet the oxygen in the air, they darken within a few hours. Sources: calitaliafood.com; chefapprovedtools.com; jessicagavin.com.",
     "topic": "why-cut-basil-turns-black-the-case-for-one-clean-slice"
   },
   {
@@ -29558,7 +29467,7 @@
       "It builds up heat from all the extra friction",
       "It squeezes the green color out with the juice"
     ],
-    "context": "A sharp blade parts the leaf in one clean slice, damaging very few cells, so the ribbons stay bright green far longer — the concrete reason cooks keep their knives sharp. A dull blade mashes its way through, rupturing far more cells and exposing them all to the air at once. Even a sharp knife causes trouble if you drag or saw it, so the rule is one clean press-cut straight down. Sources: misen.com; jessicagavin.com.",
+    "context": "A sharp blade parts the leaf in one clean slice, damaging very few cells, so the ribbons stay bright green far longer — the concrete reason cooks keep their knives sharp. A dull blade mashes its way through, rupturing far more cells and exposing them all to the air at once. Even a sharp knife causes trouble if the cook drags or saws it, so the rule is one clean press-cut straight down. Sources: misen.com; jessicagavin.com.",
     "topic": "why-cut-basil-turns-black-the-case-for-one-clean-slice"
   },
   {
@@ -29597,7 +29506,7 @@
       "myoglobin",
       "carotene"
     ],
-    "context": "Myoglobin is a red, oxygen-storing pigment. A tuna cruises nonstop, so its muscle packs in myoglobin to stockpile oxygen for the endless work — in tuna's red flesh it makes up 90%+ of the color pigments. Hemoglobin, the answer-alike, instead carries oxygen in the blood. Source: Grokipedia 'Fish anatomy' (https://grokipedia.com/page/Fish_anatomy); Wikipedia 'Myoglobin' (https://en.wikipedia.org/wiki/Myoglobin).",
+    "context": "Myoglobin is a red, oxygen-storing pigment. A tuna cruises nonstop, so its muscle packs in myoglobin to stockpile oxygen for the endless work — in tuna's red flesh it makes up 90%+ of the color pigments. Hemoglobin, its close cousin, instead carries oxygen in the blood. Source: Grokipedia 'Fish anatomy' (https://grokipedia.com/page/Fish_anatomy); Wikipedia 'Myoglobin' (https://en.wikipedia.org/wiki/Myoglobin).",
     "topic": "why-fish-flesh-comes-in-white-pink-and-red"
   },
   {
@@ -29615,7 +29524,7 @@
   },
   {
     "tier": 3,
-    "question": "A tuna's flesh is red from its hard-swimming muscle, but salmon pink works another way entirely, with nothing to do with exercise. The same orange-red pigment that blazes in a boiled lobster's shell gives a wild salmon its pink. Where does a wild salmon's pink flesh get its color?",
+    "question": "A tuna's red flesh and a wild salmon's pink come from two different pigments, for two different reasons. The same orange-red pigment that blazes in a boiled lobster's shell gives a wild salmon its pink. Where does a wild salmon's pink flesh get its color?",
     "answer": "from the tiny shrimp-like krill it eats",
     "choices": [
       "from the cold, clear rivers where it spawns",
@@ -29636,7 +29545,7 @@
       "a coat of oily scales that seals the heat in",
       "a warm current it follows through the year"
     ],
-    "context": "That heat-trapping net of blood vessels is the rete mirabile — Latin for 'wonderful net.' It makes tuna 'regionally endothermic,' keeping the swimming muscles far warmer than the sea. That relentless, self-warming red muscle is exactly why it is so loaded with oxygen-storing myoglobin. Source: Biology Insights 'Are Tuna Warm-Blooded? The Science of Regional Endothermy' (https://biologyinsights.com/are-tuna-warm-blooded-the-science-of-regional-endothermy/).",
+    "context": "That heat-trapping net of blood vessels is the rete mirabile — Latin for 'wonderful net.' It makes tuna 'regionally endothermic,' keeping the swimming muscles far warmer than the sea. That relentless, self-warming red muscle is also loaded with oxygen-storing myoglobin. Source: Biology Insights 'Are Tuna Warm-Blooded? The Science of Regional Endothermy' (https://biologyinsights.com/are-tuna-warm-blooded-the-science-of-regional-endothermy/).",
     "topic": "why-fish-flesh-comes-in-white-pink-and-red"
   },
   {
@@ -29675,18 +29584,18 @@
       "The fillet's whole length, tip to tail",
       "A hand's width, palm to fingertip"
     ],
-    "context": "Each fish muscle fiber is generally under 20 mm — less than an inch — far shorter than the long, ropey fibers of a cow or pig. Those short blocks (myomeres) are the very segments you see as flakes. Source: UF/IFAS FS454 (fibers 'generally less than 20 mm long'); biologyinsights.com, 'Fish Muscle Cells.'",
+    "context": "Each fish muscle fiber is generally under 20 mm — less than an inch — far shorter than the long, ropey fibers of a cow or pig. Those short blocks (myomeres) are the very segments that come apart as flakes. Source: UF/IFAS FS454 (fibers 'generally less than 20 mm long'); biologyinsights.com, 'Fish Muscle Cells.'",
     "topic": "why-fish-flesh-flakes-and-cooks-in-minutes"
   },
   {
     "tier": 3,
-    "question": "Sliced crosswise, a raw fish shows something strange: its body muscle is no single sheet of meat but a stack of dozens of separate crescent-shaped blocks, lined up along the spine from head to tail, each wrapped in its own thin sheet and each able to squeeze on its own. What does that block-by-block design let the living fish do?",
-    "answer": "Fire the blocks in a wave down its body to swim",
+    "question": "Skinned along its side, a raw fish shows its body muscle in dozens of folded bands lined up along the spine from head to tail, each wrapped in its own thin sheet and able to squeeze on its own. What does that band-by-band design let the living fish do?",
+    "answer": "Fire the bands in a wave down its body to swim",
     "choices": [
-      "Fire the blocks in a wave down its body to swim",
-      "Store spare oxygen in each block for deep dives",
-      "Regrow any single block a predator bites off",
-      "Flash a different color in each block to hide"
+      "Fire the bands in a wave down its body to swim",
+      "Store spare oxygen in each band for deep dives",
+      "Regrow any single band a predator bites off",
+      "Flash a different color in each band to hide"
     ],
     "context": "The blocks fire one after another, sending a wave of flexion from head to tail that bends the body side to side and pushes against the water. Block-by-block muscle is exactly what makes that whole-body ripple possible — the structure serves the swimming. Source: biologyinsights.com, 'Fish Muscle Cells'; Wikipedia, 'Myomere.'",
     "topic": "why-fish-flesh-flakes-and-cooks-in-minutes"
@@ -29701,7 +29610,7 @@
       "About the same amount the beef has",
       "None at all, unlike the beef"
     ],
-    "context": "Between the blocks sit only thin sheets called myocommata. By weight, fish flesh averages about 3% collagen versus about 15% in land animals — a fraction of the binding gristle. Source: biologyinsights.com, 'Fish Muscle Cells'; corroborated by culinarylore.",
+    "context": "Between the blocks sit only thin sheets called myocommata. Collagen makes up only about 3% of a bony fish's muscle protein, against about 17% in mammals, a fraction of the binding gristle. Source: biologyinsights.com, 'Fish Muscle Cells'; Jebsen 1962 via marineinfo.org; corroborated by culinarylore.",
     "topic": "why-fish-flesh-flakes-and-cooks-in-minutes"
   },
   {
@@ -29745,7 +29654,7 @@
   },
   {
     "tier": 1,
-    "question": "A cook holds a whole, uncut onion right under her nose and takes a long sniff, and her eyes stay perfectly dry. The chemical behind kitchen tears is not stored in an uncut onion; it comes into being only when the cook does one thing to it. What creates it?",
+    "question": "A cook holds a whole onion under her nose and takes a long sniff, and her eyes stay dry. The chemical behind kitchen tears is not stored in the onion; it forms only when the cook does one thing to it. What creates it?",
     "answer": "Slicing it open to rupture its cells",
     "choices": [
       "Slicing it open to rupture its cells",
@@ -29753,20 +29662,20 @@
       "Peeling off its papery skin",
       "Letting the whole onion age in the pantry"
     ],
-    "context": "An intact onion contains no tear-gas at all — the irritant simply does not exist until your knife breaks the cells open, which sets off a two-step process that builds it. That's why sniffing a whole onion never stings, but chopping one does. (Chemistry World, Royal Society of Chemistry: 'Propanethial-S-oxide: how chopping onions makes you cry.')",
+    "context": "An intact onion contains no tear-gas at all — the irritant simply does not exist until a knife breaks the cells open, which sets off a two-step process that builds it. That's why sniffing a whole onion never stings, but chopping one does. (Chemistry World, Royal Society of Chemistry: 'Propanethial-S-oxide: how chopping onions makes you cry.')",
     "topic": "why-onions-make-you-cry"
   },
   {
     "tier": 2,
-    "question": "Suppose you lean over a freshly sliced onion as an invisible gas drifts up from the cut. A puff of it in dry air is harmless; it only turns nasty once it meets the moist front of your eyes. What happens there to make it burn?",
+    "question": "A cook leans over a freshly sliced onion as an invisible gas drifts up from the cut. A puff of it in dry air is harmless; it only turns nasty once it meets the moist front of her eyes. What happens there to make it burn?",
     "answer": "It reacts with the water and turns into a weak acid",
     "choices": [
       "It reacts with the water and turns into a weak acid",
       "It freezes into tiny crystals that scratch the eye",
-      "It swells up and clogs your tear ducts shut",
+      "It swells up and clogs her tear ducts shut",
       "It spreads an oily film that traps stinging heat"
     ],
-    "context": "The gas is a volatile sulfur compound nicknamed the 'lachrymatory factor' (from Latin lacrima, a tear). On the wet film of your eye it reacts with water to form a weak sulfuric acid; the burn makes your tear glands flood the eye to wash it away. (Chemistry World, RSC; Library of Congress 'Everyday Mysteries.')",
+    "context": "The gas is a volatile sulfur compound nicknamed the 'lachrymatory factor' (from Latin lacrima, a tear). On the wet film of the eye it reacts with water to form a mild acid; the burn makes the tear glands flood the eye to wash it away. (Chemistry World, RSC; Library of Congress 'Everyday Mysteries.')",
     "topic": "why-onions-make-you-cry"
   },
   {
@@ -29779,7 +29688,7 @@
       "White onions and shallots",
       "Cooking onions and pickling onions"
     ],
-    "context": "An onion's bite comes from sulfur it pulls out of the soil — onions grown in high-sulfur ground are the most pungent. Sweet onions and spring onions (scallions) carry far less sulfur, so they barely make you cry. (The Conversation, 'Why onions make us cry — and why some don't.')",
+    "context": "An onion's bite comes from sulfur it pulls out of the soil — onions grown in high-sulfur ground are the most pungent. Sweet onions and spring onions (scallions) carry far less sulfur, so they barely bring a tear. (The Conversation, 'Why onions make us cry — and why some don't.')",
     "topic": "why-onions-make-you-cry"
   },
   {
@@ -29797,28 +29706,28 @@
   },
   {
     "tier": 3,
-    "question": "Suppose you have a mountain of onions to dice for a big pot of soup and would rather not cry all evening. Restaurant chefs swear by one trick: chilling the raw onions in the refrigerator for half an hour first, and chilled onions really do give off far fewer stinging fumes. Why does the cold cut down the tears?",
+    "question": "A cook has a mountain of onions to dice for soup and would rather not cry all evening. Restaurant chefs swear by one trick: chilling the raw onions in the refrigerator for half an hour first, and chilled onions do give off far fewer stinging fumes. Why does the cold cut down the tears?",
     "answer": "Cold slows the reaction, so less gas flies up",
     "choices": [
       "Cold slows the reaction, so less gas flies up",
-      "Cold hardens the onion so your knife slips less",
+      "Cold hardens the onion so the knife slips less",
       "Cold rinses the sulfur down into the roots",
       "Cold seals the cut cells back shut"
     ],
-    "context": "Cold slows the enzymes and keeps the gas from rising. Two more tricks that work: use a razor-sharp knife (it slices cells cleanly instead of crushing them, releasing less gas), and chop near a running fan, an open flame, or under running water to blow the gas away from your face. (RSC Education; The Conversation.)",
+    "context": "Cold slows the enzymes and keeps the gas from rising. Two more tricks that work: use a razor-sharp knife (it slices cells cleanly instead of crushing them, releasing less gas), and chop near a running fan to blow the gas away from the cook's face, or under running water. (RSC Education; The Conversation.)",
     "topic": "why-onions-make-you-cry"
   },
   {
     "tier": 4,
-    "question": "Crushed garlic runs almost the same sulfur chemistry as a chopped onion, yet it never makes an eye water, because its version of the reaction builds a heavier compound that cannot float up into the air. Suppose you crush a clove under your knife: where do you feel its punch instead?",
-    "answer": "On your nose and tongue",
+    "question": "Crushed garlic runs almost the same sulfur chemistry as a chopped onion, yet it never makes an eye water, since it has no second enzyme to build the onion's flying tear gas. A cook crushes a clove under her knife. Where does she feel its punch instead?",
+    "answer": "In her nose and on her tongue",
     "choices": [
-      "On your nose and tongue",
-      "Deep in your throat and chest",
-      "On your fingertips and skin",
-      "In your stomach an hour later"
+      "In her nose and on her tongue",
+      "Deep in her throat and chest",
+      "On her fingertips and skin",
+      "In her stomach an hour later"
     ],
-    "context": "Garlic uses the same first enzyme (alliinase) as onion but lacks the second, tear-gas-making enzyme, so it never produces the flying eye-irritant. Its reaction makes allicin instead — the compound behind garlic's smell and health kick — which hits your nose and tongue rather than your eyes. (Curious Clinicians; The Conversation.)",
+    "context": "Garlic uses the same first enzyme (alliinase) as onion but lacks the second, tear-gas-making enzyme, so it never produces the flying eye-irritant. Its reaction makes allicin instead, the compound behind fresh garlic's sharp smell and bite, which hits the nose and tongue rather than the eyes. (Curious Clinicians; The Conversation; Wikipedia, 'Allicin'.)",
     "topic": "why-onions-make-you-cry"
   },
   {
@@ -29901,12 +29810,12 @@
   },
   {
     "tier": 5,
-    "question": "Pulled from the pot al dente, firm to the tooth with a little bite left in the center, pasta does more than taste right. Suppose you eat it that way: compared with the same pasta boiled soft and mushy, it is gentler on your blood sugar. Why would the firmer noodle do that?",
+    "question": "Pulled from the pot al dente, firm to the tooth with a little bite left in the center, pasta does more than taste right. Eaten that way, it is gentler on a diner's blood sugar than the same pasta boiled soft and mushy. Why would the firmer noodle do that?",
     "answer": "Its firm starch stays packed tight, so digestion breaks it down slowly.",
     "choices": [
       "Its firm starch stays packed tight, so digestion breaks it down slowly.",
       "Its extra water content dilutes the sugars before they reach the blood.",
-      "Its firmer bite makes you chew longer, so you simply eat less of it.",
+      "Its firmer bite makes diners chew longer, so they simply eat less.",
       "Its quick cooking keeps more of the sugar locked away as fiber."
     ],
     "context": "Cooked only to al dente, pasta's starch granules stay compact and only partly gelatinized, so digestive enzymes break them down more slowly -- sugar trickles into the bloodstream instead of flooding it. Overcooked, mushy pasta has burst, fully-gelatinized starch that digests fast and spikes blood sugar higher. Same noodle, gentler curve. Source: giadzy.com; advisory.com (pasta health).",
@@ -29927,15 +29836,15 @@
   },
   {
     "tier": 2,
-    "question": "A boiled lobster, a cooked shrimp shell and a cooked crab all owe their red and pink-orange to one and the same orange-red pigment. Chemists know that shared shellfish pigment by a single name. What is it called?",
-    "answer": "Astaxanthin",
+    "question": "A boiled lobster, a cooked shrimp shell and a cooked crab all owe their red to one pigment, astaxanthin. Chemists file it in the same family of pigments as the color of one everyday vegetable. Which vegetable?",
+    "answer": "Carrots",
     "choices": [
-      "Astaxanthin",
-      "Hemoglobin",
-      "Chlorophyll",
-      "Melanin"
+      "Carrots",
+      "Beets",
+      "Red cabbage",
+      "Radishes"
     ],
-    "context": "The pigment is astaxanthin, an orange-red carotenoid in the same color family as the orange in carrots. It sits in the shells of shrimp, lobster and crab while they're alive; cooking only reveals it, it does not manufacture it. Source: Bristol, 'Molecule of the Month: Astaxanthin' (chm.bris.ac.uk/motm/astaxanthin/astaxanthinh.htm); Chemistry World.",
+    "context": "Astaxanthin is a carotenoid, the same pigment family as the beta-carotene that turns carrots orange. Beets get their red from betalains, and red cabbage and radishes from anthocyanins, two other families. Astaxanthin sits in the shells of shrimp, lobster and crab while they're alive; cooking only reveals it, it does not manufacture it. Source: Bristol, 'Molecule of the Month: Astaxanthin' (chm.bris.ac.uk/motm/astaxanthin/astaxanthinh.htm); Wikipedia, 'Betalain'; Wikipedia, 'Anthocyanin'.",
     "topic": "why-shellfish-turn-red-when-you-cook-them"
   },
   {
@@ -29953,12 +29862,12 @@
   },
   {
     "tier": 4,
-    "question": "Suppose you drop raw shrimp into a hot pan. Within a minute the outsides can flash bright pink while the flesh inside is still translucent, gluey, raw and unsafe to eat. Since the color alone is no safe sign, what should you look for to know a shrimp is cooked through?",
+    "question": "A cook drops raw shrimp into a pot of boiling water. Within a minute the shells can flash bright pink while the flesh inside is still raw and unsafe to eat. Since color is no safe sign, how can the cook tell a shrimp is cooked through?",
     "answer": "The flesh turns opaque and firm and curls into a tight C shape.",
     "choices": [
       "The flesh turns opaque and firm and curls into a tight C shape.",
       "The shrimp floats up and bobs at the surface of the water.",
-      "The shell slips off cleanly the moment you tug on it.",
+      "The shell slips off cleanly the moment it is tugged.",
       "The shrimp swells up to nearly double its raw size."
     ],
     "context": "Because the red is only freed pigment, it isn't a doneness signal the way meat browning is. Cooks check that a shrimp is opaque, firm, and curled into a tight 'C'; the USDA safe target for shrimp is 145°F/63°C. Source: FoodCrumbles, 'Why Shrimp Change Colour and Shape When Cooked' (foodcrumbles.com/why-shrimp-change-colour-and-shape-when-cooked); USDA safe-seafood guidance.",
@@ -30096,7 +30005,7 @@
   },
   {
     "tier": 1,
-    "question": "A cook drops a big handful of dry spaghetti into a pot of clear boiling water, and within a few minutes the water around the noodles has turned cloudy and milky-white. The murk is no dirt or dust washing off, since the noodles were clean. What has the pasta leaked into the water?",
+    "question": "A cook drops dry spaghetti into a pot of clear boiling water, and within minutes the water around the noodles turns cloudy and milky-white. The murk is no dirt washing off, since the noodles were clean. What has the pasta leaked to cloud the water?",
     "answer": "Starch",
     "choices": [
       "Starch",
@@ -30117,28 +30026,28 @@
       "A minute or two late, once it is very soft",
       "Right as it rises and floats to the top"
     ],
-    "context": "Italians call this finishing move 'mantecare' (mantecatura) — literally 'to emulsify.' You pull the noodles out a minute or two underdone and toss them hard in the pan so the starchy water whips the fat into a creamy coating on every strand, and the last of the cooking finishes right in the sauce. (Source: theshortli.st — mantecare, https://theshortli.st/musings/mantecare)",
+    "context": "Italians call this finishing move 'mantecare' (mantecatura), working pasta, fat and starchy water into one creamy whole. The cook pulls the noodles out a minute or two underdone and tosses them hard in the pan so the starchy water whips the fat into a creamy coating on every strand, and the last of the cooking finishes right in the sauce. (Source: theshortli.st — mantecare, https://theshortli.st/musings/mantecare)",
     "topic": "why-you-save-the-pasta-water-starch-binds-the-sauce"
   },
   {
     "tier": 3,
-    "question": "Olive oil whisked into plain water soon slides back up and slicks across the top, since fat and water refuse to stay mixed. Yet a spoonful of cloudy pasta water pulls that same oil and water into one smooth, glossy sauce. What is the pasta water doing to hold them together?",
-    "answer": "Slipping between the oil and water like a bridge, keeping them blended",
+    "question": "Olive oil whisked into plain water soon slides back up and slicks across the top. Yet a spoonful of cloudy pasta water pulls that same oil and water into one smooth, glossy sauce. What does the cloudiness, leaked from the noodles, do to hold them together?",
+    "answer": "It slips between the oil and water like a bridge, keeping them blended",
     "choices": [
-      "Slipping between the oil and water like a bridge, keeping them blended",
-      "Thickening the water so much the oil gets trapped and cannot rise",
-      "Bonding the oil right into the water to form one new liquid",
-      "Cooling the mixture so the fat firms up and cannot move"
+      "It slips between the oil and water like a bridge, keeping them blended",
+      "It thickens the water so much the oil gets trapped and cannot rise",
+      "It bonds the oil right into the water to form one new liquid",
+      "It cools the mixture so the fat firms up and cannot move"
     ],
-    "context": "The starch is acting as an EMULSIFIER: its molecules wedge in between the oil droplets and the water like tiny bridges, so the fat and water hold together as one glossy liquid instead of splitting apart. Without it the oil just separates and slicks out on top; with it you get a stable, creamy coating — a loose emulsion. (Source: 123foodscience.com — pasta-water science, https://123foodscience.com/cooking-science/pasta-water-science/)",
+    "context": "The starch is acting as an EMULSIFIER: its molecules wedge in between the oil droplets and the water like tiny bridges, so the fat and water hold together as one glossy liquid instead of splitting apart. Without it the oil just separates and slicks out on top; with it the sauce gets a stable, creamy coating — a loose emulsion. (Source: 123foodscience.com — pasta-water science, https://123foodscience.com/cooking-science/pasta-water-science/)",
     "topic": "why-you-save-the-pasta-water-starch-binds-the-sauce"
   },
   {
     "tier": 3,
-    "question": "Pecorino grated into a too-hot pan for cacio e pepe can seize into a stringy, rubbery clump instead of melting into sauce, and a splash of cloudy pasta water is the classic insurance against it. How does the pasta water keep the cheese from clumping?",
-    "answer": "It wraps around the cheese proteins so they cannot stick together",
+    "question": "Pecorino grated into a too-hot pan for cacio e pepe can seize into a stringy, rubbery clump instead of melting into sauce. A splash of cloudy pasta water is the classic insurance against it. How does what the noodles leaked into that water keep the cheese smooth?",
+    "answer": "It clings to the cheese proteins so they cannot stick together",
     "choices": [
-      "It wraps around the cheese proteins so they cannot stick together",
+      "It clings to the cheese proteins so they cannot stick together",
       "It melts the cheese faster, so clumps never get the chance to form",
       "It thins the cheese with water until it simply pours out smooth",
       "It coats the pan so the cheese never touches the hot metal"
@@ -30148,7 +30057,7 @@
   },
   {
     "tier": 1,
-    "question": "Chemists testing the insides of giant clay jars left in two Stone Age villages found traces of grape wine about 8,000 years old, the oldest wine yet found. It was made nowhere near France or Italy, but far to the east. Which country turned out to be wine's true cradle?",
+    "question": "Chemists testing giant clay jars dug up at two Stone Age villages found traces of grape wine about 8,000 years old, the oldest ever discovered. It was made nowhere near France or Italy, but far to the east. Which country was wine's cradle?",
     "answer": "Georgia",
     "choices": [
       "Georgia",
@@ -30174,26 +30083,26 @@
   },
   {
     "tier": 4,
-    "question": "Greek men at a symposium argued politics and philosophy late into the night over wine, but none of them poured it straight from the jar into his cup. Drinking it that way marked a man as a barbarian, the Greeks' sneer for any foreigner. What did a proper Greek do to his wine first?",
+    "question": "Greek men at a symposium argued politics and philosophy late into the night over wine. A man who skipped one step before drinking it was branded a barbarian, the Greeks' sneer for any foreigner. What did a proper Greek always do to his wine first?",
     "answer": "Mixed it with water",
     "choices": [
       "Mixed it with water",
       "Warmed it over coals",
       "Sweetened it with honey",
-      "Strained it through cloth"
+      "Spiced it with pepper"
     ],
     "context": "Civilized symposium-goers always cut their wine with water; drinking it undiluted was the mark of the uncivilized 'barbarian' foreigner — the Greeks' contemptuous name for any non-Greek. The symposium itself was an elite occasion for politics and philosophy. Source: worldhistory.org, 'Wine in the Ancient Mediterranean.'",
     "topic": "wines-deep-roots-in-the-caucasus"
   },
   {
     "tier": 1,
-    "question": "A cook in a Chinese restaurant kitchen swings a wok over a roaring burner. Unlike a flat Western frying pan, the wok is a deep steel bowl with a round bottom, and that curve does one crucial thing to the fire underneath. What does it do?",
+    "question": "A cook in a Chinese restaurant kitchen swings a wok over a roaring burner. The wok is a deep steel bowl with a round bottom, and that curve does one crucial thing to the fire underneath. What does it do?",
     "answer": "Funnels the flame into one tiny, blazing-hot spot at the base",
     "choices": [
       "Funnels the flame into one tiny, blazing-hot spot at the base",
-      "Spreads the flame gently across a wide, even surface",
-      "Traps steam under a dome to cook the food through",
-      "Holds a deep pool of oil for deep-frying only"
+      "Spreads the flame evenly up and over the whole bowl",
+      "Shields the food from the flame so it cannot scorch",
+      "Draws in extra air so the burner burns hotter"
     ],
     "context": "The round bottom funnels the burner's flame onto one small patch of steel, so the very center runs screaming-hot while the sides stay cooler. Food seared at the bottom gets shoved up the sloping sides to wait its turn — which is exactly why a wok cook keeps everything in constant motion, so nothing sits still and steams. Source: en.wikipedia.org/wiki/Wok.",
     "topic": "wok-hei-the-breath-of-the-wok"
@@ -30257,7 +30166,7 @@
     "choices": [
       "A hard char on the outside while the inside stays tender",
       "An even, all-over brown with every piece colored the same",
-      "The deepest char the food will take before it turns bitter",
+      "A smoky flavor soaked right through to the center",
       "A dry, crisp crust all around that seals the juices inside"
     ],
     "context": "Wok hei is 'charred but not burnt': the smoky char-flavor sears the surface while the food inside stays tender, all in a second or two before it would tip over into truly burnt. Chasing char alone is easy — the skill is landing that surface char without toughening or scorching what's underneath. Source: woksoflove.com, 'How to Get Wok Hei at Home.'",
@@ -30265,7 +30174,7 @@
   },
   {
     "tier": 1,
-    "question": "A cook warms a pot of milk for yogurt the way cooks in Turkey, Greece and India have for thousands of years. Warm milk kept cozy on its own never sets; it just spoils. So before leaving the pot warm overnight she stirs in one small thing, and by dawn it is yogurt. What does she stir in?",
+    "question": "A cook warms milk for yogurt as cooks in Turkey, Greece and India have for thousands of years. Milk left warm on its own will not become yogurt, so before leaving the pot overnight she stirs in one small thing. What does she stir in?",
     "answer": "A spoonful of live yogurt",
     "choices": [
       "A spoonful of white sugar",
@@ -30299,7 +30208,7 @@
       "trapped air",
       "dissolved minerals"
     ],
-    "context": "Kefir's lumps are 'kefir grains' - not true grains but a rubbery SCOBY (a symbiotic community of bacteria AND yeasts). The yeasts ferment out a little carbon dioxide, giving kefir its faint spritz; plain yogurt, made with bacteria alone, has no fizz. You strain the grains out and reuse them. Source: microbialfoods.org; joyfulmicrobe.com.",
+    "context": "Kefir's lumps are 'kefir grains' - not true grains but a rubbery SCOBY (a symbiotic community of bacteria AND yeasts). The yeasts ferment out a little carbon dioxide, giving kefir its faint spritz; plain yogurt, made with bacteria alone, has no fizz. The cook strains the grains out and reuses them. Source: microbialfoods.org; joyfulmicrobe.com.",
     "topic": "yogurt-and-cultured-dairy-one-spoonful-sets-the-pot"
   },
   {
@@ -30325,20 +30234,7 @@
       "agar",
       "pectin"
     ],
-    "context": "This is the accuracy rail: yogurt sets from ACID made by bacteria, but cheese mostly sets from RENNET, an enzyme that acts like a razor - shaving the protective 'hairs' (kappa-casein) off the milk-protein bundles so they suddenly stick together in minutes rather than hours. Source: cheesescience.net; cheesescience.org 'coagulation'.",
-    "topic": "yogurt-and-cultured-dairy-one-spoonful-sets-the-pot"
-  },
-  {
-    "tier": 2,
-    "question": "A pot of milk sits somewhere warm while its bacteria work, and over a few hours it turns into yogurt. English borrowed the food's name from Ottoman Turkish in the 1600s, and the Turkish word grew from an older verb for one change that happens in that warm pot. What does the verb mean?",
-    "answer": "To thicken",
-    "choices": [
-      "To sour",
-      "To thicken",
-      "To churn",
-      "To ferment"
-    ],
-    "context": "'Yogurt' comes from Ottoman Turkish yogurt, built on a verb meaning to thicken or coagulate — so the food's name is literally a snapshot of pourable milk turning thick and spoonable. Yogurt likely first appeared around 5000 BC in Central Asia. Source: Wikipedia, 'Yogurt'.",
+    "context": "Yogurt sets from ACID made by bacteria, but cheese mostly sets from RENNET, an enzyme that acts like a razor - shaving the protective 'hairs' (kappa-casein) off the milk-protein bundles so they suddenly stick together in minutes rather than hours. Source: cheesescience.net; cheesescience.org 'coagulation'.",
     "topic": "yogurt-and-cultured-dairy-one-spoonful-sets-the-pot"
   },
   {
