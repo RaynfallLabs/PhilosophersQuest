@@ -222,7 +222,7 @@
   },
   {
     "tier": 3,
-    "question": "Two rival supernova teams published the same startling number in 1998: the distant Type Ia supernovae they had watched came in about 10 to 15 percent fainter than expected. Neither team had gone looking for that. What did the faintness force them to conclude?",
+    "question": "Two rival supernova teams published the same startling result in 1998: the distant Type Ia supernovae they had watched came in too faint, as though they lay 10 to 15 percent farther off than predicted. Neither team had gone looking for that. What did the faintness force them to conclude?",
     "answer": "The expansion of the universe is speeding up, not slowing down",
     "choices": [
       "The expansion of the universe is speeding up, not slowing down",
@@ -248,12 +248,12 @@
   },
   {
     "tier": 4,
-    "question": "Saul Perlmutter's and Brian Schmidt's teams handed physics a puzzle in 1998: something unseen was at work on the whole universe, and nobody knew what. Soon after, at a physics meeting, one cosmologist proposed a deliberately neutral name for it, so that the name would not smuggle in an answer. Who coined the term, and what was it?",
+    "question": "Saul Perlmutter's and Brian Schmidt's teams handed physics a puzzle in 1998: something unseen was at work on the whole universe, and nobody knew what. That same year one cosmologist proposed a deliberately neutral name for it, so that the name would not smuggle in an answer. Who coined the term, and what was it?",
     "answer": "Michael Turner called it 'dark energy'",
     "choices": [
       "Michael Turner called it 'dark energy'",
       "Alan Guth called it 'inflation'",
-      "Fritz Zwicky called it 'missing mass'",
+      "Stephen Hawking called it 'the false vacuum'",
       "Fred Hoyle called it 'the steady state'"
     ],
     "context": "Turner, of the University of Chicago, coined 'dark energy' in 1998. He later explained he wanted a term that did not assume the answer was Einstein's cosmological constant, or vacuum energy, or something else -- 'dark' because we cannot see it, 'energy' as the most generic word he could pick. The name stuck. Sources: en.wikipedia.org Michael_S._Turner; news.uchicago.edu dark-energy-explained.",
@@ -261,10 +261,10 @@
   },
   {
     "tier": 5,
-    "question": "Albert Einstein wrote a term into his general relativity equations in 1917, then abandoned it in the 1920s once Edwin Hubble showed the universe was expanding on its own. George Gamow later reported, secondhand, that Einstein called it his biggest blunder, though Einstein may never have said so. The term came back as the simplest stand-in for the push behind the 1998 supernova result. Which term was it?",
-    "answer": "The cosmological constant, Lambda",
+    "question": "Albert Einstein wrote a term into his general relativity equations in 1917, then abandoned it around 1931 once Edwin Hubble showed the universe was expanding on its own. George Gamow later reported, secondhand, that Einstein called it his biggest blunder, though Einstein may never have said so. The term came back as the simplest stand-in for the push behind the 1998 supernova result. Which term was it?",
+    "answer": "The cosmological constant",
     "choices": [
-      "The cosmological constant, Lambda",
+      "The cosmological constant",
       "The Planck length",
       "The Schwarzschild radius",
       "The Chandrasekhar limit"
@@ -274,7 +274,7 @@
   },
   {
     "tier": 5,
-    "question": "A physicist tests a first guess at what pushes space apart: that the quantum vacuum carries leftover energy. He works out how big that vacuum energy should be, then checks the figure against what cosmology measures. The mismatch is famously called 'the worst theory prediction in the history of physics'. How wrong is the calculation?",
+    "question": "A physicist tests a first guess at what pushes space apart: that the quantum vacuum carries leftover energy. He works out how big that vacuum energy should be, then checks the figure against what cosmology measures. The mismatch is famously called 'the worst theoretical prediction in the history of physics'. How wrong is the calculation?",
     "answer": "Off by about 120 orders of magnitude",
     "choices": [
       "Off by about 120 orders of magnitude",
@@ -295,12 +295,12 @@
       "Aleksander Wolszczan and Dale Frail",
       "David Charbonneau and Timothy Brown"
     ],
-    "context": "Mayor and Queloz used the ELODIE spectrograph on the 1.93 metre telescope at Haute-Provence. Marcy and Butler (Lick Observatory) confirmed the planet within a week. Wolszczan and Frail had found the first exoplanets of ANY kind in 1992 (another question explains what kind of host); Charbonneau and Brown come later, as the first to catch an exoplanet transit. Mayor and Queloz shared half of the 2019 Nobel Prize in Physics for the discovery. Sources: astrobites.org 51 Pegasi b; NASA exoplanets Nobel piece.",
+    "context": "Mayor and Queloz used the ELODIE spectrograph on the 1.93 metre telescope at Haute-Provence. Marcy and Butler (Lick Observatory) confirmed the planet within a week. Wolszczan and Frail had found the first exoplanets of ANY kind in 1992; Charbonneau and Brown come later, among the first to catch an exoplanet transit. Mayor and Queloz shared half of the 2019 Nobel Prize in Physics for the discovery. Sources: astrobites.org 51 Pegasi b; NASA exoplanets Nobel piece.",
     "topic": "51-pegasi-b-and-the-dip-a-backyard-can-measure"
   },
   {
     "tier": 3,
-    "question": "Several observing groups went back to their old measurements after 1995 and found that the signal of 51 Pegasi b had been there all along. Their spectrographs had been sensitive enough to catch the planet, a Jupiter-sized gas giant whipping around its star every 4 days. Why had they missed it?",
+    "question": "Other planet-hunting teams already had spectrographs sensitive enough to catch a world like 51 Pegasi b, a giant at least half as massive as Jupiter, whipping around its star every 4 days. Yet none of them had found one before 1995. Why had they missed such worlds?",
     "answer": "They assumed giant planets need long orbits, so they sampled each star too slowly to catch a 4-day signal",
     "choices": [
       "They assumed giant planets need long orbits, so they sampled each star too slowly to catch a 4-day signal",
@@ -308,7 +308,7 @@
       "They believed hot giants would show up first as transits, so they weren't running Doppler surveys",
       "They were watching only pulsars, following Wolszczan and Frail's 1992 timing-signal method"
     ],
-    "context": "This is a classic scientific parable: the instruments were ready, but a theoretical expectation shaped what the data were allowed to show. Groups revisited their old measurements after 1995 and found the signal had been there. Sources: Hot Jupiters review (arXiv 2102.05064); Youth-plus-experience Mayor-Queloz history paper.",
+    "context": "This is a classic scientific parable: the instruments were ready, but a theoretical expectation shaped how the data were gathered. Theory said giant planets form far from their stars, with orbits of years, so the surveys checked each star only now and then. Within months of the 1995 announcement, Geoffrey Marcy and Paul Butler announced two more giant planets, around 70 Virginis and 47 Ursae Majoris. Sources: Hot Jupiters review (arXiv 2102.05064); Youth-plus-experience Mayor-Queloz history paper; en.wikipedia.org 51_Pegasi_b.",
     "topic": "51-pegasi-b-and-the-dip-a-backyard-can-measure"
   },
   {
@@ -334,7 +334,7 @@
       "The distance to the star system, from parallax",
       "The planet's surface temperature, from its color"
     ],
-    "context": "A transit's depth is the ratio of the planet's disk to the star's disk, which gives the planet's RADIUS directly. Combine radius (from transit) with mass (from radial velocity plus a known tilt near 90 degrees for transiting planets) and you get the planet's DENSITY, which tells you whether the world is rock or gas. This is why the two methods together are so powerful. Sources: hao.ucar.edu HD 209458 page; en.wikipedia.org HD 209458 b.",
+    "context": "A transit's depth is the ratio of the planet's disk to the star's disk, which gives the planet's RADIUS directly. Combine radius (from transit) with mass (from radial velocity plus a known tilt near 90 degrees for transiting planets) and the result is the planet's DENSITY, which tells whether the world is rock or gas. This is why the two methods together are so powerful. Sources: hao.ucar.edu HD 209458 page; en.wikipedia.org HD 209458 b.",
     "topic": "51-pegasi-b-and-the-dip-a-backyard-can-measure"
   },
   {
@@ -347,7 +347,7 @@
       "Helium",
       "Neon"
     ],
-    "context": "Charbonneau's team used the STIS spectrograph on Hubble to catch extra absorption in the yellow sodium D lines at 589.3 nanometres during transit -- the first detection of an atmosphere on a planet outside our Solar System. Later missions like Kepler and TESS turned the transit method into a census: the count of known exoplanets went from zero in 1994 to thousands in one working lifetime. Sources: en.wikipedia.org HD 209458 b; aanda.org sodium detection.",
+    "context": "Charbonneau's team used the STIS spectrograph on Hubble to catch extra absorption in the yellow sodium D lines at 589.3 nanometres during transit -- the first detection of an atmosphere on a planet outside our Solar System. Later missions like Kepler and TESS turned the transit method into a census: the count of known exoplanets went from a handful of pulsar worlds in 1994 to thousands in one working lifetime. Sources: en.wikipedia.org HD 209458 b; aanda.org sodium detection.",
     "topic": "51-pegasi-b-and-the-dip-a-backyard-can-measure"
   },
   {
@@ -373,7 +373,7 @@
       "Rubber",
       "Silk"
     ],
-    "context": "Insulated wire did not yet exist. Varnishing the CORE, not the wire, was a working man's shortcut - and it capped how many turns you could pack on, because the bare wire loops still had to lie in one loose layer. That is exactly the limit Joseph Henry broke a few years later. Source: en.wikipedia.org William Sturgeon.",
+    "context": "Insulated wire did not yet exist. Varnishing the CORE, not the wire, was a working man's shortcut - and it capped how many turns could be packed on, because the bare wire loops still had to lie in one loose layer. That is exactly the limit Joseph Henry broke a few years later. Source: en.wikipedia.org William Sturgeon.",
     "topic": "a-nail-a-wire-and-a-battery-the-electromagnet"
   },
   {
@@ -391,7 +391,7 @@
   },
   {
     "tier": 3,
-    "question": "Joseph Henry closed a circuit in a big lecture room at the Albany Academy in 1831, and a battery at one end of about a mile of wire worked a magnet at the far end. Each time, the magnet hit a small object: the first version of what Samuel Morse later sold as the telegraph. What did it strike?",
+    "question": "Joseph Henry closed a circuit in a big lecture room at the Albany Academy in 1831, and a battery at one end of about a mile of wire worked a magnet at the far end. Each time, the magnet hit a small object, showing the principle behind the telegraph Samuel Morse later patented. What did it strike?",
     "answer": "A bell",
     "choices": [
       "A bell",
@@ -399,7 +399,7 @@
       "A pen against paper",
       "A wire filament"
     ],
-    "context": "The bell was audible proof that a weak current at one end could work a strong action at the other - the working principle of the electric telegraph, five years before Morse patented his version. Source: edisontechcenter.org Joseph Henry.",
+    "context": "The bell was audible proof that a weak current at one end could work a strong action at the other - the working principle of the electric telegraph, years before Morse patented his version. Source: edisontechcenter.org Joseph Henry.",
     "topic": "a-nail-a-wire-and-a-battery-the-electromagnet"
   },
   {
@@ -417,7 +417,7 @@
   },
   {
     "tier": 4,
-    "question": "Samuel Morse wanted to send coded pulses of electricity over hundreds of miles of copper wire in the 1840s, but the signal weakened badly as it travelled. His long line would not have worked without a small iron-lever device invented by Joseph Henry, placed every few miles along the wire. What did each one do to the fading signal?",
+    "question": "Samuel Morse wanted to send coded pulses of electricity over hundreds of miles of copper wire in the 1840s, but the signal weakened badly as it travelled. His long line needed a small iron-lever device of the kind credited to Joseph Henry in 1835, set at points along the wire. What did each one do to the fading signal?",
     "answer": "Re-boosted it with a fresh battery",
     "choices": [
       "Re-boosted it with a fresh battery",
@@ -436,7 +436,7 @@
       "Go up",
       "Stay the same",
       "Go down",
-      "Reverse the nail's ends"
+      "Change at random"
     ],
     "context": "Field strength scales with turns times current (ampere-turns) - more turns, stronger magnet, more paperclips. Safety note: a shorted AA cell heats up fast, so keep each test short. This is a direct measurement of the same law Henry used in 1831. Source: energizer.com Science Center telegraph project.",
     "topic": "a-nail-a-wire-and-a-battery-the-electromagnet"
@@ -461,7 +461,7 @@
     "choices": [
       "as a physiological stand-in for a human",
       "as the heaviest weight they could safely lift",
-      "as an animal sacred to Louis XVI's household",
+      "as a test of whether fleece would scorch",
       "as an animal that lies still where a goat would thrash"
     ],
     "context": "The whole point of sending live animals was to test whether a person could survive the ascent; the sheep, with its size and cardiovascular arrangement, was thought to be the closest living gauge. Source: https://www.atlasobscura.com/articles/hot-air-balloon-rooster-sheep-duck-first",
@@ -473,8 +473,8 @@
     "answer": "the smoke itself",
     "choices": [
       "the smoke itself",
-      "the sound of the fire",
-      "the burning shoe leather",
+      "the flames' downward push",
+      "hydrogen from the wet straw",
       "the paper of the envelope"
     ],
     "context": "The real reason the balloon rose is density: heating air spreads its molecules apart, so a given volume weighs less than the cooler air outside, and the outside air pushes the lighter parcel up. No 'Montgolfier gas' is involved. Source: https://www.chm.bris.ac.uk/~paulmay/webprojects2003/hetherington/final/montgolfier_bros.html",
@@ -503,7 +503,7 @@
       "Jacques Charles and Nicolas-Louis Robert",
       "Antoine Lavoisier and Pierre-Simon Laplace"
     ],
-    "context": "The Montgolfier brothers themselves never flew: Louis XVI first proposed sending condemned prisoners, but Pilatre de Rozier pressed for the honour of a free man to be first, and d'Arlandes went with him. Source: https://vintageaviationnews.com/warbird-articles/today-in-aviation-history-first-documented-free-flight-of-humans.html",
+    "context": "Neither Montgolfier brother made this flight; Etienne had gone up only on a tether that October. Louis XVI first proposed sending condemned prisoners, but Pilatre de Rozier pressed for the honour of a free man to be first, and d'Arlandes went with him. Source: https://vintageaviationnews.com/warbird-articles/today-in-aviation-history-first-documented-free-flight-of-humans.html",
     "topic": "a-sheep-a-duck-and-a-rooster-fly-first"
   },
   {
@@ -526,7 +526,7 @@
     "choices": [
       "drop ballast overboard",
       "release gas from a valve at the crown",
-      "uncover the envelope so sunlight can warm the gas",
+      "pump extra air into the envelope",
       "shift the pilot's weight forward in the basket"
     ],
     "context": "Once the gas is sealed in, the only way to make a hydrogen balloon lighter mid-flight is to throw weight over the side; the only way to make it heavier is to let gas out, which is the descend action. Modern weather balloons follow the hydrogen family: they simply swell as they rise into thinner air, and finally burst. Source: https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/Balloon_Flying_Handbook_FAA-H-8083-11B/bfh_chapter_2.pdf",
@@ -1127,7 +1127,7 @@
       "the docking hatch seal had blown open",
       "a helium tank's burst disc had let go"
     ],
-    "context": "A bang plus visible venting looks exactly like something arriving from outside, so the crew's first hypothesis was a meteoroid strike. The trouble was inside the ship. The other options here are not inventions: the descent stage's helium tank pressure had been suspect since before launch and kept climbing, and Mission Control predicted when its burst disc would give way -- it did, at 108:54, harmlessly and on schedule. Two of the three fuel cells did die, but as a consequence of losing the oxygen, not as its cause. Sources: Wikipedia 'Apollo 13'; NASA Apollo Flight Journal, Apollo 13 Day 3.",
+    "context": "A bang plus visible venting looks exactly like something arriving from outside, so the crew's first hypothesis was a meteoroid strike. The trouble was inside the ship. Other faults were real worries that week, too: the descent stage's helium tank pressure had been suspect since before launch and kept climbing, and Mission Control predicted when its burst disc would give way -- it did, at 108:54, harmlessly and on schedule. Two of the three fuel cells did die, but as a consequence of losing the oxygen, not as its cause. Sources: Wikipedia 'Apollo 13'; NASA Apollo Flight Journal, Apollo 13 Day 3.",
     "topic": "apollo-13-the-failure-that-was-built-in-weeks-before-launch"
   },
   {
@@ -1158,7 +1158,7 @@
   },
   {
     "tier": 3,
-    "question": "Houston gave one order first after Apollo 13's tank blew: a 34-second burn, to put the ship back on the path it had left about thirty hours out for a course that would reach the Fra Mauro highlands. That abandoned path brings a ship home with no further burn at all. What turns the ship around on it?",
+    "question": "Apollo 13's first engine burn after its tank blew lasted 34 seconds. It put the ship back on the path it had left about thirty hours out for a course that would reach the Fra Mauro highlands. That abandoned path brings a ship home with no further burn at all. What turns the ship around on it?",
     "answer": "the Moon's gravity, bending the ship into a loop home",
     "choices": [
       "the Moon's gravity, bending the ship into a loop home",
@@ -1184,7 +1184,7 @@
   },
   {
     "tier": 4,
-    "question": "NASA engineers more than doubled the voltage of the ground equipment at Kennedy Space Center in 1965, so that oxygen tanks could be filled and emptied faster on the pad. Every part of Apollo 13's oxygen tank 2 carrying that current was requalified, with one exception, which nobody caught for five years. Which part was left at the old rating?",
+    "question": "Apollo engineers more than doubled the voltage of the ground equipment at Kennedy Space Center in 1965, so that oxygen tanks could be pressurized faster on the pad. Every part of Apollo 13's oxygen tank 2 carrying that current was requalified, with one exception, which nobody caught for five years. Which part was left at the old rating?",
     "answer": "the two thermostatic switches that guarded the heaters",
     "choices": [
       "the two thermostatic switches that guarded the heaters",
@@ -1223,7 +1223,7 @@
   },
   {
     "tier": 4,
-    "question": "Ken Mattingly flew the command module simulator with flight controller John Aaron for under two days, after he was pulled off the Apollo 13 crew over a rubella exposure. No one had ever powered a command module back to life from cold and dead. The two of them wrote a 39-page checklist of about 400 steps, to be executed once, cold, correctly. What were they hunting for, run after run?",
+    "question": "Ken Mattingly flew the command module simulator with flight controller John Aaron for under two days, after a rubella exposure pulled him off the Apollo 13 crew. No one had ever powered a command module back to life from cold. The checklist that came out of it ran 39 pages and about 400 steps, to be executed once, cold, correctly. What were they hunting for, run after run?",
     "answer": "an order of switch throws that would not overdraw the batteries",
     "choices": [
       "an order of switch throws that would not overdraw the batteries",
@@ -1257,7 +1257,7 @@
       "a welder rebuilt a fill line and left a bead of metal in the pipe",
       "a fitter installed a stirring fan backwards and never pulled it out"
     ],
-    "context": "The shelf was being lifted out of Apollo 10's service module for modification, and one retaining bolt had not been removed. The shelf caught, then dropped about two inches. Engineers calculated the loads, judged that nothing had been damaged, and the tank went into Apollo 13's service module in November 1968. The board concluded that the jarring probably displaced a fill-tube assembly that had been loose since it was manufactured at Beech's Boulder, Colorado plant -- which is exactly why the tank could not be emptied normally seventeen months later, which is why the heaters were run, which is why the insulation burned off the wires. This is what failure analysis buys you: not a villain, but a chain, published so the next crew does not fly it. Sources: NASA history, '50 Years Ago: Apollo 13 Review Board Report'; PopSci Vintage Space, 'The recipe for Apollo 13's disaster'.",
+    "context": "The shelf was being lifted out of Apollo 10's service module for modification, and one retaining bolt had not been removed. The shelf caught, then dropped about two inches. Engineers calculated the loads, judged that nothing had been damaged, and the tank went into Apollo 13's service module in November 1968. The board concluded that the jarring probably displaced a fill-tube assembly that had been loose since it was manufactured at Beech's Boulder, Colorado plant -- which is exactly why the tank could not be emptied normally seventeen months later, which is why the heaters were run, which is why the insulation burned off the wires. This is what failure analysis buys: not a villain, but a chain, published so the next crew does not fly it. Sources: NASA history, '50 Years Ago: Apollo 13 Review Board Report'; PopSci Vintage Space, 'The recipe for Apollo 13's disaster'.",
     "topic": "apollo-13-the-failure-that-was-built-in-weeks-before-launch"
   },
   {
@@ -1275,7 +1275,7 @@
   },
   {
     "tier": 2,
-    "question": "Plutarch tells how King Hiero of Syracuse wanted proof that Archimedes' lever idea could really do work. In that account Archimedes pulled a fully loaded warship out of the water by himself with one machine, though another ancient writer tells the tale differently. Which machine does Plutarch name?",
+    "question": "Plutarch tells how King Hiero of Syracuse wanted proof that Archimedes' lever idea could really do work. In that account Archimedes, seated at a distance, hauled a fully loaded merchant ship along the shore by himself with one machine, though another ancient writer tells the tale differently. Which machine does Plutarch name?",
     "answer": "A compound pulley",
     "choices": [
       "A compound pulley",
@@ -1294,7 +1294,7 @@
       "They balance when weight times arm-length is equal on each side",
       "They balance only when both weights are exactly equal",
       "They balance when the heavier weight sits on the longer arm",
-      "They balance when the total length of both arms equals the fulcrum's height"
+      "They balance when the bar's own weight is split evenly at the pivot"
     ],
     "context": "On the Equilibrium of Planes, Book I, Propositions 6 and 7: magnitudes balance at distances inversely proportional to their weights. Formally, w*d = w'*d'. Archimedes derives it from a handful of Euclid-style postulates, the first being that equal weights at equal distances balance. Sources: en.wikipedia.org/wiki/On_the_Equilibrium_of_Planes ; mathshistory.st-andrews.ac.uk/Extras/Archimedes_on_statics",
     "topic": "archimedes-and-the-lever"
@@ -1307,22 +1307,22 @@
       "Her end must travel ten times as far as her friend rises",
       "Her end of the bar must weigh ten times more than her friend's end",
       "She must push in ten smooth, timed bursts to build enough momentum",
-      "The fulcrum must be lubricated to shed ten-tenths of the friction"
+      "The pivot must sit ten times nearer her end than her friend's"
     ],
-    "context": "This is the force-distance trade, and it is a statement of conservation of energy: work in equals work out. Every simple machine -- lever, pulley, wedge, ramp, screw, wheel-and-axle -- multiplies force only by demanding a matching multiplication of distance. None of them creates energy; each spends it differently. Kid-replicable: balance a ruler on a pencil with coins on each end, slide the pencil off-center, and feel the trade in your fingers. Sources: openstax.org/books/physics/pages/9-3-simple-machines ; energyeducation.ca/encyclopedia/Simple_machine",
+    "context": "This is the force-distance trade, and it is a statement of conservation of energy: work in equals work out. Every simple machine -- lever, pulley, wedge, ramp, screw, wheel-and-axle -- multiplies force only by demanding a matching multiplication of distance. None of them creates energy; each spends it differently. Kid-replicable: balance a ruler on a pencil with coins on each end, slide the pencil off-center, and feel the trade in the fingers. Sources: openstax.org/books/physics/pages/9-3-simple-machines ; energyeducation.ca/encyclopedia/Simple_machine",
     "topic": "archimedes-and-the-lever"
   },
   {
     "tier": 4,
-    "question": "MIT students in 2005 and MythBusters in 2010 aimed hundreds of mirrors at a still wooden mock-up. They were testing the legend that Archimedes set Roman warships on fire with focused sunlight at the siege of Syracuse in 212 BC. What did the modern tests actually get?",
-    "answer": "Smoke and scorching but no sustained blaze",
+    "question": "MIT students in 2005 and MythBusters in 2010 turned banks of mirrors on a motionless wooden mock-up. They were testing the legend that Archimedes set Roman warships on fire with focused sunlight at the siege of Syracuse in 212 BC. What did the modern tests actually get?",
+    "answer": "At best a patch of flame on a hull held still",
     "choices": [
-      "Smoke and scorching but no sustained blaze",
+      "At best a patch of flame on a hull held still",
       "A clean, fast fire exactly as the legend describes",
       "Nothing at all -- the mirrors never focused enough light",
       "An explosion strong enough to shatter the mock-up"
     ],
-    "context": "The 'burning mirrors' story is not mentioned by Polybius, Livy, or Plutarch -- the earliest historians of the siege -- and first surfaces centuries later. The MIT 2.009 team scorched a wooden hull after ten still, cloudless minutes at 30 metres; MythBusters got smoulder from bronze mirrors on a replica ship in San Francisco Bay but no sustained fire. With moving ships and damp timber in a real sea-battle, the effect collapses. A useful reminder that a story about Archimedes is not the same thing as a proof by Archimedes. Sources: livescience.com/8383 ; web.mit.edu/2.009_gallery/www/2005_other/archimedes/10_Mythbusters.html  (Legend.)",
+    "context": "The 'burning mirrors' story is not mentioned by Polybius, Livy, or Plutarch -- the earliest historians of the siege -- and first surfaces centuries later. The MIT 2.009 team got a flash of flame on a patch of a wooden hull, but only after ten still, cloudless minutes at 30 metres; MythBusters, back at the myth in 2010 with some 500 mirrors, could not even bring a sail to the temperature at which it catches fire. With moving ships and damp timber in a real sea-battle, the effect collapses. A useful reminder that a story about Archimedes is not the same thing as a proof by Archimedes. Sources: livescience.com/8383 ; web.mit.edu/2.009_gallery/www/2005_other/archimedes/10_Mythbusters.html  (Legend.)",
     "topic": "archimedes-and-the-lever"
   },
   {
@@ -1335,7 +1335,7 @@
       "Push down faster, converting his motion into extra force",
       "Add a second lever in series to double the mechanical advantage for free"
     ],
-    "context": "The arithmetic is exact. To lift Earth by 1 cm at a mechanical advantage set by weight-ratio ~10^23, Archimedes' end of the lever would have to sweep through roughly 10^21 metres -- far larger than the Milky Way -- and at any human walking pace that takes vastly more than the age of the universe. The other three are the classic force-distance confusions: shortening HIS arm makes the trade worse, not better; pushing faster changes power, not the force the law requires; and chaining two levers just spends the same distance twice -- no simple machine ever creates energy. Which is why the boast is poetry, not engineering -- but the LAW it rests on is exactly right, and still runs every crowbar, wheelbarrow, and pair of scissors in the kitchen. Sources: openstax.org/books/physics/pages/9-3-simple-machines ; math.nyu.edu/Archimedes/Lever/LeverLaw.html",
+    "context": "The arithmetic is exact. To lift Earth by 1 cm at a mechanical advantage set by weight-ratio ~10^23, Archimedes' end of the lever would have to sweep through roughly 10^21 metres -- about the width of the whole Milky Way -- and at any human walking pace that takes vastly more than the age of the universe. The other three are the classic force-distance confusions: shortening HIS arm makes the trade worse, not better; pushing faster changes power, not the force the law requires; and chaining two levers just spends the same distance twice -- no simple machine ever creates energy. Which is why the boast is poetry, not engineering -- but the LAW it rests on is exactly right, and still runs every crowbar, wheelbarrow, and pair of scissors in the kitchen. Sources: openstax.org/books/physics/pages/9-3-simple-machines ; math.nyu.edu/Archimedes/Lever/LeverLaw.html",
     "topic": "archimedes-and-the-lever"
   },
   {
@@ -1361,7 +1361,7 @@
       "It filled the water with bubbles that cling to the shell",
       "It settled into a dense layer for the egg to rest upon"
     ],
-    "context": "A raw egg is slightly denser than tap water, so it sinks. Dissolved salt adds mass to the water without adding much volume, and three to six tablespoons stirred into a warm glass push the water's density past the egg's. Density is just weight for a given amount of space - and a thing floats when the fluid around it is denser than it is. This one costs nothing to run in a kitchen tonight, and the point is worth watching for: the egg is the same egg. The FLUID is what you changed. Source: Science Buddies / Scientific American, 'Salty Science: Floating Eggs in Water' - https://www.sciencebuddies.org/stem-activities/salty-science-floating-eggs-in-water",
+    "context": "A raw egg is slightly denser than tap water, so it sinks. Dissolved salt adds mass to the water without adding much volume, and three to six tablespoons stirred into a warm glass push the water's density past the egg's. Density is just weight for a given amount of space - and a thing floats when the fluid around it is denser than it is. This one costs nothing to run in a kitchen tonight, and the point is worth watching for: the egg is the same egg. The FLUID is what changed. Source: Science Buddies / Scientific American, 'Salty Science: Floating Eggs in Water' - https://www.sciencebuddies.org/stem-activities/salty-science-floating-eggs-in-water",
     "topic": "archimedes-crown-and-the-balance-that-would-actually-have-wo"
   },
   {
@@ -1418,7 +1418,7 @@
   },
   {
     "tier": 3,
-    "question": "A mason lowers a heavy stone block on a rope into a tank of water and lets it hang still. The water squeezes it from every direction at once. Yet the block is shoved upward, not sideways. Archimedes first explained this push, called buoyancy. Which property of still water actually produces the upward-only push?",
+    "question": "A mason lowers a heavy stone block on a rope into a tank of water and lets it hang still. The water squeezes it from every direction at once. Yet the block is shoved upward, not sideways. Archimedes first stated the rule for this push, called buoyancy. Which property of still water actually produces the upward-only push?",
     "answer": "Its pressure grows with depth, so the lower faces are pressed hardest",
     "choices": [
       "Its pressure grows with depth, so the lower faces are pressed hardest",
@@ -1449,10 +1449,10 @@
     "choices": [
       "Theon of Alexandria",
       "Hypatia of Alexandria",
-      "Pappus of Alexandria",
-      "Diophantus of Alexandria"
+      "Theophilus of Alexandria",
+      "Hierocles of Alexandria"
     ],
-    "context": "Hypatia of Alexandria - mathematician, astronomer and head of the Neoplatonist school in that city - had taught Synesius, and he went on writing to her for years afterward. His Letter 15, around 402 AD, asks her for 'a cylindrical tube, which has the shape of a flute and is about the same size,' carrying 'notches in a perpendicular line, by means of which we are able to test the weight of the waters.' That letter is the earliest surviving written description of the instrument we now call a hydrometer. And it is Archimedes' principle turned into a dipstick: the sealed tube always weighs the same, so it sinks only until the water it has shoved aside weighs exactly what the tube does, then stops. A dense water supplies that weight in very little volume, so the tube rides HIGH; in a thin one it must go deep to find the same weight of liquid. The reading is simply where the surface cuts the stem. You can build a rough one tonight: a drinking straw sealed at one end with a blob of modelling clay inside it will float upright in a glass. Mark where the water cuts the straw, then stir in salt and watch the mark climb. Sources: Grokipedia, 'Hydrometer' - https://grokipedia.com/page/Hydrometer ; Synesius, Letter 15 - https://www.livius.org/sources/content/synesius/synesius-letter-015/",
+    "context": "Hypatia of Alexandria - mathematician, astronomer and head of the Neoplatonist school in that city - had taught Synesius, and he went on writing to her for years afterward. His Letter 15, around 402 AD, asks her for 'a cylindrical tube, which has the shape of a flute and is about the same size,' carrying 'notches in a perpendicular line, by means of which we are able to test the weight of the waters.' That letter is the earliest surviving written description of the instrument we now call a hydrometer. And it is Archimedes' principle turned into a dipstick: the sealed tube always weighs the same, so it sinks only until the water it has shoved aside weighs exactly what the tube does, then stops. A dense water supplies that weight in very little volume, so the tube rides HIGH; in a thin one it must go deep to find the same weight of liquid. The reading is simply where the surface cuts the stem. A rough one can be built tonight: a drinking straw sealed at one end with a blob of modelling clay inside it will float upright in a glass. Mark where the water cuts the straw, then stir in salt and watch the mark climb. Sources: Grokipedia, 'Hydrometer' - https://grokipedia.com/page/Hydrometer ; Synesius, Letter 15 - https://www.livius.org/sources/content/synesius/synesius-letter-015/",
     "topic": "archimedes-crown-and-the-balance-that-would-actually-have-wo"
   },
   {
@@ -1491,7 +1491,7 @@
       "Viscosity, which slows a slim shape falling through water to a crawl",
       "Static charge, which builds between polished steel and pure water"
     ],
-    "context": "Water has a capillary length of about 2.7 millimetres at 20 C. Below that scale, surface tension - the water surface behaving like a stretched skin - supplies extra upward force along the meniscus, enough to hold up steel at roughly 7,800 kilograms per cubic metre. Which effect wins is set by the Bond number, Bo = (delta-rho x g x R^2) / sigma; when Bo is far below 1, surface tension outweighs displacement entirely. Pure Archimedes assumes surface tension can be ignored, and for anything sizeable it can - but for small enough objects it cannot. Two questions, two limits: the tidy rule holds beautifully in the middle of its range and stops being the whole story at both ends. Try it with a sewing needle and a bowl of water. Sources: Grokipedia, 'Archimedes' principle' (Refinements for Non-Ideal Conditions) and 'Buoyancy' (Incompressible Objects) - https://grokipedia.com/page/Archimedes'_principle ; https://grokipedia.com/page/Buoyancy",
+    "context": "Water has a capillary length of about 2.7 millimetres at 20 C. Below that scale, surface tension - the water surface behaving like a stretched skin - supplies extra upward force along the meniscus, enough to hold up steel at roughly 7,800 kilograms per cubic metre. Which effect wins is set by the Bond number, Bo = (delta-rho x g x R^2) / sigma; when Bo is far below 1, surface tension outweighs displacement entirely. Pure Archimedes assumes surface tension can be ignored, and for anything sizeable it can - but for small enough objects it cannot. Two experiments, two limits: the tidy rule holds beautifully in the middle of its range and stops being the whole story at both ends. Try it with a sewing needle and a bowl of water. Sources: Grokipedia, 'Archimedes' principle' (Refinements for Non-Ideal Conditions) and 'Buoyancy' (Incompressible Objects) - https://grokipedia.com/page/Archimedes'_principle ; https://grokipedia.com/page/Buoyancy",
     "topic": "archimedes-crown-and-the-balance-that-would-actually-have-wo"
   },
   {
@@ -1993,10 +1993,10 @@
     "question": "Lester Dragstedt cut the vagus nerve, the wiring that tells the stomach to pour acid out, to stop a stomach making acid at all. American surgeons did over 100,000 ulcer operations each year at the 1960s peak. Between a fifth and a third of those patients were left with a lasting side effect. What happened to them?",
     "answer": "Food raced through the gut, leaving them faint after meals",
     "choices": [
-      "Bile washed back up into the stomach, sickening them daily",
+      "Their voices turned hoarse, the nerve's throat branch cut too",
       "Food raced through the gut, leaving them faint after meals",
       "The stomach lining thinned until it bled at the slightest strain",
-      "The stomach emptied so slowly that meals sat in it for hours"
+      "Their hearts raced, the nerve's brake on the heartbeat gone"
     ],
     "context": "Surgeons called it dumping syndrome. With the vagus nerve cut, and often the acid-signalling bottom of the stomach removed as well, the stomach lost its grip on the pace of digestion, so a meal dumped into the small intestine all at once: nausea, sweating and collapse after eating. That was the standard of care for a stubborn ulcer, performed on tens of thousands of people a year, on a theory Barry Marshall and Robin Warren would overturn. (Grokipedia 'Timeline of peptic ulcer disease and Helicobacter pylori')",
     "topic": "barry-marshall-drinks-the-beaker"
@@ -2016,19 +2016,6 @@
   },
   {
     "tier": 4,
-    "question": "Barry Marshall sent an Australian medical society his abstract in 1982: in a hundred consecutive endoscopy patients at Royal Perth Hospital, the bacterium had turned up in every duodenal-ulcer patient. The society turned it down, and that October a Perth meeting heard the data and largely shrugged. Then his own hospital took action against him. What did the hospital do to Marshall?",
-    "answer": "It refused to renew his contract for the next year",
-    "choices": [
-      "It refused to renew his contract for the next year",
-      "It barred him from endoscoping his own ulcer patients",
-      "It struck him from the roster of teaching physicians",
-      "It cut off his access to Warren's biopsy slides"
-    ],
-    "context": "Marshall's own account of how the objection worked, from his Nobel autobiography: 'When the work was presented, my results were disputed and disbelieved, not on the basis of science but because they simply could not be true. It was often said that no one was able to replicate my results. This was untrue but became part of the folklore of the period. I was told that the bacteria were either contaminants or harmless commensals.' The refusal was not pure stupidity: in 1954 Edwin Palmer had published a study in Gastroenterology reporting no bacteria at all in gastric biopsies, so the field had a printed reason to stop looking. (Barry J. Marshall, 'Biographical', NobelPrize.org; Grokipedia 'Barry Marshall'; Grokipedia 'Timeline of peptic ulcer disease and Helicobacter pylori')",
-    "topic": "barry-marshall-drinks-the-beaker"
-  },
-  {
-    "tier": 4,
     "question": "Barry Marshall and three co-authors published his stomach-bacteria experiment in 1985 in the Medical Journal of Australia, under an academic title. The abstract's opening sentence described the man who took the bacteria, but it never named him. What did the paper call him?",
     "answer": "'A volunteer'",
     "choices": [
@@ -2037,7 +2024,7 @@
       "'The subject'",
       "'The author'"
     ],
-    "context": "The full sentence reads: 'A volunteer with histologically normal gastric mucosa received pyloric campylobacter by mouth.' Marshall, Armstrong, McGechie and Glancy are on the title page; none of them is identified as the volunteer. Koch's postulates are the nineteenth-century checklist for blaming a germ for a disease, and the fourth is the hard one: take the organism you grew in the laboratory and show that it produces the same disease in a fresh, healthy host. Marshall had been trying to meet it with pigs, which took the bacteria happily and never got sick. (Med J Aust 1985;142(8):436-439, PMID 3982345, onlinelibrary.wiley.com)",
+    "context": "The full sentence reads: 'A volunteer with histologically normal gastric mucosa received pyloric campylobacter by mouth.' Marshall, Armstrong, McGechie and Glancy are on the title page; none of them is identified as the volunteer. Koch's postulates are the nineteenth-century checklist for blaming a germ for a disease, and the fourth is the hard one: take the organism you grew in the laboratory and show that it produces the same disease in a fresh, healthy host. Marshall had been trying to meet it with piglets, but he could not infect them. (Med J Aust 1985;142(8):436-439, PMID 3982345, onlinelibrary.wiley.com)",
     "topic": "barry-marshall-drinks-the-beaker"
   },
   {
@@ -2089,7 +2076,7 @@
       "the small intestine",
       "the left lung"
     ],
-    "context": "The permanent opening from stomach to skin is called a gastric fistula. St. Martin survived roughly a year of terrible convalescence, and the fistula gave Beaumont something no anatomist had ever had: a live human stomach he could see and reach into during work. The other choices were all real casualties of the same wound -- St. Martin's lung was pierced and his ribs broken -- but only the stomach fused to the skin. Source: en.wikipedia.org/wiki/Alexis_St._Martin.",
+    "context": "The permanent opening from stomach to skin is called a gastric fistula. St. Martin survived roughly a year of terrible convalescence, and the fistula gave Beaumont something no anatomist had ever had: a live human stomach he could see and reach into during work. The same blast tore his lung and broke his ribs, but only the stomach fused to the skin. Source: en.wikipedia.org/wiki/Alexis_St._Martin.",
     "topic": "beaumonts-window-into-a-living-stomach"
   },
   {
@@ -2102,7 +2089,7 @@
       "a hollow tin capsule",
       "a coiled copper wire"
     ],
-    "context": "The silk thread built the first table of digestion times in a living human. The other choices are all real digestion apparatus used by other people: Lazzaro Spallanzani (1780) had swallowed food in linen bags and later hollow wood or metal tubes; Rene Reaumur (1752) had used a kite that swallowed a metal tube with a sponge to soak up its gastric juice; and modern gut-transit studies use radio-opaque capsules. Source: en.wikipedia.org/wiki/William_Beaumont.",
+    "context": "The silk thread built the first table of digestion times in a living human. Others had tried different apparatus: Lazzaro Spallanzani (1780) swallowed food in linen bags and later in hollow wood or metal tubes, and Rene Reaumur (1752) fed a kite a metal tube with a sponge in it to soak up its gastric juice. Source: en.wikipedia.org/wiki/William_Beaumont.",
     "topic": "beaumonts-window-into-a-living-stomach"
   },
   {
@@ -2115,7 +2102,7 @@
       "that a cold drink stops digestion for the hour",
       "that a sleeping stomach makes no juice at all"
     ],
-    "context": "On one recorded occasion of violent temper Beaumont even saw yellow bile back-flowing into a stomach where it should not have been. It is the first direct human evidence of what we now call the gut-brain link. The other choices are all real and interesting physiological facts -- but not what the fistula proved. Source: sciencehistory.org -- Probing the Mysteries of Human Digestion.",
+    "context": "On one recorded occasion of violent temper Beaumont even saw yellow bile back-flowing into a stomach where it should not have been. It is the first direct human evidence of what is now called the gut-brain link. Source: sciencehistory.org -- Probing the Mysteries of Human Digestion.",
     "topic": "beaumonts-window-into-a-living-stomach"
   },
   {
@@ -2141,7 +2128,7 @@
       "they had his stomach removed and cremated before the wake",
       "they hired armed men to guard the grave for a full year"
     ],
-    "context": "A rotted body is worthless to a museum, so the family's tactic was cruder and cheaper than the alternatives -- and it worked. The other choices are all real nineteenth-century anti-'resurrectionist' tactics (heavy iron mortsafes, night watchtowers over new graves, and cremation) that other families used against the grave-robbing trade that fed the anatomy schools. Source: en.wikipedia.org/wiki/Alexis_St._Martin.",
+    "context": "A rotted body is worthless to a museum, so the family's tactic was cruder and cheaper than the alternatives -- and it worked. Other families fought the grave-robbing trade that fed the anatomy schools with iron cages called mortsafes, heavy stone slabs and paid watchmen at new graves. Source: en.wikipedia.org/wiki/Alexis_St._Martin.",
     "topic": "beaumonts-window-into-a-living-stomach"
   },
   {
@@ -2172,7 +2159,7 @@
   },
   {
     "tier": 4,
-    "question": "Henri Becquerel walked to a Paris lecture in April 1901 with a small glass tube of radium in his waistcoat pocket, and it rested against his chest for a few hours. About two weeks later the skin over that pocket blistered into a raw ulcer in the exact shape of the tube, and the wound took months to heal. He published the observation. Which field did his report help launch?",
+    "question": "Henri Becquerel carried a small glass tube of radium in his waistcoat pocket in April 1901, on and off for a few hours. About two weeks later the skin over that pocket blistered into a raw ulcer in the exact shape of the tube, and the wound needed about a month to close. He published the observation. Which field did his report help launch?",
     "answer": "Radiotherapy, the medical use of radiation against tumours",
     "choices": [
       "Radiotherapy, the medical use of radiation against tumours",
@@ -2180,7 +2167,7 @@
       "Radiometric dating, the age-reading of rocks by decay clocks",
       "Radio-astronomy, the reading of the sky in radio wavelengths"
     ],
-    "context": "Becquerel's paper on his own burn (1901) prompted the first clinical trials with radium - a pharyngeal carcinoma was treated in Vienna in 1902. The observation was made on his own body: the test-it-yourself thread runs even through this. Source: vidyaenews, That Accidental Burn.",
+    "context": "Becquerel's paper on his own burn (1901) prompted the first medical uses of radium: that year he lent radium to Henri-Alexandre Danlos of the Hopital Saint-Louis in Paris, who treated a few cases of lupus with it. The observation was made on his own body: the test-it-yourself thread runs even through this. Source: vidyaenews, That Accidental Burn.",
     "topic": "becquerels-drawer-radioactivity-found-by-a-week-of-clouds"
   },
   {
@@ -2830,11 +2817,11 @@
       "Flow a polymer coating back over the scratch",
       "Re-deposit a copper film from dissolved ions"
     ],
-    "context": "Chromium atoms from deep inside the alloy migrate to the fresh wound and react with air to lay down a new passive film in minutes. Zinc galvanising is a different (sacrificial) trick used on cheaper steel; a plated coating has no reservoir behind it and simply wears through. Source: Viox on stainless passivation; Wikipedia on galvanization.",
+    "context": "The chromium is spread all through the alloy, so the fresh metal bared by the scratch carries it too, and it reacts with air to lay down a new passive film in minutes. Zinc galvanising is a different (sacrificial) trick used on cheaper steel; a plated coating has no reservoir behind it and simply wears through. Source: Viox on stainless passivation; Wikipedia on galvanization.",
     "topic": "brearleys-rustless-steel"
   },
   {
-    "tier": 4,
+    "tier": 2,
     "question": "Philipp Monnartz, a German researcher, added one particular metal to iron in 1911, above roughly 12 percent by weight, and showed that the steel turned 'passive' and resistant to acid. Harry Brearley's own cast came two years later. Which metal was Monnartz adding to the iron?",
     "answer": "Chromium",
     "choices": [
@@ -2853,7 +2840,7 @@
     "choices": [
       "Benno Strauss and Eduard Maurer",
       "Adolf Martens and Emil Heyn",
-      "Friedrich Krupp and Alfred Krupp",
+      "Gustav Tammann and Paul Goerens",
       "Hans Goldschmidt and Wilhelm Borchers"
     ],
     "context": "Strauss and Maurer developed the austenitic (chromium-nickel) family between 1909 and 1912, opening a whole second branch of the alloy tree that Brearley's chromium-only recipe did not. Multiple independent teams converged on the same continent at nearly the same moment. Source: worldstainless.org History of Stainless Steels.",
@@ -2869,20 +2856,20 @@
       "Ordinary glacial meltwater carved it over many summers.",
       "Wind-driven sandblasting shaped it during ice-age dry periods."
     ],
-    "context": "Bretz's paper was 'The Channeled Scabland of the Columbia Plateau,' Journal of Geology, 1923. He named the landscape the Channeled Scablands and called the culprit the Spokane flood. The three losing options here were among the real alternatives senior geologists offered against him at the 1927 Cosmos Club meeting. Source: EWU digital archives.",
+    "context": "Bretz's paper was 'The Channeled Scabland of the Columbia Plateau,' Journal of Geology, 1923. He named the landscape the Channeled Scablands and called the culprit the Spokane flood. Senior geologists answered him with slower causes, among them ordinary glacial meltwater and long river erosion. Source: EWU digital archives.",
     "topic": "bretz-and-the-flood-nobody-would-believe"
   },
   {
     "tier": 2,
-    "question": "Charles Lyell rebuilt geology on a rule he called 'uniformitarianism': today's slow processes at today's rates explain the past. He built that rule to shut out one older kind of story, which gave J Harlen Bretz's critics a real reason to resist him. Which story was it?",
+    "question": "Charles Lyell rebuilt geology on a rule later named 'uniformitarianism': today's slow processes at today's rates explain the past. He built that rule to shut out one older kind of story, which gave J Harlen Bretz's critics a real reason to resist him. Which story was it?",
     "answer": "Appeals to a biblical Flood carving the land in one event",
     "choices": [
       "Appeals to a biblical Flood carving the land in one event",
       "Werner's Neptunism, which said all rock had settled out of a primeval ocean",
-      "Cuvier's successive catastrophes, each wiping the earth and prompting a new creation",
+      "Hutton's deep time, with no vestige of a beginning and no prospect of an end",
       "Ussher's chronology, which dated the earth to about 4004 BC"
     ],
-    "context": "Neptunism, catastrophism and Ussher's short chronology were all real rivals uniformitarianism displaced - but the specific one Lyell hammered was 'flood geology'. That is why Bretz's giant flood sounded to older geologists like a step backwards: the critics were defending a principle that had done geology enormous good. Source: HistoryLink, Bretz biography.",
+    "context": "William Whewell coined the word 'uniformitarianism' in 1832 for Lyell's rule. Lyell's target was 'diluvial' geology, such as William Buckland's, which read Noah's Flood into the landscape; James Hutton's deep time was no rival at all, since Lyell built on it. That is why Bretz's giant flood sounded to older geologists like a step backwards: the critics were defending a principle that had done geology enormous good. Sources: en.wikipedia.org/wiki/Uniformitarianism; HistoryLink, Bretz biography.",
     "topic": "bretz-and-the-flood-nobody-would-believe"
   },
   {
@@ -2892,10 +2879,10 @@
     "choices": [
       "Where a body of water that large could have come from",
       "How to date the basalt rocks beneath the channels",
-      "Whether the rocks beneath the channels were basalt",
+      "Why no glacier had left moraines across the channels",
       "Why erosion channels appear on a plateau at all"
     ],
-    "context": "It was Wegener's gap: right about the pattern, silent on the source. Bretz had no water source, which is exactly what a skeptical geologist demands you supply. Source: encyclopedia.com, J Harlen Bretz.",
+    "context": "It was a gap like Wegener's: right about the pattern, silent on how it could happen. Bretz had no source for the water, which is exactly what a skeptical geologist demands first. Source: encyclopedia.com, J Harlen Bretz.",
     "topic": "bretz-and-the-flood-nobody-would-believe"
   },
   {
@@ -2926,13 +2913,13 @@
   },
   {
     "tier": 4,
-    "question": "Geologists counted 29 events in one railway cut near Missoula, layered silt bed by silt bed. J Harlen Bretz's flood had struck dozens of times and not just once. What kept refilling Glacial Lake Missoula, so it could burst out again and again?",
-    "answer": "A lobe of the Cordilleran Ice Sheet advancing back across the Clark Fork valley",
+    "question": "Geologists counted 29 events in one railway cut near Missoula, layered silt bed by silt bed. J Harlen Bretz's flood had struck dozens of times and not just once. What kept re-damming Glacial Lake Missoula, so it could fill and burst again and again?",
+    "answer": "A lobe of the Cordilleran Ice Sheet pushing back across the Clark Fork valley",
     "choices": [
-      "A lobe of the Cordilleran Ice Sheet advancing back across the Clark Fork valley",
-      "Seasonal snowmelt from the surrounding Bitterroot mountains alone",
-      "A rerouted Columbia River repeatedly spilling into the basin",
-      "Post-flood tectonic uplift damming the outlet each time"
+      "A lobe of the Cordilleran Ice Sheet pushing back across the Clark Fork valley",
+      "Landslides tumbling off the valley walls, each one plugging the outlet",
+      "Basalt lava pouring into the gorge and sealing it after every flood",
+      "Tectonic uplift raising the valley floor to block the outlet each time"
     ],
     "context": "The ice dam - a lobe of the Cordilleran Ice Sheet - kept re-blocking the Clark Fork, the lake refilled behind it (up to 2,500 cubic km, 650 m deep), then the dam floated free and failed again. Each cycle left one graded rhythmite couplet; the 29-unit section is one of the longest records. At peak, the discharge was roughly ten times the combined flow of all the world's rivers. Source: IAFI, Missoula Flood Rhythmites; glaciallakemissoula.org.",
     "topic": "bretz-and-the-flood-nobody-would-believe"
@@ -3173,7 +3160,7 @@
   },
   {
     "tier": 2,
-    "question": "A boy stands on a street as an ambulance drives straight toward him, siren wailing. It passes within a few metres and drives on, and the siren itself never changes its note. Christian Doppler predicted in 1842 that a pitch runs higher coming and lower going. What does the boy hear the pitch do?",
+    "question": "A boy stands on a street as an ambulance drives straight toward him, siren wailing. It passes within a few metres and drives on, and the siren itself never changes its note. Christian Doppler worked out in 1842 what such motion does to a sound. What does the boy hear the pitch do?",
     "answer": "Steady high all the way in, an abrupt drop as it passes, then steady low",
     "choices": [
       "Steady high all the way in, an abrupt drop as it passes, then steady low",
@@ -3181,7 +3168,7 @@
       "A slow, even slide downward from the first sound to the very last",
       "One unchanging pitch throughout, only growing louder then quieter"
     ],
-    "context": "Take this one outside. The siren's own note is constant; only the frequency arriving at your ear changes, so what you hear is a plateau, a step, and a second plateau - never a slide. The closer the vehicle passes to you, the more abrupt that step becomes. Listen for it at the next ambulance and you will not be able to un-hear it. Source: OpenStax/Lumen University Physics Vol. 1, section 17.7 'The Doppler Effect'; ScienceABC, 'Why Does An Ambulance Siren Sound Different As It Passes By?'",
+    "context": "Take this one outside. The siren's own note is constant; only the frequency arriving at the ear changes, so what a listener hears is a plateau, a step, and a second plateau - never a slide. The closer the vehicle passes, the more abrupt that step becomes. Listen for it at the next ambulance; once heard, it cannot be un-heard. Source: OpenStax/Lumen University Physics Vol. 1, section 17.7 'The Doppler Effect'; ScienceABC, 'Why Does An Ambulance Siren Sound Different As It Passes By?'",
     "topic": "buys-ballots-trumpeters-on-the-open-railway-car"
   },
   {
@@ -3194,7 +3181,7 @@
       "The wagon dragged the nearby air forward, carrying the sound bodily along with it",
       "The sound arrived louder as the wagon closed, and a loud note reads as a high one"
     ],
-    "context": "This is the whole of the Doppler effect for sound: the source chases its own sound. Ahead of the wagon the wavefronts bunch into a shorter wavelength and a higher frequency at your ear; behind it they spread out. Doppler had worked this out on paper three years earlier; the trumpeters made it audible. Source: Grokipedia, 'Doppler effect' - 'when the source moves toward the observer, the wavefronts bunch together, resulting in a shorter wavelength and higher frequency'.",
+    "context": "This is the whole of the Doppler effect for sound: the source chases its own sound. Ahead of the wagon the wavefronts bunch into a shorter wavelength and a higher frequency at the listener's ear; behind it they spread out. Doppler had worked this out on paper three years earlier; the trumpeters made it audible. Source: Grokipedia, 'Doppler effect' - 'when the source moves toward the observer, the wavefronts bunch together, resulting in a shorter wavelength and higher frequency'.",
     "topic": "buys-ballots-trumpeters-on-the-open-railway-car"
   },
   {
@@ -3207,12 +3194,12 @@
       "The muscle walls thickening with each beat",
       "The vessel walls flexing with each pulse of blood"
     ],
-    "context": "Kato showed in 1962 that the returning signal came from the moving red blood cells themselves, with the frequency tracking how fast they flowed. Satomura had published the method in December 1955 - 'A new method of the mechanical vibration measurement and its application' - working at the Institute of Scientific and Industrial Research with the cardiac physicians T. Yoshida and Yasaharu Nimura at Osaka University Hospital; he died in 1960, aged 41, before the field he founded grew up. Colour Doppler now paints the shift straight onto the screen: blood flowing toward the probe is drawn red, blood flowing away is drawn blue, and a fast jet squirting backwards through a diseased valve shows as a chaotic mosaic - so a leaking heart valve can be seen, and roughly sized, without opening a chest. Source: K. Kaneko, Cardiovascular Ultrasound (BioMed Central, 2015), 'Shigeo Satomura: 60 years of Doppler ultrasound in medicine'; Johnson Francis, 'Basic Principles of Colour Doppler Echocardiography'.",
+    "context": "Kato showed in 1962 that the returning signal came from the moving red blood cells themselves, with the frequency tracking how fast they flowed. Satomura had published the method in December 1955 - 'A new method of the mechanical vibration measurement and its application' - working at the Institute of Scientific and Industrial Research with the cardiac physicians T. Yoshida and Yasuharu Nimura at Osaka University Hospital; he died in 1960, aged 41, before the field he founded grew up. Colour Doppler now paints the shift straight onto the screen: blood flowing toward the probe is drawn red, blood flowing away is drawn blue, and a fast jet squirting backwards through a diseased valve shows as a chaotic mosaic - so a leaking heart valve can be seen, and roughly sized, without opening a chest. Source: I. M. Coman and B. A. Popescu, Cardiovascular Ultrasound (BioMed Central, 2015), 'Shigeo Satomura: 60 years of Doppler ultrasound in medicine'; Johnson Francis, 'Basic Principles of Colour Doppler Echocardiography'.",
     "topic": "buys-ballots-trumpeters-on-the-open-railway-car"
   },
   {
     "tier": 3,
-    "question": "Michel Mayor and Didier Queloz announced in 1995 the first planet ever detected orbiting a normal Sun-like star, 51 Pegasi. The planet carries about Jupiter's mass, and Jupiter needs about twelve years to complete one orbit of the Sun. How long does this planet take to complete one orbit around its star?",
+    "question": "Michel Mayor and Didier Queloz announced in 1995 the first planet ever detected orbiting a normal Sun-like star, 51 Pegasi. The planet carries at least half Jupiter's mass, and Jupiter needs about twelve years to complete one orbit of the Sun. How long does this planet take to complete one orbit around its star?",
     "answer": "About four days",
     "choices": [
       "About four days",
@@ -3220,7 +3207,7 @@
       "About four years",
       "About forty years"
     ],
-    "context": "4.23 days. A Jupiter-mass world hugging its star was something nobody's theory of planet formation had predicted. Mayor and Queloz read the wobble from 35 measurements over 114 days with the ELODIE spectrograph on the 1.93-metre telescope at Haute-Provence Observatory. The radial-velocity method has since confirmed over a thousand planets, roughly a fifth of the 6,000-plus known worlds; ESPRESSO on the VLT now reads stellar motions of about 10 centimetres per second - walking pace, measured across light years. Source: Grokipedia, '51 Pegasi', 'Michel Mayor', 'Doppler spectroscopy'.",
+    "context": "4.23 days. A giant planet hugging its star was something nobody's theory of planet formation had predicted. Mayor and Queloz read the wobble from 35 measurements over 114 days with the ELODIE spectrograph on the 1.93-metre telescope at Haute-Provence Observatory. The radial-velocity method has since confirmed over a thousand planets, roughly a fifth of the 6,000-plus known worlds; ESPRESSO on the VLT is built to read stellar motions as slow as about 10 centimetres per second - a fraction of walking pace, measured across light years. Source: Grokipedia, '51 Pegasi', 'Michel Mayor', 'Doppler spectroscopy'.",
     "topic": "buys-ballots-trumpeters-on-the-open-railway-car"
   },
   {
@@ -3233,7 +3220,7 @@
       "Yellow, then orange, then blue, and finally invisible",
       "Violet, then blue, then green, and finally invisible"
     ],
-    "context": "That part of the paper was wrong, for two independent reasons: a star's colour is set overwhelmingly by its surface temperature (hotter stars peak at shorter wavelengths and look blue-white, cooler ones glow red), and the orbital speeds of the double stars actually observed are far too small to move a colour visibly - you would need an enormous fraction of the speed of light. Doppler also assumed light waves were longitudinal, like sound; they are transverse. His frequency-shift derivation, though, was sound. He read the paper on 25 May 1842 to the Royal Bohemian Society of Sciences in Prague, with five members present. Source: English Wikipedia, 'On the coloured light of the binary stars and some other stars of the heavens'; Grokipedia, 'Doppler effect', 'Starlight'; David D. Nolte, Physics Today (March 2020).",
+    "context": "That part of the paper was wrong, for two independent reasons: a star's colour is set overwhelmingly by its surface temperature (hotter stars peak at shorter wavelengths and look blue-white, cooler ones glow red), and the orbital speeds of the double stars actually observed are far too small to move a colour visibly - it would take an enormous fraction of the speed of light. Doppler also assumed light waves were longitudinal, like sound; they are transverse. His frequency-shift derivation, though, was sound. He read the paper on 25 May 1842 to the Royal Bohemian Society of Sciences in Prague, with five members present. Source: English Wikipedia, 'On the coloured light of the binary stars and some other stars of the heavens'; Grokipedia, 'Doppler effect', 'Starlight'; David D. Nolte, Physics Today (March 2020).",
     "topic": "buys-ballots-trumpeters-on-the-open-railway-car"
   },
   {
@@ -3264,15 +3251,15 @@
   },
   {
     "tier": 5,
-    "question": "William Huggins told the Royal Society of London on 14 May 1868 that he had measured the speed of Sirius, the first time anyone had measured the speed of a star at all. He put it at roughly 40 kilometres per second, receding. Sirius is in fact closing on Earth at about 5.5, so he had the size and even the direction wrong. What is the likeliest source of his error?",
-    "answer": "He had not subtracted the Earth's own orbital motion around the Sun",
+    "question": "William Huggins told the Royal Society of London on 14 May 1868 that he had measured the speed of Sirius, the first speed ever measured for a star. He put it at some 40 to 50 kilometres per second, receding. Sirius is in fact closing on Earth at about 5.5, so he had the size and even the direction wrong. What did his flawed measurement still achieve?",
+    "answer": "It convinced scientists the Doppler shift works for light",
     "choices": [
-      "He had not subtracted the Earth's own orbital motion around the Sun",
-      "He had not allowed for the Sun's own drift through the local stars",
-      "He had measured a faint companion in the same field, not Sirius itself",
-      "He had trusted a reference standard that had drifted since its making"
+      "It convinced scientists the Doppler shift works for light",
+      "It gave astronomers their first distance to any star",
+      "It revealed the faint companion star circling Sirius",
+      "It fixed the speed of light more exactly than before"
     ],
-    "context": "Earth swings round the Sun at about 30 kilometres per second, and Huggins does not appear to have subtracted it. What he had found, on 24 February 1868, was the F line - a hydrogen line - in the spectrum of Sirius, displaced toward the red. Reported figures for his velocity vary between about 40 and 50 km/s. David Nolte's verdict is that the importance of the Sirius measurement was more psychological than scientifically accurate: wrong in size and even in sign, it still convinced the scientific community that the optical Doppler effect was real, which is exactly what the idea needed. Source: David D. Nolte, 'Orion's Dog: The Serious Science of Sirius', Galileo Unbound (4 Sept 2023); OpenStax/Pressbooks Astronomy 17.4.",
+    "context": "What he had found, on 24 February 1868, was the F line - a hydrogen line - in the spectrum of Sirius, displaced toward the red. Reported figures for his velocity vary between about 40 and 50 km/s. His paper did allow for the Earth's own orbital motion, turning a raw figure of about 41 miles a second into 29.4, so the error lay in the tiny shift itself, which he judged by eye. David Nolte's verdict is that the importance of the Sirius measurement was more psychological than scientifically accurate: wrong in size and even in sign, it still convinced the scientific community that the optical Doppler effect was real, which is exactly what the idea needed. The first star distance had come thirty years earlier, from Friedrich Bessel in 1838, and Sirius's faint companion was first seen by Alvan Graham Clark in 1862. Sources: W. Huggins, Philosophical Transactions 158 (1868), pp. 529-564; David D. Nolte, 'Orion's Dog: The Serious Science of Sirius', Galileo Unbound (4 Sept 2023).",
     "topic": "buys-ballots-trumpeters-on-the-open-railway-car"
   },
   {
@@ -3363,7 +3350,7 @@
       "Only dying cells resist the silver, so the picture shows healthy tissue alone",
       "Sparing most cells leaves enough silver in the bath to run the block again"
     ],
-    "context": "To follow one cell's branches to their tips you need a thick slice, because the cell is a three-dimensional thing. If every cell in that thickness went black you would be looking at a wall of ink. Sparseness turns the forest into a few visible trees. Why only 1-5% of cells take the stain is still unknown; Bock calls it a defect that 'has turned out to be an advantage', and the PMC review of Golgi's original slides calls it 'the still unexplained secret of its revelatory power'. Sources: Bock, Endeavour 37(4) 2013; grokipedia.com/page/Golgi's_method; pmc.ncbi.nlm.nih.gov/articles/PMC6388087/",
+    "context": "Following one cell's branches to their tips takes a thick slice, because the cell is a three-dimensional thing. If every cell in that thickness went black, the slide would show only a wall of ink. Sparseness turns the forest into a few visible trees. Why only 1-5% of cells take the stain is still unknown; Bock calls it a defect that 'has turned out to be an advantage', and the PMC review of Golgi's original slides calls it 'the still unexplained secret of its revelatory power'. Sources: Bock, Endeavour 37(4) 2013; grokipedia.com/page/Golgi's_method; pmc.ncbi.nlm.nih.gov/articles/PMC6388087/",
     "topic": "cajal-golgi-and-the-gap-between-neurons"
   },
   {
@@ -3441,7 +3428,7 @@
       "A ring of open pores punched clean through the membrane",
       "A knot of fine tubules spiralling away into the cell body"
     ],
-    "context": "Synaptic vesicles -- sacs roughly 40 nanometres across, holding the chemical messenger and queued at the membrane to dump it into the cleft. The cleft itself is about 20 nanometres wide (some sources give 20-40): the two cells come within about a ten-thousandth of the width of a human hair and still do not touch. The instrument decided the argument, not the argument. Cajal had been dead for twenty years. Sources: Sotelo, 'The History of the Synapse', The Anatomical Record 2020; 'The discovery of synaptic vesicles', J Cell Biol 168(1); en.wikipedia.org/wiki/Chemical_synapse; en.wikipedia.org/wiki/Neuron_doctrine.",
+    "context": "Synaptic vesicles -- sacs roughly 40 nanometres across, holding the chemical messenger and queued at the membrane to dump it into the cleft. The cleft itself is about 20 nanometres wide (some sources give 20-40): the gap is thousands of times narrower than a human hair, and the two cells still do not touch. The instrument decided the argument, not the argument. Cajal had been dead for twenty years. Sources: Sotelo, 'The History of the Synapse', The Anatomical Record 2020; 'The discovery of synaptic vesicles', J Cell Biol 168(1); en.wikipedia.org/wiki/Chemical_synapse; en.wikipedia.org/wiki/Neuron_doctrine.",
     "topic": "cajal-golgi-and-the-gap-between-neurons"
   },
   {
@@ -3524,7 +3511,7 @@
   },
   {
     "tier": 2,
-    "question": "Rudolf Clausius wrote of Sadi Carnot's book: 'I have not been able to obtain a copy of this work.' He and William Thomson were building the second law of thermodynamics on Carnot's argument by 1850, and both admitted they had never read him. How had the argument reached them?",
+    "question": "Rudolf Clausius wrote of Sadi Carnot's book in 1850: 'I have not been able to obtain a copy of this work.' William Thomson had admitted the same in 1848, when he first took up Carnot's argument. How had that argument first reached them both?",
     "answer": "Emile Clapeyron had recast the whole argument in an 1834 memoir.",
     "choices": [
       "Hippolyte Carnot had circulated his brother's 1832 notebook widely.",
@@ -3532,7 +3519,7 @@
       "Emile Clapeyron had recast the whole argument in an 1834 memoir.",
       "James Joule's 1845 experiments had rediscovered the same ceiling."
     ],
-    "context": "Kelvin's 1848 footnote: 'Having never met with the original work, it is only through a paper by M. Clapeyron... that the Author has become acquainted with Carnot's Theory.' Clapeyron's 1834 memoir in the Journal de l'Ecole Polytechnique recast the reasoning and drew the first pressure-volume diagram of the cycle - and that copy of a copy is what sat in the libraries and kept the argument alive. Pierre-Simon Girard had reviewed the book favourably back in 1824, but his review said nothing about the reasoning, and nobody followed it up. Sadi's brother Hippolyte finally got him reprinted in 1878, with a facsimile of Sadi's handwritten sheet on the mechanical equivalent of heat, and wrote: 'But the only work he completed is the one we publish for the second time. It will be enough to ensure that his name is not forgotten.' SOURCE: CarnotCycle, 'How Kelvin and Clausius discovered Carnot's ideas', quoting Thomson 1848 and Clausius 1850; MacTutor 'Sadi Carnot'; arXiv:2508.17027; Grokipedia 'Nicolas Leonard Sadi Carnot'.",
+    "context": "Kelvin's 1848 footnote: 'Having never met with the original work, it is only through a paper by M. Clapeyron... that the Author has become acquainted with Carnot's Theory.' Thomson found a copy soon afterwards and quoted the book directly in his 1849 account of Carnot's theory. Clapeyron's 1834 memoir in the Journal de l'Ecole Polytechnique recast the reasoning and drew the first pressure-volume diagram of the cycle - and that copy of a copy is what sat in the libraries and kept the argument alive. Pierre-Simon Girard had reviewed the book favourably back in 1824, but his review said nothing about the reasoning, and nobody followed it up. Sadi's brother Hippolyte finally got him reprinted in 1878, with a facsimile of Sadi's handwritten sheet on the mechanical equivalent of heat, and wrote: 'But the only work he completed is the one we publish for the second time. It will be enough to ensure that his name is not forgotten.' SOURCE: CarnotCycle, 'How Kelvin and Clausius discovered Carnot's ideas', quoting Thomson 1848 and Clausius 1850; MacTutor 'Sadi Carnot'; arXiv:2508.17027; Grokipedia 'Nicolas Leonard Sadi Carnot'.",
     "topic": "carnots-perfect-engine-and-the-ceiling-nobody-can-beat"
   },
   {
@@ -3870,7 +3857,7 @@
       "A furnace for smelting platinum from its ore",
       "A burner for filling army hydrogen balloons"
     ],
-    "context": "Doebereiner's lamp: zinc granules in roughly 25% sulfuric acid generate hydrogen (Zn + H2SO4 -> ZnSO4 + H2); opening a stopcock sends a jet onto a platinum sponge at the nozzle, which glows red-hot and lights the gas. Close the stopcock, pressure builds, the acid falls away from the zinc, and the flame dies. Doebereiner -- a coachman's son and self-taught apothecary's apprentice -- owed his Jena professorship to the backing of the poet Johann Wolfgang von Goethe, who bought one of the first lamps, funded the platinum research and wrote a poem in its honour. Doebereiner filed no patent on it. Grokipedia records roughly 20,000 units in use in Germany and Britain by 1828; the largest maker, Heinrich Gottfried Piegler of Schleiz, kept building them until about 1880. Friction 'Lucifer' matches were not patented until 1826 -- the lighter beat the match to market. Doebereiner also proposed the element 'triads' around 1829, foreshadowing the periodic law. Source: Grokipedia, \"Doebereiner's lamp\".",
+    "context": "Doebereiner's lamp: zinc granules in roughly 25% sulfuric acid generate hydrogen (Zn + H2SO4 -> ZnSO4 + H2); opening a stopcock sends a jet onto a platinum sponge at the nozzle, which glows red-hot and lights the gas. Close the stopcock, pressure builds, the acid falls away from the zinc, and the flame dies. Doebereiner -- a coachman's son and self-taught apothecary's apprentice -- owed his Jena professorship to the backing of the poet Johann Wolfgang von Goethe, who bought one of the first lamps, funded the platinum research and wrote a poem in its honour. Doebereiner filed no patent on it. Grokipedia records roughly 20,000 units in use in Germany and Britain by 1828; the largest maker, Heinrich Gottfried Piegler of Schleiz, kept building them until about 1880. John Walker's first friction matches went on sale only in 1827 -- the lighter beat the match to market. Doebereiner also proposed the element 'triads' around 1829, foreshadowing the periodic law. Source: Grokipedia, \"Doebereiner's lamp\".",
     "topic": "catalysts-changed-by-nothing-changing-everything"
   },
   {
@@ -3896,7 +3883,7 @@
       "Hasten the reaction while being consumed in step with the product",
       "Hasten the reaction only while held above its melting point"
     ],
-    "context": "Berzelius named the class CATALYSIS, from the Greek katalysis, 'loosening', defining it as 'the property of exerting on other bodies an action which is very different from chemical affinity', the agent hastening the reaction while emerging unaltered in quantity and quality. He had already called Doebereiner's 1823 platinum result 'the most brilliant' of its year and cited it as the founding example. Berzelius also coined isomerism (1830), protein (1838) and allotropy (1841), introduced the modern element symbols, and published the first table of atomic weights in 1814. FORGOTTEN FIRST: the British chemist Elizabeth Fulhame got there 41 years earlier. Her 'An Essay On Combustion with a View to a New Art of Dying and Painting' (1794), the fruit of fourteen years of experiments, showed that many oxidations run only when water is present, that the water directly participates, and that it is handed back and detectable at the end -- the exact 'consumed then returned' logic. Wikipedia's article on catalysis says outright that the concept 'was invented by chemist Elizabeth Fulhame'. Earlier observations Berzelius was gathering: Gottlieb Kirchhoff's acid-and-starch syrup (1811) and Louis Jacques Thenard's discovery that blood breaks down hydrogen peroxide (1818). Sources: Grokipedia, 'Joens Jacob Berzelius'; Grokipedia, 'Catalysis'; Wikipedia, 'Elizabeth Fulhame'.",
+    "context": "Berzelius named the class CATALYSIS, from the Greek katalysis, 'loosening', defining it as 'the property of exerting on other bodies an action which is very different from chemical affinity', the agent hastening the reaction while emerging unaltered in quantity and quality. He had already called Doebereiner's 1823 platinum result 'the most brilliant' of its year and cited it as the founding example. Berzelius also coined isomerism (1830), protein (1838) and allotropy (1841), introduced the modern element symbols, and published an influential table of atomic weights in 1814. FORGOTTEN FIRST: the British chemist Elizabeth Fulhame got there 41 years earlier. Her 'An Essay On Combustion with a View to a New Art of Dying and Painting' (1794), the fruit of fourteen years of experiments, showed that many oxidations run only when water is present, that the water directly participates, and that it is handed back and detectable at the end -- the exact 'consumed then returned' logic. Wikipedia's article on catalysis says outright that the concept 'was invented by chemist Elizabeth Fulhame'. Earlier observations Berzelius was gathering: Gottlieb Kirchhoff's acid-and-starch syrup (1811) and Louis Jacques Thenard's discovery that blood breaks down hydrogen peroxide (1818). Sources: Grokipedia, 'Joens Jacob Berzelius'; Grokipedia, 'Catalysis'; Wikipedia, 'Elizabeth Fulhame'.",
     "topic": "catalysts-changed-by-nothing-changing-everything"
   },
   {
@@ -3935,7 +3922,7 @@
       "It gathers into droplets at the coldest points",
       "It drifts across until it finds a crack to fill"
     ],
-    "context": "Langmuir showed that adsorption occurs in MONOMOLECULAR layers on a clean surface, and derived the Langmuir adsorption isotherm, theta = Kp/(1 + Kp), by equating the rates of adsorption and desorption. He separated chemisorption -- strong, site-specific bonding, oxygen on tungsten at about 160 kcal/mol -- from physisorption, the weak van der Waals kind. He won the 1932 Nobel Prize in Chemistry and was the first industrial scientist ever to take one; he also coined the word 'plasma' in 1927. The consequence: if only the outermost single layer of atoms can take part, surface area is the entire game -- which is why catalysts are built as sponges, powders and honeycombs rather than solid blocks. A modern converter uses a cordierite ceramic honeycomb with typically 400 to 900 cells per square inch. The catalytic cycle runs adsorption -> surface reaction -> desorption of product -> catalyst regenerated, and the two classic surface mechanisms are Langmuir-Hinshelwood (both reactants adsorb on adjacent sites, then react) and Eley-Rideal (one adsorbs, the other strikes it straight out of the gas). Sources: Grokipedia, 'Irving Langmuir'; Grokipedia, 'Catalysis'; Grokipedia, 'Catalytic converter'.",
+    "context": "Langmuir showed that adsorption occurs in MONOMOLECULAR layers on a clean surface, and derived the Langmuir adsorption isotherm, theta = Kp/(1 + Kp), by equating the rates of adsorption and desorption. He separated chemisorption -- strong, site-specific bonding, oxygen on tungsten at about 160 kcal/mol -- from physisorption, the weak van der Waals kind. He won the 1932 Nobel Prize in Chemistry and was among the first scientists from an industrial laboratory to take one; he also coined the word 'plasma' in 1928. The consequence: if only the outermost single layer of atoms can take part, surface area is the entire game -- which is why catalysts are built as sponges, powders and honeycombs rather than solid blocks. A modern converter uses a cordierite ceramic honeycomb with typically 400 to 900 cells per square inch. The catalytic cycle runs adsorption -> surface reaction -> desorption of product -> catalyst regenerated, and the two classic surface mechanisms are Langmuir-Hinshelwood (both reactants adsorb on adjacent sites, then react) and Eley-Rideal (one adsorbs, the other strikes it straight out of the gas). Sources: Grokipedia, 'Irving Langmuir'; Grokipedia, 'Catalysis'; Grokipedia, 'Catalytic converter'.",
     "topic": "catalysts-changed-by-nothing-changing-everything"
   },
   {
@@ -3953,7 +3940,7 @@
   },
   {
     "tier": 5,
-    "question": "Anna Radzicka and Richard Wolfenden put a clock on an enzyme in 1995 at one stubborn job. Left in plain water at room temperature, half of a sample of orotic acid needs 78 million years to shed its carbon dioxide, longer than the whole span since the last dinosaurs died. Human cells run that exact step constantly, with one enzyme doing the work. How long does the enzyme need?",
+    "question": "Anna Radzicka and Richard Wolfenden clocked an enzyme in 1995 at one stubborn job: stripping carbon dioxide from orotidine monophosphate, a step toward the building blocks of RNA and DNA. Unaided, orotic acid, that molecule's core ring, needs 78 million years in plain water for half a sample to shed its carbon dioxide, longer than the span since the last dinosaurs died. How long does the enzyme need?",
     "answer": "About 18 milliseconds",
     "choices": [
       "About 18 microseconds",
@@ -3961,7 +3948,7 @@
       "About 18 seconds",
       "About 18 minutes"
     ],
-    "context": "Radzicka and Wolfenden, 'A proficient enzyme', Science 1995, 267(5194):90-93. Orotic acid decarboxylates spontaneously with a half-time of 78 million years in neutral water at room temperature; the enzyme orotidine 5'-monophosphate decarboxylase does the same transformation with a half-time of 18 milliseconds. That is a rate enhancement of about 10^17 -- the most proficient pure protein catalyst known in nature. And the enzyme puts in no energy and is consumed by nothing: it simply opens a lower pass over the same mountain. The same paper reports dimethyl phosphate hydrolysing spontaneously with a half-time of 130,000 years. Sources: Radzicka A, Wolfenden R, Science 1995 (PubMed 7809611); Wikipedia, \"Orotidine 5'-phosphate decarboxylase\".",
+    "context": "Radzicka and Wolfenden, 'A proficient enzyme', Science 1995, 267(5194):90-93. Their abstract reports orotic acid, the ring of orotidine 5'-monophosphate (OMP) that carries the carbon dioxide, decarboxylating spontaneously with a half-time of 78 million years in neutral water at room temperature; the enzyme orotidine 5'-monophosphate decarboxylase does the job on OMP with a half-time of 18 milliseconds. That is a rate enhancement of about 10^17, one of the largest known for any enzyme. And the enzyme puts in no energy and is consumed by nothing: it simply opens a lower pass over the same mountain. The same paper reports dimethyl phosphate hydrolysing spontaneously with a half-time of 130,000 years. Sources: Radzicka A, Wolfenden R, Science 1995 (PubMed 7809611); Wikipedia, \"Orotidine 5'-phosphate decarboxylase\".",
     "topic": "catalysts-changed-by-nothing-changing-everything"
   },
   {
@@ -4767,7 +4754,7 @@
       "The sails filled harder on one tack than the other in one breeze.",
       "The gulls overhead slid backwards as the boat gathered way."
     ],
-    "context": "Wikipedia flags the Thames story as famous but possibly apocryphal, so treat it as a story, not a document. What it points at is real and is called aberration: Bradley told the Royal Society in January 1729 that an observer must tilt the telescope forward while Earth moves, exactly as a person running through vertical rain tilts the umbrella forward. Source: en.wikipedia.org/wiki/James_Bradley.  (Legend.)",
+    "context": "Wikipedia flags the Thames story as famous but possibly apocryphal, so treat it as a story, not a document. What it points at is real and is called aberration: Bradley told the Royal Society in January 1729 that an observer must tilt the telescope forward while Earth moves; teachers now compare it to a runner tilting an umbrella into vertical rain. Source: en.wikipedia.org/wiki/James_Bradley.  (Legend.)",
     "topic": "clocking-light-jupiters-moons-to-a-mountain-top"
   },
   {
@@ -4806,7 +4793,7 @@
       "The time light needs to cross the whole of Jupiter's shadow -- about 22 minutes.",
       "The time light needs to travel from Jupiter across to Earth -- about 40 minutes."
     ],
-    "context": "Romer's 22 minutes was generous: light crosses one astronomical unit in 499 seconds, so the full diameter takes about 998 seconds -- roughly 16.6 minutes. Christiaan Huygens is the man who turned the minutes into a speed, in his Traite de la Lumiere: 110,000,000 toises per second, which converts to about 212,000-220,000 km/s, some 27 percent low. The error was not Romer's timing but the era's Earth-Sun distance -- Cassini's 1672 figure was about 140 million km against the true 149.6 million. Source: Grokipedia, 'Romer's determination of the speed of light' and 'Speed of light'; en.wikipedia.org for the toises figure.",
+    "context": "Romer's 22 minutes was generous: light crosses one astronomical unit in 499 seconds, so the full diameter takes about 998 seconds -- roughly 16.6 minutes. Christiaan Huygens is the man who turned the minutes into a speed, in his Traite de la Lumiere: 110,000,000 toises per second, which converts to about 212,000-220,000 km/s, some 27 percent low. Most of the error was in the 22 minutes themselves; the era's Earth-Sun distance added a little more -- Cassini's 1672 figure was about 140 million km against the true 149.6 million. Source: Grokipedia, 'Romer's determination of the speed of light' and 'Speed of light'; en.wikipedia.org for the toises figure.",
     "topic": "clocking-light-jupiters-moons-to-a-mountain-top"
   },
   {
@@ -4819,7 +4806,7 @@
       "It arrived doubled, as two separate flashes a moment apart.",
       "It broke into a flicker too fast for any eye to follow."
     ],
-    "context": "At 12.6 turns a second the wheel moved by half a tooth while the light was away, so a tooth stood where the gap had been and the beam was cut off; at 25.2 turns a full tooth passed, a gap stood where a gap had been, and the flash came through. From the wheel's rate and the 17,266-metre round trip Fizeau got about 313,000 km/s, roughly 4 to 5 percent high -- and the first value for light's speed that owed nothing to astronomy. Marie Alfred Cornu reran the same wheel from 1872 to 1876, pushing to the 21st-order extinction and recording the turns electrically: 300,400,000 m/s, 0.2 percent high. Fizeau is one of the 72 names around the Eiffel Tower, and the only one of them still alive when it opened. Source: en.wikipedia.org/wiki/Fizeau%27s_measurement_of_the_speed_of_light_in_air.",
+    "context": "At 12.6 turns a second the wheel moved by half a tooth while the light was away, so a tooth stood where the gap had been and the beam was cut off; at 25.2 turns a full tooth passed, a gap stood where a gap had been, and the flash came through. From the wheel's rate and the 17,266-metre round trip Fizeau got about 313,000 km/s, roughly 4 to 5 percent high -- and the first value for light's speed that owed nothing to astronomy. Marie Alfred Cornu reran the same wheel from 1872 to 1876, pushing to the 21st-order extinction and recording the turns electrically: 300,400,000 m/s, 0.2 percent high. Fizeau is one of the 72 names around the Eiffel Tower. Source: en.wikipedia.org/wiki/Fizeau%27s_measurement_of_the_speed_of_light_in_air.",
     "topic": "clocking-light-jupiters-moons-to-a-mountain-top"
   },
   {
@@ -4832,20 +4819,20 @@
       "Its extremes came eighteen months apart, not twelve months.",
       "Its extremes arrived a month later with each passing year."
     ],
-    "context": "The effect is aberration, and it has a second signature parallax cannot fake: it does not shrink with the star's distance. Bradley announced the cause in January 1729 -- you must tilt the telescope forward while Earth moves, as a runner tilts an umbrella into vertical rain -- and from that tilt he stated that light 'is propagated as far as from the Sun to the Earth in 8 minutes 12 seconds'. The modern figure is 8 minutes 19 seconds. He also found light travels 10,210 times faster than Earth moves in its orbit; the modern value is 10,066 times. He was hunting one thing and settled another. Source: en.wikipedia.org/wiki/James_Bradley and en.wikipedia.org/wiki/Aberration_(astronomy).",
+    "context": "The effect is aberration, and it has a second signature parallax cannot fake: it does not shrink with the star's distance. Bradley announced the cause in January 1729 -- the telescope must be tilted forward while Earth moves, as a runner tilts an umbrella into vertical rain -- and from that tilt he stated that light 'is propagated as far as from the Sun to the Earth in 8 minutes 12 seconds'. The modern figure is 8 minutes 19 seconds. He also found light travels 10,210 times faster than Earth moves in its orbit; the modern value is 10,066 times. He was hunting one thing and settled another. Source: en.wikipedia.org/wiki/James_Bradley and en.wikipedia.org/wiki/Aberration_(astronomy).",
     "topic": "clocking-light-jupiters-moons-to-a-mountain-top"
   },
   {
     "tier": 4,
     "question": "Leon Foucault spun a mirror at 600 to 800 turns a second with a small steam engine in his own Paris apartment on 27 April 1850. He was running the test Francois Arago had proposed in 1838: compare light's speed in air with its speed in water. The corpuscular theory of light and the wave theory made opposite predictions about the denser medium. What did he find?",
-    "answer": "Light runs slower in water, by very nearly a factor of 1.33.",
+    "answer": "Light runs slower in water, the denser of the two.",
     "choices": [
-      "Light runs slower in water, by very nearly a factor of 1.33.",
-      "Light runs faster in water, by very nearly a factor of 1.33.",
+      "Light runs slower in water, the denser of the two.",
+      "Light runs faster in water, the denser of the two.",
       "Light runs at the same speed in both, as far as he could measure.",
-      "Light runs slower in water, but by less than a tenth of a percent."
+      "The beam came back too faint through water to measure at all."
     ],
-    "context": "The water path threw the returning image 0.469 mm off centre, the air path only 0.375 mm -- and that ratio is water's refractive index, 1.33. Isaac Newton's corpuscular theory required light to speed UP in the denser medium; the wave theory required it to slow DOWN. Foucault announced to the French Academy on 6 May 1850, seven weeks before Hippolyte Fizeau published the same result on 17 June. One measurement, one dead theory. In 1862, with a folded baseline of only about 20 metres indoors at the Paris Observatory, Foucault got 298,000 +/- 500 km/s, backing Urbain Le Verrier's insistence that the accepted figure was several percent too high. Source: Grokipedia, 'Foucault's measurements of the speed of light'.",
+    "context": "The image returning through the water tube was thrown farther off centre than the one through air: that light had been longer on the way. Isaac Newton's corpuscular theory required light to speed UP in the denser medium; the wave theory required it to slow DOWN. Foucault announced to the French Academy on 6 May 1850, six weeks before Hippolyte Fizeau published the same result on 17 June. One measurement, one dead theory. In 1862, with a folded baseline of only about 20 metres indoors at the Paris Observatory, Foucault got 298,000 +/- 500 km/s, backing Urbain Le Verrier's insistence that the accepted figure was several percent too high. Source: Grokipedia, 'Foucault's measurements of the speed of light'.",
     "topic": "clocking-light-jupiters-moons-to-a-mountain-top"
   },
   {
@@ -5071,15 +5058,15 @@
   },
   {
     "tier": 2,
-    "question": "A field worker took down a family tree in an American home for the Eugenics Record Office on Long Island. The office used such records to push for laws about who could have children. Which policy did the office push for hardest?",
+    "question": "A field worker took down a family tree in an American home for the Eugenics Record Office on Long Island. The office used such records to argue for new laws. Which policy did the office push for hardest?",
     "answer": "Forced sterilization laws",
     "choices": [
       "Forced sterilization laws",
-      "Free daycare for working mothers",
-      "Nationwide adoption reform",
-      "A federal marriage-license lottery"
+      "Mandatory IQ tests in every school",
+      "Tax breaks for large 'fit' families",
+      "Bans on marriage between cousins"
     ],
-    "context": "Davenport (1866-1944), Harvard-trained zoologist, founded the ERO under the Carnegie Institution and led it until his retirement. His credentials as a legitimate biologist gave the office cover, which is exactly why he was chosen. Source: https://collections.countway.harvard.edu/onview/exhibits/show/galtonschildren/galton-s-children/charles-b--davenport",
+    "context": "Sterilization was the office's flagship cause, and Harry Laughlin's 1922 model law gave states ready-made statute language for it. Davenport (1866-1944), a Harvard-trained zoologist, founded the office and led it until his retirement; his standing as a real biologist lent it cover. Source: https://collections.countway.harvard.edu/onview/exhibits/show/galtonschildren/galton-s-children/charles-b--davenport",
     "topic": "cold-spring-harbor-the-office-that-wrote-the-law"
   },
   {
@@ -5105,7 +5092,7 @@
       "a Model Immigration Screening Statute",
       "a Model Institutional Commitment Bill"
     ],
-    "context": "The Model Law appeared in Laughlin's 1922 book Eugenical Sterilization in the United States. It named nine categories -- feeble-minded, insane, criminal, epileptic, alcoholic, blind, deaf, deformed, indigent -- and gave a legislature ready-to-file statute language. Source: https://embryo.asu.edu/pages/eugenical-sterilization-united-states-1922-harry-h-laughlin",
+    "context": "The Model Law appeared in Laughlin's 1922 book Eugenical Sterilization in the United States. It named ten categories -- feeble-minded, insane, criminalistic, epileptic, inebriate, diseased, blind, deaf, deformed and dependent -- and gave a legislature ready-to-file statute language. Source: https://embryo.asu.edu/pages/eugenical-sterilization-united-states-1922-harry-h-laughlin",
     "topic": "cold-spring-harbor-the-office-that-wrote-the-law"
   },
   {
@@ -5162,7 +5149,7 @@
   },
   {
     "tier": 5,
-    "question": "Wickliffe Draper, a textile heir, put up the money for a new American foundation in 1937, and Harry Laughlin helped found it three months after accepting his honorary degree from a university in Nazi Germany. The Pioneer Fund's first project brought material out of Nazi Germany to American audiences. What did the fund distribute in American churches and schools?",
+    "question": "Wickliffe Draper, a textile heir, put up the money for a new American foundation in 1937, and Harry Laughlin helped found it the year after accepting an honorary degree from a university in Nazi Germany. The Pioneer Fund's first project brought material out of Nazi Germany to American audiences. What did the fund distribute in American churches and schools?",
     "answer": "the Nazi eugenics propaganda film Erbkrank",
     "choices": [
       "the Nazi eugenics propaganda film Erbkrank",
@@ -5183,7 +5170,7 @@
       "It stands still while the planets circle the Sun",
       "It rests inside nested crystalline spheres of aether"
     ],
-    "context": "De revolutionibus orbium coelestium made the Earth one planet among six -- Mercury, Venus, Earth, Mars, Jupiter, Saturn -- circling a fixed Sun once a year while spinning daily on its own axis to give day and night. Copernicus composed it between about 1520 and 1541, after circulating a short outline by 1514. The deathbed copy is the recorded account, not an eyewitness scene: the date survives through a letter from his friend Bishop Tiedemann Giese to Rheticus, and Grokipedia notes the viewing 'remains unverified beyond contemporary reports'. Of the wrong choices, the third is Tycho Brahe's later compromise and the fourth is Aristotle's cosmos. Sources: Grokipedia, 'Nicolaus Copernicus' and 'De revolutionibus orbium coelestium'.",
+    "context": "De revolutionibus orbium coelestium made the Earth one planet among six -- Mercury, Venus, Earth, Mars, Jupiter, Saturn -- circling a fixed Sun once a year while spinning daily on its own axis to give day and night. Copernicus composed it between about 1520 and 1541, after circulating a short outline by 1514. The deathbed copy is the recorded account, not an eyewitness scene: the date survives through a letter from his friend Bishop Tiedemann Giese to Rheticus, and Grokipedia notes the viewing 'remains unverified beyond contemporary reports'. Of the wrong answers, an Earth standing still while the planets circle the Sun is Tycho Brahe's later compromise, and the crystalline spheres are Aristotle's cosmos. Sources: Grokipedia, 'Nicolaus Copernicus' and 'De revolutionibus orbium coelestium'.",
     "topic": "copernicuss-deathbed-book"
   },
   {
@@ -5201,7 +5188,7 @@
   },
   {
     "tier": 2,
-    "question": "Rheticus, a young math student, went to visit Copernicus in 1539, the only student the old canon ever taught. The manuscript on the heavens had sat unpublished for years. In 1540 Rheticus had a small book of his own printed. What was in it?",
+    "question": "Rheticus, a young mathematics professor from Wittenberg, went to study with Copernicus in 1539, the only pupil the old canon ever taught. The manuscript on the heavens had sat unpublished for years. In 1540 Rheticus had a small book of his own printed. What was in it?",
     "answer": "A short summary of the theory, his Narratio Prima",
     "choices": [
       "A short summary of the theory, his Narratio Prima",
@@ -5248,7 +5235,7 @@
       "A new printing had dropped Osiander's unsigned preface",
       "The Jesuit colleges had stopped teaching the model"
     ],
-    "context": "This is the corrected misconception: the book drew no condemnation at all in 1543, and the earliest hostility came from Protestant reformers, not from Rome. The 1616 suspension was also an edit, not a ban -- in 1620 the Index specified NINE sentences, the ones stating heliocentrism as certain rather than hypothetical, to be omitted or changed; owners struck them out by hand and wrote the approved wording in the margins, after which the book could be read legally. It came off the Index Librorum Prohibitorum entirely only in 1835. Sources: Grokipedia, 'De revolutionibus orbium coelestium'; Cambridge HPS, 'Starry Messenger: Copernicus's Book'.",
+    "context": "This is the corrected misconception: the book drew no condemnation at all in 1543, and the earliest hostility came from Protestant reformers, not from Rome. The 1616 suspension was also an edit, not a ban -- in 1620 the Index specified about ten passages, the ones stating heliocentrism as certain rather than hypothetical, to be omitted or changed; owners struck them out by hand and wrote the approved wording in the margins, after which the book could be read legally. It came off the Index Librorum Prohibitorum entirely only in 1835. Sources: Grokipedia, 'De revolutionibus orbium coelestium'; Cambridge HPS, 'Starry Messenger: Copernicus's Book'.",
     "topic": "copernicuss-deathbed-book"
   },
   {
@@ -5266,7 +5253,7 @@
   },
   {
     "tier": 3,
-    "question": "Aristarchus of Samos argued around 280 BC that the Sun and the stars stand still while the Earth circles the Sun. His own book is lost, and the claim survives only because Archimedes summarised it. Copernicus named him in an early draft. What became of that mention?",
+    "question": "Aristarchus of Samos argued around 280 BC that the Sun and the stars stand still while the Earth circles the Sun. His own book is lost, and the claim survives chiefly through Archimedes' summary of it. Copernicus named him in an early draft. What became of that mention?",
     "answer": "Copernicus struck it out before the book went to press",
     "choices": [
       "Copernicus struck it out before the book went to press",
@@ -5313,7 +5300,7 @@
       "The chimney stack shifting as the year warmed and cooled",
       "The Earth's axis slowly wobbling against the fixed stars"
     ],
-    "context": "This is the aberration of starlight, and the flash of insight came from watching how rain slants for a walker (Grokipedia records the analogy as a boat on the Thames). Light has a finite speed and the observer is racing sideways, so the telescope must be tilted slightly into the motion. The angle is v/c -- Earth's roughly 30 km/s against light -- giving about 20.5 arcseconds. Bradley presented it to the Royal Society in a letter to Edmond Halley on 18 December 1728, published 1729. Two payoffs at once: the first direct physical proof that the Earth moves, 186 years after Copernicus's book, and a speed of light of about 301,000 km/s against the modern 299,792.458. Sources: Grokipedia, 'James Bradley'; Wikipedia, 'Aberration (astronomy)'.",
+    "context": "This is the aberration of starlight, and the famous story says the flash of insight came on a boat on the Thames, when the masthead vane swung each time the boat turned; teachers now compare it to rain slanting for a walker. Light has a finite speed and the observer is racing sideways, so the telescope must be tilted slightly into the motion. The angle is v/c -- Earth's roughly 30 km/s against light -- giving about 20.5 arcseconds. Bradley presented it to the Royal Society in a letter to Edmond Halley on 18 December 1728, published 1729. Two payoffs at once: the first direct physical proof that the Earth moves, 186 years after Copernicus's book, and a speed of light of about 301,000 km/s against the modern 299,792.458. Sources: Grokipedia, 'James Bradley'; Wikipedia, 'Aberration (astronomy)'.",
     "topic": "copernicuss-deathbed-book"
   },
   {
@@ -6085,7 +6072,7 @@
   },
   {
     "tier": 3,
-    "question": "Democritus argued two thousand years before John Dalton that matter is made of pieces too small to cut. For all those centuries it stayed just an argument, with nothing a chemist could do with it at a bench. Dalton's book of 1808 turned the old idea into working chemistry. What did the book carry that had never existed before?",
+    "question": "Democritus argued two thousand years before John Dalton that matter is made of pieces too small to cut. For all those centuries it stayed just an argument, with nothing a chemist could do with it at a bench. Dalton turned the old idea into working chemistry in the first years of the 1800s. What did he produce that had never existed before?",
     "answer": "A table of the atoms' relative weights",
     "choices": [
       "A table of the atoms' relative weights",
@@ -6093,7 +6080,7 @@
       "A count of the atoms filling a jar of gas",
       "A method for splitting an atom in two"
     ],
-    "context": "Dalton did not invent the idea of atoms -- the Greeks had speculated. What was new was the numbers. His stated aim was 'to shew the importance and advantage of ascertaining the relative weights of the ultimate particles, both of simple and compound bodies', and once particles had weights, a speculation became something you could check on a balance. Source: Wikiquote 'John Dalton', sourced to A New System of Chemical Philosophy (1808), Ch. III; Science and Industry Museum, 'John Dalton: atoms, eyesight and auroras'.",
+    "context": "Dalton did not invent the idea of atoms -- the Greeks had speculated. What was new was the numbers: his first table of relative atomic weights was printed in 1805, and a fuller one in A New System of Chemical Philosophy in 1808. His stated aim was 'to shew the importance and advantage of ascertaining the relative weights of the ultimate particles, both of simple and compound bodies', and once particles had weights, a speculation became something you could check on a balance. Source: Wikiquote 'John Dalton', sourced to A New System of Chemical Philosophy (1808), Ch. III; Science and Industry Museum, 'John Dalton: atoms, eyesight and auroras'.",
     "topic": "dalton-weighs-the-invisible-and-wills-his-own-eyes-to-the-te"
   },
   {
@@ -6111,7 +6098,7 @@
   },
   {
     "tier": 3,
-    "question": "John Dalton burned pure carbon two different ways in the early 1800s and got two different gases. Then, for exactly the same weight of carbon in each, he weighed what had combined with it. What did the scales show?",
+    "question": "Pure carbon burned two different ways gives two different gases. John Dalton compared them in the early 1800s, taking exactly the same weight of carbon in each and asking how much oxygen had joined it. What did the numbers show?",
     "answer": "One gas took exactly twice the oxygen of the other",
     "choices": [
       "One gas took exactly twice the oxygen of the other",
@@ -6119,7 +6106,7 @@
       "One gas took exactly ten times the oxygen of the other",
       "One gas took a slightly different amount each time"
     ],
-    "context": "Exactly twice: 100 g of carbon took 133 g of oxygen one way and 266 g the other. Not 1.7 times, not 2.3 -- twice. We now call the two gases carbon monoxide and carbon dioxide. Dalton's three nitrogen oxides gave 1:2:4 just as sharply, and his own sentence puts the whole argument in its last four words: 'The elements of oxygen may combine with a certain portion of nitrous gas or with twice that portion, but with no intermediate quantity.' Whole numbers mean discrete lumps -- and that pair of weighings is what turned atoms from philosophy into something a chemist could count. Source: Wikipedia, 'Law of multiple proportions'; worked figures from Citizendium, 'law of multiple proportions (chemistry)'; quotation from Wikipedia, 'John Dalton'.",
+    "context": "Exactly twice: 100 g of carbon took 133 g of oxygen one way and 266 g the other. Not 1.7 times, not 2.3 -- twice. The two gases are now called carbon monoxide and carbon dioxide. Dalton's three nitrogen oxides gave 1:2:4 just as sharply, and his own sentence puts the whole argument in its last four words: 'The elements of oxygen may combine with a certain portion of nitrous gas or with twice that portion, but with no intermediate quantity.' Whole numbers mean discrete lumps -- and that pair of weighings is what turned atoms from philosophy into something a chemist could count. Source: Wikipedia, 'Law of multiple proportions'; worked figures from Citizendium, 'law of multiple proportions (chemistry)'; quotation from Wikipedia, 'John Dalton'.",
     "topic": "dalton-weighs-the-invisible-and-wills-his-own-eyes-to-the-te"
   },
   {
@@ -6171,7 +6158,7 @@
       "He had joined every compound in a straight line",
       "He had made every ball solid all the way through"
     ],
-    "context": "'I had no idea at the time that the atoms were all of a bulk, but for the sake of illustration I had them made alike' -- Dalton, 1842. He knew perfectly well that atoms differ in size; he made the balls identical because identical balls taught better. A model that simplifies on purpose is honest so long as you say which part is the lie. He recorded the origin too: 'My friend Mr Ewart, at my suggestion, made me a number of equal balls, about an inch in diameter, about 30 years ago.' Source: Science and Industry Museum, 'John Dalton: atoms, eyesight and auroras', and the museum blog 'Imagining atoms'.",
+    "context": "'I had no idea at the time that the atoms were all of a bulk, but for the sake of illustration I had them made alike' -- Dalton, 1842. He knew perfectly well that atoms differ in size; he made the balls identical because identical balls taught better. A model that simplifies on purpose is honest so long as its maker says which part is the lie. He recorded the origin too: 'My friend Mr Ewart, at my suggestion, made me a number of equal balls, about an inch in diameter, about 30 years ago.' Source: Science and Industry Museum, 'John Dalton: atoms, eyesight and auroras', and the museum blog 'Imagining atoms'.",
     "topic": "dalton-weighs-the-invisible-and-wills-his-own-eyes-to-the-te"
   },
   {
@@ -6181,8 +6168,8 @@
     "choices": [
       "Sliced the back off it and looked through it",
       "Dried it and ground it up for a chemical test",
-      "Held it to a candle and weighed the heat",
-      "Floated it in water to measure its shape"
+      "Shone coloured lamps into it to test the nerve",
+      "Sent it to London to be examined by others"
     ],
     "context": "He turned the eyeball into a lens and looked through it. Red and green came through undistorted, in their proper colours -- so the eye was not a filter at all, and whatever made Dalton's world different sat behind the eye rather than inside it. A direct test beat an inspection. Source: '150 Years in a Jar -- The Story of John Dalton's Eyeballs', Today I Found Out; corroborated by McGill Office for Science and Society, 'John Dalton's Eyeball'.",
     "topic": "dalton-weighs-the-invisible-and-wills-his-own-eyes-to-the-te"
@@ -7185,7 +7172,7 @@
       "Working out how common a blood group was.",
       "Telling whether a tumour had spread."
     ],
-    "context": "To follow a disease gene down through a family you need a nearby marker that a parent and child can be told apart by; Jeffreys' earlier single-letter markers were nearly identical in everybody, so they could not be tracked. He gave up on them and went hunting wildly variable DNA instead -- and the identification barcode fell out as a by-product. The Guardian later described the experiment that produced it as a failed one. (grokipedia.com/page/Alec_Jeffreys; theguardian.com/uk-news/2016/jun/07/killer-dna-evidence-genetic-profiling-criminal-investigation)",
+    "context": "Following a disease gene down through a family takes a nearby marker that differs from person to person; Jeffreys' earlier single-letter markers were nearly identical in everybody, so they could not be tracked. He gave up on them and went hunting wildly variable DNA instead -- and the identification barcode fell out as a by-product. The Guardian later described the experiment that produced it as a failed one. (grokipedia.com/page/Alec_Jeffreys; theguardian.com/uk-news/2016/jun/07/killer-dna-evidence-genetic-profiling-criminal-investigation)",
     "topic": "dna-fingerprinting-the-morning-of-10-september-1984"
   },
   {
@@ -7216,15 +7203,15 @@
   },
   {
     "tier": 3,
-    "question": "Leicestershire police brought Alec Jeffreys samples from two linked murders near the village of Narborough in August 1986. They already had a seventeen-year-old, Richard Buckland, who had confessed to one of the killings, and they wanted the DNA to prove he had done the other one too. Jeffreys worked through the night. What did the film show?",
-    "answer": "One man had committed both crimes, and it was not Buckland.",
+    "question": "Leicestershire police brought Alec Jeffreys samples from two linked murders near the village of Narborough in August 1986. They already had a suspect, a seventeen-year-old who had confessed to one of the killings, and they wanted the DNA to prove he had done the other one too. Jeffreys worked through the night. What did the film show?",
+    "answer": "One man had committed both crimes, and it was not the teenager.",
     "choices": [
-      "One man had committed both crimes, and it was not Buckland.",
-      "One man had committed both crimes, and that man was Buckland.",
-      "Two different men had done them, and one of them was Buckland.",
-      "Two different men had done them, and neither one was Buckland."
+      "One man had committed both crimes, and it was not the teenager.",
+      "One man had committed both crimes, and that man was the teenager.",
+      "Two different men had done them, and one of them was the teenager.",
+      "Two different men had done them, and neither one was the teenager."
     ],
-    "context": "The very first use of DNA in a murder inquiry cleared the only suspect the police had -- a suspect who had confessed. They did not believe it: the test was repeated, then run a third time. One officer's reported reaction has stuck to the case -- the senior investigating officer is said to have muttered, 'One minute we got the guy, and the next we've got Jack shit.' Buckland, who had learning difficulties, had been in custody more than three months, and became the first person in the world exonerated by DNA. (theguardian.com/uk-news/2016/jun/07/killer-dna-evidence-genetic-profiling-criminal-investigation; grokipedia.com/page/Alec_Jeffreys, which dates the exclusion to early 1987, so the exact month is uncertain)",
+    "context": "The very first use of DNA in a murder inquiry cleared the only suspect the police had -- a suspect who had confessed. They did not believe it: the test was repeated, then run a third time. The teenager, who had learning difficulties, had been in custody more than three months, and became the first person in the world exonerated by DNA. (theguardian.com/uk-news/2016/jun/07/killer-dna-evidence-genetic-profiling-criminal-investigation; grokipedia.com/page/Alec_Jeffreys, which dates the exclusion to early 1987, so the exact month is uncertain)",
     "topic": "dna-fingerprinting-the-morning-of-10-september-1984"
   },
   {
@@ -7242,15 +7229,15 @@
   },
   {
     "tier": 4,
-    "question": "Colin Pitchfork, a 27-year-old cake decorator at a Leicester bakery, handed his workmate Ian Kelly 200 pounds to sit the Narborough blood screen in his name. Every man at the test centre had to show proof of identity at the door. How did Pitchfork get Kelly past it?",
-    "answer": "He put Kelly's photograph into his own passport.",
+    "question": "Colin Pitchfork, a 27-year-old cake decorator at a Leicester bakery, handed a workmate 200 pounds to sit the Narborough blood screen in his name. Every man at the test centre had to show proof of identity at the door. How did Pitchfork get the workmate past it?",
+    "answer": "He put the workmate's photograph into his own passport.",
     "choices": [
-      "He put Kelly's photograph into his own passport.",
-      "He sent Kelly in with his younger brother's passport.",
-      "He had Kelly copy his signature onto a bakery works pass.",
-      "He gave Kelly a driving licence he had reported lost."
+      "He put the workmate's photograph into his own passport.",
+      "He sent the workmate in with his younger brother's passport.",
+      "He had the workmate copy his signature onto a bakery works pass.",
+      "He gave the workmate a driving licence he had reported lost."
     ],
-    "context": "The Guardian published a formal correction on 8 June 2016 confirming the doctored passport was Pitchfork's own, not Kelly's -- many retellings get this backwards. The excuse Pitchfork gave Kelly was a lie: that he had already sat the test once as a favour to a friend with an indecent-exposure conviction and could not sit it again. Pitchfork drove Kelly to the school himself and waited outside. On 1 August 1987 Kelly let it slip over a pint with bakery workmates in the Clarendon in Leicester; six weeks later, on 18 September, one of the drinkers, Jackie Foggin, passed it to a local policeman, and both men were in custody within a day. (theguardian.com/uk-news/2016/jun/07/killer-dna-evidence-genetic-profiling-criminal-investigation and its published 8 June 2016 correction; en.wikipedia.org/wiki/Colin_Pitchfork)",
+    "context": "The Guardian published a formal correction on 8 June 2016 confirming the doctored passport was Pitchfork's own, not the workmate's -- many retellings get this backwards. The excuse Pitchfork gave the workmate was a lie: that he had already sat the test once as a favour to a friend and could not sit it again. Pitchfork drove the workmate to the school himself and waited outside. On 1 August 1987 the workmate let it slip over a pint with bakery workmates in the Clarendon in Leicester; six weeks later, on 18 September, one of the drinkers, Jackie Foggin, passed it to a local policeman, and both men were in custody within a day. (theguardian.com/uk-news/2016/jun/07/killer-dna-evidence-genetic-profiling-criminal-investigation and its published 8 June 2016 correction; en.wikipedia.org/wiki/Colin_Pitchfork)",
     "topic": "dna-fingerprinting-the-morning-of-10-september-1984"
   },
   {
@@ -7281,15 +7268,15 @@
   },
   {
     "tier": 5,
-    "question": "Lukis Anderson, a homeless man in San Jose, California, faced a possible death sentence in November 2012, charged with the murder of a millionaire because his DNA was under the victim's fingernails. He had spent that entire night in a hospital bed under continuous supervision, nowhere near the house. How did his DNA get there?",
+    "question": "A homeless man in San Jose, California, was charged in December 2012 with murdering a millionaire, a charge that could carry a death sentence, because his DNA was under the victim's fingernails. He had spent that entire night in a hospital bed under constant supervision, nowhere near the house. How did his DNA get there?",
     "answer": "The paramedics who had treated him that day answered the murder call.",
     "choices": [
       "The paramedics who had treated him that day answered the murder call.",
       "A blanket from the hospital ward he was on was taken to the house.",
       "An officer who had searched him earlier searched the house as well.",
-      "The victim had picked up a bottle Anderson discarded that morning."
+      "The victim had handled a bottle the homeless man threw out that morning."
     ],
-    "context": "The same ambulance crew that had picked Anderson up earlier that day responded to the murder scene hours later, carrying his cells on their hands and equipment. He spent about five months in jail before anyone worked it out. Modern tests amplify DNA from a handful of cells, and that sensitivity created a brand-new way to be wrong: in a 2016 Journal of Forensic Sciences study, pairs of volunteers shook hands for two minutes and then one of them picked up a knife -- the other person's DNA turned up on 85% of the samples, and in five of them the person who had never touched the knife came out as the only or the major contributor. (scientificamerican.com/article/when-dna-implicates-the-innocent/; firelawblog.com/2013/06/28/dna-transfer-by-ems-personnel-leads-to-wrongful-arrest/; Cale et al., DOI 10.1111/1556-4029.12894)",
+    "context": "The same ambulance crew that had picked the homeless man up earlier that day responded to the murder scene hours later, carrying his cells on their hands and equipment. He spent about five months in jail before anyone worked it out. Modern tests amplify DNA from a handful of cells, and that sensitivity created a brand-new way to be wrong: in a 2016 Journal of Forensic Sciences study, pairs of volunteers shook hands for two minutes and then one of them picked up a knife -- the other person's DNA turned up on 85% of the samples, and in five of them the person who had never touched the knife came out as the only or the major contributor. (scientificamerican.com/article/when-dna-implicates-the-innocent/; firelawblog.com/2013/06/28/dna-transfer-by-ems-personnel-leads-to-wrongful-arrest/; Cale et al., DOI 10.1111/1556-4029.12894)",
     "topic": "dna-fingerprinting-the-morning-of-10-september-1984"
   },
   {
