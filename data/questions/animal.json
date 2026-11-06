@@ -3524,13 +3524,13 @@
   },
   {
     "tier": 1,
-    "question": "A long, ringed, soft-bodied animal squirms through wet tropical soil. It looks like a giant earthworm or a small burrowing snake, but it has no legs at all and is really an amphibian, a cousin of frogs and salamanders. What is it?",
+    "question": "A long, ringed, slick-skinned animal squirms through wet tropical soil. It looks like a giant earthworm, yet it has a backbone, a skull and jaws, and no legs at all. What is it?",
     "answer": "A caecilian, a legless amphibian",
     "choices": [
       "A caecilian, a legless amphibian",
       "A slow-worm, a legless lizard",
-      "A blindworm, a burrowing snake",
-      "An amphiuma, an eel-like salamander"
+      "A worm snake, a burrowing snake",
+      "An amphisbaenian, a worm lizard"
     ],
     "context": "Caecilians (order Gymnophiona) are the least-known group of amphibians - true amphibians like frogs and salamanders, but with no legs and a long, segmented, worm-like body. They are not worms and not snakes. Source: https://en.wikipedia.org/wiki/Caecilian",
     "topic": "caecilian-the-legless-amphibian-whose-young-eat-its-skin"
@@ -3543,7 +3543,7 @@
       "Australia",
       "Africa",
       "South America",
-      "southern Asia"
+      "North America"
     ],
     "context": "There are over 220 caecilian species across 10 families, found in the tropics of South and Central America, Africa, southern Asia and the Seychelles - but never in Australia. Source: https://en.wikipedia.org/wiki/Caecilian",
     "topic": "caecilian-the-legless-amphibian-whose-young-eat-its-skin"
@@ -3554,9 +3554,9 @@
     "answer": "A chemical-sensing tentacle",
     "choices": [
       "A chemical-sensing tentacle",
-      "A pair of infrared pit organs",
-      "A pair of heat-tasting tongues",
-      "A set of pressure-sensing whiskers"
+      "A warmth-sensing tentacle",
+      "An electric-sensing tentacle",
+      "A magnetism-sensing tentacle"
     ],
     "context": "The tentacle sits in a groove between eye and nostril, can be pushed out and pulled back, and connects to the animal's smell system - a sensory organ unique among all vertebrates that lets a nearly blind caecilian hunt underground. Source: https://en.wikipedia.org/wiki/Caecilian",
     "topic": "caecilian-the-legless-amphibian-whose-young-eat-its-skin"
@@ -3569,7 +3569,7 @@
       "Peeling and eating her skin",
       "Gripping her as she carries them",
       "Combing parasites from her sides",
-      "Draining milk from a belly pore"
+      "Tearing up worms she brings in"
     ],
     "context": "Alexander Kupfer and his team first documented this skin-feeding (dermatophagy) in Boulengerula taitanus. The babies scrape off the fatty skin about every three days - the time a new layer takes to regrow - and can grow up to 10 times their own weight in a single week. It is a form of maternal care, not cruelty. Source: https://www.nature.com/articles/nature04403",
     "topic": "caecilian-the-legless-amphibian-whose-young-eat-its-skin"
@@ -3577,28 +3577,15 @@
   {
     "tier": 4,
     "question": "Brazilian researchers studying the ringed caecilian, Siphonops annulatus, a limbless burrowing amphibian, reported in 2020 that it may share a trait long famous in snakes. If the finding holds up, caecilians could be the oldest land animals with a backbone to have it, older even than snakes. Which trait?",
-    "answer": "An oral venom system",
+    "answer": "A venom system in its mouth",
     "choices": [
-      "An oral venom system",
-      "A regrowing set of fangs",
-      "A glow-in-the-dark bite",
-      "A paralyzing tail spine"
+      "A venom system in its mouth",
+      "Heat-sensing pits on its face",
+      "A forked, scent-tasting tongue",
+      "Jaws that stretch around prey"
     ],
-    "context": "Researchers found tiny glands at the base of the teeth that release fluid when the caecilian bites, carrying phospholipase A2 - an enzyme bees, wasps and snakes use to inflict a burning, tissue-dissolving sting. This reported finding is still under study, but if confirmed it may make caecilians the oldest land vertebrate with an oral venom system - older even than venomous snakes. Source: https://pmc.ncbi.nlm.nih.gov/articles/PMC7385905/",
+    "context": "Researchers found tiny glands at the base of the teeth that release fluid when the caecilian bites, carrying phospholipase A2, an enzyme also found in bee, wasp and snake venom. This reported finding is still under study, but if confirmed it may make caecilians the oldest land vertebrate with an oral venom system, older even than venomous snakes. Source: https://pmc.ncbi.nlm.nih.gov/articles/PMC7385905/",
     "topic": "caecilian-the-legless-amphibian-whose-young-eat-its-skin"
-  },
-  {
-    "tier": 1,
-    "question": "A shaggy two-humped Bactrian camel plods across the cold Gobi desert of Central Asia, while its one-humped cousin, the dromedary, keeps to hot deserts. A single Gobi year swings through a huge range of temperatures. How wide a span does the Bactrian handle?",
-    "answer": "From about -20 F up to 120 F",
-    "choices": [
-      "From about -20 F up to 120 F",
-      "A steady 60 F year-round",
-      "From freezing up to about 80 F",
-      "From about 40 F up to 140 F"
-    ],
-    "context": "The two-humped Bactrian is the cold-desert camel, handling the Gobi's brutal swing from roughly -20 F up to 120 F, while the one-humped dromedary rules the hot deserts. Source: San Diego Zoo, Camel; Britannica, Camel.",
-    "topic": "camel"
   },
   {
     "tier": 1,
@@ -3615,10 +3602,10 @@
   },
   {
     "tier": 2,
-    "question": "A camel runs short of food on a long desert crossing, and its hump begins to shrink and flop over to one side. What is really stored in the hump?",
-    "answer": "Fat, a concentrated energy reserve",
+    "question": "A camel plods on through a long, hot desert crossing, and day by day its hump shrinks and flops over to one side. What is really stored in the hump?",
+    "answer": "Fat stored for the journey",
     "choices": [
-      "Fat, a concentrated energy reserve",
+      "Fat stored for the journey",
       "Water stored for the journey",
       "A spongy sac of blood",
       "Coiled muscle for climbing"
@@ -3628,7 +3615,7 @@
   },
   {
     "tier": 2,
-    "question": "A desert camel wanders up to a fat green cactus bristling with six-inch needles. It chomps the cactus down, spines and all, and swallows without a scratch. What inside its mouth handles the needles safely on the way down?",
+    "question": "A desert camel wanders up to a fat green cactus bristling with long needles. It chomps the cactus down, spines and all, and swallows without a scratch. What inside its mouth handles the needles safely on the way down?",
     "answer": "Cone-shaped mouth spikes that steer each needle point-first down",
     "choices": [
       "Cone-shaped mouth spikes that steer each needle point-first down",
@@ -3646,7 +3633,7 @@
     "choices": [
       "Over 100 liters",
       "About 10 liters",
-      "Under 2 liters",
+      "About 60 liters",
       "Around 30 liters"
     ],
     "context": "A dehydrated camel can gulp well over 100 liters in about ten minutes; the San Diego Zoo cites up to 145 liters (32 gallons) in a single drink, replacing about a third of its body weight almost at once. Source: San Diego Zoo, Camel.",
@@ -3667,7 +3654,7 @@
   },
   {
     "tier": 1,
-    "question": "A barrel-shaped grazer plods along a South American riverbank, chomping grass. It stretches more than four feet, weighs about as much as a grown man, and is the biggest rodent alive. What is it?",
+    "question": "A barrel-shaped grazer plods along a South American riverbank, chomping grass. It stretches about four feet long, can weigh as much as a grown man, and is the biggest rodent alive. What is it?",
     "answer": "The capybara",
     "choices": [
       "The capybara",
@@ -3675,7 +3662,7 @@
       "The porcupine",
       "The muskrat"
     ],
-    "context": "The capybara (Hydrochoerus hydrochaeris) is the largest living rodent — over four feet long and typically 35–66 kg (77–146 lb), about the mass of a grown man. The heaviest wild one on record was a 91 kg (201 lb) female from Brazil. Source: https://en.wikipedia.org/wiki/Capybara",
+    "context": "The capybara (Hydrochoerus hydrochaeris) is the largest living rodent: adults grow to about 106 to 134 cm (3.5 to 4.4 ft) long and typically weigh 35 to 66 kg (77 to 146 lb). The heaviest wild one on record was a 91 kg (201 lb) female from Brazil. Source: https://en.wikipedia.org/wiki/Capybara",
     "topic": "capybara"
   },
   {
@@ -3693,13 +3680,13 @@
   },
   {
     "tier": 2,
-    "question": "A jaguar prowls the riverbank, and a capybara sinks quietly into the water until only the top of its head shows. Like a hippo, it can still watch, listen and breathe. What about its head lets it do all three while the rest of it hides?",
-    "answer": "Its eyes, ears, and nostrils all sit high on top of the head",
+    "question": "A jaguar prowls the riverbank, and a capybara slips into the water to hide, its big body vanishing below the surface. It keeps watching and listening for the cat, and it goes on breathing the whole time. What makes that possible?",
+    "answer": "Its eyes, ears and nostrils sit high on its head",
     "choices": [
-      "Its eyes, ears, and nostrils all sit high on top of the head",
-      "A long snorkel-like snout it lifts above the surface",
-      "A wide flat skull that keeps the whole face above water",
-      "Nostrils that pinch shut while raised eye sockets watch"
+      "Its eyes, ears and nostrils sit high on its head",
+      "A snorkel-like snout it lifts above the surface",
+      "It floats on its back with its face upturned",
+      "A long neck that holds its head above water"
     ],
     "context": "A capybara's eyes, ears, and nostrils are all set high on the top of its head, so it can float with almost its whole body submerged and still see, hear, and breathe — the same layout a hippopotamus uses. It can even sleep in the water with just its nose poking out. Source: https://en.wikipedia.org/wiki/Capybara",
     "topic": "capybara"
@@ -3711,7 +3698,7 @@
     "choices": [
       "It re-eats its own soft morning droppings",
       "It licks mineral-rich mud from the riverbank",
-      "It chews the cud back up like a cow",
+      "It swallows small stones to grind grass",
       "It eats the droppings of the young in its group"
     ],
     "context": "The capybara is a hindgut fermenter: an enlarged cecum and colon full of bacteria break down grass cellulose its stomach cannot. Because the nutrients those bacteria make would otherwise be lost, it re-eats its soft morning droppings (coprophagy), passing the food through twice to absorb the protein and B vitamins — the same trick rabbits use. Sources: https://en.wikipedia.org/wiki/Capybara ; https://link.springer.com/article/10.1007/BF00264639",
@@ -3719,7 +3706,7 @@
   },
   {
     "tier": 1,
-    "question": "Deep in the rainforests of Australia and New Guinea, a shiny black bird taller than a grown man walks slowly across the forest floor. Its neck is bright electric blue, and on top of its head rises a tall bony helmet like a horn. What bird is it?",
+    "question": "Deep in the rainforests of Australia and New Guinea, a shiny black bird as tall as a grown man walks across the forest floor. Its neck is electric blue, and a tall helmet like a horn rises from its head. What bird is it?",
     "answer": "The cassowary",
     "choices": [
       "The cassowary",
@@ -3731,24 +3718,11 @@
     "topic": "cassowary"
   },
   {
-    "tier": 1,
-    "question": "A zookeeper who works with ostriches, emus and rheas fears one flightless bird more than any of those: the cassowary of the rainforests of New Guinea and northern Australia. What title has the cassowary earned?",
-    "answer": "The world's most dangerous bird",
-    "choices": [
-      "The world's most dangerous bird",
-      "The world's fastest bird",
-      "The world's heaviest bird",
-      "The world's loudest bird"
-    ],
-    "context": "The cassowary is widely called the world's most dangerous bird. A 2019 death in Florida (its 75-year-old owner) was the first human fatality attributed to a cassowary in 93 years. Source: Guinness World Records, 'Why the cassowary is the world's most dangerous bird'.",
-    "topic": "cassowary"
-  },
-  {
     "tier": 2,
     "question": "A cassowary cornered on a rainforest path does not run. It leaps and drives both powerful feet forward at the threat, like a kung fu kick. The weapon rides on the inner toe of each foot. What is it?",
-    "answer": "A dagger-like claw up to five inches long",
+    "answer": "A long, dagger-like claw",
     "choices": [
-      "A dagger-like claw up to five inches long",
+      "A long, dagger-like claw",
       "A ring of backward-facing barbs",
       "A gripping talon like an eagle's",
       "A blunt spur it uses to trip"
@@ -3771,7 +3745,7 @@
   },
   {
     "tier": 4,
-    "question": "Hidden among dense leaves, a cassowary gives a booming call near 32 hertz, right at the bottom of what human ears can pick up. Researchers think the bird uses so deep a note to do one thing a higher call could not. What is it?",
+    "question": "Unseen in the gloom of the forest, a cassowary gives a booming call near 32 hertz, right at the bottom of what human ears can pick up. Researchers think the bird uses so deep a note to do one thing a higher call could not. What is it?",
     "answer": "Carry far through thick rainforest foliage",
     "choices": [
       "Carry far through thick rainforest foliage",
@@ -4057,7 +4031,7 @@
   },
   {
     "tier": 1,
-    "question": "A slim spotted cat crouches in the grass of an African plain, eyeing a herd of gazelles. In a chase it can beat a sports car off the line, reaching 70 miles an hour from a standstill in barely three seconds. Which animal is it?",
+    "question": "A slim spotted cat crouches in the grass of an African plain, eyeing a herd of gazelles. In a chase it can beat a sports car off the line, reaching 60 miles an hour from a standstill in under three seconds. Which animal is it?",
     "answer": "The cheetah",
     "choices": [
       "The cheetah",
@@ -4065,17 +4039,17 @@
       "The leopard",
       "The African wild dog"
     ],
-    "context": "The cheetah (Acinonyx jubatus) is the fastest land animal, hitting more than 110 km/h in just over three seconds -- out-accelerating many sports cars from a standstill. Source: Cheetah Conservation Fund, cheetah.org/learn/about-cheetahs/",
+    "context": "The cheetah (Acinonyx jubatus) is the fastest land animal, accelerating from a standstill to about 97 km/h (60 mph) in under three seconds and out-accelerating many sports cars; its highest reliably reported speed is about 104 km/h. Source: https://en.wikipedia.org/wiki/Cheetah",
     "topic": "cheetah"
   },
   {
     "tier": 1,
-    "question": "A researcher in a jeep photographs a cheetah on the savanna and checks its markings, to be sure she has not counted that cat already. Each cheetah's markings are as unique as a fingerprint. What does she look at to tell one cheetah from another?",
-    "answer": "The pattern of spots on its body and the rings on its tail",
+    "question": "A researcher in a jeep photographs a cheetah on the savanna, then checks her files to be sure she has not counted that cat already. Every cheetah carries a sign of identity as unique as a fingerprint. What does she compare?",
+    "answer": "Its spot pattern and tail rings",
     "choices": [
-      "The pattern of spots on its body and the rings on its tail",
-      "The exact shade of gold in its coat",
-      "The number of whiskers on each side of its face",
+      "Its spot pattern and tail rings",
+      "The exact shade of its golden coat",
+      "The number of whiskers on its face",
       "The curl and length of its tail"
     ],
     "context": "A cheetah's spots cover nearly its whole body, and -- like a human fingerprint -- the spot pattern and the ring pattern of its tail are unique to each individual. Source: Smithsonian's National Zoo, nationalzoo.si.edu/animals/news/why-do-cheetahs-have-spots-and-other-cheetah-facts",
@@ -4097,10 +4071,10 @@
   {
     "tier": 2,
     "question": "A cheetah tears across the savanna with its claws poking out like a dog's, blunt and only partly pulled in, where other cats keep theirs sheathed and sharp until they strike. What job are those claws doing as it runs?",
-    "answer": "Biting into the ground for traction like a sprinter's track spikes",
+    "answer": "Gripping the ground like a sprinter's track spikes",
     "choices": [
-      "Biting into the ground for traction like a sprinter's track spikes",
-      "Slashing at prey with every stride to wound it early",
+      "Gripping the ground like a sprinter's track spikes",
+      "Cushioning each footfall like a shock absorber",
       "Sharpening themselves against the dirt as it runs",
       "Sensing vibrations in the ground from fleeing prey"
     ],
@@ -4109,39 +4083,39 @@
   },
   {
     "tier": 3,
-    "question": "Under the glaring African sun, a cheetah hunts across the bright, open plains. Two black stripes run from the inner corner of each eye down toward its mouth, the marks cheetah watchers call 'tear marks.' What do those dark stripes do for the hunting cat?",
-    "answer": "Absorb the sun's glare so it can keep prey in sharp focus",
+    "question": "A cheetah hunts by day across the open African plains. Two black stripes run from the inner corner of each eye down toward its mouth, the marks cheetah watchers call 'tear marks.' What are those dark stripes thought to do for the hunting cat?",
+    "answer": "Cut the sun's glare off its face",
     "choices": [
-      "Absorb the sun's glare so it can keep prey in sharp focus",
-      "Warn rival cheetahs to keep off its territory",
+      "Cut the sun's glare off its face",
       "Channel rain and sweat away from its eyes",
-      "Signal its mood to cubs following behind it"
+      "Trap dust before it reaches its eyes",
+      "Cool the thin skin beneath its eyes"
     ],
-    "context": "The black 'tear marks' work like the eye-black athletes wear or the crosshairs of a scope -- they absorb sun glare bouncing off the cheeks so the cat can keep prey in sharp focus across the bright open plains. Source: Cheetah Conservation Fund; iere.org/why-do-cheetahs-have-black-tears/",
+    "context": "The black 'tear marks' are thought to work like the eye-black athletes wear, cutting sun glare off the cheeks so the cat can keep prey in focus across the bright plains. Their role is not fully understood; another idea is that they sharpen the cat's facial expressions at close range. Source: https://en.wikipedia.org/wiki/Cheetah ; Cheetah Conservation Fund.",
     "topic": "cheetah"
   },
   {
     "tier": 3,
     "question": "Racing after a gazelle, a cheetah stretches out long, then bunches up tight, with every bound of its gallop. Each time, its hind feet swing so far forward that they land ahead of its front paws. Which part of its body makes that enormous reach possible?",
-    "answer": "Its unusually flexible spine, coiling and uncoiling each stride",
+    "answer": "Its springy, flexible spine",
     "choices": [
-      "Its unusually flexible spine, coiling and uncoiling each stride",
-      "Its extra-long back legs",
+      "Its springy, flexible spine",
+      "Its double-jointed knees",
       "Its wide, deep ribcage",
-      "Its loosely jointed shoulders"
+      "Its stretchy hip ligaments"
     ],
     "context": "The cheetah's flexible spine flexes and extends like a spring with every stride, throwing the hind legs far forward; at full gallop it lifts all four feet off the ground twice per stride -- once stretched full-out and once with legs tucked under. Source: Cheetah Conservation Fund; SeaWorld, seaworld.org/animals/all-about/cheetah/adaptations/",
     "topic": "cheetah"
   },
   {
     "tier": 3,
-    "question": "A fleeing gazelle jinks sideways in an instant, a turn that would send most chasing animals tumbling head over heels. The cheetah on its heels swings one long body part from side to side to shift its balance and stay with the turn. What is it steering with?",
-    "answer": "Its long tail, working as a counterweight and rudder",
+    "question": "A fleeing gazelle jinks sideways in an instant, a turn that would send most chasing animals tumbling head over heels. The cheetah close behind it stays with the turn without ever falling. What does it use to shift its balance?",
+    "answer": "Its long tail, swung as a counterweight",
     "choices": [
-      "Its long tail, working as a counterweight and rudder",
-      "Its outstretched forelegs, leaning into the bend",
-      "Its whiskers, sensing the shift in air",
-      "Its ears, flattening to cut wind resistance"
+      "Its long tail, swung as a counterweight",
+      "Its forelegs, leaning hard into the bend",
+      "Its head, thrown sideways into the turn",
+      "Its hips, swung low through the bend"
     ],
     "context": "The cheetah's long tail works as a counterweight and rudder: it swings side to side to shift the cat's balance so it can make hairpin turns at speed that would send other animals tumbling; the flattened, ringed tuft at the tip acts like the rudder. Source: Cheetah Conservation Fund; SeaWorld, seaworld.org/animals/all-about/cheetah/adaptations/",
     "topic": "cheetah"
@@ -4169,7 +4143,7 @@
       "Its blunt claws wear down and lose their grip",
       "Its spine cramps and locks from the constant flexing"
     ],
-    "context": "A cheetah can only hold its top speed for a matter of seconds -- prey must be caught within roughly 30 seconds -- because the anaerobic sprint floods its muscles with lactic acid and it simply runs out of energy. Source: Cheetah Conservation Fund; National Geographic. This is the real limit -- see the busted-overheating myth for the fuller story.",
+    "context": "A cheetah can only hold its top speed for a matter of seconds, and prey must be caught within roughly 30 seconds, because the anaerobic sprint floods its muscles with lactic acid and it simply runs out of energy. Source: Cheetah Conservation Fund; National Geographic.",
     "topic": "cheetah"
   },
   {
@@ -4195,12 +4169,12 @@
       "It was a giant relative of the lion that had lost its mane over generations",
       "It was a big cat unrelated to any feline alive today, a lineage all its own"
     ],
-    "context": "Miracinonyx trumani, the 'American cheetah,' died out at the end of the last ice age. Genetic and skeletal analyses now place it as a close relative of the cougar (Puma), not the true cheetah -- the two lineages arrived at the same lean, fast-pursuit body independently, a textbook case of convergent evolution. Unlike the African cheetah, Miracinonyx kept retractable claws and could rotate its forelimbs to grapple prey, and recent elbow-joint studies suggest it hunted in a way with no living analogue. It also anchors the famous 'ghost predator' idea: the pronghorn, still the fastest runner in the Americas, is far faster than any predator alive today, and its speed was long explained as an escape from Miracinonyx -- yet a 2026 analysis argues pronghorns were already fast BEFORE Miracinonyx appeared, so the coevolution story is now contested. Source: Sci.News, 'Miracinonyx trumani' (cougar-relative, convergence) https://www.sci.news/paleontology/miracinonyx-trumani-11656.html ; Royal Society Biology Letters 2022 elbow morphology https://royalsocietypublishing.org/doi/10.1098/rsbl.2022.0483 ; Hardy & Kort, Quaternary International (pronghorn isotopes, anachronism doubt) https://www.sciencedirect.com/science/article/abs/pii/S1040618222002658 ; Wikipedia, Miracinonyx https://en.wikipedia.org/wiki/Miracinonyx",
+    "context": "Miracinonyx trumani, the 'American cheetah,' died out at the end of the last ice age. Genetic and skeletal analyses now place it as a close relative of the cougar (Puma), not the true cheetah -- the two lineages arrived at the same lean, fast-pursuit body independently, a textbook case of convergent evolution. Unlike the African cheetah, Miracinonyx kept retractable claws and could rotate its forelimbs to grapple prey, and recent elbow-joint studies suggest it hunted in a way with no living analogue. It also anchors the famous 'ghost predator' idea: the pronghorn, still the fastest runner in the Americas, is far faster than any predator alive today, and its speed was long explained as an escape from Miracinonyx -- yet a 2026 analysis argues pronghorns were already fast BEFORE Miracinonyx appeared, so the coevolution story is now contested. Source: Sci.News, 'Miracinonyx trumani' (cougar-relative, convergence) https://www.sci.news/paleontology/miracinonyx-trumani-11656.html ; Royal Society Biology Letters 2022 elbow morphology https://royalsocietypublishing.org/doi/10.1098/rsbl.2022.0483 ; Kort and colleagues, Journal of Mammalogy (2026), on Miocene pronghorn-ancestor ankle bones, reported by Nautilus https://nautil.us/how-the-fastest-land-animal-in-north-america-got-its-need-for-speed-1267620/ ; Wikipedia, Miracinonyx https://en.wikipedia.org/wiki/Miracinonyx",
     "topic": "cheetah"
   },
   {
     "tier": 5,
-    "question": "Stephen O'Brien and his team swapped patches of skin among fourteen unrelated cheetahs in 1985. Unrelated lions reject each other's grafted skin as foreign, yet every cheetah graft healed in, as if it had passed between identical twins. What is it about cheetahs that explains this?",
+    "question": "Stephen O'Brien and his team grafted skin from one unrelated cheetah onto another fourteen times in 1985. In most species, skin grafted from an unrelated animal is rejected as foreign, yet every cheetah graft healed in, as if it had passed between identical twins. What is it about cheetahs that explains this?",
     "answer": "A recent population bottleneck left every cheetah so genetically uniform its immune system reads any other as itself",
     "choices": [
       "A recent population bottleneck left every cheetah so genetically uniform its immune system reads any other as itself",
@@ -4208,18 +4182,18 @@
       "Cheetahs alone among cats never mount an immune attack on transplanted living tissue",
       "The tested cats had all descended from a single famous zoo pair a few years earlier"
     ],
-    "context": "In a landmark 1985 study, Stephen O'Brien and colleagues performed 14 reciprocal skin grafts between unrelated cheetahs, and all 14 were accepted -- an outcome normally seen only between identical twins. The cats are so uniform at their MHC genes (the 'self ID' the immune system checks) that one cheetah's tissue does not register as foreign. Surveying 200-plus genetic loci, the team traced this to a severe population bottleneck in the species' recent past; modern estimates put cheetah genetic diversity at roughly 0.1-4% of a typical mammal's. The uniformity persists in wild-born cats, ruling out mere captive inbreeding. Source: O'Brien et al. 1985, 'Genetic Basis for Species Vulnerability in the Cheetah,' Science 227:1428 (14 accepted reciprocal skin grafts, MHC monomorphism, 200+ loci) https://www.science.org/doi/10.1126/science.2983425 ; Cheetah Conservation Fund summary https://cheetah.org/resource-library/genetic-basis-for-species-vulnerability-in-the-cheetah/",
+    "context": "In a landmark 1985 study, Stephen O'Brien and colleagues made 14 reciprocal skin grafts between unrelated cheetahs, and all 14 were accepted, an outcome normally seen only between identical twins. The cats are so uniform at their MHC genes (the 'self ID' the immune system checks) that one cheetah's tissue does not register as foreign. Surveying 200-plus genetic loci, the team traced this to a severe population bottleneck in the species' recent past. The uniformity persists in wild-born cats, ruling out mere captive inbreeding. Source: O'Brien et al. 1985, 'Genetic Basis for Species Vulnerability in the Cheetah,' Science 227:1428, https://www.science.org/doi/10.1126/science.2983425 ; Cheetah Conservation Fund summary https://cheetah.org/resource-library/genetic-basis-for-species-vulnerability-in-the-cheetah/",
     "topic": "cheetah"
   },
   {
     "tier": 2,
-    "question": "A skunk ambling past a dog suddenly freezes. It lifts its bushy tail straight up over its back, stamps its front feet hard on the ground and hisses. Each move is a warning, the last polite step before the skunk does what makes it famous. What is it warning the dog it will do next?",
-    "answer": "Fire a reeking musk that sears the eyes and nose",
+    "question": "A striped skunk ambling past a dog at dusk stops and turns to face it. It does not spray at once; first it gives the dog fair warning. What does that warning look like?",
+    "answer": "It stamps its front feet, raises its tail and hisses",
     "choices": [
-      "Fire a reeking musk that sears the eyes and nose",
-      "Bite with venom-filled fangs",
-      "Release a cloud of stinging spores",
-      "Puff up to twice its size"
+      "It stamps its front feet, raises its tail and hisses",
+      "It rolls over and plays dead with its tongue out",
+      "It screeches and thumps its tail on the ground",
+      "It chatters its teeth and spits at the dog"
     ],
     "context": "A skunk (family Mephitidae) warns before it sprays, stamping its feet, raising its tail, and hissing to give a predator a chance to back off. Its musk is made of sulfur compounds called thiols, which sear a predator's eyes and nose. Sources: https://www.britannica.com/science/Why-Do-Skunks-Spray ; https://www.dvm360.com/view/skunk-spray-toxicosis-odiferous-tale",
     "topic": "chemical-weapons"
@@ -4253,12 +4227,12 @@
   {
     "tier": 4,
     "question": "A shark clamps its jaws on a hagfish, a jawless, eel-shaped creature that lives in the deep sea, and in a fraction of a second the water around the shark's mouth turns into nearly a liter of choking slime. The slime clogs the shark's gills, and it lets go. What did the hagfish release to make that slime?",
-    "answer": "Tiny packets of coiled protein threads and mucus",
+    "answer": "Packets of coiled threads and mucus",
     "choices": [
-      "Tiny packets of coiled protein threads and mucus",
-      "A cloud of black ink",
-      "A jet of venom",
-      "Bubbles of air from its skin"
+      "Packets of coiled threads and mucus",
+      "A sticky oil leaked from its gills",
+      "A jelly coughed up from its gut",
+      "A gum squeezed from glands in its mouth"
     ],
     "context": "A grabbed hagfish releases tiny thread-and-mucus packets that explode on contact with seawater into about a liter of choking slime in a fraction of a second. One liter is 99.996% seawater; the rest is tens of thousands of silk-like protein threads plus mucin. Sources: https://www.nature.com/articles/srep00131 ; https://sites.chapman.edu/fudge/project/biophysics-of-hagfish-slime/",
     "topic": "chemical-weapons"
@@ -4295,32 +4269,32 @@
     "answer": "Oozes a bubbling froth that clings over its own body",
     "choices": [
       "Oozes a bubbling froth that clings over its own body",
-      "Squirts a thin stream a full body-length behind itself",
+      "Wipes the fluid onto an attacker with its hind legs",
       "Leaks the fluid slowly from pores along its own back",
-      "Saves the mix until it can land one carefully aimed shot"
+      "Dribbles the mix as droplets out of its mouth"
     ],
-    "context": "Metrius contractus (subfamily Paussinae) is the crucial living intermediate that answers the old 'irreducibly complex' objection to the bombardier beetle. Where advanced Brachininae fire a pulsed, steerable jet, Metrius has the same two-chamber gland and hot quinone chemistry but only oozes a bubbling froth that spreads over its own body -- the ancestral 'foam' stage that preceded the explosive spray. The full graded pathway (quinones already made to harden the shell, then stored as a deterrent, then catalase making it hotter and foamier, then aimed pulsed fire) shows the weapon could build up in useful steps. Source: Eisner et al. 2000, PNAS, 'Spray mechanism of the most primitive bombardier beetle (Metrius contractus)' (https://pubmed.ncbi.nlm.nih.gov/10729276/); Wikipedia 'Bombardier beetle' on the incremental-pathway rebuttal.",
+    "context": "Metrius contractus (subfamily Paussinae) is the crucial living intermediate that answers the old 'irreducibly complex' objection to the bombardier beetle. Where advanced Brachininae fire a pulsed, steerable jet, Metrius has the same two-chamber gland and hot quinone chemistry but discharges its secretion as a froth that clings to its own body, the ancestral 'foam' stage that preceded the explosive spray. The full graded pathway (quinones already made to harden the shell, then stored as a deterrent, then catalase making it hotter and foamier, then aimed pulsed fire) shows the weapon could build up in useful steps. Source: Eisner et al. 2000, Journal of Experimental Biology 203:1265, 'Spray mechanism of the most primitive bombardier beetle (Metrius contractus)' (https://pubmed.ncbi.nlm.nih.gov/10729276/); Wikipedia 'Bombardier beetle' on the incremental-pathway rebuttal.",
     "topic": "chemical-weapons"
   },
   {
     "tier": 4,
     "question": "A hungry fish attacks a sea cucumber on the seafloor, and the sea cucumber fires sticky white threads, called Cuvierian tubules, out through its rear at the attacker. Milky and floppy inside the animal, the threads shoot into the seawater, stretch to about twenty times their length, then snare the predator in cords it cannot pull free. How do the soft threads turn tough and inescapable?",
-    "answer": "A trigger protein locks their collagen rigid on contact",
+    "answer": "Their collagen tissue stiffens for good",
     "choices": [
-      "A trigger protein locks their collagen rigid on contact",
-      "Tiny muscles inside the threads clench them all tight",
-      "Backward barbs along the threads catch and knot in skin",
-      "Seawater dries their sticky coating into a hard glaze"
+      "Their collagen tissue stiffens for good",
+      "Backward barbs along them catch in the skin",
+      "Seawater sets their coat into a hard glaze",
+      "They twist together into a tight rope"
     ],
-    "context": "These are Cuvierian tubules, distinct from the sea cucumber's better-known trick of ejecting its guts. They work through 'mutable collagenous tissue,' the same catch-connective tissue that lets echinoderms go instantly stiff or floppy. During ejection the collagen wall is deliberately soft and low-resistance, so a tubule can elongate roughly twentyfold in seconds; then, on contact with the attacker, a stiffening protein called tensilin cross-links the collagen so the now-adhesive threads become tough and inextensible -- trapping the predator with no muscle doing the work. Source: Demeuldre, Flammang et al. 2017, Journal of Experimental Biology, 'Mechanical adaptability of sea cucumber Cuvierian tubules involves a mutable collagenous tissue' (https://journals.biologists.com/jeb/article/220/11/2108/17941).",
+    "context": "These are Cuvierian tubules, distinct from the sea cucumber's better-known trick of ejecting its guts. Demeuldre, Flammang and colleagues found that the tubule wall is a mutable collagenous tissue, the kind of connective tissue that lets echinoderms switch between floppy and stiff. Tubules about 2 cm long at rest stretch to about 40 cm as they shoot out, turn sticky within seconds of touching a surface, and then stiffen irreversibly. Tensilin, a known stiffening protein of such tissue, sits in cells inside the tubules, though its exact role there is still being worked out. Source: Demeuldre et al. 2017, Journal of Experimental Biology 220(11):2108, https://journals.biologists.com/jeb/article/220/11/2108/17941",
     "topic": "chemical-weapons"
   },
   {
     "tier": 1,
     "question": "A snorkeler drifting over a tropical reef spots something like a matched pair of tiny spiral fir trees, bright red or blue, poking out of a living coral head. They are not plants. What are the twin spirals really?",
-    "answer": "The two feathery crowns of a single worm hidden in the coral",
+    "answer": "The two feathery crowns of one worm",
     "choices": [
-      "The two feathery crowns of a single worm hidden in the coral",
+      "The two feathery crowns of one worm",
       "A colony of tiny coral polyps stacked in a spiral",
       "A pair of small sea anemones sharing one rock",
       "Two baby starfish curled up to feed"
@@ -4331,9 +4305,9 @@
   {
     "tier": 2,
     "question": "A Christmas tree worm pokes two bright spiral crowns out of a living coral head, out in the open where a hungry fish could snap them off. A shadow slides over it. What does the worm do?",
-    "answer": "Yanks its whole crown down into its burrow in a blink",
+    "answer": "Yanks its crowns down into its tube in a blink",
     "choices": [
-      "Yanks its whole crown down into its burrow in a blink",
+      "Yanks its crowns down into its tube in a blink",
       "Puffs the crown up bigger to look dangerous",
       "Squirts a cloud of ink and drifts away",
       "Flashes a warning color and holds its ground"
@@ -4369,15 +4343,15 @@
   },
   {
     "tier": 4,
-    "question": "A shadow slides over a Christmas tree worm on a tropical reef, and the worm reacts before anything has touched it. The early warning comes from its feathery spiral crown itself. What is built into the branches of that crown?",
-    "answer": "Rows of real compound eyes that catch the passing shadow",
+    "question": "A fish glides toward a Christmas tree worm on a tropical reef, and the worm vanishes into its tube while the fish is still some way off. The early warning comes from its feathery spiral crown itself. What is built into the branches of that crown?",
+    "answer": "Clusters of tiny compound eyes",
     "choices": [
-      "Rows of real compound eyes that catch the passing shadow",
-      "Clusters of taste buds that sample chemicals in the water",
-      "Coils of stinging cells like those a jellyfish fires",
-      "Tufts of fine hairs that feel the shifting current"
+      "Clusters of tiny compound eyes",
+      "Heat-sensing pits like a viper's",
+      "Pores that sense electric fields",
+      "Tiny ears tuned to a fish's sounds"
     ],
-    "context": "Serpulid worms like Spirobranchus evolved compound eyes built into the radioles — the feathery feeding branches — and in the S. giganteus complex each eye packs an estimated 600 to 1,000 tiny lenses. Their visual pigment peaks near 464 nm, the blue of downwelling reef light, so the eyes work as a silhouette-detecting 'burglar alarm': they catch the shadow of an approaching object and fire the withdrawal reflex before the worm is ever touched. Source: Bok, Porter & Nilsson, 'Radiolar Eyes of Serpulid Worms,' The Biological Bulletin 233(1), 2017.",
+    "context": "Serpulid worms like Spirobranchus evolved compound eyes built into the radioles, the feathery feeding branches, and in the S. giganteus complex each eye packs hundreds of tiny light-catching units. Their visual pigment peaks near 464 nm, the blue of downwelling reef light, so the eyes work as a silhouette-detecting 'burglar alarm': they catch the shadow of an approaching object and fire the withdrawal reflex before the worm is ever touched. Source: Bok, Porter, ten Hove, Smith & Nilsson, 'Radiolar Eyes of Serpulid Worms,' The Biological Bulletin 233(1), 2017.",
     "topic": "christmas-tree-worm-spirobranchus-giganteus"
   },
   {
@@ -4390,7 +4364,7 @@
       "Cement its loose rubble together after a storm breaks it",
       "Ferry its spawning larvae out to colonize fresh reef"
     ],
-    "context": "Whether these worms help or harm their host is a real, unsettled debate. A landmark Great Barrier Reef study (DeVantier, Reichelt & Bradbury, Marine Ecology Progress Series 32:307-310, 1986) found the worms may protect Porites coral from crown-of-thorns starfish: in 5 of 7 colonies, living coral tissue was significantly associated with the worms near the feeding fronts, hinting at a coevolved mutualism. But later work off Curacao (van der Schoot & Hoeksema, 2019) found the opposite is often true — the worm's scraping operculum injured the coral in roughly 21 to 62 percent of cases, worst when turf algae grew on the lid. No verdict: the relationship appears to swing between help and harm depending on the reef.",
+    "context": "Whether these worms help or harm their host is a real, unsettled debate. A Great Barrier Reef study (DeVantier, Reichelt & Bradbury, Marine Ecology Progress Series 32:307-310, 1986) found the worms may protect Porites coral from crown-of-thorns starfish: in 5 of 7 colonies, living coral tissue was significantly associated with the worms near the feeding fronts, hinting at a coevolved partnership. But later work off Curacao (Hoeksema and colleagues, Marine Biology, 2019) found the worm's scraping operculum often injured the coral, worst when turf algae grew on the lid. The relationship appears to swing between help and harm depending on the reef.",
     "topic": "christmas-tree-worm-spirobranchus-giganteus"
   },
   {
@@ -4421,41 +4395,28 @@
   },
   {
     "tier": 3,
-    "question": "A male club-winged manakin knocks his wing feathers together so hard to make his violin-like tone that his arm bone is unusually thick and solid, not hollow. The female never makes the sound. When scientists examined her skeleton, they expected the ordinary hollow bones of a flying bird. What did they find in the silent female's wings?",
-    "answer": "The same dense, solid wing bone the male has",
+    "question": "A male club-winged manakin knocks his wing feathers together so hard to make his violin-like tone that his arm bone is unusually thick and solid, not hollow. The female never makes the sound. According to the ornithologist Richard Prum, what are her wing bones like?",
+    "answer": "Thickened and shaped like his",
     "choices": [
-      "The same dense, solid wing bone the male has",
-      "Ordinary thin-walled hollow bones, unlike his",
-      "Wing bones fused into a single stiff rod",
-      "An extra air sac threaded through the bone"
+      "Thickened and shaped like his",
+      "Thin and ordinary, unlike his",
+      "Fused into a single stiff rod",
+      "Threaded with an extra air sac"
     ],
-    "context": "The male's wing bone (the ulna) is filled in and mineralized to nearly three times the volume of a normal bird's — solid, not hollow — so it survives being knocked together over and over. The surprise is that females carry the same dense, heavy wing bone even though only males make the sound: a rare case where a mating display reshaped the WHOLE species' skeleton, making every bird — male or female — a slightly worse flier. Source: Bostwick, Riccio & Humphries, PMC3440988 ('Massive, solidified bone in the wing of a volant courting bird'); Wikipedia, 'Club-winged manakin' (solid wing bones present in females).",
+    "context": "The male's wing bone (the ulna) is filled in and mineralized to more than three times the volume of the ulna in birds of comparable size, so it survives being knocked together over and over (Bostwick, Riccio & Humphries 2012, a study of males). Richard Prum, who worked on the species with Kimberly Bostwick, reports that females carry the same thickened wing bones even though only males make the sound, a case where a mating display reshaped the whole species' skeleton. Sources: https://pmc.ncbi.nlm.nih.gov/articles/PMC3440988/ ; Prum on the club-winged manakin, https://bigthink.com/?p=45870 ; Wikipedia, 'Club-winged manakin'.",
     "topic": "club-winged-manakin"
   },
   {
     "tier": 1,
-    "question": "At dusk on a warm Pacific island, a coconut crab climbs the trunk of a palm. It is heavier than a house cat and measures more than 3 feet across its outstretched legs. What record does it hold among animals that live on land?",
+    "question": "At dusk on a warm Pacific island, a coconut crab climbs the trunk of a palm. It is as heavy as a house cat and spans about 3 feet across its outstretched legs. What record does it hold among animals that live on land?",
     "answer": "The largest land arthropod on Earth",
     "choices": [
       "The largest land arthropod on Earth",
       "The fastest-running crab on Earth",
-      "The only crab that lives in freshwater",
+      "The longest-legged crab on Earth",
       "The most venomous crab on Earth"
     ],
-    "context": "The coconut crab (Birgus latro) is the biggest land arthropod alive: it can span more than 3 feet (over 0.9 m, some reports near a meter) from leg-tip to leg-tip and weigh up to about 9 pounds (4.1 kg). Source: Wikipedia, Coconut crab (en.wikipedia.org/wiki/Coconut_crab).",
-    "topic": "coconut-crab-birgus-latro"
-  },
-  {
-    "tier": 1,
-    "question": "A wild animal on a tropical island spends hours prying apart a whole coconut, a nut a person usually needs a rock or a heavy knife to crack. It uses nothing but its own body. Which animal is it?",
-    "answer": "The coconut crab",
-    "choices": [
-      "The coconut crab",
-      "The giant fruit bat",
-      "The green sea turtle",
-      "The monitor lizard"
-    ],
-    "context": "A coconut crab can climb a coconut palm and, over hours, husk and crack open a whole coconut with its claws — a nut a person would normally need tools to open. Charles Darwin described this behavior on the Keeling Islands. Sources: Darwin, The Voyage of the Beagle, Ch. 20 (standardebooks.org); Natural History Museum (nhm.ac.uk).",
+    "context": "The coconut crab (Birgus latro) is the biggest land arthropod alive: its legs can span about 90 cm to 1 m (about 3 feet) from tip to tip, and it can weigh up to about 4.1 kg (9 pounds). Source: Wikipedia, Coconut crab (en.wikipedia.org/wiki/Coconut_crab); Grokipedia, Coconut crab.",
     "topic": "coconut-crab-birgus-latro"
   },
   {
@@ -4465,23 +4426,10 @@
     "choices": [
       "It hauls off pots, silverware, and shiny objects",
       "It steals eggs from other crabs' burrows",
-      "It waits to snatch food from sleeping birds",
+      "It raids island beehives for their honey",
       "It digs up buried seeds people have planted"
     ],
     "context": "The nickname 'robber crab' comes from its habit of carrying off anything it can grab — pots, silverware, shiny objects. Its claws can lift objects up to about 29 kg (64 lb). Sources: Wikipedia, Coconut crab (en.wikipedia.org/wiki/Coconut_crab); GreaterGood (greatergood.com/blogs/news/cs-robber-crabs-bio).",
-    "topic": "coconut-crab-birgus-latro"
-  },
-  {
-    "tier": 2,
-    "question": "On Christmas Island, where millions of small red crabs march across the forest floor, a coconut crab can rip a live red crab to pieces startlingly fast. The same crab may spend hours cracking a single coconut. How fast does it deal with the red crab?",
-    "answer": "In seconds",
-    "choices": [
-      "In seconds",
-      "In a full day",
-      "Over a week",
-      "Across a month"
-    ],
-    "context": "Coconut crabs are broad scavengers and hunters, not just nut-crackers: they eat carrion, and on Christmas Island can tear apart a live red crab in seconds — far faster than the hours a coconut takes. Source: Science News (sciencenews.org/article/coconut-crab-pinches-lion-eats-dumpster-diver).",
     "topic": "coconut-crab-birgus-latro"
   },
   {
@@ -4492,7 +4440,7 @@
       "The canine bite of a lion",
       "The kick of an adult zebra",
       "The hug of a grown python",
-      "The tail-slap of a beaver"
+      "The bite of a hippopotamus"
     ],
     "context": "The strongest of the 29 crabs gripped with about 1,765 newtons — stronger than a lion's canine bite (~1,315 N). By scaling the data the team estimated the biggest crabs could pinch with roughly 3,300 N, outmuscling nearly every land predator except the alligator. Sources: Oka et al. 2016, 'A Mighty Claw,' PLOS ONE (pmc.ncbi.nlm.nih.gov/articles/PMC5120803); Science News (sciencenews.org).",
     "topic": "coconut-crab-birgus-latro"
@@ -4503,9 +4451,9 @@
     "answer": "Its gills shrank and it now breathes air",
     "choices": [
       "Its gills shrank and it now breathes air",
-      "Its shell filled with water and sank it",
-      "Its blood thickened and stopped flowing",
-      "Its legs stiffened and could not paddle"
+      "Its gills now work only in fresh water",
+      "Its gills clogged for good with sand",
+      "Its shell grew too heavy to swim up"
     ],
     "context": "As an adult the coconut crab has abandoned the sea: its gills shrank and it breathes air through a lung-like organ called a branchiostegal lung, so it will drown if held underwater too long — even though it began life in the ocean. Sources: Wikipedia, Coconut crab (en.wikipedia.org/wiki/Coconut_crab); Stensmyr et al. 2005, Current Biology (cell.com).",
     "topic": "coconut-crab-birgus-latro"
@@ -4517,23 +4465,10 @@
     "choices": [
       "It hardens the plates of its own body into armor",
       "It coats itself in a shell of dried mud",
-      "It always hides its rear inside a cracked coconut",
+      "It shelters its rear under a flat stone",
       "It grows a thick mat of stinging bristles"
     ],
     "context": "Unlike other hermit crabs, the adult coconut crab gives up wearing a borrowed shell entirely — it hardens the plates on its own abdomen (the terga) into built-in armor. Juveniles still wear snail shells, and adolescents sometimes wear broken coconut shells. Source: Wikipedia, Coconut crab (en.wikipedia.org/wiki/Coconut_crab).",
-    "topic": "coconut-crab-birgus-latro"
-  },
-  {
-    "tier": 4,
-    "question": "Shin-ichiro Oka, measuring coconut crab pinches on Okinawa, twice had his own fingers caught in the pincers of a live crab. Each pinch lasted only a few minutes before the crab let go, but Oka never forgot them. How did he describe those minutes?",
-    "answer": "\"I felt eternal hell\"",
-    "choices": [
-      "\"I felt eternal hell\"",
-      "\"Like a car door slamming\"",
-      "\"A grip I soon forgot\"",
-      "\"Numb before the pain came\""
-    ],
-    "context": "Oka, the study's lead researcher, was pinched twice. Of the few minutes it lasted he said, 'Although it was just a few minutes, I felt eternal hell.' Source: Science News, 'Coconut crab pinches like a lion' (sciencenews.org/article/coconut-crab-pinches-lion-eats-dumpster-diver). (Recounted testimony.)",
     "topic": "coconut-crab-birgus-latro"
   },
   {
@@ -4576,16 +4511,16 @@
     "topic": "coconut-crab-birgus-latro"
   },
   {
-    "tier": 5,
-    "question": "Mark Laidre camped at night on the Chagos Islands with a camera trained on a coconut crab. He filmed it climb a tree to a sleeping red-footed booby and break its wing, and the smell of blood soon drew rival crabs that fought over the bird for hours. What did Laidre later say about that night?",
-    "answer": "He had a lot of trouble sleeping",
+    "tier": 4,
+    "question": "On the Chagos Islands at night, Mark Laidre filmed a coconut crab, the giant land crab of tropical islands, climbing a tree toward a red-footed booby asleep in its branches. What did the crab do when it reached the bird?",
+    "answer": "Broke its wing so it could not fly off",
     "choices": [
-      "He had a lot of trouble sleeping",
-      "He never returned to the island again",
-      "He heard the crabs calling in the dark",
-      "He counted forty crabs at the kill"
+      "Broke its wing so it could not fly off",
+      "Shook the branch until the bird fled",
+      "Snatched a fish from the bird's beak",
+      "Plucked feathers to line its burrow"
     ],
-    "context": "After witnessing the crab kill and dismember the seabird, Laidre said, 'I had a lot of trouble sleeping that night.' Within about 20 minutes the blood-smell drew more crabs that fought over the still-living bird and took hours to shred it. Source: Audubon (audubon.org/news/in-surprising-scientific-find-enormous-crab-kills-booby-camera). (Recounted testimony.)",
+    "context": "The crab broke the sleeping booby's wing, and within about 20 minutes the smell of blood drew rival crabs that squabbled over the bird for hours. Laidre admitted, 'I had a lot of trouble sleeping that night.' Source: Audubon (audubon.org/news/in-surprising-scientific-find-enormous-crab-kills-booby-camera).",
     "topic": "coconut-crab-birgus-latro"
   },
   {
@@ -4603,7 +4538,7 @@
   },
   {
     "tier": 5,
-    "question": "Charles Darwin, sailing on the Beagle in the 1830s, watched a coconut crab on an Indian Ocean island strip the husk from a coconut fibre by fibre. He noted that the crab always began its work at one particular spot on the nut. Which spot?",
+    "question": "Charles Darwin, on the Beagle's visit to the Keeling Islands in the 1830s, wrote down how a coconut crab opens a coconut, as a man living there had watched it done again and again. The crab strips the husk fibre by fibre, always starting at one particular spot on the nut. Which spot?",
     "answer": "The end with the three eye-holes",
     "choices": [
       "The end with the three eye-holes",
@@ -4611,7 +4546,7 @@
       "The seam running down one side",
       "The rough patch where it met the branch"
     ],
-    "context": "Darwin recorded exactly how the crab works: it tears the coconut husk 'fibre by fibre,' always from the end with the three eye-holes, then hammers a claw on one eye-hole until it breaks through to the meat inside. He called it 'as curious a case of instinct as ever I heard of.' Source: Darwin, The Voyage of the Beagle, Ch. 20 (standardebooks.org/ebooks/charles-darwin/the-voyage-of-the-beagle/text/chapter-20).",
+    "context": "Darwin recorded, on the word of Mr. Liesk, a resident who had repeatedly seen it, exactly how the crab works: it tears the coconut husk 'fibre by fibre,' always from the end with the three eye-holes, then hammers a claw on one eye-hole until it breaks through to the meat inside. He called it 'as curious a case of instinct as ever I heard of.' Source: Darwin, The Voyage of the Beagle, Ch. 20 (standardebooks.org/ebooks/charles-darwin/the-voyage-of-the-beagle/text/chapter-20).",
     "topic": "coconut-crab-birgus-latro"
   },
   {
@@ -4629,15 +4564,15 @@
   },
   {
     "tier": 5,
-    "question": "Jakob Krieger's team on Christmas Island fitted coconut crabs with GPS tags, the first arthropods ever tracked that way, then carried some far from home and let them go. Most made their way back to within a few hundred meters of where they were caught. What did one crab do on the way?",
-    "answer": "Retraced its original path, S-bend and all",
+    "question": "Jakob Krieger's team fitted Christmas Island coconut crabs with GPS tags, tracking an arthropod by satellite on a scale never tried before, then carried some far from home and let them go. Several made their way back to within a few hundred meters of where they were caught. One crab was moved twice. What did it do?",
+    "answer": "Came home by the same route twice, S-bend and all",
     "choices": [
-      "Retraced its original path, S-bend and all",
+      "Came home by the same route twice, S-bend and all",
       "Waited out the heat in a stranger burrow",
       "Doubled its speed after the first rainfall",
       "Followed the coastline the entire distance"
     ],
-    "context": "Jakob Krieger and colleagues tagged 55 male coconut crabs on Christmas Island (2008-2011), logging over 1,500 crab-days -- some crabs followed for three months -- with inland-to-coast treks averaging 1.8 km and reaching 4.2 km. When translocated, the crabs homed back: five of eight returned to within 100-300 m of their capture spot, and one retraced an identical route including a characteristic S-bend -- evidence of route memory and path integration in a crustacean. Source: Krieger J et al. (2012), 'Giant Robber Crabs Monitored from Space: GPS-Based Telemetric Studies on Christmas Island', PLOS ONE 7(11):e49809 -- https://pmc.ncbi.nlm.nih.gov/articles/PMC3498180/",
+    "context": "Jakob Krieger and colleagues tagged 55 male coconut crabs on Christmas Island (2008-2011), logging over 1,500 crab-days, with inland-to-coast treks averaging 1.8 km and reaching 4.2 km. Of eight crabs moved inland or seaward, five returned to within about 100-300 m of their capture spot or to the spot itself, and one crab, moved twice, came home both times along an identical path with a characteristic S-bend: evidence of route memory in a crustacean. Four crabs moved along the coast never returned. Source: Krieger J et al. (2012), 'Giant Robber Crabs Monitored from Space: GPS-Based Telemetric Studies on Christmas Island', PLOS ONE 7(11):e49809, https://pmc.ncbi.nlm.nih.gov/articles/PMC3498180/",
     "topic": "coconut-crab-birgus-latro"
   },
   {
@@ -4654,29 +4589,16 @@
     "topic": "coelacanth"
   },
   {
-    "tier": 1,
-    "question": "J.L.B. Smith, who identified the first living coelacanth, grew so fond of the fish that he made it the title character of his 1956 book. What affectionate name did he give it?",
-    "answer": "Old Fourlegs",
-    "choices": [
-      "Old Fourlegs",
-      "The Devil Fish",
-      "The Ghost Shark",
-      "Ancient Mariner"
-    ],
-    "context": "Smith titled his 1956 book 'Old Fourlegs: The Story of the Coelacanth,' for the fish's four leg-like lobed fins. Source: https://en.wikipedia.org/wiki/Coelacanth",
-    "topic": "coelacanth"
-  },
-  {
     "tier": 2,
-    "question": "A coelacanth paddles through deep water on four thick, fleshy fins tipped with muscle. Underwater film shows those fins moving in a rhythm that hints at how life crawled from the sea onto land. Where else in nature does the same rhythm show up?",
-    "answer": "In the stride of a walking four-legged reptile",
+    "question": "A coelacanth paddles through deep water on four thick, fleshy fins tipped with muscle. Divers filming it found that the four fins move in a set rhythm of their own. Where else in nature does the same rhythm show up?",
+    "answer": "In a four-legged reptile walking on land",
     "choices": [
-      "In the stride of a walking four-legged reptile",
-      "In the wingbeats of a hovering hummingbird",
-      "In the coiling of a swimming sea snake",
-      "In the jet-pulses of a fleeing squid"
+      "In a four-legged reptile walking on land",
+      "In a frog kicking through a pond",
+      "In a sea lion rowing with its flippers",
+      "In a ray flapping its wing-like fins"
     ],
-    "context": "The coelacanth's lobed fins move in the same alternating pattern a four-legged animal uses to walk, hinting at the fish-to-land transition -- though the coelacanth is NOT our direct ancestor. Source: https://link.springer.com/article/10.1007/BF00004739",
+    "context": "The coelacanth's lobed fins move in the same alternating pattern a four-legged animal uses to walk, hinting at the fish-to-land transition, though the coelacanth is not the direct ancestor of land animals. Source: https://link.springer.com/article/10.1007/BF00004739",
     "topic": "coelacanth"
   },
   {
@@ -4695,12 +4617,12 @@
   {
     "tier": 3,
     "question": "A coelacanth in the deep water off eastern Africa lunges at a smaller fish, and a special muscle goes to work on the real hinge that runs across the middle of its skull, a joint no other living animal has. What happens to its head?",
-    "answer": "The whole front of its head swings up, opening the mouth extra-wide",
+    "answer": "The front of its head tips up to open wider",
     "choices": [
-      "The whole front of its head swings up, opening the mouth extra-wide",
-      "Its jaws detach and slide forward like a moray eel's",
-      "Its skull inflates with water to look twice its size",
-      "Its snout splits open to release a cloud of ink"
+      "The front of its head tips up to open wider",
+      "Its jaws shoot forward like a moray eel's",
+      "Its lower jaw drops free like a snake's",
+      "Its skull locks rigid to brace the bite"
     ],
     "context": "A basicranial muscle swings the front of the head upward at the intracranial joint, opening the mouth wider and boosting bite force to swallow larger prey. Source: https://www.cell.com/current-biology/pdfExtended/S0960-9822(15)00329-2",
     "topic": "coelacanth"
@@ -4941,13 +4863,13 @@
   },
   {
     "tier": 1,
-    "question": "A dragonfly perches on a reed, its huge eyes wrapped around most of its head. Each eye is a bundle of up to 30,000 tiny units packed together, every one catching its own single dot of light. What are those light-catching units called?",
-    "answer": "Ommatidia",
+    "question": "A dragonfly perches on a reed, its huge eyes wrapped around most of its head. A human eye has a single lens, but a dragonfly eye is a bundle of tiny units, each with its own lens. How many units can one eye hold?",
+    "answer": "Up to about 30,000",
     "choices": [
-      "Ommatidia",
-      "Feathers",
-      "Whiskers",
-      "Gills"
+      "Up to about 30,000",
+      "Up to about 300",
+      "Up to about 3,000",
+      "Up to about 300,000"
     ],
     "context": "A dragonfly's eye is a bundle of up to ~30,000 ommatidia — each a lens over a light-catcher (rhabdom) that sees one dot of light. The brain stitches all those dots into a mosaic, not a smooth photo. Source: grrlscientist/ScienceBlogs '30,000 Facets Give Dragonflies a Different Perspective' (2009); Britannica 'Ommatidium'.",
     "topic": "compound-eyes-and-the-insect-mosaic"
@@ -4955,27 +4877,27 @@
   {
     "tier": 2,
     "question": "A cook's hand swoops down to swat a housefly on the kitchen counter, and the fly darts away before the hand connects. To the fly, the giant hand seems to come down in slow motion. Roughly how much faster does a housefly see than a human?",
-    "answer": "About four times faster",
+    "answer": "About four times as fast",
     "choices": [
-      "About four times faster",
-      "About the same speed",
-      "About half as fast",
-      "About a hundred times faster"
+      "About twice as fast",
+      "About four times as fast",
+      "About ten times as fast",
+      "About a hundred times as fast"
     ],
-    "context": "A fly sees about 250 flashes per second where a human sees about 60 — roughly four times faster — so your descending hand looks like slow motion, and the fly dodges. Compound eyes are poor at fine detail but brilliant at catching motion. Source: Big Think 'You're not fast enough to swat a fly'; ACSH 'Flicker Fusion is More Than Meets the Eye'.",
+    "context": "A fly sees about 250 flashes per second where a human sees about 60, roughly four times faster, so a descending hand looks like slow motion, and the fly dodges. Compound eyes are poor at fine detail but brilliant at catching motion. Source: Big Think 'You're not fast enough to swat a fly'; ACSH 'Flicker Fusion is More Than Meets the Eye'.",
     "topic": "compound-eyes-and-the-insect-mosaic"
   },
   {
-    "tier": 4,
-    "question": "A mantis shrimp peers out of its burrow on an Indo-Pacific reef, scanning for prey and rivals. Each eye sits on a stalk of its own, moved by eight tiny muscles. What can its two eyes do that almost no other animal's can?",
-    "answer": "Point in totally different directions at once",
+    "tier": 2,
+    "question": "A mantis shrimp peers out of its burrow on an Indo-Pacific reef, scanning for prey and rivals. Each of its eyes rides on a movable stalk. How do the two eyes move?",
+    "answer": "Each on its own, in different directions",
     "choices": [
-      "Point in totally different directions at once",
-      "Sweep together in a locked, mirrored pair",
-      "Scan only the narrow strip straight ahead",
-      "Fuse into a single wide eye"
+      "Each on its own, in different directions",
+      "Always together, as a locked pair",
+      "Only up and down, never side to side",
+      "Only when the shrimp turns its body"
     ],
-    "context": "Each mantis-shrimp eye sits on its own stalk and moves completely independently — left, right, up, down, even twisting — driven by eight eyecup muscles, so the two eyes can point in totally different directions at once. Source: Marshall et al. 'Stomatopod eye structure and function'; Wikipedia 'Mantis shrimp'.",
+    "context": "Each mantis-shrimp eye sits on its own stalk and moves independently, left, right, up, down and even twisting, so the two eyes can point in totally different directions at once. Source: Daly, How, Partridge & Roberts, 'Complex gaze stabilization in mantis shrimp' (PMC5966611); Wikipedia 'Mantis shrimp'.",
     "topic": "compound-eyes-and-the-insect-mosaic"
   },
   {
@@ -4989,19 +4911,6 @@
       "It could swallow prey whole"
     ],
     "context": "The cookiecutter shark (Isistius brasiliensis) reaches only about 56 cm in females and 42 cm in males, yet it bites chunks out of whales, dolphins, orcas, tuna, swordfish, seals, and even great white sharks. Source: https://en.wikipedia.org/wiki/Cookiecutter_shark",
-    "topic": "cookiecutter-shark-isistius-brasiliensis"
-  },
-  {
-    "tier": 1,
-    "question": "A small, cigar-shaped cookiecutter shark seals its thick lips onto the side of a whale, drives its bottom teeth in, then twists its whole body around before it lets go. What does the wound it leaves look like?",
-    "answer": "A near-perfect round crater",
-    "choices": [
-      "A near-perfect round crater",
-      "A long ragged tear",
-      "A double row of punctures",
-      "A shallow scrape"
-    ],
-    "context": "The shark gouges out a neat, near-perfect round plug of flesh, leaving a crater about 5 cm across and 7 cm deep, like a cookie cutter pressed into dough. That clean circle is how the shark earned its name. Source: https://en.wikipedia.org/wiki/Cookiecutter_shark",
     "topic": "cookiecutter-shark-isistius-brasiliensis"
   },
   {
@@ -5032,13 +4941,13 @@
   },
   {
     "tier": 3,
-    "question": "A cookiecutter shark hangs in mid-water, its whole underside glowing pale green except for one dark band beneath its throat. Seen from far below against the bright belly, that dark patch looks just like the silhouette of a small fish. What does the fake shadow do for the shark?",
-    "answer": "It lures big predators in to be bitten",
+    "question": "A cookiecutter shark hangs in the dark midwater of a warm ocean, its whole underside glowing pale green except for one dark band beneath its throat. Biologists think that dark collar is no accident. What do they think it does for the little shark?",
+    "answer": "It looks like a small fish and lures big hunters in",
     "choices": [
-      "It lures big predators in to be bitten",
-      "It hides the shark's eyes from prey",
-      "It scares off rival sharks",
-      "It helps the shark find the seabed"
+      "It looks like a small fish and lures big hunters in",
+      "It hides the shark's eyes from the prey below it",
+      "It warns rival cookiecutters off its patch",
+      "It marks the shark as a male to females"
     ],
     "context": "The dark collar looks like the silhouette of a small fish, drawing big predators in close so the little shark can bite THEM. Scientists believe it is the only known case where the ABSENCE of glow works as a lure. Source: https://sharkangels.org/cookiecutter-sharks-use-glow-in-the-dark-ability-to-attract-prey-10x-its-own-size/",
     "topic": "cookiecutter-shark-isistius-brasiliensis"
@@ -5066,7 +4975,7 @@
       "It hooks rows of gill rakers into the wound edge",
       "It inflates its throat to press the seal outward"
     ],
-    "context": "The 'suction' is an active hydraulic trick, not just sticky lips. The shark closes its spiracles and pulls back its basihyal (the shark's tongue), dropping the pressure inside its mouth below the surrounding water while the thick suctorial lips form a gasket. Once it is vacuum-locked and anchored by the hook-like upper teeth, it drives in the lower saw and spins its whole body to core out the plug. It is the reverse of a syringe: pull the plunger back and the low pressure sucks everything tight. Source: Wikipedia, Cookiecutter shark (basihyal/spiracle-closure vacuum mechanism), corroborated by multiple secondary sources.",
+    "context": "The 'suction' is an active hydraulic trick, not just sticky lips. The shark closes its spiracles and pulls back its basihyal (the shark's tongue), dropping the pressure inside its mouth below the surrounding water while the thick suctorial lips form a gasket. Once it is vacuum-locked and anchored by the hook-like upper teeth, it drives in the lower saw and spins its whole body to core out the plug. It works like a syringe: pull the plunger back and the low pressure sucks everything tight. Source: Wikipedia, Cookiecutter shark (basihyal/spiracle-closure vacuum mechanism), corroborated by multiple secondary sources.",
     "topic": "cookiecutter-shark-isistius-brasiliensis"
   },
   {
@@ -5079,15 +4988,15 @@
       "It scavenges dead whales far more often than it bites live ones",
       "Its bites on whales deliver most of its yearly calories"
     ],
-    "context": "Chemical-tracer detective work overturned the shark's own reputation. Carlisle et al. (2021, Scientific Reports) used stable isotopes, fatty acids, and eDNA and found that big surface victims — whales, tuna, dolphins — make up only a minor part of the diet: roughly 55% small mesopelagic fish and squid, about 39% vertically migrating midwater prey, and only around 5% large epipelagic prey. The nitrogen-isotope (delta-15N) signature sat well ABOVE that of the large prey, meaning the famous flesh-plug victims are a supplement, not the staple. The animal we picture coring whales mostly eats tiny midwater prey; the isotope mixing models beat the folklore. Source: Carlisle et al. 2021, Scientific Reports (nature.com/articles/s41598-021-89903-z; PMC8175345).",
+    "context": "Chemical-tracer detective work overturned the shark's own reputation. Carlisle et al. (2021, Scientific Reports) used stable isotopes, fatty acids, and eDNA and found that big surface victims (whales, tuna, dolphins) make up only a minor part of the diet: roughly 55% small mesopelagic fish and squid, about 39% vertically migrating midwater prey, and only around 5% large epipelagic prey. The shark's nitrogen-isotope (delta-15N) signature sat above that of the large prey, the mark of a diet drawn from the deeper midwater food web. The shark famous for coring whales mostly eats tiny midwater prey. Source: Carlisle et al. 2021, Scientific Reports (nature.com/articles/s41598-021-89903-z; PMC8175345).",
     "topic": "cookiecutter-shark-isistius-brasiliensis"
   },
   {
     "tier": 1,
     "question": "A cuttlefish hovers just above the sandy seabed, arms fanned out, watching a shrimp below. In a blink too quick to follow, it strikes and the shrimp is gone. What shoots out from between its arms to seize the prey?",
-    "answer": "Two long feeding tentacles that uncoil in a blink",
+    "answer": "Two long, hidden feeding tentacles",
     "choices": [
-      "Two long feeding tentacles that uncoil in a blink",
+      "Two long, hidden feeding tentacles",
       "A jet of scalding water from its funnel",
       "A sticky net spun from its own slime",
       "A ring of hooks flicked from under its arms"
@@ -5097,15 +5006,15 @@
   },
   {
     "tier": 1,
-    "question": "Renaissance artists and mapmakers prized a rich brown drawing ink squeezed from the ink sac of one soft-bodied sea creature. The color still carries the animal's Latin genus name, 'sepia.' Which creature is 'sepia' named after?",
+    "question": "Leonardo da Vinci and other Renaissance artists drew with a rich brown ink squeezed from the ink sac of one soft-bodied sea creature. The color still carries the animal's Latin genus name, 'sepia.' Which creature is 'sepia' named after?",
     "answer": "The cuttlefish",
     "choices": [
       "The cuttlefish",
-      "The lugworm",
-      "The sea cucumber",
-      "The moon jellyfish"
+      "The squid",
+      "The octopus",
+      "The sea hare"
     ],
-    "context": "The cuttlefish's brown ink gave us the color 'sepia,' a prized artists' dye used in sketches since the Renaissance. The animal's genus name, Sepia, comes straight from that ink. Source: BBC Science Focus, 'Everything you wanted to know about cuttlefish'; Monterey Bay Aquarium, Common Cuttlefish.",
+    "context": "The cuttlefish's brown ink gave the color 'sepia' its name; it was used for writing in Greco-Roman times and for drawing by artists such as Leonardo da Vinci. The animal's genus name, Sepia, and the ink share the word. Source: https://en.wikipedia.org/wiki/Sepia_(color); Monterey Bay Aquarium, Common Cuttlefish.",
     "topic": "cuttlefish"
   },
   {
@@ -5124,38 +5033,38 @@
   {
     "tier": 3,
     "question": "In the open water of a shallow sea, a cuttlefish hangs perfectly still and level. A snail's shell is armor, but the porous shell inside the cuttlefish, its cuttlebone, does a very different job. What is the cuttlebone doing as it hovers?",
-    "answer": "Working as a buoyancy tank, flooding with gas or liquid to sink or rise",
+    "answer": "Acting as a float it fills with gas or liquid",
     "choices": [
-      "Working as a buoyancy tank, flooding with gas or liquid to sink or rise",
-      "Storing venom to load into its bite",
-      "Acting as a battery that powers its color changes",
-      "Growing new arms to replace lost ones"
+      "Acting as a float it fills with gas or liquid",
+      "Storing calcium it draws on to grow",
+      "Charging the cells that change its color",
+      "Holding ink in reserve for its next cloud"
     ],
     "context": "Unlike a snail's shell, the cuttlebone is a hard buoyancy tank stacked into tiny chambers the cuttlefish fills with gas or liquid to sink or rise, hovering like a submarine adjusting ballast. Source: AskNature, 'Layered Bone Holds Gas to Control Buoyancy'; PNAS 2020, 'Mechanical design of the highly porous cuttlebone' (pnas.org/doi/10.1073/pnas.2009531117).",
     "topic": "cuttlefish"
   },
   {
     "tier": 3,
-    "question": "On a coral reef, a cuttlefish flashes stripes, spots and rolling waves of color across its skin in a heartbeat, using color cells called chromatophores. Yet when biologists studied its eyes up close, they found a strange irony. What was it?",
-    "answer": "It is colorblind, with just one kind of light-detecting cell",
+    "question": "On a coral reef, a cuttlefish flashes stripes, spots and rolling waves of color across its skin in a heartbeat, using color cells called chromatophores. When biologists counted the kinds of light-sensing cells in its eyes, how many did they find?",
+    "answer": "Just one kind",
     "choices": [
-      "It is colorblind, with just one kind of light-detecting cell",
-      "It has no lens and sees only blurred shadows",
-      "It cannot open its eyes in daylight",
-      "It grows a new eye each breeding season"
+      "Just one kind",
+      "Three kinds",
+      "Four kinds",
+      "Twelve kinds"
     ],
-    "context": "The great irony of the cuttlefish, master of color, is that its eye holds only ONE type of photoreceptor, so it likely cannot see the dazzling color displays it produces the way we do. Source: Bailey-Matthews National Shell Museum, 'The Amazing Cuttlefish Eye' (shellmuseum.org); PNAS 2016 (pnas.org/doi/10.1073/pnas.1524578113).",
+    "context": "The great irony of the cuttlefish, master of color, is that its eye holds only ONE type of photoreceptor, so it likely cannot see the dazzling color displays it produces the way humans do. Source: Bailey-Matthews National Shell Museum, 'The Amazing Cuttlefish Eye' (shellmuseum.org); PNAS 2016 (pnas.org/doi/10.1073/pnas.1524578113).",
     "topic": "cuttlefish"
   },
   {
     "tier": 3,
     "question": "A broadclub cuttlefish creeps toward a crab on an Indo-Pacific reef, sending dark stripes rolling downward across its head and arms again and again, like a moving television screen. How does this 'passing cloud' help it close in on the crab?",
-    "answer": "The fake downward motion floods the prey's eyes and hides that the hunter is advancing",
+    "answer": "It swamps the crab's eyes with fake motion, hiding the approach",
     "choices": [
-      "The fake downward motion floods the prey's eyes and hides that the hunter is advancing",
-      "The rippling stripes give off a smell that lulls the crab to sleep",
-      "The moving pattern scares off larger predators nearby",
-      "The rolling bands warm the water to make the crab sluggish"
+      "It swamps the crab's eyes with fake motion, hiding the approach",
+      "It makes the hunter look like seaweed swaying in the current",
+      "It warns rival cuttlefish to keep away from its prey",
+      "It hides the cuttlefish's eyes from the crab"
     ],
     "context": "A 2025 Bristol study found the moving stripes of the 'passing-cloud' display flood the prey's vision with fake downward motion, masking the fact that the predator is looming closer. Source: Santon & How et al., Science Advances 2025 (science.org/doi/10.1126/sciadv.adr3686); ScienceDaily 2025-03-26.",
     "topic": "cuttlefish"
@@ -5163,19 +5072,19 @@
   {
     "tier": 4,
     "question": "Giant Australian cuttlefish crowd into the shallow bays of South Australia each winter to breed, and the big males stand guard and fight off rivals for the females. A small male has no hope in a straight brawl, so he cheats, and his trick fools the guard more than half the time. What does he do?",
-    "answer": "He pales his skin and tucks his arms to pose as a female and slip past",
+    "answer": "He poses as a female to slip past the guard",
     "choices": [
-      "He pales his skin and tucks his arms to pose as a female and slip past",
+      "He poses as a female to slip past the guard",
       "He plays dead until the guard drifts away",
       "He blasts ink to blind the guard and dashes in",
-      "He mimics the guard's own warning pattern to bluff him off"
+      "He bluffs with the guard's own warning pattern"
     ],
     "context": "A small 'sneaker' male can't win a fight, so he pales his skin, tucks his arms to fake a female's outline, and hides his male display to slip right past the guarding male to the female. The disguise works over half the time. Source: Norman/Hanlon, reported in Nature News 2005, 'Cuttlefish win mates with transvestite antics' (nature.com/news/2005/050117); ScienceDaily 2005-01-24.",
     "topic": "cuttlefish"
   },
   {
     "tier": 5,
-    "question": "Alexander and Christopher Stubbs, a father and son, studied a cuttlefish's strange W-shaped pupil, set off-center, and in 2016 proposed a way it might let the animal see color. By the usual rules it cannot, since its eyes have just a single type of light-sensing cell. How could such an eye still read color?",
+    "question": "Alexander and Christopher Stubbs, a father and son, studied a cuttlefish's strange W-shaped pupil, set off-center, and in 2016 proposed a way it might let the animal see color. By the usual rules of vision, its eyes should not tell colors apart at all. How could such an eye still read color?",
     "answer": "The pupil smears each wavelength to a different focus depth, and the eye reads color from how far it must refocus for a sharp image",
     "choices": [
       "The pupil smears each wavelength to a different focus depth, and the eye reads color from how far it must refocus for a sharp image",
@@ -5183,12 +5092,12 @@
       "The lone cell secretly holds three pigments that fatigue at different rates, mimicking three separate color receptors",
       "The skin sends color data straight to the optic nerve, letting the body sense hues the eye alone never could"
     ],
-    "context": "Another question already gives the paradox — the cuttlefish is a color-changing champion yet has only one photoreceptor type. This is the proposed resolution, a step deeper. Alexander and Christopher Stubbs (PNAS, 2016) argued the non-circular, off-axis W-shaped pupil deliberately MAXIMIZES chromatic aberration: the lens bends short (blue) and long (red) wavelengths to focus at different depths behind it, so no single image is ever sharp for all colors at once. By accommodating — refocusing the lens until the image snaps sharp — a single-receptor eye can infer the wavelength from the focus depth that worked. It is a color sense built from blur rather than from multiple pigments. Still a hypothesis under study, but a clever candidate answer to the puzzle. Source: Stubbs & Stubbs 2016, PNAS (pubmed.ncbi.nlm.nih.gov/27382180/); Berkeley News 2016-07-05; phys.org summary.",
+    "context": "The cuttlefish is a color-changing champion yet has only one type of photoreceptor. Alexander and Christopher Stubbs (PNAS, 2016) argued the non-circular, off-axis W-shaped pupil deliberately MAXIMIZES chromatic aberration: the lens bends short (blue) and long (red) wavelengths to focus at different depths behind it, so no single image is ever sharp for all colors at once. By accommodating, refocusing the lens until the image snaps sharp, a single-receptor eye can infer the wavelength from the focus depth that worked. It is a color sense built from blur rather than from multiple pigments. Still a hypothesis under study, but a clever candidate answer to the puzzle. Source: Stubbs & Stubbs 2016, PNAS (pubmed.ncbi.nlm.nih.gov/27382180/); Berkeley News 2016-07-05; phys.org summary.",
     "topic": "cuttlefish"
   },
   {
     "tier": 5,
-    "question": "A cuttlefish, like its octopus and squid kin, rewrites the working copies of its genes, altering more than 60 percent of them in its brain; humans alter fewer than 1 percent. Joshua Rosenthal and Eli Eisenberg showed in 2017 that this flexibility has a steep price. What did these animals give up for it?",
+    "question": "A cuttlefish, like its octopus and squid kin, rewrites the working copies of its genes far more than most animals do. In the squid brain more than 60 percent are altered; humans alter well under 1 percent. Joshua Rosenthal and Eli Eisenberg showed in 2017 that this flexibility has a steep price. What did these animals give up for it?",
     "answer": "The normal speed of DNA evolution, since the genome around each editing site had to freeze in place to protect it",
     "choices": [
       "The normal speed of DNA evolution, since the genome around each editing site had to freeze in place to protect it",
@@ -5202,25 +5111,25 @@
   {
     "tier": 2,
     "question": "A hungry bird lands right beside a Darwin's frog on the forest floor, close enough to snatch it. The frog does not bolt or fight back — instead it pulls a trick that makes the bird lose all interest and move on. What is the frog doing to save itself?",
-    "answer": "Playing dead — going limp and floating belly-up like a lifeless leaf",
+    "answer": "Flopping onto its back to play dead",
     "choices": [
-      "Playing dead — going limp and floating belly-up like a lifeless leaf",
+      "Flopping onto its back to play dead",
       "Puffing up huge to look too big to swallow",
       "Oozing a bitter poison from its back",
-      "Flashing bright warning colors to scare the bird"
+      "Screaming loudly to startle the bird"
     ],
     "context": "When a predator threatens it, Darwin's frog plays dead: it flops onto its back and lies still, and it may leap into a stream and float belly-up, motionless, until the danger passes — a leaf-shaped frog pretending to be a lifeless leaf. Source: https://www.wildlifeexplained.com/darwins-frog/",
     "topic": "darwins-frog-the-father-who-broods-young-in-his-throat"
   },
   {
     "tier": 2,
-    "question": "A male Darwin's frog waits beside a clutch of eggs in a beech forest of southern Chile. In most frogs the mother's work ends once the eggs are laid, but when these eggs begin to twitch, he scoops them up and keeps them on his body while the tadpoles grow. Where does he keep them?",
-    "answer": "Inside his vocal sac, the balloon-like pouch in his throat",
+    "question": "A male Darwin's frog waits beside a clutch of eggs in a beech forest of southern Chile. In most frogs the mother's work ends once the eggs are laid, but when these eggs begin to twitch, he scoops them up and keeps them with him while the tadpoles grow. Where does he keep them?",
+    "answer": "Inside his throat's vocal sac",
     "choices": [
-      "Inside his vocal sac, the balloon-like pouch in his throat",
-      "Glued in a neat row along his broad back",
-      "Wrapped in a jelly ball clamped between his hind legs",
-      "Tucked into deep folds of skin on his belly"
+      "Inside his throat's vocal sac",
+      "Glued in a neat row along his back",
+      "Wrapped in strings around his hind legs",
+      "Tucked into folds of skin on his belly"
     ],
     "context": "In Darwin's frog it is the father who broods the young: when the eggs begin to twitch, the male scoops them into his mouth and holds them inside his vocal sac — the balloon-like throat pouch he normally uses to call — where the tadpoles grow. Source: https://www.edgeofexistence.org/blog/life-within-a-vocal-sac/",
     "topic": "darwins-frog-the-father-who-broods-young-in-his-throat"
@@ -5305,67 +5214,54 @@
   },
   {
     "tier": 1,
-    "question": "A mile beneath the ocean surface, in pitch darkness, a female anglerfish hangs motionless. Above her open mouth she slowly waves a glowing bulb on a fleshy rod, the only speck of light for miles. What is the glow drawing toward her jaws?",
-    "answer": "Prey coming to investigate the light",
+    "question": "A mile beneath the ocean surface, in pitch darkness, a female anglerfish hangs motionless and slowly waves a glowing bulb on a fleshy rod, the only speck of light for miles. What is the glow for?",
+    "answer": "Luring prey close enough to eat",
     "choices": [
-      "Prey coming to investigate the light",
-      "A mate she is signaling",
-      "Rivals she is warning off",
-      "Her own young she is guiding"
+      "Luring prey close enough to eat",
+      "Lighting the water so she can see",
+      "Warning rivals off her patch",
+      "Guiding her young through the dark"
     ],
     "context": "The rod is a modified dorsal fin ray called the illicium, and the glowing tip is the esca; it works like a fishing pole. Each species has its own uniquely shaped lure, which she waves to draw curious prey right to her mouth. Source: MBARI, 'Deep-sea anglerfish' (https://www.mbari.org/animal/deep-sea-anglerfish/).",
     "topic": "deep-sea-anglerfish-ceratioidei"
   },
   {
-    "tier": 1,
-    "question": "Robot submarines exploring the ocean have met ceratioid anglerfish, the toothy fish with glowing lures on fishing-pole spines, only a handful of times. Where in the ocean do these anglerfish live?",
-    "answer": "The deep open ocean, thousands of meters down",
-    "choices": [
-      "The deep open ocean, thousands of meters down",
-      "Tide pools along rocky coasts",
-      "Coral reefs in warm shallows",
-      "Rivers where they spawn each year"
-    ],
-    "context": "Ceratioid anglerfish live roughly 300 to 4,000 meters down in the open sea. Even after decades of deep-sea robot exploration, MBARI scientists have logged only a handful of encounters with them. Source: MBARI, 'Deep-sea anglerfish'; Live Science.",
-    "topic": "deep-sea-anglerfish-ceratioidei"
-  },
-  {
     "tier": 2,
-    "question": "A female anglerfish may go weeks without a meal in the deep sea and cannot afford to lose one. Her jaw opens like a trapdoor, and her long, needle-like teeth point inward so nothing can back out. What do those weapons let her do?",
-    "answer": "Swallow prey larger than her own body",
+    "question": "A female anglerfish may go weeks without a meal in the deep sea, so she cannot let a chance pass. Her jaw opens like a trapdoor, and her needle teeth curve inward. How big a meal can she swallow?",
+    "answer": "Prey larger than her own body",
     "choices": [
-      "Swallow prey larger than her own body",
-      "Grind through hard clam shells",
-      "Strain tiny plankton from the water",
-      "Bite a chunk and let the rest go"
+      "Prey larger than her own body",
+      "Prey up to half her length",
+      "Prey no wider than her head",
+      "Only shrimp and tiny plankton"
     ],
     "context": "The inward-curving teeth trap anything that enters, and the hinged jaw stretches to engulf prey bigger than herself — a crucial trick where a missed meal might be the last one for a long time. Source: MBARI, 'Deep-sea anglerfish'; Live Science.",
     "topic": "deep-sea-anglerfish-ceratioidei"
   },
   {
     "tier": 2,
-    "question": "A female anglerfish dangles a tiny glowing lure right over her mouth in the black deep sea. If her body reflected even a little of that light, prey would spot the big fish behind the bulb and flee. What is special about her skin?",
-    "answer": "It absorbs nearly all light, so her body vanishes",
+    "question": "A female anglerfish dangles a tiny glowing lure right over her mouth in the black deep sea. If prey could make out the big fish behind the bulb, it would flee. What is special about her skin?",
+    "answer": "It is ultra-black and soaks up almost all light",
     "choices": [
-      "It absorbs nearly all light, so her body vanishes",
-      "It reflects moonlight sinking from the surface",
-      "It soaks up warmth from the water around her",
-      "It flashes bright colors to startle attackers"
+      "It is ultra-black and soaks up almost all light",
+      "It is clear as glass, so light passes through",
+      "It is mirror-silver, like a hatchetfish's",
+      "It glows faintly to match the light from above"
     ],
     "context": "This ultra-black skin absorbs nearly all light, so in the deep only the glowing esca gives her away while the rest of her body disappears into the dark. Source: MBARI, 'Deep-sea anglerfish'.",
     "topic": "deep-sea-anglerfish-ceratioidei"
   },
   {
     "tier": 3,
-    "question": "Deep in the dark ocean, a female anglerfish waves a tiny glowing bulb on a fleshy rod over her open jaws, yet her body has no light-making organ of its own. Where does the glow in her lure come from?",
-    "answer": "Bioluminescent bacteria living inside the lure",
+    "question": "Deep in the dark ocean, far below the last of the sunlight, a female anglerfish waves a tiny glowing bulb on a fleshy rod over her open jaws, the only light for miles around. Where does the glow in her lure come from?",
+    "answer": "Bacteria living packed inside the lure",
     "choices": [
-      "Bioluminescent bacteria living inside the lure",
-      "Sunlight she stored during a shallow-water youth",
-      "A chemical she secretes and swallows back",
-      "Glowing plankton she keeps trapped in her teeth"
+      "Bacteria living packed inside the lure",
+      "A glowing chemical her own cells make",
+      "Glowing plankton trapped inside the bulb",
+      "Crystals that gather faint light from above"
     ],
-    "context": "The light comes from symbiotic bacteria (Photobacterium and Vibrio species) living inside the esca. In some anglerfish the bacteria have grown so dependent on their host that they can no longer glow on their own either. Source: Smithsonian Ocean, 'Meet the Tiny Bacteria That Give Anglerfishes Their Spooky Glow'.",
+    "context": "The light comes from symbiotic bacteria living inside the esca. The bacteria have shed many of their genes and lean heavily on their host, yet each young female still picks them up from the seawater. Source: Smithsonian Ocean, 'Meet the Tiny Bacteria That Give Anglerfishes Their Spooky Glow'; Baker et al. 2019, eLife 8:e47606.",
     "topic": "deep-sea-anglerfish-ceratioidei"
   },
   {
@@ -5383,7 +5279,7 @@
   },
   {
     "tier": 3,
-    "question": "A tiny male anglerfish at last finds a female many times his size in the black deep. He bites onto her side and holds on, and enzymes go to work where his mouth meets her skin. What happens to the two fish?",
+    "question": "A tiny male Ceratias anglerfish drifts through the black deep far below the sunlight, sniffing for a mate, until at last he finds a female many times his size. He bites onto her side and holds on. What happens to the two fish?",
     "answer": "His flesh permanently fuses to hers",
     "choices": [
       "His flesh permanently fuses to hers",
@@ -5391,7 +5287,7 @@
       "He rides along, holding on by his teeth",
       "She swallows him whole as a meal"
     ],
-    "context": "Enzymes dissolve the tissue where they touch, so the male's flesh fuses permanently into the female's body — the union biologists call sexual parasitism. Source: Yale News, 'Sea of love: Behind the unusual sexual parasitism of deep-water anglerfish' (2024).",
+    "context": "In Ceratias, as in other anglerfish whose males fuse for life, enzymes dissolve the tissue where the two touch, so the male's flesh fuses permanently into the female's body, the union biologists call sexual parasitism. In some other anglerfish the male clings on only for a while. Source: Yale News, 'Sea of love: Behind the unusual sexual parasitism of deep-water anglerfish' (2024); Swann et al. 2020, Science.",
     "topic": "deep-sea-anglerfish-ceratioidei"
   },
   {
@@ -5409,7 +5305,7 @@
   },
   {
     "tier": 4,
-    "question": "Ted Pietsch studied a preserved anglerfish of the species Photocorynus spiniceps, a female 46 millimeters long with her tiny mate fused to her back like a barnacle on a whale. The male measured just 6.2 millimeters, smaller than a grain of rice. What record does he hold?",
+    "question": "Ted Pietsch studied a preserved anglerfish of the species Photocorynus spiniceps, a female 46 millimeters long with her tiny mate fused to her back like a barnacle on a whale. The male measured just 6.2 millimeters, about the size of a grain of rice. What record does he hold?",
     "answer": "World's smallest known sexually mature vertebrate",
     "choices": [
       "World's smallest known sexually mature vertebrate",
@@ -5426,24 +5322,11 @@
     "answer": "Key parts of the adaptive immune system",
     "choices": [
       "Key parts of the adaptive immune system",
-      "The bacteria that light their lure",
-      "Their ability to swim after birth",
-      "The bones that support the jaw"
+      "Her inborn, first-line immune defenses",
+      "The clotting system that seals wounds",
+      "The nerves that feel pain in her skin"
     ],
-    "context": "Permanently-attaching anglerfish have discarded the MHC genes, killer T cells, and antibodies that protect humans from disease. Lead author Thomas Boehm noted that in a human, that combined loss 'would result in fatal immunodeficiency' — yet the fish survive on a beefed-up innate immune system scientists are still working to understand. Source: Swann et al. 2020, 'The immunogenetics of sexual parasitism,' Science.",
-    "topic": "deep-sea-anglerfish-ceratioidei"
-  },
-  {
-    "tier": 5,
-    "question": "In some deep-sea anglerfish, a tiny male bites onto the far bigger female and their bodies grow together for life. Biologists comparing the eleven families of ceratioid anglerfish found that the fused-male habit is no single freak accident. What did they find?",
-    "answer": "It evolved independently several separate times",
-    "choices": [
-      "It evolved independently several separate times",
-      "It appears in only one ancient species",
-      "It was inherited unchanged from a shared ancestor",
-      "It occurs only in aquarium-bred populations"
-    ],
-    "context": "Sexual parasitism arose independently in five of the eleven ceratioid families, which is exactly why biologists study it as a repeated natural experiment rather than a one-time fluke. Source: UW News quoting Ted Pietsch; Yale News (2024).",
+    "context": "Permanently-attaching anglerfish have discarded the MHC genes, killer T cells, and antibodies that protect humans from disease. Thomas Boehm, who led the study, noted that in a human, that combined loss 'would result in fatal immunodeficiency', yet the fish survive on a beefed-up innate immune system scientists are still working to understand. Source: Swann et al. 2020, 'The immunogenetics of sexual parasitism,' Science.",
     "topic": "deep-sea-anglerfish-ceratioidei"
   },
   {
@@ -5469,18 +5352,18 @@
       "Only the briefly-attaching species had lost any genes",
       "The losses appeared at random, unlinked to mating"
     ],
-    "context": "The immune losses are graded, a dose-response gradient rather than one freak deletion, and this is still active research. Sequencing 31 specimens across four mating modes, Swann et al. found that species that only attach temporarily had already lost the aicda/AID gene that fine-tunes antibodies, while the species that fuse permanently went further and also lost the RAG genes (rag1 and rag2, the recombination machinery that builds antibody and T-cell receptors) along with MHC-I, CD4, and CD8. Functional CD8 was missing in all six permanent-attachment species tested. So the amount of adaptive immunity discarded scales with how committed the fusion is. Source: Swann et al. 2020, 'The immunogenetics of sexual parasitism,' Science (https://www.science.org/doi/10.1126/science.aaz9445); review 'Histocompatibility and Reproduction: Lessons from the Anglerfish,' Life 2022 (https://pmc.ncbi.nlm.nih.gov/articles/PMC8780861/).",
+    "context": "The immune losses are graded, a dose-response pattern rather than one freak deletion, and this is still active research. Swann et al. found that species whose males attach only temporarily had already lost a working aicda (AID) gene, which fine-tunes antibodies, while among the species that fuse permanently some had gone further and also lost working RAG genes (rag1 and rag2, the machinery that builds antibody and T-cell receptors), along with other immune genes. So the amount of adaptive immunity discarded scales with how committed the fusion is. Source: Swann et al. 2020, 'The immunogenetics of sexual parasitism,' Science (https://www.science.org/doi/10.1126/science.aaz9445); review 'Histocompatibility and Reproduction: Lessons from the Anglerfish,' Life 2022 (https://pmc.ncbi.nlm.nih.gov/articles/PMC8780861/).",
     "topic": "deep-sea-anglerfish-ceratioidei"
   },
   {
     "tier": 2,
     "question": "A farmer checking his pasture at midday finds a dairy cow standing still in the sun, eyes half shut. Her jaw grinds steadily from side to side, though she has not taken a fresh bite of grass in a long while. What is she doing?",
-    "answer": "Chewing the cud — re-chewing food it already swallowed",
+    "answer": "Chewing the cud, food she swallowed earlier",
     "choices": [
-      "Chewing the cud — re-chewing food it already swallowed",
-      "Scraping algae off its teeth",
-      "Grinding down grass seeds it can't swallow whole",
-      "Cooling itself by working its jaw like a pant"
+      "Chewing the cud, food she swallowed earlier",
+      "Scraping grit from between her teeth",
+      "Grinding seeds too hard to swallow whole",
+      "Cooling herself by working her jaw"
     ],
     "context": "A resting cow that looks like it's doing nothing is 'chewing the cud': it swallowed grass quickly, its stomach fermented and softened it, then sent a wad back up the throat to be chewed again and re-swallowed. Source: https://www.newworldencyclopedia.org/entry/Ruminant",
     "topic": "digesting-grass-the-ruminants-four-stomachs"
@@ -5500,28 +5383,15 @@
   },
   {
     "tier": 3,
-    "question": "Wildebeest and gazelles graze in huge herds on the African savanna while lions lie hidden in the tall grass. They gulp their grass down barely chewed and do the slow, careful chewing much later. Why eat first and chew afterward?",
+    "question": "Wildebeest and gazelles graze in huge herds on the open African savanna, cropping the grass as fast as they can. They gulp it down barely chewed and do the slow, careful chewing much later. Why eat first and chew afterward?",
     "answer": "To grab food in the open, then retreat somewhere safe to finish chewing",
     "choices": [
       "To grab food in the open, then retreat somewhere safe to finish chewing",
-      "To let the grass warm to body temperature before its teeth touch it",
-      "To save its teeth, which wear down fast on gritty grass",
+      "To let the grass warm to body temperature before their teeth touch it",
+      "To save their teeth, which wear down fast on gritty grass",
       "To swallow the morning dew on the grass before it dries off"
     ],
     "context": "The whole point of eat-fast-then-chew-later: a grazer bolts down mouthfuls of grass in the open, then retreats to safety and does the careful chewing out of a predator's reach. Source: https://www.britannica.com/animal/ruminant",
-    "topic": "digesting-grass-the-ruminants-four-stomachs"
-  },
-  {
-    "tier": 3,
-    "question": "A cow swallows a mouthful of grass, and it travels through four stomach chambers in a row. The first three soak, ferment and squeeze it like a food-processing line, and only the fourth digests it with acid the way a human stomach does. What is that true stomach called?",
-    "answer": "The abomasum",
-    "choices": [
-      "The abomasum",
-      "The rumen",
-      "The reticulum",
-      "The omasum"
-    ],
-    "context": "A ruminant's stomach has four chambers, but only the last — the abomasum — is the 'true stomach' that works with acid like a human's. The first three prepare the food ahead of it. Source: https://extension.umn.edu/dairy-nutrition/ruminant-digestive-system",
     "topic": "digesting-grass-the-ruminants-four-stomachs"
   },
   {
@@ -5544,20 +5414,20 @@
     "choices": [
       "Out the mouth, as a burp",
       "Out the back end, as flatulence",
-      "Through the skin, as it sweats",
-      "Dissolved into its milk and urine"
+      "Through her skin, in her sweat",
+      "Dissolved into her milk and urine"
     ],
     "context": "A single cow burps out roughly 150 to 500 liters of methane a day, and over 80% of it leaves through the mouth by belching — not from the other end. Source: https://beef.unl.edu/understanding-and-mitigating-methane-emissions-cattle/",
     "topic": "digesting-grass-the-ruminants-four-stomachs"
   },
   {
     "tier": 4,
-    "question": "A grazing cow swallows a stray nail along with the grass she eats. In the reticulum, the honeycomb-lined second chamber of her stomach, a sharp piece of metal can pierce the wall and cause deadly 'hardware disease.' What do farmers place inside each calf to prevent it for life?",
-    "answer": "A magnet that settles in the reticulum and holds metal fast",
+    "question": "A grazing cow swallows a stray nail along with the grass she eats. In the reticulum, the honeycomb-lined second chamber of her stomach, a sharp piece of metal can pierce the wall and cause deadly 'hardware disease.' What do many farmers feed their cattle to guard against it?",
+    "answer": "A magnet that pins the metal in place",
     "choices": [
-      "A magnet that settles in the reticulum and holds metal fast",
+      "A magnet that pins the metal in place",
       "A rubber ring that filters out anything hard",
-      "A dose of clay that coats and cushions swallowed metal",
+      "A dose of clay that coats swallowed metal",
       "A second lining grafted over the honeycomb wall"
     ],
     "context": "Because the honeycomb-lined reticulum traps swallowed metal that can pierce its wall ('hardware disease'), farmers feed cattle a magnet that sits in the reticulum for life, pinning stray nails and wire safely in place. Source: https://vivo.colostate.edu/livestock/hardware.html",
@@ -5673,7 +5543,7 @@
     "answer": "The tail is built to snap off at a weak seam",
     "choices": [
       "The tail is built to snap off at a weak seam",
-      "The tail is soft and had no bone in it",
+      "The tail is soft and has no bone in it",
       "The bird's grip crushed the tail loose",
       "The lizard chewed through its own tail"
     ],
@@ -5690,7 +5560,7 @@
       "Screeching to warn other geckos of the danger",
       "Clinging to the predator's teeth with tiny hooks"
     ],
-    "context": "The marquee wonder of autotomy. In leopard geckos the severed tail performs acrobatic flips up to 3 cm high and jumps and lunges for as long as 30 minutes, holding the predator's attention while the gecko escapes. A genuine, well-documented feat. Source: https://pmc.ncbi.nlm.nih.gov/articles/PMC2817253/",
+    "context": "In leopard geckos the severed tail performs acrobatic flips up to 3 cm high and jumps and lunges for as long as 30 minutes, holding the predator's attention while the gecko escapes. Source: https://pmc.ncbi.nlm.nih.gov/articles/PMC2817253/",
     "topic": "ditching-a-body-part-autotomy"
   },
   {
@@ -5720,14 +5590,14 @@
     "topic": "ditching-a-body-part-autotomy"
   },
   {
-    "tier": 4,
-    "question": "A leopard gecko carries a plump, ringed tail in good times and a scrawny one when days are hard. Skinks and geckos drop their tails only when they must, since the tail holds a store the lizard would badly miss. What does the tail store?",
-    "answer": "Fat, the animal's main energy reserve",
+    "tier": 3,
+    "question": "A leopard gecko waits out a hot, dry season in its burrow. Like many skinks and geckos, it drops its tail only when it must, since the tail holds a store the lizard would badly miss. What does the tail store?",
+    "answer": "Fat for lean times",
     "choices": [
-      "Fat, the animal's main energy reserve",
-      "Extra water for droughts",
-      "Venom for its next strike",
-      "Spare eggs until breeding season"
+      "Fat for lean times",
+      "Water for droughts",
+      "Venom for its bite",
+      "Calcium for its eggs"
     ],
     "context": "In many skinks and geckos the tail is the main fat-storage organ, so losing it burns stored reserves. A tailless lizard is also slower and often drops in social rank, losing fights and territory to rivals with intact tails. Source: https://www.mdpi.com/1424-2818/17/11/780",
     "topic": "ditching-a-body-part-autotomy"
@@ -5735,12 +5605,12 @@
   {
     "tier": 4,
     "question": "A skink caught by the tail in a bird's beak lets the tail go and runs, the same let-go escape a crab makes with a claw. Lizards, crabs, sea cucumbers and worms sit on wildly different branches of the animal kingdom, yet all of them have the trick. How did they all come by it?",
-    "answer": "Evolution arrived at it independently many separate times",
+    "answer": "Evolution arrived at it independently many times",
     "choices": [
-      "Evolution arrived at it independently many separate times",
-      "It spread from one ancient sea-worm ancestor to them all",
-      "One animal taught the trick to the others",
-      "It is a single mutation carried by every animal"
+      "Evolution arrived at it independently many times",
+      "It came down from one ancient sea-worm ancestor",
+      "Viruses carried the genes for it between groups",
+      "It is a leftover from the very first animals"
     ],
     "context": "Autotomy is such a good survival trick that evolution arrived at it independently at least nine separate times across the animal kingdom, in groups as different as lizards, sea cucumbers, crabs, and worms. Source: https://en.wikipedia.org/wiki/Autotomy",
     "topic": "ditching-a-body-part-autotomy"
@@ -5764,7 +5634,7 @@
     "answer": "Swims all the way up to the surface and ferries a bubble back down",
     "choices": [
       "Swims all the way up to the surface and ferries a bubble back down",
-      "Filters dissolved air out of the water using strands of its silk",
+      "Pumps the water out of the dome with strokes of its legs",
       "Lets rising marsh gas from the mud collect under the dome",
       "Cracks the bell open to let stale water flush the old air out"
     ],
@@ -5773,7 +5643,7 @@
   },
   {
     "tier": 2,
-    "question": "A male diving bell spider grows to about 15 millimeters, bigger than the 12-millimeter female sharing his pond. Among the world's forty-thousand-odd spider species it is nearly always the other way round, with the female the bigger sex, sometimes many times over. What does the male do that the extra size likely helps with?",
+    "question": "A male diving bell spider grows to about 15 millimeters, bigger than the 12-millimeter female sharing his pond. Among the world's fifty-thousand-plus spider species it is nearly always the other way round, with the female the bigger sex, sometimes many times over. What does the male do that the extra size likely helps with?",
     "answer": "Swims around actively hunting through the water",
     "choices": [
       "Swims around actively hunting through the water",
@@ -5799,7 +5669,7 @@
   },
   {
     "tier": 5,
-    "question": "Fresh oxygen keeps arriving in a diving bell spider's silk dome, so the spider might seem able to seal itself in for the whole winter. Seymour and Hetz showed it cannot: the dome keeps shrinking all the while, and a small one drops to half its size in about 37 hours. What makes the dome shrink?",
+    "question": "Fresh oxygen keeps arriving in a diving bell spider's silk dome, so the spider might seem able to seal itself in for the whole winter. Seymour and Hetz concluded it probably cannot: the dome keeps shrinking all the while, and in their model a small one drops to half its size in about 37 hours. What makes the dome shrink?",
     "answer": "Nitrogen slowly diffusing out of the bubble into the water",
     "choices": [
       "Nitrogen slowly diffusing out of the bubble into the water",
@@ -5807,31 +5677,31 @@
       "Silk dissolving under the steady pressure of the water",
       "Oxygen leaking back out as quickly as it enters"
     ],
-    "context": "The gill is not a free lunch. As the spider burns oxygen, nitrogen's share of the bubble rises (Dalton's law) and that nitrogen slowly diffuses out into the water, so the bell keeps deflating even while oxygen flows in. Seymour and Hetz's model shows a 0.5 ml bell at 100 mm depth shrinks to half its volume in about 37 hours -- exactly why the spider must still surface roughly once a day and why the bells cannot last all winter under the ice. Source: Seymour & Hetz 2011, 'The diving bell and the spider: the physical gill of Argyroneta aquatica', Journal of Experimental Biology 214(13):2175-2181 -- https://journals.biologists.com/jeb/article/214/13/2175/10328/The-diving-bell-and-the-spider-the-physical-gill",
+    "context": "The gill is not a free lunch. As the spider burns oxygen, nitrogen's share of the bubble rises (Dalton's law) and that nitrogen slowly diffuses out into the water, so the bell keeps deflating even while oxygen flows in. Seymour and Hetz's model shows a 0.5 ml bell at 100 mm depth shrinking to half its volume in about 37 hours, which is why the spider must still renew its bell from time to time and why, they concluded, bells are unlikely to last all winter under the ice. Source: Seymour & Hetz 2011, 'The diving bell and the spider: the physical gill of Argyroneta aquatica', Journal of Experimental Biology 214(13):2175-2181, https://journals.biologists.com/jeb/article/214/13/2175/10328/The-diving-bell-and-the-spider-the-physical-gill",
     "topic": "diving-bell-spider-the-spider-that-lives-underwater-in-a-bub"
   },
   {
     "tier": 1,
     "question": "A dolphin rises from the sea, opens the blowhole atop its head and takes a long breath before diving again. Its sleek body looks like a fish's, but that breath gives it away. What kind of creature is it really?",
-    "answer": "A warm-blooded mammal that must breathe air",
+    "answer": "A warm-blooded mammal",
     "choices": [
-      "A warm-blooded mammal that must breathe air",
-      "A fish that pulls air out of the water",
-      "A shark that never needs to surface",
-      "A cold-blooded reptile like a sea turtle"
+      "A warm-blooded mammal",
+      "A fish that gulps air",
+      "A reptile, like a turtle",
+      "A cold-blooded amphibian"
     ],
     "context": "The bottlenose dolphin (genus Tursiops) is not a fish but a small toothed whale: a warm-blooded mammal that breathes air through a blowhole on top of its head and must surface to breathe. Source: WDC / Whale and Dolphin Conservation, Tursiops biology overview.",
     "topic": "dolphin"
   },
   {
     "tier": 2,
-    "question": "A young bottlenose dolphin, the big grey dolphin seen in aquariums and off tropical beaches, makes up a whistle all its own in its first months and keeps it for life. No other dolphin has the same one, and dolphins that know it recognize who is calling. What does this personal whistle work like?",
-    "answer": "Its own name, unique to just that dolphin",
+    "question": "A young bottlenose dolphin swimming with its mother off a tropical beach makes up a whistle all its own in its first months and keeps it for life. How do other dolphins use that whistle?",
+    "answer": "To tell who is calling, like a name",
     "choices": [
-      "Its own name, unique to just that dolphin",
-      "A warning siren the whole pod shares",
-      "A mating song copied from its mother",
-      "A map of the reef sung out loud"
+      "To tell who is calling, like a name",
+      "To tell where food is, like a map",
+      "To warn of danger, like an alarm",
+      "To show its mood, like a face"
     ],
     "context": "Every bottlenose dolphin invents its own 'signature whistle' within its first months, and it becomes a personal name for life; signature whistles make up about half of all the whistles a dolphin produces. Source: University of St Andrews (King & Janik); PNAS 2013.",
     "topic": "dolphin"
@@ -5851,20 +5721,20 @@
   },
   {
     "tier": 3,
-    "question": "A bottlenose dolphin hunting in dark, muddy water cannot see the fish hiding there, so it fires clicks from its head and reads the returning echoes, a trick called echolocation. Raw clicks would spread uselessly in every direction, like a shout. The fatty bulge in its forehead, called the melon, solves that. What does the melon do to each click?",
+    "question": "A bottlenose dolphin hunting in dark, muddy water cannot see the fish hiding there, so it fires clicks from its head and reads the returning echoes, a trick called echolocation. Each click passes through the fatty bulge in its forehead, called the melon, on its way out. What does the melon do to the click?",
     "answer": "Bends it into a tight, aimed beam",
     "choices": [
       "Bends it into a tight, aimed beam",
-      "Muffles it so predators can't hear",
-      "Stores it up to release all at once",
-      "Turns the echoes into a smell"
+      "Muffles it so prey can't hear it",
+      "Stretches it into a long, low hum",
+      "Splits it into two, one per side"
     ],
     "context": "The melon is a fatty, dome-shaped lump in the dolphin's forehead that works like an acoustic lens, bending the clicks into a narrow beam so the dolphin can 'see' prey by echo in murky, dark water. Source: biologyinsights.com, Dolphin Sonar; DolphinsPlus echolocation explainer.",
     "topic": "dolphin"
   },
   {
     "tier": 3,
-    "question": "A dolphin spends its whole life at sea. A land mammal's breathing runs on automatic even in deep sleep, but a dolphin must decide to open its blowhole for every breath. If it ever fell fully asleep, it would stop swimming, stop breathing and drown. How does a dolphin sleep without drowning?",
+    "question": "A dolphin spends its whole life at sea and never comes ashore to rest. A land mammal's breathing runs on automatic even in deep sleep, but a dolphin must decide to open its blowhole for every breath. How does a dolphin sleep without drowning?",
     "answer": "It sleeps with only half its brain at a time",
     "choices": [
       "It sleeps with only half its brain at a time",
@@ -5882,7 +5752,7 @@
     "choices": [
       "Just below the blowhole, atop the head",
       "Deep in the throat behind the tongue",
-      "Inside the beak between the teeth",
+      "Inside the fatty melon of its forehead",
       "Down in the chest beside the lungs"
     ],
     "context": "A dolphin makes its clicks not with its mouth but with 'phonic lips' (nicknamed 'monkey lips') just below the blowhole on top of the head, snapping pressurized air past them to buzz out sound. Source: biologyinsights.com, Dolphin Sonar: How Dolphins Use Echolocation to See.",
@@ -5894,22 +5764,22 @@
     "answer": "Its fat-filled lower jawbone",
     "choices": [
       "Its fat-filled lower jawbone",
-      "A pair of hidden ear canals",
-      "The soft skin of its throat",
-      "The tip of its dorsal fin"
+      "The blowhole atop its head",
+      "The tip of its long snout",
+      "The bones around its eyes"
     ],
     "context": "A dolphin hears returning echoes not through ear-holes but through its lower jaw: a thin, fat-filled channel in the jawbone funnels the vibrations straight to its inner ear. Source: biologyinsights.com, Dolphin Sonar; Dolphin Communication Project FAQ.",
     "topic": "dolphin"
   },
   {
     "tier": 4,
-    "question": "Every wild bottlenose dolphin has a signature whistle that works as its name. Vincent Janik, a dolphin researcher, found that a dolphin will learn a close friend's whistle and repeat it back, usually after the two are apart. He called it the first known example, in animals other than humans, of what?",
-    "answer": "Calling each other by name",
+    "question": "Every wild bottlenose dolphin has a signature whistle all its own. Vincent Janik, a dolphin researcher, found that a dolphin will learn a close friend's whistle and repeat it back, usually after the two are apart. He called it the first known example, in mammals other than humans, of what?",
+    "answer": "Calling another animal by name",
     "choices": [
-      "Calling each other by name",
-      "Singing a shared lullaby",
-      "Passing down a family crest",
-      "Warning of a shark by rank"
+      "Calling another animal by name",
+      "Teaching a skill by sound alone",
+      "Holding a two-way conversation",
+      "Copying a call to fool a rival"
     ],
     "context": "Dolphins learn a friend's signature whistle and copy it to address that specific individual, most often when separated from a close friend, as if calling out the friend's name to reunite. Janik: 'Our results present the first case of naming in mammals.' Source: University of St Andrews (King & Janik); Science.org.",
     "topic": "dolphin"
@@ -5929,28 +5799,28 @@
   },
   {
     "tier": 5,
-    "question": "A dolphin's sonar is tested by asking it to tell two metal cylinders apart from several meters away. The cylinders look identical; they differ only in how thick their walls are. Just how tiny a difference in wall thickness can a dolphin's clicks reliably detect?",
+    "question": "A dolphin's sonar is tested by asking it to tell two metal cylinders apart from several meters away. The cylinders look identical; they differ only in how thick their walls are. How small a difference in wall thickness can a dolphin's clicks reliably detect?",
     "answer": "Thinner than a credit card",
     "choices": [
       "Thinner than a credit card",
-      "About the width of your hand",
-      "Roughly the length of a finger",
-      "No thinner than a coin's edge"
+      "About as thick as a coin",
+      "About as thick as a pencil",
+      "About as wide as a fingernail"
     ],
-    "context": "Dolphin sonar can tell apart aluminum cylinders whose walls differ by just 0.23 millimeters, thinner than a credit card, from 8 meters away, and can detect targets out past 100 meters, even approaching 400. Source: biologyinsights.com, Dolphin Sonar: How Dolphins Use Echolocation to See.",
+    "context": "Dolphin sonar can tell apart aluminum cylinders whose walls differ by just 0.23 millimeters, thinner than a credit card, from 8 meters away, and can detect targets more than 100 meters away. Source: biologyinsights.com, Dolphin Sonar: How Dolphins Use Echolocation to See.",
     "topic": "dolphin"
   },
   {
     "tier": 4,
-    "question": "A bottlenose dolphin plunges hundreds of meters down, far past where a human diver would be crushed or crippled by the bends. As it descends, its heart slows to a crawl, and the pressure of the deep water squeezes one compartment of its lungs shut. Why is that collapse good for the dolphin?",
+    "question": "A bottlenose dolphin plunges hundreds of meters down, far past where a human diver would be crushed or crippled by the bends. As it descends, its heart slows to a crawl, and the crushing pressure flattens the tiny air sacs in its lungs. Why is that collapse good for the dolphin?",
     "answer": "To keep deadly nitrogen from dissolving into its blood",
     "choices": [
       "To keep deadly nitrogen from dissolving into its blood",
       "To force stale air out through the blowhole faster",
-      "To make its body less buoyant so it sinks more easily",
-      "To warm the remaining air before it reaches the gills"
+      "To squeeze extra oxygen into its blood for the dive",
+      "To hold in body heat against the cold deep water"
     ],
-    "context": "On a deep dive a dolphin's body runs a 'dive reflex': the heart slows dramatically (bradycardia) to conserve oxygen, and blood is shunted away from non-essential tissue. Under crushing pressure one lung compartment is allowed to collapse while the other stays open for gas exchange, and blood is rerouted so that very little nitrogen dissolves into the body, a built-in defense against decompression sickness, the bends, which can kill human divers who surface too fast. This is a different feat from half-brain sleep, which keeps a resting dolphin breathing; here the wonder is how the body survives the pressure of the dive itself. In 1965 a U.S. Navy-trained bottlenose named Tuffy was documented diving to about 300 m (nearly 1,000 ft). Source: WebSearch of dive-physiology literature (PMC/Nature/JEB): acetylcholine-driven bradycardia lowers oxygen use; one lung compartment collapses while the other keeps gas exchange, blood rerouted to limit nitrogen buildup; Tuffy dived ~300 m in 1965.",
+    "context": "On a deep dive a dolphin's body runs a 'dive reflex': the heart slows dramatically (bradycardia) to conserve oxygen, and blood is shunted away from non-essential tissue. The water pressure squeezes the lungs until many of their tiny air sacs collapse, so little gas is left in contact with the blood and very little nitrogen dissolves into the body, a defense against decompression sickness, the bends, which can kill human divers who surface too fast. A 2018 hypothesis adds that part of the lung may stay open for gas exchange while blood is steered away from the collapsed part. In Navy tests reported in 1969, a trained bottlenose named Tuffy dived to about 300 m (nearly 1,000 ft). Sources: Ridgway, Scronce & Kanwisher 1969, Science 166:1651; Garcia-Parraga, Moore & Fahlman 2018, Proceedings of the Royal Society B 285:20180482.",
     "topic": "dolphin"
   },
   {
@@ -5994,7 +5864,7 @@
   },
   {
     "tier": 3,
-    "question": "Halfway through a glide between rainforest trees, a Draco does something no other gliding animal is known to do. Instead of leaving its two skin wings to hold themselves out with air pressure alone, it reaches forward with both front hands. What is it doing with them?",
+    "question": "A Draco leaps from a rainforest trunk and spreads its skin wings. Halfway through the glide to the next tree, it reaches forward with both front hands, something no other gliding animal is known to do. What is it doing with them?",
     "answer": "Gripping the front edge of each wing to hold it taut",
     "choices": [
       "Gripping the front edge of each wing to hold it taut",
@@ -6020,50 +5890,37 @@
   },
   {
     "tier": 1,
-    "question": "A dragonfly perched on a reed has a head that is almost all eye. Two huge glossy domes wrap right around it, each built from thousands of tiny lenses. How much of the world can the dragonfly see at once?",
-    "answer": "Nearly all the way around, a full circle",
+    "question": "A dragonfly perched on a reed has a head that is almost all eye: two huge glossy domes, each built from thousands of tiny lenses. How much of the world around it can the dragonfly see at once?",
+    "answer": "Nearly a full circle around it",
     "choices": [
-      "Nearly all the way around, a full circle",
-      "Only straight ahead in a narrow cone",
-      "Just the ground below it",
-      "Only what is directly above it"
+      "Nearly a full circle around it",
+      "About half, the whole view in front",
+      "About a quarter, mostly ahead",
+      "Only a narrow cone straight ahead"
     ],
     "context": "A dragonfly's compound eyes wrap almost entirely around its head, giving it nearly 360-degree vision; it can see everywhere except directly behind its own head. Source: Natural History Museum 'Dragonflies: The ultimate hunters' (nhm.ac.uk); ScienceBlogs '30,000 Facets Give Dragonflies a Different Perspective'.",
     "topic": "dragonfly"
   },
   {
     "tier": 2,
-    "question": "Locked onto a hovering midge, a dragonfly shoots forward to strike. Scientists who filmed hunt after hunt in high-speed video found that it outscores any lion or shark. About how often does a hunting dragonfly catch what it chases?",
+    "question": "Locked onto a hovering midge, a dragonfly shoots forward to strike. Scientists filmed hunt after hunt in high-speed video and counted how often the strikes worked. About how often does a hunting dragonfly catch what it chases?",
     "answer": "Around 19 times out of 20",
     "choices": [
       "Around 19 times out of 20",
-      "Around 1 time out of 20",
-      "About half the time",
-      "Around 1 time out of 3"
+      "Around 3 times out of 4",
+      "Around 1 time out of 2",
+      "Around 1 time out of 4"
     ],
     "context": "A hunting dragonfly catches prey on about 90-95% of its attempts, one of the highest success rates of any predator on Earth. Source: Nature World News 'Master Hunter Dragonflies Kill Prey 95 Percent Of The Time'; Smithsonian Magazine '14 Fun Facts About Dragonflies'.",
     "topic": "dragonfly"
   },
   {
     "tier": 2,
-    "question": "At the edge of a pond, a dragonfly cruises by, doing around 30 miles per hour, faster than most people pedal a bike. Filmed in slow motion, its four glassy wings barely blur, beating far slower than that speed suggests. About how many times a second does a dragonfly beat its wings?",
-    "answer": "About 30 times",
+    "question": "Halfway across a pond, a dragonfly stops dead, hangs in a perfect hover, then flies straight backward, tricks few other insects can manage. Most insects flap all their wings together, in unison. What is different about the dragonfly's four wings?",
+    "answer": "Each wing has its own muscles and moves alone",
     "choices": [
-      "About 30 times",
-      "About 600 times",
-      "About 5 times",
-      "About 200 times"
-    ],
-    "context": "A dragonfly beats its wings only about 30 times a second yet flies around 30 miles per hour, a striking payoff-per-beat compared to a honeybee's roughly 200. Source: Meadowia.com 'Why and How Does a Dragonfly Fly?'; Iowa DNR dragonfly facts.",
-    "topic": "dragonfly"
-  },
-  {
-    "tier": 2,
-    "question": "Halfway across a pond, a dragonfly stops dead, hangs in a perfect hover, then flies straight backward, tricks a honeybee or a housefly cannot manage. Most insects flap all their wings together, in unison. What is different about the dragonfly's four wings?",
-    "answer": "Each of its four wings is driven by its own muscles and moves on its own",
-    "choices": [
-      "Each of its four wings is driven by its own muscles and moves on its own",
-      "All four wings are locked together and beat as one",
+      "Each wing has its own muscles and moves alone",
+      "Its wings flex like a bat's skin wings",
       "It rides rising warm air and cannot truly flap",
       "It folds two wings away and flies on just two"
     ],
@@ -6073,12 +5930,12 @@
   {
     "tier": 3,
     "question": "A hunting dragonfly bears down on a fly, but it does not aim at the fly the way a chasing hawk or dog would. It heads for an empty patch of sky ahead of where the fly is now, and high-speed footage catches it doing so again and again. Why does it fly toward empty air?",
-    "answer": "It has already calculated where the prey will be and flies to intercept it there",
+    "answer": "It is aiming where the prey will be",
     "choices": [
-      "It has already calculated where the prey will be and flies to intercept it there",
+      "It is aiming where the prey will be",
       "It is dazzled and simply guesses a direction",
       "It is trying to herd the prey toward the water",
-      "It flies upwind first to save energy before the chase"
+      "It flies upwind first to save energy"
     ],
     "context": "A dragonfly does not chase its prey; it predicts where the prey will BE and flies to that interception point, computing the course before the target even tries to escape. Source: UC Davis Biology, 'How Dragonflies Catch Prey in Midair' (biology.ucdavis.edu/news); Wiederman & Olberg interception research.",
     "topic": "dragonfly"
@@ -6099,9 +5956,9 @@
   {
     "tier": 3,
     "question": "A dragonfly nymph, a stocky brown creature with no wings yet, sits perfectly still on the floor of a pond as a tadpole drifts past. Faster than a human eye can follow, the nymph snatches the tadpole and drags it in. What does it strike with?",
-    "answer": "A hinged lower jaw that shoots out and grabs, then folds back under its head",
+    "answer": "A hinged lower jaw that shoots out",
     "choices": [
-      "A hinged lower jaw that shoots out and grabs, then folds back under its head",
+      "A hinged lower jaw that shoots out",
       "A sticky tongue it flicks out like a frog",
       "A cloud of venom it puffs into the water",
       "A net of silk it casts around the prey"
@@ -6112,25 +5969,25 @@
   {
     "tier": 3,
     "question": "A naturalist walking the edge of a pond on a summer morning finds a hollow brown husk clinging to a reed just above the water. It is shaped exactly like a dragonfly nymph and split open down the back, but it is completely empty inside. What happened here?",
-    "answer": "A nymph climbed out of the water and an adult dragonfly split its skin down the back and crawled free",
+    "answer": "An adult dragonfly crawled out of it",
     "choices": [
-      "A nymph climbed out of the water and an adult dragonfly split its skin down the back and crawled free",
-      "A dragonfly laid its eggs inside the husk to keep them warm",
-      "A hunting spider drained the nymph and left its shell",
-      "The nymph shed a layer to grow bigger and swam back down"
+      "An adult dragonfly crawled out of it",
+      "A dragonfly laid its eggs inside it",
+      "A spider drained the nymph and left it",
+      "The nymph shed it to grow, then swam back down"
     ],
     "context": "When ready, the nymph climbs out onto a reed or rock, its skin splits down the back, and the adult pulls itself out, leaving behind the empty shell called an exuvia. Source: Field of Mar 'Dragonfly fact sheet' (fieldofmar-e.schools.nsw.gov.au); Schlitz Audubon.",
     "topic": "dragonfly"
   },
   {
     "tier": 4,
-    "question": "A globe skimmer, a small dragonfly, rides the monsoon winds out over the open Indian Ocean between India and East Africa, with no land beneath it. No insect migrates farther: parents, children and grandchildren each fly one leg of the round trip. About how long is the whole round trip?",
-    "answer": "About 11,000 miles, over several generations",
+    "question": "A globe skimmer, a small dragonfly, rides the monsoon winds out over the open Indian Ocean between India and East Africa, with no land beneath it. No insect is known to migrate farther, and four or more generations in turn each fly a leg of the round trip. About how long is the whole round trip?",
+    "answer": "About 11,000 miles",
     "choices": [
-      "About 11,000 miles, over several generations",
-      "About 100 miles, in a single day",
-      "About 500 miles, along the coast",
-      "About 2,000 miles, once in a lifetime"
+      "About 11,000 miles",
+      "About 2,000 miles",
+      "About 4,000 miles",
+      "About 7,000 miles"
     ],
     "context": "The globe skimmer makes the longest migration of any insect: a multi-generation round trip of about 11,000 miles across the Indian Ocean, riding the monsoon winds. Source: Frontiers in Ecology and Evolution 'Unraveling the World's Longest Non-stop Migration: The Indian Ocean Crossing of the Globe Skimmer Dragonfly' (frontiersin.org).",
     "topic": "dragonfly"
@@ -6145,7 +6002,7 @@
       "One giant command cell wired to every flight muscle",
       "About two hundred cells lining each of the huge eyes"
     ],
-    "context": "These are the target-selective descending neurons (TSDNs): eight pairs whose combined firing forms a population vector tracking prey across the full 360 degrees with a mean directional error near 1.2 degrees, firing about 30 milliseconds after the prey moves, matching the reaction time seen in real hunting flights. A 95% kill rate steered by just 16 neurons is the deep circuit behind the interception wonder. Source: Gonzalez-Bellido, Peng, Yang, Georgopoulos & Olberg, PNAS 2012, https://www.pnas.org/doi/full/10.1073/pnas.1210489109 (PMC3545807, https://pmc.ncbi.nlm.nih.gov/articles/PMC3545807/).",
+    "context": "These are the target-selective descending neurons (TSDNs): eight pairs whose combined firing forms a population vector tracking prey across the full 360 degrees with a mean directional error near 1.2 degrees, firing about 30 milliseconds after the prey moves, matching the reaction time seen in real hunting flights. Source: Gonzalez-Bellido, Peng, Yang, Georgopoulos & Olberg, PNAS 2013, https://www.pnas.org/doi/full/10.1073/pnas.1210489109 (PMC3545807, https://pmc.ncbi.nlm.nih.gov/articles/PMC3545807/).",
     "topic": "dragonfly"
   },
   {
@@ -6423,7 +6280,7 @@
   },
   {
     "tier": 1,
-    "question": "A mother mammal lays an egg, just as a bird or a reptile would. Only five living kinds of mammal do this; nearly every other mammal bears live young. Which of these four is one of the five?",
+    "question": "A mother mammal lays an egg, just as a bird or a reptile would. Only five living kinds of mammal do this; nearly every other mammal bears live young. Which animal is one of the five?",
     "answer": "The echidna",
     "choices": [
       "The echidna",
@@ -6436,28 +6293,15 @@
   },
   {
     "tier": 2,
-    "question": "Sharp spines bristle all over an echidna's back as it shuffles through the leaf litter in search of food, and they look just like a porcupine's quills. They are not quills at all: each spine is a stiff, overgrown hair. What are the spines made of?",
-    "answer": "Keratin",
+    "question": "Sharp spines bristle all over an echidna's back as it shuffles through the leaf litter in search of food. They look like a porcupine's quills, and they are built the same way. What is each spine, deep down?",
+    "answer": "A stiff, overgrown hair",
     "choices": [
-      "Keratin",
-      "Solid bone",
-      "Horn",
-      "Chitin"
+      "A stiff, overgrown hair",
+      "A sharpened bony scale",
+      "A spike of solid bone",
+      "A hardened flake of skin"
     ],
-    "context": "An echidna's spines are not quills but modified hairs made of keratin — the same protein as human hair and fingernails — reaching up to about 12.7 cm long. Source: https://en.wikipedia.org/wiki/Echidna",
-    "topic": "echidna"
-  },
-  {
-    "tier": 2,
-    "question": "The short-beaked echidna roams the whole of Australia, digging through the bush. Three larger, rarer cousins, the long-beaked echidnas, survive nowhere else on Earth but a single island. Which island is it?",
-    "answer": "New Guinea",
-    "choices": [
-      "New Guinea",
-      "Madagascar",
-      "Borneo",
-      "Tasmania"
-    ],
-    "context": "There are four living kinds of echidna: the common short-beaked echidna of Australia, plus three larger long-beaked echidnas found only in New Guinea. Source: https://en.wikipedia.org/wiki/Short-beaked_echidna",
+    "context": "An echidna's spines, like a porcupine's quills, are modified hairs made of keratin, the same protein as human hair and fingernails, and they grow up to about 5 cm (2 in) long. Source: https://en.wikipedia.org/wiki/Short-beaked_echidna",
     "topic": "echidna"
   },
   {
@@ -6489,10 +6333,10 @@
   {
     "tier": 3,
     "question": "A hungry dingo catches an echidna out in the open on soft ground. A slow shuffle is the echidna's top speed, so running is hopeless. Instead it stays in the very same spot and does something else to survive the next few seconds. What does it do?",
-    "answer": "It digs straight down, leaving only its spines exposed",
+    "answer": "It digs straight down until only spines show",
     "choices": [
-      "It digs straight down, leaving only its spines exposed",
-      "It rolls into a tight armored ball",
+      "It digs straight down until only spines show",
+      "It rears up and slashes with its claws",
       "It sprays a foul musk from its tail",
       "It freezes and plays dead until the threat leaves"
     ],
@@ -6501,13 +6345,13 @@
   },
   {
     "tier": 4,
-    "question": "A shark finds hidden prey by feeling the faint electric signals that leak from living muscle, a sense almost no land animal shares. An echidna shuffling through the bush does the same with its snout, homing in on prey it cannot see or smell. What is it hunting?",
-    "answer": "Ants and termites buried in a nest",
+    "question": "An echidna shuffles through the bush, pushing its snout into the soil, and homes in on ants it cannot see or smell. About 400 sensors in its snout pick up a faint signal that sharks and rays hunt by too. What is that signal?",
+    "answer": "Weak electric fields from their bodies",
     "choices": [
-      "Ants and termites buried in a nest",
-      "Earthworms wriggling in wet soil",
-      "Beetle grubs tucked under tree bark",
-      "Spiders hiding in leaf litter"
+      "Weak electric fields from their bodies",
+      "Faint warmth given off by their bodies",
+      "High-pitched squeaks from the nest",
+      "Traces of gas from their breathing"
     ],
     "context": "The echidna's snout carries roughly 400 electroreceptors that detect the faint electrical signals given off by the muscles of buried insect prey — a power almost unheard of in a land animal, otherwise found mainly in sharks and rays. Source: https://echidna.net.au/?p=58",
     "topic": "echidna"
@@ -6520,14 +6364,14 @@
       "It screams sounds and reads the returning echoes",
       "It feels the moth's warmth from a distance",
       "It follows the moth's scent trail on the wind",
-      "It watches for the moth against the faint sky"
+      "It feels the air the moth's wings stir up"
     ],
     "context": "The bat fires high-pitched clicks, most of them above what humans can hear, and maps flying moths by the shape of the sound bouncing back — hunting by echo, not by sight. Source: Wikipedia 'Animal echolocation'; AAAS 'Discovering sonar in bats'.",
     "topic": "echolocation-built-twice"
   },
   {
     "tier": 1,
-    "question": "An oilbird flies through a pitch-black cave in northern South America, clicking its tongue and listening for echoes, like a bat. But its clicks are far lower in pitch than a bat's ultrasound. How does the lower pitch change the oilbird's picture of the cave?",
+    "question": "An oilbird flies through a pitch-black cave in northern South America, giving sharp clicks and listening for echoes, like a bat. But its clicks are far lower in pitch than a bat's ultrasound. How does the lower pitch change the oilbird's picture of the cave?",
     "answer": "It is blurrier than a bat's, missing fine detail",
     "choices": [
       "It is blurrier than a bat's, missing fine detail",
@@ -6546,7 +6390,7 @@
       "To fix the prey's exact position for the grab",
       "To stun the moth with a wall of loud sound",
       "To signal other bats to keep their distance",
-      "To warm up its throat for the coming bite"
+      "To drown out the moth's own warning clicks"
     ],
     "context": "This 'feeding buzz' fires up to 200 clicks a second, giving the bat rapid position updates to pin the prey in the final moment of the chase. Source: Maryland DNR 'Bat Echolocation'; PMC 'Adaptive Vocal Behavior Drives Perception by Echolocation in Bats'.",
     "topic": "echolocation-built-twice"
@@ -6566,7 +6410,7 @@
   },
   {
     "tier": 5,
-    "question": "A sperm whale hunts squid far below the surface by clicking, yet it has no voice box. It pushes air past a pair of lip-shaped flaps at the front of its huge skull, the flaps whalers nicknamed the monkey lips. What happens to that first pulse inside the whale's head before a full click shoots forward?",
+    "question": "A sperm whale hunts squid far below the surface by clicking, and the sound starts not in its throat but in its nose. It pushes air past a pair of lip-shaped flaps just below the blowhole, at the front of its huge head, nicknamed the monkey lips. What happens to that first pulse inside the whale's head before a full click shoots forward?",
     "answer": "It bounces between two air sacs in the head",
     "choices": [
       "It bounces between two air sacs in the head",
@@ -7268,7 +7112,7 @@
   },
   {
     "tier": 4,
-    "question": "When several elephantnose fish gather, each one can suddenly sense objects far beyond its own short sensing range — as if its reach tripled. How does simply being in a group extend one fish's range this way?",
+    "question": "When several elephantnose fish gather, each one can sense objects well beyond its own short range; a computer model puts the gain at up to three times as far. How does simply being in a group extend one fish's range this way?",
     "answer": "It reads its neighbors' pulses too",
     "choices": [
       "It reads its neighbors' pulses too",
@@ -7276,7 +7120,7 @@
       "It stirs up mud to feel the current",
       "Its own pulses grow stronger near other fish"
     ],
-    "context": "Each fish can read the pulses its neighbors emit, so a group acts like a shared radar network — tripling how far each fish can effectively sense. Researcher Nathaniel Sawtell says these electric images are 'beamed to nearby fish at the speed of light.' Source: Phys.org / Columbia (2024), Sawtell & Pedraja on collective sensing, https://phys.org/news/2024-03-scientists-uncover-evidence-electric-elephantnose.amp",
+    "context": "Each fish can read the pulses its neighbors emit, so a group acts like a shared radar network; by Pedraja and Sawtell's computer model, that could extend how far each fish can sense up to threefold. Nathaniel Sawtell says these electric images are 'beamed to nearby fish at the speed of light.' Source: Phys.org / Columbia (2024), Sawtell & Pedraja on collective sensing, https://phys.org/news/2024-03-scientists-uncover-evidence-electric-elephantnose.amp ; ScienceDaily 2024-03-06.",
     "topic": "elephantnose-fish-gnathonemus-petersii"
   },
   {
@@ -7290,19 +7134,6 @@
       "The little blue penguin"
     ],
     "context": "The emperor penguin stands roughly 1.15 m (about 4 feet) and weighs up to about 45 kg (100 lb) — bigger than any other living penguin. Source: Britannica, https://www.britannica.com/animal/emperor-penguin",
-    "topic": "emperor-penguin"
-  },
-  {
-    "tier": 1,
-    "question": "An emperor penguin beats its stiff, flat flippers to swim, not to fly; this bird of up to about a hundred pounds will never rise an inch into the air. Where on Earth does it live?",
-    "answer": "Only in Antarctica",
-    "choices": [
-      "Only in Antarctica",
-      "Only in the Arctic",
-      "Across northern Canada",
-      "On tropical island beaches"
-    ],
-    "context": "Emperor penguins are flightless birds found only in Antarctica, and remarkably they breed during the coldest, darkest months of the Antarctic winter — when no other bird raises its young. Source: British Antarctic Survey, https://www.bas.ac.uk/about/antarctica/wildlife/penguins/emperor-penguin/",
     "topic": "emperor-penguin"
   },
   {
@@ -7328,38 +7159,38 @@
       "Krill scooped from the snow",
       "Whatever the mother brings back"
     ],
-    "context": "The male incubates the egg on his feet for about 65 to 75 days without eating anything at all, surviving entirely on stored fat through the polar winter. Considered a legendary feat of endurance. Source: British Antarctic Survey, https://www.bas.ac.uk/about/antarctica/wildlife/penguins/emperor-penguin/",
+    "context": "The male incubates the egg on his feet for about 65 to 75 days without eating anything at all, surviving entirely on stored fat through the polar winter. Source: British Antarctic Survey, https://www.bas.ac.uk/about/antarctica/wildlife/penguins/emperor-penguin/",
     "topic": "emperor-penguin"
   },
   {
     "tier": 3,
     "question": "A father emperor penguin weighs around 38 kilograms when the breeding season begins. He then guards a single egg through the pitch-black Antarctic winter, standing still through months of freezing storms. By the time the mother finally comes back from the sea, what has happened to his body?",
-    "answer": "He has lost about 20 kg, dropping to around 18 kg",
+    "answer": "He has lost about half his weight",
     "choices": [
-      "He has lost about 20 kg, dropping to around 18 kg",
-      "He has gained weight from eating snow",
-      "He stays almost exactly the same weight",
-      "He roughly doubles in size to insulate"
+      "He has lost about half his weight",
+      "He has lost about a tenth of his weight",
+      "He has lost about a quarter of his weight",
+      "He weighs about the same as when he began"
     ],
-    "context": "Across the whole breeding cycle the fasting father goes roughly 120 days without food and can lose about 20 kg, dropping from around 38 kg down to 18 kg. A legendary feat of endurance. Source: Wikipedia, Emperor penguin, https://en.wikipedia.org/wiki/Emperor_penguin",
+    "context": "Across the whole breeding cycle the fasting father goes roughly 120 days without food and can lose about 20 kg, dropping from around 38 kg down to 18 kg. Source: Wikipedia, Emperor penguin, https://en.wikipedia.org/wiki/Emperor_penguin",
     "topic": "emperor-penguin"
   },
   {
     "tier": 3,
-    "question": "When the Antarctic air falls to minus 40 degrees Celsius in a howling wind, thousands of father emperor penguins press together into one enormous huddle. A bird stuck on the outer edge would freeze, while the birds packed in the middle stay warm. The huddle does not stand still. What do the penguins keep doing?",
-    "answer": "Shuffle in slow waves so everyone rotates through the middle",
+    "question": "When the Antarctic air falls to minus 40 degrees Celsius in a howling wind, thousands of father emperor penguins press together into one enormous huddle. A bird stuck on the outer edge would freeze, while the birds packed in the middle stay warm. How does the huddle keep every father alive?",
+    "answer": "It shuffles so each bird takes turns inside",
     "choices": [
-      "Shuffle in slow waves so everyone rotates through the middle",
-      "Huddle tighter as the wind rises",
-      "Shrink the pack into a smaller circle",
-      "Lean inward together against the wind"
+      "It shuffles so each bird takes turns inside",
+      "The biggest males stand guard on the edge",
+      "Birds on the edge flap to stay warm",
+      "The whole huddle lies down to cut the wind"
     ],
     "context": "The fathers pack into a huddle of over 4,000 males; the birds constantly shuffle in slow waves every 30 to 60 seconds so no one is stuck on the freezing edge for long. Source: Audubon (reporting Zitterbart et al., PLoS ONE), https://www.audubon.org/news/not-so-black-and-white-research-reveals-intricacies-penguin-huddles",
     "topic": "emperor-penguin"
   },
   {
     "tier": 3,
-    "question": "Outside an emperor penguin huddle, the Antarctic air sits near minus 40 degrees Celsius, and a howling wind blows. Deep inside the packed mass of thousands of fathers, researchers recorded temperatures climbing much higher. What top temperature did they measure inside the huddle?",
+    "question": "Outside an emperor penguin huddle, the Antarctic air sits near minus 40 degrees Celsius, and a howling wind blows. Deep inside the packed mass of thousands of fathers, researchers recorded temperatures climbing higher. What top temperature did they measure inside the huddle?",
     "answer": "About 37.5 degrees C, near human body heat",
     "choices": [
       "About 37.5 degrees C, near human body heat",
@@ -7393,64 +7224,64 @@
       "They were all made by chicks, not adults",
       "None of them caught any prey"
     ],
-    "context": "The deepest reliably measured dive was 564 m (1,850 ft), and out of over 137,000 recorded dives, all 12 that passed 500 m were made by the same single penguin. Considered a legendary record. Source: Guinness World Records, https://www.guinnessworldrecords.com/world-records/deepest-dive-by-a-bird",
+    "context": "The deepest reliably measured dive was 564 m (1,850 ft), and out of 137,364 dives recorded in the study, all 12 that passed 500 m were made by the same single penguin. Source: Guinness World Records, https://www.guinnessworldrecords.com/world-records/deepest-dive-by-a-bird",
     "topic": "emperor-penguin"
   },
   {
     "tier": 4,
     "question": "On a long dive, an emperor penguin must ration every scrap of oxygen, and it does so by throttling its own heart. At rest the heart runs at about 73 beats a minute. During one 18-minute dive, how low did it fall?",
-    "answer": "Just 3 beats per minute, one beat every 15 seconds",
+    "answer": "Just 3 beats a minute, one every 20 seconds",
     "choices": [
-      "Just 3 beats per minute, one beat every 15 seconds",
-      "Around 6 beats per minute, one beat every 10 seconds",
-      "About 14 beats per minute, one beat every 4 seconds",
-      "Roughly 20 beats per minute, one beat every 3 seconds"
+      "Just 3 beats a minute, one every 20 seconds",
+      "Just 1 beat a minute, one every 60 seconds",
+      "About 12 beats a minute, one every 5 seconds",
+      "About 30 beats a minute, one every 2 seconds"
     ],
     "context": "A resting emperor penguin's heart runs near 73 bpm and climbs to about 175 bpm just before a dive. But once a dive passes the roughly 5.6-minute aerobic limit, the heart drops into extreme bradycardia, averaging a minimum near 14 bpm. In one 18-minute dive it fell to just 3 bpm and held near 6 bpm for over 5 minutes; about 10% of long dives dropped to 5 bpm or lower. Slowing the heart to near-stopped meters out the bird's limited oxygen so it lasts the whole dive. Source: Meir, Stockard, Williams, Ponganis & Kooyman (2008), 'Heart rate regulation and extreme bradycardia in diving emperor penguins,' Journal of Experimental Biology 211(8):1169 -- https://journals.biologists.com/jeb/article/211/8/1169/18165/",
     "topic": "emperor-penguin"
   },
   {
     "tier": 5,
-    "question": "Carolina Acosta Hospitaleche examined bones of Palaeeudyptes klekowskii, dug from 34-million-year-old rock on Antarctica's Seymour Island. In 2014 she used those fossil bones to estimate how tall and how heavy the animal had been in life. What did she conclude it was?",
-    "answer": "A giant penguin near 2 m tall and about 115 kg",
+    "question": "Carolina Acosta Hospitaleche examined bones of Palaeeudyptes klekowskii, dug from 34-million-year-old rock on Seymour Island, off the tip of the Antarctic Peninsula. In 2014 she used those fossil bones to estimate how big the animal had been in life. What did she conclude?",
+    "answer": "A penguin up to 2 m long and about 115 kg",
     "choices": [
-      "A giant penguin near 2 m tall and about 115 kg",
-      "A flying seabird the size of a modern albatross",
-      "A tiny penguin no larger than a pigeon",
-      "A seal-like mammal only distantly related to birds"
+      "A penguin up to 2 m long and about 115 kg",
+      "A penguin about the size of a modern emperor",
+      "A penguin no bigger than a modern gentoo",
+      "A penguin up to 4 m long and about 500 kg"
     ],
-    "context": "Palaeeudyptes klekowskii -- the 'Mega Penguin' -- came from the Late Eocene La Meseta Formation on Seymour Island, Antarctica, dated to about 34-37 million years ago. A 2014 study by Carolina Acosta Hospitaleche, working from the most complete Eocene penguin skeleton yet found, estimated it stood up to 2 metres (6.6 ft) and weighed as much as 115 kg -- nearly twice a modern emperor's mass and the tallest, heaviest penguin then known to science. Giant penguins once ruled the same Antarctic coasts where emperors breed today. Source: Acosta Hospitaleche (2014), Geobios 47(3), on Palaeeudyptes klekowskii; en.wikipedia.org/wiki/Palaeeudyptes_klekowskii",
+    "context": "Palaeeudyptes klekowskii, the 'Mega Penguin', came from the Late Eocene La Meseta Formation on Seymour Island, Antarctica, dated to about 34-37 million years ago. A 2014 study by Carolina Acosta Hospitaleche, working from the most complete Eocene penguin skeleton yet found, estimated it reached up to 2 metres (6.6 ft) in length and weighed as much as 115 kg, nearly twice a modern emperor's mass and the largest penguin then known to science. Giant penguins once ruled the same Antarctic coasts where emperors breed today. Source: Acosta Hospitaleche (2014), Geobios 47(3), on Palaeeudyptes klekowskii; en.wikipedia.org/wiki/Palaeeudyptes_klekowskii",
     "topic": "emperor-penguin"
   },
   {
     "tier": 2,
-    "question": "A young common swift leaves its nest under a rooftop and climbs into the sky over Europe. From then on it eats, drinks, mates and even sleeps on the wing, with no perch, no branch and no ground beneath it. About how long can it stay airborne before it lands again?",
-    "answer": "About 10 months without landing once",
+    "question": "A young common swift leaves its nest under a rooftop and climbs into the sky over Europe. From then on it eats, drinks and mates on the wing. About how long can it stay airborne before it lands again?",
+    "answer": "About 10 months",
     "choices": [
-      "About 10 months without landing once",
-      "About 10 minutes between perches",
-      "About 10 hours, then it must roost",
-      "About 10 days over open water"
+      "About 10 months",
+      "About 10 weeks",
+      "About 10 days",
+      "About 10 hours"
     ],
     "context": "The common swift (Apus apus) can stay aloft for about 10 months straight — eating flying insects, mating, and sleeping on the wing — the longest continuous flight known for any bird. Source: https://www.sci.news/biology/common-swifts-stay-ten-months-air-04324.html",
     "topic": "endurance-aloft"
   },
   {
     "tier": 3,
-    "question": "A bar-tailed godwit, a long-legged shorebird that probes tidal mud with its long straight beak, was five months old when it left Alaska in 2022 carrying a satellite tag. It flew without stopping, with no food, no water and no sleep, and set the record for the longest nonstop flight ever measured for any bird. Where did that flight end?",
-    "answer": "Tasmania, about 13,560 km away",
+    "question": "A bar-tailed godwit, a long-legged shorebird that probes tidal mud with its long, slightly upturned beak, was five months old when it left Alaska in 2022 carrying a satellite tag. It flew without stopping, with no food, no water and no rest, and set the record for the longest nonstop flight ever measured for any bird. Where did that flight end?",
+    "answer": "Tasmania, off southern Australia",
     "choices": [
-      "Tasmania, about 13,560 km away",
-      "Hawaii, about halfway across the Pacific",
-      "Antarctica, at the edge of the ice",
-      "Japan, along the Asian coast"
+      "Tasmania, off southern Australia",
+      "New Zealand's North Island",
+      "Hawaii, in the mid-Pacific",
+      "Japan, on the Asian coast"
     ],
     "context": "Juvenile bar-tailed godwit '234684' flew nonstop from Alaska to Tasmania, about 13,560 km, in 11 days and 1 hour (departed October 13, 2022) — the longest nonstop flight ever recorded for a bird. Source: https://www.usgs.gov/centers/alaska-science-center/news/juvenile-bar-tailed-godwit-b6-sets-world-record",
     "topic": "endurance-aloft"
   },
   {
     "tier": 4,
-    "question": "A frigatebird, a lean black seabird with pointed wings and a deeply forked tail, can spend weeks over the open ocean without landing. It sleeps in flight with just half of its brain at a time, while the other half keeps it flying. Scientists tracking the birds found the waking half is always linked to one particular eye. Which eye stays open?",
+    "question": "A frigatebird, a lean black seabird with pointed wings and a deeply forked tail, can spend weeks over the open ocean without landing. It sleeps in flight with just half of its brain at a time, while the other half keeps it flying. Scientists tracking the birds found the waking half is usually linked to one particular eye. Which eye stays open?",
     "answer": "The one facing the direction it is turning, to watch its path",
     "choices": [
       "The one facing the direction it is turning, to watch its path",
@@ -7488,40 +7319,27 @@
     "topic": "endurance-aloft"
   },
   {
-    "tier": 4,
-    "question": "A godwit crosses the Pacific without landing, and a frigatebird stays aloft over open ocean for weeks; an ordinary bird that tried either trip would drop from the sky. The albatross and the swift cover huge distances too. What would defeat an ordinary bird on such a trip, a problem these four get around?",
-    "answer": "The fuel cost of constant flapping",
-    "choices": [
-      "The fuel cost of constant flapping",
-      "The danger of landing on open water",
-      "The need to navigate by the stars",
-      "The weight of carrying their own food"
-    ],
-    "context": "All these long-haul fliers solved the same problem — covering huge distances without the fuel cost of constant flapping — with wind-riding tricks: the albatross steals energy from wind over waves, the swift and frigatebird ride rising air, the godwit rides tailwinds after loading up on fat. Source: https://www.whoi.edu/press-room/news-release/new-research-unlocks-clues-about-the-iconic-flight-of-the-wandering-albatross/",
-    "topic": "endurance-aloft"
-  },
-  {
     "tier": 5,
-    "question": "Gottfried Sachs pieced together the flight loops of wild albatrosses from GPS tags and motion sensors in 2013. The textbook account of their soaring credits the wind gradient: slow air near the waves, faster air above. His data showed the gradient adds almost nothing. Where did his data put the free energy?",
-    "answer": "The upper turn of each loop, where the bird wheels from heading upwind to heading downwind",
+    "question": "Gottfried Sachs and his team pieced together the flight loops of wild wandering albatrosses from GPS loggers in 2013. Each loop has four phases: a climb into the wind, a turn at the top, a dive downwind and a turn low over the waves. In which phase did the bird gain most of its energy from the wind?",
+    "answer": "The turn at the top, wheeling from upwind to downwind",
     "choices": [
-      "The upper turn of each loop, where the bird wheels from heading upwind to heading downwind",
-      "The warm air rising off the sun-heated ocean, giving steady lift the way it lifts a soaring hawk",
-      "The wind gradient after all, just harvested lower down in the calmer air of the wave troughs",
-      "The push of the following swells, whose moving crests shove the gliding bird forward from behind"
+      "The turn at the top, wheeling from upwind to downwind",
+      "The climb into the wind, rising off the waves",
+      "The dive downwind, speeding toward the sea",
+      "The turn low over the waves, skimming the troughs"
     ],
-    "context": "For decades the free energy in dynamic soaring was pinned on the wind gradient. Sachs and colleagues reconstructed real flight cycles from GPS and inertial sensors and argued the gradient's contribution is 'insignificant' — most of the energy is grabbed in the sharp upper curve of each loop, as the bird pivots from into-the-wind to downwind. It is still a live debate over WHERE in the cycle the gain happens. Those reconstructed loops stayed within just 0–15 m of the sea, lasted about 10 seconds each, and swung the bird's airspeed up to nearly 30 m/s (about 108 km/h) — all without a wingbeat. Source: Sachs et al., 'Experimental verification of dynamic soaring in albatrosses,' Journal of Experimental Biology 216:4222 (2013).",
+    "context": "Sachs and colleagues tracked 16 wandering albatrosses in the southern Indian Ocean with GPS loggers precise enough to resolve each dynamic-soaring cycle: a windward climb, an upper curve, a leeward descent and a lower curve. They found that the primary energy gain from the shear wind comes in the upper curve, where the bird turns from flying into the wind to flying with it. Source: Sachs et al., 'Experimental verification of dynamic soaring in albatrosses,' Journal of Experimental Biology 216:4222 (2013), doi 10.1242/jeb.085209.",
     "topic": "endurance-aloft"
   },
   {
     "tier": 4,
     "question": "Out over the open tropical ocean, a great frigatebird, black and fork-tailed on seven-foot wings, can keep flying for up to two months without landing. It cannot settle on the sea, since its feathers would soak right through. It climbs thousands of metres into the sky and then glides long distances back down. How does it get so high?",
-    "answer": "It flies straight into towering cumulus clouds and rides their updrafts nearly 4,000 m up",
+    "answer": "It flies into cumulus clouds and rides their updrafts",
     "choices": [
-      "It flies straight into towering cumulus clouds and rides their updrafts nearly 4,000 m up",
-      "It beats its wings in a fast steep spiral until the thin high air finally levels it off",
-      "It waits on a floating log or turtle until a rising sea breeze lifts it back aloft",
-      "It skims low over the waves and lets each crest bounce it a little higher each time"
+      "It flies into cumulus clouds and rides their updrafts",
+      "It flaps in a steep spiral until the thin air levels it off",
+      "It waits on a floating log until a sea breeze lifts it",
+      "It skims the waves and lets each crest bounce it higher"
     ],
     "context": "Unlike most seabirds, a frigatebird cannot float — its plumage soaks through — so the open ocean gives it nowhere to land. Henri Weimerskirch's team satellite-tagged frigatebirds near Madagascar (Science, 1 July 2016) and found they deliberately fly INTO cumulus clouds to ride the updrafts to nearly 4,000 m — into freezing air — then glide long distances back down without flapping. Individuals stayed aloft for up to about two months, covering more than 400 km a day; young birds can remain almost continuously airborne for over a year. Source: Weimerskirch et al., Science 353 (2016).",
     "topic": "endurance-aloft"
@@ -7534,9 +7352,9 @@
       "Blue",
       "Bright red",
       "Green",
-      "Clear"
+      "Yellow"
     ],
-    "context": "Octopus blood is blue because it carries oxygen with hemocyanin, a copper-based protein, instead of iron-based hemoglobin; the copper turns blue when it meets oxygen the way our iron turns red. Source: Smithsonian Magazine, 'Ten Wild Facts About Octopuses'.",
+    "context": "Octopus blood is blue because it carries oxygen with hemocyanin, a copper-based protein, instead of iron-based hemoglobin; the copper turns blue when it meets oxygen the way the iron in human blood turns red. Source: Smithsonian Magazine, 'Ten Wild Facts About Octopuses'.",
     "topic": "extraordinary-hearts-and-blood"
   },
   {
@@ -7545,9 +7363,9 @@
     "answer": "It takes a high pressure of its own",
     "choices": [
       "It takes a high pressure of its own",
-      "It has to be kept ice-cold",
-      "It only happens while the octopus sleeps",
-      "It uses a different colored blood"
+      "The gills lie too far from the main heart",
+      "The gills hold their own separate blood",
+      "The gills need cold blood to hold oxygen"
     ],
     "context": "The octopus must hold different blood pressures at the same time: high pressure at the gills to load oxygen, and a separate push from the systemic heart to send that blood to the body — so the gill-loading job gets its own dedicated pair of hearts. Source: Smithsonian Magazine; This Amazing World comparative physiology summaries.",
     "topic": "extraordinary-hearts-and-blood"
@@ -7558,11 +7376,11 @@
     "answer": "Copper",
     "choices": [
       "Copper",
-      "Gold",
+      "Vanadium",
       "Zinc",
-      "Silver"
+      "Manganese"
     ],
-    "context": "The octopus carries oxygen with hemocyanin, a copper-based protein; copper turns blue with oxygen the way iron-based hemoglobin turns our blood red. The horseshoe crab has blue blood for the exact same reason. Source: Smithsonian Magazine octopus article.",
+    "context": "The octopus carries oxygen with hemocyanin, a copper-based protein; copper turns blue with oxygen the way iron-based hemoglobin turns human blood red. The horseshoe crab has blue blood for the exact same reason. Source: Smithsonian Magazine octopus article.",
     "topic": "extraordinary-hearts-and-blood"
   },
   {
@@ -7572,8 +7390,8 @@
     "choices": [
       "Its main heart stops beating",
       "Blood pools uselessly in its arms",
-      "Its gills can't reload oxygen fast enough",
-      "Its blue pigment can't hold enough oxygen"
+      "Its arms lock up from the strain",
+      "It burns through its stored fat"
     ],
     "context": "The systemic (main) heart actually stops beating when the octopus jets through open water, which exhausts it, so octopuses usually prefer to crawl. Source: Smithsonian Magazine, 'Ten Wild Facts About Octopuses'.",
     "topic": "extraordinary-hearts-and-blood"
@@ -7584,9 +7402,9 @@
     "answer": "About double a human's",
     "choices": [
       "About double a human's",
-      "About the same as a human's",
-      "About half a human's",
-      "Almost none at all"
+      "About ten times a human's",
+      "About five times a human's",
+      "About a third higher than a human's"
     ],
     "context": "A giraffe's blood pressure reaches roughly 280/180 to 300/180 mmHg, about double a human's, to force blood up the long neck. Source: Novartis, 'Giraffes have high blood pressure. Why don't they drop dead?'; Giraffe Conservation Foundation.",
     "topic": "extraordinary-hearts-and-blood"
@@ -7612,7 +7430,7 @@
       "Five pairs",
       "A single pair",
       "Twelve pairs",
-      "One large one"
+      "Two pairs"
     ],
     "context": "The earthworm has no single heart; it uses five pairs of pulsing 'aortic arches' (often called pseudohearts) that squeeze rhythmically to push blood around its closed circulatory system. Source: Sciencing, 'How Many Hearts Does An Earthworm Have?'; CK-12, 'What is unique about an earthworm's heart?'.",
     "topic": "extraordinary-hearts-and-blood"
@@ -7631,29 +7449,16 @@
     "topic": "extraordinary-hearts-and-blood"
   },
   {
-    "tier": 4,
-    "question": "A horseshoe crab carries in its blood one kind of cell, the amebocyte, that sets a sample into a gel the instant it meets bacterial toxins; that is why medical labs draw it. Granules packed inside the cell hold a single protein, and a chain reaction turns it into the clot. Which protein is it?",
-    "answer": "Coagulogen",
-    "choices": [
-      "Coagulogen",
-      "Hemocyanin",
-      "Fibrinogen",
-      "Thrombin"
-    ],
-    "context": "The crab's blood cells, called amebocytes, are packed with granules of a protein named coagulogen. When they touch bacterial endotoxin (lipopolysaccharide, LPS), a clotting-factor cascade fires and converts the coagulogen into a gel clot — this is the LAL (Limulus amebocyte lysate) test. It carries an ethical cost: bleeding is estimated to kill roughly 22-30% of the returned crabs. A synthetic drop-in replacement, recombinant Factor C (rFC), was recognized by the US Pharmacopeia (chapter <86>) in May 2025, offering a path to stop bleeding wild crabs. Source: Wikipedia 'Limulus amebocyte lysate' (amebocytes, coagulogen granules, LPS-triggered cascade; 22%/30% mortality from a 2009 Massachusetts study; recombinant Factor C and USP <86> official May 2025).",
-    "topic": "extraordinary-hearts-and-blood"
-  },
-  {
     "tier": 1,
-    "question": "Two coins of greenish-gold light flare in a car's headlights at the edge of a dark country road, then vanish as a deer turns its head. The glow comes from a layer built into the deer's eye that human eyes lack. What is that layer?",
-    "answer": "A mirror-like sheet behind the retina that bounces light back through it",
+    "question": "Two coins of greenish-gold light flare in a car's headlights at the edge of a dark country road, then vanish as a deer turns its head. The glow comes from a layer built into the deer's eye. What is that layer?",
+    "answer": "A mirror behind the retina that bounces light back",
     "choices": [
-      "A mirror-like sheet behind the retina that bounces light back through it",
-      "A clear oily film spread across the front of the eyeball",
-      "A ring of tiny muscles that widens the pupil in the dark",
-      "A dense mat of blood vessels that feeds the retina from behind"
+      "A mirror behind the retina that bounces light back",
+      "A clear, oily film across the front of the eye",
+      "A layer of cells that make their own glow",
+      "A second lens that magnifies the light"
     ],
-    "context": "That mirror is the tapetum lucidum, Latin for 'bright tapestry.' It sits behind the retina and reflects light that the photoreceptors missed on the way in, sending it back through them so the eye gets a second chance to catch each scrap of light. Humans and most other primates have none, so our eyes don't shine. Source: Britannica, 'tapetum lucidum'; Wikipedia, 'Tapetum lucidum.'",
+    "context": "That mirror is the tapetum lucidum, Latin for 'bright tapestry.' It sits behind the retina and reflects light that the photoreceptors missed on the way in, sending it back through them so the eye gets a second chance to catch each scrap of light. Humans and most other primates have none, so human eyes don't shine. Source: Britannica, 'tapetum lucidum'; Wikipedia, 'Tapetum lucidum.'",
     "topic": "eyeshine-and-seeing-in-the-dark"
   },
   {
@@ -7679,18 +7484,18 @@
       "Extra lenses layered inside to magnify what little light there is",
       "A second, deeper retina that switches on only after dark"
     ],
-    "context": "A cat's retina packs six to eight times more rods than ours and very few cones. Rods register dim light and movement superbly but not color or fine detail, so the cat trades a rich color world for the power to see shapes and motion in near-blackness, exactly what a small ambush predator needs. Source: ScienceInsights, 'Can Cats See in the Dark?'",
+    "context": "A cat's retina packs six to eight times more rods than a human's and very few cones. Rods register dim light and movement superbly but not color or fine detail, so the cat trades a rich color world for the power to see shapes and motion in near-blackness, exactly what a small ambush predator needs. Source: ScienceInsights, 'Can Cats See in the Dark?'",
     "topic": "eyeshine-and-seeing-in-the-dark"
   },
   {
     "tier": 2,
-    "question": "Caught in a car's headlights, a cat's eyes flash green, a raccoon's yellow and many dogs' bright blue. The difference is not the color of the headlights or the angle of the beam. What decides the color each animal's eyes shine back?",
-    "answer": "What the mirror layer is built from, such as zinc, riboflavin, or collagen",
+    "question": "Caught in a car's headlights, a cat's eyes flash green, a raccoon's yellow and many dogs' bright blue. The difference is not the color of the headlights. What decides the color each animal's eyes shine back?",
+    "answer": "What the mirror layer is made of",
     "choices": [
-      "What the mirror layer is built from, such as zinc, riboflavin, or collagen",
-      "How wide the pupil happens to be opened at that moment",
-      "The color of the fur or scales surrounding the animal's eyes",
-      "How far the light source sits from the animal when it looks up"
+      "What the mirror layer is made of",
+      "How wide its pupil happens to be open",
+      "The color of the fur around its eyes",
+      "How far away the headlights are"
     ],
     "context": "The tapetum lucidum can be built from crystals of zinc, riboflavin, or collagen, and each material reflects a different band of wavelengths. So the mirror's own recipe sets the glow color, which is why a fox, a cat, and a raccoon flash different hues in the same headlights. Source: scienceabc.com, 'Why Do Cats' Eyes Glow?'",
     "topic": "eyeshine-and-seeing-in-the-dark"
@@ -7710,15 +7515,15 @@
   },
   {
     "tier": 4,
-    "question": "In the near-black midwater of the deep ocean, a barreleye fish hangs motionless, watching through a see-through forehead for faint silhouettes. Its eyes are built unlike those of most fish. What shape are they, and why?",
-    "answer": "Tube-shaped, because a tube gathers far more light than a round eye of the same width",
+    "question": "In the near-black midwater of the deep ocean, a barreleye fish hangs motionless, watching through a see-through forehead for faint silhouettes. Its eyes are long tubes rather than balls. What does a tube-shaped eye do better than a round one?",
+    "answer": "Gathers more light for its width",
     "choices": [
-      "Tube-shaped, because a tube gathers far more light than a round eye of the same width",
-      "Flat and disc-shaped, to spread across the widest possible view",
-      "Mirror-backed spheres that swivel like a chameleon's independently",
-      "Split in two, one half tuned for light and the other for motion"
+      "Gathers more light for its width",
+      "Takes in a wider view all around",
+      "Resists the crushing deep-sea pressure",
+      "Sees colors more sharply in dim light"
     ],
-    "context": "The deep-sea barreleye grows tubular, barrel-shaped eyes that a tube of the same width out-gathers a round eye for light, pure light-harvesting for the dark. To beat the narrow field of view a fixed tube would give, it can swivel the eyes: it hangs with them pointed up, then rotates them forward and swims up to feed when it spots a jelly. Source: MBARI, 'Researchers solve mystery of deep-sea fish with tubular eyes and transparent head.'",
+    "context": "The deep-sea barreleye grows tubular, barrel-shaped eyes: a tube of the same width gathers more light than a round eye, pure light-harvesting for the dark. To beat the narrow field of view a fixed tube would give, it can swivel the eyes: it hangs with them pointed up, then rotates them forward and swims up to feed when it spots a jelly. Source: MBARI, 'Researchers solve mystery of deep-sea fish with tubular eyes and transparent head.'",
     "topic": "eyeshine-and-seeing-in-the-dark"
   },
   {
