@@ -575,8 +575,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         n = p.total_identifies
         if n >= 25 and 25 not in claimed:
             claimed.add(25)
-            p.INT += 1
-            p.max_mp = p.BASE_MP + p.INT
+            # One point of INT moves max MP by one point (apply_stat_bonus).
+            # It used to rebuild max MP as BASE_MP + INT, throwing away what
+            # gear, trophies and meals lent (Robe of the Magus 43 -> 24).
+            p.apply_stat_bonus('INT', 1)
             p.mp = min(p.mp + 1, p.max_mp)
             self.add_message("First Insight! Your study sharpens your mind. (+1 INT)", 'success')
             self._chron('milestone', "Twenty-five things named so far. My head feels roomier.")
