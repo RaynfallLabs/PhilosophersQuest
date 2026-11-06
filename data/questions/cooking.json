@@ -17251,19 +17251,6 @@
     "topic": "risotto-creamy-without-cream"
   },
   {
-    "tier": 2,
-    "question": "A cook starting risotto stirs the dry arborio rice in hot butter before any broth goes in, until each grain glistens and its edges turn clear like glass. Italian cooks have a one-word name for this step. What do they call it?",
-    "answer": "tostatura",
-    "choices": [
-      "tostatura",
-      "soffritto",
-      "sfumatura",
-      "brasatura"
-    ],
-    "context": "Tostatura toasts the dry grains in a butter-or-oil soffritto until each is coated in a film of fat and turns glossy and translucent. That fatty coat moderates how fast the grain drinks water, so the outside doesn't blow out before the center turns tender. Source: https://en.wikipedia.org/wiki/Risotto",
-    "topic": "risotto-creamy-without-cream"
-  },
-  {
     "tier": 3,
     "question": "A risotto cook adds hot broth one ladleful at a time and never stops stirring, round and round for twenty minutes at the stove. The starch that will thicken the dish comes from the grains themselves. What is all that stirring doing to them?",
     "answer": "the grains scrape each other and the pot, rubbing starch off their surfaces",
@@ -17299,7 +17286,7 @@
       "browned in a separate pan until nutty, then stirred in piping hot",
       "warmed to room temperature and drizzled in as the pot still simmers"
     ],
-    "context": "This finish is called mantecatura: off the heat, you vigorously beat in cold butter and grated Parmigiano until the fat emulsifies into the starch and the risotto turns glossy and loose enough to ripple 'all'onda' — Italian for 'in waves.' Source: https://en.wikipedia.org/wiki/Risotto",
+    "context": "This finish is called mantecatura: off the heat, the cook vigorously beats in cold butter and grated Parmigiano until the fat emulsifies into the starch and the risotto turns glossy and loose enough to ripple 'all'onda' — Italian for 'in waves.' Source: https://en.wikipedia.org/wiki/Risotto",
     "topic": "risotto-creamy-without-cream"
   },
   {
@@ -17312,7 +17299,7 @@
       "the middle",
       "the spine"
     ],
-    "context": "This is the rock chop: the pointed tip stays planted on the board while you pump the curved belly — the heel end — up and down, mincing herbs and garlic fast without the blade ever leaving the board. Source: honeyhone.com, 'Push Cut vs. Rock Chop.'",
+    "context": "This is the rock chop: the pointed tip stays planted on the board while the cook pumps the curved belly — the heel end — up and down, mincing herbs and garlic fast without the blade ever leaving the board. Source: honeyhone.com, 'Push Cut vs. Rock Chop.'",
     "topic": "rocking-vs-push-cutting-the-blade-shape-decides-the-motion"
   },
   {
@@ -17330,15 +17317,15 @@
   },
   {
     "tier": 3,
-    "question": "Suppose you chop vegetables straight up and down with a nakiri, Japan's little rectangular vegetable knife with a dead-flat edge. Its blade stands unusually tall, much deeper from edge to spine than a small knife seems to need. Why build it so tall?",
-    "answer": "to keep your knuckles clear of the board",
+    "question": "A cook chops vegetables straight up and down with a nakiri, Japan's little rectangular vegetable knife with a dead-flat edge. Its blade stands unusually tall, much deeper from edge to spine than a small knife seems to need. Why build it so tall?",
+    "answer": "to keep the knuckles clear of the board",
     "choices": [
-      "to keep your knuckles clear of the board",
+      "to keep the knuckles clear of the board",
       "to add weight for chopping through squash",
       "to hold more food balanced on the blade",
       "to store extra edge for resharpening"
     ],
-    "context": "A nakiri's unusually tall blade (about 48-60mm from edge to spine) gives knuckle clearance, so you can chop straight down fast without barking your fingers on the board. Flat edge, tall blade, vegetables only. Source: japaneseknifelab.com, santoku/nakiri guide.",
+    "context": "A nakiri's unusually tall blade (about 48-60mm from edge to spine) gives knuckle clearance, so a cook can chop straight down fast without barking the fingers on the board. Flat edge, tall blade, vegetables only. Source: japaneseknifelab.com, santoku/nakiri guide.",
     "topic": "rocking-vs-push-cutting-the-blade-shape-decides-the-motion"
   },
   {
@@ -17351,7 +17338,7 @@
       "press the pile flat to squeeze out the water",
       "flip the pile over to chop it a second time"
     ],
-    "context": "The cai dao's broad flat face doubles as a scoop and scraper: after chopping straight down, you turn the blade on its side, sweep the whole pile up onto that wide face, and carry it straight to the wok — no bowl or bench scraper needed. Source: Wikipedia, 'Caidao.'",
+    "context": "The cai dao's broad flat face doubles as a scoop and scraper: after chopping straight down, the cook turns the blade on its side, sweeps the whole pile up onto that wide face, and carries it straight to the wok — no bowl or bench scraper needed. Source: Wikipedia, 'Caidao.'",
     "topic": "rocking-vs-push-cutting-the-blade-shape-decides-the-motion"
   },
   {
@@ -17421,7 +17408,7 @@
   },
   {
     "tier": 2,
-    "question": "A sushi chef heaps ikura on rice and scatters crunchy tobiko over a roll, both of them salt-cured roe. Strict European labeling rules still forbid selling either one as caviar. Only the salted roe of one family of fish may carry that name. Which fish?",
+    "question": "A sushi chef heaps ikura on rice and scatters crunchy tobiko over a roll, both of them salt-cured roe. The United Nations' food agency still counts neither one as true caviar, only as a 'caviar substitute.' Only the salted roe of one family of fish earns the real name. Which fish?",
     "answer": "the sturgeon",
     "choices": [
       "the sturgeon",
@@ -17434,7 +17421,7 @@
   },
   {
     "tier": 3,
-    "question": "A small tin of solid 24-carat gold, its traditional packing, holds Almas, the rarest and most expensive caviar on Earth; a single kilogram has sold for around $34,500. Its pearls come from one very remarkable source. Which is it?",
+    "question": "Almas is the rarest and most expensive caviar on Earth. Dealers have sold it in a little 24-carat gold tin, and one kilogram of it once sold for around $34,500. Its pearls come from one very remarkable source. Which is it?",
     "answer": "a rare albino beluga, decades old",
     "choices": [
       "a rare albino beluga, decades old",
@@ -17442,7 +17429,7 @@
       "the last truly wild Caspian beluga",
       "a beluga raised in icy mountain springs"
     ],
-    "context": "Almas is the pale-gold roe of a rare albino beluga sturgeon, reportedly aged roughly 60 to 100 years. It is traditionally sold in a 24-carat-gold tin and has reached about $34,500 a kilogram — a claim as legendary as the fish itself. Source: https://imperiacaviar.com/blogs/blog/what-is-almas-caviar",
+    "context": "Almas is the pale-gold roe of a rare albino beluga sturgeon, reportedly aged roughly 60 to 100 years. It has been sold in a 24-carat-gold tin and has reached about $34,500 a kilogram — a claim as legendary as the fish itself. Source: https://imperiacaviar.com/blogs/blog/what-is-almas-caviar",
     "topic": "roe-and-caviar-a-spoonful-of-eggs"
   },
   {
@@ -17468,7 +17455,7 @@
       "a fruit",
       "a bulb"
     ],
-    "context": "A carrot is a single fat taproot -- one swollen underground root, not a stem, a bulb, or a bundle of little rootlets. When you dig up a carrot you're pulling out the plant's whole pantry in one piece. (Source: en.wikipedia.org/wiki/Carrot)",
+    "context": "A carrot is a single fat taproot -- one swollen underground root, not a stem, a bulb, or a bundle of little rootlets. A gardener who digs up a carrot pulls out the plant's whole pantry in one piece. (Source: en.wikipedia.org/wiki/Carrot)",
     "topic": "roots-that-hoard-the-winter-taproots-and-storage-roots"
   },
   {
@@ -17486,7 +17473,7 @@
   },
   {
     "tier": 2,
-    "question": "Farmers in West Asia and eastern Europe were already growing carrots a thousand years ago, but the roots they pulled would look all wrong to modern eyes. The bright orange carrot did not exist yet; Dutch growers created it centuries later. What color were those first farmed carrots?",
+    "question": "Farmers in Persia and Afghanistan were already growing carrots for their roots a thousand years ago, but the roots they pulled would look all wrong to modern eyes. The bright orange carrot did not exist yet; Dutch growers created it centuries later. What color were those first farmed carrots?",
     "answer": "purple",
     "choices": [
       "purple",
@@ -17494,12 +17481,12 @@
       "pink",
       "green"
     ],
-    "context": "The earliest cultivated carrots -- grown in the 10th century in West Asia, India and Europe -- were purple, white and yellow. Orange was the newcomer, not the original. (Source: en.wikipedia.org/wiki/Carrot)",
+    "context": "The earliest carrots farmed for their roots, around the 9th-10th century in Persia, Afghanistan and northwestern India, were purple or yellow. Orange was the newcomer, bred in the Netherlands in the 1500s-1600s. (Source: grokipedia.com/page/Carrot)",
     "topic": "roots-that-hoard-the-winter-taproots-and-storage-roots"
   },
   {
     "tier": 3,
-    "question": "Dutch growers, a charming story says, bred the carrot orange in the 1500s to honor their royal House of Orange, though the World Carrot Museum's curator, John Stolarczyk, finds the tale unlikely. A likelier reason orange won the kitchen lies in the soup pot: a purple carrot does something there that an orange one does not. What?",
+    "question": "Dutch growers, a charming story says, bred the carrot orange in the 1500s to honor their royal House of Orange, though the World Carrot Museum's curator, John Stolarczyk, finds the tale unlikely. A likelier reason orange won the kitchen lies in the soup pot: a carrot of the older, darker kind does something there that an orange one does not. What?",
     "answer": "bleeds out and muddies the broth brown",
     "choices": [
       "bleeds out and muddies the broth brown",
@@ -17520,7 +17507,7 @@
       "the parsnip from a roast",
       "the radish from a relish"
     ],
-    "context": "In cooler climates much of the world's white sugar comes from the sugar beet, not from cane -- beet sugar rose from about 5% of world sugar in 1840 to over half by 1880. The pale sugar beet and the deep-red beetroot on your salad are the very same species (Beta vulgaris); the sugar beet is simply a variety bred to pack its root with sucrose, roughly 20% of its weight. (Source: en.wikipedia.org/wiki/Sugar_beet)",
+    "context": "In cooler climates much of the world's white sugar comes from the sugar beet, not from cane -- beet sugar rose from about 5% of world sugar in 1840 to over half by 1880. The pale sugar beet and the deep-red beetroot in a salad are the very same species (Beta vulgaris); the sugar beet is simply a variety bred to pack its root with sucrose, roughly 20% of its weight. (Source: en.wikipedia.org/wiki/Sugar_beet)",
     "topic": "roots-that-hoard-the-winter-taproots-and-storage-roots"
   },
   {
@@ -17577,25 +17564,25 @@
   },
   {
     "tier": 1,
-    "question": "A cook's guiding hand curls into what cooks call the claw as the knife chops, fingertips tucked under, the flat of the blade sliding along the hand. Suppose you hold your hand that way. Which part of it does the blade rest against, keeping the edge off your fingertips?",
-    "answer": "Your knuckles",
+    "question": "A cook's guiding hand curls into what cooks call the claw as the knife chops, fingertips tucked under, the flat of the blade sliding along the hand. Which part of that hand does the blade rest against, keeping the edge off the fingertips?",
+    "answer": "The knuckles",
     "choices": [
-      "Your knuckles",
-      "Your fingernails",
-      "Your palm",
-      "Your wrist"
+      "The knuckles",
+      "The fingernails",
+      "The palm",
+      "The wrist"
     ],
-    "context": "This is the genius of the 'claw' grip: MSU Extension notes the middle knuckles 'act as a guide, allowing the flat part of the knife blade to rest against' them — so the sharp edge physically can't reach your curled-under fingertips. Source: canr.msu.edu/news/handling-knives-safely",
+    "context": "This is the genius of the 'claw' grip: MSU Extension notes the middle knuckles 'act as a guide, allowing the flat part of the knife blade to rest against' them — so the sharp edge physically can't reach the curled-under fingertips. Source: canr.msu.edu/news/handling-knives-safely",
     "topic": "safe-hands-the-claw-the-pinch-and-the-knife-you-never-catch"
   },
   {
     "tier": 1,
-    "question": "A round yellow onion wobbles and rolls under the blade on a flat wooden board, and a rolling vegetable is one of the most common reasons a kitchen knife slips and cuts a finger. Suppose you have to slice it. What should you do first?",
+    "question": "A round yellow onion wobbles and rolls under the blade on a flat wooden board, and a rolling vegetable is one of the most common reasons a kitchen knife slips and cuts a finger. How does a cook keep it steady for slicing?",
     "answer": "Cut a flat side, then set it flat-side down",
     "choices": [
       "Cut a flat side, then set it flat-side down",
-      "Peel the whole thing before any slicing",
-      "Chop through the middle as fast as you can",
+      "Peel it first so the blade can grip",
+      "Chop through it as fast as possible",
       "Freeze it briefly to firm it up"
     ],
     "context": "Round foods roll, and a rolling vegetable is a top cause of a slip. Cooks 'get to flat first' — one cut to create a flat face, then rest that flat side on the board for a stable base. It's a stability move, not just neatness. Source: canr.msu.edu/news/handling-knives-safely",
@@ -17616,28 +17603,28 @@
   },
   {
     "tier": 3,
-    "question": "Suppose you are in the middle of dinner prep when your chef's knife slips off the edge of the counter and tumbles end over end toward the floor and your bare foot. Every cook, from a fancy chef to a busy short-order cook, is drilled in exactly one safe response. What is it?",
+    "question": "A cook in the middle of dinner prep knocks her chef's knife off the edge of the counter, and it tumbles end over end toward the floor and her bare foot. Every cook, from a fancy chef to a busy short-order cook, is drilled in exactly one safe response. What is it?",
     "answer": "Step back and let it land on the floor",
     "choices": [
       "Step back and let it land on the floor",
       "Snatch it by the handle before it lands",
-      "Kick it clear of your feet",
+      "Kick it clear of her feet",
       "Clap it between both hands"
     ],
-    "context": "Both MSU Extension and Virginia Tech Extension state it flatly: 'Never try to catch a falling knife.' Cooks put it as 'a falling knife has no handle' — there's no safe end to grab while it tumbles, so you pull your hands and feet clear and let it land. Sources: canr.msu.edu/news/handling-knives-safely; pubs.ext.vt.edu/FST/FST-268/FST-268.html",
+    "context": "Both MSU Extension and Virginia Tech Extension state it flatly: 'Never try to catch a falling knife.' Cooks put it as 'a falling knife has no handle' — there's no safe end to grab while it tumbles, so the cook pulls hands and feet clear and lets it land. Sources: canr.msu.edu/news/handling-knives-safely; pubs.ext.vt.edu/FST/FST-268/FST-268.html",
     "topic": "safe-hands-the-claw-the-pinch-and-the-knife-you-never-catch"
   },
   {
     "tier": 3,
-    "question": "Cooks work elbow to elbow in a busy restaurant kitchen, and a razor-sharp chef's knife is almost always moving between hands as crewmates call out for it. Passing it blade-first or pointing the tip at them is how accidents happen, and even a quick handle-first pass can go wrong in a loud, crowded room. Suppose you hold the knife they want. What is the safest way to pass it?",
+    "question": "Cooks work elbow to elbow in a busy restaurant kitchen, and a razor-sharp chef's knife is almost always moving between hands as crewmates call out for it. Passing it blade-first or pointing the tip at someone is how accidents happen. What is the safest way for a cook to pass it?",
     "answer": "Set it down on the counter for them to take",
     "choices": [
       "Set it down on the counter for them to take",
-      "Hand it over handle-first, blade down",
+      "Slide it fast along the counter to them",
       "Toss it gently so they catch the handle",
-      "Balance it flat across your open palm"
+      "Balance it flat across an open palm"
     ],
-    "context": "MSU Extension: never hand a knife blade-first or point it at anyone — lay it on the counter and let the other person pick it up. And when you walk with one, warn the room: a simple 'knife on the move' alerts everyone nearby. Source: canr.msu.edu/news/handling-knives-safely",
+    "context": "MSU Extension: never hand a knife blade-first or point it at anyone — lay it on the counter and let the other person pick it up. And when walking with one, warn the room: a simple 'knife on the move' alerts everyone nearby. Source: canr.msu.edu/news/handling-knives-safely",
     "topic": "safe-hands-the-claw-the-pinch-and-the-knife-you-never-catch"
   },
   {
@@ -17650,7 +17637,7 @@
       "Laced together underneath the handle",
       "Pointed straight down the blade's spine"
     ],
-    "context": "This is the 'pinch grip': the thumb and index finger pinch the blade just ahead of the bolster (where blade meets handle), and only the other three fingers wrap the handle — not a fist on the back. It puts the blade's balance point between your fingers, killing the wobble and fatigue of a hammer grip. A light pinch, not a tight choke, gives the finest control. Source: chefapprovedtools.com/blog/knife-skills-how-to-hold-chef-knife",
+    "context": "This is the 'pinch grip': the thumb and index finger pinch the blade just ahead of the bolster (where blade meets handle), and only the other three fingers wrap the handle — not a fist on the back. It puts the blade's balance point between the fingers, killing the wobble and fatigue of a hammer grip. A light pinch, not a tight choke, gives the finest control. Source: chefapprovedtools.com/blog/knife-skills-how-to-hold-chef-knife",
     "topic": "safe-hands-the-claw-the-pinch-and-the-knife-you-never-catch"
   },
   {
@@ -17663,12 +17650,12 @@
       "The wet fibers swell up and grip onto the counter",
       "The cool moisture makes the board shrink and clamp"
     ],
-    "context": "A thin film of water raises the coefficient of friction between board and counter — the same reason a wet shoe sole grips better than a bone-dry one. It must be damp-not-soaking and thin; too much water adds a sliding layer and makes things worse. Keep the board's TOP dry, too — a slick, wet tomato skidding under the blade is the other way a knife jumps. Sources: foodrepublic.com/1293969; eliteclubs.com/8-tips-for-knife-safety-in-your-home",
+    "context": "A thin film of water raises the coefficient of friction between board and counter. It must be damp-not-soaking and thin; too much water adds a sliding layer and makes things worse. Keep the board's TOP dry, too — a slick, wet tomato skidding under the blade is the other way a knife jumps. Sources: foodrepublic.com/1293969; eliteclubs.com/8-tips-for-knife-safety-in-your-home",
     "topic": "safe-hands-the-claw-the-pinch-and-the-knife-you-never-catch"
   },
   {
     "tier": 1,
-    "question": "Dinner goes back into the oven the moment a cut piece shows a trace of pink, because this is the one meat that is never served rare or pink. Bacteria in it make about a million Americans sick every year. Which meat is it?",
+    "question": "Dinner goes back into the oven the moment a cut piece shows a trace of pink, because this is one meat that is never served rare or pink. Bacteria in it make about a million Americans sick every year. Which meat is it?",
     "answer": "Chicken",
     "choices": [
       "Chicken",
@@ -17676,7 +17663,7 @@
       "Pork",
       "Lamb"
     ],
-    "context": "Poultry — whole, in pieces, or ground — is the one meat you always cook fully through; the CDC estimates about a million Americans a year get sick from contaminated poultry. Source: Ohio State Univ. Extension, 'Chow Line'; USDA FSIS.",
+    "context": "Poultry — whole, in pieces, or ground — is always cooked fully through; the CDC estimates about a million Americans a year get sick from contaminated poultry. Source: Ohio State Univ. Extension, 'Chow Line'; USDA FSIS.",
     "topic": "safe-internal-temperatures-and-why-they-differ"
   },
   {
@@ -17694,7 +17681,7 @@
   },
   {
     "tier": 3,
-    "question": "Salmonella can lurk all through raw poultry, not just on its surface, and an undercooked bird brings hours of fever, cramps and worse. The germ is the most heat-resistant in poultry and survives right up to one internal temperature, where every bit of it finally dies. What temperature must the meat reach?",
+    "question": "Salmonella can lurk all through raw poultry, not just on its surface, and an undercooked bird brings hours of fever, cramps and worse. The germ is the most heat-resistant one in raw poultry, and the food-safety rule names the internal temperature that kills it almost at once. What temperature must the meat reach?",
     "answer": "165°F",
     "choices": [
       "165°F",
@@ -17702,7 +17689,7 @@
       "155°F",
       "160°F"
     ],
-    "context": "165°F is the number that kills Salmonella, the toughest pathogen in raw poultry, which is why every bit of chicken — whole, in pieces, or ground — goes to 165°F. Source: USDA FSIS Safe Minimum Internal Temperature Chart; Ohio State Univ. Extension, 'Chow Line.'",
+    "context": "165°F is the temperature at which Salmonella, the most heat-resistant pathogen in raw poultry, dies almost at once, which is why every bit of chicken — whole, in pieces, or ground — goes to 165°F. Source: USDA FSIS Safe Minimum Internal Temperature Chart; Ohio State Univ. Extension, 'Chow Line.'",
     "topic": "safe-internal-temperatures-and-why-they-differ"
   },
   {
@@ -17733,7 +17720,7 @@
   },
   {
     "tier": 5,
-    "question": "A tiny worm parasite can hide in pork and make people miserably sick when the meat is eaten undercooked, and a hundred years ago it was common in American pigs. Modern farm rules made it so rare that in 2024 the U.S. Department of Agriculture (USDA) tested 3.2 million pigs from farms all across the country. What did that enormous check find?",
+    "question": "A tiny worm parasite can hide in pork and make people miserably sick when the meat is eaten undercooked, and a hundred years ago it was common in American pigs. Modern farm rules made it rare, and in a survey published in 2024 the U.S. Department of Agriculture (USDA) checked 3.2 million pigs from farms across the country. What did that enormous check find?",
     "answer": "Not a single pig was infected",
     "choices": [
       "Not a single pig was infected",
@@ -17741,7 +17728,7 @@
       "A few thousand pigs were infected",
       "Roughly half the pigs were infected"
     ],
-    "context": "Trichinosis in the US has collapsed — from about 400 cases a year in the 1940s to roughly 15-20 now — and the 2024 sample of 3.2 million pigs turned up zero infections. Source: CDC; Food-Safety.com; Wikipedia, 'Trichinosis.'",
+    "context": "Trichinosis in the US has collapsed — from about 400 cases a year in the 1940s to roughly 15-20 now — and a USDA survey of about 3.2 million pigs, sampled over 54 months and published in 2024, turned up zero infections. Source: USDA ARS (ars.usda.gov, 2024); CDC; Food-Safety.com; Wikipedia, 'Trichinosis.'",
     "topic": "safe-internal-temperatures-and-why-they-differ"
   },
   {
@@ -17949,29 +17936,29 @@
       "The sugar",
       "The vanilla"
     ],
-    "context": "Raw eggs are the salmonella carrier in cake batter, cookie dough, homemade Caesar dressing, mayonnaise, and eggnog — the CDC and FDA warn that these uncooked-egg foods can make you sick. (In raw cookie dough the flour is a separate germ risk, a different story.) Fun aside: 'salmonella' has nothing to do with salmon the fish — it's named for American veterinarian Daniel Elmer Salmon, whose lab first studied it in the 1880s. Sources: CDC 'Raw Flour and Dough' https://www.cdc.gov/food-safety/foods/no-raw-dough.html ; WebMD 'Eating Raw Cookie Dough' https://www.webmd.com/food-recipes/food-poisoning/eating-raw-cookie-dough-salmonella-infections ; Wikipedia 'Daniel Elmer Salmon' https://en.wikipedia.org/wiki/Daniel_Elmer_Salmon",
+    "context": "Raw eggs are the salmonella carrier in cake batter, cookie dough, homemade Caesar dressing, mayonnaise, and eggnog — the CDC and FDA warn that these uncooked-egg foods can make people sick. (In raw cookie dough the flour is a separate germ risk, a different story.) The name 'salmonella' has nothing to do with salmon the fish — it's named for American veterinarian Daniel Elmer Salmon, whose lab first studied it in the 1880s. Sources: CDC 'Raw Flour and Dough' https://www.cdc.gov/food-safety/foods/no-raw-dough.html ; WebMD 'Eating Raw Cookie Dough' https://www.webmd.com/food-recipes/food-poisoning/eating-raw-cookie-dough-salmonella-infections ; Wikipedia 'Daniel Elmer Salmon' https://en.wikipedia.org/wiki/Daniel_Elmer_Salmon",
     "topic": "salmonella-the-egg-and-poultry-germ"
   },
   {
     "tier": 2,
     "question": "A cook scrubs an egg's shell until it is spotless, sure that a clean shell means the raw egg inside is safe. Yet a perfectly clean, uncracked egg can still carry salmonella somewhere no scrubbing can reach. How did the germ get there?",
-    "answer": "A sick hen sealed it inside before the shell ever formed.",
+    "answer": "An infected hen sealed it in before the shell formed.",
     "choices": [
-      "A sick hen sealed it inside before the shell ever formed.",
-      "Moisture soaked it in through tiny pores in the shell.",
-      "Cold storage let it seep in while the egg chilled.",
-      "Nearby eggs passed it in through the carton walls."
+      "An infected hen sealed it in before the shell formed.",
+      "It grew there on its own as the egg sat aging.",
+      "Nearby eggs passed it in through the carton walls.",
+      "It bred from a tiny spot of blood in the yolk."
     ],
     "context": "A hen carrying Salmonella Enteritidis in her ovaries or oviduct can pass the bacteria straight into the yolk or white before the shell hardens — called transovarian transmission — so a clean, uncracked egg from a healthy-looking hen can still carry it. That's why scrubbing the shell does NOT make a raw egg safe. It's rare, though: only about 1 in 20,000 U.S. eggs is estimated to be internally contaminated. Sources: Discover Magazine https://www.discovermagazine.com/how-eggs-can-harbor-salmonella-even-when-they-look-perfectly-clean-48131 ; Live Science 'How Does Salmonella Get Inside Eggs?' https://www.livescience.com/10016-salmonella-eggs.html",
     "topic": "salmonella-the-egg-and-poultry-germ"
   },
   {
     "tier": 3,
-    "question": "A restaurant kitchen whisks up raw-egg Caesar dressing, cracking every egg from a carton stamped 'pasteurized.' Pasteurizing uses heat to kill a food's germs while leaving the food itself unchanged, so the salmonella is gone, yet each egg still cracks open runny and raw. How were the ones in that carton treated?",
+    "question": "A restaurant kitchen whisks up raw-egg Caesar dressing, cracking every egg from a carton stamped 'pasteurized.' The salmonella in those eggs is gone, yet each one still cracks open runny and raw. How were the eggs in that carton treated?",
     "answer": "Bathed in their shells in warm water for close to an hour.",
     "choices": [
       "Bathed in their shells in warm water for close to an hour.",
-      "Zapped with a quick, strong burst of microwave heat.",
+      "Soaked overnight in cold vinegar right through the shell.",
       "Rinsed with a food-safe spray that kills germs on contact.",
       "Chilled in a salt brine cold enough to kill the germs."
     ],
@@ -18001,7 +17988,7 @@
       "Sliced cucumber",
       "Cherry tomatoes"
     ],
-    "context": "Seeds like alfalfa and mung bean need warm, humid days (about 70-77°F) to sprout — the very conditions that let salmonella bloom — and you eat sprouts raw, with no cooking kill-step. Even a few bacterial cells on a seed can multiply thousands- to hundred-thousand-fold during sprouting. Between 2000 and 2020 the CDC logged 53 sprout-linked outbreaks (40 from salmonella), and the FDA advises children, the elderly, pregnant women, and people with weak immune systems to avoid raw sprouts entirely. Sources: Colorado State University Food Source Information 'Sprouts' https://www.chhs.colostate.edu/fsi/food-articles/produce/sprouts/ ; CDC EID 'Infections Associated with Eating Seed Sprouts' https://wwwnc.cdc.gov/eid/article/5/5/99-0503_article",
+    "context": "Seeds like alfalfa and mung bean need warm, humid days (about 70-77°F) to sprout — the very conditions that let salmonella bloom — and sprouts are eaten raw, with no cooking kill-step. Even a few bacterial cells on a seed can multiply thousands- to hundred-thousand-fold during sprouting. The FDA advises children, the elderly, pregnant women, and people with weak immune systems to avoid raw sprouts entirely. Sources: Colorado State University Food Source Information 'Sprouts' https://www.chhs.colostate.edu/fsi/food-articles/produce/sprouts/ ; CDC EID 'Infections Associated with Eating Seed Sprouts' https://wwwnc.cdc.gov/eid/article/5/5/99-0503_article",
     "topic": "salmonella-the-egg-and-poultry-germ"
   },
   {
@@ -18084,7 +18071,7 @@
   },
   {
     "tier": 5,
-    "question": "Barrels of sauerkraut went to sea with James Cook, who across three years lost not a single crewman to scurvy, a disease that killed sailors by the thousands. Nobody in his day knew that vitamins existed, yet fermenting cabbage preserves, and can even raise, the very nutrient whose lack causes scurvy. Which nutrient is it?",
+    "question": "Barrels of sauerkraut went to sea with James Cook, who across three years lost not a single crewman to scurvy, a disease that killed sailors by the thousands. Nobody in his day knew that vitamins existed, yet fermented cabbage keeps much of the very nutrient whose lack causes scurvy. Which nutrient is it?",
     "answer": "vitamin C",
     "choices": [
       "vitamin C",
@@ -18092,7 +18079,7 @@
       "vitamin D",
       "vitamin E"
     ],
-    "context": "Fermenting cabbage locks in (and can boost) its vitamin C, the nutrient that prevents scurvy — though no one understood vitamins yet. In 1776 the Royal Society gave Cook its highest honor, the Copley Medal, for his account of keeping his crew healthy at sea. Scurvy is estimated to have killed some two million sailors between 1500 and 1800; one earlier commodore, George Anson, lost more than 1,300 of about 2,000 men. Sources: Britannica, 'James Cook'; Modern Farmer.",
+    "context": "Fermented cabbage keeps much of its vitamin C, the nutrient that prevents scurvy — though no one understood vitamins yet. In 1776 the Royal Society gave Cook its highest honor, the Copley Medal, for his account of keeping his crew healthy at sea. Scurvy is estimated to have killed some two million sailors between 1500 and 1800; one earlier commodore, George Anson, lost more than 1,300 of about 2,000 men. Sources: Britannica, 'James Cook'; Modern Farmer.",
     "topic": "salt-and-sour-cabbage-into-sauerkraut-and-kimchi"
   },
   {
@@ -18170,7 +18157,7 @@
       "A couple of weeks",
       "About a month"
     ],
-    "context": "Fresh fish spoils in a day or two, but drying — the world's oldest known food-preservation method — changed the math. Gutted, packed between layers of salt, and dried into board-hard planks, cod could keep for several years. That keeping power is why it fed sailors and whole armies: the original long-haul protein, a fish you could ship anywhere. Source: Wikipedia 'Dried and salted cod'; History Today 'A History of Salt Cod.'",
+    "context": "Fresh fish spoils in a day or two, but drying — the world's oldest known food-preservation method — changed the math. Gutted, packed between layers of salt, and dried into board-hard planks, cod could keep for several years. That keeping power is why it fed sailors and whole armies: the original long-haul protein, a fish that could be shipped anywhere. Source: Wikipedia 'Dried and salted cod'; History Today 'A History of Salt Cod.'",
     "topic": "salt-cod-the-fish-that-fed-empires"
   },
   {
@@ -18201,13 +18188,13 @@
   },
   {
     "tier": 2,
-    "question": "A mackerel packed in salt turns rancid, soft and stinking of spoiled oil, while a cod given the same cure dries rock-hard and keeps without a fridge. Both fish swim the same cold seas and take the salt eagerly; the difference is where each stores its body oil. Where does a cod keep its oil?",
+    "question": "A mackerel salted and laid out to dry turns rancid, soft and stinking of spoiled oil, while a cod given the same cure dries rock-hard and keeps without a fridge. Both fish swim the same cold seas; the difference is where each stores its body oil. Where does a cod keep its oil?",
     "answer": "In its liver",
     "choices": [
       "In its liver",
       "In its flesh",
       "Under its skin",
-      "In its belly"
+      "In its bones"
     ],
     "context": "Cod stores its oil in its liver — the source of cod-liver oil — leaving its white muscle almost fat-free. A fatty fish like mackerel or herring carries oil all through its flesh, which turns rancid and keeps salt from penetrating, so it can never dry hard and keep the way lean cod does. Source: Mark Kurlansky, 'Cod: A Biography of the Fish That Changed the World'; Wikipedia 'Cod fisheries.'",
     "topic": "salt-cod-the-fish-that-fed-empires"
@@ -18240,7 +18227,7 @@
   },
   {
     "tier": 4,
-    "question": "Newfoundland's fishermen graded their dried cod in the 1700s and 1800s, when their fishery was one of the biggest food industries in the world. The best went to the fine tables of Catholic Europe. The cheapest, damaged 'refuse' grade, too broken or bruised for any respectable buyer, sailed off on a route of its own. Where did it go, and whom was it meant to feed?",
+    "question": "Newfoundland's fishermen graded their dried cod in the 1700s and 1800s. The best went to the fine tables of Catholic Europe. The cheapest, damaged 'refuse' grade, too broken or bruised for any respectable buyer, sailed off on a route of its own. Where did it go, and whom was it meant to feed?",
     "answer": "To the Caribbean, to feed enslaved people on the sugar plantations",
     "choices": [
       "To the Caribbean, to feed enslaved people on the sugar plantations",
@@ -18248,20 +18235,7 @@
       "To inland Spain, to feed the monks of the mountain monasteries",
       "To West Africa, to feed the porters of the inland caravans"
     ],
-    "context": "Salt cod became a leg of the Atlantic triangular trade. The best grades went to Europe and the Mediterranean; the poorest 'refuse' grade — so cheap and low that Newfoundland fishermen even called it 'Jamaica cod' — was shipped to the Caribbean as cheap, durable protein to feed enslaved people on the sugar plantations. Source: The Caribbean Camera, quoting historian Christopher Magra; Wikipedia 'Triangular trade.'",
-    "topic": "salt-cod-the-fish-that-fed-empires"
-  },
-  {
-    "tier": 4,
-    "question": "The Grand Banks off Newfoundland fed the salt-cod trade for five centuries, until the cod were fished nearly to nothing and Canada shut the fishery down in 1992. In Portugal, bacalhau had been comfort food for generations. What did Portugal do once its main source of cod was gone?",
-    "answer": "Kept making bacalhau, with cod imported from abroad",
-    "choices": [
-      "Kept making bacalhau, with cod imported from abroad",
-      "Gave up bacalhau for cheaper fresh sardines",
-      "Farmed its own cod in tanks along the coast",
-      "Salted a local hake to use in the cod's place"
-    ],
-    "context": "The Grand Banks cod that fed the trade for 500 years was fished to collapse, and Canada declared a moratorium in 1992. But the eating habit was so deeply rooted that Portugal simply kept making bacalhau — it now imports its salt cod, chiefly from Norway and Iceland, rather than catching it. Source: Wikipedia 'Bacalhau'; bacalalo.com 'Cod in Portugal: 365 Recipes.'",
+    "context": "Salt cod became a leg of the Atlantic triangular trade. The best grades went to Europe and the Mediterranean; the poorest 'refuse' grade was shipped to the Caribbean as cheap, durable protein to feed enslaved people on the sugar plantations. Mark Kurlansky writes that the Newfoundland and Nova Scotia fisheries became geared to 'low-grade West India saltfish.' Source: en.wikipedia.org/wiki/Cod_fishing_in_Newfoundland; The Caribbean Camera, quoting historian Christopher Magra.",
     "topic": "salt-cod-the-fish-that-fed-empires"
   },
   {
@@ -18279,7 +18253,7 @@
   },
   {
     "tier": 1,
-    "question": "A cook stirs plain table salt into a pot of soup, then reaches for kosher salt to sprinkle over a steak, a different salt for each job. A chemist tests both and finds them identical. Why, then, does one suit the soup and the other the steak?",
+    "question": "A cook stirs table salt into a pot of soup, then reaches for kosher salt to sprinkle over a steak. A chemist tests both and finds the same sodium chloride in each. Why, then, does one suit the soup and the other the steak?",
     "answer": "the size and shape of their crystals",
     "choices": [
       "the size and shape of their crystals",
@@ -18287,7 +18261,7 @@
       "how much they cost to buy",
       "how long they take to make"
     ],
-    "context": "Kosher salt and flaky finishing salts differ from ordinary table salt only in the size and shape of their crystals, not their chemistry - it is all sodium chloride. Bigger, flakier crystals are easy to pinch and sprinkle over finished food. Source: Wikipedia, 'Salt'.",
+    "context": "Kosher salt and flaky finishing salts differ from ordinary table salt mainly in the size and shape of their crystals, not their basic chemistry - it is all sodium chloride, though table salt is often iodized. Bigger, flakier crystals are easy to pinch and sprinkle over finished food. Source: Wikipedia, 'Salt'.",
     "topic": "salt-from-the-sea-from-the-earth-and-why-it-preserves"
   },
   {
@@ -18301,19 +18275,6 @@
       "dye poured in by workers"
     ],
     "context": "Salt-evaporation ponds often glow bright pink, red, and orange because salt-loving algae and microbes are the only living things that can thrive in water that salty. Source: Wikipedia, 'Salt'.",
-    "topic": "salt-from-the-sea-from-the-earth-and-why-it-preserves"
-  },
-  {
-    "tier": 2,
-    "question": "Deep underground, miners do not rake up salt from ponds - they blast and dig solid salt straight out of the rock, in clear crystal cubes. A geologist picks one up and calls it by its official mineral name, the way quartz or diamond have names. What is the mineral name for pure rock salt?",
-    "answer": "halite",
-    "choices": [
-      "halite",
-      "gypsum",
-      "calcite",
-      "feldspar"
-    ],
-    "context": "Rock salt is dug from underground beds by miners. Its mineral name is halite - pure sodium chloride (NaCl) grown into cubic crystals. Source: Wikipedia, 'Halite' (en.wikipedia.org/wiki/Halite).",
     "topic": "salt-from-the-sea-from-the-earth-and-why-it-preserves"
   },
   {
@@ -18331,15 +18292,15 @@
   },
   {
     "tier": 4,
-    "question": "Prospectors along the Gulf of Mexico pay fortunes to find salt domes, though not for the salt. A buried bed of salt is lighter than the rock pressing down on it, so over millions of years it squeezes slowly upward into giant underground pillars. Why do the prospectors drill around them?",
-    "answer": "oil pools in pockets trapped against the salt",
+    "question": "A buried bed of salt is lighter than the rock above it, and on Avery Island, in Louisiana's coastal marsh, one has squeezed up into a giant dome that nearly reaches the surface. A family there began making a famous food in 1868, mixing salt mined from that dome into a mash of ground peppers. Which food?",
+    "answer": "Tabasco sauce",
     "choices": [
-      "oil pools in pockets trapped against the salt",
-      "gold settles into veins beside the salt",
-      "diamonds grow in the heat below the salt",
-      "coal forms in seams around the salt"
+      "Tabasco sauce",
+      "Sriracha sauce",
+      "Peri-peri sauce",
+      "Buffalo sauce"
     ],
-    "context": "Buried salt is lighter than the rock above it, so it squeezes slowly upward into pipe-like columns called salt domes. These domes often trap pockets of oil against their edges, which is why prospectors hunt for them along the Gulf coast. Source: Wikipedia, 'Halite'.",
+    "context": "Avery Island is a salt dome, a huge plug of rock salt that rose from deep underground because salt is lighter than the rock around it. By the company's own history, Edmund McIlhenny began making Tabasco sauce there in 1868, grinding tabasco peppers into a mash with salt from the island's mine and aging it in oak barrels. Salt domes draw oil prospectors too, because oil often pools against their sides. Sources: en.wikipedia.org/wiki/Tabasco_sauce; en.wikipedia.org/wiki/Avery_Island,_Louisiana; grokipedia.com/page/Tabasco_sauce",
     "topic": "salt-from-the-sea-from-the-earth-and-why-it-preserves"
   },
   {
@@ -18357,7 +18318,7 @@
   },
   {
     "tier": 5,
-    "question": "A deer will go out of its way to find salt, and so will every other animal, people included, because a body that goes entirely without it dies. Something in salt is what lets nerves crackle and muscles twitch. Which part of salt does that job?",
+    "question": "A deer will go out of its way to find salt, and so will many other animals, people included, because a body that goes entirely without it dies. Something in salt is what lets nerves crackle and muscles twitch. Which part of salt does that job?",
     "answer": "the sodium in it",
     "choices": [
       "the sodium in it",
@@ -18365,7 +18326,7 @@
       "the water in it",
       "the iodine in it"
     ],
-    "context": "Your body genuinely needs salt to live: nerves and muscles fire by letting sodium ions rush into a cell - an 'action potential' - then pumping them back out. That electrical need is a big reason humans and animals crave salt. Source: NCBI Bookshelf, physiology of the action potential.",
+    "context": "The body genuinely needs salt to live: nerves and muscles fire by letting sodium ions rush into a cell - an 'action potential' - then pumping them back out. That electrical need is a big reason humans and animals crave salt. Source: NCBI Bookshelf, physiology of the action potential.",
     "topic": "salt-from-the-sea-from-the-earth-and-why-it-preserves"
   },
   {
@@ -18491,8 +18452,8 @@
     "answer": "It would float a whole egg",
     "choices": [
       "It would float a whole egg",
-      "It stopped dissolving fresh salt",
-      "It stung any cut on your hand",
+      "It held a wooden spoon upright",
+      "It stung any cut on the hand",
       "It turned a cloudy, milky white"
     ],
     "context": "The old shipboard method: dry-rub the meat in salt, soak it in brine for days to draw out the blood, pack it in a cask with more salt, then top it with brine so heavy it could float an egg. That brimful, egg-floating cask is why sailors' meat could last a whole voyage. Source: csphistorical.com, 'Salt Pork, Ship's Biscuit and Burgoo.'  (Legend.)",
@@ -18500,7 +18461,7 @@
   },
   {
     "tier": 2,
-    "question": "Berber caravans of hundreds of camels crossed four hundred miles of the Sahara in medieval West Africa, carrying salt cut in great slabs at the Taghaza mines to Timbuktu and the other inland cities of the Mali Empire. In some of those markets, what did traders swap the salt for, pound for pound?",
+    "question": "Berber caravans of hundreds of camels crossed nearly five hundred miles of the Sahara in medieval West Africa, carrying salt cut in great slabs at the Taghaza mines to Timbuktu and the other inland cities of the Mali Empire. In some remote markets, what did traders swap the salt for, at times pound for pound?",
     "answer": "Gold",
     "choices": [
       "Gold",
@@ -18508,12 +18469,12 @@
       "Ivory",
       "Amber"
     ],
-    "context": "Inland, salt was scarce and vital for preserving food, so where it was rare it was as good as money -- famously traded weight-for-weight against gold. The giant camel caravans are a legendary image of just how far people would haul a preserving mineral. Source: en.wikipedia.org/wiki/History_of_salt.",
+    "context": "Inland, salt was scarce and vital for preserving food, so where it was rare it was as good as money -- swapped for gold dust, by some accounts even pound for pound in remote markets, though historians think that famous ratio was rare at best. The giant camel caravans are a legendary image of just how far people would haul a preserving mineral. Source: worldhistory.org/article/1342 ('The Salt Trade of Ancient West Africa'); en.wikipedia.org/wiki/Taghaza.",
     "topic": "salt-the-mineral-that-preserved-the-world"
   },
   {
     "tier": 2,
-    "question": "Mark Kurlansky argues that a salted, dried fish is the real reason Europeans could cross the Atlantic, because it kept long enough to feed ships on long voyages. By his account, Basque fishermen from northern Spain were already salting it far out on the North Atlantic fishing banks around the year 1000, well before Columbus. Which fish was it?",
+    "question": "Mark Kurlansky argues that a salted, dried fish is the real reason Europeans could cross the Atlantic, because it kept long enough to feed ships on long voyages. By his account, Basque fishermen from northern Spain were already trading it far and wide by about the year 1000, well before Columbus. Which fish was it?",
     "answer": "Cod",
     "choices": [
       "Cod",
@@ -18526,7 +18487,7 @@
   },
   {
     "tier": 3,
-    "question": "John Cabot's crew sailed home from the waters off Newfoundland in 1497 with a report about the fish that made the Grand Banks sound endless. The fish were so thick, the sailors claimed, that a man could hardly do one simple thing among them. What was it?",
+    "question": "English sea captains fishing off Newfoundland around 1600 sent home a report about the cod that made those waters sound endless. The shoals by the shore were so thick, they claimed, that a man could hardly do one simple thing among them. What was it?",
     "answer": "Row a boat through them",
     "choices": [
       "Row a boat through them",
@@ -18534,12 +18495,12 @@
       "See the seabed beneath them",
       "Find clear water to swim in"
     ],
-    "context": "Cabot's crew claimed the cod were so dense they 'hardly have been able to row a boat through them' -- an image that made the Grand Banks sound inexhaustible. The salt-cod fishery it opened would be chased for centuries. Source: en.wikipedia.org/wiki/Cod_fishing_in_Newfoundland.  (Legend.)",
+    "context": "English captains around 1600 reported cod shoals 'so thick by the shore that we hardly have been able to row a boat through them' -- an image that made the Grand Banks sound inexhaustible. A century earlier, John Cabot's crew of 1497 had claimed the sea was so full of fish they could be taken in baskets as well as nets. Source: en.wikipedia.org/wiki/Cod_fishing_in_Newfoundland.",
     "topic": "salt-the-mineral-that-preserved-the-world"
   },
   {
     "tier": 3,
-    "question": "On the Grand Banks, rival fleets cured their catch in different ways. The English prized a method that made their fish so hard and dry it could stay edible for years -- longer-lasting than the rival fleets' fish. How did the English cure their catch?",
+    "question": "On the Grand Banks in the 1500s, rival fleets from four nations cured their catch in different ways. The English prized a method that made their fish so hard and dry it could stay edible for years. How did the English cure their catch?",
     "answer": "Salted it lightly, then washed and dried it on shore",
     "choices": [
       "Salted it lightly, then washed and dried it on shore",
@@ -18547,20 +18508,7 @@
       "Packed it in strong brine below decks, undried",
       "Layered it in dry salt in casks for the voyage"
     ],
-    "context": "The English used 'light salting, washing and drying onshore,' which made a hard, dry salt cod that 'could remain edible for years' -- tougher and longer-lasting than the wet-salted fish the other fleets carried home to dry. Source: en.wikipedia.org/wiki/Cod_fishing_in_Newfoundland.",
-    "topic": "salt-the-mineral-that-preserved-the-world"
-  },
-  {
-    "tier": 4,
-    "question": "Roman soldiers drew part of their pay in salt, or so a popular story goes. Historians doubt the tale, yet the Latin word for salt left its mark on English all the same: an ordinary word for the pay a worker earns each month traces straight back to the Latin term for a salt allowance. Which word?",
-    "answer": "Salary",
-    "choices": [
-      "Salary",
-      "Stipend",
-      "Pension",
-      "Commission"
-    ],
-    "context": "'Salary' comes from Latin salarium, tied to sal, 'salt' -- a salarium may have been an allowance connected to salt. One careful note: you'll often hear that Roman soldiers were literally 'paid in salt.' Historians call that baseless -- no ancient source uses salarium to mean a salt ration. The honest fact is only that the WORD traces to a salt allowance. Sources: en.wikipedia.org/wiki/History_of_salt; kiwihellenist.blogspot.com.",
+    "context": "The English used 'light salting, washing and drying onshore,' which made a hard, dry salt cod that 'could remain edible for years.' The French, Spanish and Portuguese fished the offshore banks, salted their catch on board and dried it only back in Europe. Source: en.wikipedia.org/wiki/Cod_fishing_in_Newfoundland.",
     "topic": "salt-the-mineral-that-preserved-the-world"
   },
   {
@@ -18616,21 +18564,8 @@
     "topic": "salts-ancient-power"
   },
   {
-    "tier": 2,
-    "question": "A traveler leaving Rome on the Via Appia walked a road named for the man who built it, as most Roman roads were. One great road running from Rome to the Adriatic coast broke that rule and took its name from something else entirely. Translated, what does Via Salaria mean?",
-    "answer": "The Salt Road",
-    "choices": [
-      "The Salt Road",
-      "The Sacred Road",
-      "The Sea Road",
-      "The King's Road"
-    ],
-    "context": "Via Salaria literally means 'the Salt Road.' It ran about 242 km from Rome to the Adriatic; its name comes from salt, as the Sabines used the route to fetch salt from marshes at the mouth of the Tiber. Towns grew up along the salt trade, and one historian, Francesco Palmegiani, even argued the salt trade is why Rome arose where it did. Source: en.wikipedia.org/wiki/Via_Salaria",
-    "topic": "salts-ancient-power"
-  },
-  {
     "tier": 3,
-    "question": "Traders in Ethiopia bought and sold goods with hard bars called amole right up into the early 1900s. A trader could snap a bar into smaller pieces to make change, and the best merchants were famous for judging exactly how much to break off. What were these money-bars made of?",
+    "question": "Traders in Ethiopia bought and sold goods with hard, foot-long bars called amole right up into the early 1900s, and the empire even collected them as taxes. A trader could snap a bar into smaller pieces to make change. What were these money-bars made of?",
     "answer": "Rock salt",
     "choices": [
       "Rock salt",
@@ -18708,7 +18643,7 @@
   },
   {
     "tier": 3,
-    "question": "Barrels of one humble, long-keeping food went below deck by the ton when James Cook sailed the Pacific on voyages lasting years. Fresh fruit rots in weeks, and there was no room to store it anyway, yet his crews stayed free of scurvy. What was in the barrels?",
+    "question": "Barrels of one humble, long-keeping food went below deck by the ton when James Cook sailed the Pacific on voyages lasting years. Fresh fruit rots in weeks, and there was no room to store it anyway, yet this food kept his crews healthy. What was in the barrels?",
     "answer": "Sauerkraut",
     "choices": [
       "Sauerkraut",
@@ -18721,28 +18656,28 @@
   },
   {
     "tier": 4,
-    "question": "Cabbage packed into a barrel to ferment keeps the vitamin that beats scurvy for months below deck, though most ways of storing food for a long voyage would destroy it. What is it about fermenting that spares the vitamin?",
+    "question": "Shredded vegetables fermenting in a sealed barrel keep much of their vitamin C for months below deck on a sailing ship, though most ways of storing food for a long voyage would destroy it. What is it about fermenting that spares the vitamin?",
     "answer": "Fermenting uses no heat, and heat is what destroys vitamin C",
     "choices": [
       "Fermenting uses no heat, and heat is what destroys vitamin C",
-      "The sourness pickles the vitamin so it cannot break down",
+      "The oak of the barrel seeps fresh vitamin C into it",
       "The heavy salt is itself packed with vitamin C",
       "Sealing the barrel starves the germs that would eat the vitamin"
     ],
-    "context": "Heat and drying wreck vitamin C, but the lactic-acid bacteria of fermentation do not — they preserve it, and by some accounts even raise it. So a sealed barrel of sauerkraut is basically portable, months-long vitamin C that never spoils. Source: Modern Farmer, 'Magical Sour Cabbage'; Hektoen International, 'Plague of the Sea and the Spoyle of Mariners.'",
+    "context": "Heat and drying wreck vitamin C, but the lactic-acid bacteria of fermentation do not — they preserve it, and by some accounts even raise it. So a sealed barrel of sauerkraut kept vitamin C on hand for months at sea. Source: Modern Farmer, 'Magical Sour Cabbage'; Hektoen International, 'Plague of the Sea and the Spoyle of Mariners.'",
     "topic": "sauerkraut-vs-the-sea-fermented-cabbage-and-scurvy"
   },
   {
     "tier": 4,
     "question": "The sour, foreign cabbage James Cook brought to keep his crew healthy met a wall of turned-up noses, and he refused to force it down them. Instead, by his own account, he used a method with sailors that he swore had 'never once failed.' What did Cook do?",
-    "answer": "He served it only to the officers, till the envious crew demanded a share",
+    "answer": "He served it to the officers and let the men take it or leave it",
     "choices": [
-      "He served it only to the officers, till the envious crew demanded a share",
+      "He served it to the officers and let the men take it or leave it",
       "He mixed it into the grog so the men would swallow it unnoticed",
       "He disguised it as a sweet pudding so the cook could sneak it in",
       "He promised an extra rum ration to any man who cleaned his bowl"
     ],
-    "context": "Cook wrote that the men would not touch the kraut 'until I put in practice a method I never once knew to fail with seamen... The moment they see their superiors set a value upon it, it becomes the finest stuff in the world.' Once the officers prized it, the crew demanded their ration. Source: Cook's Journal, Endeavour, Tahiti, 13 April 1769 (primary source; quoted in anecdote.com podcast 138).  (Legend.)",
+    "context": "Cook wrote that the men would not touch the kraut 'until I put in practice a method I never once knew to fail with seamen': he had it dressed every day for the officers' table and left it to the men to take as much as they pleased or none at all. 'The moment they see their superiors set a value upon it, it becomes the finest stuff in the world.' Within a week he had to put everyone on board on a ration of it. Source: Cook's Journal, Endeavour, 13 April 1769 (paulturnbull.org/project/southseas/journals/cook/17690413.html).",
     "topic": "sauerkraut-vs-the-sea-fermented-cabbage-and-scurvy"
   },
   {
@@ -18833,7 +18768,7 @@
       "The browned crust locks juice into thick cuts but not thin ones",
       "The browned crust seals the juice in only if the pan stays hot"
     ],
-    "context": "Food scientist Harold McGee, author of the classic 'On Food and Cooking,' puts it flatly: 'the crust that forms around the surface of the meat is not waterproof.' He calls searing-seals-the-juices the biggest myth in cooking. Nothing can lock juice inside, because meat is roughly 70% water and heating steadily squeezes that water out no matter how you brown the outside. Source: AmazingRibs, 'Myth: Searing Steaks Seals In The Juices' (quoting McGee).",
+    "context": "Food scientist Harold McGee, author of the classic 'On Food and Cooking,' puts it flatly: 'the crust that forms around the surface of the meat is not waterproof.' He calls searing-seals-the-juices the biggest myth in cooking. Nothing can lock juice inside, because meat is roughly 70% water and heating steadily squeezes that water out no matter how the outside is browned. Source: AmazingRibs, 'Myth: Searing Steaks Seals In The Juices' (quoting McGee).",
     "topic": "searing-seals-in-the-juices-the-great-cooking-myth"
   },
   {
@@ -18864,7 +18799,7 @@
   },
   {
     "tier": 3,
-    "question": "Harold McGee spent decades debunking the idea that a sear seals in juices, yet he still sears every steak he cooks, and Meathead, the pitmaster, says simply, 'brown is beautiful.' What does that dark, crackly crust give the meat?",
+    "question": "A steak hits a smoking-hot pan and comes out wearing a dark, crackly crust. Harold McGee, the food scientist, sears every steak he cooks, and Meathead, the pitmaster, says simply, 'brown is beautiful.' What does that crust give the meat?",
     "answer": "A deep, savory, roasted flavor and rich aroma",
     "choices": [
       "A deep, savory, roasted flavor and rich aroma",
@@ -18885,12 +18820,12 @@
       "A French royal chef, in a grand cookbook",
       "An English butcher, in a trade handbook"
     ],
-    "context": "The chemist Justus von Liebig proposed the idea in his 1847 book 'Researches on the Chemistry of Food,' reasoning that a fierce initial blast of heat hardens the surface into a protective crust. He never tested it — and cooks believed it for nearly a century, spread even by the legendary French chef Auguste Escoffier, until simple US home-economics experiments in the 1930s weighed the meat and disproved it. A lab, not a kitchen, gave us cooking's most-repeated rule. Source: TodayIFoundOut, 'Searing Meat Does Not Seal in the Juices'; Wikipedia, 'Searing.'",
+    "context": "The chemist Justus von Liebig proposed the idea in his 1847 book 'Researches on the Chemistry of Food,' reasoning that a fierce initial blast of heat hardens the surface into a protective crust. He never tested it — and cooks believed it for nearly a century, spread even by the legendary French chef Auguste Escoffier, until simple US home-economics experiments in the 1930s weighed the meat and disproved it. A lab, not a kitchen, gave cooking its most-repeated rule. Source: TodayIFoundOut, 'Searing Meat Does Not Seal in the Juices'; Wikipedia, 'Searing.'",
     "topic": "searing-seals-in-the-juices-the-great-cooking-myth"
   },
   {
     "tier": 1,
-    "question": "Skeptics call soybean, corn, and sunflower oils 'seed oils' because each is pressed from a plant's tiny seeds. One famous kitchen oil doesn't belong in that group — it's really more like fruit juice. Which oil is the odd one out?",
+    "question": "Skeptics call soybean, corn, and sunflower oils 'seed oils' because each comes from a plant's seeds. One famous kitchen oil doesn't belong in that group — it's really more like fruit juice. Which oil is the odd one out?",
     "answer": "olive oil",
     "choices": [
       "olive oil",
@@ -18898,12 +18833,12 @@
       "peanut oil",
       "sesame oil"
     ],
-    "context": "Olive oil is pressed from the flesh of the olive fruit, so it's a 'fruit oil,' not a seed oil. Avocado oil (from the green pulp) and coconut oil (from the white flesh) sit on the same fruit-oil side; canola, peanut, and sesame oils all come from seeds. Source: ScienceInsights, 'What Oils Are Not Seed Oils'; Wikipedia, 'Avocado oil.'",
+    "context": "Olive oil is pressed from the flesh of the olive fruit, so it's a 'fruit oil,' not a seed oil. Avocado oil (from the green pulp) sits on the same fruit-oil side; canola, peanut, and sesame oils all come from seeds. Source: ScienceInsights, 'What Oils Are Not Seed Oils'; Wikipedia, 'Avocado oil.'",
     "topic": "seed-oils-the-omega-6-and-heated-oil-debate"
   },
   {
     "tier": 2,
-    "question": "Nina Teicholz argued in her 2014 book The Big Fat Surprise that eight modern industrial seed oils, from soybean and canola to rice-bran, quietly damage American hearts. Doctors such as Cate Shanahan lumped the eight together under one grim nickname borrowed from a Quentin Tarantino western. What do they call them?",
+    "question": "Cate Shanahan, a doctor and outspoken critic of modern seed oils, lumps the most common of them together, from soybean and canola to rice-bran, and blames them for modern disease. Her grim nickname for the group is borrowed from a Quentin Tarantino western. What does she call them?",
     "answer": "the Hateful Eight",
     "choices": [
       "the Hateful Eight",
@@ -18941,32 +18876,6 @@
     "topic": "seed-oils-the-omega-6-and-heated-oil-debate"
   },
   {
-    "tier": 3,
-    "question": "A bottle of safflower oil is roughly three-quarters one single fat. It is a fragile polyunsaturated omega-6 fat that seed oils are loaded with, and the whole seed-oil argument over omega-6 turns on it. Which fat is it?",
-    "answer": "linoleic acid",
-    "choices": [
-      "linoleic acid",
-      "oleic acid",
-      "stearic acid",
-      "palmitic acid"
-    ],
-    "context": "Seed oils are packed with linoleic acid, an omega-6 polyunsaturated fat — about 75-79% of safflower oil and 71% of sunflower oil, versus only 7-10% of olive oil. 'Polyunsaturated' means many double bonds, which makes the molecule fragile when heated. Source: News-Medical, 'Oils Rich in Linoleic Acid.'",
-    "topic": "seed-oils-the-omega-6-and-heated-oil-debate"
-  },
-  {
-    "tier": 4,
-    "question": "Hunter-gatherers ate omega-6 and omega-3 fats in near-equal measure, about one to one, and some nutrition researchers argue that this balance matters more than any single fat. Artemis Simopoulos measured how far the modern Western diet has drifted from it. What is its omega-6 to omega-3 ratio now?",
-    "answer": "about 15 to 1",
-    "choices": [
-      "about 15 to 1",
-      "about 3 to 1",
-      "about 40 to 1",
-      "about 100 to 1"
-    ],
-    "context": "Ancestral diets ran an omega-6-to-omega-3 ratio near 1:1 to 4:1; the modern Western diet runs closer to 15:1 to 20:1. The extra omega-6 comes mostly from vegetable oils rich in linoleic acid, while omega-3 comes largely from fish. Source: Simopoulos, 'The importance of the ratio of omega-6/omega-3,' 2002.",
-    "topic": "seed-oils-the-omega-6-and-heated-oil-debate"
-  },
-  {
     "tier": 4,
     "question": "A fast-food fryer reuses the same corn or sunflower oil again and again, and here both sides of the seed-oil argument agree. Under high heat the fragile double bonds of those polyunsaturated oils break apart, and with every reuse harmful compounds pile up. What class of compound forms?",
     "answer": "aldehydes",
@@ -18981,7 +18890,7 @@
   },
   {
     "tier": 4,
-    "question": "Martin Grootveld's team fried a batch of potatoes in fresh sunflower oil in the 1990s, then fried another batch in the same oil, and another, eight rounds in all, testing the oil after every round. Harmful breakdown chemicals piled up higher with every reuse. Where did those chemicals go next?",
+    "question": "Martin Grootveld's team fried a batch of potatoes in fresh sunflower oil, then fried another batch in the same oil, and another, round after round, testing the oil after each one. Harmful breakdown chemicals piled up higher with every reuse. Where did those chemicals go next?",
     "answer": "soaked into the fried potatoes",
     "choices": [
       "soaked into the fried potatoes",
@@ -18989,20 +18898,20 @@
       "burned off as kitchen smoke",
       "settled on the pan's bottom"
     ],
-    "context": "Grootveld's team ran eight repeated 10-minute frying cycles at 170°C; aldehyde levels rose with every reuse, and the compounds migrated out of the oil and into the fried potatoes. This is the chemistry behind 'don't cook in old fryer oil.' Source: Grootveld et al., 1H NMR frying studies.",
+    "context": "Grootveld's team ran repeated frying sessions at about 170°C; aldehyde levels rose with every reuse, and the compounds moved out of the oil and into the fried potatoes. This is the chemistry behind 'don't cook in old fryer oil.' Source: Moumtaz, Grootveld et al., Scientific Reports (2019), repeated domestic deep-frying of potato chips.",
     "topic": "seed-oils-the-omega-6-and-heated-oil-debate"
   },
   {
-    "tier": 5,
-    "question": "Chemists have measured a skeptics' warning: that seed oils reach the dinner table poisoned with leftover hexane, the gasoline solvent that pulled the oil out of the crushed seeds. How much hexane rides along in a whole kilogram of bottled oil?",
-    "answer": "about a milligram",
+    "tier": 3,
+    "question": "Skeptics warn that seed oils reach the dinner table laced with leftover hexane, the gasoline solvent that washed the oil out of the crushed seeds. Chemists who test the bottled oil find only the faintest trace of it. Why does so little hexane survive the trip from mill to bottle?",
+    "answer": "It evaporates easily, and heat drives it off",
     "choices": [
-      "about a milligram",
-      "under a microgram",
-      "about a gram",
-      "about ten grams"
+      "It evaporates easily, and heat drives it off",
+      "It sinks and is drained off the bottom",
+      "Sunlight breaks it down on the store shelf",
+      "The seeds' own enzymes digest it away"
     ],
-    "context": "Refined seed oil holds only about 0.8 mg of hexane per kilogram (~0.8 ppm) — the volatile solvent mostly evaporates during processing, though not quite all of it. When the U.S. EPA studied industrial hexane in the 1980s, it found traces that small cause no nerve damage — so the 'poisoned by solvent' claim is overstated. (Hexane can harm nerves, but only at heavy industrial exposures, not dietary traces.) Source: Wikipedia, 'Seed oil misinformation' (EPA hexane finding).",
+    "context": "After extraction, mills drive the hexane off with heat, and the volatile solvent nearly all evaporates, so tests of refined oil find only traces; Europe has capped residual hexane at 1 mg per kilogram of oil since 1998. When the U.S. EPA studied industrial hexane in the 1980s, it found traces that small cause no nerve damage, so the 'poisoned by solvent' claim is overstated. (Hexane can harm nerves, but only at heavy industrial exposures, not dietary traces.) Sources: Wikipedia, 'Seed oil misinformation' (EPA hexane finding); OCL journal 2001, residual hexane limits (ocl-journal.org/10.1051/ocl.2001.0167).",
     "topic": "seed-oils-the-omega-6-and-heated-oil-debate"
   },
   {
@@ -19028,7 +18937,7 @@
       "The dishes the head carver sent down",
       "The dishes nearest the host's seat"
     ],
-    "context": "In service à la française, every dish of a course arrived together in one vast spread, and diners helped themselves only from the platters they could physically reach — so your SEAT decided your dinner. Whatever sat far down the table, you never tasted. Source: Wikipedia, 'Service à la française'; instituteofetiquette.com.",
+    "context": "In service à la française, every dish of a course arrived together in one vast spread, and diners helped themselves only from the platters they could physically reach — so a diner's SEAT decided his dinner. Whatever sat far down the table, he never tasted. Source: Wikipedia, 'Service à la française'; instituteofetiquette.com.",
     "topic": "service-a-la-francaise-to-service-a-la-russe"
   },
   {
@@ -19060,14 +18969,14 @@
   {
     "tier": 3,
     "question": "Alexander Kurakin, a Russian prince serving as ambassador in Paris, threw dinners around 1810 that set the whole city talking, not for the food but for the strange new way it reached the table. What was new about how his servants served the meal?",
-    "answer": "Each course came out already plated, one at a time",
+    "answer": "The dishes came out in turn, one course at a time",
     "choices": [
-      "Each course came out already plated, one at a time",
-      "Every dish was carried in balanced on the head",
-      "Guests were served in total darkness to sharpen taste",
-      "Diners rose and walked the table between each dish"
+      "The dishes came out in turn, one course at a time",
+      "The whole feast sat on the table before guests came",
+      "Guests served themselves from a buffet by the wall",
+      "Each guest got a tray holding every dish at once"
     ],
-    "context": "Around 1810, Prince Alexander Kurakin, Russia's ambassador to France, hosted the first dinners 'à la russe' at his Clichy residence near Paris — food brought out already plated, one course at a time, instead of all spread on the table. 'All of Paris was abuzz with the novelty.' Source: Wikipedia, 'Service à la russe'.",
+    "context": "Around 1810, Prince Alexander Kurakin, Russia's ambassador to France, hosted the first dinners 'à la russe' at his Clichy residence near Paris: the dishes came out in turn, one course at a time, and servants offered each one to the guests, instead of spreading the whole course on the table at once. 'All of Paris was abuzz with the novelty.' Because each dish left the kitchen only when its course came, hot food reached the table hot. Source: Wikipedia, 'Service à la russe'.",
     "topic": "service-a-la-francaise-to-service-a-la-russe"
   },
   {
@@ -19081,19 +18990,6 @@
       "A bad fall cracked his ribs"
     ],
     "context": "The story goes that on July 1, 1810, at Ambassador Schwarzenberg's ball for Napoleon's marriage to Marie-Louise, a fire tore through the hall; Kurakin was trampled and badly burned, bedridden for months, and — unable to stretch across the table — had food brought to him plated, course by course. Historians treat the causal link as popular legend, since the Russian sequential style predated him. Source: instituteofetiquette.com; Wikipedia (Kurakin / Service à la russe).",
-    "topic": "service-a-la-francaise-to-service-a-la-russe"
-  },
-  {
-    "tier": 4,
-    "question": "The old French spread left dozens of dishes sitting out on the table for the whole meal, and, as one account put it, they often 'grew cold and lost their freshness.' Service à la russe solved the problem by changing where each portion was dished up. Where was the food plated now?",
-    "answer": "In the kitchen, right before it was carried out",
-    "choices": [
-      "In the kitchen, right before it was carried out",
-      "On a sideboard set beside the diners",
-      "At the very center of the dining table",
-      "By the guests, straight onto their plates"
-    ],
-    "context": "This is why hot food now arrives hot — and why we eat in courses. In service à la russe each plate is dished up in the kitchen and carried out in sequence, so nothing sits cooling on the table for the length of the meal, the exact problem of the old French spread. Source: Wikipedia, 'Service à la russe'; instituteofetiquette.com.",
     "topic": "service-a-la-francaise-to-service-a-la-russe"
   },
   {
@@ -19366,18 +19262,18 @@
       "Smoky",
       "Garlicky"
     ],
-    "context": "With the nose pinched, aromas can't reach your smell receptors, so only the tongue's own report gets through — and that whole list is short: sweet, salty, sour, bitter, and savory umami. That's it. 'Minty,' 'smoky' and 'garlicky' never make the list; like 'cherry,' they're your nose's work, flooding up from inside your mouth the moment you unpinch. Source: Yale Scientific Magazine, 'The Flow of Flavor' (2016).",
+    "context": "With the nose pinched, aromas can't reach the smell receptors, so only the tongue's own report gets through — and that whole list is short: sweet, salty, sour, bitter, and savory umami. That's it. 'Minty,' 'smoky' and 'garlicky' never make the list; like 'cherry,' they're the nose's work, flooding up from inside the mouth the moment the nose is unpinched. Source: Yale Scientific Magazine, 'The Flow of Flavor' (2016).",
     "topic": "smell-is-flavor-retronasal-olfaction"
   },
   {
     "tier": 1,
-    "question": "A heavy head cold stuffs a nose solid, and that night a favorite dinner tastes like dull, flavorless cardboard. Suppose you have that cold. Something has really gone wrong in your body to rob the meal of its flavor. What is it?",
-    "answer": "Your clogged nose can't pick up the food's aromas",
+    "question": "A heavy head cold stuffs a girl's nose solid, and that night her favorite dinner tastes like dull, flavorless cardboard. Something has really gone wrong in her body to rob the meal of its flavor. What is it?",
+    "answer": "Her clogged nose can't pick up the food's aromas",
     "choices": [
-      "Your clogged nose can't pick up the food's aromas",
-      "The virus has numbed your tongue's taste buds",
-      "A fever has dried up the saliva you taste with",
-      "Swelling has coated your tongue in mucus"
+      "Her clogged nose can't pick up the food's aromas",
+      "The virus has numbed her tongue's taste buds",
+      "A fever has dried up the saliva she tastes with",
+      "Swelling has coated her tongue in mucus"
     ],
     "context": "Most people who think a cold stole their sense of taste have really lost their sense of smell — doctors call that temporary smell loss anosmia. The taste buds keep firing the basic tastes; it's the blocked aromas that flatten everything into cardboard. Source: NIDCD, 'Smell (Olfactory) Disorders'; FEMA, 'How the Common Cold Affects Flavor.'",
     "topic": "smell-is-flavor-retronasal-olfaction"
@@ -19392,33 +19288,20 @@
       "The potato tastes sweeter than the apple",
       "Both bites turn bitter and metallic"
     ],
-    "context": "Pure taste reports only 'sweet and crunchy' for both, so you can't tell them apart — distinguishing an apple from a potato, a pear, or even an onion takes your sense of smell. The tongue's five basic tastes simply can't encode 'apple.' Source: Wikipedia, 'Retronasal smell.'",
+    "context": "Pure taste reports only 'sweet and crunchy' for both, so the taster can't tell them apart — distinguishing an apple from a potato, a pear, or even an onion takes the sense of smell. The tongue's five basic tastes simply can't encode 'apple.' Source: Wikipedia, 'Retronasal smell.'",
     "topic": "smell-is-flavor-retronasal-olfaction"
   },
   {
     "tier": 3,
-    "question": "Gordon Shepherd, a Yale neuroscientist, gave a new field the name neurogastronomy: the study of how the brain builds flavor from the aromas rising off food. Most people, asked how much of flavor is really taste, would say most of it, since they call the whole thing taste. In his 2012 book, what share did Shepherd give to real taste?",
-    "answer": "About a fifth",
+    "question": "Yesterday's leftover soup, eaten cold from the fridge, tastes flat and boring, almost tasteless, yet warmed on the stove until piping hot, the very same bowl tastes rich and full again. Since the recipe never changed, why does reheating bring the flavor roaring back?",
+    "answer": "Heat lifts more aroma molecules up to the nose",
     "choices": [
-      "About a tenth",
-      "About a fifth",
-      "About a third",
-      "About a half"
-    ],
-    "context": "Shepherd laid it out in his 2012 book Neurogastronomy: only about a fifth of what we call flavor is really taste — the other roughly 80% is smell. Flavor is created in the brain, not on the tongue, by assembling taste and smell into one experience. The ~80% figure is his widely quoted estimate. Source: Yale Scientific Magazine, 'The Flow of Flavor'; Wikipedia, 'Retronasal smell.'",
-    "topic": "smell-is-flavor-retronasal-olfaction"
-  },
-  {
-    "tier": 3,
-    "question": "Yesterday's leftover soup, eaten cold from the fridge, tastes flat and boring, almost tasteless, yet warmed on the stove until piping hot, the very same bowl tastes rich and full again. Suppose you are the one eating it. Since the recipe never changed, why does reheating bring the flavor roaring back?",
-    "answer": "Heat lifts more aroma molecules up to your nose",
-    "choices": [
-      "Heat lifts more aroma molecules up to your nose",
-      "Heat makes your taste buds swell and work harder",
-      "Heat thins the soup so it coats your tongue better",
+      "Heat lifts more aroma molecules up to the nose",
+      "Heat dissolves salt that had settled out in the cold",
+      "Heat thins the soup so it coats the tongue better",
       "Heat kills bacteria that were muddying the flavor"
     ],
-    "context": "Warmth makes aroma molecules more volatile — they vaporize faster and rise to your nose in far greater numbers, so a hot dish smells, and therefore 'tastes,' much stronger than a cold one. It's why cold leftovers so often seem dull. Source: ScienceABC, 'Why Does Food Taste Different When It's Cold Vs. Hot?'",
+    "context": "Warmth makes aroma molecules more volatile — they vaporize faster and rise to the nose in far greater numbers, so a hot dish smells, and therefore 'tastes,' much stronger than a cold one. It's why cold leftovers so often seem dull. Source: ScienceABC, 'Why Does Food Taste Different When It's Cold Vs. Hot?'",
     "topic": "smell-is-flavor-retronasal-olfaction"
   },
   {
@@ -19436,28 +19319,15 @@
   },
   {
     "tier": 4,
-    "question": "The airway works as a pump during a meal, as Gordon Shepherd describes it, carrying food aromas up from the mouth to the back of the nose. The pump does not run the whole time a person chews; it works during only one part of each breath. Suppose you are chewing a bite of food. When do you truly smell it?",
-    "answer": "When you breathe out",
+    "question": "The airway works as a pump during a meal, as Gordon Shepherd describes it, carrying food aromas up from the mouth to the back of the nose. The pump does not run the whole time a person chews; it works during only one part of each breath. When does someone chewing a bite truly smell it?",
+    "answer": "When breathing out",
     "choices": [
-      "When you breathe out",
-      "When you breathe in",
+      "When breathing out",
+      "When breathing in",
       "In the pause between breaths",
-      "When you hold your breath"
+      "While holding the breath"
     ],
-    "context": "On the out-breath, airflow surges past the back of the mouth and carries aromas up to the smell receptors; on the in-breath that flow is almost zero, so aromas stay trapped in the mouth. Psychologist Paul Rozin put it simply: sniffing the world is 'breathing in,' but tasting your food is 'breathing out.' Source: Yale Scientific Magazine, 'The Flow of Flavor'; Ni et al., PNAS (2015).",
-    "topic": "smell-is-flavor-retronasal-olfaction"
-  },
-  {
-    "tier": 5,
-    "question": "Dana Small, a Yale neuroscientist, led a team that put people in brain scanners and gave them the same aroma two ways: sniffed straight from the air, then released from food they were chewing. The scans caught the very same molecule lighting up the brain in two different patterns. What does the chewing route switch on that plain sniffing never does?",
-    "answer": "It switches on the taste cortex",
-    "choices": [
-      "It switches on the taste cortex",
-      "It doubles the smell cortex's output",
-      "It shuts the smell cortex down",
-      "It wakes the mouth's touch cortex"
-    ],
-    "context": "In a 2005 Neuron study, Dana Small's team showed the same odor triggers different brain responses when sniffed (orthonasal) versus tasted in food (retronasal); a follow-up found the mouth route actually recruits the taste cortex while sniffing does not. The brain sorts smells by where they come from and files mouth-aromas with taste. Source: Small et al., Neuron (2005); Fredericksen et al., PMC6604050.",
+    "context": "On the out-breath, airflow surges past the back of the mouth and carries aromas up to the smell receptors; on the in-breath that flow is almost zero, so aromas stay trapped in the mouth. Psychologist Paul Rozin put it simply: sniffing the world is 'breathing in,' but tasting food is 'breathing out.' Source: Yale Scientific Magazine, 'The Flow of Flavor'; Ni et al., PNAS (2015).",
     "topic": "smell-is-flavor-retronasal-olfaction"
   },
   {
@@ -19479,11 +19349,11 @@
     "answer": "the smoke was kept cool, far below any cooking heat",
     "choices": [
       "the smoke was kept cool, far below any cooking heat",
-      "the fish was salt-cured first, and the cure set the flesh",
+      "the smoke was so thin it barely touched the fish",
       "the wood was green, so its smoke came out wet and mild",
       "the fish hung above a water pan that held the flesh raw"
     ],
-    "context": "This is COLD-smoking. Cold-smoked salmon is smoked at only about 37 C (99 F) — warm to the touch but nowhere near hot enough to cook — so it keeps its silky, raw texture. Source: en.wikipedia.org/wiki/Smoked_salmon",
+    "context": "This is COLD-smoking. Cold-smoked salmon is smoked at no more than about 37 C (99 F), and often much cooler (68-86 F is the usual cold-smoking range) — nowhere near hot enough to cook — so it keeps its silky, raw texture. Source: en.wikipedia.org/wiki/Smoked_salmon; en.wikipedia.org/wiki/Smoking_(cooking)",
     "topic": "smoke-cure-and-the-pink-that-means-safe"
   },
   {
@@ -19527,20 +19397,20 @@
   },
   {
     "tier": 4,
-    "question": "The germ behind botulism, the deadliest of all food poisons, is fussy: unlike most germs, it grows only when one particular condition is met, and that is why cured meats need curing salts to stay safe. What condition does it need in order to grow?",
+    "question": "The germ behind botulism, the deadliest of all food poisons, is fussy in one way that most germs are not, and that is why cured meats need curing salts to stay safe. What does it need in order to grow that most germs do not?",
     "answer": "an airless place",
     "choices": [
       "an airless place",
-      "a warm, damp place",
-      "a salt-free place",
-      "a sugary place"
+      "an acidic place",
+      "a sugary place",
+      "a sunlit place"
     ],
     "context": "The botulism germ (Clostridium botulinum) is an anaerobe — it thrives WITHOUT oxygen. That's why sealed, low-oxygen cured meat is the danger zone, and why cured meat needs curing salts to stay safe. Source: amazingribs.com, 'The Science Of Curing Meats Safely'; en.wikipedia.org/wiki/Curing_(food_preservation)",
     "topic": "smoke-cure-and-the-pink-that-means-safe"
   },
   {
     "tier": 4,
-    "question": "Cooks stirred one mineral into their curing mix from the 1600s on and swore by it, though nobody would understand the chemistry for centuries. It kept cured meat safe from deadly rot and turned the meat an appetizing pink. What was the old curing mineral?",
+    "question": "Cooks stirred one mineral into their curing mix for centuries and swore by it, long before anyone understood the chemistry. It kept cured meat safe from deadly rot and turned the meat an appetizing pink. What was the old curing mineral?",
     "answer": "saltpeter",
     "choices": [
       "saltpeter",
@@ -19548,7 +19418,7 @@
       "gypsum",
       "potash"
     ],
-    "context": "The mineral was SALTPETER (potassium nitrate). Around the 1600s people found saltpeter-plus-salt preserved meat better than salt alone — and kept it pink — though they had no idea why. We now know saltpeter breaks down into the nitrite that does the real work; the United States formally adopted nitrite/nitrate curing salts in 1925. Source: amazingribs.com; en.wikipedia.org/wiki/Curing_(food_preservation)",
+    "context": "The mineral was SALTPETER (potassium nitrate). For centuries people found saltpeter-plus-salt preserved meat better than salt alone — and kept it pink — though they had no idea why. Chemists in the 1890s showed that saltpeter breaks down into the nitrite that does the real work; the United States formally adopted nitrite/nitrate curing salts in 1925. Source: amazingribs.com; en.wikipedia.org/wiki/Curing_(food_preservation)",
     "topic": "smoke-cure-and-the-pink-that-means-safe"
   },
   {
@@ -19566,7 +19436,7 @@
   },
   {
     "tier": 2,
-    "question": "Hundreds of chemicals drift over the meat in a smokehouse, and one group of them, the phenols, settles on its surface. Food scientists say these compounds are a big reason smoked meat keeps so long, because they fight spoilage in two ways at once. Which two?",
+    "question": "Hundreds of chemicals drift over the meat in a smokehouse, and one group of them, the phenols, settles on its surface. Food scientists say these compounds protect the meat in two ways at once. Which two?",
     "answer": "They slow bacteria and stop fat from turning rancid",
     "choices": [
       "They slow bacteria and stop fat from turning rancid",
@@ -19609,7 +19479,7 @@
     "answer": "it has to be fully cured in salt first",
     "choices": [
       "it has to be fully cured in salt first",
-      "it has to be flash-frozen solid first",
+      "it has to be rubbed with garlic first",
       "it has to be simmered through first",
       "it has to be soaked in vinegar first"
     ],
@@ -19670,7 +19540,7 @@
   },
   {
     "tier": 1,
-    "question": "A cook in a chilly kitchen finds every bottle of oil on her shelf pouring freely except one, whose jar holds a solid white block. About 90 percent of that oil's fat is saturated, more than butter or lard carry. Which oil is it?",
+    "question": "A cook in a chilly kitchen finds every bottle of oil on her shelf pouring freely except one, whose jar holds a solid white block. Over four-fifths of that oil's fat is saturated, outdoing even butter and lard. Which oil is it?",
     "answer": "Coconut oil",
     "choices": [
       "Coconut oil",
@@ -19678,7 +19548,7 @@
       "Grapeseed oil",
       "Sesame oil"
     ],
-    "context": "Coconut oil is the extreme saturated fat: about 90% (some sources ~92%) of its fat is saturated — mostly lauric, myristic and palmitic acids — which is why it stays solid or semi-solid at room temperature and lasts a long time on the shelf. Source: Wikipedia, 'Coconut oil'.",
+    "context": "Coconut oil is the extreme saturated fat: about 82% of it is saturated fat (82.5 g in every 100 g of oil) — mostly lauric, myristic and palmitic acids — which is why it stays solid or semi-solid at room temperature and lasts a long time on the shelf. Source: Wikipedia, 'Coconut oil'.",
     "topic": "solid-liquid-and-spoiling-saturated-mono-poly-and-the-trans"
   },
   {
@@ -19704,18 +19574,18 @@
       "Its chains are packed with water that boils and tears the fat apart.",
       "Its chains are coated with sugar that scorches the instant it heats."
     ],
-    "context": "Polyunsaturated fats — the delicate oils in many seeds — carry MULTIPLE double-bond kinks, and each kink is a weak point where oxygen attacks when the oil is heated hard, producing rancid off-flavors and breakdown byproducts. A 2010 Food Chemistry study found animal fats oxidized far less than vegetable oils when heated repeatedly — the case for searing in a stable fat and saving fragile oils for cold use. (In the body, unheated polyunsaturated fats actually lower LDL cholesterol in trials — the concern here is heating fragile oils hard, not eating them cold.) Source: NCBI PMC8986445, oxidative stability of oils during frying.",
+    "context": "Polyunsaturated fats — the delicate oils in many seeds — carry MULTIPLE double-bond kinks, and each kink is a weak point where oxygen attacks when the oil is heated hard, producing rancid off-flavors and breakdown byproducts. Frying studies find that stable animal fats oxidize far less than polyunsaturated vegetable oils when heated repeatedly — the case for searing in a stable fat and saving fragile oils for cold use. (In the body, unheated polyunsaturated fats actually lower LDL cholesterol in trials — the concern here is heating fragile oils hard, not eating them cold.) Source: NCBI PMC8986445, oxidative stability of oils during frying.",
     "topic": "solid-liquid-and-spoiling-saturated-mono-poly-and-the-trans"
   },
   {
     "tier": 3,
-    "question": "In a busy kitchen, butter and tallow go into the pan for a hot sear while the most delicate pouring oils wait for cold dressings. One everyday liquid oil sits in the middle, still pourable but sturdy enough to handle a medium-hot pan. Which oil is that all-rounder?",
+    "question": "In a busy kitchen, butter and tallow go into the pan for a hot sear while the most delicate pouring oils wait for cold dressings. One liquid oil sits in the middle, still pourable but sturdy enough to handle a medium-hot pan. Which oil is that all-rounder?",
     "answer": "Olive oil",
     "choices": [
       "Olive oil",
-      "Sunflower oil",
+      "Hemp seed oil",
       "Walnut oil",
-      "Safflower oil"
+      "Pumpkin seed oil"
     ],
     "context": "Olive oil is monounsaturated — about 73-75% oleic acid, whose chain has just ONE double-bond kink. One kink keeps it pourable, but with far fewer weak spots than the multi-kink polyunsaturated seed oils, so it holds up better in a hot pan: the intermediate 'middle.' Sources: Medical News Today, article 324844; Olive Wellness Institute.",
     "topic": "solid-liquid-and-spoiling-saturated-mono-poly-and-the-trans"
@@ -19799,26 +19669,26 @@
     "topic": "soul-food-brilliance-from-the-scraps"
   },
   {
-    "tier": 2,
-    "question": "Isidore Boudin, a French baker, opened a little bakery on San Francisco's waterfront in the Gold Rush of 1849. His sourdough rose without a grain of store-bought yeast, and the starter from that first year still raises bread in the city today. Where did the yeast in those first loaves come from?",
-    "answer": "From wild yeast that drifted in on its own",
+    "tier": 3,
+    "question": "Isidore Boudin's sourdough rose in Gold Rush San Francisco without a grain of store-bought yeast; the wild yeast and bacteria of a starter arrive on their own. A 2020 study of starters traced most of those microbes to one everyday source. Which?",
+    "answer": "The flour itself",
     "choices": [
-      "From wild yeast that drifted in on its own",
-      "From froth skimmed off a batch of brewing beer",
-      "From yeast scraped off the skins of wine grapes",
-      "From dough carried in from an older bakery"
+      "The flour itself",
+      "The kitchen air",
+      "The tap water",
+      "The table salt"
     ],
-    "context": "Boudin Bakery really did open in San Francisco in 1849, and it leavened its loaves by capturing the wild yeast already drifting in the local flour and air — no packet of yeast was ever added. That free, airborne yeast is the whole trick behind sourdough. Source: en.wikipedia.org/wiki/Sourdough; boudinbakery.com/our-story/",
+    "context": "In a 2020 study in the journal mSphere, Aspen Reese, Robert Dunn and colleagues found that sourdough starters' microbes looked most like those living in the flour, with some species shared with the bakers' own hands. The wild yeast rides in on the flour; no packet is needed. Boudin Bakery opened in San Francisco in 1849 and says a piece of its first starter still goes into its bread. Source: Reese et al., mSphere 2020 (doaj.org/article/c0f2efedb3da435f958e1e2538094518); boudinbakery.com/our-story/",
     "topic": "sourdough-catching-wild-yeast-from-the-air"
   },
   {
     "tier": 2,
-    "question": "A baker keeps a living jar of gluey flour-and-water batter on her counter and raises her bread with it instead of packaged yeast. Bakers call it the mother dough. Left alone on a shelf for a few weeks, it dies, yet some bakeries keep theirs going for decades, even a century or two. What keeps a starter alive for years?",
+    "question": "A baker keeps a living jar of gluey batter and raises her bread with it instead of packaged yeast. Bakers call it the mother dough. Left alone on a shelf for a few weeks, it dies, yet some bakeries keep theirs going for over a century. What keeps a starter alive for years?",
     "answer": "Regular feedings of fresh flour and water",
     "choices": [
       "Regular feedings of fresh flour and water",
       "A tight seal to lock out all the air",
-      "A long, cold rest in the freezer",
+      "A warm spot in bright sunlight",
       "A weekly pinch of salt stirred in"
     ],
     "context": "Stop feeding a starter and its microbes starve and die. Bakers keep the 'mother dough' alive with regular feedings of fresh flour and water — nothing else needed. Some famous starters have been fed on a schedule for well over a century. Source: en.wikipedia.org/wiki/Sourdough",
@@ -19852,7 +19722,7 @@
   },
   {
     "tier": 4,
-    "question": "Fires from broken gas lines swept through San Francisco within hours of the earthquake at dawn on April 18, 1906, racing toward Boudin Bakery on Grant Avenue. As the Boudin family tells the story, Louise Boudin grabbed exactly one thing from the bakery and ran into the street before the building burned to the ground. What did she save?",
+    "question": "Fires swept through San Francisco within hours of the earthquake at dawn on April 18, 1906, racing toward the Boudin Bakery. As the Boudin family tells the story, Louise Boudin grabbed exactly one thing from the bakery and ran into the street before the building burned to the ground. What did she save?",
     "answer": "The bucket of the bakery's living mother dough",
     "choices": [
       "The bucket of the bakery's living mother dough",
@@ -19899,7 +19769,7 @@
       "Pressed into curds",
       "Cracked into coarse bits"
     ],
-    "context": "To make tofu, soybeans are ground up and their milk is pressed into soft curds - the beans are broken down completely. Tempeh keeps the cooked beans whole and lets a mold knit them into a firm cake, so you can still spot each individual bean. That's why tempeh is chewier and 'meatier' than tofu. (Wikipedia: 'Tempeh')",
+    "context": "To make tofu, soybeans are ground up and their milk is pressed into soft curds - the beans are broken down completely. Tempeh keeps the cooked beans whole and lets a mold knit them into a firm cake, so each individual bean can still be spotted. That's why tempeh is chewier and 'meatier' than tofu. (Wikipedia: 'Tempeh')",
     "topic": "soybeans-transformed-miso-soy-sauce-tempeh-and-umami"
   },
   {
@@ -19943,7 +19813,7 @@
   },
   {
     "tier": 3,
-    "question": "A Japanese grocery shelf holds miso in a whole spectrum of colors. Pale golden 'white' miso ferments for just days, while dark brick-red miso rests in the vats for over a year. A cook grabs the long-aged red one for a hearty winter stew. Next to the young pale kind, how does it taste?",
+    "question": "A Japanese grocery shelf holds miso in a whole spectrum of colors. Pale golden 'white' miso ferments only briefly, while dark brick-red miso rests in the vats for over a year. A cook grabs the long-aged red one for a hearty winter stew. Next to the young pale kind, how does it taste?",
     "answer": "Much saltier and stronger",
     "choices": [
       "Much saltier and stronger",
@@ -19982,12 +19852,12 @@
   },
   {
     "tier": 5,
-    "question": "A splash of soy sauce delivers an intense savory punch, the taste chefs call umami, yet nobody stirred a savory chemical into it at the factory. The long ferment adds nothing savory at all; it unlocks a compound called glutamate, trapped in one of the ingredients from the very start. Which part of the mix had been hiding soy sauce's umami?",
+    "question": "A splash of soy sauce delivers an intense savory punch, the taste chefs call umami, yet nobody stirred a savory chemical into it at the factory. The long ferment adds nothing savory at all; it unlocks a compound called glutamate, locked away in the mix from the very start. Which part of the mix had been hiding soy sauce's umami?",
     "answer": "The soybean's protein",
     "choices": [
       "The soybean's protein",
-      "The roasted wheat's starch",
-      "The koji mold itself",
+      "The grain's roasted starch",
+      "The beans' natural sugars",
       "The salty brine water"
     ],
     "context": "Umami is the savory taste of glutamate. Soybeans are rich in protein, and protein is built from amino acids - one of which is glutamic acid, or glutamate. The ferment's enzymes cut the protein apart and FREE that glutamate, so the savoriness was locked inside the bean all along. The very same glutamate hit shows up in aged parmesan, ripe tomatoes, and a good meat broth. (Wikipedia: 'Umami')",
@@ -20047,7 +19917,7 @@
   },
   {
     "tier": 3,
-    "question": "Pliny the Elder, the Roman naturalist, noted a tart red powder ground from the dried berries of a shrub, used to sour food and help preserve it. Middle Eastern and Roman cooks relied on it as their main souring spice until a newcomer fruit became common and took over the job. Which fruit was it?",
+    "question": "Roman and Middle Eastern cooks, the story goes, soured their food with a tart red powder ground from the dried berries of a shrub. It was their main souring spice until a newcomer fruit spread through the region and replaced it. Which fruit was it?",
     "answer": "Lemons",
     "choices": [
       "Lemons",
@@ -20055,7 +19925,7 @@
       "Pomegranates",
       "Quinces"
     ],
-    "context": "Before lemons were common in the region, Middle Eastern and Roman cooks reached for sumac to sour their food; the Roman naturalist Pliny the Elder noted it was used to add tartness and to help preserve food. Source: spicestationsilverlake.com, 'What is sumac?'.  (Legend.)",
+    "context": "By tradition, Roman and Middle Eastern cooks reached for sumac to sour their food before lemons were common in the region; food writers repeat the story, though it rests on tradition more than on any one ancient text. Source: ckbk.com, 'Sumac' (Oxford Companion to Food); culinarylore.com.  (Legend.)",
     "topic": "spice-blends-the-merchants-secret-mixes"
   },
   {
@@ -20069,19 +19939,6 @@
       "Fresh ginger root"
     ],
     "context": "Berbere is a dry Ethiopian and Eritrean blend built on chili peppers and fenugreek with garlic, ginger and coriander; harissa is a fiery Tunisian paste of roasted chili peppers, garlic, caraway, coriander and cumin loosened with olive oil. Source: Wikipedia, 'Berbere' and 'Harissa'.",
-    "topic": "spice-blends-the-merchants-secret-mixes"
-  },
-  {
-    "tier": 4,
-    "question": "To impress rich buyers, some old Moroccan spice merchants slipped exotic extras into their ras el hanout: dried rosebuds, grains of paradise and even a dried, ground beetle that added no flavor at all. By what name is that beetle better known?",
-    "answer": "Spanish fly",
-    "choices": [
-      "Spanish fly",
-      "June bug",
-      "Ladybird",
-      "Dung beetle"
-    ],
-    "context": "Some old Moroccan ras el hanout blends included wildly exotic add-ins purely to show off — dried rosebuds, grains of paradise, orris root, even cantharides ('Spanish fly' beetles) — though these added nothing to the flavor. Source: Wikipedia, 'Ras el hanout'.",
     "topic": "spice-blends-the-merchants-secret-mixes"
   },
   {
@@ -20293,19 +20150,6 @@
     "topic": "stir-fry-logic-and-velveting"
   },
   {
-    "tier": 1,
-    "question": "A French sauce cook fills a tall pot with bones, vegetables and water and leaves it bubbling gently for hours at the back of the stove. The liquid becomes the base of the day's soups and sauces. What is it called in English?",
-    "answer": "stock",
-    "choices": [
-      "stock",
-      "gravy",
-      "marinade",
-      "roux"
-    ],
-    "context": "'Stock' is the English name; the French call it 'fond.' A basic stock is nothing but bones and vegetables covered with water and cooked low and slow for hours, drawing out flavour and body to become the base for countless soups and sauces. Source: Wikipedia, 'Stock (food)' (en.wikipedia.org/wiki/Stock_(food)) and 'Fond'.",
-    "topic": "stock-fond-and-mirepoix"
-  },
-  {
     "tier": 2,
     "question": "A giant pot of chicken bones, vegetables and herbs simmers for hours at the back of a classic French kitchen. Its chefs call it a fond, from fonds de cuisine, a name that makes the pot no minor job. By that name, what is the pot to the kitchen?",
     "answer": "foundation",
@@ -20319,8 +20163,8 @@
     "topic": "stock-fond-and-mirepoix"
   },
   {
-    "tier": 2,
-    "question": "Three ordinary vegetables go into a French pot first, diced and softened slowly in butter until the kitchen smells sweet and savory, before any meat or broth. The trio, called the mirepoix, starts nearly every French soup and braise, and the first vegetable in is always onion. Which two partners does the cook reach for next?",
+    "tier": 1,
+    "question": "Three ordinary vegetables, diced and softened slowly in butter, start most French soups and braises before any meat or broth goes in. The trio is called the mirepoix, and onion makes up half of it. Which two vegetables join the onion?",
     "answer": "carrot and celery",
     "choices": [
       "carrot and celery",
@@ -20346,20 +20190,20 @@
   },
   {
     "tier": 3,
-    "question": "A cook is after a crystal-clear, clean-tasting broth, but the pot is at a hard, rolling boil and the liquid is turning cloudy and greasy. Those violent bubbles are smashing the fat and the floating protein 'scum' back into it instead of letting them rise to be skimmed away. What is the fix that saves the batch?",
-    "answer": "turn it down to a bare simmer",
+    "question": "A cook wanted a crystal-clear, clean-tasting broth, but by evening the pot had turned cloudy and greasy, with fat and protein 'scum' churned all through it instead of floating up to be skimmed away. What did the cook do wrong?",
+    "answer": "Let it boil hard instead of simmering",
     "choices": [
-      "turn it down to a bare simmer",
-      "strain it through a fine cloth",
-      "add a splash of cold water",
-      "drop in a few ice cubes"
+      "Let it boil hard instead of simmering",
+      "Left the lid off the whole time",
+      "Skimmed the surface too often",
+      "Packed in too many bones"
     ],
     "context": "A rolling boil acts like a blender: it emulsifies rendered fat and churns the protein 'scum' back into the liquid, scattering light (the Tyndall effect) so the stock turns cloudy and greasy. A bare simmer lets fat and scum rise to be skimmed, keeping the stock clear and clean-tasting. Source: America's Test Kitchen, 'For a Clearer Stock, Simmer; Don't Boil'.",
     "topic": "stock-fond-and-mirepoix"
   },
   {
     "tier": 4,
-    "question": "Pierre Larousse, a French writer, scoffed at the duc de Lévis-Mirepoix, the 18th-century nobleman whose name the humble vegetable base of French cooking still carries. The duke, Larousse said, was 'an incompetent and mediocre individual' who only lent his name to the mix. Who, as the story goes, actually created it?",
+    "question": "Pierre Larousse, a French writer, scoffed at the duc de Lévis-Mirepoix, the 18th-century nobleman whose name the vegetable base of French cooking still carries: 'an incompetent and mediocre individual,' famous only for a sauce named after him. Who, the story goes, really created the mix?",
     "answer": "his cook",
     "choices": [
       "his cook",
@@ -20549,7 +20393,7 @@
       "Fructose and galactose",
       "Glucose and ribose"
     ],
-    "context": "Refined white sugar from cane and from beet is chemically indistinguishable — the identical sucrose molecule — so your body cannot tell 'natural' cane sugar from beet sugar apart. Sucrose is a disaccharide: one glucose unit joined to one fructose unit (C12H22O11). The only way a lab can tell the two sources apart is a carbon-13 isotope analysis. Source: https://en.wikipedia.org/wiki/Sucrose",
+    "context": "Refined white sugar from cane and from beet is chemically indistinguishable — the identical sucrose molecule — so the body cannot tell 'natural' cane sugar from beet sugar apart. Sucrose is a disaccharide: one glucose unit joined to one fructose unit (C12H22O11). The only way a lab can tell the two sources apart is a carbon-13 isotope analysis. Source: https://en.wikipedia.org/wiki/Sucrose",
     "topic": "sugar-cane-beet-and-what-refining-does"
   },
   {
@@ -20579,19 +20423,6 @@
     "topic": "sugar-the-sweet-that-crossed-the-ocean"
   },
   {
-    "tier": 2,
-    "question": "Sugar in medieval Europe was so costly that apothecaries sold it by the pinch, and only kings and the wealthiest families could sweeten a dish with it. Because it was so precious and so pale, Europeans gave it a proud nickname after one of the most shining treasures they knew. What was sugar's medieval nickname?",
-    "answer": "white gold",
-    "choices": [
-      "white gold",
-      "sweet silver",
-      "royal amber",
-      "pale ivory"
-    ],
-    "context": "Medieval sugar was called 'white gold' and sold by the pinch as a 'fine spice' at apothecaries, the pharmacies of the day. In 1319 London a pound cost about two shillings — roughly $100 per kilo in today's money — so only monarchs and the very rich could afford it. Cooks even sculpted it: a 1457 feast in Tours, France, showed off the first recorded sugar sculptures, a menagerie of lions and stags molded from precious sugar. Source: en.wikipedia.org/wiki/History_of_sugar; thenews.com.pk 'The history and evolution of sugar'.",
-    "topic": "sugar-the-sweet-that-crossed-the-ocean"
-  },
-  {
     "tier": 3,
     "question": "Most people picture sugarcane growing on Caribbean islands, and sugar as an old European luxury. But the plant's first home is on the other side of the world: farmers on one large tropical island tamed it from a wild grass about 6,000 years ago, and only much later did it spread west toward India. On which island was sugarcane first tamed?",
     "answer": "New Guinea",
@@ -20606,7 +20437,7 @@
   },
   {
     "tier": 3,
-    "question": "The sugar industry of the Americas was planted by one famous explorer. On his second Atlantic voyage in 1493, he packed sugarcane cuttings from the Canary Islands. He set the New World's first cane in Caribbean soil. Which explorer brought sugarcane to the Americas?",
+    "question": "The sugar industry of the Americas was planted by one famous explorer. On one of his Atlantic crossings he packed sugarcane cuttings from the Canary Islands, then set the New World's first cane in Caribbean soil. Which explorer brought sugarcane to the Americas?",
     "answer": "Christopher Columbus",
     "choices": [
       "Christopher Columbus",
@@ -20619,15 +20450,15 @@
   },
   {
     "tier": 4,
-    "question": "Portuguese and Spanish settlers carried sugarcane across the Atlantic to their New World colonies in the 1500s, and sugar growing exploded. By the middle of that century one South American colony had over two thousand mills crowding its Atlantic shore, where planters forced enslaved Africans to work them, and its harbors sent shipload after shipload of sugar to Europe. Which country was this early sugar giant?",
+    "question": "Portuguese and Spanish settlers carried sugarcane across the Atlantic to their New World colonies in the 1500s, and sugar growing exploded. By the 1580s one South American colony had over a hundred sugar mills along its Atlantic shore, where planters forced enslaved Africans to work them, and its harbors sent shipload after shipload of sugar to Europe. Which country was this early sugar giant?",
     "answer": "Brazil",
     "choices": [
       "Brazil",
       "Colombia",
       "Argentina",
-      "Peru"
+      "Venezuela"
     ],
-    "context": "Brazil set up its first sugar plantation in 1518, and by around 1540 over 2,000 mills lined its northern coast. Together with the Caribbean islands, Brazil turned the New World into the world's sugar engine, and cheap sugar flooded back into Europe — stirred into bitter new drinks like tea, coffee, and hot chocolate to make them sweet. Source: en.wikipedia.org/wiki/History_of_sugar; chocolateclass.wordpress.com 'The Tea Habit'.",
+    "context": "Brazil had about 60 sugar mills by 1570 and roughly twice that by the mid-1580s, most of them in Pernambuco and Bahia. Together with the Caribbean islands, Brazil turned the New World into the world's sugar engine, and cheap sugar flooded back into Europe — stirred into bitter new drinks like tea, coffee, and hot chocolate to make them sweet. Source: Stuart Schwartz, 'Sugar Plantations in the Formation of Brazilian Society' (Gandavo's 1570 count); chocolateclass.wordpress.com 'The Tea Habit'.",
     "topic": "sugar-the-sweet-that-crossed-the-ocean"
   },
   {
@@ -20637,7 +20468,7 @@
     "choices": [
       "the cut cane spoils within a day, and its juice won't crystallize",
       "the cut cane hardens within a day, and grows too tough to crush",
-      "the cut cane ferments within a day, and its juice turns to alcohol",
+      "the cut cane sprouts within a day, and spends its sugar on shoots",
       "the cut cane dries within a day, and its sweet juice runs out"
     ],
     "context": "Once cut, sugarcane must be crushed and its juice boiled within roughly 24 hours, or the sugar starts to break down and won't set into crystals. That deadline is why the mills never stopped. This relentless, dangerous round-the-clock work was forced on enslaved Africans, shipped across the Atlantic to labor on the Caribbean and Brazilian plantations. Source: worldhistory.org 'Sugar & the Rise of the Plantation System'; appropedia.org 'Sugar Production from Cane Sugar'; en.wikipedia.org/wiki/History_of_sugar.",
