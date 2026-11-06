@@ -471,7 +471,7 @@ _DISPATCH = {
 | ash williams (1 of 3)          | `hero_give_me_some_sugar`      | Give Me Some Sugar| `drain_attractive`     | 300      | Drain 40 HP from `female_attractive`-tagged target + charm 3t   |
 | ash williams (2 of 3)          | `hero_she_bitch_lets_go`       | Yo, She-Bitch! Let's Go! | `self_buff_berserk`| 350  | Berserk 12t + fear_immune + crit_buff + permanent STR +2        |
 | ash williams (3 of 3)          | `hero_this_is_my_boomstick`    | This... Is My BOOMSTICK! | `gain_ammo`     | 400     | 30 shotgun_shell shells + next shot is AoE                      |
-| ash ketchum                    | `hero_i_choose_you`            | I Choose You!     | `heal_pet`             | 250      | Full heal pet + cleanse all pet debuffs                         |
+| ash ketchum                    | `hero_i_choose_you`            | I Choose You!     | `heal_pet`             | 250      | Heals the most wounded pet; full heal + cleanse all its debuffs at the top tier |
 | ada augusta byron lovelace     | `hero_difference_engine`       | Difference Engine | `paralyze_target`      | 300      | Paralyze 6t + slow 8t on nearest non-boss                       |
 | leonardo di ser piero da vinci | `hero_codex_sketch`            | Codex Sketch      | `summon_sketch_helper` | 400      | Summon a level-80 helper (HP) that bites 3d8+6, for 40 turns     |
 | saint joan of arc              | `hero_standard_of_the_maid`    | Standard of the Maid | `heal_and_crit_buff`| 350     | +50 HP + next 5 hits crit                                       |

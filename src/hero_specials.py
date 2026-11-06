@@ -290,7 +290,7 @@ HERO_SPECIALS: dict[str, dict] = {
     "ash ketchum": {
         'id': 'hero_i_choose_you',
         'name': 'I Choose You!',
-        'desc': 'Heal your active pet (chain-scaled).',
+        'desc': 'Heal your most wounded pet (chain-scaled).',
         'cooldown': 250,
         'effect': 'heal_pet',
         'tier_effects': {
@@ -919,7 +919,10 @@ def _eff_heal_pet(game, special, tier, chain):
     if not pets:
         game.add_message("No pet to heal.", 'warning')
         return NOTHING
-    pet = pets[0]   # first alive pet
+    # The pet that needs it most (the lowest share of its health; the first
+    # in the list on a tie). This took pets[0], so with two companions a
+    # full-health first pet took the heal and a dying second one got none.
+    pet = min(pets, key=lambda p: p.hp / max(1, p.max_hp))
     hp = int(tier['hp'])
     if hp == 0:
         game.add_message("The cry doesn't reach.", 'warning')
