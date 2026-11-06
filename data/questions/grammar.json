@@ -2,14 +2,14 @@
   {
     "tier": 1,
     "question": "A party host's note reads, 'Everyone came ACCEPT my brother.' The writer means that the brother did not come. Which correction is right?",
-    "answer": "Change ACCEPT to EXCEPT -- to EXCLUDE, use 'except'",
+    "answer": "Change ACCEPT to EXCEPT -- the word that leaves out",
     "choices": [
-      "Change ACCEPT to EXCEPT -- to EXCLUDE, use 'except'",
-      "Change ACCEPT to ACCEPTED -- past tense required",
-      "Delete MY -- 'brother' stands alone",
-      "The sentence is fine as written"
+      "Change ACCEPT to EXCEPT -- the word that leaves out",
+      "Keep ACCEPT -- it is the word that leaves out",
+      "Change ACCEPT to EXPECT -- the word that leaves out",
+      "Change ACCEPT to ACCEPTED -- the line needs past tense"
     ],
-    "context": "ACCEPT means take in / agree to; EXCEPT means leave out. Two opposite meanings; two spellings; two starting syllables (ac- vs ex-). Source: Merriam-Webster 'accept' + 'except.'",
+    "context": "ACCEPT means take in or agree to; EXCEPT means leave out: 'Everyone came except my brother.' EXPECT means look forward to, and ACCEPTED is still the take-in word. Source: Merriam-Webster 'accept' + 'except.'",
     "topic": "accept-vs-except-take-in-vs-leave-out"
   },
   {
@@ -35,7 +35,7 @@
       "exempt -- because it means to leave out",
       "expect -- because it means to look forward to"
     ],
-    "context": "You are TAKING IN the apology (receiving it, agreeing to it). Swap test: 'I take in your apology' -- works. Source: Merriam-Webster usage note.",
+    "context": "The sister is TAKING IN the apology (receiving it, agreeing to it). Swap test: 'I take in your apology' -- works. Source: Merriam-Webster usage note.",
     "topic": "accept-vs-except-take-in-vs-leave-out"
   },
   {
@@ -54,9 +54,9 @@
   {
     "tier": 5,
     "question": "An email to a party host begins, 'I would have gone, ___ that I was sick.' Which word fills the blank, and what does the phrase mean?",
-    "answer": "except -- 'except that' functions as 'but,' introducing an exception clause",
+    "answer": "except -- 'except that' works here like 'but'",
     "choices": [
-      "except -- 'except that' functions as 'but,' introducing an exception clause",
+      "except -- 'except that' works here like 'but'",
       "accept -- 'accept that' means to acknowledge",
       "accepted -- past tense of accept",
       "excerpt -- a passage from a book"
@@ -591,8 +591,8 @@
     "choices": [
       "Change BARE to BEAR -- meaning to endure or put up with",
       "Change BARE to BARELY -- meaning almost not at all",
-      "Change WATCH to LOOK -- more precise verb",
-      "The sentence is fine as written"
+      "Keep BARE -- it means to endure or put up with",
+      "Change BARE to BARED -- the line needs past tense"
     ],
     "context": "BARE means naked or uncovered; BEAR means to endure, carry, or is the animal. 'I can't ENDURE to watch' -- swap test confirms BEAR. Source: Merriam-Webster 'bare' + 'bear.'",
     "topic": "bare-vs-bear-naked-vs-the-animal"
@@ -652,12 +652,12 @@
   {
     "tier": 5,
     "question": "A friend writes 'Bare with me while I finish this.' Which correction is right, and why?",
-    "answer": "Change BARE to BEAR -- 'bear with me' means 'be patient with me'; 'bare with me' would mean 'undress with me'",
+    "answer": "Change BARE to BEAR -- BEAR means to put up with",
     "choices": [
-      "Change BARE to BEAR -- 'bear with me' means 'be patient with me'; 'bare with me' would mean 'undress with me'",
-      "Change WITH to WITHOUT -- change the meaning",
-      "Change FINISH to COMPLETE -- more formal verb",
-      "The sentence is fine as written"
+      "Change BARE to BEAR -- BEAR means to put up with",
+      "Keep BARE -- BARE means to put up with",
+      "Change BARE to BEAR -- BEAR is the polite spelling",
+      "Change WITH to FOR -- the idiom is 'bare for me'"
     ],
     "context": "Idioms: 'bear with me' (be patient), 'bear in mind' (remember), 'bear witness' (testify) all use BEAR. Substituting BARE turns a request for patience into a rather different invitation. Source: Merriam-Webster usage note.",
     "topic": "bare-vs-bear-naked-vs-the-animal"
@@ -702,27 +702,14 @@
     "topic": "between-vs-among-two-vs-more-than-two"
   },
   {
-    "tier": 3,
-    "question": "A pirate story goes, 'The treasure was divided ___ the two pirates on the beach.' Which word fits?",
-    "answer": "between -- for exactly two parties",
-    "choices": [
-      "between -- for exactly two parties",
-      "among -- distributes to a group",
-      "amid -- means surrounded by",
-      "amidst -- older form of amid"
-    ],
-    "context": "TWO pirates take BETWEEN. If it were ten pirates, AMONG. Source: Merriam-Webster's Dictionary of English Usage, 'between, among.'",
-    "topic": "between-vs-among-two-vs-more-than-two"
-  },
-  {
     "tier": 4,
     "question": "A history book states, 'A treaty ___ the five nations was signed in Paris.' Which word fits, and why?",
-    "answer": "between -- each nation has a distinct one-to-one relationship with each other",
+    "answer": "between -- each nation deals one-to-one with each",
     "choices": [
-      "between -- each nation has a distinct one-to-one relationship with each other",
-      "among -- more than two, so among always applies",
-      "amongst -- required for legal treaties",
-      "amid -- surrounded by"
+      "between -- each nation deals one-to-one with each",
+      "among -- five is more than two, so it is among",
+      "amongst -- the form legal treaties require",
+      "amid -- the treaty sits in their midst"
     ],
     "context": "Exception to the count-based rule: BETWEEN is correct for more than two when the relationships are ONE-TO-ONE, individually considered. A treaty of pairwise obligations = BETWEEN. Source: Chicago Manual of Style 17e section 5.250.",
     "topic": "between-vs-among-two-vs-more-than-two"
@@ -1185,14 +1172,14 @@
   {
     "tier": 1,
     "question": "A road atlas prints, 'The state CAPITOL is Sacramento.' Which correction is right?",
-    "answer": "Change CAPITOL to CAPITAL -- the CITY takes -al; CAPITOL is only for the building where lawmakers meet",
+    "answer": "Change CAPITOL to CAPITAL -- the city takes the A",
     "choices": [
-      "Change CAPITOL to CAPITAL -- the CITY takes -al; CAPITOL is only for the building where lawmakers meet",
-      "Change SACRAMENTO to LOS ANGELES -- correct the fact",
-      "Add IS AT before SACRAMENTO -- verb tense",
-      "The sentence is fine as written"
+      "Change CAPITOL to CAPITAL -- the city takes the A",
+      "Keep CAPITOL -- the city takes the O",
+      "Change SACRAMENTO to LOS ANGELES -- the real capital",
+      "Capitalize STATE -- 'State Capitol' is a title"
     ],
-    "context": "CAPITAL (-al) = city, letter, money, punishment -- almost every meaning. CAPITOL (-ol) = only the BUILDING where a legislature meets. Source: Merriam-Webster 'capital' + 'capitol.'",
+    "context": "CAPITAL (-al) = city, letter, money, punishment -- almost every meaning. CAPITOL (-ol) = only the BUILDING where a legislature meets. Sacramento is the capital of California. Source: Merriam-Webster 'capital' + 'capitol.'",
     "topic": "capital-vs-capitol-the-city-the-money-the-building"
   },
   {
@@ -1237,27 +1224,27 @@
   {
     "tier": 4,
     "question": "A student on a school trip learns that the building where state lawmakers meet takes its name from an ancient Roman hill. Which hill?",
-    "answer": "The Capitoline Hill in ancient Rome -- one of the seven hills, where the temple of Jupiter Capitolinus stood",
+    "answer": "The Capitoline Hill -- where Jupiter's great temple stood",
     "choices": [
-      "The Capitoline Hill in ancient Rome -- one of the seven hills, where the temple of Jupiter Capitolinus stood",
+      "The Capitoline Hill -- where Jupiter's great temple stood",
       "The Palatine Hill -- where the emperors lived",
       "The Aventine Hill -- where the plebeians lived",
       "The Esquiline Hill -- where Nero built his golden house"
     ],
-    "context": "The Capitoline Hill housed the temple of Jupiter Capitolinus; American state and federal legislative buildings borrow the name for that hill of lawmaking. Source: OED 'capitol' etymology.",
+    "context": "The Capitoline Hill, one of Rome's seven hills, held the temple of Jupiter Capitolinus. Its Latin name, Capitolium, gave English the word 'capitol', and American state and federal legislative buildings carry it. Source: Merriam-Webster 'capitol' etymology.",
     "topic": "capital-vs-capitol-the-city-the-money-the-building"
   },
   {
     "tier": 5,
     "question": "A Texas travel guide tries one sentence four ways. Which version uses 'capital' and 'capitol' correctly?",
-    "answer": "'The capital of Texas is Austin, and the state capitol building has a pink granite dome.'",
+    "answer": "'The capital of Texas is Austin, and the state capitol building is built of pink granite.'",
     "choices": [
-      "'The capital of Texas is Austin, and the state capitol building has a pink granite dome.'",
-      "'The capitol of Texas is Austin, and the state capital building has a pink granite dome.'",
-      "'The capitol of Texas is Austin, and the state capitol building has a pink granite dome.'",
-      "'The capital of Texas is Austin, and the state capital building has a pink granite dome.'"
+      "'The capital of Texas is Austin, and the state capitol building is built of pink granite.'",
+      "'The capitol of Texas is Austin, and the state capital building is built of pink granite.'",
+      "'The capitol of Texas is Austin, and the state capitol building is built of pink granite.'",
+      "'The capital of Texas is Austin, and the state capital building is built of pink granite.'"
     ],
-    "context": "The CITY = CAPITAL (Austin, the capital of Texas). The BUILDING = CAPITOL (the state capitol has a dome). Two spellings, two jobs. Source: Merriam-Webster usage note.",
+    "context": "The CITY = CAPITAL (Austin, the capital of Texas). The BUILDING = CAPITOL (the state capitol, built of pink Sunset Red granite). Two spellings, two jobs. Source: Merriam-Webster usage note; Grokipedia 'Texas State Capitol.'",
     "topic": "capital-vs-capitol-the-city-the-money-the-building"
   },
   {
@@ -1847,10 +1834,10 @@
   },
   {
     "tier": 1,
-    "question": "A history textbook's draft reads, 'The Declaration was signed on July 4 1776 in Philadelphia.' How many commas should surround the year 1776?",
-    "answer": "TWO -- one between day and year, one after the year (sentence continues)",
+    "question": "A history textbook's draft reads, 'The Declaration was adopted on July 4 1776 in Philadelphia.' How many commas should surround the year 1776?",
+    "answer": "TWO -- one before the year and one after it",
     "choices": [
-      "TWO -- one between day and year, one after the year (sentence continues)",
+      "TWO -- one before the year and one after it",
       "ONE -- only between day and year",
       "ONE -- only after the year",
       "NONE -- dates take no commas"
@@ -1860,13 +1847,13 @@
   },
   {
     "tier": 2,
-    "question": "A museum placard's draft reads, \"The Declaration was signed on July 4 1776.\" How many commas does the year need at the end of the sentence?",
+    "question": "A museum placard's draft reads, \"The Declaration was adopted on July 4 1776.\" How many commas does the year need at the end of the sentence?",
     "answer": "ONE -- the period does the second comma's job",
     "choices": [
       "ONE -- the period does the second comma's job",
       "TWO -- always two commas",
       "NONE -- end-of-sentence dates take no commas",
-      "THREE -- one before, one during, one after"
+      "ONE -- between the month and the day"
     ],
     "context": "End of sentence: only one comma needed. Period ends the sentence and covers the trailing comma's job.",
     "topic": "commas-in-dates-july-4-1776-was-independence-day"
@@ -1886,7 +1873,7 @@
   },
   {
     "tier": 4,
-    "question": "A clerk typing in the European and military style enters '4 July 1776,' day first and month in the middle. How many commas belong in that format?",
+    "question": "A clerk typing in the European and military style puts the day first and the month in the middle, as in 4 July 1776. How many commas belong in that format?",
     "answer": "NONE -- day-month-year takes none",
     "choices": [
       "NONE -- day-month-year takes none",
@@ -1900,24 +1887,24 @@
   {
     "tier": 5,
     "question": "An exhibit designer must join two US Civil War dates, April 12, 1861, and April 9, 1865, into one span. What punctuation does Chicago recommend between them?",
-    "answer": "an EN-DASH (--) with no extra commas",
+    "answer": "an en dash, with no extra commas",
     "choices": [
-      "an EN-DASH (--) with no extra commas",
-      "a hyphen (-) with commas around it",
-      "a comma between the dates",
-      "a colon between the dates"
+      "an en dash, with no extra commas",
+      "a hyphen, with commas around it",
+      "a comma between the two dates",
+      "a colon between the two dates"
     ],
-    "context": "Chicago: en-dash for date ranges. No extra commas inside the range beyond the standard month-day-year commas.",
+    "context": "Chicago uses an en dash for a range of dates. No extra commas go inside the range beyond the standard month-day-year commas.",
     "topic": "commas-in-dates-july-4-1776-was-independence-day"
   },
   {
     "tier": 1,
     "question": "A spelling test comes back with 'seperate' circled in red. What is the correct spelling, and what fixes it?",
-    "answer": "SEPARATE -- there is 'A RAT' in the middle (sepARATe)",
+    "answer": "SEPARATE -- 'a rat' sits in the middle",
     "choices": [
-      "SEPARATE -- there is 'A RAT' in the middle (sepARATe)",
+      "SEPARATE -- 'a rat' sits in the middle",
       "SEPPARATE -- the P is doubled",
-      "SEPERATE -- an E belongs in the middle",
+      "SEPARRATE -- the R is doubled",
       "SEPARETE -- the ending is -ETE"
     ],
     "context": "Spotting the hidden 'A RAT' fixes the vowel forever. Source: Merriam-Webster 'separate.'",
@@ -1926,9 +1913,9 @@
   {
     "tier": 1,
     "question": "A birthday card spells a word 'definately.' What is the correct spelling, and what settles the wrong vowel?",
-    "answer": "DEFINITELY -- the word FINITE hides inside (deFINITEly)",
+    "answer": "DEFINITELY -- 'finite' hides inside it",
     "choices": [
-      "DEFINITELY -- the word FINITE hides inside (deFINITEly)",
+      "DEFINITELY -- 'finite' hides inside it",
       "DEFINETLY -- an E belongs before the T",
       "DEFENITELY -- an E belongs before the F",
       "DEFFINITELY -- the F is doubled"
@@ -1939,9 +1926,9 @@
   {
     "tier": 2,
     "question": "A hotel clerk filling in a form pauses over the word meaning 'to make room for' or 'to adapt to.' Which spelling is right?",
-    "answer": "ACCOMMODATE -- DOUBLE C AND DOUBLE M",
+    "answer": "ACCOMMODATE -- double C, double M",
     "choices": [
-      "ACCOMMODATE -- DOUBLE C AND DOUBLE M",
+      "ACCOMMODATE -- double C, double M",
       "ACOMMODATE -- single C, double M",
       "ACCOMODATE -- double C, single M",
       "ACOMODATE -- single C and single M"
@@ -1952,9 +1939,9 @@
   {
     "tier": 2,
     "question": "A girl writing in her diary wants the word meaning 'to make someone feel awkward or ashamed.' How is it spelled?",
-    "answer": "EMBARRASS -- DOUBLE R AND DOUBLE S",
+    "answer": "EMBARRASS -- double R, double S",
     "choices": [
-      "EMBARRASS -- DOUBLE R AND DOUBLE S",
+      "EMBARRASS -- double R, double S",
       "EMBARASS -- single R, double S",
       "EMBARRAS -- double R, single S",
       "EMBARAS -- single R, single S"
@@ -1965,9 +1952,9 @@
   {
     "tier": 3,
     "question": "A police officer typing up a report puts 'occur' into the past tense. Which version does he type?",
-    "answer": "OCCURRED -- DOUBLE C AND DOUBLE R",
+    "answer": "OCCURRED -- double C, double R",
     "choices": [
-      "OCCURRED -- DOUBLE C AND DOUBLE R",
+      "OCCURRED -- double C, double R",
       "OCCURED -- single R in past tense",
       "OCURRED -- single C, double R",
       "OCURED -- single C, single R"
@@ -1978,9 +1965,9 @@
   {
     "tier": 4,
     "question": "A history teacher writing the word for a thousand years on the board stops to check it. Which spelling is right?",
-    "answer": "MILLENNIUM -- DOUBLE L AND DOUBLE N (from Latin 'mille' + 'annus')",
+    "answer": "MILLENNIUM -- double L, double N",
     "choices": [
-      "MILLENNIUM -- DOUBLE L AND DOUBLE N (from Latin 'mille' + 'annus')",
+      "MILLENNIUM -- double L, double N",
       "MILLENIUM -- double L, single N",
       "MILENNIUM -- single L, double N",
       "MILENIUM -- single L, single N"
@@ -1991,12 +1978,12 @@
   {
     "tier": 4,
     "question": "A camp's packing list marks some gear with the word meaning 'required' or 'essential.' Which spelling belongs there?",
-    "answer": "NECESSARY -- ONE C, TWO Ss ('one Collar, two Sleeves')",
+    "answer": "NECESSARY -- single C, double S",
     "choices": [
-      "NECESSARY -- ONE C, TWO Ss ('one Collar, two Sleeves')",
+      "NECESSARY -- single C, double S",
       "NECCESSARY -- double C, double S",
-      "NESSECARY -- rearrange the letters",
-      "NECESERY -- single S at the end"
+      "NECESARY -- single C, single S",
+      "NESESSARY -- an S in place of the C"
     ],
     "context": "Memory trick: 'One Collar, Two Sleeves' matches the C (one) and S (two) counts. Source: Merriam-Webster 'necessary.'",
     "topic": "common-misspellings-separate-definitely-accommodate"
@@ -2004,12 +1991,12 @@
   {
     "tier": 5,
     "question": "A club's welcome letter uses the word meaning 'a special right or advantage.' Which spelling should the printer set?",
-    "answer": "PRIVILEGE -- no D anywhere; it is LEG at the end, not LEDG",
+    "answer": "PRIVILEGE -- no D, and LEG at the end",
     "choices": [
-      "PRIVILEGE -- no D anywhere; it is LEG at the end, not LEDG",
-      "PRIVILEDGE -- has a D before the G",
-      "PRIVELEGE -- an E in place of the first I",
-      "PRIVELIDGE -- rearrange the letters entirely"
+      "PRIVILEGE -- no D, and LEG at the end",
+      "PRIVILEDGE -- a D before the G",
+      "PRIVELEGE -- an E in place of the second I",
+      "PRIVELIDGE -- an E after the V, a D before the G"
     ],
     "context": "There is no D in PRIVILEGE. Memory trick: 'privileged' people have LEG room, not a LEDG. Source: Merriam-Webster 'privilege.'",
     "topic": "common-misspellings-separate-definitely-accommodate"
@@ -2017,12 +2004,12 @@
   {
     "tier": 1,
     "question": "Shakespeare opens Sonnet 18 with 'Shall I compare thee ___ a summer's day?' Which little preposition fits the blank?",
-    "answer": "to (a person compared to a day -- different categories)",
+    "answer": "to (a likeness between unlike things)",
     "choices": [
-      "to (a person compared to a day -- different categories)",
-      "with (point-by-point examination)",
-      "against (opposition)",
-      "from (separation)"
+      "to (a likeness between unlike things)",
+      "with (a point-by-point examination)",
+      "against (a contest or opposition)",
+      "from (a separation or a starting point)"
     ],
     "context": "COMPARED TO points out likeness across DIFFERENT categories. A person and a day are different kinds of things.",
     "topic": "compared-to-vs-compared-with"
@@ -2030,9 +2017,9 @@
   {
     "tier": 1,
     "question": "A concert review reads, 'Her voice compared with last year's recording.' Under the strict rule, what does 'compared with' signal?",
-    "answer": "a point-by-point examination between things of the SAME category",
+    "answer": "a side-by-side look at two things of one kind",
     "choices": [
-      "a point-by-point examination between things of the SAME category",
+      "a side-by-side look at two things of one kind",
       "a metaphor across different kinds of things",
       "a sequence of events over time",
       "a contrast between opposites"
@@ -2043,12 +2030,12 @@
   {
     "tier": 2,
     "question": "A teacher chalks 'compared to' and 'compared with' side by side on the board. Which memory trick does she write beneath them?",
-    "answer": "TO = analogy across categories; WITH = point-by-point within a category",
+    "answer": "TO for a likeness; WITH for a point-by-point check",
     "choices": [
-      "TO = analogy across categories; WITH = point-by-point within a category",
-      "TO = British; WITH = American",
-      "TO = poetry only; WITH = prose only",
-      "they are perfectly interchangeable in every context"
+      "TO for a likeness; WITH for a point-by-point check",
+      "TO for British writers; WITH for American ones",
+      "TO for poetry only; WITH for prose only",
+      "either one: the two are interchangeable everywhere"
     ],
     "context": "The preposition signals the KIND of comparison. Poets use TO for analogies; scientists use WITH for point-by-point.",
     "topic": "compared-to-vs-compared-with"
@@ -2056,14 +2043,14 @@
   {
     "tier": 3,
     "question": "A school report draws a likeness between a girl's singing and a bird's. Which line follows the strict rule for 'compared to' and 'compared with'?",
-    "answer": "She compared her singing to a bird's (analogy across categories)",
+    "answer": "She compared her singing to a bird's",
     "choices": [
-      "She compared her singing to a bird's (analogy across categories)",
-      "She compared her singing with a bird's (analogy across categories)",
-      "She compared her singing at a bird's",
+      "She compared her singing to a bird's",
+      "She compared her singing with a bird's",
+      "She compared her singing against a bird's",
       "She compared her singing from a bird's"
     ],
-    "context": "A person's voice and a bird's song are DIFFERENT categories, so the analogy takes TO.",
+    "context": "The report draws a likeness, and under the strict rule a likeness takes TO. WITH would promise a point-by-point check of the two voices, and 'compared against' and 'compared from' do not do this job.",
     "topic": "compared-to-vs-compared-with"
   },
   {
@@ -2082,14 +2069,14 @@
   {
     "tier": 5,
     "question": "A retired editor goes through a stack of modern books and papers, checking every 'compared to' and 'compared with.' How well do today's writers keep the two apart?",
-    "answer": "most writers use both forms interchangeably; formal science writing still prefers WITH",
+    "answer": "loosely: many mix them, but science keeps WITH",
     "choices": [
-      "most writers use both forms interchangeably; formal science writing still prefers WITH",
-      "the distinction is strictly enforced in all modern writing",
-      "both forms are considered errors in modern usage",
-      "TO is now archaic; WITH is now standard"
+      "loosely: many mix them, but science keeps WITH",
+      "strictly: every modern writer keeps them apart",
+      "not at all: both forms now count as errors",
+      "by dropping one: TO is archaic, WITH standard"
     ],
-    "context": "Descriptively, the split is fading in casual writing. Formal science and traditionalist editors still keep it.",
+    "context": "Descriptively, many writers now use the two interchangeably. Chicago still sets out the distinction, and formal science writing keeps WITH for measured comparisons.",
     "topic": "compared-to-vs-compared-with"
   },
   {
@@ -2380,7 +2367,7 @@
   },
   {
     "tier": 1,
-    "question": "A match program reads, 'The team ___ eleven players.' Which verb means that the whole includes the parts?",
+    "question": "A match program reads, 'The team ___ eleven players.' Which verb fills the blank?",
     "answer": "comprises",
     "choices": [
       "comprises",
@@ -2393,7 +2380,7 @@
   },
   {
     "tier": 1,
-    "question": "A coach's handbook reads, 'Eleven players ___ the team.' Which verb means that the parts make up the whole?",
+    "question": "A coach's handbook reads, 'Eleven players ___ the team.' By the traditional rule, which verb fills the blank?",
     "answer": "compose",
     "choices": [
       "compose",
@@ -2401,20 +2388,20 @@
       "consist",
       "include"
     ],
-    "context": "COMPOSE = to make up, to constitute. The PARTS compose the WHOLE. 'Eleven players compose the team.' Reverse of COMPRISE.",
+    "context": "COMPOSE = to make up, to constitute. The PARTS compose the WHOLE: 'Eleven players compose the team.' Merriam-Webster records 'comprise' in this sense too, but careful editors reject it.",
     "topic": "comprise-vs-compose-the-whole-includes-the-parts"
   },
   {
     "tier": 2,
     "question": "A traditionalist copy-editor strikes through a line in a sports story: 'The team is comprised of eleven players.' Why does he object?",
-    "answer": "'comprised of' inverts comprise's original direction; use 'is composed of' or 'comprises'",
+    "answer": "'comprised of' turns comprise around; write 'comprises'",
     "choices": [
-      "'comprised of' inverts comprise's original direction; use 'is composed of' or 'comprises'",
-      "'comprised' is not a real word",
-      "the sentence needs a semicolon",
-      "eleven players is too many"
+      "'comprised of' turns comprise around; write 'comprises'",
+      "'comprised' is not a real English word",
+      "'is comprised' is passive, and passives are banned",
+      "'of' should be 'with' after 'comprised'"
     ],
-    "context": "Traditionalist rule: comprise takes no 'of' (whole comprises parts). 'Comprised of' is now common in edited English but purists still flag it. Chicago 5.250 notes the shift; Garner's rates it 'stage 4' (nearly standard).",
+    "context": "Traditionalist rule: comprise takes no 'of' (the whole comprises the parts), so the fix is 'comprises' or 'is composed of'. 'Comprised of' is now common in edited English, but purists still flag it. Chicago 5.250 notes the shift.",
     "topic": "comprise-vs-compose-the-whole-includes-the-parts"
   },
   {
@@ -2432,41 +2419,28 @@
   },
   {
     "tier": 3,
-    "question": "A student testing a sentence swaps in 'includes' and then 'contains,' and both fit the slot. Which verb belongs there?",
-    "answer": "comprise",
+    "question": "A publisher's blurb has the line 'The chapters ___ the book' with the parts first and the whole second. By the traditional rule, which verb fits?",
+    "answer": "compose",
     "choices": [
-      "comprise",
       "compose",
-      "consist",
-      "constitute"
-    ],
-    "context": "COMPRISE = includes/contains. WHOLE-then-PARTS. If your sentence takes the shape 'the WHOLE includes the PARTS', use comprise.",
-    "topic": "comprise-vs-compose-the-whole-includes-the-parts"
-  },
-  {
-    "tier": 3,
-    "question": "A publisher's blurb has the line 'The chapters ___ the book' with the parts first and the whole second. Which verb fits?",
-    "answer": "compose (parts compose whole)",
-    "choices": [
-      "compose (parts compose whole)",
-      "comprise (parts comprise whole)",
+      "comprise",
       "constitute of",
       "include"
     ],
-    "context": "Parts (chapters) come first, then WHOLE (book). COMPOSE fits this direction. Compare: 'The book comprises twelve chapters' (whole first, parts second).",
+    "context": "Parts (chapters) come first, then the WHOLE (book), so COMPOSE fits. Merriam-Webster records 'comprise' in this direction too, but the traditional rule rejects it. Compare: 'The book comprises twelve chapters' (whole first, parts second).",
     "topic": "comprise-vs-compose-the-whole-includes-the-parts"
   },
   {
     "tier": 4,
     "question": "A kindergarten poster reads, 'The alphabet is composed of twenty-six letters.' Why does that shape pass with purists?",
-    "answer": "'composed of' has always taken 'of'; 'comprised of' is the disputed form",
+    "answer": "'composed of' was never disputed; 'comprised of' is",
     "choices": [
-      "'composed of' has always taken 'of'; 'comprised of' is the disputed form",
-      "purists reject this too",
-      "letters are not really parts",
-      "alphabets are exempt"
+      "'composed of' was never disputed; 'comprised of' is",
+      "'is composed of' is active voice, which purists favor",
+      "'of' is fine after any verb of making or holding",
+      "'composed of' is newer, so the old rule skips it"
     ],
-    "context": "'Composed of' has been standard since the 1500s. 'Comprised of' is the recent shift purists resist. The two verbs are similar but 'composed of' avoids the fight entirely.",
+    "context": "Nobody objects to 'composed of', which has always carried its 'of'. 'Comprised of' is the form purists resist, so 'composed of' avoids the fight entirely. 'Is composed of' is passive, not active, and 'of' after 'comprise' is the very thing in dispute.",
     "topic": "comprise-vs-compose-the-whole-includes-the-parts"
   },
   {
@@ -2576,12 +2550,12 @@
   {
     "tier": 1,
     "question": "A cover letter opens: \"Hi, I'm super excited about this job -- it'd be great to work with y'all.\" What mistake does this show?",
-    "answer": "contractions and slang signal CASUAL when the occasion calls for FORMAL",
+    "answer": "contractions and slang in a formal letter",
     "choices": [
-      "contractions and slang signal CASUAL when the occasion calls for FORMAL",
-      "the sentence is too long for a cover letter",
-      "the writer used too many commas",
-      "the writer omitted the recipient's name"
+      "contractions and slang in a formal letter",
+      "a sentence too long for a cover letter",
+      "a dash where a colon belongs",
+      "too many commas for one sentence"
     ],
     "context": "Cover letters call for formal register. I'M / IT'D / Y'ALL all shout casual and undermine the application.",
     "topic": "contractions-in-formal-writing"
@@ -2589,9 +2563,9 @@
   {
     "tier": 1,
     "question": "A lab instructor reads a student's report and finds 'don't' and 'can't' on every page. What rule does formal academic writing set for words like those?",
-    "answer": "expand them: DON'T becomes DO NOT, CAN'T becomes CANNOT, IT'S becomes IT IS",
+    "answer": "expand them: DO NOT, CANNOT, IT IS",
     "choices": [
-      "expand them: DON'T becomes DO NOT, CAN'T becomes CANNOT, IT'S becomes IT IS",
+      "expand them: DO NOT, CANNOT, IT IS",
       "use them freely to sound natural",
       "use only IT'S and DON'T; expand the rest",
       "contractions are required in all formal writing"
@@ -2602,12 +2576,12 @@
   {
     "tier": 2,
     "question": "A writing coach sorts a stack of pages into two piles: writing that welcomes contractions and writing that does not. What goes in the first pile?",
-    "answer": "dialogue, personal essays, journalism, blog posts, conversational nonfiction",
+    "answer": "dialogue, personal essays and blog posts",
     "choices": [
-      "dialogue, personal essays, journalism, blog posts, conversational nonfiction",
-      "legal briefs, scientific reports, and academic papers",
-      "court transcripts and legislative bills",
-      "contractions are wrong in every register"
+      "dialogue, personal essays and blog posts",
+      "legal briefs, lab reports and academic papers",
+      "contracts, wills and legislative bills",
+      "none: contractions are wrong in every register"
     ],
     "context": "Casual and conversational writing wants the natural sound of contractions. Formal registers expand them.",
     "topic": "contractions-in-formal-writing"
@@ -2615,12 +2589,12 @@
   {
     "tier": 3,
     "question": "A student stares at the word 'don't' in her draft and cannot tell whether it suits the piece. What test settles the matter?",
-    "answer": "read aloud -- if it sounds like a friend talking, contractions belong; if it sounds like a lecture, expand",
+    "answer": "read it aloud: chat keeps it, a lecture spells it out",
     "choices": [
-      "read aloud -- if it sounds like a friend talking, contractions belong; if it sounds like a lecture, expand",
-      "count the syllables; contractions are wrong if the sentence has more than 20",
-      "check the publisher's style guide first; the writer has no say",
-      "always contract in first person and never in third"
+      "read it aloud: chat keeps it, a lecture spells it out",
+      "count the words: past twenty, it gets spelled out",
+      "check the person: first keeps it, third spells it out",
+      "ask the publisher: the writer has no say at all"
     ],
     "context": "Ear-test works. If the writing has a conversational voice, contractions fit; if it has a lecture voice, expand.",
     "topic": "contractions-in-formal-writing"
@@ -2632,8 +2606,8 @@
     "choices": [
       "The results do not support the hypothesis",
       "The results don't support the hypothesis",
-      "Y'know, the results don't really support the hypothesis",
-      "lol the hypothesis didn't work"
+      "The results don't really back the hypothesis",
+      "The results can't support the hypothesis"
     ],
     "context": "Formal academic writing expands contractions. DO NOT, not DON'T.",
     "topic": "contractions-in-formal-writing"
@@ -2641,12 +2615,12 @@
   {
     "tier": 5,
     "question": "A researcher writes \"It's clear that further research is needed\" in a blog post, then wants the same line in a journal paper. Is the contraction acceptable?",
-    "answer": "yes in casual writing; in formal academic writing, expand to \"It is clear\"",
+    "answer": "in the blog, yes; in the journal, write 'It is clear'",
     "choices": [
-      "yes in casual writing; in formal academic writing, expand to \"It is clear\"",
-      "no, IT'S is never acceptable in any context",
-      "yes, in every register including scientific papers",
-      "only if the sentence begins with a subordinator"
+      "in the blog, yes; in the journal, write 'It is clear'",
+      "no: IT'S is wrong in a blog and a journal alike",
+      "yes: every register now takes it, journals too",
+      "only if the sentence opens with a subordinator"
     ],
     "context": "Same sentence, different register. Casual: contraction fine. Academic: expand.",
     "topic": "contractions-in-formal-writing"
@@ -2810,10 +2784,10 @@
   {
     "tier": 1,
     "question": "A sports report reads, \"The rain stopped, AND the game continued.\" What technique joins the two clauses?",
-    "answer": "coordination (treats them as equals with a FANBOYS conjunction)",
+    "answer": "coordination (joins two equal clauses)",
     "choices": [
-      "coordination (treats them as equals with a FANBOYS conjunction)",
-      "subordination (makes one dependent on the other)",
+      "coordination (joins two equal clauses)",
+      "subordination (makes one depend on the other)",
       "apposition (renames a noun)",
       "ellipsis (drops repeated words)"
     ],
@@ -2862,14 +2836,14 @@
   {
     "tier": 4,
     "question": "A student's essay runs two sentences together: \"She loves math it is her best subject.\" Which fix counts as 'coordination'?",
-    "answer": "She loves math, and it is her best subject (comma + FANBOYS)",
+    "answer": "She loves math, and it is her best subject",
     "choices": [
-      "She loves math, and it is her best subject (comma + FANBOYS)",
+      "She loves math, and it is her best subject",
       "She loves math, because it is her best subject",
-      "She loves math -- it is her best subject (dash only)",
+      "She loves math, it is her best subject",
       "She loves math which is her best subject"
     ],
-    "context": "Coordination fix = comma + FANBOYS. Subordination fix would use a subordinator like BECAUSE.",
+    "context": "Coordination fix = comma + FANBOYS. A comma alone leaves a comma splice, and BECAUSE or WHICH would subordinate one clause instead.",
     "topic": "coordination-vs-subordination-two-ways-to-combine-ideas"
   },
   {
@@ -2887,28 +2861,28 @@
   },
   {
     "tier": 1,
-    "question": "A travel diary reads, 'Walking down the street, the trees were beautiful.' Who was walking?",
-    "answer": "the sentence says the TREES were walking (dangling modifier)",
+    "question": "A travel diary reads, 'Walking down the street, the trees were beautiful.' Who does the sentence say was walking?",
+    "answer": "the trees, so the opening phrase dangles",
     "choices": [
-      "the sentence says the TREES were walking (dangling modifier)",
-      "the writer (implied but not stated)",
-      "a passerby",
-      "no one -- the sentence is fine"
+      "the trees, so the opening phrase dangles",
+      "the writer, who is plainly implied",
+      "a passerby out on the street",
+      "no one; the sentence is fine"
     ],
-    "context": "DANGLING MODIFIER: the introductory phrase 'walking down the street' should modify the SUBJECT that follows. Since 'the trees' is the subject, the sentence says trees are walking. Chicago 5.115.",
+    "context": "DANGLING MODIFIER: the introductory phrase 'walking down the street' attaches to the subject that follows. Since 'the trees' is the subject, the sentence says the trees were walking. The real walker never appears. Chicago 5.115.",
     "topic": "dangling-modifiers-walking-down-the-street-the-trees-were-be"
   },
   {
     "tier": 2,
     "question": "An editor reaches the line 'Walking down the street, the trees were beautiful.' What is the best fix?",
-    "answer": "'Walking down the street, I noticed the trees were beautiful.' (name the walker)",
+    "answer": "'Walking down the street, I noticed the trees were beautiful.'",
     "choices": [
-      "'Walking down the street, I noticed the trees were beautiful.' (name the walker)",
+      "'Walking down the street, I noticed the trees were beautiful.'",
       "'The trees walking down the street were beautiful.'",
-      "add a semicolon",
-      "no fix needed"
+      "'Walking down the street; the trees were beautiful.'",
+      "'Walking down the street, the beautiful trees stood.'"
     ],
-    "context": "Fix dangling modifiers by naming the person doing the action as the sentence's subject. The introductory phrase modifies the subject. If the subject can't do that action, the phrase is dangling.",
+    "context": "Fix a dangling modifier by making the doer the subject: 'I' can walk down a street. The other versions still have the trees walking, or strand the opening phrase behind a semicolon.",
     "topic": "dangling-modifiers-walking-down-the-street-the-trees-were-be"
   },
   {
@@ -2931,8 +2905,8 @@
     "choices": [
       "the TV cannot finish an assignment; a person did",
       "'having finished' is not a valid opener",
-      "the TV is a passive subject",
-      "no issue"
+      "the phrase should come after 'the TV'",
+      "no issue; the line is fine"
     ],
     "context": "'Having finished' is a participial phrase. It must modify a noun that COULD finish. The TV cannot. Fix: 'Having finished the assignment, she turned on the TV.'",
     "topic": "dangling-modifiers-walking-down-the-street-the-trees-were-be"
@@ -2952,26 +2926,26 @@
   },
   {
     "tier": 4,
-    "question": "A recipe card reads, 'To bake a good pie, ripe fruit is essential.' Who is baking?",
-    "answer": "unnamed -- ripe fruit does not bake pies; a baker is missing",
+    "question": "A recipe card reads, 'To bake a good pie, ripe fruit is essential.' What is missing from the sentence?",
+    "answer": "a baker to do the baking",
     "choices": [
-      "unnamed -- ripe fruit does not bake pies; a baker is missing",
-      "the pie",
-      "the fruit",
-      "no baker needed"
+      "a baker to do the baking",
+      "a subject for the verb 'is'",
+      "a verb for 'ripe fruit'",
+      "an article before 'ripe fruit'"
     ],
-    "context": "'To bake a good pie' is an infinitive phrase. The following subject should be the baker. 'Ripe fruit' cannot bake. Fix: 'To bake a good pie, you need ripe fruit' (name the baker).",
+    "context": "'To bake a good pie' is an infinitive phrase, and it attaches to the subject that follows. 'Ripe fruit' cannot bake, and the real baker never appears. The main clause already has its subject (fruit) and verb (is). Fix: 'To bake a good pie, a cook needs ripe fruit.'",
     "topic": "dangling-modifiers-walking-down-the-street-the-trees-were-be"
   },
   {
     "tier": 4,
     "question": "An office worker writes in his diary, 'While eating lunch, my phone rang.' How should an editor label the sentence?",
-    "answer": "dangling -- the phone was not eating lunch",
+    "answer": "dangling -- a phone cannot have lunch",
     "choices": [
-      "dangling -- the phone was not eating lunch",
+      "dangling -- a phone cannot have lunch",
       "not dangling -- the phone can ring",
-      "fragment",
-      "run-on"
+      "a fragment -- the line has no main verb",
+      "a run-on -- two clauses with no joiner"
     ],
     "context": "'While eating lunch' modifies the subject 'my phone'. Phones do not eat. Fix: 'While I was eating lunch, my phone rang' (add the subject to the intro clause) or 'While eating lunch, I heard my phone ring.'",
     "topic": "dangling-modifiers-walking-down-the-street-the-trees-were-be"
@@ -2979,12 +2953,12 @@
   {
     "tier": 5,
     "question": "A company's job notice warns, 'To be considered for the job, applications must be submitted by Friday.' What is the dangling issue?",
-    "answer": "applications cannot be considered for the job; only applicants can",
+    "answer": "only a person can be considered for a job",
     "choices": [
-      "applications cannot be considered for the job; only applicants can",
+      "only a person can be considered for a job",
       "'to be considered' is not an infinitive",
-      "should be 'in order to be considered'",
-      "no issue"
+      "it needs 'in order' before 'to be'",
+      "no issue; the notice reads fine"
     ],
     "context": "'To be considered' should modify a person. 'Applications' cannot be considered for a job (the applicant is). Fix: 'To be considered for the job, applicants must submit their materials by Friday.'",
     "topic": "dangling-modifiers-walking-down-the-street-the-trees-were-be"
@@ -3238,15 +3212,15 @@
   },
   {
     "tier": 1,
-    "question": "A memo says: 'The company keeps its customer information discrete.' Which word is wrong?",
+    "question": "A memo says, 'The company promises to be discrete with its customers' secrets.' Which word is wrong?",
     "answer": "\"discrete\" (should be \"discreet\")",
     "choices": [
       "\"discrete\" (should be \"discreet\")",
       "\"company\" (should be \"companies\")",
-      "\"keeps\" (should be \"keep\")",
-      "\"customer\" (should be \"customers\")"
+      "\"promises\" (should be \"promise\")",
+      "\"secrets\" (should be \"secret\")"
     ],
-    "context": "DISCREET means careful/tactful; DISCRETE means separate/distinct. A company keeping information CAREFUL wants \"discreet.\"",
+    "context": "DISCREET means careful and tactful; DISCRETE means separate and distinct. A company that keeps secrets quietly is DISCREET.",
     "topic": "discreet-vs-discrete-careful-vs-separate"
   },
   {
@@ -3265,9 +3239,9 @@
   {
     "tier": 2,
     "question": "A teacher writes 'discreet' and 'discrete' on the board. What memory trick tells them apart?",
-    "answer": "discreEt keeps its two Es tucked together; discretE has its Es split by the T",
+    "answer": "discreet's Es stay together; discrete's are split by T",
     "choices": [
-      "discreEt keeps its two Es tucked together; discretE has its Es split by the T",
+      "discreet's Es stay together; discrete's are split by T",
       "discreet has one syllable; discrete has two syllables",
       "discreet is a verb; discrete is an adjective",
       "discreet is British; discrete is American"
@@ -3771,15 +3745,15 @@
   },
   {
     "tier": 2,
-    "question": "A teacher draws three verbs on the board with an arrow from each to its target. Which memory trick does she add?",
-    "answer": "ASSure a perSon; ENSure an End (outcome); INSure with INsurance",
+    "question": "A teacher draws three verbs on the board with an arrow from each to its target. Which set of arrows is right?",
+    "answer": "assure a person, ensure an outcome, insure property",
     "choices": [
-      "ASSure a perSon; ENSure an End (outcome); INSure with INsurance",
-      "ASSure a policy; ENSure a person; INSure an event",
-      "ASSure an object; ENSure a policy; INSure a person",
-      "all three verbs mean exactly the same thing in modern usage"
+      "assure a person, ensure an outcome, insure property",
+      "assure an outcome, ensure property, insure a person",
+      "assure property, ensure a person, insure an outcome",
+      "assure a person, ensure property, insure an outcome"
     ],
-    "context": "The initial letters map to the target: PERSON for ASSURE, END/OUTCOME for ENSURE, INSURANCE for INSURE.",
+    "context": "ASSURE takes a person (it removes his doubt), ENSURE an outcome (it makes it certain), and INSURE property (a policy covers it). The hints: assure as in reassure, ensure as in end result, insure as in insurance.",
     "topic": "ensure-insure-assure-three-verbs-three-targets"
   },
   {
@@ -3805,12 +3779,12 @@
       "insure / ensures / assure",
       "assure / ensures / insure"
     ],
-    "context": "ASSURE (a person: you), INSURES (vehicles: buys policies), ENSURE (an outcome: quick reimbursement).",
+    "context": "ASSURE (a person: 'you'), INSURES (vehicles: buys policies), ENSURE (an outcome: quick reimbursement).",
     "topic": "ensure-insure-assure-three-verbs-three-targets"
   },
   {
     "tier": 2,
-    "question": "A note by the back door reads, \"Please ___ the door is locked before you leave.\" Which verb fills the blank?",
+    "question": "A note by the back door reads, 'Please ___ the door is locked before you leave.' Which verb do careful editors want in the blank?",
     "answer": "ensure",
     "choices": [
       "ensure",
@@ -3818,7 +3792,7 @@
       "insure",
       "reassure"
     ],
-    "context": "ENSURE takes an outcome or state as its object. The door being locked is the outcome.",
+    "context": "ENSURE takes an outcome or state as its object: the door being locked is the outcome. Merriam-Webster also records 'insure' in this sense, but careful editors keep INSURE for insurance.",
     "topic": "ensure-insure-assure-three-verbs-three-targets"
   },
   {
@@ -3827,9 +3801,9 @@
     "answer": "what Americans call life insurance",
     "choices": [
       "what Americans call life insurance",
-      "a promise made in a will",
-      "a religious blessing",
-      "a courtroom testimony"
+      "a doctor's certificate of good health",
+      "a state pension paid in old age",
+      "a promise made in a will"
     ],
     "context": "British English uses ASSURANCE for insurance products, especially life insurance. Both regional usages are correct.",
     "topic": "ensure-insure-assure-three-verbs-three-targets"
@@ -4516,11 +4490,11 @@
     "answer": "The peace agreement was a historic moment for both nations",
     "choices": [
       "The peace agreement was a historic moment for both nations",
-      "She spent hours reading historic documents in the library",
+      "She wrote a historic novel set in ancient Rome",
       "The museum houses many historic records of daily life",
       "Historic research requires careful checking of sources"
     ],
-    "context": "A HISTORIC MOMENT = one important enough for history to remember. The other three want HISTORICAL (relating to the past).",
+    "context": "A HISTORIC MOMENT = one important enough for history to remember. A novel set in the past, records of daily life and research into the past all want HISTORICAL.",
     "topic": "historic-vs-historical-important-vs-from-the-past"
   },
   {
@@ -4533,7 +4507,7 @@
       "\"a historic\" is wrong; British writers say \"an\"",
       "both forms are considered errors now"
     ],
-    "context": "Chicago accepts both. Modern American English pronounces the H, so \"a historic\" is standard; \"an historic\" survives in older prose.",
+    "context": "Chicago picks the article by sound and writes 'a historic occasion'. Merriam-Webster accepts both forms. Modern American English sounds the H, so 'a historic' is standard, and 'an historic' survives in older prose.",
     "topic": "historic-vs-historical-important-vs-from-the-past"
   },
   {
@@ -4552,10 +4526,10 @@
   {
     "tier": 2,
     "question": "A food blog reads, 'A chocolate covered strawberry sat on the plate.' Which fix does that sentence need?",
-    "answer": "chocolate-covered strawberry (hyphenate compound modifier)",
+    "answer": "chocolate-covered strawberry",
     "choices": [
-      "chocolate-covered strawberry (hyphenate compound modifier)",
-      "chocolate, covered strawberry (add comma)",
+      "chocolate-covered strawberry",
+      "chocolate, covered strawberry",
       "chocolate covered-strawberry",
       "no change needed"
     ],
@@ -4578,12 +4552,12 @@
   {
     "tier": 3,
     "question": "A publisher's blurb calls a book 'A beautifully written novel.' Why does this compound modifier go without a hyphen?",
-    "answer": "adverbs ending in -ly do not hyphenate with the adjective",
+    "answer": "adverbs ending in -ly never take the hyphen",
     "choices": [
-      "adverbs ending in -ly do not hyphenate with the adjective",
-      "beautifully has too many syllables",
-      "novels are never hyphenated",
-      "the hyphen is silent"
+      "adverbs ending in -ly never take the hyphen",
+      "the hyphen comes only after the noun",
+      "a phrase in a blurb stays open by custom",
+      "the phrase names a genre, so it stays open"
     ],
     "context": "The -ly adverb exception: adverbs ending in -ly do not take a hyphen to their following adjective. Compare 'well-written' (well is a one-syllable adverb, hyphenated). Chicago 7.86.",
     "topic": "hyphens-in-compound-modifiers-well-written-novel"
@@ -4591,14 +4565,14 @@
   {
     "tier": 4,
     "question": "A beach sign warns, 'Man eating shark.' What does the missing hyphen do to the meaning?",
-    "answer": "reads as a man who is eating a shark (should be 'man-eating' = a shark that eats humans)",
+    "answer": "reads as a man who is eating a shark",
     "choices": [
-      "reads as a man who is eating a shark (should be 'man-eating' = a shark that eats humans)",
-      "reads as three unrelated nouns",
-      "reads as a verb phrase",
+      "reads as a man who is eating a shark",
+      "reads as a shark that eats other sharks",
+      "reads as a man and a shark, both eating",
       "no change in meaning"
     ],
-    "context": "Without the hyphen, 'man' becomes the subject, 'eating shark' the predicate. With 'man-eating shark', the compound modifier tells you it's a shark that eats humans -- opposite meanings.",
+    "context": "Without the hyphen, 'man' becomes the subject and 'eating shark' the predicate. With 'man-eating shark', the compound modifier tells the reader it is a shark that eats humans -- opposite meanings.",
     "topic": "hyphens-in-compound-modifiers-well-written-novel"
   },
   {
@@ -4608,21 +4582,21 @@
     "choices": [
       "a small-business owner",
       "a small business-owner",
-      "a-small business owner",
-      "small business owner-"
+      "a small-business-owner",
+      "no hyphen at all"
     ],
-    "context": "'Small-business owner' = owner of a small business. 'Small business-owner' = a business-owner who happens to be small. Without any hyphen, the phrase is genuinely ambiguous.",
+    "context": "'Small-business owner' = owner of a small business. 'Small business-owner' = a business-owner who happens to be small. Hyphenating all three words fuses them into one clumsy noun, and with no hyphen the phrase stays ambiguous.",
     "topic": "hyphens-in-compound-modifiers-well-written-novel"
   },
   {
     "tier": 5,
     "question": "An upholsterer's note reads, 'She had to re-cover the couch after her cat ruined it.' Chicago style drops most prefix hyphens. Why does this one stay?",
-    "answer": "to distinguish from 'recover' (get well)",
+    "answer": "to keep it apart from 'recover' (get well)",
     "choices": [
-      "to distinguish from 'recover' (get well)",
-      "Chicago requires hyphens after all prefixes",
-      "the couch is compound",
-      "verbs never lose hyphens"
+      "to keep it apart from 'recover' (get well)",
+      "to stop two vowels from doubling up",
+      "because the prefix sits before a verb",
+      "because 'cover' has only one syllable"
     ],
     "context": "Chicago 7.89 drops hyphens after prefixes ('preexisting', 'nonprofit') EXCEPT to avoid ambiguity ('re-cover' vs 'recover') or doubled vowels ('anti-inflation'). Meaning matters.",
     "topic": "hyphens-in-compound-modifiers-well-written-novel"
@@ -5025,7 +4999,7 @@
       "the speaker (hints at something without saying it)",
       "the listener (figures out what wasn't said)",
       "the writer of the transcript",
-      "the person who wrote the dictionary"
+      "either one, depending on tone"
     ],
     "context": "IMPLY = drop a hint. The person doing the hinting is IMPLYING.",
     "topic": "imply-vs-infer-speaker-vs-listener"
@@ -5033,14 +5007,14 @@
   {
     "tier": 2,
     "question": "A tutor sketches a memory trick on a napkin for telling 'imply' from 'infer.' What does the napkin say?",
-    "answer": "IMPLY starts with I -- I hint (the speaker); INFER starts with IN -- INcoming (the listener)",
+    "answer": "IMPLY: I hint (speaker); INFER: INcoming (listener)",
     "choices": [
-      "IMPLY starts with I -- I hint (the speaker); INFER starts with IN -- INcoming (the listener)",
-      "IMPLY is present tense; INFER is past tense",
-      "IMPLY is British; INFER is American",
-      "IMPLY is a noun; INFER is a verb"
+      "IMPLY: I hint (speaker); INFER: INcoming (listener)",
+      "IMPLY: present tense; INFER: past tense",
+      "IMPLY: British usage; INFER: American usage",
+      "IMPLY: a noun; INFER: a verb"
     ],
-    "context": "I for the speaker who hints; IN for the listener taking information IN. Simple mnemonic.",
+    "context": "I for the speaker who hints; IN for the listener, who takes the hint in. Simple mnemonic.",
     "topic": "imply-vs-infer-speaker-vs-listener"
   },
   {
@@ -5085,27 +5059,27 @@
   {
     "tier": 1,
     "question": "A potluck invitation reads, 'Everyone ___ welcome.' Which verb form does traditional grammar require?",
-    "answer": "is (everyone is singular)",
+    "answer": "is",
     "choices": [
-      "is (everyone is singular)",
+      "is",
       "are",
       "were",
-      "either"
+      "be"
     ],
     "context": "EVERYONE, EVERYBODY, ANYONE, ANYBODY, SOMEONE, SOMEBODY, NO ONE, NOBODY are all grammatically SINGULAR, even though they refer to groups. Chicago 5.68. 'Everyone IS welcome.'",
     "topic": "indefinite-pronouns-everyone-each-either-take-singular-verbs"
   },
   {
     "tier": 2,
-    "question": "A teacher's red pen writes, 'Neither of the answers ___ correct.' Which verb form fits?",
-    "answer": "is (neither is singular)",
+    "question": "A teacher's red pen writes, 'Neither of the answers ___ correct.' Which verb form fits in formal writing?",
+    "answer": "is",
     "choices": [
-      "is (neither is singular)",
+      "is",
       "are",
       "were",
-      "either"
+      "be"
     ],
-    "context": "NEITHER (like EITHER) is singular. 'Neither is correct.' The 'of the answers' phrase does not change the subject's number. Rare exception: with truly plural referent in casual speech.",
+    "context": "In formal writing NEITHER (like EITHER) is singular: 'Neither is correct.' The 'of the answers' phrase does not change the subject's number. Casual speech often uses a plural verb here.",
     "topic": "indefinite-pronouns-everyone-each-either-take-singular-verbs"
   },
   {
@@ -5137,14 +5111,14 @@
   {
     "tier": 3,
     "question": "A girl writing a note for the cookie jar pauses over 'None of the cookies ___ left.' Should the verb be singular or plural?",
-    "answer": "either works (NONE takes number from the referent; most editors flex both ways)",
+    "answer": "either -- NONE takes its number from the referent",
     "choices": [
-      "either works (NONE takes number from the referent; most editors flex both ways)",
-      "always singular ('not one')",
-      "always plural",
-      "'none' cannot be a subject"
+      "either -- NONE takes its number from the referent",
+      "singular only -- NONE always means 'not one'",
+      "plural only -- COOKIES makes it plural",
+      "neither -- 'none' cannot be a subject"
     ],
-    "context": "NONE is flexible: 'none is left' (emphasises 'not one') and 'none are left' (emphasises the plural cookies) are both standard. Merriam-Webster and Chicago 5.68 both accept either. See separate NONE topic.",
+    "context": "NONE is flexible: 'none is left' (stressing 'not one') and 'none are left' (stressing the plural cookies) are both standard. Merriam-Webster and Chicago 5.68 both accept either.",
     "topic": "indefinite-pronouns-everyone-each-either-take-singular-verbs"
   },
   {
@@ -5280,25 +5254,25 @@
   {
     "tier": 1,
     "question": "A teacher marking essays circles a fragment, a piece of a sentence dressed up as a whole one. When is a fragment usually a bug?",
-    "answer": "when the writer forgot to finish the thought (dropped verb, orphaned subordinate clause)",
+    "answer": "when the writer forgot to finish the thought",
     "choices": [
-      "when the writer forgot to finish the thought (dropped verb, orphaned subordinate clause)",
-      "whenever it is shorter than 8 words",
-      "whenever it appears in fiction",
-      "whenever it starts with \"Very\""
+      "when the writer forgot to finish the thought",
+      "whenever it has fewer than eight words",
+      "whenever it turns up in fiction",
+      "whenever it opens with an adverb"
     ],
-    "context": "Unintentional fragments look accidental. Intentional fragments are short, punchy, and clearly deliberate.",
+    "context": "Unintentional fragments look accidental: a dropped verb, or a subordinate clause left on its own. Intentional fragments are short, punchy, and clearly deliberate.",
     "topic": "intentional-fragments-when-writers-break-the-rule-on-purpose"
   },
   {
     "tier": 2,
     "question": "A fiction editor meets a fragment in a draft and must decide whether to leave it. What tells her it is intentional, not a mistake?",
-    "answer": "intentional fragments are short, punchy, and follow a complete sentence that sets context",
+    "answer": "it is short and follows a sentence that sets the scene",
     "choices": [
-      "intentional fragments are short, punchy, and follow a complete sentence that sets context",
-      "intentional fragments are always in italics",
-      "intentional fragments always end with an exclamation point",
-      "there is no real difference; all fragments are errors"
+      "it is short and follows a sentence that sets the scene",
+      "it is set in italics so the reader knows",
+      "it ends with an exclamation point for force",
+      "it opens the passage, before any full sentence"
     ],
     "context": "Context comes first; the fragment lands the punch. Writers signal intent through placement and rhythm.",
     "topic": "intentional-fragments-when-writers-break-the-rule-on-purpose"
@@ -5332,14 +5306,14 @@
   {
     "tier": 5,
     "question": "A grade-10 science lab report contains \"The temperature rose. Rapidly.\" Should the fragment stay?",
-    "answer": "no -- science reports use complete sentences: \"The temperature rose rapidly\"",
+    "answer": "no -- a science report wants complete sentences",
     "choices": [
-      "no -- science reports use complete sentences: \"The temperature rose rapidly\"",
+      "no -- a science report wants complete sentences",
       "yes -- fragments always improve pacing",
       "yes -- science writers prize style over clarity",
-      "only if the whole report uses fragments"
+      "yes -- if the whole report uses fragments"
     ],
-    "context": "Register control: fragments are fine in fiction but out in scientific writing. Fix by rejoining.",
+    "context": "Register control: fragments are fine in fiction but out in scientific writing. Fix by rejoining: 'The temperature rose rapidly.'",
     "topic": "intentional-fragments-when-writers-break-the-rule-on-purpose"
   },
   {
@@ -5501,14 +5475,14 @@
   {
     "tier": 1,
     "question": "A camp newsletter announces, 'Irregardless of the weather, we will go.' Why do most style guides warn against that first word?",
-    "answer": "it is a double-negative: IR- (not) + regardless (already meaning 'without regard') = 'not not regard'",
+    "answer": "it negates twice, with both IR- and -LESS",
     "choices": [
-      "it is a double-negative: IR- (not) + regardless (already meaning 'without regard') = 'not not regard'",
-      "it means the opposite of regardless",
-      "it is too formal",
-      "nothing is wrong with it"
+      "it negates twice, with both IR- and -LESS",
+      "it is too formal for a camp newsletter",
+      "it is a British spelling of regardless",
+      "it is slang less than ten years old"
     ],
-    "context": "REGARDLESS = without regard. Adding IR- (a negative prefix) creates a double-negative that should logically mean 'with regard'. Merriam-Webster lists it (marked 'nonstandard'); most editors reject it.",
+    "context": "REGARDLESS = without regard. Adding IR- (a negative prefix) creates a double negative that should logically mean 'with regard'. Merriam-Webster lists it (marked 'nonstandard'); most editors reject it. The word has been in print since at least 1795.",
     "topic": "irregardless-the-double-negative-that-isnt-a-word-mostly"
   },
   {
@@ -5527,40 +5501,40 @@
   {
     "tier": 2,
     "question": "A girl looks up 'irregardless' in a dictionary to settle a bet with her brother. What label does she find beside it?",
-    "answer": "nonstandard (in use, but not accepted in formal writing)",
+    "answer": "nonstandard",
     "choices": [
-      "nonstandard (in use, but not accepted in formal writing)",
+      "nonstandard",
       "standard",
       "obsolete",
       "a British-only variant"
     ],
-    "context": "Merriam-Webster records that 'irregardless' has been in use since the early 1900s but marks it 'nonstandard'. Dictionaries record usage; usage does not automatically become acceptable in edited writing.",
+    "context": "Merriam-Webster marks 'irregardless' 'nonstandard': in use (in print since at least 1795) but not accepted in formal writing. Dictionaries record usage; usage does not automatically become acceptable in edited writing.",
     "topic": "irregardless-the-double-negative-that-isnt-a-word-mostly"
   },
   {
     "tier": 3,
     "question": "A student breaks 'irregardless' into parts in her notebook and circles the 'ir-' at the front. What does that piece act as?",
-    "answer": "a negative prefix (irrational, irrelevant, irreverent, irregular)",
+    "answer": "a prefix meaning 'not'",
     "choices": [
-      "a negative prefix (irrational, irrelevant, irreverent, irregular)",
-      "an intensifier",
-      "a repetition marker",
-      "a diminutive"
+      "a prefix meaning 'not'",
+      "a prefix meaning 'again'",
+      "a prefix meaning 'before'",
+      "a prefix meaning 'against'"
     ],
     "context": "IR- is the form the negative prefix IN- takes before R (irrational, irrelevant). It cancels or negates the root. Attaching it to 'regardless' cancels the -less suffix -- illogical.",
     "topic": "irregardless-the-double-negative-that-isnt-a-word-mostly"
   },
   {
     "tier": 3,
-    "question": "A word collector pins 'irregardless' to a list of words that stack an extra negating part. Which word goes beside it?",
-    "answer": "'unloosen' -- un- added to loosen, which already means to loosen",
+    "question": "A word collector pins 'irregardless' to a list of words whose extra negative part adds nothing to the meaning. Which word goes beside it?",
+    "answer": "'unloosen'",
     "choices": [
-      "'unravel' -- which ends up meaning the same as 'ravel'",
-      "'irrelevant' -- one negative prefix, nothing doubled",
-      "'unloosen' -- un- added to loosen, which already means to loosen",
-      "'disregard' -- one negative prefix, nothing doubled"
+      "'unloosen'",
+      "'unlock'",
+      "'irrelevant'",
+      "'disregard'"
     ],
-    "context": "'Unloosen' = to loosen (the UN- adds nothing; loosen already implies undoing). 'Ravel/unravel' is trickier -- 'ravel' means both to tangle AND to untangle. English is inconsistent; irregardless is still marked out.",
+    "context": "'Unloosen' means the same as 'loosen': the UN- adds nothing, because loosening is already an undoing. In 'unlock', 'irrelevant' and 'disregard' the negative part changes the meaning. English is inconsistent ('ravel' can mean both to tangle and to untangle), but irregardless is still marked out.",
     "topic": "irregardless-the-double-negative-that-isnt-a-word-mostly"
   },
   {
@@ -5573,18 +5547,18 @@
       "unregardful",
       "disregarding"
     ],
-    "context": "IRRESPECTIVE = without respect to (parallel to regardless = without regard). Both are formal, both accepted. 'Irregardless' is often mistaken as a blend of the two; formal editing rejects the blend.",
+    "context": "IRRESPECTIVE = without respect to (parallel to regardless = without regard). Both are standard English, and irrespective is the more formal. 'Irregardless' is most likely a blend of the two, and formal editing rejects the blend.",
     "topic": "irregardless-the-double-negative-that-isnt-a-word-mostly"
   },
   {
     "tier": 4,
     "question": "Merriam-Webster's editors saw a note on 'irregardless' go viral in 2020, and the internet got upset. What did the editors say in reply?",
-    "answer": "dictionaries RECORD usage; the entry marks it nonstandard, not endorses it",
+    "answer": "dictionaries record usage; the entry calls it nonstandard",
     "choices": [
-      "dictionaries RECORD usage; the entry marks it nonstandard, not endorses it",
-      "they were reversing course",
-      "they only added it as a joke",
-      "they had never included it before"
+      "dictionaries record usage; the entry calls it nonstandard",
+      "they had added it that year to keep up with slang",
+      "they had made it standard after a public vote",
+      "they would drop it from the next edition"
     ],
     "context": "Descriptivist principle: dictionaries record what people say, not what they should say. Merriam-Webster's entry has been there since 1934 and still marks it nonstandard. The 2020 outcry was mostly a rediscovery.",
     "topic": "irregardless-the-double-negative-that-isnt-a-word-mostly"
@@ -5604,7 +5578,7 @@
   },
   {
     "tier": 1,
-    "question": "A student writing an essay wants to mention Eats, Shoots and Leaves, the book by Lynne Truss. Under Chicago style, how should the book title appear?",
+    "question": "A student writing an essay wants to mention Eats, Shoots & Leaves, the book by Lynne Truss. Under Chicago style, how should the book title appear?",
     "answer": "In italics",
     "choices": [
       "In italics",
@@ -5630,20 +5604,20 @@
   },
   {
     "tier": 3,
-    "question": "A TV critic's column mentions one episode, The Prom Video, from the show Friends. How should the two titles be set?",
-    "answer": "Italics for the series (Friends), quotation marks for the episode ('The Prom Video')",
+    "question": "A TV critic's column mentions one episode, The One with the Prom Video, from the show Friends. How should the two titles be set?",
+    "answer": "Italics for the series, quotation marks for the episode",
     "choices": [
-      "Italics for the series (Friends), quotation marks for the episode ('The Prom Video')",
-      "Quotation marks for both",
-      "Italics for both",
-      "Quotation marks for the series, italics for the episode"
+      "Italics for the series, quotation marks for the episode",
+      "Quotation marks for the series, italics for the episode",
+      "Quotation marks for both titles",
+      "Italics for both titles"
     ],
-    "context": "Series is the big container -- italics. Episode is the small work inside -- quotation marks. Same pattern: album (italics) + song (quotes); book (italics) + chapter (quotes). Source: Chicago Manual of Style 17e section 8.185.",
+    "context": "The series is the big container, so Friends takes italics. The episode is the small work inside, so 'The One with the Prom Video' takes quotation marks. Same pattern: album (italics) + song (quotes); book (italics) + chapter (quotes). Source: Chicago Manual of Style 17e section 8.185.",
     "topic": "italics-vs-quotation-marks-for-titles"
   },
   {
     "tier": 4,
-    "question": "A film student uses the foreign phrase mise en scene in an English-language essay for the first time. Under Chicago style, how should it appear?",
+    "question": "A film student writing an English-language essay uses a French phrase her readers are unlikely to know. Under Chicago style, how should it appear the first time?",
     "answer": "In italics -- foreign words not yet naturalized take italics on first use",
     "choices": [
       "In italics -- foreign words not yet naturalized take italics on first use",
@@ -5651,20 +5625,7 @@
       "In ALL CAPS -- to signal a foreign term",
       "In no special formatting -- Chicago never italicizes foreign words"
     ],
-    "context": "Chicago italicizes unfamiliar foreign words on first use, then switches to Roman on subsequent uses in the same document. Naturalized borrowings (croissant, pizza) get no italics. Source: Chicago Manual of Style 17e section 7.53.",
-    "topic": "italics-vs-quotation-marks-for-titles"
-  },
-  {
-    "tier": 5,
-    "question": "A naval history paper says 'the Titanic sank in 1912' and, pages later, 'a Ford-class aircraft carrier joined the fleet.' Under Chicago style, which name takes italics, if either, and why?",
-    "answer": "Only 'Titanic' -- individual ship names are italicized; CLASS names (Ford-class) are not",
-    "choices": [
-      "Only 'Titanic' -- individual ship names are italicized; CLASS names (Ford-class) are not",
-      "Only 'Ford-class' -- class names are always italicized; individual ships are not",
-      "Both should be italicized",
-      "Neither should be italicized"
-    ],
-    "context": "Individual ship, train, and spacecraft names get italics (the Titanic, the Orient Express, the command module Columbia). Class names (Ford-class, Los Angeles-class) do not. Source: Chicago Manual of Style 17e section 8.117.",
+    "context": "Chicago italicizes foreign words and phrases likely to be unfamiliar to readers, and a word used often in a work need be italicized only at its first appearance. Familiar borrowings found in a standard dictionary (croissant, pizza) stay roman. Source: Chicago Manual of Style 17e section 7.53.",
     "topic": "italics-vs-quotation-marks-for-titles"
   },
   {
@@ -6015,7 +5976,7 @@
       "\"homework\" (should be \"home work\")",
       "\"don't\" (should be \"do not\")"
     ],
-    "context": "LOSE (one O) = misplace or fail to win; LOOSE (two Os) = not tight. Don't misplace your homework = LOSE.",
+    "context": "LOSE (one O) = misplace or fail to win; LOOSE (two Os) = not tight. 'Don't misplace your homework' = LOSE.",
     "topic": "lose-vs-loose-one-o-or-two"
   },
   {
@@ -6034,19 +5995,19 @@
   {
     "tier": 2,
     "question": "A big sister hands over a memory trick for 'lose' and 'loose' before a spelling test. What is the trick?",
-    "answer": "LOOSE has two Os because it's LOOSE (spread out); LOSE has just one -- you have LESS",
+    "answer": "LOOSE spreads out two Os; LOSE ends up with less",
     "choices": [
-      "LOOSE has two Os because it's LOOSE (spread out); LOSE has just one -- you have LESS",
+      "LOOSE spreads out two Os; LOSE ends up with less",
       "LOSE is British; LOOSE is American",
       "LOSE is a noun; LOOSE is a verb",
-      "they are pronounced identically and interchangeable"
+      "LOSE rhymes with goose; LOOSE with news"
     ],
     "context": "The extra O in LOOSE is itself loose. LOSE has less. Shape matches meaning.",
     "topic": "lose-vs-loose-one-o-or-two"
   },
   {
     "tier": 2,
-    "question": "A sportscaster warns, \"The team will ___ the game if they don't score soon.\" Which word fits?",
+    "question": "A sportscaster warns, \"The team will ___ the game if it doesn't score soon.\" Which word fits?",
     "answer": "lose",
     "choices": [
       "lose",
@@ -6216,12 +6177,12 @@
   {
     "tier": 1,
     "question": "A road-trip postcard reads, 'Two hundred miles ___ a long drive when you're tired.' Which verb fits?",
-    "answer": "is -- the distance is one quantity (a single drive length)",
+    "answer": "is -- the distance is one amount",
     "choices": [
-      "is -- the distance is one quantity (a single drive length)",
+      "is -- the distance is one amount",
       "are -- miles is plural",
       "were -- past-tense plural",
-      "am -- first-person singular"
+      "have been -- plural perfect"
     ],
     "context": "When an amount is treated as ONE quantity, the verb is singular even though the noun looks plural. Source: Chicago Manual of Style 17e section 5.142.",
     "topic": "measurements-and-amounts-two-hundred-miles-is-a-long-drive"
@@ -6229,12 +6190,12 @@
   {
     "tier": 2,
     "question": "A diner's menu board reads, 'Ten dollars ___ the price for the whole meal.' Which verb fits, and why?",
-    "answer": "is -- ten dollars names ONE price",
+    "answer": "is -- the amount names ONE price",
     "choices": [
-      "is -- ten dollars names ONE price",
+      "is -- the amount names ONE price",
       "are -- dollars is plural",
       "were -- past-tense plural",
-      "am -- first-person singular"
+      "have been -- plural perfect"
     ],
     "context": "The amount is one price. Same shape: 'Three hours IS enough time,' 'Five pounds IS heavy.' Source: Merriam-Webster's Dictionary of English Usage, 'agreement.'",
     "topic": "measurements-and-amounts-two-hundred-miles-is-a-long-drive"
@@ -6247,7 +6208,7 @@
       "is -- three hours is ONE duration",
       "are -- hours is plural",
       "were -- past-tense plural",
-      "am -- first-person singular"
+      "have been -- plural perfect"
     ],
     "context": "The amount is treated as one time-span, so singular verb. Compare with a plural counting: 'The three hours I waited WERE endless' -- when the hours are individual experiences, plural. Source: Merriam-Webster's Dictionary of English Usage.",
     "topic": "measurements-and-amounts-two-hundred-miles-is-a-long-drive"
@@ -6260,7 +6221,7 @@
       "is -- two gallons names ONE amount",
       "are -- gallons is plural",
       "have been -- perfect tense required",
-      "am -- first-person singular"
+      "were -- past-tense plural"
     ],
     "context": "Amount-as-one-quantity gets a singular verb. Source: Chicago Manual of Style 17e section 5.142.",
     "topic": "measurements-and-amounts-two-hundred-miles-is-a-long-drive"
@@ -6281,9 +6242,9 @@
   {
     "tier": 5,
     "question": "An alumnus writes in a reunion letter, 'The three years I spent in college ___ the best of my life.' Which verb fits, and why?",
-    "answer": "were -- the years are counted individually as separate experiences",
+    "answer": "were -- the years are counted one by one",
     "choices": [
-      "were -- the years are counted individually as separate experiences",
+      "were -- the years are counted one by one",
       "was -- 'three years' is always one span",
       "is -- present-tense singular",
       "has been -- perfect tense required"
@@ -6327,7 +6288,7 @@
       "A pun -- two meanings of 'box'",
       "An idiom -- a fixed non-literal phrase"
     ],
-    "context": "The word LIKE tells you it is a simile. Drop LIKE ('Life IS a box of chocolates') and it becomes a metaphor. Source: Merriam-Webster's Dictionary.",
+    "context": "The word LIKE marks it as a simile. Drop LIKE ('Life IS a box of chocolates') and it becomes a metaphor. Source: Merriam-Webster's Dictionary.",
     "topic": "metaphor-vs-simile-with-or-without-like-as"
   },
   {
@@ -6346,9 +6307,9 @@
   {
     "tier": 4,
     "question": "Shakespeare writes 'All the world's a stage.' The passage goes on to acts, exits, and the seven ages of a person's part. What makes this an extended metaphor?",
-    "answer": "The same comparison is stretched across many sentences, each adding a matching part",
+    "answer": "One comparison is carried on across many lines",
     "choices": [
-      "The same comparison is stretched across many sentences, each adding a matching part",
+      "One comparison is carried on across many lines",
       "It is repeated word-for-word three times in a row",
       "It uses the word LIKE at least once",
       "It rhymes at the end of each line"
@@ -6359,10 +6320,10 @@
   {
     "tier": 5,
     "question": "A science teacher writes on the board: 'An atom is like a tiny solar system -- the nucleus sits at the center like the Sun, and the electrons orbit around it like planets.' Which figure is this closest to?",
-    "answer": "An analogy -- a structural comparison that maps parts of an unfamiliar thing onto parts of a familiar one",
+    "answer": "An analogy -- it maps part onto part",
     "choices": [
-      "An analogy -- a structural comparison that maps parts of an unfamiliar thing onto parts of a familiar one",
-      "A simple simile -- the word LIKE makes it a simile only",
+      "An analogy -- it maps part onto part",
+      "A simile only -- the word LIKE settles it",
       "A metaphor -- the atom IS a solar system",
       "An idiom -- a fixed non-literal phrase"
     ],
@@ -7484,7 +7445,7 @@
       "\"my\" (should be \"mine\")",
       "\"interest\" (should be \"interests\")"
     ],
-    "context": "PIQUED = aroused/provoked. Interest is stirred up, not reaching a summit. Most-corrected misuse online.",
+    "context": "PIQUED = aroused/provoked. Interest is stirred up, not reaching a summit. A very common slip online.",
     "topic": "peaked-peeked-piqued-three-verbs-one-sound"
   },
   {
@@ -7503,14 +7464,14 @@
   {
     "tier": 2,
     "question": "A teacher writes 'peak,' 'peek' and 'pique' on the board and asks how to keep them apart. Which answer earns the mark?",
-    "answer": "PEAK has a peak (triangle-A); PEEK has two EEs like two eyes; PIQUE = French for sharp point",
+    "answer": "PEAK's A is a summit; PEEK's EE, two eyes; PIQUE pricks",
     "choices": [
-      "PEAK has a peak (triangle-A); PEEK has two EEs like two eyes; PIQUE = French for sharp point",
+      "PEAK's A is a summit; PEEK's EE, two eyes; PIQUE pricks",
       "PEAK is British; PEEK is American; PIQUE is Latin",
-      "all three come from the same Greek root",
-      "PEAK is a noun only; PEEK is a verb only; PIQUE is an adjective only"
+      "PEAK is a noun; PEEK is a verb; PIQUE is an adjective",
+      "all three come from one Greek root"
     ],
-    "context": "Each spelling contains a visual clue to its meaning: mountain-A, twin eyes, or sharp Q.",
+    "context": "Each spelling has a hook: the pointed A of a mountain peak, the two Es of a pair of eyes, and pique's French root, a verb meaning to prick.",
     "topic": "peaked-peeked-piqued-three-verbs-one-sound"
   },
   {
@@ -7521,7 +7482,7 @@
       "peaked",
       "peeked",
       "piqued",
-      "peaked out"
+      "peeks"
     ],
     "context": "PEAKED = reached the highest point. Mountains reach a summit.",
     "topic": "peaked-peeked-piqued-three-verbs-one-sound"
@@ -7541,15 +7502,15 @@
   },
   {
     "tier": 5,
-    "question": "A dictionary editor traces 'pique' back to the 1600s, when it came into English from French. What older idiom is still in use?",
-    "answer": "a fit of pique (a moment of resentment)",
+    "question": "A dictionary editor traces 'pique' to a French verb meaning to prick. Its old sense lives on in the idiom 'a fit of pique.' What does a person in a fit of pique feel?",
+    "answer": "stung resentment",
     "choices": [
-      "a fit of pique (a moment of resentment)",
-      "a peak of pique (a burst of energy)",
-      "a peek of pique (a brief glimpse)",
-      "a pique of interest (a low ebb)"
+      "stung resentment",
+      "sudden curiosity",
+      "proud triumph",
+      "a sharp urge to peek"
     ],
-    "context": "A FIT OF PIQUE = a moment of irritation or resentment. Original French sense. Modern \"piqued interest\" grew from \"sharply provoke.\"",
+    "context": "A FIT OF PIQUE = a moment of irritation or resentment, the sting of wounded pride. That noun came into English in the 1500s; the softer sense in 'piqued her interest' came later.",
     "topic": "peaked-peeked-piqued-three-verbs-one-sound"
   },
   {
@@ -7588,20 +7549,20 @@
       "Pod + forecast",
       "Podium + telecast"
     ],
-    "context": "PODCAST was coined in the early 2000s as personal audio broadcasts to iPods. Same era: EMOTICON (emotion + icon), SITCOM (situation + comedy), INFOMERCIAL (information + commercial). Source: Grokipedia 'Portmanteau' (2026-09-05).",
+    "context": "PODCAST was coined in the early 2000s for personal audio broadcasts to iPods. Other blends of the same kind: EMOTICON (emotion + icon), SITCOM (situation + comedy), INFOMERCIAL (information + commercial). Source: Grokipedia 'Portmanteau' (2026-09-05).",
     "topic": "portmanteau-lewis-carrolls-word-suitcases"
   },
   {
     "tier": 4,
-    "question": "Lewis Carroll made up dozens of portmanteau words for his poem 'Jabberwocky' (1871). Two of them actually escaped the poem and became ordinary English words. Which two?",
-    "answer": "CHORTLE (chuckle + snort) and GALUMPHING (gallop + triumphing)",
+    "question": "Lewis Carroll filled his poem 'Jabberwocky' (1871) with made-up words, many of them blends. Two of them escaped the poem and became ordinary English words. Which two?",
+    "answer": "CHORTLE and GALUMPHING",
     "choices": [
-      "CHORTLE (chuckle + snort) and GALUMPHING (gallop + triumphing)",
-      "SLITHY (slimy + lithe) and MIMSY (miserable + flimsy)",
-      "MOOK (mouse + book) and CRAX (cracker + snack)",
-      "GALORE (gallery + more) and MURMUR (mumble + purr)"
+      "CHORTLE and GALUMPHING",
+      "SLITHY and MIMSY",
+      "BRILLIG and OUTGRABE",
+      "TOVES and BOROGOVES"
     ],
-    "context": "The Oxford English Dictionary lists both CHORTLE and GALUMPHING as first attested in 1871 in Carroll. SLITHY and MIMSY appear in the poem but never became common English. Source: OED entries.",
+    "context": "CHORTLE (chuckle + snort) and GALUMPHING (likely gallop + triumphant) entered everyday English and the major dictionaries. SLITHY, MIMSY, BRILLIG, OUTGRABE, TOVES and BOROGOVES never became common English. Source: Grokipedia 'Jabberwocky.'",
     "topic": "portmanteau-lewis-carrolls-word-suitcases"
   },
   {
@@ -7623,9 +7584,9 @@
     "answer": "NASA -- National Aeronautics and Space Administration",
     "choices": [
       "NASA -- National Aeronautics and Space Administration",
-      "BRUNCH -- breakfast + lunch",
-      "SMOG -- smoke + fog",
-      "SUNFLOWER -- sun + flower"
+      "BRUNCH -- breakfast + lunch, folded at the seam",
+      "SMOG -- smoke + fog, folded at the seam",
+      "SUNFLOWER -- sun + flower, two whole words"
     ],
     "context": "NASA takes the first letters of a phrase and pronounces them as a word -- that is an acronym. The others are portmanteaus or compounds. Source: Grokipedia 'Acronym' (2026-09-05).",
     "topic": "portmanteau-lewis-carrolls-word-suitcases"
@@ -7711,14 +7672,14 @@
   {
     "tier": 1,
     "question": "A book report ends with the line 'The principal of the story is: don't lie.' Which correction is right?",
-    "answer": "Change PRINCIPAL to PRINCIPLE -- a rule of behavior is spelled -ple",
+    "answer": "Change PRINCIPAL to PRINCIPLE -- a rule is spelled -le",
     "choices": [
-      "Change PRINCIPAL to PRINCIPLE -- a rule of behavior is spelled -ple",
-      "Change STORY to TALE -- 'principal' only fits with 'tale'",
-      "Change DON'T to DO NOT -- contractions do not fit 'principal'",
-      "Leave it -- 'principal' is a synonym for lesson"
+      "Change PRINCIPAL to PRINCIPLE -- a rule is spelled -le",
+      "Keep PRINCIPAL -- a story's lesson is spelled -al",
+      "Change PRINCIPAL to PRINCIPLED -- the slot needs an adjective",
+      "Change PRINCIPAL to PRINCIPALS -- the slot needs a plural"
     ],
-    "context": "A rule of behavior is a PRINCIPLE. PRINCIPAL means the head of a school, the main thing, or the original loan amount. Source: Merriam-Webster 'principal' + 'principle.'",
+    "context": "A rule of behavior is a PRINCIPLE: 'The principle of the story is: don't lie.' PRINCIPAL means the head of a school, the main thing, or the original loan amount, and the slot wants a singular noun. Source: Merriam-Webster 'principal' + 'principle.'",
     "topic": "principal-vs-principle-the-person-the-money-the-rule"
   },
   {
@@ -7731,7 +7692,7 @@
       "PrincipAL ... TEACHER",
       "PrinciPLE ... BUDDY"
     ],
-    "context": "PrincipAL ends in -PAL: your PAL. PrinciPLE ends in -PLE: a ruLE. Source: Grokipedia 'Principal vs principle' (2026-09-05).",
+    "context": "PrincipAL ends in -PAL: 'your PAL.' PrinciPLE ends in -PLE: a ruLE. Source: Grokipedia 'Principal vs principle' (2026-09-05).",
     "topic": "principal-vs-principle-the-person-the-money-the-rule"
   },
   {
@@ -7744,7 +7705,7 @@
       "principled -- ethically upright",
       "principality -- a small state ruled by a prince"
     ],
-    "context": "Swap test: 'the main reason' works, so PRINCIPAL. PRINCIPLE would only fit if we meant a rule ('a matter of principle'). Source: Merriam-Webster usage note.",
+    "context": "Swap test: 'the main reason' works, so PRINCIPAL. PRINCIPLE would fit only if the coach meant a rule ('a matter of principle'). Source: Merriam-Webster usage note.",
     "topic": "principal-vs-principle-the-person-the-money-the-rule"
   },
   {
@@ -7768,7 +7729,7 @@
       "principal -- the main sum of money in a loan",
       "principle -- the rule of interest calculation",
       "premium -- the extra amount",
-      "prime -- the top interest rate available"
+      "prime -- the rate for a bank's best borrowers"
     ],
     "context": "In finance, PRINCIPAL keeps the 'main' meaning -- the main amount of money the loan started with. Interest is then computed on the principal. Source: Merriam-Webster 'principal' finance sense.",
     "topic": "principal-vs-principle-the-person-the-money-the-rule"
@@ -7783,7 +7744,7 @@
       "principal ... principal",
       "principle ... principle"
     ],
-    "context": "The person who leads the school = PRINCIPAL (your pal). The rule she teaches = PRINCIPLE. Two spellings, two jobs. Source: Merriam-Webster 'principal' + 'principle.'",
+    "context": "The person who leads the school = PRINCIPAL ('your pal'). The rule she teaches = PRINCIPLE. Two spellings, two jobs. Source: Merriam-Webster 'principal' + 'principle.'",
     "topic": "principal-vs-principle-the-person-the-money-the-rule"
   },
   {
@@ -7984,10 +7945,10 @@
   {
     "tier": 2,
     "question": "A university press editor, working from the 17th edition of Chicago style, reaches a line about an academic degree. Which form does Chicago prefer?",
-    "answer": "PhD (no periods)",
+    "answer": "PhD (with no periods at all)",
     "choices": [
-      "PhD (no periods)",
-      "Ph.D. (periods after each letter)",
+      "PhD (with no periods at all)",
+      "Ph.D. (periods after Ph and D)",
       "P.h.D (period between only some)",
       "P.H.D. (all caps, periods)"
     ],
@@ -8010,12 +7971,12 @@
   {
     "tier": 5,
     "question": "A reporter's draft, still unpunctuated at the close, reads, 'The bill was passed by the U.S___' How many periods should appear at the very end?",
-    "answer": "One period -- the abbreviation period and the sentence-ending period are the same period",
+    "answer": "One -- the abbreviation's period also ends the sentence",
     "choices": [
-      "One period -- the abbreviation period and the sentence-ending period are the same period",
-      "Two periods -- one for the abbreviation, one for the sentence end",
-      "Three periods -- treated as an ellipsis",
-      "No period at all -- abbreviations at end need no additional mark"
+      "One -- the abbreviation's period also ends the sentence",
+      "Two -- one for the abbreviation, one for the sentence",
+      "Three -- the dots are read as an ellipsis",
+      "None -- an abbreviation needs no closing mark"
     ],
     "context": "The period after 'S' does double duty. Never write 'U.S..' with two periods -- the mark collapses. Source: Chicago Manual of Style 17e section 10.5.",
     "topic": "punctuation-with-abbreviations-us-vs-u-s-vs-usa"
@@ -8095,18 +8056,18 @@
       "An exclamation point (!)",
       "A colon (:)"
     ],
-    "context": "Direct questions always end with a question mark. Source: Chicago Manual of Style 17e section 6.42.",
+    "context": "A direct question ends with a question mark. Source: Chicago Manual of Style 17e section 6.42.",
     "topic": "question-marks-inside-quotes-at-the-end-in-indirect-question"
   },
   {
     "tier": 2,
     "question": "A girl's diary reads, 'She asked where I went?' Something is wrong here. What is the fix?",
-    "answer": "Change the question mark to a period -- this is an INDIRECT question (statement about a question, not a question)",
+    "answer": "Change the question mark to a period -- it reports a question",
     "choices": [
-      "Change the question mark to a period -- this is an INDIRECT question (statement about a question, not a question)",
+      "Change the question mark to a period -- it reports a question",
       "Change WHERE to WHERE'S -- to signal a question",
-      "Add commas around WHERE I WENT -- appositive apposition",
-      "Capitalize WHERE -- questions always take capitals"
+      "Add quotation marks around WHERE I WENT -- it is speech",
+      "Add a comma after ASKED -- to set off the question"
     ],
     "context": "The sentence describes what she asked; it does not ASK the question itself. Indirect questions end with a period. Source: Chicago Manual of Style 17e section 6.42.",
     "topic": "question-marks-inside-quotes-at-the-end-in-indirect-question"
@@ -8118,8 +8079,8 @@
     "choices": [
       "Inside the closing quotation mark: 'She asked, \"Where did you go?\"'",
       "Outside the closing quotation mark: 'She asked, \"Where did you go\"?'",
-      "Before the quotation mark and after: '\"?\"'",
-      "Not needed -- indirect questions never take question marks"
+      "After ASKED: 'She asked? \"Where did you go.\"'",
+      "Not needed: indirect questions never take question marks"
     ],
     "context": "When the quoted material is the question, the question mark goes INSIDE the closing quotation mark. When the outer sentence is the question about the quoted material, the mark goes outside. Source: Chicago Manual of Style 17e section 6.70.",
     "topic": "question-marks-inside-quotes-at-the-end-in-indirect-question"
@@ -8127,12 +8088,12 @@
   {
     "tier": 4,
     "question": "A friend at the door says, 'You're coming, ___' and fills the gap with 'aren't you,' turning a statement into a check. What is that construction called, and what mark ends the sentence?",
-    "answer": "A TAG QUESTION -- ends with a question mark: 'You're coming, aren't you?'",
+    "answer": "A tag question -- it ends with a question mark",
     "choices": [
-      "A TAG QUESTION -- ends with a question mark: 'You're coming, aren't you?'",
-      "A TAGGED CLAUSE -- ends with a period",
-      "A PARTICIPLE PHRASE -- ends with a comma",
-      "A NOUN PHRASE -- ends with no punctuation"
+      "A tag question -- it ends with a question mark",
+      "A tagged clause -- it ends with a period",
+      "A participle phrase -- it ends with a comma",
+      "A noun phrase -- it ends with no mark at all"
     ],
     "context": "The tag ('aren't you,' 'won't they,' 'have you') turns a statement into a question. End with a question mark. Source: Grokipedia 'Question mark' (2026-09-05).",
     "topic": "question-marks-inside-quotes-at-the-end-in-indirect-question"
@@ -8140,14 +8101,14 @@
   {
     "tier": 5,
     "question": "An editor's draft, still without its end mark, reads, 'Did she ask where you were___' That line is a question about a question. Under Chicago style, how many question marks should it end with?",
-    "answer": "One -- the outer question's mark suffices; do not add a second inside for the reported question",
+    "answer": "One -- only the outer question takes the mark",
     "choices": [
-      "One -- the outer question's mark suffices; do not add a second inside for the reported question",
+      "One -- only the outer question takes the mark",
       "Two -- one for each question, stacked",
-      "Zero -- both questions cancel each other out",
-      "Three -- one for each question plus one for emphasis"
+      "None -- a reported question makes it a statement",
+      "Two -- one after 'ask,' one at the very end"
     ],
-    "context": "Chicago uses only ONE question mark here because the inner question is REPORTED (indirect), not quoted directly. If it were quoted -- 'Did she ask, \"where are you?\"' -- the single inner mark suffices. Source: Chicago Manual of Style 17e section 6.70.",
+    "context": "Chicago uses only ONE question mark here because the inner question is REPORTED (indirect), not quoted directly. If it were quoted -- 'Did she ask, \"Where are you?\"' -- the single inner mark suffices. Source: Chicago Manual of Style 17e section 6.70.",
     "topic": "question-marks-inside-quotes-at-the-end-in-indirect-question"
   },
   {
