@@ -2995,6 +2995,20 @@ class MagicMixin:
                             target = (x, y); break
                     if target: break
                 if target:
+                    # A body on the stair (a monster, a pet, an escort): the
+                    # reader lands on the nearest free tile he can walk to
+                    # from it, by _teleport_player's rule. He used to be set
+                    # down inside the monster standing there.
+                    from geom import all_occupied_tiles
+                    _busy = all_occupied_tiles(self.monsters) | self._occupants(hero=False)
+                    if target in _busy:
+                        _sx, _sy = target
+                        _free = [t for t in self._reachable_tiles(_sx, _sy)
+                                 if t not in _busy and self.dungeon.is_walkable(*t)]
+                        target = min(_free, key=lambda t: (
+                            max(abs(t[0] - _sx), abs(t[1] - _sy)),
+                            abs(t[0] - _sx) + abs(t[1] - _sy), t)) if _free else None
+                if target:
                     self.player.x, self.player.y = target
                     self._refresh_fov()
                     self.add_message("Space folds — you step directly to the stairs down!", 'success')
