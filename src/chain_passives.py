@@ -399,11 +399,14 @@ def apply_fear_auras(player, monsters, visible) -> int:
     return feared
 
 
-def apply_spell_damage_passives(player, dmg: float):
+def apply_spell_damage_passives(player, dmg: float, destructive: bool = True):
     """Layer chain-equip passives onto a base spell damage value.
 
     Returns (dmg, crit_fired, anti_being_fired). Callers can use the booleans
     for messaging.
+
+    `destructive` is False for a heal: the Heart of Ahriman's charge waits
+    for "your next destructive spell" (a heal used to spend it).
     """
     crit = False
     anti = False
@@ -412,7 +415,7 @@ def apply_spell_damage_passives(player, dmg: float):
     if crit_chance > 0 and random.random() < crit_chance:
         dmg *= 2.0
         crit = True
-    if getattr(player, '_anti_being_charged', False):
+    if destructive and getattr(player, '_anti_being_charged', False):
         dmg *= 2.0
         player._anti_being_charged = False
         anti = True

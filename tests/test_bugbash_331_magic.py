@@ -131,3 +131,50 @@ def test_b4_no_undead_in_the_bestiary_lacks_the_tag():
     missing = sorted(k for k, v in _defs().items()
                      if v.get('family') in fams and 'undead' not in v.get('tags', []))
     assert missing == ['ker'], missing
+
+
+# ---------------------------------------------------------------------------
+# B5: the Heart of Ahriman's charge is spent by a destructive spell
+# ---------------------------------------------------------------------------
+
+def test_b5_a_heal_does_not_spend_the_heart_of_ahriman():
+    """'Your next destructive spell will rend the unmaking': a heal is not
+    one. It used to spend the charge (and was doubled by it)."""
+    g = _game(seed=51)
+    g.player.hp = 1
+    g.player._anti_being_charged = True
+    g._apply_spell_effect({'effect': 'extra_heal', 'power': '2d8', 'tier': 2,
+                           'name': 'Cure Wounds'})
+    assert g.player.hp > 1
+    assert g.player._anti_being_charged is True
+
+
+def _missile_damage(charged: bool) -> int:
+    g = _game(seed=52)
+    _open_floor(g)
+    m = _spawn(g, 'giant_rat', dx=2, hp=100_000)
+    g.player._anti_being_charged = charged
+    random.seed(7)
+    g._apply_spell_effect({'effect': 'magic_missile', 'power': '4d6', 'tier': 4,
+                           'name': 'Force Storm'}, m)
+    assert g.player._anti_being_charged is False
+    return 100_000 - m.hp
+
+
+def test_b5_the_whole_magic_missile_volley_takes_the_charge():
+    """Seven missiles are one cast. The first missile used to spend the
+    charge alone, so the Heart added a seventh of a double."""
+    plain = _missile_damage(False)
+    doubled = _missile_damage(True)
+    assert doubled >= 1.8 * plain, (plain, doubled)
+
+
+def test_b5_a_bolt_spends_the_charge_and_doubles():
+    g = _game(seed=53)
+    _open_floor(g)
+    m = _spawn(g, 'giant_rat', dx=2, hp=100_000)
+    g.player._anti_being_charged = True
+    g._apply_spell_effect({'effect': 'fire_bolt', 'power': '6d6', 'tier': 3,
+                           'name': 'Fire Bolt'}, m)
+    assert g.player._anti_being_charged is False
+    assert m.hp < 100_000

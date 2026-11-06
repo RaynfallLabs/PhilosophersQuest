@@ -1534,7 +1534,8 @@ class MagicMixin:
         tier = int(getattr(self, '_active_spell_tier', 5) or 5)
         tier_mult = (HEAL_TIER_MULT if healing else MAGIC_TIER_MULT).get(tier, 1.5)
         dmg, c, a = apply_spell_damage_passives(
-            self.player, base_dmg * tier_mult * int_damage_factor(self.player.INT))
+            self.player, base_dmg * tier_mult * int_damage_factor(self.player.INT),
+            destructive=not healing)
         self._last_spell_crit, self._last_spell_anti_being = c, a
         return max(1, int(dmg))
 
@@ -2168,14 +2169,19 @@ class MagicMixin:
                 _MISSILE_COUNT = {1: 1, 2: 3, 3: 5, 4: 7, 5: 9}
                 missiles = _MISSILE_COUNT.get(_tier, 1)
                 total_dmg = 0
+                # One cast's damage, shared between its missiles: each used
+                # to carry the whole of it, so seven missiles were seven
+                # spells (2.2 weapon attacks from Force Storm). Each missile
+                # still rolls spell.power, but the cast is reckoned once, so
+                # its passives (a spell crit, the Heart of Ahriman's charge)
+                # are the whole volley's: the first missile used to spend the
+                # Heart's charge alone. sum/missiles**2 is the old per-missile
+                # share, f(roll)/missiles, averaged over the volley.
+                _rolls = [(_roll(power) if power else 4) for _ in range(missiles)]
+                per_missile = max(1, self._spell_damage(sum(_rolls), chain) // (missiles * missiles))
                 for _ in range(missiles):
                     if not target.alive:
                         break
-                    base_dmg = _roll(power) if power else 4
-                    # One cast's damage, shared between its missiles: each
-                    # used to carry the whole of it, so seven missiles were
-                    # seven spells (2.2 weapon attacks from Force Storm).
-                    per_missile = max(1, self._spell_damage(base_dmg, chain) // missiles)
                     total_dmg += target.take_damage(per_missile)     # C11
                 self.add_message(
                     f"{missiles} magic missile{'s' if missiles > 1 else ''} "
