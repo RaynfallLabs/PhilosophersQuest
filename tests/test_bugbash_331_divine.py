@@ -129,3 +129,17 @@ def test_b9_robes_of_solomon_do_not_spend_the_command_on_a_named_demon(monkeypat
     g._refresh_fov()
     assert spent == ['demon_command_one_per_floor']
     assert imp.has_effect('charmed') and not boss.has_effect('charmed')
+
+
+# ---------------------------------------------------------------------------
+# B11: altars. The one plain defect found: the answered intercession's line
+# wrote "a Eye of the Graeae" (the Journal line beside it already said "an").
+# ---------------------------------------------------------------------------
+
+def test_b11_intercession_names_its_gift_with_the_right_article(monkeypatch):
+    g = _game(seed=111)
+    monkeypatch.setattr(type(g), '_spawn_intercession_artifact',
+                        lambda self, x, y: 'Eye of the Graeae')
+    g._resolve_intercession_success()
+    line = next(t for t in _texts(g) if 'THE HEAVENS OPEN' in t)
+    assert 'an Eye of the Graeae' in line, line
