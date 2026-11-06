@@ -5859,7 +5859,7 @@
       "That a great storm was coming that would wreck the Greek fleet.",
       "That Athens had already surrendered to the king in secret."
     ],
-    "context": "Themistocles sent Sicinnus, the Persian tutor of his own children, with the bluff that the Greeks were breaking apart and would flee. Xerxes believed it and sealed the exits, trapping his own oversized fleet in waters too cramped to maneuver; Herodotus says roughly 300 Persian ships were lost to about 40 Greek.",
+    "context": "Themistocles sent Sicinnus, the Persian tutor of his own children, with the bluff that the Greeks were breaking apart and would flee. Xerxes believed it and sealed the exits, trapping his own oversized fleet in waters too cramped to maneuver. Herodotus gives no count of the Persian losses; modern estimates run from about 200 to 300 ships, against some 40 Greek.",
     "topic": "battle-of-salamis-480-bc-themistocles-naval-trap"
   },
   {
@@ -6163,7 +6163,7 @@
   },
   {
     "tier": 4,
-    "question": "American and Japanese fleets fought for five days in the Coral Sea, north of Australia, in May 1942, in one of the largest sea battles in history. Yet the ships of the two sides never traded a single shot directly at one another. How was that possible?",
+    "question": "Allied and Japanese fleets fought for five days in the Coral Sea, off northeastern Australia, in May 1942, as Japan reached for Port Moresby on New Guinea. Yet the ships of the two sides never traded a single shot directly at one another. How was that possible?",
     "answer": "The whole battle was fought by carrier aircraft striking ships far over the horizon",
     "choices": [
       "The whole battle was fought by carrier aircraft striking ships far over the horizon",
@@ -6206,11 +6206,11 @@
     "answer": "The loudest man-made sound in history to that point",
     "choices": [
       "The loudest man-made sound in history to that point",
-      "The first shot fired in the First World War",
-      "The deepest tunnel ever dug under a city",
-      "The first use of poison gas on the Western Front"
+      "The first mine ever fired beneath enemy lines",
+      "The first explosive charge ever set off by radio",
+      "The brightest flash ever seen from the air to that point"
     ],
-    "context": "The crater the Lochnagar mine left is still the largest ever made by warfare, and it survives in the French countryside today as a memorial. Source: https://www.lochnagarcrater.org/history/statistics/ ; https://en.wikipedia.org/wiki/Lochnagar_mine",
+    "context": "The noise was reportedly heard as far away as London. The crater the Lochnagar mine left, about 330 feet wide and 70 feet deep, survives in the French countryside today as a memorial. Source: https://en.wikipedia.org/wiki/Lochnagar_mine ; https://www.lochnagarcrater.org/history/statistics/",
     "topic": "battle-of-the-somme"
   },
   {
@@ -6249,7 +6249,7 @@
       "\"France will never kneel!\"",
       "\"Hold or die here!\""
     ],
-    "context": "\"Ils ne passeront pas!\" became the watchword of Verdun, associated with General Philippe Petain, who ordered the front line to hold fast. Source: firstworldwar.com/battles/verdun.htm",
+    "context": "\"Ils ne passeront pas!\" became the watchword of Verdun. It is often tied to General Philippe Petain, who ordered the front line to hold fast, but its documented source is his successor Robert Nivelle, whose order of 23 June 1916 told the troops not to let the enemy pass; posters later spread the slogan. Source: https://en.wikipedia.org/wiki/They_shall_not_pass",
     "topic": "battle-of-verdun"
   },
   {
@@ -6260,17 +6260,17 @@
       "A truck rolled past every 14 seconds",
       "A truck rolled past every 4 minutes",
       "A convoy crossed twice a day",
-      "A single train ran each night"
+      "A truck rolled past every hour"
     ],
-    "context": "Up to 12,000 vehicles a day formed an unbroken stream hauling men and shells to the front, since the rail lines were cut and this road was Verdun's only lifeline. Source: worldhistory.org/article/2878/battle-of-verdun/",
+    "context": "An unbroken stream of trucks hauled men and shells to the front day and night, since the main rail lines were cut and this road had become Verdun's main lifeline. Source: worldhistory.org/article/2878/battle-of-verdun/",
     "topic": "battle-of-verdun"
   },
   {
     "tier": 4,
     "question": "Sylvain Raynal, the French major commanding Fort Vaux, fought the Germans corridor by corridor through its tunnels in June 1916, his men dying of thirst under gas attacks with every telephone line cut. To get one last message out, Raynal turned to an unusual messenger. What did he send?",
-    "answer": "His last carrier pigeon",
+    "answer": "A carrier pigeon",
     "choices": [
-      "His last carrier pigeon",
+      "A carrier pigeon",
       "A runner through the sewers",
       "A signal mirror at dawn",
       "A swimmer down the moat"
@@ -6293,7 +6293,7 @@
   },
   {
     "tier": 5,
-    "question": "Erich von Falkenhayn, chief of the German army, chose to attack Verdun knowing that French national pride would force France to defend it to the last man. He was not really aiming to capture the town at all. How did he sum up his grim purpose?",
+    "question": "Erich von Falkenhayn, chief of the German army, launched the attack on Verdun in 1916. After the war he wrote in his memoirs that French pride would force France to defend the town to the last man, and that he never really meant to take it. How did he sum up his grim purpose?",
     "answer": "To 'bleed France white'",
     "choices": [
       "To 'bleed France white'",
@@ -6301,7 +6301,7 @@
       "To 'win by sheer numbers'",
       "To 'starve France of guns'"
     ],
-    "context": "Falkenhayn's aim was attrition itself, compelling the French to throw in every man they had. The battle cost both sides roughly 700,000 casualties, with around 300,000 dead. Source: britannica.com/event/Battle-of-Verdun and worldhistory.org/article/2878/battle-of-verdun/",
+    "context": "Falkenhayn's memoirs, published after the war, quote a 'Christmas memorandum' he said he sent the Kaiser in December 1915, with attrition itself as the aim. No copy has ever been found, and historians still argue whether bleeding France white was his plan from the start or a later excuse. The battle cost both sides roughly 700,000 casualties, with around 300,000 dead. Source: germanhistorydocs.ghi-dc.org (Falkenhayn Christmas Memo); britannica.com/event/Battle-of-Verdun",
     "topic": "battle-of-verdun"
   },
   {
@@ -6332,13 +6332,13 @@
   },
   {
     "tier": 2,
-    "question": "Beethoven gave the world one of its most beloved melodies in the Ninth Symphony that Vienna first heard in 1824: the tune known as the Ode to Joy. A great union of nations later adopted it as its official anthem. Which union?",
+    "question": "Beethoven gave the world one of its most beloved melodies in the Ninth Symphony that Vienna first heard in 1824: the tune known as the Ode to Joy. A body of many nations later adopted it as its official anthem. Which one?",
     "answer": "The European Union",
     "choices": [
       "The European Union",
       "The United Nations",
       "The British Commonwealth",
-      "The International Red Cross"
+      "The African Union"
     ],
     "context": "The choral finale sets Friedrich Schiller's poem 'An die Freude' ('Ode to Joy'); its melody is today the official anthem of the European Union. en.wikipedia.org/wiki/Symphony_No._9_(Beethoven)",
     "topic": "beethoven-the-deaf-composer-and-the-ninth"
@@ -6398,9 +6398,9 @@
   {
     "tier": 4,
     "question": "At Heiligenstadt, a village outside Vienna, Beethoven, then 31, poured his despair into a letter to his brothers in 1802, terrified that his growing deafness was destroying everything he was. He never sent it, and it turned up only after he died. In it he confessed he had come close to ending his own life, and named the one thing that had held him back. What was it?",
-    "answer": "His art — the music he still felt called to write",
+    "answer": "His art, and the music he still had to write",
     "choices": [
-      "His art — the music he still felt called to write",
+      "His art, and the music he still had to write",
       "His faith in God and a life to come",
       "His duty to look after his younger brothers",
       "His hope that a doctor would yet cure him"
@@ -6410,28 +6410,28 @@
   },
   {
     "tier": 4,
-    "question": "Anton Schindler, Beethoven's secretary and first biographer, reported that the composer called the four-note opening of his Fifth Symphony 'Fate knocking at the door.' Almost everyone has heard the line, yet historians now doubt Beethoven ever said it. Why has the quotation fallen under suspicion?",
+    "question": "Anton Schindler, Beethoven's secretary and early biographer, reported that the composer called the four-note opening of his Fifth Symphony 'Fate knocking at the door.' Almost everyone has heard the line, yet historians now doubt Beethoven ever said it. Why has the quotation fallen under suspicion?",
     "answer": "The man who reported it forged entries in Beethoven's notebooks",
     "choices": [
       "The man who reported it forged entries in Beethoven's notebooks",
       "The man who reported it admitted he had made the line up",
-      "The man who reported it had never actually met Beethoven",
-      "The man who reported it was a rival composer with a grudge"
+      "The man who reported it confused the Fifth with another symphony",
+      "The man who reported it was paid by a music publisher to promote the work"
     ],
     "context": "The phrase comes from Beethoven's secretary Anton Schindler, now known to have forged entries in Beethoven's notebooks, so scholars treat 'Fate knocking' as almost certainly invented rather than the composer's own words. en.wikipedia.org/wiki/Symphony_No._5_(Beethoven); classical-music.com/features/works/beethoven-fifth-symphony",
     "topic": "beethoven-the-deaf-composer-and-the-ninth"
   },
   {
     "tier": 4,
-    "question": "Beethoven lay dying in Vienna in March 1827 when word came that a long-awaited case of fine wine had arrived as a gift from his London publisher. Those at his bedside said his reply was his last words. What did the dying composer say?",
-    "answer": "'Pity, pity — too late!'",
+    "question": "Beethoven lay dying in Vienna in March 1827 when word came that a long-awaited case of fine wine had arrived, a gift from Schott, his publisher in Mainz. Those at his bedside said his reply was his last words. What did the dying composer say?",
+    "answer": "'Pity, pity, too late!'",
     "choices": [
-      "'Pity, pity — too late!'",
+      "'Pity, pity, too late!'",
       "'At last, my dear old friend.'",
       "'Pour it out, and let me rest.'",
       "'Tell them all I forgive them.'"
     ],
-    "context": "Beethoven died on 26 March 1827, aged 56; his documented last words, on hearing of the wine, were reportedly 'Pity, pity — too late!' en.wikipedia.org/wiki/Death_of_Ludwig_van_Beethoven; popularbeethoven.com/what-were-beethovens-last-words/",
+    "context": "Beethoven died on 26 March 1827, aged 56; his documented last words, on hearing that the wine he had asked Schott to send had come, were reportedly 'Pity, pity — too late!' en.wikipedia.org/wiki/Death_of_Ludwig_van_Beethoven; popularbeethoven.com/what-were-beethovens-last-words/",
     "topic": "beethoven-the-deaf-composer-and-the-ninth"
   },
   {
@@ -6554,12 +6554,12 @@
   {
     "tier": 3,
     "question": "Benedict Arnold, one of the boldest generals in Washington's army, took a bad leg wound leading a charge at Saratoga. Yet slights from Congress embittered him, and he was buried in debt. He secretly agreed to betray the Americans for British money and a British command. What did he plot to hand over to the enemy?",
-    "answer": "West Point, the fort guarding the Hudson River",
+    "answer": "The great Hudson River fort at West Point",
     "choices": [
-      "West Point, the fort guarding the Hudson River",
+      "The great Hudson River fort at West Point",
       "George Washington's personal battle plans",
-      "the Continental Army's main gunpowder stores",
-      "the harbor defenses of New York City"
+      "The Continental Army's main gunpowder stores",
+      "The harbor defenses of New York City"
     ],
     "context": "Arnold negotiated 20,000 British pounds and a generalship for surrendering West Point, the fort that controlled the Hudson River. After the plot collapsed he received only about 6,000 of the promised 20,000 pounds. His name became the American synonym for traitor; he died unpopular in London in 1801. Source: history.com, 'Benedict Arnold commits treason' / '9 things you may not know about Benedict Arnold'.",
     "topic": "benedict-arnold-s-treason"
@@ -6567,14 +6567,14 @@
   {
     "tier": 4,
     "question": "Three militiamen stopped a British courier near Tarrytown, New York: John Andre, a major carrying the secret plans of Benedict Arnold's plot. Andre tried to bluff his way past, but the men searched him and found the papers in an unexpected hiding place. Where were the plans hidden?",
-    "answer": "folded inside his boot",
+    "answer": "inside his stocking",
     "choices": [
-      "folded inside his boot",
+      "inside his stocking",
       "sewn into his saddle",
       "rolled in his pistol barrel",
       "tucked under his hat"
     ],
-    "context": "Three ordinary militiamen, John Paulding, Isaac Van Wart, and David Williams, caught Andre and found the plans hidden in his boot/stocking. Andre offered them a bribe to let him go; they refused. He asked to die a soldier's death by firing squad rather than the gallows; the request was denied and he was hanged at Tappan, New York on October 2, 1780, at age 29. Source: metmuseum.org collection record; allthingsliberty.com, 'Major Andre's Captors Revisited'; westminster-abbey.org, 'John Andre'.",
+    "context": "Three ordinary militiamen, John Paulding, Isaac Van Wart, and David Williams, caught Andre and found the plans hidden in his stocking, inside his boot. Andre offered them a bribe to let him go; they refused. He asked to die a soldier's death by firing squad rather than the gallows; the request was denied and he was hanged at Tappan, New York on October 2, 1780, aged 29 or 30 (his birth year is recorded as 1750 or 1751). Source: en.wikipedia.org/wiki/John_Andre; allthingsliberty.com, 'Major Andre's Captors Revisited'; westminster-abbey.org, 'John Andre'.",
     "topic": "benedict-arnold-s-treason"
   },
   {
@@ -7077,9 +7077,9 @@
     "answer": "Cut every road, rail line, and canal into it",
     "choices": [
       "Cut every road, rail line, and canal into it",
-      "Shut off its electricity and water mains",
+      "Closed the air corridors over it",
       "Closed its banks and froze its money",
-      "Halted all its mail and telephone lines"
+      "Sealed every street into the Soviet sector"
     ],
     "context": "With every land and water route sealed, West Berlin had only about 36 days of food and roughly six weeks of coal left. Source: history.com 'Soviets Blockade West Berlin'; en.wikipedia.org/wiki/Berlin_Blockade.",
     "topic": "berlin-blockade-airlift"
@@ -7099,7 +7099,7 @@
   },
   {
     "tier": 3,
-    "question": "Allied pilots brought loaded supply planes down on West Berlin's runways day and night at the height of the airlift. A busy peacetime airport might land one plane every minute or two; the airlift packed them in far tighter. About how often did a fully loaded plane touch down?",
+    "question": "Allied pilots brought loaded supply planes down on West Berlin's runways day and night at the height of the airlift, in every kind of weather. A busy peacetime airport might land a plane every few minutes. About how often did a fully loaded airlift plane touch down?",
     "answer": "Every 45 seconds",
     "choices": [
       "Every 45 seconds",
@@ -7125,7 +7125,7 @@
   },
   {
     "tier": 4,
-    "question": "Airlift pilots had to fly at least 4,500 tons of supplies into West Berlin every day just to keep its two million people alive. Food, though, was the smaller share of that weight. What made up the larger share of the cargo the city needed?",
+    "question": "Airlift planners worked out that West Berlin's two million people needed about 5,000 tons of supplies flown in every day just to stay alive. Food, though, was the smaller share of that weight. What made up the larger share of the cargo the city needed?",
     "answer": "Coal for heat and power",
     "choices": [
       "Coal for heat and power",
@@ -7133,7 +7133,7 @@
       "Ammunition for the troops",
       "Timber and cement"
     ],
-    "context": "Of the daily minimum, roughly 3,475 tons was coal versus about 1,500 tons of food -- keeping the lights and furnaces on mattered as much as eating. Source: airandspace.si.edu 'Supplying a City by Air'; historyfacts.com '5 Astonishing Facts About the Berlin Airlift'.",
+    "context": "Planners reckoned the city needed about 1,534 tons of food a day and about 3,475 tons of coal and fuel: keeping the lights and furnaces on mattered as much as eating. Source: thisdayinaviation.com 'Berlin Airlift'; airandspace.si.edu 'Supplying a City by Air'.",
     "topic": "berlin-blockade-airlift"
   },
   {
@@ -7194,9 +7194,9 @@
     "answer": "He overruled them all and kept the line.",
     "choices": [
       "He overruled them all and kept the line.",
-      "He cut the line to spare Gorbachev.",
-      "He let his advisors rewrite the ending.",
-      "He softened it into a polite request."
+      "He let West Germany's chancellor decide.",
+      "He put it to a vote of his cabinet.",
+      "He left the choice to his speechwriter."
     ],
     "context": "On May 18, 1987, Reagan told his speechwriters simply, \"I think we'll leave it in.\" In the limousine to the gate he grinned at aide Ken Duberstein: \"It's gonna drive the State Department boys crazy, but I'm gonna leave it in.\" Deputy National Security Advisor Colin Powell had sided with Baker against the line. Source: Wikipedia, 'Tear down this wall!'; Stanford Report, 2019, 'Reagan's Mr. Gorbachev, tear down this wall was almost left unsaid.'",
     "topic": "berlin-wall-tear-down-this-wall"
@@ -7242,15 +7242,15 @@
   },
   {
     "tier": 4,
-    "question": "The same trains rolled over a stretch of English track where, from 1862, one rail of Bessemer's cheap new steel lay beside ordinary iron rails. The soft iron rails wore out and had to be replaced, while the steel rail just sat there unworn. By the time the steel rail finally needed replacing, how many times had the iron rails been swapped out?",
-    "answer": "Eighteen times over",
+    "question": "A London railway laid two rails of Bessemer's cheap new steel at Chalk Farm, its busiest spot, in May 1862, facing two new iron rails under the same trains. The steel came up three years later, worn by just a quarter of an inch and fit for more. How had the iron fared beside them?",
+    "answer": "Eight iron rails had worn out on both faces",
     "choices": [
-      "Eighteen times over",
-      "Just twice over",
-      "Not even once",
-      "Exactly once over"
+      "Eight iron rails had worn out on both faces",
+      "Two iron rails had worn out on one face each",
+      "One iron rail had been turned over once",
+      "No iron rail had needed changing yet"
     ],
-    "context": "The single Bessemer steel rail outlasted eighteen replacements of the iron rails next to it. In hard-worn spots, iron rails sometimes wore out in under six months; steel rails carried heavier locomotives and longer trains and lasted for decades — which is why cheap steel rapidly replaced iron across the railroads. Source: cprr.org/Museum/Iron_and_Steel_Rails.html; trains.com 'Rail' / ABCs of Railroading.",
+    "context": "When one of the steel rails was taken up on 22 August 1865, its face had worn evenly down about a quarter of an inch, and it could still have done much more work. In the same time eight iron rails beside the steel had worn out on both faces: each iron rail had two faces and was turned over when one wore through, and a face lasted little more than two months there. Source: London Quarterly Review, July 1866, quoted at cprr.org/Museum/Iron_and_Steel_Rails.html",
     "topic": "bessemer-process-and-the-age-of-steel"
   },
   {
@@ -7259,9 +7259,9 @@
     "answer": "A perfect five-pointed star",
     "choices": [
       "A perfect five-pointed star",
-      "A ring of thirteen stripes",
-      "A curled red ribbon",
-      "A small blue square"
+      "A perfect eight-pointed star",
+      "A ring of thirteen tiny stars",
+      "A perfect six-petaled flower"
     ],
     "context": "The one-snip five-pointed star is the most beloved detail of the Betsy Ross story, and the committee is said to have chosen it for the new flag. It's a treasured national folk-tale, first told publicly by Ross's grandson decades later rather than firmly documented at the time. (ushistory.org/betsy/flagtale.html; historicphiladelphia.org)  (Legend.)",
     "topic": "betsy-ross-the-first-flag-legend"
@@ -7269,12 +7269,12 @@
   {
     "tier": 2,
     "question": "A small group of visitors came to the Philadelphia sewing shop of a young widow named Betsy Ross in June 1776, an old American story says, and asked her to stitch the very first flag of the new United States: thirteen stripes and a ring of stars. Which famous American leader supposedly came along?",
-    "answer": "General George Washington",
+    "answer": "George Washington",
     "choices": [
-      "General George Washington",
-      "King George the Third",
-      "Captain John Smith",
-      "Governor William Penn"
+      "George Washington",
+      "Benjamin Franklin",
+      "John Adams",
+      "Thomas Jefferson"
     ],
     "context": "In the tale, Washington came with financier Robert Morris and Colonel George Ross (the uncle of Betsy's late husband). The story even says Ross knew Washington already — their church pews at Christ Church sat side by side. A beloved folk-tale, not firmly documented. (ushistory.org/betsy/flagtale.html)  (Legend.)",
     "topic": "betsy-ross-the-first-flag-legend"
@@ -7675,7 +7675,7 @@
     "answer": "There are vastly more ways to be a mess than to be whole",
     "choices": [
       "There are vastly more ways to be a mess than to be whole",
-      "A hidden law of physics forbids broken things from mending",
+      "The broken shell cools too fast to fuse back together",
       "The egg loses weight as it breaks, so it cannot rebuild",
       "Time pushes on objects with a small but constant force"
     ],
@@ -7710,15 +7710,15 @@
   },
   {
     "tier": 5,
-    "question": "Ernst Mach and other powerful colleagues insisted that atoms were a convenient fiction, and Ludwig Boltzmann's whole theory of heat depended on their being real. Boltzmann died in 1906 convinced the deniers had won. What happened just two years later?",
+    "question": "Ernst Mach and other powerful colleagues insisted that atoms were a convenient fiction, and Ludwig Boltzmann's whole theory of heat depended on their being real. Boltzmann died in 1906, before the fight was settled. What happened just two years later?",
     "answer": "Jean Perrin measured Brownian motion and proved atoms are real",
     "choices": [
       "Jean Perrin measured Brownian motion and proved atoms are real",
-      "Ernst Mach published a final book denying atoms once more",
+      "Wilhelm Ostwald published a proof that atoms cannot exist",
       "The Vienna academy quietly removed Boltzmann's name from its rolls",
       "A rival theory of continuous matter swept across the universities"
     ],
-    "context": "Perrin's 1908 experiments on Brownian motion gave decisive proof that atoms exist, vindicating Boltzmann right after he died believing he had failed. Even Ostwald eventually conceded; Planck and Einstein carried Boltzmann's ideas to victory. Source: kroneckerwallis.com/ludwig-boltzmann-the-physicist-who-proved-atoms-exist-through-statistics ; plato.stanford.edu/entries/statphys-Boltzmann",
+    "context": "Perrin's 1908 experiments on Brownian motion gave decisive proof that atoms exist, vindicating Boltzmann just after his death. Even Ostwald eventually conceded; Planck and Einstein carried Boltzmann's ideas to victory. Source: en.wikipedia.org/wiki/Ludwig_Boltzmann ; plato.stanford.edu/entries/statphys-Boltzmann",
     "topic": "boltzmann-entropy-and-the-equation-on-the-tombst"
   },
   {
@@ -7775,7 +7775,7 @@
   },
   {
     "tier": 1,
-    "question": "Boston's Sons of Liberty climbed aboard three British tea ships after dark on 16 December 1773 to tip the tea overboard. They did not go as themselves: they smeared their faces with soot and wrapped up in blankets. Who were they dressed as?",
+    "question": "Boston's Sons of Liberty climbed aboard three ships loaded with British tea after dark on 16 December 1773 to tip the cargo overboard. They did not go as themselves: they smeared their faces with soot and wrapped up in blankets. Who were they dressed as?",
     "answer": "Mohawk warriors",
     "choices": [
       "Mohawk warriors",
@@ -7802,9 +7802,9 @@
   {
     "tier": 3,
     "question": "Boston's Sons of Liberty tipped the East India Company's tea into the harbor in December 1773. That same year Parliament had passed the Tea Act to help the struggling Company. What had the new law done to the tea's price?",
-    "answer": "Lowered it, so it would undersell smuggled Dutch tea",
+    "answer": "Lowered it below what smugglers charged",
     "choices": [
-      "Lowered it, so it would undersell smuggled Dutch tea",
+      "Lowered it below what smugglers charged",
       "Doubled it overnight with a steep new duty",
       "Frozen it at the old smugglers' rate",
       "Tied it to the price of British wool"
@@ -7840,7 +7840,7 @@
   },
   {
     "tier": 3,
-    "question": "Botticelli hid a signature in the orange trees behind the figures of his Primavera. Their round gold fruit echoes the gold balls on a famous coat of arms, the badge of the family that paid for the work. Which family was he honoring?",
+    "question": "Botticelli hid a tribute in the orange trees behind the figures of his Primavera. Their round gold fruit echoes the balls on a famous coat of arms, the badge of the family that paid for the work. Which family was he honoring?",
     "answer": "The Medici family",
     "choices": [
       "The Medici family",
@@ -7848,7 +7848,7 @@
       "The Sforza family",
       "The Visconti family"
     ],
-    "context": "The golden oranges echo the gold balls — the 'palle' — on the Medici coat of arms; both Primavera and the Birth of Venus were Medici works. Source: https://en.wikipedia.org/wiki/Primavera_(Botticelli)",
+    "context": "The golden oranges echo the balls, the 'palle', on the Medici coat of arms (mostly red balls on a gold shield), and an orange grove was itself a Medici symbol; both Primavera and the Birth of Venus were Medici works. Source: https://en.wikipedia.org/wiki/Primavera_(Botticelli)",
     "topic": "botticelli-birth-of-venus-and-primavera"
   },
   {
@@ -8010,11 +8010,11 @@
   {
     "tier": 3,
     "question": "Filippo Brunelleschi began raising Florence's cathedral dome in 1420, the widest brick dome anyone had ever attempted, and the judges feared it would crumble before its mortar set. Every builder believed a dome that size needed one thing to hold it up while it was being built. What did Brunelleschi do without?",
-    "answer": "Any wooden scaffolding rising from the ground to hold the dome up as it rose",
+    "answer": "Any wooden scaffolding rising up from the cathedral floor",
     "choices": [
-      "Any wooden scaffolding rising from the ground to hold the dome up as it rose",
+      "Any wooden scaffolding rising up from the cathedral floor",
       "Any iron chain wrapped around the base to stop it spreading",
-      "Any central stone pillar inside to carry the weight",
+      "Any ox-driven hoist to lift the stone and brick to the top",
       "Any smaller practice dome built first to test the design"
     ],
     "context": "No one in 1418 knew it was possible to raise a dome that wide with nothing supporting it from below. More than 600 years later it is still the largest masonry (brick-and-stone) dome ever built. (Museo Galileo / IMSS Brunelleschi archive: 'the biggest dome ever built without using centring to support the masonry'; ArchDaily, 'How Did Filippo Brunelleschi Construct the World's Largest Masonry Dome?')",
@@ -8036,12 +8036,12 @@
   {
     "tier": 4,
     "question": "In the Sallatha Sutta the Buddha taught that physical pain cannot be avoided, but that much misery is something extra a person piles on himself. When an untrained man is hurt, the Buddha said, he is struck not once but twice: first by the hurt itself, then by his own grief, resentment and brooding over it. In the Buddha's own image, what is that second blow?",
-    "answer": "A second arrow we shoot into ourselves",
+    "answer": "A second arrow, shot right after the first",
     "choices": [
-      "A second arrow we shoot into ourselves",
-      "A wound that never finishes healing",
-      "A debt we can never finish paying",
-      "A shadow that follows us everywhere"
+      "A second arrow, shot right after the first",
+      "A thorn pushed deeper into the same foot",
+      "A second wave that knocks him down again",
+      "A burn from touching the same fire twice"
     ],
     "context": "In the Sallatha Sutta the Buddha used the image of 'two arrows.' When something hurts, an untrained person is struck twice -- first by the physical pain (the first arrow), then by self-made grief, resentment, and storytelling about it (the second arrow), feeling two pains. The trained disciple feels the first arrow but not the second: 'he feels one pain: physical, but not mental.' Source: https://www.accesstoinsight.org/tipitaka/sn/sn36/sn36.006.than.html",
     "topic": "buddhism-four-noble-truths-eightfold-path"
@@ -8053,8 +8053,8 @@
     "choices": [
       "He had lived as a pampered prince and then nearly starved himself as an ascetic",
       "He had reigned as a great king and then begged for alms in rags",
-      "He had led armies in war and then lived alone in a forest",
-      "He had mastered the old scriptures and then debated rival teachers"
+      "He had grown rich as a merchant and then fasted alone in a cave",
+      "He had served as a temple priest and then whipped himself in penance"
     ],
     "context": "The Buddha opened his first sermon by naming two extremes to avoid: devotion to sensual pleasure ('base, vulgar, common, ignoble, unprofitable') and devotion to self-affliction ('painful, ignoble, unprofitable'). The Middle Way between them was the discovery of a man who had tried both -- he had lived as a pampered prince and then nearly starved himself as an ascetic before finding the road in the middle. Source: https://www.dhammatalks.org/suttas/SN/SN56_11.html",
     "topic": "buddhism-four-noble-truths-eightfold-path"
@@ -8091,9 +8091,9 @@
     "answer": "The British lost over 1,000 men taking the hill",
     "choices": [
       "The British lost over 1,000 men taking the hill",
-      "The colonists never actually retreated",
-      "The British surrendered their cannon afterward",
-      "The fighting lasted for three straight days"
+      "The Americans killed General Howe in the final charge",
+      "The Americans held the hill again the very next day",
+      "Half the British troops in Boston deserted soon after"
     ],
     "context": "About 1,054 British casualties (including 89 officers killed or wounded) versus roughly 450 American. The colonists threw back the first two charges with close-range musket fire; the British only stormed the redoubt on the third assault, when the defenders ran out of powder. A victory that bloody showed Britain the colonists would stand and fight. Source: nps.gov/articles/000/the-battle-of-bunker-hill.htm; britannica.com/event/Battle-of-Bunker-Hill",
     "topic": "bunker-hill-siege-of-boston"
@@ -8182,7 +8182,7 @@
     "answer": "Shimmer and ripple, as if the wall itself is moving",
     "choices": [
       "Shimmer and ripple, as if the wall itself is moving",
-      "Stay a flat, even sheet of unchanging color",
+      "Reveal a hidden cross only from the doorway",
       "Cast colored shadows of red and blue onto the floor",
       "Slowly fade from gold to silver and back again"
     ],
@@ -8191,7 +8191,7 @@
   },
   {
     "tier": 4,
-    "question": "A painter of the 500s made the oldest surviving icon of Christ, working in colors mixed into hot wax, and it is still kept at Saint Catherine's monastery in the Sinai desert. He gave the two halves of the face different expressions on purpose. Which two faces of Christ did he paint into one portrait?",
+    "question": "A painter of the 500s made a portrait of Christ in colors mixed into hot wax, and the panel is still kept at Saint Catherine's monastery in the Sinai desert, among the oldest icons anywhere. The two halves of the face differ, and viewers have long read two sides of Christ in them. Which two?",
     "answer": "One half a stern judge, the other half a calm, merciful savior",
     "choices": [
       "One half a stern judge, the other half a calm, merciful savior",
@@ -8199,7 +8199,7 @@
       "One half awake with open eyes, the other half asleep",
       "One half lit by sun, the other half lost in shadow"
     ],
-    "context": "Cover one side, then the other, and you see two different men: the judge who sees all, and the savior who blesses. The icon was painted in encaustic (pigment in hot wax), a technique that grew rare after the icon-smashing fights. It survived only because remote Sinai sat far from the Byzantine emperors destroying images. Source: en.wikipedia.org/wiki/Christ_Pantocrator_(Sinai); mused.com.",
+    "context": "Cover one side, then the other, and two different men appear: the judge who sees all, and the savior who blesses; many also see Christ's two natures, divine and human, in the contrast. The icon was painted in encaustic (pigment in hot wax), a technique that grew rare after the icon-smashing fights. It survived because remote Sinai, under Muslim rule from the 600s, lay far from the Byzantine emperors destroying images. Source: en.wikipedia.org/wiki/Christ_Pantocrator_(Sinai)",
     "topic": "byzantine-mosaics-and-icons"
   },
   {
@@ -8230,15 +8230,15 @@
   },
   {
     "tier": 2,
-    "question": "At the heart of Cahokia, near modern St. Louis, its people heaped up a flat-topped pyramid of packed earth, now called Monks Mound. It rises about 100 feet, on a base of about 1,000 by 800 feet. How does it compare with every mound and pyramid raised across the Americas, north and south?",
+    "question": "At the heart of Cahokia, near modern St. Louis, its people heaped up a flat-topped pyramid of packed earth, now called Monks Mound. It rises about 100 feet, on a base of about 1,000 by 800 feet. How does it rank among all the earthen mounds of the Americas, north and south?",
     "answer": "the biggest earthen mound anywhere in the Americas",
     "choices": [
       "the biggest earthen mound anywhere in the Americas",
-      "smaller only than the stone pyramids of Mexico",
       "about equal to several other great American mounds",
-      "the biggest in the north but small beside Peru's"
+      "only the third biggest of the Mississippi valley's mounds",
+      "about half the size of Ohio's biggest mound"
     ],
-    "context": "Monks Mound is the largest earthwork in the Americas and the biggest pyramid north of Mexico — roughly 100 feet tall with a base about 1,000 by 800 feet, a footprint broader than the Great Pyramid of Giza in Egypt. Source: https://www.britannica.com/place/Monks-Mound",
+    "context": "Monks Mound is the largest earthwork in the Americas and the biggest pyramid north of Mexico, roughly 100 feet tall with a base about 1,000 by 800 feet, a footprint about the size of the Great Pyramid of Giza's. Source: https://en.wikipedia.org/wiki/Monks_Mound ; https://www.britannica.com/place/Monks-Mound",
     "topic": "cahokia-and-mississippian-culture"
   },
   {
@@ -8264,7 +8264,7 @@
       "atlatl",
       "shinny"
     ],
-    "context": "Chunkey was Cahokia's signature sport, and the city spread it across the South and Great Plains. Crowds bet so heavily that, by some accounts, ruined losers killed themselves rather than face their debts. A famous stone figurine shows a kneeling chunkey player, disc in one hand and sticks in the other. Source: https://www.worldhistory.org/Chunkey/",
+    "context": "Chunkey was Cahokia's signature sport, and the city spread it across the South and Great Plains. Centuries later, the painter George Catlin wrote that Mandan players often gambled away everything they possessed on it. A famous stone figurine shows a kneeling chunkey player, disc in one hand and sticks in the other. Source: https://www.worldhistory.org/Chunkey/",
     "topic": "cahokia-and-mississippian-culture"
   },
   {
@@ -8283,14 +8283,14 @@
   {
     "tier": 3,
     "question": "Mississippian Native Americans built their great city of Cahokia beside the Mississippi, near modern St. Louis, long before Europeans reached the Americas. Around 1100 perhaps 15,000 to 20,000 people lived there, among miles of earthen mounds and plazas. How did that crowd compare with the cities of Europe at the time?",
-    "answer": "It held more people than London or Paris did then.",
+    "answer": "It was about as big as London or Paris then.",
     "choices": [
-      "It held more people than London or Paris did then.",
+      "It was about as big as London or Paris then.",
       "It rivaled the world's greatest city, Constantinople.",
       "It was about the size of a small European market town.",
       "It held a few hundred souls, like a country village."
     ],
-    "context": "Around 1100 Cahokia held roughly 15,000-20,000 people, probably more than London or Paris at the same moment. No city in what is now the United States would grow larger until Philadelphia passed 40,000 in the 1780s. Source: https://en.wikipedia.org/wiki/Cahokia",
+    "context": "Around 1100 Cahokia held roughly 15,000-20,000 people, comparable to London or Paris at the same moment. If the highest estimates, up to 40,000, are right, no city in what is now the United States grew larger until Philadelphia passed 40,000 in the 1780s. Source: https://en.wikipedia.org/wiki/Cahokia",
     "topic": "cahokia-and-mississippian-culture"
   },
   {
@@ -8335,11 +8335,11 @@
   {
     "tier": 4,
     "question": "Diggers opening one grave at Cahokia found about 700 finely made arrowheads. Testing the stone traced it to four far-apart regions: Tennessee, Wisconsin, southern Illinois and Oklahoma. Which explanation for that haul do scholars favor?",
-    "answer": "trade networks that reached across half a continent into Cahokia",
+    "answer": "trade networks had carried them across half a continent into Cahokia",
     "choices": [
-      "trade networks that reached across half a continent into Cahokia",
+      "trade networks had carried them across half a continent into Cahokia",
       "Cahokia's war parties had raided each of the four regions in turn",
-      "Cahokia's own traders had travelled out to all four regions themselves",
+      "spring floods had washed the stones down the rivers to Cahokia",
       "pilgrims had carried points from their home regions as offerings"
     ],
     "context": "The roughly 700 arrowheads were sourced to four distant regions — Tennessee, southern Illinois, Wisconsin, and the Oklahoma Caddo — proof of trade networks reaching across half a continent into Cahokia. Source: https://en.wikipedia.org/wiki/Mound_72",
@@ -8347,28 +8347,28 @@
   },
   {
     "tier": 4,
-    "question": "Cahokia's founders, who raised the largest city of ancient North America near modern St. Louis, left no writing behind, so their own name for it is lost. The name it carries today came much later. Where did it come from?",
-    "answer": "a much later, unrelated people who moved into the area after the city fell",
+    "question": "Cahokia's founders raised the largest city north of Mexico before Europeans came, near modern St. Louis, but they left no writing behind, so their own name for it is lost. The name it carries today came much later. Where did it come from?",
+    "answer": "a much later people who moved into the area after the city fell",
     "choices": [
-      "a much later, unrelated people who moved into the area after the city fell",
+      "a much later people who moved into the area after the city fell",
       "the French missionaries who built a chapel among the ruined mounds",
       "an American army surveyor sent to map the strange earthen mounds",
       "Spanish explorers who came up the river valley hunting for gold"
     ],
-    "context": "The builders left no writing, so we do not know what they called their city or themselves. The name 'Cahokia' actually belongs to a much later, unrelated Illiniwek (Illini) people who lived in the area centuries after the city was abandoned. Source: https://en.wikipedia.org/wiki/Cahokia",
+    "context": "The builders left no writing, so their own names for their city and themselves are lost. The name 'Cahokia' belongs to a band of the Illiniwek (Illini) people who lived in the area when French explorers arrived in the 1600s, centuries after the city was abandoned, and who are not known to descend from its builders. Source: https://en.wikipedia.org/wiki/Cahokia",
     "topic": "cahokia-and-mississippian-culture"
   },
   {
     "tier": 5,
     "question": "Archaeologists digging Mound 72 at Cahokia found about 272 people buried there over roughly a century. One pit held 53 young women, all about 15 to 30 years old, set out in neat rows in two layers. What did the archaeologists conclude about how the women died?",
-    "answer": "they had been strangled and buried as sacrifices",
+    "answer": "they had been killed as human sacrifices",
     "choices": [
-      "they had been strangled and buried as sacrifices",
-      "they had been a chief's wives, buried to follow him in death",
+      "they had been killed as human sacrifices",
+      "they had died together in a sudden plague",
       "they had been warriors fallen in a great battle",
       "they had been travelers lost to a winter storm"
     ],
-    "context": "Mound 72 held about 272 people buried over roughly a century, and scholars estimate nearly 62 percent were sacrificial victims — evidence that Cahokia's rulers held the power of life and death. The 53 young women, ages about 15 to 30, were laid in two layers separated by matting and showed signs of strangulation. A separate pit held 39 people who had been killed violently. Source: https://en.wikipedia.org/wiki/Mound_72",
+    "context": "Mound 72 held about 272 people buried over roughly a century, and scholars estimate nearly 62 percent were sacrificial victims, evidence that Cahokia's rulers held the power of life and death. The 53 young women, ages about 15 to 30, were laid in two layers separated by matting, and their remains show that they were put to death before burial. A separate pit held 39 people who had been killed violently. Source: https://en.wikipedia.org/wiki/Mound_72",
     "topic": "cahokia-and-mississippian-culture"
   },
   {
@@ -8438,7 +8438,7 @@
   },
   {
     "tier": 3,
-    "question": "Portuguese and Spanish sailors with square sails could run only with the wind behind them, and a captain who ran a long way down the African coast could find himself stuck, unable to beat home against the wind. The caravel solved it with one piece of gear that let it sail close to the wind and tack its way back. What was it?",
+    "question": "Portuguese and Spanish sailors with square sails needed the wind mostly behind them, and a captain who ran a long way down the African coast could find himself stuck, unable to beat home against the wind. The caravel solved it with one piece of gear that let it sail close to the wind and tack its way back. What was it?",
     "answer": "A triangular lateen sail",
     "choices": [
       "A triangular lateen sail",
@@ -8455,11 +8455,11 @@
     "answer": "Polaris, the North Star",
     "choices": [
       "Polaris, the North Star",
-      "The planet Venus",
-      "The red star Mars",
-      "The Dog Star, Sirius"
+      "Sirius, the Dog Star",
+      "Betelgeuse, in Orion",
+      "Vega, in the Lyre"
     ],
-    "context": "Polaris stays within about 1 degree of true north, so its height above the horizon basically equals your latitude. A sailor sighted it at night through the two pinholes of his astrolabe and read the angle off the rim. By day he used the noon sun instead. (Source: exploration.marinersmuseum.org/object/astrolabe/)",
+    "context": "Polaris sits close to true north, so its height above the horizon, with a small correction navigators learned to apply, gives the observer's latitude. A sailor sighted it at night through the two pinholes of his astrolabe and read the angle off the rim. By day he used the noon sun instead. (Source: exploration.marinersmuseum.org/object/astrolabe/)",
     "topic": "caravel-compass-astrolabe"
   },
   {
@@ -8468,8 +8468,8 @@
     "answer": "A heavy disc hung steadier on a rolling deck",
     "choices": [
       "A heavy disc hung steadier on a rolling deck",
-      "Heavy metal held the sun's heat to glow at night",
-      "The weight let it double as an anchor in a calm",
+      "Thick metal kept the scale from wearing off",
+      "A heavy disc held its shape in tropical heat",
       "Extra metal stopped the brass from rusting at sea"
     ],
     "context": "The weight was a feature, not a bug: a heavy disc dangled by its ring hung steadier on a pitching, rolling deck, so the angle could be read. Even so, in high seas it still swung enough to throw a ship off course. (Source: exploration.marinersmuseum.org/object/astrolabe/)",
@@ -8504,9 +8504,9 @@
   {
     "tier": 5,
     "question": "Count Ludovico da Canossa, one of the speakers in Castiglione's Book of the Courtier, laid down a 'one universal rule' for the perfect courtier: he must hide every trace of the study and practice behind what he does. What did Canossa say happens to the courtier's grace the moment people glimpse the effort?",
-    "answer": "The grace is destroyed, because true art is the kind that does not look like art",
+    "answer": "The grace is destroyed, since true art never looks like art",
     "choices": [
-      "The grace is destroyed, because true art is the kind that does not look like art",
+      "The grace is destroyed, since true art never looks like art",
       "The grace is doubled, because the audience admires the labor",
       "The grace is unchanged, since skill speaks for itself",
       "The grace is delayed, until the courtier rests and tries again"
@@ -8520,9 +8520,9 @@
     "answer": "Rembrandt",
     "choices": [
       "Rembrandt",
-      "Vermeer",
-      "Titian",
-      "Caravaggio"
+      "Frans Hals",
+      "Jan Lievens",
+      "Gerrit Dou"
     ],
     "context": "Rembrandt sketched Raphael's Portrait of Baldassare Castiglione (c. 1514-15) at the 1639 auction; Rubens also painted a copy, now at the Courtauld. Castiglione and Raphael had been close friends since about 1504 at Urbino. Source: https://en.wikipedia.org/wiki/Portrait_of_Baldassare_Castiglione",
     "topic": "castiglione-the-courtier"
@@ -8673,9 +8673,9 @@
   {
     "tier": 5,
     "question": "Che Guevara took charge of the revolutionary tribunals at La Cabaña, the old Spanish fortress in Havana, in January 1959, and the men they condemned were shot in its floodlit moat. One was Jesús Sosa Blanco, an officer of Batista's, charged with 108 killings. By one account, as the firing squad took aim, what did Sosa Blanco do?",
-    "answer": "He shouted the squad's own commands at them — \"Atención! Apunte! Fuego!\" — ordering his own death",
+    "answer": "He shouted the firing squad's own commands, ordering his own death",
     "choices": [
-      "He shouted the squad's own commands at them — \"Atención! Apunte! Fuego!\" — ordering his own death",
+      "He shouted the firing squad's own commands, ordering his own death",
       "He fell to his knees and begged the young soldiers to spare his life",
       "He read aloud a list of judges he swore would die after him",
       "He stayed silent and refused the blindfold the guards offered him"
@@ -8685,13 +8685,13 @@
   },
   {
     "tier": 4,
-    "question": "A group of Cubans hijacked an old tugboat, the 13 de Marzo, on 13 July 1994 and made a run for the United States. Seven miles off Havana, Cuban government boats caught them and sank the tug, drowning 41 of the 72 people aboard, 10 of them children. What did the government boats use to sink it?",
-    "answer": "High-pressure water hoses, aimed at the people on deck",
+    "question": "A group of Cubans hijacked an old tugboat, the 13 de Marzo, on 13 July 1994 and made a run for the United States. Seven miles off Havana, Cuban government boats caught them and sank the tug, and 41 of the 72 people aboard drowned. How did the boats sink it?",
+    "answer": "Rammed it and blasted the deck with water hoses",
     "choices": [
-      "High-pressure water hoses, aimed at the people on deck",
-      "Mounted machine guns firing across the water",
-      "Depth charges dropped beneath the hull",
-      "Tow cables that dragged it back to port"
+      "Rammed it and blasted the deck with water hoses",
+      "Raked it with machine-gun fire from the bow",
+      "Dropped depth charges beneath its hull",
+      "Fired rockets into its engine room"
     ],
     "context": "Cuban government boats rammed the hijacked 13 de Marzo and blasted it with high-pressure water hoses until it sank; 41 of the 72 aboard drowned, 10 of them children. The sinking became the defining tragedy of the 1994 'balsero' (rafter) crisis, when tens of thousands of Cubans fled on homemade rafts of inner tubes and planks. https://en.wikipedia.org/wiki/Sinking_of_tugboat_13_de_Marzo",
     "topic": "castro-s-cuba-la-caba-a-the-exiles"
@@ -8711,15 +8711,15 @@
   },
   {
     "tier": 4,
-    "question": "Joseph Stalin watched German armies drive deep into Russia in the summer of 1942. On 28 July he issued an order that placed special units behind his own front lines, with orders to shoot any soldier who tried to retreat. By what number and short slogan is that order remembered?",
-    "answer": "Order No. 227, 'Not one step back!'",
+    "question": "Joseph Stalin watched German armies drive deep into Russia in the summer of 1942. On 28 July he issued Order No. 227, which placed special units behind his own front lines to shoot any soldier who tried to retreat. By what short slogan is that order remembered?",
+    "answer": "'Not one step back!'",
     "choices": [
-      "Order No. 227, 'Not one step back!'",
-      "Order No. 270, 'Surrender means treason!'",
-      "Order No. 88, 'Hold the motherland!'",
-      "Order No. 145, 'Forward without fear!'"
+      "'Not one step back!'",
+      "'Surrender means treason!'",
+      "'Hold the motherland!'",
+      "'Forward without fear!'"
     ],
-    "context": "Order No. 227's blocking detachments shot retreating troops; archives suggest as many as 158,000 Soviet soldiers were executed by their own side over the war, including about 15,000 in a couple of weeks at Stalingrad. A real share of the USSR's enormous losses traces to Stalin's own conduct, not the Germans alone. Source: Wikipedia, Order No. 227; ww2today.com.",
+    "context": "Order No. 227's blocking detachments were told to shoot panic-mongers and cowards on the spot. By one widely cited count, Soviet military courts sentenced some 158,000 of their own soldiers to be shot over the war, and the historian Antony Beevor puts the number executed during the Battle of Stalingrad alone at about 13,500. A real share of the USSR's enormous losses traces to Stalin's own conduct, not the Germans alone. Source: Wikipedia, Order No. 227; Antony Beevor, Stalingrad.",
     "topic": "casualties-and-scale-of-wwii"
   },
   {
@@ -8932,15 +8932,15 @@
   },
   {
     "tier": 3,
-    "question": "Long before he wrote about a mad old knight, Miguel de Cervantes fought as a soldier. In 1571, in a great sea battle where a Christian fleet crushed the Ottoman navy off Greece, he fought on though burning with fever and was struck by three bullets. What proud nickname did he give himself ever after?",
-    "answer": "El manco de Lepanto -- the one-handed man of Lepanto",
+    "question": "Long before he wrote about a mad old knight, Miguel de Cervantes fought as a soldier. In 1571, in a great sea battle where a Christian fleet crushed the Ottoman navy off Greece, he fought on though burning with fever and was struck by three bullets. What nickname did his wounds earn him for life?",
+    "answer": "The one-handed man of Lepanto",
     "choices": [
-      "El manco de Lepanto -- the one-handed man of Lepanto",
-      "El Cid -- the lord of the sea",
+      "The one-handed man of Lepanto",
+      "The lion of the Christian fleet",
       "The captain of La Mancha",
       "The iron knight of Spain"
     ],
-    "context": "Cervantes wore the maiming of his left hand at Lepanto (Oct 7, 1571) as a badge of honor, calling himself 'el manco de Lepanto.' Sources: en.wikipedia.org/wiki/Miguel_de_Cervantes; britannica.com/biography/Miguel-de-Cervantes.",
+    "context": "One bullet crippled his left hand at Lepanto (7 October 1571), and ever after he was called 'el manco de Lepanto.' He wore the wound as a badge of honor, writing that he had lost the use of his left hand for the glory of the right. Sources: en.wikipedia.org/wiki/Miguel_de_Cervantes; britannica.com/biography/Miguel-de-Cervantes.",
     "topic": "cervantes-don-quixote"
   },
   {
@@ -8959,14 +8959,14 @@
   {
     "tier": 4,
     "question": "Cervantes published the first part of Don Quixote in January 1605, when he was about 57, poor and worn down by life. It was an instant sensation across Europe. Why does the book hold a landmark place in the history of literature?",
-    "answer": "It is called the first modern novel",
+    "answer": "It is often called the first modern novel",
     "choices": [
-      "It is called the first modern novel",
-      "It was the first book ever printed in Spanish",
-      "It was the first story written about a king",
-      "It was the first book read aloud in churches"
+      "It is often called the first modern novel",
+      "It is often called the first printed Spanish book",
+      "It is often called the first book for children",
+      "It is often called the first history of Spain"
     ],
-    "context": "Don Quixote's instant fame is why it is called the first modern novel; today it is among the most-translated books on earth, with over 500 million copies. Source: en.wikipedia.org/wiki/Miguel_de_Cervantes; en.wikipedia.org/wiki/Don_Quixote.",
+    "context": "Don Quixote is often called the first modern novel, and today it is among the most translated books on earth. Source: en.wikipedia.org/wiki/Miguel_de_Cervantes; en.wikipedia.org/wiki/Don_Quixote.",
     "topic": "cervantes-don-quixote"
   },
   {
@@ -8979,7 +8979,7 @@
       "He abandoned the story in disgust",
       "He paid the rival to stop printing it"
     ],
-    "context": "The insult of Avellaneda's fake spurred Cervantes to complete his authentic Part Two in 1615. He died on April 22, 1616 -- the date tradition also links to Shakespeare's death, now marked as World Book Day. Source: en.wikipedia.org/wiki/Miguel_de_Cervantes.",
+    "context": "The insult of Avellaneda's fake spurred Cervantes to complete his authentic Part Two in 1615. He died on 22 April 1616 and was buried the next day; 23 April, the date tradition also gives for Shakespeare's death, is now marked as World Book Day. Source: en.wikipedia.org/wiki/Miguel_de_Cervantes.",
     "topic": "cervantes-don-quixote"
   },
   {
