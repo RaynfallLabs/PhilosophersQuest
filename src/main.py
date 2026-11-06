@@ -4214,7 +4214,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             or type(thing).__name__ in ('Artifact', 'MysteryAltar', 'MysteryKeyItem', 'MerchantNPC'))
 
     def _bring_within_reach(self):
-        """Nothing the run needs may sit where the player cannot walk.
+        """Nothing the run needs, and no loot, may sit where the player cannot
+        walk.
 
         A pool floods the ring of a room and leaves its middle an island; a
         lava river or a swamp can cut a region off. About one floor in six
@@ -4266,6 +4267,14 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                         free.remove((ax + dx, ay + dy))
         for it in self.ground_items:
             if (it.x, it.y) not in reach and self._needed_to_finish(it) and free:
+                it.x, it.y = nearest(it.x, it.y)
+        # Then the ordinary loot (food, gold, chests, gear): water, lava or a
+        # swamp cut it off on 5% of the early floors and about 20% of the deep
+        # ones (Brandon, 2026-11-06: "move it within reach"). After the
+        # needed things, so those get the nearest tiles.
+        for it in self.ground_items:
+            if ((it.x, it.y) not in reach and not getattr(it, 'not_pickable', False)
+                    and free):
                 it.x, it.y = nearest(it.x, it.y)
 
     def _settle_monsters(self):

@@ -906,10 +906,18 @@ class DivineMixin:
             elif chain == 3:
                 self.add_message("Royal insight fills you, but all your items are known.", 'info')
         if chain >= 4:
-            bonus = _rng.randint(5, 15)
-            self.player.max_hp += bonus
-            self.player.hp = min(self.player.hp + bonus, self.player.max_hp)
-            self.add_message(f"The throne's blessing strengthens you! +{bonus} max HP!", 'success')
+            # Once a throne (Brandon, 2026-11-06): sat again and again it gave
+            # +5-15 max HP every time, about 135 a run. Kept on the floor
+            # (as _thread_shown is), so a revisit does not renew it.
+            _blessed = self.dungeon.__dict__.setdefault('_thrones_blessed', set())
+            if (px, py) not in _blessed:
+                _blessed.add((px, py))
+                bonus = _rng.randint(5, 15)
+                self.player.max_hp += bonus
+                self.player.hp = min(self.player.hp + bonus, self.player.max_hp)
+                self.add_message(f"The throne's blessing strengthens you! +{bonus} max HP!", 'success')
+            elif chain == 4:
+                self.add_message("The throne has given you its blessing already.", 'info')
         if chain >= 5:
             stats = [s for s in _rng.sample(['STR', 'CON', 'DEX', 'INT', 'WIS', 'PER'], 2)
                      if self.player.gain_fortune_stat(s, 1)]

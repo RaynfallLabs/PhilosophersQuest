@@ -637,8 +637,8 @@ class Weapon(Item):
         self.stealth_damage_bonus: float = float(
             defn.get('stealth_damage_bonus', 0.0) or 0.0)
         # Fail-not: cannot_miss_before_player_takes_damage — chain 0
-        # promotes to chain 1 ONLY while the player hasn't taken any
-        # damage in the current combat. Tristan's dutiful arrows.
+        # promotes to chain 1 ONLY while the player is unhurt, at full
+        # health (combat._vow_holds). Tristan's dutiful arrows.
         self.cannot_miss_before_hurt: bool = bool(
             defn.get('cannot_miss_before_player_takes_damage', False))
         # Mistilteinn: damage_double_vs_resistant_at_max — at max chain,

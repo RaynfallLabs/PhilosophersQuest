@@ -124,7 +124,7 @@ def test_combat_wires_cannot_miss_before_hurt():
     import combat
     src = (inspect.getsource(combat.player_attack) + inspect.getsource(combat.effective_chain) + inspect.getsource(combat.strike_damage))
     assert 'cannot_miss_before_hurt' in src
-    assert '_combat_player_taken_damage' in src
+    assert '_vow_holds' in src        # bug bash 3.3.1: unhurt = full health
 
 
 def test_combat_wires_one_shot_chain_save():
@@ -218,13 +218,6 @@ def test_combat_wires_chain_carry_consumption():
     import combat
     src = (inspect.getsource(combat.player_attack) + inspect.getsource(combat.effective_chain) + inspect.getsource(combat.strike_damage))
     assert '_chain_carry = 0' in src or 'player._chain_carry = 0' in src
-
-
-def test_player_take_damage_wires_combat_tracker():
-    """take_damage flips _combat_player_taken_damage to True on actual harm."""
-    from player import Player
-    src = inspect.getsource(Player.take_damage)
-    assert '_combat_player_taken_damage' in src
 
 
 def test_player_take_damage_wires_skofnung_pending():
