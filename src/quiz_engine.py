@@ -31,6 +31,11 @@ class QuizResult:
     score: int        # chain length for chain modes; correct count for threshold modes
     correct: int
     asked: int
+    # The hero ended a chain with Strike Now (SPACE, cancel_and_strike), not
+    # with a wrong answer or the clock. At score 0 that is a blow struck
+    # before answering, which the never-miss weapons do not save
+    # (combat.effective_chain: "Wrong answers only", Brandon 2026-11-06).
+    struck_early: bool = False
 
 
 _QUESTIONS_DIR = data_path('data', 'questions')
@@ -381,6 +386,7 @@ class QuizEngine:
         self.chain = 0
         self.correct_count = 0
         self.asked_count = 0
+        self._struck_early = False    # set by cancel_and_strike (QuizResult.struck_early)
         self.just_mastered = None
         self.auto_passed = 0
         self.last_correct = None
@@ -1166,7 +1172,10 @@ class QuizEngine:
             return False
         # Freeze the achieved chain into score and end the quiz. Downstream
         # combat callback treats score >= 1 as a landed strike at that chain.
+        # The result says it was struck, not lost to a wrong answer: at 0
+        # the never-miss weapons do not save it (QuizResult.struck_early).
         self.score = self.chain
+        self._struck_early = True
         self._end(success=True)
         return True
 
@@ -1235,6 +1244,7 @@ class QuizEngine:
             score=self.score,
             correct=self.correct_count,
             asked=self.asked_count,
+            struck_early=bool(getattr(self, '_struck_early', False)),
         )
         callback, self.callback = self.callback, None
         self._on_each = None

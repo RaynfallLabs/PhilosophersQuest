@@ -299,7 +299,7 @@ Common templates ship a `class_mechanic` tag that the engine reads at hit time t
 | `versatile` | Versatile | +20% damage when wielded 2H (no shield). Fires every hit. (bastard_sword) |
 | `anti_heavy_at_max` | Anti-Armor | Max chain: +50% damage vs heavy-armored (tag or name-hint). (warhammer-variant) |
 | `armor_pierce_at_max` | Pierce at Max | Max chain: +35% damage AND ignores 50% of armor. (hooked polearm variants) |
-| `guaranteed_hit` | Never Miss | Chain 0 promotes to chain 1 — a failed quiz still lands a minimum hit. (Fail-not unique, kept as unique signature) |
+| `guaranteed_hit` | Never Miss | Chain 0 promotes to chain 1 — a wrong first answer (or the clock at 0) still lands a minimum hit; Strike Now before any answer does not (`QuizResult.struck_early`, "wrong answers only", 2026-11-06). (Fail-not unique, kept as unique signature) |
 | `returning_blow` | Returning Blow | Max chain: strike rebounds on you for half damage. (Green Chapel Axe unique) |
 
 The last two (`guaranteed_hit`, `returning_blow`) are unique-only. Everything else was shed from uniques in v2.14.0 — the class chain-special ladder covers the same ground, and leaving them on uniques double-fired. See `docs/design/uniques_v2_14.md` §Redundant class_mechanic values retired.
@@ -404,9 +404,9 @@ Every unique has at least one distinctive mechanic. The audit of 2026-05-30 coun
 | **Sword of Michael** | `abaddon_bonus_damage: "2d20"`, `holy_smite_message: true` | Rolls 2d20 bonus damage vs `monster.kind == 'abaddon_destroyer'`. Emits flavor messages on evil-tagged hits (demon / undead / evil). |
 | **Excalibur** | `kill_heal_amount: 10`, `cast_me_away: true` | +10 HP on kill. At HP ≤ 25%, one-shot: drain weapon enchant -1 and grant `life_save` status. One use per run. |
 | **Gram (reforged)** | `ignore_resistances: true`, `base_damage: 18` | Clamps `dtype_mult` to 1.0 — resistances stop cutting damage. Weaknesses still apply. |
-| **Fail-not** | `cannot_miss_before_player_takes_damage: true`, `class_mechanic: guaranteed_hit` | Chain 0 promotes to chain 1 (bow). While `_combat_player_taken_damage` is False, every miss lands as a minimum hit. |
-| **Gungnir** | `cannot_miss: true` | Chain 0 → chain 1 always. The spear has never missed. |
-| **Hrunting** | `one_shot_chain_save_per_floor: true` | Once per floor, chain 0 is demoted to chain 1 instead of a miss. `_hrunting_save_used` reset in `_change_level`. |
+| **Fail-not** | `cannot_miss_before_player_takes_damage: true`, `class_mechanic: guaranteed_hit` | Chain 0 promotes to chain 1 (bow). While `_combat_player_taken_damage` is False, every wrong answer lands as a minimum hit. Strike Now at 0 is not saved. |
+| **Gungnir** | `cannot_miss: true` | Chain 0 → chain 1 on a wrong answer. The spear has never missed. Strike Now at 0 is not saved. |
+| **Hrunting** | `one_shot_chain_save_per_floor: true` | Once per floor, a wrong first answer (chain 0) is lifted to chain 1 instead of a miss. Strike Now at 0 is not saved and does not spend the charge. `_hrunting_save_used` reset in `_change_level`. |
 | **Harpe** | `petrify_on_crit: true`, `skip_chain_warmup_vs_tag: [medusa, gorgon, ...]` | At chain ≥ 15, apply `petrifying 3t` (rewired from the retired crit path). Against matching tags, chain starts at rung 2. |
 | **Tyrfing** | `cursedMissBacklash: 3`, `cursed_lineage` fallback | On chain 0, player.hp -= 3 (floor at 0). Cursed-blade identity. |
 | **Mistilteinn** | `damage_double_vs_resistant_at_max: true` | At max chain, double damage if target has ANY resistance (Baldur's flaw). |

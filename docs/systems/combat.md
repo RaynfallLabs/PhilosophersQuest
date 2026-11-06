@@ -79,7 +79,9 @@ _start_combat(monster)                              # game_combat.py
            strike_preview() runs them for the Strike Now number, so the
            preview is the blow -- bug bash 4, call 13)
           chain = result.score + chain_bonus (armor chain_bonus, Parashu carry,
-                  Glamdring orc-glow, Fail-not / Gungnir / Hrunting save,
+                  Glamdring orc-glow -- each only at score >= 1 --,
+                  Fail-not / Gungnir / Hrunting save of a wrong answer, never
+                  of a Strike Now at 0 (result.struck_early),
                   Harpe warmup skip, Skofnung low-HP window)
           if chain == 0:
               Tyrfing cursed_miss_backlash damage
@@ -207,7 +209,8 @@ Chain-mode math quiz accepts answers continuously. The strike LANDS when:
 |---|---|---|
 | Player presses **SPACE** | Lands at current rung | Full chain mult |
 | Answer wrong at chain ≥ 1 | Chain shatters visually; strike lands | Full chain mult |
-| Answer wrong at chain 0 (first question) | **MISS** | 0 (plus cursed-miss backlash if applicable) |
+| Answer wrong at chain 0 (first question) | **MISS** | 0 (plus cursed-miss backlash if applicable); Fail-not / Gungnir / Hrunting lift it to a light hit at chain 1 |
+| Player presses **SPACE** at chain 0 (before any right answer) | **MISS** | 0. Not a wrong answer: no never-miss save, Hrunting's charge kept (`QuizResult.struck_early`, Brandon 2026-11-06 "wrong answers only") |
 | Timer expires | Lands at current chain | Full chain mult |
 | Chain reaches `_max_chain` (legacy path only) | Auto-lands | Peak mult |
 
