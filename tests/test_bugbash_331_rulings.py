@@ -160,3 +160,33 @@ def test_every_piece_of_loot_can_be_walked_to(floor):
     stranded = [(getattr(it, 'name', '?'), it.x, it.y) for it in g.ground_items
                 if not getattr(it, 'not_pickable', False) and (it.x, it.y) not in reach]
     assert stranded == []
+
+
+# ----------------------------------------------- second batch of rulings
+def test_a_raw_ingredient_is_worth_half_a_meal():
+    import economy
+    import food_system
+    raw = next(iter(food_system._raw_ingredients()))
+    ing = food_system.load_ingredient_for(raw)
+    assert ing.item_class == 'ingredient'
+    assert economy.class_share(ing) == economy.MERCHANT_SHARE['food'] / 2
+    assert economy.stock_price(ing, 20) > 0
+    assert economy.stock_price(ing, 20) <= 100
+
+
+def test_a_bigger_bundle_of_arrows_costs_more():
+    import economy
+    lo = items.make_item_by_id('ammo', 'iron_arrow')
+    hi = items.make_item_by_id('ammo', 'iron_arrow')
+    lo.count, hi.count = lo.count_min, hi.count_max
+    assert economy.stock_price(hi, 20) > economy.stock_price(lo, 20)
+
+
+def test_orpheus_slows_a_new_floor_but_not_a_revisit():
+    g = _game()
+    g.player.quirk_progress['orpheus_active'] = True
+    g._change_level(2, enter_from_top=True)
+    assert any(m.status_effects.get('slowed', 0) > 0 for m in g.monsters if m.alive)
+    g._change_level(1, enter_from_top=False)
+    assert not any(m.status_effects.get('slowed', 0) > 0 for m in g.monsters if m.alive), \
+        "a floor already visited was slowed again"

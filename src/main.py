@@ -2177,8 +2177,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         if _qs_stair:
             _qs_stair.on_stair_use(new_level, _from_level)
             _qs_stair.on_floor_entered(new_level)
-            # Orpheus: slow all monsters on floor entry
-            if getattr(self.player, 'quirk_progress', {}).get('orpheus_active'):
+            # Orpheus: slow all monsters on a NEW floor (Brandon, 2026-11-06:
+            # one stair up and down re-slowed the floor every time, like the
+            # arrival effects gated on _new_depth above).
+            if _new_depth and getattr(self.player, 'quirk_progress', {}).get('orpheus_active'):
                 for m in self.monsters:
                     if m.alive:
                         m.status_effects['slowed'] = max(
@@ -2858,10 +2860,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         except ImportError:
             pass
 
-        # Chain-equip passive: three_oclock (Ring of Gawain T5 counterpart).
-        # Strength ebbs while the ring is worn (Player.ebb_strength) and comes
-        # back on rest (the wait key) or once the ring is off. It used to be
-        # taken from STR for good, and without its stamina.
+        # Chain-equip passive: three_oclock (Ring of Gawain T5). A rest
+        # raises a surge of Strength above the ring's own (the wait key,
+        # Player.rest_strength); it ebbs a point every THREE_OCLOCK_TURNS back
+        # to the ring's base, never below. With the ring off the surge ends.
         try:
             from chain_passives import player_has_passive
             if player_has_passive(self.player, 'three_oclock'):
@@ -2869,10 +2871,14 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 self.player._three_oclock_decay = _ctr
                 if _ctr % self.player.THREE_OCLOCK_TURNS == 0 and self.player.ebb_strength():
                     self.add_message(
-                        "The 3 o'clock hour wanes. Your strength fades until you rest.",
+                        "The 3 o'clock hour wanes. Gawain's strength ebbs until you rest.",
                         'warning')
-            elif self.player.recover_ebbed_strength():
-                self.add_message("Your strength comes back to you.", 'info')
+            else:
+                _net = self.player.end_strength_surge()
+                if _net < 0:
+                    self.add_message("Gawain's borrowed strength leaves you.", 'info')
+                elif _net > 0:
+                    self.add_message("Your strength comes back to you.", 'info')
         except ImportError:
             pass
 

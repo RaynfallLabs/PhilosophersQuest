@@ -549,11 +549,7 @@ class InputMixin:
             # the no-move counter; reset by any subsequent _do_move.
             self.player._chain_no_move_counter = (
                 getattr(self.player, '_chain_no_move_counter', 0) + 1)
-            # three_oclock (Ring of Gawain T5) — resting resets the STR-decay
-            # counter and gives back the Strength that ebbed.
-            self.player._three_oclock_decay = 0
-            if self.player.recover_ebbed_strength():
-                self.add_message("You rest, and your strength comes back.", 'info')
+            self._rest_gawain()     # Ring of Gawain T5: a rest is his morning
             # Waiting makes you hungry like walking does. It cost nothing,
             # so any wound could be slept off for free between fights.
             self._tick_sp()
@@ -763,6 +759,23 @@ class InputMixin:
                 and self.state in (STATE_QUIZ, STATE_QUIZ_CONTEXT)
                 and qe.state == QuizState.ASKING and getattr(qe, 'timed', False)):
             qe.update(max(0.0, time.monotonic() - opened))
+
+    def _rest_gawain(self):
+        """three_oclock (Ring of Gawain T5): a rest (the wait key) is his
+        morning. The surge fills back up (Player.rest_strength) and its ebb
+        starts over."""
+        self.player._three_oclock_decay = 0
+        try:
+            from chain_passives import player_has_passive
+            if not player_has_passive(self.player, 'three_oclock'):
+                return
+        except ImportError:
+            return
+        gained = self.player.rest_strength()
+        if gained > 0:
+            self.add_message(
+                f"You rest, and Gawain's strength rises in you like the morning. "
+                f"(+{gained} STR)", 'success')
 
     def _exit_quest_input(self, key: int):
         """Player has the Stone and is at the L1 exit."""

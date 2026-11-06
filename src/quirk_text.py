@@ -158,7 +158,7 @@ QUIRK_DESC = {
     'cassandra':     f"Wisdom +1. {_WIS} You were wrong many times and kept going; that is where judgement comes from.",
     'sisyphus':      f"Wisdom +1. {_WIS} The chests that beat you taught you more than the ones that opened.",
     'job':           "Permanent levitation: you float just above the floor, so floor traps cannot catch you. Having suffered every snare, you no longer touch the ground they are set in.",
-    'orpheus':       "On every floor you enter, monsters begin slowed for 5 turns. You carry a quiet with you that the dungeon needs a moment to shake off.",
+    'orpheus':       "On each new floor you reach, monsters begin slowed for 5 turns. You carry a quiet with you that the dungeon needs a moment to shake off.",
     'tantalus':      f"Strength +1. {_STR} You ate ruin until it made you stronger.",
     'asclepius':     f"Wisdom +1. {_WIS} You know the venomous creatures the way a healer does: from the inside.",
     'fisher_king':   "You may pray again in half the usual time. Heaven has grown used to hearing from you at your worst.",

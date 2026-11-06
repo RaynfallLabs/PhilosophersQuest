@@ -1794,7 +1794,7 @@ _QUIRK_EFFECTS = {
     'cassandra':     "WIS +1",
     'sisyphus':      "WIS +1.",
     'job':           "Permanent levitation -- immune to floor traps.",
-    'orpheus':       "Monsters start slowed 5 turns on every floor you enter.",
+    'orpheus':       "Monsters start slowed 5 turns on each new floor you reach.",
     'tantalus':      "STR +1",
     'asclepius':     "WIS +1.",
     'fisher_king':   "Prayer cooldown permanently halved.",

@@ -1,15 +1,14 @@
-"""Bug bash 3.3.1, equipment A6: the Ring of Gawain's tier 5 took Strength
-for good.
+"""Bug bash 3.3.1, equipment A6: the Ring of Gawain's tier 5.
 
 Tier 5 carries passive_three_oclock. Malory's Gawain: his strength grew
-every morning until noon, "and then ebbed away" (the ring's lore). The tick
-in Game._refresh_fov took one point of STR every 30 turns (never below 8)
-straight off the stat: never given back, not on rest (resting only reset the
-counter, though the code said "resets on rest"), not when the ring came off,
-and without the stamina that goes with a point of Strength.
+every morning from nine until noon, "and then ebbed away" (the ring's lore).
+The tick in Game._refresh_fov took one point of STR every 30 turns (never
+below 8) straight off the stat, for good and without its stamina, so tier 5
+(+3 STR) was weaker than tier 4 (+5).
 
-Now the ebb is counted and comes back when the hero rests (the wait key) or
-the ring is off. The rate and the floor of 8 are unchanged.
+Ruling (Brandon, 2026-11-06, "rested surge"): a rest (the wait key) raises
+the hero 3 Strength above the ring's own; it ebbs a point every 30 turns
+back to the ring's base, never below. Taking the ring off ends the surge.
 
 Real headless Game: the attune quiz callback, the per-turn tick and the
 wait key are the game's own.
@@ -61,49 +60,57 @@ def _ebb(g, turns):
         g._refresh_fov()
 
 
-def test_tier_five_strength_ebbs_and_the_ring_coming_off_gives_it_back(game):
+def test_a_rest_raises_the_surge_and_it_ebbs_back_to_base_never_below(game):
     p = game.player
     p.STR = 16
     ring = items.make_item_by_id('accessory', 'ring_of_gawain')
     _attune(game, ring, 5)
-    worn_str, worn_sp = p.STR, p.max_sp
+    base, base_sp = p.STR, p.max_sp
     _ebb(game, 90)
-    assert p.STR == worn_str - 3                      # it ebbs, as the lore says
-    assert p.max_sp == worn_sp - 3                    # a point of Strength is stamina too
+    assert p.STR == base                              # no surge yet: nothing ebbs
+    game._player_input(pygame.K_PERIOD)                # rest
+    assert (p.STR, p.max_sp) == (base + 3, base_sp + 3)
+    assert any("gawain's strength rises" in text.lower() for text, _k in game.msg_log.entries)
+    _ebb(game, 30)
+    assert p.STR == base + 2
+    _ebb(game, 30 * 10)
+    assert (p.STR, p.max_sp) == (base, base_sp)       # back to the ring's own, never below
+
+
+def test_tier_five_at_its_peak_beats_tier_four(game):
+    p = game.player
+    p.STR = 16
+    ring = items.make_item_by_id('accessory', 'ring_of_gawain')
+    _attune(game, ring, 5)
+    game._player_input(pygame.K_PERIOD)
+    t5 = p.STR
+    g4 = items.make_item_by_id('accessory', 'ring_of_gawain')
+    assert t5 - 16 > int(g4.tier_bonuses['4']['stat_bonus_STR'])
+
+
+def test_the_ring_coming_off_ends_the_surge(game):
+    p = game.player
+    p.STR = 16
+    ring = items.make_item_by_id('accessory', 'ring_of_gawain')
+    _attune(game, ring, 5)
+    game._player_input(pygame.K_PERIOD)
     game._unequip_slot(f'accessory_{p.accessory_slots.index(ring)}', ring)
     _ebb(game, 1)
-    assert (p.STR, p.max_sp) == (16, worn_sp - (worn_str - 16))   # nothing lost for good
+    assert p.STR == 16
+    assert getattr(p, '_gawain_surge', 0) == 0
 
 
-def test_rest_gives_the_ebbed_strength_back(game):
+def test_a_rest_without_the_ring_gives_nothing(game):
     p = game.player
     p.STR = 16
-    ring = items.make_item_by_id('accessory', 'ring_of_gawain')
-    _attune(game, ring, 5)
-    worn_str = p.STR
-    _ebb(game, 60)
-    assert p.STR == worn_str - 2
-    assert p.recover_ebbed_strength() == 2
-    assert p.STR == worn_str
+    game._player_input(pygame.K_PERIOD)
+    assert p.STR == 16
 
 
-def test_the_wait_key_is_the_rest(game):
+def test_an_old_saves_ebbed_strength_comes_back(game):
     p = game.player
-    p.STR = 16
-    ring = items.make_item_by_id('accessory', 'ring_of_gawain')
-    _attune(game, ring, 5)
-    worn_str = p.STR
-    _ebb(game, 60)
-    assert p.STR == worn_str - 2
-    game._player_input(pygame.K_PERIOD)                # wait a turn
-    assert p.STR == worn_str
-    assert any('strength comes back' in text.lower() for text, _k in game.msg_log.entries)
-
-
-def test_the_ebb_never_goes_below_eight(game):
-    p = game.player
-    p.STR = 9
-    ring = items.make_item_by_id('accessory', 'ring_of_gawain')
-    _attune(game, ring, 5)
-    _ebb(game, 30 * 20)
-    assert p.STR == 8
+    p.STR = 13
+    p._three_oclock_lost = 3                          # taken by the old ebb
+    _ebb(game, 1)                                      # no ring worn
+    assert p.STR == 16
+    assert p._three_oclock_lost == 0
