@@ -217,6 +217,17 @@ def _is_big_foe(m) -> bool:
     return m.max_hp > max(60, 2.0 * target_hp(floor))
 
 
+def _is_undead(m) -> bool:
+    """Turn Undead's test: the monster's 'undead' tag (the same tag
+    Monster.resists_control and the Helm of Darkness read). It used to look
+    for words in the monster's id: the wand missed 53 tagged undead (the
+    jiangshi, the specter, the nosferatu...) and both the wand and the spell
+    turned a bone golem, a death dog and a death beetle. Every member of the
+    three undead families carries the tag except the ker, a Greek death
+    spirit tagged an outsider, which the words never matched either."""
+    return 'undead' in (getattr(m, 'tags', None) or ())
+
+
 def _big_foe_bite(m, fraction: float, level: int) -> int:
     """Damage for an effect that takes a FRACTION of a monster's max HP.
 
@@ -1334,12 +1345,8 @@ class MagicMixin:
         elif effect == 'turn_undead':
             from dice import roll as _roll_tu
             base_dmg = self._wand_tier_damage(_roll_tu(wand.power) if wand.power else 8, wand.quiz_tier)
-            _UNDEAD_WORDS = {'skeleton', 'zombie', 'ghost', 'wraith', 'lich', 'wight',
-                             'spectre', 'vampire', 'mummy', 'revenant', 'death', 'undead',
-                             'ghoul', 'ghast', 'shade', 'banshee', 'draugr', 'barrow',
-                             'bone', 'corpse', 'vrykolakas', 'strigoi', 'mohrg', 'demi_lich'}
             undead = [m for m in self.monsters if m.alive and (m.x, m.y) in self.visible
-                      and any(w in m.kind.lower() for w in _UNDEAD_WORDS)]
+                      and _is_undead(m)]
             if undead:
                 for m in undead:
                     actual = m.take_damage(base_dmg, 'holy')
@@ -1885,15 +1892,9 @@ class MagicMixin:
             from dice import roll as _roll_tu
             base_dmg = _roll_tu(power) if power else 8
             scaled = self._spell_damage(base_dmg, chain)
-            _UNDEAD_WORDS = {'skeleton', 'zombie', 'ghost', 'wraith', 'lich', 'wight',
-                             'spectre', 'vampire', 'mummy', 'revenant', 'death', 'undead',
-                             'ghoul', 'ghast', 'shade', 'banshee', 'draugr', 'barrow',
-                             'bone', 'corpse', 'vrykolakas', 'strigoi', 'mohrg', 'demi_lich'}
             undead = [
                 m for m in self.monsters
-                if m.alive and (m.x, m.y) in self.visible
-                and (any(w in m.kind.lower() for w in _UNDEAD_WORDS)
-                     or 'undead' in set(getattr(m, 'tags', []) or []))
+                if m.alive and (m.x, m.y) in self.visible and _is_undead(m)
             ]
             if undead:
                 fear_dur = max(3, int(8 * chain_scale))
