@@ -953,10 +953,18 @@ class MagicMixin:
                 is_boss = _is_big_foe(target)
                 if is_boss:
                     self.add_message(f"{the_name(target)} is far too willful to charm!", 'warning')
+                elif target.resists_control('charmed'):
+                    # The undead feel no affection; constructs and plants
+                    # have no mind to win (Monster.resists_control).
+                    self.add_message(f"{the_name(target)} has no heart for the charm to win.", 'warning')
                 else:
+                    # The 'charmed' status is the peace: it will not strike
+                    # the hero, and it wanders (Monster.take_turn). This used
+                    # to set ai_pattern 'sessile' as well, for good: a sessile
+                    # creature skips the charm check, so it still struck from
+                    # beside the hero, and it stayed rooted when the charm ended.
                     dur = self._wand_effect_duration(wand, 20)
                     target.add_effect('charmed', dur)
-                    target.ai_pattern = 'sessile'
                     self.add_message(f"{the_name(target)} gazes at you with adoration. ({dur} turns)", 'success')
 
             elif effect == 'poison_monster':
