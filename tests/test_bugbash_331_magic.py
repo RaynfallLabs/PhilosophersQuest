@@ -178,3 +178,25 @@ def test_b5_a_bolt_spends_the_charge_and_doubles():
                            'name': 'Fire Bolt'}, m)
     assert g.player._anti_being_charged is False
     assert m.hp < 100_000
+
+
+# ---------------------------------------------------------------------------
+# B8: a banished creature is sent away, not killed: it leaves no body
+# ---------------------------------------------------------------------------
+
+def test_b8_a_banished_demon_leaves_no_corpse_and_is_not_slain():
+    from items import Corpse
+    g = _game(seed=81)
+    _open_floor(g)
+    imp = _spawn(g, 'imp', dx=2)
+    assert 'demon' in imp.tags
+    g._apply_spell_effect({'effect': 'banishment', 'power': '', 'tier': 4,
+                           'name': 'Banishment'}, imp)
+    assert not imp.alive
+    # The next turn's reaper used to treat it as an unnoticed kill.
+    g._reap_unnoticed_kills()
+    bodies = [i for i in g.ground_items if isinstance(i, Corpse) and i.monster_id == 'imp']
+    assert not bodies, "a banished demon left its corpse behind"
+    texts = [str(e[0]) for e in g.msg_log.entries[-8:]]
+    assert any('banished' in t for t in texts)
+    assert not any('is slain' in t for t in texts), texts

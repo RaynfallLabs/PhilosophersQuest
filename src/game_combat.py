@@ -1063,7 +1063,11 @@ class CombatMixin:
         # flag used to be consumed HERE, which meant it sat armed until the
         # next real kill and swallowed that kill's loot and corpse instead.
         self.player._spared_this_attack = False
-        self.add_message(f"{the_name(monster)} is slain!", 'success')
+        # A banished creature (the Banishment spell) was sent to its own
+        # plane, not killed: it is not "slain" and leaves no body (below).
+        _banished = bool(getattr(monster, '_banished', False))
+        if not _banished:
+            self.add_message(f"{the_name(monster)} is slain!", 'success')
         self._drop_treasure(monster)
         # A thief gives back everything it stole (src/theft.py).
         for _tmsg in theft.give_back(self, monster):
@@ -1235,7 +1239,8 @@ class CombatMixin:
                 self.add_message(
                     "ALL SEVEN SEALS ARE BROKEN. The way to the Pit stands open.", 'danger')
                 self._chron('boss', "All seven seals are broken. The ground split open. Whatever is down there, it's free now. And I have to face it.")
-        self.ground_items.append(self._make_corpse(monster))
+        if not _banished:
+            self.ground_items.append(self._make_corpse(monster))
 
     def _announce_scale_hit(self, monster, damage: int):
         """Tell the player what the scales did to that blow."""

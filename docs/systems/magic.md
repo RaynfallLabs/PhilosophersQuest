@@ -450,9 +450,13 @@ are documented in [status_effects](status_effects.md).
   `spell.power` (10d8) damage scaled by `_spell_damage`.
 - **`imprisonment`** (T5) — paralyze a target up to 60 turns (effectively
   removes from combat; `MAX_EFFECT_DURATION` caps the display).
-- **`banishment`** (T4) — instakill if target carries any of
-  `{fey, demon, celestial, elemental}` tags and is not a boss; otherwise
-  a brief consolation paralyze.
+- **`banishment`** (T4) — sends the target to its home plane if it carries
+  any of `{fey, demon, celestial, elemental}` tags and is not a boss;
+  otherwise a brief consolation paralyze. A banished creature is marked
+  `_banished`: the next turn's reaper runs `_on_monster_killed` for it,
+  which leaves no corpse and no "is slain" line. Its loot, the kill count,
+  kill quirks and the Seeker's kill event still fire (open ruling, bug
+  bash 3.3.1 B8).
 
 ### 6.7 Summons
 
