@@ -80,9 +80,9 @@ The subject's character budget (stem plus four choices) still applies and is che
 ## 8. Before and after (real stems from the banks)
 
 **History, T2** (77 words, date first):
-> In late 1958, during the last months of the Cuban revolution against the U.S.-backed dictator Fulgencio Batista, the Argentine rebel commander Che Guevara had only about 300 fighters near the city of Santa Clara in central Cuba. Batista rushed 3,500 government soldiers there by armored train, packed with fresh troops and heavy guns. Armed with just a captured bulldozer and some sticks of dynamite, what did Che's tiny band of fighters do to that armored train?
+> In late 1958, during the last months of the Cuban revolution against the U.S.-backed dictator Fulgencio Batista, the Argentine rebel commander Che Guevara had only about 300 fighters near the city of Santa Clara in central Cuba. Batista rushed an armored train there, packed with some 350 fresh troops and heavy guns. Armed with just a captured bulldozer and some sticks of dynamite, what did Che's tiny band of fighters do to that armored train?
 
-> Che Guevara had about 300 rebels outside Santa Clara late in 1958, in the last months of Cuba's revolution. The dictator Fulgencio Batista sent an armored train with 3,500 fresh soldiers and heavy guns to crush them. Che had a captured bulldozer and some dynamite. What did his band do to the train?
+> Che Guevara had about 300 rebels outside Santa Clara late in 1958, in the last months of Cuba's revolution. The dictator Fulgencio Batista sent an armored train with some 350 fresh soldiers and heavy guns to crush them. Che had a captured bulldozer and some dynamite. What did his band do to the train?
 
 **Economics, T1** (encyclopedia opener, dashes):
 > In 1987 the American economist Thomas Sowell wrote a book called A Conflict of Visions. It sets out two rival pictures of human nature — one that says people can be perfected by clever policy, and one that says people are flawed and stuck with hard choices. That second picture refuses a word politicians love to promise. Sowell packed the refusal into a famous six-word sentence. What is it?
