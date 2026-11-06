@@ -11380,9 +11380,9 @@
     "answer": "car tires",
     "choices": [
       "car tires",
-      "dinner plates",
-      "kitchen knives",
-      "recipe books"
+      "motor oil",
+      "car engines",
+      "car headlamps"
     ],
     "context": "In 1900 there were fewer than 3,000 cars in all of France, and Andre and Edouard Michelin ran the Michelin tire company in Clermont-Ferrand. The award that now crowns the world's finest restaurants began life as a giveaway from a rubber company. Source: Wikipedia, 'Michelin Guide'.",
     "topic": "how-a-kitchen-earns-michelin-stars"
@@ -11445,7 +11445,7 @@
     "answer": "forks and spoons",
     "choices": [
       "forks and spoons",
-      "golden stars",
+      "chef's hats",
       "royal crowns",
       "wine glasses"
     ],
@@ -11459,7 +11459,7 @@
     "choices": [
       "book under fake names and pay the bill like ordinary diners",
       "send a disguised assistant to eat while they wait outside",
-      "order every dish as delivery so they are never seen",
+      "eat only at lunch, when the famous head chef is away",
       "come only on the busiest nights, hidden in the crowd"
     ],
     "context": "Michelin inspectors reserve under fake names, eat, and pay the full bill exactly like any other guest, so no kitchen can spot them and put on a special show. The secrecy runs deep -- inspectors are advised not to reveal their job even to close friends, and one may eat around 250 restaurant meals a year. Source: Elite Traveler and Forbes, on anonymous Michelin inspectors.",
@@ -11670,7 +11670,7 @@
       "A potato",
       "A beet"
     ],
-    "context": "Harvard Health lists cucumber, celery, and romaine lettuce all around 95% water — so watery they hydrate you almost like a drink. Denser roots like carrots, potatoes, and beets hold far less. Source: Harvard Health, 'Using food to stay hydrated'; NCBI Nursing table 6.2 places cucumber, lettuce, and celery in the 90–99% water band.",
+    "context": "Harvard Health lists cucumber, celery, and romaine lettuce all around 95% water — so watery they hydrate the body almost like a drink. Denser roots like carrots, potatoes, and beets hold far less. Source: Harvard Health, 'Using food to stay hydrated'; NCBI Nursing table 6.2 places cucumber, lettuce, and celery in the 90–99% water band.",
     "topic": "hydration-water-electrolytes-and-the-myths"
   },
   {
@@ -11689,19 +11689,19 @@
   {
     "tier": 3,
     "question": "Heinz Valtin, who studied kidneys at Dartmouth, looked in 2002 for the science behind the well-known rule of eight glasses of water a day, and found none. The rule apparently began with a 1945 report advising about that much water in total, but readers forgot its next line. What did that line say?",
-    "answer": "That most of that water is already in your food",
+    "answer": "That most of that water already comes in food",
     "choices": [
-      "That most of that water is already in your food",
-      "That the amount depends on how much you weigh",
+      "That most of that water already comes in food",
+      "That the amount depends on a person's weight",
       "That children need far less than adults do",
       "That coffee and tea should not be counted"
     ],
-    "context": "Kidney physiologist Heinz Valtin of Dartmouth reviewed the evidence in 2002 and wrote that he found 'no scientific proof that absolutely every person must drink at least eight glasses of water a day.' The rule traces to a 1945 Food and Nutrition Board report that advised about 2.5 quarts (~1 mL per calorie) — whose very next sentence read, 'Most of this quantity is contained in prepared foods.' People remembered the number and forgot the caveat. Source: Valtin, Am. J. Physiology 2002; 1945 Food and Nutrition Board via Dartmouth/Geisel.",
+    "context": "Kidney physiologist Heinz Valtin of Dartmouth reviewed the evidence in 2002 and wrote that he found 'no scientific proof that absolutely every person must drink at least eight glasses of water a day.' The rule traces to a 1945 Food and Nutrition Board report that advised about 2.5 liters (~1 mL per calorie) — whose very next sentence read, 'Most of this quantity is contained in prepared foods.' People remembered the number and forgot the caveat. Source: Valtin, Am. J. Physiology 2002; 1945 Food and Nutrition Board via Dartmouth/Geisel.",
     "topic": "hydration-water-electrolytes-and-the-myths"
   },
   {
     "tier": 4,
-    "question": "A basketball player pushing hard through a game can lose more than a liter of sweat an hour. Sports scientists who collect and test that sweat find it full of electrolytes, but one mineral makes up the bulk of the loss, the one athletes scramble to replace with sports drinks and salty snacks. Which electrolyte does sweat carry away the most of?",
+    "question": "A basketball player pushing hard through a game can lose more than a liter of sweat an hour. Sports scientists who collect and test that sweat find it full of electrolytes, but one mineral makes up the bulk of the loss, the one athletes scramble to replace with sports drinks. Which electrolyte does sweat carry away the most of?",
     "answer": "Sodium",
     "choices": [
       "Sodium",
@@ -11722,7 +11722,7 @@
       "Their kidneys shut down from the overload",
       "Their body temperature crashes too fast"
     ],
-    "context": "Drinking only plain water through hours of heavy sweating can dilute the blood's sodium — 'water intoxication,' or exercise-associated hyponatremia. A New England Journal of Medicine study found about 13% of Boston Marathon runners had it (mostly mild), and at least 8 endurance-event deaths have been recorded since 1985. The lesson isn't that water is dangerous — it's that after heavy sweat, plain water alone isn't the whole story, so athletes add electrolytes. Source: Almond et al., NEJM 2005; Am. J. Medicine 2015.",
+    "context": "Drinking only plain water through hours of heavy sweating can dilute the blood's sodium — 'water intoxication,' or exercise-associated hyponatremia. A New England Journal of Medicine study found about 13% of Boston Marathon runners had it (mostly mild), and at least 14 deaths from it had been documented between 1981 and 2015. The lesson isn't that water is dangerous — it's that after heavy sweat, plain water alone isn't the whole story, so athletes add electrolytes. Source: Almond et al., NEJM 2005; Rosner, University of Virginia Health, 2015.",
     "topic": "hydration-water-electrolytes-and-the-myths"
   },
   {
@@ -12390,7 +12390,7 @@
   },
   {
     "tier": 3,
-    "question": "British cooks of the 1600s copied the savory Asian sauce with no tomato at all, using whatever local ingredient gave it a dark, salty, savory punch. Jane Austen, the novelist, is said to have been fond of the dark English ketchup that came of it. What humble kitchen ingredient was it made from?",
+    "question": "British cooks of the 1700s copied the savory Asian sauce with no tomato at all, using whatever local ingredient gave it a dark, salty, savory punch. Jane Austen, the novelist, is said to have been fond of the dark English ketchup that came of it. What humble kitchen ingredient was it made from?",
     "answer": "Mushrooms",
     "choices": [
       "Mushrooms",
@@ -12398,12 +12398,12 @@
       "Onions",
       "Horseradish"
     ],
-    "context": "Early English 'ketchups' were dark savory sauces made from mushrooms, walnuts, oysters, or anchovies as cooks chased the taste of the Asian original. Mushroom ketchup became a British staple, and Jane Austen was famously fond of it. (Smithsonian Magazine; National Geographic, 'How Was Ketchup Invented?')",
+    "context": "Early English 'ketchups' were dark savory sauces made from mushrooms, walnuts, oysters, or anchovies as cooks chased the taste of the Asian original. Mushroom ketchup became a British staple, and Jane Austen is said to have been fond of it. (Smithsonian Magazine; National Geographic, 'How Was Ketchup Invented?')",
     "topic": "ketchup-started-out-as-a-fish-sauce"
   },
   {
     "tier": 4,
-    "question": "James Mease, a Philadelphia scientist, published the first known tomato-ketchup recipe in 1812, thickened with spices and a splash of brandy. Tomato ketchup was neither ancient nor Italian but a brand-new American idea. Mease did not call the fruit a tomato, though. What old nickname did he give it?",
+    "question": "James Mease, a Philadelphia scientist, published the first known tomato-ketchup recipe in 1812, using tomato pulp, spices and a splash of brandy. Tomato ketchup was neither ancient nor Italian but a brand-new American idea. Mease did not call the fruit a tomato, though. What old nickname did he give it?",
     "answer": "Love apples",
     "choices": [
       "Love apples",
@@ -12420,8 +12420,8 @@
     "answer": "Packing in extra vinegar and sugar",
     "choices": [
       "Packing in extra vinegar and sugar",
-      "Sealing the jars in a boiling bath",
-      "Bottling it piping hot and corking it",
+      "Floating a seal of oil on top",
+      "Selling it in dark glass bottles",
       "Keeping every bottle on ice"
     ],
     "context": "Instead of preservatives like sodium benzoate and coal-tar dyes, Henry J. Heinz's 1906 recipe leaned on lots of ripe tomatoes (naturally high in pectin) plus plenty of vinegar, salt, and sugar, so the ketchup kept without spoiling. He began mass-producing tomato ketchup in 1876. (National Geographic, 'How Henry Heinz Used Ketchup to Improve Food Safety'; Wikipedia, 'Ketchup.')",
@@ -12664,19 +12664,19 @@
   {
     "tier": 1,
     "question": "A fluffy sandwich loaf comes out soft and full of little holes. But a corn tortilla, an Indian roti, and a sheet of matzo come out flat and dense. What makes these breads so different from the airy loaf?",
-    "answer": "Their dough was baked before it had a chance to rise",
+    "answer": "No yeast or baking powder went into their dough",
     "choices": [
-      "Their dough was baked before it had a chance to rise",
-      "Their dough was mixed with far more salt than usual",
-      "They are cooked on a flat stone instead of in a pan",
-      "They are made from a heavy flour that holds no air"
+      "No yeast or baking powder went into their dough",
+      "Far more salt than usual went into their dough",
+      "They were cooked on a flat stone, not in a pan",
+      "Their dough was cooked at a much lower heat"
     ],
-    "context": "The puff in a loaf is nothing but trapped gas bubbles; a flatbread - a tortilla, matzo, an Indian roti - is bread made without that rise, which is why it stays flat and dense. Bakers call it 'unleavened.' Source: https://en.wikipedia.org/wiki/Unleavened_bread",
+    "context": "The puff in a loaf is nothing but trapped gas bubbles; a flatbread - a tortilla, matzo, an Indian roti - is bread made with no yeast or other raising agent, so nothing fills it with gas and it stays flat and dense. Bakers call it 'unleavened.' Source: https://en.wikipedia.org/wiki/Unleavened_bread",
     "topic": "leavening-what-actually-makes-bread-rise"
   },
   {
     "tier": 2,
-    "question": "A jar of bubbly, living goo sits on a baker's kitchen counter, fed fresh flour and water every single day. Jars like hers have been kept alive without a break for decades, some even passed down for generations. What is the thing she guards so carefully?",
+    "question": "A jar of bubbly, living goo sits on a baker's kitchen counter, and she feeds it every single day. Jars like hers have been kept alive without a break for decades, some even passed down for generations. What is the thing she guards so carefully?",
     "answer": "A crock of sourdough starter",
     "choices": [
       "A crock of sourdough starter",
@@ -12684,7 +12684,7 @@
       "A jar of pickling brine",
       "A pot of yogurt culture"
     ],
-    "context": "A sourdough starter is a living culture kept alive by feeding it flour and water; bakers save a spoonful from each batch, and some starters have been fed and passed down for generations - even years. Source: https://en.wikipedia.org/wiki/Sourdough",
+    "context": "A sourdough starter is a living culture kept alive by feeding it flour and water; bakers save a spoonful from each batch, and some starters have been fed and passed down for generations. Source: https://en.wikipedia.org/wiki/Sourdough",
     "topic": "leavening-what-actually-makes-bread-rise"
   },
   {
@@ -12695,22 +12695,22 @@
       "Fungi - a cousin of the mushroom",
       "Bacteria - a cousin of pond germs",
       "Plants - a cousin of green algae",
-      "Insects - a cousin of the dust mite"
+      "Animals - a cousin of the dust mite"
     ],
     "context": "Yeast is a living, single-celled fungus, Saccharomyces cerevisiae, and so a cousin of the mushroom. It eats the sugars in the flour and gives off carbon dioxide (plus a little alcohol) in a process called fermentation: the bread rises because a microbe is feeding inside the dough. Source: https://en.wikipedia.org/wiki/Baker%27s_yeast; https://askdruniverse.wsu.edu/2026/04/30/bread-expand-oven/",
     "topic": "leavening-what-actually-makes-bread-rise"
   },
   {
     "tier": 3,
-    "question": "Seamus Blackley, who helped create the Xbox video game console, turned his attention in 2019 to something about 4,500 years old. He scraped tiny flecks of dormant yeast from the walls of ancient Egyptian pottery, the kind Egyptian bakers once mixed and stored dough in, and slowly coaxed the sleeping microbes back to life in his kitchen. What did he then do with the revived yeast?",
+    "question": "Seamus Blackley, who helped create the Xbox video game console, turned his attention in 2019 to something about 4,500 years old. He scraped tiny flecks of yeast from ancient Egyptian bread-making pottery, hoping the sleeping microbes were as old as the pots, and coaxed them back to life in his kitchen. What did he then do with the revived yeast?",
     "answer": "Baked a real, edible loaf of bread with it",
     "choices": [
       "Baked a real, edible loaf of bread with it",
       "Sealed it away inside a museum display case",
-      "Kept it frozen for future experiments",
+      "Dried it into packets to sell in shops",
       "Fed it to a colony of modern yeast"
     ],
-    "context": "The ancient Egyptians were baking risen bread thousands of years ago - and in 2019 a scientist revived dormant yeast recovered from roughly 4,500-year-old Egyptian pottery and used it to bake a real loaf. Source: https://www.smithsonianmag.com/smart-news/bread-was-made-using-4500-year-old-egyptian-yeast-180972842/",
+    "context": "The ancient Egyptians were baking risen bread thousands of years ago, and in 2019 Seamus Blackley revived yeast scraped from roughly 4,500-year-old Egyptian bread pottery and baked a real loaf with it. Modern yeast may have crept into the samples, so only gene tests, still awaited when he baked, could prove the yeast truly ancient. Source: https://www.theregister.com/2019/08/09/xbox_inventor_bakes_bread_with_4000_year_old_egyptian_yeast/ ; https://www.smithsonianmag.com/smart-news/bread-was-made-using-4500-year-old-egyptian-yeast-180972842/",
     "topic": "leavening-what-actually-makes-bread-rise"
   },
   {
@@ -12736,7 +12736,7 @@
       "They grow out of the salt crystals in the dough",
       "They appear when the water and flour warm up"
     ],
-    "context": "Sourdough rises with no yeast packet at all - it uses wild yeast plus tangy bacteria (Lactobacillus) that drift in from the flour and the air itself. It is the oldest way to raise bread, and it was the standard method for most of human history until packaged baker's yeast overtook it after the 1870s. Source: https://en.wikipedia.org/wiki/Sourdough",
+    "context": "Sourdough rises with no yeast packet at all - it uses wild yeast plus tangy bacteria (Lactobacillus) that drift in from the flour and the air itself. It is the oldest way to raise bread: it stayed the usual leaven into the European Middle Ages, when barm skimmed from brewing beer began to replace it, and packaged baker's yeast took over after the 1870s. Source: https://en.wikipedia.org/wiki/Sourdough",
     "topic": "leavening-what-actually-makes-bread-rise"
   },
   {
@@ -12747,19 +12747,19 @@
       "Fast chemical fizzing that puffs out gas",
       "A faster living microbe than yeast",
       "Whipped egg whites folded into the batter",
-      "Steam bursting out of the piping-hot oven"
+      "Sugar melting and foaming in the heat"
     ],
     "context": "Quick breads (muffins, pancakes, cornbread, banana bread, biscuits) skip yeast entirely. Baking soda and baking powder are chemical leaveners: an acid-base reaction fizzes out carbon dioxide the instant the batter gets wet (and hot). It is the same gas yeast makes, but with no living microbe and no hours-long wait. Source: https://en.wikipedia.org/wiki/Quick_bread; https://en.wikipedia.org/wiki/Baking_powder",
     "topic": "leavening-what-actually-makes-bread-rise"
   },
   {
     "tier": 5,
-    "question": "A cook stirs baking soda into a plain batter, and on its own the white powder, a base, mostly just sits there doing very little. To make it erupt into the fizz of bubbles that lifts a cake or a batch of biscuits, the recipe pairs it with one other kind of ingredient. Which kind?",
+    "question": "A cook stirs baking soda into a plain batter, and on its own the white powder mostly just sits there doing very little. To make it erupt into the fizz of bubbles that lifts a cake or a batch of biscuits, the recipe pairs it with one other kind of ingredient. Which kind?",
     "answer": "An acid, like buttermilk or lemon juice",
     "choices": [
       "An acid, like buttermilk or lemon juice",
       "A fat, like butter or heavy cream",
-      "A sugar, like honey or maple syrup",
+      "A sugar, like white sugar or corn syrup",
       "A starch, like corn or potato flour"
     ],
     "context": "The chemical trick is acid-meets-base: baking soda (sodium bicarbonate, a base) reacts with an acid and instantly fizzes off CO2 - like a science-fair volcano, but with no living microbe. Baking soda on its own is only the base, so it needs an acidic partner like buttermilk, yogurt, or lemon juice. Baking powder is baking soda with the acid already mixed in, so it fizzes the moment it gets wet. Source: https://en.wikipedia.org/wiki/Baking_powder",
@@ -12801,7 +12801,7 @@
       "To hoard water against the summer heat",
       "To ripen its seeds more quickly"
     ],
-    "context": "The bitterness comes from a milky white sap (latex) the plant pumps through its leaf veins, loaded with compounds called sesquiterpene lactones that make it unpleasant to pests. It's the very sap the Romans noticed when they named the plant 'Lactuca,' from their word for milk — the root that wore down into our word 'lettuce.' Source: https://en.wikipedia.org/wiki/Lettuce ; https://scienceinsights.org/what-makes-lettuce-bitter-and-how-to-fix-it/",
+    "context": "The bitterness comes from a milky white sap (latex) the plant pumps through its leaf veins, loaded with compounds called sesquiterpene lactones that make it unpleasant to pests. It's the very sap the Romans noticed when they named the plant 'Lactuca,' from their word for milk — the root that wore down into the English word 'lettuce.' Source: https://en.wikipedia.org/wiki/Lettuce ; https://scienceinsights.org/what-makes-lettuce-bitter-and-how-to-fix-it/",
     "topic": "leaves-on-the-plate-greens-herbs-and-one-famous-leaf"
   },
   {
@@ -12827,12 +12827,12 @@
       "Cover them tightly to trap the steam",
       "Let them cool slowly on a warm rack"
     ],
-    "context": "The drab olive is a compound called pheophytin: heat (and acid) knock the magnesium atom out of the center of each chlorophyll molecule. A quick blanch followed by an ice-water shock stops the cooking instantly and switches off the enzymes, locking in the green before it can dull — which is also why a splash of acid like vinegar makes greens fade faster, not slower. Source: https://extension.illinois.edu/sites/default/files/the_whys_and_hows_of_cooking_vegetables.pdf",
+    "context": "The drab olive is a compound called pheophytin: heat (and acid) knock the magnesium atom out of the center of each chlorophyll molecule. A quick blanch switches off the leaf's enzymes, and an ice-water shock right after stops the cooking instantly, locking in the green before it can dull — which is also why a splash of acid like vinegar makes greens fade faster, not slower. Source: https://extension.illinois.edu/sites/default/files/the_whys_and_hows_of_cooking_vegetables.pdf",
     "topic": "leaves-on-the-plate-greens-herbs-and-one-famous-leaf"
   },
   {
     "tier": 1,
-    "question": "A family keeps sliced deli ham in the fridge at 40 degrees Fahrenheit for a week. Say it picked up listeria, a food-poisoning bacterium, on the slicer. Most bacteria stop growing in the cold; listeria does not. What is it doing all that week?",
+    "question": "A family keeps sliced deli ham in the fridge at 40 degrees Fahrenheit for a week. Say it picked up listeria, a food-poisoning bacterium, on the slicer. What is the listeria doing all that week in the cold?",
     "answer": "Keeps slowly multiplying, cold or not",
     "choices": [
       "Keeps slowly multiplying, cold or not",
@@ -13105,7 +13105,7 @@
   },
   {
     "tier": 1,
-    "question": "Ferdinand Magellan led five ships out of Spain in 1519, and not, despite the schoolbook legend, to prove the Earth was round. Spain was funding a shopping trip by a western sea route to buy the world's most sought-after spice at its source. Which spice?",
+    "question": "Ferdinand Magellan led five ships out of Spain in 1519, and not, despite the schoolbook legend, to prove the Earth was round. Spain was funding a shopping trip by a western sea route to buy a precious spice at its source. Which spice?",
     "answer": "Cloves",
     "choices": [
       "Cloves",
@@ -13118,7 +13118,7 @@
   },
   {
     "tier": 2,
-    "question": "Magellan's crew expected a quick crossing of the Pacific. Instead they sailed more than three months with nothing fresh, grinding wormy biscuit to powder and boiling the ox-hide off the rigging. Antonio Pigafetta wrote that starving men prized one small creature so much it sold for half a crown apiece. What were the sailors eating?",
+    "question": "Magellan's crew expected a quick crossing of the Pacific. Instead they sailed more than three months with nothing fresh, eating wormy biscuit crumbled to powder and ox-hide stripped from the rigging. Antonio Pigafetta wrote that starving men prized one small creature so much it sold for half a crown apiece. What were the sailors eating?",
     "answer": "Rats",
     "choices": [
       "Rats",
@@ -13131,7 +13131,7 @@
   },
   {
     "tier": 3,
-    "question": "The Victoria crept home in 1522, the only one of Magellan's five vessels left, with all but 18 of the roughly 240 men dead. Merchants weighed the single cargo crammed into her hold: 26 tons of the spice the fleet had sailed for. How much was it worth?",
+    "question": "The Victoria crept home in 1522, the only one of Magellan's five vessels left, with just 18 of the fleet's roughly 240 men aboard. Merchants weighed the single cargo crammed into her hold: 26 tons of the spice the fleet had sailed for. How much was it worth?",
     "answer": "More than all five ships combined",
     "choices": [
       "More than all five ships combined",
@@ -13139,7 +13139,7 @@
       "Barely enough to replace one lost ship",
       "Less than the crew's back wages"
     ],
-    "context": "The Victoria carried 381 sacks - about 26 tons - of cloves. Because cloves grew almost nowhere but a handful of Moluccan islands, that single hold was worth more than the entire five-ship fleet that had set out, so even after losing four ships and all but 18 of the ~240 men, the voyage still turned a profit. Source: earthlymission.com; National Geographic, '240 men started Magellan's voyage, only 18 finished it'; Wikipedia, 'Victoria (ship)'.",
+    "context": "The Victoria carried 381 sacks - about 26 tons - of cloves. Because cloves grew almost nowhere but a handful of Moluccan islands, that single hold was worth more than the entire five-ship fleet that had set out, so even though four ships were lost and only 18 of the ~240 men came home aboard her, the voyage still turned a profit. Source: earthlymission.com; National Geographic, '240 men started Magellan's voyage, only 18 finished it'; Wikipedia, 'Victoria (ship)'.",
     "topic": "magellan-cloves-and-the-first-lap-of-the-globe"
   },
   {
@@ -13235,7 +13235,7 @@
   },
   {
     "tier": 1,
-    "question": "Native farmers planted corn, beans and squash together in one small mound. They named the trio the Three Sisters, because each plant did a job for the others. The corn shot up tall and straight, and the bean vines twisted up around it. What did the stalk give the beans?",
+    "question": "Native farmers planted corn, beans and squash together in one small mound. They named the trio the Three Sisters, because each plant did a job for the others. The corn shot up tall and straight. What did the stalk give the beans?",
     "answer": "a living pole to climb up",
     "choices": [
       "cool shade at midday",
@@ -13262,14 +13262,14 @@
   {
     "tier": 3,
     "question": "Geneticists gathered corn samples from around the world, wanting to know how a crop now grown from Canada to Chile, as popcorn, sweetcorn and the field corn ground into tortillas, came to vary so much. They compared the samples' DNA piece by piece. What story did the pattern tell about the birth of corn?",
-    "answer": "one taming, of one grass, in one place, at one time",
+    "answer": "one taming, of one grass, in one region",
     "choices": [
-      "one taming, of one grass, in one place, at one time",
-      "the same grass tamed again and again, valley by valley",
-      "one taming, then long crossing back with wild teosinte",
-      "one slow taming that crept along over many millennia"
+      "one taming, of one grass, in one region",
+      "the same grass tamed again in many valleys",
+      "two tamings, one in Mexico and one in Peru",
+      "a grass tamed in the Andes and carried north"
     ],
-    "context": "In 2002, geneticists comparing maize DNA from around the world (Matsuoka et al.) traced every corn plant on Earth to one domestication of one grass in southern Mexico — meaning all corn everywhere is essentially one enormous family. Source: pnas.org/doi/10.1073/pnas.052125199.",
+    "context": "In 2002, geneticists comparing maize DNA from around the world (Matsuoka et al.) traced every corn plant on Earth to one domestication of one grass in southern Mexico, about 9,000 years ago - meaning all corn everywhere is essentially one enormous family. Later work (Yang et al., Science 2023) found that maize also picked up a share of its genes from a second, highland teosinte some 4,000 years after that first taming. Source: pnas.org/doi/10.1073/pnas.052125199; eurekalert.org, 'Two teosintes made modern maize'.",
     "topic": "maize-from-a-wild-grass-to-corn"
   },
   {
@@ -13334,7 +13334,7 @@
       "millet",
       "ryegrass"
     ],
-    "context": "Teosinte's few tiny seeds sit in hard cases, and the DNA difference between it and a fat modern corn cob is largely controlled by just two genes. It was domesticated in Mexico's Balsas River valley about 9,000 years ago. Source: en.wikipedia.org/wiki/Maize",
+    "context": "Teosinte's few tiny seeds sit in hard cases, and only a handful of genes, two of the biggest called tb1 and tga1, separate it from a fat modern corn cob. It was domesticated in Mexico's Balsas River valley about 9,000 years ago. Source: en.wikipedia.org/wiki/Maize",
     "topic": "maize-goes-global-and-the-pellagra-trap"
   },
   {
@@ -13345,7 +13345,7 @@
       "Millers were adding niacin back into white flour.",
       "Millers were leaving the germ in the cornmeal.",
       "Farmers were growing a new corn bred for vitamins.",
-      "Families were washing cornbread down with milk."
+      "Families were eating their corn fresh, not dried."
     ],
     "context": "The fix was not dropping corn but putting the vitamin back: flour was fortified with niacin, and pellagra had all but vanished by the mid-1940s. The disease was known for its 'four Ds' (dermatitis, diarrhea, dementia, death), with a rash that ringed the neck like a collar ('Casal's collar'), and it caused roughly 3 million cases in the American South between about 1906 and 1940. Sources: en.wikipedia.org/wiki/Pellagra; southernfoodways.org, 'Malnourished: Cultural ignorance paved the way for pellagra'",
     "topic": "maize-goes-global-and-the-pellagra-trap"
@@ -13539,10 +13539,10 @@
     "choices": [
       "he poured water into them to thin the sap",
       "he hid the groves deep in the forest",
-      "he let the sap run just a few weeks a year",
+      "he made the syrup taste bitter as bark",
       "he shrank the trees out of easy reach"
     ],
-    "context": "In this Anishinaabe legend, Nanabozho found people lying lazily under maples that dripped ready-made syrup, so he poured water into the trees to thin the sap, restoring balance and making people work for their food. It's the story's way of explaining why today you must boil away about 40 gallons of watery sap to earn one gallon of syrup. Told as legend. (Smithsonian NMAI, 'The Indigenous Origins of Maple Syrup'; Massachusetts Maple Producers, 'Maple History.')",
+    "context": "In this Anishinaabe legend, Nanabozho found people lying lazily under maples that dripped ready-made syrup, so he poured water into the trees to thin the sap, restoring balance and making people work for their food. It is the story's way of explaining why sugar-makers today must boil away about 40 gallons of watery sap to earn one gallon of syrup. (Smithsonian NMAI, 'The Indigenous Origins of Maple Syrup'; Massachusetts Maple Producers, 'Maple History.') (Legend.)",
     "topic": "maple-syrup-forty-gallons-of-sap-to-make-one"
   },
   {
@@ -13599,28 +13599,28 @@
   },
   {
     "tier": 1,
-    "question": "Suppose you crunch a peppermint candy. A strange, icy rush seems to sweep across your teeth and tongue, though the room is warm. If you slid a thermometer under your tongue right as the chill peaked, what would it read?",
-    "answer": "Exactly what it read before — your mouth never truly cooled",
+    "question": "A girl crunches a peppermint candy, and a strange, icy rush seems to sweep across her teeth and tongue, though the room is warm. If a thermometer slid under her tongue right as the chill peaked, what would it read?",
+    "answer": "Exactly what it read before — her mouth never truly cooled",
     "choices": [
-      "Exactly what it read before — your mouth never truly cooled",
+      "Exactly what it read before — her mouth never truly cooled",
       "A few degrees colder — the mint really chilled the tissue",
-      "A steady drop — colder the longer you breathe in",
+      "A steady drop — colder the longer she breathes in",
       "A touch warmer — the minty tingle gives off heat"
     ],
-    "context": "The chill of mint is pure sensation, not real cold. Menthol works 'through direct receptor manipulation rather than thermodynamic change' — it fools the nerve, not the thermometer, so your mouth stays exactly as warm as before while your brain insists it's freezing. Source: Wikipedia, 'Menthol' (cooling without any temperature change; a thermometer would show no drop).",
+    "context": "The chill of mint is pure sensation, not real cold. Menthol switches on the nerve's cold sensor, TRPM8, without drawing away any heat; it fools the nerve, not the thermometer, so the mouth stays exactly as warm as before while the brain insists it is freezing. Source: Wikipedia, 'Menthol' and 'TRPM8'.",
     "topic": "menthol-the-cold-that-isnt-cold"
   },
   {
     "tier": 2,
-    "question": "A peppermint candy, crunched and held a moment, fills the mouth with a frosty rush. Suppose you then sip a glass of cool tap water: it hits like meltwater off a glacier, though no ice is in the glass and the water never got colder. Why does cool water suddenly feel freezing?",
-    "answer": "The mint left your cold nerves on a hair-trigger, so cool now reads icy",
+    "question": "A peppermint candy, crunched and held a moment, fills a boy's mouth with a frosty rush. Then he sips a glass of cool tap water, and it hits like meltwater off a glacier, though no ice is in the glass and the water never got colder. Why does cool water suddenly feel freezing?",
+    "answer": "The mint left his cold nerves on a hair-trigger, so cool now reads icy",
     "choices": [
-      "The mint left your cold nerves on a hair-trigger, so cool now reads icy",
-      "The mint numbed your tongue, and numb skin always feels cold",
-      "Your mint-warmed mouth makes the cool water feel colder by contrast",
-      "The mint's smell tricks your brain into bracing for cold"
+      "The mint left his cold nerves on a hair-trigger, so cool now reads icy",
+      "The mint numbed his tongue, and numb skin always feels cold",
+      "His mint-warmed mouth makes the cool water feel colder by contrast",
+      "The mint's smell tricks his brain into bracing for cold"
     ],
-    "context": "Menthol doesn't just create a cold feeling — it sensitizes your cold-sensing nerve fibers and lowers the temperature at which they cry 'cold.' With the trigger point dropped, everyday cool water now crosses the line into 'freezing.' Source: NCBI Bookshelf / Wikipedia 'TRPM8' — menthol sensitizes cold-sensitive nerve fibers and lowers the cold-perception threshold.",
+    "context": "Menthol doesn't just create a cold feeling — it sensitizes the cold-sensing nerve fibers and lowers the temperature at which they cry 'cold.' With the trigger point dropped, everyday cool water now crosses the line into 'freezing.' Source: NCBI Bookshelf / Wikipedia 'TRPM8' — menthol sensitizes cold-sensitive nerve fibers and lowers the cold-perception threshold.",
     "topic": "menthol-the-cold-that-isnt-cold"
   },
   {
@@ -13633,7 +13633,7 @@
       "Bonds them into stretchy strands, the way kneading builds gluten",
       "Dissolves them completely so they thicken the liquid like a gel"
     ],
-    "context": "Beating unfolds the proteins — a change called denaturation. The tightly wound molecules uncoil, then bond to one another around the air you've whipped in, turning clear runny liquid into a white foam that holds its shape. Source: 123foodscience.com/cooking-science/meringue-science/",
+    "context": "Beating unfolds the proteins — a change called denaturation. The tightly wound molecules uncoil, then bond to one another around the air whipped into the whites, turning clear runny liquid into a white foam that holds its shape. Source: 123foodscience.com/cooking-science/meringue-science/",
     "topic": "meringue-whipping-egg-whites-into-a-cloud"
   },
   {
@@ -13672,7 +13672,7 @@
       "Folding the sugar in too soon, so the whole thing deflates",
       "Chilling it too long, until the stiff peaks slump back into liquid"
     ],
-    "context": "Acid — cream of tartar or a little lemon juice — steadies the foam so the proteins bond at just the right tightness. Without it, egg whites are easy to over-beat: the protein network is squeezed too tight, water is forced back out, and the smooth glossy foam turns grainy, dry, and curdled with liquid pooling. Typical dose is about 1/4 teaspoon of cream of tartar per egg white. Source: en.wikipedia.org/wiki/Potassium_bitartrate; 123foodscience.com/cooking-science/meringue-science/",
+    "context": "Acid — cream of tartar or a little lemon juice — steadies the foam so the proteins bond at just the right tightness. Without it, egg whites are easy to over-beat: the protein network is squeezed too tight, water is forced back out, and the smooth glossy foam turns grainy, dry, and curdled with liquid pooling. Source: en.wikipedia.org/wiki/Potassium_bitartrate; 123foodscience.com/cooking-science/meringue-science/",
     "topic": "meringue-whipping-egg-whites-into-a-cloud"
   },
   {
@@ -13690,7 +13690,7 @@
   },
   {
     "tier": 3,
-    "question": "For ten solid minutes a home baker beats a bowl of egg whites, and they stay a flat, soupy froth that will not climb into peaks. Then she spots the trouble: her mixing bowl was not perfectly clean. Which contaminant, even in a trace, stops egg whites from ever whipping up?",
+    "question": "For ten solid minutes a home baker beats a bowl of egg whites, and they stay a flat, soupy froth that will not climb into peaks. Then she spots the trouble: her mixing bowl was not perfectly clean. Which contaminant, even in a trace, can keep egg whites from whipping up?",
     "answer": "A speck of fat, like a bit of egg yolk or grease",
     "choices": [
       "A speck of fat, like a bit of egg yolk or grease",
@@ -13698,7 +13698,7 @@
       "A speck of salt, like a few stray grains",
       "A speck of starch, like a trace of cornflour"
     ],
-    "context": "Fat is the enemy of meringue: even a single drop of yolk among four whites, or a greasy bowl, coats the proteins and blocks them from linking up (the fat acts as a surfactant) — so the whites simply will not whip, no matter how long you beat. Meringue demands a spotless bowl and cleanly separated whites. Source: 123foodscience.com/cooking-science/meringue-science/",
+    "context": "Fat is the enemy of meringue: even a single drop of yolk among four whites, or a greasy bowl, coats the proteins and blocks them from linking up (the fat acts as a surfactant) — so the whites may refuse to whip, however long the baker beats. Meringue demands a spotless bowl and cleanly separated whites. Source: 123foodscience.com/cooking-science/meringue-science/",
     "topic": "meringue-whipping-egg-whites-into-a-cloud"
   },
   {
@@ -13820,15 +13820,15 @@
   },
   {
     "tier": 1,
-    "question": "Suppose you buy a ball of fresh mozzarella at an Italian deli counter, where soft white balls float in tubs of cool salty water. You bite through its springy skin, and it does something in your mouth that a hunk of aged cheddar never does. What does fresh mozzarella famously do?",
-    "answer": "It squeaks against your teeth",
+    "question": "A shopper buys a ball of fresh mozzarella at an Italian deli, where soft white balls float in tubs of salty water. She bites through its springy skin, and it does something a hunk of aged cheddar never does. What does fresh mozzarella famously do?",
+    "answer": "It squeaks against the teeth",
     "choices": [
-      "It squeaks against your teeth",
-      "It fizzes faintly on your tongue",
-      "It turns bitter as you chew it",
-      "It goes gritty between your teeth"
+      "It squeaks against the teeth",
+      "It fizzes faintly on the tongue",
+      "It turns bitter as it is chewed",
+      "It goes gritty between the teeth"
     ],
-    "context": "The squeak is the signature of pulled curd. Stretching in hot water strips calcium out of the curd, which lets the casein - the milk protein - unclump and line up into long parallel fibers, like combing tangled strands straight. Those springy aligned fibers are what rub and squeak against your teeth, and they are the same fibers that let the cheese peel into strings. Sources: Wikipedia, 'Mozzarella' (a 'distinct squeaky sound when chewed or rubbed') and 'Pasta filata' (calcium removal makes the casein extensible).",
+    "context": "The squeak is the signature of pulled curd. Before the stretch, acid built up in the souring curd loosens much of its calcium, so in the hot water the casein - the milk protein - can unclump and line up into long parallel fibers, like combing tangled strands straight. Those springy aligned fibers are what rub and squeak against the teeth, and they are the same fibers that let the cheese peel into strings. Sources: Wikipedia, 'Mozzarella' ('Fresh mozzarella makes a distinct squeaky sound when chewed or rubbed'); 'Mozzarella Cheese Stretching: A Minireview' (PMC8157083: the curd must be acidified and demineralized before it will stretch).",
     "topic": "mozzarella-and-the-stretched-curd"
   },
   {
@@ -13937,15 +13937,15 @@
   },
   {
     "tier": 1,
-    "question": "Colonists along the New England shore could find lobsters piled two feet deep on the beach after a storm, so they fed them to servants and used them as fish bait. They had a mocking nickname for the lowly creature. What did they call it?",
-    "answer": "The cockroach of the sea",
+    "question": "Colonists along the New England shore could find lobsters heaped two feet deep on the beach after a storm. Today a lobster dinner is a pricey treat at seaside restaurants. What did the colonists think of lobster as a food?",
+    "answer": "Food fit only for the poor",
     "choices": [
-      "The cockroach of the sea",
-      "The spider of the sea",
-      "The pig of the sea",
-      "The weed of the sea"
+      "Food fit only for the poor",
+      "A treat kept for the rich",
+      "A poison never to be eaten",
+      "A cure for winter fevers"
     ],
-    "context": "Colonists really did call the lobster the 'cockroach of the sea.' Heaps of lobster shells around a house were read as a sign of poverty, and Governor William Bradford was ashamed to serve lobster to newcomers around 1622. Source: psmag.com, 'How Lobster Got Fancy'; lobsteranywhere.com, history of lobster.",
+    "context": "Lobster was so plentiful that colonists thought it fit only for the poor: around 1623 Governor William Bradford was embarrassed that the best dish the colony could offer newcomers was 'a lobster, or a piece of fish, without bread or anything else.' As late as 1876 a writer noted that lobster shells about a house were looked on as signs of poverty. Later tales say servants' contracts limited how often they could be fed lobster, but no such contract has ever been found. Source: psmag.com, 'How Lobster Got Fancy'; MIT Sea Grant, 'Lobster Lore'.",
     "topic": "new-england-lobster-and-the-clambake"
   },
   {
@@ -13963,7 +13963,7 @@
   },
   {
     "tier": 2,
-    "question": "Families on a New England beach bury clams, lobster and corn together over hot stones in a sand pit. The method is no settler invention: a Native people of the coast of today's Massachusetts cooked their summer seafood feasts this same way for over two thousand years before the Pilgrims arrived. Whose method is it?",
+    "question": "Families on a New England beach bury clams, lobster and corn together over hot stones in a sand pit. A Native people of the coast of today's Massachusetts tells of cooking its summer seafood feasts this same way long before the Pilgrims arrived. Whose tradition is it?",
     "answer": "The Wampanoag",
     "choices": [
       "The Wampanoag",
@@ -13971,7 +13971,7 @@
       "The Powhatan",
       "The Lenape"
     ],
-    "context": "The Wampanoag of the New England coast called it 'appanaug,' their word for the summer seafood feast — literally 'clambake.' Ancient mounds of discarded shells on Nantucket and at Bar Harbor, Maine are 2,000 to 2,500 years old, showing how long the practice ran. (Some scholars note the modern communal clambake-as-social-event is a later 19th-century American form; the hot-stone-and-seaweed cooking technique itself is genuinely Wampanoag.) Source: capenews.net, Mashpee Wampanoag tradition; Wikipedia, 'Clambake'.",
+    "context": "The Wampanoag of the New England coast call it 'appanaug,' their word for the summer seafood feast, and teach it as an ancient tradition; Native peoples of the coast have eaten clams for thousands of years. Historians note that the big festive clambake took off in the 1800s, and some find little hard evidence of how the oldest feasts were cooked. Source: capenews.net, Mashpee Wampanoag tradition; Wikipedia, 'Clambake'.",
     "topic": "new-england-lobster-and-the-clambake"
   },
   {
@@ -13984,7 +13984,7 @@
       "Smoke from the smoldering pit fire",
       "Hot sand shoveled over the pile"
     ],
-    "context": "Cooks pile wet rockweed — seaweed whose fronds carry air-filled bubbles full of seawater — over the food. On the glowing stones that trapped seawater flashes to steam, cooking everything and salting it at once, while more seaweed and a mat trap the steam in. Source: Wikipedia, 'Clambake'; capenews.net Wampanoag column.",
+    "context": "Cooks pile wet rockweed, a seaweed dripping with seawater, onto the glowing stones and over the food. The seawater it carries flashes to steam, cooking everything and salting it at once, while more seaweed and a mat trap the steam in. Source: Wikipedia, 'Clambake'; capenews.net Wampanoag column.",
     "topic": "new-england-lobster-and-the-clambake"
   },
   {
@@ -14028,7 +14028,7 @@
   },
   {
     "tier": 1,
-    "question": "Sickly children in Southern orphanages came back to health in the early 1900s after one small change to their plain meals: the doctors fighting pellagra added a common drink. It carried the nutrient a corn-heavy diet lacked. Which drink was it?",
+    "question": "Sickly children in Southern orphanages came back to health in the early 1900s when Joseph Goldberger, a doctor fighting pellagra, gave them a fuller diet of fresh eggs, peas, oatmeal and one common drink. Which drink carried the nutrient a corn-heavy diet lacked?",
     "answer": "milk",
     "choices": [
       "milk",
@@ -14036,7 +14036,7 @@
       "sweet tea",
       "apple cider"
     ],
-    "context": "Fresh meat, milk, and eggs all reversed pellagra, because these protein-rich foods carry the nutrient a corn-only diet fails to deliver. The villain was never corn itself, but a diet with almost nothing else in it. Source: en.wikipedia.org/wiki/Joseph_Goldberger",
+    "context": "Fresh meat, milk, and eggs all reversed pellagra, because these protein-rich foods carry the nutrient a corn-only diet fails to deliver. The villain was never corn itself, but a diet with almost nothing else in it. Source: sciencehistory.org, 'Joseph Goldberger's Filth Parties'; en.wikipedia.org/wiki/Joseph_Goldberger",
     "topic": "niacin-pellagra-and-why-corn-must-be-nixtamalized"
   },
   {
@@ -14049,7 +14049,7 @@
       "folate (B9)",
       "cobalamin (B12)"
     ],
-    "context": "Corn's niacin is locked in a form our digestion can't release, so the fix has to be a kitchen trick, not a better crop. Source: en.wikipedia.org/wiki/Niacin",
+    "context": "Corn's niacin is locked in a form human digestion can't release, so the fix has to be a kitchen trick, not a better crop. Source: en.wikipedia.org/wiki/Niacin",
     "topic": "niacin-pellagra-and-why-corn-must-be-nixtamalized"
   },
   {
@@ -14101,20 +14101,20 @@
       "glutamine",
       "tyrosine"
     ],
-    "context": "It takes about 60 mg of tryptophan to make just 1 mg of niacin, and corn is short on tryptophan — so a corn-only diet starves you of niacin coming and going. Source: en.wikipedia.org/wiki/Niacin",
+    "context": "It takes about 60 mg of tryptophan to make just 1 mg of niacin, and corn is short on tryptophan — so a corn-only diet starves the body of niacin coming and going. Source: en.wikipedia.org/wiki/Niacin",
     "topic": "niacin-pellagra-and-why-corn-must-be-nixtamalized"
   },
   {
     "tier": 1,
     "question": "A cook pats out warm corn tortillas that smell and taste nothing like cornbread, though both start from the same grain. The difference is a step cornbread skips: before grinding, her corn soaks in cloudy water with one thing stirred in. What is it?",
-    "answer": "Powdered slaked lime, a mineral",
+    "answer": "A scoop of powdered slaked lime",
     "choices": [
-      "Juice squeezed from green limes",
-      "Powdered slaked lime, a mineral",
-      "A spoonful of active yeast",
+      "A scoop of powdered slaked lime",
+      "A squeeze of green lime juice",
+      "A packet of active dry yeast",
       "A spoonful of sweet honey"
     ],
-    "context": "That white mineral is 'cal' - slaked lime, or calcium hydroxide, Ca(OH)2 - a mineral, not the green citrus fruit. Aztec and Maya cooks stirred it (or lye) into the water to make an alkaline bath, and that soak is why a tortilla smells and tastes nothing like plain cornbread. Source: Wikipedia, 'Nixtamalization'; corroborated by web search.",
+    "context": "That white mineral is 'cal' - slaked lime, or calcium hydroxide, Ca(OH)2 - a mineral, not the green citrus fruit. Aztec and Maya cooks stirred it (or lye) into the water to make an alkaline bath, and that soak is why a tortilla smells and tastes nothing like plain cornbread. Source: Wikipedia, 'Nixtamalization'.",
     "topic": "nixtamalization-and-the-masa-complex-tortilla-tamale-sope"
   },
   {
@@ -14140,7 +14140,7 @@
       "Boiled in water",
       "Baked in an oven"
     ],
-    "context": "A tamale is corn dough steamed inside a corn husk - or a banana leaf in southern Mexico and Oaxaca - never fried and never boiled; the wrapper is the cooking vessel, and you unwrap it to eat the soft inside. It's an ancient portable meal carried on journeys, hunts, and into battle; fossilized husks have even turned up around the Pyramids of the Sun and Moon at Teotihuacan. Source: Wikipedia, 'Tamale'; web search.",
+    "context": "A tamale is corn dough steamed inside a corn husk - or a banana leaf in southern Mexico and Oaxaca - rather than fried or boiled; the wrapper is the cooking vessel, and the eater unwraps it to get at the soft inside. It is an ancient portable meal carried on journeys, hunts, and into battle. Source: Wikipedia, 'Tamale'.",
     "topic": "nixtamalization-and-the-masa-complex-tortilla-tamale-sope"
   },
   {
@@ -14413,20 +14413,20 @@
       "It seals the cut faces so the slices cannot dry out",
       "It replaces the tartness the slices lose when cut"
     ],
-    "context": "Ascorbic acid IS vitamin C. Food makers add it as an antioxidant - it grabs oxygen before the food can, so cut fruit, juice, and canned goods don't brown and go stale - and the FDA lists it as GRAS (Generally Recognized As Safe). Its label-mate 'tocopherol' is the same trick in reverse: that one is simply vitamin E, added to oils, fats, cheeses, sausages, and snack foods to stop them going rancid; EFSA, the FDA, and the FAO/WHO committee all treat it as safe at the amounts used. So the two most chemical-sounding words on a label are often just vitamins C and E doing a preserving job. The honest heuristic: a long ingredient list full of names you can't picture as real food is a FLAG for ultra-processing - a clue, not a verdict. Sources: FDA GRAS listing; https://www.eadditives.com/e300-ascorbic-acid/ ; https://compareadditives.com/e300-ascorbic-acid ; https://www.btsa.com/en/e306-food-protection/ ; https://www.eadditives.com/e306-tocopherol-rich-extract/",
+    "context": "Ascorbic acid IS vitamin C. Food makers add it as an antioxidant - it grabs oxygen before the food can, so cut fruit, juice, and canned goods don't brown and go stale - and the FDA lists it as GRAS (Generally Recognized As Safe). Its label-mate 'tocopherol' is the same trick in reverse: that one is simply vitamin E, added to oils, fats, cheeses, sausages, and snack foods to stop them going rancid; EFSA, the FDA, and the FAO/WHO committee all treat it as safe at the amounts used. So the two most chemical-sounding words on a label are often just vitamins C and E doing a preserving job. The honest heuristic: a long ingredient list full of names a shopper can't picture as real food is a FLAG for ultra-processing - a clue, not a verdict. Sources: FDA GRAS listing; https://www.eadditives.com/e300-ascorbic-acid/ ; https://compareadditives.com/e300-ascorbic-acid ; https://www.btsa.com/en/e306-food-protection/ ; https://www.eadditives.com/e306-tocopherol-rich-extract/",
     "topic": "not-every-long-word-is-scary-reading-a-label-honestly"
   },
   {
     "tier": 3,
-    "question": "Reading the small print on a tub of supermarket ice cream, a shopper finds two long chemical names: polysorbate 80 and carboxymethylcellulose. Neither is there for nutrition, yet the maker pays to add both. Ice cream blends cold cream fat with sugary water, a pair that would normally split apart. What job are those two long words doing?",
-    "answer": "They hold the fat and the water together in one blend",
+    "question": "Reading the small print on a tub of supermarket ice cream, a shopper finds two long chemical names: polysorbate 80 and carboxymethylcellulose. Neither is there for nutrition, yet the maker pays to add both to every batch. What job are those two long words doing?",
+    "answer": "They keep each scoop smooth and creamy, not icy",
     "choices": [
-      "They hold the fat and the water together in one blend",
+      "They keep each scoop smooth and creamy, not icy",
       "They keep the fat from going rancid and tasting stale",
-      "They whip extra air into the mix as it churns",
-      "They stop the sugar from crystallizing into grit"
+      "They kill germs so the tub keeps for longer",
+      "They sweeten the mix without adding more sugar"
     ],
-    "context": "They are emulsifiers - texture glue. Fat and water refuse to stay mixed on their own, so an emulsifier holds them in one blend: ice cream stays smooth and creamy instead of icy, and a bottled salad dressing doesn't split into layers on the shelf. That is exactly WHY emulsifiers turn up in so many processed foods - not for taste, not for nutrition, but for texture. Polysorbate 80 (P80) and carboxymethylcellulose (CMC) are two of the most common. Sources: Chassaing et al. 2015, Nature (https://www.nature.com/articles/nature14232), describing emulsifier function; food-science additive references.",
+    "context": "Both are texture helpers, there for neither taste nor nutrition. In ice cream, polysorbate 80 loosens the coat on the cream's fat droplets so they clump a little during churning and hold the whipped-in air, giving a drier, smoother scoop; carboxymethylcellulose (CMC), a stabilizer, thickens the unfrozen water so it cannot wander and feed big ice crystals, which keeps the ice cream from turning coarse and icy. Researchers group both as dietary emulsifiers, and they turn up in many processed foods. Sources: Goff et al., Food Structure 1987 (https://digitalcommons.usu.edu/foodmicrostructure/vol6/iss2/11); Goff, Ice Cream Technology e-book (https://books.lib.uoguelph.ca/icecreamtechnologyebook/chapter/emulsifiers/); Chassaing et al. 2015, Nature (https://www.nature.com/articles/nature14232).",
     "topic": "not-every-long-word-is-scary-reading-a-label-honestly"
   },
   {
@@ -15464,7 +15464,7 @@
       "The shoulder",
       "The belly",
       "The loin",
-      "The neck"
+      "The jowl"
     ],
     "context": "Despite its name, the Boston butt is the pig's upper shoulder -- the blade end near the front -- not the rear or rump. (The pig's actual rear becomes the ham.) Source: https://en.wikipedia.org/wiki/Boston_butt",
     "topic": "one-pig-many-foods"
@@ -15648,20 +15648,7 @@
       "The green pastures of southern Ireland",
       "The mountain farms of northern Greece"
     ],
-    "context": "Parmigiano-Reggiano's name is legally protected: only wheels made inside a small zone of northern Italy — the provinces of Parma, Reggio Emilia, Modena, part of Bologna and part of Mantua — may carry it. The identical cheese made anywhere else can only be sold as generic 'parmesan.' (Source: parmigianoreggiano.com/faq; Wikipedia, 'Parmesan.')",
-    "topic": "parmigiano-reggiano-king-of-cheeses"
-  },
-  {
-    "tier": 3,
-    "question": "A cheesemaker lifts a brand-new wheel of Parmigiano-Reggiano, about forty kilograms pressed from a whole day's milk of a small dairy herd. That fresh wheel tastes flat, dull and rubbery, nothing like the sharp, nutty 'king of cheeses' it will become. Patient aging in a stone warehouse makes the change. Roughly how long is a typical wheel aged?",
-    "answer": "About two years",
-    "choices": [
-      "About two years",
-      "About two days",
-      "About two weeks",
-      "About two months"
-    ],
-    "context": "By law Parmigiano-Reggiano must age at least 12 months, but most wheels are matured for about two years, and some for three or more. Each finished wheel weighs about 38–40 kg and takes the daily milk of many cows. That long, slow aging is what concentrates and deepens the flavor. (Source: Wikipedia, 'Parmesan'; parmigianoreggiano.com/faq.)",
+    "context": "Parmigiano-Reggiano's name is legally protected: only wheels made inside a small zone of northern Italy — the provinces of Parma, Reggio Emilia, Modena, part of Bologna and part of Mantua — may carry it. Outside the EU, look-alikes made elsewhere are sold as generic 'parmesan'; inside the EU, a 2008 European Court of Justice ruling holds that even 'parmesan' means only the real cheese. (Source: parmigianoreggiano.com/faq; Wikipedia, 'Parmesan.')",
     "topic": "parmigiano-reggiano-king-of-cheeses"
   },
   {
@@ -15674,7 +15661,7 @@
       "Milk sugar",
       "Milk fat"
     ],
-    "context": "The crunchy specks aren't salt or sugar — they're crystals of tyrosine, an amino acid released as the cheese's proteins slowly break down during aging. The more crystals you find, the older and more deeply matured the wheel. (Source: parmigianoreggiano.com/faq; Wikipedia, 'Parmesan.')",
+    "context": "The crunchy specks aren't salt or sugar — they're crystals of tyrosine, an amino acid released as the cheese's proteins slowly break down during aging. The more crystals a wedge holds, the older and more deeply matured the wheel. (Source: parmigianoreggiano.com/faq; Wikipedia, 'Parmesan.')",
     "topic": "parmigiano-reggiano-king-of-cheeses"
   },
   {
@@ -15700,7 +15687,7 @@
       "tiny grape-skin fragments left behind",
       "tiny crystals of leftover grape sugar"
     ],
-    "context": "Pasteur named the wine-spoiling germ Mycoderma vini. His proof that living microbes — not bad air or dead chemistry — are what spoil food grew into germ theory, which reshaped both medicine and the kitchen. Source: en.wikipedia.org/wiki/Pasteurization; pasteurbrewing.com.",
+    "context": "Pasteur found several kinds of microbe spoiling the wine. His proof that living microbes — not bad air or dead chemistry — are what spoil food grew into germ theory, which reshaped both medicine and the kitchen. Source: en.wikipedia.org/wiki/Pasteurization; pasteurbrewing.com.",
     "topic": "pasteur-why-heat-finally-made-food-safe"
   },
   {
@@ -15709,11 +15696,11 @@
     "answer": "boiling would ruin the wine's taste and color",
     "choices": [
       "boiling would ruin the wine's taste and color",
-      "boiling would boil off all of the alcohol",
+      "boiling would make the germs multiply faster",
       "boiling would crack the heavy oak barrels",
       "boiling would turn the wine into vinegar"
     ],
-    "context": "Pasteur showed that warming the wine to only about 50–60 °C — well below boiling — killed the spoilage microbes while leaving the taste and color intact; his untreated control bottles kept spoiling, the heated ones stayed good. That gentle-heat trick is what we now call pasteurization, named in his honor. Source: en.wikipedia.org/wiki/Pasteurization.",
+    "context": "Pasteur showed that warming the wine to only about 50–60 °C — well below boiling — killed the spoilage microbes while leaving the taste and color intact; his untreated control bottles kept spoiling, the heated ones stayed good. That gentle-heat trick is what is now called pasteurization, named in his honor. Source: en.wikipedia.org/wiki/Pasteurization.",
     "topic": "pasteur-why-heat-finally-made-food-safe"
   },
   {
@@ -15796,7 +15783,7 @@
   },
   {
     "tier": 2,
-    "question": "Peking duck skin shatters like glass in the mouth, nothing like the chewy skin of an ordinary roast chicken. Long before the bird meets the oven, the cook does one strange thing to the raw duck, a step that parts the skin from the flesh so the skin can dry and crackle. What does the cook do?",
+    "question": "Peking duck skin shatters like glass in the mouth, nothing like the chewy skin of an ordinary roast chicken. Long before the bird meets the oven, the cook does one strange thing to the raw duck to help that skin crackle. What does the cook do?",
     "answer": "Pumps air under the skin",
     "choices": [
       "Pumps air under the skin",
@@ -16129,25 +16116,25 @@
       "The Nile valley",
       "Central China"
     ],
-    "context": "Corn (maize) was domesticated by Indigenous peoples of the Americas thousands of years before it ever reached the Old World. Venetian merchants carried it home after Columbus's voyages; it thrived on the Po Valley plains, so corn polenta — though it feels timelessly Italian — is barely 500 years old. Italians still nickname corn 'granoturco' (Turkish grain), after the Balkan traders who spread it. Source: Wikipedia, 'Polenta.'",
+    "context": "Corn (maize) was domesticated by Indigenous peoples of the Americas thousands of years before it ever reached the Old World. It reached Italy in the 1500s, after Columbus's voyages, and thrived on the Po Valley plains, so corn polenta, though it feels timelessly Italian, is barely 500 years old. Italians still nickname corn 'granoturco' ('Turkish grain'). Source: Wikipedia, 'Polenta.'",
     "topic": "polenta-corn-and-pellagra"
   },
   {
     "tier": 2,
-    "question": "A northern Italian peasant boiled his polenta from the cheapest local grain, buckwheat, spelt or millet, for centuries before corn reached Europe. In the hungriest years, when even cheap grain ran short, cooks ground flour from the nuts of one common tree instead. Which tree?",
+    "question": "Northern Italian peasants boiled their polenta from the cheapest local grain, buckwheat, spelt or millet, for centuries before corn reached Europe. In the hungriest years, when even cheap grain ran short, cooks ground flour from the nuts of one common tree instead. Which tree?",
     "answer": "The chestnut",
     "choices": [
       "The chestnut",
       "The walnut",
       "The almond",
-      "The oak"
+      "The hazel"
     ],
     "context": "'Polenta' comes from the Latin 'pollen,' meaning fine flour or dust; the ancient Romans ate a plain grain mush called 'puls' long before corn existed in Europe. Early polenta was made from whatever was local and cheap — farro (spelt), millet, buckwheat, chickpeas, even chestnut flour. Corn won out only because it grew fast and cheap in the Po Valley. Source: Wikipedia, 'Polenta.'",
     "topic": "polenta-corn-and-pellagra"
   },
   {
     "tier": 3,
-    "question": "Northern Italy's poorest peasants were living on almost nothing but polenta by the 1800s, meal after meal, because that was all their bosses would pay them. Then a cruel disease crept through their villages: crusted skin sores, endless diarrhea and creeping madness. The furious peasants named the sickness for the men they blamed. What did they call it?",
+    "question": "Northern Italy's poorest peasants were living on almost nothing but polenta by the 1800s, meal after meal, because that was all their bosses would pay them. Then a cruel disease crept through their villages: crusted skin sores, endless diarrhea and creeping madness. Critics named the sickness for the men they blamed. What did they call it?",
     "answer": "The landlord's disease",
     "choices": [
       "The landlord's disease",
@@ -16155,7 +16142,7 @@
       "The baron's blight",
       "The squire's plague"
     ],
-    "context": "Peasants called it 'malattia del padrone' — the landlord's disease — because landowners paid them almost entirely in cheap corn. The toll was staggering: by 1878, roughly 9 of every 10 Italian sufferers came from the polenta-eating North. The illness was pellagra, from the Italian 'pelle agra' ('rough skin'); a Milanese doctor, Francesco Frapolli, coined the word in 1771. Source: history-of-pellagra research reviews; Southern Foodways Alliance.",
+    "context": "Italian writers such as Flarer (1849) called it 'malattia del padrone' - the landlord's disease - because landowners paid their workers almost entirely in cheap corn. The illness was pellagra, from the Italian 'pelle agra' ('rough skin'); a Milanese doctor, Francesco Frapolli, coined the word in 1771. Source: Hektoen International, 'Our daily bread: the scourge of pellagra'; Southern Foodways Alliance.",
     "topic": "polenta-corn-and-pellagra"
   },
   {
@@ -16220,12 +16207,12 @@
       "how close the muscle sits to the bone",
       "how big the muscle grows on the bird"
     ],
-    "context": "It comes down to muscle use. A muscle the bird works hard and often fills up with myoglobin — an iron-rich pigment that stores oxygen for endurance work — plus fat, and that is what turns the meat dark. (Dark meat is not 'bloodier'; the color is myoglobin, which the Library of Congress calls 'muscle hemoglobin.') Barely-used muscles stay pale. Sources: McGill Office for Science and Society, 'Chicken Colours'; Library of Congress, 'Why do turkeys have dark and white meat?'",
+    "context": "It comes down to muscle use. A muscle the bird works hard and often fills up with myoglobin - an iron-rich pigment that stores oxygen for endurance work - and that pigment is what turns the meat dark; such muscles carry more fat as well. (Dark meat is not 'bloodier'; the color is myoglobin, which the Library of Congress calls 'muscle hemoglobin.') Barely-used muscles stay pale. Sources: McGill Office for Science and Society, 'Chicken Colours'; Library of Congress, 'Why do turkeys have dark and white meat?'",
     "topic": "poultry-dark-meat-vs-white-meat"
   },
   {
     "tier": 2,
-    "question": "A farmyard chicken spends its day walking, scratching in the dirt, roosting and pecking, and none of it calls much on its breast, the biggest cut of meat on the bird. Only one thing the chicken does relies on that big breast to power it. Which move is it?",
+    "question": "A farmyard chicken spends its day walking about and pecking at grain, and none of that calls much on its breast, the biggest cut of meat on the bird. Only one thing the chicken does relies on that big breast to power it. Which move is it?",
     "answer": "a burst of flapping to escape a fox",
     "choices": [
       "a burst of flapping to escape a fox",
@@ -16238,11 +16225,11 @@
   },
   {
     "tier": 3,
-    "question": "A plain chicken breast roasted a minute too long comes out dry and stringy. The meat of a chicken leg can sit in the same hot oven for extra minutes and still come out juicy and tender. What does the leg carry plenty of that the lean breast lacks?",
+    "question": "A plain chicken breast roasted a minute too long comes out dry and stringy. The meat of a chicken leg can sit in the same hot oven for extra minutes and still come out juicy and tender. What does the leg carry plenty of that the breast lacks?",
     "answer": "fat and collagen",
     "choices": [
       "fat and collagen",
-      "blood and iron",
+      "sugar and starch",
       "salt and water",
       "protein and minerals"
     ],
@@ -16251,13 +16238,13 @@
   },
   {
     "tier": 4,
-    "question": "A cook roasting a chicken breast, or the turkey breast at Thanksgiving, cooks it all the way through, pale and firm. Yet one common table bird has a breast so dark red that fancy restaurants sear it like a beef steak and serve it pink in the middle. Which bird's breast is that dark meat?",
+    "question": "A cook roasting the turkey breast at Thanksgiving cooks it all the way through, pale and firm. Yet one common table bird has a breast so dark red that fancy restaurants sear it like a beef steak and serve it pink in the middle. Which bird's breast is that dark meat?",
     "answer": "the duck",
     "choices": [
       "the duck",
       "the pheasant",
-      "the quail",
-      "the partridge"
+      "the capon",
+      "the Cornish hen"
     ],
     "context": "It's the duck (and its cousin the goose). A duck flies for hours at a stretch, so its breast is a hard-working endurance muscle packed with myoglobin — which makes it dark meat, unlike the pale breast of a barely-flying chicken. Those tight flight-muscle fibers turn tough if cooked all the way through, so chefs sear duck breast and serve it pink, like a red steak. The USDA still files duck as poultry but notes its breast 'is darker than chicken and turkey breast' because ducks are 'birds of flight.' Sources: USDA FSIS, 'Duck and Goose from Farm to Table'; Stefan's Gourmet Blog.",
     "topic": "poultry-dark-meat-vs-white-meat"
@@ -16272,7 +16259,7 @@
       "caged it too tightly to spread its wings",
       "bred out its instinct to take flight"
     ],
-    "context": "Breeders kept selecting turkeys for ever-bigger breast muscles — the white meat we carve at Thanksgiving — until the birds grew so front-heavy they simply can't fly. Their wild cousins still can: a wild turkey bursts from the ground up to a roost tree in short flights, which is exactly why even a wild turkey's breast stays white meat rather than dark. Source: Library of Congress, 'Why do turkeys have dark and white meat?'",
+    "context": "Breeders kept selecting turkeys for ever-bigger breast muscles — the white meat carved at Thanksgiving — until the birds grew so front-heavy they simply can't fly. Their wild cousins still can: a wild turkey bursts from the ground up to a roost tree in short flights, which is exactly why even a wild turkey's breast stays white meat rather than dark. Source: Library of Congress, 'Why do turkeys have dark and white meat?'",
     "topic": "poultry-dark-meat-vs-white-meat"
   },
   {
@@ -16311,7 +16298,7 @@
       "The dent stays fully sunken and doesn't move at all",
       "The dough tears open around the fingertip"
     ],
-    "context": "Your finger is the timer. A dent that springs back slowly and stays slightly sunken means perfectly proofed — bake it. If it springs right back, the gluten is still tight and it needs more time. If it doesn't spring back at all, the gluten has gone slack and it's over-proofed. Source: https://www.theperfectloaf.com/how-to-use-the-dough-poke-test/",
+    "context": "A floured fingertip is the timer. A dent that springs back slowly and stays slightly sunken means perfectly proofed — bake it. If it springs right back, the gluten is still tight and it needs more time. If it doesn't spring back at all, the gluten has gone slack and it's over-proofed. Source: https://www.theperfectloaf.com/how-to-use-the-dough-poke-test/",
     "topic": "proofing-fermentation-and-the-poke-test"
   },
   {
@@ -16337,7 +16324,7 @@
       "The cold dries a hard skin on top that hides the real dough",
       "The cold makes the dough so sour that the gluten locks up"
     ],
-    "context": "Cold dough is stiff, so the dent springs back fast and tricks you into thinking it needs more time — when it may already be perfectly proofed. Let refrigerated dough warm up before you trust your finger. Source: https://www.theperfectloaf.com/how-to-use-the-dough-poke-test/",
+    "context": "Cold dough is stiff, so the dent springs back fast and tricks the baker into thinking it needs more time, when it may already be perfectly proofed. Bakers let refrigerated dough warm up before trusting a finger. Source: https://www.theperfectloaf.com/how-to-use-the-dough-poke-test/",
     "topic": "proofing-fermentation-and-the-poke-test"
   },
   {
@@ -16584,7 +16571,7 @@
       "The topping",
       "The bowl's size"
     ],
-    "context": "The broth style is the heart of the bowl: shio (salt, the oldest), shoyu (soy sauce), miso (fermented soybean paste), and tonkotsu (pork bone). Order 'a shoyu' and you're naming the soup itself, not a topping. Source: en.wikipedia.org/wiki/Ramen",
+    "context": "The broth style is the heart of the bowl: shio (salt, the oldest), shoyu (soy sauce), miso (fermented soybean paste), and tonkotsu (pork bone). A diner who orders 'a shoyu' is naming the soup itself, not a topping. Source: en.wikipedia.org/wiki/Ramen",
     "topic": "ramen-a-chinese-import-turned-japanese-icon"
   },
   {
@@ -16597,7 +16584,7 @@
       "Vietnam",
       "Mongolia"
     ],
-    "context": "In the early 1900s Japan called ramen 'chuka soba' — literally 'Chinese noodles.' Chinese immigrants had sold these noodle soups in Yokohama's Chinatown since the 1880s, and Japan's first dedicated ramen shop, Rairaiken (Tokyo, 1910), was staffed by twelve Cantonese cooks. Ramen is Chinese-derived, not an ancient Japanese dish. Source: tokyoweekender.com; en.wikipedia.org/wiki/Ramen",
+    "context": "In the early 1900s Japanese diners called these soups Nankin soba, 'Nanjing noodles,' after the Chinese city; after the Second World War the usual name became chuka soba, 'Chinese noodles.' Chinese immigrants had sold these noodle soups in Yokohama's Chinatown since the 1880s, and Japan's first dedicated ramen shop, Rairaiken (Tokyo, 1910), was staffed by twelve Cantonese cooks. Ramen is Chinese-derived, not an ancient Japanese dish. Source: tokyoweekender.com; en.wikipedia.org/wiki/Ramen",
     "topic": "ramen-a-chinese-import-turned-japanese-icon"
   },
   {
@@ -16620,10 +16607,10 @@
     "choices": [
       "Fat and collagen",
       "Calcium and minerals",
-      "Marrow and blood",
+      "Blood and juices",
       "Bone dust and grit"
     ],
-    "context": "Boiled hard for hours (up to about 18), the pork bones' fat and collagen break down and emulsify into the water, scattering light so the broth turns opaque, creamy white. That milkiness is dissolved bone — not a drop of milk or cream. Source: en.wikipedia.org/wiki/Tonkotsu_ramen",
+    "context": "Boiled hard for hours (up to about 18), the pork bones' fat and collagen break down and emulsify into the water, scattering light so the broth turns opaque, creamy white. That milkiness is the bones' fat and gelatin — not a drop of milk or cream. Source: en.wikipedia.org/wiki/Tonkotsu_ramen",
     "topic": "ramen-a-chinese-import-turned-japanese-icon"
   },
   {
@@ -16636,7 +16623,7 @@
       "Korokke",
       "Karaage"
     ],
-    "context": "Watching tempura fry, Ando saw the hot oil flash the moisture out of the batter — so he flash-fried noodles the same way. His 'Chikin Ramen' launched August 25, 1958, ready in two minutes with hot water; people called it 'magic ramen.' In a 2000 poll, Japanese voted instant noodles their country's greatest invention of the 20th century, beating karaoke and the CD player. Told as Ando's own account of the discovery. Source: en.wikipedia.org/wiki/Momofuku_Ando; cupnoodles-museum.jp  (Legend.)",
+    "context": "By Ando's own account, watching tempura fry, he saw the hot oil flash the moisture out of the batter, so he flash-fried noodles the same way. His 'Chikin Ramen' launched August 25, 1958, ready in two minutes with hot water; people called it 'magic ramen.' In a 2000 poll, Japanese voted instant noodles their country's greatest invention of the 20th century. Source: en.wikipedia.org/wiki/Momofuku_Ando; cupnoodles-museum.jp",
     "topic": "ramen-a-chinese-import-turned-japanese-icon"
   },
   {
