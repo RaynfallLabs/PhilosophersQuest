@@ -1004,8 +1004,9 @@ def effective_chain(player, monster, weapon, score: int, consume: bool = True,
 
     Every head start needs a blow that lands: the gear, the Parashu carry,
     Jormungandr and Glamdring read the quiz score (>= 1); Harpe, the family
-    opening and Skofnung read the chain after the never-miss saves. Only
-    those saves turn a 0 into a 1."""
+    opening and Skofnung need the chain to have landed before the never-miss
+    saves, so a saved wrong answer is a light hit (chain 1) and no more.
+    Only those saves turn a 0 into a 1."""
     chain = score
 
     # Cow King's Horns (or any armor with chain_bonus): free chain head start
@@ -1050,6 +1051,11 @@ def effective_chain(player, monster, weapon, score: int, consume: bool = True,
         if _tag_match(monster, 'goblin') or _tag_match(monster, 'orc'):
             chain += 1
 
+    # A blow saved by a never-miss weapon below is a light hit and nothing
+    # more: the head starts after the saves (Harpe, the family opening,
+    # Skofnung) need a blow that landed on its own.
+    landed = chain >= 1
+
     # The never-miss weapons below turn a WRONG first answer (or the clock
     # running out at 0) into a light hit: their lore. Strike Now pressed
     # before any answer is not a wrong answer and is not saved, and does not
@@ -1091,7 +1097,7 @@ def effective_chain(player, monster, weapon, score: int, consume: bool = True,
     # tag enemies, the chain auto-completes the warm-up — start at rung 2
     # instead of rung 1. The blade that knows the monster.
     _skip_warmup = getattr(weapon, 'skip_chain_warmup_vs_tag', None) or []
-    if _skip_warmup and chain >= 1:
+    if _skip_warmup and landed:
         for _tg in _skip_warmup:
             if _tag_match(monster, _tg):
                 chain += 1
@@ -1099,7 +1105,7 @@ def effective_chain(player, monster, weapon, score: int, consume: bool = True,
     # Monster family knowledge, the same warm-up skip (Serpents' Mongoose,
     # src/family_edges.py opening_chain): the hero's FIRST blow of a fight
     # on that family starts further up the ladder.
-    if chain >= 1:
+    if landed:
         try:
             import family_edges
             chain += family_edges.opening_chain(player, monster, consume=consume)
@@ -1112,7 +1118,7 @@ def effective_chain(player, monster, weapon, score: int, consume: bool = True,
     # `_skofnung_low_hp_pending` is set by player.take_damage when the
     # threshold is crossed, and consumed here.
     _skofnung_bonus = int(getattr(weapon, 'chain_bonus_on_low_hp_window', 0) or 0)
-    if (_skofnung_bonus > 0 and chain >= 1
+    if (_skofnung_bonus > 0 and landed
             and getattr(player, '_skofnung_low_hp_pending', False)):
         chain += _skofnung_bonus
         if consume:
@@ -2301,10 +2307,13 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None,
             # Backstab (dagger, x2 at max chain on an unaware target) is part
             # of strike_damage, so the Strike Now preview shows it too.
 
-            # Disarm at max (scimitar, quarterstaff's reach_disarm)
+            # Disarm at max (scimitar, quarterstaff's reach_disarm). Two
+            # turns: monster statuses tick down before the monsters move
+            # (_advance_turn), so the 1 it had was gone before the disarmed
+            # foe's turn came (the mace's "stun for 1 turn" is 2 likewise).
             if class_mech in ('disarm_at_max', 'reach_disarm') and at_max:
                 if random.random() < 0.30:
-                    monster.add_effect('paralyzed', 1)
+                    monster.add_effect('paralyzed', 2)
 
             # Concussion at max (club) — heavy skull blow rattles the brain
             if class_mech == 'concussion_at_max' and at_max:

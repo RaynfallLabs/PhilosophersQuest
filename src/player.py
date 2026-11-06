@@ -2007,7 +2007,14 @@ class Player:
         # Per descent: handled separately in main._change_level via the
         # weapon-aware House-of-Atreus event hook.
         if getattr(weapon, 'cursed_lineage', False):
-            self.STR = max(1, self.STR - 1)
+            # The point taken is kept on the sword, so taking it off gives
+            # back exactly that: at STR 1 nothing was taken, and the old
+            # unconditional +1 on unequip was a free point of Strength.
+            # Through apply_stat_bonus so stamina follows Strength.
+            taken = 1 if self.STR > 1 else 0
+            weapon._pelops_str_taken = taken
+            if taken:
+                self.apply_stat_bonus('STR', -taken)
             self.max_hp += 2
             self.hp = min(self.max_hp, self.hp + 2)
         # Akinakes of Acrisius: prophecy_blade — at first equip declares
@@ -2031,7 +2038,15 @@ class Player:
         if getattr(weapon, 'vigilance_aware', False):
             self.PER = max(1, self.PER - 2)
         if getattr(weapon, 'cursed_lineage', False):
-            self.STR += 1
+            # A sword equipped before 3.3.1 has no record: it took 1.
+            taken = int(getattr(weapon, '_pelops_str_taken', 1) or 0)
+            weapon._pelops_str_taken = 0
+            if taken:
+                flag, self._quirk_grant = getattr(self, '_quirk_grant', False), False
+                try:
+                    self.apply_stat_bonus('STR', taken)
+                finally:
+                    self._quirk_grant = flag
             self.max_hp = max(1, self.max_hp - 2)
             self.hp = min(self.hp, self.max_hp)
         # Parashu: the kept rhythm (combat._chain_carry_for) is the axe's.

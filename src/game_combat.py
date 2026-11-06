@@ -1021,6 +1021,13 @@ class CombatMixin:
                     _it._life_save_spent_at = int(
                         getattr(self.player, 'deepest_floor_reached', 0) or 0)
                     _src = _src or _it
+                # One death spends one ward: the loop went on and spent every
+                # worn source of life_save on the same blow.
+                if _src is not None:
+                    break
+            # A second worn source still holds a life for the next blow.
+            if _src is not None and self.player._still_granted('life_save', None):
+                self.player.status_effects['life_save'] = -1
             self.add_message(
                 f"{'The ' + _src.name if _src is not None else 'A ward'} blazes -- death averted! "
                 "Its life-saving magic is spent.", 'success'

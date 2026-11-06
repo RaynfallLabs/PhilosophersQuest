@@ -1540,6 +1540,22 @@ class MagicMixin:
         return max(1, int(dmg))
 
     def _apply_spell_effect(self, spell: dict, target=None):
+        """Cast a learned spell (_cast_spell_effect). The Heart of Ahriman's
+        double waits for "your next destructive spell": a damage spell works
+        out its damage before it knows whether anything is in reach, so an
+        area spell into an empty room spent the charge on nothing. If the
+        cast hurt no creature, the charge is given back."""
+        charged = bool(getattr(self.player, '_anti_being_charged', False))
+        before = [(m, m.hp) for m in self.monsters if m.alive] if charged else ()
+        self._last_spell_anti_being = False
+        self._cast_spell_effect(spell, target)
+        if (charged and not getattr(self.player, '_anti_being_charged', False)
+                and getattr(self, '_last_spell_anti_being', False)
+                and not any((not m.alive) or m.hp < hp for m, hp in before)):
+            self.player._anti_being_charged = True
+            self._last_spell_anti_being = False
+
+    def _cast_spell_effect(self, spell: dict, target=None):
         """v2.12.0: apply a learned spell's effect at its FIXED per-tier
         magnitude. spell.power is authoritative for damage/heal dice; durations,
         radii and reach are the base figure times int_reach(INT). Called with the

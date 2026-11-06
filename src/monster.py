@@ -573,7 +573,11 @@ class Monster:
         if effect == 'feared':
             return mindless or self._is_named_foe()
         if effect == 'charmed':
-            return mindless or 'undead' in tags or self._is_named_foe()
+            # The undead take no charm, except from Isildur's heir: the Helm of
+            # Aragorn's command (_oathbound, set with its charm and gone when
+            # the charm ends) binds the Dead to the oath they broke.
+            undead_bars = 'undead' in tags and not self.__dict__.get('_oathbound')
+            return mindless or undead_bars or self._is_named_foe()
         if effect == 'confused':
             return mindless
         if effect == 'blinded':
@@ -654,6 +658,8 @@ class Monster:
             self.status_effects[name] -= 1
             if self.status_effects[name] <= 0:
                 del self.status_effects[name]
+                if name == 'charmed':
+                    self.__dict__.pop('_oathbound', None)   # the Helm of Aragorn's hold ends
                 if name == 'petrifying':
                     self.hp = 0
                     self.alive = False

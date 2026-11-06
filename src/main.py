@@ -2941,12 +2941,22 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     # ... to your service" and nothing done.
                     if m._is_named_foe():
                         continue
+                    # Nor one immune to the charm by nature: the charge was
+                    # spent with nothing done. (The Helm of Aragorn's undead
+                    # are bound by its oath below, not immune.)
+                    if _flag != 'command_undead' and m.resists_control('charmed'):
+                        continue
                     _target = m
                     break
                 if _target is None:
                     continue
                 if not consume_passive_charge(self.player, _flag):
                     continue
+                if _flag == 'command_undead':
+                    # Isildur's heir calls the oathbreakers: the undead are
+                    # immune to every other charm, so without this the helm
+                    # spent its charge, said "overawes" and did nothing.
+                    _target._oathbound = True
                 _target.add_effect('charmed', _dur)
                 self.add_message(_msg.format(name=_target.name), 'success')
                 # 72 Seals additionally marks the demon for guaranteed loot drop.
