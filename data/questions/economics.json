@@ -486,9 +486,9 @@
     "answer": "The company runs out of money -- it sold more coverage than it could ever pay",
     "choices": [
       "The company runs out of money -- it sold more coverage than it could ever pay",
-      "The company makes huge profits from all the new claims",
-      "The company gets more customers than ever before",
-      "Home prices go up automatically"
+      "The banks cancel their policies -- they demand every premium back at once",
+      "The company loses its customers -- no bank buys new coverage in a slump",
+      "The company is fined -- it insured loans it had never checked"
     ],
     "context": "American International Group, founded 1919, was one of the largest insurance companies in the world. Its Financial Products unit had written CDS coverage on hundreds of billions in mortgage-backed securities held by every major bank. Source: Grokipedia 'American International Group' (2026-09-05).",
     "topic": "aig-the-182b-backdoor-bank-rescue"
@@ -516,33 +516,33 @@
       "About 500 billion dollars",
       "About 45 billion dollars"
     ],
-    "context": "The $182 billion peak commitment is the largest single-firm government rescue in US financial history. It exceeded the entire TARP allocation used on the banks combined. Source: Grokipedia 'AIG bailout' (2026-09-05).",
+    "context": "The $182 billion peak commitment, from the Fed and the Treasury together, is the largest single-firm government rescue in US financial history. Sources: Grokipedia 'AIG bailout' (2026-09-05); Wikipedia 'American International Group' ($182.3 billion in combined assistance).",
     "topic": "aig-the-182b-backdoor-bank-rescue"
   },
   {
     "tier": 3,
     "question": "American International Group (AIG) had written credit default swaps, insurance contracts on mortgage bonds, for nearly every big bank. The government rescued the insurer in September 2008, saying the rescue would protect ordinary families' insurance. Whose rescue was it really?",
-    "answer": "AIG's counterparties -- the banks that had bought CDS protection from it",
+    "answer": "The banks that had bought AIG's swaps",
     "choices": [
-      "AIG's counterparties -- the banks that had bought CDS protection from it",
-      "AIG's retail insurance policyholders",
-      "AIG's foreign subsidiaries in Asia",
-      "AIG's executive stockholders"
+      "The banks that had bought AIG's swaps",
+      "The families holding AIG's insurance policies",
+      "AIG's own stockholders and top executives",
+      "AIG's foreign subsidiaries in Asia"
     ],
     "context": "AIG immediately used the loaned money to pay CDS collateral at 100 cents on the dollar to its counterparties. Every major dealer that had bought protection was made whole through the insurance conduit. Source: SIGTARP Report, October 2009.",
     "topic": "aig-the-182b-backdoor-bank-rescue"
   },
   {
     "tier": 3,
-    "question": "Federal officials made American International Group (AIG) pay every one of its swap promises at full price after the government rescued the insurer in September 2008. Those contracts had insured Wall Street's riskiest mortgage bets. Which banks collected the biggest checks?",
-    "answer": "The biggest investment banks, the ones who had made the largest risky bets",
+    "question": "American International Group (AIG) owed its Wall Street trading partners billions when the government rescued it in September 2008, on swap contracts that had insured their riskiest mortgage bets and on loans of securities. Federal officials saw that those debts were paid in full. Which bank collected the biggest sum in all?",
+    "answer": "Goldman Sachs",
     "choices": [
-      "The biggest investment banks, the ones who had made the largest risky bets",
-      "Small local savings banks that never made risky bets",
-      "Foreign banks with no operations in the country",
-      "Only the banks that had already gone out of business"
+      "Goldman Sachs",
+      "Citigroup",
+      "JPMorgan Chase",
+      "Wells Fargo"
     ],
-    "context": "Goldman Sachs received about $12.9 billion in CDS collateral through AIG. Deutsche Bank received about $11.8 billion, Societe Generale about $11.9 billion, and Merrill Lynch about $6.8 billion. Source: SIGTARP Report, October 2009.",
+    "context": "By AIG's own disclosure of March 2009, Goldman Sachs received about $12.9 billion through AIG, the largest sum, counting swap collateral, payments for the bonds the swaps insured and securities-lending repayments. Societe Generale received about $11.9 billion and Deutsche Bank about $11.8 billion; on the swaps alone Societe Generale took the most, about $11 billion to Goldman's $8.1 billion. Source: AIG release of March 15, 2009, reported by ThinkAdvisor and Calculated Risk; SIGTARP audit, November 2009.",
     "topic": "aig-the-182b-backdoor-bank-rescue"
   },
   {
@@ -560,15 +560,15 @@
   },
   {
     "tier": 4,
-    "question": "American International Group had sold credit default swaps, promises to pay out if mortgage bonds went bad, without setting aside any cash. Its top-grade triple-A rating let it, and no regulator demanded otherwise. Then, in September 2008, the rating agencies cut that rating. Under the terms of its own contracts, what suddenly happened?",
+    "question": "American International Group sold credit default swaps, promises to pay out if mortgage bonds went bad, on the strength of a top-grade triple-A rating, and it set aside no cash against them; no regulator demanded any. It lost the triple-A in 2005, and in September 2008 the rating agencies cut it again. Under its own contracts, what suddenly happened?",
     "answer": "The company owed billions in collateral overnight and could not pay",
     "choices": [
       "The company owed billions in collateral overnight and could not pay",
-      "Nothing changed because credit ratings are only for show",
-      "The company was allowed to keep promising with no cash reserves",
-      "The government cancelled all the promises for free"
+      "The banks could tear up the swaps and claim back their fees",
+      "Regulators froze its swap business until it raised fresh capital",
+      "The swaps lapsed, leaving the banks with no protection at all"
     ],
-    "context": "AIG's counterparties had accepted its promise to pay without collateral, trusting the AAA rating. When rating agencies downgraded AIG in September 2008, collateral demands surged past what the firm could raise. Source: Grokipedia 'AIG Financial Products' (2026-09-05).",
+    "context": "AIG's counterparties had accepted its promise to pay without collateral, trusting the AAA rating. Standard & Poor's cut AIG from AAA in March 2005; when the agencies downgraded it again on September 15, 2008, collateral demands surged past what the firm could raise. Sources: Grokipedia 'AIG Financial Products' (2026-09-05); S&P testimony to the House Financial Services Committee (2009).",
     "topic": "aig-the-182b-backdoor-bank-rescue"
   },
   {
@@ -577,9 +577,9 @@
     "answer": "Big risk-takers expect more rescues, and public trust in the government shrinks",
     "choices": [
       "Big risk-takers expect more rescues, and public trust in the government shrinks",
-      "All future rescues fail to help anyone",
-      "Small banks always outperform big banks afterward",
-      "Regulators successfully stop all future risky bets"
+      "Big risk-takers turn cautious, and public trust in the government grows",
+      "Small banks win customers from big ones, and bank fees fall",
+      "Regulators gain sharper tools, and later bubbles grow smaller"
     ],
     "context": "The AIG conduit worked in the moment but corroded institutional legitimacy over years. Every future risk-taker learned that political optics can be managed while counterparties get paid. Source: Barofsky, Bailout (2012).",
     "topic": "aig-the-182b-backdoor-bank-rescue"
@@ -592,9 +592,9 @@
       "The existing airlines -- they did not have to fear a cheaper competitor",
       "Passengers -- prices went down every year",
       "New airline start-ups -- it was easy to open one",
-      "Airport janitors -- they got a raise"
+      "Foreign airlines -- they won the busiest American routes"
     ],
-    "context": "The Civil Aeronautics Act of 1938 created the authority that became the Civil Aeronautics Board in 1940. The CAB issued 'certificates of public convenience and necessity' specifying exact endpoints and stops, and set fares. The ICC regulated railroads and trucking, the FAA handled safety and air traffic, the FTC advertising and competition. Sources: Grokipedia 'Airline deregulation'; Wikipedia 'Civil Aeronautics Board'.",
+    "context": "The Civil Aeronautics Act of 1938 created the authority that became the Civil Aeronautics Board in 1940. The CAB issued 'certificates of public convenience and necessity' specifying exact endpoints and stops, and set fares. Sources: Grokipedia 'Airline deregulation'; Wikipedia 'Civil Aeronautics Board'.",
     "topic": "airline-deregulation-1978-the-low-cost-carriers-the-cab-bloc"
   },
   {
@@ -685,7 +685,7 @@
       "The Federal Aviation Administration and the big airport authorities",
       "The aircraft manufacturers, Boeing and McDonnell Douglas, together"
     ],
-    "context": "The fiercest resistance came from the incumbent trunk carriers and ALPA -- the parties forty years of route protection had shielded -- which is Stigler's regulatory capture visible from the outside: an industry defending its regulator. ALPA lost, and low-fare, often non-union entrants eroded the wage premiums it had won. Nader in fact SUPPORTED deregulation, on the ground that CAB rules propped up monopoly. American Airlines chairman Albert Casey gave in with: 'If you're not going to protect us, get out of our way.' Sources: ALPA, 'From the Hill'; Cato, 'Alfred Kahn, 1917-2010'; Grokipedia 'Airline deregulation'.",
+    "context": "The fiercest resistance came from the incumbent trunk carriers and ALPA, the pilots' union -- the parties forty years of route protection had shielded -- which is Stigler's regulatory capture visible from the outside: an industry defending its regulator. ALPA lost, and low-fare, often non-union entrants eroded the wage premiums it had won. Ralph Nader in fact SUPPORTED deregulation, on the ground that CAB rules propped up monopoly. The 82-4 and 356-6 tallies are the final votes on the conference report, October 14, 1978. Sources: ALPA, 'From the Hill'; Cato, 'Alfred Kahn, 1917-2010'; Grokipedia 'Airline deregulation'; Wikipedia 'Airline Deregulation Act'.",
     "topic": "airline-deregulation-1978-the-low-cost-carriers-the-cab-bloc"
   },
   {
@@ -742,39 +742,39 @@
   },
   {
     "tier": 3,
-    "question": "Warren Harding faced a savage slump in 1920 and 1921. Unemployment climbed to about 12 percent and industrial output fell roughly 17 percent. Instead of launching new spending programs, his government cut the federal budget almost in half and let wages and prices fall. What happened next?",
-    "answer": "The recession ends within about a year and a half as prices reset",
+    "question": "Warren Harding became president in March 1921, in the middle of a savage slump that had struck the year before. Unemployment neared 12 percent, and the dollar value of everything the country produced had fallen about 17 percent. His government kept cutting until federal spending in 1922 was almost half that of 1920, and it let wages and prices fall. What happened next?",
+    "answer": "The slump ends within about eighteen months of its start as prices reset",
     "choices": [
-      "The recession ends within about a year and a half as prices reset",
-      "Unemployment stays at 12 percent for a full decade",
-      "The economy shrinks by another 17 percent the following year",
-      "Prices freeze in place and no one buys anything"
+      "The slump ends within about eighteen months of its start as prices reset",
+      "Falling prices feed a spiral that deepens the slump for years",
+      "Unemployment stays near 12 percent for the rest of the decade",
+      "Recovery waits until the cuts are reversed and spending resumes"
     ],
-    "context": "The Harding administration slashed the federal budget as the 1920-21 slump deepened. Rothbard, and later Austrian writers, treated this 'forgotten depression' as the natural experiment showing that non-intervention produced a fast recovery, while Hoover's opposite response after 1929 produced the opposite result. Source: mises.org/mises-daily/forgotten-depression-1920.",
+    "context": "The slump ran from January 1920 to about July 1921. Thomas Woods of the Mises Institute gives unemployment rising from 4 to nearly 12 percent and GNP falling 17 percent, and credits Harding with cutting the federal budget nearly in half between 1920 and 1922. Rothbard, and later Austrian writers, treated this 'forgotten depression' as the natural experiment showing that non-intervention produced a fast recovery, while Hoover's opposite response after 1929 produced the opposite result. Source: mises.org/mises-daily/forgotten-depression-1920.",
     "topic": "americas-great-depression-1963-the-austrian-account"
   },
   {
     "tier": 3,
-    "question": "Herbert Hoover created the Reconstruction Finance Corporation in January 1932, and within six months it had lent failing banks and railroads more than a billion dollars. Franklin Roosevelt kept it and enlarged it. What is the main long-run danger of rescue programs like this one?",
-    "answer": "Firms take bigger risks in the future, expecting a rescue loan if they get in trouble",
+    "question": "Herbert Hoover created the Reconstruction Finance Corporation in January 1932, and before the year was out it had spent about 1.5 billion dollars, a great share of it propping up failing banks and railroads. Franklin Roosevelt kept it and enlarged it. What is the main long-run danger of rescue programs like this one?",
+    "answer": "Firms take bigger risks, expecting a rescue loan if they get in trouble",
     "choices": [
-      "Firms take bigger risks in the future, expecting a rescue loan if they get in trouble",
-      "Firms become more careful because the loans come with strict rules",
-      "Banks and railroads promptly refund the loans within one year",
-      "The government makes a profit large enough to end all taxes"
+      "Firms take bigger risks, expecting a rescue loan if they get in trouble",
+      "Firms grow more careful, because the loans come with strict rules",
+      "Rescued firms lose the right to borrow from private banks for good",
+      "Prices fall for years as rescued firms flood markets with goods"
     ],
-    "context": "Signed January 22, 1932. The RFC extended over a billion dollars in loans in its first six months. Roosevelt kept the agency and expanded it in 1933. Source: federalreservehistory.org/essays/reconstruction-finance-corporation.",
+    "context": "Signed January 22, 1932. The RFC spent about $1.5 billion in 1932, much of it in loans to banks and railroads. Roosevelt kept the agency and widened its powers from 1933. Sources: federalreservehistory.org/essays/reconstruction-finance-corporation; en.wikipedia.org/wiki/Reconstruction_Finance_Corporation.",
     "topic": "americas-great-depression-1963-the-austrian-account"
   },
   {
     "tier": 4,
     "question": "Amity Shlaes went back over Herbert Hoover's four years in office for The Forgotten Man, published in 2007, as Murray Rothbard had before her. The schoolbook story says Hoover sat idle after the October 1929 crash until Franklin Roosevelt stepped in from 1933. What did the record show the two writers?",
-    "answer": "The first president also ran big spending and price-support programs",
+    "answer": "The first president had run big spending and price-support programs",
     "choices": [
-      "The first president also ran big spending and price-support programs",
-      "Neither president did anything until the 1940s war spending",
-      "The first president perfectly stayed out of the economy",
-      "The economy recovered fully before either president acted"
+      "The first president had run big spending and price-support programs",
+      "The first president had balanced his budgets and let prices fall",
+      "The first president had cut tariffs to restart world trade",
+      "The first president had kept federal spending flat to the end"
     ],
     "context": "Rothbard wrote that 'if we define New Deal as an antidepression program marked by extensive governmental economic planning and intervention, Herbert Clark Hoover must be considered the founder of the New Deal in America.' Amity Shlaes's 2007 book The Forgotten Man popularized this view. Source: mises.org/online-book/progressive-era/15-herbert-hoover-and-myth-laissez-faire.",
     "topic": "americas-great-depression-1963-the-austrian-account"
@@ -795,12 +795,12 @@
   {
     "tier": 5,
     "question": "Milton Friedman and Anna Schwartz, in their Monetary History of 1963, blamed the Federal Reserve for shrinking the supply of money by about a third after the crash. Murray Rothbard's book of the same year faulted the Fed for a different failure, spread over the whole decade before the crash. Which failure?",
-    "answer": "Expanding credit through the 1920s to support Britain's return to gold, producing the malinvestment that had to bust",
+    "answer": "Expanding credit through the 1920s to help Britain stay on gold, planting malinvestment",
     "choices": [
-      "Expanding credit through the 1920s to support Britain's return to gold, producing the malinvestment that had to bust",
-      "Refusing to lend to solvent banks facing liquidity runs after October 1929",
-      "Failing to enforce the 1913 Federal Reserve Act's real-bills doctrine on member banks",
-      "Overpaying gold miners at the statutory dollar-per-ounce rate throughout the 1920s"
+      "Expanding credit through the 1920s to help Britain stay on gold, planting malinvestment",
+      "Holding credit too tight through the 1920s, so farm debts and bank failures piled up",
+      "Failing to enforce the Federal Reserve Act's real-bills rule on its member banks",
+      "Raising rates sharply each time stocks climbed, so the decade's recoveries stalled"
     ],
     "context": "Rothbard's account is a CAUSE-of-the-boom story; Friedman-Schwartz's is a CAUSE-of-the-post-crash-contraction story. Both blame the Fed but for opposite mechanisms. Rothbard traced the cheap-credit push to Benjamin Strong's cooperation with Bank of England Governor Montagu Norman after Britain returned to gold in 1925 at the pre-war parity. Source: mises.org/library/book/americas-great-depression.",
     "topic": "americas-great-depression-1963-the-austrian-account"
@@ -995,9 +995,9 @@
       "Anthony de Jasay",
       "Peter Bauer",
       "William Fellner",
-      "John Kornai"
+      "János Kornai"
     ],
-    "context": "De Jasay (1925-2019) was unusual for holding no permanent academic post; he spent his working life at a Normandy wine business. Bauer, Fellner, and Kornai were also Hungarian-emigre economists but of different intellectual traditions. Source: grokipedia.com/page/Anthony_de_Jasay.",
+    "context": "De Jasay (1925-2019) held no permanent academic post: after Oxford, where he arrived in 1955 and was a research fellow of Nuffield College until 1962, he worked as a banker in Paris until 1979, then retired to Normandy to write. Peter Bauer and William Fellner were Hungarian-born economists who made their careers in Britain and America; János Kornai, a critic of planned economies, did most of his work in Budapest. Source: grokipedia.com/page/Anthony_de_Jasay.",
     "topic": "anthony-de-jasay-the-state-1985"
   },
   {
@@ -1019,9 +1019,9 @@
     "answer": "Why would a state, presumed to be self-interested, honor any constraint at all?",
     "choices": [
       "Why would a state, presumed to be self-interested, honor any constraint at all?",
-      "How can voters best signal their preferences in a two-party system?",
-      "What tax rate maximizes total federal revenue?",
-      "How should central-bank interest rates respond to unemployment?"
+      "Which voting rule would best let citizens restrain a self-serving state?",
+      "Why do voters keep re-electing politicians who break their promises?",
+      "How can judges be kept independent enough to enforce the limits?"
     ],
     "context": "The prior question dissolves much of the constitutional-design literature: constraints only bind if the constrained actor accepts them. De Jasay pushed the logic of public choice one step deeper than most public-choice scholars had. Source: grokipedia.com/page/Anthony_de_Jasay.",
     "topic": "anthony-de-jasay-the-state-1985"
@@ -1029,40 +1029,27 @@
   {
     "tier": 3,
     "question": "Anthony de Jasay attacked the social contract, the old account, told by Thomas Hobbes, John Locke and John Rawls, that citizens once consented to be ruled. He answered it with history rather than theory. What did he point out?",
-    "answer": "No such consent had actually happened -- historical states were founded by conquest or by groups seizing power, then rationalized",
+    "answer": "No such consent ever happened; real states began in conquest or seizure",
     "choices": [
-      "No such consent had actually happened -- historical states were founded by conquest or by groups seizing power, then rationalized",
-      "The consent required a majority vote in every generation, which none had ever staged",
-      "Social contracts violated the European Union treaty framework",
-      "Social contracts required a written constitution, and only the US had one"
+      "No such consent ever happened; real states began in conquest or seizure",
+      "Each generation would have to consent anew, and none ever had",
+      "Tribes that lived without any state proved the contract unneeded",
+      "Only property owners had ever been asked, so the consent was partial"
     ],
     "context": "The hypothetical-consent framing of Hobbes, Locke, and Rawls treated the state's legitimacy as flowing from an idealized agreement. De Jasay treated the framing as a rationalization dressed up as philosophy. Source: grokipedia.com/page/Anthony_de_Jasay.",
     "topic": "anthony-de-jasay-the-state-1985"
   },
   {
-    "tier": 4,
-    "question": "Anthony de Jasay kept pressing for fifteen years after his 1985 book, well past the limits of public choice. His later books argued against political rule itself and against the idea of a founding pact behind government. Which set of titles shows that later work?",
-    "answer": "'Social Contract, Free Ride,' 'Choice, Contract, Consent,' 'Against Politics,' 'Justice and Its Surroundings'",
-    "choices": [
-      "'Social Contract, Free Ride,' 'Choice, Contract, Consent,' 'Against Politics,' 'Justice and Its Surroundings'",
-      "'The General Theory,' 'How to Pay for the War,' 'A Tract on Monetary Reform'",
-      "'Capital in the Twenty-First Century,' 'A Brief History of Neoliberalism'",
-      "'The Wealth of Nations,' 'The Theory of Moral Sentiments'"
-    ],
-    "context": "These four titles (1989, 1991, 1997, 2002) built out de Jasay's distinctive libertarian-classical-liberal position over almost 15 years. His prose was precise, French-influenced, and often mordant. Source: grokipedia.com/page/Anthony_de_Jasay.",
-    "topic": "anthony-de-jasay-the-state-1985"
-  },
-  {
     "tier": 5,
-    "question": "Peter Boettke, an Austrian economist, later helped carry Anthony de Jasay's work to a wide audience. Yet one fact about de Jasay's career set him apart from almost every great name in his tradition. What was it?",
-    "answer": "He never held a permanent academic post; he spent his working life at a Normandy wine business",
+    "question": "Anthony de Jasay fled Hungary in 1948 and spent seven years at Oxford. His later books won admirers among economists of the free-market tradition, yet one fact about his career set him apart from nearly all of them. What was it?",
+    "answer": "He never held a professorship; he earned his living as a banker in Paris",
     "choices": [
-      "He never held a permanent academic post; he spent his working life at a Normandy wine business",
-      "He served as prime minister of Hungary from 1990 to 1994",
-      "He co-authored 'Capitalism and Freedom' with Milton Friedman",
-      "He founded the Chicago School of Economics"
+      "He never held a professorship; he earned his living as a banker in Paris",
+      "He wrote every book in Hungarian and left the translating to others",
+      "He wrote under a pen name, and was unmasked only after his death",
+      "He served as a minister in Hungary's first free government in 1990"
     ],
-    "context": "De Jasay wrote his books outside the university system entirely. The Liberty Fund began publishing his Collected Works in 2010, and the Anthony de Jasay Institute in Vienna now carries his name. Source: grokipedia.com/page/Anthony_de_Jasay.",
+    "context": "De Jasay went to Oxford in 1955 and stayed until 1962, latterly as a research fellow of Nuffield College; he was then a banker and investor in Paris until 1979, when he retired to Normandy and wrote his books outside the universities. Sources: grokipedia.com/page/Anthony_de_Jasay; dejasay.org/biography.",
     "topic": "anthony-de-jasay-the-state-1985"
   },
   {
@@ -1443,79 +1430,53 @@
     "topic": "arthur-burns-nixons-political-pressure-and-the-1970s-great-i"
   },
   {
-    "tier": 2,
-    "question": "The Federal Reserve chairman whom Richard Nixon pressed for cheap money kept a private diary through those years. It stayed unpublished long after the chairman died in 1987 and appeared in print only in 2010, confirming what the White House tapes had shown. What is the published diary called?",
-    "answer": "Inside the Nixon Administration: The Secret Diary of Arthur Burns 1969-1974",
-    "choices": [
-      "Inside the Nixon Administration: The Secret Diary of Arthur Burns 1969-1974",
-      "The Anguish of Central Banking",
-      "The Chairman's Notebook",
-      "Reflections on Monetary Policy"
-    ],
-    "context": "The 2010 University Press of Kansas volume Inside the Nixon Administration is Burns's own real-time account of the pressure he faced. It confirmed what the Nixon tapes had already shown. Source: Grokipedia 'Arthur Burns' (2026-09-05).",
-    "topic": "arthur-burns-nixons-political-pressure-and-the-1970s-great-i"
-  },
-  {
-    "tier": 2,
-    "question": "Arab oil producers cut supply in 1973 while Arthur Burns's Federal Reserve was keeping money cheap, and Iran's revolution cut it again in 1979. Yearly inflation had already hit 11 percent in 1974. How high did it reach in 1980, the peak year?",
-    "answer": "About 13.5 percent",
-    "choices": [
-      "About 13.5 percent",
-      "About 5 percent",
-      "About 25 percent",
-      "About 3 percent"
-    ],
-    "context": "US CPI inflation was 11.0% in 1974, 11.3% in 1979, and 13.5% in 1980 -- the peak year. The 1970s Great Inflation was the worst peacetime US price experience. Source: Grokipedia 'Great Inflation' (2026-09-05).",
-    "topic": "arthur-burns-nixons-political-pressure-and-the-1970s-great-i"
-  },
-  {
     "tier": 4,
     "question": "Murray Rothbard and other Austrian-school writers would not put Arthur Burns's record at the Federal Reserve down to bad luck or a weak chairman. Burns had kept money cheap under pressure from Nixon, and they saw in it proof of a built-in flaw in the institution itself. What flaw did they name?",
-    "answer": "Any institution empowered to expand credit will be captured by politicians who benefit from short-term stimulus regardless of long-term cost",
+    "answer": "Any central bank will be captured by politicians who want a quick boom, whatever the cost",
     "choices": [
-      "Any institution empowered to expand credit will be captured by politicians who benefit from short-term stimulus regardless of long-term cost",
-      "Any institution empowered to expand credit will inevitably reduce the money supply",
-      "Any institution empowered to expand credit will refuse to lend during recessions",
-      "Any institution empowered to expand credit will always coordinate perfectly with fiscal policy"
+      "Any central bank will be captured by politicians who want a quick boom, whatever the cost",
+      "Any central bank acts on figures that arrive months late, so it always steers too late",
+      "Any central bank gets blamed for shocks, like oil embargoes, that it cannot control",
+      "Any central bank is too timid to act until a crisis is already underway"
     ],
-    "context": "The Austrian point: Burns's tenure is the textbook case. An academically distinguished chairman with proper theoretical training nevertheless caved to a president's re-election needs, and destroyed the dollar's purchasing power over the following decade. Source: Rothbard, America's Great Depression (1963).",
+    "context": "The Austrian point: Burns's tenure is the textbook case. An academically distinguished chairman with proper theoretical training nevertheless caved to a president's re-election needs, and in their reading the dollar's purchasing power paid for it over the following decade.",
     "topic": "arthur-burns-nixons-political-pressure-and-the-1970s-great-i"
   },
   {
-    "tier": 4,
+    "tier": 3,
     "question": "Arthur Burns gave a lecture in Belgrade in 1979, a year after leaving the Federal Reserve, titled 'The Anguish of Central Banking.' He confessed that central bankers struggle to stand firm against inflation, because one outside force keeps leaning on them to loosen money. What pressure was he describing?",
-    "answer": "Elected leaders push for cheap credit to help them win the next election",
+    "answer": "Elected leaders pressing for easy money to keep jobs and incomes up",
     "choices": [
-      "Elected leaders push for cheap credit to help them win the next election",
-      "Foreign banks give central bankers direct orders on interest rates",
-      "Voters send letters demanding higher interest rates every month",
-      "Newspapers refuse to print any story about the Fed at all"
+      "Elected leaders pressing for easy money to keep jobs and incomes up",
+      "Foreign central banks pressing for low rates to steady their currencies",
+      "Commercial banks pressing for low rates to fatten their lending profits",
+      "Stock traders pressing for cheap money to keep share prices climbing"
     ],
-    "context": "Burns delivered 'The Anguish of Central Banking' as the 1979 Per Jacobsson Lecture in Belgrade. It is a striking retrospective admission from the chair whose tenure had failed the test he was now describing. Source: Grokipedia 'Arthur Burns' (2026-09-05).",
+    "context": "Burns delivered 'The Anguish of Central Banking' as the Per Jacobsson Lecture in Belgrade on September 30, 1979. He said the Fed had been 'caught up in the philosophic and political currents' of the age, and that inflation was 'continually driven by political forces.' It is a striking admission from the chair whose tenure had failed the test he was now describing. Sources: mises.org/mises-daily/anguish-central-banking-2005; Grokipedia 'Arthur Burns' (2026-09-05).",
     "topic": "arthur-burns-nixons-political-pressure-and-the-1970s-great-i"
   },
   {
     "tier": 5,
     "question": "Arthur Burns cut interest rates when the first wave of 1970s inflation died down, and expectations of rising prices came loose. Austrian analysts hold up his mistake as a warning to every central bank tempted to ease early. What sequel do they warn an early cut invites?",
-    "answer": "A second inflation wave requiring extraordinary rate hikes like Volcker's 20 percent",
+    "answer": "A second, worse inflation wave that only Volcker-style hikes can break",
     "choices": [
-      "A second inflation wave requiring extraordinary rate hikes like Volcker's 20 percent",
-      "A cascade of bank failures across the mortgage sector",
-      "A collapse of the Bretton Woods system in a redux form",
-      "An immediate return to gold-standard convertibility"
+      "A second, worse inflation wave that only Volcker-style hikes can break",
+      "A long slump with falling prices, like Japan's in the 1990s",
+      "A run on the dollar as foreign banks rush to swap it for gold",
+      "A glut of savings that drives interest rates below zero"
     ],
-    "context": "The Volcker recession was necessary because Burns had eased too soon and let expectations un-anchor. The 2020s warning: if Powell repeats the Burns error, a Volcker-style rescue will be needed, at rates the current 120% debt-to-GDP ratio can barely tolerate. Source: Grokipedia 'Paul Volcker' (2026-09-05).",
+    "context": "The Volcker recession followed because Burns had eased too soon and let expectations come loose. Austrian analysts draw a warning for the 2020s from it: a central bank that eases too early may need Volcker-style hikes again. Source: Grokipedia 'Paul Volcker' (2026-09-05).",
     "topic": "arthur-burns-nixons-political-pressure-and-the-1970s-great-i"
   },
   {
     "tier": 5,
     "question": "Richard Nixon named Arthur Burns chairman of the Federal Reserve in 1970, and Burns had every credential the job could want: a celebrated Columbia professor and an expert on business cycles. Nixon pressed him for cheap money, and the Great Inflation followed. What lesson about central-bank appointments does Burns's tenure teach?",
-    "answer": "An academically distinguished appointee with proper theoretical training can still cave to political pressure and produce the exact inflationary outcome his training warned against",
+    "answer": "Even a superbly trained chair can bow to a president and cause the inflation he foresaw",
     "choices": [
-      "An academically distinguished appointee with proper theoretical training can still cave to political pressure and produce the exact inflationary outcome his training warned against",
-      "Academic training always guarantees a central-bank chair will resist political pressure",
-      "Political pressure on central banks never affects actual policy decisions",
-      "The Fed chair is always fully independent of the president who appointed him"
+      "Even a superbly trained chair can bow to a president and cause the inflation he foresaw",
+      "A professor lacks the banker's feel for markets that the chair's job demands",
+      "A chair chosen for his theory will cling to it after events prove it wrong",
+      "A chair needs freer discretion, since no fixed rule can foresee every shock"
     ],
     "context": "Burns had the credentials any economist would have wanted in a Fed chair. He caved anyway. The problem is not the chair's training but the institutional structure that puts a single reappointable individual under presidential pressure at four-year intervals. Source: Grokipedia 'Arthur Burns' (2026-09-05).",
     "topic": "arthur-burns-nixons-political-pressure-and-the-1970s-great-i"
@@ -1760,16 +1721,16 @@
     "answer": "Poor families -- the tax makes bread more expensive every day",
     "choices": [
       "Poor families -- the tax makes bread more expensive every day",
-      "The landlords -- they earn less on their wheat",
-      "Ship captains -- the harbor is less crowded",
-      "Nobody -- the tax just disappears"
+      "Farm laborers -- the tax cuts the wages paid in the fields",
+      "City bakers -- the tax caps the price they can charge for bread",
+      "Wool merchants -- the tax is charged on every fleece they sell"
     ],
     "context": "The grain tax fell hardest on poor families, who paid extra for every loaf while the landlords pocketed the higher price. The families who rallied to the Anti-Corn Law League, founded in Manchester by Richard Cobden and John Bright, wanted the tariffs gone because they made bread more expensive than it needed to be. The League was the classic 19th-century mass free-trade movement, and Bastiat traveled to its Manchester headquarters in 1845 specifically to study its methods. Sources: grokipedia.com/page/Anti-Corn_Law_League; grokipedia.com/page/Frederic_Bastiat.",
     "topic": "bastiat-and-cobden-the-anti-corn-law-friendship"
   },
   {
     "tier": 1,
-    "question": "Two Manchester cotton merchants led a campaign in the 1840s to repeal Britain's Corn Laws, the tariffs that kept bread dear. They founded the Anti-Corn Law League, toured the country making speeches, and won free trade in grain in 1846. Who were the pair?",
+    "question": "Two Lancashire cotton men led a campaign in the 1840s to repeal Britain's Corn Laws, the tariffs that kept bread dear. They founded the Anti-Corn Law League, toured the country making speeches, and won free trade in grain in 1846. Who were the pair?",
     "answer": "Richard Cobden and John Bright",
     "choices": [
       "Richard Cobden and John Bright",
@@ -1795,26 +1756,26 @@
   },
   {
     "tier": 2,
-    "question": "Frederic Bastiat's free-trade league, founded in Bordeaux in 1846, ran a weekly paper, Le Libre-Echange. Week after week it came back to one example: a tariff on foreign shoes. What did the paper say such a tariff really does?",
-    "answer": "Every family pays more for shoes so a few shoemakers can charge more",
+    "question": "Frédéric Bastiat founded a free-trade association in Bordeaux in 1846 and edited its weekly paper, Le Libre-Échange. French tariffs of the day kept cheaper foreign goods out to shield makers at home. What did the association say such a tariff really does?",
+    "answer": "It helps a few producers and raises prices for everyone else",
     "choices": [
-      "Every family pays more for shoes so a few shoemakers can charge more",
-      "Foreign shoemakers pay the tariff instead of local shoppers",
-      "Tariffs are free of any hidden costs because the government keeps the money",
-      "Tariffs make everyone richer because they protect the whole country"
+      "It helps a few producers and raises prices for everyone else",
+      "It makes foreign makers pay, since they must cut their prices",
+      "It saves home jobs at no cost, as the money stays at home",
+      "It raises revenue that lets the state cut other taxes"
     ],
-    "context": "The French Free Trade Association (Association pour la liberte des echanges) was founded in Bordeaux in February 1846 and expanded to Paris and elsewhere later that year. Its central argument was that a tariff helps a few producers a great deal but raises prices for everyone else, so most people end up worse off. Le Libre-Echange (November 1846 onward) was the movement's official periodical, edited by Bastiat during his most productive years. Across the Channel, Peel's repeal of the Corn Laws on June 25, 1846 was the classic case of a free-trade movement winning against a landed political interest. Sources: grokipedia.com/page/Frederic_Bastiat; grokipedia.com/page/Repeal_of_the_Corn_Laws.",
+    "context": "The French Free Trade Association (Association pour la liberte des echanges) was founded in Bordeaux in February 1846 and expanded to Paris later that year. Le Libre-Echange (from November 1846) was its weekly paper, edited by Bastiat during his most productive years. Across the Channel, Peel's repeal of the Corn Laws on June 25, 1846 was the classic case of a free-trade movement winning against a landed political interest. Sources: grokipedia.com/page/Frederic_Bastiat; grokipedia.com/page/Repeal_of_the_Corn_Laws.",
     "topic": "bastiat-and-cobden-the-anti-corn-law-friendship"
   },
   {
-    "tier": 5,
+    "tier": 3,
     "question": "Richard Cobden, a cotton merchant, and John Bright, a fiery orator, led a band of free traders from an English factory city. Their campaign forced Parliament to repeal Britain's Corn Laws in 1846. History named the group after its industrial home. What is its two-word name?",
     "answer": "The Manchester School",
     "choices": [
       "The Manchester School",
-      "The Fabian School",
-      "The Chicago School",
-      "The Salamanca School"
+      "The Birmingham School",
+      "The Liverpool School",
+      "The Leeds School"
     ],
     "context": "The Manchester School was the British counterpart to Bastiat's French free-trade tradition and gave English a shorthand for classical-liberal political economy. Source: grokipedia.com/page/Manchester_School.",
     "topic": "bastiat-and-cobden-the-anti-corn-law-friendship"
@@ -1925,15 +1886,15 @@
   },
   {
     "tier": 4,
-    "question": "Joseph Schumpeter, an Austrian-born economist at Harvard, dismissed Frédéric Bastiat in one short line in History of Economic Analysis, a book that came out in 1954, after his death. University economists left Bastiat largely unread for decades, much of it thanks to that line. Which line did Schumpeter write?",
+    "question": "Joseph Schumpeter, an Austrian-born economist at Harvard, dismissed Frédéric Bastiat in one short line in History of Economic Analysis, a book that came out in 1954, after his death. Bastiat's admirers say that line kept university economists from reading him for decades. Which line did Schumpeter write?",
     "answer": "I do not hold that Bastiat was a bad theorist. I hold that he was no theorist.",
     "choices": [
       "I do not hold that Bastiat was a bad theorist. I hold that he was no theorist.",
-      "Bastiat is the most dangerous socialist ever to have written in French.",
-      "Bastiat's Sophisms are the finest work of economics in the 19th century.",
-      "Bastiat and Marx must be read as complementary halves of a single vision."
+      "Bastiat's errors are so many that only his wit has kept him in print.",
+      "Bastiat is an amateur whom only the French still mistake for a master.",
+      "Bastiat understood free trade and nothing else in economics at all."
     ],
-    "context": "Schumpeter's dismissal in History of Economic Analysis (published posthumously in 1954) discouraged academic economists from taking Bastiat seriously for decades. Rothbard's later Austrian Perspective on the History of Economic Thought (1995) was in part an explicit answer to Schumpeter, treating Bastiat as a genuine French classical-liberal theorist. Source: https://mises.org/quarterly-journal-austrian-economics/bastiats-legacy-economics.",
+    "context": "Schumpeter's dismissal in History of Economic Analysis (published posthumously in 1954) is often blamed for academic economists' long neglect of Bastiat. Rothbard's later Austrian Perspective on the History of Economic Thought (1995) answered it, treating Bastiat as a genuine French classical-liberal theorist. Source: https://mises.org/quarterly-journal-austrian-economics/bastiats-legacy-economics.",
     "topic": "bastiat-inside-mises-s-human-action"
   },
   {
@@ -1946,7 +1907,7 @@
       "For a New Liberty",
       "The Panic of 1819"
     ],
-    "context": "Rothbard's two-volume An Austrian Perspective on the History of Economic Thought was published posthumously by Edward Elgar in 1995 (Rothbard died in January 1995). The book devotes serious attention to Bastiat and the wider French classical-liberal tradition -- an implicit rebuke of Schumpeter's 1954 dismissal. The three other choices are all real earlier Rothbard books. Source: https://mises.org/library/book/austrian-perspective-history-economic-thought.",
+    "context": "Rothbard's two-volume An Austrian Perspective on the History of Economic Thought was published posthumously by Edward Elgar in 1995 (Rothbard died in January 1995). The book devotes serious attention to Bastiat and the wider French classical-liberal tradition -- a rebuke of Schumpeter's 1954 dismissal. The three other choices are all real earlier Rothbard books. Source: https://mises.org/library/book/austrian-perspective-history-economic-thought.",
     "topic": "bastiat-inside-mises-s-human-action"
   },
   {
@@ -2306,9 +2267,9 @@
     "answer": "It drops -- builders will not build for a rent they cannot raise",
     "choices": [
       "It drops -- builders will not build for a rent they cannot raise",
-      "It doubles -- the low price attracts many new builders",
-      "Nothing changes -- rent control has no effect on building",
-      "Only tiny apartments are built"
+      "It rises -- builders hurry to finish before the freeze ends",
+      "Nothing changes -- builders follow demand, not rent rules",
+      "It rises -- cheap rents draw more renters and more building"
     ],
     "context": "Mietendeckel means 'rent lid' in German. The rule applied only inside Berlin, so neighboring Brandenburg municipalities kept market pricing -- creating a natural experiment economists rarely have. Source: grokipedia.com/page/Berlin_rent_cap.",
     "topic": "berlins-2020-rent-freeze-mietendeckel"
@@ -2316,27 +2277,27 @@
   {
     "tier": 2,
     "question": "Economists in Munich and Berlin seized on Berlin's 2020 rent freeze, the Mietendeckel, as a rare experiment: two sets of apartments in the same country and the same months, one under the lid and one not. What feature of the law made that comparison possible?",
-    "answer": "It applied only within Berlin's city boundaries, so neighboring municipalities kept market pricing",
+    "answer": "It stopped at Berlin's city line, so the towns beyond kept market rents",
     "choices": [
-      "It applied only within Berlin's city boundaries, so neighboring municipalities kept market pricing",
-      "It applied to every German city simultaneously",
-      "It was enacted at the European Union level",
-      "It applied only to commercial (not residential) tenants"
+      "It stopped at Berlin's city line, so the towns beyond kept market rents",
+      "It began on different dates in different districts of the city",
+      "It covered only flats owned by large landlord companies",
+      "It applied only to flats let to tenants with low incomes"
     ],
     "context": "Economists at the ifo Institute in Munich and the DIW in Berlin used the border discontinuity to compare rental-market outcomes in Berlin against adjoining non-Berlin municipalities. Source: grokipedia.com/page/Berlin_rent_cap.",
     "topic": "berlins-2020-rent-freeze-mietendeckel"
   },
   {
     "tier": 3,
-    "question": "Researchers count the apartments listed for rent in a big city a few months after it caps how much any landlord may charge, and compare them with the listings in towns just past the city line. What do they usually find?",
-    "answer": "Listings inside the city drop sharply while listings in the towns just outside rise",
+    "question": "Economists at the ifo Institute and the German Institute for Economic Research (DIW) counted the flats offered for rent in Berlin in the months after its 2020 rent freeze. They also checked the market in Potsdam and the other towns just past the city line, where the freeze did not reach. What did they find?",
+    "answer": "Listings inside the city fell sharply, while rents just outside climbed",
     "choices": [
-      "Listings inside the city drop sharply while listings in the towns just outside rise",
-      "Listings rise in both places as landlords rush to comply",
-      "Listings stay unchanged everywhere",
-      "Listings fall in both places by the same amount"
+      "Listings inside the city fell sharply, while rents just outside climbed",
+      "Listings rose inside the city, while flats just outside stood empty",
+      "Rents fell on both sides, as the lid's low prices spread outward",
+      "Listings and rents barely moved on either side of the line"
     ],
-    "context": "Landlords held units off the market, listed them as furnished shares (exempt from the freeze), or converted them to sale. The supply-shrinkage was the central empirical finding of the natural experiment. Source: grokipedia.com/page/Berlin_rent_cap.",
+    "context": "Landlords held units off the market, listed them as furnished shares (exempt from the freeze), or sold them. An ifo study of 2022 found Berlin's supply of rental listings shrank by up to 60 percent, and a DIW paper found rents climbing fast in the uncapped towns next door, Potsdam among them. Sources: ifo Institute study, April 2022 (reported by fundresearch.de); DIW Discussion Paper 1999 (Hahn, Kholodilin, Waltl and Fongoni).",
     "topic": "berlins-2020-rent-freeze-mietendeckel"
   },
   {
@@ -2345,9 +2306,9 @@
     "answer": "The freeze shrank the pool of listings, so movers now compete for the few left",
     "choices": [
       "The freeze shrank the pool of listings, so movers now compete for the few left",
-      "The freeze had no effect on the rental market at all",
-      "The central bank quietly raised interest rates during the freeze",
-      "The city ordered landlords to raise prices on movers only"
+      "Building costs soared, and landlords passed them on to every tenant",
+      "The central bank raised rates, so mortgages and rents climbed together",
+      "The city taxed landlords to pay for the freeze, and they passed it on"
     ],
     "context": "Applied Bastiat: seen benefit (protected sitting tenants) was real; unseen cost fell on the mover who now faced a smaller and more competitive market for the units that remained available. Source: grokipedia.com/page/Berlin_rent_cap.",
     "topic": "berlins-2020-rent-freeze-mietendeckel"
@@ -2355,27 +2316,14 @@
   {
     "tier": 4,
     "question": "Judges in Karlsruhe, on Germany's Federal Constitutional Court, struck down Berlin's rent freeze on April 15, 2021. They never weighed whether the price cap was good or bad economics. On what legal ground did they strike the law down?",
-    "answer": "Federalism -- rent regulation is a federal competence and the Berlin state lacked the authority",
+    "answer": "Only the national government could regulate rents, not the state of Berlin",
     "choices": [
-      "Federalism -- rent regulation is a federal competence and the Berlin state lacked the authority",
-      "The freeze violated the human right to shelter under the Basic Law",
-      "The freeze violated European Union free-movement rules",
-      "The freeze violated Germany's post-1990 unification treaty with the East"
+      "Only the national government could regulate rents, not the state of Berlin",
+      "The freeze took landlords' property without the payment the Basic Law requires",
+      "The freeze treated tenants in old and new buildings unequally",
+      "The freeze broke European Union rules on the free movement of capital"
     ],
     "context": "The Court did not rule on the economic merits of the freeze; it ruled that the wrong level of government had enacted it. Retroactive rent had to be paid back by Berlin tenants who had been paying the frozen rate. Source: grokipedia.com/page/Berlin_rent_cap.",
-    "topic": "berlins-2020-rent-freeze-mietendeckel"
-  },
-  {
-    "tier": 5,
-    "question": "Germany's constitutional judges ended Berlin's rent lid in April 2021, some fourteen months after it began, and left economists excellent statistics and a clean before-and-after comparison. What has the Berlin case become in European housing economics?",
-    "answer": "The standard modern case study of rent-control-shock supply response",
-    "choices": [
-      "The standard modern case study of rent-control-shock supply response",
-      "The standard modern case study of successful municipal rent regulation",
-      "The standard modern case study of European Union housing subsidies",
-      "The standard modern case study of central-bank interest-rate policy on rents"
-    ],
-    "context": "The combination of a real Western democracy, excellent economic statistics, a clean border discontinuity, and a fifteen-month before/after window makes the Berlin case a rare gift for empirical work on rent control. Source: grokipedia.com/page/Berlin_rent_cap.",
     "topic": "berlins-2020-rent-freeze-mietendeckel"
   },
   {
@@ -2680,14 +2628,14 @@
   {
     "tier": 1,
     "question": "A devout Baptist in a Southern town campaigns to keep the Sunday liquor ban, sure that drinking on the Sabbath is wrong. A moonshiner backs the ban too, because closed liquor stores send Sunday drinkers his way. What kind of coalition is this?",
-    "answer": "Two very different groups quietly wanting the same rule for opposite reasons",
+    "answer": "An alliance of two groups wanting the same rule for opposite reasons",
     "choices": [
-      "Two very different groups quietly wanting the same rule for opposite reasons",
-      "A single group united in one shared belief",
-      "A group that only cares about profits",
-      "A group that only cares about morals"
+      "An alliance of two groups wanting the same rule for opposite reasons",
+      "A vote trade, where each side backs the other's pet rule in return",
+      "A compromise, where each side gives up part of what it wanted",
+      "A front, where one side pays the other to pretend to believe"
     ],
-    "context": "Bruce Yandle spent 1982-84 as Executive Director of the FTC. His 1983 essay in Regulation magazine (Cato Institute) coined the 'Bootleggers and Baptists' framing. Source: en.wikipedia.org/wiki/Bruce_Yandle.",
+    "context": "Bruce Yandle spent 1982-84 as Executive Director of the FTC. His 1983 essay in Regulation magazine, then published by the American Enterprise Institute, coined the 'Bootleggers and Baptists' framing. Sources: en.wikipedia.org/wiki/Bruce_Yandle; en.wikipedia.org/wiki/Regulation_(magazine).",
     "topic": "bootleggers-and-baptists-bruce-yandle-1983"
   },
   {
@@ -2731,13 +2679,13 @@
   },
   {
     "tier": 3,
-    "question": "Environmentalists rally behind a new green rule, sincere in wanting to protect the planet. Bruce Yandle's lens looks for a quieter partner cheering the rule on: a business that gains because the rule weighs more heavily on its rivals than on itself. Which kind of business most often plays that bootlegger's part?",
+    "question": "Environmentalists rally behind a new green rule, sincere in wanting to protect the planet. Bruce Yandle's lens looks for a quieter partner cheering the rule on: a business that gains because the rule weighs more heavily on its rivals than on itself. Which kind of business often plays that bootlegger's part?",
     "answer": "Domestic producers seeking barriers against foreign competitors",
     "choices": [
       "Domestic producers seeking barriers against foreign competitors",
-      "Foreign producers seeking US market access",
-      "Public-utility monopolies seeking rate cuts",
-      "Insurance companies seeking premium hikes"
+      "Foreign producers seeking easier access to the home market",
+      "Importers seeking lower prices on goods brought from abroad",
+      "Banks seeking new lending to firms forced to retool"
     ],
     "context": "Environmental rules that raise costs on all producers can disadvantage foreign competitors more than domestic ones (particularly under carbon-adjustment or content-labeling schemes). Domestic producers become the bootleggers behind the environmental moral coalition. Source: cato.org environmental economics.",
     "topic": "bootleggers-and-baptists-bruce-yandle-1983"
@@ -2753,19 +2701,6 @@
       "Immigrants and native-born citizens"
     ],
     "context": "Prohibition united moralists (temperance movements, WCTU, Anti-Saloon League) with organized-crime beneficiaries who would run the resulting black market. The 18th Amendment (1919) and the Volstead Act became the American case study. Source: en.wikipedia.org/wiki/Prohibition_in_the_United_States.",
-    "topic": "bootleggers-and-baptists-bruce-yandle-1983"
-  },
-  {
-    "tier": 3,
-    "question": "Bruce Yandle turned his 1983 essay into a full book in 2014, written with a co-author who was, confusingly, named Adam Smith, a modern scholar and not the Scot of 1776. The Cato Institute published it, with modern cases from banking, green rules and tobacco deals. What is the book's full title?",
-    "answer": "Bootleggers and Baptists: How Economic Forces and Moral Persuasion Interact to Shape Regulatory Politics",
-    "choices": [
-      "Bootleggers and Baptists: How Economic Forces and Moral Persuasion Interact to Shape Regulatory Politics",
-      "Public Choice for Ordinary People",
-      "The Economics of Coalitions",
-      "Regulation and Its Alternatives"
-    ],
-    "context": "The 2014 book (Cato Institute) extends the framework to modern regulatory cases across environmental policy, consumer protection, financial regulation, and more. Co-author Adam Smith is a modern American economist. Source: cato.org (Yandle + Smith 2014).",
     "topic": "bootleggers-and-baptists-bruce-yandle-1983"
   },
   {
@@ -3099,9 +3034,9 @@
     "answer": "The money for rebuilding was going to be spent on other things people wanted",
     "choices": [
       "The money for rebuilding was going to be spent on other things people wanted",
-      "Rebuilding creates goods that would never have existed otherwise",
-      "Only insurance companies benefit, so the argument fails only for them",
-      "Rebuilding creates unlimited new wealth from thin air"
+      "Builders were already fully booked, so no extra building could happen",
+      "Insurers paid for it, and their losses abroad cancelled the gains",
+      "New towers cost more to build than the old ones had been worth"
     ],
     "context": "Krugman, then a new Times columnist and later the 2008 Nobel laureate in economics, wrote in the column: 'Now, all of a sudden, we need some new office buildings.' Boudreaux, a former president of the Foundation for Economic Education, co-founded Cafe Hayek with Russ Roberts in 2004 and writes the recurring 'Quotation of the Day' invoking Bastiat.",
     "topic": "broken-window-applied-to-katrina-and-9-11-modern-misuses"
@@ -3116,20 +3051,7 @@
       "The unpaid labour",
       "The hidden surplus"
     ],
-    "context": "The essay is titled Ce qu'on voit et ce qu'on ne voit pas -- 'That Which is Seen and That Which is Not Seen'. Bastiat's move is that the six francs the shopkeeper cannot now spend on shoes or a book is the UNSEEN loss the disaster caused. Dead-weight loss is a much later diagram-based concept (Harberger, 1954). Source: oll.libertyfund.org, Bastiat, 'That Which is Seen'.",
-    "topic": "broken-window-applied-to-katrina-and-9-11-modern-misuses"
-  },
-  {
-    "tier": 2,
-    "question": "A buyer in July 2009 traded in his old gas-guzzler toward a new car; the dealer collected a federal voucher, and the old car was destroyed. The program's $3 billion was gone in fifty-five days, from July 1 to August 24. How many vehicles had been scrapped by then?",
-    "answer": "677,081",
-    "choices": [
-      "677,081",
-      "148,000",
-      "1,432,000",
-      "3,110,000"
-    ],
-    "context": "NHTSA's final figure was 677,081 vehicles scrapped under CARS, at a total voucher cost of about $2.85 billion of the $3 billion authorised. The other three numbers are plausible fleet-size figures from the same era. Source: en.wikipedia.org 'Car Allowance Rebate System'.",
+    "context": "The essay is titled Ce qu'on voit et ce qu'on ne voit pas -- 'That Which is Seen and That Which is Not Seen'. Bastiat's move is that the six francs the shopkeeper cannot now spend on shoes or a book is the UNSEEN loss the broken window caused. Source: oll.libertyfund.org, Bastiat, 'That Which is Seen'.",
     "topic": "broken-window-applied-to-katrina-and-9-11-modern-misuses"
   },
   {
@@ -3142,18 +3064,18 @@
       "The Invisible Heart",
       "How Adam Smith Can Change Your Life"
     ],
-    "context": "The Price of Everything (Princeton University Press, 2008) uses a post-earthquake supermarket to show how sharply rising prices coordinate the movement of bottled water and generators to where they are most needed -- Bastiat's method dramatised. The Choice (2006) and The Invisible Heart (2001) are Roberts's other novels; How Adam Smith Can Change Your Life is his 2014 non-fiction. Source: en.wikipedia.org 'Russ Roberts'.",
+    "context": "The Price of Everything (Princeton University Press, 2008) uses a post-earthquake supermarket to show how sharply rising prices coordinate the movement of bottled water and generators to where they are most needed -- Bastiat's method dramatised. The Choice (first published 1994) and The Invisible Heart (2001) are Roberts's other novels; How Adam Smith Can Change Your Life is his 2014 non-fiction. Source: en.wikipedia.org 'Russ Roberts'.",
     "topic": "broken-window-applied-to-katrina-and-9-11-modern-misuses"
   },
   {
     "tier": 5,
     "question": "Robert Higgs, an economic historian, took a fresh look in the 1990s at the claim that the Depression was cured by the Second World War. Factories had poured out tanks, ships and planes, and the war's output figures soared. So he looked past the output figures to daily life at home. What did he find?",
-    "answer": "Everyday goods for regular families barely improved from Depression levels during the war",
+    "answer": "Everyday goods for families barely improved on Depression levels during the war",
     "choices": [
-      "Everyday goods for regular families barely improved from Depression levels during the war",
-      "The government's war spending was smaller than peacetime spending had been",
-      "Business investment kept growing during the war as fast as before it",
-      "Unemployment stayed above ten percent throughout every war year"
+      "Everyday goods for families barely improved on Depression levels during the war",
+      "Families bought more than ever before, as war wages flowed home",
+      "Rationing ended early in the war, and shops soon filled with goods",
+      "War wages rose so fast that families stopped saving altogether"
     ],
     "context": "Higgs's point is that GDP counts what is SPENT, including tanks and shells; what an ordinary American could actually buy at home -- meat, sugar, tires, gasoline, new cars -- was under strict rationing, and real private per-capita consumption sat near 1938-39 levels until demobilisation. The other three claims are false. Source: eh.net review, 'Depression, War, and Cold War' (Higgs).",
     "topic": "broken-window-applied-to-katrina-and-9-11-modern-misuses"
@@ -3164,11 +3086,11 @@
     "answer": "'Destruction n'est pas profit'",
     "choices": [
       "'Destruction n'est pas profit'",
-      "'Luxe n'est pas richesse'",
-      "'Spoliation n'est pas industrie'",
-      "'Echange n'est pas vol'"
+      "'Ruine n'est pas richesse'",
+      "'Briser n'est pas gagner'",
+      "'Dépense n'est pas richesse'"
     ],
-    "context": "The full French sentence reads 'briser, gaspiller, dissiper, n'est pas encourager le travail national; ou plus brievement: destruction n'est pas profit.' The other three phrases are Bastiat-style constructions, not attested lines from the broken-window passage; only the answer is the essay's own closing formula. Source: bastiat.org 'Ce qu'on voit et ce qu'on ne voit pas'.",
+    "context": "The full French sentence reads: 'Casser, briser, dissiper, ce n'est pas encourager le travail national', ou plus brièvement: 'destruction n'est pas profit.' Those four words are the essay's own closing formula; the other phrases are made-up lines in Bastiat's style. Source: Bastiat, Ce qu'on voit et ce qu'on ne voit pas (1850), iedm.org edition.",
     "topic": "broken-window-applied-to-katrina-and-9-11-modern-misuses"
   },
   {
@@ -3307,11 +3229,11 @@
     "answer": "The private cost of one wrong belief is essentially zero",
     "choices": [
       "The private cost of one wrong belief is essentially zero",
-      "Political leaders always correct voter mistakes",
-      "News media always deliver accurate information",
-      "Public education successfully teaches economics"
+      "Other voters' errors cancel his out, so the result stays sound",
+      "Elected leaders ignore what voters believe once they take office",
+      "Courts strike down the bad laws that such beliefs produce"
     ],
-    "context": "The private cost of holding an economically wrong belief is essentially zero because the belief influences one vote out of tens of millions. Consumers with wrong beliefs about products suffer directly; voters do not. Democracies systematically choose bad policies because voter beliefs face no discipline.",
+    "context": "The private cost of holding an economically wrong belief is essentially zero because the belief influences one vote out of tens of millions. Consumers with wrong beliefs about products suffer directly; voters do not. Caplan argues that this is why democracies choose bad policies, and he rejects the hope that voters' random errors cancel out, because their errors lean the same way. Source: Caplan, The Myth of the Rational Voter (2007).",
     "topic": "bryan-caplan-the-myth-of-the-rational-voter-2007"
   },
   {
@@ -3333,7 +3255,7 @@
     "answer": "Anti-market and anti-foreign biases",
     "choices": [
       "Anti-market and anti-foreign biases",
-      "Anti-tax and anti-immigrant biases",
+      "Anti-tax and anti-bank biases",
       "Anti-Congress and anti-Fed biases",
       "Anti-education and anti-labor biases"
     ],
@@ -3351,32 +3273,6 @@
       "Career preservation"
     ],
     "context": "Make-work bias: voters treat job counts as ends in themselves rather than as means to produce goods. It underlies opposition to labor-saving technology, automation, and free trade. Source: Caplan (2007).",
-    "topic": "bryan-caplan-the-myth-of-the-rational-voter-2007"
-  },
-  {
-    "tier": 3,
-    "question": "A pollster reached a voter in the middle of a boom, and the voter said the economy was bad and getting worse. Bryan Caplan counted this gloom, an overestimate of how bad things are and how fast they are sliding, as the fourth of the voters' biases. What did he call it?",
-    "answer": "Pessimistic bias",
-    "choices": [
-      "Pessimistic bias",
-      "Nostalgic bias",
-      "Negative-news bias",
-      "Doom-shift bias"
-    ],
-    "context": "Pessimistic bias: voters systematically overestimate how bad the economy is and how fast things are worsening. It underlies persistent 'the economy is bad' polling results even during expansions. Source: Caplan (2007).",
-    "topic": "bryan-caplan-the-myth-of-the-rational-voter-2007"
-  },
-  {
-    "tier": 3,
-    "question": "Bryan Caplan leaned hardest on a survey of 1996 that asked ordinary Americans and PhD economists the identical list of economic questions. Harvard, the Kaiser Family Foundation and the Washington Post stood behind it. What is the survey's short name?",
-    "answer": "SAEE",
-    "choices": [
-      "SAEE",
-      "GSS",
-      "ANES",
-      "PISA"
-    ],
-    "context": "The Survey of Americans and Economists on the Economy (SAEE, 1996) was conducted for the Washington Post with Kaiser Family Foundation and Harvard collaboration. Across dozens of questions, the systematic public-versus-economist gap tracked Caplan's four biases. Source: kff.org SAEE.",
     "topic": "bryan-caplan-the-myth-of-the-rational-voter-2007"
   },
   {
@@ -4893,24 +4789,11 @@
     "answer": "Move some of Satoshi's original bitcoins as a signature",
     "choices": [
       "Move some of Satoshi's original bitcoins as a signature",
-      "Show a valid passport under that name",
-      "Post a video filmed in Japan",
-      "Recite the whole Bitcoin whitepaper by heart"
+      "Show a passport issued in the name Satoshi Nakamoto",
+      "Move some bitcoins from any address he happens to control",
+      "Show early drafts of the white paper on his own computer"
     ],
-    "context": "Craig Steven Wright, born 1970, is the Australian computer scientist who claimed the Satoshi identity from 2015 until a UK court rejected the claim in 2024. Dan Kaminsky was the security researcher who exposed one of Wright's 'proofs'; Antonopoulos is a Bitcoin educator. Source: https://en.wikipedia.org/wiki/Craig_Wright.",
-    "topic": "craig-wright-s-fraudulent-satoshi-claim-and-the-copa-ruling"
-  },
-  {
-    "tier": 2,
-    "question": "Craig Wright, an Australian computer scientist, put himself forward as Satoshi Nakamoto, the vanished creator of Bitcoin. Bitcoin developers say one check would settle any such claim in seconds, at no cost and with no way to fake it, and Wright never passed it. Which single act would prove his claim?",
-    "answer": "signing a message with a known Satoshi private key",
-    "choices": [
-      "signing a message with a known Satoshi private key",
-      "publishing a photograph of Satoshi",
-      "producing a birth certificate from Japan",
-      "moving one Bitcoin from a random address"
-    ],
-    "context": "A cryptographic signature made with one of Satoshi's known keys is a five-second, unforgeable proof. A photograph or birth certificate proves nothing about key control; moving Bitcoin from a random address proves nothing about Satoshi's addresses. Wright has never produced a valid signature. Source: https://en.wikipedia.org/wiki/Craig_Wright.",
+    "context": "Coins mined in Bitcoin's first days sit at addresses everyone links to Satoshi, so only the holder of those keys could move them; signing a fresh message with one of those keys proves the same thing in seconds. Moving coins from some other address proves nothing about Satoshi, and passports and old drafts can be forged. Source: https://en.wikipedia.org/wiki/Craig_Wright.",
     "topic": "craig-wright-s-fraudulent-satoshi-claim-and-the-copa-ruling"
   },
   {
@@ -4923,7 +4806,7 @@
       "Satoshi came online personally to deny the claim",
       "A government agency ran a background check on him"
     ],
-    "context": "Dan Kaminsky (1979-2021), a well-known security researcher, publicly explained within hours that Wright's 'proof' was a copy-pasted old Satoshi signature rather than a fresh sign. Buterin created Ethereum; Antonopoulos is an educator; Satoshi is the missing party being impersonated. Source: https://en.wikipedia.org/wiki/Craig_Wright.",
+    "context": "Dan Kaminsky (1979-2021), a well-known security researcher, publicly explained within hours that Wright's 'proof' was a copy-pasted old Satoshi signature rather than a fresh one. Source: https://en.wikipedia.org/wiki/Craig_Wright.",
     "topic": "craig-wright-s-fraudulent-satoshi-claim-and-the-copa-ruling"
   },
   {
@@ -4932,11 +4815,11 @@
     "answer": "Bitcoin Satoshi's Vision (BSV)",
     "choices": [
       "Bitcoin Satoshi's Vision (BSV)",
-      "Litecoin (LTC)",
-      "Ripple (XRP)",
-      "Ethereum Classic (ETC)"
+      "Bitcoin Gold (BTG)",
+      "Bitcoin Diamond (BCD)",
+      "Bitcoin Private (BTCP)"
     ],
-    "context": "BSV split from Bitcoin Cash in November 2018 and made 'Satoshi's Vision' part of its name -- an identity claim embedded in the ticker. Litecoin (2011, Charlie Lee), Ripple (2012, Chris Larsen and Jed McCaleb), and Ethereum Classic (2016 fork) are unrelated. Source: https://en.wikipedia.org/wiki/Bitcoin_SV.",
+    "context": "BSV split from Bitcoin Cash in November 2018 and made 'Satoshi's Vision' part of its name -- an identity claim embedded in the ticker. Bitcoin Gold (2017), Bitcoin Diamond (2017) and Bitcoin Private (2018) were other offshoots, with no tie to Wright. Sources: https://en.wikipedia.org/wiki/Bitcoin_SV; https://en.wikipedia.org/wiki/List_of_bitcoin_forks.",
     "topic": "craig-wright-s-fraudulent-satoshi-claim-and-the-copa-ruling"
   },
   {
@@ -4962,20 +4845,20 @@
       "The proof was scattered but real",
       "The man had refused to answer any questions about them"
     ],
-    "context": "Mr Justice Mellor found that Wright had forged and backdated his documents; many showed forensic evidence of manipulated fonts and metadata inconsistent with claimed dates. Wright testified extensively; the ruling was not about incomplete or forgotten details but affirmative fabrication. Source: COPA v Wright judgment, 20 March 2024.",
+    "context": "Mr Justice Mellor found that Wright had forged and backdated his documents; many showed forensic evidence of manipulated fonts and metadata inconsistent with claimed dates. Wright testified extensively; the ruling was not about incomplete or forgotten details but affirmative fabrication. Source: COPA v Wright, oral ruling 14 March 2024, written judgment 20 May 2024.",
     "topic": "craig-wright-s-fraudulent-satoshi-claim-and-the-copa-ruling"
   },
   {
     "tier": 4,
-    "question": "Jack Dorsey's company Square put up most of the money for a shared legal fund that programmers and crypto firms launched in 2020. Craig Wright had been threatening and suing programmers who branded him a fraud. What kind of problem was the fund solving?",
+    "question": "Jack Dorsey's company Square founded an alliance of crypto firms in 2020, and in 2021 the alliance took Craig Wright to court. Wright had been threatening and suing programmers who branded him a fraud. What problem did pooling their money against him solve?",
     "answer": "A cost too big for one small developer, but cheap when split across many",
     "choices": [
       "A cost too big for one small developer, but cheap when split across many",
       "A shortage of programmers willing to work on Bitcoin",
-      "A rule that forces all software to be secret and paid",
-      "A tax on running any computer that mines Bitcoin"
+      "A need to find the real Satoshi so a court could name him",
+      "Programmers' fear that speaking out would cost them their jobs"
     ],
-    "context": "COPA (Crypto Open Patent Alliance, launched 2020) was founded and heavily funded by Jack Dorsey's Square (renamed Block in 2021), which held Bitcoin on its balance sheet and pledged its Bitcoin patents. Tesla briefly held Bitcoin but is not a COPA founder; Palantir and Meta are unrelated. Source: https://open-crypto.com/about.",
+    "context": "The Crypto Open Patent Alliance (COPA) was formed by Square in September 2020 to pool crypto patents and keep the technology open; in April 2021 it asked the UK High Court to declare that Wright did not own the copyright in the Bitcoin white paper. Square was renamed Block in 2021. Sources: https://open-crypto.com/about; decrypt.co (April 2021).",
     "topic": "craig-wright-s-fraudulent-satoshi-claim-and-the-copa-ruling"
   },
   {
@@ -4984,19 +4867,19 @@
     "answer": "He was held in contempt of court and referred for possible criminal prosecution",
     "choices": [
       "He was held in contempt of court and referred for possible criminal prosecution",
-      "He was awarded his legal costs by the court",
-      "He was granted permission to keep publishing as Satoshi",
-      "He was appointed to a Bitcoin standards committee"
+      "He was ordered to hand the court the keys to Satoshi's early coins",
+      "He was barred from setting foot in Britain for ten years",
+      "He was sent to prison at once for six months"
     ],
-    "context": "Following the March 2024 ruling, the court held Wright in contempt for repeated post-judgment claims and referred aspects of his conduct for possible criminal-prosecution consideration (perjury and forgery). Source: https://en.wikipedia.org/wiki/Craig_Wright.",
+    "context": "In July 2024 Mr Justice Mellor referred the papers to the Crown Prosecution Service to consider prosecuting Wright for perjury and forgery; in December 2024 the court found him in contempt for breaching its order against repeating the claim, and gave him a suspended prison sentence. Source: https://en.wikipedia.org/wiki/Craig_Steven_Wright.",
     "topic": "craig-wright-s-fraudulent-satoshi-claim-and-the-copa-ruling"
   },
   {
     "tier": 5,
     "question": "Craig Wright pointed to old writings, public speeches and court papers to back his claim to be Satoshi Nakamoto, yet he never offered the one thing that counts as proof in Bitcoin's world. Bitcoin teachers draw a single lesson from the affair. What reasoning move do they make?",
-    "answer": "That cryptographic proof of key control is the only meaningful identity claim in a system whose entire security model rests on private-key signatures",
+    "answer": "That cryptographic proof of key control is the only identity claim that counts in Bitcoin",
     "choices": [
-      "That cryptographic proof of key control is the only meaningful identity claim in a system whose entire security model rests on private-key signatures",
+      "That cryptographic proof of key control is the only identity claim that counts in Bitcoin",
       "That the courts alone should adjudicate who Satoshi is",
       "That academic credentials and public speaking are the correct grounds for accepting an identity claim",
       "That anonymous founders should be legally required to reveal themselves"
@@ -5703,25 +5586,12 @@
       "Adopt a common global reserve currency issued by the International Monetary Fund",
       "Delegate all monetary policy to an independent panel of academic economists"
     ],
-    "context": "Hayek (1899-1992) had shared the Nobel Memorial Prize in Economics two years earlier, in 1974, with Gunnar Myrdal. The 1976 pamphlet was the most radical monetary proposal of his career. He argued that money is no different from any other good: competition between private issuers, checked by consumer choice, would supply it better than a state monopoly. The idea is called currency competition. The proposal was radical enough that even fellow Austrian economists mostly rejected it. Source: en.wikipedia.org/wiki/The_Denationalisation_of_Money.",
-    "topic": "denationalisation-of-money-1976-hayeks-currency-proposal"
-  },
-  {
-    "tier": 2,
-    "question": "A short London pamphlet of 1976 carried a long title in the style of a classical treatise. In it Friedrich Hayek urged governments to let private firms issue money in competition with their own. The title named both that reform and the old practice of several currencies circulating side by side. What was the title?",
-    "answer": "Denationalisation of Money: An Analysis of the Theory and Practice of Concurrent Currencies",
-    "choices": [
-      "Denationalisation of Money: An Analysis of the Theory and Practice of Concurrent Currencies",
-      "The Constitution of Liberty: A Restatement of the Principles of a Free Society",
-      "The Fatal Conceit: A Study of the Errors of Socialism from Marx to the Present",
-      "Prices and Production: Four Lectures Delivered at the University of London"
-    ],
-    "context": "'Concurrent currencies' referred to the historical episodes, such as pre-Civil-War American free banking or private banknote issuance in nineteenth-century Scotland, in which several currencies circulated together. Source: iea.org.uk/publications/research/denationalisation-of-money.",
+    "context": "Hayek (1899-1992) had shared the Nobel Memorial Prize in Economics two years earlier, in 1974, with Gunnar Myrdal. The 1976 pamphlet was the most radical monetary proposal of his career. He argued that money is no different from any other good: competition between private issuers, checked by consumer choice, would supply it better than a state monopoly. The idea is called currency competition. The proposal was radical enough that even some fellow Austrian economists, Murray Rothbard among them, rejected it. Source: en.wikipedia.org/wiki/The_Denationalisation_of_Money.",
     "topic": "denationalisation-of-money-1976-hayeks-currency-proposal"
   },
   {
     "tier": 3,
-    "question": "Friedrich Hayek went back through the record of every paper currency a government had ever issued as its own monopoly money. That record, he argued in his 1976 pamphlet against the state's monopoly on money, showed one clear pattern. What was it?",
+    "question": "Friedrich Hayek went back through the record of every currency a government had ever issued as its own monopoly money. That record, he argued in his 1976 pamphlet against the state's monopoly on money, showed one clear pattern. What was it?",
     "answer": "Every such currency has been debased or destroyed over long enough time",
     "choices": [
       "Every such currency has been debased or destroyed over long enough time",
@@ -5751,9 +5621,9 @@
     "answer": "Only currencies that held their value would survive, and inflation would fall",
     "choices": [
       "Only currencies that held their value would survive, and inflation would fall",
-      "Prices would swing wildly and no trade could happen",
-      "One company would seize control and print even more money than governments",
-      "Every currency would collapse within a year"
+      "One firm would win the market and then print more than any government",
+      "Rival currencies would multiply until no shop could price anything",
+      "Issuers would race to print more, and inflation would climb everywhere"
     ],
     "context": "In the second edition Hayek added the speculation that a free monetary market would not sustain an unmanageable number of currencies but would converge on a limited number of stable standards. Source: en.wikipedia.org/wiki/The_Denationalisation_of_Money.",
     "topic": "denationalisation-of-money-1976-hayeks-currency-proposal"
@@ -5766,7 +5636,7 @@
       "That the currency be backed by a commodity such as gold",
       "That the currency circulate only within a single sovereign jurisdiction",
       "That the currency be issued exclusively by chartered depository institutions",
-      "That the currency be redeemable at par into government-issued specie"
+      "That each issuer hold government bonds as reserves for its notes"
     ],
     "context": "Rothbard remained a strict commodity-money advocate: free banking, yes, but the notes had to be redeemable claims on a real commodity such as gold. On this account Hayek's proposal for competing PAPER currencies with no commodity backing was more radical than Rothbard would go. Source: cameronharwick.com/writing/hayek-vs-rothbard-on-money.",
     "topic": "denationalisation-of-money-1976-hayeks-currency-proposal"
@@ -5777,9 +5647,9 @@
     "answer": "Competition gives customers choice and pushes suppliers to serve them better",
     "choices": [
       "Competition gives customers choice and pushes suppliers to serve them better",
-      "Money is a natural monopoly that only one issuer can supply well",
-      "Only a central authority can measure the right amount of money",
-      "Bread and phones follow completely different economic laws"
+      "Bakeries and phone makers are private, so money should be too",
+      "Rival suppliers drive prices down, so loans would get cheaper",
+      "The law treats bread, phones and money as the same kind of goods"
     ],
     "context": "The Austrian methodological move: reject the special-pleading claim that money is uniquely unsuited to markets. Hayek argued the same competitive discipline that improves other goods would improve currency; the burden falls on defenders of the state monopoly to say why money is the exception. Source: en.wikipedia.org/wiki/The_Denationalisation_of_Money.",
     "topic": "denationalisation-of-money-1976-hayeks-currency-proposal"
@@ -5790,9 +5660,9 @@
     "answer": "A cryptographically fixed supply schedule that no issuer can debase",
     "choices": [
       "A cryptographically fixed supply schedule that no issuer can debase",
-      "A gold-parity peg administered by an international clearinghouse",
-      "A one-to-one deposit-insurance guarantee from a sovereign issuer",
-      "A statutory reserve requirement enforced by domestic banking regulators"
+      "A supply set by computer to grow with the size of the economy",
+      "Digital coins backed one for one by gold held in a secure vault",
+      "A central computer that records every coin's owner by name"
     ],
     "context": "Hayek imagined competing private BANKS disciplined by consumer refusal to hold debased notes; Bitcoin, launched thirty-three years later by Satoshi Nakamoto, hard-codes the discipline into the protocol itself with a 21-million-coin cap and a halving schedule no operator can override. Ammous's 2018 book The Bitcoin Standard makes the intellectual-descent argument explicit; the European Central Bank has publicly noted the same theoretical lineage. Source: en.wikipedia.org/wiki/Saifedean_Ammous.",
     "topic": "denationalisation-of-money-1976-hayeks-currency-proposal"
@@ -5804,36 +5674,23 @@
     "choices": [
       "Reform and Opening",
       "The Great Leap",
-      "The Four Modernizations",
+      "The Hundred Flowers",
       "The Cultural Revolution"
     ],
     "context": "Gaige kaifang -- Reform and Opening -- was launched at the Third Plenum of the Eleventh Central Committee, December 18-22, 1978, under Deng Xiaoping. It ended pure central planning first in agriculture, then in industry. Source: en.wikipedia.org/wiki/Chinese_economic_reform.",
     "topic": "deng-xiaopings-reform-and-opening-1978"
   },
   {
-    "tier": 1,
-    "question": "Deng Xiaoping let China's farmers sell part of their harvest from 1978, two years after Mao Zedong died. A few private shops opened again, and foreign firms put up factories in special zones on the coast. Compared with Mao's China, which way had Deng's moved?",
-    "answer": "More market",
-    "choices": [
-      "More market",
-      "More central-planning",
-      "Exactly the same",
-      "Neither -- it banned all trade"
-    ],
-    "context": "Deng Xiaoping had been purged in 1966 and again in 1976. He returned to power in 1977 and by December 1978 had consolidated his faction's control. Source: en.wikipedia.org/wiki/Deng_Xiaoping.",
-    "topic": "deng-xiaopings-reform-and-opening-1978"
-  },
-  {
     "tier": 2,
-    "question": "Eighteen households in Xiaogang, a poor village in Anhui province, secretly carved up their commune's fields into family plots in December 1978. They knew they risked arrest or worse, and they promised to bring up each other's children if any parent was taken away. Why did they take the risk?",
-    "answer": "So each family would be rewarded for the food it grew, not just the village as a whole",
+    "question": "Eighteen households in Xiaogang, a poor village in Anhui province, secretly carved up their commune's fields into family plots late in 1978. They knew they risked arrest or worse, and they promised to bring up each other's children if any parent was taken away. Why did they take the risk?",
+    "answer": "So each family would be rewarded for the food it grew itself",
     "choices": [
-      "So each family would be rewarded for the food it grew, not just the village as a whole",
-      "To donate more grain to the state warehouse",
-      "To please the Communist Party leaders in Beijing",
-      "To attract tourists to their village"
+      "So each family would be rewarded for the food it grew itself",
+      "So each family could leave the commune and move to the city",
+      "So they could sell the land and split the money among themselves",
+      "So the families could hide their grain from the state's collectors"
     ],
-    "context": "Eighteen households in Xiaogang village, Fengyang County, Anhui signed a secret agreement in December 1978 to divide land plots, pledging to raise each other's children if any were arrested. Local officials tolerated the pact after harvest yields rose. Source: en.wikipedia.org/wiki/Xiaogang,_Anhui.",
+    "context": "Eighteen households in Xiaogang village, Fengyang County, Anhui signed a secret agreement late in 1978 (on November 24, by some accounts) to divide land plots, pledging to raise each other's children if any were arrested. They also pledged to deliver the state's quota first. Local officials tolerated the pact after harvest yields rose. Source: en.wikipedia.org/wiki/Xiaogang,_Anhui.",
     "topic": "deng-xiaopings-reform-and-opening-1978"
   },
   {
@@ -5846,7 +5703,7 @@
       "It stayed roughly flat",
       "It quadrupled"
     ],
-    "context": "Chinese grain output rose about 34% from 1978 to 1984 on essentially the same land and labor -- once farmers again had market price signals to guide planting and keep the surplus. The famine memory of 1959-61 (36 million dead) was over within five years. Source: World Bank data.",
+    "context": "Chinese grain output rose about 34% from 1978 to 1984 on essentially the same land and labor -- once farmers again had market price signals to guide planting and keep the surplus. The famine of 1959-61, which killed some 36 million people by the journalist Yang Jisheng's count, was still a living memory. Source: World Bank data; Yang Jisheng, Tombstone (2008).",
     "topic": "deng-xiaopings-reform-and-opening-1978"
   },
   {
@@ -5877,7 +5734,7 @@
   },
   {
     "tier": 4,
-    "question": "Deng Xiaoping answered the old guard who accused him of betraying Mao with a folk saying about a cat, one he had used in a speech of 1961. What was the heart of his saying?",
+    "question": "Deng Xiaoping answered the old guard of the Communist Party, who accused him of betraying Mao, with an old folk saying about a cat, one he had used in a speech of 1962. What was the heart of his saying?",
     "answer": "It does not matter if the cat is black or white, so long as it catches mice",
     "choices": [
       "It does not matter if the cat is black or white, so long as it catches mice",
@@ -5885,12 +5742,12 @@
       "One cat is not enough for a granary of rats",
       "Feed the cat with rice and it will forget the mice"
     ],
-    "context": "Deng's black-cat-white-cat saying, from a 1961 speech he revived in the reform era, meant that empirical results should outweigh ideological purity. It became the shorthand slogan of Reform and Opening. Source: en.wikipedia.org/wiki/Deng_Xiaoping.",
+    "context": "Deng's cat saying, from a 1962 speech and revived in the reform era, meant that results should outweigh ideological purity. His 1962 wording, from a Sichuan proverb he credited to General Liu Bocheng, set a yellow cat beside the black one; the white cat came into the popular version later. It became the shorthand slogan of Reform and Opening. Source: en.wikipedia.org/wiki/Cat_theory_(Deng_Xiaoping).",
     "topic": "deng-xiaopings-reform-and-opening-1978"
   },
   {
     "tier": 4,
-    "question": "Deng Xiaoping refused the kind of grand blueprint that had given China the Great Leap Forward, which had killed tens of millions. He tried each policy in one place first, watched whether it worked, and moved on only once it had. What saying did he make famous for that method?",
+    "question": "Deng Xiaoping refused the kind of grand blueprint that had given China the Great Leap Forward, which had killed tens of millions. He tried each policy in one place first, watched whether it worked, and moved on only once it had. What saying, which his colleague Chen Yun had applied to economic policy as early as 1950, came to stand for that method?",
     "answer": "Crossing the river by feeling the stones",
     "choices": [
       "Crossing the river by feeling the stones",
@@ -5898,7 +5755,7 @@
       "Planting a forest one seed at a time",
       "Building a wall from small bricks"
     ],
-    "context": "'Mo zhe shi tou guo he' -- crossing the river by feeling the stones -- became a rule for the whole reform: experiment locally, adopt what works, avoid theoretical grand plans. Xiaogang, then Anhui, then nationally. Source: en.wikipedia.org/wiki/Chinese_economic_reform.",
+    "context": "'Mo zhe shi tou guo he' -- crossing the river by feeling the stones -- began as a folk idiom; Chen Yun used it of economic policy at a State Council meeting in April 1950, but it has always been associated with Deng. It became a rule for the whole reform: experiment locally, adopt what works, avoid theoretical grand plans. Xiaogang, then Anhui, then nationally. Source: en.wikipedia.org/wiki/Crossing_the_river_by_touching_the_stones.",
     "topic": "deng-xiaopings-reform-and-opening-1978"
   },
   {
@@ -5908,7 +5765,7 @@
     "choices": [
       "About 800 million",
       "About 80 million",
-      "About 8 billion",
+      "About 400 million",
       "About 250 million"
     ],
     "context": "World Bank data show roughly 800 million Chinese moved above the extreme-poverty line between 1981 and 2015 as market pricing extended sector by sector. This is the largest sustained poverty reduction ever measured. Source: worldbank.org China country data.",
@@ -5916,13 +5773,13 @@
   },
   {
     "tier": 5,
-    "question": "Deng Xiaoping let families farm their own plots again and let private and foreign firms work almost as they might in Hong Kong in coastal zones like Shenzhen. The parts of his economy that ran on market prices grew fastest through the 1980s and 1990s. Which parts grew slowest?",
-    "answer": "The state-owned banks and factories that planners kept controlling",
+    "question": "Deng Xiaoping's reforms brought market prices to some parts of China's economy and left others in the planners' grip. Economists who compared the sectors through the 1980s and 1990s found a clear pattern in which grew fastest and which slowest. Which parts grew slowest?",
+    "answer": "The state-owned banks and factories the planners still ran",
     "choices": [
-      "The state-owned banks and factories that planners kept controlling",
-      "The private township workshops",
-      "The rural family farms",
-      "The coastal export factories"
+      "The state-owned banks and factories the planners still ran",
+      "The rural family farms working their own plots again",
+      "The coastal export factories inside the special zones",
+      "The township and village workshops in the countryside"
     ],
     "context": "Chinese state-owned banks and SOEs continued to underperform the private and township-enterprise sectors through the 1990s and 2000s. The Austrian reading of Chinese growth attributes it to the market-priced sectors, not to state industrial policy. Source: mises.org/library/china-and-austrian-school.",
     "topic": "deng-xiaopings-reform-and-opening-1978"
@@ -6436,15 +6293,15 @@
   },
   {
     "tier": 2,
-    "question": "A small-town mayor bans one woodcutter's tool to make work, in a satire by Frédéric Bastiat: without it, the mayor reasons, every log will need three men to chop instead of one. Which tool does the mayor ban?",
-    "answer": "The sharp axe",
+    "question": "A carpenter writes to France's minister of commerce in a satire by Frédéric Bastiat, asking for a little protection of his own: a decree banning one tool from the shaping of beams, so that work now done in an hour would take three. Which tool does he want banned?",
+    "answer": "The sharp hatchet",
     "choices": [
-      "The sharp axe",
-      "The mechanical loom",
+      "The sharp hatchet",
       "The steam-powered saw",
-      "The plow"
+      "The foreign-made adze",
+      "The carpenter's plane"
     ],
-    "context": "Bastiat's 'Two Axes' essay has the mayor forbidding a woodcutter's sharp axe to protect the jobs of dull-axe men -- a reductio of make-work arguments. Source: bastiat.org/en/two_axes.html.",
+    "context": "Bastiat's 'The Two Hatchets' (Second Series, 1848) is the petition of Jacques Bonhomme, carpenter, to the protectionist minister Cunin-Gridaine: let no beams be used but those shaped by dull hatchets, so that a hundred blows become three hundred. It is a reductio of make-work arguments. Source: econlib.org, Economic Sophisms, Second Series, ch. 3.",
     "topic": "economic-sophisms-the-wider-satire-collection"
   },
   {
@@ -6479,9 +6336,9 @@
     "answer": "The hidden cost paid by many, spread thin enough to overlook",
     "choices": [
       "The hidden cost paid by many, spread thin enough to overlook",
-      "The cost the shoemakers pay for advertising",
-      "The cost of shipping shoes across borders",
-      "The cost of teaching new shoemakers"
+      "The cost of the higher wages the shoemakers will now demand",
+      "The cost the state pays to police the closed border",
+      "The cost to shoemakers of new machines to meet demand"
     ],
     "context": "Stirling's 1873 English edition, retitled Economic Sophisms, was the standard English text until the FEE editions of the mid-20th century and the Liberty Fund Collected Works of the 2010s. Source: grokipedia.com/page/Economic_Sophisms.",
     "topic": "economic-sophisms-the-wider-satire-collection"
@@ -6622,16 +6479,16 @@
     "answer": "The shared resource gets overused and eventually ruined",
     "choices": [
       "The shared resource gets overused and eventually ruined",
-      "The shared resource grows steadily forever",
-      "People self-organize and always share equally",
-      "The government automatically appears and manages it"
+      "The herders agree on limits, and the pasture recovers",
+      "The richest herder buys out the rest and fences it in",
+      "The grass regrows each spring, so no lasting harm is done"
     ],
     "context": "Garrett Hardin's 'The Tragedy of the Commons' (Science, December 13, 1968) became the standard citation for the pessimistic view. Ostrom argued that Hardin's tragedy was conditional, not inevitable. Source: science.org (Hardin, Science 1968).",
     "topic": "elinor-ostrom-governing-the-commons-1990"
   },
   {
     "tier": 3,
-    "question": "A Törbel herder drove his cows up to the village's summer pasture in the Swiss Alps, under rules his neighbors had kept since the 1200s. Nobody owned the slopes outright; the herders had written the rules themselves, down to the number of cows each household could send up. Elinor Ostrom studied the village's pastures. What lesson did she draw?",
+    "question": "A Törbel herder drove his cows up to the village's summer pasture in the Swiss Alps, under rules his neighbors had kept for over five centuries. Nobody owned the slopes outright; the herders had written the rules themselves, down to the number of cows each household could send up. Elinor Ostrom studied the village's pastures. What lesson did she draw?",
     "answer": "A community can share a resource well if it makes and enforces its own rules",
     "choices": [
       "A community can share a resource well if it makes and enforces its own rules",
@@ -6639,33 +6496,20 @@
       "Only government control can protect land from overuse",
       "Shared land always ends up destroyed within a generation"
     ],
-    "context": "Swiss alpine grazing commons (Toerbel and other villages in Valais) have been governed by user-written rules on stocking rates since the 1200s. Ostrom found such commons held together by local rules and social pressure the users themselves invent and enforce, with fines, gossip and lost privileges; her case studies documented a third path beside state ownership and privatization: user groups governing the resource themselves, given the right institutional design.",
+    "context": "Swiss alpine grazing commons (Toerbel and other villages in Valais) have been governed by user-written rules since at least 1483, when Torbel's villagers formally set up an association to regulate their alp; a rule of 1517 let no one send more cows up than he could feed through the winter. Ostrom found such commons held together by local rules and social pressure the users themselves invent and enforce, with fines, gossip and lost privileges; her case studies documented a third path beside state ownership and privatization: user groups governing the resource themselves, given the right institutional design.",
     "topic": "elinor-ostrom-governing-the-commons-1990"
   },
   {
     "tier": 3,
-    "question": "An outsider dropped his lobster traps in water a harbor gang had claimed on a rocky New England coast, and before long his buoy lines were cut. Each gang carved up the water among its own boats, with no state fisheries police in charge, and Elinor Ostrom made the fishery one of her famous cases. In which state did she study it?",
+    "question": "An outsider dropped his lobster traps in water a harbor gang had claimed on a rocky stretch of the American coast, and before long his buoy lines were cut. Each gang carved up the water among its own boats, with no state fisheries police in charge, and Elinor Ostrom held the fishery up as a commons its users governed themselves. Which state's coast was it?",
     "answer": "Maine",
     "choices": [
       "Maine",
       "Massachusetts",
-      "Louisiana",
+      "Oregon",
       "Alaska"
     ],
-    "context": "The Maine lobster fishery's informal harbor gangs enforce territorial boundaries with cut buoy lines and social pressure. Ostrom's coauthor James Acheson wrote The Lobster Gangs of Maine (1988) alongside her project. Source: Ostrom, Governing the Commons (1990), Chapter 5.",
-    "topic": "elinor-ostrom-governing-the-commons-1990"
-  },
-  {
-    "tier": 3,
-    "question": "Comparing case after case of user-run commons that had lasted for centuries, Elinor Ostrom drew out the traits they shared: clearly marked borders around the resource, rules fitted to the place, cheap ways to settle quarrels, and higher governments that leave the users' decisions alone. How many design principles did she find?",
-    "answer": "Eight",
-    "choices": [
-      "Eight",
-      "Four",
-      "Twelve",
-      "Twenty"
-    ],
-    "context": "Governing the Commons Chapter 3 lists exactly eight design principles for successful long-lived commons. She derived them from case comparison, not from theory. Source: Ostrom, Governing the Commons (1990), Chapter 3.",
+    "context": "The Maine lobster fishery's informal harbor gangs enforce territorial boundaries with cut buoy lines and social pressure. The anthropologist James Acheson described them in The Lobster Gangs of Maine (1988), and Ostrom drew on his work. Source: Acheson, The Lobster Gangs of Maine (University Press of New England, 1988).",
     "topic": "elinor-ostrom-governing-the-commons-1990"
   },
   {
@@ -7051,24 +6895,11 @@
     "answer": "Eugen von Boehm-Bawerk",
     "choices": [
       "Eugen von Boehm-Bawerk",
-      "Carl Menger",
-      "Friedrich von Wieser",
+      "Eugen von Philippovich",
+      "Emil Sax",
       "Joseph Schumpeter"
     ],
     "context": "Eugen von Boehm-Bawerk (1851-1914) served three separate stints as Austrian Finance Minister (briefly in 1895, again in 1897, and 1900-1904), resigned in 1904 rather than approve further deficits, and returned to Vienna where his 1905-06 seminar became the training ground for the next generation. Source: Wikipedia, 'Eugen von Boehm-Bawerk' (https://en.wikipedia.org/wiki/Eugen_B%C3%B6hm_von_Bawerk).",
-    "topic": "eugen-von-boehm-bawerk--who-he-was"
-  },
-  {
-    "tier": 1,
-    "question": "Eugen von Boehm-Bawerk and Friedrich von Wieser, friends since their youth, both took up Carl Menger's ideas. Boehm-Bawerk had been born in 1851 in a city of Moravia, then part of the Austrian Empire and today the second-largest city of the Czech Republic, after Prague. Which city was it?",
-    "answer": "Brno",
-    "choices": [
-      "Brno",
-      "Prague",
-      "Vienna",
-      "Krakow"
-    ],
-    "context": "Brno, in Moravia (then Austrian Empire, today the Czech Republic), was Boehm-Bawerk's birthplace on 12 February 1851. Prague was in Bohemia; Vienna the imperial capital where he later worked; Krakow in Galicia where Menger took his 1867 doctorate. Source: Wikipedia, 'Eugen von Boehm-Bawerk' (https://en.wikipedia.org/wiki/Eugen_B%C3%B6hm_von_Bawerk).",
     "topic": "eugen-von-boehm-bawerk--who-he-was"
   },
   {
@@ -7133,7 +6964,7 @@
       "The Habsburg monarchy had abdicated",
       "The Federal Reserve had opened its doors"
     ],
-    "context": "The First World War began on 28 July 1914 when Austria-Hungary declared war on Serbia; Boehm-Bawerk died a month later on 27 August 1914, having spent his final years watching the fiscal discipline he had defended in cabinet dissolve into war finance. The Austrian schilling was introduced in 1924; the Habsburg monarchy abdicated in November 1918; the US Federal Reserve had opened in November 1914. Source: Wikipedia, 'Eugen von Boehm-Bawerk' (https://en.wikipedia.org/wiki/Eugen_B%C3%B6hm_von_Bawerk).",
+    "context": "The First World War began on 28 July 1914 when Austria-Hungary declared war on Serbia; Boehm-Bawerk died a month later on 27 August 1914, as war finance began to sweep away the fiscal discipline he had defended in cabinet. The Austrian schilling was introduced in 1924; the Habsburg monarchy abdicated in November 1918; the US Federal Reserve opened in November 1914. Source: Wikipedia, 'Eugen von Boehm-Bawerk' (https://en.wikipedia.org/wiki/Eugen_B%C3%B6hm_von_Bawerk).",
     "topic": "eugen-von-boehm-bawerk--who-he-was"
   },
   {
@@ -7217,9 +7048,9 @@
   {
     "tier": 1,
     "question": "Franklin Roosevelt signed an executive order in 1934, in the depths of the Great Depression, setting up a federal lender in Washington. Its loans, backed by taxpayers, helped buyers abroad pay for goods made in America. Which agency did the order create?",
-    "answer": "The Export-Import Bank of the United States (Ex-Im Bank)",
+    "answer": "The Export-Import Bank of the United States",
     "choices": [
-      "The Export-Import Bank of the United States (Ex-Im Bank)",
+      "The Export-Import Bank of the United States",
       "The Federal Deposit Insurance Corporation",
       "The Reconstruction Finance Corporation",
       "The Overseas Private Investment Corporation"
@@ -7246,37 +7077,37 @@
     "answer": "Congress declined to renew the bank's charter and it lapsed for about five months",
     "choices": [
       "Congress declined to renew the bank's charter and it lapsed for about five months",
-      "The Supreme Court struck down the bank as unconstitutional",
-      "The bank formally merged with the Federal Reserve",
-      "The Treasury Department transferred all Ex-Im loans to the World Bank"
+      "Congress capped the bank's lending at a tenth of its former level",
+      "Congress barred the bank from backing more than a set share of any firm's sales",
+      "Congress voted to sell the bank's loan book to private lenders"
     ],
     "context": "The lapse was a rare successful mobilization of dispersed opposition against a concentrated-benefit program. Ex-Im's authority to finance new deals was suspended from June 30 to December 2015. Source: grokipedia.com/page/Export%E2%80%93Import_Bank_of_the_United_States.",
     "topic": "ex-im-bank-and-boeing-the-concentrated-federal-lending-case"
   },
   {
     "tier": 3,
-    "question": "Lawmakers renewed the Export-Import Bank's charter in December 2015 in a way that made it costly for any member to vote against the bank. Few of them wanted to oppose what the renewal came attached to. What was the technique?",
-    "answer": "The renewal was bundled into a highway-bill omnibus (the FAST Act)",
+    "question": "Lawmakers renewed the Export-Import Bank's charter in December 2015 in a way that made it costly for any member to vote against the bank: they attached the renewal to a bill few members of Congress dared oppose. What was that bill?",
+    "answer": "A big highway bill with road money for every district",
     "choices": [
-      "The renewal was bundled into a highway-bill omnibus (the FAST Act)",
-      "The renewal was passed as a stand-alone emergency measure with a two-thirds majority",
-      "The renewal was enacted by executive order without Congressional action",
-      "The renewal was included in a formal treaty ratified by the Senate"
+      "A big highway bill with road money for every district",
+      "A defense bill with pay raises for the troops",
+      "A disaster-relief bill for victims of that year's storms",
+      "A farm bill renewing crop insurance for every state"
     ],
-    "context": "Fixing America's Surface Transportation Act. The bundling demonstrated the Buchanan-Tullock logrolling mechanism: pair a concentrated-benefit program with widely-popular legislation so opposing it becomes politically costly. Source: grokipedia.com/page/Export%E2%80%93Import_Bank_of_the_United_States.",
+    "context": "The bill was the FAST Act, Fixing America's Surface Transportation Act, signed on December 4, 2015. The bundling shows the logrolling move public-choice economists describe: pair a concentrated-benefit program with widely popular legislation so that opposing it becomes politically costly. Source: grokipedia.com/page/Export%E2%80%93Import_Bank_of_the_United_States.",
     "topic": "ex-im-bank-and-boeing-the-concentrated-federal-lending-case"
   },
   {
     "tier": 4,
     "question": "The Export-Import Bank's biggest corporate allies warned Congress in 2015 that sales of American goods abroad would collapse without its loans behind them. From July to December that year the bank could not sign a single new deal. What did the bank's critics find happened to American export volume in those months?",
-    "answer": "It did not measurably decline; Boeing continued selling aircraft using commercial bank financing",
+    "answer": "No measurable fall from the lapse; Boeing turned to commercial loans",
     "choices": [
-      "It did not measurably decline; Boeing continued selling aircraft using commercial bank financing",
-      "It fell by roughly 40 percent as predicted by Ex-Im's supporters",
-      "It doubled as foreign buyers rushed to sign contracts before the lapse ended",
-      "It was diverted almost entirely to European Union export-credit agencies"
+      "No measurable fall from the lapse; Boeing turned to commercial loans",
+      "A sharp fall, as buyers switched to European and Asian suppliers",
+      "A fall of about a tenth, nearly all of it in jet sales",
+      "A rise, as buyers rushed to sign before new rules arrived"
     ],
-    "context": "The counterfactual case for the bank's necessity was weaker than its proponents had claimed. Commercial bank financing was slightly more expensive than Ex-Im guarantees, but not by enough to collapse export flows. Source: grokipedia.com/page/Export%E2%80%93Import_Bank_of_the_United_States.",
+    "context": "The bank's critics concluded that the case for its necessity was weaker than its defenders had claimed: commercial bank financing cost slightly more than Ex-Im guarantees, but not enough to stop export deals. Source: grokipedia.com/page/Export%E2%80%93Import_Bank_of_the_United_States.",
     "topic": "ex-im-bank-and-boeing-the-concentrated-federal-lending-case"
   },
   {
@@ -7674,10 +7505,10 @@
     "question": "Leonard Read wrote an essay in 1958 in the voice of a yellow pencil, whose cedar, graphite, rubber and brass come from different countries. The pencil brags that no one on earth knows how to make it, and Milton Friedman retold its story on his television program Free to Choose. What does the essay teach about a market economy?",
     "answer": "Millions of people cooperate through prices without any single planner in charge",
     "choices": [
-      "Pencils are so simple that anyone could make one alone",
       "Millions of people cooperate through prices without any single planner in charge",
-      "Only a central planner could organize something as complex as a pencil",
-      "Modern factories have made all the older skills useless"
+      "Trade between countries matters more than any factory at home",
+      "Big companies that own every step of making a product work best",
+      "Simple goods are cheap because machines now do nearly all the work"
     ],
     "context": "Leonard E. Read (1898-1983) founded the Foundation for Economic Education in March 1946 as the first American institutional home of the classical-liberal reading tradition. Source: grokipedia.com/page/Foundation_for_Economic_Education.",
     "topic": "fee-and-the-american-rediscovery-leonard-read-1946"
@@ -7688,9 +7519,9 @@
     "answer": "Slowly change what people take for common sense about how the economy works",
     "choices": [
       "Slowly change what people take for common sense about how the economy works",
-      "Force politicians to obey a specific party leader",
-      "Pay voters directly for their votes each election cycle",
-      "Predict the exact price of stocks and bonds next year"
+      "Win the next election by funding the candidates who agree with them",
+      "Pass laws faster by drafting bills for friendly lawmakers to file",
+      "Train economists to run government agencies after each election"
     ],
     "context": "FEE moved its offices to Atlanta, Georgia in the 21st century and continues its student-education mission from there. Source: fee.org.",
     "topic": "fee-and-the-american-rediscovery-leonard-read-1946"
@@ -8165,7 +7996,7 @@
   },
   {
     "tier": 1,
-    "question": "Two economists published A Monetary History of the United States in 1963, some 860 pages tracing a hundred years of the nation's money and banks. Ben Bernanke, who later chaired the Federal Reserve, said its account of the Depression was the best ever written of the country's worst economic collapse. Who were the two?",
+    "question": "Two economists published A Monetary History of the United States in 1963, 860 pages on a century of American money. Ben Bernanke, later Fed chairman, said its account of the Depression was the most persuasive explanation of the country's worst collapse. Who were the two?",
     "answer": "Milton Friedman and Anna Schwartz",
     "choices": [
       "Milton Friedman and Anna Schwartz",
@@ -8208,37 +8039,24 @@
     "answer": "A single institution can be shaped heavily by one person",
     "choices": [
       "A single institution can be shaped heavily by one person",
-      "Central banks always make the same choices no matter who leads",
-      "Only elected officials matter in economic policy",
-      "Committees always outperform any single leader"
+      "Regional banks do best when they act on their own",
+      "Laws matter more to a central bank than its leaders",
+      "Markets, not officials, set a central bank's choices"
     ],
     "context": "Strong died in October 1928, less than a year before the crash. His absence left the Fed without a dominant voice able to force the system into aggressive lender-of-last-resort action during the 1930-33 bank failures. Source: Grokipedia 'Benjamin Strong Jr.' (2026-09-05).",
     "topic": "friedman-and-schwartz-the-great-depression-as-monetary-failu"
   },
   {
     "tier": 3,
-    "question": "Friedman and Schwartz traced the Fed's refusal to rescue failing banks in the early 1930s to a doctrine many of its officials followed. In its harsh form it told the central bank to turn away any bank it judged unsound and let it go under, as a purge. What is the doctrine called?",
-    "answer": "The real-bills doctrine (in its liquidationist form)",
+    "question": "Historians of the Fed trace its refusal to rescue failing banks in the early 1930s partly to a doctrine many of its officials followed. In its harsh form it told the central bank to turn away any bank it judged unsound and let it go under, as a purge. What is the doctrine called?",
+    "answer": "The real-bills doctrine",
     "choices": [
-      "The real-bills doctrine (in its liquidationist form)",
+      "The real-bills doctrine",
       "The gold-standard doctrine",
       "The Bagehot doctrine",
       "The monetarist doctrine"
     ],
     "context": "The real-bills doctrine's liquidationist descendant held that the Fed should not lend to banks whose portfolios contained questionable loans -- exactly the banks needing rescue in 1930-33. The doctrine ensured the Fed refused to provide the liquidity that could have stopped the cascade. Source: Grokipedia 'Real bills doctrine' (2026-09-05).",
-    "topic": "friedman-and-schwartz-the-great-depression-as-monetary-failu"
-  },
-  {
-    "tier": 5,
-    "question": "Ben Bernanke, a governor of the Federal Reserve, accepted in November 2002 the charge Friedman and Schwartz had laid against the Fed in 1963, that its tight money from 1929 to 1933 had turned an ordinary downturn into the Great Depression. The Fed had rejected the charge for decades. What broader point about institutions does his concession press?",
-    "answer": "Institutional acceptance of a critical thesis by the very institution being criticized changes how that institution thinks about its own crisis responses -- for better or worse",
-    "choices": [
-      "Institutional acceptance of a critical thesis by the very institution being criticized changes how that institution thinks about its own crisis responses -- for better or worse",
-      "Institutional acceptance of criticism has no effect on future policy",
-      "The Fed rarely acknowledges past errors publicly",
-      "Fed doctrine is entirely determined by whoever chairs the FOMC"
-    ],
-    "context": "The 2002 concession shaped Bernanke's own 2008 response (aggressive lender-of-last-resort action, massive QE). Austrian critics argue that by avoiding the 1930s error Bernanke created a different error -- long-lasting cheap money that seeded the 2020-24 inflation. Institutional learning has costs as well as benefits. Source: Grokipedia 'Ben Bernanke' (2026-09-05).",
     "topic": "friedman-and-schwartz-the-great-depression-as-monetary-failu"
   },
   {
@@ -8868,27 +8686,14 @@
   {
     "tier": 4,
     "question": "A dictator need not please the masses, Gordon Tullock argued in a 1987 book, and Bruce Bueno de Mesquita later made the same case: a dictator only has to keep a small inner ring of generals and courtiers handsomely paid. Why must the dictator keep that ring so happy?",
-    "answer": "If the insiders (soldiers, courtiers) turn on him, he falls",
+    "answer": "If the generals and courtiers turn on him, he falls",
     "choices": [
-      "If the insiders (soldiers, courtiers) turn on him, he falls",
-      "The wider public actually chooses dictators in secret votes",
-      "Dictators only need popular songs written about them",
-      "Insiders never have any real power once a dictator is picked"
+      "If the generals and courtiers turn on him, he falls",
+      "The ring collects the taxes that pay for everything else",
+      "A contented ring persuades the masses that he is popular",
+      "The ring's members choose who will rule after he dies"
     ],
     "context": "Autocracy (Kluwer Academic, 1987) extended the public-choice framework to dictatorships. Tullock argued dictators face the same rational-actor incentives as democratic politicians, only within different constraints. Source: springer.com (Autocracy 1987).",
-    "topic": "gordon-tullock-the-lawyer-who-co-founded-public-choice"
-  },
-  {
-    "tier": 5,
-    "question": "James Buchanan won the Nobel Prize in 1986 for founding the economics of politics, and Gordon Tullock, who had written their 1962 book with him, was pointedly left out. Colleagues remember a bitter quip Tullock made about the snub. What was it?",
-    "answer": "Being co-author of the Calculus of Consent apparently did not count",
-    "choices": [
-      "Being co-author of the Calculus of Consent apparently did not count",
-      "The Nobel committee had confused public choice with social choice",
-      "The Foreign Service ruined his chances by delaying his degree",
-      "He should have insisted on the PhD after all"
-    ],
-    "context": "Tullock expected to share every public-choice-related Nobel and never won one. He was famously acerbic about the 1986 omission; the quote is well-attested by GMU colleagues. Source: Kliemt + Boettke, obituaries in Public Choice (2015).",
     "topic": "gordon-tullock-the-lawyer-who-co-founded-public-choice"
   },
   {
@@ -8897,9 +8702,9 @@
     "answer": "More about political incentives than any economics course could have",
     "choices": [
       "More about political incentives than any economics course could have",
-      "The importance of Keynesian aggregate-demand management",
-      "The mathematical foundations of general equilibrium",
-      "That bureaucracy could not be modeled economically"
+      "More about Chinese history than any book on China could have",
+      "More about the law than his years of law school had",
+      "More about foreign trade than any merchant's ledger could have"
     ],
     "context": "In his autobiographical essays Tullock repeatedly credited Tianjin, Hong Kong, and Korea postings with teaching him how real bureaucracies actually work -- the raw material for his later economics of politics. Source: Tullock, Selected Works vol. 1 (Liberty Fund 2004).",
     "topic": "gordon-tullock-the-lawyer-who-co-founded-public-choice"
@@ -9197,10 +9002,10 @@
     "choices": [
       "Gresham's Law",
       "Say's Law",
-      "Copernicus's Law",
+      "Cantillon's Law",
       "Menger's Law"
     ],
-    "context": "Copernicus's Monetae cudendae ratio (1526) noted that when better coin is introduced, the old is not withdrawn but hoarded. He beat Gresham by 34 years. Source: grokipedia.com/page/Monetae_cudendae_ratio.",
+    "context": "Copernicus's Monetae cudendae ratio (1526) noted that when debased coin passes beside better coin at the same value, the better coin is hoarded or sent abroad. He wrote it some three decades before Gresham advised Elizabeth I. Source: grokipedia.com/page/Monetae_cudendae_ratio.",
     "topic": "greshams-law-bad-money-drives-out-good"
   },
   {
@@ -9209,37 +9014,11 @@
     "answer": "People hide them and only spend the cheap new ones",
     "choices": [
       "People hide them and only spend the cheap new ones",
-      "People burn them for fuel",
+      "People hand the old coins in to the mint for new ones",
       "People pass them around freely alongside the new ones",
-      "People melt them all into jewelry the next day"
+      "People spend the old ones first, before any recall"
     ],
-    "context": "Nicole Oresme's De Moneta (about 1360) preceded Gresham's 1560 letter by roughly 200 years. The observation, in short, is far older than the name attached to it. Source: grokipedia.com/page/Nicole_Oresme.",
-    "topic": "greshams-law-bad-money-drives-out-good"
-  },
-  {
-    "tier": 3,
-    "question": "Thomas Gresham saw in Elizabeth I's London the same rule about coins that Nicole Oresme had explained around 1360 and Nicolaus Copernicus in 1526. Three men, in three countries and across two centuries, found the same rule. What explains that?",
-    "answer": "The rule describes a real pattern that repeats whenever coins are debased",
-    "choices": [
-      "The rule describes a real pattern that repeats whenever coins are debased",
-      "They all read the same secret book from ancient Greece",
-      "Their kings paid each of them to say it",
-      "The rule was made up and passed on as a joke"
-    ],
-    "context": "Macleod's 1858 book The Elements of Political Economy attached Gresham's name to the maxim. Naming honors are downstream of who happens to publish the compilation. Source: grokipedia.com/page/Henry_Dunning_Macleod.",
-    "topic": "greshams-law-bad-money-drives-out-good"
-  },
-  {
-    "tier": 4,
-    "question": "Congress passed the Coinage Act of 1965 and changed what America's dimes and quarters were made of. Through most of America's past they had been nine parts in ten one precious metal; from then on they were a copper-nickel sandwich. Which metal did the act take out?",
-    "answer": "Silver",
-    "choices": [
-      "Silver",
-      "Gold",
-      "Zinc",
-      "Bronze"
-    ],
-    "context": "The Coinage Act 1965 removed silver from dimes and quarters and clad them in copper-nickel; Americans quickly pulled the pre-1965 silver coins out of pocket circulation. Source: grokipedia.com/page/Coinage_Act_of_1965.",
+    "context": "Nicole Oresme's De Moneta (about 1360) came some two hundred years before Gresham advised Elizabeth I. The observation, in short, is far older than the name attached to it. Source: grokipedia.com/page/Nicole_Oresme.",
     "topic": "greshams-law-bad-money-drives-out-good"
   },
   {
@@ -9356,7 +9135,7 @@
       "Each stamp required a live connection to a central bank server",
       "Each stamp was only redeemable on Microsoft-issued hardware"
     ],
-    "context": "Hashcash proved you had done real computational work, but the stamp was spent after one use. Making stamps transferable required solving double-spending -- the same problem Bitcoin later solved. Source: grokipedia.com/page/Hashcash.",
+    "context": "Hashcash proved that the sender had done real computational work, but the stamp was spent after one use. Making stamps transferable required solving double-spending -- the same problem Bitcoin later solved. Source: grokipedia.com/page/Hashcash.",
     "topic": "hal-finneys-reusable-proofs-of-work-2004"
   },
   {
@@ -9365,11 +9144,11 @@
     "answer": "Reusable Proofs of Work (RPOW)",
     "choices": [
       "Reusable Proofs of Work (RPOW)",
-      "The Lightning Network",
-      "The Merkle Chain",
-      "The Cypherpunk Ledger"
+      "Transferable Work Tokens (TWT)",
+      "Spendable Proof Stamps (SPS)",
+      "Hashcash Exchange Notes (HEN)"
     ],
-    "context": "The cryptographer was Hal Finney. The RPOW acronym stands for Reusable Proofs of Work (plural of 'proof'). Source: grokipedia.com/page/Hal_Finney_(computer_scientist).",
+    "context": "The RPOW acronym stands for Reusable Proofs of Work (plural of 'proof'). Source: grokipedia.com/page/Hal_Finney_(computer_scientist).",
     "topic": "hal-finneys-reusable-proofs-of-work-2004"
   },
   {
@@ -9391,8 +9170,8 @@
     "answer": "A public network of computers all checking each other",
     "choices": [
       "A public network of computers all checking each other",
-      "One giant government-run server in Washington",
-      "A single billionaire's private data center",
+      "A panel of banks that sign off on every payment",
+      "A licensed company that audits the code each year",
       "The honor system between anonymous strangers"
     ],
     "context": "The 4758 was a tamper-resistant special-purpose chip designed for cryptographic key storage. Finney used it to prove the RPOW server code was the audited version -- but the trusted-server architecture itself remained a weakness. Source: grokipedia.com/page/Hal_Finney_(computer_scientist).",
@@ -9404,11 +9183,11 @@
     "answer": "A public ledger that many strangers keep in sync using proof-of-work",
     "choices": [
       "A public ledger that many strangers keep in sync using proof-of-work",
-      "A single trusted bank server run by a well-known company",
-      "A rule that every user must physically hand coins to each other",
-      "A promise from world governments to never seize digital money"
+      "Coins that erase themselves the moment they are spent once",
+      "A chip in each user's computer that refuses to copy a coin",
+      "A secret key that each coin's maker hands to its next owner"
     ],
-    "context": "One of the earliest public traces of anyone besides Satoshi running the Bitcoin software. Finney had downloaded the software the day after Christmas 2008. Source: grokipedia.com/page/Hal_Finney_(computer_scientist).",
+    "context": "Satoshi's white paper, released on October 31, 2008, describes a network that timestamps transactions by hashing them into an ongoing chain of proof-of-work, a record that cannot be changed without redoing the work. Source: bitcoin.org/bitcoin.pdf.",
     "topic": "hal-finneys-reusable-proofs-of-work-2004"
   },
   {
@@ -9491,33 +9270,20 @@
   },
   {
     "tier": 2,
-    "question": "Jürgen Habermas, a leading thinker of the left, supervised Hans-Hermann Hoppe's doctorate in Frankfurt in 1974. In 1986 Hoppe moved to Las Vegas to work beside Murray Rothbard, who wanted to do away with the state altogether. What does Hoppe's path show?",
-    "answer": "People can change their political views over time",
+    "question": "Hans-Hermann Hoppe, later one of the most radical free-market thinkers of the Austrian school, studied philosophy in Frankfurt in the 1970s under a leading thinker of the German left, and earned his doctorate in 1974. Who was his teacher?",
+    "answer": "Jürgen Habermas",
     "choices": [
-      "People can change their political views over time",
-      "People never change their political views",
-      "Only elections change what people believe",
-      "Teachers always convince students of their own views"
+      "Jürgen Habermas",
+      "Theodor Adorno",
+      "Herbert Marcuse",
+      "Max Horkheimer"
     ],
-    "context": "Hoppe's PhD in philosophy (Frankfurt, 1974) was supervised by Habermas, then the leading exponent of Frankfurt-School critical theory. It is an unusual training path for an Austrian economist. Source: grokipedia.com/page/Hans-Hermann_Hoppe.",
-    "topic": "hans-hermann-hoppe-democracy-the-god-that-failed"
-  },
-  {
-    "tier": 2,
-    "question": "Hans-Hermann Hoppe started a yearly libertarian gathering in 2006, the Property and Freedom Society. Its members meet each summer in a seaside resort on Turkey's Aegean shore, where Hoppe himself lives for part of the year. Which town is it?",
-    "answer": "Bodrum",
-    "choices": [
-      "Bodrum",
-      "Istanbul",
-      "Antalya",
-      "Izmir"
-    ],
-    "context": "The Property and Freedom Society, founded by Hoppe in 2006, meets each year in Bodrum, Turkey. Source: grokipedia.com/page/Property_and_Freedom_Society.",
+    "context": "Hoppe studied under Habermas, then the leading voice of Frankfurt-School critical theory, and came to reject Habermas's ideas and European leftism generally. Adorno had died in 1969 and Horkheimer had retired; Marcuse taught in America. In 1986 Hoppe moved to Las Vegas to work beside Murray Rothbard. Source: en.wikipedia.org/wiki/Hans-Hermann_Hoppe.",
     "topic": "hans-hermann-hoppe-democracy-the-god-that-failed"
   },
   {
     "tier": 3,
-    "question": "Two rulers face each other in Hans-Hermann Hoppe's 2001 book: a king who will hand his country to his heir, and a president who must leave when his term ends. Hoppe rested his whole case on one economic idea about how each of them values the future against the present. Which idea anchors it?",
+    "question": "Two rulers face each other in Hans-Hermann Hoppe's 2001 book: a king who will hand his country to his heir, and a president who must leave when his term ends. Hoppe rested his whole case on one economic idea about the two men. Which idea anchors it?",
     "answer": "Time-preference of the officeholder",
     "choices": [
       "Time-preference of the officeholder",
@@ -9565,19 +9331,6 @@
       "The other person's attention"
     ],
     "context": "Hoppe's argumentation-ethics move (1988) claims performative contradiction: to argue at all, one must already exercise property in one's own body. Source: grokipedia.com/page/Argumentation_ethics.",
-    "topic": "hans-hermann-hoppe-democracy-the-god-that-failed"
-  },
-  {
-    "tier": 5,
-    "question": "Hans-Hermann Hoppe turned against democracy itself at the end of his 2001 book, and there two fellow Austrians who grant much of his case about officeholders' incentives part company with him. Which pair is most often named?",
-    "answer": "Peter Boettke and Joseph Salerno",
-    "choices": [
-      "Peter Boettke and Joseph Salerno",
-      "Milton Friedman and Anna Schwartz",
-      "Paul Krugman and Joseph Stiglitz",
-      "Larry Summers and Jason Furman"
-    ],
-    "context": "Boettke (George Mason) and Salerno (Pace, later Mises Institute) are prominent modern Austrians who engage Hoppe's incentive analysis critically without endorsing his political conclusion. Source: grokipedia.com/page/Hans-Hermann_Hoppe.",
     "topic": "hans-hermann-hoppe-democracy-the-god-that-failed"
   },
   {
@@ -9712,13 +9465,13 @@
   },
   {
     "tier": 1,
-    "question": "A family puts off buying a new car, sure the price will be lower next year, and thousands of other families wait too. Ben Bernanke, a Federal Reserve governor, warned about prices that keep falling in a speech in November 2002. What happens to workers when nobody buys anything?",
+    "question": "A family puts off buying a new car, sure the price will be lower next year, and thousands of other families wait too. Ben Bernanke, a Federal Reserve governor, warned about prices that keep falling in a speech in November 2002. What happens to workers when buyers hold back like this?",
     "answer": "Businesses lay off workers",
     "choices": [
       "Businesses lay off workers",
-      "Wages rise quickly",
-      "Rent goes way up",
-      "New factories open"
+      "Wages climb as prices fall",
+      "Businesses hire to make cheaper goods",
+      "Shops raise pay to keep staff"
     ],
     "context": "Bernanke was a Fed governor from 2002 to 2005, then Council of Economic Advisers chair in 2005-06, then Fed chair from February 2006. The 2002 speech previewed nearly every unconventional tool he later deployed. Source: Grokipedia 'Ben Bernanke' (2026-09-05).",
     "topic": "helicopter-ben-bernankes-2002-deflation-speech"
@@ -9759,20 +9512,7 @@
       "Selling foreign-currency reserves against domestic bonds",
       "Issuing zero-coupon perpetual bonds directly to the public"
     ],
-    "context": "The 2002 speech listed buying long-term Treasuries, buying agency debt, buying foreign government bonds, and (in extreme cases) directly funding tax cuts by printing. All but the last were deployed 2008-14. Source: Grokipedia 'Quantitative easing' (2026-09-05).",
-    "topic": "helicopter-ben-bernankes-2002-deflation-speech"
-  },
-  {
-    "tier": 3,
-    "question": "Ben Bernanke laid out a menu of unusual tools in his November 2002 speech for a central bank whose short-term rates were already near zero. The Fed put nearly all of it to work from 2008 to 2014, chiefly through three named programs. Which trio matches what Bernanke had previewed?",
-    "answer": "QE1, QE2, and Operation Twist",
-    "choices": [
-      "QE1, QE2, and Operation Twist",
-      "TARP, PDCF, and PPIP",
-      "SLR, GSIB, and TLAC",
-      "SDR, IMF SDR-A, and SDR-B"
-    ],
-    "context": "QE1 (November 2008-March 2010, $1.75T), QE2 (November 2010-June 2011, $600B), Operation Twist (September 2011-December 2012), and QE3 (September 2012-October 2014) implemented in reality what Bernanke had merely sketched in 2002. Source: Grokipedia 'Quantitative easing' (2026-09-05).",
+    "context": "The 2002 speech listed buying long-term Treasuries, buying agency debt, buying foreign government bonds, and (in extreme cases) paying for tax cuts with new money. From 2008 to 2014 the Fed bought long-term Treasuries and agency debt on a vast scale; it never bought foreign bonds or funded tax cuts with new money. Source: Grokipedia 'Quantitative easing' (2026-09-05).",
     "topic": "helicopter-ben-bernankes-2002-deflation-speech"
   },
   {
@@ -9781,24 +9521,11 @@
     "answer": "A central bank with a fiat currency can always create money at zero marginal cost",
     "choices": [
       "A central bank with a fiat currency can always create money at zero marginal cost",
-      "A central bank must always coordinate with the fiscal authority",
-      "A central bank cannot inflate without abandoning its inflation target",
-      "A central bank must convert to a gold standard to maintain credibility"
+      "A central bank with a fiat currency can always keep its money's value fixed against gold",
+      "A central bank with a fiat currency can always hold unemployment below a target it picks",
+      "A central bank with a fiat currency can always borrow abroad at the lowest interest rates"
     ],
     "context": "The core Bernanke claim: unlike a gold-backed central bank, a fiat central bank faces no natural limit on money creation. The only constraint is political will. This was reassurance to markets facing deflation risk; it was warning to Austrians. Source: Grokipedia 'Fiat money' (2026-09-05).",
-    "topic": "helicopter-ben-bernankes-2002-deflation-speech"
-  },
-  {
-    "tier": 4,
-    "question": "Critics in the Austrian line attacked Ben Bernanke's November 2002 deflation speech as it was given, calling it a blueprint for eventual currency debasement. Three of them are usually named: an economist at the Mises Institute, an investor and broadcaster, and a commodities investor. Which trio is it?",
-    "answer": "Bob Murphy, Peter Schiff, and Jim Rogers",
-    "choices": [
-      "Bob Murphy, Peter Schiff, and Jim Rogers",
-      "Paul Krugman, Joseph Stiglitz, and Larry Summers",
-      "Alan Greenspan, Robert Rubin, and Timothy Geithner",
-      "Milton Friedman, Anna Schwartz, and Karl Brunner"
-    ],
-    "context": "Murphy at the Mises Institute, Schiff on television, and commodities investor Jim Rogers all publicly warned that a fiat central bank willing to buy anything creates the conditions for eventual currency crisis. Source: mises.org/library/robert-p-murphy (2002-2010 articles).",
     "topic": "helicopter-ben-bernankes-2002-deflation-speech"
   },
   {
@@ -9816,15 +9543,15 @@
   },
   {
     "tier": 5,
-    "question": "Ben Bernanke described in 2002 the tools the Fed could reach for in a future crisis once rates hit zero, and six years later, as chairman during the 2008 crash, he used almost exactly those tools. Economists of the Austrian and public-choice schools take one recognition move from the episode. Which move does it teach?",
-    "answer": "Public speeches by central bankers about what they could do in a hypothetical crisis often preview exactly what they will do in a real one",
+    "question": "Ben Bernanke described in 2002 the tools the Fed could reach for in a future crisis once rates hit zero, and six years later, as chairman during the 2008 crash, he used several of them. Economists of the Austrian and public-choice schools take one recognition move from the episode. Which move does it teach?",
+    "answer": "Central bankers' talk of hypothetical crisis tools often previews what they will really do",
     "choices": [
-      "Public speeches by central bankers about what they could do in a hypothetical crisis often preview exactly what they will do in a real one",
+      "Central bankers' talk of hypothetical crisis tools often previews what they will really do",
       "Central bank speeches are cheap talk and rarely predict actual future policy",
       "Central banks always follow through on rate cuts announced in advance",
       "Central bank crisis toolkits are never used because they exist to reassure"
     ],
-    "context": "Read carefully, the 2002 speech told a listener exactly what would happen if a large financial crisis struck. Six years later it did, and the toolkit was deployed. Austrians took the speech seriously; most others did not. Source: Grokipedia 'Ben Bernanke' (2026-09-05).",
+    "context": "Read carefully, the 2002 speech told a listener what would happen if a large financial crisis struck. Six years later one did, and much of the toolkit was deployed. Source: Grokipedia 'Ben Bernanke' (2026-09-05).",
     "topic": "helicopter-ben-bernankes-2002-deflation-speech"
   },
   {
@@ -10024,7 +9751,7 @@
   },
   {
     "tier": 1,
-    "question": "Frédéric Bastiat, writing witty free-trade pamphlets in Paris against France's powerful protectionist lobby in the 1840s, told his friends that skilful opponents were not the real threat to a good cause. What did he say was the worst thing that could happen to a good cause?",
+    "question": "Frédéric Bastiat, writing witty free-trade pamphlets in Paris against France's powerful protectionist lobby in the 1840s, wrote that skilful opponents were not the real threat to a good cause. What did he say was the worst thing that could happen to a good cause?",
     "answer": "Ineptly defended",
     "choices": [
       "Ineptly defended",
@@ -10041,9 +9768,9 @@
     "answer": "First state the opposing case in its strongest form, then answer it",
     "choices": [
       "First state the opposing case in its strongest form, then answer it",
-      "First denounce the opposition, then argue your own case",
-      "First appeal to authority, then invoke tradition",
-      "First mock the opponent, then move on quickly"
+      "First set out his own case in full, then turn to the objections",
+      "First answer the weakest objection, then work up to the strongest",
+      "First gather the facts and figures, then let them settle the case"
     ],
     "context": "Nearly every essay in Economic Sophisms first states the protectionist argument fairly, even sympathetically, then dismantles it. Anything less discredits the defender's cause. Source: bastiat.org/en/economic_sophisms.html.",
     "topic": "ineptly-defended-the-line-sowell-borrowed"
@@ -10054,11 +9781,11 @@
     "answer": "It stops you from beating up a weaker version of the argument",
     "choices": [
       "It stops you from beating up a weaker version of the argument",
-      "It gives you time to think of a joke about it",
+      "It shows the judges how well you know the topic",
       "It makes the other person agree with you faster",
       "It hides your own weakest points"
     ],
-    "context": "Thomas Sowell (born June 30, 1930 in Gastonia, North Carolina) has repeatedly cited Bastiat as a formative influence on his method. Source: grokipedia.com/page/Thomas_Sowell.",
+    "context": "Restating a rival's case at its strongest before answering it guards against the straw man, an attack on a weakened copy of a view that leaves the real one standing.",
     "topic": "ineptly-defended-the-line-sowell-borrowed"
   },
   {
@@ -10067,16 +9794,16 @@
     "answer": "All the things the taxpayers would have bought or built with that money instead",
     "choices": [
       "All the things the taxpayers would have bought or built with that money instead",
-      "The paint used on the outside walls",
+      "The steel and concrete that went into its stands",
       "The wages of the stadium workers",
       "The price of tickets to future games"
     ],
-    "context": "Thomas Sowell's memoir A Personal Odyssey (Free Press, 2000) traces his intellectual formation and lists Bastiat among the formative early influences. Source: grokipedia.com/page/Thomas_Sowell.",
+    "context": "Bastiat's essay makes the same point with a broken window: the glazier's pay is seen, while the shoes or the book the shopkeeper can no longer buy are not. Source: oll.libertyfund.org, Bastiat, 'That Which is Seen'.",
     "topic": "ineptly-defended-the-line-sowell-borrowed"
   },
   {
     "tier": 5,
-    "question": "A writer on LessWrong, around 2010, restated a rival's argument as strongly as its own supporters would, and only then answered it. The rationalist writers there had one word for that move. What is the word?",
+    "question": "A writer on the website LessWrong in the early 2010s restated a rival's argument as strongly as its own supporters would, and only then answered it. The rationalist writers there had one word for that move. What is the word?",
     "answer": "Steelman",
     "choices": [
       "Steelman",
@@ -10084,7 +9811,7 @@
       "Debunk",
       "Weaponize"
     ],
-    "context": "'Steelman' entered the rationalist vocabulary around 2010 (LessWrong, Slate Star Codex) meaning to state the opponent's view in its strongest form before responding -- essentially Bastiat's 1845 rule with a new label. Source: grokipedia.com/page/Steelman_argument.",
+    "context": "'Steelman' entered the rationalist vocabulary in the early 2010s (on LessWrong by 2011, later on Slate Star Codex) meaning to state the opponent's view in its strongest form before responding -- essentially Bastiat's 1845 rule with a new label. Source: en.wiktionary.org/wiki/steelman.",
     "topic": "ineptly-defended-the-line-sowell-borrowed"
   },
   {
@@ -10349,7 +10076,7 @@
   },
   {
     "tier": 1,
-    "question": "Jeff Booth, a Canadian who had built and sold companies for thirty years, wrote a book about money and technology during the 2020 lockdowns. It is now among the most-read Bitcoin books of recent years. What is its title?",
+    "question": "Jeff Booth, a Canadian who had built and sold companies for thirty years, published a book about money and technology in January 2020. Bitcoin's defenders soon embraced it. What is its title?",
     "answer": "The Price of Tomorrow: Why Deflation Is the Key to an Abundant Future",
     "choices": [
       "The Price of Tomorrow: Why Deflation Is the Key to an Abundant Future",
@@ -10363,25 +10090,25 @@
   {
     "tier": 2,
     "question": "Jeff Booth argued in his 2020 book that central banks and politicians treat one feature of the modern economy as a threat, when it is really a gift that would let ordinary families grow richer every year without a raise. Which trait of technology does Booth call the misunderstood gift?",
-    "answer": "Technology naturally cheapens things over time (computing power, solar energy, storage all fall in cost)",
+    "answer": "Technology keeps making things cheaper, from computer chips to solar power",
     "choices": [
-      "Technology naturally cheapens things over time (computing power, solar energy, storage all fall in cost)",
-      "Technology always requires a government subsidy to develop",
-      "Technology inherently favors older workers over younger ones",
-      "Technology can only be produced by monopolies"
+      "Technology keeps making things cheaper, from computer chips to solar power",
+      "Technology keeps replacing jobs, so workers must keep retraining",
+      "Technology keeps pulling work into cities, where wages run higher",
+      "Technology keeps shortening the working week for everyone"
     ],
-    "context": "Moore's Law (Gordon Moore, 1965) captures the classical case: the number of transistors on a chip doubles every two years for the same cost. Solar photovoltaics, LEDs, memory, and storage follow parallel curves. Source: grokipedia.com/page/Moore%27s_law.",
+    "context": "Moore's Law captures the classical case: Gordon Moore observed in 1965 that the number of transistors on a chip was doubling every year, and in 1975 revised the pace to about every two years. Solar photovoltaics, LEDs, memory, and storage follow parallel curves. Source: grokipedia.com/page/Moore%27s_law.",
     "topic": "jeff-booth-and-the-price-of-tomorrow-technologys-natural-def"
   },
   {
     "tier": 4,
     "question": "A saver finds that her pay has crept up only slightly since 2010, while share prices have more than tripled. Jeff Booth blames central banks, which create new money to keep prices from falling. Read in Frédéric Bastiat's way, the seen fact is steady prices in the shops, which look like proof that the Fed did its job. What is the unseen?",
-    "answer": "The technology-cheapening she should have seen in her cost of living was absorbed into asset prices instead",
+    "answer": "The price drops technology owed her were soaked up by rising asset prices",
     "choices": [
-      "The technology-cheapening she should have seen in her cost of living was absorbed into asset prices instead",
-      "The Federal Reserve directly transferred wages from workers to investors by executive order",
-      "Chinese manufacturing subsidies alone explain the entire stock-market rise",
-      "European Central Bank interest-rate cuts caused the entire US wage stagnation"
+      "The price drops technology owed her were soaked up by rising asset prices",
+      "Cheap imports, not the central bank, were what held shop prices steady",
+      "Shares rose only because companies earned far more each year",
+      "Her savings earned enough interest to more than close the gap"
     ],
     "context": "The seen: relatively stable consumer prices, a 'successful' Fed inflation target. The unseen: the prices should have fallen substantially given the underlying productivity gains. The gap accrues to asset holders. Source: grokipedia.com/page/Jeff_Booth.",
     "topic": "jeff-booth-and-the-price-of-tomorrow-technologys-natural-def"
@@ -10389,12 +10116,12 @@
   {
     "tier": 4,
     "question": "Jeff Booth, the Canadian tech entrepreneur, argues that technology should let a working family's savings buy more every year, but central banks print new money to prop prices up, so the gain never reaches the family. Booth says one form of money escapes that trap. Which money does he pick?",
-    "answer": "Bitcoin, whose 21 million cap prevents any authority from expanding the supply to hide falling prices",
+    "answer": "Bitcoin, whose supply is capped at 21 million coins",
     "choices": [
-      "Bitcoin, whose 21 million cap prevents any authority from expanding the supply to hide falling prices",
-      "The US dollar, backed by the full faith and credit of the federal government",
-      "The euro, coordinated by the European Central Bank across 20 nations",
-      "Gold-backed central-bank digital currencies"
+      "Bitcoin, whose supply is capped at 21 million coins",
+      "Gold, whose supply grows only as fast as miners dig",
+      "A digital dollar issued by the central bank under a fixed rule",
+      "A basket of world currencies run by the International Monetary Fund"
     ],
     "context": "Booth's argument connects Bitcoin to technology-optimism in a way that reaches audiences who resist harder Austrian or goldbug framings. The point is monetary design, not price prediction. Source: grokipedia.com/page/Jeff_Booth.",
     "topic": "jeff-booth-and-the-price-of-tomorrow-technologys-natural-def"
@@ -10479,19 +10206,6 @@
   },
   {
     "tier": 1,
-    "question": "A Sichuan merchant under China's Song dynasty, about a thousand years ago, hauled a cartload of heavy iron coins to settle a single deal. So merchants began leaving their coins in the keeping of people they trusted and trading the paper receipts instead. What did those paper slips grow into?",
-    "answer": "Paper money",
-    "choices": [
-      "Paper money",
-      "A checkbook",
-      "A credit card",
-      "A gold coin"
-    ],
-    "context": "Iron-coin-backed paper receipts (later called jiaozi) first circulated in Sichuan province during the Song dynasty. Guangdong, Yunnan, and Zhejiang are other Chinese provinces without the same paper-money origin story. Source: https://en.wikipedia.org/wiki/Jiaozi_(currency).",
-    "topic": "jiaozi-and-kublai-khan-the-first-paper-money-bubbles"
-  },
-  {
-    "tier": 1,
     "question": "Song officials took over Sichuan's private paper receipts in 1023 and began issuing the notes themselves, the first paper money any government ever put out. What were the notes called?",
     "answer": "jiaozi",
     "choices": [
@@ -10511,22 +10225,22 @@
       "military campaigns against the Jin and later the Mongols",
       "the construction of the Great Wall extensions",
       "irrigation projects in the Yangtze delta",
-      "silk trade with the Roman Empire"
+      "famine relief after the Yellow River floods"
     ],
-    "context": "Late-Song military spending against the Jin (northern rival) and later the Mongols drove the fatal jiaozi over-issuance; by the early 13th century the currency had lost most of its value. Great Wall extension (Ming era), Yangtze irrigation, and Roman silk trade are the wrong causes or wrong eras. Source: https://en.wikipedia.org/wiki/Jiaozi_(currency).",
+    "context": "Military spending against the Jin (the northern rival) and later the Mongols drove the over-issue of the Song's later paper notes, the huizi, which came after the jiaozi; by the 1230s the notes in circulation had multiplied many times over and lost much of their value. Great Wall extension (a Ming project), Yangtze irrigation and flood relief were not the driver. Sources: https://en.wikipedia.org/wiki/Huizi_(currency); https://en.wikipedia.org/wiki/Jiaozi_(currency).",
     "topic": "jiaozi-and-kublai-khan-the-first-paper-money-bubbles"
   },
   {
     "tier": 2,
-    "question": "Kublai Khan, the Mongol emperor who ruled China from Beijing in the late 1200s, printed a paper money called chao with no gold or silver behind it and made every merchant and peasant take it by law. When a ruler can print at will and force people to take it, what tends to happen to his money?",
+    "question": "Kublai Khan, the Mongol emperor who ruled China from Beijing in the late 1200s, printed a paper money called chao and made every merchant and peasant take it by law. When a ruler can print at will and force people to take it, what tends to happen to his money?",
     "answer": "The ruler prints more to pay his bills and each note buys less than before",
     "choices": [
       "The ruler prints more to pay his bills and each note buys less than before",
       "The ruler stops printing and the money holds its value for centuries",
-      "The money becomes stronger than gold within a few years",
-      "Everyone burns the notes and returns to trading only in cattle"
+      "Merchants refuse the notes, and trade moves back to silver at once",
+      "Prices fall as the new notes draw more goods into the markets"
     ],
-    "context": "Kublai Khan (reigned 1260-94) issued the chao. Genghis Khan (1162-1227) founded the Mongol empire but did not issue Chinese paper money; Timur was the later Turco-Mongol ruler (1370-1405); Möngke Khan was Kublai's brother. Source: https://en.wikipedia.org/wiki/Kublai_Khan.",
+    "context": "Kublai Khan (reigned 1260-94) issued the chao from the first year of his reign; his second issue of 1260 was tied to silver, but later Yuan issues lost their backing and suffered devaluation and, at the end, hyperinflation. Source: https://en.wikipedia.org/wiki/Chao_(currency).",
     "topic": "jiaozi-and-kublai-khan-the-first-paper-money-bubbles"
   },
   {
@@ -10558,9 +10272,9 @@
   {
     "tier": 4,
     "question": "Marco Polo came from a Europe where money always meant gold and silver coin, and in Kublai Khan's China he watched the emperor issue paper notes. In his Travels, Polo described the Khan's paper money with a striking comparison. Which comparison did he use?",
-    "answer": "a kind of alchemy -- the Khan's magic that turns bark into wealth",
+    "answer": "a kind of alchemy that turned bark into wealth",
     "choices": [
-      "a kind of alchemy -- the Khan's magic that turns bark into wealth",
+      "a kind of alchemy that turned bark into wealth",
       "a form of taxation the citizens paid willingly",
       "a religious offering the citizens made to the Khan",
       "a military tribute the conquered peoples paid"
@@ -10570,28 +10284,28 @@
   },
   {
     "tier": 4,
-    "question": "Kublai Khan forced the chao, a paper money with no gold or silver behind it, on China from Beijing, and he died in 1294. What happened to the chao in the decades after his death?",
+    "question": "Kublai Khan forced his paper money, the chao, on China from Beijing, and Marco Polo marveled at it in his Travels. Kublai himself died in 1294; the Yuan dynasty he founded lasted until 1368. What happened to the chao in the decades after his death?",
     "answer": "successor emperors printed at will to fund crises, and by the 1350s the chao was worthless",
     "choices": [
       "successor emperors printed at will to fund crises, and by the 1350s the chao was worthless",
       "the chao was formally backed by silver and stabilized for another two centuries",
       "the Ming dynasty adopted it as its own currency in 1368",
-      "Marco Polo returned to enforce its acceptance"
+      "the notes were called in and swapped for copper coins at full value"
     ],
-    "context": "After Kublai, later Yuan emperors printed chao at will; by the 1350s it was worthless and the Yuan dynasty was collapsing. The Ming (founded 1368) inherited the ruin, not the currency; silver backing did not stabilize it; Polo had died in 1324. Source: https://en.wikipedia.org/wiki/Yuan_dynasty.",
+    "context": "After Kublai, later Yuan emperors printed chao at will; by the 1350s it was worthless and the Yuan dynasty was collapsing. The Ming (founded 1368) inherited the ruin, not the currency; silver backing did not stabilize it, and no one redeemed the notes at full value. Source: https://en.wikipedia.org/wiki/Yuan_dynasty.",
     "topic": "jiaozi-and-kublai-khan-the-first-paper-money-bubbles"
   },
   {
     "tier": 5,
-    "question": "Song officials in the 1000s and Kublai Khan in the 1200s issued the first two paper moneys any state ever put out, and both ended nearly worthless. Modern Austrian economists draw one pointed conclusion from that record. Which reasoning move do they make?",
-    "answer": "That the very first two government paper currencies in world history hyperinflated, suggesting the failure pattern is structural rather than a modern accident",
+    "question": "Song officials in the 1000s and Kublai Khan in the 1200s issued two of the earliest paper moneys any state ever put out, and both ended nearly worthless. Modern Austrian economists draw one pointed conclusion from that record. Which reasoning move do they make?",
+    "answer": "That the earliest government paper currencies in world history all collapsed, suggesting the failure pattern is structural rather than a modern accident",
     "choices": [
-      "That the very first two government paper currencies in world history hyperinflated, suggesting the failure pattern is structural rather than a modern accident",
+      "That the earliest government paper currencies in world history all collapsed, suggesting the failure pattern is structural rather than a modern accident",
       "That Chinese culture was uniquely unsuited to paper money, so the Song and Yuan collapses tell us nothing about later fiat currencies elsewhere in the world",
       "That the paper-money failure in both dynasties was caused primarily by insufficient literacy among the population handling the notes rather than by over-issuance",
       "That the Song and Yuan governments simply lacked modern accounting tools, so a modern central bank with proper spreadsheets would not repeat the same mistake"
     ],
-    "context": "The Austrian move: paper money is nine hundred years old and hyperinflated the first two times anyone tried it; the failure pattern is structural, not modern-specific. Cultural, literacy, and accounting explanations are the alternative arguments the Austrian analysis specifically rejects. Source: Ammous, The Fiat Standard (2021); Rothbard, What Has Government Done to Our Money?.",
+    "context": "The Austrian move: paper money is nearly a thousand years old, and the first states to try it, the Song, then the Jin and the Mongol Yuan, all watched it lose nearly all its value; the failure pattern is structural, not modern-specific. Cultural, literacy, and accounting explanations are the alternative arguments the Austrian analysis specifically rejects. Sources: Ammous, The Fiat Standard (2021); Rothbard, What Has Government Done to Our Money?; Wikipedia 'Chao (currency)'.",
     "topic": "jiaozi-and-kublai-khan-the-first-paper-money-bubbles"
   },
   {
