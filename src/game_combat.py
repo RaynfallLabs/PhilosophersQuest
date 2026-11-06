@@ -2535,8 +2535,16 @@ class CombatMixin:
         self._combat_hp_pct_before = self.player.hp / max(1, self.player.max_hp)
 
         # Joyeuse (engine wave 3): combat_start_aoe_confuse_chance. Each
-        # melee combat start, chance to dazzle adjacent enemies for 1 turn.
-        # Lore: "Charlemagne's sword changed colour thirty times a day."
+        # melee combat start, chance to dazzle nearby enemies for 1 turn.
+        # Lore: "Charlemagne's sword changed colour thirty times a day ...
+        # It dazzles before it cuts." A flash has to be seen: only foes the
+        # hero can see (not through walls, not the invisible), and only those
+        # with a mind to confuse; it reached every one within 3 tiles, and
+        # its line told of foes the hero could not see. Confused 2: monster
+        # statuses tick down before monsters move (_advance_turn), so the 1
+        # it had was gone before anyone acted (the mace's "stun for 1 turn"
+        # is 2 for the same reason). Named as the player sees the sword: the
+        # line used to give an unknown blade's true name.
         _w_dazzle = self.player.weapon
         _dz_ch = float(getattr(_w_dazzle, 'combat_start_aoe_confuse_chance', 0.0) or 0.0) if _w_dazzle else 0.0
         if _dz_ch > 0 and random.random() < _dz_ch:
@@ -2545,12 +2553,14 @@ class CombatMixin:
             for _m in self.monsters:
                 if (_m.alive and abs(_m.x - _px) <= 3 and abs(_m.y - _py) <= 3
                         and not (_m.x == _px and _m.y == _py)
-                        and not _is_bystander(_m)):
-                    _m.add_effect('confused', 1)
+                        and not _is_bystander(_m)
+                        and self._sees_monster(_m)
+                        and not _m.resists_control('confused')):
+                    _m.add_effect('confused', 2)
                     _dazzled += 1
             if _dazzled:
                 self.add_message(
-                    f"{_w_dazzle.name} flashes — nearby foes reel in confusion!",
+                    f"Your {self._bare_name(_w_dazzle)} flashes — nearby foes reel in confusion!",
                     'success')
 
         # Floating eye: paralyzing gaze on melee attack (the eye's signature
