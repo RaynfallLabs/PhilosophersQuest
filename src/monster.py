@@ -1605,6 +1605,9 @@ class Monster:
             if self._under('blinded') and random.random() < 0.30:
                 self._stumble_random(dungeon, all_monsters, extra_occupied, player)
                 return False
+        elif self._under('charmed'):
+            # Rooted, so it cannot wander off; charmed, it still holds its blow.
+            return False
 
         # --- A thief with a haul runs (src/theft.py); cornered, it fights ---
         if self.__dict__.get('stolen_gold') or self.__dict__.get('stolen_items'):
