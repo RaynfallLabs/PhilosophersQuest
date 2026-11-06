@@ -2838,17 +2838,20 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             pass
 
         # Chain-equip passive: three_oclock (Ring of Gawain T5 counterpart).
-        # STR decays per turn, resets on rest (handled in _tick_sp).
+        # Strength ebbs while the ring is worn (Player.ebb_strength) and comes
+        # back on rest (the wait key) or once the ring is off. It used to be
+        # taken from STR for good, and without its stamina.
         try:
             from chain_passives import player_has_passive
             if player_has_passive(self.player, 'three_oclock'):
                 _ctr = getattr(self.player, '_three_oclock_decay', 0) + 1
                 self.player._three_oclock_decay = _ctr
-                if _ctr % 30 == 0 and self.player.STR > 8:
-                    self.player.STR -= 1
+                if _ctr % self.player.THREE_OCLOCK_TURNS == 0 and self.player.ebb_strength():
                     self.add_message(
-                        "The 3 o'clock hour wanes. Your strength fades.",
+                        "The 3 o'clock hour wanes. Your strength fades until you rest.",
                         'warning')
+            elif self.player.recover_ebbed_strength():
+                self.add_message("Your strength comes back to you.", 'info')
         except ImportError:
             pass
 

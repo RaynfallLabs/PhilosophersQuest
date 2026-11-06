@@ -1731,6 +1731,36 @@ class Player:
             self.max_mp += amount
             self.mp = min(self.mp, self.max_mp)
 
+    # ----- the Ring of Gawain's ebbing strength (tier 5, three_oclock) -----
+    # Malory's Gawain: his strength grew every morning until noon "and then
+    # ebbed away". While the ring is worn at tier 5 a point ebbs every
+    # THREE_OCLOCK_TURNS (never below THREE_OCLOCK_FLOOR); rest, or taking
+    # the ring off, brings it all back. It used to come off STR for good.
+    THREE_OCLOCK_TURNS = 30
+    THREE_OCLOCK_FLOOR = 8
+
+    def ebb_strength(self) -> bool:
+        """One point of the ring's ebb, if Strength is above the floor."""
+        if self.STR <= self.THREE_OCLOCK_FLOOR:
+            return False
+        self.apply_stat_bonus('STR', -1)
+        self._three_oclock_lost = int(getattr(self, '_three_oclock_lost', 0) or 0) + 1
+        return True
+
+    def recover_ebbed_strength(self) -> int:
+        """The ebbed Strength comes back (on rest, or once the ring is off).
+        Returns the points restored."""
+        lost = int(getattr(self, '_three_oclock_lost', 0) or 0)
+        if lost <= 0:
+            return 0
+        self._three_oclock_lost = 0
+        flag, self._quirk_grant = getattr(self, '_quirk_grant', False), False
+        try:
+            self.apply_stat_bonus('STR', lost)    # never through a trait's allowance
+        finally:
+            self._quirk_grant = flag
+        return lost
+
     # ----- what worn rings, amulets and belts lend the six stats -----
     # Only the strongest bonus to each stat counts; every penalty counts.
     # Four Rings of Greater Strength and an Amulet of Strength gave +10
