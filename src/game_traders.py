@@ -339,6 +339,10 @@ class TraderMixin:
             self.ground_items.append(item)
             self.add_message(f"It is too heavy to carry with everything else, so {m.person} "
                              f"sets it down at your feet.", 'warning')
+            # Bought all the same: unmarked, it escaped the resale cap and
+            # sold deeper down for four times what it cost.
+            if getattr(item, 'item_class', '') != 'treasure':
+                self._trader_mark_bought(item, before, price)
         elif getattr(item, 'item_class', '') != 'treasure':
             self._trader_mark_bought(item, before, price)
             self._mastery_identify_carried(only=item)      # philosophy tier mastery
