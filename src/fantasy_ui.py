@@ -366,6 +366,39 @@ _SYMBOL_FAMILIES = 'segoe ui symbol,segoe ui emoji,noto sans symbols,dejavu sans
 _font_cache: dict = {}
 _font_px: dict = {}
 
+# Body text is laid out for Consolas. Macs and Linux have no Consolas, and
+# every system monospace they fall back to (Courier New, DejaVu Sans Mono) is
+# about 9% wider, so text was cut off there. Inconsolata (OFL, bundled) is a
+# little narrower than Consolas: where Consolas is missing it is used instead.
+_MONO_FILE = 'Inconsolata-Variable.ttf'
+_consolas_found = None
+
+
+def _has_consolas() -> bool:
+    global _consolas_found
+    if _consolas_found is None:
+        try:
+            _consolas_found = bool(pygame.font.match_font('consolas'))
+        except Exception:
+            _consolas_found = False
+    return _consolas_found
+
+
+def _mono_font(size: int, bold: bool) -> pygame.font.Font:
+    """Consolas where the system has it, else the bundled Inconsolata, else
+    the system monospace chain."""
+    if not _has_consolas():
+        path = os.path.join(_FONT_DIR, _MONO_FILE)
+        if os.path.exists(path):
+            try:
+                font = pygame.font.Font(path, size)
+                if bold:
+                    font.bold = True
+                return font
+            except Exception:
+                pass
+    return pygame.font.SysFont(_MONO_FAMILIES, size, bold=bold)
+
 
 def _make_font(role: str, size: int, bold: bool) -> pygame.font.Font:
     """A new font of ``size`` real pixels for ``role``."""
@@ -373,9 +406,7 @@ def _make_font(role: str, size: int, bold: bool) -> pygame.font.Font:
         # Unicode-capable font for rendering special characters (* o x Sum Omega * etc.)
         return pygame.font.SysFont(_SYMBOL_FAMILIES, size, bold=bold)
     if role in ('mono', 'body', 'small'):
-        # Use Consolas for all body/small roles -- crisp and highly readable.
-        # Fallback chain covers Windows / macOS / Linux monospace families.
-        return pygame.font.SysFont(_MONO_FAMILIES, size, bold=bold)
+        return _mono_font(size, bold)
     fname = _ROLE_FILES.get(role, 'Cinzel-Variable.ttf')
     path  = os.path.join(_FONT_DIR, fname)
     if os.path.exists(path):
