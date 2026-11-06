@@ -2529,7 +2529,11 @@ def _item_eligible_weighted(templates: list, level: int,
         by_type[type(item).__name__].append((item, w))
 
     if not by_type:
-        return [t for t in templates if t.min_level <= level] or templates[:]
+        # Nothing at home on this floor. Never fall back past min_level (the
+        # item's own lore floor): "or every template" handed the floor-unique
+        # roll on floors 1 and 2, where no unique is yet old enough, all 179
+        # of them, Stormbringer (min_level 88) included.
+        return [t for t in templates if t.min_level <= level]
 
     eligible = []
     for cls_name, items_weights in by_type.items():
