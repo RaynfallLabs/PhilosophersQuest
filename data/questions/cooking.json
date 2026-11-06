@@ -7385,12 +7385,12 @@
   },
   {
     "tier": 2,
-    "question": "Investigators keep finding E. coli on romaine and spinach the same way: a big cattle feedlot sits near the fields, and the germ from cow manure ends up right on leaves that people eat raw. What carries it from the manure onto the growing leaves?",
+    "question": "Investigators keep finding E. coli on romaine and spinach grown near big cattle feedlots, where the germ from cow manure ends up on leaves that people eat raw. What has often carried it from the manure onto the growing leaves?",
     "answer": "The irrigation water sprayed over the fields",
     "choices": [
       "The irrigation water sprayed over the fields",
-      "Rainwater splashing up off the bare soil",
-      "Dust blowing over from the cattle feedlot",
+      "Bees carrying it as they pollinate the crop",
+      "Earthworms dragging it up from the soil",
       "The germ climbing up through the plant roots"
     ],
     "context": "Feedlots and dairies sit near many leafy-green farms, and manure-tainted runoff seeps into the canals and wells that supply irrigation. When that water is sprayed over the crop, it lands contaminated droplets directly on leaves headed for a raw salad -- and no cooking step will follow to kill them. Source: FDA, 'Environmental Assessment of Factors Potentially Contributing to Contamination of Romaine Lettuce.'",
@@ -7406,7 +7406,7 @@
       "The butter",
       "The baking soda"
     ],
-    "context": "Flour is a raw farm product: the grain picks up E. coli out in the field from nearby animals, and flour is never heat-treated before it is bagged -- grinding and bleaching do not kill the germ. That is why raw cookie dough is risky even with no egg in it. The only real fix is to bake it, because the oven's heat finally cooks the flour and kills the bacteria. Source: FDA, 'Flour Is a Raw Food'; CDC, 'Raw Flour and Dough.'",
+    "context": "Flour is a raw farm product: the grain picks up E. coli out in the field from nearby animals, and ordinary flour is usually not heat-treated before it is bagged -- grinding and bleaching do not kill the germ. That is why raw cookie dough is risky even with no egg in it. The only real fix is to bake it, because the oven's heat finally cooks the flour and kills the bacteria. Source: FDA, 'Flour Is a Raw Food'; CDC, 'Raw Flour and Dough.'",
     "topic": "e-coli-burgers-greens-and-the-outbreak-that-changed-the-rule"
   },
   {
@@ -7502,7 +7502,7 @@
   },
   {
     "tier": 3,
-    "question": "For three days before a marathon, a runner loads up on pasta, rice and bread to pack her muscles with glycogen, the stored form of carbohydrate, and every gram of it drags several grams of water in with it. On race morning the scale reads a kilogram or two heavier. What is almost all of that extra weight?",
+    "question": "For three days before a marathon, a runner loads up on pasta, rice and bread to pack her muscles with glycogen, the stored form of carbohydrate. On race morning the scale reads a kilogram or two heavier than usual. What is almost all of that extra weight?",
     "answer": "Water weight",
     "choices": [
       "Water weight",
@@ -7567,7 +7567,7 @@
   },
   {
     "tier": 3,
-    "question": "A cook whisks egg yolks for a hollandaise, a sauce whose name means 'Dutch sauce' though it is French. It once went by an older name, 'sauce Isigny', after a small Normandy town famous all across France for making the finest of one dairy product. Which one?",
+    "question": "A cook whisks egg yolks for a hollandaise, a sauce whose name means 'Dutch sauce' though it is French. It has also gone by the name 'sauce Isigny', after a small Normandy town famous all across France for the dairy product that makes up most of the sauce. Which one?",
     "answer": "Butter",
     "choices": [
       "Butter",
@@ -7575,7 +7575,7 @@
       "Cream",
       "Yogurt"
     ],
-    "context": "Hollandaise literally means 'Dutch sauce,' but it is French - the name likely dates from the Franco-Dutch War (a likely-but-uncertain story). The older name 'sauce Isigny' points to Isigny in Normandy, a town famous across France for its butter, which is the sauce's main fat. Do not attribute hollandaise to the Netherlands. Source: Wikipedia, 'Hollandaise sauce.'",
+    "context": "Hollandaise literally means 'Dutch sauce,' but it is French; how it got the name is uncertain (one account ties it to the Franco-Dutch War, another to butter imported from the Netherlands). Its other name, 'sauce Isigny', points to Isigny in Normandy, a town famous across France for its butter, which is the sauce's main fat. Source: Wikipedia, 'Hollandaise sauce'; Grokipedia, 'Hollandaise sauce.'",
     "topic": "emulsion-and-hollandaise"
   },
   {
@@ -7614,7 +7614,7 @@
       "Beat a spoonful of flour into it",
       "Chill it in the freezer, then reheat"
     ],
-    "context": "You don't discard a broken sauce. Put a fresh egg yolk (or just a spoonful of warm water) in a clean bowl and slowly whisk the broken sauce into it, drop by drop. The new yolk supplies fresh lecithin that recaptures the loose fat and pulls the sauce back together. Source: foodrepublic.com; workforce.libretexts.org.",
+    "context": "A broken sauce need not be thrown out. The cook puts a fresh egg yolk (or just a spoonful of warm water) in a clean bowl and slowly whisks the broken sauce into it, drop by drop. The new yolk supplies fresh lecithin that recaptures the loose fat and pulls the sauce back together. Source: foodrepublic.com; workforce.libretexts.org.",
     "topic": "emulsion-and-hollandaise"
   },
   {
@@ -7625,20 +7625,20 @@
       "Béarnaise",
       "Bordelaise",
       "Béchamel",
-      "Marinara"
+      "Lyonnaise"
     ],
     "context": "Béarnaise is hollandaise's steak-sauce cousin - the lemon is swapped for a reduction of tarragon, shallot, and vinegar (with pepper and chervil), while the egg-yolk-and-butter emulsion is identical. Legend says it was created around 1836 at Le Pavillon Henri IV in Saint-Germain-en-Laye, the former home of King Henri IV, who was born in Béarn and nicknamed 'le Grand Béarnais' - so it is named for the king's home province, not an ingredient (the chef is often credited as Collinet, though this is debated). Source: Wikipedia, 'Béarnaise sauce.'",
     "topic": "emulsion-and-hollandaise"
   },
   {
     "tier": 5,
-    "question": "Clémence Lefeuvre, a cook near Nantes, set out around 1900 to make a yolk-and-butter sauce and forgot the egg yolks, or so the legend says. Her beurre blanc, butter beaten into a white-wine-and-shallot reduction, still held together as a creamy emulsion without a single egg. What held it together instead?",
-    "answer": "A trace of the butter's milk solids",
+    "question": "Clémence Lefeuvre, a cook near Nantes, set out around 1900 to make a yolk-and-butter sauce and forgot the egg yolks, or so the legend says. Her beurre blanc, 'white butter', still held together as a creamy emulsion without a single egg. What held it together instead?",
+    "answer": "The butter's own milk solids",
     "choices": [
-      "A trace of the butter's milk solids",
+      "The butter's own milk solids",
       "A roux of flour cooked in butter",
       "A spoonful of dissolved gelatin",
-      "A splash of whipped cream"
+      "A dab of Dijon mustard"
     ],
     "context": "Beurre blanc ('white butter') binds butter and a white-wine-and-shallot reduction with no egg at all - the emulsion is carried by the butter's own milk solids (plus a trace of natural lecithin) and hard whisking off the heat, with the acid keeping the milk solids suspended. It proves the trick is the emulsifier, not the egg specifically. Legend says it was invented by accident around 1900 by cook Clémence Lefeuvre near Nantes, who meant to make béarnaise but forgot the egg yolks. Source: Wikipedia, 'Beurre blanc.'",
     "topic": "emulsion-and-hollandaise"
@@ -7653,7 +7653,7 @@
       "The oil has spread out evenly, tinting the whole glass.",
       "The oil has dissolved and vanished into the water."
     ],
-    "context": "Oil floats because it's less dense than water — about 0.9 grams per milliliter against water's 1.0 — so no matter how hard you stir, it always breaks back into a layer on top. It's exactly why a jar of oil-and-vinegar dressing separates the moment you stop shaking. Source: Wikipedia, 'Emulsion' (immiscible liquids); Questacon, 'Oil and Water.'",
+    "context": "Oil floats because it's less dense than water — about 0.9 grams per milliliter against water's 1.0 — so no matter how hard it is stirred, it always breaks back into a layer on top. It's exactly why a jar of oil-and-vinegar dressing separates the moment the shaking stops. Source: Wikipedia, 'Emulsion' (immiscible liquids); Questacon, 'Oil and Water.'",
     "topic": "emulsions-fat-and-water-made-to-hold-hands"
   },
   {
@@ -7753,11 +7753,11 @@
     "answer": "Drizzle it in a thin, slow stream while whisking.",
     "choices": [
       "Drizzle it in a thin, slow stream while whisking.",
-      "Pour it all in at once and whisk as hard as you can.",
+      "Pour it all in at once and whisk as hard as possible.",
       "Add it in three big splashes, stirring between each.",
       "Chill the oil to a slush first, then fold it in."
     ],
-    "context": "A single yolk can only coat so much oil at a time. Drizzle it in slowly and the yolk keeps up with every drop; pour too fast and it can't coat each new droplet in time, so the oil clumps back together and the sauce breaks. The fix: don't toss it, but slowly whisk the broken sauce into a fresh egg yolk in a clean bowl until it re-thickens. Source: guanyumixer.com, 'Science of Mayonnaise'; chefsnotes.com, 'Emulsification Principles'; foodcrumbles.com/how-mayonnaise-works-jamming-fat-droplets-in-water/; foodrepublic.com/1470843/how-to-fix-broken-homemade-mayonnaise/.",
+    "context": "A single yolk can only coat so much oil at a time. Drizzled in slowly, the oil never outruns the yolk, which coats every drop; poured too fast, it arrives quicker than the yolk can wrap each new droplet, so the oil clumps back together and the sauce breaks. A broken mayonnaise need not be thrown out: whisked slowly into a fresh egg yolk in a clean bowl, it thickens again. Source: guanyumixer.com, 'Science of Mayonnaise'; chefsnotes.com, 'Emulsification Principles'; foodcrumbles.com/how-mayonnaise-works-jamming-fat-droplets-in-water/; foodrepublic.com/1470843/how-to-fix-broken-homemade-mayonnaise/.",
     "topic": "emulsions-making-oil-and-water-get-along-mayonnaise"
   },
   {
@@ -8022,7 +8022,7 @@
   },
   {
     "tier": 3,
-    "question": "In the rainforests of southern Mexico, where the vanilla vine first grew wild, a tiny native insect pollinates each vanilla flower. Move the vine anywhere else and the insect stays home. How does every vanilla pod grown outside Mexico get pollinated?",
+    "question": "In the rainforests of southern Mexico, where the vanilla vine first grew wild, native insects pollinate its flowers. Move the vine anywhere else in the world and those insects stay home. How does every vanilla pod grown outside Mexico get pollinated?",
     "answer": "By hand, one flower at a time",
     "choices": [
       "By hand, one flower at a time",
@@ -8035,7 +8035,7 @@
   },
   {
     "tier": 4,
-    "question": "Vanilla vines on Réunion, an island of French sugar plantations, would not fruit because their pollinator from Mexico was missing. In 1841 Edmond Albius solved what trained botanists could not, with a sliver of bamboo and a flick of his thumb, and growers worldwide still use his method. What did he do to each flower?",
+    "question": "Vanilla vines on Réunion, an island of French sugar plantations, would not fruit because their pollinator from Mexico was missing. In 1841 a twelve-year-old enslaved boy, Edmond Albius, found a fast way to do the work by hand, with a sliver of bamboo and a flick of his thumb. What did he do to each flower?",
     "answer": "Lifted the flap between its male and female parts",
     "choices": [
       "Lifted the flap between its male and female parts",
@@ -8095,7 +8095,7 @@
       "they taste soapy and bitter",
       "they puff up like doughnuts"
     ],
-    "context": "Raw soaked beans hold a sticky natural starch that acts like internal velcro when ground, gluing the fritter together with no egg or flour. Boiling or canning bursts those starch granules, so the glue is gone and the falafel disintegrates in the oil — as one cook put it, you'd 'essentially be trying to fry hummus.' Source: culinarylore.com/dishes:canned-chick-peas-for-falafel; themediterraneandish.com/how-to-make-falafel",
+    "context": "Raw soaked beans hold a sticky natural starch that acts like internal velcro when ground, gluing the fritter together with no egg or flour. Boiling or canning bursts those starch granules, so the glue is gone and the falafel disintegrates in the oil — as one cook put it, a cook using canned beans would 'essentially be trying to fry hummus.' Source: culinarylore.com/dishes:canned-chick-peas-for-falafel; themediterraneandish.com/how-to-make-falafel",
     "topic": "falafel-the-fried-bean-fritter"
   },
   {
@@ -8121,7 +8121,7 @@
       "black beans",
       "lima beans"
     ],
-    "context": "Egypt's ta'ameya (ta'amiya) is the fava-bean original, and many food historians believe falafel began in Egypt. Fava beans give it an earthier taste and a brighter-green inside, while the Levantine chickpea version comes out nuttier, sweeter and more golden. So falafel is not always a chickpea food. Source: en.wikipedia.org/wiki/Falafel; tastingtable.com/901336/the-real-difference-between-taameya-and-falafel",
+    "context": "Egypt's ta'ameya (ta'amiya) is made with fava beans, and many food historians believe falafel began in Egypt. Fava beans give it an earthier taste and a brighter-green inside, while the Levantine chickpea version comes out nuttier, sweeter and more golden. So falafel is not always a chickpea food. Source: en.wikipedia.org/wiki/Falafel; tastingtable.com/901336/the-real-difference-between-taameya-and-falafel",
     "topic": "falafel-the-fried-bean-fritter"
   },
   {
@@ -8139,11 +8139,11 @@
   },
   {
     "tier": 1,
-    "question": "A cook follows an 1890s recipe calling for 'a lump of butter' and 'a teacup of flour', and the cake comes out different every time, depending on whose lump and whose cup. Fannie Farmer's fix began with filling the measuring cup. What did she tell cooks to do next?",
+    "question": "A cook follows an 1890s recipe calling for 'a lump of butter' and 'a teacup of flour', and the cake never comes out the same. Fannie Farmer's fix began with spooning flour into the cup until slightly heaped. What did she say to do next?",
     "answer": "Scrape the top flat and level with a knife's edge",
     "choices": [
       "Scrape the top flat and level with a knife's edge",
-      "Round the flour up into a small heaping dome",
+      "Tip the heaped cupful straight into the bowl",
       "Pack the flour down firmly with the back of a spoon",
       "Shake the cup gently to help the flour settle even"
     ],
@@ -8152,7 +8152,7 @@
   },
   {
     "tier": 2,
-    "question": "When Fannie Farmer's cookbook first went to press, she paid for the printing herself, as the story goes, because her publisher, Little, Brown, was so sure it would flop that it ran only 3,000 copies. It went on to sell more than four million in her lifetime. What nickname did the hit earn her?",
+    "question": "When Fannie Farmer's cookbook first went to press in 1896, she paid for the printing herself, because her publisher, Little, Brown, doubted it would sell and ran only 3,000 copies. By her death in 1915 it had sold more than 360,000. What nickname did she earn?",
     "answer": "the mother of level measurements",
     "choices": [
       "the mother of level measurements",
@@ -8160,12 +8160,12 @@
       "the first lady of American baking",
       "the high priestess of home cooking"
     ],
-    "context": "The publisher doubted the book, capped the first printing at 3,000 copies, and reportedly had Farmer foot the bill herself — yet 'The Boston Cooking-School Cook Book' sold over four million copies in her lifetime and never went out of print, and she became known as 'the mother of level measurements.' (The commercial-drama details are a well-worn retelling; the nickname is solidly documented.) Source: amazingwomeninhistory.com, 'Fannie Farmer, the mother of level measurements'; Boston Magazine (bostonmagazine.com/news/2016/01/07/fannie-farmer-cookbook).",
+    "context": "The publisher doubted the book, capped the first printing at 3,000 copies, and had Farmer pay for it herself, yet 'The Boston Cooking-School Cook Book' sold more than 360,000 copies by her death in 1915 and has never gone out of print, and she became known as 'the mother of level measurements.' Sources: Wikipedia, 'Fannie Farmer'; Boston College Libraries, 'Are You Being Served?' (library.bc.edu); amazingwomeninhistory.com.",
     "topic": "fannie-farmer-makes-recipes-work"
   },
   {
     "tier": 3,
-    "question": "Fannie Farmer measured every ingredient in her 1896 Boston cookbook exactly, in standard cups and spoons, where older recipes had said vague things like 'flour enough to make a stiff dough'. With exact amounts, a recipe could finally promise something no cookbook ever had before. What could it promise?",
+    "question": "Fannie Farmer measured every ingredient in her 1896 Boston cookbook exactly, in level cups and spoons, where older recipes had said vague things like 'flour enough to make a stiff dough'. With exact amounts, her recipes could promise something the old vague ones never could. What was it?",
     "answer": "that a beginner and an expert would end up with the same dish",
     "choices": [
       "that a beginner and an expert would end up with the same dish",
@@ -8173,7 +8173,7 @@
       "that any dish could be cooked in half the usual time",
       "that a cook could use cheaper ingredients without anyone noticing"
     ],
-    "context": "Before Farmer, two cooks with the 'same' recipe could get wildly different food, because they guessed the amounts. With exact leveled measures the recipe became reproducible — hers was the first cookbook where a beginner and an expert following the same recipe got the same result, turning cooking from guesswork into something repeatable. Source: Boston Magazine; massmoments.org, 'Fannie Farmer Cookbook Published.'",
+    "context": "Before exact measures, two cooks with the 'same' recipe could get wildly different food, because they guessed the amounts. With level measures the recipe became reproducible: Farmer's book promised that a beginner and an expert following the same recipe would get the same result, turning cooking from guesswork into something repeatable. Source: Boston Magazine; massmoments.org, 'Fannie Farmer Cookbook Published.'",
     "topic": "fannie-farmer-makes-recipes-work"
   },
   {
@@ -8186,7 +8186,7 @@
       "American recipes used too many ingredients to weigh each one by hand",
       "Scales could not measure the tiny amounts a teaspoon was meant to hold"
     ],
-    "context": "Dry ingredients are still measured by weight (250 g flour) in most of the world but by volume (1/2 cup flour) in North America — and Wikipedia credits Farmer's 1896 book with locking in the volume system. In the late-1800s American kitchen, scales were expensive and unreliable, while a cheap standard cup scraped level was cheap and consistent, so cups won out. Source: en.wikipedia.org/wiki/Cooking_weights_and_measures; flavoralchemy.com; justhungry.com.",
+    "context": "Dry ingredients are still measured by weight (250 g flour) in most of the world but by volume (1/2 cup flour) in North America — and Wikipedia credits Farmer's 1896 book with locking in the volume system. In the late-1800s American kitchen, scales were expensive and unreliable, while a standard cup scraped level was cheap and consistent, so cups won out. Source: en.wikipedia.org/wiki/Cooking_weights_and_measures; flavoralchemy.com; justhungry.com.",
     "topic": "fannie-farmer-makes-recipes-work"
   },
   {
@@ -8342,46 +8342,46 @@
       "Vitamins B, C, D and E",
       "Vitamins A, B, D and K"
     ],
-    "context": "A, D, E and K are the four fat-soluble vitamins; the other nine - the B-vitamins and vitamin C - dissolve in water instead. A handy memory hook: the odd-ones-out spell A-D-E-K. Because they ride in fat, your body can only absorb them from a meal that has some fat in it. Source: Wikipedia 'Fat-soluble vitamin' (https://en.wikipedia.org/wiki/Fat-soluble_vitamin) - 'In humans there are 13 vitamins: 4 fat-soluble (A, D, E, and K) and 9 water-soluble.'",
+    "context": "A, D, E and K are the four fat-soluble vitamins; the other nine - the B-vitamins and vitamin C - dissolve in water instead. A handy memory hook: the odd-ones-out spell A-D-E-K. Because they ride in fat, the body can only absorb them from a meal that has some fat in it. Source: Wikipedia 'Fat-soluble vitamin' (https://en.wikipedia.org/wiki/Fat-soluble_vitamin) - 'In humans there are 13 vitamins: 4 fat-soluble (A, D, E, and K) and 9 water-soluble.'",
     "topic": "fat-carries-the-vitamins-why-you-butter-your-carrots"
   },
   {
     "tier": 2,
-    "question": "A boy who nibbles a carrot raw absorbs only about a tenth of the vitamins locked inside it. Prepared one simple way, the same carrot gives up nearly three-quarters, over six times as much. What kitchen step unlocks the difference?",
-    "answer": "Sauteing it in a little oil or butter",
+    "question": "A boy who nibbles a raw carrot takes up only a small share of its orange pigment, the stuff his body builds a vitamin from. Cooked one simple way, the same carrot gives up over six times as much. What kitchen step makes the difference?",
+    "answer": "Stir-frying it in a little oil",
     "choices": [
-      "Sauteing it in a little oil or butter",
+      "Stir-frying it in a little oil",
       "Grating it raw over a green salad",
       "Boiling it in plenty of plain water",
       "Serving it chilled and crunchy"
     ],
-    "context": "From a raw carrot you absorb only about 11% of its orange pigment (beta-carotene); stir-fried in a little oil, that jumps to about 74% - the study found cooking in oil raised the usable vitamin yield 6.5-fold. The fat dissolves the pigment and ferries it across your gut wall, so a pat of butter is really a delivery truck. Source: British Journal of Nutrition, 'The effect of food preparation on the bioavailability of carotenoids from carrots' (https://www.cambridge.org/core/journals/british-journal-of-nutrition/article/effect-of-food-preparation-on-the-bioavailability-of-carotenoids-from-carrots-using-intrinsic-labelling/C4E2B9F580B2F6D142A7E48DC52953D9) - raw ~11% vs stir-fried ~74%, retinol yield 'enhanced by a factor of 6.5 by stir-frying.'",
+    "context": "In a small 2012 study of four volunteers, the beta-carotene in raw carrots was only about 11% as well absorbed as the pure pigment, but about 74% when the carrots were stir-fried in a little groundnut oil, and the vitamin A the body made from them rose about 6.5-fold. The fat dissolves the pigment and ferries it across the gut wall, so a splash of oil is really a delivery truck. Source: Ghavami, Coward and Bluck, British Journal of Nutrition 2012, 'The effect of food preparation on the bioavailability of carotenoids from carrots using intrinsic labelling' (cambridge.org).",
     "topic": "fat-carries-the-vitamins-why-you-butter-your-carrots"
   },
   {
     "tier": 2,
-    "question": "Suppose you skip vitamin A for a few weeks: you stay perfectly fine. Skip vitamin C, the nutrient in oranges, peppers and broccoli, for just a few days, though, and your body starts running low, so you need some every single day. Why can your body not stockpile vitamin C?",
-    "answer": "It dissolves in water, so your body flushes the extra out",
+    "question": "A sailor on a long voyage can go weeks without vitamin A in his food and stay perfectly well. Vitamin C, the nutrient in oranges, peppers and broccoli, is different: he needs a fresh supply almost every day. Why can't the body stockpile vitamin C?",
+    "answer": "It dissolves in water, so the body flushes the extra out",
     "choices": [
-      "It dissolves in water, so your body flushes the extra out",
+      "It dissolves in water, so the body flushes the extra out",
       "Stomach acid destroys it within a few hours of eating",
-      "Your body burns through it faster than any other vitamin",
+      "The body burns through it faster than any other vitamin",
       "It breaks down quickly once a fruit is cut or picked"
     ],
-    "context": "Vitamin C is water-soluble: it dissolves in water, so your body can't build a reserve and simply flushes the surplus out in urine - you need a fresh supply daily (citrus, peppers, berries). The fat-soluble four (A, D, E, K) are the opposite: they ride in fat and your body can hold onto them far longer. Source: Wikipedia 'Fat-soluble vitamin' (https://en.wikipedia.org/wiki/Fat-soluble_vitamin) - water-soluble vitamins 'dissolve easily in water and... are readily excreted from the body,' so 'more consistent intake is important.'",
+    "context": "Vitamin C is water-soluble: it dissolves in water, so the body cannot build more than a small store and simply flushes the surplus out in urine, which is why a fresh supply (citrus, peppers, berries) is needed almost daily. The fat-soluble four (A, D, E, K) are the opposite: they ride in fat, and the body can hold onto them far longer. Sources: Wikipedia 'Fat-soluble vitamin'; NIH Office of Dietary Supplements, 'Vitamin C' (the whole body holds only about 300 mg to 2 g).",
     "topic": "fat-carries-the-vitamins-why-you-butter-your-carrots"
   },
   {
     "tier": 2,
-    "question": "A carrot, a baked sweet potato and a wedge of ripe cantaloupe sit sliced open on a board, the same vivid orange in all three. One natural pigment does the work, and the body takes it apart to build vitamin A, which keeps eyes sharp in dim light. What is the pigment called?",
-    "answer": "Beta-carotene",
+    "question": "A carrot, a baked sweet potato and a wedge of ripe cantaloupe sit sliced open on a board, the same vivid orange in all three. That orange is beta-carotene, a raw material: once eaten, it is split apart in the gut and rebuilt into a vitamin. Which vitamin?",
+    "answer": "Vitamin A",
     "choices": [
-      "Beta-carotene",
-      "Chlorophyll",
-      "Lycopene",
-      "Melanin"
+      "Vitamin A",
+      "Vitamin C",
+      "Vitamin D",
+      "Vitamin K"
     ],
-    "context": "A carrot's orange comes from beta-carotene, a carotenoid pigment. It's a 'provitamin' - a precursor, not the finished vitamin: your gut uses an enzyme (BCO1) to split one beta-carotene molecule and build vitamin A from it, so the plant supplies the raw material and your body does the final assembly. Chlorophyll is the green of leaves, lycopene the red of tomatoes, and melanin the brown of skin and hair - but only beta-carotene is the orange one your body turns into vitamin A. Source: Grokipedia 'Vitamin A' (https://grokipedia.com/page/Vitamin_A) - beta-carotene is 'centrally cleaved by the enzyme beta-carotene 15,15'-monooxygenase 1 (BCO1)' to yield vitamin A.",
+    "context": "A carrot's orange comes from beta-carotene, a 'provitamin': a raw material, not the finished vitamin. An enzyme in the gut (BCO1) splits each beta-carotene molecule and builds vitamin A from it, the vitamin the eyes need to see in dim light, so the plant supplies the parts and the body does the final assembly. Source: Grokipedia 'Vitamin A' (https://grokipedia.com/page/Vitamin_A).",
     "topic": "fat-carries-the-vitamins-why-you-butter-your-carrots"
   },
   {
@@ -8391,15 +8391,15 @@
     "choices": [
       "The heat ruptures the cells, freeing the pigment for fat to carry",
       "The heat builds brand-new vitamins that a raw tomato lacks",
-      "Cooking turns the tomato's water into extra vitamins",
+      "The oil seals the nutrient in so none of it cooks away",
       "The oil donates its own vitamins for the tomato to soak up"
     ],
-    "context": "A tomato's red color is lycopene, a fat-soluble pigment. Gentle cooking in oil ruptures the tomato's tough cell walls, releasing the lycopene, and the oil carries it into you - lycopene in oil-simmered tomato paste is up to four times more absorbable than in a raw tomato. It's the rare case where cooking makes a nutrient MORE available, not less. Source: Wikipedia 'Lycopene' (https://en.wikipedia.org/wiki/Lycopene) - 'Lycopene in tomato paste is up to four times more bioavailable than in fresh tomatoes.'",
+    "context": "A tomato's red color is lycopene, a fat-soluble pigment. Gentle cooking in oil ruptures the tomato's tough cell walls, releasing the lycopene, and the oil carries it into the body - lycopene in oil-simmered tomato paste is up to four times more absorbable than in a raw tomato. It's the rare case where cooking makes a nutrient MORE available, not less. Source: Wikipedia 'Lycopene' (https://en.wikipedia.org/wiki/Lycopene) - 'Lycopene in tomato paste is up to four times more bioavailable than in fresh tomatoes.'",
     "topic": "fat-carries-the-vitamins-why-you-butter-your-carrots"
   },
   {
     "tier": 5,
-    "question": "Suppose you ran short of vitamin A in your food: your body would draw on a reserve it banks, instead of washing the vitamin out the way it does water-soluble ones. More than 90 percent of that reserve, often nearly a year's worth, sits inside one organ. Which organ is the body's vitamin A vault?",
+    "question": "When a diet runs short of vitamin A, the body draws on a reserve it has banked, instead of washing the vitamin out the way it does the water-soluble ones. More than 90 percent of that reserve, often nearly a year's worth, sits inside one organ. Which organ is the body's vitamin A vault?",
     "answer": "The liver",
     "choices": [
       "The liver",
@@ -8407,7 +8407,7 @@
       "The pancreas",
       "The spleen"
     ],
-    "context": "Because they dissolve in fat, A, D, E and K can be banked in your body - over 90% of your vitamin A reserve is stored in the liver, often close to a year's worth. (It's also why liver and cod-liver oil are so rich in vitamin A: they're an animal's own vitamin vault.) The catch: stored vitamins A and D CAN build up to toxic levels if you badly overdo them - a problem called hypervitaminosis. Source: StatPearls 'Biochemistry, Fat Soluble Vitamins' (https://www.ncbi.nlm.nih.gov/books/NBK534869/) and Wikipedia 'Fat-soluble vitamin' - fat-soluble vitamins are 'stored... mainly in the liver.'",
+    "context": "Because they dissolve in fat, A, D, E and K can be banked in the body: over 90% of the vitamin A reserve is stored in the liver, often close to a year's worth. (It's also why liver and cod-liver oil are so rich in vitamin A: they're an animal's own vitamin vault.) The catch: stored vitamins A and D CAN build up to toxic levels if someone badly overdoes them, a problem called hypervitaminosis. Source: StatPearls 'Biochemistry, Fat Soluble Vitamins' (https://www.ncbi.nlm.nih.gov/books/NBK534869/) and Wikipedia 'Fat-soluble vitamin' - fat-soluble vitamins are 'stored... mainly in the liver.'",
     "topic": "fat-carries-the-vitamins-why-you-butter-your-carrots"
   },
   {
@@ -8820,8 +8820,8 @@
     "choices": [
       "Portugal",
       "Greece",
-      "Sweden",
-      "Ireland"
+      "Italy",
+      "France"
     ],
     "context": "Feijoada descends from the Portuguese 'cozido,' a northern-Portugal pork-and-bean stew. Historian Carlos Augusto Ditadi calls the 'slave leftovers' story 'born of modern folklore, in a romanticized vision' of slavery, and food scholar Raul Lody says the idealized image of turban-wearing enslaved women stirring clay pots hides slavery's real brutality. Two facts sink the myth: Iberians prized pig's feet and ears as food, and the African cultures enslaved people came from did not traditionally cook beans with pork — Latin Europe did. Sources: Wikipedia, 'Feijoada (Brazilian dish)'; Southern Cultures, 'Feijoada and Hoppin' John.'",
     "topic": "feijoada-brazils-black-bean-and-pork-stew-and-its-origin-myt"
@@ -8840,16 +8840,16 @@
     "topic": "feijoada-brazils-black-bean-and-pork-stew-and-its-origin-myt"
   },
   {
-    "tier": 4,
-    "question": "Feijoada's ingredients crossed oceans to meet in the pot. Its black beans are a New World crop, but its pork was a newcomer, since pigs were unknown in the Americas until European ships carried the first ones over. Which voyage brought them?",
-    "answer": "Columbus's second voyage, 1493",
+    "tier": 3,
+    "question": "Feijoada's ingredients crossed oceans to meet in the pot. Its pork came on European ships, since pigs first reached the Americas with Columbus's second voyage in 1493. Its black beans have a far older story. Where were they first grown?",
+    "answer": "In Mexico and Central America",
     "choices": [
-      "Columbus's second voyage, 1493",
-      "Cabral's landing in Brazil, 1500",
-      "Magellan's Pacific crossing, 1521",
-      "The Mayflower's voyage, 1620"
+      "In Mexico and Central America",
+      "In West Africa's river valleys",
+      "In Portugal and northern Spain",
+      "In India and southern China"
     ],
-    "context": "Feijoada is a three-continent fusion on one plate: the black beans are a New World crop (domesticated in Mesoamerica over 7,000 years ago), the pig is an Old World animal (Europeans brought the first pigs to the Americas on Columbus's 1493 second voyage), and the slow-simmered bean-and-meat method is European. Sources: Wikipedia, 'New World crops'; Texas A&M feral-hog history (feralhogs.tamu.edu).",
+    "context": "Feijoada is a three-continent meeting on one plate: the black beans are a crop of the Americas, first farmed in Mesoamerica (today's Mexico and Central America) over 7,000 years ago; the pig is an Old World animal, first brought to the Americas on Columbus's 1493 second voyage; and the slow-simmered bean-and-meat method is European. Sources: Wikipedia, 'New World crops' and 'Black turtle bean'; Texas A&M feral-hog history (feralhogs.tamu.edu).",
     "topic": "feijoada-brazils-black-bean-and-pork-stew-and-its-origin-myt"
   },
   {
@@ -8984,28 +8984,28 @@
   },
   {
     "tier": 1,
-    "question": "Beans, oats and an apple with its crunchy skin sit on a lunch tray, all packed with fiber, the tough, stringy part of a plant. Suppose you eat them: your gut pulls their sugar and protein into your blood, but the fiber does something different. What happens to it?",
-    "answer": "It passes through you largely undigested.",
+    "question": "Beans, oats and an unpeeled apple sit on a boy's lunch tray, all packed with fiber, the tough, stringy part of a plant. His gut pulls their sugar and protein into his blood, but the fiber does something else. What happens to it?",
+    "answer": "It passes through him largely undigested.",
     "choices": [
-      "It passes through you largely undigested.",
+      "It passes through him largely undigested.",
       "It digests into sugar faster than anything else.",
-      "It's absorbed straight into your bloodstream.",
-      "It gets stored in your liver as fuel."
+      "It is absorbed straight into his bloodstream.",
+      "It gets stored away in his liver as fuel."
     ],
-    "context": "Fiber is the part of plant food your digestive enzymes can't break down, so it passes through largely intact instead of being absorbed for energy — and that indigestibility is exactly the point. It lives in beans, oats, whole grains, vegetables, and fruit skins. Source: Wikipedia, 'Dietary fiber.'",
+    "context": "Fiber is the part of plant food human digestive enzymes can't break down, so it passes through largely intact instead of being absorbed for energy — and that indigestibility is exactly the point. It lives in beans, oats, whole grains, vegetables, and fruit skins. Source: Wikipedia, 'Dietary fiber.'",
     "topic": "fiber-the-food-you-cant-digest"
   },
   {
     "tier": 2,
-    "question": "Suppose you swap a bowl of sugary cereal for oatmeal at breakfast: instead of going hungry by mid-morning, you stay full until lunch, even for the same calories. The secret is the soluble fiber in the oats. What does it do down in your stomach?",
-    "answer": "It swells into a thick gel that slows your stomach from emptying.",
+    "question": "A girl swaps her bowl of sugary cereal for oatmeal at breakfast, and instead of going hungry by mid-morning, she stays full until lunch on the same calories. The secret is the soluble fiber in the oats. What does it do in her stomach?",
+    "answer": "It swells into a thick gel that slows the stomach from emptying.",
     "choices": [
-      "It swells into a thick gel that slows your stomach from emptying.",
-      "It coats your tongue so the food tastes richer.",
-      "It hardens into dry flakes that pack your stomach.",
-      "It races through your gut, dragging food along."
+      "It swells into a thick gel that slows the stomach from emptying.",
+      "It coats the tongue so the food tastes richer.",
+      "It hardens into dry flakes that pack the stomach.",
+      "It races through the gut, dragging food along."
     ],
-    "context": "Soluble fiber dissolves in water and forms a viscous gel during digestion, slowing the emptying of the stomach — that gel is why oatmeal keeps you full longer. It's found in oats, barley, beans, and psyllium. Source: Wikipedia, 'Dietary fiber.'",
+    "context": "Soluble fiber dissolves in water and forms a viscous gel during digestion, slowing the emptying of the stomach — that gel is why oatmeal keeps a diner full longer. It's found in oats, barley, beans, and psyllium. Source: Wikipedia, 'Dietary fiber.'",
     "topic": "fiber-the-food-you-cant-digest"
   },
   {
@@ -9023,7 +9023,7 @@
   },
   {
     "tier": 2,
-    "question": "A mill grinding grain into flour sifts off the thin, papery jacket around each kernel, its bran. Gram for gram, one grain's bran is the fiber king of the whole pantry, nearly 80 percent fiber and ahead of any bean or leafy green. Which grain's bran wins the crown?",
+    "question": "A mill grinding grain into flour sifts off the thin, papery jacket around each kernel, its bran. Gram for gram, one grain's bran beats every other bran at nearly 80 percent fiber, far ahead of any bean or leafy green. Which grain's bran wins the crown?",
     "answer": "Corn bran",
     "choices": [
       "Corn bran",
@@ -9036,59 +9036,59 @@
   },
   {
     "tier": 3,
-    "question": "Suppose you could follow the fiber from a bowl of oatmeal all the way down: your body makes no enzymes to break it apart, so it reaches your large intestine still whole. It is not wasted there, because something is waiting to feast on it. What feeds on the fiber you eat?",
-    "answer": "Your gut bacteria",
+    "question": "The fiber in a bowl of oatmeal meets no human enzyme that can break it apart, so it slides through the stomach and small intestine and reaches the large intestine still whole. It is not wasted there. What finally breaks it down?",
+    "answer": "Bacteria living in the gut",
     "choices": [
-      "Your gut bacteria",
-      "Your stomach acid",
-      "Your liver",
-      "Your muscles"
+      "Bacteria living in the gut",
+      "Acid trickling down from the stomach",
+      "Bile flowing in from the liver",
+      "Immune cells in the gut wall"
     ],
-    "context": "Humans lack the enzymes to break down most dietary fiber, so it passes intact into the large intestine, where gut bacteria ferment it. Feeding the bacteria and microbiota of your gut is exactly what the word 'prebiotic' means. Sources: Wikipedia, 'Dietary fiber'; PMC3735932.",
+    "context": "Humans lack the enzymes to break down most dietary fiber, so it passes intact into the large intestine, where gut bacteria ferment it. Feeding the gut's bacteria is exactly what the word 'prebiotic' means. Sources: Wikipedia, 'Dietary fiber'; PMC3735932.",
     "topic": "fiber-the-food-you-cant-digest"
   },
   {
     "tier": 4,
-    "question": "Trillions of bacteria live in the colon, fermenting the fiber that human enzymes cannot break down and pumping out a short-chain fat as their waste. Suppose you eat a bowl of beans: which part of your body then runs mainly on that fuel?",
-    "answer": "The cells lining your colon wall",
+    "question": "Trillions of bacteria live in the gut, fermenting the fiber that human enzymes cannot break down and giving off a short-chain fat as their waste. One part of the body runs mainly on that fuel, made for it every day by the bacteria. Which part?",
+    "answer": "The cells lining the colon wall",
     "choices": [
-      "The cells lining your colon wall",
-      "The neurons firing in your brain",
-      "The muscle in your beating heart",
-      "The red cells in your blood"
+      "The cells lining the colon wall",
+      "The cells lining the small intestine",
+      "The liver cells that make bile",
+      "The neurons firing in the brain"
     ],
-    "context": "When gut bacteria ferment fiber they release short-chain fatty acids — acetate, propionate, and butyrate. Butyrate is the main energy source of colonocytes, the cells lining the colon, supplying roughly 70% of their energy; the cells prefer it even when glucose is available. So fiber feeds your own gut wall through a bacterial middleman. Sources: Wikipedia, 'Short-chain fatty acid'; Nutrients 2017 (MDPI 9/12/1348); PMC5748798.",
+    "context": "When gut bacteria ferment fiber they release short-chain fatty acids — acetate, propionate, and butyrate. Butyrate is the main energy source of colonocytes, the cells lining the colon, supplying roughly 70% of their energy; the cells prefer it even when glucose is available. So fiber feeds the body's own gut wall through a bacterial middleman. Sources: Wikipedia, 'Short-chain fatty acid'; Nutrients 2017 (MDPI 9/12/1348); PMC5748798.",
     "topic": "fiber-the-food-you-cant-digest"
   },
   {
     "tier": 4,
-    "question": "A firm, green banana sits on the counter, packed with resistant starch, a starch that slips past digestion and feeds gut bacteria the way fiber does. Suppose you let it ripen soft and sweet, or bake it into bread: that gut-feeding starch changes. What does it turn into?",
-    "answer": "Ordinary starch your body digests into sugar.",
+    "question": "A firm, green banana sits on the counter, packed with resistant starch, a starch that slips past digestion and feeds gut bacteria the way fiber does. Left to ripen soft and yellow, or baked into bread, the banana loses most of that gut-feeding starch. What does it turn into?",
+    "answer": "Sugar and starch the body digests easily.",
     "choices": [
-      "Ordinary starch your body digests into sugar.",
-      "An even tougher starch your gut can't break down.",
-      "Pure fiber that passes straight through you.",
-      "A protein your muscles can burn for fuel."
+      "Sugar and starch the body digests easily.",
+      "An even tougher starch the gut can't break down.",
+      "Pure fiber that passes straight through the body.",
+      "A protein the muscles can burn for fuel."
     ],
-    "context": "Green bananas and raw potatoes are naturally packed with resistant starch (type RS2), which resists digestion in the small intestine and reaches the colon, where gut bacteria ferment it just like fiber. But ripening or cooking turns that RS2 back into ordinary digestible starch — a firm green banana feeds your gut, while a soft ripe one feeds it much less. Source: Wikipedia, 'Resistant starch.'",
+    "context": "Green bananas and raw potatoes are naturally packed with resistant starch (type RS2), which resists digestion in the small intestine and reaches the colon, where gut bacteria ferment it just like fiber. As a banana ripens, most of that starch turns into sugars, and cooking gelatinizes RS2 into ordinary digestible starch, so a firm green banana feeds the gut bacteria far more than a soft ripe one. Sources: Wikipedia, 'Resistant starch'; Grokipedia, 'Banana.'",
     "topic": "fiber-the-food-you-cant-digest"
   },
   {
     "tier": 5,
-    "question": "Suppose you start every morning with a bowl of oatmeal: it genuinely lowers the cholesterol in your blood, by a sneaky route. The oats' soluble fiber grabs bile acids, the digestive juice your liver builds out of cholesterol, and drags them out of your body. Why does losing those bile acids pull your blood cholesterol down?",
-    "answer": "Your liver pulls cholesterol from your blood to make replacement bile.",
+    "question": "A man starts every morning with a bowl of oatmeal, and it lowers the cholesterol in his blood by a sneaky route. The oats' soluble fiber grabs bile acids, the digestive juices his liver builds out of cholesterol, and drags them out of the body. Why does losing them pull his blood cholesterol down?",
+    "answer": "His liver pulls cholesterol from his blood to make replacement bile.",
     "choices": [
-      "Your liver pulls cholesterol from your blood to make replacement bile.",
+      "His liver pulls cholesterol from his blood to make replacement bile.",
       "The bile acids carry loose blood cholesterol out along with them.",
       "The fiber digests the lost cholesterol into harmless sugar.",
-      "Your gut simply stops absorbing any cholesterol from food."
+      "His gut simply stops absorbing any cholesterol from food."
     ],
     "context": "Oat beta-glucan, a soluble fiber, forms a gel that traps bile acids so they leave the body in stool; the liver then pulls LDL cholesterol out of the blood to make the replacement bile — that's how oats lower cholesterol. The FDA allows the cholesterol-lowering claim for about 3 grams a day of oat or barley beta-glucan. Sources: Frontiers in Nutrition 2019, 'The Cholesterol-Lowering Effect of Oats and Oat Beta Glucan'; HEART UK, 'Oats and barley.'",
     "topic": "fiber-the-food-you-cant-digest"
   },
   {
     "tier": 5,
-    "question": "Two potatoes come out of the same oven. One is eaten piping hot, and the body digests its starch into sugar; after one extra step, the other's starch turns into a form human enzymes cannot break down, so it feeds gut bacteria instead. What was that extra step?",
+    "question": "Two potatoes come out of the same oven. One is eaten piping hot, and the body digests its starch into sugar; after one extra step, some of the other's starch turns into a form human enzymes cannot break down, so it feeds gut bacteria instead. What was that extra step?",
     "answer": "Letting it cool in the fridge",
     "choices": [
       "Letting it cool in the fridge",
@@ -9096,7 +9096,7 @@
       "Blending it into soup",
       "Sprinkling it with salt"
     ],
-    "context": "Cook a potato or rice, then cool it, and some starch re-crystallizes — a process called retrogradation — into 'resistant starch' (type RS3) that your body can't digest but your gut bacteria love. Cooling boiled potatoes overnight at 4°C increased their resistant starch by a factor of 2.8 — nearly triple, just from chilling — so cold potato salad feeds your gut more than hot fries from the same potato. Sources: Wikipedia, 'Resistant starch'; Healthline, 'Cooling Some Foods After Cooking Increases Their Resistant Starch.'",
+    "context": "Cook a potato or rice, then cool it, and some starch re-crystallizes (a process called retrogradation) into 'resistant starch' (type RS3) that the body can't digest but gut bacteria ferment. Cooling boiled potatoes overnight at 4°C increased their resistant starch by a factor of 2.8, nearly triple, just from chilling, so cold potato salad feeds the gut bacteria more than a hot baked potato. Sources: Wikipedia, 'Resistant starch'; Healthline, 'Cooling Some Foods After Cooking Increases Their Resistant Starch.'",
     "topic": "fiber-the-food-you-cant-digest"
   },
   {
@@ -9140,15 +9140,15 @@
   },
   {
     "tier": 3,
-    "question": "Spain and Portugal expelled their Jewish families in the 1490s, and many of these Sephardic Jews settled in England with a Friday tradition of fried fish. Back home they had fried nearly everything in one everyday fat, far more often than in butter, lard or beef drippings. Which fat was it?",
+    "question": "Spain and Portugal expelled their Jewish families in the 1490s, and in later centuries many Sephardic Jews settled in England, bringing a Friday tradition of fried fish. Back home in Iberia they had fried their fish in one everyday fat. Which fat was it?",
     "answer": "Olive oil",
     "choices": [
       "Olive oil",
-      "Beef tallow",
+      "Sesame oil",
       "Goose fat",
-      "Duck fat"
+      "Mutton fat"
     ],
-    "context": "Hard animal fats like tallow and goose fat turn waxy and unpleasant as they cool, but olive oil - the everyday oil of Spain and Portugal - stays light and crisp even stone cold, perfect for a fish fried the day before. Source: Wikipedia 'Fish and chips'; 'Pescado frito.'",
+    "context": "Hard animal fats like mutton fat and goose fat turn waxy and unpleasant as they cool, but olive oil - the everyday oil of Spain and Portugal - stays light and crisp even stone cold, perfect for a fish fried the day before. Source: Wikipedia 'Fish and chips'; 'Pescado frito'; Grokipedia 'Fish and chips' (Sephardic refugees reached England in the 16th and 17th centuries).",
     "topic": "fish-and-chips-britains-national-dish"
   },
   {
@@ -9159,7 +9159,7 @@
       "Steam-powered trawlers",
       "Dockside canning factories",
       "Coastal salt-curing sheds",
-      "Harbour ice-storage houses"
+      "Steam-driven canal barges"
     ],
     "context": "Steam trawlers dragged huge nets and landed vast catches, and the new railways raced the fish inland to the cities. Cheap fish plus cheap potatoes made fish and chips the hot, filling, affordable meal of the industrial working class. Source: Wikipedia 'Fish and chips.'",
     "topic": "fish-and-chips-britains-national-dish"
@@ -9209,7 +9209,7 @@
     "answer": "the fish's own enzymes",
     "choices": [
       "the fish's own enzymes",
-      "the fish's own gut bacteria",
+      "the salt eating into the flesh",
       "wild yeast from the open air",
       "the heat of the tropical sun"
     ],
@@ -9322,7 +9322,7 @@
   },
   {
     "tier": 1,
-    "question": "A fine-dining chef stirs a seaweed extract into fruit juice and lets it fall drop by drop into a calcium bath, where it sets into tiny 'caviar' spheres that burst in the mouth. A mall bubble-tea counter sells the same trick cheap as a topping. Which one?",
+    "question": "A fine-dining chef stirs a seaweed extract into fruit juice and lets it fall drop by drop into a calcium bath, where each drop sets into a glistening bead like caviar. A mall bubble-tea counter sells the same trick cheap as a topping. Which one?",
     "answer": "Popping boba",
     "choices": [
       "Popping boba",
@@ -9343,12 +9343,12 @@
       "It dissolves and disappears into the bath",
       "It puffs up into a light ball of foam"
     ],
-    "context": "This is spherification. The 'seaweed extract' is sodium alginate and the bath is rich in calcium; the calcium locks alginate's long chains together only where the droplet touches the bath, so a thin gel skin forms on the outside while the core stays liquid — a fragile sphere that bursts in your mouth. Source: en.wikipedia.org/wiki/Spherification",
+    "context": "This is spherification. The 'seaweed extract' is sodium alginate and the bath is rich in calcium; the calcium locks alginate's long chains together only where the droplet touches the bath, so a thin gel skin forms on the outside while the core stays liquid — a fragile sphere that bursts in the mouth. Source: en.wikipedia.org/wiki/Spherification",
     "topic": "foams-and-spherification-edible-illusions-of-modernist-cuisi"
   },
   {
     "tier": 3,
-    "question": "William Peschardt, an inventor working for the food company Unilever, patented the bursting-sphere trick in the 1940s, so that factories could wrap a liquid in a thin skin. One of its first industrial jobs was a soft filling tucked into a familiar grocery-store food. Which one?",
+    "question": "William Peschardt, an inventor working for Unilever, patented a seaweed-and-calcium gel in the 1940s to wrap a liquid in a thin skin, first for artificial cherries. The same gel later set a soft filling tucked into a familiar grocery-store food. Which one?",
     "answer": "The red pimento inside a green olive",
     "choices": [
       "The red pimento inside a green olive",
@@ -9356,17 +9356,17 @@
       "The caramel inside a chocolate bar",
       "The jam inside a doughnut"
     ],
-    "context": "The alginate-and-calcium trick was patented in the 1940s by William J.S. Peschardt for the food giant Unilever — an industrial way to seal a skin around a liquid, used for things like artificial cherries and the pimento paste tucked into pitted green olives. It sat in factories about sixty years before a restaurant ever used it. Sources: sosa.cat/en/spherification; en.wikipedia.org/wiki/Spherification",
+    "context": "The alginate-and-calcium trick was patented in 1946 by William J.S. Peschardt as an industrial way to seal a skin around a liquid, first to make artificial cherries; olive packers later used the same alginate-and-calcium gel to set the pimento paste tucked into pitted green olives. It sat in factories about sixty years before a restaurant ever used it. Sources: US Patent 2,403,547 (Peschardt, 1946); US Patent 5,100,681, 'Process for preparing pimento paste for stuffing pitted olives'; sosa.cat/en/spherification.",
     "topic": "foams-and-spherification-edible-illusions-of-modernist-cuisi"
   },
   {
     "tier": 4,
-    "question": "A modernist kitchen sends out the flavor of a whole broth as a weightless foam, scooped up with a spoon, all intense taste and almost no substance. To force air into the liquid, Ferran Adrià skipped fancy lab gear and reached for an ordinary kitchen gadget most cooks already own. Which one?",
+    "question": "Ferran Adrià served the flavor of a whole broth as a light foam, scooped up with a spoon, all intense taste and almost no substance. For these foams, his espumas, he skipped fancy lab gear and forced air into the liquid with a gadget pastry cooks had long used. Which one?",
     "answer": "A whipped-cream siphon",
     "choices": [
       "A whipped-cream siphon",
       "An ice-cream churn",
-      "A hand blender",
+      "A soda-water maker",
       "A stand mixer"
     ],
     "context": "Adria called his foams espumas. He made them with an ordinary whipped-cream siphon charged with nitrous-oxide (N2O) cartridges. The maker, iSi of Vienna, even built him a special 'Gourmet Whip' that could handle hot liquids — so he could serve WARM foams, something cold whipped cream could never do. Source: cuisinetechnology.com/espuma",
@@ -9504,7 +9504,7 @@
   },
   {
     "tier": 2,
-    "question": "Volunteers ate breakfasts of identical calories, each built mostly from a different nutrient, while scientists tracked their fullness and the hormones behind it. One breakfast left them fullest and least hungry. Which nutrient was it built from?",
+    "question": "Volunteers ate breakfasts of equal calories, each built mostly from a different nutrient, while scientists measured the gut hormones that signal fullness. One breakfast raised those hormones highest. Which nutrient was it built from?",
     "answer": "Protein",
     "choices": [
       "Fat",
@@ -9512,20 +9512,20 @@
       "Protein",
       "Fiber"
     ],
-    "context": "Protein is the most satiating macronutrient. In a controlled comparison, a high-protein breakfast produced the biggest rise in the gut's fullness hormones GLP-1 and PYY and suppressed the hunger hormone ghrelin more than a high-fat or high-carb breakfast — which is why the same calories from protein keep you full longer. Source: van der Klaauw et al. 2013, Obesity, 'High Protein Intake Stimulates Postprandial GLP1 and PYY Release' (PMC6548554).",
+    "context": "In a 2013 study, a high-protein breakfast raised the gut's fullness hormones GLP-1 and PYY more than a high-fat or high-carbohydrate breakfast of the same calories did. The hunger hormone ghrelin fell about equally after all three, and the volunteers reported no difference in hunger or fullness, so the hormone signal is real but its effect on appetite is still argued over. Source: van der Klaauw et al. 2013, Obesity, 'High Protein Intake Stimulates Postprandial GLP1 and PYY Release' (PMC6548554).",
     "topic": "food-is-information-tailoring-the-diet-to-your-goal"
   },
   {
     "tier": 2,
-    "question": "A boy gulps 200 calories of soda while a friend eats 200 calories of eggs. The sugar floods the boy's blood fast, and his body pumps out insulin to clear it. Two hours later he pricks a finger to read his blood sugar. Where has it landed?",
+    "question": "A boy gulps 200 calories of soda while a friend eats 200 calories of eggs. The sugar floods his blood, and insulin pours out to clear it. In many people, a finger-prick two hours later shows a surprise. Where has his blood sugar landed?",
     "answer": "Below where it started, dipped past baseline",
     "choices": [
-      "Above where it started, still coming down",
-      "Back where it started, right on baseline",
+      "Still near its peak, barely lower at all",
+      "Climbing higher than its first peak",
       "Below where it started, dipped past baseline",
       "Swinging above and below it, again and again"
     ],
-    "context": "This is 'reactive' (rebound) hypoglycemia: a fast-absorbed sugar hit makes the body overshoot with insulin, so blood sugar dips BELOW its starting point within a couple of hours — and that below-baseline dip is why, two hours on, you're hungry again while your friend who ate the eggs still feels full. Protein and fat instead slow stomach emptying and trip fullness signals, so the same 200 calories keeps you satisfied far longer. Sources: Healthline, 'Rebound/Reactive Hypoglycemia'; Wikipedia, 'Reactive hypoglycemia'.",
+    "context": "This is a rebound, sometimes called reactive hypoglycemia: a fast sugar hit can make the body overshoot with insulin, so blood sugar dips BELOW its starting point within a few hours. In a 2021 study of more than 1,000 people, those whose sugar dipped furthest below baseline after breakfast felt hungrier and ate more afterwards. Protein and fat instead slow stomach emptying and trip fullness signals, so the same 200 calories keeps a person satisfied longer. Sources: Wyatt et al. 2021, Nature Metabolism, 'Postprandial glycaemic dips predict appetite and energy intake in healthy individuals'; Wikipedia, 'Reactive hypoglycemia'.",
     "topic": "food-is-information-tailoring-the-diet-to-your-goal"
   },
   {
@@ -9538,20 +9538,20 @@
       "Protein-poor food simply tastes better, so they eat past being full",
       "Their appetite keeps them eating until they reach a set protein target"
     ],
-    "context": "Simpson and Raubenheimer's 'protein leverage' says appetite defends a protein target (roughly 15% of calories in humans): when food is protein-poor you keep eating total food to reach it, overshooting on calories. They first saw it in locusts and caterpillars fed protein-diluted diets, then proposed the same 'protein-first' appetite in people. It's a well-supported but still-debated hypothesis, not a proven law. Sources: Wikipedia, 'Protein leverage hypothesis'; Raubenheimer & Simpson 2023, Phil. Trans. R. Soc. B.",
+    "context": "Simpson and Raubenheimer's 'protein leverage' says appetite defends a protein target (roughly 15% of calories in humans): when food is protein-poor people keep eating total food to reach it, overshooting on calories. They first saw it in locusts and caterpillars fed protein-diluted diets, then proposed the same 'protein-first' appetite in people. It's a well-supported but still-debated hypothesis, not a proven law. Sources: Wikipedia, 'Protein leverage hypothesis'; Raubenheimer & Simpson 2023, Phil. Trans. R. Soc. B.",
     "topic": "food-is-information-tailoring-the-diet-to-your-goal"
   },
   {
     "tier": 4,
-    "question": "Kevin Hall let people eat all they wanted of two diets, two weeks each, in a study in 2019: ultra-processed meals and unprocessed ones, matched for calories, sugar, fat, salt and fiber. Eating the ultra-processed meals, they still took in about 500 more calories a day. What was Hall's leading reason?",
-    "answer": "They ate it faster, finishing before the gut's fullness signal fired",
+    "question": "Kevin Hall let people eat all they wanted of two diets, two weeks each, in a study in 2019: ultra-processed meals and unprocessed ones, matched for calories, sugar, fat, salt and fiber. On the ultra-processed meals they took in about 500 more calories a day. At meals, what did Hall's team see them do differently?",
+    "answer": "They ate faster, taking in more calories each minute",
     "choices": [
-      "Its low protein left them chasing a protein target all day",
-      "They ate it faster, finishing before the gut's fullness signal fired",
-      "Its intense flavors kept overriding the feeling of fullness",
-      "It slowed their metabolism and left them constantly hungrier"
+      "They chewed each mouthful longer before swallowing",
+      "They ate faster, taking in more calories each minute",
+      "They rated the meals far tastier than the others",
+      "They said they felt hungrier between their meals"
     ],
-    "context": "The ultra-processed meals were softer and quicker to eat — about 17 calories a minute faster — so Hall proposed roughly 340 extra calories went down before the gut's fullness hormone PYY (higher on the unprocessed diet) could signal 'stop.' Tellingly, protein intake was the SAME on both diets, so the extra calories came from carbohydrate and fat, not from chasing protein. Source: Hall et al. 2019, Cell Metabolism (NIH inpatient RCT, PMC7946062).",
+    "context": "On the ultra-processed diet people ate faster, about 17 more calories a minute, though they rated the two diets equally pleasant and familiar and reported no difference in hunger or fullness. Hall's team floated several explanations without settling on one: fast eating may outrun the gut's fullness signals; the diet's slightly lower share of protein could explain up to half of the gap, by the protein-leverage idea; and the processed food was far more energy-dense. Source: Hall et al. 2019, Cell Metabolism (NIH inpatient RCT, PMC7946062).",
     "topic": "food-is-information-tailoring-the-diet-to-your-goal"
   },
   {
@@ -9660,7 +9660,7 @@
   },
   {
     "tier": 1,
-    "question": "A kid sees pineapples beside the mangoes at the grocery store and pictures them hanging high in a tropical tree. In a Hawaiian field they grow at the farmer's feet. How does a pineapple grow?",
+    "question": "A kid sees pineapples beside the mangoes at the grocery store and pictures them hanging high in a tropical tree. A Hawaiian pineapple farmer would set him straight. How does a pineapple grow?",
     "answer": "One fruit atop a low, spiky ground plant",
     "choices": [
       "One fruit atop a low, spiky ground plant",
@@ -9725,13 +9725,13 @@
   },
   {
     "tier": 2,
-    "question": "Fresh juice pressed from white Trebbiano grapes is all a balsamic maker in Modena starts with, and unlike most vinegar makers he never lets it turn into wine. Before its long years in the barrels, what happens to that juice first?",
+    "question": "Fresh juice pressed from white Trebbiano grapes is all a balsamic maker in Modena starts with, and unlike most vinegar makers he does not begin with wine. Before its long years in the barrels, what happens to that juice first?",
     "answer": "It is boiled down into a thick syrup.",
     "choices": [
       "It is boiled down into a thick syrup.",
       "It is frozen into a solid block.",
       "It is dried into a sticky paste.",
-      "It is pressed into a clear juice."
+      "It is sweetened with wild honey."
     ],
     "context": "That cooked, concentrated grape juice is called mosto cotto ('cooked must'). Traditional balsamic is often described as the only condiment made purely from cooked grape must - no wine, no vinegar starter, no coloring, nothing else added. The long barrel aging turns it dark and syrupy on its own. Source: Wikipedia, 'Balsamic vinegar.'",
     "topic": "foods-that-take-years-time-as-the-ingredient"
@@ -9756,8 +9756,8 @@
     "choices": [
       "jamon iberico",
       "jamon serrano",
-      "prosciutto di Parma",
-      "jambon de Bayonne"
+      "jamon de Teruel",
+      "jamon de Trevelez"
     ],
     "context": "Jamon iberico comes from black Iberian pigs and is dry-cured - never cooked - for at least 12 months and sometimes up to 48 (four years); the finest, acorn-fed grade cures around 36 months. The hams are packed in salt for about two weeks, then hung to dry and develop a protective coat of mold on the outside. Source: Wikipedia, 'Jamon iberico.'",
     "topic": "foods-that-take-years-time-as-the-ingredient"
@@ -9777,7 +9777,7 @@
   },
   {
     "tier": 1,
-    "question": "A diner reads 'filet de boeuf en croûte' on a French menu: Beef Wellington, to English speakers. 'En croûte' means 'in a crust,' and that is the whole idea of the dish. How does the beef arrive at the table?",
+    "question": "A diner reads 'filet de boeuf en croûte' on a French menu, the dish English speakers call Beef Wellington. Those two little words, 'en croûte', promise how the beef will come to the table. How does it arrive?",
     "answer": "Sealed inside a shell of baked pastry",
     "choices": [
       "Sealed inside a shell of baked pastry",
@@ -9798,7 +9798,7 @@
       "Brushed the whole fish with honey",
       "Wrapped the whole fish in grape leaves"
     ],
-    "context": "'A la meuniere' means 'in the miller's-wife style' -- and because a miller works with flour, the fish is dusted in flour, pan-fried in butter, then finished with lemon and parsley. The great chef Auguste Escoffier formalized sole meuniere in 1907. Source: Wikipedia, 'Sole meuniere' (https://en.wikipedia.org/wiki/Sole_meuni%C3%A8re).",
+    "context": "'A la meuniere' means 'in the miller's-wife style' -- and because a miller works with flour, the fish is dusted in flour, pan-fried in butter, then finished with lemon and parsley. The method most cooks use today follows the one Auguste Escoffier gave in 1907. Source: Wikipedia, 'Sole meuniere' (https://en.wikipedia.org/wiki/Sole_meuni%C3%A8re).",
     "topic": "french-kitchen-words-on-a-menu"
   },
   {
@@ -9811,12 +9811,12 @@
       "A sweet glaze of melted apricot jam",
       "A scattering of raw sunflower seeds"
     ],
-    "context": "'Au gratin' means topped with a browned crust -- cheese or breadcrumbs -- crisped under a grill or in the oven. The name comes from the French 'gratter,' 'to scrape,' for the crust you scrape off the dish. The classic is gratin dauphinois: thin-sliced potatoes baked in cream. Source: Wikipedia, 'Gratin' (https://en.wikipedia.org/wiki/Gratin).",
+    "context": "'Au gratin' means topped with a browned crust -- cheese or breadcrumbs -- crisped under a grill or in the oven. The name comes from the French 'gratter,' 'to scrape,' for the crust a diner scrapes off the dish. The classic is gratin dauphinois: thin-sliced potatoes baked in cream. Source: Wikipedia, 'Gratin' (https://en.wikipedia.org/wiki/Gratin).",
     "topic": "french-kitchen-words-on-a-menu"
   },
   {
     "tier": 2,
-    "question": "In an old-school French restaurant, a waiter wheels a small stove on a cart up to a table for a dessert the menu marks 'flambé,' French for 'flamed.' Every head in the room turns. What showstopping move does the cook make right there on the cart?",
+    "question": "In an old-school French restaurant, a waiter wheels a small stove on a cart up to a table for a dessert the menu marks 'flambé.' Every head in the room turns. What showstopping move does the cook make right there on the cart?",
     "answer": "Splashes on a spirit and sets it alight",
     "choices": [
       "Splashes on a spirit and sets it alight",
@@ -9837,7 +9837,7 @@
       "They turn the sauce an unappetizing grey",
       "Their bubbles smother the flame instantly"
     ],
-    "context": "To flambe you need a spirit around 40% alcohol (80 proof) -- cognac, rum, or brandy. Wine and beer do not hold enough alcohol to ignite. Very high-proof spirits like Everclear or Bacardi 151 are considered too dangerous by professional cooks. Source: Wikipedia, 'Flambe' (https://en.wikipedia.org/wiki/Flamb%C3%A9).",
+    "context": "A flambe needs a spirit around 40% alcohol (80 proof) -- cognac, rum, or brandy. Wine and beer do not hold enough alcohol to ignite. Very high-proof spirits like Everclear or Bacardi 151 are considered too dangerous by professional cooks. Source: Wikipedia, 'Flambe' (https://en.wikipedia.org/wiki/Flamb%C3%A9).",
     "topic": "french-kitchen-words-on-a-menu"
   },
   {
@@ -9993,7 +9993,7 @@
       "A mackerel",
       "A tuna"
     ],
-    "context": "Fugu is pufferfish, and its poison - tetrodotoxin - is far deadlier than cyanide. It kills by paralyzing the diaphragm, the muscle you breathe with, so the victim cannot draw a breath. Source: National Geographic pufferfish facts; Wikipedia 'Fugu'.",
+    "context": "Fugu is pufferfish, and its poison - tetrodotoxin - is far deadlier than cyanide. It kills by paralyzing the diaphragm, the muscle used for breathing, so the victim cannot draw a breath. Source: National Geographic pufferfish facts; Wikipedia 'Fugu'.",
     "topic": "fugu-the-fish-that-can-kill-the-diner"
   },
   {
@@ -10016,34 +10016,21 @@
     "choices": [
       "The liver, ovaries, and skin",
       "The fins, tail, and scales",
-      "The eyes, gills, and blood",
+      "The cheeks, belly, and jaw",
       "The bones, snout, and lips"
     ],
     "context": "The poison is tetrodotoxin, far deadlier than cyanide. It pools hardest in the liver and also collects in the ovaries, intestines and skin. The muscle is safe to eat only if these parts are removed perfectly - a single nick from the knife spreads the poison into the meat and ruins it. In 1975 the kabuki actor Bando Mitsugoro VIII, a Living National Treasure, ate four servings of fugu liver in a Kyoto restaurant and died about eight hours later.",
     "topic": "fugu-the-fish-that-can-kill-the-diner"
   },
   {
-    "tier": 3,
-    "question": "A cook in Japan apprentices for two or three years in a fugu kitchen, then faces a brutal exam that most applicants fail. If he passes, he earns the one thing Japanese law has demanded since 1958 before anyone may serve the fish. What is it?",
-    "answer": "A government license",
-    "choices": [
-      "A government license",
-      "A master's certificate",
-      "A restaurant permit",
-      "A union membership"
-    ],
-    "context": "Japan has required a government fugu license since 1958; the exam has written, fish-identification, and knife-skill parts, and only about a third of applicants pass. Source: Wikipedia 'Fugu'.",
-    "topic": "fugu-the-fish-that-can-kill-the-diner"
-  },
-  {
     "tier": 4,
-    "question": "Doctors treating diners poisoned by fugu have no antidote to give. They can only put victims on a machine that breathes for them until the poison wears off, usually after some hours. The toxin paralyzes every muscle, so they cannot move or breathe on their own, yet one thing keeps working the whole time. What is it?",
-    "answer": "Their awareness",
+    "question": "Doctors treating diners poisoned by fugu have no antidote to give. They can only put victims on a machine that breathes for them until the poison wears off, usually after some hours. The toxin paralyzes the muscles, so victims cannot move or breathe. In many cases, what is a victim's mind doing all the while?",
+    "answer": "Awake and aware of what is happening",
     "choices": [
-      "Their awareness",
-      "Their hearing",
-      "Their eyesight",
-      "Their memory"
+      "Awake and aware of what is happening",
+      "Blank, forming no memories at all",
+      "Asleep, as if under an anesthetic",
+      "Lost in wild, vivid hallucinations"
     ],
     "context": "Doctors report fugu victims stay 'conscious and in some cases completely lucid' - fully aware, but unable to move or call for help - until the paralysis wears off. There is still no approved antidote. Source: Wikipedia 'Tetrodotoxin'.",
     "topic": "fugu-the-fish-that-can-kill-the-diner"
@@ -10097,7 +10084,7 @@
       "His nose — smelling which fish have gone off",
       "His eye — picking the safest fish at the market"
     ],
-    "context": "Heat can't save you here: the poison survives cooking, so you cannot boil or fry it away. Safety depends entirely on trimming out the poisonous parts, which is why Japan has licensed fugu chefs since 1958 — a written exam plus a hands-on test, with roughly 35% of applicants passing — and why deaths are now rare. The mastery is in the cutting, not the cooking. Sources: Wikipedia 'Fugu' (https://en.wikipedia.org/wiki/Fugu); Kantenna, 'Japan's Fugu Obsession' (https://kantenna.com/topic/japan-fugu-pufferfish-deadly-delicacy-6000-year-history).",
+    "context": "Heat cannot help here: the poison survives cooking, so it cannot be boiled or fried away. Safety depends entirely on trimming out the poisonous parts, which is why Japan has licensed fugu chefs since 1958 — a written exam plus a hands-on test, with roughly 35% of applicants passing — and why deaths are now rare. The mastery is in the cutting, not the cooking. Sources: Wikipedia 'Fugu' (https://en.wikipedia.org/wiki/Fugu); Kantenna, 'Japan's Fugu Obsession' (https://kantenna.com/topic/japan-fugu-pufferfish-deadly-delicacy-6000-year-history).",
     "topic": "fugu-the-fish-that-trains-its-chef-for-years"
   },
   {
@@ -10115,7 +10102,7 @@
   },
   {
     "tier": 1,
-    "question": "Cooks in ancient Rome kept one savory brown sauce, garum, on hand for almost every dish: stews, roast pig, even sweet honey desserts. Its makers packed one main ingredient into open clay vats, set out in the hot Mediterranean sun to ferment for months. What was that main ingredient?",
+    "question": "Cooks in ancient Rome kept one savory brown sauce, garum, on hand for almost every dish, from stews to sweet honey desserts. Its makers packed one main ingredient into big open vats in the hot Mediterranean sun to ferment for months. What was that ingredient?",
     "answer": "Small fish",
     "choices": [
       "Small fish",
@@ -10123,7 +10110,7 @@
       "Black olives",
       "Cow's milk"
     ],
-    "context": "Garum was the Romans' all-purpose savory condiment — a fermented fish sauce they splashed on nearly everything, sweet and savory alike, the way we reach for ketchup or soy sauce. It turns up all over the Roman cookbook 'Apicius,' even blended with wine ('oenogarum') for a pear-and-honey souffle. Source: https://en.wikipedia.org/wiki/Garum",
+    "context": "Garum was the Romans' all-purpose savory condiment — a fermented fish sauce they splashed on nearly everything, sweet and savory alike, the way cooks today reach for ketchup or soy sauce. It turns up all over the Roman cookbook 'Apicius,' even blended with wine ('oenogarum') for a pear-and-honey souffle. Source: https://en.wikipedia.org/wiki/Garum",
     "topic": "garum-romes-fermented-fish-sauce"
   },
   {
@@ -10140,19 +10127,6 @@
     "topic": "garum-romes-fermented-fish-sauce"
   },
   {
-    "tier": 2,
-    "question": "Workers at a garum vat drew the prized clear liquid off the top, and that was the true garum. A thick, cheaper fish paste always settled at the bottom, and poorer families scooped it onto their porridge and everyday meals. What was that bottom-of-the-vat paste called?",
-    "answer": "Allec",
-    "choices": [
-      "Allec",
-      "Posca",
-      "Moretum",
-      "Defrutum"
-    ],
-    "context": "The strained clear liquid ('garum,' also called 'liquamen') was the prized product; the leftover paste, 'allec' (or allex), was the budget version poorer Romans used to flavor porridge and everyday meals. Source: https://en.wikipedia.org/wiki/Garum",
-    "topic": "garum-romes-fermented-fish-sauce"
-  },
-  {
     "tier": 3,
     "question": "Romans splashed garum on almost everything, from stews and eggs to sweet dishes, for the same reason much of Asia reaches for one savory bottle today. Fermenting the fish in garum frees the same savory taste that makes aged parmesan rich. Which bottle was garum Rome's version of?",
     "answer": "Soy sauce",
@@ -10162,12 +10136,12 @@
       "Chili oil",
       "Oyster sauce"
     ],
-    "context": "The compound is glutamate (glutamic acid), the amino acid behind the deep taste we now call 'umami.' Fermentation frees it in garum just as aging frees it in parmesan and brewing frees it in soy sauce — garum was the ancient world's umami bomb. Source: https://www.smithsonianmag.com/arts-culture/recoving-the-recipe-for-garum-180978846/",
+    "context": "The compound is glutamate (glutamic acid), the amino acid behind the deep taste now called 'umami.' Fermentation frees it in garum just as aging frees it in parmesan and brewing frees it in soy sauce — garum was the ancient world's umami bomb. Source: https://www.smithsonianmag.com/arts-culture/recoving-the-recipe-for-garum-180978846/",
     "topic": "garum-romes-fermented-fish-sauce"
   },
   {
     "tier": 3,
-    "question": "Aulus Umbricius Scaurus, a freedman of Pompeii, was so proud of his garum that he tiled his own floor with mosaics of garum jars bragging about the product. One boasts that his finest 'flower of garum' was made from a single kind of oily fish. Which fish does it name?",
+    "question": "Aulus Umbricius Scaurus, a garum maker of Pompeii, was so proud of his sauce that he tiled his own floor with mosaics of garum jars bragging about the product. One boasts that his finest 'flower of garum' was made from a single kind of oily fish. Which fish does it name?",
     "answer": "Mackerel",
     "choices": [
       "Mackerel",
@@ -10188,7 +10162,7 @@
       "Mostarda",
       "Giardiniera"
     ],
-    "context": "The recipe survived in the Amalfi region through the Middle Ages, when monks noticed briny liquid pooling under their salted anchovies. Southeast Asia's fish sauces (Vietnamese nuoc mam, Thai nam pla) are cousins by coincidence — they arose independently, not from Rome — and a watered-down echo lives on in Worcestershire sauce. Source: https://en.wikipedia.org/wiki/Colatura_di_alici",
+    "context": "The sauce is said to trace back to medieval monks near Amalfi, who noticed briny liquid seeping from their barrels of salted anchovies. Southeast Asia's fish sauces (Vietnamese nuoc mam, Thai nam pla) are cousins by coincidence — they arose independently, not from Rome — and a watered-down echo lives on in Worcestershire sauce. Source: https://en.wikipedia.org/wiki/Colatura_di_alici",
     "topic": "garum-romes-fermented-fish-sauce"
   },
   {
@@ -10201,7 +10175,7 @@
       "Greece",
       "Gaul"
     ],
-    "context": "Garum sociorum came from Cartagena and Gades (modern Cartagena and Cadiz) in Roman Spain; Pliny the Elder priced it near 1,000 sesterces for about 6.75 quarts. Fittingly, modern researchers in Cadiz have reverse-engineered ancient garum and now sell it as 'Flor de Garum.' Source: https://penelope.uchicago.edu/encyclopaedia_romana/wine/garum.html",
+    "context": "Garum sociorum came from Carthago Nova and Gades (modern Cartagena and Cadiz) in Roman Spain; Pliny the Elder priced it near 1,000 sesterces for about 6.75 quarts. Fittingly, modern researchers in Cadiz have reverse-engineered ancient garum and now sell it as 'Flor de Garum.' Source: https://penelope.uchicago.edu/encyclopaedia_romana/wine/garum.html",
     "topic": "garum-romes-fermented-fish-sauce"
   },
   {
@@ -10214,7 +10188,7 @@
       "A leaf",
       "A flower"
     ],
-    "context": "It's a rhizome — a stem that grows underground. Unlike a true root, a rhizome is dotted with buds; from those buds it pushes green shoots up toward the light and sends fresh roots down into the soil. That up-and-down trick is exactly why gardeners call it a stem — and why you can plant a leftover supermarket knob and grow a whole new ginger plant. Source: Wikipedia, 'Ginger' / 'Rhizome'.",
+    "context": "It's a rhizome — a stem that grows underground. Unlike a true root, a rhizome is dotted with buds; from those buds it pushes green shoots up toward the light and sends fresh roots down into the soil. That up-and-down trick is exactly why gardeners call it a stem — and why a leftover supermarket knob can be planted to grow a whole new ginger plant. Source: Wikipedia, 'Ginger' / 'Rhizome'.",
     "topic": "ginger-and-turmeric-the-underground-rhizomes"
   },
   {
@@ -10249,9 +10223,9 @@
     "answer": "Indian saffron",
     "choices": [
       "Indian saffron",
-      "yellow pepper",
-      "false cinnamon",
-      "mock nutmeg"
+      "Persian saffron",
+      "Spanish saffron",
+      "Greek saffron"
     ],
     "context": "Turmeric's cheap gold comes from curcumin. Real saffron gets its color and aroma from the hand-picked dried stigmas of the saffron crocus flower — which is why, then and now, saffron is one of the costliest spices on Earth by weight, and why the turmeric swap caught on. Source: Wikipedia, 'Turmeric'.",
     "topic": "ginger-and-turmeric-the-underground-rhizomes"
@@ -10266,7 +10240,7 @@
       "turn it sour and bitter",
       "give it a lemony taste"
     ],
-    "context": "Heat converts some gingerol into shogaol, which is actually MORE pungent than gingerol — so cooked ginger can hit harder, not softer. Drying does the opposite: it turns gingerol into zingerone, a milder, spicy-SWEET compound, which is why powdered baking ginger tastes warm and mellow. Source: Wikipedia, 'Ginger'.",
+    "context": "Heat converts some gingerol into shogaol, which is actually MORE pungent than gingerol — so cooked ginger can hit harder, not softer. Drying changes it too: some gingerol becomes zingerone, a milder, spicy-sweet compound, and some becomes the hotter shogaol. Sources: Wikipedia, 'Ginger'; Grokipedia, 'Ginger'.",
     "topic": "ginger-and-turmeric-the-underground-rhizomes"
   },
   {
@@ -10418,7 +10392,7 @@
     "answer": "no blood test or marker can detect it",
     "choices": [
       "no blood test or marker can detect it",
-      "its symptoms overlap with ordinary indigestion",
+      "its gut damage heals too fast to see",
       "its symptoms take years to appear",
       "no two patients report the same symptom"
     ],
@@ -10435,7 +10409,7 @@
       "bran, the grain's outer coat",
       "wheat germ, the grain's oily core"
     ],
-    "context": "In the 2018 Oslo trial (Skodje et al., Gastroenterology), the fructan bars scored worst for gut symptoms while the gluten bars scored no worse than placebo — so for these self-reported cases, gluten wasn't the trigger. Fructans are a FODMAP: a short-chain carb (also in onions and garlic) the small intestine can't absorb, so bacteria in the colon ferment it and produce the gas that bloats you. A 2013 Monash University study (Biesiekierski, Gibson et al.) had already hinted at this — stripping FODMAPs out made the 'gluten sensitivity' symptoms largely vanish. Sources: gastrojournal.org/article/S0016-5085(17)36302-3/fulltext; en.wikipedia.org/wiki/FODMAP",
+    "context": "In the 2018 Oslo trial (Skodje et al., Gastroenterology), the fructan bars scored worst for gut symptoms while the gluten bars scored no worse than placebo — so for these self-reported cases, gluten wasn't the trigger. Fructans are a FODMAP: a short-chain carb (also in onions and garlic) the small intestine can't absorb, so bacteria in the colon ferment it and produce the gas that bloats the gut. A 2013 Monash University study (Biesiekierski, Gibson et al.) had already hinted at this — stripping FODMAPs out made the 'gluten sensitivity' symptoms largely vanish. Sources: gastrojournal.org/article/S0016-5085(17)36302-3/fulltext; en.wikipedia.org/wiki/FODMAP",
     "topic": "gluten-wheat-and-the-fructan-twist"
   },
   {
@@ -10799,7 +10773,7 @@
       "shrubs",
       "vines"
     ],
-    "context": "All four are members of the grass family (Poaceae). The 'grain' we harvest is simply the grass's seed, packed with starch. Source: en.wikipedia.org/wiki/Caryopsis",
+    "context": "All four are members of the grass family (Poaceae). The 'grain' people harvest is simply the grass's seed, packed with starch. Source: en.wikipedia.org/wiki/Caryopsis",
     "topic": "grains-the-seed-that-built-civilization"
   },
   {
@@ -10812,20 +10786,20 @@
       "the mice that raid the field",
       "the mold that grows on damp grain"
     ],
-    "context": "A seed's starchy store is a packed lunch for its own embryo — it fuels the sprout until the new plant grows leaves and can feed itself by sunlight. We just happen to eat the lunch. Source: en.wikipedia.org/wiki/Caryopsis",
+    "context": "A seed's starchy store is a packed lunch for its own embryo — it fuels the sprout until the new plant grows leaves and can feed itself by sunlight. People just happen to eat the lunch. Source: en.wikipedia.org/wiki/Caryopsis",
     "topic": "grains-the-seed-that-built-civilization"
   },
   {
-    "tier": 2,
-    "question": "A combine rolls through a field at harvest, filling its hopper with the grain people grow more of, by weight, than any other. Each year the world harvests well over a billion tonnes of it, more than wheat and more than rice, to feed people and livestock by the billions. Which grain tops them all?",
-    "answer": "corn",
+    "tier": 3,
+    "question": "A combine rolls through a cornfield at harvest. Corn is the world's biggest grain crop, well over a billion tonnes a year, yet if every farmer vanished, the plant itself would die out within a few seasons. What makes it so helpless?",
+    "answer": "Its cobs hold their kernels instead of scattering them",
     "choices": [
-      "corn",
-      "wheat",
-      "rice",
-      "barley"
+      "Its cobs hold their kernels instead of scattering them",
+      "Its seeds sprout only in freshly plowed soil",
+      "Its flowers need a farmer's hand to pollinate",
+      "Its tall stalks cannot stand without stakes"
     ],
-    "context": "Maize (corn) leads all grains at roughly 1.1 billion tonnes a year, ahead of both wheat and rice. Source: en.wikipedia.org/wiki/Maize",
+    "context": "Thousands of years of breeding locked corn's kernels onto the cob inside a tight husk, while wild grasses like its ancestor teosinte shatter and scatter their seeds. A fallen cob sprouts in a crowded clump that starves itself, so corn needs people to strip the kernels and plant them apart. It is also the world's biggest grain crop, at roughly 1.1 billion tonnes a year. Sources: Wikipedia, 'Maize'; NPR, excerpt from Tom Standage, 'An Edible History of Humanity' (npr.org/104878820).",
     "topic": "grains-the-seed-that-built-civilization"
   },
   {
@@ -11007,7 +10981,7 @@
       "Onion, tomato, and garlic",
       "Celery, leek, and potato"
     ],
-    "context": "The holy trinity is Louisiana's answer to the French mirepoix, which uses carrot where the trinity uses green bell pepper. The Acadians — French colonists exiled from Nova Scotia around 1755 — reached for the pepper because it grew better and cheaper in the Louisiana heat, and German and Italian immigrants added the celery in the late 1700s. Chef Paul Prudhomme popularized the name 'holy trinity' (first documented 1981) — and Louisiana cooks joke that adding garlic is adding 'the Pope.' Source: Wikipedia, 'Holy trinity (cuisine).'",
+    "context": "The holy trinity is Louisiana's answer to the French mirepoix, which uses carrot where the trinity uses green bell pepper. The Acadians — French colonists exiled from Nova Scotia around 1755 — reached for the pepper because it grew better and cheaper in the Louisiana heat, and German and Italian immigrants are thought to have brought the celery in the late 1700s. Chef Paul Prudhomme popularized the name 'holy trinity' (first documented 1981) — and Louisiana cooks joke that adding garlic is adding 'the Pope.' Source: Wikipedia, 'Holy trinity (cuisine).'",
     "topic": "gumbo-and-the-roux-three-cultures-in-one-pot"
   },
   {
@@ -11025,7 +10999,7 @@
   },
   {
     "tier": 2,
-    "question": "Enslaved West Africans, shipped in chains to Louisiana's plantations in the 1700s, carried seeds and words with them. One green, ridged pod they had grown for centuries went straight into their stew pots, and its name, ki ngombo, softened in Louisiana cooks' mouths into 'gumbo'. Which vegetable was it?",
+    "question": "Enslaved Africans, shipped in chains to Louisiana's plantations in the 1700s, brought foods and words from home. One green, ridged pod went straight into their stew pots, and its name, ki ngombo, softened in Louisiana cooks' mouths into 'gumbo'. Which vegetable was it?",
     "answer": "Okra",
     "choices": [
       "Okra",
@@ -11116,7 +11090,7 @@
   },
   {
     "tier": 5,
-    "question": "West Africans gave gumbo its name and the French gave it the roux. Its third thickener, filé, came from a people native to the Gulf South, who had ground a local tree's leaves into seasoning before any Frenchman came. Which people gave it?",
+    "question": "Enslaved Africans gave gumbo its name and the French gave it the roux. Its third thickener, filé, came from a people native to the Gulf South, who had ground a local tree's leaves into seasoning before any Frenchman came. Which people gave it?",
     "answer": "The Choctaw",
     "choices": [
       "The Choctaw",
@@ -11124,7 +11098,7 @@
       "The Seminole",
       "The Powhatan"
     ],
-    "context": "Filé is a gift from the Choctaw of the Gulf South, the first to grind sassafras leaves into a seasoning — their word for it was 'kombo.' So a single bowl of gumbo blends three eighteenth-century Louisiana cultures: West African okra, French roux, and Choctaw filé — three different ways to thicken one pot. Source: Grokipedia, 'Gumbo'; Wikipedia, 'Filé powder.'",
+    "context": "Filé is a gift from the Choctaw of the Gulf South, the first to grind sassafras leaves into a seasoning — their word for it was 'kombo.' So a single bowl of gumbo blends three eighteenth-century Louisiana cultures: African okra, French roux, and Choctaw filé — three different ways to thicken one pot. Source: Grokipedia, 'Gumbo'; Wikipedia, 'Filé powder.'",
     "topic": "gumbo-and-the-roux-three-cultures-in-one-pot"
   },
   {
@@ -11241,7 +11215,7 @@
       "Hot air currents rising upward",
       "Tiny sparks landing on it"
     ],
-    "context": "This is radiation — infrared waves stream across open space and heat the surface with no contact and no fluid in between (radiation needs no matter to travel through). It's why a broiler browns a casserole's top without you ever flipping it. Source: 123foodscience.com, 'Heat Transfer Methods'.",
+    "context": "This is radiation — infrared waves stream across open space and heat the surface with no contact and no fluid in between (radiation needs no matter to travel through). It's why a broiler browns a casserole's top without anyone ever flipping it. Source: 123foodscience.com, 'Heat Transfer Methods'.",
     "topic": "heat-transfer-how-the-heat-actually-reaches-the-food"
   },
   {
@@ -11280,7 +11254,7 @@
       "Water covers more skin at once",
       "Air blows away before it can burn"
     ],
-    "context": "Same temperature, wildly different heat delivered: a gram of water holds about four times the heat energy of a gram of air (specific heat ~4.18 vs ~1.0 J/g·°C). The water dumps far more energy into your skin — the same reason a wet, water-carrying method cooks so much faster than dry oven air at the same temperature. Source: USGS, 'Specific Heat Capacity and Water'.",
+    "context": "Same temperature, wildly different heat delivered: a gram of water holds about four times the heat energy of a gram of air (specific heat ~4.18 vs ~1.0 J/g·°C). The water dumps far more energy into the skin — the same reason a wet, water-carrying method cooks so much faster than dry oven air at the same temperature. Source: USGS, 'Specific Heat Capacity and Water'.",
     "topic": "heat-transfer-how-the-heat-actually-reaches-the-food"
   },
   {
