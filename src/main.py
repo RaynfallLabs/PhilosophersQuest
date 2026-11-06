@@ -2936,6 +2936,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                         continue
                     if m.has_effect('charmed'):
                         continue
+                    # A named foe never takes the charm (Monster.resists_control):
+                    # the floor's command was spent on him, with "compels the
+                    # ... to your service" and nothing done.
+                    if m._is_named_foe():
+                        continue
                     _target = m
                     break
                 if _target is None:
@@ -2950,31 +2955,33 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         except ImportError:
             pass
 
-        # Chain-equip passive: pacify_demon_chance (Ring of Solomon).
-        # Roll on each demon-tagged monster newly seen this floor; on success
-        # they get a 'charmed' or 'sleeping' status as a stand-in for pacify.
+        # Chain-equip passive: pacify_demon_chance (Solomon's Authority).
+        # One roll for each demon the first time the hero sees it; on success
+        # it sleeps as a stand-in for pacify. The roll is kept on the demon
+        # (_solomon_rolled, saved with it): it used to live in a set emptied
+        # on every floor entry and never saved, so a stair trip or a reload
+        # rolled every demon again. Named foes (bosses, mini-bosses, seal
+        # demons) are never pacified: they were put to sleep for 15 turns.
         try:
             from chain_passives import get_pacify_demon_chance
             _pac_chance = get_pacify_demon_chance(self.player)
             if _pac_chance > 0:
                 import random as _rng
-                seen = getattr(self, '_chain_pacify_seen', set())
                 for m in self.monsters:
-                    if not m.alive:
-                        continue
-                    if id(m) in seen:
+                    if not m.alive or getattr(m, '_solomon_rolled', False):
                         continue
                     if (m.x, m.y) not in self.visible:
                         continue
                     if 'demon' not in set(getattr(m, 'tags', []) or []):
                         continue
-                    seen.add(id(m))
+                    if m._is_named_foe():
+                        continue
+                    m._solomon_rolled = True
                     if _rng.random() < _pac_chance:
                         m.status_effects['sleeping'] = max(
                             m.status_effects.get('sleeping', 0), 15)
                         self.add_message(
                             f"The Ring of Solomon pacifies {the_name(m, lower=True)}!", 'success')
-                self._chain_pacify_seen = seen
         except ImportError:
             pass
 
