@@ -871,14 +871,18 @@ class QuizEngine:
             prev = self.tier
             self._escalate()
             if self.tier == prev:
-                # Top tier, no higher to climb. If THIS tier is also mastered we
-                # auto-passed the whole reachable ladder -> success even if the
-                # threshold count wasn't reached. (The Sphinx and Brokkr's
-                # Anvil mysteries are escalator_threshold quizzes from T3:
-                # auto-passes on mastered tiers add nothing to the count, so
-                # a fully-mastered player used to AUTO-FAIL them.)
+                # Top tier, no higher to climb. If THIS tier is also mastered
+                # and no round was lost, we passed the whole reachable ladder
+                # -> success even if the threshold count wasn't reached. (The
+                # Sphinx and Brokkr's Anvil mysteries are escalator_threshold
+                # quizzes from T3: auto-passes on mastered tiers add nothing
+                # to the count, so a fully-mastered player used to AUTO-FAIL
+                # them.) A lost round is not passed: at senet (play_all, win
+                # two of three) two lost rounds and a mastered tier 5 won
+                # the Book of Thoth.
+                lost = self.asked_count - self.correct_count - getattr(self, '_erased_misses', 0)
                 self._end(success=(self.correct_count >= self.required)
-                          or self.is_mastered(self.subject, self.tier))
+                          or (self.is_mastered(self.subject, self.tier) and lost <= 0))
                 return
             self._next_question()
             return
