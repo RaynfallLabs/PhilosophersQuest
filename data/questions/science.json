@@ -2626,19 +2626,6 @@
     "topic": "boltzmann-the-atom-and-the-gravestone"
   },
   {
-    "tier": 5,
-    "question": "A student reads that the fight over atoms broke Ludwig Boltzmann, who died by suicide in September 1906 at Duino, near Trieste. Historians say no one can settle the cause, and that telling omits something independently documented in his own record. What does it omit?",
-    "answer": "a long history of severe depression, with earlier attempts",
-    "choices": [
-      "a long history of severe depression, with earlier attempts",
-      "a stroke suffered at Duino only weeks earlier",
-      "a specific medication side effect noted by his physician",
-      "a heart condition his family had long concealed"
-    ],
-    "context": "Boltzmann had earlier suicide attempts and rapid mood swings consistent with what would today be called bipolar disorder. Historians agree the true cause cannot be settled; the 'despair over rejection' narrative is a repeated story, not a documented finding. Source: newworldencyclopedia.org/entry/Ludwig_Boltzmann.",
-    "topic": "boltzmann-the-atom-and-the-gravestone"
-  },
-  {
     "tier": 1,
     "question": "Margaret Borlaug drove an hour out to the wheat fields near Toluca in October 1970 to find her husband. A newspaper in Oslo had called that morning: he had won the Nobel Peace Prize. What was Norman Borlaug's first reaction?",
     "answer": "He thought it was a hoax",
@@ -3129,7 +3116,7 @@
       "Walther Nernst",
       "Paul Ehrenfest"
     ],
-    "context": "Planck borrowed Boltzmann's entropy expression in 1900 to derive the blackbody law -- the law of how a hot object glows -- and stumbled into quantum theory without meaning to. So the equation Boltzmann was mocked for, a tally of microscopic possibilities that is meaningless unless the microscopic things are there, became the seed of the next century of physics. Boltzmann insisted for an entire career that atoms are real things, and did not live to see the argument settled: he took his own life at Duino near Trieste on 5 September 1906, one to two years before Jean Perrin's measurements arrived, his doctor having recently diagnosed neurasthenia and told him to stop intellectual work. Wikipedia states the vindication plainly: 'Only a couple of years after Boltzmann's death, Perrin's studies of colloidal suspensions (1908-1909) confirmed the values of the Avogadro constant and the Boltzmann constant, convincing the world that the tiny particles really exist.' Source: Grokipedia, 'Ludwig Boltzmann'; Wikipedia, 'Ludwig Boltzmann'.",
+    "context": "Planck borrowed Boltzmann's entropy expression in 1900 to derive the blackbody law -- the law of how a hot object glows -- and stumbled into quantum theory without meaning to. So the equation Boltzmann was mocked for, a tally of microscopic possibilities that is meaningless unless the microscopic things are there, became the seed of the next century of physics. Boltzmann insisted for an entire career that atoms are real things, and did not live to see the argument settled: he died in 1906, one to two years before Jean Perrin's measurements arrived. Wikipedia states the vindication plainly: 'Only a couple of years after Boltzmann's death, Perrin's studies of colloidal suspensions (1908-1909) confirmed the values of the Avogadro constant and the Boltzmann constant, convincing the world that the tiny particles really exist.' Source: Grokipedia, 'Ludwig Boltzmann'; Wikipedia, 'Ludwig Boltzmann'.",
     "topic": "brownian-motion-how-pollen-made-atoms-real"
   },
   {
@@ -3694,9 +3681,9 @@
   {
     "tier": 3,
     "question": "Carrie Buck was a normal student with an ordinary school record, living in a foster home. At 17 she was committed to the Virginia Colony for Epileptics and Feeble Minded, and the cause was a specific event the state used against her. What was the event?",
-    "answer": "a pregnancy after she said she was raped",
+    "answer": "a pregnancy her foster family wanted hidden",
     "choices": [
-      "a pregnancy after she said she was raped",
+      "a pregnancy her foster family wanted hidden",
       "a fight at school that ended in expulsion",
       "a diagnosis of epilepsy from a family doctor",
       "a theft charge brought by a neighbor"
@@ -11059,7 +11046,7 @@
       "A contaminated needle",
       "A door handle"
     ],
-    "context": "Janet Parker's darkroom was connected to Henry Bedson's smallpox lab on the floor below by an air duct. The Shooter Inquiry concluded that was the most likely route, though the exact transmission mechanism is still debated. Parker died on 11 September 1978 - the last recorded smallpox death. Bedson took his own life days later. A pathogen only has to get out once, and the people who bear the cost were never asked. Source: en.wikipedia.org 1978 smallpox outbreak.",
+    "context": "Janet Parker's darkroom was connected to Henry Bedson's smallpox lab on the floor below by an air duct. The Shooter Inquiry concluded that was the most likely route, though the exact transmission mechanism is still debated. Parker died on 11 September 1978 - the last recorded smallpox death. A pathogen only has to get out once, and the people who bear the cost were never asked. Source: en.wikipedia.org 1978 smallpox outbreak.",
     "topic": "gain-of-function-making-a-pathogen-worse-on-purpose"
   },
   {
@@ -19631,7 +19618,7 @@
   },
   {
     "tier": 5,
-    "question": "Julius Robert Mayer lost two children in rapid succession in 1848, while Joule's supporters in England openly denied that he had got there first. On 18 May 1850, unable to bear it, he jumped from a second-storey window in Heilbronn. The fall did not kill him, but it left him with a lifelong injury. Where did the years that followed take him?",
+    "question": "Julius Robert Mayer, the ship's doctor who had read the conservation of energy in his sailors' bright red blood, lost two children in rapid succession in 1848, while Joule's supporters in England openly denied that he had got there first. The double blow broke him. Where did the years that followed take him?",
     "answer": "Into a series of asylum confinements",
     "choices": [
       "Into a series of asylum confinements",
@@ -19639,7 +19626,7 @@
       "Into a monastery in the Black Forest",
       "Into private practice as an army surgeon"
     ],
-    "context": "Mayer spent the early 1850s in and out of the asylums at Goppingen, Kennenburg and Winnenthal; his own circle described him as a broken man when he emerged. He did not die in the fall or the asylum -- he lived on to 1878. Source: https://en.wikipedia.org/wiki/Julius_von_Mayer",
+    "context": "Mayer spent the early 1850s in and out of the asylums at Goppingen, Kennenburg and Winnenthal; his own circle described him as a broken man when he emerged. He lived on to 1878. Source: https://en.wikipedia.org/wiki/Julius_von_Mayer",
     "topic": "mayer-and-the-bright-red-blood-of-the-tropics"
   },
   {
@@ -29194,7 +29181,7 @@
       "through a shared drinking cup",
       "through a discarded slide"
     ],
-    "context": "The Birmingham lab, run by Professor Henry Bedson, connected to Parker's office suite through an unsealed ventilation duct. Parker died on 11 September 1978; Bedson took his own life on 6 September, before her. A pathogen got out of a laboratory, and it killed someone - a warning worth keeping alongside the eradication triumph. Source: en.wikipedia.org/wiki/1978_smallpox_outbreak_in_the_United_Kingdom ; en.wikipedia.org/wiki/Henry_Bedson",
+    "context": "The Birmingham lab, run by Professor Henry Bedson, connected to Parker's office suite through an unsealed ventilation duct. Parker died on 11 September 1978. A pathogen got out of a laboratory, and it killed someone - a warning worth keeping alongside the eradication triumph. Source: en.wikipedia.org/wiki/1978_smallpox_outbreak_in_the_United_Kingdom ; en.wikipedia.org/wiki/Henry_Bedson",
     "topic": "smallpox-eradication-honestly-told"
   },
   {
@@ -36669,7 +36656,7 @@
       "They titrated the mixture to neutrality before heating",
       "They distilled the mixture until the ratio came right"
     ],
-    "context": "Weighing is not good enough at 99.9%: a trace of moisture or a slightly impure batch throws the count off, and every stray monomer is a dead end. Crystallising adipic acid with hexamethylenediamine gives 'nylon salt', one compound holding exactly one of each, so the ratio is enforced by chemistry rather than by the balance. Nylon 6,6 was first made on 28 February 1935 and melts at 255-265 degrees C, high enough to survive a hot wash, which the earlier polyester was not. DuPont had recruited Carothers from Harvard in 1928, through Charles M. A. Stine, to do pure research with no products required, in a lab the chemists nicknamed 'Purity Hall'; Carothers hired Paul Flory in 1934 to work out the statistics of chain lengths, and Flory won the 1974 Nobel Prize. Carothers was elected to the National Academy of Sciences in 1936 and died by suicide on 29 April 1937, aged 41, after years of depression; the two key nylon patents were granted posthumously in 1938. (Sources: Grokipedia 'Wallace Carothers', sections Development of Polyesters, Exploration of Polyamides, Key Patents; Grokipedia 'Nylon', section Key Monomers and Polymerization Reactions.)",
+    "context": "Weighing is not good enough at 99.9%: a trace of moisture or a slightly impure batch throws the count off, and every stray monomer is a dead end. Crystallising adipic acid with hexamethylenediamine gives 'nylon salt', one compound holding exactly one of each, so the ratio is enforced by chemistry rather than by the balance. Nylon 6,6 was first made on 28 February 1935 and melts at 255-265 degrees C, high enough to survive a hot wash, which the earlier polyester was not. DuPont had recruited Carothers from Harvard in 1928, through Charles M. A. Stine, to do pure research with no products required, in a lab the chemists nicknamed 'Purity Hall'; Carothers hired Paul Flory in 1934 to work out the statistics of chain lengths, and Flory won the 1974 Nobel Prize. Carothers was elected to the National Academy of Sciences in 1936 and died in 1937, aged 41; the two key nylon patents were granted after his death, in 1938. (Sources: Grokipedia 'Wallace Carothers', sections Development of Polyesters, Exploration of Polyamides, Key Patents; Grokipedia 'Nylon', section Key Monomers and Polymerization Reactions.)",
     "topic": "the-molecules-that-wouldnt-stop-staudingers-giant-chains"
   },
   {
@@ -39074,7 +39061,7 @@
       "a shellac coating brushed on before display",
       "silver nitrate deposits from fixative chemicals"
     ],
-    "context": "The microscope showed the pigment sitting where no living pigment sits. Noble's Nature paper was the ink. Kammerer blamed a lab assistant, then died by suicide six weeks later. The first move in every case that follows is the same one Noble made: someone looks at the physical thing. Source: https://en.wikipedia.org/wiki/Paul_Kammerer",
+    "context": "The microscope showed the pigment sitting where no living pigment sits. Noble's Nature paper was the ink. Kammerer blamed a lab assistant. The first move in every case that follows is the same one Noble made: someone looks at the physical thing. Source: https://en.wikipedia.org/wiki/Paul_Kammerer",
     "topic": "the-tell-what-actually-gives-a-faked-result-away"
   },
   {
