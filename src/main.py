@@ -1840,9 +1840,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # granting the passive is equipped (Tyet of Isis, etc.).
         self.player._death_save_used_this_floor = False
         # Sharur (engine wave 3): floor_start_reveal_chance — if equipped,
-        # roll to reveal a random tile near a stair-down.
+        # roll to reveal a random tile near a stair-down. The start of a
+        # floor is its first arrival: each stair bounce used to map more.
         import random as _ew3_rng
         for _slot in (self.player.weapon, getattr(self.player, 'ranged_weapon', None)):
+            if not _new_depth:
+                break
             _ev_ch = float(getattr(_slot, 'floor_start_reveal_chance', 0.0) or 0.0) if _slot else 0.0
             if _ev_ch > 0 and _ew3_rng.random() < _ev_ch:
                 # Find a stair-down tile; reveal a random tile in its 5-tile radius.
@@ -1957,8 +1960,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self.player._anti_being_charged = False
         # No-move tracker for unseen_when_still (Helm of Hades T5).
         self.player._chain_no_move_counter = 0
-        # Pacify-on-sight tracking (Ring of Solomon).
-        self._chain_pacify_seen = set()
+        # Pacify-on-sight (Ring of Solomon) is marked on each demon itself
+        # (_refresh_fov): a set wiped here gave every demon a fresh roll each
+        # time the hero came back down the stair.
         # Fear-aura "saved already" tracking (Aegis of Athena, etc.).
         self.player._chain_seen_fear = set()
 
@@ -1985,11 +1989,15 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # Chain-equip passive: huginn_muninn (Cloak of Odin T3+). Auto-fire on
         # floor entry: reveal all monsters within 10 tiles for 5 turns. The
         # `_huginn_muninn_remaining` counter ticks down each turn.
+        # The arrival effects below (the ravens, Atalanta's choice, the Heart
+        # of Ahriman) fire on a floor reached for the first time only: the
+        # charge they spend is reset above and only given back afterwards, so
+        # every stair crossing fired them again (an endless freeze to flee by).
         try:
             from chain_passives import (
                 player_has_passive, consume_passive_charge,
             )
-            if player_has_passive(self.player, 'huginn_muninn'):
+            if player_has_passive(self.player, 'huginn_muninn') and _new_depth:
                 if consume_passive_charge(self.player, 'huginn_muninn'):
                     self.player._huginn_muninn_remaining = 5
                     self.add_message(
@@ -2036,6 +2044,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 player_has_passive, consume_passive_charge,
             )
             if (player_has_passive(self.player, 'atalantas_choice')
+                    and _new_depth
                     and self.player.hp <= self.player.max_hp * 0.30
                     and consume_passive_charge(self.player, 'atalantas_choice')):
                 # What the hero sees from the arrival stair (self.visible
@@ -2057,7 +2066,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             from chain_passives import (
                 player_has_passive, consume_passive_charge,
             )
-            if player_has_passive(self.player, 'anti_being') and \
+            if player_has_passive(self.player, 'anti_being') and _new_depth and \
                     consume_passive_charge(self.player, 'anti_being'):
                 self.player._anti_being_charged = True
                 self.add_message(
