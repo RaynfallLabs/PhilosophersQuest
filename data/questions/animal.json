@@ -7541,7 +7541,7 @@
   },
   {
     "tier": 3,
-    "question": "In one Florida county a harmless scarlet kingsnake, wearing the red, yellow and black bands of a deadly snake, is perfectly safe; in the next county over, birds eat it. Both counties have the same birds and the same kingsnakes. What makes the borrowed warning work in the safe county?",
+    "question": "In one part of the Carolinas, a harmless scarlet kingsnake wearing the red, yellow and black bands of a deadly snake is left alone. Elsewhere in the same region, predators attack it. What makes the borrowed warning work where it does?",
     "answer": "Real coral snakes live there and taught predators to fear the pattern",
     "choices": [
       "Real coral snakes live there and taught predators to fear the pattern",
@@ -7549,7 +7549,7 @@
       "Kingsnakes there smell like coral snakes, not just look like them",
       "The soil there matches the color of the kingsnake's bands"
     ],
-    "context": "Batesian mimicry only works where the dangerous model lives: predators near actual coral snakes have learned to fear the pattern, so a copy is protected — but the bluff fails where no coral snakes exist to teach the lesson. Source: PBS NOVA 'How the Kingsnake Is Still Fooling Predators'; UNC Endeavors 'A Striking Resemblance' (Pfennig research).",
+    "context": "Batesian mimicry only works where the dangerous model lives. In a study published in 2001, Pfennig and colleagues set out kingsnake-patterned models across the Carolinas, and predators attacked them far less where coral snakes live, because predators there have learned to fear the pattern; the bluff failed where no coral snakes exist to teach the lesson. Source: Pfennig, Harcombe & Pfennig 2001, Nature, 'Frequency-dependent Batesian mimicry'; PBS NOVA 'How the Kingsnake Is Still Fooling Predators'; UNC Endeavors 'A Striking Resemblance'.",
     "topic": "faking-it-mimicry"
   },
   {
@@ -7601,7 +7601,7 @@
       "The time of day it is hunting",
       "How recently it last ate"
     ],
-    "context": "The mimic octopus and its relative the wunderpus are the only known animals to actively impersonate several different animals on demand, and there is evidence it selects its disguise to suit the specific predator confronting it. Source: Wikipedia 'Mimic octopus'; AMNH 'The Talented Mimic Octopus'.",
+    "context": "The mimic octopus is the first cephalopod known to impersonate several different animals, and there is evidence it selects its disguise to suit the specific predator confronting it. Source: Grokipedia 'Mimic octopus'; Wikipedia 'Mimic octopus'; AMNH 'The Talented Mimic Octopus'.",
     "topic": "faking-it-mimicry"
   },
   {
@@ -7627,7 +7627,7 @@
       "The temperature the chrysalis happens to develop at",
       "The particular Melinaea species the caterpillar feeds beside"
     ],
-    "context": "Heliconius numata is nicknamed the 'jack-of-seven-trades' because it carries an entire mimicry wardrobe on one chunk of chromosome 15, a locus called P. Joron and colleagues showed that a set of chromosomal inversions — a roughly 400-kilobase inverted block holding about 21 genes — suppresses recombination there, so the whole color-pattern gene cluster is inherited as one indivisible Mendelian unit. Without the inversion those separate pattern genes would recombine and shuffle into blurred, half-and-half wings that copy no protected model and get picked off; the inversion 'freezes' each working disguise as a single allele. That is why one species can carry seven complete, distinct disguises at once. Source: Joron et al. 2011, Nature 477:203, 'Chromosomal rearrangements maintain a polymorphic supergene controlling butterfly mimicry' — https://www.nature.com/articles/nature10341 ; corroboration https://pmc.ncbi.nlm.nih.gov/articles/PMC3223682/",
+    "context": "Heliconius numata carries an entire mimicry wardrobe on one chunk of chromosome 15, a locus called P. Joron and colleagues showed that a set of chromosomal inversions — a roughly 400-kilobase inverted block holding about 21 genes — suppresses recombination there, so the whole color-pattern gene cluster is inherited as one indivisible Mendelian unit. Without the inversion those separate pattern genes would recombine and shuffle into blurred, half-and-half wings that copy no protected model and get picked off; the inversion 'freezes' each working disguise as a single allele. That is why one species can carry seven complete, distinct disguises at once. Source: Joron et al. 2011, Nature 477:203, 'Chromosomal rearrangements maintain a polymorphic supergene controlling butterfly mimicry' — https://www.nature.com/articles/nature10341 ; corroboration https://pmc.ncbi.nlm.nih.gov/articles/PMC3223682/",
     "topic": "faking-it-mimicry"
   },
   {
@@ -7827,15 +7827,15 @@
   },
   {
     "tier": 2,
-    "question": "A firefly glowing on a person's palm makes what is called a cold light. An old incandescent bulb, by contrast, burns the fingers, because it loses about nine-tenths of its energy as heat. Almost all of the firefly's energy comes out as what?",
-    "answer": "Light, with almost no heat",
+    "question": "A firefly can glow on a person's palm, while an old incandescent bulb burns the fingers, because the bulb loses about nine-tenths of its energy as heat. What does the firefly's glow give off?",
+    "answer": "Light, with very little heat",
     "choices": [
-      "Light, with almost no heat",
-      "Heat, with almost no light",
-      "Sound, too high to hear",
-      "A faint electric spark"
+      "Light, with very little heat",
+      "Heat, with only a faint light",
+      "Light, with a faint electric charge",
+      "Light, with heat to warm its wings"
     ],
-    "context": "Firefly light is nearly 100% efficient: almost all the energy leaves as visible light and only a minute amount as heat -- the reverse of a light bulb, which loses roughly 90% as heat. Source: Britannica, 'Firefly | Insect'; Firefly.org.",
+    "context": "Firefly light is called 'cold light': it comes with very little heat, the reverse of an incandescent bulb, which loses roughly 90% of its energy as heat. Older sources say nearly all of the reaction's energy leaves as light; a 2008 measurement found that about 41% of the reacting luciferin molecules give off a photon, still far better than a bulb. Source: Grokipedia 'Firefly'; Britannica, 'Firefly | Insect'; Ando et al. 2008, Nature Photonics.",
     "topic": "firefly"
   },
   {
@@ -7844,21 +7844,21 @@
     "answer": "Luciferase",
     "choices": [
       "Luciferase",
-      "Chlorophyll",
-      "Hemoglobin",
-      "Keratin"
+      "Catalase",
+      "Amylase",
+      "Lipase"
     ],
     "context": "The molecule luciferin, combined with oxygen and ATP energy and catalyzed by the enzyme luciferase, produces light with almost no heat. Source: sciencenewstoday.org, 'Why Fireflies Glow'; Bohrium sciencepedia.",
     "topic": "firefly"
   },
   {
     "tier": 2,
-    "question": "Somewhere in a pitch-dark field, a male firefly searches for a female of his own species hidden in the black grass. The two find each other through a back-and-forth conversation that can last more than an hour. What are they using to talk?",
+    "question": "Somewhere in a pitch-dark field, a male firefly searches for a female of his own species hidden in the black grass. The two find each other through a back-and-forth conversation. What are they using to talk?",
     "answer": "Their flash patterns",
     "choices": [
       "Their flash patterns",
       "Their wing-beats",
-      "Ripples in a pond",
+      "Clicking sounds",
       "Vibrations in the soil"
     ],
     "context": "Each species has its own signature flash code -- single, double, or multiple pulses at set intervals. A patrolling male flashes his species' code and a matching female flashes back, a light 'conversation' until they meet in the dark. Source: Firefly Atlas, 'Firefly Life History'.",
@@ -7872,9 +7872,9 @@
       "She fakes another firefly species' mating flash-code",
       "She glows far brighter to blind approaching males",
       "She releases a scent that paralyzes males mid-flight",
-      "She spins a web of light between two reeds"
+      "She baits a leaf with a drop of sweet nectar"
     ],
-    "context": "A Photuris female mimics the answering flash of a Photinus female to lure the male in, then catches and eats him. A single Photuris female can imitate the answering signals of up to three different Photinus species. Source: Lloyd, 'Aggressive Mimicry in Photuris' (PubMed 17747574); phys.org 2018. LEGEND.",
+    "context": "A Photuris female mimics the answering flash of a Photinus female to lure the male in, then catches and eats him. A single Photuris female can imitate the answering signals of several firefly species; Lloyd's 1975 study counted four. Source: Lloyd, 'Aggressive Mimicry in Photuris' (PubMed 17747574); Lloyd 1975, Science 187:452; phys.org 2018.",
     "topic": "firefly"
   },
   {
@@ -7885,22 +7885,22 @@
       "Toxic chemicals that guard her from predators",
       "A brighter glow for the rest of the night",
       "The ability to fly much farther",
-      "A second set of working wings"
+      "Hormones that make her grow larger"
     ],
-    "context": "Photuris cannot make the defensive steroids called lucibufagins on its own; by eating Photinus males it acquires these toxins, which then protect it from predators like birds and spiders. Source: Eisner et al., PNAS 1997; Cornell Chronicle 1997. LEGEND.",
+    "context": "Photuris cannot make the defensive steroids called lucibufagins on its own; by eating Photinus males it acquires these toxins, which then protect it from predators like birds and spiders. Source: Eisner et al., PNAS 1997; Cornell Chronicle 1997.",
     "topic": "firefly"
   },
   {
     "tier": 3,
-    "question": "Crowds hike into the Great Smoky Mountains on certain June nights and sit in the dark to watch one firefly, Photinus carolinus, do something no other firefly in North America does. Rangers even run a lottery for the parking spots. What do the crowds come to see?",
+    "question": "Crowds hike into the Great Smoky Mountains on certain June nights and sit in the dark to watch one firefly, Photinus carolinus, do something few fireflies anywhere can do. Rangers even run a lottery for the parking spots. What do the crowds come to see?",
     "answer": "The males all flash in perfect unison",
     "choices": [
       "The males all flash in perfect unison",
       "Each firefly glows a different color",
-      "They spell out shapes in the air",
-      "They flash only once all summer"
+      "Thousands crowd onto one tree to glow",
+      "Their glow stays on all night unblinking"
     ],
-    "context": "Photinus carolinus males synchronize, blinking together in a series of 5-8 flashes, then a shared ~8-second pause of darkness -- whole sections of forest pulsing on and off at once. Source: firefly.org 'Synchronous Fireflies'; wate.com. LEGEND.",
+    "context": "Photinus carolinus males synchronize, blinking together in bursts of about 5-8 flashes, then a shared pause of darkness of roughly 8 seconds or more -- whole sections of forest pulsing on and off at once. It was the first North American firefly found to synchronize; Photuris frontalis of the Southeast and Photinus knulli of Arizona also flash in sync. Source: Wikipedia 'Photinus carolinus'; NPS 'Synchronized Fireflies at Congaree'; firefly.org 'Synchronous Fireflies'.",
     "topic": "firefly"
   },
   {
@@ -8329,12 +8329,12 @@
       "The jackal",
       "The ocelot"
     ],
-    "context": "The fossa (Cryptoprocta ferox) is Madagascar's largest carnivore and the island's apex predator. Only about 2,500 are thought to remain in the wild, and it can roam up to 16 miles a day, earning it the nickname 'ghost of the forest.' Source: San Diego Zoo (animals.sandiegozoo.org/animals/fossa); en.wikipedia.org/wiki/Fossa_(animal).",
+    "context": "The fossa (Cryptoprocta ferox) is Madagascar's largest carnivore and the island's apex predator. A 2016 assessment estimated roughly 2,600 to 8,600 adults in the wild, and it can roam up to 16 miles (26 km) in a day. Source: Grokipedia 'Fossa (animal)'; San Diego Zoo (animals.sandiegozoo.org/animals/fossa); en.wikipedia.org/wiki/Fossa_(animal).",
     "topic": "fossa"
   },
   {
     "tier": 2,
-    "question": "A lemur fleeing through the trees usually gains time whenever a predator chasing it loses ground coming down a trunk. A fossa on its trail gives it no such break. What can the fossa's body do that a cat's cannot?",
+    "question": "A lemur fleeing through the trees usually gains time whenever a predator chasing it loses ground coming down a trunk. A fossa on its trail gives it no such break. What can the fossa's body do that a house cat's cannot?",
     "answer": "Run straight down the trunk head-first",
     "choices": [
       "Run straight down the trunk head-first",
@@ -8347,7 +8347,7 @@
   },
   {
     "tier": 3,
-    "question": "A slender, cougar-shaped fossa hunts lemurs high in the trees of Madagascar, climbing like a cat and looking like a small mountain lion, yet it is not a cat at all. Its family traces back to one meat-eating ancestor that reached the island about 21 million years ago. Which living animals are its closest relatives?",
+    "question": "A slender, cougar-shaped fossa hunts lemurs high in the trees of Madagascar, climbing like a cat and looking like a small mountain lion, yet it is not a cat at all. Its family traces back to one meat-eating ancestor that reached the island about 21 million years ago. Beyond Madagascar, which living animals are its family's closest relatives?",
     "answer": "Mongooses",
     "choices": [
       "Mongooses",
@@ -8355,25 +8355,12 @@
       "Weasels",
       "Raccoons"
     ],
-    "context": "The fossa belongs to the family Eupleridae, and its closest living relatives are the mongooses. Its cat-like build is convergent evolution — it independently evolved a big-cat body to fill the niche of an agile tree-hunter. The whole family of Malagasy carnivores descended from one mongoose-like ancestor that reached Madagascar about 21 million years ago. Source: en.wikipedia.org/wiki/Fossa_(animal); San Diego Zoo (animals.sandiegozoo.org/animals/fossa).",
+    "context": "The fossa belongs to the family Eupleridae, Madagascar's own family of carnivores, and the closest living relatives of that family are the mongooses. Its cat-like build is convergent evolution — it independently evolved a big-cat body to fill the niche of an agile tree-hunter. The whole family of Malagasy carnivores descended from one mongoose-like ancestor that reached Madagascar about 21 million years ago. Source: en.wikipedia.org/wiki/Fossa_(animal); San Diego Zoo (animals.sandiegozoo.org/animals/fossa).",
     "topic": "fossa"
   },
   {
     "tier": 1,
-    "question": "A frilled shark still swims the deep oceans today, its mouth lined with rows of needle-sharp, trident-shaped teeth. Biologists call it a living fossil: its family was around when Tyrannosaurus rex still walked the land. About how far back does its fossil record reach?",
-    "answer": "About 95 million years",
-    "choices": [
-      "About 95 million years",
-      "About 500 years",
-      "About 10,000 years",
-      "About 3 million years"
-    ],
-    "context": "The frilled shark's family, Chlamydoselachidae, has a fossil record reaching back roughly 95 million years — it swam alongside the dinosaurs and has barely changed since, the classic marker of a 'living fossil.' Source: https://en.wikipedia.org/wiki/Frilled_shark",
-    "topic": "frilled-shark-chlamydoselachus-anguineus"
-  },
-  {
-    "tier": 1,
-    "question": "More than 500 metres down in the North Atlantic and Pacific, a rarely seen, thin-bodied shark nearly two metres long cruises the dark. Frilly folds of skin around its gills give it the name frilled shark, and sailors nicknamed it the lizard shark. Which creature does its body most call to mind?",
+    "question": "Hundreds of metres down in the Atlantic and Pacific, a thin-bodied shark nearly two metres long cruises the dark. Frilly gill folds give it the name frilled shark, and it is also nicknamed the lizard shark. Which creature does its body most call to mind?",
     "answer": "A snake or eel",
     "choices": [
       "A snake or eel",
@@ -8413,14 +8400,14 @@
   {
     "tier": 3,
     "question": "A frilled shark's long jaws sit right at the front of its head and hinge onto the skull behind the eyes, so its bite is weak. It cannot roll under its prey as other sharks do. Instead it anchors its tail, coils its body back and springs forward. How big a meal can it take this way?",
-    "answer": "Prey up to half its own body length, swallowed whole",
+    "answer": "Prey more than half its own size, swallowed whole",
     "choices": [
-      "Prey up to half its own body length, swallowed whole",
+      "Prey more than half its own size, swallowed whole",
       "Only prey smaller than its own eye",
       "A dozen tiny shrimp at a single gulp",
-      "Nothing solid — it filters plankton from the water"
+      "Only soft jellies, slurped without a bite"
     ],
-    "context": "With its mouth at the front of its head, the frilled shark strikes like a snake — bending its body, bracing its tail, and lunging to swallow prey whole, up to about half its own body length. One 1.6-meter specimen was found with a whole 590-gram Japanese catshark inside it. Source: https://en.wikipedia.org/wiki/Frilled_shark",
+    "context": "With its mouth at the front of its head, the frilled shark strikes like a snake — bending its body, bracing its tail, and lunging to swallow whole prey more than half its own size. One 1.6-meter specimen was found with a whole 590-gram Japanese catshark inside it. Source: https://en.wikipedia.org/wiki/Frilled_shark",
     "topic": "frilled-shark-chlamydoselachus-anguineus"
   },
   {
@@ -8452,9 +8439,9 @@
   {
     "tier": 1,
     "question": "A frogfish, a lumpy ambush hunter of the reef, sits on the seabed while other fish glide past through open water, rippling their bodies and beating their tails. The frogfish hardly swims at all. How does it get around the reef floor?",
-    "answer": "Walking across the bottom on its arm-like fins, one after another",
+    "answer": "Walking on its arm-like fins, one after another",
     "choices": [
-      "Walking across the bottom on its arm-like fins, one after another",
+      "Walking on its arm-like fins, one after another",
       "Rolling sideways along the sand like a barrel",
       "Drifting wherever the tide happens to carry it",
       "Burrowing under the sand and popping up ahead"
@@ -8478,27 +8465,27 @@
   {
     "tier": 2,
     "question": "Squatting disguised on the coral reef floor, a frogfish fishes for prey with the fleshy bait it grows on its own head. Sometimes a prey fish is too quick and bites the bait clean off. Left without its lure, what happens to the frogfish over the months that follow?",
-    "answer": "It slowly regrows a brand-new lure over about four to six months",
+    "answer": "It slowly grows a brand-new lure in its place",
     "choices": [
-      "It slowly regrows a brand-new lure over about four to six months",
-      "It stays lure-less for the rest of its life and starves",
-      "It switches to chasing prey down in open water instead",
-      "It borrows a lure by stealing one from a rival frogfish"
+      "It slowly grows a brand-new lure in its place",
+      "It stays lure-less for the rest of its life",
+      "It switches to chasing prey in open water",
+      "It moves to deeper water to hunt in the dark"
     ],
     "context": "If the lure gets bitten off or damaged, the frogfish grows a replacement over roughly four to six months. (Source: frogfish.ch feeding page)",
     "topic": "frogfish-antennariidae"
   },
   {
     "tier": 2,
-    "question": "Suppose you blinked just as a frogfish struck at a passing fish. Your blink would last about three hundred milliseconds. The frogfish's mouth flies open and sucks in its prey in the fastest feeding strike ever measured in a fish. How long does that strike take?",
-    "answer": "About six milliseconds — fifty times quicker than your blink",
+    "question": "Suppose you blinked just as a frogfish struck at a passing fish. Your blink would last about three hundred milliseconds. The frogfish's mouth flies open and sucks in its prey in one of the fastest feeding strikes ever measured in a fish. How long does that strike take?",
+    "answer": "About six milliseconds — fifty times quicker than a blink",
     "choices": [
-      "About six milliseconds — fifty times quicker than your blink",
+      "About six milliseconds — fifty times quicker than a blink",
       "About ninety milliseconds — a third of a blink",
       "About the same as a blink, three hundred milliseconds",
       "About half a second, slower than a blink"
     ],
-    "context": "The frogfish's 'gape and suck' strike engulfs prey in about six milliseconds — six-thousandths of a second, roughly fifty times quicker than a human blink. It is the fastest such strike measured in any fish. (Source: frogfish.ch feeding page, Pietsch & Grobecker)",
+    "context": "The frogfish's 'gape and suck' strike engulfs prey in about six milliseconds — six-thousandths of a second, roughly fifty times quicker than a human blink. It ranks among the fastest feeding strikes known in any animal. (Source: frogfish.ch feeding page, Pietsch & Grobecker; Grokipedia, Frogfish)",
     "topic": "frogfish-antennariidae"
   },
   {
@@ -8509,27 +8496,27 @@
       "It balloons to about twelve times its resting size",
       "It swells to a little under double its resting size",
       "It puffs up by roughly a third, then snaps shut",
-      "It stays the same size and the tongue shoves prey in"
+      "It swells to about five times its resting size"
     ],
     "context": "The mouth cavity balloons to up to 12 times its resting volume, creating a powerful suction that pulls the prey in with a rush of water. (Source: frogfish.ch feeding page; Wikipedia, Frogfish)",
     "topic": "frogfish-antennariidae"
   },
   {
     "tier": 3,
-    "question": "Perfectly still on the reef, a frogfish waits for prey to swim right up to its mouth. It has no teeth at all, so every meal goes down whole in a single gulp. That toothless swallow lets it pull off a feat most predators cannot. What can a frogfish do when it catches a large victim?",
-    "answer": "Swallow a fish as big as or bigger than itself by stretching its stomach",
+    "question": "Perfectly still on the reef, a frogfish waits for prey to swim right up to its mouth. None of its teeth can cut, so every meal goes down whole in a single gulp. That whole swallow lets it pull off a feat most predators cannot. What can a frogfish do when it catches a large victim?",
+    "answer": "Swallow a fish as big as itself, or even bigger",
     "choices": [
-      "Swallow a fish as big as or bigger than itself by stretching its stomach",
+      "Swallow a fish as big as itself, or even bigger",
       "Crush the prey against a rock before swallowing it",
       "Spit out anything too large and wait for smaller prey",
       "Store the extra food in a special pouch for later"
     ],
-    "context": "With no teeth to cut prey, the frogfish swallows it whole, and its stomach stretches enough to engulf a fish as large as or larger than the frogfish itself. (Source: frogfish.ch feeding page; Wikipedia, Frogfish)",
+    "context": "The frogfish's small teeth cannot cut, so it swallows prey whole, and its stomach stretches enough to engulf a fish as large as or larger than the frogfish itself; Grokipedia puts the limit at prey up to about twice its size. (Source: frogfish.ch feeding page; Wikipedia, Frogfish; Grokipedia, Frogfish)",
     "topic": "frogfish-antennariidae"
   },
   {
     "tier": 4,
-    "question": "Divers off Indonesia found a frogfish in 2008 so strange that it was named a new species, the psychedelic frogfish. Beyond its swirling colors, it moves in a way no other frogfish does. How does the psychedelic frogfish get around?",
+    "question": "Divers off Indonesia found a frogfish in 2008 so strange that scientists named it a new species the next year: the psychedelic frogfish, swirled in wild colors. It walks on its fins like its relatives, but it has another way of getting around too. How does it move?",
     "answer": "It bounces along the bottom like an inflated rubber ball",
     "choices": [
       "It bounces along the bottom like an inflated rubber ball",
@@ -8537,7 +8524,7 @@
       "It swims in fast tight circles near the surface",
       "It clings to passing fish and hitches a ride"
     ],
-    "context": "Described in 2009, the psychedelic frogfish pushes off with its fins and jets water from its gills, bouncing along the bottom like an inflated rubber ball with its tail curled to one side. (Source: ScienceDaily 2009; Psychedelic frogfish, Wikipedia; Pietsch, Arnold & Hall, Copeia 2009)",
+    "context": "Described in 2009, the psychedelic frogfish walks on its fins but can also push off and jet water from its gills, bouncing along the bottom like an inflated rubber ball with its tail curled to one side; jetting like this is common among frogfishes, though rare in other fish. (Source: ScienceDaily 2009; Psychedelic frogfish, Wikipedia; Pietsch, Arnold & Hall, Copeia 2009)",
     "topic": "frogfish-antennariidae"
   },
   {
@@ -8608,25 +8595,25 @@
   {
     "tier": 2,
     "question": "Lying fully exposed on the African rainforest floor, a huge, heavy Gaboon viper can still be almost impossible to spot. Its broad, flat, triangular head is the key to the trick, and predators and prey walk past it every day without noticing. What does the head look like?",
-    "answer": "A fallen leaf, complete with a vein-like line down the middle",
+    "answer": "A fallen leaf, right down to a central vein",
     "choices": [
-      "A fallen leaf, complete with a vein-like line down the middle",
-      "A knot of exposed tree roots",
+      "A fallen leaf, right down to a central vein",
+      "A knot of bare tree roots in the soil",
       "A gray river stone slick with mud",
-      "A cluster of pale mushrooms"
+      "A cluster of pale mushrooms on rotting wood"
     ],
     "context": "The head mimics a dead leaf right down to a central vein-like line, and the body wears pale rectangles, dark hourglass markings, and fawn diamonds — so precise that a snake lying fully exposed in the leaf litter nearly vanishes. Source: Smithsonian National Zoo (nationalzoo.si.edu/animals/gaboon-viper); en.wikipedia.org/wiki/Gaboon_viper.",
     "topic": "gaboon-viper-the-longest-fangs-of-any-snake"
   },
   {
     "tier": 3,
-    "question": "An inland taipan carries the most toxic venom of any snake, drop for drop, yet one bite delivers only about 44 to 110 mg of it. The Gaboon viper of central Africa wins a different way, on sheer volume. How much dried venom has one milking of a Gaboon viper yielded?",
-    "answer": "About 2,400 mg from one milking — dozens of taipan bites' worth",
+    "question": "An inland taipan carries the most toxic venom of any snake, drop for drop, yet one bite delivers only about 44 to 110 mg of it. Scientists have also milked the Gaboon viper, a thick, heavy snake of central Africa. How did its record milking compare with a single taipan bite?",
+    "answer": "As much as dozens of taipan bites",
     "choices": [
-      "About 2,400 mg from one milking — dozens of taipan bites' worth",
-      "About 1,000 mg from one milking — dozens of taipan bites' worth",
-      "About 1,600 mg from one milking — dozens of taipan bites' worth",
-      "About 800 mg from one milking — dozens of taipan bites' worth"
+      "As much as dozens of taipan bites",
+      "As much as hundreds of taipan bites",
+      "About as much as one taipan bite",
+      "Less than half of one taipan bite"
     ],
     "context": "One milking has yielded up to about 2,400 mg (2 grams) of dried venom, and a single bite can inject roughly 200 to 1,000 mg — among the largest venom loads of any snake, far outstripping the inland taipan (about 44 to 110 mg) or Russell's viper. Source: en.wikipedia.org/wiki/Gaboon_viper; Smithsonian National Zoo; Forbes/Scott Travers 2024-09-07.",
     "topic": "gaboon-viper-the-longest-fangs-of-any-snake"
@@ -8855,9 +8842,9 @@
   {
     "tier": 1,
     "question": "A scavenger the size of a small dog walks the seafloor a kilometer down, its back armored in plates that overlap like tiles. The giant isopod is a deep-sea cousin of a bug found under garden rocks. Which bug is it?",
-    "answer": "The pillbug (roly-poly)",
+    "answer": "The roly-poly pillbug",
     "choices": [
-      "The pillbug (roly-poly)",
+      "The roly-poly pillbug",
       "The garden earthworm",
       "The cabbage caterpillar",
       "The house centipede"
@@ -8919,7 +8906,7 @@
   },
   {
     "tier": 5,
-    "question": "The giant isopod is a garden pillbug grown to the size of a small dog, and scientists still argue over why the cold deep breeds such giants. The leading explanation ties its huge body to one physical property of that frigid water. Which explanation leads?",
+    "question": "The giant isopod grows to the size of a small dog, and scientists still argue over why the cold deep breeds such giants. One much-studied explanation ties its huge body to a physical property of that frigid water. Which explanation is it?",
     "answer": "Frigid deep water holds far more dissolved oxygen, so a larger body can still take in enough to breathe",
     "choices": [
       "Frigid deep water holds far more dissolved oxygen, so a larger body can still take in enough to breathe",
@@ -8927,20 +8914,20 @@
       "Perpetual darkness removes the visual cues predators need, so prey can safely balloon in size",
       "Slow deep currents let a heavier animal drift with less effort, rewarding ever-greater bulk"
     ],
-    "context": "This is 'deep-sea gigantism,' and the giant isopod is its poster creature, but it is a genuine open debate rather than a settled fact. The leading OXYGEN hypothesis comes from a 1999 study of deep-sea amphipod crustaceans (Chapelle & Peck): the maximum body size an animal can reach rises directly with the dissolved oxygen in the cold deep, because more oxygen dissolves in frigid water and a bigger body can still take in enough to breathe. Rivals still compete, including Bergmann's rule (cold makes cells larger, so cold-water animals grow bigger) and scarce-food selection (a bigger body survives starvation longer), and scientists consider the causes unresolved. Source: Deep-sea gigantism, Wikipedia and Grokipedia (https://grokipedia.com/page/Deep-sea_gigantism); Chapelle & Peck 1999 oxygen study; Timofeev 2001 (Bergmann's principle).",
+    "context": "This is 'deep-sea gigantism,' and the giant isopod is its poster creature, but it is a genuine open debate rather than a settled fact. One much-studied OXYGEN hypothesis comes from a 1999 study of benthic amphipod crustaceans (Chapelle & Peck): the maximum body size an animal can reach rises directly with the dissolved oxygen in the cold deep, because more oxygen dissolves in frigid water and a bigger body can still take in enough to breathe. Rivals still compete, including Bergmann's rule (cold makes cells larger, so cold-water animals grow bigger) and scarce-food selection (a bigger body survives starvation longer), and scientists consider the causes unresolved. Source: Deep-sea gigantism, Wikipedia and Grokipedia (https://grokipedia.com/page/Deep-sea_gigantism); Chapelle & Peck 1999 oxygen study; Timofeev 2001 (Bergmann's principle).",
     "topic": "giant-isopod-bathynomus-giganteus"
   },
   {
     "tier": 4,
-    "question": "A giant isopod can go years between meals without wasting away. When scientists read the genome of a close relative in 2022, they found why: its genes for burning fat are unusually reduced, so it can barely spend the energy it stores. Where does all that unused fat go?",
-    "answer": "Into a stomach that swells until it fills about two-thirds of the body cavity",
+    "question": "A giant isopod on the cold, dark seafloor can go years between meals without wasting away. In 2022 scientists read the genome of a close relative, Bathynomus jamesi, and found part of the reason written in its genes. What did they find?",
+    "answer": "Its fat-burning genes are cut back, so its stores last",
     "choices": [
-      "Into a stomach that swells until it fills about two-thirds of the body cavity",
-      "Into the overlapping back plates, thickening the armor during long fasts",
-      "Into the long antennae, which lengthen as a visible gauge of its reserves",
-      "Into the seven pairs of legs, which grow denser to anchor it in currents"
+      "Its fat-burning genes are cut back, so its stores last",
+      "Extra genes let it digest its own cast-off shell",
+      "Its gut microbes make food straight from seawater",
+      "Its genes let it stop its heart for weeks at a time"
     ],
-    "context": "A 2022 study sequenced the genome of its relative Bathynomus jamesi and found the largest crustacean genome yet at 5.89 gigabases (about 3.4x the land pillbug's). The key discovery: the giant isopod's genes for BREAKING DOWN fat are contracted rather than expanded. Poor at burning fat, it instead hoards it in a stomach that swells to fill roughly two-thirds of its body cavity, a slow-release energy reserve that outlasts years of famine. So the famous multi-year fast is not willpower but a body built to store rather than spend. Source: Genome of a giant isopod, Bathynomus jamesi (Yuan et al. 2022), PMC9107163 (https://pmc.ncbi.nlm.nih.gov/articles/PMC9107163/); corroborated by Earth.com and The Debrief coverage.",
+    "context": "A 2022 study (Yuan et al., BMC Biology) sequenced the genome of the giant isopod's relative Bathynomus jamesi: at 5.89 billion base pairs, the largest crustacean genome sequenced up to then. Gene families for breaking down fat (lipid degradation) are contracted, so it burns its reserves slowly. It also stores fat in a fat body spread through its body cavity, and a full stomach can fill about two-thirds of its body. A low metabolic rate, slow fat burning and bulk food storage together help explain fasts of more than five years. Source: Yuan et al. 2022, BMC Biology, PMC9107163 (https://pmc.ncbi.nlm.nih.gov/articles/PMC9107163/).",
     "topic": "giant-isopod-bathynomus-giganteus"
   },
   {
@@ -8953,7 +8940,7 @@
       "Spectacled bear",
       "Sun bear"
     ],
-    "context": "The giant panda (Ailuropoda melanoleuca) is a true bear in the order Carnivora, unlike the raccoon-family red panda. Source: PMC4442137 (mBio, gut microbiota study).",
+    "context": "The giant panda (Ailuropoda melanoleuca) is a true bear in the order Carnivora, unlike the red panda, which sits in a family of its own, the Ailuridae. Source: PMC4442137 (mBio, gut microbiota study); Wikipedia 'Red panda'.",
     "topic": "giant-panda"
   },
   {
@@ -8963,7 +8950,7 @@
     "choices": [
       "An enlarged wrist bone acting as a sixth digit",
       "A hooked, retractable claw on its first toe",
-      "A padded, gripless heel bone",
+      "A bony spur growing from its elbow",
       "A long fused knuckle on its middle finger"
     ],
     "context": "The 'false thumb' is the radial sesamoid, an enlarged wrist bone that works as a sixth, opposable digit, pinching bamboo against the true fingers. The red panda evolved the very same trick independently. Source: PMC9246853 (Scientific Reports 2022); biologyinsights.com 'The Panda Thumb.'",
@@ -8971,13 +8958,13 @@
   },
   {
     "tier": 3,
-    "question": "Stalk after stalk, a giant panda chews through bamboo, which makes up about 99 percent of everything it eats. Bamboo is tough, watery and poor in energy, yet the panda still has a meat-eating bear's gut and teeth. How does it get enough energy from bamboo to survive?",
-    "answer": "It eats up to 14 hours a day, packing in 12-38 kg of bamboo",
+    "question": "Stalk after stalk, a giant panda chews through bamboo, which makes up about 99 percent of everything it eats. Bamboo is tough, watery and poor in energy, yet the panda still has the short, simple gut of a meat-eating bear. How does it get enough energy from bamboo to survive?",
+    "answer": "It keeps eating for most of the day, every day",
     "choices": [
-      "It eats up to 14 hours a day, packing in 12-38 kg of bamboo",
+      "It keeps eating for most of the day, every day",
       "It hibernates through winter to skip the shortfall",
       "It stores fat reserves and eats only every few days",
-      "It ferments the bamboo in a huge multi-chambered stomach"
+      "It eats its droppings to digest them twice"
     ],
     "context": "The panda kept a carnivore's short, straight gut and digests only about 17% of the bamboo it eats, so it must eat roughly 12-38 kg for up to 14 hours a day just to survive. Source: PMC4442137 (mBio); livescience.com 'Panda Poop Reveals They're Bad at Digesting Bamboo.'",
     "topic": "giant-panda"
@@ -8997,7 +8984,7 @@
   },
   {
     "tier": 2,
-    "question": "A giant panda mother can weigh 90 kg, about as much as a grown man. Her newborn cub arrives pink, blind and completely helpless; one researcher likened the birth to 'a jelly bean popping out of a vending machine.' About how big is the newborn?",
+    "question": "A giant panda mother can weigh 90 kg, about as much as a grown man. Her newborn cub arrives pink, blind and completely helpless. About how big is the newborn?",
     "answer": "Around 100 grams, the size of a stick of butter",
     "choices": [
       "Around 100 grams, the size of a stick of butter",
@@ -9166,13 +9153,13 @@
   },
   {
     "tier": 1,
-    "question": "On a small forested island off New Zealand, a wingless giant weta, its body the length of an adult's finger, forages through the leaf litter after dark. A big egg-laden female can outweigh a small garden bird. Which bird does she outweigh?",
+    "question": "On a small forested island off New Zealand, a wingless giant weta, its body the length of an adult's finger, forages through the leaf litter after dark. A big egg-laden female can outweigh a common garden bird. Which bird does she outweigh?",
     "answer": "A house sparrow",
     "choices": [
       "A house sparrow",
-      "A migrating goose",
-      "A soaring albatross",
-      "A wild turkey"
+      "A blackbird",
+      "A magpie",
+      "A wood pigeon"
     ],
     "context": "A big egg-filled female giant weta (genus Deinacrida) can top 70 grams - heavier than a house sparrow, making it one of the heaviest insects alive. Source: https://en.wikipedia.org/wiki/Giant_w%C4%93t%C4%81",
     "topic": "giant-weta-the-heavyweight-insect-of-new-zealand"
@@ -9191,19 +9178,6 @@
     "topic": "giant-weta-the-heavyweight-insect-of-new-zealand"
   },
   {
-    "tier": 2,
-    "question": "After dark on a New Zealand forest floor, a giant weta forages through the leaf litter. For ages the islands' only native land mammals were bats, so this insect grew large and took over the night work that small mammals do on other lands. What nickname did that earn it?",
-    "answer": "The invertebrate mouse",
-    "choices": [
-      "The invertebrate mouse",
-      "The forest badger",
-      "The night otter",
-      "The tree squirrel"
-    ],
-    "context": "With New Zealand's only native land mammals being bats, the giant weta grew large and filled the night-foraging ground niche that mice and rats hold elsewhere - earning the nickname 'the invertebrate mouse'. Source: https://en.wikipedia.org/wiki/Giant_w%C4%93t%C4%81",
-    "topic": "giant-weta-the-heavyweight-insect-of-new-zealand"
-  },
-  {
     "tier": 3,
     "question": "Winter settles on a scree slope 1,200 meters up in the South Island mountains, and the air turns colder than about -5 C. There the scree weta, Deinacrida connectens, does something most animals could never survive, then undoes it when it warms. What happens to it?",
     "answer": "It freezes solid, then thaws back to life",
@@ -9213,7 +9187,7 @@
       "It shivers its flight muscles to make heat",
       "It sleeps out the whole winter underground"
     ],
-    "context": "The alpine scree weta, Deinacrida connectens, lives around 1,200 metres up and freezes solid below about -5 C, then thaws back to life - New Zealand's alpine weta are by far the largest insects able to do this. Source: https://en.wikipedia.org/wiki/Giant_w%C4%93t%C4%81",
+    "context": "The alpine scree weta, Deinacrida connectens, lives around 1,200 metres up and freezes solid below about -5 C, then thaws back to life - New Zealand's alpine weta are among the largest insects known to do this. Source: https://en.wikipedia.org/wiki/Giant_w%C4%93t%C4%81",
     "topic": "giant-weta-the-heavyweight-insect-of-new-zealand"
   },
   {
@@ -9374,15 +9348,15 @@
   },
   {
     "tier": 2,
-    "question": "A tiny lime-green glass frog sits on a leaf over a rushing stream in a Central American cloud forest at night. Suppose you turn it gently onto its back. What is strange about the skin of its belly?",
-    "answer": "It is see-through, and you look straight in at its organs",
+    "question": "A tiny lime-green frog sits on a leaf over a rushing stream in a Central American cloud forest at night. A biologist turns it gently onto its back. What is strange about the skin of its belly?",
+    "answer": "It is see-through, showing the organs inside",
     "choices": [
-      "It is see-through, and you look straight in at its organs",
+      "It is see-through, showing the organs inside",
       "It flushes bright red as a warning to predators",
       "It puffs into a spiny ball twice its size",
       "It oozes a milky poison that burns the skin"
     ],
-    "context": "The glass frog (family Centrolenidae, about 160 species, 3.0-7.5 cm long) has transparent skin across its abdomen -- turn one over and you can look right through it at the organs inside. Source: https://en.wikipedia.org/wiki/Glass_frog",
+    "context": "The glass frog (family Centrolenidae, about 160 species, 3.0-7.5 cm long) has transparent skin across its abdomen: turned over, it shows its organs right through the skin. Source: https://en.wikipedia.org/wiki/Glass_frog",
     "topic": "glass-frog"
   },
   {
@@ -9395,20 +9369,20 @@
       "Its kidney, filtering waste",
       "Its stomach, churning food"
     ],
-    "context": "Through a glass frog's see-through belly you can watch its actual heart beating and pumping blood -- the same beat a doctor listens for through a stethoscope -- along with its liver and looping intestines working inside its living body. Source: https://en.wikipedia.org/wiki/Glass_frog; https://allthatsinteresting.com/glass-frog",
+    "context": "Through a glass frog's see-through belly an onlooker can watch its actual heart beating and pumping blood -- the same beat a doctor listens for through a stethoscope -- along with its liver and looping intestines working inside its living body. Source: https://en.wikipedia.org/wiki/Glass_frog; https://allthatsinteresting.com/glass-frog",
     "topic": "glass-frog"
   },
   {
     "tier": 3,
-    "question": "A clutch of glass frog eggs, tiny see-through blobs of jelly, clings to the underside of a leaf over a Central American stream, and egg-eating wasps are hunting for it. Among glass frogs, which parent, if either, stands guard over the eggs for days?",
+    "question": "A clutch of glass frog eggs, tiny see-through blobs of jelly, clings to the underside of a leaf over a Central American stream, and egg-eating wasps are hunting for it. In almost a third of glass frog species, the eggs are guarded for days on end. Who keeps that long watch?",
     "answer": "The male",
     "choices": [
       "The male",
       "The female",
-      "Both parents together",
-      "Neither -- eggs are left alone"
+      "Both parents, taking turns",
+      "Both parents, side by side"
     ],
-    "context": "The male glass frog is the parent that guards the eggs, standing watch over a clutch stuck to the underside of a leaf overhanging a stream; a single male may watch several clutches at once, each at a different stage. The eggs are laid above running water so that when the tadpoles hatch (after 10-20 days, often during heavy rain) they drop straight down into the stream. Source: https://en.wikipedia.org/wiki/Glass_frog",
+    "context": "In almost a third of glass frog species the male stands guard over the clutch for long periods, and a single male may watch several clutches at once, each at a different stage; in many species the female broods the eggs only on the night they are laid. The eggs are laid above running water so that when the tadpoles hatch (after 10-20 days, often during heavy rain) they drop straight down into the stream. Source: https://en.wikipedia.org/wiki/Glass_frog",
     "topic": "glass-frog"
   },
   {
@@ -9426,7 +9400,7 @@
   },
   {
     "tier": 2,
-    "question": "Leaping from a high trunk at night, a flying squirrel spreads a furry sail of skin between its wrists and ankles and glides like a paper airplane. It has no wings to flap, yet it swerves in midair and lands on the trunk it aimed for. What does it steer and brake with?",
+    "question": "Leaping from a high trunk at night, a flying squirrel spreads a furry sail of skin between its wrists and ankles and glides like a paper airplane. It has no wings to flap, yet it holds a steady course and slows itself just before it lands. What steadies its glide and brakes it?",
     "answer": "Its flattened, bushy tail",
     "choices": [
       "Its flattened, bushy tail",
@@ -9434,7 +9408,7 @@
       "Its clawed hind feet",
       "Its round, tufted ears"
     ],
-    "context": "The flying squirrel steers and brakes with its flattened, bushy tail, which acts as a rudder; it can also bank by lowering one arm to change the tension of the patagium membrane. Source: National Geographic, 'Flying squirrels'; Wikipedia 'Flying squirrel'.",
+    "context": "The flying squirrel steers mainly by shifting its limbs and wrists, which changes the tension of its gliding membrane (the patagium); its flattened, bushy tail stabilizes the glide and works as an air brake before landing. Source: Wikipedia 'Flying squirrel'; National Geographic, 'Flying squirrels'.",
     "topic": "gliding-not-flying"
   },
   {
@@ -9443,7 +9417,7 @@
     "answer": "The Draco",
     "choices": [
       "The Draco",
-      "The komodo dragon",
+      "The anole",
       "The basilisk",
       "The frilled dragon"
     ],
@@ -9457,7 +9431,7 @@
     "choices": [
       "Each uses a completely different body part for the same result",
       "They all reuse the same wrist-membrane design",
-      "Each grew its wing from modified feathers",
+      "Each stretches its wing on long, splayed ribs",
       "They share one gliding organ inherited from a common ancestor"
     ],
     "context": "Because each glider evolved its 'wing' independently, they solved the same problem with completely different body parts — a skin flap (squirrel, colugo), giant fins (flying fish), elongated ribs (Draco), a flattened whole body (flying snake), and webbed feet (Wallace's frog) — five different anatomies, all producing the same falling-with-style result. This repeated independent solution is called convergent evolution. Gliding has evolved over and over among tree-dwelling animals (in mammals alone at least seven separate times), whereas true powered flight has evolved only four times: insects, pterosaurs, birds, and bats. Source: Wikipedia 'Convergent evolution'; Wikipedia 'Flying and gliding animals'.",
@@ -9465,7 +9439,7 @@
   },
   {
     "tier": 3,
-    "question": "A glider launches from a high trunk, wrapped in the most complete gliding membrane of any animal: a sail of skin from its neck to the tips of its fingers and toes and on down its tail. One was recorded gliding about 150 meters between trees. Which animal is it?",
+    "question": "A glider launches from a high trunk, spread on a sail of skin that runs from its neck to the tips of its fingers and toes and on down its tail. One was recorded gliding about 150 meters between trees. Which animal is it?",
     "answer": "The colugo",
     "choices": [
       "The colugo",
@@ -9473,7 +9447,7 @@
       "The sugar glider",
       "Wallace's flying frog"
     ],
-    "context": "The colugo's patagium is the most complete of any gliding animal, running from the neck to the very tips of the fingers, webbing between every finger and toe, and continuing to the tip of the tail. One colugo was recorded gliding about 150 meters (490 feet) in a single glide, barely losing altitude. A cat-sized animal, it can achieve a glide ratio better than 12 to 1. Legendary handle. Source: Wikipedia 'Colugo'; Natural History Museum, 'Colugos: expert gliders of the forest'.",
+    "context": "The colugo's patagium is among the most extensive of any gliding mammal, running from the neck to the very tips of the fingers, webbing between every finger and toe, and continuing to the tip of the tail. Colugos often glide about 70 meters between trees, and one Malayan colugo was recorded covering about 150 meters (490 feet) in a single glide. Source: Wikipedia 'Colugo'; Natural History Museum, 'Colugos: expert gliders of the forest'.",
     "topic": "gliding-not-flying"
   },
   {
@@ -9491,7 +9465,7 @@
   },
   {
     "tier": 5,
-    "question": "Small furred creatures leapt from tree to tree on wing-like skin in Jurassic forests near what is now Beijing, while dinosaurs still ruled. Their fossils, described in 2017 as Maiopatagium and Vilevolodon, preserve the gliding membranes. They were not yet mammals, only forerunners on the branch leading to them. What do they prove about gliding?",
+    "question": "Small furred creatures leapt from tree to tree on wing-like skin in Jurassic forests near what is now Beijing. Their fossils, described in 2017 as Maiopatagium and Vilevolodon, preserve the gliding membranes. Their describers placed them just outside the true mammals, as forerunners on the branch leading to them. What do they prove about gliding?",
     "answer": "Mammal ancestors were gliding roughly 100 million years before modern gliders",
     "choices": [
       "Mammal ancestors were gliding roughly 100 million years before modern gliders",
@@ -9499,7 +9473,7 @@
       "The earliest mammals could all fly under their own power",
       "Skin-membrane gliding evolved just once and was inherited by every glider"
     ],
-    "context": "Described in 2017 from the Tiaojishan Formation near Beijing, Maiopatagium furculiferum and Vilevolodon diplomylos are haramiyidans -- an extinct branch of mammal forerunners, not crown mammals. They preserve wing-like gliding membranes, long fingers, and tree-climbing limbs, showing the gliding, tree-dwelling way of life had already evolved about 100 million years before the first modern gliding mammals. Lead author Zhe-Xi Luo called them 'the first in glide.' The 'after the dinosaurs' choice is a trap: the Jurassic is deep in the age of dinosaurs, not after it. Source: Meng, Luo et al., Nature (2017), reported by University of Chicago News, 'First winged mammals from the Jurassic period discovered' -- https://news.uchicago.edu/story/first-winged-mammals-jurassic-period-discovered",
+    "context": "Described in 2017 from the Tiaojishan Formation near Beijing, Maiopatagium furculiferum and Vilevolodon diplomylos are haramiyidans, which their describers placed among the mammaliaforms, the forerunners of crown mammals (other studies put haramiyidans inside the mammals). They preserve wing-like gliding membranes, long fingers, and tree-climbing limbs, showing the gliding, tree-dwelling way of life had already evolved about 100 million years before the first modern gliding mammals. The Jurassic lies deep in the age of dinosaurs. Source: Meng, Luo et al., Nature (2017), reported by University of Chicago News, 'First winged mammals from the Jurassic period discovered' -- https://news.uchicago.edu/story/first-winged-mammals-jurassic-period-discovered",
     "topic": "gliding-not-flying"
   },
   {
@@ -9517,7 +9491,7 @@
   },
   {
     "tier": 2,
-    "question": "A beast the size of a Volkswagen Beetle lumbered across the grasslands of South America in the last ice age, its back sealed under a single great dome of bone. The biggest kind weighed around 2 tonnes. What was this armored giant?",
+    "question": "A beast the size of a small car lumbered across the grasslands of South America in the last ice age, its back sealed under a single great dome of bone. Estimates for the biggest run as high as 2 tonnes. What was this armored giant?",
     "answer": "the glyptodon",
     "choices": [
       "the glyptodon",
@@ -9525,7 +9499,7 @@
       "the woolly rhino",
       "the short-faced bear"
     ],
-    "context": "Glyptodon was an ice-age relative of the armadillo grown to about 3 metres long; the biggest species, G. clavipes, reached roughly 2 tonnes (about 4,400 lb) with its whole back hidden under a domed shell. Source: Wikipedia, Glyptodon (https://en.wikipedia.org/wiki/Glyptodon).",
+    "context": "Glyptodon was an ice-age relative of the armadillo that grew to about 3 metres long, its whole back hidden under a domed shell. Weight estimates vary widely, from several hundred kilograms up to about 2 tonnes for the largest. Source: Grokipedia 'Glyptodon'; Wikipedia, Glyptodon (https://en.wikipedia.org/wiki/Glyptodon).",
     "topic": "glyptodon"
   },
   {
@@ -9555,21 +9529,8 @@
     "topic": "glyptodon"
   },
   {
-    "tier": 3,
-    "question": "Archaeologists at Pay Paso 1, in Uruguay, found human spear points lying among the fossils of glyptodons, the dome-backed giants of ice-age South America. Researchers think the people who hunted them found a second use for the dead beasts. What did the empty shells become?",
-    "answer": "ready-made dome shelters from bad weather",
-    "choices": [
-      "ready-made dome shelters from bad weather",
-      "canoes for crossing rivers",
-      "grinding bowls for seeds",
-      "drums for signaling"
-    ],
-    "context": "At the Pay Paso 1 site in Uruguay, human spear points were found together with Glyptodon fossils, and researchers think early South Americans may have sheltered under the huge empty shells during bad weather -- a ready-made dome tent left by a dead giant. Source: Wikipedia, Glyptodon (https://en.wikipedia.org/wiki/Glyptodon).",
-    "topic": "glyptodon"
-  },
-  {
     "tier": 4,
-    "question": "Doedicurus, a cousin of the glyptodon, swung a tail tipped with a spiked club of bone that could hit with about 60 kilonewtons of force; roughly 4 will break a person's thigh bone. Many fossil glyptodont shells carry deep dents across the dome. What did scientists conclude the dents show?",
+    "question": "On the grasslands of ice-age South America, Doedicurus, a cousin of the glyptodon, swung a tail tipped with a spiked club of bone. Some fossil glyptodont shells carry cracks and dents across the dome. What did scientists conclude those marks show?",
     "answer": "they clubbed each other in fights",
     "choices": [
       "they clubbed each other in fights",
@@ -9577,12 +9538,12 @@
       "rockfall crushed the shells after burial",
       "disease pitted the bone from inside"
     ],
-    "context": "Doedicurus carried a tail-club that could deliver about 60 kilonewtons of force (it takes only about 4 kN to snap a human thigh bone). Some glyptodont shells carry dents that exactly match the size and shape of another glyptodont's tail club -- direct evidence these living tanks clubbed each other, likely in fights over mates or territory. Source: Prehistoric-wildlife.com, Doedicurus (https://www.prehistoric-wildlife.com/species/doedicurus/); TwilightBeasts, A home on the range (https://twilightbeasts.org/2014/09/11/a-home-on-the-range/).",
+    "context": "Doedicurus carried a rigid, spiked tail club. A 1999 study by Alexander, Farina and Vizcaino estimated the energy of such tail blows and linked them to fractures found on glyptodont carapaces, and damage on some shells fits blows from another glyptodont's tail -- evidence these living tanks clubbed each other, likely in fights over mates or territory. Source: Alexander, Farina & Vizcaino 1999, 'Tail blow energy and carapace fractures in a large glyptodont,' Zoological Journal of the Linnean Society 126:41-49; Wikipedia, Glyptodon; TwilightBeasts, A home on the range (https://twilightbeasts.org/2014/09/11/a-home-on-the-range/).",
     "topic": "glyptodon"
   },
   {
     "tier": 4,
-    "question": "A glyptodon carried a dome of about 1,800 bony plates on its back, each one some 2.5 centimeters thick. Fine X-ray scans show why one plate could take a heavy blow without cracking apart, and engineers who build armor now copy it. How was each plate built?",
+    "question": "A glyptodon carried a dome of about 1,800 bony plates on its back, each one some 2.5 centimeters thick. Fine X-ray scans show why one plate could take a heavy blow without cracking apart, and engineers designing light armor have studied it. How was each plate built?",
     "answer": "dense bone skins wrapped around a porous inner lattice",
     "choices": [
       "dense bone skins wrapped around a porous inner lattice",
@@ -9590,34 +9551,21 @@
       "interlocking hexagons that snap free one by one",
       "a thick cushion of fat sealed beneath the bone"
     ],
-    "context": "Each osteoderm was roughly 2.5 cm thick and built like an engineered sandwich panel: two dense outer layers of compact bone enclosing a porous inner lattice about 66% pore space, with struts only ~0.25 mm thick. That layout lets the plate soak up impact energy and stop a crack before it splits the whole plate (no catastrophic failure) -- exactly the property engineers copy for lightweight bio-inspired armor. Source: 'Analyzing nature's protective design: the glyptodont body armor,' J. Mech. Behav. Biomed. Mater. (2018), sciencedirect.com/science/article/abs/pii/S1751616118301656; corroborated via biomimetic-armor review literature and Glyptodon histology sources.",
+    "context": "Each osteoderm was roughly 2.5 cm thick and built like an engineered sandwich panel: two dense outer layers of compact bone enclosing a porous inner lattice about 66% pore space, with struts only ~0.25 mm thick. That layout lets the plate soak up impact energy and stop a crack before it splits the whole plate (no catastrophic failure) -- the property engineers study for lightweight bio-inspired armor. Source: 'Analyzing nature's protective design: the glyptodont body armor,' J. Mech. Behav. Biomed. Mater. (2018), sciencedirect.com/science/article/abs/pii/S1751616118301656; corroborated via biomimetic-armor review literature and Glyptodon histology sources.",
     "topic": "glyptodon"
   },
   {
     "tier": 5,
     "question": "Delsuc, Poinar and their colleagues pulled mitochondrial DNA from Doedicurus, a giant club-tailed glyptodont, in 2016, and it put the glyptodonts deep within the armadillo family tree. Tracing that branch back to its small common ancestor with living armadillos gave a second jolt. By what factor had the line's body mass grown?",
-    "answer": "more than 300-fold, to around two tonnes",
+    "answer": "More than 300-fold",
     "choices": [
-      "roughly 10-fold, to about 60 kilograms",
-      "roughly 50-fold, to about 300 kilograms",
-      "more than 300-fold, to around two tonnes",
-      "nearly 1,000-fold, to over five tonnes"
+      "Roughly 10-fold",
+      "Roughly 50-fold",
+      "More than 300-fold",
+      "Nearly 1,000-fold"
     ],
-    "context": "Delsuc, Poinar and colleagues sequenced the complete mitochondrial genome of Doedicurus, a giant club-tailed glyptodont. It nests deep inside the living armadillos, making glyptodonts the subfamily Glyptodontinae within family Chlamyphoridae, having split from other armadillos about 35 million years ago. The kicker: the last common ancestor of glyptodonts and modern armadillos weighed only about 6 kg, yet Pleistocene glyptodonts reached roughly 2,000 kg -- a more than 300-fold increase in body mass over that lineage. Source: Delsuc, Poinar et al., Current Biology 26(4):R155-R156 (2016), corroborated via Sci-News and ScienceDaily (2016/02/160222134051.htm).",
+    "context": "Delsuc, Poinar and colleagues sequenced the complete mitochondrial genome of Doedicurus, a giant club-tailed glyptodont. It nests deep inside the living armadillos, making glyptodonts the subfamily Glyptodontinae within family Chlamyphoridae, having split from other armadillos about 35 million years ago. The surprise: the last common ancestor of glyptodonts and modern armadillos weighed only about 6 kg, yet Pleistocene glyptodonts reached roughly 2,000 kg -- a more than 300-fold increase in body mass over that lineage. Source: Delsuc, Poinar et al., Current Biology 26(4):R155-R156 (2016), corroborated via Sci-News and ScienceDaily (2016/02/160222134051.htm).",
     "topic": "glyptodon"
-  },
-  {
-    "tier": 1,
-    "question": "Japanese fishermen hauled up a pale deep-sea shark with a long, blade-like snout. They gave it the name tenguzame, after the tengu, the red-faced, long-nosed goblin of Japanese folklore, and English-speaking scientists translated the name straight over. What is it called?",
-    "answer": "goblin shark",
-    "choices": [
-      "goblin shark",
-      "vampire squid",
-      "ghost catfish",
-      "demon stingray"
-    ],
-    "context": "'Tenguzame' (天狗鮫) honors the tengu, a red-faced long-nosed goblin of Japanese folklore; 'goblin shark' is a direct translation. Source: Wikipedia 'Goblin shark' (etymology); Florida Museum of Natural History profile.",
-    "topic": "goblin-shark-mitsukurina-owstoni"
   },
   {
     "tier": 1,
@@ -9653,14 +9601,14 @@
       "its huge oil-filled liver",
       "its air-filled swim bladder",
       "its water-logged spongy skeleton",
-      "its oversized fatty brain"
+      "its air-gulping stomach"
     ],
     "context": "The goblin shark's oil-filled liver can reach about a quarter of its body weight; the light oil makes it nearly neutrally buoyant, so this slow ambush predator can hover in the dark and drift toward prey. Sharks have no swim bladder. Source: Wikipedia 'Goblin shark'; Smithsonian Ocean.",
     "topic": "goblin-shark-mitsukurina-owstoni"
   },
   {
     "tier": 3,
-    "question": "When a goblin shark strikes, its whole mouth catapults out of its face and then snaps back flush against its head. In 2016 Nakaya's team studied footage of two wild goblin sharks feeding, shot by Japan's national broadcaster, and clocked the jaws at up to 3.1 meters per second. What record does that strike hold?",
+    "question": "When a goblin shark strikes, its whole mouth catapults out of its face and then snaps back flush against its head. In 2016 Nakaya's team studied footage of two wild goblin sharks feeding, shot by Japan's national broadcaster, and measured each strike frame by frame. What record did the jaws turn out to hold?",
     "answer": "the fastest jaw of any shark",
     "choices": [
       "the fastest jaw of any shark",
@@ -9668,33 +9616,20 @@
       "the widest gape of any deep-sea fish",
       "the longest teeth of any predatory shark"
     ],
-    "context": "At up to 3.1 m/s, the goblin shark's jaw protrusion is the fastest of any shark and the fastest jaw-protrusion speed ever recorded for a fish. LEGEND. Source: Nakaya et al. 2016, Scientific Reports 'Slingshot feeding of the goblin shark'; Hokkaido University press release.",
+    "context": "Nakaya's team measured the jaws shooting out at up to 3.1 m/s, to about 9% of the shark's length: by far the fastest and greatest jaw protrusion of any shark. Source: Nakaya et al. 2016, Scientific Reports 'Slingshot feeding of the goblin shark'; Hokkaido University press release.",
     "topic": "goblin-shark-mitsukurina-owstoni"
   },
   {
     "tier": 4,
-    "question": "A goblin shark's jaws shoot out toward its prey a distance of about 9 percent of its body length, flung forward by paired elastic ligaments at the jaw hinges. A jaw that pushes out like this is called protrusible. How protrusible are the goblin shark's jaws, compared with an ordinary shark's?",
-    "answer": "2 to 9 times more protrusible",
+    "question": "A goblin shark's jaws fly out from under its snout to seize prey, reaching about 9 percent of its body length, far beyond an ordinary shark's reach. Its muscles are weak and flabby, yet the jaws move in a flash. What helps fling them forward?",
+    "answer": "Stretched elastic ligaments at the jaw joint",
     "choices": [
-      "2 to 9 times more protrusible",
-      "only slightly, by about a tenth",
-      "exactly the same, just faster",
-      "less protrusible but far stronger"
+      "Stretched elastic ligaments at the jaw joint",
+      "A jet of water forced out through its gills",
+      "A gas-filled sac that swells behind the jaws",
+      "A rush of blood that stiffens the jaws"
     ],
-    "context": "The jaws shoot out 8.6-9.4% of the shark's body length, and are 2.1 to 9.5 times more protrusible than a normal shark's, sprung by a double set of elastic ligaments at the jaw joints. Source: Nakaya et al. 2016, Scientific Reports; Wikipedia 'Goblin shark' (jaw protrusion figures).",
-    "topic": "goblin-shark-mitsukurina-owstoni"
-  },
-  {
-    "tier": 4,
-    "question": "A goblin shark cruising the deep today is the last of its line, the sole living member of a shark family that goes back about 125 million years, to the age of the dinosaurs. When scientists first studied it, what did they mistake it for?",
-    "answer": "a long-extinct fossil shark, Scapanorhynchus",
-    "choices": [
-      "a long-extinct fossil shark, Scapanorhynchus",
-      "a young great white that had lost its color",
-      "a hybrid of a sawfish and a deep-sea eel",
-      "an ordinary sand tiger shark with a deformity"
-    ],
-    "context": "The goblin shark is the sole living member of Mitsukurinidae, a lineage ~125 million years old; early scientists confused it with the extinct fossil shark Scapanorhynchus. LEGEND. Source: Florida Museum of Natural History; Wikipedia 'Goblin shark'.",
+    "context": "Two pairs of elastic ligaments at the jaw joint help drive the strike: when the shark bites, they release their tension and catapult the jaws forward. Nakaya's 2016 film study measured the jaws shooting out to 8.6-9.4% of the shark's length, 2.1 to 9.5 times farther than in other sharks. Source: Wikipedia 'Goblin shark'; Nakaya et al. 2016, Scientific Reports.",
     "topic": "goblin-shark-mitsukurina-owstoni"
   },
   {
@@ -9707,46 +9642,46 @@
       "a filter feeder that strains drifting plankton from the water",
       "a bite-and-shake feeder that tears loose chunks of flesh"
     ],
-    "context": "The giveaway is timing and plumbing. A suction feeder snaps its gape open first to build a vacuum and would clamp its gill slits shut to hold that low pressure. The goblin shark does neither: it fully opens its gape, keeps the gill slits open the whole time (so water flows out, not in), and only THEN catapults the jaws. Nakaya's team measured the pressure inside the mouth staying positive, pushing water outward rather than sucking prey inward. So the fastest jaws of any shark are not a vacuum gun at all; they are a ram — the mouth lunges out and swallows the prey by overtaking it. The elastic launch is stored in stretched cartilage and ligament: the basihyal (tongue-support) cartilage is hauled back and down and the palatonasal ligament stretches to its maximum around 279 ms into the strike, then that tension snaps the jaws forward. Source: Nakaya et al. 2016, 'Slingshot feeding of the goblin shark Mitsukurina owstoni', Scientific Reports (PMC PMC4901258, https://pmc.ncbi.nlm.nih.gov/articles/PMC4901258/).",
+    "context": "The giveaway is timing and plumbing. A suction feeder snaps its gape open first to build a vacuum and would clamp its gill slits shut to hold that low pressure. The goblin shark does neither: it fully opens its gape, keeps the gill slits open the whole time (so water flows out, not in), and only THEN catapults the jaws. From the open gill slits, Nakaya's team inferred that the pressure inside the mouth stayed positive, pushing water outward rather than sucking prey inward. So the fastest jaws of any shark are not a vacuum gun at all; they are a ram — the mouth lunges out and swallows the prey by overtaking it. Source: Nakaya et al. 2016, 'Slingshot feeding of the goblin shark Mitsukurina owstoni', Scientific Reports (PMC PMC4901258, https://pmc.ncbi.nlm.nih.gov/articles/PMC4901258/).",
     "topic": "goblin-shark-mitsukurina-owstoni"
   },
   {
     "tier": 4,
     "question": "A goblin shark impales soft, slippery grenadiers and squid on its long, straight, lengthwise-grooved front fangs. But near the corners of its jaws sits a second, completely different set of teeth built for a different job. What are those rear teeth shaped to do?",
-    "answer": "crush hard-shelled prey like crabs",
+    "answer": "crush hard-shelled crustaceans",
     "choices": [
-      "crush hard-shelled prey like crabs",
-      "impale even larger slippery fish",
+      "crush hard-shelled crustaceans",
+      "slice chunks from large carcasses",
       "filter tiny plankton from the water",
-      "grip the seafloor while resting"
+      "grind up tough seafloor sponges"
     ],
-    "context": "One shark, two toolkits. The front (anterior) teeth are long, narrow, nearly straight fangs, finely grooved lengthwise, made to punch through and hold soft, slick deep-sea prey like grenadiers (rattail fish) and squid. But the posterior teeth near the jaw corners are small and flattened for crushing hard, shelled prey like crabs and other crustaceans. A single goblin shark can carry roughly 35-53 upper and 31-62 lower tooth rows across those two jobs. Source: Wikipedia 'Goblin shark' (https://en.wikipedia.org/wiki/Goblin_shark); diet corroborated by Yano et al.'s stomach-content survey of 121 specimens from Tokyo Submarine Canyon.",
+    "context": "One shark, two toolkits. The front (anterior) teeth are long, narrow, nearly straight fangs, finely grooved lengthwise, made to punch through and hold soft, slick deep-sea prey like grenadiers (rattail fish) and squid. But the posterior teeth near the jaw corners are small and flattened for crushing hard, shelled prey such as crustaceans (decapods and isopods). A single goblin shark can carry roughly 35-53 upper and 31-62 lower tooth rows across those two jobs. Source: Wikipedia 'Goblin shark' (https://en.wikipedia.org/wiki/Goblin_shark); diet corroborated by Yano et al.'s stomach-content survey of 121 specimens from Tokyo Submarine Canyon.",
     "topic": "goblin-shark-mitsukurina-owstoni"
   },
   {
     "tier": 1,
     "question": "A Goliath birdeater, the heaviest spider on Earth, creeps across a rainforest floor in northern South America. Its hairy body is as large as a man's fist; its outspread legs reach across a dinner plate. A full-grown one weighs about as much as what?",
-    "answer": "A young puppy",
+    "answer": "A large apple",
     "choices": [
-      "A young puppy",
+      "A large apple",
       "A single grape",
-      "A pair of scissors",
-      "A garden snail"
+      "A garden snail",
+      "A bag of sugar"
     ],
-    "context": "Theraphosa blondi tops out around 175 grams (6 oz) — the greatest mass of any spider. The giant huntsman spider has longer legs, but the Goliath wins on sheer bulk and body size. Source: https://en.wikipedia.org/wiki/Goliath_birdeater",
+    "context": "Theraphosa blondi tops out around 175 grams (6 oz), about as much as a large apple — the greatest mass of any spider. The giant huntsman spider has longer legs, but the Goliath wins on sheer bulk and body size. Source: https://en.wikipedia.org/wiki/Goliath_birdeater",
     "topic": "goliath-birdeater-the-biggest-spider-on-earth"
   },
   {
     "tier": 2,
     "question": "At night on the floor of a South American rainforest, a Goliath birdeater waits in silence, then pounces on whatever wanders past. Its name says it eats birds, but it seldom, if ever, catches one. What does it drag back to its burrow most often?",
-    "answer": "Earthworms and toads",
+    "answer": "Earthworms, insects and frogs",
     "choices": [
-      "Earthworms and toads",
-      "Hummingbird chicks",
-      "Roosting bats",
-      "Wandering scorpions"
+      "Earthworms, insects and frogs",
+      "Fallen fruit and seeds",
+      "Nectar sipped from flowers",
+      "Roosting bats"
     ],
-    "context": "On the forest floor it takes earthworms, insects, frogs, toads, lizards, and even small snakes and rodents — there are essentially no records of it regularly hunting birds. The 'birdeater' name came from Maria Sibylla Merian's 1705 engraving of a Suriname tarantula attacking a hummingbird; one famous picture stuck the myth to the whole species. Source: https://www.nationalgeographic.com/animals/invertebrates/facts/goliath-birdeater",
+    "context": "On the forest floor it mostly takes large arthropods such as insects, along with earthworms and amphibians such as frogs and toads, and now and then lizards, small snakes and rodents; it only rarely preys on birds. The 'birdeater' name came from Maria Sibylla Merian's 1705 engraving of a tarantula attacking a hummingbird; one famous picture stuck the myth to the whole species. Source: https://en.wikipedia.org/wiki/Goliath_birdeater ; https://www.nationalgeographic.com/animals/invertebrates/facts/goliath-birdeater",
     "topic": "goliath-birdeater-the-biggest-spider-on-earth"
   },
   {
@@ -9778,12 +9713,12 @@
   {
     "tier": 2,
     "question": "A goliath frog squats on a boulder amid the white water of a rainforest river in Cameroon, one of the few places it lives. It is the largest frog alive. About how big does a full-grown one get?",
-    "answer": "About the size and weight of a house cat",
+    "answer": "About the size of a house cat",
     "choices": [
-      "About the size and weight of a house cat",
+      "About the size of a house cat",
       "About the size of a mouse",
       "About the size of a large dog",
-      "About the size of a horse"
+      "About the size of a human hand"
     ],
     "context": "The goliath frog (Conraua goliath) can reach about 13 inches (34 cm) long and weigh up to 7.3 pounds (about 3.3 kg) -- roughly the size and weight of a house cat. It lives in southwestern Cameroon and Equatorial Guinea. Source: Wikipedia, Goliath frog; Britannica.",
     "topic": "goliath-frog"
@@ -9795,8 +9730,8 @@
     "choices": [
       "He opens his mouth and whistles",
       "He drums the water with his hind legs",
-      "He flashes a bright throat pouch",
-      "He builds a tower of stones"
+      "He clicks his jaws together loudly",
+      "He waves a webbed hind foot in the air"
     ],
     "context": "Despite being the largest frog on Earth, the goliath frog has no vocal sac and cannot make a loud croak. To attract a mate, the male opens his mouth and makes a whistling sound. Source: Animal Diversity Web; Wikipedia.",
     "topic": "goliath-frog"
@@ -9841,19 +9776,6 @@
     "topic": "gray-wolf"
   },
   {
-    "tier": 1,
-    "question": "Alone on the open Arctic tundra, a gray wolf tips its head back and lets loose a long howl, calling its scattered pack. No trees break the sound, and it rolls out across the flat white land. About how far can that one howl carry?",
-    "answer": "About 10 miles",
-    "choices": [
-      "About 10 miles",
-      "About half a mile",
-      "About 100 miles",
-      "About 30 feet"
-    ],
-    "context": "A wolf howl carries roughly 10 miles (16 km) across open tundra, and about 6 miles through forest where trees muffle it. Source: Britannica, 'Why Do Wolves Howl?'; coolwoodwildlifepark.com.",
-    "topic": "gray-wolf"
-  },
-  {
     "tier": 2,
     "question": "A storm rolls into a snowy northern forest and scatters a gray wolf pack among the trees. One wolf throws back its head and howls, and the others answer from far away. Besides bringing the pack back together, what else does a wolf's howling do?",
     "answer": "Warns rival packs to keep off the pack's territory",
@@ -9864,19 +9786,6 @@
       "Echoes off hills so the pack can map the terrain"
     ],
     "context": "Wolves howl to assemble the pack before and after a hunt, to relocate one another during a storm, and to warn neighboring packs to stay off their territory. Source: Smithsonian National Zoo; Wolf Conservation Center, 'Wolves and Howling'.",
-    "topic": "gray-wolf"
-  },
-  {
-    "tier": 2,
-    "question": "A gray wolf trots along the trail of a deer through a northern forest, mile after mile, hour after hour. A healthy deer would win a short sprint, but the wolf hunts by stamina. Roughly how far can a wolf on the trail of prey travel in one day?",
-    "answer": "More than 50 miles in a single day",
-    "choices": [
-      "More than 50 miles in a single day",
-      "About 3 miles in a single day",
-      "About 200 miles in a single day",
-      "Less than 1 mile in a single day"
-    ],
-    "context": "Wolves are endurance hunters, trotting at about 5 mph for hours and covering more than 50 miles in a day while tracking prey — one wolf chased a caribou for 5 miles, another a deer for 12. Source: Wolf Conservation Center, 'How Fast Do Wolves Run?'; Wikipedia, 'Hunting behavior of gray wolves'.",
     "topic": "gray-wolf"
   },
   {
@@ -9925,7 +9834,7 @@
     "choices": [
       "Browsed-down aspen and willow started growing tall again",
       "The rivers dried up as plants drank the water",
-      "Elk vanished entirely from the whole park",
+      "Beavers abandoned the streams for good",
       "Grass replaced every tree along the banks"
     ],
     "context": "With elk no longer lingering in open valleys, over-browsed willow and aspen recovered; taller willows let beavers return to build dams — a chain scientists call a trophic cascade. Researchers caution the effect is real but partly overstated, since drought, bears, and human hunting also thinned the elk. Source: Ripple & Beschta (2012), 'Trophic cascades in Yellowstone'; MeatEater Conservation.",
@@ -10193,7 +10102,7 @@
   },
   {
     "tier": 3,
-    "question": "A Greenland shark, the sluggish giant of the Arctic deep, hunts half a mile below the surface, in water no sunlight has ever reached. It is nearly blind, though eyes would be of little use there anyway. How does it find the prey it cannot see?",
+    "question": "A Greenland shark, the sluggish giant of the Arctic deep, hunts half a mile below the surface, where almost no sunlight reaches. It is nearly blind, though eyes would be of little use there anyway. How does it find the prey it cannot see?",
     "answer": "a powerful sense of smell",
     "choices": [
       "a powerful sense of smell",
@@ -10205,39 +10114,13 @@
     "topic": "greenland-shark-somniosus-microcephalus"
   },
   {
-    "tier": 2,
-    "question": "A Greenland shark swims through near-freezing Arctic water, its flesh loaded with urea and trimethylamine N-oxide (TMAO), chemicals that work as antifreeze. When a sled dog eats that flesh raw, the same chemicals do something dramatic. What does the raw meat do?",
-    "answer": "it acts as a poison",
-    "choices": [
-      "it acts as a poison",
-      "it turns the blood to jelly",
-      "it triggers a deep sleep",
-      "it corrodes the stomach lining"
-    ],
-    "context": "The urea and TMAO act like antifreeze in near-freezing water but make the raw meat poisonous; sled dogs that eat it can become unable to stand. Source: Wikipedia 'Greenland shark'.",
-    "topic": "greenland-shark-somniosus-microcephalus"
-  },
-  {
     "tier": 3,
-    "question": "A Greenland shark scavenges the near-freezing floor of the deep Arctic, swallowing almost anything that sinks down past its jaws. The stomachs of sharks caught by fishermen have held some startling meals. Which of these have turned up inside one?",
-    "answer": "moose, horse, reindeer, and even polar bears",
-    "choices": [
-      "moose, horse, reindeer, and even polar bears",
-      "musk oxen, walrus tusks, and caribou hides",
-      "beluga skulls, seal pups, and arctic fox pelts",
-      "sled dogs, harp seals, and narwhal ribs"
-    ],
-    "context": "Remains of moose, horse, reindeer, and even polar bears (thought to have died of other causes and then been scavenged) have been recovered from Greenland shark stomachs, showing this deep-sea giant will eat almost anything that sinks. Source: Wikipedia 'Greenland shark' (en.wikipedia.org/wiki/Greenland_shark).",
-    "topic": "greenland-shark-somniosus-microcephalus"
-  },
-  {
-    "tier": 3,
-    "question": "A Greenland shark creeps along at roughly a foot each second, slower than any other fish its size, and a healthy seal can swim more than ten times as fast. Yet fresh seal remains keep turning up in its stomach. How does so slow a shark catch a seal?",
+    "question": "A Greenland shark creeps along at roughly a foot each second, slower for its size than any other fish measured, and a healthy seal can easily outswim it. Yet fresh seal remains keep turning up in its stomach. How does so slow a shark catch a seal?",
     "answer": "it creeps up on seals asleep in the water",
     "choices": [
       "it creeps up on seals asleep in the water",
-      "it stampedes them into a wall of ice",
-      "it spits a jet of water to stun them",
+      "it herds them into shallow bays to trap them",
+      "it stuns them with a jolt of electricity",
       "it waits at breathing holes to ambush them"
     ],
     "context": "Scientists think the shark sneaks up on seals dozing in the water, where they sleep to hide from polar bears, only to be caught by the silent, creeping shark. Source: Watanabe et al. 2012, J. Exp. Marine Biology and Ecology; NBC News (nbcnews.com/id/wbna47952603); Live Science.",
@@ -10253,7 +10136,7 @@
       "it hardens into microscopic crystals that seal each protein away from the roaming urea",
       "it seeps into the skin so that predators taste the bitter poison and spit the shark back out"
     ],
-    "context": "The shark's flesh is a two-molecule pressure-armor system. Urea alone accumulates at a protein's surface and unfolds it, but TMAO (trimethylamine N-oxide) counteracts both urea's damage and the protein-crushing effect of deep-sea hydrostatic pressure, so TMAO concentration rises with depth. PNAS 2024 work shows TMAO physically strips urea out of the water shell around proteins. The same toxin that makes the raw meat deadly to humans is what keeps the shark's own proteins from unfolding in the freezing, high-pressure deep. Source: 'Trimethylamine-N-oxide depletes urea in a peptide solvation shell,' PNAS 2024 (pnas.org/doi/10.1073/pnas.2317825121); Yancey et al., 'Unusual organic osmolytes in deep-sea animals.'",
+    "context": "The shark's flesh is a two-molecule pressure-armor system. Urea alone accumulates at a protein's surface and unfolds it, but TMAO (trimethylamine N-oxide) counteracts both urea's damage and the protein-crushing effect of deep-sea hydrostatic pressure, so TMAO concentration rises with depth. PNAS 2024 work shows TMAO physically strips urea out of the water shell around proteins. The same chemistry that makes the raw meat toxic to eat is what keeps the shark's own proteins from unfolding in the freezing, high-pressure deep. Source: 'Trimethylamine-N-oxide depletes urea in a peptide solvation shell,' PNAS 2024 (pnas.org/doi/10.1073/pnas.2317825121); Yancey et al., 'Unusual organic osmolytes in deep-sea animals.'",
     "topic": "greenland-shark-somniosus-microcephalus"
   },
   {
@@ -10271,33 +10154,20 @@
   },
   {
     "tier": 2,
-    "question": "A gull hammers a crab with its beak on a rocky beach, and the crab comes through unhurt. It has no bones inside at all: its skeleton is a hard case of chitin and calcium on the outside, shielding it and anchoring its muscles. What is this outer skeleton called?",
-    "answer": "An exoskeleton",
-    "choices": [
-      "An exoskeleton",
-      "A carapace scale",
-      "A cartilage frame",
-      "A keratin plate"
-    ],
-    "context": "Arthropods (insects, crustaceans, arachnids) build their skeleton outward as a rigid shell of chitin. It protects the soft body and anchors the muscles, doing from the outside the job your bones do from the inside. Source: Britannica, Arthropod - Form and Function; EBSCO Exoskeletons research starter.",
-    "topic": "growing-by-molting-the-exoskeleton-problem"
-  },
-  {
-    "tier": 2,
     "question": "A young crab's hard shell guards it like a suit of armor, but once the shell has set, it cannot stretch even a millimeter. How does a crab locked inside such stiff armor manage to grow?",
-    "answer": "It sheds the whole shell and swells into a new, larger one before it hardens",
+    "answer": "It sheds the whole shell and swells into a bigger new one",
     "choices": [
-      "It sheds the whole shell and swells into a new, larger one before it hardens",
-      "It slowly dissolves the shell from the inside and reabsorbs it",
+      "It sheds the whole shell and swells into a bigger new one",
       "It grows extra shell around the seams to widen the fit",
-      "It stays the same size and simply lives longer instead"
+      "It moves into a bigger empty shell that it finds",
+      "It adds new rings of shell along the outer edges"
     ],
     "context": "This shedding is called molting, or ecdysis. Because a hardened exoskeleton cannot be enlarged, the animal grows a new soft skeleton underneath, climbs out of the old one, and puffs up to a bigger size before the new shell sets. Source: Britannica, Ecdysis; EBSCO Exoskeletons ('Once formed and hardened, an exoskeleton cannot be enlarged').",
     "topic": "growing-by-molting-the-exoskeleton-problem"
   },
   {
     "tier": 3,
-    "question": "After 13 or 17 years underground, a cicada nymph climbs a tree at night, splits open along its back and hauls itself out one leg at a time. Its new shell has not yet set, and its adult colors have not come in. What does the fresh cicada look like in those first hours?",
+    "question": "After 13 or 17 years underground, a periodical cicada nymph climbs a tree at night, splits open along its back and hauls itself out one leg at a time. Its new shell has not yet set, and its adult colors have not come in. What does the fresh cicada look like in those first hours?",
     "answer": "Soft and ghostly pale - often white or light green",
     "choices": [
       "Soft and ghostly pale - often white or light green",
@@ -10310,41 +10180,15 @@
   },
   {
     "tier": 3,
-    "question": "A cicada has crawled out of its old skin, and the empty brown shell stays hooked to the bark, a perfect hollow copy of the insect, empty leg-tips and all. Biologists have a proper name for this cast-off husk. What is it?",
-    "answer": "An exuvia",
+    "question": "A young garden spider spinning its web in a hedge loses one of its eight legs to a robin's beak. It will not stay seven-legged: spiders shed their whole outer skin to grow, and at its next molt a new leg appears. What is the new leg like at first?",
+    "answer": "It is smaller and paler, catching up over later molts",
     "choices": [
-      "An exuvia",
-      "A pupa",
-      "A chrysalis",
-      "A nymph"
-    ],
-    "context": "The empty molted skeleton is an exuvia (plural exuviae). It is the complete discarded exoskeleton, hollow but still shaped like the insect, including the hollow legs. Source: arhfoundation.org 'What Are the Shells Cast Off From Cicada Larva Called?'; MSU Extension Cicada Exuviae newsletter.",
-    "topic": "growing-by-molting-the-exoskeleton-problem"
-  },
-  {
-    "tier": 3,
-    "question": "A garden spider spinning its web in a hedge loses one of its eight legs to a robin's beak. It will not stay seven-legged: spiders shed their whole outer skin to grow, and at its next molt a new leg appears. What is odd about that new leg at first?",
-    "answer": "It emerges smaller and paler, then catches up to full size across later molts",
-    "choices": [
-      "It emerges smaller and paler, then catches up to full size across later molts",
+      "It is smaller and paler, catching up over later molts",
       "It comes back full-sized and fully colored right away",
       "It grows back longer than the leg it replaced",
-      "It grows back a different color than the rest of its legs"
+      "It grows back thicker and stronger than before"
     ],
     "context": "A spider can regenerate a lost leg at a molt. The new leg first emerges thinner, shorter, and paler than the original, then grows toward full size over the next two to four molts. Source: academicpath.org 'Can Spiders Regrow Legs'; pestwhisperer.com Spider Molting; NCBI PMC12211592.",
-    "topic": "growing-by-molting-the-exoskeleton-problem"
-  },
-  {
-    "tier": 3,
-    "question": "A young lobster on the seabed keeps outgrowing its hard shell of chitin and calcium, which cannot stretch. Each time, it must climb out of the old shell and grow a bigger one. In the first five to seven years of its life, about how many times does it molt?",
-    "answer": "About 25 times",
-    "choices": [
-      "About 25 times",
-      "About 3 times",
-      "About 100 times",
-      "About once a year, so 5 to 7 times"
-    ],
-    "context": "A lobster grows by molting again and again - shedding its shell around 25 times in the first 5 to 7 years - because the hard shell simply cannot stretch with the body. Source: NOAA Fisheries 'Fun Facts About Luscious Lobsters'; lobsteranywhere.com Lobster Molt.",
     "topic": "growing-by-molting-the-exoskeleton-problem"
   },
   {
@@ -10545,9 +10389,9 @@
   {
     "tier": 1,
     "question": "Far below the sunlit surface of the open ocean, a slim deep-sea eel with only tiny teeth drifts in the dark as a shrimp swims by. It cannot chase quick prey through the blackness. How does it snatch a meal in an instant?",
-    "answer": "Its whole head swells open like a soap bubble into a pouch bigger than its body",
+    "answer": "Its mouth balloons open into a pouch bigger than its body",
     "choices": [
-      "Its whole head swells open like a soap bubble into a pouch bigger than its body",
+      "Its mouth balloons open into a pouch bigger than its body",
       "It fires a jet of venom that stuns the passing shrimp",
       "It wraps its long tail around the prey and crushes it",
       "It buries itself in the seafloor mud to ambush from below"
@@ -10562,10 +10406,10 @@
     "choices": [
       "Small crustaceans it nets from the drifting water",
       "Other eels nearly as long as itself",
-      "Squid it drags down from shallower water",
+      "Jellyfish drifting through the dark",
       "Chunks of whale carcass fallen to the seafloor"
     ],
-    "context": "Despite its monstrous gape and tiny teeth, the pelican eel mostly eats small crustaceans -- the huge mouth is an all-purpose net for whatever rare meal drifts by, not a tool for swallowing big fish. Source: Wikipedia: Pelican eel (en.wikipedia.org/wiki/Pelican_eel).",
+    "context": "Despite its monstrous gape and tiny teeth, the pelican eel mostly eats small crustaceans, along with some squid and other small invertebrates -- the huge mouth is an all-purpose net for whatever rare meal drifts by, not a tool for swallowing big fish. Source: Wikipedia: Pelican eel (en.wikipedia.org/wiki/Pelican_eel).",
     "topic": "gulper-eel-pelican-eel-eurypharynx-pelecanoides"
   },
   {
@@ -10583,7 +10427,7 @@
   },
   {
     "tier": 3,
-    "question": "A pelican eel hangs in the dark water between 500 and 3,000 meters down, where food is scarce, and it does not sink. Yet it has no swim bladder, the gas-filled float most fish use. How does its body stay afloat?",
+    "question": "A pelican eel hangs in the dark water between 500 and 3,000 meters down, where food is scarce, and it does not sink. Yet it has no swim bladder, the gas-filled float most fish use. How is its body thought to stay afloat?",
     "answer": "Jelly-filled spaces around its backbone hold it up",
     "choices": [
       "Jelly-filled spaces around its backbone hold it up",
@@ -10591,31 +10435,31 @@
       "Broad oily fins that spread its weight across the water",
       "Constant slow swimming that keeps it from sinking"
     ],
-    "context": "The pelican eel has no swim bladder; instead of the gas-filled float most fish use, its body relies on gelatinous, jelly-filled spaces around the backbone to stay buoyant -- a cheap, low-energy body plan for a place where food is scarce. Source: Wikipedia: Pelican eel (en.wikipedia.org/wiki/Pelican_eel).",
+    "context": "The pelican eel has no swim bladder. A gelatinous substance fills spaces around its backbone, and scientists think it does the swim bladder's job of keeping the eel afloat -- a cheap, low-energy body plan for a place where food is scarce. Source: Wikipedia: Pelican eel (en.wikipedia.org/wiki/Pelican_eel).",
     "topic": "gulper-eel-pelican-eel-eurypharynx-pelecanoides"
   },
   {
     "tier": 1,
-    "question": "The horror frog, as people nickname the hairy frog, sits plump and harmless-looking on a wet leaf in Cameroon. Then a predator grabs it, and it fights back in a way no other animal is known to. What does it do?",
-    "answer": "It deliberately snaps the bones in its own toes and shoves the sharp ends out through its skin as claws",
+    "question": "The horror frog, as people nickname the hairy frog, sits plump and harmless-looking on a wet leaf in Cameroon. Then a predator grabs it, and it fights back in one of the strangest ways known in any animal. What does it do?",
+    "answer": "It breaks its own toe bones and pushes them out as claws",
     "choices": [
-      "It deliberately snaps the bones in its own toes and shoves the sharp ends out through its skin as claws",
-      "It inflates its whole body until the attacker cannot get its jaws around it",
-      "It squirts a jet of foul sticky slime from glands along its spine",
-      "It sheds its entire tail, which keeps twitching to distract the predator"
+      "It breaks its own toe bones and pushes them out as claws",
+      "It inflates its body until the attacker cannot bite it",
+      "It squirts foul, sticky slime from glands on its spine",
+      "It sheds its tail, which keeps twitching as a decoy"
     ],
-    "context": "This is why it earned the nicknames 'horror frog' and 'Wolverine frog.' At rest there are no claws to see at all; the frog literally wounds itself to arm itself when threatened. Source: en.wikipedia.org/wiki/Hairy_frog; Blackburn, Hanken & Jenkins 2008, 'Concealed weapons: erectile claws in African frogs,' Biology Letters.",
+    "context": "This is why it earned the nicknames 'horror frog' and 'Wolverine frog.' At rest there are no claws to see at all; the frog literally wounds itself to arm itself when threatened. A 2008 study of museum specimens found such claws in 11 African frog species. Source: en.wikipedia.org/wiki/Hairy_frog; Blackburn, Hanken & Jenkins 2008, 'Concealed weapons: erectile claws in African frogs,' Biology Letters.",
     "topic": "hairy-frog-the-frog-that-breaks-its-own-bones-into-claws"
   },
   {
     "tier": 2,
     "question": "When a predator grabs a hairy frog in Cameroon, sharp claws burst from its back feet. A cat's claw and an eagle's talon are each a bone inside a hard sheath of keratin. What are the hairy frog's claws made of?",
-    "answer": "Bare bone, just the frog's own sharpened toe-bones with no covering at all",
+    "answer": "Bare bone, its own toe-bones with no sheath",
     "choices": [
-      "Bare bone, just the frog's own sharpened toe-bones with no covering at all",
-      "A cluster of stiffened hairs matted together with dried slime",
-      "Curved spurs of thick keratin like a rooster grows on its leg",
-      "Hollow quills that snap off in the wound and grow back later"
+      "Bare bone, its own toe-bones with no sheath",
+      "Stiffened hairs matted together with dried slime",
+      "Curved spurs of keratin like a rooster's",
+      "Hollow quills that snap off in the wound"
     ],
     "context": "Unlike a cat's or a bird's claw, the hairy frog's claws have no hard outer sheath. They are simply the frog's own toe-bones, sharpened and punched out raw through the skin of the foot. Source: en.wikipedia.org/wiki/Hairy_frog; Blackburn et al. 2008, Biology Letters.",
     "topic": "hairy-frog-the-frog-that-breaks-its-own-bones-into-claws"
@@ -10635,7 +10479,7 @@
   },
   {
     "tier": 3,
-    "question": "Scientists have filmed under X-ray machines exactly how the claws of a threatened hairy frog, a plump frog of Cameroon's rainforest streams, pop out of its hind feet. One part of the trick still has them stumped. What is it?",
+    "question": "Scientists studying museum specimens of the hairy frog, a plump frog of Cameroon's rainforest streams, have worked out how its claws are pushed out of its hind feet when it is threatened. One part of the trick still has them stumped. What is it?",
     "answer": "How the claw ever goes back in once the danger has passed",
     "choices": [
       "How the claw ever goes back in once the danger has passed",
@@ -10682,7 +10526,7 @@
       "Horseshoe crabs",
       "Tardigrades"
     ],
-    "context": "The nested-cone claws match those of today's velvet worms (onychophorans), soft caterpillar-like animals. Hallucigenia sits near the base of the lineage that also led to insects, spiders, and crustaceans. It remains the classic textbook lesson in how hard the strangest Cambrian fossils are to read. Source: Smith and Caron 2015, Nature; ROM; Wikipedia.",
+    "context": "The nested-cone claws match those of today's velvet worms (onychophorans), soft caterpillar-like animals. Hallucigenia sits near the base of the lineage that also led to insects, spiders, and crustaceans. It remains the classic textbook lesson in how hard the strangest Cambrian fossils are to read. Source: Smith & Ortega-Hernandez 2014, Nature 514:363, 'Hallucigenia's onychophoran-like claws and the case for Tactopoda'; ROM; Wikipedia.",
     "topic": "hallucigenia"
   },
   {
@@ -10843,7 +10687,7 @@
   },
   {
     "tier": 3,
-    "question": "Handfish live on just a few patches of seafloor off Tasmania, and once a reef's handfish are gone, new ones almost never arrive, while an ordinary reef emptied of fish fills again in time. Biologists trace the difference to one quirk of how a handfish comes into the world. What is that quirk?",
+    "question": "Spotted handfish live on just a few patches of seafloor off Tasmania, and once a reef's handfish are gone, new ones almost never arrive, while an ordinary reef emptied of fish fills again in time. Biologists trace the difference to one quirk of how a handfish comes into the world. What is that quirk?",
     "answer": "Its young hatch as tiny walkers that never drift out",
     "choices": [
       "Its young hatch as tiny walkers that never drift out",
@@ -10851,7 +10695,7 @@
       "Its females spawn just one clutch in an entire lifetime",
       "Its eggs need a warm current no other reef can supply"
     ],
-    "context": "Handfish have no free-swimming larval stage: the eggs hatch directly into fully-formed miniature adults that drop onto the sand and start walking. Because no larvae drift on the current, a wiped-out reef gets no settlers from anywhere else — the very trait that makes it wondrous also makes it fragile. Handfish also spawn every year, and hatchlings can settle wherever they drop, so the other explanations do not hold. Source: https://en.wikipedia.org/wiki/Handfish",
+    "context": "Handfish have no free-swimming larval stage: the eggs hatch directly into fully-formed miniature adults that drop onto the sand and start walking. Because no larvae drift on the current, a wiped-out reef gets no settlers from anywhere else — the very trait that makes it wondrous also makes it fragile. Handfish also spawn every year, and their hatchlings settle wherever they drop. Source: https://en.wikipedia.org/wiki/Handfish",
     "topic": "handfish-brachionichthyidae"
   },
   {
@@ -10882,7 +10726,7 @@
   },
   {
     "tier": 3,
-    "question": "A howler monkey clings to a branch high in the canopy as a harpy eagle drops on it. Yet in one Panama study, monkeys were not the harpy's main meal: a single kind of prey accounted for 79 percent of all it ate. What was it?",
+    "question": "A howler monkey clings to a branch high in the canopy as a harpy eagle drops on it. Yet in one study at a nest in Brazil's Amazon, monkeys were not the harpy's main meal: a single kind of prey made up 79 percent of all it ate. What was it?",
     "answer": "Sloths",
     "choices": [
       "Sloths",
@@ -10890,7 +10734,7 @@
       "Fish",
       "Deer"
     ],
-    "context": "In one study, sloths made up 79% of the harpy eagle's prey. It plucks sloths and monkeys straight off the branches, and a female can grab prey nearly her own weight and fly off without ever landing. Source: en.wikipedia.org/wiki/Harpy_eagle.",
+    "context": "At one nest studied at Parintins, in Brazil's Amazon, sloths made up 79% of the harpy eagles' prey. A harpy plucks sloths and monkeys straight off the branches and can carry off prey up to about half its own weight. Source: en.wikipedia.org/wiki/Harpy_eagle.",
     "topic": "harpy-eagle"
   },
   {
@@ -10908,13 +10752,13 @@
   },
   {
     "tier": 4,
-    "question": "When a pair of harpy eagles, the giant hunters of the Amazon canopy, vanishes from a patch of forest, that forest's harpy population can take years to recover, because harpies breed so slowly. How often does a harpy pair raise a chick?",
+    "question": "When a pair of harpy eagles, the giant hunters of the Amazon canopy, vanishes from a patch of forest, that forest's harpy population can take many years to recover, even with plenty of sloths and monkeys left to hunt. How often does a harpy pair raise a chick?",
     "answer": "Just one chick every 2-3 years",
     "choices": [
       "Just one chick every 2-3 years",
-      "A brood of six every spring",
-      "Several chicks every year",
-      "A new chick every single month"
+      "One chick every single year",
+      "Two chicks raised every year",
+      "A clutch of four each spring"
     ],
     "context": "A harpy eagle pair raises just one chick every 2-3 years -- one of the slowest reproduction rates of any eagle -- which is why the species is so vulnerable to habitat loss. Source: en.wikipedia.org/wiki/Harpy_eagle; Audubon.",
     "topic": "harpy-eagle"
@@ -10926,10 +10770,10 @@
     "choices": [
       "Shines rows of lights along its belly",
       "Squirts a cloud of black ink",
-      "Buries itself in the sandy bottom",
+      "Folds its fins to shrink its outline",
       "Turns its skin bright coral red"
     ],
-    "context": "This is called counter-illumination. Rows of light organs (photophores) along the hatchetfish's belly glow pale blue and shine downward, matching the faint sunlight from above so a predator looking up sees only background light and no dark silhouette. In the open ocean the best way to vanish isn't to be dark — it's to make your own light. Sources: https://twilightzone.whoi.edu/explore-the-otz/creature-features/hatchetfish/ ; https://en.wikipedia.org/wiki/Marine_hatchetfish",
+    "context": "This is called counter-illumination. Rows of light organs (photophores) along the hatchetfish's belly glow pale blue and shine downward, matching the faint sunlight from above so a predator looking up sees only background light and no dark silhouette. In the open ocean the best way to vanish is not to be dark but to make light of its own. Sources: https://twilightzone.whoi.edu/explore-the-otz/creature-features/hatchetfish/ ; https://en.wikipedia.org/wiki/Marine_hatchetfish",
     "topic": "hatchetfish-sternoptychidae"
   },
   {
@@ -10947,7 +10791,7 @@
   },
   {
     "tier": 2,
-    "question": "A hatchetfish hunts in the dim twilight zone, far below the ocean surface. Its eyes are nothing like the round domes most fish carry on the sides of their heads, and their odd form is a clue to how it finds food. What shape are they?",
+    "question": "A hatchetfish of the genus Argyropelecus hunts in the dim twilight zone. Its eyes are nothing like the round domes most fish carry on the sides of their heads, and their odd form is a clue to how it finds food. What shape are they?",
     "answer": "Tube-shaped, pointing straight up",
     "choices": [
       "Tube-shaped, pointing straight up",
@@ -10955,12 +10799,12 @@
       "Ringed with glowing dots",
       "Split into dozens of tiny lenses"
     ],
-    "context": "The hatchetfish has huge tube-shaped eyes that point straight up, so it stares at the dim glow above and spots prey by their dark silhouettes drifting overhead — hunting for shadows against the light, the very same weakness its own glowing belly hides from below. Source: https://en.wikipedia.org/wiki/Marine_hatchetfish",
+    "context": "Many hatchetfish, most strikingly those of the genus Argyropelecus, have huge tube-shaped eyes that point straight up. Such a fish stares at the dim glow above and spots prey by their dark silhouettes drifting overhead — hunting for shadows against the light, the very same weakness its own glowing belly hides from below. Source: https://en.wikipedia.org/wiki/Marine_hatchetfish",
     "topic": "hatchetfish-sternoptychidae"
   },
   {
     "tier": 3,
-    "question": "Deep-sea hatchetfish rise each night toward the ocean surface to feed, then sink back into the black twilight zone by dawn. The whole way, the pale-blue lights on a hatchetfish's underside keep glowing. What does it do with those lights on the journey?",
+    "question": "Some deep-sea hatchetfish rise each night toward the ocean surface to feed, then sink back into the black twilight zone by dawn. The whole way, the pale-blue lights on a hatchetfish's underside keep glowing. What does it do with those lights on the journey?",
     "answer": "Turns them up and down like a dimmer switch",
     "choices": [
       "Turns them up and down like a dimmer switch",
@@ -10968,7 +10812,7 @@
       "Swaps their color from blue to green",
       "Pulses them in time with its heartbeat"
     ],
-    "context": "The hatchetfish rides a daily vertical migration, rising at night to feed on copepods, ostracods, and fish larvae and sinking back down by dawn. It turns its pale-blue belly lights up or down like a dimmer switch to track the changing brightness of the water, so it keeps erasing its own shadow the whole way. Being able to regulate that intensity gives it an edge over other twilight-zone fish using the same camouflage. Source: https://twilightzone.whoi.edu/explore-the-otz/creature-features/hatchetfish/",
+    "context": "Some hatchetfish species ride a daily vertical migration, rising at night to feed on copepods, ostracods, and fish larvae and sinking back down by dawn. A migrating hatchetfish turns its pale-blue belly lights up or down like a dimmer switch to track the changing brightness of the water, so it keeps erasing its own shadow the whole way. Being able to regulate that intensity gives it an edge over other twilight-zone fish using the same camouflage. Source: https://twilightzone.whoi.edu/explore-the-otz/creature-features/hatchetfish/",
     "topic": "hatchetfish-sternoptychidae"
   },
   {
@@ -11000,27 +10844,14 @@
   {
     "tier": 3,
     "question": "A penguin waddles across the Antarctic sea ice, and inside each leg, blood heading down to its feet, still hot from its body, passes right alongside chilled blood flowing back up. The two streams run side by side in opposite directions. How does that help the penguin?",
-    "answer": "the warm blood hands its heat to the returning blood, recycling it",
+    "answer": "the warm blood hands its heat to the blood coming back",
     "choices": [
-      "the warm blood hands its heat to the returning blood, recycling it",
+      "the warm blood hands its heat to the blood coming back",
       "the veins keep the arteries from freezing solid",
       "it lets the leg pump blood without a heartbeat",
-      "it warms the cold blood so the feet stay toasty"
+      "it keeps the feet as warm as the chest"
     ],
     "context": "This is countercurrent heat exchange: warm blood flowing out runs against cold blood flowing in, and heat leaks across from one to the other, so it is recycled back into the body instead of being flushed out to the freezing feet. Herons and ducks stand for hours in near-freezing water using the same leg bundles. Source: Britannica Blog, 'Penguin Feet'; Biology Insights, 'How Do Penguins Stay Warm'.",
-    "topic": "heat-exchange-plumbing-countercurrent"
-  },
-  {
-    "tier": 4,
-    "question": "A tuna races through a cold sea with its swimming muscles running warm. Where warm blood leaves the muscle, it meets the cold blood flowing in and passes its heat across before the gills can lose it. Anatomists named that dense web of vessels the rete mirabile. What does the Latin name mean?",
-    "answer": "wonderful net",
-    "choices": [
-      "wonderful net",
-      "muscle furnace",
-      "warm heart",
-      "deep coil"
-    ],
-    "context": "The structure is the rete mirabile, Latin for 'wonderful net': warm blood leaving the muscle runs against cold blood coming in and hands its heat back, so the warmth is recycled rather than flushed out the gills. Source: American Scientist, 'How Tunas and Lamnid Sharks Swim'; Wikipedia, 'Rete mirabile'.",
     "topic": "heat-exchange-plumbing-countercurrent"
   },
   {
@@ -11033,7 +10864,7 @@
       "its eyes glow to lure prey in the dark",
       "it never needs to blink while hunting"
     ],
-    "context": "A heated retina responds faster, so the swordfish catches quick-flitting prey a cold-eyed fish would miss. Source: Fritsches, Brill & Warrant, 'Warm Eyes Provide Superior Vision in Swordfishes', Current Biology 2005; Science AAAS, 'Hot Eyes for Cold Fish'. (Legend-tier wonder.)",
+    "context": "A heated retina responds faster, so the swordfish catches quick-flitting prey a cold-eyed fish would miss. Source: Fritsches, Brill & Warrant, 'Warm Eyes Provide Superior Vision in Swordfishes', Current Biology 2005; Science AAAS, 'Hot Eyes for Cold Fish'.",
     "topic": "heat-exchange-plumbing-countercurrent"
   },
   {
@@ -11051,19 +10882,6 @@
   },
   {
     "tier": 5,
-    "question": "A biologist comparing tuna with the great white's family of sharks finds that these distant relatives each evolved the same warm-muscle plumbing separately, and that penguins and reindeer landed on that very solution independently. What does she call this pattern?",
-    "answer": "convergent evolution",
-    "choices": [
-      "convergent evolution",
-      "genetic drift",
-      "sexual selection",
-      "adaptive radiation"
-    ],
-    "context": "Convergent evolution is when unrelated lineages independently arrive at the same solution; keeping warm blood next to cold blood is such a good idea that evolution stumbled onto it separately in fish, birds and mammals. Genetic drift is random allele change, sexual selection is mate-driven, and adaptive radiation is one lineage fanning into many niches. Source: American Scientist, 'How Tunas and Lamnid Sharks Swim: An Evolutionary Convergence'.",
-    "topic": "heat-exchange-plumbing-countercurrent"
-  },
-  {
-    "tier": 5,
     "question": "A whale swimming hard through cold ocean water builds up dangerous heat inside its huge working muscles. Only the flippers and tail flukes are thin and bare-skinned, with no blubber over them. When the whale starts to overheat, what does it do with its flukes?",
     "answer": "floods them with warm blood so heat pours into the water",
     "choices": [
@@ -11076,26 +10894,13 @@
     "topic": "heat-exchange-plumbing-countercurrent"
   },
   {
-    "tier": 5,
-    "question": "A fish holds steady in a cold stream, water flowing across its gill filaments one way while the blood inside them runs the opposite way, the same countercurrent plan that saves a penguin's heat. How much of the water's oxygen does the blood take up?",
-    "answer": "90% of the oxygen in the water",
-    "choices": [
-      "90% of the oxygen in the water",
-      "30% of the oxygen in the water",
-      "half the oxygen, then the rest at the tail",
-      "only what the fish can gulp at the surface"
-    ],
-    "context": "If blood and water flowed the SAME way they would quickly reach a stalemate; flowing opposite, the blood keeps meeting richer water and pulls out up to ~90% of its oxygen. Source: FishBIO, 'An efficient exchange: countercurrent oxygen exchange in fish'; AskNature, 'Gills Exchange Oxygen Efficiently'.",
-    "topic": "heat-exchange-plumbing-countercurrent"
-  },
-  {
     "tier": 4,
-    "question": "An opah, a round, silver fish of the deep sea, flaps its wing-like fins without stopping and holds the heat in with nets of vessels wrapped in fat, right inside its gills. Tuna and sharks warm only patches of their bodies, while the heart stays cold. In 2015 scientists found the opah broke that pattern. What did it turn out to be?",
+    "question": "An opah, a round, silver fish of the deep sea, flaps its wing-like fins without stopping. Tuna and some sharks warm only certain parts of their bodies, such as the swimming muscles. In 2015 scientists measured the opah. What did they find it to be?",
     "answer": "warm right through, heart and all",
     "choices": [
       "warm right through, heart and all",
       "warm only along its spine",
-      "cold except for its glowing eyes",
+      "warm only in its eyes and brain",
       "warm only after a fast burst of swimming"
     ],
     "context": "The opah (Lampris guttatus) is the first fish shown to be whole-body endothermic -- warm all over, heart included, not just in isolated muscle, eye or brain patches like tuna and sharks. It makes heat by constantly flapping its wing-like pectoral fins, then holds that heat in with counter-current vessel nets (retia) sitting right inside its gills -- the one place warm blood would normally dump all its heat straight into the sea. Those gill retia are wrapped in a fat layer with less than half the thermal conductivity of ordinary tissue, insulating the exchanger and letting the opah stay roughly 5 degrees C warmer than the cold water it hunts in. Source: Wegner, N.C., Snodgrass, O.E., Dewar, H. & Hyde, J.R. (2015) 'Whole-body endothermy in a mesopelagic fish, the opah, Lampris guttatus', Science 348(6236):786-790 (DOI 10.1126/science.aaa8902); National Geographic, 'Meet the Comical Opah, the Only Truly Warm-Blooded Fish'.",
@@ -11111,7 +10916,7 @@
       "the sluggish blood simply gives the gas more soak time",
       "a vast folded surface lets more gas cross at once"
     ],
-    "context": "The gill rete is a simple countercurrent EXCHANGER -- it just recovers heat or oxygen as two bloodstreams pass in opposite directions. The swim-bladder rete does something far stronger: it is a countercurrent MULTIPLIER. Oxygen unloaded on the outgoing venous side back-diffuses across onto the incoming artery, where it reloads onto hemoglobin; because that returned gas is added on top of what the artery already carries, each pass compounds the concentration, and the small single-step difference stacks up over and over along the long parallel capillaries. It is driven by the Root effect -- lactic acid from the gas gland acidifies the blood and forces its hemoglobin to dump oxygen -- and this compounding is what lets deep-sea fish secrete oxygen into the bladder against pressures up to about 380 atmospheres, starting from a partial pressure near 0.2 atmospheres in the water. No ATP pump, no extra surface, no slowed flow does this: it is pure recompounding geometry. Source: Wikipedia 'Rete mirabile' (rete pumps O2 from a partial pressure near 0.2 atm into a bladder at hundreds of atmospheres; Root effect drives back-diffusion so arterial O2 compounds until it exceeds bladder pressure); Pelster, PMC10209234 'The rete mirabile: a possible control site for swimbladder function'; PLOS One 2012, 'O2-Filled Swimbladder Employs Monocarboxylate Transporters ... Lactate-Induced Root Effect Hemoglobin'.",
+    "context": "The gill rete is a simple countercurrent EXCHANGER -- it just recovers heat or oxygen as two bloodstreams pass in opposite directions. The swim-bladder rete does something far stronger: it is a countercurrent MULTIPLIER. Oxygen unloaded on the outgoing venous side back-diffuses across onto the incoming artery, where it reloads onto hemoglobin; because that returned gas is added on top of what the artery already carries, each pass compounds the concentration, and the small single-step difference stacks up over and over along the long parallel capillaries. It is driven by the Root effect -- lactic acid from the gas gland acidifies the blood and forces its hemoglobin to dump oxygen -- and this compounding is what lets deep-sea fish secrete oxygen into the bladder against pressures of hundreds of atmospheres, starting from a partial pressure near 0.2 atmospheres in the water. No ATP pump, no extra surface, no slowed flow does this: it is pure recompounding geometry. Source: Wikipedia 'Rete mirabile' (rete pumps O2 from a partial pressure near 0.2 atm into a bladder at hundreds of atmospheres; Root effect drives back-diffusion so arterial O2 compounds until it exceeds bladder pressure); Pelster, PMC10209234 'The rete mirabile: a possible control site for swimbladder function'; PLOS One 2012, 'O2-Filled Swimbladder Employs Monocarboxylate Transporters ... Lactate-Induced Root Effect Hemoglobin'.",
     "topic": "heat-exchange-plumbing-countercurrent"
   },
   {
@@ -11194,15 +10999,15 @@
   },
   {
     "tier": 1,
-    "question": "Under a flat rock in a rushing Appalachian stream hides the largest salamander in North America, nearly two feet long, its skin draped in ruffled layers down each side. Locals gave it a whole zoo of folk names over the years. Which one really stuck?",
-    "answer": "Lasagna lizard",
+    "question": "Under a flat rock in a rushing Appalachian stream hides the largest salamander in North America, growing past two feet long, its baggy skin hanging in ruffled folds. Locals have called it the snot otter and the lasagna lizard. Which salamander is it?",
+    "answer": "The hellbender",
     "choices": [
-      "Lasagna lizard",
-      "Bristle toad",
-      "Mud minnow",
-      "River newt"
+      "The hellbender",
+      "The mudpuppy",
+      "The tiger salamander",
+      "The axolotl"
     ],
-    "context": "The hellbender (Cryptobranchus alleganiensis) earned a whole pile of folk names: 'lasagna lizard' for its ruffled, layered skin folds, plus 'snot otter' for its slimy skin, 'devil dog,' 'mud devil,' and 'Allegheny alligator.' Source: https://en.wikipedia.org/wiki/Hellbender",
+    "context": "The hellbender (Cryptobranchus alleganiensis) is the largest salamander in North America, about 30 to 74 cm long. Its ruffled, layered skin folds earned it folk names such as 'lasagna lizard', and its slimy skin 'snot otter', along with 'devil dog,' 'mud devil,' and 'Allegheny alligator.' Source: https://en.wikipedia.org/wiki/Hellbender",
     "topic": "hellbender-the-giant-snot-otter-that-breathes-through-wrinkl"
   },
   {
@@ -11211,7 +11016,7 @@
     "answer": "It hangs in loose, baggy wrinkles and side-folds",
     "choices": [
       "It hangs in loose, baggy wrinkles and side-folds",
-      "It is packed with dense capillary beds just under the surface",
+      "It is coated in fine scales that trap a film of water",
       "It secretes a thin mucus film that traps dissolved oxygen",
       "It is riddled with microscopic pores like a sponge"
     ],
@@ -11238,7 +11043,7 @@
     "choices": [
       "His back, above the wing-covers",
       "His head, between the eyes",
-      "His jaws, like a beetle's mandibles",
+      "His jaws, like a stag beetle's",
       "The underside of his belly"
     ],
     "context": "Most of that seven-inch record length is horn, not body. A male grows a smaller horn jutting up from his head and a much larger one arching down from his back (the pronotum); the two meet like a giant pincer. Only males grow them. Source: https://en.wikipedia.org/wiki/Hercules_beetle",
@@ -11260,9 +11065,9 @@
   {
     "tier": 3,
     "question": "In a Central American rainforest, a Hercules beetle, one of the largest beetles on Earth, wears hard wing covers that shine olive-green or pale yellow one hour and turn nearly black the next. Later they turn pale again. What flips its color back and forth like that?",
-    "answer": "Rising humidity in the air around it",
+    "answer": "The humidity of the air around it",
     "choices": [
-      "Rising humidity in the air around it",
+      "The humidity of the air around it",
       "The beetle growing older",
       "A fresh meal of tree sap",
       "A flash of a threat display"
@@ -11278,7 +11083,7 @@
       "It grows heavier than the adult beetle",
       "It is far smaller than the adult",
       "It has tiny working horns already",
-      "It is see-through with no color"
+      "It is about the same size as the adult"
     ],
     "context": "A Hercules beetle larva can reach about 4.5 inches (11 cm) long and weigh over 100 grams, heavier than the horned adult it becomes. The giant adult is the short chapter: after years underground it lives only about three to six months, sipping sap and fruit. Source: https://en.wikipedia.org/wiki/Hercules_beetle",
     "topic": "hercules-beetle"
