@@ -460,23 +460,29 @@ class DivineMixin:
             self.add_message("The magical water restores you fully!", 'success')
             self.player.restore_hp(self.player.max_hp)
             self.player.restore_sp(50)
-        elif chain == 4:
+        elif chain >= 4:
+            # Chain 5 is chain 4 and a stat: it used to give the stat and
+            # full health only, less than chain 4 (no stamina, no cure).
             self.player.restore_hp(self.player.max_hp)
             self.player.restore_sp(self.player.max_sp)
             for eff in list(self.player.status_effects.keys()):
                 if eff in ('poisoned', 'diseased', 'bleeding', 'burning', 'confused', 'blinded', 'corroding'):
                     del self.player.status_effects[eff]
-            self.add_message("Divine water purifies you! All ailments are cured!", 'success')
-        elif chain >= 5:
-            stat = _rng.choice(['STR', 'CON', 'DEX', 'INT', 'WIS', 'PER'])
-            _gained = self.player.gain_fortune_stat(stat, 1)
-            self.player.restore_hp(self.player.max_hp)     # after: a CON point adds health
-            if _gained:
-                self.add_message(f"The fountain glows with divine light! +1 {stat}!", 'success')
+            if chain == 4:
+                self.add_message("Divine water purifies you! All ailments are cured!", 'success')
             else:
-                self.add_message(
-                    "The fountain glows with divine light and makes you whole. "
-                    "It has no more than that to give you.", 'success')
+                stat = _rng.choice(['STR', 'CON', 'DEX', 'INT', 'WIS', 'PER'])
+                _gained = self.player.gain_fortune_stat(stat, 1)
+                # After: a CON point adds health, a STR point stamina.
+                self.player.restore_hp(self.player.max_hp)
+                self.player.restore_sp(self.player.max_sp)
+                if _gained:
+                    self.add_message(f"The fountain glows with divine light! +1 {stat}! "
+                                     "All ailments are cured!", 'success')
+                else:
+                    self.add_message(
+                        "The fountain glows with divine light, cures every ailment and "
+                        "makes you whole. It has no more than that to give you.", 'success')
 
         # 33% chance fountain dries up after use. Ariadne's fountain never
         # does: drying it before the Bronze Bull is offered would lock the
@@ -861,7 +867,11 @@ class DivineMixin:
                 self.add_message("The throne does not care for pretenders. Two shapes step out of the dark to say so!", 'danger')
                 for _ in range(2):
                     self._spawn_at(px, py)
-        elif chain == 1:
+        # A ladder, not a menu: each chain gives what every chain below it
+        # gives, and its own gift on top. One gift per chain made chain 5
+        # (once the run's fortune stats were spent) a heal against chain 4's
+        # +5-15 max HP, and chain 4 no gold, healing or insight.
+        if chain >= 1:
             import economy
             gold = economy.roll_share(_rng, self.dungeon_level, economy.THRONE_SHARE)
             self.add_message(f"You find {gold:,} gold wedged in the cushions.", 'success')
@@ -874,10 +884,10 @@ class DivineMixin:
                     self.ground_items.append(gem)
                     self.add_message(f"A stone comes loose from the armrest: {self._display_name(gem)}.",
                                      'loot')
-        elif chain == 2:
+        if chain >= 2:
             self.player.restore_hp(max(20, self.player.max_hp // 5))
             self.add_message("The throne's enchantment heals your wounds!", 'success')
-        elif chain == 3:
+        if chain >= 3:
             count = 0
             for item in list(self.player.inventory):
                 if self._needs_identify(item):
@@ -893,14 +903,14 @@ class DivineMixin:
                     count += 1
             if count:
                 self.add_message(f"Royal insight! {count} items identified!", 'success')
-            else:
+            elif chain == 3:
                 self.add_message("Royal insight fills you, but all your items are known.", 'info')
-        elif chain == 4:
+        if chain >= 4:
             bonus = _rng.randint(5, 15)
             self.player.max_hp += bonus
             self.player.hp = min(self.player.hp + bonus, self.player.max_hp)
             self.add_message(f"The throne's blessing strengthens you! +{bonus} max HP!", 'success')
-        elif chain >= 5:
+        if chain >= 5:
             stats = [s for s in _rng.sample(['STR', 'CON', 'DEX', 'INT', 'WIS', 'PER'], 2)
                      if self.player.gain_fortune_stat(s, 1)]
             if stats:
