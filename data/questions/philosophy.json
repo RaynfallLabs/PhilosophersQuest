@@ -6944,14 +6944,14 @@
   {
     "tier": 4,
     "question": "John Searle and Jacques Derrida feuded in print for years. Derrida argued that once words are written, no writer fully controls them or can pin them to the meaning he first gave them. When Derrida gathered the whole quarrel into one book, Searle made a single demand about his own essay in it. What did Searle demand?",
-    "answer": "That his reply be cut, since he owned the copyright to it",
+    "answer": "That his reply be left out, refusing permission to reprint it",
     "choices": [
-      "That his reply be cut, since he owned the copyright to it",
+      "That his reply be left out, refusing permission to reprint it",
       "That his reply run first, ahead of anything Derrida wrote",
       "That his name be struck from the book, to disown the project",
       "That the publisher insert a note distancing him from the work"
     ],
-    "context": "Derrida found this perfect: a man defending sole ownership and authority over his text was, to him, acting out the exact fantasy of total authorial control that deconstruction says is impossible. The feud began with Derrida's 'Signature Event Context' (1972), which argued any sign is 'iterable' — repeatable in new contexts, cut loose from its author. Derrida's book-length reply, 'Limited Inc,' even read Searle's name through 'Société à responsabilité limitée' (limited-liability company, 'Ltd'). Searle did not respond. Source: Wikipedia: Searle–Derrida debate.",
+    "context": "Searle refused to let his 1977 reply be printed in Limited Inc (1988). Derrida had already riffed on the copyright mark Searle put on that reply: a man defending sole ownership and authority over his text was, to him, acting out the exact fantasy of total authorial control that deconstruction says is impossible. The feud began with Derrida's 'Signature Event Context' (1972), which argued any sign is 'iterable' — repeatable in new contexts, cut loose from its author. Derrida's long 1977 reply, 'Limited Inc a b c,' even read Searle's name through 'Société à responsabilité limitée' (limited-liability company, 'Ltd'). Searle did not respond to that jibe. Source: Wikipedia: Searle–Derrida debate; nonsite.org, 'Derrida's LLC.'",
     "topic": "derrida-and-deconstruction"
   },
   {
@@ -7009,12 +7009,12 @@
   {
     "tier": 1,
     "question": "Seen from far across a field, a tall tower can look round; up close it turns out to be square. René Descartes, hunting for beliefs firm enough to build knowledge on, pointed to cases like this. What lesson did he draw from them?",
-    "answer": "The senses sometimes deceive us, so we cannot fully trust what they report",
+    "answer": "The senses sometimes deceive, so what they report cannot be fully trusted",
     "choices": [
-      "The senses sometimes deceive us, so we cannot fully trust what they report",
-      "Towers were usually built round in his day and only later made square",
-      "Distance has no effect at all on how clearly a person sees a shape",
-      "Our eyes are flawless, and any mistake must come from a bad memory"
+      "The senses sometimes deceive, so what they report cannot be fully trusted",
+      "A closer look always fixes the error, so the senses can be fully trusted",
+      "Every view is true for its viewer, so the tower is both round and square",
+      "Eyes are flawless, and any such mistake must come from a bad memory"
     ],
     "context": "This is the gentlest wave of Descartes' doubt. Because the senses slip up on distant or tiny things, he refuses to lean his whole house of belief on them. Source: Stanford Encyclopedia of Philosophy, Descartes' Epistemology; IEP, Rene Descartes.",
     "topic": "descartes-methodic-doubt-and-the-evil-demon"
@@ -7146,12 +7146,12 @@
       "Discovering that the evil demon had been entirely real all along",
       "Forgetting every careful step of doubt he had just worked through"
     ],
-    "context": "The doubt is genuinely frightening before the cogito rescues him: the prisoner 'is afraid to wake up,' fearing a return to 'inextricable darkness.' Source: Descartes, Meditations I (closing paragraph); Stanford Encyclopedia of Philosophy, Descartes' Epistemology.",
+    "context": "The doubt is genuinely frightening before the cogito rescues him: the prisoner dreads waking, fearing a return to 'inextricable darkness.' Source: Descartes, Meditations I (closing paragraph); Stanford Encyclopedia of Philosophy, Descartes' Epistemology.",
     "topic": "descartes-methodic-doubt-and-the-evil-demon"
   },
   {
     "tier": 4,
-    "question": "Galileo had been hauled before the Inquisition in the very years René Descartes was writing, and Descartes named his imagined deceiver with great care: genius malignus in Latin, malin génie in French, the malicious genius. Calling the deceiver a demon let him sidestep one danger the censors could have pounced on. Which one?",
+    "question": "The Inquisition had condemned Galileo in 1633, eight years before René Descartes published his Meditations, and Descartes named his imagined deceiver with great care: in Latin, genius malignus, the malicious genius. Calling the deceiver a demon let him sidestep one danger the censors could have pounced on. Which one?",
     "answer": "It kept him from seeming to make God himself the great deceiver",
     "choices": [
       "It kept him from seeming to make God himself the great deceiver",
@@ -7159,7 +7159,7 @@
       "It kept him from seeming to teach that the earth circles the sun",
       "It kept him from seeming to mock the saints the Church held holy"
     ],
-    "context": "'Evil demon' renders genius malignus / malin genie (malicious genius). By doctrine God cannot deceive, so an all-powerful liar would have to be God - a blasphemous suggestion. Writing just after Galileo's 1633 condemnation, Descartes pinned the deception on a demon instead and stayed clear of the charge. Source: Wikipedia, Evil demon; Stanford Encyclopedia of Philosophy, Descartes' Epistemology.",
+    "context": "'Evil demon' renders genius malignus (malicious genius). By doctrine God cannot deceive, so an all-powerful liar would have to be God - a blasphemous suggestion. Writing a few years after Galileo's 1633 condemnation, Descartes pinned the deception on a demon instead and stayed clear of the charge; the scholar Hiram Caton argues he used the phrase in place of a deceiving God for just that reason. Source: Wikipedia, Evil demon; Stanford Encyclopedia of Philosophy, Descartes' Epistemology.",
     "topic": "descartes-methodic-doubt-and-the-evil-demon"
   },
   {
@@ -7185,7 +7185,7 @@
       "That city crowds are crueler judges than a man's own household ever is",
       "That an act done openly is always braver than the same act done in secret"
     ],
-    "context": "Diogenes 'made it his habit to do everything in public,' arguing that if an act is not shameful in private, doing it in public cannot make it shameful — the shame-line is drawn by nomos (convention), not physis (nature). Cynicism splits the world into nature and convention and ranks convention below; manners, etiquette, and shame were 'artificial constructs' that cut a person off from a clear view of nature. The question is presented as Diogenes' claim, not a verdict on public decency. Source: Diogenes Laertius, Lives VI.69; principle stated in the Internet Encyclopedia of Philosophy, 'Diogenes of Sinope.'",
+    "context": "In Diogenes Laertius's words, 'it was his habit to do everything in public,' and he argued that if an act is not shameful in private, doing it in public cannot make it shameful — the shame-line is drawn by nomos (convention), not physis (nature). Cynicism splits the world into nature and convention and ranks convention below; manners, etiquette, and shame were 'artificial constructs' that cut a person off from a clear view of nature. Source: Diogenes Laertius, Lives VI.69; principle stated in the Internet Encyclopedia of Philosophy, 'Diogenes of Sinope.'",
     "topic": "diogenes-defacing-of-convention"
   },
   {
@@ -7208,8 +7208,8 @@
     "choices": [
       "Stamping over the false values society passes around as if they were real",
       "Refusing to touch money of any kind for the rest of his wandering life",
-      "Teaching mint-workers an honest trade so no city would be cheated again",
-      "Printing his own coins stamped with the face of a barking street dog"
+      "Exposing the crooked bankers who debased the coins of every city",
+      "Spending money freely, since a coin is a token with no real worth"
     ],
     "context": "'Deface the currency' (Greek parakharattein to nomisma) was both Diogenes' literal crime and the slogan of his whole life. The pun works because nomisma (currency) shares a root with nomos (custom, law): re-stamping bad coin became re-stamping bad convention. Diogenes Laertius states the mission outright — he lived 'adulterating the currency in very truth, allowing convention no such authority as he allowed to natural right.' Legend adds that an oracle told him to 'deface the currency'; scholars treat that version as likely apocryphal or symbolic, though the exile for defacing the coinage is historical. Source: Internet Encyclopedia of Philosophy and Britannica, 'Diogenes'; the keystone line is Lives VI.71; Diogenes Laertius, Lives VI.20-21 (Perseus); World History Encyclopedia.",
     "topic": "diogenes-defacing-of-convention"
@@ -7224,20 +7224,20 @@
       "That not one of his fans could match the sharp nose he had for sniffing out a fraud",
       "That not one of the cheering crowd had yet been bitten by him, though their turn was coming"
     ],
-    "context": "Diogenes called himself 'a hound of the sort which all men praise, but no one of his admirers dared to go out hunting along with him' — everyone applauds the man who exposes false convention, but no one is willing to actually live that exposed, conventionless life alongside him. The other choices offer rival readings of the 'hound' metaphor. Source: Diogenes Laertius, Lives VI.33 (Perseus/Penelope text).",
+    "context": "Diogenes called himself 'a hound of the sort which all men praise, but no one of his admirers dared to go out hunting along with him' — everyone applauds the man who exposes false convention, but no one is willing to actually live that exposed, conventionless life alongside him. Source: Diogenes Laertius, Lives VI.33 (Perseus/Penelope text).",
     "topic": "diogenes-defacing-of-convention"
   },
   {
     "tier": 4,
-    "question": "Diogenes once plucked a chicken, set the bald bird down before Plato's students and called it Plato's man, mocking the definition of a human being as a featherless animal on two legs. Plato patched the definition by tacking on broad, flat nails. Diogenes went after the repair itself. What did the act of patching quietly admit?",
+    "question": "Diogenes once plucked a chicken, set the bald bird down before Plato's students and called it Plato's man, mocking the definition of a human being as a featherless animal on two legs. Plato patched the definition by tacking on broad, flat nails. What did the act of patching quietly admit?",
     "answer": "That he was bolting traits onto a list with no point where the list is ever finished",
     "choices": [
       "That he was bolting traits onto a list with no point where the list is ever finished",
       "That he had copied the whole definition from an older thinker he refused to credit",
-      "That he had only ever watched humans from afar and never once stood close to one",
+      "That the plucked bird had been a cheat no honest definition ever needs to answer",
       "That a single shared trait can tie two creatures together more tightly than ten differences"
     ],
-    "context": "Stung by the plucked chicken, Plato added 'having broad nails' to fence a human off from a featherless fowl. The tell is not merely that the definition was a list — it is that he could keep amending it: bolting on one more trait shows there is no fixed point at which such a list is ever complete, so it is an open, ad-hoc tally of outer features rather than a grasp of what a human is. Source: Diogenes Laertius, Lives VI.40; corroborated by World History Encyclopedia, 'Diogenes of Sinope.'",
+    "context": "After the plucked chicken, Diogenes Laertius reports, the words 'having broad nails' were added to the definition to fence a human off from a featherless fowl. The tell is not merely that the definition was a list — it is that he could keep amending it: bolting on one more trait shows there is no fixed point at which such a list is ever complete, so it is an open, ad-hoc tally of outer features rather than a grasp of what a human is. Source: Diogenes Laertius, Lives VI.40; corroborated by World History Encyclopedia, 'Diogenes of Sinope.'",
     "topic": "diogenes-defacing-of-convention"
   },
   {
@@ -7263,12 +7263,12 @@
       "Make him a general in the royal army",
       "Spare his home city from the coming war"
     ],
-    "context": "'Stand out of my light.' A truly free man wants nothing from a king, so the only thing the emperor could give him was the sunshine the emperor was himself blocking. Source: Diogenes Laertius, Lives VI.38 (Hicks translation, Perseus); IEP: Diogenes of Sinope.",
+    "context": "'Stand out of my light.' A truly free man wants nothing from a king, so the only thing the king could give him was the sunshine the king was himself blocking. Source: Diogenes Laertius, Lives VI.38 (Hicks translation, Perseus); IEP: Diogenes of Sinope.",
     "topic": "diogenes-of-sinope"
   },
   {
     "tier": 2,
-    "question": "Alexander the Great offered Diogenes gift after gift, and Diogenes, who lived in a wine jar and owned almost nothing, refused them all. Walking away, the young conqueror startled his followers with what he said about the poor man. What did the king confess?",
+    "question": "Alexander the Great offered Diogenes anything he wished, and Diogenes, who lived in a wine jar and owned almost nothing, wanted nothing from him. Walking away, the young conqueror startled his followers with what he said about the poor man. What did the king confess?",
     "answer": "That were he not the king, he would rather be Diogenes",
     "choices": [
       "That were he not the king, he would rather be Diogenes",
@@ -7294,7 +7294,7 @@
   },
   {
     "tier": 2,
-    "question": "A small boy knelt at a stream and drank straight from his cupped hands, and Diogenes, who had pared his belongings down to one wooden cup, threw the cup away on the spot. Why did the sight of that boy make him give up his last possession?",
+    "question": "A small boy knelt at a stream and drank straight from his cupped hands, and Diogenes, who carried little more than a cloak, a bag and a cup, threw the cup away on the spot. Why did the sight of that boy make him throw it away?",
     "answer": "The child proved even a cup was one possession more than he needed",
     "choices": [
       "The child proved even a cup was one possession more than he needed",
@@ -7302,7 +7302,7 @@
       "He wanted the thirsty boy to have the cup far more than he did",
       "He had vowed to copy that boy in every single thing he did"
     ],
-    "context": "Every object you own is one more thing you do not actually need. A child with nothing had out-simplified him. He later threw away his bowl too, after watching a boy eat lentils from a hollowed crust of bread. Source: Diogenes Laertius, Lives VI.37 (Perseus); World History Encyclopedia.",
+    "context": "To Diogenes every possession was one more thing a person does not really need, and a child with nothing had out-simplified him: 'A child has beaten me in plainness of living,' he said, casting the cup from his bag. He later threw away his bowl too, after watching a boy eat lentils from a hollowed crust of bread. Source: Diogenes Laertius, Lives VI.37 (Hicks translation, Perseus); World History Encyclopedia.",
     "topic": "diogenes-of-sinope"
   },
   {
@@ -7333,7 +7333,7 @@
   },
   {
     "tier": 3,
-    "question": "Plato summed up his rival Diogenes in three words: 'a Socrates gone mad.' Socrates had wandered Athens asking everyone how a person ought to live, until the city put him to death for it. What did Plato's label capture about Diogenes?",
+    "question": "Plato summed up his rival Diogenes in a phrase: 'a Socrates gone mad.' Socrates had wandered Athens asking everyone how a person ought to live, until the city put him to death for it. What did Plato's label capture about Diogenes?",
     "answer": "He chased the same goal but through shocking, shameless public stunts",
     "choices": [
       "He chased the same goal but through shocking, shameless public stunts",
@@ -7360,12 +7360,12 @@
   {
     "tier": 3,
     "question": "Mara says the dinosaurs are simply gone: only the world right now is real. Her brother answers with a comparison. 'You are not in Australia, yet Australia is no less real. \"Here\" marks where you stand, not which places are real, and \"now\" marks where you sit in time, not which times are real.' If he is right, what does that make the age of the dinosaurs?",
-    "answer": "Real and waiting at its own spot in time, just not the spot you occupy",
+    "answer": "Real and waiting at its own spot in time, just not the spot Mara occupies",
     "choices": [
-      "Real and waiting at its own spot in time, just not the spot you occupy",
+      "Real and waiting at its own spot in time, just not the spot Mara occupies",
       "Real for as long as it lasted, then gone the instant its last day ended",
       "Real only to a mind that can reach it, the way a place needs a visitor",
-      "Real only in the traces it left -- the bones and prints we dig up today"
+      "Real only in the traces it left, the bones and prints dug up today"
     ],
     "context": "This is the eternalist (or 'block universe') view: every time is equally real, and 'now' is indexical -- it points at where you stand in time the way 'here' points at where you stand in space. On this picture dinosaurs are as real as Australia, and Caesar crossing the Rubicon still sits at its own place in spacetime rather than having simply stopped existing. A presentist denies all of this: the dinosaurs DID exist but do NOT exist; only the present is real. Source: Internet Encyclopedia of Philosophy, 'Eternalism' (iep.utm.edu/eternalism/) -- 'now' as indexical, dinosaurs as real as Australia, Caesar tenselessly existing; Stanford Encyclopedia of Philosophy, 'Presentism' (plato.stanford.edu/entries/presentism/).",
     "topic": "does-only-the-present-exist-presentism-vs-eternalism"
@@ -7385,15 +7385,15 @@
   },
   {
     "tier": 4,
-    "question": "Heraclitus taught that reality is pure flux: 'No man ever steps in the same river twice,' for the water has flowed on. Parmenides held the opposite: change is only an illusion, and what truly is simply is, all at once and outside time. Which modern view of time matches Parmenides' changeless, all-at-once reality?",
+    "question": "Heraclitus taught that reality is pure flux; as Plato reports him, no one can step into the same river twice, for the water has flowed on. Parmenides held the opposite: change is only an illusion, and what truly is simply is, all at once and outside time. Which modern view of time matches Parmenides' changeless, all-at-once reality?",
     "answer": "Every time is equally real, all of them sitting out there with no passage",
     "choices": [
       "Every time is equally real, all of them sitting out there with no passage",
-      "Time is something the mind makes up, so nothing in it ever truly changes",
+      "Only the present is real, and each moment slips away into nothing",
       "Every moment exists, yet just one of them is lit up as the real present",
       "Only the past and present are real; the future has yet to come into being"
     ],
-    "context": "Heraclitus is the spirit of a flowing, becoming present -- presentism's gut feeling; Parmenides is the spirit of the changeless block where all is timelessly real -- eternalism's gut feeling. The 2,500-year-old quarrel is the same quarrel. The wrong choices are the other live positions, NOT mere 'change' views: 'the mind makes up time' is the McTaggart-style claim that time is unreal (J.M.E. McTaggart, 'The Unreality of Time,' Mind, 1908); 'just one moment is lit up' is the moving-spotlight picture; 'only past and present are real' is the growing block. Parmenides' POSITIVE realism -- 'what truly IS simply is, all at once' -- is what singles out eternalism among these, since a thinker holding any of the other static-flavored views would not be wrong merely for denying passage. Source: Stanford Encyclopedia of Philosophy, 'Heraclitus' (plato.stanford.edu/entries/heraclitus/) for the river fragment; Internet Encyclopedia of Philosophy, 'Time' (iep.utm.edu/time/) quoting Parmenides, 'Out of nothing, nothing comes'; IEP, 'McTaggart, J.M.E.' for the unreality-of-time view.",
+    "context": "Heraclitus is the spirit of a flowing, becoming present, presentism's gut feeling; Parmenides is the spirit of the changeless block where all is timelessly real, eternalism's gut feeling. The 2,500-year-old quarrel is the same quarrel. The moving spotlight still lights one moment as the real present, and the growing block still has reality growing, so each keeps a kind of passage that Parmenides denied. The river line is Plato's report (Cratylus 402a); Heraclitus' own fragment says that different waters flow upon those who step into the same rivers. Source: Stanford Encyclopedia of Philosophy, 'Heraclitus' (plato.stanford.edu/entries/heraclitus/); Internet Encyclopedia of Philosophy, 'Time' (iep.utm.edu/time/).",
     "topic": "does-only-the-present-exist-presentism-vs-eternalism"
   },
   {
@@ -7406,15 +7406,15 @@
       "Each person lights a different house, so the present is only one's own viewpoint",
       "The lantern marks nothing real in the world; it is just a manner of speaking"
     ],
-    "context": "This is the 'moving spotlight' picture: all times exist (as in eternalism), but ONE of them is objectively lit as 'the present,' and that spotlight slides forward -- exactly the surplus that plain eternalism refuses to grant. For the plain eternalist, 'now' is merely where you stand, like 'here' (the 'each person lights a different house' option). The rival pictures here are all live: a present fixed forever on one absolute moment; a present that is only your own viewpoint; or no real present at all (a deflationary reading). The image and words are C.D. Broad's, from 'Scientific Thought' (1923): the present is 'like the spot of light from a policeman's bull's-eye traversing the fronts of the houses in a street.' Broad floated it as a vivid metaphor he thought ultimately explained nothing -- which is why it fits a character who PROPOSES it, not a settled answer. Source: C.D. Broad, 'Scientific Thought' (1923), via Wikipedia, 'Moving spotlight theory of time,' and Internet Encyclopedia of Philosophy, 'Eternalism.'",
+    "context": "This is the 'moving spotlight' picture: all times exist (as in eternalism), but ONE of them is objectively lit as 'the present,' and that spotlight slides forward -- exactly the surplus that plain eternalism refuses to grant. For the plain eternalist, 'now' is merely where you stand, like 'here'. Rival pictures are all live: a present fixed forever on one absolute moment; a present that is only your own viewpoint; or no real present at all (a deflationary reading). The image and words are C.D. Broad's, from 'Scientific Thought' (1923): the present is 'like the spot of light from a policeman's bull's-eye traversing the fronts of the houses in a street.' Broad floated it as a vivid metaphor he thought ultimately explained nothing -- which is why it fits a character who PROPOSES it, not a settled answer. Source: C.D. Broad, 'Scientific Thought' (1923), via Wikipedia, 'Moving spotlight theory of time,' and Internet Encyclopedia of Philosophy, 'Eternalism.'",
     "topic": "does-only-the-present-exist-presentism-vs-eternalism"
   },
   {
     "tier": 5,
     "question": "A skeptic presses a friend who holds that reality is a growing block whose newest edge is 'now.' 'On your view the past never stopped existing,' he says. 'Socrates, mid-conversation, was sure his moment was the live one and felt exactly as present as you do. Yet he was wrong; his \"now\" lies buried deep in the finished block.' What deeper problem has the skeptic set up?",
-    "answer": "Any of us in the block could feel present yet be buried past, so none can tell which we are",
+    "answer": "Anyone in the block could feel present yet lie in the buried past, and none could tell which",
     "choices": [
-      "Any of us in the block could feel present yet be buried past, so none can tell which we are",
+      "Anyone in the block could feel present yet lie in the buried past, and none could tell which",
       "Socrates must be living through his moment even now, fully awake inside the old part of the block",
       "Nothing inside the block could ever fix which single slice is the one true growing edge",
       "The future would have to be real already, since the edge must grow toward something there"
@@ -7450,7 +7450,7 @@
   },
   {
     "tier": 2,
-    "question": "In the tale Ivan Karamazov tells, Christ walks quietly back into Seville in the days of the Spanish Inquisition and stops at the cathedral steps. A little open white coffin there holds a dead child of seven. He says 'Maiden, arise!' and the girl sits up alive, gasping. At that very moment, what happens to Christ Himself?",
+    "question": "In the tale Ivan Karamazov tells, Christ walks quietly back into Seville during the Spanish Inquisition and stops at the cathedral steps. A little open white coffin there holds a dead child of seven. He says 'Maiden, arise!' and the girl sits up alive, smiling. At that very moment, what happens to Christ Himself?",
     "answer": "The aged Inquisitor walks by and has his guards arrest Him",
     "choices": [
       "The aged Inquisitor walks by and has his guards arrest Him",
@@ -7476,7 +7476,7 @@
   },
   {
     "tier": 3,
-    "question": "Alone with his prisoner in the cell at night, the aged Grand Inquisitor of Ivan Karamazov's tale shows no joy that Christ has come back to His Church. The very first thing the old man says is an accusation. What is the charge he opens with?",
+    "question": "Alone with his prisoner in the cell at night, the aged Grand Inquisitor of Ivan Karamazov's tale shows no joy that Christ has come back to His Church. Almost the first thing the old man says is an accusation. What is the charge he opens with?",
     "answer": "That Christ has no right to come now and hinder the Church's work",
     "choices": [
       "That Christ has no right to come now and hinder the Church's work",
@@ -7484,12 +7484,12 @@
       "That Christ failed to perform the miracles the people demanded",
       "That Christ never truly suffered as ordinary mortals must"
     ],
-    "context": "The Inquisitor's opening line is 'Why hast Thou come now to hinder us?' - to him, everything was long ago handed over to the Church, so Christ's return is an interruption, not a rescue. Source: Garnett trans., Book V ch. 5 - CCEL: https://www.ccel.org/d/dostoevsky/karamozov/htm/book05/chapter05.html",
+    "context": "Within his opening words the Inquisitor demands, 'Why, then, art Thou come to hinder us?' - to him, everything was long ago handed over to the Church, so Christ's return is an interruption, not a rescue. Source: Garnett trans., Book V ch. 5 - CCEL: https://www.ccel.org/d/dostoevsky/karamozov/htm/book05/chapter05.html",
     "topic": "dostoevskys-grand-inquisitor"
   },
   {
     "tier": 4,
-    "question": "Christ hoped people would follow Him out of free love. The Grand Inquisitor, His jailer, brands that gift a cruelty: 'Nothing has ever been more insupportable for a man than freedom.' Most people, he says, cannot bear the weight of choosing. What does he claim the Church has rightly done about it?",
+    "question": "Christ hoped people would follow Him out of free love. The Grand Inquisitor, His jailer, brands that gift a cruelty: 'Nothing has ever been more insupportable for a man and a human society than freedom.' Most people, he says, cannot bear the weight of choosing. What does he claim the Church has rightly done about it?",
     "answer": "Taken people's freedom from them so they can finally be happy",
     "choices": [
       "Taken people's freedom from them so they can finally be happy",
@@ -7510,20 +7510,20 @@
       "'Lead us into battle against the heretics'",
       "'Show us a sign, and we will believe'"
     ],
-    "context": "The Inquisitor's wager: bread first, virtue later - 'no science will give them bread so long as they remain free.' They lay their freedom at the Church's feet for the promise of food. Scholars read this trade of liberty for security alongside Hobbes' bargain (surrender freedom to a sovereign for safety) and Tocqueville's 'soft despotism.' No verdict is imposed. Source: Garnett trans., Book V ch. 5 - CCEL: https://www.ccel.org/d/dostoevsky/karamozov/htm/book05/chapter05.html",
+    "context": "The Inquisitor's wager: bread first, virtue later - 'no science will give them bread so long as they remain free.' They lay their freedom at the Church's feet for the promise of food. Scholars read this trade of liberty for security alongside Hobbes' bargain (surrender freedom to a sovereign for safety) and Tocqueville's 'soft despotism.' Source: Garnett trans., Book V ch. 5 - CCEL: https://www.ccel.org/d/dostoevsky/karamozov/htm/book05/chapter05.html",
     "topic": "dostoevskys-grand-inquisitor"
   },
   {
     "tier": 5,
     "question": "Deep in his long midnight speech to the silent Christ, the Grand Inquisitor reveals a secret about the Church he has served all his life. Long ago, he says, it took up the sword of Caesar and 'corrected' Christ's work. Then he names whose side the Church is truly on. Whose side is it?",
-    "answer": "Christ's enemy - 'we are not with Thee, but with him'",
+    "answer": "The tempter's, the enemy Christ faced in the desert",
     "choices": [
-      "Christ's enemy - 'we are not with Thee, but with him'",
+      "The tempter's, the enemy Christ faced in the desert",
       "Caesar's heirs, who alone can keep the peace on earth",
       "The weak millions, whose hunger outweighs all else",
       "His own, for he answers to no master but conscience"
     ],
-    "context": "The Inquisitor's confession: to make mankind happy the Church accepted the three temptations Christ refused - miracle, mystery, and authority - and so serves the tempter, not Christ. It is offered as his sincere belief, not as the author's verdict. Source: Garnett trans., Book V ch. 5 - CCEL: https://www.ccel.org/d/dostoevsky/karamozov/htm/book05/chapter05.html",
+    "context": "The Inquisitor's confession: to make mankind happy the Church accepted the three temptations Christ refused - miracle, mystery, and authority - and so serves the tempter, not Christ. In Garnett's words: 'We are not working with Thee, but with him—that is our mystery.' It is offered as his sincere belief, not as the author's verdict. Source: Garnett trans., Book V ch. 5 - CCEL: https://www.ccel.org/d/dostoevsky/karamozov/htm/book05/chapter05.html",
     "topic": "dostoevskys-grand-inquisitor"
   },
   {
@@ -7575,7 +7575,7 @@
       "That science will one day predict every choice, so freedom is only an illusion",
       "That the wise course is to accept the proven law and live at peace with it"
     ],
-    "context": "The other three are real, respectable answers in the free-will dispute — the question is only which one the narrator is making, not which is true. His move: 'even if man really were nothing but a piano-key, even if this were proved to him by natural science and mathematics, even then he would not become reasonable, but would purposely do something perverse... simply to gain his point.' The whole work of man, he says, is 'proving to himself every minute that he is a man and not a piano-key.' Source: Dostoevsky, Notes from the Underground, Part I, Ch. VIII (Garnett trans.), Project Gutenberg https://www.gutenberg.org/files/600/600-h/600-h.htm",
+    "context": "Whether a person really could choose otherwise is a live dispute; the claim is the narrator's own. His move: 'even if man really were nothing but a piano-key, even if this were proved to him by natural science and mathematics, even then he would not become reasonable, but would purposely do something perverse... simply to gain his point.' The whole work of man, he says, is 'proving to himself every minute that he is a man and not a piano-key.' Source: Dostoevsky, Notes from the Underground, Part I, Ch. VIII (Garnett trans.), Project Gutenberg https://www.gutenberg.org/files/600/600-h/600-h.htm",
     "topic": "dostoevskys-underground-man"
   },
   {
@@ -7611,10 +7611,10 @@
     "choices": [
       "Ivan himself, whose teaching that nothing is forbidden had freed him",
       "Dmitri, whose open threats against Fyodor had given him cover",
-      "old Fyodor himself, whose lifelong cruelty had finally earned it",
-      "no one but Smerdyakov, who had acted wholly alone for the money"
+      "Old Fyodor himself, whose lifelong cruelty had finally earned it",
+      "No one but Smerdyakov, who had acted wholly alone for the money"
     ],
-    "context": "Dostoevsky does not leave 'everything is lawful' as abstract talk — he shows it kill. Smerdyakov reminds Ivan he had said 'if there's no infinite God, then there's no virtue either, and no need of it at all,' and charges 'It was following your words I did it,' adding that by quietly leaving town Ivan had 'silently sanctioned' the murder. The vertigo of a lost higher ground, dramatized: the one who really believes nothing is forbidden may be the man beside you. Sources: Dostoevsky, The Brothers Karamazov, Bk. XI Ch. VIII ('The Third and Last Interview with Smerdyakov'), via Owl Eyes https://www.owleyes.org/text/the-brothers-karamazov ; SparkNotes Bk. 11 https://www.sparknotes.com/lit/brothersk/section14/",
+    "context": "Dostoevsky does not leave 'all things are lawful' as abstract talk; he shows it kill. Smerdyakov reminds Ivan of his teaching: 'For if there's no everlasting God, there's no such thing as virtue, and there's no need of it.' He charges, 'it was following your words I did it,' and says that by going away Ivan had 'silently sanctioned' the murder. The vertigo of a lost higher ground, dramatized: the one who really believes nothing is forbidden may be standing close by. Sources: Dostoevsky, The Brothers Karamazov, Bk. XI Ch. VIII ('The Third and Last Interview with Smerdyakov'), Constance Garnett translation (Project Gutenberg #28054); SparkNotes Bk. 11 https://www.sparknotes.com/lit/brothersk/section14/",
     "topic": "dostoevskys-underground-man"
   },
   {
@@ -7638,9 +7638,9 @@
       "A bare thisness -- a further principle, beyond all qualities, fixing him as THIS one",
       "His matter -- the particular stuff his body is made of is what marks him off",
       "Nothing more is needed -- Socrates just IS his whole bundle of qualities",
-      "Nothing real at all -- being this one is only a name our minds attach"
+      "Nothing real at all -- being this one is only a name the mind attaches"
     ],
-    "context": "This is Scotus's signature move, the 'principle of individuation.' Two people can share their whole 'whatness' (their quiddity -- humanity, rationality), yet there must still be something that makes Socrates THIS one. Scotus called it a non-qualitative individuating principle: a 'thisness' that contracts the shared nature 'humanity' down to this single person after every describable property is accounted for. (One correction: Scotus himself wrote of an 'individual difference,' not the famous coined word 'haecceitas' -- his FOLLOWERS later minted that neologism for the doctrine.) Source: Stanford Encyclopedia of Philosophy, 'Medieval Theories of Haecceity'; Wikipedia, 'Haecceity.'",
+    "context": "This is Scotus's signature move, the 'principle of individuation.' Two people can share their whole 'whatness' (their quiddity -- humanity, rationality), yet there must still be something that makes Socrates THIS one. Scotus called it a non-qualitative individuating principle: a 'thisness' that contracts the shared nature 'humanity' down to this single person after every describable property is accounted for. (In his main work, the Ordinatio, Scotus speaks of an 'individual difference'; elsewhere he calls it haecceitas, a word of his own invention.) Source: Stanford Encyclopedia of Philosophy, 'Medieval Theories of Haecceity'; Wikipedia, 'Haecceity.'",
     "topic": "duns-scotus-the-subtle-doctor"
   },
   {
@@ -7651,9 +7651,9 @@
       "The shared nature is real and lives right inside each individual thing",
       "The shared nature is real but exists apart, in its own higher realm",
       "The shared nature is real only as an idea in the mind, not in the world",
-      "The shared nature isn't real at all -- only the bare individuals exist"
+      "The shared nature isn't real at all; only the bare individuals exist"
     ],
-    "context": "Scotus is the great realist counterweight to nominalism (the view, urged by thinkers like William of Ockham, that universals are merely names). He held that the common nature -- humanity, redness -- genuinely exists in the things themselves, with a 'less-than-numerical unity,' and is then 'contracted' into this-or-that individual by its thisness. There is NO verdict here on who is right: realism versus nominalism is a genuine, still-live fork, and a thoughtful person can defend either side. This question only asks which side Scotus took. Source: Stanford Encyclopedia of Philosophy, 'John Duns Scotus'; Wikipedia, 'Scotistic realism.'",
+    "context": "Scotus is the great realist counterweight to nominalism (the view, urged by thinkers like William of Ockham, that universals are merely names). He held that the common nature -- humanity, redness -- genuinely exists in the things themselves, with a 'less-than-numerical unity,' and is then 'contracted' into this-or-that individual by its thisness. Realism versus nominalism is a genuine, still-live fork, and a thoughtful person can defend either side. Source: Stanford Encyclopedia of Philosophy, 'John Duns Scotus'; Wikipedia, 'Scotistic realism.'",
     "topic": "duns-scotus-the-subtle-doctor"
   },
   {
@@ -7736,7 +7736,7 @@
   },
   {
     "tier": 3,
-    "question": "Heir to one of Europe's richest families, Ludwig Wittgenstein came home from the First World War sure that one small book of his had finished philosophy forever. He gave nearly his whole fortune to his siblings, calling money a block to thinking. Instead of taking a university chair, what did he spend the next years doing?",
+    "question": "Heir to one of Europe's richest families, Ludwig Wittgenstein came home from the First World War sure that one small book of his had finished philosophy forever. He gave what was left of his fortune to his siblings. Instead of taking a university chair, what did he spend the next years doing?",
     "answer": "He taught reading and arithmetic to farm children in remote mountain villages.",
     "choices": [
       "He taught reading and arithmetic to farm children in remote mountain villages.",
@@ -7744,7 +7744,7 @@
       "He toured the European capitals lecturing the crowds on his famous new book.",
       "He entered a monastery and took vows of silence among the cloistered monks."
     ],
-    "context": "From 1920 Wittgenstein taught six-to-ten-year-olds in tiny Austrian villages such as Trattenbach, Puchberg, and Otterthal, sleeping in the school kitchen and eating cocoa and oatmeal from a pot he never washed. He had already given away one of Europe's largest inherited fortunes, considering money a hindrance to thinking. The only other book he published in his lifetime was a children's spelling dictionary for his pupils. Source: en.wikipedia.org/wiki/Ludwig_Wittgenstein; openculture.com 2015 (his stint as an elementary-school teacher); iep.utm.edu/wittgens.",
+    "context": "From 1920 Wittgenstein taught children in tiny Austrian villages such as Trattenbach, Puchberg, and Otterthal, at one point making his bed in the school kitchen. He had already given away one of Europe's largest inherited fortunes. The only other book he published in his lifetime was a children's spelling dictionary for his pupils. Source: en.wikipedia.org/wiki/Ludwig_Wittgenstein; openculture.com 2015 (his stint as an elementary-school teacher); iep.utm.edu/wittgens.",
     "topic": "early-wittgenstein-the-tractatus"
   },
   {
@@ -7754,7 +7754,7 @@
     "choices": [
       "Stop talking: about what cannot be put into words, one must say nothing.",
       "Keep asking: never accept any question as finally and fully closed.",
-      "Doubt everything: trust no claim that you have not proven yourself.",
+      "Doubt everything: trust no claim until one has proven it oneself.",
       "Start over: tear down the whole of philosophy and rebuild from nothing."
     ],
     "context": "Proposition 7, the book's final line, reads in the Ogden translation: 'Whereof one cannot speak, thereof one must be silent' (the Pears/McGuinness version: 'What we cannot speak about we must pass over in silence'). The whole structure of seven propositions climbs to this one command. Source: en.wikipedia.org/wiki/Tractatus_Logico-Philosophicus (lists propositions 1-7 verbatim); plato.stanford.edu/entries/wittgenstein.",
@@ -7762,7 +7762,7 @@
   },
   {
     "tier": 4,
-    "question": "A map shares the layout of the streets it maps, and a meaningful sentence, Ludwig Wittgenstein argued, works the same way: it shares the logical shape of the slice of the world it describes, and so pictures a way the world could be. Suppose someone strings together grammatical words that picture no such state of affairs at all. What has gone wrong with them?",
+    "question": "A map shares the layout of the streets it maps, and a meaningful sentence, Ludwig Wittgenstein argued, works the same way: it shares the logical shape of the slice of the world it describes, and so pictures a way the world could be. Suppose someone strings together grammatical words that picture no such state of affairs at all. What has gone wrong with the string?",
     "answer": "It is nonsense, not merely false: no possible fact could make it true or false.",
     "choices": [
       "It is nonsense, not merely false: no possible fact could make it true or false.",
@@ -7779,11 +7779,11 @@
     "answer": "They show themselves in how a life is lived, but can never be put into words.",
     "choices": [
       "They show themselves in how a life is lived, but can never be put into words.",
-      "They turn out to be empty illusions, once we see they cannot be stated at all.",
+      "They turn out to be empty illusions, once it is seen they cannot be stated at all.",
       "They belong to science, which will one day state them in fully exact terms.",
       "They are settled by majority vote, since no plain fact can ever decide them."
     ],
-    "context": "Crucially, Wittgenstein did NOT mean these things are unreal, which is why the 'empty illusions' answer misreads him. The Stanford Encyclopedia puts his view this way: 'They make themselves manifest. They are what is mystical.' The most important things can be SHOWN but never SAID, drawing the exact line where language stops. Source: plato.stanford.edu/entries/wittgenstein (the mystical: shown not said); iep.utm.edu/wittgens.",
+    "context": "Crucially, Wittgenstein did NOT mean these things are unreal, which is why calling them empty illusions misreads him. The Stanford Encyclopedia puts his view this way: 'They make themselves manifest. They are what is mystical.' The most important things can be SHOWN but never SAID, drawing the exact line where language stops. Source: plato.stanford.edu/entries/wittgenstein (the mystical: shown not said); iep.utm.edu/wittgens.",
     "topic": "early-wittgenstein-the-tractatus"
   },
   {
@@ -7796,7 +7796,7 @@
       "Hand the ladder on: his sentences must be taught word for word to everyone else.",
       "Climb the ladder higher: his sentences are the first rungs of an endless tower."
     ],
-    "context": "Proposition 6.54: 'anyone who understands me eventually recognizes them as nonsensical, when he has used them, as steps, to climb beyond them. He must, so to speak, throw away the ladder after he has climbed up it.' You read the book to see the world rightly, then kick the book away. The ladder image is borrowed from Schopenhauer. Source: en.wikipedia.org/wiki/Wittgenstein%27s_ladder; Tractatus proposition 6.54.",
+    "context": "Proposition 6.54: 'anyone who understands me eventually recognizes them as nonsensical, when he has used them—as steps—to climb up beyond them. (He must, so to speak, throw away the ladder after he has climbed up it.)' A reader climbs the book to see the world rightly, then kicks the book away. Earlier writers, Sextus Empiricus and Schopenhauer among them, had used similar images of a climb whose steps are then thrown away. Source: en.wikipedia.org/wiki/Wittgenstein%27s_ladder; Tractatus proposition 6.54 (Pears and McGuinness translation).",
     "topic": "early-wittgenstein-the-tractatus"
   },
   {
@@ -7845,8 +7845,8 @@
     "choices": [
       "The same basic ingredients stay; only how they are arranged keeps changing",
       "One single basic stuff just thickens and thins into every different thing",
-      "Love and Strife themselves harden into the solid things we see",
-      "Our eyes are fooled, and nothing real is happening at all"
+      "Love and Strife themselves harden into the solid things in the world",
+      "The eyes are fooled, and nothing real is happening at all"
     ],
     "context": "This is a strikingly modern idea — a kind of conservation of matter. For Empedocles the four roots are permanent; Love and Strife only rearrange them. As Fragment B17 puts it, things come 'sometimes by Love all together into one, sometimes again each one carried off by the hatred of Strife.' Birth and death are just the same ingredients mixing and unmixing, like colors blended and then pulled apart — nothing is ever truly created or destroyed. Source: Stanford Encyclopedia of Philosophy, Empedocles, Fragment B17.",
     "topic": "empedocles-and-the-four-roots"
@@ -7861,7 +7861,7 @@
       "Strife smashed every creature back into parts and started over",
       "The roots themselves remembered the correct shape for each animal"
     ],
-    "context": "Empedocles' wandering body parts come from Fragments 57 and 61: 'many heads sprang up without necks, and arms wandered bare and bereft of shoulders.' Love joined them at random, and only the viable forms endured. Aristotle noted this anticipates natural selection, and the Internet Encyclopedia of Philosophy calls Empedocles 'a forerunner of Darwin's theory.' Source: Wikisource, Fragments of Empedocles fr. 57 & 61; IEP and SEP on Empedocles.",
+    "context": "Empedocles' wandering body parts come from Fragments 57 and 61: 'many heads sprung up without necks and arms wandered bare and bereft of shoulders.' Love joined them at random, and only the viable forms endured. Aristotle reported the idea in his Physics in order to reject it, and Darwin later quoted that passage as the principle of natural selection 'shadowed forth.' Source: Wikisource, Fragments of Empedocles fr. 57 & 61 (Burnet translation); IEP and SEP on Empedocles.",
     "topic": "empedocles-and-the-four-roots"
   },
   {
@@ -7879,11 +7879,11 @@
   },
   {
     "tier": 4,
-    "question": "Nathan Carlig, a papyrologist, identified thirty lost lines of Empedocles on an ancient scroll in Cairo in April 2026. They set out one of the first physical explanations of how an eye sees an object across a room, verses thought lost for over two thousand years. How did Empedocles explain the way an eye sees a thing?",
+    "question": "A scroll in Cairo yielded thirty lost lines of Empedocles, which the papyrologist Nathan Carlig made public in April 2026. They set out one of the first physical explanations of how an eye sees an object across a room, verses thought lost for over two thousand years. How did Empedocles explain the way an eye sees a thing?",
     "answer": "The thing sheds tiny streams that slot into openings in the eye",
     "choices": [
       "The thing sheds tiny streams that slot into openings in the eye",
-      "The eye shoots out an invisible ray that gropes for the thing",
+      "The thing stamps its shape on the air, which carries it to the eye",
       "A god carries each image straight from the thing to the mind",
       "The air between the eye and the thing simply turns clear"
     ],
@@ -7893,11 +7893,11 @@
   {
     "tier": 1,
     "question": "Suppose you are lost in a new city and stop a stranger to ask the way. You are plainly using him to get where you are going. A friend calls that a bit disrespectful, since people are not tools. When does using people truly wrong them?",
-    "answer": "It only wrongs them if you treat them as ONLY a tool, ignoring their own aims and choices",
+    "answer": "It wrongs them only if you treat them as mere tools, ignoring their own aims and choices",
     "choices": [
       "It wrongs them whenever you fail to pay them or repay the favor somehow in return",
       "It wrongs them a little every time, but the wrong is far too minor to worry about",
-      "It only wrongs them if you treat them as ONLY a tool, ignoring their own aims and choices",
+      "It wrongs them only if you treat them as mere tools, ignoring their own aims and choices",
       "It wrongs them unless you are polite and thank them sincerely once they have helped"
     ],
     "context": "This is the load-bearing word in Kant's second formulation (the 'Humanity Formula'): treat humanity 'never as means ONLY.' Using people is constant and harmless -- a tourist uses a stranger for directions, a customer uses a waiter, a passenger uses a bus driver -- because each can still share or refuse your goal. The wrong is reducing them to a MERE instrument. Source: Kant, Groundwork 4:429 (Abbott trans.); Stanford Encyclopedia of Philosophy, 'Treating Persons as Means.'",
@@ -7965,7 +7965,7 @@
       "He keeps a portion that shrinks as his crimes grow, until the worst lose it entirely",
       "He keeps it only if he shows remorse, since standing must be earned back by good conduct"
     ],
-    "context": "On this reading the Humanity Formula demands 'recognition respect' -- regard owed simply because someone is a person -- not 'appraisal respect' earned by merit. As the philosopher Stephen Darwall frames it, 'persons cannot lose their humanity by their misdeeds.' So even a criminal or an enemy is still owed treatment as an end, never as mere material to be used up. Source: Stanford Encyclopedia of Philosophy, 'Kant's Moral Philosophy' §5.",
+    "context": "On this reading the Humanity Formula demands 'recognition respect' -- regard owed simply because someone is a person -- not 'appraisal respect' earned by merit (the two terms are Stephen Darwall's, from 1977). As the Stanford Encyclopedia puts Kant's view, 'persons cannot lose their humanity by their misdeeds.' So even a criminal or an enemy is still owed treatment as an end, never as mere material to be used up. Source: Stanford Encyclopedia of Philosophy, 'Kant's Moral Philosophy' §6.",
     "topic": "ends-never-merely-means-the-humanity-formula"
   },
   {
@@ -7991,7 +7991,7 @@
       "Only the banana existing right now, green or yellow; the color it had before has dropped out of being",
       "A green banana that perishes and a fresh yellow banana that slips in to take its place under one name"
     ],
-    "context": "This is the space-time analogy at the root of the debate. One picture says a thing has TIME-parts just as it has SPACE-parts, so 'you-yesterday' and 'you-today' are two different parts, and a banana's green start and yellow end are two cross-sections of one four-dimensional 'worm' through spacetime that itself never changes (the technical name is perdurance). Its rival, endurance, denies the worm and locates change in the thing itself: one whole banana, wholly present whenever it exists, is itself green and then that very same thing is later yellow, just as yesterday's you and today's you are not two parts but the very same whole thing, present in full on each day it exists. How a single persisting thing can bear opposite properties at different times is exactly what the endurance side owes an account of (the problem of temporary intrinsics). The tempting wrong choice is the worm view the brother refuses; the others are a presentist reading (only the now-banana is real) and a perishing-successor reading (a new banana replaces the old under one name). Both the time-slice and the wholly-present pictures are live among serious metaphysicians and the dispute is genuinely unresolved.",
+    "context": "This is the space-time analogy at the root of the debate. One picture says a thing has TIME-parts just as it has SPACE-parts, so 'you-yesterday' and 'you-today' are two different parts, and a banana's green start and yellow end are two cross-sections of one four-dimensional 'worm' through spacetime that itself never changes (the technical name is perdurance). Its rival, endurance, denies the worm and locates change in the thing itself: one whole banana, wholly present whenever it exists, is itself green and then that very same thing is later yellow, just as yesterday's you and today's you are not two parts but the very same whole thing, present in full on each day it exists. How a single persisting thing can bear opposite properties at different times is exactly what the endurance side owes an account of (the problem of temporary intrinsics). Both the time-slice and the wholly-present pictures are live among serious metaphysicians and the dispute is genuinely unresolved.",
     "topic": "endurance-vs-perdurance-how-things-persist"
   },
   {
@@ -8004,7 +8004,7 @@
       "Bent and straight are not genuine opposites at all, so one poker can calmly possess both of them at once",
       "There are really two separate pokers, a bent one and a straight one, that just happen to share one name"
     ],
-    "context": "This is the 'problem of temporary intrinsics' — David Lewis's name for the sharpest argument FOR time-slices. The slice answer is clean: just as warm head and cold feet are different SPATIAL parts (no contradiction), bent and straight belong to different TIME-parts. The wholly-present side must answer some other way and faces Leibniz's Law — that identical things cannot differ in their properties. Source: Stanford Encyclopedia of Philosophy, 'Temporal Parts'; David Lewis, 'On the Plurality of Worlds' (1986), where the banana ripe/overripe and bent/straight framing appears.",
+    "context": "This is the 'problem of temporary intrinsics' — David Lewis's name for the sharpest argument FOR time-slices. The slice answer is clean: just as warm head and cold feet are different SPATIAL parts (no contradiction), bent and straight belong to different TIME-parts. The wholly-present side must answer some other way and faces Leibniz's Law — that identical things cannot differ in their properties. Source: Stanford Encyclopedia of Philosophy, 'Temporal Parts'; David Lewis, 'On the Plurality of Worlds' (1986), where his own example is the bent shape he has when he sits and the straight shape when he stands.",
     "topic": "endurance-vs-perdurance-how-things-persist"
   },
   {
@@ -8062,10 +8062,10 @@
   {
     "tier": 2,
     "question": "Epictetus opened his handbook by sorting everything in life into two groups. In the first went a person's opinions, his desires, and the things he chooses to pursue or avoid; in the second, his body, his reputation and his property. Only one group, Epictetus said, is truly a man's own to command. Which did he mean?",
-    "answer": "The first — our own thoughts and choices are ours; the rest is not",
+    "answer": "The first: his thoughts and choices belong to him; the rest does not",
     "choices": [
-      "The first — our own thoughts and choices are ours; the rest is not",
-      "The second — body, reputation, and property are ours; choices are not",
+      "The first: his thoughts and choices belong to him; the rest does not",
+      "The second: body, reputation and property belong to him; choices do not",
       "Both groups, once a person has trained his mind hard enough",
       "Neither group, since the gods command every part of a life"
     ],
@@ -8075,14 +8075,14 @@
   {
     "tier": 3,
     "question": "A master once twisted the leg of his young slave Epictetus out of sheer cruelty, or so the writer Celsus told it. Epictetus neither begged nor cried out nor showed any anger at all. When the bone finally snapped, he answered with a single cool line. In the story, what did he say?",
-    "answer": "'There, did I not tell you that it would break?'",
+    "answer": "'Did I not tell you that you would break it?'",
     "choices": [
-      "'There, did I not tell you that it would break?'",
+      "'Did I not tell you that you would break it?'",
       "'A man may break my leg, but never my spirit.'",
       "'You have crippled the slave and freed the sage.'",
       "'The gods are watching every bone you shatter.'"
     ],
-    "context": "LEGEND: this breaking scene is preserved by the pagan writer Celsus, quoted by the Christian Origen in Contra Celsum 7.53; the 10th-century Suda instead blames rheumatism for his lameness, so the leg-twisting is testimony, not certain fact. Either way Epictetus was lame for life. Source: Origen, Contra Celsum 7.53 (via Celsus), reported in Internet Encyclopedia of Philosophy: Epictetus.",
+    "context": "(Legend.) This breaking scene is preserved by the pagan writer Celsus, quoted by the Christian Origen in Contra Celsum 7.53: smiling and unmoved, Epictetus said, 'You will break my leg,' and when it broke, 'Did I not tell you that you would break it?' The 10th-century Suda instead blames rheumatism for his lameness, so the leg-twisting is testimony, not certain fact. Either way Epictetus was lame for life. Source: Origen, Contra Celsum 7.53 (Ante-Nicene Fathers translation, newadvent.org/fathers/04167.htm), reported in Internet Encyclopedia of Philosophy: Epictetus.",
     "topic": "epictetus-from-slave-to-sage"
   },
   {
@@ -8134,12 +8134,12 @@
       "'You are a borrowed breath the gods will reclaim.'",
       "'You are a shadow that the next hour may erase.'"
     ],
-    "context": "The slave out-lasted the emperors. Marcus Aurelius was handed Epictetus's lecture-notes by his teacher Junius Rusticus, and Epictetus became the single most-quoted author in his private journal — including this line copied straight in: 'You are a little soul carrying a corpse around, as Epictetus used to say' (Meditations 4.41). The other three are plausible-sounding Stoic images, but only the corpse line is the one Marcus actually recorded. Source: Marcus Aurelius, Meditations 4.41 (quoting Epictetus); Stanford Encyclopedia of Philosophy: Marcus Aurelius; World History Encyclopedia: Epictetus.",
+    "context": "The slave out-lasted the emperors. Marcus Aurelius was handed Epictetus's lecture-notes by his teacher Junius Rusticus, and Epictetus became the single most-quoted author in his private journal — including this line copied straight in: 'You are a little soul carrying a corpse around, as Epictetus used to say' (Meditations 4.41). Source: Marcus Aurelius, Meditations 4.41 (quoting Epictetus); Stanford Encyclopedia of Philosophy: Marcus Aurelius; World History Encyclopedia: Epictetus.",
     "topic": "epictetus-from-slave-to-sage"
   },
   {
     "tier": 1,
-    "question": "The great schools of Athens let few people in: Plato taught the sons of rich Athenian families, and Aristotle tutored young nobles. In his garden outside the city, Epicurus let two groups the proud schools would never seat argue as full equals. Which pair did he welcome?",
+    "question": "The great schools of Athens let few people in: Plato taught the sons of rich Athenians, and Aristotle tutored young nobles. In his garden outside the city, Epicurus let two groups the proud schools rarely seated argue as full equals. Which pair did he welcome?",
     "answer": "Women and slaves",
     "choices": [
       "Women and slaves",
@@ -8147,7 +8147,7 @@
       "Soldiers and athletes",
       "Actors and poets"
     ],
-    "context": "The Garden admitted women and slaves as equals when that was almost unheard of — noblewomen, courtesans, senators, and slaves argued philosophy side by side. Two women remembered by name are Leontion and Themista. The other schools were exclusive: Plato's Academy mostly trained sons of the Athenian elite and Aristotle tutored nobles like Alexander the Great. Sources: The Conversation, 'Long before debates over wokeness, Epicurus built a philosophy that welcomed slaves, women and outsiders'; Stanford Encyclopedia of Philosophy: Epicurus.",
+    "context": "The Garden admitted women and slaves as equals when that was almost unheard of — noblewomen, courtesans, and slaves argued philosophy side by side. Two women remembered by name are Leontion and Themista. The other schools were exclusive: Plato's Academy mostly trained sons of the Athenian elite and Aristotle tutored nobles like Alexander the Great. Sources: The Conversation, 'Long before debates over wokeness, Epicurus built a philosophy that welcomed slaves, women and outsiders'; Stanford Encyclopedia of Philosophy: Epicurus.",
     "topic": "epicurus-and-the-garden"
   },
   {
@@ -8173,7 +8173,7 @@
       "Figs",
       "Honey"
     ],
-    "context": "The popular sense of 'epicurean' inverts the man: he prized the simplest pleasures. 'Send me a pot of preserved cheese, that when I like I may have a feast,' he wrote — that was his idea of a treat, and he said he was content with bread and water. Sources: Diogenes Laertius, Lives X (the cheese letter), via epicureanfriends.com; Society of Friends of Epicurus.",
+    "context": "The popular sense of 'epicurean' inverts the man: he prized the simplest pleasures. 'Send me a little pot of cheese, that, when I like, I may fare sumptuously,' he wrote — that was his idea of a treat, and he said he was content with bread and water. Sources: Diogenes Laertius, Lives X.11 (Hicks translation), via Wikisource; Society of Friends of Epicurus.",
     "topic": "epicurus-and-the-garden"
   },
   {
@@ -8184,7 +8184,7 @@
       "Being free of all pain and fear",
       "Being full of joy every waking hour",
       "Being lost in one thrill after another",
-      "Being praised by everyone you meet"
+      "Being praised by everyone around"
     ],
     "context": "Epicurus redefined 'pleasure' as two states of non-disturbance, not indulgence: aponia (absence of bodily pain) and ataraxia (absence of mental anxiety, literally 'non-disturbance'). The good life was not piling up sensations but reaching a calm, untroubled mind and body. Sources: Stanford Encyclopedia of Philosophy: Epicurus; Wikipedia: Epicureanism.",
     "topic": "epicurus-and-the-garden"
@@ -8238,12 +8238,12 @@
       "A drug that dulled the pain",
       "Pride in the school he had built"
     ],
-    "context": "On his deathbed, in agony from a kidney-stone blockage, Epicurus wrote to Idomeneus: 'On this blissful day, which is also the last of my life... My continual sufferings are so great that nothing could increase them; but I set above them all the gladness of mind at the memory of our past conversations.' He then asked Idomeneus to look after the children of his late friend Metrodorus. Sources: Epicurus, Letter to Idomeneus (R.D. Hicks and Cyril Bailey translations), via epicurus.net and epicureanfriends.com.",
+    "context": "On his deathbed, in agony from a kidney-stone blockage, Epicurus wrote to Idomeneus: 'On this blissful day, which is also the last of my life, I write this to you. My continual sufferings from strangury and dysentery are so great that nothing could augment them; but over against them all I set gladness of mind at the remembrance of our past conversations.' He then asked Idomeneus to look after the children of his late friend Metrodorus. Sources: Epicurus, Letter to Idomeneus (R.D. Hicks translation), Diogenes Laertius, Lives X.22, via Wikisource.",
     "topic": "epicurus-and-the-garden"
   },
   {
     "tier": 4,
-    "question": "Epicurus's students boiled his philosophy into a four-line remedy and memorized it like a doctor's cure: do not fear the gods; do not worry about death; what is good is easy to get; what is terrible is easy to bear. One copy survived on a scroll in a Roman town that a single disaster had sealed under a deep blanket of debris. What sealed that town and saved the scroll?",
+    "question": "Later Epicureans boiled his philosophy into a four-line remedy and memorized it like a doctor's cure: do not fear the gods; do not worry about death; what is good is easy to get; what is terrible is easy to bear. One copy survived on a scroll in a Roman town that a single disaster had sealed under a deep blanket of debris. What sealed that town and saved the scroll?",
     "answer": "A volcano burying it in ash",
     "choices": [
       "A volcano burying it in ash",
@@ -8433,7 +8433,7 @@
       "\"Prove it first, and show me the mechanism that makes it true.\"",
       "\"Change one thing, and then perhaps I could accept the bargain.\""
     ],
-    "context": "Nietzsche offers exactly two reactions, and which one is honestly yours is the test. The crushed man curses the demon; the man who has had even one moment good enough would call the news divine. Notice the trap: 'I will bear it' sounds noble, but Nietzsche wants more than gritted-teeth endurance — he wants you glad. Source: Friedrich Nietzsche, The Gay Science §341 (Walter Kaufmann translation).",
+    "context": "Nietzsche offers exactly two reactions, and which one a person honestly has is the test. The crushed man curses the demon; the man who has had even one moment good enough would call the news divine. Bearing it with gritted teeth is not enough; Nietzsche wants the listener glad. Source: Friedrich Nietzsche, The Gay Science §341 (Walter Kaufmann translation).",
     "topic": "eternal-recurrence"
   },
   {
@@ -8446,12 +8446,12 @@
       "A river that never flows the same way twice, carrying every moment out to sea",
       "A candle burning down, its flame passed on so that no single life is ever the end"
     ],
-    "context": "The exact line: 'The eternal hourglass of existence is turned over again and again, and you with it, speck of dust!' The image shrinks you to a single grain falling through the same sand for eternity. The 'river that never flows the same way twice' belongs to Heraclitus — an ancient Nietzsche admired — which is why it reads as plausible here. Source: Friedrich Nietzsche, The Gay Science §341 (Kaufmann translation).",
+    "context": "The exact line: 'The eternal hourglass of existence is turned upside down again and again, and you with it, speck of dust!' The image shrinks a life to a single grain falling through the same sand for eternity. The 'river that never flows the same way twice' belongs to Heraclitus, an ancient thinker Nietzsche admired. Source: Friedrich Nietzsche, The Gay Science §341 (Kaufmann translation).",
     "topic": "eternal-recurrence"
   },
   {
     "tier": 3,
-    "question": "In a thought experiment of Friedrich Nietzsche's, a demon asks, 'Do you want this life once more, and countless times more?' Nietzsche titled the passage 'The Greatest Weight.' Suppose you carried that question on your shoulders for good. How, according to Nietzsche, is it supposed to change the way you act?",
+    "question": "In a thought experiment of Friedrich Nietzsche's, a demon's news leaves one question hanging, 'Do you desire this once more and innumerable times more?' Nietzsche titled the passage 'The Greatest Weight.' Suppose you carried that question on your shoulders for good. How, according to Nietzsche, is it supposed to change the way you act?",
     "answer": "It bears down on every choice, pushing you to live so that you would will the whole life again",
     "choices": [
       "It bears down on every choice, pushing you to live so that you would will the whole life again",
@@ -8459,7 +8459,7 @@
       "It reassures you that death is not final, since the life you have will always return",
       "It frees you from blame, since your worst moments were fated and could never have gone otherwise"
     ],
-    "context": "The aphorism is named 'The Greatest Weight' because the question is meant to press on everything you do — the heaviest weight there is. Nietzsche is explicit that this is not a claim about physics or an afterlife; it is a tool for weighing your life. If the demon's question would crush you, change how you live until it wouldn't. Source: Friedrich Nietzsche, The Gay Science §341; Stanford Encyclopedia of Philosophy, 'Friedrich Nietzsche' (https://plato.stanford.edu/entries/nietzsche/).",
+    "context": "The aphorism is named 'The Greatest Weight' because the question is meant to press on everything a person does — the heaviest weight there is. In The Gay Science it is posed as a question, a 'what if,' rather than argued as a fact about physics or an afterlife: a tool for weighing a life. If the question would crush a person, the cure is to live so that it would not. Source: Friedrich Nietzsche, The Gay Science §341 (Kaufmann translation); Stanford Encyclopedia of Philosophy, 'Friedrich Nietzsche' (https://plato.stanford.edu/entries/nietzsche/).",
     "topic": "eternal-recurrence"
   },
   {
@@ -8485,7 +8485,7 @@
       "\"A mile above the world of men\"",
       "\"Higher than any god has climbed\""
     ],
-    "context": "The lake was Silvaplana near Sils-Maria in the Swiss Alps, about 6,000 feet up. In Ecce Homo, Nietzsche recalls jotting the thought on a sheet inscribed '6000 feet beyond man and time,' and calls eternal recurrence 'the fundamental conception' of Thus Spoke Zarathustra and 'the highest formula of affirmation that can possibly be attained.' Source: Friedrich Nietzsche, Ecce Homo ('Thus Spoke Zarathustra' §1).",
+    "context": "The lake was Silvaplana near Sils-Maria in the Swiss Alps, about 6,000 feet up. In Ecce Homo, Nietzsche recalls noting the idea on a sheet of paper with the postscript 'Six thousand feet beyond man and time,' and calls eternal recurrence the fundamental idea of Thus Spoke Zarathustra, 'the highest formula of a Yea-saying to life that can ever be attained.' Source: Friedrich Nietzsche, Ecce Homo ('Thus Spake Zarathustra' §1), Anthony M. Ludovici translation (Project Gutenberg #52190).",
     "topic": "eternal-recurrence"
   },
   {
@@ -8758,7 +8758,7 @@
       "That his classmates would one day beg to study under the ox they mocked",
       "That his slow, plodding manner in fact hid the fastest mind among them"
     ],
-    "context": "Albert the Great taught Aquinas at Cologne and had himself launched the recovery of Aristotle for the Latin West, writing commentaries on every one of Aristotle's works. The 'Dumb Ox' line is a treasured legend of the order: Albert turned the insult around, since an ox bellows. Source: Catholic Encyclopedia (New Advent), St. Thomas Aquinas (newadvent.org/cathen/14663b.htm); Dominicans (english.op.org), 'Our Brother, the Dumb Ox.'",
+    "context": "Albert the Great taught Aquinas at Cologne and had himself championed Aristotle in the Latin West, commenting on nearly all of Aristotle's works. The 'Dumb Ox' line is a treasured legend of the order: Albert turned the insult around, since an ox bellows. Source: Catholic Encyclopedia (New Advent), St. Thomas Aquinas (newadvent.org/cathen/14663b.htm); Dominicans (english.op.org), 'Our Brother, the Dumb Ox.'",
     "topic": "faith-and-reason-aristotle-baptized"
   },
   {
@@ -8797,7 +8797,7 @@
       "That God once took on flesh and walked the earth",
       "That the dead will rise again at the end of time"
     ],
-    "context": "Aquinas called the truths reason can prove on its own the 'preambles of faith' (preambula fidei), and the existence of God was his showcase. The truths that rest on divine testimony alone he called the 'articles of faith' -- among them the Trinity and the Incarnation, the very claims offered here as wrong choices. The recognition: he did not pretend reason proves everything; he drew the exact line where one road ends and the other begins. Source: Internet Encyclopedia of Philosophy, Faith and Reason (iep.utm.edu/faith-re/), on preambles vs. articles of faith.",
+    "context": "Aquinas called the truths reason can prove on its own the 'preambles of faith' (preambula fidei), and the existence of God was his showcase. The truths that rest on divine testimony alone he called the 'articles of faith' -- among them the Trinity, the Incarnation and the resurrection of the dead. He did not pretend reason proves everything; he drew the exact line where one road ends and the other begins. Source: Internet Encyclopedia of Philosophy, Faith and Reason (iep.utm.edu/faith-re/), on preambles vs. articles of faith.",
     "topic": "faith-and-reason-aristotle-baptized"
   },
   {
@@ -8810,7 +8810,7 @@
       "Faith gives way, for a firm and well-argued proof of reason outranks a claim merely held on faith",
       "Neither gives way, for each road rules its own walled-off questions and the two can never truly meet"
     ],
-    "context": "Aquinas's two-fold theory of truth runs one way only: 'No contradiction can stand between these two truths. However, something can be true for faith and false (or inconclusive) in philosophy, though not the other way around.' Revealed theology is the nobler science -- greater certitude, higher dignity -- because, as he put it, 'whatever its source, truth is of the Holy Spirit.' Reason can fall short or be inconclusive; it can never overturn a revealed truth. The 'each rules its own, walled-off' choice is the 'double truth' he rejected, linked to the Latin Averroists around Siger of Brabant. Source: Internet Encyclopedia of Philosophy, Faith and Reason (iep.utm.edu/faith-re/), on Aquinas's two-fold theory of truth.",
+    "context": "For Aquinas the two truths can never truly contradict, and the order between them runs one way: a truth of faith can lie beyond what philosophy can prove, but a sound argument can never overturn it. When an argument seems to clash with faith, the fault lies in the argument, which he called an abuse of philosophy owing to the weakness of reason. Revealed theology is the nobler science, with greater certitude and higher dignity. Reason can fall short or be inconclusive; it can never overturn a revealed truth. The rival picture of two roads ruling walled-off questions recalls the 'double truth' charged against the Latin Averroists around Siger of Brabant, which Aquinas rejected. Source: Internet Encyclopedia of Philosophy, Faith and Reason (iep.utm.edu/faith-re/); Aquinas, Summa Theologiae I, q.1, a.5, and his commentary on Boethius' De Trinitate, q.2, a.3.",
     "topic": "faith-and-reason-aristotle-baptized"
   },
   {
@@ -8886,9 +8886,9 @@
       "A commitment held with full personal conviction even though its ground can never be made certain",
       "A conclusion a person reaches once the evidence has finally tipped far enough in its favor",
       "A sense of safety that arrives the very moment a believer's last doubts have gone",
-      "A bet placed only after working out that the odds are clearly favorable"
+      "A bet placed only after carefully working out that the odds are clearly in its favor"
     ],
-    "context": "Kierkegaard's formula from the 'Concluding Unscientific Postscript' (1846): faith is 'an objective uncertainty held fast in an appropriation-process of the most passionate inwardness' - objective uncertainty held with subjective certainty. The believer must 'remain out upon the deep, over seventy thousand fathoms of water, still preserving my faith.' The risk is the whole point: 'Without risk, no faith.' The same book says why a proof would ruin it: 'If I am capable of grasping God objectively, I do not believe, but precisely because I cannot do this, I must believe.' If you could prove God like a theorem, there would be nothing left to have faith IN. Kierkegaard is not a simple irrationalist: reason reaches a LIMIT - the incarnation is 'the Absolute Paradox' the understanding cannot think - and at that limit a person responds with faith or 'offense.' The leap is beyond reason, not against it. This is Kierkegaard's position, presented here as one move about where evidence runs out, not as a verdict.",
+    "context": "Kierkegaard's formula from the 'Concluding Unscientific Postscript' (1846): faith is 'an objective uncertainty held fast in an appropriation-process of the most passionate inwardness' - objective uncertainty held with subjective certainty. The believer must 'remain out upon the deep, over seventy thousand fathoms of water, still preserving my faith.' The risk is the whole point: 'Without risk there is no faith.' The same book says why a proof would ruin it: 'If I am capable of grasping God objectively, I do not believe, but precisely because I cannot do this, I must believe.' Were God provable like a theorem, nothing would be left to have faith IN. Kierkegaard is not a simple irrationalist: reason reaches a LIMIT - the incarnation is 'the Absolute Paradox' the understanding cannot think - and at that limit a person responds with faith or 'offense.' The leap is beyond reason, not against it.",
     "topic": "faith-vs-evidence-kierkegaards-leap"
   },
   {
@@ -8914,7 +8914,7 @@
       "That Abraham must simply have misheard, since a good God would not command a real atrocity",
       "That faith and duty are at bottom the same thing, glimpsed from two different angles"
     ],
-    "context": "Kierkegaard's name for the move is the 'teleological suspension of the ethical': faith puts the single individual momentarily higher than the universal moral law. This is the move evidentialists find monstrous and Kierkegaard finds the purest faith. Note the no-verdict frame: the question asks what Kierkegaard CLAIMS, not whether Abraham was right - an evidentialist who recoils from the act would still agree this is what Kierkegaard argued. Sources: Fear and Trembling (1843), by Johannes de silentio; SEP, 'Soren Kierkegaard.'",
+    "context": "Kierkegaard's name for the move is the 'teleological suspension of the ethical': faith puts the single individual momentarily higher than the universal moral law. This is the move evidentialists find monstrous and Kierkegaard finds the purest faith. Sources: Fear and Trembling (1843), by Johannes de silentio; SEP, 'Soren Kierkegaard.'",
     "topic": "faith-vs-evidence-kierkegaards-leap"
   },
   {
@@ -8932,12 +8932,12 @@
   },
   {
     "tier": 2,
-    "question": "A tanker has ruptured and poured 210 million gallons of crude oil into the ocean, coating beaches for hundreds of miles and killing seabirds by the thousand. The company's executive shrugs it off: a neighbor dripping half a liter onto his driveway, he says, has spilled oil too. What is wrong with his comparison?",
+    "question": "A blown-out offshore well has poured 210 million gallons of crude oil into the ocean, coating beaches for hundreds of miles and killing seabirds by the thousand. The company's executive shrugs it off: a neighbor dripping half a liter onto his driveway, he says, has spilled oil too. Where does his comparison go wrong?",
     "answer": "The amounts differ so enormously that calling the two spills the same erases the real harm",
     "choices": [
-      "The amounts really are equal, so the executive's comparison holds up fine",
+      "Nothing, since oil spilled anywhere does harm and both of them did spill it",
       "The amounts differ so enormously that calling the two spills the same erases the real harm",
-      "The driveway drip is the more serious spill, so he has the comparison backwards",
+      "Nothing is wrong with the comparison itself, only with his shrugging off blame",
       "Ocean oil and driveway oil are different substances, so they can't be compared"
     ],
     "context": "This is the textbook 'magnitude' case of false equivalence: both events are 'spilled oil,' but the Deepwater Horizon spill was roughly 210 million gallons against about half a liter -- orders of magnitude that calling them equivalent simply hides. The fix is to name the buried difference (scale), not to rank which spiller is the worse person. Source: https://en.wikipedia.org/wiki/False_equivalence",
@@ -8946,11 +8946,11 @@
   {
     "tier": 2,
     "question": "Marco wants a pet jaguar, and he tells his mother it would be no different from the housecat they already keep. Both are cats, he says, members of the same animal family. What does his reasoning get wrong?",
-    "answer": "The shared family is real but trivial beside all that makes one a safe pet and the other deadly",
+    "answer": "The family tie is real but tiny beside what makes one safe and the other deadly",
     "choices": [
-      "The shared family is real but trivial beside all that makes one a safe pet and the other deadly",
+      "The family tie is real but tiny beside what makes one safe and the other deadly",
       "It is simply false that a housecat and a jaguar are in the same family",
-      "The jaguar is the better house pet of the two, so the claim is backwards",
+      "Nothing, since cats of one kind share the same nature and temper",
       "A housecat and a jaguar share nothing at all, so no comparison can be made"
     ],
     "context": "Housecat and jaguar do share the family Felidae -- the shared category is true, but trivial next to the difference it is being used to erase. False equivalence latches onto one real-but-minor shared trait and pretends it settles the whole comparison. Source: https://en.wikipedia.org/wiki/False_equivalence",
@@ -8959,12 +8959,12 @@
   {
     "tier": 2,
     "question": "Whenever her brother compares two things that do not really match on what matters, Mia rolls her eyes and tells him he is 'comparing apples and oranges.' A fair comparison and an unfair one differ in a single crucial way. What is it?",
-    "answer": "A fair comparison shares the trait that actually matters; an unfair one grabs a trait that doesn't",
+    "answer": "A fair comparison matches on the trait that matters; an unfair one on a trait that doesn't",
     "choices": [
-      "A fair comparison shares the trait that actually matters; an unfair one grabs a trait that doesn't",
+      "A fair comparison matches on the trait that matters; an unfair one on a trait that doesn't",
       "A fair comparison stays inside one category; an unfair one compares across different categories",
-      "A fair comparison treats both sides as equal; an unfair one takes a side",
-      "A fair comparison is the one that most people accept as reasonable"
+      "A fair comparison treats both sides as equals; an unfair one quietly takes a side",
+      "A fair comparison is one that most people would accept as reasonable on hearing it"
     ],
     "context": "False equivalence is the formal name for 'comparing apples and oranges' -- a fallacy of inconsistency. A valid analogy compares things alike in the RELEVANT respect; a false equivalence seizes an irrelevant shared trait ('both are fruit,' 'both are weapons') and acts as though that settles it. Note that 'just stay in one category' is the wrong rule: apples and oranges CAN be fairly compared on sweetness or price. Source: https://en.wikipedia.org/wiki/False_equivalence",
     "topic": "false-equivalence"
@@ -8998,11 +8998,11 @@
   {
     "tier": 3,
     "question": "Elena is selling her used car, and the price guides put its honest market value at $20,000. A buyer walks up her driveway and insists it is worth only $1. Then he smiles: 'Let's just split the difference. I'll pay $10,000.' It sounds like a fair compromise. Why is it really a trick?",
-    "answer": "A wildly low first number drags the 'middle' down, so the compromise is just a disguised lowball",
+    "answer": "His absurd first number drags the 'middle' down, so the split is a disguised lowball",
     "choices": [
-      "A wildly low first number drags the 'middle' down, so the compromise is just a disguised lowball",
-      "The buyer's offer of one dollar was illegal and ought to be reported to someone",
-      "Splitting the difference is always the fairest possible way to settle on a price",
+      "His absurd first number drags the 'middle' down, so the split is a disguised lowball",
+      "He has hidden a plan to resell the car later at a far higher price than that",
+      "A price guide is only an estimate, so the car may truly be worth about $10,000",
       "The car's true value cannot be known until a neutral third party appraises it"
     ],
     "context": "Bo Bennett's haggling example shows how an absurd extreme weaponizes the argument to moderation: stake out a crazy position and the 'fair' midpoint slides toward you. His closer: 'There is no compromise when it comes to truth. Truth is truth.' The trap is not that compromise is always wrong -- it is assuming the middle is automatically right. Source: https://www.logicallyfallacious.com/logicalfallacies/Argument-to-Moderation",
@@ -9011,14 +9011,14 @@
   {
     "tier": 4,
     "question": "At a school debate, a student argues that the U.S. Constitution's Second Amendment right to 'bear arms' lets a private citizen own a nuclear submarine, since a rifle and a nuclear submarine are both 'arms.' The room laughs, but he insists the logic holds. Where does his argument break down?",
-    "answer": "Both are arms, but a rifle and a nuclear sub differ so vastly in scale that the shared word settles nothing",
+    "answer": "Both are arms, but they differ so vastly in power that the shared word settles nothing",
     "choices": [
-      "Both are arms, but a rifle and a nuclear sub differ so vastly in scale that the shared word settles nothing",
+      "Both are arms, but they differ so vastly in power that the shared word settles nothing",
       "A nuclear submarine is not really a weapon, so it falls outside the meaning of 'arms'",
       "Since both clearly count as arms, the debater's conclusion does in fact follow",
       "The phrase 'bear arms' was never meant to cover ordinary firearms either"
     ],
-    "context": "Bo Bennett stresses that false equivalence is a fallacy of DEGREE, not kind: a rifle and a nuclear sub are both 'arms,' but conflating their magnitude and regulation is the error -- 'the order of magnitude can be debated.' The reasoning move is what's recognized here; no verdict on gun policy is intended. Source: https://www.logicallyfallacious.com/logicalfallacies/False-Equivalence",
+    "context": "Bo Bennett stresses that false equivalence is a fallacy of DEGREE, not kind: a rifle and a nuclear sub are both 'arms,' but conflating their magnitude and regulation is the error -- 'the order of magnitude can be debated.' Spotting the move settles no question of gun policy. Source: https://www.logicallyfallacious.com/logicalfallacies/False-Equivalence",
     "topic": "false-equivalence"
   },
   {
@@ -9040,8 +9040,8 @@
     "answer": "It hides that the relevant experts agree, faking a 50/50 debate out of one weak source",
     "choices": [
       "It hides that the relevant experts agree, faking a 50/50 debate out of one weak source",
-      "It should have left Ussher out, since his old date is too dated to even mention",
-      "It treated a question of faith as though it were a question of science",
+      "It left out the geologist's exact figure, so readers cannot weigh his claim",
+      "It gave the geologist the first word, which tilts readers toward his side",
       "It quoted only two people when a fair debate truly needs many more voices"
     ],
     "context": "The Internet Encyclopedia of Philosophy classifies false equivalence as a form of the Fallacy of Suppressed Evidence: it implies the two sides have roughly equal evidence while covering up that one side's is far weaker. The lie is not in what is printed -- it is in what is hidden (here, that the relevant experts have reached consensus). Source: https://iep.utm.edu/fallacy/",
@@ -9057,20 +9057,20 @@
       "The fact that even drawing the comparison is offensive and ought to be forbidden",
       "The reality that a head of state can never be blamed for any wartime deaths"
     ],
-    "context": "This is the moral_vision's named failure mode. Bo Bennett's example equates a head of state ordering a strike with an ordinary mass murderer because both 'caused deaths' -- burying the differences in circumstance, level of responsibility, and intent. The honest move names the buried distinction; it does NOT rank which case is worse, and a careful person could weigh the two either way. Source: https://www.logicallyfallacious.com/logicalfallacies/False-Equivalence",
+    "context": "Bo Bennett's example equates a head of state ordering a strike with an ordinary mass murderer because both 'caused deaths' -- burying the differences in circumstance, level of responsibility, and intent. The honest move names the buried distinction; it does NOT rank which case is worse, and a careful person could weigh the two either way. Source: https://www.logicallyfallacious.com/logicalfallacies/False-Equivalence",
     "topic": "false-equivalence"
   },
   {
     "tier": 5,
     "question": "The British Broadcasting Corporation, Britain's main public broadcaster, spent years pairing mainstream climate scientists with a handful of climate deniers on air, so that its coverage would sound 'balanced.' Around 2018, private guidance to its staff admitted that this approach had too often got climate coverage wrong. What did the network conclude about how to fix it?",
-    "answer": "You do not need a denier on air to balance the debate",
+    "answer": "No denier is needed on air to make the debate balanced",
     "choices": [
-      "You do not need a denier on air to balance the debate",
+      "No denier is needed on air to make the debate balanced",
       "Every controversial science story needs voices from both sides",
       "Climate coverage should be dropped until the science is fully settled",
       "Skeptics deserve more airtime, not less, to keep the network fair"
     ],
-    "context": "'False balance' is false equivalence's media-specific form, and the BBC became its famous confessor -- acknowledging climate change 'has been a difficult subject for the BBC, and we get coverage of it wrong too often.' The recognition skill is that equal airtime is not the same as equal evidence; the claim is reported as the network's own admission, not as a verdict on the underlying science. Source: https://www.snopes.com/news/2018/09/12/facing-criticism-past-climate-reporting-bbc-commits-reigning-false-balance/",
+    "context": "'False balance' is false equivalence's media-specific form, and the BBC became its famous confessor -- acknowledging climate change 'has been a difficult subject for the BBC, and we get coverage of it wrong too often.' Equal airtime is not the same as equal evidence; the line is reported as the network's own admission. Source: https://www.snopes.com/news/2018/09/12/facing-criticism-past-climate-reporting-bbc-commits-reigning-false-balance/",
     "topic": "false-equivalence"
   },
   {
@@ -9161,18 +9161,18 @@
       "The believer is honoring his society's authority, which has wrapped its rules in sacred language.",
       "The believer is soothing his fear of death and the unknown with a comforting story."
     ],
-    "context": "This is Feuerbach's central move, which he compressed into three words: 'theology is anthropology.' When you think you are studying God, he says, you are really studying an idealized portrait of MAN. He even named the human powers involved -- 'Reason, Will, Affection': God's all-knowing is our reason, God's omnipotence our will, God's love our heart, each cranked up to infinity. No side is taken here on whether God exists -- this is presented as one serious position among the rivals shown (a real God; the authority of society; the fear of death), not as the verdict. Source: Stanford Encyclopedia of Philosophy, 'Ludwig Andreas Feuerbach'; Feuerbach, The Essence of Christianity (1841), Introduction, trans. George Eliot.",
+    "context": "This is Feuerbach's central move, which he compressed into three words: 'theology is anthropology.' A believer who thinks he is studying God, he argued, is really studying an idealized portrait of MAN. He even named the human powers involved -- 'Reason, Will, Affection': God's all-knowing is human reason, God's omnipotence the human will, God's love the human heart, each cranked up to infinity. Rival accounts see a real God, the authority of society or the fear of death behind worship, and whether God exists is still disputed. Source: Stanford Encyclopedia of Philosophy, 'Ludwig Andreas Feuerbach'; Feuerbach, The Essence of Christianity (1841), Introduction, trans. George Eliot.",
     "topic": "feuerbachs-projection"
   },
   {
     "tier": 3,
-    "question": "Ludwig Feuerbach offered a strange way to size up a stranger. Skip his job and his town, he advised, and ask what sort of God he worships. What, by Feuerbach's account, does a man's God reveal about the man himself?",
+    "question": "In his 1841 book The Essence of Christianity, Ludwig Feuerbach offered a strange way to size up a stranger: find out what sort of God he worships. What, by Feuerbach's account, does a man's God reveal about the man himself?",
     "answer": "The qualities that person most admires and secretly longs to possess himself.",
     "choices": [
       "The qualities that person most admires and secretly longs to possess himself.",
       "The fears and dangers that person spends his whole life trying to escape.",
       "The customs of the family and village the person simply happened to be born into.",
-      "The favors that person is hoping to win -- protection, health, good fortune."
+      "The favors that person is hoping to win: protection, health, good fortune."
     ],
     "context": "Feuerbach's reading-test: 'By his God thou knowest the man, and by the man his God; the two are identical.' He continued, 'Such as are a man's thoughts and dispositions, such is his God... Consciousness of God is self-consciousness.' In plain terms: tell me your God and I will tell you exactly what you secretly admire in yourself. It is a method, not a sneer -- and it cuts both ways for any believer or unbeliever. Source: Feuerbach, The Essence of Christianity, Introduction (George Eliot trans.), Project Gutenberg #47025.",
     "topic": "feuerbachs-projection"
@@ -9187,15 +9187,15 @@
       "It steadies him -- handing his fears to a greater power, he can finally rest.",
       "It does nothing to him -- the worshipper and his God are simply two separate things."
     ],
-    "context": "Feuerbach gave the projection a mechanism -- a kind of zero-sum trade. He wrote: 'To enrich God, man must become poor; that God may be all, man must be nothing.' What a man withdraws from himself, he said, he then 'enjoys in an incomparably higher and richer measure in God.' Every perfection handed up to heaven is one he denies is his own. The other answers shown are real rival pictures of worship, not strawmen; no winner is declared. Source: Feuerbach, The Essence of Christianity, Chapter I, §2 (Eliot trans.), confirmed at marxists.org.",
+    "context": "Feuerbach gave the projection a mechanism -- a kind of zero-sum trade. He wrote: 'To enrich God, man must become poor; that God may be all, man must be nothing.' What a man withdraws from himself, he said, he then 'enjoys in an incomparably higher and fuller measure in God.' Every perfection handed up to heaven is one he denies is his own. Source: Feuerbach, The Essence of Christianity, Chapter I, §2 (Eliot trans.), confirmed at marxists.org.",
     "topic": "feuerbachs-projection"
   },
   {
     "tier": 4,
     "question": "The God people worship, Ludwig Feuerbach argued, is really a portrait of humanity lifted into the sky. The Christian God, for one, is pictured as at once all-wise and all-loving. Where, Feuerbach claimed, does so complete a portrait actually come from?",
-    "answer": "It pools the whole species' scattered strengths into one being, each person's limits stripped away.",
+    "answer": "It pools the whole species' scattered strengths, each person's limits stripped away.",
     "choices": [
-      "It pools the whole species' scattered strengths into one being, each person's limits stripped away.",
+      "It pools the whole species' scattered strengths, each person's limits stripped away.",
       "It copies the single greatest human who ever lived, then rounds him up to flawless.",
       "It enlarges the worshipper's own private virtues until they fill the whole sky.",
       "It is stitched together from random wishes, answering to nothing real in any person."
@@ -9213,7 +9213,7 @@
       "It is real but of a higher kind, a divine mercy that needs no suffering to be genuine.",
       "It is a mercy too perfect for humans to invent, which is why it points to a real God."
     ],
-    "context": "This is Feuerbach's 'grammatical' attack: traditional theology makes God the subject and man the predicate, but Feuerbach flips it -- the predicates believers apply to God (compassion, mercy, love) properly belong to the human species. Since 'God as God' cannot suffer, divine compassion has to be a borrowed human trait. Note that one of the other choices is the real reply of classical theism (God's mercy works by analogy, needing no literal suffering) -- a competent thinker can hold it; the question only asks what Feuerbach himself concluded, and no verdict is taken. Where this went next: the young Marx and Engels were swept up -- Engels recalled 'we all became Feuerbachians' -- and Marx built his line 'religion... is the opium of the people' on top of Feuerbach's original move that the divine is a human creation. Source: Stanford Encyclopedia of Philosophy, 'Ludwig Andreas Feuerbach'; Engels, Ludwig Feuerbach and the End of Classical German Philosophy (1886).",
+    "context": "This is Feuerbach's 'grammatical' attack: traditional theology makes God the subject and man the predicate, but Feuerbach flips it -- the predicates believers apply to God (compassion, mercy, love) properly belong to the human species. Since 'God as God' cannot suffer, divine compassion has to be a borrowed human trait. Classical theism has its own reply: God's mercy is spoken of by analogy and needs no literal suffering, and a competent thinker can hold it. Where this went next: the young Marx and Engels were swept up -- Engels recalled 'we all became Feuerbachians' -- and Marx built his line 'religion... is the opium of the people' on top of Feuerbach's original move that the divine is a human creation. Source: Stanford Encyclopedia of Philosophy, 'Ludwig Andreas Feuerbach'; Engels, Ludwig Feuerbach and the End of Classical German Philosophy (1886).",
     "topic": "feuerbachs-projection"
   },
   {
@@ -9226,7 +9226,7 @@
       "He prays beside the river all through the night until the ice cracks open on its own",
       "He chops a hole in the ice with an axe and waits in the cold until a fish swims past"
     ],
-    "context": "From The Twenty-four Filial Exemplars (Guo Jujing, Yuan dynasty), a famous collection of filial-piety legends. Wang Xiang honors even the stepmother who mistreats him -- the point is that the duty to a parent does not depend on the parent deserving it. (Legendary.)",
+    "context": "From The Twenty-four Filial Exemplars (Guo Jujing, Yuan dynasty), a famous collection of filial-piety legends. Wang Xiang honors even the stepmother who mistreats him -- the point is that the duty to a parent does not depend on the parent deserving it. (Legend.)",
     "topic": "filial-piety-xiao"
   },
   {
@@ -9235,16 +9235,16 @@
     "answer": "He dresses in bright children's clothes and tumbles about with toys, like a baby",
     "choices": [
       "He dresses in bright children's clothes and tumbles about with toys, like a baby",
-      "He paints his grey hair jet black each morning so they forget how old he has grown",
+      "He paints his gray hair jet black each morning so they forget how old he has grown",
       "He hides all the calendars in the house so his parents lose track of the passing years",
       "He carries his parents around the garden on his back, pretending to be their pony"
     ],
-    "context": "From The Twenty-four Filial Exemplars (Guo Jujing, Yuan dynasty). Lao Laizi honors his parents by guarding their happiness, not just meeting their needs -- filial piety includes keeping a parent's heart light. (Legendary.)",
+    "context": "From The Twenty-four Filial Exemplars (Guo Jujing, Yuan dynasty). Lao Laizi honors his parents by guarding their happiness, not just meeting their needs -- filial piety includes keeping a parent's heart light. (Legend.)",
     "topic": "filial-piety-xiao"
   },
   {
     "tier": 2,
-    "question": "Confucius's student Ziyou took treating one's parents well to mean simply feeding them. Confucius pushed back: even dogs and horses receive food from someone. Suppose you make sure your own parents are fed every day. What, by his test, would turn that basic care into real honor?",
+    "question": "Confucius's student Ziyou asked what filial piety is. These days, Confucius answered, people think it means feeding one's parents, yet even dogs and horses receive food from someone. Suppose you make sure your own parents are fed every day. What, by his test, would turn that basic care into real honor?",
     "answer": "Reverence, a deep and genuine respect held in the heart",
     "choices": [
       "Reverence, a deep and genuine respect held in the heart",
@@ -9265,7 +9265,7 @@
       "His father's sight was restored the moment Shun forgave him",
       "The sun stood still in the sky to let him finish the harvest"
     ],
-    "context": "From The Twenty-four Filial Exemplars (Guo Jujing, Yuan dynasty). Shun is the tradition's hardest case for filial piety -- he honored parents who plotted his death -- and the legendary reward dramatizes how far that virtue was prized. (Legendary.)",
+    "context": "From The Twenty-four Filial Exemplars (Guo Jujing, Yuan dynasty). Shun is the tradition's hardest case for filial piety -- he honored parents who plotted his death -- and the legendary reward dramatizes how far that virtue was prized. (Legend.)",
     "topic": "filial-piety-xiao"
   },
   {
@@ -9309,32 +9309,6 @@
   },
   {
     "tier": 2,
-    "question": "Argus Panoptes, the giant of Greek myth, had a hundred eyes, so he could keep watch in every direction. Jeremy Bentham borrowed the Greek word for 'all-seeing' in 1787 to name his design for a prison: a round building where one guard in a central tower could watch every inmate. What did Bentham call it?",
-    "answer": "The panopticon",
-    "choices": [
-      "The panopticon",
-      "The labyrinth",
-      "The colossus",
-      "The oubliette"
-    ],
-    "context": "'Panopticon' is Greek for 'all-seeing,' pointing back to Argus Panoptes, the hundred-eyed giant. Jeremy Bentham coined the term in 1787 for his prison design. Source: Wikipedia, 'Panopticon'; Wiktionary, 'panopticon'.",
-    "topic": "foucaults-panopticon"
-  },
-  {
-    "tier": 2,
-    "question": "A ring of cells surrounded an empty courtyard in Jeremy Bentham's prison, with one feature standing in its middle. From that single spot, one inspector could face inward and look straight into every cell around the ring at the same time. What stood at the centre of Bentham's prison?",
-    "answer": "A tower",
-    "choices": [
-      "A tower",
-      "A chapel",
-      "A fountain",
-      "A gallows"
-    ],
-    "context": "Foucault described the design: 'At the periphery, an annular building; at the centre, a tower; this tower is pierced with wide windows that open onto the inner side of the ring.' Each outer cell window backlit the prisoner into a perfect silhouette. Source: Foucault, 'Panopticism,' Discipline and Punish.",
-    "topic": "foucaults-panopticon"
-  },
-  {
-    "tier": 2,
     "question": "The tower in Bentham's ring-shaped prison was built so that its windows hid whoever stood inside, and a prisoner could never tell whether a guard was watching him at that moment. Getting caught was too big a risk to take. How did each prisoner end up acting?",
     "answer": "As if watched every moment, policing himself",
     "choices": [
@@ -9348,7 +9322,7 @@
   },
   {
     "tier": 3,
-    "question": "The central tower of Jeremy Bentham's ring-shaped prison often stood dark and silent, yet no prisoner ever dared to bet that it was empty. Bentham boiled the whole trick down to two words for how the tower's power should work on a man. Which two words did he choose?",
+    "question": "The central tower of Jeremy Bentham's ring-shaped prison often stood dark and silent, yet no prisoner ever dared to bet that it was empty. Michel Foucault, reading Bentham, put the principle of the tower's power over a man into two words. Which two words?",
     "answer": "Visible and unverifiable",
     "choices": [
       "Visible and unverifiable",
@@ -9356,7 +9330,7 @@
       "Sacred and untouchable",
       "Distant and indifferent"
     ],
-    "context": "Bentham's recipe: power must be 'visible and unverifiable.' The inmate always has the tower before his eyes, yet can never confirm anyone is in it. Foucault: 'A real subjection is born mechanically from a fictitious relation' — no one even has to be in the tower. Source: Foucault, Discipline and Punish.",
+    "context": "In Foucault's words, 'Bentham laid down the principle that power should be visible and unverifiable.' The inmate always has the tower before his eyes, yet can never confirm anyone is in it. Foucault: 'A real subjection is born mechanically from a fictitious relation' — no one even has to be in the tower. Source: Foucault, Discipline and Punish, 'Panopticism' (Alan Sheridan translation).",
     "topic": "foucaults-panopticon"
   },
   {
@@ -9370,19 +9344,6 @@
       "A racetrack"
     ],
     "context": "Samuel Bentham devised the 'central inspection principle' running a workshop in Russia for Prince Potemkin, so one overseer could watch many unskilled workers. Jeremy turned it into a prison blueprint and pitched it for prisons, workhouses, asylums, factories AND schools. Source: UCL Bentham Project, 'The Panopticon'.",
-    "topic": "foucaults-panopticon"
-  },
-  {
-    "tier": 3,
-    "question": "Cuba's Presidio Modelo is the one full-scale copy of Bentham's all-seeing prison ever built. A young revolutionary who led a failed attack on a Cuban army base in 1953 spent two years locked inside it. From his cell he wrote, 'What a fantastic school this prison is.' Who was he?",
-    "answer": "Fidel Castro",
-    "choices": [
-      "Fidel Castro",
-      "Che Guevara",
-      "Augusto Pinochet",
-      "Leon Trotsky"
-    ],
-    "context": "Fidel Castro and his brother Raul were held in the Presidio Modelo after the 1953 Moncada attack, until 1955. Castro wrote from his cell, 'What a fantastic school this prison is!' — they ran the hospital wing as a revolutionary boot camp. Source: Wikipedia, 'Presidio Modelo'; Abandoned Spaces.",
     "topic": "foucaults-panopticon"
   },
   {
@@ -9413,7 +9374,7 @@
   },
   {
     "tier": 4,
-    "question": "Michel Foucault began Discipline and Punish with a deliberate jolt: the public execution in 1757 of Robert-François Damiens, who had scratched King Louis XV with a penknife. Damiens was pulled apart by four horses before a roaring crowd. A few pages on, Foucault set beside that scene a much quieter document from 1838. What was it?",
+    "question": "Michel Foucault began Discipline and Punish with a deliberate jolt: the public execution in 1757 of Robert-François Damiens, who had scratched King Louis XV with a penknife. Damiens was pulled apart by horses as a roaring crowd watched. A few pages on, Foucault set beside that scene a much quieter document from 1838. What was it?",
     "answer": "A prison timetable scheduling every minute of an inmate's day",
     "choices": [
       "A prison timetable scheduling every minute of an inmate's day",
@@ -9453,14 +9414,14 @@
   {
     "tier": 5,
     "question": "The all-seeing tower, Michel Foucault insisted, is more than a fact about old prisons and the convicts inside them. Modern people, he wrote, are 'neither in the amphitheatre, nor on the stage, but in the panoptic machine,' its power reaching every one of them. What was Foucault claiming about ordinary people?",
-    "answer": "We carry the watching tower with us and police ourselves",
+    "answer": "They carry the watching tower with them and police themselves",
     "choices": [
-      "We carry the watching tower with us and police ourselves",
-      "We have finally broken free of all surveillance for good",
-      "We are watched constantly, yet it changes nothing in us",
-      "We now watch the powerful far more than they ever watch us"
+      "They carry the watching tower with them and police themselves",
+      "They have finally broken free of all surveillance for good",
+      "They are watched constantly, yet it changes nothing in them",
+      "They now watch the powerful far more than the powerful watch them"
     ],
-    "context": "Foucault's chilling claim: we're ALL inside the machine now, not just convicts. The grade, the camera, the score — we carry the tower with us and bring its effects on ourselves. Scholars routinely read CCTV, social media, and China's Social Credit System through this lens: people self-regulate to match the norm because they might be watched and scored at any time. Source: Foucault, Discipline and Punish; ResearchGate, 'Algorithmic Panopticon' (2021).",
+    "context": "Foucault's claim: not only convicts but everyone is inside the machine, 'invested by its effects of power, which we bring to ourselves since we are part of its mechanism.' The grade, the camera, the score: people carry the tower with them and keep themselves in line. Scholars read CCTV, social media and China's Social Credit System through this lens, while critics question how far the image really stretches. Source: Foucault, Discipline and Punish, 'Panopticism' (Alan Sheridan translation); ResearchGate, 'Algorithmic Panopticon' (2021).",
     "topic": "foucaults-panopticon"
   },
   {
@@ -9491,19 +9452,6 @@
   },
   {
     "tier": 4,
-    "question": "René Descartes began his Meditations vowing to tear down everything he believed and rebuild from scratch. Archimedes had claimed he could move the Earth if given one fixed point to stand on, and Descartes hunted for a belief just as fixed, so certain that even an all-powerful deceiver could not shake it. What was that one unshakeable point?",
-    "answer": "That he himself exists, since he cannot be fooled about it without existing to be fooled",
-    "choices": [
-      "That he himself exists, since he cannot be fooled about it without existing to be fooled",
-      "That the outside world exists, since his own senses report it to him so vividly",
-      "That a perfect God exists, since the idea of perfection had to come from somewhere",
-      "That mathematics holds true, since two and three still make five in any world"
-    ],
-    "context": "Descartes needs, like Archimedes, 'just one thing, however small, that is certain and unshakeable' to lever up all of knowledge. He finds it in the cogito: 'I am, I exist' is true every time he thinks it, because a deceiver can only deceive something that exists. ONE unshakeable point, and you can rebuild the world on it -- the foundationalist's dream stated at its most vivid. Source: SEP, 'Descartes' Epistemology' (plato.stanford.edu/entries/descartes-epistemology) + Descartes, 'Meditations on First Philosophy' (1641), First & Second Meditation.",
-    "topic": "foundationalism-vs-coherentism"
-  },
-  {
-    "tier": 4,
     "question": "Mara pictures knowledge as a tall building: the top floors rest on the floors below, but it can't be floors all the way down, and at the bottom is bedrock. Theo keeps asking her 'why believe that?' An old skeptic's puzzle says the answering can only run on forever, loop back on itself, or halt at a claim she will not back up further. Which must Mara live with?",
     "answer": "The answering halts at a few claims she owes no further reason for",
     "choices": [
@@ -9512,7 +9460,7 @@
       "The answering runs on forever, and she insists that endless chain is fine",
       "The answering halts, but only at claims everyone in the world agrees on"
     ],
-    "context": "Mara is describing the foundationalist picture: ordinary beliefs are upper floors supported by lower ones, but the structure ultimately rests on 'basic' beliefs that sit on bedrock and need no further belief to hold them up. Theo's questioning is Agrippa's (Munchhausen) trilemma: three exits, all uncomfortable -- infinite regress, circularity, or stopping at an unproven starting point (the dogmatic horn). The bedrock/foundationalist view bites the dogmatic horn: it stops at basic beliefs that owe nothing to any belief behind them -- and 'basic' means needing no further belief, NOT 'agreed on by everyone' (a common misreading). The web/coherentist view bites the circular horn (it embraces the loop, calling it mutual support); infinitism bites the regress horn, insisting the endless chain is fine. The kid's job is to match each view to the horn it accepts, not to crown a winner.",
+    "context": "Mara is describing the foundationalist picture: ordinary beliefs are upper floors supported by lower ones, but the structure ultimately rests on 'basic' beliefs that sit on bedrock and need no further belief to hold them up. Theo's questioning is Agrippa's (Munchhausen) trilemma: three exits, all uncomfortable -- infinite regress, circularity, or stopping at an unproven starting point (the dogmatic horn). The bedrock/foundationalist view bites the dogmatic horn: it stops at basic beliefs that owe nothing to any belief behind them -- and 'basic' means needing no further belief, NOT 'agreed on by everyone' (a common misreading). The web/coherentist view bites the circular horn (it embraces the loop, calling it mutual support); infinitism bites the regress horn, insisting the endless chain is fine.",
     "topic": "foundationalism-vs-coherentism"
   },
   {
@@ -9531,9 +9479,9 @@
   {
     "tier": 4,
     "question": "Mark is gripped by a craving for a bag of chips. At the same moment a quieter part of him is unhappy that he craves them at all; he would rather be the sort of man whose mouth waters for celery. A philosopher tells him the two pulls sit on different levels. How do they differ?",
-    "answer": "The first is a desire to eat; the second is a desire about a desire — it targets the craving itself",
+    "answer": "The first is a desire to eat; the second is a desire about a desire, aimed at the craving",
     "choices": [
-      "The first is a desire to eat; the second is a desire about a desire — it targets the craving itself",
+      "The first is a desire to eat; the second is a desire about a desire, aimed at the craving",
       "The first is a desire to eat; the second is a belief that celery is the more sensible choice",
       "The first is a desire to eat; the second is a memory of meals that shaped what he craves",
       "The first is a desire to eat; the second is a sharper pang of the same hunger for chips"
@@ -9548,7 +9496,7 @@
     "choices": [
       "He endorses the very desire that moves him — the craving is the will he wants to have",
       "He feels no inner conflict about the drug — his mind is calm and at peace with itself",
-      "He gets real pleasure from the drug — and doing what brings you pleasure is being free",
+      "He gets real pleasure from the drug — and doing what brings pleasure is being free",
       "He chose long ago to become an addict — his earlier free choice still makes this free"
     ],
     "context": "Frankfurt's central move: freedom is endorsement, not an open exit. The willing addict 'takes the drug freely and of his own free will' even though, being an addict, he could not have done otherwise — his craving is the will he WANTS. The unwilling addict's will is 'not the will he wants,' so the same outward act is not free. What separates them is not peace of mind, pleasure, or any past choice, but which desire each one endorses from above right now. Source: Frankfurt 1971; phrasing confirmed in researchgate.net 'Frankfurt's Unwilling and Willing Addicts' and plato.stanford.edu Compatibilism.",
@@ -9557,9 +9505,9 @@
   {
     "tier": 5,
     "question": "A strange creature in Harry Frankfurt's writing can want a drug and want to be rid of it at the same time, yet has no preference about which pull wins; it does not care which desire ends up steering it. A beast or a small child, he said, is like this. What was Frankfurt's verdict on whether such a creature acts of its own free will?",
-    "answer": "Neither free nor unfree — it never asks which desire should be its will, so the question gets no grip",
+    "answer": "Neither free nor unfree, since it never cares which of its desires should be its will",
     "choices": [
-      "Neither free nor unfree — it never asks which desire should be its will, so the question gets no grip",
+      "Neither free nor unfree, since it never cares which of its desires should be its will",
       "Always free, since whichever of its desires wins, the creature ends up content either way",
       "Never free, because a creature pulled two ways at once can never really make a choice",
       "Free only when its gentler desire wins, and unfree whenever the baser desire prevails"
@@ -9599,11 +9547,11 @@
     "answer": "He loved the wrongdoing itself, and stole simply to be bad",
     "choices": [
       "He loved the wrongdoing itself, and stole simply to be bad",
-      "He wanted the thrill of getting away with something forbidden",
+      "He wanted to pay back the neighbor for some past wrong",
       "He was proving to himself that he feared no punishment",
       "He acted on a sudden craving he could not control"
     ],
-    "context": "In Confessions, Book 2, Augustine dwells on this petty theft as the human face of his whole theory of evil — a will turning to a lesser good purely for the sake of the wrong. His exact words: 'It was foul, and I loved it. I loved to perish. I loved my own error — not that for which I erred, but the error itself.' The pears were poor and he already had better ones at home; the act, not the fruit, was the point. Source: Augustine, Confessions, Book 2, ch. 4.",
+    "context": "In Confessions, Book 2, Augustine dwells on this petty theft as the human face of his whole theory of evil — a will turning to a lesser good purely for the sake of the wrong. His words, in E. B. Pusey's translation: 'It was foul, and I loved it; I loved to perish, I loved mine own fault, not that for which I was faulty, but my fault itself.' The pears were poor and he already had better ones at home; the act, not the fruit, was the point. Source: Augustine, Confessions, Book 2, ch. 4.",
     "topic": "free-will-and-the-origin-of-evil"
   },
   {
@@ -9616,12 +9564,12 @@
       "An old grudge against the orchard's owner",
       "The dread of being called a coward"
     ],
-    "context": "This is the social twist on Augustine's account of why we choose wrong: the disordered will is egged on by company, not only by appetite. He was blunt about it — 'Alone I would not have done it... alone I could not have done it.' The friendship itself was the bait — the pull of fellow sinners, not the fruit. It adds a vivid angle to his larger picture of evil as a will preferring a lesser good (here, the thrill of belonging) to a greater one. Source: Augustine, Confessions, Book 2, ch. 8-9.",
+    "context": "This is the social twist on Augustine's account of why people choose wrong: the disordered will is egged on by company, not only by appetite. He was blunt about it — 'Yet alone I had not done it... alone I had never done it.' The friendship itself was the bait — the pull of fellow sinners, not the fruit. It adds a vivid angle to his larger picture of evil as a will preferring a lesser good (here, the thrill of belonging) to a greater one. Source: Augustine, Confessions, Book 2, ch. 8-9 (E. B. Pusey translation).",
     "topic": "free-will-and-the-origin-of-evil"
   },
   {
     "tier": 2,
-    "question": "Torn between his desires and the higher life he already admired, the young Augustine prayed what he later called a shameless prayer, long before he changed his ways: 'Grant me chastity and self-control — but not yet.' What does a prayer like this show about the human will?",
+    "question": "Torn between his desires and the higher life he already admired, the young Augustine prayed, long before he changed his ways: 'Give me chastity and continency, only not yet.' What does a prayer like this show about the human will?",
     "answer": "A will can want the good and refuse it at the very same time",
     "choices": [
       "A will can want the good and refuse it at the very same time",
@@ -9629,20 +9577,20 @@
       "Wanting the good is already the same as doing it",
       "Outside temptation, not the will, is the true cause of sin"
     ],
-    "context": "This is the experiential core of Augustine's account of evil: not an outside force, but a self that half-wills and half-refuses the good. In Confessions, Book 8, he describes 'my two wills, one old and the other new, one carnal, the other spiritual,' that 'contend within me; and by their discord they unstrung my soul.' Evil, for him, often looks less like a monster than a divided heart. Source: Augustine, Confessions, Book 8.",
+    "context": "This is the experiential core of Augustine's account of evil: not an outside force, but a self that half-wills and half-refuses the good. In Confessions, Book 8, he describes how 'my two wills, one new, and the other old, one carnal, the other spiritual, struggle within me; and by their discord, undid my soul.' Evil, for him, often looks less like a monster than a divided heart. Source: Augustine, Confessions, Book 8 (E. B. Pusey translation).",
     "topic": "free-will-and-the-origin-of-evil"
   },
   {
     "tier": 3,
     "question": "As bishop of Hippo, Augustine wrestled with a puzzle that divided the thinkers of the ancient world: if God made all that exists, and made every bit of it good, how can evil be real without God being its author? What was Augustine's own answer?",
-    "answer": "Evil is no substance of its own — only a corruption of something good",
+    "answer": "Evil is no substance of its own, only a corruption of something good",
     "choices": [
-      "Evil is no substance of its own — only a corruption of something good",
+      "Evil is no substance of its own, only a corruption of something good",
       "Evil is a second eternal power, equal to good and at war with it",
       "Evil is a real substance that God created to test human souls",
       "Evil is only an illusion; nothing is ever truly bad at all"
     ],
-    "context": "This is Augustine's 'privation' move (privatio boni): everything that exists is good insofar as God made it, so evil has no independent stuff of its own — it is a lack or corruption of good, the way darkness is the absence of light or disease the breakdown of health. The move lets him deny that evil is a created object God would be on the hook for. The rejected option about 'two equal eternal powers' is Manichaeism, the dualist religion Augustine was arguing against. Source: Stanford Encyclopedia of Philosophy, 'Saint Augustine'; Augustine, De libero arbitrio (On Free Choice of the Will).",
+    "context": "This is Augustine's 'privation' move (privatio boni): everything that exists is good insofar as God made it, so evil has no independent stuff of its own — it is a lack or corruption of good, the way darkness is the absence of light or disease the breakdown of health. The move lets him deny that evil is a created object God would be on the hook for. The rival picture of two equal eternal powers is Manichaeism, the dualist religion Augustine was arguing against. Source: Stanford Encyclopedia of Philosophy, 'Saint Augustine'; Augustine, De libero arbitrio (On Free Choice of the Will).",
     "topic": "free-will-and-the-origin-of-evil"
   },
   {
@@ -9665,7 +9613,7 @@
     "choices": [
       "Knowing in advance that someone will sin is not the same as causing the sin",
       "Since God foresees the sin, he must also have willed the sin to happen",
-      "God knows what we will choose only after we have already chosen it",
+      "God knows what people will choose only after they have chosen it",
       "The sinner's will is an illusion, so the whole question cannot arise"
     ],
     "context": "Augustine separates God's foreknowledge from God's causing. God's knowing in advance what you will choose does not compel the choice — the will stays genuinely free even though it is perfectly foreseen. This blocks the objection that an all-knowing God must therefore be the author of every sin he sees coming. Source: Augustine, On Free Choice of the Will, Book 3; Stanford Encyclopedia of Philosophy, 'Saint Augustine'.",
@@ -9681,7 +9629,7 @@
       "The objection dissolves, since suffering is always God's just punishment",
       "Evil is only the absence of good, so there was nothing for God to prevent"
     ],
-    "context": "This is the live, unresolved pressure point on the whole free-will defense, and it is genuinely contested — neither side is settled here. Mackie (1955) argued there is 'no logical impossibility in a free being always choosing good,' so a good, all-powerful God could have had both freedom and a sinless world. Plantinga's reply: to guarantee that a truly free creature always chooses rightly is to take away the very freedom — so not even omnipotence can do it. The dispute turns on whether real freedom requires the live possibility of choosing wrong. Source: Stanford Encyclopedia of Philosophy, 'The Problem of Evil'; J.L. Mackie, 'Evil and Omnipotence' (1955); Alvin Plantinga, the Free Will Defense.",
+    "context": "This is the live, unresolved pressure point on the whole free-will defense, and it is genuinely contested — neither side is settled here. Mackie (1955) argued that if there is no logical impossibility in a man's freely choosing the good on one occasion, there can be none in his freely choosing it on every occasion, so a good, all-powerful God could have had both freedom and a sinless world. Plantinga's reply: to guarantee that a truly free creature always chooses rightly is to take away the very freedom — so not even omnipotence can do it. The dispute turns on whether real freedom requires the live possibility of choosing wrong. Source: Stanford Encyclopedia of Philosophy, 'The Problem of Evil'; J.L. Mackie, 'Evil and Omnipotence' (1955); Alvin Plantinga, the Free Will Defense.",
     "topic": "free-will-and-the-origin-of-evil"
   },
   {
@@ -9699,7 +9647,7 @@
   },
   {
     "tier": 2,
-    "question": "Baron d'Holbach pictured a stone hurled into the air: it can do nothing but fall, yet no one calls the stone 'free.' A person, he said, only feels free because the machinery driving him is too tangled to notice working. Suppose you take him at his word. What is d'Holbach claiming about your choices?",
+    "question": "Baron d'Holbach compared a man to a falling weight: it can only fall, and no one calls it 'free' to fall or not. A person, he said, feels free only because the machinery driving him is too complex to see. Suppose you take him at his word. What is d'Holbach claiming about your choices?",
     "answer": "They feel free but were fixed in advance by what came before",
     "choices": [
       "They feel free but were fixed in advance by what came before",
@@ -9707,7 +9655,7 @@
       "They are genuinely up to you and not settled by the past",
       "They are random jumps that even you could never predict"
     ],
-    "context": "This is the hard-determinist handle: free will is an illusion because every choice was set by prior causes, just as the thrown stone can only fall. Baron d'Holbach put it this way in his System of Nature (1770). Source: Langara College 'Hard Determinism' notes; en.wikipedia.org/wiki/Hard_determinism.",
+    "context": "This is the hard-determinist handle: free will is an illusion because every choice was set by prior causes, just as a falling body can only fall. Baron d'Holbach put it this way in his System of Nature (1770): 'It is the great complication of motion in man... that persuades him he is a free agent.' Source: d'Holbach, The System of Nature, ch. XI (Project Gutenberg #8909); en.wikipedia.org/wiki/Hard_determinism.",
     "topic": "free-will-vs-determinism"
   },
   {
@@ -9718,35 +9666,35 @@
       "The first man, since nothing outside actually blocks his way out",
       "The second man, since he alone genuinely wishes that he could leave",
       "Neither man, since each merely follows causes set long before",
-      "Both men, since freedom is only about what you want, not the door"
+      "Both men, since freedom is only about what a man wants, not the door"
     ],
     "context": "This is the compatibilist (soft-determinist) handle: a person is free when he meets 'no stop' in doing what he wants, even though the second man honestly wishes he could leave. The first man's exit is genuinely open; the second man is the one actually coerced. Hobbes wrote it in Leviathan, and Hume largely agreed. Source: Stanford Encyclopedia of Philosophy: Compatibilism, plato.stanford.edu/entries/compatibilism/.",
     "topic": "free-will-vs-determinism"
   },
   {
     "tier": 2,
-    "question": "A perfectly reasoning donkey stands halfway between two identical bales of hay, in a legend named after Jean Buridan. With no reason to turn left rather than right, it freezes, and in the tale it starves. A living creature would never starve there. How does the tale say a real creature breaks such a tie?",
-    "answer": "It simply chooses one bale, with nothing tipping it",
+    "question": "A perfectly reasoning donkey stands halfway between two identical bales of hay. Finding nothing to prefer in either one, it never moves, and it starves. Later writers told this tale against Jean Buridan, who never wrote it, to mock his view of choice. Which view did the starving donkey make look absurd?",
+    "answer": "That a chooser must always take the option his reason ranks higher",
     "choices": [
-      "It simply chooses one bale, with nothing tipping it",
-      "It lunges at whichever bale its hunger pulls it toward",
-      "It turns to the bale that it happened to notice first",
-      "It moves on reflex before the mind has even decided"
+      "That a chooser must always take the option his reason ranks higher",
+      "That a chooser can pick at will when no reason favors either side",
+      "That every choice is a blind toss of chance, like a flipped coin",
+      "That reason plays no part at all in how any creature chooses"
     ],
-    "context": "This is 'Buridan's ass,' named for Jean Buridan though the puzzle isn't found in his surviving writings. It mocks pure reason-driven choice: a living thing breaks a perfect tie with sheer 'liberty of indifference,' simply willing one side though nothing about the bales settles it. Source: en.wikipedia.org/wiki/Buridan%27s_ass; philosophynow.org/issues/81.  (Legend.)",
+    "context": "This is 'Buridan's ass.' Jean Buridan held that, short of ignorance or some obstacle, a person facing alternatives must choose the greater good. The tale, found nowhere in his surviving writings, was later writers' way of mocking that view: a chooser bound to follow the better reason is stuck for good when the reasons tie. Defenders of free choice reply that a real chooser can simply pick; Leibniz answered that tiny unnoticed preferences always tip the balance. (Legend.) Source: en.wikipedia.org/wiki/Buridan%27s_ass; grokipedia.com/page/Buridan's_ass.",
     "topic": "free-will-vs-determinism"
   },
   {
     "tier": 3,
     "question": "Spinoza pointed at a falling stone. Suppose, he said, the stone were somehow conscious as it fell: feeling itself move yet blind to the hand that threw it, it would swear it was falling by its own free choice. People, Spinoza claimed, are in the very same position. What did he say the human sense of freedom really amounts to?",
-    "answer": "Awareness that we act, with no view of what makes us act",
+    "answer": "Knowing what one does, while blind to what makes one do it",
     "choices": [
-      "Awareness that we act, with no view of what makes us act",
+      "Knowing what one does, while blind to what makes one do it",
       "A part of the mind that no earlier cause can ever reach",
-      "Proof that, at the moment, we truly could have done otherwise",
+      "Proof that, in the moment, a person truly could have done otherwise",
       "A soul that stands wholly outside the chain of causes"
     ],
-    "context": "Spinoza's verbatim line: 'men believe themselves to be free, simply because they are conscious of their actions, and unconscious of the causes whereby those actions are determined.' The conscious-stone image makes the point vivid: the feeling of freedom is just ignorance of your own causes. Source: Spinoza, Ethics, Part II, quoted via apas.africa/journal critique of Spinoza on free will and determinism.",
+    "context": "Spinoza's verbatim line: 'men believe themselves to be free, simply because they are conscious of their actions, and unconscious of the causes whereby those actions are determined.' The conscious stone, from his Letter 58, makes the point vivid: the feeling of freedom is just ignorance of one's own causes. Source: Spinoza, Ethics, Part III, Proposition 2, note (Elwes translation), quoted via apas.africa/journal critique of Spinoza on free will and determinism.",
     "topic": "free-will-vs-determinism"
   },
   {
@@ -9759,7 +9707,7 @@
       "It could predict atoms yet never your undetermined choices",
       "It could know the present without knowing any law of motion"
     ],
-    "context": "This thought experiment, from 1814, became known as 'Laplace's demon' and is determinism's poster child: Laplace said that to such a mind 'the future as well as the past would be present to its eyes,' so your tomorrow is already written in today's matter. A libertarian would reply that no such mind could compute genuinely undetermined choices. Source: Laplace, A Philosophical Essay on Probabilities, 1814; en.wikipedia.org/wiki/Laplace%27s_demon.",
+    "context": "This thought experiment, from 1814, became known as 'Laplace's demon' and is determinism's poster child: Laplace said that to such a mind 'nothing would be uncertain and the future, as the past, would be present to its eyes,' so your tomorrow is already written in today's matter. A libertarian would reply that no such mind could compute genuinely undetermined choices. Source: Laplace, A Philosophical Essay on Probabilities, 1814 (Truscott and Emory translation); en.wikipedia.org/wiki/Laplace%27s_demon.",
     "topic": "free-will-vs-determinism"
   },
   {
@@ -9861,7 +9809,7 @@
       "That being responsible requires you could have done otherwise",
       "That being responsible requires that no cause touched your choice",
       "That responsibility shifts to whoever rigged the brain",
-      "That responsibility needs a choice nobody could ever block"
+      "That responsibility requires foreseeing every result of the act"
     ],
     "context": "Frankfurt's point in 'Alternate Possibilities and Moral Responsibility': you're plainly responsible even though, thanks to the rig, you could not have done otherwise, so 'could have done otherwise' isn't what responsibility needs. This rescues responsibility from the threat of determinism. Source: en.wikipedia.org/wiki/Frankfurt_cases.",
     "topic": "free-will-vs-determinism"
@@ -9881,7 +9829,7 @@
   },
   {
     "tier": 5,
-    "question": "Derk Pereboom started with Professor Plum, a murderer whose every choice is controlled by neuroscientists through brain implants. Plum is plainly not responsible for the killing. Pereboom then changed the case in tiny steps, until the only difference between Plum and an ordinary person was ordinary cause and effect. If Plum was never responsible, Pereboom asked, what follows for the rest of us?",
+    "question": "Derk Pereboom started with Professor Plum, a murderer whose every choice is controlled by neuroscientists through brain implants. Plum, Pereboom holds, is plainly not responsible for the killing. Pereboom then changed the case in tiny steps, until the only difference between Plum and an ordinary person was ordinary cause and effect. If Plum was never responsible, Pereboom asked, what follows for the rest of us?",
     "answer": "We are no more responsible than the controlled Plum was",
     "choices": [
       "We are no more responsible than the controlled Plum was",
@@ -9894,7 +9842,7 @@
   },
   {
     "tier": 1,
-    "question": "Sky-watchers saw one brilliant light in the dawn and another after sunset, and for thousands of years they tracked the two as separate things. The Greeks named them Phosphorus, the 'light-bringer,' for morning and Hesperus for evening. What was really true of those two names?",
+    "question": "Early Greek sky-watchers saw one brilliant light in the dawn and another after sunset, and they tracked the two as separate things. The Greeks named them Phosphorus, the 'light-bringer,' for morning and Hesperus for evening. What was really true of those two names?",
     "answer": "Both point at the very same planet, Venus",
     "choices": [
       "Both point at the very same planet, Venus",
@@ -9908,9 +9856,9 @@
   {
     "tier": 3,
     "question": "A girl is taught two sentences she has no reason to doubt: 'the morning star is the morning star,' and 'the morning star is the evening star.' Every name in both picks out the one planet, Venus. Yet the two plainly do not land the same way in her mind. What is the genuine puzzle here?",
-    "answer": "How a true 'a is b' can hand you a discovery, when 'a is a' built from one repeated name never could",
+    "answer": "How a true 'a is b' can bring a discovery, when 'a is a' built from one repeated name never could",
     "choices": [
-      "How a true 'a is b' can hand you a discovery, when 'a is a' built from one repeated name never could",
+      "How a true 'a is b' can bring a discovery, when 'a is a' built from one repeated name never could",
       "Why one single planet ever ended up wearing two completely different names in the very first place",
       "Why one very same true sentence can strike one person as news yet bore another who already knew it",
       "How a sentence assembled out of nothing but true names could still somehow turn out to be false"
@@ -9921,12 +9869,12 @@
   {
     "tier": 4,
     "question": "Suppose you learn that 'the morning star is the evening star.' You have learned something, though 'Venus is Venus' teaches you nothing and every name involved picks out the one planet. Gottlob Frege's way out: a name holds more than the bare object it points at. What is that extra thing a name carries?",
-    "answer": "A way the object is given to you -- the route by which the name presents it",
+    "answer": "A way the object is given to you, the route by which the name presents it",
     "choices": [
-      "A way the object is given to you -- the route by which the name presents it",
+      "A way the object is given to you, the route by which the name presents it",
       "A private mental picture that lives only inside one single person's head",
       "A second hidden object that the name also quietly points toward",
-      "The actual calendar date on which the object was first discovered"
+      "The sign itself, its sound and spelling, which differ from name to name"
     ],
     "context": "Frege's answer: a name carries a 'mode of presentation' -- a way its object is given to you. 'The morning star' and 'the evening star' hand you Venus by two different routes: same thing pointed at (reference), two ways of presenting it (sense). Source: Stanford Encyclopedia of Philosophy, 'Gottlob Frege' (https://plato.stanford.edu/entries/frege/); Internet Encyclopedia of Philosophy (https://iep.utm.edu/frege/).",
     "topic": "frege-sense-vs-reference"
@@ -9942,19 +9890,6 @@
       "It is the distant Moon exactly, since a clear lens adds nothing at all of its own"
     ],
     "context": "Frege's telescope: the Moon is the reference, the lens-image inside the telescope is the sense, and the picture on your retina is the private 'idea.' He wrote the lens-image 'is indeed one-sided and dependent upon the standpoint of observation; but it is still objective, inasmuch as it can be used by several observers' -- objective yet tied to a single standpoint, unlike a wholly private mental image. Source: Gottlob Frege, 'On Sense and Reference' (1892), telescope analogy; quoted via academic Frege handouts and metaphors.iath.virginia.edu (https://metaphors.iath.virginia.edu/metaphors/16831).",
-    "topic": "frege-sense-vs-reference"
-  },
-  {
-    "tier": 5,
-    "question": "Letters crossed between Gottlob Frege and another philosopher in 1904 over Frege's claim that a name carries a 'way of presenting' its object, a thing sitting between the mind's private ideas and the real objects of the world. Frege's correspondent rejected that in-between thing outright. Who was he?",
-    "answer": "Bertrand Russell, who replied with his own theory of descriptions",
-    "choices": [
-      "Bertrand Russell, who replied with his own theory of descriptions",
-      "Edmund Husserl, who wrote his Logical Investigations on meaning",
-      "Giuseppe Peano, who built a symbolic language for mathematics",
-      "David Hilbert, who set out to ground mathematics on formal rules"
-    ],
-    "context": "In a 1904 exchange of letters, Bertrand Russell rejected Frege's 'sense' entirely -- he saw no use for a thing wedged between the mind's ideas and the objects they are about -- and built his rival theory of descriptions instead. The other three named were real contemporaries of Frege, but none made this move. Source: Stanford Encyclopedia of Philosophy, 'Descriptions' (https://plato.stanford.edu/entries/descriptions/); Britannica, 'Russell's theory of descriptions' (https://www.britannica.com/topic/philosophy-of-language/Russells-theory-of-descriptions).",
     "topic": "frege-sense-vs-reference"
   },
   {
@@ -9980,20 +9915,20 @@
       "Antarctica, and soon a shortage of ice",
       "The Amazon jungle, and soon a shortage of trees"
     ],
-    "context": "The gag captures the claim that price controls reliably produce shortages of whatever they touch, no matter how abundant it is. Flag it as legend on attribution: Quote Investigator found the 'shortage of sand in the Sahara' line in print as early as 1951 in Britain's 'Labour' magazine, predating Friedman, who echoed the theme in a 1980 Newsweek column. So the joke is real and reliably attributed to the idea, but the exact one-liner is not securely Friedman's own words. Source: Quote Investigator, 'A Shortage of Sand in the Sahara'.",
+    "context": "The gag captures the claim that price controls reliably produce shortages of whatever they touch, no matter how abundant it is. The attribution is shaky: Quote Investigator found the 'shortage of sand in the Sahara' line in print as early as 1951 in Britain's 'Labour' magazine, predating Friedman, who echoed the theme in a 1980 Newsweek column. So the joke is real and reliably attributed to the idea, but the exact one-liner is not securely Friedman's own words. Source: Quote Investigator, 'A Shortage of Sand in the Sahara'.",
     "topic": "friedman-results-not-intentions"
   },
   {
     "tier": 2,
     "question": "Phil Donahue pressed Milton Friedman on television in 1979 with a sharp charge: isn't capitalism a system that simply runs on greed? Rather than defend greed or deny the charge, Friedman shot back with a single question that turned it around. What did he ask Donahue?",
-    "answer": "What society he knew of that does NOT run on greed",
+    "answer": "What society he knew of that does not run on greed",
     "choices": [
-      "What society he knew of that does NOT run on greed",
+      "What society he knew of that does not run on greed",
       "Whether greed was really so different from ambition",
       "Why he assumed businessmen were the greedy ones",
       "How a country could feed itself with no profit at all"
     ],
-    "context": "Friedman's reply models the whole discipline: he refuses to judge an arrangement by the purity of anyone's MOTIVE and instead asks how every system actually performs. It is method-neutral here, not a verdict on capitalism, just a move that shifts the question from motives to results. Source: Milton Friedman on The Phil Donahue Show, 1979, transcript/clip via AEI Carpe Diem.",
+    "context": "Friedman's reply models the whole discipline: he refuses to judge an arrangement by the purity of anyone's MOTIVE and instead asks how every system actually performs. The move shifts the question from motives to results. Source: Milton Friedman on The Phil Donahue Show, 1979, transcript/clip via AEI Carpe Diem.",
     "topic": "friedman-results-not-intentions"
   },
   {
@@ -10023,16 +9958,16 @@
     "topic": "friedman-results-not-intentions"
   },
   {
-    "tier": 4,
-    "question": "Test the minimum wage by what it did, Milton Friedman argued, not by what it was for. He pointed to the 1956 federal hike from 75 cents to a dollar an hour. Before it, he said, unemployment among black and white teenage boys had been roughly equal, around 8 to 11 percent. Two years later, by his account, unemployment among black teenage boys had moved sharply. To about what level?",
-    "answer": "About 24 percent",
+    "tier": 3,
+    "question": "Milton Friedman pointed to the 1956 rise in the federal minimum wage, from 75 cents to a dollar. Black and white teenage boys had been jobless at much the same rate; two years later, he reported, 24 percent of black boys were jobless, against 14 percent of white. In 1966 he called the minimum wage the most anti-black law on the books, with a short qualifier. What was it?",
+    "answer": "In its effect, not its intent",
     "choices": [
-      "About 24 percent",
-      "About 12 percent",
-      "About 6 percent",
-      "About 2 percent"
+      "In its effect, not its intent",
+      "In its letter, not its spirit",
+      "In the cities, not the countryside",
+      "In the short run, not the long"
     ],
-    "context": "Friedman reported white teenage boys' unemployment rose to about 14 percent over the same span, and he predicted a $1.60 minimum would push the black-teen figure 'to 30 percent or more.' In his 1966 Newsweek column he called the minimum wage 'the most anti-Negro law on our statute books, in its effect not its intent', that four-word phrase being the cleanest possible statement of the move, and dubbed the hike 'a monument to the power of superficial thinking.' Whether or not you accept his causal read, the discipline is exactly the point: go look at what actually happened to the number. Source: Milton Friedman, Newsweek 'Minimum-Wage Rates' (Sept 26, 1966), figures via AEI Carpe Diem.",
+    "context": "Friedman's Newsweek column of 26 September 1966 called the minimum wage 'the most anti-Negro law on our statute books—in its effect not its intent,' and he predicted a $1.60 minimum would push unemployment among black boys 'to 30 per cent or more.' His closing phrase is the cleanest statement of the move, and he dubbed the hike 'a monument to the power of superficial thinking.' Whether or not a reader accepts his causal reading, the discipline is the point: go and look at what actually happened to the number. Source: Milton Friedman, Newsweek 'Minimum-Wage Rates' (Sept 26, 1966), reprinted in An Economist's Protest (1972); figures via AEI Carpe Diem.",
     "topic": "friedman-results-not-intentions"
   },
   {
@@ -10045,21 +9980,8 @@
       "Every good law outlives the very problem it solved",
       "People work hardest only when the cause is just"
     ],
-    "context": "This is Friedman's mechanism for WHY intent and result diverge, his 'four ways to spend money' framework: spending your own money on yourself you watch both price and value, but spending other people's money on other people, which is what a government program does, you watch neither, so the result drifts from the intent. It names no single policy as wrong; it is the general reason a well-meant plan can still misfire, and it pairs naturally with the results-not-intentions handle as the explanation for it. Source: Milton & Rose Friedman, 'Free to Choose' (1980) / PBS series; widely documented.",
+    "context": "This is Friedman's mechanism for why intent and result diverge, his four ways to spend money: a person spending his own money on himself watches both price and value, but one spending other people's money on other people, as a government program does, watches neither, so the result drifts from the intent. It names no single policy as wrong; it is the general reason a well-meant plan can still misfire. Source: Milton & Rose Friedman, 'Free to Choose' (1980) / PBS series; widely documented.",
     "topic": "friedman-results-not-intentions"
-  },
-  {
-    "tier": 3,
-    "question": "Karl Marx made the slogan \"from each according to his ability, to each according to his need\" world-famous in 1875, and it has been bound to communism ever since. Yet Marx did not coin the line. He lifted it almost word for word from a writer who had already put it into print. Who first printed the slogan?",
-    "answer": "Louis Blanc, a French reformer writing for the poor",
-    "choices": [
-      "Louis Blanc, a French reformer writing for the poor",
-      "Mikhail Bakunin, an exiled Russian anarchist agitator",
-      "Friedrich Engels, Marx's lifelong writing partner",
-      "Pierre-Joseph Proudhon, a printer who damned all property"
-    ],
-    "context": "The phrase 'De chacun selon ses facultes, a chacun selon ses besoins' was published by Louis Blanc in his 1851 pamphlet 'Plus de Girondins' — itself a reworking of an earlier line from Saint-Simon. Marx's 1875 Critique of the Gotha Programme gave it lasting fame and tied it to Marxism, but the words were a recycled French utopian-socialist line, decades older than Marx. Source: fr.wikiquote.org 'De chacun selon ses moyens, a chacun selon ses besoins' (Louis Blanc, Plus de Girondins, 1851; Saint-Simon precursor); en.wikipedia.org 'From each according to his ability, to each according to his needs' (Origins).",
-    "topic": "from-each-according-to-his-ability-to-each-according-to-his"
   },
   {
     "tier": 4,
@@ -10084,7 +10006,7 @@
       "The legal power to assign a worker to a job he refuses",
       "The chance that real abundance could ever actually arrive"
     ],
-    "context": "Marx's own preconditions (Critique of the Gotha Programme, 1875): labor must become 'life's prime want,' and 'the springs of co-operative wealth' must 'flow more abundantly.' The critic's worry is structural, not a charge of greed: once reward is set by need rather than by effort or contribution, the link between working hard and being better off is severed — and with it the signal that channels effort to where it is most needed (the classic free-rider / 'who does the dirty work?' objection). G.A. Cohen, in 'Why Not Socialism?' (2009), frames this as a feasibility question — the difficulty is 'the lack of obvious means to harness the human generosity that is there,' i.e. a missing substitute for the market's price signal — rather than proof people are selfish. Sources: marxists.org, Critique of the Gotha Programme, Part I (1875); G.A. Cohen, Why Not Socialism? (Princeton, 2009).",
+    "context": "Marx's own preconditions (Critique of the Gotha Programme, 1875): labor must become 'life's prime want,' and 'the springs of co-operative wealth' must 'flow more abundantly.' The critic's worry is structural, not a charge of greed: once reward is set by need rather than by effort or contribution, the link between working hard and being better off is severed — and with it the signal that channels effort to where it is most needed (the classic free-rider / 'who does the dirty work?' objection). G.A. Cohen, in 'Why Not Socialism?' (2009), frames this as a feasibility question rather than proof people are selfish: 'the principal problem that faces the socialist ideal is that we do not know how to design the machinery that would make it run,' a missing substitute for the market's price signal. Sources: marxists.org, Critique of the Gotha Programme, Part I (1875); G.A. Cohen, Why Not Socialism? (Princeton, 2009).",
     "topic": "from-each-according-to-his-ability-to-each-according-to-his"
   },
   {
