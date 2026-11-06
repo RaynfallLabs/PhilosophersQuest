@@ -7251,29 +7251,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         Warning both granting 'warning') would drop the effect entirely.
 
         Assumes the just-unequipped item has already been cleared from its
-        slot. See bug-bash A2-6.
+        slot. See bug-bash A2-6. The one check is Player.drop_worn_status:
+        this one used to count only rings and amulets, so taking off a Ring
+        of Haste stripped the Greaves of Hermes' haste (bug bash 3.3.1).
         """
-        from items import Accessory as _Acc
-        slot_iter = []
-        slot_iter.append(getattr(self.player, 'weapon', None))
-        slot_iter.append(getattr(self.player, 'shield', None))
-        slot_iter.extend(getattr(self.player, 'armor_slots', []) or [])
-        slot_iter.extend(getattr(self.player, 'accessory_slots', []) or [])
-        slot_iter.append(getattr(self.player, 'amulet_slot', None))
-        slot_iter.append(getattr(self.player, 'belt_slot', None))
-        for other in slot_iter:
-            if other is None:
-                continue
-            if isinstance(other, _Acc):
-                ofx = getattr(other, 'effects', {}) or {}
-                if ofx.get('status') == status:
-                    return  # another item still grants this status — keep it
-        # A quirk granted this status permanently: it is the player's own,
-        # not the item's, and must survive the item coming off.
-        if status in (self.player.quirk_progress.get('quirk_statuses') or ()):
-            self.player.status_effects[status] = -1
-            return
-        self.player.status_effects.pop(status, None)
+        self.player.drop_worn_status(status)
 
     def _unequip_slot(self, slot_name: str, item):
         """Remove an equipped item and return it to inventory."""

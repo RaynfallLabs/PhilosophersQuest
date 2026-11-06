@@ -1580,19 +1580,20 @@ class EncountersMixin:
                 # after the slot is empty: a weaker one of a stat takes over)
                 old = p.amulet_slot
                 fx = old.effects
-                if 'status' in fx:
-                    p.status_effects.pop(fx['status'], None)
                 p.amulet_slot = None
                 p.accessory_off(old)
+                # Its status, unless something else worn still grants it
+                if 'status' in fx:
+                    p.drop_worn_status(fx['status'], old)
                 removed = True
             else:
                 for i, slot in enumerate(p.accessory_slots):
                     if slot and getattr(slot, 'id', '') == item_id:
                         fx = slot.effects
-                        if 'status' in fx:
-                            p.status_effects.pop(fx['status'], None)
                         p.accessory_slots[i] = None
                         p.accessory_off(slot)
+                        if 'status' in fx:
+                            p.drop_worn_status(fx['status'], slot)
                         removed = True
                         break
         if not removed:
@@ -1610,10 +1611,10 @@ class EncountersMixin:
             belt = getattr(p, 'belt_slot', None)
             if belt is not None and getattr(belt, 'id', '') == item_id:
                 fx = getattr(belt, 'effects', None) or {}
-                if 'status' in fx:
-                    p.status_effects.pop(fx['status'], None)
                 p.belt_slot = None
                 p.accessory_off(belt)
+                if 'status' in fx:
+                    p.drop_worn_status(fx['status'], belt)
                 removed = True
         return removed
 

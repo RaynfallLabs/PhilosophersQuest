@@ -485,12 +485,13 @@ class Player:
                 for eff in list(self.status_effects.keys()):
                     if eff in DEBUFFS:
                         del self.status_effects[eff]
-                # Unequip and consume the amulet
+                # Unequip and consume the amulet. Its Warning goes only if
+                # nothing else worn still warns (a Ring of Warning lost it).
                 old_fx = amulet.effects
-                if 'status' in old_fx:
-                    self.status_effects.pop(old_fx['status'], None)
                 self.amulet_slot = None
                 self.accessory_off(amulet)
+                if 'status' in old_fx:
+                    self.drop_worn_status(old_fx['status'], amulet)
                 # Do NOT add back to inventory — it is consumed
                 self._rands_heart_triggered = True  # flag for message in main.py
                 return False
@@ -1164,16 +1165,43 @@ class Player:
                 getattr(self, 'amulet_slot', None), getattr(self, 'belt_slot', None)]
         worn.extend(self.armor_slots or [])
         worn.extend(getattr(self, 'accessory_slots', None) or [])
+        try:
+            from chain_equip import grants_chain_status
+        except ImportError:
+            def grants_chain_status(_p, it, st):
+                return st in (getattr(it, '_chain_statuses', None) or ())
         for it in worn:
             if it is None or it is but_not:
                 continue
             if getattr(it, 'on_equip_status', '') == status:
                 return True
-            if status in (getattr(it, '_chain_statuses', None) or ()):
+            if grants_chain_status(self, it, status):
                 return True
             if (getattr(it, 'effects', None) or {}).get('status') == status:
                 return True
         return status in ((getattr(self, 'quirk_progress', None) or {}).get('quirk_statuses') or ())
+
+    def drop_worn_status(self, status: str, but_not=None) -> None:
+        """A status a worn item lent comes off with it, unless something else
+        still grants it: another worn item (its on-equip status, its tier
+        statuses, its effects), a trait (kept, for good), or a floor effect.
+        ``but_not`` is the item leaving, if it is still in its slot.
+
+        Every way gear leaves the body asks this one question. Several paths
+        popped the status outright (an attuned item's tier statuses, a weapon
+        or amulet pushed out by a swap, Rand's Heart spent, an item handed
+        over), and the game-level check counted only rings and amulets:
+        Rand's Heart took Warning away from a Ring of Warning's wearer."""
+        if not status:
+            return
+        if status in ((getattr(self, 'quirk_progress', None) or {}).get('quirk_statuses') or ()):
+            self.status_effects[status] = -1      # the hero's own, not the item's
+            return
+        if self._still_granted(status, but_not):
+            return
+        if status in (self.__dict__.get('floor_effects') or {}):
+            return                                # a story reward still running
+        self.status_effects.pop(status, None)
 
     def shed_worn_grants(self, old) -> None:
         """Everything a piece of armor or a shield gave while worn comes off
@@ -1192,9 +1220,7 @@ class Player:
                 revert_tier_bonuses(self, old)
         except ImportError:
             pass
-        status = getattr(old, 'on_equip_status', '')
-        if status and not self._still_granted(status, old):
-            self.status_effects.pop(status, None)
+        self.drop_worn_status(getattr(old, 'on_equip_status', ''), old)
         # Mantle of Elijah: the +max MP it lent.
         drop = int(getattr(old, '_prophets_mp_grant', 0) or 0)
         if drop > 0:
@@ -2051,9 +2077,8 @@ class Player:
                     ok, msg = self.try_unequip_slot(self.ranged_weapon)
                     if not ok:
                         return
-                    old_status = getattr(self.ranged_weapon, 'on_equip_status', '')
-                    if old_status:
-                        self.status_effects.pop(old_status, None)
+                    self.drop_worn_status(getattr(self.ranged_weapon, 'on_equip_status', ''),
+                                          self.ranged_weapon)
                     self._remove_weapon_passives(self.ranged_weapon)
                     self.inventory.append(self.ranged_weapon)
                 self.ranged_weapon = item
@@ -2067,9 +2092,8 @@ class Player:
                     ok, msg = self.try_unequip_slot(self.weapon)
                     if not ok:
                         return  # cursed weapon blocks swap
-                    old_status = getattr(self.weapon, 'on_equip_status', '')
-                    if old_status:
-                        self.status_effects.pop(old_status, None)
+                    self.drop_worn_status(getattr(self.weapon, 'on_equip_status', ''),
+                                          self.weapon)
                     self._remove_weapon_passives(self.weapon)
                     self.inventory.append(self.weapon)
                 # Unequip shield if switching to 2H melee. Everything it lent
@@ -2143,7 +2167,7 @@ class Player:
                     # sync below, once the new one is in the slot)
                     old_fx = old.effects
                     if 'status' in old_fx:
-                        self.status_effects.pop(old_fx['status'], None)
+                        self.drop_worn_status(old_fx['status'], old)
                     self._accessory_ac(old_fx, -1)
                 self.amulet_slot = item
             elif getattr(item, 'slot', 'ring') == 'belt':
@@ -2162,8 +2186,8 @@ class Player:
                     self.belt_slot = None
                     # only if nothing else worn still grants it: swapping one
                     # belt for another took Haste away from a ring's wearer
-                    if 'status' in old_fx and not self._still_granted(old_fx['status'], old):
-                        self.status_effects.pop(old_fx['status'], None)
+                    if 'status' in old_fx:
+                        self.drop_worn_status(old_fx['status'], old)
                     self._accessory_ac(old_fx, -1)
                 self.belt_slot = item
             else:
