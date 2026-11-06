@@ -48,6 +48,10 @@ def share(level: int, fraction: float) -> int:
 # two, an accessory takes about two floors and a named unique about four.
 MERCHANT_SHARE = {
     'potion': 0.15, 'food': 0.10, 'ammo': 0.10,
+    # Raw ingredients are worth half a meal: with no class they fell back to
+    # 0.5 and one harvested part sold for 165 gold on floor 20 against a
+    # cooked meal's 40 (Brandon, 2026-11-06: "half of food").
+    'ingredient': 0.05,
     'scroll': 0.50, 'wand': 0.50, 'spellbook': 0.80,
     'weapon': 0.60, 'armor': 0.60, 'shield': 0.60,
     'accessory': 1.50,
@@ -159,7 +163,13 @@ def stock_price(item, level: int = 1, markup: float = 1.0) -> int:
     floor_w = (worth_table().get('shop_worth_floor') or {}).get(getattr(item, 'item_class', ''))
     if isinstance(floor_w, (int, float)):
         return merchant_price(item, level, markup, worth=max(item_worth(item), float(floor_w)))
-    return merchant_price(item, level, markup)
+    price = merchant_price(item, level, markup)
+    # A bundle of arrows is priced by its count, as it sells (ammo_bundles):
+    # one flat price made a bundle of 25 cost what a bundle of 10 did.
+    bundles = ammo_bundles(item)
+    if bundles is not None:
+        price = max(5, nice(price * bundles))
+    return price
 
 
 def unknown_price(item, level: int = 1, markup: float = 1.0) -> int:

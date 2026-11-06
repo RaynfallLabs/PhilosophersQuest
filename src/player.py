@@ -1727,35 +1727,62 @@ class Player:
             self.max_mp += amount
             self.mp = min(self.mp, self.max_mp)
 
-    # ----- the Ring of Gawain's ebbing strength (tier 5, three_oclock) -----
-    # Malory's Gawain: his strength grew every morning until noon "and then
-    # ebbed away". While the ring is worn at tier 5 a point ebbs every
-    # THREE_OCLOCK_TURNS (never below THREE_OCLOCK_FLOOR); rest, or taking
-    # the ring off, brings it all back. It used to come off STR for good.
+    # ----- the Ring of Gawain's morning strength (tier 5, three_oclock) -----
+    # Malory: Gawain's strength "grew every morning from nine until noon,
+    # until he fought with the might of three men, and then ebbed away".
+    # Tier 5 (Brandon, 2026-11-06, "rested surge"): a rest (the wait key)
+    # raises him THREE_OCLOCK_SURGE Strength above the ring's own; it ebbs
+    # one point every THREE_OCLOCK_TURNS back to the ring's base and never
+    # below it. Taking the ring off ends the surge. (It used to take Strength
+    # below base, for good, so tier 5 was weaker than tier 4.)
     THREE_OCLOCK_TURNS = 30
-    THREE_OCLOCK_FLOOR = 8
+    THREE_OCLOCK_SURGE = 3
 
-    def ebb_strength(self) -> bool:
-        """One point of the ring's ebb, if Strength is above the floor."""
-        if self.STR <= self.THREE_OCLOCK_FLOOR:
-            return False
-        self.apply_stat_bonus('STR', -1)
-        self._three_oclock_lost = int(getattr(self, '_three_oclock_lost', 0) or 0) + 1
-        return True
-
-    def recover_ebbed_strength(self) -> int:
-        """The ebbed Strength comes back (on rest, or once the ring is off).
-        Returns the points restored."""
-        lost = int(getattr(self, '_three_oclock_lost', 0) or 0)
-        if lost <= 0:
-            return 0
-        self._three_oclock_lost = 0
+    def _strength_untraited(self, amount: int) -> None:
         flag, self._quirk_grant = getattr(self, '_quirk_grant', False), False
         try:
-            self.apply_stat_bonus('STR', lost)    # never through a trait's allowance
+            self.apply_stat_bonus('STR', amount)   # never through a trait's allowance
         finally:
             self._quirk_grant = flag
-        return lost
+
+    def _recover_legacy_ebb(self) -> int:
+        """A save from before 3.3.1 may hold Strength the old ebb took below
+        base (_three_oclock_lost): it comes back."""
+        lost = int(getattr(self, '_three_oclock_lost', 0) or 0)
+        if lost > 0:
+            self._three_oclock_lost = 0
+            self._strength_untraited(lost)
+        return max(0, lost)
+
+    def rest_strength(self) -> int:
+        """A rest with the ring at tier 5: the surge fills back up. Returns
+        the points gained."""
+        back = self._recover_legacy_ebb()
+        have = int(getattr(self, '_gawain_surge', 0) or 0)
+        give = max(0, self.THREE_OCLOCK_SURGE - have)
+        if give:
+            self._strength_untraited(give)
+            self._gawain_surge = have + give
+        return give + back
+
+    def ebb_strength(self) -> bool:
+        """One point of the surge ebbs away; never below the ring's base."""
+        have = int(getattr(self, '_gawain_surge', 0) or 0)
+        if have <= 0:
+            return False
+        self._strength_untraited(-1)
+        self._gawain_surge = have - 1
+        return True
+
+    def end_strength_surge(self) -> int:
+        """The ring is off (or below tier 5): what is left of the surge goes,
+        and an old save's ebbed Strength comes back. Returns the net change."""
+        back = self._recover_legacy_ebb()
+        have = int(getattr(self, '_gawain_surge', 0) or 0)
+        if have > 0:
+            self._gawain_surge = 0
+            self._strength_untraited(-have)
+        return back - max(0, have)
 
     # ----- what worn rings, amulets and belts lend the six stats -----
     # Only the strongest bonus to each stat counts; every penalty counts.
