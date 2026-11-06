@@ -542,8 +542,11 @@ class InputMixin:
             # the no-move counter; reset by any subsequent _do_move.
             self.player._chain_no_move_counter = (
                 getattr(self.player, '_chain_no_move_counter', 0) + 1)
-            # three_oclock (Ring of Gawain T5) — resting resets the STR-decay counter.
+            # three_oclock (Ring of Gawain T5) — resting resets the STR-decay
+            # counter and gives back the Strength that ebbed.
             self.player._three_oclock_decay = 0
+            if self.player.recover_ebbed_strength():
+                self.add_message("You rest, and your strength comes back.", 'info')
             # Waiting makes you hungry like walking does. It cost nothing,
             # so any wound could be slept off for free between fights.
             self._tick_sp()
