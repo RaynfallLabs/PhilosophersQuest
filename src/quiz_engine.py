@@ -551,8 +551,11 @@ class QuizEngine:
         # answers retire (stay out of the deck); wrong answers recycle (stay in).
         # If every question is retired, the tier is mastered -> auto-pass.
         retired = self._retired.get(deck_key, set())
-        if combat and (deck_key in self._mastered or len(retired) >= len(
-                {q.get('question') for q in self._pool})):
+        # Cleared means every question in the deck is retired. Counting the
+        # retired texts was not that: a save from before a bank update keeps
+        # texts the bank no longer has, and cleared tier 2 with none answered.
+        if combat and (deck_key in self._mastered or {
+                q.get('question') for q in self._pool} <= retired):
             # Combat on a cleared tier: the whole deck is live again.
             if deck_key not in self._mastered:
                 self._mastered.add(deck_key)
@@ -803,6 +806,12 @@ class QuizEngine:
     def is_mastered(self, subject: str, tier: int) -> bool:
         return (subject, tier) in self._mastered
 
+    def _tier_cleared(self, subject: str, tier: int) -> bool:
+        """Every question the bank now has at this (subject, tier) answered
+        right this run."""
+        done, size = self.tier_progress(subject, tier)
+        return size > 0 and done >= size
+
 
     def mastered_tiers(self) -> set:
         """Public read for UI: set of (subject, tier) mastered this run."""
@@ -904,8 +913,13 @@ class QuizEngine:
                             for twin_subject, _tt, twin in self._twins.get(qhash(text), ())
                             if twin_subject == subject}
         self._retired  = state.get('retired', {}) or {}
-        # tolerant of set-of-tuples (pickle) or list-of-lists (any JSON path)
-        self._mastered = {tuple(k) for k in (state.get('mastered') or [])}
+        # tolerant of set-of-tuples (pickle) or list-of-lists (any JSON path).
+        # A tier stays mastered only if the bank as it is now is cleared: a
+        # save from before a bank update listed tiers mastered on questions
+        # since replaced, and they auto-passed (and named the philosophy
+        # trait) with none of the current questions answered.
+        self._mastered = {k for k in (tuple(k) for k in (state.get('mastered') or []))
+                          if len(k) == 2 and self._tier_cleared(*k)}
         # decks/deck_idx/last_q are intentionally NOT restored — re-installing
         # the pickled question objects is exactly what served stale questions.
         self._decks    = {}
