@@ -611,10 +611,19 @@ class TraderMixin:
             item = target
             if item not in p.inventory:
                 return False
-            self.add_message(f"{who} sits at your elbow while you study the "
-                             f"{self._bare_name(item)}. Get it wrong and nothing bites.", 'info')
+            name = self._bare_name(item)
             self.state = STATE_PLAYER
             self._identify_item(item, backlash=False)
+            # Paid only when a question is up for him to sit in on. The Cloak
+            # of Odin's free identify (spent inside _identify_item, as on any
+            # identify) or a mastered tier answers with no question, and the
+            # fee used to be taken all the same.
+            qe = self.quiz_engine
+            if not qe.active or getattr(qe, 'auto_passed', 0):
+                self.add_message(f"{who} had nothing to add, and takes no fee.", 'info')
+                return False
+            self.add_message(f"{who} sits at your elbow while you study the "
+                             f"{name}. Get it wrong and nothing bites.", 'info')
             return True
         if sid == 'map':
             d = self.dungeon
