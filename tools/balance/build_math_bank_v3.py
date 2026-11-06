@@ -496,11 +496,12 @@ def build_tier4() -> list[dict]:
     # the divisibility rules for 3, 4, 6, 7, 8, 9, 11, 12.
     divisor_pool = [3, 4, 6, 7, 8, 9, 11, 12]
     added = 0
+    used_x = set()       # one question per number: the stem is the question's id
     while added < 45:
         target_div = random.choice(divisor_pool)
         multiplier = random.randint(3, 40)
         x = target_div * multiplier
-        if x < 20 or x > 800:
+        if x < 20 or x > 800 or x in used_x:
             continue
         # Pick 3 divisors from the pool that do NOT divide x.
         non_divs = [d for d in divisor_pool if d != target_div and x % d != 0]
@@ -514,6 +515,7 @@ def build_tier4() -> list[dict]:
         out.append(_build_q(4, f"Which is a factor of {x}?", str(target_div),
                             [str(w) for w in wrongs],
                             f"Try each divisibility rule ({target_div} divides {x})."))
+        used_x.add(x)
         added += 1
 
     # 1-step algebra: solve for x
@@ -612,7 +614,8 @@ def build_tier5() -> list[dict]:
     # Cube roots
     for n in range(1, 8):
         cube = n ** 3
-        out.append(_int_q(5, f"Cube root of {cube} = ?"      # the body font has no cube-root sign, n,
+        # (the body font has no cube-root sign)
+        out.append(_int_q(5, f"Cube root of {cube} = ?", n,
                           "Memorized cube root."))
 
     # 2-digit × 2-digit via distribution (expanded pool — the T5 workhorse)
@@ -815,7 +818,13 @@ def build_tier5() -> list[dict]:
 # Main
 # ---------------------------------------------------------------------------
 
-def main():
+def build_all() -> list[dict]:
+    """Every tier, de-duplicated. A question's id is the hash of its stem
+    (quiz_engine.qhash) and the engine retires and masters by stem within a
+    tier, so a stem appears once per tier: the old key (tier, stem, answer)
+    let 'Which is a factor of 108?' in twice with two answers, and answering
+    one retired the other. The first copy is kept; a repeat with the same
+    answer is dropped, one with a different answer stops the build."""
     all_qs = []
     all_qs.extend(build_tier1())
     all_qs.extend(build_tier2())
@@ -823,20 +832,27 @@ def main():
     all_qs.extend(build_tier4())
     all_qs.extend(build_tier5())
 
-    # De-dupe (question stem + answer)
-    seen = set()
+    first = {}
     unique = []
     for q in all_qs:
-        key = (q['tier'], q['question'], q['answer'])
-        if key not in seen:
-            seen.add(key)
-            unique.append(q)
+        key = (q['tier'], q['question'].strip())
+        if key in first:
+            if first[key]['answer'] != q['answer']:
+                raise SystemExit(f"BUG: tier {key[0]} stem {key[1]!r} has two answers: "
+                                 f"{first[key]['answer']!r} and {q['answer']!r}")
+            continue
+        first[key] = q
+        unique.append(q)
 
     # Sanity: assert every question has choices with correct answer inside
     bad = [q for q in unique if q['answer'] not in q['choices']]
     if bad:
         raise SystemExit(f"BUG: {len(bad)} questions have answer not in choices. First: {bad[0]}")
+    return unique
 
+
+def main():
+    unique = build_all()
     MATH_JSON.write_text(json.dumps(unique, indent=2, ensure_ascii=False), encoding='utf-8')
 
     from collections import Counter
