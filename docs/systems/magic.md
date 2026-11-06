@@ -189,7 +189,11 @@ Three multipliers stack:
    INT 20 = 2.0x.
 
 Then chain-equip passives (`apply_spell_damage_passives`) layer on top for
-crit chance and anti-being-type bonuses.
+crit chance and anti-being-type bonuses. The Heart of Ahriman's anti-being
+charge (2x) is spent only by a destructive spell: a heal passes
+`healing=True`, which leaves the charge waiting. A magic-missile volley is
+reckoned in one call, so the whole volley takes the charge (the first
+missile used to spend it alone).
 
 ### `_wand_tier_damage(base_dmg, tier)`
 
