@@ -1013,6 +1013,14 @@ class CombatMixin:
                 if isinstance(_fx, dict) and _fx.get('status') == 'life_save':
                     _it.effects = {k: v for k, v in _fx.items() if k != 'status'}
                     _src = _src or _it
+                # A chain item's tier bonus (the Tyet of Isis) gave it: spent
+                # at this depth, so attuning again gives no other life
+                # (chain_equip.life_save_spent; a tier that renews it every
+                # floor gives it back on a deeper one).
+                if 'life_save' in (getattr(_it, '_chain_statuses', None) or ()):
+                    _it._life_save_spent_at = int(
+                        getattr(self.player, 'deepest_floor_reached', 0) or 0)
+                    _src = _src or _it
             self.add_message(
                 f"{'The ' + _src.name if _src is not None else 'A ward'} blazes -- death averted! "
                 "Its life-saving magic is spent.", 'success'

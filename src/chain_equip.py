@@ -82,6 +82,23 @@ def get_tier_bonuses(item, tier: int) -> dict:
     return bonuses.get(tier, bonuses.get(str(tier), {})) or {}
 
 
+def life_save_spent(player, item, bonuses: dict) -> bool:
+    """Has this item's life-save already saved a life it may not give again?
+
+    game_combat._answer_a_killing_blow marks the item with the depth it was
+    used at (``_life_save_spent_at``). A tier that renews the ward every
+    floor (passive_life_save_resets_per_floor, the Tyet from tier 4) gives
+    it again on a deeper floor, as the floor renewal in _change_level does;
+    until then, and for ever at a tier that does not renew it, attuning
+    again gives nothing. (It used to give a fresh life on every attune.)"""
+    spent = getattr(item, '_life_save_spent_at', None)
+    if spent is None:
+        return False
+    if bonuses.get('passive_life_save_resets_per_floor'):
+        return int(getattr(player, 'deepest_floor_reached', 0) or 0) <= int(spent)
+    return True
+
+
 def apply_tier_bonuses(player, item, tier: int) -> None:
     """Apply this item's tier_bonuses[tier] to the player + override item fields.
 
@@ -149,6 +166,12 @@ def apply_tier_bonuses(player, item, tier: int) -> None:
         elif key.startswith('status_'):
             status_name = key[len('status_'):]
             duration = int(value) if isinstance(value, (int, float)) else 1
+            if status_name == 'life_save' and life_save_spent(player, item, bonuses):
+                # The life it gave is used (the Tyet of Isis): attuning again
+                # gives no other. Still listed as the item's, so it comes off
+                # with it if a floor's renewal gives it back meanwhile.
+                item._chain_statuses.append(status_name)
+                continue
             if duration >= 900:
                 # The data writes "while worn" as 999 turns. Stored as a
                 # countdown it expired three or four floors in with the item
