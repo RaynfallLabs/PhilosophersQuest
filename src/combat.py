@@ -76,8 +76,9 @@ CLASS_MECHANIC_INFO = {
         "At max chain, ignores 50% of the target's armor."),
     # Unique-only mechanics (no class template -- carried by specific artifacts).
     'guaranteed_hit':          ('Never Miss',
-        'The weapon never misses -- even a wrong first answer still lands a minimum '
-        'hit. Striking before you answer is not a wrong answer.'),
+        'While you are unhurt (at full health) the weapon never misses -- even a '
+        'wrong first answer still lands a minimum hit. Striking before you answer '
+        'is not a wrong answer.'),
     'returning_blow':          ('Returning Blow',
         'At max chain the blow rebounds on you for half damage -- swing too '
         'hard and you pay the price.'),
@@ -987,6 +988,14 @@ def _chain_carry_for(player, weapon, score: int) -> int:
     return max(0, int(getattr(player, '_chain_carry', 0) or 0))
 
 
+def _vow_holds(player, weapon) -> bool:
+    """Fail-not's promise (cannot_miss_before_hurt) holds while the hero is
+    unhurt, at full health. A never-miss weapon without the vow always holds."""
+    if not getattr(weapon, 'cannot_miss_before_hurt', False):
+        return True
+    return int(getattr(player, 'hp', 0)) >= int(getattr(player, 'max_hp', 1))
+
+
 def effective_chain(player, monster, weapon, score: int, consume: bool = True,
                     strike_now: bool = False) -> int:
     """The chain a blow lands at: the quiz score plus every head start the
@@ -1060,10 +1069,11 @@ def effective_chain(player, monster, weapon, score: int, consume: bool = True,
     # running out at 0) into a light hit: their lore. Strike Now pressed
     # before any answer is not a wrong answer and is not saved, and does not
     # spend Hrunting's once-a-floor charge ("Wrong answers only").
-    # Fail-not: Tristan's bow given by Morgan le Fay — never misses.
+    # Fail-not: Tristan's bow — never misses, while its archer is unhurt.
     # Chain 0 is promoted to chain 1 (minimum hit) so a wrong answer still lands.
     if (chain == 0 and not strike_now and weapon
-            and getattr(weapon, 'class_mechanic', '') == 'guaranteed_hit'):
+            and getattr(weapon, 'class_mechanic', '') == 'guaranteed_hit'
+            and _vow_holds(player, weapon)):
         chain = 1
     # Gungnir: "the spear has never missed." Per audit 2026-05-30 — the
     # `cannot_miss` data flag previously had no consumer. Same chain 0 -> 1
@@ -1071,14 +1081,14 @@ def effective_chain(player, monster, weapon, score: int, consume: bool = True,
     if chain == 0 and not strike_now and weapon and getattr(weapon, 'cannot_miss', False):
         chain = 1
 
-    # Fail-not (engine wave 3): cannot_miss_before_player_takes_damage.
-    # The Tristan-knot vow holds until the player takes a hit this combat.
-    # Once the combat tracker says the player has been hurt, the spell
-    # falters and misses can land normally. See _combat_player_taken_damage
-    # marker (set by player.take_damage hook below).
+    # Fail-not (engine wave 3): cannot_miss_before_player_takes_damage, the
+    # same promise from the weapon's JSON. "The promise holds while its
+    # archer is calm and unhurt. A wounded hand makes it an ordinary bow
+    # again": unhurt is full health (Brandon, 2026-11-06). The old tracker
+    # was cleared at the start of every attack, so the vow never broke.
     if (chain == 0 and not strike_now and weapon
             and getattr(weapon, 'cannot_miss_before_hurt', False)
-            and not getattr(player, '_combat_player_taken_damage', False)):
+            and _vow_holds(player, weapon)):
         chain = 1
 
     # Hrunting (engine wave 3): one_shot_chain_save_per_floor. The poem's

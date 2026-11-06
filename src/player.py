@@ -372,14 +372,10 @@ class Player:
             self.weapon.enchant_bonus = max(0, self.weapon.enchant_bonus - 1)
             self.add_effect('life_save', -1)
 
-        # Engine wave 3: combat-tracker hooks.
-        # 1. Fail-not (cannot_miss_before_player_takes_damage) reads this
-        #    flag — once the player has been hurt this combat, miss rolls
-        #    return to normal. Cleared at the START of every melee /
-        #    ranged attack (game_combat sets it False).
-        if actual > 0:
-            self._combat_player_taken_damage = True
-        # 2. Skofnung's twelve berserkers wake when HP drops below 50%.
+        # Engine wave 3: combat-tracker hooks. (Fail-not's vow reads full
+        # health now, combat._vow_holds: its old hurt-this-combat flag was
+        # cleared at the start of every attack and never broke the vow.)
+        # Skofnung's twelve berserkers wake when HP drops below 50%.
         #    Setting the pending flag here triggers a +chain rung on the
         #    NEXT successful attack. Reset by combat after consuming.
         if actual > 0 and self.hp > 0 and self.hp <= self.max_hp * 0.5 \

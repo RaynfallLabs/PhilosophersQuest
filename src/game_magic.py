@@ -2449,10 +2449,10 @@ class MagicMixin:
                     target.alive = False
                     target.hp = 0
                     # Sent away, not killed: _on_monster_killed (which the
-                    # next turn's reaper runs for it) leaves no corpse and
-                    # does not call it slain. What else a banishment earns
-                    # (its loot, the kill count, kill quirks, the Seeker's
-                    # kill) still goes through that handler: Brandon's ruling.
+                    # next turn's reaper runs for it) leaves no corpse or
+                    # loot and does not call it slain; the kill count, kill
+                    # quirks and the Seeker's kill still count (Brandon,
+                    # 2026-11-06: "credit, no loot").
                     target._banished = True
                     # A banished thief drops the hero's things here and
                     # now: it does not take them to its home plane (CODE-03).

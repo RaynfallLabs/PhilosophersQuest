@@ -1071,11 +1071,15 @@ class CombatMixin:
         # next real kill and swallowed that kill's loot and corpse instead.
         self.player._spared_this_attack = False
         # A banished creature (the Banishment spell) was sent to its own
-        # plane, not killed: it is not "slain" and leaves no body (below).
+        # plane, not killed: it is not "slain", leaves no body (below) and
+        # takes its gold and goods home with it. It still counts as beaten:
+        # the kill count, achievements and kill quirks below (Brandon,
+        # 2026-11-06: "credit, no loot"). A thief's takings were given back
+        # when it was banished.
         _banished = bool(getattr(monster, '_banished', False))
         if not _banished:
             self.add_message(f"{the_name(monster)} is slain!", 'success')
-        self._drop_treasure(monster)
+            self._drop_treasure(monster)
         # A thief gives back everything it stole (src/theft.py).
         for _tmsg in theft.give_back(self, monster):
             self.add_message(_tmsg, 'loot')
@@ -2443,7 +2447,6 @@ class CombatMixin:
         self.player._combat_monsters_ref = self.monsters
         self.player._combat_pets_ref = self.pets
         self.player._combat_game_ref = self
-        self.player._combat_player_taken_damage = False
         _alive_before = {id(m) for m in self.monsters if m.alive}
         # ranged=True explicitly: slings pass ammo=None (infinite ammo), and
         # player_attack used to infer "ranged" from ammo alone, so a sling
@@ -2755,10 +2758,6 @@ class CombatMixin:
         self.player._combat_monsters_ref = self.monsters
         self.player._combat_pets_ref = self.pets
         self.player._combat_game_ref = self
-        # Track that this combat is starting — used by cannot_miss_before_hurt
-        # (Fail-not) which needs to know if the player has been hurt yet.
-        # Reset to False at the START of every melee combat.
-        self.player._combat_player_taken_damage = False
         _alive_before = {id(m) for m in self.monsters if m.alive}
         player_attack(self.player, monster, self.quiz_engine, on_complete)
 
