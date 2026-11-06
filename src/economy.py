@@ -188,6 +188,19 @@ RESALE_CAP_OF_PAID = 0.5
 TRADER_PURSE_SHARE = 1.5
 
 
+def ammo_bundles(item) -> float | None:
+    """For ammo: how many of a trader's bundles this stack is. A trader's
+    price for arrows is for one bundle, rolled count_min..count_max, so a
+    stack counts as its arrows over the middle of that roll (an average
+    bundle is one). None for anything that is not ammo."""
+    if getattr(item, 'item_class', '') != 'ammo':
+        return None
+    lo = int(getattr(item, 'count_min', 0) or 0)
+    hi = int(getattr(item, 'count_max', 0) or 0)
+    ref = (lo + hi) / 2.0 if hi >= lo > 0 else 1.0
+    return max(0, int(getattr(item, 'count', 1) or 1)) / max(1.0, ref)
+
+
 def sell_offer(item, level: int, *, known: bool, identified: bool,
                markup: float = 1.0, purse: int | None = None) -> int:
     """What a trader offers for ``item`` on floor ``level``.
@@ -195,6 +208,11 @@ def sell_offer(item, level: int, *, known: bool, identified: bool,
     known: the hero knows the item's type (it is named). An unknown thing is
     priced as its unidentified class, so the offer never tells the hero what
     it is. identified: this copy is identified to the last detail.
+
+    Ammo sells as a whole stack, so its offer goes with the arrows in it
+    (ammo_bundles), rounded down: one flat price for any count made twenty
+    single arrows worth twenty stacks, five times what the stack cost. Its
+    _bought_for is the price of one bundle (_trader_mark_bought).
     """
     if getattr(item, 'item_class', '') == 'treasure':
         # Treasure sells near its full value (treasure.buy_rate), every
@@ -209,8 +227,15 @@ def sell_offer(item, level: int, *, known: bool, identified: bool,
     rate = SELL_RATE_IDENTIFIED if (known and identified) else SELL_RATE_UNKNOWN
     offer = his * rate
     paid = getattr(item, '_bought_for', None)
-    cap = None if paid is None else int(float(paid) * RESALE_CAP_OF_PAID)
-    offer = nice(offer) if offer >= 5 else int(offer)
+    bundles = ammo_bundles(item)
+    if bundles is not None:
+        # Rounded down, never to a nicer figure: the parts of a split stack
+        # can never sell for more than the whole.
+        cap = None if paid is None else int(float(paid) * RESALE_CAP_OF_PAID * bundles)
+        offer = int(offer * bundles)
+    else:
+        cap = None if paid is None else int(float(paid) * RESALE_CAP_OF_PAID)
+        offer = nice(offer) if offer >= 5 else int(offer)
     if cap is not None:
         offer = min(offer, cap)
     if purse is not None:

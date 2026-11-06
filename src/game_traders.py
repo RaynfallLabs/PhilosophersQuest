@@ -379,8 +379,13 @@ class TraderMixin:
         target = item if any(i is item for i in self.player.inventory) else next(
             (i for i in self.player.inventory if id(i) in before
              and int(getattr(i, 'count', 1) or 1) > before[id(i)]), item)
+        # Arrows sell by the bundle (economy.ammo_bundles): what was paid is
+        # kept as the price of one bundle, so the cap follows the count.
+        bundles = economy.ammo_bundles(item)
+        if bundles:
+            price = round(price / bundles, 2)
         old = getattr(target, '_bought_for', None)
-        target._bought_for = price if old is None else min(int(old), price)
+        target._bought_for = price if old is None else min(float(old), price)
 
     # ---------------------------------------------------------------- sell
 
