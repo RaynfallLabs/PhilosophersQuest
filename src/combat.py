@@ -76,7 +76,8 @@ CLASS_MECHANIC_INFO = {
         "At max chain, ignores 50% of the target's armor."),
     # Unique-only mechanics (no class template -- carried by specific artifacts).
     'guaranteed_hit':          ('Never Miss',
-        'The weapon never misses -- even a failed quiz still lands a minimum hit.'),
+        'The weapon never misses -- even a wrong first answer still lands a minimum '
+        'hit. Striking before you answer is not a wrong answer.'),
     'returning_blow':          ('Returning Blow',
         'At max chain the blow rebounds on you for half damage -- swing too '
         'hard and you pay the price.'),
@@ -986,13 +987,25 @@ def _chain_carry_for(player, weapon, score: int) -> int:
     return max(0, int(getattr(player, '_chain_carry', 0) or 0))
 
 
-def effective_chain(player, monster, weapon, score: int, consume: bool = True) -> int:
+def effective_chain(player, monster, weapon, score: int, consume: bool = True,
+                    strike_now: bool = False) -> int:
     """The chain a blow lands at: the quiz score plus every head start the
     gear, quirks and passives give. 0 is a miss.
 
     One function for the real blow (consume=True: one-shot carries and
     saves are spent) and the combat strip's "Strike Now" preview
-    (consume=False: nothing is spent), so the two always agree (call 13)."""
+    (consume=False: nothing is spent), so the two always agree (call 13).
+
+    ``strike_now``: the hero ended the chain with Strike Now (SPACE), not
+    with a wrong answer or the clock (QuizResult.struck_early). The
+    never-miss weapons save a wrong answer, not a blow struck before
+    answering: "Wrong answers only" (Brandon, 2026-11-06). The preview is
+    always a Strike Now, so it shows no free hit at chain 0 either.
+
+    Every head start needs a blow that lands: the gear, the Parashu carry,
+    Jormungandr and Glamdring read the quiz score (>= 1); Harpe, the family
+    opening and Skofnung read the chain after the never-miss saves. Only
+    those saves turn a 0 into a 1."""
     chain = score
 
     # Cow King's Horns (or any armor with chain_bonus): free chain head start
@@ -1027,22 +1040,29 @@ def effective_chain(player, monster, weapon, score: int, consume: bool = True) -
             == getattr(weapon, 'id', None)):
         chain += 1
 
+    # (Only on a blow that lands, like the armour chain_bonus above: added
+    # to a chain of 0 it turned a wrong first answer into a hit.)
     # Glamdring: Foe-Hammer's signature glow. Against any goblin/orc-
     # tagged enemy, +1 chain rung head start while equipped. Per audit
     # 2026-05-30 — the `glows_near_orcs` JSON flag was previously inert.
     # Lore: "the sword preempts — the wielder gets +2 initiative."
-    if weapon and getattr(weapon, 'glows_near_orcs', False):
+    if score >= 1 and weapon and getattr(weapon, 'glows_near_orcs', False):
         if _tag_match(monster, 'goblin') or _tag_match(monster, 'orc'):
             chain += 1
 
+    # The never-miss weapons below turn a WRONG first answer (or the clock
+    # running out at 0) into a light hit: their lore. Strike Now pressed
+    # before any answer is not a wrong answer and is not saved, and does not
+    # spend Hrunting's once-a-floor charge ("Wrong answers only").
     # Fail-not: Tristan's bow given by Morgan le Fay — never misses.
-    # Chain 0 is promoted to chain 1 (minimum hit) so a missed quiz still lands.
-    if chain == 0 and weapon and getattr(weapon, 'class_mechanic', '') == 'guaranteed_hit':
+    # Chain 0 is promoted to chain 1 (minimum hit) so a wrong answer still lands.
+    if (chain == 0 and not strike_now and weapon
+            and getattr(weapon, 'class_mechanic', '') == 'guaranteed_hit'):
         chain = 1
     # Gungnir: "the spear has never missed." Per audit 2026-05-30 — the
     # `cannot_miss` data flag previously had no consumer. Same chain 0 -> 1
     # promotion as guaranteed_hit but driven from the weapon's JSON.
-    if chain == 0 and weapon and getattr(weapon, 'cannot_miss', False):
+    if chain == 0 and not strike_now and weapon and getattr(weapon, 'cannot_miss', False):
         chain = 1
 
     # Fail-not (engine wave 3): cannot_miss_before_player_takes_damage.
@@ -1050,7 +1070,8 @@ def effective_chain(player, monster, weapon, score: int, consume: bool = True) -
     # Once the combat tracker says the player has been hurt, the spell
     # falters and misses can land normally. See _combat_player_taken_damage
     # marker (set by player.take_damage hook below).
-    if (chain == 0 and weapon and getattr(weapon, 'cannot_miss_before_hurt', False)
+    if (chain == 0 and not strike_now and weapon
+            and getattr(weapon, 'cannot_miss_before_hurt', False)
             and not getattr(player, '_combat_player_taken_damage', False)):
         chain = 1
 
@@ -1059,7 +1080,8 @@ def effective_chain(player, monster, weapon, score: int, consume: bool = True) -
     # demote a chain-0 (miss) into chain-1 (light hit). After the save
     # is spent, normal misses resume. Player-level marker
     # `_hrunting_save_used` is reset on every floor in main._change_level.
-    if (chain == 0 and weapon and getattr(weapon, 'one_shot_chain_save_per_floor', False)
+    if (chain == 0 and not strike_now and weapon
+            and getattr(weapon, 'one_shot_chain_save_per_floor', False)
             and not getattr(player, '_hrunting_save_used', False)):
         if consume:
             player._hrunting_save_used = True
@@ -1696,7 +1718,8 @@ def strike_preview(player, monster, score: int, *, ranged: bool = False, ammo=No
     first does not kill. The combat strip shows this number (call 13)."""
     if weapon is _WIELDED:
         weapon = player.ranged_weapon if ranged else player.weapon
-    chain = effective_chain(player, monster, weapon, score, consume=False)
+    # Pressing Strike Now is a Strike Now: at chain 0 no never-miss save.
+    chain = effective_chain(player, monster, weapon, score, consume=False, strike_now=True)
     if chain < 1:
         return 0
     dmg = strike_damage(player, monster, chain, ranged=ranged, ammo=ammo,
@@ -1736,7 +1759,8 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None,
         # them: a kill keeps the chain this blow earned, not the carry on top
         # (stored boosted, it grew with every kill).
         _carried = _chain_carry_for(player, weapon, result.score)
-        chain = effective_chain(player, monster, weapon, result.score, consume=True)
+        chain = effective_chain(player, monster, weapon, result.score, consume=True,
+                                strike_now=bool(getattr(result, 'struck_early', False)))
 
         # Cursed weapon backlash on miss (Tyrfing).
         # Floor at 0 so the player.hp value stays non-negative — downstream
