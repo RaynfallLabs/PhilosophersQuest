@@ -1411,12 +1411,12 @@ class DivineMixin:
         # Spawn artifact at player feet.
         art_name = self._spawn_intercession_artifact(p.x, p.y)
         if art_name:
+            from game_helpers import a_or_an
             self.add_message(
                 f"THE HEAVENS OPEN. God's grace pours over you — wounds close, "
-                f"poisons flee, and a {art_name} materializes at your feet, "
+                f"poisons flee, and {a_or_an(art_name)} materializes at your feet, "
                 "gift from the Most High.",
                 'loot')
-            from game_helpers import a_or_an
             self._chron(
                 'soul',
                 f"Begged for intercession and was answered. Every wound closed, and "
