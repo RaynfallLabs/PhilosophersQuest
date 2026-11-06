@@ -200,3 +200,60 @@ def test_b8_a_banished_demon_leaves_no_corpse_and_is_not_slain():
     texts = [str(e[0]) for e in g.msg_log.entries[-8:]]
     assert any('banished' in t for t in texts)
     assert not any('is slain' in t for t in texts), texts
+
+
+# ---------------------------------------------------------------------------
+# B10: enchanting a ranged weapon uses the ranged weapon's own cap
+# ---------------------------------------------------------------------------
+
+def _weapon(wid):
+    w = items.make_item_by_id('weapon', wid)
+    w.enchant_bonus = 0
+    return w
+
+
+def _scroll(sid='scroll_of_legendary_edge'):
+    """The tier-5 enchant-weapon scroll: +3, melee and ranged both."""
+    sc = items.make_item_by_id('scroll', sid)
+    sc.buc = 'uncursed'
+    return sc
+
+
+def test_b10_fail_not_stops_at_its_own_cap():
+    """Fail-not (max_enchant 4) reached +5, the melee slot's cap."""
+    g = _game(seed=101)
+    bow = _weapon('fail_not')
+    assert bow.max_enchant_own == 4
+    g.player.weapon = None
+    g.player.ranged_weapon = bow
+    for _ in range(4):
+        g._apply_scroll_effect(_scroll())
+    assert bow.enchant_bonus == 4
+
+
+def test_b10_broken_gram_in_hand_does_not_lock_the_bow():
+    """Broken Gram (max_enchant 0) in the hand made every bow unenchantable."""
+    g = _game(seed=102)
+    gram = _weapon('broken_gram')
+    assert gram.max_enchant_own == 0
+    bow = _weapon('fail_not')
+    g.player.weapon = gram
+    g.player.ranged_weapon = bow
+    g._apply_scroll_effect(_scroll())
+    assert gram.enchant_bonus == 0
+    assert bow.enchant_bonus > 0
+
+
+def test_b10_the_enchant_weapon_wand_branch_uses_the_bows_cap():
+    """No wand in the data carries enchant_weapon today; the branch is kept
+    for one, and reads the same cap."""
+    g = _game(seed=103)
+    bow = _weapon('fail_not')
+    bow.enchant_bonus = 4
+    g.player.weapon = None
+    g.player.ranged_weapon = bow
+    w = items.make_item_by_id('wand', 'wand_of_charm')
+    w.effect = 'enchant_weapon'
+    w.charges = 5
+    g._apply_wand_effect(w)
+    assert bow.enchant_bonus == 4

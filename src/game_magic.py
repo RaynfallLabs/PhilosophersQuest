@@ -1172,7 +1172,7 @@ class MagicMixin:
             from items import effective_enchant_cap
             w = self.player.weapon or self.player.ranged_weapon
             if w:
-                cap = effective_enchant_cap(self.player, 'weapon')
+                cap = effective_enchant_cap(self.player, 'weapon', w)
                 if w.enchant_bonus < cap:
                     w.enchant_bonus += 1
                     self.add_message(f"Your {self._bare_name(w)} glows!"
@@ -2756,7 +2756,7 @@ class MagicMixin:
                 targets = [self.player.ranged_weapon]
             if targets:
                 for w in targets:
-                    cap = effective_enchant_cap(self.player, 'weapon')
+                    cap = effective_enchant_cap(self.player, 'weapon', w)    # its own cap, not the hand's
                     eff_delta = delta
                     # Chrysaor (engine wave 3): weapon_immune_to_enchant_loss
                     # blocks NEGATIVE enchant changes.
@@ -2964,7 +2964,7 @@ class MagicMixin:
             n = count_by_step[_tstep]
             if candidates:
                 for target, slot_key in candidates[:n]:
-                    cap = effective_enchant_cap(self.player, slot_key)
+                    cap = effective_enchant_cap(self.player, slot_key, target)
                     old_val = getattr(target, 'enchant_bonus', 0)
                     target.enchant_bonus = max(-3, min(cap, old_val + delta))
                     actual = target.enchant_bonus - old_val
