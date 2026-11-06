@@ -1173,7 +1173,11 @@ class Player:
                 return True
             if grants_chain_status(self, it, status):
                 return True
-            if (getattr(it, 'effects', None) or {}).get('status') == status:
+            # A ring's or amulet's worn status. On a weapon `effects.status`
+            # is what its blow does to a foe (Wendigo's Fang slows on 35% of
+            # hits): counted, it kept a lifted Ring of Slowing's slow for good.
+            _fx = getattr(it, 'effects', None) or {}
+            if _fx.get('status') == status and 'effect_chance' not in _fx                     and it is not getattr(self, 'weapon', None)                     and it is not getattr(self, 'ranged_weapon', None):
                 return True
         return status in ((getattr(self, 'quirk_progress', None) or {}).get('quirk_statuses') or ())
 
@@ -1604,6 +1608,14 @@ class Player:
                 if getattr(existing, 'buc', 'uncursed') != getattr(item, 'buc', 'uncursed'):
                     continue  # different BUC: keep stacks separate
                 existing.count = getattr(existing, 'count', 1) + getattr(item, 'count', 1)
+                # A bought stack's resale cap (economy.RESALE_CAP_OF_PAID)
+                # survives a merge: the lower price paid holds for the lot.
+                # Merging into a found stack dropped it, and the arrows
+                # then sold for more than they cost on a deeper floor.
+                _paid = [float(p) for p in (getattr(existing, '_bought_for', None),
+                                            getattr(item, '_bought_for', None)) if p is not None]
+                if _paid:
+                    existing._bought_for = min(_paid)
                 return True
         self.inventory.append(item)
         # Keep inventory sorted alphabetically by the name the player SEES
@@ -1746,8 +1758,9 @@ class Player:
             self._quirk_grant = flag
 
     def _recover_legacy_ebb(self) -> int:
-        """A save from before 3.3.1 may hold Strength the old ebb took below
-        base (_three_oclock_lost): it comes back."""
+        """Strength an earlier build of this fix counted as ebbed
+        (_three_oclock_lost) comes back. A 3.3.0 save kept no count: the
+        Strength its ebb took is not known and stays as it is."""
         lost = int(getattr(self, '_three_oclock_lost', 0) or 0)
         if lost > 0:
             self._three_oclock_lost = 0

@@ -2971,6 +2971,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     # are bound by its oath below, not immune.)
                     if _flag != 'command_undead' and m.resists_control('charmed'):
                         continue
+                    # The oath binds the Dead, not the mindless: an undead
+                    # construct (a bone colossus) takes no charm at all.
+                    if _flag == 'command_undead' and (
+                            set(getattr(m, 'tags', None) or ()) & m._MINDLESS_TAGS):
+                        continue
                     _target = m
                     break
                 if _target is None:

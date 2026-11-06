@@ -1018,9 +1018,18 @@ class CombatMixin:
                 # (chain_equip.life_save_spent; a tier that renews it every
                 # floor gives it back on a deeper one).
                 if 'life_save' in (getattr(_it, '_chain_statuses', None) or ()):
-                    _it._life_save_spent_at = int(
-                        getattr(self.player, 'deepest_floor_reached', 0) or 0)
                     _src = _src or _it
+                # Whichever field gave it, a chain item that spent its life is
+                # marked: at tier 1 the Tyet's life is its base effect, and a
+                # re-attune at a higher tier gave a fresh one.
+                if _src is _it:
+                    try:
+                        from chain_equip import is_chain_equip as _ice
+                        if _ice(_it):
+                            _it._life_save_spent_at = int(
+                                getattr(self.player, 'deepest_floor_reached', 0) or 0)
+                    except ImportError:
+                        pass
                 # One death spends one ward: the loop went on and spent every
                 # worn source of life_save on the same blow.
                 if _src is not None:
