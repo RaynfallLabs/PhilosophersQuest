@@ -100,9 +100,9 @@ The subject's character budget (stem plus four choices) still applies and is che
 > Every GPS satellite carries an atomic clock, and each drifts about 38 millionths of a second a day from clocks on the ground. A phone finds its place by turning those readings into distances at the speed of light. If nobody corrected the drift, how far off would the phone be after one day?
 
 **Cooking, T2** (dashes, "So where"):
-> When the Gold Rush drew fortune-hunters to San Francisco in 1849, a French baker named Isidore Boudin opened his little bakery near the city's waterfront. Sourdough bread rises without a single packet of store-bought yeast — the yeast has to come from somewhere else. Boudin's very first 1849 loaves puffed up beautifully, and the sourdough he started that year is still baked in San Francisco today. So where did the yeast that raised those first Boudin loaves come from?
+> When the Gold Rush drew fortune-hunters to San Francisco in 1849, a French baker named Isidore Boudin opened his little bakery near the city's waterfront. Sourdough bread rises without a single packet of store-bought yeast — the yeast has to come from somewhere else. Boudin's very first 1849 loaves puffed up beautifully, and the sourdough he started that year is still baked in San Francisco today. So where does the wild yeast in a starter like his mostly come from?
 
-> Isidore Boudin, a French baker, opened a little bakery on San Francisco's waterfront in the Gold Rush of 1849. His sourdough rose without a grain of store-bought yeast, and the starter he began that year still raises bread in the city today. Where did the yeast in those first loaves come from?
+> Isidore Boudin, a French baker, opened a little bakery on San Francisco's waterfront in the Gold Rush of 1849. His sourdough rose without a grain of store-bought yeast, and the starter he began that year still raises bread in the city today. Where does the wild yeast in a starter like his mostly come from?
 
 **AI, T1** ("you"):
 > Someone hands you two paragraphs and asks: was this written by a person or by a chatbot? You cannot ask how long it took, and you cannot sniff the paper. You only have the text itself to work with. What is the single most useful thing to know when you try to tell which is which?
