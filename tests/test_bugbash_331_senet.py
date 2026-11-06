@@ -12,7 +12,6 @@ exit dialog stayed up, as often as wanted.
 Setne's tomb is on floors 45-65 and rolled per run, so it cannot be
 play-tested on demand: these drive the real encounter on a real Game.
 """
-import copy  # noqa: F401
 import os
 import random
 import sys
