@@ -50,9 +50,11 @@ Master 5, Hearth 3, Greater Hearth 5, Master Hearth 7 floors) x the trader's mar
 Stock is sold unidentified, so a price that follows worth lets a sharp eye
 price-identify (a NetHack-style discovery). Since 2026-10-24 a trader's asking
 price goes through `economy.stock_price`, which marks an unknown potion,
-scroll or wand no lower than its class's common band (`shop_worth_floor` in
-`data/item_worth.json`, worth 1.0): every junk potion used to cost 5 gp, so the
-price told the hero which ones were safe for free. The great ones still cost
+scroll, wand, ring or amulet no lower than its class's common band
+(`shop_worth_floor` in `data/item_worth.json`, worth 1.0): every junk potion
+used to cost 5 gp, so the price told the hero which ones were safe for free
+(rings and amulets joined in 3.3.1: a curse ring cost a tenth of the others).
+The great ones still cost
 more (Gain Level, Soma, the Elixir of Gilgamesh and Fafnir's Blood are now
 worth 8-10, about a floor's income). `economy.unknown_price` is the
 price of a thing as its unidentified class (tier 2, worth 1): what the hero is
