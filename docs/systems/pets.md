@@ -238,11 +238,18 @@ Dad overrides to return 0 (invincible). Unicorn's `base_damage = 0` means the pe
 
 ## 4. Spawn paths
 
+### 4.0 One companion at a time (2026-11-06)
+
+Brandon's rule: one bonded companion walks with the hero. Before a new one joins, `CombatMixin._companions_to_stasis()` puts the one at his side back into a Bound Soul Sphere in the pack (from any distance, state kept, exactly as Recall does; `_bound_sphere_for` builds the sphere for both). In the sphere it gains no XP and needs no food. A pack over its limit sets the sphere at the hero's feet; it is never lost. A save from before the rule may have several companions out: the next join stores all of them.
+
+- **Counts** (`pet_system.is_companion`): a pet from any of the six Soul Spheres or a bound sphere (the family cats and Shep too, and a rare hatch from the Unusual Soul Sphere), the Emberpup, Waddlekind, and the Summon Guardian and Gate spells.
+- **Extras, never stored:** Dad, Leonardo's sketch, an ally sprung from a kill (`_temp_duration`), Fenrir, the Army of Darkness deadites (`_summoned_minion`), and the unicorn (a healer that never fights). A bound sphere holding one of these does not store the companion when thrown.
+
 ### 4.1 The six Soul Spheres — thrown by the player
 
 Found on the floor by band, or bought from a trader (§12). When the player throws one (`game_combat._throw_soul_sphere`):
 
-1. If it's a **bound** sphere (recalled from a prior pet via Shift+P → Recall), the stored pet is resummoned with ALL state preserved (level, XP, nickname, kills, command, `hatch_sphere`). The sphere is consumed. No naming popup.
+1. If it's a **bound** sphere (recalled via Shift+P → Recall, or stored by the one-companion rule, §4.0), the companion at the hero's side goes into a sphere first, then the stored pet is resummoned with ALL state preserved (level, XP, nickname, kills, command, `hatch_sphere`). The sphere is consumed. No naming popup.
 2. Otherwise `roll_sphere_species(sphere, present)` picks the species (an ordinary sphere: rarely Shep or a family cat, else `random_species()`; a Hearth Sphere: one of the family not yet met, else `random_species()`; see §11), the sphere's kind becomes known (as a thrown potion's does), and `_hatch_sphere_pet(species, x, y, level=hatch_level(sphere), sphere_id=sphere.id)` builds the pet at its sphere's level, logs `hatch_message(pet)` (a grown pet has its own stage words: "out steps Shep the Legend..."), and opens the naming popup (defaulting to the species name at that stage: "Shep the Farmhound"; Shep and the family cats bring their own popup words, `naming_story`).
 
 Once a sphere's kind is known (thrown, identified, or bought known), it has an Encyclopedia page under **Wonders** (B, l): its art, its lore and the level it wakes at, never who hatches from it (`Game._wonder_entries`, 2026-10-18).
@@ -589,3 +596,4 @@ Dead pets are not rendered. Sketch/Dad pets with `turns_remaining <= 0` set `ali
 6. **Dad is invincible.** `take_damage` returning 0 is load-bearing — Dad has to survive to the duration timeout.
 7. **Unicorn sets `trap['revealed'] = True`** (not `detected`). Pre-v2.18 the wrong key was being written and the whole feature was a silent no-op. Keep the key name aligned with `_check_floor_trap` + `_try_disarm_trap` + renderer.
 8. **L100 is the pet level cap.** `gain_xp` short-circuits at L100 and drops residual XP. Raising the cap means re-stat-curving `_calc_max_hp` + `_calc_damage`.
+9. **One companion at a time** (§4.0). Every new way a pet joins calls `_companions_to_stasis()` before `self.pets.append`, unless it is a short-lived helper; `is_companion` is the one test of which is which. `tests/test_one_companion.py` holds it.

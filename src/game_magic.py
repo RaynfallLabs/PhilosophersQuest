@@ -1723,6 +1723,7 @@ class MagicMixin:
                     pet = Pet(species, nx, ny)
                     pet.level = SUMMON_GUARDIAN_LEVEL
                     pet._refresh_stats()
+                    self._companions_to_stasis()     # one companion at a time
                     self.pets.append(pet)
                     self.add_message(
                         f"{self._a_or_an(pet.name).capitalize()} materializes to guard you!", 'success')
@@ -1878,6 +1879,7 @@ class MagicMixin:
                     pet.level = GATE_ALLY_LEVEL
                     pet._refresh_stats()
                     pet.hp = pet.max_hp
+                    self._companions_to_stasis()     # one companion at a time
                     self.pets.append(pet)
                     self.add_message(
                         f"A gate opens! {self._a_or_an(pet.name).capitalize()} (lv {pet.level}) "
@@ -4328,6 +4330,7 @@ class MagicMixin:
                 pet.level = DEADITE_LEVEL
                 pet._refresh_stats()
                 pet.hp = pet.max_hp
+                pet._summoned_minion = True       # not the one companion (is_companion)
                 self.pets.append(pet)
                 occupied.add((nx, ny))
                 spawned += 1

@@ -1431,6 +1431,21 @@ def random_species() -> str:
     return random.choice(pool)
 
 
+def is_companion(pet) -> bool:
+    """The hero's one bonded companion (Brandon, 2026-11-06: one at a time).
+    A pet from any Soul Sphere (the family cats and Shep too), the Emberpup,
+    Waddlekind, or the Summon Guardian and Gate spells. Not the helpers that
+    come and go beside it: Dad, a sketch, an ally sprung from a kill, Fenrir,
+    the Army of Darkness, and not the unicorn, who heals and never fights."""
+    if type(pet) is not Pet or not getattr(pet, 'alive', False):
+        return False                  # FenrirPet, SketchedPet, DadPet, UnicornPet
+    d = pet.__dict__
+    if '_temp_duration' in d or d.get('_summoned_minion'):
+        return False                  # a kill's ally, the Army of Darkness
+    # A deadite from before the _summoned_minion mark: a shadow Pet.
+    return (getattr(pet, 'species', None) or {}).get('element') != 'shadow'
+
+
 def family_pets_present(player=None, pets=None, inventory=None) -> set:
     """The rare family companions (the cats and Shep) already met this run:
     hatched before (remembered on the player, in `family_cats_met`, a name

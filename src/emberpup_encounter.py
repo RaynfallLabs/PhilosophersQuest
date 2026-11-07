@@ -333,6 +333,7 @@ class EmberpupMixin:
         deeds.note(self, 'saved.emberpup', source='emberpup', unique=True)
         # A pup: it starts as a newborn does (level 1), whatever the floor.
         pet = Pet(d['pet_species'], x, y)
+        self._companions_to_stasis()          # one companion at a time
         self.pets.append(pet)
         self._emberpup_new_pet = pet
         self.add_message("The Emberpup comes down off its rock to you.", 'success')

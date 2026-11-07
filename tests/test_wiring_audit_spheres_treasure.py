@@ -265,7 +265,8 @@ def test_the_qa_treasure_sampler_brings_its_trader_even_in_a_corridor():
 # ---------------------------------------------------------------- text
 
 def test_the_pets_doc_quotes_the_bound_spheres_lore_as_the_game_writes_it():
-    src = open(os.path.join(ROOT, 'src', 'game_menus.py'), encoding='utf-8').read()
+    # Built in CombatMixin._bound_sphere_for since the one-companion rule.
+    src = open(os.path.join(ROOT, 'src', 'game_combat.py'), encoding='utf-8').read()
     assert 'Hurl it to summon it back to your side.' in src
     doc = open(os.path.join(ROOT, 'docs', 'systems', 'pets.md'), encoding='utf-8').read()
     assert 'summon them back' not in doc

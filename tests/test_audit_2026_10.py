@@ -296,7 +296,9 @@ def test_w9_pet_targeting_skips_allies():
 
 def test_w18_pet_recall_checks_the_pack_first():
     src = (_ROOT / 'src' / 'game_menus.py').read_text(encoding='utf-8')
-    block = src[src.index('sphere.bound_pet = pet'):]
+    # The sphere is built by CombatMixin._bound_sphere_for (shared with the
+    # one-companion swap, 2026-11-06); recall still checks the pack first.
+    block = src[src.index('sphere = self._bound_sphere_for(pet)'):]
     block = block[:block.index('dissolves into the sphere')]
     assert block.index('if not self.player.add_to_inventory(sphere):') < \
         block.index('self.pets.remove(pet)')

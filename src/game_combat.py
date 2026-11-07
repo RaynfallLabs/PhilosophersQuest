@@ -531,8 +531,11 @@ class CombatMixin:
         # Bound sphere: spawn the previously-recalled pet with state intact.
         bound = getattr(sphere, 'bound_pet', None)
         if bound is not None:
-            bound.x, bound.y = spawn_x, spawn_y
+            from pet_system import is_companion
             bound.alive = True
+            if is_companion(bound):
+                self._companions_to_stasis()     # one companion at a time
+            bound.x, bound.y = spawn_x, spawn_y
             self.pets.append(bound)
             self.add_message(
                 f"{bound.name} bursts from the sphere — welcome back!", 'success')
@@ -564,6 +567,7 @@ class CombatMixin:
         from pet_system import FAMILY_PETS, hatch_message
         pet = Pet(species, spawn_x, spawn_y, level=level)
         pet.hatch_sphere = sphere_id          # the pet card's "Hatched From"
+        self._companions_to_stasis()          # one companion at a time
         self.pets.append(pet)
         self._seeker_event('pet_hatched', pet=species, line=species)
         if pet.stage > 0:
@@ -587,6 +591,57 @@ class CombatMixin:
         self._naming_story = dict(story) if story else None
         from game_states import STATE_PET_NAME_INPUT
         self.state = STATE_PET_NAME_INPUT
+
+    def _bound_sphere_for(self, pet):
+        """A Bound Soul Sphere holding ``pet`` exactly as it is (level, XP,
+        nickname, kills, command): throwing it brings the same pet back. None
+        if the sphere cannot be made. Used by Recall and by the one-companion
+        swap."""
+        from items import make_item_by_id, grant_identified
+        sphere = make_item_by_id('artifact', 'soul_sphere')
+        if sphere is None:
+            return None
+        sphere.name = f"Bound Soul Sphere ({pet.name})"
+        sphere.color = (80, 200, 255)
+        grant_identified(self, sphere)
+        sphere.lore = (f"A Soul Sphere humming with the bound spirit of "
+                       f"{pet.name}. Hurl it to summon it back to your side.")
+        sphere.bound_pet = pet
+        return sphere
+
+    def _companions_to_stasis(self) -> int:
+        """One companion at a time (Brandon, 2026-11-06). Before a new one
+        joins (a thrown sphere, new or bound; the Emberpup; Waddlekind; the
+        Summon Guardian and Gate spells), the companion at the hero's side
+        goes back into a Bound Soul Sphere in the pack, from any distance,
+        as it is: in the sphere it gains nothing and needs nothing until it
+        is thrown again. Helpers that come and go (Dad, a sketch, a kill's
+        ally, Fenrir, the Army of Darkness) and the unicorn stay
+        (pet_system.is_companion). A save from before the rule may have
+        several companions out: all of them go. Returns how many went."""
+        from pet_system import is_companion
+        went = 0
+        for pet in [p for p in self.pets if is_companion(p)]:
+            sphere = self._bound_sphere_for(pet)
+            if sphere is None:
+                continue
+            try:
+                self.pets.remove(pet)
+            except ValueError:
+                continue
+            went += 1
+            if self.player.add_to_inventory(sphere):
+                self.add_message(
+                    f"{pet.name} returns to its sphere to rest. Only one companion "
+                    f"walks at your side at a time.", 'info')
+            else:
+                # Never lost: a pack over its limit sets the sphere down.
+                sphere.x, sphere.y = self.player.x, self.player.y
+                self.ground_items.append(sphere)
+                self.add_message(
+                    f"{pet.name} returns to its sphere. Your pack is too full for it, "
+                    f"so it rests at your feet.", 'info')
+        return went
 
     def _throw_unusual_sphere(self, sphere, hit_monster, tx: int, ty: int):
         """Throw the Unusual Soul Sphere — summons Dad for 5 turns."""

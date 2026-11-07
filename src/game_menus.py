@@ -2145,22 +2145,14 @@ class MenuMixin:
             self.add_message(
                 f"You must be adjacent to {pet.name} to recall it.", 'warning')
             return
-        # Load the Soul Sphere base from artifact.json, then override the
-        # dynamic fields (name reflects the bound pet, cyan tint distinguishes
-        # bound spheres, lore mentions the pet by name, already identified).
-        from items import make_item_by_id
-        sphere = make_item_by_id('artifact', 'soul_sphere')
+        # A Soul Sphere named for the pet, cyan, already identified, holding
+        # it as it is (CombatMixin._bound_sphere_for, shared with the
+        # one-companion swap).
+        sphere = self._bound_sphere_for(pet)
         if sphere is None:
             self.add_message(
                 "The sphere refuses to form around the bond.", 'warning')
             return
-        sphere.name = f"Bound Soul Sphere ({pet.name})"
-        sphere.color = (80, 200, 255)
-        from items import grant_identified
-        grant_identified(self, sphere)
-        sphere.lore = (f"A Soul Sphere humming with the bound spirit of "
-                       f"{pet.name}. Hurl it to summon it back to your side.")
-        sphere.bound_pet = pet
         # The pack can refuse the sphere (over carry capacity). Removing the
         # pet anyway deleted it for good, so stop before touching it.
         if not self.player.add_to_inventory(sphere):

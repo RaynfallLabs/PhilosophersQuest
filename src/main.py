@@ -6177,6 +6177,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # from its own story, the same on any floor).
         from pet_system import DUCK_OF_DOOM_HATCH_XP
         pet.gain_xp(DUCK_OF_DOOM_HATCH_XP)
+        self._companions_to_stasis()          # one companion at a time
         self.pets.append(pet)
         self.add_message(
             "The duckie's eyes glow. It hops off your head, suddenly weightless.",
