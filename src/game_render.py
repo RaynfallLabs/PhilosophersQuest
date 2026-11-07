@@ -6941,6 +6941,8 @@ class RenderMixin:
         context = self._menu_base_context([
             ("COMPANIONS", FP.GOLD_BRIGHT, self.font_sm),
             (f"Active companions: {len(entries)}", FP.BODY_TEXT, self.font_sm),
+            ("One companion walks with you at a time; the rest sleep in their spheres.",
+             FP.FADED_TEXT, self.font_sm),
             ("Choose a companion with arrows or letters, then use the action keys.",
              FP.FADED_TEXT, self.font_sm),
         ])
