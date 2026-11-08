@@ -28,12 +28,39 @@ sys.path.insert(0, os.path.join(ROOT, 'src'))
 
 import deeds  # noqa: E402
 import pygame  # noqa: E402
+import pytest  # noqa: E402
 
 pygame.init()
 _SCREEN = None
 
 ITEM_DIR = os.path.join(ROOT, 'assets', 'tiles', 'items')
 MON_DIR = os.path.join(ROOT, 'assets', 'tiles', 'monsters')
+
+
+class _SeededFromStream(random.Random):
+    """A generator of its own that takes its seed, when none is given, from
+    the shared stream (which _game seeds) rather than from the OS."""
+
+    def __init__(self, x=None):
+        super().__init__(random.getrandbits(64) if x is None else x)
+
+
+@pytest.fixture(autouse=True)
+def _floors_follow_the_seed(monkeypatch):
+    """Every floor in this file is built from the test's own seed.
+
+    The floor builders make their own ``random.Random()`` (generate_dungeon,
+    spawn_monsters and spawn_items in dungeon.py, the hidden chamber's cache
+    in level_manager), and Python seeds those from the OS, so the
+    ``random.seed()`` in _game never reached a layout. Each run walked new
+    floors, and about one run in fourteen got one a scene could not be
+    played on: an NPC whose only neighbour was a closed door, the unicorn
+    with no tile near her that could see her, a floor-17 fountain in a
+    corner with no room for Ariadne's sealed shrine (the game then leaves
+    the thread unsealed, as designed). With those generators seeded from the
+    stream, a test gets the same floors on every run, so a failure comes
+    back and can be looked at."""
+    monkeypatch.setattr(random, 'Random', _SeededFromStream)
 
 
 def _screen():
@@ -68,16 +95,29 @@ def _clear_floor(g, keep=()):
 
 
 def _beside(g, thing):
-    """Stand the hero on a free walkable tile next to ``thing`` and return the
-    step that walks into it."""
-    for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1), (1, 1), (-1, -1), (1, -1), (-1, 1)):
-        x, y = thing.x - dx, thing.y - dy
-        if (g.dungeon.is_walkable(x, y)
-                and not any((m.x, m.y) == (x, y) for m in g.monsters if m.alive)):
+    """Stand the hero next to ``thing`` and return the step that walks into
+    it: on a free walkable tile, or failing that in a doorway beside it,
+    opened as walking into the door opens it. (A figure in a one-tile
+    corridor between a door and a lava river has only the doorway beside
+    it; the hero bumps it from the threshold.)"""
+    from dungeon import DOOR, SECRET_DOOR
+    d = g.dungeon
+    steps = ((1, 0), (-1, 0), (0, 1), (0, -1), (1, 1), (-1, -1), (1, -1), (-1, 1))
+    for doorway in (False, True):
+        for dx, dy in steps:
+            x, y = thing.x - dx, thing.y - dy
+            if any((m.x, m.y) == (x, y) for m in g.monsters if m.alive):
+                continue
+            if doorway:
+                if not (d.in_bounds(x, y) and d.tiles[y][x] in (DOOR, SECRET_DOOR)):
+                    continue
+                d.open_door(x, y)
+            elif not d.is_walkable(x, y):
+                continue
             g.player.x, g.player.y = x, y
             g._refresh_fov()
             return dx, dy
-    raise AssertionError(f'no free tile beside {getattr(thing, "name", thing)}')
+    raise AssertionError(f'no free tile or doorway beside {getattr(thing, "name", thing)}')
 
 
 def _monster_art(g, m):
@@ -281,22 +321,20 @@ def _unicorn_scene(g, floor=25):
     u = _unicorns(g)[0]
     _clear_floor(g, keep=[u])
     g.ground_items[:] = []
-    # stand the hero close by (two tiles if he can see her from there, else
-    # one), on a tile from which she is in plain view
-    for want in (2, 1):
-        spots = [(u.x + dx, u.y + dy) for dx in range(-want, want + 1)
-                 for dy in range(-want, want + 1) if max(abs(dx), abs(dy)) == want]
-        ok = False
-        for px, py in spots:
-            if not g.dungeon.is_walkable(px, py):
-                continue
-            g.player.x, g.player.y = px, py
-            g._refresh_fov()
-            if (u.x, u.y) in g.visible:
-                ok = True
-                break
-        if ok:
+    # stand the hero close by, on a tile from which she is in plain view:
+    # two tiles off if one sees her, else beside her (a tile next to her
+    # always does), in a doorway if that is all there is
+    ring2 = [(u.x + dx, u.y + dy) for dx in range(-2, 3) for dy in range(-2, 3)
+             if max(abs(dx), abs(dy)) == 2]
+    for px, py in ring2:
+        if not g.dungeon.is_walkable(px, py):
+            continue
+        g.player.x, g.player.y = px, py
+        g._refresh_fov()
+        if (u.x, u.y) in g.visible:
             break
+    else:
+        _beside(g, u)
     assert (u.x, u.y) in g.visible, 'no spot near the unicorn from which she is seen'
     carrot = copy.copy(next(f for f in load_items('food') if f.id == 'magic_dungeon_carrot'))
     g.player.inventory.append(carrot)
@@ -1010,6 +1048,9 @@ def test_the_lost_girls_pendant_spawns_before_her_and_can_be_returned():
     assert len(pend) == 1
     assert (pend[0].x, pend[0].y) in g._reachable_tiles(g.player.x, g.player.y)
     assert _own_item_art('silverlight_pendant')
+    # Nothing on floor 3 acts while the hero picks it up: a monster that
+    # slowed him spent his first bump at the girl on "You move sluggishly".
+    _clear_floor(g)
     g.player.x, g.player.y = pend[0].x, pend[0].y
     # Another item can share the tile; each pickup takes one, as in play.
     for _ in range(4):
