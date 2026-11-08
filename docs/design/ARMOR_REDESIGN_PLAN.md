@@ -1,4 +1,4 @@
-# Armour redesign: core AC, slot wards, a tiered enchantment stable (plan)
+# Armour redesign: core AC, slot guards, a priced enchantment stable (plan)
 
 Brandon, 2026-11-07, after the equipment review
 (`EQUIPMENT_BALANCE_REVIEW_2026_11_07.md`):
@@ -6,374 +6,337 @@ Brandon, 2026-11-07, after the equipment review
 > "armor is so broken... How does AD&D do this? Maybe only the core armor and
 > shield matter for AC, and other items, like a helm, gloves, cloak give you
 > protection from certain attack types and carry enchantments that can ONLY be
-> found on those items... let's plan."
+> found on those items."
 
-> "we need to make sure that there are increasing levels of enchantment and
-> more powerful enchantments as we go deeper... And enough different
-> enchantments for each class that the player will have to choose what's
-> best: something that locks mind control or something that increases quiz
-> timer? blocks poison or adds damage (gloves)? We need a ROBUST stable here,
-> and the material only matters for rust/acid. Double check the plan, make
-> sure we're doing enough with variation and the tiers/threshold/power are all
-> balanced and have correct distribution through the game."
+> "increasing levels of enchantment and more powerful enchantments as we go
+> deeper... enough different enchantments for each class that the player will
+> have to choose... a ROBUST stable... the material only matters for
+> rust/acid... tiers/threshold/power all balanced with correct distribution."
 
-Status: **plan, revision 2, awaiting rulings** (section 10). Nothing is
-built. Scope: armour and shields. Weapons keep their own material curve (it is
-smooth; see the review, section 3D). Rings, amulets and belts keep theirs.
+Rulings on revision 2: material keeps weight; tier pace proven by simulation
+with standard deviations; "more powerful gear has a higher tier, complexity
+and benefit set the threshold"; take powers from rings to the iconic gear,
+fewer rings, still covering rising strength; the loot roll about 45 / 45 / 10;
+"make the math work... prove it."
+
+Status: **plan, revision 3: every number below comes from
+`tools/balance/armor_model.py`** (section 9), run on the game's own data.
+Nothing in the game is built yet. Scope: armour, shields, and the ring and
+amulet powers that move. Weapons keep their own (smooth) curve.
 
 ---
 
 ## 1. Why the current model cannot be tuned
 
-Nine slots add AC, each new material tier raises all nine at once, and the
-minor slots are the cheapest AC in the game (one question each). A real run
-wears AC -6 by floor 15 and -50 by floor 100 (loot census). Monster accuracy
-climbs too (median THAC0 19 on floors 1-10, -15 on 91-100) but cannot keep
-up, so from about floor 15 every blow is decided by the 30% hit floor and no
-armour found after that changes anything.
+Nine slots add AC; each material tier raises all nine; the minor slots are
+the cheapest AC in the game. Real runs wear AC -6 by floor 15 and -50 by
+floor 100 (loot census), past the monsters' reach, so from about floor 15
+every blow lands at the 30% hit floor and no armour found after it matters.
 
 ## 2. How AD&D does it
 
-- **Armour type sets the base AC** (2e: leather 8, chain 5, plate 3, full
-  plate 1, from an unarmoured 10); **a shield improves it by one**; magic
-  armour and shields add their plus; DEX adds a little. That is nearly all
-  of AC.
-- **Other worn gear gives no AC.** Helms, gauntlets, boots and cloaks are
-  where the special magic lives, each kind with its own family (helms of
-  telepathy, gauntlets of ogre power, boots of elvenkind, cloaks of
-  displacement), found only on that kind of item.
-- **Protection items are the narrow exception** (ring or cloak of
-  protection; bracers of defense help only a wearer with no armour). 3e made
-  it a rule that bonuses of one type do not stack.
-- **Touch attacks ignore armour** (3e "touch AC").
-- **The plus is the depth curve.** A +1 shield is common, a +5 one is a
-  deep-dungeon find. AC stays inside about 10 to -10 while monster accuracy
-  climbs with Hit Dice, so good armour matters at every level.
+Armour type sets the base AC (2e: leather 8, chain 5, plate 3, full plate 1,
+from 10), a shield improves it by one, magic adds its plus, DEX a little.
+Helms, gauntlets, boots and cloaks give no AC: they carry their own magic,
+found only on that kind of item. Rings of protection improve AC *and saving
+throws*. Touch attacks ignore armour (3e). The plus is the depth curve; AC
+stays inside about 10 to -10 while monster accuracy climbs.
 
-## 3. The item model: who decides what
+## 3. The item model
 
-| Part | Decides | No longer decides |
-|---|---|---|
-| **Template** (what it is: padded, chain, plate, buckler, tower, gauntlets...) | slot, weight class, base AC (body and shield only), base ward (minor slots), base weight | — |
-| **Material** (what it is made of) | which wear can hit it: rust, acid, fire (the existing `_can_rust` / `_can_corrode` / `_can_scorch` rules), and its name | AC, tier, quiz tier, enchantment cap, resistances |
-| **Enchantment** (its magic) | the tier (I-V), so the geography quiz tier and the equip threshold; the plus on body armour and shields; the one power on a minor piece | — |
+| Part | Decides |
+|---|---|
+| **Template** (padded, chain, plate, buckler, tower, gauntlets...) | slot, weight class, base AC (body and shield), base guard (minor slots), base weight |
+| **Material** | which wear can touch it (rust, acid, fire: the existing `_can_rust` / `_can_corrode` / `_can_scorch`), its **weight** (mithril light, adamantine heavy) and its name. Not AC, tier, quiz tier, cap or resistances. |
+| **Enchantment** (level 1-10; tier I-V = level 1-2, 3-4 ... 9-10) | the geography quiz tier, part of the threshold, the plus on body armour and shields, a minor piece's one power |
 
-So depth comes from the enchantment, exactly as AD&D's plus does, and the
-floor only decides *which tier is likely to be found*; the magnitudes are
-fixed per tier in data (LORE NOT FLOOR holds).
+The floor decides only *which* level is likely to be found; magnitudes are
+fixed per level in data (LORE NOT FLOOR). Rust, acid and fire keep working
+(`items.wear_down`): a core piece loses a point of plus, a minor piece one
+level; a smith's repair gives it back.
 
-Rust, acid and fire keep working as now (`items.wear_down`): body armour and
-shields lose a point of plus; a minor piece's enchantment drops one tier; a
-smith's repair gives it back. Material decides whether the hazard can touch
-the piece at all (iron rusts, leather burns, adamantine does neither).
-
-## 4. Core AC: body armour and shield
+## 4. Core AC
 
 ```
-AC = 10 - body armour (base + plus) - shield (base + plus)
-        - DEX (cap 3) - one protection source (the best of a ring of
-          protection and a cloak of Protection) - temporary effects
+AC = 10 - body armour (base + plus) - shield (base + plus) - DEX (cap 3)
+        - temporary effects (shielded, stand, parry...)
 ```
 
-Base AC by template (heavier is better, so no template is dominated):
+No ring, amulet, cloak or minor slot gives AC (section 8 shows why a +1 AC
+ring cannot be balanced against any other ring).
 
-| Body | padded 1, leather 2, studded / hide 3, chain shirt / ringmail 3, scale 4, chainmail 5, breastplate 5, banded / splint 6, plate 7, full plate 8 |
+| Body | padded 1, leather 2, studded / hide 3, chain shirt / ringmail 3, scale 4, chainmail / breastplate 5, banded / splint 6, plate 7, full plate 8 |
 |---|---|
 | **Shield** | buckler 1, light 1, heavy wooden 2, kite 2, tower 3 |
+| **Plus** | the tier: +1 (I) to +5 (V); an Enchant Armour scroll adds one, to +5 |
 
-**The plus is the enchantment tier**: +1 at tier I up to +5 at tier V (an
-Enchant Armour scroll adds one, to +5 at most).
+Template weight classes have their own depth bells (light from floor 1, peak
+1; medium from 4, peak 22; heavy from 12, peak 50), so plate is not found on
+floor 3 (the first model pass showed that spike: mean AC 0.8 on floor 10).
 
-**The AC line checked against what will be found** (prepared hero, the
-expected tier of section 5):
+**What a run wears** (3,000 runs, DEX 10, no starting kit; the hero keeps the
+best body armour and shield found):
 
-| Floor | What a prepared hero wears | AC | Target |
-|---|---|---|---|
-| 1 | leather 2, light shield 1, plain | 7 | 8 |
-| 20 | chainmail 5 +1, kite 2 +1 | 1 | 2 |
-| 50 | plate 7 +3, kite 2 +3, DEX 1 | -6 | -4 |
-| 100 | full plate 8 +5, tower 3 +5, DEX 2 | -13 | -12 |
+| Floor | 1 | 5 | 10 | 15 | 20 | 30 | 40 | 50 | 60 | 70 | 80 | 90 | 100 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Mean AC | 9.1 | 6.2 | 4.1 | 1.4 | -0.3 | -2.6 | -4.7 | -6.1 | -7.8 | -8.6 | -10.0 | -10.6 | -10.8 |
+| SD across runs | 1.38 | 1.98 | 1.49 | 1.96 | 1.96 | 1.57 | 1.30 | 0.96 | 0.90 | 0.71 | 0.73 | 0.57 | 0.40 |
+| p10 / p90 | 7 / 10 | 4 / 9 | 3 / 7 | -1 / 4 | -3 / 2 | -5 / 0 | -6 / -3 | -7 / -5 | -9 / -7 | -9 / -8 | -11 / -9 | -11 / -10 | -11 / -10 |
 
-The best possible kit (plus a cloak of Protection V and DEX 3) reaches about
--17 at floor 100; an unarmoured hero is 10.
+AD&D's own range (10 to about -11). The run-to-run spread never exceeds 2 AC
+points (largest 1.99, floor 16) and narrows to 0.4 deep: luck moves a run by
+about one blow in ten early and less later. (The census's real starting kits
+make floors 1-10 better and steadier than this.)
 
-**Monster accuracy is rebaked to the line** (written into `monsters.json` by
-`tools/balance/scale_monsters.py`): THAC0 = line AC + 10, so a typical monster
-hits a prepared hero about 55% of the time at every depth, an under-armoured
-one about 80%, a best-kit one about 30%. With AC bounded, the 30% floor drops
-to the natural 20 for ordinary monsters (named foes keep a higher floor).
+**Monster accuracy rebaked to that line**: each monster's THAC0 = the mean AC
+at its peak floor + 10 + half its current offset from its floor's median
+(relative accuracy kept). Hit chance of each floor's own monsters:
 
-## 5. Enchantment tiers through the game
+| Floor | 1 | 10 | 20 | 30 | 50 | 70 | 90 | 100 |
+|---|---|---|---|---|---|---|---|---|
+| Against the mean hero | 55% | 54% | 50% | 56% | 56% | 57% | 56% | 56% |
+| Across runs, p10 - p90 | 45-60% | 49-69% | 36-61% | 44-69% | 51-61% | 55-60% | 54-59% | 55-60% |
 
-A found piece is plain or carries one enchantment of tier I-V. The tier is
-drawn from bells by floor (peaks 6, 26, 46, 66, 86; spread about 11; a tier
-cannot appear before floors 1 / 12 / 30 / 50 / 70). The plain share falls
-from 40% on floor 1 to 15% by floor 100. Computed shares of found pieces:
+Today the same monsters hit 32% from floor 15 to 100 whatever is worn. With
+AC bounded, the 30% floor drops to the natural 20 for ordinary monsters
+(named foes keep a higher floor).
 
-| Floors | Plain | I | II | III | IV | V | Expected tier when enchanted |
-|---|---|---|---|---|---|---|---|
-| 1-10 | 39% | 61% | | | | | 1.0 |
-| 11-20 | 36% | 32% | 32% | | | | 1.5 |
-| 21-30 | 34% | 7% | 58% | 2% | | | 1.9 |
-| 31-40 | 31% | | 35% | 33% | | | 2.5 |
-| 41-50 | 29% | | 13% | 57% | 2% | | 2.9 |
-| 51-60 | 26% | | 2% | 37% | 35% | | 3.5 |
-| 61-70 | 24% | | | 14% | 60% | 2% | 3.8 |
-| 71-80 | 21% | | | 2% | 40% | 37% | 4.5 |
-| 81-90 | 19% | | | | 15% | 66% | 4.8 |
-| 91-100 | 16% | | | | 4% | 80% | 5.0 |
+## 5. Enchantment levels through the game
 
-(A 60% plain share was tried first: it left under one enchanted piece per slot
-per 10 floors before floor 30; see section 8.)
+Ten levels, two per tier (a lesser and a greater form: "Helm of Iron Will II",
+"Helm of Greater Iron Will II"), drawn by depth bells; the plain share falls
+from 40% on floor 1 to 15%. Pace, from the model (minor slots pooled):
 
-Every band has a new tier arriving and an old one leaving, so there is an
-upgrade every few floors, never a 37-floor plateau.
-
-## 6. Equip cost follows power
-
-The geography quiz tier is the enchantment tier (a plain piece: tier 1). The
-number of questions:
-
-| Tier | plain / I | II | III | IV | V |
+| First floor a slot holds tier | I | II | III | IV | V |
 |---|---|---|---|---|---|
-| Body or shield, light | 1 | 1 | 2 | 2 | 3 |
-| Body or shield, medium | 2 | 2 | 3 | 3 | 4 |
-| Body or shield, heavy | 3 | 3 | 4 | 4 | 5 |
-| Minor slot | 1 | 1 | 2 | 2 | 3 |
-| (heavy minor template, stronger ward) | +1 | +1 | +1 | +1 | +1 |
-| (a named unique) | +1 | +1 | +1 | +1 | +1 |
+| Mean (SD) | 7.1 (5.1) | 18.2 (5.1) | 36.4 (4.6) | 55.5 (4.2) | 75.3 (4.0) |
+| p10 - p90 | 1-14 | 13-25 | 31-43 | 51-62 | 71-81 |
 
-What suiting up costs (body, shield and the seven minor slots; cloak and shirt
-have no heavy templates; today it is 13 at every depth):
+Every tier reaches every run (none missing by floor 100); 80% of runs see a
+tier arrive within the same 10-12 floors.
 
-| Floors (expected tier) | Light kit | Heavy kit |
+**Upgrades** (floors 5-80; 81-100 is the tier-V and unique end game;
+`armor_model.py --cadence --runs 1000 --seed 5`):
+
+| | Five levels | **Ten levels** |
 |---|---|---|
-| 1-10 (I) | 9 | 18 |
-| 41-50 (III) | 18 | 27 |
-| 91-100 (V) | 27 | 36 |
+| Mean floors between upgrades of any kind | 2.48 | **1.81** |
+| Longest dry stretch, mean (p90) | 8.5 (12) | **4.4 (6)** |
+| Longest stretch with no AC change, mean (p90) | 16.7 (22) | 16.8 (21) |
 
-That matches the accessories, the one family that already works (their
-tier 1 asks 2, tier 5 asks 3-5).
+So ten levels: an upgrade every two floors (CURVE.md principle 8 asks 2-3),
+and never more than about six floors without one. Core AC steps every ~16
+floors either way (the plus is the tier); the minor slots fill between. A
+10-floor lag on shield tiers was tested and changed nothing.
 
-## 7. The minor slots: a ward each, and a stable of enchantments
-
-### 7.1 Base ward (every piece, from its template)
-
-Each minor slot guards against particular attack deliveries, already present
-in the monster data (1,153 attacks; a `delivery` field is written onto each by
-a tool from its name, `ranged` flag and damage type, checked by hand):
-
-| Slot | Guards against | Share of monster attacks | Riders it shrugs off |
-|---|---|---|---|
-| Head | voice and mind (wail, mind blast, charm, hex), gaze | 7% | confused, feared, stunned, sleeping, hallucinating |
-| Hands | touch (draining, death, rotting touch, pseudopod, engulf), grapple | 10% | paralyzed, weakened |
-| Arms | ranged (bolts, rays, shards, hurled things) | 8% | blinded, stunned |
-| Legs | bites, stings, tail strikes | 15% | poisoned, bleeding |
-| Feet | trample and charge; traps and footing | 2% + hazards | slowed, immobilized |
-| Cloak | breath and spray; elements washing over you | 5% + elements | burning, frozen |
-| Shirt | what gets under the armour | any | diseased, poisoned, bleeding (weaker) |
-
-Base strength by weight class (fixed, no depth): light 10% / medium 20% /
-heavy 30% chance to shrug off a listed rider from a matching attack, and
-5 / 10 / 15% of its damage turned aside. A **touch** attack rolls against AC
-without body armour and shield (3e "touch AC"); the gloves' ward is the
-defence.
-
-### 7.2 The stable: three lanes per slot, five tiers each
-
-Every slot offers enchantments in three lanes, so a slot is always a choice
-between keeping something out, helping with that slot's work, and doing more:
-
-- **Guard**: a stronger ward against one named threat.
-- **Craft**: help with the quiz the slot's work belongs to. (Only combat
-  maths is timed, so craft for the untimed subjects is forgiveness and an
-  easier quiz, never a struck-out choice: gold and magic buy a second chance,
-  never the answer.)
-- **Might / Way**: damage, technique, movement, senses.
-
-**Standard ladders** (tier I -> V), shared so the stable stays comparable:
-
-| Ladder | I | II | III | IV | V |
-|---|---|---|---|---|---|
-| Rider guard: chance to shrug off its riders | 20% | 35% | 50% | 65% | 80% (immune at V for one narrow rider) |
-| Damage guard: share of matching damage turned aside | 10% | 18% | 26% | 34% | 42% |
-| Element guard (cloak, one element, every source) | 10% | 20% | 30% | 40% | 50% |
-| Craft (one subject) | first wrong answer forgiven once a floor | once a quiz | and quiz tier -1 | and one question fewer (at least 1) | and quiz tier -2 (at least 1) |
-| Combat clock (maths) | +2 s | +4 s | +6 s | +8 s | +10 s |
-| Might: your blows' damage | +4% | +8% | +12% | +16% | +20% |
-| Rider on your blow | 10% | 17% | 24% | 31% | 38% |
-
-**Head (helm, hood, crown)**
-- Guard: *Iron Will* (fear and charm; immune to fear at V); *Clear Mind*
-  (confusion and hallucination); *Steady* (stun and sleep); *Unblinking*
-  (gaze: paralysis and blinding from a stare); *Mindshield* (psionic and magic
-  damage).
-- Craft: *the Scholar* (philosophy: identify); *the Reader* (grammar: scrolls
-  and spellbooks); *the Adept* (science: casting).
-- Way: *Night Eyes* (sight in dark rooms, +1 to +3; III+ sees through magical
-  dark); *Alertness* (warned of unseen things coming, radius 2 to 6).
-
-**Hands (gloves, gauntlets)**
-- Guard: *Grounding* (paralysis by touch or grapple); *Life-Grip* (draining
-  and necrotic touch damage; weakness); *Iron Grip* (constriction and engulf
-  damage, and breaking free); *Sure Hands* (thieves' stealing).
-- Craft: *the Locksmith* (economics: lockpicking); *the Cook* (cooking);
-  *the Hunter* (animal: harvesting).
-- Might: *Striking* (your blows' damage); *Venom* (your blows poison);
-  *Spellfire* (your touch spells, +damage on the might ladder).
-
-**Arms (bracers, vambraces)**
-- Guard: *Deflection* (ranged damage); *Shatterproof* (blinding and stun from
-  missiles).
-- Craft: *Swift Strokes* (combat clock).
-- Might / Way: *Parrying* (a melee blow that lands is parried: 6 / 10 / 14 /
-  18 / 22%); *Archery* (ranged damage); *Mighty Throw* (throw range and
-  damage); *Defense* (AC +1 to +5, only with no body armour: the caster's
-  path).
-
-**Legs (greaves, leggings)**
-- Guard: *Snakeskin* (poison from bites and stings); *Mailed Shins* (bite,
-  sting and tail damage); *Clotting* (bleeding).
-- Craft: *the Kneeler* (theology: prayer, the theology quiz eased).
-- Way: *Endurance* (max SP +5 / 10 / 15 / 20 / 25%); *Springing* (leap 2 to 4
-  tiles, once a fight); *Sure-Footed* (knockback and trips); *Wading* (water
-  costs no speed).
-
-**Feet (boots, sandals)**
-- Guard: *Steadfast* (trample and charge damage, knockback); *Free Stride*
-  (slowing and immobilizing riders); *Trapwise* (trap damage and the chance to
-  avoid one); *Firewalker* (burning ground and lava).
-- Craft: *the Wanderer* (geography: putting armour on).
-- Way: *Elvenkind* (sleepers stir less, `sleepers.py`: -20 to -80%);
-  *Fleet* (one free step away from a foe each fight); *Water Walking*
-  (tier IV-V only).
-
-**Cloak**
-- Guard: *Flameward*, *Frostward*, *Stormward*, *Acidward* (one element each,
-  every source, and its rider); *Vapourward* (breath and spray of any kind).
-- Way: *Protection* (AC +1 / +1 / +2 / +2 / +3: the protection source; it
-  takes the cloak's one enchantment, so it is a choice against an element);
-  *Shrouding* (monsters notice you later: their awareness range -1 to -3);
-  *Night-Cloak* (unseen in dark rooms until adjacent, III+).
-
-**Shirt**
-- Guard: *Clean Linen* (disease); *Padding* (bleeding and the stun of a
-  heavy blow); *Warmth* (cold damage); *Vigil* (magical sleep).
-- Craft: *the Hair Shirt* (theology: prayer cooldown -10 to -30%).
-
-**Body armour and shield properties** (tier III and up, in addition to the
-plus; found only on those):
-- Body: *Fortification* (stun and bleeding from blows); *Thorns* (a melee
-  attacker takes damage); *Featherweight* (weight halved); *Hush* (no noise:
-  sleepers).
-- Shield: *Reflection* (a bolt or ray turned back, 10 to 30%); *Bulwark*
-  (trample and knockback); *Bash* (a blocked blow stuns the attacker);
-  *Spellward* (magic damage).
-
-That is **64 enchantments**, 5 tiers each: 56 on the minor slots (head 10,
-hands 10, arms 7, legs 8, feet 8, cloak 8, shirt 5; every slot has at least
-two guards and something outside the guard lane) and 8 body and shield
-properties.
-
-### 7.3 Rules that keep the stable honest
-- **One home per power.** Rings and amulets keep statuses and stat raises
-  (searching, regeneration, haste, telepathy, displacement, levitation, the
-  resist statuses, +WIS / CON / INT / STR / PER / DEX). No armour enchantment
-  copies one; the stable above is wards, quiz craft, technique and senses,
-  which no accessory grants. (Ruling 4 covers the famous AD&D names that would
-  overlap: boots of speed, gauntlets of ogre power, helm of telepathy, cloak
-  of displacement.)
-- **Magnitudes are data**, `data/enchantments.json` (id, slot, lane, the five
-  tier values, what it hooks, its name). The floor never scales them.
-- **Hidden until identified** (philosophy), like any property; a known
-  enchantment shows in the name ("Iron Helm of Iron Will III").
-- **Cursed** pieces keep their enchantment, are welded, and work one tier
-  lower until uncursed.
-- **Blessed** minor pieces work one tier higher (cap V); blessed body armour
-  and shields keep +1 AC. (`altar.blessing_helps` stays true for all of them.)
-
-## 8. Balance and distribution checks (built with the plan, held by tests)
-
-**Value per tier.** A tool, `tools/balance/enchant_audit.py`, prices every
-enchantment at every tier on the floors that tier is found, from the game's own
-data:
-- a guard: the share of the damage taken (or the rider turns suffered) it
-  removes, using the monsters, their attacks, deliveries, riders and spawn
-  weights on those floors;
-- might: the share of the hero's damage it adds (against `ONE_ATTACK`);
-- craft: the questions saved per floor on its subject (from how many
-  lockpicks, cooks, identifies, reads and prayers a floor holds);
-- a way: judged by hand, then placed on the same scale.
-
-Lanes are compared by one exchange rate (ruling 5; default: 1% of damage
-taken = 1% of damage dealt = 0.1 questions saved a floor). The test: inside a
-slot, every enchantment's tier-N value is within 35% of that slot's tier-N
-median, and every ladder rises with tier. A guard against something that is
-rare at its depth (trample is 2% of attacks) gets a steeper ladder until it is
-worth taking.
-
-**Enough to choose from.** A run finds about 1.1 armour pieces per slot on
-floors 1-10, 1.7 on 11-20 and 2.3-3.4 per 10 floors after that (census, 5
-runs, floors 1-100). Enchanted options per minor slot per 10 floors:
+**Choices** (enchanted options per minor slot per 10 floors, 45 / 45 / 10
+loot roll):
 
 | Floors | 1-10 | 11-20 | 21-30 | 31-40 | 41-50 | 61-70 | 91-100 |
 |---|---|---|---|---|---|---|---|
-| Today's loot roll | 0.7 | 1.1 | 1.5 | 1.7 | 2.3 | 2.6 | 2.4 |
-| With 45 / 35 / 15 | 1.2 | 1.9 | 2.7 | 3.0 | 3.9 | 4.5 | 4.1 |
+| Mean (SD) | 1.45 (1.20) | 2.43 (1.56) | 2.76 (1.67) | 3.36 (1.84) | 4.07 (2.03) | 4.53 (2.13) | 5.09 (2.25) |
+| P(at least 2) | 42% | 70% | 76% | 85% | 91% | 94% | 96% |
 
-Target: at least 1 on floors 1-10, 2 on 11-30, 3 from floor 31. To get
-there: the room gear roll moves from 60% weapon / 20% armour / 15% shield to
-45 / 35 / 15, chests lean to armour the same way, and traders stock enchanted
-minor pieces (which closes the small gap on floors 11-20). The census grows a
-per-slot, per-tier count, and a test pins the target per band.
+Traders' stock of enchanted minor pieces closes floors 1-20.
 
-**The AC line.** The census reports worn AC per floor; a test holds it within
-2 of the line in section 4 at floors 10, 30, 50, 70 and 100, and the hit
-chance against a prepared hero within 45-65%.
+## 6. Equip cost
 
-## 9. Build order (each phase ends playable)
+Tier (power) sets the geography quiz tier. **Complexity and benefit set the
+threshold**: complexity is the template's weight class (light 1, medium 2,
+heavy 3); benefit is the enchantment (body and shield: +1 at tiers III-IV, +2
+at V; minor pieces: +1 at III-IV, +2 at V); a named unique +1; at most 5.
 
-1. **Rulings** (section 10).
-2. **Item model and core AC**: template / material / enchantment split; body
-   and shield base AC and plus; thresholds and quiz tier from the
-   enchantment; shield thresholds; monster accuracy rebake; the hit floor.
-   Minor slots keep a small temporary AC until phase 3, so no build ships
-   naked.
-3. **Wards**: `delivery` on every attack; base wards; the touch rule; minor
-   AC removed in the same commit.
-4. **The enchantment engine**: data, tier bells, plain share, roll, naming,
-   identification, cursed and blessed, wear and repair, equip cost.
-5. **The stable**, lane by lane (guard, then craft, then might and way), each
-   with its hook and a test.
-6. **Body and shield properties**.
-7. **Uniques**: the 56 minor-slot uniques and every body and shield unique,
-   placed on the tier ladder with their signature powers kept.
-8. **Distribution and balance**: the gear roll, chests, traders; the
-   enchantment audit and the census tests; tuning.
-9. **Saves, text sweep, docs**: saved pieces recomposed on load (the armour
-   recompose in `main.py` about line 1464 is the pattern); Kit and character
-   sheet show plus, ward and enchantment; help, hints, docs.
+## 7. The minor slots: one guard family each, and three lanes
 
-Play-test points: after 2 (AC on floors 1-20), after 3 (is a helm worth
-wearing against a wailing spirit?), after 5 (are the choices real?).
+### 7.1 What the model showed about guards
 
-This is a 3.4 release (combat at every depth, saves), on its own branch once
-3.3.2 ships, built one phase a session.
+The first two revisions' narrow guards (one rider, one delivery) were priced
+and failed: Unblinking, Shatterproof, Vigil, Steadfast, Grounding and Clean
+Linen could not reach a fifth of an AC point **even at 100%**, because what
+each guards is too rare where it is found (snakebite poison is 0.78 AC points
+of harm on tier-I floors and 0.17 on tier-III ones). A guard is bounded by the
+harm its threat does, so **each slot owns one whole family**:
 
-## 10. Rulings needed
+| Slot | Guard | Family it covers | Value at 100%, AC points, tier I..V |
+|---|---|---|---|
+| Head | **Iron Will** | voice and gaze attacks; mind, stun and blinding riders from any attack | 1.08 1.00 0.80 0.83 0.96 |
+| Hands | **Life-Grip** | touch and grapple attacks; paralysis, holds, freezing from any attack | 1.81 1.47 1.59 1.49 1.08 |
+| Arms | **Deflection** | ranged attacks and their riders | 0.60 0.93 1.11 0.93 1.15 |
+| Legs | **Mailed Shins** | bites and stings; poison and disease from any attack | 2.40 2.20 1.10 0.97 1.48 |
+| Feet | **Free Stride** | trample; slowing, holds, freezing from any attack; stun from blows | 0.70 0.69 0.74 0.71 1.09 |
+| Cloak | **Elementward** / **Vapourward** | fire, cold, lightning, acid from every source / breath | 0.76-2.75 / 0.41-1.35 |
+| Shirt | **Vigor** | poison, drain and necrotic damage; blood riders | 2.17 2.07 1.82 2.76 3.41 |
 
-1. **Material only for wear**: it decides rust, acid and fire and the name.
-   Does it keep **weight** too (mithril light, adamantine heavy), or does
-   weight come from the template alone?
-2. **The tier curve and plain share** of section 5: right pace?
-3. **The equip cost** of section 6: suiting up goes from 9-18 questions on
-   floor 1 to 27-36 on floor 100 (today 13 everywhere). Right scale?
-4. **The famous overlaps**: keep armour and accessories apart (no boots of
-   speed, no helm of telepathy), or move those powers from rings to their
-   slot (a data change on some of the 168 accessories)?
-5. **The exchange rate** between lanes (section 8): the default, or another?
-6. **More armour in the loot** (45 / 35 / 15) so every slot has choices:
-   yes?
-7. Carried over from revision 1: the hit floor down to the natural 20 for
-   ordinary monsters; the AC line ending about -12 at floor 100; 3.4.0 on its
-   own branch.
+(One AC point = the harm one point of AC turns away on that floor: every
+attack's hit chance down 5%. Values are weighted over the floors each tier is
+found on; their spread across those floors (cv) is 0.25-0.46.)
+
+### 7.2 The budget, and why every option in a slot is worth the same
+
+You wear every slot, so slots do not compete; **the choice inside a slot does**.
+Every option in a slot is priced to one schedule: the largest schedule rising
+at least 0.05 AC points a tier that every slot's guard can reach at 80% or
+less:
+
+| Tier | I | II | III | IV | V |
+|---|---|---|---|---|---|
+| **Budget (AC points)** | **0.41** | **0.46** | **0.51** | **0.56** | **0.61** |
+
+Each ladder is the rising magnitude closest to that budget (isotonic
+regression on log need, so tier V is never weaker than IV); a tier where the
+fit lands outside 0.67-1.5x budget is one the enchantment does not roll at:
+
+| Ladder (tier I..V) | I | II | III | IV | V |
+|---|---|---|---|---|---|
+| Iron Will (shrug / turn aside) | 38% | 46% | 64% | 65% | 65% |
+| Life-Grip | 23% | 31% | 32% | 37% | 57% |
+| Deflection | 54% | 54% | 54% | 57% | 57% |
+| Mailed Shins | 17% | 21% | 46% | 49% | 49% |
+| Free Stride | 58% | 66% | 67% | 67% | 67% |
+| Elementward | — | 28% | — | 28% | 57% |
+| Vapourward | — | 63% | 63% | — | 80% |
+| Vigor | 19% | 22% | 22% | 22% | 22% |
+| **Striking** (hands: your damage) | +8% | +9% | +9% | +10% | +11% |
+| **Parrying** (arms: a landed melee blow parried) | 5% | 5% | 6% | 6% | 7% |
+
+(Lesser and greater forms of a tier take the tier's value and the halfway
+point to the next.) Absolute protection rises much faster than the budget:
+one AC point turns aside 2.0% of the health bar per fight on floor 86 and 0.5%
+on floor 6, so the same budget protects about four times as much of a far
+larger health bar deep down.
+
+### 7.3 Same value, different risk: the real choice
+
+Simulated fights (one hero against one monster of the floor, 12,000 fights
+per variant on common random numbers; P = a fight costing over half the
+health bar):
+
+| Floor 86 (tier V) | Mean harm | SD | P(over half) | Change |
+|---|---|---|---|---|
+| Plain | 20.7% | 17.4% | 5.92% | |
+| One more AC point | 18.7% | 16.5% | 4.54% | -1.38 +/- 0.12 |
+| Striking +11% | 18.7% | 15.9% | 3.66% | -2.26 +/- 0.14 |
+| Iron Will 65% | 19.1% | 15.5% | 4.02% | -1.90 +/- 0.13 |
+| Free Stride 67% | 18.9% | 15.5% | 4.02% | -1.90 +/- 0.13 |
+| Life-Grip 57% | 19.1% | 15.8% | 4.45% | -1.47 +/- 0.11 |
+| Vigor 22% | 19.2% | 16.5% | 4.72% | -1.19 +/- 0.10 |
+| Mailed Shins 49% | 19.6% | 16.7% | 5.11% | -0.81 +/- 0.08 |
+| Deflection 57% | 19.5% | 17.5% | 5.76% | -0.16 +/- 0.04 |
+
+At the same average value, guards against riders that take turns away (Iron
+Will, Free Stride) halve the *bad fights* far more than damage guards do,
+and Striking cuts both by ending fights sooner. That is the choice the player
+makes on every slot: safety against the worst fight, or a lower average, or
+speed. The order shifts with the monsters of each depth (on floor 46
+Life-Grip leads the guards, on floor 6 Iron Will and Life-Grip tie), but the
+pattern holds on every floor tested: the turn-taking riders are insurance,
+the damage guards trim the average.
+
+### 7.4 The three lanes
+
+Every slot offers its guard plus at least one option from the other lanes,
+each priced to the same budget:
+- **Guard**: the slot's family (above).
+- **Craft**: help with the quiz the slot's work belongs to, in its own
+  currency. A craft enchantment cuts its subject's failed quizzes by the same
+  fraction a guard of its tier cuts bad fights (the fight model: 15-20%), and
+  it does it **without chance** (the game's rule: performance decides):
+  the first wrong answer of every Nth quiz on that subject is forgiven, N from
+  the game's own per-subject accuracy (`J` telemetry): about every 5th quiz at
+  tier I to every 3rd at tier V. Head: the Scholar (philosophy), the Reader
+  (grammar), the Adept (science); hands: the Locksmith (economics), the Cook,
+  the Hunter (animal); arms: Swift Strokes (the combat clock, +2 to +10 s);
+  legs: the Kneeler (theology); feet: the Wanderer (geography).
+- **Might and Way**: Striking and Parrying (priced above), and the iconic
+  powers that move from rings (section 8): Telepathy, Night Eyes and True
+  Sight (head), Ogre Power and Dexterity (hands), Speed and Levitation
+  (feet), Displacement and Shrouding (cloak), Alertness (head), Elvenkind
+  (feet). Those that change fights are priced by the tool when built; the
+  rest (senses, movement) are set by hand against the budget.
+
+## 8. Rings and amulets after ruling 4
+
+Priced on the same scale (value at 100%, tier I..V):
+
+| Ring | I | II | III | IV | V |
+|---|---|---|---|---|---|
+| (a +1 AC ring, for comparison) | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 |
+| Protection as saving throws (every rider, any attack) | 2.47 | 2.25 | 2.02 | 2.01 | 2.19 |
+| Spell Turning (magic, shadow, psionic damage) | 1.29 | 0.95 | 0.79 | 0.98 | 1.46 |
+
+A +1 AC ring is a full AC point (it touches every attack), more than any
+other ring can reach at 90%, so **no ring gives AC**: the ring of Protection is
+AD&D's other half, a saving throw against every rider, laddered to the ring
+budget. The powers armour now owns leave the rings: elemental resistance
+(cloak), free action (hands and feet), mind protection (head), and the
+iconic ones of section 7.4 (telepathy, sight, haste, levitation,
+displacement, strength, dexterity, warning). What stays a ring or an amulet:
+Protection (saves), Spell Turning, Regeneration, Invisibility, Sustenance,
+Wizardry; amulets of Life Saving and the mental stats (WIS, INT, CON). Fewer
+kinds (the 89 common rings and amulets become about a dozen kinds), each
+tiered I-V on the same bells, so a ring found deep is stronger. The 79 named
+and plot uniques keep their stories; a power that moved is kept only where the
+lore makes it that item's own.
+
+## 9. The proof: method, checks and limits
+
+`python tools/balance/armor_model.py --runs 3000 --census <census file>`
+(about two minutes; `--sensitivity` adds the rider-cost sweep; `--cadence`
+compares five and ten levels). The census file is
+`python tools/balance/loot_census.py --runs 8 --floors 1-100 > file`.
+
+- **Inputs**: the game's own spawn pool per floor (`dungeon._build_spawn_pool`),
+  every monster's attacks, damage dice, riders, durations and THAC0;
+  `floor_curve.HEALTH_BAR` and `ONE_ATTACK`; the templates; a loot census
+  (8 runs, floors 1-100) for gear and rings per floor, found at 90%.
+- **Runs**: Poisson finds per floor, the loot split, a uniform slot, a
+  template by weight-class bell, plain or a level by the bells.
+- **Pricing**: expected harm per monster turn (damage plus rider cost, rider
+  cost = turns lost x the floor's harm per turn, or damage over time); an
+  enchantment's value is the harm it removes over the harm one AC point
+  removes. Fights: one-on-one to the death of one, hero dealing `ONE_ATTACK`
+  per turn he can act, one random monster attack per turn.
+- **Statistics**: means with standard deviations and p10/p50/p90 across runs;
+  weighted mean and cv over each tier's floors; paired differences with
+  standard errors on common random numbers.
+- **Sensitivity**: with every rider cost halved or raised by half, the budget
+  scales (tier V 0.41 / 0.61 / 0.81) but its shape, the binding slots, the
+  availability pattern and the ordering of ladders hold (Iron Will at V: 61% /
+  65% / 71%). The judgement calls set the size, not the design; telemetry
+  from play can refine them and the tool regenerates every ladder.
+- **Limits**: no packs (one monster at a time), no uniques, no starting kit
+  (both improve the early floors), no monster specials beyond attacks and
+  riders, attack delivery read from names until the `delivery` field is
+  written into `monsters.json` (phase 3). The build adds tests that hold the
+  census and the tool to these figures.
+
+## 10. Build order (each phase ends playable)
+
+1. **Item model and core AC**: template / material / enchantment; body and
+   shield base AC and plus; weight-class bells; thresholds and quiz tier;
+   monster accuracy rebake to the line in section 4; the hit floor; no AC
+   from rings. Minor slots keep a small temporary AC until phase 2.
+2. **Guards**: `delivery` on every attack; the seven families; the touch
+   rule (touch attacks roll against AC without body armour and shield).
+3. **The enchantment engine**: ten levels, bells, plain share, roll, naming,
+   identification, cursed (one level lower, welded) and blessed (one level
+   higher), wear and repair.
+4. **The lanes**: craft (forgiveness every Nth quiz), Striking, Parrying,
+   and the moved iconic powers.
+5. **Rings and amulets**: the dozen kinds, tiered; Protection as saves; the
+   79 uniques reviewed.
+6. **Uniques**: the 56 minor-slot and all body and shield uniques on the
+   ladder, signature powers kept.
+7. **Distribution**: the 45 / 45 / 10 roll, chests, traders; the census and
+   model tests.
+8. **Saves, text sweep, docs** (saved pieces recomposed on load).
+
+Play-test after 1 (AC on floors 1-20), 2 (does a helm feel worth wearing
+against a wailing spirit?), and 4 (are the choices real?). A 3.4 release on
+its own branch once 3.3.2 ships, one phase a session.
+
+## 11. Left open
+
+Nothing blocks phase 1. Two things the model cannot decide: the rider costs
+(section 9: set the size, not the shape; refine from play), and the
+hand-set lanes (senses, movement), which are judged against the budget.
