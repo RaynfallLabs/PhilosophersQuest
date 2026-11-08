@@ -52,13 +52,24 @@ def test_blessed_armor_lowers_ac_cursed_raises():
 
 
 def test_blessed_accessory_does_something_cursed_too():
-    # The exact complaint: a blessed accessory used to do nothing.
-    pl = Player()
-    pl.accessory_slots[0] = _acc('uncursed'); ac_u = pl.get_ac()
-    pl.accessory_slots[0] = _acc('blessed');  ac_b = pl.get_ac()
-    pl.accessory_slots[0] = _acc('cursed');   ac_c = pl.get_ac()
-    assert ac_b == ac_u - 1
-    assert ac_c == ac_u + 1
+    # The exact complaint: a blessed accessory used to do nothing. A ring
+    # kind works a level higher blessed, a level lower cursed (rings.py);
+    # no ring gives AC (bug bash 3.3.2).
+    import copy
+    import rings
+    from items import load_items
+    tpl = next(a for a in load_items('accessory') if a.id == 'ring_of_protection')
+    vals = {}
+    for buc in ('uncursed', 'blessed', 'cursed'):
+        pl = Player()
+        r = copy.copy(tpl)
+        rings.relevel(r, 5)
+        r.buc = buc
+        pl.accessory_slots[0] = r
+        ac = pl.get_ac()
+        vals[buc] = rings.best(pl, 'protection')[1]
+        assert pl.get_ac() == ac == Player().get_ac()
+    assert vals['blessed'] > vals['uncursed'] > vals['cursed']
 
 
 # --- Wands: blessed +1 / cursed -1 charge -----------------------------------

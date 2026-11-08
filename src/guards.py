@@ -84,6 +84,7 @@ def matches(fam: dict, atk: dict) -> tuple:
     dmg = d in dels or typ in (fam.get('elements') or ())
     rider = bool(eff) and (
         d in dels
+        or bool(fam.get('riders_all'))           # a Ring of Protection's saving throw
         or eff in (fam.get('riders_any') or ())
         or d in ((fam.get('riders_from') or {}).get(eff) or ()))
     return dmg, rider
@@ -139,6 +140,20 @@ def guard_keep(player, atk: dict) -> tuple:
                 keep_r *= max(0.0, 1.0 - r)
                 if r > best_r:
                     best, best_r = piece, r
+    # Rings (rings.py): Protection, a saving throw against every rider;
+    # Spell Turning, magic, shadow and psionic damage turned aside.
+    try:
+        import rings
+        for fam, r, d, ring in rings.guard_parts(player):
+            dmg, rider = matches(fam, atk)
+            if dmg and d:
+                keep_d *= max(0.0, 1.0 - d)
+            if rider and r:
+                keep_r *= max(0.0, 1.0 - r)
+                if r > best_r:
+                    best, best_r = ring, r
+    except ImportError:
+        pass
     keep_d = max(1.0 - caps['damage'], keep_d)
     keep_r = max(1.0 - caps['rider'], keep_r)
     return keep_d, keep_r, best

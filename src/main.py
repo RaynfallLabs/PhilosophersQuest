@@ -1410,6 +1410,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # the player's per-instance progress (buc, buc_known, id_level, count,
         # enchant, charges). Position is irrelevant here (handled by caller).
         fresh = Accessory({**defn, 'id': new_id, 'item_class': 'accessory'})
+        if getattr(fresh, 'kind', ''):
+            # A ring folded into a kind (rings.py) keeps the strength it had:
+            # the kind at the level of its old tier.
+            import gear
+            import rings
+            rings.relevel(fresh, gear.level_for_tier(int(getattr(item, 'quiz_tier', 1) or 1)))
         # Preserve the player's per-instance progress. NOTE: `identified` is a
         # property backed by id_level (setting it rewrites id_level), so we
         # restore id_level only — never `identified` — to avoid clobbering it.
@@ -2575,7 +2581,13 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             try:
                 from items import instantiate_armor
                 if isinstance(start_armor, tuple):
-                    arm = instantiate_armor(start_armor[0], start_armor[1])
+                    # (template, material[, enchantment]): an enchanted
+                    # piece starts at level 1 (enchantments.py).
+                    if len(start_armor) > 2:
+                        arm = instantiate_armor(start_armor[0], start_armor[1],
+                                                level=1, ench_id=start_armor[2])
+                    else:
+                        arm = instantiate_armor(start_armor[0], start_armor[1])
                 else:
                     armors = load_items('armor')
                     arm = next((a for a in armors if a.id == start_armor), None)
@@ -4417,6 +4429,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self._family_drain()               # the hero's family techniques his action used
         self._black_knight_tick()          # what the action did to him: one limb at most
         self.turn_count += 1
+        # A Ring of Invisibility's veil settles after its quiet turns (rings.py).
+        import rings as _rings
+        _veil = _rings.tick(self.player)
+        if _veil:
+            self.add_message(_veil, 'info')
         # Philosophy tier mastery: the tier traits this run has earned, and
         # anything of a mastered tier that reached the pack by another road
         # (bought, looted, given) is named.
@@ -4701,18 +4718,6 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 for cx in range(max(0, px - radius), min(self.dungeon.width, px + radius + 1)):
                     if abs(cx - px) + abs(cy - py) <= radius:
                         self.dungeon.explored.add((cx, cy))
-
-        # Torc of Boudicca: AC bonus when surrounded by 3+ enemies
-        _surr_bonus = 0
-        for _acc in self.player.equipped_accessories:
-            if getattr(_acc, 'surrounded_ac_bonus', 0) > 0:
-                _adj_enemies = sum(1 for m in self.monsters if m.alive
-                                   and abs(m.x - self.player.x) <= 1
-                                   and abs(m.y - self.player.y) <= 1)
-                if _adj_enemies >= 3:
-                    _surr_bonus = _acc.surrounded_ac_bonus
-                break
-        self.player._surrounded_ac_bonus = _surr_bonus
 
         # ----- Engine wave 5: armor-proc terrain caches (per-turn) -----
         # Used by player.get_ac() for cannae_encirclement / boundary_guardian /
@@ -5742,10 +5747,13 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     # ------------------------------------------------------------------
 
     def _tick_sp(self):
-        # Base SP drain: 1 per 2 moves (0.5/move effective)
-        # Ring of Sustenance halves again (1 per 4 moves)
+        # Base SP drain: 1 per 2 moves (0.5/move effective). The sustained
+        # status halves it (1 per 4 moves); a Ring of Sustenance slows it by
+        # its tier, a third to three quarters (rings.py).
         self._sp_drain_tick = getattr(self, '_sp_drain_tick', 0) + 1
         drain_interval = 4 if self.player.has_effect('sustained') else 2
+        import rings as _rings
+        drain_interval = _rings.hunger_interval(self.player, drain_interval)
         # Sickly (a fever caught at a plague village's bar): twice as fast.
         if self.player.has_effect('sickly'):
             drain_interval = max(1, drain_interval // 2)
@@ -7688,8 +7696,14 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
 
 
     def _spawn_unique_item(self, x: int, y: int, item_id: str):
-        """Place a named unique item at (x, y), searching all item categories."""
-        from items import load_items, copy_at, unique_available, claim_unique
+        """Place a named unique item at (x, y), searching all item categories
+        (or an enchanted piece made to a spec: items.made_drop)."""
+        from items import load_items, copy_at, unique_available, claim_unique, made_drop
+        made = made_drop(item_id, x, y)
+        if made is not None:
+            self.ground_items.append(made)
+            self.add_message(">> A remarkable item falls from the defeated foe!", 'loot')
+            return
         categories = ('weapon', 'armor', 'shield', 'accessory', 'wand', 'scroll',
                       'artifact', 'potion')
         for cat in categories:

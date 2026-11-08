@@ -115,7 +115,8 @@ def test_every_named_drop_names_a_real_item():
             continue
         iid = (m.get('treasure') or {}).get('unique_drop_id')
         if iid:
-            assert iid in known, (mid, iid)
+            from items import made_drop  # or an enchanted piece made to a spec
+            assert iid in known or made_drop(iid) is not None, (mid, iid)
 
 
 def test_a_piece_only_its_monster_carries_is_never_random_loot():
@@ -336,7 +337,9 @@ def test_regeneration_mends_a_share_of_a_large_body():
         p._hp_regen_acc = 0
         before = p.hp
         src = open(os.path.join(ROOT, 'src', 'status_effects.py'), encoding='utf-8').read()
-        assert 'player.restore_hp(max(1, int(player.max_hp * REGEN_SHARE)))' in src
+        # (A Ring of Regeneration mends more by its tier: rings.regen_share.)
+        assert 'player.restore_hp(max(1, int(player.max_hp * share)))' in src
+        assert 'share = max(REGEN_SHARE, rings.regen_share(player))' in src
         assert max(1, int(max_hp * status_effects.REGEN_SHARE)) == want
         assert before == 10
 

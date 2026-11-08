@@ -721,6 +721,13 @@ def report(runs: int, seed: int, census_path: str | None, sensitivity: bool = Fa
     for name, spec in RING_STABLE.items():
         vals = [_tier_value(spec, t, smooth, line_ac, cache, 1.0)[0] for t in range(5)]
         w(f"   {name:58} " + ' '.join(f"{v:5.2f}" for v in vals))
+        if spec[0] != 'ac':
+            # A ring is laddered to the same budget as a slot's enchantment
+            # (the rings' data, data/accessory_kinds.json, takes these).
+            mags, ratio, _avail = fit_ladder(vals, sched, spec)
+            sim.setdefault('ring_ladders', {})[name] = mags
+            w(f"     ladder {'':51}" + ' '.join(f"{m:5.0%}" for m in mags)
+              + "   x budget " + ' '.join(f"{r:4.2f}" for r in ratio))
     w("   (A +1 AC ring is one AC point on every attack: no other ring reaches it.)")
     return sim
 

@@ -76,7 +76,11 @@ def test_every_build_referenced_item_exists():
         v = b.get('_start_armor')
         if v is not None:
             if isinstance(v, tuple):
-                tpl, mat = v
+                tpl, mat = v[:2]
+                if len(v) > 2:
+                    import enchantments
+                    if not enchantments.get(v[2]):
+                        errors.append(f"{name}: _start_armor enchantment '{v[2]}' missing")
                 if tpl not in template_armor:
                     errors.append(f"{name}: _start_armor template '{tpl}' missing")
             else:

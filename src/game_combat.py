@@ -1051,6 +1051,11 @@ class CombatMixin:
         if self.player.hp <= 0 and self.player.has_effect('life_save'):
             self.player.hp = 1
             del self.player.status_effects['life_save']
+            # An Amulet of Life Saving leaves a share of the health bar by its
+            # tier (rings.py); every other ward leaves 1.
+            import rings as _rings
+            _amu = getattr(self.player, 'amulet_slot', None)
+            _share = _rings.life_saving_share(_amu) if _amu is not None else 0.0
             # The thing that gave it is spent with it. It was not, so
             # taking Excalibur or the amulet off and putting it back
             # on bought another life every time.
@@ -1092,6 +1097,8 @@ class CombatMixin:
             # A second worn source still holds a life for the next blow.
             if _src is not None and self.player._still_granted('life_save', None):
                 self.player.status_effects['life_save'] = -1
+            if _src is not None and _src is _amu and _share > 0:
+                self.player.hp = max(1, int(self.player.max_hp * _share))
             self.add_message(
                 f"{'The ' + _src.name if _src is not None else 'A ward'} blazes -- death averted! "
                 "Its life-saving magic is spent.", 'success'
@@ -2523,6 +2530,7 @@ class CombatMixin:
         # ranged=True explicitly: slings pass ammo=None (infinite ammo), and
         # player_attack used to infer "ranged" from ammo alone, so a sling
         # shot was resolved with the MELEE weapon's stats.
+        self._ring_veil_slips()
         player_attack(self.player, monster, self.quiz_engine, on_complete,
                       ammo=ammo_item, ranged=True)
 
@@ -2831,7 +2839,15 @@ class CombatMixin:
         self.player._combat_pets_ref = self.pets
         self.player._combat_game_ref = self
         _alive_before = {id(m) for m in self.monsters if m.alive}
+        self._ring_veil_slips()
         player_attack(self.player, monster, self.quiz_engine, on_complete)
+
+    def _ring_veil_slips(self):
+        """The hero strikes: a Ring of Invisibility's veil slips (rings.py)."""
+        import rings
+        line = rings.on_strike(self.player)
+        if line:
+            self.add_message(line, 'info')
 
     # ------------------------------------------------------------------
     # Monster turns

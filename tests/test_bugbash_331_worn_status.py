@@ -68,9 +68,19 @@ def _ring_slot(p, item):
     return f'accessory_{p.accessory_slots.index(item)}'
 
 
+# The common Rings of Warning and Haste left the rings in bug bash 3.3.2
+# (armour plan 8): a warning ring is now a named one (Lynceus's Ring of Far
+# Sight keeps it by lore), and haste comes from Boots of Speed.
+WARNING_RING = 'ring_of_far_sight'
+
+
+def _boots_of_speed():
+    return items.instantiate_armor('leather_boots', 'leather', level=7, ench_id='speed')
+
+
 def test_rands_heart_spent_leaves_the_ring_of_warning_its_warning(game):
     p = game.player
-    _wear(p, _acc('ring_of_warning'))
+    _wear(p, _acc(WARNING_RING))
     _wear(p, _acc('rands_heart'))
     assert p.has_effect('warning')
     p.hp = 0
@@ -87,33 +97,38 @@ def test_rands_heart_alone_takes_its_warning_with_it(game):
     assert not p.has_effect('warning')
 
 
-def test_a_ring_of_haste_off_leaves_the_greaves_of_hermes_haste(game):
+def test_boots_of_speed_off_leave_a_hasted_blades_haste(game):
     p = game.player
-    _wear(p, items.make_item_by_id('armor', 'greaves_of_hermes'))
-    ring = _acc('ring_hasted')
-    _wear(p, ring)
-    game._unequip_slot(_ring_slot(p, ring), ring)
+    blade = items.instantiate_weapon('longsword', 'iron')
+    blade.on_equip_status = 'hasted'
+    _wear(p, blade)
+    boots = _boots_of_speed()
+    assert boots.on_equip_status == 'hasted'
+    _wear(p, boots)
+    game._unequip_slot(boots.slot, boots)
     assert p.has_effect('hasted')
 
 
-def test_an_attuned_ring_of_gawain_off_leaves_another_source_of_haste(game):
+def test_an_attuned_tyet_off_leaves_another_source_of_life_save(game):
+    """An attuned item's tier status (the Tyet of Isis's life at tier 2+;
+    Gawain's haste left with the ring review, bug bash 3.3.2)."""
     p = game.player
-    _wear(p, items.make_item_by_id('armor', 'greaves_of_hermes'))
-    gawain = _acc('ring_of_gawain')
-    _attune(game, gawain, 5)
-    assert gawain in p.accessory_slots
-    game._unequip_slot(_ring_slot(p, gawain), gawain)
-    assert p.has_effect('hasted')
-    greaves = next(a for a in p.armor_slots if a is not None and a.id == 'greaves_of_hermes')
-    game._unequip_slot(greaves.slot, greaves)
-    assert not p.has_effect('hasted')                    # the last source gone
+    exc = next(w for w in items.load_items('weapon') if w.id == 'excalibur')
+    _wear(p, exc)
+    tyet = _acc('tyet_of_isis')
+    _attune(game, tyet, 5)
+    assert p.amulet_slot is tyet
+    game._unequip_slot('amulet', tyet)
+    assert p.has_effect('life_save')
+    game._unequip_slot('weapon', exc)
+    assert not p.has_effect('life_save')                 # the last source gone
 
 
 def test_an_amulet_swap_leaves_a_ring_its_warning(game):
     p = game.player
-    _wear(p, _acc('ring_of_warning'))
-    _wear(p, _acc('amulet_of_warning'))
-    _wear(p, _acc('amulet_hasted'))                       # pushes the old amulet out
+    _wear(p, _acc(WARNING_RING))
+    _wear(p, _acc('rands_heart'))
+    _wear(p, _acc('amulet_of_wisdom'))                    # pushes the old amulet out
     assert p.has_effect('warning')
 
 
@@ -129,11 +144,11 @@ def test_a_weapon_swap_leaves_armour_its_status(game):
 
 def test_handing_a_worn_ring_to_someone_leaves_the_amulets_warning(game):
     p = game.player
-    _wear(p, _acc('amulet_of_warning'))
-    _wear(p, _acc('ring_of_warning'))
-    assert game._npc_remove_item_by_id('ring_of_warning')
+    _wear(p, _acc('rands_heart'))
+    _wear(p, _acc(WARNING_RING))
+    assert game._npc_remove_item_by_id(WARNING_RING)
     assert p.has_effect('warning')
-    assert game._npc_remove_item_by_id('amulet_of_warning')
+    assert game._npc_remove_item_by_id('rands_heart')
     assert not p.has_effect('warning')
 
 
@@ -159,7 +174,7 @@ def test_a_trait_status_survives_its_item(game):
     """A status the hero has from a trait is his own (kept as before)."""
     p = game.player
     p.quirk_progress.setdefault('quirk_statuses', []).append('warning')
-    ring = _acc('ring_of_warning')
+    ring = _acc(WARNING_RING)
     _wear(p, ring)
     game._unequip_slot(_ring_slot(p, ring), ring)
     assert p.status_effects.get('warning') == -1

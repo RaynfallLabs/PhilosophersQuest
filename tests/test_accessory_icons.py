@@ -37,13 +37,15 @@ def test_every_ring_or_amulet_resolves_to_a_real_sprite():
 
 def test_renamed_commons_map_to_their_effect_art():
     # the exact ids the user sees as random unidentified rings this session
+    # (The ring kinds of bug bash 3.3.2 each ship their own picture.)
     cases = {
-        'ring_of_searching':    'searching',
-        'ring_of_strength':     'strength',
-        'ring_of_fire_resist':  'fire_res',
-        'ring_of_regeneration': 'regen',
-        'amulet_of_searching':  'searching',
-        'amulet_of_telepathy':  'telepathy',
+        'ring_of_protection':    'protection',
+        'ring_of_spell_turning': 'spell_turning',
+        'ring_of_wizardry':      'wizardry',
+        'ring_of_regeneration':  'regen',
+        'ring_of_invisibility':  'invisibility',
+        'ring_of_sustenance':    'sustenance',
+        'amulet_of_wisdom':      'wisdom',
     }
     for item_id, token in cases.items():
         p = _resolve_item_sprite_path(item_id)
@@ -63,7 +65,7 @@ def test_power_tiers_each_have_their_own_stat_icon():
 
 def test_existing_art_is_not_hijacked_by_the_fallback():
     # ids that ship their OWN <id>.png must resolve to exactly that file
-    for item_id in ('ring_invisible', 'ring_hasted', 'amulet_of_fortitude',
+    for item_id in ('ring_of_regeneration', 'amulet_life_saving', 'amulet_of_fortitude',
                     'amulet_of_merlin'):
         p = _resolve_item_sprite_path(item_id)
         assert p and os.path.basename(p) == f"{item_id}.png", f"{item_id} -> {p}"

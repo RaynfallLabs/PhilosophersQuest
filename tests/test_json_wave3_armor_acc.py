@@ -171,19 +171,24 @@ def test_helm_of_hades_no_top_level_invisible():
 # Accessory deltas
 # ---------------------------------------------------------------------------
 
-def test_talisman_of_troy_has_stat_and_ac():
+def test_talisman_of_troy_has_stat_and_a_saving_throw():
+    """No ring or amulet gives AC (bug bash 3.3.2): the Palladium, the city's
+    protection, wards its wearer with a saving throw instead."""
     t = ACCESSORY['talisman_of_troy']
     assert t['effects']['stat'] == 'WIS'
     assert t['effects']['amount'] == 2
     assert t['effects']['status'] == 'reflecting'
-    assert t['ac_bonus'] == 2
+    assert 'ac_bonus' not in t and 'stat2' not in t['effects']
+    assert t['save_bonus'] == {'cat': 'all', 'amount': 2}
 
 
 def test_megingjord_thor_god_tier():
     m = ACCESSORY['megingjord']
     assert m['effects']['stat'] == 'STR'
     assert m['effects']['amount'] == 6
-    assert m['effects']['status'] == 'hasted'
+    # Its haste went to the boots (bug bash 3.3.2 ring review): Snorri's
+    # belt doubles his strength, not his speed.
+    assert 'status' not in m['effects']
 
 
 def test_pectoral_of_amun_wis_5():
@@ -194,7 +199,8 @@ def test_pectoral_of_amun_wis_5():
 
 def test_nibelung_curse_and_gold():
     r = ACCESSORY['ring_of_the_nibelung']
-    assert r['effects']['amount'] == 5
+    # The ring of the hoard: gold and a curse, no strength (ring review 3.3.2).
+    assert not r['effects']
     assert r['gold_multiplier'] == 2.0
     assert r['can_be_cursed'] is True
 
@@ -209,12 +215,14 @@ def test_hamsa_has_reflecting():
     assert h['effects']['status'] == 'reflecting'
 
 
-def test_draupnir_threshold_3():
-    assert ACCESSORY['draupnir']['equip_threshold'] == 3
-
-
-def test_idunn_threshold_3():
-    assert ACCESSORY['idunn_apple_charm']['equip_threshold'] == 3
+def test_draupnir_and_idunn_thresholds_follow_the_rule():
+    """Bug bash 3.3.2 (ring review): a named ring's threshold is its slot's
+    complexity and its tier's benefit, plus one for a unique."""
+    import gear
+    for k in ('draupnir', 'idunn_apple_charm'):
+        a = ACCESSORY[k]
+        assert a['equip_threshold'] == gear.accessory_threshold(
+            a['slot'], gear.level_for_tier(a['quiz_tier']), unique=True)
 
 
 def test_assassin_ring_silent_walk():

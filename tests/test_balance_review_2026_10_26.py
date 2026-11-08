@@ -63,16 +63,18 @@ def test_different_stats_and_penalties_still_count():
     assert p.CON == c0 + 2 and p.max_hp == hp0 + 2 * p.HP_PER_CON
 
 
-def test_protection_rings_still_add_up():
+def test_no_ring_gives_ac():
+    """Bug bash 3.3.2 (armour plan 8): a ring of Protection is a saving
+    throw now; an old AC ring (a saved object) lends nothing to AC."""
     p = Player()
     ac0 = p.get_ac()
     r1, r2 = _ring('AC', 1, ident='p1'), _ring('AC', 2, ident='p2')
     p._apply_equip(r1)
     p._apply_equip(r2)
-    assert p.get_ac() == ac0 - 3
+    assert p.get_ac() == ac0
     p.accessory_slots[0] = None
     p.accessory_off(r1)
-    assert p.get_ac() == ac0 - 2
+    assert p.get_ac() == ac0
 
 
 def test_enchanting_a_worn_ring_moves_the_stat_by_the_rule():

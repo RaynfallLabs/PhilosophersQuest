@@ -142,7 +142,13 @@ def test_every_build_kit_instantiates():
             if v is None:
                 continue
             if isinstance(v, tuple):
-                tpl, mat = v
+                tpl, mat = v[:2]
+                # (template, material, enchantment): the enchantment must be
+                # one of the piece's slot (enchantments.py).
+                if len(v) > 2:
+                    import enchantments
+                    if not enchantments.get(v[2]):
+                        errors.append(f"{name}: {field} enchantment {v[2]} missing")
                 # Materials live in either weapon or armor pool; templates per category
                 if field == '_start_shield':
                     if tpl not in tpl_s:

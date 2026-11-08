@@ -82,6 +82,8 @@ def test_accessory_remap_targets_all_valid_and_non_noop():
     assert not bad, f"remap maps to non-existent ids (dead items on load): {bad}"
     noop = [k for k in LEGACY_ACCESSORY_ID_REMAP if k in valid]
     assert not noop, f"remap keys still exist in accessory.json (contradiction): {noop}"
-    assert len(LEGACY_ACCESSORY_ID_REMAP) >= 70   # the cosmetic-collapse set
+    # The cosmetic-collapse set, less the rings whose power moved to armour
+    # (bug bash 3.3.2: no survivor), plus the ring kinds' folds.
+    assert len(LEGACY_ACCESSORY_ID_REMAP) >= 20
 
 

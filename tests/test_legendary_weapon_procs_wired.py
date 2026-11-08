@@ -202,5 +202,7 @@ def test_no_monster_has_a_dead_unique_drop_id():
              if isinstance(mon.get('treasure'), dict)
              and mon['treasure'].get('unique_drop_id')}
     assert len(drops) >= 30
-    dead = {mid: did for mid, did in drops.items() if did not in known}
+    from items import made_drop          # an enchanted piece made to a spec (the Bonnacon's hide)
+    dead = {mid: did for mid, did in drops.items()
+            if did not in known and made_drop(did) is None}
     assert not dead, f"monsters whose unique drop resolves to nothing: {dead}"

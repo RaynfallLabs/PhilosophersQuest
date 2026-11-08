@@ -1439,7 +1439,9 @@ class MagicMixin:
         spell = LEARNABLE_SPELLS.get(spell_id)
         if not spell:
             return
-        mp_cost = spell['mp_cost']
+        # A Ring of Wizardry cuts the cost by its tier (rings.py).
+        import rings as _rings
+        mp_cost = _rings.spell_cost(self.player, spell['mp_cost'])
         from chain_passives import consume_passive_charge, find_passive_item, refund_passive_charge
         _free_cast = consume_passive_charge(self.player, 'free_cast_once_per_floor')
         if _free_cast:
@@ -1504,6 +1506,8 @@ class MagicMixin:
         quiz difficulty AND the effect magnitude (baked into spell.power at
         author-time). Parallels the v2.10.0 scroll + v2.11.0 wand contracts.
         """
+        if target is not None and hasattr(self, '_ring_veil_slips'):
+            self._ring_veil_slips()          # a spell at a foe is a strike
         self.state = STATE_QUIZ
         self.quiz_title = f"CAST {spell['name'].upper()}  --  SCIENCE"
 
@@ -3303,20 +3307,34 @@ class MagicMixin:
             n = count_by_step[_tstep]
             if accs:
                 touched = 0
+                import rings as _rings
                 for acc in accs[:n]:
                     fx = acc.effects
-                    if 'amount' in fx and bonus:
+                    if _rings.kind_of(acc) and bonus:
+                        # A common ring is a kind at a level (rings.py): the
+                        # scroll moves its level, and everything follows.
+                        _old_lv = int(getattr(acc, 'ench_level', 0) or 0)
+                        _rings.relevel(acc, _old_lv + bonus)
+                        _moved = acc.ench_level - _old_lv
+                        _an = self._bare_name(acc)
+                        if _moved:
+                            self.player.sync_worn_stats()
+                            self.add_message(
+                                f"The {_an} {'glows' if _moved > 0 else 'dims'}! "
+                                f"{abs(_moved)} level{'s' if abs(_moved) != 1 else ''} "
+                                f"{'stronger' if _moved > 0 else 'weaker'}.",
+                                'success' if _moved > 0 else 'warning')
+                            touched += 1
+                        else:
+                            self.add_message(f"The {_an} shimmers briefly but nothing happens.", 'info')
+                    elif 'amount' in fx and bonus:
                         _old = fx['amount']
                         fx['amount'] = max(0, _old + bonus)
                         # What the ring lends changes now, not when it next
-                        # goes on: AC by the step, the six stats by the
-                        # strongest-counts rule (Player.sync_worn_stats).
-                        # Left alone, taking the ring off later removed the
-                        # NEW amount (three points lost for good, or a cursed
-                        # scroll turning a ring's points into permanent ones).
-                        if fx.get('stat') == 'AC' and fx['amount'] != _old:
-                            self.player.apply_stat_bonus('AC', fx['amount'] - _old)
-                        elif fx.get('stat') and fx['amount'] != _old:
+                        # goes on: the six stats by the strongest-counts rule
+                        # (Player.sync_worn_stats). Left alone, taking the
+                        # ring off later removed the NEW amount.
+                        if fx.get('stat') and fx['amount'] != _old:
                             self.player.sync_worn_stats()
                         _an = self._bare_name(acc)
                         if int(getattr(acc, 'id_level', 0) or 0) >= 5 or self._item_is_known(acc):
@@ -4409,7 +4427,7 @@ class MagicMixin:
         the game asks, so a copy in a chest, a trader's stock or a floor not
         yet generated is covered, and forgetting the kind (``_forget_kind``)
         un-knows them all. known_class_ids covers material-variant
-        accessories (one Ring of Strength names them all) — see
+        accessories (a ring kind's every level is one type) — see
         items.type_class.
 
         Identify v3.1 (2026-09-01) additionally learns the item's FORM

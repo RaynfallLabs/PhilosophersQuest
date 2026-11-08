@@ -143,7 +143,7 @@ def test_i02_paralysed_hero_cannot_take_the_stairs_or_open_the_sheet():
 
 # ---------------------------------------------------------------- I-03
 def test_i03_two_rings_of_one_kind_do_not_share_one_effects_dict():
-    tpl = next(a for a in load_items('accessory') if a.id == 'ring_of_master_constitution')
+    tpl = next(a for a in load_items('accessory') if a.id == 'amulet_of_constitution')
     a, b = copy.copy(tpl), copy.copy(tpl)
     assert a.effects == b.effects == tpl.effects
     assert a.effects is not b.effects and a.effects is not tpl.effects
@@ -154,9 +154,11 @@ def test_i03_two_rings_of_one_kind_do_not_share_one_effects_dict():
 def test_i03_cursed_enchant_ring_scrolls_leave_no_permanent_stat():
     g = _game()
     p = g.player
-    tpl = next(a for a in load_items('accessory') if a.id == 'ring_of_master_constitution')
+    # Two of one stat ring (a named one: the common stat rings are amulets
+    # and armour now, bug bash 3.3.2).
+    tpl = next(a for a in load_items('accessory') if a.id == 'aesops_quill')
     a, b = _known(copy.copy(tpl)), _known(copy.copy(tpl))
-    con0 = p.CON
+    con0 = p.WIS
     p._apply_equip(a)
     p._apply_equip(b)
     sc = copy.copy(next(s for s in load_items('scroll') if s.effect == 'enchant_accessory'))
@@ -165,7 +167,7 @@ def test_i03_cursed_enchant_ring_scrolls_leave_no_permanent_stat():
         g._apply_scroll_effect(sc)
     g._unequip_slot('accessory_0', a)
     g._unequip_slot('accessory_1', b)
-    assert p.CON == con0
+    assert p.WIS == con0
 
 
 # ---------------------------------------------------------------- I-04

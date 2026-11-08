@@ -115,14 +115,17 @@ def type_class(item) -> str:
     """Type-knowledge key: the granularity at which "once you know it,
     you know it" applies.
 
-    Uniques key by item.id. Accessories key by name-slug so all material
-    variants of a "Ring of Strength" count as ONE learned type. Everything
+    Uniques key by item.id. A ring or amulet kind (rings.py) keys by its id,
+    so every level of it is ONE learned type; any other accessory by its
+    name-slug. Everything
     else keys by item.id. (Formerly class_masteries.get_mastery_class —
     kept for the True Name display model after masteries were removed.)
     """
     if getattr(item, 'is_unique', False):
         return item.id
     if isinstance(item, Accessory):
+        if getattr(item, 'kind', ''):
+            return item.id          # every level of a kind is one type (rings.py)
         return _slugify(getattr(item, 'name', '') or item.id)
     return item.id
 
@@ -142,6 +145,8 @@ def form_id(item) -> str | None:
     material = getattr(item, 'material', None)
     iid = getattr(item, 'id', '')
     if isinstance(item, Accessory):
+        if getattr(item, 'kind', ''):
+            return iid              # every level of a kind is one form (rings.py)
         return _slugify(getattr(item, 'name', '') or iid)
     if material and iid.startswith(f'{material}_'):
         return iid[len(material) + 1:]
@@ -1032,6 +1037,10 @@ class Accessory(Item):
         self.equip_threshold  = int(defn.get('equip_threshold', 2))
         self.quiz_tier        = int(defn.get('quiz_tier', 1))
         self.unidentified_name = defn.get('unidentified_name', defn['name'])
+        # A common ring or amulet is a KIND at an enchantment level (rings.py,
+        # data/ring_kinds.json); 0 until it is found (rings.dress).
+        self.kind: str = str(defn.get('kind', '') or '')
+        self.ench_level: int = int(defn.get('ench_level', 0) or 0)
         self.id_level: int = int(defn.get("id_level", 5 if defn.get("identified", False) else 0))
         self.container_loot_tier: str = defn.get('container_loot_tier', defn.get('containerLootTier', 'common'))
         self.floor_spawn_weight: dict = defn.get('floor_spawn_weight', defn.get('floorSpawnWeight', {}))
@@ -1039,7 +1048,6 @@ class Accessory(Item):
         self.passive_regen: int          = int(defn.get('passive_regen', 0))           # Eye of Horus
         self.passive_regen_interval: int = int(defn.get('passive_regen_interval', 5))
         self.gold_multiplier: float      = float(defn.get('gold_multiplier', 0.0))     # Draupnir
-        self.surrounded_ac_bonus: int    = int(defn.get('surrounded_ac_bonus', 0))     # Torc of Boudicca
         self.pacify_chance: float        = float(defn.get('pacify_chance', 0.0))       # Seal of Solomon
         self.death_save: bool            = bool(defn.get('death_save', False))         # Jade Cicada
         self.resurrect_on_death: bool    = bool(defn.get('resurrect_on_death', False)) # Ankh of Isis
@@ -1093,6 +1101,28 @@ class Accessory(Item):
         self.equip_chain_subject: str = defn.get('equip_chain_subject', '')
         self.tier_bonuses: dict      = defn.get('tier_bonuses', {})
         self.achieved_tier: int      = 0
+        if self.kind and self.ench_level <= 0:
+            # A kind made by anything but a loot roll (a quest's gift, a
+            # starting kit, a test) is its first level; loot re-rolls it
+            # (rings.dress).
+            import rings
+            rings.relevel(self, 0)
+
+    def relevel(self, level: int) -> int:
+        """A ring or amulet kind at a new level (rings.py): tier, quiz tier,
+        threshold, name, line and a stat kind's amount follow from it."""
+        import rings
+        f = rings.level_fields(self, level)
+        if not f:
+            return int(getattr(self, 'ench_level', 0) or 0)
+        self.ench_level = f['ench_level']
+        self.tier = f['tier']
+        self.quiz_tier = f['tier']
+        self.equip_threshold = f['equip_threshold']
+        self.name = f['name']
+        self.special = f['special']
+        self.effects = f['effects']
+        return self.ench_level
 
     @property
     def cursed(self) -> bool:
@@ -1845,87 +1875,62 @@ def load_accessory_appearances() -> dict:
 # data/items/_collapse_cosmetic_accessories.py --check; keep in sync with it.
 LEGACY_ACCESSORY_ID_REMAP: dict[str, str] = {
     # -- cosmetic collapses --
-    'ring_warning_oak': 'ring_of_warning',
-    'ring_warning_runed_metal': 'ring_of_warning',
-    'ring_warning_ancient_copper': 'ring_of_warning',
-    'ring_warning_bone': 'ring_of_warning',
-    'ring_warning_twisted_iron': 'ring_of_warning',
-    'ring_warning_carved_jade': 'ring_of_warning',
-    'ring_warning_rough_stone': 'ring_of_warning',
-    'ring_warning_grey_granite': 'ring_of_warning',
-    'ring_searching_silver': 'ring_of_searching',
-    'ring_searching_polished_crystal': 'ring_of_searching',
-    'ring_searching_malachite': 'ring_of_searching',
-    'ring_searching_engraved_pewter': 'ring_of_searching',
-    'ring_searching_gleaming_iron': 'ring_of_searching',
-    'ring_searching_pale_ivory': 'ring_of_searching',
-    'ring_searching_mossy_stone': 'ring_of_searching',
-    'ring_telepathy_sapphire': 'ring_of_telepathy',
-    'ring_telepathy_lapis_lazuli': 'ring_of_telepathy',
-    'ring_telepathy_cobalt_blue': 'ring_of_telepathy',
-    'ring_telepathy_dark_obsidian': 'ring_of_telepathy',
-    'ring_telepathy_moonstone': 'ring_of_telepathy',
-    'ring_telepathy_twilight_crystal': 'ring_of_telepathy',
     'ring_regen_emerald': 'ring_of_regeneration',
     'ring_regen_peridot': 'ring_of_regeneration',
     'ring_regen_serpentine': 'ring_of_regeneration',
     'ring_regen_verdant_jade': 'ring_of_regeneration',
     'ring_regen_living_wood': 'ring_of_regeneration',
-    'ring_fire_res_a': 'ring_of_fire_resist',
-    'ring_fire_res_b': 'ring_of_fire_resist',
-    'ring_cold_res_a': 'ring_of_cold_resist',
-    'ring_cold_res_b': 'ring_of_cold_resist',
-    'ring_shock_res_a': 'ring_of_shock_resist',
-    'ring_shock_res_b': 'ring_of_shock_resist',
-    'ring_poison_res_a': 'ring_of_poison_resist',
-    'ring_poison_res_b': 'ring_of_poison_resist',
-    'ring_sleep_res_a': 'ring_of_sleep_resist',
-    'ring_sleep_res_b': 'ring_of_sleep_resist',
-    'amulet_warning_leather': 'amulet_of_warning',
-    'amulet_warning_copper': 'amulet_of_warning',
-    'amulet_searching_bone': 'amulet_of_searching',
-    'amulet_searching_bronze': 'amulet_of_searching',
-    'amulet_telepathy_silver': 'amulet_of_telepathy',
-    'amulet_telepathy_jade': 'amulet_of_telepathy',
-    # -- tiered stat-ring renames (+1 base / +2 greater / +3 master) --
-    'ring_strength_iron': 'ring_of_strength',
-    'ring_strength_steel': 'ring_of_greater_strength',
-    'ring_strength_adamantine': 'ring_of_master_strength',
-    'ring_strength_mithril': 'ring_of_master_strength',
-    'ring_constitution_ruby': 'ring_of_constitution',
-    'ring_constitution_coral': 'ring_of_greater_constitution',
-    'ring_constitution_carnelian': 'ring_of_greater_constitution',
-    'ring_constitution_garnet': 'ring_of_master_constitution',
-    'ring_dexterity_quicksilver': 'ring_of_dexterity',
-    'ring_dexterity_thin_wire': 'ring_of_greater_dexterity',
-    'ring_dexterity_spun_glass': 'ring_of_greater_dexterity',
-    'ring_dexterity_featherweight': 'ring_of_master_dexterity',
-    'ring_intellect_amethyst': 'ring_of_intellect',
-    'ring_intellect_purple_glass': 'ring_of_greater_intellect',
-    'ring_intellect_arcane_pewter': 'ring_of_greater_intellect',
-    'ring_intellect_prismatic': 'ring_of_master_intellect',
-    'ring_wisdom_opal': 'ring_of_wisdom',
-    'ring_wisdom_pearl': 'ring_of_greater_wisdom',
-    'ring_wisdom_ivory': 'ring_of_greater_wisdom',
-    'ring_wisdom_white_quartz': 'ring_of_master_wisdom',
-    'ring_perception_topaz': 'ring_of_perception',
-    'ring_perception_amber': 'ring_of_greater_perception',
-    'ring_perception_citrine': 'ring_of_greater_perception',
-    'ring_perception_hawks_eye': 'ring_of_master_perception',
-    # -- tiered stat-amulet renames (+2 base / +3 greater; amulets have no +1) --
-    'amulet_strength_iron_medallion': 'amulet_of_strength',
-    'amulet_strength_titan_iron_pendant': 'amulet_of_greater_strength',
+    # -- tiered stat-amulet renames (now the amulet kinds, rings.py) --
     'amulet_constitution_ruby_pendant': 'amulet_of_constitution',
     'amulet_constitution_guardian_ruby_locket': 'amulet_of_greater_constitution',
-    'amulet_dexterity_quicksilver_charm': 'amulet_of_dexterity',
-    'amulet_dexterity_air_light_locket': 'amulet_of_greater_dexterity',
     'amulet_intellect_amethyst_talisman': 'amulet_of_intellect',
     'amulet_intellect_brilliant_crystal_medallion': 'amulet_of_greater_intellect',
     'amulet_wisdom_opal_locket': 'amulet_of_wisdom',
     'amulet_wisdom_sage_ivory_locket': 'amulet_of_greater_wisdom',
-    'amulet_perception_eagle_eye_pendant': 'amulet_of_perception',
-    'amulet_perception_hawk_feather_talisman': 'amulet_of_greater_perception',
+    # (The variants of rings whose power moved to armour in bug bash 3.3.2,
+    # warning, searching, telepathy, the elements, the six stat rings, have
+    # no survivor: a saved one keeps working as the object it was.)
 }
+
+
+# The ring kinds (bug bash 3.3.2, rings.py): common rings and amulets folded
+# into a kind of the same slot. A save's ring of one of these heals to the
+# kind at the level of its old tier (Game._heal_accessory_id). Kinds whose
+# power moved to armour (Strength, Telepathy, Haste...) have no survivor and
+# keep working as the objects they were.
+_RING_KIND_REMAP = {
+    'ring_protection_iron': 'ring_of_protection',
+    'ring_protection_silver': 'ring_of_protection',
+    'ring_protection_gold': 'ring_of_protection',
+    'ring_protection_adamantine': 'ring_of_protection',
+    'ring_invisible': 'ring_of_invisibility',
+    'ring_sustenance_amber': 'ring_of_sustenance',
+    'amulet_of_greater_wisdom': 'amulet_of_wisdom',
+    'amulet_of_greater_intellect': 'amulet_of_intellect',
+    'amulet_archmage_intellect': 'amulet_of_intellect',
+    'amulet_of_greater_constitution': 'amulet_of_constitution',
+    'amulet_titan_constitution': 'amulet_of_constitution',
+}
+for _old, _new in list(LEGACY_ACCESSORY_ID_REMAP.items()):
+    LEGACY_ACCESSORY_ID_REMAP[_old] = _RING_KIND_REMAP.get(_new, _new)
+LEGACY_ACCESSORY_ID_REMAP.update(_RING_KIND_REMAP)
+
+
+def made_drop(spec: str, x: int = 0, y: int = 0):
+    """A fixed drop that is not a named item but an enchanted piece made to
+    a spec, 'armor:<template>:<material>:<enchantment>:<level>' (the
+    Bonnacon's own hide: a cloak of Elementward). None for anything else."""
+    if not str(spec or '').startswith('armor:'):
+        return None
+    try:
+        _, tpl, mat, ench, lv = str(spec).split(':')
+        piece = instantiate_armor(tpl, mat, level=int(lv), ench_id=ench, x=x, y=y)
+    except (ValueError, KeyError):
+        return None
+    if getattr(piece, 'ench_id', '') != ench:
+        return None
+    piece.identified = False
+    return piece
 
 
 def remap_legacy_accessory_id(item_id: str) -> str:

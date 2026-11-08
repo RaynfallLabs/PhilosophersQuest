@@ -110,7 +110,10 @@ def test_one_death_spends_one_life_save_source():
     p.status_effects['life_save'] = -1
     p.hp = 0
     g._answer_a_killing_blow()
-    assert p.hp == 1
+    # The worn Amulet of Life Saving is spent first and leaves its tier's
+    # share of the health bar (rings.py, bug bash 3.3.2); the next ward, 1.
+    import rings
+    assert p.hp == max(1, int(p.max_hp * rings.life_saving_share(amulet)))
     spent = [it for it in (amulet, ring)
              if (getattr(it, 'effects', None) or {}).get('status') != 'life_save']
     assert len(spent) == 1, "one death spent both wards"

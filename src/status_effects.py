@@ -767,7 +767,13 @@ def tick_all(player, dungeon=None) -> list[tuple[str, str]]:
                 # A share of the body it mends: one point for a small one, and
                 # REGEN_SHARE of a large one (one flat point was nothing at
                 # 1,500 health, where the Crown of Brahma grants this).
-                player.restore_hp(max(1, int(player.max_hp * REGEN_SHARE)))
+                # A Ring of Regeneration mends more by its tier (rings.py).
+                try:
+                    import rings
+                    share = max(REGEN_SHARE, rings.regen_share(player))
+                except ImportError:
+                    share = REGEN_SHARE
+                player.restore_hp(max(1, int(player.max_hp * share)))
 
         elif effect == 'petrifying':
             if val <= 3:

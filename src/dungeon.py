@@ -2607,6 +2607,10 @@ def dress_spawn(inst, level: int, rng, buc: bool = True) -> None:
     Quest and scripted items are left exactly as written.
     """
     from items import is_random_loot
+    if getattr(inst, 'kind', '') and is_random_loot(inst):
+        # A common ring or amulet: its level by the armour bells (rings.py).
+        import rings
+        rings.dress(inst, level, rng)
     if hasattr(inst, 'charges_min'):
         inst.charges = rng.randint(inst.charges_min, inst.charges_max)
     if hasattr(inst, 'count_min'):

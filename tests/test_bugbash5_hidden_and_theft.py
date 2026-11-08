@@ -422,12 +422,9 @@ def test_the_green_girdle_turns_the_knights_return_blow_once():
 def test_clairvoyance_text_says_it_shows_invisible_creatures():
     from status_effects import EFFECT_INFO
     assert 'invisible' in EFFECT_INFO['clairvoyant'][2].lower()
-    with open(os.path.join(ROOT, 'data', 'items', 'accessory.json'), encoding='utf-8') as f:
-        acc = json.load(f)
-    for iid in ('ring_clairvoy', 'amulet_clairvoyant'):
-        assert acc[iid]['effects']['status'] == 'clairvoyant'
-        assert 'see' in acc[iid]['lore'] or 'invisible' in acc[iid]['lore']
-        assert 'invisible' in acc[iid]['lore'] or 'no eye can see' in acc[iid]['lore']
+    # (The common rings and amulets of clairvoyance, whose lore said so too,
+    # left in bug bash 3.3.2; the status lives on the Oracle's ring, the Seal
+    # of Agrippa and spells.)
     import game_render
     lines = game_render._monster_traits(MONS[INVISIBLE]) if hasattr(game_render, '_monster_traits') else None
     if lines is not None:
