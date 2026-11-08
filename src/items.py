@@ -1055,6 +1055,11 @@ class Accessory(Item):
         # data/ring_kinds.json); 0 until it is found (rings.dress).
         self.kind: str = str(defn.get('kind', '') or '')
         self.ench_level: int = int(defn.get('ench_level', 0) or 0)
+        # What a named ring does in its own words (its card), and the
+        # Philosopher's Ring of Mastery's daimonion: wrong answers it stops
+        # each floor (quiz_engine.daimonion_hook, Game._daimonion_stops).
+        self.special: str = str(defn.get('special', '') or '')
+        self.daimonion: int = int(defn.get('daimonion', 0) or 0)
         self.id_level: int = int(defn.get("id_level", 5 if defn.get("identified", False) else 0))
         self.container_loot_tier: str = defn.get('container_loot_tier', defn.get('containerLootTier', 'common'))
         self.floor_spawn_weight: dict = defn.get('floor_spawn_weight', defn.get('floorSpawnWeight', {}))

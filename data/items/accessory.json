@@ -1590,9 +1590,7 @@
     "quiz_tier": 5,
     "effects": {
       "stat": "WIS",
-      "amount": 3,
-      "status": "truesight",
-      "duration": -1
+      "amount": 3
     },
     "unidentified_name": "a ring of strange alloy that seems to look back at you",
     "floorSpawnWeight": {
@@ -1603,7 +1601,9 @@
     "peak_weight": 0.2,
     "is_unique": true,
     "spread": 25,
-    "peak_floor": 70
+    "peak_floor": 70,
+    "daimonion": 3,
+    "special": "A voice stops you when you are about to answer wrong: three times a floor, a wrong choice is struck out and you choose again."
   },
   "amulet_of_pythagoras": {
     "name": "Tetractys Amulet",

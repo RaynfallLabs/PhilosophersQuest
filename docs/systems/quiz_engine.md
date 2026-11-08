@@ -23,6 +23,8 @@ Two load-bearing rules shape everything else. **Zero-tolerance** (2026-05-29): o
 
 **Craft forgiveness** (3.3.2): a worn minor-armour piece of the craft lane (the Locksmith, the Cook, the Reader...) forgives the first wrong answer of every Nth quiz on its subject, counted, never rolled. `start_quiz` asks `quiz_engine.craft_hook` (`Game._craft_forgives` -> `enchantments.craft_ready`) before reading the reroll flag: a threshold quiz gets a reroll, a chain a forgiveness. See [armour.md](armour.md) §4.
 
+**The daimonion** (3.3.2, the Philosopher's Ring of Mastery): `answer()` asks `daimonion_hook` (`Game._daimonion_stops`) on a wrong choice before counting it. While the ring has a stop left this floor, the choice goes into `struck_choices` (drawn red), nothing is counted and the question stays open; a struck choice picked again does nothing. It never reveals the answer.
+
 ## Data model / schema
 
 ### `QuizMode` (Enum)

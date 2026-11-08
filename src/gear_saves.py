@@ -76,7 +76,8 @@ def enchant_common(item) -> None:
 
 _ARMOR_FIELDS = ('ac_bonus', 'ench_id', 'ench_level', 'tier', 'quiz_tier',
                  'equip_threshold', 'weight_class', 'ench_line', 'effects', 'tier_bonuses')
-_ACC_FIELDS = ('effects', 'save_bonus', 'tier', 'quiz_tier', 'equip_threshold', 'tier_bonuses')
+_ACC_FIELDS = ('effects', 'save_bonus', 'tier', 'quiz_tier', 'equip_threshold', 'tier_bonuses',
+               'special', 'daimonion')
 
 
 def refresh_named(item) -> bool:

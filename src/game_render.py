@@ -3281,6 +3281,10 @@ class RenderMixin:
         correct_str = str(qe.current_question.get('answer', '')).strip()
         selected    = qe.last_answer.strip()
         in_result   = (qe.state == QuizState.RESULT)
+        struck      = set(getattr(qe, 'struck_choices', None) or ())
+        if struck and not in_result:
+            _vt = self.font_sm.render("A voice stops you: not that one.", True, FP.GOLD_BRIGHT)
+            self.screen.blit(_vt, (bx + bw - inset - _vt.get_width(), sep_y - _vt.get_height() - S(2)))
 
         for i, (raw_choice, wrapped_lines) in enumerate(zip(choice_answers, c_wrapped)):
             card = choice_rects[i]
@@ -3299,7 +3303,8 @@ class RenderMixin:
             # wrong pick red. Mid-question: highlight only if pressed (rare —
             # answers are usually atomic key-presses).
             mark_correct   = in_result and is_correct
-            mark_incorrect = in_result and is_selected and not is_correct
+            mark_incorrect = (in_result and is_selected and not is_correct) or \
+                (c_str in struck and not in_result)       # the daimonion struck it out
 
             draw_choice_button(
                 self.screen, tuple(card),

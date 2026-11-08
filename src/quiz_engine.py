@@ -460,6 +460,19 @@ class QuizEngine:
         correct = str(self.current_question['answer']).strip()
         is_correct = choice.strip() == correct
 
+        # The daimonion (the Philosopher's Ring of Mastery): a voice stops a
+        # wrong choice before it counts. It never shows the right one: the
+        # wrong choice is struck out and the question stays open. A choice
+        # already struck does nothing.
+        if not is_correct and self.current_question.get('choices'):
+            struck = self.__dict__.setdefault('struck_choices', set())
+            if choice.strip() in struck:
+                return False
+            hook = getattr(self, 'daimonion_hook', None)
+            if hook is not None and hook():
+                struck.add(choice.strip())
+                return False
+
         self.last_answer = choice
         self.asked_count += 1
         self.last_correct = is_correct
@@ -642,6 +655,7 @@ class QuizEngine:
         # Each question starts at the top; a long previous question must not
         # leave this one pre-scrolled.
         self._quiz_scroll_offset = 0
+        self.struck_choices = set()          # the daimonion's, this question
 
         # Always shuffle choice order so correct answer position is randomized
         choices = self.current_question.get('choices', [])

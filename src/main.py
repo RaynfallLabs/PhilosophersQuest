@@ -390,6 +390,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # A craft enchantment (gloves of the Locksmith...): every Nth quiz on
         # its subject forgives the first wrong answer (enchantments.py).
         self.quiz_engine.craft_hook = self._craft_forgives
+        self.quiz_engine.daimonion_hook = self._daimonion_stops
         self.quirk_system = QuirkSystem(self)
         self._slow_skip         = False    # toggled each turn when slowed
         # Key-held movement (arrow key auto-repeat)
@@ -1900,6 +1901,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # huginn_muninn, demon_command, etc.) reset on every floor change.
         from chain_passives import reset_per_floor_charges
         reset_per_floor_charges(self.player)
+        self.player._daimonion_used = 0     # the Ring of Mastery's voice, a floor
         # Harvest+Cook redesign 2026-05-31: per-floor cooking caps reset
         # (+1 stat / +5 HP per floor; trophies bypass).
         # Only on a floor reached for the first time: one step down and back
@@ -8052,6 +8054,25 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             return False
         self.add_message(f"Your {self._bare_name(piece)} steady you: one wrong answer "
                          "here will be forgiven.", 'success')
+        return True
+
+    def _daimonion_stops(self) -> bool:
+        """The quiz engine asks on a wrong choice: does a worn ring's
+        daimonion (the Philosopher's Ring of Mastery) stop it? Each ring
+        stops its `daimonion` choices a floor (reset on every floor change)."""
+        p = self.player
+        rings = [a for a in p.equipped_accessories if int(getattr(a, 'daimonion', 0) or 0) > 0]
+        if not rings:
+            return False
+        left = max(int(r.daimonion) for r in rings) - int(getattr(p, '_daimonion_used', 0) or 0)
+        if left <= 0:
+            return False
+        p._daimonion_used = int(getattr(p, '_daimonion_used', 0) or 0) + 1
+        left -= 1
+        self.add_message(
+            "A voice stops you: not that one."
+            + (f" ({left} more this floor.)" if left else " (It falls silent for this floor.)"),
+            'success')
         return True
 
     def _show_item_comparison(self, item):

@@ -245,6 +245,7 @@ def _strip(e: dict, fx: dict, p: str) -> None:
             e.pop('surrounded_ac_bonus', None)
         _strip_tiers(e, p)
         return
+    p = p.lower()                         # a status, in any case ('Truesight')
     if fx.get('status') == p:
         fx.pop('status', None)
         if not any(x in fx for x in ('stat', 'stat2')):
@@ -303,9 +304,9 @@ UNIQUE_REVIEW: dict = {
     'crown_of_croesus': {"strip": ["searching"], "why": "Croesus's story is wealth and a misread oracle; nothing in it uncovers hidden things. INT stays."},
     'collar_of_njord': {"strip": ["warning"], "why": "The lore is Njord's sea and his marriage to Skadi; no foreknowledge of danger is told of him. CON stays."},
     'ring_of_lancelot': {"strip": ["STR", "hasted"], "replace": {"effects": {"stat": "CON", "amount": 4, "status": "magic_resist", "duration": -1}}, "why": "Neither strength nor speed is in the lore (the Lady of the Lake, his name under the slab at Dolorous Gard), so both go and nothing is left. In the Vulgate the Lady of the Lake gave Lancelot a ring that breaks enchantments, and he ended the enchantments of Dolorous Gard: magic_resist, with CON 4 for the knight who outlasted every wound, the same size as Percival's ring. The lore could add a line on her ring."},
-    'philosophers_ring_legendary': {"strip": ["Truesight"], "why": "Socrates' daimonion was a voice that stopped him before a wrong act. It never showed him the invisible, so Truesight goes. WIS 3 stays, which leaves it at or below the plain Philosopher's Ring (WIS 3, INT 1); the tier pass can weigh that."},
+    'philosophers_ring_legendary': {"strip": ["truesight"], "replace": {"daimonion": 3, "special": "A voice stops you when you are about to answer wrong: three times a floor, a wrong choice is struck out and you choose again."}, "why": "Socrates' daimonion was a voice that stopped him before a wrong act. It never showed him the invisible, so True Sight goes. Brandon, 2026-11-08: the ring gets the daimonion itself (it never tells you the answer, it only stops the wrong one), which sets it apart from the plain Philosopher's Ring."},
     'amulet_of_pythagoras': {"strip": ["searching"], "why": "The tetractys, the musical ratios and Hippasus are about number, not finding hidden doors. INT stays."},
-    'ring_of_hypatia': {"strip": ["Truesight"], "why": "Hypatia was a mathematician and astronomer; nothing in her story sees the invisible. INT and the once-a-floor mob shield stay. Note: protected_when_surrounded is not an AC field, but it grants the 'shielded' status (+2 AC, half physical damage, 3 turns). Kept as a timed status proc; if 'no AC' is to cover granted statuses too, swap it for reflecting."},
+    'ring_of_hypatia': {"keep": ["truesight"], "why": "Brandon, 2026-11-08: a unique may break the rules about AC and powers, so Hypatia keeps True Sight (she saw the truth the mob would not) and her once-a-floor mob shield (the shielded status), with INT."},
     'ring_of_thunder': {"keep": ["shock_resist"], "why": "A thunderstone was kept under the eaves because lightning does not strike the same place twice. Warding off lightning is the whole lore. INT stays."},
     'amulet_of_the_titan': {"keep": ["STR"], "why": "Ore from the bottom of Tartarus that 'makes its wearer equal to the weight': that is strength, and STR is carry capacity in the game. CON 1 stays."},
     'ring_of_the_deep': {"keep": ["cold_resist"], "why": "Scyllias's ring: 'its wearer does not feel the cold', named in the lore. CON stays."},

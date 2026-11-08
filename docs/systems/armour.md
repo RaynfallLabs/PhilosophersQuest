@@ -129,7 +129,12 @@ type (`items.type_class`). An Enchant Ring scroll moves a kind's level.
 The 79 named rings and amulets keep their stories; a power that moved to
 armour stays only where the item's lore makes it its own
 (`tools/content/ring_kinds_2026_11.py`, `UNIQUE_REVIEW`, with the reason
-for each).
+for each). A unique may still break the rules about AC and powers where
+Brandon says so (Hypatia keeps True Sight and her mob shield). The
+Philosopher's Ring of Mastery carries Socrates' daimonion (`daimonion: 3`):
+three times a floor, a wrong choice in any quiz is struck out before it
+counts and the question stays open (`quiz_engine.daimonion_hook`,
+`Game._daimonion_stops`).
 
 ## 6. Named armour and shields
 
