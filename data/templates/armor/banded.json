@@ -5,7 +5,7 @@
   "category": "armor",
   "armor_class_tier": "heavy",
   "slot": "body",
-  "base_ac_value": 4,
+  "base_ac_value": 6,
   "base_weight_lb": 35.0,
   "_design_note": "F30-60 heavy. Roman-pattern overlapping bands.",
   "compatible_material_classes": [
@@ -13,6 +13,5 @@
     "rare_metal",
     "magical_metal"
   ],
-  "lore_template": "Horizontal bands of {material_name} riveted in overlapping rows around the torso, each one sliding a little over the next. The legions marched to the edge of the world in armor built this way.",
-  "equip_threshold": 3
+  "lore_template": "Horizontal bands of {material_name} riveted in overlapping rows around the torso, each one sliding a little over the next. The legions marched to the edge of the world in armor built this way."
 }

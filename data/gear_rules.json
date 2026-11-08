@@ -1,0 +1,42 @@
+{
+  "_doc": "Armour, shield, ring and amulet rules (bug bash 3.3.2; docs/design/ARMOR_REDESIGN_PLAN.md, revision 3; numbers from tools/balance/armor_model.py). The floor only decides which level is likely to be found; every magnitude is fixed per level (LORE NOT FLOOR).",
+
+  "levels": {
+    "_doc": "Enchantment level 1-10 (0 = plain). Tier = ceil(level / 2): the quiz tier and the plus on body armour and shields. Each level is drawn by a bell by floor; a level cannot appear before its first floor.",
+    "peak":   [3, 13, 23, 33, 43, 53, 63, 73, 83, 93],
+    "spread": 6.5,
+    "first":  [1, 6, 16, 26, 36, 46, 56, 66, 76, 86],
+    "plain_start": 0.40,
+    "plain_slope": 0.0025,
+    "plain_end": 0.15
+  },
+
+  "weight_class_bells": {
+    "_doc": "Which weight class of template a find is, by floor: [peak, spread, first floor]. Plate on floor 3 was the early-AC spike of the first model pass.",
+    "light":  [1, 30, 1],
+    "medium": [22, 20, 4],
+    "heavy":  [50, 25, 12]
+  },
+
+  "threshold": {
+    "_doc": "Complexity and benefit set the threshold (Brandon's ruling): complexity is the weight class, benefit the tier; a named unique asks one more; at most max.",
+    "complexity": {"light": 1, "medium": 2, "heavy": 3},
+    "benefit_by_tier": [0, 0, 1, 1, 2],
+    "unique": 1,
+    "max": 5
+  },
+
+  "accessory_threshold": {
+    "_doc": "Rings, amulets and belts (history): complexity by slot, benefit by tier, same cap.",
+    "complexity": {"ring": 1, "amulet": 2, "belt": 2},
+    "benefit_by_tier": [0, 1, 1, 2, 2],
+    "unique": 1,
+    "max": 5
+  },
+
+  "enchant_cap": {
+    "_doc": "The most plus an Enchant Armour scroll can raise a core piece to; a minor piece's scroll raises its enchantment one level instead.",
+    "core": 5,
+    "minor_level": 10
+  }
+}

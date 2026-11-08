@@ -1515,10 +1515,26 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 item.unidentified_name = compose_unidentified_name(
                     mat.get('unidentified_descriptor', mat['name']),
                     tpl['name'], noun)
-            if cat == 'armor':
-                raw = mat.get('ac_bonus', mat.get('armor_ac_bonus', 0))
-                item.ac_bonus = int(tpl.get('base_ac_value', 1)) + (
-                    int(raw) if raw is not None else 0)
+            if cat in ('armor', 'shields'):
+                # Bug bash 3.3.2 (gear.py): AC from the template alone, on body
+                # armour and shields; a minor piece gives none. A minor
+                # piece's old plus becomes its enchantment level (two levels
+                # a point, so nothing is lost), and the tier and threshold
+                # follow the level, as for any new piece.
+                import gear as _gear
+                item.weight_class = _gear.weight_class(tpl)
+                core = cat == 'shields' or tpl.get('slot', 'body') in _gear.CORE_SLOTS
+                item.ac_bonus = int(tpl.get('base_ac_value', 1)) if core else 0
+                if not hasattr(item, 'ench_level'):
+                    item.ench_level = 0
+                if not core:
+                    old_plus = int(getattr(item, 'enchant_bonus', 0) or 0)
+                    if old_plus > 0 and not item.ench_level:
+                        item.ench_level = min(_gear.MAX_LEVEL, 2 * old_plus)
+                    item.enchant_bonus = 0
+                item.relevel(int(item.ench_level or 0))
+                if hasattr(item, 'damage_resistances'):
+                    item.damage_resistances = {}
 
         def walk(item):
             recompose(item)

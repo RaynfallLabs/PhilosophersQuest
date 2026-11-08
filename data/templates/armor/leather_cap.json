@@ -4,7 +4,7 @@
   "category": "armor",
   "armor_class_tier": "light",
   "slot": "head",
-  "base_ac_value": 1,
+  "base_ac_value": 0,
   "base_weight_lb": 2.0,
   "_design_note": "F1-15 starter head slot. Pairs with leather/studded body for scout loadout.",
   "compatible_material_classes": [
@@ -12,6 +12,5 @@
     "leather",
     "hide"
   ],
-  "lore_template": "A close-fitting {material_name} cap, hardened and shaped on a wooden form. It keeps the hair back and turns a glancing blow. Beyond that the wearer relies on hope and a quick neck.",
-  "equip_threshold": 1
+  "lore_template": "A close-fitting {material_name} cap, hardened and shaped on a wooden form. It keeps the hair back and turns a glancing blow. Beyond that the wearer relies on hope and a quick neck."
 }

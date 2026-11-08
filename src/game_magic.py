@@ -2964,8 +2964,17 @@ class MagicMixin:
             self.add_message(f"Energy surges through you -- hasted for {duration} turns!", 'success')
 
         elif effect == 'enchant_armor':
-            from items import ENCHANT_CAP, ARMOR_SLOTS
-            equipped = [(s, ARMOR_SLOTS[i]) for i, s in enumerate(self.player.armor_slots) if s is not None]
+            from items import ENCHANT_CAP, ARMOR_SLOTS, set_ench_level
+            import gear as _gear
+            # Body armour and the shield first: they carry the plus (AC). A
+            # minor piece gives no AC (bug bash 3.3.2): the scroll raises its
+            # enchantment a level instead (gear.py, up to level 10).
+            equipped = [(s, ARMOR_SLOTS[i]) for i, s in enumerate(self.player.armor_slots)
+                        if s is not None]
+            equipped.sort(key=lambda p: 0 if p[1] in _gear.CORE_SLOTS else 2)
+            if self.player.shield is not None:
+                equipped.insert(1 if equipped and equipped[0][1] in _gear.CORE_SLOTS else 0,
+                                (self.player.shield, 'shield'))
             # Chain ladder (Path A): delta + how many armor slots get hit.
             if _scroll_buc == 'blessed':
                 delta = max(2, [1, 2, 2, 3, 4][_tstep])
@@ -2978,6 +2987,18 @@ class MagicMixin:
                 slot_count = [1, 2, 3, 4, 99][_tstep]
                 hits = equipped[:slot_count]
                 for target, slot_name in hits:
+                    if slot_name not in _gear.CORE_SLOTS and slot_name != 'shield':
+                        _tn = self._bare_name(target)
+                        old_lv = int(getattr(target, 'ench_level', 0) or 0)
+                        new_lv = set_ench_level(target, old_lv + delta)
+                        if new_lv > old_lv:
+                            self.add_message(f"Your {_tn} shines: its enchantment grows.", 'success')
+                        elif new_lv < old_lv:
+                            self.add_message(f"Your {_tn} tarnishes: its enchantment fades.", 'warning')
+                        else:
+                            self.add_message(
+                                f"Your {_tn} shudders but can hold no more enchantment.", 'info')
+                        continue
                     cap = ENCHANT_CAP.get(slot_name, 1)
                     old_val = getattr(target, 'enchant_bonus', 0)
                     target.enchant_bonus = max(-3, min(cap, old_val + delta))

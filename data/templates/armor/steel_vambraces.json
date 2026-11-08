@@ -4,7 +4,7 @@
   "category": "armor",
   "armor_class_tier": "medium",
   "slot": "arms",
-  "base_ac_value": 1,
+  "base_ac_value": 0,
   "base_weight_lb": 2.5,
   "_design_note": "F40-80 medium-heavy arms slot. Articulated forearm plate with flared wrist guard. Bridge between iron_vambraces and plate_vambraces.",
   "compatible_material_classes": [
@@ -12,6 +12,5 @@
     "rare_metal",
     "magical_metal"
   ],
-  "lore_template": "A pair of long {material_name} vambraces, hinged at the elbow, with a flared cup at the wrist made to catch a blade and steer it wide. The flare turns a parry into an opening.",
-  "equip_threshold": 2
+  "lore_template": "A pair of long {material_name} vambraces, hinged at the elbow, with a flared cup at the wrist made to catch a blade and steer it wide. The flare turns a parry into an opening."
 }

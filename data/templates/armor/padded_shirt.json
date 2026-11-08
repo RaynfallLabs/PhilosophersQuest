@@ -4,7 +4,7 @@
   "category": "armor",
   "armor_class_tier": "light",
   "slot": "shirt",
-  "base_ac_value": 1,
+  "base_ac_value": 0,
   "base_weight_lb": 4.0,
   "_design_note": "Under-armor slot. Worn beneath body armor or standalone. Gambeson/chain-shirt are both this template — material is the variation axis. Distributes impact, mitigates seam-blows.",
   "compatible_material_classes": [
@@ -14,6 +14,5 @@
     "rare_metal",
     "magical_metal"
   ],
-  "lore_template": "A close-fitting shirt of {material_name}, made to be worn alone or under heavier armor. It spreads a blow across the whole chest, and it is the last thing between the skin and a point that has found a gap.",
-  "equip_threshold": 1
+  "lore_template": "A close-fitting shirt of {material_name}, made to be worn alone or under heavier armor. It spreads a blow across the whole chest, and it is the last thing between the skin and a point that has found a gap."
 }

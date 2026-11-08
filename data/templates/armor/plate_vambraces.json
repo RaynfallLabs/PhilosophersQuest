@@ -4,7 +4,7 @@
   "category": "armor",
   "armor_class_tier": "heavy",
   "slot": "arms",
-  "base_ac_value": 1,
+  "base_ac_value": 0,
   "base_weight_lb": 3.0,
   "_design_note": "F50-100 heavy arms slot. Full articulated plate, elbow couter and forearm rerebrace. Pairs with plate/full plate body. Vambraces_of_Achilles uses this as template_basis.",
   "compatible_material_classes": [
@@ -13,6 +13,5 @@
     "magical_metal",
     "dragon_material"
   ],
-  "lore_template": "A pair of full {material_name} vambraces with a hinged cup at the elbow and a fluted plate above it. With gauntlets they sheathe the arm from fingertip to shoulder. The smith's mark is on the inside seam, where the wearer will probably never look.",
-  "equip_threshold": 3
+  "lore_template": "A pair of full {material_name} vambraces with a hinged cup at the elbow and a fluted plate above it. With gauntlets they sheathe the arm from fingertip to shoulder. The smith's mark is on the inside seam, where the wearer will probably never look."
 }

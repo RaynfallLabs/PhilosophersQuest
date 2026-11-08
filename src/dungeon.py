@@ -2646,6 +2646,14 @@ def _assign_enchant(inst, level: int, rng: random.Random):
         return
     if inst.item_class not in ('weapon', 'armor', 'shield'):
         return
+    if inst.item_class in ('armor', 'shield'):
+        # Armour and shields take their plus from the enchantment level
+        # rolled when they were made (gear.py, bug bash 3.3.2). A cursed
+        # body armour or shield wears its plus as a minus (AD&D's cursed
+        # -1 to -5 armour).
+        if getattr(inst, 'buc', 'uncursed') == 'cursed':
+            inst.enchant_bonus = -abs(int(getattr(inst, 'enchant_bonus', 0) or 0))
+        return
     from items import SPAWN_ENCHANT_CAP_ARMOR, ENCHANT_CAP
     # Determine chance and range by depth
     if level <= 15:

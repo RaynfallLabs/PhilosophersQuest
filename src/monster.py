@@ -44,8 +44,13 @@ def heart_weight(player) -> float:
     return 1.0 - HEART_WEIGHT_PER_KARMA * max(-10, min(10, karma))
 RECOVER_SHARE = 0.03
 
-MIN_HIT_ORDINARY = 0.30
-MIN_HIT_NAMED = 0.40
+# The share of THAC0 misses that land anyway. With AC from body armour and
+# shield only (gear.py) and every monster's THAC0 rebaked to the AC line
+# (tools/balance/rebake_thac0.py), an ordinary monster needs no floor: the
+# natural 20 is it, as in AD&D. At 0.30 every blow from floor 15 down was
+# decided by this number, not by what the hero wore. Named foes keep some.
+MIN_HIT_ORDINARY = 0.0
+MIN_HIT_NAMED = 0.15
 # Drain attacks: most CON one floor can cost, and the lowest drain can take it.
 DRAIN_CON_PER_FLOOR = 1      # (2 until a point of CON became 3 hit points)
 DRAIN_CON_FLOOR = 8

@@ -46,7 +46,9 @@ def _game(seed=5):
 def _wear_cloak(p):
     from items import ARMOR_SLOTS, make_item_by_id
     cloak = make_item_by_id('armor', 'cloak_of_the_morrigan')
-    cloak.enchant_bonus = 1
+    # A cloak is a minor piece: it carries an enchantment level, not a plus
+    # (gear.py, bug bash 3.3.2). Level 4 is tier II.
+    cloak.relevel(4)
     p.armor_slots[ARMOR_SLOTS.index('cloak')] = cloak
     return cloak
 
@@ -64,17 +66,17 @@ def test_armor_enchant_cost_cuts_the_cloak_and_the_dream_mends_it():
     assert armor_enchant_target(p) is cloak
     assert can_pay_cost(p, {'type': 'armor_enchant', 'amount': 1}, 0) == (True, '')
     g._npc_pay_cost({'type': 'armor_enchant', 'amount': 1})
-    assert cloak.enchant_bonus == 0
+    assert cloak.ench_level == 2                            # half the cloak: a tier lost
     g._apply_npc_reward({'type': 'multi', 'rewards': [
         {'type': 'armor_enchant', 'amount': 1}, {'type': 'effect', 'effect': 'blessed', 'duration': 60}]})
-    assert cloak.enchant_bonus == 1 and p.has_effect('blessed')
-    from items import ENCHANT_CAP
+    assert cloak.ench_level == 4 and p.has_effect('blessed')   # the dream mends it
+    assert cloak.enchant_bonus == 0                         # a cloak never carries AC
     for _ in range(5):
         g._apply_npc_reward({'type': 'armor_enchant', 'amount': 1})
-    assert cloak.enchant_bonus == ENCHANT_CAP['cloak']      # never past the slot's cap
-    cloak.enchant_bonus = -3
+    assert cloak.ench_level == 10                           # never past the top level
+    cloak.relevel(0)
     g._npc_pay_cost({'type': 'armor_enchant', 'amount': 1})
-    assert cloak.enchant_bonus == -3                        # never below the floor
+    assert cloak.ench_level == 0                            # never below plain
 
 
 # ------------------------------------------------------------------ multi and count

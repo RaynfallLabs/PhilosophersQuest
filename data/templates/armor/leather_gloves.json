@@ -4,13 +4,12 @@
   "category": "armor",
   "armor_class_tier": "light",
   "slot": "hands",
-  "base_ac_value": 1,
+  "base_ac_value": 0,
   "base_weight_lb": 1.0,
   "_design_note": "F1-25 light hand slot. Soft calfskin — bonus accrues to tactile feel, not just protection.",
   "compatible_material_classes": [
     "cloth",
     "leather"
   ],
-  "lore_template": "A pair of soft {material_name} gloves cut close to the fingers. They give a sure grip and modest protection, and they leave the hands deft enough for a lock, which is why burglars buy the same pattern.",
-  "equip_threshold": 1
+  "lore_template": "A pair of soft {material_name} gloves cut close to the fingers. They give a sure grip and modest protection, and they leave the hands deft enough for a lock, which is why burglars buy the same pattern."
 }

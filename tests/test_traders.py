@@ -351,7 +351,12 @@ def test_nothing_bought_from_any_trader_ever_sells_back_for_what_was_paid():
         for it in stock:
             list_price = economy.merchant_price(it, lvl, traders.kind_def(kind).get('markup', 1.0))
             paid = int(list_price * 0.5 * 0.8)
-            it._bought_for = paid
+            # Marked as the game marks a purchase (_trader_mark_bought): an
+            # ammo stack keeps the price of one bundle, so its cap follows
+            # its count. (Set to the whole price, a stack a little over one
+            # bundle could sell back for 53% of what it cost.)
+            _b = economy.ammo_bundles(it)
+            it._bought_for = round(paid / _b, 2) if _b else paid
             it.id_level = 5
             g.player.known_item_ids.add(it.id)
             for mk in (1.0, 1.5):

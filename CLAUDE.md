@@ -76,6 +76,7 @@ src/
   combat.py           - Combat resolution
   dice.py             - Dice notation parser ("2d6+3")
   items.py            - Item classes and equipment system
+  gear.py             - Armour, shield, ring and amulet rules: levels, tiers, thresholds, core AC
   item_actions.py     - Item actions shared by the Kit (K) and the character sheet (@)
   chain_equip.py      - Chain-equip for lore-rich legendary uniques
   chain_passives.py   - Chain-equip passive flag lookups and wiring

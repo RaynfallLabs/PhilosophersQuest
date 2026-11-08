@@ -28,13 +28,13 @@ def _run(inv, state=None):
 
 
 def test_stale_doubled_name_and_ac_recomposed():
-    a = instantiate_armor('hide', 'hide')      # current: 'Hide Armor', AC 2
+    a = instantiate_armor('hide', 'hide')      # current: 'Hide Armor', AC 3 (bug bash 3.3.2)
     a.name = 'Hide Hide Armor'                  # the old baked-in values
     a.unidentified_name = 'Hide Hide Armor'
     a.ac_bonus = 1
     _run([a])
     assert a.name == 'Hide Armor'
-    assert a.ac_bonus == 2
+    assert a.ac_bonus == 3
 
 
 def test_unique_id_without_material_prefix_is_untouched():

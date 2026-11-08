@@ -1010,21 +1010,27 @@ class Player:
         # shows up as dodge_chance(). (Uncapped, +22 Dexterity was eleven
         # points of armor: more than a full suit of plate.)
         dex_mod = min(self.DEX_AC_CAP, (self.DEX - 10) // 2)
+        # AC comes from body armour and the shield (gear.py, bug bash 3.3.2):
+        # a helm, gloves, boots, bracers, greaves, cloak or shirt gives none
+        # (they guard against kinds of attack instead). Nine slots of AC put
+        # a hero past every monster's reach by floor 15.
+        import gear as _gear
         armor_bonus = sum(
             getattr(s, 'ac_bonus', 0) + getattr(s, 'enchant_bonus', 0)
-            for s in self.armor_slots if s is not None
+            for s in self.armor_slots
+            if s is not None and getattr(s, 'slot', 'body') in _gear.CORE_SLOTS
         )
         shield_bonus = (
             getattr(self.shield, 'ac_bonus', 0) + getattr(self.shield, 'enchant_bonus', 0)
             if self.shield else 0
         )
-        # BUC of worn gear: blessed +1 AC / cursed -1 AC per piece, across
-        # armor, shield AND accessories. (Cursed gear is also welded on by the
-        # unequip guard, so a cursed piece is a real, stuck penalty -- and a
-        # blessed accessory/amulet now does something instead of nothing.)
+        # BUC of the two armour pieces that carry AC: blessed +1, cursed -1
+        # each (a blessed minor piece works a level higher instead; gear.py).
+        # Rings and amulets still count here until their own pass.
         buc_ac = 0
-        for s in (list(self.armor_slots) + [self.shield]
-                  + list(getattr(self, 'equipped_accessories', []))):
+        for s in ([p for p in self.armor_slots
+                   if p is not None and getattr(p, 'slot', 'body') in _gear.CORE_SLOTS]
+                  + [self.shield] + list(getattr(self, 'equipped_accessories', []))):
             if s is None:
                 continue
             _b = getattr(s, 'buc', 'uncursed')

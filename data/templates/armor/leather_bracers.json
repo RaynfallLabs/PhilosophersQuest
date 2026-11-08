@@ -4,7 +4,7 @@
   "category": "armor",
   "armor_class_tier": "light",
   "slot": "arms",
-  "base_ac_value": 1,
+  "base_ac_value": 0,
   "base_weight_lb": 1.0,
   "_design_note": "F1-25 light arms slot. Oil-hardened leather forearm guards. Bracers_of_Cu_Chulainn uses this as template_basis.",
   "compatible_material_classes": [
@@ -12,6 +12,5 @@
     "leather",
     "hide"
   ],
-  "lore_template": "A pair of {material_name} bracers, strapped from wrist to elbow over the tendons a glancing blade finds first. Archers wear the same thing for a humbler reason: the slap of the bowstring.",
-  "equip_threshold": 1
+  "lore_template": "A pair of {material_name} bracers, strapped from wrist to elbow over the tendons a glancing blade finds first. Archers wear the same thing for a humbler reason: the slap of the bowstring."
 }

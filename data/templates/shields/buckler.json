@@ -2,7 +2,8 @@
   "id": "buckler",
   "name": "buckler",
   "category": "shield",
-  "base_ac_value": 0,
+  "armor_class_tier": "light",
+  "base_ac_value": 1,
   "_design_note": "F1-30 parry-shield. Almost no AC by itself; pairs with a fast weapon and DEX.",
   "base_weight_lb": 2.0,
   "compatible_material_classes": [

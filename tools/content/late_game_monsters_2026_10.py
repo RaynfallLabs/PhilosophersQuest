@@ -849,6 +849,12 @@ def apply(data: dict) -> list[str]:
                 if k in (cur.get('treasure') or {}):
                     tr[k] = cur['treasure'][k]
             want['treasure'] = tr
+        # Its to-hit is decided by tools/balance/rebake_thac0.py (bug bash
+        # 3.3.2: rebaked to the armour line): the THAC0 written here is its
+        # lore accuracy, kept as thac0_lore; the rebaked thac0 stays.
+        if isinstance(cur, dict) and 'thac0_lore' in cur:
+            want['thac0_lore'] = cur['thac0_lore']
+            want['thac0'] = cur.get('thac0', want.get('thac0'))
         if cur != want:
             log.append(f'{mid}: {"updated" if mid in data else "added"}')
             data[mid] = want

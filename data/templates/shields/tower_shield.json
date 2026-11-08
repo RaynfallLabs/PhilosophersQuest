@@ -2,6 +2,7 @@
   "id": "tower_shield",
   "name": "tower shield",
   "category": "shield",
+  "armor_class_tier": "heavy",
   "base_ac_value": 3,
   "_design_note": "F60-100 wall-shield. Heavy; slows reaction.",
   "base_weight_lb": 30.0,

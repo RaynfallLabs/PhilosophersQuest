@@ -50,6 +50,7 @@ added_files = [
     ('data/traders.json',           'data'),
     ('data/item_worth.json',        'data'),
     ('data/achievements.json',      'data'),   # the Seeker's achievements (achievements.py)
+    ('data/gear_rules.json',        'data'),   # armour, shield, ring and amulet rules (gear.py)
     # Game data — directories
     ('data/items',                  'data/items'),
     ('data/materials',              'data/materials'),
