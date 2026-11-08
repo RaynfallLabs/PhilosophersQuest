@@ -8027,7 +8027,15 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             return  # Can't compare unidentified items
         from items import ARMOR_SLOTS
         if isinstance(item, Weapon):
-            equipped, stat, unit = self.player.weapon, 'base_damage', 'damage'
+            # A bow or crossbow is weighed against the ranged weapon carried,
+            # a blade against the one in hand (Brandon, 2026-11-07: a bow on
+            # the floor was compared with the sword). The same test that
+            # decides which hand it goes in (Player.equip: requires_ammo).
+            if getattr(item, 'requires_ammo', None) is not None:
+                equipped = getattr(self.player, 'ranged_weapon', None)
+            else:
+                equipped = self.player.weapon
+            stat, unit = 'base_damage', 'damage'
         elif isinstance(item, Armor):
             slot = getattr(item, 'slot', 'body')
             equipped = (self.player.armor_slots[ARMOR_SLOTS.index(slot)]

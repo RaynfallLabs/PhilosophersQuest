@@ -5910,7 +5910,13 @@ class RenderMixin:
         (re-uses _kit_visible_level). Pure side-effect-free string builder.
         """
         if isinstance(candidate, Weapon):
-            equipped = self.player.weapon
+            # Against the weapon of its own kind: a bow against the ranged
+            # weapon carried, a blade against the one in hand (Player.equip
+            # decides by requires_ammo). It weighed every bow against the sword.
+            if getattr(candidate, 'requires_ammo', None) is not None:
+                equipped = getattr(self.player, 'ranged_weapon', None)
+            else:
+                equipped = self.player.weapon
             if equipped is candidate or equipped is None:
                 return ''
             if self._kit_visible_level(candidate) < 3 or self._kit_visible_level(equipped) < 3:
