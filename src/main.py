@@ -1778,6 +1778,17 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # One-cosmetic-per-item: stamp this run's appearance on freshly-spawned
         # (and any unstamped) floor accessories. Idempotent for loaded floors.
         self._stamp_ground_appearances()
+        # The arrival is said first, then what the new floor brings (the
+        # dungeon's lesson, trophies, procs, omens, the family lines). It was
+        # said after a dozen of them: "Wisdom +1... POWER UNLOCKED... You
+        # descend to level 3." (3.3.3 play, the lore audit).
+        from boss_levels import COW_LEVEL as _COW_LEVEL
+        if new_level == _COW_LEVEL:
+            pass        # the opening floor is the announcement, never "level 999"
+        elif enter_from_top:
+            self.add_message(f"You descend to level {new_level}.", 'info')
+        else:
+            self.add_message(f"You ascend to level {new_level}.", 'info')
         # Track deepest floor reached for the cooking softcap (rises with descent)
         # The Cow Level (999) is a side trip, not depth: counting it lifted
         # both cooking softcaps to their floor-100 values and stopped the
@@ -2252,13 +2263,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         _snd.play('level_change')
         # No longer crouched in the last floor's pit.
         self.player.status_effects.pop('in_pit', None)
-        # (the hero was set on the stair above, before the arrival passives)
-        if new_level == _COW_LEVEL:
-            pass        # the opening floor is the announcement, never "level 999"
-        elif enter_from_top:
-            self.add_message(f"You descend to level {new_level}.", 'info')
-        else:
-            self.add_message(f"You ascend to level {new_level}.", 'info')
+        # (the hero was set on the stair above, before the arrival passives;
+        # the arrival itself was said there too)
 
         # Pelops Sword: cursed_lineage descent event. 5% chance per
         # DESCENT (enter_from_top=True only — ascending doesn't trigger
@@ -8171,6 +8177,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     def update(self, dt: float):
         # An achievement won mid-quiz waits for calm play (game_seeker.py).
         self._seeker_tick()
+        self._quirk_popup_tick()
         # A resize in this frame or the one before: the quiz clock advances
         # one nominal frame at most (RESIZE_GRACE_FRAMES; on_resize arms it).
         quiz_dt = min(dt, self.MAX_QUIZ_DT)
@@ -8509,6 +8516,16 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.popup_next_state = next_state
         self.state            = STATE_STORY_POPUP
 
+    def _quirk_popup_tick(self):
+        """Every frame: a trait popup that waited for a quiz to end opens
+        once the hero is back in plain play."""
+        waiting = self.__dict__.get('_quirk_popups_waiting')
+        if waiting and self.state == STATE_PLAYER:
+            popup = waiting.pop(0)
+            self.popup_data = popup
+            self.popup_next_state = STATE_PLAYER
+            self.state = STATE_STORY_POPUP
+
     def _show_quirk_unlock_popup(self, name: str, effect: str,
                                   trigger: str, flavor: str):
         """A first-class unlock moment for a newly-earned quirk.
@@ -8530,12 +8547,21 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         if flavor:
             lines.append('')
             lines.append(f'"{flavor}"')
-        self.popup_data = {
+        popup = {
             'title':  'TRAIT UNLOCKED',
             'accent': (200, 170, 255),   # arcane lavender — matches the quirk theme
             'lines':  lines,
             'code':   None,
         }
+        # Never over an open quiz, a menu or an encounter (an answer can earn
+        # a trait: the popup opened on top of the combat quiz it was earned
+        # in, or over the stranger met on the stair). It waits for plain play,
+        # as the Seeker's achievements do (_quirk_popup_tick); a second trait
+        # while one trait popup is up still joins the queue behind it.
+        if self.state != STATE_PLAYER:
+            self.__dict__.setdefault('_quirk_popups_waiting', []).append(popup)
+            return
+        self.popup_data = popup
         # A popup raised while another is up returns to where the FIRST one
         # was going. It fell back to plain play, so two traits unlocking on
         # one answer dropped the player out of an open quiz.
