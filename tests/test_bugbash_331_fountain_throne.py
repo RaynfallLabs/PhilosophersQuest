@@ -90,3 +90,53 @@ def test_each_chain_gives_everything_the_chain_below_gives(kind, fortune_spent):
             higher = _gains(kind, chain + 1, fortune_spent, seed)
             missing = lower - higher
             assert not missing, f"{kind} chain {chain + 1} lacks {missing} that chain {chain} gives"
+
+
+# ---------------------------------------------------------------- bug bash 3.3.2
+def _on_fountain(g):
+    from dungeon import FOUNTAIN, FLOOR
+    d = g.dungeon
+    x, y = g.player.x, g.player.y
+    d.tiles[y][x] = FOUNTAIN
+    return x, y, FOUNTAIN, FLOOR
+
+
+def test_a_fountain_gives_one_drink():
+    """Brandon, 2026-11-07: "Fountains seem to allow TWO drinks... but really
+    should just be one chance." It dried up one time in three."""
+    from game_states import STATE_QUIZ
+    for seed in range(6):
+        random.seed(seed)
+        g = _game()
+        x, y, FOUNTAIN, FLOOR = _on_fountain(g)
+        g.dungeon.ariadne_shrine_door = None
+        g._resolve_fountain(2)
+        assert g.dungeon.tiles[y][x] == FLOOR, seed          # always dry after a drink
+        g.dungeon.tiles[y][x] = FOUNTAIN                     # even put back by hand,
+        g.state = 'player'
+        g._drink_fountain()                                  # it will not pour again
+        assert g.state != STATE_QUIZ, seed
+
+
+def test_ariadnes_fountain_keeps_its_basin_but_not_a_second_drink():
+    from game_states import STATE_QUIZ
+    random.seed(1)
+    g = _game()
+    x, y, FOUNTAIN, FLOOR = _on_fountain(g)
+    g.dungeon.ariadne_fountain_pos = (x, y)
+    g.dungeon.ariadne_shrine_door = (x + 5, y)               # still sealed
+    g._resolve_fountain(1)
+    assert g.dungeon.tiles[y][x] == FOUNTAIN                 # the Bull can still be offered
+    g.state = 'player'
+    g._drink_fountain()
+    assert g.state != STATE_QUIZ
+
+
+def test_another_fountain_on_ariadnes_floor_still_dries():
+    random.seed(4)
+    g = _game()
+    x, y, FOUNTAIN, FLOOR = _on_fountain(g)
+    g.dungeon.ariadne_fountain_pos = (x + 9, y + 9)
+    g.dungeon.ariadne_shrine_door = (x + 5, y)
+    g._resolve_fountain(1)
+    assert g.dungeon.tiles[y][x] == FLOOR

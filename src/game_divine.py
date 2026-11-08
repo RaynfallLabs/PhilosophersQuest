@@ -417,7 +417,14 @@ class DivineMixin:
     # ------------------------------------------------------------------
 
     def _drink_fountain(self):
-        """Drink from a fountain -- AI quiz determines outcome."""
+        """Drink from a fountain -- AI quiz determines outcome. One drink a
+        fountain (Brandon, bug bash 3.3.2: it dried only one time in three,
+        so most fountains gave a second chance)."""
+        pos = (self.player.x, self.player.y)
+        if pos in self.dungeon.__dict__.setdefault('_fountains_drunk', set()):
+            self.add_message("The fountain has given you what it had. The water lies still.",
+                             'info')
+            return
         self.add_message("You cup your hands and drink from the fountain...", 'info')
         self.quiz_title = "FOUNTAIN  --  AI"
         self.state = STATE_QUIZ
@@ -492,12 +499,15 @@ class DivineMixin:
                         "The fountain glows with divine light, cures every ailment and "
                         "makes you whole. It has no more than that to give you.", 'success')
 
-        # 33% chance fountain dries up after use. Ariadne's fountain never
-        # does: drying it before the Bronze Bull is offered would lock the
-        # Thread away for the run.
-        if getattr(self.dungeon, 'ariadne_shrine_door', None) is None \
-                and _rng.random() < 0.33:
-
+        # One drink a fountain: it dries up after it (it did one time in
+        # three). Ariadne's fountain keeps its basin while her shrine is
+        # sealed: drying it before the Bronze Bull is offered would lock the
+        # Thread away for the run. It still gives one drink only. (Every
+        # fountain on Ariadne's floor used to be kept, not just hers.)
+        self.dungeon.__dict__.setdefault('_fountains_drunk', set()).add((px, py))
+        ariadne = ((px, py) == getattr(self.dungeon, 'ariadne_fountain_pos', None)
+                   and getattr(self.dungeon, 'ariadne_shrine_door', None) is not None)
+        if not ariadne:
             self.dungeon.tiles[py][px] = FLOOR
             self.add_message("The fountain dries up.", 'info')
 
