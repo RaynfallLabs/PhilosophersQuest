@@ -3676,6 +3676,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         _altar = next((i for i in here if isinstance(i, MysteryAltar)), None)
         _trader = next((i for i in here if isinstance(i, MerchantNPC)), None)
         here = [i for i in here if not isinstance(i, (MysteryAltar, MerchantNPC))]
+        # Named in the order a pickup takes them: the first named is the next
+        # one picked up (items.in_pickup_order).
+        from items import in_pickup_order
+        here = in_pickup_order(here, self._item_is_known)
         if _trader is not None:
             self.add_message(
                 "A trader has spread wares on a blanket here. (Y to trade)", 'info')
@@ -5880,14 +5884,17 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     # ------------------------------------------------------------------
 
     def _pickup(self, target=None):
-        """Pick up the first item on this tile, or ``target`` when given (the
+        """Pick up the next item on this tile in pickup order (gold,
+        treasure, potions, scrolls, known things then unknown ones lightest
+        first, corpses: items.in_pickup_order), or ``target`` when given (the
         Kit's Take & Equip names the exact floor item; same rules)."""
-        from items import GoldPile
+        from items import GoldPile, in_pickup_order
         px, py = self.player.x, self.player.y
         # Skip the Abyssal Shimmer -- it's fixed to the floor
         # Also skip MysteryAltar objects (not_pickable=True)
         item = next(
-            (i for i in self.ground_items
+            (i for i in in_pickup_order(
+                [g for g in self.ground_items if g.x == px and g.y == py], self._item_is_known)
              if i.x == px and i.y == py
              and (target is None or i is target)
              and i.id != 'abyssal_shimmer'

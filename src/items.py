@@ -1858,6 +1858,43 @@ def claim_unique(item) -> None:
         _UNIQUES_SEEN.add(item.id)
 
 
+# The order a pile on one tile is picked up in (Brandon, 3.3.3 play): coin,
+# then treasure, potions, scrolls and books, then what the hero knows,
+# lightest first, then what he does not, lightest first, then corpses; chests
+# are opened where they stand, never carried, so they come last of all. A
+# light, valuable thing is never left behind under a heavy one.
+PICKUP_RANKS = ('gold', 'treasure', 'potion', 'scroll', 'known', 'unknown', 'corpse', 'chest')
+
+
+def pickup_rank(item, known: bool) -> tuple:
+    """Sort key for one item in a pile: (rank, the stack's weight)."""
+    import treasure
+    if isinstance(item, GoldPile):
+        rank = 'gold'
+    elif treasure.is_treasure(item):
+        rank = 'treasure'
+    elif isinstance(item, Potion):
+        rank = 'potion'
+    elif isinstance(item, (Scroll, Spellbook)):
+        rank = 'scroll'
+    elif isinstance(item, Corpse):
+        rank = 'corpse'
+    elif isinstance(item, Container):
+        rank = 'chest'
+    else:
+        rank = 'known' if known else 'unknown'
+    weight = 0.0
+    if rank in ('known', 'unknown'):
+        weight = float(getattr(item, 'weight', 0) or 0) * max(1, int(getattr(item, 'count', 1) or 1))
+    return PICKUP_RANKS.index(rank), weight
+
+
+def in_pickup_order(pile, is_known) -> list:
+    """`pile` in the order it is picked up (stable: equals keep their order).
+    `is_known(item)` says whether the hero knows what an item is."""
+    return sorted(pile, key=lambda i: pickup_rank(i, bool(is_known(i))))
+
+
 def is_random_loot(item) -> bool:
     """True if ``item`` may be handed out by a random pool (floor drops,
     chests, merchant stock, random rewards)."""
