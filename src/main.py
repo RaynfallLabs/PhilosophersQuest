@@ -159,6 +159,27 @@ def _stored_floors(lm):
     return out
 
 
+def _world_turn(fn):
+    """The world's turn (Game._advance_turn) is not what a Kit or character
+    sheet action said: the "Result" box (item_actions) captured every message
+    until the hero was back on the screen, so a rat's bite or a hunger pang
+    in the turn the action spent pushed the action's own line out. Capture
+    pauses for the turn and goes on after it while the action is still
+    under way (Take & Equip: the pickup's turn, then the equip quiz)."""
+    import functools
+
+    @functools.wraps(fn)
+    def turn(self, *a, **k):
+        was = bool(getattr(self, '_item_feedback_on', False))
+        self._item_feedback_on = False
+        try:
+            return fn(self, *a, **k)
+        finally:
+            if was and getattr(self, '_item_screen_return', None):
+                self._item_feedback_on = True
+    return turn
+
+
 def _all_items_in_save(player, state: dict) -> list:
     """Every item a save holds, once each: the hero's worn slots (belt
     included), the pack, the floor underfoot, every stored floor, and the
@@ -7449,10 +7470,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     self._advance_turn()
                     return
                 self.player.remove_from_inventory(item)
-                ac = self.player.get_ac()
                 # Its curse, if any, is now known and named once ("the
                 # Cursed X (cursed)" said it twice, and before you knew).
-                self.add_message(f"You equip the {item_name}. AC is now {ac}.", 'success')
+                # Only body armour and a shield move AC (bug bash 3.3.2):
+                # a helm or boots say only that they are on.
+                self.add_message(f"You equip the {item_name}." + self._ac_now_note(item), 'success')
                 self._note_worn_curse(item)
                 # Great Helm of Galahad (purity): announce the cleansing
                 # when items were freed of curses by the helm going on.
@@ -7632,9 +7654,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     self._advance_turn()
                     return
                 self.player.remove_from_inventory(item)
-                ac = self.player.get_ac()
                 self.add_message(
-                    f"You attune to the {item_name} at tier {chain}/5. AC is now {ac}.",
+                    f"You attune to the {item_name} at tier {chain}/5." + self._ac_now_note(item),
                     'success'
                 )
                 self._note_worn_curse(item)
@@ -8055,6 +8076,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.add_message(f"Your {self._bare_name(piece)} steady you: one wrong answer "
                          "here will be forgiven.", 'success')
         return True
+
+    def _ac_now_note(self, item) -> str:
+        """" AC is now N." after a body armour or shield goes on; nothing
+        for a piece that gives no AC (gear.is_core)."""
+        import gear
+        return f" AC is now {self.player.get_ac()}." if gear.is_core(item) else ''
 
     def _daimonion_stops(self) -> bool:
         """The quiz engine asks on a wrong choice: does a worn ring's
@@ -8913,9 +8940,15 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             two_h = ' 2H' if getattr(item, 'two_handed', False) else ''
             return f"{item.weapon_class}{two_h}  {dmg} dmg  tier {item.tier}"
         elif isinstance(item, Armor):
-            return f"{item.slot}  -{item.ac_bonus} AC  tier {item.tier}"
+            import gear
+            if gear.is_core(item):
+                return f"{item.slot}  -{gear.ac_value(item)} AC  tier {item.tier}"
+            # A minor piece gives no AC: its enchantment, if it has one.
+            import enchantments
+            return f"{item.slot}  {enchantments.label(item) or 'plain'}  tier {item.tier}"
         elif isinstance(item, Shield):
-            return f"shield  -{item.ac_bonus} AC  tier {item.tier}"
+            import gear
+            return f"shield  -{gear.ac_value(item)} AC  tier {item.tier}"
         elif isinstance(item, Accessory):
             fx = item.effects or {}
             if 'status' in fx:
@@ -9340,6 +9373,12 @@ def _restore_saved_game(screen, player_name: str, state: dict):
               if _kept else
               "That saved journey could not be restored. It was left untouched.")
     return None, notice
+
+
+# The world's turn pauses the Kit / sheet "Result" capture (_world_turn).
+# Wrapped here, not with a decorator line, so _advance_turn's source reads
+# as before.
+Game._advance_turn = _world_turn(Game._advance_turn)
 
 
 def main():
