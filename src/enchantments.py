@@ -138,6 +138,16 @@ def display_name(ench: dict, level: int) -> str:
     return f"of {greater}{ench['name']} {ROMAN[t - 1]}"
 
 
+def label(piece) -> str:
+    """'Iron Will II' / 'Greater Iron Will II' for a piece's enchantment
+    ('' if it has none)."""
+    ench = get(getattr(piece, 'ench_id', ''))
+    level = int(getattr(piece, 'ench_level', 0) or 0)
+    if not ench or level <= 0:
+        return ''
+    return display_name(ench, level)[len('of '):]
+
+
 def apply_to(piece, ench_id: str) -> None:
     """Write an enchantment onto a newly made piece: its id, its known name
     and line, and what it lends while worn (a status, a stat, a flag)."""

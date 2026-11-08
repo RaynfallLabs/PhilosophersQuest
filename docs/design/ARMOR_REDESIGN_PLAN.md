@@ -1,5 +1,7 @@
 # Armour redesign: core AC, slot guards, a priced enchantment stable (plan)
 
+**Status: built in 3.3.2** (commits "Armour 1/7" to "Armour 7/7" on `release/3.3.2`). How it works now: [docs/systems/armour.md](../systems/armour.md). This file is the design and its proof.
+
 Brandon, 2026-11-07, after the equipment review
 (`EQUIPMENT_BALANCE_REVIEW_2026_11_07.md`):
 

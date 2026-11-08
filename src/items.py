@@ -275,6 +275,15 @@ class Item:
     name = ProperNameAttr('name')
     unidentified_name = ProperNameAttr('unidentified_name')
 
+    def adopt_fields(self, fresh, fields) -> None:
+        """Take these fields from `fresh` (the same item built from today's
+        data): a save's named piece meets its current definition
+        (gear_saves.py). Fields `fresh` lacks are left as they are."""
+        import copy
+        for f in fields:
+            if f in fresh.__dict__:
+                self.__dict__[f] = copy.deepcopy(fresh.__dict__[f])
+
     def __init__(self, defn: dict):
         self.id         = defn['id']
         self.name       = defn['name']

@@ -192,6 +192,9 @@ def test_parrying_turns_a_blow_from_beside(game, monkeypatch):
     rat['thac0'] = -50                                    # always hits
     m = Monster(rat, game.player.x + 1, game.player.y)
     _wear(game.player, _piece('steel_vambraces', 'parrying', 10))
+    # No dodge to slip it first (a rolled hero with DEX over 10 would).
+    game.player.DEX = 10
+    monkeypatch.setattr(type(game.player), 'dodge_chance', lambda self: 0.0, raising=False)
     monkeypatch.setattr(monster_mod.random, 'random', lambda: 0.0)
     dmg, msg = m._resolve_blow(m.attacks[0], game.player)
     assert dmg == 0 and 'parry' in msg

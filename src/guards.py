@@ -105,6 +105,22 @@ def piece_strength(piece) -> tuple:
     return rider, damage
 
 
+def guard_text(piece, short: bool = False) -> str:
+    """What a minor piece guards, in words, for its card: its slot's family
+    and the share it turns aside and shrugs off (its weight class, and a
+    guard enchantment of that family). '' for anything else."""
+    slot = getattr(piece, 'slot', '')
+    fam = family(slot)
+    if not fam:
+        return ''
+    rider, dmg = piece_strength(piece)
+    name = str(fam.get('name', slot))
+    if short:
+        return f"{name.capitalize()} {round(100 * dmg)}%"
+    return (f"Guards {name}: turns aside {round(100 * dmg)}% of those attacks "
+            f"and shrugs off {round(100 * rider)}% of what they carry.")
+
+
 def _worn_minor(player):
     import gear
     from items import ARMOR_SLOTS

@@ -898,6 +898,10 @@ class RenderMixin:
                 # of the Gauntlets of Mars said "No revealed special abilities".
                 if getattr(item, 'special', ''):
                     lines.append(item.special)
+                # A named piece's enchantment (its card text is its own).
+                _el = getattr(item, 'ench_line', '')
+                if _el and _el != getattr(item, 'special', ''):
+                    lines.append(_el)
                 if getattr(item, 'dodge_bonus', 0):
                     lines.append(f"Dodge +{item.dodge_bonus:.0%}")
                 if getattr(item, 'toughness_bonus', 0):
@@ -911,8 +915,10 @@ class RenderMixin:
                 if getattr(item, 'chain_bonus', 0):
                     lines.append(f"Every Chain That Lands Counts {int(item.chain_bonus)} Longer")
             fx = getattr(item, 'effects', None) or {}
+            # (A stat an enchantment or a ring kind lends is in its line.)
+            _said = bool(getattr(item, 'ench_id', '') or getattr(item, 'kind', ''))
             if fx:
-                if 'stat' in fx:
+                if 'stat' in fx and not _said:
                     lines.append(f"{fx['stat']} {int(fx.get('amount', 0)):+d}")
                 if 'stat2' in fx:
                     lines.append(f"{fx['stat2']} {int(fx.get('amount2', 0)):+d}")
@@ -1411,8 +1417,7 @@ class RenderMixin:
             meta_rows.append(("Blessing", _cap(getattr(detail_item, 'buc', 'uncursed'))
                               if self._copy_buc_known(detail_item) else "Unknown"))
         if visible >= 3:
-            if hasattr(detail_item, 'ac_bonus'):
-                meta_rows.append(("AC", f"+{getattr(detail_item, 'ac_bonus', 0)}"))
+            meta_rows += self._kit_armour_rows(detail_item)
             if isinstance(detail_item, Weapon):
                 meta_rows.append(("Damage", self._kit_damage_str(detail_item)))
             if getattr(detail_item, 'equip_chain_mode', ''):
@@ -1707,8 +1712,7 @@ class RenderMixin:
             if hasattr(detail_item, 'buc'):
                 meta_rows.append(("Blessing", _cap(getattr(detail_item, 'buc', 'uncursed')) if self._copy_buc_known(detail_item) else "Unknown"))
             if visible >= 3:
-                if hasattr(detail_item, 'ac_bonus'):
-                    meta_rows.append(("AC", f"+{getattr(detail_item, 'ac_bonus', 0)}"))
+                meta_rows += self._kit_armour_rows(detail_item, short=True)
                 if isinstance(detail_item, Weapon):
                     meta_rows.append(("Damage", self._kit_damage_str(detail_item)))
                 if getattr(detail_item, 'equip_chain_mode', ''):
@@ -5170,12 +5174,20 @@ class RenderMixin:
                     detail = (f"{_cap(getattr(item, 'weapon_class', 'weapon'))}  {item.base_damage} Damage"
                               if _known else "Weapon  Unidentified")
                 elif isinstance(item, Shield):
-                    detail = (f"+{item.ac_bonus} AC  {_cap(item.material)}"
+                    import gear as _gear
+                    detail = (f"+{_gear.ac_value(item)} AC  {_cap(item.material)}"
                               if _known else "Shield  Unidentified")
                 elif isinstance(item, Armor):
+                    import gear as _gear
                     _slot = _cap(str(getattr(item, 'slot', 'armor')).replace('_', ' '))
-                    detail = (f"{_slot}  +{item.ac_bonus} AC  {_cap(item.material)}"
-                              if _known else f"{_slot}  Unidentified")
+                    if _known and _gear.is_core(item):
+                        detail = f"{_slot}  +{_gear.ac_value(item)} AC  {_cap(item.material)}"
+                    elif _known:
+                        # A minor piece gives no AC: its enchantment, if any.
+                        import enchantments as _ench
+                        detail = f"{_slot}  {_ench.label(item) or 'Plain'}  {_cap(item.material)}"
+                    else:
+                        detail = f"{_slot}  Unidentified"
                 elif isinstance(item, Accessory):
                     if self._item_is_known(item):
                         fx = item.effects
@@ -5254,8 +5266,9 @@ class RenderMixin:
             rows.sort(key=lambda r: (order.get(r[0], 9),
                                      -float(self._kit_avg_damage(r[1]) or 0)))
         elif slug in ('armor', 'shields'):
-            rows.sort(key=lambda r: (order.get(r[0], 9),
-                                     -int(getattr(r[1], 'ac_bonus', 0) or 0)))
+            import gear as _gear
+            rows.sort(key=lambda r: (order.get(r[0], 9), -_gear.ac_value(r[1]),
+                                     -int(getattr(r[1], 'ench_level', 0) or 0)))
         elif slug == 'valuables':
             # Dearest first, by what the hero can count on (a valued kind's
             # worth, else the low end of its band: nothing finer leaks).
@@ -5766,15 +5779,23 @@ class RenderMixin:
         if slug == 'armor':
             slot_lbl = (getattr(item, 'slot', '') or '').replace('_', ' ').title()
             if idl >= 3:
-                ac = f"+{getattr(item, 'ac_bonus', 0)}"
+                import gear as _gear
+                import enchantments as _ench
+                # Body armour its AC; a minor piece none, and its enchantment
+                # beside its resistances (bug bash 3.3.2).
+                ac = f"+{_gear.ac_value(item)}" if _gear.is_core(item) else '-'
                 resists = self._kit_resist_str(item)
+                lab = _ench.label(item)
+                if lab:
+                    resists = lab if resists in ('', '-', None) else f"{lab}; {resists}"
             else:
                 ac, resists = '?', '?'
             return [name, src_tag, slot_lbl, ac, mat, buc, wt, resists]
 
         if slug == 'shields':
             if idl >= 3:
-                ac = f"+{getattr(item, 'ac_bonus', 0)}"
+                import gear as _gear
+                ac = f"+{_gear.ac_value(item)}"
                 resists = self._kit_resist_str(item)
             else:
                 ac, resists = '?', '?'
@@ -5890,6 +5911,13 @@ class RenderMixin:
         return ', '.join(f"{k} {int(v*100)}%" for k, v in r.items() if v)
 
     def _kit_accessory_effect(self, a) -> str:
+        # A ring or amulet kind (rings.py): its kind and tier say it all.
+        import rings as _rings
+        _k = _rings.kind_of(a)
+        if _k:
+            from enchantments import ROMAN
+            t = max(1, min(5, int(getattr(a, 'quiz_tier', 1) or 1)))
+            return f"{_k['name']} {ROMAN[t - 1]}"
         fx = getattr(a, 'effects', None) or {}
         if not fx:
             return '-'
@@ -5901,6 +5929,28 @@ class RenderMixin:
         if 'status' in fx:
             parts.append(f"Grants {_cap(fx['status'])}")
         return ', '.join(parts) if parts else '-'
+
+    def _kit_armour_rows(self, item, short: bool = False) -> list:
+        """The card's armour rows (bug bash 3.3.2): body armour and shields
+        their AC (base plus plus); a minor piece what it guards and its
+        enchantment; a ring or amulet kind its tier. Nothing for the rest."""
+        import gear as _gear
+        rows = []
+        if _gear.is_core(item):
+            rows.append(("AC", f"+{_gear.ac_value(item)}"))
+        elif isinstance(item, Armor):
+            import guards as _guards
+            import enchantments as _ench
+            g = _guards.guard_text(item, short=True)
+            if g:
+                rows.append(("Guards", g))
+            lab = _ench.label(item)
+            if lab:
+                rows.append(("Enchant", lab))
+        elif isinstance(item, Accessory) and getattr(item, 'kind', ''):
+            from enchantments import ROMAN
+            rows.append(("Tier", ROMAN[max(1, min(5, int(getattr(item, 'quiz_tier', 1)))) - 1]))
+        return rows
 
     def _equip_delta_str(self, candidate) -> str:
         """Return a short "Δ +X dmg / -Y wt" string vs the currently equipped
@@ -5934,7 +5984,8 @@ class RenderMixin:
                 return ''
             if self._kit_visible_level(candidate) < 3 or self._kit_visible_level(equipped) < 3:
                 return ''
-            d = int(getattr(candidate, 'ac_bonus', 0)) - int(getattr(equipped, 'ac_bonus', 0))
+            import gear as _gear
+            d = _gear.ac_value(candidate) - _gear.ac_value(equipped)
             return self._fmt_delta(d, 'AC')
 
         if isinstance(candidate, Armor):
@@ -5948,8 +5999,19 @@ class RenderMixin:
                 return ''
             if self._kit_visible_level(candidate) < 3 or self._kit_visible_level(equipped) < 3:
                 return ''
-            d = int(getattr(candidate, 'ac_bonus', 0)) - int(getattr(equipped, 'ac_bonus', 0))
-            return self._fmt_delta(d, 'AC')
+            import gear as _gear
+            if _gear.is_core(candidate):
+                d = _gear.ac_value(candidate) - _gear.ac_value(equipped)
+                return self._fmt_delta(d, 'AC')
+            # A minor piece gives no AC: weigh its enchantment against the worn
+            # one's (levels, when it is the same enchantment).
+            import enchantments as _ench
+            same = (getattr(candidate, 'ench_id', '')
+                    and getattr(candidate, 'ench_id', '') == getattr(equipped, 'ench_id', ''))
+            if same:
+                d = int(getattr(candidate, 'ench_level', 0)) - int(getattr(equipped, 'ench_level', 0))
+                return self._fmt_delta(d, 'lvl')
+            return _ench.label(candidate)
 
         if isinstance(candidate, Accessory):
             # Only useful when comparing same-stat accessories; otherwise
@@ -8350,6 +8412,22 @@ class RenderMixin:
             return '?'
         return f"+{getattr(item, 'enchant_bonus', 0)}"
 
+    def _lore_armour_line(self, item) -> str:
+        """The lore screen's armour line: body armour and shields their AC
+        (the template's base and the plus, which shows once the copy is
+        known); a minor piece its enchantment (bug bash 3.3.2)."""
+        import gear as _gear
+        known = self._lore_enchant_text(item) != '?'
+        if _gear.is_core(item):
+            base = int(getattr(item, 'ac_bonus', 0) or 0)
+            if not known:
+                return f"AC: +{base} and an unknown plus"
+            return f"AC: +{_gear.ac_value(item)} (+{base} base, {self._lore_enchant_text(item)} plus)"
+        import enchantments as _ench
+        if not known:
+            return "No AC; its enchantment is unknown"
+        return f"No AC; enchantment: {_ench.label(item) or 'none'}"
+
     def _lore_item_mechanic_lines(self, item, id_level):
         lines = []
         if id_level < 3 and hasattr(item, 'id_level'):
@@ -8380,22 +8458,26 @@ class RenderMixin:
                 ("Armor", FP.GOLD_BRIGHT, self.font_sm),
                 (f"Slot: {_cap(item.slot)}   Material: {('Unique' if getattr(item, 'is_unique', False) and str(item.material).lower() in ('legendary', 'adamantine') else _cap(item.material))}   Tier: {item.tier}",
                  FP.BODY_TEXT, self.font_sm),
-                (f"AC bonus: +{item.ac_bonus}   Enchant: {self._lore_enchant_text(item)}",
-                 FP.BODY_TEXT, self.font_sm),
+                (self._lore_armour_line(item), FP.BODY_TEXT, self.font_sm),
                 (_threshold_line("Equip", getattr(item, 'equip_threshold', '?')),
                  FP.BODY_TEXT, self.font_sm),
             ]
             if getattr(item, 'damage_resistances', None):
                 lines.append((f"Resists: {self._kit_resist_str(item)}",
                               FP.CYAN_ACCENT, self.font_sm))
+            import guards as _guards
+            if _guards.guard_text(item):
+                lines.append((_guards.guard_text(item), FP.CYAN_ACCENT, self.font_sm))
+            _el = getattr(item, 'ench_line', '') or ''
+            if _el and self._lore_enchant_text(item) != '?':
+                lines.append((_el, FP.CYAN_ACCENT, self.font_sm))
 
         elif isinstance(item, Shield):
             lines += [
                 ("Shield", FP.GOLD_BRIGHT, self.font_sm),
                 (f"Material: {('Unique' if getattr(item, 'is_unique', False) and str(item.material).lower() in ('legendary', 'adamantine') else _cap(item.material))}   Tier: {item.tier}",
                  FP.BODY_TEXT, self.font_sm),
-                (f"AC bonus: +{item.ac_bonus}   Enchant: {self._lore_enchant_text(item)}",
-                 FP.BODY_TEXT, self.font_sm),
+                (self._lore_armour_line(item), FP.BODY_TEXT, self.font_sm),
                 (_threshold_line("Equip", getattr(item, 'equip_threshold', '?')),
                  FP.BODY_TEXT, self.font_sm),
             ]
@@ -9103,7 +9185,12 @@ class RenderMixin:
         if category == 'weapon':
             return f"{self._encyclopedia_weapon_type(entry)} / {entry.get('base_damage', '?')} damage"
         if category == 'armor':
-            return f"{entry.get('slot', 'armor')} / AC {entry.get('ac_bonus', '?')}"
+            if entry.get('ench_id'):
+                import enchantments as _ench
+                _e = _ench.get(entry['ench_id']) or {}
+                return f"{entry.get('slot', 'armor')} / {_e.get('name', entry['ench_id'])}"
+            return (f"{entry.get('slot', 'armor')} / AC "
+                    f"{int(entry.get('ac_bonus', 0) or 0) + int(entry.get('enchant_bonus', 0) or 0)}")
         if category == 'accessory':
             effects = entry.get('effects', {}) or {}
             if 'stat' in effects:
@@ -9228,8 +9315,16 @@ class RenderMixin:
             if entry.get('two_handed') or entry.get('twoHanded'):
                 lines.append(("Two-handed", FP.BODY_TEXT, self.font_sm))
         elif category == 'armor':
-            lines.append((f"AC bonus: +{entry.get('ac_bonus', '?')}   Tier: {entry.get('tier', '?')}",
-                          FP.BODY_TEXT, self.font_sm))
+            if entry.get('ench_id'):
+                import enchantments as _ench
+                _e = _ench.get(entry['ench_id']) or {}
+                _lv = int(entry.get('ench_level', 0) or 0)
+                lines.append((f"No AC   Enchantment: {_ench.display_name(_e, _lv)[3:] if _e and _lv else '?'}"
+                              f"   Tier: {entry.get('tier', '?')}", FP.BODY_TEXT, self.font_sm))
+            else:
+                _ac = int(entry.get('ac_bonus', 0) or 0) + int(entry.get('enchant_bonus', 0) or 0)
+                lines.append((f"AC: +{_ac}   Tier: {entry.get('tier', '?')}",
+                              FP.BODY_TEXT, self.font_sm))
             if entry.get('slot'):
                 lines.append((f"Slot: {entry.get('slot')}", FP.BODY_TEXT, self.font_sm))
         elif category == 'accessory':

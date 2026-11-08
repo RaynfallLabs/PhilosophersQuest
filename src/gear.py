@@ -138,9 +138,20 @@ def core_enchant_cap() -> int:
 def is_core(item) -> bool:
     """Does this piece carry AC: body armour or a shield."""
     cls = str(getattr(item, 'item_class', '') or '')
+    if cls not in ('armor', 'shield'):
+        # (A piece built without its class: read it from what it is.)
+        cls = {'Armor': 'armor', 'Shield': 'shield'}.get(type(item).__name__, cls)
     if cls == 'shield':
         return True
     return cls == 'armor' and str(getattr(item, 'slot', 'body')) in CORE_SLOTS
+
+
+def ac_value(item) -> int:
+    """The AC a piece gives: body armour and shields their base plus their
+    plus; a minor piece, ring or amulet none."""
+    if not is_core(item):
+        return 0
+    return int(getattr(item, 'ac_bonus', 0) or 0) + int(getattr(item, 'enchant_bonus', 0) or 0)
 
 
 def level_for_tier(tier: int, greater: bool = False) -> int:

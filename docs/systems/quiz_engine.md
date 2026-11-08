@@ -21,6 +21,8 @@ Two load-bearing rules shape everything else. **Zero-tolerance** (2026-05-29): o
 
 **Tablet of Destinies reroll**: the artifact grants one re-ask per floor (not per-quiz). It's wired via `quiz_engine._reroll_flag`, read on `start_quiz` into `reroll_available`, consumed on first wrong answer, and the "used this floor" flag lives on `Game`. Works in both chain and threshold modes.
 
+**Craft forgiveness** (3.3.2): a worn minor-armour piece of the craft lane (the Locksmith, the Cook, the Reader...) forgives the first wrong answer of every Nth quiz on its subject, counted, never rolled. `start_quiz` asks `quiz_engine.craft_hook` (`Game._craft_forgives` -> `enchantments.craft_ready`) before reading the reroll flag: a threshold quiz gets a reroll, a chain a forgiveness. See [armour.md](armour.md) §4.
+
 ## Data model / schema
 
 ### `QuizMode` (Enum)

@@ -66,6 +66,7 @@ reporter are small, independent JSON/text siblings. See
 | [monsters.md](monsters.md) | 527 monsters, AI patterns, boss / mini-boss flags, families | Monster add/edit |
 | [monster_families.md](monster_families.md) | The 22 monster families, tiers earned by studying distinct kinds (keystones count two), the five tiers (Recognise, Forewarned, Lore, Hunter, Bane), technique primitives (`family_edges`), Circles, Loremaster, Bestiary gating | Family, Bestiary or technique change |
 | [items.md](items.md) | Item classes, slots, equip, BUC, one identification knows every copy | Item schema change |
+| [armour.md](armour.md) | AC from body armour and shield only, the minor slots' guard families and enchantments, the ring and amulet kinds, named pieces on the ladder, the 45 / 45 / 10 gear split, old saves (3.3.2) | Any AC, to-hit, armour, ring or gear-loot change |
 | [identify_v3.md](identify_v3.md) | One philosophy Q, derived id_tier, a known kind fully identifies every copy (2026-10-18), NO masteries | Identify flow change |
 | [containers_lockpick.md](containers_lockpick.md) | Chest tiers, chest_traps.json, Lockpick v3 (1 Q, master pick, traps on fail) | Loot-gate change |
 | [magic.md](magic.md) | Spells, wands, spellbooks, MP, MAGIC_TIER_MULT, dispatch | Spell add/edit |

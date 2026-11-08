@@ -80,6 +80,7 @@ src/
   guards.py           - What the minor armour slots guard: attack delivery, families, touch AC
   enchantments.py     - The minor-slot enchantment stable: guard, might, craft and way lanes
   rings.py            - Ring and amulet kinds: levels, ladders, names, what a worn kind does
+  gear_saves.py       - Old saves meet the armour ladder: named pieces refreshed, worn grants re-synced
   item_actions.py     - Item actions shared by the Kit (K) and the character sheet (@)
   chain_equip.py      - Chain-equip for lore-rich legendary uniques
   chain_passives.py   - Chain-equip passive flag lookups and wiring

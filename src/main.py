@@ -993,6 +993,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # Armor" -> "Hide Armor") and template rebalances (hide AC 1 -> 2)
         # instead of showing the stale value baked in at instantiation.
         self._migrate_recompose_composite_items(state)
+        # ...and the armour ladder (bug bash 3.3.2): enchanted pieces keep
+        # their names, named pieces and rings take today's data, worn
+        # statuses and stats re-sync (gear_saves.py).
+        import gear_saves
+        gear_saves.migrate(self.player, _all_items_in_save(self.player, state))
         # Quirk system
         if state.get('quirk_system') is not None:
             self.quirk_system = state['quirk_system']
@@ -8069,6 +8074,18 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             equipped = (self.player.armor_slots[ARMOR_SLOTS.index(slot)]
                         if slot in ARMOR_SLOTS else None)
             stat, unit = 'ac_bonus', 'AC'
+            import gear as _gear
+            if not _gear.is_core(item):
+                # A minor piece gives no AC (bug bash 3.3.2): say what each
+                # one's enchantment is instead.
+                if equipped and equipped is not item and self._item_is_known(equipped):
+                    import enchantments as _ench
+                    mine = _ench.label(item) or 'no enchantment'
+                    theirs = _ench.label(equipped) or 'none'
+                    if mine != theirs:
+                        self.add_message(f"  ({mine} vs your {self._bare_name(equipped)}: {theirs})",
+                                         'info')
+                return
         elif isinstance(item, Shield):
             equipped, stat, unit = self.player.shield, 'ac_bonus', 'AC'
         else:
