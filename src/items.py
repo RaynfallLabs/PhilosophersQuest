@@ -214,6 +214,17 @@ def _material_resists(mat: dict) -> dict:
     return {}
 
 
+def _template_class(category: str, template_id) -> str:
+    """The weight class of a template ('' when there is none)."""
+    if not template_id:
+        return ''
+    try:
+        t = get_template(category, str(template_id))
+    except Exception:
+        return ''
+    return str((t or {}).get('armor_class_tier') or '')
+
+
 def effective_enchant_cap(player, slot_name: str, item=None) -> int:
     """ENCHANT_CAP lookup that respects Panoply of Hephaestus (divine_smithing).
 
@@ -837,6 +848,10 @@ class Armor(Item):
         # armour, the plus. A minor piece's one power comes with it (ench_id).
         self.ench_level: int     = int(defn.get('ench_level', 0) or 0)
         self.ench_id: str        = str(defn.get('ench_id', '') or '')
+        # light / medium / heavy: the threshold's complexity and a minor
+        # piece's base guard (guards.py). A unique takes its template's.
+        self.weight_class: str   = str(defn.get('weight_class') or _template_class(
+            'armor', defn.get('template_basis')) or 'light')
         self.equip_threshold     = int(defn.get('equip_threshold', 2))
         self.quiz_tier: int      = int(defn.get('quiz_tier', 1))
         self.damage_resistances: dict = defn.get('damage_resistances', {})

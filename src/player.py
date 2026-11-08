@@ -1002,6 +1002,24 @@ class Player:
 
     # --- Derived stats ---
 
+    def core_ac(self) -> int:
+        """The AC that body armour and the shield give (base, plus, and
+        their blessing or curse): what a touch attack ignores (guards.py)."""
+        import gear as _gear
+        total = 0
+        pieces = [s for s in (self.armor_slots or ())
+                  if s is not None and getattr(s, 'slot', 'body') in _gear.CORE_SLOTS]
+        if self.shield is not None:
+            pieces.append(self.shield)
+        for s in pieces:
+            total += int(getattr(s, 'ac_bonus', 0) or 0) + int(getattr(s, 'enchant_bonus', 0) or 0)
+            b = getattr(s, 'buc', 'uncursed')
+            if b == 'blessed':
+                total += 1
+            elif b == 'cursed' and 'cynic_detachment' not in getattr(self, 'hero_passives', set()):
+                total -= 1
+        return total
+
     def get_ac(self) -> int:
         """Armor class -- lower is better (harder for monsters to hit).
         Base 10, reduced by DEX modifier, armor ac_bonus + enchant_bonus, shield,

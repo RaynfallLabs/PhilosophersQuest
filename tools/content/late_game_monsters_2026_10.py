@@ -855,12 +855,27 @@ def apply(data: dict) -> list[str]:
         if isinstance(cur, dict) and 'thac0_lore' in cur:
             want['thac0_lore'] = cur['thac0_lore']
             want['thac0'] = cur.get('thac0', want.get('thac0'))
+        # How each attack lands (tools/content/tag_attack_delivery.py, the
+        # armour guards): a delivery already written wins, else the rule.
+        if isinstance(want.get('attacks'), list):
+            sys.path.insert(0, str(ROOT / 'src'))
+            from guards import classify
+            had = {a.get('name'): a.get('delivery')
+                   for a in ((cur or {}).get('attacks') or []) if isinstance(a, dict)}
+            want['attacks'] = [dict(a, delivery=had.get(a.get('name')) or a.get('delivery')
+                                    or classify(a)) for a in want['attacks']]
         if cur != want:
             log.append(f'{mid}: {"updated" if mid in data else "added"}')
             data[mid] = want
     for mid, fields in RETUNE.items():
         cur = data[mid]
         for k, v in fields.items():
+            if k == 'attacks' and isinstance(v, list):
+                from guards import classify
+                had = {a.get('name'): a.get('delivery')
+                       for a in (cur.get('attacks') or []) if isinstance(a, dict)}
+                v = [dict(a, delivery=had.get(a.get('name')) or a.get('delivery')
+                          or classify(a)) for a in v]
             if cur.get(k) != v:
                 cur[k] = v
                 log.append(f'{mid}: {k}')

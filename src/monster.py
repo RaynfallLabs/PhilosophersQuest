@@ -1144,7 +1144,13 @@ class Monster:
 
         # -- THAC0 Attack Roll ----------------------------------------------
         d20 = random.randint(1, 20)
-        player_ac = player.get_ac()
+        # A touch ignores body armour and shield (bug bash 3.3.2, 3e "touch
+        # AC"): the gloves guard against it instead (guards.py).
+        import guards as _guards
+        if _guards.delivery(atk) == 'touch':
+            player_ac = _guards.touch_ac(player)
+        else:
+            player_ac = player.get_ac()
         to_hit = self.thac0 - player_ac   # roll must be >= this to hit
         # Chain-equip passive: no_attack_of_opportunity (Sandals of Hermes T3+)
         # re-purposed as "free disengage" — if the player stepped away from
@@ -1316,6 +1322,12 @@ class Monster:
         # Family knowledge that turns this family's fire, cold or holy
         # light aside (Dragon-Ward, Ward of the Elements, Angel's Due).
         dmg = _edge_incoming(player, self, dmg, atk_type)
+        # The minor slots' guards (guards.py): the helm against voice and
+        # gaze, the gloves against touch, the cloak against breath and the
+        # elements... turn aside a share of a matching attack's damage.
+        _keep_d, _keep_r, _guard_piece = _guards.guard_keep(player, atk)
+        if _keep_d < 1.0 and dmg > 0:
+            dmg = max(1, int(round(dmg * _keep_d)))
         actual = player.take_damage(dmg, atk_type)
 
         if getattr(self, '_unseen', False) is True:
@@ -1468,7 +1480,19 @@ class Monster:
             return ''
         chance   = atk.get('effect_chance', 0.30)
         duration = roll_duration(atk.get('effect_duration', 5))
-        if random.random() >= chance:
+        # The minor slots' guards shrug off a matching rider (guards.py):
+        # the helm a stare's paralysis, the boots a slowing, the shirt a
+        # poisoning... The roll that would have landed and did not is told.
+        import guards as _guards
+        _keep_d, keep_r, piece = _guards.guard_keep(player, atk)
+        roll = random.random()
+        if roll >= chance:
+            return ''
+        if roll >= chance * keep_r:
+            if piece is not None:
+                from hud_context import item_bare_name
+                return (f" Your {item_bare_name(player, piece)} turns the "
+                        f"{effect_id.replace('_', ' ')} aside.")
             return ''
         # Reflecting: 50% chance to bounce effect back at attacker
         if player.has_effect('reflecting') and random.random() < 0.50:
