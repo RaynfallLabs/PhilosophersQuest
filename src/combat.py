@@ -892,6 +892,33 @@ def _damage_multiplier(damage_types: list[str], monster) -> float:
 RESISTED = 0.5        # a blow of a kind the creature shrugs off
 WEAK_TO = 1.5         # a blow of a kind, or a metal, it cannot bear
 
+import affinity as _affinity  # noqa: E402
+
+
+def affinity_word(weapon, monster, kind: str) -> str:
+    """What met the creature's weakness (the metal or the blessing first,
+    else the weapon's form that it cannot bear) or its resistance (the
+    weapon's form): the word the affinity line names."""
+    _load_material_tags()
+    weak = set(getattr(monster, 'weaknesses', None) or ())
+    tags = set(getattr(monster, 'tags', None) or ())
+    forms = list(blow_forms_of(weapon))
+    if kind == _affinity.WEAK:
+        if weapon is not None:
+            mat = str(getattr(weapon, 'material', '') or '').lower()
+            subs = [mat] + (['holy'] if getattr(weapon, 'buc', '') == 'blessed' else [])
+            for sub in subs:
+                eff = _MATERIAL_EFFECTIVE_AGAINST.get(sub)
+                if sub and (sub in weak or (eff and eff & tags)
+                            or (sub == 'silver' and tags & {'undead', 'demon'})
+                            or (sub == 'iron' and 'fey' in tags)):
+                    return sub
+        for f in forms:
+            eff = _MATERIAL_EFFECTIVE_AGAINST.get(f)
+            if f in weak or (eff and eff & tags):
+                return f
+    return forms[0] if forms else 'physical'
+
 
 def blow_forms_of(weapon) -> tuple:
     """The ways this weapon wounds (slash, pierce, blunt...), a fist's when
@@ -1490,6 +1517,13 @@ def strike_damage(player, monster, chain: int, *, ranged: bool = False, ammo=Non
     if (_bf_probe or _cb_probe) and _form_mult < 1.0:
         dtype_mult /= _form_mult             # the resistance alone is undone
         _form_mult = 1.0
+
+    # The blow met a weakness or a resistance (its form and substance, after
+    # every bypass): the game says so at the end of the action (affinity.py).
+    if consume:
+        _kind = _affinity.kind_of(_form_mult * _subst_mult)
+        if _kind:
+            _affinity.note(monster, _kind, affinity_word(weapon, monster, _kind))
 
     # round (not int-truncate): chain damage gradient must survive at
     # low base values. With int(), iron sword base=1 gave 1,1,1,1,2

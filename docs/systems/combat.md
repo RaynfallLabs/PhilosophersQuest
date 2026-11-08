@@ -298,6 +298,15 @@ The master lookup is `combat._damage_multiplier(damage_types, monster)` at `comb
 3. Legacy fallback: adds `silver` to weaknesses for undead/demon, `iron` for fey (safety net for pre-material-system monsters).
 4. For each `dt` in `damage_types`, score 1.5 (weakness) / 0.5 (resistance) / 1.0 (neutral). Return `max(scores)`.
 
+**Saying so (3.3.2).** A hit that meets a weakness or a resistance is noted
+(`affinity.note`): the hero's blows and shots by `strike_damage` (its form
+and substance after every bypass, `consume=True` only, so the combat strip's
+preview says nothing), spells, wands and breath by `Monster.take_damage`
+(a burn ticking is not a hit). `Game._advance_turn` drains the notes and
+says one line per way creatures were struck, Pokemon style ("It's super
+effective!", "Not very effective... the skeleton resists a thrust."), from
+`data/affinity_lines.json` (`src/affinity.py`).
+
 The `effective_against` tag is a **1.5× bonus**, not a replacement. A volcanic-iron 2h sword hitting a frost giant (fire-vulnerable AND slash-vulnerable) stacks all layers:
 
 `8 base × 0.95 material × 1.5 material_effective × 1.5 slash-weakness × chain_mult`

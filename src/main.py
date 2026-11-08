@@ -4434,6 +4434,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self._family_drain()               # the hero's family techniques his action used
         self._black_knight_tick()          # what the action did to him: one limb at most
         self.turn_count += 1
+        # A hit that met a weakness or a resistance this action: one line for
+        # each, Pokemon style (affinity.py, data/affinity_lines.json).
+        import affinity as _affinity
+        for _line, _kind in _affinity.say(_affinity.drain()):
+            self.add_message(_line, 'success' if _kind == _affinity.WEAK else 'warning')
         # A Ring of Invisibility's veil settles after its quiet turns (rings.py).
         import rings as _rings
         _veil = _rings.tick(self.player)

@@ -859,6 +859,12 @@ class Monster:
             if ignore_resistance and mult < 1.0:
                 mult = 1.0
             amount = int(amount * mult)
+            # A spell, wand or breath of a kind it is weak to, or resists:
+            # said at the end of the action (affinity.py). A burn ticking is
+            # not a hit.
+            if amount >= 0 and not self.__dict__.get('_dot_tick'):
+                import affinity
+                affinity.note(self, affinity.kind_of(mult), damage_type)
         actual = max(0, amount)
         hp_before = self.hp
         self.hp = max(0, self.hp - actual)

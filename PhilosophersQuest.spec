@@ -54,6 +54,7 @@ added_files = [
     ('data/armor_guards.json',      'data'),   # what each minor armour slot guards (guards.py)
     ('data/enchantments.json',      'data'),   # the minor-slot enchantments (enchantments.py)
     ('data/ring_kinds.json',        'data'),   # the ring and amulet kinds (rings.py)
+    ('data/affinity_lines.json',    'data'),   # weakness / resistance hit lines (affinity.py)
     # Game data — directories
     ('data/items',                  'data/items'),
     ('data/materials',              'data/materials'),

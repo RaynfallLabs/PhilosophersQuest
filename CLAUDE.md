@@ -74,6 +74,7 @@ src/
 
   # Combat, items, magic
   combat.py           - Combat resolution
+  affinity.py         - Weakness and resistance: what a hit met, and the lines that say so
   dice.py             - Dice notation parser ("2d6+3")
   items.py            - Item classes and equipment system
   gear.py             - Armour, shield, ring and amulet rules: levels, tiers, thresholds, core AC
