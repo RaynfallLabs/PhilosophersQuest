@@ -619,6 +619,13 @@ class QuizEngine:
 
         # Timer is set once in start_quiz() and runs continuously -- no reset per question
         self.state = QuizState.ASKING
+        # The previous question's pick belongs to the previous question. Kept,
+        # the renderer drew whichever new card had the same text as "selected"
+        # (a lit border on, say, the "12" of the next sum: about one combat
+        # question in twelve shared a number with the last answer). Bug bash
+        # 3.3.2. Readers of the pick (the missed-question log, the quirk
+        # tally) run in answer() / the timeout, before this.
+        self.last_answer = ''
         # Each question starts at the top; a long previous question must not
         # leave this one pre-scrolled.
         self._quiz_scroll_offset = 0
