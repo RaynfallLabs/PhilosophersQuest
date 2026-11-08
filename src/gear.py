@@ -149,6 +149,22 @@ def level_for_tier(tier: int, greater: bool = False) -> int:
     return 2 * t if greater else 2 * t - 1
 
 
+def loot_split() -> dict:
+    return {k: float(v) for k, v in rules()['loot_split'].items() if not k.startswith('_')}
+
+
+def pick_gear_class(rng) -> str:
+    """'weapon', 'armor' or 'shield' for a find of common gear, by the loot
+    split (45 / 45 / 10)."""
+    split = loot_split()
+    r, acc = rng.random() * sum(split.values()), 0.0
+    for cls, w in split.items():
+        acc += w
+        if r <= acc:
+            return cls
+    return 'weapon'
+
+
 def wears_flag(holder, flag: str) -> bool:
     """Any worn ring, amulet, belt or armour piece of ``holder`` with ``flag``
     set (the Hand of Glory's silent walk on a ring, Elvenkind's on boots).

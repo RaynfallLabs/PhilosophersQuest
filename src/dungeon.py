@@ -1557,20 +1557,16 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon,
     # shield.json entries still load for UNIQUE/NAMED items, which spawn via
     # the secondary pool below — never duplicated against the procedurally-
     # generated set.
-    _ARMOR_SLOTS_FOR_DROP = ('body', 'head', 'hands', 'feet', 'legs', 'arms', 'cloak')
+    from items import pick_random_gear_for_floor
     for room in loot_rooms:
         if rng.random() > ROOM_GEAR_CHANCE:
             continue
-        # 60% weapon, 20% armor piece, 15% shield, 5% nothing-special
-        roll = rng.random()
-        gear = None
-        if roll < 0.60:
-            gear = pick_random_weapon_for_floor(level, rng)
-        elif roll < 0.80:
-            slot = rng.choice(_ARMOR_SLOTS_FOR_DROP)
-            gear = pick_random_armor_for_floor(level, rng, slot=slot)
-        elif roll < 0.95:
-            gear = pick_random_shield_for_floor(level, rng)
+        # 5% of rolls find nothing special; the rest is weapon / armour piece
+        # (any of the eight slots, the shirt included) / shield by the loot
+        # split, 45 / 45 / 10 (data/gear_rules.json; it was 60 / 20 / 15).
+        if rng.random() >= 0.95:
+            continue
+        gear = pick_random_gear_for_floor(level, rng)
         if gear is not None:
             _place_one([gear], room, dungeon, ground_items, rng)
 
@@ -1971,8 +1967,7 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon,
                 if rng.random() < 0.5:
                     gear = pick_random_weapon_for_floor(level, rng)
                 else:
-                    gear = pick_random_armor_for_floor(
-                        level, rng, slot=rng.choice(_ARMOR_SLOTS_FOR_DROP))
+                    gear = pick_random_armor_for_floor(level, rng)   # any slot
                 if gear is not None:
                     _place_one([gear], special_room, dungeon, ground_items, rng)
 

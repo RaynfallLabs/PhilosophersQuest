@@ -11,6 +11,13 @@
     "plain_end": 0.15
   },
 
+  "loot_split": {
+    "_doc": "What a find of common gear is (Brandon's ruling, revision 2: armour has seven more slots than a weapon, so as many armour pieces as weapons): weapon / armour / shield. An armour find is any of the eight slots, evenly (pick_random_armor_for_floor). Floor rooms, monster drops and chests' gear all roll it (gear.pick_gear_class).",
+    "weapon": 0.45,
+    "armor":  0.45,
+    "shield": 0.10
+  },
+
   "weight_class_bells": {
     "_doc": "Which weight class of template a find is, by floor: [peak, spread, first floor]. Plate on floor 3 was the early-AC spike of the first model pass.",
     "light":  [1, 30, 1],

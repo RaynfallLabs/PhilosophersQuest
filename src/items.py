@@ -2678,6 +2678,18 @@ def pick_random_weapon_for_floor(floor: int, rng) -> Weapon | None:
     return instantiate_weapon(tid, chosen_mid)
 
 
+def pick_random_gear_for_floor(floor: int, rng):
+    """A find of common gear: a weapon, an armour piece (any slot) or a
+    shield by the loot split (gear.pick_gear_class, 45 / 45 / 10)."""
+    import gear
+    cls = gear.pick_gear_class(rng)
+    if cls == 'armor':
+        return pick_random_armor_for_floor(floor, rng)
+    if cls == 'shield':
+        return pick_random_shield_for_floor(floor, rng)
+    return pick_random_weapon_for_floor(floor, rng)
+
+
 def pick_random_armor_for_floor(floor: int, rng, slot: str | None = None) -> 'Armor | None':
     """Pick a random armor template+material pair for this floor + slot.
     Filters templates to those that BOTH match the slot AND accept the
@@ -2727,10 +2739,13 @@ def _template_then_material(templates, materials, floor: int, rng, *,
     """(template id, material id) for a find on `floor`. The template comes
     first, by its weight class's depth bell (gear.py), then a material it
     accepts by the materials' own bells. Material first, a metal on floor 3
-    could only be plate (the early-AC spike the model found)."""
+    could only be plate (the early-AC spike the model found). A template
+    with no material found this deep yet (a steel helm on floor 5) drops out
+    and another is chosen: six blind tries lost up to one find in six there."""
     import gear
-    for _try in range(6):
-        pick = gear.pick_template(templates, floor, rng)
+    options = list(templates)
+    while options:
+        pick = gear.pick_template(options, floor, rng)
         if pick is None:
             return None
         tid, t = pick
@@ -2754,6 +2769,7 @@ def _template_then_material(templates, materials, floor: int, rng, *,
                 if r <= cum:
                     return tid, mid
             return tid, weighted[-1][0]
+        options = [o for o in options if o[0] != tid]
     return None
 
 

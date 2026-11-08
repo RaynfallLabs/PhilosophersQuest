@@ -1667,14 +1667,12 @@ class CombatMixin:
         from items import loot_floor
         effective_floor = max(_here, min(tier * 5, loot_floor(_here, tier * 5)))
 
-        # 50% weapon/armor/shield (template+material common), 50% magic item pool
+        # 50% weapon/armor/shield (template+material common) by the loot
+        # split (45 / 45 / 10, gear.pick_gear_class), 50% magic item pool
         roll = _rng.random()
-        if roll < 0.30:
-            gear = pick_random_weapon_for_floor(effective_floor, _rng)
-        elif roll < 0.40:
-            gear = pick_random_armor_for_floor(effective_floor, _rng)
-        elif roll < 0.50:
-            gear = pick_random_shield_for_floor(effective_floor, _rng)
+        if roll < 0.50:
+            from items import pick_random_gear_for_floor
+            gear = pick_random_gear_for_floor(effective_floor, _rng)
         else:
             gear = None
             candidates = []

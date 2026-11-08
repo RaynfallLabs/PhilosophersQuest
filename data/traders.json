@@ -75,7 +75,7 @@
         {"class": "potion", "picks": 2}, {"class": "scroll", "picks": 2},
         {"class": "accessory", "picks": 2}, {"class": "wand", "picks": 2},
         {"class": "ammo", "picks": 2},
-        {"gear": "weapon", "picks": 2}, {"gear": "armor", "picks": 2}, {"gear": "shield", "picks": 2},
+        {"gear": "weapon", "picks": 2}, {"gear": "armor", "picks": 3}, {"gear": "shield", "picks": 1},
         {"id": "soul_sphere", "cat": "artifact", "chance": 0.25, "floors": [1, 33]},
         {"id": "soul_sphere", "cat": "artifact", "chance": 0.12, "floors": [34, 66]},
         {"id": "greater_soul_sphere", "cat": "artifact", "chance": 0.15, "floors": [34, 66]},
@@ -152,7 +152,7 @@
       "sprite": "trader_armourer", "sprite_fallback": "npc_dwarf",
       "lore": "Ulf Brannoc followed a king's army down twenty years ago as its armourer. The army never came back up. Brannoc stayed, to mend whatever does, and he is very good at it. He is less good at small talk.",
       "stock": [
-        {"gear": "weapon", "picks": 2}, {"gear": "armor", "picks": 2}, {"gear": "shield", "picks": 1},
+        {"gear": "weapon", "picks": 2}, {"gear": "armor", "picks": 3}, {"gear": "shield", "picks": 1},
         {"class": "ammo", "picks": 1}
       ],
       "stock_size": [[1, 100, 5]],
