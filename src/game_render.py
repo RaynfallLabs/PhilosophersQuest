@@ -2779,11 +2779,19 @@ class RenderMixin:
             + section_gap + status_h + (band + S(8) if kit else PAD)
 
         q_text = display_text(qe.current_question.get('question', ''))
-        choices = [display_text(c) for c in qe.current_question.get('choices', [])]
+        # ``choice_answers`` are the bank's own strings in the same display
+        # order: the right / wrong marking compares THOSE with the answer.
+        # Compared on the screen form, a "--" in an answer (an em dash on
+        # screen) matched nothing and no card ever went green: 238 grammar
+        # questions in 1,029 (bug bash 3.3.2). Study Mode always did this.
+        raw_choices = [str(c) for c in qe.current_question.get('choices', [])]
+        choices = [display_text(c) for c in raw_choices]
         if qe.confused_order and len(qe.confused_order) == len(choices):
             display_choices = [choices[i] for i in qe.confused_order]
+            choice_answers = [raw_choices[i] for i in qe.confused_order]
         else:
             display_choices = choices
+            choice_answers = raw_choices
         # Two columns; every bank question has four choices (two rows), but
         # a malformed question with more extends the grid downward (and the
         # shrink-then-scroll ladder below copes with the extra height)
@@ -2926,6 +2934,7 @@ class RenderMixin:
             'content_h': content_h,
             'visible_scroll_h': visible_scroll_h,
             'display_choices': display_choices,
+            'choice_answers': choice_answers,
             'bw': bw, 'bx': bx, 'by': by, 'bh': bh,
             'cw': cw, 'PAD': PAD, 'GAP': GAP, 'band': band, 'inset': inset,
             'header_h': header_h, 'timer_h': timer_h,
@@ -3058,6 +3067,7 @@ class RenderMixin:
         q_height    = L['question_rect'].height
         c_wrapped   = L['c_wrapped']
         display_choices = L['display_choices']
+        choice_answers  = L['choice_answers']
 
         # Effects background pass -- the chain aura paints a soft border
         # glow around the panel here. Runs BEFORE the opaque panel so
@@ -3258,7 +3268,7 @@ class RenderMixin:
         selected    = qe.last_answer.strip()
         in_result   = (qe.state == QuizState.RESULT)
 
-        for i, (choice, wrapped_lines) in enumerate(zip(display_choices, c_wrapped)):
+        for i, (raw_choice, wrapped_lines) in enumerate(zip(choice_answers, c_wrapped)):
             card = choice_rects[i]
 
             # Skip entirely-offscreen cards when scrolling (cheap cull).
@@ -3266,7 +3276,8 @@ class RenderMixin:
                                or card.y > scroll_rect.bottom):
                 continue
 
-            c_str       = str(choice).strip()
+            # The bank's string, not its screen form (see _quiz_layout).
+            c_str       = str(raw_choice).strip()
             is_correct  = c_str == correct_str
             is_selected = bool(selected) and c_str == selected
 
