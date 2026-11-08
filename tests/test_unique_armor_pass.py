@@ -73,7 +73,9 @@ def test_every_new_piece_loads_is_named_and_has_art_and_a_story():
 
 def test_a_new_piece_is_no_weaker_than_plain_armor_of_its_floor():
     """Lore decides what it is; the floor it sits on must still be one where
-    that much armor belongs: at least the middle plain piece for the slot."""
+    that much armor belongs: at least the middle plain piece for the slot.
+    Since bug bash 3.3.2 only body armour and shields give AC (base + plus);
+    a minor piece is weighed by its enchantment level instead."""
     # Plain armor is no longer listed in armor.json (every entry there is a
     # unique); it is built from templates x materials for the floor. The old
     # version of this test looked for plain entries in armor.json, found
@@ -82,14 +84,20 @@ def test_a_new_piece_is_no_weaker_than_plain_armor_of_its_floor():
     import statistics
     from items import pick_random_armor_for_floor
     armor = _data('items/armor.json')
+    import gear
     for iid in NEW_ARMOR:
         d = armor[iid]
         rng = random.Random(iid)
-        near = [a.ac_bonus for a in
-                (pick_random_armor_for_floor(d['peak_floor'], rng, slot=d['slot'])
-                 for _ in range(60)) if a is not None]
-        assert near, (iid, d['slot'], d['peak_floor'])
-        assert d['ac_bonus'] >= statistics.median(near) - 1, (iid, d['ac_bonus'], near)
+        found = [a for a in (pick_random_armor_for_floor(d['peak_floor'], rng, slot=d['slot'])
+                             for _ in range(60)) if a is not None]
+        assert found, (iid, d['slot'], d['peak_floor'])
+        if d['slot'] in gear.CORE_SLOTS:
+            near = [a.ac_bonus + a.enchant_bonus for a in found]
+            mine = d['ac_bonus'] + d['enchant_bonus']
+        else:
+            near = [a.ench_level for a in found]
+            mine = d['ench_level']
+        assert mine >= statistics.median(near) - 1, (iid, mine, near)
 
 
 def test_every_slot_has_a_named_piece_to_find_early_middle_and_late():

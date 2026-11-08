@@ -944,6 +944,11 @@ class Armor(Item):
         self.equip_chain_subject: str = defn.get('equip_chain_subject', '')
         self.tier_bonuses: dict      = defn.get('tier_bonuses', {})
         self.achieved_tier: int      = 0   # runtime — set after equip quiz
+        if self.is_unique and self.ench_id and self.ench_level > 0:
+            # A named minor piece's enchantment (data/items/armor.json, chosen
+            # by its lore): its power, keeping its own name and card text.
+            import enchantments
+            enchantments.apply_named(self)
 
     @property
     def cursed(self) -> bool:

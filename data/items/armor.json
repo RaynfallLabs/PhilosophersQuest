@@ -10,12 +10,12 @@
     "weight": 16.0,
     "min_level": 65,
     "slot": "body",
-    "tier": 4,
+    "tier": 5,
     "material": "adamantine",
-    "ac_bonus": 7,
-    "enchant_bonus": 0,
+    "ac_bonus": 3,
+    "enchant_bonus": 5,
     "equip_threshold": 4,
-    "quiz_tier": 4,
+    "quiz_tier": 5,
     "damage_resistances": {
       "slash": 0.5,
       "pierce": 0.6,
@@ -35,7 +35,8 @@
     "template_basis": "hide",
     "is_unique": true,
     "unskinnable": true,
-    "special": "Halves every cut, stab and blow, on top of its resistances."
+    "special": "Halves every cut, stab and blow, on top of its resistances.",
+    "ench_level": 10
   },
   "carapace_of_the_hydra": {
     "name": "Carapace of the Hydra",
@@ -48,12 +49,12 @@
     "weight": 30.0,
     "min_level": 60,
     "slot": "body",
-    "tier": 4,
+    "tier": 5,
     "material": "adamantine",
-    "ac_bonus": 7,
-    "enchant_bonus": 0,
-    "equip_threshold": 4,
-    "quiz_tier": 4,
+    "ac_bonus": 4,
+    "enchant_bonus": 5,
+    "equip_threshold": 5,
+    "quiz_tier": 5,
     "damage_resistances": {
       "poison": 0.35,
       "cold": 0.8,
@@ -76,7 +77,8 @@
     "template_basis": "scale",
     "is_unique": true,
     "caustic_blood": 0.4,
-    "special": "A monster that poisons you has a 40% chance of being poisoned itself."
+    "special": "A monster that poisons you has a 40% chance of being poisoned itself.",
+    "ench_level": 10
   },
   "panoply_of_hephaestus": {
     "name": "Panoply of Hephaestus",
@@ -89,12 +91,12 @@
     "weight": 65.0,
     "min_level": 70,
     "slot": "body",
-    "tier": 4,
+    "tier": 5,
     "material": "adamantine",
     "ac_bonus": 8,
-    "enchant_bonus": 0,
-    "equip_threshold": 4,
-    "quiz_tier": 4,
+    "enchant_bonus": 5,
+    "equip_threshold": 5,
+    "quiz_tier": 5,
     "damage_resistances": {
       "slash": 0.8,
       "pierce": 0.8,
@@ -117,7 +119,8 @@
     "template_basis": "full_plate",
     "is_unique": true,
     "divine_smithing": 1,
-    "special": "While it is worn, your weapon can be enchanted one step higher."
+    "special": "While it is worn, your weapon can be enchanted one step higher.",
+    "ench_level": 10
   },
   "dragon_mail_of_sigurd": {
     "name": "Dragon-Sewn Mail of Sigurd",
@@ -130,12 +133,12 @@
     "weight": 24.0,
     "min_level": 65,
     "slot": "body",
-    "tier": 4,
+    "tier": 5,
     "material": "adamantine",
     "ac_bonus": 7,
     "enchant_bonus": 0,
-    "equip_threshold": 4,
-    "quiz_tier": 4,
+    "equip_threshold": 5,
+    "quiz_tier": 5,
     "damage_resistances": {
       "fire": 0.5,
       "slash": 0.75,
@@ -209,9 +212,9 @@
     "slot": "body",
     "tier": 5,
     "material": "legendary",
-    "ac_bonus": 8,
-    "enchant_bonus": 0,
-    "equip_threshold": 4,
+    "ac_bonus": 5,
+    "enchant_bonus": 5,
+    "equip_threshold": 5,
     "quiz_tier": 5,
     "damage_resistances": {
       "slash": 0.75,
@@ -235,7 +238,8 @@
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
     "maid_does_not_fall": true,
-    "special": "Once a floor, a blow that would kill you leaves you at 1 health. Blessed while worn."
+    "special": "Once a floor, a blow that would kill you leaves you at 1 health. Blessed while worn.",
+    "ench_level": 10
   },
   "lorica_hamata_of_caesar": {
     "name": "Lorica of Caesar",
@@ -248,12 +252,12 @@
     "weight": 20.0,
     "min_level": 50,
     "slot": "body",
-    "tier": 3,
+    "tier": 4,
     "material": "adamantine",
-    "ac_bonus": 7,
-    "enchant_bonus": 0,
+    "ac_bonus": 3,
+    "enchant_bonus": 4,
     "equip_threshold": 4,
-    "quiz_tier": 3,
+    "quiz_tier": 4,
     "damage_resistances": {
       "slash": 0.75,
       "pierce": 0.8
@@ -275,7 +279,8 @@
     "template_basis": "chain_shirt",
     "is_unique": true,
     "et_tu_charge": true,
-    "special": "The first monster to wound you is marked: you deal half again as much damage to it."
+    "special": "The first monster to wound you is marked: you deal half again as much damage to it.",
+    "ench_level": 8
   },
   "orichalcum_breastplate": {
     "name": "Orichalcum Breastplate",
@@ -288,12 +293,12 @@
     "weight": 20.0,
     "min_level": 65,
     "slot": "body",
-    "tier": 4,
+    "tier": 5,
     "material": "adamantine",
-    "ac_bonus": 7,
-    "enchant_bonus": 0,
-    "equip_threshold": 4,
-    "quiz_tier": 4,
+    "ac_bonus": 5,
+    "enchant_bonus": 5,
+    "equip_threshold": 5,
+    "quiz_tier": 5,
     "damage_resistances": {
       "magic": 0.65,
       "fire": 0.8,
@@ -316,7 +321,8 @@
     "template_basis": "breastplate",
     "is_unique": true,
     "atlantean_resonance": 30,
-    "special": "Now and then it hums, and for that moment you are Shielded."
+    "special": "Now and then it hums, and for that moment you are Shielded.",
+    "ench_level": 10
   },
   "helm_of_hades": {
     "name": "Helm of Darkness",
@@ -329,12 +335,12 @@
     "weight": 3.0,
     "min_level": 65,
     "slot": "head",
-    "tier": 4,
+    "tier": 5,
     "material": "adamantine",
-    "ac_bonus": 5,
+    "ac_bonus": 0,
     "enchant_bonus": 0,
-    "equip_threshold": 4,
-    "quiz_tier": 4,
+    "equip_threshold": 5,
+    "quiz_tier": 5,
     "damage_resistances": {
       "magic": 0.6,
       "poison": 0.8
@@ -358,31 +364,29 @@
     "equip_chain_mode": "escalator_chain",
     "tier_bonuses": {
       "1": {
-        "ac_bonus": 3
+        "passive_stealth_in_dark": true
       },
       "2": {
-        "ac_bonus": 3,
         "passive_stealth_in_dark": true
       },
       "3": {
-        "ac_bonus": 4,
         "passive_stealth_in_dark": true,
         "passive_invisible_to_undead": true
       },
       "4": {
-        "ac_bonus": 4,
         "passive_stealth_in_dark": true,
         "passive_invisible_to_undead": true,
         "passive_phase_step_once_per_floor": true
       },
       "5": {
-        "ac_bonus": 5,
         "passive_stealth_in_dark": true,
         "passive_invisible_to_undead": true,
         "passive_phase_step_once_per_floor": true,
         "passive_unseen_when_still": true
       }
-    }
+    },
+    "ench_id": "night_eyes",
+    "ench_level": 10
   },
   "helm_of_achilles": {
     "name": "Helm of Achilles",
@@ -395,12 +399,12 @@
     "weight": 4.0,
     "min_level": 60,
     "slot": "head",
-    "tier": 4,
+    "tier": 5,
     "material": "adamantine",
-    "ac_bonus": 5,
+    "ac_bonus": 0,
     "enchant_bonus": 0,
-    "equip_threshold": 4,
-    "quiz_tier": 4,
+    "equip_threshold": 5,
+    "quiz_tier": 5,
     "damage_resistances": {
       "slash": 0.8,
       "fire": 0.9,
@@ -423,7 +427,9 @@
     "template_basis": "plate_helm",
     "is_unique": true,
     "ringing_intimidation": 3,
-    "special": "Each monster that first sees you has a 40% chance of fleeing in fear."
+    "special": "Each monster that first sees you has a 40% chance of fleeing in fear.",
+    "ench_id": "iron_will",
+    "ench_level": 10
   },
   "great_helm_of_galahad": {
     "name": "Great Helm of Galahad",
@@ -436,12 +442,12 @@
     "weight": 5.0,
     "min_level": 60,
     "slot": "head",
-    "tier": 4,
+    "tier": 5,
     "material": "adamantine",
-    "ac_bonus": 5,
+    "ac_bonus": 0,
     "enchant_bonus": 0,
-    "equip_threshold": 4,
-    "quiz_tier": 4,
+    "equip_threshold": 5,
+    "quiz_tier": 5,
     "damage_resistances": {
       "magic": 0.7,
       "slash": 0.85
@@ -463,7 +469,9 @@
     "template_basis": "great_helm",
     "is_unique": true,
     "purity": true,
-    "special": "Lifts the curse from everything you wear, and from anything you put on later."
+    "special": "Lifts the curse from everything you wear, and from anything you put on later.",
+    "ench_id": "true_sight",
+    "ench_level": 10
   },
   "vambraces_of_achilles": {
     "name": "Vambraces of Achilles",
@@ -476,12 +484,12 @@
     "weight": 3.0,
     "min_level": 60,
     "slot": "arms",
-    "tier": 4,
+    "tier": 5,
     "material": "legendary",
-    "ac_bonus": 4,
+    "ac_bonus": 0,
     "enchant_bonus": 0,
-    "equip_threshold": 4,
-    "quiz_tier": 4,
+    "equip_threshold": 5,
+    "quiz_tier": 5,
     "damage_resistances": {
       "slash": 0.8,
       "pierce": 0.8,
@@ -503,7 +511,9 @@
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
     "peace_at_the_forge": 2,
-    "special": "Standing on an altar restores 2 mana and 2 stamina a turn."
+    "special": "Standing on an altar restores 2 mana and 2 stamina a turn.",
+    "ench_id": "deflection",
+    "ench_level": 10
   },
   "gauntlets_of_mars": {
     "name": "Gauntlets of Mars",
@@ -516,12 +526,12 @@
     "weight": 2.0,
     "min_level": 36,
     "slot": "hands",
-    "tier": 3,
+    "tier": 4,
     "material": "legendary",
-    "ac_bonus": 3,
+    "ac_bonus": 0,
     "enchant_bonus": 0,
-    "equip_threshold": 3,
-    "quiz_tier": 3,
+    "equip_threshold": 5,
+    "quiz_tier": 4,
     "damage_resistances": {
       "blunt": 0.8,
       "slash": 0.85
@@ -542,7 +552,9 @@
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
     "boundary_guardian": true,
-    "special": "Armor improves by 1 while you stand beside a door."
+    "special": "Armor improves by 1 while you stand beside a door.",
+    "ench_id": "life_grip",
+    "ench_level": 8
   },
   "greaves_of_hermes": {
     "name": "Greaves of Hermes",
@@ -557,9 +569,9 @@
     "slot": "feet",
     "tier": 4,
     "material": "adamantine",
-    "ac_bonus": 3,
+    "ac_bonus": 0,
     "enchant_bonus": 0,
-    "equip_threshold": 4,
+    "equip_threshold": 3,
     "quiz_tier": 4,
     "damage_resistances": {
       "magic": 0.75,
@@ -582,7 +594,9 @@
     "template_basis": "leather_boots",
     "is_unique": true,
     "onEquipStatus": "hasted",
-    "special": "Hasted while worn."
+    "special": "Hasted while worn.",
+    "ench_id": "speed",
+    "ench_level": 8
   },
   "cloak_of_the_morrigan": {
     "name": "Cloak of the Morrigan",
@@ -595,12 +609,12 @@
     "weight": 2.0,
     "min_level": 60,
     "slot": "cloak",
-    "tier": 4,
+    "tier": 5,
     "material": "adamantine",
-    "ac_bonus": 3,
+    "ac_bonus": 0,
     "enchant_bonus": 0,
     "equip_threshold": 4,
-    "quiz_tier": 4,
+    "quiz_tier": 5,
     "damage_resistances": {
       "magic": 0.65,
       "poison": 0.75,
@@ -625,34 +639,31 @@
     "equip_chain_mode": "escalator_chain",
     "tier_bonuses": {
       "1": {
-        "ac_bonus": 2,
         "resistance_magic": 1
       },
       "2": {
-        "ac_bonus": 3,
         "resistance_magic": 1,
         "resistance_poison": 1
       },
       "3": {
-        "ac_bonus": 3,
         "resistance_magic": 1,
         "resistance_poison": 1,
         "passive_raven_scout": true
       },
       "4": {
-        "ac_bonus": 3,
         "resistance_magic": 2,
         "resistance_poison": 1,
         "passive_raven_scout_extended": true
       },
       "5": {
-        "ac_bonus": 4,
         "resistance_magic": 2,
         "resistance_poison": 1,
         "passive_raven_scout_extended": true,
         "passive_death_omen_mark": true
       }
-    }
+    },
+    "ench_id": "displacement",
+    "ench_level": 10
   },
   "leggings_of_enkidu": {
     "name": "Leggings of Enkidu",
@@ -665,12 +676,12 @@
     "weight": 3.0,
     "min_level": 24,
     "slot": "legs",
-    "tier": 2,
+    "tier": 3,
     "material": "adamantine",
-    "ac_bonus": 3,
+    "ac_bonus": 0,
     "enchant_bonus": 0,
-    "equip_threshold": 4,
-    "quiz_tier": 2,
+    "equip_threshold": 3,
+    "quiz_tier": 3,
     "damage_resistances": {
       "slash": 0.8,
       "blunt": 0.8,
@@ -693,7 +704,9 @@
     "template_basis": "leather_leggings",
     "is_unique": true,
     "wild_friend": 0.2,
-    "special": "Your pet takes a fifth less damage."
+    "special": "Your pet takes a fifth less damage.",
+    "ench_id": "mailed_shins",
+    "ench_level": 6
   },
   "mantle_of_elijah": {
     "name": "Mantle of Elijah",
@@ -706,12 +719,12 @@
     "weight": 2.0,
     "min_level": 17,
     "slot": "cloak",
-    "tier": 2,
+    "tier": 3,
     "material": "legendary",
-    "ac_bonus": 3,
+    "ac_bonus": 0,
     "enchant_bonus": 0,
-    "equip_threshold": 2,
-    "quiz_tier": 2,
+    "equip_threshold": 3,
+    "quiz_tier": 3,
     "damage_resistances": {
       "fire": 0.7,
       "magic": 0.8
@@ -732,7 +745,9 @@
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
     "prophets_passing": true,
-    "special": "+3 maximum mana while worn."
+    "special": "+3 maximum mana while worn.",
+    "ench_id": "elementward",
+    "ench_level": 6
   },
   "robe_of_the_magus": {
     "name": "Robe of the Magus",
@@ -745,12 +760,12 @@
     "weight": 2.0,
     "min_level": 25,
     "slot": "shirt",
-    "tier": 2,
+    "tier": 3,
     "material": "legendary",
-    "ac_bonus": 3,
+    "ac_bonus": 0,
     "enchant_bonus": 0,
     "equip_threshold": 3,
-    "quiz_tier": 2,
+    "quiz_tier": 3,
     "damage_resistances": {
       "magic": 0.7,
       "fire": 0.9,
@@ -774,26 +789,22 @@
     "equip_chain_mode": "escalator_chain",
     "tier_bonuses": {
       "1": {
-        "ac_bonus": 2,
         "passive_mp_bonus": 5,
         "stat_bonus_INT": 1,
         "resistance_magic": 1
       },
       "2": {
-        "ac_bonus": 3,
         "passive_mp_bonus": 10,
         "stat_bonus_INT": 1,
         "resistance_magic": 1
       },
       "3": {
-        "ac_bonus": 3,
         "passive_mp_bonus": 15,
         "stat_bonus_INT": 2,
         "resistance_magic": 2,
         "passive_free_cast_once_per_floor": true
       },
       "4": {
-        "ac_bonus": 3,
         "passive_mp_bonus": 15,
         "stat_bonus_INT": 2,
         "resistance_magic": 2,
@@ -801,7 +812,6 @@
         "passive_spell_crit": 10
       },
       "5": {
-        "ac_bonus": 3,
         "passive_mp_bonus": 20,
         "stat_bonus_INT": 3,
         "resistance_magic": 2,
@@ -809,7 +819,9 @@
         "passive_spell_crit": 10,
         "passive_double_cast_at_peak_tier": true
       }
-    }
+    },
+    "ench_id": "the_hair_shirt",
+    "ench_level": 6
   },
   "boots_of_seven_leagues": {
     "name": "Boots of Seven Leagues",
@@ -824,9 +836,9 @@
     "slot": "feet",
     "tier": 4,
     "material": "adamantine",
-    "ac_bonus": 3,
+    "ac_bonus": 0,
     "enchant_bonus": 0,
-    "equip_threshold": 4,
+    "equip_threshold": 3,
     "quiz_tier": 4,
     "damage_resistances": {
       "magic": 0.8
@@ -849,7 +861,9 @@
     "template_basis": "leather_boots",
     "is_unique": true,
     "seven_league_step": true,
-    "special": "Hasted while worn. Once a floor, a power dashes you up to 7 tiles."
+    "special": "Hasted while worn. Once a floor, a power dashes you up to 7 tiles.",
+    "ench_id": "speed",
+    "ench_level": 8
   },
   "brigandine_of_william_wallace": {
     "name": "Brigandine of Wallace",
@@ -862,12 +876,12 @@
     "weight": 30.0,
     "min_level": 50,
     "slot": "body",
-    "tier": 3,
+    "tier": 4,
     "material": "adamantine",
-    "ac_bonus": 7,
-    "enchant_bonus": 0,
+    "ac_bonus": 4,
+    "enchant_bonus": 4,
     "equip_threshold": 4,
-    "quiz_tier": 3,
+    "quiz_tier": 4,
     "damage_resistances": {
       "slash": 0.8,
       "pierce": 0.75
@@ -889,7 +903,8 @@
     "template_basis": "scale",
     "is_unique": true,
     "guerrilla_terrain": true,
-    "special": "Armor improves by 2 in a corridor or with your back in a corner."
+    "special": "Armor improves by 2 in a corridor or with your back in a corner.",
+    "ench_level": 8
   },
   "cuirass_of_hannibal": {
     "name": "Cuirass of Hannibal",
@@ -902,12 +917,12 @@
     "weight": 20.0,
     "min_level": 55,
     "slot": "body",
-    "tier": 4,
+    "tier": 5,
     "material": "adamantine",
-    "ac_bonus": 7,
-    "enchant_bonus": 0,
-    "equip_threshold": 4,
-    "quiz_tier": 4,
+    "ac_bonus": 5,
+    "enchant_bonus": 5,
+    "equip_threshold": 5,
+    "quiz_tier": 5,
     "damage_resistances": {
       "slash": 0.75,
       "blunt": 0.85,
@@ -930,17 +945,18 @@
     "template_basis": "breastplate",
     "is_unique": true,
     "cannae_encirclement": true,
-    "special": "With three or more enemies beside you, armor improves by 2 and your blows land harder."
+    "special": "With three or more enemies beside you, armor improves by 2 and your blows land harder.",
+    "ench_level": 10
   },
   "aegishjalmr": {
     "name": "Aegishjalmr",
     "slot": "head",
-    "tier": 2,
+    "tier": 3,
     "material": "mithril",
-    "ac_bonus": 3,
+    "ac_bonus": 0,
     "enchant_bonus": 0,
-    "equip_threshold": 2,
-    "quiz_tier": 2,
+    "equip_threshold": 4,
+    "quiz_tier": 3,
     "damage_resistances": {
       "fire": 0.6,
       "magic": 0.7
@@ -973,42 +989,39 @@
     "equip_chain_mode": "escalator_chain",
     "tier_bonuses": {
       "1": {
-        "ac_bonus": 2,
         "resistance_fear": 1
       },
       "2": {
-        "ac_bonus": 3,
         "resistance_fear": 2
       },
       "3": {
-        "ac_bonus": 3,
         "resistance_fear": 2,
         "resistance_magic": 1,
         "passive_fafnirs_glare": true
       },
       "4": {
-        "ac_bonus": 3,
         "resistance_fear": 2,
         "resistance_magic": 1,
         "resistance_fire": 1,
         "passive_fafnirs_glare": true
       },
       "5": {
-        "ac_bonus": 4,
         "resistance_fear": 2,
         "resistance_magic": 2,
         "resistance_fire": 1,
         "passive_fafnirs_glare": true,
         "passive_no_man_dares": true
       }
-    }
+    },
+    "ench_id": "the_reader",
+    "ench_level": 6
   },
   "winged_sandals_of_hermes": {
     "name": "Winged Sandals of Hermes",
     "slot": "feet",
     "tier": 3,
     "material": "gold",
-    "ac_bonus": 3,
+    "ac_bonus": 0,
     "enchant_bonus": 0,
     "equip_threshold": 3,
     "quiz_tier": 3,
@@ -1043,43 +1056,40 @@
     "equip_chain_mode": "chain",
     "tier_bonuses": {
       "1": {
-        "ac_bonus": 2,
         "status_hasted": 999
       },
       "2": {
-        "ac_bonus": 3,
         "status_hasted": 999,
         "resistance_magic": 1
       },
       "3": {
-        "ac_bonus": 3,
         "status_hasted": 999,
         "resistance_magic": 1,
         "passive_no_attack_of_opportunity": true
       },
       "4": {
-        "ac_bonus": 3,
         "status_hasted": 999,
         "resistance_magic": 1,
         "passive_no_attack_of_opportunity": true,
         "passive_free_escape_once_per_floor": true
       },
       "5": {
-        "ac_bonus": 3,
         "status_hasted": 999,
         "resistance_magic": 1,
         "passive_no_attack_of_opportunity": true,
         "passive_free_escape_once_per_floor": true,
         "passive_psychopomp_step": true
       }
-    }
+    },
+    "ench_id": "levitation",
+    "ench_level": 6
   },
   "hermes_sandals_early": {
     "name": "Hermes's Sandals",
     "slot": "feet",
     "tier": 1,
     "material": "leather",
-    "ac_bonus": 2,
+    "ac_bonus": 0,
     "enchant_bonus": 0,
     "equip_threshold": 2,
     "quiz_tier": 1,
@@ -1113,16 +1123,18 @@
     "is_unique": true,
     "on_equip_status": "",
     "dodge_first_arrow_per_floor": true,
-    "special": "The first arrow, bolt or hex aimed at you on each floor misses."
+    "special": "The first arrow, bolt or hex aimed at you on each floor misses.",
+    "ench_id": "the_wanderer",
+    "ench_level": 2
   },
   "blindfold": {
     "name": "blindfold",
     "slot": "head",
-    "tier": 2,
+    "tier": 3,
     "material": "cloth",
     "ac_bonus": 0,
-    "equip_threshold": 2,
-    "quiz_tier": 2,
+    "equip_threshold": 3,
+    "quiz_tier": 3,
     "damage_resistances": {},
     "can_be_cursed": false,
     "enchant_bonus": 0,
@@ -1151,7 +1163,9 @@
     "on_equip_status": "blinded",
     "id_level": 0,
     "tremor_sense": 3,
-    "special": "Blinded while worn, but you feel every monster within 3 tiles, and no gaze can catch you."
+    "special": "Blinded while worn, but you feel every monster within 3 tiles, and no gaze can catch you.",
+    "ench_id": "iron_will",
+    "ench_level": 6
   },
   "trainers_cap": {
     "name": "Trainer's Cap",
@@ -1189,7 +1203,9 @@
     "_meta": {
       "spawn_method": "easter_egg"
     },
-    "special": "Your pet heals faster and gains a level on each new floor you reach."
+    "special": "Your pet heals faster and gains a level on each new floor you reach.",
+    "ench_id": "the_eagle",
+    "ench_level": 2
   },
   "cow_kings_horns": {
     "name": "Cow King's Horns",
@@ -1204,8 +1220,8 @@
     "slot": "head",
     "tier": 3,
     "material": "bone",
-    "ac_bonus": 1,
-    "equip_threshold": 2,
+    "ac_bonus": 0,
+    "equip_threshold": 3,
     "quiz_tier": 3,
     "damage_resistances": {
       "blunt": 0.85
@@ -1227,7 +1243,9 @@
     "id_level": 0,
     "_meta": {
       "spawn_method": "boss_drop_cow_king"
-    }
+    },
+    "ench_id": "searching",
+    "ench_level": 6
   },
   "cloth_of_penelope": {
     "name": "Cloth of Penelope",
@@ -1242,12 +1260,12 @@
     "slot": "body",
     "tier": 1,
     "material": "cloth",
-    "ac_bonus": 4,
+    "ac_bonus": 1,
     "equip_threshold": 2,
     "quiz_tier": 1,
     "damage_resistances": {},
     "can_be_cursed": false,
-    "enchant_bonus": 0,
+    "enchant_bonus": 1,
     "on_equip_status": "regenerating",
     "unidentified_name": "an intricately woven robe",
     "lore": "Odysseus was gone twenty years, and a hundred and eight suitors moved into his hall to eat his herds until his wife chose one of them. Penelope said she would choose when she finished a burial shroud for old Laertes. She wove at the great loom every day and unpicked the work every night by torchlight, and it held them off for three years. This robe is cut from that cloth. What is torn in it by day is whole again by morning, and so is the wearer.",
@@ -1267,7 +1285,8 @@
     "identified": false,
     "id_level": 0,
     "weave_and_unweave": true,
-    "special": "You regenerate while it is worn, and faster when badly hurt."
+    "special": "You regenerate while it is worn, and faster when badly hurt.",
+    "ench_level": 2
   },
   "bracers_of_cu_chulainn": {
     "name": "Bracers of Cu Chulainn",
@@ -1280,16 +1299,16 @@
     "weight": 1.0,
     "min_level": 22,
     "slot": "arms",
-    "tier": 2,
+    "tier": 3,
     "material": "leather",
-    "ac_bonus": 3,
+    "ac_bonus": 0,
     "equip_threshold": 3,
-    "quiz_tier": 2,
+    "quiz_tier": 3,
     "damage_resistances": {
       "slash": 0.9
     },
     "can_be_cursed": false,
-    "enchant_bonus": 1,
+    "enchant_bonus": 0,
     "unidentified_name": "a pair of battle-scarred leather bracers",
     "lore": "He was a boy called Setanta when the smith Culann's guard hound came at him. He killed it with his bare hands, and then offered to guard the smith's house himself until a pup could be reared. So men named him Cu Chulainn, the Hound of Culann. In his battle frenzy his body twisted in its skin, one eye sank and the other bulged, and a light rose from his brow. These bracers kept a little of that. Every third blow the wearer lands tears a wound that will not close.",
     "containerLootTier": "rare",
@@ -1308,7 +1327,9 @@
     "identified": false,
     "id_level": 0,
     "riastrad_echo": true,
-    "special": "Every third blow you land opens a bleeding wound."
+    "special": "Every third blow you land opens a bleeding wound.",
+    "ench_id": "swift_strokes",
+    "ench_level": 6
   },
   "cloak_of_sun_wukong": {
     "name": "Cloak of Sun Wukong",
@@ -1321,11 +1342,11 @@
     "weight": 2.0,
     "min_level": 25,
     "slot": "cloak",
-    "tier": 2,
+    "tier": 3,
     "material": "silk",
-    "ac_bonus": 3,
-    "equip_threshold": 2,
-    "quiz_tier": 2,
+    "ac_bonus": 0,
+    "equip_threshold": 3,
+    "quiz_tier": 3,
     "damage_resistances": {},
     "can_be_cursed": false,
     "enchant_bonus": 0,
@@ -1348,7 +1369,9 @@
     "identified": false,
     "id_level": 0,
     "monkey_king_dodge": 10,
-    "special": "Blows sometimes land where you are not, and every tenth that would hit misses outright."
+    "special": "Blows sometimes land where you are not, and every tenth that would hit misses outright.",
+    "ench_id": "displacement",
+    "ench_level": 6
   },
   "coat_of_cu_chulainn": {
     "name": "Coat of Cú Chulainn",
@@ -1361,17 +1384,17 @@
     "weight": 14.0,
     "min_level": 40,
     "slot": "body",
-    "tier": 3,
+    "tier": 4,
     "material": "enchanted hide",
-    "ac_bonus": 6,
-    "equip_threshold": 2,
-    "quiz_tier": 3,
+    "ac_bonus": 3,
+    "equip_threshold": 3,
+    "quiz_tier": 4,
     "damage_resistances": {
       "slash": 0.7,
       "blunt": 0.8
     },
     "can_be_cursed": false,
-    "enchant_bonus": 0,
+    "enchant_bonus": 4,
     "berserk_trigger": true,
     "berserk_hp_threshold": 0.25,
     "berserk_str_bonus": 3,
@@ -1392,7 +1415,8 @@
     "is_unique": true,
     "identified": false,
     "id_level": 0,
-    "special": "Below a quarter health the frenzy takes you: +3 Strength for 10 turns, at 1 health a turn."
+    "special": "Below a quarter health the frenzy takes you: +3 Strength for 10 turns, at 1 health a turn.",
+    "ench_level": 8
   },
   "babr_e_bayan": {
     "name": "Babr-e Bayan",
@@ -1405,18 +1429,18 @@
     "weight": 16.0,
     "min_level": 55,
     "slot": "body",
-    "tier": 4,
+    "tier": 5,
     "material": "enchanted hide",
-    "ac_bonus": 7,
-    "equip_threshold": 2,
-    "quiz_tier": 4,
+    "ac_bonus": 3,
+    "equip_threshold": 4,
+    "quiz_tier": 5,
     "damage_resistances": {
       "slash": 0.6,
       "pierce": 0.6,
       "blunt": 0.7
     },
     "can_be_cursed": false,
-    "enchant_bonus": 0,
+    "enchant_bonus": 5,
     "first_hit_absorb": true,
     "unidentified_name": "a striped tiger-skin coat, unmarked by any blade",
     "lore": "Rostam of Zabul is the great champion of the Persian Book of Kings. He rode the horse Rakhsh, who killed a lion while his master slept, and he fought his way through seven trials to kill the White Demon in its cave and free his king. Over his mail he wore the Babr-e Bayan, a coat of tiger skin that neither fire nor water nor any weapon could spoil. In each new place the first blow that reaches it is simply refused.",
@@ -1433,7 +1457,8 @@
     "is_unique": true,
     "identified": false,
     "id_level": 0,
-    "special": "Soaks up the first blow that lands on each floor."
+    "special": "Soaks up the first blow that lands on each floor.",
+    "ench_level": 10
   },
   "tarnhelm": {
     "name": "Tarnhelm",
@@ -1446,11 +1471,11 @@
     "weight": 2.0,
     "min_level": 50,
     "slot": "head",
-    "tier": 3,
+    "tier": 4,
     "material": "dwarf-forged iron",
-    "ac_bonus": 4,
-    "equip_threshold": 2,
-    "quiz_tier": 3,
+    "ac_bonus": 0,
+    "equip_threshold": 4,
+    "quiz_tier": 4,
     "damage_resistances": {},
     "can_be_cursed": false,
     "enchant_bonus": 0,
@@ -1471,7 +1496,9 @@
     "is_unique": true,
     "identified": false,
     "id_level": 0,
-    "special": "Once a floor, falling below 30% health turns you invisible for 5 turns."
+    "special": "Once a floor, falling below 30% health turns you invisible for 5 turns.",
+    "ench_id": "telepathy",
+    "ench_level": 8
   },
   "linothorax_of_alexander": {
     "name": "Linothorax of Alexander",
@@ -1484,12 +1511,12 @@
     "weight": 6.0,
     "min_level": 5,
     "slot": "body",
-    "tier": 1,
+    "tier": 2,
     "material": "legendary",
-    "ac_bonus": 5,
-    "enchant_bonus": 0,
+    "ac_bonus": 1,
+    "enchant_bonus": 2,
     "equip_threshold": 2,
-    "quiz_tier": 1,
+    "quiz_tier": 2,
     "damage_resistances": {
       "pierce": 0.7
     },
@@ -1508,7 +1535,8 @@
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
     "phalanx_recovery": 2,
-    "special": "Standing on an altar heals 2 health a turn."
+    "special": "Standing on an altar heals 2 health a turn.",
+    "ench_level": 4
   },
   "coif_of_beowulf": {
     "name": "Coif of Beowulf",
@@ -1521,12 +1549,12 @@
     "weight": 2.0,
     "min_level": 5,
     "slot": "head",
-    "tier": 1,
+    "tier": 2,
     "material": "legendary",
-    "ac_bonus": 2,
+    "ac_bonus": 0,
     "enchant_bonus": 0,
     "equip_threshold": 2,
-    "quiz_tier": 1,
+    "quiz_tier": 2,
     "damage_resistances": {
       "slash": 0.8
     },
@@ -1545,7 +1573,9 @@
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
     "grendel_grip": true,
-    "special": "Nothing holds you: paralysis, sleep, stuns, ice and strangling grips break at once."
+    "special": "Nothing holds you: paralysis, sleep, stuns, ice and strangling grips break at once.",
+    "ench_id": "night_eyes",
+    "ench_level": 4
   },
   "sandals_of_perseus": {
     "name": "Sandals of Perseus",
@@ -1558,12 +1588,12 @@
     "weight": 0.5,
     "min_level": 5,
     "slot": "feet",
-    "tier": 1,
+    "tier": 2,
     "material": "legendary",
-    "ac_bonus": 2,
+    "ac_bonus": 0,
     "enchant_bonus": 0,
     "equip_threshold": 2,
-    "quiz_tier": 1,
+    "quiz_tier": 2,
     "damage_resistances": {
       "pierce": 0.85
     },
@@ -1580,7 +1610,9 @@
     "template_basis": "leather_boots",
     "is_unique": true,
     "containerLootTier": "rare",
-    "container_loot_tier": "rare"
+    "container_loot_tier": "rare",
+    "ench_id": "the_wanderer",
+    "ench_level": 4
   },
   "kilt_of_the_pharaoh": {
     "name": "Kilt of the Pharaoh",
@@ -1593,12 +1625,12 @@
     "weight": 1.5,
     "min_level": 5,
     "slot": "legs",
-    "tier": 1,
+    "tier": 2,
     "material": "legendary",
-    "ac_bonus": 2,
+    "ac_bonus": 0,
     "enchant_bonus": 0,
     "equip_threshold": 2,
-    "quiz_tier": 1,
+    "quiz_tier": 2,
     "damage_resistances": {
       "fire": 0.75
     },
@@ -1617,7 +1649,9 @@
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
     "royal_burial": true,
-    "special": "If you die wearing it, one thing you wore is kept whole in your grave for whoever finds it."
+    "special": "If you die wearing it, one thing you wore is kept whole in your grave for whoever finds it.",
+    "ench_id": "the_kneeler",
+    "ench_level": 4
   },
   "scale_of_dilmun": {
     "name": "Scale of Dilmun",
@@ -1630,12 +1664,12 @@
     "weight": 12.0,
     "min_level": 17,
     "slot": "body",
-    "tier": 2,
+    "tier": 3,
     "material": "legendary",
-    "ac_bonus": 6,
-    "enchant_bonus": 0,
-    "equip_threshold": 3,
-    "quiz_tier": 2,
+    "ac_bonus": 4,
+    "enchant_bonus": 3,
+    "equip_threshold": 4,
+    "quiz_tier": 3,
     "damage_resistances": {
       "slash": 0.8,
       "pierce": 0.8
@@ -1656,7 +1690,8 @@
     "container_loot_tier": "rare",
     "water_tile_ac_bonus": 2,
     "water_tile_regen_bonus": 1,
-    "special": "Beside water or a fountain, armor improves by 2 and you heal 1 health a turn."
+    "special": "Beside water or a fountain, armor improves by 2 and you heal 1 health a turn.",
+    "ench_level": 6
   },
   "helm_of_gilgamesh": {
     "name": "Helm of Gilgamesh",
@@ -1669,12 +1704,12 @@
     "weight": 3.0,
     "min_level": 17,
     "slot": "head",
-    "tier": 2,
+    "tier": 3,
     "material": "legendary",
-    "ac_bonus": 3,
+    "ac_bonus": 0,
     "enchant_bonus": 0,
     "equip_threshold": 3,
-    "quiz_tier": 2,
+    "quiz_tier": 3,
     "damage_resistances": {
       "blunt": 0.7
     },
@@ -1693,7 +1728,9 @@
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
     "gold_offering": true,
-    "special": "Once a floor, a power pays a thinking creature in sight to stand aside."
+    "special": "Once a floor, a power pays a thinking creature in sight to stand aside.",
+    "ench_id": "the_scholar",
+    "ench_level": 6
   },
   "sandals_of_theseus": {
     "name": "Sandals of Theseus",
@@ -1706,12 +1743,12 @@
     "weight": 0.5,
     "min_level": 17,
     "slot": "feet",
-    "tier": 2,
+    "tier": 3,
     "material": "legendary",
-    "ac_bonus": 3,
+    "ac_bonus": 0,
     "enchant_bonus": 0,
     "equip_threshold": 3,
-    "quiz_tier": 2,
+    "quiz_tier": 3,
     "damage_resistances": {
       "pierce": 0.8
     },
@@ -1730,7 +1767,9 @@
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
     "their_own_methods": 0.2,
-    "special": "When a monster hits you, 1 time in 5 an ailment you are suffering passes to it."
+    "special": "When a monster hits you, 1 time in 5 an ailment you are suffering passes to it.",
+    "ench_id": "free_stride",
+    "ench_level": 6
   },
   "greaves_of_qin": {
     "name": "Greaves of the Qin Guard",
@@ -1743,12 +1782,12 @@
     "weight": 2.5,
     "min_level": 17,
     "slot": "legs",
-    "tier": 2,
+    "tier": 3,
     "material": "legendary",
-    "ac_bonus": 3,
+    "ac_bonus": 0,
     "enchant_bonus": 0,
     "equip_threshold": 3,
-    "quiz_tier": 2,
+    "quiz_tier": 3,
     "damage_resistances": {
       "pierce": 0.75,
       "slash": 0.85,
@@ -1767,7 +1806,9 @@
     "template_basis": "leather_leggings",
     "is_unique": true,
     "containerLootTier": "rare",
-    "container_loot_tier": "rare"
+    "container_loot_tier": "rare",
+    "ench_id": "mailed_shins",
+    "ench_level": 6
   },
   "cloak_of_odin": {
     "name": "Wanderer's Cloak of Odin",
@@ -1780,12 +1821,12 @@
     "weight": 2.5,
     "min_level": 28,
     "slot": "cloak",
-    "tier": 2,
+    "tier": 3,
     "material": "legendary",
-    "ac_bonus": 3,
+    "ac_bonus": 0,
     "enchant_bonus": 0,
     "equip_threshold": 3,
-    "quiz_tier": 2,
+    "quiz_tier": 3,
     "damage_resistances": {
       "magic": 0.75,
       "cold": 0.8
@@ -1807,24 +1848,20 @@
     "equip_chain_mode": "escalator_chain",
     "tier_bonuses": {
       "1": {
-        "ac_bonus": 2,
         "resistance_magic": 1
       },
       "2": {
-        "ac_bonus": 2,
         "resistance_magic": 1,
         "resistance_cold": 1,
         "passive_identify_one_per_floor_free": true
       },
       "3": {
-        "ac_bonus": 3,
         "resistance_magic": 1,
         "resistance_cold": 1,
         "passive_identify_one_per_floor_free": true,
         "passive_huginn_muninn": true
       },
       "4": {
-        "ac_bonus": 3,
         "resistance_magic": 2,
         "resistance_cold": 1,
         "passive_identify_one_per_floor_free": true,
@@ -1832,14 +1869,15 @@
         "passive_wisdom_at_a_price": true
       },
       "5": {
-        "ac_bonus": 3,
         "resistance_magic": 2,
         "resistance_cold": 2,
         "passive_identify_one_per_floor_free": true,
         "passive_huginn_muninn": true,
         "passive_wisdom_at_a_price": true
       }
-    }
+    },
+    "ench_id": "elementward",
+    "ench_level": 6
   },
   "bracers_of_arjuna": {
     "name": "Bracers of Arjuna",
@@ -1852,12 +1890,12 @@
     "weight": 1.0,
     "min_level": 28,
     "slot": "arms",
-    "tier": 2,
+    "tier": 3,
     "material": "legendary",
-    "ac_bonus": 3,
+    "ac_bonus": 0,
     "enchant_bonus": 0,
     "equip_threshold": 3,
-    "quiz_tier": 2,
+    "quiz_tier": 3,
     "damage_resistances": {
       "slash": 0.8,
       "magic": 0.85
@@ -1877,7 +1915,9 @@
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
     "gita_focus": true,
-    "special": "Your first shot on each floor hits half again as hard."
+    "special": "Your first shot on each floor hits half again as hard.",
+    "ench_id": "archery",
+    "ench_level": 6
   },
   "girdle_of_hippolyta": {
     "name": "Girdle of Hippolyta",
@@ -1890,12 +1930,12 @@
     "weight": 1.5,
     "min_level": 38,
     "slot": "legs",
-    "tier": 3,
+    "tier": 4,
     "material": "legendary",
-    "ac_bonus": 3,
+    "ac_bonus": 0,
     "enchant_bonus": 0,
     "equip_threshold": 3,
-    "quiz_tier": 3,
+    "quiz_tier": 4,
     "damage_resistances": {
       "slash": 0.8,
       "magic": 0.85
@@ -1915,7 +1955,9 @@
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
     "amazon_charge": true,
-    "special": "After four steps in a straight line, your next blow hits half again as hard."
+    "special": "After four steps in a straight line, your next blow hits half again as hard.",
+    "ench_id": "mailed_shins",
+    "ench_level": 8
   },
   "helm_of_leonidas": {
     "name": "Helm of Leonidas",
@@ -1928,12 +1970,12 @@
     "weight": 4.0,
     "min_level": 38,
     "slot": "head",
-    "tier": 3,
+    "tier": 4,
     "material": "legendary",
-    "ac_bonus": 4,
+    "ac_bonus": 0,
     "enchant_bonus": 0,
-    "equip_threshold": 3,
-    "quiz_tier": 3,
+    "equip_threshold": 5,
+    "quiz_tier": 4,
     "damage_resistances": {
       "slash": 0.8,
       "pierce": 0.8
@@ -1953,7 +1995,9 @@
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
     "last_stand_bonus": true,
-    "special": "When you are badly hurt, your blows land 15% harder."
+    "special": "When you are badly hurt, your blows land 15% harder.",
+    "ench_id": "iron_will",
+    "ench_level": 8
   },
   "cloak_of_mulan": {
     "name": "Cloak of Mulan",
@@ -1966,12 +2010,12 @@
     "weight": 2.5,
     "min_level": 38,
     "slot": "cloak",
-    "tier": 3,
+    "tier": 4,
     "material": "legendary",
-    "ac_bonus": 3,
+    "ac_bonus": 0,
     "enchant_bonus": 0,
     "equip_threshold": 3,
-    "quiz_tier": 3,
+    "quiz_tier": 4,
     "damage_resistances": {
       "cold": 0.7,
       "magic": 0.85
@@ -1991,7 +2035,9 @@
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
     "disguise_at_camp": true,
-    "special": "Once a floor, stepping onto an altar restores you completely."
+    "special": "Once a floor, stepping onto an altar restores you completely.",
+    "ench_id": "displacement",
+    "ench_level": 8
   },
   "haramaki_of_yoshitsune": {
     "name": "Haramaki of Yoshitsune",
@@ -2006,9 +2052,9 @@
     "slot": "body",
     "tier": 5,
     "material": "legendary",
-    "ac_bonus": 7,
-    "enchant_bonus": 0,
-    "equip_threshold": 4,
+    "ac_bonus": 4,
+    "enchant_bonus": 5,
+    "equip_threshold": 5,
     "quiz_tier": 5,
     "damage_resistances": {
       "slash": 0.7,
@@ -2031,7 +2077,8 @@
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
     "descent_haste": 5,
-    "special": "Hasted for 5 turns each time you go down a stair. Blessed while worn."
+    "special": "Hasted for 5 turns each time you go down a stair. Blessed while worn.",
+    "ench_level": 10
   },
   "boots_of_thor": {
     "name": "Iron Boots of Thor",
@@ -2046,9 +2093,9 @@
     "slot": "feet",
     "tier": 5,
     "material": "legendary",
-    "ac_bonus": 5,
+    "ac_bonus": 0,
     "enchant_bonus": 0,
-    "equip_threshold": 4,
+    "equip_threshold": 5,
     "quiz_tier": 5,
     "damage_resistances": {
       "lightning": 0.5,
@@ -2069,7 +2116,9 @@
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
     "thors_step": 0.05,
-    "special": "Each turn, 1 chance in 20 that lightning takes a twentieth of the health of a monster beside you."
+    "special": "Each turn, 1 chance in 20 that lightning takes a twentieth of the health of a monster beside you.",
+    "ench_id": "free_stride",
+    "ench_level": 10
   },
   "helm_of_aragorn": {
     "name": "Helm of the King Returned",
@@ -2084,9 +2133,9 @@
     "slot": "head",
     "tier": 5,
     "material": "legendary",
-    "ac_bonus": 5,
+    "ac_bonus": 0,
     "enchant_bonus": 0,
-    "equip_threshold": 4,
+    "equip_threshold": 5,
     "quiz_tier": 5,
     "damage_resistances": {
       "magic": 0.7,
@@ -2109,24 +2158,20 @@
     "equip_chain_mode": "escalator_chain",
     "tier_bonuses": {
       "1": {
-        "ac_bonus": 3,
         "resistance_magic": 1,
         "resistance_fear": 1
       },
       "2": {
-        "ac_bonus": 4,
         "resistance_magic": 1,
         "resistance_fear": 2
       },
       "3": {
-        "ac_bonus": 4,
         "resistance_magic": 1,
         "resistance_fear": 2,
         "resistance_slash": 1,
         "status_blessed": 999
       },
       "4": {
-        "ac_bonus": 5,
         "resistance_magic": 2,
         "resistance_fear": 2,
         "resistance_slash": 1,
@@ -2134,7 +2179,6 @@
         "passive_command_undead": true
       },
       "5": {
-        "ac_bonus": 5,
         "resistance_magic": 2,
         "resistance_fear": 2,
         "resistance_slash": 1,
@@ -2142,7 +2186,9 @@
         "passive_command_undead": true,
         "passive_paths_of_the_dead": true
       }
-    }
+    },
+    "ench_id": "alertness",
+    "ench_level": 10
   },
   "robes_of_solomon": {
     "name": "Robes of Solomon",
@@ -2157,9 +2203,9 @@
     "slot": "shirt",
     "tier": 5,
     "material": "legendary",
-    "ac_bonus": 5,
+    "ac_bonus": 0,
     "enchant_bonus": 0,
-    "equip_threshold": 5,
+    "equip_threshold": 4,
     "quiz_tier": 5,
     "damage_resistances": {
       "magic": 0.6,
@@ -2184,20 +2230,17 @@
     "equip_chain_mode": "escalator_chain",
     "tier_bonuses": {
       "1": {
-        "ac_bonus": 3,
         "stat_bonus_INT": 1,
         "resistance_magic": 1,
         "resistance_fire": 1
       },
       "2": {
-        "ac_bonus": 4,
         "stat_bonus_INT": 2,
         "resistance_magic": 1,
         "resistance_fire": 1,
         "resistance_cold": 1
       },
       "3": {
-        "ac_bonus": 5,
         "stat_bonus_INT": 2,
         "resistance_magic": 2,
         "resistance_fire": 1,
@@ -2206,7 +2249,6 @@
         "status_blessed": 999
       },
       "4": {
-        "ac_bonus": 5,
         "stat_bonus_INT": 3,
         "resistance_magic": 2,
         "resistance_fire": 1,
@@ -2216,7 +2258,6 @@
         "passive_demon_command_one_per_floor": true
       },
       "5": {
-        "ac_bonus": 5,
         "stat_bonus_INT": 3,
         "resistance_magic": 2,
         "resistance_fire": 1,
@@ -2226,7 +2267,9 @@
         "passive_demon_command_one_per_floor": true,
         "passive_seventy_two_seals": true
       }
-    }
+    },
+    "ench_id": "the_hair_shirt",
+    "ench_level": 10
   },
   "armor_of_ragnarok": {
     "name": "Armor of Ragnarök",
@@ -2320,7 +2363,7 @@
     "slot": "head",
     "tier": 5,
     "material": "legendary",
-    "ac_bonus": 6,
+    "ac_bonus": 0,
     "enchant_bonus": 0,
     "equip_threshold": 5,
     "quiz_tier": 5,
@@ -2346,23 +2389,19 @@
     "equip_chain_mode": "chain",
     "tier_bonuses": {
       "1": {
-        "ac_bonus": 3,
         "stat_bonus_INT": 1
       },
       "2": {
-        "ac_bonus": 4,
         "stat_bonus_INT": 2,
         "passive_mp_bonus": 10
       },
       "3": {
-        "ac_bonus": 5,
         "stat_bonus_INT": 2,
         "passive_mp_bonus": 15,
         "status_regenerating": 999,
         "resistance_magic": 1
       },
       "4": {
-        "ac_bonus": 6,
         "stat_bonus_INT": 3,
         "passive_mp_bonus": 25,
         "status_regenerating": 999,
@@ -2372,7 +2411,6 @@
         "passive_four_faces_360_fov": true
       },
       "5": {
-        "ac_bonus": 7,
         "stat_bonus_INT": 4,
         "passive_mp_bonus": 35,
         "status_regenerating": 999,
@@ -2382,7 +2420,9 @@
         "passive_four_faces_360_fov": true,
         "passive_free_cast_once_per_floor": true
       }
-    }
+    },
+    "ench_id": "the_eagle",
+    "ench_level": 10
   },
   "duck_of_doom": {
     "name": "Duck of Doom",
@@ -2397,7 +2437,7 @@
     "slot": "head",
     "tier": 1,
     "material": "rubber",
-    "ac_bonus": 2,
+    "ac_bonus": 0,
     "enchant_bonus": 0,
     "equip_threshold": 0,
     "quiz_tier": 1,
@@ -2414,7 +2454,9 @@
     "is_unique": true,
     "peak_floor": 1,
     "plot_locked": true,
-    "special": "It will not come off. Be patient with it."
+    "special": "It will not come off. Be patient with it.",
+    "ench_id": "iron_will",
+    "ench_level": 2
   },
   "cestus_of_polydeuces": {
     "name": "Cestus of Polydeuces",
@@ -2428,7 +2470,7 @@
     "min_level": 5,
     "slot": "hands",
     "material": "leather",
-    "ac_bonus": 1,
+    "ac_bonus": 0,
     "enchant_bonus": 0,
     "damage_resistances": {
       "blunt": 0.85
@@ -2445,13 +2487,15 @@
     "is_unique": true,
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
-    "tier": 1,
-    "quiz_tier": 1,
+    "tier": 2,
+    "quiz_tier": 2,
     "equip_threshold": 2,
     "max_enchant": 2,
     "peak_weight": 0.5,
     "spread": 10,
-    "toughness_bonus": 0.03
+    "toughness_bonus": 0.03,
+    "ench_id": "striking",
+    "ench_level": 4
   },
   "gloves_of_wayland": {
     "name": "Wayland's Forge Gloves",
@@ -2465,7 +2509,7 @@
     "min_level": 17,
     "slot": "hands",
     "material": "leather",
-    "ac_bonus": 2,
+    "ac_bonus": 0,
     "enchant_bonus": 0,
     "damage_resistances": {
       "fire": 0.8
@@ -2482,13 +2526,15 @@
     "is_unique": true,
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
-    "tier": 2,
-    "quiz_tier": 2,
+    "tier": 3,
+    "quiz_tier": 3,
     "equip_threshold": 3,
     "max_enchant": 2,
     "peak_weight": 0.45,
     "spread": 10,
-    "quiz_timer_bonus": 1
+    "quiz_timer_bonus": 1,
+    "ench_id": "the_locksmith",
+    "ench_level": 6
   },
   "glove_of_tyr": {
     "name": "Glove of Tyr",
@@ -2502,7 +2548,7 @@
     "min_level": 55,
     "slot": "hands",
     "material": "legendary",
-    "ac_bonus": 3,
+    "ac_bonus": 0,
     "enchant_bonus": 0,
     "damage_resistances": {
       "pierce": 0.8
@@ -2519,13 +2565,15 @@
     "is_unique": true,
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
-    "tier": 4,
-    "quiz_tier": 4,
-    "equip_threshold": 4,
+    "tier": 5,
+    "quiz_tier": 5,
+    "equip_threshold": 5,
     "max_enchant": 2,
     "peak_weight": 0.35,
     "spread": 12,
-    "toughness_bonus": 0.06
+    "toughness_bonus": 0.06,
+    "ench_id": "striking",
+    "ench_level": 10
   },
   "jarngreipr_gauntlets": {
     "name": "Jarngreipr",
@@ -2539,7 +2587,7 @@
     "min_level": 72,
     "slot": "hands",
     "material": "legendary",
-    "ac_bonus": 4,
+    "ac_bonus": 0,
     "enchant_bonus": 0,
     "damage_resistances": {
       "lightning": 0.6
@@ -2558,11 +2606,13 @@
     "container_loot_tier": "rare",
     "tier": 5,
     "quiz_tier": 5,
-    "equip_threshold": 4,
+    "equip_threshold": 5,
     "max_enchant": 3,
     "peak_weight": 0.35,
     "spread": 10,
-    "chain_bonus": 1
+    "chain_bonus": 1,
+    "ench_id": "ogre_power",
+    "ench_level": 10
   },
   "bracers_of_atalanta": {
     "name": "Bracers of Atalanta",
@@ -2576,7 +2626,7 @@
     "min_level": 5,
     "slot": "arms",
     "material": "leather",
-    "ac_bonus": 1,
+    "ac_bonus": 0,
     "enchant_bonus": 0,
     "damage_resistances": {},
     "can_be_cursed": false,
@@ -2591,13 +2641,15 @@
     "is_unique": true,
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
-    "tier": 1,
-    "quiz_tier": 1,
+    "tier": 2,
+    "quiz_tier": 2,
     "equip_threshold": 2,
     "max_enchant": 2,
     "peak_weight": 0.5,
     "spread": 10,
-    "dodge_bonus": 0.04
+    "dodge_bonus": 0.04,
+    "ench_id": "archery",
+    "ench_level": 4
   },
   "vambraces_of_roland": {
     "name": "Vambraces of Roland",
@@ -2611,7 +2663,7 @@
     "min_level": 40,
     "slot": "arms",
     "material": "legendary",
-    "ac_bonus": 3,
+    "ac_bonus": 0,
     "enchant_bonus": 0,
     "damage_resistances": {
       "slash": 0.85
@@ -2628,13 +2680,15 @@
     "is_unique": true,
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
-    "tier": 3,
-    "quiz_tier": 3,
-    "equip_threshold": 3,
+    "tier": 4,
+    "quiz_tier": 4,
+    "equip_threshold": 4,
     "max_enchant": 2,
     "peak_weight": 0.4,
     "spread": 10,
-    "toughness_bonus": 0.05
+    "toughness_bonus": 0.05,
+    "ench_id": "parrying",
+    "ench_level": 8
   },
   "vambraces_of_the_first_winter": {
     "name": "Vambraces of the First Winter",
@@ -2648,7 +2702,7 @@
     "min_level": 80,
     "slot": "arms",
     "material": "legendary",
-    "ac_bonus": 5,
+    "ac_bonus": 0,
     "enchant_bonus": 0,
     "damage_resistances": {
       "cold": 0.3
@@ -2667,11 +2721,13 @@
     "container_loot_tier": "rare",
     "tier": 5,
     "quiz_tier": 5,
-    "equip_threshold": 4,
+    "equip_threshold": 5,
     "max_enchant": 3,
     "peak_weight": 0.0,
     "spread": 10,
-    "toughness_bonus": 0.05
+    "toughness_bonus": 0.05,
+    "ench_id": "deflection",
+    "ench_level": 10
   },
   "hair_shirt_of_becket": {
     "name": "Becket's Hair Shirt",
@@ -2685,7 +2741,7 @@
     "min_level": 5,
     "slot": "shirt",
     "material": "cloth",
-    "ac_bonus": 1,
+    "ac_bonus": 0,
     "enchant_bonus": 0,
     "damage_resistances": {},
     "can_be_cursed": false,
@@ -2700,13 +2756,15 @@
     "is_unique": true,
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
-    "tier": 1,
-    "quiz_tier": 1,
+    "tier": 2,
+    "quiz_tier": 2,
     "equip_threshold": 2,
     "max_enchant": 2,
     "peak_weight": 0.5,
     "spread": 10,
-    "toughness_bonus": 0.04
+    "toughness_bonus": 0.04,
+    "ench_id": "the_hair_shirt",
+    "ench_level": 4
   },
   "shirt_of_aslaug": {
     "name": "Aslaug's Shirt",
@@ -2720,7 +2778,7 @@
     "min_level": 50,
     "slot": "shirt",
     "material": "legendary",
-    "ac_bonus": 4,
+    "ac_bonus": 0,
     "enchant_bonus": 0,
     "damage_resistances": {
       "slash": 0.8,
@@ -2739,12 +2797,14 @@
     "is_unique": true,
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
-    "tier": 3,
-    "quiz_tier": 3,
-    "equip_threshold": 3,
+    "tier": 5,
+    "quiz_tier": 5,
+    "equip_threshold": 4,
     "max_enchant": 2,
     "peak_weight": 0.4,
-    "spread": 10
+    "spread": 10,
+    "ench_id": "vigor",
+    "ench_level": 10
   },
   "seamless_tunic": {
     "name": "The Seamless Tunic",
@@ -2758,7 +2818,7 @@
     "min_level": 66,
     "slot": "shirt",
     "material": "legendary",
-    "ac_bonus": 4,
+    "ac_bonus": 0,
     "enchant_bonus": 0,
     "damage_resistances": {
       "magic": 0.8
@@ -2775,13 +2835,15 @@
     "is_unique": true,
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
-    "tier": 4,
-    "quiz_tier": 4,
+    "tier": 5,
+    "quiz_tier": 5,
     "equip_threshold": 4,
     "max_enchant": 2,
     "peak_weight": 0.35,
     "spread": 12,
-    "toughness_bonus": 0.05
+    "toughness_bonus": 0.05,
+    "ench_id": "vigor",
+    "ench_level": 10
   },
   "half_cloak_of_martin": {
     "name": "Martin's Half Cloak",
@@ -2795,7 +2857,7 @@
     "min_level": 5,
     "slot": "cloak",
     "material": "cloth",
-    "ac_bonus": 1,
+    "ac_bonus": 0,
     "enchant_bonus": 0,
     "damage_resistances": {
       "cold": 0.8
@@ -2812,13 +2874,15 @@
     "is_unique": true,
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
-    "tier": 1,
-    "quiz_tier": 1,
+    "tier": 2,
+    "quiz_tier": 2,
     "equip_threshold": 2,
     "max_enchant": 2,
     "peak_weight": 0.5,
     "spread": 10,
-    "toughness_bonus": 0.03
+    "toughness_bonus": 0.03,
+    "ench_id": "elementward",
+    "ench_level": 4
   },
   "anansi_web_cloak": {
     "name": "Anansi's Web Cloak",
@@ -2832,7 +2896,7 @@
     "min_level": 80,
     "slot": "cloak",
     "material": "legendary",
-    "ac_bonus": 4,
+    "ac_bonus": 0,
     "enchant_bonus": 0,
     "damage_resistances": {
       "poison": 0.5
@@ -2856,7 +2920,9 @@
     "peak_weight": 0.0,
     "spread": 10,
     "story_thread": true,
-    "special": "Once a floor, a blow that would take a quarter of your health leaves only a scratch."
+    "special": "Once a floor, a blow that would take a quarter of your health leaves only a scratch.",
+    "ench_id": "displacement",
+    "ench_level": 10
   },
   "arachne_silk_cloak": {
     "name": "Arachne's Silk Cloak",
@@ -2870,7 +2936,7 @@
     "min_level": 5,
     "slot": "cloak",
     "material": "silk",
-    "ac_bonus": 2,
+    "ac_bonus": 0,
     "enchant_bonus": 0,
     "damage_resistances": {
       "pierce": 0.85
@@ -2887,14 +2953,16 @@
     "is_unique": true,
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
-    "tier": 1,
-    "quiz_tier": 1,
+    "tier": 2,
+    "quiz_tier": 2,
     "equip_threshold": 2,
     "max_enchant": 2,
     "peak_weight": 0.0,
     "spread": 10,
     "webbed_strike": true,
-    "special": "A monster that strikes you hand to hand is slowed for 3 turns."
+    "special": "A monster that strikes you hand to hand is slowed for 3 turns.",
+    "ench_id": "vapourward",
+    "ench_level": 4
   },
   "erlking_mantle": {
     "name": "Mantle of the Erlking",
@@ -2908,7 +2976,7 @@
     "min_level": 20,
     "slot": "cloak",
     "material": "legendary",
-    "ac_bonus": 3,
+    "ac_bonus": 0,
     "enchant_bonus": 0,
     "damage_resistances": {
       "cold": 0.85
@@ -2925,14 +2993,16 @@
     "is_unique": true,
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
-    "tier": 2,
-    "quiz_tier": 2,
+    "tier": 3,
+    "quiz_tier": 3,
     "equip_threshold": 3,
     "max_enchant": 2,
     "peak_weight": 0.0,
     "spread": 10,
     "forest_hearing": 6,
-    "special": "You sense every monster within 6 tiles, even through walls."
+    "special": "You sense every monster within 6 tiles, even through walls.",
+    "ench_id": "vapourward",
+    "ench_level": 6
   },
   "falcon_cloak_of_freyja": {
     "name": "Freyja's Falcon Cloak",
@@ -2946,7 +3016,7 @@
     "min_level": 70,
     "slot": "cloak",
     "material": "legendary",
-    "ac_bonus": 4,
+    "ac_bonus": 0,
     "enchant_bonus": 0,
     "damage_resistances": {},
     "can_be_cursed": false,
@@ -2967,7 +3037,9 @@
     "max_enchant": 3,
     "peak_weight": 0.35,
     "spread": 10,
-    "dodge_bonus": 0.06
+    "dodge_bonus": 0.06,
+    "ench_id": "displacement",
+    "ench_level": 10
   },
   "mantle_of_muspelheim": {
     "name": "Surtur's Ember Mantle",
@@ -2981,7 +3053,7 @@
     "min_level": 80,
     "slot": "cloak",
     "material": "legendary",
-    "ac_bonus": 4,
+    "ac_bonus": 0,
     "enchant_bonus": 0,
     "damage_resistances": {
       "fire": 0.3
@@ -3004,7 +3076,9 @@
     "max_enchant": 3,
     "peak_weight": 0.0,
     "spread": 10,
-    "toughness_bonus": 0.05
+    "toughness_bonus": 0.05,
+    "ench_id": "elementward",
+    "ench_level": 10
   },
   "breeches_of_ragnar": {
     "name": "Ragnar's Shaggy Breeches",
@@ -3018,7 +3092,7 @@
     "min_level": 45,
     "slot": "legs",
     "material": "legendary",
-    "ac_bonus": 3,
+    "ac_bonus": 0,
     "enchant_bonus": 0,
     "damage_resistances": {
       "poison": 0.5,
@@ -3036,12 +3110,14 @@
     "is_unique": true,
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
-    "tier": 3,
-    "quiz_tier": 3,
+    "tier": 4,
+    "quiz_tier": 4,
     "equip_threshold": 3,
     "max_enchant": 2,
     "peak_weight": 0.4,
-    "spread": 10
+    "spread": 10,
+    "ench_id": "mailed_shins",
+    "ench_level": 8
   },
   "greaves_of_goliath": {
     "name": "Greaves of Goliath",
@@ -3055,7 +3131,7 @@
     "min_level": 64,
     "slot": "legs",
     "material": "legendary",
-    "ac_bonus": 5,
+    "ac_bonus": 0,
     "enchant_bonus": 0,
     "damage_resistances": {
       "slash": 0.8,
@@ -3073,13 +3149,15 @@
     "is_unique": true,
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
-    "tier": 4,
-    "quiz_tier": 4,
-    "equip_threshold": 4,
+    "tier": 5,
+    "quiz_tier": 5,
+    "equip_threshold": 5,
     "max_enchant": 2,
     "peak_weight": 0.35,
     "spread": 12,
-    "toughness_bonus": 0.05
+    "toughness_bonus": 0.05,
+    "ench_id": "mailed_shins",
+    "ench_level": 10
   },
   "nidhoggr_scale": {
     "name": "Nidhoggr's Scale",
@@ -3093,7 +3171,7 @@
     "min_level": 85,
     "slot": "cloak",
     "material": "legendary",
-    "ac_bonus": 4,
+    "ac_bonus": 0,
     "enchant_bonus": 0,
     "damage_resistances": {
       "acid": 0.2,
@@ -3117,7 +3195,9 @@
     "equip_threshold": 4,
     "max_enchant": 3,
     "peak_weight": 0.0,
-    "spread": 10
+    "spread": 10,
+    "ench_id": "vapourward",
+    "ench_level": 10
   },
   "serpent_scale_mail": {
     "name": "Serpent Scale Mail",
@@ -3131,8 +3211,8 @@
     "min_level": 56,
     "slot": "body",
     "material": "legendary",
-    "ac_bonus": 7,
-    "enchant_bonus": 0,
+    "ac_bonus": 4,
+    "enchant_bonus": 5,
     "damage_resistances": {
       "poison": 0.1,
       "cold": 0.8
@@ -3149,12 +3229,13 @@
     "is_unique": true,
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
-    "tier": 4,
-    "quiz_tier": 4,
-    "equip_threshold": 4,
+    "tier": 5,
+    "quiz_tier": 5,
+    "equip_threshold": 5,
     "max_enchant": 2,
     "peak_weight": 0.0,
-    "spread": 12
+    "spread": 12,
+    "ench_level": 10
   },
   "green_girdle": {
     "name": "The Green Girdle",
@@ -3168,7 +3249,7 @@
     "min_level": 64,
     "slot": "legs",
     "material": "legendary",
-    "ac_bonus": 3,
+    "ac_bonus": 0,
     "enchant_bonus": 0,
     "damage_resistances": {},
     "can_be_cursed": false,
@@ -3183,13 +3264,15 @@
     "is_unique": true,
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
-    "tier": 4,
-    "quiz_tier": 4,
+    "tier": 5,
+    "quiz_tier": 5,
     "equip_threshold": 4,
     "max_enchant": 2,
     "peak_weight": 0.0,
     "spread": 12,
     "story_thread": true,
-    "special": "Once a floor, a blow that would take a quarter of your health leaves only a scratch."
+    "special": "Once a floor, a blow that would take a quarter of your health leaves only a scratch.",
+    "ench_id": "the_kneeler",
+    "ench_level": 10
   }
 }

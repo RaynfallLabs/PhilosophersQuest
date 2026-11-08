@@ -26,6 +26,7 @@ import json
 from functools import lru_cache
 
 ROMAN = ('I', 'II', 'III', 'IV', 'V')
+GUARD_CAP = 0.80             # tools/balance/armor_model.py LADDER_CAP
 
 
 @lru_cache(maxsize=1)
@@ -60,6 +61,10 @@ def level_value(ench: dict, level: int) -> float:
             v = (v + float(tiers[t + 1])) / 2
         elif t > 0:
             v = v + max(0.0, (v - float(tiers[t - 1])) / 2)
+            if ench.get('lane') == 'guard' or ench.get('guards'):
+                # Tier V's greater form goes on by half the last step, never
+                # past the model's 80% cap on any guard (LADDER_CAP).
+                v = min(v, GUARD_CAP)
     return v
 
 
@@ -116,8 +121,14 @@ def describe(ench: dict, level: int) -> str:
     stat = tier_of(level)
     every = data()['craft_every'][max(0, min(9, level - 1))]
     text = str(ench.get('text', '')).format(
-        pct=f"{round(100 * v)}%", n=every, stat=stat, sec=level + 1)
+        pct=f"{round(100 * v)}%", n=every, nth=_ordinal(every), stat=stat, sec=level + 1)
     return text[:1].upper() + text[1:] + '.'
+
+
+def _ordinal(n: int) -> str:
+    n = int(n)
+    suffix = 'th' if 10 <= n % 100 <= 20 else {1: 'st', 2: 'nd', 3: 'rd'}.get(n % 10, 'th')
+    return f"{n}{suffix}"
 
 
 def display_name(ench: dict, level: int) -> str:
@@ -138,7 +149,26 @@ def apply_to(piece, ench_id: str) -> None:
     base = getattr(piece, 'name', '')
     piece.name = f"{base} {display_name(ench, level)}"
     piece.special = describe(ench, level)
-    if ench.get('status'):
+    piece.ench_line = piece.special
+    _grant(piece, ench, level)
+
+
+def apply_named(piece) -> None:
+    """A named piece's enchantment (its own ench_id and ench_level, from the
+    data): the same power, but the piece keeps its name and its card text;
+    the enchantment's line is `ench_line`. A status the piece already has
+    is not replaced (the Blindfold stays a blindfold)."""
+    ench = get(getattr(piece, 'ench_id', ''))
+    if not ench:
+        return
+    level = int(getattr(piece, 'ench_level', 0) or 0)
+    piece.ench_line = f"{ench['name']} {ROMAN[tier_of(level) - 1]}: {describe(ench, level)}"
+    _grant(piece, ench, level)
+
+
+def _grant(piece, ench: dict, level: int) -> None:
+    """What an enchantment lends while worn: a status, a stat, a flag."""
+    if ench.get('status') and not getattr(piece, 'on_equip_status', ''):
         piece.on_equip_status = ench['status']
     if ench.get('stat'):
         fx = dict(getattr(piece, 'effects', None) or {})

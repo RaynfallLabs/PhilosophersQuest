@@ -44,7 +44,10 @@ def test_mantle_of_elijah_has_prophets_passing():
 
 def test_wukong_has_monkey_king_dodge():
     assert ARMOR['cloak_of_sun_wukong']['monkey_king_dodge'] == 10
-    assert ARMOR['cloak_of_sun_wukong']['ac_bonus'] == 3
+    # A cloak gives no AC since bug bash 3.3.2; the Monkey King's is the
+    # Displacement enchantment its status always was.
+    assert ARMOR['cloak_of_sun_wukong']['ac_bonus'] == 0
+    assert ARMOR['cloak_of_sun_wukong']['ench_id'] == 'displacement'
 
 
 def test_beowulf_has_grendel_grip():
@@ -115,8 +118,13 @@ def test_blindfold_has_tremor_sense():
 
 
 def test_vambraces_threshold_4_and_peace_at_forge():
+    import gear
+    import items
     v = ARMOR['vambraces_of_achilles']
-    assert v['equip_threshold'] == 4
+    # Complexity (weight class) + benefit (tier) + one for a unique (3.3.2).
+    wc = gear.weight_class(items.get_template('armor', v['template_basis']))
+    assert v['equip_threshold'] == gear.equip_threshold(
+        wc, gear.level_for_tier(v['tier'], greater=True), unique=True)
     assert v['peace_at_the_forge'] == 2
 
 
