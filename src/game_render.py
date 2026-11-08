@@ -10308,7 +10308,7 @@ class RenderMixin:
                 ("G / ,", "Pick up item", FP.BODY_TEXT),
                 ("P", "Unlock / disarm", FP.BODY_TEXT),
                 ("Y", "Trade", FP.BODY_TEXT),
-                ("\\", "Pray / altar offering", FP.BODY_TEXT),
+                ("\\", "Pray or offer", FP.BODY_TEXT),
                 ("Shift+\\", "Divine Intercession", FP.BODY_TEXT),
                 ("O", "Look / Bestiary", FP.BODY_TEXT),
                 ("B, Tab", "Monster families", FP.BODY_TEXT),
