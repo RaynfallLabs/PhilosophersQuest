@@ -77,6 +77,7 @@ src/
   items.py            - Item classes and equipment system
   gear.py             - Armour, shield, ring and amulet rules: levels, tiers, thresholds, core AC
   guards.py           - What the minor armour slots guard: attack delivery, families, touch AC
+  enchantments.py     - The minor-slot enchantment stable: guard, might, craft and way lanes
   item_actions.py     - Item actions shared by the Kit (K) and the character sheet (@)
   chain_equip.py      - Chain-equip for lore-rich legendary uniques
   chain_passives.py   - Chain-equip passive flag lookups and wiring

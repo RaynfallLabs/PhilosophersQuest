@@ -1189,6 +1189,17 @@ class Monster:
         # Displacement's 30% miss is rolled once, by the caller in game_combat
         # (it used to be rolled here as well, for a combined 51% miss).
 
+        # Bracers of Parrying (enchantments.py): a blow from beside you that
+        # would land is parried. Not a breath, a missile, a gaze or a voice.
+        if _guards.delivery(atk) in ('blow', 'bite', 'sting', 'trample', 'grapple', 'touch'):
+            try:
+                import enchantments as _ench
+                _parry = _ench.might(player, 'parrying')
+            except ImportError:
+                _parry = 0.0
+            if _parry > 0 and random.random() < _parry:
+                return 0, f"You parry {the_name(self, lower=True)}'s blow."
+
         # Cloak of Sun Wukong (monkey_king_dodge): every Nth attack against the
         # player auto-misses. Counter is on the player; resets when armor unequipped.
         try:
@@ -1796,13 +1807,10 @@ class Monster:
         # against the wearer (rounded down, min 1). Already-aware monsters
         # keep their target via the _aware flag, so silent_walk only helps
         # AVOID first detection — once seen, you're seen.
-        try:
-            for _acc in player.equipped_accessories:
-                if getattr(_acc, 'passive_silent_walk', False):
-                    detection_range = max(1, detection_range // 2)
-                    break
-        except AttributeError:
-            pass
+        # (Boots of Elvenkind too: gear.wears_flag looks at worn armour.)
+        import gear as _gear
+        if _gear.wears_flag(player, 'passive_silent_walk'):
+            detection_range = max(1, detection_range // 2)
         # Chain-equip passives: invisible_to_undead / stealth_in_dark /
         # unseen_when_still — if any applies, the monster cannot acquire
         # the player this turn (existing _aware/_alerted is preserved).

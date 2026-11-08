@@ -1460,12 +1460,20 @@ class DivineMixin:
         self._show_prayer_verse(karma_tier, min(chain, 5))
 
     def _apply_prayer_cooldown_quirks(self):
-        """Fisher King quirks halve cooldown (stacking)."""
+        """Fisher King quirks halve cooldown (stacking); the Hair Shirt
+        (enchantments.py) cuts its share."""
         p = self.player
         if getattr(p, 'quirk_progress', {}).get('fisher_king_active'):
             p.prayer_cooldown = max(1, p.prayer_cooldown // 2)
         if getattr(p, 'quirk_progress', {}).get('fisher_king_mystery_active'):
             p.prayer_cooldown = max(1, p.prayer_cooldown // 2)
+        try:
+            import enchantments
+            cut = enchantments.prayer_cooldown_cut(p)
+        except ImportError:
+            cut = 0.0
+        if cut > 0:
+            p.prayer_cooldown = max(1, int(round(p.prayer_cooldown * (1 - cut))))
 
     def _show_prayer_verse(self, karma_tier: str, key: int):
         verse = _KARMA_VERSES.get(karma_tier, {}).get(key)

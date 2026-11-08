@@ -387,6 +387,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.quiz_engine.on_complete = self._on_quiz_complete
         # A teaching card read (the Seeker's Curious Mind, game_seeker.py).
         self.quiz_engine.on_card = lambda subject: self._seeker_event('card_opened', subject=subject)
+        # A craft enchantment (gloves of the Locksmith...): every Nth quiz on
+        # its subject forgives the first wrong answer (enchantments.py).
+        self.quiz_engine.craft_hook = self._craft_forgives
         self.quirk_system = QuirkSystem(self)
         self._slow_skip         = False    # toggled each turn when slowed
         # Key-held movement (arrow key auto-repeat)
@@ -8015,6 +8018,17 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         enchantment."""
         from items import is_fully_known
         return is_fully_known(item, self.player)
+
+    def _craft_forgives(self, subject: str) -> bool:
+        """The quiz engine asks at the start of every quiz: does a worn
+        craft enchantment forgive this one's first wrong answer?"""
+        import enchantments
+        piece = enchantments.craft_ready(self.player, subject)
+        if piece is None:
+            return False
+        self.add_message(f"Your {self._bare_name(piece)} steady you: one wrong answer "
+                         "here will be forgiven.", 'success')
+        return True
 
     def _show_item_comparison(self, item):
         """Show a brief comparison hint if the ground item is comparable to equipped gear.

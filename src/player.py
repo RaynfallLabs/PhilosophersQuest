@@ -1245,6 +1245,10 @@ class Player:
         except ImportError:
             pass
         self.drop_worn_status(getattr(old, 'on_equip_status', ''), old)
+        # A stat its enchantment lent (Gauntlets of Ogre Power): resynced
+        # once the piece is out of its slot.
+        if any(True for _ in self._stat_parts(getattr(old, 'effects', None) or {})):
+            self.sync_worn_stats()
         # Mantle of Elijah: the +max MP it lent.
         drop = int(getattr(old, '_prophets_mp_grant', 0) or 0)
         if drop > 0:
@@ -1370,6 +1374,13 @@ class Player:
         it generically; the math path uses it, the rest ignore it.
         """
         base = getattr(self, 'quiz_timer_bonuses', {}).get(subject, 0)
+        # Bracers of Swift Strokes (enchantments.py): the combat clock.
+        if subject == 'math':
+            try:
+                import enchantments
+                base += enchantments.quiz_seconds(self)
+            except ImportError:
+                pass
         # Ancile shield: bonus seconds on quiz timers.
         shld = getattr(self, 'shield', None)
         if shld and getattr(shld, 'quiz_timer_bonus', 0) > 0:
@@ -1831,6 +1842,20 @@ class Player:
     # sync_worn_stats moves the stats to what is worn.
     WORN_STATS = ('STR', 'CON', 'DEX', 'INT', 'WIS', 'PER')
 
+    def worn_stat_armour(self) -> list:
+        """Worn armour whose effects name a stat (enchantments.py)."""
+        out = []
+        for a in (getattr(self, 'armor_slots', None) or ()):
+            if a is not None and any(True for _ in self._stat_parts(getattr(a, 'effects', None) or {})):
+                out.append(a)
+        return out
+
+    def wears_flag(self, flag: str) -> bool:
+        """Any worn ring, amulet, belt or armour with `flag` set (Elvenkind's
+        silent steps are on boots now, the Hand of Glory's on a ring)."""
+        import gear
+        return gear.wears_flag(self, flag)
+
     def worn_accessories(self) -> list:
         worn = [a for a in (getattr(self, 'accessory_slots', None) or ()) if a is not None]
         for a in (getattr(self, 'amulet_slot', None), getattr(self, 'belt_slot', None)):
@@ -1850,7 +1875,9 @@ class Player:
         """What worn accessories lend each stat under the strongest-counts rule."""
         best: dict = {}
         target: dict = {}
-        for acc in self.worn_accessories():
+        # Rings, amulets and belts, and (bug bash 3.3.2) the minor armour
+        # whose enchantment lends a stat (Gauntlets of Ogre Power...).
+        for acc in self.worn_accessories() + self.worn_stat_armour():
             for stat, amount in self._stat_parts(getattr(acc, 'effects', None) or {}):
                 if amount > 0:
                     best[stat] = max(best.get(stat, 0), amount)
@@ -2249,6 +2276,8 @@ class Player:
             new_status = getattr(item, 'on_equip_status', '')
             if new_status:
                 self.add_effect(new_status, -1)
+            if any(True for _ in self._stat_parts(getattr(item, 'effects', None) or {})):
+                self.sync_worn_stats()
             # Mantle of Elijah (prophets_passing): the "office passes" — +3 max MP
             # while equipped. Lore: the wisdom of the prophet's school carries.
             # Bug-bash fix a97b: guard against double-grant if a prior unequip

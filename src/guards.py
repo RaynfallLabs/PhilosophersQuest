@@ -122,16 +122,23 @@ def guard_keep(player, atk: dict) -> tuple:
     keep_d = keep_r = 1.0
     best, best_r = None, 0.0
     for slot, piece in _worn_minor(player):
-        dmg, rider = matches(family(slot), atk)
-        if not (dmg or rider):
-            continue
-        r, d = piece_strength(piece)
-        if dmg:
-            keep_d *= max(0.0, 1.0 - d)
-        if rider:
-            keep_r *= max(0.0, 1.0 - r)
-            if r > best_r:
-                best, best_r = piece, r
+        # The slot's own family (the template's base guard, plus a guard
+        # enchantment of that family), then any family a guard enchantment
+        # names for itself (the cloak's Elementward and Vapourward).
+        parts = [(family(slot),) + piece_strength(piece)]
+        try:
+            import enchantments
+            parts += [(fam, r, d) for fam, r, d in enchantments.guard_families(piece)]
+        except ImportError:
+            pass
+        for fam, r, d in parts:
+            dmg, rider = matches(fam, atk)
+            if dmg:
+                keep_d *= max(0.0, 1.0 - d)
+            if rider:
+                keep_r *= max(0.0, 1.0 - r)
+                if r > best_r:
+                    best, best_r = piece, r
     keep_d = max(1.0 - caps['damage'], keep_d)
     keep_r = max(1.0 - caps['rider'], keep_r)
     return keep_d, keep_r, best

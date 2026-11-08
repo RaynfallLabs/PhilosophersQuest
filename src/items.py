@@ -1551,6 +1551,16 @@ def wear_down(item) -> bool:
     below -3). The loss is remembered as ``wear_loss`` so a smith can
     restore it (traders.py, the repair service), never above what the item
     had. True when a point was lost."""
+    import gear
+    if getattr(item, 'item_class', '') == 'armor' and not gear.is_core(item):
+        # A minor piece carries no plus: wear takes a level of its
+        # enchantment (bug bash 3.3.2); a smith gives it back.
+        lv = int(getattr(item, 'ench_level', 0) or 0)
+        if lv <= 0:
+            return False
+        set_ench_level(item, lv - 1)
+        item.wear_loss = int(getattr(item, 'wear_loss', 0) or 0) + 1
+        return True
     eb = int(getattr(item, 'enchant_bonus', 0) or 0)
     if eb <= -3:
         return False
@@ -2505,7 +2515,8 @@ def instantiate_armor(template_id: str, material_id: str, *,
         'ac_bonus': base_ac,
         'enchant_bonus': plus,
         'ench_level': level,
-        'ench_id': ench_id,
+        # Only a minor piece with a level carries one (enchantments.py).
+        'ench_id': ench_id if (ench_id and not core and level > 0) else '',
         # The material decides wear and weight, never protection (plan 3).
         'damage_resistances': {},
         'can_be_cursed': bool(mat.get('can_be_cursed', True)),
@@ -2522,6 +2533,10 @@ def instantiate_armor(template_id: str, material_id: str, *,
     a = Armor(defn)
     a.x, a.y = x, y
     a.weight_class = defn['weight_class']
+    if defn['ench_id']:
+        # Its one power, from its own slot's stable (enchantments.py).
+        import enchantments
+        enchantments.apply_to(a, ench_id)
     return a
 
 
@@ -2676,8 +2691,12 @@ def pick_random_armor_for_floor(floor: int, rng, slot: str | None = None) -> 'Ar
     tid, chosen_mid = chosen
     import gear
     level = gear.roll_level(floor, rng)
+    ench_id = ''
+    if level > 0 and slot in gear.MINOR_SLOTS:
+        import enchantments
+        ench_id = enchantments.roll(slot, level, rng)
     try:
-        return instantiate_armor(tid, chosen_mid, level=level)
+        return instantiate_armor(tid, chosen_mid, level=level, ench_id=ench_id)
     except ValueError:
         return None
 

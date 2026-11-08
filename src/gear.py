@@ -147,3 +147,12 @@ def level_for_tier(tier: int, greater: bool = False) -> int:
     """The level of a tier's lesser (or greater) form."""
     t = max(1, min(5, int(tier or 1)))
     return 2 * t if greater else 2 * t - 1
+
+
+def wears_flag(holder, flag: str) -> bool:
+    """Any worn ring, amulet, belt or armour piece of ``holder`` with ``flag``
+    set (the Hand of Glory's silent walk on a ring, Elvenkind's on boots).
+    Reads attributes only, so a monster's or a test's stand-in works too."""
+    worn = list(getattr(holder, 'equipped_accessories', None) or ())
+    worn += [a for a in (getattr(holder, 'armor_slots', None) or ()) if a is not None]
+    return any(getattr(it, flag, False) for it in worn)

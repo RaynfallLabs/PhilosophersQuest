@@ -545,8 +545,14 @@ class TraderMixin:
             pieces = self._service_targets('repair')
             if not pieces:
                 return False
+            import gear
+            from items import set_ench_level
             for it in pieces:
-                it.enchant_bonus = int(getattr(it, 'enchant_bonus', 0) or 0) + int(it.wear_loss)
+                if getattr(it, 'item_class', '') == 'armor' and not gear.is_core(it):
+                    # A minor piece's wear took levels, not plus (items.wear_down).
+                    set_ench_level(it, int(getattr(it, 'ench_level', 0) or 0) + int(it.wear_loss))
+                else:
+                    it.enchant_bonus = int(getattr(it, 'enchant_bonus', 0) or 0) + int(it.wear_loss)
                 it.wear_loss = 0
             self.add_message(f"{who} scours the rust and pits out of your gear. "
                              "It is as good as it was.", 'success')

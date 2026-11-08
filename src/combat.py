@@ -1496,6 +1496,13 @@ def strike_damage(player, monster, chain: int, *, ranged: bool = False, ammo=Non
     # across chain levels — invisible progression. round() preserves
     # the half-step damage differences that the chain ladder is designed
     # to deliver.
+    # Gloves of Striking (your blows) and Bracers of Archery (your shots):
+    # the minor-slot might lane (enchantments.py, bug bash 3.3.2).
+    try:
+        import enchantments as _ench
+        mult *= 1.0 + _ench.might(player, 'archery' if is_ranged else 'striking')
+    except ImportError:
+        pass
     damage = max(1, round((base + enchant + ammo_bonus + buc_bonus) * mult * dtype_mult * str_factor * low_hp_mult))
 
     # Empower spell: 3x damage on next hit, then clears

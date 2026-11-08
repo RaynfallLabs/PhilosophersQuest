@@ -407,6 +407,19 @@ class QuizEngine:
         # The flag is one-shot: it applies to THIS quiz only. Left sticky, a
         # combat start granted a free mulligan to every later identify /
         # lockpick / prayer quiz as well (audit B7, 2026-10-04).
+        # A craft enchantment for this subject (enchantments.py, bug bash
+        # 3.3.2): on every Nth quiz its first wrong answer is forgiven: the
+        # threshold quiz's second chance, or a chain going on.
+        _craft = getattr(self, 'craft_hook', None)
+        if _craft is not None:
+            try:
+                if _craft(subject):
+                    if mode in (QuizMode.CHAIN, QuizMode.ESCALATOR_CHAIN):
+                        self._forgive_flag = True
+                    else:
+                        self._reroll_flag = True
+            except Exception:
+                pass
         self.reroll_available = bool(getattr(self, '_reroll_flag', False))
         self._reroll_flag = False
         self.reroll_was_used = False
