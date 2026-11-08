@@ -82,6 +82,7 @@ src/
   hero_specials.py    - One special ability per Secret Build
   spells.py           - Spellbook spell definitions (tiered families)
   prayers.py          - The prayer list and what each grants
+  altar.py            - The altar's offering: curses lifted, then blessings; what a blessing changes
   boons.py            - Gate-boss gifts (pick one of three)
   status_effects.py   - Buffs/debuffs (paralysis, poison, berserk, etc.)
   food_system.py      - Harvest and cooking mechanics

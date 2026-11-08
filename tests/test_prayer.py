@@ -95,9 +95,12 @@ def test_state_pray_is_gone():
 # ---------------------------------------------------------------------------
 
 class _StubItem:
-    def __init__(self, buc='uncursed', name='stub'):
+    def __init__(self, buc='uncursed', name='stub', item_class='armor'):
         self.buc = buc
         self.name = name
+        # Spare armour by default: a kind a blessing helps (altar.py). The
+        # chain-4 gift blesses only such kinds (bug bash 3.3.2).
+        self.item_class = item_class
 
 
 class _StubPlayer:
@@ -385,6 +388,19 @@ def test_simple_prayer_chain4_bless_refused_at_karma_neg5():
     assert all(it.buc == 'uncursed' for it in items), (
         "at karma <= -5, chain-4 gift must be refused"
     )
+
+
+def test_simple_prayer_chain4_never_blesses_what_a_blessing_does_not_change():
+    """Bug bash 3.3.2 (Brandon): the gift blessed a lockpick and food."""
+    g = _make_prayer_game(karma=9, at_altar=False)
+    junk = [_StubItem(name='lockpick', item_class='lockpick'),
+            _StubItem(name='ration', item_class='food'),
+            _StubItem(name='book', item_class='spellbook')]
+    helm = _StubItem(name='helm')
+    g.player.inventory = junk + [helm]
+    game_divine.DivineMixin._resolve_simple_prayer(g, 4, False)
+    assert helm.buc == 'blessed'
+    assert all(it.buc == 'uncursed' for it in junk)
 
 
 def test_simple_prayer_chain5_adds_shielded():

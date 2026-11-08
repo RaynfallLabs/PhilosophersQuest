@@ -277,6 +277,16 @@ SERVICE_PURSE_PCT = {
 SMITH_ENCHANT_CAP = 2
 PORTER_FLOORS = 3
 
+# An altar's offering (Brandon, 2026-11-07): one price for whatever the hero
+# asks there (the altar rite or a prayer out of turn), rising with the floor.
+# Half a floor's income: 105 gp on floor 1, 670 on 16, 1,800 on 46.
+ALTAR_OFFERING_SHARE = 0.5
+
+
+def altar_offering(level: int) -> int:
+    """The gold an altar asks on floor ``level`` (src/altar.py)."""
+    return share(level, ALTAR_OFFERING_SHARE)
+
 
 def service_price(service: str, level: int, *, purse: int = 0, points: int = 1,
                   markup: float = 1.0) -> int:

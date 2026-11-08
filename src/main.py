@@ -3515,7 +3515,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                                "something small from hand to hand.")
             if _quest_line:
                 self.add_message(_quest_line, 'info')
-            self.add_message("A sacred altar stands here. Press '\\' to pray with divine bonus.", 'info')
+            self.add_message("A sacred altar stands here. Press '\\' to make an offering or pray.", 'info')
         elif tile == FOUNTAIN:
             if (x, y) == getattr(self.dungeon, 'ariadne_fountain_pos', None) \
                     and getattr(self.dungeon, 'ariadne_shrine_door', None):

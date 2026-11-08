@@ -6381,11 +6381,21 @@ class RenderMixin:
         draw_overlay(self.screen, 200)
 
         choices = self._prayer_choices()
+        _title_of = getattr(self, '_prayer_menu_title', None)
+        title = _title_of() if callable(_title_of) else "You Kneel. What Do You Ask?"
+        # A row the hero cannot take now (the offering out of reach, or God
+        # refusing it) is drawn dim; its line says why.
+        def _row_color(pr):
+            return FP.GOLD_BRIGHT if pr.get('enabled', True) else FP.HINT_TEXT
         if kit_on():
+            rows = []
+            for i, pr in enumerate(choices):
+                row = {'key': str(i + 1), 'name': pr['name'], 'text': pr['asks']}
+                if not pr.get('enabled', True):
+                    row['name_color'] = FP.HINT_TEXT
+                rows.append(row)
             _kit_option_card(
-                self.screen, "You Kneel. What Do You Ask?",
-                [{'key': str(i + 1), 'name': pr['name'], 'text': pr['asks']}
-                 for i, pr in enumerate(choices)],
+                self.screen, title, rows,
                 f"1-{max(1, len(choices))}: pray   //   Esc: rise without praying",
                 border=FP.GOLD, overlay=0, min_w=700)
             return
@@ -6409,14 +6419,14 @@ class RenderMixin:
         pygame.draw.rect(self.screen, (110, 82, 20),
                          (bx + 4, by + 4, bw - 8, bh - 8), 1, border_radius=6)
 
-        title = font_title.render("YOU KNEEL. WHAT DO YOU ASK?", True, FP.GOLD_BRIGHT)
+        title = font_title.render(title.upper(), True, FP.GOLD_BRIGHT)
         self.screen.blit(title, (bx + (bw - title.get_width()) // 2, by + S(22)))
         pygame.draw.line(self.screen, FP.GOLD,
                          (bx + S(32), by + S(60)), (bx + bw - S(32), by + S(60)), 1)
 
         y = by + S(78)
         for i, prayer in enumerate(choices):
-            name = font_name.render(f"{i + 1}.  {prayer['name']}", True, FP.GOLD_BRIGHT)
+            name = font_name.render(f"{i + 1}.  {prayer['name']}", True, _row_color(prayer))
             self.screen.blit(name, (bx + S(40), y))
             y += font_name.get_height() + S(2)
             asks = font_body.render(prayer['asks'], True, FP.BODY_TEXT)
@@ -10176,7 +10186,7 @@ class RenderMixin:
                 ("G / ,", "Pick up item", FP.BODY_TEXT),
                 ("P", "Unlock / disarm", FP.BODY_TEXT),
                 ("Y", "Trade", FP.BODY_TEXT),
-                ("\\", "Pray", FP.BODY_TEXT),
+                ("\\", "Pray / altar offering", FP.BODY_TEXT),
                 ("Shift+\\", "Divine Intercession", FP.BODY_TEXT),
                 ("O", "Look / Bestiary", FP.BODY_TEXT),
                 ("B, Tab", "Monster families", FP.BODY_TEXT),

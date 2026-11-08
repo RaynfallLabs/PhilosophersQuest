@@ -1813,6 +1813,18 @@ def _(g):
     g._start_pray()
 
 
+@scene('menu_altar', 'Prayer',
+       "\\ on floor 1's altar, prayer on cooldown: the offering (rite, two paid prayers).",
+       expect='prayer_menu')
+def _(g):
+    from dungeon import ALTAR
+    d = g.dungeon
+    g.player.x, g.player.y = next((x, y) for y in range(d.height)
+                                  for x in range(d.width) if d.tiles[y][x] == ALTAR)
+    g.player.prayer_cooldown = 40
+    g._start_pray()
+
+
 @scene('menu_boon', 'Prayer', 'Kill a gate boss (Asterion): take one of three gifts.', expect='boon_menu')
 def _(g):
     g.player.pending_boon = 'asterion_minotaur'
