@@ -606,6 +606,19 @@ class RenderMixin:
         def _count(qid):
             return qsys.progress_count(qid) if qsys is not None else None
 
+        def _label(qid, pct):
+            count = _count(qid)
+            return f"{count[0]}/{count[1]}" if count else f"{int(pct * 100)}%"
+
+        # One column for the counts, as wide as the widest in the whole list
+        # (not just the rows on screen, so it does not move as the list
+        # scrolls): every bar ends at the same x and the counts sit right-
+        # aligned in it. Each bar used to end where its own count began, so
+        # "45%", "3/10" and "112/147" set three different bars.
+        label_w = max([tag_f.size("100%")[0]]
+                      + [tag_f.size(_label(q, pc))[0]
+                         for q, _n, pc, unl, _e, _t in data if not unl])
+
         y = list_body.y
         for idx, (row_qid, name, pct, unlocked, effect, _) in enumerate(
                 data[scroll:scroll + visible], start=scroll):
@@ -623,12 +636,10 @@ class RenderMixin:
                                        rect.centery - tag.get_height() // 2))
                 room = rect.w - S(36) - tag.get_width()
             else:
-                count = _count(row_qid)
-                label = f"{count[0]}/{count[1]}" if count else f"{int(pct * 100)}%"
-                pct_s = tag_f.render(label, True, readable(FP.FADED_TEXT, bg))
+                pct_s = tag_f.render(_label(row_qid, pct), True, readable(FP.FADED_TEXT, bg))
                 self.screen.blit(pct_s, (rect.right - S(12) - pct_s.get_width(),
                                          rect.centery - pct_s.get_height() // 2))
-                bar = pygame.Rect(rect.right - S(24) - pct_s.get_width() - S(100),
+                bar = pygame.Rect(rect.right - S(24) - label_w - S(100),
                                   rect.centery - S(5), S(100), S(10))
                 room = bar.x - rect.x - S(22)
                 if name_f.size(name)[0] > room and get_font('body', 16, bold=True).size(name)[0] > room:
@@ -803,9 +814,13 @@ class RenderMixin:
             track = pygame.Rect(x + S(36), y + S(6), max(S(20), w - S(102)), S(9))
             ratio = max(0.0, min(1.0, value / max(1, max_value)))
             if kit:
-                # The value's own width is kept clear (a fixed 94 px let
-                # "210/210" run over the panel edge on a wide sheet).
-                val_w = font_body.size(f"{value}/{max_value}")[0] + S(8)
+                # The widest of the three values is kept clear (a fixed 94 px
+                # let "210/210" run over the panel edge on a wide sheet), the
+                # same for HP, MP and SP: each bar sized to its own value
+                # ended at its own x ("210/210" against "15/15").
+                val_w = max(font_body.size(f"{v}/{m}")[0] for v, m in (
+                    (p.hp, p.max_hp), (p.mp, p.max_mp), (p.sp, p.max_sp),
+                    (value, max_value))) + S(8)
                 track = pygame.Rect(x + S(36), y + S(3),
                                     max(S(20), min(w - S(102), w - S(36) - val_w)), S(14))
                 ui_theme.draw_piece(screen, 'bar_track', track)
