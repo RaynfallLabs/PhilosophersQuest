@@ -67,13 +67,13 @@ family (`data/armor_guards.json`):
 
 | Slot | Family | Turns aside damage of | Shrugs off riders |
 |---|---|---|---|
-| head | the mind and the senses | voice, gaze | fear, confusion, sleep, hallucination, stun, blinding |
-| hands | touch and grip | touch, grapple | paralysis, holds, freezing |
-| arms | missiles | ranged | their riders |
+| head | gazes and voices | voice, gaze | fear, confusion, sleep, hallucination, stun, blinding |
+| hands | touches and grabs | touch, grapple | paralysis, holds, freezing |
+| arms | arrows and missiles | ranged | their riders |
 | legs | bites and stings | bite, sting | poison, disease |
-| feet | footing | trample | slowed, held, frozen; stun from a blow |
-| cloak | what washes over you | breath; fire, cold, lightning, acid | burning, frozen |
-| shirt | what gets under the armour | poison, drain, necrotic | poison, disease, bleeding, weakening |
+| feet | trampling and snares | trample | slowed, held, frozen; stun from a blow |
+| cloak | breath and elements | breath; fire, cold, lightning, acid | burning, frozen |
+| shirt | poison and draining | poison, drain, necrotic | poison, disease, bleeding, weakening |
 
 A piece's own guard is its weight class (light 5% / 3%, medium 10% / 6%,
 heavy 15% / 9%), plus a guard enchantment of its family. Caps: 80%.

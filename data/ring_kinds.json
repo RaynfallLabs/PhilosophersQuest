@@ -18,13 +18,13 @@
       "slot": "ring", "name": "Protection", "lane": "guard",
       "family": {"riders_all": true}, "guards": "rider",
       "tiers": [0.16, 0.19, 0.24, 0.28, 0.28],
-      "text": "a saving throw against every attack: shrugs off {pct} of its poison, fear, sleep, paralysis or any other rider"
+      "text": "a saving throw against every attack: shrugs off {pct} of the poison, fear, sleep, paralysis or anything else it would inflict"
     },
     "spell_turning": {
       "slot": "ring", "name": "Spell Turning", "lane": "guard",
       "family": {"elements": ["magic", "shadow", "psionic"]}, "guards": "damage",
       "tiers": [0.30, 0.46, 0.52, 0.52, 0.52],
-      "text": "turns aside {pct} of magic, shadow and psionic damage"
+      "text": "turns aside {pct} of the damage of magic, shadow and attacks on the mind"
     },
     "regeneration": {
       "slot": "ring", "name": "Regeneration", "lane": "body",

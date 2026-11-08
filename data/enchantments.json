@@ -47,7 +47,7 @@
 
     "deflection":  {"slot": "arms", "lane": "guard", "name": "Deflection",
                     "tiers": [0.54, 0.54, 0.54, 0.57, 0.57],
-                    "text": "turns aside {pct} of arrows, bolts, rays and thrown things, and {pct} of their riders"},
+                    "text": "turns aside {pct} of arrows, bolts, rays and thrown things, and stops {pct} of what they carry"},
     "parrying":    {"slot": "arms", "lane": "might", "name": "Parrying",
                     "tiers": [0.05, 0.05, 0.06, 0.06, 0.07],
                     "text": "parries {pct} of the blows from beside you that would land"},

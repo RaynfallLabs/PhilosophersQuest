@@ -61,7 +61,7 @@ def test_a_body_armours_card_shows_base_plus_plus():
 def test_a_helms_card_says_what_it_guards_and_its_enchantment_not_ac():
     rows = dict(_Fake(Player())._kit_armour_rows(_helm()))
     assert 'AC' not in rows
-    assert rows['Guards'].startswith('The mind and the senses')
+    assert rows['Guards'].startswith('Gazes and voices')
     assert rows['Enchant'] == 'Iron Will III'
     assert gear.ac_value(_helm()) == 0
 
@@ -95,6 +95,12 @@ def test_stepping_over_a_helm_names_both_enchantments():
 
 
 def test_the_guard_line_reads_as_english():
+    # Plain words (Brandon: "We speak english in this game").
     line = guards.guard_text(_helm())
-    assert line.startswith('Guards the mind and the senses: turns aside ')
+    assert line.startswith('Guards against gazes, screams and other attacks on the mind: takes ')
+    assert 'stops' in line and 'fear' in line
+    for slot in ('head', 'hands', 'arms', 'legs', 'feet', 'cloak', 'shirt'):
+        fam = guards.family(slot)
+        assert fam['name'] and fam['long'] and fam['stops'], slot
+        assert 'washes' not in fam['name'] and 'rider' not in fam['stops'], slot
     assert guards.guard_text(items.instantiate_armor('plate', 'damascus_steel')) == ''

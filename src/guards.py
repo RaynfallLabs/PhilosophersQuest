@@ -117,8 +117,10 @@ def guard_text(piece, short: bool = False) -> str:
     name = str(fam.get('name', slot))
     if short:
         return f"{name.capitalize()} {round(100 * dmg)}%"
-    return (f"Guards {name}: turns aside {round(100 * dmg)}% of those attacks "
-            f"and shrugs off {round(100 * rider)}% of what they carry.")
+    long = str(fam.get('long', name))
+    stops = str(fam.get('stops', 'what they carry'))
+    return (f"Guards against {long}: takes {round(100 * dmg)}% off their damage "
+            f"and stops {round(100 * rider)}% of {stops}.")
 
 
 def _worn_minor(player):
