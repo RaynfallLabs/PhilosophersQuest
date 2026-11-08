@@ -1867,6 +1867,14 @@ class CombatMixin:
             return
 
         if pid and pid.startswith('spell_'):
+            # A spell with a reach (spells.SPELL_REACH) lands only that far:
+            # a touch on a foe beside you, a sign close by.
+            _sp = getattr(self, '_pending_spell', None)
+            if _sp and not self._spell_in_reach(_sp, target):
+                self.add_message(self._out_of_reach_line(_sp), 'warning')
+                self._refund_pending_spell()
+                self.state = STATE_PLAYER
+                return
             # Targeted spell: start the quiz with this target
             spell = getattr(self, '_pending_spell', None)
             spell_id = getattr(self, '_pending_spell_id', None)

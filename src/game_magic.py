@@ -114,7 +114,8 @@ MAGIC_TIER_MULT = {1: 2.6, 2: 4.9, 3: 5.8, 4: 7.9, 5: 10.5}
 WAND_TIER_MULT = {1: 1.9, 2: 3.7, 3: 5.6, 4: 6.8, 5: 8.0}
 
 # What Intelligence does for magic: more casts (max MP is 10 + INT), and
-# effects that last longer and reach further. It adds a little to damage
+# effects that last longer (and a wider Light). It never lengthens how far
+# an aimed spell goes (spells.SPELL_REACH). It adds a little to damage
 # and healing, never the +10% a point it used to (INT 36 was x4.6).
 INT_DAMAGE_PER_POINT = 0.015
 INT_DAMAGE_CAP = 1.4
@@ -1401,6 +1402,39 @@ class MagicMixin:
     # Spell menu  (m key -- learned spells, cast with one-Q science quiz)
     # ------------------------------------------------------------------
 
+    def _spell_in_reach(self, spell, m) -> bool:
+        """Is ``m`` within the spell's reach (any tile of a big one)? A
+        spell without a reach goes as far as the hero sees."""
+        from spells import spell_reach
+        from geom import chebyshev_distance
+        reach = spell_reach(spell)
+        if reach is None:
+            return True
+        return chebyshev_distance(self.player.x, self.player.y, m) <= reach
+
+    @staticmethod
+    def _out_of_reach_line(spell) -> str:
+        from spells import spell_reach, REACH_TOUCH
+        reach = spell_reach(spell)
+        name = spell.get('name', 'The spell')
+        if reach is not None and reach <= REACH_TOUCH:
+            return f"{name} needs a foe beside you: you must lay hands on it."
+        return f"Nothing is close enough for {name}: it reaches {reach} tiles."
+
+    def _in_spell_sight(self, m) -> bool:
+        """An area spell's victim: alive, on a tile the hero sees, and in a
+        clear line from him (any tile of a big one). Sight alone was not
+        enough: the Crown of Brahma, tremor sense and Huginn and Muninn show
+        tiles through walls, and every area spell struck through them."""
+        if not m.alive:
+            return False
+        from combat import _line_of_sight
+        from geom import occupied_tiles
+        px, py = self.player.x, self.player.y
+        visible = self.visible
+        return any((tx, ty) in visible and _line_of_sight(px, py, tx, ty, self.dungeon)
+                   for tx, ty in occupied_tiles(m))
+
     def _invoke_spell(self, spell_id: str):
         spell = LEARNABLE_SPELLS.get(spell_id)
         if not spell:
@@ -1425,13 +1459,17 @@ class MagicMixin:
             self._pending_spell = spell
             self._pending_spell_id = spell_id
             px, py = self.player.x, self.player.y
-            candidates = [
-                m for m in self.monsters
-                if m.alive and (m.x, m.y) in self.visible
-            ]
+            # Only what the hero can see (never an invisible or disguised
+            # thing: its tile would show where it stands) and only what the
+            # spell reaches (spells.SPELL_REACH: a touch, a short sign).
+            seen = [m for m in self.monsters if m.alive and self._sees_monster(m)]
+            candidates = [m for m in seen if self._spell_in_reach(spell, m)]
             candidates.sort(key=lambda m: abs(m.x - px) + abs(m.y - py))
             if not candidates:
-                self.add_message("No visible target for this spell.", 'warning')
+                if seen:
+                    self.add_message(self._out_of_reach_line(spell), 'warning')
+                else:
+                    self.add_message("No visible target for this spell.", 'warning')
                 if _free_cast:      # nothing was cast: the floor's free spell is still owed
                     refund_passive_charge(self.player, 'free_cast_once_per_floor')
                 self.state = STATE_PLAYER
@@ -1588,7 +1626,7 @@ class MagicMixin:
             scaled   = self._spell_damage(base_dmg, chain)
             hit = 0
             for m in list(self.monsters):
-                if m.alive and (m.x, m.y) in self.visible:
+                if self._in_spell_sight(m):
                     hit += 1 if _hero_sees(self, m) else 0
                     m.take_damage(scaled, 'cold')
                     if not m.alive:
@@ -1603,7 +1641,7 @@ class MagicMixin:
             scaled   = self._spell_damage(base_dmg, chain)
             hit = 0
             for m in list(self.monsters):
-                if m.alive and (m.x, m.y) in self.visible:
+                if self._in_spell_sight(m):
                     hit += 1 if _hero_sees(self, m) else 0
                     actual = m.take_damage(scaled, 'fire')
                     if not m.alive:
@@ -1736,7 +1774,7 @@ class MagicMixin:
             from dice import roll as _roll_m
             base_dmg = _roll_m(power) if power else 20
             scaled = self._spell_damage(base_dmg, chain)
-            visible_monsters = [m for m in self.monsters if m.alive and (m.x, m.y) in self.visible]
+            visible_monsters = [m for m in self.monsters if self._in_spell_sight(m)]
             kills = 0
             for m in visible_monsters:
                 actual = m.take_damage(scaled, 'fire')
@@ -1792,7 +1830,7 @@ class MagicMixin:
             hit = 0
             for m in list(self.monsters):
                 if not m.alive: continue
-                if (m.x, m.y) not in self.visible: continue
+                if not self._in_spell_sight(m): continue
                 if max(abs(m.x - px), abs(m.y - py)) > 5: continue
                 hit += 1 if _hero_sees(self, m) else 0
                 m.take_damage(scaled, 'cold')
@@ -1810,7 +1848,7 @@ class MagicMixin:
             count = 0
             for m in list(self.monsters):
                 if not m.alive: continue
-                if (m.x, m.y) not in self.visible: continue
+                if not self._in_spell_sight(m): continue
                 if _is_big_foe(m): continue   # bosses and named foes immune
                 # Crude polymorph: weaken HP + AC + speed to a "small animal"
                 m.max_hp = max(1, m.max_hp // 4)
@@ -1834,7 +1872,7 @@ class MagicMixin:
                 hit = 0
                 for m in list(self.monsters):
                     if not m.alive: continue
-                    if (m.x, m.y) not in self.visible: continue
+                    if not self._in_spell_sight(m): continue
                     m.take_damage(scaled_per, 'fire')
                     if not m.alive:
                         self._on_monster_killed(m)
@@ -1852,7 +1890,7 @@ class MagicMixin:
             hit = 0
             for m in list(self.monsters):
                 if not m.alive: continue
-                if (m.x, m.y) not in self.visible: continue
+                if not self._in_spell_sight(m): continue
                 hit += 1 if _hero_sees(self, m) else 0
                 m.take_damage(scaled, 'lightning')
                 # Stun chance from the thunder
@@ -1913,7 +1951,7 @@ class MagicMixin:
             scaled = self._spell_damage(base_dmg, chain)
             undead = [
                 m for m in self.monsters
-                if m.alive and (m.x, m.y) in self.visible and _is_undead(m)
+                if self._in_spell_sight(m) and _is_undead(m)
             ]
             if undead:
                 fear_dur = max(3, int(8 * chain_scale))
@@ -1938,7 +1976,7 @@ class MagicMixin:
             threshold_pct = 0.35
             visible_monsters = [
                 m for m in self.monsters
-                if m.alive and (m.x, m.y) in self.visible
+                if self._in_spell_sight(m)
             ]
             slain, struck = 0, 0
             for m in visible_monsters:
@@ -1986,7 +2024,7 @@ class MagicMixin:
             dur = max(2, int(dur * chain_scale))          # Intelligence: reach
             visible_monsters = [
                 m for m in self.monsters
-                if m.alive and (m.x, m.y) in self.visible
+                if self._in_spell_sight(m)
             ]
             affected = 0
             for m in visible_monsters:
@@ -2015,7 +2053,7 @@ class MagicMixin:
             base_dur = max(2, int(base_dur * chain_scale))     # Intelligence: reach
             visible_monsters = [
                 m for m in self.monsters
-                if m.alive and (m.x, m.y) in self.visible
+                if self._in_spell_sight(m)
             ]
             affected = 0
             for m in visible_monsters:
@@ -2254,7 +2292,8 @@ class MagicMixin:
                     target.add_effect('sleeping', dur)
                     self.add_message(f"{the_name(target)} falls asleep for {dur} turns!", 'success')
             elif effect == 'confuse_monster':
-                dur = max(2, int(10 * chain_scale))
+                # Axii holds longer than Confusion (spells.py 'duration').
+                dur = max(2, int(int(spell.get('duration', 10)) * chain_scale))
                 dur, resisted = self._boss_resist_cc(target, dur)
                 if resisted:
                     self.add_message(f"{the_name(target)} shrugs off the confusion!", 'warning')
@@ -2283,7 +2322,9 @@ class MagicMixin:
                 if not target.alive:
                     self._on_monster_killed(target)
             elif effect == 'slow_monster':
-                dur = max(2, int(8 * chain_scale))
+                # Yrden's own length (spells.py 'duration'): a close-range
+                # sign holds longer than a spell cast from across the room.
+                dur = max(2, int(int(spell.get('duration', 8)) * chain_scale))
                 dur, resisted = self._boss_resist_cc(target, dur)
                 if resisted:
                     self.add_message(f"{the_name(target)} shrugs off the slowing magic!", 'warning')

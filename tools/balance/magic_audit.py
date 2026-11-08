@@ -87,10 +87,21 @@ def rows():
     return out
 
 
+def _is_touch(name: str) -> bool:
+    """A touch spell (spells.SPELL_REACH): cast beside the foe, so it may hit
+    as hard as an undead-only spell (tests/test_magic_role.py)."""
+    from spells import LEARNABLE_SPELLS, REACH_TOUCH, spell_reach
+    spell = LEARNABLE_SPELLS.get(name + '_spell') or LEARNABLE_SPELLS.get(name)
+    reach = spell_reach(spell)
+    return reach is not None and reach <= REACH_TOUCH
+
+
 def main() -> int:
     print("kind   name                      tier  mp/chg  area   x ONE ATTACK (INT 10)   (INT build)   casts per bar / floor")
     for kind, name, tier, cost, area, plain, mage, extra in sorted(rows(), key=lambda r: (r[0], r[2], -r[6])):
         flag = '  <-- above a weapon chain' if (mage > 1.0 and not area) else ''
+        if flag and kind == 'spell' and _is_touch(name):
+            flag = '  (touch: allowed to 1.1 / 1.35)'
         # (conditional effects are listed but judged separately by the test)
         print(f"{kind:6} {name:25} {tier:4} {cost:7} {'area' if area else '    ':5} "
               f"{plain:14.2f} {mage:18.2f} {extra:14}{flag}")

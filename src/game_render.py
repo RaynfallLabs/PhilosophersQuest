@@ -2565,8 +2565,18 @@ class RenderMixin:
         # Check LoS and whether there's a target at cursor
         has_los = _line_of_sight(px, py, cx, cy, self.dungeon)
         target_monster = self._seen_monster_at(cx, cy)     # never names the unseen
-        weapon = self.player.ranged_weapon
-        in_reach = weapon and (max(abs(cx - px), abs(cy - py)) <= weapon.reach)
+        _spell_aim = (getattr(self, '_power_targeting', False)
+                      and str(getattr(self, '_pending_power', '') or '').startswith('spell_'))
+        if _spell_aim:
+            # A spell is judged by its own reach (a touch, a sign, or as far
+            # as the hero sees), not by the bow on his back: the aim showed
+            # red for every spell when no bow was carried.
+            _aim_reach = getattr(self, '_aimed_spell_reach', lambda: None)()
+            in_reach = (_aim_reach is None
+                        or max(abs(cx - px), abs(cy - py)) <= _aim_reach)
+        else:
+            weapon = self.player.ranged_weapon
+            in_reach = weapon and (max(abs(cx - px), abs(cy - py)) <= weapon.reach)
         valid_shot = has_los and in_reach and target_monster is not None
 
         # Draw trajectory dots from player to cursor (skip player tile)
@@ -6287,11 +6297,17 @@ class RenderMixin:
                     self2.symbol = '*'
 
             spellbook_id = f"spellbook_{spell_id.replace('_spell', '')}"
+            # An aimed spell says how far it goes (spells.SPELL_REACH).
+            from spells import reach_words, spell_reach
+            reach = (f" | Reach: {reach_words(spell_reach(spell))}"
+                     if spell.get('needs_target') else "")
             entries.append({
                 'name': spell.get('name', '?'),
-                'detail': f"Tier {tier} | {mp_cost} MP | {spell.get('desc', '')}",
-                'full_detail': (f"Tier {tier} | {mp_cost} MP | {spell.get('desc', '')}   "
-                                "(Effects last longer and reach further with Intelligence.)"),
+                'detail': f"Tier {tier} | {mp_cost} MP{reach} | {spell.get('desc', '')}",
+                # Intelligence lengthens effects (and widens Light); it never
+                # lengthened how far an aimed spell goes, as this once said.
+                'full_detail': (f"Tier {tier} | {mp_cost} MP{reach} | {spell.get('desc', '')}   "
+                                "(Effects last longer with Intelligence.)"),
                 'key': self._menu_letter(i),
                 'icon': _SpellIcon(spellbook_id, tier_color),
                 'name_color': FP.BODY_TEXT if can_cast else FP.DANGER_TEXT_LIGHT,
