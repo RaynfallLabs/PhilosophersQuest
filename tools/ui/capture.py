@@ -877,9 +877,30 @@ SCENES: list[Scene] = []
 
 def scene(name, group, reach, *, kind='game', expect=None, notes='', key=False):
     def deco(fn):
-        SCENES.append(Scene(name, group, reach, fn, kind, expect, notes, key))
+        SCENES.append(Scene(name, group, reach, _then_popups(fn), kind, expect, notes, key))
         return fn
     return deco
+
+
+def _then_popups(fn):
+    """A scene's setup, then any popup it raised from play opened, as the game
+    opens it once play is calm (game_popups.PopupMixin queues the popups from
+    play: a boss's story popup, a family tier, a trait, an achievement). The
+    capture shows the screen the player sees, not the calm-play wait."""
+    import functools
+
+    @functools.wraps(fn)
+    def setup(g, *a, **k):
+        out = fn(g, *a, **k)
+        waiting = getattr(g, '_popups_waiting', None)
+        if callable(waiting) and waiting():
+            import game_states as S
+            # (After a study the game shows the lore page first and opens the
+            # family popup once it is closed; the capture shows the popup.)
+            if g.state in (S.STATE_PLAYER, S.STATE_LORE):
+                g._open_next_popup(g.state)
+        return out
+    return setup
 
 
 def _S():
