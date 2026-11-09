@@ -117,27 +117,27 @@ The per-family techniques are in `data/monster_families.json` and the v2 design 
 | Primitive | Params | Engine hook |
 |---|---|---|
 | `recognise` | | `family_lore.has_page` -> `Game._open_bestiary_page`, `_confirm_observe`, the Bestiary list |
-| `forewarned` | `line` | `FamilyMixin._family_arrival` (end of `_change_level`) |
-| `save_bonus` | `effects` (status ids, `drain`, `gaze`), `amount`, `scope?` | `status_effects.apply_debuff_with_save(source=)` from `Monster._apply_attack_effect` and the gaze blocks; `Monster._drain_takes_hold`. Outside the +5 cap of `Player.save_bonus_for`. Against an effect with NO save (poison, burning, blinding) the ward shortens it instead (`no_save_ward` in the data: a share off a point, at most half), and a `duration_mult` for the same effect does not stack with it: the stronger counts. |
+| `forewarned` | `line` | `FamilyMixin._family_arrival` (end of `_change_level`): each family once a floor (`Player.forewarned_told`, (floor, family)); a family that comes later is told once too |
+| `save_bonus` | `effects` (status ids, `drain`, `gaze`), `amount`, `scope?` | `status_effects.apply_debuff_with_save(source=)` from `Monster._apply_attack_effect` and the gaze blocks; `Monster._drain_takes_hold`. Outside the +5 cap of `Player.save_bonus_for`. Against an effect with NO save (poison, burning, blinding) the ward shortens it instead (`no_save_ward` in the data: a share off a point, at most half), and a `duration_mult` for the same effect does not stack with it: the stronger counts. The ward's line is said only when the save HELD (or a no-save effect was shortened): `save_bonus(quiet=True)`, then `family_edges.ward_held`. A part of a technique can say its own line (`also[].trigger_msg`: Garlic and Ash's heal block). |
 | `duration_mult` | `effects`, `mult` (0 = never takes hold) | `apply_debuff_with_save` |
 | `resist_damage` | `types`, `mult`, `scope?` | `Monster._resolve_blow` and the gaze path before `player.take_damage` (family; the strongest one wins); `Player.take_damage` (circle, any source) |
-| `damage_mult` | `mult`, `chain_min?`, `weapons?` + `weapon_mult?`, `only_weapons?`, `big_mult?` | `combat.strike_damage` beside the Dragonslayer Ring (so `strike_preview` shows it); thrown weapons in `_throw_weapon`. Weapon blows on a SEEN creature only; never spells or pets. |
-| `weakness_amp` | `mult` | `combat.strike_damage` (the blow's form or substance hits a listed weakness) |
+| `damage_mult` | `mult`, `chain_min?`, `weapons?` + `weapon_mult?`, `only_weapons?`, `big_mult?` | `combat.strike_damage` beside the Dragonslayer Ring (so `strike_preview` shows it); thrown weapons in `_throw_weapon`. Weapon blows on a SEEN creature only; never spells or pets. The line is said only by a technique whose own effect is `damage_mult` and that has no execute (Harpe's line is its execute's), and with `weapons` only when the metal matches (Cold Iron, Silvered). |
+| `weakness_amp` | `mult`, `said_for?` | `combat.strike_damage` (the blow's form or substance hits a listed weakness). `said_for`: the line only when what met the weakness is one of these (Opposing Element, Fire and Frost: an element). When the line is said, that blow's "super effective" line is not. |
 | `extra_seconds` | `seconds`, `scope?`, `boss_only?` | `combat.player_attack`, the Ancile's `extra_seconds` lane (the clock shows it) |
 | `chain_forgive` | `uses` | `combat.player_attack` sets `QuizEngine._forgive_flag`; `QuizEngine._advance` lets one wrong answer through; spent per creature (once per fight) |
 | `opening_chain` | `chain` | `combat.effective_chain`, beside Harpe's `skip_chain_warmup_vs_tag`; first blow on a creature only |
 | `pierce_resist` | `chain_min`, `scales?`, `blessed?` | `combat.strike_damage`: the resistance undone as the chain specials' bypass does; `scales` also skips dragon scales and damage wards |
-| `block_regen` | `turns` | `family_edges.after_blow` sets `_regen_blocked`; `Monster.tick_effects` regeneration check |
+| `block_regen` | `turns` | `family_edges.after_blow` sets `_regen_blocked` (and says its line) only on a creature with `regeneration`; `Monster.tick_effects` regeneration check |
 | `prevent_split` | | `combat.player_attack` marks the blow; `splitting.blow_splits` |
-| `execute` | `chain_min`, `hp_below`, `variant`, `named_mult` | `family_edges.after_blow` (lesser foes, no revive or split); a named foe takes `named_mult` in `strike_damage` instead |
+| `execute` | `chain_min`, `hp_below`, `variant`, `named_mult` | `family_edges.after_blow` (lesser foes, no revive or split); a named foe takes `named_mult` in `strike_damage` instead, said as "<Name>! It reels, but it does not fall." (`named_execute_line`). What it leaves (Brandon, 3.3.3): `banish` is the Banishment spell's rule (`_banished`: the kill counts, no corpse, no loot, a thief's takings given back); `ash` and `erase` leave no corpse (`_no_corpse`) but drop their loot; `petrify` leaves its corpse |
 | `turn` | `trigger` (on_hit / on_kill / on_sight), `turns`, `chain_min?`, `chance?` | `after_blow`, `after_kill` (from `player_attack`), `FamilyMixin._family_turn`; the monster's own fear (`Monster.hold('feared')`, `resists_control`) |
 | `calm_on_arrival` | `chance` | `FamilyMixin._family_arrival` (first visit): charmed + `_bribed`, so a blow breaks it (the Gilgamesh's Bribe rule); never a concealed creature |
 | `charm_on_hit` | `chain_min`, `turns` | `after_blow` |
-| `surrender` | `chain_min`, `hp_below`, `turns` | `after_blow` + `FamilyMixin._family_surrender` (a gold pile via `items.add_gold_to_tile`, picked up by the coin-weight rules) |
+| `surrender` | `chain_min`, `hp_below`, `turns` | `after_blow` marks `_yield_pending`; the attack's on_complete, after the blow's own line, runs `FamilyMixin._family_yield`: the Yield line, then `_family_surrender` (a gold pile via `items.add_gold_to_tile`, picked up by the coin-weight rules) |
 | `theft_immune` | | `theft.steal` |
-| `no_ambush` | | `Game._do_passive_ambush_detection` (sure detection), `Monster._resolve_blow` (no mimic surprise blow) |
+| `no_ambush` | | `Game._do_passive_ambush_detection` (sure detection, its line naming the technique; a lurker a sense technique already shows is left to that line), `Monster._resolve_blow` (no mimic surprise blow) |
 | `sense_hidden` | `kinds` (invisible / ambush / disguise), `radius` | `unseen.unseen` / `unseen.lurking(m, player)` / `unseen.concealed` via `unseen.senses`: drawn, targetable and O-able; family only, inside the radius |
-| `gaze_immune` | `requires` (`shield`) | the floating-eye gaze and Medusa's gaze in `Monster.attack`; the gaze check in `Monster._resolve_blow` |
+| `gaze_immune` | `requires` (`shield`) | the floating-eye gaze and Medusa's gaze in `Monster.attack`; the gaze check in `Monster._resolve_blow`. No trigger line: the gaze's own line names the shield |
 | `harvest_bonus` | `portions` | `food_system.harvest_corpse` |
 | `drain_heal_block` | | `Monster._resolve_blow` (`drain_heals_self`) |
 | `stun_on_hit` | `chain_min`, `turns` | `after_blow` |
@@ -148,7 +148,7 @@ recognise (not concealed). Named foes (bosses, mini-bosses, seal demons) are nev
 executed, turned, calmed, charmed, stunned or made to yield; wards, damage, block_regen,
 pierce_resist and sense_hidden do apply to them. The Black Knight (a Mortal Foe) is held
 the same way against execute, turn, calm, charm and Yield! (`family_edges._steadfast`):
-nothing moves him off his bridge, and he never yields. A trigger line prints once per creature
+nothing moves him off his bridge, and he never yields. A sleeping member is never turned (it sees nothing to fear). Second Sight says nothing for an invisible creature the hero already sees. A trigger line prints once per creature
 per technique (`family_edges.tell`, the outbox drained by `FamilyMixin._family_drain`).
 
 ## Circles and the Loremaster title
@@ -183,7 +183,10 @@ the Journal and the high-score table (`title`) show it.
   Several pieces of news at once (a keystone crossing two tiers, a circle) share one
   popup, at most three, each later one under its own Title Case heading with a blank
   line on both sides ("Hunter of the Gorgons and Basilisks", "Circle Complete: The
-  Hero's Road"); the popup joins touching lines into one paragraph.
+  Hero's Road"); the popup joins touching lines into one paragraph. The popup waits its
+  turn with the other popups from play (`game_seeker.PopupMixin`): after a study the lore page
+  is seen first, and the popup opens once it is closed and play is calm; a second
+  popup is shown after the first, never appended to it.
 - @ sheet: a Monster Lore block (title, circles, then each family with its tier and
   techniques), "+N more". Short of room (1280x720 with effects active) the rest are
   named alone, their techniques left to B, Tab.

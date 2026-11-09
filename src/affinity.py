@@ -11,6 +11,13 @@ Monster.take_damage. At the end of the action Game._advance_turn drains the
 notes and says one line for each way creatures were struck (a weakness,
 a resistance), picked from data/affinity_lines.json. Damage over time
 (a burn ticking) is not a hit and is not noted.
+
+When they are said (3.3.3 lore audit): a kill says them first, before "X is
+slain!" and its loot (Game._say_action_lines, from _on_monster_killed); the
+world's turn says its own at its end (Boots of Thor, a pet's typed blow), not
+after the hero's next action; and the queue is emptied on a new game, a
+load and a change of floor. A blow on which a family technique has just
+said the weakness (Bonebreaker) is not noted (combat.strike_damage).
 """
 from __future__ import annotations
 

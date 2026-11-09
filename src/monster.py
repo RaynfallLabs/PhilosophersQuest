@@ -125,6 +125,45 @@ _RANGED_WORDS = {'shoot', 'arrow', 'bolt', 'dart', 'spit', 'hurl',
 _MIND_WORDS = ('gaze', 'song', 'wail', 'charm', 'psionic', 'hex', 'evil eye')
 
 
+# ---------------------------------------------------------------------------
+# Who can bleed (data/monster_blood.json; Brandon, 3.3.3 play: "The Wraith is
+# bleeding!"). A creature with no blood (bone and dust undead, spirits,
+# golems, elementals, oozes, plants) never takes the bleeding status, never
+# loses health to it and is never called bleeding; a vampire, or one of the
+# fleshy dead, does. The rule is data: a family or a tag, and a short list of
+# kinds that are the exception. Monster.can_bleed asks here.
+# ---------------------------------------------------------------------------
+_BLOOD_RULES = None
+
+
+def blood_rules() -> dict:
+    global _BLOOD_RULES
+    if _BLOOD_RULES is None:
+        import json
+        from paths import data_path
+        with open(data_path('data', 'monster_blood.json'), encoding='utf-8') as f:
+            _BLOOD_RULES = json.load(f)
+    return _BLOOD_RULES
+
+
+def kind_can_bleed(kind: str, family, tags) -> bool:
+    """The kind's own entry first, then a family that bleeds, then a family
+    or a tag that has no blood; otherwise it bleeds."""
+    r = blood_rules()
+    kind = str(kind or '')
+    if kind in (r.get('bleeds') or ()):
+        return True
+    if kind in (r.get('bloodless') or ()):
+        return False
+    if family and family in (r.get('bleeding_families') or ()):
+        return True
+    if family and family in (r.get('bloodless_families') or ()):
+        return False
+    if set(tags or ()) & set(r.get('bloodless_tags') or ()):
+        return False
+    return True
+
+
 def _family_of_kind(kind):
     try:
         import family_lore
@@ -136,11 +175,21 @@ def _family_of_kind(kind):
 # Family knowledge hooks (src/family_edges.py). Each is a no-op when the
 # hero has earned nothing against this family.
 def _edge_save(player, m, effect) -> int:
+    """The family ward's bonus, quietly: its line waits for the save to
+    hold (_edge_ward_held)."""
     try:
         import family_edges
-        return family_edges.save_bonus(player, m, effect)
+        return family_edges.save_bonus(player, m, effect, quiet=True)
     except Exception:
         return 0
+
+
+def _edge_ward_held(player, m, effect) -> None:
+    try:
+        import family_edges
+        family_edges.ward_held(player, m, effect)
+    except Exception:
+        pass
 
 
 def _edge_incoming(player, m, dmg: int, atk_type: str) -> int:
@@ -532,6 +581,8 @@ class Monster:
         # kept the old one from ever running out), and once a hold ends a
         # named foe shakes off the next for NAMED_FOE_CONTROL_GRACE turns
         # ('control_immune', set in tick_effects).
+        if name == 'bleeding' and not self.can_bleed():
+            return                          # nothing in it to bleed (kind_can_bleed)
         if name in _HARD_CONTROL and self._is_named_foe():
             if (self.status_effects.get('control_immune', 0) > 0
                     or self.status_effects.get(name, 0) > 0):
@@ -552,11 +603,24 @@ class Monster:
         for the whole fight."""
         if not self.alive:
             return
+        if name == 'bleeding' and not self.can_bleed():
+            return                          # nothing in it to bleed (kind_can_bleed)
         if name in _HARD_CONTROL and self._is_named_foe():
             self.add_effect(name, duration)
             return
         cur = int(self.status_effects.get(name, 0) or 0)
         self.status_effects[name] = max(cur, int(duration))
+
+    def can_bleed(self) -> bool:
+        """It has blood to lose (data/monster_blood.json: a skeleton, a
+        wraith, a golem, an ooze or a plant has none; a vampire and a ghoul
+        do). "The Wraith is bleeding!" was said, and it lost health to it."""
+        try:
+            import family_lore
+            return kind_can_bleed(getattr(self, 'kind', ''), family_lore.family_of(self),
+                                  getattr(self, 'tags', None) or ())
+        except Exception:
+            return True
 
     # Which creatures shrug off which control effects. Lore, not balance:
     #   constructs and plants have no mind to frighten, charm or confuse;
@@ -611,9 +675,16 @@ class Monster:
         bonus = player.save_bonus_for('CON') if hasattr(player, 'save_bonus_for') else 0
         # A ward against this family's draining (Grave-Salt, Iron and Salt):
         # outside the +5 cap, earned against one family only.
-        bonus += _edge_save(player, self, 'drain')
+        ward = _edge_save(player, self, 'drain')
+        bonus += ward
         dc = min(18, 12 + self.min_level // 7)
-        return random.randint(1, 20) + mod + bonus < dc
+        if random.randint(1, 20) + mod + bonus < dc:
+            return True
+        if ward > 0:
+            # The save held: only now does the ward say so (it was said
+            # before the roll, above a "drains your life force! (CON -1)").
+            _edge_ward_held(player, self, 'drain')
+        return False
 
     def _dot_divisor(self, ordinary: int) -> int:
         return NAMED_DOT_DIVISOR if self._is_named_foe() else ordinary
@@ -633,6 +704,10 @@ class Monster:
         doom_dmg     = 0
         rupture_dmg  = 0
         disease_tick = False
+        # A bleed written straight into the statuses (a weapon's or a pet's
+        # proc, an old save) on a creature with no blood: gone, unfelt.
+        if self.status_effects.get('bleeding') and not self.can_bleed():
+            self.status_effects.pop('bleeding', None)
         for name in list(self.status_effects):
             val = self.status_effects[name]
             if val > 0:

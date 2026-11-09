@@ -634,10 +634,29 @@ def _family_ward(player, source, effect: str, gaze: bool) -> tuple[int, float]:
         import family_edges
     except ImportError:
         return 0, 1.0
-    bonus = family_edges.save_bonus(player, source, effect)
-    bonus += family_edges.save_bonus(player, source, 'gaze') if (gaze and source is not None) else 0
+    # Quiet: the ward's line is said only once the save has held
+    # (_say_ward_held), never before the roll.
+    bonus = family_edges.save_bonus(player, source, effect, quiet=True)
+    bonus += (family_edges.save_bonus(player, source, 'gaze', quiet=True)
+              if (gaze and source is not None) else 0)
     share = family_edges.duration_mult(player, source, effect) if source is not None else 1.0
     return bonus, share
+
+
+def _say_ward_held(player, source, effect: str, gaze: bool) -> None:
+    """The family ward against `effect` (and a gaze's ward) held: its line
+    ("Grave-Salt: ...") is queued, once per creature. Never on a failed
+    save: "The paralysis takes hold!" was followed by "Grave-Salt: the salt
+    in your pocket keeps the grave's grip off you." (3.3.3 lore audit)."""
+    if source is None:
+        return
+    try:
+        import family_edges
+    except ImportError:
+        return
+    family_edges.ward_held(player, source, effect)
+    if gaze:
+        family_edges.ward_held(player, source, 'gaze')
 
 
 def apply_debuff_with_save(player, effect: str, duration: int, dc: int,
@@ -670,6 +689,7 @@ def apply_debuff_with_save(player, effect: str, duration: int, dc: int,
         import family_edges
         _share = min(_share, family_edges.no_save_ward_share(_ward))
         _ward = 0
+        _say_ward_held(player, source, effect, gaze)     # it did shorten it
     if _share <= 0.0:
         return False, f"The {noun} cannot take hold of you."
     if _share < 1.0:
@@ -690,6 +710,8 @@ def apply_debuff_with_save(player, effect: str, duration: int, dc: int,
     roll = _r.randint(1, 20) + mod + bonus + _ward
     flavor = _SAVE_FLAVOR.get(stat, 'You')
     if roll >= dc:
+        if _ward > 0:
+            _say_ward_held(player, source, effect, gaze)
         if effect in HARD_CONTROL:
             # Full save on hard control — negated, and you feel your stat earn it.
             return False, f"{flavor} throws off the {noun}!"

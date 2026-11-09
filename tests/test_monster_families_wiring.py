@@ -197,8 +197,9 @@ def test_an_omnisight_read_that_raises_a_tier_popup_still_costs_its_turn():
     t0 = g.turn_count
     g._read_scroll(scroll)
     assert family_lore.tier(g.player, fid) == 3
-    assert g.state == STATE_STORY_POPUP and g.popup_data.get('_family')
     assert g.turn_count == t0 + 1                    # the read was free before
+    g._popup_tick(1.0)                               # the popup waits for calm play
+    assert g.state == STATE_STORY_POPUP and g.popup_data.get('_family')
 
 
 # ---------------------------------------------------------------------------
@@ -327,14 +328,17 @@ def test_several_unlocks_in_one_popup_each_stand_under_their_own_heading():
     paragraph, so every heading after the first needs a blank line on both
     sides; it used to read "HUNTER OF THE GORGONS AND BASILISKS You have
     learned how..." and "CIRCLE COMPLETE The Hero's Road"."""
-    from game_states import STATE_LORE, STATE_STORY_POPUP
+    from game_states import STATE_LORE, STATE_PLAYER, STATE_STORY_POPUP
     g = _game()
     for fid, t in (('legend', 3), ('giants', 3), ('gorgons', 2)):
         g.player.studied_monster_ids.update(_plain(fid, family_lore.thresholds(fid)[t - 1]))
     family_lore.mark_all_told(g.player)
     g.state = STATE_LORE
     g._family_study('medusa_gorgon')
-    assert g.state == STATE_STORY_POPUP and g.popup_next_state == STATE_LORE
+    assert g.state == STATE_LORE                     # the lore page first
+    g.state = STATE_PLAYER
+    g._popup_tick(1.0)
+    assert g.state == STATE_STORY_POPUP and g.popup_next_state == STATE_PLAYER
     lines = g.popup_data['lines']
     for head in ('Hunter of the Gorgons and Basilisks', "Circle Complete: The Hero's Road"):
         assert head in lines, lines

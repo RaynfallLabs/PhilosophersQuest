@@ -1,0 +1,60 @@
+{
+  "_doc": [
+    "Which creatures can bleed (Brandon, 3.3.3 play: lore-appropriate, data-driven).",
+    "A creature with no blood never takes the bleeding status, never loses health to it,",
+    "and is never called 'bleeding' (src/monster.py kind_can_bleed, read by Monster.can_bleed).",
+    "Checked in this order: the kind's own entry in `bleeds` or `bloodless`; a family in",
+    "`bleeding_families`; a family in `bloodless_families` or a tag in `bloodless_tags`;",
+    "otherwise it bleeds. Bone and dust undead, spirits, golems, elementals, oozes and",
+    "plants have no blood; vampires are full of it, and the fleshy dead (ghouls, zombies,",
+    "revenants, the Evil Dead's deadites, the wendigo) still bleed. Liches, bone witches,",
+    "the stiff jiangshi and Neferkaptah's mummy are dust and bone."
+  ],
+  "bloodless_families": [
+    "ghosts",
+    "constructs",
+    "elementals",
+    "oozes",
+    "plants"
+  ],
+  "bloodless_tags": [
+    "undead",
+    "construct",
+    "plant"
+  ],
+  "bleeding_families": [
+    "vampires_liches"
+  ],
+  "bleeds": [
+    "ghoul",
+    "ghast",
+    "ghast_eater",
+    "revenant",
+    "zombie",
+    "zombie_hulk",
+    "plague_zombie",
+    "rotting_zombie",
+    "zombie_legion",
+    "deadite",
+    "fresh_deadite",
+    "risen_deadite",
+    "wendigo"
+  ],
+  "bloodless": [
+    "lich",
+    "lich_apprentice",
+    "lich_thrall",
+    "greater_lich",
+    "ancient_lich",
+    "demi_lich",
+    "lich_sovereign",
+    "lich_lord",
+    "arch_lich",
+    "skeleton_lich",
+    "banshee_lich",
+    "skeleton_necromancer",
+    "bone_witch",
+    "jiangshi",
+    "neferkaptah_risen"
+  ]
+}

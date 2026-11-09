@@ -206,7 +206,10 @@ def test_the_veil_slips_when_you_strike():
     assert rings.tick(p) == '' and not p.has_effect('invisible')
     assert rings.tick(p) and p.has_effect('invisible')
     assert rings.on_strike(p) and not p.has_effect('invisible')
-    rings.tick(p)
+    # The turn of the strike is not a quiet one (3.3.3 lore audit): then
+    # two quiet turns, as the ring says.
+    assert rings.tick(p) == ''
+    assert rings.tick(p) == ''
     assert rings.tick(p) and p.has_effect('invisible')
     # Off the hand, the veil goes with it.
     p.accessory_slots[0] = None

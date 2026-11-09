@@ -47,7 +47,9 @@ PRIMITIVES = {
     'resist_damage':   {'types': list, 'mult': float, 'scope?': str},
     'damage_mult':     {'mult': float, 'chain_min?': int, 'weapons?': list, 'weapon_mult?': float,
                         'only_weapons?': list, 'big_mult?': float},
-    'weakness_amp':    {'mult': float},
+    # said_for: the line is said only when the weakness met is one of these
+    # (Opposing Element names an element; any weakness still hits harder).
+    'weakness_amp':    {'mult': float, 'said_for?': list},
     'extra_seconds':   {'seconds': int, 'scope?': str, 'boss_only?': bool},
     'chain_forgive':   {'uses': int},
     'opening_chain':   {'chain': int},
@@ -84,6 +86,9 @@ SPECIAL_EFFECTS = {'drain', 'gaze'}
 # What an execute does, said by variant when no trigger line is written.
 VARIANT_WORDS = {'ash': 'crumbles to ash', 'banish': 'is cast back into the Pit',
                  'petrify': 'turns to stone', 'erase': 'falls lifeless'}
+# Executes after which no body is left (banish is the Banishment spell's
+# rule: `_banished`, no loot either). Petrify leaves its statue's corpse.
+NO_BODY_VARIANTS = frozenset({'ash', 'erase'})
 
 
 def validate(ability: dict) -> list:
@@ -220,17 +225,34 @@ def _mine(player, m, effect, *, recognise=True) -> list:
 # ---------------------------------------------------------------------------
 # Trigger lines: once per fight per technique
 # ---------------------------------------------------------------------------
-def tell(player, m, ability) -> None:
-    """Queue the ability's trigger line, once per creature it is used on."""
-    msg = (ability or {}).get('trigger_msg') or ''
+def tell(player, m, ability, *, msg=None, key=None) -> bool:
+    """Queue the ability's trigger line, once per creature it is used on.
+    `msg` and `key` say a line of the ability's own other than its trigger
+    line (a part's line, an execute's harder blow on a named foe), kept
+    once per creature under its own key. True when the line was queued."""
+    msg = msg if msg is not None else (ability or {}).get('trigger_msg') or ''
     if not msg or player is None:
-        return
+        return False
     if m is not None and hasattr(m, '__dict__'):
         told = m.__dict__.setdefault('_edges_told', set())
-        if ability.get('id') in told:
-            return
-        told.add(ability.get('id'))
+        k = key if key is not None else (ability or {}).get('id')
+        if k in told:
+            return False
+        told.add(k)
     player.__dict__.setdefault('_edge_msgs', []).append(msg)
+    return True
+
+
+def _part_msg(ability, effect) -> str:
+    """The line an `also` part of an ability says for itself, or ''."""
+    for p in (ability or {}).get('also', ()) or ():
+        if p.get('effect') == effect and p.get('trigger_msg'):
+            return str(p['trigger_msg'])
+    return ''
+
+
+def _has_part(ability, effect) -> bool:
+    return any(p.get('effect') == effect for p in (ability or {}).get('also', ()) or ())
 
 
 def say(player, msg: str) -> None:
@@ -249,19 +271,35 @@ def drain(player) -> list:
 # ---------------------------------------------------------------------------
 # Defence: saves, durations, damage taken
 # ---------------------------------------------------------------------------
-def save_bonus(player, attacker, effect) -> int:
+def save_bonus(player, attacker, effect, *, quiet: bool = False) -> int:
     """Extra on a saving throw when `attacker` inflicts `effect` (a status id,
     or 'drain' / 'gaze'). Sits outside Player.save_bonus_for's +5 cap: it
-    is earned against one family only."""
+    is earned against one family only.
+
+    The saving throws themselves pass `quiet`: the ward's line ("Grave-Salt:
+    ... keeps the grave's grip off you") is said by `ward_held` once the
+    save has held, never before the roll (it was said when the paralysis
+    then took hold)."""
     total = 0
     for a, p in _mine(player, attacker, 'save_bonus'):
         if effect in (p.get('effects') or ()):
             total += int(p.get('amount', 0) or 0)
-            tell(player, attacker, a)
+            if not quiet:
+                tell(player, attacker, a)
     for _b, p in circle_parts(player, 'save_bonus'):
         if effect in (p.get('effects') or ()):
             total += int(p.get('amount', 0) or 0)
     return total
+
+
+def ward_held(player, attacker, effect) -> bool:
+    """A saving throw against `effect` from `attacker` held (or a ward
+    shortened an effect that has no save): the family ward that counted
+    says its line, once per creature. True when a line was queued."""
+    for a, p in _mine(player, attacker, 'save_bonus'):
+        if effect in (p.get('effects') or ()):
+            return tell(player, attacker, a)
+    return False
 
 
 def no_save_ward_share(amount: int) -> float:
@@ -306,19 +344,28 @@ def any_damage_mult(player, dtype) -> float:
 
 
 def drain_heal_blocked(player, attacker) -> bool:
+    """The bite takes nothing back to heal it. A technique whose heal block
+    is one part of several (Garlic and Ash: a ward first) says the part's
+    own line, so a paralysis save never talks about a bite."""
     got = _mine(player, attacker, 'drain_heal_block')
     if got:
-        tell(player, attacker, got[0][0])
+        a = got[0][0]
+        own = _part_msg(a, 'drain_heal_block') if a.get('effect') != 'drain_heal_block' else ''
+        if own:
+            tell(player, attacker, a, msg=own, key=f"{a.get('id')}:drain_heal_block")
+        else:
+            tell(player, attacker, a)
     return bool(got)
 
 
 def gaze_immune(player, attacker) -> bool:
     """The gaze of this family cannot take the hero (Perseus' Shield needs a
-    shield carried)."""
+    shield carried). Nothing is queued: the gaze's own line already says the
+    shield turned it ("You watch the basilisk in the bright metal of your
+    shield..."), and the technique's line said it a second time."""
     for a, p in _mine(player, attacker, 'gaze_immune', recognise=False):
         if p.get('requires') == 'shield' and getattr(player, 'shield', None) is None:
             continue
-        tell(player, attacker, a)
         return True
     return False
 
@@ -333,8 +380,15 @@ def theft_immune(player, thief) -> bool:
 def no_ambush(player, m) -> bool:
     """Its family's ambushers never catch the hero unawares (by definition
     an ambusher is hidden, so this does not ask whether it is seen)."""
+    return no_ambush_ability(player, m) is not None
+
+
+def no_ambush_ability(player, m):
+    """The technique that keeps this family's ambushers from catching the
+    hero unawares (Trap-Wise, the Unblinking, the Woodsman's Axe), or None:
+    its name goes in the line when it is what spotted one."""
     got = _mine(player, m, 'no_ambush', recognise=False)
-    return bool(got)
+    return got[0][0] if got else None
 
 
 def sight_bonus(player) -> int:
@@ -344,6 +398,11 @@ def sight_bonus(player) -> int:
 # ---------------------------------------------------------------------------
 # Seeing the hidden
 # ---------------------------------------------------------------------------
+def hidden_kind(m, player) -> str:
+    """How this creature hides: 'disguise', 'ambush', 'invisible' or ''."""
+    return _hidden_kind(m, player)
+
+
 def _hidden_kind(m, player) -> str:
     if getattr(m, 'ai_pattern', '') == 'mimic' and not getattr(m, '_aware', False):
         return 'disguise'
@@ -430,22 +489,42 @@ def damage_mult(player, target, chain: int, weapon=None, *, ranged: bool = False
         if p.get('big_mult') and int(fw) * int(fh) > 1:
             m = float(p['big_mult'])
         mult *= m
-        if consume:
+        if consume and _says_damage(a, p, have):
             tell(player, target, a)
     return mult
 
 
-def weakness_amp(player, target, hits_weakness: bool, consume: bool = False) -> float:
+def _says_damage(ability, params, have) -> bool:
+    """Whether a damage part may say the technique's line. Only the
+    technique's own damage (never a damage part `also` added to another
+    technique, whose line is about that one: Strike True), never one whose
+    line is its execute's (Harpe's "turns to stone" was said on the first
+    blow at any gorgon, which went on fighting), and only with the metal
+    the line names ("Cold Iron!" with a steel blade or bare fists)."""
+    if ability.get('effect') != 'damage_mult' or _has_part(ability, 'execute'):
+        return False
+    metals = set(params.get('weapons') or ())
+    return not metals or bool(metals & have)
+
+
+def weakness_amp(player, target, hits_weakness: bool, consume: bool = False,
+                 word: str | None = None) -> float:
     """A blow that strikes the creature's listed weakness: the strongest
-    such technique."""
+    such technique. `word` is what met the weakness (affinity_word): a
+    technique with `said_for` says its line only for one of those (Opposing
+    Element names an element, not a crushing blow). When the line is
+    queued, the target is marked `_edge_weak_said` for this blow, so the
+    "super effective" line does not say it a second time."""
     if not hits_weakness or not _recognised(player, target):
         return 1.0
-    best, ab = 1.0, None
+    best, ab, prm = 1.0, None, {}
     for a, p in parts(player, _fam(target), 'weakness_amp'):
         if float(p.get('mult', 1.0)) > best:
-            best, ab = float(p.get('mult', 1.0)), a
+            best, ab, prm = float(p.get('mult', 1.0)), a, p
     if consume and ab is not None:
-        tell(player, target, ab)
+        said_for = prm.get('said_for') or ()
+        if (not said_for or word in said_for) and tell(player, target, ab):
+            target.__dict__['_edge_weak_said'] = True
     return best
 
 
@@ -543,8 +622,15 @@ def execute_named_mult(player, target, chain: int, consume: bool = False) -> flo
             if float(p.get('named_mult', 1.0)) > best:
                 best, ab = float(p.get('named_mult', 1.0)), a
     if consume and ab is not None:
-        tell(player, target, ab)
+        # Its own line: the execute's ("It is cast back into the Pit") was
+        # said on a named foe who went on fighting.
+        tell(player, target, ab, msg=named_execute_line(ab), key=f"{ab.get('id')}:named")
     return best
+
+
+def named_execute_line(ability) -> str:
+    """What an execute says when a named foe takes its harder blow instead."""
+    return f"{(ability or {}).get('name', '')}! It reels, but it does not fall."
 
 
 def execute(player, target, chain: int):
@@ -646,7 +732,9 @@ def after_blow(player, target, chain: int, actual: int, monsters=(), visible=Non
         return out
     fid = _fam(target)
     turns = block_regen_turns(player, target)
-    if turns and getattr(target, 'alive', False):
+    # Only a creature that regenerates (Monster.regeneration): "the wound
+    # will not close" was said on the first blow at any giant or legend.
+    if turns and getattr(target, 'alive', False) and int(getattr(target, 'regeneration', 0) or 0) > 0:
         target.__dict__['_regen_blocked'] = max(int(target.__dict__.get('_regen_blocked', 0) or 0), turns)
         got = _mine(player, target, 'block_regen')
         if got:
@@ -663,7 +751,18 @@ def after_blow(player, target, chain: int, actual: int, monsters=(), visible=Non
             target.__dict__.pop('_no_split_blow', None)
         target.alive = False
         target.hp = 0
-        word = VARIANT_WORDS.get(p.get('variant'), 'falls')
+        # What it leaves (Brandon, 3.3.3): a creature that by lore leaves no
+        # body leaves no corpse. Banishment is the Banishment spell's rule
+        # (Game._on_monster_killed reads `_banished`: the kill counts, no
+        # corpse, no loot, a thief's takings given back); a vampire gone to
+        # ash or a golem whose letter is erased leaves no corpse, but what it
+        # carried still drops.
+        variant = p.get('variant')
+        if variant == 'banish':
+            target._banished = True
+        elif variant in NO_BODY_VARIANTS:
+            target.__dict__['_no_corpse'] = True
+        word = VARIANT_WORDS.get(variant, 'falls')
         say(player, a.get('trigger_msg') or f"{a.get('name', '')}! It {word}.")
         out['executed'] = a
     if getattr(target, 'alive', False):
@@ -706,13 +805,17 @@ def after_kill(player, target, monsters=(), visible=None, rng=random) -> int:
 def turn_members(player, fid, params, monsters, visible, rng=random, exclude=None) -> int:
     """Send the lesser members of `fid` the hero can see fleeing (the
     engine's monster fear: Monster.take_turn flees while feared, and
-    Monster.resists_control keeps the mindless and named foes steady)."""
+    Monster.resists_control keeps the mindless and named foes steady).
+    A sleeper sees nothing to fear: the barracks did not "scatter at the
+    sight of you" in their sleep."""
     n = 0
     chance = float(params.get('chance', 1.0) if params.get('chance') is not None else 1.0)
     for m in monsters or ():
         if m is exclude or not getattr(m, 'alive', False) or _fam(m) != fid:
             continue
         if visible is not None and (m.x, m.y) not in visible:
+            continue
+        if int((getattr(m, 'status_effects', None) or {}).get('sleeping', 0) or 0) > 0:
             continue
         if not _recognised(player, m) or _steadfast(m) or getattr(m, 'is_allied', False):
             continue

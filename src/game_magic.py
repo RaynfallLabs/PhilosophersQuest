@@ -2655,18 +2655,12 @@ class MagicMixin:
                 _qs_scroll.on_scroll_read(scroll.id, was_identified=_was_identified_before)
             self._apply_scroll_effect(scroll)
             # If the scroll effect parked us in a picker state, don't burn
-            # a turn here — the picker callback (or ESC) will advance.
+            # a turn here — the picker callback (or ESC) will advance. (A
+            # monster family tier popup from Omnisight's corpse study is
+            # queued, game_popups.PopupMixin: the read stays in play and costs its
+            # turn.)
             if self.state == STATE_PLAYER:
                 self._advance_turn()
-            else:
-                # A monster family tier popup (Omnisight's corpse study,
-                # game_families) is news over the map, not a picker: the
-                # read still costs its turn (it used to be free).
-                from game_states import STATE_STORY_POPUP
-                if (self.state == STATE_STORY_POPUP
-                        and (getattr(self, 'popup_data', None) or {}).get('_family')
-                        and getattr(self, 'popup_next_state', None) == STATE_PLAYER):
-                    self._advance_turn()
 
         # v2.10.0: grammar_chain_cap_bonus (Ring of Scheherazade) now lowers
         # the READ TIER, not the threshold (which is normally 1 anyway).

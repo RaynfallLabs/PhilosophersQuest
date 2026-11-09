@@ -120,11 +120,19 @@ def test_a_boss_kill_unlocks_and_the_popup_waits_for_calm_play(seeker):
     g._on_monster_killed(m)
     assert g._seeker.profile.is_unlocked('boss_asterion')
     assert 'boss_asterion' in g._seeker_pending
-    g.state = STATE_QUIZ                             # (the boss's own story popup aside)
+    g.state = STATE_QUIZ
     g._seeker_tick()
+    g._popup_tick(1.0)
     assert g.state == STATE_QUIZ                     # never over a quiz
     g.state = STATE_PLAYER
     g._seeker_tick()
+    g._popup_tick(0.1)
+    assert g.state == STATE_PLAYER                   # not before play has been calm a while
+    g._popup_tick(1.0)
+    # One at a time (game_popups.PopupMixin): the boss's story popup, then the
+    # achievement it earned.
+    assert g.state == STATE_STORY_POPUP and not g.popup_data.get('achievements')
+    g._close_story_popup()
     assert g.state == STATE_STORY_POPUP
     shown = g.popup_data['achievements']
     assert shown[0]['id'] == 'boss_asterion'

@@ -203,33 +203,47 @@ def veil_turns(player) -> int:
 
 def tick(player) -> str:
     """Once a turn: settle the veil after enough quiet turns, or lift it
-    if the ring came off. Returns a line for the log ('' for none)."""
+    if the ring came off. Returns a line for the log ('' for none).
+
+    The turn the hero struck is not a quiet one (on_strike marks it): the
+    ring's "settles again after N quiet turns" settled after N - 1. The
+    first veil says "You fade from sight."; "again" is for a veil that
+    slipped."""
     n = veil_turns(player)
     se = player.status_effects
+    struck = player.__dict__.pop('_veil_struck', False)
     if n <= 0:
+        player.__dict__.pop('_veil_slipped', None)
         if getattr(player, '_veil_on', False):
             player._veil_on = False
             if se.get('invisible') == -1 and not player._still_granted('invisible', None):
                 del se['invisible']
         return ''
+    if struck:
+        return ''                    # the striking turn: not quiet
     if se.get('invisible'):
         return ''                    # veiled already (the ring, or a potion)
     player._veil_quiet = int(getattr(player, '_veil_quiet', 0) or 0) + 1
     if player._veil_quiet >= n:
         player._veil_on = True
         se['invisible'] = -1
-        return 'You fade from sight again.'
+        if player.__dict__.pop('_veil_slipped', False):
+            return 'You fade from sight again.'
+        return 'You fade from sight.'
     return ''
 
 
 def on_strike(player) -> str:
-    """The hero attacks: the ring's veil slips (a potion's does not)."""
+    """The hero attacks: the ring's veil slips (a potion's does not). The
+    turn of the strike does not count towards the veil settling again."""
     player._veil_quiet = 0
+    player._veil_struck = True
     if not getattr(player, '_veil_on', False):
         return ''
     player._veil_on = False
     se = player.status_effects
     if se.get('invisible') == -1 and not player._still_granted('invisible', None):
         del se['invisible']
+        player._veil_slipped = True
         return 'Your veil slips as you strike.'
     return ''

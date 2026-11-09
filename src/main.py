@@ -87,6 +87,7 @@ from game_traders import TraderMixin
 from game_purse import PurseMixin
 from game_families import FamilyMixin
 from game_seeker import SeekerMixin
+from game_popups import PopupMixin
 from escort_system import EscortMixin
 from spells import LEARNABLE_SPELLS
 
@@ -217,7 +218,7 @@ DEEP_SLEEP = 10 ** 6           # a zoo, graveyard or barracks sleeper: until wok
 
 class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMixin, EncountersMixin,
            EmberpupMixin, BlackKnightMixin, ItemActionsMixin, RoadMixin, EscortMixin,
-           SetneMixin, TraderMixin, PurseMixin, FamilyMixin, SeekerMixin):
+           SetneMixin, TraderMixin, PurseMixin, FamilyMixin, SeekerMixin, PopupMixin):
     # FANTASY: Grimoire font set -- larger for readability. Read through the
     # UI scale on every use (SCALE_PLAN.md): a window resize can never leave
     # a font of the old size behind.
@@ -641,6 +642,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
 
     def _new_level(self, level: int):
         """Initial game setup only -- creates fresh player."""
+        # A weakness or resistance noted in another run is not this one's
+        # (affinity.py keeps one queue for the process).
+        import affinity as _affinity
+        _affinity.drain()
         self.dungeon_level           = level
         dungeon, monsters, items     = self.level_mgr.generate(level)
         self.dungeon                 = dungeon
@@ -774,6 +779,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
 
     def load_state(self, state: dict):
         """Restore all game state from a previously saved dict (pickle)."""
+        import affinity as _affinity
+        _affinity.drain()                      # nothing noted before the load is said after it
         self.player        = state['player']
         self.player._combat_game_ref = self     # dropped on save (Player.__getstate__)
         # One-cosmetic-per-item: re-attach the appearance-stamp hook (dropped on
@@ -1695,6 +1702,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         warp or the psychopomp step), 'potion' (gain level), 'trapdoor' or
         'cow' (into or out of the Cow Level). Only a stair carries an escort;
         only a stair descent counts down its floors (escort_system.py)."""
+        # A hit noted on the floor being left is not said on the next one.
+        import affinity as _affinity
+        _affinity.drain()
         # Death comes for the Stone the moment it leaves floor 100, by any
         # route: the stair, a potion of gain level, the Elixir, Hermes'
         # psychopomp step. Only the stair used to set him loose, so a potion
@@ -2784,11 +2794,14 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
 
     def _say_springs(self):
         """Print the reveal line of every lurker a blow has just sprung
-        (Monster.spring), when the hero can see where it lies."""
+        (Monster.spring), when the hero can see where it lies. Never for one
+        the blow killed: "A Piercer springs from hiding!" came after "The
+        Piercer is slain!" (the kill line names it)."""
         for m in getattr(self, 'monsters', None) or ():
             note = m.__dict__.pop('_spring_note', None)
             if note and (m.x, m.y) in (getattr(self, 'visible', None) or ()):
-                self.add_message(note, 'danger')
+                if getattr(m, 'alive', False):
+                    self.add_message(note, 'danger')
                 # A Hellmouth (false_stairs.py) shows it was never a stair.
                 d = getattr(m, 'disguise', None)
                 if isinstance(d, dict) and d.get('tile') == 'stairs_down':
@@ -4461,6 +4474,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.player._combat_game_ref = self      # so a death check anywhere can reach the wards
         self._say_springs()                # lurkers the action's blows gave away
         self._reap_unnoticed_kills()
+        self._say_veil_slip()              # a wand, a spell or a throw slipped the ring's veil
+        # A foe a blow made yield that no attack's on_complete has told yet.
+        for _m in list(self.monsters or ()):
+            if _m.__dict__.get('_yield_pending'):
+                self._family_yield(_m)
         # Creatures struck the wrong way split (src/splitting.py): the new
         # bodies are set down here, whatever dealt the blow.
         splitting.spawn_pending(self)
@@ -4469,9 +4487,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.turn_count += 1
         # A hit that met a weakness or a resistance this action: one line for
         # each, Pokemon style (affinity.py, data/affinity_lines.json).
-        import affinity as _affinity
-        for _line, _kind in _affinity.say(_affinity.drain()):
-            self.add_message(_line, 'success' if _kind == _affinity.WEAK else 'warning')
+        self._say_affinity_lines()
         # A Ring of Invisibility's veil settles after its quiet turns (rings.py).
         import rings as _rings
         _veil = _rings.tick(self.player)
@@ -5017,6 +5033,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self._note_burden()
         self._black_knight_tick(end=True)  # his shouts; the next action may take a limb
         self._family_drain()               # wards and techniques the monsters' turns set off
+        # Hits the world's turn dealt (Boots of Thor, Shep's rescue, a pet's
+        # or a trap's typed blow): said now, not after the hero's next action.
+        self._say_affinity_lines()
 
     # ------------------------------------------------------------------
     # Carrying: Burdened (plan: _genart/ui/WEIGHT_PLAN.md)
@@ -5775,15 +5794,27 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 continue
             if unseen.unseen(m, self.player):
                 continue        # no eye spots what cannot be seen (src/unseen.py)
+            # A family technique already shows it (Tremor-Sense): it says so
+            # this turn (_family_turn); the keen-senses line said it again.
+            if family_edges.senses(self.player, m):
+                continue
             dist = abs(m.x - px) + abs(m.y - py)
             # A hero who knows this family's ambushers is never caught
             # unawares by one (family_edges no_ambush: Trap-Wise, the
-            # Unblinking, the Woodsman's Axe): the check always succeeds.
-            sure = family_edges.no_ambush(self.player, m)
-            if dist <= 5 and (sure or _rng.random() < chance):
+            # Unblinking, the Woodsman's Axe): the check always succeeds,
+            # and the line names the technique, not keen senses.
+            sure = family_edges.no_ambush_ability(self.player, m)
+            if dist <= 5 and (sure is not None or _rng.random() < chance):
                 m._aware = True
-                self.add_message(
-                    f"Your keen senses detect {a_or_an(m.name)} lying in wait!", 'warning')
+                if m.__dict__.get('_sensed_told'):
+                    continue    # a technique named it already, when it showed it
+                if sure is not None:
+                    self.add_message(
+                        f"{sure.get('name', '')}: you spot {a_or_an(m.name)} lying in wait!",
+                        'warning')
+                else:
+                    self.add_message(
+                        f"Your keen senses detect {a_or_an(m.name)} lying in wait!", 'warning')
 
     # ------------------------------------------------------------------
     # SP starvation
@@ -8182,9 +8213,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     _MOVE_HOLD_INTERVAL = 0.07  # seconds between repeated moves once repeat is active
 
     def update(self, dt: float):
-        # An achievement won mid-quiz waits for calm play (game_seeker.py).
+        # The popups play raised (achievements, traits, family news, a boss's
+        # story) open one at a time once play is calm (game_popups.PopupMixin).
         self._seeker_tick()
-        self._quirk_popup_tick()
+        self._popup_tick(dt)
         # A resize in this frame or the one before: the quiz clock advances
         # one nominal frame at most (RESIZE_GRACE_FRAMES; on_resize arms it).
         quiz_dt = min(dt, self.MAX_QUIZ_DT)
@@ -8192,8 +8224,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         if grace > 0:
             self._resize_grace = grace - 1
             quiz_dt = min(dt, 1.0 / FPS)
+        # (After the boss's story popup and its achievements: the gifts are
+        # the last thing the kill brings.)
         if (self.state == STATE_PLAYER and getattr(self.player, 'pending_boon', None)
-                and not self.player.is_dead()):
+                and not self.player.is_dead() and not self._popups_waiting()):
             self._open_boon_menu()
         # A hostile scene (the dead come for the Book of Thoth) waits for no
         # bump: whenever plain play resumes with its figure unmet on this
@@ -8510,8 +8544,13 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         'abaddon_destroyer': 'boss_abaddon',
     }
 
-    def _show_story_popup(self, key: str, next_state: str = STATE_PLAYER):
-        """Queue a narrative popup. Game pauses until the player dismisses it."""
+    def _show_story_popup(self, key: str, next_state: str = STATE_PLAYER, *,
+                          queued: bool = False):
+        """A narrative popup. Game pauses until the player dismisses it.
+        `queued`: one that play raised (a boss's story on its death) waits
+        its turn with the other popups from play and opens once play is calm
+        (game_popups.PopupMixin); the game's own (the opening, the endings) open at
+        once."""
         data = self._STORY_CONTENT.get(key)
         if data is None:
             return
@@ -8519,19 +8558,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             # A reward ending shows the Seeker's own code for it (one system
             # for every code: seeker_codes.py), or none without a Seeker.
             data = dict(data, code=self._seeker_code(data['achievement']))
+        if queued:
+            self._queue_popup(dict(data), 'story', next_state)
+            return
         self.popup_data       = data
         self.popup_next_state = next_state
         self.state            = STATE_STORY_POPUP
-
-    def _quirk_popup_tick(self):
-        """Every frame: a trait popup that waited for a quiz to end opens
-        once the hero is back in plain play."""
-        waiting = self.__dict__.get('_quirk_popups_waiting')
-        if waiting and self.state == STATE_PLAYER:
-            popup = waiting.pop(0)
-            self.popup_data = popup
-            self.popup_next_state = STATE_PLAYER
-            self.state = STATE_STORY_POPUP
 
     def _show_quirk_unlock_popup(self, name: str, effect: str,
                                   trigger: str, flavor: str):
@@ -8562,19 +8594,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         }
         # Never over an open quiz, a menu or an encounter (an answer can earn
         # a trait: the popup opened on top of the combat quiz it was earned
-        # in, or over the stranger met on the stair). It waits for plain play,
-        # as the Seeker's achievements do (_quirk_popup_tick); a second trait
-        # while one trait popup is up still joins the queue behind it.
-        if self.state != STATE_PLAYER:
-            self.__dict__.setdefault('_quirk_popups_waiting', []).append(popup)
-            return
-        self.popup_data = popup
-        # A popup raised while another is up returns to where the FIRST one
-        # was going. It fell back to plain play, so two traits unlocking on
-        # one answer dropped the player out of an open quiz.
-        if self.state != STATE_STORY_POPUP:
-            self.popup_next_state = self.state
-        self.state = STATE_STORY_POPUP
+        # in, or over the stranger met on the stair). It waits its turn with
+        # the other popups from play and opens once play is calm
+        # (game_popups.PopupMixin), each trait on its own.
+        self._queue_popup(popup, 'trait')
 
 
     # ------------------------------------------------------------------
@@ -8686,8 +8709,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     'success'
                 )
                 # One more kind studied in its family: any tier, circle or
-                # title it brings is announced now (a popup returns to the
-                # lore page).
+                # title it brings is announced now (its popup is queued and
+                # opens once the lore page is closed: PopupMixin).
                 self._family_study(corpse.monster_id)
                 # Orb fire from Phase 3 of CHAIN_EFFECTS_PLAN was removed
                 # 2026-10-04 after playtest: it animated on top of the

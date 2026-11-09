@@ -55,6 +55,7 @@ added_files = [
     ('data/enchantments.json',      'data'),   # the minor-slot enchantments (enchantments.py)
     ('data/ring_kinds.json',        'data'),   # the ring and amulet kinds (rings.py)
     ('data/affinity_lines.json',    'data'),   # weakness / resistance hit lines (affinity.py)
+    ('data/monster_blood.json',     'data'),   # which creatures can bleed (monster.kind_can_bleed)
     # Game data — directories
     ('data/items',                  'data/items'),
     ('data/materials',              'data/materials'),

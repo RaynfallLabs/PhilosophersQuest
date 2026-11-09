@@ -8,7 +8,9 @@ achievements.py, the file is seeker_profile.py, and seeker_session.py ties
 them together.
 
 What the hero earns is shown when play is calm again, never during a quiz
-(Brandon's D7): ``_seeker_tick`` runs every frame from ``update``. A run of
+(Brandon's D7): ``_seeker_tick`` runs every frame from ``update`` and queues
+it with the other popups from play (game_popups.PopupMixin: one at a time, once
+play is calm). A run of
 the Dad / god build or the QA build records nothing (D4), and nothing is
 recorded until a Seeker has been chosen on the title screen (F4).
 """
@@ -113,16 +115,19 @@ class SeekerMixin:
             self._seeker_pending.append(aid)
 
     def _seeker_tick(self):
-        """Every frame: show what was won once play is calm (never mid-quiz,
-        never over a menu or another popup)."""
+        """Every frame: what was won joins the popups from play, at most
+        _PER_POPUP to a popup. It opens in its turn, once play is calm (never
+        mid-quiz, never over a menu or another popup: PopupMixin)."""
         pending = getattr(self, '_seeker_pending', None)
-        if pending and self.state == STATE_PLAYER:
-            ids, self._seeker_pending = pending[:_PER_POPUP], pending[_PER_POPUP:]
+        while pending:
+            ids, pending = pending[:_PER_POPUP], pending[_PER_POPUP:]
+            self._seeker_pending = pending
             self._show_achievement_popup(ids)
 
     def _show_achievement_popup(self, ids):
-        """The unlock moment, in the story popup's chrome. ``achievements``
-        carries what game_render draws: each badge, name, text and code."""
+        """The unlock moment, in the story popup's chrome, queued with the
+        other popups from play. ``achievements`` carries what game_render
+        draws: each badge, name, text and code."""
         s = getattr(self, '_seeker', None)
         if s is None:
             return
@@ -140,21 +145,14 @@ class SeekerMixin:
         except Exception:
             pass
         from fantasy_ui import FP
-        self.popup_data = {
+        # (Its sound plays when it opens: PopupMixin._open_next_popup.)
+        self._queue_popup({
             'title': 'ACHIEVEMENT UNLOCKED' if len(entries) == 1 else 'ACHIEVEMENTS UNLOCKED',
             'accent': FP.ACHIEVEMENT,
             'lines': ['Show this code to Dad.' if len(entries) == 1 else 'Show these codes to Dad.'],
             'code': None,
             'achievements': entries,
-        }
-        if self.state != STATE_STORY_POPUP:
-            self.popup_next_state = self.state
-        self.state = STATE_STORY_POPUP
-        try:
-            import sound_system
-            sound_system.play('achievement')
-        except Exception:
-            pass
+        }, 'achievement')
 
     def _seeker_code(self, aid: str) -> str | None:
         """The Seeker's code for an achievement already won, else None."""

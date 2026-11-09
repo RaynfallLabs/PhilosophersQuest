@@ -553,6 +553,8 @@ if roll:
 
 The attack-table status-effect ids are 17 (verified in `status_effects.py`): `bleeding`, `blinded`, `burning`, `confused`, `cursed`, `diseased`, `feared`, `frozen`, `hallucinating`, `paralyzed`, `poisoned`, `silenced`, `sleeping`, `slowed`, `stunned`, `teleportitis`, `weakened`.
 
+**Who can bleed (3.3.3):** `data/monster_blood.json`, read by `monster.kind_can_bleed` and `Monster.can_bleed`. A creature with no blood never takes `bleeding` (`add_effect`, `hold`, the weapon and pet procs that write it straight in; `tick_effects` drops one left by an old save) and is never called "bleeding". Order: the kind's own entry (`bleeds` / `bloodless`), then `bleeding_families` (vampires), then `bloodless_families` (ghosts, constructs, elementals, oozes, plants) or `bloodless_tags` (undead, construct, plant), else it bleeds. The fleshy dead (ghouls, zombies, revenants, deadites, the wendigo) bleed; liches, bone witches and the jiangshi do not.
+
 ## Appendix: `_DEFAULTS` and the pickle-compat shim
 
 `Monster._DEFAULTS` is a class-level dict of EVERY attribute `__init__` sets, each mapped to its initial value. `__getattr__` consults `_DEFAULTS` on `AttributeError` — so an old pickled Monster from before the multi-tile feature inherits `footprint = (1, 1)` automatically on first access, without needing a migration.

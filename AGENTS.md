@@ -57,6 +57,7 @@ src/
   family_lore.py      - Monster families: kind-to-family map, tiers from kinds studied, circles, news
   family_edges.py     - Family technique primitives (wards, damage, executes, sense the hidden...)
   game_families.py    - FamilyMixin: study news, tier popups, arrival lines, QA family key
+  game_popups.py      - PopupMixin: popups from play wait for calm play and open one at a time
   dungeon.py          - Procedural BSP dungeon generation
   level_manager.py    - Floor transitions
   boss_levels.py      - Hand-crafted boss floor layouts (and COW_LEVEL)

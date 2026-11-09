@@ -313,7 +313,7 @@
               "id": "vampires_liches_garlic_and_ash",
               "name": "Garlic and Ash",
               "text": "You get +1 on saving throws against their life drain and paralysis, and their bite no longer heals them.",
-              "trigger_msg": "Garlic and Ash: the bite takes nothing back to heal it.",
+              "trigger_msg": "Garlic and Ash: the garlic at your throat breaks its hold.",
               "effect": "save_bonus",
               "params": {
                 "effects": [
@@ -325,7 +325,8 @@
               "also": [
                 {
                   "effect": "drain_heal_block",
-                  "params": {}
+                  "params": {},
+                  "trigger_msg": "Garlic and Ash: the bite takes nothing back to heal it."
                 }
               ]
             }
@@ -862,7 +863,7 @@
               "id": "mortals_steady_hand",
               "name": "Steady Hand",
               "text": "You get 1 more second on the maths clock when you attack them.",
-              "trigger_msg": "Steady Hand: you have fought his kind before.",
+              "trigger_msg": "Steady Hand: you have fought this kind before.",
               "effect": "extra_seconds",
               "params": {
                 "seconds": 1
@@ -877,8 +878,8 @@
             {
               "id": "mortals_yield",
               "name": "Yield!",
-              "text": "At chain 8 or more, a lesser foe below half health surrenders, throws down his purse and runs.",
-              "trigger_msg": "Yield! Your foe throws down his purse and runs.",
+              "text": "At chain 8 or more, a lesser foe below half health surrenders, throws down the purse and runs.",
+              "trigger_msg": "Yield! Your foe breaks and runs.",
               "effect": "surrender",
               "params": {
                 "chain_min": 8,
@@ -1923,10 +1924,16 @@
               "id": "elementals_opposing_element",
               "name": "Opposing Element",
               "text": "Your blows hit 6% harder when they strike what the elemental is weak to.",
-              "trigger_msg": "Opposing Element! Water on fire.",
+              "trigger_msg": "Opposing Element! You answer it with the element it cannot bear.",
               "effect": "weakness_amp",
               "params": {
-                "mult": 1.06
+                "mult": 1.06,
+                "said_for": [
+                  "fire",
+                  "cold",
+                  "lightning",
+                  "acid"
+                ]
               }
             }
           ]
@@ -2075,7 +2082,11 @@
               "trigger_msg": "Fire and Frost! It shrivels from the blow.",
               "effect": "weakness_amp",
               "params": {
-                "mult": 1.1
+                "mult": 1.1,
+                "said_for": [
+                  "fire",
+                  "cold"
+                ]
               }
             }
           ]

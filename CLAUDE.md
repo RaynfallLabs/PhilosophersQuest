@@ -125,7 +125,8 @@ src/
   seeker_codes.py     - Reward codes for Dad and the profile seal (the key is never in the repo)
   achievements.py     - Achievement rules from data/achievements.json: counters, triggers, ladders
   seeker_session.py   - The running Seeker: emit an event, unlock, save, look up a code
-  game_seeker.py      - SeekerMixin: game events reach the Seeker; the unlock popup waits for calm play
+  game_seeker.py      - SeekerMixin: game events reach the Seeker; achievements join the popup queue
+  game_popups.py      - PopupMixin: popups from play wait for calm play and open one at a time
   seeker_screen.py    - The Seeker Profile screen (title screen, F4) and the badge gallery
 
   # UI and presentation

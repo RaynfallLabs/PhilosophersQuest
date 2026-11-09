@@ -1103,7 +1103,9 @@ The rules for the Seeker Profile, achievements and reward codes are in [seeker_p
 **In game:**
 - Encyclopedia tab **n**, Achievements: the stock three panes, with Tab cycling achievement categories.
 - The unlock popup is `STATE_STORY_POPUP` with `popup_data['achievements']` (up to three per page), drawn by `_draw_story_popup`.
-- `game_seeker._seeker_tick` raises the popup only in plain play, never over a quiz.
+- `game_seeker._seeker_tick` queues the popup with the other popups from play (`game_seeker.PopupMixin`).
+
+**Popups from play, one at a time (`game_seeker.PopupMixin`, 3.3.3):** family tier/circle/Loremaster popups, trait unlocks, Seeker achievements, a boss's story popup and an escort's outcome card wait in one queue (`Game._queue_popup`). The first opens only when play is calm (`Game._play_is_calm`: `STATE_PLAYER` for `POPUP_CALM_SECONDS` (0.75 s) since the last quiz, lore page or menu, and no strike finisher or full-screen takeover still on screen), so a quiz's result is always seen first. Each is its own popup (nothing is appended to another); closing one (`_close_story_popup`) opens the next at once; once none is left play returns where it was. An identical popup (same kind and content) already queued or showing is not queued again. The game's own popups (the opening, a save restored, the endings) still open at once. A gate boss's gifts wait until the queue is empty.
 
 **Study Mode** shows the same unlock card on a result page.
 

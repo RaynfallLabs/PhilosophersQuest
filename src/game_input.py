@@ -253,7 +253,7 @@ class InputMixin:
                 # A gate boss's gifts cannot be declined; Escape waits.
                 return True
             if self.state == STATE_STORY_POPUP:
-                self.state = self.popup_next_state
+                self._close_story_popup()      # the next queued popup, or back to play
                 return True
             if self.state == STATE_NPC_ENCOUNTER:
                 # Cancel the moral encounter cleanly — the NPC stays on the
@@ -435,7 +435,7 @@ class InputMixin:
         elif self.state == STATE_DROP_QTY_INPUT:
             self._drop_qty_input(key, event.unicode)
         elif self.state == STATE_STORY_POPUP:
-            self.state = self.popup_next_state   # any key advances
+            self._close_story_popup()            # any key advances (the next queued popup)
         elif self.state == STATE_CONFIRM_EXIT:
             self._confirm_exit_input(key)
         elif self.state == STATE_EXIT_QUEST:
