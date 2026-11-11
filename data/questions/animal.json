@@ -15410,9 +15410,9 @@
     "answer": "A mudskipper",
     "choices": [
       "A mudskipper",
-      "A jellyfish",
-      "A sea urchin",
-      "A giant clam"
+      "A seahorse",
+      "A pufferfish",
+      "A lungfish"
     ],
     "context": "The mudskipper is a fish, but it spends most of its life out of water, hauling itself across tidal mudflats and mangrove swamps instead of swimming. Source: https://en.wikipedia.org/wiki/Mudskipper",
     "topic": "mudskipper"
@@ -15420,9 +15420,9 @@
   {
     "tier": 2,
     "question": "A mudskipper left behind on the wet mud of a tropical tide flat does not flop about helplessly. It moves steadily across the open flat, chasing bugs and guarding its patch. How does the little fish get around out of the water?",
-    "answer": "It plants its two pectoral fins like little arms and hauls itself forward",
+    "answer": "It plants its two front fins and hauls itself along",
     "choices": [
-      "It plants its two pectoral fins like little arms and hauls itself forward",
+      "It plants its two front fins and hauls itself along",
       "It wriggles from side to side like a snake",
       "It inches along by bunching up like a caterpillar",
       "It rolls its whole body sideways down the slope"
@@ -15433,32 +15433,32 @@
   {
     "tier": 2,
     "question": "When a finger-length mudskipper needs to cover ground fast on its mudflat, it flexes and shoves hard with its tail, flinging its whole body up and forward in one hopping leap. Roughly how far can a single leap carry it?",
-    "answer": "About 61 centimeters, some two feet",
+    "answer": "About 60 centimeters, two feet",
     "choices": [
-      "About 61 centimeters, some two feet",
-      "About one centimeter, a fingertip",
-      "About 5 meters, most of a bus",
-      "About 20 meters, a swimming pool"
+      "About 60 centimeters, two feet",
+      "About 5 centimeters, two inches",
+      "About 3 meters, some ten feet",
+      "About 10 meters, thirty feet"
     ],
-    "context": "By suddenly flexing and pushing with its tail, the mudskipper flings itself into a leap that can cover up to about 61 centimeters (2 feet) across the mud. This tail-flick skip is what gives the fish its name. Source: https://en.wikipedia.org/wiki/Mudskipper",
+    "context": "By suddenly flexing and pushing with its tail, the mudskipper flings itself into a leap that can cover up to about 60 centimeters (2 feet) across the mud, several times its own length. This tail-flick skip is what gives the fish its name. Sources: https://grokipedia.com/page/Mudskipper ; https://en.wikipedia.org/wiki/Mudskipper",
     "topic": "mudskipper"
   },
   {
     "tier": 3,
-    "question": "Out on an open tropical mudflat, a mudskipper sits for hours in the sun, out of the water. Its fish gills work poorly in the air, so, like a frog on land, it takes in air another way. Through which parts of its body does it breathe out of the water?",
+    "question": "Out on an open tropical mudflat, a mudskipper sits for hours in the sun, out of the water. Its fish gills work poorly in the air, so it takes in the oxygen it needs another way. Through which parts of its body does it breathe out of the water?",
     "answer": "Through its moist skin and the wet lining of its mouth",
     "choices": [
       "Through its moist skin and the wet lining of its mouth",
-      "Through two blowholes on its back",
-      "Through hollow spines along its spine",
-      "Through a snorkel-tube on its head"
+      "Through a swim bladder that works as a lung",
+      "Through a pair of hidden lungs in its belly",
+      "Through tiny pores along the line on its side"
     ],
     "context": "A mudskipper breathes air through its moist skin and through the wet lining of its mouth and throat, the way a frog does, rather than only through gills. This is called cutaneous and buccal respiration. Source: https://science.psu.edu/news/blinking-fish-reveals-clues-how-our-ancestors-evolved-water-land",
     "topic": "mudskipper"
   },
   {
     "tier": 3,
-    "question": "Before a long crawl across open mud, a mudskipper takes a big mouthful and packs its enlarged gill chambers until its cheeks bulge out on both sides of its head. Like a scuba diver with a tank, it carries its own supply. What is stored in those puffed-out cheeks?",
+    "question": "Before a long crawl across open mud at low tide, a mudskipper takes a big mouthful and packs its enlarged gill chambers until its cheeks bulge out on both sides of its head. It may stay out on the flat for hours. What is stored in those puffed-out cheeks?",
     "answer": "A supply of water and air",
     "choices": [
       "A supply of water and air",
@@ -15476,23 +15476,23 @@
     "choices": [
       "A female he is trying to impress",
       "A flock of seabirds he is scaring off",
-      "A cloud of biting insects overhead",
-      "A change in the weather he is answering"
+      "His hatchlings, calling them back home",
+      "A crab he is stalking for a meal"
     ],
     "context": "Male mudskippers defend their mud territory with dramatic push-up displays, flaring the dorsal fin, beating the tail, and leaping high into the air to warn off rivals AND impress females. The same show does double duty as courtship. Source: https://grokipedia.com/page/Mudskipper",
     "topic": "mudskipper"
   },
   {
     "tier": 4,
-    "question": "On a tidal mudflat in tropical Asia, a male mudskipper digs a burrow whose domed roof traps a pocket of air, then rises to the surface again and again to gulp air for the chamber where his eggs will develop. Karen Martin counted his trips to fill that first bubble. Roughly how many mouthfuls did it take?",
+    "question": "On a tidal mudflat in tropical Asia, a male mudskipper digs a burrow whose domed roof traps a pocket of air, then rises again and again to gulp air for his eggs' chamber. From video shot inside such a burrow, Karen Martin estimated the mouthfuls it takes to fill that first bubble. About how many?",
     "answer": "About 100 mouthfuls",
     "choices": [
+      "About 10 mouthfuls",
       "About 100 mouthfuls",
-      "About 3 mouthfuls",
-      "About 10,000 mouthfuls",
-      "About one big gulp"
+      "About 1,000 mouthfuls",
+      "About 10,000 mouthfuls"
     ],
-    "context": "A male digs a burrow with a domed, air-trapping ceiling and gulps mouthful after mouthful of air at the surface to stock the chamber with oxygen for his eggs; Karen Martin found a male may take roughly 100 mouthfuls to build that first air bubble. Source: https://www.nationalgeographic.com/magazine/article/mudskipper-builds-ideal-nest-for-his-offspring",
+    "context": "A male digs a burrow with a domed, air-trapping ceiling and gulps mouthful after mouthful of air at the surface to stock the chamber with oxygen for his eggs. Karen Martin, watching endoscope video recorded by Atsushi Ishimatsu, estimated that a male may take roughly 100 mouthfuls to build that first air bubble. Source: https://www.nationalgeographic.com/magazine/article/mudskipper-builds-ideal-nest-for-his-offspring",
     "topic": "mudskipper"
   },
   {
@@ -16043,13 +16043,13 @@
   },
   {
     "tier": 2,
-    "question": "A glossy black crow winkles fat grubs out of rotting holes in dead wood on New Caledonia, a group of Pacific islands with no woodpeckers to do the job. It has no drilling beak like a woodpecker's. What does it use to pull the grubs out?",
+    "question": "A glossy black crow winkles fat grubs out of rotting holes in dead wood on New Caledonia, a group of Pacific islands with no woodpeckers to do the job. What does it use to pull the grubs out?",
     "answer": "Tools it makes and wields",
     "choices": [
       "Tools it makes and wields",
       "Its extra-long barbed tongue",
       "A drumming beak that splits bark",
-      "Sticky saliva on its feathers"
+      "Its hooked claws, raking wood"
     ],
     "context": "The New Caledonian crow (Corvus moneduloides) fills the ecological niche of a woodpecker on islands that have none, and it is one of the only animals besides apes known to make its own tools. Source: Wikipedia, 'New Caledonian crow' (en.wikipedia.org/wiki/New_Caledonian_crow).",
     "topic": "new-caledonian-crow"
@@ -16069,15 +16069,15 @@
   },
   {
     "tier": 3,
-    "question": "Across New Caledonia, crows cut precise, stepped strips from the barbed edges of pandanus leaves, so the rows of tiny barbs become lines of snags. Researchers compared the strip designs of different crow populations, old shapes against new. How had the designs changed?",
-    "answer": "Newer strips were more refined than older ones",
+    "question": "Across New Caledonia, crows cut strips from the barbed edges of pandanus leaves in three designs: wide, narrow and stepped. Researchers mapped where each design is made across the island. What did that pattern suggest had happened to the designs?",
+    "answer": "Improved step by step from one first design",
     "choices": [
-      "Newer strips were more refined than older ones",
-      "Newer strips were cruder than older ones",
-      "Populations copied one identical strip",
-      "Only lone crows ever tweaked a strip"
+      "Improved step by step from one first design",
+      "Invented fresh, again and again, in many places",
+      "Grown cruder and simpler as time went on",
+      "Copied by the crows from tools left by people"
     ],
-    "context": "Different crow populations make slightly different pandanus tool designs that grew more refined generation after generation — a bird version of cumulative culture, and the only non-primate case known where each generation builds on the last. Source: Wikipedia, 'New Caledonian crow'; Hunt & Gray pandanus tool diversification research.",
+    "context": "Gavin Hunt and Russell Gray mapped the three pandanus tool designs (wide, narrow and stepped) across New Caledonia; their overlapping, continuous spread suggested one origin rather than many separate inventions, followed by step-by-step improvement, a bird version of cumulative culture. Wikipedia calls the crow the only non-primate species with evidence of cumulative cultural evolution in toolmaking. Sources: https://en.wikipedia.org/wiki/New_Caledonian_crow ; Hunt & Gray 2003, Proceedings of the Royal Society B.",
     "topic": "new-caledonian-crow"
   },
   {
@@ -16086,11 +16086,11 @@
     "answer": "Bent it into a hook herself",
     "choices": [
       "Bent it into a hook herself",
-      "Called Abel back with the food",
+      "Waited for Abel to bring the hook back",
       "Dropped it and gave up",
-      "Threaded it through the tube wall"
+      "Tried to tip the whole tube over"
     ],
-    "context": "Betty bent the straight wire into a hook and lifted the food bucket out — a landmark moment in animal-cognition research. Source: Weir & Kacelnik 2002/2006, Oxford; Science, 'Was Betty the crow a genius—or a robot?' (science.org). (legend)",
+    "context": "Betty bent the straight wire into a hook and lifted the food bucket out, a landmark moment in animal-cognition research. Sources: Weir, Chappell & Kacelnik 2002, Science, 'Shaping of hooks in New Caledonian crows'; Science, 'Was Betty the crow a genius, or a robot?' (science.org).",
     "topic": "new-caledonian-crow"
   },
   {
@@ -16103,7 +16103,7 @@
       "Only Betty ever managed the trick",
       "Her wire had been pre-bent by staff"
     ],
-    "context": "Wild crows were found to bend their tools the same way, so Betty's trick may be part of the species' natural repertoire rather than pure on-the-spot invention. Source: Science, AAAS; Royal Society Open Science, Rutz et al. 2016. (legend)",
+    "context": "Wild crows were found to bend their tools the same way, so Betty's trick may be part of the species' natural repertoire rather than pure on-the-spot invention. Sources: Science, AAAS; Rutz et al. 2016, Royal Society Open Science, 'Tool bending in New Caledonian crows'.",
     "topic": "new-caledonian-crow"
   },
   {
@@ -16127,9 +16127,9 @@
       "A five-to-seven-year-old child",
       "A trained laboratory rat",
       "A newly hatched chick",
-      "An adult chimpanzee's ceiling"
+      "A two-year-old toddler"
     ],
-    "context": "By dropping sinking stones to raise the water level, the crows displayed causal understanding roughly on par with a 5-to-7-year-old child. Source: Jelbert et al. 2014, PLOS ONE; ScienceDaily. (legend)",
+    "context": "By dropping sinking stones to raise the water level, the crows showed causal understanding roughly on par with a 5-to-7-year-old child. Sources: Jelbert et al. 2014, PLOS ONE; ScienceDaily.",
     "topic": "new-caledonian-crow"
   },
   {
@@ -16447,9 +16447,9 @@
   {
     "tier": 1,
     "question": "Sailors off a warm coast spot a fish like a giant swimming head, squashed flat from the side, with tall fins jutting up and down. Then it just stops, blunt at the back, with nothing behind. Which ocean giant is it?",
-    "answer": "The ocean sunfish (mola)",
+    "answer": "The ocean sunfish",
     "choices": [
-      "The ocean sunfish (mola)",
+      "The ocean sunfish",
       "The great white shark",
       "The bluefin tuna",
       "The manta ray"
@@ -16459,7 +16459,7 @@
   },
   {
     "tier": 2,
-    "question": "Where a shark or a tuna sweeps a tail, an ocean sunfish has only a stiff, blunt rudder, a scalloped fringe wrapped around the back edge of its body. That rudder is no shrunken tail. What forms it?",
+    "question": "Where a shark or a tuna sweeps a tail, an ocean sunfish has only a stiff, blunt rudder, a scalloped fringe along the back edge of its body. That rudder is no shrunken tail. What forms it?",
     "answer": "The wrapped-around ends of its top and bottom fins",
     "choices": [
       "The wrapped-around ends of its top and bottom fins",
@@ -16478,14 +16478,14 @@
       "Picking parasites off its exposed skin",
       "Guiding it away from shallow water",
       "Warning it of approaching sharks",
-      "Cracking open its skin for food"
+      "Leading it to swarms of jellyfish"
     ],
     "context": "Seabirds land on the basking mola and pick parasites off its skin while cleaner fish work its underside — the fish is loaded with parasites, so cleaning matters. Source: Wikipedia — Ocean sunfish; U.S. Fish & Wildlife Service.",
     "topic": "ocean-sunfish-mola"
   },
   {
     "tier": 4,
-    "question": "Tagged ocean sunfish plunge as many as 40 times a day into the crushing dark near 1,000 meters, where they hunt jellyfish in cold water. After every dive, each fish labors its huge body all the way back up to the warm surface. Why does it keep coming back up?",
+    "question": "Tagged ocean sunfish plunge many times a day into dark water a hundred meters down or more, hunting jellyfish. After every dive, each fish labors its huge body all the way back up to the sunlit surface. Why does it keep coming back up?",
     "answer": "To reheat its body chilled by the cold deep",
     "choices": [
       "To reheat its body chilled by the cold deep",
@@ -16493,7 +16493,7 @@
       "To digest food only in bright light",
       "To shed the pressure of the deep"
     ],
-    "context": "The mola dives deep to feed in cold water, then reheats its chilled body at the warm surface like a big solar panel — earning it the nickname 'solar-powered fish.' Source: U.S. Fish & Wildlife Service — 'The Solar-Powered Fish with Jellies in Their Bellies: Molas'; Wikipedia — Ocean sunfish.",
+    "context": "Tagging studies (Nakamura, Goto & Sato 2015) found sunfish diving repeatedly to forage, mostly 100 to 200 meters down, with their body temperature dropping at depth and recovering at the surface. The mola reheats its chilled body there like a big solar panel, which has earned it the nickname 'solar-powered fish.' Sources: Nakamura et al. 2015, Journal of Animal Ecology; https://en.wikipedia.org/wiki/Ocean_sunfish ; U.S. Fish & Wildlife Service, 'The Solar-Powered Fish with Jellies in Their Bellies'.",
     "topic": "ocean-sunfish-mola"
   },
   {
@@ -16668,9 +16668,9 @@
   {
     "tier": 1,
     "question": "An ogre-faced spider hangs head-down over a forest trail at night, a small stretchy web held between its four front legs. A beetle wanders through the leaf litter below. What does the spider do with the web?",
-    "answer": "Throws it down over the beetle like a fisherman casting a net",
+    "answer": "Casts it down over the beetle like a fishing net",
     "choices": [
-      "Throws it down over the beetle like a fisherman casting a net",
+      "Casts it down over the beetle like a fishing net",
       "Drops a sticky line to reel the beetle upward",
       "Wraps the beetle after it blunders into a hanging trap",
       "Spits a glue thread to pin the beetle in place"
@@ -16680,12 +16680,12 @@
   },
   {
     "tier": 2,
-    "question": "Right out in the open, in plain sight of birds and lizards, an ogre-faced spider spends the daylight hours with no hidden shelter or burrow. How does the slim, long-legged spider survive the day?",
-    "answer": "Stretching its thin body and legs out straight to look like a stick",
+    "question": "Right out in the open, in plain sight of birds and lizards, an ogre-faced spider spends the daylight hours with no hidden shelter or burrow. How does the spider survive the day?",
+    "answer": "Stretching out straight along a twig like a stick",
     "choices": [
-      "Stretching its thin body and legs out straight to look like a stick",
+      "Stretching out straight along a twig like a stick",
       "Curling into a tight ball resembling a dead bud",
-      "Wrapping itself in a papery cocoon of silk",
+      "Holding still to look like a bird dropping",
       "Coating its body in bits of bark and lichen"
     ],
     "context": "By day the ogre-faced spider stretches its long thin body and legs out straight along a twig, looking exactly like a stick so predators pass it by. It only unfurls to hunt after dark. Source: https://australian.museum/learn/animals/spiders/net-casting-spiders/",
@@ -16693,7 +16693,7 @@
   },
   {
     "tier": 2,
-    "question": "Two huge round eyes, the largest simple eyes of any spider, stare from the face of the ogre-faced spider as it hunts at night, and they give it its name. What do those eyes let it do that few hunters can?",
+    "question": "Two huge round eyes, among the largest simple eyes of any spider, stare from the face of the ogre-faced spider as it hunts at night, and they give it its name. What do those eyes let it do that few hunters can?",
     "answer": "Aim its throwing net in near-total darkness",
     "choices": [
       "Aim its throwing net in near-total darkness",
@@ -16701,20 +16701,20 @@
       "See the ultraviolet patterns painted on flowers",
       "Snap into sharp focus on prey a meter away"
     ],
-    "context": "The genus name Deinopis is Greek for 'fearful appearance' (deinos = fearful, opis = appearance), and the 'ogre face' is those two huge central eyes. They are the largest simple eyes of any spider and gather light about 2,000 times more efficiently than human eyes, giving superb night vision. Uniquely, the spider has no reflective tapetum like a cat's; instead it grows a fresh sheet of light-sensitive membrane inside each eye every night and destroys it at dawn. Source: https://en.wikipedia.org/wiki/Deinopis",
+    "context": "The genus name Deinopis is Greek for 'fearful appearance' (deinos = fearful, opis = appearance), and the 'ogre face' is those two huge central eyes. They are among the largest simple eyes of any spider and are about 2,000 times more sensitive to light than human eyes, giving superb night vision. The spider has no reflective tapetum like a cat's; instead it grows a fresh sheet of light-sensitive membrane inside each eye every night and destroys it at dawn. Source: https://en.wikipedia.org/wiki/Deinopis",
     "topic": "ogre-faced-spider-the-net-caster-that-throws-its-web"
   },
   {
     "tier": 3,
-    "question": "At Cornell, Jay Stafstrom and Ronald Hoy covered the eyes of some ogre-faced spiders. The blinded spiders missed bugs crawling below them, yet they still netted flying insects right out of midair. How, the pair showed in a 2020 paper, does a spider make that catch?",
+    "question": "Jay Stafstrom covered the eyes of some ogre-faced spiders in a 2016 study. The blinded spiders missed bugs crawling below them, yet they still netted flying insects right out of midair. How, he and Ronald Hoy's team at Cornell showed in 2020, does a spider make that catch?",
     "answer": "Hearing the insect's wingbeats through sensors in its legs",
     "choices": [
       "Hearing the insect's wingbeats through sensors in its legs",
-      "Feeling the wind gusts from the wingbeats on fine body hairs",
+      "Sensing the insect's body heat through its front legs",
       "Smelling the insect through chemical pits on its feet",
       "Tasting vibrations carried up its own silk draglines"
     ],
-    "context": "In 2020 Jay Stafstrom and Ronald Hoy at Cornell discovered the ogre-faced spider can hear despite having no ears, sensing sound through metatarsal organs near the tips of its legs. When they played low tones (about 150-750 Hz, the wingbeat frequencies of moths, flies and mosquitoes), more than half the spiders lurched into a backward flip-strike, netting the imagined flying insect out of the air. The finding confirmed a hunch Cornell's Charles Walcott had proposed roughly 60 years earlier and that other scientists had dismissed. Sources: https://news.cornell.edu/stories/2020/10/buzz-kill-spiders-hear-airborne-prey-their-legs ; https://www.sciencenews.org/article/ogre-faced-spider-hearing-catch-insects-prey-air-sound-sight",
+    "context": "In 2016 Jay Stafstrom and Eileen Hebets showed that ogre-faced spiders with their big eyes covered missed prey walking below but still caught flying insects. In 2020 Stafstrom, Ronald Hoy and colleagues at Cornell found that the spider can hear despite having no ears, sensing sound through metatarsal organs near the tips of its legs. When they played low tones like the wingbeats of moths, flies and mosquitoes, the spiders lurched into a backward flip-strike, netting the imagined flying insect out of the air. The finding confirmed a hunch Cornell's Charles Walcott had proposed roughly 60 years earlier. Sources: Stafstrom & Hebets 2016, Biology Letters; https://news.cornell.edu/stories/2020/10/buzz-kill-spiders-hear-airborne-prey-their-legs",
     "topic": "ogre-faced-spider-the-net-caster-that-throws-its-web"
   },
   {
@@ -16784,7 +16784,7 @@
   },
   {
     "tier": 2,
-    "question": "An okapi slips through the Congo rainforest on legs striped in bold black and white, and the first Europeans to hear of it guessed it was some kind of forest zebra. Its genes tell another story: it has just one living relative, an animal that looks very different. Which one?",
+    "question": "An okapi slips through the Congo rainforest on legs striped in bold black and white, and the first Europeans to hear of it guessed it was some kind of forest zebra. Its genes tell another story: its nearest living relative is an animal that looks very different. Which one?",
     "answer": "The giraffe",
     "choices": [
       "The giraffe",
@@ -16792,7 +16792,7 @@
       "The greater kudu",
       "The bush pig"
     ],
-    "context": "The okapi and the giraffe are the only two living members of the family Giraffidae, sharing a common ancestor about 11.5 million years ago. The okapi is essentially a giraffe that stayed short and hid in the forest — a short-necked forest cousin, the two the last survivors of their family. Source: https://en.wikipedia.org/wiki/Okapi",
+    "context": "The okapi and the giraffes (counted as four species since 2025) are the only living members of the family Giraffidae, their lines splitting from a common ancestor about 11.5 million years ago. The okapi is essentially a giraffe that stayed short and hid in the forest. Sources: https://en.wikipedia.org/wiki/Okapi ; IUCN Giraffe and Okapi Specialist Group, August 2025.",
     "topic": "okapi"
   },
   {
@@ -16811,14 +16811,14 @@
   {
     "tier": 3,
     "question": "Chasing rumors of a striped 'African unicorn,' Sir Harry Johnston expected to find some kind of forest-dwelling horse. Then he examined the tracks the animal left, and one detail told him it was no horse or zebra at all. What did the tracks show?",
-    "answer": "They were cloven — split into two toes",
+    "answer": "They were cloven into two toes",
     "choices": [
-      "They were cloven — split into two toes",
-      "They came in a slow spiral",
+      "They were cloven into two toes",
+      "They showed three toes like a rhino's",
       "They were webbed like a duck's",
       "They were clawed like a big cat's"
     ],
-    "context": "Legend: locals had long known the creature, and explorer Henry Morton Stanley heard of an 'atti' in 1887. Johnston expected a forest horse, but the tracks were CLOVEN-hoofed — two toes, not the single hoof of a horse or zebra. A striped skin and a skull sent to London let zoologist Ray Lankester declare it an unknown giraffe relative, naming it Okapia johnstoni in 1901. Source: https://en.wikipedia.org/wiki/Okapi",
+    "context": "Locals had long known the creature, and the explorer Henry Morton Stanley heard of an 'atti' in 1887. Johnston expected a forest horse, but the tracks were cloven-hoofed, two toes, not the single hoof of a horse or zebra. A striped skin and a skull sent to London let the zoologist Ray Lankester declare it an unknown giraffe relative, placing it in a new genus, Okapia, in 1901. Source: https://en.wikipedia.org/wiki/Okapi",
     "topic": "okapi"
   },
   {
@@ -17057,10 +17057,10 @@
   },
   {
     "tier": 1,
-    "question": "Deep in a Southeast Asian rainforest, a small pink-and-white insect perches on a bare green leaf. Its legs flare into rounded shapes like flower petals, and bees head straight in to land, taking it for a real blossom. What is this master of floral disguise?",
-    "answer": "The orchid mantis",
+    "question": "Deep in a Southeast Asian rainforest, a small pink-and-white creature perches on a bare green leaf. Its legs flare into rounded shapes like flower petals, and bees head straight in to land, taking it for a real blossom. What is this master of floral disguise?",
+    "answer": "An orchid mantis",
     "choices": [
-      "The orchid mantis",
+      "An orchid mantis",
       "A pink crab spider",
       "A flower-mimic katydid",
       "A blossom-shaped treehopper"
@@ -17084,9 +17084,9 @@
   {
     "tier": 3,
     "question": "James O'Hanlon set orchid mantises alone on plain green leaves, with no blossoms anywhere on them, beside beds of wild blooms in the field. Each pink-and-white mantis waited perfectly still, ready to ambush any bee, wasp or butterfly looking for nectar. Then he watched where the pollinators went. What happened?",
-    "answer": "More pollinators flew to the fake mantis than to the real flowers",
+    "answer": "More pollinators flew to the mantis than to the real flowers",
     "choices": [
-      "More pollinators flew to the fake mantis than to the real flowers",
+      "More pollinators flew to the mantis than to the real flowers",
       "The bees split about evenly between the mantis and the flowers",
       "The bees ignored the mantis until it grew larger petal lobes",
       "The mantis had to copy one orchid's scent to draw any bees"
@@ -17096,7 +17096,7 @@
   },
   {
     "tier": 3,
-    "question": "An orchid mantis sat on its perch with the petal-shaped lobes trimmed from its legs, and insects still flew in and got caught. James O'Hanlon had cut the lobes away to test the old idea that they lure bees and flies in close. What does he now suspect the petal legs are really for?",
+    "question": "James O'Hanlon set model orchid mantises out in the field, some with the petal-shaped lobes cut from their legs or moved around, and pollinators still flew in to inspect them. He had been testing the old idea that the lobes lure insects in close. What does he now suspect the petal legs may really be for?",
     "answer": "Hiding the mantis from its own predators",
     "choices": [
       "Hiding the mantis from its own predators",
@@ -17104,7 +17104,7 @@
       "Sweeping pollen loose to eat off the leg",
       "Cushioning the mantis when it drops off a branch"
     ],
-    "context": "When O'Hanlon removed or rearranged the petal-shaped leg lobes, pollinators still approached - suggesting the famous 'petals' may not lure prey at all, but instead help hide the mantis from its own predators. Source: https://www.sciencefriday.com/articles/unraveling-the-orchid-mantis-mystery/",
+    "context": "In a 2014 field study O'Hanlon removed or rearranged the petal-shaped leg lobes on model mantises, and pollinators still approached to inspect them, suggesting the famous 'petals' may not be the lure at all; he proposed they might instead help hide the mantis from its own predators. Source: https://www.sciencefriday.com/articles/unraveling-the-orchid-mantis-mystery/ (O'Hanlon 2014, Ethology)",
     "topic": "orchid-mantis-the-flower-that-eats-the-pollinator"
   },
   {
@@ -17334,37 +17334,37 @@
     "answer": "An owl",
     "choices": [
       "An owl",
-      "A hummingbird",
-      "A pelican",
-      "A flamingo"
+      "A nightjar",
+      "A hawk",
+      "A kestrel"
     ],
     "context": "Owls are the classic round-faced, forward-eyed nocturnal raptors, built to hunt in darkness. Source: Cornell Lab of Ornithology, All About Birds.",
     "topic": "owl"
   },
   {
     "tier": 1,
-    "question": "A mouse in a dark field has sharp ears, and the swoosh of a hunting bird's wings usually warns it to bolt. When an owl attacks at night, the mouse hears no sound before the talons close. What is uncanny about how an owl flies?",
+    "question": "A mouse in a dark field has sharp ears, and the swoosh of a hawk's wings is often warning enough to bolt. Yet when an owl hunts that field at night, the mouse rarely bolts in time. What is uncanny about how an owl flies?",
     "answer": "It flies almost completely silently",
     "choices": [
       "It flies almost completely silently",
       "It flies faster than any other bird",
-      "It glows faintly in the dark",
-      "It flies backward toward prey"
+      "It beats its wings too fast to see",
+      "It strikes from far above, out of sight"
     ],
     "context": "An owl's wingbeats make so little noise that a mouse never hears it coming. Source: Audubon Magazine, 'The Silent Flight of Owls, Explained.'",
     "topic": "owl"
   },
   {
     "tier": 2,
-    "question": "A duck's wings whistle as it flies overhead, yet a hunting owl crosses the dark with hardly a sound. Along the very front edge of each owl wing feather sits something that a duck's feathers lack. What is it?",
+    "question": "A duck's wings whistle as it flies overhead, yet a hunting owl crosses the dark with hardly a sound. Along the front edge of an owl's wing, the outermost flight feather carries something a duck's feathers lack. What is it?",
     "answer": "Tiny comb-like serrations",
     "choices": [
       "Tiny comb-like serrations",
-      "A stiff bony ridge",
-      "A coat of waterproof oil",
-      "A row of hooked claws"
+      "A row of tiny air holes",
+      "A thin rubbery lip",
+      "A strip of stiff wax"
     ],
-    "context": "Comb-like serrations on the leading edge break up the turbulent air that would otherwise make a swooshing sound. Source: Audubon Magazine, 'The Silent Flight of Owls, Explained.'",
+    "context": "Comb-like serrations on the leading edge of the outermost primary feather break up the turbulent air that would otherwise make a swooshing sound. Source: Audubon Magazine, 'The Silent Flight of Owls, Explained' (https://www.audubon.org/magazine/silent-flight-of-owls-explained).",
     "topic": "owl"
   },
   {
@@ -17383,12 +17383,12 @@
   {
     "tier": 2,
     "question": "A white-faced barn owl hunts in almost total darkness, mostly by sound. It can tell whether a mouse's tiny rustle came from higher up or lower down, not just from the left or the right. One strange feature makes that possible. What is odd about a barn owl's head?",
-    "answer": "Its two ear openings are offset, one higher than the other",
+    "answer": "Its ear openings sit at different heights",
     "choices": [
-      "Its two ear openings are offset, one higher than the other",
-      "Its ears are hidden inside its beak",
-      "Its ears can be folded shut in the cold",
-      "Its ears glow to attract prey"
+      "Its ear openings sit at different heights",
+      "Its ears swivel like a fox's",
+      "Its ears sit on top of its head",
+      "Its ears can be folded shut in the cold"
     ],
     "context": "The left ear opening sits higher and points down, the right sits lower and points up. This lopsided arrangement helps it place a sound in three dimensions. Source: Cornell Lab, All About Birds; Wikipedia, 'Sound localization in owls.'",
     "topic": "owl"
@@ -17396,9 +17396,9 @@
   {
     "tier": 4,
     "question": "In pitch dark, a barn owl knows a rustle came from the left or the right because the sound reaches one ear a hair before the other. Judging whether the sound came from above or below is a much harder puzzle. What cue does the owl use to place a sound high or low?",
-    "answer": "How much louder the sound is in one ear than the other",
+    "answer": "Which ear hears it louder",
     "choices": [
-      "How much louder the sound is in one ear than the other",
+      "Which ear hears it louder",
       "The pitch of the sound",
       "The delay of its echo",
       "The gap in arrival timing"
@@ -17420,25 +17420,12 @@
     "topic": "owl"
   },
   {
-    "tier": 3,
-    "question": "A field mouse tunnels beneath a foot of fresh snow, completely out of sight. A barn owl glides overhead on wide white wings, then folds them and drops, punching through the crust at the exact spot where the hidden mouse is running. How does the owl pin down a target it never sees?",
-    "answer": "By hearing alone",
-    "choices": [
-      "By hearing alone",
-      "By its keen sense of smell",
-      "By sensing the mouse's body heat",
-      "By feeling ground vibrations"
-    ],
-    "context": "A barn owl can pinpoint the exact 3-D spot of a mouse under a foot of snow guided by hearing alone, with no view of its target. Legendary but documented. Source: Cornell Lab of Ornithology, All About Birds.",
-    "topic": "owl"
-  },
-  {
     "tier": 2,
-    "question": "Enormous tubular eyes take up most of an owl's skull, gathering every scrap of moonlight in a dark forest. Yet the owl cannot glance sideways the way a person can: to look off to one side, it swings its whole head around. Why can't an owl simply roll its eyes?",
+    "question": "Enormous tubular eyes take up much of an owl's skull, gathering every scrap of moonlight in a dark forest. Yet the owl cannot glance sideways the way a person can: to look off to one side, it swings its whole head around. Why can't an owl simply roll its eyes?",
     "answer": "A ring of bone locks its huge eyes in place",
     "choices": [
       "A ring of bone locks its huge eyes in place",
-      "Its eyes are too small to aim",
+      "Its eyelids clamp the eyes in place",
       "It sees only straight ahead by instinct",
       "Bright light freezes its eyes open"
     ],
@@ -17455,18 +17442,18 @@
       "About 90 degrees, a quarter turn",
       "About 45 degrees, barely to the shoulder"
     ],
-    "context": "An owl rotates its head up to about 270 degrees to either side. Legendary but true; the 'full circle' myth is false. Source: Smithsonian Magazine, 'Solving the Mystery of Owls' Head-Turning Abilities' (Johns Hopkins study).",
+    "context": "An owl rotates its head up to about 270 degrees to either side; the 'full circle' myth is false. Source: Smithsonian Magazine, 'Solving the Mystery of Owls' Head-Turning Abilities' (Johns Hopkins study); https://en.wikipedia.org/wiki/Owl",
     "topic": "owl"
   },
   {
     "tier": 4,
-    "question": "To watch a mouse behind it, an owl swivels its head around, a turn that would pinch shut the neck arteries and starve the brain of almost any other animal. Yet the owl's arteries come through unharmed, thanks to a piece of bony engineering wrapped around each one. What lets the vessels survive the turn?",
-    "answer": "The bone channels around them are about ten times wider than the arteries",
+    "question": "To watch a mouse behind it, an owl swivels its head around, a turn that would pinch shut the neck arteries and starve the brain of almost any other animal. Yet the owl's arteries come through unharmed. What lets the vessels survive the turn?",
+    "answer": "Extra-wide bone tunnels give them room to twist",
     "choices": [
-      "The bone channels around them are about ten times wider than the arteries",
-      "The arteries pump blood in short bursts",
-      "A second heart sits in the neck",
-      "The blood carries built-in antifreeze"
+      "Extra-wide bone tunnels give them room to twist",
+      "Rings of cartilage stiffen their walls",
+      "A second heart in the neck keeps blood moving",
+      "The arteries stretch like rubber as it turns"
     ],
     "context": "An owl has 14 neck vertebrae (humans have 7), and the bony holes around its neck arteries are about ten times wider than the arteries themselves, giving the vessels room to twist. Source: Smithsonian Magazine (Johns Hopkins CT/angiography study, 2013).",
     "topic": "owl"
@@ -17478,21 +17465,21 @@
     "choices": [
       "Into reservoirs at the base of the skull",
       "Straight back down into the heart",
-      "Out to the wingtips for storage",
-      "Into the hollow bones of the legs"
+      "Into the hollow bones of its neck",
+      "Into the big muscles along its back"
     ],
     "context": "Scientists injected dye into owls' arteries and CT-scanned them as the necks turned, finding blood pools in reservoirs at the skull base that keep the brain supplied during the twist. Source: Smithsonian Magazine; phys.org (2013).",
     "topic": "owl"
   },
   {
     "tier": 3,
-    "question": "An owl drops out of the night sky and seizes a struggling rat in its four sharp talons. Its foot muscles could get tired holding on for the flight home — but they don't need to. Something inside the owl's foot clamps the talons closed and keeps them locked, almost without any effort from the bird. What clicks the talons closed and holds them there?",
-    "answer": "A locking tendon that ratchets the grip shut",
+    "question": "An owl drops out of the night sky and seizes a struggling rat in its four sharp talons. Holding on for the flight home could tire its foot muscles, yet they barely have to work. Something in the owl's foot keeps the grip shut on its own. What is it?",
+    "answer": "A tendon that locks like a ratchet",
     "choices": [
-      "A locking tendon that ratchets the grip shut",
-      "A sticky pad on each talon",
-      "A set of tiny hooks along the toes",
-      "A suction cup in the sole"
+      "A tendon that locks like a ratchet",
+      "A bone in each toe that snaps shut",
+      "A suction cup in each sole",
+      "A sticky glue its toes ooze"
     ],
     "context": "When an owl grabs prey, its outer toe swings back so two talons point forward and two back, then a locking tendon ratchets the grip shut, clamping without any muscle effort. Source: The Owl Pages, 'Owl Feet & Talons.'",
     "topic": "owl"
@@ -17503,7 +17490,7 @@
     "answer": "It muffles the noise of feathers scraping against each other",
     "choices": [
       "It muffles the noise of feathers scraping against each other",
-      "It smooths the airflow rushing over the wing surface",
+      "It sheds rainwater so the feathers never grow heavy in a storm",
       "It traps warm air to keep the flight muscles from stiffening",
       "It scatters the moonlight so the owl casts no moving shadow"
     ],
@@ -17520,12 +17507,12 @@
       "The porcupine",
       "The hedgehog"
     ],
-    "context": "The pangolin is the only mammal covered in scales. Armadillos wear bony plates under their skin; porcupines and hedgehogs bristle with modified hairs. Only the pangolin's coat is true keratin scales. Source: https://www.savepangolins.org/what-is-a-pangolin/",
+    "context": "The pangolin is the only mammal covered in large, overlapping keratin scales. An armadillo's shell is built of bony plates set in its skin, and porcupines and hedgehogs bristle with modified hairs. Sources: https://en.wikipedia.org/wiki/Pangolin ; https://www.savepangolins.org/what-is-a-pangolin/",
     "topic": "pangolin"
   },
   {
     "tier": 1,
-    "question": "A hungry leopard closes in on a pangolin in the forest. The shy, scale-armored ant-eater does not run, and it does not fight back; instead it does the one thing its Malay name describes. What does the pangolin do?",
+    "question": "A hungry leopard closes in on a pangolin in the forest. The shy, scale-armored ant-eater does not run, and it does not fight back; instead it does the one thing its name, taken from Malay, describes. What does the pangolin do?",
     "answer": "Curls into a tight armored ball, tucking its soft belly inside",
     "choices": [
       "Curls into a tight armored ball, tucking its soft belly inside",
@@ -17533,12 +17520,12 @@
       "Sprays a jet of stinging venom from its snout",
       "Puffs itself up huge with swallowed air"
     ],
-    "context": "'Penggulung' means 'one who rolls up.' The scaled back and tail wrap around the vulnerable belly and face, leaving nothing soft exposed. Source: https://www.discoverwildlife.com/animal-facts/mammals/facts-about-pangolins",
+    "context": "The name 'pangolin' comes from the Malay word pengguling, 'one who rolls up.' The scaled back and tail wrap around the vulnerable belly and face, leaving nothing soft exposed. Sources: https://en.wikipedia.org/wiki/Pangolin ; https://www.discoverwildlife.com/animal-facts/mammals/facts-about-pangolins",
     "topic": "pangolin"
   },
   {
     "tier": 2,
-    "question": "A whole pride of African lions surrounds a pangolin, a shy, scale-covered mammal about the size of a house cat. The lions paw at it, bat it back and forth in the dust, and try again and again to sink their teeth through its overlapping scales. How does the standoff end?",
+    "question": "A whole pride of African lions surrounds a pangolin, a shy, scale-covered mammal. The lions paw at it, bat it back and forth in the dust, and try again and again to sink their teeth through its overlapping scales. How does the standoff end?",
     "answer": "The lions give up and walk away, leaving the pangolin unharmed",
     "choices": [
       "The lions give up and walk away, leaving the pangolin unharmed",
@@ -17551,28 +17538,28 @@
   },
   {
     "tier": 2,
-    "question": "A pangolin rips open termite mounds with front claws so long and curved that they are wonderful for digging but clumsy on the ground. Walking flat-footed would drag those precious claws through the dirt and wear them down. To keep them safe, how does the pangolin often get around?",
-    "answer": "It walks upright on its two hind legs, holding its arms and tail up for balance",
+    "question": "A ground pangolin of the African savanna rips open termite mounds with front claws so long and curved that they are wonderful for digging but clumsy on the ground. Walking on them would wear those precious claws down. To keep them safe, how does it usually get around?",
+    "answer": "It walks upright on its hind legs, balanced by its tail",
     "choices": [
-      "It walks upright on its two hind legs, holding its arms and tail up for balance",
+      "It walks upright on its hind legs, balanced by its tail",
       "It drags itself forward on its belly like a seal",
-      "It knuckle-walks on the backs of its curled front paws",
+      "It shuffles along sideways like a crab",
       "It hops with both hind feet together like a kangaroo"
     ],
-    "context": "The three big digging claws on each front paw are useless for walking, so a pangolin often rears up and strides on its hind legs, tail and forelimbs raised as a counterweight. Source: https://africageographic.com/stories/fascinating-pangolin-facts/",
+    "context": "The three big digging claws on each front paw are poor for walking, so a ground pangolin strides on its hind legs, using its tail and sometimes its forelegs for balance; other pangolins walk on all fours with the front claws tucked under. Sources: https://en.wikipedia.org/wiki/Ground_pangolin ; https://en.wikipedia.org/wiki/Pangolin",
     "topic": "pangolin"
   },
   {
     "tier": 3,
     "question": "Ants and termites are a pangolin's whole diet, yet it has no teeth at all and cannot chew a single insect. To reach the bugs deep inside a nest's tunnels, it uncoils an extraordinarily long tongue coated in thick, sticky saliva. In a big pangolin, how far can that tongue stretch?",
-    "answer": "Up to about 40 cm (16 in), longer than its own head and body",
+    "answer": "Up to about 40 cm (16 in), longer than a ruler",
     "choices": [
-      "Up to about 40 cm (16 in), longer than its own head and body",
+      "Up to about 40 cm (16 in), longer than a ruler",
       "Up to about 10 cm (4 in), like a house cat's",
       "Up to about 1 m (3 ft), trailing on the ground",
       "Just past its own lips, a few centimeters"
     ],
-    "context": "A big pangolin's tongue can reach 40 cm, sometimes longer than its head and body combined, gluing ants and termites to it inside their tunnels. Source: https://en.wikipedia.org/wiki/Pangolin",
+    "context": "A big pangolin's tongue can reach 40 cm (16 in), and its root sits not in the throat but deep in the chest. Sticky saliva glues ants and termites to it inside their tunnels. Source: https://en.wikipedia.org/wiki/Pangolin",
     "topic": "pangolin"
   },
   {
@@ -17585,15 +17572,15 @@
       "It attacks only at night when the insects are asleep",
       "It smears itself with the nest's own scent to hide"
     ],
-    "context": "Muscles let a pangolin seal its ears and nostrils closed, keeping swarming ants out while it laps up as many as 20,000 in a single day. Source: https://www.discoverwildlife.com/animal-facts/mammals/facts-about-pangolins",
+    "context": "Muscles let a pangolin seal its ears and nostrils closed, keeping swarming ants and termites out while it feeds. Source: https://www.discoverwildlife.com/animal-facts/mammals/facts-about-pangolins",
     "topic": "pangolin"
   },
   {
     "tier": 4,
     "question": "A pangolin walking the forests and savannas of Africa and Asia swallows its ants whole, for it has no teeth at all, yet somehow it grinds up their crunchy shells inside its body. It manages this with a trick a chicken would recognize. How does a pangolin's stomach break down its food?",
-    "answer": "Swallowed stones churn in a muscular gizzard-like stomach lined with keratin spines",
+    "answer": "Swallowed stones grind them up in a muscular, spiny stomach",
     "choices": [
-      "Swallowed stones churn in a muscular gizzard-like stomach lined with keratin spines",
+      "Swallowed stones grind them up in a muscular, spiny stomach",
       "Powerful acid dissolves the shells completely within minutes",
       "A second set of throat teeth crushes the ants on the way down",
       "It regurgitates and re-swallows each meal to soften it"
@@ -17620,9 +17607,9 @@
     "answer": "About the size of a grain of rice",
     "choices": [
       "About the size of a grain of rice",
+      "About the size of a grain of sand",
       "About the size of a jellybean",
-      "About the size of a housefly",
-      "About the size of a ladybug"
+      "About the size of a bottle cap"
     ],
     "context": "Both males and females are only about 5 mm long — roughly a grain of rice — yet the male packs a dazzling courtship display onto that tiny frame. Their size hid them from science for years. Source: https://en.wikipedia.org/wiki/Maratus_volans",
     "topic": "peacock-spider"
@@ -17635,7 +17622,7 @@
       "Attack, kill, and eat him",
       "Trap him in her web for days",
       "Sting him with venom to paralyze him",
-      "Chase him off her patch of ground"
+      "Call in a rival male to fight him"
     ],
     "context": "An unimpressed female may attack, kill, and eat the male — and she may even do it after mating. That deadly stakes-raising is why the dance has to be so spectacular. Source: https://en.wikipedia.org/wiki/Maratus_volans",
     "topic": "peacock-spider"
@@ -17655,15 +17642,15 @@
   },
   {
     "tier": 4,
-    "question": "On a sunlit leaf in Australia, a male peacock spider fans out the colorful flap on his back and dances for a female. Part of the fan is an ultra-black patch that reflects less than half a percent of light, darker than most black paint, yet no dark pigment makes it. What swallows the light?",
-    "answer": "Tiny lens-like bumps on the cuticle that trap it",
+    "question": "On a sunlit leaf in Australia, a male peacock spider fans out the colorful flap on his back and dances for a female. Part of the fan is an ultra-black patch that reflects less than half a percent of light, darker than most black paint. What makes it so black?",
+    "answer": "Tiny lens-like bumps that trap light in its pigment",
     "choices": [
-      "Tiny lens-like bumps on the cuticle that trap it",
+      "Tiny lens-like bumps that trap light in its pigment",
       "A thin layer of black oil that soaks it up",
-      "Charcoal-like grains built into the scales",
+      "A thick black wax it spreads from glands",
       "A living film of dark bacteria on the surface"
     ],
-    "context": "The ultra-black comes from microscopic dome-shaped bumps on the cuticle, about 6 micrometers tall, that act like tiny lenses and trap incoming light — reflecting as little as 0.35% in Maratus karrie. No black pigment is involved. Source: https://pmc.ncbi.nlm.nih.gov/articles/PMC6532503/",
+    "context": "The ultra-black comes from microscopic dome-shaped bumps on the cuticle, about 6 micrometers tall, that act like tiny lenses: they scatter light and lengthen its path through the dark melanin pigment beneath, so almost all of it is absorbed, leaving as little as 0.35% reflected in Maratus karrie. Source: McCoy et al. 2019, Proceedings of the Royal Society B, 'Structurally assisted super black in colourful peacock spiders'.",
     "topic": "peacock-spider"
   },
   {
@@ -17674,7 +17661,7 @@
       "Nanostructures on its scales that bend light",
       "A dye it absorbs from the insects it eats",
       "Blue pigment cells packed under its skin",
-      "Trapped air bubbles beneath its shell"
+      "Copper-rich blood showing through its skin"
     ],
     "context": "The blue is structural color: microscopic nanostructures on the scales bend and reflect just the right wavelength of light — the same physics behind a soap bubble's shimmer — rather than any pigment. Source: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6532503/",
     "topic": "peacock-spider"
@@ -17894,7 +17881,7 @@
     "choices": [
       "3 to 5 cm (an adult's thumb)",
       "30 to 40 cm (a forearm)",
-      "1 to 2 mm (a grain of rice)",
+      "1 to 2 mm (a grain of sand)",
       "70 to 90 cm (an arm's length)"
     ],
     "context": "Only about 3 to 5 cm (1.2 to 2 inches) long, yet it produces one of the most powerful sounds, by body size, of any animal. Source: Wikipedia 'Alpheidae'; https://en.wikipedia.org/wiki/Alpheidae",
@@ -17954,15 +17941,15 @@
   },
   {
     "tier": 4,
-    "question": "A pistol shrimp's claw snaps shut, and the jet of water it shoots is so fast that a tiny bubble forms and collapses inside it, which scientists call cavitation. The collapse makes a shockwave that stuns fish, and for a sliver of a second it also gives off a flash of light too faint for the naked eye. Researchers gave the glow a playful name. What is it?",
-    "answer": "Shrimpoluminescence",
+    "question": "A pistol shrimp's claw snaps shut, and the jet of water it shoots is so fast that a tiny bubble forms and collapses inside it. The collapse makes a shockwave that stuns fish, and in that same sliver of a second it gives off something else, far too faint to notice without sensitive instruments. What is it?",
+    "answer": "A brief flash of light",
     "choices": [
-      "Shrimpoluminescence",
-      "Bioflash cavitation",
-      "Crustaceoglow",
-      "Snapfire radiance"
+      "A brief flash of light",
+      "A tiny jolt of electricity",
+      "A burst of radio static",
+      "A puff of chemical scent"
     ],
-    "context": "Named because it resembles sonoluminescence — light from a collapsing bubble. Source: Lohse, Schmitz & Versluis, 'Snapping shrimp make flashing bubbles', Nature 2001; https://pubmed.ncbi.nlm.nih.gov/11586346/",
+    "context": "In 2001 Detlef Lohse and colleagues found that the collapsing bubble gives off a brief flash of light, far too faint for the naked eye, and playfully named it shrimpoluminescence, after sonoluminescence, the light from collapsing bubbles. Source: Lohse, Schmitz & Versluis, 'Snapping shrimp make flashing bubbles', Nature 2001; https://pubmed.ncbi.nlm.nih.gov/11586346/",
     "topic": "pistol-shrimp"
   },
   {
@@ -17980,7 +17967,7 @@
   },
   {
     "tier": 1,
-    "question": "Scientists in London opened a crate from Australia in 1799 and suspected a hoax. The stuffed animal inside had fur, a beaver's flat tail, a soft, rubbery bill like a duck's and webbed feet, and its males were said to carry venom. What was it?",
+    "question": "Scientists in London opened a crate from Australia in 1799 and suspected a hoax. The skin inside had fur, a beaver's flat tail, a duck's soft bill and webbed feet, and one of them hunted it for stitches with scissors. What was it?",
     "answer": "Platypus",
     "choices": [
       "Platypus",
@@ -18019,15 +18006,15 @@
   },
   {
     "tier": 3,
-    "question": "A platypus noses along a muddy riverbed and goes straight for a shrimp, though the shrimp gives off no smell it could follow. In 1986 Henning Scheich fooled one with a lifeless plastic shrimp full of wires, which it struck as if alive. What does a platypus bill pick up from its prey?",
-    "answer": "The faint electric currents from the prey's twitching muscles",
+    "question": "A platypus noses along a muddy riverbed and goes straight for a shrimp, though the shrimp gives off no smell it could follow. In 1986 Henning Scheich fooled one with a lifeless plastic shrimp, which it struck as if alive. What does a platypus bill pick up from its prey?",
+    "answer": "Faint electric fields from its muscles",
     "choices": [
-      "The faint electric currents from the prey's twitching muscles",
+      "Faint electric fields from its muscles",
       "The warmth of the prey's body",
       "The vibration of the prey's heartbeat",
       "The color of the prey against the mud"
     ],
-    "context": "About 40,000 electroreceptors pack the platypus's bill, sensing the tiny electric fields thrown off by a hidden animal's moving muscles. Hunting underwater with its eyes, ears and nose sealed, it relies on that electric sense plus touch-sensitive 'push rods' in the bill. Henning Scheich's platypus struck at a lure carrying only a faint electric signal, proving electroreception; the receptors respond to signals as weak as ~20 microvolts per square centimeter. Source: American Museum of Natural History, amnh.org/explore/news-blogs/platypus-electroreception-hunting; Australian Platypus Conservancy, platypus.asn.au/the-platypus-bill-push-rods-and-electroreception/",
+    "context": "About 40,000 electroreceptors pack the platypus's bill, sensing the tiny electric fields thrown off by a hidden animal's moving muscles. Hunting underwater with its eyes, ears and nose sealed, it relies on that electric sense plus touch-sensitive 'push rods' in the bill. Henning Scheich's platypus struck at an artificial shrimp carrying only a small electric current, proving electroreception. Sources: https://en.wikipedia.org/wiki/Platypus ; American Museum of Natural History; Australian Platypus Conservancy.",
     "topic": "platypus"
   },
   {
@@ -18058,12 +18045,12 @@
   },
   {
     "tier": 4,
-    "question": "Now and then an Australian bushwalker handles a male platypus the wrong way and gets a dose of its venom. It is not deadly to people, but the venom has earned a grim name among doctors, worse in one way than most snakebites. What makes it so notorious?",
-    "answer": "The pain shrugs off morphine and can last weeks or months",
+    "question": "Now and then an Australian bushwalker handles a male platypus the wrong way and gets a dose of its venom. It is not deadly to people, but the venom has earned a grim reputation among doctors, worse in one way than most snakebites. What makes it so notorious?",
+    "answer": "The pain defies morphine and can last for months",
     "choices": [
-      "The pain shrugs off morphine and can last weeks or months",
-      "It causes the wounded limb to swell to twice its size",
-      "It leaves the victim unable to grip for months",
+      "The pain defies morphine and can last for months",
+      "It turns the skin around the wound black",
+      "It stops the victim's breathing for hours",
       "It triggers violent, days-long fever"
     ],
     "context": "The venom is not lethal to humans but causes excruciating pain that morphine cannot relieve, persisting for weeks or months and able to incapacitate a grown adult. Source: Slate, 2015; en.wikipedia.org/wiki/Platypus_venom",
@@ -18071,13 +18058,13 @@
   },
   {
     "tier": 4,
-    "question": "Anich and colleagues carried old museum platypus pelts into a dark room in 2020 and shone ultraviolet light on them, expecting only brown fur under a purple lamp. Instead they saw something nobody had noticed on a platypus before. What did the fur do under the lamp?",
+    "question": "Anich and colleagues carried old museum platypus pelts into a dark room and shone ultraviolet light on them, expecting only brown fur under a purple lamp. Instead they saw something nobody had noticed on a platypus before. What did the fur do under the lamp?",
     "answer": "Glows an eerie blue-green",
     "choices": [
       "Glows an eerie blue-green",
       "Glows a deep blood-red",
       "Glows bright orange",
-      "Shows no reaction at all"
+      "Glows a pale pink"
     ],
     "context": "Anich and colleagues reported this biofluorescence in the journal Mammalia in 2020, the first ever found in a monotreme. Source: Live Science, livescience.com/platypuses-glow-uv-light.html; ScienceDaily (Anich et al., 2020)",
     "topic": "platypus"
@@ -18085,27 +18072,27 @@
   {
     "tier": 3,
     "question": "Down on the bottom of an Australian river, a platypus scoops crayfish, worms and freshwater shellfish into stretchy cheek pouches, along with little pieces of gravel. It has no teeth, yet it cracks the hard shells once it paddles back up to the surface to chew. Why does it gather grit with its food?",
-    "answer": "It grinds food against horny pads, using the swallowed grit like millstones",
+    "answer": "The grit helps its horny pads grind up shells",
     "choices": [
-      "It grinds food against horny pads, using the swallowed grit like millstones",
+      "The grit helps its horny pads grind up shells",
       "It uses the stones as ballast to sink while diving",
       "It spits the grit to stun approaching prey",
       "It stores the stones to build its riverbank burrow"
     ],
-    "context": "With no teeth, the platypus mashes prey between horny keratin pads, the swallowed grit acting as millstones to crack hard shells. Source: AskNature, asknature.org/strategy/mouth-sorts-and-grinds-food/; Australian Museum",
+    "context": "With no teeth, the platypus mashes its prey between horny keratin pads, and the bits of gravel scooped up with its food help crack hard shells. Sources: https://en.wikipedia.org/wiki/Platypus (cheek pouches, keratinised grinding pads); AskNature; Australian Museum.",
     "topic": "platypus"
   },
   {
     "tier": 5,
-    "question": "Biologists reading the platypus genome in 2008 found a surprise in its sex chromosomes. Most mammals settle sex with a single pair, but the platypus has a whole chain of them, some resembling a chicken's. How many sex chromosomes does a platypus carry?",
+    "question": "Biologists looking closely at platypus chromosomes reported a surprise in 2004. Most mammals settle sex with a single pair, but the platypus has a whole chain of sex chromosomes, some resembling a chicken's. How many sex chromosomes does a platypus carry?",
     "answer": "Ten",
     "choices": [
       "Ten",
-      "Two",
       "Four",
+      "Six",
       "Twenty-three"
     ],
-    "context": "The 2008 genome revealed 5 X and 5 Y chromosomes, and DNA blending mammal, bird, and reptile genes, with bird-like sex chromosomes echoing a chicken's. Source: WashU, source.washu.edu/2008/05/; ScienceAlert",
+    "context": "Frank Grutzner and colleagues reported in 2004 that the platypus has 10 sex chromosomes (five X and five Y in a male), linked in a chain during cell division, sharing genes with the bird Z chromosome as well as the mammal X. Sources: https://en.wikipedia.org/wiki/Platypus ; Grutzner et al. 2004, Nature.",
     "topic": "platypus"
   },
   {
@@ -18118,7 +18105,7 @@
       "Digest the shells of the eggs it lays",
       "Regrow a lost venom spur within one season"
     ],
-    "context": "The ancestral vertebrate had a cluster of three vitellogenin (egg-yolk protein) genes — chickens still carry all three. Placental and marsupial mammals lost every one when they swapped yolk for the placenta and milk. The platypus kept one working copy, an ortholog of the chicken's VtgI, sitting right beside its milk-casein genes. Low nonsynonymous-to-synonymous substitution ratios and almost no pseudogene decay confirm the gene is still functional, not a fossil — so the platypus is genetically half-reptile, half-mammal, making egg yolk and milk at once. Source: Warren et al. 2008 genome analysis (Nature nature06936); Wagner et al. 2008, 'Conservation of a vitellogenin gene cluster in oviparous vertebrates and identification of its traces in the platypus genome' (PubMed 18343608).",
+    "context": "The ancestral vertebrate had a cluster of three vitellogenin (egg-yolk protein) genes, and chickens still carry all three. Placental and marsupial mammals lost every one when they swapped yolk for the placenta and milk. The platypus kept one working copy, an ortholog of the chicken's VtgI, sitting near its milk-casein genes. Low nonsynonymous-to-synonymous substitution ratios and almost no pseudogene decay confirm the gene is still functional, not a fossil, so the platypus makes egg yolk and milk at once. Sources: Warren et al. 2008 genome analysis (Nature nature06936); Brawand et al. 2008, PLoS Biology; Wagner et al. 2008 (PubMed 18343608).",
     "topic": "platypus"
   },
   {
@@ -18137,9 +18124,9 @@
   {
     "tier": 2,
     "question": "A dog grabs a possum, and the possum flops limp with its tongue lolling out; the dog often loses interest and drops it. Biologists call this kind of death-faking thanatosis, and it turns up in some unexpected corners of the animal world. Which of these groups has known death-fakers?",
-    "answer": "Beetles, ducks, frogs, and sharks",
+    "answer": "Beetles, ducks, and sharks",
     "choices": [
-      "Beetles, ducks, frogs, and sharks",
+      "Beetles, ducks, and sharks",
       "Octopuses, squid, and cuttlefish",
       "Bats, dolphins, and shrews",
       "Corals, jellyfish, and sea anemones"
@@ -18155,9 +18142,9 @@
       "It smells like a corpse dead for days",
       "It masks its own scent so predators lose the trail",
       "It gives off a musk that mimics the predator's own kind",
-      "It seems to be a healthy, easy catch"
+      "It smells like a skunk about to spray"
     ],
-    "context": "The musky fluid reeks of rotting flesh, so the opossum doesn't just look dead -- it smells and looks DAYS-dead. Many predators avoid spoiled meat, which can be poisonous, and drop it in disgust. Source: https://www.nationalgeographic.com/animals/article/many-animals-play-dead-not-just-to-avoid-predators",
+    "context": "The musky fluid reeks of rotting flesh, so the opossum does not just look dead: it smells days-dead. Many predators avoid spoiled meat, which can be poisonous, and drop it. Source: https://www.nationalgeographic.com/animals/article/many-animals-play-dead-not-just-to-avoid-predators",
     "topic": "playing-dead-tonic-immobility"
   },
   {
@@ -18440,7 +18427,7 @@
     "choices": [
       "The polar bear",
       "The Siberian tiger",
-      "The saltwater crocodile",
+      "The African lion",
       "The gray wolf"
     ],
     "context": "The polar bear (Ursus maritimus, Latin for 'sea bear') is the largest extant bear and the largest land carnivore by body mass, with adult males weighing 300-800 kg (660-1,760 lb) and standing nearly 10 feet tall on their hind legs. Source: Wikipedia, Polar bear; SeaWorld, All About Polar Bears - Characteristics.",
@@ -18480,9 +18467,9 @@
       "Jet black",
       "Pale pink",
       "Bluish gray",
-      "Snowy white, like the fur"
+      "Deep brown"
     ],
-    "context": "A polar bear's skin is black, visible only on the nose and footpads; the dark skin soaks up the sun's warmth like a solar panel. Source: SeaWorld, All About Polar Bears - Characteristics ('A polar bear's skin, visible only on the nose and footpads, is black.').",
+    "context": "A polar bear's skin is black, visible only on the nose and footpads; the dark skin may help it soak up the sun's warmth. Source: SeaWorld, All About Polar Bears - Characteristics ('A polar bear's skin, visible only on the nose and footpads, is black.').",
     "topic": "polar-bear"
   },
   {
@@ -18492,8 +18479,8 @@
     "choices": [
       "About a mile away",
       "About a hundred yards away",
-      "About ten miles away",
-      "Only when nearly on top of it"
+      "About fifty miles away",
+      "About a hundred miles away"
     ],
     "context": "A polar bear's nose can detect a seal's breathing hole from about a mile away, and sniff out a seal hidden under three feet of packed snow. Source: Biology Insights, 'How Far Away Can a Polar Bear Smell?'; Polar Bears International seal-detection facts.",
     "topic": "polar-bear"
@@ -18514,9 +18501,9 @@
   {
     "tier": 3,
     "question": "At forty below on the Arctic snow, a polar bear stays as warm inside as any mammal, around 99 degrees Fahrenheit. Yet on an infrared heat camera the huge animal almost disappears, reading nearly as cold as the ice around it. Why does so little of its warmth show up on the screen?",
-    "answer": "Its insulation is so complete that almost no body heat escapes its surface",
+    "answer": "Its fur and fat let almost no body heat reach the surface",
     "choices": [
-      "Its insulation is so complete that almost no body heat escapes its surface",
+      "Its fur and fat let almost no body heat reach the surface",
       "Its fur reflects the camera's infrared beam straight back",
       "It lowers its body temperature to match the surrounding snow",
       "The white fur blends into the white background on any camera"
@@ -18530,24 +18517,24 @@
     "answer": "Nine days",
     "choices": [
       "Nine days",
-      "Three days",
-      "Five days",
-      "Fourteen days"
+      "Nine hours",
+      "A day and a night",
+      "A whole month"
     ],
     "context": "The tracked female swam about 426 miles (687 km) nonstop over nine days across the Beaufort Sea, losing 22% of her body weight before reaching ice. Reported from a USGS polar bear tracking study (2011). Source: USGS tracking study via Wikipedia, Polar bear, and PBS Nature Polar Bear Fact Sheet.",
     "topic": "polar-bear"
   },
   {
     "tier": 1,
-    "question": "A Portuguese man o' war drifts on a warm sea like a pale blue jellyfish, a gas-filled balloon on top and stinging tentacles trailing below, sometimes thirty feet down. Biologists call it 'they,' not 'it.' Why do biologists say 'they' about a man o' war?",
-    "answer": "It is a colony of many bodies",
+    "question": "A Portuguese man o' war drifts on a warm sea like a pale blue jellyfish, a gas-filled float on top and stinging tentacles trailing below, often thirty feet down. Biologists say it is not really a single animal at all. What is it instead?",
+    "answer": "A colony of many fused bodies",
     "choices": [
-      "It is a colony of many bodies",
-      "It changes sex through its life",
-      "It always swims in mated pairs",
-      "It splits in two when threatened"
+      "A colony of many fused bodies",
+      "A mother jellyfish and her young",
+      "A stinging seaweed that floats",
+      "A jellyfish with a crab partner"
     ],
-    "context": "A Portuguese man o' war (Physalia physalis) is not a jellyfish and not even a single animal. It is a siphonophore: a floating colony of many specialized bodies called zooids, all genetically identical clones, so tightly fused that no one zooid could survive alone. That is why scientists say it is a 'they,' not an 'it.' Source: NOAA Ocean Service, oceanservice.noaa.gov/facts/portuguese-man-o-war.html.",
+    "context": "A Portuguese man o' war (Physalia physalis) is not a jellyfish and not even a single animal. It is a siphonophore: a floating colony of many specialized bodies called zooids, all genetically identical clones, so tightly fused that no one zooid could survive alone. Source: NOAA Ocean Service, oceanservice.noaa.gov/facts/portuguese-man-o-war.html",
     "topic": "portuguese-man-o-war"
   },
   {
@@ -18556,7 +18543,7 @@
     "answer": "The wind blows its bag like a sail",
     "choices": [
       "The wind blows its bag like a sail",
-      "It jets water to shoot forward",
+      "It rides inside floating seaweed mats",
       "It hitches rides on passing fish",
       "It slowly rolls with the tide alone"
     ],
@@ -18566,14 +18553,14 @@
   {
     "tier": 2,
     "question": "At the surface, a Portuguese man o' war shows only a gas-filled purple float about a foot long. Out of sight below the waves hang its stinging tentacles, thin threads packed with venom. Stretched to their full limit, how far down can those threads reach?",
-    "answer": "Longer than a blue whale",
+    "answer": "About as long as a blue whale",
     "choices": [
-      "Longer than a blue whale",
+      "About as long as a blue whale",
       "Farther than a football field",
       "About the height of a house",
       "Roughly the length of a car"
     ],
-    "context": "The stinging tentacles trail an average of about 10 meters (30 feet) below the float and can stretch as far as 30 meters (roughly 100 feet), longer than a blue whale, all hanging invisibly beneath a float only inches wide. Source: NOAA Ocean Service; Wikipedia, Portuguese man o' war.",
+    "context": "The stinging tentacles trail an average of about 10 meters (30 feet) below the float and can stretch as far as 30 meters (roughly 100 feet), about the length of a blue whale, all hanging invisibly beneath a float only inches wide. Sources: NOAA Ocean Service; Wikipedia, Portuguese man o' war.",
     "topic": "portuguese-man-o-war"
   },
   {
@@ -18603,19 +18590,6 @@
     "topic": "portuguese-man-o-war"
   },
   {
-    "tier": 3,
-    "question": "A blue dragon, a sea slug smaller than a grape, drifts upside down on the open ocean and eats the Portuguese man o' war, a jellyfish-like colony bristling with stinging cells, without coming to harm. Stranger still is what the little slug does with the most powerful stingers it swallows. What does it do with them?",
-    "answer": "It stores them to fire as its own weapon",
-    "choices": [
-      "It stores them to fire as its own weapon",
-      "It grinds them into harmless paste",
-      "It spits them back at the colony",
-      "It uses them to build a shell"
-    ],
-    "context": "The blue dragon (Glaucus atlanticus) sorts out the strongest stingers, does not fire them, and stores them in the tips of its own feathery arms to reuse as a stolen weapon, a trick called kleptocnidy. Source: Wikipedia, Glaucus atlanticus; HowStuffWorks, The Blue Dragon Sea Slug Eats Venomous Prey and Saves the Stingers for Later.",
-    "topic": "portuguese-man-o-war"
-  },
-  {
     "tier": 4,
     "question": "Portuguese men o' war sail with the wind, but their sails come in two mirror-image builds, so some veer off to the left and some to the right instead of all running straight downwind. Biologists think this split helps them in one specific way. How does it help them?",
     "answer": "A whole fleet never all strands on one beach",
@@ -18625,15 +18599,15 @@
       "Left and right builds can mate only with each other",
       "Rivals are pushed apart to reduce competition"
     ],
-    "context": "The sail comes in two mirror-image forms: some men o' war are 'left-handed' and some 'right-handed,' so they tack off at about 45 degrees to either side of the wind. This split means a whole fleet never all blows onto the same beach at once, sparing part of the population from stranding and dying together. Source: Wikipedia, Portuguese man o' war (dimorphism and drift); ScienceDirect, Relationship between dimorphism and drift in the Portuguese man-of-war.",
+    "context": "The sail comes in two mirror-image forms: some men o' war are 'left-handed' and some 'right-handed,' so they tack off at about 45 degrees to either side of the wind. Biologists think the split keeps a whole fleet from blowing onto the same beach at once, sparing part of the population from stranding together. Sources: Wikipedia, Portuguese man o' war (dimorphism and drift); ScienceDirect, Relationship between dimorphism and drift in the Portuguese man-of-war.",
     "topic": "portuguese-man-o-war"
   },
   {
     "tier": 1,
-    "question": "By day, a big-eyed potoo in a forest of Central or South America sits bolt upright on the stump of a broken branch, bill pointed straight up at the sky, and freezes for hours without a twitch. What does the motionless bird look like?",
-    "answer": "A broken-off, dead stub of the branch itself",
+    "question": "By day, a big-eyed potoo in a forest of Central or South America sits bolt upright at the end of a branch, bill pointed straight up at the sky, and freezes for hours without a twitch. What does the motionless bird look like?",
+    "answer": "A dead, broken-off stub of branch",
     "choices": [
-      "A broken-off, dead stub of the branch itself",
+      "A dead, broken-off stub of branch",
       "A coiled snake draped over the wood",
       "A clump of bright red berries",
       "A patch of green moss on the bark"
@@ -18643,7 +18617,7 @@
   },
   {
     "tier": 2,
-    "question": "Its eyes shut tight, a potoo spends the day frozen upright on a broken branch. Yet when a hunting hawk creeps closer, the 'sleeping' bird shifts position before the hawk can strike. Something built into its eyelids lets it see the movement without opening its eyes. What is it?",
+    "question": "Its eyes shut tight, a potoo spends the day frozen upright on a broken branch. Yet when a hunting hawk creeps closer, the 'sleeping' bird shifts position before the hawk can strike. Something lets it see the movement without opening its eyes. What is it?",
     "answer": "Notched slits set into its own eyelids",
     "choices": [
       "Notched slits set into its own eyelids",
@@ -18683,9 +18657,9 @@
   {
     "tier": 1,
     "question": "In the Australian outback, a red kangaroo carries her baby inside her for only about 33 days, barely a month. The newborn comes out blind and hairless, not yet fully formed. About how big is a just-born red kangaroo?",
-    "answer": "The size of a jellybean, under a gram",
+    "answer": "The size of a jellybean",
     "choices": [
-      "The size of a jellybean, under a gram",
+      "The size of a jellybean",
       "The size of a house cat",
       "The size of a rabbit",
       "The size of a human baby"
@@ -18721,13 +18695,13 @@
   },
   {
     "tier": 3,
-    "question": "Bounding across the dry red grasslands of Australia, a red kangaroo mother sometimes covers thirty feet in a single hop, with a tiny joey riding in her forward-facing pouch. Every jump should fling the joey out, yet it never does: she can close the pouch's mouth like the neck of a drawstring bag. What lets her do that?",
-    "answer": "A strong sphincter muscle that tightens the pouch opening",
+    "question": "Bounding across the dry red grasslands of Australia, a red kangaroo mother covers huge distances in each hop, with a well-grown joey riding loose in her forward-facing pouch. Every jump should fling the joey out, yet it never does. What keeps it in?",
+    "answer": "A ring of muscle that cinches the opening shut",
     "choices": [
-      "A strong sphincter muscle that tightens the pouch opening",
-      "A flap of skin she folds over by hand",
+      "A ring of muscle that cinches the opening shut",
+      "A flap of skin she folds over the opening",
       "Sticky glands lining the pouch rim",
-      "The joey hooking its claws over the edge"
+      "A cushion of fat that wedges the joey tight"
     ],
     "context": "A ring of sphincter muscle at the pouch opening lets the mother cinch it shut like a drawstring, so a joey in a forward-opening pouch can't fall out mid-leap. Source: en.wikipedia.org/wiki/Pouch_(marsupial)",
     "topic": "pouches-and-tiny-newborns-marsupials"
@@ -18738,9 +18712,9 @@
     "answer": "Her pouch opens backward, toward her hind legs",
     "choices": [
       "Her pouch opens backward, toward her hind legs",
-      "She seals the pouch shut while digging",
-      "She digs only with her front paws held high",
-      "She carries the baby in her mouth while digging"
+      "A flap of skin covers the pouch opening",
+      "The pouch lining sheds any dirt that falls in",
+      "The baby hides deep in the bottom of the pouch"
     ],
     "context": "A wombat's pouch opens backward, toward the hind legs, so a digging mother doesn't shovel dirt onto the baby inside — the opposite orientation to a forward-opening kangaroo pouch. Source: environment.sa.gov.au/goodliving/posts/2018/10/wombat-facts",
     "topic": "pouches-and-tiny-newborns-marsupials"
@@ -18748,9 +18722,9 @@
   {
     "tier": 2,
     "question": "A Virginia opossum, the only marsupial found wild north of Mexico, can deliver twenty or more babies in a single birth, far more than she can raise. The tiny newborns scramble blindly through her fur toward the pouch. What decides which of them survive?",
-    "answer": "Only those that reach one of her ~13 teats live",
+    "answer": "Only those that latch onto a teat live",
     "choices": [
-      "Only those that reach one of her ~13 teats live",
+      "Only those that latch onto a teat live",
       "The mother eats the weakest herself",
       "The first-born pushes the rest out of the pouch",
       "She raises whichever ones are largest at birth"
@@ -18765,7 +18739,7 @@
     "choices": [
       "She makes two different milks from two teats at once",
       "She alternates one milk between the two by the hour",
-      "She feeds the newborn milk and the older one solid food",
+      "She swaps which teat each joey uses every day",
       "Both drink the same milk but at different times"
     ],
     "context": "From two teats simultaneously she produces fat-rich milk for the older joey 'at foot' and low-fat, immune-rich milk for the tiny newborn in the pouch — different recipes at the same time. Source: a-z-animals.com/articles/kangaroos-have-one-of-the-strangest-reproductive-systems-in-the-animal-world/",
@@ -18773,7 +18747,7 @@
   },
   {
     "tier": 4,
-    "question": "A female kangaroo carries two uteruses, with a birth canal between them that in many kangaroos opens only at her first birth. This double plumbing was set by an accident of how the marsupial embryo grows: a pair of tubes runs right between the two developing reproductive tracts, blocking them from ever joining into the one system placental mammals have. Which tubes are they?",
+    "question": "A female kangaroo carries two uteruses, with a separate birth canal between them that opens when her first joey is born. This double plumbing was set by an accident of how the marsupial embryo grows: a pair of tubes runs right between the two developing reproductive tracts, blocking them from ever joining into the one system placental mammals have. Which tubes are they?",
     "answer": "The ureters, draining the kidneys down to the bladder",
     "choices": [
       "The ureters, draining the kidneys down to the bladder",
@@ -18877,13 +18851,13 @@
   },
   {
     "tier": 1,
-    "question": "A house cat fixes both eyes on its prey, both pointing the same way, as a wolf's, an owl's and a person's do. Overlapping views let each hunter judge exactly how far off its prey is. Where do a hunter's eyes sit?",
-    "answer": "on the front of the head",
+    "question": "A house cat crouches in the grass, staring at a sparrow before it pounces. Wolves, owls and people are hunters too, and like the cat each must judge exactly how far off its prey is. Where do a hunter's eyes usually sit?",
+    "answer": "On the front of the head",
     "choices": [
-      "on the front of the head",
-      "on the sides of the head",
-      "on top of the head",
-      "one on each end of a long stalk"
+      "On the front of the head",
+      "On the sides of the head",
+      "High on top of the head",
+      "On short stalks above the head"
     ],
     "context": "Forward-facing eyes give overlapping fields of view, and that overlap is what lets a predator measure the distance to its target before it leaps. The old rhyme sums it up: 'Eyes in front, the animal hunts.' Sources: University of California / Berkeley News 'Hunter or prey? The eyes are the key' (2015-08-07); veterinaryvision.co.uk 'How animals see the World.'",
     "topic": "predator-eyes-vs-prey-eyes"
@@ -18891,12 +18865,12 @@
   {
     "tier": 1,
     "question": "A deer grazes with its head down, yet it can still spot a lion or a wolf sneaking up from almost any direction. So can a rabbit or a horse. Where on the skull are a grazer's eyes set to give it that wide watch?",
-    "answer": "on the sides of the head",
+    "answer": "On the sides of the head",
     "choices": [
-      "on the sides of the head",
-      "on the front of the head",
-      "tucked under the ears",
-      "behind a bony hood"
+      "On the sides of the head",
+      "On the front of the head",
+      "High on top of the head",
+      "Low on the snout, near the nose"
     ],
     "context": "Side-set eyes give up the overlap that measures distance and trade it for a nearly all-around field of view, so a hunted animal can spot danger coming from behind or the flank. The rhyme is 'Eyes on the side, the animal hides.' Sources: New Hampshire State Parks 'Reading a Skull: Predator and Prey Differences' (nhstateparks.org); Nearby Nature 'Predators and Prey Background.'",
     "topic": "predator-eyes-vs-prey-eyes"
@@ -18904,12 +18878,12 @@
   {
     "tier": 2,
     "question": "A horse's eyes sweep almost the whole circle around it, close to 340 degrees of watch. Still, two spots stay hidden from it: the one directly behind its body, and a triangle a few feet long in one other place. Where is that second blind spot?",
-    "answer": "right in front of its own nose",
+    "answer": "Right in front of its own nose",
     "choices": [
-      "right in front of its own nose",
-      "straight up above its mane",
-      "along its left flank only",
-      "under its own belly"
+      "Right in front of its own nose",
+      "Straight up above its mane",
+      "Along its left flank only",
+      "Out to either side of its head"
     ],
     "context": "The horse's panoramic side vision leaves two gaps: one directly behind the tail, and one triangle of blindness reaching a few feet straight out from the nose. A horse briefly raising or turning its head fills the front gap, which is why a grazing horse keeps bobbing its head up. Sources: Utah State University Extension 'Equine Vision and Its Effect on Behavior' (digitalcommons.usu.edu); equinehelper.com 'How Horses See.'",
     "topic": "predator-eyes-vs-prey-eyes"
@@ -18917,25 +18891,25 @@
   {
     "tier": 3,
     "question": "A grazing goat drops its head to the grass, and inside each eye the long, horizontal slit pupil rolls as much as 50 degrees, the two eyes turning in opposite directions as the head tilts down. What does each pupil roll to do?",
-    "answer": "keep the pupil level with the ground",
+    "answer": "Keep the pupil level with the ground",
     "choices": [
-      "keep the pupil level with the ground",
-      "seal shut against flying grit",
-      "let in far more light",
-      "point both pupils at the same blade of grass"
+      "Keep the pupil level with the ground",
+      "Seal shut against flying grit",
+      "Let in far more light",
+      "Point both pupils at the same blade of grass"
     ],
-    "context": "This eye-roll is called cyclovergence: as the goat or sheep lowers its head to eat, each eye rotates so the wide horizontal pupil stays parallel to the horizon, keeping the whole sweep of ground in sharp focus for spotting a predator even while the animal is head-down grazing. Sources: Banks et al. 2015 'Why do animal eyes have pupils of different shapes?' (Science Advances); Berkeley News 2015-08-07; The Conversation 'Revealed: why animals' pupils come in different shapes.' (Legend-tier wonder.)",
+    "context": "This eye-roll is called cyclovergence: as the goat or sheep lowers its head to eat, each eye rotates so the wide horizontal pupil stays parallel to the horizon, keeping the whole sweep of ground in sharp focus for spotting a predator even while the animal is head-down grazing. Sources: Banks et al. 2015 'Why do animal eyes have pupils of different shapes?' (Science Advances); Berkeley News 2015-08-07; The Conversation 'Revealed: why animals' pupils come in different shapes.'",
     "topic": "predator-eyes-vs-prey-eyes"
   },
   {
     "tier": 4,
     "question": "Martin Banks's team measured 214 land animals and found the vertical slit pupil isn't a mark of big cats at all — lions and tigers have round pupils. The slit shows up almost only in predators shorter than about knee height, like house cats and geckos. What hunting style does that low, close-to-the-ground slit belong to?",
-    "answer": "an ambusher lying in wait for the pounce",
+    "answer": "An ambusher lying in wait for the pounce",
     "choices": [
-      "an ambusher lying in wait for the pounce",
-      "a runner chasing prey across open ground",
-      "a night-flying glider",
-      "a filter-feeder sifting the water"
+      "An ambusher lying in wait for the pounce",
+      "A runner chasing prey across open ground",
+      "A scavenger trailing bigger hunters",
+      "A forager digging prey from burrows"
     ],
     "context": "Banks's team found the vertical slit almost always in predators under about 42 cm at the shoulder. Down near the ground, the slit sharpens the blur and disparity cues a lying-in-wait hunter uses to time the exact moment of the strike — while tall chasers like lions keep round pupils. Sources: Banks et al. 2015 (Science Advances); Berkeley News 2015-08-07; sci.news 'New Study Reveals Why Some Animals Have Vertical Pupils.'",
     "topic": "predator-eyes-vs-prey-eyes"
@@ -18943,9 +18917,9 @@
   {
     "tier": 1,
     "question": "A shaggy orange monkey troops through the swampy forests of Borneo in a noisy family band. The adult male carries a feature on his face so unusual that scientists named the whole species after it. What is that feature?",
-    "answer": "A drooping nose over four inches long",
+    "answer": "A long, fleshy drooping nose",
     "choices": [
-      "A drooping nose over four inches long",
+      "A long, fleshy drooping nose",
       "A fan of bright blue cheek ridges",
       "A bony crest like a rooster's comb",
       "A mane of stiff white whiskers"
@@ -18956,9 +18930,9 @@
   {
     "tier": 2,
     "question": "A male proboscis monkey honks from deep in the Borneo jungle to monkeys he cannot see through the leaves. His oversized nose does something to the sound that helps it carry. What does the big nose do to the honk?",
-    "answer": "It acts as a resonating chamber that deepens and amplifies the honk",
+    "answer": "It resonates, making the honk deeper and louder",
     "choices": [
-      "It acts as a resonating chamber that deepens and amplifies the honk",
+      "It resonates, making the honk deeper and louder",
       "It squeezes shut to force the honk out in sharp bursts",
       "It funnels the honk straight up above the canopy",
       "It filters out low tones so only the sharp notes carry"
@@ -18995,11 +18969,11 @@
   {
     "tier": 1,
     "question": "Pterosaurs ruled the skies for over 150 million years while dinosaurs walked the Earth below. Cartoons call them flying dinosaurs, but they were not dinosaurs at all. What kind of animal was a pterosaur really?",
-    "answer": "A flying reptile, its own separate branch",
+    "answer": "A flying reptile",
     "choices": [
-      "A flying reptile, its own separate branch",
+      "A flying reptile",
       "A kind of early bird",
-      "A small feathered dinosaur",
+      "A bat-like flying mammal",
       "A giant flying insect"
     ],
     "context": "A pterosaur is NOT a dinosaur and NOT a bird -- it is its own kind of flying reptile, though a close cousin of the dinosaurs. Calling it a 'flying dinosaur' is a common mistake. Source: https://en.wikipedia.org/wiki/Pterosaur",
@@ -19033,13 +19007,13 @@
   },
   {
     "tier": 2,
-    "question": "Over what is now Texas, about 68 million years ago, Quetzalcoatlus soared on wings about 10 to 11 meters from tip to tip. It was one of the largest animals ever to fly. What everyday flying machine was it as wide as?",
+    "question": "Over what is now Texas, about 68 million years ago, Quetzalcoatlus soared on wings about 10 to 11 meters from tip to tip. It was one of the largest animals ever to fly. What flying machine was it about as wide as?",
     "answer": "A small airplane",
     "choices": [
       "A small airplane",
-      "A hang glider",
-      "A kite",
-      "A ceiling fan"
+      "A jumbo jet",
+      "A model airplane",
+      "A toy drone"
     ],
     "context": "Quetzalcoatlus northropi spanned about 10-11 metres (33-36 feet) wingtip to wingtip -- as wide as a small airplane. It is named after Quetzalcoatl, the Aztec feathered-serpent sky god. Source: https://en.wikipedia.org/wiki/Quetzalcoatlus",
     "topic": "pterosaur-quetzalcoatlus"
@@ -19059,10 +19033,10 @@
   },
   {
     "tier": 3,
-    "question": "After a flight, a Quetzalcoatlus came down to land and folded its huge leathery wings away, its head longer than a grown man is tall. It still had to get around on the ground. How did this giant move about on land?",
-    "answer": "On all fours, limbs straight under its body",
+    "question": "After a flight over the Late Cretaceous plains of Texas, a Quetzalcoatlus came down to land and folded its huge leathery wings away. It still had to get around on the ground. How did this giant move about on land?",
+    "answer": "Walking upright on all four limbs",
     "choices": [
-      "On all fours, limbs straight under its body",
+      "Walking upright on all four limbs",
       "Hopping upright on two legs",
       "Dragging itself flat on its belly",
       "Gliding between low branches"
@@ -19072,7 +19046,7 @@
   },
   {
     "tier": 4,
-    "question": "A Quetzalcoatlus weighed about as much as a full-grown giraffe, on wings some 33 feet across. It was far too heavy to sprint along on two legs and flap into the air the way a bird does. How did Michael Habib propose it got off the ground?",
+    "question": "A Quetzalcoatlus probably weighed 200 to 250 kilograms, as much as three grown men, on wings some 33 feet across. It was far too heavy to sprint along on two legs and flap into the air the way a bird does. How did Michael Habib propose it got off the ground?",
     "answer": "Vaulting straight up off its front limbs",
     "choices": [
       "Vaulting straight up off its front limbs",
@@ -19137,7 +19111,7 @@
   },
   {
     "tier": 2,
-    "question": "A glossy, dark-purple frog swollen like a small balloon spends almost its whole life underground in the Western Ghats mountains of southern India, coming up only to breed. People call it the pignose frog because of one odd feature of its face. What is that feature?",
+    "question": "A glossy, dark-purple frog swollen like a small balloon spends almost its whole life underground in the Western Ghats mountains of southern India, coming up only to breed. People gave it a farmyard nickname because of one odd feature of its face. What is that feature?",
     "answer": "A tiny, pointed pig-like snout",
     "choices": [
       "A tiny, pointed pig-like snout",
@@ -19164,14 +19138,14 @@
   {
     "tier": 3,
     "question": "A purple frog lies hidden in the damp soil of India's Western Ghats, the last of a family that has been evolving all on its own for a huge stretch of time. Its closest living cousins are the little Sooglossid frogs stranded on the Seychelles islands out in the Indian Ocean. When did the two lineages split apart?",
-    "answer": "Around 100 million years ago, as Gondwana broke up",
+    "answer": "More than 100 million years ago",
     "choices": [
-      "Around 100 million years ago, as Gondwana broke up",
-      "Around 10 million years ago",
-      "Around 2 million years ago, in the last ice ages",
+      "More than 100 million years ago",
+      "About 10 million years ago",
+      "About 2 million years ago",
       "Only a few hundred thousand years ago"
     ],
-    "context": "The purple frog is a 'living fossil' relict. Its lineage split from the Seychelles Sooglossid frogs roughly 100 million years ago when the Gondwana supercontinent broke apart, leaving India drifting as its own island continent. Source: https://en.wikipedia.org/wiki/Purple_frog",
+    "context": "The purple frog is a 'living fossil' relict. Its lineage split from the Seychelles sooglossid frogs more than 100 million years ago (the 2003 study that named its family put the split near 130 million years ago) while the supercontinent Gondwana was breaking apart; India and the Seychelles drifted off together and parted only about 65 million years ago. Sources: Biju & Bossuyt 2003, Nature; Scientific American, 'Scientists Discover New Frog Family'; https://en.wikipedia.org/wiki/Purple_frog",
     "topic": "purple-frog-the-pig-nosed-frog-that-surfaces-for-two-weeks-a"
   },
   {
@@ -19240,8 +19214,8 @@
     "topic": "radial-vs-bilateral-why-a-jellyfish-has-no-front"
   },
   {
-    "tier": 3,
-    "question": "A biologist sorting animals by body plan finds that about 99 percent of species, over a million kinds, have a mirror-image left and right and a definite front and back. Three of these four animals belong to that huge club. Which one is the rare exception, built like a wheel around its center?",
+    "tier": 1,
+    "question": "A biologist sorting animals finds that about 99 percent of species have mirror-image sides and a front and back. Three of these four belong to that club. Which is the exception, built like a wheel?",
     "answer": "A jellyfish",
     "choices": [
       "A jellyfish",
@@ -19258,7 +19232,7 @@
     "answer": "Less drag cutting through the water",
     "choices": [
       "Less drag cutting through the water",
-      "More powerful tail muscles",
+      "Thicker skin against bites",
       "A lighter, hollow skeleton",
       "Far larger gills for oxygen"
     ],
@@ -19267,15 +19241,15 @@
   },
   {
     "tier": 4,
-    "question": "Creeping over the ocean floor, a sea star has barely a head at all: its nerves spread out in a ring instead of clustering up front, and a jellyfish's spread in a net. At the other extreme, one group of ocean hunters crams camera-like eyes, a sharp beak and a large brain together at its leading end. Which sea animals are they?",
+    "question": "Creeping over the ocean floor, a sea star has barely a head at all: its nerves spread out in a ring instead of clustering up front, and a jellyfish's spread in a net. At the other extreme, one group of sea animals crams camera-like eyes, a sharp beak and a large brain together at its leading end. Which sea animals are they?",
     "answer": "Octopuses and squid",
     "choices": [
       "Octopuses and squid",
-      "Clams and oysters",
-      "Barnacles and limpets",
-      "Sea cucumbers and sand dollars"
+      "Lobsters and crabs",
+      "Sea snails and slugs",
+      "Clams and oysters"
     ],
-    "context": "Octopuses, squid, and cuttlefish are highly cephalized — camera-like eyes and big brains packed at the front — while clams, barnacles, and sea cucumbers show little to no cephalization at all. Source: https://en.wikipedia.org/wiki/Cephalization",
+    "context": "Octopuses, squid and cuttlefish are highly cephalized, with camera-like eyes, a beak and a big brain packed at the front. Crabs, lobsters and sea snails have heads too, but no beak and far smaller brains, and clams and oysters show almost no head at all. Source: https://en.wikipedia.org/wiki/Cephalization",
     "topic": "radial-vs-bilateral-why-a-jellyfish-has-no-front"
   },
   {
@@ -19319,10 +19293,10 @@
   },
   {
     "tier": 3,
-    "question": "Gordon Gallup Jr. left chimpanzees alone with a mirror for days in 1970. At first they bristled and threatened the 'stranger' in the glass. Then their behavior flipped to something no one had recorded in an animal before. What did the chimps start doing with the mirror?",
-    "answer": "Grooming parts of themselves they couldn't otherwise see",
+    "question": "Gordon Gallup Jr. left chimpanzees alone with a mirror for days in 1970. At first they bristled and threatened the 'stranger' in the glass. Then, after a few days, their behavior changed completely. What did the chimps start doing with the mirror?",
+    "answer": "Grooming spots on themselves they could not see",
     "choices": [
-      "Grooming parts of themselves they couldn't otherwise see",
+      "Grooming spots on themselves they could not see",
       "Hoarding the mirror from other chimps",
       "Smashing it to reach the intruder",
       "Ignoring it completely and turning away"
@@ -19333,9 +19307,9 @@
   {
     "tier": 3,
     "question": "Two bottlenose dolphins named Presley and Tab swam up to a mirror at the New York Aquarium, each with a mark on its body. They became the first animals outside the primates shown to recognize themselves, yet a dolphin has no hands to touch a mark. How did they inspect the spot?",
-    "answer": "They twisted and circled to bring it in front of the mirror",
+    "answer": "They twisted to swing it into view",
     "choices": [
-      "They twisted and circled to bring it in front of the mirror",
+      "They twisted to swing it into view",
       "They rubbed it against the tank floor",
       "They called to a partner to check it",
       "They spat a jet of water at the mark"
@@ -19371,7 +19345,7 @@
   },
   {
     "tier": 4,
-    "question": "A wild gorilla sits before a mirror with a dot painted on its face, and like most wild gorillas it never notices the mark. Koko, the signing gorilla raised by people, passed the same test easily. Researchers say the failure is not about brains but about one habit of gorilla social life. What habit blocks a wild gorilla?",
+    "question": "A zoo gorilla sits before a mirror with a dot painted on its face, and like most gorillas tested it never notices the mark. Koko, the signing gorilla raised by people, passed the test. Some researchers think the failure is not about brains but about one habit of gorilla social life. What habit blocks it?",
     "answer": "Avoiding a long stare, which among gorillas is a threat",
     "choices": [
       "Avoiding a long stare, which among gorillas is a threat",
@@ -19379,12 +19353,12 @@
       "Deferring every action to the dominant silverback",
       "Treating any new object as food to sample"
     ],
-    "context": "Among gorillas, a hard stare is a challenge, so most avoid gazing into a mirror long enough to notice a mark — a social block, not a mental one. Koko and other human-raised gorillas, less bound by that rule, passed. Source: Wikipedia, Mirror test, gorilla section.",
+    "context": "Among gorillas a hard stare is a challenge, so most avoid gazing into a mirror long enough to notice a mark; some researchers read the failure as a social block, not a mental one. Koko and other human-raised gorillas, less bound by that rule, passed. Source: Wikipedia, Mirror test, gorilla section.",
     "topic": "recognizing-yourself-the-mirror-test"
   },
   {
     "tier": 5,
-    "question": "Spotting a colored mark on its own throat in a mirror in 2019, a cleaner wrasse, a small reef fish, tried to scrape it off, a pass no one thought a fish could manage. Instead of settling the question, the result touched off a scientific fight, led by the primatologist Frans de Waal. What did the skeptics argue?",
+    "question": "Spotting a colored mark on its own throat in a mirror in 2019, a cleaner wrasse, a small reef fish, tried to scrape it off, a pass no one thought a fish could manage. Instead of settling the question, the result touched off a scientific fight, with the primatologist Frans de Waal among the doubters. What did the skeptics argue?",
     "answer": "An itch worth scraping falls short of true self-recognition",
     "choices": [
       "An itch worth scraping falls short of true self-recognition",
@@ -19392,7 +19366,7 @@
       "Only warm-blooded animals can form a self-image",
       "The mark's color must match the fish's own for a pass"
     ],
-    "context": "Primatologist Frans de Waal argued the itchy mark and ambiguous behavior fall short of true self-recognition, calling it an in-between level closer to a monkey's than an ape's. The debate over what 'passing' even means remains unsettled. Source: Kohda et al. 2019, PLOS Biology; de Waal 2019, PMC6366752.",
+    "context": "Frans de Waal argued the fish's responses were ambiguous: self-scraping is a fixed action pattern in many fish, and cleaner wrasse are built to go after parasites, so scraping at a mark may fall short of true self-recognition; he judged that the fish seem to work at the level of monkeys, not apes. He urged a gradual view of self-awareness rather than a pass-or-fail test. The debate over what 'passing' even means remains unsettled. Sources: Kohda et al. 2019, PLOS Biology; de Waal 2019, PLOS Biology (PMC6366752).",
     "topic": "recognizing-yourself-the-mirror-test"
   },
   {
@@ -19411,9 +19385,9 @@
   {
     "tier": 5,
     "question": "A crab-eating macaque spent roughly 2,400 hours in front of a mirror. Gordon Gallup, who invented the mirror test, says only chimpanzees and, more weakly, orangutans truly pass it, and this monkey is his hardest evidence. After all those hours, what had it still never done?",
-    "answer": "Turned the glass to inspect a mark it could not otherwise see",
+    "answer": "Used the mirror to inspect a mark it could not otherwise see",
     "choices": [
-      "Turned the glass to inspect a mark it could not otherwise see",
+      "Used the mirror to inspect a mark it could not otherwise see",
       "Stopped threatening the reflection as a rival monkey",
       "Learned to reach food shown only in the reflection",
       "Groomed a companion sitting beside it at the mirror"
@@ -19652,17 +19626,17 @@
       "Gazelle",
       "Springbok"
     ],
-    "context": "The saiga's bulbous proboscis-like nose droops over the mouth and is often compared to a whale's nasal cavity. Only males grow horns: thick, slightly translucent, amber/wax-colored and heavily ridged. Source: San Diego Zoo (animals.sandiegozoo.org/animals/saiga) + Wikipedia 'Saiga antelope'.",
+    "context": "The saiga's bulbous, trunk-like nose droops over the mouth. Only males grow horns: thick, slightly translucent, amber or wax-colored and heavily ridged. Sources: San Diego Zoo (animals.sandiegozoo.org/animals/saiga); Wikipedia 'Saiga antelope'.",
     "topic": "saiga-antelope"
   },
   {
     "tier": 2,
     "question": "When saiga herds thunder across the steppe on migration, thousands of hooves throw up choking clouds of grit and fine soil for hours on end. Their oversized drooping nose is quietly keeping the running herd alive. How does that strange nose save them?",
-    "answer": "Its inner chambers trap the grit in mucus before it reaches the lungs",
+    "answer": "Its inner chambers trap the dust in mucus",
     "choices": [
-      "Its inner chambers trap the grit in mucus before it reaches the lungs",
-      "It cools overheated blood as the herd sprints",
-      "It amplifies alarm calls so the herd stays together",
+      "Its inner chambers trap the dust in mucus",
+      "It seals shut so the saiga can hold its breath",
+      "It blows the dust away with sharp snorts",
       "It sniffs out buried steppe water along the route"
     ],
     "context": "The floppy nose is an air filter: its convoluted internal chambers, lined with mucus glands, trap dust and particles kicked up by the migrating herd before they reach the lungs. Source: Fauna & Flora International (fauna-flora.org/species/saiga) + San Diego Zoo.",
@@ -19683,7 +19657,7 @@
   },
   {
     "tier": 3,
-    "question": "Saiga dropped dead across the Kazakh steppe in May 2015, roughly 200,000 of them in about three weeks, more than two-thirds of the whole species; in some calving herds every animal died. Investigators traced the deaths to a heat-and-humidity spike in the days just before. What actually killed the animals?",
+    "question": "Saiga dropped dead across the Kazakh steppe in May 2015, more than 200,000 of them in about three weeks, over 60 percent of the whole species; in some calving herds every animal died. Investigators traced the deaths to a heat-and-humidity spike in the days just before. What actually killed the animals?",
     "answer": "A bacterium in the saiga's own airways that turned deadly",
     "choices": [
       "A bacterium in the saiga's own airways that turned deadly",
@@ -19691,7 +19665,7 @@
       "A toxin in the spring steppe grasses",
       "Poisoned water at the calving grounds"
     ],
-    "context": "The killer was Pasteurella multocida serotype B, which normally lives harmlessly in the saiga's respiratory tract. An unusual heat-and-humidity spike in the ~10 days before let it multiply and invade the bloodstream, causing hemorrhagic septicemia and systemic organ failure across whole herds. Source: CDC/PMC 'Mass Die-Off of Saiga Antelopes, Kazakhstan, 2015' (PMC6537709) + National Geographic + Science Advances (science.org/doi/10.1126/sciadv.aao2314).",
+    "context": "The killer was Pasteurella multocida serotype B, which normally lives harmlessly in the saiga's respiratory tract. An unusual heat-and-humidity spike in the ten or so days before let it multiply and invade the bloodstream, causing hemorrhagic septicemia and organ failure across whole herds; more than 200,000 animals, over 62% of the global population, died. Sources: Kock et al. 2018, Science Advances (science.org/doi/10.1126/sciadv.aao2314); CDC, 'Mass Die-Off of Saiga Antelopes, Kazakhstan, 2015' (PMC6537709).",
     "topic": "saiga-antelope"
   },
   {
@@ -19879,38 +19853,25 @@
   {
     "tier": 1,
     "question": "A sawfish glides over a shallow sea floor, a long blade of teeth leading its shark-like body. Yet its gill slits open on its underside, the mark of one flattened, bottom-dwelling group. What is a sawfish really?",
-    "answer": "ray",
+    "answer": "A ray",
     "choices": [
-      "ray",
-      "shark",
-      "eel",
-      "catfish"
+      "A ray",
+      "A shark",
+      "An eel",
+      "A catfish"
     ],
-    "context": "Despite the shark-like look, sawfish are rays (superorder Batoidea) — one of five living species of a flattened, bottom-dwelling group. The giveaway is the gill slits on the underside, like a ray's. Source: Wikipedia, 'Sawfish'.",
-    "topic": "sawfish-pristidae"
-  },
-  {
-    "tier": 1,
-    "question": "A largetooth sawfish, the biggest of all sawfish, swims up a warm coastal river. From its snout to its tail it can stretch about 7 meters, roughly 23 feet. What is a fish that long about as long as?",
-    "answer": "school bus",
-    "choices": [
-      "school bus",
-      "surfboard",
-      "canoe",
-      "dining table"
-    ],
-    "context": "The largetooth sawfish grows to about 7 m (23 ft) — roughly a school bus — making it one of the biggest fish in any shallow water it enters. Source: National Geographic, 'Largetooth sawfish'; Wikipedia, 'Sawfish'.",
+    "context": "Despite the shark-like look, the five living species of sawfish are rays (superorder Batoidea), members of the flattened, bottom-dwelling group. The giveaway is the gill slits on the underside, like a ray's. Source: Wikipedia, 'Sawfish'.",
     "topic": "sawfish-pristidae"
   },
   {
     "tier": 2,
     "question": "A hungry sawfish charges into a swirling school of mullet in shallow tropical water, and the mullet scatter in panic. Out ahead of its face juts a long, flat blade of a snout, the rostrum, lined on both edges with sharp tooth-like points. What does the sawfish do with that blade to catch them?",
-    "answer": "swipes it sideways to slash through the school",
+    "answer": "Swipes it sideways to slash through the school",
     "choices": [
-      "swipes it sideways to slash through the school",
-      "clamps it shut like scissors on one fish",
-      "spins it like a drill to bore forward",
-      "spits out a jet of stunning ink"
+      "Swipes it sideways to slash through the school",
+      "Stabs it forward to spear a single fish",
+      "Waves it slowly to herd the fish into a ball",
+      "Flashes it to dazzle the fish into stopping"
     ],
     "context": "The rostrum carries 14 to 37 tooth-like points per side depending on species. The sawfish swipes it sideways to slash through fish schools; mullet have been filmed fleeing a hunting sawfish. Source: Wikipedia, 'Sawfish'.",
     "topic": "sawfish-pristidae"
@@ -19918,12 +19879,12 @@
   {
     "tier": 3,
     "question": "In a muddy river mouth where the water is too dark to see a hidden fish, a sawfish still strikes at prey it never sees. Barbara Wueringer showed in 2012 that its toothed snout-blade is more than a weapon. Its surface is freckled with thousands of tiny pores. What do those pores do?",
-    "answer": "detect the faint electric fields of living animals",
+    "answer": "Detect the faint electric fields of living animals",
     "choices": [
-      "detect the faint electric fields of living animals",
-      "taste chemicals dissolved in the water",
-      "glow to lure curious fish closer",
-      "feel pressure waves from a fish's tail"
+      "Detect the faint electric fields of living animals",
+      "Taste chemicals dissolved in the water",
+      "Glow to lure curious fish closer",
+      "Squirt a numbing slime onto the prey"
     ],
     "context": "Wueringer et al. 2012 (Current Biology) proved the saw both SENSES and STRIKES: pores studding the rostrum pick up the faint electric fields all living animals give off, so the sawfish finds prey it cannot see, then slashes exactly where the fish is. Source: Wueringer et al. 2012; National Geographic.",
     "topic": "sawfish-pristidae"
@@ -19931,12 +19892,12 @@
   {
     "tier": 3,
     "question": "Barbara Wueringer filmed captive sawfish hunting. Sometimes one blow of a saw cuts a small fish clean in half; other times it only wounds the fish. Before turning its underslung mouth around to eat, what does the sawfish do with its saw?",
-    "answer": "pins the wounded fish down against the seabed",
+    "answer": "Pins the wounded fish down against the seabed",
     "choices": [
-      "pins the wounded fish down against the seabed",
-      "tosses the fish up to swallow it whole",
-      "carries the fish to a burrow to store it",
-      "rubs the fish against rocks to scrape it clean"
+      "Pins the wounded fish down against the seabed",
+      "Tosses the fish up to swallow it whole",
+      "Carries the fish to a burrow to store it",
+      "Rubs the fish against rocks to scrape it clean"
     ],
     "context": "After a swipe wounds prey, the sawfish presses the injured fish down against the seabed with its saw, holding it in place so it can turn and eat. Source: National Geographic, 'How the sawfish wields its saw... like a swordsman'.",
     "topic": "sawfish-pristidae"
@@ -19944,12 +19905,12 @@
   {
     "tier": 4,
     "question": "Andrew Fields DNA-tested 190 wild smalltooth sawfish off Florida and found seven pups that carried genes from their mother alone: virgin births, the first ever confirmed in the wild in any shark or ray. About 3 percent of the pups in that estuary had no father. Under what condition do scientists suspect this happens?",
-    "answer": "when mates grow too scarce to find",
+    "answer": "When mates grow too scarce to find",
     "choices": [
-      "when mates grow too scarce to find",
-      "when the water turns colder than usual",
-      "when a predator threatens the estuary",
-      "when food becomes suddenly plentiful"
+      "When mates grow too scarce to find",
+      "When the water turns colder than usual",
+      "When a predator threatens the estuary",
+      "When food becomes suddenly plentiful"
     ],
     "context": "Fields et al. 2015 (Current Biology) confirmed facultative parthenogenesis in wild smalltooth sawfish — the first documented wild virgin birth in sharks or rays. About 3% of pups in one Florida estuary were fatherless, a hint it may happen when mates grow scarce, exactly the situation of a species crashing toward extinction. Source: Fields et al. 2015; Stony Brook University; National Geographic.",
     "topic": "sawfish-pristidae"
@@ -19957,27 +19918,27 @@
   {
     "tier": 4,
     "question": "A dried sawfish saw lies in a museum drawer, its teeth grown over a whole lifetime and never shed or replaced. The balance of strontium and barium laid down in each growing tooth changes with the water the fish swam in. Reading that one saw from base to tip, what can scientists reconstruct?",
-    "answer": "every migration between rivers and sea the fish ever made",
+    "answer": "Every migration between rivers and sea the fish ever made",
     "choices": [
-      "every migration between rivers and sea the fish ever made",
-      "the exact species of every fish that individual ate",
-      "how many pups the female carried in each pregnancy",
-      "the depth of the seabed where it usually rested"
+      "Every migration between rivers and sea the fish ever made",
+      "The exact species of every fish that individual ate",
+      "How many pups the female carried in each pregnancy",
+      "The depth of the seabed where it usually rested"
     ],
     "context": "Because the saw-teeth grow continuously and are never replaced, they lock in a lifelong chemical diary. Barium runs high in freshwater and strontium high in seawater, so the strontium-to-barium ratio deposited in the growing tooth tracks the salinity of the water the fish was in at the time. Reading a single museum saw from its base (birth) to its tip (death) lets researchers replay every trip an individual made between rivers and the sea across its whole life -- all without ever having studied the living animal. Source: Scharer et al., 'Sawfish, Read in Tooth and Saw: rostral teeth as endogenous chemical records of movement and life-history,' Aquatic Conservation (2021) 31, https://onlinelibrary.wiley.com/doi/abs/10.1002/aqc.3635 (preprint biorxiv.org/content/10.1101/753293v2.full).",
     "topic": "sawfish-pristidae"
   },
   {
     "tier": 5,
-    "question": "Onchopristis, a giant saw-snout of the Cretaceous, grew a 4-meter body and a saw lined with barbed teeth, long before today's sawfish. It was no true sawfish: its separate line invented the saw on its own. What fate do its fossils reveal for this ancient saw-bearer?",
-    "answer": "its remains turn up inside Spinosaurus as prey",
+    "question": "Onchopristis, a saw-snout of the Cretaceous, grew to about 3 or 4 meters long with a saw lined with barbed teeth, long before today's sawfish. It was no true sawfish: its separate line invented the saw on its own. What do its fossils in North Africa suggest about it?",
+    "answer": "It was hunted by the dinosaur Spinosaurus",
     "choices": [
-      "its remains turn up inside Spinosaurus as prey",
-      "it beached itself in huge stranding events",
-      "it survived the asteroid to become todays sawfish",
-      "it used the saw to dig burrows in the seabed"
+      "It was hunted by the dinosaur Spinosaurus",
+      "It hunted young Spinosaurus in the shallows",
+      "It beached itself in huge stranding events",
+      "It used its saw to dig burrows in the seabed"
     ],
-    "context": "Onchopristis lived roughly 125-94 million years ago and reached about 3-4+ meters, with barbed rostral denticles up to ~7 cm. Its remains have been found in the jaw and gut region of the huge predatory dinosaur Spinosaurus -- so this sawfish-like giant was dinosaur food. Crucially, Onchopristis was NOT a true sawfish: it was a sclerorhynchid 'sawskate' that grew its saw on an entirely separate lineage. That different fish independently evolved the same toothed saw is a classic case of convergent evolution, which biologists studying these animals nickname 'pristification.' Source: Wikipedia 'Onchopristis' (Barremian-Cenomanian ~125-94 mya; 2.94-4.25 m; 7 cm denticles; Spinosaurus prey; sclerorhynchoid convergence), https://en.wikipedia.org/wiki/Onchopristis (corroborated by ScienceDirect S1464343X11002172).",
+    "context": "Onchopristis lived roughly 125 to 94 million years ago and reached about 3 to 4 meters, with barbed rostral teeth. A rostral tooth of Onchopristis has been found together with a Spinosaurus jawbone in North Africa, and paleontologists read such finds as direct evidence that the giant dinosaur preyed on it. Onchopristis was not a true sawfish but a sclerorhynchoid 'sawskate' that grew its saw on a separate lineage, a case of convergent evolution that the paleontologist Tyler Greenfield named 'pristification.' Source: https://en.wikipedia.org/wiki/Onchopristis",
     "topic": "sawfish-pristidae"
   },
   {
@@ -19994,21 +19955,8 @@
     "topic": "scent-trails-and-the-moth-that-smells-a-mate-miles-away"
   },
   {
-    "tier": 3,
-    "question": "Long after the scout that discovered the food has gone, a forager sets out from the nest; the two never meet or trade a signal. Marco Dorigo later copied their trick for a computer routing method. How does one ant get its find across to ants it never meets?",
-    "answer": "It leaves a mark on the ground itself, and later ants react to that mark",
-    "choices": [
-      "It leaves a mark on the ground itself, and later ants react to that mark",
-      "It waggles a dance into the nest wall that hatching foragers copy for weeks",
-      "It seeds the air near the nest with a lasting cloud the next wave flies into",
-      "It grooms a scent onto the eggs so the young hatch already knowing the way"
-    ],
-    "context": "Ants coordinate by changing the shared ground -- a dab of scent -- rather than by talking; each ant simply reacts to the altered trail the previous ant left. This indirect, mark-the-world kind of communication is called stigmergy, and Dorigo turned the whole trick into a real routing algorithm, Ant Colony Optimization. Source: Scholarpedia, 'Ant colony optimization'; Dorigo & Stutzle, MIT Press ACO book.",
-    "topic": "scent-trails-and-the-moth-that-smells-a-mate-miles-away"
-  },
-  {
     "tier": 2,
-    "question": "A male silk moth sits in the dark and never lays eyes on the female he is about to find. Yet he launches into the wind and flies straight toward her, sometimes from far off. With his eyes no help in the dark, what is he actually following all the way to her?",
+    "question": "A male silk moth sits in the dark and never lays eyes on the female he is about to find, and he cannot even fly. Yet he fans his wings and hurries straight toward her, upwind. With his eyes no help in the dark, what is he actually following all the way to her?",
     "answer": "A scent she releases that drifts to him on the wind",
     "choices": [
       "A scent she releases that drifts to him on the wind",
@@ -20016,28 +19964,28 @@
       "The warmth of her body glowing against the cold night",
       "A patch of the leaves she has chewed and marked"
     ],
-    "context": "The female silk moth releases a scent called bombykol into the breeze, and the male flies upwind toward the smell alone. Bombykol was the first pheromone ever chemically identified, by Adolf Butenandt in 1959. Source: Wikipedia, 'Bombykol'; RSC Education, 'In pursuit of bombykol'.",
+    "context": "The female silk moth releases a scent called bombykol into the breeze, and the flightless male, fanning his wings, heads upwind toward the smell alone. Bombykol was the first pheromone ever chemically identified, by Adolf Butenandt in 1959. Sources: https://en.wikipedia.org/wiki/Bombyx_mori ; Wikipedia, 'Bombykol'.",
     "topic": "scent-trails-and-the-moth-that-smells-a-mate-miles-away"
   },
   {
     "tier": 4,
-    "question": "Huge, feathery antennae spread from the head of a male silk moth, studded with more than 20 million tiny pores tuned to one chemical the female gives off. Scientists tested how faint a trace of it his smell-detecting nerve cells can catch. How little of it will set one of them firing?",
+    "question": "Huge, feathery antennae spread from the head of a male silk moth, bristling with thousands of fine scent-catching hairs tuned to one chemical the female gives off. Scientists tested how faint a trace of it his smell-detecting nerve cells can catch. How little of it will set one of them firing?",
     "answer": "A single molecule of it",
     "choices": [
       "A single molecule of it",
       "About a thousand molecules",
       "Roughly one part in a million of the air",
-      "A puff of it he must swim through directly"
+      "A whole cloud of it right at his head"
     ],
-    "context": "A single molecule of bombykol can fire one of the male's smell-detecting nerve cells, and only a few molecules landing per second get him flapping to hunt down the female. Source: RSC Education, 'In pursuit of bombykol'; PMC3978319 on the silkmoth Bombyx mori.",
+    "context": "A single molecule of bombykol can fire one of the male's smell-detecting nerve cells (Kaissling and Priesner, 1970), and by one estimate about 170 molecules are enough to set off his mating behavior. Each antenna carries some 17,000 scent-detecting hairs. Sources: Kaissling 2019 review (https://www.bi.mpg.de/1506758/kaissling_k_e_2019.pdf); PMC3780863 on the silkmoth Bombyx mori.",
     "topic": "scent-trails-and-the-moth-that-smells-a-mate-miles-away"
   },
   {
     "tier": 3,
     "question": "A worker ant returns to a busy nest packed with thousands of others, and the guards let her walk right in. Moments later a lone ant from a rival colony tries the same door and is swarmed and attacked. How do the guards tell friend from foe?",
-    "answer": "Each colony carries its own blend of waxy scent on the body, like an ID badge",
+    "answer": "Each colony wears its own blend of waxy scent on the body",
     "choices": [
-      "Each colony carries its own blend of waxy scent on the body, like an ID badge",
+      "Each colony wears its own blend of waxy scent on the body",
       "Nestmates share a special call the intruder could not answer",
       "The guards knew every one of their thousands of sisters by sight",
       "Home ants march in step while a stranger's gait gives her away"
@@ -20060,13 +20008,13 @@
   },
   {
     "tier": 1,
-    "question": "A sea angel, a tiny snail with no shell, flaps slowly through the icy Arctic sea on two thin wings. They grew from a part of the body that a garden snail uses for something very different. What does a garden snail use that part to do?",
-    "answer": "Crawl along the ground",
+    "question": "A sea angel, a tiny snail with no shell, flaps slowly through the icy Arctic sea on two thin wings. Over ages of evolution, those wings grew from a body part that every garden snail has too. Which part?",
+    "answer": "The muscular foot it crawls on",
     "choices": [
-      "Crawl along the ground",
-      "Grip a leaf to feed",
-      "Seal its shell shut",
-      "Sense the air ahead"
+      "The muscular foot it crawls on",
+      "The mantle that builds its shell",
+      "The stalks that carry its eyes",
+      "The rasping tongue it eats with"
     ],
     "context": "The sea angel (Clione) is a shell-less sea snail whose two wing-like flaps, called parapodia, evolved from the muscular foot a land snail crawls on. It swims where a snail's foot should be. Source: Monterey Bay Aquarium, 'Sea angel'; Smithsonian Ocean, 'Angels of the Sea'.",
     "topic": "sea-angel-clione"
@@ -20094,7 +20042,7 @@
       "The krill, a swarming shrimp of cold seas",
       "The arrow worm, a see-through drifting hunter"
     ],
-    "context": "Clione limacina feeds almost exclusively on the 'sea butterfly' (genus Limacina, a swimming snail), especially Limacina helicina and Limacina retroversa. The other choices name other real cold-water zooplankton (copepods, krill, arrow worms) the sea angel does not specialize on. Source: Wikipedia, 'Clione limacina'; Sea Slug Forum, 'Clione limacina'.",
+    "context": "Clione limacina feeds almost exclusively on the 'sea butterfly' (genus Limacina, a swimming snail), especially Limacina helicina and Limacina retroversa. Copepods, krill and arrow worms are common cold-water zooplankton too, but the sea angel does not specialize on them. Sources: Wikipedia, 'Clione limacina'; Sea Slug Forum, 'Clione limacina'.",
     "topic": "sea-angel-clione"
   },
   {
@@ -20120,31 +20068,31 @@
       "It glows brightly and startles a hunting fish away",
       "It blends the amphipod into the dark open water"
     ],
-    "context": "The Antarctic sea angel (Clione antarctica) makes a defensive molecule scientists named pteroenone that tastes so bad fish spit it out. The amphipod Hyperiella dilatata exploits this: it captures a sea angel and carries it clamped on its back as a living chemical shield. Fish readily eat amphipods without a rider but reject any that carries one. It was documented as one of the first known cases of an animal 'abducting' another purely for chemical protection. Source: Baker & McClintock, Nature (1993); Wikipedia, 'Clione antarctica'; Springer, 'A survival pack for escaping predation in the open ocean' (2018).",
+    "context": "The Antarctic sea angel (Clione antarctica) makes a defensive molecule scientists named pteroenone that tastes so bad fish spit it out. The amphipod Hyperiella dilatata exploits this: it captures a sea angel and carries it clamped on its back as a living chemical shield. Fish readily eat amphipods without a rider but reject any that carries one. It was documented as one of the first known cases of an animal 'abducting' another purely for chemical protection. Sources: McClintock & Janssen 1990, Nature, 'Pteropod abduction as a chemical defence in a pelagic antarctic amphipod'; Yoshida et al. 1995, Journal of Organic Chemistry (pteroenone); Wikipedia, 'Clione antarctica'; Springer, 'A survival pack for escaping predation in the open ocean' (2018).",
     "topic": "sea-angel-clione"
   },
   {
     "tier": 1,
     "question": "A sea cucumber slumps across the seafloor like a fat, dark worm, but it is no worm: it is a cousin of the sea star. Hidden inside that drooping body is the very same geometry a starfish shows on the outside. What body plan does the sea cucumber keep?",
-    "answer": "a five-fold, wheel-like symmetry",
+    "answer": "A five-fold, wheel-like symmetry",
     "choices": [
-      "a five-fold, wheel-like symmetry",
-      "a left-right mirror symmetry",
-      "a coiled spiral like a snail",
-      "no symmetry, just a shapeless blob"
+      "A five-fold, wheel-like symmetry",
+      "A four-part, cross-shaped symmetry",
+      "A coiled spiral like a snail",
+      "No symmetry, just a shapeless blob"
     ],
-    "context": "Despite its wormy look, the sea cucumber is an echinoderm — a soft-bodied relative of sea stars and urchins. It keeps the family's hidden five-fold symmetry, most visible in the ring of five tentacles around its mouth. Source: https://en.wikipedia.org/wiki/Sea_cucumber",
+    "context": "Despite its wormy look, the sea cucumber is an echinoderm, a soft-bodied relative of sea stars and urchins. Like all echinoderms it keeps a five-fold symmetry, its body divided into five nearly identical parts around a central axis. Source: https://en.wikipedia.org/wiki/Sea_cucumber",
     "topic": "sea-cucumber"
   },
   {
     "tier": 1,
     "question": "With its mouth to the sand, a sea cucumber crawls slowly across the muddy ocean bottom all day. It has no teeth to grab prey and no legs to chase it, yet its steady work earns it the nickname 'the seafloor's vacuum cleaner.' What does it actually eat?",
-    "answer": "mud and sand, digesting the dead scraps inside",
+    "answer": "Mud and sand, for the scraps inside",
     "choices": [
-      "mud and sand, digesting the dead scraps inside",
-      "small fish it stuns with a shock",
-      "seaweed it scrapes off rocks",
-      "plankton it filters from open water"
+      "Mud and sand, for the scraps inside",
+      "Small fish it stuns with a shock",
+      "Seaweed it scrapes off rocks",
+      "Plankton it filters from open water"
     ],
     "context": "A sea cucumber swallows sediment, digests the tiny scraps of dead matter inside, and passes the cleaned sand out the other end — recycling nutrients as it goes. A single one can clean more than 45 kilograms (about 99 pounds) of seafloor sediment in a year. Source: https://en.wikipedia.org/wiki/Sea_cucumber",
     "topic": "sea-cucumber"
@@ -20152,25 +20100,25 @@
   {
     "tier": 2,
     "question": "A hungry crab clamps its claws onto a sea cucumber, and the soft, tube-shaped animal seems doomed. Then, in one sudden act, it startles the crab or tangles it in sticky white threads, and creeps slowly away. What does the sea cucumber do to escape?",
-    "answer": "shoots its own internal organs out its rear",
+    "answer": "Shoots its own internal organs out its rear",
     "choices": [
-      "shoots its own internal organs out its rear",
-      "inflates into a spiny ball",
-      "squirts a cloud of black ink",
-      "snaps off its tail and swims away"
+      "Shoots its own internal organs out its rear",
+      "Inflates into a spiny ball",
+      "Squirts a cloud of black ink",
+      "Snaps off its tail and swims away"
     ],
-    "context": "Scientists call this 'evisceration.' The sea cucumber ejects its own guts out the rear to shock or entangle a predator, then slowly regrows the lost organs over the following weeks. Source: https://www.pbs.org/wgbh/nova/nature/sea-cucumbers.html",
+    "context": "Scientists call this 'evisceration.' The sea cucumber ejects some of its internal organs out the rear (in some species, sticky threads called Cuvierian tubules) to shock or entangle a predator, then regrows them over the following weeks. Sources: https://en.wikipedia.org/wiki/Sea_cucumber ; https://www.pbs.org/wgbh/nova/nature/sea-cucumbers.html",
     "topic": "sea-cucumber"
   },
   {
     "tier": 3,
     "question": "On the seafloor, a sea cucumber pulls oxygen from the water though it has no gills at all. Inside it, a branching organ called the respiratory tree takes up the oxygen, fed by water the animal pumps in and out of one surprising opening. Which opening does it breathe through?",
-    "answer": "its anus",
+    "answer": "Its anus",
     "choices": [
-      "its anus",
-      "its mouth",
-      "a blowhole atop its back",
-      "a slit along its side"
+      "Its anus",
+      "Its mouth",
+      "A blowhole atop its back",
+      "A slit along its side"
     ],
     "context": "A sea cucumber draws seawater in through its anus into a branching 'respiratory tree' just inside, pulls out the oxygen, then pushes the water back out. This respiratory tree is found only in sea cucumbers — no sea star or urchin breathes this way. Source: https://en.wikipedia.org/wiki/Sea_cucumber",
     "topic": "sea-cucumber"
@@ -20178,12 +20126,12 @@
   {
     "tier": 4,
     "question": "To hide from a hungry fish, a sea cucumber pours its whole body like liquid into a narrow crack in the rock. Seconds later it locks that same body wall rigid as bone, and nothing can pull it out. What is its body wall made of?",
-    "answer": "catch collagen the nerves stiffen and relax at will",
+    "answer": "Catch collagen the nerves stiffen and relax at will",
     "choices": [
-      "catch collagen the nerves stiffen and relax at will",
-      "muscle fibers that ratchet tighter and tighter",
-      "a fluid skeleton the animal pressurizes with water",
-      "waxy plates that slide and interlock like scales"
+      "Catch collagen the nerves stiffen and relax at will",
+      "Muscle fibers that ratchet tighter and tighter",
+      "A fluid skeleton the animal pressurizes with water",
+      "Waxy plates that slide and interlock like scales"
     ],
     "context": "The body wall is made of 'catch collagen' (mutable collagenous tissue), switched soft-to-stiff under nerve control rather than by muscle. A protein called 'tensilin' stiffens the tissue while 'softenin' relaxes it. Source: https://en.wikipedia.org/wiki/Catch_connective_tissue",
     "topic": "sea-cucumber"
@@ -20191,19 +20139,19 @@
   {
     "tier": 3,
     "question": "A slender pearlfish leaves its home at night to hunt on a tropical reef. Home is the body of a living sea cucumber, which it enters tail-first through the rear opening. Coming back in murky, dark water, the fish must find that one small opening again. What cue guides it home?",
-    "answer": "the current it pushes out as it breathes",
+    "answer": "The current it pushes out as it breathes",
     "choices": [
-      "the current it pushes out as it breathes",
-      "the scent trail of the cucumber's mucus",
-      "the faint glow of the cucumber's skin",
-      "the beat of the cucumber's heart"
+      "The current it pushes out as it breathes",
+      "The crunch of sand as the cucumber feeds",
+      "The faint glow of the cucumber's skin",
+      "The beat of the cucumber's heart"
     ],
     "context": "The pearlfish follows the sea cucumber's breathing current to the rear opening, waits for the animal to exhale and dilate, then threads itself in tail-first, breath by breath. Not all are polite tenants — some species (genus Encheliophis) eat their host's gonads from the inside. Source: https://www.australiangeographic.com.au/blogs/creatura-blog/2014/08/pearlfish-lives-in-sea-cucumber-anus/",
     "topic": "sea-cucumber"
   },
   {
     "tier": 1,
-    "question": "A small marine mammal floats on its back in a kelp bed off California, pounding open a clam on its chest with a stone. Unlike seals and whales, it has no thick blubber under its skin, yet it dives into near-freezing water day after day. Which animal is it?",
+    "question": "A small marine mammal floats on its back in a kelp bed off California, pounding open a clam on its chest with a stone. Unlike most sea mammals, it has no thick blubber, yet it dives into near-freezing water every day. Which animal is it?",
     "answer": "The sea otter",
     "choices": [
       "The sea otter",
@@ -20211,7 +20159,7 @@
       "The manatee",
       "The sea lion"
     ],
-    "context": "The sea otter (Enhydra lutris) is the only one of these that lacks blubber entirely and habitually floats on its back to feed. Source: Seattle Aquarium, 'The densest fur of any animal on Earth' (seattleaquarium.org).",
+    "context": "The sea otter (Enhydra lutris) has no blubber at all and habitually floats on its back to feed; seals and sea lions rely on a thick layer of blubber. Sources: Seattle Aquarium, 'The densest fur of any animal on Earth' (seattleaquarium.org); https://en.wikipedia.org/wiki/Sea_otter",
     "topic": "sea-otter"
   },
   {
@@ -20229,15 +20177,15 @@
   },
   {
     "tier": 2,
-    "question": "Only its fur keeps a sea otter warm as it dives into the icy North Pacific, and that fur holds a record no other animal comes near. In one square inch of its skin biologists have counted between 500,000 and a million of one thing, more than a whole human head has. What is packed so tightly into the coat?",
-    "answer": "Hairs",
+    "question": "A person's whole head carries about 100,000 hairs. A sea otter, with no blubber at all, depends on its fur alone to stay warm in the icy North Pacific. About how many hairs grow in a single square inch of its skin?",
+    "answer": "About a million",
     "choices": [
-      "Hairs",
-      "Sweat glands",
-      "Scent pores",
-      "Tiny scales"
+      "About a million",
+      "About a thousand",
+      "About ten thousand",
+      "About a hundred thousand"
     ],
-    "context": "The sea otter has the densest fur of any animal on Earth: up to a million hairs per square inch, versus about 100,000 hairs on an entire human head. Source: Seattle Aquarium (seattleaquarium.org).",
+    "context": "The sea otter has the densest fur of any animal: up to about 150,000 hairs per square centimeter, nearly a million per square inch, against about 100,000 hairs on an entire human head. Sources: https://en.wikipedia.org/wiki/Sea_otter ; Seattle Aquarium (seattleaquarium.org).",
     "topic": "sea-otter"
   },
   {
@@ -20261,7 +20209,7 @@
       "About a quarter of its own body weight",
       "About a tenth of its body weight",
       "Roughly its full body weight",
-      "Barely a pound of food"
+      "About a twentieth of its body weight"
     ],
     "context": "A sea otter eats about a quarter of its body weight in food daily — the equivalent of a 160-pound person eating 40 pounds. Its high metabolism generates the heat that keeps it alive. Source: Seattle Aquarium (seattleaquarium.org).",
     "topic": "sea-otter"
@@ -20280,7 +20228,7 @@
     "topic": "sea-otter"
   },
   {
-    "tier": 5,
+    "tier": 4,
     "question": "Where sea otters vanish from a stretch of Pacific coast, the towering kelp forests collapse within a few years into a bare rubble field. The otters had been protecting the kelp all along just by eating one animal in great numbers, which makes them the classic keystone species. Which animal had they been eating?",
     "answer": "Sea urchins",
     "choices": [
@@ -20315,7 +20263,7 @@
       "A fold of thick fur just behind its rounded ear",
       "A cheek pocket lined with stiff bristly whiskers"
     ],
-    "context": "The sea otter (Enhydra lutris) has a loose pouch of skin that extends across the chest under each foreleg; in this pouch -- preferentially the LEFT one -- the animal stores food gathered on a dive and often a favorite rock used to break open shellfish and clams. Its use of rocks to hunt makes it one of the few mammal species to use tools, and it can hammer prey at ferocious rates (about 45 blows in 15 seconds against a tough abalone). Its 32 teeth, particularly the flattened, rounded ('bunodont') crushing molars, are built for smashing hard shells rather than shearing flesh -- unusual for a member of the weasel family. A note on lineage: the Enhydra line became isolated in the North Pacific about 2 million years ago (giving rise to the extinct Enhydra macrodonta and the modern otter), but the older textbook claim that it descends specifically from the fossil 'Enhydritherium' is now considered outdated -- the exact ancestor is still being worked out. Source: Wikipedia 'Sea otter' and 'Enhydra'; Grokipedia 'Sea otter' (https://grokipedia.com/page/Sea_otter).",
+    "context": "The sea otter (Enhydra lutris) has a loose pouch of skin that extends across the chest under each foreleg; in this pouch, preferentially the left one, it stores food gathered on a dive and often a favorite rock used to break open shellfish and clams. Its use of rocks makes it one of the few mammals to use tools, and it can hammer prey at ferocious rates (about 45 blows in 15 seconds against a tough abalone). Its 32 teeth, particularly the flattened, rounded molars, are built for crushing hard shells rather than shearing flesh. Source: https://en.wikipedia.org/wiki/Sea_otter",
     "topic": "sea-otter"
   },
   {
