@@ -16408,14 +16408,14 @@
   {
     "tier": 3,
     "question": "Seen from across Montreal, Mount Royal has the smooth, rounded profile of an old volcano. But geologists studying its hard grey rock, formed about 125 million years ago, found a stranger story. What is Mount Royal really the remains of?",
-    "answer": "a mass of magma that hardened underground and never erupted",
+    "answer": "a mass of magma that cooled and hardened deep underground",
     "choices": [
-      "a mass of magma that hardened underground and never erupted",
+      "a mass of magma that cooled and hardened deep underground",
       "the collapsed rim of a volcano that blew its own top off",
       "a slope of lava that froze solid partway down a mountain",
       "a mound of rubble left behind by a meteorite strike"
     ],
-    "context": "Around 125 million years ago molten magma pushed up into soft sedimentary rock and cooled hard while still trapped underground - a magma intrusion. The softer rock around it slowly eroded away, leaving the tough igneous core standing as the hill. Mount Royal is one of the Monteregian Hills, a whole line of these bared intrusions. Source: https://en.wikipedia.org/wiki/Mount_Royal",
+    "context": "Around 125 million years ago molten magma pushed up into soft sedimentary rock and cooled hard while still trapped underground - a magma intrusion. The softer rock around it slowly eroded away, leaving the tough igneous core standing as the hill. Mount Royal is one of the Monteregian Hills, a whole line of these bared intrusions; geologists still debate whether they once fed volcanoes at the surface. Sources: https://en.wikipedia.org/wiki/Mount_Royal ; https://en.wikipedia.org/wiki/Monteregian_Hills",
     "topic": "montreal"
   },
   {
@@ -16433,7 +16433,7 @@
   },
   {
     "tier": 4,
-    "question": "René-Robert Cavelier de La Salle was certain a river shortcut across the continent would lead him to the silk and spice riches of Asia. He left his estate just above Montreal and returned years later with nothing. Mocking the broken dream, his neighbours gave his land and the wild rapids beside it a name that has stuck for over 350 years. What was it?",
+    "question": "René-Robert Cavelier de La Salle was certain a river shortcut across the continent would lead him to the silk and spice riches of Asia. He left his estate just above Montreal and came back without success. Mocking the broken dream, the story goes, locals gave his land and the wild rapids beside it a name that has stuck for over 350 years. What was it?",
     "answer": "La Chine - 'China'",
     "choices": [
       "La Chine - 'China'",
@@ -16441,7 +16441,7 @@
       "Les Indes - 'the Indies'",
       "L'Orient - 'the East'"
     ],
-    "context": "La Salle's seigneury and the impassable rapids beside it have been called Lachine ('La Chine,' China) ever since, and his men were teased as 'les Chinois,' the Chinese. Those same Lachine Rapids, too violent for boats to run, forced every fur trader to stop and portage here - which is exactly what made Montreal the great hinge of the North American fur trade. Source: https://en.wikipedia.org/wiki/Lachine,_Quebec",
+    "context": "By the usual account, La Salle's seigneury and the impassable rapids beside it have been called Lachine ('La Chine,' China) ever since, in mockery of his failed search for a road to China, and his men were teased as 'les Chinois,' the Chinese. Those same Lachine Rapids, too violent for boats to run, forced every fur trader to stop and portage here - which is exactly what made Montreal the great hinge of the North American fur trade. Source: https://en.wikipedia.org/wiki/Lachine,_Quebec",
     "topic": "montreal"
   },
   {
@@ -16459,7 +16459,7 @@
   },
   {
     "tier": 3,
-    "question": "High on the wall of an alpine valley, hundreds of feet above the floor, runs a long ridge of shattered rock. Frost cracked it off the cliffs and dropped it onto the edge of the glacier that once filled the valley. When the ice melted down, the ridge stayed perched up high like a bathtub ring at the old ice level, and some such ridges run 3 km long and 140 m tall. What is a ridge like this called?",
+    "question": "High on the wall of a valley in the Swiss Alps runs a ridge of shattered rock. Frost cracked it off the cliffs and dropped it on the glacier that once filled the valley. When the ice melted, the ridge stayed perched like a bathtub ring at the old ice level; some such ridges run 3 km long and 140 m tall. What is a ridge like this called?",
     "answer": "a lateral moraine",
     "choices": [
       "a lateral moraine",
@@ -16472,7 +16472,7 @@
   },
   {
     "tier": 3,
-    "question": "Two dark stripes run straight down the middle of a great Swiss glacier like racing lines painted on the ice. These medial moraines start at Konkordiaplatz, where its feeder ice streams merge, and run on to its toe 23 km below. This river of ice is the largest glacier in the Alps. What is it called?",
+    "question": "Two dark stripes run straight down the middle of a great Swiss glacier like racing lines painted on the ice. These medial moraines start at Konkordiaplatz, where its feeder ice streams merge, and run all the way down to its toe. This river of ice is the largest glacier in the Alps. What is it called?",
     "answer": "the Aletsch Glacier",
     "choices": [
       "the Aletsch Glacier",
@@ -16485,7 +16485,7 @@
   },
   {
     "tier": 4,
-    "question": "A giant valley glacier slid south in the last Ice Age, grinding deeper the long trough at the southern foot of the Alps that now holds Lake Garda, Italy's largest lake. When the ice finally melted, it left a curved line of low hills right across the valley's open end, a natural dam that pens the lake in to this day. What kind of dam is it?",
+    "question": "Lake Garda, Italy's largest lake, fills a long trough at the southern foot of the Alps. Across the valley's open southern end runs a curved line of low hills, a natural dam that pens the lake in to this day. What kind of dam is it?",
     "answer": "a ridge of rubble a glacier dumped",
     "choices": [
       "a ridge of rubble a glacier dumped",
@@ -16498,15 +16498,15 @@
   },
   {
     "tier": 5,
-    "question": "Geologists walking up a glacier-carved valley cross a dozen low ridges of till, the glacier's jumbled rubble, one behind the next like the rungs of a ladder. Taken in order, the row lets them rebuild the valley's ice-age history. What does each single ridge in the row record?",
-    "answer": "a pause in the ice sheet's slow retreat",
+    "question": "Geologists walking up a glacier-carved valley in the Swiss Alps cross low ridge after low ridge of till, the glacier's jumbled rubble, one behind the next like the rungs of a ladder. Taken in order, the row lets them rebuild the valley's ice-age history. What does each single ridge in the row record?",
+    "answer": "a pause in the glacier's slow retreat",
     "choices": [
-      "a pause in the ice sheet's slow retreat",
+      "a pause in the glacier's slow retreat",
       "a separate, far older ice age's advance",
       "a single hard winter's deep snowfall",
       "an ancient meltwater river's buried channel"
     ],
-    "context": "These are recessional moraines: each transverse ridge marks a spot where the melting glacier's front briefly stalled before shrinking further, so a single valley can hold ten or more — and some form on a yearly cycle (annual moraines). Read in order, they map the ice sheet's retreat like bookmarks in the melt. Source: https://www.britannica.com/science/recessional-moraine",
+    "context": "These are recessional moraines: each transverse ridge marks a spot where the melting glacier's front briefly stalled before shrinking further, so a single valley can hold ten or more — and some form on a yearly cycle (annual moraines). Read in order, they map the glacier's retreat like bookmarks in the melt. Source: https://www.britannica.com/science/recessional-moraine",
     "topic": "moraines-the-ridges-of-dumped-rubble"
   },
   {
@@ -16654,7 +16654,7 @@
   },
   {
     "tier": 1,
-    "question": "Climbers who reach the top of Mount Everest, the highest point on Earth, stand on grey rock full of fossil trilobites, armoured little sea creatures that died out long before the first dinosaurs. Where did this rock first form, about 450 million years ago?",
+    "question": "Climbers who reach the top of Mount Everest, the highest point on Earth, stand on grey rock full of fossil trilobites, armoured little creatures that died out long before the first dinosaurs. Where did this rock first form, about 450 million years ago?",
     "answer": "On the floor of a shallow sea",
     "choices": [
       "On the floor of a shallow sea",
@@ -16693,12 +16693,12 @@
   },
   {
     "tier": 2,
-    "question": "Sir George Everest served as Surveyor General of India in the 1800s, running the great survey that measured the heights of the Himalayas. After he retired, his successors named the tallest peak of all after him, and the name stuck though he objected. What was the irony in naming that peak for that man?",
+    "question": "Sir George Everest served as Surveyor General of India, running the great survey that mapped the subcontinent and later measured the Himalayas. After he retired, his successors named the tallest peak of all after him, and the name stuck though he objected. What was the irony in naming that peak for that man?",
     "answer": "He had never once seen the mountain",
     "choices": [
       "He had never once seen the mountain",
-      "He had never traveled outside Britain",
-      "He had died decades before it was found",
+      "He had nearly died on its lower slopes",
+      "He had ranked it below its neighbours",
       "He had already been honoured elsewhere"
     ],
     "context": "British surveyors first catalogued the peak as plain 'Peak XV.' In 1852 the Indian mathematician Radhanath Sikdar calculated it was the highest mountain on Earth, and in 1856 it was named Mount Everest for Surveyor General Sir George Everest -- over his own objection. He never laid eyes on the mountain that carries his name. Sources: Wikipedia, 'George Everest'; allthatsinteresting.com.",
@@ -16732,7 +16732,7 @@
   },
   {
     "tier": 3,
-    "question": "Nirmal Purja took a photograph near the summit of Mount Everest on 22 May 2019 that went viral around the world and set off a fierce argument about what climbing Everest has become. Eleven climbers died on the mountain that spring. What did his photograph show?",
+    "question": "Nirmal Purja took a photograph near the summit of Mount Everest on 22 May 2019 that went viral around the world and set off a fierce argument about what climbing Everest has become. At least eleven climbers died on the mountain that spring. What did his photograph show?",
     "answer": "A single-file line of hundreds of climbers",
     "choices": [
       "A single-file line of hundreds of climbers",
@@ -16740,7 +16740,7 @@
       "An avalanche pouring down the mountainside",
       "A storm cloud swallowing the whole summit"
     ],
-    "context": "Nirmal Purja's image showed roughly 300 climbers backed up single-file along the exposed summit ridge, deep in the death zone. It sparked a fierce debate about overcrowding on Everest: eleven people died during the 2019 season, several from exhaustion or from running out of bottled oxygen while stuck waiting in line for their turn at the top. Sources: CNN (2019); snopes.com.",
+    "context": "Nirmal Purja's image showed roughly 300 climbers backed up single-file along the exposed summit ridge, deep in the death zone. It sparked a fierce debate about overcrowding on Everest: at least eleven people died during the 2019 season, several from exhaustion or from running out of bottled oxygen while stuck waiting in line for their turn at the top. Sources: CNN (2019); snopes.com; en.wikipedia.org/wiki/Mount_Everest.",
     "topic": "mount-everest"
   },
   {
@@ -16749,7 +16749,7 @@
     "answer": "Mauna Kea",
     "choices": [
       "Mauna Kea",
-      "Mauna Loa",
+      "Hualalai",
       "Kilauea",
       "Haleakala"
     ],
@@ -16758,7 +16758,7 @@
   },
   {
     "tier": 5,
-    "question": "The jet stream, a river of wind that circles the whole planet, batters the summit of Mount Everest at over 300 km/h for most of the year, far too fierce to climb through. Only when one great seasonal wind system sweeps across South Asia does it shift north off the peak, opening a brief calm window for the climbers. Which wind system opens that window?",
+    "question": "The jet stream, a river of wind that circles the whole planet, batters the summit of Mount Everest for most of the year, often at more than 160 km/h, far too fierce to climb through. Only when one great seasonal wind system sweeps across South Asia does it shift north off the peak, opening a brief calm window for the climbers. Which wind system opens that window?",
     "answer": "The summer monsoon",
     "choices": [
       "The summer monsoon",
@@ -16766,7 +16766,7 @@
       "The tropical trade winds",
       "The autumn dry winds"
     ],
-    "context": "For most of the year the jet stream scours Everest's summit with winds over 200 mph (320 km/h). As the South Asian summer monsoon advances in late May, it shoves the jet stream northward off the peak, granting a short, relatively calm window -- often only a few days -- when most summit attempts are made. Sources: everestweather.com; wunderground.com (weather history).",
+    "context": "For most of the year the jet stream scours Everest's summit with winds that commonly reach 160 km/h (100 mph) and can gust past 280 km/h. As the South Asian summer monsoon advances in late May, it shoves the jet stream northward off the peak, granting a short, relatively calm window -- often only a few days -- when most summit attempts are made; a second, shorter window can open in autumn as the monsoon withdraws. Sources: en.wikipedia.org/wiki/Mount_Everest; everestweather.com.",
     "topic": "mount-everest"
   },
   {
@@ -16888,15 +16888,15 @@
   },
   {
     "tier": 1,
-    "question": "Every climbing season, teams reach the tops of peaks in the Himalayas far taller than Mount Kailash, a 6,638 m pyramid in far western Tibet. Yet Kailash holds one mark that none of the taller peaks can claim. What is it?",
-    "answer": "No human has ever stood on its summit.",
+    "question": "Every climbing season, teams reach the tops of Himalayan peaks far taller than Mount Kailash, a 6,638 m pyramid in far western Tibet. Yet Kailash holds one mark that those summited giants cannot claim. What is it?",
+    "answer": "No one is known to have stood on its summit.",
     "choices": [
-      "No human has ever stood on its summit.",
+      "No one is known to have stood on its summit.",
       "Its slopes have never held permanent snow.",
       "It sits at the exact center of the Himalayas.",
       "Pilgrims are forbidden even to look at it."
     ],
-    "context": "Climbing Mount Kailash is forbidden — China bars any ascent out of respect for the faithful who hold the peak sacred — so while lesser mountains all around it are summited routinely, Kailash has never been climbed. https://en.wikipedia.org/wiki/Mount_Kailash",
+    "context": "Climbing Mount Kailash is forbidden — China bars any ascent out of respect for the faithful who hold the peak sacred — so while far taller Himalayan peaks are summited every season, no climber is known to have reached the top of Kailash. https://en.wikipedia.org/wiki/Mount_Kailash",
     "topic": "mount-kailash"
   },
   {
@@ -16914,15 +16914,15 @@
   },
   {
     "tier": 2,
-    "question": "On the pilgrim path around Mount Kailash, some walkers circle clockwise and others anticlockwise, because the peak is holy to more than one faith at once. Hindus honour it as the home of a god, and other faiths, each with its own story of the mountain, hold the same summit sacred. How many separate religions honour Kailash?",
-    "answer": "Four",
+    "question": "Pilgrims of four faiths walk the hard path around Mount Kailash, in far western Tibet: Hindus, Buddhists, Jains and followers of Bön. Most of them circle the holy peak clockwise, but one faith walks it the other way round. Whose pilgrims circle Kailash anticlockwise?",
+    "answer": "Bön pilgrims",
     "choices": [
-      "Four",
-      "Three",
-      "Two",
-      "Six"
+      "Bön pilgrims",
+      "Jain pilgrims",
+      "Buddhist pilgrims",
+      "Hindu pilgrims"
     ],
-    "context": "Hinduism, Buddhism, Jainism, and Tibet's ancient pre-Buddhist Bon religion all hold Mount Kailash sacred — four faiths, one mountain; the Bon even circle it counter-clockwise while the others walk clockwise. https://en.wikipedia.org/wiki/Mount_Kailash",
+    "context": "Hinduism, Buddhism, Jainism, and Tibet's ancient pre-Buddhist Bön religion all hold Mount Kailash sacred: four faiths, one mountain. Hindus, Buddhists and Jains walk the circuit clockwise; followers of Bön circle it counterclockwise. https://en.wikipedia.org/wiki/Mount_Kailash",
     "topic": "mount-kailash"
   },
   {
@@ -16948,7 +16948,7 @@
       "Mount Ararat",
       "Mount Zion"
     ],
-    "context": "In Buddhist cosmology Kailash is identified with Mount Meru, the cosmic axis at the center of the universe; the mountain's real, walkable form gives that vast idea a physical home. This is a religious belief. https://en.wikipedia.org/wiki/Mount_Kailash  (Legend.)",
+    "context": "In Buddhist cosmology Kailash is identified with Mount Meru, the cosmic axis at the center of the universe; the mountain's real, walkable form gives that vast idea a physical home. This is a religious belief. https://en.wikipedia.org/wiki/Mount_Kailash",
     "topic": "mount-kailash"
   },
   {
@@ -16974,12 +16974,12 @@
       "40",
       "1,000"
     ],
-    "context": "108 is a sacred number across the dharmic faiths (a mala prayer-string has 108 beads); completing 108 koras of Kailash is said to bring nirvana. This is a religious belief. https://himalayanexpeditions.com/wp/trips/mt-kailash-erase-the-sins-of-a-lifetime/  (Legend.)",
+    "context": "108 is a sacred number across the dharmic faiths (a mala prayer-string has 108 beads); completing 108 koras of Kailash is said to bring nirvana. This is a religious belief. https://himalayanexpeditions.com/wp/trips/mt-kailash-erase-the-sins-of-a-lifetime/",
     "topic": "mount-kailash"
   },
   {
     "tier": 4,
-    "question": "Within about 60 km of Mount Kailash, giants among Asia's rivers begin their long journeys: the Indus, the Sutlej, the Brahmaputra and one more, making the land around the peak one of Earth's greatest watersheds. That last river is a major feeder of which other sacred river?",
+    "question": "Within about 60 km of Mount Kailash, giants among Asia's rivers begin their long journeys: the Indus, the Sutlej, the Brahmaputra and one more, making the land around the peak one of Earth's greatest watersheds. That last river is a major feeder of which great river?",
     "answer": "The Ganges",
     "choices": [
       "The Ganges",
@@ -17000,7 +17000,7 @@
       "Brahma",
       "Indra"
     ],
-    "context": "Hindus revere Kailash as the abode of Shiva, who dwells there with his consort Parvati — a belief held sacred by the faithful. https://en.wikipedia.org/wiki/Mount_Kailash  (Legend.)",
+    "context": "Hindus revere Kailash as the abode of Shiva, who dwells there with his consort Parvati — a belief held sacred by the faithful. https://en.wikipedia.org/wiki/Mount_Kailash",
     "topic": "mount-kailash"
   },
   {
@@ -17057,15 +17057,15 @@
   },
   {
     "tier": 2,
-    "question": "Hikers on the broad rock plateau atop Mount Roraima, in the Guiana Highlands of northern South America, can cross international borders without ever leaving the summit. How many countries share Roraima's cliff-walled top?",
-    "answer": "three",
+    "question": "Venezuela holds most of the broad rock plateau atop Mount Roraima, in the Guiana Highlands of northern South America. Yet hikers up there can walk into two other countries without ever leaving the summit. Which two countries share the rest of its cliff-walled top?",
+    "answer": "Guyana and Brazil",
     "choices": [
-      "two",
-      "three",
-      "four",
-      "five"
+      "Guyana and Brazil",
+      "Colombia and Brazil",
+      "Guyana and Suriname",
+      "Colombia and Suriname"
     ],
-    "context": "Venezuela holds about 85% of the summit, Guyana about 10%, and Brazil about 5% — three nations meeting on one cloud-wrapped tabletop 2,810 m up, which is also the highest point in all of Guyana. Source: Grokipedia 'Mount Roraima'; en.wikipedia.org/wiki/Mount_Roraima.",
+    "context": "Venezuela holds about 85% of the summit, Guyana about 10% and Brazil about 5%: three nations meeting on one cloud-wrapped tabletop, where a border marker in the north of the plateau, about 2,734 m up, stands at the point where all three meet. The plateau's highest point, 2,810 m, lies in Venezuela; a lower top of about 2,772 m is the highest point in all of Guyana. Source: Grokipedia 'Mount Roraima'; en.wikipedia.org/wiki/Mount_Roraima.",
     "topic": "mount-roraima"
   },
   {
@@ -17083,7 +17083,7 @@
   },
   {
     "tier": 3,
-    "question": "Geologists have dated the pale sandstone of Mount Roraima's cliffs to nearly two billion years old, laid down in the geological era known as the Precambrian. It stands among the most ancient exposed rocks found anywhere on Earth. What was true of the world back when this rock was first forming?",
+    "question": "Geologists have dated the pale sandstone of Mount Roraima's cliffs to nearly two billion years old, laid down in the vast stretch of time known as the Precambrian. It rests on the Guiana Shield, one of the oldest slabs of continent on Earth. What was true of the world back when this rock was first forming?",
     "answer": "no animals or plants existed anywhere yet",
     "choices": [
       "no animals or plants existed anywhere yet",
@@ -17117,7 +17117,7 @@
       "the Cradle of Storms",
       "the Fountain of the Gods"
     ],
-    "context": "Streams born on Roraima's summit — the Arabopo, the Waruma, the Cotingo — flow into the Orinoco, Essequibo, and Amazon systems, so Roraima is fondly called the 'mother of waters.' (Note: the giant Angel Falls is NOT here — it drops from a different tepui, Auyan-tepui, to the west.) Source: Grokipedia 'Mount Roraima' (Hydrology).",
+    "context": "Streams born on Roraima's summit — the Arabopo, the Waruma, the Cotingo — flow into the Orinoco, Essequibo, and Amazon systems, so Roraima is fondly called the 'mother of waters.' The giant Angel Falls is not here: it drops from a different tepui, Auyan-tepui, to the west. Source: Grokipedia 'Mount Roraima' (Hydrology).",
     "topic": "mount-roraima"
   },
   {
@@ -17153,8 +17153,8 @@
     "choices": [
       "Mount St. Helens",
       "Mount Rainier",
-      "Mount Hood",
-      "Mount Shasta"
+      "Mount Baker",
+      "Mount Adams"
     ],
     "context": "Mount St. Helens stands in Washington's Cascade Range, a chain of volcanoes running down the Pacific Northwest. Its eruption on 18 May 1980 remains the deadliest and most destructive in United States history. Source: https://grokipedia.com/page/1980_eruption_of_Mount_St._Helens",
     "topic": "mount-st-helens-1980-the-sideways-blast"
@@ -17205,7 +17205,7 @@
     "choices": [
       "Sideways, tearing out across the land",
       "Straight up into the sky",
-      "Straight down into the ground",
+      "Inward, collapsing on itself",
       "Outward evenly on every side"
     ],
     "context": "With the north face stripped away, the pressurized magma was uncorked and blasted sideways — a lateral blast that tore outward at over 300 mph (briefly supersonic) at up to 660 degrees F (350 C), flattening about 230 square miles (600 sq km) of forest as far as 17 miles away. Source: https://grokipedia.com/page/1980_eruption_of_Mount_St._Helens",
@@ -17234,7 +17234,7 @@
       "his pet raccoons",
       "his mountain goats"
     ],
-    "context": "Harry R. Truman had run the Mount St. Helens Lodge at Spirit Lake for 52 years. His defiance made him a national folk hero, with over 100 songs written about him; he was buried with his 16 cats under about 150 feet of avalanche debris. Source: https://en.wikipedia.org/wiki/Harry_R._Truman",
+    "context": "Harry R. Truman had run the Mount St. Helens Lodge at Spirit Lake for 52 years. His defiance made him a national folk hero and the subject of many songs and poems; he was buried with his 16 cats under about 150 feet of avalanche debris. Source: https://en.wikipedia.org/wiki/Harry_R._Truman",
     "topic": "mount-st-helens-1980-the-sideways-blast"
   },
   {
@@ -17323,9 +17323,9 @@
       "by chance",
       "by the stars",
       "by the wind",
-      "by adventure"
+      "by the fire"
     ],
-    "context": "'A ventura' means 'by chance' — the glass, also called goldstone, was reportedly discovered partly by accident, first documented in 1626. The English word 'adventure' shares the same root, which makes 'by adventure' a tempting trap. Source: en.wikipedia.org/wiki/Murano_glass.",
+    "context": "'A ventura' means 'by chance' — the glass, also called goldstone, was reportedly discovered partly by accident, first documented in 1626. The English word 'adventure' shares the same root. Source: en.wikipedia.org/wiki/Murano_glass.",
     "topic": "murano-venices-island-of-glass"
   },
   {
@@ -17369,7 +17369,7 @@
   },
   {
     "tier": 4,
-    "question": "Angelo Barovier of Murano invented 'lattimo,' an opaque milk-white glass that seemed to glow. He made it for one clever reason: to imitate a rare and costly luxury that rich Europeans were importing from the East. What white treasure was lattimo made to copy?",
+    "question": "Angelo Barovier of Murano developed 'lattimo,' an opaque milk-white glass that seemed to glow. He made it for one clever reason: to imitate a rare and costly luxury that rich Europeans were importing from the East. What white treasure was lattimo made to copy?",
     "answer": "Chinese porcelain",
     "choices": [
       "Chinese porcelain",
@@ -17408,7 +17408,7 @@
   },
   {
     "tier": 1,
-    "question": "The road into the rocky citadel of Mycenae, in Greece, passes through a gate cut in its massive fortress wall. Above the doorway, two great stone creatures rear up on their hind legs, facing each other across a central column. What beasts stand guard over the gate?",
+    "question": "The road into the citadel of Mycenae, in Greece, passes through a gate cut in its fortress wall. Above the doorway, two great stone creatures rear up on their hind legs, facing each other across a central column. What beasts stand guard over the gate?",
     "answer": "Lionesses",
     "choices": [
       "Lionesses",
@@ -17416,12 +17416,12 @@
       "Sphinxes",
       "Griffins"
     ],
-    "context": "This is the Lion Gate, built around 1250 BC and the oldest monumental sculpture in Europe still standing where it was first set. The two lionesses' heads were carved from separate blocks (probably steatite) and were lost long ago, so today the beasts face each other headless. Source: https://en.wikipedia.org/wiki/Lion_Gate",
+    "context": "This is the Lion Gate, built around 1250 BC, the sole surviving monumental sculpture of the Mycenaeans and the largest surviving sculpture of the Bronze Age Aegean. The two lionesses' heads were carved from separate blocks (probably steatite) and were lost long ago, so today the beasts face each other headless. Source: https://en.wikipedia.org/wiki/Lion_Gate",
     "topic": "mycenae-the-lion-gate-and-the-cyclopean-walls"
   },
   {
     "tier": 2,
-    "question": "Greeks of later ages looked at the walls of Mycenae, built from limestone blocks so huge that some weigh close to 100 tonnes, and refused to believe ordinary men had ever moved them. They said a race of giants must have piled the stones. What is this style of huge-block work still called?",
+    "question": "Greeks of later ages looked at the walls of Mycenae, built from limestone blocks so huge that some may weigh close to 100 tonnes, and refused to believe ordinary men had ever moved them. They said a race of giants must have piled the stones. What is this style of huge-block work still called?",
     "answer": "Cyclopean",
     "choices": [
       "Cyclopean",
@@ -17447,28 +17447,28 @@
   },
   {
     "tier": 3,
-    "question": "Heinrich Schliemann lifted a golden death mask from a grave shaft deep inside Mycenae in 1876 and announced that he had gazed upon the face of Agamemnon, the legendary king of the Trojan War. The mask is real and gorgeous, but archaeologists are certain it never covered Agamemnon's face. What is wrong with the famous name?",
+    "question": "Heinrich Schliemann lifted a golden death mask from a grave shaft deep inside Mycenae in 1876, and by a famous story he wired the king that he had gazed upon the face of Agamemnon, the legendary king of the Trojan War. The mask is gorgeous, but archaeologists agree it never covered Agamemnon's face. What is wrong with the famous name?",
     "answer": "The mask is far older than Agamemnon could ever have been",
     "choices": [
       "The mask is far older than Agamemnon could ever have been",
+      "The mask was made long after Agamemnon could have lived",
       "The mask clearly shows a woman's face, not a king's",
-      "Schliemann's own workmen hammered it out overnight",
-      "A Victorian restorer added the beard much later"
+      "The mask copies the face of an Egyptian pharaoh"
     ],
-    "context": "The Mask of Agamemnon is real Bronze-Age gold, but it dates to about 1550-1500 BC -- roughly three centuries before the traditional time of the Trojan War, so it cannot be Agamemnon's. It is a genuine treasure attached to the wrong name. (Schliemann's dramatic 'gazed upon the face of Agamemnon' line may itself be a later invention.) Source: https://en.wikipedia.org/wiki/Mask_of_Agamemnon",
+    "context": "The Mask of Agamemnon is Bronze-Age gold dated to about 1550-1500 BC -- roughly three centuries before the traditional time of the Trojan War, so it cannot be Agamemnon's. Most scholars accept it as a genuine treasure attached to the wrong name, though a few have questioned it. Schliemann's 'gazed upon the face of Agamemnon' telegram is reported rather than documented. Source: https://en.wikipedia.org/wiki/Mask_of_Agamemnon",
     "topic": "mycenae-the-lion-gate-and-the-cyclopean-walls"
   },
   {
     "tier": 3,
-    "question": "Just outside the gates of Mycenae stands the Treasury of Atreus, a beehive-shaped tomb roofed by a smooth stone dome about 14.5 metres across -- each ring of blocks laid a little further inward than the ring below, with no mortar at all. For more than a thousand years, no builder anywhere on Earth roofed a wider space. Which later dome finally beat its record?",
+    "question": "Just outside the gates of Mycenae stands the Treasury of Atreus, a beehive-shaped tomb roofed by a stone dome about 14.5 metres across, each ring of blocks set slightly farther in than the one below. No wider dome rose anywhere for over a thousand years, until the Romans of the empire began pouring domes of concrete. Which of their domes, still standing, spans three times as wide?",
     "answer": "The Pantheon in Rome",
     "choices": [
       "The Pantheon in Rome",
-      "Hagia Sophia in Constantinople",
+      "The Dome of the Rock in Jerusalem",
       "The Duomo of Florence",
       "St Peter's in Rome"
     ],
-    "context": "The corbelled dome of the Treasury of Atreus (a 'tholos' or beehive tomb, built around 1300-1250 BC) held the record for the widest dome in the world until the Romans raised the Pantheon around 126 AD, whose span of about 43 metres finally surpassed it. Source: https://en.wikipedia.org/wiki/Treasury_of_Atreus",
+    "context": "The corbelled dome of the Treasury of Atreus (a 'tholos' or beehive tomb, built around 1300-1250 BC) was the tallest and widest stone dome in the world for over a thousand years, until the Roman period: first the so-called Temple of Mercury, part of a bath complex at Baiae, and then the Pantheon of around 126 AD, whose span of about 43 metres is three times as wide. Source: https://en.wikipedia.org/wiki/Treasury_of_Atreus",
     "topic": "mycenae-the-lion-gate-and-the-cyclopean-walls"
   },
   {
@@ -17824,15 +17824,15 @@
   },
   {
     "tier": 1,
-    "question": "The old Nazca people scraped huge pictures into a desert in Peru, with some lines running for miles. Up close, each one just looks like a scratch in the dirt. The big shapes come into view from only one place. Where must a viewer look from?",
+    "question": "The old Nazca people scraped huge pictures into a desert in Peru, with some lines running for miles. Up close, each one just looks like a scratch in the dirt. The big shapes show themselves best from one vantage. Where must a viewer look from?",
     "answer": "from high in the air",
     "choices": [
       "from high in the air",
       "from a boat far offshore",
-      "from the nearby hilltops",
+      "from the ground at sunrise",
       "only by moonlight"
     ],
-    "context": "Most Nazca figures reveal themselves best from about 500 m up, which is why the giant shapes went almost unnoticed for so long. A huge design drawn on the ground like this — by the Nazca here, or in the chalk-cut horses of England — is called a geoglyph. Source: en.wikipedia.org/wiki/Nazca_Lines (best seen ~500 m up; 'geoglyph'); worldhistory.org/article/665/nazca-lines.",
+    "context": "Most Nazca figures reveal themselves best from about 500 m up, though some can also be made out from the surrounding foothills, which is why the giant shapes went almost unnoticed for so long. A huge design drawn on the ground like this — by the Nazca here, or in the chalk-cut horses of England — is called a geoglyph. Source: en.wikipedia.org/wiki/Nazca_Lines (best seen ~500 m up; also visible from foothills; 'geoglyph'); worldhistory.org/article/665/nazca-lines.",
     "topic": "nazca-lines"
   },
   {
@@ -17850,7 +17850,7 @@
   },
   {
     "tier": 2,
-    "question": "The long straight lines and huge animal shapes of the Nazca plain in southern Peru are only 10 to 15 cm deep, scratched into loose desert dirt. Wind should have wiped them out in a few lifetimes, yet they have lasted about 2,000 years. What feature of the land explains why the shallow marks are still there?",
+    "question": "The long straight lines and huge animal shapes of the Nazca plain in southern Peru are only 10 to 15 cm deep, scratched into loose desert dirt. Weather should have wiped them out in a few lifetimes, yet they have lasted about 2,000 years. What feature of the land has kept them?",
     "answer": "it lies in one of the driest deserts on Earth",
     "choices": [
       "it lies in one of the driest deserts on Earth",
@@ -17858,7 +17858,7 @@
       "it stays buried under drifting sand",
       "it is floored with the hardest rock on Earth"
     ],
-    "context": "The Nazca pampa, on Peru's bone-dry southern coast, is one of the driest places on Earth. With almost no rain to wash them away, the shallow lines have barely eroded in some 2,000 years — the very aridity of this coastal desert is what made the drawings, and their survival, possible. Source: en.wikipedia.org/wiki/Nazca_Lines (one of the driest places on Earth; near-total lack of rain preserves the lines).",
+    "context": "The Nazca pampa, on Peru's bone-dry southern coast, is one of the driest places on Earth, and its climate is dry, windless and stable. With almost no rain to wash them away and little wind at ground level, the shallow lines have barely eroded in some 2,000 years — the very aridity of this coastal desert is what made the drawings, and their survival, possible. Source: en.wikipedia.org/wiki/Nazca_Lines (one of the driest places on Earth; dry, windless, stable climate preserves the lines).",
     "topic": "nazca-lines"
   },
   {
@@ -17882,35 +17882,35 @@
       "a cat",
       "a fox",
       "a monkey",
-      "a jaguar"
+      "a lizard"
     ],
     "context": "The 'Nazca cat,' about 37 m across, dates to roughly 200-100 BCE (the Late Paracas period) — older than the hummingbird and the other classic figures, and one of the oldest geoglyphs on the pampa. Fading and nearly lost to erosion, it was spotted only in 2020 during work on a hillside viewpoint. Source: Peru Ministry of Culture, Oct 2020, via smithsonianmag.com/smart-news/2000-year-old-cat-etching-found-peru; cnn.com/style/article/nazca-lines-peru-cat.",
     "topic": "nazca-lines"
   },
   {
     "tier": 4,
-    "question": "A figure about 35 metres tall, one hand raised, stands on a hillside above the Nazca desert, so strange-looking that an early pilot nicknamed it 'the Astronaut'. In the 1960s, writers who claimed the desert lines were runways for alien spacecraft pointed to it as a visiting spaceman. Archaeologists, giving the Nazca full credit for their own art, read it as a figure from Nazca belief. What do they think it depicts?",
-    "answer": "an owl-headed shaman",
+    "question": "A hillside figure some 30 metres tall, one hand raised, looks out over the Nazca desert in Peru. Fans of Erich von Däniken's claim that the lines were runways for alien spacecraft hailed it as 'the Astronaut'. The investigator Joe Nickell answered with a test of his own. What did he do?",
+    "answer": "laid out a giant figure with stakes and cord",
     "choices": [
-      "an owl-headed shaman",
-      "a rain-bringing sky-god",
-      "a spear-raising warrior",
-      "a net-hauling fisherman"
+      "laid out a giant figure with stakes and cord",
+      "searched the plain for rocket scorch marks",
+      "dug beneath the figure in search of metal",
+      "camped beside it to watch the night sky"
     ],
-    "context": "The 'ancient astronaut' idea came from Swiss writer Erich von Daniken, whose 1968 bestseller Chariots of the Gods? branded the desert's long trapezoids alien runways and this hillside figure a spaceman. Investigator Joe Nickell later laid out a giant Nazca figure using only wooden stakes and cord, showing a small team needed no help from the stars. Archaeologists read the round-headed figure as an owl-man or shaman. Source: allthatsinteresting.com/nazca-lines; en.wikipedia.org/wiki/Nazca_Lines (von Daniken 1968; Nickell's period-tool recreation).",
+    "context": "Erich von Daniken's 1968 bestseller Chariots of the Gods? branded the desert's long trapezoids alien landing strips, and ancient-astronaut fans read this hillside figure as a spaceman. Joe Nickell answered by laying out a giant Nazca figure with wooden stakes and cord, tools the Nazca had, and the work showed that a small team could lay out even the largest figures within days, with no help from the air. Many archaeologists read the round-headed figure instead as an owl-man from Nazca belief. Source: en.wikipedia.org/wiki/Nazca_Lines (von Daniken 1968; Nickell's period-tool recreation).",
     "topic": "nazca-lines"
   },
   {
     "tier": 4,
-    "question": "Researchers combing the Nazca desert on foot turned up new figures only slowly, one at a time, for decades. Then in 2024 the known count almost doubled in a single six-month stretch, with more than 300 new figures at once. What made this sudden burst of discovery possible?",
-    "answer": "an AI trained to spot faint figures in old aerial photos",
+    "question": "Researchers combing the Nazca desert on foot turned up new figures only slowly, one at a time, for decades. Then a single six-month survey, reported in 2024, almost doubled the known count with more than 300 new figures at once. What made this sudden burst of discovery possible?",
+    "answer": "an AI trained to spot faint figures in aerial photos",
     "choices": [
-      "an AI trained to spot faint figures in old aerial photos",
+      "an AI trained to spot faint figures in aerial photos",
       "a rare rainstorm that darkened the pale lines",
       "a swarm of tourists' camera drones, by chance",
       "a rediscovered box of century-old survey maps"
     ],
-    "context": "In 2024 a survey by Japan's Yamagata University with IBM used AI to comb aerial imagery and turned up 303 new figurative geoglyphs in just six months — nearly doubling the known total and speeding discovery roughly 16-fold. Many are small 'relief-type' figures of people and llamas set beside ancient walking trails. Source: yamagata-u.ac.jp/en/information/info/20240924; france24.com/en/live-news/20240924-ai-research-uncovers-300-ancient-etchings.",
+    "context": "A survey by Japan's Yamagata University with IBM, reported in 2024, used AI to comb aerial imagery, and six months of fieldwork (September 2022 to February 2023) confirmed 303 new figurative geoglyphs, nearly doubling the known total and speeding discovery roughly 16-fold. Many are small 'relief-type' figures of people and llamas set beside ancient walking trails. Source: yamagata-u.ac.jp/en/information/info/20240924; en.wikipedia.org/wiki/Nazca_lines; france24.com/en/live-news/20240924-ai-research-uncovers-300-ancient-etchings.",
     "topic": "nazca-lines"
   },
   {
@@ -17928,7 +17928,7 @@
   },
   {
     "tier": 1,
-    "question": "Earthen levees taller than a house hold the Mississippi back at New Orleans. A walker who climbs one out in Lakeview, a neighbourhood built on drained swamp below sea level, can look out at the passing river and then turn to look back at the town. What does the walker see?",
+    "question": "Earthen levees taller than a house hold the Mississippi back at New Orleans. A walker who climbs one in the spring flood season can look out over the passing water, then turn to look back at the town. What does the walker see?",
     "answer": "The river runs higher than the streets.",
     "choices": [
       "The river runs higher than the streets.",
@@ -17936,7 +17936,7 @@
       "The river drops over a waterfall downtown.",
       "The river splits the town into islands."
     ],
-    "context": "New Orleans really does sit lower than the river beside it. About 65% of the city lies at or below mean sea level, while the Mississippi at its yearly high-water mark rises to roughly 14 feet above sea level, so behind the levees the river runs higher than the streets, and only those earthen walls and the pumps hold it out. Source: Wikipedia, 'New Orleans.'",
+    "context": "New Orleans really does sit lower than the river beside it. About half the city lies at or below mean sea level, while the Mississippi at its average yearly high-water mark rises to some 14 feet above sea level, so behind the levees the river runs higher than the streets, and only those earthen walls and the pumps hold it out. Source: Wikipedia, 'New Orleans.'",
     "topic": "new-orleans"
   },
   {
@@ -17949,7 +17949,7 @@
       "Far out on a sandy island in midstream.",
       "Up on a low hill set a mile inland."
     ],
-    "context": "In a flat delta the highest ground is the strip of land right beside the river. Every flood, the Mississippi dropped its heaviest silt first at its own edge, building a 'natural levee' ridge 10-20 feet above sea level. Bienville's settlers laid the French Quarter (the Vieux Carre) on that ridge in 1718, which is why it stayed mostly dry in Hurricane Katrina while lower, drained-swamp neighborhoods flooded. Sources: Wikipedia, 'New Orleans'; SERC/Carleton coastlines module.",
+    "context": "In a flat delta the highest ground is the strip of land right beside the river. Every flood, the Mississippi dropped its heaviest silt first at its own edge, building a 'natural levee' ridge, the highest ground around. Bienville founded the town on that ridge in 1718, and the French Quarter (the Vieux Carre) still stands there, which is why it stayed mostly dry in Hurricane Katrina while lower, drained-swamp neighborhoods flooded. Sources: Wikipedia, 'New Orleans'; SERC/Carleton coastlines module.",
     "topic": "new-orleans"
   },
   {
@@ -17988,7 +17988,7 @@
       "Lake water seeps in and hollows the earth.",
       "The weight of new buildings presses the mud down."
     ],
-    "context": "Wood's 1913 screw pump was 12 feet across, the largest and most powerful in the world; his 1927 version could move a million gallons every five minutes, and some 1913 pumps still ran through Hurricane Katrina. But draining the swamp let the spongy organic soil dry out, decay, and compact, so the ground itself dropped: more than half the city is now below sea level. Geographer Richard Campanella said of the pump builders, 'Their intentions were good... Instead, they created a new and bigger one.' Wood's drainage designs were copied worldwide, even helping drain the Netherlands' Zuiderzee. Source: Historic New Orleans Collection, 'The Pumps That Built (and Sank) the City.'",
+    "context": "Wood's 1913 screw pump was 12 feet across, the largest and most powerful in the world; his 1927 version could move a million gallons every five minutes, and some 1913 pumps still ran through Hurricane Katrina. But draining the swamp let the spongy organic soil dry out, decay, and compact, so the ground itself dropped: about half the city now lies at or below sea level. Geographer Richard Campanella said of the pump builders, 'Their intentions were good... Instead, they created a new and bigger one.' Wood's drainage designs were copied worldwide, even helping drain the Netherlands' Zuiderzee. Source: Historic New Orleans Collection, 'The Pumps That Built (and Sank) the City.'",
     "topic": "new-orleans"
   },
   {
@@ -18192,16 +18192,16 @@
     "answer": "Mount Cook",
     "choices": [
       "Mount Cook",
-      "Mount Ruapehu",
-      "Mount Taranaki",
-      "Mount Aspiring"
+      "Mount Tasman",
+      "Mount Aspiring",
+      "Mount Dampier"
     ],
     "context": "Officially Aoraki / Mount Cook, keeping its Maori name Aoraki. At 3,724 m it is the highest point not only of New Zealand but of the whole continent of Zealandia -- nearly all of which lies drowned beneath the Pacific. Source: geosociety.org/gsa-today/march-april-2017/zealandia-earths-hidden-continent",
     "topic": "new-zealand-and-zealandia-the-drowned-continent"
   },
   {
     "tier": 3,
-    "question": "New Zealand broke away about 80 million years ago, then sailed off on its own for so long that one whole group of land animals never got there. Only two tiny kinds ever crossed the sea, so birds took over the empty places, and with no hunters on the ground, some gave up flight for good. Which group is New Zealand almost entirely missing?",
+    "question": "New Zealand broke away about 80 million years ago, then sailed off on its own for so long that one whole group of land animals almost never got there. Only two tiny native kinds live there today, so birds took over the empty places, and with no hunters on the ground, some gave up flight for good. Which group is New Zealand almost entirely missing?",
     "answer": "mammals",
     "choices": [
       "mammals",
@@ -18218,29 +18218,29 @@
     "answer": "the Alpine Fault",
     "choices": [
       "the Alpine Fault",
-      "the San Andreas Fault",
-      "the Denali Fault",
-      "the Anatolian Fault"
+      "the Hope Fault",
+      "the Awatere Fault",
+      "the Clarence Fault"
     ],
-    "context": "The Alpine Fault runs about 600 km up the spine of the South Island, where the Pacific and Australian plates slide past each other and heave up the Southern Alps. It ruptures in huge earthquakes roughly every few centuries; the last great one struck around 1717 AD. Source: en.wikipedia.org/wiki/Alpine_Fault",
+    "context": "The Alpine Fault runs about 600 km up the spine of the South Island, where the Pacific and Australian plates slide past each other and heave up the Southern Alps. It ruptures in huge earthquakes roughly every few centuries; the last great one struck around 1717 AD. At its northern end it splays into the faults of Marlborough, among them the Hope, Awatere and Clarence faults. Sources: en.wikipedia.org/wiki/Alpine_Fault ; en.wikipedia.org/wiki/Marlborough_Fault_System",
     "topic": "new-zealand-and-zealandia-the-drowned-continent"
   },
   {
     "tier": 4,
-    "question": "Ice Age glaciers cut a maze of steep valleys into the wild southwest of New Zealand's South Island, and the sea later flooded them into long, dark, cliff-walled arms. The most famous, Milford Sound, gets over 6 metres of rain a year, and Rudyard Kipling ranked it as the world's eighth wonder. What is this whole region called?",
+    "question": "Mitre Peak soars straight out of the dark water of Milford Sound, in the wild southwest of New Zealand's South Island, where over 6 metres of rain pours down each year. Rudyard Kipling, by a much-told story, ranked it the world's eighth wonder. What is the whole wild region around it called?",
     "answer": "Fiordland",
     "choices": [
       "Fiordland",
-      "Southland",
       "Westland",
-      "Northland"
+      "Mackenzie",
+      "Canterbury"
     ],
-    "context": "The region is named for its fiords -- sea-drowned glacier valleys such as Milford Sound. Though early sailors called them 'sounds' (a word for river-carved inlets), they are technically fiords, gouged by ice and later flooded by the sea. Milford is one of the wettest inhabited places on Earth. Source: en.wikipedia.org/wiki/Milford_Sound",
+    "context": "The region is named for its fiords -- sea-drowned glacier valleys such as Milford Sound. Though early sailors called them 'sounds' (a word for river-carved inlets), they are technically fiords, gouged by ice and later flooded by the sea. Milford is the wettest inhabited place in New Zealand and one of the wettest in the world. Source: en.wikipedia.org/wiki/Milford_Sound",
     "topic": "new-zealand-and-zealandia-the-drowned-continent"
   },
   {
     "tier": 5,
-    "question": "Lake Taupō, in the middle of New Zealand's North Island, looks like a calm holiday lake, but its broad basin is the crater of a supervolcano. About 25,600 years ago the volcano hurled out some 1,170 cubic km of rock and ash, one of only a few super-eruptions known on Earth. Among them all, what is the Taupō blast?",
+    "question": "Lake Taupō, in the middle of New Zealand's North Island, looks like a calm holiday lake, but its broad basin is the crater of a supervolcano. About 25,600 years ago the volcano hurled out some 1,170 cubic km of rock and ash in a super-eruption. Among all the super-eruptions known on Earth, what is the Taupō blast?",
     "answer": "the most recent",
     "choices": [
       "the most recent",
@@ -18253,7 +18253,7 @@
   },
   {
     "tier": 1,
-    "question": "Neolithic farmers with neither writing nor metal tools raised Newgrange, a grass-topped stone mound over a burial chamber in Ireland's Boyne Valley, around 3200 BC. It is about 500 years older than two of the most famous ancient landmarks on Earth. Which two?",
+    "question": "Neolithic farmers with neither writing nor metal tools raised Newgrange, a grass-topped stone mound over a burial chamber in Ireland's Boyne Valley, more than 5,000 years ago. It is about 500 years older than two of the most famous ancient landmarks on Earth. Which two?",
     "answer": "Stonehenge and the Great Pyramid of Giza",
     "choices": [
       "Stonehenge and the Great Pyramid of Giza",
@@ -18261,12 +18261,12 @@
       "Machu Picchu and Angkor Wat",
       "Petra and the Great Wall of China"
     ],
-    "context": "Newgrange went up around 3200 BC -- roughly five centuries before either Stonehenge's great stone circle or Egypt's Great Pyramid of Giza. Its Neolithic builders had no metal tools and no writing. Sources: https://en.wikipedia.org/wiki/Newgrange ; https://www.knowth.com/newgrange.htm",
+    "context": "Newgrange went up around 3200-3100 BC, by different estimates -- roughly five centuries before either Stonehenge's great stone circle or Egypt's Great Pyramid of Giza. Its Neolithic builders had no metal tools and no writing. Sources: https://en.wikipedia.org/wiki/Newgrange ; https://www.knowth.com/newgrange.htm",
     "topic": "newgrange-and-bru-na-boinne-the-solstice-tomb"
   },
   {
     "tier": 2,
-    "question": "A curved wall of bright white stone, studded with dark round cobbles, gleams across the front of Newgrange, the great grass-topped tomb in eastern Ireland. Its Stone Age builders hauled that white rock about 80 km from the Wicklow Mountains, with no wheels and no metal tools. What is the white stone?",
+    "question": "A curved wall of bright white stone, studded with dark round cobbles, gleams across the front of Newgrange, the great grass-topped tomb in eastern Ireland. Its Stone Age builders hauled that white rock about 50 km from the Wicklow Mountains, with no wheels and no metal tools. What is the white stone?",
     "answer": "quartz",
     "choices": [
       "quartz",
@@ -18318,15 +18318,15 @@
   },
   {
     "tier": 4,
-    "question": "Flat stones climb nearly 6 metres over the inner chamber of Newgrange, each jutting a little farther inward than the one below it, with no mortar anywhere. After more than 5,000 years, the chamber beneath that roof is still bone-dry. What did the builders do to keep the rain out?",
+    "question": "Newgrange's builders roofed its long stone passage with great flat slabs, buried the whole tomb under a mound of stone and earth, and used no mortar anywhere. More than 5,000 years on, the passage beneath is still dry. How did the builders lead the rain away?",
     "answer": "they cut grooves in the stones to run rainwater off",
     "choices": [
       "they cut grooves in the stones to run rainwater off",
-      "they sealed the joints with sticky river clay",
+      "they spread animal hides across the roof stones",
       "they smeared the stones with black pine tar",
       "they dug hidden drains beneath the chamber floor"
     ],
-    "context": "The mortar-free corbelled vault has kept the chamber watertight for over 5,000 years -- partly because the builders cut grooves into the roof-stones to channel rainwater outward, away from the room below. Source: https://www.knowth.com/newgrange.htm",
+    "context": "Michael O'Kelly's excavation found water-grooves cut into the roof-slabs and passage corbels to lead run-off away, and the roof joints caulked with a putty of burnt soil and sea sand; the passage below has stayed dry for over 5,000 years. Sources: https://www.newgrange.com/newgrange_speaks.htm ; https://www.knowth.com/newgrange.htm",
     "topic": "newgrange-and-bru-na-boinne-the-solstice-tomb"
   },
   {
@@ -18352,7 +18352,7 @@
       "Carnac and Gavrinis",
       "Skara Brae and Maeshowe"
     ],
-    "context": "Newgrange, Knowth, and Dowth are the three great passage-tombs of Bru na Boinne -- a Neolithic ritual landscape of at least 90 monuments in a loop of the River Boyne, older than the pharaohs and named a UNESCO World Heritage Site in 1993. Knowth alone holds more than a third of all the megalithic art in Western Europe. Sources: https://en.wikipedia.org/wiki/Br%C3%BA_na_B%C3%B3inne ; https://en.wikipedia.org/wiki/Knowth",
+    "context": "Newgrange, Knowth, and Dowth are the three great passage-tombs of Bru na Boinne -- a Neolithic ritual landscape of at least 90 monuments in a loop of the River Boyne, named a UNESCO World Heritage Site in 1993. Knowth alone holds more than a third of all the megalithic art in Western Europe. Sources: https://en.wikipedia.org/wiki/Br%C3%BA_na_B%C3%B3inne ; https://en.wikipedia.org/wiki/Knowth",
     "topic": "newgrange-and-bru-na-boinne-the-solstice-tomb"
   },
   {
@@ -18768,7 +18768,7 @@
       "a gold treasure hoard",
       "a carved calendar stone"
     ],
-    "context": "It was the first tomb ever found inside a Maya pyramid, overturning the old belief that these pyramids were only solid platforms for temples. In the anteroom lay the skeletons of six young attendants, apparently sacrificed to accompany their king. The king within was K'inich Janaab' Pakal. Source: mayan.org, Pakal's Tomb; Wikipedia, Temple of the Inscriptions.",
+    "context": "It was the first tomb ever found inside a Maya pyramid, overturning the old belief that these pyramids were only solid platforms for temples. At its entrance lay the skeletons of five or six people, men and women, apparently sacrificed to accompany their king. The king within was K'inich Janaab' Pakal. Source: mayan.org, Pakal's Tomb; Wikipedia, Temple of the Inscriptions.",
     "topic": "palenque"
   },
   {
@@ -18792,9 +18792,9 @@
       "the World Tree",
       "the feathered serpent",
       "the jaguar throne",
-      "the maize god"
+      "the moon goddess"
     ],
-    "context": "That sacred image is the Maya World Tree, a great cross-shaped ceiba whose roots reach the underworld and whose branches hold up the sky; von Daniken mistook its branching, cruciform form for a rocket. Pakal is carved at the instant of death, falling down the trunk into the underworld, as the scholar Linda Schele put it, 'down the Milky Way.' The ancient-astronaut reading ignores the Maya writing and symbols carved all around the figure, which name the scene plainly. Source: Wikipedia, K'inich Janaab' Pakal.",
+    "context": "That sacred image is the Maya World Tree, a great cross-shaped ceiba whose roots reach the underworld and whose branches hold up the sky; von Daniken mistook its branching, cruciform form for a rocket. Pakal is carved at the instant of death, falling down the trunk into the underworld. The ancient-astronaut reading ignores the Maya writing and symbols carved all around the figure, which name the scene plainly. Source: Wikipedia, K'inich Janaab' Pakal.",
     "topic": "palenque"
   },
   {
@@ -18825,7 +18825,7 @@
   },
   {
     "tier": 5,
-    "question": "Beneath the plaza of Palenque, the Maya vaulted the Otulum stream inside a stone channel running nearly 300 metres. In one stretch, known as the Piedras Bolas aqueduct, they engineered a first for the entire ancient Americas, a feat of water control no other New World people is known to have managed. What did Palenque's builders achieve here?",
+    "question": "Beneath the plaza of Palenque the Maya vaulted the Otulum stream inside a stone channel, and they built other spring-fed channels too. In one of them, the Piedras Bolas aqueduct, they engineered a feat of water control known nowhere earlier in the New World. What did Palenque's builders achieve there?",
     "answer": "the first pressurized water",
     "choices": [
       "the first pressurized water",
@@ -18833,7 +18833,7 @@
       "the first stone dam",
       "the first canal lock"
     ],
-    "context": "By vaulting the stream and then sharply narrowing part of the channel, Palenque's engineers forced the water under pressure, able to spurt upward, perhaps to feed a fountain or basin. Penn State researchers call the Piedras Bolas aqueduct the earliest known pressurized water feature in the New World, centuries before the Spanish arrived. Source: Penn State News, 'Maya plumbing'; Wikipedia, Palenque.",
+    "context": "By sharply narrowing the spring-fed channel, Palenque's engineers forced the water under pressure, able to spurt upward by several metres, perhaps to feed a fountain or basin. Penn State researchers call the Piedras Bolas aqueduct the earliest known pressurized water feature in the New World, centuries before the Spanish arrived. Source: Penn State News, 'Maya plumbing' (psu.edu); Wikipedia, Palenque.",
     "topic": "palenque"
   },
   {
@@ -18846,7 +18846,7 @@
       "the Sacred Way",
       "the Appian Way"
     ],
-    "context": "The Great Colonnade is Palmyra's spine -- a ceremonial street about 1.1 km long lined with columns roughly 9.5 m high, mostly raised in the 2nd century AD, and you can still walk between the standing pillars today. Palmyra's beauty earned it the nickname the 'Bride of the Desert.' Source: en.wikipedia.org/wiki/Palmyra",
+    "context": "The Great Colonnade is Palmyra's spine -- a ceremonial street about 1.1 km long lined with columns roughly 9.5 m high, mostly raised in the 2nd century AD, and many of its pillars still stand. Palmyra's beauty earned it the nickname the 'Bride of the Desert.' Source: en.wikipedia.org/wiki/Palmyra",
     "topic": "palmyra"
   },
   {
@@ -18864,20 +18864,20 @@
   },
   {
     "tier": 3,
-    "question": "Caravans hauling silk and spices between the Mediterranean and Persia were funnelled through Palmyra, a desert city in Syria that grew into one of the richest of the Roman East. How did Palmyra turn all those caravans into a fortune?",
-    "answer": "charged a toll on their goods",
+    "question": "Caravans hauling silk and spices between the Mediterranean and Persia passed through Palmyra, in the Syrian desert. In AD 137 its council carved a long law, in Greek and in Palmyrene, onto a great stone slab. What did that law set out?",
+    "answer": "the tax due on goods coming and going",
     "choices": [
-      "charged a toll on their goods",
-      "sold them water and supplies",
-      "rented them warehouse space",
-      "guided them across the sands"
+      "the tax due on goods coming and going",
+      "the routes every caravan had to take",
+      "the penalties for robbing a caravan",
+      "the prayers owed to the god Bel"
     ],
-    "context": "Palmyra worked like a desert toll-booth on the Silk Road. It even carved its customs law onto a great stone slab -- the Palmyrene Tariff -- spelling out the tax on every kind of good passing through, and those profits paid for the city's grand monuments. Source: en.wikipedia.org/wiki/Palmyra",
+    "context": "This is the Palmyrene Tariff, a bilingual Greek and Palmyrene inscription of AD 137 setting out the dues on goods brought into and carried out of the city, and on some services within it. The caravan trade, run largely by Palmyrene merchants, paid for the city's grand monuments. Sources: https://en.wikipedia.org/wiki/Palmyra_Tariff ; en.wikipedia.org/wiki/Palmyra",
     "topic": "palmyra"
   },
   {
     "tier": 3,
-    "question": "Outside Palmyra, in a bleak desert gully now called the Valley of the Tombs, more than fifty grand monuments to the dead still stand. Some held whole families across a hundred years or more. Palmyra's grandest tombs took a shape rarely seen anywhere else in the old world. What shape did these family tombs take?",
+    "question": "Outside Palmyra, in a bleak desert gully now called the Valley of the Tombs, rich Palmyrene families raised more than fifty grand monuments to their dead. Some held whole families across a hundred years or more. Palmyra's grandest tombs took a shape rarely seen anywhere else in the old world. What shape did these family tombs take?",
     "answer": "great stone towers",
     "choices": [
       "great stone towers",
@@ -18885,7 +18885,7 @@
       "domed brick mausoleums",
       "earthen burial mounds"
     ],
-    "context": "Palmyra's tower tombs rose as high as four storeys -- stone apartment blocks for the dead, with family members sealed in shelf-niches floor above floor. The most recent one dates to about AD 128. Source: en.wikipedia.org/wiki/Palmyra",
+    "context": "Palmyra's tower tombs rose as high as four storeys -- stone apartment blocks for the dead, with family members sealed in shelf-niches floor above floor. The most recent one dates to about AD 128. In 2015 Islamic State fighters blew up several of them, among them the Tower of Elahbel. Source: en.wikipedia.org/wiki/Palmyra",
     "topic": "palmyra"
   },
   {
@@ -18894,24 +18894,24 @@
     "answer": "paraded through Rome in golden chains",
     "choices": [
       "paraded through Rome in golden chains",
-      "beheaded on the spot in the desert",
+      "freed to rule Palmyra once more",
       "ransomed back to the Persian court",
-      "died of fever on the road to Rome"
+      "sold as a slave in an Egyptian market"
     ],
-    "context": "By many accounts Aurelian spared his royal captive. After leading Zenobia through Rome in golden chains in his triumph of AD 274, he is said to have let her live out her days in a comfortable villa at Tibur (modern Tivoli). The ancient sources disagree about her end, so Zenobia's final fate is really legend as much as settled history. Source: en.wikipedia.org/wiki/Zenobia",
+    "context": "By many accounts Aurelian spared his royal captive. After leading Zenobia through Rome in golden chains in his triumph of AD 274, he is said to have let her live out her days in a comfortable villa at Tibur (modern Tivoli). The ancient sources disagree: Zosimus wrote that she died on the way to Rome, and John Malalas that she was beheaded after the triumph, so Zenobia's final fate is legend as much as settled history. Source: en.wikipedia.org/wiki/Zenobia",
     "topic": "palmyra"
   },
   {
     "tier": 5,
-    "question": "Militants of ISIS (the Islamic State of Iraq and Syria) dynamited Palmyra's greatest monuments on purpose in 2015, among them the Temple of Bel and the Arch of Triumph. Yet archaeologists are sure the ruins can be rebuilt, stone by stone. What made that possible?",
+    "question": "Militants of ISIS (the Islamic State of Iraq and Syria) dynamited Palmyra's greatest monuments on purpose in 2015, among them the Temple of Bel and the Arch of Triumph. Yet many archaeologists say the ruins can be pieced back together, stone by stone. What made that possible?",
     "answer": "detailed 3-D scans of the ruins",
     "choices": [
       "detailed 3-D scans of the ruins",
-      "old photographs taken by tourists",
-      "carved fragments buried in the sand",
-      "drawings made by early explorers"
+      "the builders' plans carved in stone",
+      "a full-size copy kept in Damascus",
+      "plaster casts of every column"
     ],
-    "context": "Detailed 3-D scans and photographs had been made before the war, so the 'New Palmyra' project (2015) -- built on work by the Syrian coder Bassel Khartabil -- created digital models to guide the rebuilding, and reconstruction of the Arch of Triumph began in October 2022. The scans mattered all the more because of what ISIS had done in August 2015: days before it began dynamiting the city's ancient temples, it publicly beheaded Palmyra's 83-year-old antiquities chief, Khaled al-Asaad, who had guarded the ruins for about half a century, for refusing to reveal where the city's treasures were hidden. He had said, 'I am from Palmyra, and I will stay here even if they kill me.' Sources: en.wikipedia.org/wiki/Palmyra; en.wikipedia.org/wiki/Khaled_al-Asaad",
+    "context": "Detailed 3-D scans had been made before the war, so the 'New Palmyra' project (2015) -- built on work by the Syrian coder Bassel Khartabil -- created digital models to guide any rebuilding, and a project to restore the Arch of Triumph was launched in 2022. The scans mattered all the more because of what ISIS had done in August 2015: days before it began dynamiting the city's ancient temples, it publicly beheaded Palmyra's 83-year-old antiquities chief, Khaled al-Asaad, who had guarded the ruins for about half a century, for refusing to reveal where the city's treasures were hidden. He had said, 'I am from Palmyra, and I will stay here even if they kill me.' Sources: en.wikipedia.org/wiki/Palmyra; en.wikipedia.org/wiki/Khaled_al-Asaad",
     "topic": "palmyra"
   },
   {
@@ -19015,7 +19015,7 @@
       "radar",
       "lidar"
     ],
-    "context": "GPS was built to tell you where your car is, but it is precise enough to watch continents move -- fixed ground stations on either side of the Atlantic creep apart on the readouts by roughly 2.5 cm a year. It turned Wegener's century-old idea into something we now measure directly. Source: https://earthhow.com/continental-drift-plate-tectonics/.",
+    "context": "GPS was built to guide ships, planes and armies, but it is precise enough to watch continents move -- fixed ground stations on either side of the Atlantic creep apart on the readouts by roughly 2.5 cm a year. It turned Wegener's century-old idea into something measured directly. Source: https://earthhow.com/continental-drift-plate-tectonics/.",
     "topic": "pangaeas-ghost-how-we-know-the-map-moves"
   },
   {
@@ -19025,15 +19025,15 @@
     "choices": [
       "West Africa and eastern South America",
       "East Africa and western Australia",
-      "eastern North America and northwest Europe",
-      "southern India and eastern Antarctica"
+      "western South America and New Zealand",
+      "California and the coast of Japan"
     ],
     "context": "The resemblance is striking enough that people noticed it for centuries -- Abraham Ortelius pointed it out in 1596 -- yet it took until the 1900s and Alfred Wegener to argue the coasts really had been torn apart, not just coincidentally shaped alike. Source: https://en.wikipedia.org/wiki/Continental_drift.",
     "topic": "pangaeas-ghost-how-we-know-the-map-moves"
   },
   {
     "tier": 4,
-    "question": "Geologists dug up the same small fossil reptile, Mesosaurus, in the rocks of Brazil and of South Africa, on facing shores of the South Atlantic. It was a freshwater creature that could never have swum across a salt ocean. Which idea did the fossils support?",
+    "question": "Geologists dug up the same small fossil reptile, Mesosaurus, in the rocks of Brazil and of South Africa, on facing shores of the South Atlantic. It was a freshwater creature that could never have swum across a salt ocean. What did Wegener argue the fossils showed?",
     "answer": "the two coasts were once a single joined land",
     "choices": [
       "the two coasts were once a single joined land",
@@ -19054,7 +19054,7 @@
       "it had drained away through the seafloor",
       "it had boiled off in a volcanic upheaval"
     ],
-    "context": "Cut off from the Atlantic when the Strait of Gibraltar sealed, the Mediterranean -- itself the shrinking remnant of the ancient Tethys Ocean -- evaporated almost completely, dropping kilometers below sea level and leaving buried salt over 2 km thick. Around 5.33 million years ago the Atlantic burst back through Gibraltar and refilled it in the Zanclean flood, one of the largest floods Earth has ever seen. Source: https://en.wikipedia.org/wiki/Messinian_salinity_crisis.",
+    "context": "Cut off from the Atlantic when its gateways near Gibraltar closed, the Mediterranean -- itself the shrinking remnant of the ancient Tethys Ocean -- largely evaporated, dropping kilometers below sea level and leaving buried salt over 2 km thick. Around 5.33 million years ago the Atlantic burst through at Gibraltar and refilled it in the Zanclean flood, one of the largest floods Earth has ever seen. Source: https://en.wikipedia.org/wiki/Messinian_salinity_crisis.",
     "topic": "pangaeas-ghost-how-we-know-the-map-moves"
   },
   {
@@ -19067,7 +19067,7 @@
       "the Panthalassa Ocean",
       "the Rheic Ocean"
     ],
-    "context": "This open-and-shut rhythm is called the Wilson cycle, after J. Tuzo Wilson, who described it in 1966. It runs on a slow conveyor of rock: fresh crust is shoved out at mid-ocean ridges while old, cold, heavy crust is dragged back down at deep trenches. Because of it the map never stops rearranging -- roughly 250 million years from now the Atlantic is expected to close and today's continents to crowd into a brand-new supercontinent. Sources: https://en.wikipedia.org/wiki/Wilson_cycle ; https://en.wikipedia.org/wiki/Pangaea_Proxima.",
+    "context": "This open-and-shut rhythm is called the Wilson cycle, after J. Tuzo Wilson, who described it in 1966. It runs on a slow conveyor of rock: fresh crust is shoved out at mid-ocean ridges while old, cold, heavy crust is dragged back down at deep trenches. Because of it the map never stops rearranging; in one model, some 250 million years from now the Atlantic closes and today's continents crowd into a new supercontinent, Pangaea Proxima. Sources: https://en.wikipedia.org/wiki/Wilson_cycle ; https://en.wikipedia.org/wiki/Pangaea_Proxima.",
     "topic": "pangaeas-ghost-how-we-know-the-map-moves"
   },
   {
@@ -19086,14 +19086,14 @@
   {
     "tier": 2,
     "question": "For hundreds of years Paris buried its dead in packed churchyards like the Cimetière des Innocents. The ground itself rose into a mound taller than a man. In the spring of 1780, the crowding finally caused a disaster that forced the city to act. What happened?",
-    "answer": "Gas from the decaying dead burst through a cellar wall.",
+    "answer": "A neighbour's cellar wall collapsed under the dead.",
     "choices": [
       "The flooding Seine washed loose bones into the streets.",
       "A fire tore through the cemetery's wooden crosses.",
-      "Gas from the decaying dead burst through a cellar wall.",
+      "A neighbour's cellar wall collapsed under the dead.",
       "Grave-robbers tunnelled into the burial vaults."
     ],
-    "context": "In spring 1780 the pressure of the rotting dead burst a wall into a neighbouring cellar. The city closed the Cimetière des Innocents and, from 1785, moved the bones by torchlight into the empty tunnels beneath the city — so the Catacombs' dead were relocated there, not buried where they now lie. Source: history.com/articles/paris-catacombs-origins",
+    "context": "At the end of May 1780 a cellar wall in a house beside the cemetery gave way under the weight of the mass grave behind it. The city closed the Cimetière des Innocents and, in the late 1780s, moved the bones by night into the empty tunnels beneath the city — so the Catacombs' dead were relocated there, not buried where they now lie. Source: https://en.wikipedia.org/wiki/Catacombs_of_Paris",
     "topic": "paris-the-city-above-and-below"
   },
   {
@@ -19137,7 +19137,7 @@
   },
   {
     "tier": 4,
-    "question": "French police on a training run in the off-limits tunnels under Paris stumbled on a strange hidden room in August 2004. It covered about 3,000 square feet, ran on stolen electricity, and held a bar, stone benches and a recording of barking dogs set up to scare people off. What had the secret tunnel explorers built down there?",
+    "question": "French police on a training run in the off-limits tunnels under Paris stumbled on a strange hidden room in August 2004. It was a large cavern running on stolen electricity, with a bar, stone benches and a recording of barking dogs set up to scare people off. What had the secret tunnel explorers built down there?",
     "answer": "a fully equipped cinema",
     "choices": [
       "an illegal casino",
@@ -19150,7 +19150,7 @@
   },
   {
     "tier": 2,
-    "question": "Light pours into the upper room of a small royal chapel in the heart of old Paris through fifteen stained-glass windows, each 15 metres tall, that show over a thousand Bible scenes. The room has almost no solid wall and glows like the inside of a jewel. What is this chapel called?",
+    "question": "Light pours into the upper room of a small royal church in the heart of old Paris through fifteen stained-glass windows, each 15 metres tall, that show over a thousand Bible scenes. The room has almost no solid wall and glows like the inside of a jewel. What is this church called?",
     "answer": "the Sainte-Chapelle",
     "choices": [
       "Notre-Dame de Paris",
@@ -19210,7 +19210,7 @@
       "It sinks a few centimetres deeper into its foundations.",
       "It slowly twists around on its four feet."
     ],
-    "context": "The sun-warmed iron on the lit side expands and lengthens, so the top can shift by up to about 15 cm, leaning away from the sun — on a hot day the tower even stands a little taller, like a giant thermometer in wrought iron. It is 300 m tall, built for the 1889 World's Fair. Source: en.wikipedia.org/wiki/Eiffel_Tower",
+    "context": "The sun-warmed iron on the lit side expands and lengthens, so the top can shift by up to about 18 cm, leaning away from the sun. It is 300 m tall, built for the 1889 World's Fair. Source: en.wikipedia.org/wiki/Eiffel_Tower",
     "topic": "paris-the-city-above-and-below"
   },
   {
@@ -19358,7 +19358,7 @@
   },
   {
     "tier": 1,
-    "question": "A double staircase of 111 shallow steps climbs to the great terrace of Persepolis, in southern Iran, each step only about 10 centimetres high. Tradition says the builders made the steps so low and broad for one memorable reason. What could visitors do on them?",
+    "question": "A double staircase of 111 shallow steps climbs to the great terrace of Persepolis, in southern Iran, each step only about 10 centimetres high. Tradition gives one memorable reason for building them so low and broad. What does it say the steps let visitors do?",
     "answer": "ride their horses straight up onto the terrace",
     "choices": [
       "ride their horses straight up onto the terrace",
@@ -19379,7 +19379,7 @@
       "they were stacked from mud-brick",
       "they spiraled like twisted rope"
     ],
-    "context": "Each Apadana column rose about 20 m -- the height of a six-story building -- yet was far thinner than any Greek column, like a stone reed. Of the original 72, only about 14 still stand today. Source: en.wikipedia.org/wiki/Persepolis; WebSearch on the Apadana columns.",
+    "context": "Each Apadana column rose about 20 m -- the height of a six-story building -- yet was far thinner than any Greek column, like a stone reed. Of the original 72, only about 14 still stand today. Source: en.wikipedia.org/wiki/Persepolis.",
     "topic": "persepolis"
   },
   {
@@ -19389,10 +19389,10 @@
     "choices": [
       "the front halves of two beasts, set back-to-back",
       "a ring of curling acanthus leaves",
-      "a pair of scroll-like spiral volutes",
-      "a spreading, fan-shaped papyrus flower"
+      "a coiled serpent with its jaws open",
+      "a carved face of the king himself"
     ],
-    "context": "Each capital showed the front halves of two animals set back-to-back -- twin bulls, twin lions, or twin eagle-headed griffins -- kneeling so their backs cradled the roof-beams. The paired royal beasts stood for the king's power and cosmic order. Source: WebSearch on Persian column capitals; metmuseum.org Achaemenid bull's-head capital.",
+    "context": "Each capital showed the front halves of two animals set back-to-back -- twin bulls, twin lions, or twin eagle-headed griffins -- kneeling so their backs cradled the roof-beams. The paired royal beasts stood for the king's power and cosmic order. Source: metmuseum.org Achaemenid bull's-head capital.",
     "topic": "persepolis"
   },
   {
@@ -19405,7 +19405,7 @@
       "a long march of gods and winged spirits",
       "the noble families of Persia and of Media"
     ],
-    "context": "Twenty-three delegations of subject nations advance toward the king, each led by the hand by a Persian or Median usher, each dressed in its own national fashion, each carrying the special goods of its homeland -- a frozen stone photograph of the whole empire. Source: WebSearch (cabinet.ox.ac.uk apadana-tribute-reliefs; smarthistory.org).",
+    "context": "Twenty-three delegations of subject nations advance toward the king, each led by the hand by a Persian or Median usher, each dressed in its own national fashion, each carrying the special goods of its homeland -- a frozen stone photograph of the whole empire. Sources: cabinet.ox.ac.uk apadana-tribute-reliefs; smarthistory.org.",
     "topic": "persepolis"
   },
   {
@@ -19444,20 +19444,7 @@
       "a signal to his troops, or an offering to the Greek gods",
       "to deny it to rebels, or to smother a plague in the city"
     ],
-    "context": "The historian Arrian says Alexander burned Persepolis in cold, deliberate revenge for the Persian king Xerxes' burning of Athens in 480 BC. Diodorus, Plutarch, and Curtius tell a wilder tale: at a drunken victory feast the Athenian courtesan Thais urged it on and, after the king himself, hurled the first blazing torch into the palace. The ancient sources never agreed, and neither can we. Source: livius.org/sources/content/diodorus; worldhistory.org; brewminate.com.  (Legend.)",
-    "topic": "persepolis"
-  },
-  {
-    "tier": 5,
-    "question": "Alexander's fire left the palace of Persepolis in ashes. Scattered through the ruined record-rooms lay tens of thousands of soft clay tablets covered in cuneiform -- the working paperwork of the empire, listing workers' wages, food rations, and travel passes. What did the flames do to the tablets?",
-    "answer": "baked them rock-hard, so they survive to be read",
-    "choices": [
-      "baked them rock-hard, so they survive to be read",
-      "melted them into shapeless, unreadable lumps",
-      "cracked them into worthless, powdery dust",
-      "burned the writing clean off their faces"
-    ],
-    "context": "The fire that destroyed Persepolis paradoxically saved its greatest treasure: it baked the soft clay tablets as hard as pottery. More than 30,000 survived -- the Persepolis Fortification Archive -- written mostly in Elamite and recording the everyday accounts of the empire. Chicago's Oriental Institute unearthed them in the 1930s, letting us read the empire's daily records 2,500 years later. Source: iranicaonline.org/articles/persepolis-elamite-tablets; en.wikipedia.org/wiki/Persepolis_Administrative_Archives.",
+    "context": "The historian Arrian says Alexander burned Persepolis in cold, deliberate revenge for the Persian king Xerxes' burning of Athens in 480 BC. Diodorus, Plutarch, and Curtius tell a wilder tale: at a drunken victory feast the Athenian courtesan Thais urged it on and, after the king himself, hurled the first blazing torch into the palace. The ancient sources never agreed, and historians still argue. Source: livius.org/sources/content/diodorus; worldhistory.org; brewminate.com.",
     "topic": "persepolis"
   },
   {
@@ -19935,7 +19922,7 @@
     "choices": [
       "Under the high side, which had sunk least",
       "Under the low side, which had sunk most",
-      "Under the south side, by the cathedral",
+      "Under the middle, beneath the hollow core",
       "Evenly under all four sides at once"
     ],
     "context": "The rescue was led by an international committee including engineer John Burland, using a method called 'underexcavation.' By drilling in and removing small amounts of soil from beneath the high north side — the side that had sunk less — engineers let that side settle so the tower eased back toward vertical. It pulled the top back about 44 cm, easing the lean to roughly 3.97 degrees. The tower reopened on 15 December 2001 and should stay stable for another 200-300 years. Source: https://www.building.co.uk/focus/the-man-who-saved-the-leaning-tower-of-pisa/1455.article",
@@ -20467,9 +20454,9 @@
     "answer": "Borobudur",
     "choices": [
       "Borobudur",
-      "Angkor Wat",
-      "Bagan",
-      "Sukhothai"
+      "Mendut",
+      "Sewu",
+      "Plaosan"
     ],
     "context": "The two masterpieces are near-contemporaries on neighbouring plains: Borobudur, the broad Buddhist mandala, on the Kedu Plain northwest of Yogyakarta, and Prambanan, on the Kewu Plain northeast of the city, whose central Hindu tower stabs 47 metres (about 154 ft) straight up -- the tallest Hindu temple in Indonesia. Prambanan was begun around 850 CE under King Rakai Pikatan and dedicated in 856 CE, and the two colossal temples rose within about a century of each other on the fertile volcanic plains of central Java. Prambanan is the largest Hindu temple site in the country and the second-largest in all Southeast Asia, after Angkor Wat in Cambodia. Source: https://en.wikipedia.org/wiki/Prambanan",
     "topic": "prambanan"
@@ -20598,8 +20585,8 @@
     "choices": [
       "the Patagonian Desert",
       "the Atacama Desert",
-      "the Mojave Desert",
-      "the Kalahari Desert"
+      "the Sechura Desert",
+      "the Guajira Desert"
     ],
     "context": "Argentine Patagonia is a COLD winter desert -- average temperatures near 3 C with frequent frost -- and the largest desert in Argentina (about 673,000 sq km, roughly the 8th-largest on Earth). The Andes block the westerly Pacific winds so completely that much of it stays arid within about 200 miles of the sea. Source: en.wikipedia.org/wiki/Patagonian_Desert",
     "topic": "rain-shadow-deserts-the-dry-side-of-the-mountains"
@@ -20619,7 +20606,7 @@
   },
   {
     "tier": 3,
-    "question": "Trade-wind rain soaks Mount Waialeale on Kauai, in Hawaii, almost every day, and its 11,000 mm a year make it one of the wettest spots on Earth. Yet a sunny town just 15 miles off, on the dry side of the mountain, gets only 20 inches a year. Which town is it?",
+    "question": "Trade-wind rain soaks Mount Waialeale on Kauai, in Hawaii, almost every day, and its 9,500 mm or more a year make it one of the wettest spots on Earth. Yet a sunny town just 15 miles off, on the dry side of the mountain, gets only 20 inches a year. Which town is it?",
     "answer": "Waimea",
     "choices": [
       "Waimea",
@@ -20627,7 +20614,7 @@
       "Lihue",
       "Kapaa"
     ],
-    "context": "Mount Waialeale's summit sees rain on about 289 days a year and averages roughly 11,430 mm (450 in) -- a record 666 inches fell in 1982. Yet leeward Waimea, only about 15 miles away on the same island, averages just ~20 inches. The wettest and driest places on Kauai almost touch. Source: en.wikipedia.org/wiki/Mount_Wai%CA%BBale%CA%BBale",
+    "context": "Mount Waialeale's summit sees rain on most days of the year and has averaged more than 9,500 mm (373 in) a year since 1912, with some older averages higher still; a record 683 inches fell in 1982. Yet leeward Waimea, only about 15 miles away on the same island, averages just ~20 inches. The wettest and driest places on Kauai almost touch. Source: en.wikipedia.org/wiki/Mount_Wai%CA%BBale%CA%BBale",
     "topic": "rain-shadow-deserts-the-dry-side-of-the-mountains"
   },
   {
@@ -20749,7 +20736,7 @@
   },
   {
     "tier": 5,
-    "question": "Wayne Smith, a Kingston teenager, and Noel Davey, a keyboardist, hit the rock preset on a cheap Casio keyboard in 1985. King Jammy, the producer, polished it into the Sleng Teng riddim, the first Jamaican beat made wholly by machine, and its robotic bassline turned up on about 500 records. What all-electronic era of Jamaican music did it open?",
+    "question": "Wayne Smith, a Kingston teenager, and Noel Davey, a keyboardist, stumbled on the rock preset of a cheap Casio keyboard in 1984. King Jammy, the producer, polished it into the Sleng Teng riddim, one of the first Jamaican beats made wholly by machine, and its robotic bassline turned up on more than 500 records. What all-electronic era of Jamaican music did it open?",
     "answer": "dancehall",
     "choices": [
       "dancehall",
@@ -20757,7 +20744,7 @@
       "jungle",
       "dubstep"
     ],
-    "context": "Here is the twist: the 'Sleng Teng' bassline that reshaped Jamaican music wasn't written in Kingston at all. It was a factory preset built in 1980 by a young Casio engineer in Japan, Hiroko Okuda, who had studied reggae for her thesis. She only learned years later that her little demo tune had sparked a whole genre — and was amazed. Source: Wikipedia, 'Sleng Teng.'",
+    "context": "The bassline that reshaped Jamaican music was not written in Kingston at all. It was a factory preset made by Hiroko Okuda, a young Casio engineer in Japan who had written her music-college thesis on reggae and joined the company in 1980; she later said her head was full of reggae when she made it. Source: Wikipedia, 'Sleng Teng.'",
     "topic": "reggae-ska-and-dub-kingston-jamaica"
   },
   {
@@ -20918,15 +20905,15 @@
   },
   {
     "tier": 2,
-    "question": "The Nile met the Mediterranean through seven mouths in the age of the pharaohs, and Greek writers named them one by one: the Pelusiac branch in the east, the Canopic in the west and five more. Over the last two thousand years, river silt and modern flood-control dams have sealed the small branches off. How many of the seven still carry the Nile to the sea today?",
-    "answer": "Two",
+    "question": "The Nile once reached the Mediterranean by seven mouths, which Greek writers named one by one: the Pelusiac branch in the east, the Canopic in the west and five more. Over two thousand years, silt and flood control have sealed all but two. Which two still carry the Nile to the sea?",
+    "answer": "the Rosetta and the Damietta",
     "choices": [
-      "Two",
-      "Four",
-      "Six",
-      "Seven"
+      "the Rosetta and the Damietta",
+      "the Pelusiac and the Canopic",
+      "the Tanitic and the Mendesian",
+      "the Sebennytic and the Canopic"
     ],
-    "context": "Only two flowing branches survive: the Rosetta and the Damietta, which give the delta its two great arms. The others — the Pelusiac, the Canopic, the Sebennytic and more — silted up or were closed by flood management. Source: https://en.wikipedia.org/wiki/Nile_Delta",
+    "context": "Only two branches still flow: the Rosetta and the Damietta, which give the delta its two great arms. The others, among them the Pelusiac, the Canopic, the Sebennytic, the Tanitic and the Mendesian, silted up or were closed by flood management. Source: https://en.wikipedia.org/wiki/Nile_Delta",
     "topic": "river-deltas-where-a-river-drops-its-load"
   },
   {
@@ -20944,12 +20931,12 @@
   },
   {
     "tier": 3,
-    "question": "The Ganges and the Brahmaputra, two of Asia's biggest rivers, join and dump so much Himalayan mud and rock into the sea that they build the largest river delta on the planet. More than 250 million people live on this green lowland. What is this delta called?",
+    "question": "Two of Asia's biggest rivers, both fed by the Himalaya, join near the sea and dump so much mountain mud and rock that they have built the largest river delta on the planet. More than 250 million people live on this green lowland. What is this delta called?",
     "answer": "the Bengal delta",
     "choices": [
       "the Bengal delta",
       "the Mekong delta",
-      "the Nile Delta",
+      "the Yangtze delta",
       "the Indus delta"
     ],
     "context": "The Ganges, Brahmaputra and Meghna together build the Bengal (or Ganges-Brahmaputra) delta — over 105,000 km² across Bangladesh and India's West Bengal, the largest and most populous delta on Earth. Source: https://en.wikipedia.org/wiki/Ganges_Delta",
@@ -20983,7 +20970,7 @@
   },
   {
     "tier": 1,
-    "question": "About 50,000 fans poured into Rome's Colosseum through 80 arched entrances in its outer wall. Above every arch the Romans carved the same kind of marking. What did they carve above each one?",
+    "question": "About 50,000 fans poured into Rome's Colosseum through 76 public arches in its outer wall. Above each one the Romans carved the same kind of marking. What did they carve above each arch?",
     "answer": "a number",
     "choices": [
       "a number",
@@ -20991,12 +20978,12 @@
       "a slogan",
       "a garland"
     ],
-    "context": "Each of the 80 entrances was carved with a number (I to LXXX); spectators' tickets sent them to the right numbered arch and straight to their seats — crowd control that works exactly like a modern stadium. Capacity estimates range from about 50,000 to 80,000. Source: https://en.wikipedia.org/wiki/Colosseum",
+    "context": "Each of the 76 entrances used by ordinary spectators was numbered; tickets sent spectators to the right numbered arch and straight to their seats, crowd control that works like a modern stadium's. Numbers XXIII to LIV still survive. Capacity estimates range from about 50,000 to 80,000. Source: https://en.wikipedia.org/wiki/Colosseum",
     "topic": "rome-the-eternal-citys-engineering"
   },
   {
     "tier": 3,
-    "question": "The official Appius Claudius Caecus began the Via Appia in 312 BC, the first of Rome's great paved highways, running dead straight south out of the city on tightly fitted blocks of volcanic stone that walkers still tread today. So prized was the road that the Romans gave it a grand royal nickname. What did they call the Via Appia?",
+    "question": "The official Appius Claudius Caecus began the Via Appia in 312 BC, the first of Rome's great paved highways, running dead straight south out of the city on tightly fitted blocks of volcanic stone that walkers still tread today. So prized was the road that the Romans gave it a grand nickname. What did they call the Via Appia?",
     "answer": "the queen of roads",
     "choices": [
       "the queen of roads",
@@ -21035,24 +21022,11 @@
   },
   {
     "tier": 5,
-    "question": "Rome's aqueducts carried water for tens of miles into the city with no pumps — just a channel sloping gently downhill the whole way, so gently that too little tilt would leave the water stalled and stagnant. The Roman writer Vitruvius even set a rule for the least slope a channel could have. Over each kilometre of its long run, how far did a typical aqueduct actually drop?",
-    "answer": "a few centimetres per kilometre",
-    "choices": [
-      "a few centimetres per kilometre",
-      "a few millimetres per kilometre",
-      "a few metres per kilometre",
-      "many metres per kilometre"
-    ],
-    "context": "The channels ran gently downhill the entire way, often dropping just a few centimetres over a whole kilometre. The Roman engineer Vitruvius advised a minimum tilt of about 1 in 4,800 (roughly 20 cm per kilometre). With no pumps anywhere on the route, that barely-there slope still moved water for tens of miles across arches and through tunnels into Rome. Source: https://grokipedia.com/page/Roman_aqueduct",
-    "topic": "rome-the-eternal-citys-engineering"
-  },
-  {
-    "tier": 5,
     "question": "Tarquinius Priscus, an Etruscan king of early Rome, ordered a great stone drain in the 6th century BC to carry a swampy hollow's water into the Tiber, long before Rome had an empire. The hollow later became the Forum. The drain is the Cloaca Maxima, the Greatest Sewer. What is most remarkable about it?",
     "answer": "it is still in use today",
     "choices": [
       "it is still in use today",
-      "it was rebuilt three times over",
+      "it was sealed off by the emperors",
       "it was never actually finished",
       "it now carries a subway line"
     ],
@@ -21061,15 +21035,15 @@
   },
   {
     "tier": 1,
-    "question": "The Rapa Nui people of Easter Island, a speck of land with 2,000 miles of ocean on every side, set up the giant stone moai and carved rows of tiny signs, rongorongo, onto wooden tablets. What is rongorongo's place in the whole story of writing?",
-    "answer": "The only script ever invented anywhere in the Pacific",
+    "question": "The Rapa Nui of Easter Island, some 2,000 km from any other inhabited island, raised the giant moai and carved tiny signs, rongorongo, onto wooden tablets. If the signs are true writing born on the island, what place do they hold in writing's story?",
+    "answer": "One of the very few scripts ever invented from scratch",
     "choices": [
-      "The only script ever invented anywhere in the Pacific",
+      "One of the very few scripts ever invented from scratch",
       "The oldest writing system in the world",
       "The largest writing system, with thousands of signs",
       "The fastest writing ever to spread worldwide"
     ],
-    "context": "Across the thousands of islands of Oceania, only Rapa Nui developed a glyph-script of its own -- which is why rongorongo is so often called the only writing ever invented anywhere in the Pacific. Scholars still debate whether it is true writing or a proto-writing 'memory aid' for chants, so its exact status is unsettled. Roughly 600 distinct signs are known: stylized people, plants, and seabirds like the frigatebird, most carved into Pacific rosewood. Source: en.wikipedia.org/wiki/Rongorongo.",
+    "context": "If rongorongo is true writing and an invention of the island itself, it is one of the very few scripts in human history invented from scratch, and it is often called the only writing ever invented in the Pacific. Scholars still debate whether it is true writing or a proto-writing 'memory aid' for chants, so its exact status is unsettled. Some 600 sign codes have been catalogued: stylized people, plants, and seabirds like the frigatebird, most carved into Pacific rosewood. Source: en.wikipedia.org/wiki/Rongorongo.",
     "topic": "rongorongo-the-lost-script-of-easter-island"
   },
   {
@@ -21117,16 +21091,16 @@
     "answer": "Pohutu",
     "choices": [
       "Pohutu",
-      "Old Faithful",
-      "Strokkur",
+      "Kereru",
+      "Waikorohihi",
       "Lady Knox"
     ],
-    "context": "Pohutu -- Maori for 'big splash' -- is the largest active geyser in the Southern Hemisphere (not the whole world; the tallest active geyser is Yellowstone's Steamboat). Old Faithful also erupts in Yellowstone, Strokkur in Iceland, and Lady Knox is a real geyser at nearby Wai-O-Tapu. Source: en.wikipedia.org/wiki/Pohutu_Geyser",
+    "context": "Pohutu -- Maori for 'big splash' -- is the largest active geyser in the Southern Hemisphere (not the whole world; the tallest active geyser is Yellowstone's Steamboat). Kereru and Waikorohihi are smaller geysers in the same valley, and Lady Knox is a real geyser at nearby Wai-O-Tapu. Sources: en.wikipedia.org/wiki/Pohutu_Geyser ; en.wikipedia.org/wiki/Whakarewarewa",
     "topic": "rotorua"
   },
   {
     "tier": 2,
-    "question": "Te Arawa Maori families at Whakarewarewa village, in Rotorua, still cook the way their grandparents did, with no fire and no stove at all, on ground that steams and bubbles from the heat below. How do they cook a basket of corn, seafood and greens?",
+    "question": "Te Arawa Maori families at Whakarewarewa village, in Rotorua, still cook much as their grandparents did, on ground that steams and bubbles from the heat below. How do they cook a basket of corn, seafood and greens?",
     "answer": "they lower it into a naturally boiling hot spring",
     "choices": [
       "they lower it into a naturally boiling hot spring",
@@ -21139,15 +21113,15 @@
   },
   {
     "tier": 3,
-    "question": "At the Whakarewarewa valley in Rotorua, one smaller geyser can be trusted to play first. It sprays up 7 to 9 meters a few minutes before the big geyser roars to life. Guides watch it as a natural signal that the great eruption is about to begin. What is this smaller signal geyser called?",
-    "answer": "the Prince of Wales Feathers Geyser",
+    "question": "At the Whakarewarewa valley in Rotorua, one smaller geyser can be trusted to play first: it jets 7 to 9 metres high a little before the big geyser roars to life. A royal visit in 1901 gave it a grander name. What had it been called before?",
+    "answer": "the Indicator",
     "choices": [
-      "the Prince of Wales Feathers Geyser",
-      "the Lady Knox Geyser",
-      "the Kereru Geyser",
-      "the Waimangu Geyser"
+      "the Indicator",
+      "the Messenger",
+      "the Trumpeter",
+      "the Watchman"
     ],
-    "context": "The Prince of Wales Feathers Geyser got its name during a 1901 royal visit, because its triple plume resembled the three feathers of the Prince of Wales crest; it reliably plays just before Pohutu, so it earns the nickname 'the Indicator.' Kereru is another Whakarewarewa geyser, Lady Knox is at Wai-O-Tapu, and Waimangu was a famous New Zealand geyser (now dormant). Source: en.wikipedia.org/wiki/Whakarewarewa",
+    "context": "Its eruptions usually come just before Pohutu's, so it was first known as the Indicator; in 1901 it was renamed the Prince of Wales Feathers Geyser in honour of that year's royal visit. Sources: en.wikipedia.org/wiki/Whakarewarewa ; teara.govt.nz/en/hot-springs-mud-pools-and-geysers/3",
     "topic": "rotorua"
   },
   {
@@ -21184,9 +21158,9 @@
       "rhyolite",
       "basalt",
       "andesite",
-      "obsidian"
+      "scoria"
     ],
-    "context": "Rhyolite is a pale, silica-rich lava that tends to erupt explosively rather than flow quietly. The Taupo Volcanic Zone is the most productive rhyolitic volcanic region on Earth, which is why the whole area -- Rotorua's geysers included -- sits over such shallow, restless heat. Basalt, andesite and obsidian are other real volcanic rocks, but the zone's record is for rhyolite. Source: en.wikipedia.org/wiki/Taupo_Volcanic_Zone",
+    "context": "Rhyolite is a pale, silica-rich lava that tends to erupt explosively rather than flow quietly. The Taupo Volcanic Zone is the most productive rhyolitic volcanic region on Earth, which is why the whole area -- Rotorua's geysers included -- sits over such shallow, restless heat. Basalt, andesite and scoria are other real volcanic rocks, but the zone's record is for rhyolite. Source: en.wikipedia.org/wiki/Taupo_Volcanic_Zone",
     "topic": "rotorua"
   },
   {
@@ -21217,11 +21191,11 @@
   },
   {
     "tier": 2,
-    "question": "Every morning at Ryoan-ji, a monk rakes the white gravel into long straight lines and curved sweeps around each of the fifteen stones. In a dry Zen garden like this, the raked gravel is meant to stand for one natural element. What does the raked gravel represent?",
+    "question": "Every morning at Ryoan-ji, a monk rakes the white gravel into long straight lines and curved sweeps around each of the fifteen stones. In the usual reading of a dry Zen garden like this, the raked gravel stands for one natural element. What does it represent?",
     "answer": "the open sea",
     "choices": [
       "the open sea",
-      "drifting clouds",
+      "a sandy desert",
       "a windswept plain",
       "a field of snow"
     ],
@@ -21269,13 +21243,13 @@
   },
   {
     "tier": 1,
-    "question": "A blinding white plain runs perfectly flat to the horizon in every direction on the Altiplano, the high treeless plateau of Bolivia's Andes, nearly two miles above the sea. No hill, rock, plant or bird breaks it. What world record does this Bolivian plain hold?",
+    "question": "A blinding white plain runs perfectly flat to the horizon in every direction on the Altiplano, the high treeless plateau of Bolivia's Andes, more than two miles above the sea. Mile after mile, almost nothing breaks it. What world record does this Bolivian plain hold?",
     "answer": "the world's largest salt flat",
     "choices": [
       "the world's largest salt flat",
       "the world's largest sand sea",
-      "the world's largest ice sheet",
-      "the world's largest tidal flat"
+      "the world's largest frozen lake",
+      "the world's largest gypsum desert"
     ],
     "context": "The Salar de Uyuni sprawls across 10,582 km2 of the Bolivian Altiplano -- roughly 100 times the size of the USA's Bonneville Salt Flats -- making it the largest salt flat on Earth. Source: https://en.wikipedia.org/wiki/Salar_de_Uyuni",
     "topic": "salar-de-uyuni"
@@ -21295,7 +21269,7 @@
   },
   {
     "tier": 2,
-    "question": "Small hotels stand on the Salar de Uyuni, a treeless plain high in the Bolivian Andes, hundreds of kilometres from the nearest forest or quarry. With no wood or stone to build with, their builders cut walls, beds and tables from the one thing the plain offers without limit. What is that material?",
+    "question": "Small hotels stand at the edge of the Salar de Uyuni, a treeless plain high in the Bolivian Andes, far from any forest. Their builders cut the walls, beds and tables from the one thing the plain offers without limit. What is that material?",
     "answer": "blocks of salt",
     "choices": [
       "blocks of salt",
@@ -21303,7 +21277,7 @@
       "blocks of glacial ice",
       "slabs of volcanic tuff"
     ],
-    "context": "With no rock or timber for hundreds of kilometres, hotels here -- the Palacio de Sal, Luna Salada, and Playa Blanca -- are built almost entirely of cut salt blocks: walls, beds, tables, and floors. Source: https://www.forbes.com/sites/jimdobson/2018/01/05/escape-to-the-last-jedi-battleground-in-bolivia-and-stay-in-a-hotel-made-entirely-out-of-salt/",
+    "context": "Far from any forest, hotels here -- among them the Palacio de Sal and Luna Salada -- are built almost entirely of cut salt blocks: walls, beds, tables, and floors. Source: https://www.forbes.com/sites/jimdobson/2018/01/05/escape-to-the-last-jedi-battleground-in-bolivia-and-stay-in-a-hotel-made-entirely-out-of-salt/",
     "topic": "salar-de-uyuni"
   },
   {
@@ -21342,7 +21316,7 @@
       "mineral ash blasted out by nearby volcanoes",
       "salt dust blown up from the Atacama Desert"
     ],
-    "context": "The whole flat is the dried bed of Lake Tauca, an Ice-Age lake that filled the basin during the Pleistocene and then evaporated away roughly 12,000-13,000 years ago, leaving the salt behind. Source: https://en.wikipedia.org/wiki/Salar_de_Uyuni",
+    "context": "The flat is the dried bed of a chain of Ice-Age lakes that filled the basin one after another: Lake Minchin some 30,000-42,000 years ago, then Lake Tauca, then Lake Coipasa, dated to roughly 11,500-13,400 years ago. As the last of them dried, it left the salt behind. Source: https://en.wikipedia.org/wiki/Salar_de_Uyuni",
     "topic": "salar-de-uyuni"
   },
   {
@@ -21355,7 +21329,7 @@
       "spiny agaves",
       "puya plants"
     ],
-    "context": "Incahuasi Island's giant cacti (Trichocereus/Echinopsis) reach up to 12 m and grow only about 1 cm a year, so the tallest are over a thousand years old. The 'island' itself is fossilized coral and stromatolites -- a petrified reef stranded at about 3,650 m, proof this white desert was once underwater. Source: https://www.machupicchu.org/isla-incahuasi-2026-the-cactus-island-in-the-uyuni-salt-flats.htm",
+    "context": "Incahuasi Island's giant cacti (Trichocereus/Echinopsis) reach up to 12 m and grow only about 1 cm a year, so the tallest are over a thousand years old. The 'island' itself is the summit of an ancient volcano, crusted with fragile, coral-like fossil deposits of algae left by the great lakes that once drowned the basin. Sources: https://www.machupicchu.org/isla-incahuasi-2026-the-cactus-island-in-the-uyuni-salt-flats.htm ; https://en.wikipedia.org/wiki/Salar_de_Uyuni",
     "topic": "salar-de-uyuni"
   },
   {
@@ -21520,11 +21494,11 @@
     "answer": "samba",
     "choices": [
       "samba",
-      "tango",
-      "rumba",
-      "calypso"
+      "maxixe",
+      "choro",
+      "lundu"
     ],
-    "context": "Tia Ciata's home in the Pequena África (Little Africa) district near the port was the legendary incubator: the Bahian 'tias baianas' (aunties) mixed Candomblé, cooking, and drumming into the new urban samba. The other choices are real genres born elsewhere — tango in Buenos Aires, rumba in Cuba, calypso in Trinidad. Source: Wikipedia 'Samba' (https://en.wikipedia.org/wiki/Samba).",
+    "context": "Tia Ciata's home in the Pequena África (Little Africa) district near the port was the legendary incubator: the Bahian 'tias baianas' (aunties) mixed Candomblé, cooking, and drumming into the new urban samba. Maxixe, choro and lundu are real Brazilian styles too, but all of them are older than samba. Source: Wikipedia 'Samba' (https://en.wikipedia.org/wiki/Samba).",
     "topic": "samba-and-bossa-nova-rio-de-janeiro"
   },
   {
@@ -21534,15 +21508,15 @@
     "choices": [
       "the Sambadrome",
       "the Maracanã",
-      "the Copacabana Palace",
-      "the Teatro Municipal"
+      "the Maracanãzinho",
+      "the Engenhão"
     ],
-    "context": "The Sambódromo Marquês de Sapucaí opened in 1984; its roughly 700 m avenue ends at Niemeyer's giant tri-legged 'Apotheosis' arch. The other choices are all real Rio landmarks — the Maracanã football stadium, the Copacabana Palace hotel, and the Teatro Municipal opera house. Source: Wikipedia 'Sambadrome Marquês de Sapucaí' (https://en.wikipedia.org/wiki/Sambadrome_Marqu%C3%AAs_de_Sapuca%C3%AD).",
+    "context": "The Sambódromo Marquês de Sapucaí opened in 1984; its roughly 700 m avenue ends at Niemeyer's giant tri-legged 'Apotheosis' arch. The Maracanã is the city's great football stadium, the Maracanãzinho its indoor arena of 1954, and the Engenhão a football stadium opened in 2007. Source: Wikipedia 'Sambadrome Marquês de Sapucaí' (https://en.wikipedia.org/wiki/Sambadrome_Marqu%C3%AAs_de_Sapuca%C3%AD).",
     "topic": "samba-and-bossa-nova-rio-de-janeiro"
   },
   {
     "tier": 2,
-    "question": "Rio de Janeiro's police often harassed Black street drummers in the 1920s for playing. Musicians from the Estácio neighbourhood struck back around 1929, forming the first organised Carnival group and naming it Deixa Falar, Let Them Talk. The idea spread, and rival groups still parade for the Carnival crown. What are these groups called?",
+    "question": "Rio de Janeiro's police often harassed Black street drummers in the 1920s for playing. Estácio musicians struck back in 1928 with Deixa Falar, Let Them Talk, a Carnival group usually counted as the first of its kind. The idea spread, and rival groups still parade for the Carnival crown. What are these groups called?",
     "answer": "samba schools",
     "choices": [
       "samba schools",
@@ -21550,7 +21524,7 @@
       "comparsa bands",
       "murga troupes"
     ],
-    "context": "'Deixa Falar' (c. 1929, Estácio) pioneered the escola de samba model, and marching as one organized group also helped shield players from the police. The other choices are real Carnival groups from other places — New Orleans has krewes, Cuba and Argentina have comparsas, Uruguay has murgas. Source: Wikipedia 'Samba' (https://en.wikipedia.org/wiki/Samba).",
+    "context": "'Deixa Falar' (founded 1928, Estácio) pioneered the escola de samba model, and marching as one organized group also helped shield players from the police. The other choices are real Carnival groups from other places — New Orleans has krewes, Cuba and Argentina have comparsas, Uruguay has murgas. Source: Wikipedia 'Samba' (https://en.wikipedia.org/wiki/Samba).",
     "topic": "samba-and-bossa-nova-rio-de-janeiro"
   },
   {
