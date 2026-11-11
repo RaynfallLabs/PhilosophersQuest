@@ -20359,7 +20359,7 @@
   },
   {
     "tier": 1,
-    "question": "In warm oceans around the world, an air-breathing reptile lives at sea, feeding and sleeping underwater and rising to breathe. Its legs are broad flippers under a smooth, streamlined shell, and only a female ever comes ashore, to lay eggs. What is it?",
+    "question": "In warm oceans around the world, an air-breathing reptile lives at sea, feeding and sleeping underwater and rising to breathe. Its legs are broad flippers under a smooth, streamlined shell, and the females crawl ashore at night to lay eggs. What is it?",
     "answer": "a sea turtle",
     "choices": [
       "a sea turtle",
@@ -20367,7 +20367,7 @@
       "a sea lion",
       "a sea snake"
     ],
-    "context": "The sea turtle is a fully marine reptile: air-breathing lungs, flipper-limbs, and a low streamlined shell for gliding. Only nesting females come ashore. Otters, sea lions, and sea snakes are decoys that share the ocean but not the reptile-with-flippers-and-a-shell body plan. Source: NOAA Fisheries / Britannica (sea turtle overview).",
+    "context": "The sea turtle is a fully marine reptile: air-breathing lungs, flipper-limbs, and a low streamlined shell for gliding. Nesting females come ashore to lay eggs, and in a few places green turtles of both sexes also haul out to bask. Sea otters and sea lions are mammals, and a sea snake has neither flippers nor a shell. Source: NOAA Fisheries / Britannica (sea turtle overview); Wikipedia 'Green sea turtle' (basking in both sexes).",
     "topic": "sea-turtle"
   },
   {
@@ -20424,7 +20424,7 @@
   },
   {
     "tier": 4,
-    "question": "Scientists sampled young green turtles on Raine Island, a tiny sandy cay on the northern Great Barrier Reef and the world's largest green turtle rookery. Its beaches had grown very hot. What had that heat done to the young turtles there?",
+    "question": "Scientists caught young green turtles at feeding grounds on the northern Great Barrier Reef and traced them by their DNA to the hot nesting beaches around Raine Island, a tiny cay that is the world's largest green turtle rookery. What had that heat done to the young turtles?",
     "answer": "over 99% hatched female",
     "choices": [
       "over 99% hatched female",
@@ -20432,12 +20432,12 @@
       "almost none survived to hatch",
       "the sexes stayed near 50/50"
     ],
-    "context": "Warmer sand makes females, so hotter beaches skew nests female. At Raine Island over 99% of the young green sea turtles studied had hatched as females, leaving almost no males for the future. Source: fisheries.noaa.gov ; National Geographic 2018.",
+    "context": "Warmer sand makes females, so hotter beaches skew nests female. Jensen and colleagues (Current Biology, 2018) caught green turtles at the Howick Group feeding grounds, used DNA to find their home beaches and hormones to sex them: of the juveniles from the warm northern rookeries, where Raine Island holds most of the nests, 99.1 percent were female, leaving almost no males for the future. Source: WWF-Australia, 9 Jan 2018; National Geographic 2018.",
     "topic": "sea-turtle"
   },
   {
     "tier": 2,
-    "question": "A leatherback sea turtle crosses whole oceans hunting jellyfish, its main food. Leatherbacks are endangered, partly because of a deadly mistake at sea: a common piece of trash drifts in the water looking almost exactly like a jellyfish, and the turtles swallow it. What is it?",
+    "question": "A leatherback sea turtle crosses whole oceans hunting jellyfish, its main food. Leatherbacks are listed as vulnerable, partly because of a deadly mistake at sea: a common piece of trash drifts in the water looking almost exactly like a jellyfish, and the turtles swallow it. What is it?",
     "answer": "a floating plastic bag",
     "choices": [
       "a floating plastic bag",
@@ -20445,7 +20445,7 @@
       "an oil slick on the surface",
       "a scrap of foam netting"
     ],
-    "context": "A floating plastic bag looks just like a jellyfish to a leatherback, so the turtles swallow it by mistake, one reason they are critically endangered. Source: oceanicsociety.org ; SEE Turtles (seeturtles.org).",
+    "context": "A floating plastic bag looks just like a jellyfish to a leatherback, so the turtles swallow it by mistake, one reason the species is listed as vulnerable worldwide, with several Pacific populations critically endangered. Source: oceanicsociety.org ; SEE Turtles (seeturtles.org).",
     "topic": "sea-turtle"
   },
   {
@@ -20463,15 +20463,15 @@
   },
   {
     "tier": 5,
-    "question": "Archelon, the largest sea turtle that ever lived, swam a Cretaceous sea over the land that is now the Dakotas. It was as heavy as a rhino and wore a leathery, ridged back much like a modern leatherback's, yet the likeness is a coincidence: its family split off long before today's sea turtles arose. Which group of turtles does Archelon belong to?",
-    "answer": "Protostegidae, an early branch outside the living sea-turtle line",
+    "question": "The biggest sea turtle that ever lived swam a Cretaceous sea over the land that is now the Dakotas. Its largest skeleton, nicknamed Brigitta, stretches some 4.6 meters; the animal outweighed a rhino and wore a leathery, ridged back like a leatherback's. What was this giant?",
+    "answer": "Archelon",
     "choices": [
-      "Protostegidae, an early branch outside the living sea-turtle line",
-      "Dermochelyidae, the same family as the modern leatherback",
-      "Cheloniidae, the family of green and loggerhead turtles",
-      "Chelydridae, the branch that leads to snapping turtles"
+      "Archelon",
+      "Toxochelys",
+      "Protostega",
+      "Meiolania"
     ],
-    "context": "The giant is Archelon, a Late Cretaceous sea turtle (Campanian, ~80-74 million years ago) from the Pierre Shale of the Dakotas. The biggest specimen, nicknamed 'Brigitta' (found 1992, now in the Natural History Museum Vienna), stretched ~4.6 m (15 ft) head-to-tail, spanned ~4 m (13 ft) flipper-to-flipper, and weighed an estimated 2,200+ kg -- roughly 3.5 times the biggest living leatherback. Like a leatherback it had a leathery, ridged carapace rather than a hard bony shell. But Archelon belongs to the Protostegidae, a basal lineage that does not share a marine ancestor with today's sea turtles -- so the leathery shell arose twice by convergent evolution, not by descent. Source: Wikipedia 'Archelon' (Brigitta 4.6 m / 4 m / 2.2-3.2 t, Campanian 80.21-74.21 Ma, Pierre Shale, leathery ridged carapace, Protostegidae basal lineage); Grokipedia 'Archelon'.",
+    "context": "The giant is Archelon, a Late Cretaceous sea turtle (about 80 to 74 million years ago) from the Pierre Shale of the Dakotas. The biggest specimen, nicknamed 'Brigitta' (found 1992, now in the Natural History Museum Vienna), is about 4.6 m (15 ft) long and is estimated at over 2,200 kg. Like a leatherback it had a leathery, ridged carapace, but it belongs to the Protostegidae, which recent studies place outside the living sea turtles, so the leathery back arose twice. Protostega was a smaller sea turtle of the same family, Toxochelys a much smaller sea turtle of the same seas, and Meiolania a horned land turtle. Source: Wikipedia 'Archelon'; Grokipedia 'Archelon'.",
     "topic": "sea-turtle"
   },
   {
@@ -20481,10 +20481,10 @@
     "choices": [
       "countercurrent exchangers where warm and cold blood vessels run side by side",
       "a dense coat of waterproof insulating fur beneath the tough outer skin",
-      "basking at the surface between dives to reheat the chilled flippers",
-      "pulling all blood back from the flippers into the body core while diving"
+      "a natural antifreeze in its blood that keeps the flippers from chilling",
+      "a layer of trapped air bubbles held under its ridged, leathery skin"
     ],
-    "context": "This warm-bodied strategy is called gigantothermy (regional endothermy). Constantly swimming muscle generates heat; countercurrent heat exchangers in the flippers and around the windpipe -- where outgoing warm blood runs alongside incoming cold blood and hands off its heat -- plus a thick layer of insulating brown fat trap that warmth. The result is a core body temperature up to 18 C (32 F) above the surrounding water. That heat budget lets a leatherback forage where no other reptile can: one was recorded actively hunting jellyfish in water as cold as 0.4 C (near freezing), rewarming at the surface between dives. It is why a tropical-nesting turtle can feed off Canada and into sub-polar seas. Source: Wikipedia 'Leatherback sea turtle' (core up to 18 C above water; countercurrent exchangers in flippers and around the trachea; brown adipose tissue; hunting at 0.4 C); gigantothermy literature (Paladino et al.).",
+    "context": "This warm-bodied strategy is called gigantothermy (regional endothermy). Constantly swimming muscle generates heat; countercurrent heat exchangers in the flippers and around the windpipe -- where outgoing warm blood runs alongside incoming cold blood and hands off its heat -- plus a thick layer of insulating brown fat trap that warmth. The result is a core body temperature up to 18 C (32 F) above the surrounding water. That heat budget lets a leatherback forage where no other reptile can: one was recorded actively hunting jellyfish in water as cold as 0.4 C (near freezing). It is why a tropical-nesting turtle can feed off Canada and into sub-polar seas. Source: Wikipedia 'Leatherback sea turtle' (core up to 18 C above water; countercurrent exchangers in flippers and around the trachea; brown adipose tissue; hunting at 0.4 C); gigantothermy literature (Paladino et al.).",
     "topic": "sea-turtle"
   },
   {
@@ -20683,21 +20683,8 @@
     "topic": "seeing-heat-the-pit-vipers-infrared-eye"
   },
   {
-    "tier": 2,
-    "question": "Researchers blindfolded a rattlesnake so its eyes were completely covered, then loosed a mouse in total darkness. The snake still struck fast and true, and the spot where its fangs landed most often was the same on mouse after mouse. Where did the strikes land most often?",
-    "answer": "On the chest",
-    "choices": [
-      "On the chest",
-      "On the tail",
-      "On the head",
-      "On the belly"
-    ],
-    "context": "Blindfolded, a rattlesnake still strikes a mouse dead-on in total darkness, hitting the chest -- the hottest-glowing part -- about 99% of the time, because it 'sees' the animal purely by heat. Legendary-level feat. Source: A-Z Animals research summary (https://a-z-animals.com/blog/viper-pits-infrared/).",
-    "topic": "seeing-heat-the-pit-vipers-infrared-eye"
-  },
-  {
     "tier": 3,
-    "question": "A fer-de-lance hunts in the dark, guided by two pits on its face, one on each side. Inside each pit there is no eye and no lens at all, only a tiny air-filled chamber with one ultra-thin sheet stretched across it. What is that sheet, and what does a warm mouse's body heat do to it?",
+    "question": "A fer-de-lance hunts in the dark, guided by two pits on its face, one on each side. Inside each pit there is no eye and no lens at all, only a tiny air-filled chamber. What sits inside that chamber, and what does a warm mouse's body heat do to it?",
     "answer": "A membrane that warms where the heat lands",
     "choices": [
       "A membrane that warms where the heat lands",
@@ -20723,7 +20710,7 @@
   },
   {
     "tier": 3,
-    "question": "A pit viper carries one heat pit on the left of its head and one on the right. A single pit could tell the snake a warm animal is out there, but two of them working together unlock something a single pit never could. What does having two pits give the snake?",
+    "question": "A pit viper carries one heat pit on the left of its head and one on the right. A single pit could tell the snake a warm animal is out there, but researchers think the two working together unlock something a single pit never could. What do they think the pair gives the snake?",
     "answer": "A sense of how far away the prey is",
     "choices": [
       "A sense of how far away the prey is",
@@ -20731,7 +20718,7 @@
       "A brighter, sharper heat picture",
       "A memory of where prey passed before"
     ],
-    "context": "With a pit on each side of the head, the two overlapping heat-images give stereoscopic thermal vision -- a rough depth-map -- so the snake can triangulate how far away the prey is and aim a strike it cannot see with its eyes. Source: SnakeSnuggles / Wikipedia paired-organ depth perception (https://en.wikipedia.org/wiki/Infrared_sensing_in_snakes).",
+    "context": "With a pit on each side of the head, the two overlapping heat images are thought to work like stereo vision, a rough depth map that helps the snake judge how far away the prey is. In one test, pit vipers with both pits covered struck from shorter range, and those with only one pit working hunted less well. Source: Chen et al. 2012, PLoS ONE 7(5):e34989 (https://pmc.ncbi.nlm.nih.gov/articles/PMC3351397/).",
     "topic": "seeing-heat-the-pit-vipers-infrared-eye"
   },
   {
@@ -20742,9 +20729,9 @@
       "The searing burn of wasabi up the nose",
       "The icy tingle of fresh peppermint",
       "The sour pucker of a lemon",
-      "The watering sting of chopped onion"
+      "The fiery heat of a chili pepper"
     ],
-    "context": "The molecular trigger in the pit is TRPA1 -- the 'wasabi receptor' channel that in mammals makes us feel the painful burn of wasabi and mustard oil. In pit vipers it is retuned to fire on heat, becoming the most heat-sensitive vertebrate ion channel known. Source: Gracheva et al. 2010, Nature 464:1006-1011 (https://pmc.ncbi.nlm.nih.gov/articles/PMC2855400/). Legendary-level surprise: our wasabi-pain channel is the snake's night-vision.",
+    "context": "The molecular trigger in the pit is TRPA1, the 'wasabi receptor' channel that in mammals produces the painful burn of wasabi and mustard oil. In pit vipers it is retuned to fire on heat, becoming the most heat-sensitive vertebrate ion channel known. A chili pepper's heat works on a different channel, TRPV1. Source: Gracheva et al. 2010, Nature 464:1006-1011 (https://pmc.ncbi.nlm.nih.gov/articles/PMC2855400/).",
     "topic": "seeing-heat-the-pit-vipers-infrared-eye"
   },
   {
@@ -20754,8 +20741,8 @@
     "choices": [
       "Each group evolved it separately",
       "One ancient ancestor passed it to all three",
-      "It jumped between them by interbreeding",
-      "One group taught the trick to the others"
+      "A virus carried the heat gene between them",
+      "They picked it up by eating warm-blooded prey"
     ],
     "context": "Pit vipers, pythons, and boas each invented heat-sensing pits SEPARATELY -- infrared sense arose by convergent evolution, with snakes adapting the TRPA1 channel into a heat sensor more than once. On the snake family tree these groups sit only distantly apart, with many pit-less snakes between them, so a single shared ancestor cannot explain it. The anatomy differs too: one large pit per side in vipers versus rows of smaller lip pits in boas and pythons. Source: Gracheva et al. 2010 discussion (https://pmc.ncbi.nlm.nih.gov/articles/PMC2855400/).",
     "topic": "seeing-heat-the-pit-vipers-infrared-eye"
@@ -20788,7 +20775,7 @@
   },
   {
     "tier": 2,
-    "question": "A young sheepshead starts life eating only soft food, drifting zooplankton and marine worms, nothing it has to break into. A grown one cruises the pilings of a pier crunching barnacles, oysters and small crabs that most reef fish will not touch. What grows in its mouth to make that switch possible?",
+    "question": "A young sheepshead starts life eating only soft food, drifting zooplankton and marine worms, nothing it has to break into. A grown one cruises the pilings of a pier crunching barnacles, oysters and small crabs, shells and all. What grows in its mouth to make that switch possible?",
     "answer": "Broad shell-crushing molars",
     "choices": [
       "Broad shell-crushing molars",
@@ -20796,7 +20783,7 @@
       "A single hooked beak",
       "A rough rasping tongue"
     ],
-    "context": "The sheepshead carries rows of blunt, flat molars at the back of its jaws, purpose-built to grind through armor. It eats barnacles, oysters, clams, and crabs, crushing shells the way our molars grind food. Juvenile sheepshead eat soft prey like zooplankton, marine worms, and insect larvae, and only develop the strong shell-crushing molars and switch to barnacles, crabs, and oysters as they grow.",
+    "context": "The sheepshead carries rows of blunt, flat molars at the back of its jaws, purpose-built to grind through armor. It eats barnacles, oysters, clams, and crabs, crushing shells the way human molars grind food. Juvenile sheepshead eat soft prey like zooplankton, marine worms, and insect larvae, and only develop the strong shell-crushing molars and switch to barnacles, crabs, and oysters as they grow.",
     "topic": "sheepshead-fish-archosargus-probatocephalus"
   },
   {
@@ -20827,15 +20814,15 @@
   },
   {
     "tier": 3,
-    "question": "Each spring a male and a female shingleback skink find each other again at the very same spot in the Australian scrub, the same couple season after season. Most lizards mate briefly and never meet the partner again. In one documented case, how long had a single couple kept coming back to each other?",
-    "answer": "Over 27 years",
+    "question": "Each spring a male and a female shingleback skink find each other again at the very same spot in the Australian scrub, the same couple season after season. Most lizards mate briefly and never meet the partner again. In one long-term study, how long had the longest-lasting couple kept reuniting?",
+    "answer": "About 27 years",
     "choices": [
-      "Over 27 years",
+      "About 27 years",
       "About one season",
-      "Around 3 years",
-      "Roughly 10 years"
+      "About 3 years",
+      "About 10 years"
     ],
-    "context": "The shingleback is the only known monogamous reptile; some documented pairs stayed together over 20 years, and one couple in a long-term study was still reuniting after 27 years. Marked legend for its extraordinary duration. Source: https://blog.nature.org/2021/09/20/the-love-stories-of-sleepy-lizards/",
+    "context": "The shingleback is one of very few reptiles known to be monogamous. Pairs reunite every spring, some for 20 years or more, and in Michael Bull's long-term study one couple was still together after 27 years. Source: https://blog.nature.org/2021/09/20/the-love-stories-of-sleepy-lizards/ ; https://en.wikipedia.org/wiki/Tiliqua_rugosa",
     "topic": "shingleback-skink-the-lizard-with-a-tail-shaped-like-its-hea"
   },
   {
@@ -20866,7 +20853,7 @@
   },
   {
     "tier": 2,
-    "question": "A five-foot grey bird stands frozen at the edge of a papyrus swamp along the White Nile, barely blinking. Its enormous bill, nine inches long and wide as a shoe, ends in a sharp hook. It holds that bill over the shallow water for hours, waiting for a lungfish to surface. Which bird is it?",
+    "question": "A towering grey bird stands frozen at the edge of a papyrus swamp along the White Nile, barely blinking. Its enormous bill, nine inches long and wide as a shoe, ends in a sharp hook. It holds that bill over the shallow water for hours, waiting for a lungfish to surface. Which bird is it?",
     "answer": "shoebill",
     "choices": [
       "shoebill",
@@ -20880,9 +20867,9 @@
   {
     "tier": 2,
     "question": "A shoebill stands so still in a papyrus swamp of South Sudan that dragonflies land on its head, waiting for a big fish to surface for air. The instant a fish breaks the water, the bird 'collapses', as its keepers say. What does it pitch forward all at once?",
-    "answer": "all five feet of itself, bill wide open",
+    "answer": "its whole body, bill wide open",
     "choices": [
-      "all five feet of itself, bill wide open",
+      "its whole body, bill wide open",
       "only its long neck and head",
       "a single grabbing foot",
       "its outstretched wings"
@@ -20905,28 +20892,28 @@
   },
   {
     "tier": 3,
-    "question": "A male shoebill in an African papyrus swamp warns off a rival by snapping the two halves of his massive bill together, like a pair of wooden shoes clapping shut. Shoebills have no true voice, no croak, no honk, no whistle, and males and females clap in different tones. What does the bill-snapping sound like?",
+    "question": "A male shoebill in an African papyrus swamp warns off a rival by snapping the two halves of his massive bill together, like a pair of wooden shoes clapping shut. Shoebills are normally silent birds, and males and females clap in different tones. What does the bill-snapping sound like?",
     "answer": "hollow machine-gun clattering",
     "choices": [
       "hollow machine-gun clattering",
       "a single deep bill-clap",
-      "a slow wooden knocking like castanets",
+      "a slow tapping like a ticking clock",
       "a soft rattle like dice in a cup"
     ],
-    "context": "This bill-clattering is loud and rapid, the shoebill's main way of communicating. Source: Audubon, 'The Shoebill'; San Diego Zoo Wildlife Alliance.",
+    "context": "This bill-clattering is loud and rapid, the shoebill's main way of communicating. Otherwise the bird is mostly silent, though adults sometimes moo like cattle and chicks make a hiccuping sound. Source: Audubon, 'The Shoebill'; San Diego Zoo Wildlife Alliance; Wikipedia 'Shoebill'.",
     "topic": "shoebill"
   },
   {
     "tier": 2,
-    "question": "Reared up on its hind legs, Arctodus simus, the giant short-faced bear of ice-age North America, stood about 11 or 12 feet tall, twice the height of a tall adult human and the tallest bear that ever lived. Its head would have been level with what everyday thing?",
+    "question": "Reared up on its hind legs, the biggest Arctodus simus, the giant short-faced bear of ice-age North America, stood about 11 feet tall, nearly twice the height of a tall man and one of the tallest bears that ever lived. Its head would have been level with what everyday thing?",
     "answer": "the rim of a basketball hoop",
     "choices": [
       "the rim of a basketball hoop",
-      "the top of a school-bus roof",
+      "the top of a front door",
       "the crossbar of a soccer goal",
       "the seat of a tall barstool"
     ],
-    "context": "Reared up, the giant short-faced bear stood about 11-12 feet (3.4-3.7 m) - tall enough to look a person square in the eye over the rim of a basketball hoop, which sits at 10 feet. It is the tallest bear known to have ever lived. Source: University of Iowa Museum of Natural History (mnh.uiowa.edu/giant-short-faced-bear); North American Bear Center (bear.org).",
+    "context": "Reared up, the biggest giant short-faced bears stood about 11 feet (3.4 m), so a large one's head would have been level with the rim of a basketball hoop, which sits at 10 feet. It was one of the tallest bears that ever lived; its South American cousin Arctotherium angustidens may have stood taller still. Source: Wikipedia 'Arctodus' (2.4-3.4 m standing); Wikipedia 'Arctotherium' (3.4-4.3 m).",
     "topic": "short-faced-bear"
   },
   {
@@ -20950,33 +20937,33 @@
       "no shorter at all, only deeper and broader, so it merely looked stubby",
       "shortened by a childhood injury that healed into a crushed snout",
       "an illusion caused by worn canines that had snapped near the gumline",
-      "genuinely the shortest muzzle of any bear, exactly as the name claims"
+      "short only in the biggest males, while females kept long snouts"
     ],
     "context": "The stubby look comes from a deep snout and short nasal bones typical of tremarctine (short-faced) bears; the face is actually taller and wider than most living bears', not shorter. So the trait that gave Arctodus its name turns out to be a trick of proportion. Source: Figueirido et al. 2010, 'Demythologizing Arctodus simus,' Journal of Vertebrate Paleontology 30(1):262-275.",
     "topic": "short-faced-bear"
   },
   {
     "tier": 4,
-    "question": "A hospital was going up in La Plata, Argentina, when the skeleton of a bear about a million years old came out of the ground, later estimated at around 1,588 kilograms. Arctodus simus of North America is the tallest bear that ever lived, but this skeleton outweighs it. Which giant is the heaviest bear known to science?",
-    "answer": "Arctotherium angustidens, a cousin of the short-faced bears",
+    "question": "Builders at work on a new hospital dug up the skeleton of a bear about a million years old, later estimated at around 1,588 kilograms. It outweighs Arctodus simus, one of the tallest bears ever. Which giant is the heaviest bear known to science?",
+    "answer": "Arctotherium angustidens, a giant bear of the pampas",
     "choices": [
-      "Arctotherium angustidens, a cousin of the short-faced bears",
+      "Arctotherium angustidens, a giant bear of the pampas",
       "Ursus spelaeus, the cave bear of Ice Age Europe",
-      "Agriotherium africanum, a bear-dog of the open plains",
+      "Agriotherium africanum, a giant bear of ancient Africa",
       "Ursus maritimus tyrannus, a supposed giant polar bear"
     ],
-    "context": "Soibelzon and Schubert (2011) estimated this old male at about 1,588 kg (~3,500 lb), possibly over 1,750 kg — roughly double a large Arctodus and heavier than any bear alive. Its remains turned up in La Plata during hospital construction in 1935. So the short-faced bears hold the height record with Arctodus, but the mass crown sits on the South American branch. Source: Soibelzon & Schubert 2011, 'The Largest Known Bear, Arctotherium angustidens,' Journal of Paleontology 85(1):69-75.",
+    "context": "Soibelzon and Schubert (2011) estimated this old male at about 1,588 kg (~3,500 lb), possibly over 1,750 kg, roughly double a large Arctodus and heavier than any bear alive, with an estimated standing height of 3.4 to 4.3 m. Workers found its remains while building a hospital in La Plata, Argentina, and they reached the La Plata Museum in 1935. Arctotherium was itself a South American short-faced bear, a cousin of Arctodus. Agriotherium was a true bear of Africa, Eurasia and North America, and Ursus maritimus tyrannus is known from a single bone. Source: Soibelzon & Schubert 2011, 'The Largest Known Bear, Arctotherium angustidens,' Journal of Paleontology 85(1):69-75; Wikipedia 'Arctotherium'.",
     "topic": "short-faced-bear"
   },
   {
     "tier": 1,
-    "question": "A male peacock struts into a clearing in an Indian forest and throws up a shimmering fan of feathers nearly a meter and a half long, each tipped with a jewel-like eyespot. People call it his tail, but a biologist would say that is wrong. What is the fan really made of?",
-    "answer": "Elongated feathers that grow above his true tail, called the train",
+    "question": "A peacock struts into a forest clearing in India and throws up a shimmering fan of eyespotted feathers about a meter and a half long. People call it his tail, but a biologist would say that is wrong. What is the fan made of?",
+    "answer": "Long feathers that grow just above his short true tail",
     "choices": [
-      "Elongated feathers that grow above his true tail, called the train",
+      "Long feathers that grow just above his short true tail",
       "Extra-long flight feathers spread out from his folded wings",
       "Stiffened tail-bones fanned open like the ribs of an umbrella",
-      "A skin flap he inflates with air and stretches between his legs"
+      "Long neck feathers he swings back over his whole body"
     ],
     "context": "The fan is the peacock's TRAIN -- about 140 to 170 elongated upper-tail-covert feathers that grow just above the short true tail, each tipped with an ocellus (eyespot) of blue, copper, green and bronze around a heart-shaped black center. At roughly 1.5 metres it makes up about 60% of the whole bird's length. Source: en.wikipedia.org/wiki/Indian_peafowl; earthlife.net peacock feathers.",
     "topic": "showing-off-to-win-a-mate-sexual-selection"
@@ -20996,15 +20983,15 @@
   },
   {
     "tier": 2,
-    "question": "A peacock hauls his giant fan wherever he goes. It is heavy, it slows his flight, and its glitter makes him easy for a fox to spot, a plain burden for survival. Biologists say that burden is exactly the point. How can hauling around such a handicap possibly help him?",
+    "question": "A peacock hauls his giant fan wherever he goes. It is heavy, it slows his flight, and its glitter makes him easy for a fox to spot, a plain burden for survival. Many biologists say that burden is exactly the point. How can hauling around such a handicap possibly help him?",
     "answer": "Only a truly fit male can afford to survive while carrying it",
     "choices": [
       "Only a truly fit male can afford to survive while carrying it",
       "It frightens predators away by making him look far larger",
       "It stores fat reserves he lives off during the breeding season",
-      "It lets him glide farther and escape predators he can't outrun"
+      "It works like a radiator, shedding his heat in the sun"
     ],
-    "context": "A costly, useless-for-survival ornament is honest precisely because it is costly. A weak male could not survive dragging one around; a male who thrives despite it is proving he is fit enough to pay the price and live. Source: en.wikipedia.org/wiki/Handicap_principle; letstalkacademy.com Zahavi handicap.",
+    "context": "This is Amos Zahavi's handicap idea: a costly, useless-for-survival ornament is honest precisely because it is costly. A weak male could not survive dragging one around; a male who thrives despite it is proving he is fit enough to pay the price and live. Not every biologist accepts it; Ronald Fisher's runaway idea is the main rival explanation. Source: en.wikipedia.org/wiki/Handicap_principle.",
     "topic": "showing-off-to-win-a-mate-sexual-selection"
   },
   {
@@ -21017,7 +21004,7 @@
       "The peahens ignored the trains and chose by the loudness of each male's call",
       "The peahens picked the same males as before, unbothered by the change"
     ],
-    "context": "Petrie's snipping test showed peahens judge the eyespots themselves, not just the overall shimmer -- take eyespots away and a male's ranking with the females drops. It was direct proof of what the females are reading in the display. Source: en.wikipedia.org/wiki/Indian_peafowl; birdspot.co.uk 'How the Peacock Got Its Tail'.",
+    "context": "Petrie's snipping test suggested peahens judge the eyespots themselves, not just the overall shimmer: males that lost eyespots won fewer matings. The finding is argued over. A seven-year study of feral peafowl in Japan (Takahashi et al. 2008) found no preference for more eyespots, while Dakin and Montgomerie (2011) found peahens do prefer more eyespots, though it rarely decides their choice. Source: en.wikipedia.org/wiki/Indian_peafowl; Takahashi et al. 2008, Animal Behaviour 75:1209-1219; Dakin & Montgomerie 2011, Animal Behaviour.",
     "topic": "showing-off-to-win-a-mate-sexual-selection"
   },
   {
@@ -21035,15 +21022,15 @@
   },
   {
     "tier": 1,
-    "question": "A male satin bowerbird weaves two parallel walls of twigs into a little avenue on the floor of an eastern Australian forest. In front of it he heaps a hoard of blue treasures: feathers, berries, even bottle caps. When a female flies down to inspect his work, what is she judging?",
-    "answer": "The stage he has built and decorated, not his own plumage",
+    "question": "A male satin bowerbird weaves two parallel walls of twigs into a little avenue on an eastern Australian forest floor and heaps blue treasures in front of it: feathers, berries, even bottle caps. When a female flies down to the avenue, what is she judging?",
+    "answer": "The twig stage he built and decorated",
     "choices": [
-      "The stage he has built and decorated, not his own plumage",
-      "The brightness of the blue feathers growing on his own body",
-      "The height he can leap while hovering over his blue pile",
-      "The distance he carries each blue object back to the nest"
+      "The twig stage he built and decorated",
+      "How well his nest will shelter her eggs",
+      "How much food he has stored for her chicks",
+      "How many rivals he has chased from the clearing"
     ],
-    "context": "The satin bowerbird builds an 'avenue' -- two parallel woven walls of twigs -- then collects a hoard of blue objects: parrot feathers, berries, flowers, cicada wings, even blue caps and pegs. Unusually, the female judges the architecture and the decorating rather than the male's own plumage. Source: en.wikipedia.org/wiki/Satin_bowerbird; acp.eugraph.com Bowerbirds.",
+    "context": "The satin bowerbird builds an 'avenue' -- two parallel woven walls of twigs -- then collects a hoard of blue objects: parrot feathers, berries, flowers, cicada wings, even blue caps and pegs. The female judges that architecture and decorating, and the male's dance at it. The bower is no nest: she builds her nest and raises the chicks on her own. Source: en.wikipedia.org/wiki/Satin_bowerbird; acp.eugraph.com Bowerbirds.",
     "topic": "showing-off-to-win-a-mate-sexual-selection"
   },
   {
@@ -21060,21 +21047,8 @@
     "topic": "showing-off-to-win-a-mate-sexual-selection"
   },
   {
-    "tier": 3,
-    "question": "When a male satin bowerbird flies off from his stage, he leaves his hoard of blue treasures behind on a forest floor where blue things are rare. His rivals have found a shortcut that is not exactly honest work. What does a rival do once he is gone?",
-    "answer": "Raids the empty bower and steals its prize blue feathers",
-    "choices": [
-      "Raids the empty bower and steals its prize blue feathers",
-      "Tramples the twig walls flat so the owner must rebuild",
-      "Copies the exact layout to build a matching bower nearby",
-      "Sings from the stolen bower to trick the female into landing"
-    ],
-    "context": "Because blue is so scarce, males raid rivals' bowers to swipe their blue treasures. Gerald Borgia found that older, more experienced males build neater bowers and amass more blue loot -- partly by out-thieving the competition. Source: pbs.org bower-bird-blues; Borgia bowerbird research.",
-    "topic": "showing-off-to-win-a-mate-sexual-selection"
-  },
-  {
     "tier": 4,
-    "question": "The male great bowerbird (Ptilonorhynchus nuchalis) paves his court with grey stones, bones and shells, but not at random: he sets the smallest pieces near the female's viewing spot and the largest at the far back. Laura Kelley and John Endler found the males who arrange this best win the most mates. What does that careful size-gradient create?",
+    "question": "The male great bowerbird (Chlamydera nuchalis) paves his court with grey stones, bones and shells, but not at random: he sets the smallest pieces near the female's viewing spot and the largest at the far back. Laura Kelley and John Endler found the males who arrange this best win the most mates. What does that careful size-gradient create?",
     "answer": "A forced-perspective illusion that alters how the scene looks",
     "choices": [
       "A forced-perspective illusion that alters how the scene looks",
@@ -21082,7 +21056,7 @@
       "A hidden count that lets the female judge how long he's worked",
       "A ramp the male struts up to appear taller as he approaches"
     ],
-    "context": "Small-to-large from front to back is forced perspective -- the same trick stage designers use. Kelley and Endler (2012) found males who build the strongest illusion win the most mates, meaning the female is responding to a visual trick, not just a pile of stones. Source: pnas.org/doi/10.1073/pnas.1208350109 (Kelley & Endler 2012). (legend)",
+    "context": "Small-to-large from front to back is forced perspective -- the same trick stage designers use. Kelley and Endler (2012) found males who build the strongest illusion win the most mates, meaning the female is responding to a visual trick, not just a pile of stones. Source: Kelley & Endler 2012, 'Illusions promote mating success in great bowerbirds,' Science 335:335-338; Endler, Endler & Doerr 2010, Current Biology.",
     "topic": "showing-off-to-win-a-mate-sexual-selection"
   },
   {
@@ -21095,7 +21069,7 @@
       "He gathers blue berries to hold up during the dance",
       "He molts his dull outer feathers to reveal the black cape"
     ],
-    "context": "He first clears a patch of forest floor into a clean dance-stage, then performs -- and if his moves aren't flawless, the female just walks away. The stage is part of the standards she holds him to. Source: audubon.org superb bird-of-paradise; allaboutbirds.org Vogelkop superb bird-of-paradise. (legend)",
+    "context": "He first clears a patch of forest floor into a clean dance-stage, then performs -- and if his moves aren't flawless, the female just walks away. The stage is part of the standards she holds him to. Source: audubon.org superb bird-of-paradise; allaboutbirds.org Vogelkop superb bird-of-paradise.",
     "topic": "showing-off-to-win-a-mate-sexual-selection"
   },
   {
@@ -21113,20 +21087,20 @@
   },
   {
     "tier": 2,
-    "question": "A fennec fox, barely a kilogram and the smallest fox alive, trots out across the Sahara sands after sundown to hunt. Its ears are so large they look silly on its little head. In that crushing desert heat, what is the main job of those giant ears?",
+    "question": "A fennec fox, about a kilogram and the smallest fox alive, trots out across the Sahara sands after sundown to hunt. Its ears are so large they look silly on its little head. In that crushing desert heat, what is the main job of those giant ears?",
     "answer": "To dump body heat into the air",
     "choices": [
       "To dump body heat into the air",
-      "To scoop up sand for burrowing",
+      "To shade its face from the sun",
       "To store fat for lean seasons",
-      "To carry its pups by the nape"
+      "To soak up warmth on cold nights"
     ],
-    "context": "The fennec's ears reach up to 10 cm (6 inches) - the biggest ear-to-body ratio of any dog-family animal. They double as radiators that shed desert heat AND superb listening dishes that pinpoint prey moving underground. Source: Wikipedia 'Fennec fox'; Animal Diversity Web; National Geographic.",
+    "context": "The fennec's ears reach about 10 cm (4 inches), the biggest for its size of any animal in the dog family. They shed desert heat AND serve as listening dishes that pinpoint prey moving underground. Source: Wikipedia 'Fennec fox'; Animal Diversity Web; National Geographic.",
     "topic": "size-ears-and-heat-radiators-and-bergmanns-rule"
   },
   {
     "tier": 3,
-    "question": "Far up in the Arctic Circle, temperatures plunge to sixty degrees below zero and the wind never stops. Yet the Arctic fox (Vulpes lagopus) trots across the frozen tundra as if it were spring. Its whole body is shaped for that killing cold: tiny rounded ears, a stubby muzzle, short legs, and a compact, roly-poly round body. What does this whole squat shape do with the fox's body heat?",
+    "question": "Winter on the Arctic tundra brings deep cold and a wind that never stops, yet the Arctic fox (Vulpes lagopus) trots across it as if it were spring. It has tiny rounded ears, a stubby muzzle, short legs and a compact, roly-poly body. What does that squat shape do with its body heat?",
     "answer": "Hold it in against the cold",
     "choices": [
       "Hold it in against the cold",
@@ -21134,20 +21108,7 @@
       "Store it as brown fat",
       "Channel it to the paws"
     ],
-    "context": "The Arctic fox's round, low-surface shape leaks so little heat that it doesn't even begin to shiver until about -40 degC. It is the fennec fox's mirror image - same family, opposite thermal problem. Source: A-Z Animals 'Arctic Fox'; Wolf Center 'Misunderstood Mesos: Arctic Fox'.",
-    "topic": "size-ears-and-heat-radiators-and-bergmanns-rule"
-  },
-  {
-    "tier": 3,
-    "question": "An elephant fans its huge ears slowly in the heat of the African savanna. Its whole blood supply passes through the thin skin of those ears again and again. How long does it take the elephant's entire blood volume to pass through them once?",
-    "answer": "About 20 minutes",
-    "choices": [
-      "About 20 minutes",
-      "About 20 seconds",
-      "About 8 hours",
-      "About 3 days"
-    ],
-    "context": "An elephant pumps its entire blood volume through its ears in roughly 20 minutes, so heat from deep in the body keeps reaching the thin ear skin to be dumped. Flapping fans a breeze of 'micro winds' past the vessels and the active waving can lower body temperature by as much as 9 degC. Source: Tsavo Trust; Elephant Sands.",
+    "context": "The Arctic fox's round, low-surface shape leaks little heat: small ears, a short muzzle, short legs and a compact body all hold it in, with thick winter fur to help. It is the fennec fox's mirror image: same family, opposite thermal problem. An often-repeated figure, that it need not shiver or burn extra fuel until about -40 C, is disputed: some scientists say it was never properly tested, and one study put its winter threshold near -7 C. Source: Wikipedia 'Arctic fox'; Grokipedia 'Arctic fox'.",
     "topic": "size-ears-and-heat-radiators-and-bergmanns-rule"
   },
   {
@@ -21165,19 +21126,19 @@
   },
   {
     "tier": 4,
-    "question": "Suppose you fill two ears with exactly the same amount of warm blood, one balled up like a lump and the other spread out wide and thin. The wide one sheds its heat into the air far faster. What is the single geometric reason a wide ear beats a rounded one?",
+    "question": "Suppose you fill two ears with exactly the same amount of warm blood, one balled up like a lump and the other spread out wide and thin. The wide one sheds its heat into the air far faster. What is the reason a wide ear beats a rounded one?",
     "answer": "It exposes more surface per unit of volume",
     "choices": [
       "It exposes more surface per unit of volume",
       "It holds the blood closer to the bone",
-      "It packs more insulating fat beneath the skin",
+      "It keeps its blood hotter than the rounded one",
       "It sits farther from the beating heart"
     ],
-    "context": "This is surface-area-versus-volume geometry: heat is made throughout a body's bulk but can only escape across its outer skin. Spread the same volume of blood into a wide thin shape and you expose far more surface for it to escape from; ball it up (like the Arctic fox's compact body) and you trap the heat in. It's the single principle behind every one of these questions. Source: Bergmann's rule literature; New World Encyclopedia; National Aviary.",
+    "context": "This is surface-area-versus-volume geometry: heat is made throughout a body's bulk but can only escape across its outer skin. Spread the same volume of blood into a wide thin shape and it exposes far more surface for the heat to escape from; ball it up (like the Arctic fox's compact body) and the heat stays trapped. Source: Bergmann's rule literature; New World Encyclopedia; National Aviary.",
     "topic": "size-ears-and-heat-radiators-and-bergmanns-rule"
   },
   {
-    "tier": 5,
+    "tier": 2,
     "question": "An Arctic hare crouches on the frozen tundra of northern Canada and Greenland, where wind chill plunges far below freezing all winter long. Its body heat can escape only through its skin. To survive that cold, what do its ears look like?",
     "answer": "Small and stubby",
     "choices": [
@@ -21399,20 +21360,7 @@
   },
   {
     "tier": 2,
-    "question": "On the rainforest floor of Central America, a three-toed sloth creeps along at just 1.8 to 2.4 meters a minute, the slowest mammal on Earth by the count of Guinness World Records. How could a person on the ground out-crawl it?",
-    "answer": "Crawling on hands and knees",
-    "choices": [
-      "Crawling on hands and knees",
-      "Wriggling forward on the belly",
-      "Scooting along seated on the hips",
-      "Rolling sideways over and over"
-    ],
-    "context": "The three-toed sloth holds the Guinness record for slowest mammal; a human crawling on hands and knees can out-pace its 1.8 to 2.4 meters per minute. Source: https://www.guinnessworldrecords.com/world-records/70459-slowest-mammal",
-    "topic": "sloth"
-  },
-  {
-    "tier": 2,
-    "question": "A sloth moves so slowly that living things actually take root and grow in the shaggy fur along its back. In the wet rainforests of Central and South America, humidity keeps a sloth's coat damp enough for a tiny plant-like organism to colonize each hair, tinting the whole animal a leafy shade that helps it hide up in the canopy from harpy eagles. What is growing there?",
+    "question": "In the wet rainforests of Central and South America, a sloth's coat stays so damp that a tiny plant-like organism takes root in every hair. It tints the whole animal a leafy shade that helps hide it from harpy eagles in the canopy. What is growing there?",
     "answer": "Green algae",
     "choices": [
       "Green algae",
@@ -21421,19 +21369,6 @@
       "Lichen crusts"
     ],
     "context": "Green algae grows in the grooves of a sloth's fur, tinting it green so it blends into the leafy canopy like living camouflage. Source: https://www.slothconservation.org/blog/10-incredible-facts-about-the-sloth",
-    "topic": "sloth"
-  },
-  {
-    "tier": 3,
-    "question": "Fungi, moths and beetles ride through the rainforest canopy in the shaggy coat of a three-toed sloth, a whole tiny ecosystem living on one animal. The moths and beetles spend their whole lives in the fur, laying their eggs there. At the extreme, how many has a single wild sloth been found carrying?",
-    "answer": "Up to 950",
-    "choices": [
-      "Up to 950",
-      "Up to 90",
-      "Up to 250",
-      "Up to 500"
-    ],
-    "context": "A single sloth can carry up to 950 moths and beetles living in its coat at once, alongside algae and fungi. Source: https://www.slothconservation.org/blog/10-incredible-facts-about-the-sloth",
     "topic": "sloth"
   },
   {
@@ -21459,12 +21394,12 @@
       "To meet a mate",
       "To gather fallen fruit"
     ],
-    "context": "A sloth climbs down to the forest floor only about once a week to poop, digging a little hole at the base of a tree to bury its droppings. Source: https://www.nationalgeographic.com/animals/article/sloth-poop-moth-relationship",
+    "context": "A sloth climbs down to the forest floor only about once a week to poop, digging a little hole at the base of a tree to bury its droppings. Its sloth moths ride down with it and lay their eggs in the fresh dung, and the young moths fly back up into the canopy to find a sloth of their own. Source: https://www.nationalgeographic.com/animals/article/sloth-poop-moth-relationship ; https://en.wikipedia.org/wiki/Sloth_moth",
     "topic": "sloth"
   },
   {
     "tier": 3,
-    "question": "High in a South American rainforest, a three-toed sloth chews tough, low-energy leaves that most mammals could never survive on. One mouthful takes about sixteen days to work through its body, and a full stomach of leaves may sit fermenting for a whole month. What kind of stomach lets it break leaves down that slowly?",
+    "question": "High in a South American rainforest, a three-toed sloth chews tough, low-energy leaves that most mammals could never survive on. A single meal can take weeks to pass through its body. What kind of stomach lets it break leaves down that slowly?",
     "answer": "A four-chambered fermenting tank like a cow's",
     "choices": [
       "A four-chambered fermenting tank like a cow's",
@@ -21507,9 +21442,9 @@
     "answer": "It is the only one that carries a venomous bite",
     "choices": [
       "It is the only one that carries a venomous bite",
-      "It is the only one that never sleeps",
-      "It is the only one that cannot climb",
-      "It is the only one born with no eyes"
+      "It is the only one that can glide between trees",
+      "It is the only one whose tail can grip",
+      "It is the only one that sees in total darkness"
     ],
     "context": "The slow loris is the only venomous primate on Earth — a toxic bite is unique among primates and rare even among mammals. It is a small, huge-eyed, slow-moving nocturnal primate of Southeast Asia's forests. Source: Wikipedia, 'Slow loris' (https://en.wikipedia.org/wiki/Slow_loris).",
     "topic": "slow-loris"
@@ -21529,13 +21464,13 @@
   },
   {
     "tier": 2,
-    "question": "A flashlight beam sweeps up into a Southeast Asian rainforest at night, and the huge round eyes of a slow loris flash back like two glowing coins. A cat or a raccoon caught in car headlights shows the same eerie shine, thrown back by a mirror-like layer behind each retina. What does that layer do for a creature hunting in the dark?",
+    "question": "A flashlight beam sweeps up into a Southeast Asian rainforest at night, and the huge round eyes of a slow loris flash back like two glowing coins. A mirror-like layer behind each retina throws back that shine, as it does in a cat's eyes. What does the layer do for a night hunter?",
     "answer": "Gives it a second pass at faint light",
     "choices": [
       "Gives it a second pass at faint light",
-      "Frightens away hunting owls",
-      "Holds a reserve of water",
-      "Keeps its brain from overheating"
+      "Shields its eyes from bright moonlight",
+      "Lets it see colors in the dark",
+      "Sharpens its focus on nearby prey"
     ],
     "context": "The layer is the tapetum lucidum. It reflects light back through the retina, giving the eye a second chance to catch every scrap of light for keen night vision — and that reflection is what makes the eyes shine like coins when a flashlight hits them in the dark. Source: Wikipedia, 'Slow loris' (https://en.wikipedia.org/wiki/Slow_loris).",
     "topic": "slow-loris"
@@ -21699,19 +21634,19 @@
   {
     "tier": 2,
     "question": "A solenodon bites down on its prey in the dark leaf litter of Hispaniola, and poisonous saliva seeps into the wound. Very few mammals deliver venom at all. What carries the venom into the bite?",
-    "answer": "an open channel running down a lower incisor tooth",
+    "answer": "a groove down a lower front tooth",
     "choices": [
-      "an open channel running down a lower incisor tooth",
+      "a groove down a lower front tooth",
       "a hollow fang like a viper's",
       "a venom spur on its ankle",
-      "a stinger in the tip of its tail"
+      "a sharp claw on its forefoot"
     ],
     "context": "The solenodon injects toxic saliva through open grooves running down its second lower incisor -- a snake-like grooved-tooth delivery that is rare in mammals. Its very name means 'grooved tooth' (Greek solen 'channel' + odon 'tooth'). Only a few mammals are venomous at all: the solenodon, some shrews, the male platypus (whose venom rides an ankle spur), and the slow loris. Sources: https://en.wikipedia.org/wiki/Solenodon ; https://en.wikipedia.org/wiki/Venomous_mammal",
     "topic": "solenodon"
   },
   {
     "tier": 3,
-    "question": "In a Cuban forest at night, a solenodon noses through the leaf litter in a body that has barely changed in more than 70 million years, which is why scientists call it a living fossil. Its earliest ancestors shared the world with one famous group of creatures. Which group?",
+    "question": "In a Cuban forest at night, a solenodon noses through the leaf litter. Its family split from every other living mammal over 70 million years ago, so it is often called a living fossil. Its earliest ancestors shared the world with one famous group of creatures. Which group?",
     "answer": "the last of the non-bird dinosaurs",
     "choices": [
       "the last of the non-bird dinosaurs",
@@ -21719,12 +21654,12 @@
       "the giant ground sloths of the Americas",
       "the saber-toothed cats"
     ],
-    "context": "The solenodon's lineage split from all other living mammals about 73.6 million years ago, so its ancestors lived alongside the last non-bird dinosaurs and its family then survived the asteroid impact that ended the Age of Dinosaurs. Its form has scarcely changed since. Woolly mammoths, giant ground sloths, and saber-toothed cats all lived far more recently, in the last few million years -- long after the solenodon's line had already branched off. Source: https://www.sciencedaily.com/releases/2018/03/180316100638.htm",
+    "context": "The solenodon's lineage split from all other living mammals about 73.6 million years ago, so its ancestors lived alongside the last non-bird dinosaurs and its family then survived the asteroid impact that ended the Age of Dinosaurs. Woolly mammoths, giant ground sloths, and saber-toothed cats all lived far more recently, in the last few million years -- long after the solenodon's line had already branched off. Source: https://www.sciencedaily.com/releases/2018/03/180316100638.htm",
     "topic": "solenodon"
   },
   {
     "tier": 3,
-    "question": "Its long, flexible snout jammed deep into a crack in a rotten log, a solenodon roots for the worms and beetles hidden inside. Anatomists found that the base of that snout is built around a structure no other mammal has anywhere in its face. What sits at the root of the solenodon's snout?",
+    "question": "Its long, flexible snout jammed deep into a crack in a rotten log, a solenodon roots for the worms and beetles hidden inside. Anatomists found something surprising built into the base of that snout. What sits at the root of the solenodon's snout?",
     "answer": "a ball-and-socket joint, like a human shoulder",
     "choices": [
       "a ball-and-socket joint, like a human shoulder",
@@ -21732,7 +21667,7 @@
       "a plate of cartilage fused to the skull",
       "a sheath of stiff whisker roots"
     ],
-    "context": "The solenodon has a ball-and-socket joint at the base of its long, flexible snout -- structured like a human shoulder joint -- letting the snout swivel and probe into narrow cracks for prey. This joint is unique among mammals. Source: https://factanimal.com/solenodon/",
+    "context": "The solenodon has a ball-and-socket joint at the base of its long, flexible snout -- structured like a human shoulder joint -- letting the snout swivel and probe into narrow cracks for prey. It is an unusual arrangement for a mammal's face. Source: https://factanimal.com/solenodon/",
     "topic": "solenodon"
   },
   {
@@ -22050,32 +21985,19 @@
   {
     "tier": 2,
     "question": "Ernst Stromer worked on Spinosaurus in 1915, and one detail dominated his reconstruction: the dinosaur carried something on its back unlike anything on any other big predator, tall enough to change its whole silhouette. What rose from its spine?",
-    "answer": "A skin-covered 'sail'",
+    "answer": "A tall, skin-covered sail",
     "choices": [
-      "A skin-covered 'sail'",
+      "A tall, skin-covered sail",
       "A row of bony back plates",
-      "A ridge of long spikes",
+      "A coat of long, stiff quills",
       "A crest of stiff feathers"
     ],
-    "context": "The sail was built from bony neural spines up to about 1.8 meters (6 feet) tall. Source: Live Science; Wikipedia (Spinosaurus, neural spines).",
-    "topic": "spinosaurus"
-  },
-  {
-    "tier": 2,
-    "question": "Spinosaurus stalked the rivers of North Africa about 100 million years ago with a giant sail rising from its back. Each bone holding the sail up was a long, thin blade sprouting straight up from a single vertebra. Compared with the width of that vertebra, how tall did one of those spines reach?",
-    "answer": "More than ten times as long",
-    "choices": [
-      "More than ten times as long",
-      "About twice as long",
-      "Roughly the same length",
-      "A little shorter"
-    ],
-    "context": "Each neural spine reached about 1.8 meters (6 feet) -- more than ten times the width of the backbone it grew from. Source: Live Science; Wikipedia (Spinosaurus, neural spines).",
+    "context": "The sail was held up by bony neural spines at least 1.65 meters (5.4 feet) tall. Source: Wikipedia (Spinosaurus, neural spines); Live Science.",
     "topic": "spinosaurus"
   },
   {
     "tier": 3,
-    "question": "Tyrannosaurus rex crushed bone with its short skull, while Spinosaurus carried long, narrow jaws set with cone-shaped teeth. Both were giant meat-eaters, yet their heads were built for different prey, and that cone shape turns up today in animals that catch slippery food. What was Spinosaurus built to do?",
+    "question": "Tyrannosaurus rex crushed bone with its short skull, while Spinosaurus carried long, narrow jaws set with straight, cone-shaped teeth that had few or no saw-edges. Both were giant meat-eaters, yet their heads were built for different prey. What was Spinosaurus built to do?",
     "answer": "Snatch slippery fish from the water",
     "choices": [
       "Snatch slippery fish from the water",
@@ -22088,7 +22010,7 @@
   },
   {
     "tier": 3,
-    "question": "A crocodile lurks in a river with almost its whole head underwater and still breathes, thanks to where its nostrils sit. Paleontologists studying Spinosaurus noticed the dinosaur could do the same trick, because of one feature of its skull that no other big meat-eating dinosaur shared. Where did Spinosaurus's nostrils sit?",
+    "question": "A crocodile lurks in a river with almost its whole head underwater and still breathes, thanks to where its nostrils sit. Some paleontologists argue that Spinosaurus could do the same trick, thanks to the unusual placement of its own nostrils. Where did they sit?",
     "answer": "High and far back on the snout",
     "choices": [
       "High and far back on the snout",
@@ -22096,20 +22018,20 @@
       "On top of the skull, near the eyes",
       "Underneath the lower jaw"
     ],
-    "context": "Its retracted nostrils sat high and far back, so it could keep most of its head submerged and still breathe -- like a crocodile at the surface. Source: eLife / UChicago (Spinosaurus retracted nostrils); Wikipedia.",
+    "context": "Its retracted nostrils sat high and far back on the snout, so, some paleontologists argue, it could keep most of its head submerged and still breathe, like a crocodile at the surface. David Hone and Thomas Holtz doubt that reading. Source: Ibrahim et al. 2014, Science; Wikipedia (Spinosaurus).",
     "topic": "spinosaurus"
   },
   {
     "tier": 3,
-    "question": "Spinosaurus hunted along rivers in what is now the Sahara on hind legs startlingly short for a predator its size. Next to T. rex or Allosaurus its body looked oddly unbalanced, clumsy on dry land though well suited to an animal that spent much of its life in water. About how much of its total body length did those hind legs make up?",
+    "question": "In the skeleton Nizar Ibrahim's team pieced together in 2014, Spinosaurus stood on hind legs startlingly short for a predator its size. Next to T. rex or Allosaurus the body looked oddly unbalanced, clumsy on land though suited to an animal that spent much of its life in water. About how much of its body length did the legs make up?",
     "answer": "Roughly a quarter",
     "choices": [
       "Roughly a quarter",
       "Roughly half",
       "Nearly two-thirds",
-      "Almost the whole length"
+      "About three-quarters"
     ],
-    "context": "Its hind legs were only about a quarter of its total body length -- awkward on land, but fitting an animal built to hunt in water. Source: Wikipedia (Spinosaurus, short legs ~25 percent of body length).",
+    "context": "In that reconstruction the hind legs were just over a quarter of the total body length, awkward on land but fitting an animal built to hunt in water. Some paleontologists question whether all of the bones came from one animal. Source: Wikipedia (Spinosaurus, short legs just over 25 percent of body length; Evers et al. 2015).",
     "topic": "spinosaurus"
   },
   {
@@ -22135,17 +22057,17 @@
       "Roughly like a flapping sea turtle",
       "Almost as well as a cruising tuna"
     ],
-    "context": "The 2020 experiment, run by Nizar Ibrahim with Harvard's Stephanie Pierce and George Lauder, found the flat Spinosaurus tail model produced roughly eight times more forward thrust and was more than twice as efficient at propulsion as the tail-shapes of land theropods like Allosaurus and Coelophysis -- performing nearly as well as a crocodile's or a newt's tail. It was the strongest physical evidence yet that this dinosaur was built to swim by sweeping its tail rather than merely wade. Source: Nizar Ibrahim, Stephanie E. Pierce, George V. Lauder et al., 'Tail-propelled aquatic locomotion in a theropod dinosaur,' Nature, 29 April 2020 (PubMed 32376955).",
+    "context": "The 2020 experiment, run by Nizar Ibrahim with Harvard's Stephanie Pierce and George Lauder, found the flat Spinosaurus tail model produced roughly eight times more forward thrust and was more than twice as efficient at propulsion as the tail-shapes of land theropods like Allosaurus and Coelophysis -- performing nearly as well as a crocodile's or a newt's tail. The team read it as strong evidence that this dinosaur swam by sweeping its tail rather than merely wading; critics such as David Hone and Thomas Holtz disagree. Source: Nizar Ibrahim, Stephanie E. Pierce, George V. Lauder et al., 'Tail-propelled aquatic locomotion in a theropod dinosaur,' Nature, 29 April 2020 (PubMed 32376955).",
     "topic": "spinosaurus"
   },
   {
     "tier": 5,
-    "question": "David Hone and Thomas Holtz studied the very fossils that Nizar Ibrahim's team reads as proof that Spinosaurus dove and chased prey deep underwater: its paddle-shaped tail and its dense, ballast-like bones. Hone and Holtz reached the opposite conclusion, and the fight is still unsettled. What did they argue instead?",
+    "question": "David Hone and Thomas Holtz studied the very fossils that Nizar Ibrahim's team reads as evidence that Spinosaurus dove and chased prey deep underwater: its paddle-shaped tail and its dense, ballast-like bones. Hone and Holtz reached the opposite conclusion, and the fight is still unsettled. What did they argue instead?",
     "answer": "It waded in the shallows and snatched fish from the surface",
     "choices": [
       "It waded in the shallows and snatched fish from the surface",
       "It drifted at the surface and scooped up fish while afloat",
-      "It lunged from the riverbank to spear fish with its jaws",
+      "It lurked in deep pools and ambushed fish like a crocodile",
       "It walked along the riverbed and grabbed fish from the bottom"
     ],
     "context": "Nizar Ibrahim's team reads the 2020 paddle-tail and the dense, ballast-like bones as evidence that Spinosaurus actively dove and pursued fish underwater. David Hone and Thomas Holtz counter that it was a 'heron-like' wader that stood in the shallows and snatched fish from the surface, while Donald Henderson's 2018 buoyancy model concluded the animal was so buoyant it would bob at the surface and even roll sideways, making sustained underwater chases unlikely. Same fossils, opposite conclusions -- the active-diver-versus-shoreline-grabber question is still genuinely open. Sources: Donald M. Henderson, PeerJ, 2018; David W. E. Hone & Thomas R. Holtz Jr. (2021) shoreline/wading review; Nizar Ibrahim et al., Nature, 2020.",
@@ -22166,7 +22088,7 @@
   },
   {
     "tier": 2,
-    "question": "A giant snake glides through a South American swamp, its body roughly a foot thick and its weight near 550 pounds, nearly twice that of a big python. No snake on Earth is heavier. Which snake is it?",
+    "question": "A giant snake glides through a South American swamp, far bulkier than any python of the same length. The heaviest ones ever verified tipped the scales at around 100 kilograms (220 pounds). No snake on Earth is heavier. Which snake is it?",
     "answer": "The green anaconda",
     "choices": [
       "The green anaconda",
@@ -22174,7 +22096,7 @@
       "The black mamba",
       "The Gaboon viper"
     ],
-    "context": "The green anaconda (Eunectes murinus) is the heaviest snake on Earth. It can weigh up to about 250 kg (550 pounds) — nearly twice a reticulated python — because its body is so thick, roughly a foot across. Source: Britannica, 'What Is the Largest Snake in the World?' (https://www.britannica.com/science/What-Is-the-Largest-Snake-in-the-World).",
+    "context": "The green anaconda (Eunectes murinus) is the heaviest snake on Earth. Wikipedia gives the heaviest verified specimen as a 5.21 m female recorded by Jesus Antonio Rivas at 97.5 kg (215 lb), and other accounts put the heaviest just over 100 kg; bigger figures such as 227 kg are unverified estimates. A 5.2 m anaconda is about as bulky as a 7.4 m reticulated python. Source: Wikipedia 'Green anaconda'; Grokipedia 'Green anaconda'; Britannica, 'What Is the Largest Snake in the World?'.",
     "topic": "squeezing-not-biting"
   },
   {
@@ -22192,15 +22114,15 @@
   },
   {
     "tier": 2,
-    "question": "A python wraps its coils around a trapped animal but does not crush it in one big squeeze. It times its grip to the prey instead: every time the prey does one particular thing, the snake quietly cinches its coils a notch tighter. When does it tighten?",
-    "answer": "Each time the prey breathes out",
+    "question": "A boa wraps its coils around a rat and squeezes. Squeezing burns a lot of energy and leaves the snake open to attack, so it lets go as soon as the job is done. In 2012 Scott Boback's team found what tells it the moment has come. What is it?",
+    "answer": "The prey's heartbeat fading under its coils",
     "choices": [
-      "Each time the prey breathes out",
-      "Each time the prey struggles",
-      "Each time the prey cries out",
-      "Once every few seconds on its own"
+      "The prey's heartbeat fading under its coils",
+      "The prey going limp and still in its grip",
+      "The smell of blood seeping from the prey",
+      "A fixed count of squeezes it always gives"
     ],
-    "context": "A constrictor works with the prey's own breathing. Each time the animal exhales, the snake takes up the slack and cinches its coils a notch tighter, so the prey can never fill its lungs back up. Source: National Geographic, 'Snakes Know When to Stop Squeezing Because They Sense the Heartbeats of Their Prey' (https://www.nationalgeographic.com/science/article/snakes-know-when-to-stop-squeezing-because-they-sense-the-heartbeats-of-their-prey).",
+    "context": "Scott Boback's team (Biology Letters, 2012) fitted dead rats with artificial hearts. While the heart beat, boas squeezed about twice as long and twice as hard; when the heart was switched off, they let go a few minutes later, so a limp, still rat with a beating heart kept them squeezing. Source: National Geographic, 'Snakes Know When to Stop Squeezing Because They Sense the Heartbeats of Their Prey' (https://www.nationalgeographic.com/science/article/snakes-know-when-to-stop-squeezing-because-they-sense-the-heartbeats-of-their-prey); Wikipedia 'Constriction'.",
     "topic": "squeezing-not-biting"
   },
   {
@@ -22209,11 +22131,11 @@
     "answer": "The coils cut off blood flow, so it blacks out in seconds",
     "choices": [
       "The coils cut off blood flow, so it blacks out in seconds",
-      "The coils jolt the heart into a fatal rhythm shock",
+      "The coils trap its body heat until it overheats",
       "The coils pinch a spinal nerve so the body seizes up",
       "The coils spike the blood with a paralyzing stress flood"
     ],
-    "context": "The old story that constrictors kill by crushing bones or suffocating prey is wrong. A 2015 study by Scott Boback showed the real, fast killer is circulatory arrest: the coils cut off blood flow, so the trapped animal blacks out and dies within seconds, long before it would run out of air. Source: Boback et al. 2015, 'Snake constriction rapidly induces circulatory arrest in rats,' Journal of Experimental Biology 218(14):2279 (https://journals.biologists.com/jeb/article/218/14/2279/14389/).",
+    "context": "The old story that constrictors kill by crushing bones or suffocating prey is wrong. A 2015 study by Scott Boback showed the real, fast killer is circulatory arrest: the coils cut off blood flow, so the trapped animal blacks out within seconds and its heart soon fails, long before it would run out of air. Source: Boback et al. 2015, 'Snake constriction rapidly induces circulatory arrest in rats,' Journal of Experimental Biology 218(14):2279 (https://journals.biologists.com/jeb/article/218/14/2279/14389/).",
     "topic": "squeezing-not-biting"
   },
   {
@@ -22231,7 +22153,7 @@
   },
   {
     "tier": 4,
-    "question": "In Scott Boback's laboratory, a boa constrictor clamped its coils around an anesthetized rat while his team stood by with pressure probes. Just six seconds into the squeeze, they read the blood pressure inside the prey — one probe placed in the artery of the rat's leg, another in a nearby vein. What did the two readings show?",
+    "question": "In Scott Boback's laboratory, a boa constrictor clamped its coils around an anesthetized rat while his team stood by with pressure probes. Just six seconds into the squeeze, they read the blood pressure inside the prey — one probe placed in the artery of the rat's leg, another in a big vein near its heart. What did the two readings show?",
     "answer": "Artery pressure fell to half while vein pressure jumped sixfold",
     "choices": [
       "Artery pressure fell to half while vein pressure jumped sixfold",
@@ -22239,7 +22161,7 @@
       "Artery pressure doubled while vein pressure fell away to nothing",
       "Artery pressure held firm while vein pressure slowly climbed higher"
     ],
-    "context": "When a boa constricts a rat, the prey's blood pressure at the leg artery drops to HALF within just 6 seconds, while the pressure in its veins jumps sixfold in that same instant. The blood essentially stops moving almost immediately. Source: Boback et al. 2015, Journal of Experimental Biology 218(14):2279 (https://journals.biologists.com/jeb/article/218/14/2279/14389/).",
+    "context": "When a boa constricts a rat, the prey's blood pressure at the leg artery drops to HALF within just 6 seconds, while the central venous pressure, read in a large vein by the heart, jumps sixfold in that same instant. The blood essentially stops moving almost immediately. Source: Boback et al. 2015, Journal of Experimental Biology 218(14):2279 (https://journals.biologists.com/jeb/article/218/14/2279/14389/).",
     "topic": "squeezing-not-biting"
   },
   {
@@ -22317,7 +22239,7 @@
       "An anglerfish",
       "A stonefish"
     ],
-    "context": "The stargazer (family Uranoscopidae) is a true ambush-from-below specialist. It uses its pectoral (side) fins as shovels to bury itself, leaving only its upward-facing eyes and mouth exposed at the surface of the sand, then rises and gulps a passing fish whole in an instant. Flounders bury too and stonefish ambush from the bottom, but only the stargazer aims straight up. Source: Florida Museum of Natural History, Northern Stargazer species profile (https://www.floridamuseum.ufl.edu/discover-fish/species-profiles/northern-stargazer/).",
+    "context": "The stargazer (family Uranoscopidae) is a true ambush-from-below specialist. It uses its pectoral (side) fins as shovels to bury itself, leaving only its upward-facing eyes and mouth exposed at the surface of the sand, then rises and gulps a passing fish whole in an instant. Flounders bury too and stonefish ambush from the bottom, but the stargazer's eyes and mouth point straight up. Source: Florida Museum of Natural History, Northern Stargazer species profile (https://www.floridamuseum.ufl.edu/discover-fish/species-profiles/northern-stargazer/).",
     "topic": "stargazer-uranoscopidae"
   },
   {
@@ -22348,7 +22270,7 @@
   },
   {
     "tier": 3,
-    "question": "A stargazer lying in ambush on the seafloor shocks prey and rivals with a working electric organ, a rare weapon among fish. An electric eel's organ is made of spare swimming muscle, but the stargazer's was rebuilt from a different body part. Which one?",
+    "question": "A northern stargazer lying in ambush on the seafloor shocks prey and rivals with a working electric organ, a rare weapon among fish. An electric eel's organ is made of spare swimming muscle, but the stargazer's was rebuilt from a different body part. Which one?",
     "answer": "Muscle that once moved its eyes",
     "choices": [
       "Muscle that once moved its eyes",
@@ -22934,9 +22856,9 @@
   {
     "tier": 1,
     "question": "A flat, brown, wide-headed frog lies still on the bottom of a muddy, sluggish Amazon river, so hard to spot that even a keeper who knows one is in the aquarium can miss it. How does the Surinam toad stay hidden from prey and predators?",
-    "answer": "It looks exactly like a dead, rotting leaf lying in the litter",
+    "answer": "It looks just like a dead, rotting leaf",
     "choices": [
-      "It looks exactly like a dead, rotting leaf lying in the litter",
+      "It looks just like a dead, rotting leaf",
       "It buries itself completely beneath the mud",
       "It glows faintly to blend into the dim water",
       "It clings to the underside of floating logs"
@@ -22947,12 +22869,12 @@
   {
     "tier": 2,
     "question": "A Surinam toad hunts the muddy rivers of the Amazon with no tongue at all, though most frogs snap up insects with a long, sticky one. Yet it still catches minnows, shrimp and worms in open water. When prey drifts close to its huge flat mouth, how does the tongueless toad seize it?",
-    "answer": "It suddenly expands its throat and vacuums in a rush of water, swallowing the prey whole",
+    "answer": "It gulps the prey in with a sudden rush of water",
     "choices": [
-      "It suddenly expands its throat and vacuums in a rush of water, swallowing the prey whole",
-      "It fires a jet of sticky mucus to glue the prey and reel it back",
+      "It gulps the prey in with a sudden rush of water",
+      "It pins the prey under its broad, flat body",
       "It clamps down with rows of tiny needle teeth",
-      "It lassoes the prey with its star-tipped fingers"
+      "It stuns the prey with a burst of skin poison"
     ],
     "context": "The Surinam toad has no tongue and no teeth. Instead of flicking a tongue, it is a suction feeder: it rapidly expands its throat cavity to inhale a rush of water that vacuums prey whole into its large mouth. Source: San Diego Zoo + Wikipedia 'Common Surinam toad'.",
     "topic": "surinam-toad-babies-that-erupt-from-the-mothers-back"
@@ -22960,9 +22882,9 @@
   {
     "tier": 2,
     "question": "Down on the bottom of a muddy Amazon river, the water is so murky that a Surinam toad can barely see its own fingers. Each finger on its front feet ends in a tiny star-shaped tip, which gives the animal another name, the star-fingered toad. What do those star tips do?",
-    "answer": "Feel out hidden prey the toad cannot see and guide it to the mouth",
+    "answer": "Feel out hidden prey and steer it to the mouth",
     "choices": [
-      "Feel out hidden prey the toad cannot see and guide it to the mouth",
+      "Feel out hidden prey and steer it to the mouth",
       "Anchor the toad firmly against the river current",
       "Sift edible scraps from the mud it takes in",
       "Churn up the riverbed to flush prey out of hiding"
@@ -23089,7 +23011,7 @@
   },
   {
     "tier": 1,
-    "question": "A strange hummingbird darts through the foggy cloud forests of Ecuador, Colombia and Peru, high in the Andes. One part of its body has grown so long that it holds a record no other bird can match. What is special about the sword-billed hummingbird?",
+    "question": "A hummingbird darts through the foggy cloud forests of Ecuador, Colombia and Peru, high in the Andes. It holds a record that no other bird on Earth can match. What is that record?",
     "answer": "Its bill is longer than the rest of its body",
     "choices": [
       "Its bill is longer than the rest of its body",
@@ -23336,13 +23258,13 @@
   },
   {
     "tier": 1,
-    "question": "A primate so tiny it could sit in a child's hand leaps between tree trunks at night in the rainforests of Borneo and the Philippines, hunting insects, small lizards and even birds. Each of its eyeballs is as big as, or even bigger than, its whole brain. Which night hunter is this?",
+    "question": "A primate so tiny it could sit in a child's hand leaps between tree trunks at night in the rainforests of Borneo and the Philippines, hunting insects, lizards and birds. Each eyeball is as big as its whole brain. Which night hunter is it?",
     "answer": "The tarsier",
     "choices": [
       "The tarsier",
       "The slow loris",
-      "The fennec fox",
-      "The sugar glider"
+      "The bushbaby",
+      "The mouse lemur"
     ],
     "context": "Each tarsier eyeball is about 16 mm across and equals or exceeds the size of its entire brain. No other mammal has eyes so large relative to its body. Source: https://en.wikipedia.org/wiki/Tarsier",
     "topic": "tarsier"
@@ -23376,14 +23298,14 @@
   {
     "tier": 3,
     "question": "A Philippine tarsier on a forest branch gapes its mouth open as though crying out, yet human ears hear nothing at all. Marissa Ramsier's team pointed bat-detector microphones at the little animals in 2012 and solved the mystery. What was the tarsier really doing when it 'silent-screamed'?",
-    "answer": "It was calling in ultrasound, around 70 kHz, far above what we can hear",
+    "answer": "It was calling in ultrasound, far too high for human ears",
     "choices": [
-      "It was calling in ultrasound, around 70 kHz, far above what we can hear",
+      "It was calling in ultrasound, far too high for human ears",
       "It was yawning as a threat display, not vocalizing at all",
       "It was pushing air through its nose too softly to detect",
-      "It was clicking its teeth at a pitch our ears cannot register"
+      "It was clicking its teeth too faintly for human ears"
     ],
-    "context": "The Philippine tarsier calls with a dominant pitch near 70 kHz and can hear up to about 91 kHz, far beyond the roughly 20 kHz ceiling of human hearing, so it can 'talk' in a channel we cannot detect. Source: https://en.wikipedia.org/wiki/Tarsier",
+    "context": "The Philippine tarsier calls with a dominant pitch near 70 kHz and can hear up to about 91 kHz, far beyond the roughly 20 kHz ceiling of human hearing, so it can 'talk' in a channel human ears cannot detect. Source: https://en.wikipedia.org/wiki/Tarsier",
     "topic": "tarsier"
   },
   {
@@ -23392,37 +23314,24 @@
     "answer": "The Tasmanian devil",
     "choices": [
       "The Tasmanian devil",
-      "The red kangaroo",
-      "The koala",
+      "The thylacine",
+      "The spotted-tailed quoll",
       "The wombat"
     ],
-    "context": "The Tasmanian devil (Sarcophilus harrisii) is the largest surviving carnivorous marsupial in the world. Kangaroos, koalas, and wombats are all marsupials too, but they are plant-eaters. Source: Wikipedia 'Tasmanian devil' ('largest surviving carnivorous marsupial').",
+    "context": "The Tasmanian devil (Sarcophilus harrisii) has been the largest surviving carnivorous marsupial since the thylacine died out in 1936. The spotted-tailed quoll is a meat-eating marsupial too, but far smaller, and the wombat grazes on grass. Source: Wikipedia 'Tasmanian devil' ('largest surviving carnivorous marsupial').",
     "topic": "tasmanian-devil"
   },
   {
     "tier": 2,
-    "question": "A Tasmanian devil arrives at a dead wallaby long after the foxes and birds have taken the easy meat and gone. Instead of nibbling at what is left, the dog-sized marsupial does something no bird or fox can. What does it do with the leftover carcass?",
-    "answer": "It crunches up and swallows the whole thing — bones, fur, and teeth",
+    "question": "A Tasmanian devil arrives at a dead wallaby long after the ravens have taken the easy meat and gone. Instead of nibbling at what is left, the dog-sized marsupial does something no raven can. What does it do with the leftover carcass?",
+    "answer": "It crunches up and swallows all that is left, bones and fur",
     "choices": [
-      "It crunches up and swallows the whole thing — bones, fur, and teeth",
+      "It crunches up and swallows all that is left, bones and fur",
       "It caches the scraps in a den to eat over several days",
       "It picks out only the rich organs and abandons the rest",
       "It strips the last shreds of muscle and leaves the frame standing"
     ],
     "context": "Tasmanian devils consume all traces of a carcass, including bones and fur, leaving nothing for other scavengers. Source: Wikipedia 'Tasmanian devil' ('consume all traces of a carcass, including bones and fur').",
-    "topic": "tasmanian-devil"
-  },
-  {
-    "tier": 2,
-    "question": "Clucking softly while it feeds and screaming in a fight, a Tasmanian devil no bigger than a small dog is one of the noisiest animals alive. About how many distinct noises can one devil make?",
-    "answer": "At least eleven different sounds",
-    "choices": [
-      "At least eleven different sounds",
-      "Just two — a growl and a scream",
-      "Around fifty separate calls",
-      "Only one, repeated at different pitches"
-    ],
-    "context": "Despite being small, the Tasmanian devil has one of the loudest and most complex voices of any animal, using at least eleven different sound types, from gentle clucking while feeding to screams during a fight. Source: Currumbin Sanctuary; Wikipedia 'Tasmanian devil' (eleven sound types).",
     "topic": "tasmanian-devil"
   },
   {
@@ -23435,7 +23344,7 @@
       "The four largest at birth push the smaller ones away from her",
       "She feeds all of them in shifts until the weakest give out"
     ],
-    "context": "A devil bears 20-30 rice-grain-sized young but has only four nipples, so the newborns race to the pouch and only the first four to latch on survive. Source: Wikipedia 'Tasmanian devil' (20-30 young, four nipples); WWF-Australia '8 Fun Facts About Tasmanian Devils'. The rice-grain newborn detail is a widely retold wonder.",
+    "context": "A devil bears 20-30 rice-grain-sized young but has only four nipples, so the newborns race to the pouch and only the first four to latch on survive. Source: Wikipedia 'Tasmanian devil' (20-30 young, four nipples); WWF-Australia '8 Fun Facts About Tasmanian Devils'.",
     "topic": "tasmanian-devil"
   },
   {
@@ -23453,36 +23362,23 @@
   },
   {
     "tier": 2,
-    "question": "A channel catfish glides along the silty bottom of an American river, where the water is far too dark and cloudy for eyes to be much use. The moment a food pellet brushes its long whiskers, or even its side or belly, the catfish turns and grabs it. What lets it find its food by touch in the dark?",
+    "question": "A channel catfish glides along the silty bottom of an American river, where the water is too dark and cloudy for eyes to help much. The moment a food pellet brushes its whiskers, or even its side or belly, the catfish turns and grabs it. What lets it find food this way?",
     "answer": "Its whole skin is packed with taste buds",
     "choices": [
       "Its whole skin is packed with taste buds",
       "It hears the pellet strike the water",
-      "It stuns the pellet with a weak electric jolt",
-      "It traps the pellet in a sticky mucus net"
+      "It feels the pellet's warmth on its skin",
+      "Its whiskers send out clicks that echo back"
     ],
-    "context": "The channel catfish is essentially a swimming tongue: its entire skin, and especially the barbel 'whiskers,' is coated in taste buds, so it tastes food the moment food brushes any part of its body. Source: AskNature, 'Fish Body Is a Swimming Tongue'; Caprio, 'The taste system of the channel catfish' (Trends in Neurosciences, 1993).",
-    "topic": "tasting-with-the-whole-body"
-  },
-  {
-    "tier": 2,
-    "question": "A big channel catfish hunts the muddy bottom of a North American river with taste buds spread over its whole body, from its flanks to its long chin whiskers. A person has about 10,000, all of them on the tongue. Roughly how many does the catfish carry?",
-    "answer": "About 175,000",
-    "choices": [
-      "About 175,000",
-      "About 15,000",
-      "About 2,000",
-      "About 500"
-    ],
-    "context": "A large catfish can carry over 100,000 taste buds — as many as 175,000 — scattered across its whole external body, versus about 10,000 crammed onto the human tongue. It tastes with its skin. Source: LiveScience, 'What Animal Has the Best Sense of Taste?'; Atema 1971 on external taste-bud distribution.",
+    "context": "The channel catfish is essentially a swimming tongue: its entire skin, and especially the barbel 'whiskers,' is coated in taste buds, so it tastes food the moment food brushes any part of its body. A big catfish can carry as many as 175,000 taste buds, against a person's 2,000 to 8,000. Source: AskNature, 'Fish Body Is a Swimming Tongue'; Caprio, 'The taste system of the channel catfish' (Trends in Neurosciences, 1993); LiveScience, 'What Animal Has the Best Sense of Taste?'; Wikipedia 'Taste bud'.",
     "topic": "tasting-with-the-whole-body"
   },
   {
     "tier": 3,
     "question": "A female butterfly lands on a leaf and, before laying a single egg, rapidly taps the leaf with her forelegs — 'tarsal drumming.' Why does she drum the leaf with her feet before egg-laying?",
-    "answer": "Her feet taste the plant to confirm it is safe for caterpillars",
+    "answer": "Her feet taste if it suits her caterpillars",
     "choices": [
-      "Her feet taste the plant to confirm it is safe for caterpillars",
+      "Her feet taste if it suits her caterpillars",
       "Her feet warm the leaf so eggs will stick",
       "Her feet scrape off rival butterflies' eggs",
       "Her feet drum a signal to attract a mate"
@@ -23492,7 +23388,7 @@
   },
   {
     "tier": 3,
-    "question": "Vincent Dethier sat down to lunch one day in the 1950s, and a blowfly kept landing on his liverwurst sandwich. Curious, he began touching drops of sugar water to the fly's tiny feet and watching what happened. The moment a hungry fly's foot touches sugar, he found, it does one thing at once, by reflex. What does the fly do?",
+    "question": "Vincent Dethier spent years in the 1950s studying hungry blowflies. In one simple test he touched a drop of sugar water to a fly's tiny feet and watched what happened. The moment a hungry fly's foot meets sugar, it does one thing at once, by reflex. What does the fly do?",
     "answer": "It unrolls its tongue to drink",
     "choices": [
       "It unrolls its tongue to drink",
@@ -23500,18 +23396,18 @@
       "It buzzes its wings in a burst",
       "It curls its abdomen upward"
     ],
-    "context": "A fly tastes with its feet too. When its foot pads touch sugar, the 'proboscis extension reflex' fires and it unrolls its tongue to feed — the reflex Dethier discovered from a blowfly on his lab-window sandwich. Source: The Wire Science, 'To Know a Fly: Vincent Dethier'; eNeuro on the gustatory system in feeding.",
+    "context": "A fly tastes with its feet too. When the taste hairs on its feet touch sugar, the proboscis extension reflex fires and it unrolls its tongue to feed. Dethier and others used that reflex for decades to measure what flies can taste. Source: Journal of Experimental Biology, 'Regulation of Labellar and Tarsal Taste Thresholds' (https://cob.silverchair.com/jeb/article/130/1/219/5235/); The Wire Science, 'To Know a Fly: Vincent Dethier'.",
     "topic": "tasting-with-the-whole-body"
   },
   {
     "tier": 4,
     "question": "A snake flicks its forked tongue, catching scent particles from the air, then pulls it back inside. The tongue does not carry those particles to the nose. Where inside the snake does the flicking tongue deliver its scent load?",
-    "answer": "To a paired sensor in the roof of its mouth",
+    "answer": "To an organ in the roof of its mouth",
     "choices": [
-      "To a paired sensor in the roof of its mouth",
-      "To glands behind its fangs",
-      "To sacs deep in its throat",
-      "To pits below its eyes"
+      "To an organ in the roof of its mouth",
+      "To glands just behind its fangs",
+      "To sacs deep down in its throat",
+      "To the pits just below its eyes"
     ],
     "context": "A snake 'smells with its mouth': flicking collects scent particles and delivers them to the two-pronged vomeronasal (Jacobson's) organ in the palate. Source: ScienceTimes, 'Snakes Use Their Forked Tongues to Smell'; on the Jacobson's organ.",
     "topic": "tasting-with-the-whole-body"
@@ -23648,7 +23544,7 @@
   },
   {
     "tier": 2,
-    "question": "A flightless bird nearly 10 feet tall ran down its prey over the pampas of South America on long, powerful legs, armed with a massive hooked beak. Back then the land held almost no large mammal hunters, and this bird ruled it. Its fossils turn up across Argentina. What are these vanished hunters called?",
+    "question": "A flightless bird nearly 10 feet tall ran down its prey over the pampas of South America on long, powerful legs, armed with a massive hooked beak. Back then South America had no cats or wolves, and this bird ruled the land. Its fossils turn up across Argentina. What are these vanished hunters called?",
     "answer": "a terror bird",
     "choices": [
       "a terror bird",
@@ -23661,15 +23557,15 @@
   },
   {
     "tier": 2,
-    "question": "Running down a smaller mammal on the pampas of South America, a terror bird closed in with its huge beak, shaped like a hatchet and hooked at the tip. It did not kill the way a lion's or a wolf's jaws do. How did the terror bird use that beak?",
+    "question": "Running down a smaller mammal on the pampas of South America, a terror bird closed in with its huge beak, shaped like a hatchet and hooked at the tip. How did the terror bird use that beak to kill?",
     "answer": "it struck straight down like a swinging pickaxe",
     "choices": [
       "it struck straight down like a swinging pickaxe",
-      "it clamped shut and dragged prey underwater",
-      "it sprayed venom through a groove in the tip",
-      "it filtered small prey from mud like a spoon"
+      "it clamped on and shook the prey like a wolf",
+      "it wrenched the prey's neck with a sideways twist",
+      "it held on and crushed the prey in its jaws"
     ],
-    "context": "Its most fearsome weapon was a huge hatchet-shaped beak with a hooked tip; instead of biting and shaking, it struck straight DOWN at prey like swinging a pickaxe to break the neck or skull. Source: PMC 2923598, Mechanical Analysis of Feeding Behavior in Andalgalornis (https://pmc.ncbi.nlm.nih.gov/articles/PMC2923598/).",
+    "context": "Its most fearsome weapon was a huge hatchet-shaped beak with a hooked tip; instead of clamping on and shaking like a wolf, it struck straight DOWN at prey like a swinging pickaxe, likely in repeated blows to the neck or skull. Source: Degrange et al. 2010, PLoS ONE, 'Mechanical Analysis of Feeding Behavior in the Extinct Terror Bird Andalgalornis steulleti' (https://pmc.ncbi.nlm.nih.gov/articles/PMC2923598/).",
     "topic": "terror-bird"
   },
   {
@@ -23687,7 +23583,7 @@
   },
   {
     "tier": 3,
-    "question": "Guillermo Aguirre-Zabala dug the biggest bird skull ever found out of the fossil-rich cliffs of Patagonia in 2006. The 28-inch skull belonged to Kelenken, a terror bird about 10 feet tall that hunted mammals across ancient South America. The finder was no seasoned professor. Who was Guillermo Aguirre-Zabala?",
+    "question": "Guillermo Aguirre-Zabala found the biggest bird skull ever known in the fossil-rich rocks of Patagonia, and the find was announced in 2006. The 28-inch skull belonged to Kelenken, a terror bird about 10 feet tall that hunted across ancient South America. The finder was no seasoned professor. Who was Guillermo Aguirre-Zabala?",
     "answer": "a high-school student",
     "choices": [
       "a high-school student",
@@ -23695,7 +23591,7 @@
       "a museum night guard",
       "a visiting oil surveyor"
     ],
-    "context": "The largest terror bird skull known belongs to Kelenken, found in Patagonia in 2006 by high-school student Guillermo Aguirre-Zabala; at about 71 cm (28 inches) it is the biggest bird skull known, with a hooked beak roughly 46 cm long. Source: Wikipedia, Kelenken (https://en.wikipedia.org/wiki/Kelenken).",
+    "context": "The largest terror bird skull known belongs to Kelenken, found in Patagonia by high-school student Guillermo Aguirre-Zabala around 2004 and made public in 2006; at about 71.6 cm (28 inches) it is the largest skull of any known bird, with a hooked beak making up more than half its length. Source: Wikipedia, Kelenken (https://en.wikipedia.org/wiki/Kelenken).",
     "topic": "terror-bird"
   },
   {
@@ -23713,28 +23609,28 @@
   },
   {
     "tier": 5,
-    "question": "Paleontologists in 2024 described one shin bone, twelve million years old, from the Tatacoa Desert of Colombia. It came from what may be the biggest terror bird ever found, a top land hunter of its day. Yet the bone is scarred with deep bite marks, so even this giant became prey. Whose bite left them?",
-    "answer": "a giant caiman as long as a bus",
+    "question": "Paleontologists in 2024 described one shin bone, twelve million years old, from the Tatacoa Desert of Colombia. It came from what may be the biggest terror bird ever found, a top land hunter of its day. Yet the bone is scarred with bite marks, so alive or dead, this giant ended up as a meal. Whose bite left them?",
+    "answer": "a caiman, a cousin of the alligators",
     "choices": [
-      "a giant caiman as long as a bus",
+      "a caiman, a cousin of the alligators",
       "a saber-toothed marsupial as big as a bear",
       "a pack of wolf-sized marsupial hunters",
       "a rival terror bird ten feet tall"
     ],
-    "context": "This is the 2024 La Venta discovery from Colombia's Tatacoa Desert (Degrange et al., Papers in Palaeontology). The bird -- the northernmost terror bird known and possibly the biggest, roughly 5-20% larger than any before it -- survives as a single left shin bone (tibiotarsus) about 12 million years old. The bite marks on it match Purussaurus, an extinct caiman that grew to about 10 m (30 ft), longer than a school bus. So even the age's ultimate land hunter could be dragged down by a colossal crocodilian at the water's edge. Source: Degrange et al. 2024, Papers in Palaeontology 10(6):e1601, DOI 10.1002/spp2.1601; reported by Sci.News and Johns Hopkins Medicine, November 2024.",
+    "context": "This is the 2024 La Venta discovery from Colombia's Tatacoa Desert (Degrange et al., Papers in Palaeontology). The bird, the northernmost terror bird known and possibly the biggest, roughly 5-20% larger than any before it, survives as a single shin bone about 12 million years old. The bite marks on it are consistent with a caiman, possibly a young Purussaurus, a genus whose biggest members grew longer than any crocodile alive. Whether the caiman killed the bird or scavenged it is unclear. Source: Degrange et al. 2024, Papers in Palaeontology 10(6):e1601, DOI 10.1002/spp2.1601; Wikipedia 'Purussaurus'.",
     "topic": "terror-bird"
   },
   {
     "tier": 4,
-    "question": "Researchers ran CT scans through the ear of Llallawavis, a terror bird whose skeleton, found in Argentina, is the most complete of its kind, down to the fragile coiled bones deep inside the ear. The ear's shape showed what kind of sound this hunter was tuned to catch. What was its hearing built for?",
-    "answer": "deep, low sounds that carry for miles, like an elephant",
+    "question": "Researchers ran CT scans through the skull of Llallawavis, a terror bird from Argentina whose skeleton is the most complete of its kind, down to the delicate canals of its inner ear. The ear's shape showed what kind of sound this hunter was tuned to catch. What was its hearing built for?",
+    "answer": "deep, low sounds that travel far",
     "choices": [
-      "deep, low sounds that carry for miles, like an elephant",
-      "faint, high squeaks up close, like an owl hunting mice",
-      "its own echoes bouncing back, like a cave-nesting bird",
-      "a wide band of chirps and trills, like a songbird"
+      "deep, low sounds that travel far",
+      "faint, high squeaks heard up close",
+      "its own echoes bouncing back",
+      "a wide band of chirps and trills"
     ],
-    "context": "This is Llallawavis scagliai, described in 2015 from Argentina -- about 95% complete, the finest terror bird fossil known (Degrange et al., Journal of Vertebrate Paleontology). CT scans of its inner ear showed its hearing was tuned unusually low for a bird, with mean sensitivity around 2,300 Hz, below the average for living birds. Low-pitched sound fades slowly and travels far, so the bird could likely hear prey moving out of sight -- footsteps in the grass -- and probably answered with its own deep, booming calls over long distances. Source: Degrange et al. 2015, Journal of Vertebrate Paleontology; reported via National Geographic ('The Call of the Terror Bird') and the Florida Museum (FLMNH) fossil-project research page.",
+    "context": "This is Llallawavis scagliai, described in 2015 from Argentina, the most complete terror bird fossil known (Degrange et al., Journal of Vertebrate Paleontology). CT scans of its inner ear showed hearing tuned low for a bird, roughly 380 to 4,230 Hz with its best sensitivity near 2,300 Hz. Low-pitched sound fades slowly and travels far, and the bird may have made deep calls of its own, like a cassowary's. Source: Degrange et al. 2015, Journal of Vertebrate Paleontology; Wikipedia 'Llallawavis'.",
     "topic": "terror-bird"
   },
   {
@@ -24000,27 +23896,14 @@
   {
     "tier": 3,
     "question": "A frog must hop back to a pond every spring, because its soft eggs would dry out on land. A desert lizard can lay its eggs on baking sand and walk away, and the young still grow fully inside their shells. What structure inside the lizard's eggshell lets its embryo develop so far from any pond?",
-    "answer": "A sealed amniotic sac around the embryo",
+    "answer": "A sealed, fluid-filled sac",
     "choices": [
-      "A sealed amniotic sac around the embryo",
+      "A sealed, fluid-filled sac",
       "A soft jelly coating",
       "A yolk twice the usual size",
       "A pocket of stored air"
     ],
     "context": "The shelled amniotic egg freed vertebrates from water: its membranes retain water, so reptiles could reproduce on dry land even in extreme, arid habitats. Amphibians still must lay their shell-less eggs in water. Source: https://en.wikipedia.org/wiki/Reptile",
-    "topic": "the-five-vertebrate-classes-the-recognition-base"
-  },
-  {
-    "tier": 3,
-    "question": "Under a microscope, a biologist sets a bird's feather beside a scrap of a lizard's dry, overlapping body covering. They look nothing alike, yet both are built from the same tough protein, beta-keratin, just folded into different shapes. Which part of the lizard's body is a feather a reshaped form of?",
-    "answer": "A scale",
-    "choices": [
-      "A scale",
-      "A claw",
-      "A tooth",
-      "A belly scute"
-    ],
-    "context": "Feathers are made of the very same beta-keratin as reptile claws, scales and shells - a bird's feather and a lizard's scale are the same protein, reshaped. Source: https://en.wikipedia.org/wiki/Feather",
     "topic": "the-five-vertebrate-classes-the-recognition-base"
   },
   {
@@ -24072,7 +23955,7 @@
       "Ouranosaurus",
       "Amargasaurus"
     ],
-    "context": "Around 320-315 million years ago, in the late Carboniferous, the amniotes (backboned animals that lay waterproof eggs on land) split into two sister branches: Synapsida, which led to mammals, and Sauropsida, which led to every reptile and bird. Mammals never descended from reptiles - the two lines are cousins. The give-away is in the skull: synapsids carry a single opening (one temporal fenestra) behind each eye socket. Dimetrodon, the sail-backed Permian predator forever shelved with the dinosaurs, has that single hole, which makes it a synapsid - more closely related to you and to a cow than to any living lizard or crocodile. The other three sails all belong to genuine dinosaurs on the reptile (sauropsid) side: Spinosaurus, a spinosaurid theropod with a tall dorsal sail; Ouranosaurus, an iguanodontian ornithopod whose long back spines are usually restored as a sail; and Amargasaurus, a dicraeosaurid sauropod whose neck bore tall paired spines that may have carried sails. It is the mirror-image of the bird twist: just as a dinosaur hides among the 'reptiles,' a stem-mammal hides among the 'prehistoric reptiles.' Sources: en.wikipedia.org/wiki/Synapsida; en.wikipedia.org/wiki/Sauropsida; en.wikipedia.org/wiki/Dimetrodon; en.wikipedia.org/wiki/Spinosaurus; en.wikipedia.org/wiki/Ouranosaurus; en.wikipedia.org/wiki/Amargasaurus.",
+    "context": "Around 320-315 million years ago, in the late Carboniferous, the amniotes (backboned animals that lay waterproof eggs on land) split into two sister branches: Synapsida, which led to mammals, and Sauropsida, which led to every reptile and bird. Mammals never descended from reptiles - the two lines are cousins. The give-away is in the skull: synapsids carry a single opening (one temporal fenestra) behind each eye socket. Dimetrodon, the sail-backed Permian predator forever shelved with the dinosaurs, has that single hole, which makes it a synapsid - more closely related to people and to cows than to any living lizard or crocodile. The other three sails all belong to genuine dinosaurs on the reptile (sauropsid) side: Spinosaurus, a spinosaurid theropod with a tall dorsal sail; Ouranosaurus, an iguanodontian ornithopod whose long back spines are usually restored as a sail; and Amargasaurus, a dicraeosaurid sauropod whose neck bore tall paired spines that may have carried sails. It is the mirror-image of the bird twist: just as a dinosaur hides among the 'reptiles,' a stem-mammal hides among the 'prehistoric reptiles.' Sources: en.wikipedia.org/wiki/Synapsida; en.wikipedia.org/wiki/Sauropsida; en.wikipedia.org/wiki/Dimetrodon; en.wikipedia.org/wiki/Spinosaurus; en.wikipedia.org/wiki/Ouranosaurus; en.wikipedia.org/wiki/Amargasaurus.",
     "topic": "the-five-vertebrate-classes-the-recognition-base"
   },
   {
@@ -24237,7 +24120,7 @@
     "answer": "The bent hairs fire a nerve signal",
     "choices": [
       "The bent hairs fire a nerve signal",
-      "The jelly changes color to warn the brain",
+      "The jelly leaks a chemical into the blood",
       "The scales lift to catch more current",
       "A muscle squeezes water back out"
     ],
@@ -24267,7 +24150,7 @@
       "They follow a scent the leader releases",
       "They lock onto the seabed's magnetic field"
     ],
-    "context": "Every fish feels the pressure waves its neighbors push against its flank and matches them — vision alone or the lateral line alone is enough, but knocking out both breaks the school. Source: Partridge & Pitcher 1980; journals.biologists.com/jeb (blinded saithe still school; both senses must be ablated for schooling to cease).",
+    "context": "Every fish feels the pressure waves its neighbors push against its flank, so even blinded saithe keep their places in the school; cut the lateral line as well, and the school falls apart. Source: Pitcher, Partridge & Wardle 1976, Science, 'A blind fish can school'; Partridge & Pitcher 1980, Journal of Comparative Physiology; Wikipedia 'Lateral line'.",
     "topic": "the-lateral-line-feeling-the-water-move"
   },
   {
@@ -24285,15 +24168,15 @@
   },
   {
     "tier": 4,
-    "question": "A goldfish feels a ripple along its lateral line, and a girl hears a bell, with the same kind of sensor: a tiny hair cell. Evolution sealed that sensor inside the head and built from it one organ in every backboned animal, from fish and frogs to birds and people. What did it build?",
+    "question": "A goldfish feels a ripple along its lateral line with a tiny hair cell that fires when it bends. The very same kind of cell sits inside a person's head, and inside every backboned animal's, lining one organ. Which organ?",
     "answer": "The inner ear",
     "choices": [
       "The inner ear",
-      "The eye's lens",
+      "The eye's retina",
       "The taste buds",
-      "The sense of smell"
+      "The nose lining"
     ],
-    "context": "That same hair-cell sensor, moved inside the head, became the inner ear of every vertebrate — so both your hearing AND your balance descend from a fish's lateral line. Scientists even group the two systems together as the 'octavolateralis' system. Source: Wikipedia, 'Lateral line'; Springer, 'Functional Evolution of Lateral Line and Inner Ear Sensory Systems' (homologous hair cells).",
+    "context": "That same hair-cell sensor lines the inner ear of every vertebrate, the organ of both hearing and balance. The hair cells of the two systems are homologous, and scientists group the lateral line and the inner ear together as the 'octavolateralis' system. Source: Wikipedia, 'Lateral line'; Springer, 'Functional Evolution of Lateral Line and Inner Ear Sensory Systems' (homologous hair cells).",
     "topic": "the-lateral-line-feeling-the-water-move"
   },
   {
@@ -24306,7 +24189,7 @@
       "It arose late and stayed unique to sharks and their kin",
       "It passed into bony fish from one shared ancestor, just once"
     ],
-    "context": "Both senses belong to one embryonic system, the octavolateralis system, and both grow from the same lateral-line placodes (thickenings of embryonic skin). Ancestral jawed vertebrates had both the mechanical line and the electric one. The electric sense was then lost in the lineage leading to the neopterygian bony fish -- gars, bowfin, and the teleosts -- and in frogs, and then independently re-evolved at least twice within teleosts, most likely by re-tuning ordinary neuromast hair cells into electroreceptors. So electroreception is an old lateral-line trick that has been dropped and reinvented across fish history -- a genuine, still-debated pattern of repeated loss and convergent regain. Source: Wikipedia 'Lateral line' and 'Ampullae of Lorenzini'; Baker, Modrell & Gillis, 'The evolution and development of vertebrate lateral line electroreceptors', J. Exp. Biol. (PMC4988487); eLife 2016, 'Insights into electrosensory organ development... from a lateral line-enriched transcriptome' (elifesciences.org/articles/24197).",
+    "context": "Both senses belong to one embryonic system, the octavolateralis system, and both grow from the same lateral-line placodes (thickenings of embryonic skin). Ancestral jawed vertebrates had both the mechanical line and the electric one. The electric sense was then lost in the lineage leading to the neopterygian bony fish -- gars, bowfin, and the teleosts -- and in frogs, and then independently re-evolved at least twice within teleosts, most likely by re-tuning ordinary neuromast hair cells into electroreceptors. So electroreception is an old lateral-line trick that has been dropped and reinvented across fish history -- a genuine, still-debated pattern of repeated loss and convergent regain. Source: Wikipedia 'Lateral line' and 'Ampullae of Lorenzini'; Baker, Modrell & Gillis, 'The evolution and development of vertebrate lateral line electroreceptors', J. Exp. Biol. (PMC4988487); eLife 2017, 'Insights into electrosensory organ development... from a lateral line-enriched transcriptome' (elifesciences.org/articles/24197).",
     "topic": "the-lateral-line-feeling-the-water-move"
   },
   {
@@ -24754,9 +24637,9 @@
   {
     "tier": 2,
     "question": "A pet mouse and a pet lizard sit in the same cool room, both doing nothing at all. The mouse must keep finding food, squeaking and scrabbling in its cage, while the lizard can sit still and eat nothing for weeks. What is the mouse paying for that the lizard is not?",
-    "answer": "Keeping its inner furnace lit at a steady temperature",
+    "answer": "Making its own body heat, nonstop",
     "choices": [
-      "Keeping its inner furnace lit at a steady temperature",
+      "Making its own body heat, nonstop",
       "Growing a new coat of winter fur",
       "Storing fat for a coming hibernation",
       "Rebuilding muscle worn out by shivering"
@@ -24765,37 +24648,24 @@
     "topic": "the-two-engines-warm-blooded-vs-cold-blooded"
   },
   {
-    "tier": 2,
-    "question": "A ball python hunts small rodents by night in the grasslands of West Africa, and as a cold-blooded snake it never spends food on keeping itself warm. That lets it go a remarkably long time between meals without wasting away. For a healthy adult ball python, how long can a fast last?",
-    "answer": "At least six months without a single meal",
-    "choices": [
-      "At least six months without a single meal",
-      "About two weeks before it weakens",
-      "Three or four days at most",
-      "Right through a whole decade"
-    ],
-    "context": "A healthy adult ball python can survive at least six months without eating, and the longest fast ever recorded in any snake was 21 months, also by a ball python. A big African rock python can be kept going for up to two years on one very large kill. Not paying to heat yourself is what makes such long fasting possible. Source: https://www.terrariumquest.com/ball-python/how-long-without-eating/",
-    "topic": "the-two-engines-warm-blooded-vs-cold-blooded"
-  },
-  {
     "tier": 3,
-    "question": "An Etruscan shrew, the smallest mammal on Earth by weight and lighter than a paperclip, hunts insects and worms almost nonstop, day and night. Warm-blooded and tiny, it leaks body heat into the air at an alarming rate. If it stops finding food, how fast can it starve?",
-    "answer": "In as little as two to three hours",
+    "question": "An Etruscan shrew, the smallest mammal on Earth by weight at about two grams, hunts insects and worms almost nonstop, day and night. Warm-blooded and tiny, it leaks body heat into the air at an alarming rate. If it stops finding food, how fast can it starve?",
+    "answer": "Within only a few hours",
     "choices": [
-      "In as little as two to three hours",
+      "Within only a few hours",
       "In about two or three days",
       "In roughly a week",
       "In a month, like most small mammals"
     ],
-    "context": "The Etruscan shrew, the world's smallest mammal by weight, must eat 1.5 to 2 times its own body weight in food every single day, and its heart beats up to about 1,500 times a minute, the fastest of any mammal. That runaway furnace means it can starve in as little as two to three hours. Source: https://smart.columbus.gov/columbus-news/meet-the-worlds-smallest-mammal-the-etruscan-shrew-1764805785 ; https://www.mpg.de/14755962/shrews-metabolism-winter",
+    "context": "The Etruscan shrew, the world's smallest mammal by weight (about 1.8 g), must eat 1.5 to 2 times its own body weight in food every day, and its heart beats up to about 1,500 times a minute. That runaway furnace means it can starve within a few hours; Wikipedia puts it at four hours without food. Source: Wikipedia 'Etruscan shrew'; https://www.mpg.de/14755962/shrews-metabolism-winter",
     "topic": "the-two-engines-warm-blooded-vs-cold-blooded"
   },
   {
     "tier": 3,
     "question": "Snow piles up outside a beehive, but inside, thousands of honeybees pack into a tight ball, a winter cluster, and hold its center near 85 degrees Fahrenheit all winter. Insects usually cannot heat themselves the way a mammal can. How do the bees make that warmth?",
-    "answer": "They contract their flight muscles hard without flapping their wings",
+    "answer": "They shiver their flight muscles, wings still",
     "choices": [
-      "They contract their flight muscles hard without flapping their wings",
+      "They shiver their flight muscles, wings still",
       "They burn stored honey inside special heating glands",
       "They pant warm air over the cluster in shifts",
       "They press against the sun-warmed hive walls"
@@ -24818,15 +24688,15 @@
   },
   {
     "tier": 4,
-    "question": "A leatherback, the largest sea turtle alive, swims from the warm tropics to near the Arctic Circle, into seas as cold as 7.5 degrees Celsius, and still stays far warmer than the water around it. It has no inner furnace and it never shivers. What keeps a leatherback that warm?",
+    "question": "A leatherback, the largest sea turtle alive, swims from the warm tropics to near the Arctic Circle, into seas of 7.5 degrees Celsius and colder, and still stays far warmer than the water around it. It has no furnace like a mammal's, and it never shivers. What keeps a leatherback that warm?",
     "answer": "Its sheer enormous size holding heat in",
     "choices": [
       "Its sheer enormous size holding heat in",
-      "A thick layer of blubber like a whale's",
-      "Warm blood pumped from a special gland",
-      "Basking at the surface between dives"
+      "Antifreeze chemicals in its blood",
+      "Warm water trapped under its shell",
+      "Heat stored from the tropical sun"
     ],
-    "context": "This trick is called gigantothermy. As one of the largest living reptiles, over 900 kg, the leatherback's huge body, insulating outer tissues, and heat-exchanger flippers let it hold heat that a smaller reptile would lose, giving it the widest temperature range of any reptile. Source: https://www.nature.com/articles/344858a0 ; https://pmc.ncbi.nlm.nih.gov/articles/PMC2978089/",
+    "context": "This trick is called gigantothermy. As one of the largest living reptiles, at up to about 900 kg, the leatherback's huge body, insulating fat and outer tissues, and heat-exchanger flippers let it hold heat that a smaller reptile would lose. One leatherback in 7.5 C water was found about 18 C warmer than the sea (Frair, Ackman & Mrosovsky 1972). Source: https://www.nature.com/articles/344858a0 (Paladino et al. 1990); https://pmc.ncbi.nlm.nih.gov/articles/PMC2978089/",
     "topic": "the-two-engines-warm-blooded-vs-cold-blooded"
   },
   {
@@ -24845,12 +24715,12 @@
   {
     "tier": 5,
     "question": "A Burmese python goes months without eating, then swallows one large meal, and its body bursts into a violent stretch of work that lasts until about the tenth day. How much faster than at rest does its metabolism run to power that meal?",
-    "answer": "Ten to forty-four times its resting rate",
+    "answer": "Up to about forty-four times faster",
     "choices": [
-      "Ten to forty-four times its resting rate",
-      "About double its resting rate",
-      "Roughly a quarter faster",
-      "Around a hundred times its resting rate"
+      "Up to about forty-four times faster",
+      "Up to about twice as fast",
+      "Up to about a quarter faster",
+      "Up to about a hundred times faster"
     ],
     "context": "Within days of a big meal a Burmese python's metabolism runs 10 to 44 times faster, and its organs balloon in size, then shrink back to normal once the meal is digested by about the tenth day. The digestive burst is so extreme that sitting still and fasting for months is cheap by comparison, which is the whole cold-blooded bargain. Source: https://journals.biologists.com/jeb/article/211/24/3767/18007/Digestive-physiology-of-the-Burmese-python-broad",
     "topic": "the-two-engines-warm-blooded-vs-cold-blooded"
@@ -24870,20 +24740,20 @@
   },
   {
     "tier": 4,
-    "question": "A ground squirrel ends its winter hibernation chilled almost to freezing, then floods itself with heat to wake without a single shiver or twitch of muscle. All that warmth wells up from a special tissue, brown fat, whose cells are crammed with mitochondria. How does brown fat make heat with no movement at all?",
+    "question": "A ground squirrel ends its winter hibernation chilled almost to freezing, then floods itself with heat to wake. At first, before it starts to shiver, that warmth wells up from a special tissue, brown fat, whose cells are crammed with mitochondria. How does brown fat make heat with no movement at all?",
     "answer": "Its cells let their fuel's energy leak out as heat instead of banking it as usable power",
     "choices": [
       "Its cells let their fuel's energy leak out as heat instead of banking it as usable power",
-      "Its cells pack in far more mitochondria and drive them to burn their fuel much faster",
+      "Its cells twitch tiny fibers inside them, a hidden shiver too small to see",
       "Its cells release a hormone that speeds every reaction inside the tissue at once",
       "Its cells snap their stored fat apart in a rapid, self-feeding chemical cascade"
     ],
-    "context": "Normally a cell's mitochondria pump protons across a membrane, then let them flow back through a turbine that banks the energy as ATP, the cell's usable fuel. Brown fat carries a protein called UCP1 (thermogenin) that punches an open hole in that membrane, so the protons rush back with no turbine and no ATP — the fuel's energy escapes purely as heat. This 'non-shivering thermogenesis,' switched on by the sympathetic nervous system, lets hibernating mammals (and brown-fat-rich newborns) rewarm without the muscular shivering that a winter honeybee cluster relies on. Source: 'Thermogenin (UCP1)'; Nicholls & Locke on brown adipose tissue.",
+    "context": "Normally a cell's mitochondria pump protons across a membrane, then let them flow back through a turbine that banks the energy as ATP, the cell's usable fuel. Brown fat carries a protein called UCP1 (thermogenin) that punches an open hole in that membrane, so the protons rush back with no turbine and no ATP — the fuel's energy escapes purely as heat. This 'non-shivering thermogenesis,' switched on by the sympathetic nervous system, lets hibernating mammals (and brown-fat-rich newborns) start rewarming without the muscular shivering that a winter honeybee cluster relies on; in waking ground squirrels, shivering joins in later, once the body has warmed. Source: 'Thermogenin (UCP1)'; Nicholls & Locke on brown adipose tissue.",
     "topic": "the-two-engines-warm-blooded-vs-cold-blooded"
   },
   {
     "tier": 3,
-    "question": "A honeybee scout comes home from a patch of flowers under about 50 meters from the hive, roughly a school hallway away. For far-off flowers she would run her long figure-eight dance on the comb, but for food this close she skips it and does a much simpler routine. What does that near-food dance look like?",
+    "question": "A honeybee scout comes home from a patch of flowers only a stone's throw from the hive. For far-off flowers she would run her long figure-eight dance on the comb, but for food this close she skips it and does a much simpler routine. What does that near-food dance look like?",
     "answer": "Just circling one way, then the other",
     "choices": [
       "Just circling one way, then the other",
@@ -24891,7 +24761,7 @@
       "Trembling in place without moving",
       "Climbing straight up and freezing"
     ],
-    "context": "For food closer than about 50 metres a bee does the 'round dance' - simply circling one direction then reversing - instead of the full waggle dance with its angle and duration code. Source: https://en.wikipedia.org/wiki/Round_dance_(honey_bee)",
+    "context": "For food very close to the hive a bee does the 'round dance', simply circling one direction then reversing, instead of the full waggle dance with its angle and duration code. The switch-over distance varies between honeybee races: in the Italian bee the round dance gives way to the waggle dance between about 10 and 40 meters. Source: https://en.wikipedia.org/wiki/Waggle_dance ; https://en.wikipedia.org/wiki/Round_dance_(honey_bee)",
     "topic": "the-waggle-dance-how-a-bee-maps-the-flowers"
   },
   {
@@ -24923,14 +24793,14 @@
   {
     "tier": 5,
     "question": "A scout bee dances her coded run on the upright comb inside a hive so dark that no light gets through the wax. Her sisters still read her directions, though none of them can see her move. How does each follower pick up the message?",
-    "answer": "She reaches out with her antennae and keeps touching the dancer",
+    "answer": "She keeps touching the dancer with her antennae",
     "choices": [
-      "She reaches out with her antennae and keeps touching the dancer",
-      "She feels the comb shudder under her feet",
+      "She keeps touching the dancer with her antennae",
+      "She smells a scent trail the dancer laid outside",
       "She tracks the heat rising off the dancer's body",
-      "She listens for the rhythm of the dancer's buzz"
+      "She tastes a code in the nectar the dancer shares"
     ],
-    "context": "Follower bees crowd the dancer and keep in contact with her body using their antennae, reading the coded run by touch in the hive's total darkness. Source: https://www.ebsco.com/research-starters/history/frisch-discovers-bees-communicate-through-body-movements",
+    "context": "Follower bees crowd the dancer and keep in contact with her body using their antennae, reading the coded run largely by touch in the hive's total darkness; the hum and faint electric field of her vibrating body may help too. Honeybees lay no scent trails to their flowers, and the nectar a dancer shares carries the flowers' scent but no map. Source: https://www.ebsco.com/research-starters/history/frisch-discovers-bees-communicate-through-body-movements ; Wikipedia 'Waggle dance'.",
     "topic": "the-waggle-dance-how-a-bee-maps-the-flowers"
   },
   {
@@ -25533,7 +25403,7 @@
   },
   {
     "tier": 1,
-    "question": "A rhino-sized plant-eater roamed the plains of what is now North America about 68 million years ago. It carried a short horn on its nose, two long horns above its eyes and a huge bony frill fanning out behind its head. Which dinosaur was it?",
+    "question": "A rhino-like plant-eater roamed the plains of what is now North America about 68 million years ago. It carried a short horn on its nose, two long horns above its eyes and a huge bony frill fanning out behind its head. Which dinosaur was it?",
     "answer": "Triceratops",
     "choices": [
       "Triceratops",
@@ -25542,19 +25412,6 @@
       "Iguanodon"
     ],
     "context": "Triceratops means 'three-horned face' -- a short nose horn plus two long brow horns on a big bony frill. Source: AMNH (amnh.org/exhibitions/permanent/ornithischian-dinosaurs/triceratops).",
-    "topic": "triceratops"
-  },
-  {
-    "tier": 1,
-    "question": "A hulking, four-legged Triceratops roamed North America about 68 million years ago, 26 to 30 feet long from beak to tail, on stout, elephant-like legs built low and broad. Roughly how heavy did the biggest ones get?",
-    "answer": "6 to 10 tons",
-    "choices": [
-      "6 to 10 tons",
-      "1 to 2 tons",
-      "20 to 30 tons",
-      "40 to 50 tons"
-    ],
-    "context": "Triceratops was rhino-shaped and built low and heavy, weighing 6-10 tons in Late Cretaceous North America. Source: National Geographic (nationalgeographic.com/animals/facts/triceratops-horridus).",
     "topic": "triceratops"
   },
   {
@@ -25576,24 +25433,11 @@
     "answer": "Up to 800",
     "choices": [
       "Up to 800",
-      "About 60",
-      "Exactly 32",
-      "About a dozen"
+      "Up to 60",
+      "Up to 32",
+      "Up to a dozen"
     ],
     "context": "These stacked columns are called 'dental batteries' -- roughly 36-40 columns of 3-5 teeth each, up to 800 total, for grinding tough plants. Source: Wikipedia Triceratops; Animalia.bio.",
-    "topic": "triceratops"
-  },
-  {
-    "tier": 3,
-    "question": "Triceratops carried the biggest skull of any land animal that has ever lived. Its bony frill fanned out behind the head, and the whole heavy skull, horns, beak and frill together, made up nearly a third of the animal from beak-tip to tail. About how long was that famous skull?",
-    "answer": "About 8 feet",
-    "choices": [
-      "About 8 feet",
-      "About 8 inches",
-      "About 30 feet",
-      "About 2 feet"
-    ],
-    "context": "The Triceratops skull reached about 8 feet, the largest of any land animal ever, nearly a third of its body length. Source: Wikipedia Triceratops; AMNH.",
     "topic": "triceratops"
   },
   {
@@ -25624,7 +25468,7 @@
   },
   {
     "tier": 5,
-    "question": "A grown Triceratops carried two long brow horns that swept forward over its beak. When paleontologists set its skulls side by side in order of age, the smallest a 38-centimeter hatchling and the largest two-meter adults, they found the horns had rebuilt themselves as the animal aged. On a young juvenile, which way did those brow horns point?",
+    "question": "A grown Triceratops carried two long brow horns that swept forward over its beak. When paleontologists set its skulls side by side in order of age, the smallest a youngster's 38-centimeter skull and the largest two-meter adults, they found the horns had rebuilt themselves as the animal aged. On a young juvenile, which way did those brow horns point?",
     "answer": "Backward toward the frill, only recurving forward once it reached adulthood",
     "choices": [
       "Backward toward the frill, only recurving forward once it reached adulthood",
@@ -25637,13 +25481,13 @@
   },
   {
     "tier": 1,
-    "question": "A trilobite crawled across the Cambrian ocean floor 500 million years ago, when the seas were first filling with animal life. Jointed armor covered its soft body, and it walked on many legs, much as a modern woodlouse does. To which great group of animals did it belong?",
+    "question": "A trilobite crawled across the Cambrian sea floor 500 million years ago. Jointed armor covered its soft body, and it walked on many jointed legs, much as a woodlouse does today. To which great group of animals did it belong?",
     "answer": "Arthropods",
     "choices": [
       "Arthropods",
       "Mollusks",
-      "Corals",
-      "Sponges"
+      "Segmented worms",
+      "Echinoderms"
     ],
     "context": "Trilobites were arthropods — the same great group as today's insects, crabs, and spiders. Hard-shelled, jointed-limbed sea creatures, they crawled, burrowed, and swam across the ancient ocean floor for hundreds of millions of years. Source: Natural History Museum, London — 'How trilobites conquered prehistoric oceans' (nhm.ac.uk).",
     "topic": "trilobites"
@@ -25654,7 +25498,7 @@
     "answer": "Long, sharp spines",
     "choices": [
       "Long, sharp spines",
-      "A thick coat of fur",
+      "Patches of stinging cells",
       "Rows of suction cups",
       "A pair of grasping claws"
     ],
@@ -25676,25 +25520,25 @@
   },
   {
     "tier": 2,
-    "question": "Isotelus rex, the biggest trilobite known, crawled the ancient seafloor at over two feet from head to tail. The tiniest trilobite ever found, Acanthopleurella stipulae, sat at the far opposite end of that scale. About how big was it?",
-    "answer": "About 1.5 millimeters, smaller than a grain of rice",
+    "question": "Isotelus rex, the biggest complete trilobite known, crawled the ancient seafloor at over two feet long. The tiniest trilobite ever found, Acanthopleurella stipulae, sat at the far opposite end of that scale. About how big was it?",
+    "answer": "About 1.5 millimeters, like a pinhead",
     "choices": [
-      "About 1.5 millimeters, smaller than a grain of rice",
+      "About 1.5 millimeters, like a pinhead",
       "About 2 centimeters, like a coin",
       "About 10 centimeters, like a hand",
       "About 30 centimeters, like a ruler"
     ],
-    "context": "Trilobites ranged from giant to tiny: the largest known, Isotelus rex, reached about 72 cm (over 2 feet), while the smallest, Acanthopleurella stipulae, was just 1.5 mm — smaller than a grain of rice. Source: Wikipedia 'Trilobite' (Isotelus rex; Acanthopleurella stipulae).",
+    "context": "Trilobites ranged from giant to tiny: the largest complete specimen known, Isotelus rex, reached about 72 cm (over 2 feet), while the smallest, Acanthopleurella stipulae, was just 1.5 mm — smaller than a grain of rice. Source: Wikipedia 'Trilobite' (Isotelus rex; Acanthopleurella stipulae).",
     "topic": "trilobites"
   },
   {
     "tier": 3,
-    "question": "Paleontologists have named more than 22,000 kinds of trilobite from the fossils they left behind, and they warn that those fossils are far more common than the animals themselves ever were. Why do so many trilobite fossils exist for each trilobite that lived?",
+    "question": "Paleontologists have named more than 22,000 kinds of trilobite from the shells they left in the rock, and they warn that many of those fossils are not dead trilobites at all. How could a single trilobite leave many fossils behind?",
     "answer": "Each one shed many empty shells while alive",
     "choices": [
       "Each one shed many empty shells while alive",
       "They laid thousands of hard-shelled eggs",
-      "Their shells split into pieces after death",
+      "They split in two to make new trilobites",
       "They lived crowded together in vast reefs"
     ],
     "context": "Like all arthropods, a trilobite grew by molting — splitting its old shell open along built-in weak lines (facial sutures) and crawling out. Because one animal shed many times in a lifetime, a huge number of trilobite 'fossils' are actually just empty cast-off shells, not dead animals. Source: NHM London; Oxford UMNH; PMC review on trilobite moulting.",
@@ -25702,20 +25546,20 @@
   },
   {
     "tier": 3,
-    "question": "A trilobite peered over the ancient seafloor through some of the earliest true compound eyes, the same many-lensed mosaic a bee or a dragonfly uses today. Yet its lenses were made of something no animal alive builds an eye from. What were they made of?",
-    "answer": "Calcite — clear crystal, actual stone",
+    "question": "A trilobite peered over the ancient seafloor through some of the earliest true compound eyes, the same many-lensed mosaic a bee or a dragonfly uses today. Yet its lenses were made of something hardly any other creature has ever built an eye from. What were they made of?",
+    "answer": "Calcite, a clear stone crystal",
     "choices": [
-      "Calcite — clear crystal, actual stone",
+      "Calcite, a clear stone crystal",
       "A soft transparent jelly",
       "Thin sheets of chitin shell",
       "A ring of tiny water droplets"
     ],
-    "context": "Astonishingly, trilobite eye lenses were made of the mineral calcite — actual clear crystal, a stone lens set right in the head. They are the only animals known to have made their eyes out of rock. Their compound eyes stitched many separate lens units, called ommatidia, into a mosaic picture. Source: Beaty Biodiversity Museum, UBC — 'Trilobite Eyes Are Hard'; ScienceAlert.",
+    "context": "Trilobite eye lenses were made of the mineral calcite, actual clear crystal, a stone lens set right in the head. Almost no other animal has done this, though one living brittle star, Ophiocoma wendtii, grows tiny calcite lenses in its skeleton. Their compound eyes stitched many separate lens units, called ommatidia, into a mosaic picture. Source: Wikipedia 'Trilobite'; Beaty Biodiversity Museum, UBC, 'Trilobite Eyes Are Hard'.",
     "topic": "trilobites"
   },
   {
     "tier": 3,
-    "question": "Trilobites crawled the seas from deep in the Cambrian to the end of the Permian, a run so long that our own genus Homo, barely 2 million years old, is a blink beside it. Roughly how long did trilobites rule the seas?",
+    "question": "Trilobites crawled the seas from deep in the Cambrian to the end of the Permian, a run so long that the human genus Homo, only two or three million years old, is a blink beside it. Roughly how long did trilobites rule the seas?",
     "answer": "Almost 270 million years",
     "choices": [
       "Almost 270 million years",
@@ -25723,7 +25567,7 @@
       "About 90 million years",
       "About 900 million years"
     ],
-    "context": "Trilobites ruled the seas for almost 270 million years — from about 521 million years ago in the Cambrian until roughly 251 million years ago. For comparison, our own genus Homo is only about 2 million years old. Source: Wikipedia 'Trilobite'; Oxford University Museum of Natural History.",
+    "context": "Trilobites ruled the seas for almost 270 million years — from about 521 million years ago in the Cambrian until roughly 251 million years ago. For comparison, the human genus Homo is only about two to three million years old. Source: Wikipedia 'Trilobite'; Oxford University Museum of Natural History.",
     "topic": "trilobites"
   },
   {
@@ -25740,19 +25584,6 @@
     "topic": "trilobites"
   },
   {
-    "tier": 4,
-    "question": "Every last trilobite died out about 251 million years ago in the end-Permian catastrophe known as the Great Dying. It was no ordinary die-off. Of every kind of living thing in the sea and on land, how much did that single event erase?",
-    "answer": "More than 90% of all species",
-    "choices": [
-      "More than 90% of all species",
-      "About 10% of all species",
-      "About one-third of all species",
-      "About half of all species"
-    ],
-    "context": "After 270 million years, trilobites vanished completely in the end-Permian 'Great Dying' — the largest mass extinction in Earth's history, which killed more than 90% of all species on the planet. Not a single trilobite survived it. Source: Oxford University Museum of Natural History; Wikipedia 'Trilobite' (end-Permian extinction).",
-    "topic": "trilobites"
-  },
-  {
     "tier": 5,
     "question": "A phacopid trilobite looked out through eye lenses that each seem a single clear blob. Modeling showed every lens was really two stacked pieces meeting along a curved inner surface, the very shape Descartes and Huygens would work out on paper some 400 million years later. What did that surface do to the light?",
     "answer": "Focused every ray to one crisp point",
@@ -25762,7 +25593,7 @@
       "Filtered out the sea's dim blue glow",
       "Polarized the light to cut the glare"
     ],
-    "context": "Those two designs are the only aberration-correcting lens shapes humans ever derived on paper — René Descartes in 1637 and Christiaan Huygens in 1690 — yet a phacopid grew the same aspherical calcite interface some 400 million years earlier, cancelling the blur (spherical aberration) that plagues a simple lens and driving light to a single sharp focus. Clarkson & Levi-Setti first matched the geometry (Nature 261:130, 1975, 'Trilobite eyes and the optics of Des Cartes and Huygens'); Lee, Torney & Owen later measured a real magnesium-concentration contrast between the two calcite units, chemical proof the doublet was genuine (Palaeontology 50:1031, 2007).",
+    "context": "Descartes (1637) and Huygens (1690) each worked out on paper a lens shape that cancels the blur, spherical aberration, that plagues a simple lens; a phacopid grew the same kind of aspherical calcite interface some 400 million years earlier, driving light to a single sharp focus. Clarkson & Levi-Setti first matched the geometry (Nature 254:663, 1975, 'Trilobite eyes and the optics of Des Cartes and Huygens'); Lee, Torney & Owen later measured a magnesium-concentration contrast between the two calcite units, chemical evidence that the doublet was genuine (Palaeontology 50:1031, 2007).",
     "topic": "trilobites"
   },
   {
@@ -25780,33 +25611,33 @@
   },
   {
     "tier": 3,
-    "question": "The tuatara's spiny relatives once scurried among the dinosaurs on nearly every continent, back in the Jurassic over 150 million years ago. Then the whole group vanished except the tuatara itself, which survives today only on a few small islands off New Zealand. What nickname has that long survival earned it?",
-    "answer": "A living fossil, its lineage older than lizards",
+    "question": "A tuatara basks on a small island off New Zealand, and almost anyone would take it for a lizard. Its family tree reaches back to a time when its kind scurried among the dinosaurs on nearly every continent. What is the tuatara really?",
+    "answer": "The last survivor of its own ancient order",
     "choices": [
-      "A living fossil, its lineage older than lizards",
-      "A missing link, caught mid-change to a snake",
-      "A living rainbow, for its shifting colors",
-      "A living compass, for its unerring homing"
+      "The last survivor of its own ancient order",
+      "A lizard unchanged for 200 million years",
+      "A crocodile relative that shrank to lizard size",
+      "A dwarf descendant of the giant dinosaurs"
     ],
-    "context": "The tuatara is the sole surviving member of an order that flourished 200 million years ago. Its lineage split off before lizards and snakes even existed. Source: Wikipedia (Tuatara); NZ Geographic, 'Tuatara — A survivor from the dinosaur age'.",
+    "context": "The tuatara is not a lizard: it is the only living member of the Rhynchocephalia, an order of reptiles that first appears some 240 million years ago and flourished in the age of dinosaurs. Its closest living relatives are the lizards and snakes, from which its line split long ago; as the lone survivor of so old an order it is often called a living fossil. It is neither a crocodile's close kin nor a dinosaur. Source: Wikipedia (Tuatara); NZ Geographic, 'Tuatara: A survivor from the dinosaur age'.",
     "topic": "tuatara"
   },
   {
     "tier": 2,
-    "question": "On one of New Zealand's small islands, a male tuatara squares off against a rival on his patch of rock. A ridge of tall, pointed spines called the crest runs down his back, and it stands tallest on males. What does he do with that crest?",
-    "answer": "Flares it and inflates his body dark",
+    "question": "On one of New Zealand's small islands, a male tuatara squares off against a rival on his patch of rock. A crest of soft, spiky folds of skin runs down his back, and it stands tallest on males. What does he do with that crest?",
+    "answer": "Raises it stiffly and darkens his skin",
     "choices": [
-      "Flares it and inflates his body dark",
-      "Sheds it in a startling spray of spines",
+      "Raises it stiffly and darkens his skin",
       "Snaps it flat and plays dead",
-      "Lights it up with glowing tips"
+      "Rattles it to make a buzzing warning",
+      "Folds it down to look small and harmless"
     ],
-    "context": "The Māori name 'tuatara' means 'peaks on the back', describing the spiny crest down its spine — largest in males, who erect the crest and darken as they inflate the body during territorial display. Source: Wikipedia (Tuatara).",
+    "context": "The Maori name 'tuatara' means 'peaks on the back', describing the crest of soft, triangular skin folds down its spine, largest in males, who stiffen and raise it and darken their skin in display. Source: Wikipedia (Tuatara).",
     "topic": "tuatara"
   },
   {
     "tier": 3,
-    "question": "A tuatara hatchling, just out of its egg on a small island off New Zealand, carries a small pale patch on the crown of its head. Scales slowly grow over the patch as the animal matures. Almost no other living reptile has anything like the organ beneath it. What is that organ?",
+    "question": "A tuatara hatchling, just out of its egg on a small island off New Zealand, carries a small pale patch on the crown of its head. Scales slowly grow over the patch as the animal matures. What lies beneath it?",
     "answer": "A working third eye, with its own lens and retina",
     "choices": [
       "A working third eye, with its own lens and retina",
@@ -25814,33 +25645,20 @@
       "A pressure gland that reads coming storms",
       "A scent organ that tastes the air"
     ],
-    "context": "The tuatara's parietal eye is a genuine third eye, complete with lens and light-sensitive retina, visible in hatchlings before scales cover it. Source: Wikipedia (Tuatara); Animal Diversity Web (Sphenodon punctatus).",
+    "context": "The tuatara's parietal eye is a genuine third eye, complete with a lens and a light-sensitive retina, visible in hatchlings until scales and pigment cover it after four to six months. Some lizards have one too, but the tuatara's is the most pronounced of any living four-limbed animal. Source: Wikipedia (Tuatara); Animal Diversity Web (Sphenodon punctatus).",
     "topic": "tuatara"
   },
   {
     "tier": 4,
-    "question": "Under the scales on the crown of a tuatara's head lies an organ that cannot form a picture of the world, yet it earns its keep. Researchers suspect it serves as a kind of natural compass, setting the animal's inner clock and body temperature through the changing seasons. What kind of compass is it?",
-    "answer": "A sun-compass, reading daylight",
+    "question": "Under the scales on the crown of an adult tuatara's head lies an organ that senses light yet cannot form a picture of the world. Researchers still think it earns its keep in the animal's life. What do they think it does?",
+    "answer": "Keeps its daily clock and seasons on time",
     "choices": [
-      "A sun-compass, reading daylight",
-      "A magnetic compass, reading Earth's field",
-      "A star-compass, reading the night sky",
-      "A wind-compass, reading the breeze"
+      "Keeps its daily clock and seasons on time",
+      "Spots the shadows of hawks passing overhead",
+      "Guides it home at night by the stars",
+      "Lets it see prey in a dark burrow"
     ],
-    "context": "The parietal eye is thought to act as a light sensor and sun-compass, tracking daylight to regulate the tuatara's circadian rhythms and temperature rather than forming images. Source: Wikipedia (Tuatara); 'The lonely eye', PMC/NIH.",
-    "topic": "tuatara"
-  },
-  {
-    "tier": 3,
-    "question": "A tuatara stays active on its New Zealand island in near-freezing cold and can barely tolerate a warm afternoon, while most reptiles bask in the sun and thrive in real heat. Its preferred body temperature is lower than that of any other reptile. What is it?",
-    "answer": "16–21°C",
-    "choices": [
-      "16–21°C",
-      "20–25°C",
-      "23–27°C",
-      "10–15°C"
-    ],
-    "context": "The tuatara prefers a body temperature of about 16–21°C — the lowest of any reptile — and stays active down to 5°C, overheating and dying above about 28°C. Source: Wikipedia (Tuatara); Animal Diversity Web (Sphenodon punctatus).",
+    "context": "The parietal eye can detect light but probably cannot detect movement or form images. It likely helps set the tuatara's daily (circadian) rhythm, may track the changing seasons, and plays a part in managing its body heat. Source: Wikipedia (Tuatara); 'The lonely eye', PMC/NIH.",
     "topic": "tuatara"
   },
   {
@@ -25858,28 +25676,15 @@
   },
   {
     "tier": 1,
-    "question": "A two-legged meat-eater about 40 feet long stalked western North America in the last days of the dinosaurs, right up until an asteroid struck 66 million years ago. It stood 13 feet tall at the hip and weighed up to 8 tons. Which famous dinosaur was it?",
+    "question": "A two-legged meat-eater about 40 feet long stalked western North America right up until an asteroid struck 66 million years ago. It stood about 13 feet tall at the hip and weighed up to 8 tons. Which famous dinosaur was it?",
     "answer": "Tyrannosaurus rex",
     "choices": [
       "Tyrannosaurus rex",
-      "Triceratops horridus",
-      "Stegosaurus ungulatus",
-      "Brachiosaurus altithorax"
+      "Allosaurus fragilis",
+      "Giganotosaurus carolinii",
+      "Albertosaurus sarcophagus"
     ],
-    "context": "Tyrannosaurus rex means 'tyrant lizard king.' It stood roughly 13 feet tall at the hip and could weigh up to about 8 tons, living at the very end of the age of dinosaurs, 68 to 66 million years ago. Source: Australian Museum fact sheet, https://australian.museum/learn/dinosaurs/fact-sheets/tyrannosaurus-rex/",
-    "topic": "tyrannosaurus-rex"
-  },
-  {
-    "tier": 1,
-    "question": "A Tyrannosaurus rex crushed bone with a huge, boxy skull that held roughly 60 curved teeth and the massive jaw muscles that powered its bite. Roughly how long was that skull, from the tip of the snout to the back of the head?",
-    "answer": "About 5 feet (1.5 m)",
-    "choices": [
-      "About 5 feet (1.5 m)",
-      "About 1 foot (0.3 m)",
-      "About 15 feet (4.5 m)",
-      "About 2 inches (5 cm)"
-    ],
-    "context": "A T. rex skull was about 1.5 meters (5 feet) long, roughly as long as a grown person is tall, and carried around 60 teeth. A head that size gave the animal room for the bone-crushing jaw muscles that made it such a fearsome predator. Source: Australian Museum fact sheet, https://australian.museum/learn/dinosaurs/fact-sheets/tyrannosaurus-rex/",
+    "context": "Tyrannosaurus rex means 'tyrant lizard king.' It stood roughly 13 feet tall at the hip and could weigh up to about 8 tons, living at the very end of the age of dinosaurs, 68 to 66 million years ago. Allosaurus lived some 80 million years earlier, Giganotosaurus in South America, and Albertosaurus was a smaller tyrannosaur that lived a few million years earlier. Source: Australian Museum fact sheet, https://australian.museum/learn/dinosaurs/fact-sheets/tyrannosaurus-rex/",
     "topic": "tyrannosaurus-rex"
   },
   {
@@ -25910,20 +25715,7 @@
   },
   {
     "tier": 3,
-    "question": "The jaws of a Tyrannosaurus rex clamped around a Triceratops with tremendous force. Scientists worked out how strong that bite was by measuring the marks its teeth left in fossil bones and modeling the massive muscles packed into the back of its skull. Roughly how much force did those jaws deliver?",
-    "answer": "About 8,000 pounds",
-    "choices": [
-      "About 8,000 pounds",
-      "About 3,000 pounds",
-      "About 5,500 pounds",
-      "About 12,000 pounds"
-    ],
-    "context": "T. rex bit with a force of about 8,000 pounds, nearly 3.6 tonnes, the strongest bite of any known land animal. The pointed tips of its teeth could focus pressures up to about 431,000 pounds per square inch, enough to pulverize bone. Source: Gignac & Erickson, Scientific Reports 2017, https://www.nature.com/articles/s41598-017-02161-w",
-    "topic": "tyrannosaurus-rex"
-  },
-  {
-    "tier": 3,
-    "question": "Karen Chin, a paleontologist who studies the fossils many of her colleagues walk right past, described a strange 15-pound lump of rock from Saskatchewan in 1998. A Tyrannosaurus rex had left it behind more than 65 million years ago, and it was the largest specimen of its kind ever found. What was this famous find?",
+    "question": "Karen Chin, a paleontologist who studies the fossils many of her colleagues walk right past, described a strange 15-pound lump of rock from Saskatchewan in 1998. A Tyrannosaurus rex had left it behind more than 65 million years ago, and nothing bigger of its kind had been found until then. What was this famous find?",
     "answer": "Fossilized dung packed with crushed bone",
     "choices": [
       "Fossilized dung packed with crushed bone",
@@ -25931,7 +25723,7 @@
       "A footprint pressed deep into old mud",
       "A nest of eggs with unhatched young"
     ],
-    "context": "The 15-pound (7 kg) T. rex coprolite, or fossilized dung, from Saskatchewan was packed with crushed fragments of a young plant-eating dinosaur's bones, proving T. rex swallowed bone. It is the largest meat-eater dropping ever found. Source: Karen Chin et al., Nature 1998, 'A king-sized theropod coprolite', https://www.nature.com/articles/31461",
+    "context": "The 15-pound (7 kg) T. rex coprolite, or fossilized dung, from Saskatchewan was packed with crushed fragments of a young plant-eating dinosaur's bones, proving T. rex swallowed bone. It was the largest meat-eater dropping then known; in 2020 Guinness gave that record to a 67.5 cm specimen nicknamed Barnum, also thought to come from a T. rex. Source: Karen Chin et al., Nature 1998, 'A king-sized theropod coprolite', https://www.nature.com/articles/31461",
     "topic": "tyrannosaurus-rex"
   },
   {
@@ -25988,7 +25780,7 @@
   },
   {
     "tier": 2,
-    "question": "Sue Hendrickson, a fossil hunter, spotted bones sticking out of a cliff near Faith, South Dakota, in 1990. She had found a Tyrannosaurus rex, and the find was nicknamed Sue in her honor; the skeleton now towers in the Field Museum in Chicago, one of the most-studied dinosaurs in the world. What makes Sue so prized by scientists?",
+    "question": "Sue Hendrickson, a fossil hunter, spotted bones sticking out of a cliff near Faith, South Dakota, in 1990. She had found a Tyrannosaurus rex, nicknamed Sue in her honor, which now towers in the Field Museum in Chicago. What makes Sue so prized by scientists?",
     "answer": "It is about 90 percent complete",
     "choices": [
       "It is about 90 percent complete",
@@ -26006,7 +25798,7 @@
     "choices": [
       "A chicken",
       "A crocodile",
-      "An ostrich",
+      "A tortoise",
       "An iguana"
     ],
     "context": "That 2007 result, published in Science, was the first time anyone had read a dinosaur's actual protein rather than just its bone shape -- and the recovered amino-acid sequence lined up with birds, matching chicken most closely of all. It was molecular confirmation of what the skeletons already suggested: birds are living theropod dinosaurs, so T. rex is far nearer kin to a barnyard hen than to any crocodile or lizard. The femur was specimen MOR 1125, nicknamed 'B-rex.' Sources: Schweitzer, Asara et al., Science 316:277-280 (2007), https://www.science.org/doi/10.1126/science.1138709 ; summary https://phys.org/news/2007-04-soft-tissue-million-year-old-tyrannosaurus-rex.html",
