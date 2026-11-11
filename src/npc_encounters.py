@@ -241,6 +241,27 @@ def armor_enchant_target(player):
     return next((s for s in slots if s is not None), None)
 
 
+def shift_armor_enchant(player, target, amount: int) -> tuple:
+    """Raise (amount > 0) or lower an ``armor_enchant`` target. Body armour
+    and shields carry a plus (AC, to the slot's cap, never below -3); a
+    minor piece (the cloak) carries an enchantment level instead (gear.py,
+    bug bash 3.3.2), moved 2 levels a point (one tier), 0 to 10.
+    Returns (before, after) of whichever it moved."""
+    import gear
+    from items import ARMOR_SLOTS, ENCHANT_CAP, set_ench_level
+    if gear.is_core(target):
+        slot = 'shield' if getattr(target, 'item_class', '') == 'shield' else 'body'
+        old = int(getattr(target, 'enchant_bonus', 0) or 0)
+        new = old + int(amount)
+        new = max(-3, min(ENCHANT_CAP.get(slot, 1), new)) if amount < 0 else \
+            max(old, min(ENCHANT_CAP.get(slot, 1), new))
+        target.enchant_bonus = new
+        return old, new
+    old = int(getattr(target, 'ench_level', 0) or 0)
+    new = set_ench_level(target, old + 2 * int(amount))
+    return old, new
+
+
 def gold_pct_label(cost: dict | None, player_gold: int, level: int) -> str:
     """The figure a chosen ``gold_pct`` cost would take, for its option's
     label: " (480 Gold)". Empty for any other cost (fixed gold is quoted by

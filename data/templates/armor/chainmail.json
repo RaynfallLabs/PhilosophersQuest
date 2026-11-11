@@ -4,7 +4,7 @@
   "category": "armor",
   "armor_class_tier": "heavy",
   "slot": "body",
-  "base_ac_value": 4,
+  "base_ac_value": 5,
   "base_weight_lb": 40.0,
   "_design_note": "F25-50 heavy entry. Full hauberk.",
   "compatible_material_classes": [
@@ -12,6 +12,5 @@
     "rare_metal",
     "magical_metal"
   ],
-  "lore_template": "A full coat of {material_name} rings from neck to thigh, each link riveted through four neighbors. Tens of thousands of rings go into one. The weight settles onto the hips after an hour, and a swung blade stops cold against it.",
-  "equip_threshold": 3
+  "lore_template": "A full coat of {material_name} rings from neck to thigh, each link riveted through four neighbors. Tens of thousands of rings go into one. The weight settles onto the hips after an hour, and a swung blade stops cold against it."
 }

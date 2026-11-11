@@ -1649,12 +1649,11 @@ class EncountersMixin:
             if ctype == 'armor_enchant':
                 # Half the cloak cut away: the worn piece loses enchantment
                 # (never below -3, the floor every enchant obeys).
-                from npc_encounters import armor_enchant_target
+                from npc_encounters import armor_enchant_target, shift_armor_enchant
                 target = armor_enchant_target(self.player)
                 if target is not None:
-                    old = int(getattr(target, 'enchant_bonus', 0) or 0)
-                    target.enchant_bonus = max(-3, old - int(cost.get('amount', 1)))
-                    if target.enchant_bonus < old:
+                    old, new = shift_armor_enchant(self.player, target, -int(cost.get('amount', 1)))
+                    if new < old:
                         self.add_message(f"Your {self._bare_name(target)} is the poorer for it.",
                                          'warning')
                 return
@@ -1950,18 +1949,15 @@ class EncountersMixin:
         elif rtype == 'armor_enchant':
             # Armour made whole and better (Saint Martin's dream): the worn
             # cloak, else body armour, else the first piece, up to its cap.
-            from items import ARMOR_SLOTS, ENCHANT_CAP
-            from npc_encounters import armor_enchant_target
+            import gear as _gear
+            from npc_encounters import armor_enchant_target, shift_armor_enchant
             target = armor_enchant_target(self.player)
             if target is None:
                 self.add_message("You wear no armour for it to mend.", 'info')
             else:
-                slot = next((ARMOR_SLOTS[i] for i, s in enumerate(self.player.armor_slots)
-                             if s is target), 'body')
-                old = int(getattr(target, 'enchant_bonus', 0) or 0)
-                target.enchant_bonus = max(old, min(ENCHANT_CAP.get(slot, 1),
-                                                    old + int(reward.get('amount', 1))))
-                if self._enchant_shown(target) and target.enchant_bonus != old:
+                old, new = shift_armor_enchant(self.player, target, int(reward.get('amount', 1)))
+                if (_gear.is_core(target) and self._enchant_shown(target)
+                        and new != old):
                     self.add_message(f"Your {self._bare_name(target)} is now "
                                      f"{target.enchant_bonus:+d}!", 'success')
                 else:

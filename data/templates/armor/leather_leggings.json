@@ -4,7 +4,7 @@
   "category": "armor",
   "armor_class_tier": "light",
   "slot": "legs",
-  "base_ac_value": 1,
+  "base_ac_value": 0,
   "base_weight_lb": 3.0,
   "_design_note": "F1-30 light legs slot. Boiled leather thigh-to-knee. Leggings_of_Enkidu uses this as template_basis. Scouts and skirmishers wear these over heavier alternatives.",
   "compatible_material_classes": [
@@ -12,6 +12,5 @@
     "leather",
     "hide"
   ],
-  "lore_template": "A pair of {material_name} leggings, shaped thigh to knee in one piece that bends with the stride. Scouts choose them over anything heavier, since a protected leg is no use if it cannot run.",
-  "equip_threshold": 1
+  "lore_template": "A pair of {material_name} leggings, shaped thigh to knee in one piece that bends with the stride. Scouts choose them over anything heavier, since a protected leg is no use if it cannot run."
 }

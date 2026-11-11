@@ -51,7 +51,7 @@ SECRET_BUILDS: dict[str, dict] = {
     "aristotle of stagira": {
         "INT": 18, "WIS": 16, "PER": 14, "STR": 6, "CON": 8, "DEX": 8,
         "_sprite": "player_aristotle",
-        "_start_accessory": "ring_of_intellect",
+        "_start_accessory": "amulet_of_intellect",
         "_start_wand": "lantern_of_diogenes",
         "_greeting": "Aristotle the Philosopher enters the dungeon with calm reason.",
         "_start_family_lore": {"great_beasts": 1, "birds": 1, "serpents": 1, "vermin": 1},   # unlabelled: he wrote the History of Animals
@@ -59,7 +59,7 @@ SECRET_BUILDS: dict[str, dict] = {
     "socrates of athens": {
         "WIS": 20, "INT": 14, "PER": 16, "STR": 8, "CON": 10, "DEX": 7,
         "_sprite": "player_socrates",
-        "_start_accessory": "ring_of_wisdom",
+        "_start_accessory": "amulet_of_wisdom",
         "_start_spells": ["cleanse_spell"],
         "_greeting": "Socrates asks the dungeon a question. It does not answer.",
     },
@@ -74,7 +74,7 @@ SECRET_BUILDS: dict[str, dict] = {
     "friedrich nietzsche": {
         "INT": 16, "WIS": 8, "PER": 14, "STR": 14, "CON": 12, "DEX": 10,
         "_sprite": "player_nietzsche",
-        "_start_accessory": "ring_of_strength",
+        "_start_armor": ("leather_gloves", "leather", "ogre_power"),   # Ogre Power I (the will to power)
         "_start_spells": ["empower_spell"],
         "_greeting": "Nietzsche stares into the dungeon. The dungeon stares back.",
     },
@@ -183,7 +183,7 @@ SECRET_BUILDS: dict[str, dict] = {
         "_start_weapon": ("shortbow", "yew"),
         "_start_melee": ("shortsword", "iron"),
         "_start_ammo": "iron_arrow",
-        "_start_accessory": "ring_protection_iron",
+        "_start_accessory": "ring_of_protection",
         "_start_extra_acc": ["charmander_stuffie"],
         "_start_unusual_sphere": True,
         "_greeting": "Cain the Hunter moves silently into the dark. Nothing escapes him.",
@@ -280,7 +280,7 @@ SECRET_BUILDS: dict[str, dict] = {
         "_sprite": "player_lovelace",
         "_no_dagger": True,
         "_start_weapon": ("rapier", "iron"),
-        "_start_accessory": "ring_of_intellect",
+        "_start_accessory": "amulet_of_intellect",
         "_start_book": "spellbook_magic_dart",
         "_greeting": "Ada Lovelace traces the dungeon's algorithm in the air. It is computable.",
         "_start_family_lore": {"constructs": 1},   # unlabelled: she wrote for the Engine
@@ -316,7 +316,7 @@ SECRET_BUILDS: dict[str, dict] = {
         "_sprite": "player_sherlock",
         "_no_dagger": True,
         "_start_weapon": ("quarterstaff", "oak"),   # the famous walking-stick
-        "_start_accessory": "ring_of_intellect",
+        "_start_accessory": "amulet_of_intellect",
         "_greeting": "Holmes glances at the dungeon and announces three deductions before stepping in.",
         "_start_family_lore": {"mortals": 1},   # unlabelled: he knows the criminal classes
     },
@@ -333,7 +333,7 @@ SECRET_BUILDS: dict[str, dict] = {
         "_sprite": "player_hildegard",
         "_no_dagger": True,
         "_start_weapon": ("quarterstaff", "oak"),
-        "_start_accessory": "ring_of_wisdom",
+        "_start_accessory": "amulet_of_wisdom",
         "_start_book": "spellbook_light",
         "_greeting": "Hildegard prays. The world greens around her in answer.",
         "_start_family_lore": {"plants": 1},   # unlabelled: she wrote the Physica
@@ -343,7 +343,7 @@ SECRET_BUILDS: dict[str, dict] = {
         "_sprite": "player_tesla",
         "_start_weapon": ("dagger", "iron"),
         "_start_wand": "wand_of_force_dart",
-        "_start_accessory": "ring_of_intellect",
+        "_start_accessory": "amulet_of_intellect",
         "_greeting": "Tesla touches the doorframe. It hums. The dungeon has been wired.",
         "_start_family_lore": {"constructs": 1},   # unlabelled: he built the automaton boat
     },
@@ -357,7 +357,7 @@ SECRET_BUILDS: dict[str, dict] = {
         "_start_wand": "wand_of_candle_light",
         "_start_book": "spellbook_magic_dart",
         "_start_ammo": "iron_arrow",
-        "_start_accessory": "ring_protection_iron",
+        "_start_accessory": "ring_of_protection",
         # One of each of the six Soul Spheres, to throw and check each tier.
         "_start_spheres": ["soul_sphere", "greater_soul_sphere", "master_sphere",
                            "hearth_sphere", "greater_hearth_sphere", "master_hearth_sphere"],

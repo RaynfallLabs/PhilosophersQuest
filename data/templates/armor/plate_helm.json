@@ -4,7 +4,7 @@
   "category": "armor",
   "armor_class_tier": "heavy",
   "slot": "head",
-  "base_ac_value": 2,
+  "base_ac_value": 0,
   "base_weight_lb": 4.0,
   "_design_note": "F50-100 heavy head slot. Articulated visor helm. Pair with plate / full plate body.",
   "compatible_material_classes": [
@@ -13,6 +13,5 @@
     "magical_metal",
     "dragon_material"
   ],
-  "lore_template": "A {material_name} bascinet with a hinged visor and a jointed guard for the neck. Every surface curves so that an edge slides away, and the padding inside has been shaped to one skull.",
-  "equip_threshold": 3
+  "lore_template": "A {material_name} bascinet with a hinged visor and a jointed guard for the neck. Every surface curves so that an edge slides away, and the padding inside has been shaped to one skull."
 }

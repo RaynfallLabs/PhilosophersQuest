@@ -431,6 +431,7 @@ class CombatMixin:
 
         if monster:
             _who = the_name(monster, lower=True)      # before the blow springs a lurker
+            self._ring_veil_slips()                  # a thrown weapon is a strike
             # A thrown weapon counts for the family techniques that favour
             # it (Falconer's Eye: src/family_edges.py damage_mult).
             try:
@@ -1051,6 +1052,11 @@ class CombatMixin:
         if self.player.hp <= 0 and self.player.has_effect('life_save'):
             self.player.hp = 1
             del self.player.status_effects['life_save']
+            # An Amulet of Life Saving leaves a share of the health bar by its
+            # tier (rings.py); every other ward leaves 1.
+            import rings as _rings
+            _amu = getattr(self.player, 'amulet_slot', None)
+            _share = _rings.life_saving_share(_amu) if _amu is not None else 0.0
             # The thing that gave it is spent with it. It was not, so
             # taking Excalibur or the amulet off and putting it back
             # on bought another life every time.
@@ -1092,6 +1098,8 @@ class CombatMixin:
             # A second worn source still holds a life for the next blow.
             if _src is not None and self.player._still_granted('life_save', None):
                 self.player.status_effects['life_save'] = -1
+            if _src is not None and _src is _amu and _share > 0:
+                self.player.hp = max(1, int(self.player.max_hp * _share))
             self.add_message(
                 f"{'The ' + _src.name if _src is not None else 'A ward'} blazes -- death averted! "
                 "Its life-saving magic is spent.", 'success'
@@ -1116,6 +1124,9 @@ class CombatMixin:
         # its corpse are named.
         if getattr(monster, '_unseen', False):
             monster._unseen = False
+        # What the killing blow set off (its techniques, the weakness it met)
+        # is said before the death, its loot and its popup.
+        self._say_action_lines()
         # The Black Knight is never killed: a killing blow is one more limb
         # (black_knight.BlackKnight), and at the end he is a torso calling it
         # a draw. A path that set him dead and came here finds him alive.
@@ -1244,7 +1255,8 @@ class CombatMixin:
         if story_key and self.player.is_dead():
             story_key = None          # a pet finished it after the player fell
         if story_key:
-            self._show_story_popup(story_key, STATE_PLAYER)
+            # Queued: it opens once the kill has been seen (game_popups.PopupMixin).
+            self._show_story_popup(story_key, STATE_PLAYER, queued=True)
             _BOSS_CHRONICLE = {
                 'asterion_minotaur': "Killed the Minotaur. His name was Asterion, and he was bigger than I expected. The Labyrinth is quiet now.",
                 'medusa_gorgon': "Medusa is dead. I never once looked straight at her. Even the snakes were afraid at the end.",
@@ -1314,7 +1326,10 @@ class CombatMixin:
                 self.add_message(
                     "ALL SEVEN SEALS ARE BROKEN. The way to the Pit stands open.", 'danger')
                 self._chron('boss', "All seven seals are broken. The ground split open. Whatever is down there, it's free now. And I have to face it.")
-        if not _banished:
+        # A creature that by lore leaves no body (a vampire staked to ash, a
+        # golem whose letter is erased: family_edges.after_blow) leaves no
+        # corpse; its loot dropped above (Brandon, 3.3.3).
+        if not _banished and not getattr(monster, '_no_corpse', False):
             self.ground_items.append(self._make_corpse(monster))
 
     def _announce_scale_hit(self, monster, damage: int):
@@ -1333,6 +1348,12 @@ class CombatMixin:
                     f"{the_name(monster)} has had time to mend. Wounds you gave have closed.",
                     'warning')
         if not getattr(monster, 'dragon_scales', 0) or damage <= 0:
+            return
+        # The blow went past the scales (blade flow, a chain bypass, the
+        # Missing Scale: combat.strike_damage): nothing skated off them.
+        if getattr(self.player, '_scales_skipped', False):
+            self.player._scales_skipped = False
+            self.player._belly_strike = False
             return
         if getattr(self.player, '_belly_strike', False):
             self.add_message(
@@ -1660,14 +1681,12 @@ class CombatMixin:
         from items import loot_floor
         effective_floor = max(_here, min(tier * 5, loot_floor(_here, tier * 5)))
 
-        # 50% weapon/armor/shield (template+material common), 50% magic item pool
+        # 50% weapon/armor/shield (template+material common) by the loot
+        # split (45 / 45 / 10, gear.pick_gear_class), 50% magic item pool
         roll = _rng.random()
-        if roll < 0.30:
-            gear = pick_random_weapon_for_floor(effective_floor, _rng)
-        elif roll < 0.40:
-            gear = pick_random_armor_for_floor(effective_floor, _rng)
-        elif roll < 0.50:
-            gear = pick_random_shield_for_floor(effective_floor, _rng)
+        if roll < 0.50:
+            from items import pick_random_gear_for_floor
+            gear = pick_random_gear_for_floor(effective_floor, _rng)
         else:
             gear = None
             candidates = []
@@ -1822,6 +1841,8 @@ class CombatMixin:
                 return
 
             self._wand_chain = 0
+            # A wand fired at a foe is a strike: a ring's veil slips.
+            self._ring_veil_slips()
             # Override auto-target with stored target
             self._wand_override_target = self._wand_target_monster
             self._apply_wand_effect(wand)
@@ -1867,6 +1888,14 @@ class CombatMixin:
             return
 
         if pid and pid.startswith('spell_'):
+            # A spell with a reach (spells.SPELL_REACH) lands only that far:
+            # a touch on a foe beside you, a sign close by.
+            _sp = getattr(self, '_pending_spell', None)
+            if _sp and not self._spell_in_reach(_sp, target):
+                self.add_message(self._out_of_reach_line(_sp), 'warning')
+                self._refund_pending_spell()
+                self.state = STATE_PLAYER
+                return
             # Targeted spell: start the quiz with this target
             spell = getattr(self, '_pending_spell', None)
             spell_id = getattr(self, '_pending_spell_id', None)
@@ -2458,9 +2487,10 @@ class CombatMixin:
                         knocked: bool = False, crit: bool = False, **kwargs):
             self.state = STATE_PLAYER
             self.combat_target = None
+            # A lurker the shot sprang is told before the shot that names it
+            # (never one the shot killed: _say_springs).
+            self._say_springs()
             self._fire_strike_finisher(monster, chain, damage, killed)
-            self._announce_revive(monster)
-            self._announce_scale_hit(monster, damage)
             # C01: a shot spends the Tablet / Scheherazade reroll exactly as
             # a melee swing does (it never did, so archers rerolled every shot).
             self._spend_attack_reroll()
@@ -2468,11 +2498,13 @@ class CombatMixin:
                 self.add_message(
                     f"Your shot flies wide -- you miss {the_name(monster, lower=True)}!", 'warning'
                 )
+                self._after_strike_line(monster, damage)
             else:
                 self.add_message(
                     f"Chain x{chain}! Your {weapon.requires_ammo} strikes {the_name(monster, lower=True)} for {damage} damage!",
                     'success'
                 )
+                self._after_strike_line(monster, damage)
                 if killed:
                     self._on_monster_killed(
                         monster,
@@ -2515,6 +2547,7 @@ class CombatMixin:
         # ranged=True explicitly: slings pass ammo=None (infinite ammo), and
         # player_attack used to infer "ranged" from ammo alone, so a sling
         # shot was resolved with the MELEE weapon's stats.
+        self._ring_veil_slips()
         player_attack(self.player, monster, self.quiz_engine, on_complete,
                       ammo=ammo_item, ranged=True)
 
@@ -2658,9 +2691,10 @@ class CombatMixin:
                         knocked: bool = False, crit: bool = False, **kwargs):
             self.state = STATE_PLAYER
             self.combat_target = None
+            # A lurker the blow sprang is told before the blow that names
+            # it (never one the blow killed: _say_springs).
+            self._say_springs()
             self._fire_strike_finisher(monster, chain, damage, killed)
-            self._announce_revive(monster)
-            self._announce_scale_hit(monster, damage)
             # Curtana: the blow would have killed, but the Sword of Mercy
             # left the foe alive at 1 HP.
             if getattr(self.player, '_spared_this_attack', False):
@@ -2673,6 +2707,7 @@ class CombatMixin:
                 self.add_message(
                     f"You swing wildly at {the_name(monster, lower=True)} and miss!", 'warning'
                 )
+                self._after_strike_line(monster, damage)
             elif (chain >= 1 and monster.kind == 'fenrir_wolf' and monster.alive
                   and any(getattr(i, 'id', '') == 'vidars_sandal'
                           for i in self.player.inventory)):
@@ -2730,7 +2765,8 @@ class CombatMixin:
                     _snd.play('strike_big')
                 if stunned:
                     msg += f" {the_name(monster)} is stunned!"
-                if monster.status_effects.get('bleeding', 0) > 0:
+                # (Never a creature with no blood: Monster.can_bleed.)
+                if monster.status_effects.get('bleeding', 0) > 0 and getattr(monster, 'can_bleed', lambda: True)():
                     msg += f" {the_name(monster)} is bleeding!"
                 if knocked and not killed:
                     from combat import apply_knockback
@@ -2750,6 +2786,7 @@ class CombatMixin:
                 if kwargs.get('healed'):
                     msg += " You absorb life energy!"
                 self.add_message(msg, 'success')
+                self._after_strike_line(monster, damage)
                 if killed:
                     self._on_monster_killed(
                         monster,
@@ -2823,7 +2860,51 @@ class CombatMixin:
         self.player._combat_pets_ref = self.pets
         self.player._combat_game_ref = self
         _alive_before = {id(m) for m in self.monsters if m.alive}
+        self._ring_veil_slips()
         player_attack(self.player, monster, self.quiz_engine, on_complete)
+
+    def _ring_veil_slips(self):
+        """The hero strikes (a blow, a shot, a spell or a wand at a foe, a
+        thrown weapon): a Ring of Invisibility's veil slips (rings.py). The
+        veil is down at once, but its line waits for the strike's own line
+        (_say_veil_slip): it was said before the attack quiz had opened."""
+        import rings
+        line = rings.on_strike(self.player)
+        if line:
+            self.__dict__['_veil_slip_line'] = line
+
+    def _say_veil_slip(self):
+        """The veil's line, once the strike has been told."""
+        line = self.__dict__.pop('_veil_slip_line', None)
+        if line:
+            self.add_message(line, 'info')
+
+    def _after_strike_line(self, monster, damage: int):
+        """What follows a blow's or a shot's own line, in this order: the
+        veil slipping, a foe getting back up, the scales or the ward that ate
+        some of it, and a foe that yields (each used to be said before the
+        blow, or, for Yield!'s purse, from inside the quiz callback)."""
+        self._say_veil_slip()
+        self._announce_revive(monster)
+        self._announce_scale_hit(monster, damage)
+        self._family_yield(monster)
+
+    def _say_action_lines(self):
+        """What the action set off, said now: the veil, the family techniques
+        it used and the weakness or resistance it met. `_on_monster_killed`
+        calls this first, so a kill's "X is slain!" (and its loot, corpse and
+        popup) comes after them; "It's super effective!" used to follow the
+        gold the skeleton dropped (3.3.3 lore audit)."""
+        self._say_veil_slip()
+        self._family_drain()
+        self._say_affinity_lines()
+
+    def _say_affinity_lines(self):
+        """The weakness and resistance lines for the hits noted since the
+        last time (affinity.py)."""
+        import affinity as _affinity
+        for _line, _kind in _affinity.say(_affinity.drain()):
+            self.add_message(_line, 'success' if _kind == _affinity.WEAK else 'warning')
 
     # ------------------------------------------------------------------
     # Monster turns
@@ -3449,7 +3530,8 @@ class CombatMixin:
                 pre_max = m.max_hp
                 m.take_damage(dmg, pet_damage_type(special.get('damage_type')
                                                    or pet.species.get('damage_type')))
-                if m.alive and status and _rng.random() < status_chance:
+                if (m.alive and status and _rng.random() < status_chance
+                        and not (status == 'bleeding' and not getattr(m, 'can_bleed', lambda: True)())):
                     cur = m.status_effects.get(status, 0)
                     m.status_effects[status] = max(cur, status_duration)
                 if not m.alive:
@@ -3611,7 +3693,8 @@ class CombatMixin:
                               pet_damage_type(damage_type or pet.species.get('damage_type')))
         if m.alive and dealt and knockback:
             self._pet_knockback(pet, m, knockback)
-        if m.alive and status and _rng.random() < chance:
+        if (m.alive and status and _rng.random() < chance
+                and not (status == 'bleeding' and not getattr(m, 'can_bleed', lambda: True)())):
             cur = m.status_effects.get(status, 0)
             m.status_effects[status] = max(cur, duration)
         if not m.alive:

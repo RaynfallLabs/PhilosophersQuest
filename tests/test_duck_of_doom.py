@@ -42,7 +42,8 @@ def test_duck_is_head_slot_cursed_headgear():
     d = _load_armor()['duck_of_doom']
     assert d['slot'] == 'head'
     assert d.get('cursed') is True or d.get('buc') == 'cursed'
-    assert d['ac_bonus'] == 2
+    # A helm gives no AC since bug bash 3.3.2; it still goes on with no quiz.
+    assert d['ac_bonus'] == 0 and d['equip_threshold'] == 0
 
 
 def test_duck_lore_matches_spec():

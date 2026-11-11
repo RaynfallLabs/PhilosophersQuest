@@ -93,9 +93,13 @@ def test_draupnir_gold_multiplier():
     assert a.gold_multiplier == 2.0
 
 
-def test_torc_of_boudicca_surrounded_ac_bonus():
+def test_torc_of_boudicca_lends_her_temper_not_ac():
+    """No ring or amulet gives AC (bug bash 3.3.2): the torc's crowd AC
+    became a body that will not break and a mind that will not bend."""
     a = _find(load_items('accessory'), 'torc_of_boudicca')
-    assert a.surrounded_ac_bonus == 2
+    assert not hasattr(a, 'surrounded_ac_bonus')
+    assert a.effects == {'stat': 'CON', 'amount': 3}
+    assert a.save_bonus == {'cat': 'WIS', 'amount': 2}
 
 
 def test_jade_cicada_death_save_flag():
@@ -126,7 +130,6 @@ def test_plain_accessory_has_safe_artifact_field_defaults():
     assert plain.passive_regen == 0
     assert plain.passive_regen_interval == 5
     assert plain.gold_multiplier == 0.0
-    assert plain.surrounded_ac_bonus == 0
     assert plain.pacify_chance == 0.0
     assert plain.death_save is False
     assert plain.resurrect_on_death is False

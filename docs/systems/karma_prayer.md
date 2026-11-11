@@ -622,7 +622,7 @@ modified by karma (see §5.3). Baseline amounts:
 | ≥ 1 | Restore SP: `max(15, max_sp // 4) + karma_bonus_sp` |
 | ≥ 2 | Restore HP: `max(15, max_hp // 4) + karma_bonus_hp` (plus message "Warmth washes over your wounds") |
 | ≥ 3 | Restore MP: `max(5, max_mp // 4) + karma_bonus_mp` |
-| ≥ 4 | **Uncurse** first worn cursed item **OR**, if nothing cursed, **bless** `1 + max(0, karma // 3)` random inventory items (never treasure or a Soul Sphere, which take no blessing; named as the hero knows them). At karma ≤ -5 the gift is refused outright. |
+| ≥ 4 | **Uncurse** first worn cursed item **OR**, if nothing cursed, **bless** `1 + max(0, karma // 3)` things a blessing changes, best first (`altar.bless_order`: wielded and worn gear, then potions and scrolls, then spare gear; never a lockpick, food, a spellbook, a wand, treasure or a Soul Sphere; named as the hero knows them). It drew at random from the whole pack until bug bash 3.3.2. At karma ≤ -5 the gift is refused outright. |
 | ≥ 5 | Grant `shielded` for `max(1, 20 + karma_bonus_buff)` turns (`shielded` adds +3 AC per [combat.md](combat.md)). |
 
 ### 5.3 Karma magnitude scaling
@@ -685,6 +685,33 @@ On `dungeon_level == 100 and at_altar` with `chain > 0`:
 
 Message: "Holy fire surges around the Destroyer! His defenses crumble
 for N turns!" or "Holy fire blazes forth but finds no target."
+
+### 5.6 The altar's offering (bug bash 3.3.2)
+
+Brandon, 2026-11-07. On an **ordinary altar** (not the dwarven forge, not the
+Altar of the Last Judgment, not the six on floor 100) `\` opens the altar
+instead of the prayer menu (`DivineMixin._altar_choices`). Every choice
+there costs one **offering**, `economy.altar_offering(floor)` = half a
+floor's income (105 gp on floor 1, 670 on 16, 1,800 on 46), the same
+whatever is asked, paid coin first and then treasure (`_make_altar_offering`).
+**No choice waits on or sets the prayer cooldown.**
+
+| Row | What it does |
+|-----|--------------|
+| Lift Curses, Then Bless | One theology escalator chain (max 5, `altar.MAX_MENDED`). Each link mends one thing (`altar.rite`): **every curse first** (worn pieces before the pack; the Duck of Doom keeps its curse), then the links left **bless** in `altar.bless_order`. A thing the hero did not know was blessed is shown so and costs no link. Chain 0: the altar keeps the offering. Refused at karma ≤ -5 (nothing is taken). |
+| Lord, Have Mercy / Michael, Guide My Hand | The ordinary prayer, answered as at any altar (+1 effective chain, karma doubled), for the offering; the cooldown stays where it was. |
+| (cooldown ready only) the same two, no offering | Exactly §5.1-5.4: free, amplified, sets the cooldown. |
+
+What a blessing changes, so what may be blessed (`altar.blessing_helps`):
+weapons (+1 damage, the blow counts as holy), armour, shields, rings,
+amulets and belts (+1 AC while worn), potions except the kinds a blessing
+never reads (`POTION_EFFECTS_BLESSING_IGNORES`: the cures, restore MP and
+STR, gain level, teleport...) and scrolls except likewise
+(`SCROLL_EFFECTS_BLESSING_IGNORES`: teleport, mapping, charging,
+genocide...). An unidentified potion or scroll is always eligible, so the
+list never identifies anything. Wands are not: a wand's blessing is the
+extra charge it is made with. `tests/test_bugbash_332_altar.py` holds every
+potion and scroll effect in the data to one of the two lists.
 
 ---
 

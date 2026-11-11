@@ -690,7 +690,7 @@ def test_a_right_answer_studies_the_kind_and_a_wrong_one_stuns():
 
 def test_tier_news_messages_popups_and_journal():
     import chronicle
-    from game_states import STATE_LORE, STATE_STORY_POPUP
+    from game_states import STATE_LORE, STATE_PLAYER, STATE_STORY_POPUP
     g = _game()
     kinds = _plain('vermin', 5)
     for k in kinds[:2]:
@@ -700,9 +700,14 @@ def test_tier_news_messages_popups_and_journal():
     for k in kinds[2:]:
         g.state = STATE_LORE
         _study(g, k)
+    # The lore page the study opened is seen first; the popup waits its turn
+    # (game_popups.PopupMixin) and opens once the page is closed and play is calm.
+    assert g.state == STATE_LORE
+    g.state = STATE_PLAYER
+    g._popup_tick(1.0)
     assert g.state == STATE_STORY_POPUP and g.popup_data['title'] == 'LORE OF THE VERMIN AND SPIDERS'
     assert any(line.startswith('Web and Plague: ') for line in g.popup_data['lines'])
-    assert g.popup_next_state == STATE_LORE                     # back to the lore page
+    assert g.popup_next_state == STATE_PLAYER
     lines = [e.get('text') for e in chronicle.entries_of(g)]
     assert any('the vermin and spiders apart' in (t or '') for t in lines)
     keys = [e.get('once') for e in chronicle.entries_of(g)]
@@ -796,6 +801,7 @@ def test_a_flood_of_news_fits_in_one_popup():
     g.player.qa_tools = True
     for _ in range(3):
         g._qa_family_tier()
+    g._popup_tick(1.0)                          # it opens once play is calm
     assert g.state == STATE_STORY_POPUP
     assert g.popup_data['lines'][-1].startswith('And more besides')
     lines = g.popup_data['lines']

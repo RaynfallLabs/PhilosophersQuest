@@ -463,7 +463,7 @@ Full list of tile integers (`dungeon.py` top of file):
 | STAIRS_DOWN | 3     | No          | No           | Descend action (gated on seals at F99).                   |
 | DOOR        | 4     | Opens on bump | Yes        | Opens into FLOOR; blocks LoS until opened.                 |
 | SECRET_DOOR | 5     | Opens on bump/search | Yes | Looks like WALL until revealed.                            |
-| ALTAR       | 6     | No          | No           | Prayer target. Amplifies divine effects.                   |
+| ALTAR       | 6     | No          | No           | Prayer target. Amplifies prayers; takes offerings (altar.py). |
 | WATER       | 7     | Yes w/o water_walking | No | Transparent; walking requires `water_walking`.             |
 | LAVA        | 8     | Yes w/o fire_resist  | No | Transparent; walking causes damage w/o `fire_resist`.      |
 | FOUNTAIN    | 9     | No          | No           | Quaff action (quiz-gated effects).                         |

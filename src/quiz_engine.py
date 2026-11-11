@@ -407,6 +407,19 @@ class QuizEngine:
         # The flag is one-shot: it applies to THIS quiz only. Left sticky, a
         # combat start granted a free mulligan to every later identify /
         # lockpick / prayer quiz as well (audit B7, 2026-10-04).
+        # A craft enchantment for this subject (enchantments.py, bug bash
+        # 3.3.2): on every Nth quiz its first wrong answer is forgiven: the
+        # threshold quiz's second chance, or a chain going on.
+        _craft = getattr(self, 'craft_hook', None)
+        if _craft is not None:
+            try:
+                if _craft(subject):
+                    if mode in (QuizMode.CHAIN, QuizMode.ESCALATOR_CHAIN):
+                        self._forgive_flag = True
+                    else:
+                        self._reroll_flag = True
+            except Exception:
+                pass
         self.reroll_available = bool(getattr(self, '_reroll_flag', False))
         self._reroll_flag = False
         self.reroll_was_used = False
@@ -446,6 +459,19 @@ class QuizEngine:
         # ate dinner."). Case-folding made every choice register correct.
         correct = str(self.current_question['answer']).strip()
         is_correct = choice.strip() == correct
+
+        # The daimonion (the Philosopher's Ring of Mastery): a voice stops a
+        # wrong choice before it counts. It never shows the right one: the
+        # wrong choice is struck out and the question stays open. A choice
+        # already struck does nothing.
+        if not is_correct and self.current_question.get('choices'):
+            struck = self.__dict__.setdefault('struck_choices', set())
+            if choice.strip() in struck:
+                return False
+            hook = getattr(self, 'daimonion_hook', None)
+            if hook is not None and hook():
+                struck.add(choice.strip())
+                return False
 
         self.last_answer = choice
         self.asked_count += 1
@@ -619,9 +645,17 @@ class QuizEngine:
 
         # Timer is set once in start_quiz() and runs continuously -- no reset per question
         self.state = QuizState.ASKING
+        # The previous question's pick belongs to the previous question. Kept,
+        # the renderer drew whichever new card had the same text as "selected"
+        # (a lit border on, say, the "12" of the next sum: about one combat
+        # question in twelve shared a number with the last answer). Bug bash
+        # 3.3.2. Readers of the pick (the missed-question log, the quirk
+        # tally) run in answer() / the timeout, before this.
+        self.last_answer = ''
         # Each question starts at the top; a long previous question must not
         # leave this one pre-scrolled.
         self._quiz_scroll_offset = 0
+        self.struck_choices = set()          # the daimonion's, this question
 
         # Always shuffle choice order so correct answer position is randomized
         choices = self.current_question.get('choices', [])

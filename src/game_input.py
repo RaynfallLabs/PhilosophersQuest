@@ -253,7 +253,7 @@ class InputMixin:
                 # A gate boss's gifts cannot be declined; Escape waits.
                 return True
             if self.state == STATE_STORY_POPUP:
-                self.state = self.popup_next_state
+                self._close_story_popup()      # the next queued popup, or back to play
                 return True
             if self.state == STATE_NPC_ENCOUNTER:
                 # Cancel the moral encounter cleanly — the NPC stays on the
@@ -435,7 +435,7 @@ class InputMixin:
         elif self.state == STATE_DROP_QTY_INPUT:
             self._drop_qty_input(key, event.unicode)
         elif self.state == STATE_STORY_POPUP:
-            self.state = self.popup_next_state   # any key advances
+            self._close_story_popup()            # any key advances (the next queued popup)
         elif self.state == STATE_CONFIRM_EXIT:
             self._confirm_exit_input(key)
         elif self.state == STATE_EXIT_QUEST:
@@ -1358,6 +1358,16 @@ class InputMixin:
         pygame.K_KP1:   (-1, 1), pygame.K_KP2: (0, 1), pygame.K_KP3: (1, 1),
     }
 
+    def _aimed_spell_reach(self):
+        """The reach of the spell being aimed now, or None (no spell, or one
+        that goes as far as the hero sees)."""
+        if not getattr(self, '_power_targeting', False):
+            return None
+        if not str(getattr(self, '_pending_power', '') or '').startswith('spell_'):
+            return None
+        from spells import spell_reach
+        return spell_reach(getattr(self, '_pending_spell', None))
+
     def _target_input(self, key: int):
         """Handle key input while in targeting mode (ranged or melee)."""
         # TAB / t -- cycle through valid monster targets
@@ -1395,6 +1405,15 @@ class InputMixin:
             if self._observe_targeting:
                 px, py = self.player.x, self.player.y
                 if max(abs(nx - px), abs(ny - py)) > getattr(self, '_observe_reach', 99):
+                    return
+            # A spell with a reach (spells.SPELL_REACH: a touch, a sign) aims
+            # no further than it goes.
+            _sreach = self._aimed_spell_reach()
+            if _sreach is not None:
+                px, py = self.player.x, self.player.y
+                if max(abs(nx - px), abs(ny - py)) > _sreach:
+                    return
+                if nx == px and ny == py:
                     return
             self.target_cursor_x = nx
             self.target_cursor_y = ny

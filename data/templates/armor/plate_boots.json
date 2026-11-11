@@ -4,7 +4,7 @@
   "category": "armor",
   "armor_class_tier": "heavy",
   "slot": "feet",
-  "base_ac_value": 1,
+  "base_ac_value": 0,
   "base_weight_lb": 4.0,
   "_design_note": "F50-100 heavy feet slot. Full plate boots ankle-to-toe. Pairs with plate / full plate body.",
   "compatible_material_classes": [
@@ -13,6 +13,5 @@
     "magical_metal",
     "dragon_material"
   ],
-  "lore_template": "A pair of {material_name} sabatons, overlapping plates from ankle to toe that somehow still let the foot roll through a step. They finish a full harness, so that no inch of the wearer is left to chance.",
-  "equip_threshold": 3
+  "lore_template": "A pair of {material_name} sabatons, overlapping plates from ankle to toe that somehow still let the foot roll through a step. They finish a full harness, so that no inch of the wearer is left to chance."
 }

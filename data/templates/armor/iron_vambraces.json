@@ -4,7 +4,7 @@
   "category": "armor",
   "armor_class_tier": "medium",
   "slot": "arms",
-  "base_ac_value": 1,
+  "base_ac_value": 0,
   "base_weight_lb": 2.0,
   "_design_note": "F20-60 medium arms slot. Riveted plate from wrist to elbow. Covers iron_bracers, bronze_bracers, chain_bracers, scale_bracers from legacy data — material is the variation axis.",
   "compatible_material_classes": [
@@ -12,6 +12,5 @@
     "rare_metal",
     "magical_metal"
   ],
-  "lore_template": "A pair of {material_name} vambraces, each a single curved plate riveted around the forearm from wrist to elbow. Drill sergeants forbid blocking a blade with the arm. In close quarters it happens anyway, and these are why the arm survives.",
-  "equip_threshold": 2
+  "lore_template": "A pair of {material_name} vambraces, each a single curved plate riveted around the forearm from wrist to elbow. Drill sergeants forbid blocking a blade with the arm. In close quarters it happens anyway, and these are why the arm survives."
 }

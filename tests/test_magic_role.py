@@ -31,13 +31,25 @@ def _is_conditional(kind, name):
     return any(c in str(eff) for c in magic_audit.CONDITIONAL)
 
 
+def _is_touch(kind, name):
+    """A touch spell (spells.SPELL_REACH): the hero must stand beside the
+    foe to cast it, so it may hit as hard as an undead-only spell (Brandon,
+    bug bash 3.3.2: "touch spells have a higher risk/reward")."""
+    if kind != 'spell':
+        return False
+    from spells import LEARNABLE_SPELLS, REACH_TOUCH, spell_reach
+    spell = LEARNABLE_SPELLS.get(name + '_spell') or LEARNABLE_SPELLS.get(name)
+    reach = spell_reach(spell)
+    return reach is not None and reach <= REACH_TOUCH
+
+
 def test_no_single_target_cast_out_hits_a_weapon_chain():
     rows = magic_audit.rows()
     assert len(rows) > 60
     over = []
     for kind, name, tier, cost, area, plain, mage, _extra in rows:
-        if _is_conditional(kind, name):
-            limit_plain, limit_build = 1.1, 1.35         # the undead only
+        if _is_conditional(kind, name) or _is_touch(kind, name):
+            limit_plain, limit_build = 1.1, 1.35         # the undead only; a touch
         elif kind == 'wand':
             limit_plain, limit_build = 0.92, 1.12        # a charge, not a spell
         else:

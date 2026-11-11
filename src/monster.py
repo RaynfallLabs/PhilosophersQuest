@@ -44,8 +44,13 @@ def heart_weight(player) -> float:
     return 1.0 - HEART_WEIGHT_PER_KARMA * max(-10, min(10, karma))
 RECOVER_SHARE = 0.03
 
-MIN_HIT_ORDINARY = 0.30
-MIN_HIT_NAMED = 0.40
+# The share of THAC0 misses that land anyway. With AC from body armour and
+# shield only (gear.py) and every monster's THAC0 rebaked to the AC line
+# (tools/balance/rebake_thac0.py), an ordinary monster needs no floor: the
+# natural 20 is it, as in AD&D. At 0.30 every blow from floor 15 down was
+# decided by this number, not by what the hero wore. Named foes keep some.
+MIN_HIT_ORDINARY = 0.0
+MIN_HIT_NAMED = 0.15
 # Drain attacks: most CON one floor can cost, and the lowest drain can take it.
 DRAIN_CON_PER_FLOOR = 1      # (2 until a point of CON became 3 hit points)
 DRAIN_CON_FLOOR = 8
@@ -120,6 +125,45 @@ _RANGED_WORDS = {'shoot', 'arrow', 'bolt', 'dart', 'spit', 'hurl',
 _MIND_WORDS = ('gaze', 'song', 'wail', 'charm', 'psionic', 'hex', 'evil eye')
 
 
+# ---------------------------------------------------------------------------
+# Who can bleed (data/monster_blood.json; Brandon, 3.3.3 play: "The Wraith is
+# bleeding!"). A creature with no blood (bone and dust undead, spirits,
+# golems, elementals, oozes, plants) never takes the bleeding status, never
+# loses health to it and is never called bleeding; a vampire, or one of the
+# fleshy dead, does. The rule is data: a family or a tag, and a short list of
+# kinds that are the exception. Monster.can_bleed asks here.
+# ---------------------------------------------------------------------------
+_BLOOD_RULES = None
+
+
+def blood_rules() -> dict:
+    global _BLOOD_RULES
+    if _BLOOD_RULES is None:
+        import json
+        from paths import data_path
+        with open(data_path('data', 'monster_blood.json'), encoding='utf-8') as f:
+            _BLOOD_RULES = json.load(f)
+    return _BLOOD_RULES
+
+
+def kind_can_bleed(kind: str, family, tags) -> bool:
+    """The kind's own entry first, then a family that bleeds, then a family
+    or a tag that has no blood; otherwise it bleeds."""
+    r = blood_rules()
+    kind = str(kind or '')
+    if kind in (r.get('bleeds') or ()):
+        return True
+    if kind in (r.get('bloodless') or ()):
+        return False
+    if family and family in (r.get('bleeding_families') or ()):
+        return True
+    if family and family in (r.get('bloodless_families') or ()):
+        return False
+    if set(tags or ()) & set(r.get('bloodless_tags') or ()):
+        return False
+    return True
+
+
 def _family_of_kind(kind):
     try:
         import family_lore
@@ -131,11 +175,21 @@ def _family_of_kind(kind):
 # Family knowledge hooks (src/family_edges.py). Each is a no-op when the
 # hero has earned nothing against this family.
 def _edge_save(player, m, effect) -> int:
+    """The family ward's bonus, quietly: its line waits for the save to
+    hold (_edge_ward_held)."""
     try:
         import family_edges
-        return family_edges.save_bonus(player, m, effect)
+        return family_edges.save_bonus(player, m, effect, quiet=True)
     except Exception:
         return 0
+
+
+def _edge_ward_held(player, m, effect) -> None:
+    try:
+        import family_edges
+        family_edges.ward_held(player, m, effect)
+    except Exception:
+        pass
 
 
 def _edge_incoming(player, m, dmg: int, atk_type: str) -> int:
@@ -527,6 +581,8 @@ class Monster:
         # kept the old one from ever running out), and once a hold ends a
         # named foe shakes off the next for NAMED_FOE_CONTROL_GRACE turns
         # ('control_immune', set in tick_effects).
+        if name == 'bleeding' and not self.can_bleed():
+            return                          # nothing in it to bleed (kind_can_bleed)
         if name in _HARD_CONTROL and self._is_named_foe():
             if (self.status_effects.get('control_immune', 0) > 0
                     or self.status_effects.get(name, 0) > 0):
@@ -547,11 +603,24 @@ class Monster:
         for the whole fight."""
         if not self.alive:
             return
+        if name == 'bleeding' and not self.can_bleed():
+            return                          # nothing in it to bleed (kind_can_bleed)
         if name in _HARD_CONTROL and self._is_named_foe():
             self.add_effect(name, duration)
             return
         cur = int(self.status_effects.get(name, 0) or 0)
         self.status_effects[name] = max(cur, int(duration))
+
+    def can_bleed(self) -> bool:
+        """It has blood to lose (data/monster_blood.json: a skeleton, a
+        wraith, a golem, an ooze or a plant has none; a vampire and a ghoul
+        do). "The Wraith is bleeding!" was said, and it lost health to it."""
+        try:
+            import family_lore
+            return kind_can_bleed(getattr(self, 'kind', ''), family_lore.family_of(self),
+                                  getattr(self, 'tags', None) or ())
+        except Exception:
+            return True
 
     # Which creatures shrug off which control effects. Lore, not balance:
     #   constructs and plants have no mind to frighten, charm or confuse;
@@ -606,9 +675,16 @@ class Monster:
         bonus = player.save_bonus_for('CON') if hasattr(player, 'save_bonus_for') else 0
         # A ward against this family's draining (Grave-Salt, Iron and Salt):
         # outside the +5 cap, earned against one family only.
-        bonus += _edge_save(player, self, 'drain')
+        ward = _edge_save(player, self, 'drain')
+        bonus += ward
         dc = min(18, 12 + self.min_level // 7)
-        return random.randint(1, 20) + mod + bonus < dc
+        if random.randint(1, 20) + mod + bonus < dc:
+            return True
+        if ward > 0:
+            # The save held: only now does the ward say so (it was said
+            # before the roll, above a "drains your life force! (CON -1)").
+            _edge_ward_held(player, self, 'drain')
+        return False
 
     def _dot_divisor(self, ordinary: int) -> int:
         return NAMED_DOT_DIVISOR if self._is_named_foe() else ordinary
@@ -628,6 +704,10 @@ class Monster:
         doom_dmg     = 0
         rupture_dmg  = 0
         disease_tick = False
+        # A bleed written straight into the statuses (a weapon's or a pet's
+        # proc, an old save) on a creature with no blood: gone, unfelt.
+        if self.status_effects.get('bleeding') and not self.can_bleed():
+            self.status_effects.pop('bleeding', None)
         for name in list(self.status_effects):
             val = self.status_effects[name]
             if val > 0:
@@ -854,6 +934,12 @@ class Monster:
             if ignore_resistance and mult < 1.0:
                 mult = 1.0
             amount = int(amount * mult)
+            # A spell, wand or breath of a kind it is weak to, or resists:
+            # said at the end of the action (affinity.py). A burn ticking is
+            # not a hit.
+            if amount >= 0 and not self.__dict__.get('_dot_tick'):
+                import affinity
+                affinity.note(self, affinity.kind_of(mult), damage_type)
         actual = max(0, amount)
         hp_before = self.hp
         self.hp = max(0, self.hp - actual)
@@ -1139,7 +1225,13 @@ class Monster:
 
         # -- THAC0 Attack Roll ----------------------------------------------
         d20 = random.randint(1, 20)
-        player_ac = player.get_ac()
+        # A touch ignores body armour and shield (bug bash 3.3.2, 3e "touch
+        # AC"): the gloves guard against it instead (guards.py).
+        import guards as _guards
+        if _guards.delivery(atk) == 'touch':
+            player_ac = _guards.touch_ac(player)
+        else:
+            player_ac = player.get_ac()
         to_hit = self.thac0 - player_ac   # roll must be >= this to hit
         # Chain-equip passive: no_attack_of_opportunity (Sandals of Hermes T3+)
         # re-purposed as "free disengage" — if the player stepped away from
@@ -1177,6 +1269,17 @@ class Monster:
 
         # Displacement's 30% miss is rolled once, by the caller in game_combat
         # (it used to be rolled here as well, for a combined 51% miss).
+
+        # Bracers of Parrying (enchantments.py): a blow from beside you that
+        # would land is parried. Not a breath, a missile, a gaze or a voice.
+        if _guards.delivery(atk) in ('blow', 'bite', 'sting', 'trample', 'grapple', 'touch'):
+            try:
+                import enchantments as _ench
+                _parry = _ench.might(player, 'parrying')
+            except ImportError:
+                _parry = 0.0
+            if _parry > 0 and random.random() < _parry:
+                return 0, f"You parry {the_name(self, lower=True)}'s blow."
 
         # Cloak of Sun Wukong (monkey_king_dodge): every Nth attack against the
         # player auto-misses. Counter is on the player; resets when armor unequipped.
@@ -1311,6 +1414,12 @@ class Monster:
         # Family knowledge that turns this family's fire, cold or holy
         # light aside (Dragon-Ward, Ward of the Elements, Angel's Due).
         dmg = _edge_incoming(player, self, dmg, atk_type)
+        # The minor slots' guards (guards.py): the helm against voice and
+        # gaze, the gloves against touch, the cloak against breath and the
+        # elements... turn aside a share of a matching attack's damage.
+        _keep_d, _keep_r, _guard_piece = _guards.guard_keep(player, atk)
+        if _keep_d < 1.0 and dmg > 0:
+            dmg = max(1, int(round(dmg * _keep_d)))
         actual = player.take_damage(dmg, atk_type)
 
         if getattr(self, '_unseen', False) is True:
@@ -1463,7 +1572,19 @@ class Monster:
             return ''
         chance   = atk.get('effect_chance', 0.30)
         duration = roll_duration(atk.get('effect_duration', 5))
-        if random.random() >= chance:
+        # The minor slots' guards shrug off a matching rider (guards.py):
+        # the helm a stare's paralysis, the boots a slowing, the shirt a
+        # poisoning... The roll that would have landed and did not is told.
+        import guards as _guards
+        _keep_d, keep_r, piece = _guards.guard_keep(player, atk)
+        roll = random.random()
+        if roll >= chance:
+            return ''
+        if roll >= chance * keep_r:
+            if piece is not None:
+                from hud_context import item_bare_name
+                return (f" Your {item_bare_name(player, piece)} turns the "
+                        f"{effect_id.replace('_', ' ')} aside.")
             return ''
         # Reflecting: 50% chance to bounce effect back at attacker
         if player.has_effect('reflecting') and random.random() < 0.50:
@@ -1767,13 +1888,10 @@ class Monster:
         # against the wearer (rounded down, min 1). Already-aware monsters
         # keep their target via the _aware flag, so silent_walk only helps
         # AVOID first detection — once seen, you're seen.
-        try:
-            for _acc in player.equipped_accessories:
-                if getattr(_acc, 'passive_silent_walk', False):
-                    detection_range = max(1, detection_range // 2)
-                    break
-        except AttributeError:
-            pass
+        # (Boots of Elvenkind too: gear.wears_flag looks at worn armour.)
+        import gear as _gear
+        if _gear.wears_flag(player, 'passive_silent_walk'):
+            detection_range = max(1, detection_range // 2)
         # Chain-equip passives: invisible_to_undead / stealth_in_dark /
         # unseen_when_still — if any applies, the monster cannot acquire
         # the player this turn (existing _aware/_alerted is preserved).

@@ -73,7 +73,9 @@ def test_every_new_piece_loads_is_named_and_has_art_and_a_story():
 
 def test_a_new_piece_is_no_weaker_than_plain_armor_of_its_floor():
     """Lore decides what it is; the floor it sits on must still be one where
-    that much armor belongs: at least the middle plain piece for the slot."""
+    that much armor belongs: at least the middle plain piece for the slot.
+    Since bug bash 3.3.2 only body armour and shields give AC (base + plus);
+    a minor piece is weighed by its enchantment level instead."""
     # Plain armor is no longer listed in armor.json (every entry there is a
     # unique); it is built from templates x materials for the floor. The old
     # version of this test looked for plain entries in armor.json, found
@@ -82,14 +84,20 @@ def test_a_new_piece_is_no_weaker_than_plain_armor_of_its_floor():
     import statistics
     from items import pick_random_armor_for_floor
     armor = _data('items/armor.json')
+    import gear
     for iid in NEW_ARMOR:
         d = armor[iid]
         rng = random.Random(iid)
-        near = [a.ac_bonus for a in
-                (pick_random_armor_for_floor(d['peak_floor'], rng, slot=d['slot'])
-                 for _ in range(60)) if a is not None]
-        assert near, (iid, d['slot'], d['peak_floor'])
-        assert d['ac_bonus'] >= statistics.median(near) - 1, (iid, d['ac_bonus'], near)
+        found = [a for a in (pick_random_armor_for_floor(d['peak_floor'], rng, slot=d['slot'])
+                             for _ in range(60)) if a is not None]
+        assert found, (iid, d['slot'], d['peak_floor'])
+        if d['slot'] in gear.CORE_SLOTS:
+            near = [a.ac_bonus + a.enchant_bonus for a in found]
+            mine = d['ac_bonus'] + d['enchant_bonus']
+        else:
+            near = [a.ench_level for a in found]
+            mine = d['ench_level']
+        assert mine >= statistics.median(near) - 1, (iid, mine, near)
 
 
 def test_every_slot_has_a_named_piece_to_find_early_middle_and_late():
@@ -115,7 +123,8 @@ def test_every_named_drop_names_a_real_item():
             continue
         iid = (m.get('treasure') or {}).get('unique_drop_id')
         if iid:
-            assert iid in known, (mid, iid)
+            from items import made_drop  # or an enchanted piece made to a spec
+            assert iid in known or made_drop(iid) is not None, (mid, iid)
 
 
 def test_a_piece_only_its_monster_carries_is_never_random_loot():
@@ -336,7 +345,9 @@ def test_regeneration_mends_a_share_of_a_large_body():
         p._hp_regen_acc = 0
         before = p.hp
         src = open(os.path.join(ROOT, 'src', 'status_effects.py'), encoding='utf-8').read()
-        assert 'player.restore_hp(max(1, int(player.max_hp * REGEN_SHARE)))' in src
+        # (A Ring of Regeneration mends more by its tier: rings.regen_share.)
+        assert 'player.restore_hp(max(1, int(player.max_hp * share)))' in src
+        assert 'share = max(REGEN_SHARE, rings.regen_share(player))' in src
         assert max(1, int(max_hp * status_effects.REGEN_SHARE)) == want
         assert before == 10
 

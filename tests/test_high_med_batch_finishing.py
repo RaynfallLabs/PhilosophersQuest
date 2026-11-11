@@ -501,13 +501,24 @@ def test_endgame_outsiders_tagged():
 
 
 def test_boss_thac0_balance_fixes():
-    """Whispering Crone and Blood Archon had broken thac0 vs endgame players."""
+    """Whispering Crone and Blood Archon had broken thac0 vs endgame players.
+    Since bug bash 3.3.2 every THAC0 is rebaked to the armour line
+    (tools/balance/rebake_thac0.py), keeping half of each monster's lore
+    accuracy against its band: they must sit with their band (the fix
+    brought them up to it), never far behind it."""
+    import statistics
     monsters = json.loads(
         (ROOT / "data" / "monsters.json").read_text(encoding='utf-8'))
-    if 'whispering_crone' in monsters:
-        assert int(monsters['whispering_crone'].get('thac0', 99)) <= -3
-    if 'blood_archon' in monsters:
-        assert int(monsters['blood_archon'].get('thac0', 99)) <= -10
+
+    def band(m):
+        return min(9, (max(1, int(m.get('peak_floor') or m.get('min_level') or 1)) - 1) // 10)
+    for mid, lore_cap in (('whispering_crone', -3), ('blood_archon', -10)):
+        if mid not in monsters:
+            continue
+        m = monsters[mid]
+        assert int(m.get('thac0_lore', 99)) <= lore_cap, mid      # the fix, kept as lore
+        peers = [int(o['thac0']) for o in monsters.values() if band(o) == band(m)]
+        assert int(m['thac0']) <= statistics.median(peers) + 2, mid
 
 
 def test_floating_eye_has_gaze_attack():

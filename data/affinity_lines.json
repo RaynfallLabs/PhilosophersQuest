@@ -1,0 +1,37 @@
+{
+  "_doc": "What the game says when a hit meets a creature's weakness or its resistance (src/affinity.py; Brandon, bug bash 3.3.2: 'a whole set of pokemon style messages, so you know it when you are blocked or effective'). One line per action, chosen at random from the pool; the _many pools when several creatures were struck the same way. {name} is the creature with its article at a sentence start, {the} the same mid-sentence, {word} what met it (fire, silver, a cutting blow).",
+  "words": {
+    "slash": "a cutting blow", "pierce": "a thrust", "blunt": "a crushing blow",
+    "physical": "the blow", "fire": "fire", "cold": "cold", "lightning": "lightning",
+    "acid": "acid", "holy": "holy power", "poison": "poison", "magic": "magic",
+    "necrotic": "death magic", "radiant": "radiance", "force": "force",
+    "silver": "silver", "iron": "iron", "cold_iron": "cold iron", "drain": "draining"
+  },
+  "weak": [
+    "It's super effective!",
+    "Super effective! {name} cannot bear {word}.",
+    "{name} reels: {word} is its bane!",
+    "Right where it hurts! {word_cap} finds {the}'s weakness.",
+    "{name} shrieks. It was never made to take {word}.",
+    "A telling blow! {name} has no answer to {word}.",
+    "{word_cap} bites deep. {name} is weak to it!",
+    "That is the way to hurt {the}: {word}!"
+  ],
+  "resisted": [
+    "It's not very effective...",
+    "Not very effective... {name} resists {word}.",
+    "{name} shrugs off {word}.",
+    "{word_cap} barely troubles {the}.",
+    "{name} hardly notices. Try something other than {word}.",
+    "The blow lands, but {the} takes little of it: it resists {word}.",
+    "{name} was made to weather {word}. Not very effective."
+  ],
+  "weak_many": [
+    "Super effective! {word_cap} tears through them.",
+    "It's super effective! None of them can bear {word}."
+  ],
+  "resisted_many": [
+    "Not very effective... they shrug off {word}.",
+    "It's not very effective: they all resist {word}."
+  ]
+}

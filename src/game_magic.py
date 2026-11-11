@@ -114,7 +114,8 @@ MAGIC_TIER_MULT = {1: 2.6, 2: 4.9, 3: 5.8, 4: 7.9, 5: 10.5}
 WAND_TIER_MULT = {1: 1.9, 2: 3.7, 3: 5.6, 4: 6.8, 5: 8.0}
 
 # What Intelligence does for magic: more casts (max MP is 10 + INT), and
-# effects that last longer and reach further. It adds a little to damage
+# effects that last longer (and a wider Light). It never lengthens how far
+# an aimed spell goes (spells.SPELL_REACH). It adds a little to damage
 # and healing, never the +10% a point it used to (INT 36 was x4.6).
 INT_DAMAGE_PER_POINT = 0.015
 INT_DAMAGE_CAP = 1.4
@@ -1401,11 +1402,46 @@ class MagicMixin:
     # Spell menu  (m key -- learned spells, cast with one-Q science quiz)
     # ------------------------------------------------------------------
 
+    def _spell_in_reach(self, spell, m) -> bool:
+        """Is ``m`` within the spell's reach (any tile of a big one)? A
+        spell without a reach goes as far as the hero sees."""
+        from spells import spell_reach
+        from geom import chebyshev_distance
+        reach = spell_reach(spell)
+        if reach is None:
+            return True
+        return chebyshev_distance(self.player.x, self.player.y, m) <= reach
+
+    @staticmethod
+    def _out_of_reach_line(spell) -> str:
+        from spells import spell_reach, REACH_TOUCH
+        reach = spell_reach(spell)
+        name = spell.get('name', 'The spell')
+        if reach is not None and reach <= REACH_TOUCH:
+            return f"{name} needs a foe beside you: you must lay hands on it."
+        return f"Nothing is close enough for {name}: it reaches {reach} tiles."
+
+    def _in_spell_sight(self, m) -> bool:
+        """An area spell's victim: alive, on a tile the hero sees, and in a
+        clear line from him (any tile of a big one). Sight alone was not
+        enough: the Crown of Brahma, tremor sense and Huginn and Muninn show
+        tiles through walls, and every area spell struck through them."""
+        if not m.alive:
+            return False
+        from combat import _line_of_sight
+        from geom import occupied_tiles
+        px, py = self.player.x, self.player.y
+        visible = self.visible
+        return any((tx, ty) in visible and _line_of_sight(px, py, tx, ty, self.dungeon)
+                   for tx, ty in occupied_tiles(m))
+
     def _invoke_spell(self, spell_id: str):
         spell = LEARNABLE_SPELLS.get(spell_id)
         if not spell:
             return
-        mp_cost = spell['mp_cost']
+        # A Ring of Wizardry cuts the cost by its tier (rings.py).
+        import rings as _rings
+        mp_cost = _rings.spell_cost(self.player, spell['mp_cost'])
         from chain_passives import consume_passive_charge, find_passive_item, refund_passive_charge
         _free_cast = consume_passive_charge(self.player, 'free_cast_once_per_floor')
         if _free_cast:
@@ -1425,13 +1461,17 @@ class MagicMixin:
             self._pending_spell = spell
             self._pending_spell_id = spell_id
             px, py = self.player.x, self.player.y
-            candidates = [
-                m for m in self.monsters
-                if m.alive and (m.x, m.y) in self.visible
-            ]
+            # Only what the hero can see (never an invisible or disguised
+            # thing: its tile would show where it stands) and only what the
+            # spell reaches (spells.SPELL_REACH: a touch, a short sign).
+            seen = [m for m in self.monsters if m.alive and self._sees_monster(m)]
+            candidates = [m for m in seen if self._spell_in_reach(spell, m)]
             candidates.sort(key=lambda m: abs(m.x - px) + abs(m.y - py))
             if not candidates:
-                self.add_message("No visible target for this spell.", 'warning')
+                if seen:
+                    self.add_message(self._out_of_reach_line(spell), 'warning')
+                else:
+                    self.add_message("No visible target for this spell.", 'warning')
                 if _free_cast:      # nothing was cast: the floor's free spell is still owed
                     refund_passive_charge(self.player, 'free_cast_once_per_floor')
                 self.state = STATE_PLAYER
@@ -1466,6 +1506,8 @@ class MagicMixin:
         quiz difficulty AND the effect magnitude (baked into spell.power at
         author-time). Parallels the v2.10.0 scroll + v2.11.0 wand contracts.
         """
+        if target is not None and hasattr(self, '_ring_veil_slips'):
+            self._ring_veil_slips()          # a spell at a foe is a strike
         self.state = STATE_QUIZ
         self.quiz_title = f"CAST {spell['name'].upper()}  --  SCIENCE"
 
@@ -1588,7 +1630,7 @@ class MagicMixin:
             scaled   = self._spell_damage(base_dmg, chain)
             hit = 0
             for m in list(self.monsters):
-                if m.alive and (m.x, m.y) in self.visible:
+                if self._in_spell_sight(m):
                     hit += 1 if _hero_sees(self, m) else 0
                     m.take_damage(scaled, 'cold')
                     if not m.alive:
@@ -1603,7 +1645,7 @@ class MagicMixin:
             scaled   = self._spell_damage(base_dmg, chain)
             hit = 0
             for m in list(self.monsters):
-                if m.alive and (m.x, m.y) in self.visible:
+                if self._in_spell_sight(m):
                     hit += 1 if _hero_sees(self, m) else 0
                     actual = m.take_damage(scaled, 'fire')
                     if not m.alive:
@@ -1736,7 +1778,7 @@ class MagicMixin:
             from dice import roll as _roll_m
             base_dmg = _roll_m(power) if power else 20
             scaled = self._spell_damage(base_dmg, chain)
-            visible_monsters = [m for m in self.monsters if m.alive and (m.x, m.y) in self.visible]
+            visible_monsters = [m for m in self.monsters if self._in_spell_sight(m)]
             kills = 0
             for m in visible_monsters:
                 actual = m.take_damage(scaled, 'fire')
@@ -1792,7 +1834,7 @@ class MagicMixin:
             hit = 0
             for m in list(self.monsters):
                 if not m.alive: continue
-                if (m.x, m.y) not in self.visible: continue
+                if not self._in_spell_sight(m): continue
                 if max(abs(m.x - px), abs(m.y - py)) > 5: continue
                 hit += 1 if _hero_sees(self, m) else 0
                 m.take_damage(scaled, 'cold')
@@ -1810,7 +1852,7 @@ class MagicMixin:
             count = 0
             for m in list(self.monsters):
                 if not m.alive: continue
-                if (m.x, m.y) not in self.visible: continue
+                if not self._in_spell_sight(m): continue
                 if _is_big_foe(m): continue   # bosses and named foes immune
                 # Crude polymorph: weaken HP + AC + speed to a "small animal"
                 m.max_hp = max(1, m.max_hp // 4)
@@ -1834,7 +1876,7 @@ class MagicMixin:
                 hit = 0
                 for m in list(self.monsters):
                     if not m.alive: continue
-                    if (m.x, m.y) not in self.visible: continue
+                    if not self._in_spell_sight(m): continue
                     m.take_damage(scaled_per, 'fire')
                     if not m.alive:
                         self._on_monster_killed(m)
@@ -1852,7 +1894,7 @@ class MagicMixin:
             hit = 0
             for m in list(self.monsters):
                 if not m.alive: continue
-                if (m.x, m.y) not in self.visible: continue
+                if not self._in_spell_sight(m): continue
                 hit += 1 if _hero_sees(self, m) else 0
                 m.take_damage(scaled, 'lightning')
                 # Stun chance from the thunder
@@ -1913,7 +1955,7 @@ class MagicMixin:
             scaled = self._spell_damage(base_dmg, chain)
             undead = [
                 m for m in self.monsters
-                if m.alive and (m.x, m.y) in self.visible and _is_undead(m)
+                if self._in_spell_sight(m) and _is_undead(m)
             ]
             if undead:
                 fear_dur = max(3, int(8 * chain_scale))
@@ -1938,7 +1980,7 @@ class MagicMixin:
             threshold_pct = 0.35
             visible_monsters = [
                 m for m in self.monsters
-                if m.alive and (m.x, m.y) in self.visible
+                if self._in_spell_sight(m)
             ]
             slain, struck = 0, 0
             for m in visible_monsters:
@@ -1986,7 +2028,7 @@ class MagicMixin:
             dur = max(2, int(dur * chain_scale))          # Intelligence: reach
             visible_monsters = [
                 m for m in self.monsters
-                if m.alive and (m.x, m.y) in self.visible
+                if self._in_spell_sight(m)
             ]
             affected = 0
             for m in visible_monsters:
@@ -2015,7 +2057,7 @@ class MagicMixin:
             base_dur = max(2, int(base_dur * chain_scale))     # Intelligence: reach
             visible_monsters = [
                 m for m in self.monsters
-                if m.alive and (m.x, m.y) in self.visible
+                if self._in_spell_sight(m)
             ]
             affected = 0
             for m in visible_monsters:
@@ -2254,7 +2296,8 @@ class MagicMixin:
                     target.add_effect('sleeping', dur)
                     self.add_message(f"{the_name(target)} falls asleep for {dur} turns!", 'success')
             elif effect == 'confuse_monster':
-                dur = max(2, int(10 * chain_scale))
+                # Axii holds longer than Confusion (spells.py 'duration').
+                dur = max(2, int(int(spell.get('duration', 10)) * chain_scale))
                 dur, resisted = self._boss_resist_cc(target, dur)
                 if resisted:
                     self.add_message(f"{the_name(target)} shrugs off the confusion!", 'warning')
@@ -2283,7 +2326,9 @@ class MagicMixin:
                 if not target.alive:
                     self._on_monster_killed(target)
             elif effect == 'slow_monster':
-                dur = max(2, int(8 * chain_scale))
+                # Yrden's own length (spells.py 'duration'): a close-range
+                # sign holds longer than a spell cast from across the room.
+                dur = max(2, int(int(spell.get('duration', 8)) * chain_scale))
                 dur, resisted = self._boss_resist_cc(target, dur)
                 if resisted:
                     self.add_message(f"{the_name(target)} shrugs off the slowing magic!", 'warning')
@@ -2610,18 +2655,12 @@ class MagicMixin:
                 _qs_scroll.on_scroll_read(scroll.id, was_identified=_was_identified_before)
             self._apply_scroll_effect(scroll)
             # If the scroll effect parked us in a picker state, don't burn
-            # a turn here — the picker callback (or ESC) will advance.
+            # a turn here — the picker callback (or ESC) will advance. (A
+            # monster family tier popup from Omnisight's corpse study is
+            # queued, game_popups.PopupMixin: the read stays in play and costs its
+            # turn.)
             if self.state == STATE_PLAYER:
                 self._advance_turn()
-            else:
-                # A monster family tier popup (Omnisight's corpse study,
-                # game_families) is news over the map, not a picker: the
-                # read still costs its turn (it used to be free).
-                from game_states import STATE_STORY_POPUP
-                if (self.state == STATE_STORY_POPUP
-                        and (getattr(self, 'popup_data', None) or {}).get('_family')
-                        and getattr(self, 'popup_next_state', None) == STATE_PLAYER):
-                    self._advance_turn()
 
         # v2.10.0: grammar_chain_cap_bonus (Ring of Scheherazade) now lowers
         # the READ TIER, not the threshold (which is normally 1 anyway).
@@ -2923,8 +2962,17 @@ class MagicMixin:
             self.add_message(f"Energy surges through you -- hasted for {duration} turns!", 'success')
 
         elif effect == 'enchant_armor':
-            from items import ENCHANT_CAP, ARMOR_SLOTS
-            equipped = [(s, ARMOR_SLOTS[i]) for i, s in enumerate(self.player.armor_slots) if s is not None]
+            from items import ENCHANT_CAP, ARMOR_SLOTS, set_ench_level
+            import gear as _gear
+            # Body armour and the shield first: they carry the plus (AC). A
+            # minor piece gives no AC (bug bash 3.3.2): the scroll raises its
+            # enchantment a level instead (gear.py, up to level 10).
+            equipped = [(s, ARMOR_SLOTS[i]) for i, s in enumerate(self.player.armor_slots)
+                        if s is not None]
+            equipped.sort(key=lambda p: 0 if p[1] in _gear.CORE_SLOTS else 2)
+            if self.player.shield is not None:
+                equipped.insert(1 if equipped and equipped[0][1] in _gear.CORE_SLOTS else 0,
+                                (self.player.shield, 'shield'))
             # Chain ladder (Path A): delta + how many armor slots get hit.
             if _scroll_buc == 'blessed':
                 delta = max(2, [1, 2, 2, 3, 4][_tstep])
@@ -2937,6 +2985,18 @@ class MagicMixin:
                 slot_count = [1, 2, 3, 4, 99][_tstep]
                 hits = equipped[:slot_count]
                 for target, slot_name in hits:
+                    if slot_name not in _gear.CORE_SLOTS and slot_name != 'shield':
+                        _tn = self._bare_name(target)
+                        old_lv = int(getattr(target, 'ench_level', 0) or 0)
+                        new_lv = set_ench_level(target, old_lv + delta)
+                        if new_lv > old_lv:
+                            self.add_message(f"Your {_tn} shines: its enchantment grows.", 'success')
+                        elif new_lv < old_lv:
+                            self.add_message(f"Your {_tn} tarnishes: its enchantment fades.", 'warning')
+                        else:
+                            self.add_message(
+                                f"Your {_tn} shudders but can hold no more enchantment.", 'info')
+                        continue
                     cap = ENCHANT_CAP.get(slot_name, 1)
                     old_val = getattr(target, 'enchant_bonus', 0)
                     target.enchant_bonus = max(-3, min(cap, old_val + delta))
@@ -3241,20 +3301,34 @@ class MagicMixin:
             n = count_by_step[_tstep]
             if accs:
                 touched = 0
+                import rings as _rings
                 for acc in accs[:n]:
                     fx = acc.effects
-                    if 'amount' in fx and bonus:
+                    if _rings.kind_of(acc) and bonus:
+                        # A common ring is a kind at a level (rings.py): the
+                        # scroll moves its level, and everything follows.
+                        _old_lv = int(getattr(acc, 'ench_level', 0) or 0)
+                        _rings.relevel(acc, _old_lv + bonus)
+                        _moved = acc.ench_level - _old_lv
+                        _an = self._bare_name(acc)
+                        if _moved:
+                            self.player.sync_worn_stats()
+                            self.add_message(
+                                f"The {_an} {'glows' if _moved > 0 else 'dims'}! "
+                                f"{abs(_moved)} level{'s' if abs(_moved) != 1 else ''} "
+                                f"{'stronger' if _moved > 0 else 'weaker'}.",
+                                'success' if _moved > 0 else 'warning')
+                            touched += 1
+                        else:
+                            self.add_message(f"The {_an} shimmers briefly but nothing happens.", 'info')
+                    elif 'amount' in fx and bonus:
                         _old = fx['amount']
                         fx['amount'] = max(0, _old + bonus)
                         # What the ring lends changes now, not when it next
-                        # goes on: AC by the step, the six stats by the
-                        # strongest-counts rule (Player.sync_worn_stats).
-                        # Left alone, taking the ring off later removed the
-                        # NEW amount (three points lost for good, or a cursed
-                        # scroll turning a ring's points into permanent ones).
-                        if fx.get('stat') == 'AC' and fx['amount'] != _old:
-                            self.player.apply_stat_bonus('AC', fx['amount'] - _old)
-                        elif fx.get('stat') and fx['amount'] != _old:
+                        # goes on: the six stats by the strongest-counts rule
+                        # (Player.sync_worn_stats). Left alone, taking the
+                        # ring off later removed the NEW amount.
+                        if fx.get('stat') and fx['amount'] != _old:
                             self.player.sync_worn_stats()
                         _an = self._bare_name(acc)
                         if int(getattr(acc, 'id_level', 0) or 0) >= 5 or self._item_is_known(acc):
@@ -4347,7 +4421,7 @@ class MagicMixin:
         the game asks, so a copy in a chest, a trader's stock or a floor not
         yet generated is covered, and forgetting the kind (``_forget_kind``)
         un-knows them all. known_class_ids covers material-variant
-        accessories (one Ring of Strength names them all) — see
+        accessories (a ring kind's every level is one type) — see
         items.type_class.
 
         Identify v3.1 (2026-09-01) additionally learns the item's FORM

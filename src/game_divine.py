@@ -40,6 +40,7 @@ from __future__ import annotations
 import copy
 import random
 
+import altar
 import sound_system as _snd
 from dungeon import FLOOR, DOOR, ALTAR
 from game_states import (
@@ -55,6 +56,13 @@ from game_states import (
 # both drop-reveal (locating cursed) and Divine Intercession failure
 # (smite: curse every worn item) need.
 # ----------------------------------------------------------------------------
+
+
+# The altar menu's own row id (the prayers keep theirs, prayers.PRAYERS),
+# and the karma at or below which God takes no gift: Mercy's fourth link
+# and the altar rite alike.
+ALTAR_RITE = 'altar_rite'
+ALTAR_REFUSES_AT = -5
 
 
 def _on_altar(g) -> bool:
@@ -409,7 +417,14 @@ class DivineMixin:
     # ------------------------------------------------------------------
 
     def _drink_fountain(self):
-        """Drink from a fountain -- AI quiz determines outcome."""
+        """Drink from a fountain -- AI quiz determines outcome. One drink a
+        fountain (Brandon, bug bash 3.3.2: it dried only one time in three,
+        so most fountains gave a second chance)."""
+        pos = (self.player.x, self.player.y)
+        if pos in self.dungeon.__dict__.setdefault('_fountains_drunk', set()):
+            self.add_message("The fountain has given you what it had. The water lies still.",
+                             'info')
+            return
         self.add_message("You cup your hands and drink from the fountain...", 'info')
         self.quiz_title = "FOUNTAIN  --  AI"
         self.state = STATE_QUIZ
@@ -484,12 +499,15 @@ class DivineMixin:
                         "The fountain glows with divine light, cures every ailment and "
                         "makes you whole. It has no more than that to give you.", 'success')
 
-        # 33% chance fountain dries up after use. Ariadne's fountain never
-        # does: drying it before the Bronze Bull is offered would lock the
-        # Thread away for the run.
-        if getattr(self.dungeon, 'ariadne_shrine_door', None) is None \
-                and _rng.random() < 0.33:
-
+        # One drink a fountain: it dries up after it (it did one time in
+        # three). Ariadne's fountain keeps its basin while her shrine is
+        # sealed: drying it before the Bronze Bull is offered would lock the
+        # Thread away for the run. It still gives one drink only. (Every
+        # fountain on Ariadne's floor used to be kept, not just hers.)
+        self.dungeon.__dict__.setdefault('_fountains_drunk', set()).add((px, py))
+        ariadne = ((px, py) == getattr(self.dungeon, 'ariadne_fountain_pos', None)
+                   and getattr(self.dungeon, 'ariadne_shrine_door', None) is not None)
+        if not ariadne:
             self.dungeon.tiles[py][px] = FLOOR
             self.add_message("The fountain dries up.", 'info')
 
@@ -972,6 +990,14 @@ class DivineMixin:
                 self._resolve_judgment()
                 return
 
+        # An ordinary altar opens the altar: every choice there is an
+        # offering, and none of them waits on or sets the prayer cooldown
+        # (src/altar.py; Brandon, 2026-11-07).
+        self._prayer_menu_altar = self._ordinary_altar_here()
+        if self._prayer_menu_altar:
+            self.state = STATE_PRAYER_MENU
+            return
+
         # The six altars round Abaddon's arena each answer once, whatever the
         # prayer cooldown says. (With a cooldown of 100+ turns only one of
         # the six could ever be used in the fight.) Each takes one prayer a
@@ -994,23 +1020,172 @@ class DivineMixin:
 
     def _prayer_choices(self) -> list:
         import prayers
-        return prayers.available(int(getattr(self, 'karma', 0) or 0))
+        karma = int(getattr(self, 'karma', 0) or 0)
+        if getattr(self, '_prayer_menu_altar', False):
+            return self._altar_choices(karma)
+        return prayers.available(karma)
+
+    def _prayer_menu_title(self) -> str:
+        if getattr(self, '_prayer_menu_altar', False):
+            return "You Kneel at the Altar. What Do You Ask?"
+        return "You Kneel. What Do You Ask?"
 
     def _prayer_menu_pick(self, index: int):
         """Called by the prayer menu with the number the player pressed."""
         choices = self._prayer_choices()
         if not (0 <= index < len(choices)):
             return
-        self._begin_prayer(choices[index]['id'])
+        choice = choices[index]
+        if not choice.get('enabled', True):
+            # Said why, and the menu stays open: nothing is spent.
+            self.add_message(choice['asks'], 'warning')
+            return
+        if choice['id'] == ALTAR_RITE:
+            self._begin_altar_rite()
+            return
+        self._begin_prayer(choice['id'], offering=bool(choice.get('offering')))
 
     def _prayer_menu_cancel(self):
         self.state = STATE_PLAYER
         self.add_message("You rise without a word.", 'info')
 
-    def _begin_prayer(self, kind: str):
-        """Kneel and answer the theology chain for the chosen prayer."""
+    # ------------------------------------------------------------------
+    # The altar: an offering for the altar rite or a prayer out of turn
+    # ------------------------------------------------------------------
+
+    def _ordinary_altar_here(self) -> bool:
+        """On an altar that hears offerings: not the forge's anvil, not the
+        Altar of the Last Judgment, not the six round Abaddon (floor 100),
+        which keep their own ways."""
+        if not _on_altar(self) or int(self.dungeon_level) == 100:
+            return False
+        d = self.dungeon
+        pos = (self.player.x, self.player.y)
+        return pos not in (getattr(d, 'dwarven_forge_pos', None),
+                           getattr(d, 'judgment_altar_pos', None))
+
+    def _altar_choices(self, karma: int) -> list:
+        """The altar menu: the rite, then both prayers for an offering (no
+        cooldown), then both prayers without one when the cooldown allows."""
+        import economy
+        import prayers
+        price = economy.altar_offering(self.dungeon_level)
+        afford = self._payment_plan(price) is not None
+        short = f"You cannot cover the offering ({price:,} gp)."
+        rows = []
+        if karma <= ALTAR_REFUSES_AT:
+            rite_ok, rite_asks = False, "God will not take an offering from you now."
+        elif not afford:
+            rite_ok, rite_asks = False, short
+        else:
+            rite_ok, rite_asks = True, (
+                "Each right answer mends one thing, up to five: curses first, "
+                "then blessings.")
+        rows.append({'id': ALTAR_RITE, 'offering': True, 'enabled': rite_ok,
+                     'name': f"Lift Curses, Then Bless — {price:,} gp",
+                     'asks': rite_asks, 'title': "THE ALTAR  --  LIFT AND BLESS"})
+        for pr in prayers.available(karma):
+            rows.append(dict(pr, offering=True, enabled=afford,
+                             name=f"{pr['name']} — {price:,} gp, no cooldown",
+                             asks=pr['asks'] if afford else short))
+        if int(getattr(self.player, 'prayer_cooldown', 0) or 0) <= 0:
+            for pr in prayers.available(karma):
+                rows.append(dict(pr, offering=False, enabled=True,
+                                 name=f"{pr['name']} — no offering",
+                                 asks="Heard as anywhere, the altar amplifying it. "
+                                      "Sets the prayer cooldown."))
+        return rows
+
+    def _make_altar_offering(self) -> bool:
+        """Lay the floor's offering on the altar: coin first, then treasure.
+        False (nothing taken) when the hero cannot cover it."""
+        import economy
+        price = economy.altar_offering(self.dungeon_level)
+        plan = self._pay_gold(price, quiet=True)
+        if plan is None:
+            self.add_message(f"The altar asks {price:,} gold. You cannot cover it.",
+                             'warning')
+            return False
+        line = f"You lay {self._payment_words(plan)} on the altar."
+        if plan.get('change_given'):
+            line += f" The altar gives back {int(plan['change_given']):,} gold in change."
+        self.add_message(line, 'info')
+        return True
+
+    def _begin_altar_rite(self):
+        """The altar rite: one theology escalator chain (max 5). Curses are
+        lifted first, then blessings given (altar.rite). The offering is
+        the altar's whatever the chain; the prayer cooldown is untouched."""
+        if int(getattr(self, 'karma', 0) or 0) <= ALTAR_REFUSES_AT:
+            self.state = STATE_PLAYER
+            self.add_message("You offer a gift, but God turns away from it.", 'warning')
+            return
+        if not self._make_altar_offering():
+            self.state = STATE_PLAYER
+            return
+        self.add_message("You kneel at the altar and ask it to make your things clean.",
+                         'info')
+        self.quiz_title = "THE ALTAR  --  LIFT AND BLESS"
+        self.state = STATE_QUIZ
+
+        def on_complete(result):
+            chain = int(result.score or 0)
+            self._resolve_altar_rite(chain)
+            self.state = STATE_PLAYER
+            if chain > 0:
+                self._seeker_event('prayer_answered')
+            self._advance_turn()
+
+        self.quiz_engine.start_quiz(
+            mode='escalator_chain',
+            subject='theology',
+            tier=1,
+            callback=on_complete,
+            max_chain=altar.MAX_MENDED,
+            wisdom=self.player.WIS,
+            timer_modifier=self.player.get_quiz_timer_modifier(),
+            extra_seconds=self.player.get_quiz_extra_seconds('theology'),
+            base_seconds=self.player.get_quiz_timer('theology'),
+        )
+
+    def _resolve_altar_rite(self, chain: int):
+        """Lift and bless as far as ``chain`` reached, and say each one."""
+        from hud_context import item_bare_name    # Game._bare_name's own path
+        p = self.player
+        if chain <= 0:
+            self.add_message("The altar keeps your offering. The heavens are silent.",
+                             'info')
+            return
+        actions = altar.rite(chain, list(_iter_equipped(p)), p.inventory, p)
+        # Named as the hero knew them, before the altar changes them ("the
+        # Blessed Thick Red Syrup" read twice over).
+        named = [(what, item_bare_name(p, it)) for what, it in actions]
+        altar.apply(actions)
+        used = 0
+        for what, name in named:
+            if what == 'lift':
+                self.add_message(f"The curse on your {name} is broken.", 'success')
+                used += 1
+            elif what == 'bless':
+                self.add_message(f"A holy light settles on your {name}.", 'success')
+                used += 1
+            else:
+                self.add_message(f"Your {name} was blessed already.", 'info')
+        if used == 0:
+            self.add_message("No curse lies on anything you carry, and nothing you "
+                             "carry can take a blessing.", 'info')
+        elif used < min(chain, altar.MAX_MENDED):
+            self.add_message("Nothing else you carry can take a blessing.", 'info')
+
+    def _begin_prayer(self, kind: str, offering: bool = False):
+        """Kneel and answer the theology chain for the chosen prayer. With
+        ``offering`` (an altar's), the prayer costs the offering and leaves
+        the prayer cooldown as it was."""
         import prayers
         prayer = prayers.by_id(kind)
+        if offering and not self._make_altar_offering():
+            self.state = STATE_PLAYER
+            return
         at_altar = _on_altar(self)
         bonus_desc = " The altar amplifies your prayer." if at_altar else ""
         self.add_message(f"You kneel. \"{prayer['name']}.\"{bonus_desc}", 'info')
@@ -1021,11 +1196,17 @@ class DivineMixin:
         # 15% HP or below, and measuring after the prayer has healed made
         # it nearly impossible to earn.
         _hp_pct_at_prayer = self.player.hp / max(1, self.player.max_hp)
+        _cooldown_before = int(getattr(self.player, 'prayer_cooldown', 0) or 0)
 
         def on_complete(result):
             chain = result.score
             self._resolve_simple_prayer(chain, at_altar, kind=kind,
                                         hp_pct=_hp_pct_at_prayer)
+            if offering:
+                # Paid for at the altar: heard out of turn. Whatever the
+                # answer would have set (and the Fisher King's halving of
+                # it), the cooldown stays where it was.
+                self.player.prayer_cooldown = _cooldown_before
             self.state = STATE_PLAYER
             if chain > 0:
                 self._seeker_event('prayer_answered')
@@ -1212,7 +1393,7 @@ class DivineMixin:
         # ---- chain >= 4: uncurse OR bless ----
         if chain >= 4:
             # At karma <= -5 the gift is refused outright.
-            if karma <= -5:
+            if karma <= ALTAR_REFUSES_AT:
                 msgs.append(("You offer a gift, but God turns away from it.", 'warning'))
             else:
                 bless_count = 1 + max(0, karma // 3)
@@ -1232,16 +1413,17 @@ class DivineMixin:
                         (f"The curse on your {item_bare_name(p, first_cursed)} is broken.",
                          'success'))
                 else:
-                    # Never treasure or a Soul Sphere: neither can be cursed,
-                    # so a blessing on one would be a gift wasted.
-                    from pet_system import is_soul_sphere
-                    candidates = [it for it in (p.inventory or [])
-                                  if hasattr(it, 'buc') and getattr(it, 'buc', '') != 'blessed'
-                                  and getattr(it, 'item_class', '') != 'treasure'
-                                  and not is_soul_sphere(it)]
+                    # Only what a blessing changes (altar.blessing_helps),
+                    # best first: what the hero wields and wears, then
+                    # potions and scrolls, then spare gear. It drew at random
+                    # from the whole pack: a lockpick, a ration, a spellbook
+                    # (Brandon, 2026-11-07), and never the worn gear, which
+                    # is not in the pack.
+                    candidates = [it for it in altar.bless_order(
+                                      list(_iter_equipped(p)), p.inventory or [], p)
+                                  if getattr(it, 'buc', '') != 'blessed']
                     if candidates:
-                        chosen = random.sample(
-                            candidates, k=min(bless_count, len(candidates)))
+                        chosen = candidates[:bless_count]
                         # Named before the blessing shows on it ("the Blessed
                         # Thick Red Syrup" read twice over).
                         first_name = item_bare_name(p, chosen[0])
@@ -1278,12 +1460,20 @@ class DivineMixin:
         self._show_prayer_verse(karma_tier, min(chain, 5))
 
     def _apply_prayer_cooldown_quirks(self):
-        """Fisher King quirks halve cooldown (stacking)."""
+        """Fisher King quirks halve cooldown (stacking); the Hair Shirt
+        (enchantments.py) cuts its share."""
         p = self.player
         if getattr(p, 'quirk_progress', {}).get('fisher_king_active'):
             p.prayer_cooldown = max(1, p.prayer_cooldown // 2)
         if getattr(p, 'quirk_progress', {}).get('fisher_king_mystery_active'):
             p.prayer_cooldown = max(1, p.prayer_cooldown // 2)
+        try:
+            import enchantments
+            cut = enchantments.prayer_cooldown_cut(p)
+        except ImportError:
+            cut = 0.0
+        if cut > 0:
+            p.prayer_cooldown = max(1, int(round(p.prayer_cooldown * (1 - cut))))
 
     def _show_prayer_verse(self, karma_tier: str, key: int):
         verse = _KARMA_VERSES.get(karma_tier, {}).get(key)

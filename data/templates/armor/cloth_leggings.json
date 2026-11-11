@@ -4,13 +4,12 @@
   "category": "armor",
   "armor_class_tier": "light",
   "slot": "legs",
-  "base_ac_value": 1,
+  "base_ac_value": 0,
   "base_weight_lb": 2.0,
   "_design_note": "F1-20 light legs slot. Lowest-tier leg covering — quilted hose. Covers cloth_leggings, padded_leggings from legacy data.",
   "compatible_material_classes": [
     "cloth",
     "leather"
   ],
-  "lore_template": "A pair of quilted {material_name} breeches, cut full at the thigh and narrow at the calf. The padding turns a glancing edge more often than anyone expects, and it keeps the knees whole on a stone floor.",
-  "equip_threshold": 1
+  "lore_template": "A pair of quilted {material_name} breeches, cut full at the thigh and narrow at the calf. The padding turns a glancing edge more often than anyone expects, and it keeps the knees whole on a stone floor."
 }

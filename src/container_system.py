@@ -436,9 +436,10 @@ def _pull_common_from_category(category: str, common_pool: list, level_cap: int,
     # Gear categories are instantiated, not pooled
     if category in ('weapon_common', 'armor_common', 'shield_common'):
         return _pull_common_gear(category, level_cap, rng)
-    # 'gear' = weighted gear instantiation
+    # 'gear' = a find of common gear by the loot split (45 / 45 / 10)
     if category == 'gear':
-        sub = rng.choice(['weapon_common', 'armor_common', 'shield_common'])
+        import gear
+        sub = f"{gear.pick_gear_class(rng)}_common"
         return _pull_common_gear(sub, level_cap, rng)
     # For pool-backed categories, filter pool by item_class
     sub_cats = _COMMON_CATEGORIES.get(category, [category])

@@ -4,7 +4,7 @@
   "category": "armor",
   "armor_class_tier": "medium",
   "slot": "hands",
-  "base_ac_value": 1,
+  "base_ac_value": 0,
   "base_weight_lb": 1.5,
   "_design_note": "F20-60 medium hand slot. Chain-and-leather construction — covers chain_gauntlets, iron_gauntlets, bronze_gauntlets in existing data.",
   "compatible_material_classes": [
@@ -12,6 +12,5 @@
     "rare_metal",
     "magical_metal"
   ],
-  "lore_template": "A pair of {material_name} gauntlets lined with leather at the palm, covering the hand and the first few inches of the forearm. The fingers stay free enough to work a hilt, and the knuckles stay attached.",
-  "equip_threshold": 2
+  "lore_template": "A pair of {material_name} gauntlets lined with leather at the palm, covering the hand and the first few inches of the forearm. The fingers stay free enough to work a hilt, and the knuckles stay attached."
 }

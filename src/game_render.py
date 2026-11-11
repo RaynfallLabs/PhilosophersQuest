@@ -606,6 +606,19 @@ class RenderMixin:
         def _count(qid):
             return qsys.progress_count(qid) if qsys is not None else None
 
+        def _label(qid, pct):
+            count = _count(qid)
+            return f"{count[0]}/{count[1]}" if count else f"{int(pct * 100)}%"
+
+        # One column for the counts, as wide as the widest in the whole list
+        # (not just the rows on screen, so it does not move as the list
+        # scrolls): every bar ends at the same x and the counts sit right-
+        # aligned in it. Each bar used to end where its own count began, so
+        # "45%", "3/10" and "112/147" set three different bars.
+        label_w = max([tag_f.size("100%")[0]]
+                      + [tag_f.size(_label(q, pc))[0]
+                         for q, _n, pc, unl, _e, _t in data if not unl])
+
         y = list_body.y
         for idx, (row_qid, name, pct, unlocked, effect, _) in enumerate(
                 data[scroll:scroll + visible], start=scroll):
@@ -623,12 +636,10 @@ class RenderMixin:
                                        rect.centery - tag.get_height() // 2))
                 room = rect.w - S(36) - tag.get_width()
             else:
-                count = _count(row_qid)
-                label = f"{count[0]}/{count[1]}" if count else f"{int(pct * 100)}%"
-                pct_s = tag_f.render(label, True, readable(FP.FADED_TEXT, bg))
+                pct_s = tag_f.render(_label(row_qid, pct), True, readable(FP.FADED_TEXT, bg))
                 self.screen.blit(pct_s, (rect.right - S(12) - pct_s.get_width(),
                                          rect.centery - pct_s.get_height() // 2))
-                bar = pygame.Rect(rect.right - S(24) - pct_s.get_width() - S(100),
+                bar = pygame.Rect(rect.right - S(24) - label_w - S(100),
                                   rect.centery - S(5), S(100), S(10))
                 room = bar.x - rect.x - S(22)
                 if name_f.size(name)[0] > room and get_font('body', 16, bold=True).size(name)[0] > room:
@@ -803,9 +814,13 @@ class RenderMixin:
             track = pygame.Rect(x + S(36), y + S(6), max(S(20), w - S(102)), S(9))
             ratio = max(0.0, min(1.0, value / max(1, max_value)))
             if kit:
-                # The value's own width is kept clear (a fixed 94 px let
-                # "210/210" run over the panel edge on a wide sheet).
-                val_w = font_body.size(f"{value}/{max_value}")[0] + S(8)
+                # The widest of the three values is kept clear (a fixed 94 px
+                # let "210/210" run over the panel edge on a wide sheet), the
+                # same for HP, MP and SP: each bar sized to its own value
+                # ended at its own x ("210/210" against "15/15").
+                val_w = max(font_body.size(f"{v}/{m}")[0] for v, m in (
+                    (p.hp, p.max_hp), (p.mp, p.max_mp), (p.sp, p.max_sp),
+                    (value, max_value))) + S(8)
                 track = pygame.Rect(x + S(36), y + S(3),
                                     max(S(20), min(w - S(102), w - S(36) - val_w)), S(14))
                 ui_theme.draw_piece(screen, 'bar_track', track)
@@ -898,6 +913,10 @@ class RenderMixin:
                 # of the Gauntlets of Mars said "No revealed special abilities".
                 if getattr(item, 'special', ''):
                     lines.append(item.special)
+                # A named piece's enchantment (its card text is its own).
+                _el = getattr(item, 'ench_line', '')
+                if _el and _el != getattr(item, 'special', ''):
+                    lines.append(_el)
                 if getattr(item, 'dodge_bonus', 0):
                     lines.append(f"Dodge +{item.dodge_bonus:.0%}")
                 if getattr(item, 'toughness_bonus', 0):
@@ -911,8 +930,10 @@ class RenderMixin:
                 if getattr(item, 'chain_bonus', 0):
                     lines.append(f"Every Chain That Lands Counts {int(item.chain_bonus)} Longer")
             fx = getattr(item, 'effects', None) or {}
+            # (A stat an enchantment or a ring kind lends is in its line.)
+            _said = bool(getattr(item, 'ench_id', '') or getattr(item, 'kind', ''))
             if fx:
-                if 'stat' in fx:
+                if 'stat' in fx and not _said:
                     lines.append(f"{fx['stat']} {int(fx.get('amount', 0)):+d}")
                 if 'stat2' in fx:
                     lines.append(f"{fx['stat2']} {int(fx.get('amount2', 0)):+d}")
@@ -1411,8 +1432,7 @@ class RenderMixin:
             meta_rows.append(("Blessing", _cap(getattr(detail_item, 'buc', 'uncursed'))
                               if self._copy_buc_known(detail_item) else "Unknown"))
         if visible >= 3:
-            if hasattr(detail_item, 'ac_bonus'):
-                meta_rows.append(("AC", f"+{getattr(detail_item, 'ac_bonus', 0)}"))
+            meta_rows += self._kit_armour_rows(detail_item)
             if isinstance(detail_item, Weapon):
                 meta_rows.append(("Damage", self._kit_damage_str(detail_item)))
             if getattr(detail_item, 'equip_chain_mode', ''):
@@ -1707,8 +1727,7 @@ class RenderMixin:
             if hasattr(detail_item, 'buc'):
                 meta_rows.append(("Blessing", _cap(getattr(detail_item, 'buc', 'uncursed')) if self._copy_buc_known(detail_item) else "Unknown"))
             if visible >= 3:
-                if hasattr(detail_item, 'ac_bonus'):
-                    meta_rows.append(("AC", f"+{getattr(detail_item, 'ac_bonus', 0)}"))
+                meta_rows += self._kit_armour_rows(detail_item, short=True)
                 if isinstance(detail_item, Weapon):
                     meta_rows.append(("Damage", self._kit_damage_str(detail_item)))
                 if getattr(detail_item, 'equip_chain_mode', ''):
@@ -2565,8 +2584,18 @@ class RenderMixin:
         # Check LoS and whether there's a target at cursor
         has_los = _line_of_sight(px, py, cx, cy, self.dungeon)
         target_monster = self._seen_monster_at(cx, cy)     # never names the unseen
-        weapon = self.player.ranged_weapon
-        in_reach = weapon and (max(abs(cx - px), abs(cy - py)) <= weapon.reach)
+        _spell_aim = (getattr(self, '_power_targeting', False)
+                      and str(getattr(self, '_pending_power', '') or '').startswith('spell_'))
+        if _spell_aim:
+            # A spell is judged by its own reach (a touch, a sign, or as far
+            # as the hero sees), not by the bow on his back: the aim showed
+            # red for every spell when no bow was carried.
+            _aim_reach = getattr(self, '_aimed_spell_reach', lambda: None)()
+            in_reach = (_aim_reach is None
+                        or max(abs(cx - px), abs(cy - py)) <= _aim_reach)
+        else:
+            weapon = self.player.ranged_weapon
+            in_reach = weapon and (max(abs(cx - px), abs(cy - py)) <= weapon.reach)
         valid_shot = has_los and in_reach and target_monster is not None
 
         # Draw trajectory dots from player to cursor (skip player tile)
@@ -2779,11 +2808,19 @@ class RenderMixin:
             + section_gap + status_h + (band + S(8) if kit else PAD)
 
         q_text = display_text(qe.current_question.get('question', ''))
-        choices = [display_text(c) for c in qe.current_question.get('choices', [])]
+        # ``choice_answers`` are the bank's own strings in the same display
+        # order: the right / wrong marking compares THOSE with the answer.
+        # Compared on the screen form, a "--" in an answer (an em dash on
+        # screen) matched nothing and no card ever went green: 238 grammar
+        # questions in 1,029 (bug bash 3.3.2). Study Mode always did this.
+        raw_choices = [str(c) for c in qe.current_question.get('choices', [])]
+        choices = [display_text(c) for c in raw_choices]
         if qe.confused_order and len(qe.confused_order) == len(choices):
             display_choices = [choices[i] for i in qe.confused_order]
+            choice_answers = [raw_choices[i] for i in qe.confused_order]
         else:
             display_choices = choices
+            choice_answers = raw_choices
         # Two columns; every bank question has four choices (two rows), but
         # a malformed question with more extends the grid downward (and the
         # shrink-then-scroll ladder below copes with the extra height)
@@ -2926,6 +2963,7 @@ class RenderMixin:
             'content_h': content_h,
             'visible_scroll_h': visible_scroll_h,
             'display_choices': display_choices,
+            'choice_answers': choice_answers,
             'bw': bw, 'bx': bx, 'by': by, 'bh': bh,
             'cw': cw, 'PAD': PAD, 'GAP': GAP, 'band': band, 'inset': inset,
             'header_h': header_h, 'timer_h': timer_h,
@@ -3058,6 +3096,7 @@ class RenderMixin:
         q_height    = L['question_rect'].height
         c_wrapped   = L['c_wrapped']
         display_choices = L['display_choices']
+        choice_answers  = L['choice_answers']
 
         # Effects background pass -- the chain aura paints a soft border
         # glow around the panel here. Runs BEFORE the opaque panel so
@@ -3257,8 +3296,12 @@ class RenderMixin:
         correct_str = str(qe.current_question.get('answer', '')).strip()
         selected    = qe.last_answer.strip()
         in_result   = (qe.state == QuizState.RESULT)
+        struck      = set(getattr(qe, 'struck_choices', None) or ())
+        if struck and not in_result:
+            _vt = self.font_sm.render("A voice stops you: not that one.", True, FP.GOLD_BRIGHT)
+            self.screen.blit(_vt, (bx + bw - inset - _vt.get_width(), sep_y - _vt.get_height() - S(2)))
 
-        for i, (choice, wrapped_lines) in enumerate(zip(display_choices, c_wrapped)):
+        for i, (raw_choice, wrapped_lines) in enumerate(zip(choice_answers, c_wrapped)):
             card = choice_rects[i]
 
             # Skip entirely-offscreen cards when scrolling (cheap cull).
@@ -3266,7 +3309,8 @@ class RenderMixin:
                                or card.y > scroll_rect.bottom):
                 continue
 
-            c_str       = str(choice).strip()
+            # The bank's string, not its screen form (see _quiz_layout).
+            c_str       = str(raw_choice).strip()
             is_correct  = c_str == correct_str
             is_selected = bool(selected) and c_str == selected
 
@@ -3274,7 +3318,8 @@ class RenderMixin:
             # wrong pick red. Mid-question: highlight only if pressed (rare —
             # answers are usually atomic key-presses).
             mark_correct   = in_result and is_correct
-            mark_incorrect = in_result and is_selected and not is_correct
+            mark_incorrect = (in_result and is_selected and not is_correct) or \
+                (c_str in struck and not in_result)       # the daimonion struck it out
 
             draw_choice_button(
                 self.screen, tuple(card),
@@ -5149,12 +5194,20 @@ class RenderMixin:
                     detail = (f"{_cap(getattr(item, 'weapon_class', 'weapon'))}  {item.base_damage} Damage"
                               if _known else "Weapon  Unidentified")
                 elif isinstance(item, Shield):
-                    detail = (f"+{item.ac_bonus} AC  {_cap(item.material)}"
+                    import gear as _gear
+                    detail = (f"+{_gear.ac_value(item)} AC  {_cap(item.material)}"
                               if _known else "Shield  Unidentified")
                 elif isinstance(item, Armor):
+                    import gear as _gear
                     _slot = _cap(str(getattr(item, 'slot', 'armor')).replace('_', ' '))
-                    detail = (f"{_slot}  +{item.ac_bonus} AC  {_cap(item.material)}"
-                              if _known else f"{_slot}  Unidentified")
+                    if _known and _gear.is_core(item):
+                        detail = f"{_slot}  +{_gear.ac_value(item)} AC  {_cap(item.material)}"
+                    elif _known:
+                        # A minor piece gives no AC: its enchantment, if any.
+                        import enchantments as _ench
+                        detail = f"{_slot}  {_ench.label(item) or 'Plain'}  {_cap(item.material)}"
+                    else:
+                        detail = f"{_slot}  Unidentified"
                 elif isinstance(item, Accessory):
                     if self._item_is_known(item):
                         fx = item.effects
@@ -5233,8 +5286,9 @@ class RenderMixin:
             rows.sort(key=lambda r: (order.get(r[0], 9),
                                      -float(self._kit_avg_damage(r[1]) or 0)))
         elif slug in ('armor', 'shields'):
-            rows.sort(key=lambda r: (order.get(r[0], 9),
-                                     -int(getattr(r[1], 'ac_bonus', 0) or 0)))
+            import gear as _gear
+            rows.sort(key=lambda r: (order.get(r[0], 9), -_gear.ac_value(r[1]),
+                                     -int(getattr(r[1], 'ench_level', 0) or 0)))
         elif slug == 'valuables':
             # Dearest first, by what the hero can count on (a valued kind's
             # worth, else the low end of its band: nothing finer leaks).
@@ -5745,15 +5799,23 @@ class RenderMixin:
         if slug == 'armor':
             slot_lbl = (getattr(item, 'slot', '') or '').replace('_', ' ').title()
             if idl >= 3:
-                ac = f"+{getattr(item, 'ac_bonus', 0)}"
+                import gear as _gear
+                import enchantments as _ench
+                # Body armour its AC; a minor piece none, and its enchantment
+                # beside its resistances (bug bash 3.3.2).
+                ac = f"+{_gear.ac_value(item)}" if _gear.is_core(item) else '-'
                 resists = self._kit_resist_str(item)
+                lab = _ench.label(item)
+                if lab:
+                    resists = lab if resists in ('', '-', None) else f"{lab}; {resists}"
             else:
                 ac, resists = '?', '?'
             return [name, src_tag, slot_lbl, ac, mat, buc, wt, resists]
 
         if slug == 'shields':
             if idl >= 3:
-                ac = f"+{getattr(item, 'ac_bonus', 0)}"
+                import gear as _gear
+                ac = f"+{_gear.ac_value(item)}"
                 resists = self._kit_resist_str(item)
             else:
                 ac, resists = '?', '?'
@@ -5869,6 +5931,13 @@ class RenderMixin:
         return ', '.join(f"{k} {int(v*100)}%" for k, v in r.items() if v)
 
     def _kit_accessory_effect(self, a) -> str:
+        # A ring or amulet kind (rings.py): its kind and tier say it all.
+        import rings as _rings
+        _k = _rings.kind_of(a)
+        if _k:
+            from enchantments import ROMAN
+            t = max(1, min(5, int(getattr(a, 'quiz_tier', 1) or 1)))
+            return f"{_k['name']} {ROMAN[t - 1]}"
         fx = getattr(a, 'effects', None) or {}
         if not fx:
             return '-'
@@ -5881,6 +5950,28 @@ class RenderMixin:
             parts.append(f"Grants {_cap(fx['status'])}")
         return ', '.join(parts) if parts else '-'
 
+    def _kit_armour_rows(self, item, short: bool = False) -> list:
+        """The card's armour rows (bug bash 3.3.2): body armour and shields
+        their AC (base plus plus); a minor piece what it guards and its
+        enchantment; a ring or amulet kind its tier. Nothing for the rest."""
+        import gear as _gear
+        rows = []
+        if _gear.is_core(item):
+            rows.append(("AC", f"+{_gear.ac_value(item)}"))
+        elif isinstance(item, Armor):
+            import guards as _guards
+            import enchantments as _ench
+            g = _guards.guard_text(item, short=True)
+            if g:
+                rows.append(("Guards", g))
+            lab = _ench.label(item)
+            if lab:
+                rows.append(("Enchant", lab))
+        elif isinstance(item, Accessory) and getattr(item, 'kind', ''):
+            from enchantments import ROMAN
+            rows.append(("Tier", ROMAN[max(1, min(5, int(getattr(item, 'quiz_tier', 1)))) - 1]))
+        return rows
+
     def _equip_delta_str(self, candidate) -> str:
         """Return a short "Δ +X dmg / -Y wt" string vs the currently equipped
         item in this candidate's slot, or '' if no comparable item exists.
@@ -5889,7 +5980,13 @@ class RenderMixin:
         (re-uses _kit_visible_level). Pure side-effect-free string builder.
         """
         if isinstance(candidate, Weapon):
-            equipped = self.player.weapon
+            # Against the weapon of its own kind: a bow against the ranged
+            # weapon carried, a blade against the one in hand (Player.equip
+            # decides by requires_ammo). It weighed every bow against the sword.
+            if getattr(candidate, 'requires_ammo', None) is not None:
+                equipped = getattr(self.player, 'ranged_weapon', None)
+            else:
+                equipped = self.player.weapon
             if equipped is candidate or equipped is None:
                 return ''
             if self._kit_visible_level(candidate) < 3 or self._kit_visible_level(equipped) < 3:
@@ -5907,7 +6004,8 @@ class RenderMixin:
                 return ''
             if self._kit_visible_level(candidate) < 3 or self._kit_visible_level(equipped) < 3:
                 return ''
-            d = int(getattr(candidate, 'ac_bonus', 0)) - int(getattr(equipped, 'ac_bonus', 0))
+            import gear as _gear
+            d = _gear.ac_value(candidate) - _gear.ac_value(equipped)
             return self._fmt_delta(d, 'AC')
 
         if isinstance(candidate, Armor):
@@ -5921,8 +6019,19 @@ class RenderMixin:
                 return ''
             if self._kit_visible_level(candidate) < 3 or self._kit_visible_level(equipped) < 3:
                 return ''
-            d = int(getattr(candidate, 'ac_bonus', 0)) - int(getattr(equipped, 'ac_bonus', 0))
-            return self._fmt_delta(d, 'AC')
+            import gear as _gear
+            if _gear.is_core(candidate):
+                d = _gear.ac_value(candidate) - _gear.ac_value(equipped)
+                return self._fmt_delta(d, 'AC')
+            # A minor piece gives no AC: weigh its enchantment against the worn
+            # one's (levels, when it is the same enchantment).
+            import enchantments as _ench
+            same = (getattr(candidate, 'ench_id', '')
+                    and getattr(candidate, 'ench_id', '') == getattr(equipped, 'ench_id', ''))
+            if same:
+                d = int(getattr(candidate, 'ench_level', 0)) - int(getattr(equipped, 'ench_level', 0))
+                return self._fmt_delta(d, 'lvl')
+            return _ench.label(candidate)
 
         if isinstance(candidate, Accessory):
             # Only useful when comparing same-stat accessories; otherwise
@@ -6276,11 +6385,17 @@ class RenderMixin:
                     self2.symbol = '*'
 
             spellbook_id = f"spellbook_{spell_id.replace('_spell', '')}"
+            # An aimed spell says how far it goes (spells.SPELL_REACH).
+            from spells import reach_words, spell_reach
+            reach = (f" | Reach: {reach_words(spell_reach(spell))}"
+                     if spell.get('needs_target') else "")
             entries.append({
                 'name': spell.get('name', '?'),
-                'detail': f"Tier {tier} | {mp_cost} MP | {spell.get('desc', '')}",
-                'full_detail': (f"Tier {tier} | {mp_cost} MP | {spell.get('desc', '')}   "
-                                "(Effects last longer and reach further with Intelligence.)"),
+                'detail': f"Tier {tier} | {mp_cost} MP{reach} | {spell.get('desc', '')}",
+                # Intelligence lengthens effects (and widens Light); it never
+                # lengthened how far an aimed spell goes, as this once said.
+                'full_detail': (f"Tier {tier} | {mp_cost} MP{reach} | {spell.get('desc', '')}   "
+                                "(Effects last longer with Intelligence.)"),
                 'key': self._menu_letter(i),
                 'icon': _SpellIcon(spellbook_id, tier_color),
                 'name_color': FP.BODY_TEXT if can_cast else FP.DANGER_TEXT_LIGHT,
@@ -6370,11 +6485,21 @@ class RenderMixin:
         draw_overlay(self.screen, 200)
 
         choices = self._prayer_choices()
+        _title_of = getattr(self, '_prayer_menu_title', None)
+        title = _title_of() if callable(_title_of) else "You Kneel. What Do You Ask?"
+        # A row the hero cannot take now (the offering out of reach, or God
+        # refusing it) is drawn dim; its line says why.
+        def _row_color(pr):
+            return FP.GOLD_BRIGHT if pr.get('enabled', True) else FP.HINT_TEXT
         if kit_on():
+            rows = []
+            for i, pr in enumerate(choices):
+                row = {'key': str(i + 1), 'name': pr['name'], 'text': pr['asks']}
+                if not pr.get('enabled', True):
+                    row['name_color'] = FP.HINT_TEXT
+                rows.append(row)
             _kit_option_card(
-                self.screen, "You Kneel. What Do You Ask?",
-                [{'key': str(i + 1), 'name': pr['name'], 'text': pr['asks']}
-                 for i, pr in enumerate(choices)],
+                self.screen, title, rows,
                 f"1-{max(1, len(choices))}: pray   //   Esc: rise without praying",
                 border=FP.GOLD, overlay=0, min_w=700)
             return
@@ -6398,14 +6523,14 @@ class RenderMixin:
         pygame.draw.rect(self.screen, (110, 82, 20),
                          (bx + 4, by + 4, bw - 8, bh - 8), 1, border_radius=6)
 
-        title = font_title.render("YOU KNEEL. WHAT DO YOU ASK?", True, FP.GOLD_BRIGHT)
+        title = font_title.render(title.upper(), True, FP.GOLD_BRIGHT)
         self.screen.blit(title, (bx + (bw - title.get_width()) // 2, by + S(22)))
         pygame.draw.line(self.screen, FP.GOLD,
                          (bx + S(32), by + S(60)), (bx + bw - S(32), by + S(60)), 1)
 
         y = by + S(78)
         for i, prayer in enumerate(choices):
-            name = font_name.render(f"{i + 1}.  {prayer['name']}", True, FP.GOLD_BRIGHT)
+            name = font_name.render(f"{i + 1}.  {prayer['name']}", True, _row_color(prayer))
             self.screen.blit(name, (bx + S(40), y))
             y += font_name.get_height() + S(2)
             asks = font_body.render(prayer['asks'], True, FP.BODY_TEXT)
@@ -8307,6 +8432,22 @@ class RenderMixin:
             return '?'
         return f"+{getattr(item, 'enchant_bonus', 0)}"
 
+    def _lore_armour_line(self, item) -> str:
+        """The lore screen's armour line: body armour and shields their AC
+        (the template's base and the plus, which shows once the copy is
+        known); a minor piece its enchantment (bug bash 3.3.2)."""
+        import gear as _gear
+        known = self._lore_enchant_text(item) != '?'
+        if _gear.is_core(item):
+            base = int(getattr(item, 'ac_bonus', 0) or 0)
+            if not known:
+                return f"AC: +{base} and an unknown plus"
+            return f"AC: +{_gear.ac_value(item)} (+{base} base, {self._lore_enchant_text(item)} plus)"
+        import enchantments as _ench
+        if not known:
+            return "No AC; its enchantment is unknown"
+        return f"No AC; enchantment: {_ench.label(item) or 'none'}"
+
     def _lore_item_mechanic_lines(self, item, id_level):
         lines = []
         if id_level < 3 and hasattr(item, 'id_level'):
@@ -8337,22 +8478,26 @@ class RenderMixin:
                 ("Armor", FP.GOLD_BRIGHT, self.font_sm),
                 (f"Slot: {_cap(item.slot)}   Material: {('Unique' if getattr(item, 'is_unique', False) and str(item.material).lower() in ('legendary', 'adamantine') else _cap(item.material))}   Tier: {item.tier}",
                  FP.BODY_TEXT, self.font_sm),
-                (f"AC bonus: +{item.ac_bonus}   Enchant: {self._lore_enchant_text(item)}",
-                 FP.BODY_TEXT, self.font_sm),
+                (self._lore_armour_line(item), FP.BODY_TEXT, self.font_sm),
                 (_threshold_line("Equip", getattr(item, 'equip_threshold', '?')),
                  FP.BODY_TEXT, self.font_sm),
             ]
             if getattr(item, 'damage_resistances', None):
                 lines.append((f"Resists: {self._kit_resist_str(item)}",
                               FP.CYAN_ACCENT, self.font_sm))
+            import guards as _guards
+            if _guards.guard_text(item):
+                lines.append((_guards.guard_text(item), FP.CYAN_ACCENT, self.font_sm))
+            _el = getattr(item, 'ench_line', '') or ''
+            if _el and self._lore_enchant_text(item) != '?':
+                lines.append((_el, FP.CYAN_ACCENT, self.font_sm))
 
         elif isinstance(item, Shield):
             lines += [
                 ("Shield", FP.GOLD_BRIGHT, self.font_sm),
                 (f"Material: {('Unique' if getattr(item, 'is_unique', False) and str(item.material).lower() in ('legendary', 'adamantine') else _cap(item.material))}   Tier: {item.tier}",
                  FP.BODY_TEXT, self.font_sm),
-                (f"AC bonus: +{item.ac_bonus}   Enchant: {self._lore_enchant_text(item)}",
-                 FP.BODY_TEXT, self.font_sm),
+                (self._lore_armour_line(item), FP.BODY_TEXT, self.font_sm),
                 (_threshold_line("Equip", getattr(item, 'equip_threshold', '?')),
                  FP.BODY_TEXT, self.font_sm),
             ]
@@ -9060,7 +9205,12 @@ class RenderMixin:
         if category == 'weapon':
             return f"{self._encyclopedia_weapon_type(entry)} / {entry.get('base_damage', '?')} damage"
         if category == 'armor':
-            return f"{entry.get('slot', 'armor')} / AC {entry.get('ac_bonus', '?')}"
+            if entry.get('ench_id'):
+                import enchantments as _ench
+                _e = _ench.get(entry['ench_id']) or {}
+                return f"{entry.get('slot', 'armor')} / {_e.get('name', entry['ench_id'])}"
+            return (f"{entry.get('slot', 'armor')} / AC "
+                    f"{int(entry.get('ac_bonus', 0) or 0) + int(entry.get('enchant_bonus', 0) or 0)}")
         if category == 'accessory':
             effects = entry.get('effects', {}) or {}
             if 'stat' in effects:
@@ -9185,8 +9335,16 @@ class RenderMixin:
             if entry.get('two_handed') or entry.get('twoHanded'):
                 lines.append(("Two-handed", FP.BODY_TEXT, self.font_sm))
         elif category == 'armor':
-            lines.append((f"AC bonus: +{entry.get('ac_bonus', '?')}   Tier: {entry.get('tier', '?')}",
-                          FP.BODY_TEXT, self.font_sm))
+            if entry.get('ench_id'):
+                import enchantments as _ench
+                _e = _ench.get(entry['ench_id']) or {}
+                _lv = int(entry.get('ench_level', 0) or 0)
+                lines.append((f"No AC   Enchantment: {_ench.display_name(_e, _lv)[3:] if _e and _lv else '?'}"
+                              f"   Tier: {entry.get('tier', '?')}", FP.BODY_TEXT, self.font_sm))
+            else:
+                _ac = int(entry.get('ac_bonus', 0) or 0) + int(entry.get('enchant_bonus', 0) or 0)
+                lines.append((f"AC: +{_ac}   Tier: {entry.get('tier', '?')}",
+                              FP.BODY_TEXT, self.font_sm))
             if entry.get('slot'):
                 lines.append((f"Slot: {entry.get('slot')}", FP.BODY_TEXT, self.font_sm))
         elif category == 'accessory':
@@ -10165,7 +10323,7 @@ class RenderMixin:
                 ("G / ,", "Pick up item", FP.BODY_TEXT),
                 ("P", "Unlock / disarm", FP.BODY_TEXT),
                 ("Y", "Trade", FP.BODY_TEXT),
-                ("\\", "Pray", FP.BODY_TEXT),
+                ("\\", "Pray or offer", FP.BODY_TEXT),
                 ("Shift+\\", "Divine Intercession", FP.BODY_TEXT),
                 ("O", "Look / Bestiary", FP.BODY_TEXT),
                 ("B, Tab", "Monster families", FP.BODY_TEXT),

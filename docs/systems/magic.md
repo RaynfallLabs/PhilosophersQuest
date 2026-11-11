@@ -108,13 +108,44 @@ See `src/chain_passives.py` for the passive wiring.
 Each spell declares `needs_target: True|False`.
 
 - **Targeted** (`fire_bolt`, `magic_missile`, `paralyze`, `smite`, etc.) —
-  `_invoke_spell` opens the targeting cursor first, scans visible monsters,
-  sorts by Manhattan distance, picks the nearest as the initial cursor,
-  and parks the game in `STATE_TARGET`. Only once ENTER confirms does the
-  science quiz run. If no monster is visible, the cast is cancelled with
-  no MP cost.
+  `_invoke_spell` opens the targeting cursor first, lists the monsters the
+  hero can see (`_sees_monster`: never an invisible or disguised one) that
+  the spell **reaches**, sorts them by Manhattan distance, picks the nearest
+  as the initial cursor, and parks the game in `STATE_TARGET`. Only once
+  ENTER confirms does the science quiz run. If nothing is in reach, the cast
+  is cancelled with no MP cost ("Frost Touch needs a foe beside you").
 - **Non-targeted** (self-buffs, mass-effect spells, utility) — go straight
   to the quiz.
+
+### Reach (bug bash 3.3.2)
+
+Brandon, 2026-11-07: "spells like Frost Touch are obviously supposed to be
+TOUCH... Geralt's runes don't have high range but do have stronger power,
+and touch spells have a higher risk/reward because you have to lay hands
+on." Before this, no spell had a range: anything seen in a clear line could
+be struck. Every targeted spell now carries `reach` (`spells.SPELL_REACH`,
+`spells.spell_reach`), in king moves to the nearest tile of the foe
+(`geom.chebyshev_distance`, so a 2x2 boss counts from any of its tiles):
+
+| Reach | Spells | Power |
+|---|---|---|
+| touch, 1 (`REACH_TOUCH`) | Frost Touch, Drain Life, Soul Drain | raised to about one weapon attack (1d6+3, 5d6+2, 9d8+3); `tests/test_magic_role.py` lets a touch spell reach 1.1 / 1.35, the undead-only allowance |
+| short, 3 (`REACH_SHORT`) | Aard, Igni, Yrden, Axii; Spark, Acid Dart, Smite | the signs raised: Aard and Igni 1d4+2 (0.38 -> 0.68 of an attack), Yrden 14 turns, Axii 16 (`duration` on the spell) |
+| sight (`None`) | every bolt, missile, arrow and beam; the aimed status spells | unchanged: as far as the hero sees, in a clear line |
+
+Enforced where the aim is taken, never in the effect handlers (a scroll or
+a test may hand them any target): the target list (`_invoke_spell`), the
+cursor (`_target_input` via `_aimed_spell_reach`), and the confirm
+(`_confirm_power_target`, which refunds). The aim overlay judges a spell by
+its own reach (it used the bow's). The reach is the spell's, not the
+effect's: Cold Bolt shares Frost Touch's effect and keeps its range. The
+cast menu shows it ("Reach: touch"). Intelligence lengthens effects (and
+Light); it does not lengthen reach.
+
+**Area spells need a clear line** (`_in_spell_sight`): a victim must be on a
+tile the hero sees AND in line of sight from him. Sight alone was not
+enough: the Crown of Brahma, tremor sense and Huginn and Muninn show tiles
+through walls, and every area spell struck through them.
 
 ---
 
@@ -369,7 +400,7 @@ whether a boss resists:
 
 ### 6.3 Mass-status spells (AOE)
 
-Dispatch iterates every visible monster, boss-saves individually, and
+Dispatch iterates every monster in clear sight (`_in_spell_sight`), boss-saves individually, and
 applies a shared duration. Added in the v2.12.0 family split:
 
 ```python

@@ -26,7 +26,8 @@ What the game asks here
   * `has_page(player, kind)`: may the full Bestiary page open (ruling 1);
   * `record_study(player, kind)` then `news(player)`: the tiers, circles and
     title newly reached, once each (Player.family_tiers_told);
-  * `arrival_lines(...)`: the Forewarned lines when the hero reaches a floor.
+  * `arrival_families(...)` / `forewarned_lines(...)` (`arrival_lines` for
+    both): the Forewarned lines when the hero reaches a floor.
 
 The abilities a tier grants are read by src/family_edges.py.
 """
@@ -464,12 +465,11 @@ def forewarned_line(fid) -> str:
     return ''
 
 
-def arrival_lines(player, monsters, *, concealed, is_ally, limit: int = 3) -> list:
-    """The Forewarned lines for a floor just reached: one per family at tier
-    2 or more with a member here, never counting a concealed member (an
-    invisible one, an ambusher not yet sprung, a disguised mimic or the
-    Hellmouth) or an ally. At most `limit` lines; past that, the first
-    `limit - 1` and one combined line."""
+def arrival_families(player, monsters, *, concealed, is_ally) -> list:
+    """The families a floor just reached has Forewarned lines for: each at
+    tier 2 or more with a member here, in the order met, never counting a
+    concealed member (an invisible one, an ambusher not yet sprung, a
+    disguised mimic or the Hellmouth) or an ally."""
     t = tiers(player)
     present = []
     for m in monsters or ():
@@ -483,14 +483,30 @@ def arrival_lines(player, monsters, *, concealed, is_ally, limit: int = 3) -> li
                 continue
         except Exception:
             continue
-        present.append(fid)
-    lines = [forewarned_line(f) for f in present if forewarned_line(f)]
+        if forewarned_line(fid):
+            present.append(fid)
+    return present
+
+
+def forewarned_lines(fids, limit: int = 3) -> list:
+    """The lines for these families: one each, at most `limit`; past that,
+    the first `limit - 1` and one combined line. The combined line lists
+    the families with commas only: their short names already have an "and"
+    in them, and "Giants and Trolls, Restless Dead and Ghosts" read as two
+    families, or four."""
+    fids = list(fids or ())
+    lines = [forewarned_line(f) for f in fids]
     if len(lines) <= limit:
         return lines
-    rest = [short_name(f) for f in present[limit - 1:]]
-    combined = ("You sense more on this floor: "
-                + (', '.join(rest[:-1]) + ' and ' + rest[-1] if len(rest) > 1 else rest[0]) + '.')
-    return lines[:limit - 1] + [combined]
+    rest = [short_name(f) for f in fids[limit - 1:]]
+    return lines[:limit - 1] + ["You sense more on this floor: " + ', '.join(rest) + '.']
+
+
+def arrival_lines(player, monsters, *, concealed, is_ally, limit: int = 3) -> list:
+    """The Forewarned lines for a floor just reached (arrival_families,
+    then forewarned_lines)."""
+    return forewarned_lines(arrival_families(player, monsters, concealed=concealed,
+                                             is_ally=is_ally), limit)
 
 
 def lore_rows(player) -> list:

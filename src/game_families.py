@@ -8,18 +8,18 @@ mixin only says things to the player and touches the floor:
     the kind, then `_family_news` announces each tier, circle and title the
     first time it is reached (a gold line for tiers 1 and 2, a popup in the
     quirk popup's style for tiers 3 to 5, a circle or the Loremaster title,
-    and a Journal line for each);
+    and a Journal line for each; the popup waits its turn with the other
+    popups from play: game_popups.PopupMixin);
   * `_family_arrival`: the Forewarned lines when the hero reaches a floor, and
     the creatures that arrive calm (Beast-Friend, Entertaining Angels);
   * `_family_turn` / `_family_drain`: each turn, the families that flee on
     sight, the hidden things a family technique shows, and the queued
     technique lines;
-  * `_family_surrender`: a foe that yields throws down its purse;
+  * `_family_yield` / `_family_surrender`: a foe that yields throws down
+    its purse, after the blow is told;
   * `_qa_family_tier`: the QA key (Titivillus, PQ_QA_MODE only).
 """
 from __future__ import annotations
-
-from game_states import STATE_STORY_POPUP
 
 import family_edges
 import family_lore
@@ -156,19 +156,13 @@ class FamilyMixin:
         return lines
 
     def _family_popup(self, title: str, lines: list) -> None:
-        """A tier, circle or title popup in the quirk popup's style. A
-        second one raised while one is up joins it rather than replacing it,
-        and it returns to wherever the hero was (the lore page after a
-        study)."""
-        if self.state == STATE_STORY_POPUP and isinstance(getattr(self, 'popup_data', None), dict) \
-                and self.popup_data.get('_family'):
-            self.popup_data['lines'] += ['', self._family_subhead(title), ''] + list(lines)
-            return
-        self.popup_data = {'title': title, 'accent': _POPUP_ACCENT, 'lines': list(lines),
-                           'code': None, '_family': True}
-        if self.state != STATE_STORY_POPUP:
-            self.popup_next_state = self.state
-        self.state = STATE_STORY_POPUP
+        """A tier, circle or title popup in the quirk popup's style. It
+        waits its turn with the other popups from play and opens once play is
+        calm (game_popups.PopupMixin): after a study, the lore page the study opened
+        is seen first, and the popup opens when it is closed. A second one is
+        a popup of its own (it used to be appended to the first)."""
+        self._queue_popup({'title': title, 'accent': _POPUP_ACCENT, 'lines': list(lines),
+                           'code': None, '_family': True}, 'family')
 
     # ------------------------------------------------------------------
     # The Bestiary's Families view (B, then Tab)
@@ -193,8 +187,11 @@ class FamilyMixin:
     def _family_arrival(self, first_visit: bool = True) -> None:
         """Forewarned: one line per family at tier 2 or more with a member
         on this floor that the hero could see (never a concealed one, the
-        Hellmouth's stair or an ally); at most three lines. And on a first
-        visit, the lesser creatures that arrive calm."""
+        Hellmouth's stair or an ally); at most three lines. Each family is
+        told once a floor (Player.forewarned_told): every stair back up and
+        down said the same lines again; a family that has come since is
+        still told, once. And on a first visit, the lesser creatures that
+        arrive calm."""
         import unseen
         player = self.player
         mons = [m for m in (self.monsters or ()) if getattr(m, 'alive', False)]
@@ -211,8 +208,15 @@ class FamilyMixin:
             return (unseen.is_invisible(m) and not unseen.sees_invisible(player)) or (
                 getattr(m, 'ai_pattern', '') in ('ambush', 'mimic') and not getattr(m, '_aware', False))
 
-        for line in family_lore.arrival_lines(player, mons, concealed=_hidden, is_ally=_ally):
+        told = player.__dict__.get('forewarned_told')
+        if not isinstance(told, set):
+            told = player.__dict__['forewarned_told'] = set(told or ())
+        level = getattr(self, 'dungeon_level', None)
+        fids = [f for f in family_lore.arrival_families(player, mons, concealed=_hidden, is_ally=_ally)
+                if (level, f) not in told]
+        for line in family_lore.forewarned_lines(fids):
             self.add_message(line, 'warning')
+        told.update((level, f) for f in fids)
         if first_visit:
             fired = family_edges.calm_arrivals(player, [m for m in mons if not _ally(m)])
             for ab in fired:
@@ -237,12 +241,21 @@ class FamilyMixin:
             if key not in told and ab.get('trigger_msg'):
                 told.add(key)
                 self.add_message(ab['trigger_msg'], 'info')
+        import unseen
         for m in self.monsters or ():
             if (getattr(m, 'alive', False) and (m.x, m.y) in vis
                     and family_edges.senses(player, m)):
+                # An invisible one the hero sees anyway (a see-invisible
+                # meal, telepathy) is not shown by Second Sight: no line.
+                if (family_edges.hidden_kind(m, player) == 'invisible'
+                        and unseen.sees_invisible(player)):
+                    continue
                 ab = family_edges.sense_ability(player, m)
                 if ab is not None:
                     family_edges.tell(player, m, ab)
+                    # Said: the keen-senses check never names it again
+                    # (Game._do_passive_ambush_detection).
+                    m.__dict__['_sensed_told'] = True
         self._family_drain()
 
     def _family_drain(self) -> None:
@@ -253,10 +266,21 @@ class FamilyMixin:
     # ------------------------------------------------------------------
     # Yield!
     # ------------------------------------------------------------------
+    def _family_yield(self, monster) -> None:
+        """A foe the blow made yield (combat.player_attack marks it): after
+        the blow's own line, "Yield! Your foe breaks and runs." and then the
+        purse. The purse was thrown down from inside the quiz callback,
+        before "Chain x8! You strike ...", and the Yield line said it again."""
+        if monster is None or not monster.__dict__.pop('_yield_pending', False):
+            return
+        self._family_drain()
+        self._family_surrender(monster)
+
     def _family_surrender(self, monster) -> None:
         """A lesser foe yields (Mortal Foes' Yield!): it throws down its purse
         on its own tile, as a gold pile the hero picks up by the usual rules
-        of coin weight, and has nothing left to drop if it dies later."""
+        of coin weight, and has nothing left to drop if it dies later. (The
+        Yield line has said it runs; this line says only the gold.)"""
         import random as _rng
         from items import add_gold_to_tile
         treasure = dict(getattr(monster, 'treasure', {}) or {})
@@ -266,8 +290,7 @@ class FamilyMixin:
         total = gold + stolen
         if total > 0:
             add_gold_to_tile(self.ground_items, total, monster.x, monster.y)
-            self.add_message(f"{self._the_monster_name(monster)} throws down {total:,} gold "
-                             f"and runs.", 'loot')
+            self.add_message(f"{self._the_monster_name(monster)} throws down {total:,} gold.", 'loot')
         treasure['gold'] = [0, 0]
         monster.treasure = treasure
         monster.stolen_gold = 0

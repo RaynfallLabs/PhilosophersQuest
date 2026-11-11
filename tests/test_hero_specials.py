@@ -222,15 +222,13 @@ def test_tablet_of_hammurabi_is_starter_grade():
     assert tab['effects']['amount'] == 1
 
 
-def test_ring_protection_iron_exists():
-    import json
-    from pathlib import Path
-    a = json.loads(Path('data/items/accessory.json').read_text(encoding='utf-8'))
-    assert 'ring_protection_iron' in a
-    r = a['ring_protection_iron']
-    assert r['tier'] == 1
-    assert r['peak_floor'] <= 10
-    assert r['effects'] == {'stat': 'AC', 'amount': 1}
+def test_ring_of_protection_exists():
+    """Cain's and the ranger's starting ring: the iron AC ring became the
+    Ring of Protection kind, a saving throw (bug bash 3.3.2, rings.py)."""
+    import items
+    r = items.make_item_by_id('accessory', 'ring_of_protection')
+    assert r.kind == 'protection' and r.ench_level == 1 and r.quiz_tier == 1
+    assert 'stat' not in r.effects
 
 
 # ---------------------------------------------------------------------------

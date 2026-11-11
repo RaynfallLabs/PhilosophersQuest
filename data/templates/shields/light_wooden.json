@@ -2,6 +2,7 @@
   "id": "light_wooden",
   "name": "light wooden shield",
   "category": "shield",
+  "armor_class_tier": "light",
   "base_ac_value": 1,
   "base_weight_lb": 5.0,
   "compatible_material_classes": [

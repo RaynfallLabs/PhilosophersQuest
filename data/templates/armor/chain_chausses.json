@@ -4,7 +4,7 @@
   "category": "armor",
   "armor_class_tier": "medium",
   "slot": "legs",
-  "base_ac_value": 1,
+  "base_ac_value": 0,
   "base_weight_lb": 5.0,
   "_design_note": "F20-70 medium legs slot. Mail leg covering, traditionally paired with hauberk. Covers chain_leggings, iron_leggings, scale_greaves from legacy data.",
   "compatible_material_classes": [
@@ -12,6 +12,5 @@
     "rare_metal",
     "magical_metal"
   ],
-  "lore_template": "A pair of {material_name} chausses, mail leggings hung from the belt and gathered at the ankle. Knights wore them under a hauberk so the rings ran unbroken from collarbone to shin. They allow a full stride and turn most cuts.",
-  "equip_threshold": 2
+  "lore_template": "A pair of {material_name} chausses, mail leggings hung from the belt and gathered at the ankle. Knights wore them under a hauberk so the rings ran unbroken from collarbone to shin. They allow a full stride and turn most cuts."
 }

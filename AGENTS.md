@@ -57,6 +57,7 @@ src/
   family_lore.py      - Monster families: kind-to-family map, tiers from kinds studied, circles, news
   family_edges.py     - Family technique primitives (wards, damage, executes, sense the hidden...)
   game_families.py    - FamilyMixin: study news, tier popups, arrival lines, QA family key
+  game_popups.py      - PopupMixin: popups from play wait for calm play and open one at a time
   dungeon.py          - Procedural BSP dungeon generation
   level_manager.py    - Floor transitions
   boss_levels.py      - Hand-crafted boss floor layouts (and COW_LEVEL)
@@ -73,8 +74,14 @@ src/
 
   # Combat, items, magic
   combat.py           - Combat resolution
+  affinity.py         - Weakness and resistance: what a hit met, and the lines that say so
   dice.py             - Dice notation parser ("2d6+3")
   items.py            - Item classes and equipment system
+  gear.py             - Armour, shield, ring and amulet rules: levels, tiers, thresholds, core AC
+  guards.py           - What the minor armour slots guard: attack delivery, families, touch AC
+  enchantments.py     - The minor-slot enchantment stable: guard, might, craft and way lanes
+  rings.py            - Ring and amulet kinds: levels, ladders, names, what a worn kind does
+  gear_saves.py       - Old saves meet the armour ladder: named pieces refreshed, worn grants re-synced
   item_actions.py     - Item actions shared by the Kit (K) and the character sheet (@)
   chain_equip.py      - Chain-equip for lore-rich legendary uniques
   chain_passives.py   - Chain-equip passive flag lookups and wiring
@@ -82,6 +89,7 @@ src/
   hero_specials.py    - One special ability per Secret Build
   spells.py           - Spellbook spell definitions (tiered families)
   prayers.py          - The prayer list and what each grants
+  altar.py            - The altar's offering: curses lifted, then blessings; what a blessing changes
   boons.py            - Gate-boss gifts (pick one of three)
   status_effects.py   - Buffs/debuffs (paralysis, poison, berserk, etc.)
   food_system.py      - Harvest and cooking mechanics

@@ -95,14 +95,19 @@ def test_every_material_has_one_tier_and_its_items_inherit_it():
         assert w.quiz_tier == material_tier(mat) == mat['tier'], mid
         seen.add(w.quiz_tier)
     assert seen == {1, 2, 3, 4, 5}
+    # Armour (bug bash 3.3.2): the material sets wear, weight and the name;
+    # the enchantment level sets the tier, whatever the material.
+    import gear
     made = 0
     for mid, mat in armor.items():
         for tpl in ('chainmail', 'breastplate', 'cloak', 'chain_shirt'):
             try:
                 a = instantiate_armor(tpl, mid)
+                b = instantiate_armor(tpl, mid, level=7)
             except Exception:
                 continue
-            assert a.quiz_tier == mat['tier'], (tpl, mid)
+            assert a.quiz_tier == 1, (tpl, mid)
+            assert b.quiz_tier == gear.tier_for_level(7) == 4, (tpl, mid)
             made += 1
             break
     assert made >= 10
@@ -168,8 +173,12 @@ def test_rest_scales_with_health_and_costs_food():
 # ---------------------------------------------------------------- monster side
 
 def test_armor_turns_blows_but_nothing_is_untouchable():
+    # Bug bash 3.3.2: with AC from body armour and shield only and every
+    # THAC0 rebaked to the armour line (tools/balance/rebake_thac0.py), an
+    # ordinary monster's floor is the natural 20 (AD&D); named foes keep a
+    # floor. At 0.30 the floor decided every blow from floor 15 down.
     from monster import MIN_HIT_NAMED, MIN_HIT_ORDINARY
-    assert 0.25 <= MIN_HIT_ORDINARY < MIN_HIT_NAMED <= 0.5
+    assert MIN_HIT_ORDINARY == 0.0 < MIN_HIT_NAMED <= 0.5
     assert _mon('giant_rat')._min_hit() == MIN_HIT_ORDINARY
     assert _mon('abaddon_destroyer')._min_hit() == MIN_HIT_NAMED
     assert _mon('arachne')._min_hit() == MIN_HIT_NAMED

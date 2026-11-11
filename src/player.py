@@ -212,8 +212,8 @@ class Player:
         # the player's inventory.
         self.active_carry_bonuses: dict[str, tuple] = {}
         # Item-class names the player has identified by their class. Lets
-        # us name "Ring of Strength" for all variants in the player's
-        # pack regardless of material. See items.type_class.
+        # us name a ring kind (rings.py) at every level in the player's
+        # pack. See items.type_class.
         self.known_class_ids: set[str] = set()
 
         # Identify v3.1 split-knowledge (2026-09-01): learn FORMS and
@@ -482,7 +482,7 @@ class Player:
                     if eff in DEBUFFS:
                         del self.status_effects[eff]
                 # Unequip and consume the amulet. Its Warning goes only if
-                # nothing else worn still warns (a Ring of Warning lost it).
+                # nothing else worn still warns (a Helm of Alertness lost it).
                 old_fx = amulet.effects
                 self.amulet_slot = None
                 self.accessory_off(amulet)
@@ -1002,6 +1002,24 @@ class Player:
 
     # --- Derived stats ---
 
+    def core_ac(self) -> int:
+        """The AC that body armour and the shield give (base, plus, and
+        their blessing or curse): what a touch attack ignores (guards.py)."""
+        import gear as _gear
+        total = 0
+        pieces = [s for s in (self.armor_slots or ())
+                  if s is not None and getattr(s, 'slot', 'body') in _gear.CORE_SLOTS]
+        if self.shield is not None:
+            pieces.append(self.shield)
+        for s in pieces:
+            total += int(getattr(s, 'ac_bonus', 0) or 0) + int(getattr(s, 'enchant_bonus', 0) or 0)
+            b = getattr(s, 'buc', 'uncursed')
+            if b == 'blessed':
+                total += 1
+            elif b == 'cursed' and 'cynic_detachment' not in getattr(self, 'hero_passives', set()):
+                total -= 1
+        return total
+
     def get_ac(self) -> int:
         """Armor class -- lower is better (harder for monsters to hit).
         Base 10, reduced by DEX modifier, armor ac_bonus + enchant_bonus, shield,
@@ -1010,21 +1028,27 @@ class Player:
         # shows up as dodge_chance(). (Uncapped, +22 Dexterity was eleven
         # points of armor: more than a full suit of plate.)
         dex_mod = min(self.DEX_AC_CAP, (self.DEX - 10) // 2)
+        # AC comes from body armour and the shield (gear.py, bug bash 3.3.2):
+        # a helm, gloves, boots, bracers, greaves, cloak or shirt gives none
+        # (they guard against kinds of attack instead). Nine slots of AC put
+        # a hero past every monster's reach by floor 15.
+        import gear as _gear
         armor_bonus = sum(
             getattr(s, 'ac_bonus', 0) + getattr(s, 'enchant_bonus', 0)
-            for s in self.armor_slots if s is not None
+            for s in self.armor_slots
+            if s is not None and getattr(s, 'slot', 'body') in _gear.CORE_SLOTS
         )
         shield_bonus = (
             getattr(self.shield, 'ac_bonus', 0) + getattr(self.shield, 'enchant_bonus', 0)
             if self.shield else 0
         )
-        # BUC of worn gear: blessed +1 AC / cursed -1 AC per piece, across
-        # armor, shield AND accessories. (Cursed gear is also welded on by the
-        # unequip guard, so a cursed piece is a real, stuck penalty -- and a
-        # blessed accessory/amulet now does something instead of nothing.)
+        # BUC of the two armour pieces that carry AC: blessed +1, cursed -1
+        # each (a blessed minor piece, ring or amulet works a level higher
+        # instead; gear.py, rings.py). No ring or amulet gives AC.
         buc_ac = 0
-        for s in (list(self.armor_slots) + [self.shield]
-                  + list(getattr(self, 'equipped_accessories', []))):
+        for s in ([p for p in self.armor_slots
+                   if p is not None and getattr(p, 'slot', 'body') in _gear.CORE_SLOTS]
+                  + [self.shield]):
             if s is None:
                 continue
             _b = getattr(s, 'buc', 'uncursed')
@@ -1038,8 +1062,6 @@ class Player:
         invisible_bonus = 2 if self.has_effect('invisible') else 0
         # Shielded status effect (from wand of shielding): -2 AC
         shield_effect   = 2 if self.has_effect('shielded') else 0
-        acc_bonus = getattr(self, '_accessory_ac_bonus', 0)
-        surr_bonus = getattr(self, '_surrounded_ac_bonus', 0)
         # Leonidas Spartan Stand: +N AC while the stand_ac status holds.
         stand_ac = 0
         if self.status_effects.get('stand_ac', 0) > 0:
@@ -1072,7 +1094,7 @@ class Player:
                 armor_proc_ac += 2
             if getattr(self, '_armor_proc_on_water', False):
                 armor_proc_ac += int(_pv_ac(self, 'water_tile_ac_bonus') or 0)
-        return 10 - dex_mod - armor_bonus - shield_bonus - buc_ac - invisible_bonus - shield_effect - acc_bonus - surr_bonus - stand_ac - parry_ac - armor_proc_ac
+        return 10 - dex_mod - armor_bonus - shield_bonus - buc_ac - invisible_bonus - shield_effect - stand_ac - parry_ac - armor_proc_ac
 
     def get_armor_resistance(self, damage_type: str) -> float:
         """Combined damage resistance multiplier from all equipped armor/shield."""
@@ -1191,7 +1213,7 @@ class Player:
         popped the status outright (an attuned item's tier statuses, a weapon
         or amulet pushed out by a swap, Rand's Heart spent, an item handed
         over), and the game-level check counted only rings and amulets:
-        Rand's Heart took Warning away from a Ring of Warning's wearer."""
+        Rand's Heart took Warning away from a wearer who had it twice."""
         if not status:
             return
         if status in ((getattr(self, 'quirk_progress', None) or {}).get('quirk_statuses') or ()):
@@ -1221,6 +1243,10 @@ class Player:
         except ImportError:
             pass
         self.drop_worn_status(getattr(old, 'on_equip_status', ''), old)
+        # A stat its enchantment lent (Gauntlets of Ogre Power): resynced
+        # once the piece is out of its slot.
+        if any(True for _ in self._stat_parts(getattr(old, 'effects', None) or {})):
+            self.sync_worn_stats()
         # Mantle of Elijah: the +max MP it lent.
         drop = int(getattr(old, '_prophets_mp_grant', 0) or 0)
         if drop > 0:
@@ -1346,6 +1372,13 @@ class Player:
         it generically; the math path uses it, the rest ignore it.
         """
         base = getattr(self, 'quiz_timer_bonuses', {}).get(subject, 0)
+        # Bracers of Swift Strokes (enchantments.py): the combat clock.
+        if subject == 'math':
+            try:
+                import enchantments
+                base += enchantments.quiz_seconds(self)
+            except ImportError:
+                pass
         # Ancile shield: bonus seconds on quiz timers.
         shld = getattr(self, 'shield', None)
         if shld and getattr(shld, 'quiz_timer_bonus', 0) > 0:
@@ -1723,8 +1756,8 @@ class Player:
             self.gain_quirk_stat(stat, amount)
             return
         if stat == 'AC':
-            # AC is computed, not stored directly — accumulate in a bonus field
-            self._accessory_ac_bonus = getattr(self, '_accessory_ac_bonus', 0) + amount
+            # AC is computed (get_ac), never a stat: no ring, amulet or other
+            # grant adds to it this way (bug bash 3.3.2, armour plan 8).
             return
         setattr(self, stat, getattr(self, stat) + amount)
         if stat == 'CON':
@@ -1802,10 +1835,25 @@ class Player:
     # Four Rings of Greater Strength and an Amulet of Strength gave +10
     # Strength by floor 8 and +19 of one stat by floor 60, more than a run of
     # cooking (BALANCE_REVIEW_LOOT_AND_FOOD_2026_10_26, L7a). The stronger
-    # ring's virtue drowns the weaker. Protection rings (stat 'AC') still add
-    # up, as before. `_worn_stat_ledger` is what is applied to the stats now;
+    # piece's virtue drowns the weaker (worn armour's Ogre Power, Dexterity
+    # and the Eagle count too). No ring gives AC (bug bash 3.3.2).
+    # `_worn_stat_ledger` is what is applied to the stats now;
     # sync_worn_stats moves the stats to what is worn.
     WORN_STATS = ('STR', 'CON', 'DEX', 'INT', 'WIS', 'PER')
+
+    def worn_stat_armour(self) -> list:
+        """Worn armour whose effects name a stat (enchantments.py)."""
+        out = []
+        for a in (getattr(self, 'armor_slots', None) or ()):
+            if a is not None and any(True for _ in self._stat_parts(getattr(a, 'effects', None) or {})):
+                out.append(a)
+        return out
+
+    def wears_flag(self, flag: str) -> bool:
+        """Any worn ring, amulet, belt or armour with `flag` set (Elvenkind's
+        silent steps are on boots now, the Hand of Glory's on a ring)."""
+        import gear
+        return gear.wears_flag(self, flag)
 
     def worn_accessories(self) -> list:
         worn = [a for a in (getattr(self, 'accessory_slots', None) or ()) if a is not None]
@@ -1826,7 +1874,9 @@ class Player:
         """What worn accessories lend each stat under the strongest-counts rule."""
         best: dict = {}
         target: dict = {}
-        for acc in self.worn_accessories():
+        # Rings, amulets and belts, and (bug bash 3.3.2) the minor armour
+        # whose enchantment lends a stat (Gauntlets of Ogre Power...).
+        for acc in self.worn_accessories() + self.worn_stat_armour():
             for stat, amount in self._stat_parts(getattr(acc, 'effects', None) or {}):
                 if amount > 0:
                     best[stat] = max(best.get(stat, 0), amount)
@@ -1872,17 +1922,10 @@ class Player:
         self._last_worn_stat_change = changes
         return changes
 
-    def _accessory_ac(self, fx: dict, sign: int) -> None:
-        """The AC part of an accessory's effects (protection rings add up)."""
-        for sk, ak in (('stat', 'amount'), ('stat2', 'amount2')):
-            if fx.get(sk) == 'AC':
-                self.apply_stat_bonus('AC', sign * int(fx.get(ak, 0) or 0))
-
     def accessory_off(self, item) -> dict:
         """What a ring, amulet or belt lent comes off with it. Call AFTER its
         slot is emptied. (Statuses stay with the caller, which knows whether
         anything else still grants them.)"""
-        self._accessory_ac(getattr(item, 'effects', None) or {}, -1)
         return self.sync_worn_stats()
 
     def refresh_carry_bonuses(self):
@@ -2225,6 +2268,8 @@ class Player:
             new_status = getattr(item, 'on_equip_status', '')
             if new_status:
                 self.add_effect(new_status, -1)
+            if any(True for _ in self._stat_parts(getattr(item, 'effects', None) or {})):
+                self.sync_worn_stats()
             # Mantle of Elijah (prophets_passing): the "office passes" — +3 max MP
             # while equipped. Lore: the wisdom of the prophet's school carries.
             # Bug-bash fix a97b: guard against double-grant if a prior unequip
@@ -2266,7 +2311,6 @@ class Player:
                     old_fx = old.effects
                     if 'status' in old_fx:
                         self.drop_worn_status(old_fx['status'], old)
-                    self._accessory_ac(old_fx, -1)
                 self.amulet_slot = item
             elif getattr(item, 'slot', 'ring') == 'belt':
                 # Belt slot — single-item, mirrors amulet handling.
@@ -2286,7 +2330,6 @@ class Player:
                     # belt for another took Haste away from a ring's wearer
                     if 'status' in old_fx:
                         self.drop_worn_status(old_fx['status'], old)
-                    self._accessory_ac(old_fx, -1)
                 self.belt_slot = item
             else:
                 # Find first empty ring slot. If none free, bail out — the
@@ -2299,12 +2342,11 @@ class Player:
                 if slot_idx is None:
                     return  # all rings full — refuse silently
                 self.accessory_slots[slot_idx] = item
-            # Apply the accessory's effect while worn: a status, AC, and the
-            # six stats by the strongest-counts rule (sync_worn_stats).
+            # Apply the accessory's effect while worn: a status, and the six
+            # stats by the strongest-counts rule (sync_worn_stats). No AC.
             fx = item.effects
             if 'status' in fx:
                 self.add_effect(fx['status'], fx.get('duration', -1))
-            self._accessory_ac(fx, +1)
             self.sync_worn_stats()
         # Re-sort inventory after any equipment swap that returned items
         self.sort_pack()

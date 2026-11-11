@@ -1,6 +1,12 @@
-"""Verify every armor template has an explicit equip_threshold matching
-its armor_class_tier (light=1, medium=2, heavy=3), and that
-instantiate_armor() honors it.
+"""Equip thresholds follow the rule (Brandon, bug bash 3.3.2): "more powerful
+gear has a higher tier, complexity and benefit set the threshold".
+
+Complexity is the template's weight class (light 1, medium 2, heavy 3,
+data/gear_rules.json); benefit is the enchantment tier (+1 at III-IV, +2 at
+V); at most 5. The material no longer sets the tier: a primordial-stone
+plate with no enchantment is tier 1 and asks 3, an enchanted one asks more.
+Shields follow the same rule (they had no threshold of their own: every
+shield asked 2).
 """
 from __future__ import annotations
 
@@ -14,89 +20,80 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "src"))
 
 
-EXPECTED = {'light': 1, 'medium': 2, 'heavy': 3}
+COMPLEXITY = {'light': 1, 'medium': 2, 'heavy': 3}
 
 
-def _templates():
+def _templates(kind='armor'):
     out = {}
-    for path in glob.glob(str(ROOT / "data" / "templates" / "armor" / "*.json")):
+    for path in glob.glob(str(ROOT / "data" / "templates" / kind / "*.json")):
         name = os.path.basename(path)[:-5]
         with open(path, encoding='utf-8') as f:
             out[name] = json.load(f)
     return out
 
 
-def test_every_armor_template_has_equip_threshold():
-    """No template missing the field — even future additions must opt in."""
-    templates = _templates()
-    missing = [name for name, t in templates.items() if 'equip_threshold' not in t]
-    assert not missing, f"Missing equip_threshold: {missing}"
+def test_every_template_says_its_weight_class():
+    """No template missing the field: it sets the complexity."""
+    for kind in ('armor', 'shields'):
+        missing = [n for n, t in _templates(kind).items()
+                   if t.get('armor_class_tier') not in COMPLEXITY]
+        assert not missing, (kind, missing)
 
 
-def test_every_template_threshold_matches_class_tier():
-    """light=1, medium=2, heavy=3 — uniform across the bank."""
-    templates = _templates()
-    mismatches = []
-    for name, t in templates.items():
-        tier = t.get('armor_class_tier')
-        if tier not in EXPECTED:
-            mismatches.append(f"{name}: unknown armor_class_tier={tier!r}")
-            continue
-        expected = EXPECTED[tier]
-        actual = t.get('equip_threshold')
-        if actual != expected:
-            mismatches.append(
-                f"{name} ({tier}): expected {expected}, got {actual}")
-    assert not mismatches, "\n".join(mismatches)
+def test_no_template_writes_its_own_threshold():
+    """The threshold is the rule's, not the file's (gear.equip_threshold)."""
+    stray = [n for n, t in _templates().items() if 'equip_threshold' in t]
+    assert not stray, stray
 
 
 def test_total_templates_covered():
-    """34 templates total; mismatch means a new file or rename slipped in."""
-    templates = _templates()
-    assert len(templates) >= 30, f"Suspiciously few templates: {len(templates)}"
+    assert len(_templates()) >= 30
 
 
 def test_class_tier_distribution():
-    """Sanity-check the light/medium/heavy distribution didn't drift."""
-    templates = _templates()
     by_tier = {'light': 0, 'medium': 0, 'heavy': 0}
-    for t in templates.values():
-        by_tier[t['armor_class_tier']] = by_tier.get(t['armor_class_tier'], 0) + 1
+    for t in _templates().values():
+        by_tier[t['armor_class_tier']] += 1
     assert by_tier['light'] >= 8
     assert by_tier['medium'] >= 8
     assert by_tier['heavy'] >= 8
 
 
-# ---------------------------------------------------------------------------
-# Behavior: instantiate_armor honors the template threshold
-# ---------------------------------------------------------------------------
-
-def test_instantiate_armor_uses_template_threshold_light():
+def test_plain_pieces_ask_their_complexity():
     from items import instantiate_armor
-    # leather (light) + leather material — any T1 combo
-    armor = instantiate_armor('leather', 'leather')
-    assert armor.equip_threshold == 1
+    assert instantiate_armor('leather', 'leather').equip_threshold == 1
+    assert instantiate_armor('ringmail', 'ring_iron').equip_threshold == 2
+    assert instantiate_armor('plate', 'damascus_steel').equip_threshold == 3
 
 
-def test_instantiate_armor_uses_template_threshold_medium():
+def test_benefit_adds_to_complexity_and_five_is_the_most():
+    import gear
     from items import instantiate_armor
-    # ringmail (medium) + ring_iron material
-    armor = instantiate_armor('ringmail', 'ring_iron')
-    assert armor.equip_threshold == 2
+    for level, extra in ((1, 0), (2, 0), (4, 0), (5, 1), (8, 1), (9, 2), (10, 2)):
+        a = instantiate_armor('plate', 'damascus_steel', level=level)
+        assert a.equip_threshold == min(5, 3 + extra), level
+        assert a.tier == a.quiz_tier == gear.tier_for_level(level), level
+        light = instantiate_armor('leather', 'leather', level=level)
+        assert light.equip_threshold == 1 + extra, level
 
 
-def test_instantiate_armor_uses_template_threshold_heavy():
+def test_the_material_no_longer_sets_the_tier():
+    """Materials drive wear, weight and the name; the enchantment drives the
+    tier. A plain primordial plate is tier 1, an enchanted one its level's."""
     from items import instantiate_armor
-    # plate (heavy) + damascus_steel material
-    armor = instantiate_armor('plate', 'damascus_steel')
-    assert armor.equip_threshold == 3
+    plain = instantiate_armor('plate', 'primordial_stone_armor')
+    assert plain.tier == 1 and plain.equip_threshold == 3
+    deep = instantiate_armor('plate', 'primordial_stone_armor', level=10)
+    assert deep.tier == 5 and deep.equip_threshold == 5
 
 
-def test_instantiate_armor_heavy_at_high_tier_keeps_threshold():
-    """Materials drive tier (power), templates drive threshold (complexity).
-    A primordial_stone plate is T5 but still threshold 3.
-    """
-    from items import instantiate_armor
-    armor = instantiate_armor('plate', 'primordial_stone_armor')
-    assert armor.equip_threshold == 3
-    assert armor.tier >= 4  # primordial_stone peak_floor 94 → t5
+def test_shields_follow_the_same_rule():
+    """The tower shield was +2 AC over the light shield for the same two
+    tier-1 questions (Brandon's report)."""
+    from items import instantiate_shield
+    assert instantiate_shield('buckler', 'oak').equip_threshold == 1
+    assert instantiate_shield('light_wooden', 'oak').equip_threshold == 1
+    assert instantiate_shield('kite_shield', 'oak').equip_threshold == 2
+    tower = instantiate_shield('tower_shield', 'oak')
+    assert tower.equip_threshold == 3
+    assert instantiate_shield('tower_shield', 'oak', level=10).equip_threshold == 5

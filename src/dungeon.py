@@ -29,7 +29,7 @@ STAIRS_UP   = 2   # exit to previous level
 STAIRS_DOWN = 3   # exit to next level
 DOOR        = 4   # opaque until opened (bump to open)
 SECRET_DOOR = 5   # looks like WALL; discovered by searching or bumping
-ALTAR       = 6   # sacred altar; walkable, amplifies prayers
+ALTAR       = 6   # sacred altar; walkable, amplifies prayers, takes offerings (altar.py)
 WATER       = 7   # blocks movement unless water_walking; transparent
 LAVA        = 8   # instant damage without fire_resist; transparent; glows
 FOUNTAIN    = 9   # walkable, interactive (quaff for quiz-gated effects)
@@ -1557,20 +1557,16 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon,
     # shield.json entries still load for UNIQUE/NAMED items, which spawn via
     # the secondary pool below — never duplicated against the procedurally-
     # generated set.
-    _ARMOR_SLOTS_FOR_DROP = ('body', 'head', 'hands', 'feet', 'legs', 'arms', 'cloak')
+    from items import pick_random_gear_for_floor
     for room in loot_rooms:
         if rng.random() > ROOM_GEAR_CHANCE:
             continue
-        # 60% weapon, 20% armor piece, 15% shield, 5% nothing-special
-        roll = rng.random()
-        gear = None
-        if roll < 0.60:
-            gear = pick_random_weapon_for_floor(level, rng)
-        elif roll < 0.80:
-            slot = rng.choice(_ARMOR_SLOTS_FOR_DROP)
-            gear = pick_random_armor_for_floor(level, rng, slot=slot)
-        elif roll < 0.95:
-            gear = pick_random_shield_for_floor(level, rng)
+        # 5% of rolls find nothing special; the rest is weapon / armour piece
+        # (any of the eight slots, the shirt included) / shield by the loot
+        # split, 45 / 45 / 10 (data/gear_rules.json; it was 60 / 20 / 15).
+        if rng.random() >= 0.95:
+            continue
+        gear = pick_random_gear_for_floor(level, rng)
         if gear is not None:
             _place_one([gear], room, dungeon, ground_items, rng)
 
@@ -1971,8 +1967,7 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon,
                 if rng.random() < 0.5:
                     gear = pick_random_weapon_for_floor(level, rng)
                 else:
-                    gear = pick_random_armor_for_floor(
-                        level, rng, slot=rng.choice(_ARMOR_SLOTS_FOR_DROP))
+                    gear = pick_random_armor_for_floor(level, rng)   # any slot
                 if gear is not None:
                     _place_one([gear], special_room, dungeon, ground_items, rng)
 
@@ -2607,6 +2602,10 @@ def dress_spawn(inst, level: int, rng, buc: bool = True) -> None:
     Quest and scripted items are left exactly as written.
     """
     from items import is_random_loot
+    if getattr(inst, 'kind', '') and is_random_loot(inst):
+        # A common ring or amulet: its level by the armour bells (rings.py).
+        import rings
+        rings.dress(inst, level, rng)
     if hasattr(inst, 'charges_min'):
         inst.charges = rng.randint(inst.charges_min, inst.charges_max)
     if hasattr(inst, 'count_min'):
@@ -2645,6 +2644,14 @@ def _assign_enchant(inst, level: int, rng: random.Random):
     if not hasattr(inst, 'enchant_bonus'):
         return
     if inst.item_class not in ('weapon', 'armor', 'shield'):
+        return
+    if inst.item_class in ('armor', 'shield'):
+        # Armour and shields take their plus from the enchantment level
+        # rolled when they were made (gear.py, bug bash 3.3.2). A cursed
+        # body armour or shield wears its plus as a minus (AD&D's cursed
+        # -1 to -5 armour).
+        if getattr(inst, 'buc', 'uncursed') == 'cursed':
+            inst.enchant_bonus = -abs(int(getattr(inst, 'enchant_bonus', 0) or 0))
         return
     from items import SPAWN_ENCHANT_CAP_ARMOR, ENCHANT_CAP
     # Determine chance and range by depth

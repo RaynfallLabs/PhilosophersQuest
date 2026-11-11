@@ -4,7 +4,7 @@
   "category": "armor",
   "armor_class_tier": "medium",
   "slot": "head",
-  "base_ac_value": 2,
+  "base_ac_value": 0,
   "base_weight_lb": 3.5,
   "_design_note": "F35-60 medium head slot. Segmented spangenhelm with hinged cheek guards. Material is the variation axis — name retained for canon.",
   "compatible_material_classes": [
@@ -12,6 +12,5 @@
     "rare_metal",
     "magical_metal"
   ],
-  "lore_template": "A {material_name} barbute, a deep one-piece helm with a T-shaped opening for the eyes and mouth. Italian armorers took the shape from the helmets of ancient Greece. It guards the cheeks and neck without boxing in the ears.",
-  "equip_threshold": 2
+  "lore_template": "A {material_name} barbute, a deep one-piece helm with a T-shaped opening for the eyes and mouth. Italian armorers took the shape from the helmets of ancient Greece. It guards the cheeks and neck without boxing in the ears."
 }

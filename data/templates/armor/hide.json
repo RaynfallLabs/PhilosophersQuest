@@ -5,7 +5,7 @@
   "category": "armor",
   "armor_class_tier": "light",
   "slot": "body",
-  "base_ac_value": 2,
+  "base_ac_value": 3,
   "base_weight_lb": 15.0,
   "_design_note": "F1-20 medium-light. AC 2 (vs leather/padded's 1) earns its weight: the early heavy option, same AC as studded leather but available sooner. Takes a crushing blow better.",
   "compatible_material_classes": [
@@ -13,6 +13,5 @@
     "leather",
     "dragon_material"
   ],
-  "lore_template": "A wrap of thick {material_name}, lashed at the shoulders with cord. It is heavier than tanned leather and takes a crushing blow better. This is the oldest idea in armor: wear the skin of something tougher than the wearer.",
-  "equip_threshold": 1
+  "lore_template": "A wrap of thick {material_name}, lashed at the shoulders with cord. It is heavier than tanned leather and takes a crushing blow better. This is the oldest idea in armor: wear the skin of something tougher than the wearer."
 }

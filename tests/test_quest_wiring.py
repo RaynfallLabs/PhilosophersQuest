@@ -80,7 +80,8 @@ def test_quest_shrine_is_sealed_until_its_door_opens(level, door_attr, reward_id
 
 def test_ariadnes_fountain_never_dries_up():
     src = open(os.path.join(ROOT, 'src', 'game_divine.py'), encoding='utf-8').read()
-    assert "getattr(self.dungeon, 'ariadne_shrine_door', None) is None" in src
+    # One drink a fountain (bug bash 3.3.2), but hers is kept while her shrine stands.
+    assert "getattr(self.dungeon, 'ariadne_shrine_door', None) is not None" in src
 
 
 # ------------------------------------------------------------ quest items

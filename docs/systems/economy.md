@@ -155,6 +155,12 @@ reward). Nothing is charged when there is nothing to do.
 Vendor encounters that sell a service: Brunhild the smith (sharpen, and
 mend), Doctor Finch (cure), the Medical Construct (restore, 15% of the purse).
 
+**The altar's offering** (bug bash 3.3.2): `economy.altar_offering(level)`,
+`ALTAR_OFFERING_SHARE` 0.5 of the floor's income, one price for anything
+asked at an ordinary altar (the altar rite or a prayer out of turn); kept
+whatever the theology chain. Not a service (no trader, no markup, no deeds):
+see [karma_prayer.md §5.6](karma_prayer.md).
+
 ## 7. Deeds and prices (D7)
 
 `traders.price_mult(kind, ctx, friend)`; conditions are `deeds.check`

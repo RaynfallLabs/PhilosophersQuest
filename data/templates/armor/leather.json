@@ -5,13 +5,12 @@
   "category": "armor",
   "armor_class_tier": "light",
   "slot": "body",
-  "base_ac_value": 1,
+  "base_ac_value": 2,
   "base_weight_lb": 10.0,
   "_design_note": "F1-15 light. With leather material = +1 AC; with studded_leather = +2.",
   "compatible_material_classes": [
     "leather",
     "hide"
   ],
-  "lore_template": "A cuirass of {material_name}, hardened and shaped over a wooden form. It is light enough to run in and tough enough to turn the tip of a dagger.",
-  "equip_threshold": 1
+  "lore_template": "A cuirass of {material_name}, hardened and shaped over a wooden form. It is light enough to run in and tough enough to turn the tip of a dagger."
 }

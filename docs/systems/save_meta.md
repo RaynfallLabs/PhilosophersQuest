@@ -292,6 +292,11 @@ then, migrations happen in two places:
 - `Player.__setstate__` for Player attrs (see §6).
 - Lazy `getattr(game, 'xxx', default)` in `main.Game._load_run` for
   Game attrs.
+- Item passes run once per load from `Game._load_run`: the accessory
+  heal and appearance stamp, the composite recompose, and (3.3.2)
+  `gear_saves.migrate`, which puts old armour, shields, rings and amulets
+  on the armour ladder and re-syncs what the hero wears
+  ([armour.md](armour.md) §8). Each is idempotent.
 
 If you ADD a new Game-level attribute, use the getattr-with-default
 pattern on load so old saves survive.

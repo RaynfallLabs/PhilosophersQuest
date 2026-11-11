@@ -1,0 +1,128 @@
+{
+  "_doc": "What each minor armour slot guards against (bug bash 3.3.2; docs/design/ARMOR_REDESIGN_PLAN.md section 7; src/guards.py). The minor slots give no AC: each owns one FAMILY of attack, read from the attack's delivery (tools/content/tag_attack_delivery.py), damage type and rider. A matching attack's damage is partly turned aside and its rider (status) partly shrugged off. Narrow guards (one rider, one delivery) were priced by tools/balance/armor_model.py and could not reach a fifth of an AC point, so every family is broad.",
+  "base_by_weight_class": {
+    "_doc": "What any piece of the slot guards, enchanted or not, by its template's weight class: rider = chance to shrug off a matching rider, damage = share of a matching attack's damage turned aside. Small: the enchantment is the power.",
+    "light": {
+      "rider": 0.05,
+      "damage": 0.03
+    },
+    "medium": {
+      "rider": 0.1,
+      "damage": 0.06
+    },
+    "heavy": {
+      "rider": 0.15,
+      "damage": 0.09
+    }
+  },
+  "cap": {
+    "rider": 0.8,
+    "damage": 0.8
+  },
+  "families": {
+    "head": {
+      "name": "gazes and voices",
+      "deliveries": [
+        "voice",
+        "gaze"
+      ],
+      "riders_any": [
+        "confused",
+        "feared",
+        "hallucinating",
+        "sleeping",
+        "stunned",
+        "blinded"
+      ],
+      "long": "gazes, screams and other attacks on the mind",
+      "stops": "fear, confusion, sleep, stunning and blindness"
+    },
+    "hands": {
+      "name": "touches and grabs",
+      "deliveries": [
+        "touch",
+        "grapple"
+      ],
+      "riders_any": [
+        "paralyzed",
+        "immobilized",
+        "frozen"
+      ],
+      "long": "touches and grabs",
+      "stops": "paralysis and being held"
+    },
+    "arms": {
+      "name": "arrows and missiles",
+      "deliveries": [
+        "ranged"
+      ],
+      "long": "arrows, bolts, rays and thrown things",
+      "stops": "what they carry"
+    },
+    "legs": {
+      "name": "bites and stings",
+      "deliveries": [
+        "bite",
+        "sting"
+      ],
+      "riders_any": [
+        "poisoned",
+        "diseased"
+      ],
+      "long": "bites and stings",
+      "stops": "poison and disease"
+    },
+    "feet": {
+      "name": "trampling and snares",
+      "deliveries": [
+        "trample"
+      ],
+      "riders_any": [
+        "slowed",
+        "immobilized",
+        "frozen"
+      ],
+      "riders_from": {
+        "stunned": [
+          "blow"
+        ]
+      },
+      "long": "trampling and whatever pins your feet",
+      "stops": "slowing, holds, freezing and being knocked senseless"
+    },
+    "cloak": {
+      "name": "breath and elements",
+      "deliveries": [
+        "breath"
+      ],
+      "elements": [
+        "fire",
+        "cold",
+        "lightning",
+        "acid"
+      ],
+      "riders_any": [
+        "burning",
+        "frozen"
+      ],
+      "long": "breath weapons, fire, cold, lightning and acid",
+      "stops": "burning and freezing"
+    },
+    "shirt": {
+      "name": "poison and draining",
+      "elements": [
+        "poison",
+        "drain",
+        "necrotic"
+      ],
+      "riders_any": [
+        "poisoned",
+        "diseased",
+        "bleeding",
+        "weakened"
+      ],
+      "long": "poison, life drain and death magic",
+      "stops": "poison, disease, bleeding and weakness"
+    }
+  }
+}

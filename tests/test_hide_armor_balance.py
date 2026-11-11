@@ -10,9 +10,10 @@ armor stats are data-driven.
 from items import instantiate_armor
 
 
-def test_hide_template_is_ac2():
+def test_hide_template_is_ac3():
+    # Bug bash 3.3.2: base AC by template (heavier is better), no material AC.
     hide = instantiate_armor('hide', 'hide')
-    assert hide.ac_bonus == 2
+    assert hide.ac_bonus == 3
 
 
 def test_hide_not_dominated_by_lighter_cured_leather():
@@ -26,4 +27,4 @@ def test_hide_not_dominated_by_lighter_cured_leather():
 def test_hide_matches_studded_leather_ac():
     hide = instantiate_armor('hide', 'hide')
     studded = instantiate_armor('studded_leather', 'studded_leather')
-    assert hide.ac_bonus == studded.ac_bonus == 2
+    assert hide.ac_bonus == studded.ac_bonus == 3

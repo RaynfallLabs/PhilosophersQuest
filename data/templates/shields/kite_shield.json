@@ -2,6 +2,7 @@
   "id": "kite_shield",
   "name": "kite shield",
   "category": "shield",
+  "armor_class_tier": "medium",
   "base_ac_value": 2,
   "_design_note": "F35-80 standard combat shield.",
   "base_weight_lb": 10.0,

@@ -378,7 +378,7 @@ _SPECIES = {
                               "Nothing else is getting past him. (Shielded, {turns} turns)"),
         },
         # Hackles Up: the real Shep lowered his head and growled when there
-        # was danger. A passive danger sense like the ring of warning, but
+        # was danger. A passive danger sense like a helm of Alertness, but
         # only when something new and unseen comes within his range of the
         # hero (no growl every turn for the same wolf), and he must be close
         # enough to hear. Range grows with the stage.

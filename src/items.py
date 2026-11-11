@@ -115,14 +115,17 @@ def type_class(item) -> str:
     """Type-knowledge key: the granularity at which "once you know it,
     you know it" applies.
 
-    Uniques key by item.id. Accessories key by name-slug so all material
-    variants of a "Ring of Strength" count as ONE learned type. Everything
+    Uniques key by item.id. A ring or amulet kind (rings.py) keys by its id,
+    so every level of it is ONE learned type; any other accessory by its
+    name-slug. Everything
     else keys by item.id. (Formerly class_masteries.get_mastery_class —
     kept for the True Name display model after masteries were removed.)
     """
     if getattr(item, 'is_unique', False):
         return item.id
     if isinstance(item, Accessory):
+        if getattr(item, 'kind', ''):
+            return item.id          # every level of a kind is one type (rings.py)
         return _slugify(getattr(item, 'name', '') or item.id)
     return item.id
 
@@ -142,6 +145,8 @@ def form_id(item) -> str | None:
     material = getattr(item, 'material', None)
     iid = getattr(item, 'id', '')
     if isinstance(item, Accessory):
+        if getattr(item, 'kind', ''):
+            return iid              # every level of a kind is one form (rings.py)
         return _slugify(getattr(item, 'name', '') or iid)
     if material and iid.startswith(f'{material}_'):
         return iid[len(material) + 1:]
@@ -185,9 +190,12 @@ def is_split_type_known(player, item) -> bool:
 
 # Per-slot enchantment caps (max enchant_bonus allowed)
 ENCHANT_CAP = {
-    'head': 2, 'body': 3, 'arms': 1, 'hands': 1,
-    'legs': 1, 'feet': 1, 'cloak': 2, 'shirt': 1,
-    'shield': 2, 'weapon': 5,
+    # Body armour and shields carry the plus (+1 to +5, gear.py); the minor
+    # slots give no AC, so a plus on them was a scroll wasted (an Enchant
+    # Armour scroll raises a minor piece's enchantment level instead).
+    'head': 0, 'body': 5, 'arms': 0, 'hands': 0,
+    'legs': 0, 'feet': 0, 'cloak': 0, 'shirt': 0,
+    'shield': 5, 'weapon': 5,
 }
 # Random spawn enchant is capped at +1 for armor/shield; scrolls can push to slot cap
 SPAWN_ENCHANT_CAP_ARMOR = 1
@@ -209,6 +217,17 @@ def _material_resists(mat: dict) -> dict:
     if isinstance(r, (list, tuple)):
         return {_RESIST_ALIAS.get(str(t), str(t)): MATERIAL_RESIST for t in r}
     return {}
+
+
+def _template_class(category: str, template_id) -> str:
+    """The weight class of a template ('' when there is none)."""
+    if not template_id:
+        return ''
+    try:
+        t = get_template(category, str(template_id))
+    except Exception:
+        return ''
+    return str((t or {}).get('armor_class_tier') or '')
 
 
 def effective_enchant_cap(player, slot_name: str, item=None) -> int:
@@ -255,6 +274,15 @@ class Item:
     # old save) spelled them -- see naming.ProperNameAttr.
     name = ProperNameAttr('name')
     unidentified_name = ProperNameAttr('unidentified_name')
+
+    def adopt_fields(self, fresh, fields) -> None:
+        """Take these fields from `fresh` (the same item built from today's
+        data): a save's named piece meets its current definition
+        (gear_saves.py). Fields `fresh` lacks are left as they are."""
+        import copy
+        for f in fields:
+            if f in fresh.__dict__:
+                self.__dict__[f] = copy.deepcopy(fresh.__dict__[f])
 
     def __init__(self, defn: dict):
         self.id         = defn['id']
@@ -830,6 +858,14 @@ class Armor(Item):
         self.material: str       = defn.get('material', 'leather')
         self.ac_bonus: int       = int(defn['ac_bonus'])
         self.enchant_bonus: int  = int(defn.get('enchant_bonus', 0))
+        # Enchantment level 1-10 (0 plain; gear.py): the tier and, on body
+        # armour, the plus. A minor piece's one power comes with it (ench_id).
+        self.ench_level: int     = int(defn.get('ench_level', 0) or 0)
+        self.ench_id: str        = str(defn.get('ench_id', '') or '')
+        # light / medium / heavy: the threshold's complexity and a minor
+        # piece's base guard (guards.py). A unique takes its template's.
+        self.weight_class: str   = str(defn.get('weight_class') or _template_class(
+            'armor', defn.get('template_basis')) or 'light')
         self.equip_threshold     = int(defn.get('equip_threshold', 2))
         self.quiz_tier: int      = int(defn.get('quiz_tier', 1))
         self.damage_resistances: dict = defn.get('damage_resistances', {})
@@ -917,6 +953,11 @@ class Armor(Item):
         self.equip_chain_subject: str = defn.get('equip_chain_subject', '')
         self.tier_bonuses: dict      = defn.get('tier_bonuses', {})
         self.achieved_tier: int      = 0   # runtime — set after equip quiz
+        if self.is_unique and self.ench_id and self.ench_level > 0:
+            # A named minor piece's enchantment (data/items/armor.json, chosen
+            # by its lore): its power, keeping its own name and card text.
+            import enchantments
+            enchantments.apply_named(self)
 
     @property
     def cursed(self) -> bool:
@@ -926,6 +967,20 @@ class Armor(Item):
     def cursed(self, value: bool):
         self.buc = 'cursed' if value else 'uncursed'
 
+    def relevel(self, level: int) -> int:
+        """Set the enchantment level (0-10) and what follows from it: the
+        tier (the quiz tier, gear.py) and the equip threshold (complexity +
+        benefit). Its power is the enchantment, so a stronger enchantment is
+        a harder piece to put on."""
+        import gear
+        level = max(0, min(gear.MAX_LEVEL, int(level or 0)))
+        self.ench_level = level
+        self.tier = gear.tier_for_level(level)
+        self.quiz_tier = self.tier
+        cls = getattr(self, 'weight_class', None) or 'light'
+        self.equip_threshold = gear.equip_threshold(cls, level, bool(getattr(self, 'is_unique', False)))
+        return level
+
 
 class Shield(Item):
     def __init__(self, defn: dict):
@@ -934,6 +989,7 @@ class Shield(Item):
         self.material: str       = defn.get('material', 'wood')
         self.ac_bonus: int       = int(defn['ac_bonus'])
         self.enchant_bonus: int  = int(defn.get('enchant_bonus', 0))
+        self.ench_level: int     = int(defn.get('ench_level', 0) or 0)   # gear.py
         self.equip_threshold     = int(defn.get('equip_threshold', 2))
         self.quiz_tier: int      = int(defn.get('quiz_tier', 1))
         self.damage_resistances: dict = defn.get('damage_resistances', {})
@@ -964,6 +1020,18 @@ class Shield(Item):
     def cursed(self, value: bool):
         self.buc = 'cursed' if value else 'uncursed'
 
+    def relevel(self, level: int) -> int:
+        """Set the enchantment level and its tier and threshold (gear.py);
+        the plus is the caller's (it moves with scrolls and wear)."""
+        import gear
+        level = max(0, min(gear.MAX_LEVEL, int(level or 0)))
+        self.ench_level = level
+        self.tier = gear.tier_for_level(level)
+        self.quiz_tier = self.tier
+        cls = getattr(self, 'weight_class', None) or 'light'
+        self.equip_threshold = gear.equip_threshold(cls, level, bool(getattr(self, 'is_unique', False)))
+        return level
+
 
 class Accessory(Item):
     def __copy__(self):
@@ -983,6 +1051,15 @@ class Accessory(Item):
         self.equip_threshold  = int(defn.get('equip_threshold', 2))
         self.quiz_tier        = int(defn.get('quiz_tier', 1))
         self.unidentified_name = defn.get('unidentified_name', defn['name'])
+        # A common ring or amulet is a KIND at an enchantment level (rings.py,
+        # data/ring_kinds.json); 0 until it is found (rings.dress).
+        self.kind: str = str(defn.get('kind', '') or '')
+        self.ench_level: int = int(defn.get('ench_level', 0) or 0)
+        # What a named ring does in its own words (its card), and the
+        # Philosopher's Ring of Mastery's daimonion: wrong answers it stops
+        # each floor (quiz_engine.daimonion_hook, Game._daimonion_stops).
+        self.special: str = str(defn.get('special', '') or '')
+        self.daimonion: int = int(defn.get('daimonion', 0) or 0)
         self.id_level: int = int(defn.get("id_level", 5 if defn.get("identified", False) else 0))
         self.container_loot_tier: str = defn.get('container_loot_tier', defn.get('containerLootTier', 'common'))
         self.floor_spawn_weight: dict = defn.get('floor_spawn_weight', defn.get('floorSpawnWeight', {}))
@@ -990,7 +1067,6 @@ class Accessory(Item):
         self.passive_regen: int          = int(defn.get('passive_regen', 0))           # Eye of Horus
         self.passive_regen_interval: int = int(defn.get('passive_regen_interval', 5))
         self.gold_multiplier: float      = float(defn.get('gold_multiplier', 0.0))     # Draupnir
-        self.surrounded_ac_bonus: int    = int(defn.get('surrounded_ac_bonus', 0))     # Torc of Boudicca
         self.pacify_chance: float        = float(defn.get('pacify_chance', 0.0))       # Seal of Solomon
         self.death_save: bool            = bool(defn.get('death_save', False))         # Jade Cicada
         self.resurrect_on_death: bool    = bool(defn.get('resurrect_on_death', False)) # Ankh of Isis
@@ -1044,6 +1120,28 @@ class Accessory(Item):
         self.equip_chain_subject: str = defn.get('equip_chain_subject', '')
         self.tier_bonuses: dict      = defn.get('tier_bonuses', {})
         self.achieved_tier: int      = 0
+        if self.kind and self.ench_level <= 0:
+            # A kind made by anything but a loot roll (a quest's gift, a
+            # starting kit, a test) is its first level; loot re-rolls it
+            # (rings.dress).
+            import rings
+            rings.relevel(self, 0)
+
+    def relevel(self, level: int) -> int:
+        """A ring or amulet kind at a new level (rings.py): tier, quiz tier,
+        threshold, name, line and a stat kind's amount follow from it."""
+        import rings
+        f = rings.level_fields(self, level)
+        if not f:
+            return int(getattr(self, 'ench_level', 0) or 0)
+        self.ench_level = f['ench_level']
+        self.tier = f['tier']
+        self.quiz_tier = f['tier']
+        self.equip_threshold = f['equip_threshold']
+        self.name = f['name']
+        self.special = f['special']
+        self.effects = f['effects']
+        return self.ench_level
 
     @property
     def cursed(self) -> bool:
@@ -1502,6 +1600,16 @@ def wear_down(item) -> bool:
     below -3). The loss is remembered as ``wear_loss`` so a smith can
     restore it (traders.py, the repair service), never above what the item
     had. True when a point was lost."""
+    import gear
+    if getattr(item, 'item_class', '') == 'armor' and not gear.is_core(item):
+        # A minor piece carries no plus: wear takes a level of its
+        # enchantment (bug bash 3.3.2); a smith gives it back.
+        lv = int(getattr(item, 'ench_level', 0) or 0)
+        if lv <= 0:
+            return False
+        set_ench_level(item, lv - 1)
+        item.wear_loss = int(getattr(item, 'wear_loss', 0) or 0) + 1
+        return True
     eb = int(getattr(item, 'enchant_bonus', 0) or 0)
     if eb <= -3:
         return False
@@ -1750,6 +1858,43 @@ def claim_unique(item) -> None:
         _UNIQUES_SEEN.add(item.id)
 
 
+# The order a pile on one tile is picked up in (Brandon, 3.3.3 play): coin,
+# then treasure, potions, scrolls and books, then what the hero knows,
+# lightest first, then what he does not, lightest first, then corpses; chests
+# are opened where they stand, never carried, so they come last of all. A
+# light, valuable thing is never left behind under a heavy one.
+PICKUP_RANKS = ('gold', 'treasure', 'potion', 'scroll', 'known', 'unknown', 'corpse', 'chest')
+
+
+def pickup_rank(item, known: bool) -> tuple:
+    """Sort key for one item in a pile: (rank, the stack's weight)."""
+    import treasure
+    if isinstance(item, GoldPile):
+        rank = 'gold'
+    elif treasure.is_treasure(item):
+        rank = 'treasure'
+    elif isinstance(item, Potion):
+        rank = 'potion'
+    elif isinstance(item, (Scroll, Spellbook)):
+        rank = 'scroll'
+    elif isinstance(item, Corpse):
+        rank = 'corpse'
+    elif isinstance(item, Container):
+        rank = 'chest'
+    else:
+        rank = 'known' if known else 'unknown'
+    weight = 0.0
+    if rank in ('known', 'unknown'):
+        weight = float(getattr(item, 'weight', 0) or 0) * max(1, int(getattr(item, 'count', 1) or 1))
+    return PICKUP_RANKS.index(rank), weight
+
+
+def in_pickup_order(pile, is_known) -> list:
+    """`pile` in the order it is picked up (stable: equals keep their order).
+    `is_known(item)` says whether the hero knows what an item is."""
+    return sorted(pile, key=lambda i: pickup_rank(i, bool(is_known(i))))
+
+
 def is_random_loot(item) -> bool:
     """True if ``item`` may be handed out by a random pool (floor drops,
     chests, merchant stock, random rewards)."""
@@ -1786,87 +1931,62 @@ def load_accessory_appearances() -> dict:
 # data/items/_collapse_cosmetic_accessories.py --check; keep in sync with it.
 LEGACY_ACCESSORY_ID_REMAP: dict[str, str] = {
     # -- cosmetic collapses --
-    'ring_warning_oak': 'ring_of_warning',
-    'ring_warning_runed_metal': 'ring_of_warning',
-    'ring_warning_ancient_copper': 'ring_of_warning',
-    'ring_warning_bone': 'ring_of_warning',
-    'ring_warning_twisted_iron': 'ring_of_warning',
-    'ring_warning_carved_jade': 'ring_of_warning',
-    'ring_warning_rough_stone': 'ring_of_warning',
-    'ring_warning_grey_granite': 'ring_of_warning',
-    'ring_searching_silver': 'ring_of_searching',
-    'ring_searching_polished_crystal': 'ring_of_searching',
-    'ring_searching_malachite': 'ring_of_searching',
-    'ring_searching_engraved_pewter': 'ring_of_searching',
-    'ring_searching_gleaming_iron': 'ring_of_searching',
-    'ring_searching_pale_ivory': 'ring_of_searching',
-    'ring_searching_mossy_stone': 'ring_of_searching',
-    'ring_telepathy_sapphire': 'ring_of_telepathy',
-    'ring_telepathy_lapis_lazuli': 'ring_of_telepathy',
-    'ring_telepathy_cobalt_blue': 'ring_of_telepathy',
-    'ring_telepathy_dark_obsidian': 'ring_of_telepathy',
-    'ring_telepathy_moonstone': 'ring_of_telepathy',
-    'ring_telepathy_twilight_crystal': 'ring_of_telepathy',
     'ring_regen_emerald': 'ring_of_regeneration',
     'ring_regen_peridot': 'ring_of_regeneration',
     'ring_regen_serpentine': 'ring_of_regeneration',
     'ring_regen_verdant_jade': 'ring_of_regeneration',
     'ring_regen_living_wood': 'ring_of_regeneration',
-    'ring_fire_res_a': 'ring_of_fire_resist',
-    'ring_fire_res_b': 'ring_of_fire_resist',
-    'ring_cold_res_a': 'ring_of_cold_resist',
-    'ring_cold_res_b': 'ring_of_cold_resist',
-    'ring_shock_res_a': 'ring_of_shock_resist',
-    'ring_shock_res_b': 'ring_of_shock_resist',
-    'ring_poison_res_a': 'ring_of_poison_resist',
-    'ring_poison_res_b': 'ring_of_poison_resist',
-    'ring_sleep_res_a': 'ring_of_sleep_resist',
-    'ring_sleep_res_b': 'ring_of_sleep_resist',
-    'amulet_warning_leather': 'amulet_of_warning',
-    'amulet_warning_copper': 'amulet_of_warning',
-    'amulet_searching_bone': 'amulet_of_searching',
-    'amulet_searching_bronze': 'amulet_of_searching',
-    'amulet_telepathy_silver': 'amulet_of_telepathy',
-    'amulet_telepathy_jade': 'amulet_of_telepathy',
-    # -- tiered stat-ring renames (+1 base / +2 greater / +3 master) --
-    'ring_strength_iron': 'ring_of_strength',
-    'ring_strength_steel': 'ring_of_greater_strength',
-    'ring_strength_adamantine': 'ring_of_master_strength',
-    'ring_strength_mithril': 'ring_of_master_strength',
-    'ring_constitution_ruby': 'ring_of_constitution',
-    'ring_constitution_coral': 'ring_of_greater_constitution',
-    'ring_constitution_carnelian': 'ring_of_greater_constitution',
-    'ring_constitution_garnet': 'ring_of_master_constitution',
-    'ring_dexterity_quicksilver': 'ring_of_dexterity',
-    'ring_dexterity_thin_wire': 'ring_of_greater_dexterity',
-    'ring_dexterity_spun_glass': 'ring_of_greater_dexterity',
-    'ring_dexterity_featherweight': 'ring_of_master_dexterity',
-    'ring_intellect_amethyst': 'ring_of_intellect',
-    'ring_intellect_purple_glass': 'ring_of_greater_intellect',
-    'ring_intellect_arcane_pewter': 'ring_of_greater_intellect',
-    'ring_intellect_prismatic': 'ring_of_master_intellect',
-    'ring_wisdom_opal': 'ring_of_wisdom',
-    'ring_wisdom_pearl': 'ring_of_greater_wisdom',
-    'ring_wisdom_ivory': 'ring_of_greater_wisdom',
-    'ring_wisdom_white_quartz': 'ring_of_master_wisdom',
-    'ring_perception_topaz': 'ring_of_perception',
-    'ring_perception_amber': 'ring_of_greater_perception',
-    'ring_perception_citrine': 'ring_of_greater_perception',
-    'ring_perception_hawks_eye': 'ring_of_master_perception',
-    # -- tiered stat-amulet renames (+2 base / +3 greater; amulets have no +1) --
-    'amulet_strength_iron_medallion': 'amulet_of_strength',
-    'amulet_strength_titan_iron_pendant': 'amulet_of_greater_strength',
+    # -- tiered stat-amulet renames (now the amulet kinds, rings.py) --
     'amulet_constitution_ruby_pendant': 'amulet_of_constitution',
     'amulet_constitution_guardian_ruby_locket': 'amulet_of_greater_constitution',
-    'amulet_dexterity_quicksilver_charm': 'amulet_of_dexterity',
-    'amulet_dexterity_air_light_locket': 'amulet_of_greater_dexterity',
     'amulet_intellect_amethyst_talisman': 'amulet_of_intellect',
     'amulet_intellect_brilliant_crystal_medallion': 'amulet_of_greater_intellect',
     'amulet_wisdom_opal_locket': 'amulet_of_wisdom',
     'amulet_wisdom_sage_ivory_locket': 'amulet_of_greater_wisdom',
-    'amulet_perception_eagle_eye_pendant': 'amulet_of_perception',
-    'amulet_perception_hawk_feather_talisman': 'amulet_of_greater_perception',
+    # (The variants of rings whose power moved to armour in bug bash 3.3.2,
+    # warning, searching, telepathy, the elements, the six stat rings, have
+    # no survivor: a saved one keeps working as the object it was.)
 }
+
+
+# The ring kinds (bug bash 3.3.2, rings.py): common rings and amulets folded
+# into a kind of the same slot. A save's ring of one of these heals to the
+# kind at the level of its old tier (Game._heal_accessory_id). Kinds whose
+# power moved to armour (Strength, Telepathy, Haste...) have no survivor and
+# keep working as the objects they were.
+_RING_KIND_REMAP = {
+    'ring_protection_iron': 'ring_of_protection',
+    'ring_protection_silver': 'ring_of_protection',
+    'ring_protection_gold': 'ring_of_protection',
+    'ring_protection_adamantine': 'ring_of_protection',
+    'ring_invisible': 'ring_of_invisibility',
+    'ring_sustenance_amber': 'ring_of_sustenance',
+    'amulet_of_greater_wisdom': 'amulet_of_wisdom',
+    'amulet_of_greater_intellect': 'amulet_of_intellect',
+    'amulet_archmage_intellect': 'amulet_of_intellect',
+    'amulet_of_greater_constitution': 'amulet_of_constitution',
+    'amulet_titan_constitution': 'amulet_of_constitution',
+}
+for _old, _new in list(LEGACY_ACCESSORY_ID_REMAP.items()):
+    LEGACY_ACCESSORY_ID_REMAP[_old] = _RING_KIND_REMAP.get(_new, _new)
+LEGACY_ACCESSORY_ID_REMAP.update(_RING_KIND_REMAP)
+
+
+def made_drop(spec: str, x: int = 0, y: int = 0):
+    """A fixed drop that is not a named item but an enchanted piece made to
+    a spec, 'armor:<template>:<material>:<enchantment>:<level>' (the
+    Bonnacon's own hide: a cloak of Elementward). None for anything else."""
+    if not str(spec or '').startswith('armor:'):
+        return None
+    try:
+        _, tpl, mat, ench, lv = str(spec).split(':')
+        piece = instantiate_armor(tpl, mat, level=int(lv), ench_id=ench, x=x, y=y)
+    except (ValueError, KeyError):
+        return None
+    if getattr(piece, 'ench_id', '') != ench:
+        return None
+    piece.identified = False
+    return piece
 
 
 def remap_legacy_accessory_id(item_id: str) -> str:
@@ -2413,8 +2533,14 @@ def _compose_common_lore(tpl, mat, name, item_noun):
 
 def instantiate_armor(template_id: str, material_id: str, *,
                      enchant: int = 0, buc: str = 'uncursed',
-                     x: int = 0, y: int = 0) -> 'Armor':
-    """Build an Armor instance from template + material."""
+                     x: int = 0, y: int = 0, level: int = 0,
+                     ench_id: str = '') -> 'Armor':
+    """Build an Armor instance from template + material + enchantment level
+    (gear.py, bug bash 3.3.2): the template gives the slot, weight class and
+    base AC (body armour only; a minor slot gives no AC), the material the
+    weight, what wear can touch it and the name, the level the tier, quiz
+    tier and (body armour) plus."""
+    import gear
     tpl = get_template('armor', template_id)
     mat = get_material('armor', material_id)
     if not tpl:
@@ -2422,8 +2548,13 @@ def instantiate_armor(template_id: str, material_id: str, *,
     if not mat:
         raise ValueError(f"Unknown armor material: {material_id}")
 
-    base_ac = int(tpl.get('base_ac_value', 1))
-    material_ac = int(mat.get('ac_bonus', mat.get('armor_ac_bonus', 0)))
+    slot = tpl.get('slot', 'body')
+    level = max(0, min(gear.MAX_LEVEL, int(level or 0)))
+    core = slot in gear.CORE_SLOTS
+    base_ac = int(tpl.get('base_ac_value', 1)) if core else 0
+    plus = (gear.plus_for_level(level) + int(enchant or 0)) if core else 0
+    plus = max(0, min(gear.core_enchant_cap(), plus))
+    tier = gear.tier_for_level(level)
     weight = max(0.1, tpl.get('base_weight_lb', 5.0) * mat.get('weight_mult', 1.0))
     name = compose_item_name(mat['name'], tpl['name'], tpl.get('noun', ''))
 
@@ -2439,35 +2570,44 @@ def instantiate_armor(template_id: str, material_id: str, *,
         'peak_floor': int(mat.get('peak_floor', 1)),
         'spread': int(mat.get('spread', 10)),
         'peak_weight': float(mat.get('peak_weight', 1.0)),
-        'slot': tpl.get('slot', 'body'),
-        'tier': material_tier(mat),
+        'slot': slot,
+        'tier': tier,
         'material': material_id,
-        'ac_bonus': base_ac + material_ac,
-        'enchant_bonus': max(0, min(enchant, int(mat.get('max_enchant', 2)))),
-        'damage_resistances': _material_resists(mat),
+        'ac_bonus': base_ac,
+        'enchant_bonus': plus,
+        'ench_level': level,
+        # Only a minor piece with a level carries one (enchantments.py).
+        'ench_id': ench_id if (ench_id and not core and level > 0) else '',
+        # The material decides wear and weight, never protection (plan 3).
+        'damage_resistances': {},
         'can_be_cursed': bool(mat.get('can_be_cursed', True)),
         'identified': False,
         'unidentified_name': compose_unidentified_name(
             mat.get('unidentified_descriptor', mat['name']), tpl['name'],
             tpl.get('noun', '')),
         'buc': buc,
-        'quiz_tier': material_tier(mat),
-        # equip_threshold = complexity, driven by armor_class_tier:
-        #   light = 1 (slip-on: cloak, leather, padded)
-        #   medium = 2 (straps + lacing: chain shirt, scale, gauntlets)
-        #   heavy = 3 (full kit + gambeson: plate, breastplate, banded)
-        # Per-template `equip_threshold` overrides the class default if set.
-        'equip_threshold': int(tpl.get('equip_threshold', 2)),
+        'quiz_tier': tier,
+        # Complexity (the template's weight class) + benefit (the tier).
+        'equip_threshold': gear.equip_threshold(gear.weight_class(tpl), level),
+        'weight_class': gear.weight_class(tpl),
     }
     a = Armor(defn)
     a.x, a.y = x, y
+    a.weight_class = defn['weight_class']
+    if defn['ench_id']:
+        # Its one power, from its own slot's stable (enchantments.py).
+        import enchantments
+        enchantments.apply_to(a, ench_id)
     return a
 
 
 def instantiate_shield(template_id: str, material_id: str, *,
                       enchant: int = 0, buc: str = 'uncursed',
-                      x: int = 0, y: int = 0) -> 'Shield':
-    """Build a Shield instance from template + material."""
+                      x: int = 0, y: int = 0, level: int = 0) -> 'Shield':
+    """Build a Shield instance from template + material + enchantment level
+    (gear.py): base AC from the template, plus and tier from the level,
+    threshold by weight class and tier."""
+    import gear
     # Shields can pull material from either pool (weapons/armor) — try both.
     tpl = get_template('shields', template_id)
     mat = get_material('armor', material_id) or get_material('weapons', material_id)
@@ -2475,8 +2615,10 @@ def instantiate_shield(template_id: str, material_id: str, *,
         raise ValueError(f"Unknown shield template: {template_id}")
     if not mat:
         raise ValueError(f"Unknown shield material: {material_id}")
+    level = max(0, min(gear.MAX_LEVEL, int(level or 0)))
     base_ac = int(tpl.get('base_ac_value', 1))
-    material_ac = int(mat.get('ac_bonus', mat.get('armor_ac_bonus', 0)))
+    plus = max(0, min(gear.core_enchant_cap(), gear.plus_for_level(level) + int(enchant or 0)))
+    tier = gear.tier_for_level(level)
     weight = max(0.1, tpl.get('base_weight_lb', 5.0) * mat.get('weight_mult', 1.0))
     name = compose_item_name(mat['name'], tpl['name'], tpl.get('noun', ''))
     defn = {
@@ -2491,19 +2633,24 @@ def instantiate_shield(template_id: str, material_id: str, *,
         'peak_floor': int(mat.get('peak_floor', 1)),
         'spread': int(mat.get('spread', 10)),
         'peak_weight': float(mat.get('peak_weight', 1.0)),
-        'tier': material_tier(mat),
+        'tier': tier,
         'material': material_id,
-        'ac_bonus': base_ac + material_ac,
-        'enchant_bonus': max(0, min(enchant, int(mat.get('max_enchant', 2)))),
+        'ac_bonus': base_ac,
+        'enchant_bonus': plus,
+        'ench_level': level,
         'identified': False,
         'unidentified_name': compose_unidentified_name(
             mat.get('unidentified_descriptor', mat['name']), tpl['name'],
             tpl.get('noun', '')),
         'buc': buc,
-        'quiz_tier': material_tier(mat),
+        'quiz_tier': tier,
+        # Shields never had a threshold of their own (every one asked 2):
+        # complexity (weight class) + benefit (tier), like armour.
+        'equip_threshold': gear.equip_threshold(gear.weight_class(tpl), level),
     }
     s = Shield(defn)
     s.x, s.y = x, y
+    s.weight_class = gear.weight_class(tpl)
     return s
 
 
@@ -2582,6 +2729,18 @@ def pick_random_weapon_for_floor(floor: int, rng) -> Weapon | None:
     return instantiate_weapon(tid, chosen_mid)
 
 
+def pick_random_gear_for_floor(floor: int, rng):
+    """A find of common gear: a weapon, an armour piece (any slot) or a
+    shield by the loot split (gear.pick_gear_class, 45 / 45 / 10)."""
+    import gear
+    cls = gear.pick_gear_class(rng)
+    if cls == 'armor':
+        return pick_random_armor_for_floor(floor, rng)
+    if cls == 'shield':
+        return pick_random_shield_for_floor(floor, rng)
+    return pick_random_weapon_for_floor(floor, rng)
+
+
 def pick_random_armor_for_floor(floor: int, rng, slot: str | None = None) -> 'Armor | None':
     """Pick a random armor template+material pair for this floor + slot.
     Filters templates to those that BOTH match the slot AND accept the
@@ -2599,40 +2758,70 @@ def pick_random_armor_for_floor(floor: int, rng, slot: str | None = None) -> 'Ar
                       if t.get('slot', 'body') == slot]
     if not slot_templates:
         return None
-    # Build set of material classes accepted by any slot-matching template
-    accepted_classes: set[str] = set()
-    for _, t in slot_templates:
-        accepted_classes.update(t.get('compatible_material_classes', []))
-
-    weighted = []
-    for mid, m in materials.items():
-        if m.get('material_class', '') not in accepted_classes and accepted_classes:
-            continue
-        w = material_spawn_weight(m, floor)
-        if w > 0:
-            weighted.append((mid, m, w))
-    if not weighted:
+    chosen = _template_then_material(slot_templates, materials, floor, rng)
+    if chosen is None:
         return None
-    total = sum(w for _, _, w in weighted)
-    r = rng.random() * total
-    cum = 0.0
-    chosen_mid, chosen_mat = weighted[0][0], weighted[0][1]
-    for mid, m, w in weighted:
-        cum += w
-        if r <= cum:
-            chosen_mid, chosen_mat = mid, m
-            break
-    # Now narrow templates to those that accept this specific material
-    chosen_class = chosen_mat.get('material_class', '')
-    compatible = [(tid, t) for tid, t in slot_templates
-                  if chosen_class in t.get('compatible_material_classes', [])]
-    if not compatible:
-        compatible = slot_templates  # safety fallback
-    tid, _ = rng.choice(compatible)
+    tid, chosen_mid = chosen
+    import gear
+    level = gear.roll_level(floor, rng)
+    ench_id = ''
+    if level > 0 and slot in gear.MINOR_SLOTS:
+        import enchantments
+        ench_id = enchantments.roll(slot, level, rng)
     try:
-        return instantiate_armor(tid, chosen_mid)
+        return instantiate_armor(tid, chosen_mid, level=level, ench_id=ench_id)
     except ValueError:
         return None
+
+
+def set_ench_level(item, level: int) -> int:
+    """Move a minor armour piece to enchantment `level` (0-10): an Enchant
+    Armour scroll, wear (rust, acid, fire) and a smith's repair go through
+    here. The piece keeps its own tier in step (Armor.relevel). Returns the
+    level set."""
+    relevel = getattr(item, 'relevel', None)
+    if callable(relevel):
+        return relevel(level)
+    return int(getattr(item, 'ench_level', 0) or 0)
+
+
+def _template_then_material(templates, materials, floor: int, rng, *,
+                            shield: bool = False):
+    """(template id, material id) for a find on `floor`. The template comes
+    first, by its weight class's depth bell (gear.py), then a material it
+    accepts by the materials' own bells. Material first, a metal on floor 3
+    could only be plate (the early-AC spike the model found). A template
+    with no material found this deep yet (a steel helm on floor 5) drops out
+    and another is chosen: six blind tries lost up to one find in six there."""
+    import gear
+    options = list(templates)
+    while options:
+        pick = gear.pick_template(options, floor, rng)
+        if pick is None:
+            return None
+        tid, t = pick
+        accepts = set(t.get('compatible_material_classes', []))
+        weighted = []
+        for mid, m in materials.items():
+            if accepts and m.get('material_class', '') not in accepts:
+                continue
+            if shield:
+                applies = m.get('applies_to')
+                if applies and 'shield' not in applies:
+                    continue
+            w = material_spawn_weight(m, floor)
+            if w > 0:
+                weighted.append((mid, w))
+        if weighted:
+            total = sum(w for _, w in weighted)
+            r, cum = rng.random() * total, 0.0
+            for mid, w in weighted:
+                cum += w
+                if r <= cum:
+                    return tid, mid
+            return tid, weighted[-1][0]
+        options = [o for o in options if o[0] != tid]
+    return None
 
 
 def pick_random_shield_for_floor(floor: int, rng) -> 'Shield | None':
@@ -2643,41 +2832,17 @@ def pick_random_shield_for_floor(floor: int, rng) -> 'Shield | None':
     templates = load_templates('shields')
     if not templates:
         return None
-    # Set of material classes accepted by any shield template
-    accepted_classes: set[str] = set()
-    for t in templates.values():
-        accepted_classes.update(t.get('compatible_material_classes', []))
-    weighted = []
-    for mid, m in materials.items():
-        if m.get('material_class', '') not in accepted_classes and accepted_classes:
-            continue
-        # A material that lists what it applies to and omits shields is
-        # armor-only (silk, chain steel, ...); it used to roll as a shield.
-        applies = m.get('applies_to')
-        if applies and 'shield' not in applies:
-            continue
-        w = material_spawn_weight(m, floor)
-        if w > 0:
-            weighted.append((mid, m, w))
-    if not weighted:
+    # A material that lists what it applies to and omits shields is
+    # armor-only (silk, chain steel, ...); it used to roll as a shield.
+    chosen = _template_then_material(list(templates.items()), materials, floor, rng,
+                                     shield=True)
+    if chosen is None:
         return None
-    total = sum(w for _, _, w in weighted)
-    r = rng.random() * total
-    cum = 0.0
-    chosen_mid, chosen_mat = weighted[0][0], weighted[0][1]
-    for mid, m, w in weighted:
-        cum += w
-        if r <= cum:
-            chosen_mid, chosen_mat = mid, m
-            break
-    chosen_class = chosen_mat.get('material_class', '')
-    compatible = [tid for tid, t in templates.items()
-                  if chosen_class in t.get('compatible_material_classes', [])]
-    if not compatible:
-        compatible = list(templates.keys())
-    tid = rng.choice(compatible)
+    tid, chosen_mid = chosen
+    import gear
+    level = gear.roll_level(floor, rng)
     try:
-        return instantiate_shield(tid, chosen_mid)
+        return instantiate_shield(tid, chosen_mid, level=level)
     except ValueError:
         return None
 

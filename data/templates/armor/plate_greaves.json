@@ -4,7 +4,7 @@
   "category": "armor",
   "armor_class_tier": "heavy",
   "slot": "legs",
-  "base_ac_value": 1,
+  "base_ac_value": 0,
   "base_weight_lb": 4.0,
   "_design_note": "F50-100 heavy legs slot. Full plate cuisse, poleyn, greave from hip to ankle. Pairs with plate/full plate body. Lighter than legacy 6 lb spec — the existing 6 lb assumed lower-quality articulation; modern entry assumes the engineered hinge that justifies a real plate suit.",
   "compatible_material_classes": [
@@ -13,6 +13,5 @@
     "magical_metal",
     "dragon_material"
   ],
-  "lore_template": "A set of {material_name} leg harness: cuisse over the thigh, poleyn at the knee, fluted greave down to the ankle. Making three plates bend with a leg without binding took armorers a century to learn, and every flute is there for a reason.",
-  "equip_threshold": 3
+  "lore_template": "A set of {material_name} leg harness: cuisse over the thigh, poleyn at the knee, fluted greave down to the ankle. Making three plates bend with a leg without binding took armorers a century to learn, and every flute is there for a reason."
 }

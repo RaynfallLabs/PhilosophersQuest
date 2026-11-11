@@ -131,10 +131,13 @@ rng)` rolls a material by `material_spawn_weight` (bell curve on
 
 ## 3. Armor
 
-File: `data/items/armor.json`. Class: `Armor`
-(`src/items.py:643`). Equip gate: **geography threshold**.
+File: `data/items/armor.json`. Class: `Armor`. Equip gate: **geography
+threshold**. Since 3.3.2 only body armour and shields give AC; a minor
+piece guards its slot's attack family and carries one enchantment. The
+whole system: [armour.md](armour.md).
 
-Canonical schema (unique example):
+Canonical schema (unique example; a common piece is composed by
+`instantiate_armor(template, material, level=, ench_id=)`):
 
 ```json
 {
@@ -143,13 +146,14 @@ Canonical schema (unique example):
     "symbol": "[", "color": [200, 180, 80],
     "weight": 16.0, "min_level": 65,
     "slot": "body",
-    "tier": 4,
+    "tier": 5,
     "material": "adamantine",
-    "ac_bonus": 7,
-    "enchant_bonus": 0,
+    "ac_bonus": 3,
+    "enchant_bonus": 5,
+    "ench_level": 10,
     "equip_threshold": 4,
-    "quiz_tier": 4,
-    "damage_resistances": {"slash": 0.35, "blunt": 0.3, "pierce": 0.25},
+    "quiz_tier": 5,
+    "damage_resistances": {"slash": 0.5, "pierce": 0.6, "blunt": 0.8},
     "can_be_cursed": false,
     "identified": false,
     "unidentified_name": "a rough amber pelt of unnatural density",
@@ -163,7 +167,10 @@ Canonical schema (unique example):
 }
 ```
 
-Required: `slot`, `ac_bonus`, `tier`, `material`.
+Required: `slot`, `ac_bonus`, `tier`, `material`. `ac_bonus` is the
+template's base AC (body armour; 0 on a minor piece), `enchant_bonus` the
+plus (the level's tier). A named minor piece carries `ench_id` and
+`ench_level` (its enchantment, applied by `enchantments.apply_named`).
 
 `slot` ∈ `['head', 'body', 'arms', 'hands', 'legs', 'feet', 'cloak',
 'shirt']` (`ARMOR_SLOTS`, `src/items.py:9`). Each slot has one item;
@@ -195,10 +202,10 @@ armor).
     "name": "Greater Aegis of Athena",
     "symbol": ")", "color": [200, 220, 255],
     "weight": 8.0, "min_level": 65,
-    "tier": 4, "material": "adamantine",
+    "tier": 5, "material": "adamantine",
     "ac_bonus": 5, "enchant_bonus": 0,
-    "equip_threshold": 3,
-    "quiz_tier": 4,
+    "equip_threshold": 5,
+    "quiz_tier": 5,
     "damage_resistances": {"fire": 0.35, "magic": 0.4, "petrifying": 1.0},
     "unidentified_name": "a polished shield of supernatural brightness",
     "floorSpawnWeight": {"81-100": 2},
@@ -209,7 +216,9 @@ armor).
 }
 ```
 
-Shields cannot be equipped alongside a two-handed weapon
+A shield's AC is its template's base (buckler 1, kite 2, tower 3) plus its
+level's plus; a chain-equip shield's tier ladder sets its full AC (as
+above). Shields cannot be equipped alongside a two-handed weapon
 (`Player.can_equip_shield`). Signature fields: `fire_reflect`
 (Svalinn), `quiz_timer_bonus` (Ancile — bonus seconds on quiz timers).
 
@@ -217,27 +226,34 @@ Shields cannot be equipped alongside a two-handed weapon
 
 ## 5. Accessory (rings + amulets + belts)
 
-File: `data/items/accessory.json`. Class: `Accessory`
-(`src/items.py:776`). Equip gate: **history threshold**.
+File: `data/items/accessory.json`. Class: `Accessory`. Equip gate:
+**history threshold**. Since 3.3.2 the common rings and amulets are ten
+**kinds** (`data/ring_kinds.json`, `src/rings.py`), each found at a level;
+no ring or amulet gives AC. The whole system: [armour.md](armour.md).
 
 ```json
 {
-  "ring_magic_res_a": {
-    "name": "ring of magic resist",
-    "symbol": "=", "color": [160, 140, 200],
-    "weight": 0.1, "min_level": 25,
+  "ring_of_protection": {
+    "name": "ring of protection",
+    "symbol": "=", "color": [200, 200, 200],
+    "weight": 0.1, "min_level": 1,
     "slot": "ring",
-    "equip_threshold": 3,
-    "quiz_tier": 3,
-    "effects": {"status": "magic_resist", "duration": -1},
-    "unidentified_name": "warded pewter ring",
+    "kind": "protection",
+    "equip_threshold": 1,
+    "quiz_tier": 1,
+    "effects": {},
+    "unidentified_name": "a ring",
     "lore": "...",
-    "floorSpawnWeight": {"21-40": 80, "41-60": 80, "61-80": 80, "81-100": 80},
-    "peak_weight": 0.4,
-    "peak_floor": 30, "spread": 13
+    "floorSpawnWeight": {"1-100": 12},
+    "peak_floor": 0, "peak_weight": 0.0
   }
 }
 ```
+
+A `kind` entry is its level-1 figures; a found one is levelled by
+`rings.dress` (`dungeon.dress_spawn`) and `Accessory.relevel` writes its
+name ("Ring of Greater Protection II"), tier, threshold and a stat kind's
+amount.
 
 `slot` ∈ `{ring, amulet, belt, none}`. `none` = carry-only (equip
 blocked; the item is intended to live in the pack and grant a
@@ -260,7 +276,8 @@ lent, and every penalty is; two Rings of Strength +2 give +2, not +4.
 `Player.sync_worn_stats` applies the difference between that and
 `_worn_stat_ledger` (what is applied now) whenever an accessory goes on,
 comes off or is enchanted; old saves are migrated once in
-`Player.__setstate__`. Protection rings (`stat: "AC"`) still add up. Four
+`Player.__setstate__`. No ring or amulet gives AC (3.3.2); two rings of one
+guard kind (Protection, Spell Turning) do not add either. Four
 stacked stat rings had lent +10 of one stat by floor 8 and +19 by floor 60.
 The rule covers each accessory's `effects`. A chain-equip legend's earned
 tier bonuses (`tier_bonuses` → `stat_bonus_*`, applied by `chain_equip`) are
@@ -271,7 +288,8 @@ about +17 INT). Charge-based accessories
 in the power menu with their remaining `charges`/`max_charges`.
 
 Cosmetic variants of a ring/amulet collapse to one canonical id (see
-`LEGACY_ACCESSORY_ID_REMAP`, `src/items.py:1246`); the per-run
+`LEGACY_ACCESSORY_ID_REMAP`; since 3.3.2 also the rings folded into a
+kind, healed at their old tier by `Game._heal_accessory_id`); the per-run
 appearance is dealt once from `data/items/accessory_appearances.json`.
 
 #### Ring / Amulet subtypes
@@ -577,23 +595,20 @@ Any new keepsake item can opt in by adding the field to its JSON entry.
 
 ## 11. Enchant + BUC
 
-**Enchant.** Integer `enchant_bonus` on weapons/armor/shields;
-rendered as `+N` on the identified name. Per-slot caps (`ENCHANT_CAP`,
-`src/items.py:186`):
-
-```
-head 2, body 3, arms 1, hands 1, legs 1, feet 1, cloak 2, shirt 1
-shield 2, weapon 5
-```
-
-`effective_enchant_cap(player, slot)` (`src/items.py:195`) adds
-Panoply of Hephaestus `divine_smithing` to the weapon cap. Random spawn
-enchant for armor/shield is capped at +1 (`SPAWN_ENCHANT_CAP_ARMOR`);
-scrolls can push to the per-slot cap.
+**Enchant.** Integer `enchant_bonus` on weapons, body armour and
+shields; rendered as `+N` on the identified name. Per-slot caps
+(`ENCHANT_CAP`): body 5, shield 5, weapon 5; a minor armour piece has no
+plus (0) and an Enchant Armour scroll raises its enchantment LEVEL
+instead. Body armour and shields take their plus from the level they were
+found at (its tier, `gear.plus_for_level`), never from a separate spawn
+roll ([armour.md](armour.md)). `effective_enchant_cap(player, slot)` adds
+Panoply of Hephaestus `divine_smithing` to the weapon cap.
 
 **BUC.** Three-value `buc` field: `blessed` / `uncursed` / `cursed`.
 - Cursed weapons/armor welded on (`try_unequip_slot`).
-- Cursed status applies penalties through `Player.get_ac` (±1 per piece).
+- Blessed / cursed body armour and shields: ±1 AC each (`Player.get_ac`);
+  a blessed minor piece, ring or amulet works a level higher, a cursed one
+  a level lower (`enchantments.effective_level`).
 - Blessed wands get +1 charge at spawn; cursed −1.
 - `buc_known` is a per-instance flag (an altar, a curse felt when
   worn). A copy's blessing is also known once the copy is identified or

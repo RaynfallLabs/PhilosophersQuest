@@ -67,10 +67,10 @@ LEARNABLE_SPELLS: dict[str, dict] = {
     # COLD FAMILY -- 4 tiers
     # ==================================================================
     'frost_touch_spell': {
-        'name': 'Frost Touch', 'effect': 'frost_touch', 'power': '1d6',
+        'name': 'Frost Touch', 'effect': 'frost_touch', 'power': '1d6+3',
         'mp_cost': 3, 'tier': 1, 'quiz_tier': 1, 'needs_target': True,
         'spell_family': 'cold',
-        'desc': 'A chilling touch -- 1d6 cold damage, 50% chance to slow.',
+        'desc': 'Lay a freezing hand on a foe beside you -- 1d6+3 cold damage, 50% chance to slow.',
     },
     'cold_bolt_spell': {
         'name': 'Cold Bolt', 'effect': 'frost_touch', 'power': '3d6',
@@ -503,16 +503,16 @@ LEARNABLE_SPELLS: dict[str, dict] = {
     # DRAIN LIFE FAMILY -- 2 tiers
     # ==================================================================
     'drain_life_spell': {
-        'name': 'Drain Life', 'effect': 'drain_life_spell', 'power': '3d6',
+        'name': 'Drain Life', 'effect': 'drain_life_spell', 'power': '5d6+2',
         'mp_cost': 6, 'tier': 2, 'quiz_tier': 2, 'needs_target': True,
         'spell_family': 'drain_life',
-        'desc': 'Steal 3d6 life -- damage target, heal yourself for the same.',
+        'desc': 'Lay hands on a foe beside you and steal 5d6+2 life -- it is hurt, you heal the same.',
     },
     'soul_drain_spell': {
-        'name': 'Soul Drain', 'effect': 'drain_life_spell', 'power': '7d8',
+        'name': 'Soul Drain', 'effect': 'drain_life_spell', 'power': '9d8+3',
         'mp_cost': 15, 'tier': 4, 'quiz_tier': 4, 'needs_target': True,
         'spell_family': 'drain_life',
-        'desc': 'Rip 7d8 life from a creature and channel it into your own body.',
+        'desc': 'Hold a creature beside you and rip 9d8+3 life from it into your own body.',
     },
 
     # ==================================================================
@@ -624,16 +624,16 @@ LEARNABLE_SPELLS: dict[str, dict] = {
     # existing T1 effect, kept for theming.
     # ==================================================================
     'sign_aard': {
-        'name': 'Aard', 'effect': 'aard_blast', 'power': '1d4',
+        'name': 'Aard', 'effect': 'aard_blast', 'power': '1d4+2',
         'mp_cost': 4, 'tier': 1, 'quiz_tier': 1, 'needs_target': True,
         'spell_family': 'signature_witcher',
-        'desc': 'Telekinetic blast -- damages and stuns a target.',
+        'desc': 'Telekinetic blast at close range -- 1d4+2 damage and a stun.',
     },
     'sign_igni': {
-        'name': 'Igni', 'effect': 'fire_bolt', 'power': '1d4',
+        'name': 'Igni', 'effect': 'fire_bolt', 'power': '1d4+2',
         'mp_cost': 4, 'tier': 1, 'quiz_tier': 1, 'needs_target': True,
         'spell_family': 'signature_witcher',
-        'desc': 'Directed blast of fire. Burns on contact.',
+        'desc': 'A short gout of fire at close range -- 1d4+2 fire damage.',
     },
     'sign_quen': {
         'name': 'Quen', 'effect': 'shield_self', 'power': '',
@@ -642,16 +642,16 @@ LEARNABLE_SPELLS: dict[str, dict] = {
         'desc': 'Protective shield absorbs damage for 12 turns.',
     },
     'sign_yrden': {
-        'name': 'Yrden', 'effect': 'slow_monster', 'power': '',
+        'name': 'Yrden', 'effect': 'slow_monster', 'power': '', 'duration': 14,
         'mp_cost': 2, 'tier': 1, 'quiz_tier': 1, 'needs_target': True,
         'spell_family': 'signature_witcher',
-        'desc': 'Magic trap -- slows a target for 8 turns.',
+        'desc': 'Magic trap set close by -- slows a target for 14 turns.',
     },
     'sign_axii': {
-        'name': 'Axii', 'effect': 'confuse_monster', 'power': '',
+        'name': 'Axii', 'effect': 'confuse_monster', 'power': '', 'duration': 16,
         'mp_cost': 4, 'tier': 1, 'quiz_tier': 1, 'needs_target': True,
         'spell_family': 'signature_witcher',
-        'desc': 'Charms the mind -- confuses a target for 10 turns.',
+        'desc': 'Charms a mind at close range -- confuses a target for 16 turns.',
     },
 
     # Elder Blood signatures -- Ciri build only.
@@ -675,3 +675,60 @@ LEARNABLE_SPELLS: dict[str, dict] = {
         'desc': 'Unleash the Elder Blood -- cold damage to all visible enemies.',
     },
 }
+
+
+# ---------------------------------------------------------------------------
+# Reach: how far an aimed spell goes (Brandon, 2026-11-07, bug bash 3.3.2).
+# "Frost Touch is obviously supposed to be TOUCH, but it has range."
+#
+#   REACH_TOUCH (1): the hand must reach the foe (any tile of a big one). The
+#       risk is standing beside it, so a touch spell hits harder: up to 1.1
+#       of a weapon attack (tests/test_magic_role.py), the allowance the
+#       undead-only spells have.
+#   REACH_SHORT (3): Geralt's signs (close-range in their lore, and stronger
+#       for it), a spark from the fingertips, a splash of acid, the lance of
+#       Smite.
+#   None: as far as the hero can see, in a clear line (bolts, missiles,
+#       arrows, beams, and the aimed status spells).
+#
+# Measured in king moves (geom.chebyshev_distance) and enforced where the
+# aim is taken: the target list, the cursor, and the confirm
+# (_invoke_spell, _target_input, _confirm_power_target). The effect handlers
+# do not check it (a scroll or a test may hand them any target).
+# ---------------------------------------------------------------------------
+REACH_TOUCH = 1
+REACH_SHORT = 3
+
+SPELL_REACH: dict[str, int] = {
+    'frost_touch_spell': REACH_TOUCH,
+    'drain_life_spell':  REACH_TOUCH,
+    'soul_drain_spell':  REACH_TOUCH,
+    'sign_aard':         REACH_SHORT,
+    'sign_igni':         REACH_SHORT,
+    'sign_yrden':        REACH_SHORT,
+    'sign_axii':         REACH_SHORT,
+    'spark_spell':       REACH_SHORT,
+    'acid_dart_spell':   REACH_SHORT,
+    'smite_spell':       REACH_SHORT,
+}
+
+for _sid, _spell in LEARNABLE_SPELLS.items():
+    if _spell.get('needs_target'):
+        _spell['reach'] = SPELL_REACH.get(_sid)
+
+
+def spell_reach(spell) -> int | None:
+    """Tiles an aimed spell reaches (None: as far as the hero can see)."""
+    if not spell:
+        return None
+    r = spell.get('reach') if isinstance(spell, dict) else None
+    return int(r) if r else None
+
+
+def reach_words(reach: int | None) -> str:
+    """'touch', '3 tiles' or 'sight', for the spell menu and messages."""
+    if not reach:
+        return 'sight'
+    if reach <= REACH_TOUCH:
+        return 'touch'
+    return f'{reach} tiles'

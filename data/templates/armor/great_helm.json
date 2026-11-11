@@ -4,7 +4,7 @@
   "category": "armor",
   "armor_class_tier": "heavy",
   "slot": "head",
-  "base_ac_value": 2,
+  "base_ac_value": 0,
   "base_weight_lb": 5.0,
   "_design_note": "F40-80 heavy head slot. Full-face enclosure trades vision for pierce resist. Heavier than plate_helm but no extra base AC — the tradeoff is the resist line, not the number.",
   "compatible_material_classes": [
@@ -12,6 +12,5 @@
     "rare_metal",
     "magical_metal"
   ],
-  "lore_template": "A {material_name} great helm, a flat-topped barrel that encloses the whole head and leaves only a slit for the eyes and a few holes for breath. Nothing gets in. Very little can be seen or heard from inside, either.",
-  "equip_threshold": 3
+  "lore_template": "A {material_name} great helm, a flat-topped barrel that encloses the whole head and leaves only a slit for the eyes and a few holes for breath. Nothing gets in. Very little can be seen or heard from inside, either."
 }

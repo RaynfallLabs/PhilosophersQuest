@@ -69,10 +69,12 @@ def sleepers_in(monsters, room) -> list:
 
 
 def _wears(player, item_id: str = '', flag: str = '') -> bool:
-    for it in getattr(player, 'equipped_accessories', None) or ():
-        if (item_id and getattr(it, 'id', '') == item_id) or (flag and getattr(it, flag, False)):
-            return True
-    return False
+    if item_id and any(getattr(it, 'id', '') == item_id
+                       for it in getattr(player, 'equipped_accessories', None) or ()):
+        return True
+    # Any worn piece, Boots of Elvenkind included (gear.wears_flag).
+    import gear
+    return bool(flag) and gear.wears_flag(player, flag)
 
 
 def factor(player, kind: str) -> float:

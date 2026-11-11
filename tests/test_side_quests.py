@@ -171,7 +171,9 @@ def test_new_mini_bosses_join_the_band_roll_with_real_drops():
         m = MONSTERS[mid]
         assert m['is_mini_boss'] and m['peak_weight'] == 0
         assert 0 < m['spawn_chance'] <= 1
-        assert m['treasure']['unique_drop_id'] in items
+        from items import made_drop      # or an enchanted piece made to a spec
+        did = m['treasure']['unique_drop_id']
+        assert did in items or made_drop(did) is not None
         assert 'legendary' not in m['tags']
     from monster import Monster
     for mid in ('bonnacon', 'calydonian_boar'):

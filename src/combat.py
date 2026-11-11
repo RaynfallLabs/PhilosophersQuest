@@ -892,6 +892,36 @@ def _damage_multiplier(damage_types: list[str], monster) -> float:
 RESISTED = 0.5        # a blow of a kind the creature shrugs off
 WEAK_TO = 1.5         # a blow of a kind, or a metal, it cannot bear
 
+import affinity as _affinity  # noqa: E402
+
+
+def affinity_word(weapon, monster, kind: str, blessed: bool = False) -> str:
+    """What met the creature's weakness (the metal or the blessing first,
+    else the weapon's form that it cannot bear) or its resistance (the
+    weapon's form): the word the affinity line names. `blessed`: the blow
+    counts as blessed though the weapon is not (Lay the Ghost lends it),
+    so holy is what met a ghost's weakness, not "a cutting blow"."""
+    _load_material_tags()
+    weak = set(getattr(monster, 'weaknesses', None) or ())
+    tags = set(getattr(monster, 'tags', None) or ())
+    forms = list(blow_forms_of(weapon))
+    if kind == _affinity.WEAK:
+        if weapon is not None:
+            mat = str(getattr(weapon, 'material', '') or '').lower()
+            holy = blessed or getattr(weapon, 'buc', '') == 'blessed'
+            subs = [mat] + (['holy'] if holy else [])
+            for sub in subs:
+                eff = _MATERIAL_EFFECTIVE_AGAINST.get(sub)
+                if sub and (sub in weak or (eff and eff & tags)
+                            or (sub == 'silver' and tags & {'undead', 'demon'})
+                            or (sub == 'iron' and 'fey' in tags)):
+                    return sub
+        for f in forms:
+            eff = _MATERIAL_EFFECTIVE_AGAINST.get(f)
+            if f in weak or (eff and eff & tags):
+                return f
+    return forms[0] if forms else 'physical'
+
 
 def blow_forms_of(weapon) -> tuple:
     """The ways this weapon wounds (slash, pierce, blunt...), a fist's when
@@ -1491,11 +1521,26 @@ def strike_damage(player, monster, chain: int, *, ranged: bool = False, ammo=Non
         dtype_mult /= _form_mult             # the resistance alone is undone
         _form_mult = 1.0
 
+    # The blow met a weakness or a resistance (its form and substance, after
+    # every bypass): the game says so at the end of the action (affinity.py).
+    # Noted below, after the family techniques: a technique that has just
+    # said the weakness (Bonebreaker) is not followed by "super effective".
+    _aff_kind = _affinity.kind_of(_form_mult * _subst_mult) if consume else ''
+    _aff_word = (affinity_word(weapon, monster, _aff_kind, blessed=_edge_pr['blessed'])
+                 if _aff_kind else '')
+
     # round (not int-truncate): chain damage gradient must survive at
     # low base values. With int(), iron sword base=1 gave 1,1,1,1,2
     # across chain levels — invisible progression. round() preserves
     # the half-step damage differences that the chain ladder is designed
     # to deliver.
+    # Gloves of Striking (your blows) and Bracers of Archery (your shots):
+    # the minor-slot might lane (enchantments.py, bug bash 3.3.2).
+    try:
+        import enchantments as _ench
+        mult *= 1.0 + _ench.might(player, 'archery' if is_ranged else 'striking')
+    except ImportError:
+        pass
     damage = max(1, round((base + enchant + ammo_bonus + buc_bonus) * mult * dtype_mult * str_factor * low_hp_mult))
 
     # Empower spell: 3x damage on next hit, then clears
@@ -1562,6 +1607,9 @@ def strike_damage(player, monster, chain: int, *, ranged: bool = False, ammo=Non
     damage_ward = float(getattr(monster, 'damage_ward', 0.0) or 0.0)
     _notes['_ward_blocked'] = False
     _notes['_belly_strike'] = False
+    # The scales were there and the blow went past them (blade flow, a chain
+    # bypass, the Missing Scale): no "your blow skates off its scales".
+    _notes['_scales_skipped'] = False
     if damage_ward > 0 and not _skip_dr:
         damage = max(1, int(damage * (1.0 - damage_ward)))
         _notes['_ward_blocked'] = True
@@ -1572,6 +1620,8 @@ def strike_damage(player, monster, chain: int, *, ranged: bool = False, ammo=Non
             _notes['struck_from_the_pit'] = True     # remembered: boons.solved_quest
         elif not _skip_dr:
             damage = max(1, int(damage * (1.0 - dragon_scales)))
+        else:
+            _notes['_scales_skipped'] = True
     if consume:
         for _k, _v in _notes.items():
             setattr(player, _k, _v)
@@ -1687,11 +1737,21 @@ def strike_damage(player, monster, chain: int, *, ranged: bool = False, ammo=Non
     # on a creature he can see only: never spells or pets. Beside the
     # Dragonslayer Ring, so the Strike Now preview shows it.
     if _fedges is not None:
+        _weak_word = (_aff_word if _aff_kind == _affinity.WEAK else
+                      affinity_word(weapon, monster, _affinity.WEAK, blessed=_edge_pr['blessed'])
+                      if (_hits_weak and consume) else None)
         _fe = (_fedges.damage_mult(player, monster, chain, weapon, ranged=is_ranged, consume=consume)
-               * _fedges.weakness_amp(player, monster, _hits_weak, consume=consume)
+               * _fedges.weakness_amp(player, monster, _hits_weak, consume=consume, word=_weak_word)
                * _fedges.execute_named_mult(player, monster, chain, consume=consume))
         if _fe != 1.0:
             damage = max(1, int(round(damage * _fe)))
+    # The weakness or resistance this blow met (computed above), unless a
+    # family technique has just said the weakness itself: Bonebreaker and
+    # "It's super effective!" on the same blow said one thing twice.
+    _said = monster.__dict__.pop('_edge_weak_said', False) if consume else False
+    if _aff_kind:
+        if not (_aff_kind == _affinity.WEAK and _said):
+            _affinity.note(monster, _aff_kind, _aff_word)
 
     # Bracers of Arjuna (gita_focus): first ranged attack per floor gets a
     # flat +50% damage. Chain combat v2 (v2.14.0): was "crits" via
@@ -1841,8 +1901,11 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None,
             _mons = getattr(player, '_combat_monsters_ref', None) or ()
             _fe_out = _fedges.after_blow(player, monster, chain, actual, monsters=_mons,
                                          visible=_vis)
-            if _fe_out.get('surrendered') and _gref is not None and hasattr(_gref, '_family_surrender'):
-                _gref._family_surrender(monster)
+            if _fe_out.get('surrendered'):
+                # The purse is thrown down after the blow is told
+                # (Game._family_yield, from the attack's on_complete): it
+                # was said before "Chain x8! You strike ...".
+                monster.__dict__['_yield_pending'] = True
             if monster.is_dead():
                 _fedges.after_kill(player, monster, monsters=_mons, visible=_vis)
 
@@ -1952,7 +2015,8 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None,
             _wfx_status = _wfx.get('status')
             _wfx_chance = float(_wfx.get('effect_chance', 0.0) or 0.0)
             _wfx_dur = int(_wfx.get('effect_duration', 3) or 3)
-            if _wfx_status and _wfx_chance > 0 and random.random() < _wfx_chance:
+            if (_wfx_status and _wfx_chance > 0 and random.random() < _wfx_chance
+                    and not (_wfx_status == 'bleeding' and not getattr(monster, 'can_bleed', lambda: True)())):
                 _wfx_current = monster.status_effects.get(_wfx_status, 0)
                 monster.status_effects[_wfx_status] = max(_wfx_current, _wfx_dur)
 
@@ -2432,6 +2496,11 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None,
         quiz_engine._forgive_flag = _fedges_q.chain_forgive_ready(player, monster)
     except ImportError:
         pass
+    # Its line ("Steady Hand: its size does not rush you") is about this
+    # clock: said now, as the quiz opens, not after the blow it gave time to.
+    _gq = getattr(player, '_combat_game_ref', None)
+    if _edge_secs and _gq is not None and hasattr(_gq, '_family_drain'):
+        _gq._family_drain()
     quiz_engine.start_quiz(
         mode='chain',
         subject='math',

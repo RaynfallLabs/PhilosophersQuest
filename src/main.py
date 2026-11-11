@@ -87,6 +87,7 @@ from game_traders import TraderMixin
 from game_purse import PurseMixin
 from game_families import FamilyMixin
 from game_seeker import SeekerMixin
+from game_popups import PopupMixin
 from escort_system import EscortMixin
 from spells import LEARNABLE_SPELLS
 
@@ -159,6 +160,27 @@ def _stored_floors(lm):
     return out
 
 
+def _world_turn(fn):
+    """The world's turn (Game._advance_turn) is not what a Kit or character
+    sheet action said: the "Result" box (item_actions) captured every message
+    until the hero was back on the screen, so a rat's bite or a hunger pang
+    in the turn the action spent pushed the action's own line out. Capture
+    pauses for the turn and goes on after it while the action is still
+    under way (Take & Equip: the pickup's turn, then the equip quiz)."""
+    import functools
+
+    @functools.wraps(fn)
+    def turn(self, *a, **k):
+        was = bool(getattr(self, '_item_feedback_on', False))
+        self._item_feedback_on = False
+        try:
+            return fn(self, *a, **k)
+        finally:
+            if was and getattr(self, '_item_screen_return', None):
+                self._item_feedback_on = True
+    return turn
+
+
 def _all_items_in_save(player, state: dict) -> list:
     """Every item a save holds, once each: the hero's worn slots (belt
     included), the pack, the floor underfoot, every stored floor, and the
@@ -196,7 +218,7 @@ DEEP_SLEEP = 10 ** 6           # a zoo, graveyard or barracks sleeper: until wok
 
 class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMixin, EncountersMixin,
            EmberpupMixin, BlackKnightMixin, ItemActionsMixin, RoadMixin, EscortMixin,
-           SetneMixin, TraderMixin, PurseMixin, FamilyMixin, SeekerMixin):
+           SetneMixin, TraderMixin, PurseMixin, FamilyMixin, SeekerMixin, PopupMixin):
     # FANTASY: Grimoire font set -- larger for readability. Read through the
     # UI scale on every use (SCALE_PLAN.md): a window resize can never leave
     # a font of the old size behind.
@@ -387,6 +409,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.quiz_engine.on_complete = self._on_quiz_complete
         # A teaching card read (the Seeker's Curious Mind, game_seeker.py).
         self.quiz_engine.on_card = lambda subject: self._seeker_event('card_opened', subject=subject)
+        # A craft enchantment (gloves of the Locksmith...): every Nth quiz on
+        # its subject forgives the first wrong answer (enchantments.py).
+        self.quiz_engine.craft_hook = self._craft_forgives
+        self.quiz_engine.daimonion_hook = self._daimonion_stops
         self.quirk_system = QuirkSystem(self)
         self._slow_skip         = False    # toggled each turn when slowed
         # Key-held movement (arrow key auto-repeat)
@@ -616,6 +642,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
 
     def _new_level(self, level: int):
         """Initial game setup only -- creates fresh player."""
+        # A weakness or resistance noted in another run is not this one's
+        # (affinity.py keeps one queue for the process).
+        import affinity as _affinity
+        _affinity.drain()
         self.dungeon_level           = level
         dungeon, monsters, items     = self.level_mgr.generate(level)
         self.dungeon                 = dungeon
@@ -749,6 +779,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
 
     def load_state(self, state: dict):
         """Restore all game state from a previously saved dict (pickle)."""
+        import affinity as _affinity
+        _affinity.drain()                      # nothing noted before the load is said after it
         self.player        = state['player']
         self.player._combat_game_ref = self     # dropped on save (Player.__getstate__)
         # One-cosmetic-per-item: re-attach the appearance-stamp hook (dropped on
@@ -990,6 +1022,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # Armor" -> "Hide Armor") and template rebalances (hide AC 1 -> 2)
         # instead of showing the stale value baked in at instantiation.
         self._migrate_recompose_composite_items(state)
+        # ...and the armour ladder (bug bash 3.3.2): enchanted pieces keep
+        # their names, named pieces and rings take today's data, worn
+        # statuses and stats re-sync (gear_saves.py).
+        import gear_saves
+        gear_saves.migrate(self.player, _all_items_in_save(self.player, state))
         # Quirk system
         if state.get('quirk_system') is not None:
             self.quirk_system = state['quirk_system']
@@ -1407,6 +1444,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # the player's per-instance progress (buc, buc_known, id_level, count,
         # enchant, charges). Position is irrelevant here (handled by caller).
         fresh = Accessory({**defn, 'id': new_id, 'item_class': 'accessory'})
+        if getattr(fresh, 'kind', ''):
+            # A ring folded into a kind (rings.py) keeps the strength it had:
+            # the kind at the level of its old tier.
+            import gear
+            import rings
+            rings.relevel(fresh, gear.level_for_tier(int(getattr(item, 'quiz_tier', 1) or 1)))
         # Preserve the player's per-instance progress. NOTE: `identified` is a
         # property backed by id_level (setting it rewrites id_level), so we
         # restore id_level only — never `identified` — to avoid clobbering it.
@@ -1515,10 +1558,26 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 item.unidentified_name = compose_unidentified_name(
                     mat.get('unidentified_descriptor', mat['name']),
                     tpl['name'], noun)
-            if cat == 'armor':
-                raw = mat.get('ac_bonus', mat.get('armor_ac_bonus', 0))
-                item.ac_bonus = int(tpl.get('base_ac_value', 1)) + (
-                    int(raw) if raw is not None else 0)
+            if cat in ('armor', 'shields'):
+                # Bug bash 3.3.2 (gear.py): AC from the template alone, on body
+                # armour and shields; a minor piece gives none. A minor
+                # piece's old plus becomes its enchantment level (two levels
+                # a point, so nothing is lost), and the tier and threshold
+                # follow the level, as for any new piece.
+                import gear as _gear
+                item.weight_class = _gear.weight_class(tpl)
+                core = cat == 'shields' or tpl.get('slot', 'body') in _gear.CORE_SLOTS
+                item.ac_bonus = int(tpl.get('base_ac_value', 1)) if core else 0
+                if not hasattr(item, 'ench_level'):
+                    item.ench_level = 0
+                if not core:
+                    old_plus = int(getattr(item, 'enchant_bonus', 0) or 0)
+                    if old_plus > 0 and not item.ench_level:
+                        item.ench_level = min(_gear.MAX_LEVEL, 2 * old_plus)
+                    item.enchant_bonus = 0
+                item.relevel(int(item.ench_level or 0))
+                if hasattr(item, 'damage_resistances'):
+                    item.damage_resistances = {}
 
         def walk(item):
             recompose(item)
@@ -1643,6 +1702,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         warp or the psychopomp step), 'potion' (gain level), 'trapdoor' or
         'cow' (into or out of the Cow Level). Only a stair carries an escort;
         only a stair descent counts down its floors (escort_system.py)."""
+        # A hit noted on the floor being left is not said on the next one.
+        import affinity as _affinity
+        _affinity.drain()
         # Death comes for the Stone the moment it leaves floor 100, by any
         # route: the stair, a potion of gain level, the Elixir, Hermes'
         # psychopomp step. Only the stair used to set him loose, so a potion
@@ -1726,6 +1788,17 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # One-cosmetic-per-item: stamp this run's appearance on freshly-spawned
         # (and any unstamped) floor accessories. Idempotent for loaded floors.
         self._stamp_ground_appearances()
+        # The arrival is said first, then what the new floor brings (the
+        # dungeon's lesson, trophies, procs, omens, the family lines). It was
+        # said after a dozen of them: "Wisdom +1... POWER UNLOCKED... You
+        # descend to level 3." (3.3.3 play, the lore audit).
+        from boss_levels import COW_LEVEL as _COW_LEVEL
+        if new_level == _COW_LEVEL:
+            pass        # the opening floor is the announcement, never "level 999"
+        elif enter_from_top:
+            self.add_message(f"You descend to level {new_level}.", 'info')
+        else:
+            self.add_message(f"You ascend to level {new_level}.", 'info')
         # Track deepest floor reached for the cooking softcap (rises with descent)
         # The Cow Level (999) is a side trip, not depth: counting it lifted
         # both cooking softcaps to their floor-100 values and stopped the
@@ -1870,6 +1943,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # huginn_muninn, demon_command, etc.) reset on every floor change.
         from chain_passives import reset_per_floor_charges
         reset_per_floor_charges(self.player)
+        self.player._daimonion_used = 0     # the Ring of Mastery's voice, a floor
         # Harvest+Cook redesign 2026-05-31: per-floor cooking caps reset
         # (+1 stat / +5 HP per floor; trophies bypass).
         # Only on a floor reached for the first time: one step down and back
@@ -2199,13 +2273,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         _snd.play('level_change')
         # No longer crouched in the last floor's pit.
         self.player.status_effects.pop('in_pit', None)
-        # (the hero was set on the stair above, before the arrival passives)
-        if new_level == _COW_LEVEL:
-            pass        # the opening floor is the announcement, never "level 999"
-        elif enter_from_top:
-            self.add_message(f"You descend to level {new_level}.", 'info')
-        else:
-            self.add_message(f"You ascend to level {new_level}.", 'info')
+        # (the hero was set on the stair above, before the arrival passives;
+        # the arrival itself was said there too)
 
         # Pelops Sword: cursed_lineage descent event. 5% chance per
         # DESCENT (enter_from_top=True only — ascending doesn't trigger
@@ -2556,7 +2625,13 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             try:
                 from items import instantiate_armor
                 if isinstance(start_armor, tuple):
-                    arm = instantiate_armor(start_armor[0], start_armor[1])
+                    # (template, material[, enchantment]): an enchanted
+                    # piece starts at level 1 (enchantments.py).
+                    if len(start_armor) > 2:
+                        arm = instantiate_armor(start_armor[0], start_armor[1],
+                                                level=1, ench_id=start_armor[2])
+                    else:
+                        arm = instantiate_armor(start_armor[0], start_armor[1])
                 else:
                     armors = load_items('armor')
                     arm = next((a for a in armors if a.id == start_armor), None)
@@ -2719,11 +2794,14 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
 
     def _say_springs(self):
         """Print the reveal line of every lurker a blow has just sprung
-        (Monster.spring), when the hero can see where it lies."""
+        (Monster.spring), when the hero can see where it lies. Never for one
+        the blow killed: "A Piercer springs from hiding!" came after "The
+        Piercer is slain!" (the kill line names it)."""
         for m in getattr(self, 'monsters', None) or ():
             note = m.__dict__.pop('_spring_note', None)
             if note and (m.x, m.y) in (getattr(self, 'visible', None) or ()):
-                self.add_message(note, 'danger')
+                if getattr(m, 'alive', False):
+                    self.add_message(note, 'danger')
                 # A Hellmouth (false_stairs.py) shows it was never a stair.
                 d = getattr(m, 'disguise', None)
                 if isinstance(d, dict) and d.get('tile') == 'stairs_down':
@@ -3515,7 +3593,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                                "something small from hand to hand.")
             if _quest_line:
                 self.add_message(_quest_line, 'info')
-            self.add_message("A sacred altar stands here. Press '\\' to pray with divine bonus.", 'info')
+            self.add_message("A sacred altar stands here. Press '\\' to make an offering or pray.", 'info')
         elif tile == FOUNTAIN:
             if (x, y) == getattr(self.dungeon, 'ariadne_fountain_pos', None) \
                     and getattr(self.dungeon, 'ariadne_shrine_door', None):
@@ -3611,6 +3689,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         _altar = next((i for i in here if isinstance(i, MysteryAltar)), None)
         _trader = next((i for i in here if isinstance(i, MerchantNPC)), None)
         here = [i for i in here if not isinstance(i, (MysteryAltar, MerchantNPC))]
+        # Named in the order a pickup takes them: the first named is the next
+        # one picked up (items.in_pickup_order).
+        from items import in_pickup_order
+        here = in_pickup_order(here, self._item_is_known)
         if _trader is not None:
             self.add_message(
                 "A trader has spread wares on a blanket here. (Y to trade)", 'info')
@@ -4392,12 +4474,25 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.player._combat_game_ref = self      # so a death check anywhere can reach the wards
         self._say_springs()                # lurkers the action's blows gave away
         self._reap_unnoticed_kills()
+        self._say_veil_slip()              # a wand, a spell or a throw slipped the ring's veil
+        # A foe a blow made yield that no attack's on_complete has told yet.
+        for _m in list(self.monsters or ()):
+            if _m.__dict__.get('_yield_pending'):
+                self._family_yield(_m)
         # Creatures struck the wrong way split (src/splitting.py): the new
         # bodies are set down here, whatever dealt the blow.
         splitting.spawn_pending(self)
         self._family_drain()               # the hero's family techniques his action used
         self._black_knight_tick()          # what the action did to him: one limb at most
         self.turn_count += 1
+        # A hit that met a weakness or a resistance this action: one line for
+        # each, Pokemon style (affinity.py, data/affinity_lines.json).
+        self._say_affinity_lines()
+        # A Ring of Invisibility's veil settles after its quiet turns (rings.py).
+        import rings as _rings
+        _veil = _rings.tick(self.player)
+        if _veil:
+            self.add_message(_veil, 'info')
         # Philosophy tier mastery: the tier traits this run has earned, and
         # anything of a mastered tier that reached the pack by another road
         # (bought, looted, given) is named.
@@ -4683,18 +4778,6 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     if abs(cx - px) + abs(cy - py) <= radius:
                         self.dungeon.explored.add((cx, cy))
 
-        # Torc of Boudicca: AC bonus when surrounded by 3+ enemies
-        _surr_bonus = 0
-        for _acc in self.player.equipped_accessories:
-            if getattr(_acc, 'surrounded_ac_bonus', 0) > 0:
-                _adj_enemies = sum(1 for m in self.monsters if m.alive
-                                   and abs(m.x - self.player.x) <= 1
-                                   and abs(m.y - self.player.y) <= 1)
-                if _adj_enemies >= 3:
-                    _surr_bonus = _acc.surrounded_ac_bonus
-                break
-        self.player._surrounded_ac_bonus = _surr_bonus
-
         # ----- Engine wave 5: armor-proc terrain caches (per-turn) -----
         # Used by player.get_ac() for cannae_encirclement / boundary_guardian /
         # guerrilla_terrain / paradise_water. Also drives thors_step + the
@@ -4950,6 +5033,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self._note_burden()
         self._black_knight_tick(end=True)  # his shouts; the next action may take a limb
         self._family_drain()               # wards and techniques the monsters' turns set off
+        # Hits the world's turn dealt (Boots of Thor, Shep's rescue, a pet's
+        # or a trap's typed blow): said now, not after the hero's next action.
+        self._say_affinity_lines()
 
     # ------------------------------------------------------------------
     # Carrying: Burdened (plan: _genart/ui/WEIGHT_PLAN.md)
@@ -5708,25 +5794,40 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 continue
             if unseen.unseen(m, self.player):
                 continue        # no eye spots what cannot be seen (src/unseen.py)
+            # A family technique already shows it (Tremor-Sense): it says so
+            # this turn (_family_turn); the keen-senses line said it again.
+            if family_edges.senses(self.player, m):
+                continue
             dist = abs(m.x - px) + abs(m.y - py)
             # A hero who knows this family's ambushers is never caught
             # unawares by one (family_edges no_ambush: Trap-Wise, the
-            # Unblinking, the Woodsman's Axe): the check always succeeds.
-            sure = family_edges.no_ambush(self.player, m)
-            if dist <= 5 and (sure or _rng.random() < chance):
+            # Unblinking, the Woodsman's Axe): the check always succeeds,
+            # and the line names the technique, not keen senses.
+            sure = family_edges.no_ambush_ability(self.player, m)
+            if dist <= 5 and (sure is not None or _rng.random() < chance):
                 m._aware = True
-                self.add_message(
-                    f"Your keen senses detect {a_or_an(m.name)} lying in wait!", 'warning')
+                if m.__dict__.get('_sensed_told'):
+                    continue    # a technique named it already, when it showed it
+                if sure is not None:
+                    self.add_message(
+                        f"{sure.get('name', '')}: you spot {a_or_an(m.name)} lying in wait!",
+                        'warning')
+                else:
+                    self.add_message(
+                        f"Your keen senses detect {a_or_an(m.name)} lying in wait!", 'warning')
 
     # ------------------------------------------------------------------
     # SP starvation
     # ------------------------------------------------------------------
 
     def _tick_sp(self):
-        # Base SP drain: 1 per 2 moves (0.5/move effective)
-        # Ring of Sustenance halves again (1 per 4 moves)
+        # Base SP drain: 1 per 2 moves (0.5/move effective). The sustained
+        # status halves it (1 per 4 moves); a Ring of Sustenance slows it by
+        # its tier, a third to three quarters (rings.py).
         self._sp_drain_tick = getattr(self, '_sp_drain_tick', 0) + 1
         drain_interval = 4 if self.player.has_effect('sustained') else 2
+        import rings as _rings
+        drain_interval = _rings.hunger_interval(self.player, drain_interval)
         # Sickly (a fever caught at a plague village's bar): twice as fast.
         if self.player.has_effect('sickly'):
             drain_interval = max(1, drain_interval // 2)
@@ -5814,14 +5915,17 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     # ------------------------------------------------------------------
 
     def _pickup(self, target=None):
-        """Pick up the first item on this tile, or ``target`` when given (the
+        """Pick up the next item on this tile in pickup order (gold,
+        treasure, potions, scrolls, known things then unknown ones lightest
+        first, corpses: items.in_pickup_order), or ``target`` when given (the
         Kit's Take & Equip names the exact floor item; same rules)."""
-        from items import GoldPile
+        from items import GoldPile, in_pickup_order
         px, py = self.player.x, self.player.y
         # Skip the Abyssal Shimmer -- it's fixed to the floor
         # Also skip MysteryAltar objects (not_pickable=True)
         item = next(
-            (i for i in self.ground_items
+            (i for i in in_pickup_order(
+                [g for g in self.ground_items if g.x == px and g.y == py], self._item_is_known)
              if i.x == px and i.y == py
              and (target is None or i is target)
              and i.id != 'abyssal_shimmer'
@@ -7410,10 +7514,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     self._advance_turn()
                     return
                 self.player.remove_from_inventory(item)
-                ac = self.player.get_ac()
                 # Its curse, if any, is now known and named once ("the
                 # Cursed X (cursed)" said it twice, and before you knew).
-                self.add_message(f"You equip the {item_name}. AC is now {ac}.", 'success')
+                # Only body armour and a shield move AC (bug bash 3.3.2):
+                # a helm or boots say only that they are on.
+                self.add_message(f"You equip the {item_name}." + self._ac_now_note(item), 'success')
                 self._note_worn_curse(item)
                 # Great Helm of Galahad (purity): announce the cleansing
                 # when items were freed of curses by the helm going on.
@@ -7593,9 +7698,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     self._advance_turn()
                     return
                 self.player.remove_from_inventory(item)
-                ac = self.player.get_ac()
                 self.add_message(
-                    f"You attune to the {item_name} at tier {chain}/5. AC is now {ac}.",
+                    f"You attune to the {item_name} at tier {chain}/5." + self._ac_now_note(item),
                     'success'
                 )
                 self._note_worn_curse(item)
@@ -7669,8 +7773,14 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
 
 
     def _spawn_unique_item(self, x: int, y: int, item_id: str):
-        """Place a named unique item at (x, y), searching all item categories."""
-        from items import load_items, copy_at, unique_available, claim_unique
+        """Place a named unique item at (x, y), searching all item categories
+        (or an enchanted piece made to a spec: items.made_drop)."""
+        from items import load_items, copy_at, unique_available, claim_unique, made_drop
+        made = made_drop(item_id, x, y)
+        if made is not None:
+            self.ground_items.append(made)
+            self.add_message(">> A remarkable item falls from the defeated foe!", 'loot')
+            return
         categories = ('weapon', 'armor', 'shield', 'accessory', 'wand', 'scroll',
                       'artifact', 'potion')
         for cat in categories:
@@ -8000,6 +8110,42 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         from items import is_fully_known
         return is_fully_known(item, self.player)
 
+    def _craft_forgives(self, subject: str) -> bool:
+        """The quiz engine asks at the start of every quiz: does a worn
+        craft enchantment forgive this one's first wrong answer?"""
+        import enchantments
+        piece = enchantments.craft_ready(self.player, subject)
+        if piece is None:
+            return False
+        self.add_message(f"Your {self._bare_name(piece)} steady you: one wrong answer "
+                         "here will be forgiven.", 'success')
+        return True
+
+    def _ac_now_note(self, item) -> str:
+        """" AC is now N." after a body armour or shield goes on; nothing
+        for a piece that gives no AC (gear.is_core)."""
+        import gear
+        return f" AC is now {self.player.get_ac()}." if gear.is_core(item) else ''
+
+    def _daimonion_stops(self) -> bool:
+        """The quiz engine asks on a wrong choice: does a worn ring's
+        daimonion (the Philosopher's Ring of Mastery) stop it? Each ring
+        stops its `daimonion` choices a floor (reset on every floor change)."""
+        p = self.player
+        rings = [a for a in p.equipped_accessories if int(getattr(a, 'daimonion', 0) or 0) > 0]
+        if not rings:
+            return False
+        left = max(int(r.daimonion) for r in rings) - int(getattr(p, '_daimonion_used', 0) or 0)
+        if left <= 0:
+            return False
+        p._daimonion_used = int(getattr(p, '_daimonion_used', 0) or 0) + 1
+        left -= 1
+        self.add_message(
+            "A voice stops you: not that one."
+            + (f" ({left} more this floor.)" if left else " (It falls silent for this floor.)"),
+            'success')
+        return True
+
     def _show_item_comparison(self, item):
         """Show a brief comparison hint if the ground item is comparable to equipped gear.
 
@@ -8011,12 +8157,32 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             return  # Can't compare unidentified items
         from items import ARMOR_SLOTS
         if isinstance(item, Weapon):
-            equipped, stat, unit = self.player.weapon, 'base_damage', 'damage'
+            # A bow or crossbow is weighed against the ranged weapon carried,
+            # a blade against the one in hand (Brandon, 2026-11-07: a bow on
+            # the floor was compared with the sword). The same test that
+            # decides which hand it goes in (Player.equip: requires_ammo).
+            if getattr(item, 'requires_ammo', None) is not None:
+                equipped = getattr(self.player, 'ranged_weapon', None)
+            else:
+                equipped = self.player.weapon
+            stat, unit = 'base_damage', 'damage'
         elif isinstance(item, Armor):
             slot = getattr(item, 'slot', 'body')
             equipped = (self.player.armor_slots[ARMOR_SLOTS.index(slot)]
                         if slot in ARMOR_SLOTS else None)
             stat, unit = 'ac_bonus', 'AC'
+            import gear as _gear
+            if not _gear.is_core(item):
+                # A minor piece gives no AC (bug bash 3.3.2): say what each
+                # one's enchantment is instead.
+                if equipped and equipped is not item and self._item_is_known(equipped):
+                    import enchantments as _ench
+                    mine = _ench.label(item) or 'no enchantment'
+                    theirs = _ench.label(equipped) or 'none'
+                    if mine != theirs:
+                        self.add_message(f"  ({mine} vs your {self._bare_name(equipped)}: {theirs})",
+                                         'info')
+                return
         elif isinstance(item, Shield):
             equipped, stat, unit = self.player.shield, 'ac_bonus', 'AC'
         else:
@@ -8047,8 +8213,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     _MOVE_HOLD_INTERVAL = 0.07  # seconds between repeated moves once repeat is active
 
     def update(self, dt: float):
-        # An achievement won mid-quiz waits for calm play (game_seeker.py).
+        # The popups play raised (achievements, traits, family news, a boss's
+        # story) open one at a time once play is calm (game_popups.PopupMixin).
         self._seeker_tick()
+        self._popup_tick(dt)
         # A resize in this frame or the one before: the quiz clock advances
         # one nominal frame at most (RESIZE_GRACE_FRAMES; on_resize arms it).
         quiz_dt = min(dt, self.MAX_QUIZ_DT)
@@ -8056,8 +8224,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         if grace > 0:
             self._resize_grace = grace - 1
             quiz_dt = min(dt, 1.0 / FPS)
+        # (After the boss's story popup and its achievements: the gifts are
+        # the last thing the kill brings.)
         if (self.state == STATE_PLAYER and getattr(self.player, 'pending_boon', None)
-                and not self.player.is_dead()):
+                and not self.player.is_dead() and not self._popups_waiting()):
             self._open_boon_menu()
         # A hostile scene (the dead come for the Book of Thoth) waits for no
         # bump: whenever plain play resumes with its figure unmet on this
@@ -8374,8 +8544,13 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         'abaddon_destroyer': 'boss_abaddon',
     }
 
-    def _show_story_popup(self, key: str, next_state: str = STATE_PLAYER):
-        """Queue a narrative popup. Game pauses until the player dismisses it."""
+    def _show_story_popup(self, key: str, next_state: str = STATE_PLAYER, *,
+                          queued: bool = False):
+        """A narrative popup. Game pauses until the player dismisses it.
+        `queued`: one that play raised (a boss's story on its death) waits
+        its turn with the other popups from play and opens once play is calm
+        (game_popups.PopupMixin); the game's own (the opening, the endings) open at
+        once."""
         data = self._STORY_CONTENT.get(key)
         if data is None:
             return
@@ -8383,6 +8558,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             # A reward ending shows the Seeker's own code for it (one system
             # for every code: seeker_codes.py), or none without a Seeker.
             data = dict(data, code=self._seeker_code(data['achievement']))
+        if queued:
+            self._queue_popup(dict(data), 'story', next_state)
+            return
         self.popup_data       = data
         self.popup_next_state = next_state
         self.state            = STATE_STORY_POPUP
@@ -8408,18 +8586,18 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         if flavor:
             lines.append('')
             lines.append(f'"{flavor}"')
-        self.popup_data = {
+        popup = {
             'title':  'TRAIT UNLOCKED',
             'accent': (200, 170, 255),   # arcane lavender — matches the quirk theme
             'lines':  lines,
             'code':   None,
         }
-        # A popup raised while another is up returns to where the FIRST one
-        # was going. It fell back to plain play, so two traits unlocking on
-        # one answer dropped the player out of an open quiz.
-        if self.state != STATE_STORY_POPUP:
-            self.popup_next_state = self.state
-        self.state = STATE_STORY_POPUP
+        # Never over an open quiz, a menu or an encounter (an answer can earn
+        # a trait: the popup opened on top of the combat quiz it was earned
+        # in, or over the stranger met on the stair). It waits its turn with
+        # the other popups from play and opens once play is calm
+        # (game_popups.PopupMixin), each trait on its own.
+        self._queue_popup(popup, 'trait')
 
 
     # ------------------------------------------------------------------
@@ -8531,8 +8709,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     'success'
                 )
                 # One more kind studied in its family: any tier, circle or
-                # title it brings is announced now (a popup returns to the
-                # lore page).
+                # title it brings is announced now (its popup is queued and
+                # opens once the lore page is closed: PopupMixin).
                 self._family_study(corpse.monster_id)
                 # Orb fire from Phase 3 of CHAIN_EFFECTS_PLAN was removed
                 # 2026-10-04 after playtest: it animated on top of the
@@ -8818,9 +8996,15 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             two_h = ' 2H' if getattr(item, 'two_handed', False) else ''
             return f"{item.weapon_class}{two_h}  {dmg} dmg  tier {item.tier}"
         elif isinstance(item, Armor):
-            return f"{item.slot}  -{item.ac_bonus} AC  tier {item.tier}"
+            import gear
+            if gear.is_core(item):
+                return f"{item.slot}  -{gear.ac_value(item)} AC  tier {item.tier}"
+            # A minor piece gives no AC: its enchantment, if it has one.
+            import enchantments
+            return f"{item.slot}  {enchantments.label(item) or 'plain'}  tier {item.tier}"
         elif isinstance(item, Shield):
-            return f"shield  -{item.ac_bonus} AC  tier {item.tier}"
+            import gear
+            return f"shield  -{gear.ac_value(item)} AC  tier {item.tier}"
         elif isinstance(item, Accessory):
             fx = item.effects or {}
             if 'status' in fx:
@@ -9245,6 +9429,12 @@ def _restore_saved_game(screen, player_name: str, state: dict):
               if _kept else
               "That saved journey could not be restored. It was left untouched.")
     return None, notice
+
+
+# The world's turn pauses the Kit / sheet "Result" capture (_world_turn).
+# Wrapped here, not with a decorator line, so _advance_turn's source reads
+# as before.
+Game._advance_turn = _world_turn(Game._advance_turn)
 
 
 def main():

@@ -298,6 +298,15 @@ The master lookup is `combat._damage_multiplier(damage_types, monster)` at `comb
 3. Legacy fallback: adds `silver` to weaknesses for undead/demon, `iron` for fey (safety net for pre-material-system monsters).
 4. For each `dt` in `damage_types`, score 1.5 (weakness) / 0.5 (resistance) / 1.0 (neutral). Return `max(scores)`.
 
+**Saying so (3.3.2).** A hit that meets a weakness or a resistance is noted
+(`affinity.note`): the hero's blows and shots by `strike_damage` (its form
+and substance after every bypass, `consume=True` only, so the combat strip's
+preview says nothing), spells, wands and breath by `Monster.take_damage`
+(a burn ticking is not a hit). `Game._advance_turn` drains the notes and
+says one line per way creatures were struck, Pokemon style ("It's super
+effective!", "Not very effective... the skeleton resists a thrust."), from
+`data/affinity_lines.json` (`src/affinity.py`).
+
 The `effective_against` tag is a **1.5× bonus**, not a replacement. A volcanic-iron 2h sword hitting a frost giant (fire-vulnerable AND slash-vulnerable) stacks all layers:
 
 `8 base × 0.95 material × 1.5 material_effective × 1.5 slash-weakness × chain_mult`
@@ -341,7 +350,7 @@ Combat consumers of `is_boss` / `'boss' in tags`:
 
 - **Damocles auto-kill** (`combat.py:1629`) — `and 'boss' not in set(getattr(monster, 'tags', []))`. The sword cannot auto-kill a boss.
 - **Laevateinn boss_doom_dot** (`combat.py:1740`) — fires ONLY on `'boss' in tags OR getattr(monster, 'is_boss', False)`. 5% max-HP/turn DoT with 30-turn duration.
-- **Minimum hit chance** (`monster.py:402, 496, 1510`) — `min_hit_chance = 0.25 if is_boss else 0.05`. Bosses punch through player AC on a bad THAC0 roll one in four times.
+- **Minimum hit chance** (`Monster._min_hit`) — a miss that rolled short stays a miss for an ordinary monster (`MIN_HIT_ORDINARY` 0); a named foe lands 15% of them (`MIN_HIT_NAMED`), and a monster's own `min_hit_chance` overrides both. Monster THAC0 is rebaked to the armour line ([armour.md](armour.md) §2); a touch attack rolls against touch AC (no body armour or shield), and the minor slots turn aside and shrug off their attack families (`guards.guard_keep`).
 - **Spell / wand immunity** — charm, paralyze, confuse, sleep, hold_monster, fear are gated via `is_boss` in `game_magic.py` (not in-scope for this doc but same flag feeds it).
 
 ### Crit model

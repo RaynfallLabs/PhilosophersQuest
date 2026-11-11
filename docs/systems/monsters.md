@@ -81,7 +81,8 @@ A single key in `data/monsters.json`. The id is the JSON key; the id is also wri
 | `peak_weight` | float | default 0 | Peak Gaussian weight (common ~ 1-10, rare ~ 0.5). `peak_weight <= 0` ⇒ monster is EXCLUDED from the procedural pool (bosses, seal demons, orphan legendaries). |
 | `spawn_chance` | float | optional | Only read by `_roll_planned_mini_bosses` — the per-slot weight for mini-boss selection. Unrelated to `peak_weight`. |
 | `frequency` | int | legacy, default 3 | Only consulted inside `_spawn_one_in_room` for pack-size scaling (`freq >= 5` → +1 max). Not the main spawn knob. |
-| `thac0` | int | default `max(-10, 20 - min_level)` | AD&D-style "to-hit AC 0." Lower is more accurate. Low-tier monsters start at 17-20; endgame bosses hit `-16` to `-20`. |
+| `thac0` | int | default `max(-10, 20 - min_level)` | AD&D-style "to-hit AC 0." Lower is more accurate. Since 3.3.2 rebaked to the armour line by `tools/balance/rebake_thac0.py` (a typical monster hits a hero of its floor about 55% of the time; [armour.md](armour.md)). |
+| `thac0_lore` | int | | The written THAC0 before the rebake: the tool always starts from it, keeping half of each monster's accuracy against its band. |
 
 ### Boss / role flags
 
@@ -169,6 +170,7 @@ An `attacks[]` is a list of attack dicts. One is picked each turn (`random.choic
 |---|---|---|
 | `name` | str | Display name. Underscore-to-space for message rendering. Ranged routing scans the lowercased name for words like `shoot`, `arrow`, `bolt`, `spit`, `hurl`, `volley`, `ray`, `blast`, `breath`, `spike`, `gaze`, `song`, `wail`, `charm`, `psionic`, `cast`, `bow`, `sling`, `javelin`, `spore`, `shock`, `hex` → treats the attack as ranged. |
 | `damage` | str (dice) | Dice notation. |
+| `delivery` | str | How the attack lands: blow, bite, sting, trample, grapple, touch, ranged, breath, gaze, voice (`tools/content/tag_attack_delivery.py`; `guards.delivery` reads one made at runtime). Picks the minor armour slot that guards it ([armour.md](armour.md) §3). |
 | `type` | str | Damage type. Known values: `acid`, `blunt`, `cold`, `drain`, `fire`, `holy`, `lightning`, `magic`, `necrotic`, `physical`, `pierce`, `poison`, `psionic`, `shadow`, `slash`. **`psionic`** is NOT in `_damage_multiplier`'s set — treated as `1.0` unresistable (audit P5). |
 | `ranged` | bool | Optional explicit ranged flag. |
 | `piercing` | bool | Optional — allows the attack to shoot through intervening allied monsters (sets `_piercing_collateral` on this monster for the game loop to resolve). |
@@ -288,7 +290,7 @@ The v2.18.0 commit kept these on disk because migrating would break every pickle
 3. **Fenrir rage ≥ 3** → `_fenrir_multi_attack(player)` (all attacks).
 4. `multi_attack_count` → first N attacks via `_fenrir_multi_attack(player, attack_limit=N)`. `enraged_multi_attack_count` swaps N on enrage. `multi_attack_always` or `multi_attack_count ≥ len(attacks)` fires all.
 5. Ranged routing picks a ranged-worded attack when `ai_pattern=='ranged'` and non-adjacent.
-6. THAC0 roll: `d20 >= thac0 - player_ac` hits, `nat 1` always misses, `nat 20` always hits, `min_hit_chance` (25% boss / 5% regular) can save a numerical miss.
+6. THAC0 roll: `d20 >= thac0 - player_ac` hits (touch attacks against touch AC), `nat 1` always misses, `nat 20` always hits; a named foe lands 15% of its numerical misses (`MIN_HIT_NAMED`), an ordinary one none. Then the minor slots' guards (`guards.guard_keep`): a share of the damage turned aside, a share of the rider shrugged off.
 7. Mitigations: confused 30% miss, blinded 40% miss, displacement 30% miss, Monkey King dodge, Hermes votive sandals, Aegis Gorgoneion petrify-on-hit, Nemean Lion unskinnable floor-at-1, Mirror of Souls, Resonant Frequency shock, Spartan Stand counter.
 8. Damage: rage stacks → `+rage_damage_bonus` roll each; charge bonus (`charge_bonus_mult × dmg`); mimic surprise `×1.75`; weakened `//2`; sundered `×0.70`; summoned `//2` under Ring of Solomon; back-attack multiplier when player faces away.
 9. Shield reflect (fire/cold), spell-reflect chain-passive, Mirror of Souls, Gorgoneion petrify — all post-damage.
@@ -550,6 +552,8 @@ if roll:
 - Gaze paralyze uses the same DC formula.
 
 The attack-table status-effect ids are 17 (verified in `status_effects.py`): `bleeding`, `blinded`, `burning`, `confused`, `cursed`, `diseased`, `feared`, `frozen`, `hallucinating`, `paralyzed`, `poisoned`, `silenced`, `sleeping`, `slowed`, `stunned`, `teleportitis`, `weakened`.
+
+**Who can bleed (3.3.3):** `data/monster_blood.json`, read by `monster.kind_can_bleed` and `Monster.can_bleed`. A creature with no blood never takes `bleeding` (`add_effect`, `hold`, the weapon and pet procs that write it straight in; `tick_effects` drops one left by an old save) and is never called "bleeding". Order: the kind's own entry (`bleeds` / `bloodless`), then `bleeding_families` (vampires), then `bloodless_families` (ghosts, constructs, elementals, oozes, plants) or `bloodless_tags` (undead, construct, plant), else it bleeds. The fleshy dead (ghouls, zombies, revenants, deadites, the wendigo) bleed; liches, bone witches and the jiangshi do not.
 
 ## Appendix: `_DEFAULTS` and the pickle-compat shim
 

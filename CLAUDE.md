@@ -74,8 +74,14 @@ src/
 
   # Combat, items, magic
   combat.py           - Combat resolution
+  affinity.py         - Weakness and resistance: what a hit met, and the lines that say so
   dice.py             - Dice notation parser ("2d6+3")
   items.py            - Item classes and equipment system
+  gear.py             - Armour, shield, ring and amulet rules: levels, tiers, thresholds, core AC
+  guards.py           - What the minor armour slots guard: attack delivery, families, touch AC
+  enchantments.py     - The minor-slot enchantment stable: guard, might, craft and way lanes
+  rings.py            - Ring and amulet kinds: levels, ladders, names, what a worn kind does
+  gear_saves.py       - Old saves meet the armour ladder: named pieces refreshed, worn grants re-synced
   item_actions.py     - Item actions shared by the Kit (K) and the character sheet (@)
   chain_equip.py      - Chain-equip for lore-rich legendary uniques
   chain_passives.py   - Chain-equip passive flag lookups and wiring
@@ -83,6 +89,7 @@ src/
   hero_specials.py    - One special ability per Secret Build
   spells.py           - Spellbook spell definitions (tiered families)
   prayers.py          - The prayer list and what each grants
+  altar.py            - The altar's offering: curses lifted, then blessings; what a blessing changes
   boons.py            - Gate-boss gifts (pick one of three)
   status_effects.py   - Buffs/debuffs (paralysis, poison, berserk, etc.)
   food_system.py      - Harvest and cooking mechanics
@@ -118,7 +125,8 @@ src/
   seeker_codes.py     - Reward codes for Dad and the profile seal (the key is never in the repo)
   achievements.py     - Achievement rules from data/achievements.json: counters, triggers, ladders
   seeker_session.py   - The running Seeker: emit an event, unlock, save, look up a code
-  game_seeker.py      - SeekerMixin: game events reach the Seeker; the unlock popup waits for calm play
+  game_seeker.py      - SeekerMixin: game events reach the Seeker; achievements join the popup queue
+  game_popups.py      - PopupMixin: popups from play wait for calm play and open one at a time
   seeker_screen.py    - The Seeker Profile screen (title screen, F4) and the badge gallery
 
   # UI and presentation

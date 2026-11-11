@@ -279,14 +279,13 @@ class EscortMixin:
             self._escort_card(esc.name, text)
 
     def _escort_card(self, title: str, text: str):
-        """The outcome card: a story popup, shown only over plain play."""
-        from game_states import STATE_PLAYER, STATE_STORY_POPUP
+        """The outcome card: a story popup, shown only over plain play. It
+        waits its turn with the other popups from play (game_popups.PopupMixin)."""
+        from game_states import STATE_PLAYER
         if getattr(self, 'state', None) != STATE_PLAYER:
             return
-        self.popup_data = {'title': str(title).upper(), 'accent': (200, 180, 140),
-                           'lines': [text], 'code': None}
-        self.popup_next_state = STATE_PLAYER
-        self.state = STATE_STORY_POPUP
+        self._queue_popup({'title': str(title).upper(), 'accent': (200, 180, 140),
+                           'lines': [text], 'code': None}, 'escort')
 
     def _escort_failed(self, esc, why: str):
         """``why``: 'died', 'left_behind' or 'trapdoor'."""

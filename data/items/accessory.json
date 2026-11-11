@@ -21,100 +21,7 @@
     "spread": 8,
     "peak_floor": 6
   },
-  "ring_magic_res_a": {
-    "name": "ring of magic resist",
-    "symbol": "=",
-    "color": [
-      160,
-      140,
-      200
-    ],
-    "weight": 0.1,
-    "min_level": 25,
-    "slot": "ring",
-    "equip_threshold": 3,
-    "quiz_tier": 3,
-    "effects": {
-      "status": "magic_resist",
-      "duration": -1
-    },
-    "unidentified_name": "scratched pewter ring",
-    "lore": "Some monk scratched three letters around this pewter band, V R S, the way a scribe shortens a prayer he knows by heart: Vade retro Satana, 'Get back, Satan.' The abbreviation has outlived the monk. Hexes aimed at the wearer arrive weakened, as if they had to push through a closed door first.",
-    "floorSpawnWeight": {
-      "1-20": 0,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 80
-    },
-    "peak_weight": 0.4,
-    "is_unique": false,
-    "spread": 13,
-    "peak_floor": 30
-  },
-  "ring_drain_res_a": {
-    "name": "ring of drain resist",
-    "symbol": "=",
-    "color": [
-      140,
-      80,
-      160
-    ],
-    "weight": 0.1,
-    "min_level": 1,
-    "slot": "ring",
-    "equip_threshold": 3,
-    "quiz_tier": 2,
-    "effects": {
-      "status": "drain_resist",
-      "duration": -1
-    },
-    "unidentified_name": "red jasper ring",
-    "lore": "In the 1190s the English canon William of Newburgh wrote down, with some embarrassment, several reports of dead men who left their graves at night and wasted the living. Villagers in such places wore red jasper against them. This ring is of that kind: the grave-chill that saps a body does not get past it.",
-    "floorSpawnWeight": {
-      "1-20": 60,
-      "21-40": 60,
-      "41-60": 40,
-      "61-80": 30,
-      "81-100": 20
-    },
-    "peak_weight": 0.4,
-    "is_unique": false,
-    "spread": 8,
-    "peak_floor": 6
-  },
-  "ring_levitate": {
-    "name": "ring of levitation",
-    "symbol": "=",
-    "color": [
-      200,
-      200,
-      240
-    ],
-    "weight": 0.1,
-    "min_level": 25,
-    "slot": "ring",
-    "equip_threshold": 3,
-    "quiz_tier": 3,
-    "effects": {
-      "status": "levitating",
-      "duration": -1
-    },
-    "unidentified_name": "hollow silver ring",
-    "lore": "The old Acts of Peter tell how Simon the Magician rose into the air over Rome to prove his power, and how the Apostle Peter prayed him down again. Whoever hollowed this silver band learned the first half of the trick and wisely stopped there. Its wearer walks a hand's breadth above pits and floodwater.",
-    "floorSpawnWeight": {
-      "1-20": 0,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 80
-    },
-    "peak_weight": 0.4,
-    "is_unique": false,
-    "spread": 13,
-    "peak_floor": 30
-  },
-  "ring_invisible": {
+  "ring_of_invisibility": {
     "name": "ring of invisibility",
     "symbol": "=",
     "color": [
@@ -123,120 +30,20 @@
       240
     ],
     "weight": 0.1,
-    "min_level": 25,
+    "min_level": 8,
     "slot": "ring",
-    "equip_threshold": 3,
-    "quiz_tier": 3,
-    "effects": {
-      "status": "invisible",
-      "duration": -1
-    },
-    "unidentified_name": "clear rock-crystal ring",
+    "equip_threshold": 1,
+    "quiz_tier": 1,
+    "effects": {},
+    "unidentified_name": "a ring",
     "lore": "The Cyclopes made three gifts for the war against the Titans: the thunderbolt for Zeus, the trident for Poseidon, and for Hades a cap that hid its wearer from every eye. Perseus borrowed that cap to escape Medusa's sisters. A sliver of the same craft sits in this clear stone.",
-    "floorSpawnWeight": {
-      "1-20": 0,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 80
-    },
-    "peak_weight": 0.4,
     "is_unique": false,
-    "spread": 13,
-    "peak_floor": 30
-  },
-  "ring_hasted": {
-    "name": "ring of haste",
-    "symbol": "=",
-    "color": [
-      240,
-      230,
-      80
-    ],
-    "weight": 0.1,
-    "min_level": 50,
-    "slot": "ring",
-    "equip_threshold": 3,
-    "quiz_tier": 4,
-    "effects": {
-      "status": "hasted",
-      "duration": -1
-    },
-    "unidentified_name": "striped tourmaline ring",
-    "lore": "Herodotus admired the Persian king's couriers, who rode in relays from Sardis to Susa and were stopped, he wrote, by neither snow nor rain nor heat nor darkness. A courier's ring like this one was handed from rider to rider with the message. Everything around its wearer seems to move through honey.",
+    "kind": "invisibility",
+    "peak_floor": 0,
+    "peak_weight": 0.0,
     "floorSpawnWeight": {
-      "1-20": 0,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 80
-    },
-    "peak_weight": 0.15,
-    "is_unique": false,
-    "spread": 13,
-    "peak_floor": 58
-  },
-  "ring_clairvoy": {
-    "name": "ring of clairvoyance",
-    "symbol": "=",
-    "color": [
-      60,
-      60,
-      80
-    ],
-    "weight": 0.1,
-    "min_level": 25,
-    "slot": "ring",
-    "equip_threshold": 3,
-    "quiz_tier": 3,
-    "effects": {
-      "status": "clairvoyant",
-      "duration": -1
-    },
-    "unidentified_name": "banded onyx ring",
-    "lore": "Odin has a high seat in Asgard called Hlidskjalf. When he sits in it he sees into all the worlds and everything that anyone is doing there. This band of onyx gives a mortal one small corner of that view: the rooms and corridors nearby, laid out in the mind like a drawn plan. Whoever stands in that corner is laid out too, even a creature no eye can see.",
-    "floorSpawnWeight": {
-      "1-20": 0,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 80
-    },
-    "peak_weight": 0.4,
-    "is_unique": false,
-    "spread": 13,
-    "peak_floor": 30
-  },
-  "ring_displace": {
-    "name": "ring of displacement",
-    "symbol": "=",
-    "color": [
-      80,
-      80,
-      100
-    ],
-    "weight": 0.1,
-    "min_level": 25,
-    "slot": "ring",
-    "equip_threshold": 3,
-    "quiz_tier": 3,
-    "effects": {
-      "status": "displacement",
-      "duration": -1
-    },
-    "unidentified_name": "chipped obsidian ring",
-    "lore": "The poet Stesichorus insisted that Helen never went to Troy at all. The gods sent a phantom in her shape, and the Greeks and Trojans fought ten years over an image while the real woman waited in Egypt. This obsidian ring plays the same trick on a smaller scale: blows land where its wearer only seems to stand.",
-    "floorSpawnWeight": {
-      "1-20": 0,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 80
-    },
-    "peak_weight": 0.4,
-    "is_unique": false,
-    "spread": 13,
-    "peak_floor": 30
+      "1-100": 4
+    }
   },
   "ring_curse_teleport": {
     "name": "ring of teleportitis",
@@ -258,16 +65,12 @@
     "unidentified_name": "cracked agate ring",
     "lore": "Hera sent a gadfly to torment Io, and its sting drove her across the known world without rest. The strait she swam is still called the Bosporus, the Ox-Ford, after her. The cracked stone in this ring holds a sting of the same sort. Its wearer is forever being sent somewhere else.",
     "floorSpawnWeight": {
-      "1-20": 60,
-      "21-40": 60,
-      "41-60": 40,
-      "61-80": 30,
-      "81-100": 20
+      "1-100": 2
     },
-    "peak_weight": 0.4,
+    "peak_weight": 0.0,
     "is_unique": false,
     "spread": 8,
-    "peak_floor": 6
+    "peak_floor": 0
   },
   "ring_curse_aggravate": {
     "name": "ring of aggravation",
@@ -289,16 +92,12 @@
     "unidentified_name": "gaudy brass ring",
     "lore": "The hunter Actaeon saw Artemis bathing, and the goddess turned him into a stag. His own fifty hounds caught the scent and ran him down, never knowing their master. Something in this gaudy ring carries that scent. Every beast in earshot wakes hungry and turns toward the wearer.",
     "floorSpawnWeight": {
-      "1-20": 60,
-      "21-40": 60,
-      "41-60": 40,
-      "61-80": 30,
-      "81-100": 20
+      "1-100": 2
     },
-    "peak_weight": 0.4,
+    "peak_weight": 0.0,
     "is_unique": false,
     "spread": 8,
-    "peak_floor": 6
+    "peak_floor": 0
   },
   "ring_curse_fumble": {
     "name": "ring of fumbling",
@@ -320,16 +119,12 @@
     "unidentified_name": "heavy lead ring",
     "lore": "A thieves' guild in some forgotten port punished a member who stole from his fellows by locking a lead ring on his hand. He never again held a lockpick, a purse or a knife for longer than a breath. The guild is gone. The ring went on looking for hands.",
     "floorSpawnWeight": {
-      "1-20": 60,
-      "21-40": 60,
-      "41-60": 40,
-      "61-80": 30,
-      "81-100": 20
+      "1-100": 2
     },
-    "peak_weight": 0.4,
+    "peak_weight": 0.0,
     "is_unique": false,
     "spread": 8,
-    "peak_floor": 6
+    "peak_floor": 0
   },
   "ring_curse_slow": {
     "name": "ring of slowing",
@@ -351,419 +146,12 @@
     "unidentified_name": "thick black-iron ring",
     "lore": "Zeno of Elea argued that swift Achilles could never overtake a tortoise with a head start: each time he reached the place it had been, it had crawled a little farther. The philosophers called it a paradox. Whoever wears this black iron band lives inside it, always a step behind.",
     "floorSpawnWeight": {
-      "1-20": 60,
-      "21-40": 60,
-      "41-60": 40,
-      "61-80": 30,
-      "81-100": 20
+      "1-100": 2
     },
-    "peak_weight": 0.4,
+    "peak_weight": 0.0,
     "is_unique": false,
     "spread": 8,
-    "peak_floor": 6
-  },
-  "amulet_regen_jade": {
-    "name": "amulet of regeneration",
-    "symbol": "\"",
-    "color": [
-      20,
-      180,
-      60
-    ],
-    "weight": 0.2,
-    "min_level": 8,
-    "slot": "amulet",
-    "equip_threshold": 3,
-    "quiz_tier": 2,
-    "effects": {
-      "status": "regenerating",
-      "duration": -1
-    },
-    "unidentified_name": "leaf-carved jade pendant",
-    "lore": "The Han princes of China believed jade kept a body whole. Prince Liu Sheng went to his tomb in a suit of more than two thousand jade plates sewn together with gold wire. This pendant is carved from the same stone on the same hope, and it works better on the living: cuts close, bruises fade.",
-    "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 40
-    },
-    "peak_weight": 0.4,
-    "is_unique": false,
-    "spread": 8,
-    "peak_floor": 13
-  },
-  "amulet_hasted": {
-    "name": "amulet of speed",
-    "symbol": "\"",
-    "color": [
-      240,
-      230,
-      80
-    ],
-    "weight": 0.2,
-    "min_level": 50,
-    "slot": "amulet",
-    "equip_threshold": 3,
-    "quiz_tier": 4,
-    "effects": {
-      "status": "hasted",
-      "duration": -1
-    },
-    "unidentified_name": "bird-bone talisman",
-    "lore": "Heralds paint the martlet, a swift or swallow, without any feet, because people long believed the bird lived its whole life on the wing and never came to rest. A fowler's wife strung these hollow bones for a son who was always late. He was never late again, nor ever quite still.",
-    "floorSpawnWeight": {
-      "1-20": 0,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 80
-    },
-    "peak_weight": 0.15,
-    "is_unique": false,
-    "spread": 13,
-    "peak_floor": 58
-  },
-  "amulet_invis": {
-    "name": "amulet of invisibility",
-    "symbol": "\"",
-    "color": [
-      200,
-      220,
-      240
-    ],
-    "weight": 0.2,
-    "min_level": 25,
-    "slot": "amulet",
-    "equip_threshold": 3,
-    "quiz_tier": 3,
-    "effects": {
-      "status": "invisible",
-      "duration": -1
-    },
-    "unidentified_name": "glass phial pendant",
-    "lore": "Country people said the fern bears an invisible seed on Saint John's Eve, and that whoever catches it on a white cloth at midnight walks unseen. Most who tried caught only dew. Someone caught the real thing once and stoppered it in this glass phial.",
-    "floorSpawnWeight": {
-      "1-20": 0,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 80
-    },
-    "peak_weight": 0.4,
-    "is_unique": false,
-    "spread": 13,
-    "peak_floor": 30
-  },
-  "amulet_levitate": {
-    "name": "amulet of levitation",
-    "symbol": "\"",
-    "color": [
-      180,
-      200,
-      240
-    ],
-    "weight": 0.2,
-    "min_level": 25,
-    "slot": "amulet",
-    "equip_threshold": 3,
-    "quiz_tier": 3,
-    "effects": {
-      "status": "levitating",
-      "duration": -1
-    },
-    "unidentified_name": "pitted sky-iron locket",
-    "lore": "The Egyptians called iron 'metal of heaven,' because the first iron they knew fell from the sky; a dagger of it lay in Tutankhamun's wrappings. This locket holds a pitted lump of the same sky-iron. It has never quite accepted the ground, and it lifts its wearer a little clear of it.",
-    "floorSpawnWeight": {
-      "1-20": 0,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 80
-    },
-    "peak_weight": 0.4,
-    "is_unique": false,
-    "spread": 13,
-    "peak_floor": 30
-  },
-  "amulet_clairvoyant": {
-    "name": "amulet of clairvoyance",
-    "symbol": "\"",
-    "color": [
-      80,
-      60,
-      100
-    ],
-    "weight": 0.2,
-    "min_level": 25,
-    "slot": "amulet",
-    "equip_threshold": 3,
-    "quiz_tier": 3,
-    "effects": {
-      "status": "clairvoyant",
-      "duration": -1
-    },
-    "unidentified_name": "dark stone eye pendant",
-    "lore": "In 1252 Clare of Assisi lay too ill to leave her bed for the Christmas Mass. She said afterward that she saw and heard the whole service on the wall of her room, as plainly as if she knelt in the church. The sisters of her order carved this eye of dark stone in memory of it. Its wearer sees the nearby rooms the same way, and every creature in them, even the invisible ones.",
-    "floorSpawnWeight": {
-      "1-20": 0,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 80
-    },
-    "peak_weight": 0.4,
-    "is_unique": false,
-    "spread": 13,
-    "peak_floor": 30
-  },
-  "amulet_displace": {
-    "name": "amulet of displacement",
-    "symbol": "\"",
-    "color": [
-      100,
-      100,
-      140
-    ],
-    "weight": 0.2,
-    "min_level": 25,
-    "slot": "amulet",
-    "equip_threshold": 3,
-    "quiz_tier": 3,
-    "effects": {
-      "status": "displacement",
-      "duration": -1
-    },
-    "unidentified_name": "smoky quartz pendant",
-    "lore": "Marsh folk call it the fool's fire: a pale light that hangs over the bog at night, always a few steps from where it appears, leading travellers off the causeway. A fen-dweller trapped one in smoky quartz. Now the wearer is the light, and every spear thrown at it finds only reeds.",
-    "floorSpawnWeight": {
-      "1-20": 0,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 80
-    },
-    "peak_weight": 0.4,
-    "is_unique": false,
-    "spread": 13,
-    "peak_floor": 30
-  },
-  "amulet_fire_res": {
-    "name": "amulet of fire resistance",
-    "symbol": "\"",
-    "color": [
-      255,
-      100,
-      30
-    ],
-    "weight": 0.2,
-    "min_level": 8,
-    "slot": "amulet",
-    "equip_threshold": 3,
-    "quiz_tier": 2,
-    "effects": {
-      "status": "fire_resist",
-      "duration": -1
-    },
-    "unidentified_name": "soot-black pendant",
-    "lore": "Pliny wrote that the salamander is so cold it puts out fire by touching it, and merchants on the Silk Road sold cloth that would not burn as 'salamander's wool.' This pendant hangs on a cord of that cloth. It has been through a furnace and came out cleaner.",
-    "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 40
-    },
-    "peak_weight": 0.4,
-    "is_unique": false,
-    "spread": 8,
-    "peak_floor": 13
-  },
-  "amulet_cold_res": {
-    "name": "amulet of cold resistance",
-    "symbol": "\"",
-    "color": [
-      120,
-      200,
-      255
-    ],
-    "weight": 0.2,
-    "min_level": 20,
-    "slot": "amulet",
-    "equip_threshold": 3,
-    "quiz_tier": 2,
-    "effects": {
-      "status": "cold_resist",
-      "duration": -1
-    },
-    "unidentified_name": "white enamel locket",
-    "lore": "The Norse say the end will be announced by Fimbulwinter: three winters running with no summer between them, snow driving from every quarter. A northern mother painted this locket white and filled it with ash from her hearth, so that her children would carry the fire with them when it came.",
-    "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 40
-    },
-    "peak_weight": 0.4,
-    "is_unique": false,
-    "spread": 22,
-    "peak_floor": 50
-  },
-  "amulet_shock_res": {
-    "name": "amulet of shock resistance",
-    "symbol": "\"",
-    "color": [
-      240,
-      200,
-      60
-    ],
-    "weight": 0.2,
-    "min_level": 20,
-    "slot": "amulet",
-    "equip_threshold": 3,
-    "quiz_tier": 2,
-    "effects": {
-      "status": "shock_resist",
-      "duration": -1
-    },
-    "unidentified_name": "copper-wire charm",
-    "lore": "Sailors in a thunderstorm sometimes see blue flame dancing on the mastheads and burning nothing. They call it Saint Elmo's fire, after Erasmus, their patron, and take it as a sign he is watching. A ship's cooper twisted this charm from copper wire so the saint's fire would know where to go.",
-    "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 40
-    },
-    "peak_weight": 0.4,
-    "is_unique": false,
-    "spread": 22,
-    "peak_floor": 50
-  },
-  "amulet_poison_res": {
-    "name": "amulet of poison resistance",
-    "symbol": "\"",
-    "color": [
-      60,
-      180,
-      80
-    ],
-    "weight": 0.2,
-    "min_level": 20,
-    "slot": "amulet",
-    "equip_threshold": 3,
-    "quiz_tier": 2,
-    "effects": {
-      "status": "poison_resist",
-      "duration": -1
-    },
-    "unidentified_name": "serpent tooth pendant",
-    "lore": "Andromachus, physician to the emperor Nero, improved the old royal antidote by adding the flesh of vipers, on the reasoning that the snake must carry its own cure. Apothecaries sold his theriac for fifteen hundred years. This fang set in silver follows the same logic, and it seems to hold.",
-    "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 40
-    },
-    "peak_weight": 0.4,
-    "is_unique": false,
-    "spread": 22,
-    "peak_floor": 50
-  },
-  "amulet_sleep_res": {
-    "name": "amulet of sleep resistance",
-    "symbol": "\"",
-    "color": [
-      140,
-      140,
-      220
-    ],
-    "weight": 0.2,
-    "min_level": 20,
-    "slot": "amulet",
-    "equip_threshold": 3,
-    "quiz_tier": 2,
-    "effects": {
-      "status": "sleep_resist",
-      "duration": -1
-    },
-    "unidentified_name": "bell-shaped medallion",
-    "lore": "In the garden of Gethsemane the disciples fell asleep three times while their Master prayed, and he asked Peter whether they could not watch with him one hour. Monks who rise for the night office remember it. This small bell-shaped medal was a vigil-keeper's, and no drowsing spell gets past it.",
-    "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 40
-    },
-    "peak_weight": 0.4,
-    "is_unique": false,
-    "spread": 22,
-    "peak_floor": 50
-  },
-  "amulet_magic_res": {
-    "name": "amulet of magic resistance",
-    "symbol": "\"",
-    "color": [
-      160,
-      140,
-      200
-    ],
-    "weight": 0.2,
-    "min_level": 25,
-    "slot": "amulet",
-    "equip_threshold": 3,
-    "quiz_tier": 3,
-    "effects": {
-      "status": "magic_resist",
-      "duration": -1
-    },
-    "unidentified_name": "black root on a cord",
-    "lore": "When Odysseus went to face the witch Circe, Hermes met him on the path and pulled a herb from the ground: black at the root, with a flower white as milk. The gods call it moly. Circe's wand did nothing to him. A dried root of the kind hangs on this cord.",
-    "floorSpawnWeight": {
-      "1-20": 0,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 80
-    },
-    "peak_weight": 0.4,
-    "is_unique": false,
-    "spread": 13,
-    "peak_floor": 30
-  },
-  "amulet_drain_res": {
-    "name": "amulet of drain resistance",
-    "symbol": "\"",
-    "color": [
-      140,
-      80,
-      160
-    ],
-    "weight": 0.2,
-    "min_level": 20,
-    "slot": "amulet",
-    "equip_threshold": 3,
-    "quiz_tier": 2,
-    "effects": {
-      "status": "drain_resist",
-      "duration": -1
-    },
-    "unidentified_name": "braided silver chain",
-    "lore": "At the edge of the world Odysseus dug a pit and filled it with blood, and the hungry dead came crowding up to drink. He sat with his sword drawn across the trench and held them back. Silver braided the old way does the same work at the throat, and asks less of the arm.",
-    "floorSpawnWeight": {
-      "1-20": 60,
-      "21-40": 60,
-      "41-60": 40,
-      "61-80": 30,
-      "81-100": 20
-    },
-    "peak_weight": 0.4,
-    "is_unique": false,
-    "spread": 22,
-    "peak_floor": 50
+    "peak_floor": 0
   },
   "amulet_curse_teleport": {
     "name": "amulet of teleportitis",
@@ -785,16 +173,12 @@
     "unidentified_name": "split silver pendant",
     "lore": "The prophet Habakkuk was carrying a bowl of stew to the reapers when an angel caught him by the hair and set him down in Babylon, over the lions' den, to feed Daniel. Then the angel carried him home. This split pendant keeps the journey and has lost the angel and the purpose.",
     "floorSpawnWeight": {
-      "1-20": 60,
-      "21-40": 60,
-      "41-60": 40,
-      "61-80": 30,
-      "81-100": 20
+      "1-100": 2
     },
-    "peak_weight": 0.4,
+    "peak_weight": 0.0,
     "is_unique": false,
     "spread": 8,
-    "peak_floor": 6
+    "peak_floor": 0
   },
   "amulet_curse_slow": {
     "name": "amulet of slowing",
@@ -816,16 +200,12 @@
     "unidentified_name": "thick grey medallion",
     "lore": "The Gospel says it would be better for a man to have a millstone hung about his neck and be cast into the sea than to lead a child astray. A magistrate with a taste for scripture had these grey medals made for his prisoners. They weigh almost nothing in the hand and a great deal on the neck.",
     "floorSpawnWeight": {
-      "1-20": 60,
-      "21-40": 60,
-      "41-60": 40,
-      "61-80": 30,
-      "81-100": 20
+      "1-100": 2
     },
-    "peak_weight": 0.4,
+    "peak_weight": 0.0,
     "is_unique": false,
     "spread": 8,
-    "peak_floor": 6
+    "peak_floor": 0
   },
   "dragonslayer_ring": {
     "name": "Dragonslayer's Ring",
@@ -838,11 +218,9 @@
     "weight": 0.1,
     "min_level": 65,
     "slot": "ring",
-    "equip_threshold": 3,
+    "equip_threshold": 4,
     "quiz_tier": 5,
     "effects": {
-      "stat": "STR",
-      "amount": 4,
       "status": "fire_resist",
       "duration": -1
     },
@@ -876,11 +254,9 @@
     "weight": 0.1,
     "min_level": 65,
     "slot": "ring",
-    "equip_threshold": 3,
+    "equip_threshold": 4,
     "quiz_tier": 5,
     "effects": {
-      "stat": "DEX",
-      "amount": 4,
       "status": "poison_resist",
       "duration": -1
     },
@@ -911,7 +287,7 @@
     "weight": 0.1,
     "min_level": 45,
     "slot": "ring",
-    "equip_threshold": 3,
+    "equip_threshold": 4,
     "quiz_tier": 4,
     "effects": {
       "stat": "WIS",
@@ -935,135 +311,7 @@
     "identified": false,
     "id_level": 0
   },
-  "ring_protection_silver": {
-    "name": "ring of protection +1",
-    "symbol": "=",
-    "color": [
-      220,
-      220,
-      240
-    ],
-    "weight": 0.1,
-    "min_level": 8,
-    "slot": "ring",
-    "equip_threshold": 2,
-    "quiz_tier": 2,
-    "effects": {
-      "stat": "AC",
-      "amount": 1
-    },
-    "unidentified_name": "a smooth silver ring",
-    "lore": "Since before the Crusades, soldiers have carried the ninety-first Psalm into battle, written small: 'He shall give his angels charge over thee.' A silversmith engraved the verse inside this ring in letters too fine to read without a glass. Blows aimed at the wearer land a little wide.",
-    "identified": false,
-    "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 40
-    },
-    "peak_weight": 0.4,
-    "is_unique": false,
-    "spread": 8,
-    "peak_floor": 13
-  },
-  "ring_protection_gold": {
-    "name": "ring of protection +2",
-    "symbol": "=",
-    "color": [
-      220,
-      200,
-      80
-    ],
-    "weight": 0.1,
-    "min_level": 25,
-    "slot": "ring",
-    "equip_threshold": 2,
-    "quiz_tier": 3,
-    "effects": {
-      "stat": "AC",
-      "amount": 2
-    },
-    "unidentified_name": "a polished gold band",
-    "lore": "Before the battle at the Milvian Bridge in 312, Constantine had his soldiers mark their shields with the Chi-Rho, the first two letters of Christ's name in Greek. He won Rome that day. Officers of the later empire wore the sign on gold bands like this one, and trusted it more than their mail.",
-    "identified": false,
-    "floorSpawnWeight": {
-      "1-20": 0,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 80
-    },
-    "peak_weight": 0.4,
-    "is_unique": false,
-    "spread": 13,
-    "peak_floor": 30
-  },
-  "ring_protection_adamantine": {
-    "name": "ring of protection +3",
-    "symbol": "=",
-    "color": [
-      80,
-      60,
-      170
-    ],
-    "weight": 0.1,
-    "min_level": 45,
-    "slot": "ring",
-    "equip_threshold": 3,
-    "quiz_tier": 4,
-    "effects": {
-      "stat": "AC",
-      "amount": 3
-    },
-    "unidentified_name": "a dark heavy ring",
-    "lore": "The Greeks named the hardest thing they could imagine adamas, 'the unconquerable.' The sickle of Kronos was made of it, and Virgil gave the gate of Tartarus columns of solid adamant that neither men nor gods could break. A filing from such a pillar was worked into this dark, heavy ring.",
-    "identified": false,
-    "floorSpawnWeight": {
-      "1-20": 0,
-      "21-40": 0,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 80
-    },
-    "peak_weight": 0.3,
-    "is_unique": false,
-    "spread": 19,
-    "peak_floor": 50
-  },
-  "ring_speed_quicksilver": {
-    "name": "ring of speed",
-    "symbol": "=",
-    "color": [
-      210,
-      230,
-      240
-    ],
-    "weight": 0.1,
-    "min_level": 45,
-    "slot": "ring",
-    "equip_threshold": 3,
-    "quiz_tier": 4,
-    "effects": {
-      "status": "hasted",
-      "duration": -1
-    },
-    "unidentified_name": "a humming grey-metal ring",
-    "lore": "The alchemists named quicksilver for Mercury, the swift messenger, because it is the one metal that runs. No smith can make a ring of it. This grey band is the nearest anyone has come, and it hums on the finger like a struck bell. Its wearer is always a moment ahead.",
-    "identified": false,
-    "floorSpawnWeight": {
-      "1-20": 0,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 80
-    },
-    "peak_weight": 0.4,
-    "is_unique": false,
-    "spread": 19,
-    "peak_floor": 50
-  },
-  "ring_sustenance_amber": {
+  "ring_of_sustenance": {
     "name": "ring of sustenance",
     "symbol": "=",
     "color": [
@@ -1072,124 +320,23 @@
       80
     ],
     "weight": 0.1,
-    "min_level": 8,
+    "min_level": 1,
     "slot": "ring",
-    "equip_threshold": 3,
-    "quiz_tier": 2,
+    "equip_threshold": 1,
+    "quiz_tier": 1,
     "effects": {
       "status": "sustained",
       "duration": -1
     },
-    "unidentified_name": "a warm amber ring",
+    "unidentified_name": "a ring",
     "lore": "During the great drought the prophet Elijah lodged with a widow of Zarephath who had one handful of meal and a little oil left. She fed him first. The jar of meal and the cruse of oil did not run out until the rains came. A drop of that oil, they say, hardened into this amber.",
-    "identified": false,
-    "floorSpawnWeight": {
-      "1-20": 80,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 40
-    },
-    "peak_weight": 0.4,
     "is_unique": false,
-    "spread": 8,
-    "peak_floor": 13
-  },
-  "ring_strength_dragonbone": {
-    "name": "ring of giant strength",
-    "symbol": "=",
-    "color": [
-      210,
-      200,
-      175
-    ],
-    "weight": 0.1,
-    "min_level": 45,
-    "slot": "ring",
-    "equip_threshold": 3,
-    "quiz_tier": 4,
-    "effects": {
-      "stat": "STR",
-      "amount": 4
-    },
-    "unidentified_name": "a massive carved bone ring",
-    "lore": "Og, king of Bashan, was the last of the giants. The Book of Deuteronomy records that his bed was made of iron, nine cubits long and four wide, and that it was kept on show in Rabbah for anyone who doubted. This ring was carved from a knucklebone that would fit such a bed.",
-    "identified": false,
+    "kind": "sustenance",
+    "peak_floor": 0,
+    "peak_weight": 0.0,
     "floorSpawnWeight": {
-      "1-20": 0,
-      "21-40": 0,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 80
-    },
-    "peak_weight": 0.3,
-    "is_unique": false,
-    "spread": 19,
-    "peak_floor": 50
-  },
-  "ring_constitution_diamond": {
-    "name": "ring of endurance",
-    "symbol": "=",
-    "color": [
-      200,
-      245,
-      255
-    ],
-    "weight": 0.1,
-    "min_level": 45,
-    "slot": "ring",
-    "equip_threshold": 3,
-    "quiz_tier": 4,
-    "effects": {
-      "stat": "CON",
-      "amount": 4
-    },
-    "unidentified_name": "a faceted crystal ring",
-    "lore": "Pliny believed a true diamond set on an anvil would shatter the hammer and the anvil before it broke itself. He was wrong about the stone and right about the idea. The clear gem in this ring lends its wearer that stubbornness: the body keeps going long after it has every reason to stop.",
-    "identified": false,
-    "floorSpawnWeight": {
-      "1-20": 0,
-      "21-40": 0,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 80
-    },
-    "peak_weight": 0.3,
-    "is_unique": false,
-    "spread": 19,
-    "peak_floor": 50
-  },
-  "ring_intellect_prismatic_deep": {
-    "name": "ring of brilliance",
-    "symbol": "=",
-    "color": [
-      200,
-      180,
-      255
-    ],
-    "weight": 0.1,
-    "min_level": 45,
-    "slot": "ring",
-    "equip_threshold": 3,
-    "quiz_tier": 4,
-    "effects": {
-      "stat": "INT",
-      "amount": 4
-    },
-    "unidentified_name": "a shifting prismatic ring",
-    "lore": "The Ptolemies searched every ship that docked at Alexandria and took its books to the Library. The scribes made copies, and it was the copies that went back to the owners. A librarian there cut this stone so that it throws one beam of light into many, as a reminder of what the collection was for.",
-    "identified": false,
-    "floorSpawnWeight": {
-      "1-20": 0,
-      "21-40": 0,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 80
-    },
-    "peak_weight": 0.3,
-    "is_unique": false,
-    "spread": 19,
-    "peak_floor": 50
+      "1-100": 8
+    }
   },
   "amulet_life_saving": {
     "name": "amulet of life saving",
@@ -1200,188 +347,47 @@
       80
     ],
     "weight": 0.2,
-    "min_level": 45,
+    "min_level": 35,
     "slot": "amulet",
-    "equip_threshold": 3,
-    "quiz_tier": 4,
+    "equip_threshold": 2,
+    "quiz_tier": 1,
     "effects": {
       "status": "life_save",
       "duration": -1
     },
     "unidentified_name": "a warm golden medallion",
     "lore": "Alcestis agreed to die in her husband's place, and did. Heracles, a guest in the mourning house, went out to the tomb, waited for Death to come for his due, and wrestled him until he let her go. This warm gold medal remembers the hold. It works once.",
-    "identified": false,
-    "floorSpawnWeight": {
-      "1-20": 0,
-      "21-40": 0,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 80
-    },
-    "peak_weight": 0.3,
     "is_unique": false,
-    "spread": 19,
-    "peak_floor": 50
+    "kind": "life_saving",
+    "peak_floor": 0,
+    "peak_weight": 0.0,
+    "floorSpawnWeight": {
+      "1-100": 4
+    }
   },
-  "amulet_spell_turning": {
-    "name": "amulet of spell turning",
-    "symbol": "\"",
+  "ring_of_spell_turning": {
+    "name": "ring of spell turning",
+    "symbol": "=",
     "color": [
       180,
       160,
       255
     ],
-    "weight": 0.2,
-    "min_level": 45,
-    "slot": "amulet",
-    "equip_threshold": 3,
-    "quiz_tier": 4,
-    "effects": {
-      "status": "spell_turning",
-      "duration": -1
-    },
-    "unidentified_name": "a spiral-engraved medallion",
-    "lore": "King Balak of Moab hired the seer Balaam to curse Israel and took him up three mountains to do it. Three times Balaam opened his mouth and a blessing came out, and the curse fell back on the man who paid for it. The spiral cut in this medallion turns ill words the same way.",
-    "identified": false,
-    "floorSpawnWeight": {
-      "1-20": 0,
-      "21-40": 0,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 80
-    },
-    "peak_weight": 0.3,
+    "weight": 0.1,
+    "min_level": 1,
+    "slot": "ring",
+    "equip_threshold": 1,
+    "quiz_tier": 1,
+    "effects": {},
+    "unidentified_name": "a ring",
+    "lore": "King Balak of Moab hired the seer Balaam to curse Israel and took him up three mountains to do it. Three times Balaam opened his mouth and a blessing came out, and the curse fell back on the man who paid for it. The spiral cut in this ring turns ill words the same way: magic, shadow and the mind's blows glance off.",
     "is_unique": false,
-    "spread": 19,
-    "peak_floor": 50
-  },
-  "amulet_truesight": {
-    "name": "amulet of true sight",
-    "symbol": "\"",
-    "color": [
-      200,
-      245,
-      200
-    ],
-    "weight": 0.2,
-    "min_level": 25,
-    "slot": "amulet",
-    "equip_threshold": 3,
-    "quiz_tier": 3,
-    "effects": {
-      "status": "truesight",
-      "duration": -1
-    },
-    "unidentified_name": "a clear gem pendant",
-    "lore": "On the plain before Troy, Athena told Diomedes she had lifted the mist from his eyes so that he could tell god from man in the fighting. He wounded two immortals before nightfall. A lens of this clear stone does the same for lesser eyes: the hidden thing is simply there.",
-    "identified": false,
+    "kind": "spell_turning",
+    "peak_floor": 0,
+    "peak_weight": 0.0,
     "floorSpawnWeight": {
-      "1-20": 0,
-      "21-40": 80,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 80
-    },
-    "peak_weight": 0.4,
-    "is_unique": false,
-    "spread": 13,
-    "peak_floor": 30
-  },
-  "amulet_reflection": {
-    "name": "amulet of reflection",
-    "symbol": "\"",
-    "color": [
-      220,
-      235,
-      255
-    ],
-    "weight": 0.2,
-    "min_level": 45,
-    "slot": "amulet",
-    "equip_threshold": 3,
-    "quiz_tier": 4,
-    "effects": {
-      "status": "reflecting",
-      "duration": -1
-    },
-    "unidentified_name": "a mirror-faced medallion",
-    "lore": "Perseus never looked at Medusa. He watched her in the polished bronze of the shield Athena lent him and struck backward at the reflection. The face of this medallion is polished the same way, and a hex that meets it tends to go home to its maker.",
-    "identified": false,
-    "floorSpawnWeight": {
-      "1-20": 0,
-      "21-40": 0,
-      "41-60": 80,
-      "61-80": 80,
-      "81-100": 80
-    },
-    "peak_weight": 0.3,
-    "is_unique": false,
-    "spread": 19,
-    "peak_floor": 50
-  },
-  "amulet_titan_constitution": {
-    "name": "amulet of titan constitution",
-    "symbol": "\"",
-    "color": [
-      220,
-      60,
-      60
-    ],
-    "weight": 0.2,
-    "min_level": 65,
-    "slot": "amulet",
-    "equip_threshold": 4,
-    "quiz_tier": 5,
-    "effects": {
-      "stat": "CON",
-      "amount": 5
-    },
-    "unidentified_name": "a heavy blood-red gem pendant",
-    "lore": "Zeus chained Prometheus to a crag in the Caucasus for stealing fire. Each day an eagle came and tore out his liver, and each night it grew back whole, so that the punishment could go on. The blood-red stone in this pendant came from that rock. It makes a body very hard to finish.",
-    "identified": false,
-    "floorSpawnWeight": {
-      "1-20": 0,
-      "21-40": 0,
-      "41-60": 0,
-      "61-80": 80,
-      "81-100": 80
-    },
-    "peak_weight": 0.2,
-    "is_unique": false,
-    "spread": 25,
-    "peak_floor": 70
-  },
-  "amulet_archmage_intellect": {
-    "name": "amulet of archmage intellect",
-    "symbol": "\"",
-    "color": [
-      180,
-      140,
-      255
-    ],
-    "weight": 0.2,
-    "min_level": 65,
-    "slot": "amulet",
-    "equip_threshold": 4,
-    "quiz_tier": 5,
-    "effects": {
-      "stat": "INT",
-      "amount": 5
-    },
-    "unidentified_name": "a violet crystalline pendant",
-    "lore": "Odin wanted one drink from Mimir's well, where wisdom is kept, and Mimir's price was an eye. Odin paid it. Later he hung nine nights on the windswept tree, wounded with a spear, to learn the runes. The violet stone here is said to be cut from the well's rim. It did not come cheap either.",
-    "identified": false,
-    "floorSpawnWeight": {
-      "1-20": 0,
-      "21-40": 0,
-      "41-60": 0,
-      "61-80": 80,
-      "81-100": 80
-    },
-    "peak_weight": 0.2,
-    "is_unique": false,
-    "spread": 25,
-    "peak_floor": 70
+      "1-100": 8
+    }
   },
   "ring_curse_drain": {
     "name": "ring of life drain",
@@ -1404,16 +410,12 @@
     "lore": "Erysichthon cut down an oak sacred to Demeter, and the goddess sent Hunger to breathe on him as he slept. He ate his herds, sold everything he owned for food, and in Ovid's telling ended by gnawing his own limbs. This cold ring has the same appetite, and the wearer is nearest.",
     "identified": false,
     "floorSpawnWeight": {
-      "1-20": 60,
-      "21-40": 60,
-      "41-60": 40,
-      "61-80": 30,
-      "81-100": 20
+      "1-100": 2
     },
-    "peak_weight": 0.4,
+    "peak_weight": 0.0,
     "is_unique": false,
     "spread": 8,
-    "peak_floor": 6
+    "peak_floor": 0
   },
   "amulet_curse_drain": {
     "name": "amulet of doom",
@@ -1436,16 +438,12 @@
     "lore": "Damocles told the tyrant Dionysius of Syracuse how fortunate a king must be. Dionysius sat him on the throne at a banquet with a sword hung over his head by one horsehair. Damocles lost his appetite. Whoever wears this pendant sits in that chair, and the hair is fraying.",
     "identified": false,
     "floorSpawnWeight": {
-      "1-20": 60,
-      "21-40": 60,
-      "41-60": 40,
-      "61-80": 30,
-      "81-100": 20
+      "1-100": 2
     },
-    "peak_weight": 0.4,
+    "peak_weight": 0.0,
     "is_unique": false,
     "spread": 8,
-    "peak_floor": 6
+    "peak_floor": 0
   },
   "ring_of_gyges": {
     "name": "Ring of Gyges",
@@ -1494,10 +492,7 @@
     "slot": "ring",
     "equip_threshold": 4,
     "quiz_tier": 5,
-    "effects": {
-      "stat": "STR",
-      "amount": 5
-    },
+    "effects": {},
     "unidentified_name": "a heavy gold ring with a tiny rune",
     "floorSpawnWeight": {
       "81-100": 2
@@ -1522,14 +517,9 @@
     "weight": 0.1,
     "min_level": 55,
     "slot": "ring",
-    "equip_threshold": 3,
-    "quiz_tier": 4,
-    "effects": {
-      "stat": "PER",
-      "amount": 3,
-      "status": "searching",
-      "duration": -1
-    },
+    "equip_threshold": 4,
+    "quiz_tier": 5,
+    "effects": {},
     "unidentified_name": "a golden ring that seems lighter than it should",
     "floorSpawnWeight": {
       "61-80": 1,
@@ -1555,13 +545,9 @@
     "weight": 0.2,
     "min_level": 45,
     "slot": "ring",
-    "equip_threshold": 3,
+    "equip_threshold": 4,
     "quiz_tier": 4,
-    "effects": {
-      "stat": "STR",
-      "amount": 4,
-      "duration": -1
-    },
+    "effects": {},
     "gold_multiplier": 2.0,
     "can_be_cursed": false,
     "unidentified_name": "a golden ring of incredible craftsmanship",
@@ -1593,9 +579,7 @@
     "quiz_tier": 4,
     "effects": {
       "status": "invisible",
-      "duration": -1,
-      "stat": "DEX",
-      "amount": 2
+      "duration": -1
     },
     "unidentified_name": "a green ring of twisted ivy-metal",
     "floorSpawnWeight": {
@@ -1621,7 +605,7 @@
     "weight": 0.2,
     "min_level": 65,
     "slot": "amulet",
-    "equip_threshold": 3,
+    "equip_threshold": 5,
     "quiz_tier": 5,
     "effects": {
       "stat": "WIS",
@@ -1654,15 +638,13 @@
     "weight": 0.2,
     "min_level": 65,
     "slot": "amulet",
-    "equip_threshold": 4,
+    "equip_threshold": 5,
     "quiz_tier": 5,
     "effects": {
       "status": "reflecting",
       "duration": -1,
       "stat": "WIS",
-      "amount": 2,
-      "stat2": "AC",
-      "amount2": 2
+      "amount": 2
     },
     "unidentified_name": "a small wooden figure of armed Athena",
     "floorSpawnWeight": {
@@ -1675,7 +657,10 @@
     "is_unique": true,
     "spread": 25,
     "peak_floor": 70,
-    "ac_bonus": 2
+    "save_bonus": {
+      "cat": "all",
+      "amount": 2
+    }
   },
   "eye_of_horus": {
     "name": "Eye of Horus",
@@ -1688,7 +673,7 @@
     "weight": 0.2,
     "min_level": 25,
     "slot": "amulet",
-    "equip_threshold": 1,
+    "equip_threshold": 4,
     "quiz_tier": 3,
     "effects": {
       "stat": "PER",
@@ -1723,7 +708,7 @@
     "min_level": 16,
     "slot": "ring",
     "equip_threshold": 3,
-    "quiz_tier": 2,
+    "quiz_tier": 3,
     "effects": {
       "status": "regenerating",
       "duration": -1
@@ -1755,8 +740,8 @@
     "weight": 0.2,
     "min_level": 40,
     "slot": "amulet",
-    "equip_threshold": 3,
-    "quiz_tier": 5,
+    "equip_threshold": 5,
+    "quiz_tier": 4,
     "effects": {
       "stat": "CON",
       "amount": 2,
@@ -1790,8 +775,8 @@
     "weight": 0.2,
     "min_level": 45,
     "slot": "amulet",
-    "equip_threshold": 3,
-    "quiz_tier": 3,
+    "equip_threshold": 5,
+    "quiz_tier": 4,
     "effects": {
       "status": "regenerating",
       "duration": -1,
@@ -1821,7 +806,7 @@
     "weight": 0.2,
     "min_level": 65,
     "slot": "amulet",
-    "equip_threshold": 4,
+    "equip_threshold": 5,
     "quiz_tier": 5,
     "effects": {
       "stat": "WIS",
@@ -1879,7 +864,7 @@
     "weight": 0.3,
     "min_level": 50,
     "slot": "amulet",
-    "equip_threshold": 3,
+    "equip_threshold": 5,
     "quiz_tier": 4,
     "effects": {
       "stat": "CON",
@@ -1908,7 +893,7 @@
     "weight": 0.2,
     "min_level": 70,
     "slot": "amulet",
-    "equip_threshold": 4,
+    "equip_threshold": 5,
     "quiz_tier": 5,
     "effects": {
       "stat": "INT",
@@ -1962,7 +947,7 @@
     "weight": 0.2,
     "min_level": 60,
     "slot": "amulet",
-    "equip_threshold": 4,
+    "equip_threshold": 5,
     "quiz_tier": 5,
     "effects": {
       "status": "life_save",
@@ -2021,7 +1006,7 @@
     "weight": 0.2,
     "min_level": 70,
     "slot": "amulet",
-    "equip_threshold": 3,
+    "equip_threshold": 5,
     "quiz_tier": 5,
     "effects": {
       "stat": "CON",
@@ -2075,7 +1060,7 @@
     "weight": 0.2,
     "min_level": 50,
     "slot": "amulet",
-    "equip_threshold": 3,
+    "equip_threshold": 5,
     "quiz_tier": 4,
     "effects": {
       "status": "regenerating",
@@ -2106,12 +1091,9 @@
     "weight": 0.3,
     "min_level": 65,
     "slot": "amulet",
-    "equip_threshold": 4,
+    "equip_threshold": 5,
     "quiz_tier": 5,
-    "effects": {
-      "stat": "STR",
-      "amount": 4
-    },
+    "effects": {},
     "unidentified_name": "a twisted gold neck-ring of Celtic make",
     "floorSpawnWeight": {
       "61-80": 1,
@@ -2140,7 +1122,7 @@
     "weight": 0.3,
     "min_level": 65,
     "slot": "amulet",
-    "equip_threshold": 4,
+    "equip_threshold": 5,
     "quiz_tier": 5,
     "effects": {
       "stat": "WIS",
@@ -2171,7 +1153,7 @@
     "weight": 0.2,
     "min_level": 50,
     "slot": "amulet",
-    "equip_threshold": 3,
+    "equip_threshold": 5,
     "quiz_tier": 4,
     "effects": {
       "stat": "CON",
@@ -2206,9 +1188,7 @@
     "quiz_tier": 5,
     "effects": {
       "stat": "STR",
-      "amount": 3,
-      "status": "hasted",
-      "duration": -1
+      "amount": 3
     },
     "equip_chain_mode": "chain",
     "tier_bonuses": {
@@ -2221,18 +1201,15 @@
       },
       "3": {
         "stat_bonus_STR": 4,
-        "passive_attack_chain_cap_bonus": 1,
-        "status_hasted": 999
+        "passive_attack_chain_cap_bonus": 1
       },
       "4": {
         "stat_bonus_STR": 5,
-        "passive_attack_chain_cap_bonus": 1,
-        "status_hasted": 999
+        "passive_attack_chain_cap_bonus": 1
       },
       "5": {
         "stat_bonus_STR": 3,
         "passive_attack_chain_cap_bonus": 1,
-        "status_hasted": 999,
         "passive_three_oclock": true
       }
     },
@@ -2347,7 +1324,7 @@
     "weight": 0.2,
     "min_level": 70,
     "slot": "amulet",
-    "equip_threshold": 4,
+    "equip_threshold": 5,
     "quiz_tier": 5,
     "effects": {
       "stat": "INT",
@@ -2379,9 +1356,7 @@
     "quiz_tier": 5,
     "effects": {
       "status": "clairvoyant",
-      "duration": -1,
-      "stat": "PER",
-      "amount": 2
+      "duration": -1
     },
     "unidentified_name": "a bronze ring smelling faintly of laurel smoke",
     "floorSpawnWeight": {
@@ -2461,13 +1436,11 @@
     "weight": 0.2,
     "min_level": 50,
     "slot": "ring",
-    "equip_threshold": 3,
+    "equip_threshold": 4,
     "quiz_tier": 4,
     "effects": {
       "stat": "INT",
-      "amount": 4,
-      "status": "searching",
-      "duration": -1
+      "amount": 4
     },
     "unidentified_name": "a ring cut from a broken golden diadem",
     "floorSpawnWeight": {
@@ -2492,13 +1465,11 @@
     "weight": 0.2,
     "min_level": 45,
     "slot": "amulet",
-    "equip_threshold": 3,
+    "equip_threshold": 5,
     "quiz_tier": 4,
     "effects": {
       "stat": "CON",
-      "amount": 4,
-      "status": "warning",
-      "duration": -1
+      "amount": 4
     },
     "unidentified_name": "a necklace of Baltic amber and whale-bone",
     "floorSpawnWeight": {
@@ -2557,9 +1528,9 @@
     "equip_threshold": 4,
     "quiz_tier": 5,
     "effects": {
-      "stat": "STR",
+      "stat": "CON",
       "amount": 4,
-      "status": "hasted",
+      "status": "magic_resist",
       "duration": -1
     },
     "unidentified_name": "a red-gold ring with a small tower engraved on it",
@@ -2584,7 +1555,7 @@
     "weight": 0.2,
     "min_level": 60,
     "slot": "amulet",
-    "equip_threshold": 4,
+    "equip_threshold": 5,
     "quiz_tier": 5,
     "effects": {
       "stat": "INT",
@@ -2615,13 +1586,11 @@
     "weight": 0.1,
     "min_level": 65,
     "slot": "ring",
-    "equip_threshold": 3,
+    "equip_threshold": 4,
     "quiz_tier": 5,
     "effects": {
       "stat": "WIS",
-      "amount": 3,
-      "status": "truesight",
-      "duration": -1
+      "amount": 3
     },
     "unidentified_name": "a ring of strange alloy that seems to look back at you",
     "floorSpawnWeight": {
@@ -2632,7 +1601,9 @@
     "peak_weight": 0.2,
     "is_unique": true,
     "spread": 25,
-    "peak_floor": 70
+    "peak_floor": 70,
+    "daimonion": 3,
+    "special": "A voice stops you when you are about to answer wrong: three times a floor, a wrong choice is struck out and you choose again."
   },
   "amulet_of_pythagoras": {
     "name": "Tetractys Amulet",
@@ -2645,13 +1616,11 @@
     "weight": 0.2,
     "min_level": 50,
     "slot": "amulet",
-    "equip_threshold": 3,
+    "equip_threshold": 5,
     "quiz_tier": 4,
     "effects": {
       "stat": "INT",
-      "amount": 4,
-      "status": "searching",
-      "duration": -1
+      "amount": 4
     },
     "unidentified_name": "a bronze triangle pendant with ten points",
     "floorSpawnWeight": {
@@ -2741,7 +1710,7 @@
     "min_level": 22,
     "slot": "amulet",
     "quiz_tier": 3,
-    "equip_threshold": 3,
+    "equip_threshold": 4,
     "effects": {
       "stat": "STR",
       "amount": 3,
@@ -2806,7 +1775,7 @@
     "min_level": 20,
     "slot": "amulet",
     "quiz_tier": 3,
-    "equip_threshold": 3,
+    "equip_threshold": 4,
     "effects": {
       "stat": "WIS",
       "amount": 2
@@ -2839,12 +1808,9 @@
     "weight": 0.1,
     "min_level": 25,
     "slot": "ring",
-    "quiz_tier": 4,
+    "quiz_tier": 3,
     "equip_threshold": 3,
-    "effects": {
-      "stat": "DEX",
-      "amount": 3
-    },
+    "effects": {},
     "identified": false,
     "unidentified_name": "a black signet with a dagger device",
     "lore": "In 1090 Hasan-i Sabbah took the mountain castle of Alamut, the Eagle's Nest, without a siege, and from it he sent single men with daggers against viziers and princes. The castle held for a hundred and sixty-six years, until the Mongols under Hulegu pulled it down. This black signet left by a side gate. Its wearer walks very quietly.",
@@ -2872,7 +1838,7 @@
     "min_level": 24,
     "slot": "amulet",
     "quiz_tier": 3,
-    "equip_threshold": 3,
+    "equip_threshold": 4,
     "effects": {
       "status": "regenerating",
       "duration": -1
@@ -2939,8 +1905,8 @@
     "weight": 0.2,
     "min_level": 28,
     "slot": "amulet",
-    "quiz_tier": 4,
-    "equip_threshold": 3,
+    "quiz_tier": 3,
+    "equip_threshold": 4,
     "effects": {
       "stat": "INT",
       "amount": 3,
@@ -2972,7 +1938,7 @@
     "weight": 0.1,
     "min_level": 26,
     "slot": "ring",
-    "quiz_tier": 4,
+    "quiz_tier": 3,
     "equip_threshold": 3,
     "effects": {
       "stat": "DEX",
@@ -3005,8 +1971,8 @@
     "weight": 0.2,
     "min_level": 22,
     "slot": "amulet",
-    "quiz_tier": 4,
-    "equip_threshold": 3,
+    "quiz_tier": 3,
+    "equip_threshold": 4,
     "effects": {
       "stat": "CON",
       "amount": 2,
@@ -3038,7 +2004,7 @@
     "weight": 0.2,
     "min_level": 0,
     "slot": "amulet",
-    "equip_threshold": 2,
+    "equip_threshold": 4,
     "quiz_tier": 2,
     "effects": {
       "stat": "WIS",
@@ -3068,11 +2034,9 @@
     "weight": 0.2,
     "min_level": 0,
     "slot": "amulet",
-    "equip_threshold": 3,
+    "equip_threshold": 4,
     "quiz_tier": 2,
     "effects": {
-      "stat": "PER",
-      "amount": 1,
       "status": "cold_resist",
       "duration": -1
     },
@@ -3100,7 +2064,7 @@
     "weight": 0.2,
     "min_level": 0,
     "slot": "amulet",
-    "equip_threshold": 2,
+    "equip_threshold": 4,
     "quiz_tier": 2,
     "effects": {
       "stat": "CON",
@@ -3160,7 +2124,7 @@
     "weight": 0.2,
     "min_level": 0,
     "slot": "amulet",
-    "equip_threshold": 3,
+    "equip_threshold": 4,
     "quiz_tier": 3,
     "effects": {
       "status": "dark_vision",
@@ -3183,12 +2147,10 @@
     "name": "Ariadne's Thread",
     "slot": "belt",
     "effects": {
-      "status": "searching",
-      "duration": -1,
       "stat": "WIS",
       "amount": 2
     },
-    "equip_threshold": 3,
+    "equip_threshold": 4,
     "quiz_tier": 3,
     "weight": 0.2,
     "value": 3000,
@@ -3219,11 +2181,9 @@
     "slot": "amulet",
     "effects": {
       "status": "searching",
-      "duration": -1,
-      "stat": "PER",
-      "amount": 2
+      "duration": -1
     },
-    "equip_threshold": 3,
+    "equip_threshold": 4,
     "quiz_tier": 2,
     "weight": 0.2,
     "value": 800,
@@ -3255,7 +2215,7 @@
       "stat": "INT",
       "amount": 2
     },
-    "equip_threshold": 2,
+    "equip_threshold": 4,
     "quiz_tier": 2,
     "weight": 0.1,
     "value": 1500,
@@ -3289,7 +2249,7 @@
       "stat": "CON",
       "amount": 4
     },
-    "equip_threshold": 3,
+    "equip_threshold": 5,
     "quiz_tier": 4,
     "weight": 0.2,
     "value": 6000,
@@ -3320,11 +2280,9 @@
     "slot": "amulet",
     "effects": {
       "stat": "WIS",
-      "amount": 2,
-      "stat2": "PER",
-      "amount2": 1
+      "amount": 2
     },
-    "equip_threshold": 2,
+    "equip_threshold": 4,
     "quiz_tier": 2,
     "weight": 0.2,
     "value": 800,
@@ -3354,7 +2312,7 @@
       "stat2": "CON",
       "amount2": 1
     },
-    "equip_threshold": 2,
+    "equip_threshold": 3,
     "quiz_tier": 1,
     "weight": 0.2,
     "value": 1200,
@@ -3386,7 +2344,7 @@
       "stat2": "DEX",
       "amount2": 1
     },
-    "equip_threshold": 2,
+    "equip_threshold": 3,
     "quiz_tier": 2,
     "weight": 0.1,
     "value": 2000,
@@ -3414,11 +2372,9 @@
     "slot": "amulet",
     "effects": {
       "stat": "WIS",
-      "amount": 2,
-      "stat2": "PER",
-      "amount2": 1
+      "amount": 2
     },
-    "equip_threshold": 2,
+    "equip_threshold": 4,
     "quiz_tier": 2,
     "weight": 0.2,
     "value": 8000,
@@ -3452,7 +2408,7 @@
     "weight": 0.1,
     "min_level": 3,
     "slot": "ring",
-    "equip_threshold": 2,
+    "equip_threshold": 3,
     "quiz_tier": 2,
     "effects": {
       "stat": "WIS",
@@ -3485,7 +2441,7 @@
     "weight": 0.2,
     "min_level": 5,
     "slot": "amulet",
-    "equip_threshold": 3,
+    "equip_threshold": 4,
     "quiz_tier": 2,
     "effects": {
       "status": "sleep_resist",
@@ -3557,12 +2513,10 @@
     "min_level": 14,
     "slot": "ring",
     "equip_threshold": 3,
-    "quiz_tier": 2,
+    "quiz_tier": 3,
     "effects": {
       "stat": "WIS",
-      "amount": 1,
-      "stat2": "PER",
-      "amount2": 1
+      "amount": 1
     },
     "unidentified_name": "a ring with tiny golden scales",
     "lore": "Ma'at is truth, and her sign is a single ostrich feather. In the Hall of Two Truths the heart of each dead Egyptian went on the scale against it. A heart no heavier than the feather passed on to the Field of Reeds; a heavy one went to Ammit the Devourer. The tiny scales on this ring help their wearer weigh things as they are.",
@@ -3591,7 +2545,7 @@
     "weight": 0.2,
     "min_level": 1,
     "slot": "amulet",
-    "equip_threshold": 3,
+    "equip_threshold": 4,
     "quiz_tier": 2,
     "effects": {
       "stat": "INT",
@@ -3624,16 +2578,15 @@
     "weight": 0.2,
     "min_level": 35,
     "slot": "amulet",
-    "equip_threshold": 2,
-    "quiz_tier": 3,
+    "equip_threshold": 5,
+    "quiz_tier": 4,
     "effects": {
-      "stat": "STR",
+      "stat": "CON",
       "amount": 3
     },
-    "surrounded_ac_bonus": 2,
     "can_be_cursed": false,
     "unidentified_name": "a twisted gold neck-ring",
-    "lore": "Boudicca, queen of the Iceni, was tall, with a great mass of tawny hair to her hips and a heavy gold torc at her throat. In AD 60 the Romans flogged her and wronged her daughters. She burned Camulodunum, Londinium and Verulamium to the ground. The torc lends its wearer her temper: the more enemies crowd in, the harder they are to hit.",
+    "lore": "Boudicca, queen of the Iceni, was tall, with a great mass of tawny hair to her hips and a heavy gold torc at her throat. In AD 60 the Romans flogged her and wronged her daughters. She burned Camulodunum, Londinium and Verulamium to the ground. The torc lends its wearer her temper: a body that will not break and a mind that will not bend, however many crowd in.",
     "floorSpawnWeight": {
       "26-40": 1,
       "41-60": 2,
@@ -3644,7 +2597,11 @@
     "spread": 16,
     "peak_floor": 40,
     "identified": false,
-    "id_level": 0
+    "id_level": 0,
+    "save_bonus": {
+      "cat": "WIS",
+      "amount": 2
+    }
   },
   "rands_heart": {
     "name": "Rand's Heart",
@@ -3657,8 +2614,8 @@
     "weight": 0.2,
     "min_level": 999,
     "slot": "amulet",
-    "equip_threshold": 3,
-    "quiz_tier": 1,
+    "equip_threshold": 4,
+    "quiz_tier": 2,
     "effects": {
       "status": "warning",
       "duration": -1
@@ -3743,12 +2700,9 @@
     "weight": 0.2,
     "min_level": 20,
     "slot": "amulet",
-    "equip_threshold": 3,
-    "quiz_tier": 4,
-    "effects": {
-      "status": "poison_resist",
-      "duration": -1
-    },
+    "equip_threshold": 4,
+    "quiz_tier": 3,
+    "effects": {},
     "death_save": true,
     "can_be_cursed": false,
     "unidentified_name": "a carved green jade insect",
@@ -3776,7 +2730,7 @@
     "weight": 0.1,
     "min_level": 60,
     "slot": "ring",
-    "equip_threshold": 3,
+    "equip_threshold": 4,
     "quiz_tier": 5,
     "effects": {
       "stat": "WIS",
@@ -3809,7 +2763,7 @@
     "weight": 0.2,
     "min_level": 65,
     "slot": "amulet",
-    "equip_threshold": 3,
+    "equip_threshold": 5,
     "quiz_tier": 5,
     "effects": {
       "stat": "CON",
@@ -3849,9 +2803,7 @@
     "quiz_tier": 5,
     "effects": {
       "stat": "STR",
-      "amount": 6,
-      "duration": -1,
-      "status": "hasted"
+      "amount": 6
     },
     "can_be_cursed": false,
     "is_unique": true,
@@ -3874,39 +2826,29 @@
     "spread": 12,
     "peak_weight": 0.2,
     "max_enchant": 3,
-    "equip_threshold": 4,
-    "quiz_tier": 4,
+    "equip_threshold": 5,
+    "quiz_tier": 5,
     "effects": {
       "stat": "CON",
-      "amount": 3,
-      "status": "fire_resist",
-      "duration": -1
+      "amount": 3
     },
     "equip_chain_mode": "escalator_chain",
     "tier_bonuses": {
       "1": {
-        "stat_bonus_CON": 3,
-        "status_fire_resist": 999
+        "stat_bonus_CON": 3
       },
       "2": {
-        "stat_bonus_CON": 4,
-        "status_fire_resist": 999
+        "stat_bonus_CON": 4
       },
       "3": {
-        "stat_bonus_CON": 4,
-        "status_fire_resist": 999,
-        "resistance_fire": 2
+        "stat_bonus_CON": 4
       },
       "4": {
         "stat_bonus_CON": 5,
-        "status_fire_resist": 999,
-        "resistance_fire": 2,
         "passive_suryas_gift": true
       },
       "5": {
         "stat_bonus_CON": 5,
-        "status_fire_resist": 999,
-        "resistance_fire": 2,
         "passive_suryas_gift": true,
         "passive_first_hit_absorb": true,
         "passive_death_save_bonus": 2
@@ -3935,12 +2877,9 @@
     "is_unique": true,
     "can_be_cursed": true,
     "cursed": true,
-    "equip_threshold": 3,
-    "quiz_tier": 2,
-    "effects": {
-      "stat": "PER",
-      "amount": -1
-    },
+    "equip_threshold": 4,
+    "quiz_tier": 3,
+    "effects": {},
     "paralyze_charges": 3,
     "paralyze_duration": 10,
     "passive_silent_walk": true,
@@ -3956,8 +2895,8 @@
     "charges": 3,
     "max_charges": 3
   },
-  "ring_protection_iron": {
-    "name": "iron ring of protection",
+  "ring_of_protection": {
+    "name": "ring of protection",
     "symbol": "=",
     "color": [
       200,
@@ -3966,20 +2905,19 @@
     ],
     "weight": 0.1,
     "slot": "ring",
-    "value": 80,
-    "effects": {
-      "stat": "AC",
-      "amount": 1
-    },
-    "equip_threshold": 2,
+    "effects": {},
+    "equip_threshold": 1,
     "quiz_tier": 1,
-    "peak_floor": 4,
-    "peak_weight": 0.6,
-    "spread": 6,
     "min_level": 1,
-    "tier": 1,
-    "unidentified_name": "a banded cold-iron ring",
-    "lore": "Saint Dunstan was a blacksmith before he was Archbishop of Canterbury. The story goes that the Devil came to have a hoof shod, and Dunstan nailed the shoe on so painfully that the Devil swore never to enter a door with iron over it. Cold iron rings like this one trade on that promise."
+    "unidentified_name": "a ring",
+    "lore": "Saint Dunstan was a blacksmith before he was Archbishop of Canterbury. The story goes that the Devil came to have a hoof shod, and Dunstan nailed the shoe on so painfully that the Devil swore never to enter a door with iron over it. Rings like this one trade on that promise: what is aimed at the wearer's body may land, but the venom, the spell or the fear it carries often does not.",
+    "kind": "protection",
+    "is_unique": false,
+    "peak_floor": 0,
+    "peak_weight": 0.0,
+    "floorSpawnWeight": {
+      "1-100": 12
+    }
   },
   "ring_of_solomons_authority": {
     "name": "Solomon's Authority",
@@ -3996,9 +2934,7 @@
     "quiz_tier": 5,
     "effects": {
       "stat": "WIS",
-      "amount": 3,
-      "status": "telepathy",
-      "duration": -1
+      "amount": 3
     },
     "equip_chain_mode": "escalator_chain",
     "tier_bonuses": {
@@ -4022,7 +2958,6 @@
         "stat_bonus_WIS": 3,
         "passive_detect_magic": true,
         "passive_pacify_demon_chance": 0.2,
-        "status_telepathy": 999,
         "passive_weaken_summoned": true
       },
       "5": {
@@ -4030,7 +2965,6 @@
         "stat_bonus_WIS": 3,
         "passive_detect_magic": true,
         "passive_pacify_demon_chance": 0.2,
-        "status_telepathy": 999,
         "passive_weaken_summoned": true,
         "passive_solomonic_key": true
       }
@@ -4051,10 +2985,10 @@
     "name": "Girdle of Hippolyta",
     "slot": "belt",
     "effects": {
-      "stat": "STR",
+      "stat": "CON",
       "amount": 3
     },
-    "equip_threshold": 3,
+    "equip_threshold": 4,
     "quiz_tier": 3,
     "weight": 0.2,
     "value": 4000,
@@ -4081,99 +3015,6 @@
     "peak_floor": 27,
     "id": "amulet_of_hippolyta"
   },
-  "ring_of_warning": {
-    "name": "ring of warning",
-    "symbol": "=",
-    "color": [
-      200,
-      200,
-      210
-    ],
-    "weight": 0.1,
-    "min_level": 1,
-    "slot": "ring",
-    "equip_threshold": 2,
-    "quiz_tier": 1,
-    "effects": {
-      "status": "warning",
-      "duration": -1
-    },
-    "unidentified_name": "a ring",
-    "lore": "In 390 BC the Gauls climbed the Capitoline Hill at night so quietly that the dogs slept through it. The sacred geese of Juno did not. Their honking woke Marcus Manlius, who threw the first climber off the cliff. Roman sentries wore rings like this in the geese's honor. It prickles before trouble shows itself.",
-    "floorSpawnWeight": {
-      "1-20": 20,
-      "21-40": 20,
-      "41-60": 20,
-      "61-80": 10,
-      "81-100": 10
-    },
-    "peak_weight": 0.4,
-    "is_unique": false,
-    "spread": 8,
-    "peak_floor": 6
-  },
-  "ring_of_searching": {
-    "name": "ring of searching",
-    "symbol": "=",
-    "color": [
-      200,
-      200,
-      210
-    ],
-    "weight": 0.1,
-    "min_level": 1,
-    "slot": "ring",
-    "equip_threshold": 2,
-    "quiz_tier": 1,
-    "effects": {
-      "status": "searching",
-      "duration": -1
-    },
-    "unidentified_name": "a ring",
-    "lore": "A novice once ran off with the psalter of Anthony of Padua, full of the friar's own notes. Anthony prayed, and the thief came back with the book. Since then people have asked Saint Anthony for lost things. Rings blessed in his name make a wall give up its hidden door and a floor its trap.",
-    "floorSpawnWeight": {
-      "1-20": 20,
-      "21-40": 20,
-      "41-60": 20,
-      "61-80": 10,
-      "81-100": 10
-    },
-    "peak_weight": 0.4,
-    "is_unique": false,
-    "spread": 8,
-    "peak_floor": 6
-  },
-  "ring_of_telepathy": {
-    "name": "ring of telepathy",
-    "symbol": "=",
-    "color": [
-      200,
-      200,
-      210
-    ],
-    "weight": 0.1,
-    "min_level": 8,
-    "slot": "ring",
-    "equip_threshold": 3,
-    "quiz_tier": 2,
-    "effects": {
-      "status": "telepathy",
-      "duration": -1
-    },
-    "unidentified_name": "a ring",
-    "lore": "Sigurd roasted the dragon Fafnir's heart, burned his thumb on it, and put the thumb in his mouth. At once he understood the birds in the branches, who were discussing how his foster-father meant to murder him. A ring quenched in the same blood lets its wearer feel every living mind nearby, through stone.",
-    "floorSpawnWeight": {
-      "1-20": 40,
-      "21-40": 40,
-      "41-60": 40,
-      "61-80": 40,
-      "81-100": 20
-    },
-    "peak_weight": 0.4,
-    "is_unique": false,
-    "spread": 8,
-    "peak_floor": 13
-  },
   "ring_of_regeneration": {
     "name": "ring of regeneration",
     "symbol": "=",
@@ -4183,895 +3024,23 @@
       210
     ],
     "weight": 0.1,
-    "min_level": 8,
+    "min_level": 1,
     "slot": "ring",
-    "equip_threshold": 3,
-    "quiz_tier": 2,
+    "equip_threshold": 1,
+    "quiz_tier": 1,
     "effects": {
       "status": "regenerating",
       "duration": -1
     },
     "unidentified_name": "a ring",
     "lore": "Every head Heracles struck from the Hydra of Lerna grew back double, until his nephew Iolaus seared each stump with a torch. One drop of the creature's blood went into the cooling of this ring. What is cut on the wearer closes, and what is broken knits, with a patience that unsettles surgeons.",
-    "floorSpawnWeight": {
-      "1-20": 40,
-      "21-40": 40,
-      "41-60": 40,
-      "61-80": 40,
-      "81-100": 20
-    },
-    "peak_weight": 0.4,
     "is_unique": false,
-    "spread": 8,
-    "peak_floor": 13
-  },
-  "ring_of_fire_resist": {
-    "name": "ring of fire resist",
-    "symbol": "=",
-    "color": [
-      200,
-      200,
-      210
-    ],
-    "weight": 0.1,
-    "min_level": 8,
-    "slot": "ring",
-    "equip_threshold": 3,
-    "quiz_tier": 2,
-    "effects": {
-      "status": "fire_resist",
-      "duration": -1
-    },
-    "unidentified_name": "a ring",
-    "lore": "Nebuchadnezzar had three young men thrown into a furnace heated seven times over. He looked in and saw four figures walking in the flames. The three came out with their coats unscorched and no smell of fire on them. Rings like this are made in their names: Shadrach, Meshach and Abednego.",
+    "kind": "regeneration",
+    "peak_floor": 0,
+    "peak_weight": 0.0,
     "floorSpawnWeight": {
-      "1-20": 40,
-      "21-40": 40,
-      "41-60": 40,
-      "61-80": 40,
-      "81-100": 20
-    },
-    "peak_weight": 0.4,
-    "is_unique": false,
-    "spread": 8,
-    "peak_floor": 13
-  },
-  "ring_of_cold_resist": {
-    "name": "ring of cold resist",
-    "symbol": "=",
-    "color": [
-      200,
-      200,
-      210
-    ],
-    "weight": 0.1,
-    "min_level": 8,
-    "slot": "ring",
-    "equip_threshold": 3,
-    "quiz_tier": 2,
-    "effects": {
-      "status": "cold_resist",
-      "duration": -1
-    },
-    "unidentified_name": "a ring",
-    "lore": "Hannibal took an army and thirty-seven elephants over the Alps in the autumn of 218 BC. Snow fell on the pass and men froze where they sat down to rest. The veterans who came down into Italy had rings like this one made, and swore they never felt a winter afterward.",
-    "floorSpawnWeight": {
-      "1-20": 40,
-      "21-40": 40,
-      "41-60": 40,
-      "61-80": 40,
-      "81-100": 20
-    },
-    "peak_weight": 0.4,
-    "is_unique": false,
-    "spread": 8,
-    "peak_floor": 13
-  },
-  "ring_of_shock_resist": {
-    "name": "ring of shock resist",
-    "symbol": "=",
-    "color": [
-      200,
-      200,
-      210
-    ],
-    "weight": 0.1,
-    "min_level": 8,
-    "slot": "ring",
-    "equip_threshold": 3,
-    "quiz_tier": 2,
-    "effects": {
-      "status": "shock_resist",
-      "duration": -1
-    },
-    "unidentified_name": "a ring",
-    "lore": "Three Cyclopes forged the thunderbolt for Zeus: Brontes, Steropes and Arges, whose names mean Thunder, Lightning and Bright. They did not burn their own hands at the work. A smith who claimed to have their method made this ring, and lightning runs off its wearer like rain off a roof.",
-    "floorSpawnWeight": {
-      "1-20": 40,
-      "21-40": 40,
-      "41-60": 40,
-      "61-80": 40,
-      "81-100": 20
-    },
-    "peak_weight": 0.4,
-    "is_unique": false,
-    "spread": 8,
-    "peak_floor": 13
-  },
-  "ring_of_poison_resist": {
-    "name": "ring of poison resist",
-    "symbol": "=",
-    "color": [
-      200,
-      200,
-      210
-    ],
-    "weight": 0.1,
-    "min_level": 8,
-    "slot": "ring",
-    "equip_threshold": 3,
-    "quiz_tier": 2,
-    "effects": {
-      "status": "poison_resist",
-      "duration": -1
-    },
-    "unidentified_name": "a ring",
-    "lore": "Mithridates, king of Pontus, feared poisoners so much that he swallowed a little of every poison each day until none could hurt him. When Rome finally cornered him he tried to poison himself and failed. The court physician who mixed his doses also made rings. This is one.",
-    "floorSpawnWeight": {
-      "1-20": 40,
-      "21-40": 40,
-      "41-60": 40,
-      "61-80": 40,
-      "81-100": 20
-    },
-    "peak_weight": 0.4,
-    "is_unique": false,
-    "spread": 8,
-    "peak_floor": 13
-  },
-  "ring_of_sleep_resist": {
-    "name": "ring of sleep resist",
-    "symbol": "=",
-    "color": [
-      200,
-      200,
-      210
-    ],
-    "weight": 0.1,
-    "min_level": 8,
-    "slot": "ring",
-    "equip_threshold": 3,
-    "quiz_tier": 2,
-    "effects": {
-      "status": "sleep_resist",
-      "duration": -1
-    },
-    "unidentified_name": "a ring",
-    "lore": "Utnapishtim set Gilgamesh a test: stay awake six days and seven nights and earn eternal life. The hero slept at once. Utnapishtim's wife baked a loaf each day and set it by his head, so the row of stale bread would prove how long. This ring was made for the next man to try.",
-    "floorSpawnWeight": {
-      "1-20": 40,
-      "21-40": 40,
-      "41-60": 40,
-      "61-80": 40,
-      "81-100": 20
-    },
-    "peak_weight": 0.4,
-    "is_unique": false,
-    "spread": 8,
-    "peak_floor": 13
-  },
-  "amulet_of_warning": {
-    "name": "amulet of warning",
-    "symbol": "\"",
-    "color": [
-      200,
-      200,
-      210
-    ],
-    "weight": 0.2,
-    "min_level": 1,
-    "slot": "amulet",
-    "equip_threshold": 2,
-    "quiz_tier": 1,
-    "effects": {
-      "status": "warning",
-      "duration": -1
-    },
-    "unidentified_name": "an amulet",
-    "lore": "Apollo gave Cassandra of Troy the gift of prophecy and, when she refused him, the curse that no one would believe her. She warned them about the horse. A charm made in her memory warns only the one who wears it, which solves the problem neatly: it grows hot when danger is near.",
-    "floorSpawnWeight": {
-      "1-20": 40,
-      "21-40": 40,
-      "41-60": 40,
-      "61-80": 20,
-      "81-100": 20
-    },
-    "peak_weight": 0.4,
-    "is_unique": false,
-    "spread": 8,
-    "peak_floor": 6
-  },
-  "amulet_of_searching": {
-    "name": "amulet of searching",
-    "symbol": "\"",
-    "color": [
-      200,
-      200,
-      210
-    ],
-    "weight": 0.2,
-    "min_level": 1,
-    "slot": "amulet",
-    "equip_threshold": 2,
-    "quiz_tier": 1,
-    "effects": {
-      "status": "searching",
-      "duration": -1
-    },
-    "unidentified_name": "an amulet",
-    "lore": "The empress Helena, mother of Constantine, went to Jerusalem in her old age and had the ground dug up until, tradition says, she found the True Cross under a pagan temple. Pilgrims brought home tokens in her honor. One who wears such a token finds what was buried, walled up or covered over.",
-    "floorSpawnWeight": {
-      "1-20": 40,
-      "21-40": 40,
-      "41-60": 40,
-      "61-80": 20,
-      "81-100": 20
-    },
-    "peak_weight": 0.4,
-    "is_unique": false,
-    "spread": 8,
-    "peak_floor": 6
-  },
-  "amulet_of_telepathy": {
-    "name": "amulet of telepathy",
-    "symbol": "\"",
-    "color": [
-      200,
-      200,
-      210
-    ],
-    "weight": 0.2,
-    "min_level": 8,
-    "slot": "amulet",
-    "equip_threshold": 3,
-    "quiz_tier": 2,
-    "effects": {
-      "status": "telepathy",
-      "duration": -1
-    },
-    "unidentified_name": "an amulet",
-    "lore": "Melampus saved a brood of young snakes, and while he slept they licked his ears clean. He woke understanding every creature. In prison he overheard the woodworms in the roof say the beam was nearly eaten through, and asked to be moved in time. This charm opens the ears the same way.",
-    "floorSpawnWeight": {
-      "1-20": 40,
-      "21-40": 40,
-      "41-60": 40,
-      "61-80": 40,
-      "81-100": 20
-    },
-    "peak_weight": 0.4,
-    "is_unique": false,
-    "spread": 8,
-    "peak_floor": 13
-  },
-  "ring_of_strength": {
-    "name": "ring of strength",
-    "symbol": "=",
-    "color": [
-      200,
-      200,
-      210
-    ],
-    "weight": 0.1,
-    "min_level": 1,
-    "slot": "ring",
-    "equip_threshold": 2,
-    "quiz_tier": 1,
-    "effects": {
-      "stat": "STR",
-      "amount": 1
-    },
-    "unidentified_name": "a ring",
-    "lore": "Milo of Croton, six times Olympic champion, was said to have lifted a newborn calf onto his shoulders every day until it was a full-grown bull, and then carried the bull around the stadium. Wrestlers of his school wore a plain ring to remember the method. Strength comes to its wearer the same way.",
-    "floorSpawnWeight": {
-      "1-20": 20,
-      "21-40": 20,
-      "41-60": 20,
-      "61-80": 10,
-      "81-100": 10
-    },
-    "peak_weight": 0.4,
-    "is_unique": false,
-    "spread": 8,
-    "peak_floor": 6
-  },
-  "ring_of_greater_strength": {
-    "name": "ring of greater strength",
-    "symbol": "=",
-    "color": [
-      200,
-      200,
-      210
-    ],
-    "weight": 0.1,
-    "min_level": 8,
-    "slot": "ring",
-    "equip_threshold": 2,
-    "quiz_tier": 2,
-    "effects": {
-      "stat": "STR",
-      "amount": 2
-    },
-    "unidentified_name": "a ring",
-    "lore": "The Philistines shut Samson inside Gaza and meant to kill him at dawn. He rose at midnight, pulled up the city gates, posts and bar together, and carried them on his shoulders to the top of the hill facing Hebron. A ring made in his memory puts some of that into an ordinary arm.",
-    "floorSpawnWeight": {
-      "1-20": 20,
-      "21-40": 20,
-      "41-60": 20,
-      "61-80": 20,
-      "81-100": 10
-    },
-    "peak_weight": 0.4,
-    "is_unique": false,
-    "spread": 8,
-    "peak_floor": 13
-  },
-  "ring_of_master_strength": {
-    "name": "ring of master strength",
-    "symbol": "=",
-    "color": [
-      200,
-      200,
-      210
-    ],
-    "weight": 0.1,
-    "min_level": 25,
-    "slot": "ring",
-    "equip_threshold": 2,
-    "quiz_tier": 3,
-    "effects": {
-      "stat": "STR",
-      "amount": 3
-    },
-    "unidentified_name": "a ring",
-    "lore": "Atlas offered to fetch the golden apples if Heracles would hold up the sky while he was gone. Heracles took the weight of heaven on his neck and stood. He had to trick the Titan into taking it back. This ring was made by someone who thought the standing was the greater feat.",
-    "floorSpawnWeight": {
-      "1-20": 1,
-      "21-40": 20,
-      "41-60": 20,
-      "61-80": 20,
-      "81-100": 20
-    },
-    "peak_weight": 0.4,
-    "is_unique": false,
-    "spread": 13,
-    "peak_floor": 30
-  },
-  "ring_of_constitution": {
-    "name": "ring of constitution",
-    "symbol": "=",
-    "color": [
-      200,
-      200,
-      210
-    ],
-    "weight": 0.1,
-    "min_level": 1,
-    "slot": "ring",
-    "equip_threshold": 2,
-    "quiz_tier": 1,
-    "effects": {
-      "stat": "CON",
-      "amount": 1
-    },
-    "unidentified_name": "a ring",
-    "lore": "Spartan boys left home at seven. They were given one cloak a year, went barefoot in every season, and slept on rushes they cut from the riverbank with their hands. A ring like this was the only ornament a grown Spartan valued. It toughens whoever wears it, more kindly than the school did.",
-    "floorSpawnWeight": {
-      "1-20": 20,
-      "21-40": 20,
-      "41-60": 20,
-      "61-80": 10,
-      "81-100": 10
-    },
-    "peak_weight": 0.4,
-    "is_unique": false,
-    "spread": 8,
-    "peak_floor": 6
-  },
-  "ring_of_greater_constitution": {
-    "name": "ring of greater constitution",
-    "symbol": "=",
-    "color": [
-      200,
-      200,
-      210
-    ],
-    "weight": 0.1,
-    "min_level": 8,
-    "slot": "ring",
-    "equip_threshold": 2,
-    "quiz_tier": 2,
-    "effects": {
-      "stat": "CON",
-      "amount": 2
-    },
-    "unidentified_name": "a ring",
-    "lore": "Before Marathon the Athenians sent the runner Philippides to ask Sparta for help. Herodotus says he covered the distance, some hundred and fifty miles of mountain road, and arrived the day after he set out. Couriers afterward wore his ring. The wearer's body simply declines to give out.",
-    "floorSpawnWeight": {
-      "1-20": 20,
-      "21-40": 20,
-      "41-60": 20,
-      "61-80": 20,
-      "81-100": 10
-    },
-    "peak_weight": 0.4,
-    "is_unique": false,
-    "spread": 8,
-    "peak_floor": 13
-  },
-  "ring_of_master_constitution": {
-    "name": "ring of master constitution",
-    "symbol": "=",
-    "color": [
-      200,
-      200,
-      210
-    ],
-    "weight": 0.1,
-    "min_level": 25,
-    "slot": "ring",
-    "equip_threshold": 2,
-    "quiz_tier": 3,
-    "effects": {
-      "stat": "CON",
-      "amount": 3
-    },
-    "unidentified_name": "a ring",
-    "lore": "The sea-nymph Thetis dipped her infant son Achilles in the river Styx to make him proof against every wound, holding him by one heel. This ring was cooled in water drawn from the same river, the story goes, and nobody was holding it by anything.",
-    "floorSpawnWeight": {
-      "1-20": 1,
-      "21-40": 20,
-      "41-60": 20,
-      "61-80": 20,
-      "81-100": 20
-    },
-    "peak_weight": 0.4,
-    "is_unique": false,
-    "spread": 13,
-    "peak_floor": 30
-  },
-  "ring_of_dexterity": {
-    "name": "ring of dexterity",
-    "symbol": "=",
-    "color": [
-      200,
-      200,
-      210
-    ],
-    "weight": 0.1,
-    "min_level": 1,
-    "slot": "ring",
-    "equip_threshold": 2,
-    "quiz_tier": 1,
-    "effects": {
-      "stat": "DEX",
-      "amount": 1
-    },
-    "unidentified_name": "a ring",
-    "lore": "On the day he was born, Hermes climbed out of his cradle, stole fifty of Apollo's cattle, and drove them backward so their tracks pointed the wrong way. He was back in his blankets by evening. Pickpockets and jugglers wear his ring. The hands become clever and the feet sure.",
-    "floorSpawnWeight": {
-      "1-20": 20,
-      "21-40": 20,
-      "41-60": 20,
-      "61-80": 10,
-      "81-100": 10
-    },
-    "peak_weight": 0.4,
-    "is_unique": false,
-    "spread": 8,
-    "peak_floor": 6
-  },
-  "ring_of_greater_dexterity": {
-    "name": "ring of greater dexterity",
-    "symbol": "=",
-    "color": [
-      200,
-      200,
-      210
-    ],
-    "weight": 0.1,
-    "min_level": 8,
-    "slot": "ring",
-    "equip_threshold": 2,
-    "quiz_tier": 2,
-    "effects": {
-      "stat": "DEX",
-      "amount": 2
-    },
-    "unidentified_name": "a ring",
-    "lore": "On the palace walls of Knossos in Crete, painted youths seize a charging bull by the horns and vault clean over its back. No one alive knows how it was done without dying. This ring came from that island, and its wearer moves as if the bull were always a half-step slow.",
-    "floorSpawnWeight": {
-      "1-20": 20,
-      "21-40": 20,
-      "41-60": 20,
-      "61-80": 20,
-      "81-100": 10
-    },
-    "peak_weight": 0.4,
-    "is_unique": false,
-    "spread": 8,
-    "peak_floor": 13
-  },
-  "ring_of_master_dexterity": {
-    "name": "ring of master dexterity",
-    "symbol": "=",
-    "color": [
-      200,
-      200,
-      210
-    ],
-    "weight": 0.1,
-    "min_level": 25,
-    "slot": "ring",
-    "equip_threshold": 2,
-    "quiz_tier": 3,
-    "effects": {
-      "stat": "DEX",
-      "amount": 3
-    },
-    "unidentified_name": "a ring",
-    "lore": "David went out against Goliath with a staff, a sling, and five smooth stones chosen from the brook. He needed one. The shepherds of Judah wore rings like this on the sling hand, and what they aimed at they hit. The wearer's hands stop making small mistakes.",
-    "floorSpawnWeight": {
-      "1-20": 1,
-      "21-40": 20,
-      "41-60": 20,
-      "61-80": 20,
-      "81-100": 20
-    },
-    "peak_weight": 0.4,
-    "is_unique": false,
-    "spread": 13,
-    "peak_floor": 30
-  },
-  "ring_of_intellect": {
-    "name": "ring of intellect",
-    "symbol": "=",
-    "color": [
-      200,
-      200,
-      210
-    ],
-    "weight": 0.1,
-    "min_level": 1,
-    "slot": "ring",
-    "equip_threshold": 2,
-    "quiz_tier": 1,
-    "effects": {
-      "stat": "INT",
-      "amount": 1
-    },
-    "unidentified_name": "a ring",
-    "lore": "Thales of Miletus told the Ionians in advance the year in which day would turn to night. It happened in the middle of a battle between Lydians and Medes, and both armies put down their weapons and made peace. A ring from his school clears the head and leaves more room in it.",
-    "floorSpawnWeight": {
-      "1-20": 20,
-      "21-40": 20,
-      "41-60": 20,
-      "61-80": 10,
-      "81-100": 10
-    },
-    "peak_weight": 0.4,
-    "is_unique": false,
-    "spread": 8,
-    "peak_floor": 6
-  },
-  "ring_of_greater_intellect": {
-    "name": "ring of greater intellect",
-    "symbol": "=",
-    "color": [
-      200,
-      200,
-      210
-    ],
-    "weight": 0.1,
-    "min_level": 8,
-    "slot": "ring",
-    "equip_threshold": 2,
-    "quiz_tier": 2,
-    "effects": {
-      "stat": "INT",
-      "amount": 2
-    },
-    "unidentified_name": "a ring",
-    "lore": "Eratosthenes heard that at noon on midsummer day the sun shone straight down a well in Syene. At Alexandria on the same day a pillar cast a short shadow. From that one angle and the distance between the towns he worked out the size of the whole Earth. His students wore this ring.",
-    "floorSpawnWeight": {
-      "1-20": 20,
-      "21-40": 20,
-      "41-60": 20,
-      "61-80": 20,
-      "81-100": 10
-    },
-    "peak_weight": 0.4,
-    "is_unique": false,
-    "spread": 8,
-    "peak_floor": 13
-  },
-  "ring_of_master_intellect": {
-    "name": "ring of master intellect",
-    "symbol": "=",
-    "color": [
-      200,
-      200,
-      210
-    ],
-    "weight": 0.1,
-    "min_level": 25,
-    "slot": "ring",
-    "equip_threshold": 2,
-    "quiz_tier": 3,
-    "effects": {
-      "stat": "INT",
-      "amount": 3
-    },
-    "unidentified_name": "a ring",
-    "lore": "King Hiero asked Archimedes whether his new crown was pure gold. Archimedes found the method while stepping into a bath, watching the water rise, and ran home through Syracuse shouting 'Eureka!', I have found it. This ring is supposed to hold that moment and to hand it out when needed.",
-    "floorSpawnWeight": {
-      "1-20": 1,
-      "21-40": 20,
-      "41-60": 20,
-      "61-80": 20,
-      "81-100": 20
-    },
-    "peak_weight": 0.4,
-    "is_unique": false,
-    "spread": 13,
-    "peak_floor": 30
-  },
-  "ring_of_wisdom": {
-    "name": "ring of wisdom",
-    "symbol": "=",
-    "color": [
-      200,
-      200,
-      210
-    ],
-    "weight": 0.1,
-    "min_level": 1,
-    "slot": "ring",
-    "equip_threshold": 2,
-    "quiz_tier": 1,
-    "effects": {
-      "stat": "WIS",
-      "amount": 1
-    },
-    "unidentified_name": "a ring",
-    "lore": "The oracle at Delphi said no man was wiser than Socrates. Puzzled, he questioned every expert in Athens and concluded that he was wiser in one respect only: he knew what he did not know. A ring made in his honor gives no answers. It gives the pause before a wrong one.",
-    "floorSpawnWeight": {
-      "1-20": 20,
-      "21-40": 20,
-      "41-60": 20,
-      "61-80": 10,
-      "81-100": 10
-    },
-    "peak_weight": 0.4,
-    "is_unique": false,
-    "spread": 8,
-    "peak_floor": 6
-  },
-  "ring_of_greater_wisdom": {
-    "name": "ring of greater wisdom",
-    "symbol": "=",
-    "color": [
-      200,
-      200,
-      210
-    ],
-    "weight": 0.1,
-    "min_level": 8,
-    "slot": "ring",
-    "equip_threshold": 2,
-    "quiz_tier": 2,
-    "effects": {
-      "stat": "WIS",
-      "amount": 2
-    },
-    "unidentified_name": "a ring",
-    "lore": "Two women came before Solomon, each claiming the same infant. He called for a sword and ordered the child divided between them. One agreed. The other begged him to give the baby away alive, and he knew her for the mother. A judge's ring like this one steadies the mind under pressure.",
-    "floorSpawnWeight": {
-      "1-20": 20,
-      "21-40": 20,
-      "41-60": 20,
-      "61-80": 20,
-      "81-100": 10
-    },
-    "peak_weight": 0.4,
-    "is_unique": false,
-    "spread": 8,
-    "peak_floor": 13
-  },
-  "ring_of_master_wisdom": {
-    "name": "ring of master wisdom",
-    "symbol": "=",
-    "color": [
-      200,
-      200,
-      210
-    ],
-    "weight": 0.1,
-    "min_level": 25,
-    "slot": "ring",
-    "equip_threshold": 2,
-    "quiz_tier": 3,
-    "effects": {
-      "stat": "WIS",
-      "amount": 3
-    },
-    "unidentified_name": "a ring",
-    "lore": "Fishermen hauled up a golden tripod, and the oracle said to give it to the wisest. They took it to Thales, who sent it to Bias, who sent it on, until it had passed through all Seven Sages and come back around. They gave it to Apollo. This ring commemorates seven men declining a prize.",
-    "floorSpawnWeight": {
-      "1-20": 1,
-      "21-40": 20,
-      "41-60": 20,
-      "61-80": 20,
-      "81-100": 20
-    },
-    "peak_weight": 0.4,
-    "is_unique": false,
-    "spread": 13,
-    "peak_floor": 30
-  },
-  "ring_of_perception": {
-    "name": "ring of perception",
-    "symbol": "=",
-    "color": [
-      200,
-      200,
-      210
-    ],
-    "weight": 0.1,
-    "min_level": 1,
-    "slot": "ring",
-    "equip_threshold": 2,
-    "quiz_tier": 1,
-    "effects": {
-      "stat": "PER",
-      "amount": 1
-    },
-    "unidentified_name": "a ring",
-    "lore": "Argus the watchman had a hundred eyes and never closed more than half of them at once. When Hermes killed him, Hera gathered the eyes and set them in the tail of her peacock, where they still are. A ring made in the watchman's name keeps a few extra open for its wearer.",
-    "floorSpawnWeight": {
-      "1-20": 20,
-      "21-40": 20,
-      "41-60": 20,
-      "61-80": 10,
-      "81-100": 10
-    },
-    "peak_weight": 0.4,
-    "is_unique": false,
-    "spread": 8,
-    "peak_floor": 6
-  },
-  "ring_of_greater_perception": {
-    "name": "ring of greater perception",
-    "symbol": "=",
-    "color": [
-      200,
-      200,
-      210
-    ],
-    "weight": 0.1,
-    "min_level": 8,
-    "slot": "ring",
-    "equip_threshold": 2,
-    "quiz_tier": 2,
-    "effects": {
-      "stat": "PER",
-      "amount": 2
-    },
-    "unidentified_name": "a ring",
-    "lore": "Heimdall keeps the bridge into Asgard. He needs less sleep than a bird, sees a hundred leagues by night as well as by day, and can hear the grass growing in the fields and the wool on the sheep. A ring carved with his horn lends the wearer some of that watch.",
-    "floorSpawnWeight": {
-      "1-20": 20,
-      "21-40": 20,
-      "41-60": 20,
-      "61-80": 20,
-      "81-100": 10
-    },
-    "peak_weight": 0.4,
-    "is_unique": false,
-    "spread": 8,
-    "peak_floor": 13
-  },
-  "ring_of_master_perception": {
-    "name": "ring of master perception",
-    "symbol": "=",
-    "color": [
-      200,
-      200,
-      210
-    ],
-    "weight": 0.1,
-    "min_level": 25,
-    "slot": "ring",
-    "equip_threshold": 2,
-    "quiz_tier": 3,
-    "effects": {
-      "stat": "PER",
-      "amount": 3
-    },
-    "unidentified_name": "a ring",
-    "lore": "The old bestiaries say that when an eagle grows old and its eyes dim, it flies up toward the sun until the mist is burned from them, then plunges three times into a spring and is young again. Whoever made this ring had read the book. The wearer sees farther into the dark.",
-    "floorSpawnWeight": {
-      "1-20": 1,
-      "21-40": 20,
-      "41-60": 20,
-      "61-80": 20,
-      "81-100": 20
-    },
-    "peak_weight": 0.4,
-    "is_unique": false,
-    "spread": 13,
-    "peak_floor": 30
-  },
-  "amulet_of_strength": {
-    "name": "amulet of strength",
-    "symbol": "\"",
-    "color": [
-      200,
-      200,
-      210
-    ],
-    "weight": 0.2,
-    "min_level": 8,
-    "slot": "amulet",
-    "equip_threshold": 2,
-    "quiz_tier": 2,
-    "effects": {
-      "stat": "STR",
-      "amount": 2
-    },
-    "unidentified_name": "an amulet",
-    "lore": "The poet says Beowulf had the strength of thirty men in the grip of one hand. He fought the monster Grendel without a sword, took hold of its arm, and did not let go until the arm came away at the shoulder. Warriors of the north hung this charm at the throat and hoped.",
-    "floorSpawnWeight": {
-      "1-20": 40,
-      "21-40": 40,
-      "41-60": 40,
-      "61-80": 40,
-      "81-100": 20
-    },
-    "peak_weight": 0.4,
-    "is_unique": false,
-    "spread": 8,
-    "peak_floor": 13
-  },
-  "amulet_of_greater_strength": {
-    "name": "amulet of greater strength",
-    "symbol": "\"",
-    "color": [
-      200,
-      200,
-      210
-    ],
-    "weight": 0.2,
-    "min_level": 25,
-    "slot": "amulet",
-    "equip_threshold": 2,
-    "quiz_tier": 3,
-    "effects": {
-      "stat": "STR",
-      "amount": 3
-    },
-    "unidentified_name": "an amulet",
-    "lore": "The giant brothers Otus and Ephialtes grew a fathom taller every year. At nine years old they decided to storm heaven, and set Mount Ossa on Olympus and Mount Pelion on Ossa for a stair. Apollo stopped them before they were grown. A charm in their likeness makes its wearer think mountains portable.",
-    "floorSpawnWeight": {
-      "1-20": 1,
-      "21-40": 40,
-      "41-60": 40,
-      "61-80": 40,
-      "81-100": 40
-    },
-    "peak_weight": 0.4,
-    "is_unique": false,
-    "spread": 13,
-    "peak_floor": 30
+      "1-100": 8
+    }
   },
   "amulet_of_constitution": {
     "name": "amulet of constitution",
@@ -5082,120 +3051,20 @@
       210
     ],
     "weight": 0.2,
-    "min_level": 8,
+    "min_level": 1,
     "slot": "amulet",
     "equip_threshold": 2,
-    "quiz_tier": 2,
-    "effects": {
-      "stat": "CON",
-      "amount": 2
-    },
+    "quiz_tier": 1,
+    "effects": {},
     "unidentified_name": "an amulet",
     "lore": "Diogenes the Cynic lived in a storage jar in the marketplace of Athens. To harden himself he rolled in hot sand in summer and embraced snow-covered statues in winter. He owned almost nothing, and this charm claims to have been part of the almost. Its wearer shrugs off what would put others in bed.",
-    "floorSpawnWeight": {
-      "1-20": 40,
-      "21-40": 40,
-      "41-60": 40,
-      "61-80": 40,
-      "81-100": 20
-    },
-    "peak_weight": 0.4,
     "is_unique": false,
-    "spread": 8,
-    "peak_floor": 13
-  },
-  "amulet_of_greater_constitution": {
-    "name": "amulet of greater constitution",
-    "symbol": "\"",
-    "color": [
-      200,
-      200,
-      210
-    ],
-    "weight": 0.2,
-    "min_level": 25,
-    "slot": "amulet",
-    "equip_threshold": 2,
-    "quiz_tier": 3,
-    "effects": {
-      "stat": "CON",
-      "amount": 3
-    },
-    "unidentified_name": "an amulet",
-    "lore": "Vegetius wrote that a Roman recruit must learn to march twenty miles in five summer hours carrying his arms, his tools and his rations, and then dig the camp ditch before he ate. The legions hung charms like this on the men who could. It gives its wearer a soldier's reserves.",
+    "kind": "constitution",
+    "peak_floor": 0,
+    "peak_weight": 0.0,
     "floorSpawnWeight": {
-      "1-20": 1,
-      "21-40": 40,
-      "41-60": 40,
-      "61-80": 40,
-      "81-100": 40
-    },
-    "peak_weight": 0.4,
-    "is_unique": false,
-    "spread": 13,
-    "peak_floor": 30
-  },
-  "amulet_of_dexterity": {
-    "name": "amulet of dexterity",
-    "symbol": "\"",
-    "color": [
-      200,
-      200,
-      210
-    ],
-    "weight": 0.2,
-    "min_level": 8,
-    "slot": "amulet",
-    "equip_threshold": 2,
-    "quiz_tier": 2,
-    "effects": {
-      "stat": "DEX",
-      "amount": 2
-    },
-    "unidentified_name": "an amulet",
-    "lore": "Arachne of Lydia wove so well that she challenged Athena herself, and her finished cloth had no flaw the goddess could find. Athena tore it up and turned her into the first spider. Weavers keep her charm anyway. Fingers that wear it do fine work at speed.",
-    "floorSpawnWeight": {
-      "1-20": 40,
-      "21-40": 40,
-      "41-60": 40,
-      "61-80": 40,
-      "81-100": 20
-    },
-    "peak_weight": 0.4,
-    "is_unique": false,
-    "spread": 8,
-    "peak_floor": 13
-  },
-  "amulet_of_greater_dexterity": {
-    "name": "amulet of greater dexterity",
-    "symbol": "\"",
-    "color": [
-      200,
-      200,
-      210
-    ],
-    "weight": 0.2,
-    "min_level": 25,
-    "slot": "amulet",
-    "equip_threshold": 2,
-    "quiz_tier": 3,
-    "effects": {
-      "stat": "DEX",
-      "amount": 3
-    },
-    "unidentified_name": "an amulet",
-    "lore": "Cu Chulainn, the Hound of Ulster, learned his feats from the warrior-woman Scathach on her island: the apple feat, the feat of the sword edge, and the salmon leap, by which he cleared a rampart in one bound. Her pupils took a charm away with them. This is one of those.",
-    "floorSpawnWeight": {
-      "1-20": 1,
-      "21-40": 40,
-      "41-60": 40,
-      "61-80": 40,
-      "81-100": 40
-    },
-    "peak_weight": 0.4,
-    "is_unique": false,
-    "spread": 13,
-    "peak_floor": 30
+      "1-100": 8
+    }
   },
   "amulet_of_intellect": {
     "name": "amulet of intellect",
@@ -5206,58 +3075,20 @@
       210
     ],
     "weight": 0.2,
-    "min_level": 8,
+    "min_level": 1,
     "slot": "amulet",
     "equip_threshold": 2,
-    "quiz_tier": 2,
-    "effects": {
-      "stat": "INT",
-      "amount": 2
-    },
+    "quiz_tier": 1,
+    "effects": {},
     "unidentified_name": "an amulet",
     "lore": "King Ptolemy asked Euclid whether there was some shorter way to learn geometry than working through the Elements. Euclid answered that there is no royal road to geometry. This charm is not a royal road either. It only makes the wearer quicker on the ordinary one.",
-    "floorSpawnWeight": {
-      "1-20": 40,
-      "21-40": 40,
-      "41-60": 40,
-      "61-80": 40,
-      "81-100": 20
-    },
-    "peak_weight": 0.4,
     "is_unique": false,
-    "spread": 8,
-    "peak_floor": 13
-  },
-  "amulet_of_greater_intellect": {
-    "name": "amulet of greater intellect",
-    "symbol": "\"",
-    "color": [
-      200,
-      200,
-      210
-    ],
-    "weight": 0.2,
-    "min_level": 25,
-    "slot": "amulet",
-    "equip_threshold": 2,
-    "quiz_tier": 3,
-    "effects": {
-      "stat": "INT",
-      "amount": 3
-    },
-    "unidentified_name": "an amulet",
-    "lore": "In ninth-century Baghdad the scholar al-Khwarizmi wrote a book on restoring and balancing equations. Its title gave the world the word algebra, and his own name, worn down by Latin tongues, became algorithm. Students at the House of Wisdom wore charms like this one. Problems come apart more easily under it.",
+    "kind": "intellect",
+    "peak_floor": 0,
+    "peak_weight": 0.0,
     "floorSpawnWeight": {
-      "1-20": 1,
-      "21-40": 40,
-      "41-60": 40,
-      "61-80": 40,
-      "81-100": 40
-    },
-    "peak_weight": 0.4,
-    "is_unique": false,
-    "spread": 13,
-    "peak_floor": 30
+      "1-100": 8
+    }
   },
   "amulet_of_wisdom": {
     "name": "amulet of wisdom",
@@ -5268,120 +3099,20 @@
       210
     ],
     "weight": 0.2,
-    "min_level": 8,
+    "min_level": 1,
     "slot": "amulet",
     "equip_threshold": 2,
-    "quiz_tier": 2,
-    "effects": {
-      "stat": "WIS",
-      "amount": 2
-    },
+    "quiz_tier": 1,
+    "effects": {},
     "unidentified_name": "an amulet",
     "lore": "The little owl was Athena's bird, and Athens stamped it on every silver coin, so that 'bringing owls to Athens' came to mean carrying a thing to where there is already plenty. A charm with her owl on it is never surplus. The wearer sees the consequence before the act.",
-    "floorSpawnWeight": {
-      "1-20": 40,
-      "21-40": 40,
-      "41-60": 40,
-      "61-80": 40,
-      "81-100": 20
-    },
-    "peak_weight": 0.4,
     "is_unique": false,
-    "spread": 8,
-    "peak_floor": 13
-  },
-  "amulet_of_greater_wisdom": {
-    "name": "amulet of greater wisdom",
-    "symbol": "\"",
-    "color": [
-      200,
-      200,
-      210
-    ],
-    "weight": 0.2,
-    "min_level": 25,
-    "slot": "amulet",
-    "equip_threshold": 2,
-    "quiz_tier": 3,
-    "effects": {
-      "stat": "WIS",
-      "amount": 3
-    },
-    "unidentified_name": "an amulet",
-    "lore": "Anthony of Egypt walked into the desert and shut himself in an abandoned fort for twenty years, living on bread lowered over the wall. When his friends finally broke the door down he came out, Athanasius wrote, neither wasted nor wild, and entirely calm. His followers kept charms like this. So do the wise.",
+    "kind": "wisdom",
+    "peak_floor": 0,
+    "peak_weight": 0.0,
     "floorSpawnWeight": {
-      "1-20": 1,
-      "21-40": 40,
-      "41-60": 40,
-      "61-80": 40,
-      "81-100": 40
-    },
-    "peak_weight": 0.4,
-    "is_unique": false,
-    "spread": 13,
-    "peak_floor": 30
-  },
-  "amulet_of_perception": {
-    "name": "amulet of perception",
-    "symbol": "\"",
-    "color": [
-      200,
-      200,
-      210
-    ],
-    "weight": 0.2,
-    "min_level": 8,
-    "slot": "amulet",
-    "equip_threshold": 2,
-    "quiz_tier": 2,
-    "effects": {
-      "stat": "PER",
-      "amount": 2
-    },
-    "unidentified_name": "an amulet",
-    "lore": "Two ravens sit on Odin's shoulders: Huginn, Thought, and Muninn, Memory. He sends them out at dawn to fly over the whole world, and they are back by breakfast to tell him what they saw. A charm cut with the pair widens the wearer's sight by a good few paces.",
-    "floorSpawnWeight": {
-      "1-20": 40,
-      "21-40": 40,
-      "41-60": 40,
-      "61-80": 40,
-      "81-100": 20
-    },
-    "peak_weight": 0.4,
-    "is_unique": false,
-    "spread": 8,
-    "peak_floor": 13
-  },
-  "amulet_of_greater_perception": {
-    "name": "amulet of greater perception",
-    "symbol": "\"",
-    "color": [
-      200,
-      200,
-      210
-    ],
-    "weight": 0.2,
-    "min_level": 25,
-    "slot": "amulet",
-    "equip_threshold": 2,
-    "quiz_tier": 3,
-    "effects": {
-      "stat": "PER",
-      "amount": 3
-    },
-    "unidentified_name": "an amulet",
-    "lore": "The king of Aram surrounded the town of Dothan by night to seize the prophet Elisha. Elisha's servant saw only the enemy. Elisha prayed, 'Lord, open his eyes,' and the young man saw the hills full of horses and chariots of fire. This charm asks for the same favor, daily.",
-    "floorSpawnWeight": {
-      "1-20": 1,
-      "21-40": 40,
-      "41-60": 40,
-      "61-80": 40,
-      "81-100": 40
-    },
-    "peak_weight": 0.4,
-    "is_unique": false,
-    "spread": 13,
-    "peak_floor": 30
+      "1-100": 8
+    }
   },
   "ring_of_command": {
     "name": "Ring of Command",
@@ -5449,7 +3180,7 @@
     "weight": 0.1,
     "min_level": 81,
     "slot": "amulet",
-    "equip_threshold": 4,
+    "equip_threshold": 5,
     "quiz_tier": 5,
     "effects": {},
     "calms_locusts": true,
@@ -5479,8 +3210,8 @@
     "weight": 0.5,
     "min_level": 35,
     "slot": "amulet",
-    "equip_threshold": 3,
-    "quiz_tier": 3,
+    "equip_threshold": 5,
+    "quiz_tier": 4,
     "effects": {},
     "quiz_timer_bonus": 2,
     "unidentified_name": "a heavy brass cog on a chain",
@@ -5510,7 +3241,7 @@
     "min_level": 66,
     "slot": "ring",
     "equip_threshold": 4,
-    "quiz_tier": 4,
+    "quiz_tier": 5,
     "effects": {},
     "quiz_timer_bonus": 3,
     "bound_to_wielder": true,
@@ -5529,5 +3260,29 @@
     "is_unique": true,
     "identified": false,
     "lore": "Giuseppe Tartini said the Devil played him a sonata in a dream, and that he spent his life failing to write it down. The gentleman at the crossroads ties a length of the same string round the wrist of everyone who signs his paper. Answers arrive a moment before the questions do, which feels exactly as wrong as it sounds. The knot has no ends. The payment is due later, much later."
+  },
+  "ring_of_wizardry": {
+    "name": "ring of wizardry",
+    "symbol": "=",
+    "color": [
+      150,
+      120,
+      230
+    ],
+    "weight": 0.1,
+    "slot": "ring",
+    "min_level": 1,
+    "effects": {},
+    "unidentified_name": "a ring",
+    "lore": "The Greek Magical Papyri, found in a single cache at Thebes, are working books: recipes for summoning, binding and foretelling, with notes in the margins where a spell went wrong. Their writers wanted what every working magician wants, a spell that costs less than the last one. This ring was cut to that wish.",
+    "kind": "wizardry",
+    "equip_threshold": 1,
+    "quiz_tier": 1,
+    "is_unique": false,
+    "peak_floor": 0,
+    "peak_weight": 0.0,
+    "floorSpawnWeight": {
+      "1-100": 8
+    }
   }
 }

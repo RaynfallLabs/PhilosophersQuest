@@ -1,0 +1,67 @@
+{
+  "_doc": [
+    "The common ring and amulet kinds (bug bash 3.3.2, armour plan section 8; src/rings.py).",
+    "A common ring or amulet is one of these kinds at an enchantment level 1-10 rolled when it is",
+    "found (gear.roll_level, the same bells as armour): tier = ceil(level / 2) is its quiz tier and",
+    "sets its ladder; odd levels are the tier's lesser form, even levels the greater, as for the",
+    "minor-slot enchantments. A blessed ring works a level higher, a cursed one a level lower.",
+    "No ring or amulet gives AC (section 8: a +1 AC ring outclasses every other ring).",
+    "Protection and Spell Turning are priced by tools/balance/armor_model.py (section 8: each",
+    "ladder is fitted to the same per-tier budget as a slot enchantment, 0.39-0.59 AC points).",
+    "The rest are not harm guards, so the model cannot price them; their ladders rise by tier",
+    "on the hook each already had (regeneration, hunger, spell cost, life saving, a stat).",
+    "The powers armour now owns left the rings: telepathy, sight, haste, levitation,",
+    "displacement, warning, searching, STR / DEX / PER, the elements (data/enchantments.json)."
+  ],
+  "kinds": {
+    "protection": {
+      "slot": "ring", "name": "Protection", "lane": "guard",
+      "family": {"riders_all": true}, "guards": "rider",
+      "tiers": [0.16, 0.19, 0.24, 0.28, 0.28],
+      "text": "a saving throw against every attack: shrugs off {pct} of the poison, fear, sleep, paralysis or anything else it would inflict"
+    },
+    "spell_turning": {
+      "slot": "ring", "name": "Spell Turning", "lane": "guard",
+      "family": {"elements": ["magic", "shadow", "psionic"]}, "guards": "damage",
+      "tiers": [0.30, 0.46, 0.52, 0.52, 0.52],
+      "text": "turns aside {pct} of the damage of magic, shadow and attacks on the mind"
+    },
+    "regeneration": {
+      "slot": "ring", "name": "Regeneration", "lane": "body",
+      "tiers": [0.0033, 0.005, 0.0067, 0.0083, 0.01], "show": 33.33,
+      "text": "mends about {pct} of your health every hundred turns"
+    },
+    "invisibility": {
+      "slot": "ring", "name": "Invisibility", "lane": "body",
+      "tiers": [10, 8, 6, 4, 2], "from_tier": 2, "whole": true,
+      "text": "makes you invisible; the veil slips when you strike and settles again after {n} quiet turns"
+    },
+    "sustenance": {
+      "slot": "ring", "name": "Sustenance", "lane": "body",
+      "tiers": [0.33, 0.50, 0.60, 0.67, 0.75],
+      "text": "your hunger comes on {pct} more slowly"
+    },
+    "wizardry": {
+      "slot": "ring", "name": "Wizardry", "lane": "mind",
+      "tiers": [0.10, 0.15, 0.20, 0.25, 0.30],
+      "text": "your spells cost {pct} less mana"
+    },
+    "life_saving": {
+      "slot": "amulet", "name": "Life Saving", "lane": "body",
+      "tiers": [0.0, 0.0, 0.25, 0.50, 0.75], "from_tier": 3,
+      "text": "once, a killing blow leaves you standing with {pct} of your health; then it is spent"
+    },
+    "wisdom": {
+      "slot": "amulet", "name": "Wisdom", "lane": "mind", "stat": "WIS",
+      "text": "+{stat} Wisdom while worn"
+    },
+    "intellect": {
+      "slot": "amulet", "name": "Intellect", "lane": "mind", "stat": "INT",
+      "text": "+{stat} Intelligence while worn"
+    },
+    "constitution": {
+      "slot": "amulet", "name": "Constitution", "lane": "body", "stat": "CON",
+      "text": "+{stat} Constitution while worn"
+    }
+  }
+}

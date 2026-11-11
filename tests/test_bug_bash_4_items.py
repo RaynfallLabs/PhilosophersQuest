@@ -143,7 +143,7 @@ def test_i02_paralysed_hero_cannot_take_the_stairs_or_open_the_sheet():
 
 # ---------------------------------------------------------------- I-03
 def test_i03_two_rings_of_one_kind_do_not_share_one_effects_dict():
-    tpl = next(a for a in load_items('accessory') if a.id == 'ring_of_master_constitution')
+    tpl = next(a for a in load_items('accessory') if a.id == 'amulet_of_constitution')
     a, b = copy.copy(tpl), copy.copy(tpl)
     assert a.effects == b.effects == tpl.effects
     assert a.effects is not b.effects and a.effects is not tpl.effects
@@ -154,9 +154,11 @@ def test_i03_two_rings_of_one_kind_do_not_share_one_effects_dict():
 def test_i03_cursed_enchant_ring_scrolls_leave_no_permanent_stat():
     g = _game()
     p = g.player
-    tpl = next(a for a in load_items('accessory') if a.id == 'ring_of_master_constitution')
+    # Two of one stat ring (a named one: the common stat rings are amulets
+    # and armour now, bug bash 3.3.2).
+    tpl = next(a for a in load_items('accessory') if a.id == 'aesops_quill')
     a, b = _known(copy.copy(tpl)), _known(copy.copy(tpl))
-    con0 = p.CON
+    con0 = p.WIS
     p._apply_equip(a)
     p._apply_equip(b)
     sc = copy.copy(next(s for s in load_items('scroll') if s.effect == 'enchant_accessory'))
@@ -165,7 +167,7 @@ def test_i03_cursed_enchant_ring_scrolls_leave_no_permanent_stat():
         g._apply_scroll_effect(sc)
     g._unequip_slot('accessory_0', a)
     g._unequip_slot('accessory_1', b)
-    assert p.CON == con0
+    assert p.WIS == con0
 
 
 # ---------------------------------------------------------------- I-04
@@ -648,3 +650,34 @@ def test_mk11_geralt_starts_with_one_potion_of_healing_row():
              secret_build=SECRET_BUILDS['geralt of rivia'])
     rows = [i for i in g.player.inventory if i.id == 'potion_of_healing']
     assert len(rows) == 1 and rows[0].count >= 2
+
+
+# ---------------------------------------------------------------- bug bash 3.3.2
+def test_a_ranged_weapon_is_weighed_against_the_ranged_weapon_carried():
+    """Brandon, 2026-11-07: "when I step over a RANGED weapon, it still
+    compares it to the melee weapon". A bow is weighed against the bow, a
+    blade against the blade, on the floor line and in the Kit."""
+    g = _game()
+    p = g.player
+    sword = _known(_weapon('iron', 'longsword'))
+    bow = _known(_weapon('ash', 'shortbow'))
+    assert getattr(bow, 'requires_ammo', None) is not None
+    p.weapon, p.ranged_weapon = sword, bow
+    for s in ('known_item_ids',):
+        getattr(p, s).update({sword.id, bow.id})
+    better_bow = _known(_weapon('yew', 'longbow'))
+    p.known_item_ids.add(better_bow.id)
+    n = len(g.msg_log.entries)
+    g._show_item_comparison(better_bow)
+    lines = [str(e[0]) for e in g.msg_log.entries[n:]]
+    assert lines and all(g._bare_name(bow) in t for t in lines), lines
+    assert not any(g._bare_name(sword) in t for t in lines), lines
+    # The Kit's delta: the same rule.
+    diff = better_bow.base_damage - bow.base_damage
+    if diff:
+        assert g._equip_delta_str(better_bow) != ''
+    p.ranged_weapon = None                    # no bow carried: nothing to weigh it against
+    n = len(g.msg_log.entries)
+    g._show_item_comparison(better_bow)
+    assert [str(e[0]) for e in g.msg_log.entries[n:]] == []
+    assert g._equip_delta_str(better_bow) == ''

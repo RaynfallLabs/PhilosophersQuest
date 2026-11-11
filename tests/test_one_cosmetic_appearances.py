@@ -1,7 +1,8 @@
 """One-cosmetic-per-item: every functional ring/amulet type has exactly ONE
-mundane appearance per run, dealt from a shared pool; tiered stat rings keep
-distinct power under disambiguated names; deleted variant ids remap on load;
-identification stays type-keyed (2026-06-07).
+mundane appearance per run, dealt from a shared pool; deleted variant ids
+remap on load; identification stays type-keyed (2026-06-07). Since bug bash
+3.3.2 the commons are ten kinds, each tiered by its level (rings.py): every
+level of a kind is one type.
 
 See proposals/design/one_cosmetic_appearances.md and
 data/items/_collapse_cosmetic_accessories.py.
@@ -59,106 +60,54 @@ def test_no_two_nonunique_accessories_share_a_name():
 
 
 def test_collapsed_cosmetic_types_are_single_entries():
+    # Bug bash 3.3.2: the common rings and amulets are ten kinds (rings.py);
+    # each exists once, its folded variants gone.
     accs = _accessories()
-    # Each canonical cosmetic survivor exists exactly once; its old variants gone.
-    for canon in ('ring_of_searching', 'ring_of_warning', 'ring_of_telepathy',
-                  'ring_of_regeneration', 'ring_of_fire_resist', 'ring_of_cold_resist',
-                  'amulet_of_searching', 'amulet_of_warning', 'amulet_of_telepathy'):
+    for canon in ('ring_of_protection', 'ring_of_spell_turning', 'ring_of_regeneration',
+                  'ring_of_invisibility', 'ring_of_sustenance', 'ring_of_wizardry',
+                  'amulet_life_saving', 'amulet_of_wisdom', 'amulet_of_intellect',
+                  'amulet_of_constitution'):
         assert canon in accs, f"missing canonical survivor {canon}"
-    for gone in ('ring_searching_silver', 'ring_searching_malachite', 'ring_warning_oak',
-                 'amulet_searching_bone'):
+    for gone in ('ring_searching_silver', 'ring_regen_emerald', 'ring_protection_gold',
+                 'amulet_of_greater_wisdom', 'ring_of_strength', 'ring_of_searching'):
         assert gone not in accs, f"deleted variant {gone} still present"
 
 
 def test_each_cosmetic_type_name_resolves_to_one_item():
-    # Every canonical cosmetic display name must map to exactly ONE entry (the
-    # whole point of the collapse). Grouping by the literal "ring/amulet of X"
-    # name, not by status, so named amulets carrying a regen side-effect
-    # (Ouroboros, Ankh of Ra) don't count as variants of the plain type.
-    accs = load_items('accessory')
-    from collections import defaultdict
-    cosmetic_names = {
-        'ring of warning', 'ring of searching', 'ring of telepathy',
-        'ring of regeneration', 'ring of fire resist', 'ring of cold resist',
-        'ring of shock resist', 'ring of poison resist', 'ring of sleep resist',
-        'amulet of warning', 'amulet of searching', 'amulet of telepathy',
-    }
-    by_name = defaultdict(list)
-    for a in accs:
-        if a.name.lower() in cosmetic_names:
-            by_name[a.name.lower()].append(a.id)
-    for name, ids in by_name.items():
-        assert len(ids) == 1, f"cosmetic type {name!r} has multiple definitions: {ids}"
-    # And all expected types are present.
-    assert set(by_name) == cosmetic_names
+    # Every kind has exactly ONE entry (the whole point of the collapse).
+    import rings
+    by_kind = {}
+    for a in load_items('accessory'):
+        if getattr(a, 'kind', ''):
+            assert a.kind not in by_kind, (a.kind, a.id, by_kind[a.kind])
+            by_kind[a.kind] = a.id
+    assert set(by_kind) == set(rings.kinds())
 
 
 # ---------------------------------------------------------------------------
-# 2. Tiered stat rings keep DISTINCT power under disambiguated names
+# 2. A kind's tiers are levels of ONE type (bug bash 3.3.2, rings.py)
 # ---------------------------------------------------------------------------
 
-def test_strength_ring_tiers_distinct_power_and_names():
+def test_a_kinds_levels_keep_distinct_power_and_names():
+    import copy
+    import rings
     accs = _accessories()
-    base = accs['ring_of_strength']
-    greater = accs['ring_of_greater_strength']
-    master = accs['ring_of_master_strength']
-    assert base.effects['amount'] == 1
-    assert greater.effects['amount'] == 2
-    assert master.effects['amount'] == 3
-    # Honest, distinct display names
-    assert base.name == 'Ring of Strength'
-    assert greater.name == 'Ring of Greater Strength'
-    assert master.name == 'Ring of Master Strength'
-    # And distinct mastery classes (each tier is its own type now)
-    assert len({type_class(base), type_class(greater),
-                type_class(master)}) == 3
+    lo, hi = copy.copy(accs['amulet_of_wisdom']), copy.copy(accs['amulet_of_wisdom'])
+    rings.relevel(lo, 1)
+    rings.relevel(hi, 9)
+    assert lo.effects['amount'] == 1 and hi.effects['amount'] == 5
+    assert lo.name == 'Amulet of Wisdom I' and hi.name == 'Amulet of Wisdom V'
+    # One type: identifying one level knows the kind at every level.
+    assert type_class(lo) == type_class(hi) == 'amulet_of_wisdom'
 
 
-def test_all_six_stat_rings_have_three_distinct_tiers():
+def test_kinds_spawn_flat_through_the_dungeon():
+    # A ring found deep is the same kind, stronger: the level comes from the
+    # armour bells (gear.roll_level), so a kind's own weight is flat.
     accs = _accessories()
-    for stat, word in (('strength', 'strength'), ('constitution', 'constitution'),
-                       ('dexterity', 'dexterity'), ('intellect', 'intellect'),
-                       ('wisdom', 'wisdom'), ('perception', 'perception')):
-        amounts = []
-        for tier_id in (f'ring_of_{word}', f'ring_of_greater_{word}', f'ring_of_master_{word}'):
-            assert tier_id in accs, f"missing tier {tier_id}"
-            amounts.append(accs[tier_id].effects['amount'])
-        assert amounts == [1, 2, 3], f"{stat} tiers not 1/2/3: {amounts}"
-
-
-def test_amulet_stat_tiers_are_plus2_and_plus3():
-    accs = _accessories()
-    for word in ('strength', 'constitution', 'dexterity', 'intellect', 'wisdom', 'perception'):
-        base = accs[f'amulet_of_{word}']
-        greater = accs[f'amulet_of_greater_{word}']
-        assert base.effects['amount'] == 2
-        assert greater.effects['amount'] == 3
-
-
-def test_tiered_bell_curve_weights_preserved():
-    # The deep tiers must keep their late-floor bell (1 at floor 1-20, climbing).
-    accs = _accessories()
-    master = accs['ring_of_master_strength']
-    fsw = master.floor_spawn_weight
-    assert fsw.get('1-20') == 1 and fsw.get('21-40') == 20, fsw
-    # Base tier-1 ring keeps its early bell (20 tapering to 10).
-    base = accs['ring_of_strength']
-    bfsw = base.floor_spawn_weight
-    assert bfsw.get('1-20') == 20 and bfsw.get('81-100') == 10, bfsw
-
-
-def test_every_renamed_stat_tier_is_a_distinct_type_class():
-    # After the rename, each of the 6-stat x {base/greater[/master]} tier slugs
-    # must resolve as its OWN type class so identification of one tier never
-    # leaks the others (they are honest, distinct types).
-    accs = _accessories()
-    expected = []
-    for word in ('strength', 'constitution', 'dexterity', 'intellect', 'wisdom', 'perception'):
-        expected += [f'ring_of_{word}', f'ring_of_greater_{word}', f'ring_of_master_{word}',
-                     f'amulet_of_{word}', f'amulet_of_greater_{word}']
-    for slug in expected:
-        assert slug in accs, f"renamed tier slug {slug!r} missing from the bank"
-        assert type_class(accs[slug]) == slug
+    for a in accs.values():
+        if getattr(a, 'kind', ''):
+            assert list(a.floor_spawn_weight) == ['1-100'], a.id
 
 
 # ---------------------------------------------------------------------------
@@ -219,7 +168,7 @@ def test_pool_has_headroom_for_managed_types():
 def test_apply_appearance_stamps_name_and_color():
     amap = _roll(random.Random(5))
     accs = _accessories()
-    ring = accs['ring_of_searching']
+    ring = accs['ring_of_protection']
     assert ring.unidentified_name == 'A Ring'   # neutral before stamp
     _stamp(ring, amap)
     assert ring.unidentified_name != 'A Ring'
@@ -237,9 +186,9 @@ def test_apply_appearance_noop_for_uniques():
 
 def test_same_type_two_instances_get_same_look_in_one_run():
     amap = _roll(random.Random(321))
-    defn = get_accessory_def('ring_of_searching')
-    a = Accessory({**defn, 'id': 'ring_of_searching', 'item_class': 'accessory'})
-    b = Accessory({**defn, 'id': 'ring_of_searching', 'item_class': 'accessory'})
+    defn = get_accessory_def('ring_of_protection')
+    a = Accessory({**defn, 'id': 'ring_of_protection', 'item_class': 'accessory'})
+    b = Accessory({**defn, 'id': 'ring_of_protection', 'item_class': 'accessory'})
     _stamp(a, amap)
     _stamp(b, amap)
     assert a.unidentified_name == b.unidentified_name   # ONE look per type per run
@@ -252,24 +201,25 @@ def test_same_type_two_instances_get_same_look_in_one_run():
 def test_identification_is_type_keyed_across_instances():
     from player import Player
     pl = Player()
-    defn = get_accessory_def('ring_of_searching')
-    seed = Accessory({**defn, 'id': 'ring_of_searching', 'item_class': 'accessory'})
-    other = Accessory({**defn, 'id': 'ring_of_searching', 'item_class': 'accessory'})
+    defn = get_accessory_def('ring_of_protection')
+    seed = Accessory({**defn, 'id': 'ring_of_protection', 'item_class': 'accessory'})
+    other = Accessory({**defn, 'id': 'ring_of_protection', 'item_class': 'accessory'})
     # Learn the class from the seed.
     pl.known_class_ids.add(type_class(seed))
     assert pl.knows_item_type(other) is True
 
 
-def test_distinct_tiers_are_separately_identified():
+def test_every_level_of_a_kind_is_identified_together():
+    import copy
+    import rings
     from player import Player
     pl = Player()
     accs = _accessories()
-    base = accs['ring_of_strength']
-    master = accs['ring_of_master_strength']
-    pl.known_class_ids.add(type_class(base))
-    # Knowing +1 must NOT reveal the +3 tier — they are honest, distinct types.
-    assert pl.knows_item_type(base) is True
-    assert pl.knows_item_type(master) is False
+    lo, hi = copy.copy(accs['ring_of_protection']), copy.copy(accs['ring_of_protection'])
+    rings.relevel(lo, 1)
+    rings.relevel(hi, 10)
+    pl.known_class_ids.add(type_class(lo))
+    assert pl.knows_item_type(lo) is True and pl.knows_item_type(hi) is True
 
 
 # ---------------------------------------------------------------------------
@@ -284,49 +234,52 @@ def test_remap_table_targets_all_exist():
 
 
 def test_remap_legacy_id_resolves_to_survivor():
-    assert remap_legacy_accessory_id('ring_searching_malachite') == 'ring_of_searching'
-    assert remap_legacy_accessory_id('ring_strength_mithril') == 'ring_of_master_strength'
-    assert remap_legacy_accessory_id('amulet_strength_iron_medallion') == 'amulet_of_strength'
+    assert remap_legacy_accessory_id('ring_regen_emerald') == 'ring_of_regeneration'
+    assert remap_legacy_accessory_id('ring_protection_gold') == 'ring_of_protection'
+    assert remap_legacy_accessory_id('amulet_wisdom_sage_ivory_locket') == 'amulet_of_wisdom'
+    # A ring whose power moved to armour has no survivor (bug bash 3.3.2).
+    assert remap_legacy_accessory_id('ring_searching_malachite') == 'ring_searching_malachite'
     # Surviving ids pass through unchanged.
-    assert remap_legacy_accessory_id('ring_of_searching') == 'ring_of_searching'
+    assert remap_legacy_accessory_id('ring_of_protection') == 'ring_of_protection'
 
 
 def test_heal_accessory_id_rebuilds_a_deleted_variant():
     # Simulate an old-save item pickled under a now-deleted variant id.
     defn_old = {
-        'name': 'ring of searching', 'symbol': '=', 'color': [60, 160, 80],
-        'slot': 'ring', 'effects': {'status': 'searching', 'duration': -1},
-        'unidentified_name': 'malachite ring', 'min_level': 1, 'quiz_tier': 1,
+        'name': 'ring of regeneration', 'symbol': '=', 'color': [60, 160, 80],
+        'slot': 'ring', 'effects': {'status': 'regenerating', 'duration': -1},
+        'unidentified_name': 'emerald ring', 'min_level': 1, 'quiz_tier': 2,
     }
-    stale = Accessory({**defn_old, 'id': 'ring_searching_malachite', 'item_class': 'accessory'})
+    stale = Accessory({**defn_old, 'id': 'ring_regen_emerald', 'item_class': 'accessory'})
     stale.buc = 'blessed'
     stale.buc_known = True
     stale.id_level = 3
     main_mod.Game._heal_accessory_id(stale)
-    # Re-pointed to the canonical id + canonical mechanical fields.
-    assert stale.id == 'ring_of_searching'
-    assert stale.name == 'Ring of Searching'
-    assert (stale.effects or {}).get('status') == 'searching'
+    # Re-pointed to the canonical kind, at the level of its old tier.
+    assert stale.id == 'ring_of_regeneration' and stale.kind == 'regeneration'
+    assert stale.name == 'Ring of Regeneration II' and stale.ench_level == 3
+    assert (stale.effects or {}).get('status') == 'regenerating'
     # Per-instance progress preserved.
     assert stale.buc == 'blessed' and stale.buc_known is True and stale.id_level == 3
 
 
 def test_heal_accessory_id_renamed_stat_tier_keeps_power():
     defn_old = {
-        'name': 'ring of strength', 'symbol': '=', 'color': [80, 90, 110],
-        'slot': 'ring', 'effects': {'stat': 'STR', 'amount': 3},
-        'unidentified_name': 'adamantine ring', 'min_level': 25, 'quiz_tier': 3,
+        'name': 'amulet of greater wisdom', 'symbol': '"', 'color': [80, 90, 110],
+        'slot': 'amulet', 'effects': {'stat': 'WIS', 'amount': 3},
+        'unidentified_name': 'ivory locket', 'min_level': 25, 'quiz_tier': 3,
     }
-    stale = Accessory({**defn_old, 'id': 'ring_strength_adamantine', 'item_class': 'accessory'})
+    stale = Accessory({**defn_old, 'id': 'amulet_wisdom_sage_ivory_locket',
+                       'item_class': 'accessory'})
     main_mod.Game._heal_accessory_id(stale)
-    assert stale.id == 'ring_of_master_strength'
-    assert stale.name == 'Ring of Master Strength'
+    assert stale.id == 'amulet_of_wisdom'
+    assert stale.name == 'Amulet of Wisdom III'
     assert stale.effects['amount'] == 3        # +3 power preserved
 
 
 def test_heal_accessory_id_noop_for_current_ids():
     accs = _accessories()
-    cur = accs['ring_of_searching']
+    cur = accs['ring_of_protection']
     before_id = cur.id
     main_mod.Game._heal_accessory_id(cur)
     assert cur.id == before_id   # already canonical, untouched
