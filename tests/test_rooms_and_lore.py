@@ -41,12 +41,16 @@ def test_lore_fixtures_are_whole():
     seen_subjects = set()
     for fid, d in cfg['fixtures'].items():
         assert fid in decor.fixture_defs(), fid
+        if d.get('placement') == 'boss':
+            # set only by a gate floor's own dressing (slice 6)
+            assert hasattr(game_lore_fixtures.LoreFixturesMixin, f"_lore_reward_{d['reward']}"), fid
+            continue
         assert hasattr(game_lore_fixtures.LoreFixturesMixin, f"_lore_reward_{d['reward']}"), fid
         assert d['pass'].strip() and d['fail'].strip() and d['verb'].strip(), fid
         assert any(s.startswith(d['subject']) for s in subjects), (fid, d['subject'])
         seen_subjects.add(d['subject'])
         assert d['subject'] != 'math', 'maths stays the sword'
-    assert len(seen_subjects) == len(cfg['fixtures']), 'one subject each'
+    assert len(seen_subjects) == len([f for f in cfg['fixtures'].values() if f.get('placement') != 'boss']), 'one subject each'
     assert cfg['per_floor'][1] <= 3
 
 

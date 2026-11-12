@@ -231,6 +231,29 @@ class LoreFixturesMixin:
         self._lore_reward_map(pos, fid)
         self.add_message("\"Then have it all,\" it says, and names every room on the floor.", 'success')
 
+    def _lore_reward_light_brazier(self, pos, fid) -> None:
+        """Fenrir's hall: a lit brazier melts the ice round it. Fenrir slips
+        on ice and so do you, so melt the patches you need and leave the ones
+        that trip him."""
+        import decor
+        from dungeon import ICE, FLOOR
+        decor.place(self.dungeon, pos, 'brazier_lit')
+        (self.dungeon.__dict__.get('lore_fixtures') or {}).pop(pos, None)
+        melted = 0
+        x0, y0 = pos
+        for y in range(y0 - 2, y0 + 3):
+            for x in range(x0 - 2, x0 + 3):
+                if self.dungeon.in_bounds(x, y) and self.dungeon.tiles[y][x] == ICE:
+                    self.dungeon.tiles[y][x] = FLOOR
+                    melted += 1
+        if melted:
+            self.add_message("The ice round the brazier melts to wet stone.", 'success')
+
+    def _lore_reward_seal_vent(self, pos, fid) -> None:
+        """The Pit: a vent sealed with a prayer lets no more locusts out
+        (main._spawn_abaddon_locusts uses the vents still open)."""
+        self.add_message("One way out of the Abyss is shut.", 'success')
+
     def _lore_reward_open_door(self, pos, fid) -> None:
         from dungeon import SECRET_DOOR, DOOR
         x, y = pos

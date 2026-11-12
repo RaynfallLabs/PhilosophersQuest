@@ -106,11 +106,11 @@ class LevelManager:
                 self._maybe_spawn_bones(level_num, dungeon, monsters, items)
             import senses
             senses.assign_jobs(monsters, dungeon.rooms)
-            # A gate floor wears its domain's look; its own builder in
-            # boss_levels.py sets its fixtures.
+            # A gate floor wears its domain's look and is dressed for its
+            # showdown (data/boss_floors.json, decor.dress_boss_floor).
             import decor
-            if getattr(dungeon, 'theme', None) is None and level_num != COW_LEVEL:
-                decor.apply_theme(dungeon, level_num)
+            if level_num != COW_LEVEL:
+                decor.dress_boss_floor(dungeon, level_num, monsters, items)
             items = self._once_per_run(items)
             return dungeon, monsters, items
 

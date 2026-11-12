@@ -1300,6 +1300,9 @@ class CombatMixin:
             self.add_message(
                 getattr(self.dungeon, 'stairs_guardian_open_line', '')
                 or "The way down stands open.", 'success')
+            # And the bar across it breaks, where it can be seen (decor.py).
+            import decor as _decor
+            _decor.open_barrier(self.dungeon)
         # Fafnir drops a unique blood potion with a hint about the throw-over reforge
         if monster.kind == 'fafnir_dragon':
             self._spawn_fafnir_blood(monster.x, monster.y)
@@ -2760,6 +2763,36 @@ class CombatMixin:
         if got:
             self.add_message(got[0], 'warning')
 
+    def _scorch_line(self, x0: int, y0: int, x1: int, y1: int) -> None:
+        """Scorch marks along a dragon's breath (decor fixtures, floor layer)."""
+        import decor as _decor
+        from dungeon import FLOOR
+        dx, dy = abs(x1 - x0), abs(y1 - y0)
+        sx = 1 if x1 > x0 else -1
+        sy = 1 if y1 > y0 else -1
+        err = dx - dy
+        cx, cy = x0, y0
+        while (cx, cy) != (x1, y1):
+            e2 = 2 * err
+            if e2 > -dy:
+                err -= dy
+                cx += sx
+            if e2 < dx:
+                err += dx
+                cy += sy
+            if (self.dungeon.in_bounds(cx, cy) and self.dungeon.tiles[cy][cx] == FLOOR
+                    and _decor.fixture_at(self.dungeon, cx, cy) is None):
+                _decor.place(self.dungeon, (cx, cy), 'scorch_mark')
+
+    def _tick_wall_cracks(self) -> None:
+        cracks = self.dungeon.__dict__.get('wall_cracks')
+        if not cracks:
+            return
+        for pos in list(cracks):
+            cracks[pos] -= 1
+            if cracks[pos] <= 0:
+                del cracks[pos]
+
     def _say_sense_lines(self, m) -> None:
         """A lore sense said once a floor (it has your scent; it felt your
         steps), and the line when one the hero can see gives up the search."""
@@ -3077,6 +3110,8 @@ class CombatMixin:
         _floor_at_start = self.dungeon_level
         # What the monsters can hear this turn (src/senses.py).
         self._senses_begin_turn()
+        # Asterion's cracks fade (slice 6).
+        self._tick_wall_cracks()
         # The fire vents breathe (game_hazards.py).
         _hz = getattr(self, '_hazards_tick', None)
         if _hz:
@@ -3180,7 +3215,17 @@ class CombatMixin:
             if did_attack:
                 # A blow on the hero carries (src/senses.py).
                 self._make_noise('struck')
+                # Fafnir's breath scorches the stone along its line, so the
+                # next one can be read (data/boss_floors.json, slice 6).
+                if (m.kind == 'fafnir_dragon' and not m._adjacent_to(self.player)):
+                    self._scorch_line(m.x, m.y, self.player.x, self.player.y)
             self._say_sense_lines(m)
+            # Asterion walking through a wall leaves it cracked and dusty for
+            # a few turns: where he went can be read (slice 6).
+            if (getattr(m, 'can_phase_walls', False) and m.alive
+                    and (m.x, m.y) in getattr(self.dungeon, 'phasing_walls', ())):
+                cracks = self.dungeon.__dict__.setdefault('wall_cracks', {})
+                cracks[(m.x, m.y)] = 6
             if _posing and getattr(m, '_aware', False):
                 # A Hellmouth that sprang on its own turn (no blow, so no
                 # spring note): the Seeker's That Was Not a Stair.
@@ -3226,9 +3271,20 @@ class CombatMixin:
                 m._heal_amount = 0
             # HP-threshold phase-change announcement (boss enrage)
             enrage_msg = getattr(m, '_enrage_message', '')
+            if enrage_msg and not m.__dict__.get('_phase_dressed'):
+                # The room turns with its keeper (data/boss_floors.json phase).
+                m._phase_dressed = True
+                import decor as _decor
+                _decor.boss_phase(self.dungeon, m)
             if enrage_msg and (m.x, m.y) in self.visible:
                 self.add_message(enrage_msg, 'danger')
                 m._enrage_message = ''
+            # Fenrir's rage: at three stacks a brazier gutters out.
+            if (m.kind == 'fenrir_wolf' and getattr(m, 'rage_stacks', 0) >= 3
+                    and not m.__dict__.get('_phase_dressed')):
+                m._phase_dressed = True
+                import decor as _decor
+                _decor.boss_phase(self.dungeon, m)
             # Fenrir rage escalation message
             rage_msg = getattr(m, '_rage_message', '')
             m._rage_message = ''        # said once, not every turn he is held

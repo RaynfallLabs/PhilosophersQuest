@@ -271,7 +271,7 @@
         80,
         85
       ],
-      "look": "An iron brazier full of dead coals."
+      "look": "An iron brazier full of dead coals. Lit, it would melt the ice round it."
     },
     "brazier_lit": {
       "name": "a brazier",
@@ -287,7 +287,7 @@
     "smoke_vent": {
       "name": "a smoking crack",
       "layer": "floor",
-      "look": "A crack in the glass, with smoke rising out of it."
+      "look": "A crack in the glass, with smoke rising out of it. On the floor of the Pit, the locusts climb out of these."
     },
     "hanging_chains": {
       "name": "chains",

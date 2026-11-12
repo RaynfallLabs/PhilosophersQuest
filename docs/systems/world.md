@@ -250,6 +250,33 @@ Standing pieces go against the walls, away from the ways in. The reachability wa
 
 Tests: `tests/test_rooms_and_lore.py`.
 
+### 3.12 The five finales (Dungeon Alive slice 6)
+`LevelManager.generate` calls `decor.dress_boss_floor` on every gate floor (`data/boss_floors.json`). Each finale wears its domain's theme and is dressed from what is really on its map. Nothing changes a fight's mechanics:
+- **Pillars:** every free-standing wall column becomes the floor's prop, drawn on the theme's floor through `tile_art`. On floor 40 these are Medusa's 16 pillars, now people turned to stone; on floor 60 Fafnir's stalagmites; on floor 80 Fenrir's frozen warriors. The tile stays `WALL`, so it is still the cover from her gaze, the cover from his breath, and Asterion's phasing walls.
+- **Stair barriers (E0):** `decor.place_barrier` draws the bar across the down stair while the keeper lives. It is the grate for Asterion, the crowd of statues for Medusa, the curtain of fire for Fafnir, the snow for Fenrir, and the wax seal on each seal demon's floor, which `dress_floor` also calls. The bar itself is still `main._descend_stairs`'s job. When the keeper dies, `open_barrier` swaps in the broken picture: the raised grate, rubble, embers, slush, or a seal in pieces.
+
+| Floor | What the dressing adds |
+|---|---|
+| 20 | labrys marks at junctions, bull frescoes and torches round the hall, tribute bones under what earlier visitors left, horns of consecration at the hall's two ways in |
+| 40 | ivy, olive leaves, shed skins, broken statues |
+| 60 | the hoard bed round Fafnir (`tile_art` `hoard`), dragon-slayers' bones, scorch marks |
+| 80 | shields, icicles, two broken fetters, and 3-4 cold braziers |
+| 100 | chains, seven seal stones round the arena (one for each seal broken), the ruined throne, the fallen star at the entry, 4-6 smoke vents, and an arrival line (it had none) |
+
+**Fixtures that matter in the fight:**
+- **Asterion:** a phasing wall he walks through stays cracked and dusty for 6 turns (`dungeon.wall_cracks`, drawn by `renderer._draw_marks`), so where he went can be read.
+- **Ariadne's Thread:** it is drawn red along `labyrinth_thread_route` (`dungeon.thread_route`).
+- **Fafnir:** his breath leaves scorch marks along its line (`_scorch_line`).
+- **Fenrir:** the braziers answer to **D** (science, `light_brazier`). A lit one melts the ice within 2 tiles. Fenrir slips on ice and so does the hero, so the hero melts the patches he needs and leaves the ones that trip the wolf.
+- **Abaddon:** the vents answer to **D** (theology, `seal_vent`). Locusts climb out of the open vents (`_spawn_abaddon_locusts`). With every vent sealed, only half a swarm comes, from round Abaddon.
+
+**Phases (E7).** `decor.boss_phase` runs when a keeper enrages:
+- Asterion: plaster rubble falls round him.
+- Abaddon: fissures open in the floor.
+- Fenrir, at three rage stacks: a lit brazier gutters out and has to be lit again.
+
+Tests: `tests/test_boss_floors.py`.
+
 ### 3.8 Fountains, graves, thrones (interactive tiles)
 `FOUNTAIN`, `GRAVE`, `THRONE`, `ALTAR` are all walkable and transparent. They're placed either by the generic altar/fountain passes above, or by special-room spawns (§4.4 — `graveyard` paints `GRAVE` tiles, `throne_room` paints a single `THRONE`), or by scripted quest hooks (see §7 and [quests_mysteries](quests_mysteries.md)).
 

@@ -1,74 +1,129 @@
 {
-  "_doc": "Worth a Closer Look (Dungeon Alive slice 4, B1): one lore fixture for each subject but maths (maths stays the sword). Stand beside one and press D: ONE question of its subject, binary (flow over gradient). A right answer gives what it has, once; a wrong one spends it all the same (resource loss is the penalty). They give information, consumables, coin and study progress, never gear (the 10-26 loot budget). 'tier' follows the domain (data/domains.json order: the Labyrinth 1 ... the Abyss 5). 'per_floor' [min, max] from 'first_floor' on, never more than 3 questions a floor. 'rooms': the special room it belongs in first; otherwise it stands in an ordinary room. 'reward' is handled in src/game_lore_fixtures.py.",
+  "_doc": "Worth a Closer Look (Dungeon Alive slice 4, B1): one lore fixture for each subject but maths (maths stays the sword). Stand beside one and press D: ONE question of its subject, binary (flow over gradient). A right answer gives what it has, once; a wrong one spends it all the same (resource loss is the penalty). They give information, consumables, coin and study progress, never gear (the 10-26 loot budget). 'tier' follows the domain (data/domains.json order: the Labyrinth 1 ... the Abyss 5). 'per_floor' [min, max] from 'first_floor' on, never more than 3 questions a floor. 'rooms': the special room it belongs in first; otherwise it stands in an ordinary room. 'reward' is handled in src/game_lore_fixtures.py. A fixture with 'placement': 'boss' is set only by a gate floor's own dressing (data/boss_floors.json 'lore'), never at random.",
   "first_floor": 2,
-  "per_floor": [1, 3],
+  "per_floor": [
+    1,
+    3
+  ],
   "fixtures": {
     "copyist_desk": {
-      "subject": "grammar", "reward": "scroll", "rooms": ["library"],
+      "subject": "grammar",
+      "reward": "scroll",
+      "rooms": [
+        "library"
+      ],
       "verb": "finish the copyist's page",
       "pass": "You find the copyist's slip and set it right. The ink takes, and the page is a scroll now.",
       "fail": "Your correction blots across the line. The page is spoiled."
     },
     "alchemist_bench": {
-      "subject": "science", "reward": "potion", "rooms": [],
+      "subject": "science",
+      "reward": "potion",
+      "rooms": [],
       "verb": "work out what happened in the retort",
       "pass": "You see what the alchemist got wrong, and finish the work properly. A potion clears in the flask.",
       "fail": "The residue fizzes, turns brown and sets solid. Whatever it was going to be, it isn't now."
     },
     "surveyor_table": {
-      "subject": "geography", "reward": "map", "rooms": [],
+      "subject": "geography",
+      "reward": "map",
+      "rooms": [],
       "verb": "finish the surveyor's map",
       "pass": "You read the surveyor's marks and finish what he started. The whole floor lies on the table, and now it lies in your head.",
       "fail": "You guess at the marks and smudge the ink. The map is no good to anyone now."
     },
     "memorial_stone": {
-      "subject": "history", "reward": "reveal_store", "rooms": ["graveyard"],
+      "subject": "history",
+      "reward": "reveal_store",
+      "rooms": [
+        "graveyard"
+      ],
       "verb": "read the names on the stone",
       "pass": "You know these names, or the war they died in. The last line is not a name at all: it says where they hid their stores.",
       "fail": "The names mean nothing to you. They stay strangers."
     },
     "wayside_icon": {
-      "subject": "theology", "reward": "blessing", "rooms": ["shrine"],
+      "subject": "theology",
+      "reward": "blessing",
+      "rooms": [
+        "shrine"
+      ],
       "verb": "pray at the little shrine",
       "pass": "You know whose icon this is, and what to say to it. Something eases in you.",
       "fail": "The words will not come. The candle gutters and goes out."
     },
     "ledger_desk": {
-      "subject": "economics", "reward": "coin", "rooms": ["treasury"],
+      "subject": "economics",
+      "reward": "coin",
+      "rooms": [
+        "treasury"
+      ],
       "verb": "balance the clerk's books",
       "pass": "The books do not balance, and you see why: somebody skimmed. The missing coin is in a false bottom of the drawer.",
       "fail": "The figures swim. Whoever cooked these books cooked them well."
     },
     "trophy_board": {
-      "subject": "animal", "reward": "study", "rooms": ["zoo"],
+      "subject": "animal",
+      "reward": "study",
+      "rooms": [
+        "zoo"
+      ],
       "verb": "name the hunter's trophies",
       "pass": "You name every trophy on the board, and the hunter's notes beside them tell you more about what hunts this floor.",
       "fail": "Antlers, tusks, a skull. You could not say whose."
     },
     "field_kitchen": {
-      "subject": "cooking", "reward": "meal", "rooms": ["barracks"],
+      "subject": "cooking",
+      "reward": "meal",
+      "rooms": [
+        "barracks"
+      ],
       "verb": "finish the stew",
       "pass": "You know what this stew wants, and give it. It is the best thing you have eaten in a long time.",
       "fail": "You stir in the wrong thing at the wrong time. The pot burns black."
     },
     "brazen_head": {
-      "subject": "ai", "reward": "truth", "rooms": ["throne_room"],
+      "subject": "ai",
+      "reward": "truth",
+      "rooms": [
+        "throne_room"
+      ],
       "verb": "question the brazen head",
       "pass": "It tells you three things about this floor, and you catch the one it made up. Then, sulking, it tells you something true.",
       "fail": "You believe every word. The head laughs, loud enough to wake the floor."
     },
     "gamblers_table": {
-      "subject": "trivia", "reward": "pot", "rooms": [],
+      "subject": "trivia",
+      "reward": "pot",
+      "rooms": [],
       "verb": "sit in on the goblins' game",
       "pass": "You know the answer to the question on the last card. The pot is yours.",
       "fail": "Wrong card. You leave your stake on the table."
     },
     "riddle_lintel": {
-      "subject": "philosophy", "reward": "open_door", "rooms": [],
+      "subject": "philosophy",
+      "reward": "open_door",
+      "rooms": [],
       "verb": "answer the lintel",
       "placement": "secret_door",
       "pass": "You see what the carved question is really asking. Stone grinds on stone, and a door opens beneath the owl.",
       "fail": "Your answer is clever and wrong. The owl goes on watching."
+    },
+    "brazier_cold": {
+      "subject": "science",
+      "reward": "light_brazier",
+      "placement": "boss",
+      "verb": "light the brazier",
+      "pass": "You build the coals the way a fire wants to be built, and the brazier roars up. The ice round it begins to run.",
+      "fail": "The coals smoke, sulk and die. The kindling is spent."
+    },
+    "smoke_vent": {
+      "subject": "theology",
+      "reward": "seal_vent",
+      "placement": "boss",
+      "verb": "seal the vent with a prayer",
+      "pass": "You speak the words over the vent, and the smoke stops as if a door had shut. Nothing more will climb out of that one.",
+      "fail": "Your words go up with the smoke, and the smoke goes on."
     }
   }
 }

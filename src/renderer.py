@@ -786,6 +786,7 @@ class Renderer:
                     self.screen.blit(dim, (sx, sy))
 
         self._draw_fixtures(dungeon, visible, dim)
+        self._draw_marks(dungeon, visible)
 
         # Draw revealed traps with per-type sprites
         for (tx, ty), trap in getattr(dungeon, 'traps', {}).items():
@@ -820,6 +821,40 @@ class Renderer:
                 pad = max(2, T // 6)
                 pygame.draw.rect(self.screen, _PIT_COLOR,
                                  (sx + pad, sy + pad, T - pad * 2, T - pad * 2), 2)
+
+    def _draw_marks(self, dungeon, visible) -> None:
+        """Marks drawn in code (slice 6): fresh cracks where Asterion walked
+        through a wall, and Ariadne's red thread along the way through the
+        Labyrinth."""
+        T = self.map_tile_size
+        for (cx, cy), _left in (getattr(dungeon, 'wall_cracks', None) or {}).items():
+            if (cx, cy) not in visible:
+                continue
+            sx, sy = self.world_to_screen(cx, cy)
+            w = max(1, T // 16)
+            col = (35, 25, 20)
+            pts = [(sx + T * 0.2, sy + T * 0.1), (sx + T * 0.45, sy + T * 0.4),
+                   (sx + T * 0.35, sy + T * 0.6), (sx + T * 0.6, sy + T * 0.9)]
+            pygame.draw.lines(self.screen, col, False, pts, w)
+            pygame.draw.line(self.screen, col, (sx + T * 0.45, sy + T * 0.4),
+                             (sx + T * 0.75, sy + T * 0.3), w)
+            dust = pygame.Surface((T, T), pygame.SRCALPHA)
+            dust.fill((200, 190, 170, 50))
+            self.screen.blit(dust, (sx, sy))
+        route = getattr(dungeon, 'thread_route', None)
+        if route:
+            seen = dungeon.explored
+            pts = []
+            for (rx, ry) in route:
+                if (rx, ry) not in seen:
+                    if len(pts) > 1:
+                        pygame.draw.lines(self.screen, (190, 30, 30), False, pts, max(1, T // 12))
+                    pts = []
+                    continue
+                sx, sy = self.world_to_screen(rx, ry)
+                pts.append((sx + T // 2, sy + T // 2))
+            if len(pts) > 1:
+                pygame.draw.lines(self.screen, (190, 30, 30), False, pts, max(1, T // 12))
 
     def _draw_fixtures(self, dungeon, visible, dim) -> None:
         """Fixtures (src/decor.py): floor decals first, then what stands or

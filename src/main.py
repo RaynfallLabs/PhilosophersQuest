@@ -2462,6 +2462,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 if _route:
                     self.dungeon.explored.update(_route)
                     self.dungeon._thread_shown = True
+                    # The thread itself, drawn red along the way (slice 6).
+                    self.dungeon.thread_route = list(_route)
                     self.add_message(
                         "You tie the Thread to the foot of the stair. It runs out "
                         "ahead of you into the dark, as if it knew the way.", 'success')
@@ -7973,6 +7975,23 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             return tiles
 
         locust_tiles = _nearby_tiles(abaddon.x, abaddon.y)
+        # The locusts come up out of the smoke (Revelation 9): out of the
+        # vents still open on his floor (data/boss_floors.json). Every vent
+        # sealed with a prayer is a way out shut; with all of them shut, only
+        # half a swarm comes, from round him.
+        _vents = [p for p, f in (self.dungeon.__dict__.get('fixtures') or {}).items()
+                  if f == 'smoke_vent' and p in (self.dungeon.__dict__.get('lore_fixtures') or {})]
+        _open = [p for p in _vents
+                 if (self.dungeon.__dict__.get('fixture_state') or {}).get(p) != 'spent']
+        if _vents:
+            if _open:
+                _vt = []
+                for _vx, _vy in _open:
+                    _vt += _nearby_tiles(_vx, _vy, radius=1)
+                random.shuffle(_vt)
+                locust_tiles = _vt or locust_tiles
+            else:
+                count = max(1, count // 2)
         spawned = 0
         for tx, ty in locust_tiles:
             if spawned >= count:

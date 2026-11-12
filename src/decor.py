@@ -541,7 +541,7 @@ def place_lore_fixtures(dungeon, level: int, taken: set, placed_blocks: list, rn
     ordinary = [r for r in dungeon.rooms if id(r) not in skip and r is not first]
     rng.shuffle(ordinary)
     free = [fid for fid, d in defs.items()
-            if d.get('placement') != 'secret_door' and fid not in [c[0] for c in chosen]]
+            if d.get('placement') not in ('secret_door', 'boss') and fid not in [c[0] for c in chosen]]
     rng.shuffle(free)
     for room, fid in zip(ordinary, free):
         if len(chosen) + n >= want:
@@ -608,6 +608,298 @@ def arrival_lines(dungeon) -> None:
         dungeon.explore_line = arr['explore_line']
 
 
+# ---------------------------------------------------------------------------
+# The five finales: gate floors and stair barriers (slice 6)
+# ---------------------------------------------------------------------------
+
+_BOSS: dict | None = None
+
+
+def boss_floors() -> dict:
+    global _BOSS
+    if _BOSS is None:
+        from paths import data_path
+        _BOSS = _load(data_path('data', 'boss_floors.json'))
+    return _BOSS
+
+
+def _barrier_ids(guardian: str):
+    bars = boss_floors().get('barriers') or {}
+    if guardian in bars:
+        return bars[guardian]
+    if (guardian or '').startswith('seal_demon'):
+        return bars.get('seal_demon')
+    return None
+
+
+def place_barrier(dungeon) -> bool:
+    """Draw the bar across the down stair while the floor's keeper lives
+    (the grate, the statues, the fire, the snow, the wax seal). The bar
+    itself is main._descend_stairs's: this is its picture."""
+    from dungeon import STAIRS_DOWN
+    ids = _barrier_ids(getattr(dungeon, 'stairs_guardian', None) or '')
+    if not ids:
+        return False
+    for y in range(dungeon.height):
+        for x in range(dungeon.width):
+            if dungeon.tiles[y][x] == STAIRS_DOWN:
+                place(dungeon, (x, y), ids[0])
+                dungeon.barrier = {'pos': (x, y), 'open': ids[1]}
+                return True
+    return False
+
+
+def open_barrier(dungeon) -> None:
+    """The keeper is dead: the bar breaks (the grate rises, the statues
+    topple, the fire dies, the snow slumps, the seal falls in pieces)."""
+    bar = dungeon.__dict__.get('barrier')
+    if not isinstance(bar, dict) or not bar.get('pos'):
+        return
+    place(dungeon, tuple(bar['pos']), bar.get('open') or 'rubble')
+    bar['opened'] = True
+
+
+def _isolated_walls(dungeon) -> list:
+    """Free-standing wall columns: a WALL tile with walkable ground on at
+    least five of its eight sides."""
+    from dungeon import WALL
+    out = []
+    for y in range(1, dungeon.height - 1):
+        for x in range(1, dungeon.width - 1):
+            if dungeon.tiles[y][x] != WALL:
+                continue
+            open_sides = sum(1 for ox in (-1, 0, 1) for oy in (-1, 0, 1)
+                             if (ox or oy) and dungeon.tiles[y + oy][x + ox] != WALL
+                             and dungeon.tiles[y + oy][x + ox] != 5)
+            if open_sides >= 7:
+                out.append((x, y))
+    return out
+
+
+def _bbox_floor(room, dungeon) -> list:
+    """Every walkable tile inside a room's box. A gate floor's rooms are
+    carved without a wall ring, so their edge is floor too."""
+    return [(x, y) for y in range(room.y, room.y + room.height)
+            for x in range(room.x, room.x + room.width)
+            if dungeon.in_bounds(x, y) and dungeon.is_walkable(x, y)]
+
+
+def _in_bbox(room, x, y) -> bool:
+    return room.x <= x < room.x + room.width and room.y <= y < room.y + room.height
+
+
+def _room_wall_tiles(room, dungeon) -> list:
+    """WALL tiles beside the room's floor (its walls, its pillars)."""
+    from dungeon import WALL
+    out = set()
+    for (x, y) in _bbox_floor(room, dungeon):
+        for a, b in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+            nx, ny = x + a, y + b
+            if dungeon.in_bounds(nx, ny) and dungeon.tiles[ny][nx] == WALL \
+                    and (nx, ny) not in fixtures_of(dungeon):
+                out.add((nx, ny))
+    return sorted(out)
+
+
+def _room_openings(room, dungeon) -> list:
+    """The room's floor tiles that a way in opens onto."""
+    from dungeon import DOOR
+    out = []
+    for (x, y) in _bbox_floor(room, dungeon):
+        for a, b in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+            nx, ny = x + a, y + b
+            if not _in_bbox(room, nx, ny) and dungeon.in_bounds(nx, ny) and (
+                    dungeon.is_walkable(nx, ny) or dungeon.tiles[ny][nx] == DOOR):
+                out.append((x, y))
+                break
+    return out
+
+
+def _room_wall_side(room, dungeon, taken: set) -> list:
+    """Floor tiles of the room against a wall, away from every way in."""
+    from dungeon import WALL
+    openings = set(_room_openings(room, dungeon))
+    out = []
+    for (x, y) in _bbox_floor(room, dungeon):
+        if (x, y) in taken or (x, y) in openings:
+            continue
+        if not any(dungeon.tiles[y + b][x + a] == WALL for a, b in ((1, 0), (-1, 0), (0, 1), (0, -1))
+                   if dungeon.in_bounds(x + a, y + b)):
+            continue
+        if any(max(abs(x - o[0]), abs(y - o[1])) <= 1 for o in openings):
+            continue
+        out.append((x, y))
+    return out
+
+
+def _boss_room(dungeon, monsters):
+    guardian = getattr(dungeon, 'stairs_guardian', None)
+    keeper = next((m for m in monsters or () if getattr(m, 'alive', True)
+                   and (m.kind == guardian or getattr(m, 'is_boss', False))), None)
+    if keeper is not None:
+        for r in dungeon.rooms:
+            if r.x <= keeper.x < r.x + r.width and r.y <= keeper.y < r.y + r.height:
+                return r, keeper
+    rooms = sorted(dungeon.rooms, key=lambda r: -(r.width * r.height))
+    return (rooms[0] if rooms else None), keeper
+
+
+def _walkable_floor(dungeon):
+    from dungeon import FLOOR
+    return [(x, y) for y in range(dungeon.height) for x in range(dungeon.width)
+            if dungeon.tiles[y][x] == FLOOR and (x, y) not in fixtures_of(dungeon)]
+
+
+def _spots(dungeon, where: str, layer: str, room, taken: set):
+    from dungeon import WALL, FLOOR
+    if layer == 'wall':
+        if where == 'boss_room' and room is not None:
+            return _room_wall_tiles(room, dungeon)
+        out = []
+        for y in range(1, dungeon.height - 1):
+            for x in range(1, dungeon.width - 1):
+                if dungeon.tiles[y][x] != WALL or (x, y) in fixtures_of(dungeon):
+                    continue
+                nbrs = [(x + a, y + b) for a, b in ((1, 0), (-1, 0), (0, 1), (0, -1))]
+                flo = [n for n in nbrs if dungeon.tiles[n[1]][n[0]] == FLOOR]
+                if not flo:
+                    continue
+                if where == 'junctions':
+                    if not any(sum(1 for a, b in ((1, 0), (-1, 0), (0, 1), (0, -1))
+                                   if dungeon.is_walkable(n[0] + a, n[1] + b)) >= 3 for n in flo):
+                        continue
+                out.append((x, y))
+        return out
+    if layer == 'stand':
+        if where == 'entry':
+            first = dungeon.rooms[0] if dungeon.rooms else None
+            return _room_wall_side(first, dungeon, taken) if first else []
+        if room is None:
+            return []
+        return _room_wall_side(room, dungeon, taken)
+    floor = [t for t in _walkable_floor(dungeon) if t not in taken]
+    if where == 'boss_room' and room is not None:
+        return [t for t in floor if _in_bbox(room, *t)]
+    if where == 'items':
+        held = dungeon.__dict__.get('_dress_item_tiles') or set()
+        return [t for t in _walkable_floor(dungeon) if t in held]
+    if where == 'dead_ends':
+        return [t for t in floor
+                if sum(1 for a, b in ((1, 0), (-1, 0), (0, 1), (0, -1))
+                       if dungeon.is_walkable(t[0] + a, t[1] + b)) == 1]
+    return floor
+
+
+def dress_boss_floor(dungeon, level: int, monsters=(), items=(), rng=None) -> int:
+    """A gate floor dressed for its showdown (data/boss_floors.json)."""
+    rng = rng or random.Random()
+    apply_theme(dungeon, level)
+    place_barrier(dungeon)
+    spec = (boss_floors().get('floors') or {}).get(str(level))
+    if not spec:
+        return 0
+    room, keeper = _boss_room(dungeon, monsters)
+    taken = _taken_tiles(dungeon, monsters, items)
+    dungeon._dress_item_tiles = {(getattr(i, 'x', -1), getattr(i, 'y', -1)) for i in items or ()}
+    before = _reachable_count(dungeon)
+    placed_blocks = []
+    n = 0
+    pillars = spec.get('pillars')
+    if pillars:
+        art = dungeon.__dict__.setdefault('tile_art', {})
+        for pos in _isolated_walls(dungeon):
+            art[pos] = 'floor'
+            place(dungeon, pos, _weighted(pillars, rng))
+            n += 1
+    for layer in ('walls', 'stand', 'floor'):
+        for part in spec.get(layer) or ():
+            lay = 'wall' if layer == 'walls' else layer
+            spots = _spots(dungeon, part.get('where', 'any'), lay, room, taken)
+            rng.shuffle(spots)
+            lo, hi = part.get('count', [1, 1])
+            want = rng.randint(int(lo), int(hi))
+            for pos in spots:
+                if want <= 0:
+                    break
+                fid = _weighted(part['ids'], rng)
+                if fixture_def(fid).get('blocks'):
+                    if any(max(abs(pos[0] - b[0]), abs(pos[1] - b[1])) <= 1 for b in placed_blocks):
+                        continue
+                    placed_blocks.append(pos)
+                place(dungeon, pos, fid)
+                taken.add(pos)
+                want -= 1
+                n += 1
+    if spec.get('entrance') and room is not None:
+        for (x, y) in _room_openings(room, dungeon):
+            if (x, y) not in taken:
+                place(dungeon, (x, y), spec['entrance'])
+                taken.add((x, y))
+                n += 1
+    dungeon.__dict__.pop('_dress_item_tiles', None)
+    if spec.get('hoard') and room is not None and keeper is not None:
+        art = dungeon.__dict__.setdefault('tile_art', {})
+        r = int(spec['hoard'])
+        for (x, y) in _bbox_floor(room, dungeon):
+            if max(abs(x - keeper.x), abs(y - keeper.y)) <= r:
+                art[(x, y)] = 'hoard'
+    state = dungeon.__dict__.setdefault('lore_fixtures', {})
+    for part in spec.get('lore') or ():
+        fid = part['id']
+        lay = fixture_def(fid).get('layer', 'stand')
+        spots = _spots(dungeon, part.get('where', 'boss_room'), lay, room, taken)
+        rng.shuffle(spots)
+        lo, hi = part.get('count', [1, 1])
+        want = rng.randint(int(lo), int(hi))
+        for pos in spots:
+            if want <= 0:
+                break
+            if fixture_def(fid).get('blocks'):
+                if any(max(abs(pos[0] - b[0]), abs(pos[1] - b[1])) <= 1 for b in placed_blocks):
+                    continue
+                placed_blocks.append(pos)
+            place(dungeon, pos, fid)
+            taken.add(pos)
+            state[pos] = {'tier': _lore_tier(level)}
+            want -= 1
+            n += 1
+    if before > 0 and placed_blocks:
+        while placed_blocks and _reachable_count(dungeon) < before - len(placed_blocks):
+            pos = placed_blocks.pop()
+            remove(dungeon, pos)
+            state.pop(pos, None)
+            n -= 1
+    if spec.get('arrival') and spec['arrival'] not in dungeon.atmosphere_messages:
+        dungeon.atmosphere_messages.append(spec['arrival'])
+    return n
+
+
+def boss_phase(dungeon, keeper, rng=None) -> str:
+    """The keeper has turned (its enrage): the room changes with it
+    (boss_floors.json 'phase'). Returns '' (the keeper's own line is said
+    by the game)."""
+    rng = rng or random.Random()
+    spec = (boss_floors().get('floors') or {}).get(str(getattr(dungeon, 'level', 0))) or {}
+    ph = (spec.get('phase') or {}).get(getattr(keeper, 'kind', ''))
+    if not ph:
+        return ''
+    if ph.get('floor'):
+        part = ph['floor']
+        near = [t for t in _walkable_floor(dungeon)
+                if max(abs(t[0] - keeper.x), abs(t[1] - keeper.y)) <= 5]
+        rng.shuffle(near)
+        lo, hi = part.get('count', [3, 5])
+        for pos in near[:rng.randint(int(lo), int(hi))]:
+            place(dungeon, pos, _weighted(part['ids'], rng))
+    if ph.get('gutter'):
+        lit = [pos for pos, fid in fixtures_of(dungeon).items() if fid == ph['gutter']]
+        if lit:
+            pos = rng.choice(lit)
+            place(dungeon, pos, 'brazier_cold')
+            (dungeon.__dict__.setdefault('lore_fixtures', {}))[pos] = {'tier': _lore_tier(dungeon.level)}
+    return ''
+
+
 def dress_floor(dungeon, level: int, monsters=(), items=(), rng=None) -> int:
     """Theme the floor and set its domain's dressing about it: the special
     rooms' own furniture, the lore fixtures, the domain's decor and hazards,
@@ -622,6 +914,8 @@ def dress_floor(dungeon, level: int, monsters=(), items=(), rng=None) -> int:
     skip = {id(r) for r in _skip_rooms(dungeon)}
     before = _reachable_count(dungeon)
     placed_blocks = []
+    # A seal demon's floor: the red wax across the stair (slice 6, E0).
+    place_barrier(dungeon)
     n = furnish_special_rooms(dungeon, taken, placed_blocks, rng)
     n += furnish_band_camp(dungeon, taken, placed_blocks, rng)
     n += place_lore_fixtures(dungeon, level, taken, placed_blocks, rng)
