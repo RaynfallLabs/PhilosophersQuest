@@ -2692,7 +2692,7 @@
   },
   {
     "tier": 1,
-    "question": "A blue dragon, a sea slug about three centimeters long, hunts a drifter more dangerous than itself: a jellyfish-like creature armed with venomous stinging cells. It eats its prey whole and keeps the stingers, still working. How bad can its sting be for a swimmer?",
+    "question": "A blue dragon, a sea slug smaller than a grape, hunts a jellyfish-like drifter armed with stinging cells. It eats chunks of its prey, venom and all. How bad can the slug's sting be for a swimmer?",
     "answer": "Worse than the Portuguese man o' war it ate",
     "choices": [
       "Worse than the Portuguese man o' war it ate",
@@ -2731,7 +2731,7 @@
   },
   {
     "tier": 4,
-    "question": "A blue dragon, a little sea slug that eats the Portuguese man o' war and keeps its stingers, washes up dead and drying on a warm beach, a few centimeters of beautiful electric blue. A curious child reaches for the pretty shape. Why should the child not touch it?",
+    "question": "A blue dragon, a little sea slug that hunts the Portuguese man o' war, washes up dead and drying on a warm beach, a few centimeters of beautiful electric blue. A curious child reaches for the pretty shape. Why should the child not touch it?",
     "answer": "Its stolen stingers still fire on contact after it dies",
     "choices": [
       "Its stolen stingers still fire on contact after it dies",
@@ -2752,7 +2752,7 @@
       "It fires each stinger into a sealed water sac that then vents harmlessly to the open sea",
       "It starves itself for days so the loaded stingers slowly discharge on their own instead"
     ],
-    "context": "The disarming is a two-part trick. First, the slug's mucus suppresses nematocyst discharge (in the related aeolid Aeolidia papillosa, mucus cut prey-stinger firing by roughly 60% below control). Second, a tough chitin cuticle plus granular-chitin discs called 'spindles' line the gut and act like biological sandbags, absorbing any stinger that still goes off. So swallowing a man o' war whole is not luck: it chemically quiets the weapons, then physically shields its own insides from the ones that fire anyway. Source: PMC review 'Acquisition and Use of Nematocysts by Cnidarian Predators' (PMC2783962), citing Aeolidia papillosa mucus-suppression and buccal chitin 'spindle' data.",
+    "context": "The disarming is a two-part trick. First, the slug's mucus suppresses nematocyst discharge (in the related aeolid Aeolidia papillosa, mucus cut prey-stinger firing by roughly 60% below control). Second, a tough chitin cuticle plus granular-chitin discs called 'spindles' line the gut and act like biological sandbags, absorbing any stinger that still goes off. So eating a man o' war is not luck: it chemically quiets the weapons, then physically shields its own insides from the ones that fire anyway. Source: PMC review 'Acquisition and Use of Nematocysts by Cnidarian Predators' (PMC2783962), citing Aeolidia papillosa mucus-suppression and buccal chitin 'spindle' data.",
     "topic": "blue-dragon-nudibranch-glaucus-atlanticus"
   },
   {
@@ -11636,15 +11636,15 @@
   },
   {
     "tier": 3,
-    "question": "A lab worker tests a batch of vaccine for the poisons dead bacteria leave behind, which can cause a dangerous fever. She mixes in a blue-tinted fluid drawn from an ancient, helmet-shaped sea creature that crawls ashore each spring to lay eggs; if the poisons are there, it clots into a gel. Which animal's blood is it?",
-    "answer": "horseshoe crab",
+    "question": "A lab worker checks a batch of vaccine for the poisons that dead bacteria leave behind, which can give a patient a dangerous fever. She mixes in a test made from the milky-blue blood of horseshoe crabs. If those poisons are there, what does the crab's blood do?",
+    "answer": "It clots into a firm gel",
     "choices": [
-      "horseshoe crab",
-      "electric eel",
-      "sea cucumber",
-      "giant clam"
+      "It clots into a firm gel",
+      "It foams up into tiny bubbles",
+      "It hardens into crystals",
+      "It gives off a sharp smell"
     ],
-    "context": "Cells in horseshoe crab blood called amebocytes instantly clot into a gel when they touch bacterial toxins, trapping the germs. This 'LAL' test checks that injectable medicines and vaccines, including COVID-19 vaccines, are free of contamination. Source: The Horseshoe Crab (horseshoecrab.org); NCBI LAL technology review.",
+    "context": "Cells in horseshoe crab blood called amebocytes clot into a gel when they touch bacterial toxins (endotoxins), a defense that traps germs inside the crab's own body. Drug makers use an extract of those cells, the Limulus amebocyte lysate (LAL) test, to check injectable medicines and vaccines, including the COVID-19 vaccines, for contamination. Source: The Horseshoe Crab (horseshoecrab.org); NCBI LAL technology review.",
     "topic": "horseshoe-crab"
   },
   {
@@ -14323,19 +14323,6 @@
       "A muscle firing a follow-up blow"
     ],
     "context": "Two force peaks 390-480 microseconds apart: first the club's impact, then the collapse of the cavitation bubble -- both over in under 800 microseconds. Source: Patek & Caldwell, J. Exp. Biol. (2005), PubMed 16169943.",
-    "topic": "mantis-shrimp"
-  },
-  {
-    "tier": 4,
-    "question": "A peacock mantis shrimp's club moves so fast that the water in front of it boils into a tiny bubble of vapor. As that bubble collapses, its core flashes with light and briefly heats to tens of thousands of degrees, hotter than the surface of the sun. What is this light from a collapsing bubble called?",
-    "answer": "Sonoluminescence",
-    "choices": [
-      "Sonoluminescence",
-      "Bioluminescence",
-      "Phosphorescence",
-      "Incandescence"
-    ],
-    "context": "The collapsing bubble flashes light and spikes to roughly 20,000 K -- hotter than the sun's surface -- a phenomenon called sonoluminescence. LEGEND-tier; the exact temperature is a measured-but-debated inference. Source: academic.oup.com/icb 'Power of Mantis Shrimp Strikes' (2019); sonoluminescence literature.",
     "topic": "mantis-shrimp"
   },
   {
