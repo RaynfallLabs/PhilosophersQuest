@@ -42797,7 +42797,7 @@
   },
   {
     "tier": 4,
-    "question": "Yuri Gagarin tumbled violently across half an orbit after Vostok 1's retro-rocket fired, because the equipment module failed to break cleanly away from his descent capsule. The two pieces stayed connected before finally coming apart. What had held them together?",
+    "question": "Yuri Gagarin tumbled violently for about ten minutes after Vostok 1's retro-rocket fired, because the equipment module failed to break cleanly away from his descent capsule. The two pieces stayed connected before finally coming apart. What had held them together?",
     "answer": "a bundle of wires that the main separation charge did not sever",
     "choices": [
       "a bundle of wires that the main separation charge did not sever",
@@ -42805,7 +42805,7 @@
       "a frozen fuel line that snapped once the tanks warmed up",
       "a stuck explosive bolt that a backup charge finally fired"
     ],
-    "context": "The main separation mechanism fired but a cable bundle did not sever; the two modules stayed connected and the whole thing tumbled violently. Only as they hit the upper atmosphere over roughly Egypt did the wires finally burn through, letting the capsule right itself and reenter properly. The tumble did not injure Gagarin, but it was a real near-miss on the first crewed flight. Sources: https://en.wikipedia.org/wiki/Vostok_1 ; https://www.astronautix.com/v/vostok1.html",
+    "context": "The main separation mechanism fired but a cable bundle did not sever; the two modules stayed connected and the whole thing tumbled violently. Only as they hit the upper atmosphere, about ten minutes after the retro-rocket fired, did the wires finally burn through, letting the capsule right itself and reenter properly. The tumble did not injure Gagarin, but it was a real near-miss on the first crewed flight. Sources: https://grokipedia.com/page/Vostok_1 ; https://en.wikipedia.org/wiki/Vostok_1 ; https://www.astronautix.com/v/vostok1.html",
     "topic": "vostok-1-the-engineering-nobody-advertised"
   },
   {
@@ -42844,12 +42844,12 @@
       "With a demand: he wanted the crystals sent to Stockholm at once",
       "With a correction: he had made a salt, and not an animal substance"
     ],
-    "context": "Berzelius, Stockholm, 7 March 1828: 'When one has begun his immortality with urine, there is every reason to end the trip to paradise in the same way... Aluminum and artificial urea, certainly two very different matters, following one another so closely, will, my Lord, be braided as jewels into your crown of laurels, and should the quantity of the artificial not suffice, one could easily make up the difference with a little from the chamber pot.' (The aluminium: Wöhler had isolated the first pure metallic aluminium on 22 October 1827.) Worth checking yourself — Grokipedia's 'Wöhler synthesis' article states that Berzelius 'initially responded with skepticism.' The letter itself does not support that. Source: Yale Chem 125 translation of the 7 March 1828 letter, chem125-oyc.webspace.yale.edu.",
+    "context": "Berzelius, Stockholm, 7 March 1828: 'When one has begun his immortality with urine, there is every reason to end the trip to paradise in the same way... Aluminum and artificial urea, certainly two very different matters, following one another so closely, will, my Lord, be braided as jewels into your crown of laurels, and should the quantity of the artificial not suffice, one could easily make up the difference with a little from the chamber pot.' (The aluminium: Wöhler had isolated the first pure metallic aluminium on 22 October 1827.) Grokipedia's 'Wöhler synthesis' article states that Berzelius 'initially responded with skepticism'; the letter itself does not support that. Source: Yale Chem 125 translation of the 7 March 1828 letter, chem125-oyc.webspace.yale.edu.",
     "topic": "w-hler-makes-urea-without-a-kidney"
   },
   {
     "tier": 2,
-    "question": "Friedrich Wöhler scraped a batch of white urea crystals out of a dish in his lab in 1828. Urea is now the most-produced synthetic organic compound on Earth, past 184 million tonnes in 2022, and not a tonne of it is made his way. Since 1922 the factories have all run the Bosch-Meiser process. What does that process start from?",
+    "question": "Friedrich Wöhler scraped a batch of white urea crystals out of a dish in his lab in 1828. Industry made more than 184 million tonnes of urea in 2022, and not a tonne of it was made his way. Since 1922 the factories have all run the Bosch-Meiser process. What does that process start from?",
     "answer": "Ammonia and carbon dioxide",
     "choices": [
       "Ammonia and carbon dioxide",
@@ -42948,7 +42948,7 @@
       "Roughly three in ten of them",
       "Roughly one in ten of them"
     ],
-    "context": "Ramberg named it the 'Wöhler Myth' (Ambix 47, 2000). Wikipedia's summary of him: the 1931 popular history, 'ignoring all pretense of historical accuracy, turned Wöhler into a crusader who made attempt after attempt to synthesize a natural product that would refute vitalism and lift the veil of ignorance, until \"one afternoon the miracle happened\".' The author of that 1931 book is not named in the sources used here, so no name is claimed for it. You can watch the myth still running, in one sitting: Wikipedia's 'Organic chemistry' article says of 1828 that 'the event is now generally accepted as indeed disproving the doctrine of vitalism', while Wikipedia's own 'Vitalism' article says 'contemporary accounts do not support the common belief that vitalism died when Wöhler made urea.' Same encyclopedia, opposite claims — go read both. And the calendar agrees with the second one: Hermann Kolbe made acetic acid from inorganic starting materials in 1845, Marcellin Berthelot repeated the feat for many compounds through the 1850s, and only by about 1931 had biologists almost unanimously given vitalism up. Sources: Wikipedia, 'Vitalism', 'Wöhler synthesis', 'Organic chemistry'; Grokipedia, 'Wöhler synthesis' (§Criticisms and Reassessments).",
+    "context": "Ramberg named it the 'Wöhler Myth' (Ambix 47, 2000). Wikipedia's summary of him: the 1931 popular history, 'ignoring all pretense of historical accuracy, turned Wöhler into a crusader who made attempt after attempt to synthesize a natural product that would refute vitalism and lift the veil of ignorance, until \"one afternoon the miracle happened\".' The myth is still running: Wikipedia's 'Organic chemistry' article says of 1828 that 'the event is now generally accepted as indeed disproving the doctrine of vitalism', while Wikipedia's own 'Vitalism' article says 'contemporary accounts do not support the common belief that vitalism died when Wöhler made urea.' Same encyclopedia, opposite claims. And the calendar agrees with the second one: Hermann Kolbe made acetic acid from inorganic starting materials in 1845, Marcellin Berthelot repeated the feat for many compounds through the 1850s, and only by about 1931 had biologists almost unanimously given vitalism up. Sources: Wikipedia, 'Vitalism', 'Wöhler synthesis', 'Organic chemistry'; Grokipedia, 'Wöhler synthesis' (§Criticisms and Reassessments).",
     "topic": "w-hler-makes-urea-without-a-kidney"
   },
   {
@@ -42966,7 +42966,7 @@
   },
   {
     "tier": 2,
-    "question": "Andrew Wakefield published a paper in The Lancet on 26 February 1998 describing twelve children, and hinted that the combined measles-mumps-rubella (MMR) vaccine might be linked to autism. The paper's own careful note, that it did not prove any such link, was drowned out by something that broke into the news the very same day. What blew the story up into a national panic in Britain?",
+    "question": "Andrew Wakefield's paper in The Lancet in February 1998 described twelve children and hinted that the combined measles-mumps-rubella (MMR) vaccine might be linked to autism. Its own note, that it proved no such link, was drowned out by something else as the paper came out. What turned the story into a national panic in Britain?",
     "answer": "a press conference where Wakefield urged parents to switch to three single vaccines",
     "choices": [
       "a press conference where Wakefield urged parents to switch to three single vaccines",
@@ -42974,7 +42974,7 @@
       "a mass mailing of the paper to every general practitioner in Britain",
       "a BBC Panorama investigation broadcast the same evening"
     ],
-    "context": "The Royal Free's own PR film described the twelve-child work as a breakthrough. Wakefield's spoken recommendation went far beyond his printed paper. Source: Vaccinating Britain, NCBI Bookshelf; contemporaneous BBC news coverage.",
+    "context": "The Royal Free also issued a video news release in which Wakefield called for MMR to be suspended in favour of single vaccines. His spoken recommendation went far beyond his printed paper, which appeared in the issue of 28 February 1998. Sources: Wikipedia, 'Lancet MMR autism fraud'; Vaccinating Britain, NCBI Bookshelf; contemporaneous BBC news coverage.",
     "topic": "wakefield-1998-a-warning-that-points-both-ways"
   },
   {
@@ -43006,11 +43006,11 @@
   {
     "tier": 4,
     "question": "Andrew Wakefield filed a patent in the years before his 1998 Lancet paper on the measles, mumps and rubella (MMR) vaccine and autism. It later came out that lawyers preparing to sue vaccine makers on behalf of parents were paying him, and the patent was a second undisclosed interest that would have raised alarms at any medical journal. What was the patent for?",
-    "answer": "a rival single measles vaccine and a related 'transfer factor' product",
+    "answer": "a rival single measles vaccine and a related transfer-factor product",
     "choices": [
-      "a rival single measles vaccine and a related 'transfer factor' product",
-      "a laboratory test for detecting measles virus in gut biopsy tissue",
-      "a dietary supplement to be sold to parents of autistic children",
+      "a rival single measles vaccine and a related transfer-factor product",
+      "a gentler combined MMR jab built around a weaker mumps strain",
+      "a needle-free skin patch for giving the combined MMR jab",
       "an autism screening questionnaire for use in general practice"
     ],
     "context": "If parents dropped the combined shot for three separate single vaccines -- which Wakefield had recommended at the press conference -- the market for exactly the kind of product he had patented would open up. Source: Left Brain Right Brain, 'Andrew Wakefield's vaccine patent', 2010.",
@@ -43022,16 +43022,16 @@
     "answer": "five of the twelve children had developmental problems documented before their MMR shot",
     "choices": [
       "five of the twelve children had developmental problems documented before their MMR shot",
-      "the histopathology grading of bowel biopsies had been altered to non-specific colitis",
-      "the reported time gap between MMR and symptoms had been shortened in eight of the twelve",
-      "the paper called the twelve consecutively referred when several were recruited through solicitors"
+      "the bowel biopsies described in the paper had come from adult patients instead",
+      "all twelve had been given their shot from one faulty, later-recalled vaccine batch",
+      "the blood tests in the paper had in fact been run on the children's parents"
     ],
-    "context": "Ten of Wakefield's twelve co-authors had already retracted the paper's interpretation in March 2004; The Lancet fully retracted the paper on 2 February 2010; the GMC struck Wakefield off the medical register on 24 May 2010. Source: BMJ, Brian Deer, 'How the case against MMR was fixed', January 2011.",
+    "context": "The same check found more: in nine cases, bowel findings first reported as unremarkable were changed to 'non-specific colitis' after a medical-school 'research review', and symptoms said to begin within days of the shot had, in some records, begun months later. Ten of Wakefield's twelve co-authors had already retracted the paper's interpretation in March 2004; The Lancet fully retracted the paper on 2 February 2010; the GMC struck Wakefield off the medical register on 24 May 2010. Sources: BMJ, Brian Deer, 'How the case against MMR was fixed', January 2011; Wikipedia, 'Lancet MMR autism fraud'.",
     "topic": "wakefield-1998-a-warning-that-points-both-ways"
   },
   {
     "tier": 5,
-    "question": "Mr Justice Mitting took up John Walker-Smith's appeal in the High Court in March 2012. Walker-Smith, a paediatric gastroenterologist and the senior clinician on the 1998 paper, had been struck off the medical register alongside Andrew Wakefield. What did the judge do?",
+    "question": "Mr Justice Mitting ruled on John Walker-Smith's appeal in the High Court in March 2012. Walker-Smith, a paediatric gastroenterologist and the senior clinician on the 1998 paper, had been struck off the medical register alongside Andrew Wakefield. What did the judge do?",
     "answer": "quashed the GMC's findings against him and restored his name to the register",
     "choices": [
       "quashed the GMC's findings against him and restored his name to the register",
@@ -43039,7 +43039,7 @@
       "sent the case back to the GMC for a second full hearing on the same charges",
       "declined to hear the appeal on procedural grounds and left the erasure in force"
     ],
-    "context": "Wakefield did not successfully appeal; Walker-Smith did. A disciplinary tribunal is not a laboratory, and can be wrong in either direction -- which is exactly why the load-bearing refutation of the MMR-autism claim is the counted evidence, not the erasure of a name. Source: Walker-Smith v General Medical Council [2012] EWHC 503 (Admin).",
+    "context": "Both men had appealed, but Wakefield abandoned his appeal; Walker-Smith saw his through. A disciplinary tribunal is not a laboratory, and can be wrong in either direction -- which is exactly why the load-bearing refutation of the MMR-autism claim is the counted evidence, not the erasure of a name. Source: Walker-Smith v General Medical Council [2012] EWHC 503 (Admin).",
     "topic": "wakefield-1998-a-warning-that-points-both-ways"
   },
   {
@@ -43650,12 +43650,12 @@
       "The soft tissue of their swollen lymph glands",
       "The thin fluid drawn from around their spines"
     ],
-    "context": "Emil von Behring's diphtheria antitoxin was not a drug at all: it was blood serum from an immunised animal, carrying something that animal's own body had manufactured. Before it, diphtheria killed 30 to 50 of every 100 children it struck; standardised serum therapy cut that to 1 to 5 by the early 1900s, and German paediatricians called Behring 'Saviour of the Children'. In 1901 the very first Nobel Prize in Physiology or Medicine went to him 'for his work on serum therapy, especially its application against diphtheria'. The bedside details of that Christmas case have since been questioned by historians. Source: nobelprize.org/prizes/medicine/1901/behring/article/ and /facts/.",
+    "context": "Emil von Behring's diphtheria antitoxin was not a drug at all: it was blood serum from an immunised animal, carrying something that animal's own body had manufactured. Serum therapy brought diphtheria's death toll down steeply within a few years, and Behring became widely known as the saviour of children. In 1901 the very first Nobel Prize in Physiology or Medicine went to him 'for his work on serum therapy, especially its application against diphtheria'. The bedside details of that Christmas case have since been questioned by historians. Sources: nobelprize.org/prizes/medicine/1901/behring/article/ and /facts/; Wikipedia, 'Emil von Behring'.",
     "topic": "what-a-vaccine-actually-does-to-the-immune-system"
   },
   {
     "tier": 1,
-    "question": "Gaston Ramon, a horse doctor at the Pasteur Institute, wanted his horses to make more serum against diphtheria in 1923. He found that adding plain dead stuff to the shot made them build far more antibodies, and he tried whatever was nearby. What did he stir in?",
+    "question": "Gaston Ramon, a horse doctor at the Pasteur Institute, wanted his horses to make more serum against diphtheria in 1925. He found adding plain dead stuff to the shot made them build more antibodies, and he tried whatever was nearby. What did he stir in?",
     "answer": "Tapioca, potato starch and bread crumbs",
     "choices": [
       "Powdered glass, chalk and fine sand",
@@ -43663,7 +43663,7 @@
       "Tapioca, potato starch and bread crumbs",
       "Charcoal, saltpetre and quicklime"
     ],
-    "context": "Ramon's junk worked, and it opened the field of adjuvants: substances that carry no protection of their own but make the immune system take the injected shape seriously. Three years later Alexander Glenny found the same effect with aluminium salts, which are still in vaccines today. Source: grokipedia.com/page/Immunologic_adjuvant.",
+    "context": "Ramon's junk worked, and it opened the field of adjuvants: substances that carry no protection of their own but make the immune system take the injected shape seriously. A year later Alexander Glenny found the same effect with aluminium salts, which are still in vaccines today. Source: grokipedia.com/page/Immunologic_adjuvant.",
     "topic": "what-a-vaccine-actually-does-to-the-immune-system"
   },
   {
@@ -43689,12 +43689,12 @@
       "Erich Wernicke, an assistant in Behring's laboratory",
       "Kitasato Shibasaburo, Behring's co-author on the serum"
     ],
-    "context": "Wernicke immunised the rams and horses and harvested the serum himself. Christina Oedingen and Joseph Staerk of the Behring Archive found the inscribed photograph in 1997; Wernicke had written across its margins that on 22 December 1891 the first child was treated with serum he had produced, and was cured. The likeliest reconstruction is that Wernicke and Heinrich Geissler, one of Bergmann's house physicians, treated the child around the prohibition. Here is the traditional Christmas story AND its honest correction. Source: Don K. Nakayama, 'The Christmas Miracle of Emil von Behring', The American Surgeon (2023), doi:10.1177/00031348221129515.",
+    "context": "Wernicke immunised the rams and horses and harvested the serum himself. Christina Oedingen and Joseph Staerk of the Behring Archive found the inscribed photograph in 1997; Wernicke had written across its margins that on 22 December 1891 the first child was treated with serum he had produced, and was cured. The likeliest reconstruction is that Wernicke and Heinrich Geissler, one of Bergmann's house physicians, treated the child around the prohibition. Source: Don K. Nakayama, 'The Christmas Miracle of Emil von Behring', The American Surgeon (2023), doi:10.1177/00031348221129515.",
     "topic": "what-a-vaccine-actually-does-to-the-immune-system"
   },
   {
     "tier": 3,
-    "question": "Paul Ehrlich drew the immune system in a new way in 1897, showing living cells covered in side-chains: molecular arms, each shaped to lock onto one type of poison like a key. But the antitoxin, the protection in the serum, floats free in the blood and sticks to no cell at all. How did Ehrlich's picture say it got there?",
+    "question": "Paul Ehrlich pictured the immune system in a new way in 1897: living cells covered in side-chains, molecular arms each shaped to lock onto one type of poison like a key. But the antitoxin, the protection in the serum, floats free in the blood and sticks to no cell at all. How did Ehrlich's picture say it got there?",
     "answer": "The cell overproduced its side-chains and the surplus broke off",
     "choices": [
       "The cell overproduced its side-chains and the surplus broke off",
@@ -43702,7 +43702,7 @@
       "Dying cells dissolved and their surfaces drifted loose in the blood",
       "The liver built new ones from fragments it filtered out of the blood"
     ],
-    "context": "Ehrlich's side-chain theory was wrong in its details and right in its essential picture. He also made immunity measurable, defining one antitoxin unit as the amount of serum that neutralises 100 lethal doses of toxin in guinea pigs - a number you could stamp on a vial, which is what finally made Behring's serum reliable in the clinic. Behring and Ehrlich then ran large-scale production out of a laboratory under a railway arch in Berlin. Ehrlich shared the 1908 Nobel Prize with Elie Metchnikoff, whose rival cellular theory came from pushing rose thorns into transparent starfish larvae at Messina in 1882. Source: grokipedia.com/page/Paul_Ehrlich.",
+    "context": "Ehrlich's side-chain theory was wrong in its details and right in its essential picture. He also made immunity measurable, defining one antitoxin unit as the amount of serum that neutralises 100 lethal doses of toxin in guinea pigs - a number that could be stamped on a vial, which is what finally made Behring's serum reliable in the clinic. Ehrlich shared the 1908 Nobel Prize with Elie Metchnikoff, whose rival cellular theory came from pushing rose thorns into transparent starfish larvae at Messina in 1882. Source: grokipedia.com/page/Paul_Ehrlich.",
     "topic": "what-a-vaccine-actually-does-to-the-immune-system"
   },
   {
@@ -43715,7 +43715,7 @@
       "It is copied into a cell's DNA and read back there as a blueprint",
       "It finds the few cells that already fit it and drives them to divide"
     ],
-    "context": "This is clonal selection - Frank Macfarlane Burnet's 1957 paper and, independently, David Talmage the same year - and it is the fact textbooks most often state backwards. Nothing is taught and nothing new is built: you already carry a lymphocyte for almost any shape before you ever meet it. The matching cell is rare, roughly 1 in 100,000 to 1 in 1,000,000, and one activated lymphocyte makes over 1,000 daughters within days. The 'mould' answer was the seriously held rival, proposed by Fritz Breinl and Felix Haurowitz in 1930 and backed by Linus Pauling in 1940; its supporting experiments could not be reproduced, and in 1958 Gustav Nossal and Joshua Lederberg showed in microdroplets that a single cell makes only ONE kind of antibody. Source: grokipedia.com/page/Clonal_selection.",
+    "context": "This is clonal selection - Frank Macfarlane Burnet's 1957 paper and, independently, David Talmage the same year - and it is the fact textbooks most often state backwards. Nothing is taught and nothing new is built: a body already carries a lymphocyte for almost any shape before it ever meets it. The matching cell is rare, roughly 1 in 100,000 to 1 in 1,000,000, and one activated lymphocyte makes over 1,000 daughters within days. The 'mould' answer was the seriously held rival, proposed by Fritz Breinl and Felix Haurowitz in 1930 and backed by Linus Pauling in 1940; its supporting experiments could not be reproduced, and in 1958 Gustav Nossal and Joshua Lederberg showed in microdroplets that a single cell makes only ONE kind of antibody. Source: grokipedia.com/page/Clonal_selection.",
     "topic": "what-a-vaccine-actually-does-to-the-immune-system"
   },
   {
@@ -43728,12 +43728,12 @@
       "It had cut its own DNA apart and joined the pieces together",
       "A virus had spliced its own genes in between the two stretches"
     ],
-    "context": "Every developing B cell physically cuts up and reshuffles the DNA it inherited from you - roughly 40 to 50 V segments, 25 D segments and 6 J segments recombined at random, with extra letters jammed into the joins by an enzyme called TdT - which can theoretically yield over a trillion different receptor shapes, while a rule called allelic exclusion makes sure each single cell ends up expressing exactly one. Your body invents receptors for germs that do not exist yet. Tonegawa took the 1987 Nobel alone 'for his discovery of the genetic principle for generation of antibody diversity'. Sources: grokipedia.com/page/Susumu_Tonegawa; nobelprize.org/prizes/medicine/1987/tonegawa/facts/.",
+    "context": "Every developing B cell physically cuts up and reshuffles the DNA it inherited - roughly 40 to 50 V segments, 25 D segments and 6 J segments recombined at random, with extra letters jammed into the joins by an enzyme called TdT - which can theoretically yield over a trillion different receptor shapes, while a rule called allelic exclusion makes sure each single cell ends up expressing exactly one. The body invents receptors for germs that do not exist yet. Tonegawa took the 1987 Nobel alone 'for his discovery of the genetic principle for generation of antibody diversity'. Sources: grokipedia.com/page/Susumu_Tonegawa; nobelprize.org/prizes/medicine/1987/tonegawa/facts/.",
     "topic": "what-a-vaccine-actually-does-to-the-immune-system"
   },
   {
     "tier": 4,
-    "question": "Alexander Glenny stuck a disarmed form of the diphtheria toxin onto aluminium salts in 1926, and said the aluminium pinned the antigen at the shot site and let it seep out slowly. Aluminium went into human vaccines in 1932. Then one guinea-pig test made Glenny's story very hard to hold. What did that test show?",
+    "question": "Alexander Glenny stuck a disarmed form of the diphtheria toxin onto aluminium salts in 1926, and said the aluminium pinned the antigen at the shot site and let it seep out slowly. Aluminium went into human vaccines in 1932. In 2012 a test on mice made Glenny's story very hard to hold. What did that test show?",
     "answer": "Cutting away the injected ear two hours later changed nothing",
     "choices": [
       "A pump seeping pure antigen for weeks produced no response at all",
@@ -43741,12 +43741,12 @@
       "The antigen had drained out of the injection site within ten minutes",
       "Cutting away the injected ear two hours later changed nothing"
     ],
-    "context": "Removing the injection site within four days did block the response in one guinea-pig experiment - but removing the injected ear just two hours after injection changed neither the size nor the duration of the response, so slow leakage from a depot cannot be the whole story. The rival NLRP3-inflammasome explanation is no cleaner: NLRP3-deficient mice have shown marked suppression of antibody production, partial suppression, and no effect at all, in different studies. A century after Glenny, nobody can say cleanly why aluminium works - and it is better to say so than to pretend. Modern alum still raises seroconversion 2- to 10-fold over antigen alone. Source: 'Mechanism of Immunopotentiation and Safety of Aluminum Adjuvants', pmc.ncbi.nlm.nih.gov/articles/PMC3541479/.",
+    "context": "Removing the injection site within four days did block the response in one older guinea-pig experiment, but in Hutchison and colleagues' 2012 study on mice, removing the injected ear just two hours after injection changed neither the size nor the duration of the response, so slow leakage from a depot cannot be the whole story. The rival NLRP3-inflammasome explanation is no cleaner: NLRP3-deficient mice have shown marked suppression of antibody production, partial suppression, and no effect at all, in different studies. A century after Glenny, nobody can say cleanly why aluminium works - and it is better to say so than to pretend. Sources: 'Mechanism of Immunopotentiation and Safety of Aluminum Adjuvants', pmc.ncbi.nlm.nih.gov/articles/PMC3541479/; Hutchison et al., 'Antigen depot is not required for alum adjuvanticity', FASEB J. 26:1272 (2012), pmc.ncbi.nlm.nih.gov/articles/PMC3289510.",
     "topic": "what-a-vaccine-actually-does-to-the-immune-system"
   },
   {
     "tier": 5,
-    "question": "Maurice Hilleman was first to show and name the two ways flu rewrites itself, working on flu at Walter Reed Army Institute. Antigenic drift is a slow drip of small changes in the surface proteins, which is why the flu shot is yearly. Antigenic shift is a sudden swap of whole gene chunks, and that is what starts a pandemic. Measles barely does either, so one childhood shot holds. What lets flu drift so fast?",
+    "question": "Maurice Hilleman described the two ways flu rewrites itself at the Walter Reed Army Institute of Research. Antigenic drift is a slow drip of small changes in the surface proteins, which is why the flu shot is yearly. Antigenic shift is a sudden swap of whole gene chunks, and that is what starts a pandemic. Measles barely does either, so one childhood shot holds. What lets flu drift so fast?",
     "answer": "Its copying enzyme has no proofreading step, so its mistakes stand",
     "choices": [
       "Its copying enzyme has no proofreading step, so its mistakes stand",
@@ -43754,7 +43754,7 @@
       "It carries a gene whose whole job is scrambling its surface coat",
       "It copies itself several hundred times faster than measles does"
     ],
-    "context": "Influenza's RNA polymerase errs at roughly 10^-6 to 10^-4 substitutions per nucleotide per replication, and the errors concentrate in five hypervariable antigenic sites on the head of the hemagglutinin protein - exactly the part your memory cells learned. Measles mutates at a comparable raw rate, about 9 x 10^-5, but is far more stable where it counts, minimising antigenic variation, so the coat your memory learned still matches decades later. In 1957 Hilleman spotted the new H2N2 subtype in reports out of Hong Kong, predicted it would reach the United States by early September, and drove 40 million doses out before the season peaked. He developed more than 40 vaccines - more than any other single scientist - and took the National Medal of Science in 1988. Sources: grokipedia.com/page/Maurice_Hilleman; grokipedia.com/page/Antigenic_drift; grokipedia.com/page/Measles.",
+    "context": "Influenza's RNA polymerase errs at roughly 10^-6 to 10^-4 substitutions per nucleotide per replication, and the errors concentrate in five hypervariable antigenic sites on the head of the hemagglutinin protein - exactly the part memory cells have learned. Measles mutates at a comparable raw rate, about 9 x 10^-5, but is far more stable where it counts, minimising antigenic variation, so the coat memory cells learned still matches decades later. In 1957 Hilleman spotted the new H2N2 subtype in reports out of Hong Kong, predicted it would reach the United States by early September, and drove 40 million doses out before the season peaked. He developed more than 40 vaccines - more than any other single scientist - and took the National Medal of Science in 1988. Sources: grokipedia.com/page/Maurice_Hilleman; grokipedia.com/page/Antigenic_drift; grokipedia.com/page/Measles.",
     "topic": "what-a-vaccine-actually-does-to-the-immune-system"
   },
   {
@@ -43767,7 +43767,7 @@
       "The child is covered against only one of the three types of poliovirus",
       "The child is left unprotected until months after the final dose"
     ],
-    "context": "Protection from disease and blocking transmission are two different things, and the mechanism tells you which one you bought. The injected vaccine fills the bloodstream with a circulating antibody, immunoglobulin G, which intercepts poliovirus before it can travel to the nervous system - but poliovirus is swallowed, and it multiplies for weeks in the lining of the gut long before it ever reaches the blood. Grokipedia's polio-vaccine page states it flatly: the injected vaccine 'generates limited intestinal mucosal immunity, as it does not stimulate significant secretory IgA responses in the gut, allowing vaccinated individuals to potentially shed and transmit virus upon exposure despite protection from paralysis... This mechanism prioritizes individual protection over interruption of fecal-oral transmission chains.' The oral vaccine, replicating in the gut, does raise that secretory IgA and does interrupt the chain. Neither is simply the better one; each buys something different, and the immunology says exactly what. Source: grokipedia.com/page/Polio_vaccine.",
+    "context": "Protection from disease and blocking transmission are two different things, and the mechanism says which one a vaccine buys. The injected vaccine fills the bloodstream with a circulating antibody, immunoglobulin G, which intercepts poliovirus before it can travel to the nervous system - but poliovirus is swallowed, and it multiplies for weeks in the lining of the gut long before it ever reaches the blood. Grokipedia's polio-vaccine page states it flatly: the injected vaccine 'generates limited intestinal mucosal immunity, as it does not stimulate significant secretory IgA responses in the gut, allowing vaccinated individuals to potentially shed and transmit virus upon exposure despite protection from paralysis... This mechanism prioritizes individual protection over interruption of fecal-oral transmission chains.' The oral vaccine, replicating in the gut, does raise that secretory IgA and does interrupt the chain. Neither is simply the better one; each buys something different, and the immunology says exactly what. Source: grokipedia.com/page/Polio_vaccine.",
     "topic": "what-a-vaccine-actually-does-to-the-immune-system"
   },
   {
@@ -44027,20 +44027,20 @@
       "Glass thermometers drift warm in afternoon sun and cool again by dawn",
       "Readings taken before the daily peak are dropped and estimated later"
     ],
-    "context": "This is called time-of-observation bias, and it is real. Zeke Hausfather: \"If you change the observations times from afternoons to mornings, as occurred in the U.S., you change from occasionally double counting highs to occasionally double counting lows, resulting in a measurable bias.\" Reading in the early morning gives temperatures about 0.15 C cooler than a midnight reading; reading in the late afternoon about 0.45 C warmer. A thermometer can be perfectly accurate for 120 years and still hand you a step that has nothing to do with the climate. Source: Zeke Hausfather, 'Understanding Time of Observation Bias', Climate Etc. (Judith Curry), 22 February 2015 - judithcurry.com/2015/02/22/understanding-time-of-observation-bias/",
+    "context": "This is called time-of-observation bias, and it is real. Zeke Hausfather: \"If you change the observations times from afternoons to mornings, as occurred in the U.S., you change from occasionally double counting highs to occasionally double counting lows, resulting in a measurable bias.\" Reading in the early morning gives temperatures about 0.15 C cooler than a midnight reading; reading in the late afternoon about 0.45 C warmer. A thermometer can be perfectly accurate for 120 years and still put a step into the record that has nothing to do with the climate. Source: Zeke Hausfather, 'Understanding Time of Observation Bias', Climate Etc. (Judith Curry), 22 February 2015 - judithcurry.com/2015/02/22/understanding-time-of-observation-bias/",
     "topic": "what-the-thermometers-actually-say"
   },
   {
     "tier": 3,
-    "question": "An American weather observer got a new request from the U.S. Weather Service around 1960: stop reading the thermometers in the late afternoon and read them between 7 and 9 am instead. The change put a step into a century of temperature data, though no one at the Service was thinking about temperature. The observers tended several instruments, and the morning hour was chosen to make one of the others more accurate. Which one?",
+    "question": "An American weather observer got a new request from the U.S. Weather Bureau around 1960: stop reading the thermometers in the late afternoon and read them between 7 and 9 am instead. The change put a step into a century of temperature data, though no one at the Bureau was thinking about temperature. The hour was chosen to make another of his instruments more accurate. Which one?",
     "answer": "The rain gauge, whose catch evaporated away through a hot afternoon",
     "choices": [
       "The rain gauge, whose catch evaporated away through a hot afternoon",
       "The snow board, whose fresh fall settled and packed down by evening",
-      "The soil thermometer, which runs hours behind the air above it",
+      "The barometer, whose mercury column swelled in the afternoon heat",
       "The wind vane, whose afternoon gusts swamped the daily average"
     ],
-    "context": "In Hausfather's words: \"starting around 1960 the U.S. Weather Service requested that observers start taking their measurements in the morning (between 7 and 9 AM), as that would minimize the amount of evaporation from rain gauges and result in more accurate precipitation measurements.\" A decision made to protect the RAIN record put a step in the TEMPERATURE record. Note the date: most U.S. stations were still reading in the late afternoon, generally between 5 and 7 PM, right up to the late 1950s - this was a post-1960 event, not a slow drift from 1900. Between the 1930s and the 1990s the share of stations reporting rainfall and temperature at the same morning hour rose from 56% to over 88%. Source: Zeke Hausfather, Climate Etc., 22 February 2015; Skeptical Science, 'Surface Temperature Measurements: Time of observation bias and its correction'",
+    "context": "In Hausfather's words: \"starting around 1960 the U.S. Weather Service requested that observers start taking their measurements in the morning (between 7 and 9 AM), as that would minimize the amount of evaporation from rain gauges and result in more accurate precipitation measurements.\" (The agency was then called the U.S. Weather Bureau.) A decision made to protect the RAIN record put a step in the TEMPERATURE record. Note the date: most U.S. stations were still reading in the late afternoon, generally between 5 and 7 PM, right up to the late 1950s - this was a post-1960 event, not a slow drift from 1900. Between the 1930s and the 1990s the share of stations reporting rainfall and temperature at the same morning hour rose from 56% to over 88%. Source: Zeke Hausfather, Climate Etc., 22 February 2015; Skeptical Science, 'Surface Temperature Measurements: Time of observation bias and its correction'",
     "topic": "what-the-thermometers-actually-say"
   },
   {
@@ -44066,7 +44066,7 @@
       "They read a handheld thermometer each hour at an assigned street corner",
       "They fly small drones along set grids and radio the readings down"
     ],
-    "context": "The sensors log temperature, humidity, time and GPS position as the car moves, and the campaigns run through NOAA's National Integrated Heat Health Information System. Which means the experiment is yours for the taking: pick a calm clear evening, watch the car thermometer as you drive from the middle of town out into open fields after sunset, and write the numbers down. That is the professionals' method, at your scale. Source: NOAA, 'Urban heat island mapping is revolutionizing how cities address extreme heat' - noaa.gov/education/stories/urban-heat-island-mapping-is-revolutionizing-how-cities-address-extreme-heat",
+    "context": "The sensors log temperature, humidity, time and GPS position as the car moves, and the campaigns run through NOAA's National Integrated Heat Health Information System. The same experiment costs nothing: on a calm clear evening a driver can watch the car thermometer from the middle of town out into open fields after sunset and write the numbers down. That is the professionals' method, at the scale of one car. Source: NOAA, 'Urban heat island mapping is revolutionizing how cities address extreme heat' - noaa.gov/education/stories/urban-heat-island-mapping-is-revolutionizing-how-cities-address-extreme-heat",
     "topic": "what-the-thermometers-actually-say"
   },
   {
@@ -44097,7 +44097,7 @@
   },
   {
     "tier": 4,
-    "question": "A park ranger passes a weather station on clean ground in an empty field. The National Oceanic and Atmospheric Administration (NOAA) built it for a second network from scratch, inside national parks and wildlife refuges, rather than keep fighting over badly placed thermometers. The first stations went in around January 2004, and by 2008 there were 114 across the lower 48 states. What stands in each empty field to measure the air?",
+    "question": "A park ranger passes a weather station on clean ground in an empty field. The National Oceanic and Atmospheric Administration (NOAA) built it for a second network from scratch, with many of the stations inside national parks and wildlife refuges. The network was commissioned in January 2004, and by 2008 there were 114 stations across the lower 48 states. What stands in each empty field to measure the air?",
     "answer": "Three platinum thermometers, each inside its own fan-blown shield",
     "choices": [
       "Three platinum thermometers, each inside its own fan-blown shield",
@@ -44105,7 +44105,7 @@
       "Two mercury thermometers, read by a warden and averaged by hand",
       "One infrared sensor, aimed at the ground and checked against orbit"
     ],
-    "context": "NOAA's own words: \"Air temperature, precipitation, and soil moisture and temperature are all primary variables measured using triple redundancy. In other words, three separate sensors measure each of these variables.\" Each thermometer reads every 2 seconds and is averaged every 5 minutes, and the official hourly temperature \"is sometimes a median and sometimes an average of various combinations of the three observed values, depending on information about which instruments agree in a pairwise comparison within 0.3 C.\" The U.S. Climate Reference Network began as a prototype in North Carolina in 2000 and reached 137 stations by 2023. Building a new instrument to settle a dispute is the most scientific act in this whole story. Sources: NOAA NCEI, 'What's a USCRN Station?'; Wikipedia, 'U.S. Climate Reference Network'",
+    "context": "NOAA's own words: \"Air temperature, precipitation, and soil moisture and temperature are all primary variables measured using triple redundancy. In other words, three separate sensors measure each of these variables.\" Each thermometer reads every 2 seconds and is averaged every 5 minutes, and the official hourly temperature \"is sometimes a median and sometimes an average of various combinations of the three observed values, depending on information about which instruments agree in a pairwise comparison within 0.3 C.\" The U.S. Climate Reference Network was planned after a 1997 World Climate Research Programme finding and a 1999 National Research Council report judged the old observing systems inadequate for climate work; it began as a prototype in North Carolina in 2000, so it was already running when the siting fight began, and it reached 137 stations by 2023. Building a new instrument that can settle a dispute is the most scientific act in this whole story. Sources: NOAA NCEI, 'What's a USCRN Station?'; Wikipedia, 'U.S. Climate Reference Network'",
     "topic": "what-the-thermometers-actually-say"
   },
   {
@@ -44123,7 +44123,7 @@
   },
   {
     "tier": 4,
-    "question": "A crewman on a working ship reads the sea's temperature from a thermometer set in seawater the ship is already drawing aboard for its own reason. Ships going about their normal work took the ocean's temperature for most of the twentieth century, and after about 1940 crews mostly stopped hauling buckets over the side. What is the ship doing with that water?",
+    "question": "A crewman on a working ship reads the sea's temperature from a thermometer set in seawater the ship is already drawing aboard for its own reason. Ships going about their normal work took the ocean's temperature for most of the twentieth century, and from about 1940 more and more crews stopped hauling buckets over the side. What is the ship doing with that water?",
     "answer": "Running it through the pipes that cool the engines",
     "choices": [
       "Running it through the pipes that cool the engines",
@@ -44163,14 +44163,14 @@
   {
     "tier": 5,
     "question": "Berkeley Earth's team rebuilt the global land average using only sites far from any city and got the same trend. The worry was that a warming record built from thermometers in growing towns is really just measuring the towns, and the urban heat island is not in doubt: Luke Howard measured it over London in the 1810s. Why does a real and large effect vanish from the global number?",
-    "answer": "Each station's trend is measured against its own past, not its neighbours",
+    "answer": "Each station is measured against its own past, so a steady excess drops out",
     "choices": [
-      "Each station's trend is measured against its own past, not its neighbours",
-      "Urban stations are far too few among the world's thermometers to move it",
-      "A city correction is already subtracted from every urban station's record",
+      "Each station is measured against its own past, so a steady excess drops out",
+      "City thermometers are read only by day, when the heat island is weakest",
+      "A city's extra warmth at night is cancelled by its coolness by day",
       "Ocean readings outweigh the land stations and dilute the city heat away"
     ],
-    "context": "A town that is 2 C warm and stays 2 C warm adds nothing to a trend built from each station's own change over time. Wickham et al. (2013) compared the land average from all sites against one built only from 'very rural' sites more than 0.1 degrees from any MODIS-classified urban area, over 1950-2010: the difference in slope was -0.10 +/- 0.24 C per 100 years, meaning the very rural sites warmed a hair FASTER, and statistically indistinguishable from zero. Berkeley Earth's conclusion was that the urban effect \"is locally large and real, but does not contribute significantly to the average land temperature rise.\" Both halves are true at once, and the honest reader has to hold them together. Sources: Wickham et al. (2013), Berkeley Earth; Wikipedia, 'Berkeley Earth'",
+    "context": "A town that is 2 C warm and stays 2 C warm adds nothing to a trend built from each station's own change over time. Wickham et al. (2013) compared the land average from all sites against one built only from 'very rural' sites more than 0.1 degrees from any MODIS-classified urban area, over 1950-2010: the difference in slope was -0.10 +/- 0.24 C per 100 years, meaning the very rural sites warmed a hair FASTER, and statistically indistinguishable from zero. Berkeley Earth's conclusion was that the urban effect \"is locally large and real, but does not contribute significantly to the average land temperature rise\", and it gave a second reason as well: urban areas cover less than one per cent of Earth's land. Both halves are true at once, and the honest reader has to hold them together. Sources: Wickham et al. (2013), Berkeley Earth; Wikipedia, 'Berkeley Earth'",
     "topic": "what-the-thermometers-actually-say"
   },
   {
@@ -44474,28 +44474,28 @@
   },
   {
     "tier": 3,
-    "question": "A boy who got Jonas Salk's polio shot later swallows wild poliovirus. He is safe from paralysis, but he can still carry the virus and shed it in his stool for weeks. Which type of antibody, mostly missed by a blood-only response, would have stopped that shedding?",
-    "answer": "mucosal IgA",
+    "question": "A boy who got Jonas Salk's polio shot later swallows wild poliovirus. The antibody the shot raised in his blood keeps the virus from his nerves, so he is safe from paralysis, yet he sheds live virus in his stool for weeks. Which antibody, one his shot barely raised, would have stopped that shedding?",
+    "answer": "IgA",
     "choices": [
-      "mucosal IgA",
-      "circulating IgG",
-      "allergy-signal IgE",
-      "first-response IgM"
+      "IgA",
+      "IgG",
+      "IgM",
+      "IgE"
     ],
-    "context": "IgA sits on the intestinal lining and blocks the virus from attaching there in the first place, which BLOCKS TRANSMISSION -- the vaccinated child cannot easily pass it on. Salk's shot raises IgG in the blood, so it protects the nervous system but leaves the gut open; Sabin's live oral drops replicate in the gut and do raise IgA. Source: Systematic Review, PMC3330118.",
+    "context": "IgA is secreted onto the intestinal lining and blocks the virus from attaching there in the first place, which BLOCKS TRANSMISSION -- the vaccinated child cannot easily pass it on. Salk's shot raises IgG in the blood, so it protects the nervous system but leaves the gut open; Sabin's live oral drops replicate in the gut and do raise IgA. IgM is the first antibody made in a new infection, and IgE is the one behind allergies. Source: Systematic Review, PMC3330118.",
     "topic": "when-the-vaccine-causes-the-disease-vapp-and-cvdpv"
   },
   {
     "tier": 4,
     "question": "A child swallows Albert Sabin's drops in a place where too few other children get them, and the vaccine strain she sheds keeps passing gut to gut. It quietly builds up mutations, rebuilds the very genes bred out of it and spreads as a new epidemic. In 2020 alone, how many cases of paralysis did the reverted strain cause worldwide?",
-    "answer": "about 1,000 cases across 26 countries",
+    "answer": "about 1,100 cases",
     "choices": [
-      "about 1,000 cases across 26 countries",
-      "about 30 cases across 3 countries",
-      "about 12,000 cases across 90 countries",
-      "about 50,000 cases across 40 countries"
+      "about 1,100 cases",
+      "about 30 cases",
+      "about 12,000 cases",
+      "about 50,000 cases"
     ],
-    "context": "The exact figure was 1,048 -- more paralysis in that year than wild poliovirus caused. The reverted strain is called circulating vaccine-derived poliovirus, or cVDPV. Source: CDC MMWR 69(16), 2020.",
+    "context": "CDC later counted 1,113 paralytic cases for 2020, 1,079 of them type 2 across 24 countries, against 140 cases caused by wild poliovirus that year. The reverted strain is called circulating vaccine-derived poliovirus, or cVDPV. Source: CDC MMWR 71(19), 2022, 'Progress Toward Polio Eradication — Worldwide, January 2020–April 2022'.",
     "topic": "when-the-vaccine-causes-the-disease-vapp-and-cvdpv"
   },
   {
@@ -45306,7 +45306,7 @@
   },
   {
     "tier": 1,
-    "question": "Walter Friedrich and Paul Knipping aimed a narrow beam of X-rays through a small copper sulphate crystal in Munich on 21 April 1912, with a photographic plate set behind it. Nobody knew what would come out the far side. What did the developed plate show?",
+    "question": "Walter Friedrich and Paul Knipping aimed a narrow beam of X-rays through a small copper sulphate crystal in Munich in April 1912, with a photographic plate set behind it. Nobody knew what would come out the far side. What did the developed plate show?",
     "answer": "A pattern of sharp spots ringing the central beam",
     "choices": [
       "A pattern of sharp spots ringing the central beam",
@@ -45314,12 +45314,12 @@
       "A single blurred smear the width of the beam",
       "A row of straight dark bands across the plate"
     ],
-    "context": "The plate came out covered in well-defined spots arranged in intersecting circles around the central beam spot — patterns still called 'Laue diagrams' today. Copper sulphate was chosen simply because large pieces were easy to come by; zinc blende, tried soon afterwards, gave the cleaner four-fold pattern usually reproduced in books. Max von Laue, Friedrich and Knipping announced the result to the Bavarian Academy of Sciences on 4 May 1912. Sources: Wikipedia 'X-ray crystallography'; Physics World, 'One amazing moment'; Grokipedia 'Max von Laue'.",
+    "context": "The plate came out covered in well-defined spots arranged in intersecting circles around the central beam spot — patterns still called 'Laue diagrams' today. Copper sulphate was chosen simply because large pieces were easy to come by; zinc blende, tried soon afterwards, gave the cleaner four-fold pattern usually reproduced in books. Max von Laue, Friedrich and Knipping published the result through the Bavarian Academy of Sciences in June 1912. Sources: Wikipedia 'X-ray crystallography'; Physics World, 'One amazing moment'; Grokipedia 'Max von Laue'.",
     "topic": "x-rays-through-a-crystal-the-father-and-son-nobel"
   },
   {
     "tier": 1,
-    "question": "William Lawrence Bragg, 25 and serving as a British artillery officer at army headquarters in France, got the telegram from home: the 1915 Nobel Prize in Physics had gone to him and to his father, William Henry Bragg, for using X-rays to map atoms inside crystals. What record does Lawrence Bragg's 1915 Nobel still hold today?",
+    "question": "William Lawrence Bragg, 25, was an artillery officer on the Western Front when word came: the 1915 Nobel Prize in Physics had gone to him and his father, William Henry Bragg, for mapping atoms in crystals with X-rays. What record does his prize still hold?",
     "answer": "The youngest laureate in any science category",
     "choices": [
       "The youngest laureate in any science category",
@@ -45353,7 +45353,7 @@
       "A dye beneath the tracks soaks up one colour at each angle",
       "The tracks are stamped in bands of slightly different metals"
     ],
-    "context": "A CD's data tracks sit about 1.6 micrometres apart — roughly 600 to the millimetre, almost exactly the 1.667 micrometre line spacing of a standard laboratory diffraction grating. That is why a disc throws rainbows. TEST IT YOURSELF: shine a laser pointer of known wavelength at the disc, mark where the reflected spots land on the wall, measure the angles, and you can work out how far apart the tracks are without ever seeing one. Sources: Science Buddies, 'Using a Laser Pointer to Measure the Data Track Spacing on CDs and DVDs'; Phys. Rev. Phys. Educ. Res. CD diffraction guided-inquiry manual.",
+    "context": "A CD's data tracks sit about 1.6 micrometres apart — roughly 600 to the millimetre, almost exactly the 1.667 micrometre line spacing of a standard laboratory diffraction grating. That is why a disc throws rainbows. It can be tested at home: a laser pointer of known wavelength shone at the disc throws reflected spots onto a wall, and measuring their angles gives the spacing of the tracks without anyone ever seeing one. Sources: Science Buddies, 'Using a Laser Pointer to Measure the Data Track Spacing on CDs and DVDs'; Phys. Rev. Phys. Educ. Res. CD diffraction guided-inquiry manual.",
     "topic": "x-rays-through-a-crystal-the-father-and-son-nobel"
   },
   {
@@ -45392,7 +45392,7 @@
       "A glow given off by atoms the beam has excited",
       "A gap where the beam passed through untouched"
     ],
-    "context": "Bragg's reading: each spot is a reflection off one family of parallel sheets of atoms, and reflections from successive sheets only stay in step — only add up into a bright spot — at particular angles. The crystal sorts the beam for you. He presented his rock-salt work to the Cambridge Philosophical Society on 11 November 1912. Sources: Wikipedia 'Lawrence Bragg'; crystallography365, 'The structure that started it all: rock salt'.",
+    "context": "Bragg's reading: each spot is a reflection off one family of parallel sheets of atoms, and reflections from successive sheets only stay in step — only add up into a bright spot — at particular angles. The crystal does the sorting. He presented that reading to the Cambridge Philosophical Society in November 1912. Sources: Wikipedia 'Lawrence Bragg'; Grokipedia \"Bragg's law\".",
     "topic": "x-rays-through-a-crystal-the-father-and-son-nobel"
   },
   {
@@ -45418,12 +45418,12 @@
       "The width of a single atom in the crystal",
       "The thickness of the crystal along the beam"
     ],
-    "context": "The rule is Bragg's law: n·λ = 2d·sin θ, where λ is the X-ray wavelength, d the distance between adjacent planes of atoms, θ the angle, and n a whole number. Angles in, architecture out — you measure something you can see and get back a distance you never could. Grokipedia dates the derivation to March 1913. Sources: Grokipedia \"Bragg's law\"; Wikipedia 'Lawrence Bragg'.",
+    "context": "The rule is Bragg's law: n·λ = 2d·sin θ, where λ is the X-ray wavelength, d the distance between adjacent planes of atoms, θ the angle, and n a whole number. Angles in, architecture out: a measured angle gives back a distance no one could ever see. Bragg first set the rule out before the Cambridge Philosophical Society in November 1912. Sources: Grokipedia \"Bragg's law\"; Wikipedia 'Lawrence Bragg'.",
     "topic": "x-rays-through-a-crystal-the-father-and-son-nobel"
   },
   {
     "tier": 4,
-    "question": "Lawrence Bragg was put on a wave problem of a different kind in France during the First World War. His crews spread microphones along a measured baseline, and when a German gun fired, the same boom reached each one a fraction of a second apart, so those tiny gaps fixed where the gun stood. But ordinary microphones could not hear the gun's low boom, only the sharper crack of the shell. What did Lance Corporal William Tucker rig up to catch the low wave?",
+    "question": "Lawrence Bragg took on another wave problem on the Western Front. His crews spread microphones along a measured baseline; a German gun's boom reached each a fraction of a second apart, and those gaps fixed where the gun stood. But ordinary microphones could not hear the low boom, only the sharper crack of the shell. What did Corporal William Tucker rig up to catch the low wave?",
     "answer": "A heated platinum wire strung across a hole in a box",
     "choices": [
       "A heated platinum wire strung across a hole in a box",
@@ -45436,7 +45436,7 @@
   },
   {
     "tier": 5,
-    "question": "Henry Edward Armstrong, a past President of the Chemical Society, still would not have the Braggs' picture of table salt thirteen years later. It showed no NaCl molecules at all: sodium and chloride ions alternate endlessly, and the equal numbers of each come from the geometry of the stack rather than from atoms pairing off. How did he register his objection?",
+    "question": "Henry Edward Armstrong, a past President of the Chemical Society, still would not have the Braggs' picture of table salt more than a decade later. It showed no NaCl molecules at all: sodium and chloride ions alternate endlessly, and the equal numbers of each come from the geometry of the stack rather than from atoms pairing off. How did he register his objection?",
     "answer": "He printed a protest in Nature headed 'Poor Common Salt!'",
     "choices": [
       "He printed a protest in Nature headed 'Poor Common Salt!'",
@@ -45444,12 +45444,12 @@
       "He had the Chemical Society strike Bragg from its rolls",
       "He asked the Nobel committee to take the 1915 prize back"
     ],
-    "context": "Armstrong quoted Bragg's own sentences back at readers and objected to them: 'In sodium chloride there appear to be no molecules represented by NaCl. The equality in number of sodium and chlorine atoms is arrived at by a chess-board pattern of these atoms; it is a result of geometry and not of a pairing-off of the atoms.' Secondary accounts report that he called the chess-board pattern 'repugnant to common sense' and retorted that chemistry is neither chess nor geometry; the Nature page is paywalled, so treat those particular words as reported rather than confirmed. The measurements stood. Source: H. E. Armstrong, 'Poor Common Salt!', Nature 120, 478 (1927); quotation database todayinsci.com; Grokipedia 'Chemical structure'.",
+    "context": "Armstrong quoted Bragg's own sentences back at readers and objected to them: 'In sodium chloride there appear to be no molecules represented by NaCl. The equality in number of sodium and chlorine atoms is arrived at by a chess-board pattern of these atoms; it is a result of geometry and not of a pairing-off of the atoms.' Secondary accounts report that he called the chess-board pattern 'repugnant to common sense' and retorted that chemistry is neither chess nor geometry. The measurements stood. Source: H. E. Armstrong, 'Poor Common Salt!', Nature 120, 478 (1927); quotation database todayinsci.com; Grokipedia 'Chemical structure'.",
     "topic": "x-rays-through-a-crystal-the-father-and-son-nobel"
   },
   {
     "tier": 5,
-    "question": "Dorothy Hodgkin put a penicillin crystal in an X-ray beam and photographed what came out. Penicillin was saving lives in every Allied hospital by 1945, and no chemist could say what its molecule looked like. Two Oxford camps had formed: Edward Abraham backed one shape for its atoms, and Sir Robert Robinson, the most eminent organic chemist in Britain and a future Nobel laureate, backed a rival one. Which shape did the pictures show?",
+    "question": "Dorothy Hodgkin put a penicillin crystal in an X-ray beam and photographed what came out. Penicillin was saving lives in Allied hospitals by 1945, and no chemist could say what its molecule looked like. Two Oxford camps had formed: Edward Abraham backed one shape, and Sir Robert Robinson, Britain's most eminent organic chemist and a future Nobel laureate, backed a rival one. Which shape did the pictures show?",
     "answer": "A four-membered ring fused to a five-membered ring",
     "choices": [
       "A four-membered ring fused to a five-membered ring",
