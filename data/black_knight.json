@@ -1,6 +1,6 @@
 {
- "_doc": "The Black Knight easter egg (src/black_knight.py). About one run in four he guards a little stone bridge on one floor from 15 to 19. His fighting numbers are in data/monsters.json (black_knight); his sword is flesh_wound in data/items/weapon.json. Every line he says is here.",
- "chance_per_run": 0.25,
+ "_doc": "The Black Knight (src/black_knight.py). Every run (Dungeon Alive slice 8, Brandon 2026-11-12: the one-in-N events happen every run on a floor range) he guards a little stone bridge on one floor from 15 to 19. His fighting numbers are in data/monsters.json (black_knight); his sword is flesh_wound in data/items/weapon.json. Every line he says is here.",
+ "chance_per_run": 1.0,
  "first_floor": 15,
  "last_floor": 19,
  "monster_id": "black_knight",

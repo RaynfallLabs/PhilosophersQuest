@@ -86,11 +86,12 @@ def _log(g):
 # The roll
 # ---------------------------------------------------------------------------
 
-def test_about_one_run_in_four_gets_him_on_a_floor_from_15_to_19():
+def test_every_run_gets_him_on_a_floor_from_15_to_19():
+    # Dungeon Alive slice 8 (Brandon, 2026-11-12): every run.
     import black_knight as bk
-    floors = [bk.roll_floor(random.Random(i)) for i in range(4000)]
+    floors = [bk.roll_floor(random.Random(i)) for i in range(2000)]
     got = [f for f in floors if f is not None]
-    assert 0.22 < len(got) / len(floors) < 0.28
+    assert len(got) == len(floors)
     assert set(got) == {15, 16, 17, 18, 19}
 
 

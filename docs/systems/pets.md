@@ -597,3 +597,16 @@ Dead pets are not rendered. Sketch/Dad pets with `turns_remaining <= 0` set `ali
 7. **Unicorn sets `trap['revealed'] = True`** (not `detected`). Pre-v2.18 the wrong key was being written and the whole feature was a silent no-op. Keep the key name aligned with `_check_floor_trap` + `_try_disarm_trap` + renderer.
 8. **L100 is the pet level cap.** `gain_xp` short-circuits at L100 and drops residual XP. Raising the cap means re-stat-curving `_calc_max_hp` + `_calc_damage`.
 9. **One companion at a time** (§4.0). Every new way a pet joins calls `_companions_to_stasis()` before `self.pets.append`, unless it is a short-lived helper; `is_companion` is the one test of which is which. `tests/test_one_companion.py` holds it.
+
+## The abandoned Emberpup: every run, earned (Dungeon Alive slice 8, 2026-11-12)
+
+Brandon: the one-in-N events happen every run, on a range of floors, but winning one takes "a pattern of behavior AND the right items (similar to unicorn)". The Emberpup (`src/emberpup_encounter.py`, `data/abandoned_emberpup.json`) now waits on one floor of 3-8 every run (`chance_per_run` 1.0). Its trainer said he would come back and never did, so it trusts the one who does:
+
+- **Coming back.** Feed it on `visits_needed` (2) separate visits.
+  - A visit counts when the hero has left its floor (`_maybe_spawn_emberpup` notes `away`) or stayed away `away_turns` (150), and then returns. It says `came_back`.
+  - Feeding twice in one visit counts once. Each counted feed raises `pup._emberpup_visits`.
+- **The right item.** Option 5 leaves a cloak or a shield from the pack over its rock (`shelter_choices`); the item stays with the pup. A worn one has to come off first (`take_off`). The line teaches why: a lizard can't make its own warmth.
+- **I choose you.** It asks the animal quiz (tier 2, two right) only when the pup has been fed this visit, `_emberpup_visits` is at least 2, and `_emberpup_sheltered` is set. Otherwise it refuses with `refused`, `refused_trust` or `refused_cold`, so the player learns what is missing.
+- **Karma** is unchanged: feeding moves none, attacking costs -1.
+
+The Black Knight (`data/black_knight.json`) also stands every run now, on one floor of 15-19. Tests: `tests/test_abandoned_emberpup.py`, `tests/test_black_knight.py`.

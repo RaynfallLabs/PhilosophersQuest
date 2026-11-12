@@ -365,14 +365,14 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self._cow_return_level: int = 0       # level to return to from cow level
         self._cow_npc = None                  # reference to the cow monster entity
         self._cow_level: int = _lore_rng.randint(30, 39)  # which floor gets the cow
-        # The abandoned Emberpup (about one run in five, one floor of 3-8):
+        # The abandoned Emberpup (every run, one floor of 3-8; earned: Dungeon Alive slice 8):
         # {'floor', 'spawned', 'outcome'}. Rolled without drawing on the
         # shared random stream, so seeded floors are the same as before.
         self._emberpup: dict = _emberpup_new_run()
         self._emberpup_npc = None             # the creature whose screen is open
         self._emberpup_phase: str = 'story'
         self._naming_story = None             # a non-sphere pet's words for the naming popup
-        # The Black Knight (about one run in four, one floor of 15-19), on
+        # The Black Knight (every run, one floor of 15-19), on
         # his bridge: {'floor', 'spawned', 'outcome', 'sword_dropped'}. Rolled
         # off the shared random stream, like the Emberpup.
         self._black_knight: dict = _black_knight_new_run()

@@ -1,6 +1,6 @@
 {
-  "_about": "The abandoned Emberpup (src/emberpup_encounter.py). A random event: about one run in five, on one floor from 3 to 8, a small fire lizard sits alone on a rock under a rain cloud, waiting for a trainer who said he would come back. Feed it to win a little trust; then 'I choose you' asks an animal quiz (tier 2, two right answers). Pass and it joins you as your Emberpup.",
-  "chance_per_run": 0.2,
+  "_about": "The abandoned Emberpup (src/emberpup_encounter.py). Every run (Dungeon Alive slice 8, Brandon 2026-11-12: every run, but earned like the unicorn), on one floor from 3 to 8, a small fire lizard sits alone on a rock under a rain cloud, waiting for a trainer who said he would come back. It trusts the one who comes back: feed it on two separate visits (leave its floor, or stay away a good while, and return with food), and leave it a cloak or a shield against the rain. Only then does 'I choose you' ask the animal quiz (tier 2, two right answers). Pass and it joins you as your Emberpup.",
+  "chance_per_run": 1.0,
   "first_floor": 3,
   "last_floor": 8,
   "sprite_id": "npc_abandoned_emberpup",
@@ -9,7 +9,11 @@
   "_attack_karma_note": "No single karma loss is bigger than one (Brandon, 2026-10-18; src/karma.py MAX_LOSS).",
   "first_feed_karma": 1,
   "_first_feed_karma_note": "Paid only while the karma gate is OFF. With the gate on (the default) feeding moves no karma (Brandon, decision 9; src/emberpup_encounter.py).",
-  "quiz": {"subject": "animal", "tier": 2, "threshold": 2},
+  "quiz": {
+    "subject": "animal",
+    "tier": 2,
+    "threshold": 2
+  },
   "pet_species": "fire",
   "title": "A LONELY EMBERPUP",
   "story": [
@@ -23,7 +27,8 @@
     "feed": "Give it something to eat",
     "ignore": "Leave it be",
     "attack": "Attack it",
-    "choose": "\"I choose you!\""
+    "choose": "\"I choose you!\"",
+    "shelter": "Leave it something against the rain"
   },
   "pick_food": "What will you give it?",
   "no_food": "You search your pack, but you have nothing it could eat. The Emberpup watches you warily from its rock.",
@@ -41,5 +46,14 @@
   "named_message": "{name} the Emberpup will not be left behind again.",
   "unnamed_message": "Your Emberpup will not be left behind again.",
   "named_chronicle": "Found a little fire lizard waiting on a rock in the rain for a trainer who never came back. I named it {name}. It walks right at my heel, and I am never leaving it anywhere.",
-  "unnamed_chronicle": "Found a little fire lizard waiting on a rock in the rain for a trainer who never came back. It walks right at my heel now, and I am never leaving it anywhere."
+  "unnamed_chronicle": "Found a little fire lizard waiting on a rock in the rain for a trainer who never came back. It walks right at my heel now, and I am never leaving it anywhere.",
+  "visits_needed": 2,
+  "away_turns": 150,
+  "no_shelter": "You have nothing to keep the rain off it. A cloak or a shield would do.",
+  "take_off": "The cloak or shield you would give it is on you. Take it off first, and then you can leave it here.",
+  "already_sheltered": "Your gift is still over its rock. Out of the rain, its flame burns straight.",
+  "sheltered": "You prop your {item} over the Emberpup's rock and leave it there. The rain drums on it instead, and out of the wet the little tail flame steadies and stands up straight. A lizard cannot make its own warmth; it has to take it from the world, and the rain has been taking it away.",
+  "refused_trust": "It eats from your hand now, but it has heard a promise before. It looks at you, and then at the doorway. It is waiting to see whether you come back.",
+  "refused_cold": "It wants to come. But the rain is still on it and its flame is half drowned, and it will not leave its rock like that.",
+  "came_back": "The Emberpup lifts its head as you come in, and this time it looks at you, not past you. You came back."
 }

@@ -94,11 +94,12 @@ def _texts(g, n=8):
 # Rarity and placement
 # ---------------------------------------------------------------------------
 
-def test_about_one_run_in_five_gets_it_on_a_floor_from_3_to_8():
+def test_every_run_gets_it_on_a_floor_from_3_to_8():
+    # Dungeon Alive slice 8 (Brandon, 2026-11-12): every run, earned.
     import emberpup_encounter as ep
-    floors = [ep.roll_floor(random.Random(i)) for i in range(20000)]
+    floors = [ep.roll_floor(random.Random(i)) for i in range(2000)]
     hits = [f for f in floors if f is not None]
-    assert 0.18 < len(hits) / len(floors) < 0.22, len(hits)
+    assert len(hits) == len(floors)
     assert set(hits) == {3, 4, 5, 6, 7, 8}
 
 
@@ -301,9 +302,17 @@ def _fed_and_asked(g):
     _key(g, pygame.K_1)
     _key(g, pygame.K_a)
     _key(g, pygame.K_RETURN)
+    _earned(pup)
     _key(g, pygame.K_4)
     assert g.state == STATE_QUIZ
     return pup
+
+
+def _earned(pup):
+    """Fed on two visits and sheltered from the rain (slice 8): what the
+    choose tests below assume; the earning itself is tested on its own."""
+    pup._emberpup_visits = 2
+    pup._emberpup_sheltered = True
 
 
 def test_i_choose_you_asks_animal_tier_2_needing_2_right():
@@ -396,7 +405,8 @@ def test_save_and_load_mid_encounter_keeps_it_fed_on_its_rock(tmp_path, monkeypa
     _key(g, pygame.K_1)
     _key(g, pygame.K_a)                         # fed; its screen still open
     g2 = _roundtrip(g, name, tmp_path, monkeypatch)
-    assert g2._emberpup == {'floor': 5, 'spawned': True, 'outcome': None}
+    assert {k: g2._emberpup[k] for k in ('floor', 'spawned', 'outcome')} == {
+        'floor': 5, 'spawned': True, 'outcome': None}
     pups = _pups(g2)
     assert len(pups) == 1 and pups[0]._emberpup_fed and pups[0]._emberpup_met
     assert g2._needed_to_finish(pups[0])
@@ -405,6 +415,7 @@ def test_save_and_load_mid_encounter_keeps_it_fed_on_its_rock(tmp_path, monkeypa
     g2.state = STATE_PLAYER
     g2._start_emberpup_encounter(pups[0])
     assert g2.state == STATE_EMBERPUP and g2._emberpup_phase == 'options'
+    _earned(pups[0])
     _key(g2, pygame.K_4)
     assert g2.state == STATE_QUIZ
 
@@ -444,3 +455,70 @@ def test_first_feed_paid_its_old_point_only_with_the_gate_off(gate_off):
     _key(g, pygame.K_1)
     _key(g, pygame.K_a)
     assert pup._emberpup_fed is True and g.karma == karma + 1
+
+
+# ---------------------------------------------------------------------------
+# Earned (Dungeon Alive slice 8): two visits fed, and a cloak or shield left
+# ---------------------------------------------------------------------------
+
+def _cloak(g):
+    from items import load_items, Armor
+    cloaks = [a for a in load_items('armor') if isinstance(a, Armor) and getattr(a, 'slot', '') == 'cloak']
+    c = copy.copy(cloaks[0])
+    g.player.inventory.append(c)
+    return c
+
+
+def test_one_visit_is_not_enough_it_waits_to_see_you_come_back():
+    g = _game()
+    pup, _ = _place_pup(g, 6)
+    _food(g, 1)
+    g._start_emberpup_encounter(pup)
+    _key(g, pygame.K_RETURN)
+    _key(g, pygame.K_1)
+    _key(g, pygame.K_a)
+    _key(g, pygame.K_RETURN)
+    assert pup._emberpup_visits == 1
+    _key(g, pygame.K_4)
+    import emberpup_encounter as ep
+    assert g._emberpup_text == ep.data()['refused_trust']
+
+
+def test_coming_back_counts_and_the_rain_must_be_kept_off():
+    import emberpup_encounter as ep
+    from game_states import STATE_QUIZ
+    g = _game()
+    pup, _ = _place_pup(g, 6)
+    _food(g, 2)
+    g._start_emberpup_encounter(pup)
+    _key(g, pygame.K_RETURN)
+    _key(g, pygame.K_1)
+    _key(g, pygame.K_a)
+    _key(g, pygame.K_RETURN)
+    # Feeding twice in one visit counts once.
+    _key(g, pygame.K_1)
+    assert g._emberpup_text == ep.data()['already_fed']
+    _key(g, pygame.K_RETURN)
+    g._close_emberpup()
+    # Leave its floor and come back.
+    g._maybe_spawn_emberpup(7)
+    assert g._emberpup['away']
+    g._start_emberpup_encounter(pup)
+    assert g._emberpup_text == ep.data()['came_back']
+    _key(g, pygame.K_RETURN)
+    _key(g, pygame.K_1)
+    _key(g, pygame.K_a)
+    _key(g, pygame.K_RETURN)
+    assert pup._emberpup_visits == 2
+    _key(g, pygame.K_4)
+    assert g._emberpup_text == ep.data()['refused_cold']
+    _key(g, pygame.K_RETURN)
+    _key(g, pygame.K_5)
+    assert g._emberpup_text == ep.data()['no_shelter']
+    _key(g, pygame.K_RETURN)
+    cloak = _cloak(g)
+    _key(g, pygame.K_5)
+    assert pup._emberpup_sheltered and cloak not in g.player.inventory
+    _key(g, pygame.K_RETURN)
+    _key(g, pygame.K_4)
+    assert g.state == STATE_QUIZ

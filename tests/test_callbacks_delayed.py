@@ -37,6 +37,11 @@ def _game(seed=21):
     # A plain run: no random encounters in the way of the ones under test.
     g._npc_encounter_levels = {}
     g._flavor_encounter_levels = {}
+    # (The Emberpup and the Black Knight stand every run since Dungeon Alive
+    # slice 8; a callback never lands on their floors, so they are moved
+    # out of these tests' way.)
+    g._emberpup['floor'] = None
+    g._black_knight['floor'] = None
     return g
 
 

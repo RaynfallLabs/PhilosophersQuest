@@ -1,4 +1,22 @@
-"""The abandoned Emberpup: a random event, about one run in five.
+"""The abandoned Emberpup: every run, earned (Dungeon Alive slice 8).
+
+Brandon, 2026-11-12: the one-in-N events happen every run, on a range of
+floors, but winning one takes "a pattern of behavior AND the right items
+(similar to unicorn)". The pup waits for a trainer who said he would come
+back and never did, so it trusts the one who DOES come back:
+
+  * Feed it on two separate visits: leave its floor (or stay away a good
+    while) and come back with food. Feeding it twice in one visit counts
+    once. The trust is in the coming back.
+  * Keep the rain off it: leave it a cloak or a shield over its rock (the
+    item stays with it). Fire lizards cannot make their own warmth, and
+    the rain has been taking it.
+  * Only then will "I choose you!" be heard: the animal quiz, as before.
+
+The original notes follow; its floor is now drawn every run
+(chance_per_run 1.0).
+
+The abandoned Emberpup: a random event, about one run in five.
 
 On one floor from 3 to 8 a small fire lizard sits alone on a rock under a little
 rain cloud, waiting for a trainer who said he would come back. Bumping it
@@ -84,6 +102,22 @@ def food_choices(inventory) -> list:
             and getattr(i, 'tier_role', '') != 'trophy']
 
 
+def _is_cover(it) -> bool:
+    from items import Armor, Shield
+    return isinstance(it, Shield) or (isinstance(it, Armor) and getattr(it, 'slot', '') == 'cloak')
+
+
+def shelter_choices(player) -> list:
+    """What could keep the rain off it: a cloak or a shield in the pack
+    (a worn one has to come off first)."""
+    return [it for it in player.inventory if _is_cover(it)]
+
+
+def wears_cover(player) -> bool:
+    worn = [getattr(player, 'shield', None)] + list(getattr(player, 'armor_slots', None) or ())
+    return any(it is not None and _is_cover(it) for it in worn)
+
+
 FOOD_PAGE = 9
 
 
@@ -103,6 +137,9 @@ class EmberpupMixin:
     def _maybe_spawn_emberpup(self, level: int):
         """Place the Emberpup on its floor, once per run, on first arrival."""
         st = self._emberpup_state()
+        # Leaving its floor after feeding it is half of coming back.
+        if st.get('fed_once') and level != st.get('floor'):
+            st['away'] = True
         if st.get('spawned') or st.get('outcome') or st.get('floor') != level:
             return
         if any(is_emberpup(m) for m in self.monsters):
@@ -143,7 +180,20 @@ class EmberpupMixin:
 
     def _start_emberpup_encounter(self, pup):
         """Bumping it: its story the first time, its choices after that."""
+        st = self._emberpup_state()
+        d = data()
+        came_back = bool(st.get('away')) or (
+            st.get('fed_once')
+            and int(getattr(self, 'turn_count', 0)) - int(st.get('fed_turn', 0) or 0)
+            >= int(d.get('away_turns', 150)))
         self._emberpup_npc = pup
+        welcomed = False
+        if came_back and getattr(pup, '_emberpup_fed', False):
+            # You came back. It may eat again, and the coming back counts.
+            pup._emberpup_fed = False
+            st['away'] = False
+            st['returned'] = True
+            welcomed = True
         self._emberpup_phase = 'options' if getattr(pup, '_emberpup_met', False) else 'story'
         pup._emberpup_met = True
         self._emberpup_text = ''
@@ -152,6 +202,8 @@ class EmberpupMixin:
         self._emberpup_food_scroll = 0
         self._emberpup_acted = False
         self.state = STATE_EMBERPUP
+        if welcomed and d.get('came_back'):
+            self._emberpup_outcome(d['came_back'], 'options')
 
     def _emberpup_outcome(self, text: str, after: str):
         self._emberpup_text = text
@@ -203,6 +255,8 @@ class EmberpupMixin:
             self._emberpup_attack()
         elif key in (pygame.K_4, pygame.K_KP4):
             self._emberpup_choose()
+        elif key in (pygame.K_5, pygame.K_KP5):
+            self._emberpup_shelter()
         elif key == pygame.K_ESCAPE:
             self._emberpup_ignore()
 
@@ -251,6 +305,12 @@ class EmberpupMixin:
         self.player.remove_from_inventory(item)
         pup._emberpup_fed = True
         self._emberpup_acted = True
+        # One fed visit counted per visit: the first, then each return.
+        st = self._emberpup_state()
+        if not st.get('fed_once') or st.pop('returned', False):
+            pup._emberpup_visits = int(getattr(pup, '_emberpup_visits', 0) or 0) + 1
+        st['fed_once'] = True
+        st['fed_turn'] = int(getattr(self, 'turn_count', 0))
         if not getattr(pup, '_emberpup_karma_given', False):
             pup._emberpup_karma_given = True
             import karma
@@ -287,11 +347,44 @@ class EmberpupMixin:
         self._emberpup_acted = True
         self._emberpup_outcome(d['attack'], 'player')
 
+    def _emberpup_shelter(self):
+        """Leave it a cloak or a shield against the rain (it keeps it)."""
+        d = data()
+        pup = self._emberpup_npc
+        if getattr(pup, '_emberpup_sheltered', False):
+            self._emberpup_outcome(d['already_sheltered'], 'options')
+            return
+        cover = shelter_choices(self.player)
+        if not cover:
+            self._emberpup_outcome(d['take_off'] if wears_cover(self.player) else d['no_shelter'],
+                                   'options')
+            return
+        item = cover[0]
+        name = self._display_name(item)
+        self._emberpup_give_cover(item)
+        pup._emberpup_sheltered = True
+        self._emberpup_acted = True
+        import deeds
+        deeds.note(self, 'aid.emberpup_sheltered', source='emberpup', unique=True)
+        self.add_message(f"You leave your {name} over the Emberpup's rock.", 'success')
+        self._emberpup_outcome(d['sheltered'].format(item=name), 'options')
+
+    def _emberpup_give_cover(self, item) -> None:
+        """The cloak or shield stays with the pup."""
+        if item in self.player.inventory:
+            self.player.remove_from_inventory(item)
+
     def _emberpup_choose(self):
         d = data()
         pup = self._emberpup_npc
         if not getattr(pup, '_emberpup_fed', False):
             self._emberpup_outcome(d['refused'], 'options')
+            return
+        if int(getattr(pup, '_emberpup_visits', 0) or 0) < int(d.get('visits_needed', 2)):
+            self._emberpup_outcome(d['refused_trust'], 'options')
+            return
+        if not getattr(pup, '_emberpup_sheltered', False):
+            self._emberpup_outcome(d['refused_cold'], 'options')
             return
         q = d['quiz']
         subject, tier, need = q['subject'], int(q['tier']), int(q['threshold'])

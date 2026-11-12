@@ -1893,7 +1893,7 @@ class RenderMixin:
         elif phase == 'options':
             fed = getattr(pup, '_emberpup_fed', False)
             paras = [d['waiting_fed'] if fed else d['waiting_unfed']]
-            content_h = text_h(paras) + S(14) + 4 * (row_h + S(8))
+            content_h = text_h(paras) + S(14) + 5 * (row_h + S(8))
         elif phase == 'select_food':
             paras = [d['pick_food']]
             content_h = text_h(paras) + S(12) + min(ep.FOOD_PAGE, len(self._emberpup_food)) * (irow_h + S(6))
@@ -1945,11 +1945,12 @@ class RenderMixin:
             self._ui_footer(panel, "Enter / Space: continue   |   Esc: walk away")
         elif phase == 'options':
             y += S(14)
-            for key, which in (('1', 'feed'), ('2', 'ignore'), ('3', 'attack'), ('4', 'choose')):
+            for key, which in (('1', 'feed'), ('2', 'ignore'), ('3', 'attack'), ('4', 'choose'),
+                               ('5', 'shelter')):
                 self._ui_action_row(pygame.Rect(col.x, y, col.w, row_h), key,
                                     display_text(d['options'][which]), color=FP.PARCHMENT_LIGHT)
                 y += row_h + S(8)
-            self._ui_footer(panel, "1-4: choose   |   Esc: leave it be")
+            self._ui_footer(panel, "1-5: choose   |   Esc: leave it be")
         elif phase == 'select_food':
             y += S(12)
             food = self._emberpup_food

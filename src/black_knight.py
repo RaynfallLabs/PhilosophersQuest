@@ -1,4 +1,5 @@
-"""The Black Knight: an easter egg, about one run in four.
+"""The Black Knight: an easter egg, every run (Dungeon Alive slice 8; it was
+about one run in four).
 
 On one floor from 15 to 19 a knight in black armour stands on a short stone
 bridge over a strip of water across a corridor, and says that none shall
