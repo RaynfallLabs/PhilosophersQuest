@@ -106,6 +106,11 @@ class LevelManager:
                 self._maybe_spawn_bones(level_num, dungeon, monsters, items)
             import senses
             senses.assign_jobs(monsters, dungeon.rooms)
+            # A gate floor wears its domain's look; its own builder in
+            # boss_levels.py sets its fixtures.
+            import decor
+            if getattr(dungeon, 'theme', None) is None and level_num != COW_LEVEL:
+                decor.apply_theme(dungeon, level_num)
             items = self._once_per_run(items)
             return dungeon, monsters, items
 
@@ -144,6 +149,11 @@ class LevelManager:
         # the real stair stays reachable (src/false_stairs.py).
         import false_stairs
         false_stairs.seat(dungeon, monsters)
+
+        # The domain's look and its dressing (src/decor.py), once everything
+        # else is down so no item or creature lands under a statue.
+        import decor
+        decor.dress_floor(dungeon, level_num, monsters, items)
 
         # Each creature's own business until it notices the hero
         # (src/senses.py). A den is where they sleep, as its line says (G3).

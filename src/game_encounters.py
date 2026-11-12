@@ -422,6 +422,27 @@ class EncountersMixin:
     # Unicorn encounter  (L21-39, spawns once per run)
     # ------------------------------------------------------------------
 
+    def _announce_domain(self, level: int) -> None:
+        """The first time in a run that the hero sets foot in one of the five
+        domains (data/domains.json), the Chronicler says where he has come,
+        and the Journal remembers it."""
+        import decor
+        dom = decor.domain_for(level)
+        if not dom:
+            return
+        state = self.__dict__.setdefault('_dungeon_alive', {'domains_seen': []})
+        seen = state.setdefault('domains_seen', [])
+        if dom['id'] in seen:
+            return
+        seen.append(dom['id'])
+        line = dom.get('arrival', '')
+        if line:
+            self.add_message(line, 'info')
+        try:
+            self._chron('discovery', f"Came down into {dom['name']}.")
+        except Exception:
+            pass
+
     def _maybe_spawn_unicorn(self, level: int):
         """Spawn the ethereal unicorn on one random level between 21-39."""
         if getattr(self, '_unicorn_spawned', False):

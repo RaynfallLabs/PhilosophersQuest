@@ -140,6 +140,46 @@ There is no dedicated statue pass — "stone statues" in the audit refers to the
 ### 3.7 Reachability check (v2.18)
 `_bfs_reaches(tiles, w, h, start, goal)` runs 4-neighbor BFS where the passable set is `(FLOOR, STAIRS_UP, STAIRS_DOWN, DOOR, SECRET_DOOR, ALTAR, FOUNTAIN, GRAVE, THRONE, ICE)`. Doors and secret doors count as reachable because the player bumps through them. `WATER` and `LAVA` are the two tile types that block without an item (water-walking / fire-resist). The post-terrain check guarantees the floor stays completable.
 
+### 3.9 Domains and fixtures (Dungeon Alive, 2026-11-12)
+Brandon cut the dungeon into **five domains**, one per gate boss (`data/domains.json`, `src/decor.py`):
+
+| Floors | Domain | Theme folder |
+|---|---|---|
+| 1-20 | the Labyrinth | none: today's tiles |
+| 21-40 | the Forgotten Temple | `temple` |
+| 41-60 | the Scorched Deep | `deep` |
+| 61-80 | the Rime Halls | `rime` |
+| 81-100 | the Abyss | `abyss` |
+
+**Themes.**
+- `decor.apply_theme` sets `dungeon.domain` and `dungeon.theme`.
+- The renderer's `_tile_sprite_name` wraps the base picture name in `_themed()`, which looks for `assets/tiles/env/themes/<theme>/<name>.png` and falls back to the base picture. A missing themed floor variant falls back to the theme's plain `floor`.
+- `dungeon.tile_art` maps a position to a picture name and overrides the tile for that position, for example a dragon's hoard bed.
+
+**Arrival.** The first time in a run the hero enters a domain, `EncountersMixin._announce_domain` says its `arrival` line and writes a Journal line. The run state is `game._dungeon_alive['domains_seen']`, which is saved.
+
+**Fixtures** (`data/fixtures.json`).
+- A fixture stands in or on a tile without changing the tile. State lives on the Dungeon:
+  - `fixtures`: `{pos: id}`;
+  - `fixture_state`: `{pos: 'spent'}`;
+  - `fixture_blocks` and `fixture_opaque`: sets.
+- `Dungeon.is_walkable` refuses a blocking fixture and `is_opaque` refuses an opaque one, while the tile stays `FLOOR`. Class-level empty defaults keep floors pickled before fixtures working.
+- Layers:
+  - `floor`: a walkable decal;
+  - `stand`: an object, usually blocking;
+  - `wall`: drawn over a `WALL` tile.
+- Drawing: `renderer._draw_fixtures` draws after the bridges and before the traps, floor layer first. Remembered fixtures are dimmed. A blocking fixture with no picture is drawn as a plain block in its `color`.
+- Observe (`;`) says a fixture's `look` line. Bumping a blocking fixture costs no turn and says "X stands in your way." Ice sliding stops at one.
+
+**Dressing.** `decor.dress_floor` runs in `LevelManager.generate` after every monster and item is placed and before `senses.assign_jobs`. It skips special rooms, the vault and hidden chambers. Each domain's `decor` sets, per layer, the share of rooms that get any (`room_chance`) and how many each one gets (`per_room`):
+- wall pieces go on ring walls that face the room's floor;
+- floor decals go on inner tiles, plus corridor tiles (`corridor_chance`);
+- standing pieces go on inner tiles against the wall, never beside an opening or a door, and never next to each other.
+
+A reachability walk from the up stair runs before and after; blockers are undone, newest first, until nothing extra is cut off. Gate floors get only the theme here, and their builders set their own fixtures (slice 6).
+
+Tests: `tests/test_decor.py`.
+
 ### 3.8 Fountains, graves, thrones (interactive tiles)
 `FOUNTAIN`, `GRAVE`, `THRONE`, `ALTAR` are all walkable and transparent. They're placed either by the generic altar/fountain passes above, or by special-room spawns (§4.4 — `graveyard` paints `GRAVE` tiles, `throne_room` paints a single `THRONE`), or by scripted quest hooks (see §7 and [quests_mysteries](quests_mysteries.md)).
 

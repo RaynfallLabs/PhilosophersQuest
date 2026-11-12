@@ -475,8 +475,42 @@ def _floor_variants() -> tuple:
 _FLOOR_VARIANTS = _floor_variants()
 
 
+_THEMED_CACHE: dict = {}
+
+
+def _themed(theme, name: str) -> str:
+    """The floor's theme's picture for ``name`` (themes/<theme>/<name>.png)
+    when it has one, else the base picture. A missing themed picture never
+    breaks a floor (src/decor.py)."""
+    if not theme or not name:
+        return name
+    key = (theme, name)
+    hit = _THEMED_CACHE.get(key)
+    if hit is None:
+        rel = f'themes/{theme}/{name}'
+        hit = rel if os.path.exists(os.path.join(_ENV_SPRITE_DIR, rel + '.png')) else name
+        if hit == name and name.startswith('floor_'):
+            # A theme with fewer floor variants uses its plain floor.
+            plain = f'themes/{theme}/floor'
+            if os.path.exists(os.path.join(_ENV_SPRITE_DIR, plain + '.png')):
+                hit = plain
+        _THEMED_CACHE[key] = hit
+    return hit
+
+
 def _tile_sprite_name(dungeon, tx: int, ty: int, tile) -> 'str | None':
-    """The picture for a map tile. A wall with nothing but wall around it is
+    """The picture for a map tile, in the floor's theme (src/decor.py). A
+    per-tile override (``tile_art``: a dragon's hoard bed) comes first."""
+    art = getattr(dungeon, 'tile_art', None)
+    if art:
+        over = art.get((tx, ty))
+        if over:
+            return _themed(getattr(dungeon, 'theme', None), over)
+    return _themed(getattr(dungeon, 'theme', None), _base_tile_sprite_name(dungeon, tx, ty, tile))
+
+
+def _base_tile_sprite_name(dungeon, tx: int, ty: int, tile) -> 'str | None':
+    """The base picture for a map tile. A wall with nothing but wall around it is
     solid rock and is drawn dark and plain; brickwork shows only where a wall
     faces something. (A secret door counts as wall here as everywhere, so
     the rock gives nothing away.)"""
@@ -751,6 +785,8 @@ class Renderer:
                 if (bx, by) not in visible:
                     self.screen.blit(dim, (sx, sy))
 
+        self._draw_fixtures(dungeon, visible, dim)
+
         # Draw revealed traps with per-type sprites
         for (tx, ty), trap in getattr(dungeon, 'traps', {}).items():
             if trap.get('revealed') and (tx, ty) in visible:
@@ -784,6 +820,44 @@ class Renderer:
                 pad = max(2, T // 6)
                 pygame.draw.rect(self.screen, _PIT_COLOR,
                                  (sx + pad, sy + pad, T - pad * 2, T - pad * 2), 2)
+
+    def _draw_fixtures(self, dungeon, visible, dim) -> None:
+        """Fixtures (src/decor.py): floor decals first, then what stands or
+        hangs. Seen ones in full, remembered ones dimmed like the tiles. A
+        blocking fixture with no picture yet is drawn as a plain block, so a
+        statue is never invisible; a decal with no picture is not drawn."""
+        fixtures = getattr(dungeon, 'fixtures', None)
+        if not fixtures:
+            return
+        import decor
+        T = self.map_tile_size
+        explored = dungeon.explored
+        spent = getattr(dungeon, 'fixture_state', None) or {}
+        tx0, ty0, tx1, ty1 = self._onscreen_tile_range(dungeon.width, dungeon.height)
+        order = sorted(fixtures.items(),
+                       key=lambda kv: 0 if decor.fixture_def(kv[1]).get('layer') == 'floor' else 1)
+        for (fx, fy), fid in order:
+            if not (tx0 <= fx < tx1 and ty0 <= fy < ty1):
+                continue
+            seen = (fx, fy) in visible
+            if not seen and (fx, fy) not in explored:
+                continue
+            sx, sy = self.world_to_screen(fx, fy)
+            sprite = self._get_env_sprite(f'fixtures/{fid}')
+            if sprite is None:
+                defn = decor.fixture_def(fid)
+                if not defn.get('blocks'):
+                    continue
+                pad = max(1, T // 6)
+                pygame.draw.rect(self.screen, tuple(defn.get('color', (110, 110, 110))),
+                                 (sx + pad, sy + pad, T - pad * 2, T - pad * 2),
+                                 border_radius=max(1, T // 8))
+            else:
+                self.screen.blit(sprite, (sx, sy))
+            if spent.get((fx, fy)) == 'spent':
+                self.screen.blit(dim, (sx, sy))
+            if not seen:
+                self.screen.blit(dim, (sx, sy))
 
     def draw_player(self, player, cam_x: int = 0, cam_y: int = 0,
                     sprite_name: str = 'player'):

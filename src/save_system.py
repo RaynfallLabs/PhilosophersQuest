@@ -314,6 +314,8 @@ def save_game(game) -> bool:
             '_black_knight': getattr(game, '_black_knight', None),
             # Setne's Tomb: its floor, placed yet, sealed for good, the room.
             '_setne': getattr(game, '_setne', None),
+            # Dungeon Alive: the domains announced, and the run state after.
+            '_dungeon_alive': getattr(game, '_dungeon_alive', None),
             # Journal & Lore Hints (Encyclopedia tabs)
             '_chronicle': getattr(game, '_chronicle', []),
             '_recalled_hints': getattr(game, '_recalled_hints', []),

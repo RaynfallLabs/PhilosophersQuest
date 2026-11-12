@@ -34,6 +34,8 @@ added_files = [
     ('data/monster_sizes.json',     'data'),
     ('data/monster_families.json',  'data'),   # monster family knowledge (family_lore.py)
     ('data/senses.json',            'data'),   # how monsters notice the hero (senses.py)
+    ('data/domains.json',           'data'),   # the five domains (decor.py)
+    ('data/fixtures.json',          'data'),   # fixtures (decor.py)
     ('data/hints.json',             'data'),
     ('data/question_twins.json',    'data'),   # same-fact twins the quiz holds back (quiz_engine)
     ('data/philosophy_mastery.json', 'data'),  # philosophy tier traits (philosophy_mastery.py)

@@ -2154,6 +2154,13 @@ class CombatMixin:
                 self.add_message("You see yourself standing here.", 'info')
             found = True
 
+        # A fixture (src/decor.py): what it is, in a line.
+        import decor as _decor
+        _fx_line = _decor.look_line(self.dungeon, cx, cy)
+        if _fx_line:
+            self.add_message(_fx_line, 'info')
+            found = True
+
         # Tile features
         tile = self.dungeon.tiles[cy][cx]
         _TILE_DESC = {

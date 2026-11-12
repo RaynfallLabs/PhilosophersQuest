@@ -112,6 +112,14 @@ class Room:
 # ---------------------------------------------------------------------------
 
 class Dungeon:
+    # Fixtures and themes (src/decor.py). Class-level defaults so a floor
+    # pickled before they existed loads with none; decor.place gives a floor
+    # its own sets the first time it furnishes one.
+    fixture_blocks = frozenset()
+    fixture_opaque = frozenset()
+    theme = None
+    domain = None
+
     def __init__(self, tiles: List[List[int]], rooms: List[Room],
                  width: int, height: int, level: int):
         self.tiles  = tiles
@@ -158,9 +166,12 @@ class Dungeon:
     def is_walkable(self, x: int, y: int) -> bool:
         """True if the player / monster can freely move onto this tile.
         Doors and secret doors block movement until explicitly opened.
-        WATER and LAVA are hazard tiles that block normal movement."""
+        WATER and LAVA are hazard tiles that block normal movement. A
+        blocking fixture (a statue, a bunk: src/decor.py) stands in the way
+        too, though the tile under it stays what it was."""
         return (self.in_bounds(x, y) and
-                self.tiles[y][x] not in (WALL, DOOR, SECRET_DOOR, WATER, LAVA))
+                self.tiles[y][x] not in (WALL, DOOR, SECRET_DOOR, WATER, LAVA)
+                and (x, y) not in self.fixture_blocks)
 
     def is_altar(self, x: int, y: int) -> bool:
         """True if this tile is a sacred altar."""
@@ -168,9 +179,11 @@ class Dungeon:
 
     def is_opaque(self, x: int, y: int) -> bool:
         """True if the tile blocks line-of-sight (for FOV).
-        New terrain tiles (WATER, LAVA, FOUNTAIN, GRAVE, THRONE, ICE) are all transparent."""
+        New terrain tiles (WATER, LAVA, FOUNTAIN, GRAVE, THRONE, ICE) are all transparent.
+        A tall fixture (a statue, a stalagmite) blocks sight like a pillar."""
         return (not self.in_bounds(x, y)
-                or self.tiles[y][x] in (WALL, DOOR, SECRET_DOOR))
+                or self.tiles[y][x] in (WALL, DOOR, SECRET_DOOR)
+                or (x, y) in self.fixture_opaque)
 
     def open_door(self, x: int, y: int) -> bool:
         """Open a closed door or reveal a secret door.  Returns True on success."""

@@ -377,6 +377,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # Setne's Tomb (one floor of 45-65, every run): {'floor', 'spawned',
         # 'sealed', 'room'}. The Book of Thoth's only source (setne_tomb.py).
         self._setne: dict = _setne_new_run()
+        # Dungeon Alive (2026-11-12): run state for the domains and what
+        # comes after them. 'domains_seen': the domains already announced.
+        self._dungeon_alive: dict = {'domains_seen': []}
         self._npc_after_close: list = []      # 'seal_door' / 'expel_up' after an outcome page
         self._notified_rooms: set = set()  # (cx, cy) of special rooms already notified
         # Drop-item state
@@ -1075,6 +1078,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         _st = state.get('_setne')
         self._setne = dict(_st) if isinstance(_st, dict) else {
             'floor': None, 'spawned': False, 'sealed': False, 'room': None}
+        # Dungeon Alive: a save from before it has seen no domain yet, so the
+        # one the hero stands in is announced on his next new floor.
+        _da = state.get('_dungeon_alive')
+        self._dungeon_alive = dict(_da) if isinstance(_da, dict) else {}
+        self._dungeon_alive.setdefault('domains_seen', [])
         self._npc_after_close = []
         # Journal & Lore Hints. An old save holds plain "text (L#)" strings:
         # they become 'legacy' entries that display exactly as before.
@@ -2410,6 +2418,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # An escort whose last stair this was says goodbye on the new floor.
         self._escorts_finish(_esc_arrived)
 
+        # The first floor of each domain says where the hero has come
+        # (data/domains.json; src/decor.py).
+        self._announce_domain(new_level)
         # Display atmospheric messages for this level
         for atmo_msg in getattr(self.dungeon, 'atmosphere_messages', []):
             self.add_message(atmo_msg, 'info')
@@ -3359,6 +3370,14 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             else:
                 self.add_message("You feel something odd about this wall...", 'info')
             self._advance_turn()
+        elif (self.dungeon.in_bounds(nx, ny) and (nx, ny) in self.dungeon.fixture_blocks
+              and not self.player.has_effect('phasing')):
+            # A statue, a bunk, a stalagmite: it stands in the way, and
+            # bumping it costs nothing (src/decor.py).
+            import decor
+            _what = decor.blocking_name(self.dungeon, nx, ny) or 'something'
+            self.add_message(f"{_what[:1].upper()}{_what[1:]} stands in your way.", 'info')
+            return
         elif (tile_at_dest == WALL and self.dungeon.in_bounds(nx, ny)
               and self._try_phase_step(nx, ny, dx, dy)):
             # Chain-equip passive: phase_step_once_per_floor (Helm of Hades T3+).
@@ -3404,6 +3423,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     slide_tile = self.dungeon.tiles[sy][sx]
                     if slide_tile in (WATER, LAVA, WALL, DOOR, SECRET_DOOR):
                         break
+                    if (sx, sy) in self.dungeon.fixture_blocks:
+                        break                   # a statue stops the slide
                     if monster_at_tile(self.monsters, sx, sy) is not None:
                         break
                     if (sx, sy) in self._occupants(hero=False):

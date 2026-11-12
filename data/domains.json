@@ -1,0 +1,70 @@
+{
+  "_doc": "The five domains of the dungeon (Dungeon Alive, Brandon 2026-11-12): one per gate boss, each with its own look ('theme': the folder under assets/tiles/env/themes/ whose pictures replace the base tiles; missing pictures fall back to the base set), its own dressing (src/decor.py) and, from slice 3, its own hazards and kin. 'arrival' is said the first time in a run the hero sets foot in the domain. 'decor' gives each layer of fixtures (data/fixtures.json): 'ids' with weights, 'room_chance' (the share of ordinary rooms that get any), 'per_room' [min, max], and for floor decals 'corridor_chance' per corridor tile.",
+  "domains": [
+    {
+      "id": "labyrinth",
+      "name": "The Labyrinth",
+      "floors": [1, 20],
+      "boss": "asterion_minotaur",
+      "theme": null,
+      "arrival": "The stone here was cut by the men of Minos, long ago. Somewhere below, a bull-headed thing walks his halls, and he knows every one of them.",
+      "decor": {
+        "wall":  {"ids": {"wall_torch": 3, "labrys_mark": 2, "bull_fresco": 1, "cobweb": 1}, "room_chance": 0.35, "per_room": [1, 2]},
+        "floor": {"ids": {"bone_pile": 2, "rubble": 2, "broken_pot": 1}, "room_chance": 0.3, "per_room": [1, 2], "corridor_chance": 0.008},
+        "stand": {"ids": {"horns_consecration": 1}, "room_chance": 0.06, "per_room": [1, 1]}
+      }
+    },
+    {
+      "id": "temple",
+      "name": "The Forgotten Temple",
+      "floors": [21, 40],
+      "boss": "medusa_gorgon",
+      "theme": "temple",
+      "arrival": "The masonry changes. Pale marble now, gone green in every crack, and ivy where no sun has ever reached. This was a temple of Athena once, and something made the goddess turn her face from it. The statues all look back over their shoulders.",
+      "decor": {
+        "wall":  {"ids": {"ivy": 4, "wall_torch": 1, "cobweb": 1}, "room_chance": 0.5, "per_room": [1, 2]},
+        "floor": {"ids": {"roots": 2, "olive_leaves": 2, "snake_skin": 1, "statue_rubble": 1, "rubble": 1}, "room_chance": 0.5, "per_room": [1, 2], "corridor_chance": 0.012},
+        "stand": {"ids": {"statue_shield": 1, "statue_stride": 1, "statue_kneel": 1, "statue_reach": 1, "statue_spear": 1, "column_drum": 2, "offering_basin": 1}, "room_chance": 0.35, "per_room": [1, 2]}
+      }
+    },
+    {
+      "id": "deep",
+      "name": "The Scorched Deep",
+      "floors": [41, 60],
+      "boss": "fafnir_dragon",
+      "theme": "deep",
+      "arrival": "The worked stone ends. These are caves, raw and black with old soot, and the air tastes of ash. The bones down here wore armour, and the armour has melted.",
+      "decor": {
+        "wall":  {"ids": {"wall_torch": 1, "cobweb": 1}, "room_chance": 0.2, "per_room": [1, 1]},
+        "floor": {"ids": {"scorch_mark": 2, "ember_crack": 2, "ash_drift": 2, "slayer_bones": 1, "rubble": 1}, "room_chance": 0.55, "per_room": [1, 2], "corridor_chance": 0.015},
+        "stand": {"ids": {"stalagmite": 4, "crystal_cluster": 1, "pick_and_cart": 1}, "room_chance": 0.4, "per_room": [1, 2]}
+      }
+    },
+    {
+      "id": "rime",
+      "name": "The Rime Halls",
+      "floors": [61, 80],
+      "boss": "fenrir_wolf",
+      "theme": "rime",
+      "arrival": "Frost. It furs the stones and creaks underfoot, and your breath hangs in front of you. Round shields hang on these walls, as in the halls of the north. Somewhere below, something has been waiting a long time for the end of the world.",
+      "decor": {
+        "wall":  {"ids": {"icicles": 3, "shield_wall": 2}, "room_chance": 0.5, "per_room": [1, 2]},
+        "floor": {"ids": {"snow_drift": 3, "frozen_bones": 1, "broken_fetter": 1}, "room_chance": 0.5, "per_room": [1, 2], "corridor_chance": 0.012},
+        "stand": {"ids": {"frozen_warrior": 2, "rune_stone": 2, "mead_bench": 1, "brazier_cold": 1}, "room_chance": 0.35, "per_room": [1, 2]}
+      }
+    },
+    {
+      "id": "abyss",
+      "name": "The Abyss",
+      "floors": [81, 100],
+      "boss": "abaddon_destroyer",
+      "theme": "abyss",
+      "arrival": "The floor is black glass, and it is warm. Red light moves in the cracks, and smoke rises from below as from a great furnace. This is the shaft of the Abyss, and its king is waiting at the bottom.",
+      "decor": {
+        "wall":  {"ids": {"hanging_chains": 3}, "room_chance": 0.45, "per_room": [1, 2]},
+        "floor": {"ids": {"glow_fissure": 2, "ash_drift": 2, "smoke_vent": 1, "bone_pile": 1}, "room_chance": 0.55, "per_room": [1, 2], "corridor_chance": 0.015},
+        "stand": {"ids": {"bone_spire": 3, "seal_stone": 1, "ruined_throne": 1}, "room_chance": 0.3, "per_room": [1, 2]}
+      }
+    }
+  ]
+}

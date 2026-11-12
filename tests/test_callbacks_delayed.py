@@ -190,11 +190,17 @@ def test_the_gospel_chain_keeps_or_breaks_the_oath():
             _choose_then_leave(g, _npc(g, tag), pygame.K_1)   # lay it on the desk
     assert deeds.oath_status(g._deeds, 'cuthbert_gospel') == 'kept'
     assert g.karma == karma + 1                          # exactly one point, at the keep
-    g2 = _game(seed=25)
-    b2 = _meet(g2, 42, 'flv_coffin_bearer')
-    _choose(g2, b2, pygame.K_1)
-    broker_at = next(p['target'] for p in _pending(g2)
-                     if p['spec']['encounter'] == 'flv_relic_broker')
+    # A run where the broker comes before the chapel (which floor each
+    # lands on follows the shared random stream, and the monsters' turns
+    # draw from it too: src/senses.py).
+    for seed in range(25, 90):
+        g2 = _game(seed=seed)
+        b2 = _meet(g2, 42, 'flv_coffin_bearer')
+        _choose(g2, b2, pygame.K_1)
+        at = {p['spec']['encounter']: p['target'] for p in _pending(g2)}
+        if at['flv_relic_broker'] < at['flv_cuthbert_chapel']:
+            break
+    broker_at = at['flv_relic_broker']
     k2 = g2.karma
     _go(g2, broker_at)
     _choose(g2, _npc(g2, 'flv_relic_broker'), pygame.K_1)   # sell it
