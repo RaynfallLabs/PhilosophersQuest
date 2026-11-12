@@ -2614,7 +2614,7 @@
   },
   {
     "tier": 2,
-    "question": "Augustus set up a single bronze-covered column in the middle of the Roman Forum around 20 BC. Every mile of Roman road, from Britain to Egypt, was measured back to that one point, so the old saying that all roads lead to Rome pointed at a real object. What was the column called?",
+    "question": "Augustus set up a single bronze-covered column in Rome's Forum around 20 BC, while he had charge of the roads around the city. Romans thought of it as the one point where all the roads of their empire began. What was the column called?",
     "answer": "the Golden Milestone",
     "choices": [
       "the Golden Milestone",
@@ -2622,7 +2622,7 @@
       "the Stone of Augustus",
       "the Pillar of Roads"
     ],
-    "context": "The Milliarium Aureum, the 'Golden Milestone,' was the zero-point of the whole Roman road network, inscribed with the distances from Rome to the great cities of the empire; because all distances were measured from it, it is the origin of the saying 'all roads lead to Rome.' Source: https://en.wikipedia.org/wiki/All_roads_lead_to_Rome ; https://en.wikipedia.org/wiki/Milliarium_Aureum",
+    "context": "The Milliarium Aureum, the 'Golden Milestone,' was set up by Augustus in 20 BC as overseer of the roads (so Cassius Dio says); it seems to have been a marble column sheathed in gilded bronze. All roads were considered to begin there, though a passage of Pliny suggests that distances were in fact counted from the city gates, and no ancient source records what was written on it. The saying 'all roads lead to Rome' is medieval: its earliest known form is in Alain de Lille's book of proverbs of 1175, and later writers, among them the 19th-century church historian Philip Schaff, tied it to the column. Source: https://en.wikipedia.org/wiki/Milliarium_Aureum ; https://grokipedia.com/page/Milliarium_Aureum ; https://en.wikipedia.org/wiki/All_roads_lead_to_Rome",
     "topic": "aqueducts-roads-and-roman-engineering"
   },
   {
@@ -7666,7 +7666,7 @@
       "Handel, Haydn, and Schubert",
       "Chopin, Liszt, and Wagner"
     ],
-    "context": "The unaccompanied opening cadenza of 'West End Blues' (recorded June 28, 1928) announced that jazz could be art at the highest level. Doug Ramsey wrote that 'Mozart, Bartok, or Stravinsky would have been grateful for the inspiration to compose' it. Source: uDiscoverMusic 'The Day Jazz Changed Forever'; Library of Congress NRPB Hot Five/Seven essay (Doug Ramsey quotation).",
+    "context": "The unaccompanied opening cadenza of 'West End Blues' (recorded June 28, 1928) announced that jazz could be art at the highest level. Doug Ramsey wrote, in his liner notes for the 2000 compilation Ken Burns Jazz: The Definitive Louis Armstrong, that 'Mozart, Bartok, or Stravinsky would have been grateful for the inspiration to compose' the nine-bar cadenza. Source: Doug Ramsey, liner notes to The Definitive Louis Armstrong (2000), as quoted at pophistorydig.com ('What A Wonderful World', bibliography); uDiscoverMusic, 'The Day Jazz Changed Forever'.",
     "topic": "birth-of-jazz-louis-armstrong-and-new-orleans"
   },
   {
@@ -18396,7 +18396,7 @@
   },
   {
     "tier": 3,
-    "question": "Builders at Chartres set an eleven-ring stone labyrinth into the cathedral floor around 1200, one winding path about 261 metres long. Believers too poor or too frail for a far, dangerous journey followed its path instead, as a stand-in for one particular pilgrimage. Which pilgrimage did it stand in for?",
+    "question": "Builders at Chartres set an eleven-ring stone labyrinth into the cathedral floor around 1200, one winding path about 261 metres long. A tradition first written down long afterward made walking such a floor maze a stand-in for one far, dangerous pilgrimage, for believers too poor or too frail to go. Which pilgrimage was it said to replace?",
     "answer": "A pilgrimage to Jerusalem",
     "choices": [
       "A pilgrimage to Jerusalem",
@@ -18404,7 +18404,7 @@
       "A pilgrimage to Compostela",
       "A pilgrimage to the Jordan"
     ],
-    "context": "Pilgrims called it the 'chemin de Jerusalem' - the road to Jerusalem - a symbolic pilgrimage to the Holy Land for those who could never make the real trip. The labyrinth is about 12.9 metres across. Source: https://www.discover-chartres.com/chartres-labyrinth.html",
+    "context": "Guidebooks often call the Chartres labyrinth a medieval stand-in for the pilgrimage to the Holy Land, but the evidence is late: the earliest recorded use of the name 'chemin de Jerusalem', the road to Jerusalem, for a church floor maze dates to the late 1700s (for the mazes at Reims and Saint-Omer), and pilgrims may have followed the Chartres path on their knees in the 1600s. The labyrinth is about 12.9 metres across. Source: https://en.wikipedia.org/wiki/Labyrinth ; https://www.discover-chartres.com/chartres-labyrinth.html",
     "topic": "gothic-cathedrals-chartres-notre-dame"
   },
   {
@@ -28042,15 +28042,15 @@
   },
   {
     "tier": 2,
-    "question": "A rabid dog bit Joseph Meister, a nine-year-old boy from Alsace, fourteen times in July 1885, and rabies had always killed. His mother carried him to Louis Pasteur in Paris as their only hope, and Pasteur risked a new, untried treatment on him. What place in medical history did Joseph win?",
-    "answer": "The first human ever saved from rabies",
+    "question": "A rabid dog bit Joseph Meister, a nine-year-old boy from Alsace, fourteen times in July 1885, and rabies, once it took hold, always killed. His mother carried him to Louis Pasteur in Paris as their only hope, and Pasteur risked a new, barely tested treatment on him. What place in medical history did Joseph win?",
+    "answer": "The first person saved by a rabies vaccine",
     "choices": [
-      "The first human ever saved from rabies",
-      "The first human ever given any vaccine",
-      "The first child ever given anesthesia",
-      "The first person ever given a transfusion"
+      "The first person saved by a rabies vaccine",
+      "The first person given any vaccine at all",
+      "The first child ever put under anesthesia",
+      "The first patient given a blood transfusion"
     ],
-    "context": "On July 6, 1885, Pasteur — a chemist, not a physician — treated Joseph Meister, bitten two days earlier by a rabid dog. Meister survived and became the first human ever saved from rabies by vaccination, beginning about 60 hours after the bite. Source: pasteur.fr, history of the first rabies vaccination.",
+    "context": "On July 6, 1885, Pasteur, a chemist rather than a physician, began treating Joseph Meister, bitten two days earlier by a rabid dog; the boy received 13 inoculations and lived. Pasteur's notebooks show he had treated two people before Meister (one survived but may never have had rabies, and the other died of it), so Meister is usually counted as the first person saved by a rabies vaccine. Source: https://en.wikipedia.org/wiki/Louis_Pasteur ; https://grokipedia.com/page/Joseph_Meister ; pasteur.fr, history of the first rabies vaccination.",
     "topic": "louis-pasteur-germ-theory-and-vaccines"
   },
   {
