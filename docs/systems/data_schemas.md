@@ -1045,7 +1045,7 @@ recalled hints.
 
 ## 15. `data/flavor_encounters.json`
 
-**List, not dict.** 141 entries. Each entry:
+**List, not dict.** 152 entries (Dungeon Alive slice 9, 2026-11-12). Each entry:
 
 ```json
 {

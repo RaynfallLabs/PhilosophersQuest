@@ -5,7 +5,7 @@
 > gate and the Road are both ON (`data/karma_rules.json: gate_enabled`,
 > `road_enabled`).
 > Scope: karma scale (-10..+10), 37 block-anchor encounters (depth-true
-> since Dungeon Alive 7, 2026-11-12), 141
+> since Dungeon Alive 7, 2026-11-12), 152
 > story and flavor encounters, the Road, Ethereal Unicorn state machine, Magic
 > Dungeon Carrot, Prayer v2 (`\` key), Divine Intercession
 > (Shift+`\`), Fisher King cooldown mechanics, the Altar of the Last
@@ -364,7 +364,7 @@ chain exists.
 
 ---
 
-## 3. The 141 story and flavor encounters
+## 3. The 152 story and flavor encounters
 
 They live in `data/flavor_encounters.json` (no hardcoded list), loaded as
 `src/flavor_encounters.py::FLAVOR_ENCOUNTERS`, and share the NPC encounter UI
@@ -409,55 +409,60 @@ it (`flv_dead_come_for_the_book`, hostile).
 | `flv_three_mushrooms` | Luminous Mushrooms | 3-18 | light | none |  |
 | `flv_crying_bait` | Crying Girl | 4-14 | medium | judgment |  |
 | `flv_charons_obol` | Drowned Girl | 4-15 | light | none |  |
-| `flv_treasure_hunter_desperate` | Desperate Treasure-Hunter | 4-35 | light | none |  |
-| `flv_singing_bones` | The Singing Bones | 4-40 | light | none |  |
+| `flv_treasure_hunter_desperate` | Corran Vey, Treasure-Hunter | 4-30 | light | none |  |
+| `flv_singing_bones` | Hamund, the Singing Bones | 4-40 | light | none |  |
 | `flv_moneylender_purse` | Moneylender's Purse | 5-15 | medium | none | contested |
 | `deadite_woman` | Moaning Woman | 5-18 | light | none |  |
 | `flv_saint_martin` | Freezing Beggar | 5-18 | light | none |  |
-| `flv_broken_automaton` | Broken Automaton | 5-20 | light | none |  |
-| `flv_weeping_ghost` | Old Nan and the Cat | 5-20 | light | none |  |
+| `flv_broken_automaton` | Bronze Automaton | 5-20 | light | none |  |
+| `flv_weeping_ghost` | Old Nan and the Cat | 5-20 | light | none | sitting with her schedules `flv_cobbler_comes_home` |
+| `flv_cobbler_comes_home` | Cobbler | 7-26 | light | none | callback |
 | `flv_frozen_viper` | Frozen Viper | 6-16 | light | none |  |
 | `flv_three_purses` | Father of Three | 6-19 | medium | forgo |  |
 | `flv_cursed_mirror` | Ornate Mirror | 6-20 | light | none |  |
 | `flv_stone_fox` | Stone Fox | 6-20 | light | none |  |
 | `flv_limping_lion` | Limping Lion | 8-18 | light | none |  |
-| `flv_ysolde_gate` | Ysolde | 8-21 | light | none | callback |
+| `flv_ysolde_gate` | Ysolde | 8-21 | medium | owning | callback |
 | `flv_davy_under_beam` | Davy Hollins | 8-22 | light | none | tragedy: costly |
-| `flv_echo_voice` | The Voice in the Wall | 8-79 | light | none |  |
+| `flv_echo_voice` | The Voice in the Wall | 8-19 | light | none | one of four domain voices (with `flv_echo_temple`, `flv_echo_deep`, `flv_echo_rime`) |
+| `flv_echo_temple` | The Voice of the Last Priestess | 21-39 | light | none |  |
+| `flv_echo_deep` | The Voice under the Cinders | 41-59 | light | none |  |
+| `flv_echo_rime` | The Voice under the Ice | 61-79 | light | none |  |
 | `flv_diogenes_lantern` | Diogenes | 10-30 | light | none |  |
-| `flv_lena_returns` | Lena | 11-45 | medium | none | callback; escort |
+| `flv_lena_returns` | Lena | 11-45 | medium | owning | callback; escort |
 | `flv_ostrander_pit` | Ostrander | 12-20 | medium | none |  |
-| `flv_grumwald_second_bridge` | Grumwald | 13-29 | light | none | callback |
+| `flv_grumwald_second_bridge` | Grumwald | 13-29 | medium | owning | callback |
 | `flv_elspeth_comes` | Elspeth | 13-35 | medium | none | callback |
 | `flv_man_who_is_owed` | Man Who Is Owed | 14-30 | medium | stance | stance: 3.9 |
 | `flv_samsons_riddle` | Samson | 15-19 | high | cruelty (-1), forgo |  |
 | `flv_pied_piper` | The Piper | 15-34 | high | judgment | tragedy: costly |
-| `flv_aldric_cairn` | Sir Aldric | 17-35 | light | none | callback; tragedy: unsavable |
+| `flv_aldric_cairn` | Sir Aldric | 17-35 | medium | owning | callback; tragedy: unsavable |
 | `flv_lion_remembers` | Great Lion | 18-38 | medium | none | callback; trigger `lions_thorn`, fallback `None` |
-| `flv_ostrander_lantern` | Ostrander | 19-41 | light | none | callback |
-| `flv_lawspeaker_rock` | Lawspeaker's Rock | 20-38 | medium | judgment, cruelty (-1) |  |
-| `flv_old_spearman` | Talkative Old Spearman | 21-26 | light | none |  |
-| `flv_lost_caravan_guard` | Tarek the Guard | 21-32 | light | none |  |
-| `flv_brendans_whale` | Saint Brendan | 21-34 | medium | none |  |
-| `flv_wounded_scout` | Wounded Scout | 21-34 | light | none |  |
-| `flv_food_vendor_dungeon` | Bramble the Vendor | 21-36 | light | none |  |
-| `flv_dwarven_smith_marta` | Brunhild Irontemper | 21-38 | light | none |  |
-| `flv_rust_collector` | Old Veska | 22-35 | light | none |  |
+| `flv_ostrander_lantern` | Ostrander | 18-41 | light | none | callback |
+| `flv_lawspeaker_rock` | Lawspeaker's Rock | 11-19 | medium | judgment, cruelty (-1) |  |
+| `flv_old_spearman` | Nestor of Pylos | 21-26 | light | none |  |
+| `flv_lost_caravan_guard` | Tarek the Guard | 2-19 | light | none |  |
+| `flv_brendans_whale` | Saint Brendan | 21-34 | medium | judgment |  |
+| `flv_wounded_scout` | Wren Hallet, Scout | 21-34 | light | none |  |
+| `flv_food_vendor_dungeon` | Bramble the Vendor | 2-19 | light | none |  |
+| `flv_dwarven_smith_marta` | Thrar Coalhand, Journeyman | 21-38 | light | none | Thrar Coalhand, a journeyman grinder (Brunhild is the armourer trader) |
+| `flv_rust_collector` | Old Veska | 2-19 | light | none |  |
 | `flv_apprentice_runescribe` | Apprentice Runescribe | 22-36 | light | none |  |
 | `flv_thokk` | Thökk | 22-42 | medium | forgo | tragedy: unsavable; disguise: loki |
 | `flv_trembler` | Aristodemus | 22-44 | medium | cruelty (-1) | contested; escort |
 | `flv_plague_doctor` | Doctor Finch | 23-38 | light | none |  |
 | `flv_robes_ambush` | Morrow | 24-34 | light | none | callback |
 | `flv_battle_weary_veteran` | Calla Strand | 24-38 | light | none |  |
-| `flv_exposed_child` | Exposed Child | 24-44 | medium | stance, stance_wrong (-1) | stance: 9,3.10 |
+| `flv_exposed_child` | Exposed Child | 11-19 | medium | stance | stance: 9,3.10 |
 | `flv_ink_stained_scholar` | Scholar Evaine | 25-40 | light | none |  |
 | `flv_gyges_ring` | Gyges | 25-46 | medium | forgo |  |
-| `flv_boundary_stone` | Boundary Stone | 26-50 | medium | judgment |  |
+| `flv_boundary_stone` | Boundary Stone | 11-19 | medium | judgment |  |
 | `flv_mnemonic_monk` | Brother Osias | 27-40 | light | none |  |
-| `flv_utgard_contests` | Courteous Giant | 28-39 | medium | none |  |
+| `flv_utgard_contests` | Courteous Giant | 61-70 | medium | none |  |
+| `flv_hymirs_boat` | Hymir's Boat | 61-70 | medium | none | disguise: thor |
 | `flv_whispering_hermit` | The Hermit | 30-40 | light | none |  |
-| `flv_mimirs_well` | Mimir's Well | 30-62 | light | none |  |
-| `flv_sword_in_anvil` | Sword in the Anvil | 31-39 | medium | betray (-1) |  |
+| `flv_mimirs_well` | The Head of Mimir | 63-79 | light | none | the Rime Halls; apart from the Mimir altar (42-55) |
+| `flv_sword_in_anvil` | Sword in the Anvil | 11-19 | medium | betray (-1) |  |
 | `flv_damocles_feast` | Damocles | 31-56 | high | judgment |  |
 | `flv_witch_finder` | The Witch-Finder | 31-65 | high | judgment |  |
 | `flv_moth_woman` | The Moth Woman | 32-40 | light | none |  |
@@ -467,69 +472,74 @@ it (`flv_dead_come_for_the_book`, hostile).
 | `flv_reliquary_chapel` | Brothers of the Deep Watch | 37-53 | medium | oath keep, oath break (-1) | callback |
 | `flv_coffin_bearer` | Last Bearer | 41-47 | medium | oath sworn |  |
 | `flv_false_merchant_goblin` | "Legitimate" Merchant | 41-54 | light | none |  |
-| `flv_crying_giant` | Grieving Giant | 41-55 | light | none |  |
-| `flv_echo_child` | Echo Child | 41-55 | light | none |  |
+| `flv_crying_giant` | Grieving Cyclops | 41-55 | light | none |  |
+| `flv_echo_child` | Echo | 41-55 | light | none |  |
 | `flv_philosophical_fungus` | The Thinking Mushroom | 41-56 | medium | none |  |
-| `flv_two_mothers` | Two Mothers | 41-90 | medium | judgment |  |
+| `flv_two_mothers` | Two Mothers | 11-29 | medium | judgment |  |
 | `flv_trapped_spirit_mason` | Weeping Mason | 42-58 | light | none |  |
 | `flv_relic_broker` | Relic Broker | 43-55 | medium | oath break (-1) | callback; trigger `cuthberts_gospel`, fallback `None` |
-| `flv_wandering_oracle_bone` | Oracle Bones Merchant | 43-57 | light | none |  |
+| `flv_wandering_oracle_bone` | The Bone Diviner | 43-57 | light | none |  |
 | `flv_time_lost_soldier` | The Lost Soldier | 43-74 | light | none |  |
-| `flv_abyss_cartographer` | Cartographer Issek | 43-75 | light | none |  |
+| `flv_abyss_cartographer` | Cartographer Issek | 41-50 | light | none |  |
 | `flv_ormonds_granary` | Ormond's Granary | 44-55 | light | none | callback |
 | `flv_bottled_constellation` | Star Merchant | 44-60 | light | none |  |
 | `flv_charons_return` | Charon | 44-95 | light | none | callback |
-| `flv_ghost_librarian_junior` | The Cataloguing Spirit | 44-97 | light | none |  |
-| `flv_antigone` | Antigone | 45-58 | medium | betray (-1: informing on her, marked villain) | contested; authority unjust (Creon's edict) |
+| `flv_ghost_librarian_junior` | The Cataloguing Spirit | 44-60 | light | none |  |
+| `flv_antigone` | Antigone | 21-39 | medium | betray (-1: informing on her, marked villain) | contested; authority unjust (Creon's edict) |
 | `flv_sorrow_lantern` | Lantern of Regret | 45-58 | light | none |  |
-| `flv_setne_tomb` | Setne's Tomb | 45-65 | high | oath sworn, forgo | callback; tragedy: unsavable |
-| `flv_dragons_accountant` | Snerk Ledgerscale | 45-88 | medium | judgment, cruelty (-1) |  |
+| `flv_setne_tomb` | Neferkaptah | 45-65 | high | oath sworn, forgo | callback; tragedy: unsavable |
+| `flv_dragons_accountant` | Snerk Ledgerscale | 41-60 | medium | judgment, cruelty (-1) |  |
 | `flv_disguised_dionysus` | The Merry Wanderer | 46-60 | light | none | disguise: dionysus |
-| `flv_stone_singer` | Stone Singer | 46-60 | light | none |  |
+| `flv_stone_singer` | Ysra Deepsong | 46-60 | light | none |  |
 | `flv_dream_weaver` | Dream Weaver | 47-60 | light | none |  |
 | `flv_cuthbert_chapel` | Brother Sacristan | 48-61 | medium | oath keep | callback; trigger `cuthberts_gospel`, fallback `None` |
-| `flv_pardoner` | The Pardoner | 48-80 | medium | cruelty (-1), forgo |  |
-| `weeping_mother` | Weeping Mother | 50-60 | light | none |  |
-| `flv_andvaris_pool` | Andvari | 50-64 | medium | cruelty (-1), forgo |  |
+| `flv_pardoner` | The Pardoner | 11-30 | medium | cruelty (-1), forgo |  |
+| `weeping_mother` | Weeping Mother | 50-60 | light | none | a passed prayer schedules `flv_pip_ferrers` |
+| `flv_pip_ferrers` | Pip Ferrers | 52-68 | light | none | callback |
+| `flv_andvaris_pool` | Andvari | 41-59 | medium | cruelty (-1), forgo |  |
 | `flv_disguised_hermes` | Swift Stranger | 50-64 | medium | none | disguise: hermes |
-| `flv_azarias` | Azarias | 50-70 | medium | none | disguise: raphael; escort |
-| `flv_the_mast` | The Mast | 52-66 | medium | none | contested |
+| `flv_azarias` | Azarias | 41-98 | medium | none | disguise: raphael; escort |
+| `flv_the_mast` | The Mast | 31-39 | medium | none | contested |
 | `flv_dead_come_for_the_book` | Neferkaptah | 54-98 | high | oath break (-1) | callback |
 | `flv_socrates_cell` | Socrates | 55-70 | high | none | contested |
 | `flv_thorleif_skald` | Thorleif Grimsson | 60-74 | medium | oath sworn | tragedy: unsavable |
-| `flv_abyssal_wine_merchant` | Pellok the Very Lost | 61-74 | light | none |  |
-| `flv_abyssal_alchemist` | Alchemist Mourne | 61-76 | light | none |  |
+| `flv_abyssal_wine_merchant` | Pellok the Slightly Lost | 35-39 | light | none |  |
+| `flv_abyssal_alchemist` | Mourne, Dwarf Alchemist | 41-60 | light | none |  |
 | `flv_mad_knight_riddle` | Sir Lorvaine the Certain | 62-77 | light | none |  |
-| `flv_melancholy_old_champion` | The Last Champion | 63-98 | light | none |  |
-| `flv_squire_tobyn` | Squire Tobyn | 64-78 | medium | oath keep, oath break (-1) | callback |
+| `flv_melancholy_old_champion` | Ulf Haraldsson, of the Einherjar | 61-79 | light | none |  |
+| `flv_squire_tobyn` | Squire Tobyn | 24-38 | medium | oath keep, oath break (-1) | callback |
 | `flv_echo_of_dead_wizard` | The Lingering Echo | 64-79 | light | none |  |
 | `flv_skalds_stone` | Rune-Stone | 64-84 | medium | oath keep, oath break (-1) | callback |
-| `flv_green_girdle` | Lady Bertilak | 65-71 | medium | forgo | the kept secret schedules the Green Chapel |
+| `flv_green_girdle` | Lady Bertilak | 65-71 | medium | forgo | the kept secret schedules the Green Chapel; the honest guest pays a sleepless night (SP) |
 | `flv_green_chapel` | The Green Knight | 67-73 | high | owning (+1: the girdle given back, before the swings or after the nick) | callback; authority just |
 | `flv_vafthrudnir` | Vafthrudnir | 65-85 | high | none |  |
+| `flv_valkyrie_choice` | The Chooser of the Slain | 71-79 | high | judgment |  |
 | `flv_crossroads_fiddler` | Crossroads Fiddler | 66-80 | medium | sacrilege (-1), forgo | disguise: devil |
-| `flv_djinn_in_a_bottle` | Something in a Bottle | 66-80 | light | none |  |
-| `flv_avatar_athena` | Grey-Eyed Woman | 66-90 | medium | none | disguise: athena |
+| `flv_djinn_in_a_bottle` | Something in a Copper Jar | 66-80 | light | none |  |
+| `flv_avatar_athena` | Grey-Eyed Woman | 31-39 | medium | none | disguise: athena |
 | `flv_invisible_archivist` | The Unseen Archivist | 68-80 | light | none |  |
 | `flv_mirror_of_past_self` | The Mirror Shade | 70-80 | light | none |  |
-| `flv_deaths_chessboard` | Death | 71-98 | high | forgo, cruelty (-1) |  |
-| `flv_trapped_god_fragment` | Dim Light in the Stone | 72-100 | light | none |  |
+| `flv_deaths_chessboard` | Death | 71-98 | high | forgo, cruelty (-1) | the family are the locust cult's captives |
+| `flv_trapped_god_fragment` | The Old Titan | 81-98 | light | none | Kronos in Tartarus |
 | `flv_defector` | Kneeling Herald | 80-98 | medium | judgment |  |
+| `flv_ulysses_flame` | The Twin Flame | 81-90 | medium | judgment |  |
 | `flv_humorous_imp_salesman` | Disreputable Imp | 81-92 | light | none |  |
 | `flv_practical_golem_medic` | Medical Construct | 81-93 | light | none |  |
 | `flv_dying_hero_berengar` | Berengar the Gold | 81-95 | light | none |  |
-| `flv_final_merchant_ortolan` | Ortolan the Last Merchant | 81-98 | light | none |  |
-| `flv_time_lost_general` | The General Out of Time | 83-96 | light | none |  |
-| `flv_dying_oracle_cassandra` | Weeping Prophet | 84-99 | light | none |  |
+| `flv_final_merchant_ortolan` | Simon the Sorcerer | 81-98 | light | none | Simon Magus now (the trader Ortolan is the deep generalist) |
+| `flv_time_lost_general` | Publius Quinctilius Varus | 83-96 | light | none |  |
+| `flv_dying_oracle_cassandra` | Cassandra | 84-99 | light | none |  |
 | `flv_wondrous_memory_keeper` | Keeper of Last Memories | 85-100 | light | none |  |
-| `flv_rolands_horn` | Roland | 86-96 | medium | oath sworn, cruelty (-1) | tragedy: unsavable |
+| `flv_rolands_horn` | Roland | 86-92 | medium | oath sworn, cruelty (-1) | tragedy: unsavable |
 | `flv_last_philosopher` | Boethius | 86-98 | medium | none | tragedy: unsavable |
-| `flv_paladin_end` | Sir Oswin | 86-98 | light | none | callback |
-| `flv_wondrous_star_being` | Fallen Constellation | 87-100 | light | none |  |
-| `flv_eerie_mirror_walker` | The One Behind You | 88-100 | light | none |  |
+| `flv_azazel_bound` | The Bound Watcher | 91-98 | high | sacrilege (-1), judgment |  |
+| `flv_sisyphus` | Sisyphus | 81-98 | light | none |  |
+| `flv_paladin_end` | Sir Oswin | 86-98 | light | none | callback; the witness is a dead pilgrim |
+| `flv_wondrous_star_being` | The Fallen Star | 87-100 | light | none |  |
+| `flv_eerie_mirror_walker` | The Fetch | 88-100 | light | none |  |
 | `flv_philosophical_entity_void` | The Enumerated Self | 88-100 | light | none |  |
 | `flv_rolands_horn_gate` | The Black Gate | 91-98 | medium | oath keep, oath break (-1) | callback |
-| `flv_ruth_gale` | Ruth Gale | 92-98 | light | none | callback |
+| `flv_ruth_gale` | Ruth Gale | 92-98 | medium | owning | callback |
 | `flv_the_gate` | Old Fisherman | 94-98 | light | none | callback |
 
 Related non-karmic encounters that live elsewhere:
