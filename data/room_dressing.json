@@ -1,0 +1,241 @@
+{
+  "_doc": "What stands in each special room (src/decor.py furnish_special_rooms; Dungeon Alive slice 4, A1). The room's own entry line in main.py says what is there, and now it is drawn: a barracks has its bunks, weapon racks and cold cook-pot; a library its shelves and lectern. Per layer: 'ids' with weights and 'count' [min, max]. Standing pieces go against the walls away from the ways in; wall pieces on the ring walls; floor decals on free floor ('on_water': on the room's water tiles instead). 'runner' lays a carpet from the throne to the far wall. Items and sleepers already in the room keep their tiles.",
+  "rooms": {
+    "treasury": {
+      "stand": {
+        "ids": {
+          "strongbox_empty": 2,
+          "ledger_desk": 1
+        },
+        "count": [
+          2,
+          3
+        ]
+      },
+      "wall": {
+        "ids": {
+          "banner": 1,
+          "wall_torch": 1
+        },
+        "count": [
+          1,
+          2
+        ]
+      }
+    },
+    "library": {
+      "wall": {
+        "ids": {
+          "bookshelf": 1
+        },
+        "count": [
+          4,
+          8
+        ]
+      },
+      "stand": {
+        "ids": {
+          "reading_desk": 1
+        },
+        "count": [
+          1,
+          1
+        ]
+      },
+      "floor": {
+        "ids": {
+          "candles": 1
+        },
+        "count": [
+          0,
+          1
+        ]
+      }
+    },
+    "shrine": {
+      "wall": {
+        "ids": {
+          "icon": 1
+        },
+        "count": [
+          1,
+          2
+        ]
+      },
+      "floor": {
+        "ids": {
+          "candles": 1
+        },
+        "count": [
+          2,
+          3
+        ]
+      }
+    },
+    "monster_den": {
+      "floor": {
+        "ids": {
+          "straw": 3,
+          "bone_pile": 2
+        },
+        "count": [
+          4,
+          7
+        ]
+      }
+    },
+    "zoo": {
+      "stand": {
+        "ids": {
+          "cage": 2,
+          "feed_trough": 1
+        },
+        "count": [
+          2,
+          4
+        ]
+      },
+      "floor": {
+        "ids": {
+          "straw": 1
+        },
+        "count": [
+          1,
+          3
+        ]
+      }
+    },
+    "beehive": {
+      "wall": {
+        "ids": {
+          "honeycomb": 1
+        },
+        "count": [
+          4,
+          8
+        ]
+      },
+      "floor": {
+        "ids": {
+          "honey_drip": 1
+        },
+        "count": [
+          2,
+          4
+        ]
+      }
+    },
+    "graveyard": {
+      "stand": {
+        "ids": {
+          "grave_marker": 1
+        },
+        "count": [
+          1,
+          3
+        ]
+      },
+      "floor": {
+        "ids": {
+          "bone_pile": 1
+        },
+        "count": [
+          0,
+          2
+        ]
+      }
+    },
+    "barracks": {
+      "stand": {
+        "ids": {
+          "bunk": 3,
+          "weapon_rack": 2,
+          "cook_pot": 1
+        },
+        "count": [
+          3,
+          5
+        ]
+      },
+      "wall": {
+        "ids": {
+          "banner": 1,
+          "wall_torch": 1
+        },
+        "count": [
+          1,
+          2
+        ]
+      }
+    },
+    "swamp": {
+      "floor": {
+        "ids": {
+          "reeds": 1
+        },
+        "count": [
+          3,
+          6
+        ]
+      },
+      "water": {
+        "ids": {
+          "lily_pads": 1
+        },
+        "count": [
+          2,
+          5
+        ]
+      }
+    },
+    "throne_room": {
+      "runner": "carpet",
+      "wall": {
+        "ids": {
+          "banner": 1
+        },
+        "count": [
+          2,
+          4
+        ]
+      },
+      "stand": {
+        "ids": {
+          "brazier_lit": 1
+        },
+        "count": [
+          2,
+          2
+        ]
+      }
+    }
+  },
+  "beehive_keepers": {
+    "_doc": "G3: the beehive's line says 'Listen for the owners', and nobody was home. Its keepers now nest there, deep asleep like a zoo's: hive insects of the floor's own pool (by these words in their id), or any vermin it holds, 2 to 4 of them.",
+    "words": [
+      "wasp",
+      "bee",
+      "hornet",
+      "swarm",
+      "stirge",
+      "khrafstra",
+      "scarab",
+      "beetle"
+    ],
+    "count": [
+      2,
+      4
+    ]
+  },
+  "arrival": {
+    "_doc": "D1/G1: what a floor says on arrival about its special rooms: the danger is told at once (these were written for _build_atmosphere, which ran before the rooms existed, so they never fired). Treasure is learned by exploring: 'explore_line' is said once half the floor has been seen, if a vault, a treasury or a hidden cache lies on it.",
+    "zoo": "You hear exotic roars in the distance...",
+    "graveyard": "The air grows cold and unnaturally quiet...",
+    "beehive": "You hear a low, persistent buzzing...",
+    "barracks": "You hear the sound of blades being sharpened...",
+    "swamp": "The stench of marsh gas fills your nostrils...",
+    "throne_room": "You sense an aura of ancient authority...",
+    "monster_den": "Somewhere close, something large is snoring.",
+    "explore_line": "Somebody has hidden something worth finding on this floor."
+  }
+}

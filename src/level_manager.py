@@ -508,7 +508,7 @@ def _spawn_monster_den_extras(dungeon, monsters: list, level_num: int):
 def _populate_hidden_chambers(dungeon, monsters: list, items: list, level: int):
     """Populate each hidden chamber with themed monsters or treasure items."""
     import random as _rng
-    from dungeon import spawn_chamber_cache, spawn_monsters
+    from dungeon import spawn_chamber_cache
 
     # Theme keyword -> monster name/id substrings to prefer
     THEME_KEYWORDS = {
@@ -531,6 +531,20 @@ def _populate_hidden_chambers(dungeon, monsters: list, items: list, level: int):
         'cache':          [],  # treasure -- no monsters
     }
 
+    # The families a lair's theme belongs to, when no kind on the floor
+    # carries one of its words (G2: lairs drew from the whole pool and were
+    # themed a fifth of the time; yuan-ti lairs never).
+    THEME_FAMILIES = {
+        'rat_nest': ['vermin'], 'spider_den': ['vermin'], 'bat_cave': ['vermin'],
+        'goblin_camp': ['goblinkin'], 'kobold_den': ['goblinkin'], 'orc_hideout': ['goblinkin'],
+        'troll_cave': ['giants'], 'bandit_hideout': ['mortals'],
+        'undead_crypt': ['restless_dead', 'ghosts'], 'demon_shrine': ['demons'],
+        'yuan_ti_lair': ['serpents'], 'vampire_crypt': ['vampires_liches'],
+        'dragon_hoard': ['dragons'], 'lich_sanctum': ['vampires_liches', 'restless_dead'],
+        'chaos_shrine': ['demons', 'aberrations'],
+    }
+    from dungeon import spawn_themed
+
     for chamber in getattr(dungeon, 'hidden_chambers', []):
         room = chamber['room']
         ctype = chamber['type']
@@ -543,33 +557,12 @@ def _populate_hidden_chambers(dungeon, monsters: list, items: list, level: int):
             items.extend(spawn_chamber_cache(room, level, dungeon, _rng.Random()))
 
         elif ctype == 'lair':
-            keywords = THEME_KEYWORDS.get(theme, [])
-            count_target = _rng.randint(3, 6)
-
-            # Try to spawn monsters via the normal helper using only this chamber room
-            # spawn_monsters skips rooms[0], so pass [dummy, chamber_room]
-            lair_monsters = spawn_monsters([room, room], level, dungeon,
-                                           min_count=count_target,
-                                           max_count=count_target + 1,
-                                           existing=monsters)
-
-            if keywords:
-                # Re-roll monsters that don't match the theme until we get a match
-                # or run out of attempts; just label existing ones as themed preference
-                themed = [m for m in lair_monsters
-                          if any(kw in m.kind.lower() or kw in m.name.lower()
-                                 for kw in keywords)]
-
-                # If we found no themed monsters at all, keep whatever spawned
-                # (level-appropriate fallback) -- themed monsters may not exist at this level
-                if themed:
-                    # Prefer themed: fill remaining slots from themed pool
-                    final = themed[:count_target]
-                else:
-                    final = lair_monsters[:count_target]
-            else:
-                final = lair_monsters[:count_target]
-
+            # The lair's own kind: its words first, then its families, then
+            # (no kind of either can live this deep) the floor's own pool.
+            final = spawn_themed(room, level, dungeon,
+                                 words=THEME_KEYWORDS.get(theme, []),
+                                 families=THEME_FAMILIES.get(theme, []),
+                                 count=(3, 6), existing=monsters, rng=_rng.Random())
             monsters.extend(final)
 
 

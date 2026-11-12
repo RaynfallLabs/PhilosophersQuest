@@ -133,7 +133,10 @@ def test_generated_floors_are_dressed_and_never_cut(monkeypatch):
         for pos, fid in fx.items():
             defn = decor.fixture_def(fid)
             x, y = pos
-            if defn['layer'] == 'wall':
+            if fid == 'riddle_lintel':
+                # Carved over a hidden chamber's door (slice 4), found or not.
+                assert d.tiles[y][x] in (SECRET_DOOR, DOOR), (level, fid)
+            elif defn['layer'] == 'wall':
                 assert d.tiles[y][x] == WALL, (level, fid)
             else:
                 assert d.tiles[y][x] == FLOOR, (level, fid, d.tiles[y][x])

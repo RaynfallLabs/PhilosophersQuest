@@ -334,10 +334,238 @@ def _corridor_tiles(dungeon, taken) -> list:
     return out
 
 
+_ROOMS: dict | None = None
+_LORE: dict | None = None
+
+
+def room_dressing() -> dict:
+    global _ROOMS
+    if _ROOMS is None:
+        from paths import data_path
+        _ROOMS = _load(data_path('data', 'room_dressing.json'))
+    return _ROOMS
+
+
+def lore_fixtures() -> dict:
+    global _LORE
+    if _LORE is None:
+        from paths import data_path
+        _LORE = _load(data_path('data', 'lore_fixtures.json'))
+    return _LORE
+
+
+def _room_for_center(dungeon, center):
+    for room in dungeon.rooms:
+        if tuple(room.center) == tuple(center):
+            return room
+    return None
+
+
+def _place_layer(dungeon, room, layer: str, spec: dict, taken: set, placed_blocks: list, rng) -> int:
+    lo, hi = spec.get('count', [1, 1])
+    want = rng.randint(int(lo), int(hi))
+    if want <= 0:
+        return 0
+    n = 0
+    if layer == 'wall':
+        spots = [t for t in _ring_walls(room, dungeon) if t not in fixtures_of(dungeon)]
+    elif layer == 'water':
+        from dungeon import WATER
+        spots = [(x, y) for y in range(room.y + 1, room.y + room.height - 1)
+                 for x in range(room.x + 1, room.x + room.width - 1)
+                 if dungeon.in_bounds(x, y) and dungeon.tiles[y][x] == WATER
+                 and (x, y) not in fixtures_of(dungeon)]
+    elif layer == 'stand':
+        spots = _against_wall_spots(room, dungeon, taken)
+    else:
+        spots = [t for t in _inner(room, dungeon) if t not in taken]
+    rng.shuffle(spots)
+    for pos in spots:
+        if n >= want:
+            break
+        fid = _weighted(spec['ids'], rng)
+        if fixture_def(fid).get('blocks'):
+            if any(max(abs(pos[0] - b[0]), abs(pos[1] - b[1])) <= 1 for b in placed_blocks):
+                continue
+            placed_blocks.append(pos)
+        place(dungeon, pos, fid)
+        taken.add(pos)
+        n += 1
+    return n
+
+
+def _lay_runner(dungeon, room, fid: str, taken: set) -> int:
+    """A carpet from the throne to the far wall, along the room's longer
+    side (a throne room's runner)."""
+    from dungeon import THRONE
+    throne = next(((x, y) for (x, y) in
+                   ((x, y) for y in range(room.y, room.y + room.height)
+                    for x in range(room.x, room.x + room.width))
+                   if dungeon.in_bounds(x, y) and dungeon.tiles[y][x] == THRONE), None)
+    if throne is None:
+        return 0
+    tx, ty = throne
+    n = 0
+    if room.height >= room.width:
+        far_down = (room.y + room.height - 2) - ty
+        far_up = ty - (room.y + 1)
+        step = 1 if far_down >= far_up else -1
+        line = [(tx, y) for y in range(ty + step, ty + step * (max(far_down, far_up) + 1), step)]
+    else:
+        far_r = (room.x + room.width - 2) - tx
+        far_l = tx - (room.x + 1)
+        step = 1 if far_r >= far_l else -1
+        line = [(x, ty) for x in range(tx + step, tx + step * (max(far_r, far_l) + 1), step)]
+    inner = set(_inner(room, dungeon))
+    for pos in line:
+        if pos in inner and pos not in fixtures_of(dungeon):
+            place(dungeon, pos, fid)
+            n += 1
+    return n
+
+
+def furnish_special_rooms(dungeon, taken: set, placed_blocks: list, rng) -> int:
+    """Each special room's own furniture (data/room_dressing.json, A1)."""
+    rooms_cfg = room_dressing().get('rooms') or {}
+    n = 0
+    for center, rtype in (dungeon.__dict__.get('special_rooms') or {}).items():
+        cfg = rooms_cfg.get(rtype)
+        room = _room_for_center(dungeon, center)
+        if not cfg or room is None:
+            continue
+        if cfg.get('runner'):
+            n += _lay_runner(dungeon, room, cfg['runner'], taken)
+        for layer in ('wall', 'water', 'stand', 'floor'):
+            spec = cfg.get(layer)
+            if spec:
+                n += _place_layer(dungeon, room, layer, spec, taken, placed_blocks, rng)
+    return n
+
+
+def _lore_tier(level: int) -> int:
+    dom = domain_for(level)
+    if not dom:
+        return 1
+    ids = [d['id'] for d in domains()]
+    return min(5, ids.index(dom['id']) + 1)
+
+
+def place_lore_fixtures(dungeon, level: int, taken: set, placed_blocks: list, rng) -> int:
+    """Worth a Closer Look (data/lore_fixtures.json, B1): one to three lore
+    fixtures, each in the special room it belongs to when the floor has
+    one, otherwise in an ordinary room; the riddle lintel only over a
+    hidden chamber's door."""
+    cfg = lore_fixtures()
+    if level < int(cfg.get('first_floor', 2)):
+        return 0
+    lo, hi = cfg.get('per_floor', [1, 3])
+    want = min(3, rng.randint(int(lo), int(hi)))
+    defs = cfg['fixtures']
+    special = dungeon.__dict__.get('special_rooms') or {}
+    chosen = []
+    # Those that belong in a special room on this floor come first.
+    for center, rtype in special.items():
+        for fid, d in defs.items():
+            if rtype in d.get('rooms', ()) and fid not in [c[0] for c in chosen]:
+                room = _room_for_center(dungeon, center)
+                if room is not None:
+                    chosen.append((fid, room))
+    # The lintel, over a hidden chamber's secret door.
+    from dungeon import SECRET_DOOR
+    doors = []
+    for ch in dungeon.__dict__.get('hidden_chambers') or ():
+        r = ch.get('room')
+        if r is None:
+            continue
+        for y in range(r.y, r.y + r.height):
+            for x in range(r.x, r.x + r.width):
+                if dungeon.in_bounds(x, y) and dungeon.tiles[y][x] == SECRET_DOOR:
+                    doors.append((x, y))
+    n = 0
+    state = dungeon.__dict__.setdefault('lore_fixtures', {})
+    if doors and rng.random() < 0.5 and len(chosen) < want:
+        pos = rng.choice(doors)
+        if pos not in fixtures_of(dungeon):
+            place(dungeon, pos, 'riddle_lintel')
+            state[pos] = {'tier': _lore_tier(level)}
+            n += 1
+    skip = {id(r) for r in _skip_rooms(dungeon)}
+    first = dungeon.rooms[0] if dungeon.rooms else None
+    ordinary = [r for r in dungeon.rooms if id(r) not in skip and r is not first]
+    rng.shuffle(ordinary)
+    free = [fid for fid, d in defs.items()
+            if d.get('placement') != 'secret_door' and fid not in [c[0] for c in chosen]]
+    rng.shuffle(free)
+    for room, fid in zip(ordinary, free):
+        if len(chosen) + n >= want:
+            break
+        chosen.append((fid, room))
+    for fid, room in chosen[:max(0, want - n)]:
+        layer = fixture_def(fid).get('layer', 'stand')
+        if layer == 'wall':
+            spots = [t for t in _ring_walls(room, dungeon) if t not in fixtures_of(dungeon)]
+        else:
+            spots = _against_wall_spots(room, dungeon, taken)
+        rng.shuffle(spots)
+        for pos in spots:
+            if layer != 'wall' and any(max(abs(pos[0] - b[0]), abs(pos[1] - b[1])) <= 1
+                                       for b in placed_blocks):
+                continue
+            place(dungeon, pos, fid)
+            taken.add(pos)
+            if fixture_def(fid).get('blocks'):
+                placed_blocks.append(pos)
+            state[pos] = {'tier': _lore_tier(level)}
+            n += 1
+            break
+    return n
+
+
+def lore_fixture_near(dungeon, x: int, y: int):
+    """(pos, id) of an unspent lore fixture on or beside (x, y), or None."""
+    state = dungeon.__dict__.get('lore_fixtures') or {}
+    spent = dungeon.__dict__.get('fixture_state') or {}
+    for oy in (0, -1, 1):
+        for ox in (0, -1, 1):
+            pos = (x + ox, y + oy)
+            if pos in state and spent.get(pos) != 'spent':
+                fid = fixture_at(dungeon, *pos)
+                if fid:
+                    return pos, fid
+    return None
+
+
+def arrival_lines(dungeon) -> None:
+    """D1/G1: what the floor says on arrival, from what is really on it: its
+    special rooms (these lines never fired before: the atmosphere was built
+    before the rooms existed) and its domain hazards. Treasure is learned by
+    exploring: the floor keeps an explore line for half-way."""
+    import hazards
+    msgs = dungeon.atmosphere_messages
+    arr = room_dressing().get('arrival') or {}
+    said = 0
+    for rtype in (dungeon.__dict__.get('special_rooms') or {}).values():
+        line = arr.get(rtype)
+        if line and line not in msgs and said < 2:
+            msgs.append(line)
+            said += 1
+    present = set(fixtures_of(dungeon).values())
+    for fid in present:
+        line = hazards.hazard_def(fid).get('arrival', '')
+        if line and line not in msgs:
+            msgs.append(line)
+    rich = (dungeon.__dict__.get('vault') is not None
+            or 'treasury' in (dungeon.__dict__.get('special_rooms') or {}).values()
+            or any(ch.get('type') == 'treasure' for ch in dungeon.__dict__.get('hidden_chambers') or ()))
+    if rich and arr.get('explore_line'):
+        dungeon.explore_line = arr['explore_line']
+
+
 def dress_floor(dungeon, level: int, monsters=(), items=(), rng=None) -> int:
-    """Theme the floor and set its domain's dressing about it. Returns how
-    many fixtures were placed. Call after the monsters and items are down,
-    so nothing lands under a statue."""
+    """Theme the floor and set its domain's dressing about it: the special
+    rooms' own furniture, the lore fixtures, the domain's decor and hazards,
+    then the arrival lines. Returns how many fixtures were placed. Call
+    after the monsters and items are down, so nothing lands under a statue."""
     rng = rng or random.Random()
     dom = apply_theme(dungeon, level)
     if not dom:
@@ -347,7 +575,8 @@ def dress_floor(dungeon, level: int, monsters=(), items=(), rng=None) -> int:
     skip = {id(r) for r in _skip_rooms(dungeon)}
     before = _reachable_count(dungeon)
     placed_blocks = []
-    n = 0
+    n = furnish_special_rooms(dungeon, taken, placed_blocks, rng)
+    n += place_lore_fixtures(dungeon, level, taken, placed_blocks, rng)
     rooms = [r for r in dungeon.rooms if id(r) not in skip]
     for room in rooms:
         inner = [t for t in _inner(room, dungeon) if t not in taken]
@@ -417,6 +646,9 @@ def dress_floor(dungeon, level: int, monsters=(), items=(), rng=None) -> int:
     # the up stair reaches as much as it did, less the tiles now furnished.
     if before > 0 and placed_blocks:
         while placed_blocks and _reachable_count(dungeon) < before - len(placed_blocks):
-            remove(dungeon, placed_blocks.pop())
+            pos = placed_blocks.pop()
+            remove(dungeon, pos)
+            (dungeon.__dict__.get('lore_fixtures') or {}).pop(pos, None)
             n -= 1
+    arrival_lines(dungeon)
     return n

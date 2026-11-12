@@ -89,6 +89,7 @@ from game_families import FamilyMixin
 from game_seeker import SeekerMixin
 from game_popups import PopupMixin
 from game_hazards import HazardsMixin
+from game_lore_fixtures import LoreFixturesMixin
 from escort_system import EscortMixin
 from spells import LEARNABLE_SPELLS
 
@@ -220,7 +221,7 @@ DEEP_SLEEP = 10 ** 6           # a zoo, graveyard or barracks sleeper: until wok
 class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMixin, EncountersMixin,
            EmberpupMixin, BlackKnightMixin, ItemActionsMixin, RoadMixin, EscortMixin,
            SetneMixin, TraderMixin, PurseMixin, FamilyMixin, SeekerMixin, PopupMixin,
-           HazardsMixin):
+           HazardsMixin, LoreFixturesMixin):
     # FANTASY: Grimoire font set -- larger for readability. Read through the
     # UI scale on every use (SCALE_PLAN.md): a window resize can never leave
     # a font of the old size behind.
@@ -2379,6 +2380,23 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # Special room extra spawns (first visit only)
         if not saved:
             for (rcx, rcy), rtype in dungeon.special_rooms.items():
+                if rtype == 'beehive':
+                    # G3: "Listen for the owners." Its keepers nest here, deep
+                    # asleep like a zoo's: hive insects of this floor's pool.
+                    import decor as _decor
+                    from dungeon import spawn_themed
+                    _bk = _decor.room_dressing().get('beehive_keepers') or {}
+                    for room in dungeon.rooms:
+                        if room.center == (rcx, rcy):
+                            _keepers = spawn_themed(room, new_level, dungeon,
+                                                    words=_bk.get('words', []),
+                                                    families=['vermin'],
+                                                    count=tuple(_bk.get('count', [2, 4])),
+                                                    existing=monsters)
+                            for _bm in _keepers:
+                                _bm.status_effects['sleeping'] = DEEP_SLEEP
+                            monsters.extend(_keepers)
+                            break
                 if rtype == 'zoo':
                     for room in dungeon.rooms:
                         if room.center == (rcx, rcy):
@@ -2938,6 +2956,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                            and _tiles[ey][ex] != 0)
             if total > 0:
                 qs.on_floor_explored(explored / total)
+                # Half the floor seen: the treasure line, if it has one (D1).
+                _xl = self.dungeon.__dict__.get('explore_line')
+                if _xl and explored * 2 >= total:
+                    self.dungeon.explore_line = ''
+                    self.add_message(_xl, 'success')
                 if explored >= total and not getattr(self.dungeon, '_seeker_explored', False):
                     self.dungeon._seeker_explored = True
                     self._seeker_event('floor_explored', floor=int(self.dungeon_level))
@@ -3381,6 +3404,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             # A statue, a bunk, a stalagmite: it stands in the way, and
             # bumping it costs nothing (src/decor.py).
             import decor
+            _hint = self._lore_fixture_hint(nx, ny)
+            if _hint:
+                self.add_message(_hint, 'info')
+                return
             _what = decor.blocking_name(self.dungeon, nx, ny) or 'something'
             self.add_message(f"{_what[:1].upper()}{_what[1:]} stands in your way.", 'info')
             return
@@ -3636,6 +3663,16 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
 
     def _notify_ground(self, x: int, y: int):
         """Print messages about items and notable features at (x, y)."""
+        # A lore fixture beside the hero (game_lore_fixtures.py): said once.
+        import decor as _decor
+        _lf = _decor.lore_fixture_near(self.dungeon, x, y)
+        if _lf:
+            _told = self.dungeon.__dict__.setdefault('_lore_told', set())
+            if _lf[0] not in _told:
+                _told.add(_lf[0])
+                _hint = self._lore_fixture_hint(*_lf[0])
+                if _hint:
+                    self.add_message(_hint, 'info')
         # Special room notification (once per room per floor)
         _SPECIAL_ROOM_MSGS = {
             'treasury':    ("Strongboxes line the walls of this chamber. Somebody meant to come back for these.", 'success'),
@@ -6804,6 +6841,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self._dig_grave()
         elif tile == THRONE:
             self._sit_throne()
+        elif self._lore_fixture_offer():
+            pass                      # a lore fixture beside you (game_lore_fixtures.py)
         else:
             self.add_message("There's nothing to interact with here.", 'info')
 

@@ -889,19 +889,8 @@ def _build_atmosphere(dungeon: 'Dungeon'):
     """Populate dungeon.atmosphere_messages based on features present."""
     msgs = dungeon.atmosphere_messages
 
-    for room_type in dungeon.special_rooms.values():
-        if room_type == 'zoo':
-            msgs.append("You hear exotic roars in the distance...")
-        elif room_type == 'graveyard':
-            msgs.append("The air grows cold and unnaturally quiet...")
-        elif room_type == 'beehive':
-            msgs.append("You hear a low, persistent buzzing...")
-        elif room_type == 'barracks':
-            msgs.append("You hear the sound of blades being sharpened...")
-        elif room_type == 'swamp':
-            msgs.append("The stench of marsh gas fills your nostrils...")
-        elif room_type == 'throne_room':
-            msgs.append("You sense an aura of ancient authority...")
+    # (The special rooms' lines are said by decor.arrival_lines, which runs
+    # once the rooms exist: this ran before them, so they never fired, G1.)
 
     if dungeon.vault is not None:
         msgs.append("You hear someone counting coins behind a wall...")
@@ -1463,6 +1452,39 @@ def spawn_monsters(rooms: List[Room], level: int, dungeon: Dungeon,
             break
         _spawn_one_in_room(rng.choice(spawn_rooms), eligible, dungeon, monsters, rng)
     return monsters[len(_held):]
+
+
+def spawn_themed(room: Room, level: int, dungeon: Dungeon, words=(), families=(),
+                 count: tuple = (3, 5), existing: list = None, rng=None) -> list:
+    """Creatures of one theme set down in one room: kinds of the floor's own
+    pool whose id or name holds one of ``words``; failing those, kinds of
+    ``families``; failing those, the plain pool. (A lair drew from the
+    general pool and then hoped: a yuan-ti lair held a serpent 0% of the
+    time, G2.) Only the new monsters are returned."""
+    rng = rng or random.Random()
+    eligible = _floor_pool(level, dungeon)
+    words = [w.lower() for w in words or ()]
+    themed = {k: v for k, v in eligible.items()
+              if words and any(w in k or w in str(v.get('name', '')).lower() for w in words)}
+    if not themed and families:
+        themed = {k: v for k, v in eligible.items() if v.get('family') in families}
+    pool = themed or eligible
+    if not pool:
+        return []
+    from types import SimpleNamespace as _Taken
+    held = []
+    for _m in (existing or ()):
+        if getattr(_m, 'alive', True):
+            _fw, _fh = getattr(_m, 'footprint', (1, 1))
+            held += [_Taken(x=_m.x + _dx, y=_m.y + _dy) for _dx in range(_fw) for _dy in range(_fh)]
+    monsters = list(held)
+    want = rng.randint(int(count[0]), int(count[-1]))
+    tries = 0
+    while len(monsters) - len(held) < want and tries < want * 4:
+        tries += 1
+        if not _spawn_one_in_room(room, pool, dungeon, monsters, rng):
+            break
+    return monsters[len(held):][:max(want, 1) + 3]
 
 
 # Fewest monsters a generated floor starts with (plus one per eight floors).

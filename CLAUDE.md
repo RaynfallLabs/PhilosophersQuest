@@ -68,6 +68,7 @@ src/
   decor.py            - The five domains (themes) and the fixture layer: what stands in a floor
   hazards.py          - Domain hazards (data), trap lean, kin weights and the floor's resident clan
   game_hazards.py     - HazardsMixin: hazards at work on the hero and the monsters; fire vents breathe
+  game_lore_fixtures.py - LoreFixturesMixin: Worth a Closer Look, one question at a lore fixture (D)
   false_stairs.py     - Hellmouth mimics that pose as the down stair
   splitting.py        - Creatures that split when struck the wrong way
   sleepers.py         - Zoo, graveyard and barracks sleepers stir at footsteps and gold taken

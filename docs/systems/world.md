@@ -204,7 +204,7 @@ How they fire:
 - The Labyrinth keeps today's even draw.
 
 **Kin.**
-- `_build_spawn_pool(level, dungeon)` multiplies each kind's weight by `hazards.kin_weight`: the domain's `kin` times the floor's clan.
+- `_build_spawn_pool(level)` multiplies each kind's weight by `hazards.kin_weight` (the domain's `kin`; mirrored in `tools/balance/respawn_by_hp.pool_at`), and `_floor_pool(level, dungeon)` lays the floor's clan on top.
 - Weights only: no kind becomes eligible that was not, and the floor number is never a factor (LORE, NOT FLOOR).
 
 **Clans.**
@@ -213,6 +213,42 @@ How they fire:
 - Arrival lines are said on the first visit only (G4): `dungeon._atmosphere_said`.
 
 Tests: `tests/test_hazards.py`.
+
+### 3.11 Furnished rooms, lore fixtures and honest arrivals (Dungeon Alive slice 4)
+**Special rooms are furnished (A1)** the way their entry lines say (`data/room_dressing.json`, `decor.furnish_special_rooms`, the first step of `dress_floor`):
+- the barracks gets bunks, weapon racks and a cook-pot;
+- the library gets shelves and a lectern;
+- the throne room gets a carpet runner to the throne, banners and braziers;
+- the swamp gets lily pads on its water;
+- and so on for the rest.
+
+Standing pieces go against the walls, away from the ways in. The reachability walk covers them.
+
+**Lore fixtures, "Worth a Closer Look" (B1).** Configured in `data/lore_fixtures.json` and placed by `decor.place_lore_fixtures`: one to three per floor from floor 2, never more than three.
+- **Subjects:** one fixture for every subject except maths.
+- **Placement:**
+  - a fixture goes in its special room first: the copyist's desk in the library, the ledger in the treasury, the icon in the shrine, the trophy board in the zoo, the memorial stone in the graveyard, the cooking fire in the barracks, the brazen head in the throne room;
+  - otherwise it goes in an ordinary room that isn't the arrival room;
+  - the riddle lintel sits only on a hidden chamber's secret door.
+- **State:** `dungeon.lore_fixtures` holds `{pos: {'tier'}}`, with the tier set by the domain (Labyrinth 1 to Abyss 5).
+- **Use** (`LoreFixturesMixin`):
+  - Stand on or beside one and press **D**: `game_input` calls `_lore_fixture_offer` before the drop menu.
+  - It asks ONE threshold question (`threshold=1, total_qs=1`).
+  - Right or wrong, the fixture becomes `spent`, which dims it.
+- **Rewards** (`_lore_reward_<kind>`): scroll, potion, map (the floor explored), reveal_store (a hidden treasure chamber's door, otherwise the vault, otherwise coin), blessing (cures one ailment, otherwise heals a quarter of HP), coin (THRONE_SHARE), study (one unstudied kind on the floor, the clan first), meal (half of max SP), truth (the named foe, or the vault, or the whole map), pot (a coin share won, or a stake lost), open_door.
+- **Never** gear, and never karma. A wrong answer at the brazen head makes an `alarm` noise.
+- **Telling the player:** walking beside one for the first time says its line plus "(D: verb.)", and so does bumping it.
+
+**Honest arrivals (D1, G1).**
+- `decor.arrival_lines` runs at the end of `dress_floor`, once the special rooms exist. `_build_atmosphere` ran before them, so the six lines for the zoo, graveyard, beehive, barracks, swamp and throne room never fired. They now do, plus a new one for the monster den (at most two room lines per floor).
+- Each domain hazard on the floor adds its `arrival` line from `hazards.json`.
+- Treasure is learned by exploring: a floor with a vault, a treasury or a hidden cache keeps an `explore_line`. Main says it once, when half the floor's tiles have been seen.
+
+**True lairs (G2).** `_populate_hidden_chambers` calls `dungeon.spawn_themed`. It looks for kinds in the floor's pool that match the theme's words first, then kinds of the theme's families (`THEME_FAMILIES`), then the plain pool. Lairs used to match their theme 21% of the time; now nearly all do, except where no kind of the theme can live that deep.
+
+**The beehive's keepers (G3).** On the first visit, 2-4 hive insects from the floor's pool (`beehive_keepers` words, or any vermin) nest there, deep asleep like a zoo's.
+
+Tests: `tests/test_rooms_and_lore.py`.
 
 ### 3.8 Fountains, graves, thrones (interactive tiles)
 `FOUNTAIN`, `GRAVE`, `THRONE`, `ALTAR` are all walkable and transparent. They're placed either by the generic altar/fountain passes above, or by special-room spawns (§4.4 — `graveyard` paints `GRAVE` tiles, `throne_room` paints a single `THRONE`), or by scripted quest hooks (see §7 and [quests_mysteries](quests_mysteries.md)).

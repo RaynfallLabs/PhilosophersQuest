@@ -37,6 +37,8 @@ added_files = [
     ('data/domains.json',           'data'),   # the five domains (decor.py)
     ('data/fixtures.json',          'data'),   # fixtures (decor.py)
     ('data/hazards.json',           'data'),   # domain hazards (hazards.py)
+    ('data/room_dressing.json',     'data'),   # special-room furniture (decor.py)
+    ('data/lore_fixtures.json',     'data'),   # lore fixtures (game_lore_fixtures.py)
     ('data/hints.json',             'data'),
     ('data/question_twins.json',    'data'),   # same-fact twins the quiz holds back (quiz_engine)
     ('data/philosophy_mastery.json', 'data'),  # philosophy tier traits (philosophy_mastery.py)

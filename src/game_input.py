@@ -647,6 +647,10 @@ class InputMixin:
                 self._open_drop_menu()
             elif tile in (FOUNTAIN, GRAVE, THRONE):
                 self._interact_tile()
+            elif tile != ALTAR and self._lore_fixture_offer():
+                # Beside a lore fixture (a copyist's desk, a brazen head):
+                # its one question (game_lore_fixtures.py).
+                pass
             elif tile == ALTAR:
                 # D = DROP, even on an altar. v2.13.0: dropping on an altar
                 # now triggers a passive BUC reveal (game_divine
