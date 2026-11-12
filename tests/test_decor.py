@@ -17,7 +17,7 @@ sys.path.insert(0, os.path.join(ROOT, 'src'))
 
 import decor  # noqa: E402
 from dungeon import (FLOOR, STAIRS_UP, STAIRS_DOWN, DOOR, SECRET_DOOR,  # noqa: E402
-                     Dungeon, Room, WALL)
+                     Dungeon, Room, WALL, WATER)
 
 
 def _no_bones(monkeypatch):
@@ -138,6 +138,8 @@ def test_generated_floors_are_dressed_and_never_cut(monkeypatch):
                 assert d.tiles[y][x] in (SECRET_DOOR, DOOR), (level, fid)
             elif defn['layer'] == 'wall':
                 assert d.tiles[y][x] == WALL, (level, fid)
+            elif fid == 'lily_pads':
+                assert d.tiles[y][x] == WATER, (level, fid)     # a swamp's pool (slice 4)
             else:
                 assert d.tiles[y][x] == FLOOR, (level, fid, d.tiles[y][x])
             if defn.get('blocks'):

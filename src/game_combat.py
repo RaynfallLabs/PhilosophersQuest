@@ -2747,6 +2747,41 @@ class CombatMixin:
         if line:
             self.add_message(line, 'warning')
 
+    def _qa_alive_sampler(self) -> None:
+        """Titivillus QA build only (Shift+A): what Dungeon Alive put on this
+        floor, listed, with the whole map shown; pressed again on a floor
+        with no war-band, it sets one down (src/war_bands.py) and names it."""
+        if not getattr(self.player, 'qa_tools', False):
+            return
+        import collections
+        import decor
+        import hazards
+        import war_bands
+        d = self.dungeon
+        if getattr(self, '_qa_alive_floor', None) == self.dungeon_level and not getattr(d, 'band', None):
+            old = war_bands.data()['chance']
+            war_bands.data()['chance'] = 1.0
+            try:
+                got = war_bands.place_band(d, self.monsters, self.dungeon_level)
+            finally:
+                war_bands.data()['chance'] = old
+            self.add_message(f"[QA] A war-band of {len(got)} set down." if got
+                             else "[QA] No band fits this floor.", 'info')
+            return
+        self._qa_alive_floor = self.dungeon_level
+        for y in range(d.height):
+            for x in range(d.width):
+                d.explored.add((x, y))
+        dom = decor.domain_for(self.dungeon_level) or {}
+        fx = collections.Counter((d.__dict__.get('fixtures') or {}).values())
+        hz = {k: v for k, v in fx.items() if hazards.hazard_def(k)}
+        lore = [decor.fixture_at(d, *p) for p in (d.__dict__.get('lore_fixtures') or {})]
+        band = getattr(d, 'band', None) or {}
+        self.add_message(f"[QA] {dom.get('name', 'no domain')} (theme {d.theme}); "
+                         f"clan {getattr(d, 'clan', None)}; band {band.get('id')}.", 'info')
+        self.add_message(f"[QA] {sum(fx.values())} fixtures; hazards {dict(hz)}; "
+                         f"lore {lore}.", 'info')
+
     def _maybe_tell(self, m) -> None:
         """The first time in a run the hero sees a kind, its worst tell."""
         import tells
@@ -2783,6 +2818,50 @@ class CombatMixin:
             if (self.dungeon.in_bounds(cx, cy) and self.dungeon.tiles[cy][cx] == FLOOR
                     and _decor.fixture_at(self.dungeon, cx, cy) is None):
                 _decor.place(self.dungeon, (cx, cy), 'scorch_mark')
+
+    def _scavenge_prep(self, m) -> None:
+        """An idle scavenger (ghouls, vermin, oozes: data/senses.json
+        'scavengers') smells a corpse in reach and goes to eat it, so a
+        harvest is a race (C3)."""
+        import senses as _senses
+        if (not m.alive or getattr(m, 'is_allied', False) or m.__dict__.get('_tracking')
+                or m.__dict__.get('_goal') is not None or m.has_effect('sleeping')
+                or not _senses.is_scavenger(m)):
+            if m.__dict__.get('_tracking'):
+                m._scavenge = None          # a hunt comes before a meal
+            return
+        from items import Corpse
+        corpses = [i for i in self.ground_items if isinstance(i, Corpse)]
+        if not corpses:
+            m._scavenge = None
+            return
+        m._scavenge = _senses.scavenge_target(m, corpses)
+
+    def _scavenge_after(self, m) -> None:
+        feast = m.__dict__.get('_scavenge')
+        if not feast or not m.alive or (m.x, m.y) != tuple(feast):
+            return
+        import senses as _senses
+        from items import Corpse
+        s = _senses.data().get('scavengers') or {}
+        body = next((i for i in self.ground_items
+                     if isinstance(i, Corpse) and (i.x, i.y) == (m.x, m.y)), None)
+        if body is None:
+            m._scavenge = None
+            return
+        m._eaten = int(m.__dict__.get('_eaten', 0) or 0) + 1
+        seen = self._sees_monster(m)
+        if m._eaten == 1 and seen:
+            self.add_message(f"{the_name(m)} is feeding on the {self._display_name(body)}.", 'warning')
+        if m._eaten >= int(s.get('eat_turns', 3)):
+            self.ground_items.remove(body)
+            m._eaten = 0
+            m._scavenge = None
+            heal = max(1, int(m.max_hp * float(s.get('heal_share', 0.25))))
+            if m.can_heal():
+                m.hp = min(m.max_hp, m.hp + heal)
+            if seen:
+                self.add_message(f"{the_name(m)} has eaten the whole corpse.", 'warning')
 
     def _tick_wall_cracks(self) -> None:
         cracks = self.dungeon.__dict__.get('wall_cracks')
@@ -3210,8 +3289,10 @@ class CombatMixin:
             _was_in_pit = m.has_effect('stuck_in_pit')
             _pos_before = (m.x, m.y)
             _posing = false_stairs.poses_as_stairs(m)
+            self._scavenge_prep(m)
             did_attack = m.take_turn(self.player, self.dungeon, self.monsters,
                                      extra_occupied=_pet_occ)
+            self._scavenge_after(m)
             if did_attack:
                 # A blow on the hero carries (src/senses.py).
                 self._make_noise('struck')

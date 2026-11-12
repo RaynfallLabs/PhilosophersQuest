@@ -296,3 +296,63 @@ def test_a_lore_sense_says_itself_once_a_floor():
     wolf._tracking = False
     wolf.take_turn(hero, dun, [wolf])
     assert not wolf._sense_message, 'said once a floor per kind'
+
+
+def test_g7_an_archer_that_can_blink_steps_out_to_a_clear_shot():
+    w, h = 30, 20
+    tiles = [[FLOOR] * w for _ in range(h)]
+    for x in range(w):
+        tiles[0][x] = tiles[h - 1][x] = WALL
+    for y in range(h):
+        tiles[y][0] = tiles[y][w - 1] = WALL
+    dun = Dungeon(tiles, [Room(0, 0, w, h)], w, h, 55)
+    hero = Hero(15, 10)
+    arc = make('shadow_archer', 16, 10)
+    arc.phase_blink_chance = 1.0
+    arc._tracking = True
+    arc.take_turn(hero, dun, [arc])
+    assert max(abs(arc.x - hero.x), abs(arc.y - hero.y)) in (4, 2), (arc.x, arc.y)
+
+
+def test_g7_asterion_lowers_his_horns_before_his_rage():
+    dun = two_rooms()
+    hero = Hero(12, 5)
+    ast = make('asterion_minotaur', 16, 5)
+    ast._hit_run_state = 'hunting'
+    ast.take_turn(hero, dun, [ast])
+    assert ast._charge_ready
+
+
+def test_c3_a_ghoul_goes_to_a_corpse_and_eats_it():
+    from items import Corpse
+    import game_combat
+    dun = two_rooms()
+    hero = Hero(2, 2)
+    ghoul = make('ghoul', 15, 5)
+    ghoul._job = 'guard'
+    ghoul._home = (15, 5)
+    body = Corpse('Goblin', 'goblin', 17, 5)
+
+    class G(game_combat.CombatMixin):
+        def __init__(self):
+            self.ground_items = [body]
+            self.msgs = []
+
+        def add_message(self, t, k='info'):
+            self.msgs.append(t)
+
+        def _sees_monster(self, m):
+            return True
+
+        def _display_name(self, it):
+            return 'goblin corpse'
+    g = G()
+    assert senses.is_scavenger(ghoul)
+    for _ in range(12):
+        g._scavenge_prep(ghoul)
+        ghoul.take_turn(hero, dun, [ghoul])
+        g._scavenge_after(ghoul)
+        if body not in g.ground_items:
+            break
+    assert body not in g.ground_items, 'the corpse is eaten'
+    assert any('feeding' in m for m in g.msgs)

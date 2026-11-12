@@ -16,7 +16,7 @@ Shipped and heavily reworked through v2.18.0 (commit `409e15d`, 2026-09-27). The
 - `src/geom.py` — footprint helpers (`is_adjacent`, `occupied_tiles`, `all_occupied_tiles`, `monster_at_tile`) that handle multi-tile bosses correctly; the Monster class routes through these rather than comparing `(m.x, m.y)` directly.
 
 ## Data
-- `data/monsters.json` — 527 monster definitions keyed by id. 28,712 lines (every monster is a top-level key with `name`, `symbol`, `color`, `hp`, `attacks`, `ai_pattern`, …).
+- `data/monsters.json` — 574 monster definitions keyed by id. 28,712 lines (every monster is a top-level key with `name`, `symbol`, `color`, `hp`, `attacks`, `ai_pattern`, …).
 
 ## Related
 - [combat](combat.md) — damage pipeline (THAC0, resistance multiplier, dragon_scales, status DCs), chain mode, chain-passives.
@@ -33,7 +33,7 @@ The game needs a large, varied bestiary that:
 
 ## Design intent
 
-### "527 monsters" without 527 classes
+### "574 monsters" without 574 classes
 Every monster is an instance of the single `Monster` class. Behavioural differences come from JSON fields — `ai_pattern` picks a dispatch branch, flags like `can_charge` / `can_phase_blink` / `prefers_flank` compose on top of it, and status/damage interactions come from the `attacks[]` and `resistances`/`weaknesses`/`tags` arrays. `monster_classes.py` is NOT an OO hierarchy; it reads the written `family` field.
 
 ### Bell-curve spawn, no hard tiers
@@ -314,6 +314,10 @@ Brandon: "NONE automatically know where you are unless it's thematically and lor
 - Dagger backstab now counts any target that isn't tracking the hero.
 - Observe (`;`) adds the state line (`status_lines`). How a creature hunts (`senses_line`) is shown once its kind is known.
 
+**Scavengers (C3).** `data/senses.json` lists them under `scavengers`: ghouls, ghasts, the otyugh, charnel hounds and their kin, and any vermin or ooze. When one is idle (not hunting, not searching, awake) and smells a corpse within 8 tiles, `CombatMixin._scavenge_prep` gives it that place (`_scavenge`), and it walks there whatever its post. It eats for 3 turns, so a harvest is a race; it heals a quarter of its health and the corpse is gone. The hero sees "X is feeding on the corpse.", and Observe says "It is busy with a corpse."
+
+**G7.** Phase-blink now fires for the patterns that never reached it. An archer or a summoner blinks out to a clear shot 4 tiles away; Lyssa (hit-and-run) blinks in beside the hero. Asterion lowers his horns for a charge in his hunting state, not only once enraged. **QA:** Shift+A on the Titivillus build lists the floor's Dungeon Alive content and shows the map; pressed again, it sets down a war-band.
+
 Tests: `tests/test_senses.py`.
 
 ## War-bands (Dungeon Alive slice 5, 2026-11-12)
@@ -361,7 +365,7 @@ Tests: `tests/test_war_bands.py`.
 
 ## AI dispatch (15 patterns)
 
-`take_turn` dispatches on `self.ai_pattern` after the common pre-flight (immobilised, slowed, enrage swap, pack-dependent re-evaluation, flee-when-hurt flag). Dispatch is `if/elif` on string match — the matching chain is in `monster.py` lines ~826-867. **Count by pattern** across 527 monsters:
+`take_turn` dispatches on `self.ai_pattern` after the common pre-flight (immobilised, slowed, enrage swap, pack-dependent re-evaluation, flee-when-hurt flag). Dispatch is `if/elif` on string match — the matching chain is in `monster.py` lines ~826-867. **Count by pattern** across 527 monsters (counted 2026-05; there are 574 now):
 
 | pattern | count | dispatch | one-line behaviour |
 |---|---|---|---|

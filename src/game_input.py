@@ -350,6 +350,12 @@ class InputMixin:
                 # that tier earns its trait (philosophy_mastery.py).
                 self._qa_philosophy_tier()
                 return True
+            if event.unicode == 'A' and getattr(self.player, 'qa_tools', False):
+                # Titivillus QA build: Dungeon Alive at a glance on this floor
+                # (its domain, clan, band, hazards and lore fixtures, the map
+                # shown); a second press sets a war-band down if it has none.
+                self._qa_alive_sampler()
+                return True
             if event.unicode == '$' and getattr(self.player, 'qa_tools', False):
                 # Titivillus QA build: a heap of gold, one of every treasure
                 # and a trader with gems and the draught, to test coin weight.

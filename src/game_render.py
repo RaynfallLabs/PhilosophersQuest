@@ -10309,7 +10309,7 @@ class RenderMixin:
                 ("I", "Identify or study", FP.BODY_TEXT),
                 ("H", "Harvest corpse", FP.BODY_TEXT),
                 ("C", "Cook menu", FP.BODY_TEXT),
-                ("D", "Drop, gold / use tile or fixture", FP.BODY_TEXT),
+                ("D", "Drop, gold / use tile", FP.BODY_TEXT),
                 ("U / Q", "Eat / drink a potion", FP.BODY_TEXT),
                 ("R", "Read scroll or book", FP.BODY_TEXT),
             ]),

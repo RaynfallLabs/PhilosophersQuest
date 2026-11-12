@@ -2,111 +2,559 @@
   "_doc": "How each monster comes to know where the hero is (src/senses.py; Brandon, 2026-11-12: no monster knows where you are unless it is thematically and lore appropriate). Every monster sees (a real line of sight, within its perception_range, default 8) and hears (the noise the hero makes). Some have a lore sense on top, listed under 'families' (every member) and 'monsters' (one kind; it replaces the family's list). 'blind' takes sight away. Ranges are tiles. A sense that goes 'through_walls' finds the hero behind stone; 'needs_motion' fails while he stands still; 'sees_invisible' is not fooled by invisibility. 'line' is said the first time on a floor that a kind finds him that way, when it is within 'line_reach' tiles; it teaches the sense.",
   "line_reach": 12,
   "senses": {
-    "scent": {"range": 8, "through_walls": true, "sees_invisible": true,
-              "line": "{The} lifts its head and sniffs the air. It has your scent."},
-    "tremor": {"range": 5, "through_walls": true, "needs_motion": true, "sees_invisible": true,
-               "line": "Something feels your footsteps through the stone: {the} turns toward you."},
-    "lifesense": {"range": 6, "through_walls": true, "sees_invisible": true,
-                  "line": "A chill runs over your skin. {The} has felt the warmth of the living."},
-    "echo": {"range": 7, "through_walls": false, "sees_invisible": true,
-             "line": "A thin, shrill clicking: {the} sees you with sound."},
-    "mindsense": {"range": 8, "through_walls": true, "sees_invisible": true,
-                  "line": "A pressure behind your eyes. {The} has felt your thoughts."},
-    "guilt": {"range": 14, "through_walls": true, "sees_invisible": true,
-              "line": "{The} turns, as if someone had called its name. The Furies always find the guilty."},
-    "master": {"range": 999, "through_walls": true, "sees_invisible": true, "line": ""},
-    "keen_sight": {"sight_bonus": 4},
-    "truesight": {"sight_sees_invisible": true},
-    "blind": {"no_sight": true}
+    "scent": {
+      "range": 8,
+      "through_walls": true,
+      "sees_invisible": true,
+      "line": "{The} lifts its head and sniffs the air. It has your scent."
+    },
+    "tremor": {
+      "range": 5,
+      "through_walls": true,
+      "needs_motion": true,
+      "sees_invisible": true,
+      "line": "Something feels your footsteps through the stone: {the} turns toward you."
+    },
+    "lifesense": {
+      "range": 6,
+      "through_walls": true,
+      "sees_invisible": true,
+      "line": "A chill runs over your skin. {The} has felt the warmth of the living."
+    },
+    "echo": {
+      "range": 7,
+      "through_walls": false,
+      "sees_invisible": true,
+      "line": "A thin, shrill clicking: {the} sees you with sound."
+    },
+    "mindsense": {
+      "range": 8,
+      "through_walls": true,
+      "sees_invisible": true,
+      "line": "A pressure behind your eyes. {The} has felt your thoughts."
+    },
+    "guilt": {
+      "range": 14,
+      "through_walls": true,
+      "sees_invisible": true,
+      "line": "{The} turns, as if someone had called its name. The Furies always find the guilty."
+    },
+    "master": {
+      "range": 999,
+      "through_walls": true,
+      "sees_invisible": true,
+      "line": ""
+    },
+    "keen_sight": {
+      "sight_bonus": 4
+    },
+    "truesight": {
+      "sight_sees_invisible": true
+    },
+    "blind": {
+      "no_sight": true
+    }
   },
   "families": {
-    "dragons": ["scent"],
-    "oozes": ["blind", "tremor"],
-    "plants": ["blind", "tremor"],
-    "birds": ["keen_sight"],
-    "ghosts": ["lifesense"],
-    "celestials": ["truesight"]
+    "dragons": [
+      "scent"
+    ],
+    "oozes": [
+      "blind",
+      "tremor"
+    ],
+    "plants": [
+      "blind",
+      "tremor"
+    ],
+    "birds": [
+      "keen_sight"
+    ],
+    "ghosts": [
+      "lifesense"
+    ],
+    "celestials": [
+      "truesight"
+    ]
   },
   "ranges": {
-    "dragons": {"scent": 10},
-    "oozes": {"tremor": 2},
-    "plants": {"tremor": 1}
+    "dragons": {
+      "scent": 10
+    },
+    "oozes": {
+      "tremor": 2
+    },
+    "plants": {
+      "tremor": 1
+    }
   },
   "monsters": {
-    "asterion_minotaur": ["master"],
-    "death": ["master"],
-    "abaddon_destroyer": ["master"],
-    "fenrir_wolf": ["scent"],
-    "fenrir_pup": ["scent"],
-    "medusa_gorgon": ["tremor"],
-    "stheno_gorgon": ["tremor"],
-    "euryale_gorgon": ["tremor"],
-    "medusa": ["tremor"],
-
-    "blink_dog": ["scent"], "cave_bear": ["scent"], "death_dog": ["scent"], "dire_bear": ["scent"],
-    "dire_wolf_alpha": ["scent"], "fionn_hound": ["scent"], "sets_jackal": ["scent"],
-    "winter_wolf": ["scent"], "wolf_pack_leader": ["scent"], "calydonian_boar": ["scent"],
-    "hook_horror": ["echo"], "owlbear": ["keen_sight"],
-
-    "bat": ["echo"], "camazotz": ["echo"],
-    "giant_rat": ["scent"], "dire_rat": ["scent"], "carrion_crawler": ["scent"], "stirge_swarm": ["scent"],
-    "cave_spider": ["tremor"], "giant_spider": ["tremor"], "spider_queen": ["tremor"], "web_spinner": ["tremor"],
-    "arachne": ["tremor"], "anansi": ["tremor"], "jorogumo": ["tremor"], "ettercap": ["tremor"],
-    "giant_scorpion": ["tremor"], "giant_centipede": ["tremor"], "death_beetle": ["tremor"],
-    "rot_grub_swarm": ["tremor"], "scarab_swarm": ["tremor"], "khrafstra_swarm": ["tremor"],
-    "piercer": ["tremor"], "grick": ["tremor"],
-
-    "cobra": ["tremor"], "rock_python": ["tremor"], "sea_snake": ["tremor"], "swamp_serpent": ["tremor"],
-    "sable_serpent": ["tremor"], "sea_serpent_norse": ["tremor"], "takshaka_brood": ["tremor"],
-    "ra_serpent": ["tremor"], "naga_guardian": ["tremor"], "jormungandr_juvenile": ["tremor"],
-    "jormungandr_spawn": ["tremor"], "world_serpent": ["tremor"], "behir_lesser": ["tremor"],
-    "yuan_ti_pureblood": ["tremor"],
-
-    "werewolf": ["scent"], "werewolf_alpha": ["scent"], "elder_werewolf": ["scent"], "werebear": ["scent"],
-    "wererat": ["scent"], "weretiger": ["scent"], "wendigo": ["scent"],
-
-    "wight": ["lifesense"], "barrow_wight": ["lifesense"], "cairn_wight": ["lifesense"], "wight_lord": ["lifesense"],
-    "draugr": ["lifesense"], "draugr_wight": ["lifesense"], "revenant": ["lifesense"], "hels_handmaid": ["lifesense"],
-    "mohrg": ["lifesense"], "crypt_thing": ["lifesense"], "huecuva": ["lifesense"], "death_knight": ["lifesense"],
-    "death_knight_lord": ["lifesense"], "dread_knight": ["lifesense"], "dread_knight_legion": ["lifesense"],
-    "death_lord": ["lifesense"], "grave_knight": ["lifesense"],
-    "ghoul": ["scent"], "ghast": ["scent"], "ghast_eater": ["scent"], "charnel_hound": ["scent"], "gravehound": ["scent"],
-
-    "will_o_wisp": [], "will_o_wisp_lesser": [], "hecate_hound": ["scent"], "shadow_hound": ["scent"],
-
-    "vampire": ["scent"], "vampire_lord": ["scent"], "vampire_spawn": ["scent"], "vampire_thrall": ["scent"],
-    "elder_vampire": ["scent"], "ancient_vampire_lord": ["scent"], "nosferatu": ["scent"], "strigoi": ["scent"],
-    "vrykolakas": ["scent"], "jiangshi": ["lifesense"],
-
-    "cave_troll": ["scent"], "chaos_troll": ["scent"], "ice_troll": ["scent"], "troll": ["scent"],
-    "troll_brute": ["scent"], "war_troll": ["scent"], "ogre": ["scent"], "two_headed_ogre": ["scent"],
-    "hill_giant": ["scent"], "stone_giant": ["scent"], "frost_giant": ["scent"], "frost_giant_jarl": ["scent"],
-    "frostfang_giant": ["scent"], "fire_giant": ["scent"], "fire_giant_king": ["scent"], "cloud_giant": ["scent"],
-    "storm_giant": ["scent"], "elder_storm_giant": ["scent"], "ettin": ["scent"], "ettin_warchief": ["scent"],
-    "fomorian": ["scent"], "cacus": ["scent"],
-
-    "beholder": ["keen_sight"], "elder_beholder": ["keen_sight"], "beholder_spawn": ["keen_sight"],
-    "floating_eye": ["keen_sight"], "mind_flayer": ["mindsense"], "elder_mind_flayer": ["mindsense"],
-    "intellect_devourer": ["mindsense"], "otyugh": ["scent"], "gibbering_mouther": ["tremor"],
-    "roper": ["tremor"], "lurker_above": ["tremor"], "trapper": ["tremor"], "cloaker": ["tremor"],
-    "darkmantle": ["tremor"],
-
-    "earth_elemental": ["tremor"], "greater_earth_elemental": ["tremor"], "xorn": ["tremor"],
-    "asag_stone_warrior": ["tremor"],
-
-    "abyssal_hound": ["scent"], "cerberus": ["scent"], "galla_demon": ["scent"],
-    "erinyes_lesser": ["guilt"], "erinyes_greater": ["guilt"],
-    "deadite": ["lifesense"], "fresh_deadite": ["lifesense"], "risen_deadite": ["lifesense"],
-    "hugin_raven": ["keen_sight"]
+    "asterion_minotaur": [
+      "master"
+    ],
+    "death": [
+      "master"
+    ],
+    "abaddon_destroyer": [
+      "master"
+    ],
+    "fenrir_wolf": [
+      "scent"
+    ],
+    "fenrir_pup": [
+      "scent"
+    ],
+    "medusa_gorgon": [
+      "tremor"
+    ],
+    "stheno_gorgon": [
+      "tremor"
+    ],
+    "euryale_gorgon": [
+      "tremor"
+    ],
+    "medusa": [
+      "tremor"
+    ],
+    "blink_dog": [
+      "scent"
+    ],
+    "cave_bear": [
+      "scent"
+    ],
+    "death_dog": [
+      "scent"
+    ],
+    "dire_bear": [
+      "scent"
+    ],
+    "dire_wolf_alpha": [
+      "scent"
+    ],
+    "fionn_hound": [
+      "scent"
+    ],
+    "sets_jackal": [
+      "scent"
+    ],
+    "winter_wolf": [
+      "scent"
+    ],
+    "wolf_pack_leader": [
+      "scent"
+    ],
+    "calydonian_boar": [
+      "scent"
+    ],
+    "hook_horror": [
+      "echo"
+    ],
+    "owlbear": [
+      "keen_sight"
+    ],
+    "bat": [
+      "echo"
+    ],
+    "camazotz": [
+      "echo"
+    ],
+    "giant_rat": [
+      "scent"
+    ],
+    "dire_rat": [
+      "scent"
+    ],
+    "carrion_crawler": [
+      "scent"
+    ],
+    "stirge_swarm": [
+      "scent"
+    ],
+    "cave_spider": [
+      "tremor"
+    ],
+    "giant_spider": [
+      "tremor"
+    ],
+    "spider_queen": [
+      "tremor"
+    ],
+    "web_spinner": [
+      "tremor"
+    ],
+    "arachne": [
+      "tremor"
+    ],
+    "anansi": [
+      "tremor"
+    ],
+    "jorogumo": [
+      "tremor"
+    ],
+    "ettercap": [
+      "tremor"
+    ],
+    "giant_scorpion": [
+      "tremor"
+    ],
+    "giant_centipede": [
+      "tremor"
+    ],
+    "death_beetle": [
+      "tremor"
+    ],
+    "rot_grub_swarm": [
+      "tremor"
+    ],
+    "scarab_swarm": [
+      "tremor"
+    ],
+    "khrafstra_swarm": [
+      "tremor"
+    ],
+    "piercer": [
+      "tremor"
+    ],
+    "grick": [
+      "tremor"
+    ],
+    "cobra": [
+      "tremor"
+    ],
+    "rock_python": [
+      "tremor"
+    ],
+    "sea_snake": [
+      "tremor"
+    ],
+    "swamp_serpent": [
+      "tremor"
+    ],
+    "sable_serpent": [
+      "tremor"
+    ],
+    "sea_serpent_norse": [
+      "tremor"
+    ],
+    "takshaka_brood": [
+      "tremor"
+    ],
+    "ra_serpent": [
+      "tremor"
+    ],
+    "naga_guardian": [
+      "tremor"
+    ],
+    "jormungandr_juvenile": [
+      "tremor"
+    ],
+    "jormungandr_spawn": [
+      "tremor"
+    ],
+    "world_serpent": [
+      "tremor"
+    ],
+    "behir_lesser": [
+      "tremor"
+    ],
+    "yuan_ti_pureblood": [
+      "tremor"
+    ],
+    "werewolf": [
+      "scent"
+    ],
+    "werewolf_alpha": [
+      "scent"
+    ],
+    "elder_werewolf": [
+      "scent"
+    ],
+    "werebear": [
+      "scent"
+    ],
+    "wererat": [
+      "scent"
+    ],
+    "weretiger": [
+      "scent"
+    ],
+    "wendigo": [
+      "scent"
+    ],
+    "wight": [
+      "lifesense"
+    ],
+    "barrow_wight": [
+      "lifesense"
+    ],
+    "cairn_wight": [
+      "lifesense"
+    ],
+    "wight_lord": [
+      "lifesense"
+    ],
+    "draugr": [
+      "lifesense"
+    ],
+    "draugr_wight": [
+      "lifesense"
+    ],
+    "revenant": [
+      "lifesense"
+    ],
+    "hels_handmaid": [
+      "lifesense"
+    ],
+    "mohrg": [
+      "lifesense"
+    ],
+    "crypt_thing": [
+      "lifesense"
+    ],
+    "huecuva": [
+      "lifesense"
+    ],
+    "death_knight": [
+      "lifesense"
+    ],
+    "death_knight_lord": [
+      "lifesense"
+    ],
+    "dread_knight": [
+      "lifesense"
+    ],
+    "dread_knight_legion": [
+      "lifesense"
+    ],
+    "death_lord": [
+      "lifesense"
+    ],
+    "grave_knight": [
+      "lifesense"
+    ],
+    "ghoul": [
+      "scent"
+    ],
+    "ghast": [
+      "scent"
+    ],
+    "ghast_eater": [
+      "scent"
+    ],
+    "charnel_hound": [
+      "scent"
+    ],
+    "gravehound": [
+      "scent"
+    ],
+    "will_o_wisp": [],
+    "will_o_wisp_lesser": [],
+    "hecate_hound": [
+      "scent"
+    ],
+    "shadow_hound": [
+      "scent"
+    ],
+    "vampire": [
+      "scent"
+    ],
+    "vampire_lord": [
+      "scent"
+    ],
+    "vampire_spawn": [
+      "scent"
+    ],
+    "vampire_thrall": [
+      "scent"
+    ],
+    "elder_vampire": [
+      "scent"
+    ],
+    "ancient_vampire_lord": [
+      "scent"
+    ],
+    "nosferatu": [
+      "scent"
+    ],
+    "strigoi": [
+      "scent"
+    ],
+    "vrykolakas": [
+      "scent"
+    ],
+    "jiangshi": [
+      "lifesense"
+    ],
+    "cave_troll": [
+      "scent"
+    ],
+    "chaos_troll": [
+      "scent"
+    ],
+    "ice_troll": [
+      "scent"
+    ],
+    "troll": [
+      "scent"
+    ],
+    "troll_brute": [
+      "scent"
+    ],
+    "war_troll": [
+      "scent"
+    ],
+    "ogre": [
+      "scent"
+    ],
+    "two_headed_ogre": [
+      "scent"
+    ],
+    "hill_giant": [
+      "scent"
+    ],
+    "stone_giant": [
+      "scent"
+    ],
+    "frost_giant": [
+      "scent"
+    ],
+    "frost_giant_jarl": [
+      "scent"
+    ],
+    "frostfang_giant": [
+      "scent"
+    ],
+    "fire_giant": [
+      "scent"
+    ],
+    "fire_giant_king": [
+      "scent"
+    ],
+    "cloud_giant": [
+      "scent"
+    ],
+    "storm_giant": [
+      "scent"
+    ],
+    "elder_storm_giant": [
+      "scent"
+    ],
+    "ettin": [
+      "scent"
+    ],
+    "ettin_warchief": [
+      "scent"
+    ],
+    "fomorian": [
+      "scent"
+    ],
+    "cacus": [
+      "scent"
+    ],
+    "beholder": [
+      "keen_sight"
+    ],
+    "elder_beholder": [
+      "keen_sight"
+    ],
+    "beholder_spawn": [
+      "keen_sight"
+    ],
+    "floating_eye": [
+      "keen_sight"
+    ],
+    "mind_flayer": [
+      "mindsense"
+    ],
+    "elder_mind_flayer": [
+      "mindsense"
+    ],
+    "intellect_devourer": [
+      "mindsense"
+    ],
+    "otyugh": [
+      "scent"
+    ],
+    "gibbering_mouther": [
+      "tremor"
+    ],
+    "roper": [
+      "tremor"
+    ],
+    "lurker_above": [
+      "tremor"
+    ],
+    "trapper": [
+      "tremor"
+    ],
+    "cloaker": [
+      "tremor"
+    ],
+    "darkmantle": [
+      "tremor"
+    ],
+    "earth_elemental": [
+      "tremor"
+    ],
+    "greater_earth_elemental": [
+      "tremor"
+    ],
+    "xorn": [
+      "tremor"
+    ],
+    "asag_stone_warrior": [
+      "tremor"
+    ],
+    "abyssal_hound": [
+      "scent"
+    ],
+    "cerberus": [
+      "scent"
+    ],
+    "galla_demon": [
+      "scent"
+    ],
+    "erinyes_lesser": [
+      "guilt"
+    ],
+    "erinyes_greater": [
+      "guilt"
+    ],
+    "deadite": [
+      "lifesense"
+    ],
+    "fresh_deadite": [
+      "lifesense"
+    ],
+    "risen_deadite": [
+      "lifesense"
+    ],
+    "hugin_raven": [
+      "keen_sight"
+    ]
   },
   "monster_ranges": {
-    "fenrir_wolf": {"scent": 12},
-    "galla_demon": {"scent": 12},
-    "medusa_gorgon": {"tremor": 10},
-    "stheno_gorgon": {"tremor": 10},
-    "euryale_gorgon": {"tremor": 10},
-    "medusa": {"tremor": 8},
-    "thorn_slinger": {"tremor": 6}
+    "fenrir_wolf": {
+      "scent": 12
+    },
+    "galla_demon": {
+      "scent": 12
+    },
+    "medusa_gorgon": {
+      "tremor": 10
+    },
+    "stheno_gorgon": {
+      "tremor": 10
+    },
+    "euryale_gorgon": {
+      "tremor": 10
+    },
+    "medusa": {
+      "tremor": 8
+    },
+    "thorn_slinger": {
+      "tremor": 6
+    }
   },
   "noise": {
     "_doc": "Radii in tiles, measured along open ground (sound goes round corners and through doorways, not through stone; a closed door muffles it by 'door_cost' tiles). Footsteps: 'step' at DEX 10, one tile quieter for every 'dex_per_tile' points of DEX over 10 (never below 1), 'burdened' louder with a heavy pack; Cat's Footfall and silent walking make none. A monster already hunting the hero listens harder: 'hunter_bonus'.",
@@ -136,37 +584,117 @@
   },
   "search": {
     "_doc": "A creature that loses the hero goes to the last place it saw, smelled or heard him and searches there for a while ('turns', more if it was roused by an alarm or a call for help), then gives up and goes back to what it was doing. 'lost_line' is said when one the hero can see gives up.",
-    "turns": [6, 12],
-    "roused_turns": [14, 22],
+    "turns": [
+      6,
+      12
+    ],
+    "roused_turns": [
+      14,
+      22
+    ],
     "radius": 4,
     "lost_line": "{The} loses your trail and turns away."
   },
   "jobs": {
     "_doc": "What a creature does before it notices the hero, chosen when the floor is made (populate_floor): 'wander' roams from room to room, 'guard' keeps its post and turns to look, 'sleep' sleeps until something wakes it. Weights by family; a pack shares one job. Ambushers, mimics, rooted things, named foes and the bosses keep their own ways.",
-    "default": {"wander": 0.4, "guard": 0.3, "sleep": 0.3},
-    "vermin": {"wander": 0.7, "sleep": 0.3},
-    "great_beasts": {"wander": 0.5, "sleep": 0.5},
-    "constructs": {"guard": 1.0},
-    "plants": {"guard": 1.0},
-    "oozes": {"wander": 0.6, "guard": 0.4},
-    "restless_dead": {"guard": 0.6, "wander": 0.4},
-    "ghosts": {"wander": 0.6, "guard": 0.4},
-    "vampires_liches": {"sleep": 0.5, "guard": 0.5},
-    "goblinkin": {"sleep": 0.35, "guard": 0.35, "wander": 0.3},
-    "mortals": {"guard": 0.4, "sleep": 0.3, "wander": 0.3},
-    "demons": {"guard": 0.5, "wander": 0.5},
-    "dragons": {"sleep": 0.6, "guard": 0.4},
-    "giants": {"sleep": 0.5, "wander": 0.3, "guard": 0.2},
-    "fair_folk": {"wander": 0.6, "guard": 0.4},
-    "celestials": {"guard": 1.0},
-    "elementals": {"wander": 0.6, "guard": 0.4},
-    "serpents": {"sleep": 0.4, "guard": 0.3, "wander": 0.3},
-    "birds": {"guard": 0.5, "wander": 0.5},
-    "aberrations": {"guard": 0.5, "wander": 0.5},
-    "gorgons": {"guard": 0.6, "wander": 0.4},
-    "shapeshifters": {"wander": 0.6, "sleep": 0.4},
-    "legend": {"guard": 0.6, "wander": 0.4},
-    "sleep_turns": [300, 700]
+    "default": {
+      "wander": 0.4,
+      "guard": 0.3,
+      "sleep": 0.3
+    },
+    "vermin": {
+      "wander": 0.7,
+      "sleep": 0.3
+    },
+    "great_beasts": {
+      "wander": 0.5,
+      "sleep": 0.5
+    },
+    "constructs": {
+      "guard": 1.0
+    },
+    "plants": {
+      "guard": 1.0
+    },
+    "oozes": {
+      "wander": 0.6,
+      "guard": 0.4
+    },
+    "restless_dead": {
+      "guard": 0.6,
+      "wander": 0.4
+    },
+    "ghosts": {
+      "wander": 0.6,
+      "guard": 0.4
+    },
+    "vampires_liches": {
+      "sleep": 0.5,
+      "guard": 0.5
+    },
+    "goblinkin": {
+      "sleep": 0.35,
+      "guard": 0.35,
+      "wander": 0.3
+    },
+    "mortals": {
+      "guard": 0.4,
+      "sleep": 0.3,
+      "wander": 0.3
+    },
+    "demons": {
+      "guard": 0.5,
+      "wander": 0.5
+    },
+    "dragons": {
+      "sleep": 0.6,
+      "guard": 0.4
+    },
+    "giants": {
+      "sleep": 0.5,
+      "wander": 0.3,
+      "guard": 0.2
+    },
+    "fair_folk": {
+      "wander": 0.6,
+      "guard": 0.4
+    },
+    "celestials": {
+      "guard": 1.0
+    },
+    "elementals": {
+      "wander": 0.6,
+      "guard": 0.4
+    },
+    "serpents": {
+      "sleep": 0.4,
+      "guard": 0.3,
+      "wander": 0.3
+    },
+    "birds": {
+      "guard": 0.5,
+      "wander": 0.5
+    },
+    "aberrations": {
+      "guard": 0.5,
+      "wander": 0.5
+    },
+    "gorgons": {
+      "guard": 0.6,
+      "wander": 0.4
+    },
+    "shapeshifters": {
+      "wander": 0.6,
+      "sleep": 0.4
+    },
+    "legend": {
+      "guard": 0.6,
+      "wander": 0.4
+    },
+    "sleep_turns": [
+      300,
+      700
+    ]
   },
   "status_lines": {
     "_doc": "What Observe (;) says of a creature's state.",
@@ -174,12 +702,40 @@
     "unaware": "It hasn't noticed you.",
     "searching": "It is searching for something.",
     "hunting": "It knows where you are.",
-    "senses": "It finds its prey by {senses}."
+    "senses": "It finds its prey by {senses}.",
+    "feeding": "It is busy with a corpse."
   },
   "sense_names": {
-    "scent": "scent", "tremor": "the tremor of footsteps", "lifesense": "the warmth of the living",
-    "echo": "echoes", "mindsense": "the thoughts of others", "guilt": "the guilt of the hunted",
-    "master": "knowing every stone of its own house", "keen_sight": "very sharp eyes", "truesight": "eyes no magic can fool",
+    "scent": "scent",
+    "tremor": "the tremor of footsteps",
+    "lifesense": "the warmth of the living",
+    "echo": "echoes",
+    "mindsense": "the thoughts of others",
+    "guilt": "the guilt of the hunted",
+    "master": "knowing every stone of its own house",
+    "keen_sight": "very sharp eyes",
+    "truesight": "eyes no magic can fool",
     "blind": "touch alone"
+  },
+  "scavengers": {
+    "_doc": "C3: the things that eat the dead. An idle scavenger (not hunting, not searching, awake) that smells a corpse within 'reach' tiles goes to it and eats it in 'eat_turns' turns, healing 'heal_share' of its health; the corpse is gone, so a harvest is a race. Ghouls ate the dead in the old stories; vermin and oozes eat anything.",
+    "families": [
+      "vermin",
+      "oozes"
+    ],
+    "kinds": [
+      "ghoul",
+      "ghast",
+      "ghast_eater",
+      "otyugh",
+      "carrion_crawler",
+      "charnel_hound",
+      "gravehound",
+      "bone_collector",
+      "mohrg"
+    ],
+    "reach": 8,
+    "eat_turns": 3,
+    "heal_share": 0.25
   }
 }

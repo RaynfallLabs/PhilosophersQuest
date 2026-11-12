@@ -1755,6 +1755,19 @@ class Monster:
                 return True
             return False
 
+        # --- Phase-blink for the patterns that never reached it (G7): an
+        # archer or a summoner that can blink steps out to a clear shot four
+        # tiles off; a hit-and-run one (Lyssa) blinks in beside the hero.
+        if (self.can_phase_blink and self.ai_pattern in ('ranged', 'summoner', 'hit_and_run')
+                and self.__dict__.get('_tracking')
+                and random.random() < self.phase_blink_chance):
+            if self.ai_pattern == 'hit_and_run':
+                if (max(abs(self.x - player.x), abs(self.y - player.y)) >= 3
+                        and self._phase_blink_to_player(player, dungeon, all_monsters, extra_occupied)):
+                    return True
+            elif self._blink_to_standoff(player, dungeon, all_monsters, extra_occupied):
+                return False
+
         # --- Healer AI: heal a damaged adjacent ally; fall back to ranged/aggressive ---
         if self.ai_pattern == 'healer':
             return self._healer_turn(player, dungeon, all_monsters, extra_occupied)
@@ -2405,6 +2418,14 @@ class Monster:
                 self._hit_run_timer = 3
             return True  # signal attack
 
+        # A bull lowers his horns on a clean straight run (G7: Asterion's
+        # charge was armed only in the plain path, so it waited for his rage).
+        if self.can_charge and not self._charge_ready:
+            _cd = max(abs(self.x - player.x), abs(self.y - player.y))
+            _dxp, _dyp = player.x - self.x, player.y - self.y
+            if 2 <= _cd <= 5 and (_dxp == 0 or _dyp == 0 or abs(_dxp) == abs(_dyp)):
+                self._charge_ready = True
+
         # Move toward player (can phase through walls)
         self._phase_move(player, dungeon, all_monsters, extra_occupied, away=False)
 
@@ -2726,6 +2747,26 @@ class Monster:
             if (nx, ny) in occupied:
                 continue
             if dungeon.in_bounds(nx, ny) and self._can_move_to(dungeon, nx, ny):
+                self.x, self.y = nx, ny
+                return True
+        return False
+
+    def _blink_to_standoff(self, player, dungeon, all_monsters, extra_occupied) -> bool:
+        """Blink to a free tile four from the hero with a clear shot at him."""
+        from geom import all_occupied_tiles
+        occupied = all_occupied_tiles(all_monsters, exclude=self)
+        if extra_occupied:
+            occupied |= extra_occupied
+        occupied.add((player.x, player.y))
+        if max(abs(self.x - player.x), abs(self.y - player.y)) == 4:
+            return False
+        spots = [(player.x + dx, player.y + dy) for dx in range(-4, 5) for dy in range(-4, 5)
+                 if max(abs(dx), abs(dy)) == 4]
+        random.shuffle(spots)
+        for nx, ny in spots:
+            if ((nx, ny) not in occupied and dungeon.in_bounds(nx, ny)
+                    and self._can_move_to(dungeon, nx, ny)
+                    and _line_of_sight(nx, ny, player.x, player.y, dungeon)):
                 self.x, self.y = nx, ny
                 return True
         return False

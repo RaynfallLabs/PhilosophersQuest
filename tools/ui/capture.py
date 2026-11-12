@@ -2215,6 +2215,10 @@ def _emberpup(g, fed=False, food=2):
     pup = next(m for m in g.monsters if ep.is_emberpup(m))
     pup.x, pup.y = _free_tiles_near(g, 1, 1)[0]
     pup._emberpup_fed = fed
+    if fed:
+        # Earned (Dungeon Alive slice 8): fed on two visits, and sheltered.
+        pup._emberpup_visits = 2
+        pup._emberpup_sheltered = True
     foods = [f for f in load_items('food') if isinstance(f, Food)]
     for f in foods[:food]:
         g.player.inventory.append(copy.copy(f))
@@ -2227,7 +2231,7 @@ def _(g):
     g._start_emberpup_encounter(_emberpup(g))
 
 
-@scene('emberpup_options', 'Encounters', 'Emberpup, Enter: the four choices.', expect='emberpup')
+@scene('emberpup_options', 'Encounters', 'Emberpup, Enter: the five choices.', expect='emberpup')
 def _(g):
     g._start_emberpup_encounter(_emberpup(g))
     press(g, pygame.K_RETURN)

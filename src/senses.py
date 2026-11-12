@@ -610,6 +610,14 @@ def idle(m, player, dungeon, all_monsters, extra_occupied) -> None:
         return
     if m.has_effect('sleeping'):
         return
+    # A scavenger with a corpse in reach goes to eat it, whatever its post
+    # (game_combat._scavenge_prep sets the place; C3).
+    feast = m.__dict__.get('_scavenge')
+    if feast:
+        if (m.x, m.y) != tuple(feast):
+            if not step_toward(m, dungeon, feast, all_monsters, extra_occupied, player):
+                m._scavenge = None
+        return
     job = m.__dict__.get('_job') or 'wander'
     if m._is_named_foe() or getattr(m, 'is_boss', False) or job in ('guard', 'sleep'):
         home = m.__dict__.get('_home')
@@ -722,6 +730,28 @@ def assign_jobs(monsters, rooms, rng=None, sleep_rooms=()) -> None:
 
 
 # ---------------------------------------------------------------------------
+# Scavengers (C3): the things that eat the dead
+# ---------------------------------------------------------------------------
+
+def is_scavenger(m) -> bool:
+    s = data().get('scavengers') or {}
+    return (getattr(m, 'kind', '') in s.get('kinds', ())
+            or (getattr(m, 'family', '') or '') in s.get('families', ()))
+
+
+def scavenge_target(m, corpses) -> tuple | None:
+    """The nearest corpse an idle scavenger can smell, or None."""
+    s = data().get('scavengers') or {}
+    reach = int(s.get('reach', 8))
+    best = None
+    for c in corpses:
+        d = _cheb(m.x, m.y, c.x, c.y)
+        if d <= reach and (best is None or d < best[0]):
+            best = (d, (c.x, c.y))
+    return best[1] if best else None
+
+
+# ---------------------------------------------------------------------------
 # What Observe says
 # ---------------------------------------------------------------------------
 
@@ -729,6 +759,8 @@ def status_line(m) -> str:
     lines = data()['status_lines']
     if m.has_effect('sleeping'):
         return lines['asleep']
+    if m.__dict__.get('_scavenge') and not m.__dict__.get('_tracking'):
+        return lines.get('feeding', lines['unaware'])
     if m.__dict__.get('_tracking'):
         return lines['hunting']
     if m.__dict__.get('_goal') is not None:
