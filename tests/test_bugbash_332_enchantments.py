@@ -196,6 +196,9 @@ def test_parrying_turns_a_blow_from_beside(game, monkeypatch):
     game.player.DEX = 10
     monkeypatch.setattr(type(game.player), 'dodge_chance', lambda self: 0.0, raising=False)
     monkeypatch.setattr(monster_mod.random, 'random', lambda: 0.0)
+    # A natural 1 misses even at THAC0 -50, so pin the dice to their top face
+    # (the d20 is then a natural 20); unpinned, this failed one run in twenty.
+    monkeypatch.setattr(monster_mod.random, 'randint', lambda a, b: b)
     dmg, msg = m._resolve_blow(m.attacks[0], game.player)
     assert dmg == 0 and 'parry' in msg
 
