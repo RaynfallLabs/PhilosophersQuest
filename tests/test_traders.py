@@ -90,23 +90,97 @@ def _potion(pid):
 
 # ------------------------------------------------------------------ the plan
 
+GATES = {19: 'sutler', 39: 'sutler', 59: 'regin', 79: 'tyr'}
+
+
 def test_plan_puts_a_gate_camp_before_every_gate_boss_and_avoids_the_secret_floors():
     for seed in range(40):
         plan = traders.roll_plan(seed * 7919, secret_floors=(5, 47), busy_floors=(3, 9, 15))
         f = plan['floors']
-        for gate in (19, 39, 59, 79):
-            assert f.get(gate) == 'sutler', (seed, gate)
+        for gate, kind in GATES.items():
+            assert f.get(gate) == kind, (seed, gate)
         for never in (1, 20, 40, 60, 80, 99, 100, 5, 47):
             assert never not in f, (seed, never)
-        assert 18 <= len(f) <= 40, len(f)
+        assert 18 <= len(f) <= 42, len(f)
         kinds = set(f.values())
-        assert {'sutler', 'generalist', 'apothecary', 'armourer', 'bookseller', 'abyssal'} <= kinds
+        assert {'sutler', 'regin', 'tyr', 'generalist', 'apothecary', 'armourer',
+                'dwarf_armourer', 'bookseller', 'ghost_bookseller', 'abyssal'} <= kinds
         for fl, kind in f.items():
-            lo_hi = {'apothecary': (2, 35), 'armourer': (10, 70), 'bookseller': (15, 90),
-                     'abyssal': (61, 98)}.get(kind)
-            if lo_hi:
-                assert lo_hi[0] <= fl <= lo_hi[1], (kind, fl)
+            # Every trader stands only where the plan's ranges for his kind put him.
+            assert any(lo <= fl <= hi for lo, hi in traders.kind_floors(kind)), (kind, fl)
     assert traders.roll_plan(123)['floors'] == traders.roll_plan(123)['floors']
+
+
+def test_grindle_keeps_to_eighty_and_ortolan_keeps_the_abyss():
+    """Brandon, 2026-11-12: "It wouldn't make sense to find a happy fat
+    merchant on level 83." The generalists are a list, each with its own
+    floors: Grindle the deep gnome to 80, Ortolan, one of the damned, below."""
+    seen = set()
+    for seed in range(200):
+        for fl, kind in traders.roll_plan(seed * 104729 + 3)['floors'].items():
+            if kind == 'generalist':
+                assert 2 <= fl <= 80, fl
+            if kind == 'damned_generalist':
+                assert 81 <= fl <= 98, fl
+            seen.add(kind)
+    assert {'generalist', 'damned_generalist'} <= seen
+    assert traders.generalist_for(80) == 'generalist'
+    assert traders.generalist_for(81) == 'damned_generalist'
+    assert traders.generalist_for(99) is None
+
+
+def test_an_old_plan_and_an_old_save_still_read():
+    """The pre-list keys (one 'generalist' over 'generalist_floors') still
+    plan, and a save that rolled Mags at all four gates still trades there."""
+    old = {'generalist': 'generalist', 'generalist_floors': [2, 98]}
+    assert traders.generalists(old) == [('generalist', 2, 98)]
+    assert traders.generalist_for(95, old) == 'generalist'
+    st = traders.ensure_plan({'floors': {'59': 'sutler', '79': 'sutler', '83': 'generalist'}})
+    assert st['floors'] == {59: 'sutler', 79: 'sutler', 83: 'generalist'}
+    for kind in st['floors'].values():
+        assert traders.kind_def(kind)['name']
+    # A kind a save names that the data no longer has still makes a trader.
+    assert traders.kind_def('no_such_kind')['name'] == 'Grindle'
+
+
+def test_a_friend_keeps_to_the_floors_he_can_reach():
+    """A friend comes back only where his kind of being can stand: Pomfrey
+    Quill, an alderman, never keeps a shop below the Labyrinth."""
+    import deeds
+    reg = deeds.new_register()
+    deeds.record(reg, 'saved.quill', floor=5, block=1)
+    assert traders.friend_for('generalist', {'reg': reg, 'floor': 12})['name'] == 'Pomfrey Quill'
+    assert traders.friend_for('generalist', {'reg': reg, 'floor': 55}) is None
+    deeds.record(reg, 'saved.frida', floor=45, block=5)
+    assert traders.friend_for('dwarf_armourer', {'reg': reg, 'floor': 50})['name'] == 'Frida'
+    deeds.record(reg, 'aid.sibyl', floor=55, block=6)
+    assert traders.friend_for('ghost_bookseller', {'reg': reg, 'floor': 70})['person'] == 'sibyl'
+
+
+def test_regin_teaches_the_pit_and_tyr_wears_his_disguise():
+    """59: Fafnir's own brother teaches the pit (and, being Regin, leaves out
+    the second trench). 79: Tyr never gives his name, but Tiw, Tuesday and the
+    hand gone at the wrist are there for a sharp player to read."""
+    regin, tyr = traders.kind_def('regin'), traders.kind_def('tyr')
+    line = regin['gate_lines']['59']
+    assert 'pit' in line and 'left shoulder' in line and 'trench' not in line
+    assert 'Fafnir' in regin['lore'] and 'Otr' in regin['lore']
+    assert 'Tyr' not in tyr['name'] + tyr['title'] + json.dumps(tyr['lines'])
+    for tell in ('Tiw', 'Tuesday', 'wrist', 'pledge'):
+        assert tell in tyr['lore'], tell
+    assert 'ribbon' in tyr['gate_lines']['79'] and 'Vidar' in tyr['gate_lines']['79']
+
+
+def test_noticing_gods_and_knowing_otrs_story_move_the_gate_prices():
+    import deeds
+    reg = deeds.new_register()
+    assert traders.price_mult('tyr', {'reg': reg, 'floor': 79})[0] == 1.0
+    deeds.record(reg, 'noticed.thor', floor=75, block=8)
+    mult, lines = traders.price_mult('tyr', {'reg': reg, 'floor': 79})
+    assert abs(mult - 0.85) < 1e-9 and 'beggar' in lines[0][1]
+    deeds.record(reg, 'told.otters_wergild', floor=45, block=5)
+    mult, lines = traders.price_mult('regin', {'reg': reg, 'floor': 59})
+    assert abs(mult - 0.90) < 1e-9 and "father's story" in lines[0][1]
 
 
 def test_the_plan_and_the_spawn_leave_the_shared_random_stream_alone():
@@ -142,12 +216,12 @@ def test_the_gate_camp_stands_reachable_on_19_39_59_79_clear_of_everything():
     from dungeon import STAIRS_DOWN, STAIRS_UP
     from mystery_system import MerchantNPC
     g = _game('__test_trader_gates__')
-    for lvl in (19, 39, 59, 79):
+    for lvl, kind in GATES.items():
         g._change_level(lvl, enter_from_top=True)
         ts = [i for i in g.ground_items if isinstance(i, MerchantNPC)]
         assert len(ts) == 1, lvl
         t = ts[0]
-        assert t.kind == 'sutler' and t.stock and t.purse > 0
+        assert t.kind == kind and t.stock and t.purse > 0
         assert g.dungeon.tiles[t.y][t.x] not in (STAIRS_UP, STAIRS_DOWN)
         walk = g._reachable_tiles(g.player.x, g.player.y)
         assert (t.x, t.y) in walk
@@ -193,7 +267,9 @@ def test_a_revisit_never_adds_a_second_trader():
 def test_every_trader_kind_stocks_from_its_own_list():
     rng = random.Random(3)
     for kind, lvl in (('generalist', 10), ('apothecary', 12), ('armourer', 30),
-                      ('bookseller', 40), ('abyssal', 80), ('sutler', 39)):
+                      ('bookseller', 40), ('abyssal', 80), ('sutler', 39),
+                      ('regin', 59), ('tyr', 79), ('dwarf_armourer', 50),
+                      ('ghost_bookseller', 70), ('damned_generalist', 90)):
         d = traders.kind_def(kind)
         items.bind_unique_registry(set())
         stock = traders.build_stock(d, lvl, rng)

@@ -2,18 +2,41 @@
   "_doc": "The traders (economy refactor 2026-10-17, ECONOMY_REFACTOR_PROPOSAL D3-D7). Read by src/traders.py (pure: the plan, the stock, the offers, the deeds prices) and src/game_traders.py (the Game side: placing them, the shop's Buy / Sell / Services tabs). Each trader is a person with a name, a reason to be down here and a few short lines; none of them is a vending machine. Their goods are a one-time chance: no restock. Stock stays unidentified and is priced by what it is WORTH (data/item_worth.json), so a sharp eye can price-identify. They BUY at 20-25% of their own price, up to what is in their purse, never quest pieces, never anything worn, and a thing bought from any trader never sells back for more than half of what was paid (no buy/sell loop). Services sell a second chance, never the answer.",
 
   "plan": {
-    "_doc": "Which floors get a trader, rolled once a run from the Road's seed (road.rng_for), never from the shared random stream. Gate camps stand on the floor before each gate boss, always. Specialists take 'count' floors inside their range; then each floor left takes a generalist with 'generalist_chance'. A trader avoids the Emberpup's and the Black Knight's floors and prefers floors with no anchor, medium or high Road slot; he never stands on a boss floor, floor 1, 99 or 100, or the Cow Level.",
+    "_doc": "Which floors get a trader, rolled once a run from the Road's seed (road.rng_for), never from the shared random stream. Gate camps stand on the floor before each gate boss, always. Specialists take 'count' floors inside their range; then each floor left takes the generalist who keeps to it (the 'generalists' list, each with its own floors) with 'generalist_chance'. A trader avoids the Emberpup's and the Black Knight's floors and prefers floors with no anchor, medium or high Road slot; he never stands on a boss floor, floor 1, 99 or 100, or the Cow Level. Depth-true (Brandon, 2026-11-12): every range keeps inside the reach of the being who trades there (the 'reach' table below; tests/test_depth_true.py). 'generalist' and 'generalist_floors' are the pre-list keys: traders.generalists still reads them when 'generalists' is absent.",
     "never": [1, 20, 40, 60, 80, 99, 100, 999],
-    "gate_camps": {"19": "sutler", "39": "sutler", "59": "sutler", "79": "sutler"},
+    "gate_camps": {"19": "sutler", "39": "sutler", "59": "regin", "79": "tyr"},
     "specialists": [
       {"kind": "apothecary", "floors": [2, 35], "count": 3},
-      {"kind": "armourer", "floors": [10, 70], "count": 3},
-      {"kind": "bookseller", "floors": [15, 90], "count": 2},
+      {"kind": "armourer", "floors": [10, 45], "count": 2},
+      {"kind": "dwarf_armourer", "floors": [41, 75], "count": 2},
+      {"kind": "bookseller", "floors": [15, 40], "count": 1},
+      {"kind": "ghost_bookseller", "floors": [41, 90], "count": 1},
       {"kind": "abyssal", "floors": [61, 98], "count": 2}
     ],
     "generalist": "generalist",
-    "generalist_floors": [2, 98],
+    "generalists": [
+      {"kind": "generalist", "floors": [2, 80]},
+      {"kind": "damned_generalist", "floors": [81, 98]}
+    ],
     "generalist_chance": 0.17
+  },
+
+  "reach": {
+    "_doc": "How deep each kind of being can go (Brandon, 2026-11-12: \"as we descend, it feels like we are delving deeper and deeper, to places where normal men cannot go\"; _alive_research/ENCOUNTER_AUDIT.md, reach table). Every trader and friend here names its 'reach', and so does every Road anchor in data/npc_encounters.json (its person's 'reach': the most limited being the scene puts there). tests/test_depth_true.py holds every one of their floors inside these. The five domains: 1-20 the Labyrinth, 21-40 the Forgotten Temple, 41-60 the Scorched Deep, 61-80 the Rime Halls, 81-100 the Abyss.",
+    "ordinary":         {"floors": [1, 20],  "who": "Ordinary folk: townsfolk, farmers, children, aldermen. No one who has sought the deep has returned, and their own lines point up to the town."},
+    "hardy":            {"floors": [1, 40],  "who": "Hardy delvers: soldiers, knights, guild mapmakers, armed pilgrims, slavers and bandits. Mortal guards, mobs and bandits stop spawning by about 45."},
+    "exceptional":      {"floors": [1, 50],  "who": "The exceptional mortal: a Legion company at the very edge, an armourer who stayed where an army vanished."},
+    "called":           {"floors": [1, 100], "who": "Mortals carried by a holy calling, rare by design: a prophet who went down on purpose, a paladin whose armour is still blessed."},
+    "deep_folk":        {"floors": [1, 80],  "who": "Dwarves and deep gnomes. Fafnir was a dwarf, and the Scorched Deep's kin are dwarves gone wrong."},
+    "giants_fair_folk": {"floors": [1, 80],  "who": "Trolls, giants and the Fair Folk, who live under hills and under the ground at any depth to the frost."},
+    "dead":             {"floors": [1, 100], "who": "The dead, who stay where they died: ghosts, draugr, the shades of delvers."},
+    "captive":          {"floors": [1, 100], "who": "Captives and the possessed: carried down by something else, and as deep as it went."},
+    "immortal":         {"floors": [1, 100], "who": "Legends who cannot die, such as the Sibyl of Cumae, who led Aeneas down to the dead."},
+    "greek_god":        {"floors": [21, 40], "who": "Greek gods in disguise, in Athena's lost temple."},
+    "norse_god":        {"floors": [61, 80], "who": "Norse gods and their kin in disguise, in the Rime Halls on the eve of Ragnarok."},
+    "saint_angel":      {"floors": [1, 100], "who": "Saints and angels, anywhere: heaven's messengers go where they are sent."},
+    "deep_being":       {"floors": [41, 100], "who": "Things that are not men and only look it: Vesper, and Ambrose Vell, who does not breathe."},
+    "damned_demon":     {"floors": [61, 100], "who": "Demons and the damned, from the Rime Halls down: the Locust cultists, the rich man at the gulf."}
   },
 
   "stock_bias": {
@@ -26,7 +49,8 @@
     "_doc": "Coin weight and treasure (Brandon's D2, 2026-10-18; src/treasure.py). Every trader buys treasure at buy_rate of its value (capped by his purse) and takes it as payment at the same rate when coin runs short, giving change from his purse. gem_stock: how many gems each kind of trader has for sale, at value x sell_markup: the coin-to-gem exchange. Gems are never haggled and never take a friend's or charity discount (a rise for a wronged guild still applies), so buying and selling them always loses.",
     "buy_rate": 0.9,
     "sell_markup": 1.1,
-    "gem_stock": {"generalist": 2, "abyssal": 3, "sutler": 2, "bookseller": 1, "armourer": 1, "apothecary": 1}
+    "gem_stock": {"generalist": 2, "abyssal": 3, "sutler": 2, "bookseller": 1, "armourer": 1, "apothecary": 1,
+                  "regin": 2, "tyr": 1, "dwarf_armourer": 1, "ghost_bookseller": 1, "damned_generalist": 3}
   },
 
   "rare_stock": [
@@ -61,7 +85,10 @@
     "_doc": "Conditions a trader's 'reactions' refer to by name (deeds.check conditions).",
     "open_hand": {"deeds_any": ["aid.gleaner", "aid.hanne", "aid.melitta", "aid.exposed_child", "aid.eyam",
                                 "aid.berengar", "aid.hopkins_fee", "aid.hardekopf"]},
-    "wrens_mark": {"deeds_all": ["lost.wren"]}
+    "wrens_mark": {"deeds_all": ["lost.wren"]},
+    "otters_wergild": {"deeds_any": ["told.otters_wergild"]},
+    "noticed_gods": {"deeds_any": ["noticed.odin", "noticed.loki", "noticed.thor", "noticed.athena",
+                                   "noticed.hermes", "noticed.zeus", "noticed.raphael"]}
   },
 
   "traders": {
@@ -69,6 +96,7 @@
       "name": "Grindle",
       "title": "Deep Gnome Trader",
       "pronoun": "he",
+      "reach": "deep_folk",
       "sprite": "merchant_npc",
       "lore": "A small grey trader with a pack twice his size and a lantern he never seems to need. He will not say where his stock comes from, only that the previous owners are past caring. He buys anything, cheaply, and talks about himself in the third person, which he says is a gnome thing. It is not a gnome thing.",
       "stock": [
@@ -105,6 +133,7 @@
         {"when": "wrens_mark", "mult": 1.15, "line": "You're the soft touch Wren's lot talk about? Ha! Prices just went up."}
       ],
       "friend": {"person": "quill", "pronoun": "he", "when": {"deeds_all": ["saved.quill"]},
+                 "reach": "ordinary", "floors": [2, 20],
                  "name": "Pomfrey Quill", "title": "Alderman and Trader", "sprite": "npc_lost_merchant",
                  "line": "Pomfrey Quill, alderman, trader, and ALIVE, thanks to you. Friend's price on everything. I mean it this time."}
     },
@@ -113,6 +142,7 @@
       "name": "Mother Wort",
       "title": "Apothecary",
       "pronoun": "she",
+      "reach": "hardy",
       "sprite": "trader_apothecary", "sprite_fallback": "npc_poisoned_herbalist",
       "lore": "Agnes Wort came down for the cave-moss that has never seen the sun, because it cures things the sun-moss can't. She has been down here eleven years. She says she will go back up when the moss runs out, and the moss will not run out.",
       "stock": [
@@ -141,6 +171,7 @@
         {"when": "open_hand", "mult": 0.90, "line": "I heard what you did for those folk. Kindness gets a kinder price here."}
       ],
       "friend": {"person": "marta", "pronoun": "she", "when": {"deeds_all": ["saved.marta"]},
+                 "reach": "ordinary", "floors": [2, 20],
                  "name": "Marta Venn", "title": "Rat-Catcher and Apothecary", "sprite": "npc_rat_catcher",
                  "line": "Leg's mended, and forty kids at Saint Agatha's got their fever cure. You get a friend's price. Don't argue."}
     },
@@ -149,6 +180,7 @@
       "name": "Brannoc",
       "title": "Armourer",
       "pronoun": "he",
+      "reach": "exceptional",
       "sprite": "trader_armourer", "sprite_fallback": "npc_dwarf",
       "lore": "Ulf Brannoc followed a king's army down twenty years ago as its armourer. The army never came back up. Brannoc stayed, to mend whatever does, and he is very good at it. He is less good at small talk.",
       "stock": [
@@ -173,16 +205,18 @@
         "sold_out": "Racks are empty. Go and kill something with a sword and bring it here."
       },
       "friend": {"person": "pell", "pronoun": "he", "when": {"deeds_all": ["saved.ormond_company"]},
+                 "reach": "hardy", "floors": [10, 40],
                  "name": "Jory Pell", "title": "Armourer", "sprite": "npc_deserter",
                  "line": "Pell. Ex-Legion. I sell what my company doesn't need now. Friend's price for the one who sent me back."}
     },
 
     "bookseller": {
-      "name": "Ambrose Vellum",
+      "name": "Aldous Vellum",
       "title": "Bookseller",
       "pronoun": "he",
+      "reach": "hardy",
       "sprite": "trader_bookseller", "sprite_fallback": "npc_scholar",
-      "lore": "A scribe who copies the writing off the dungeon walls and sells it to anyone who will pay for words. He has been sneezing since the third floor and refuses to discuss it.",
+      "lore": "A scribe who copies the writing off the dungeon walls and sells it to anyone who will pay for words. He has been sneezing since the third floor and refuses to discuss it. He goes no deeper than Athena's temple: below it, he says, the walls start writing back.",
       "stock": [
         {"class": "scroll", "picks": 3}, {"class": "spellbook", "picks": 1}
       ],
@@ -204,6 +238,7 @@
         "sold_out": "I've nothing left to sell you but advice: read more."
       },
       "friend": {"person": "helena", "pronoun": "she", "when": {"deeds_all": ["saved.helena"]},
+                 "reach": "hardy", "floors": [15, 40],
                  "name": "Helena Marsh", "title": "Cartographer and Bookseller", "sprite": "npc_injured_scholar",
                  "line": "Twelve years and never a bad line, and you're the reason I can still hold the pen. Friend's price."}
     },
@@ -212,6 +247,7 @@
       "name": "Vesper",
       "title": "Dealer in the Deep",
       "pronoun": "it",
+      "reach": "deep_being",
       "sprite": "trader_abyssal", "sprite_fallback": "npc_mystic",
       "lore": "Nobody knows what Vesper is. Nobody has seen Vesper blink. Vesper takes gold, buys curses, and is very polite about all of it, which is somehow worse.",
       "stock": [
@@ -248,8 +284,9 @@
       "name": "Old Mags Thorn",
       "title": "Sutler",
       "pronoun": "she",
+      "reach": "hardy",
       "sprite": "trader_sutler", "sprite_fallback": "npc_traveler",
-      "lore": "A sutler follows an army and sells it what it needs. Mags follows heroes down to the gates instead, because heroes pay best the night before a fight. She has buried a lot of customers. She keeps their deposits.",
+      "lore": "A sutler follows an army and sells it what it needs. Mags follows heroes down to the gates instead, because heroes pay best the night before a fight. She has buried a lot of customers. She keeps their deposits. She goes as far as Medusa's gate and not one stair further: below that, she says, nobody comes back to pay.",
       "stock": [
         {"ids": ["potion_of_healing", "potion_of_extra_healing"], "cat": "potion", "picks": 2},
         {"class": "potion", "picks": 2}, {"class": "food", "picks": 2},
@@ -267,9 +304,7 @@
       "services": ["repair", "cure", "heal", "porter"],
       "gate_lines": {
         "19": "Asterion's below. Bull's head, man's temper, and a maze he knows by heart. Buy healing. Buy string if you can find it.",
-        "39": "Medusa's down there. Don't look at her. I mean it. The last lad who looked is my coat rack now.",
-        "59": "Fafnir. Sleeps on gold he killed his own father for. He won't share. Neither will I, so pay up.",
-        "79": "Fenrir's chained down there. Mostly. 'Mostly' is why I'm still in business."
+        "39": "Medusa's down there. Don't look at her. I mean it. The last lad who looked is my coat rack now. And this is my last camp: past her, it's dwarves and worse."
       },
       "lines": {
         "greet": ["Last stall before the gate. Prices are fair. Heroes are not, generally.",
@@ -283,6 +318,188 @@
       },
       "reactions": [
         {"when": "open_hand", "mult": 0.90, "line": "I heard what you did for those folk. Mags remembers."}
+      ]
+    },
+
+    "regin": {
+      "name": "Regin",
+      "title": "Smith of Hreidmar's House",
+      "pronoun": "he",
+      "reach": "deep_folk",
+      "sprite": "nibelung_hoardwarden", "sprite_fallback": "npc_dwarf",
+      "lore": "Regin is Fafnir's own brother, a dwarf and a smith. Their father Hreidmar took a ransom of gold for a third son, Otr, and would not share a coin of it. Fafnir killed him for it and lay down on the gold until he became the worm below. Regin got nothing. He reforged the sword Gram for the hero Sigurd and told him to dig a pit in the dragon's path. In the saga, the birds told Sigurd what Regin meant to do once his brother was dead.",
+      "stock": [
+        {"gear": "weapon", "picks": 2}, {"gear": "armor", "picks": 2}, {"gear": "shield", "picks": 1},
+        {"class": "ammo", "picks": 1},
+        {"ids": ["potion_of_healing", "potion_of_extra_healing"], "cat": "potion", "picks": 1},
+        {"class": "potion", "picks": 1},
+        {"id": "greater_soul_sphere", "cat": "artifact", "chance": 0.25, "floors": [34, 100]}
+      ],
+      "stock_size": [[1, 100, 6]],
+      "spread": [["weapon"], ["armor", "shield"], ["potion", "ammo"]],
+      "markup": 1.25,
+      "purse": 1.2,
+      "buys": ["weapon", "armor", "shield", "ammo", "accessory"],
+      "services": ["repair", "sharpen", "reinforce"],
+      "gate_lines": {
+        "59": "My brother takes the same track down to the water every day. Dig a pit in it, lie in the pit, and drive up under his left shoulder as he crawls over you. That's all you need to know. That's all anybody needs to know."
+      },
+      "lines": {
+        "greet": ["Hreidmar's son. The other one. The one who didn't get the gold.",
+                  "Steel, mail, a good edge. Everything a hero needs to kill a dragon. Ask me how I know.",
+                  "My brother was a dwarf, once. The gold did the rest."],
+        "bought": "Good. Now go down and use it on him.",
+        "sold": "I'll melt it down. Everything melts if the fire is hot enough. Ask my brother.",
+        "broke": "No gold, no steel. It's a family rule.",
+        "refuse": "That's no use to a smith.",
+        "purse_empty": "My purse is empty. His isn't. Funny, that.",
+        "sold_out": "The racks are bare. Everything I had is going down that stair with someone."
+      },
+      "reactions": [
+        {"when": "otters_wergild", "mult": 0.90, "line": "You told two quarrelling dwarves my father's story, I hear. Then you know mine too. Honest prices, and I'll keep my hands where you can see them."}
+      ]
+    },
+
+    "tyr": {
+      "name": "Tiw",
+      "title": "One-Handed Soldier",
+      "pronoun": "he",
+      "reach": "norse_god",
+      "sprite": "npc_old_warrior", "sprite_fallback": "npc_old_warrior",
+      "lore": "An old soldier keeps the last camp before the wolf. His right hand is gone at the wrist, a clean and very old bite. He laid it once in a wolf's mouth as a pledge he knew would be broken, and he will tell you he knew the price before he paid it. He calls himself Tiw; the English named Tuesday for a god of that name. He fed the wolf when it was a pup and the others were afraid to go near it, and nobody has ever called him a peacemaker.",
+      "stock": [
+        {"ids": ["potion_of_healing", "potion_of_extra_healing"], "cat": "potion", "picks": 2},
+        {"class": "potion", "picks": 2}, {"class": "food", "picks": 2},
+        {"class": "scroll", "picks": 1}, {"class": "ammo", "picks": 1},
+        {"gear": "weapon", "picks": 1}, {"gear": "armor", "picks": 1},
+        {"id": "greater_soul_sphere", "cat": "artifact", "chance": 0.25, "floors": [34, 100]}
+      ],
+      "stock_size": [[1, 100, 7]],
+      "spread": [["potion"], ["food"], ["armor", "weapon"], ["scroll", "ammo"]],
+      "markup": 1.0,
+      "purse": 1.2,
+      "buys": "all",
+      "services": ["repair", "sharpen", "heal"],
+      "gate_lines": {
+        "79": "He's on his island down there, bound with a ribbon the dwarves made from six things that are not. It held when no chain would. Gather the six and bind him again. And if it ever comes to his jaws, take Vidar's shoe: every scrap of leather men ever trimmed off their shoes went into it, for that one wolf."
+      },
+      "lines": {
+        "greet": ["Sit. Eat. The wolf will keep.",
+                  "I fed him when he was a pup and the others were afraid to. He took my hand for it later. Fair's fair.",
+                  "Ask me anything but what happened to the hand."],
+        "bought": "Good choice. You'll want it on the island.",
+        "sold": "I'll take it. A soldier never has too many of those.",
+        "broke": "No coin. Then fight well, and come back with some.",
+        "refuse": "No use to me, or to anyone on that island.",
+        "purse_empty": "I've nothing more to give. I gave the best of it a long time ago.",
+        "sold_out": "That's the lot. Go on down. He's waiting, and he never liked waiting."
+      },
+      "reactions": [
+        {"when": "noticed_gods", "mult": 0.85, "line": "You've an eye for a god in a beggar's coat, I hear. Then you know whose camp this is. Keep it to yourself, and you pay what things are worth."}
+      ]
+    },
+
+    "dwarf_armourer": {
+      "name": "Brunhild Irontemper",
+      "title": "Dwarf Smith",
+      "pronoun": "she",
+      "reach": "deep_folk",
+      "sprite": "npc_dwarf", "sprite_fallback": "trader_armourer",
+      "lore": "Brunhild Irontemper is a dwarf of the deep forges, and the honest kind. When Fafnir's gold came among her people, half of them went wrong; she went to work. Dwarves made Thor's hammer, Odin's spear and the ribbon that holds the wolf, and she will tell you about all three while she mends your mail. She charges what a thing is worth and not a coin more.",
+      "stock": [
+        {"gear": "weapon", "picks": 2}, {"gear": "armor", "picks": 3}, {"gear": "shield", "picks": 1},
+        {"class": "ammo", "picks": 1}
+      ],
+      "stock_size": [[1, 100, 5]],
+      "spread": [["weapon"], ["armor"], ["shield", "ammo"]],
+      "markup": 1.0,
+      "purse": 1.0,
+      "buys": ["weapon", "armor", "shield", "ammo"],
+      "services": ["repair", "sharpen", "reinforce", "cut_curse"],
+      "lines": {
+        "greet": ["Weapon's looking a bit sad, isn't it? I can fix that, for a fair price.",
+                  "The ribbon that holds the wolf was dwarf work. So is everything on this rack.",
+                  "Rust is just metal that's stopped caring. I care for it."],
+        "bought": "Keep the edge off stone. It isn't a pick.",
+        "sold": "Good steel, badly kept. I'll put it right and sell it to someone kinder.",
+        "broke": "Fair price means you pay it. That's what fair means.",
+        "refuse": "Steel I'll take. That isn't steel.",
+        "purse_empty": "Purse is empty. Anvil isn't. Bring me work, not wares.",
+        "sold_out": "Rack's bare. Go and break something, then come back and let me mend it."
+      },
+      "friend": {"person": "frida", "pronoun": "she", "when": {"deeds_all": ["saved.frida"]},
+                 "reach": "deep_folk", "floors": [41, 75],
+                 "name": "Frida", "title": "Smith's Daughter", "sprite": "npc_dwarf",
+                 "line": "Hepti filled his trench in and I took my hand off the lid. We split Father's tools as well. Friend's price, for the one who told us about Otr."}
+    },
+
+    "ghost_bookseller": {
+      "name": "Quentin Shelfmark",
+      "title": "The Cataloguer",
+      "pronoun": "he",
+      "reach": "dead",
+      "sprite": "npc_ghost", "sprite_fallback": "npc_scholar",
+      "lore": "Quentin Shelfmark came down a hundred years ago to copy the writing off the walls, as Aldous Vellum does now. He died at it somewhere past Medusa's gate and has not stopped working. He labels everything: walls, torches, rats, you. He keeps his catalogue the way Callimachus kept the great Library of Alexandria's, in a hundred and twenty rolls: by subject first, then by author. The coins you pay him fall through his hands into a box, and he files them under G.",
+      "stock": [
+        {"class": "scroll", "picks": 3}, {"class": "spellbook", "picks": 1}
+      ],
+      "stock_size": [[1, 100, 4]],
+      "spread": [["scroll"], ["spellbook"]],
+      "markup": 1.1,
+      "purse": 0.6,
+      "buys": ["scroll", "spellbook"],
+      "services": ["id_retry", "map"],
+      "lines": {
+        "greet": ["Customer! Encountered! Do hold still while I label you.",
+                  "Everything down here is in my catalogue. Subject first, then author. You are under Visitors.",
+                  "Mind the rat. He is catalogued, and I should hate to start again."],
+        "bought": "Struck from the catalogue. Read it before something else does.",
+        "sold": "Oh, I have no copy of that one. A new shelfmark. How lovely.",
+        "broke": "No coin? I shall file you under Browsers.",
+        "refuse": "That has no words in it. I only catalogue words.",
+        "purse_empty": "My purse is empty. It goes straight through me, I'm afraid.",
+        "sold_out": "Nothing left on the shelves. Do come back when you've found me something to read."
+      },
+      "friend": {"person": "sibyl", "pronoun": "she", "when": {"deeds_any": ["aid.sibyl"]},
+                 "reach": "immortal", "floors": [41, 90],
+                 "name": "The Sibyl of Cumae", "title": "Seller of Books", "sprite": "npc_blind_seer",
+                 "line": "Same price as before, dear. No. For you, a little less. You paid the first time, and nobody ever does."}
+    },
+
+    "damned_generalist": {
+      "name": "Ortolan",
+      "title": "The Last Merchant",
+      "pronoun": "he",
+      "reach": "damned_demon",
+      "sprite": "npc_merchant", "sprite_fallback": "merchant_npc",
+      "lore": "Ortolan kept a shop in a city above and never once gave a beggar a crumb from his table. He is keeping it still. The coins melt between his fingers as he counts them, and the chest he sits on is warm because of where it stands. He cannot stop trading; he has tried, and wherever a customer goes in the Abyss, his shop is there first. Jesus told of treasure laid up on earth, where moth and rust corrupt and thieves break through and steal. Ortolan has all three in stock.",
+      "stock": [
+        {"class": "potion", "picks": 2}, {"class": "scroll", "picks": 2},
+        {"class": "accessory", "picks": 2}, {"class": "wand", "picks": 2},
+        {"class": "ammo", "picks": 2},
+        {"gear": "weapon", "picks": 2}, {"gear": "armor", "picks": 3}, {"gear": "shield", "picks": 1},
+        {"id": "soul_sphere", "cat": "artifact", "chance": 0.06, "floors": [67, 100]},
+        {"id": "greater_soul_sphere", "cat": "artifact", "chance": 0.12, "floors": [67, 100]}
+      ],
+      "stock_size": [[1, 100, 6]],
+      "spread": [["accessory"], ["weapon", "armor", "shield"], ["scroll", "spellbook"], ["potion", "wand", "ammo"]],
+      "markup": 1.4,
+      "purse": 1.5,
+      "buys": "all",
+      "services": ["map"],
+      "lines": {
+        "greet": ["Ortolan's Emporium! The deepest shop in the world, established longer than you've been alive.",
+                  "Buy something. Please. I can't stop selling, and nobody ever comes.",
+                  "Don't mind the coins. They do that."],
+        "bought": "Sold. Sold. It doesn't help. It never helps.",
+        "sold": "I'll buy it. I have to. Trade is all I'm allowed now.",
+        "broke": "No coin? I know the feeling. A chest full, and not a coin I can keep.",
+        "refuse": "Even down here I have standards. They're all I have left.",
+        "purse_empty": "My purse is empty. It's always empty. It's always full. It's hard to explain.",
+        "sold_out": "Nothing left. Come back tomorrow. There is always a tomorrow here. That's the trouble."
+      },
+      "reactions": [
+        {"when": "open_hand", "mult": 1.15, "line": "Pay other people's debts, do you? I never did. You'd think I'd have learned by now. Prices are up."}
       ]
     }
   }

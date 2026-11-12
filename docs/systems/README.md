@@ -78,7 +78,7 @@ reporter are small, independent JSON/text siblings. See
 | [progression.md](progression.md) | Quirks, hero specials, elder blood, secret builds, karma judgments | Progression add/edit |
 | [quests_mysteries.md](quests_mysteries.md) | 9 quest chains + 12 mysteries + the Judgment altar | Quest add/edit |
 | [economy.md](economy.md) | The income line, gold by lore (no coin in beasts), chests and coin piles, the named traders (plan, stock, worth-based prices, Buy / Sell / Services), services, purse-relative temptations, deeds pricing | Any gold, price, trader or shop change |
-| [karma_prayer.md](karma_prayer.md) | Karma −10..+10 and the block cap (`karma.adjust`), 30 block anchors + 141 story/flavor encounters, the Road, Setne's Tomb, prayer chain, divine intercession, judgment tiers | Karma / encounter / prayer change |
+| [karma_prayer.md](karma_prayer.md) | Karma −10..+10 and the block cap (`karma.adjust`), 37 block anchors (at least three a block, each placed where its people could be: `reach`) + the story/flavor encounters, the Road, Setne's Tomb, prayer chain, divine intercession, judgment tiers | Karma / encounter / prayer change |
 | [ui.md](ui.md) | Menus, HUD, help, bestiary, kit, discoveries, threshold copy helper | UI change |
 | [save_meta.md](save_meta.md) | save_system (atomic pickle), highscore_system, crash_handler, paths.py, player.`__setstate__` migration | Save format change |
 | [seeker_profile.md](seeker_profile.md) | The Seeker profile (the real player, across every run), achievements as data, reward codes for Dad and their key, the event spine, badge art | Achievement, profile or reward-code change |

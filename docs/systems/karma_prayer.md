@@ -4,7 +4,8 @@
 > deeds/karma redesign of 2026-10-17 (`DEEDS_KARMA_DESIGN.md`): the karma
 > gate and the Road are both ON (`data/karma_rules.json: gate_enabled`,
 > `road_enabled`).
-> Scope: karma scale (-10..+10), 30 block-anchor encounters, 141
+> Scope: karma scale (-10..+10), 37 block-anchor encounters (depth-true
+> since Dungeon Alive 7, 2026-11-12), 141
 > story and flavor encounters, the Road, Ethereal Unicorn state machine, Magic
 > Dungeon Carrot, Prayer v2 (`\` key), Divine Intercession
 > (Shift+`\`), Fisher King cooldown mechanics, the Altar of the Last
@@ -135,13 +136,35 @@ Karma is consulted by:
 
 ---
 
-## 2. The 30 block anchors
+## 2. The 37 block anchors
 
 ### 2.1 Overview
 
 The dungeon is divided into **10 level blocks** of 9 levels each.
-Each block has **3 candidate encounters** defined in
-`data/npc_encounters.json`, loaded as `src/npc_encounters.py::ENCOUNTERS`. With the Road on
+Each block has **at least 3 candidate encounters** defined in
+`data/npc_encounters.json`, loaded as `src/npc_encounters.py::ENCOUNTERS`.
+
+**Depth-true** (Dungeon Alive 7, Brandon 2026-11-12: "as we descend, it
+feels like we are delving deeper and deeper, to places where normal men
+cannot go"). Every anchor's `person` names its `reach`: the most limited
+being the scene puts there. The `reach` table in `data/traders.json` says how
+deep each kind can go (ordinary folk 1-20, hardy delvers to 40, the
+exceptional to 50, dwarves, deep folk, trolls, giants and the Fair Folk to 80,
+Norse gods 61-80, demons and the damned 61-100; the dead, captives,
+immortals, saints, angels and the called anywhere), and
+`tests/test_depth_true.py` holds every anchor's floors inside it. The eight
+the encounter audit (`_alive_research/ENCOUNTER_AUDIT.md`) found too deep
+moved up: Pomfrey Quill to block 1; Konstantin's Glimmerdeep farmers and the
+grain committee's village to block 2 (under-hamlets off the upper stair); Ser
+Brennan, the penitent and his victim's son, Roderic and the stone Celeste to
+block 3 (Athena's temple, where the basilisk's statues are); Rusk's coffle (no
+wagon comes down thirty stairs) to block 4. The shallow blocks now hold four
+to seven candidates. The deep blocks were refilled to three with beings who
+can stand there: two dwarves quarrelling over a dead smith's chest (block 5),
+Saint Lawrence on his gridiron (6), Sigyn holding the bowl over bound Loki
+(7), a valkyrie's swan-shirt in a frost giant's lap and Thrym's wedding feast
+with a bride who eats an ox (8), and the rich man at the great gulf and the
+four angels bound at the Euphrates (10). With the Road on
 (shipped), one encounter per block binds at run start to the band's anchor slot
 (`road.bind_anchors`, a floor inside the block range below), and the trigger item (if any)
 is pre-spawned 1-3 levels earlier so the player can arrive with it in-hand. With the Road
@@ -239,41 +262,49 @@ the purse at the time (`economy.forgo_is_real`,
 
 ### 2.3 Block × encounter table
 
-Generated from `data/npc_encounters.json` (2026-10 story rewrite). One candidate per block
-binds per run; a triggered anchor binds a non-triggered fallback with it.
+Generated from `data/npc_encounters.json` (2026-10 story rewrite; depth-true since Dungeon
+Alive 7, 2026-11-12). One candidate per block binds per run; a triggered anchor binds a
+non-triggered fallback from its own block with it. Reach is the person's `reach` (§2.1).
 
-| Block | Tag | Name | Stakes | Karma paths | Notes |
-|---|---|---|---|---|---|
-| 1 | `marta_ratchatcher` | Rat-Catcher | medium | cruelty (-1) |  |
-| 1 | `elara_amulet` | Lost Girl | medium | forgo, cruelty (-1) | trigger `silverlight_pendant`, fallback `marta_ratchatcher` |
-| 1 | `grumwald_toll` | Grumwald | medium | forgo, cruelty (-1) |  |
-| 2 | `sir_aldric` | Burdened Knight | medium | oath sworn, cruelty (-1) |  |
-| 2 | `tam_thief` | Young Thief | medium | judgment |  |
-| 2 | `helena_cartographer` | Injured Cartographer | medium | cruelty (-1) |  |
-| 3 | `marcus_sword` | Grieving Father | medium | forgo, cruelty (-1) | trigger `oathkeeper_sword`, fallback `chained_priest` |
-| 3 | `last_potion` | Last Potion | medium | none | contested; tragedy: costly |
-| 3 | `chained_priest` | Two Prisoners | medium | judgment |  |
-| 4 | `dying_messenger` | Dying Courier | medium | oath sworn, cruelty (-1) |  |
-| 4 | `old_konstantin` | Old Warrior | medium | judgment | tragedy: unsavable |
-| 4 | `reliquary` | Sister Marguerite | medium | oath sworn, sacrilege (-1) |  |
-| 5 | `ghost_grave` | Ghost of Hal | medium | sacrilege (-1) |  |
-| 5 | `deserter` | Legion Deserter | medium | judgment, cruelty (-1) |  |
-| 5 | `grain_committee` | Grain Committee | medium | stance, betray (-1: informing on the village) | stance: 3.1,3.2 |
-| 6 | `blind_seer` | Blind Seer | medium | none | tragedy: unsavable |
-| 6 | `trapped_seraph` | Caged Angel | medium | judgment, cruelty (-1) |  |
-| 6 | `slavers_wagon` | Slaver's Wagon | medium | stance, stance_wrong (-1) | stance: 1,9 |
-| 7 | `ser_brennan` | Dying Knight | medium | oath sworn, cruelty (-1) | tragedy: unsavable |
-| 7 | `cursed_scholar` | Cursed Scholar | high | judgment, cruelty (-1) |  |
-| 7 | `fairy_jar` | Trapped Fairy | medium | cruelty (-1), forgo |  |
-| 8 | `penitent` | The Penitent | medium | judgment, cruelty (-1) |  |
-| 8 | `roderic_shield` | Young Knight | medium | none | contested; trigger `lionheart_shield`, fallback `penitent` |
-| 8 | `forgotten_prisoner` | Forgotten Prisoner | medium | judgment, cruelty (-1) |  |
-| 9 | `fallen_paladin` | Fallen Paladin | medium | stance (+1 on a pass), cruelty (-1) | stance: 1; authority just |
-| 9 | `azarael_demon` | Bound Demon | high | forgo, sacrilege (-1) |  |
-| 9 | `live_not_by_lies` | Locust Checkpoint | medium | stance_wrong (-1), stance | stance: 1 |
-| 10 | `dying_prophet` | Dying Prophet | medium | cruelty (-1) |  |
-| 10 | `petrified_adventurer` | Stone Statue | medium | cruelty (-1) | escort |
-| 10 | `last_merchant` | Pomfrey Quill | medium | forgo, cruelty (-1) | escort |
+| Block | Tag | Name | Reach | Stakes | Karma paths | Notes |
+|---|---|---|---|---|---|---|
+| 1 | `marta_ratchatcher` | Rat-Catcher | ordinary | medium | cruelty (-1) |  |
+| 1 | `elara_amulet` | Lost Girl | ordinary | medium | forgo, cruelty (-1) | trigger `silverlight_pendant`, fallback `marta_ratchatcher` |
+| 1 | `grumwald_toll` | Grumwald | giants_fair_folk | medium | forgo, cruelty (-1) |  |
+| 1 | `last_merchant` | Pomfrey Quill | ordinary | medium | forgo, cruelty (-1) | escort |
+| 2 | `sir_aldric` | Burdened Knight | hardy | medium | oath sworn, cruelty (-1) |  |
+| 2 | `tam_thief` | Young Thief | ordinary | medium | judgment |  |
+| 2 | `helena_cartographer` | Injured Cartographer | hardy | medium | cruelty (-1) |  |
+| 2 | `old_konstantin` | Old Warrior | ordinary | medium | judgment | tragedy: unsavable |
+| 2 | `grain_committee` | Grain Committee | ordinary | medium | stance, betray (-1), stance (+1 on a pass) | stance: 3.1,3.2; authority unjust |
+| 3 | `marcus_sword` | Grieving Father | hardy | medium | forgo, cruelty (-1) | trigger `oathkeeper_sword`, fallback `chained_priest` |
+| 3 | `last_potion` | Last Potion | hardy | medium | none | contested; tragedy: costly |
+| 3 | `chained_priest` | Two Prisoners | captive | medium | judgment |  |
+| 3 | `ser_brennan` | Dying Knight | hardy | medium | oath sworn, cruelty (-1) | tragedy: unsavable |
+| 3 | `petrified_adventurer` | Stone Statue | hardy | medium | cruelty (-1) | escort |
+| 3 | `penitent` | The Penitent | hardy | medium | judgment, cruelty (-1) | authority just |
+| 3 | `roderic_shield` | Young Knight | hardy | medium | none | contested; trigger `lionheart_shield`, fallback `penitent` |
+| 4 | `dying_messenger` | Dying Courier | hardy | medium | oath sworn, cruelty (-1) |  |
+| 4 | `reliquary` | Sister Marguerite | hardy | medium | oath sworn, sacrilege (-1) |  |
+| 4 | `slavers_wagon` | Slaver's Coffle | hardy | medium | stance (+1 on a pass), stance, stance_wrong (-1) | stance: 1,9 |
+| 5 | `ghost_grave` | Ghost of Hal | dead | medium | sacrilege (-1) |  |
+| 5 | `deserter` | Legion Deserter | exceptional | medium | judgment, cruelty (-1) |  |
+| 5 | `dwarf_siblings` | Quarrelling Dwarves | deep_folk | medium | judgment, cruelty (-1) |  |
+| 6 | `blind_seer` | Blind Seer | immortal | medium | none | tragedy: unsavable |
+| 6 | `trapped_seraph` | Caged Angel | deep_being | medium | judgment, cruelty (-1) |  |
+| 6 | `lawrence_gridiron` | Deacon on the Gridiron | saint_angel | medium | forgo | escort |
+| 7 | `cursed_scholar` | Cursed Scholar | captive | high | judgment, cruelty (-1) |  |
+| 7 | `fairy_jar` | Trapped Fairy | deep_being | medium | cruelty (-1), forgo |  |
+| 7 | `sigyn_bowl` | The Bound One and His Wife | norse_god | medium | forgo, sacrilege (-1) |  |
+| 8 | `forgotten_prisoner` | Forgotten Prisoner | captive | medium | judgment, cruelty (-1) |  |
+| 8 | `swan_shirt` | Valkyrie by the Lake | norse_god | medium | cruelty (-1), forgo |  |
+| 8 | `thrym_wedding` | Thrym's Wedding Feast | norse_god | medium | betray (-1) | disguise: thor |
+| 9 | `fallen_paladin` | Fallen Paladin | called | medium | stance (+1 on a pass), cruelty (-1) | stance: 1; authority just |
+| 9 | `azarael_demon` | Bound Demon | damned_demon | high | forgo, sacrilege (-1) |  |
+| 9 | `live_not_by_lies` | Locust Checkpoint | damned_demon | medium | stance_wrong (-1), stance | stance: 1; authority unjust |
+| 10 | `dying_prophet` | Dying Prophet | called | medium | cruelty (-1) |  |
+| 10 | `rich_man_gulf` | The Rich Man at the Gulf | damned_demon | medium | cruelty (-1), forgo |  |
+| 10 | `euphrates_four` | Four Bound at the River | saint_angel | medium | judgment, sacrilege (-1) |  |
 
 ### 2.4 Karma deltas
 
@@ -291,7 +322,7 @@ arrives with context:
 |-----------|----------------|--------|-------------------------|
 | `elara_amulet` | `silverlight_pendant` | 1 | NPC on L7 → pendant on L6 |
 | `marcus_sword` | `oathkeeper_sword` | 2 | NPC on L23 → sword on L21 |
-| `roderic_shield` | `lionheart_shield` | 2 | NPC on L75 → shield on L73 |
+| `roderic_shield` | `lionheart_shield` | 2 | NPC on L25 → shield on L23 |
 
 `get_trigger_item_levels(placements)` produces the `{item_id: floor}`
 map at game start (`npc_encounters.py:1860`). The dungeon generator
@@ -504,12 +535,15 @@ it (`flv_dead_come_for_the_book`, hostile).
 Related non-karmic encounters that live elsewhere:
 
 - **The traders** (`MerchantNPC` in `mystery_system.py`; `traders.py`,
-  `game_traders.py`, `data/traders.json`): Grindle the Deep Gnome Trader
-  and five named specialists, planned once a run and placed on arrival;
-  a gate camp (Old Mags Thorn, the sutler) on floors 19, 39, 59 and 79.
-  They sell, buy and sell services. Deeds move their prices (a wronged
-  merchant, a friend come back, a kept oath's credit, rumours of charity),
-  never karma. See [economy.md](economy.md).
+  `game_traders.py`, `data/traders.json`): two generalists (Grindle the Deep
+  Gnome Trader to floor 80, Ortolan, one of the damned, below) and seven
+  named specialists, planned once a run and placed on arrival; a gate camp
+  on floors 19 and 39 (Old Mags Thorn, the sutler), 59 (Regin, Fafnir's
+  brother) and 79 (Tyr, disguised as a one-handed old soldier). Each keeps to
+  the floors his kind of being can reach (`reach`, §2.1). They sell, buy and
+  sell services. Deeds move their prices (a wronged merchant, a friend come
+  back, a kept oath's credit, rumours of charity, a god seen through, Otr's
+  story told), never karma. See [economy.md](economy.md).
 - **Secret Cow** (`game_encounters._maybe_spawn_cow`) — see
   [quests_mysteries §2.9](quests_mysteries.md).
 

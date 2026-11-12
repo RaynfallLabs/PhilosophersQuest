@@ -9,8 +9,16 @@ Everything a trader is and says lives in data/traders.json.
 
 * **The plan** (``roll_plan``): which floors hold a trader, decided once a run
   from the Road's seed (road.rng_for), never from the shared random stream,
-  like the Emberpup's and the Black Knight's rolls. A gate camp (the sutler)
-  stands on floors 19, 39, 59 and 79, before each gate boss, always.
+  like the Emberpup's and the Black Knight's rolls. A gate camp stands on
+  floors 19, 39, 59 and 79, before each gate boss, always: Old Mags on 19 and
+  39, Regin (Fafnir's own brother) on 59, Tyr in an old soldier's coat on 79.
+* **Depth-true** (Brandon, 2026-11-12: "It wouldn't make sense to find a happy
+  fat merchant on level 83. He could never reach it."): every trader, and
+  every friend who stands in for one, keeps to floors his kind of being can
+  reach (data/traders.json ``reach``; tests/test_depth_true.py). The
+  generalists are a list, each with its own floors (Grindle to 80, Ortolan,
+  one of the damned, below), and a friend's ``floors`` bound where he comes
+  back.
 * **Stock** (``build_stock``): from the trader's stock list, weighted to the
   floor like any other loot, dressed (wand charges and ammo bundles rolled),
   never cursed or enchanted, a named unique only if the run has not had it.
@@ -58,11 +66,59 @@ def kind_def(kind: str) -> dict:
     return (data().get('traders') or {}).get(kind) or (data()['traders']['generalist'])
 
 
+# ------------------------------------------------------------------ reach
+
+def reach(name: str):
+    """(lo, hi): the floors a kind of being can reach (data/traders.json
+    ``reach``), or None for a name the table does not know."""
+    row = (data().get('reach') or {}).get(name)
+    if not isinstance(row, dict) or not row.get('floors'):
+        return None
+    lo, hi = row['floors']
+    return int(lo), int(hi)
+
+
 # ------------------------------------------------------------------ the plan
 
 def _rng(seed: int, key: str) -> random.Random:
     import road
     return road.rng_for(seed, key)
+
+
+def generalists(plan: dict | None = None) -> list:
+    """[(kind, lo, hi), ...]: the generalists and the floors each keeps to
+    (data/traders.json plan ``generalists``: Grindle to 80, Ortolan below).
+    A plan written before the list (one ``generalist`` kind over
+    ``generalist_floors``) reads as one entry, so old data still plans."""
+    plan = (data().get('plan') or {}) if plan is None else plan
+    out = []
+    for g in plan.get('generalists') or ():
+        if isinstance(g, dict) and g.get('kind'):
+            lo, hi = g.get('floors', (2, 98))
+            out.append((g['kind'], int(lo), int(hi)))
+    if not out:
+        lo, hi = plan.get('generalist_floors', (2, 98))
+        out.append((plan.get('generalist', 'generalist'), int(lo), int(hi)))
+    return out
+
+
+def generalist_for(floor: int, plan: dict | None = None):
+    """The generalist who keeps to ``floor``, or None below or above them all."""
+    for kind, lo, hi in generalists(plan):
+        if lo <= int(floor) <= hi:
+            return kind
+    return None
+
+
+def kind_floors(kind: str, plan: dict | None = None) -> list:
+    """[(lo, hi), ...]: every stretch of floors the plan can put ``kind`` on
+    (a gate camp's own floor, a specialist's range, a generalist's range)."""
+    plan = (data().get('plan') or {}) if plan is None else plan
+    out = [(int(f), int(f)) for f, k in (plan.get('gate_camps') or {}).items() if k == kind]
+    out += [(int(s['floors'][0]), int(s['floors'][1]))
+            for s in plan.get('specialists') or () if s.get('kind') == kind]
+    out += [(lo, hi) for k, lo, hi in generalists(plan) if k == kind]
+    return out
 
 
 def roll_plan(seed: int, *, secret_floors=(), busy_floors=()) -> dict:
@@ -93,14 +149,20 @@ def roll_plan(seed: int, *, secret_floors=(), busy_floors=()) -> dict:
             floors[f] = spec['kind']
             if f in quiet:
                 quiet.remove(f)
-    lo, hi = plan.get('generalist_floors', (2, 98))
+    # Each floor left may take the generalist who keeps to it (Grindle to
+    # 80, Ortolan below): the floors are walked in order whatever the list,
+    # so one roll per floor, as before.
+    gens = generalists(plan)
     chance = float(plan.get('generalist_chance', 0.17))
-    for f in range(int(lo), int(hi) + 1):
+    for f in range(min(lo for _k, lo, _h in gens), max(hi for _k, _l, hi in gens) + 1):
         if f in floors or f in never or f in secret:
+            continue
+        kind = generalist_for(f, plan)
+        if kind is None:
             continue
         p = chance * (0.5 if f in busy else 1.0)
         if rng.random() < p:
-            floors[f] = plan.get('generalist', 'generalist')
+            floors[f] = kind
     return {'v': CURRENT_VERSION, 'seed': int(seed), 'floors': floors, 'spawned': [],
             'friends_used': [], 'told': [], 'credits_used': 0}
 
@@ -350,9 +412,16 @@ def _check(cond, ctx) -> bool:
 
 def friend_for(kind: str, ctx, used=()) -> dict | None:
     """The person the hero saved who comes back as this kind of trader, if
-    one has (and has not come already this run)."""
+    one has (and has not come already this run). A friend keeps to his own
+    ``floors``, the floors his kind of being can reach (a rat-catcher never
+    keeps a shop on floor 60): on a floor outside them the trader is
+    himself. ``ctx['floor']`` is the floor he stands on."""
     fr = kind_def(kind).get('friend')
     if not fr or fr.get('person') in set(used or ()):
+        return None
+    span = fr.get('floors')
+    floor = (ctx or {}).get('floor') if isinstance(ctx, dict) else None
+    if span and floor is not None and not int(span[0]) <= int(floor) <= int(span[1]):
         return None
     return fr if _check(fr.get('when'), ctx) else None
 

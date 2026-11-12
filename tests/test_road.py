@@ -123,11 +123,41 @@ def test_anchors_bind_inside_their_block_with_a_fallback_for_triggered_ones():
             assert e['block'] == road.band_of(f)
             fb = st['slots'][f]['fallback']
             if e.get('trigger_item'):
+                # The fallback stands on the same floor, so it belongs to the
+                # same block (and its reach: tests/test_depth_true.py).
                 assert fb and not by_tag[fb].get('trigger_item')
+                assert by_tag[fb]['block'] == e['block'], (e['tag'], fb)
                 saw_fallback += 1
             else:
                 assert fb is None
     assert saw_fallback > 50
+
+
+def test_every_anchor_can_bind_and_a_bigger_block_shares_its_floor_fairly():
+    """Dungeon Alive 7 (depth-true): the shallow blocks hold more than three
+    anchors now (the ordinary folk moved up) and the deep ones were refilled
+    to three. Every anchor still binds in some run, inside its own block."""
+    import collections
+
+    import npc_encounters
+    seen = collections.Counter()
+    for i in range(1500):
+        st = road.new_state(_seed(i), enabled=True)
+        for f, e in road.bind_anchors(st, npc_encounters.ENCOUNTERS).items():
+            assert road.anchor_fits(e, f) and e['block'] == road.band_of(f)
+            seen[e['tag']] += 1
+    tags = {e['tag'] for e in npc_encounters.ENCOUNTERS}
+    assert set(seen) == tags, sorted(tags - set(seen))
+    by_block = collections.defaultdict(list)
+    for e in npc_encounters.ENCOUNTERS:
+        by_block[e['block']].append(e['tag'])
+    for block, mine in by_block.items():
+        assert len(mine) >= 3, block
+        # No candidate is starved: each binds at least a third as often as
+        # an even share of its block would give it.
+        even = 1500 / len(mine)
+        for tag in mine:
+            assert seen[tag] >= even / 3, (block, tag, seen[tag], round(even))
 
 
 def test_an_empty_pool_falls_back_to_a_lighter_stake_then_stays_empty():

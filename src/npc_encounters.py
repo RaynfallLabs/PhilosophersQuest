@@ -11,7 +11,8 @@ and lands its pass or fail branch (game_encounters._apply_outcome;
 schema in encounter_schema.py, DEEDS_KARMA_DESIGN.md section 4).
 Options show action + justification only, no outcomes, no karma labels.
 The player is never cruel; even selfish options are framed as pragmatic necessity.
-One encounter guaranteed per 10-level block, chosen from 3 candidates.
+One encounter guaranteed per 10-level block, chosen from that block's candidates
+(at least three; Dungeon Alive slice 7 placed each where its people could be).
 """
 import random
 
@@ -103,7 +104,7 @@ _normalise_all(ENCOUNTERS, source='npc')
 def select_encounter_levels(seed: int | None = None) -> dict:
     """Return {level_num: encounter_dict} for a game run.
 
-    One encounter guaranteed per 10-level block, chosen from 3 candidates.
+    One encounter guaranteed per 10-level block, chosen from its candidates.
     Never spawns on boss levels (20, 40, 60, 80, 100).
     """
     rng = random.Random(seed)

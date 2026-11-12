@@ -213,9 +213,11 @@ def test_encounter_and_hint_text_has_no_dashes_or_lowercase_names():
 
 def test_karma_encounters_cover_every_block_and_load_from_data():
     from npc_encounters import ENCOUNTERS, _BLOCKS, select_encounter_levels
-    assert len(ENCOUNTERS) == len(NPCS) == 30
+    # At least three a block (Dungeon Alive 7: the shallow blocks hold more
+    # since the ordinary folk moved up out of the deep ones).
+    assert len(ENCOUNTERS) == len(NPCS) >= 30
     for block, _lo, _hi in _BLOCKS:
-        assert sum(1 for e in ENCOUNTERS if e['block'] == block) == 3
+        assert sum(1 for e in ENCOUNTERS if e['block'] == block) >= 3
     placed = select_encounter_levels(seed=7)
     assert len(placed) == 10
 

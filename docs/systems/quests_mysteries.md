@@ -711,7 +711,7 @@ data/items/artifact.json     -- 24 quest artifacts, all with v2.18
 
 - [karma_prayer](karma_prayer.md) — Prayer v2, Divine Intercession,
   Fisher-King-mystery cooldown halving, Judgment outcome details,
-  karma scale and block cap, the 30 block anchors, the story and
+  karma scale and block cap, the 37 block anchors, the story and
   flavor encounters and the Road.
 - [items](items.md) — Full artifact pool, BUC rolls, identify
   pipeline, unique drop rates.

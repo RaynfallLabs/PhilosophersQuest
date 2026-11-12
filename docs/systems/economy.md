@@ -62,18 +62,49 @@ offered for something he cannot name, never its true worth.
 
 ## 4. The traders (D4)
 
-`data/traders.json` `traders`: six people, each with a name, a reason to be
+`data/traders.json` `traders`: eleven people, each with a name, a reason to be
 down there, a stock list, a markup, a buying purse, what they buy, their
 services and their lines.
 
+**Depth-true** (Dungeon Alive 7, Brandon 2026-11-12: "It wouldn't make sense
+to find a happy fat merchant on level 83. He could never reach it."): every
+trader names the kind of being he is (`reach`), and the `reach` table in the
+same file says how deep that kind can go (ordinary folk 1-20, hardy delvers to
+40, the exceptional to 50, dwarves and deep folk to 80, Norse gods 61-80, the
+damned 61-100, the dead, saints and angels anywhere). The plan never puts a
+trader outside it, and a friend who stands in for one keeps to his own
+`floors` (`traders.friend_for` reads the floor from the deed context: Pomfrey
+Quill, an alderman, comes back only on 2-20). `tests/test_depth_true.py` holds
+every one of them, and every Road anchor, to the table.
+
 | Kind | Who | Floors | Stocks | Buys | Services |
 |---|---|---|---|---|---|
-| generalist | Grindle, Deep Gnome Trader | 2-98, about 1 floor in 6 | potions, scrolls, rings, wands, ammo, common gear, sometimes a Soul Sphere (25% on 1-33) or a Greater Soul Sphere (from 34) | everything (a fence) | map |
+| generalist | Grindle, Deep Gnome Trader | 2-80, about 1 floor in 6 | potions, scrolls, rings, wands, ammo, common gear, sometimes a Soul Sphere (25% on 1-33) or a Greater Soul Sphere (from 34) | everything (a fence) | map |
+| damned_generalist | Ortolan, the Last Merchant (one of the damned: he never gave a beggar a crumb, and must trade forever) | 81-98, about 1 floor in 6 | as Grindle (x1.4); rarely a Soul or Greater Soul Sphere | everything | map |
 | apothecary | Mother Wort | 2-35, 3 a run | a cure or healing for sure, potions, food | potions, food, ingredients | cure, restore, heal |
-| armourer | Brannoc | 10-70, 3 a run | common gear, ammo | weapons, armour, shields, ammo | repair, sharpen, reinforce, cut a curse off |
-| bookseller | Ambrose Vellum | 15-90, 2 a run | scrolls, one spellbook | scrolls, spellbooks | identify with the scribe, map |
+| armourer | Brannoc | 10-45, 2 a run | common gear, ammo | weapons, armour, shields, ammo | repair, sharpen, reinforce, cut a curse off |
+| dwarf_armourer | Brunhild Irontemper, Dwarf Smith | 41-75, 2 a run | common gear, ammo | weapons, armour, shields, ammo | repair, sharpen, reinforce, cut a curse off |
+| bookseller | Aldous Vellum | 15-40, 1 a run | scrolls, one spellbook | scrolls, spellbooks | identify with the scribe, map |
+| ghost_bookseller | Quentin Shelfmark, the Cataloguer (a ghost) | 41-90, 1 a run | scrolls, one spellbook | scrolls, spellbooks | identify with the scribe, map |
 | abyssal | Vesper, Dealer in the Deep | 61-98, 2 a run | named rings first, wands, potions (x1.5); rarely a Master Sphere (10%), a Greater Hearth Sphere (4%) or, from 67, a Master Hearth Sphere (3%) | everything, curses too | cut a curse off, restore |
-| sutler (gate camp) | Old Mags Thorn | 19, 39, 59, 79, always | healing for sure, potions, food, a scroll, ammo, armour; sometimes a Soul Sphere (19, 39, 59) or a Greater Soul Sphere (39 on) | everything | repair, cure, heal, porter |
+| sutler (gate camp) | Old Mags Thorn | 19, 39, always | healing for sure, potions, food, a scroll, ammo, armour; sometimes a Soul Sphere (19, 39) or a Greater Soul Sphere (39) | everything | repair, cure, heal, porter |
+| regin (gate camp) | Regin, Smith of Hreidmar's House: Fafnir's own brother | 59, always | gear, ammo, healing for sure (x1.25); sometimes a Greater Soul Sphere | weapons, armour, shields, ammo, rings | repair, sharpen, reinforce |
+| tyr (gate camp) | Tiw, One-Handed Soldier: Tyr in disguise | 79, always | healing for sure, potions, food, a scroll, ammo, a weapon, armour; sometimes a Greater Soul Sphere | everything | repair, sharpen, heal |
+
+The two deep gate camps teach their bosses. Regin's gate line is Sigurd's pit
+(dig in the track the worm takes to the water and strike up under the left
+shoulder), and, being Regin, it leaves out the one-eyed stranger's advice to
+dig more than one. Tiw's points to Gleipnir and to Vidar's shoe. He never says
+his name is Tyr: the tells are in his lore (Tiw, Tuesday, the hand gone at the
+wrist, the pledge he knew would be broken), and a hero who has seen through a
+god before (`rumours.noticed_gods`: Odin, Loki, Thor, Athena, Hermes, Zeus,
+Raphael) pays 15% less at his camp. A hero who told two dwarves the story of
+Otr's wergild (`dwarf_siblings`, `told.otters_wergild`) pays Regin 10% less.
+
+The generalists are a list (`plan.generalists`, each `{kind, floors}`;
+`traders.generalists`, `generalist_for`). A plan without the list reads the
+old `generalist` and `generalist_floors` keys as one entry, and a save that
+rolled Mags at 59 and 79 still finds her there.
 
 **The plan** (`traders.roll_plan`): rolled once a run from the Road's seed
 (`road.rng_for(seed, 'traders')`), never from the shared random stream.
@@ -172,8 +203,13 @@ conditions in `data/traders.json`. No karma: it is the market, not God.
   know says why, once a run (`_traders['told']`).
 - **People repay** (`friend` per trader): Pomfrey Quill (saved) comes back as
   the generalist, Marta Venn as the apothecary, Corporal Pell (his company
-  saved at the granary) as the armourer, Helena Marsh as the bookseller:
-  their own art, their own line, a friend's price (-20%). Once a run each.
+  saved at the granary) as the armourer, Helena Marsh as the bookseller,
+  Frida (reconciled with her brother at the dead smith's chest) as the dwarf
+  smith, and the Sibyl of Cumae (paid her price) as the deep bookseller:
+  their own art, their own line, a friend's price (-20%). Once a run each,
+  and only on the friend's own `floors` (Quill and Marta 2-20, Pell 10-40,
+  Helena 15-40, Frida 41-75, the Sibyl 41-90), so nobody comes back deeper
+  than he could go. The gate camps, Vesper and Ortolan have no friend.
 - **Kept oaths earn credit**: each `kept.*` deed is one thing on the house
   (up to a floor's income; above that, it comes off the price) at the next
   trader (`_traders['credits_used']`).
@@ -329,7 +365,7 @@ same on every floor; deep floors hold the dear kinds by spawn bell.
   his purse, whatever he otherwise deals in. No resale cap: he sells a gem at
   `sell_markup` (1.1) and buys it at 0.9, so no loop is possible.
 - **The exchange**: each trader has a few gems for sale (`gem_stock`: Vesper
-  3, Grindle and Mags 2, the others 1), priced at value x 1.1, never haggled,
+  and Ortolan 3, Grindle, Mags and Regin 2, the others 1), priced at value x 1.1, never haggled,
   never given a friend's or a charity discount (a wronged guild's rise still
   applies). Heavy coin becomes light gems at a tenth's cost.
 - **Paying with treasure** (`game_purse._pay_gold`, the design choice that
@@ -369,9 +405,11 @@ items they haven't yet encountered, helps to BUILD the character."
 - **The spread** (`spread` per trader): his stall always holds at least one
   ware from each group, by role. Grindle: an accessory; a weapon, armour or
   shield; a scroll or book; a potion, wand or ammo. Mother Wort: a potion;
-  food. Brannoc: a weapon; armour; a shield or ammo. Ambrose: a scroll; a
-  spellbook. Vesper: an accessory; a wand; a potion; a scroll or book. Mags:
-  a potion; food; armour or a weapon; a scroll or book.
+  food. Brannoc and Brunhild: a weapon; armour; a shield or ammo. Aldous
+  Vellum and Quentin Shelfmark: a scroll; a spellbook. Vesper: an accessory; a
+  wand; a potion; a scroll or book. Mags: a potion; food; armour or a weapon; a
+  scroll or book. Regin: a weapon; armour or a shield; a potion or ammo. Tiw: a
+  potion; food; armour or a weapon; a scroll or ammo. Ortolan: as Grindle.
 
 ### The Draught of Mimir's Well (D8)
 

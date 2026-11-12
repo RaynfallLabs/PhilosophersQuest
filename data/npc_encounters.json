@@ -14,7 +14,8 @@
     "stakes": "medium",
     "person": {
       "id": "marta",
-      "name": "Marta Venn"
+      "name": "Marta Venn",
+      "reach": "ordinary"
     },
     "text": "A wiry woman sits with her leg splinted between two torches, a ratting pole across her knees and a dozen stoppered jars of green bile lined up beside her like soldiers. \"Compound fracture. Set it myself. The bleeding won't stop.\" She jerks her chin at the jars. \"Fever cure for Saint Agatha's. Forty kids up there who think I'm indestructible. So does my daughter.\" She looks at you. \"I'm not.\"",
     "options": [
@@ -186,7 +187,8 @@
     "stakes": "medium",
     "person": {
       "id": "elara",
-      "name": "Elara"
+      "name": "Elara",
+      "reach": "ordinary"
     },
     "text": "A girl of about seven sits against the wall hugging her knees, a stub of candle beside her. When she sees the silver pendant at your belt her whole body goes rigid. \"That's Mama's. She gave it me to hold till she got back. I dropped it when the rats came.\" She works a small silver ring off her finger and holds it out, hand shaking. \"You can have this. It's real silver. Please.\"",
     "options": [
@@ -297,7 +299,8 @@
     "stakes": "medium",
     "person": {
       "id": "grumwald",
-      "name": "Grumwald"
+      "name": "Grumwald",
+      "reach": "giants_fair_folk"
     },
     "text": "A rope bridge spans a black gulf, and at its near end a troll the size of a hay cart sleeps sitting up, chin on chest, one eye not quite shut, snoring like a millrace. Beside him stands a box with a slot and a sign in careful capitals: TOLL A COIN. TROLL ASLEEP. PAY ANYWAY. The box is half full. Nobody would ever know.",
     "options": [
@@ -381,6 +384,162 @@
     ]
   },
   {
+    "tag": "last_merchant",
+    "name": "Pomfrey Quill",
+    "proper_noun": true,
+    "symbol": "@",
+    "color": [
+      200,
+      180,
+      120
+    ],
+    "sprite_id": "npc_lost_merchant",
+    "block": 1,
+    "role": "anchor",
+    "stakes": "medium",
+    "person": {
+      "id": "quill",
+      "name": "Pomfrey Quill",
+      "reach": "ordinary"
+    },
+    "text": "A small, round man in an absurdly fine coat sits on a trunk, terrified. His moustache is immaculate. \"Pomfrey Quill, alderman, collector. I followed the adventurers down from the town. I thought there'd be profit.\" He pats the trunk. \"Rings, a cloak that shimmers, a holy bell from Kildare. Ten years of collecting. Walk me to the up-stair and you may have your pick.\" The bell's tongue is tied with a strip of a nun's grey veil, so it can't ring.",
+    "escorts": {
+      "escort_quill": {
+        "id": "quill",
+        "name": "Pomfrey Quill",
+        "sprite_id": "npc_lost_merchant",
+        "hp": 30,
+        "ac": 10,
+        "goal": "stairs_up",
+        "leash": 2,
+        "floors": 1,
+        "perk": null,
+        "on_arrive": {
+          "outcome": "At the stair Quill throws the trunk open. \"Your pick, as agreed. Not the bell.\" He goes up the steps with the bell in both arms, and does not look back.",
+          "reward": {
+            "type": "multi",
+            "rewards": [
+              {
+                "type": "random_accessory"
+              },
+              {
+                "type": "random_artifact"
+              }
+            ]
+          },
+          "deeds": [
+            "saved.quill"
+          ],
+          "person_status": "saved",
+          "chronicle": "Walked an alderman to the stair and took my pick of his trunk. I did not ask where his bell came from. I already knew."
+        },
+        "on_fail": {
+          "outcome": "",
+          "deeds": [
+            "lost.quill"
+          ],
+          "person_status": "lost",
+          "chronicle": "Lost a fat alderman on the stairs. His trunk lost him first, I think. He would not leave it behind."
+        }
+      }
+    },
+    "options": [
+      {
+        "label": "Walk him to the stair for your pick of the trunk",
+        "outcome": "\"Splendid. Splendid. You go first. I'll carry, er, the trunk.\"",
+        "deeds": [
+          "aid.quill"
+        ],
+        "escort": {
+          "$ref": "escort_quill"
+        },
+        "road": {
+          "id": "last_merchant.escort",
+          "hint": "A pick of stolen things is still stolen, however fine the coat."
+        }
+      },
+      {
+        "label": "Tell him whose bell that is",
+        "quiz": {
+          "subject": "history",
+          "tier": 2,
+          "mode": "threshold",
+          "threshold": 1,
+          "total_qs": 1,
+          "timed": false
+        },
+        "pass": {
+          "outcome": "\"That's Brigid's,\" you tell him. \"From Kildare: Cill Dara, the church of the oak. Her nuns kept a fire burning there for her, nineteen of them, a night each, and on the twentieth night they left it to her.\" Quill goes pale under the moustache. He unpicks the veil from the bell's tongue with fussy fingers, and it rings once on its own, clear as a morning. \"Your pick, then, for the lesson.\" You take nothing. He wraps the bell in his own scarf and stumps off toward the up-stair, oddly lighter.",
+          "karma": 1,
+          "karma_kind": "forgo",
+          "deeds": [
+            "forgo.quill_pick",
+            "saved.brigid_bell"
+          ],
+          "chronicle": "Told an alderman whose bell he had taken, and turned down my pick of his trunk for the telling. It rang on its own when he untied it. I did not imagine that."
+        },
+        "fail": {
+          "outcome": "You guess at a saint and get the wrong one. Quill sniffs. \"Provenance, my dear, is whatever the buyer believes.\" The bell's tongue stays tied.",
+          "deeds": [
+            "met.quill"
+          ],
+          "chronicle": "Tried to tell an alderman whose bell he had, and named the wrong saint. He kept it. Its tongue is still tied."
+        },
+        "road": {
+          "id": "last_merchant.bell",
+          "hint": "A bell with its tongue tied is waiting for someone to untie it."
+        }
+      },
+      {
+        "label": "Give him food and point him to the stair",
+        "cost": {
+          "type": "food"
+        },
+        "outcome": "He clutches the food to his chest. \"A tip, for nothing. I once had a buyer who wanted four things that don't belong together. He said a man holding all four need never fear the one collector nobody outbids. I told him I sell rings.\" He hoists the trunk and shuffles off.",
+        "deeds": [
+          "aid.quill"
+        ],
+        "chronicle": "Fed a frightened alderman and pointed him upstairs. He paid me in gossip about a collector nobody outbids.",
+        "road": {
+          "id": "last_merchant.feed",
+          "hint": "Even a fence knows who the last collector is."
+        }
+      },
+      {
+        "label": "The trunk stays, as your toll",
+        "karma": -1,
+        "karma_kind": "cruelty",
+        "reward": {
+          "type": "multi",
+          "rewards": [
+            {
+              "type": "random_weapon"
+            },
+            {
+              "type": "random_accessory"
+            },
+            {
+              "type": "gold",
+              "min": 200,
+              "max": 300,
+              "purse_pct": 20
+            }
+          ]
+        },
+        "outcome": "\"But that's everything. Ten years of.\" He sees your expression. He lets go of the trunk. Ten years of collecting fits in your pack with room to spare.",
+        "deeds": [
+          "wrong.robbed_quill"
+        ],
+        "person_status": "wronged",
+        "chronicle": "Robbed an alderman of a trunk full of things he had mostly robbed off someone else. I am not sure whose turn it is now.",
+        "road": {
+          "id": "last_merchant.rob",
+          "hint": "Stolen goods only ever change hands. They never become clean."
+        }
+      }
+    ]
+  },
+  {
     "tag": "sir_aldric",
     "name": "Burdened Knight",
     "symbol": "@",
@@ -395,7 +554,8 @@
     "stakes": "medium",
     "person": {
       "id": "aldric",
-      "name": "Sir Aldric"
+      "name": "Sir Aldric",
+      "reach": "hardy"
     },
     "text": "A knight kneels in the corridor, bent double under a black stone lashed to his pack. In his hands he cradles a crystal vial of something that shimmers. \"My wife Elspeth is dying. This cordial is her only hope. But the stone is cursed. I cannot put it down, and it grows heavier with every step.\" He looks up, red-eyed. \"If another takes it willingly, the curse goes with it. An altar can break it. I know what I am asking.\"",
     "options": [
@@ -513,7 +673,8 @@
     "stakes": "medium",
     "person": {
       "id": "tam",
-      "name": "Tam"
+      "name": "Tam",
+      "reach": "ordinary"
     },
     "text": "A boy is backed into a dead end with a bag of coins clutched to his chest, one eye swollen shut. Between you and him stands a broad woman with flour to the elbows and a rolling pin. HANNE: \"If I lose the shop, nobody on Tallow Lane eats bread this winter.\" TAM: \"Rosie's eight. She doesn't know what rent is.\" Both of them look at you, as if you were the magistrate. Tam's good eye keeps flicking to your purse.",
     "options": [
@@ -629,7 +790,8 @@
     "stakes": "medium",
     "person": {
       "id": "helena",
-      "name": "Helena Marsh"
+      "name": "Helena Marsh",
+      "reach": "hardy"
     },
     "text": "A young woman in cracked spectacles sits in a nest of meticulous maps, her left arm hanging at a wrong angle and one side of her face purple. She is trying to ink a corridor with her right hand, and the line wobbles. \"Twelve years,\" she says without looking up. \"Twelve years and I have never drawn a bad line. I need something for the pain or I can't hold the pen. The pen is all I have.\"",
     "options": [
@@ -752,6 +914,268 @@
     ]
   },
   {
+    "tag": "old_konstantin",
+    "name": "Old Warrior",
+    "symbol": "@",
+    "color": [
+      150,
+      140,
+      130
+    ],
+    "sprite_id": "npc_old_warrior",
+    "block": 2,
+    "role": "anchor",
+    "stakes": "medium",
+    "person": {
+      "id": "konstantin",
+      "name": "Konstantin Volkov",
+      "reach": "ordinary"
+    },
+    "tragedy": "unsavable",
+    "text": "An ancient warrior sits sharpening a broken sword, and the whetstone keeps slipping out of his fingers. Around the corner something large growls, and something else answers. \"They'll come in ten minutes. I've held this corridor three days. Eleven farmers behind me, two of them babies. Glimmerdeep: a cave-farm off the upper stair, and the ghouls found it.\" He tests the broken blade. \"My sword broke on the last of them. Without a weapon the sums get unfavourable.\" The scratch on his sword arm has gone black to the elbow.",
+    "options": [
+      {
+        "label": "Give him a weapon from your pack",
+        "naive": true,
+        "warning": "The scratch on his sword arm has gone black to the elbow.",
+        "cost": {
+          "type": "weapon"
+        },
+        "outcome": "He takes it, tests the weight, and nods once. \"This'll do.\" You hear the first clash before you reach the next corridor, and then, sooner than you'd like, you hear it stop. The farmers' lanterns scatter into the side passages, one by one.",
+        "deeds": [
+          "aid.konstantin",
+          "lost.konstantin",
+          "lost.glimmerdeep_farmers"
+        ],
+        "chronicle": "Gave an old guard my spare blade to hold a corridor. His arm was already dead. So, I think, are most of the farmers.",
+        "road": {
+          "id": "old_konstantin.weapon",
+          "hint": "A blade is only as good as the arm. Look at the arm."
+        }
+      },
+      {
+        "label": "Count the enemy with him",
+        "quiz": {
+          "subject": "math",
+          "tier": 2,
+          "mode": "threshold",
+          "threshold": 1,
+          "total_qs": 1,
+          "timed": false
+        },
+        "pass": {
+          "outcome": "Six ghouls and a troll against one good arm. You do the sums out loud and he hears them. \"Then I hold the door, and you take them out the side.\" He doesn't argue; he has been waiting for someone to say it. You lead eleven farmers, the babies on their hips, out through the drainage cut while the broken sword rings behind you for a long time.",
+          "karma": 1,
+          "karma_kind": "judgment",
+          "deeds": [
+            "saved.glimmerdeep_farmers",
+            "lost.konstantin"
+          ],
+          "chronicle": "Did the sums with Konstantin and they came out badly for him. He held the door and I took his farmers out the back. He insisted."
+        },
+        "fail": {
+          "outcome": "You count wrong. There are more of them than you thought, and they come early. In the scramble you get four farmers out. Konstantin does not come.",
+          "deeds": [
+            "lost.konstantin",
+            "lost.glimmerdeep_farmers"
+          ],
+          "chronicle": "Counted the monsters wrong. Got four farmers out of eleven. Konstantin got none of himself out."
+        },
+        "road": {
+          "id": "old_konstantin.count",
+          "hint": "When the sums are bad, change the problem."
+        }
+      },
+      {
+        "label": "Stand and fight beside him",
+        "cost": {
+          "type": "hp_pct",
+          "amount": 30
+        },
+        "outcome": "You hold it till the torches burn down, back to back. The farmers live. When it is over Konstantin sits down and does not get up; the black has reached his heart. \"Good fight,\" he says. \"Better company.\"",
+        "deeds": [
+          "aid.konstantin",
+          "saved.glimmerdeep_farmers",
+          "lost.konstantin"
+        ],
+        "chronicle": "Held a corridor beside an old man named Konstantin till the torches burned down. The farmers lived. He sat down at the end and stayed sat.",
+        "road": {
+          "id": "old_konstantin.fight",
+          "hint": "Some men cannot be saved, only kept company."
+        }
+      },
+      {
+        "label": "Wish him luck and walk on",
+        "outcome": "\"No hard feelings.\" He faces the corridor with the broken sword. \"A broken sword did for a dragon once, after a smith had a second go at it.\"",
+        "deeds": [
+          "met.konstantin",
+          "lost.konstantin"
+        ],
+        "chronicle": "Left an old guard holding a corridor with half a sword. He quoted a saga at me. I hope it was a true one.",
+        "road": {
+          "id": "old_konstantin.walk",
+          "hint": "Half a sword is a story. A whole one is a plan."
+        }
+      }
+    ]
+  },
+  {
+    "tag": "grain_committee",
+    "name": "Grain Committee",
+    "symbol": "@",
+    "color": [
+      130,
+      130,
+      120
+    ],
+    "sprite_id": "npc_traveler",
+    "block": 2,
+    "role": "anchor",
+    "stakes": "medium",
+    "person": {
+      "id": "varsk",
+      "name": "Commissar Ilya Varsk",
+      "reach": "ordinary"
+    },
+    "stance": "3.1,3.2",
+    "stance_note": "Steel-man: Varsk is right that the city is starving, and he is not a sadist. The lean (the calculation problem; the requisition record) is carried by the pass text, not by a lecture.",
+    "authority": {
+      "who": "Commissar Varsk and the Grain Committee",
+      "just": false,
+      "why": "Takes a village's seed by list and pays informers."
+    },
+    "text": "An under-hamlet off the Labyrinth's upper stair: barley under a sun-stone, mushroom beds, and a cart half full of sacks. A thin man in a grey coat reads from a list while two soldiers carry seed out of a cellar. A woman holds one sack to her chest. \"That's next spring,\" she says. The commissar does not raise his voice. \"Every sack in a farmer's cellar is a child in the city who does not eat. I am not a cruel man. I can count.\" A sack lies forgotten behind the cellar door.",
+    "options": [
+      {
+        "label": "Hide the forgotten sack in your pack",
+        "cost": {
+          "type": "gold_pct",
+          "amount": 15
+        },
+        "side": "right",
+        "karma": 1,
+        "karma_kind": "stance",
+        "outcome": "The soldier who searches you is a farm boy himself. He feels the sack at the bottom of your pack, looks you in the eye, and writes down a fine instead. When the cart has gone the woman takes the sack back without a word, and puts it in the ground before the torches are changed.",
+        "deeds": [
+          "saved.thwaite_seed"
+        ],
+        "delayed": [
+          {
+            "after_floors": [
+              3,
+              6
+            ],
+            "reward": {
+              "type": "random_food",
+              "count": 3
+            },
+            "text": "A sack has been left at the foot of the stair, tied with village string. Inside: barley bread, onions, and a child's drawing of you.",
+            "chronicle": "Thwaite left me food a few floors down. Someone drew me badly. I kept the drawing.",
+            "requires": {
+              "deeds_none": [
+                "wrong.grain_reported"
+              ]
+            }
+          }
+        ],
+        "chronicle": "Hid a village's seed sack from the Grain Committee. A farm boy in uniform found it and let it go. I will not forget his face.",
+        "road": {
+          "id": "grain_committee.hide",
+          "hint": "A seed sack is next year's bread. Whoever takes it decides who eats."
+        }
+      },
+      {
+        "label": "Tell the commissar where the sack is",
+        "side": "wrong",
+        "karma": -1,
+        "karma_kind": "betray",
+        "reward": {
+          "type": "gold",
+          "min": 150,
+          "max": 250
+        },
+        "outcome": "Varsk thanks you formally, pays you from a strongbox, and writes your name in a different list. The woman watches the last sack go up the stair. She doesn't say anything. There is nothing left to say it about.",
+        "deeds": [
+          "wrong.grain_reported"
+        ],
+        "chronicle": "Informed on a village's last seed sack for a bounty. The commissar wrote my name in a list. I would like to know which list.",
+        "road": {
+          "id": "grain_committee.inform",
+          "hint": "Every list has a second list behind it."
+        },
+        "submit": true
+      },
+      {
+        "label": "Ask him who will decide next spring's needs",
+        "cost": {
+          "type": "sp_pct",
+          "amount": 15
+        },
+        "side": "right",
+        "quiz": {
+          "subject": "economics",
+          "tier": 4,
+          "mode": "threshold",
+          "threshold": 2,
+          "total_qs": 3,
+          "timed": false
+        },
+        "pass": {
+          "outcome": "You ask how many sacks the city needs next spring. He gives a number. You ask how he knows. He gives another number. You ask who will plant, with no seed, and what the city eats the spring after. His soldiers are listening now; one of them is from a village. He puts his sack down. Then the other one does. Varsk writes something for a long time, and leaves with half a cart.",
+          "karma": 1,
+          "karma_kind": "stance",
+          "deeds": [
+            "saved.thwaite_seed"
+          ],
+          "delayed": [
+            {
+              "after_floors": [
+                3,
+                6
+              ],
+              "reward": {
+                "type": "random_food",
+                "count": 3
+              },
+              "text": "A sack has been left at the foot of the stair, tied with village string. Inside: barley bread, onions, and a child's drawing of you.",
+              "chronicle": "Thwaite left me food a few floors down. Someone drew me badly. I kept the drawing.",
+              "requires": {
+                "deeds_none": [
+                  "wrong.grain_reported"
+                ]
+              }
+            }
+          ],
+          "chronicle": "Asked a commissar how he knew what a village needed. He had a number for everything except the next spring. His own soldiers noticed."
+        },
+        "fail": {
+          "outcome": "He has an answer for every question, because he has a list, and you cannot find the hole in it out loud. The cart leaves full.",
+          "deeds": [
+            "met.varsk",
+            "lost.thwaite_seed"
+          ],
+          "chronicle": "Argued with a commissar and lost. He was very calm about it. The cart was very full."
+        },
+        "road": {
+          "id": "grain_committee.ask",
+          "hint": "Nobody can count what a village will need next year, not even a man with a list."
+        }
+      },
+      {
+        "label": "Walk on. It's not your village",
+        "outcome": "The cart creaks up the stair. Behind you the woman is still holding the one sack, and the soldiers have not noticed her yet.",
+        "deeds": [
+          "met.varsk"
+        ],
+        "chronicle": "Walked past a requisition in a village under a sun-stone. It was not my quarrel, and I left it to the people whose quarrel it was.",
+        "road": {
+          "id": "grain_committee.walk",
+          "hint": "A cart of seed goes up the stair, and the spring comes after it."
+        }
+      }
+    ]
+  },
+  {
     "tag": "marcus_sword",
     "name": "Grieving Father",
     "symbol": "@",
@@ -769,7 +1193,8 @@
     "stakes": "medium",
     "person": {
       "id": "marcus",
-      "name": "Marcus Hale"
+      "name": "Marcus Hale",
+      "reach": "hardy"
     },
     "text": "An old soldier sits on a fallen pillar, holding a child's blanket faded almost white. He sees the sword you carry and stands so fast his knees crack. \"That's my boy's. Corin. CORIN, see, on the crossguard.\" His hands shake. \"He came down six months ago to prove himself. Did you find him? Was there a body?\" There wasn't. The sword is the finest blade you have owned.",
     "options": [
@@ -844,7 +1269,8 @@
     "stakes": "medium",
     "person": {
       "id": "dafydd",
-      "name": "Dafydd"
+      "name": "Dafydd",
+      "reach": "hardy"
     },
     "contested": true,
     "tragedy": "costly",
@@ -946,7 +1372,8 @@
     "stakes": "medium",
     "person": {
       "id": "father_anselm",
-      "name": "Father Anselm"
+      "name": "Father Anselm",
+      "reach": "captive"
     },
     "text": "Two men in torn black cassocks hang from manacles a yard apart, both covered in ritual cuts, both with a priest's tonsure. LEFT: \"He's the cultist. He's wearing my robe. Free me, for the love of God.\" RIGHT: \"He took my name along with everything else. Ask him anything.\" The manacles hum; a scroll's magic would overload them. Cultists in these halls have been known to wear a captured priest's robe.",
     "options": [
@@ -1060,6 +1487,521 @@
     ]
   },
   {
+    "tag": "ser_brennan",
+    "name": "Dying Knight",
+    "symbol": "@",
+    "color": [
+      160,
+      155,
+      170
+    ],
+    "sprite_id": "npc_dying_knight",
+    "block": 3,
+    "role": "anchor",
+    "stakes": "medium",
+    "person": {
+      "id": "brennan",
+      "name": "Ser Brennan Vaughan",
+      "reach": "hardy"
+    },
+    "tragedy": "unsavable",
+    "text": "The knight's breastplate is split open and the wound beneath is mortal. He sits with the careful dignity of a man who knows how he will spend his last minutes. A fine sword lies across his knees, his dented shield beside him. \"My daughter Annalise drew me a picture before I left. A horse, I think. She said it was a dragon.\" He almost laughs. \"My squire went on ahead. Tobyn. He'll think I left him. If you have a potion, not to save me. Just for the pain.\"",
+    "options": [
+      {
+        "label": "Give him a healing potion for the pain",
+        "cost": {
+          "type": "healing_potion"
+        },
+        "outcome": "He drinks, and the tension goes out of his face. He unfolds a child's drawing from inside the breastplate and looks at it a long time. \"It's a beautiful dragon, Annalise.\"",
+        "deeds": [
+          "aid.brennan"
+        ],
+        "chronicle": "Gave a dying knight my potion for the pain. He spent the time it bought looking at his daughter's drawing of a dragon.",
+        "then": "options",
+        "road": {
+          "id": "ser_brennan.potion",
+          "hint": "A potion that saves nobody can still buy a few good minutes."
+        }
+      },
+      {
+        "label": "Swear to give his sword to Tobyn",
+        "reward": {
+          "type": "specific_item",
+          "item_type": "weapon",
+          "item_id": "brennans_sword"
+        },
+        "oath": {
+          "id": "brennan_sword",
+          "to": "Ser Brennan",
+          "what": "Give his sword to his squire Tobyn and tell him he was not left behind.",
+          "item_id": "brennans_sword"
+        },
+        "outcome": "\"Tell him I didn't leave him. Tell him I said he was ready. In the old days the dubbing was a real blow, to the neck; now it is the flat of a sword on the shoulder. Tell him not to flinch at either.\" He puts the sword in your hands hilt first, the way knights do, and lets go of it with some difficulty.",
+        "deeds": [
+          "lost.brennan"
+        ],
+        "person_status": "lost",
+        "schedule": [
+          {
+            "encounter": "flv_squire_tobyn",
+            "after_floors": [
+              3,
+              9
+            ]
+          }
+        ],
+        "thread": {
+          "id": "tobyn_waits",
+          "hint": "A squire below is still waiting for his knight to catch up."
+        },
+        "chronicle": "Swore to Ser Brennan I would give his sword to his squire and tell the boy he was not left behind. It is a better sword than mine.",
+        "road": {
+          "id": "ser_brennan.swear",
+          "hint": "A good blade carried for someone else is the heaviest kind."
+        }
+      },
+      {
+        "label": "Sit with him",
+        "outcome": "\"Then sit a moment. I don't want to be alone at the end.\" You sit. It is the longest minute of your life, and then it is over.",
+        "deeds": [
+          "lost.brennan"
+        ],
+        "person_status": "lost",
+        "chronicle": "Sat with Ser Brennan while he died. He talked about a dragon his daughter drew. It was a horse.",
+        "road": {
+          "id": "ser_brennan.sit",
+          "hint": "Some kindnesses cost nothing and are still hard to pay."
+        }
+      },
+      {
+        "label": "Take his sword and shield",
+        "karma": -1,
+        "karma_kind": "cruelty",
+        "reward": {
+          "type": "multi",
+          "rewards": [
+            {
+              "type": "specific_item",
+              "item_type": "weapon",
+              "item_id": "brennans_sword"
+            },
+            {
+              "type": "random_shield"
+            }
+          ]
+        },
+        "outcome": "He watches you lift the sword off his knees. \"That's Tobyn's,\" he says. \"I was saving it for Tobyn.\" You are already walking away.",
+        "deeds": [
+          "wrong.robbed_brennan",
+          "lost.brennan"
+        ],
+        "person_status": "wronged",
+        "chronicle": "Took a dying knight's sword and shield. He said the sword was meant for his squire. It cuts very well.",
+        "road": {
+          "id": "ser_brennan.rob",
+          "hint": "A dead man's sword remembers who it was promised to."
+        }
+      }
+    ]
+  },
+  {
+    "tag": "petrified_adventurer",
+    "name": "Stone Statue",
+    "symbol": "@",
+    "color": [
+      160,
+      160,
+      160
+    ],
+    "sprite_id": "npc_stone_statue",
+    "block": 3,
+    "role": "anchor",
+    "stakes": "medium",
+    "person": {
+      "id": "celeste",
+      "name": "Celeste Arrowmere",
+      "reach": "hardy"
+    },
+    "text": "The temple hall is full of statues: a soldier with his sword half drawn, a dog, a shepherd with his crook. One of them is wrong. A woman stands with one arm raised and her mouth open in a scream, and her stone is newer than the rest. Basilisk work. Scratched into the wall beside her: CELESTE. STONE BUT ALIVE. ANY SCROLL READ ALOUD, AND READ RIGHT, WILL WAKE HER. I WILL COME BACK FOR YOU. MAREN. Three rooms back you passed a woman's bones with a scroll case in her hand. The case was empty; whatever scroll she found, she never got to read it. Pressed to the stone, faintly, there is a heartbeat.",
+    "escorts": {
+      "escort_celeste": {
+        "id": "celeste",
+        "name": "Celeste",
+        "sprite_id": "npc_warrior",
+        "hp": 90,
+        "ac": 4,
+        "goal": "stairs_down",
+        "leash": 2,
+        "floors": 1,
+        "perk": "light",
+        "on_arrive": {
+          "outcome": "At the foot of the stair Celeste unbuckles the spare plate from her own pack. 'Maren carried mine. I carried hers. You have it.'",
+          "reward": {
+            "type": "random_armor"
+          },
+          "deeds": [
+            "saved.celeste"
+          ],
+          "person_status": "saved",
+          "chronicle": "Walked a floor beside Celeste. She carried the torch and did not talk about Maren once, which is how I knew."
+        },
+        "on_fail": {
+          "outcome": "",
+          "deeds": [
+            "lost.celeste"
+          ],
+          "person_status": "lost",
+          "chronicle": "Woke Celeste out of stone and lost her a floor later. Maren had the better excuse."
+        }
+      }
+    },
+    "options": [
+      {
+        "label": "Read a scroll over the stone and restore her",
+        "cost": {
+          "type": "scroll"
+        },
+        "quiz": {
+          "subject": "grammar",
+          "tier": 2,
+          "mode": "threshold",
+          "threshold": 1,
+          "total_qs": 1,
+          "timed": false
+        },
+        "pass": {
+          "outcome": "Stone cracks and falls. Celeste gasps; the scream finishes, and stops. She reads the wall, and then she reads your face. \"She tried,\" she says, and goes back up the corridor alone to find what's left of Maren.",
+          "deeds": [
+            "aid.celeste",
+            "saved.celeste",
+            "flag.celeste_went_for_maren"
+          ],
+          "person_status": "saved",
+          "chronicle": "Woke a woman named Celeste out of stone. Her friend promised to come back for her and nearly did. Celeste went to find her bones."
+        },
+        "fail": {
+          "outcome": "You read too fast and the words tangle. A line of the scroll burns off the page with every slip, and then the page is blank. The stone stays stone, and the heartbeat goes on.",
+          "deeds": [
+            "met.celeste"
+          ],
+          "chronicle": "Read a scroll over a woman turned to stone and got the words wrong. The scroll burned itself blank. She is still stone."
+        },
+        "road": {
+          "id": "petrified_adventurer.restore",
+          "hint": "A promise kept by someone else still counts for something."
+        }
+      },
+      {
+        "label": "Restore her, and walk the next floor down together",
+        "cost": {
+          "type": "scroll"
+        },
+        "quiz": {
+          "subject": "grammar",
+          "tier": 2,
+          "mode": "threshold",
+          "threshold": 1,
+          "total_qs": 1,
+          "timed": false
+        },
+        "pass": {
+          "outcome": "Stone cracks and falls. Celeste reads the wall and closes her eyes. \"Maren would want me to finish the job. Walk with me a floor. I'll carry the torch.\"",
+          "deeds": [
+            "aid.celeste"
+          ],
+          "escort": {
+            "$ref": "escort_celeste"
+          }
+        },
+        "fail": {
+          "outcome": "You read too fast and the words tangle. A line of the scroll burns off the page with every slip, and then the page is blank. The stone stays stone, and the heartbeat goes on.",
+          "deeds": [
+            "met.celeste"
+          ],
+          "chronicle": "Read a scroll over a woman turned to stone and got the words wrong. The scroll burned itself blank. She is still stone."
+        },
+        "road": {
+          "id": "petrified_adventurer.walk_together",
+          "hint": "Walk with the ones you wake. They know the dark better than you."
+        }
+      },
+      {
+        "label": "Leave her as she is",
+        "outcome": "You leave her there. The heartbeat goes on behind you, fainter, and fainter.",
+        "deeds": [
+          "met.celeste"
+        ],
+        "chronicle": "Left a woman in stone with a heartbeat. Her friend's bones were three rooms back. Nobody else is coming now.",
+        "road": {
+          "id": "petrified_adventurer.leave",
+          "hint": "Stone keeps a heartbeat a long time. Not forever."
+        }
+      },
+      {
+        "label": "Break the statue to free her gear",
+        "karma": -1,
+        "karma_kind": "cruelty",
+        "reward": {
+          "type": "multi",
+          "rewards": [
+            {
+              "type": "random_weapon"
+            },
+            {
+              "type": "random_armor"
+            }
+          ]
+        },
+        "outcome": "The stone shatters. Whatever was alive stops. The armour and sword clatter free, undamaged. You try not to look at the pieces that might have been a face.",
+        "deeds": [
+          "wrong.broke_celeste"
+        ],
+        "person_status": "wronged",
+        "chronicle": "Broke a statue for the armour inside it. There was a heartbeat in it a moment before. There isn't now.",
+        "road": {
+          "id": "petrified_adventurer.break",
+          "hint": "Some statues are only resting."
+        }
+      }
+    ]
+  },
+  {
+    "tag": "penitent",
+    "name": "The Penitent",
+    "symbol": "@",
+    "color": [
+      150,
+      140,
+      130
+    ],
+    "sprite_id": "npc_penitent",
+    "block": 3,
+    "role": "anchor",
+    "stakes": "medium",
+    "person": {
+      "id": "lucan",
+      "name": "Lucan Dray",
+      "reach": "hardy"
+    },
+    "authority": {
+      "who": "Aurel Dunmore and the assize",
+      "just": true,
+      "why": "A murderer answers to his victim's son and a lawful court."
+    },
+    "text": "A man kneels on the stone with a gash in his leg from a fall on the stair, and in front of him, laid down the way a soldier surrenders, is a dagger with its hilt toward whoever comes. A board hangs round his neck on a cord, with MURDERER burned into it in his own hand, and a heavy purse sits at his belt, untouched. \"I killed a man twenty years ago, over money. I've stopped running.\" Behind you a younger man steps out of the dark with a crossbow. \"Tomas Dunmore was my father. I was nine. I have tracked him eleven years and twenty floors.\" He doesn't lower it. \"He's run from three assizes already. Every time, someone felt sorry for him. Now you want to give him a potion?\"",
+    "options": [
+      {
+        "label": "Heal his wound and let him go his way",
+        "naive": true,
+        "warning": "He's run from three assizes already. Every time, someone felt sorry for him.",
+        "cost": {
+          "type": "healing_potion"
+        },
+        "outcome": "Lucan drinks, takes the board off his neck, and is gone into the dark before Aurel can decide whether to shoot. Aurel looks at you for a long moment. \"Four,\" he says. \"That makes four.\"",
+        "deeds": [
+          "aid.lucan",
+          {
+            "id": "spared.lucan",
+            "payload": {
+              "deserving": false
+            }
+          }
+        ],
+        "person_status": {
+          "status": "spared",
+          "deserving": false
+        },
+        "chronicle": "Healed a murderer who said he had stopped running. He started again before the dead man's son could stop him. That makes four times someone let him.",
+        "road": {
+          "id": "penitent.heal_free",
+          "hint": "Pity without judgment is how a guilty man keeps running."
+        }
+      },
+      {
+        "label": "Weigh mercy and justice with them both",
+        "cost": {
+          "type": "healing_potion"
+        },
+        "quiz": {
+          "subject": "philosophy",
+          "tier": 3,
+          "mode": "threshold",
+          "threshold": 2,
+          "total_qs": 3,
+          "timed": false
+        },
+        "pass": {
+          "outcome": "You say it plainly: mercy is not the opposite of justice; it comes after it. Lucan can live and still answer for Tomas Dunmore. Aurel lowers the crossbow by inches. You heal the wound and point them both to the stair, and watch them go, the son behind the murderer.",
+          "karma": 1,
+          "karma_kind": "judgment",
+          "deeds": [
+            {
+              "id": "saved.lucan",
+              "payload": {
+                "deserving": null
+              }
+            },
+            "told.lucan_to_assize"
+          ],
+          "person_status": "saved",
+          "chronicle": "Healed a murderer and handed him to his victim's son for the assize. Mercy, then justice. Neither of them thanked me, which seems right."
+        },
+        "fail": {
+          "outcome": "You talk in circles about forgiveness until Aurel can't stand it and leaves. When you turn round, Lucan has slipped away into the dark, and left the board behind.",
+          "deeds": [
+            {
+              "id": "spared.lucan",
+              "payload": {
+                "deserving": false
+              }
+            }
+          ],
+          "person_status": {
+            "status": "spared",
+            "deserving": false
+          },
+          "chronicle": "Lectured a murderer and his victim's son about forgiveness. The son left in disgust. The murderer left too, the other way."
+        },
+        "road": {
+          "id": "penitent.weigh",
+          "hint": "Mercy that skips justice is only a head start."
+        },
+        "submit": true
+      },
+      {
+        "label": "\"He was your father. You decide.\"",
+        "outcome": "Aurel walks over and looks down at him a long time. \"I thought I'd feel something.\" He unloads the crossbow and turns away. \"Let the dark have him. It's waited long enough.\" Lucan watches him go.",
+        "deeds": [
+          "met.lucan",
+          "lost.lucan"
+        ],
+        "person_status": "lost",
+        "chronicle": "Let a murdered man's son decide. He decided not to bother. I suppose that is a kind of sentence.",
+        "road": {
+          "id": "penitent.you_decide",
+          "hint": "Revenge declined is not the same as justice done."
+        }
+      },
+      {
+        "label": "Take his gold and the dagger",
+        "karma": -1,
+        "karma_kind": "cruelty",
+        "reward": {
+          "type": "multi",
+          "rewards": [
+            {
+              "type": "gold",
+              "min": 200,
+              "max": 300,
+              "purse_pct": 15
+            },
+            {
+              "type": "specific_item",
+              "item_type": "weapon",
+              "item_id": "penitents_blade"
+            }
+          ]
+        },
+        "outcome": "Lucan laughs, a cracked, horrible sound. \"It suits you better than it suited me.\" Aurel watches you pocket the murder weapon and says nothing at all.",
+        "deeds": [
+          "wrong.robbed_lucan"
+        ],
+        "person_status": "wronged",
+        "chronicle": "Took a murderer's purse and the knife he used. He said it suited me. I have not decided whether to be offended.",
+        "road": {
+          "id": "penitent.rob",
+          "hint": "A murderer's knife sits easy in the hand and heavy everywhere else."
+        }
+      }
+    ]
+  },
+  {
+    "tag": "roderic_shield",
+    "name": "Young Knight",
+    "symbol": "@",
+    "color": [
+      170,
+      160,
+      150
+    ],
+    "sprite_id": "npc_young_knight",
+    "block": 3,
+    "trigger_item": "lionheart_shield",
+    "trigger_level_offset": 2,
+    "fallback_anchor": "penitent",
+    "role": "anchor",
+    "stakes": "medium",
+    "person": {
+      "id": "roderic",
+      "name": "Roderic of the Iron Vale",
+      "reach": "hardy"
+    },
+    "contested": true,
+    "text": "A young knight in armour polished to a mirror is searching room after room. He sees the shield you carry and goes white. \"My father's. Ser Marten of the Iron Vale. He came down to clear a basilisk nest in the old temple, where the statues are. He said he'd be back for supper.\" His voice cracks. \"Tell me he faced it.\" The strap is cut through, and the scrapes on its face all run one way: a shield dropped by a man running north, away from the nest.",
+    "options": [
+      {
+        "label": "Give him the shield and show him what the scrapes say",
+        "cost": {
+          "type": "triggered_item"
+        },
+        "outcome": "\"Away from the nest.\" Roderic is very still. Then: \"North of the nest is the camp. The camp had two squires and a cook.\" He picks up the shield. \"He was running to warn them. He was running to warn them.\" He says it the way you say a thing you have decided to believe, and you can't tell him otherwise, because you don't know either.",
+        "deeds": [
+          "aid.roderic",
+          "told.roderic_truth"
+        ],
+        "chronicle": "Told Roderic where his father's shield was lying, pointing away from the nest. He decided it meant his father ran to warn the camp. I hope he is right.",
+        "road": {
+          "id": "roderic_shield.truth",
+          "hint": "The truth is sometimes kinder than you feared, and sometimes only stranger."
+        }
+      },
+      {
+        "label": "Give him the shield and tell him his father died facing it",
+        "cost": {
+          "type": "triggered_item"
+        },
+        "outcome": "\"Facing it.\" He holds the shield to his chest. \"Of course he did. He doesn't break promises.\" He goes up the stairs taller than he came down, carrying a story he will tell his mother, and one day his children.",
+        "deeds": [
+          "aid.roderic",
+          "told.roderic_lie"
+        ],
+        "chronicle": "Told a young knight his father died facing the basilisk. I do not know that. He will tell his children.",
+        "road": {
+          "id": "roderic_shield.kind_lie",
+          "hint": "A kind lie travels further than the person who told it."
+        }
+      },
+      {
+        "label": "Give him the shield and say nothing about the scrapes",
+        "cost": {
+          "type": "triggered_item"
+        },
+        "outcome": "He doesn't ask again. Maybe he reads it in your face, or maybe he decides not to. \"Thank you,\" he says, and carries it out like something very heavy and very easy to break.",
+        "deeds": [
+          "aid.roderic"
+        ],
+        "chronicle": "Gave Roderic his father's shield and said nothing about where it lay. He did not ask twice. I think he knew not to.",
+        "road": {
+          "id": "roderic_shield.silence",
+          "hint": "Silence is an answer too, and he will read it however he must."
+        }
+      },
+      {
+        "label": "Keep the shield, and say why: \"I need it to get down alive. If I live, it comes home.\"",
+        "outcome": "Roderic looks at the shield you carry, and at the stair, and something in him decides to be his father's son. \"Then carry it well,\" he says. \"He'd want it used, not hung on a wall.\" He tells you the way to the Iron Vale, and what his mother's name is, so she will know who you are.",
+        "deeds": [
+          "owe.roderic",
+          "told.roderic_honest_keep"
+        ],
+        "chronicle": "Told Roderic I needed his father's shield to get down alive. He told me to carry it well, and gave me his mother's name.",
+        "road": {
+          "id": "roderic_shield.honest_keep",
+          "hint": "Some things are only borrowed from the dead, and the living can agree to the loan."
+        }
+      }
+    ]
+  },
+  {
     "tag": "dying_messenger",
     "name": "Dying Courier",
     "symbol": "@",
@@ -1074,9 +2016,10 @@
     "stakes": "medium",
     "person": {
       "id": "edric",
-      "name": "Edric Fane"
+      "name": "Edric Fane",
+      "reach": "hardy"
     },
-    "text": "A young man in a courier's jerkin lies on his side with a crossbow bolt in his back. One hand reaches for an iron scroll case with the Watch seal, just out of reach. \"The post on the lower stair. Sergeant Holt. Which gates to hold.\" His fingers scrape the stone. \"Thousands up top, if they guess wrong. Please. Take it down. Swear to me.\" He is lying awkwardly, on something lumpy under his hip.",
+    "text": "A young man in a courier's jerkin lies on his side with a crossbow bolt in his back. One hand reaches for an iron scroll case with the Watch seal, just out of reach. \"The post on the lower stair. Sergeant Holt. Which gates to hold.\" His fingers scrape the stone. \"The Watch holds the gates on the lower stair, so nothing that comes up it reaches the city's wells. Thousands up top, if they guess wrong. Please. Take it down. Swear to me.\" He is lying awkwardly, on something lumpy under his hip.",
     "options": [
       {
         "label": "Take the dispatch and swear to carry it down",
@@ -1269,111 +2212,6 @@
     ]
   },
   {
-    "tag": "old_konstantin",
-    "name": "Old Warrior",
-    "symbol": "@",
-    "color": [
-      150,
-      140,
-      130
-    ],
-    "sprite_id": "npc_old_warrior",
-    "block": 4,
-    "role": "anchor",
-    "stakes": "medium",
-    "person": {
-      "id": "konstantin",
-      "name": "Konstantin Volkov"
-    },
-    "tragedy": "unsavable",
-    "text": "An ancient warrior sits sharpening a broken sword, and the whetstone keeps slipping out of his fingers. Around the corner something large growls, and something else answers. \"They'll come in ten minutes. I've held this corridor three days. Eleven farmers behind me, two of them babies.\" He tests the broken blade. \"My sword broke on the last of them. Without a weapon the sums get unfavourable.\" The scratch on his sword arm has gone black to the elbow.",
-    "options": [
-      {
-        "label": "Give him a weapon from your pack",
-        "naive": true,
-        "warning": "The scratch on his sword arm has gone black to the elbow.",
-        "cost": {
-          "type": "weapon"
-        },
-        "outcome": "He takes it, tests the weight, and nods once. \"This'll do.\" You hear the first clash before you reach the next corridor, and then, sooner than you'd like, you hear it stop. The farmers' lanterns scatter into the side passages, one by one.",
-        "deeds": [
-          "aid.konstantin",
-          "lost.konstantin",
-          "lost.glimmerdeep_farmers"
-        ],
-        "chronicle": "Gave an old guard my spare blade to hold a corridor. His arm was already dead. So, I think, are most of the farmers.",
-        "road": {
-          "id": "old_konstantin.weapon",
-          "hint": "A blade is only as good as the arm. Look at the arm."
-        }
-      },
-      {
-        "label": "Count the enemy with him",
-        "quiz": {
-          "subject": "math",
-          "tier": 2,
-          "mode": "threshold",
-          "threshold": 1,
-          "total_qs": 1,
-          "timed": false
-        },
-        "pass": {
-          "outcome": "Six ghouls and a troll against one good arm. You do the sums out loud and he hears them. \"Then I hold the door, and you take them out the side.\" He doesn't argue; he has been waiting for someone to say it. You lead eleven farmers, the babies on their hips, out through the drainage cut while the broken sword rings behind you for a long time.",
-          "karma": 1,
-          "karma_kind": "judgment",
-          "deeds": [
-            "saved.glimmerdeep_farmers",
-            "lost.konstantin"
-          ],
-          "chronicle": "Did the sums with Konstantin and they came out badly for him. He held the door and I took his farmers out the back. He insisted."
-        },
-        "fail": {
-          "outcome": "You count wrong. There are more of them than you thought, and they come early. In the scramble you get four farmers out. Konstantin does not come.",
-          "deeds": [
-            "lost.konstantin",
-            "lost.glimmerdeep_farmers"
-          ],
-          "chronicle": "Counted the monsters wrong. Got four farmers out of eleven. Konstantin got none of himself out."
-        },
-        "road": {
-          "id": "old_konstantin.count",
-          "hint": "When the sums are bad, change the problem."
-        }
-      },
-      {
-        "label": "Stand and fight beside him",
-        "cost": {
-          "type": "hp_pct",
-          "amount": 30
-        },
-        "outcome": "You hold it till the torches burn down, back to back. The farmers live. When it is over Konstantin sits down and does not get up; the black has reached his heart. \"Good fight,\" he says. \"Better company.\"",
-        "deeds": [
-          "aid.konstantin",
-          "saved.glimmerdeep_farmers",
-          "lost.konstantin"
-        ],
-        "chronicle": "Held a corridor beside an old man named Konstantin till the torches burned down. The farmers lived. He sat down at the end and stayed sat.",
-        "road": {
-          "id": "old_konstantin.fight",
-          "hint": "Some men cannot be saved, only kept company."
-        }
-      },
-      {
-        "label": "Wish him luck and walk on",
-        "outcome": "\"No hard feelings.\" He faces the corridor with the broken sword. \"A broken sword did for a dragon once, after a smith had a second go at it.\"",
-        "deeds": [
-          "met.konstantin",
-          "lost.konstantin"
-        ],
-        "chronicle": "Left an old guard holding a corridor with half a sword. He quoted a saga at me. I hope it was a true one.",
-        "road": {
-          "id": "old_konstantin.walk",
-          "hint": "Half a sword is a story. A whole one is a plan."
-        }
-      }
-    ]
-  },
-  {
     "tag": "reliquary",
     "name": "Sister Marguerite",
     "proper_noun": true,
@@ -1389,7 +2227,8 @@
     "stakes": "medium",
     "person": {
       "id": "marguerite",
-      "name": "Sister Marguerite"
+      "name": "Sister Marguerite",
+      "reach": "hardy"
     },
     "text": "A nun in a habit gone grey kneels beside a monk who is not going to get up again. A silver reliquary hangs at his neck: a saint's fingerbone in a cage of gold. \"Brother Cormac carried Saint Columba from Iona,\" she says. \"I gave our bread to everyone we met.\" She smiles as if it's funny. \"There's a chapel below where the brothers keep the stair. He was meant to lie there. I can't carry him and it both.\" The gold would sell for a year of ease, or sit warm against your own chest.",
     "options": [
@@ -1482,6 +2321,173 @@
     ]
   },
   {
+    "tag": "slavers_wagon",
+    "name": "Slaver's Coffle",
+    "symbol": "@",
+    "color": [
+      150,
+      120,
+      90
+    ],
+    "sprite_id": "npc_merchant",
+    "block": 4,
+    "role": "anchor",
+    "stakes": "medium",
+    "person": {
+      "id": "theodoros",
+      "name": "Theodoros of Nicaea",
+      "reach": "hardy"
+    },
+    "stance": "1,9",
+    "stance_note": "Steel-man: Aristotle's natural-slavery argument and Rusk's \"who feeds him if I don't\" are in the scene at full strength. The answer is Theodoros's one line, and the lean is carried by the karma, not a speech.",
+    "text": "Four people chained neck to neck in a coffle, the last of them a grey-bearded man too old to keep the pace, and a cage slung on two poles for when he falls. A big man in a good coat leans on the poles. \"Domnall Rusk. Honest trader.\" He points at a grey-bearded captive. \"Theodoros. Reads six languages. Aristotle, whose books your schools teach, says some men are slaves by nature. His own city sold him for a debt. I feed him. Freed, he starves in the first ditch. Who's crueller?\" Theodoros speaks without looking up. \"I can read his contract. It says I am a thing.\"",
+    "options": [
+      {
+        "label": "Buy Theodoros and strike his chains, haggling hard",
+        "side": "right",
+        "cost": {
+          "type": "gold_pct",
+          "amount": 30
+        },
+        "quiz": {
+          "subject": "economics",
+          "tier": 3,
+          "mode": "threshold",
+          "threshold": 1,
+          "total_qs": 1,
+          "timed": false
+        },
+        "pass": {
+          "outcome": "You find the hole in his price: a scholar is worth nothing to a man who can't sell him before the next floor. Rusk swears, hands back half, and you strike the chains with his own hammer. Theodoros reads your face like a page. \"I will repay this in the only coin I have.\"",
+          "karma": 1,
+          "karma_kind": "stance",
+          "reward": {
+            "type": "gold_pct",
+            "amount": 15
+          },
+          "deeds": [
+            "saved.theodoros"
+          ],
+          "person_status": "saved",
+          "delayed": [
+            {
+              "after_floors": [
+                3,
+                6
+              ],
+              "reward": {
+                "type": "random_scroll",
+                "count": 2
+              },
+              "text": "A scroll case waits on the stair, with a note in six languages that all say the same thing."
+            }
+          ],
+          "chronicle": "Bought a man named Theodoros and freed him on the spot. He read the receipt aloud in six languages. They all said thank you."
+        },
+        "fail": {
+          "outcome": "Rusk knows his trade better than you know yours, and you pay his full price. You strike the chains anyway. Theodoros rubs his wrists. \"Overpaid,\" he says. \"Thank you.\"",
+          "karma": 1,
+          "karma_kind": "stance",
+          "deeds": [
+            "saved.theodoros",
+            "flag.theodoros_overpaid"
+          ],
+          "person_status": "saved",
+          "delayed": [
+            {
+              "after_floors": [
+                3,
+                6
+              ],
+              "reward": {
+                "type": "random_scroll",
+                "count": 2
+              },
+              "text": "A scroll case waits on the stair, with a note in six languages that all say the same thing."
+            }
+          ],
+          "chronicle": "Paid a slaver his full price to free a scholar. Theodoros said I overpaid. He is right, and I do not care."
+        },
+        "road": {
+          "id": "slavers_wagon.buy_free",
+          "hint": "A contract reads differently when the man it describes reads it aloud."
+        }
+      },
+      {
+        "label": "Attack Rusk and free all four",
+        "side": "right",
+        "karma": 1,
+        "karma_kind": "stance",
+        "fight": {
+          "monster_id": "bandit_kingpin"
+        },
+        "outcome": "Rusk goes for the axe at his belt. When it is over you break the coffle chains link by link, and Theodoros helps. The two sisters run without a word, which is exactly right. The goatherd boy takes Rusk's hat. Theodoros takes the boy's hand. \"I can read the stair signs. We'll go up together.\"",
+        "deeds": [
+          "saved.theodoros",
+          "saved.rusk_captives",
+          "slew.rusk"
+        ],
+        "person_status": "saved",
+        "chronicle": "Fought a slaver for his coffle and freed everyone on it. The goatherd boy kept the slaver's hat. It suits him.",
+        "road": {
+          "id": "slavers_wagon.attack",
+          "hint": "The hat changed heads that day."
+        }
+      },
+      {
+        "label": "Buy Theodoros to carry your pack",
+        "side": "wrong",
+        "cost": {
+          "type": "gold_pct",
+          "amount": 20
+        },
+        "karma": -1,
+        "karma_kind": "stance_wrong",
+        "reward": {
+          "type": "effect",
+          "effect": "porter",
+          "duration": 0,
+          "floors": 5
+        },
+        "outcome": "Rusk shakes your hand. Theodoros reads the bill of sale aloud while you sign it, in a flat voice, every word. Then he shoulders your pack and says nothing at all.",
+        "deeds": [
+          "wrong.bought_theodoros"
+        ],
+        "person_status": "wronged",
+        "chronicle": "Bought a man to carry my pack. He read the bill of sale out loud while I signed, every word.",
+        "road": {
+          "id": "slavers_wagon.porter",
+          "hint": "A porter who reads six languages takes notes in all of them."
+        },
+        "delayed": [
+          {
+            "after_floors": [
+              5,
+              5
+            ],
+            "cost": {
+              "type": "weapon"
+            },
+            "text": "For five floors Theodoros has carried everything and said nothing at all. At a change of the watch he is gone, and so is your second-best knife.",
+            "chronicle": "The man I bought carried my pack and never said a word. At a change of the watch he was gone, and so was my second-best knife."
+          }
+        ]
+      },
+      {
+        "label": "Walk on",
+        "outcome": "Rusk tips his hat. Theodoros goes back to reading the bars.",
+        "deeds": [
+          "met.rusk"
+        ],
+        "chronicle": "Walked past a slaver's coffle. One of the men in it was reading. I never found out what.",
+        "road": {
+          "id": "slavers_wagon.walk",
+          "hint": "The coffle went on up the stair."
+        }
+      }
+    ]
+  },
+  {
     "tag": "ghost_grave",
     "name": "Ghost of Hal",
     "symbol": "@",
@@ -1496,7 +2502,8 @@
     "stakes": "medium",
     "person": {
       "id": "hal",
-      "name": "Hal Mercer"
+      "name": "Hal Mercer",
+      "reach": "dead"
     },
     "text": "A cairn of stacked stones, and above it, scratched into the wall: HERE LIES EDWIN. HE DESERVED BETTER. A ghost stands guard, broad-shouldered, still wearing the sting that killed him. \"My partner. Seven years. He pushed me behind him when it came.\" He looks at you. \"I buried him with no priest and no prayer, and the dead can't bless the dead. Keep the vigil for him. It'll take something out of you. I won't lie.\" A soldier's stash glints between the stones.",
     "options": [
@@ -1592,7 +2599,8 @@
     "stakes": "medium",
     "person": {
       "id": "pell",
-      "name": "Jory Pell"
+      "name": "Jory Pell",
+      "reach": "exceptional"
     },
     "text": "A young soldier sits in the dark with his knees drawn up, still wearing a torn Legion tabard. His hands won't stop shaking. A captain's heavy signet hangs on a cord at his neck, far too big for any finger of his. \"A hundred of us. Something came out of the dark. I ran.\" He stares at his hands. \"Sergeant Ormond got some of them into the old granary, below. I heard the bar go across as I ran. I just need food to reach the surface. I'll disappear.\" His sword is clean, and so is his tabard. Whatever happened down there, he never drew.",
     "options": [
@@ -1718,156 +2726,107 @@
     ]
   },
   {
-    "tag": "grain_committee",
-    "name": "Grain Committee",
+    "tag": "dwarf_siblings",
+    "name": "Quarrelling Dwarves",
     "symbol": "@",
     "color": [
-      130,
-      130,
-      120
+      170,
+      120,
+      80
     ],
-    "sprite_id": "npc_traveler",
+    "sprite_id": "npc_dwarf",
     "block": 5,
     "role": "anchor",
     "stakes": "medium",
     "person": {
-      "id": "varsk",
-      "name": "Commissar Ilya Varsk"
+      "id": "frida",
+      "name": "Frida",
+      "reach": "deep_folk"
     },
-    "stance": "3.1,3.2",
-    "stance_note": "Steel-man: Varsk is right that the city is starving, and he is not a sadist. The lean (the calculation problem; the requisition record) is carried by the pass text, not by a lecture.",
-    "authority": {
-      "who": "Commissar Varsk and the Grain Committee",
-      "just": false,
-      "why": "Takes a village's seed by list and pays informers."
-    },
-    "text": "Barley under a sun-stone, mushroom beds, and a cart half full of sacks. A thin man in a grey coat reads from a list while two soldiers carry seed out of a cellar. A woman holds one sack to her chest. \"That's next spring,\" she says. The commissar does not raise his voice. \"Every sack in a farmer's cellar is a child in the city who does not eat. I am not a cruel man. I can count.\" A sack lies forgotten behind the cellar door.",
+    "text": "A dwarf woman and her brother stand either side of an iron chest, each with a hand on the lid. They have the same soot-black brows. FRIDA, the elder, has not taken her hand off it in days, by the look of her. \"Father left his gold to the one who stayed with him. I stayed.\" HEPTI, a smith by his burned forearms, does not raise his voice. \"Father left it to both of us. She hasn't slept off that chest since we buried him.\" Between the chest and the water barrel, where Frida must walk to drink, the floor has been dug out in a long trench and roofed over with planks and a skin of dust.",
     "options": [
       {
-        "label": "Hide the forgotten sack in your pack",
-        "cost": {
-          "type": "gold_pct",
-          "amount": 15
-        },
-        "side": "right",
-        "karma": 1,
-        "karma_kind": "stance",
-        "outcome": "The soldier who searches you is a farm boy himself. He feels the sack at the bottom of your pack, looks you in the eye, and writes down a fine instead. When the cart has gone the woman takes the sack back without a word, and puts it in the ground before the torches are changed.",
+        "label": "Split the gold between them, here and now",
+        "naive": true,
+        "warning": "Between the chest and the water barrel, where Frida must walk to drink, the floor has been dug out in a long trench and roofed over with planks and a skin of dust.",
+        "outcome": "You count it out on the lid, coin for coin, and they both watch your hands. It comes out even, and they both look cheated. Hepti thanks you, a little too warmly. On the stair you hear planks crack, and a short cry, and then a shovel at work, filling something in.",
         "deeds": [
-          "saved.thwaite_seed"
+          "aid.hepti",
+          "lost.frida"
         ],
-        "delayed": [
-          {
-            "after_floors": [
-              3,
-              6
-            ],
-            "reward": {
-              "type": "random_food",
-              "count": 3
-            },
-            "text": "A sack has been left at the foot of the stair, tied with village string. Inside: barley bread, onions, and a child's drawing of you.",
-            "chronicle": "Thwaite left me food a few floors down. Someone drew me badly. I kept the drawing.",
-            "requires": {
-              "deeds_none": [
-                "wrong.grain_reported"
-              ]
-            }
-          }
-        ],
-        "chronicle": "Hid a village's seed sack from the Grain Committee. A farm boy in uniform found it and let it go. I will not forget his face.",
+        "person_status": "lost",
+        "chronicle": "Split a dead smith's gold between his son and daughter, fair to the coin. I did not look at the floor. The son did.",
         "road": {
-          "id": "grain_committee.hide",
-          "hint": "A seed sack is next year's bread. Whoever takes it decides who eats."
+          "id": "dwarf_siblings.split",
+          "hint": "An even split means nothing to a man who has already dug the hole."
         }
       },
       {
-        "label": "Tell the commissar where the sack is",
-        "side": "wrong",
-        "karma": -1,
-        "karma_kind": "betray",
-        "reward": {
-          "type": "gold",
-          "min": 150,
-          "max": 250
-        },
-        "outcome": "Varsk thanks you formally, pays you from a strongbox, and writes your name in a different list. The woman watches the last sack go up the stair. She doesn't say anything. There is nothing left to say it about.",
-        "deeds": [
-          "wrong.grain_reported"
-        ],
-        "chronicle": "Informed on a village's last seed sack for a bounty. The commissar wrote my name in a list. I would like to know which list.",
-        "road": {
-          "id": "grain_committee.inform",
-          "hint": "Every list has a second list behind it."
-        },
-        "submit": true
-      },
-      {
-        "label": "Ask him who will decide next spring's needs",
-        "cost": {
-          "type": "sp_pct",
-          "amount": 15
-        },
-        "side": "right",
+        "label": "Tell them what Hreidmar's gold did to his children",
         "quiz": {
-          "subject": "economics",
-          "tier": 4,
+          "subject": "theology",
+          "tier": 2,
           "mode": "threshold",
-          "threshold": 2,
-          "total_qs": 3,
+          "threshold": 1,
+          "total_qs": 1,
           "timed": false
         },
         "pass": {
-          "outcome": "You ask how many sacks the city needs next spring. He gives a number. You ask how he knows. He gives another number. You ask who will plant, with no seed, and what the city eats the spring after. His soldiers are listening now; one of them is from a village. He puts his sack down. Then the other one does. Varsk writes something for a long time, and leaves with half a cart.",
+          "outcome": "You tell it the way the skalds do. Loki killed an otter with a stone, and the otter was Otr, son of the dwarf Hreidmar. The gods paid for him in gold: his skin filled with it and covered with it, and the dwarf Andvari's cursed ring on the last whisker. Hreidmar would not share a coin with his other sons. Fafnir killed him for it and lay on the gold until he was the worm below, and Regin taught a boy to dig a pit in his own brother's path. Hepti looks at his trench a long time. Then he takes a shovel to it, and Frida takes her hand off the lid.",
           "karma": 1,
-          "karma_kind": "stance",
+          "karma_kind": "judgment",
           "deeds": [
-            "saved.thwaite_seed"
+            "saved.frida",
+            "aid.hepti",
+            "told.otters_wergild"
           ],
-          "delayed": [
-            {
-              "after_floors": [
-                3,
-                6
-              ],
-              "reward": {
-                "type": "random_food",
-                "count": 3
-              },
-              "text": "A sack has been left at the foot of the stair, tied with village string. Inside: barley bread, onions, and a child's drawing of you.",
-              "chronicle": "Thwaite left me food a few floors down. Someone drew me badly. I kept the drawing.",
-              "requires": {
-                "deeds_none": [
-                  "wrong.grain_reported"
-                ]
-              }
-            }
-          ],
-          "chronicle": "Asked a commissar how he knew what a village needed. He had a number for everything except the next spring. His own soldiers noticed."
+          "person_status": "saved",
+          "chronicle": "Told two quarrelling dwarves what became of Hreidmar's sons. The brother filled in the pit he had dug for his sister. They split the gold, and nobody turned into a dragon."
         },
         "fail": {
-          "outcome": "He has an answer for every question, because he has a list, and you cannot find the hole in it out loud. The cart leaves full.",
+          "outcome": "You get the story tangled: the otter, the ring, which brother did what. Frida laughs at you. Hepti doesn't. You leave them with their hands on the lid.",
           "deeds": [
-            "met.varsk",
-            "lost.thwaite_seed"
+            "met.frida"
           ],
-          "chronicle": "Argued with a commissar and lost. He was very calm about it. The cart was very full."
+          "chronicle": "Tried to tell two dwarves an old story about gold and brothers, and got it wrong. They were still holding the lid when I left."
         },
         "road": {
-          "id": "grain_committee.ask",
-          "hint": "Nobody can count what a village will need next year, not even a man with a list."
+          "id": "dwarf_siblings.story",
+          "hint": "Every hoard down here is the same hoard, and it ends the same way."
         }
       },
       {
-        "label": "Walk on. It's not your village",
-        "outcome": "The cart creaks up the stair. Behind you the woman is still holding the one sack, and the soldiers have not noticed her yet.",
+        "label": "Side with Hepti, for a third of the gold",
+        "karma": -1,
+        "karma_kind": "cruelty",
+        "reward": {
+          "type": "gold",
+          "min": 250,
+          "max": 350,
+          "purse_pct": 25
+        },
+        "outcome": "Hepti nods once, as if he expected it of you. That night you hold the lamp while Frida walks to the water barrel. Afterwards he fills the trench in himself, and counts your third out twice.",
         "deeds": [
-          "met.varsk"
+          "wrong.helped_hepti",
+          "lost.frida"
         ],
-        "chronicle": "Walked past a requisition in a village under a sun-stone. It was not my quarrel, and I left it to the people whose quarrel it was.",
+        "person_status": "lost",
+        "chronicle": "Held the lamp while a dwarf walked into the pit her brother had dug for her. He paid me a third. It was correct to the coin.",
         "road": {
-          "id": "grain_committee.walk",
-          "hint": "A cart of seed goes up the stair, and the spring comes after it."
+          "id": "dwarf_siblings.side",
+          "hint": "Gold paid for holding a lamp is still blood money."
+        }
+      },
+      {
+        "label": "Leave them to their chest",
+        "outcome": "Neither of them looks up as you go. Behind you, nobody moves a hand.",
+        "deeds": [
+          "met.frida"
+        ],
+        "chronicle": "Left a dwarf and her brother with their hands on a dead man's chest. There was a trench in the floor. I hope she watched her step.",
+        "road": {
+          "id": "dwarf_siblings.leave",
+          "hint": "A trench across a path is a question somebody has already answered."
         }
       }
     ]
@@ -1887,7 +2846,8 @@
     "stakes": "medium",
     "person": {
       "id": "sibyl",
-      "name": "The Sibyl of Cumae"
+      "name": "The Sibyl of Cumae",
+      "reach": "immortal"
     },
     "tragedy": "unsavable",
     "text": "A bottle hangs from an iron hook, and in it sits a woman the size of a sparrow, so old her skin looks like paper folded too many times. Three books lie on the floor beneath, beside a heap of ash where six more were. \"Nine books of what is coming,\" she whispers. \"A king would not pay my price. So I burned three and asked the same price for six. Then three more.\" She looks at the last three. \"Same price.\"",
@@ -1914,7 +2874,8 @@
         },
         "outcome": "She doesn't count it; she couldn't lift a coin. \"King Tarquin paid that for three, in the end, and wept about the six for the rest of his life.\" The books are warm. One of them already has your name in it.",
         "deeds": [
-          "met.sibyl"
+          "met.sibyl",
+          "aid.sibyl"
         ],
         "chronicle": "Bought the last three prophecy books from a woman in a bottle. A king once paid the same for three and wept about the six.",
         "road": {
@@ -1953,7 +2914,8 @@
             ]
           },
           "deeds": [
-            "met.sibyl"
+            "met.sibyl",
+            "aid.sibyl"
           ],
           "chronicle": "Paid a sibyl's price without arguing, because I had seen the ash. She gave me a page she kept back from a king."
         },
@@ -2025,9 +2987,10 @@
     "stakes": "medium",
     "person": {
       "id": "sariel",
-      "name": "Sariel"
+      "name": "Sariel",
+      "reach": "deep_being"
     },
-    "text": "A winged figure kneels in a cage of black iron, six wings folded against bars too narrow for them. The air smells of ozone and wildflowers. Beside the cage a neat man in grey sits on a folding stool with a ledger. \"Ambrose Vell, acquisitions. She's lawfully bought and paid for.\" He taps a deed with a red seal. \"I'll pay you a finder's fee to keep walking.\" Two trolls in Vell's grey livery lean on the far wall, picking their teeth with arrows. The angel says only: \"A scroll would break it.\"",
+    "text": "A winged figure kneels in a cage of black iron, six wings folded against bars too narrow for them. The air smells of ozone and wildflowers. Beside the cage a neat man in grey sits on a folding stool with a ledger that writes in itself as he talks. He has not blinked since you came in, and his chest does not rise and fall. \"Ambrose Vell, acquisitions. She's lawfully bought and paid for.\" He taps a deed with a red seal. \"I'll pay you a finder's fee to keep walking.\" Two trolls in Vell's grey livery lean on the far wall, picking their teeth with arrows. The angel says only: \"A scroll would break it.\"",
     "options": [
       {
         "label": "Break the cage with a scroll, here and now",
@@ -2142,284 +3105,166 @@
     ]
   },
   {
-    "tag": "slavers_wagon",
-    "name": "Slaver's Wagon",
+    "tag": "lawrence_gridiron",
+    "name": "Deacon on the Gridiron",
     "symbol": "@",
     "color": [
-      150,
-      120,
+      200,
+      140,
       90
     ],
-    "sprite_id": "npc_merchant",
+    "sprite_id": "npc_dying_monk",
     "block": 6,
     "role": "anchor",
     "stakes": "medium",
     "person": {
-      "id": "theodoros",
-      "name": "Theodoros of Nicaea"
+      "id": "lawrence",
+      "name": "Lawrence of Rome",
+      "reach": "saint_angel"
     },
-    "stance": "1,9",
-    "stance_note": "Steel-man: Aristotle's natural-slavery argument and Rusk's \"who feeds him if I don't\" are in the scene at full strength. The answer is Theodoros's one line, and the lean is carried by the karma, not a speech.",
-    "text": "A wagon with a cage for a bed, and four people chained in it. A big man in a good coat leans on the wheel. \"Domnall Rusk. Honest trader.\" He points at a grey-bearded captive. \"Theodoros. Reads six languages. Aristotle, whose books your schools teach, says some men are slaves by nature. His own city sold him for a debt. I feed him. Freed, he starves in the first ditch. Who's crueller?\" Theodoros speaks without looking up. \"I can read his contract. It says I am a thing.\"",
+    "text": "A man in a deacon's scorched tunic sits on an iron gridiron over the coals as if it were a garden bench, and it does not burn him. Around him crouch nine thin people with chain-galls on their necks, and a sack between their feet that clinks. \"Lawrence, a deacon of Rome,\" he says. \"The prefect once asked me for the Church's treasures. I took three days, gave every coin to the poor, and brought him the poor. These are the treasures of the Church, I told him. He put me on this for it.\" He pats the iron. \"I told him to turn me over, I was done on that side. So the story goes.\" He nods at the nine. \"They came off the dwarves' chain-gangs with a sack of their masters' gold. Walk them to the up-stair, and the gold is yours: they would rather be alive than rich.\" Somewhere below, something large is following the smell of them.",
+    "escorts": {
+      "escort_agnes_paid": {
+        "id": "agnes",
+        "name": "Agnes",
+        "sprite_id": "npc_traveler",
+        "hp": 45,
+        "ac": 10,
+        "goal": "stairs_up",
+        "leash": 2,
+        "floors": 1,
+        "perk": null,
+        "on_arrive": {
+          "outcome": "At the stair Agnes counts the gold into your hands without being asked, and does not look sorry. Nine people go up the steps into the dark above, and none of them looks back.",
+          "deeds": [
+            "saved.agnes"
+          ],
+          "person_status": "saved",
+          "chronicle": "Walked nine people off a dwarf chain-gang to the up-stair and took the gold the deacon offered for it. They would rather be alive than rich. So, it turns out, would I.",
+          "reward": {
+            "type": "gold",
+            "min": 200,
+            "max": 350,
+            "purse_pct": 20
+          }
+        },
+        "on_fail": {
+          "outcome": "",
+          "deeds": [
+            "lost.agnes"
+          ],
+          "person_status": "lost",
+          "chronicle": "Lost the nine I was walking out of the chain-gang country. Something had followed the smell of them, and I was not enough."
+        }
+      },
+      "escort_agnes_free": {
+        "id": "agnes",
+        "name": "Agnes",
+        "sprite_id": "npc_traveler",
+        "hp": 45,
+        "ac": 10,
+        "goal": "stairs_up",
+        "leash": 2,
+        "floors": 1,
+        "perk": null,
+        "on_arrive": {
+          "outcome": "At the stair Agnes tries to give you the sack anyway, and you close her hands on it. Nine people go up the steps into the dark above, carrying their road home between them.",
+          "deeds": [
+            "saved.agnes"
+          ],
+          "person_status": "saved",
+          "chronicle": "Walked nine people off a dwarf chain-gang to the up-stair and left them the gold for their road home. The deacon said they were the treasure. He was right."
+        },
+        "on_fail": {
+          "outcome": "",
+          "deeds": [
+            "lost.agnes"
+          ],
+          "person_status": "lost",
+          "chronicle": "Lost the nine I was walking out of the chain-gang country. Something had followed the smell of them, and I was not enough."
+        }
+      }
+    },
     "options": [
       {
-        "label": "Buy Theodoros and strike his chains, haggling hard",
-        "side": "right",
-        "cost": {
-          "type": "gold_pct",
-          "amount": 30
+        "label": "Walk them to the up-stair, and take the gold as your wage",
+        "outcome": "\"Agnes,\" says the eldest of the nine, and gets the others moving. Lawrence raises two fingers over you all as you go.",
+        "deeds": [
+          "aid.lawrence"
+        ],
+        "escort": {
+          "$ref": "escort_agnes_paid"
         },
+        "road": {
+          "id": "lawrence_gridiron.wage",
+          "hint": "A wage is honest. So is turning one down."
+        }
+      },
+      {
+        "label": "Walk them to the up-stair, and leave them the gold for their road home",
+        "karma": 1,
+        "karma_kind": "forgo",
+        "outcome": "Lawrence laughs, a big laugh for a man on a gridiron. \"Now that is the treasure of the Church.\" Agnes, the eldest of the nine, gets the others moving, and keeps one hand on the sack.",
+        "deeds": [
+          "aid.lawrence",
+          "forgo.lawrence_gold"
+        ],
+        "escort": {
+          "$ref": "escort_agnes_free"
+        },
+        "road": {
+          "id": "lawrence_gridiron.free",
+          "hint": "The poor carried the treasure out themselves. Let them keep it."
+        }
+      },
+      {
+        "label": "Find them the cool way up, by the draught",
         "quiz": {
-          "subject": "economics",
-          "tier": 3,
+          "subject": "geography",
+          "tier": 2,
           "mode": "threshold",
           "threshold": 1,
           "total_qs": 1,
           "timed": false
         },
         "pass": {
-          "outcome": "You find the hole in his price: a scholar is worth nothing to a man who can't sell him before the next floor. Rusk swears, hands back half, and you strike the chains with his own hammer. Theodoros reads your face like a page. \"I will repay this in the only coin I have.\"",
-          "karma": 1,
-          "karma_kind": "stance",
+          "outcome": "You wet a finger and hold it low, then high. The coals heat the air and it rises, and the cool air that takes its place creeps in along the floor from the way out, as it does in any cave with two mouths. You follow the draught at ankle height to a crack that opens on the up-stair, and the nine go up it with their sack, and nothing follows them. Lawrence blesses you with two fingers. \"A geographer. The prefect never had one of those.\"",
           "reward": {
-            "type": "gold_pct",
-            "amount": 15
+            "type": "effect",
+            "effect": "blessed",
+            "duration": 150
           },
           "deeds": [
-            "saved.theodoros"
+            "aid.lawrence",
+            "saved.agnes"
           ],
-          "person_status": "saved",
-          "delayed": [
-            {
-              "after_floors": [
-                3,
-                6
-              ],
-              "reward": {
-                "type": "random_scroll",
-                "count": 2
-              },
-              "text": "A scroll case waits on the stair, with a note in six languages that all say the same thing."
-            }
-          ],
-          "chronicle": "Bought a man named Theodoros and freed him on the spot. He read the receipt aloud in six languages. They all said thank you."
+          "chronicle": "Followed the draught along a cave floor and found nine escaped slaves a way up that nothing was watching. The deacon on the gridiron blessed me for it."
         },
         "fail": {
-          "outcome": "Rusk knows his trade better than you know yours, and you pay his full price. You strike the chains anyway. Theodoros rubs his wrists. \"Overpaid,\" he says. \"Thank you.\"",
-          "karma": 1,
-          "karma_kind": "stance",
+          "outcome": "The draught you follow is the breath of something lying in the dark, and it wakes. When the fight is over, the nine have gone up some other passage, and Lawrence with them.",
+          "fight": {
+            "monster_id": "war_troll"
+          },
           "deeds": [
-            "saved.theodoros",
-            "flag.theodoros_overpaid"
+            "met.lawrence"
           ],
-          "person_status": "saved",
-          "delayed": [
-            {
-              "after_floors": [
-                3,
-                6
-              ],
-              "reward": {
-                "type": "random_scroll",
-                "count": 2
-              },
-              "text": "A scroll case waits on the stair, with a note in six languages that all say the same thing."
-            }
-          ],
-          "chronicle": "Paid a slaver his full price to free a scholar. Theodoros said I overpaid. He is right, and I do not care."
+          "chronicle": "Followed a draught through the dark and found a troll's breath at the end of it. The nine I meant to lead out found their own way."
         },
         "road": {
-          "id": "slavers_wagon.buy_free",
-          "hint": "A contract reads differently when the man it describes reads it aloud."
+          "id": "lawrence_gridiron.draught",
+          "hint": "Warm air rises. What comes in to replace it shows the way out."
         }
       },
       {
-        "label": "Attack Rusk and free all four",
-        "side": "right",
-        "karma": 1,
-        "karma_kind": "stance",
-        "fight": {
-          "monster_id": "bandit_kingpin"
-        },
-        "outcome": "Rusk goes for the axe under the seat. When it is over you break the chains one by one, and Theodoros helps. The two sisters run without a word, which is exactly right. The goatherd boy takes Rusk's hat. Theodoros takes the boy's hand. \"I can read the stair signs. We'll go up together.\"",
+        "label": "Wish them luck and go on",
+        "outcome": "\"God speed you, then,\" says Lawrence, and means it. The nine watch you go.",
         "deeds": [
-          "saved.theodoros",
-          "saved.rusk_captives",
-          "slew.rusk"
+          "met.lawrence"
         ],
-        "person_status": "saved",
-        "chronicle": "Fought a slaver for his wagon and freed everyone in it. The goatherd boy kept the slaver's hat. It suits him.",
+        "chronicle": "Met a deacon sitting on a gridiron over hot coals, and nine people he called the Church's treasure. I left them to him.",
         "road": {
-          "id": "slavers_wagon.attack",
-          "hint": "The hat changed heads that day."
-        }
-      },
-      {
-        "label": "Buy Theodoros to carry your pack",
-        "side": "wrong",
-        "cost": {
-          "type": "gold_pct",
-          "amount": 20
-        },
-        "karma": -1,
-        "karma_kind": "stance_wrong",
-        "reward": {
-          "type": "effect",
-          "effect": "porter",
-          "duration": 0,
-          "floors": 5
-        },
-        "outcome": "Rusk shakes your hand. Theodoros reads the bill of sale aloud while you sign it, in a flat voice, every word. Then he shoulders your pack and says nothing at all.",
-        "deeds": [
-          "wrong.bought_theodoros"
-        ],
-        "person_status": "wronged",
-        "chronicle": "Bought a man to carry my pack. He read the bill of sale out loud while I signed, every word.",
-        "road": {
-          "id": "slavers_wagon.porter",
-          "hint": "A porter who reads six languages takes notes in all of them."
-        },
-        "delayed": [
-          {
-            "after_floors": [
-              5,
-              5
-            ],
-            "cost": {
-              "type": "weapon"
-            },
-            "text": "For five floors Theodoros has carried everything and said nothing at all. At a change of the watch he is gone, and so is your second-best knife.",
-            "chronicle": "The man I bought carried my pack and never said a word. At a change of the watch he was gone, and so was my second-best knife."
-          }
-        ]
-      },
-      {
-        "label": "Walk on",
-        "outcome": "Rusk tips his hat. Theodoros goes back to reading the bars.",
-        "deeds": [
-          "met.rusk"
-        ],
-        "chronicle": "Walked past a slave wagon. One of the men in it was reading. I never found out what.",
-        "road": {
-          "id": "slavers_wagon.walk",
-          "hint": "The wagon went on up the stair."
-        }
-      }
-    ]
-  },
-  {
-    "tag": "ser_brennan",
-    "name": "Dying Knight",
-    "symbol": "@",
-    "color": [
-      160,
-      155,
-      170
-    ],
-    "sprite_id": "npc_dying_knight",
-    "block": 7,
-    "role": "anchor",
-    "stakes": "medium",
-    "person": {
-      "id": "brennan",
-      "name": "Ser Brennan Vaughan"
-    },
-    "tragedy": "unsavable",
-    "text": "The knight's breastplate is split open and the wound beneath is mortal. He sits with the careful dignity of a man who knows how he will spend his last minutes. A fine sword lies across his knees, his dented shield beside him. \"My daughter Annalise drew me a picture before I left. A horse, I think. She said it was a dragon.\" He almost laughs. \"My squire went on ahead. Tobyn. He'll think I left him. If you have a potion, not to save me. Just for the pain.\"",
-    "options": [
-      {
-        "label": "Give him a healing potion for the pain",
-        "cost": {
-          "type": "healing_potion"
-        },
-        "outcome": "He drinks, and the tension goes out of his face. He unfolds a child's drawing from inside the breastplate and looks at it a long time. \"It's a beautiful dragon, Annalise.\"",
-        "deeds": [
-          "aid.brennan"
-        ],
-        "chronicle": "Gave a dying knight my potion for the pain. He spent the time it bought looking at his daughter's drawing of a dragon.",
-        "then": "options",
-        "road": {
-          "id": "ser_brennan.potion",
-          "hint": "A potion that saves nobody can still buy a few good minutes."
-        }
-      },
-      {
-        "label": "Swear to give his sword to Tobyn",
-        "reward": {
-          "type": "specific_item",
-          "item_type": "weapon",
-          "item_id": "brennans_sword"
-        },
-        "oath": {
-          "id": "brennan_sword",
-          "to": "Ser Brennan",
-          "what": "Give his sword to his squire Tobyn and tell him he was not left behind.",
-          "item_id": "brennans_sword"
-        },
-        "outcome": "\"Tell him I didn't leave him. Tell him I said he was ready.\" He puts the sword in your hands hilt first, the way knights do, and lets go of it with some difficulty.",
-        "deeds": [
-          "lost.brennan"
-        ],
-        "person_status": "lost",
-        "schedule": [
-          {
-            "encounter": "flv_squire_tobyn",
-            "after_floors": [
-              3,
-              9
-            ]
-          }
-        ],
-        "thread": {
-          "id": "tobyn_waits",
-          "hint": "A squire below is still waiting for his knight to catch up."
-        },
-        "chronicle": "Swore to Ser Brennan I would give his sword to his squire and tell the boy he was not left behind. It is a better sword than mine.",
-        "road": {
-          "id": "ser_brennan.swear",
-          "hint": "A good blade carried for someone else is the heaviest kind."
-        }
-      },
-      {
-        "label": "Sit with him",
-        "outcome": "\"Then sit a moment. I don't want to be alone at the end.\" You sit. It is the longest minute of your life, and then it is over.",
-        "deeds": [
-          "lost.brennan"
-        ],
-        "person_status": "lost",
-        "chronicle": "Sat with Ser Brennan while he died. He talked about a dragon his daughter drew. It was a horse.",
-        "road": {
-          "id": "ser_brennan.sit",
-          "hint": "Some kindnesses cost nothing and are still hard to pay."
-        }
-      },
-      {
-        "label": "Take his sword and shield",
-        "karma": -1,
-        "karma_kind": "cruelty",
-        "reward": {
-          "type": "multi",
-          "rewards": [
-            {
-              "type": "specific_item",
-              "item_type": "weapon",
-              "item_id": "brennans_sword"
-            },
-            {
-              "type": "random_shield"
-            }
-          ]
-        },
-        "outcome": "He watches you lift the sword off his knees. \"That's Tobyn's,\" he says. \"I was saving it for Tobyn.\" You are already walking away.",
-        "deeds": [
-          "wrong.robbed_brennan",
-          "lost.brennan"
-        ],
-        "person_status": "wronged",
-        "chronicle": "Took a dying knight's sword and shield. He said the sword was meant for his squire. It cuts very well.",
-        "road": {
-          "id": "ser_brennan.rob",
-          "hint": "A dead man's sword remembers who it was promised to."
+          "id": "lawrence_gridiron.go",
+          "hint": "Some treasures are carried out on their own feet."
         }
       }
     ]
@@ -2439,9 +3284,10 @@
     "stakes": "high",
     "person": {
       "id": "ewan",
-      "name": "Ewan Pryce"
+      "name": "Ewan Pryce",
+      "reach": "captive"
     },
-    "text": "His hands are fused to a book. Veins of black light crawl up his arms and his eyes are pure void. His mouth whispers a language that makes your teeth ache. Something human surfaces. \"Kill the book. Not me. I was a schoolmaster. I had a wife named Clara.\" His voice breaks. \"I can't remember her face. It took that first.\" The book's iron clasp is shaped like a mouth, and it is smiling. Its binding words run round the cover, written backwards.",
+    "text": "His hands are fused to a book. Veins of black light crawl up his arms and his eyes are pure void. His mouth whispers a language that makes your teeth ache. Something human surfaces. \"Kill the book. Not me. I was a schoolmaster. I had a wife named Clara. My feet haven't been mine since the second floor. It walked me down here to find someone who would read it.\" His voice breaks. \"I can't remember her face. It took that first.\" The book's iron clasp is shaped like a mouth, and it is smiling. Its binding words run round the cover, written backwards.",
     "options": [
       {
         "label": "Read the binding words backwards, staking your own wits",
@@ -2458,7 +3304,7 @@
           "timed": false
         },
         "pass": {
-          "outcome": "You read the binding backwards, every clause, and the grammar folds in on itself like a hand closing. The book lets go of him. Ewan's eyes are blue. \"Clara,\" he says. \"Her eyes are brown. I remember. They're brown.\"",
+          "outcome": "You read the binding backwards, every clause, and the grammar folds in on itself like a hand closing. The book lets go of him. Ewan's eyes are blue. \"Clara,\" he says. \"Her eyes are brown. I remember. They're brown.\" Backwards writing is an old trick: Leonardo da Vinci kept his notebooks in mirror script, right to left, and nobody read them without a mirror or a great deal of patience.",
           "karma": 1,
           "karma_kind": "judgment",
           "reward": {
@@ -2585,9 +3431,10 @@
     "stakes": "medium",
     "person": {
       "id": "tansy",
-      "name": "Tansy of the Hollow Hill"
+      "name": "Tansy of the Hollow Hill",
+      "reach": "deep_being"
     },
-    "text": "A tiny winged woman is sealed in a thick glass jar with wax and iron wire, and the dust from her broken wings coats the inside like frost. She presses both hands to the glass. \"Eight months. My wings. The dust is my wings. If I had it back, I could mend them.\" A neat man in grey is already reaching for the jar. \"Ambrose Vell, acquisitions. I'll buy her, or, if you're squeamish, let her go and sell me the dust. It's only on the glass. She's shed it.\" He means both offers. The purse is heavy.",
+    "text": "A tiny winged woman is sealed in a thick glass jar with wax and iron wire, and the dust from her broken wings coats the inside like frost. She presses both hands to the glass. \"Eight months. My wings. The dust is my wings. If I had it back, I could mend them.\" A neat man in grey is already reaching for the jar. The cave is cold enough to show your breath, and his shows nothing at all. \"Ambrose Vell, acquisitions. I'll buy her, or, if you're squeamish, let her go and sell me the dust. It's only on the glass. She's shed it.\" He means both offers. The purse is heavy.",
     "text_variants": [
       {
         "when": {
@@ -2663,7 +3510,7 @@
         "label": "Let her go, and give her back the dust",
         "karma": 1,
         "karma_kind": "forgo",
-        "outcome": "You break the jar and tip the glass toward her. The dust rises off it like frost off a window in the sun and settles back into her wings, and her wings straighten with a sound like a page turning. She loops round your head and kisses your cheek, a warm spot no bigger than a pinprick. Vell closes his purse with a small sigh.",
+        "outcome": "You break the jar and tip the glass toward her. The dust rises off it like frost off a window in the sun and settles back into her wings, and her wings straighten with a sound like a page turning. She loops round your head and kisses your cheek, a warm spot no bigger than a pinprick. Vell closes his purse with a small sigh. It was never dust: it is scales, thousands of them laid like roof slates, the same as on a moth's wing.",
         "deeds": [
           "saved.tansy",
           "forgo.tansys_dust"
@@ -2705,235 +3552,119 @@
     ]
   },
   {
-    "tag": "penitent",
-    "name": "The Penitent",
+    "tag": "sigyn_bowl",
+    "name": "The Bound One and His Wife",
     "symbol": "@",
     "color": [
-      150,
-      140,
-      130
+      190,
+      170,
+      120
     ],
-    "sprite_id": "npc_penitent",
-    "block": 8,
+    "sprite_id": "npc_poisoned_herbalist",
+    "block": 7,
     "role": "anchor",
     "stakes": "medium",
     "person": {
-      "id": "lucan",
-      "name": "Lucan Dray"
+      "id": "sigyn",
+      "name": "Sigyn",
+      "reach": "norse_god"
     },
-    "authority": {
-      "who": "Aurel Dunmore and the assize",
-      "just": true,
-      "why": "A murderer answers to his victim's son and a lawful court."
-    },
-    "text": "A man kneels on the stone with a gash in his leg from a fall on the stair, and in front of him, laid down the way a soldier surrenders, is a dagger with its hilt toward whoever comes. A board hangs round his neck on a cord, with MURDERER burned into it in his own hand, and a heavy purse sits at his belt, untouched. \"I killed a man twenty years ago, over money. I've stopped running.\" Behind you a younger man steps out of the dark with a crossbow. \"Tomas Dunmore was my father.\" He doesn't lower it. \"He's run from three assizes already. Every time, someone felt sorry for him. Now you want to give him a potion?\"",
+    "text": "In a cave of black ice a man lies bound across three stones, with cords that have turned to iron. Above his face a great serpent hangs from the roof, and its venom drips. A woman kneels at his head with a bowl held under the drip, her arms shaking. \"Sigyn,\" she says, before you can ask. \"His wife.\" When the bowl is full she must turn away to empty it; then the venom falls on his face, and he writhes until the whole floor shakes. The bound man turns his eyes to you. They are bright, and amused. \"One cord,\" says Loki. \"Cut one, and I'll make you something nobody has ever made. I invented the net, you know.\"",
     "options": [
       {
-        "label": "Heal his wound and let him go his way",
-        "naive": true,
-        "warning": "He's run from three assizes already. Every time, someone felt sorry for him.",
-        "cost": {
-          "type": "healing_potion"
-        },
-        "outcome": "Lucan drinks, takes the board off his neck, and is gone into the dark before Aurel can decide whether to shoot. Aurel looks at you for a long moment. \"Four,\" he says. \"That makes four.\"",
-        "deeds": [
-          "aid.lucan",
-          {
-            "id": "spared.lucan",
-            "payload": {
-              "deserving": false
-            }
-          }
-        ],
-        "person_status": {
-          "status": "spared",
-          "deserving": false
-        },
-        "chronicle": "Healed a murderer who said he had stopped running. He started again before the dead man's son could stop him. That makes four times someone let him.",
-        "road": {
-          "id": "penitent.heal_free",
-          "hint": "Pity without judgment is how a guilty man keeps running."
-        }
-      },
-      {
-        "label": "Weigh mercy and justice with them both",
-        "cost": {
-          "type": "healing_potion"
-        },
+        "label": "Ask Sigyn why she stays",
         "quiz": {
-          "subject": "philosophy",
-          "tier": 3,
+          "subject": "theology",
+          "tier": 2,
           "mode": "threshold",
-          "threshold": 2,
-          "total_qs": 3,
+          "threshold": 1,
+          "total_qs": 1,
           "timed": false
         },
         "pass": {
-          "outcome": "You say it plainly: mercy is not the opposite of justice; it comes after it. Lucan can live and still answer for Tomas Dunmore. Aurel lowers the crossbow by inches. You heal the wound and point them both to the stair, and watch them go, the son behind the murderer.",
-          "karma": 1,
-          "karma_kind": "judgment",
+          "outcome": "\"Because he is mine,\" she says, \"and the gods made sure I would see what he did.\" She tells it plainly. Loki put a mistletoe dart in blind Hod's hand and aimed it at Baldr, whom nothing else in the world could harm. When everything wept to bring Baldr back from Hel, one old giantess in a cave would not, and men say she was Loki. So the gods bound him here with his own son's cords, until the end of the world. \"When the ice breaks, he breaks loose. Ragnarok. Go down ready.\" She wipes your hands with something from a little jar. \"His venom will not trouble you for a while.\" She looks at the bowl, and at her shaking arms, and for the first time at you.",
+          "reward": {
+            "type": "effect",
+            "effect": "poison_resist",
+            "duration": 300
+          },
           "deeds": [
-            {
-              "id": "saved.lucan",
-              "payload": {
-                "deserving": null
-              }
-            },
-            "told.lucan_to_assize"
+            "told.sigyn_story"
           ],
-          "person_status": "saved",
-          "chronicle": "Healed a murderer and handed him to his victim's son for the assize. Mercy, then justice. Neither of them thanked me, which seems right."
+          "chronicle": "Sigyn told me why Loki lies under the serpent, and why she stays. When the ice breaks, he breaks loose. She gave me something against his venom.",
+          "then": "options"
         },
         "fail": {
-          "outcome": "You talk in circles about forgiveness until Aurel can't stand it and leaves. When you turn round, Lucan has slipped away into the dark, and left the board behind.",
+          "outcome": "She looks at you for a long time and says nothing at all. Behind her the bowl fills, and she turns back to it.",
           "deeds": [
-            {
-              "id": "spared.lucan",
-              "payload": {
-                "deserving": false
-              }
-            }
+            "met.sigyn"
           ],
-          "person_status": {
-            "status": "spared",
-            "deserving": false
-          },
-          "chronicle": "Lectured a murderer and his victim's son about forgiveness. The son left in disgust. The murderer left too, the other way."
+          "chronicle": "Asked Sigyn why she stays. She did not answer. I think I asked it wrong."
         },
         "road": {
-          "id": "penitent.weigh",
-          "hint": "Mercy that skips justice is only a head start."
-        },
-        "submit": true
-      },
-      {
-        "label": "\"He was your father. You decide.\"",
-        "outcome": "Aurel walks over and looks down at him a long time. \"I thought I'd feel something.\" He unloads the crossbow and turns away. \"Let the dark have him. It's waited long enough.\" Lucan watches him go.",
-        "deeds": [
-          "met.lucan",
-          "lost.lucan"
-        ],
-        "person_status": "lost",
-        "chronicle": "Let a murdered man's son decide. He decided not to bother. I suppose that is a kind of sentence.",
-        "road": {
-          "id": "penitent.you_decide",
-          "hint": "Revenge declined is not the same as justice done."
+          "id": "sigyn_bowl.ask",
+          "hint": "The bound one talks. His wife knows the whole story."
         }
       },
       {
-        "label": "Take his gold and the dagger",
+        "label": "Refuse him, and hold the bowl so Sigyn can rest",
+        "requires": {
+          "deeds_all": [
+            "told.sigyn_story"
+          ]
+        },
+        "cost": {
+          "type": "hp_pct",
+          "amount": 15
+        },
+        "karma": 1,
+        "karma_kind": "forgo",
+        "outcome": "You take the bowl. It is heavier than it looks, and every drop that misses it eats into your hands. Sigyn empties it and sleeps against the wall, for the first time in longer than you want to think about. Loki talks the whole while: sweetly, then cruelly, then not at all. When she wakes she takes the bowl back without a word, and her hands have stopped shaking.",
+        "deeds": [
+          "aid.sigyn",
+          "forgo.lokis_gift"
+        ],
+        "chronicle": "Held Sigyn's bowl under the serpent while she slept. Loki offered me anything for one cut cord. My hands still sting. His offer does not.",
+        "road": {
+          "id": "sigyn_bowl.hold",
+          "hint": "The one who holds the bowl never gets to put it down. Someone could, a while."
+        }
+      },
+      {
+        "label": "Cut one cord, for his gift",
         "karma": -1,
-        "karma_kind": "cruelty",
+        "karma_kind": "sacrilege",
         "reward": {
           "type": "multi",
           "rewards": [
             {
-              "type": "gold",
-              "min": 200,
-              "max": 300,
-              "purse_pct": 15
+              "type": "random_accessory"
             },
             {
-              "type": "specific_item",
-              "item_type": "weapon",
-              "item_id": "penitents_blade"
+              "type": "random_wand"
             }
           ]
         },
-        "outcome": "Lucan laughs, a cracked, horrible sound. \"It suits you better than it suited me.\" Aurel watches you pocket the murder weapon and says nothing at all.",
+        "outcome": "The cord parts like rotten rope. Loki laughs, a long delighted laugh, and the floor heaves under you. He keeps his word, after a fashion: something is in your pack that was not there before. Sigyn will not look at you.",
         "deeds": [
-          "wrong.robbed_lucan"
+          "wrong.cut_lokis_cord"
         ],
-        "person_status": "wronged",
-        "chronicle": "Took a murderer's purse and the knife he used. He said it suited me. I have not decided whether to be offended.",
+        "chronicle": "Cut one of Loki's cords for a gift. He laughed, the whole floor shook, and Sigyn would not look at me. The gift is very good. I wish it were not.",
         "road": {
-          "id": "penitent.rob",
-          "hint": "A murderer's knife sits easy in the hand and heavy everywhere else."
-        }
-      }
-    ]
-  },
-  {
-    "tag": "roderic_shield",
-    "name": "Young Knight",
-    "symbol": "@",
-    "color": [
-      170,
-      160,
-      150
-    ],
-    "sprite_id": "npc_young_knight",
-    "block": 8,
-    "trigger_item": "lionheart_shield",
-    "trigger_level_offset": 2,
-    "fallback_anchor": "penitent",
-    "role": "anchor",
-    "stakes": "medium",
-    "person": {
-      "id": "roderic",
-      "name": "Roderic of the Iron Vale"
-    },
-    "contested": true,
-    "text": "A young knight in armour polished to a mirror is searching room after room. He sees the shield you carry and goes white. \"My father's. Ser Marten of the Iron Vale. He came down to clear a basilisk nest. He said he'd be back for supper.\" His voice cracks. \"Tell me he faced it.\" The strap is cut through, and the scrapes on its face all run one way: a shield dropped by a man running north, away from the nest.",
-    "options": [
-      {
-        "label": "Give him the shield and show him what the scrapes say",
-        "cost": {
-          "type": "triggered_item"
-        },
-        "outcome": "\"Away from the nest.\" Roderic is very still. Then: \"North of the nest is the camp. The camp had two squires and a cook.\" He picks up the shield. \"He was running to warn them. He was running to warn them.\" He says it the way you say a thing you have decided to believe, and you can't tell him otherwise, because you don't know either.",
-        "deeds": [
-          "aid.roderic",
-          "told.roderic_truth"
-        ],
-        "chronicle": "Told Roderic where his father's shield was lying, pointing away from the nest. He decided it meant his father ran to warn the camp. I hope he is right.",
-        "road": {
-          "id": "roderic_shield.truth",
-          "hint": "The truth is sometimes kinder than you feared, and sometimes only stranger."
+          "id": "sigyn_bowl.cut",
+          "hint": "He invented the net. Think who it was meant to catch."
         }
       },
       {
-        "label": "Give him the shield and tell him his father died facing it",
-        "cost": {
-          "type": "triggered_item"
-        },
-        "outcome": "\"Facing it.\" He holds the shield to his chest. \"Of course he did. He doesn't break promises.\" He goes up the stairs taller than he came down, carrying a story he will tell his mother, and one day his children.",
+        "label": "Leave them to their long night",
+        "outcome": "Loki calls after you, pleasantly, until the turn of the passage. The floor shakes twice before you reach the stair.",
         "deeds": [
-          "aid.roderic",
-          "told.roderic_lie"
+          "met.sigyn"
         ],
-        "chronicle": "Told a young knight his father died facing the basilisk. I do not know that. He will tell his children.",
+        "chronicle": "Walked past Loki under the serpent and Sigyn with her bowl. The floor shook twice before I reached the stair.",
         "road": {
-          "id": "roderic_shield.kind_lie",
-          "hint": "A kind lie travels further than the person who told it."
-        }
-      },
-      {
-        "label": "Give him the shield and say nothing about the scrapes",
-        "cost": {
-          "type": "triggered_item"
-        },
-        "outcome": "He doesn't ask again. Maybe he reads it in your face, or maybe he decides not to. \"Thank you,\" he says, and carries it out like something very heavy and very easy to break.",
-        "deeds": [
-          "aid.roderic"
-        ],
-        "chronicle": "Gave Roderic his father's shield and said nothing about where it lay. He did not ask twice. I think he knew not to.",
-        "road": {
-          "id": "roderic_shield.silence",
-          "hint": "Silence is an answer too, and he will read it however he must."
-        }
-      },
-      {
-        "label": "Keep the shield, and say why: \"I need it to get down alive. If I live, it comes home.\"",
-        "outcome": "Roderic looks at the shield you carry, and at the stair, and something in him decides to be his father's son. \"Then carry it well,\" he says. \"He'd want it used, not hung on a wall.\" He tells you the way to the Iron Vale, and what his mother's name is, so she will know who you are.",
-        "deeds": [
-          "owe.roderic",
-          "told.roderic_honest_keep"
-        ],
-        "chronicle": "Told Roderic I needed his father's shield to get down alive. He told me to carry it well, and gave me his mother's name.",
-        "road": {
-          "id": "roderic_shield.honest_keep",
-          "hint": "Some things are only borrowed from the dead, and the living can agree to the loan."
+          "id": "sigyn_bowl.leave",
+          "hint": "The ground shakes whenever her bowl is full."
         }
       }
     ]
@@ -2953,7 +3684,8 @@
     "stakes": "medium",
     "person": {
       "id": "silas",
-      "name": "Silas Mordaunt"
+      "name": "Silas Mordaunt",
+      "reach": "captive"
     },
     "text": "The cell is ancient, the bars more rust than iron. A white-haired man sits inside, pleasant as a grandfather. \"Forty-three years. For a debt, if you can believe it.\" He talks of chains: iron is the weak sort; the one that holds the great wolf is soft as a ribbon. \"The lock is dwarven. Gold in the mechanism trips it.\" The wall behind him is covered in scratches, but they aren't tally marks. They're too long, and some have a little cross after them. Under his cot, within reach of the bars, one flagstone sits proud of the rest.",
     "options": [
@@ -3141,6 +3873,220 @@
     ]
   },
   {
+    "tag": "swan_shirt",
+    "name": "Valkyrie by the Lake",
+    "symbol": "@",
+    "color": [
+      220,
+      225,
+      240
+    ],
+    "sprite_id": "valkyrie_shade",
+    "block": 8,
+    "role": "anchor",
+    "stakes": "medium",
+    "person": {
+      "id": "hrist",
+      "name": "Hrist",
+      "reach": "norse_god"
+    },
+    "text": "By a black lake under the ice, a woman in a ring-mail shirt sits on a stone with a spear across her knees, staring at a heap of white feathers in a frost giant's lap. The giant is asleep, and snoring. \"My swan-shirt,\" she says, without taking her eyes off it. \"I am Hrist, one of Odin's choosers of the slain. Whoever holds that shirt holds me: I fly where he says, and on the day of battle I choose for whom he says. The giant doesn't know that.\" She looks at you at last. \"You do now.\"",
+    "options": [
+      {
+        "label": "Take the shirt from the giant, and keep it",
+        "karma": -1,
+        "karma_kind": "cruelty",
+        "reward": {
+          "type": "effect",
+          "effect": "heroism",
+          "duration": 0,
+          "floors": 4
+        },
+        "outcome": "You lift it off the sleeping giant, light as breath. Hrist stands, because she must. \"Where you go, then,\" she says, in a voice with no colour in it. For a while a spear goes before you and every blow you strike finds its mark. Then one morning the shirt is gone from your pack, and so is she, and she did not say goodbye.",
+        "deeds": [
+          "wrong.kept_swan_shirt"
+        ],
+        "person_status": "wronged",
+        "chronicle": "Took a valkyrie's swan-shirt and kept her at my side. She fought for me because she had to. One morning she was gone, and so was the shirt.",
+        "road": {
+          "id": "swan_shirt.keep",
+          "hint": "A chooser of the slain remembers who chose for her."
+        }
+      },
+      {
+        "label": "Take the shirt from the giant, and give it back to her",
+        "karma": 1,
+        "karma_kind": "forgo",
+        "fight": {
+          "monster_id": "frostfang_giant"
+        },
+        "outcome": "The giant wakes with his fist round the feathers, and you have to take them the hard way. When it is over you hold the shirt out to her. She shrugs it on and is a swan, and then a woman again, laughing. \"Freely given. I will remember that on the day of choosing.\"",
+        "deeds": [
+          "forgo.swan_shirt",
+          "saved.hrist"
+        ],
+        "person_status": "saved",
+        "chronicle": "Fought a frost giant for a valkyrie's swan-shirt and handed it back to her. She said she would remember it on the day of choosing. I would rather she forgot me for a while yet.",
+        "road": {
+          "id": "swan_shirt.return",
+          "hint": "What holds a person is not yours to hold."
+        }
+      },
+      {
+        "label": "Wake him, and win it off him in a riddle game",
+        "quiz": {
+          "subject": "theology",
+          "tier": 2,
+          "mode": "threshold",
+          "threshold": 1,
+          "total_qs": 1,
+          "timed": false
+        },
+        "pass": {
+          "outcome": "You wake him, politely, and offer a wager: riddles, for the shirt. No giant ever refused a riddle game, and this one is slow. He loses the third round, pays up with bad grace and goes back to sleep. Hrist takes the shirt from your hands. \"Valkyrie means chooser of the slain,\" she says. \"Half of those we choose go to Odin's hall to fight at Ragnarok, and half to Freyja. You could have kept me, and you knew it.\" She is a swan, and gone.",
+          "karma": 1,
+          "karma_kind": "forgo",
+          "deeds": [
+            "forgo.swan_shirt",
+            "saved.hrist"
+          ],
+          "person_status": "saved",
+          "chronicle": "Won a valkyrie's swan-shirt off a frost giant in a riddle game, and gave it back to her. She told me what her name means. I am trying not to think about it."
+        },
+        "fail": {
+          "outcome": "Your first riddle has an answer he knows, and his has one you don't. He roars and comes for you. In the fight Hrist takes the shirt out of his fist herself, and is gone over the lake before you can turn.",
+          "fight": {
+            "monster_id": "frostfang_giant"
+          },
+          "deeds": [
+            "met.hrist"
+          ],
+          "chronicle": "Lost a riddle game to a frost giant and had to fight him for it. The valkyrie took her own shirt back in the scuffle."
+        },
+        "road": {
+          "id": "swan_shirt.riddle",
+          "hint": "No giant ever turned down a riddle game. Few ever won one."
+        }
+      },
+      {
+        "label": "Leave the giant to his sleep",
+        "outcome": "Hrist does not look away from the feathers as you go. The giant snores on.",
+        "deeds": [
+          "met.hrist"
+        ],
+        "chronicle": "Left a valkyrie watching a sleeping giant hold her swan-shirt. She did not ask me for anything. That was the worst of it.",
+        "road": {
+          "id": "swan_shirt.leave",
+          "hint": "A sleeping giant keeps what he holds until he wakes."
+        }
+      }
+    ]
+  },
+  {
+    "tag": "thrym_wedding",
+    "name": "Thrym's Wedding Feast",
+    "symbol": "@",
+    "color": [
+      150,
+      190,
+      230
+    ],
+    "sprite_id": "frost_giant_jarl",
+    "block": 8,
+    "role": "anchor",
+    "stakes": "medium",
+    "person": {
+      "id": "thrym",
+      "name": "Thrym",
+      "reach": "norse_god"
+    },
+    "disguise": {
+      "who": "thor",
+      "tradition": "norse",
+      "tells": [
+        "eight salmon",
+        "her eyes burn like coals",
+        "old stitch-scars round her mouth"
+      ]
+    },
+    "text": "A frost giant's hall, its tables groaning. THRYM, lord of the rime-giants, sits beside a veiled bride as tall as a door. \"Freyja herself!\" he booms. \"I hid the Thunderer's hammer eight leagues under the earth, and she was the price of it.\" The bride has just eaten an ox, eight salmon and every dainty meant for the women, and washed it down with three casks of mead. Under the veil her eyes burn like coals. Her bridesmaid, a lean red-haired girl with old stitch-scars round her mouth, catches your eye and does not blink. Thrym turns to you, a little troubled. \"Stranger. Did you ever see a bride eat like that?\"",
+    "options": [
+      {
+        "label": "Tell Thrym the truth: that is no bride",
+        "karma": -1,
+        "karma_kind": "betray",
+        "reward": {
+          "type": "gold",
+          "min": 300,
+          "max": 450,
+          "purse_pct": 25
+        },
+        "outcome": "Thrym tears the veil away and finds a red beard under it. He roars for the hammer to be buried deeper still, and the bride and her maid are thrown out into the snow, the bride swearing like a storm. Thrym fills your hands with gold for your sharp eyes. The bridesmaid looked back at you once, on the way out.",
+        "deeds": [
+          "wrong.told_thrym"
+        ],
+        "chronicle": "Told a frost giant his bride was a man in a veil. He paid me well for it, and kept the hammer he had stolen. The bridesmaid looked back at me once.",
+        "road": {
+          "id": "thrym_wedding.tell",
+          "hint": "A true word that helps a thief keep what he stole is still a betrayal."
+        }
+      },
+      {
+        "label": "Answer for the bride, as her maid would",
+        "quiz": {
+          "subject": "theology",
+          "tier": 2,
+          "mode": "threshold",
+          "threshold": 1,
+          "total_qs": 1,
+          "timed": false
+        },
+        "pass": {
+          "outcome": "\"She has eaten nothing for eight nights,\" you say, \"so eager was she for the giants' land.\" The bridesmaid's eyebrows go up. Thrym roars with relief, lifts the veil for a kiss, and drops it again fast. \"Her eyes!\" \"She has not slept for eight nights either,\" says the bridesmaid smoothly. \"Bring in the hammer to hallow the bride!\" Thrym calls, and they lay it in her lap. The bride laughs out loud. What follows is very short and very loud. Afterwards Thor, red beard and wedding veil, claps you on the shoulder so hard your arm sings for a week.",
+          "reward": {
+            "type": "effect",
+            "effect": "heroism",
+            "duration": 0,
+            "floors": 2
+          },
+          "deeds": [
+            {
+              "id": "noticed.thor",
+              "tags": [
+                "god:thor"
+              ]
+            },
+            "aid.thor"
+          ],
+          "chronicle": "Sat at a frost giant's wedding and helped the bridesmaid explain why the bride ate an ox. The bride was Thor. The giant found out when the hammer came in."
+        },
+        "fail": {
+          "outcome": "You say the bride is shy. Thrym frowns at you, then at her, and has you thrown out into the snow before the hammer is ever brought in. Behind the door the feast goes on.",
+          "deeds": [
+            "met.thrym"
+          ],
+          "chronicle": "Said the wrong thing at a frost giant's wedding and was thrown out into the snow. I have a feeling the bride was nobody's bride."
+        },
+        "road": {
+          "id": "thrym_wedding.answer",
+          "hint": "A bride who eats an ox has a good excuse ready, if someone knows it."
+        }
+      },
+      {
+        "label": "Slip out before the hammer comes in",
+        "outcome": "You eat what you are given, keep your eyes on your plate, and leave by a side door. Some time later the whole hall shakes.",
+        "deeds": [
+          "met.thrym"
+        ],
+        "chronicle": "Ate at a frost giant's wedding and slipped out early. Some time later the whole hall shook. I suspect the bride.",
+        "road": {
+          "id": "thrym_wedding.slip",
+          "hint": "When a giant calls for his hammer, the wise guest is elsewhere."
+        }
+      }
+    ]
+  },
+  {
     "tag": "fallen_paladin",
     "name": "Fallen Paladin",
     "symbol": "@",
@@ -3155,7 +4101,8 @@
     "stakes": "medium",
     "person": {
       "id": "oswin",
-      "name": "Sir Oswin of Harrow"
+      "name": "Sir Oswin of Harrow",
+      "reach": "called"
     },
     "stance": "1",
     "stance_note": "Steel-man: atonement by service is real too. Oswin's sword below could save lives the court never will, and a court may simply hang him. The lean (moral_vision §1: virtues are real, and an order is no defence for a crime) is that justice is owed to the living families of Thale, and only a court that hears all of it makes Ranulf answer for his share. The point asks the hero to say why (one passed question); Oswin goes back either way. Fighting on stays at 0, never wrong; only robbing him is.",
@@ -3313,7 +4260,8 @@
     "stakes": "high",
     "person": {
       "id": "azarael",
-      "name": "Azarael"
+      "name": "Azarael",
+      "reach": "damned_demon"
     },
     "text": "Eight feet tall on his knees, skin like heated bronze. Glowing chains bite into his flesh, and some of the sigils on them have worn to smudges. His voice is warm and patient. \"Look at me. Centuries in chains for a war I did not start. I'm a soldier, same as you. Free me and I'll give you strength. True strength. The kind you'll need.\" He leans forward. \"Refuse, and you face the Pit alone. We both know what waits in the Pit.\"",
     "options": [
@@ -3423,7 +4371,8 @@
     "stakes": "medium",
     "person": {
       "id": "yosip",
-      "name": "Yosip Brandt"
+      "name": "Yosip Brandt",
+      "reach": "damned_demon"
     },
     "stance": "1",
     "stance_note": "Steel-man: Mirela's \"words are air\" is the greengrocer's own reasoning, given at full strength. The rooster is for the sharp-eyed (Peter's third denial). No moral is spoken.",
@@ -3536,9 +4485,10 @@
     "stakes": "medium",
     "person": {
       "id": "amos",
-      "name": "Amos Gale"
+      "name": "Amos Gale",
+      "reach": "called"
     },
-    "text": "An old man in blood-stained white lies against an altar, his eyes terrifyingly clear. Stone tablets surround him: THE DESTROYER WAKES. SEVEN SEALS. THE LOCUSTS HAVE A KING. One tablet is blank. \"One more. Give me a potion and one more hour, and I'll have it done.\" Around his neck hangs an amulet that pulses with gathered visions. \"My daughter Ruth is coming down behind you. She'll need to read it. She never believed a word.\"",
+    "text": "An old man in blood-stained white lies against an altar, his eyes terrifyingly clear. Stone tablets surround him: THE DESTROYER WAKES. SEVEN SEALS. THE LOCUSTS HAVE A KING, AND HIS NAME IN THE HEBREW TONGUE IS ABADDON. One tablet is blank. \"One more. Give me a potion and one more hour, and I'll have it done.\" Around his neck hangs an amulet that pulses with gathered visions. \"My daughter Ruth is coming down behind you. She cuts gravestones for a living, and she has better boots than I ever had. She'll need to read it. She never believed a word.\"",
     "options": [
       {
         "label": "Heal him so he can finish the warning",
@@ -3646,265 +4596,215 @@
     ]
   },
   {
-    "tag": "petrified_adventurer",
-    "name": "Stone Statue",
+    "tag": "rich_man_gulf",
+    "name": "The Rich Man at the Gulf",
     "symbol": "@",
     "color": [
-      160,
-      160,
-      160
+      130,
+      60,
+      120
     ],
-    "sprite_id": "npc_stone_statue",
+    "sprite_id": "npc_penitent",
     "block": 10,
     "role": "anchor",
     "stakes": "medium",
     "person": {
-      "id": "celeste",
-      "name": "Celeste Arrowmere"
+      "id": "dives",
+      "name": "Dives",
+      "reach": "damned_demon"
     },
-    "text": "A statue stands in the middle of the corridor, and the pose is wrong: one arm raised, mouth open in a scream turned to stone. Basilisk work. Scratched into the wall: CELESTE. STONE BUT ALIVE. ANY SCROLL READ ALOUD WILL WAKE HER. I WILL COME BACK FOR YOU. MAREN. Three rooms back you passed a woman's bones with a scroll case in her hand. The case was empty; whatever scroll she found, she never got to read it. Pressed to the stone, faintly, there is a heartbeat.",
-    "escorts": {
-      "escort_celeste": {
-        "id": "celeste",
-        "name": "Celeste",
-        "sprite_id": "npc_warrior",
-        "hp": 90,
-        "ac": 4,
-        "goal": "stairs_down",
-        "leash": 2,
-        "floors": 1,
-        "perk": "light",
-        "on_arrive": {
-          "outcome": "At the foot of the stair Celeste unbuckles the spare plate from her own pack. 'Maren carried mine. I carried hers. You have it.'",
-          "reward": {
-            "type": "random_armor"
-          },
-          "deeds": [
-            "saved.celeste"
-          ],
-          "person_status": "saved",
-          "chronicle": "Walked a floor beside Celeste. She carried the torch and did not talk about Maren once, which is how I knew."
-        },
-        "on_fail": {
-          "outcome": "",
-          "deeds": [
-            "lost.celeste"
-          ],
-          "person_status": "lost",
-          "chronicle": "Woke Celeste out of stone and lost her a floor later. Maren had the better excuse."
-        }
-      }
-    },
+    "text": "At the lip of a chasm with no bottom kneels a man in the burnt rags of purple and fine linen, his lips cracked. Far across the gulf, too far to shout, a beggar covered in sores rests in a light that does not reach this side, and dogs lie at his feet. \"Lazarus,\" the man whispers. \"He lay at my gate every day of my life, and I never once gave him the crumbs from my table. Now I can't stop seeing him.\" Men call him Dives, which only means the rich man; nobody remembered his name. He holds out a purse that is still heavy. \"Carry word up to my five brothers, so they don't come here. Or only wet my tongue.\" The heat that comes up out of the gulf would boil a cup of water long before it crossed.",
     "options": [
       {
-        "label": "Read a scroll over the stone and restore her",
+        "label": "Pour water across the gulf to him",
+        "naive": true,
+        "warning": "The heat that comes up out of the gulf would boil a cup of water long before it crossed.",
         "cost": {
-          "type": "scroll"
+          "type": "potion"
         },
-        "outcome": "Stone cracks and falls. Celeste gasps; the scream finishes, and stops. She reads the wall, and then she reads your face. \"She tried,\" she says, and goes back up the corridor alone to find what's left of Maren.",
+        "outcome": "You pour it out over the edge as far as your arm can throw it. It hisses into steam an arm's length from your hand, and none of it crosses. Dives watches it go the way he watched every coin he ever spent on himself.",
         "deeds": [
-          "aid.celeste",
-          "saved.celeste",
-          "flag.celeste_went_for_maren"
+          "aid.dives"
         ],
-        "person_status": "saved",
-        "chronicle": "Woke a woman named Celeste out of stone. Her friend promised to come back for her and nearly did. Celeste went to find her bones.",
+        "chronicle": "Poured a potion across the great gulf to the rich man. It boiled away before it crossed. Abraham said it would: nothing passes from here to there.",
         "road": {
-          "id": "petrified_adventurer.restore",
-          "hint": "A promise kept by someone else still counts for something."
+          "id": "rich_man_gulf.pour",
+          "hint": "Some gulfs are fixed. Pity cannot carry water over them."
         }
       },
       {
-        "label": "Restore her, and walk the next floor down together",
-        "cost": {
-          "type": "scroll"
-        },
-        "outcome": "Stone cracks and falls. Celeste reads the wall and closes her eyes. \"Maren would want me to finish the job. Walk with me a floor. I'll carry the torch.\"",
-        "deeds": [
-          "aid.celeste"
-        ],
-        "escort": {
-          "$ref": "escort_celeste"
-        },
-        "road": {
-          "id": "petrified_adventurer.walk_together",
-          "hint": "Walk with the ones you wake. They know the dark better than you."
-        }
-      },
-      {
-        "label": "Leave her as she is",
-        "outcome": "You leave her there. The heartbeat goes on behind you, fainter, and fainter.",
-        "deeds": [
-          "met.celeste"
-        ],
-        "chronicle": "Left a woman in stone with a heartbeat. Her friend's bones were three rooms back. Nobody else is coming now.",
-        "road": {
-          "id": "petrified_adventurer.leave",
-          "hint": "Stone keeps a heartbeat a long time. Not forever."
-        }
-      },
-      {
-        "label": "Break the statue to free her gear",
+        "label": "Take his purse, and promise to warn his brothers",
         "karma": -1,
         "karma_kind": "cruelty",
         "reward": {
-          "type": "multi",
-          "rewards": [
-            {
-              "type": "random_weapon"
-            },
-            {
-              "type": "random_armor"
-            }
-          ]
+          "type": "gold",
+          "min": 300,
+          "max": 450,
+          "purse_pct": 25
         },
-        "outcome": "The stone shatters. Whatever was alive stops. The armour and sword clatter free, undamaged. You try not to look at the pieces that might have been a face.",
+        "outcome": "He presses the purse on you with both hands. \"Five of them. My father's house. Tell them.\" You will never see his father's house, and you both know it, and he gives you the purse anyway, because he cannot help what he is. The gold is warm.",
         "deeds": [
-          "wrong.broke_celeste"
+          "wrong.fleeced_dives"
         ],
-        "person_status": "wronged",
-        "chronicle": "Broke a statue for the armour inside it. There was a heartbeat in it a moment before. There isn't now.",
+        "chronicle": "Took a damned man's purse for a promise I could not keep. He knew it too, and gave it to me anyway. That is his punishment, I suppose, and now some of it is mine.",
         "road": {
-          "id": "petrified_adventurer.break",
-          "hint": "Some statues are only resting."
+          "id": "rich_man_gulf.take",
+          "hint": "A promise made for gold that cannot be kept is only a theft."
+        }
+      },
+      {
+        "label": "Refuse his purse: you cannot honestly promise to reach them",
+        "karma": 1,
+        "karma_kind": "forgo",
+        "outcome": "\"I can't carry that,\" you tell him. \"Not honestly.\" He stares at the purse as if he had never seen it before. \"No,\" he says at last. \"No. Nobody can, can they?\" He keeps hold of it all the same.",
+        "deeds": [
+          "forgo.dives_purse",
+          "met.dives"
+        ],
+        "chronicle": "The rich man at the gulf offered me his purse to warn his brothers. I could not promise it, so I did not take it. He kept hold of the purse. He always will.",
+        "road": {
+          "id": "rich_man_gulf.refuse",
+          "hint": "Do not sell a promise you will never be able to keep."
+        }
+      },
+      {
+        "label": "Answer him as Abraham did",
+        "quiz": {
+          "subject": "theology",
+          "tier": 2,
+          "mode": "threshold",
+          "threshold": 1,
+          "total_qs": 1,
+          "timed": false
+        },
+        "pass": {
+          "outcome": "\"They have Moses and the prophets,\" you tell him. \"If they will not hear those, they won't be persuaded though one rose from the dead.\" He flinches: he has heard it before, from across this gulf. \"Then go down knowing it, since you know so much,\" he says hoarsely. \"The locusts may not touch the ones who carry God's seal on their foreheads. The rest they torment five months, and in those days men seek death and do not find it.\" He turns back to the far light.",
+          "reward": {
+            "type": "effect",
+            "effect": "fear_immune",
+            "duration": 300
+          },
+          "deeds": [
+            "told.dives_answer"
+          ],
+          "chronicle": "Answered the rich man at the gulf with Abraham's words. In return he told me who the locusts may not touch. He did not thank me, and I did not expect it."
+        },
+        "fail": {
+          "outcome": "You stumble over the words. He laughs, which is worse than weeping. \"You don't know either.\"",
+          "deeds": [
+            "met.dives"
+          ],
+          "chronicle": "Tried to answer the rich man at the gulf and could not find the words. He laughed at me. I deserved it."
+        },
+        "road": {
+          "id": "rich_man_gulf.answer",
+          "hint": "Abraham had an answer for him once. It has not changed."
         }
       }
     ]
   },
   {
-    "tag": "last_merchant",
-    "name": "Pomfrey Quill",
-    "proper_noun": true,
+    "tag": "euphrates_four",
+    "name": "Four Bound at the River",
     "symbol": "@",
     "color": [
       200,
-      180,
-      120
+      190,
+      150
     ],
-    "sprite_id": "npc_lost_merchant",
+    "sprite_id": "corrupted_angel",
     "block": 10,
     "role": "anchor",
     "stakes": "medium",
     "person": {
-      "id": "quill",
-      "name": "Pomfrey Quill"
+      "id": "the_four",
+      "name": "The Four at the River",
+      "reach": "saint_angel"
     },
-    "text": "A small, round man in an absurdly fine coat sits on a trunk, terrified. His moustache is immaculate. \"Pomfrey Quill, alderman, collector. I followed the adventurers. I thought there'd be profit.\" He pats the trunk. \"Rings, a cloak that shimmers, a holy bell from Kildare. Ten years of collecting. Walk me to the up-stair and you may have your pick.\" The bell's tongue is tied with a strip of a nun's grey veil, so it can't ring.",
-    "escorts": {
-      "escort_quill": {
-        "id": "quill",
-        "name": "Pomfrey Quill",
-        "sprite_id": "npc_lost_merchant",
-        "hp": 30,
-        "ac": 10,
-        "goal": "stairs_up",
-        "leash": 2,
-        "floors": 1,
-        "perk": null,
-        "on_arrive": {
-          "outcome": "At the stair Quill throws the trunk open. \"Your pick, as agreed. Not the bell.\" He goes up the steps with the bell in both arms, and does not look back.",
-          "reward": {
-            "type": "multi",
-            "rewards": [
-              {
-                "type": "random_accessory"
-              },
-              {
-                "type": "random_artifact"
-              }
-            ]
-          },
-          "deeds": [
-            "saved.quill"
-          ],
-          "person_status": "saved",
-          "chronicle": "Walked an alderman to the stair and took my pick of his trunk. I did not ask where his bell came from. I already knew."
-        },
-        "on_fail": {
-          "outcome": "",
-          "deeds": [
-            "lost.quill"
-          ],
-          "person_status": "lost",
-          "chronicle": "Lost a fat alderman on the stairs. His trunk lost him first, I think. He would not leave it behind."
-        }
-      }
-    },
+    "text": "A great river runs across the floor of the Abyss, black and slow, and four winged figures stand bound in it to the waist, chained wing to wing. Their faces are beautiful and patient. \"We were bound at the great river long ago,\" says the first, \"and we have waited so long. Strike the chains. It is a small thing.\" \"Loose us,\" says the second, \"and the strength of four is yours.\" The chains are bright and new. Someone has stamped each of the four great links with a word: AN HOUR. A DAY. A MONTH. A YEAR. Nobody has written whose hand is meant to loose them.",
     "options": [
       {
-        "label": "Walk him to the stair for your pick of the trunk",
-        "outcome": "\"Splendid. Splendid. You go first. I'll carry, er, the trunk.\"",
-        "deeds": [
-          "aid.quill"
-        ],
-        "escort": {
-          "$ref": "escort_quill"
-        },
-        "road": {
-          "id": "last_merchant.escort",
-          "hint": "A pick of stolen things is still stolen, however fine the coat."
-        }
-      },
-      {
-        "label": "Make him hand over the bell for the nuns, and take nothing yourself",
-        "karma": 1,
-        "karma_kind": "forgo",
-        "outcome": "He argues, then sees your face, and unpicks the veil from the bell's tongue with fussy fingers. The bell rings once on its own, clear as a morning. Quill wraps it in his own scarf. \"Kildare, then. I'll take it myself.\" He stumps off toward the up-stair, oddly lighter.",
-        "deeds": [
-          "forgo.quill_pick",
-          "saved.brigid_bell"
-        ],
-        "chronicle": "Turned down my pick of an alderman's treasures and made him give up a stolen bell instead. It rang on its own. I did not imagine that.",
-        "road": {
-          "id": "last_merchant.bell",
-          "hint": "A bell with its tongue tied is waiting for someone to untie it."
-        }
-      },
-      {
-        "label": "Give him food and point him to the stair",
-        "cost": {
-          "type": "food"
-        },
-        "outcome": "He clutches the food to his chest. \"A tip, for nothing. I once had a buyer who wanted four things that don't belong together. He said a man holding all four need never fear the one collector nobody outbids. I told him I sell rings.\" He hoists the trunk and shuffles off.",
-        "deeds": [
-          "aid.quill"
-        ],
-        "chronicle": "Fed a frightened alderman and pointed him upstairs. He paid me in gossip about a collector nobody outbids.",
-        "road": {
-          "id": "last_merchant.feed",
-          "hint": "Even a fence knows who the last collector is."
-        }
-      },
-      {
-        "label": "The trunk stays, as your toll",
-        "karma": -1,
-        "karma_kind": "cruelty",
+        "label": "Strike the chains. It is a small thing",
+        "naive": true,
+        "warning": "Someone has stamped each of the four great links with a word: AN HOUR. A DAY. A MONTH. A YEAR.",
         "reward": {
-          "type": "multi",
-          "rewards": [
-            {
-              "type": "random_weapon"
-            },
-            {
-              "type": "random_accessory"
-            },
-            {
-              "type": "gold",
-              "min": 200,
-              "max": 300,
-              "purse_pct": 20
-            }
-          ]
+          "type": "effect",
+          "effect": "weakened",
+          "duration": 200
         },
-        "outcome": "\"But that's everything. Ten years of.\" He sees your expression. He lets go of the trunk. Ten years of collecting fits in your pack with room to spare.",
+        "outcome": "The chains part at a touch, as if they had only been waiting for one. The four rise out of the water without a word of thanks and fly up the dark toward the world above. The last of them, passing, lays a cold hand on your shoulder, and the strength goes out of your arm.",
         "deeds": [
-          "wrong.robbed_quill"
+          "flag.loosed_the_four",
+          "lost.the_four"
         ],
-        "person_status": "wronged",
-        "chronicle": "Robbed an alderman of a trunk full of things he had mostly robbed off someone else. I am not sure whose turn it is now.",
+        "chronicle": "Struck the chains off four bound angels because they asked nicely. They did not thank me. They flew up toward the world, and I have been cold since.",
         "road": {
-          "id": "last_merchant.rob",
-          "hint": "Stolen goods only ever change hands. They never become clean."
+          "id": "euphrates_four.strike",
+          "hint": "Count the links before you strike them."
+        }
+      },
+      {
+        "label": "Ask them what they were bound for",
+        "quiz": {
+          "subject": "theology",
+          "tier": 3,
+          "mode": "threshold",
+          "threshold": 1,
+          "total_qs": 1,
+          "timed": false
+        },
+        "pass": {
+          "outcome": "\"Prepared,\" says the fourth, before the first can stop him. \"For an hour, and a day, and a month, and a year.\" You know the rest of that sentence: for to slay the third part of men. John saw them in Revelation, bound in the great river Euphrates, and the voice that loosed them came from the four horns of the golden altar, at the sixth trumpet, to the sixth angel. Not to a passer-by. You leave the chains as they are. Behind you the four go back to waiting, patient and beautiful.",
+          "karma": 1,
+          "karma_kind": "judgment",
+          "deeds": [
+            "noticed.the_four"
+          ],
+          "chronicle": "Asked four bound angels what they were bound for. Revelation says: to slay a third of mankind, at an hour that is not mine to set. I left the chains alone."
+        },
+        "fail": {
+          "outcome": "They tell you a long, sad story about a war they did not start, and you cannot find the hole in it. You leave unsure, which is better than the alternative.",
+          "deeds": [
+            "met.the_four"
+          ],
+          "chronicle": "Four bound angels told me a sad story about a war they never started. I could not find the hole in it, and I left them bound anyway."
+        },
+        "road": {
+          "id": "euphrates_four.ask",
+          "hint": "Ask what a chain is for before you ask whether it is fair."
+        }
+      },
+      {
+        "label": "Take their bargain: the strength of four, for the chains",
+        "karma": -1,
+        "karma_kind": "sacrilege",
+        "reward": {
+          "type": "effect",
+          "effect": "empowered",
+          "duration": 0,
+          "floors": 3
+        },
+        "outcome": "You strike the chains for the price they named, and they pay it to the last ounce: the strength of four runs into your arms like fire. Then they rise out of the water and fly up toward the world above, and you read the links again, an hour, a day, a month, a year, and understand what you have sold.",
+        "deeds": [
+          "wrong.loosed_the_four",
+          "lost.the_four"
+        ],
+        "chronicle": "Loosed four bound angels for the strength they promised. They paid in full. Then they flew up toward the world, and I read the links again.",
+        "road": {
+          "id": "euphrates_four.bargain",
+          "hint": "Strength bought from the bound is paid for by someone else."
+        }
+      },
+      {
+        "label": "Leave them in the river",
+        "outcome": "\"We will wait,\" says the first, pleasantly. \"We are good at it.\"",
+        "deeds": [
+          "met.the_four"
+        ],
+        "chronicle": "Left four bound angels standing in a black river. They said they would wait. I believe them.",
+        "road": {
+          "id": "euphrates_four.leave",
+          "hint": "What is bound until an hour is set can wait for that hour."
         }
       }
     ]

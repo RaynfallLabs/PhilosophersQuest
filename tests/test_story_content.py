@@ -121,12 +121,15 @@ def test_every_encounter_normalises():
         assert e['role'] in ES.ROLES and e['stakes'] in ES.STAKES, e['tag']
         assert isinstance(e.get('band'), list) and len(e['band']) == 2, e['tag']
         assert e['band'][0] <= e['band'][1], e['tag']
-    # Three anchor candidates in every block, keyed by block so the old
-    # placement (_BLOCKS) and the Road's anchor binding both still work.
+    # At least three anchor candidates in every block, keyed by block so the
+    # old placement (_BLOCKS) and the Road's anchor binding both still work.
+    # Depth-true (Dungeon Alive 7, 2026-11-12): the ordinary folk moved up
+    # out of the deep blocks, so the shallow blocks hold more than three and
+    # the deep ones were filled back to three with beings who can stand there.
     import npc_encounters
     for block, lo, hi in npc_encounters._BLOCKS:
         mine = [e for e in ANCHORS if e['block'] == block]
-        assert len(mine) == 3, (block, [e['tag'] for e in mine])
+        assert len(mine) >= 3, (block, [e['tag'] for e in mine])
         # An anchor's band is its block's floors, or a narrower stretch of
         # them (the dying prophet stops at 97 so Ruth Gale has a floor below
         # him: bug bash 5, CON-17). Only he narrows it.
