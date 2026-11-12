@@ -99,7 +99,7 @@ A single key in `data/monsters.json`. The id is the JSON key; the id is also wri
 | field | type | notes |
 |---|---|---|
 | `ai_pattern` | str | One of 15 values — see §"AI dispatch" below. Default `aggressive`. |
-| `perception_range` | int | default 8 | Chebyshev detection radius. Once a monster spots the player, `_aware = True` sticks for the floor's lifetime. `passive_silent_walk` (Hand of Glory) halves perception against the wearer. |
+| `perception_range` | int | default 8 | How far a monster SEES (Chebyshev), along a real line of sight (`senses.clear_view`). It no longer notices through walls. `passive_silent_walk` (Hand of Glory, Boots of Elvenkind) halves it against the wearer and silences footsteps. See "Senses" below. |
 | `alert_radius` | int | default 5 | Chebyshev radius for `alert_nearby` (same-kind allies wake up when I'm adjacent to the player). |
 | `alert_all_tag` | bool | default False | Warlord/horn-blower mode — alert any monster sharing at least one tag, not just same-kind. |
 | `aggression` | — | Not a Monster field; "aggression" is expressed via `ai_pattern` + flags, not a scalar. |
@@ -260,6 +260,62 @@ Several monsters carry a `_meta` sub-object or inline annotations added by the v
 
 The v2.18.0 commit kept these on disk because migrating would break every pickled save; `Monster.__init__` reads them, defaults them, and ignores them.
 
+## Senses: how a monster notices the hero (Dungeon Alive, 2026-11-12)
+
+Brandon: "NONE automatically know where you are unless it's thematically and lore appropriate." Until 3.4.0 every monster noticed the hero within 8 tiles THROUGH STONE, and then knew where he was for the rest of the floor. Now `Monster._spots_player` calls `senses.notice` (`src/senses.py`, data in `data/senses.json`).
+
+**How a monster notices him:**
+- **Sight:** a line of sight within `perception_range` (+4 for `keen_sight`). Walls and closed doors block it; water and furniture don't. An invisible hero is unseen except by `truesight` (celestials).
+- **Sound:** the game emits noises through `Game._make_noise(kind)`:
+  - footsteps each turn the hero moves (`step_radius`: 3 at DEX 10, quieter with DEX, louder when burdened, silent with Cat's Footfall or silent walking);
+  - `melee` 8, `shot` 5, `spell` 6, `door` 5, `struck` 8 (a monster's blow on him);
+  - an alarm rouses within 10; the squeaky board rouses within 60.
+
+  `senses.resolve_noises` runs at the top of `_do_monster_turns`. Sound travels along open ground round corners (BFS `sound_map`), a closed door costs 3, and stone stops it. A sound gives the monster a PLACE (`_goal`), not the hero. A monster already tracking him hears footsteps 3 tiles further, so a chase goes round corners.
+- **Lore senses** (`families` and `monsters` in the JSON; a kind's list replaces its family's, but `blind` always holds):
+
+  | Sense | Who has it | How it works |
+  |---|---|---|
+  | `scent` 8 | dragons 10, Fenrir 12, wolves and hounds, bears, trolls and giants ("Fee-fi-fo-fum"), werebeasts, ghouls, vampires, rats, the galla 12 | goes through walls; invisibility doesn't hide you |
+  | `tremor` 5 | snakes, spiders, scorpions, oozes 2, plants 1, earth elementals, the gorgon sisters 10 | through walls; fails while the hero stands still or levitates |
+  | `lifesense` 6 | ghosts, wights, draugr, death knights, deadites, jiangshi | the dead feel the living through walls |
+  | `echo` 7 | bats, hook horrors, Camazotz | needs a clear path; sees an invisible hero |
+  | `mindsense` 8 | mind flayers, intellect devourers | |
+  | `guilt` 14 | the Erinyes | only when karma < 0 |
+  | `master` | Asterion, Abaddon, Death | always knows, in his own house |
+
+  The first time on a floor that a kind finds him by a lore sense within 12 tiles, its `line` is said ("It has your scent.").
+
+**What a monster does with what it knows:**
+- **Hunting** (`_tracking`): it senses him this turn. `_standard_move` charges straight in when it has a clear view, and otherwise takes a real BFS path round the walls (`senses.step_toward`), also when a pillar or another creature blocks the straight way.
+- **Searching** (`_goal`): it lost him, or heard something, or was roused (`senses.rouse`: an ally's cry, `alert_monsters_near`, the squeaky board). It goes to the place, looks about for 6-12 turns (14-22 if roused), then gives up and says `lost_line` if the hero can see it.
+- **Its own business** (`_job`), set by `senses.assign_jobs` in `LevelManager.generate` (both branches):
+  - `wander` (roams room to room, lingering), `guard` (keeps its post), or `sleep` (300-700 turns; a "z" is drawn over it);
+  - weights by family in `jobs`;
+  - a room's creatures share one job, so a pack sleeps together;
+  - **a monster den sleeps** (G3);
+  - named foes, bosses, ambushers, mimics and rooted things guard.
+
+  A creature woken by a noise keeps watch afterwards.
+- **Waking:**
+  - footsteps within 2 tiles wake a sleeper 25% of the time (6% further away), with the deep sleepers' DEX, burden and Cat's Footfall odds;
+  - a fight within half its reach wakes one 70% of the time;
+  - the Hand of Glory keeps everyone asleep;
+  - zoo, graveyard and barracks deep sleepers keep `sleepers.py`'s odds, and only a fight within 3 tiles may break their sleep (20%).
+
+**`_aware` keeps its old meaning:** the monster has noticed the hero once. That's what ambushers, mimics, naming, the Fenrir rage and the Abaddon swarms read. A monster made aware by the game itself (a summons, an announced foe, an old save's hunter) gets one lead to where the hero is now. A wanderer arrives knowing nothing; it goes to the last fight heard within 40 turns, otherwise it roams. The wanderer cap counts `_tracking` hunters.
+
+**Other changes in the same slice:**
+- G6: `hit_and_run`, `dancer`, `fenrir_rage` and `abaddon` call `_spots_player` (they used to hunt from anywhere).
+- The `dragon` pattern uses scent in place of the old 10-tile check.
+- Ambushers spring only on what they can see or touch.
+- G8: an alerted or aggravated `sessile` monster stays rooted.
+- G5: an archer that's adjacent steps back half the time to a tile 2 away that still has the shot (`_step_back`).
+- Dagger backstab now counts any target that isn't tracking the hero.
+- Observe (`;`) adds the state line (`status_lines`). How a creature hunts (`senses_line`) is shown once its kind is known.
+
+Tests: `tests/test_senses.py`.
+
 ## AI dispatch (15 patterns)
 
 `take_turn` dispatches on `self.ai_pattern` after the common pre-flight (immobilised, slowed, enrage swap, pack-dependent re-evaluation, flee-when-hurt flag). Dispatch is `if/elif` on string match — the matching chain is in `monster.py` lines ~826-867. **Count by pattern** across 527 monsters:
@@ -268,8 +324,8 @@ The v2.18.0 commit kept these on disk because migrating would break every pickle
 |---|---|---|---|
 | `aggressive` | 332 | fall-through to `_standard_move` after awareness/flee/charge gates | Approach player greedily, attack when adjacent. The default. |
 | `ranged` | 101 | `_spots_player` then `_ranged_turn` | Shoot from LOS at distance 2-6, retreat if too close, approach if too far. Will take a melee swing if cornered. Piercing-ranged monsters fire through intervening allies when blocked. |
-| `sessile` | 29 | returns False immediately | Rooted — only responds if `_alerted` or player is `aggravated` (treated as aggressive). Fungal / coral / mimic-adjacent. |
-| `ambush` | 23 | lurks at `dist > 5`, flips to `aggressive` once sprung | Invisible until player closes within 5 tiles. |
+| `sessile` | 29 | strikes what is adjacent (or in range, if it has a ranged attack) | Rooted: never walks, even alerted or aggravated (G8, 2026-11-12). Fungal / coral / mimic-adjacent. |
+| `ambush` | 23 | lurks; springs within 5 tiles on a hero it can see or touch | Invisible until sprung, then `aggressive`. |
 | `hit_and_run` | 17 | `_hit_and_run_turn` (`hunting` → `retreating` → `hiding`) | Asterion-style. Attacks 1-2 times, retreats through phasing walls for 3 turns, then hides 4-6 turns before hunting again. |
 | `summoner` | 8 | `_summoner_turn` | Once it has spotted the hero (`_spots_player`, the same detection check as every hunter), spawns a minion every `summon_cooldown` turns up to `summon_max`, otherwise behaves ranged. Sets `_wants_summon` for `main.py::_spawn_summoner_minion` to resolve. |
 | `healer` | 6 | `_healer_turn` | Heals the most-damaged adjacent same-kind/tag ally by `heal_amount_pct × max_hp` (needs no sight of the hero). Falls back to ranged / aggressive when nothing to heal, once it has spotted the hero (`_spots_player`). 6 monsters: `orc_priest`, `goblin_warpriest`, `cult_priest`, `viper_priestess`, `plague_witch`, `deep_one_priest`. |

@@ -527,6 +527,11 @@ class Monster:
         '_locust_turn_counter': 0, '_wants_locust_spawn': False,
         'base_resistances': [],
         'is_allied': False, 'sp_drain': 0, 'is_seal_demon': False, 'is_mini_boss': False,
+        # Senses (src/senses.py): knows where the hero is now; the place it is
+        # going to look; its own business before it notices him.
+        '_tracking': False, '_goal': None, '_searching': False, '_job': 'wander',
+        '_home': None, '_path': None, '_lead_used': False,
+        '_sense_message': '', '_lost_line': '',
         '_annihilate_target': None,
         # New AI fields (2026 dungeon-depth pass)
         'perception_range': 8, 'alert_radius': 5, 'alert_all_tag': False,
@@ -1757,6 +1762,16 @@ class Monster:
         if self.ai_pattern == 'mimic':
             return self._mimic_turn(player, dungeon, all_monsters, extra_occupied)
 
+        # The hunters below used to skip noticing altogether and hunt the hero
+        # from anywhere on the floor (G6): they notice him like anything else
+        # now. Asterion and Abaddon are masters of their own houses and Fenrir
+        # has a wolf's nose (data/senses.json), so their fights begin as
+        # before; an imp or a brigand has to find you first.
+        if self.ai_pattern in ('hit_and_run', 'dancer', 'fenrir_rage', 'abaddon'):
+            if (self.ai_pattern != 'hit_and_run' or self._hit_run_state == 'hunting'):
+                if not self._spots_player(player, dungeon, all_monsters, extra_occupied):
+                    return False
+
         # --- Hit-and-run AI (Asterion): attack then vanish through walls ---
         if self.ai_pattern == 'hit_and_run':
             return self._hit_and_run_turn(player, dungeon, all_monsters, extra_occupied)
@@ -1779,11 +1794,11 @@ class Monster:
 
         # --- Dragon AI (Fafnir): breathe on the way in, then close ---
         if self.ai_pattern == 'dragon':
-            if (max(abs(self.x - player.x), abs(self.y - player.y)) <= 10
-                    or player.has_effect('aggravated')):
-                self._aware = True
-            if not getattr(self, '_aware', False) and not self._alerted:
-                return False        # coiled on the hoard until disturbed
+            # A dragon's nose finds a thief across its hoard (Smaug, Fafnir;
+            # data/senses.json gives the dragons scent 10). Until then it lies
+            # coiled where it is.
+            if not self._spots_player(player, dungeon, all_monsters, extra_occupied):
+                return False
             return self._dragon_turn(player, dungeon, all_monsters, extra_occupied)
 
         # --- Ranged AI: shoot from distance, maintain range ---
@@ -1801,6 +1816,11 @@ class Monster:
                 dist = abs(self.x - player.x) + abs(self.y - player.y)
                 if dist > 5:
                     return False  # lurk silently, invisible
+                # It springs on what it can see (or touch), not through stone.
+                import senses as _senses
+                if (not self._adjacent_to(player)
+                        and not _senses.clear_view(self.x, self.y, player.x, player.y, dungeon)):
+                    return False
                 # Sprung! Switch to aggressive and become visible
                 self.ai_pattern = 'aggressive'
                 self._aware = True
@@ -1823,11 +1843,12 @@ class Monster:
 
         # Aggravated overrides passive/cowardly AI patterns
         effective_pattern = self.ai_pattern
-        if player.has_effect('aggravated') and effective_pattern in ('sessile', 'cowardly'):
+        if player.has_effect('aggravated') and effective_pattern == 'cowardly':
             effective_pattern = 'aggressive'
 
-        # Alerted monsters act aggressive
-        if self._alerted and effective_pattern in ('sessile', 'cowardly'):
+        # Alerted monsters act aggressive. A rooted thing stays rooted (G8:
+        # an alerted mold or floating eye used to walk the floor).
+        if self._alerted and effective_pattern == 'cowardly':
             effective_pattern = 'aggressive'
 
         # Flee when hurt overrides to cowardly
@@ -1874,51 +1895,34 @@ class Monster:
 
     def _spots_player(self, player, dungeon, all_monsters, extra_occupied) -> bool:
         """The one detection check for a monster that hunts the hero: True
-        when it goes on to act on him this turn, False when it has spent the
-        turn wandering or keeping still. The healer, summoner and ranged
-        patterns used to skip it: a summoner never became aware and never
-        summoned, healers saw through the Helm of Darkness, and archers
-        ignored every piece of stealth gear (bug bash 3.3.1).
+        when it knows where he is and goes after him this turn, False when it
+        has spent the turn on its own business or on looking for him.
 
-        Once a monster spots the player, it stays aware permanently.
-        Aggravated status makes ALL monsters aware immediately."""
-        dist_to_player = abs(self.x - player.x) + abs(self.y - player.y)
-        detection_range = getattr(self, 'perception_range', 8)
-        # Hand of Glory (passive_silent_walk): halves a monster's perception
-        # against the wearer (rounded down, min 1). Already-aware monsters
-        # keep their target via the _aware flag, so silent_walk only helps
-        # AVOID first detection — once seen, you're seen.
-        # (Boots of Elvenkind too: gear.wears_flag looks at worn armour.)
-        import gear as _gear
-        if _gear.wears_flag(player, 'passive_silent_walk'):
-            detection_range = max(1, detection_range // 2)
-        # Chain-equip passives: invisible_to_undead / stealth_in_dark /
-        # unseen_when_still — if any applies, the monster cannot acquire
-        # the player this turn (existing _aware/_alerted is preserved).
-        try:
-            from chain_passives import is_player_hidden_from
-            hidden = is_player_hidden_from(player, self, dungeon)
-        except ImportError:
-            hidden = False
-        if not hidden and (dist_to_player <= detection_range or player.has_effect('aggravated')):
-            self._aware = True
-        if hidden and not self._alerted:
-            # Player is hidden from this monster: it wanders / stays put even
-            # if it had previously seen the player.
-            if self.ai_pattern not in ('sessile', 'ambush', 'cowardly'):
-                self._wander(dungeon, all_monsters, extra_occupied, player)
-            return False
-        if not getattr(self, '_aware', False) and not self._alerted:
-            # Beyond detection range and never spotted the player.
-            # Behavior depends on base AI: sessile/ambush wait, others wander.
-            if self.ai_pattern not in ('sessile', 'ambush', 'cowardly'):
-                self._wander(dungeon, all_monsters, extra_occupied, player)
-            return False
-        return True
+        It used to be distance alone, 8 tiles through solid stone, and a
+        monster that had noticed him once knew where he was for ever. Now it
+        is sight, sound and the lore senses of data/senses.json, with a
+        search when the trail goes cold (src/senses.py)."""
+        import senses as _senses
+        return _senses.notice(self, player, dungeon, all_monsters, extra_occupied)
 
     def _standard_move(self, player, dungeon, all_monsters, extra_occupied, effective_pattern):
         """Standard movement logic used by aggressive/cowardly AI."""
         move_steps = 2 if self.speed >= 14 else 1
+        # A hunter with no clear view of the hero (it has his scent, hears
+        # him, feels his steps) follows a real path round the walls; one that
+        # sees him charges straight in, and takes the path only when the
+        # straight way is blocked.
+        if (effective_pattern != 'cowardly'
+                and not self.has_effect('confused') and not self.has_effect('blinded')):
+            import senses as _senses
+            if not _senses.clear_view(self.x, self.y, player.x, player.y, dungeon):
+                for _step in range(move_steps):
+                    if not _senses.step_toward(self, dungeon, (player.x, player.y),
+                                               all_monsters, extra_occupied, player):
+                        break
+                    if move_steps > 1 and self._adjacent_to(player):
+                        return _step == 0
+                return False
 
         dx, dy = self._preferred_dir(player, effective_pattern)
         candidates = self._move_candidates(dx, dy)
@@ -1953,6 +1957,12 @@ class Monster:
                     moved = True
                     break
             if not moved:
+                if _step == 0 and effective_pattern != 'cowardly':
+                    # Something stands in the straight way (a pillar, a
+                    # statue, another creature): go round it.
+                    import senses as _senses
+                    _senses.step_toward(self, dungeon, (player.x, player.y),
+                                        all_monsters, extra_occupied, player)
                 break
             # After first step of a double-move, check adjacency again
             if _step == 0 and move_steps > 1 and self._adjacent_to(player):
@@ -2001,10 +2011,9 @@ class Monster:
                     continue
             dist = abs(m.x - self.x) + abs(m.y - self.y)
             if dist <= radius:
-                m._alerted = True
-                m._aware = True
-                # Wake sleeping allies
-                m.status_effects.pop('sleeping', None)
+                # Woken and called to the fight (src/senses.py rouse).
+                import senses as _senses
+                _senses.rouse(m, self.x, self.y)
 
     def _adjacent_to(self, player) -> bool:
         """True if the player is Chebyshev-1 adjacent to ANY tile of
@@ -2290,8 +2299,14 @@ class Monster:
             # No piercing — try to reposition
             has_los = False  # fall through to approach/reposition
 
-        # Adjacent — still attack (melee fallback) but try to retreat next turn
+        # Adjacent: an archer keeps its distance when it can (G5: this used
+        # to be unreachable, so archers stood and clubbed you). Half the time
+        # it steps back to a tile two away that still sees you, and shoots
+        # on its next turn; cornered, it fights in melee.
         if self._adjacent_to(player):
+            if random.random() < 0.5 and self._step_back(player, dungeon, all_monsters,
+                                                          extra_occupied):
+                return False
             return True
 
         from geom import all_occupied_tiles
@@ -2324,6 +2339,33 @@ class Monster:
         if self._standard_move(player, dungeon, all_monsters, extra_occupied, 'aggressive'):
             return True
         return False
+
+    def _step_back(self, player, dungeon, all_monsters, extra_occupied) -> bool:
+        """Step to a free tile two from the hero that still has a clear shot
+        at him. True if it moved."""
+        from geom import all_occupied_tiles
+        occupied = all_occupied_tiles(all_monsters, exclude=self)
+        if extra_occupied:
+            occupied |= extra_occupied
+        options = []
+        for ddx in (-1, 0, 1):
+            for ddy in (-1, 0, 1):
+                if not ddx and not ddy:
+                    continue
+                nx, ny = self.x + ddx, self.y + ddy
+                if (nx, ny) in occupied or (nx, ny) == (player.x, player.y):
+                    continue
+                if max(abs(nx - player.x), abs(ny - player.y)) < 2:
+                    continue
+                if not self._can_move_to(dungeon, nx, ny):
+                    continue
+                if not _line_of_sight(nx, ny, player.x, player.y, dungeon):
+                    continue
+                options.append((nx, ny))
+        if not options:
+            return False
+        self.x, self.y = random.choice(options)
+        return True
 
     def _hit_and_run_turn(self, player, dungeon, all_monsters, extra_occupied) -> bool:
         """Hit-and-run AI for Asterion: hunt, strike, vanish through walls, repeat.

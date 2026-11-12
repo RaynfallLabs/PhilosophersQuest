@@ -3331,6 +3331,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         elif tile_at_dest == DOOR:
             # Bump-to-open: open the door and step through in one action
             self.dungeon.open_door(nx, ny)
+            self._make_noise('door', nx, ny)
             self.player.x, self.player.y = nx, ny
             self._apply_aoo_disengage(_aoo_pre_adjacent)
             self._check_floor_trap(nx, ny)
@@ -5095,8 +5096,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # are alive. The old cap (4 + level // 6 alive) was below every
         # floor's starting population, so nothing ever wandered in until the
         # floor was nearly cleared, and standing still was always safe.
+        # (Hunting means knows where the hero is now: src/senses.py.)
         hunting = sum(1 for m in self.monsters
-                      if m.alive and getattr(m, '_aware', False)
+                      if m.alive and m.__dict__.get('_tracking', False)
                       and not getattr(m, 'is_allied', False)
                       and not getattr(m, '_npc_encounter_tag', None))
         if hunting >= WANDER_HUNTING_CAP:
@@ -5136,6 +5138,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 if (x, y) not in fits:
                     x, y = _rng.choice(fits)
             m.x, m.y = x, y
+            # A newcomer does not know where the hero is (src/senses.py). If a
+            # fight was heard lately it goes to see; otherwise it roams.
+            loud = self.dungeon.__dict__.get('_last_loud')
+            if loud and self.turn_count - int(loud[2]) <= 40:
+                m._goal = (int(loud[0]), int(loud[1]))
+            m._lead_used = True
             self.monsters.append(m)
 
     def _check_floor_trap(self, x: int, y: int, forced: bool = False):
@@ -5217,10 +5225,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self.add_message(_smsg or "You're stuck! Struggle to break free!",
                              'danger' if _ok else 'success')
         elif trap_type == 'squeaky_board':
-            for m in self.monsters:
-                if m.alive:
-                    m._alerted = True
-                    m.status_effects.pop('sleeping', None)
+            # Everything the squeal reaches comes to see (src/senses.py).
+            import senses as _senses
+            _senses.rouse_near(self.monsters, x, y, _senses.noise_radius('squeak'), self.dungeon)
             self.add_message("Every creature on the floor heard that!", 'danger')
         elif trap_type == 'rust':
             from status_effects import _can_rust
@@ -5730,10 +5737,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             from container_system import alert_monsters_near
             alert_monsters_near(self.monsters, pos[0], pos[1], 10)
         elif trap_type == 'squeaky_board':
-            for m in self.monsters:
-                if m.alive:
-                    m._alerted = True
-                    m.status_effects.pop('sleeping', None)
+            import senses as _senses
+            _senses.rouse_near(self.monsters, pos[0], pos[1],
+                               _senses.noise_radius('squeak'), self.dungeon)
         # rust / polymorph / teleport: skip on monsters (player-item-targeted effects)
 
         # Trap is consumed after firing.

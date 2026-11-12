@@ -190,9 +190,17 @@ def test_backstab_doubles_on_a_sleeping_target_and_the_preview_says_so():
     top = dagger.max_chain_length or len(dagger.chain_multipliers)
     awake_p = _player(dagger)
     awake = _target('giant_rat')
+    # Awake AND hunting the hero: it knows he is there (src/senses.py).
+    awake._tracking = True
     _pv, awake_dealt = _blow(awake_p, awake, top)
     p = _player(dagger)
     sleeper = _target('giant_rat')
     sleeper.status_effects['sleeping'] = 10
     pv, dealt = _blow(p, sleeper, top)
     assert pv == dealt == 2 * awake_dealt
+    # A creature that has not found the hero yet does not know he is there
+    # either (Dungeon Alive senses, 2026-11-12).
+    p2 = _player(dagger)
+    unaware = _target('giant_rat')
+    pv2, dealt2 = _blow(p2, unaware, top)
+    assert pv2 == dealt2 == 2 * awake_dealt

@@ -874,6 +874,26 @@ class Renderer:
             gy = sy + (full_h - surf.get_height()) // 2
             self.screen.blit(surf, (gx, gy))
 
+    def draw_state_mark(self, x: int, y: int, mark: str, cam_x: int = 0, cam_y: int = 0):
+        """A small letter in a creature's top-right corner: 'z' asleep."""
+        T = self.map_tile_size
+        if T < 12:
+            return
+        sx, sy = self.world_to_screen(x, y)
+        key = ('state_mark', mark, T)
+        cache = self.__dict__.setdefault('_state_mark_cache', {})
+        surf = cache.get(key)
+        if surf is None:
+            size = max(8, T // 3)
+            font = pygame.font.Font(None, size + 4)
+            glyph = font.render(mark, True, (200, 225, 255))
+            shadow = font.render(mark, True, (10, 10, 30))
+            surf = pygame.Surface((glyph.get_width() + 2, glyph.get_height() + 2), pygame.SRCALPHA)
+            surf.blit(shadow, (1, 1))
+            surf.blit(glyph, (0, 0))
+            cache[key] = surf
+        self.screen.blit(surf, (sx + T - surf.get_width(), sy - 1))
+
     def draw_disguise(self, x: int, y: int, item_id: str = None, visible: set = None,
                       tile: str = None, explored: set = None):
         """A mimic still in disguise, drawn as the item it poses as (a chest,

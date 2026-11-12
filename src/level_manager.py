@@ -104,6 +104,8 @@ class LevelManager:
             # (never the Cow Level or the Stone floor).
             if level_num in (20, 40, 60, 80):
                 self._maybe_spawn_bones(level_num, dungeon, monsters, items)
+            import senses
+            senses.assign_jobs(monsters, dungeon.rooms)
             items = self._once_per_run(items)
             return dungeon, monsters, items
 
@@ -142,6 +144,13 @@ class LevelManager:
         # the real stair stays reachable (src/false_stairs.py).
         import false_stairs
         false_stairs.seat(dungeon, monsters)
+
+        # Each creature's own business until it notices the hero
+        # (src/senses.py). A den is where they sleep, as its line says (G3).
+        import senses
+        senses.assign_jobs(monsters, dungeon.rooms, sleep_rooms=[
+            room for room in dungeon.rooms
+            if dungeon.special_rooms.get(tuple(room.center)) == 'monster_den'])
 
         self.max_level_reached = max(self.max_level_reached, level_num)
         items = self._once_per_run(items)

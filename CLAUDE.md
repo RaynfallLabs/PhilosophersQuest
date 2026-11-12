@@ -64,6 +64,7 @@ src/
   geom.py             - Multi-tile footprint geometry
   fov.py              - Shadowcasting field of view
   unseen.py           - What the hero cannot see on a visible tile (invisible, ambush, disguise)
+  senses.py           - How a monster notices the hero: sight, sound, lore senses; searching; idle jobs
   false_stairs.py     - Hellmouth mimics that pose as the down stair
   splitting.py        - Creatures that split when struck the wrong way
   sleepers.py         - Zoo, graveyard and barracks sleepers stir at footsteps and gold taken

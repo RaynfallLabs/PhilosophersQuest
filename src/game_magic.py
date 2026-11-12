@@ -1605,6 +1605,10 @@ class MagicMixin:
         """
         effect = spell['effect']
         power  = spell.get('power', '')
+        # Words of power are heard (src/senses.py).
+        _noise = getattr(self, '_make_noise', None)
+        if _noise:
+            _noise('spell')
 
         # v2.12.0: chain retired; `chain` stays as a constant for the handler
         # bodies that still take it. `chain_scale` is now Intelligence's reach.

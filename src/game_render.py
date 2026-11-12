@@ -2201,6 +2201,10 @@ class RenderMixin:
                     symbol=getattr(m, 'symbol', ''),
                     # seen through see invisible: its art, cold and see-through
                     tint=unseen.SEE_INVISIBLE_TINT if unseen.is_invisible(m) else None)
+                # A sleeper shows its "z" (src/senses.py): sneak past, or
+                # strike first.
+                if m.has_effect('sleeping') and any_tile_in_set(m, self.visible):
+                    self.renderer.draw_state_mark(m.x, m.y, 'z', cam_x, cam_y)
         # Pet companions: draw with species sprite or color fallback
         for pet in self.pets:
             if pet.alive and (pet.x, pet.y) in self.visible:

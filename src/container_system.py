@@ -239,13 +239,15 @@ def _trigger_trap(player, trap: dict, messages: list):
 
 
 def alert_monsters_near(monsters, x: int, y: int, radius: int) -> int:
-    """A noise at (x, y): every creature within `radius` wakes and knows
-    where the hero is (as a call for help does). Encounter NPCs, the
-    unicorn and allies are not roused. Returns how many were alerted.
+    """A noise at (x, y): every creature within `radius` wakes and comes to
+    the place to look (src/senses.py rouse); it does not know where the hero
+    has gone since. Encounter NPCs, the unicorn and allies are not roused.
+    Returns how many were alerted.
 
     This used to turn only 'sessile' monsters 'aggressive', for good: it
     woke nobody, and rooted things (floating eyes, molds) walked the floor
     as hunters from then on."""
+    import senses as _senses
     n = 0
     for m in monsters:
         if not getattr(m, 'alive', False):
@@ -255,9 +257,7 @@ def alert_monsters_near(monsters, x: int, y: int, radius: int) -> int:
                 or getattr(m, '_is_unicorn', False)):
             continue
         if abs(m.x - x) <= radius and abs(m.y - y) <= radius:
-            m._alerted = True
-            m._aware = True
-            m.status_effects.pop('sleeping', None)
+            _senses.rouse(m, x, y)
             n += 1
     return n
 

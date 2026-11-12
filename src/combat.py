@@ -1770,9 +1770,13 @@ def strike_damage(player, monster, chain: int, *, ranged: bool = False, ammo=Non
     # take_damage after the first, and the first had already woken a
     # sleeping target, so a sleeper was never backstabbed.
     if _pre_mech == 'backstab' and weapon and             chain >= (weapon.max_chain_length or len(weapon.chain_multipliers)):
+        # "Does not know you are there": asleep, a lurker that has not
+        # sprung, or any creature that has not found the hero yet
+        # (src/senses.py: it is not tracking him).
         if (monster.has_effect('sleeping')
                 or (getattr(monster, 'ai_pattern', '') == 'ambush'
-                    and not getattr(monster, '_aware', False))):
+                    and not getattr(monster, '_aware', False))
+                or not monster.__dict__.get('_tracking', False)):
             damage *= 2
     return damage
 

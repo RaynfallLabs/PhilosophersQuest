@@ -403,6 +403,7 @@ class CombatMixin:
     def _throw_weapon(self, weapon, monster, tx: int, ty: int):
         """Throw a weapon at a target. Deals damage, may break."""
         import random as _rng
+        self._make_noise('shot')
 
         # --- Odin's Altar secret: throw Broken Gram over the altar ---
         odin_pos = getattr(self.dungeon, 'odin_altar_pos', None)
@@ -2099,6 +2100,15 @@ class CombatMixin:
             self.add_message(
                 f"You see {monster.name} ({condition}).{_fam}", 'info'
             )
+            # Its state (asleep, unaware, searching, hunting) is plain to
+            # see; how it hunts is known only once its kind is known.
+            import senses as _senses
+            if not getattr(monster, 'is_allied', False) and not getattr(
+                    monster, '_npc_encounter_tag', None) and not getattr(
+                    monster, '_flavor_encounter_tag', None):
+                self.add_message(_senses.status_line(monster), 'info')
+                if _known and _senses.senses_line(monster):
+                    self.add_message(_senses.senses_line(monster), 'info')
             if (not _known and getattr(monster, 'family', None)
                     and not getattr(monster, 'is_allied', False)
                     and not getattr(monster, '_npc_encounter_tag', None)
@@ -2442,6 +2452,7 @@ class CombatMixin:
 
     def _fire_ranged(self, monster):
         """Consume one ammo and launch the math chain quiz for a ranged shot."""
+        self._make_noise('shot')
         # Health as the shot is loosed, for the traits that count kills made
         # while badly hurt. Only a melee attack recorded it, so an archer's
         # kills were judged on their health at their last sword swing.
@@ -2624,7 +2635,66 @@ class CombatMixin:
     # Melee combat
     # ------------------------------------------------------------------
 
+    # ------------------------------------------------------------------
+    # Senses: what the monsters hear (src/senses.py)
+    # ------------------------------------------------------------------
+
+    def _make_noise(self, kind: str, x: int = None, y: int = None) -> None:
+        """The hero made a noise of ``kind`` (data/senses.json noise) at
+        (x, y), his own tile by default. A loud one is remembered, so a
+        monster that wanders onto the floor can follow the sound of a fight."""
+        import senses as _senses
+        if x is None or y is None:
+            x, y = self.player.x, self.player.y
+        _senses.emit(self.dungeon, x, y, kind)
+        if kind != 'step' and self.dungeon is not None:
+            self.dungeon._last_loud = (int(x), int(y), int(self.turn_count))
+
+    def _senses_guilty(self) -> bool:
+        """The Furies find the guilty: a hero whose karma has gone below
+        nothing carries a wrong they can smell out (data/senses.json guilt)."""
+        try:
+            return int(getattr(self, 'karma', 0) or 0) < 0
+        except (TypeError, ValueError):
+            return False
+
+    def _senses_begin_turn(self) -> None:
+        """Footsteps, then every noise of this turn reaches the monsters that
+        can hear it; a sleeper may wake."""
+        import senses as _senses
+        pos = (self.player.x, self.player.y)
+        moved = (self.__dict__.get('_senses_last_floor') == self.dungeon_level
+                 and tuple(self.__dict__.get('_senses_last_pos') or pos) != pos)
+        self._senses_last_pos = pos
+        self._senses_last_floor = self.dungeon_level
+        if moved:
+            r = _senses.step_radius(self.player)
+            if r:
+                _senses.emit(self.dungeon, pos[0], pos[1], 'step', r)
+        _senses.begin_turn(moved=moved, guilty=self._senses_guilty(),
+                           floor=self.dungeon_level)
+        woken = _senses.resolve_noises(self.dungeon, self.monsters, self.player)
+        seen = [m for m in woken if self._sees_monster(m)]
+        if len(seen) == 1:
+            from monster import the_name
+            self.add_message(f"{the_name(seen[0])} wakes up!", 'warning')
+        elif seen:
+            self.add_message("Things around you are waking up!", 'warning')
+
+    def _say_sense_lines(self, m) -> None:
+        """A lore sense said once a floor (it has your scent; it felt your
+        steps), and the line when one the hero can see gives up the search."""
+        import senses as _senses
+        line = m.__dict__.pop('_sense_message', '')
+        if line:
+            self.add_message(line, 'warning')
+        lost = m.__dict__.pop('_lost_line', '')
+        if lost and self._sees_monster(m):
+            self.add_message(_senses._fill(m, lost), 'info')
+
     def _start_combat(self, monster):
+        # A blow struck carries a long way (src/senses.py).
+        self._make_noise('melee')
         # Charmed: 40% chance to hesitate instead of attacking
         if self.player.has_effect('charmed') and random.random() < 0.40:
             self.add_message("You hesitate, unable to bring yourself to attack.", 'warning')
@@ -2922,6 +2992,8 @@ class CombatMixin:
         # stop: they used to keep acting on the new map, from their old
         # coordinates, and could finish the hero the Sandals had just saved.
         _floor_at_start = self.dungeon_level
+        # What the monsters can hear this turn (src/senses.py).
+        self._senses_begin_turn()
 
         # Death acts first -- not part of self.monsters to avoid save/load issues
         if self.death_pursues and self.death_monster is not None:
@@ -3014,6 +3086,10 @@ class CombatMixin:
             _posing = false_stairs.poses_as_stairs(m)
             did_attack = m.take_turn(self.player, self.dungeon, self.monsters,
                                      extra_occupied=_pet_occ)
+            if did_attack:
+                # A blow on the hero carries (src/senses.py).
+                self._make_noise('struck')
+            self._say_sense_lines(m)
             if _posing and getattr(m, '_aware', False):
                 # A Hellmouth that sprang on its own turn (no blow, so no
                 # spring note): the Seeker's That Was Not a Stair.
