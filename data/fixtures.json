@@ -1,5 +1,5 @@
 {
-  "_doc": "Fixtures: things that stand in or on a tile without changing what the tile is (src/decor.py; Dungeon Alive 2026-11-12). The picture is assets/tiles/env/fixtures/<id>.png, drawn over the tile; without one, a blocking fixture is drawn as a plain block in 'color' and a decal is not drawn. 'layer': floor (a flat decal on a walkable tile), stand (an object on a floor tile), wall (hung on or cut into a wall tile). 'blocks': nothing can walk through it. 'opaque': it blocks sight like a pillar. 'look': what Observe (;) says. 'name': what a bump says stands in the way.",
+  "_doc": "Fixtures: things that stand in or on a tile without changing what the tile is (src/decor.py; Dungeon Alive 2026-11-12). The picture is assets/tiles/env/fixtures/<id>.png, drawn over the tile; without one, a blocking fixture is drawn as a plain block in 'color' and a decal is not drawn. 'layer': floor (a flat decal on a walkable tile), stand (an object on a floor tile), wall (hung on or cut into a wall tile). 'blocks': nothing can walk through it. 'opaque': it blocks sight like a pillar. 'look': what Observe (O) says. 'name': what a bump says stands in the way. 'spent_look': what Observe says once a lore fixture is spent, when it differs.",
   "fixtures": {
     "labrys_mark": {
       "name": "a double-axe carving",
@@ -287,7 +287,8 @@
     "smoke_vent": {
       "name": "a smoking crack",
       "layer": "floor",
-      "look": "A crack in the glass, with smoke rising out of it. On the floor of the Pit, the locusts climb out of these."
+      "look": "A crack in the glass, with smoke rising out of it. On the floor of the Pit, the locusts climb out of these.",
+      "spent_look": "Smoke still rises from the crack. Whatever you said over it was not enough."
     },
     "hanging_chains": {
       "name": "chains",

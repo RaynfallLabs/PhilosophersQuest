@@ -4343,6 +4343,8 @@ class MagicMixin:
                     continue
                 if self.dungeon.tiles[ny][nx] not in (1, 4):  # FLOOR or DOOR
                     continue
+                if (nx, ny) in self.dungeon.fixture_blocks:
+                    continue                  # never on a statue (src/decor.py)
                 m = Monster(defn, nx, ny)
                 self.monsters.append(m)
                 occupied.add((nx, ny))
@@ -4390,6 +4392,8 @@ class MagicMixin:
                     continue
                 if self.dungeon.tiles[ny][nx] not in (1, 4):
                     continue
+                if (nx, ny) in self.dungeon.fixture_blocks:
+                    continue                  # never on a statue (src/decor.py)
                 # Create an undead pet using the existing Pet class
                 pet = Pet('fire', nx, ny)  # reuse fire type as base
                 pet.species = {

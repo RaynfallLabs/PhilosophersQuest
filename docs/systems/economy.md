@@ -84,7 +84,7 @@ every one of them, and every Road anchor, to the table.
 | apothecary | Mother Wort | 2-35, 3 a run | a cure or healing for sure, potions, food | potions, food, ingredients | cure, restore, heal |
 | armourer | Brannoc | 10-45, 2 a run | common gear, ammo | weapons, armour, shields, ammo | repair, sharpen, reinforce, cut a curse off |
 | dwarf_armourer | Brunhild Irontemper, Dwarf Smith | 41-75, 2 a run | common gear, ammo | weapons, armour, shields, ammo | repair, sharpen, reinforce, cut a curse off |
-| bookseller | Aldous Vellum | 15-40, 1 a run | scrolls, one spellbook | scrolls, spellbooks | identify with the scribe, map |
+| bookseller | Crispin Vellum | 15-40, 1 a run | scrolls, one spellbook | scrolls, spellbooks | identify with the scribe, map |
 | ghost_bookseller | Quentin Shelfmark, the Cataloguer (a ghost) | 41-90, 1 a run | scrolls, one spellbook | scrolls, spellbooks | identify with the scribe, map |
 | abyssal | Vesper, Dealer in the Deep | 61-98, 2 a run | named rings first, wands, potions (x1.5); rarely a Master Sphere (10%), a Greater Hearth Sphere (4%) or, from 67, a Master Hearth Sphere (3%) | everything, curses too | cut a curse off, restore |
 | sutler (gate camp) | Old Mags Thorn | 19, 39, always | healing for sure, potions, food, a scroll, ammo, armour; sometimes a Soul Sphere (19, 39) or a Greater Soul Sphere (39) | everything | repair, cure, heal, porter |
@@ -405,7 +405,7 @@ items they haven't yet encountered, helps to BUILD the character."
 - **The spread** (`spread` per trader): his stall always holds at least one
   ware from each group, by role. Grindle: an accessory; a weapon, armour or
   shield; a scroll or book; a potion, wand or ammo. Mother Wort: a potion;
-  food. Brannoc and Brunhild: a weapon; armour; a shield or ammo. Aldous
+  food. Brannoc and Brunhild: a weapon; armour; a shield or ammo. Crispin
   Vellum and Quentin Shelfmark: a scroll; a spellbook. Vesper: an accessory; a
   wand; a potion; a scroll or book. Mags: a potion; food; armour or a weapon; a
   scroll or book. Regin: a weapon; armour or a shield; a potion or ammo. Tiw: a

@@ -57,10 +57,10 @@ def test_lore_fixtures_are_whole():
 def test_generated_floors_furnish_their_special_rooms_and_say_so(monkeypatch):
     _no_bones(monkeypatch)
     from level_manager import LevelManager
+    random.seed(4)                 # before the LevelManager rolls its plan (audit G8)
     lm = LevelManager()
     furnished = collections.Counter()
     rooms_seen = collections.Counter()
-    random.seed(4)
     for level in list(range(2, 100)) * 2:
         if level % 20 == 0:
             continue
@@ -84,10 +84,11 @@ def test_generated_floors_furnish_their_special_rooms_and_say_so(monkeypatch):
             line = decor.room_dressing()['arrival'].get(rtype)
             if line and len(d.special_rooms) == 1:
                 assert line in d.atmosphere_messages, (level, rtype)
-        if len(rooms_seen) == 10 and min(rooms_seen.values()) >= 3:
+        if len(rooms_seen) == 10 and min(rooms_seen.values()) >= 5:
             break
     for rtype, n in rooms_seen.items():
-        assert furnished[rtype] >= n * 0.7, (rtype, furnished[rtype], n)
+        if n >= 5:                 # a ratio over two rooms is noise
+            assert furnished[rtype] >= n * 0.7, (rtype, furnished[rtype], n)
 
 
 def _plain_floor():

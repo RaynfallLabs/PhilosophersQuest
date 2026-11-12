@@ -51,7 +51,8 @@ def _walk(dungeon, start, blocked=frozenset()) -> set:
         for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)):
             n = (x + dx, y + dy)
             if (0 <= n[0] < w and 0 <= n[1] < h and n not in seen and n not in blocked
-                    and tiles[n[1]][n[0]] in passable):
+                    and tiles[n[1]][n[0]] in passable
+                    and n not in getattr(dungeon, 'fixture_blocks', ())):
                 seen.add(n)
                 q.append(n)
     return seen

@@ -200,6 +200,47 @@ def place_hazards(dungeon, level: int, taken: set, rooms: list, corridors: list,
 # What a hazard does
 # ---------------------------------------------------------------------------
 
+_SIZES: dict | None = None
+
+
+def _sizes() -> dict:
+    global _SIZES
+    if _SIZES is None:
+        try:
+            from paths import data_path
+            with open(data_path('data', 'monster_sizes.json'), encoding='utf-8') as f:
+                _SIZES = json.load(f)
+        except (OSError, ValueError):
+            _SIZES = {}
+    return _SIZES
+
+
+def is_heavy(m) -> bool:
+    """A large or huge creature (data/monster_sizes.json) weighs like a hero
+    with a full pack on thin ice and cracked floors."""
+    s = _sizes()
+    table = s.get('sizes', s) if isinstance(s, dict) else {}
+    size = table.get(getattr(m, 'kind', ''), '') if isinstance(table, dict) else ''
+    if isinstance(size, dict):
+        size = size.get('size', '')
+    if tuple(getattr(m, 'footprint', (1, 1)) or (1, 1)) != (1, 1):
+        return True
+    return str(size).lower() in ('large', 'huge', 'gargantuan')
+
+
+_FLOATING_FAMILIES = ('ghosts', 'birds')
+_FLOATING_KINDS = ('bat', 'camazotz', 'will_o_wisp', 'will_o_wisp_lesser', 'floating_eye',
+                   'beholder', 'elder_beholder', 'beholder_spawn', 'stirge_swarm', 'giant_wasp',
+                   'pixie_swarm', 'imp', 'quasit', 'air_elemental', 'storm_elemental')
+
+
+def floats(m) -> bool:
+    """A creature that does not walk the floor: it flies, floats or haunts."""
+    return bool((getattr(m, 'family', '') or '') in _FLOATING_FAMILIES
+                or getattr(m, 'kind', '') in _FLOATING_KINDS
+                or m.has_effect('levitating'))
+
+
 def step_fires(h: dict, *, heavy: bool, levitating: bool, rng) -> bool:
     """Whether a step hazard goes off for whoever stepped on it."""
     if h.get('trigger') != 'step':

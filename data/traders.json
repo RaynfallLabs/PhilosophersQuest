@@ -211,7 +211,7 @@
     },
 
     "bookseller": {
-      "name": "Aldous Vellum",
+      "name": "Crispin Vellum",
       "title": "Bookseller",
       "pronoun": "he",
       "reach": "hardy",
@@ -439,7 +439,7 @@
       "pronoun": "he",
       "reach": "dead",
       "sprite": "npc_ghost", "sprite_fallback": "npc_scholar",
-      "lore": "Quentin Shelfmark came down a hundred years ago to copy the writing off the walls, as Aldous Vellum does now. He died at it somewhere past Medusa's gate and has not stopped working. He labels everything: walls, torches, rats, you. He keeps his catalogue the way Callimachus kept the great Library of Alexandria's, in a hundred and twenty rolls: by subject first, then by author. The coins you pay him fall through his hands into a box, and he files them under G.",
+      "lore": "Quentin Shelfmark came down a hundred years ago to copy the writing off the walls, as Crispin Vellum does now. He died at it somewhere past Medusa's gate and has not stopped working. He labels everything: walls, torches, rats, you. He keeps his catalogue the way Callimachus kept the great Library of Alexandria's, in a hundred and twenty rolls: by subject first, then by author. The coins you pay him fall through his hands into a box, and he files them under G.",
       "stock": [
         {"class": "scroll", "picks": 3}, {"class": "spellbook", "picks": 1}
       ],

@@ -189,7 +189,7 @@ def test_no_happy_merchant_in_the_abyss():
     assert e['options'][0]['cost'] == {'type': 'gold', 'share': 'potion', 'markup': 1.5}
     # The armourer trader is Brunhild; the shallow smith is someone else.
     assert 'Brunhild' not in ' '.join(_strings(FLV))
-    # The bookseller (Aldous Vellum) and the slaver are never confused here.
+    # The bookseller (Crispin Vellum) and the slaver are never confused here.
     assert not re.search(r'\bAmbrose\b', ' '.join(_strings(FLV)))
 
 

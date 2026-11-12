@@ -309,13 +309,28 @@ def _ring_walls(room, dungeon):
     return out
 
 
+def _reserved_doors(dungeon) -> set:
+    """Doors that are still rock when a floor is dressed: the quest shrines
+    of Ariadne (17), Athena (37) and Odin (53). Their doorsteps must stay
+    clear, or the shrine opens onto a statue."""
+    out = set()
+    for attr in ('ariadne_shrine_door', 'athena_shrine_door', 'odin_shrine_door'):
+        pos = dungeon.__dict__.get(attr)
+        if pos:
+            out.add((int(pos[0]), int(pos[1])))
+    return out
+
+
 def _against_wall_spots(room, dungeon, taken):
     """Inner tiles beside the room's wall, away from every way in."""
     from dungeon import WALL, DOOR, SECRET_DOOR
     inner = set(_inner(room, dungeon))
+    reserved = _reserved_doors(dungeon)
     out = []
     for (x, y) in inner:
         if (x, y) in taken:
+            continue
+        if any(max(abs(x - rx), abs(y - ry)) <= 1 for rx, ry in reserved):
             continue
         if not any(dungeon.in_bounds(x + ox, y + oy) and dungeon.tiles[y + oy][x + ox] == WALL
                    and not _room_contains_inner(room, x + ox, y + oy)
@@ -339,6 +354,28 @@ def _against_wall_spots(room, dungeon, taken):
 
 def _room_contains_inner(room, x, y) -> bool:
     return room.x < x < room.x + room.width - 1 and room.y < y < room.y + room.height - 1
+
+
+def _walk_set(dungeon) -> set:
+    """Tiles the hero can walk to from the up stair (four ways, through
+    doors and secret doors, never through water, lava or a blocker)."""
+    from dungeon import STAIRS_UP, DOOR, SECRET_DOOR
+    start = next(((x, y) for y in range(dungeon.height) for x in range(dungeon.width)
+                  if dungeon.tiles[y][x] == STAIRS_UP), None)
+    if start is None:
+        return set()
+    seen = {start}
+    q = deque([start])
+    while q:
+        x, y = q.popleft()
+        for ox, oy in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+            nx, ny = x + ox, y + oy
+            if (nx, ny) in seen or not dungeon.in_bounds(nx, ny):
+                continue
+            if dungeon.is_walkable(nx, ny) or dungeon.tiles[ny][nx] in (DOOR, SECRET_DOOR):
+                seen.add((nx, ny))
+                q.append((nx, ny))
+    return seen
 
 
 def _reachable_count(dungeon) -> int:
@@ -538,7 +575,14 @@ def place_lore_fixtures(dungeon, level: int, taken: set, placed_blocks: list, rn
             n += 1
     skip = {id(r) for r in _skip_rooms(dungeon)}
     first = dungeon.rooms[0] if dungeon.rooms else None
-    ordinary = [r for r in dungeon.rooms if id(r) not in skip and r is not first]
+    # Only rooms the hero can walk into (audit G15: a few stood behind a
+    # pool or lava).
+    reach = _walk_set(dungeon)
+
+    def reachable(r):
+        return not reach or any((x, y) in reach for (x, y) in _inner(r, dungeon))
+    chosen = [(f, r) for (f, r) in chosen if reachable(r)]
+    ordinary = [r for r in dungeon.rooms if id(r) not in skip and r is not first and reachable(r)]
     rng.shuffle(ordinary)
     free = [fid for fid, d in defs.items()
             if d.get('placement') not in ('secret_door', 'boss') and fid not in [c[0] for c in chosen]]
@@ -718,7 +762,7 @@ def _room_openings(room, dungeon) -> list:
 def _room_wall_side(room, dungeon, taken: set) -> list:
     """Floor tiles of the room against a wall, away from every way in."""
     from dungeon import WALL
-    openings = set(_room_openings(room, dungeon))
+    openings = set(_room_openings(room, dungeon)) | _reserved_doors(dungeon)
     out = []
     for (x, y) in _bbox_floor(room, dungeon):
         if (x, y) in taken or (x, y) in openings:
@@ -980,8 +1024,13 @@ def dress_floor(dungeon, level: int, monsters=(), items=(), rng=None) -> int:
         for x in range(dungeon.width):
             if dungeon.tiles[y][x] in (STAIRS_UP, STAIRS_DOWN):
                 near_stairs |= {(x + a, y + b) for a in (-1, 0, 1) for b in (-1, 0, 1)}
+    # Never in the arrival room, nor the down-stair's room, where a hero
+    # climbing back up (or fleeing Death) arrives (audit G16).
     first = dungeon.rooms[0] if dungeon.rooms else None
-    hz_rooms = [r for r in rooms if r is not first]
+    downs = [(x, y) for y in range(dungeon.height) for x in range(dungeon.width)
+             if dungeon.tiles[y][x] == STAIRS_DOWN]
+    down_rooms = {id(r) for r in dungeon.rooms if any(_room_contains(r, sx, sy) for sx, sy in downs)}
+    hz_rooms = [r for r in rooms if r is not first and id(r) not in down_rooms]
     n += hazards.place_hazards(dungeon, level, taken | near_stairs, hz_rooms,
                                [t for t in corridors if t not in taken], rng)
     # Nothing may cut the floor in two: undo blockers until the walk from

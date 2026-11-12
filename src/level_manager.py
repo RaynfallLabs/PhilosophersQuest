@@ -146,6 +146,18 @@ class LevelManager:
         import war_bands
         war_bands.place_band(dungeon, monsters, level_num)
 
+        # The clan's line, only if the clan really holds the floor now that
+        # it is peopled (audit G6: it named families with no one there).
+        import hazards
+        _clan = getattr(dungeon, 'clan', None)
+        if _clan:
+            _foes = [m for m in monsters if getattr(m, 'alive', True)
+                     and not getattr(m, 'is_allied', False) and getattr(m, 'family', None)]
+            _share = (sum(1 for m in _foes if m.family == _clan) / len(_foes)) if _foes else 0.0
+            _line = hazards.clan_line(_clan)
+            if _line and _share >= 0.25:
+                dungeon.atmosphere_messages.append(_line)
+
         # Bones: chance to spawn a ghost from a previous player's death
         self._maybe_spawn_bones(level_num, dungeon, monsters, items)
 

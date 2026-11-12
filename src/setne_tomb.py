@@ -187,6 +187,12 @@ class SetneMixin:
             outside = (wx - ddx, wy - ddy)
             chamber = [(x, y) for x in range(sx - 1, sx + 2) for y in range(sy - 1, sy + 2)]
             d.tiles[wy][wx] = DOOR
+            # The new rock and door take no fixture drawn there before
+            # (a wall torch on what is now the door: src/decor.py).
+            import decor
+            for _pos in chamber + [(wx, wy), outside]:
+                if decor.fixture_at(d, *_pos):
+                    decor.remove(d, _pos)
             busy = set(all_occupied_tiles(self.monsters))
             # Anything the generator left in the new rock goes elsewhere.
             self.ground_items[:] = [g for g in self.ground_items

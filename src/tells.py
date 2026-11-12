@@ -3,7 +3,7 @@
 Brandon: "players need to pay attention to lore, weaknesses, abilities (stay
 away from things that can confuse! use ranged!)". The first time in a run
 that the hero sees a kind, the Chronicler says its worst tell and what to do
-about it. Observe (;) says them all, any time. Every tell comes from
+about it. Observe (O) says them all, any time. Every tell comes from
 what the creature really does: an attack effect in data/monsters.json, or
 one of its flags (data/tells.json). Pure module.
 """

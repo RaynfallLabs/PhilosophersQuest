@@ -6,113 +6,467 @@
   "half_down_flee": 0.5,
   "bands": {
     "goblin_raiders": {
-      "name": "a goblin war-band", "family": "goblinkin", "floors": [3, 55],
-      "leader": ["goblin_king", "hobgoblin_captain", "bugbear_chieftain", "hobgoblin_warlord", "orc_warchief", "hobgoblin_marshal", "orc_warbringer", "orc_warlord", "goblin_kingslayer"],
-      "guard": ["goblin", "hobgoblin", "orc_warrior", "bugbear", "orc_berserker", "orc_marauder", "kobold_dragonshield", "dread_orc_champion"],
-      "shooter": ["goblin_sniper", "orc_archer"],
-      "caster": ["goblin_shaman", "orc_shaman", "kobold_sorcerer"],
-      "healer": ["orc_priest", "goblin_warpriest"],
-      "counts": {"guard": [2, 3], "shooter": [1, 2], "caster": [0, 1], "healer": [0, 1]},
+      "name": "a goblin war-band",
+      "family": "goblinkin",
+      "floors": [
+        3,
+        55
+      ],
+      "leader": [
+        "goblin_king",
+        "hobgoblin_captain",
+        "bugbear_chieftain",
+        "hobgoblin_warlord",
+        "orc_warchief",
+        "hobgoblin_marshal",
+        "orc_warbringer",
+        "orc_warlord",
+        "goblin_kingslayer"
+      ],
+      "guard": [
+        "goblin",
+        "hobgoblin",
+        "orc_warrior",
+        "bugbear",
+        "orc_berserker",
+        "orc_marauder",
+        "kobold_dragonshield",
+        "dread_orc_champion"
+      ],
+      "shooter": [
+        "goblin_sniper",
+        "orc_archer"
+      ],
+      "caster": [
+        "goblin_shaman",
+        "orc_shaman",
+        "kobold_sorcerer"
+      ],
+      "healer": [
+        "orc_priest",
+        "goblin_warpriest"
+      ],
+      "counts": {
+        "guard": [
+          2,
+          3
+        ],
+        "shooter": [
+          1,
+          2
+        ],
+        "caster": [
+          0,
+          1
+        ],
+        "healer": [
+          0,
+          1
+        ]
+      },
       "morale": "rout",
-      "camp": {"stand": ["campfire", "banner_goblin"], "floor": ["bedroll", "bedroll", "bone_pile"]},
+      "camp": {
+        "stand": [
+          "campfire",
+          "banner_goblin"
+        ],
+        "floor": [
+          "bedroll",
+          "bedroll",
+          "bone_pile"
+        ]
+      },
       "line": "Somewhere on this floor, drums, and a lot of feet. Goblins have made camp.",
       "known_line": "Drums, and goblin war-cries: a war-band has made camp on this floor. {roster}. Kill the chief, and the rest lose their nerve.",
       "rout_line": "With their chief down, the goblins lose their nerve and scatter!",
       "break_line": "The goblins see their chief take that blow, and waver."
     },
     "gnoll_pack": {
-      "name": "a gnoll pack", "family": "goblinkin", "floors": [6, 40],
-      "leader": ["gnoll_pack_lord", "gnoll_fang_of_yeenoghu", "gnoll_alpha_of_yeenoghu"],
-      "guard": ["gnoll"],
-      "shooter": ["gnoll_archer"],
-      "counts": {"guard": [2, 4], "shooter": [1, 2]},
+      "name": "a gnoll pack",
+      "family": "goblinkin",
+      "floors": [
+        6,
+        40
+      ],
+      "leader": [
+        "gnoll_pack_lord",
+        "gnoll_fang_of_yeenoghu",
+        "gnoll_alpha_of_yeenoghu"
+      ],
+      "guard": [
+        "gnoll"
+      ],
+      "shooter": [
+        "gnoll_archer"
+      ],
+      "counts": {
+        "guard": [
+          2,
+          4
+        ],
+        "shooter": [
+          1,
+          2
+        ]
+      },
       "morale": "rout",
-      "camp": {"stand": ["banner_goblin"], "floor": ["bone_pile", "bone_pile", "straw"]},
+      "camp": {
+        "stand": [
+          "banner_goblin"
+        ],
+        "floor": [
+          "bone_pile",
+          "bone_pile",
+          "straw"
+        ]
+      },
       "line": "High, cackling laughter echoes off the stone. Something hunts here in a pack.",
       "known_line": "That cackling is gnolls, hunting as a pack. {roster}. Their courage is their pack lord's.",
       "rout_line": "The pack lord falls, and the gnolls yelp and bolt!",
       "break_line": "The gnolls flinch as their pack lord staggers."
     },
     "bandit_crew": {
-      "name": "a bandit crew", "family": "mortals", "floors": [3, 45],
-      "leader": ["bandit_captain", "mercenary_veteran", "bandit_kingpin", "veteran_knight"],
-      "guard": ["bandit_thug", "brigand", "mercenary_veteran"],
-      "shooter": ["bandit_archer", "shadow_archer"],
-      "counts": {"guard": [2, 3], "shooter": [1, 2]},
+      "name": "a bandit crew",
+      "family": "mortals",
+      "floors": [
+        3,
+        45
+      ],
+      "leader": [
+        "bandit_captain",
+        "mercenary_veteran",
+        "bandit_kingpin",
+        "veteran_knight"
+      ],
+      "guard": [
+        "bandit_thug",
+        "brigand",
+        "mercenary_veteran"
+      ],
+      "shooter": [
+        "bandit_archer",
+        "shadow_archer"
+      ],
+      "counts": {
+        "guard": [
+          2,
+          3
+        ],
+        "shooter": [
+          1,
+          2
+        ]
+      },
       "morale": "rout",
-      "camp": {"stand": ["campfire", "banner_bandit"], "floor": ["bedroll", "bedroll"]},
+      "camp": {
+        "stand": [
+          "campfire",
+          "banner_bandit"
+        ],
+        "floor": [
+          "bedroll",
+          "bedroll"
+        ]
+      },
       "line": "Woodsmoke, and laughter that stops when you stop walking. Somebody has a camp down here.",
       "known_line": "Bandits have made camp on this floor. {roster}. They fight for their captain's coin, and run when he can't pay.",
       "rout_line": "With their captain down, the crew decides this was never worth it!",
       "break_line": "The bandits glance at each other as their captain reels."
     },
     "cult_circle": {
-      "name": "a cult circle", "family": "mortals", "floors": [8, 70],
-      "leader": ["cult_priest", "cult_zealot", "cult_hierophant", "veiled_inquisitor"],
-      "guard": ["cult_initiate", "cult_zealot"],
-      "caster": ["dark_cultist", "harrow_witch"],
-      "healer": ["cult_priest", "viper_priestess", "plague_witch"],
-      "counts": {"guard": [2, 3], "caster": [1, 2], "healer": [0, 1]},
+      "name": "a cult circle",
+      "family": "mortals",
+      "floors": [
+        8,
+        70
+      ],
+      "leader": [
+        "cult_priest",
+        "cult_zealot",
+        "cult_hierophant",
+        "veiled_inquisitor"
+      ],
+      "guard": [
+        "cult_initiate",
+        "cult_zealot"
+      ],
+      "caster": [
+        "dark_cultist",
+        "harrow_witch"
+      ],
+      "healer": [
+        "cult_priest",
+        "viper_priestess",
+        "plague_witch"
+      ],
+      "counts": {
+        "guard": [
+          2,
+          3
+        ],
+        "caster": [
+          1,
+          2
+        ],
+        "healer": [
+          0,
+          1
+        ]
+      },
       "morale": "rout",
-      "camp": {"stand": ["banner_cult"], "floor": ["candles", "candles", "bedroll"]},
+      "camp": {
+        "stand": [
+          "banner_cult"
+        ],
+        "floor": [
+          "candles",
+          "candles",
+          "bedroll"
+        ]
+      },
       "line": "Chanting, low and far off, the same five words over and over.",
       "known_line": "A cult is chanting somewhere on this floor. {roster}. Their faith is in their priest; take him and see how long it lasts.",
       "rout_line": "Their priest falls, and the faithful remember they have somewhere else to be!",
       "break_line": "The chanting falters as their priest staggers."
     },
     "necro_procession": {
-      "name": "a necromancer and his dead", "family": "vampires_liches", "floors": [9, 80],
-      "leader": ["pale_master", "skeleton_necromancer", "necromancer_lord", "lich_apprentice", "lich", "lich_lord", "crypt_summoner"],
-      "guard": ["skeleton", "skeleton_warrior", "zombie", "rotting_zombie", "ghoul", "skeleton_champion", "death_knight", "grave_knight"],
-      "shooter": ["skeleton_archer", "bone_archer", "skeletal_archer"],
-      "caster": ["skeleton_mage", "death_mage", "bone_witch"],
-      "counts": {"guard": [2, 4], "shooter": [1, 2], "caster": [0, 1]},
+      "name": "a necromancer and his dead",
+      "family": "vampires_liches",
+      "floors": [
+        9,
+        80
+      ],
+      "leader": [
+        "pale_master",
+        "skeleton_necromancer",
+        "necromancer_lord",
+        "lich_apprentice",
+        "lich",
+        "lich_lord",
+        "crypt_summoner"
+      ],
+      "guard": [
+        "skeleton",
+        "skeleton_warrior",
+        "zombie",
+        "rotting_zombie",
+        "ghoul",
+        "skeleton_champion",
+        "death_knight",
+        "grave_knight"
+      ],
+      "shooter": [
+        "skeleton_archer",
+        "bone_archer",
+        "skeletal_archer"
+      ],
+      "caster": [
+        "skeleton_mage",
+        "death_mage",
+        "bone_witch"
+      ],
+      "counts": {
+        "guard": [
+          2,
+          4
+        ],
+        "shooter": [
+          1,
+          2
+        ],
+        "caster": [
+          0,
+          1
+        ]
+      },
       "morale": "crumble",
-      "camp": {"stand": ["banner_dead"], "floor": ["bone_pile", "bone_pile", "candles"]},
+      "camp": {
+        "stand": [
+          "banner_dead"
+        ],
+        "floor": [
+          "bone_pile",
+          "bone_pile",
+          "candles"
+        ]
+      },
       "line": "Bones click somewhere, all together, like soldiers marching.",
       "known_line": "A necromancer walks this floor with his dead. {roster}. The dead he raised are bound to him: end him, and they fall.",
       "rout_line": "Their master falls, and the dead he raised fall with him!",
       "break_line": "The bound dead stagger as their master reels."
     },
     "giant_hunt": {
-      "name": "a giant and his hounds", "family": "giants", "floors": [8, 80],
-      "leader": ["ogre", "hill_giant", "ettin", "stone_giant", "frost_giant", "fire_giant", "cloud_giant", "frost_giant_jarl", "fire_giant_king", "storm_giant"],
-      "guard": ["death_dog", "blink_dog", "wolf_pack_leader", "winter_wolf", "fionn_hound", "dire_wolf_alpha"],
-      "counts": {"guard": [2, 3]},
+      "name": "a giant and his hounds",
+      "family": "giants",
+      "floors": [
+        8,
+        80
+      ],
+      "leader": [
+        "ogre",
+        "hill_giant",
+        "ettin",
+        "stone_giant",
+        "frost_giant",
+        "fire_giant",
+        "cloud_giant",
+        "frost_giant_jarl",
+        "fire_giant_king",
+        "storm_giant"
+      ],
+      "guard": [
+        "death_dog",
+        "blink_dog",
+        "wolf_pack_leader",
+        "winter_wolf",
+        "fionn_hound",
+        "dire_wolf_alpha"
+      ],
+      "counts": {
+        "guard": [
+          2,
+          3
+        ]
+      },
       "morale": "rout",
-      "camp": {"stand": ["banner_giant", "campfire"], "floor": ["bone_pile", "bone_pile"]},
+      "camp": {
+        "stand": [
+          "banner_giant",
+          "campfire"
+        ],
+        "floor": [
+          "bone_pile",
+          "bone_pile"
+        ]
+      },
       "line": "Baying, and under it something huge, sniffing the air.",
       "known_line": "A giant hunts this floor with his hounds. {roster}. The hounds follow him; without him they lose interest.",
       "rout_line": "Their master falls, and the hounds lose interest in you!",
       "break_line": "The hounds whine as their master staggers."
     },
     "fae_hunt": {
-      "name": "a hunt of the Fair Folk", "family": "fair_folk", "floors": [4, 60],
-      "leader": ["drow_priestess", "dullahan_spawn", "night_hag", "huldufolk_raider"],
-      "guard": ["drow_warrior", "redcap", "satyr_warrior", "light_elf_hostile"],
-      "shooter": ["dark_elf", "dryad_guardian"],
-      "caster": ["drow_mage", "banshee"],
-      "counts": {"guard": [2, 3], "shooter": [1, 2], "caster": [0, 1]},
+      "name": "a hunt of the Fair Folk",
+      "family": "fair_folk",
+      "floors": [
+        4,
+        60
+      ],
+      "leader": [
+        "drow_priestess",
+        "dullahan_spawn",
+        "night_hag",
+        "huldufolk_raider"
+      ],
+      "guard": [
+        "drow_warrior",
+        "redcap",
+        "satyr_warrior",
+        "light_elf_hostile"
+      ],
+      "shooter": [
+        "dark_elf",
+        "dryad_guardian"
+      ],
+      "caster": [
+        "drow_mage",
+        "banshee"
+      ],
+      "counts": {
+        "guard": [
+          2,
+          3
+        ],
+        "shooter": [
+          1,
+          2
+        ],
+        "caster": [
+          0,
+          1
+        ]
+      },
       "morale": "rout",
-      "camp": {"stand": ["banner_fae"], "floor": ["bedroll"]},
+      "camp": {
+        "stand": [
+          "banner_fae"
+        ],
+        "floor": [
+          "bedroll"
+        ]
+      },
       "line": "A horn sounds, very far away, and it is the loneliest sound you have ever heard.",
       "known_line": "The Fair Folk are riding a hunt on this floor. {roster}. They follow their leader for the sport of it; take that away and they will find other sport.",
       "rout_line": "Their leader falls, and the Fair Folk melt back into the shadows!",
       "break_line": "The hunt hesitates as its leader reels."
     },
     "demon_warband": {
-      "name": "a warband of devils", "family": "demons", "floors": [36, 98],
-      "leader": ["demon_knight", "balor_lesser", "demon_captain", "abyssal_champion", "demon_general", "infernal_lord"],
-      "guard": ["bearded_devil", "barbed_devil", "bone_devil", "hezrou", "glabrezu", "abyssal_hound"],
-      "shooter": ["pit_fiend_spawn", "abyssal_overlord"],
-      "counts": {"guard": [2, 3], "shooter": [0, 1]},
+      "name": "a warband of devils",
+      "family": "demons",
+      "floors": [
+        36,
+        98
+      ],
+      "leader": [
+        "demon_knight",
+        "balor_lesser",
+        "demon_captain",
+        "abyssal_champion",
+        "demon_general",
+        "infernal_lord",
+        "demon_emperor"
+      ],
+      "guard": [
+        "bearded_devil",
+        "barbed_devil",
+        "bone_devil",
+        "hezrou",
+        "glabrezu",
+        "abyssal_hound",
+        "galla_demon",
+        "iron_horseman",
+        "pit_executioner",
+        "apocalypse_herald",
+        "abyssal_behemoth",
+        "demon_knight"
+      ],
+      "shooter": [
+        "pit_fiend_spawn",
+        "abyssal_overlord",
+        "void_seraph",
+        "mazandaran_div",
+        "rakshasa_illusionist"
+      ],
+      "counts": {
+        "guard": [
+          2,
+          3
+        ],
+        "shooter": [
+          0,
+          1
+        ]
+      },
       "morale": "quarrel",
-      "camp": {"stand": ["banner_cult"], "floor": ["glow_fissure", "bone_pile"]},
+      "camp": {
+        "stand": [
+          "banner_cult"
+        ],
+        "floor": [
+          "glow_fissure",
+          "bone_pile"
+        ]
+      },
       "line": "Iron rings on iron somewhere, and a voice giving orders in no language you know.",
       "known_line": "Devils march on this floor under a captain. {roster}. They obey him out of fear; without him, they turn on each other.",
       "rout_line": "Their captain falls, and the devils turn on one another!",
       "break_line": "The devils snarl at one another as their captain reels."
     }
   },
-  "role_names": {"leader": "a leader", "guard": "{n} fighters", "shooter": "{n} archers", "caster": "{n} casters", "healer": "{n} healers"}
+  "role_names": {
+    "leader": "a leader",
+    "guard": "{n} fighters",
+    "shooter": "{n} archers",
+    "caster": "{n} casters",
+    "healer": "{n} healers"
+  }
 }

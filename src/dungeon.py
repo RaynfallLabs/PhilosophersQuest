@@ -1532,9 +1532,8 @@ def populate_floor(rooms: List[Room], level: int, dungeon: Dungeon,
     if getattr(dungeon, 'clan', None) is None and not getattr(dungeon, '_clan_rolled', False):
         dungeon._clan_rolled = True
         dungeon.clan = hazards.pick_clan(level, _build_spawn_pool(level))
-        line = hazards.clan_line(dungeon.clan) if dungeon.clan else ''
-        if line:
-            dungeon.atmosphere_messages.append(line)
+        # (Its arrival line is said once the floor is peopled, and only if
+        # the family really does hold it: LevelManager.generate.)
     eligible = _floor_pool(level, dungeon)
     if not eligible:
         return []
@@ -2354,6 +2353,10 @@ def _carve_sealed_shrine(dungeon: Dungeon, near: tuple, max_radius: int = 12):
                 for ddx, ddy in ((0, -1), (0, 1), (-1, 0), (1, 0)):
                     fx, fy = wx - ddx, wy - ddy            # room side of the door
                     if not dungeon.in_bounds(fx, fy) or dungeon.tiles[fy][fx] != FLOOR:
+                        continue
+                    # Nothing may stand on the doorstep (a stalagmite, a
+                    # statue: src/decor.py), or the door cannot be reached.
+                    if not dungeon.is_walkable(fx, fy):
                         continue
                     if reach and (fx, fy) not in reach:
                         continue

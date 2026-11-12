@@ -115,7 +115,10 @@ class HazardsMixin:
         if not hit:
             return
         fid, h = hit
-        if not hazards.step_fires(h, heavy=False, levitating=False, rng=random):
+        # A great beast is heavy (thin ice, crumbling floors); a bird, a bat
+        # or a ghost does not touch the ground (audit G10).
+        if not hazards.step_fires(h, heavy=hazards.is_heavy(m), levitating=hazards.floats(m),
+                                  rng=random):
             return
         if not h.get('monster'):
             return

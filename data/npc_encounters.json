@@ -4656,7 +4656,7 @@
         "label": "Refuse his purse: you cannot honestly promise to reach them",
         "karma": 1,
         "karma_kind": "forgo",
-        "outcome": "\"I can't carry that,\" you tell him. \"Not honestly.\" He stares at the purse as if he had never seen it before. \"No,\" he says at last. \"No. Nobody can, can they?\" He keeps hold of it all the same.",
+        "outcome": "\"I can't carry that,\" you tell him. \"Not honestly.\" He stares at the purse as if he had never seen it before. \"No,\" he says at last. \"No. Nobody can.\" He keeps hold of it all the same.",
         "deeds": [
           "forgo.dives_purse",
           "met.dives"

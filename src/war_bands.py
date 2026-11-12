@@ -67,12 +67,32 @@ def pick_band(level: int, pool: dict, rng):
     return bid, roster
 
 
-def _band_room(dungeon, rng):
+def _protected(m) -> bool:
+    """A creature a band may never displace: a named foe, a seal demon, a
+    mini-boss or legend, a person of an encounter, anything the run needs."""
+    try:
+        if m._is_named_foe():
+            return True
+    except Exception:
+        pass
+    return bool(getattr(m, 'is_seal_demon', False) or getattr(m, 'is_mini_boss', False)
+                or 'legendary' in (getattr(m, 'tags', None) or ())
+                or getattr(m, 'is_allied', False)
+                or getattr(m, '_npc_encounter_tag', None)
+                or getattr(m, '_flavor_encounter_tag', None)
+                or getattr(m, '_is_unicorn', False) or getattr(m, '_is_abandoned_emberpup', False))
+
+
+def _band_room(dungeon, rng, monsters=()):
     special = dungeon.__dict__.get('special_rooms') or {}
     first = dungeon.rooms[0] if dungeon.rooms else None
+
+    def holds_protected(r):
+        return any(_protected(m) and r.x <= m.x < r.x + r.width and r.y <= m.y < r.y + r.height
+                   for m in monsters or ())
     rooms = [r for r in dungeon.rooms
              if r is not first and tuple(r.center) not in special
-             and (r.width - 2) * (r.height - 2) >= 30]
+             and (r.width - 2) * (r.height - 2) >= 30 and not holds_protected(r)]
     if not rooms:
         return None
     rooms.sort(key=lambda r: -(r.width * r.height))
@@ -93,15 +113,16 @@ def place_band(dungeon, monsters: list, level: int, rng=None) -> list:
     if not picked:
         return []
     bid, roster = picked
-    room = _band_room(dungeon, rng)
+    room = _band_room(dungeon, rng, monsters)
     if room is None:
         return []
 
     def inside(m):
         return room.x <= m.x < room.x + room.width and room.y <= m.y < room.y + room.height
 
-    # The band takes the room: whatever the ordinary roll put there goes.
-    monsters[:] = [m for m in monsters if not inside(m)]
+    # The band takes the room: whatever the ordinary roll put there goes
+    # (never a named foe or anything the run needs: _protected).
+    monsters[:] = [m for m in monsters if not inside(m) or _protected(m)]
     taken = {(m.x, m.y) for m in monsters}
     tiles = [(x, y) for y in range(room.y + 1, room.y + room.height - 1)
              for x in range(room.x + 1, room.x + room.width - 1)

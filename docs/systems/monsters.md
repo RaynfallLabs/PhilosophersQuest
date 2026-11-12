@@ -265,7 +265,7 @@ The v2.18.0 commit kept these on disk because migrating would break every pickle
 Brandon: "NONE automatically know where you are unless it's thematically and lore appropriate." Until 3.4.0 every monster noticed the hero within 8 tiles THROUGH STONE, and then knew where he was for the rest of the floor. Now `Monster._spots_player` calls `senses.notice` (`src/senses.py`, data in `data/senses.json`).
 
 **How a monster notices him:**
-- **Sight:** a line of sight within `perception_range` (+4 for `keen_sight`). Walls and closed doors block it; water and furniture don't. An invisible hero is unseen except by `truesight` (celestials).
+- **Sight:** a line of sight within `perception_range` (+4 for `keen_sight`). Walls, closed doors and tall fixtures (statues, stalagmites) block it; water and low furniture don't. An invisible hero is unseen except by `truesight` (celestials).
 - **Sound:** the game emits noises through `Game._make_noise(kind)`:
   - footsteps each turn the hero moves (`step_radius`: 3 at DEX 10, quieter with DEX, louder when burdened, silent with Cat's Footfall or silent walking);
   - `melee` 8, `shot` 5, `spell` 6, `door` 5, `struck` 8 (a monster's blow on him);

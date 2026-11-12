@@ -21,7 +21,10 @@ from game_states import STATE_PLAYER, STATE_QUIZ
 class LoreFixturesMixin:
 
     def _lore_fixture_offer(self) -> bool:
-        """D beside a lore fixture: begin its question. True if one was there."""
+        """D beside a lore fixture. The first press says what it is and asks
+        for D again; the second begins its one question (audit G9: a hero
+        who only meant to drop something got a question, and a wrong answer
+        spent the fixture). True if one was there."""
         import decor
         hit = decor.lore_fixture_near(self.dungeon, self.player.x, self.player.y)
         if not hit:
@@ -30,6 +33,15 @@ class LoreFixturesMixin:
         d = decor.lore_fixtures()['fixtures'].get(fid)
         if not d:
             return False
+        armed = self.__dict__.get('_lore_armed')
+        here = (self.dungeon_level, (self.player.x, self.player.y), pos)
+        if armed != here:
+            self._lore_armed = here
+            self.add_message(f"{decor.fixture_def(fid).get('look', '')} "
+                             f"Press D again to {d.get('verb', 'look closer')}; "
+                             f"drop things from your Kit (K) instead.", 'info')
+            return True
+        self._lore_armed = None
         tier = int(((self.dungeon.__dict__.get('lore_fixtures') or {}).get(pos) or {}).get('tier', 1))
         subject = d['subject']
         self.add_message(f"You {d.get('verb', 'look closer')}...", 'info')
@@ -251,7 +263,10 @@ class LoreFixturesMixin:
 
     def _lore_reward_seal_vent(self, pos, fid) -> None:
         """The Pit: a vent sealed with a prayer lets no more locusts out
-        (main._spawn_abaddon_locusts uses the vents still open)."""
+        (main._spawn_abaddon_locusts uses the vents still open). Only a
+        right answer seals it: a wrong one spends the try, and the smoke
+        goes on (audit G4)."""
+        self.dungeon.__dict__.setdefault('sealed_vents', set()).add(tuple(pos))
         self.add_message("One way out of the Abyss is shut.", 'success')
 
     def _lore_reward_open_door(self, pos, fid) -> None:

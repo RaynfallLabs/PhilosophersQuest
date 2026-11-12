@@ -119,7 +119,8 @@ def _cheb(ax, ay, bx, by) -> int:
 
 def clear_view(x0: int, y0: int, x1: int, y1: int, dungeon) -> bool:
     """True if nothing opaque (wall, closed door, rock) stands between the
-    two tiles. Water, lava and furniture do not block the eye. A diagonal
+    two tiles (Dungeon.is_opaque: tall fixtures such as statues block it, low
+    furniture, water and lava do not). A diagonal
     step between two opaque corners is blocked, as it is for arrows."""
     dx, dy = abs(x1 - x0), abs(y1 - y0)
     sx = 1 if x1 > x0 else -1

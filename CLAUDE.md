@@ -76,7 +76,7 @@ src/
   sleepers.py         - Zoo, graveyard and barracks sleepers stir at footsteps and gold taken
   theft.py            - Thieves that really steal, and give it back on death
   black_knight.py     - The Black Knight bridge easter egg (floors 15-19)
-  emberpup_encounter.py - The abandoned Emberpup random event (floors 3-8)
+  emberpup_encounter.py - The abandoned Emberpup, every run (floors 3-8), earned by coming back
   setne_tomb.py       - Setne's Tomb and the Book of Thoth (floors 45-65)
 
   # Combat, items, magic

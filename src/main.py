@@ -700,6 +700,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.renderer.set_dungeon(dungeon.width, dungeon.height, layout.MAP_W, layout.GAME_H)
         self._refresh_fov()
 
+        # The Labyrinth announces itself on floor 1 too (audit G17).
+        self._announce_domain(level)
         # Oaths, pending rewards and callbacks, the Road's slot (game_road.py)
         self._road_arrive(level)
         # Spawn trigger items and NPC for moral encounters on L1 (if assigned)
@@ -5281,8 +5283,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             else:
                 self.add_message("The ground gives way beside you and leaves a pit.", 'danger')
         elif trap_type == 'alarm':
-            from container_system import alert_monsters_near
-            alert_monsters_near(self.monsters, x, y, 10)
+            # The alarm's clangour carries round corners, not through stone
+            # (src/senses.py; audit G18).
+            import senses as _senses
+            _senses.rouse_near(self.monsters, x, y, _senses.noise_radius('alarm'), self.dungeon)
             self.add_message("Monsters nearby are alerted!", 'danger')
         elif trap_type == 'acid':
             self.player.add_effect('corroding', 5)
@@ -5818,8 +5822,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         elif trap_type == 'bear_trap':
             monster.add_effect('immobilized', _trng.randint(2, 4))
         elif trap_type == 'alarm':
-            from container_system import alert_monsters_near
-            alert_monsters_near(self.monsters, pos[0], pos[1], 10)
+            import senses as _senses
+            _senses.rouse_near(self.monsters, pos[0], pos[1], _senses.noise_radius('alarm'),
+                               self.dungeon)
         elif trap_type == 'squeaky_board':
             import senses as _senses
             _senses.rouse_near(self.monsters, pos[0], pos[1],
@@ -7982,7 +7987,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         _vents = [p for p, f in (self.dungeon.__dict__.get('fixtures') or {}).items()
                   if f == 'smoke_vent' and p in (self.dungeon.__dict__.get('lore_fixtures') or {})]
         _open = [p for p in _vents
-                 if (self.dungeon.__dict__.get('fixture_state') or {}).get(p) != 'spent']
+                 if p not in (self.dungeon.__dict__.get('sealed_vents') or set())]
         if _vents:
             if _open:
                 _vt = []
@@ -8903,7 +8908,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         from dungeon import WALL, SECRET_DOOR
         px, py = self.player.x, self.player.y
         try:
-            return self.dungeon.tiles[py][px] in (WALL, SECRET_DOOR)
+            # (A statue's tile counts: phasing through one, nothing is set
+            # down where no one could reach it: src/decor.py.)
+            return (self.dungeon.tiles[py][px] in (WALL, SECRET_DOOR)
+                    or (px, py) in self.dungeon.fixture_blocks)
         except (IndexError, AttributeError, TypeError):
             return False
 
