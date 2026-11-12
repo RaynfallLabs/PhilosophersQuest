@@ -25910,7 +25910,7 @@
   },
   {
     "tier": 1,
-    "question": "A small, dark vampire squid drifts through the deep ocean. Its scientific name, Vampyroteuthis infernalis, means 'vampire squid from hell,' and it sounds like the name of a fierce hunter. What does this creature really feed on?",
+    "question": "A small, dark vampire squid drifts through the deep ocean. Its scientific name means 'vampire squid from hell,' and it sounds like a fierce hunter's. What does this creature really feed on?",
     "answer": "Drifting flakes of dead matter it collects while floating",
     "choices": [
       "Drifting flakes of dead matter it collects while floating",
@@ -25918,12 +25918,12 @@
       "Warm mammal blood, like the bat it is named for",
       "Coral polyps it scrapes off the reef with its beak"
     ],
-    "context": "The vampire squid (Vampyroteuthis infernalis) is the only cephalopod that does not chase living prey. It drifts in the deep and collects 'marine snow' — drifting flakes of dead matter. The scary name comes from its blood-red skin and cloak-like webbing, not its gentle habits. Source: Hoving & Robison 2012, MBARI news release (mbari.org).",
+    "context": "The vampire squid (Vampyroteuthis infernalis) does not chase its food: it drifts in the deep and lives mainly on 'marine snow', drifting flakes of dead matter. The scary name comes from its blood-red skin and cloak-like webbing, not its gentle habits. Source: Hoving & Robison 2012, MBARI news release (mbari.org); Wikipedia, 'Vampire squid'.",
     "topic": "vampire-squid-vampyroteuthis-infernalis"
   },
   {
     "tier": 1,
-    "question": "A vampire squid only about 15 centimeters long, roughly the length of a kid's hand, drifts through the dark deep sea. One part of its body sets a world record: for its size, that part is the biggest of any animal on Earth. Which body part is it?",
+    "question": "A vampire squid about the length of a kid's hand drifts through the dark deep sea. One part of its body sets a world record: for its size, it is the biggest of any animal's. Which part is it?",
     "answer": "Its globe-shaped eyes, each about 2.5 cm across",
     "choices": [
       "Its globe-shaped eyes, each about 2.5 cm across",
@@ -25966,9 +25966,9 @@
     "answer": "Up to eight times the length of its own body",
     "choices": [
       "Up to eight times the length of its own body",
-      "About half the length of its own body",
-      "Roughly the same length as its own body",
-      "Up to twice the length of its own body"
+      "Up to three times the length of its own body",
+      "Up to twenty times the length of its own body",
+      "Up to fifty times the length of its own body"
     ],
     "context": "It catches food on two long, sticky, retractable filaments that can stretch up to eight times its body length, then wipes the loaded thread back through its arms to eat. Source: MBARI news release on Hoving & Robison 2012 (mbari.org).",
     "topic": "vampire-squid-vampyroteuthis-infernalis"
@@ -25987,21 +25987,21 @@
     "topic": "vampire-squid-vampyroteuthis-infernalis"
   },
   {
-    "tier": 4,
-    "question": "Carl Chun, a German zoologist leading the first deep-sea expedition to trawl the Atlantic, hauled a strange, soft creature up from thousands of feet down in 1903. He named it Vampyroteuthis infernalis, 'the vampire squid from hell.' Which features of the animal inspired that dramatic name?",
+    "tier": 2,
+    "question": "Carl Chun's German deep-sea expedition on the Valdivia netted strange, soft creatures from far below in 1898 and 1899. In 1903 he named one 'the vampire squid from hell.' Which features of the animal inspired that name?",
     "answer": "Its blood-red skin and cloak-like webbing",
     "choices": [
       "Its blood-red skin and cloak-like webbing",
       "Its habit of draining blood from fish",
       "The bat-shaped fins on its head",
-      "The way it shrieks when pulled from the water"
+      "Its habit of rising to the surface only at night"
     ],
-    "context": "Vampyroteuthis infernalis literally means 'vampire squid from hell.' The teuthologist Carl Chun named it in 1903 for its dark blood-red skin and cloak-like webbing — not for its habits, which are gentle. Source: Wikipedia: Vampire squid.",
+    "context": "Vampyroteuthis infernalis literally means 'vampire squid from hell.' The Valdivia expedition (1898-1899) brought up the first specimens, and the teuthologist Carl Chun named the animal in 1903 for its dark blood-red skin and cloak-like webbing, not for its habits, which are gentle. It stays deep in the oxygen-poor midwater rather than rising to the surface. Source: Wikipedia: Vampire squid.",
     "topic": "vampire-squid-vampyroteuthis-infernalis"
   },
   {
     "tier": 4,
-    "question": "A vampire squid makes its home in a strange band of the deep ocean, 600 to 900 meters down, where almost no other predator can follow it. It is not the cold or the crushing pressure that keeps other predators out; a chemistry problem suffocates most animals there. What deadly condition does the vampire squid tolerate?",
+    "question": "A vampire squid makes its home in a band of the deep ocean 600 to 900 meters down, where few predators can follow it. One harsh condition of that water keeps most hunters out, yet the squid lives with it its whole life. What is that condition?",
     "answer": "Oxygen drops as low as 3 percent saturation",
     "choices": [
       "Oxygen drops as low as 3 percent saturation",
@@ -26014,7 +26014,7 @@
   },
   {
     "tier": 5,
-    "question": "In the black deep, a predator bites the glowing tip off one of a vampire squid's arms. The attacker turns on the flashing morsel as if it had caught a meal, and the squid glides away nearly unhurt. Why is the bitten-off arm tip such a clever loss?",
+    "question": "In the black deep, far below the reach of sunlight, a predator snaps at a vampire squid and bites off the tip of one of its arms. The squid slips away nearly unhurt. Why is losing that arm tip such a clever trade?",
     "answer": "It keeps flashing as a decoy while the tip regrows",
     "choices": [
       "It keeps flashing as a decoy while the tip regrows",
@@ -26033,14 +26033,14 @@
       "It shares traits with octopuses and squids but is neither",
       "It is the direct ancestor of the modern octopus",
       "It is the only cephalopod without a beak or arms",
-      "It evolved from a fish that lost its bones"
+      "It is a cuttlefish that lost its inner shell"
     ],
     "context": "The vampire squid is the only surviving member of the order Vampyromorphida, an ancient cephalopod lineage. It shares traits with both octopuses and squids while being neither — a true living fossil. Source: Wikipedia: Vampire squid; marine-biology sources.",
     "topic": "vampire-squid-vampyroteuthis-infernalis"
   },
   {
     "tier": 5,
-    "question": "Scientists put a Jurassic relative of the vampire squid, 164 million years old, through a synchrotron X-ray scanner, and the fine detail of its two long arms showed a way of life far from the modern squid's. What did those arms carry?",
+    "question": "Scientists put a Jurassic relative of the vampire squid, a fossil from France about 164 million years old, through a synchrotron X-ray scanner, and the fine detail of its two long arms showed how it lived. What did those arms carry?",
     "answer": "Rows of muscular suckers for gripping live prey",
     "choices": [
       "Rows of muscular suckers for gripping live prey",
@@ -26066,7 +26066,7 @@
   },
   {
     "tier": 1,
-    "question": "A long, thin, brown stick insect hides in plain sight among the twigs of a bush, and birds and lizards walk right past without spotting it. It adds one extra trick, copying something a real twig does on a gentle, breezy day. What does it do?",
+    "question": "A long, thin, brown stick insect hides among the twigs of a bush, and birds walk right past it. It adds one extra trick, copying something a real twig does on a breezy day. What does it do?",
     "answer": "It rocks and sways gently from side to side",
     "choices": [
       "It rocks and sways gently from side to side",
@@ -26079,20 +26079,20 @@
   },
   {
     "tier": 1,
-    "question": "A ptarmigan, a plump grouse of snowy mountains, sits pure white against the winter drifts and turns mottled brown each summer. The ground where it lives lies buried in deep snow for half the year. What flips the switch between the two coats, right on schedule?",
+    "question": "A ptarmigan, a plump grouse of snowy mountains, sits pure white against the winter drifts and turns mottled brown each summer. What flips the switch between the two coats?",
     "answer": "The number of daylight hours",
     "choices": [
       "The number of daylight hours",
       "The temperature of the air",
       "The first snowfall of the season",
-      "The food it finds to eat"
+      "The plants it finds to eat"
     ],
     "context": "The change is triggered by DAY LENGTH, not temperature — so the timing is the same every year even when snow comes early or late, which can leave a half-turned bird briefly mismatched. Source: Audubon Field Guide, Rock Ptarmigan; Alaska Dept. Fish & Game.",
     "topic": "vanishing-camouflage-and-active-color-change"
   },
   {
     "tier": 1,
-    "question": "A leaf insect clings among the foliage of a Southeast Asian rainforest, its flat green body laced with fake veins and ragged brown edges, so a bird gliding past sees only a leaf. It even wears one extra detail that makes its 'leaf' look old and used rather than fresh. What is that finishing touch?",
+    "question": "A leaf insect clings to a bush in a Southeast Asian rainforest, its flat green body laced with fake veins, so a passing bird sees only a leaf. It wears one more detail that keeps hungry birds moving on. What is it?",
     "answer": "Fake chewed-out bite marks and blemishes",
     "choices": [
       "Fake chewed-out bite marks and blemishes",
@@ -26105,20 +26105,20 @@
   },
   {
     "tier": 2,
-    "question": "An octopus resting on a coral reef can make its smooth skin suddenly erupt into a bumpy, ragged surface that copies the seaweed, sponges and coral nearby, and flatten it again when it wants to swim off. Biologists call these muscle bumps papillae. Roughly how fast can the octopus throw them up?",
+    "question": "An octopus resting on a coral reef can turn its smooth skin into a bumpy, ragged surface that copies the seaweed, sponges and coral nearby, and flatten it again when it wants to swim off. Biologists call these muscle bumps papillae. Roughly how fast can the octopus throw them up?",
     "answer": "In about a fifth of a second",
     "choices": [
       "In about a fifth of a second",
-      "In about ten minutes",
-      "Over the course of a full day",
-      "Only once, permanently, as it grows up"
+      "In about five seconds",
+      "In about half a minute",
+      "In about two minutes"
     ],
-    "context": "The bumps are muscle-driven skin projections called papillae; the octopus pushes them up in about 0.2 seconds and can hold them or drop them at will. Source: Scientific American, octopus 3-D camouflage; PMC6059360, Neural Control of Dynamic 3-D Skin Papillae.",
+    "context": "The bumps are muscle-driven skin projections called papillae; the octopus pushes them up in about a fifth of a second and can hold them or drop them at will. Source: phys.org 2017, on Cornell's octopus-inspired camouflage skin; Scientific American, octopus 3-D camouflage.",
     "topic": "vanishing-camouflage-and-active-color-change"
   },
   {
     "tier": 2,
-    "question": "A decorator crab walks a coral reef wearing a living garden it planted on its own back. Its shell bristles with tiny hooked hairs that grab like Velcro, and instead of hiding under things, it builds its disguise onto those hooks. What does it stick there?",
+    "question": "A decorator crab walks a coral reef in disguise. Its shell bristles with tiny hooked hairs that grab like Velcro, and instead of hiding under things, it builds its disguise onto those hooks. What does it stick there?",
     "answer": "Living sponges, algae, and stinging anemones",
     "choices": [
       "Living sponges, algae, and stinging anemones",
@@ -26144,7 +26144,7 @@
   },
   {
     "tier": 3,
-    "question": "A flounder lies flat on the seabed, changing its skin to match the sand or gravel beneath it. In one famous test, scientists laid a checkerboard of black and white squares under one, a pattern found nowhere in nature, and cameras watched its skin. About a minute later, what had happened to the flounder?",
+    "question": "A tropical flounder lies flat on the seabed, changing its skin to match the sand or gravel beneath it. In one famous test, scientists laid a checkerboard of black and white squares under one, a pattern found nowhere in nature, and watched its skin. Within seconds, what had happened to the flounder?",
     "answer": "It broke into dark and light blotches copying the squares",
     "choices": [
       "It broke into dark and light blotches copying the squares",
@@ -26152,7 +26152,7 @@
       "It flashed rippling stripes across its back",
       "It darkened uniformly to a flat solid tone"
     ],
-    "context": "The flounder's skin broke into dark and light blotches roughly matching the checkerboard — a striking demonstration of background-matching against an unnatural pattern, rather than just averaging or flashing. Source: American Museum of Natural History; Royal Society Open Science, flounder background-matching study.",
+    "context": "The flounder's skin broke into dark and light blotches roughly matching the checkerboard, a striking demonstration of background-matching against an unnatural pattern, rather than just averaging or flashing. Ramachandran and colleagues found that tropical flounders shift their pattern in about 2 to 8 seconds. Source: Ramachandran et al. 1996, 'Rapid adaptive camouflage in tropical flounders', Nature 379; UCSD news release.",
     "topic": "vanishing-camouflage-and-active-color-change"
   },
   {
@@ -26163,35 +26163,35 @@
       "The paler belly reflects light back to fill the shadow to an even tone",
       "The dark back soaks up the sunlight before it can cast a shadow",
       "The dark-pale boundary sits where a predator's eye locks, pulling the gaze off",
-      "The pale belly matches the bright surface above, erasing it from below"
+      "The thin pale belly lets sunlight shine straight through the body"
     ],
-    "context": "This is countershading: the naturally-shaded belly is painted paler so it reflects light back and fills in its own shadow, leaving the body one even tone that reads as flat and un-solid instead of a spottable 3-D shape. The other options are real tricks other animals use — heat-absorbing dark backs, disruptive edge patterns, mirror-belly matching the surface from below — but none is how countershading works. Source: Wikipedia, Countershading ('Thayer's law'); The Conversation, dark backs and pale bellies.",
+    "context": "This is countershading: the naturally shaded belly is painted paler so it reflects light back and fills in its own shadow, leaving the body one even tone that reads as flat instead of a spottable 3-D shape. A dark back cannot stop a shadow forming beneath, and a deer's or a shark's body is far too thick for light to pass through. Source: Wikipedia, Countershading ('Thayer's law'); The Conversation, dark backs and pale bellies.",
     "topic": "vanishing-camouflage-and-active-color-change"
   },
   {
     "tier": 4,
-    "question": "A satanic leaf-tailed gecko clings to a branch in Madagascar looking like a dead leaf come to life, its flat tail notched, fake-veined and ragged as if half-rotted. One more feature erases the tell-tale line where its body meets the bark. What blurs the gecko's outline?",
-    "answer": "Fringes of skin along its edges",
+    "question": "A giant leaf-tailed gecko spends the day pressed flat against a tree trunk in a Madagascar rainforest, its mottled grey-brown skin the color of the bark. One more feature erases the tell-tale line where its body meets the trunk. What blurs its outline?",
+    "answer": "A fringe of skin along its body's edges",
     "choices": [
-      "Fringes of skin along its edges",
-      "A coat of loose downy fur",
-      "A shell of overlapping hard plates",
-      "A trailing cloud of fine bubbles"
+      "A fringe of skin along its body's edges",
+      "A crest of tall spines down its back",
+      "A thin living coat of moss and lichen",
+      "A shell of overlapping hard plates"
     ],
-    "context": "Skin fringes break up the gecko's silhouette against the forest floor, so predators can't find the crisp edge that would betray an animal. Source: Wikipedia, Uroplatus phantasticus; Smithsonian National Zoo, Phantastic Leaf-tailed Gecko.",
+    "context": "The giant leaf-tailed gecko, Uroplatus fimbriatus, has a flap of skin running the length of its body that it lays against the bark, breaking up its outline and keeping it from casting a shadow. Its cousin the satanic leaf-tailed gecko hides another way, posing as a dead, notched leaf. Source: PBS Nature, 'Featured Creature: Leaf-Tailed Gecko'; Wikipedia, Uroplatus.",
     "topic": "vanishing-camouflage-and-active-color-change"
   },
   {
     "tier": 4,
-    "question": "A mimic octopus on the sandy Indo-Pacific seafloor does more than blend in: it impersonates other animals to scare predators away. In one famous trick it sinks six arms into a burrow and stretches out only two, one to each side, waving them. Which deadly, banded reef animal does that striped, wavy shape copy?",
+    "question": "A mimic octopus on the sandy Indo-Pacific seafloor does more than blend in: it impersonates other animals to scare predators away. In one famous trick it sinks six arms into a burrow and stretches out only two, one to each side, waving them. Which deadly reef animal does that display copy?",
     "answer": "A banded sea snake",
     "choices": [
       "A banded sea snake",
-      "A stinging box jellyfish",
+      "A crown-of-thorns starfish",
       "A bristling stonefish",
       "A venomous cone snail"
     ],
-    "context": "By tucking six arms and trailing two, the octopus mimics a banded sea snake — all four choices name genuinely venomous reef animals, but the two-armed, striped display copies the snake. It also splays its arms to imitate a spiny lionfish and flattens all eight to glide like a flatfish, swapping impersonations to match whatever predator is near. Source: Wikipedia, Mimic octopus; ScienceDaily, flatfish mimicry study.",
+    "context": "By tucking six arms and trailing two, the octopus mimics a banded sea snake. It also splays its arms to imitate a spiny lionfish and flattens all eight to glide like a flatfish, swapping impersonations to match whatever predator is near. Source: Wikipedia, Mimic octopus; ScienceDaily, flatfish mimicry study.",
     "topic": "vanishing-camouflage-and-active-color-change"
   },
   {
@@ -26202,7 +26202,7 @@
       "Mirror-like cells bounce back whatever light is around",
       "It slowly grows fresh pigment to order over minutes",
       "It borrows dye absorbed from the food it eats",
-      "It bends its whole body to catch a different angle"
+      "Its cells glow with their own living light"
     ],
     "context": "By pulling the top pigment sacs aside, the cuttlefish lets reflective under-layer cells — iridophores and white leucophores — throw back the surrounding light, filling in colors the pigments alone can't produce, and matching a shade it may not even be able to see. Source: Nature Scitable, Cephalopod Camouflage.",
     "topic": "vanishing-camouflage-and-active-color-change"
@@ -26339,7 +26339,7 @@
   },
   {
     "tier": 1,
-    "question": "A gardener in Georgia is weeding a flower bed when a fuzzy bug the size of a fingernail scurries across the bare dirt, bright orange and black and covered in soft, velvety hair. Locals call it a velvet ant, but it has no bent antennae and no ant waist. What is it really?",
+    "question": "A fuzzy orange-and-black bug the size of a fingernail scurries across a garden bed in Georgia. Locals call it a velvet ant, but it has no bent antennae and no ant waist. What is it really?",
     "answer": "A wingless female wasp",
     "choices": [
       "A wingless female wasp",
@@ -26352,7 +26352,7 @@
   },
   {
     "tier": 2,
-    "question": "Farmers call the fuzzy orange-and-black velvet ant the cow killer, because its sting hurts so badly that a grown adult can scream. But pain and poison are not the same thing. Measured side by side with an ordinary honeybee's venom, how does the velvet ant's compare?",
+    "question": "Farmers call the fuzzy orange-and-black velvet ant the cow killer, because its sting hurts so badly that a grown adult can scream. Measured side by side with an ordinary honeybee's venom, how toxic is the velvet ant's?",
     "answer": "Far less toxic than a honeybee's",
     "choices": [
       "Far less toxic than a honeybee's",
@@ -26360,12 +26360,12 @@
       "Roughly ten times as toxic",
       "About the same as a honeybee's"
     ],
-    "context": "The screaming pain comes from overwhelming the nerves, not from poisoning the body: the venom is actually far less toxic than a honeybee's. No cow — and no human — has ever died from the sting; the 'cow killer' name is pure pain-reputation. Source: https://en.wikipedia.org/wiki/Velvet_ant",
+    "context": "The screaming pain comes from overwhelming the nerves, not from poisoning the body: the venom is actually far less toxic than a honeybee's or a harvester ant's, so the 'cow killer' name is pure pain-reputation. Source: https://en.wikipedia.org/wiki/Velvet_ant",
     "topic": "velvet-ant-the-cow-killer-that-is-really-a-wasp"
   },
   {
     "tier": 2,
-    "question": "A collector picks up a velvet ant between two fingers, and it does something no true ant would ever do: it rubs a pair of rough ridges on its abdomen together, the way a cricket rubs its wings, and fires off a rapid, high-pitched chirp loud enough to hear. What is the squeak for?",
+    "question": "A collector picks up a velvet ant between two fingers. It rubs a pair of rough ridges on its abdomen together, the way a cricket rubs its wings, and fires off a rapid, high-pitched chirp loud enough to hear. What is the squeak for?",
     "answer": "To warn a predator to let go",
     "choices": [
       "To warn a predator to let go",
@@ -26378,13 +26378,13 @@
   },
   {
     "tier": 3,
-    "question": "An insect collector pins an ordinary honeybee to his display board with ease, but when he presses the steel pin against a velvet ant, the pin will not go in. Sometimes he must take up a small hand drill and bore a hole first. Why is this little insect so hard to pin?",
-    "answer": "Its exoskeleton is armored many times harder to crush",
+    "question": "An insect collector pins an ordinary honeybee to his display board with ease, but when he presses the steel pin against a velvet ant, it will barely go in, however hard he pushes. Why is this little insect so hard to pin?",
+    "answer": "Its exoskeleton is many times harder to crush",
     "choices": [
-      "Its exoskeleton is armored many times harder to crush",
+      "Its exoskeleton is many times harder to crush",
       "Its body is coated in a slippery wax",
       "It curls into a spiny defensive ball",
-      "Its shell is hollow and shatters the pin"
+      "Its thick fuzz tangles around and blunts the pin"
     ],
     "context": "A velvet ant's exoskeleton takes roughly eleven times more crushing force to break than a honeybee's. This tank-like armor is also what lets a female raid another wasp's nest and stay 'impervious to the stings' of the furious owners. Source: https://en.wikipedia.org/wiki/Velvet_ant",
     "topic": "velvet-ant-the-cow-killer-that-is-really-a-wasp"
@@ -26395,7 +26395,7 @@
     "answer": "Lays an egg on it so her own young can devour it",
     "choices": [
       "Lays an egg on it so her own young can devour it",
-      "Carries it back to her own burrow",
+      "Carries it off to feed to her sisters",
       "Stings it to store as paralyzed food",
       "Eats it whole on the spot"
     ],
@@ -26404,7 +26404,7 @@
   },
   {
     "tier": 1,
-    "question": "In the dark leaf litter of the forest floor, a velvet worm creeps up on a cricket far too fast to catch by chasing. From a few centimetres away it launches a surprise attack that pins the cricket to the ground before it can hop. What does the velvet worm fire at its prey?",
+    "question": "A velvet worm creeps up on a cricket in the dark leaf litter, prey far too quick to catch by chasing. From a few centimeters away, it pins the cricket to the ground. What does it fire?",
     "answer": "Two jets of sticky glue from nozzles beside its mouth",
     "choices": [
       "Two jets of sticky glue from nozzles beside its mouth",
@@ -26417,10 +26417,10 @@
   },
   {
     "tier": 2,
-    "question": "A velvet worm's two slime nozzles are tiny, yet a single squirt lays down a wide zig-zag net of glue that covers far more ground than a straight shot could. As the slime fires, the nozzles blur back and forth 30 to 60 times a second, though the animal has no muscle anywhere near fast enough to wave them. What makes them whip so fast?",
-    "answer": "The force of the fluid firing through the floppy nozzle whips it on its own",
+    "question": "A velvet worm's two slime nozzles are tiny, yet a single squirt lays down a wide zig-zag net of glue that covers far more ground than a straight shot could. As the slime fires, the nozzles blur back and forth 30 to 60 times a second. What makes them whip so fast?",
+    "answer": "The fast-flowing slime itself flails the floppy nozzle",
     "choices": [
-      "The force of the fluid firing through the floppy nozzle whips it on its own",
+      "The fast-flowing slime itself flails the floppy nozzle",
       "A ring of super-fast muscle unique to the mouth region",
       "A spinning valve that flicks the stream side to side",
       "Rapid puffs of air that buffet the jet mid-flight"
@@ -26430,7 +26430,7 @@
   },
   {
     "tier": 2,
-    "question": "A velvet worm oozes through the leaf litter like a soft, stubby-legged worm, but its body plan is over 500 million years old, tracing back to the Cambrian seas. It is not a true worm, and it is not an insect. Where does biology place it?",
+    "question": "A velvet worm oozes through the leaf litter like a soft, stubby-legged worm, but its body plan is over 500 million years old, tracing back to the Cambrian seas. Where does biology place it?",
     "answer": "In its own phylum, Onychophora, the 'claw-bearers'",
     "choices": [
       "In its own phylum, Onychophora, the 'claw-bearers'",
@@ -26438,7 +26438,7 @@
       "Among the myriapods, alongside centipedes",
       "Among the soft-bodied molluscs, like slugs"
     ],
-    "context": "The velvet worm is its own phylum, Onychophora ('claw-bearers') - a soft-bodied survivor of a Cambrian-era body plan over 500 million years old. Its closest living relatives are the tiny tardigrades (water bears). Source: Burgess Shale (Royal Ontario Museum); bmcecolevol.biomedcentral.com/articles/10.1186/s12862-014-0222-z.",
+    "context": "The velvet worm is its own phylum, Onychophora ('claw-bearers'), a soft-bodied survivor of a Cambrian-era body plan over 500 million years old. Its closest living relatives are the arthropods, with the tiny tardigrades (water bears) a little further off. Source: Burgess Shale (Royal Ontario Museum); grokipedia.com/page/Onychophora.",
     "topic": "velvet-worm-the-glue-cannon-hunter-of-the-forest-floor"
   },
   {
@@ -26456,7 +26456,7 @@
   },
   {
     "tier": 2,
-    "question": "A poison-dart frog in a Central American rainforest oozes poison from its skin, and one lick can kill a person. A desert rattlesnake carries a toxin just as deadly in its head, yet a person could drink it from a cup and live. The difference is delivery. Which of the two injects its toxin through a wound, as venom?",
+    "question": "A poison-dart frog in a Colombian rainforest oozes enough poison from its skin to kill several people. A desert rattlesnake carries a deadly toxin of its own in its head, yet a person could drink it and live. The difference is delivery. Which of the two injects its toxin through a wound, as venom?",
     "answer": "The rattlesnake",
     "choices": [
       "The rattlesnake",
@@ -26464,7 +26464,7 @@
       "Both of them",
       "Neither of them"
     ],
-    "context": "Venom must be INJECTED through a bite, sting, or spine; poison harms on eating, touching, or inhaling. The rattlesnake injects venom through its bite, which is why swallowing that venom is harmless — it is made of proteins too large to cross the gut wall into your blood. The poison-dart frog's toxin sits on its skin and harms on contact or if eaten. Source: Natural History Museum, 'Bite or be bitten' (nhm.ac.uk/discover/bite-or-be-bitten.html).",
+    "context": "Venom must be INJECTED through a bite, sting, or spine; poison harms on eating, touching, or inhaling. The rattlesnake injects venom through its bite, which is why swallowing that venom is harmless: it is made of proteins too large to cross the gut wall into the blood. The poison-dart frog's toxin sits on its skin and harms on contact or if eaten. Source: Natural History Museum, 'Bite or be bitten' (nhm.ac.uk/discover/bite-or-be-bitten.html).",
     "topic": "venom-for-the-hunt"
   },
   {
@@ -26473,7 +26473,7 @@
     "answer": "The breathing muscles",
     "choices": [
       "The breathing muscles",
-      "The blood-clotting system",
+      "The thyroid gland",
       "The heart's valves",
       "The digestive tract"
     ],
@@ -26495,19 +26495,6 @@
   },
   {
     "tier": 3,
-    "question": "A tiny octopus no bigger than a golf ball lives on the shallow reefs of the Pacific and Indian Oceans. Cornered by a curious diver, it suddenly lights up with about 60 electric-blue rings across its yellow skin, and if the diver keeps pressing in, it bites with a beak loaded with tetrodotoxin, one of the most powerful nerve poisons known. Which animal is it?",
-    "answer": "The blue-ringed octopus",
-    "choices": [
-      "The blue-ringed octopus",
-      "The mimic octopus",
-      "The vampire squid",
-      "The reef cuttlefish"
-    ],
-    "context": "The blue-ringed octopus flashes roughly 60 iridescent blue rings as an aposematic (warning) display before biting. Its tetrodotoxin is one of the deadliest nerve toxins known — far more potent than cyanide — and there is no antivenom. Source: Britannica, 'Blue-ringed octopus'; Natural History Museum (nhm.ac.uk). LEGEND.",
-    "topic": "venom-for-the-hunt"
-  },
-  {
-    "tier": 3,
     "question": "A slow, thumb-sized cone snail on a tropical coral reef hunts fast little fish. It stretches a fleshy tube from its shell, fires a single hollow harpoon on a tether, stabs a fish, injects venom and reels the paralyzed meal back in. What is that harpoon made from?",
     "answer": "A modified tooth",
     "choices": [
@@ -26521,7 +26508,7 @@
   },
   {
     "tier": 4,
-    "question": "A fish brushes a jellyfish's trailing tentacle, and one of thousands of microscopic sting-capsules called nematocysts fires: a tightly coiled tube unrolls and drives a barb into the fish in about 3 milliseconds, injecting venom before the fish even feels the touch. How does that speed rank among all the movements biologists have measured in living things?",
+    "question": "A fish brushes a jellyfish's trailing tentacle, and one of thousands of microscopic sting-capsules called nematocysts fires: a tightly coiled tube unrolls and drives a barb into the fish within millionths of a second, injecting venom. How does that speed rank among all the movements biologists have measured in living things?",
     "answer": "One of the fastest movements known",
     "choices": [
       "One of the fastest movements known",
@@ -26529,12 +26516,12 @@
       "A typical nerve-reflex speed",
       "The fastest a muscle can contract"
     ],
-    "context": "On contact a nematocyst fires in roughly 3 milliseconds, driving a spined tube into the skin to inject venom — one of the fastest movements known in all of biology, far quicker than a reflex, a blink, or a muscle twitch. Each is a pre-loaded microscopic harpoon. Source: University of Melbourne AVRU, 'Venomous marine animals — jellyfish'; Firing the Sting, PMC4379534.",
+    "context": "On contact a nematocyst fires in a few millionths of a second, and a 2006 high-speed study clocked the discharge at as little as 700 nanoseconds, driving a spined tube into the skin to inject venom. It is one of the fastest movements known in all of biology, far quicker than a reflex, a blink, or a muscle twitch. Each capsule is a pre-loaded microscopic harpoon. Source: Wikipedia, 'Cnidocyte'; University of Melbourne AVRU, 'Venomous marine animals - jellyfish'.",
     "topic": "venom-for-the-hunt"
   },
   {
     "tier": 4,
-    "question": "A slow cone snail hunting fast-swimming fish skips the harpoon its relatives use. It releases a cloud of a chemical the fish's own body already makes; the cloud drifts in through the fish's gills and drops it into a helpless stupor, and the snail swallows it whole. Which of the fish's own hormones has the snail turned into a weapon?",
+    "question": "A slow cone snail creeps up on a small school of fish. Before it strikes, it releases a cloud of a chemical the fish's own bodies already make; the cloud drifts in through their gills and drops them into a stupor, and the snail engulfs them in its gaping false mouth. Which of the fish's own hormones has the snail turned into a weapon?",
     "answer": "Insulin",
     "choices": [
       "Insulin",
@@ -26542,20 +26529,20 @@
       "Melatonin",
       "Testosterone"
     ],
-    "context": "Certain cone snails release a specialized INSULIN into the water; through the gills it drives the fish into hypoglycemic shock, sedating it — chemistry out-drugging a faster animal. Researchers nicknamed this sedating blend the 'nirvana cabal.' Source: PNAS 2015, 'Specialized insulin is used for chemical warfare by fish-hunting cone snails.' LEGEND.",
+    "context": "Certain cone snails, such as the geography cone, release a specialized INSULIN into the water; through the gills it drives the fish into hypoglycemic shock, sedating a whole school so the snail can engulf it with its distended false mouth before injecting its paralyzing venom. Researchers nicknamed this sedating blend the 'nirvana cabal.' Source: Safavi-Hemami et al., PNAS 2015, 'Specialized insulin is used for chemical warfare by fish-hunting cone snails.'",
     "topic": "venom-for-the-hunt"
   },
   {
     "tier": 4,
-    "question": "A golf-ball-sized octopus of Pacific tide pools bites with tetrodotoxin, one of the deadliest poisons on Earth, enough to kill a person in minutes. Yet when biologists read its DNA looking for the recipe, they found no gene anywhere that could build the toxin: the octopus is not making it. Where does the toxin come from?",
+    "question": "A golf-ball-sized octopus of Pacific tide pools bites with tetrodotoxin, one of the deadliest poisons on Earth, enough to kill a person in minutes. Yet biologists suspect the octopus does not make the toxin itself. Where do most of them think it comes from?",
     "answer": "Bacteria living in its salivary glands",
     "choices": [
       "Bacteria living in its salivary glands",
-      "A gland behind each blue ring",
-      "The venom of prey it eats",
-      "Sunlight stored in its skin"
+      "A gland hidden behind each blue ring",
+      "Stinging cells stolen from jellyfish it eats",
+      "Microscopic algae it filters from the water"
     ],
-    "context": "The octopus does not make its own toxin — symbiotic bacteria in its salivary glands produce the tetrodotoxin. That also makes it BOTH venomous (its bite injects the toxin) and poisonous (harmful if eaten). Source: Britannica, 'Blue-ringed octopus'; Natural History Museum, 'Bite or be bitten' (nhm.ac.uk).",
+    "context": "Tetrodotoxin-making bacteria have been cultured from the octopus's salivary glands, and bacteria remain the leading explanation, but the amounts were tiny and the true origin is still unresolved. The toxin makes the octopus BOTH venomous (its bite injects it) and poisonous (harmful if eaten). Source: James Cook University news, November 2020; Marine Drugs 2013 (PMC3766859); Britannica, 'Blue-ringed octopus'.",
     "topic": "venom-for-the-hunt"
   },
   {
@@ -26574,9 +26561,9 @@
   {
     "tier": 5,
     "question": "Long before any snake existed, a Late Triassic reptile on the crocodile-and-dinosaur branch already delivered venom. Today it survives only as fossilized teeth in the rock. Laid out in order, those teeth are prized because they preserve which rare record?",
-    "answer": "A step-by-step shift from an open surface groove to a fully enclosed internal tube",
+    "answer": "A step-by-step shift from an open groove to an enclosed tube",
     "choices": [
-      "A step-by-step shift from an open surface groove to a fully enclosed internal tube",
+      "A step-by-step shift from an open groove to an enclosed tube",
       "A step-by-step shift from a crushing molar into a sharp slicing blade",
       "The earliest known bite marks left by one predator upon another",
       "A single fang regrown and resharpened dozens of times in one lifetime"
@@ -26586,20 +26573,20 @@
   },
   {
     "tier": 1,
-    "question": "Deep in the western Pacific Ocean, about a kilometer down in the cold black water, a slender white vase sits on the muddy seafloor. It is a Venus flower basket, a kind of sponge, and its whole cage-like skeleton is woven from a lattice of long, thin spikes called spicules. What are those spikes made of?",
-    "answer": "Silica — the same stuff as glass",
+    "question": "A Venus flower basket, a sponge shaped like a slender white vase, stands hundreds of meters down in the western Pacific. Its cage-like skeleton is built of thin spikes, or spicules. What are they made of?",
+    "answer": "Silica, like window glass",
     "choices": [
-      "Silica — the same stuff as glass",
-      "Coral limestone",
-      "Woven seaweed fiber",
-      "Hardened tree resin"
+      "Silica, like window glass",
+      "Limestone, like coral",
+      "Bone, like a fish's spine",
+      "Resin, like pine sap"
     ],
     "context": "The Venus's flower basket (Euplectella aspergillum) is a deep-sea glass sponge whose entire skeleton is woven from silica, the same material as glass, built into a delicate white latticework cage shaped like a vase or basket, roughly 10 to 30 cm (4 to 12 inches) tall. Source: https://en.wikipedia.org/wiki/Venus'_flower_basket",
     "topic": "venuss-flower-basket-euplectella-aspergillum"
   },
   {
     "tier": 2,
-    "question": "A pair of baby shrimp squeeze in through the tiny openings in the walls of a Venus flower basket, a deep-sea sponge shaped like a slender vase. They settle inside, feed on scraps that drift in and keep the inner walls clean. As they keep growing, something happens that they never planned for. What is it?",
+    "question": "A pair of baby shrimp squeeze in through the tiny openings in the walls of a Venus flower basket, a deep-sea sponge shaped like a slender vase. They settle inside, feed on scraps that drift in and keep the inner walls clean. What becomes of the pair as the months go by?",
     "answer": "They grow too big to ever get back out",
     "choices": [
       "They grow too big to ever get back out",
@@ -26612,12 +26599,12 @@
   },
   {
     "tier": 3,
-    "question": "A Venus flower basket stands upright about a kilometer down, its open top facing into a slow, steady current that brings it food. It must stay upright to feed, but the seafloor there is soft mud with no rock or reef to grip. How does it hold itself up?",
+    "question": "A Venus flower basket stands upright on the deep seafloor, its open top facing into a slow, steady current that brings it food. It must stay upright to feed, but the seafloor there is soft mud with no rock or reef to grip. How does it hold itself up?",
     "answer": "A tuft of hair-thin glass threads driven into the mud",
     "choices": [
       "A tuft of hair-thin glass threads driven into the mud",
-      "Suckers that clamp onto passing fish",
-      "A heavy stone it swallows for ballast",
+      "A wide flat base spread out like a snowshoe",
+      "A sticky pad of glue cemented in the mud",
       "Long muscular roots that dig downward"
     ],
     "context": "The sponge anchors to the muddy deep seafloor with a tuft of glass threads — spun-glass fibers about 5 to 20 cm long and as thin as a human hair — that hold it upright in the current like a base of spun glass. Source: https://www.pnas.org/content/101/10/3358.full",
@@ -26633,7 +26620,7 @@
       "Flex toward drifting food and grip it like tiny fingers",
       "Ring with sound to scare off circling deep-sea hunters"
     ],
-    "context": "Each thread is a natural fibre-optic cable: a core of pure silica about two micrometres across, wrapped around a central organic filament and sheathed in a finely layered shell that works just like the optical cladding of a telecom cable -- and it carries light just as well. Because the sponge grows the thread in cold seawater instead of a furnace, it can lace the glass with impurities such as sodium that IMPROVE light transmission but get destroyed in high-temperature factory glass. And unlike brittle manufactured fibre, you can tie the sponge's thread in a knot without snapping it. Source: Sundar, Yablon, Grazul, Ilan & Aizenberg, 'Fibre-optical features of a glass sponge,' Nature vol. 424, pp. 899-900 (2003), https://www.nature.com/articles/424899a ; Scientific American, 'Sea Sponge Inspires Better Fiber-Optic Cables.'",
+    "context": "Each thread is a natural fibre-optic cable: a core of pure silica about two micrometres across, wrapped around a central organic filament and sheathed in a finely layered shell that works just like the optical cladding of a telecom cable, and it carries light much as a telecom fibre does. Because the sponge grows the thread in cold seawater instead of a furnace, it can lace the glass with impurities such as sodium that IMPROVE light transmission but get destroyed in high-temperature factory glass. And unlike brittle manufactured fibre, the sponge's thread can be tied in a knot without snapping. Source: Sundar, Yablon, Grazul, Ilan & Aizenberg, 'Fibre-optical features of a glass sponge,' Nature vol. 424, pp. 899-900 (2003), https://www.nature.com/articles/424899a ; Scientific American, 'Sea Sponge Inspires Better Fiber-Optic Cables.'",
     "topic": "venuss-flower-basket-euplectella-aspergillum"
   },
   {
@@ -26646,12 +26633,12 @@
       "It gave way first but sprang back unharmed",
       "It held less, though it bent much further"
     ],
-    "context": "The sponge's cage is no plain grid: a square lattice is overlaid with a DOUBLE set of parallel diagonal struts fused across it in a checkerboard pattern. Harvard engineers Matheus Fernandes, James Weaver and Katia Bertoldi 3D-printed rival lattice shapes and ran finite-element buckling tests, and found the paired-diagonal design is over 20% stronger -- higher buckling resistance for the same amount of material -- than the criss-cross lattice humans have braced bridges and towers with since Ithiel Town patented it in the 1820s. The sponge quietly solved a load-bearing problem better than 200 years of human engineering. Source: Fernandes, Weaver, Bertoldi et al., 'Mechanically robust lattices inspired by deep-sea glass sponges,' Nature Materials vol. 20 (2021), https://www.nature.com/articles/s41563-020-0798-1 ; Harvard SEAS news, https://seas.harvard.edu/news/marine-sponges-inspire-next-generation-skyscrapers-and-bridges.",
+    "context": "The sponge's cage is no plain grid: a square lattice is overlaid with a DOUBLE set of parallel diagonal struts fused across it in a checkerboard pattern. Harvard engineers Matheus Fernandes, James Weaver and Katia Bertoldi 3D-printed rival lattice shapes and ran finite-element buckling tests, and found the paired-diagonal design is over 20% stronger (higher buckling resistance for the same amount of material) than the criss-cross lattice humans have braced bridges and towers with since Ithiel Town patented it in the 1820s. Source: Fernandes, Weaver, Bertoldi et al., 'Mechanically robust lattices inspired by deep-sea glass sponges,' Nature Materials vol. 20 (2021), https://www.nature.com/articles/s41563-020-0798-1 ; Harvard SEAS news, https://seas.harvard.edu/news/marine-sponges-inspire-next-generation-skyscrapers-and-bridges.",
     "topic": "venuss-flower-basket-euplectella-aspergillum"
   },
   {
     "tier": 1,
-    "question": "A lizard lunges at a vinegaroon, a small desert arachnid of the American Southwest also called a whip scorpion, which has no stinger and no venom anywhere in its body. The vinegaroon swings its rear end up toward the attacker's face and fires a fine spray. What ordinary kitchen smell does the spray give off?",
+    "question": "A lizard lunges at a whip scorpion, a desert arachnid with no stinger and no venom. It swings its rear toward the lizard's face and fires a fine spray. What kitchen smell does the spray give off?",
     "answer": "Vinegar",
     "choices": [
       "Vinegar",
@@ -26690,7 +26677,7 @@
   },
   {
     "tier": 3,
-    "question": "A vinegaroon's spray is mostly one sharp acid, and on its own that acid does almost nothing to a cockroach: the roach walks away unharmed. But the vinegaroon blends a second, oily acid into the mix, and now the spray turns lethal. Researchers propose that the oily acid breaks through one particular barrier. What does it break through?",
+    "question": "A vinegaroon's spray is mostly one sharp acid, and on its own even strong vinegar acid fails to soak into a cockroach. Blended with a second, oily acid, the same spray soaks straight in. Researchers propose that the oily acid gets past one particular barrier. What is it?",
     "answer": "The waxy coating on the roach's shell",
     "choices": [
       "The waxy coating on the roach's shell",
@@ -26698,12 +26685,12 @@
       "The breathing holes along the roach's sides",
       "The nerve cord running down the roach"
     ],
-    "context": "The oily ingredient is caprylic acid. A roach's shell is coated in wax that repels the watery vinegar-acid, so even 85% acetic acid beads up and rolls off. Researchers propose the caprylic acid dissolves that waxy cuticle, letting the acid soak in and become lethal to insects like fly larvae. This penetration mechanism is a proposed finding, not fully settled. Source: The Transient Biologist, citing Eisner/Meinwald defensive-secretion research (thetransientbiologist.wordpress.com).",
+    "context": "The oily ingredient is caprylic (octanoic) acid. Thomas Eisner, Jerrold Meinwald and colleagues (Journal of Insect Physiology, 1961) found that the natural spray readily penetrates a cockroach's cuticle and kills fly larvae, while 85 percent acetic acid on its own does neither. A roach's shell is coated in wax that repels the watery acid, and the usual reading is that the caprylic acid dissolves that wax and lets the acid in. Source: J. Meinwald, Engineering & Science (Caltech), calteches.library.caltech.edu/599/2/Meinwald.pdf; Eisner, Meinwald, Monro & Ghent 1961.",
     "topic": "vinegaroon-the-whip-scorpion-that-sprays-vinegar"
   },
   {
     "tier": 1,
-    "question": "A viperfish, a hand-sized hunter with a huge head, lurks in the pitch-black midwater of the deep ocean. Its needle teeth are too long for its closed mouth to hold, and its jaws gape in a fixed, toothy grin. Where do the tips of those fangs end up?",
+    "question": "A viperfish lurks in the pitch-black midwater of the deep ocean. Its needle teeth are too long for its closed mouth to hold, so its jaws gape in a fixed, toothy grin. Where do the fang tips end up?",
     "answer": "Curving back until the tips reach almost to its own eyes",
     "choices": [
       "Curving back until the tips reach almost to its own eyes",
@@ -26716,7 +26703,7 @@
   },
   {
     "tier": 1,
-    "question": "A viperfish hunts the pitch-dark deep ocean, more than a kilometer below the surface, with two long front fangs jutting straight up from its lower jaw. When a smaller fish drifts by, it lunges and its jaws slam shut. What do those upthrust fangs form around the prey as they close?",
+    "question": "A viperfish has two long front fangs jutting straight up from its lower jaw. When a smaller fish drifts by in the dark, it lunges and its jaws slam shut. What do those fangs form around the prey?",
     "answer": "A cage of teeth the prey cannot escape from",
     "choices": [
       "A cage of teeth the prey cannot escape from",
@@ -26729,13 +26716,13 @@
   },
   {
     "tier": 2,
-    "question": "A viperfish can barely see anything more than a few centimeters away in the black midwater, but it carries a tiny bead of living light, a photophore, at the tip of a long spine curving up over its back. Everything down there is drawn to a glimmer. How does the viperfish turn that one glow into a full belly?",
-    "answer": "It waves the spine like a fishing pole and flashes the light to lure prey onto its fangs",
+    "question": "A viperfish carries a tiny bead of living light, a photophore, at the tip of a long spine curving up over its back. Down in the black deep sea, how does it turn that one glow into a full belly?",
+    "answer": "It waves the spine like a fishing pole to lure prey onto its fangs",
     "choices": [
-      "It waves the spine like a fishing pole and flashes the light to lure prey onto its fangs",
-      "It sweeps the spine across the seafloor to flush hidden prey out of the mud",
-      "It beams the light into prey eyes to blind them while it charges",
-      "It holds the light steady as a warning that keeps rival hunters away"
+      "It waves the spine like a fishing pole to lure prey onto its fangs",
+      "It sweeps the spine across the seafloor to flush prey out of the mud",
+      "It beams the light into prey's eyes to blind them as it charges",
+      "It flicks the glow on and off to signal a hunting partner"
     ],
     "context": "The viperfish dangles a glowing photophore on the tip of a long dorsal spine and waves it over its own head like a fishing pole, flashing the light on and off to lure smaller fish right onto its fangs. (Source: seasky.org/deep-sea/viperfish.html)",
     "topic": "viperfish-chauliodus"
@@ -26743,9 +26730,9 @@
   {
     "tier": 2,
     "question": "A viperfish glows along its belly, where two rows of tiny light organs run its whole length. In the pitch dark that glow seems suicidal, a beacon for every hunter around, yet the belly lights are a survival trick. How do they keep the viperfish hidden?",
-    "answer": "They match the dim glow drifting down from the surface so the fish casts no dark silhouette",
+    "answer": "They match the dim light from above so it casts no silhouette",
     "choices": [
-      "They match the dim glow drifting down from the surface so the fish casts no dark silhouette",
+      "They match the dim light from above so it casts no silhouette",
       "They flash a sudden burst that startles the attacker into fleeing",
       "They paint fake glowing eyes to make the fish look far larger",
       "They leave a cloud of glowing particles for the fish to escape behind"
@@ -26755,7 +26742,7 @@
   },
   {
     "tier": 3,
-    "question": "A slender viperfish, only about 30 centimeters long, hunts a mile down, where food is scarce and days can pass between meals. It swallows whatever it catches, sometimes prey 20 to over 50 percent bigger than itself. What lets so small a fish gulp down a meal larger than it is?",
+    "question": "A slender viperfish, often no longer than a hand, hunts hundreds of meters down, where days can pass between meals. It swallows whatever it catches, sometimes prey 20 to over 50 percent bigger than itself. What lets so small a fish gulp down a meal larger than it is?",
     "answer": "It unhinges its skull and jaw and expands its whole stomach",
     "choices": [
       "It unhinges its skull and jaw and expands its whole stomach",
@@ -26768,7 +26755,7 @@
   },
   {
     "tier": 3,
-    "question": "Striking blind in the deep-sea dark, a viperfish sometimes locks its teeth into a fish far too big for it to swallow. Its long fangs point inward and cannot easily let go, so its greatest weapon becomes its doom. What happens to a viperfish that bites off more than it can chew?",
+    "question": "Striking blind in the deep-sea dark, a viperfish sometimes locks its teeth into a fish far too big for it to swallow. Its long fangs curve inward. What happens to a viperfish that bites off more than it can chew?",
     "answer": "The trapped meal jams on its teeth and it slowly starves to death",
     "choices": [
       "The trapped meal jams on its teeth and it slowly starves to death",
@@ -26859,13 +26846,13 @@
   },
   {
     "tier": 1,
-    "question": "A big dark bird glides high over open country on a warm afternoon without a single wingbeat, its wings held in a shallow V. It rocks gently from side to side as it circles a rising column of warm air. Which bird is it?",
+    "question": "A big dark bird circles high over open country on a warm afternoon without a single wingbeat. Its wings are held in a shallow V, and it rocks gently from side to side. Which bird is it?",
     "answer": "Turkey vulture",
     "choices": [
       "Turkey vulture",
-      "Great blue heron",
-      "Snowy owl",
-      "Mallard duck"
+      "Bald eagle",
+      "Common raven",
+      "Great blue heron"
     ],
     "context": "The turkey vulture soars on rising columns of warm air called thermals, wings held in a shallow V and spanning up to about 6 feet (1.8 m). Riding thermals lets it circle for hours without flapping, saving energy while it searches the ground below. Source: Wikipedia, 'Turkey vulture' (https://en.wikipedia.org/wiki/Turkey_vulture).",
     "topic": "vulture"
@@ -26876,74 +26863,61 @@
     "answer": "Its head and neck",
     "choices": [
       "Its head and neck",
-      "Its legs and feet",
+      "Its belly and chest",
       "Its wingtips",
       "Its tail"
     ],
-    "context": "The vulture's bald head is an adaptation, not ugliness. To reach meat it plunges its head deep inside a carcass, and a feathery head would trap rotting scraps and bacteria; bare skin stays clean and washes off, and it can bake sterile in the sun. Source: Cornell Lab Bird Academy / Natural Connections, 'Spring cleaning with turkey vultures'.",
+    "context": "The vulture's bald head is an adaptation, not ugliness. The long-told reason: to reach meat it plunges its head deep inside a carcass, and a feathery head would trap rotting scraps and bacteria, while bare skin stays clean and can bake sterile in the sun. A 2008 study of griffon vultures (Ward and colleagues, Journal of Thermal Biology) suggested the bare skin also helps a vulture control its heat. Source: Cornell Lab Bird Academy / Natural Connections, 'Spring cleaning with turkey vultures'; Ward et al. 2008.",
     "topic": "vulture"
   },
   {
     "tier": 3,
     "question": "A carcass rots under a thick forest canopy, hidden from any bird that hunts by sight, as almost every bird does. Yet a turkey vulture circling far above drops straight down onto it. How does it find a meal it cannot see?",
-    "answer": "It smells it — homing in on the faint gas of early decay",
+    "answer": "It smells the faint gas of early decay rising from the body",
     "choices": [
-      "It smells it — homing in on the faint gas of early decay",
+      "It smells the faint gas of early decay rising from the body",
       "It hears the buzz of the flies already swarming the body",
       "It feels the warmth the decaying body gives off from far above",
-      "It follows the crows and ravens that spotted the body first"
+      "It remembers where it found bodies on earlier flights"
     ],
-    "context": "The turkey vulture is one of the very few birds that hunt by SMELL, a rare skill in the bird world. It homes in on ethyl mercaptan, the sulfurous gas of early decay, at just a few parts per trillion, and its olfactory brain lobe is enormous compared to other birds'. Legend-tier wonder. Source: Wikipedia, 'Turkey vulture'; Cornell Lab Bird Academy.",
+    "context": "The turkey vulture is one of the very few birds that hunt by SMELL, a rare skill in the bird world. It homes in on ethyl mercaptan, the sulfurous gas of early decay, in traces said to be as faint as a few parts per trillion, and its olfactory brain lobe is enormous compared to other birds'. Source: Wikipedia, 'Turkey vulture'; Cornell Lab Bird Academy.",
     "topic": "vulture"
   },
   {
     "tier": 3,
     "question": "A vulture tears into flesh that has been rotting for days, a meal crawling with germs that would poison almost any other animal, and simply digests it unharmed. The secret sits in its gizzard. What is that stomach fluid like?",
-    "answer": "Roughly as corrosive as battery acid, near the very bottom of the acid scale",
+    "answer": "About as corrosive as battery acid, near the bottom of the pH scale",
     "choices": [
-      "Roughly as corrosive as battery acid, near the very bottom of the acid scale",
+      "About as corrosive as battery acid, near the bottom of the pH scale",
       "A thick alkaline slime that coats and neutralizes the meat",
       "No sharper than a house cat's stomach, just paired with a fast gut",
       "A cocktail of antibiotics the bird's own body brews up"
     ],
-    "context": "A vulture's gizzard has a pH of slightly above 0 — about as corrosive as battery acid — while a human stomach sits around pH 2. This acid bath is the vulture's headline superpower, letting it eat rotten flesh that would sicken almost anything else. Legend-tier wonder. Source: San Diego Zoo Wildlife Alliance, 'Vultures: The Gastronic Marvel'.",
+    "context": "A vulture's gizzard acid has a pH of about 1 or even lower (some sources put it just above 0), about as corrosive as battery acid, while a human stomach usually sits nearer pH 2. This acid bath lets it eat rotten flesh that would sicken almost anything else. Source: Wikipedia, 'Vulture'; San Diego Zoo Wildlife Alliance, on vulture digestion.",
     "topic": "vulture"
   },
   {
     "tier": 4,
-    "question": "A cow dies of anthrax, its carcass loaded with hardy spores that can survive in soil for decades and sicken almost anything that touches them. A turkey vulture arrives and eats its fill, then flies off to roost miles away, perfectly healthy. Where do the anthrax spores end up?",
-    "answer": "Broken apart inside the vulture, never leaving its body alive",
+    "question": "A turkey vulture back from a meal at a roadside carcass perches on a fence post. Again and again it sends its own liquid droppings streaming down its bare legs, until they streak white. What two jobs does the waste do for it?",
+    "answer": "It cools the blood as it dries, and its acid kills bacteria",
     "choices": [
-      "Broken apart inside the vulture, never leaving its body alive",
-      "Riding in its gut to the roost, seeded across fresh ground in its droppings",
-      "Wiped harmlessly onto its bare legs, then dried in the sun",
-      "Coughed back up in a pellet the vulture leaves at the carcass"
-    ],
-    "context": "The vulture's stomach acid is so corrosive it dissolves and destroys the microbes that cause anthrax, botulism, cholera, rabies and tuberculosis — diseases that would kill other scavengers. By eating diseased carcasses and destroying the germs inside its own gut, the vulture works as a walking disease-disposal unit that stops outbreaks from spreading. Legend-tier wonder. Source: San Diego Zoo Wildlife Alliance, 'Vultures: The Gastronic Marvel'; Cornell Lab Bird Academy.",
-    "topic": "vulture"
-  },
-  {
-    "tier": 4,
-    "question": "A vulture on a scorching day cannot sweat, and panting only does so much. So it soaks its own bare legs with its liquid waste on purpose, streaking them white. What two jobs does the waste do for it?",
-    "answer": "The waste evaporates to chill its blood, and its acidity kills the bacteria on its feet",
-    "choices": [
-      "The waste evaporates to chill its blood, and its acidity kills the bacteria on its feet",
+      "It cools the blood as it dries, and its acid kills bacteria",
       "It signals other vultures to a carcass, and warns off rival birds",
       "It waterproofs the skin, and masks the bird's scent from predators",
       "It hardens into a protective crust, and stores water for later"
     ],
-    "context": "This behavior is called urohidrosis. A vulture urinates and defecates on its own legs; the evaporating liquid chills the blood in its bare legs and feet, and the acidic waste also kills bacteria picked up from walking on carcasses, streaking the legs white. Legend-tier wonder. Source: Wikipedia, 'Turkey vulture'.",
+    "context": "This behavior is called urohidrosis. A vulture excretes onto its own legs; the evaporating liquid chills the blood in its bare legs and feet, and the acidic waste is thought to kill bacteria picked up from walking on carcasses, streaking the legs white. Source: Wikipedia, 'Turkey vulture'.",
     "topic": "vulture"
   },
   {
     "tier": 1,
-    "question": "Wallace's flying frog, a big green tree frog, leaps from a high branch in the rainforest of Borneo and sails as far as fifty feet through the air to the next trunk, instead of climbing down and hopping across the ground. What lets it ride the air across such a gap?",
-    "answer": "Its toes are fully webbed to the tips, so the four outspread feet open like parachutes",
+    "question": "Wallace's flying frog, a big green tree frog of Borneo, leaps from a high branch and sails as far as fifty feet to the next trunk instead of climbing down. What lets it ride the air?",
+    "answer": "Its webbed toes spread its feet into four little parachutes",
     "choices": [
-      "Its toes are fully webbed to the tips, so the four outspread feet open like parachutes",
+      "Its webbed toes spread its feet into four little parachutes",
       "It beats its front legs like stubby wings to stay aloft",
-      "It puffs its lungs full of air and floats like a balloon",
-      "It flicks a long tail to steer and catch an updraft"
+      "It flares its ribs out into a pair of gliding wings",
+      "It leaps so hard from the branch that it simply sails across"
     ],
     "context": "Wallace's flying frog (Rhacophorus nigropalmatus) of Borneo, Sumatra and the Malay Peninsula glides tree to tree by spreading all four feet, whose toes are fully webbed right to the tips so the outspread feet act like parachutes. Catching air with its feet and loose skin flaps along its limbs, it can glide 50 feet (15 m) or more. Source: https://en.wikipedia.org/wiki/Wallace's_flying_frog ; https://www.nationalgeographic.com/animals/amphibians/facts/wallaces-flying-frog",
     "topic": "wallaces-flying-frog-the-frog-that-parachutes-on-webbed-feet"
@@ -26951,9 +26925,9 @@
   {
     "tier": 2,
     "question": "A Wallace's flying frog glides up to fifty feet from a high branch toward the next tree in the rainforest of Borneo. At the end of the glide it must stop dead on a slick, wet leaf or a smooth trunk without bouncing off and falling to the forest floor. What lets it grab hold and land softly?",
-    "answer": "Oversized sticky pads on its toe tips that cling to smooth surfaces",
+    "answer": "Oversized sticky pads on the tips of its toes",
     "choices": [
-      "Oversized sticky pads on its toe tips that cling to smooth surfaces",
+      "Oversized sticky pads on the tips of its toes",
       "Tiny hooked claws that dig into the bark",
       "A ring of suction cups around its belly",
       "Sticky mucus it sprays ahead of itself before touchdown"
@@ -26964,9 +26938,9 @@
   {
     "tier": 2,
     "question": "Wallace's flying frog lives nearly all its life up in the canopy of the Southeast Asian rainforest, coming down only to breed over a rainforest pool. Instead of laying her eggs in the pool, what does the female build on a branch above it?",
-    "answer": "A whipped-up foam nest, so the hatched tadpoles drop straight into the water below",
+    "answer": "A frothy nest of whipped foam hung over the water",
     "choices": [
-      "A whipped-up foam nest, so the hatched tadpoles drop straight into the water below",
+      "A frothy nest of whipped foam hung over the water",
       "A cup of chewed leaves glued to the branch with tree sap",
       "A cluster of eggs stuck under a broad leaf so rain drips them down",
       "A ball of leaves she folds shut around the eggs on the twig"
@@ -26976,7 +26950,7 @@
   },
   {
     "tier": 1,
-    "question": "Out on the Arctic ice lies a walrus, wrinkled and brown, with a bristly moustache and two enormous ivory tusks curving down from its upper jaw, each as long as a grown man's arm. Where the tusks meet the skull, they turn out to be a very familiar body part, hugely overgrown. What are they?",
+    "question": "A walrus lies on the Arctic ice with a bristly moustache and two ivory tusks curving down from its upper jaw, each up to about a meter long. What are those tusks?",
     "answer": "Enormously overgrown canine teeth",
     "choices": [
       "Enormously overgrown canine teeth",
@@ -26989,25 +26963,25 @@
   },
   {
     "tier": 1,
-    "question": "Walruses climb out of the freezing Arctic sea onto beaches and floating slabs of ice to rest side by side between dives for clams on the seafloor. Roughly how many of them pile into a single one of these resting herds?",
-    "answer": "Thousands, packed shoulder to shoulder",
+    "question": "Walruses climb out of the Arctic sea onto beaches and ice floes to rest side by side between dives for clams. How many can crowd into the biggest of these resting herds?",
+    "answer": "Tens of thousands",
     "choices": [
       "A dozen or so",
-      "A hundred at most",
-      "A family of four or five",
-      "Thousands, packed shoulder to shoulder"
+      "A few hundred",
+      "About fifty",
+      "Tens of thousands"
     ],
     "context": "Walruses haul out onto beaches and ice in enormous crowds packed shoulder to shoulder that can number in the thousands, and some Arctic haulouts reach tens of thousands of animals. Source: https://www.worldwildlife.org/resources/explainers/what-is-a-walrus-haulout-and-what-does-it-mean-for-the-planet/",
     "topic": "walrus"
   },
   {
     "tier": 2,
-    "question": "A walrus dives to the pitch-dark Arctic seafloor for clams hidden in soft mud, where even its big eyes are useless. Yet it finds and plucks out a shellfish faster than any human diver could. What does it use to feel out each hidden shell and tell it from the sand?",
+    "question": "A walrus dives to the pitch-dark Arctic seafloor for clams hidden in soft mud, where its eyes are no help at all. What does it use to feel out each hidden shell and tell it from the sand?",
     "answer": "Hundreds of stiff, super-sensitive whiskers",
     "choices": [
       "Hundreds of stiff, super-sensitive whiskers",
       "Faint electric pulses from its tusks",
-      "A glowing lure dangled from its chin",
+      "A keen nose that sniffs out clams underwater",
       "Sonar clicks bounced off the mud"
     ],
     "context": "A walrus's snout carries roughly 400 to 700 stiff vibrissae that it sweeps across the dark seafloor mud to feel out buried clams, telling shell from sand by touch alone. Source: https://marinesanctuary.org/blog/sea-wonder-walrus/",
@@ -27015,39 +26989,39 @@
   },
   {
     "tier": 2,
-    "question": "A walrus at the edge of the pack ice tries to heave its huge, blubbery body up out of the freezing water, and the way it does so earned it the Latin name Odobenus, 'tooth-walker.' It uses its two long ivory tusks as no other animal does. What does it do with them?",
-    "answer": "Hooks its tusks over ice and hauls itself up",
+    "question": "An Arctic walrus carries two long ivory tusks, and its scientific name, Odobenus, means 'tooth-walker.' The name comes from one particular thing a walrus does with those tusks. What is it?",
+    "answer": "Hooks them over the ice edge to haul itself out",
     "choices": [
-      "Hooks its tusks over ice and hauls itself up",
-      "Chatters its teeth to echo-locate prey",
-      "Walks the seabed on its two long tusks",
-      "Grinds its molars to grip slick rocks"
+      "Hooks them over the ice edge to haul itself out",
+      "Digs buried clams out of the mud with them",
+      "Cracks clam shells open between their tips",
+      "Sweeps them like oars to row through the water"
     ],
-    "context": "Odobenus means 'tooth-walker' — a walrus hooks its tusks over the edge of an ice floe and hauls its huge body up out of the water, in effect walking on its teeth. Source: https://www.pbs.org/wnet/nature/blog/walrus-fact-sheet/",
+    "context": "Odobenus means 'tooth-walker': a walrus hooks its tusks over the edge of an ice floe and hauls its huge body up out of the water, in effect walking on its teeth. Tusks were once thought to dig clams out of the seabed; in fact they drag through the mud while the snout does the digging. Source: https://www.pbs.org/wnet/nature/blog/walrus-fact-sheet/ ; Wikipedia, 'Walrus'.",
     "topic": "walrus"
   },
   {
     "tier": 3,
-    "question": "Down on the muddy Arctic seafloor, a walrus clamps its rubbery lips over a closed clam shell. A second or two later the soft meat slides into its mouth, and the empty shell drops away, uncracked and unchewed. Its mouth works more like a kitchen gadget than a jaw. How does it empty the shell?",
+    "question": "Down on the muddy Arctic seafloor, a walrus clamps its rubbery lips over a closed clam. A second or two later the soft meat is in its mouth and the shell drops away. How does it get the meat out?",
     "answer": "A piston-like pull of the tongue vacuums it out",
     "choices": [
       "A piston-like pull of the tongue vacuums it out",
       "A crushing bite that shatters the shell",
       "Grinding molars mash the shell to bits",
-      "A jet of water blasted in to flush the meat"
+      "Its tusk tips pry the two shell halves apart"
     ],
     "context": "A walrus clamps its lips over the shell and pulls its tongue back like a piston, creating powerful suction that sucks the soft clam meat straight out. Source: https://www.pbs.org/wnet/nature/the-weird-way-walruses-eat-with-their-tongue/33419/",
     "topic": "walrus"
   },
   {
-    "tier": 4,
-    "question": "Swimming in the icy Arctic sea, a walrus keeps a mesh of tiny blood-vessel shortcuts in its tough grey skin clamped shut, so its warm blood stays deep in its body. Then it hauls out onto the pack ice to bake in the sun, and the shortcuts snap wide open, sending a huge rush of blood through them. Where does that blood suddenly go?",
-    "answer": "Straight to the skin's surface",
+    "tier": 3,
+    "question": "Swimming in the icy Arctic sea, a walrus keeps tiny blood-vessel shortcuts in its skin clamped shut, holding its warm blood deep inside. Then it hauls out onto a beach to bask in the sun, and the shortcuts snap open. What happens to the walrus?",
+    "answer": "It flushes pink, shedding heat like a radiator",
     "choices": [
-      "Straight to the skin's surface",
-      "Pooled deep around the heart",
-      "Rerouted to the swimming muscles",
-      "Shunted into the blubber layer"
+      "It flushes pink, shedding heat like a radiator",
+      "It turns ghostly pale to reflect the sunlight",
+      "It darkens to brown to soak up the warmth",
+      "It streaks white as salt dries on its skin"
     ],
     "context": "The pink flush works through blood-vessel shortcuts called arterio-venous anastomoses (AVAs); when they open, blood floods the skin's surface to dump body heat like a radiator, turning the walrus pink. Source: https://www.gi.alaska.edu/alaska-science-forum/why-does-walrus-blush",
     "topic": "walrus"
@@ -27145,33 +27119,33 @@
   },
   {
     "tier": 3,
-    "question": "Pakicetus, a wolf-sized hunter with long jaws and sharp meat-eating teeth, ran on four legs beside ancient rivers 50 million years ago. Nothing about it looked like a whale, yet one hidden clue in its skull places it among the whales. What was the clue?",
-    "answer": "A whale-only structure in its ear",
+    "question": "Pakicetus, a wolf-sized hunter with long jaws and sharp meat-eating teeth, ran on four legs beside ancient rivers 50 million years ago, and paleontologists dug its bones from the hills of Pakistan. One clue in its fossil places it among the whales. What was the clue?",
+    "answer": "A thick ear bone shaped like a whale's",
     "choices": [
-      "A whale-only structure in its ear",
+      "A thick ear bone shaped like a whale's",
       "Blubber preserved under its skin",
-      "A blowhole opening on its head",
-      "Fins where its front legs should be"
+      "A blowhole opening on top of its head",
+      "Cone-shaped teeth like a dolphin's"
     ],
-    "context": "Pakicetus was a wolf-sized, four-legged land animal (1 to 2 m long) that lived in and around water, yet its ear already carried the whale involucrum, the clue linking this running land beast to modern whales. Source: UC Berkeley Evolution 101; Thewissen et al. 2001, Pakicetus attocki.",
+    "context": "Pakicetus was a wolf-sized, four-legged land animal (1 to 2 m long) that lived in and around water, yet its ear already carried the involucrum, the thickened ear bone found otherwise only in whales and their closest fossil kin such as Indohyus, the clue linking this running land beast to modern whales. Source: UC Berkeley Evolution 101; Thewissen et al. 2001, Pakicetus attocki; Wikipedia, 'Indohyus'.",
     "topic": "whale-evolution-pakicetus-to-modern"
   },
   {
     "tier": 3,
-    "question": "Basilosaurus, a whale shaped like a sea serpent and 15 to 18 meters long, cruised the oceans some 40 million years ago without ever coming ashore. Far down its long body, scientists found something startling for such a creature. What did they find?",
+    "question": "Basilosaurus, a whale shaped like a sea serpent and 15 to 20 meters long, cruised the oceans some 40 million years ago without ever coming ashore. Far down its long body, scientists found something startling for such a creature. What did they find?",
     "answer": "A pair of tiny back legs with knees and toes",
     "choices": [
       "A pair of tiny back legs with knees and toes",
       "A set of gills tucked behind its ribs",
       "A row of bony plates along its spine",
-      "A second smaller mouth near its tail"
+      "A long bony spike at the tip of its tail"
     ],
-    "context": "Basilosaurus still had tiny back legs, complete with a working knee joint and little three-toed feet, far too small to walk or help it swim, a leftover from its land-walking past. LEGEND-level fossil. Source: Gingerich et al. 1990, 'Hind Limbs of Eocene Basilosaurus'; Wikipedia: Basilosaurus.",
+    "context": "Basilosaurus still had tiny back legs, complete with a working knee joint and little three-toed feet, far too small to walk or help it swim, a leftover from its land-walking past. Source: Gingerich et al. 1990, 'Hind Limbs of Eocene Basilosaurus'; Wikipedia: Basilosaurus.",
     "topic": "whale-evolution-pakicetus-to-modern"
   },
   {
     "tier": 3,
-    "question": "Whalers off Vancouver Island caught a humpback in July 1919 with something no whale should have: real limbs sticking four feet out of its body. Roy Chapman Andrews, an explorer, took a close look at the bones. What did he say they were?",
+    "question": "Whalers off Vancouver Island caught a humpback in July 1919 with something no whale should have: strange growths sticking about four feet out of its body. Roy Chapman Andrews, an explorer, took a close look at the bones inside. What did he say each one was?",
     "answer": "A leg, with shin and foot bones",
     "choices": [
       "A leg, with shin and foot bones",
@@ -27179,7 +27153,7 @@
       "A twin calf, partly formed",
       "A giant tumor, full of teeth"
     ],
-    "context": "Very rarely a whale's genetic 'off switch' fails and it is born with real hind legs. Andrews identified a shin bone and foot bone, a throwback to the whale's land-walking ancestors. LEGEND-level. Source: Andrews 1921, AMNH, 'A Remarkable Case of External Hind Limbs in a Humpback Whale'.",
+    "context": "Very rarely a whale's genetic 'off switch' fails and it is born with real hind legs. Andrews identified a shin bone and foot bones, a throwback to the whale's land-walking ancestors. Source: Andrews 1921, AMNH, 'A Remarkable Case of External Hind Limbs in a Humpback Whale'.",
     "topic": "whale-evolution-pakicetus-to-modern"
   },
   {
@@ -27210,15 +27184,15 @@
   },
   {
     "tier": 4,
-    "question": "Indohyus, a deer-like plant-eater the size of a raccoon, lived about 48 million years ago, an unlikely relative at the very root of the whale line. Its bones were strangely dense and heavy. What did those heavy bones let this little animal do?",
+    "question": "Indohyus, a small, deer-like animal no bigger than a fox, lived about 48 million years ago, an unlikely relative at the very root of the whale line. Its bones were strangely dense and heavy. What did those heavy bones let this little animal do?",
     "answer": "Wade and hide underwater from predators",
     "choices": [
       "Wade and hide underwater from predators",
       "Burrow deep tunnels through hard clay",
       "Butt heads in fierce mating contests",
-      "Glide between trees on stretched skin"
+      "Shrug off bites from crocodile jaws"
     ],
-    "context": "Indohyus had unusually dense, heavy bones that let it wade and hide underwater from predators, much as a hippo does today, plus the whale ear bone that gave away its place at the root of the whale line. LEGEND-level fossil. Source: Thewissen et al. 2007, Nature; ScienceDaily.",
+    "context": "Indohyus had unusually dense, heavy bones that let it wade and hide underwater from predators, much as the African mousedeer (water chevrotain) does today, plus the whale ear bone that gave away its place at the root of the whale line. Source: Thewissen et al. 2007, Nature; Wikipedia, 'Indohyus'.",
     "topic": "whale-evolution-pakicetus-to-modern"
   },
   {
@@ -27231,7 +27205,7 @@
       "The tiny skeleton is swallowed prey, not a calf",
       "The head-first pose is a fluke of decay, not birth"
     ],
-    "context": "Philip Gingerich's team described Maiacetus inuus in 2009 (PLoS ONE) from a fossil pregnant female whose calf lay head-first, the way land mammals are delivered. Because a head-down birth underwater would drown the calf, they read this as a sign that these early whales still came ashore to give birth, a halfway stage in the move from land to sea. The find is genuinely contested: Hans Thewissen argued the small skeleton might be scattered or swallowed bones rather than a true fetus, and Gingerich's team countered that the tiny skull bears no tooth marks, so it was never eaten. Sources: Wikipedia 'Maiacetus'; ScienceDaily / University of Michigan 2009 release on Gingerich et al., PLoS ONE 2009; grokipedia.com/page/Maiacetus.",
+    "context": "Philip Gingerich's team described Maiacetus inuus in 2009 (PLoS ONE) from a fossil pregnant female whose calf lay head-first, the way land mammals are delivered. Because a head-down birth underwater would drown the calf, they read this as a sign that these early whales still came ashore to give birth, a halfway stage in the move from land to sea. The find is genuinely contested: Hans Thewissen argued the small skeleton might be a partly digested meal, or a fetus not preserved in its living position, while the original paper had noted that the tiny skull bears no tooth marks. Sources: Wikipedia 'Maiacetus'; ScienceDaily / University of Michigan 2009 release on Gingerich et al., PLoS ONE 2009; grokipedia.com/page/Maiacetus.",
     "topic": "whale-evolution-pakicetus-to-modern"
   },
   {
@@ -27340,7 +27314,7 @@
   },
   {
     "tier": 1,
-    "question": "An ostrich sprints across an African plain, unable to fly. A penguin dives and 'flies' through Antarctic seas instead of the sky, and an emu jogs across the Australian outback. All three wear one body covering that marks each, at a glance, as a bird. What is it?",
+    "question": "An ostrich sprints across an African plain, unable to fly, and a penguin 'flies' through icy seas instead of the sky. Both wear one body covering that marks each as a bird. What is it?",
     "answer": "Feathers",
     "choices": [
       "Feathers",
@@ -27353,28 +27327,28 @@
   },
   {
     "tier": 1,
-    "question": "A farmyard bird pecks grain and snatches a beetle. A dog has teeth, a snake has fangs and a shark has row after row of them, but the bird has none at all. Its mouth is capped instead with a hard structure. What is it?",
-    "answer": "A toothless keratin beak",
+    "question": "A hen pecks grain and snatches a beetle. A dog has teeth and a shark has row after row of them, but the hen has none at all. What caps her mouth instead?",
+    "answer": "A beak sheathed in keratin",
     "choices": [
-      "A toothless keratin beak",
-      "A leathery grinding gizzard plate",
-      "A forked flicking tongue",
-      "A pouch of stinging spines"
+      "A beak sheathed in keratin",
+      "A shield of fused scales",
+      "A ridge of hardened gums",
+      "A plate of fused cartilage"
     ],
-    "context": "Birds have no teeth at all. A beak (bill) of keratin — the same stuff as your fingernails — replaces the toothy jaws their dinosaur ancestors carried. Source: Britannica, 'Why Don't Birds Have Teeth?'; Forbes/GrrlScientist.",
+    "context": "Birds have no teeth at all. A beak (bill) of bone sheathed in keratin, the same stuff as fingernails, replaces the toothy jaws their dinosaur ancestors carried. Source: Britannica, 'Why Don't Birds Have Teeth?'; Forbes/GrrlScientist.",
     "topic": "what-makes-a-bird"
   },
   {
     "tier": 2,
-    "question": "A pigeon lifts off the ground into flight, and to do that it has to be light. Its skeleton is built for that in a way a running mammal's dense, heavy bones are not: a pigeon's leg bone snapped in half feels startlingly light for its size, almost empty. What lies inside a bird's bones?",
+    "question": "A museum curator saws a pigeon's upper wing bone in half to show a class of students what a bird carries inside its skeleton. What do the students find filling that bone?",
     "answer": "Hollow air spaces linked to the lungs",
     "choices": [
       "Hollow air spaces linked to the lungs",
-      "Solid heavy marrow like ours",
+      "Thick, solid marrow packed tight",
       "A core of stored body fat",
       "A rod of springy cartilage"
     ],
-    "context": "A bird's bones are 'pneumatic' — hollow and air-filled, laced with extensions of the lungs' air sacs. This lightens the skeleton so the bird weighs less in the air. Source: UCMP Berkeley, 'Morphology of the Aves'; Biology LibreTexts 29.5 Birds.",
+    "context": "Many of a bird's bones, the upper wing bone among them, are 'pneumatic': hollow and air-filled, laced with extensions of the lungs' air sacs. Not every bird bone is hollow (penguins' bones are solid), and Elizabeth Dumont's 2010 study found bird bone denser than mammal bone, so the hollows make a stiff bone for its weight. Source: UCMP Berkeley, 'Morphology of the Aves'; Dumont 2010, Proceedings of the Royal Society B.",
     "topic": "what-makes-a-bird"
   },
   {
@@ -27405,7 +27379,7 @@
   },
   {
     "tier": 1,
-    "question": "A biologist studying a mouse and a blue whale looks for the one thing that makes both of them mammals, a trait no other animal shares. What does every mammal mother, and only a mammal mother, do?",
+    "question": "A biologist studying a mouse and a blue whale looks for one trait that marks both of them as mammals. What does every mammal mother do?",
     "answer": "Feed her babies milk from her own body",
     "choices": [
       "Feed her babies milk from her own body",
@@ -27413,12 +27387,12 @@
       "Carry her young inside a pouch",
       "Breathe air through her skin"
     ],
-    "context": "Milk from mammary glands is THE defining mammal trait — no other animal group makes milk. Carl Linnaeus named the whole class 'Mammalia' in 1758 after these milk-making glands. Source: Britannica 'Mammal'; en.wikipedia.org/wiki/Mammal.",
+    "context": "Milk from mammary glands is THE defining mammal trait: no other animal has mammary glands, though pigeons, flamingos and emperor penguins feed their chicks a 'crop milk', and in 2018 a jumping spider was found nursing its young on a milky fluid. Carl Linnaeus named the whole class 'Mammalia' in 1758 after these milk-making glands. Source: Britannica 'Mammal'; en.wikipedia.org/wiki/Mammal; en.wikipedia.org/wiki/Crop_milk; Chen et al. 2018, Science.",
     "topic": "what-makes-a-mammal"
   },
   {
     "tier": 1,
-    "question": "A bat clings under a cave roof and a cat curls up on a couch. Both are mammals, and both wear one body covering that every mammal grows at some point in life; even a whale is born with a few strands of it. What is it?",
+    "question": "A bat clings under a cave roof and a cat curls up on a couch. Both wear one body covering that every mammal grows at some point in life; even a whale is born with a few strands. What is it?",
     "answer": "Hair or fur",
     "choices": [
       "Hair or fur",
@@ -27431,20 +27405,20 @@
   },
   {
     "tier": 3,
-    "question": "A zoologist sorting a drawer of skulls can tell a mammal's from a reptile's by counting the tiny bones inside the middle ear. A snake and a chicken each carry just one there, passing sound along to the inner ear, while a mammal packs more into the same small space. How many middle-ear bones does a mammal have?",
+    "question": "A zoologist sorting a drawer of skulls can tell a mammal's from a reptile's by counting the tiny bones inside the middle ear. A snake and a chicken each carry just one there, passing sound along to the inner ear. How many middle-ear bones does a mammal have?",
     "answer": "Three",
     "choices": [
       "Three",
-      "One",
-      "Six",
-      "Zero"
+      "Two",
+      "Four",
+      "Six"
     ],
     "context": "A mammal's middle ear holds three tiny bones — the malleus, incus, and stapes (hammer, anvil, and stirrup). No other animal has all three; reptiles and birds have only one. Source: en.wikipedia.org/wiki/Ossicles; evolution.berkeley.edu 'Jaws to ears'.",
     "topic": "what-makes-a-mammal"
   },
   {
     "tier": 3,
-    "question": "Deep inside a person's ear sits a bone shaped like a riding stirrup, called the stapes, one of the little middle-ear bones that let a mammal hear. Of all the bones in the human body, from the thighbone to the skull, the stapes holds one record no other bone can claim. What is remarkable about the stapes?",
+    "question": "Deep inside a person's ear sits a bone shaped like a riding stirrup, called the stapes, one of the middle-ear bones that let a mammal hear. Of all the bones in the human body, from the thighbone to the skull, the stapes holds one record no other bone can claim. What is remarkable about it?",
     "answer": "It is the smallest bone in the whole body",
     "choices": [
       "It is the smallest bone in the whole body",
@@ -27457,11 +27431,11 @@
   },
   {
     "tier": 4,
-    "question": "Paleontologists dug up the skull of Morganucodon, a shrew-sized creature of some 200 million years ago, and found two separate jaw hinges working side by side. A reptile's jaw hinges on several bones and a mammal's on just one, while a mammal's middle ear holds two bones, the hammer and the anvil, that a reptile's does not. What did the double hinge reveal?",
+    "question": "Paleontologists dug up the skull of Morganucodon, a shrew-sized creature of some 200 million years ago, and found two separate jaw hinges working side by side. A reptile's lower jaw is built of several bones and a mammal's of just one, while a mammal's middle ear holds two bones, the hammer and the anvil, that a reptile's lacks. What did the double hinge reveal?",
     "answer": "One hinge's bones were turning into ear bones",
     "choices": [
       "One hinge's bones were turning into ear bones",
-      "Mammals and reptiles once interbred",
+      "The second hinge was an old healed injury",
       "The jaw evolved only after the ear was finished",
       "The double hinge let it chew and swallow at once"
     ],
@@ -27470,11 +27444,11 @@
   },
   {
     "tier": 1,
-    "question": "A lizard and a salamander sit side by side on a riverbank, the same size and the same color. The lizard is a reptile and the salamander an amphibian, a cousin of the frogs, and a single touch tells them apart. What does a hand feel?",
-    "answer": "The lizard is dry and scaly; the salamander is smooth and moist",
+    "question": "A lizard and a salamander sit side by side on a riverbank, the same size and color. One is a reptile and the other an amphibian, and a single touch tells them apart. What does a hand feel?",
+    "answer": "The lizard is dry and scaly; the salamander is moist",
     "choices": [
-      "The lizard is dry and scaly; the salamander is smooth and moist",
-      "The lizard is warm; the salamander is icy cold",
+      "The lizard is dry and scaly; the salamander is moist",
+      "The lizard is rubbery; the salamander is rough and dry",
       "The lizard is soft; the salamander is hard and bony",
       "The lizard is sticky; the salamander is dry and dusty"
     ],
@@ -27483,7 +27457,7 @@
   },
   {
     "tier": 1,
-    "question": "A frog climbs out of its pond. It is an amphibian, from the Greek for 'double life,' and it earns the name not by living in water and on land at once but by living two lives in turn, its first body rebuilt into another. What is that double life?",
+    "question": "A frog climbs out of its pond. It is an amphibian, a name from the Greek for 'double life,' and a frog's life is double in a very literal way. What is that double life?",
     "answer": "A water-breathing tadpole that transforms into an air-breathing adult",
     "choices": [
       "A water-breathing tadpole that transforms into an air-breathing adult",
@@ -27496,20 +27470,20 @@
   },
   {
     "tier": 2,
-    "question": "A small, tail-dragging creature creeps on four legs along a woodland pond, and visitors keep calling it a lizard. It is a newt, an amphibian and a cousin of the frogs, born in water; a real lizard is a reptile. What two things does a real lizard have that a newt never does?",
+    "question": "A small, tail-dragging creature creeps on four legs along a woodland pond, and visitors keep calling it a lizard. It is a newt, an amphibian and a cousin of the frogs, born in water; a real lizard is a reptile. What two things do most lizards have that a newt never does?",
     "answer": "Clawed toes and external ear holes",
     "choices": [
       "Clawed toes and external ear holes",
-      "A forked tongue and a rattling tail",
+      "Hollow fangs and a rattling tail",
       "Webbed feet and a fin along its back",
       "A hard shell and a beak"
     ],
-    "context": "Lizards are reptiles with dry, tough scales, clawed toes, and external ear openings; newts and salamanders are amphibians with no scales, no claws, and moist slimy skin. Wet and clawless means amphibian. Source: Discover Wildlife / Forest Preserve.",
+    "context": "Most lizards have dry, tough scales, clawed toes and external ear openings (the earless lizards of North America lack the ear holes); newts and salamanders are amphibians with no scales, no claws, and moist slimy skin. Wet and clawless means amphibian. Source: Discover Wildlife / Forest Preserve; Wikipedia, 'Holbrookia'.",
     "topic": "what-makes-a-reptile-an-amphibian-dry-scales-vs-wet-skin"
   },
   {
     "tier": 2,
-    "question": "A frog can hop far from the pond to hunt bugs, but come breeding season it is chained straight back to the water's edge and cannot lay anywhere else. A desert lizard is under no such rule. What is it about the frog's eggs that ties its whole life to water?",
+    "question": "A frog can hop far from the pond to hunt bugs, but come breeding season most frogs head straight back to the water to lay their eggs. A desert lizard is under no such rule. What is it about the frog's eggs that ties them to water?",
     "answer": "The eggs have no shell, so in dry air they would shrivel up",
     "choices": [
       "The eggs have no shell, so in dry air they would shrivel up",
@@ -27517,12 +27491,12 @@
       "The eggs are too heavy for the frog to carry overland",
       "The eggs will only hatch in complete darkness"
     ],
-    "context": "An amphibian's egg has no shell, so it dries out in air  -  which is why frogs and salamanders must lay their jelly-covered eggs in water. That single fact chains their whole life to ponds and streams. Source: Encyclopedia.com / Biology LibreTexts.",
+    "context": "An amphibian's egg has no shell, so it dries out in air, which is why most frogs and many salamanders lay their jelly-covered eggs in water or somewhere damp. A few, like the foam-nesting tree frogs and the lungless salamanders that lay on moist ground, keep their eggs wet away from ponds. Source: Encyclopedia.com / Biology LibreTexts; Wikipedia, 'Lungless salamander'.",
     "topic": "what-makes-a-reptile-an-amphibian-dry-scales-vs-wet-skin"
   },
   {
     "tier": 3,
-    "question": "A lizard bakes all day on a hot desert rock, then skitters off across the open sand. A salamander, an amphibian that can look nearly identical from a few feet away, would shrivel dry within an hour in the same spot. What does the lizard's skin do that the salamander's cannot?",
+    "question": "A lizard bakes all day on a hot desert rock, then skitters off across the open sand. A salamander, an amphibian that can look nearly identical from a few feet away, would soon dry out and die in the same spot. What does the lizard's skin do that the salamander's cannot?",
     "answer": "Seals water inside the body with a thick, waxy, keratin-packed layer",
     "choices": [
       "Seals water inside the body with a thick, waxy, keratin-packed layer",
@@ -27535,7 +27509,7 @@
   },
   {
     "tier": 3,
-    "question": "A plethodontid salamander thrives in a cool, wet forest with no lungs at all, and its family is the biggest of all the salamanders on Earth. Even a frog, which has working lungs, dies within hours if it dries out in clean, open air. Where does the plethodontid get its oxygen?",
+    "question": "A plethodontid salamander creeps over the damp, fallen leaves of a cool forest at night, and its family is the biggest of all the salamanders on Earth. Yet it has no lungs at all. Where does it get its oxygen?",
     "answer": "Through the skin and the moist lining of the mouth",
     "choices": [
       "Through the skin and the moist lining of the mouth",
@@ -27965,19 +27939,19 @@
   {
     "tier": 2,
     "question": "Beetles and grubs hide beneath the bark of an oak, and a woodpecker clinging to the trunk drills for them, slamming its beak into the wood again and again in a machine-gun blur. Over one busy day of chiseling, roughly how many times does its beak strike the tree?",
-    "answer": "8,000 to 12,000 strikes",
+    "answer": "About 10,000 strikes",
     "choices": [
-      "8,000 to 12,000 strikes",
-      "about 200 strikes",
-      "about 800 strikes",
-      "about 40 strikes"
+      "About 10,000 strikes",
+      "About 1,000 strikes",
+      "About 100,000 strikes",
+      "About 300 strikes"
     ],
-    "context": "A woodpecker can hammer up to about 20 times every second and lands 8,000 to 12,000 strikes in a single day. Source: ScienceABC / BirdWatchingDaily, https://www.scienceabc.com/nature/animals/how-woodpeckers-dont-get-concussions",
+    "context": "A woodpecker can hammer up to about 20 times every second and lands an estimated 8,000 to 12,000 strikes in a single day. Source: ScienceABC / BirdWatchingDaily, https://www.scienceabc.com/nature/animals/how-woodpeckers-dont-get-concussions ; Missouri Department of Conservation, 'Woodpecker Superpowers'.",
     "topic": "woodpecker"
   },
   {
     "tier": 2,
-    "question": "A woodpecker lands hard on the upright trunk of an oak, with no branch to perch on. To hammer the bark without sliding down, it grips like a pair of pliers: the four toes on each foot clamp the wood in a pattern most other birds do not share. How are those toes arranged?",
+    "question": "A woodpecker lands hard on the upright trunk of an oak, with no branch to perch on. To hammer the bark without sliding down, it grips like a pair of pliers, its toes clamping the wood. How are the four toes on each foot arranged?",
     "answer": "Two toes forward and two toes backward",
     "choices": [
       "Two toes forward and two toes backward",
@@ -27990,12 +27964,12 @@
   },
   {
     "tier": 2,
-    "question": "A downy woodpecker climbs a smooth beech trunk and stops halfway up to hammer at the bark. Its two feet alone would let its body sag away from the wood, so it braces itself like a tripod, pressing a third point against the trunk just below its feet. What does it press into the bark?",
+    "question": "A downy woodpecker climbs a smooth beech trunk and stops halfway up to hammer at the bark. Its two feet alone would let its body sag away from the wood, so it braces itself like a tripod, pressing a third point against the trunk. What does it press into the bark?",
     "answer": "Its stiff, spiny tail feathers",
     "choices": [
       "Its stiff, spiny tail feathers",
       "Its folded wingtips",
-      "Its long hooked claws",
+      "Its stiff breast feathers",
       "The underside of its beak"
     ],
     "context": "The stiff, spiny tail feathers push against the trunk and, together with the two feet, form a stable three-point brace. Source: Avian Report / Animal Kingdom, https://avianreport.com/woodpecker-feet/",
@@ -28003,7 +27977,7 @@
   },
   {
     "tier": 3,
-    "question": "A long, loud drumroll rings out across a New England forest on a cold spring morning: a downy woodpecker is pounding a hollow dead tree, and the sound carries for hundreds of feet. Anyone hearing the rattle might think it was digging for insects, but fast, echoing hammering like this usually is not feeding at all. The noise itself is the point. What is the woodpecker doing?",
+    "question": "A long, loud drumroll rings out across a New England forest on a cold spring morning: a downy woodpecker, a small black-and-white bird, is pounding a hollow branch, and the sound carries for hundreds of feet. What is the woodpecker doing?",
     "answer": "Claiming territory and calling a mate",
     "choices": [
       "Claiming territory and calling a mate",
@@ -28020,7 +27994,7 @@
     "answer": "A metal gutter or street sign",
     "choices": [
       "A metal gutter or street sign",
-      "A hollow dead snag",
+      "A big flat boulder",
       "A wooden fence rail",
       "A house's plastic downspout"
     ],
@@ -28029,7 +28003,7 @@
   },
   {
     "tier": 3,
-    "question": "A northern flicker jabs its short bill into an anthill; this brown woodpecker of the Americas spends more time on the ground than in trees. The ants live in deep, twisting tunnels that its beak alone could never reach, yet the flicker empties whole nests without cracking the mound open. How does it get the ants out?",
+    "question": "A northern flicker jabs its bill into an anthill; this brown woodpecker of the Americas spends more time on the ground than in trees. The ants live in deep, twisting tunnels that its beak alone could never reach. How does it get the ants out?",
     "answer": "It shoots its tongue inches out past the beak tip",
     "choices": [
       "It shoots its tongue inches out past the beak tip",
@@ -28042,7 +28016,7 @@
   },
   {
     "tier": 3,
-    "question": "A woodpecker punches a hole into rotting oak and finds a tunnel full of pale, slippery beetle grubs. The tip of its tongue has to grab and hold a wet, squirming grub that the bird can barely feel. What lets the tongue tip snag such slippery prey?",
+    "question": "A woodpecker punches a hole into rotting oak and finds a tunnel full of pale, slippery beetle grubs. The tip of its tongue has to grab and hold a wet, squirming grub deep inside. What lets the tongue tip snag such slippery prey?",
     "answer": "Backward-facing barbs and sticky saliva",
     "choices": [
       "Backward-facing barbs and sticky saliva",
@@ -28059,9 +28033,9 @@
     "answer": "Around 50,000 acorns",
     "choices": [
       "Around 50,000 acorns",
-      "Around 50 acorns",
-      "Around 500 acorns",
-      "Around 5,000 acorns"
+      "Around 5,000 acorns",
+      "Around 500,000 acorns",
+      "Around 5 million acorns"
     ],
     "context": "The acorn woodpecker builds a 'granary' tree drilled with thousands of holes; the largest known granary held around 50,000 acorns. As the acorns dry and shrink, the birds move each one to a snugger hole. Source: Atlas Obscura / Cornell Bird Academy, https://academy.allaboutbirds.org/storing-food-the-granaries-of-acorn-woodpeckers/",
     "topic": "woodpecker"
@@ -28120,7 +28094,7 @@
   },
   {
     "tier": 5,
-    "question": "George Farah's group at Boston University took the preserved brains of ten woodpeckers in 2018, stained them, and set them beside the brains of blackbirds, which do not drum. Woodpeckers had long been called immune to head injury, all that hammering and no harm done. What turned up in the woodpecker brains?",
+    "question": "A Boston University team, with George Farah as lead author, took the preserved brains of ten woodpeckers in 2018, stained them, and set them beside the brains of blackbirds, which do not drum. Woodpeckers had long been called immune to head injury, all that hammering and no harm done. What turned up in the woodpecker brains?",
     "answer": "Clumps of tau protein, the marker seen in concussed athletes",
     "choices": [
       "Clumps of tau protein, the marker seen in concussed athletes",
@@ -28128,7 +28102,7 @@
       "Rusty microbleeds, the staining seen in blast survivors",
       "Shrunken dead neurons, the loss seen in stroke patients"
     ],
-    "context": "The study, led by George Farah (PLOS ONE, Feb 2018), used Gallyas silver staining and anti-phospho-tau immunohistochemistry on museum brains of 10 woodpeckers versus 5 red-winged blackbird controls. Most woodpeckers showed build-ups of tau - the very protein tied to CTE in concussed football players - while the controls had none. It punctured the tidy 'immune to injury' story, but the debate is genuinely unsettled: whether that tau is a protective adaptation or a sign of real damage remains unresolved. Source: journals.plos.org/plosone/article?id=10.1371/journal.pone.0191526 (PubMed 29394252); coverage: CBC News, 'woodpecker-brain-damage-protein.'",
+    "context": "The study, with George Farah as lead author and Peter Cummings as senior author (PLOS ONE, Feb 2018), used Gallyas silver staining and anti-phospho-tau immunohistochemistry on museum brains of 10 woodpeckers versus 5 red-winged blackbird controls. Most woodpeckers showed build-ups of tau, the very protein tied to CTE in concussed football players, while the controls had none. It punctured the tidy 'immune to injury' story, but the debate is genuinely unsettled: whether that tau is a protective adaptation or a sign of real damage remains unresolved. Source: journals.plos.org/plosone/article?id=10.1371/journal.pone.0191526 (PubMed 29394252); coverage: CBC News, 'woodpecker-brain-damage-protein.'",
     "topic": "woodpecker"
   },
   {
