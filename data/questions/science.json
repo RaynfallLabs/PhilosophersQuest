@@ -34815,7 +34815,7 @@
   },
   {
     "tier": 2,
-    "question": "Joseph Murray took a healthy kidney from Ronald Herrick in Boston in 1954 and sewed it into Ronald's dying identical twin, Richard. Earlier attempts on other pairs had failed within days. What was the first sign, right in the operating room, that this one was going to work?",
+    "question": "Joseph Murray took a healthy kidney from Ronald Herrick in Boston in 1954 and sewed it into Ronald's dying identical twin, Richard. Earlier attempts on other pairs had all failed. What was the first sign, right in the operating room, that this one was going to work?",
     "answer": "The transplanted kidney began making urine on the table",
     "choices": [
       "The transplanted kidney began making urine on the table",
@@ -34836,7 +34836,7 @@
       "It never bled properly and greyed within hours",
       "It slowly took on the patient's own skin colour"
     ],
-    "context": "Grafts between identical twins on the same ward, by contrast, were kept for good. That difference told Murray the barrier was immunological -- the recipient's body could tell whose tissue was whose. Source: https://www.harvardmagazine.com/alumni-profiles/harvard-joseph-murray-transplantation",
+    "context": "Grafts between identical twins, by contrast, were known to last. That difference told Murray the barrier was immunological -- the recipient's body could tell whose tissue was whose. Source: https://www.harvardmagazine.com/alumni-profiles/harvard-joseph-murray-transplantation",
     "topic": "the-herrick-twins-kidney-23-december-1954"
   },
   {
@@ -34850,19 +34850,6 @@
       "Give Ronald a written estimate of his own odds of dying"
     ],
     "context": "The team laid out the risks in full and even consulted clergy of several denominations and legal counsel, but stayed neutral on the decision itself -- the choice to give up a kidney had to be Ronald's alone. Source: https://collections.countway.harvard.edu/onview/exhibits/show/reconstructing-lives/transplantation/herrick-twins",
-    "topic": "the-herrick-twins-kidney-23-december-1954"
-  },
-  {
-    "tier": 4,
-    "question": "Richard Herrick married one of his hospital nurses after Joseph Murray gave him the kidney of his identical twin, Ronald, in Boston in 1954, the world's first lasting organ transplant. Richard lived about eight more years and fathered two children. When he died in March 1963, what killed him?",
-    "answer": "Heart failure",
-    "choices": [
-      "Heart failure",
-      "Rejection of the transplanted kidney",
-      "Pneumonia caught from his brother",
-      "A stroke during a second operation"
-    ],
-    "context": "The transplanted kidney was still working at his death; some sources also note the underlying nephritis returning in it, but the immediate cause was cardiac. His donor brother Ronald lived to 79. Source: https://en.wikipedia.org/wiki/Richard_Herrick",
     "topic": "the-herrick-twins-kidney-23-december-1954"
   },
   {
@@ -34959,14 +34946,14 @@
   {
     "tier": 2,
     "question": "Robert Wilson and Arno Penzias chased the pigeons out of the giant Holmdel horn antenna in New Jersey in 1964 and cleaned out the mess. They suspected the droppings were behind the faint hiss they could not get rid of. They climbed back down and switched the antenna on again. What happened to the hiss?",
-    "answer": "it stayed exactly as loud as before",
+    "answer": "it hardly changed at all",
     "choices": [
-      "it stayed exactly as loud as before",
+      "it hardly changed at all",
       "it dropped by roughly half",
       "it vanished within a few hours",
       "it grew louder for several days and then faded"
     ],
-    "context": "That is the whole point of the story: the noise was not coming from the birds. Whatever the source was, it was arriving through the sky itself, not from anything nesting in the metal. Source: en.wikipedia.org/wiki/Discovery_of_cosmic_microwave_background_radiation",
+    "context": "That is the whole point of the story: the noise was not coming from the birds. Cleaning out the horn and taping its riveted joints trimmed the antenna temperature only slightly; whatever the source was, it was arriving through the sky itself, not from anything nesting in the metal. Source: Robert Wilson, Nobel lecture 1978 (nobelprize.org); en.wikipedia.org/wiki/Discovery_of_cosmic_microwave_background_radiation",
     "topic": "the-hiss-the-pigeons-could-not-explain"
   },
   {
@@ -35037,9 +35024,9 @@
   {
     "tier": 5,
     "question": "A student pores over a sky map made by the Cosmic Background Explorer (COBE), the satellite launched in 1989 to study the leftover glow with tools no ground-based horn could match. The map shows faint temperature ripples, about one part in 100,000. What are those ripples thought to be?",
-    "answer": "the seeds that grew into galaxies, stars, and eventually us",
+    "answer": "the seeds that grew into galaxies, stars, and eventually people",
     "choices": [
-      "the seeds that grew into galaxies, stars, and eventually us",
+      "the seeds that grew into galaxies, stars, and eventually people",
       "the imprint of gravitational waves from cosmic inflation",
       "the shadows of primordial black holes forming",
       "the boundaries between separate bubble universes"
@@ -35335,7 +35322,7 @@
   },
   {
     "tier": 3,
-    "question": "Craig Venter packed one building with about 300 top sequencing machines in 1998 and promised a finished human genome years before the public team could manage it. The machines alone were not enough; speed depended on how his company, Celera Genomics, chose to tackle three billion letters of DNA. Which approach did it take?",
+    "question": "Craig Venter promised in 1998 to finish the human genome years before the public team could, and he packed one building with about 300 top sequencing machines. The machines alone were not enough; speed depended on how his company, Celera Genomics, chose to tackle three billion letters of DNA. Which approach did it take?",
     "answer": "Broke the whole genome into random fragments and had computers reassemble them",
     "choices": [
       "Broke the whole genome into random fragments and had computers reassemble them",
@@ -35374,7 +35361,7 @@
   },
   {
     "tier": 3,
-    "question": "T. Ryan Gregory tests the assumption that a more elaborate creature needs more DNA with something anyone can pick up at a market: the common onion, Allium cepa. A human cell carries about 3.2 billion base pairs. How much DNA does an onion carry?",
+    "question": "T. Ryan Gregory tests the assumption that a more elaborate creature needs more DNA with something anyone can pick up at a market: the common onion, Allium cepa. One copy of the human genome holds about 3.2 billion base pairs. How much does one copy of the onion's genome hold?",
     "answer": "About 16 billion base pairs, five times the human figure",
     "choices": [
       "About 16 billion base pairs, five times the human figure",
@@ -35382,7 +35369,7 @@
       "About 32 billion base pairs, ten times the human figure",
       "About 130 billion base pairs, forty times the human figure"
     ],
-    "context": "Gregory named this the onion test in 2007 and puts it as a question to anyone who insists nearly every stretch of non-coding DNA is essential: 'Can I explain why an onion needs about five times more non-coding DNA for this function than a human?' And the onion is no freak case - different Allium species carry more than fourfold different amounts of DNA from one another. Source: journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1004351 ('The Case for Junk DNA', Palazzo & Gregory 2014); grokipedia.com/page/Junk_DNA",
+    "context": "Gregory named this the onion test in 2007 and puts it as a question to anyone who insists nearly every stretch of non-coding DNA is essential: whatever the proposed function, can it explain why an onion would need about five times more non-coding DNA for it than a human does? And the onion is no freak case - different Allium species carry more than fourfold different amounts of DNA from one another. Source: journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1004351 ('The Case for Junk DNA', Palazzo & Gregory 2014); grokipedia.com/page/Junk_DNA",
     "topic": "the-human-genome-project-and-the-20-000-gene-surprise"
   },
   {
@@ -35400,7 +35387,7 @@
   },
   {
     "tier": 4,
-    "question": "Beadle and Tatum made a rule textbook doctrine with their mould experiments: one gene, one protein. A gene is first copied into a working transcript, a messenger RNA, which the cell then reads to build a protein. Post-project analyses of human transcripts caught most human genes breaking that rule outright. What did those analyses catch a single human gene doing with its transcript?",
+    "question": "Beadle and Tatum's mould experiments made one gene, one enzyme a textbook rule, later widened to one gene, one protein. A gene is first copied into a working transcript, a messenger RNA, which the cell then reads to build a protein. Post-project analyses of human transcripts caught most human genes breaking that rule outright. What did those analyses catch a single human gene doing with its transcript?",
     "answer": "Cutting its transcript apart and rejoining the pieces in different combinations",
     "choices": [
       "Cutting its transcript apart and rejoining the pieces in different combinations",
@@ -35408,7 +35395,7 @@
       "Slipping the cell's reading frame partway along its transcript by one letter",
       "Reading its transcript straight through into several proteins in a row"
     ],
-    "context": "The mechanism is called alternative splicing: one gene's transcript is cut into pieces and those pieces are joined back together in different combinations, so a single stretch of DNA yields many different proteins. Post-project analyses found that over 90% of human genes built from more than one coding block produce such variants, which retired the one gene, one protein rule that Beadle and Tatum's Neurospora work had made textbook doctrine. It is a large part of the answer to 'so few genes'. Source: grokipedia.com/page/Human_Genome_Project",
+    "context": "The mechanism is called alternative splicing: one gene's transcript is cut into pieces and those pieces are joined back together in different combinations, so a single stretch of DNA yields many different proteins. Post-project analyses found that over 90% of human genes built from more than one coding block produce such variants, which retired the one gene, one protein rule that grew out of Beadle and Tatum's one gene, one enzyme work on Neurospora. It is a large part of the answer to 'so few genes'. Source: grokipedia.com/page/Human_Genome_Project",
     "topic": "the-human-genome-project-and-the-20-000-gene-surprise"
   },
   {
@@ -35447,7 +35434,7 @@
       "Roughly 30 to 35 percent of it",
       "Roughly 60 to 65 percent of it"
     ],
-    "context": "What the studies measured is called purifying selection: mutations that land in a stretch the animal needs get weeded out, while junk drifts freely. The 2014 PLOS Genetics study put the human figure at 8.2%, with a 95% confidence interval of 7.1 to 9.2%; the 2023 comparison of 240 mammal genomes put it at 10.7%, about 332 million bases. Plenty of genuinely functional regulatory DNA exists beyond the protein-coding stretches. How much of the remainder does any job at all, no one yet knows. Source: journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1004351; grokipedia.com/page/Junk_DNA",
+    "context": "What the studies measured is called purifying selection: mutations that land in a stretch the animal needs get weeded out, while junk drifts freely. The 2014 PLOS Genetics study put the human figure at 8.2%, with a 95% confidence interval of 7.1 to 9.2%; the 2023 comparison of 240 mammal genomes put it at 10.7%, about 332 million bases. Plenty of genuinely functional regulatory DNA exists beyond the protein-coding stretches. How much of the remainder does any job at all, no one yet knows. Source: journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1004525 (Rands et al. 2014); grokipedia.com/page/Junk_DNA",
     "topic": "the-human-genome-project-and-the-20-000-gene-surprise"
   },
   {
@@ -35483,15 +35470,15 @@
     "choices": [
       "That cells given enough good food never age at all",
       "That heart tissue can be moved between different animals",
-      "That French surgery was ahead of American surgery",
-      "That the chick embryo is the ancestor of every warm-blooded animal"
+      "That tissue kept alive outside the body turns cancerous",
+      "That cells can be frozen solid and revived years later"
     ],
     "context": "Carrel used the culture to promote the view that cellular aging was not intrinsic, only a failure of nutrition and cleanliness. His stature (he had won the 1912 Nobel Prize for vascular surgery) gave the claim decades of authority. Source: https://en.wikipedia.org/wiki/Alexis_Carrel",
     "topic": "the-immortal-chicken-heart-that-wasnt"
   },
   {
     "tier": 2,
-    "question": "Leonard Hayflick and Paul Moorhead published a careful paper in Philadelphia in 1961 on normal human cells kept in a dish. Alexis Carrel had taught that healthy cells in a dish, rightly fed, would divide forever. The paper's result was the opposite. What did those human cells do?",
+    "question": "Leonard Hayflick and Paul Moorhead published a careful paper in Philadelphia in 1961 on normal human cells kept in a dish. Alexis Carrel had taught that healthy cells in a dish, rightly fed, would divide forever. They fed their own cells just as well. What did those human cells do?",
     "answer": "Divided roughly forty to sixty times, then stopped dividing",
     "choices": [
       "Kept dividing indefinitely, faster than the chick heart",
@@ -35543,26 +35530,13 @@
   },
   {
     "tier": 5,
-    "question": "Carol Greider, a graduate student in Elizabeth Blackburn's Berkeley lab, found an enzyme in a pond ciliate in 1984. Alexei Olovnikov had predicted it in 1971: something must add fresh DNA back, or germ cells and single-celled life would run down and die. It is called telomerase. Which part of the chromosome does it rebuild?",
-    "answer": "The tip",
-    "choices": [
-      "The tip",
-      "The middle",
-      "The centromere",
-      "The histone core"
-    ],
-    "context": "Greider, then a first-year graduate student, ran the assays that identified telomerase in Tetrahymena thermophila in Blackburn's lab; she and Blackburn published the discovery in Cell in 1985. Greider, Blackburn and Jack Szostak shared the 2009 Nobel Prize in Physiology or Medicine for telomeres and telomerase. Source: https://www.nature.com/articles/onc201015",
-    "topic": "the-immortal-chicken-heart-that-wasnt"
-  },
-  {
-    "tier": 5,
     "question": "A lab technician feeds a dish of cancer cells, and they keep dividing, long past the limit that stops normal human cells. Most cancers have broken that limit and will divide for as long as they are fed. What trick have these cells done to their own biology to make that possible?",
     "answer": "Switched telomerase back on so the chromosome tips get rebuilt",
     "choices": [
       "Duplicated all of their chromosomes so there is always a spare",
       "Switched telomerase back on so the chromosome tips get rebuilt",
-      "Stopped copying their DNA and started copying only RNA",
-      "Turned off their nucleus and split by budding instead"
+      "Slowed their division so the counter runs down more slowly",
+      "Fused with neighbouring cells to pool their chromosomes"
     ],
     "context": "In healthy adult somatic tissue telomerase is largely silent, which is why the Hayflick limit exists. Roughly 85-90 percent of human cancers reactivate telomerase so that the chromosome tips are constantly rebuilt; the same mechanism that keeps HeLa cells growing for a lifetime is the mechanism the cell was supposed to keep switched off. Source: https://link.springer.com/article/10.1007/s10522-006-9043-9",
     "topic": "the-immortal-chicken-heart-that-wasnt"
@@ -36219,7 +36193,7 @@
   },
   {
     "tier": 1,
-    "question": "A chemistry teacher sets a small silvery ingot on a student's warm palm. In about a minute the ingot has turned into a shining puddle running between the fingers. The metal's melting point is 29.76 degrees Celsius, just below body temperature - no other common metal is that easy to melt. Which metal is it?",
+    "question": "A chemistry teacher sets a small silvery ingot on a student's warm palm. In about a minute the ingot has turned into a shining puddle running between the fingers. The metal melts at 29.76 degrees Celsius, just below body temperature. Which metal is it?",
     "answer": "Gallium",
     "choices": [
       "Gallium",
@@ -36240,7 +36214,7 @@
       "It dissolves back into the liquid within seconds",
       "It shatters into brittle silver crumbs"
     ],
-    "context": "Gallium expands as it freezes, like water, so the solid is less dense than the liquid and floats. Only a handful of substances behave this way (bismuth and antimony are two other metals that do). Source: Wikipedia, Gallium.",
+    "context": "Gallium expands as it freezes, like water, so the solid is less dense than the liquid and floats. Only a handful of substances behave this way; silicon, germanium and bismuth are among the others. Source: Wikipedia, Gallium.",
     "topic": "the-metal-that-melts-in-your-hand"
   },
   {
@@ -36253,7 +36227,7 @@
       "It boils around 357 degrees Celsius, the same as mercury",
       "It skips liquid boiling and sublimates directly to a vapour"
     ],
-    "context": "Almost nothing else stays liquid across so vast a span (roughly 2,000 degrees). This is why sealed quartz thermometers filled with gallium can read the interior of a furnace or a molten-metal bath, up to about 1,500 C, where a mercury thermometer would have boiled away centuries ago. Source: Wikipedia, Gallium; RSC Periodic Table.",
+    "context": "Gallium has one of the largest liquid ranges of any metal, more than 2,000 degrees. This is why sealed quartz thermometers filled with gallium can read the interior of a furnace or a molten-metal bath, up to about 1,500 C, where a mercury thermometer would have boiled away long before. Source: Wikipedia, Gallium; RSC Periodic Table.",
     "topic": "the-metal-that-melts-in-your-hand"
   },
   {
@@ -36292,7 +36266,7 @@
       "It is one of the rarest metals on Earth and too costly to waste",
       "Its liquid is opaque black and hides the melting moment entirely"
     ],
-    "context": "Caesium is an alkali metal, one row below rubidium; even trace water on skin sets off a vigorous exothermic reaction that would burn the hand. Rubidium (melts at 39 C) has the same problem. Gallium, by contrast, is a post-transition metal that shrugs off skin moisture, which is why it, and not caesium, became the classic melts-in-your-hand demonstration. Source: Wikipedia, Caesium; Wikipedia, Gallium.",
+    "context": "Caesium is an alkali metal, one row below rubidium; even trace water on skin sets off a vigorous exothermic reaction that would burn the hand. Rubidium (melts at 39 C) has the same problem. Gallium, by contrast, is a post-transition metal that shrugs off skin moisture, which is why it, and not caesium, became the classic melts-in-the-hand demonstration. Source: Wikipedia, Caesium; Wikipedia, Gallium.",
     "topic": "the-metal-that-melts-in-your-hand"
   },
   {
@@ -36409,7 +36383,7 @@
       "From calves' thymus glands ordered from the abattoir",
       "From blood drawn by lancet from the medical students"
     ],
-    "context": "Miescher soaked the pus off the bandages, washed out the leucocytes, and by the end of the year had precipitated a strange substance out of their nuclei he named 'nuclein' -- what we now call DNA. The stuff of genes was first scooped off used surgical dressings. Source: Dahm 2005 (Human Genetics); Univ. Tuebingen MUT exhibit.",
+    "context": "Miescher soaked the pus off the bandages, washed out the leucocytes, and by the end of the year had precipitated a strange substance out of their nuclei he named 'nuclein' -- what is now called DNA. The stuff of genes was first scooped off used surgical dressings. Source: Dahm 2005 (Human Genetics); Univ. Tuebingen MUT exhibit.",
     "topic": "the-molecule-nobody-believed-in-nuclein-to-chargaffs-ratios"
   },
   {
@@ -36453,15 +36427,15 @@
   },
   {
     "tier": 5,
-    "question": "Friedrich Miescher reached for the alphabet in 1892. Heredity, he suspected, might be written in chemical variety, the way 24 to 30 letters spell every word in every language. How did that idea reach the wider scientific world in his lifetime?",
-    "answer": "It did not -- he confided it only to his uncle Wilhelm His and never argued it publicly",
+    "question": "Friedrich Miescher reached for the alphabet in 1892. Heredity, he suspected, might be written in the chemical variety of giant protein molecules, the way 24 to 30 letters spell every word in every language. How did he share that idea in his lifetime?",
+    "answer": "In a private letter to his uncle, Wilhelm His",
     "choices": [
-      "It did not -- he confided it only to his uncle Wilhelm His and never argued it publicly",
-      "He announced it in a triumphant address to the Basel Academy of Sciences",
-      "He convinced Charles Darwin by mail and Darwin cited him in a late edition",
-      "He founded a research institute in Basel to prove the alphabet analogy"
+      "In a private letter to his uncle, Wilhelm His",
+      "In a lecture to the medical faculty at Basel",
+      "In a paper he sent to Hoppe-Seyler's journal",
+      "In a chapter of his textbook on cell chemistry"
     ],
-    "context": "The 1892 letter to Wilhelm His speculated that the stereochemistry of asymmetric carbon atoms could encode hereditary richness -- an idea almost a century early. But Miescher published nothing of the sort, and for decades nuclein was written off as a mere phosphorus store. Source: Dahm 2008; Portin 2020.",
+    "context": "The 1892 letter to Wilhelm His suggested that the many asymmetric carbon atoms in enormous protein molecules allow so many variants that all the richness of heredity could be written in them. Miescher published nothing of the sort, never clearly tied his own nuclein to heredity, and for decades nuclein was written off as a mere phosphorus store. Source: Dahm, 'From discovering to understanding', EMBO Reports 2010 (PMC2838690); Portin 2020.",
     "topic": "the-molecule-nobody-believed-in-nuclein-to-chargaffs-ratios"
   },
   {
@@ -36526,7 +36500,7 @@
       "Lignin",
       "Pectin"
     ],
-    "context": "Cellulose is a chain of glucose units and about 33% of all plant biomass, which makes it the most abundant organic polymer - repeating-unit molecule - on the planet. You are built of chains too: collagen is a chain of amino acids wound into a triple helix, which is what gives tendon and skin their tensile strength, and DNA is a chain of nucleotides. After his Nobel, Hermann Staudinger extended his macromolecular argument straight into biology, to proteins, enzymes, nucleic acids and polysaccharides. The fight over rubber decided how we read life's molecules too. (Sources: Grokipedia 'Polymer', section Natural Polymers; Grokipedia 'Hermann Staudinger', section Extensions to Biological Macromolecules.)",
+    "context": "Cellulose is a chain of glucose units and about 33% of all plant biomass, which makes it the most abundant organic polymer - repeating-unit molecule - on the planet. People are built of chains too: collagen is a chain of amino acids wound into a triple helix, which is what gives tendon and skin their tensile strength, and DNA is a chain of nucleotides. After his Nobel, Hermann Staudinger extended his macromolecular argument straight into biology, to proteins, enzymes, nucleic acids and polysaccharides. The fight over rubber decided how biologists read life's molecules too. (Sources: Grokipedia 'Polymer', section Natural Polymers; Grokipedia 'Hermann Staudinger', section Extensions to Biological Macromolecules.)",
     "topic": "the-molecules-that-wouldnt-stop-staudingers-giant-chains"
   },
   {
@@ -36544,19 +36518,6 @@
   },
   {
     "tier": 3,
-    "question": "Heinrich Wieland, who won the 1927 Nobel Prize in chemistry, wrote to Hermann Staudinger that year and urged him to give up his idea of giant molecules. Staudinger had spent seven years fighting Germany's leading chemists over rubber, and he was losing. No organic molecule can weigh more than about 5,000, Wieland said; anything bigger would be as shaky as one famous structure. Which structure did Wieland name?",
-    "answer": "The Tower of Babel",
-    "choices": [
-      "The Tower of Babel",
-      "The Colossus of Rhodes",
-      "The walls of Jericho",
-      "The wings of Icarus"
-    ],
-    "context": "Grokipedia gives the 1927 letter as: 'organic molecules with a molecular weight higher than 5000 do not exist; they would be as unstable as the Tower of Babel.' The line circulates in several English wordings, so that is the sourced version rather than one to reshape. The fight had career teeth: Richard Willstätter, himself a Nobel laureate, is reported to have blocked Staudinger's academic appointments over the disagreement, deepening his isolation in post-war Germany. Carl Freudenberg started out against the hypothesis and later converted. (Source: Grokipedia 'Hermann Staudinger', section Debate with the Scientific Establishment.)",
-    "topic": "the-molecules-that-wouldnt-stop-staudingers-giant-chains"
-  },
-  {
-    "tier": 3,
     "question": "Leo Baekeland made Bakelite in 1907, after Charles Goodyear's vulcanised rubber of 1839, Alexander Parkes's mouldable Parkesine of 1862, and the celluloid and rayon already in shops before 1900. Yet chemists still call his the first true plastic. What sets Bakelite apart from those four?",
     "answer": "It started from small manufactured chemicals",
     "choices": [
@@ -36570,7 +36531,7 @@
   },
   {
     "tier": 4,
-    "question": "Hermann Staudinger answered his critics at the bench in 1922, working with Jakob Fritschi. If rubber's huge measured weight were an illusion, then breaking the chemistry behind it should leave only low-weight waxes. The two men chemically changed natural rubber. The product kept nearly the same stretch, solubility and thickness, and end-counts put its weight above 100,000. What had they done to the rubber?",
+    "question": "Hermann Staudinger answered his critics at the bench in 1922, working with Jakob Fritschi. If rubber's huge measured weight were an illusion, then breaking the chemistry behind it should leave only low-weight waxes. The two men chemically changed natural rubber. The product kept nearly the same stretch, solubility and thickness, as if nothing had come apart. What had they done to the rubber?",
     "answer": "Added hydrogen to it, saturating every double bond",
     "choices": [
       "Added hydrogen to it, saturating every double bond",
@@ -36578,7 +36539,7 @@
       "Added chlorine to it, making a rubber chloride",
       "Added nitric acid to it, nitrating the rubber"
     ],
-    "context": "Hydrogenation kills rubber's carbon-carbon double bonds, the very bonds association theory leaned on - yet the 'hydro-rubber' still behaved like rubber and still weighed over 100,000 daltons. Staudinger's other tool was thickness: a solution's intrinsic viscosity rises in step with chain length, and the telling result was that viscosity did not change when he chemically dressed a polymer in new side groups. It dropped only when bonds were actually cut. A clump would have fallen apart; a chain just wore a new coat. (Source: Grokipedia 'Hermann Staudinger', section Key Experiments and Evidence.)",
+    "context": "Hydrogenation kills rubber's carbon-carbon double bonds, the very bonds association theory leaned on - yet the 'hydro-rubber' still behaved like rubber. Staudinger's other tool was thickness: a solution's intrinsic viscosity rises in step with chain length, and the telling result was that viscosity did not change when he chemically dressed a polymer in new side groups. It dropped only when bonds were actually cut. A clump would have fallen apart; a chain just wore a new coat. (Source: Grokipedia 'Hermann Staudinger', section Key Experiments and Evidence.)",
     "topic": "the-molecules-that-wouldnt-stop-staudingers-giant-chains"
   },
   {
@@ -36591,7 +36552,7 @@
       "It pushed the solution through a membrane and read the pressure",
       "It burned the solution and weighed the gases given off"
     ],
-    "context": "Svedberg's ultracentrifuge - a 1924 prototype built with H. Rinde reaching about 7,000 g, refined by 1926 to roughly 100,000 g at 42,000 rpm - drove molecules down through the solution at a rate set by their mass, so the sedimentation itself was the measurement. He took the 1926 Nobel Prize in Chemistry for it. Two other instruments from outside the quarrel pointed the same way: Herman Mark's X-ray work on stretched fibres, and membrane osmometry, which confirmed the high molecular weights independently. (Sources: Grokipedia 'Ultracentrifuge', section Invention and Early Advances; Wikipedia 'Hermann Staudinger'.)",
+    "context": "Svedberg's ultracentrifuge - a 1924 prototype built with H. Rinde reaching about 7,000 g, refined by 1926 to roughly 100,000 g at 42,000 rpm - drove molecules down through the solution at a rate set by their mass, so the sedimentation itself was the measurement. He took the 1926 Nobel Prize in Chemistry for his work on disperse systems, the ultracentrifuge among it. Two other instruments from outside the quarrel pointed the same way: Herman Mark's X-ray work on stretched fibres, and membrane osmometry, which confirmed the high molecular weights independently. (Sources: Grokipedia 'Ultracentrifuge', section Invention and Early Advances; Wikipedia 'Hermann Staudinger'.)",
     "topic": "the-molecules-that-wouldnt-stop-staudingers-giant-chains"
   },
   {
@@ -36617,7 +36578,7 @@
       "The crystal holds only the shortest chains present",
       "The viscosity had over-counted the chain length"
     ],
-    "context": "A self-contained clump has to fit inside the box it sits in; a chain does not - it threads through many cells, which is exactly what the X-rays showed. This is the argument at its cleanest: two independent measurements, crystal geometry from diffraction and chain length from viscosity and end-groups, that cannot both be true unless the molecule is longer than its own crystal cell. Staudinger took the 1953 Nobel Prize in Chemistry at 72, thirty-three years after the 1920 paper. He had founded the journal Die Makromolekulare Chemie in 1939 and, in January 1940, the Freiburg Institute for Macromolecular Chemistry, the first institution in Europe devoted only to polymer science; Allied bombing destroyed it on 27 November 1944 and it was rebuilt after the war. (Source: Grokipedia 'Hermann Staudinger', sections Key Experiments and Evidence, Nobel Prize and Vindication.)",
+    "context": "A self-contained clump has to fit inside the box it sits in; a chain does not - it threads through many cells, which is exactly what the X-rays showed. This is the argument at its cleanest: two independent measurements, crystal geometry from diffraction and chain length from viscosity and end-groups, that cannot both be true unless the molecule is longer than its own crystal cell. Staudinger took the 1953 Nobel Prize in Chemistry at 72, thirty-three years after the 1920 paper. He had founded the first journal devoted to polymers around 1940 and, in January 1940, the Freiburg Institute for Macromolecular Chemistry, the first institution in Europe devoted only to polymer science; Allied bombing destroyed it on 27 November 1944 and it was rebuilt after the war. (Source: Grokipedia 'Hermann Staudinger', sections Key Experiments and Evidence, Nobel Prize and Vindication.)",
     "topic": "the-molecules-that-wouldnt-stop-staudingers-giant-chains"
   },
   {
@@ -36643,7 +36604,7 @@
       "That he should redo the experiment tomorrow",
       "That he had accidentally spilled another boy's mix"
     ],
-    "context": "Mpemba was ridiculed by his teacher and classmates, and he kept asking anyway. The right lesson from this question is the shape of the reception a real observation can get from the people around it. Sources: PBS NOVA 'The ice cream that changed physics'; Skeptical Inquirer 'The Rise and Fall of the Mpemba Effect'.",
+    "context": "Mpemba was ridiculed by his teacher and classmates, and he kept asking anyway. A real observation can meet exactly this reception from the people around it. Sources: PBS NOVA 'The ice cream that changed physics'; Skeptical Inquirer 'The Rise and Fall of the Mpemba Effect'.",
     "topic": "the-mpemba-effect-a-schoolboys-question-nobody-has-closed"
   },
   {
@@ -36656,12 +36617,12 @@
       "He asked the school to repeat the observation",
       "He looked up the earlier work of Francis Bacon"
     ],
-    "context": "Osborne's controlled experiments back at the university appeared to confirm something, and in 1969 he and Mpemba jointly published 'Cool?' in Physics Education, with Mpemba credited as first author. Osborne wrote 'no question should be ridiculed'. Aristotle, Francis Bacon and Rene Descartes had all reported something similar in earlier centuries -- and been forgotten. Sources: Chemistry World; Physics Education 4, 172 (1969).",
+    "context": "Osborne's controlled experiments back at the university appeared to confirm something, and in 1969 he and Mpemba jointly published 'Cool?' in Physics Education, with Mpemba credited as first author. Aristotle, Francis Bacon and Rene Descartes had all reported something similar in earlier centuries -- and been forgotten. Sources: Chemistry World; Physics Education 4, 172 (1969).",
     "topic": "the-mpemba-effect-a-schoolboys-question-nobody-has-closed"
   },
   {
     "tier": 5,
-    "question": "Henry Burridge and Paul Linden at Cambridge ran the most tightly controlled experiments to date in 2016 on whether hot water reliably freezes faster than cold. Sixty years on from Erasto Mpemba, physicists still argue, and a girl with two ice-cube trays can still run the test at home. What did the two men find?",
+    "question": "Henry Burridge of Imperial College London and Paul Linden of Cambridge ran the most tightly controlled experiments to date in 2016 on whether hot water reliably freezes faster than cold. Sixty years on from Erasto Mpemba, physicists still argue, and a girl with two ice-cube trays can still run the test at home. What did the two men find?",
     "answer": "No evidence of any reproducible effect at all",
     "choices": [
       "No evidence of any reproducible effect at all",
@@ -36669,7 +36630,7 @@
       "A clear effect once dissolved gases were removed",
       "A larger effect than any earlier study had reported"
     ],
-    "context": "Burridge and Linden defined freezing as cooling to zero degrees Celsius and found no consistent effect; other laboratories continue to report one, and the argument is not settled. Live candidate mechanisms include evaporation reducing the mass, dissolved gases, convection currents, differences in supercooling, and frost layers acting as insulation. This is an open mystery: the honest answer to what is really going on is still 'no one yet knows'. Try it at home with two ice-cube trays -- if you see nothing, that is a real result. Sources: Nature Scientific Reports 6, 37665 (2016); Quanta Magazine, June 2022.",
+    "context": "Burridge and Linden defined freezing as cooling to zero degrees Celsius and found no consistent effect; other laboratories continue to report one, and the argument is not settled. Live candidate mechanisms include evaporation reducing the mass, dissolved gases, convection currents, differences in supercooling, and frost layers acting as insulation. This is an open mystery: the honest answer to what is really going on is still 'no one yet knows'. Try it at home with two ice-cube trays -- if nothing shows, that is a real result. Sources: Nature Scientific Reports 6, 37665 (2016); Quanta Magazine, June 2022.",
     "topic": "the-mpemba-effect-a-schoolboys-question-nobody-has-closed"
   },
   {
@@ -36687,15 +36648,15 @@
   },
   {
     "tier": 1,
-    "question": "A student works out the fate of a muon born about 15 kilometres up and racing down at 99.5% of the speed of light. Its short lifetime says it should decay into lighter particles after about 660 metres. What happens to muons over that drop?",
+    "question": "A student works out the fate of a muon born about 15 kilometres up and racing down at 99.5% of the speed of light. Its short lifetime says it should, on average, decay after about 660 metres. What happens to muons over that drop?",
     "answer": "they arrive at the ground in huge numbers",
     "choices": [
       "they arrive at the ground in huge numbers",
       "they all decay long before hitting the ground",
-      "they slow down and drift as cosmic dust",
-      "they merge with air molecules to form nitrogen"
+      "they are absorbed by the air within a few kilometres",
+      "they decay, and only their electrons reach the ground"
     ],
-    "context": "About one muon strikes every square centimetre of ground per minute -- a handful are going through the reader's hand every second. The mismatch between 660 metres and 15 kilometres is exactly what makes them a walking experiment in relativity. Source: CERN HST 2000 -- muon calc.",
+    "context": "About one muon strikes every square centimetre of ground per minute -- one or two pass through a person's palm every second. The mismatch between 660 metres and 15 kilometres is exactly what makes them a walking experiment in relativity. Source: CERN HST 2000 -- muon calc.",
     "topic": "the-muons-that-should-never-have-reached-the-ground"
   },
   {
@@ -36713,7 +36674,7 @@
   },
   {
     "tier": 3,
-    "question": "Two physicists beat the famous Mount Washington muon count by twenty-three years. In 1940 they compared muon counts at a mountain-top station and in a lower valley, and they found the faster muons outliving the slower ones. Which pair was it?",
+    "question": "Two physicists beat the famous Mount Washington muon count by twenty-three years. In 1940 they compared muon counts at a mountain-top station and in a city far below, and they found the faster muons outliving the slower ones. Which pair was it?",
     "answer": "Bruno Rossi and D. B. Hall, in Colorado",
     "choices": [
       "Bruno Rossi and D. B. Hall, in Colorado",
@@ -36727,14 +36688,14 @@
   {
     "tier": 4,
     "question": "A teacher explains the muon's journey from two seats. From the ground, the muon lives long enough to cross 15 kilometres. From the muon's own seat, its clock runs normally, yet it still reaches the ground. What has changed instead, from the muon's point of view?",
-    "answer": "the 15 kilometres of atmosphere is squashed to a few hundred metres",
+    "answer": "the 15 kilometres of atmosphere is squashed to under two kilometres",
     "choices": [
-      "the 15 kilometres of atmosphere is squashed to a few hundred metres",
-      "gravity is much weaker at that speed and pulls it less",
-      "the atmosphere becomes transparent to the muon's mass",
-      "the Earth is spinning fast enough to meet the muon halfway"
+      "the 15 kilometres of atmosphere is squashed to under two kilometres",
+      "its mass has grown so great that it can no longer decay",
+      "the air around it drags on it and slows its decay",
+      "the ground rushes up to meet it faster than light"
     ],
-    "context": "Time dilation and length contraction are the same fact seen from two seats. From the ground, muon clocks slow; from the muon, our distances shrink. Neither observer sees both effects at once, but both agree on the final outcome: it arrives. Source: Open Book -- 'Consider the Muon's PoV'.",
+    "context": "Time dilation and length contraction are the same fact seen from two seats. From the ground, muon clocks slow; from the muon, the ground's distances shrink by the same factor of about nine, so 15 kilometres becomes under two. Neither observer sees both effects at once, but both agree on the final outcome: it arrives. Source: Open Book -- 'Consider the Muon's PoV'.",
     "topic": "the-muons-that-should-never-have-reached-the-ground"
   },
   {
@@ -36838,7 +36799,7 @@
       "His schoolfriend Marcel Grossmann and Grossmann's wife",
       "Two fellow clerks who rented the rooms with him"
     ],
-    "context": "Einstein, Mileva Maric and their son Hans Albert lived at Kramgasse 49 from 1903 to 1905 — so the four papers were written in a second-floor flat with a baby in it, not in any laboratory. The flat is now the Einstein House museum: you can walk in and stand in the room. Source: en.wikipedia.org/wiki/Einstein_House",
+    "context": "Einstein, Mileva Maric and their son Hans Albert lived at Kramgasse 49 from 1903 to 1905 — so the four papers were written in a second-floor flat with a baby in it, not in any laboratory. The flat is now the Einstein House museum, and visitors can walk in and stand in the room. Source: en.wikipedia.org/wiki/Einstein_House",
     "topic": "the-patent-clerks-miracle-year"
   },
   {
@@ -36851,7 +36812,7 @@
       "His work on the motion of suspended particles",
       "His work on the specific heats of solids"
     ],
-    "context": "The citation in full: 'for his services to Theoretical Physics, and especially for his discovery of the law of the photoelectric effect.' Relativity is not named anywhere in it — Einstein never won a Nobel Prize for relativity, special or general. The prize was late as well: no physics prize was awarded for 1921 at all, and in September 1922 the Academy voted to hand Einstein the held-over 1921 prize and Niels Bohr the 1922 one. Einstein missed the ceremony on 10 December 1922; he was travelling in Japan, and the German minister Rudolf Nadolny read his speech at the Stockholm banquet. When he finally gave his Nobel lecture, at Gothenburg on 11 July 1923, he titled it 'Fundamental Ideas and Problems of the Theory of Relativity' — and lectured on the theory the prize had refused to name. Sources: en.wikipedia.org/wiki/List_of_Nobel_laureates_in_Physics; arxiv.org/abs/2112.13519; nobelprize.org",
+    "context": "The citation in full: 'for his services to Theoretical Physics, and especially for his discovery of the law of the photoelectric effect.' Relativity is not named anywhere in it — Einstein never won a Nobel Prize for relativity, special or general. The prize was late as well: no physics prize was awarded for 1921 at all, and on 9 November 1922 the Academy voted to hand Einstein the held-over 1921 prize and Niels Bohr the 1922 one. Einstein missed the ceremony on 10 December 1922; he was travelling in Japan, and the German minister Rudolf Nadolny read his speech at the Stockholm banquet. When he finally gave his Nobel lecture, at Gothenburg on 11 July 1923, he titled it 'Fundamental Ideas and Problems of the Theory of Relativity' — and lectured on the theory the prize had refused to name. Sources: en.wikipedia.org/wiki/List_of_Nobel_laureates_in_Physics; arxiv.org/abs/2112.13519; nobelprize.org",
     "topic": "the-patent-clerks-miracle-year"
   },
   {
@@ -36882,7 +36843,7 @@
   },
   {
     "tier": 3,
-    "question": "Maurice Solovine, a Romanian philosophy student, answered a small advertisement in a Bern newspaper in December 1901 and came round. Albert Einstein, still months away from his office job, was offering private lessons in mathematics and physics at three francs an hour. The first lesson ran nearly two hours. What happened to the three francs an hour?",
+    "question": "Maurice Solovine, a Romanian philosophy student, answered a small advertisement in a Bern newspaper and called at the address around Easter 1902. Albert Einstein, still months away from his office job, was offering private lessons in mathematics and physics at three francs an hour. The first lesson ran nearly two hours. What happened to the three francs an hour?",
     "answer": "No money changed hands, and the lesson became an argument",
     "choices": [
       "No money changed hands, and the lesson became an argument",
@@ -36929,7 +36890,7 @@
       "Can the Motion of the Molecules in a Liquid Be Counted?",
       "Does Light Travel as Waves or as Separate Grains?"
     ],
-    "context": "'Ist die Tragheit eines Korpers von seinem Energieinhalt abhangig?', received by Annalen der Physik on 27 September 1905 — three pages, volume 18, pages 639-641. Inertia is a body's resistance to being shoved: how hard you have to push to change its motion, which is what we usually call its mass. For contrast, the June relativity paper ran 31 pages. Sources: en.wikipedia.org/wiki/Annus_mirabilis_papers; grokipedia.com/page/Annus_mirabilis_papers",
+    "context": "'Ist die Tragheit eines Korpers von seinem Energieinhalt abhangig?', received by Annalen der Physik on 27 September 1905 — three pages, volume 18, pages 639-641. Inertia is a body's resistance to being shoved: how hard a push it takes to change its motion, which is what is usually called its mass. For contrast, the June relativity paper ran 31 pages. Sources: en.wikipedia.org/wiki/Annus_mirabilis_papers; grokipedia.com/page/Annus_mirabilis_papers",
     "topic": "the-patent-clerks-miracle-year"
   },
   {
@@ -36942,20 +36903,20 @@
       "Molecular diameter, the width of one water molecule",
       "Atomic mass, the weight of a single hydrogen atom"
     ],
-    "context": "Einstein predicted the mean square displacement <x^2> = 2Dt, with D = kT / (6 pi eta r): temperature T, the fluid's viscosity eta, the particle's radius r. Track a speck's wandering under a microscope, measure the fluid's thickness, and the number of molecules in a mole falls out — without anybody ever seeing an atom. (A mole is just a chemist's counting unit: a fixed number of molecules, the way a dozen is a fixed number of eggs.) Jean Perrin did exactly this in 1908-09 and got about 6.0 x 10^23; his 1926 Nobel Prize in Physics was for confirming the patent clerk's arithmetic. Source: grokipedia.com/page/Annus_mirabilis_papers",
+    "context": "Einstein predicted the mean square displacement <x^2> = 2Dt, with D = kT / (6 pi eta r): temperature T, the fluid's viscosity eta, the particle's radius r. Track a speck's wandering under a microscope, measure the fluid's thickness, and the number of molecules in a mole falls out — without anybody ever seeing an atom. (A mole is just a chemist's counting unit: a fixed number of molecules, the way a dozen is a fixed number of eggs.) Jean Perrin did exactly this in 1908-09 and got about 6.0 x 10^23; his 1926 Nobel Prize in Physics honoured that work on the discontinuous, grainy structure of matter. Source: grokipedia.com/page/Annus_mirabilis_papers",
     "topic": "the-patent-clerks-miracle-year"
   },
   {
     "tier": 4,
-    "question": "A student opens the English translation of Albert Einstein's fourth 1905 paper online, three pages long, and hunts for the line that first ties mass to energy. Anyone can do the same. Which letters does she find there for energy and for the speed of light?",
+    "question": "A student finds a scan of Albert Einstein's fourth 1905 paper, three pages long in the original German of Annalen der Physik, and hunts for the line that first ties mass to energy. Which letters does she find there for the energy given off and for the speed of light?",
     "answer": "L for energy and V for the speed of light",
     "choices": [
       "L for energy and V for the speed of light",
       "E for energy and c for the speed of light",
-      "L for energy and c for the speed of light",
+      "U for energy and c for the speed of light",
       "E for energy and V for the speed of light"
     ],
-    "context": "Einstein's own words in the paper: 'The mass of a body is a measure of its energy-content; if the energy changes by L, the mass changes in the same sense by L / 9 x 10^20, the energy being measured in ergs, and the mass in grammes.' No E, no m, no c anywhere. That 9 x 10^20 is the speed of light in centimetres per second, squared. The famous shorthand came later — so when a book says the 1905 paper 'derived E = mc^2', that is a modernizing gloss, not what is on the page. Check it yourself: the English translation is online. Source: fourmilab.ch/etexts/einstein/E_mc2/www/",
+    "context": "Einstein's own words, in the 1923 English translation: 'The mass of a body is a measure of its energy-content; if the energy changes by L, the mass changes in the same sense by L / 9 x 10^20, the energy being measured in ergs, and the mass in grammes.' That 9 x 10^20 is the speed of light in centimetres per second, squared. The German original writes the speed of light as V; the 1923 translators put the modern c in its place. E appears only as the body's own energy before and after (E0, E1), and the famous shorthand E = mc^2 came later -- so when a book says the 1905 paper 'derived E = mc^2', that is a modernizing gloss, not what is on the page. Source: fourmilab.ch/etexts/einstein/E_mc2/www/ (text and 'About this Edition').",
     "topic": "the-patent-clerks-miracle-year"
   },
   {
@@ -37107,11 +37068,11 @@
     "answer": "A layer of indium tin oxide",
     "choices": [
       "A film of aluminium sputtered onto the glass",
-      "A grid of very fine copper wires",
+      "A film of copper plated onto the glass",
       "A layer of indium tin oxide",
       "A coating of graphite ink"
     ],
-    "context": "Indium tin oxide (ITO), roughly 90 percent In2O3 and 10 percent SnO2 by weight, is one of very few materials that conducts electricity while staying optically clear, which is why almost every touchscreen uses it. Copper and silver conduct better but are opaque, so a copper screen would be a mirror; aluminium films are used elsewhere in phones but block light too. Indium is a soft, silvery metal recovered mostly as a by-product of refining zinc. Source: https://www.chemistryworld.com/podcasts/indium-tin-oxide-ito/3008984.article",
+    "context": "Indium tin oxide (ITO), roughly 90 percent In2O3 and 10 percent SnO2 by weight, is one of very few materials that conducts electricity while staying optically clear, which is why almost every touchscreen uses it. Copper, silver and gold conduct better but block light, so a copper screen would be a mirror; aluminium films are used elsewhere in phones but block light too. Indium is a soft, silvery metal recovered mostly as a by-product of refining zinc. Source: https://www.chemistryworld.com/podcasts/indium-tin-oxide-ito/3008984.article",
     "topic": "the-periodic-table-in-your-pocket"
   },
   {
@@ -37142,7 +37103,7 @@
   },
   {
     "tier": 3,
-    "question": "A shopper looks at a bright red dress in a photo on her phone. Ordinary dyes give off a smear of colour wavelengths that would look muddy there, so her screen uses a phosphor, a powder made with the rare-earth element europium, in front of a white or blue backlight. What does the europium phosphor do to the light?",
+    "question": "A colour TV picture tube lit its reds with a phosphor, a powder made with the rare-earth element europium, and so do many fluorescent lamps. Ordinary dyes give off a smear of colour wavelengths that would look muddy. What does the europium phosphor do to the light?",
     "answer": "Re-emits a pure, narrow red near 611 nanometres",
     "choices": [
       "Re-emits a pure, narrow red near 611 nanometres",
@@ -37150,7 +37111,7 @@
       "Adds a tiny mirror behind each pixel",
       "Speeds up how fast the pixels change"
     ],
-    "context": "Europium(III) doped into an yttrium-oxide or related host emits a sharp red line near 611 nm - it is the reason on-screen reds look like reds and not orangey mud. Terbium(III) does the analogous green job near 545 nm. These narrow lines are a quantum-mechanical trick of the rare-earth f-electrons. Source: https://www.snexplores.org/article/rare-earth-elements-electrons-properties-technology",
+    "context": "Europium(III) doped into an yttrium-oxide or related host emits a sharp red line near 611 nm - it is why the reds of colour TV tubes and fluorescent lamps looked like reds and not orangey mud. (Modern phone screens mostly make red other ways.) Terbium(III) does the analogous green job near 545 nm. These narrow lines are a quantum-mechanical trick of the rare-earth f-electrons. Source: https://www.snexplores.org/article/rare-earth-elements-electrons-properties-technology",
     "topic": "the-periodic-table-in-your-pocket"
   },
   {
@@ -37168,13 +37129,13 @@
   },
   {
     "tier": 5,
-    "question": "Dmitri Mendeleev wrote down a density and a melting point in 1871 for a blank square just below aluminium on his table, and called its element eka-aluminium. Phones now rely on that metal, gallium, for the two jobs silicon does poorly: giving off light and handling very high radio frequencies. What did his 1871 entry show about his periodic table?",
-    "answer": "It could predict the properties of elements nobody had discovered yet",
+    "question": "Dmitri Mendeleev left a blank square just below aluminium in 1871 and predicted the density of the metal that would fill it, eka-aluminium. That metal, gallium, now sits in every phone, in chips made with arsenic and with nitrogen, doing two jobs that silicon does poorly. Which two jobs?",
+    "answer": "Handling radio signals and making blue light",
     "choices": [
-      "It could predict the properties of elements nobody had discovered yet",
-      "It could turn one element into another in the lab",
-      "It proved that atoms had a fixed cubic shape",
-      "It explained how radioactive elements decay"
+      "Handling radio signals and making blue light",
+      "Storing charge in the battery and cooling the main chip",
+      "Storing photos and keeping time for the clock",
+      "Sensing the screen's touch and the phone's tilt"
     ],
     "context": "Paul-Emile Lecoq de Boisbaudran isolated gallium from a zinc ore in 1875 and its properties matched Mendeleev's 1871 eka-aluminium prediction almost exactly - the first triumph of the periodic table as a predictive tool. Today gallium arsenide handles the Wi-Fi and cellular radio-frequency chips, and gallium nitride the blue LEDs. Germanium was Mendeleev's eka-silicon (found 1886) and scandium his eka-boron (found 1879). Source: https://en.wikipedia.org/wiki/Mendeleev%27s_predicted_elements",
     "topic": "the-periodic-table-in-your-pocket"
@@ -37384,7 +37345,7 @@
       "How many knew they were getting the new drug",
       "How many were on their worst day when tested"
     ],
-    "context": "Because most people improve on their own -- illnesses come and go, and bad days are followed by better ones -- the honest question is never 'did the patients get better?' but 'did they get better than the ones who got the fake?'. That is why control arms exist. The other three choices are also real trial-design worries (co-intervention, blinding, regression to the mean) but only the control arm answers the missing comparison. Source: https://www.nejm.org/doi/full/10.1056/NEJM200105243442106",
+    "context": "Because most people improve on their own -- illnesses come and go, and bad days are followed by better ones -- the honest question is never 'did the patients get better?' but 'did they get better than the ones who got the fake?'. That is why control arms exist. Co-interventions, blinding and regression to the mean are real trial-design worries too, but only a control arm supplies the missing comparison. Source: https://www.nejm.org/doi/full/10.1056/NEJM200105243442106",
     "topic": "the-placebo-and-why-blinding-exists"
   },
   {
@@ -37419,11 +37380,11 @@
     "answer": "On subjective reports, above all pain",
     "choices": [
       "On subjective reports, above all pain",
-      "On measurable disease",
-      "On both, in equal measure",
-      "On almost nothing at all"
+      "On measurable disease, such as blood pressure",
+      "On both, in roughly equal measure",
+      "On almost nothing, not even pain"
     ],
-    "context": "Hrobjartsson and Gotzsche 2001, 'Is the Placebo Powerless?' in NEJM, reviewed trials with a no-treatment arm and found placebos reliably moved subjective outcomes (especially pain) but did not meaningfully change objective disease measures. Placebos mostly change how you feel, not what the disease is doing. Source: https://www.nejm.org/doi/full/10.1056/NEJM200105243442106",
+    "context": "Hrobjartsson and Gotzsche 2001, 'Is the Placebo Powerless?' in NEJM, reviewed trials with a no-treatment arm and found placebos reliably moved subjective outcomes (especially pain) but did not meaningfully change objective disease measures. Placebos mostly change how a patient feels, not what the disease is doing. Source: https://www.nejm.org/doi/full/10.1056/NEJM200105243442106",
     "topic": "the-placebo-and-why-blinding-exists"
   },
   {
@@ -37447,7 +37408,7 @@
       "Significantly better than no-treatment controls",
       "About the same as no-treatment controls",
       "Significantly worse than no-treatment controls",
-      "The same as a fully-blinded placebo arm"
+      "Better at first, then no different from controls"
     ],
     "context": "Kaptchuk et al., PLOS ONE 2010: 80 IBS patients, three-week trial, one arm given pills openly labelled as inert sugar pills, one arm given no treatment with matched provider interactions. The open-label placebo arm improved significantly more. Caveat: small study, subjective outcomes, short follow-up. Source: https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0015591",
     "topic": "the-placebo-and-why-blinding-exists"
@@ -38047,7 +38008,7 @@
       "At the point in the sky directly overhead",
       "At the spot where the Sun's light first meets the water"
     ],
-    "context": "That centre has a name: the antisolar point, the direction exactly opposite the Sun, and from where you stand it is marked by the shadow of your own head. Every rainbow anyone has ever seen was aimed personally at that spot. Source: Grokipedia, 'Antisolar point' ('from a person's perspective the antisolar point is the location of the shadow of their head on the ground'); corroborated at en.wikipedia.org/wiki/Rainbow, which notes that in photographs the shadow of the photographer's head marks the centre of the rainbow circle.",
+    "context": "That centre has a name: the antisolar point, the direction exactly opposite the Sun, and from where a watcher stands it is marked by the shadow of the watcher's own head. Every rainbow anyone has ever seen was aimed personally at that spot. Source: Grokipedia, 'Antisolar point' ('from a person's perspective the antisolar point is the location of the shadow of their head on the ground'); corroborated at en.wikipedia.org/wiki/Rainbow, which notes that in photographs the shadow of the photographer's head marks the centre of the rainbow circle.",
     "topic": "the-rainbow-you-can-build-with-a-garden-hose"
   },
   {
@@ -38060,7 +38021,7 @@
       "Behind you: the ring had swung to the Sun's side",
       "Inside the mist: the ring was there but far too faint"
     ],
-    "context": "The ring's centre is driven downward as the Sun climbs, and the arc reaches about 42 degrees up from that centre. So once the Sun stands more than 42 degrees above the horizon, the whole ring has sunk below the ground and no amount of spraying will raise one -- at a July noon you are standing on top of your rainbow. TEST IT: try the hose at midday, then again an hour before sunset. Source: Atmospheric Optics, atoptics.co.uk/blog/low-and-high-rainbows/ ('If the sun is higher than 42 degrees you won't see a rainbow at all'); corroborated at livescience.com/30235-rainbows-formation-explainer.html.",
+    "context": "The ring's centre is driven downward as the Sun climbs, and the arc reaches about 42 degrees up from that centre. So once the Sun stands more than 42 degrees above the horizon, the whole ring has sunk below the ground and no amount of spraying will raise one -- at a July noon the sprayer is standing on top of the rainbow. TEST IT: try the hose at midday, then again an hour before sunset. Source: Atmospheric Optics, atoptics.co.uk/blog/low-and-high-rainbows/ ('If the sun is higher than 42 degrees you won't see a rainbow at all'); corroborated at livescience.com/30235-rainbows-formation-explainer.html.",
     "topic": "the-rainbow-you-can-build-with-a-garden-hose"
   },
   {
@@ -38073,7 +38034,7 @@
       "Every watcher stands about the same distance from the water",
       "Every human eye takes in about the same width of sky"
     ],
-    "context": "Every drop that sends red light to your eye lies on a cone about 42 degrees wide around the antisolar line; violet arrives from about 40 degrees. Drop size does not enter into it, which is why a bow in an Icelandic squall and a bow in your sprinkler are twins. Source: Grokipedia, 'Rainbow' -- the primary bow subtends 'an angular radius of approximately 42 degrees from the observer's shadow, with longer wavelengths (red) on the outer edge and shorter wavelengths (violet) on the inner edge'; corroborated at en.wikipedia.org/wiki/Rainbow.",
+    "context": "Every drop that sends red light to an eye lies on a cone about 42 degrees wide around the antisolar line; violet arrives from about 40 degrees. Drop size does not enter into it, which is why a bow in an Icelandic squall and a bow in a garden sprinkler are twins. Source: Grokipedia, 'Rainbow' -- the primary bow subtends 'an angular radius of approximately 42 degrees from the observer's shadow, with longer wavelengths (red) on the outer edge and shorter wavelengths (violet) on the inner edge'; corroborated at en.wikipedia.org/wiki/Rainbow.",
     "topic": "the-rainbow-you-can-build-with-a-garden-hose"
   },
   {
@@ -38112,7 +38073,7 @@
       "A map of how far off each drop is: near ones give red, far ones violet",
       "A map of how fast each drop falls: slow ones give red, quick ones violet"
     ],
-    "context": "A single raindrop hands you exactly one colour and flings the rest of the spectrum it made past your head, to land in front of you or behind you. The band of colour you see is therefore a map of drop height, not a spectrum from any one drop: the drops high in the arc are doing the red, the low ones the blue and violet. Source: sciencefocus.com, 'Why do millions of raindrops only make one rainbow'; corroborated at asu.edu/courses/phs208/patternsbb/PiN/rdg/rainbow/rainbow3.shtml.",
+    "context": "A single raindrop hands a watcher exactly one colour and flings the rest of the spectrum it made past his head, to land in front of him or behind him. The band of colour he sees is therefore a map of drop height, not a spectrum from any one drop: the drops high in the arc are doing the red, the low ones the blue and violet. Source: sciencefocus.com, 'Why do millions of raindrops only make one rainbow'; corroborated at asu.edu/courses/phs208/patternsbb/PiN/rdg/rainbow/rainbow3.shtml.",
     "topic": "the-rainbow-you-can-build-with-a-garden-hose"
   },
   {
@@ -38138,7 +38099,7 @@
       "A parabola, the curve of a ball thrown flat and low",
       "A spiral, winding tighter toward the far hedge"
     ],
-    "context": "A dewbow is a rainbow cone cut open where you can walk on it. Atmospheric Optics puts it exactly: 'The path on the grass of the dew forming the bow is a hyperbola or ellipse formed by the intersection of the rainbow cone with the ground. However the bow seen by your eyes at the tip of cone, is always circular.' Its apex sits at the lower end of your own shadow, and an ellipse rather than a hyperbola turns up when the geometry allows. Source: atoptics.co.uk/rainbows/dewbow.htm; corroborated at en.wikipedia.org/wiki/Dewbow and glossary.ametsoc.org/wiki/dewbow/.",
+    "context": "A dewbow is a rainbow cone cut open where a person can walk on it. Atmospheric Optics puts it exactly: 'The path on the grass of the dew forming the bow is a hyperbola or ellipse formed by the intersection of the rainbow cone with the ground. However the bow seen by your eyes at the tip of cone, is always circular.' Its apex sits at the lower end of the watcher's own shadow, and an ellipse rather than a hyperbola turns up when the geometry allows. Source: atoptics.co.uk/rainbows/dewbow.htm; corroborated at en.wikipedia.org/wiki/Dewbow and glossary.ametsoc.org/wiki/dewbow/.",
     "topic": "the-rainbow-you-can-build-with-a-garden-hose"
   },
   {
@@ -38151,7 +38112,7 @@
       "It passed straight on through a second raindrop behind the first",
       "It entered through the drop's shaded side instead of the sunlit side"
     ],
-    "context": "Two reflections inside the drop instead of one puts the secondary bow near 51 degrees, about nine degrees outside the primary, and flips the colour order so red faces inward. It carries only about 43 per cent of the primary's total brightness, spread over a band roughly 1.8 times wider -- which is why most people go a lifetime without noticing it. TEST IT: at the next double bow, check the colour order on the outer arc. Source: Atmospheric Optics, atoptics.co.uk/blog/secondary-rainbow/ ('Rays escaping after two reflections make a secondary bow with a radius of 51 degrees... it is broader, 1.8 times the width of the primary bow, and its colours are reversed'); corroborated at Grokipedia, 'Rainbow'.",
+    "context": "Two reflections inside the drop instead of one puts the secondary bow near 51 degrees, about nine degrees outside the primary, and flips the colour order so red faces inward. It carries only about 43 per cent of the primary's total brightness, spread over a band roughly 1.8 times wider -- which is why it is so easily overlooked. TEST IT: at the next double bow, check the colour order on the outer arc. Source: Atmospheric Optics, atoptics.co.uk/blog/secondary-rainbow/ ('Rays escaping after two reflections make a secondary bow with a radius of 51 degrees... it is broader, 1.8 times the width of the primary bow, and its colours are reversed'); corroborated at Grokipedia, 'Rainbow'.",
     "topic": "the-rainbow-you-can-build-with-a-garden-hose"
   },
   {
@@ -38181,19 +38142,6 @@
     "topic": "the-rainbow-you-can-build-with-a-garden-hose"
   },
   {
-    "tier": 4,
-    "question": "A passenger at an airliner window, ten thousand metres up with a low Sun behind her, sees a rainbow whole: a closed ring, complete all the way round, as it never is from the ground. The bottom of the ring is built from drops below the aircraft, and those come into play only once the Sun is low enough. How low must it sit?",
-    "answer": "Under about three degrees up, all but touching the horizon",
-    "choices": [
-      "Under about three degrees up, all but touching the horizon",
-      "Under about fifteen degrees up, a fist held at arm's length",
-      "Under about thirty degrees up, a third of the way up the sky",
-      "Under about forty degrees up, not quite halfway up the sky"
-    ],
-    "context": "From an aeroplane the drops below your horizon suddenly come into play and the bow closes into a full circle -- on the ground it is the earth, not the physics, that cuts every rainbow in half. Grokipedia adds the number: at a typical cruising altitude of 10,000 metres the antisolar point clears the local horizon once the Sun drops below about 3 degrees of altitude. Window seat, low Sun, opposite side of the aircraft from the Sun. Source: Grokipedia, 'Rainbow' and 'Antisolar point'; corroborated at en.wikipedia.org/wiki/Rainbow (full circles visible from aircraft).",
-    "topic": "the-rainbow-you-can-build-with-a-garden-hose"
-  },
-  {
     "tier": 5,
     "question": "Thomas Young offered an explanation in 1804 for the two or three faint fringes of pink, purple and green sometimes seen just inside the violet edge of a bright rainbow, the supernumerary bows. Careful ray tracing through a drop predicts nothing there at all. George Airy had to invent a whole new mathematical function in 1838 to get their spacing right. What are those fringes made of?",
     "answer": "Light that took two slightly different paths inside one drop, then combined",
@@ -38203,7 +38151,7 @@
       "Light from a much higher layer of drops, arriving a little behind the rest",
       "Light thrown back down off the underside of the cloud above the shower"
     ],
-    "context": "Young's 1804 answer was interference: two routes through the same drop arrive slightly out of step, reinforcing in some directions and cancelling in others. George Airy made it quantitative in 1838 in 'On the intensity of light in the neighbourhood of a caustic' (Transactions of the Cambridge Philosophical Society, vol. 6, pp. 379-403), inventing the function that now carries his name. Best part: the fringe spacing reports the DROP SIZE. You need drops about 1 mm across or smaller, and the smaller the drops, the broader and paler the bands -- so you can read the rain off the sky. Source: en.wikipedia.org/wiki/Supernumerary_rainbow; Airy (1838), ui.adsabs.harvard.edu/abs/1838TCaPS...6..379A; droplet range from Grokipedia, 'Rainbow'.",
+    "context": "Young's 1804 answer was interference: two routes through the same drop arrive slightly out of step, reinforcing in some directions and cancelling in others. George Airy made it quantitative in 1838 in 'On the intensity of light in the neighbourhood of a caustic' (Transactions of the Cambridge Philosophical Society, vol. 6, pp. 379-403), inventing the function that now carries his name. Best part: the fringe spacing reports the DROP SIZE. The fringes need drops about 1 mm across or smaller, and the smaller the drops, the broader and paler the bands -- so a watcher can read the rain off the sky. Source: en.wikipedia.org/wiki/Supernumerary_rainbow; Airy (1838), ui.adsabs.harvard.edu/abs/1838TCaPS...6..379A; droplet range from Grokipedia, 'Rainbow'.",
     "topic": "the-rainbow-you-can-build-with-a-garden-hose"
   },
   {
@@ -38216,7 +38164,7 @@
       "He worked backwards from the bow's angle as he measured it in the sky",
       "He derived the angle from the geometry and checked it against a few rays"
     ],
-    "context": "Barmore's 1983 paper 'Descartes, the Rainbow and the Mythical 10 000 Calculations' traced the ten-thousand story to a line in Taylor's physics textbook and, further back, to a nineteenth-century claim by Grau. What Descartes did in 1637 was work through the deviation for entry points from 0.0 to 1.0 across the drop in steps of 0.1, see where the angle stopped changing, then go back and refine the interval between 0.80 and 0.90 -- using seven-figure trigonometric tables. A few dozen careful calculations, not thousands of brute-force ones; he found the answer by knowing where to look. His apparatus was 'a perfectly round and transparent glass ball filled with water' -- a raindrop you could hold. Source: F. Barmore, 'Descartes, the Rainbow and the Mythical 10 000 Calculations' (1983), opg.optica.org/abstract.cfm?uri=MO-1983-ThB3; method detail from Wieting, 'The Cartesian Rainbow', Reed College (2006).",
+    "context": "Barmore's 1983 paper 'Descartes, the Rainbow and the Mythical 10 000 Calculations' traced the ten-thousand story to a line in Taylor's physics textbook and, further back, to a nineteenth-century claim by Grau. What Descartes did in 1637 was work through the deviation for entry points from 0.0 to 1.0 across the drop in steps of 0.1, see where the angle stopped changing, then go back and refine the interval between 0.80 and 0.90 -- using seven-figure trigonometric tables. A few dozen careful calculations, not thousands of brute-force ones; he found the answer by knowing where to look. His apparatus was 'a perfectly round and transparent glass ball filled with water' -- a raindrop a person could hold. Source: F. Barmore, 'Descartes, the Rainbow and the Mythical 10 000 Calculations' (1983), opg.optica.org/abstract.cfm?uri=MO-1983-ThB3; method detail from Wieting, 'The Cartesian Rainbow', Reed College (2006).",
     "topic": "the-rainbow-you-can-build-with-a-garden-hose"
   },
   {
@@ -38273,20 +38221,20 @@
   },
   {
     "tier": 3,
-    "question": "American B-29 crews came over Japan late in 1944 planning to bomb from 30,000 ft and flew straight into winds of 200-300 mph, the high wind Wasaburo Oishi had measured, unknown to them. Under full throttle some aircraft made almost no ground speed, and bombs missed by miles. General Curtis LeMay changed one thing about how the B-29s flew. What did he do?",
-    "answer": "he lowered their bombing altitude to about 25,000 ft",
+    "question": "American B-29 crews came over Japan late in 1944 planning to bomb from 30,000 ft and flew straight into winds of 200 mph and more, the high wind Wasaburo Oishi had measured, unknown to them. Under full throttle some aircraft made almost no ground speed, and bombs missed by miles. General Curtis LeMay changed one thing about how the B-29s flew. What did he do?",
+    "answer": "he brought them down below the core of the winds",
     "choices": [
-      "he lowered their bombing altitude to about 25,000 ft",
-      "he grounded the daylight raids in favour of night bombing",
-      "he ordered new heavier propellers fitted to every airframe",
-      "he pulled the fleet back to India and cancelled the campaign"
+      "he brought them down below the core of the winds",
+      "he sent them higher to climb above the winds",
+      "he had heavier propellers fitted to every airframe",
+      "he pulled the fleet back and cancelled the campaign"
     ],
-    "context": "LeMay moved the B-29s to roughly 24,500-27,000 ft, out of the jet's core, and later to low-altitude firebombing entirely. Source: historyofwar.org/articles/weapons_B-29_combat.html.",
+    "context": "LeMay brought the B-29s down out of the jet's core, and in March 1945 sent them over Japan at night, below 9,000 feet, to firebomb. Sources: airandspaceforces.com/article/1211japan/; nationalww2museum.org, 'Hellfire on Earth: Operation MEETINGHOUSE'.",
     "topic": "the-river-in-the-sky-nobody-would-read"
   },
   {
     "tier": 3,
-    "question": "Japanese soldiers began releasing roughly nine thousand paper balloons with bombs on 3 November 1944, aiming them at North America on the high wind Wasaburo Oishi had measured. The plan used a wind speed that was wrong. About how long did the crossing really take?",
+    "question": "Japanese soldiers began releasing roughly nine thousand paper balloons with bombs on 3 November 1944, aiming them at North America on the high wind Wasaburo Oishi had measured. A meteorologist had worked out the ride from Oishi's data. About how long did a crossing take?",
     "answer": "about three or four days",
     "choices": [
       "about three or four days",
@@ -38294,7 +38242,7 @@
       "about two weeks",
       "about six weeks"
     ],
-    "context": "The fu-go crossings took roughly 72-96 hours rather than the shorter time the plan assumed; only a few hundred of the ~9,300 launched ever reached North America. Six civilians killed near Bly, Oregon on 5 May 1945 were the only WWII enemy-action deaths in the contiguous US. Sources: ahf.nuclearmuseum.org/ahf/history/japanese-balloon-bombs-fu-go/; en.wikipedia.org/wiki/Fu-Go_balloon_bomb.",
+    "context": "The fu-go crossings took roughly 72-96 hours, inside the 30 to 100 hours Hidetoshi Arakawa had estimated from Oishi's measurements; only a few hundred of the ~9,300 launched ever reached North America. Six civilians killed near Bly, Oregon on 5 May 1945 were the only WWII enemy-action deaths in the contiguous US. Sources: ahf.nuclearmuseum.org/ahf/history/japanese-balloon-bombs-fu-go/; en.wikipedia.org/wiki/Fu-Go_balloon_bomb.",
     "topic": "the-river-in-the-sky-nobody-would-read"
   },
   {
@@ -38304,7 +38252,7 @@
     "choices": [
       "between equatorial and polar air",
       "between day-side and night-side air",
-      "between land and ocean surfaces",
+      "between forest and desert air",
       "between wet and dry air masses"
     ],
     "context": "By the thermal-wind relationship, a sharp horizontal temperature gradient at the tropopause forces a fast westerly wind above it; the equator-to-pole gradient is steepest in winter. It is why an eastbound New York to London flight is routinely about an hour shorter than the westbound return -- something a kid can check on any departures board. Source: britannica.com/science/climate-meteorology/Upper-level-winds.",
@@ -38326,9 +38274,9 @@
   {
     "tier": 2,
     "question": "A needle jumped on Michael Faraday's meter in 1831 as he pushed a bar magnet through a tight coil of copper wire. A common guess held that a magnet resting still beside the coil ought to give a steady current too. What did he find?",
-    "answer": "The coil gives a current only while the field is CHANGING, never while it sits still.",
+    "answer": "The coil gives a current only while the field is changing, never while it sits still.",
     "choices": [
-      "The coil gives a current only while the field is CHANGING, never while it sits still.",
+      "The coil gives a current only while the field is changing, never while it sits still.",
       "The coil gives a current the whole time the magnet is present, moving or not.",
       "The coil gives a current only when the magnet is touching the wire directly.",
       "The coil gives a current only when the magnet is aligned with the Earth's field."
@@ -38338,7 +38286,7 @@
   },
   {
     "tier": 3,
-    "question": "Hippolyte Fontaine ran a copper cable from one Gramme dynamo to a second about five hundred metres away at the 1873 Vienna World Exposition. Business partner to the Belgian inventor Zenobe Gramme, he meant to show that power could be sent over long distances. What unexpected thing did the second machine do?",
+    "question": "Hippolyte Fontaine ran a long copper cable from one Gramme dynamo to a second at the 1873 Vienna World Exposition. Business partner to the Belgian inventor Zenobe Gramme, he meant to show that power could be sent over long distances. What unexpected thing did the second machine do?",
     "answer": "Its shaft started spinning under its own power.",
     "choices": [
       "Its shaft started spinning under its own power.",
@@ -38359,7 +38307,7 @@
       "The induced current is proportional to the square of the wheel's speed.",
       "The induced current only flows when the wheel is spinning downhill."
     ],
-    "context": "This is Lenz's rule, and it is really conservation of energy in disguise. The electricity in the lamp had to come from somewhere; the extra push your legs feel is exactly that energy leaving your body and going into the bulb. Source: spark.iop.org electromagnetic-braking-copper-pipe .",
+    "context": "This is Lenz's rule, and it is really conservation of energy in disguise. The electricity in the lamp had to come from somewhere; the extra push the rider's legs feel is exactly that energy leaving her body and going into the bulb. Source: spark.iop.org electromagnetic-braking-copper-pipe .",
     "topic": "the-same-machine-run-backwards-motor-and-generator"
   },
   {
@@ -38391,14 +38339,14 @@
   {
     "tier": 5,
     "question": "Michael Faraday wound two coils onto one iron ring in 1831, the ancestor of the modern transformer: one voltage in and a different voltage out. Every high-voltage line coming into a town ends at a transformer that steps the voltage down for houses. There is one thing a transformer flatly cannot do. What is it?",
-    "answer": "Transform direct current.",
+    "answer": "Step a steady direct current up or down in voltage.",
     "choices": [
-      "Transform direct current.",
+      "Step a steady direct current up or down in voltage.",
       "Pass power between two coils that share no direct wire connection.",
       "Work with an iron core instead of an air core.",
       "Have more turns on the output coil than the input coil."
     ],
-    "context": "Induction needs a CHANGING flux, and a steady DC current produces a steady field with no change at all. That is why the domestic grid was built AC in the first place: only AC can be stepped up to high voltage for cheap long-distance transmission and stepped back down for your house. Source: en.wikipedia.org/wiki/Transformer .",
+    "context": "Induction needs a CHANGING flux, and a steady DC current produces a steady field with no change at all. That is why the domestic grid was built AC in the first place: only AC can be stepped up to high voltage for cheap long-distance transmission and stepped back down for homes. Source: en.wikipedia.org/wiki/Transformer .",
     "topic": "the-same-machine-run-backwards-motor-and-generator"
   },
   {
@@ -38407,7 +38355,7 @@
     "answer": "Each is wound, geared, and cooled for one job; reversibility is a schoolbook ideal.",
     "choices": [
       "Each is wound, geared, and cooled for one job; reversibility is a schoolbook ideal.",
-      "The two use entirely different physical principles once you look inside the case.",
+      "The two use entirely different physical principles once the case is opened.",
       "Only Faraday's original disc was ever truly reversible; every later design broke it.",
       "Reversibility fails because energy conservation is only approximate at large scale."
     ],
@@ -39014,7 +38962,7 @@
   },
   {
     "tier": 2,
-    "question": "Paul Kammerer made midwife toads mate in water, not on land, in 1920s Vienna, and said he had proved a serious open claim: that acquired traits can be inherited. He said a change had appeared on the males and passed to their offspring. What did he say had appeared?",
+    "question": "Paul Kammerer made midwife toads mate in water, not on land, in Vienna between about 1905 and 1910, and said he had proved a serious open claim: that acquired traits can be inherited. He said a change had appeared on the males and passed to their offspring. What did he say had appeared?",
     "answer": "dark, rough breeding pads on the fingers",
     "choices": [
       "dark, rough breeding pads on the fingers",
@@ -39035,7 +38983,7 @@
       "a shellac coating brushed on before display",
       "silver nitrate deposits from fixative chemicals"
     ],
-    "context": "The microscope showed the pigment sitting where no living pigment sits. Noble's Nature paper was the ink. Kammerer blamed a lab assistant. The first move in every case that follows is the same one Noble made: someone looks at the physical thing. Source: https://en.wikipedia.org/wiki/Paul_Kammerer",
+    "context": "The microscope showed the pigment sitting where no living pigment sits. Noble's Nature paper named the ink. Kammerer blamed a lab assistant. The first move in every case that follows is the same one Noble made: someone looks at the physical thing. Source: https://en.wikipedia.org/wiki/Paul_Kammerer",
     "topic": "the-tell-what-actually-gives-a-faked-result-away"
   },
   {
@@ -39061,7 +39009,7 @@
       "they alternated exactly between two fixed values across papers",
       "they matched the correlations of an unrelated German study"
     ],
-    "context": "Adding fresh subjects to a real sample perturbs correlation coefficients in the fourth or fifth decimal at minimum; identity at three places across added waves is arithmetically impossible. The tell was not a beaker or a swab this time - it was a column of numbers added up by hand. Source: https://en.wikipedia.org/wiki/Cyril_Burt",
+    "context": "Adding fresh twins to a real sample almost always nudges a correlation somewhere in its first three decimals, so staying identical to three places across added waves is wildly unlikely. The tell was not a beaker or a swab this time - it was a column of numbers added up by hand. Source: https://en.wikipedia.org/wiki/Cyril_Burt",
     "topic": "the-tell-what-actually-gives-a-faked-result-away"
   },
   {
@@ -39098,7 +39046,7 @@
       "gene lists shifted by one row and patient samples mislabelled",
       "batches of missing patients silently dropped from the training set",
       "predictor genes hand-picked to hit a pre-set clinical target",
-      "the same tumour sample entered twice under different codes"
+      "survival figures typed in by hand to match the hoped-for result"
     ],
     "context": "Duke had already opened clinical trials assigning cancer patients to treatments based on the predictor. Baggerly and Coombes did not catch a lie - they found errors, in public writing, over three years. The trials were suspended in 2010 and eleven papers were eventually retracted. Source: https://www.cbsnews.com/news/deception-at-duke-fraud-in-cancer-care/",
     "topic": "the-tell-what-actually-gives-a-faked-result-away"
@@ -39347,7 +39295,7 @@
       "Damaged the colon lining and gave the bacteria an opening",
       "Made the gut too acidic for the other resident bacteria"
     ],
-    "context": "C. diff is caused by a VACANCY, not by an arrival. The commonest trigger for the infection is the treatment for a different infection. This is the mechanism that makes the disease so hard to break with more antibiotics.",
+    "context": "C. diff disease is driven by a VACANCY more than by an arrival: a few resident cells, or spores picked up in a hospital, take hold only once the crowd is gone. The commonest trigger for the infection is the treatment for a different infection. This is the mechanism that makes the disease so hard to break with more antibiotics.",
     "topic": "the-transplant-that-beat-squeamishness"
   },
   {
@@ -39378,7 +39326,7 @@
   },
   {
     "tier": 5,
-    "question": "A doctor treating recurrent C. diff prescribes Rebyota, the rectally given product the Food and Drug Administration (FDA) licensed in December 2022, the first stool-derived product ever approved as an actual drug in the United States. A second product followed four months later, in April 2023, in a form most patients would find far easier to accept. What form did the second approval take?",
+    "question": "A doctor treating recurrent C. diff prescribes Rebyota, the rectally given product the Food and Drug Administration (FDA) licensed in November 2022, the first stool-derived product ever approved as an actual drug in the United States. A second product followed five months later, in April 2023, in a form most patients would find far easier to accept. What form did the second approval take?",
     "answer": "An oral capsule of purified bacterial spores",
     "choices": [
       "An oral capsule of purified bacterial spores",
@@ -39396,8 +39344,8 @@
     "choices": [
       "Which specific microbes in the donor stool are doing the healing",
       "Whether the donor's own gut community remains intact afterward",
-      "How long the transplanted community continues to protect the recipient",
-      "Whether children respond to FMT differently than adults do"
+      "Whether a donor's stool holds any living bacteria at all",
+      "Whether antibiotics can clear out the gut's resident bacteria"
     ],
     "context": "The purified-spore products like Vowst are partly an attempt to answer this: strip the mixture down to specific spores and see which are enough. Donor screening also genuinely matters, because transmitted organisms have caused serious harm in FMT recipients.",
     "topic": "the-transplant-that-beat-squeamishness"
@@ -39690,7 +39638,7 @@
   },
   {
     "tier": 2,
-    "question": "A campaigner ticks Alaska off her list, the forty-first state to pass a near-copy of the Right to Try bill. She has spent four years going state by state, and Congress has not yet acted. The bill would let dying patients try new drugs before full federal approval. Why start with the states?",
+    "question": "A campaigner ticks another state off her list, one of some forty to pass a near-copy of the Right to Try bill. She has spent four years going state by state, and Congress has not yet acted. The bill would let dying patients try new drugs before full federal approval. Why start with the states?",
     "answer": "To build political pressure for the federal law",
     "choices": [
       "To build political pressure for the federal law",
@@ -39698,7 +39646,7 @@
       "Because the FDA can only regulate one state at a time",
       "Because the states run their own drug trials"
     ],
-    "context": "Alaska became the 41st state to enact a Right to Try law before the federal Act. It is a case where the states moved first and Washington caught up rather than led. Source: goldwaterinstitute.org releases; en.wikipedia.org/wiki/Right-to-try_law.",
+    "context": "Forty states had enacted Right to Try laws, starting with Colorado in 2014, before the federal Act was signed on 30 May 2018; Alaska became the forty-first that July. It is a case where the states moved first and Washington caught up rather than led. Source: goldwaterinstitute.org, 'Alaska Becomes 41st State to Enact Right to Try Legislation'; en.wikipedia.org/wiki/Right-to-try_law.",
     "topic": "the-unseen-graveyard-right-to-try-and-the-cost-of-delay"
   },
   {
@@ -39746,11 +39694,11 @@
     "answer": "Severe birth defects in babies born to mothers who took it",
     "choices": [
       "Severe birth defects in babies born to mothers who took it",
-      "Sudden heart attacks in older men",
-      "Blindness in young adults",
-      "Kidney failure in the elderly"
+      "Sudden heart attacks in older men who took it to sleep",
+      "Lasting blindness in young adults who took it for nausea",
+      "Kidney failure in elderly patients who took it nightly"
     ],
-    "context": "Thalidomide disfigured at least 4,000 children in Europe (phocomelia); Kelsey's stubborn demand for evidence spared American children from that toll. Her demand was not 'ban it' -- it was 'show me the data'. That is the very rigor Right to Try's advocates say is missing on the other side of the ledger. The other scientists in the choices (McClintock, Franklin, Daly) are real contemporaries in different fields. Source: fda.gov, 'Frances Oldham Kelsey: Medical Reviewer'.",
+    "context": "Thalidomide disfigured at least 4,000 children in Europe (phocomelia); Kelsey's stubborn demand for evidence spared American children from that toll. Her demand was not 'ban it' -- it was 'show me the data'. It is the strongest entry in the caution column of the ledger. Source: fda.gov, 'Frances Oldham Kelsey: Medical Reviewer'.",
     "topic": "the-unseen-graveyard-right-to-try-and-the-cost-of-delay"
   },
   {
@@ -39763,7 +39711,7 @@
       "She won a grant to build software for spotting fraud",
       "A colleague was fired and asked her to clear his name"
     ],
-    "context": "Bik went looking for other cases like her own and quickly discovered a much larger pattern. She left a full-time science job at Stanford to work on integrity full-time. Source: en.wikipedia.org/wiki/Elisabeth_Bik",
+    "context": "Bik went looking for other cases like her own and quickly discovered a much larger pattern. After some fifteen years at Stanford and two at the microbiome company uBiome, she left in 2018 to work on integrity full time. Source: en.wikipedia.org/wiki/Elisabeth_Bik",
     "topic": "the-volunteer-detectives-elisabeth-bik-and-the-duplicated-im"
   },
   {
@@ -39782,12 +39730,12 @@
   {
     "tier": 3,
     "question": "Elisabeth Bik laid biology images side by side, looking for reused patches. A picture of a western blot, a lab test that shows dark protein bands on a gel, or of cells under a microscope carries something that a plain table of numbers never has. That extra thing is exactly what she hunts for. What is it?",
-    "answer": "A unique random speckle pattern - a kind of visual fingerprint",
+    "answer": "A random speckle pattern found in that one image alone",
     "choices": [
-      "A unique random speckle pattern - a kind of visual fingerprint",
+      "A random speckle pattern found in that one image alone",
       "A digital timestamp burned into every pixel by the camera",
-      "A machine-generated barcode in the lower right corner",
-      "A recorded audio note from the technician who took it"
+      "A scale bar showing the true size of the sample",
+      "A hidden caption written into the file by the lab"
     ],
     "context": "Rotate that pattern, mirror it, stretch it, drop it into another figure - the speckles still line up. Fabrication that would be invisible in a spreadsheet is visible in a picture, to a patient eye reading printed pages. Source: arxiv.org/pdf/2102.01874",
     "topic": "the-volunteer-detectives-elisabeth-bik-and-the-duplicated-im"
@@ -40080,7 +40028,7 @@
   },
   {
     "tier": 2,
-    "question": "Richard Owen, Britain's leading anatomist, used a fossil skeleton on his bench, with no skin and no soft parts, to overturn a ruling that Basilosaurus was a giant sea reptile. He pointed to one feature and wrote that it was 'unknown in fishes and reptiles'. What was it?",
+    "question": "Richard Owen, Britain's leading anatomist, used fossil bones on his bench, with no skin and no soft parts, to overturn a ruling that Basilosaurus was a giant sea reptile. He pointed to one feature and wrote that it was 'unknown in fishes and reptiles'. What was it?",
     "answer": "Molars carried on two roots each",
     "choices": [
       "Molars carried on two roots each",
@@ -40172,9 +40120,9 @@
   {
     "tier": 4,
     "question": "Dr Friedlinde Obergfell handed Hans Thewissen the rocks that her late husband, the Indian geologist A. Ranga Rao, had collected in Kashmir. The Indohyus fossils inside had spent decades in storage. In Thewissen's laboratory they finally gave up the feature that makes this small deer-like plant-eater the closest known relative of whales. How did that feature come to light?",
-    "answer": "A technician accidentally broke one of the skulls open",
+    "answer": "A lab worker accidentally broke one of the skulls open",
     "choices": [
-      "A technician accidentally broke one of the skulls open",
+      "A lab worker accidentally broke one of the skulls open",
       "A CT scanner imaged the skulls inside their rock",
       "An acid bath dissolved the rock away from the skulls",
       "A student matched the skulls to an old monograph"
@@ -40205,7 +40153,7 @@
       "Bracing the animal against the sea floor to rest",
       "Anchoring a calf against the flank while it nursed"
     ],
-    "context": "The 1990 abstract's own closing sentence reads: 'Hind limbs of Basilosaurus are interpreted as copulatory guides.' That is the part of the word vestigial most people miss. Vestigial means a structure has lost its ANCESTRAL job — walking — not that it does nothing at all. A sixteen-metre whale could no more walk on a thirty-five-centimetre leg than you could walk on a matchstick, and the leg was still not idle. — Gingerich, Smith & Simons, 'Hind Limbs of Eocene Basilosaurus: Evidence of Feet in Whales', Science 249:154-157 (1990).",
+    "context": "The 1990 abstract's own closing sentence reads: 'Hind limbs of Basilosaurus are interpreted as copulatory guides.' That is the part of the word vestigial most people miss. Vestigial means a structure has lost its ANCESTRAL job — walking — not that it does nothing at all. A sixteen-metre whale could no more walk on a thirty-five-centimetre leg than a person could walk on a matchstick, and the leg was still not idle. — Gingerich, Smith & Simons, 'Hind Limbs of Eocene Basilosaurus: Evidence of Feet in Whales', Science 249:154-157 (1990).",
     "topic": "the-whales-that-walked"
   },
   {
@@ -40665,7 +40613,7 @@
   },
   {
     "tier": 1,
-    "question": "A digger on Neil Shubin's team looked up from the rock face at a quarry on southern Ellesmere Island in the 2004 field season. The team had flown into the Canadian Arctic five summers running and come back with nothing that mattered. Something was sticking out of the cliff. What was it?",
+    "question": "A digger on Neil Shubin's team looked up at a quarry face on Ellesmere Island in the 2004 field season. The team had come to the Canadian Arctic three times before without its prize. Something was sticking out of the cliff. What was it?",
     "answer": "the tip of a flat, pointy snout",
     "choices": [
       "the tip of a flat, pointy snout",
@@ -40678,7 +40626,7 @@
   },
   {
     "tier": 1,
-    "question": "Neil Shubin's team dug Tiktaalik out of bare tundra on southern Ellesmere Island, more than 700 miles north of the Arctic Circle, with firearms kept close for polar bears. But continents move. Where on the globe did that ground sit when Tiktaalik was alive?",
+    "question": "Neil Shubin's team dug Tiktaalik out of bare tundra on southern Ellesmere Island, far north of the Arctic Circle, with firearms kept close for polar bears. But continents move. Where on the globe did that ground sit when Tiktaalik was alive?",
     "answer": "about 30 degrees north, the subtropical belt",
     "choices": [
       "about 30 degrees north, the subtropical belt",
@@ -40964,19 +40912,6 @@
   },
   {
     "tier": 1,
-    "question": "A lab worker tests blood plasma and finds that about a fifth of its protein is antibodies. Each one was pumped out by a plasma cell. That is a B cell that has dropped every other job to work full time as an antibody factory. How many antibodies does one plasma cell release each second?",
-    "answer": "About 2,000",
-    "choices": [
-      "About 20",
-      "About 200",
-      "About 2,000",
-      "About 20,000"
-    ],
-    "context": "Alberts's Molecular Biology of the Cell calls it 'the astonishing rate of about 2000 molecules per second'. The same chapter notes that antibodies make up roughly 20% of the total protein in blood plasma by weight, and that a single B cell carries about 100,000 antigen receptors in its membrane. Source: Alberts et al., Molecular Biology of the Cell, 'B Cells and Antibodies', NCBI Bookshelf (ncbi.nlm.nih.gov/books/NBK26884/).",
-    "topic": "tonegawa-and-the-genome-that-cuts-itself-up"
-  },
-  {
-    "tier": 1,
     "question": "Susumu Tonegawa cracked one of biology's great puzzles in 1976, not at a university but at the Basel Institute for Immunology in Switzerland. The Swiss drug company Roche had built the institute and paid all its bills, at $24 million a year. What did Roche do about the science it was funding?",
     "answer": "Left the direction of the science alone",
     "choices": [
@@ -41029,7 +40964,7 @@
   },
   {
     "tier": 3,
-    "question": "William Dreyer, working with Leroy Hood at Caltech, stared at antibody chains that no known rule of how a gene makes a protein could explain. In 1965 he and Claude Bennett offered a fix, in a paper whose title called antibody making a paradox, and it was dismissed for a decade. What did the two men propose?",
+    "question": "William Dreyer, at Caltech, stared at antibody chains that no known rule of how a gene makes a protein could explain. In 1965 he and Claude Bennett offered a fix, in a paper whose title called antibody making a paradox, and it was dismissed for a decade. What did the two men propose?",
     "answer": "That two separate genes, one constant and one variable, make one chain",
     "choices": [
       "That one gene is read twice over, in two different reading frames",
@@ -41048,7 +40983,7 @@
       "It is stripped of its receptors and released anyway",
       "It is destroyed early, before it is ever put to work",
       "It is held back in the marrow and never allowed to divide",
-      "It is bathed in your own molecules until it stops answering"
+      "It is bathed in the body's own molecules until it stops answering"
     ],
     "context": "Burnet's postulate reads that lymphocytes 'bearing receptors for self molecules ... are destroyed at an early stage'. He published 'A modification of Jerne's theory of antibody production using the concept of clonal selection' in the Australian Journal of Science in 1957 — commentators suggest he chose an Australian journal to publish fast and win priority over David Talmage, who had stated the same logic that year — and expanded it into a 1959 book. Burnet shared the 1960 Nobel Prize with Peter Medawar for acquired immunological tolerance, and said of it: 'My part in the discovery of acquired immunological tolerance was a very minor one - it was the formulation of an hypothesis that called for experiment.' Source: Wikipedia, 'Clonal selection'; Wikipedia, 'Frank Macfarlane Burnet'.",
     "topic": "tonegawa-and-the-genome-that-cuts-itself-up"
@@ -41081,15 +41016,15 @@
   },
   {
     "tier": 4,
-    "question": "David Schatz, Marjorie Oettinger and David Baltimore dropped a gene into ordinary connective-tissue cells, which never rearrange anything on their own, and the cells started joining antibody gene pieces, rarely but for real. They reported it in December 1989 as Recombination-Activating Gene 1 (RAG-1). The next year the team found a second gene sitting right next to it, named it RAG-2, and put both in the cells together. How much did that boost the rearrangement rate?",
-    "answer": "Roughly a thousandfold",
+    "question": "David Schatz, Marjorie Oettinger and David Baltimore dropped a single gene into ordinary connective-tissue cells, which have nothing to do with the immune system, and reported it in December 1989. What did the gene make those cells start to do?",
+    "answer": "Join separate antibody gene pieces together",
     "choices": [
-      "Roughly double",
-      "Roughly tenfold",
-      "Roughly a hundredfold",
-      "Roughly a thousandfold"
+      "Join separate antibody gene pieces together",
+      "Pour out antibodies, like a plasma cell",
+      "Divide without stopping, like a tumour",
+      "Mutate every gene they carried at random"
     ],
-    "context": "Schatz DG, Oettinger MA, Baltimore D, 'The V(D)J recombination activating gene, RAG-1', Cell 1989;59(6):1035-1048 (22 December 1989), then 'RAG-1 and RAG-2, adjacent genes that synergistically activate V(D)J recombination', Science 1990;248(4962):1517-1523: cotransfection of RAG-1 with RAG-2 increased recombination frequency 1000-fold. Source: PubMed PMID 2598259 and PMID 2360047; Wikipedia, 'Recombination-activating gene'.",
+    "context": "Schatz DG, Oettinger MA, Baltimore D, 'The V(D)J recombination activating gene, RAG-1', Cell 1989;59(6):1035-1048 (22 December 1989): the gene switched on V(D)J recombination, the cutting and joining of antibody gene segments, in fibroblasts that never do it on their own, rarely but truly. A year later 'RAG-1 and RAG-2, adjacent genes that synergistically activate V(D)J recombination', Science 1990;248(4962):1517-1523, showed that RAG-1 together with its neighbour RAG-2 raised the recombination frequency 1000-fold. Source: PubMed PMID 2598259 and PMID 2360047; Wikipedia, 'Recombination-activating gene'.",
     "topic": "tonegawa-and-the-genome-that-cuts-itself-up"
   },
   {
@@ -41120,7 +41055,7 @@
   },
   {
     "tier": 5,
-    "question": "A biologist reads the genome of the Chinese lancelet, a small fish-shaped sea animal alive today, and finds one intact pair of genes side by side: RAG1 and RAG2. In every developing lymphocyte, the Recombination-Activating Gene (RAG) proteins break the cell's own chromosome in two places, then rejoin the cut ends. The trail points to an ancient family of genes. What do biologists infer RAG's ancestor was doing before vertebrates put it to work building antibodies?",
+    "question": "A biologist reads the genome of the Chinese lancelet, a small fish-shaped sea animal alive today, and finds an intact pair of genes side by side, close kin of RAG1 and RAG2. In every developing lymphocyte, the Recombination-Activating Gene (RAG) proteins break the cell's own chromosome in two places, then rejoin the cut ends. What do biologists infer RAG's ancestor was doing before vertebrates put it to work building antibodies?",
     "answer": "Jumping: cutting itself out of a genome and dropping in elsewhere",
     "choices": [
       "Jumping: cutting itself out of a genome and dropping in elsewhere",
@@ -41128,7 +41063,7 @@
       "Unknotting: nicking tangled chromosomes so they can pull apart",
       "Invading: threading a virus's DNA into its host's chromosome"
     ],
-    "context": "Active Transib transposons carrying both RAG1 and RAG2, dubbed 'ProtoRAG', have been found in the Chinese lancelet Branchiostoma belcheri — a living animal, not a fossil. On core sequence homology, RAG1 is believed to have evolved from a transposase of the Transib superfamily: a jumping gene that invaded an ancestral vertebrate genome and was domesticated into the machine that now builds your antibodies. This is a well-supported inference from sequence and from a living example, not a directly observed event. Source: Wikipedia, 'Recombination-activating gene'.",
+    "context": "Active Transib transposons carrying RAG1-like and RAG2-like genes side by side, dubbed 'ProtoRAG', have been found in the Chinese lancelet Branchiostoma belcheri — a living animal, not a fossil. On core sequence homology, RAG1 is believed to have evolved from a transposase of the Transib superfamily: a jumping gene that invaded an ancestral vertebrate genome and was domesticated into the machine that now builds the antibodies of every jawed vertebrate. This is a well-supported inference from sequence and from a living example, not a directly observed event. Source: Wikipedia, 'Recombination-activating gene'.",
     "topic": "tonegawa-and-the-genome-that-cuts-itself-up"
   },
   {
@@ -41154,16 +41089,16 @@
       "It boiled at the sealed top and turned the tube to vapour",
       "It fell partway and stopped, leaving an empty space above it"
     ],
-    "context": "That empty space above the mercury was the first sustained man-made vacuum in history. The column landed at about 76 cm (roughly 30 inches) every time -- the birth of the barometer. Source: Wikipedia 'Evangelista Torricelli' (1643 experiment, ~76 cm / 30 in column, Torricellian vacuum).",
+    "context": "That empty space above the mercury was the first sustained man-made vacuum in history. The column landed at about 76 cm (roughly 30 inches), rising and falling a little with the weather -- the birth of the barometer. Source: Wikipedia 'Evangelista Torricelli' (1643 experiment, ~76 cm / 30 in column, Torricellian vacuum).",
     "topic": "torricellis-ocean-of-air"
   },
   {
     "tier": 3,
     "question": "Evangelista Torricelli wrote a letter to a friend in 1644, giving a picture of the world that explained what his new tube did. He had just built the first barometer, a sealed tube of mercury standing about 76 cm tall over a dish of mercury in Florence. What was his image?",
-    "answer": "We live submerged at the bottom of an ocean of air",
+    "answer": "People live submerged at the bottom of an ocean of air",
     "choices": [
       "The heavens push down on the Earth like a great vault",
-      "We live submerged at the bottom of an ocean of air",
+      "People live submerged at the bottom of an ocean of air",
       "The Earth breathes in and out and drives the tides of pumps",
       "Nature draws water upward as a mother lifts her child"
     ],
@@ -41185,7 +41120,7 @@
   },
   {
     "tier": 5,
-    "question": "Florin Perier saw a large drop in his mercury on the Puy de Dome, for a climb of only about 1,465 m, because atmospheric pressure does not fall in a straight line with height. Roughly what fraction of all the air lies below the shoulder of Mount Everest, about 5.6 km up?",
+    "question": "Florin Perier saw a large drop in his mercury on the Puy de Dome, for a climb of only about a kilometre, because atmospheric pressure does not fall in a straight line with height. Roughly what fraction of all the air lies below 5.6 km, about the height of Everest Base Camp?",
     "answer": "About half of the total",
     "choices": [
       "About one tenth of it",
@@ -41193,11 +41128,11 @@
       "About four fifths of it",
       "Almost all of the air"
     ],
-    "context": "Pressure roughly halves every 5.5 km (about ln(2) times the ~8.5 km scale height), so about half the atmosphere's entire mass sits below 5.6 km. Climb the first mountain and you have already left half the air below you. Source: Wikipedia 'Scale height' (Earth scale height ~8.5 km, halving distance ~5.5 km); NOAA JetStream Air Pressure page (half the atmosphere's mass below ~18,000 ft / 5.6 km).",
+    "context": "Pressure roughly halves every 5.5 km (about ln(2) times the ~8.5 km scale height), so about half the atmosphere's entire mass sits below 5.6 km. A climber at that height has already left half the air below. Source: Wikipedia 'Scale height' (Earth scale height ~8.5 km, halving distance ~5.5 km); NOAA JetStream Air Pressure page (half the atmosphere's mass below ~18,000 ft / 5.6 km).",
     "topic": "torricellis-ocean-of-air"
   },
   {
-    "tier": 5,
+    "tier": 2,
     "question": "A student sets out to repeat Blaise Pascal's mountain test with the tiny barometer in her phone. The chip measures the pressure of the air around it, and everyday movements shift the reading in real time. She has a minute and four things to try. Which one moves the barometer reading the most?",
     "answer": "Riding an elevator up a few floors",
     "choices": [
@@ -41276,7 +41211,7 @@
   },
   {
     "tier": 2,
-    "question": "A customer takes his dead light bulb back to the store and collects part of the metal's value as a refund, in the years before tungsten wire wins the race in 1911. Inventors are trying metal after metal, hunting one that will glow white-hot without burning up. Which precious metal filament is in his bulb?",
+    "question": "A customer takes his dead light bulb back to the store and collects part of the metal's value as a refund, in the years before tungsten wire wins the race in 1911. Inventors are trying metal after metal, hunting one that will glow white-hot without burning up. What is his bulb's filament made of?",
     "answer": "Osmium",
     "choices": [
       "Osmium",
@@ -41284,7 +41219,7 @@
       "Tantalum",
       "Iridium"
     ],
-    "context": "Osmium lamps sold from about 1898 to 1905 - the metal was rare enough that the burnt-out bulbs came back for credit. Platinum was tried and shelved as too expensive to burn; tantalum lamps went on sale in 1902 but the filaments deformed and shortened in use; Edison's own carbon and carbonized bamboo had lit the first commercial bulbs. Every one was somebody's product before tungsten won.",
+    "context": "Osmium lamps sold from about 1898 to 1905 - the metal was rare enough that the burnt-out bulbs came back for credit. Platinum was tried and shelved as too expensive to burn; tantalum filaments were developed in 1902 but the filaments deformed and shortened in use; Edison's own carbon and carbonized bamboo had lit the first commercial bulbs. Every one was somebody's product before tungsten won.",
     "topic": "tungsten-the-filament-that-would-not-melt"
   },
   {
@@ -41479,7 +41414,7 @@
       "Orchids, and the insects that pollinate them",
       "Coral reefs, and how atolls take their shape"
     ],
-    "context": "Darwin dissected and classified every barnacle he could get hold of, living and fossil, and published a four-volume monograph on them. He came to loathe the work: 'I am at work on the second vol. of the Cirripedia, of which creatures I am wonderfully tired: I hate a Barnacle as no man ever did before, not even a Sailor in a slow-sailing ship' (Darwin to William Darwin Fox, 24 October 1852). Four of his children were under seven and had never known their father to do anything else; the family story is that one of them, visiting a neighbour, asked where THAT boy's father did his barnacles. Sources: darwin200.christs.cam.ac.uk/barnacles (Christ's College, Cambridge); Darwin Correspondence Project DCP-LETT-1489 (the letter, verbatim). The child's remark is a family anecdote retold from Francis Darwin's Life and Letters; the primary wording is not easy to verify.",
+    "context": "Darwin dissected and classified every barnacle he could get hold of, living and fossil, and published a four-volume monograph on them. He came to loathe the work: 'I am at work on the second vol. of the Cirripedia, of which creatures I am wonderfully tired: I hate a Barnacle as no man ever did before, not even a Sailor in a slow-sailing ship' (Darwin to William Darwin Fox, 24 October 1852). Four of his children were under seven and had never known their father to do anything else; the family story is that one of them, visiting a neighbour, asked where THAT boy's father did his barnacles. Sources: darwin200.christs.cam.ac.uk/barnacles (Christ's College, Cambridge); Darwin Correspondence Project DCP-LETT-1489 (the letter, verbatim).",
     "topic": "twenty-years-of-silence-and-wallaces-envelope"
   },
   {
@@ -41497,7 +41432,7 @@
   },
   {
     "tier": 2,
-    "question": "Alfred Russel Wallace lay shaking with malarial fever in the Moluccan islands in February 1858, re-reading a book he already knew well. The mechanism of natural selection came to him, and he wrote it out in three days. Charles Darwin had hit on the same idea twenty years earlier over the same pages. Which book?",
+    "question": "Alfred Russel Wallace lay shaking with fever in the Moluccan islands in February 1858 when a book read years before came to mind. The mechanism of natural selection came to him, and he wrote it out in three days. Darwin had hit on the same idea twenty years earlier from the same book. Which book?",
     "answer": "Malthus's Essay on the Principle of Population",
     "choices": [
       "Malthus's Essay on the Principle of Population",
@@ -41505,7 +41440,7 @@
       "Lamarck's Philosophie Zoologique",
       "Erasmus Darwin's Zoonomia, or the Laws of Organic Life"
     ],
-    "context": "Thomas Malthus argued in 1798 that human population grows faster than the food supply, so most of what is born must die. Darwin read the sixth edition on 28 September 1838 and later wrote: 'it at once struck me that under these circumstances favourable variations would tend to be preserved, and unfavourable ones to be destroyed.' Wallace, on Ternate two decades later, got to the same place from the same pages. Two men, half a world apart, unlocked by one essay about people and bread. Sources: en.wikipedia.org/wiki/Charles_Darwin; grokipedia.com/page/Alfred_Russel_Wallace.",
+    "context": "Thomas Malthus argued in 1798 that human population grows faster than the food supply, so most of what is born must die. Darwin read the sixth edition on 28 September 1838 and later wrote: 'it at once struck me that under these circumstances favourable variations would tend to be preserved, and unfavourable ones to be destroyed.' Wallace, two decades later, got to the same place from the same book, remembered in a fever. Two men, half a world apart, unlocked by one essay about people and bread. Sources: en.wikipedia.org/wiki/Charles_Darwin; grokipedia.com/page/Alfred_Russel_Wallace.",
     "topic": "twenty-years-of-silence-and-wallaces-envelope"
   },
   {
@@ -41518,7 +41453,7 @@
       "He lived on a scientific society's grant",
       "He surveyed the islands for a trading house"
     ],
-    "context": "Wallace was a working collector, not a gentleman of leisure: he shipped beetles, birds and butterflies home to be sold, and lived on the money. His own preface to The Malay Archipelago gives the tally for 1854 to 1862: over 14,000 miles among the islands and 125,660 specimens, including 83,200 beetles and 13,100 butterflies and moths. Charles Darwin, by contrast, worked at Down House on a private income and never left England again after the Beagle. The envelope that shook Darwin came from a man who had to sell insects to eat. Source: en.wikipedia.org/wiki/The_Malay_Archipelago (Wallace's own preface figures).",
+    "context": "Wallace was a working collector, not a gentleman of leisure: he shipped beetles, birds and butterflies home to be sold, and lived on the money. His own preface to The Malay Archipelago gives the tally for 1854 to 1862: over 14,000 miles among the islands and 125,660 specimens, including 83,200 beetles and 13,100 butterflies and moths. Charles Darwin, by contrast, worked at Down House on a private income and never left Britain again after the Beagle. The envelope that shook Darwin came from a man who had to sell insects to eat. Source: en.wikipedia.org/wiki/The_Malay_Archipelago (Wallace's own preface figures).",
     "topic": "twenty-years-of-silence-and-wallaces-envelope"
   },
   {
@@ -41531,7 +41466,7 @@
       "He gave it to his mother, who had paid his passage",
       "He left it blank, and said nothing of the affair"
     ],
-    "context": "The dedication reads: 'To CHARLES DARWIN, AUTHOR OF \"THE ORIGIN OF SPECIES,\" I dedicate this book, Not only as a token of personal esteem and friendship But also To express my deep admiration For his genius and his works.' Wallace had already written in January 1859 that he was 'gratified' to have spurred Darwin into announcing, and in 1889 he called his own book-length defence of natural selection 'Darwinism'. He never claimed he had been robbed. (He did not coin the word 'Darwinism' - Huxley and others were using it in the 1860s; the sourceable fact is the 1889 book title.) Sources: gutenberg.org, The Malay Archipelago dedication page; en.wikipedia.org/wiki/Publication_of_Darwin's_theory; grokipedia.com/page/Darwinism.",
+    "context": "The dedication reads: 'To CHARLES DARWIN, AUTHOR OF \"THE ORIGIN OF SPECIES,\" I dedicate this book, Not only as a token of personal esteem and friendship But also To express my deep admiration For his genius and his works.' Wallace had already written in January 1859 that he was 'gratified' to have spurred Darwin into announcing, and in 1889 he called his own book-length defence of natural selection 'Darwinism'. He never claimed he had been robbed. (He did not coin the word: Huxley and others were using 'Darwinism' in the 1860s.) Sources: gutenberg.org, The Malay Archipelago dedication page; en.wikipedia.org/wiki/Publication_of_Darwin's_theory; grokipedia.com/page/Darwinism.",
     "topic": "twenty-years-of-silence-and-wallaces-envelope"
   },
   {
@@ -41542,7 +41477,7 @@
       "Jean-Baptiste Lamarck's",
       "Erasmus Darwin's",
       "Georges Cuvier's",
-      "Robert Chambers's"
+      "Robert Grant's"
     ],
     "context": "Darwin to J. D. Hooker, 11 January 1844: 'I am almost convinced (quite contrary to opinion I started with) that species are not (it is like confessing a murder) immutable.' He added that although his conclusions resembled Lamarck's, the means of change were wholly different. Lamarck held that an animal's own striving and use of its organs shaped its descendants; Darwin's mechanism needed no striving at all, only variation and differential survival. Source: Darwin Correspondence Project DCP-LETT-729 (verbatim).",
     "topic": "twenty-years-of-silence-and-wallaces-envelope"
@@ -41614,7 +41549,7 @@
   },
   {
     "tier": 5,
-    "question": "Charles Darwin stayed at Downe on the evening of 1 July 1858, while twenty years of his work were read aloud to a small audience at the Linnean Society of London. Scarlet fever had come into Down House the week before; his daughter Henrietta had it, and so did his tenth child, a boy of eighteen months. What kept Darwin at home that day?",
+    "question": "Charles Darwin stayed at Downe on the evening of 1 July 1858, while twenty years of his work were read aloud to a small audience at the Linnean Society of London. Scarlet fever had come into Down House the week before, with his daughter Henrietta already ill with diphtheria, and it struck his tenth child, a boy of eighteen months. What kept Darwin at home that day?",
     "answer": "He was burying Charles Waring, dead of the fever",
     "choices": [
       "He was burying Charles Waring, dead of the fever",
@@ -41631,7 +41566,7 @@
     "answer": "Every cell sheds tiny particles that gather in the reproductive organs",
     "choices": [
       "Every cell sheds tiny particles that gather in the reproductive organs",
-      "Every organ passes its acquired strength straight to the offspring",
+      "Every trait comes from the father's seed, the mother only nourishing it",
       "Every egg already holds the whole creature in miniature, ready to grow",
       "Every parent's blood carries the likeness it passes to the child"
     ],
@@ -41739,7 +41674,7 @@
       "Cool the top disc, which had grown warm",
       "Damp the pasteboard discs from above"
     ],
-    "context": "Carlisle and Nicholson were not hunting for this at all - they wanted a better connection and stumbled onto the first chemical decomposition ever driven by electricity, on 1-2 May 1800. They had built the pile from a leaked letter: Volta wrote to Sir Joseph Banks of the Royal Society from Como on 20 March 1800, Banks passed the letter around London in April, and the pair published their result in July - before Volta's own letter reached print that September. Sources: CarnotCycle, 'Carlisle, Nicholson and the discovery of electrolysis' (quoting Nicholson's Journal, 1800); CarnotCycle, 'The curious case of Volta's leaked letter'.",
+    "context": "Carlisle and Nicholson were not hunting for this at all - they wanted a better connection and stumbled onto the first chemical decomposition driven by a battery (Deiman and Paets van Troostwijk had split water with sparks from an electrostatic machine in 1789), on 1-2 May 1800. They had built the pile from a leaked letter: Volta wrote to Sir Joseph Banks of the Royal Society from Como on 20 March 1800, Banks passed the letter around London in April, and the pair published their result in July - before Volta's own letter reached print that September. Sources: CarnotCycle, 'Carlisle, Nicholson and the discovery of electrolysis' (quoting Nicholson's Journal, 1800); CarnotCycle, 'The curious case of Volta's leaked letter'.",
     "topic": "two-pencils-and-a-battery-electrolysis-takes-matter-apart"
   },
   {
@@ -41752,7 +41687,7 @@
       "Bubbles at one lead but not at the other",
       "A white haze spreading through the glass"
     ],
-    "context": "Genuinely pure water is close to an insulator: about 0.055 microsiemens per centimetre, roughly one hundred-thousandth the conductivity of seawater, because water barely comes apart on its own. Running the demo in distilled water first is the control test every kid should do - if almost nothing happens, then the water by itself plainly was not what carried the current. Sources: Wikipedia, 'Electrolysis of water'; corroborated by Grokipedia, 'Electrolysis of water'.",
+    "context": "Genuinely pure water is close to an insulator: about 0.055 microsiemens per centimetre, roughly one millionth the conductivity of seawater, because water barely comes apart on its own. Running the demo in distilled water first is the control test every kid should do - if almost nothing happens, then the water by itself plainly was not what carried the current. Sources: Wikipedia, 'Electrolysis of water'; corroborated by Grokipedia, 'Electrolysis of water'.",
     "topic": "two-pencils-and-a-battery-electrolysis-takes-matter-apart"
   },
   {
@@ -41778,7 +41713,7 @@
       "Hydrogen chloride",
       "Ozone"
     ],
-    "context": "This is the chloralkali reaction, the industrial route to chlorine: chloride ions are oxidised at the anode, and the same run also yields sodium hydroxide and hydrogen. With baking soda in the glass instead, that same positive lead gives you oxygen. That is why chlorine plants are built with fume extraction - and why a kitchen salt-water electrolysis quietly makes poison gas. Use baking soda. Sources: Grokipedia, 'Chloralkali process'; Grokipedia, 'Chlorine production'.",
+    "context": "This is the chloralkali reaction, the industrial route to chlorine: chloride ions are oxidised at the anode, and the same run also yields sodium hydroxide and hydrogen. With baking soda in the glass instead, that same positive lead gives off oxygen. That is why chlorine plants are built with fume extraction - and why a kitchen salt-water electrolysis quietly makes poison gas. Use baking soda. Sources: Grokipedia, 'Chloralkali process'; Grokipedia, 'Chlorine production'.",
     "topic": "two-pencils-and-a-battery-electrolysis-takes-matter-apart"
   },
   {
@@ -41796,7 +41731,7 @@
   },
   {
     "tier": 4,
-    "question": "Michael Faraday wrote to the Cambridge scholar William Whewell in 1834 for help naming the parts of an electrolysis cell. Whewell sent one set of coinages in April, then a second a fortnight later, by which time Faraday's paper was already at the printer. Whewell pressed anyway: 'I shall think it a misfortune to science if you retain the latter.' What did Faraday do?",
+    "question": "Michael Faraday wrote to the Cambridge scholar William Whewell in 1834 for help naming the parts of an electrolysis cell. Whewell sent one set of coinages in April, then a second early in May, by which time Faraday's paper was already at the printer. Whewell pressed anyway: 'I shall think it a misfortune to science if you retain the latter.' What did Faraday do?",
     "answer": "He changed the words on the printed proofs",
     "choices": [
       "He changed the words on the printed proofs",
@@ -41835,7 +41770,7 @@
   },
   {
     "tier": 5,
-    "question": "A teacher stirs a pinch of baking soda into a glass of pure water with two battery-wired pencils standing in it, and the leads start fizzing at once. Pure water conducts roughly one hundred-thousandth as well as seawater, because it barely comes apart on its own. Something is now ferrying electricity across the liquid from one lead to the other. What is doing the ferrying?",
+    "question": "A teacher stirs a pinch of baking soda into a glass of pure water with two battery-wired pencils standing in it, and the leads start fizzing at once. Pure water conducts roughly one millionth as well as seawater, because it barely comes apart on its own. Something is now ferrying electricity across the liquid from one lead to the other. What is doing the ferrying?",
     "answer": "Charged atoms, physically travelling across",
     "choices": [
       "Charged atoms, physically travelling across",
@@ -41856,7 +41791,7 @@
       "The scrap comes in hot, carrying heat from its last melt",
       "The graphite rods last far longer on scrap than on ore"
     ],
-    "context": "Alumina is aluminium oxide, and remelting a can is only melting metal - you are not re-fighting the chemical bond, so it takes about 0.7 kilowatt-hours per kilogram, roughly 5% of the 13-15 kilowatt-hours smelting needs, which is itself over 90% of the input. That bond is why the metal was once dearer than gold: aluminium fell from about $1,200 per kilogram in the early 1850s to roughly $15 once the Hall-Heroult process was commercialised. Paul Heroult, the same age as Hall and born in the same year, got there independently in France that April. Hall's Pittsburgh Reduction Company - Alcoa from 1907 - opened on 18 September 1888 selling at $5 a pound, and by 1900 the cost of production was under 30 cents a pound. When the U.S. Patent Office ran an interference proceeding between the two men, Hall won priority in 1889, partly on the testimony of his sister Julia Brainerd Hall, who had assisted the experiments. Sources: Grokipedia, 'Charles Martin Hall'; 'Hall-Heroult process'; 'History of aluminium'; 'Aluminium smelting'; 'Aluminium recycling'; Linda Hall Library, 'Charles Martin Hall - Scientist of the Day'.",
+    "context": "Alumina is aluminium oxide, and remelting a can is only melting metal - the recycler is not re-fighting the chemical bond, so it takes about 0.7 kilowatt-hours per kilogram, roughly 5% of the 13-15 kilowatt-hours smelting needs, which is itself over 90% of the input. That bond is why the metal was once dearer than gold: aluminium fell from about $1,200 per kilogram in the early 1850s to roughly $15 once the Hall-Heroult process was commercialised. Paul Heroult, the same age as Hall and born in the same year, got there independently in France that April. Hall's Pittsburgh Reduction Company - Alcoa from 1907 - opened on 18 September 1888 selling at $5 a pound, and by 1900 the cost of production was under 30 cents a pound. When the U.S. Patent Office ran an interference proceeding between the two men, Hall won priority in 1889, partly on the testimony of his sister Julia Brainerd Hall, who had assisted the experiments. Sources: Grokipedia, 'Charles Martin Hall'; 'Hall-Heroult process'; 'History of aluminium'; 'Aluminium smelting'; 'Aluminium recycling'; Linda Hall Library, 'Charles Martin Hall - Scientist of the Day'.",
     "topic": "two-pencils-and-a-battery-electrolysis-takes-matter-apart"
   },
   {
