@@ -26924,7 +26924,7 @@
   },
   {
     "tier": 1,
-    "question": "Chinese cooks have made tofu for over 2,000 years, and it starts with a dried bean. They soak it, grind it with water and boil the mash into a creamy white milk. Which bean is tofu made from?",
+    "question": "Chinese cooks have made tofu for centuries, perhaps since the Han dynasty. They soak a dried bean, grind it with water and boil the mash into a creamy white milk. Which bean is tofu made from?",
     "answer": "the soybean",
     "choices": [
       "the soybean",
@@ -26932,7 +26932,7 @@
       "the kidney bean",
       "the black bean"
     ],
-    "context": "Tofu is made from the soybean and originated in China, where it has been eaten for over 2,000 years — since the Han dynasty. Source: en.wikipedia.org/wiki/Tofu.",
+    "context": "Tofu is made from the soybean and originated in China. Tradition dates it to the Han dynasty, some 2,000 years ago, though the evidence for so early a start is thin and the first written record of tofu comes from AD 965. Source: Grokipedia, 'Tofu'; en.wikipedia.org/wiki/Tofu.",
     "topic": "tofu-cheese-logic-for-the-soybean"
   },
   {
@@ -26981,8 +26981,8 @@
     "choices": [
       "pressing out the watery whey",
       "boiling the milk longer",
-      "stirring in extra setter",
-      "freezing it overnight"
+      "whisking air into the curds",
+      "skimming the skin off first"
     ],
     "context": "Firmness comes down to pressing. Silken and soft tofu is barely pressed — or not at all — so it keeps its custardy, whey-rich texture; pressing under heavier weights squeezes out more whey to make the firm and extra-firm blocks that hold up to cubing, frying, and grilling. Source: ift.org 2016 'How Tofu Is Processed.'",
     "topic": "tofu-cheese-logic-for-the-soybean"
@@ -26997,7 +26997,7 @@
       "Liu An himself was a character invented by much later storytellers.",
       "Tombs far older than Liu An's have turned up tofu-pressing tools."
     ],
-    "context": "Liu An (c. 179–122 BC), Prince of Huainan and grandson of the Han founder Liu Bang, is the traditional inventor of tofu — but no reliable source from his era records it; the attribution first appears far later, about a thousand years on, in the Ming-dynasty Bencao Gangmu. One colorful telling even says his alchemists, chasing an elixir of immortality, mixed soybeans, spring water, and gypsum and made tofu by accident. Source: en.wikipedia.org/wiki/Liu_An; en.wikipedia.org/wiki/Tofu.  (Legend.)",
+    "context": "Liu An (c. 179–122 BC), Prince of Huainan and grandson of the Han founder Liu Bang, is the traditional inventor of tofu — but no source from his era records it; the attribution turns up only far later: a Song-dynasty poem by Zhu Xi, more than a thousand years on, speaks of 'the method of Huainan', and Ming-dynasty writers name Liu An outright. One colorful telling even says his alchemists, chasing an elixir of immortality, mixed soybeans, spring water, and gypsum and made tofu by accident. Source: en.wikipedia.org/wiki/Liu_An; en.wikipedia.org/wiki/Tofu.  (Legend.)",
     "topic": "tofu-cheese-logic-for-the-soybean"
   },
   {
@@ -27275,7 +27275,7 @@
   },
   {
     "tier": 3,
-    "question": "A cook tastes a ripe tomato beside a crumb of aged parmesan. The tomato holds only a few hundred milligrams of glutamate, the savory molecule, against the cheese's thousands, yet one old method drives a tomato's several times higher. How are those tomatoes prepared?",
+    "question": "A cook tastes a ripe tomato beside a crumb of aged parmesan. The tomato holds only a few hundred milligrams of glutamate, the savory molecule, against more than a thousand in the cheese, yet one old method drives a tomato's several times higher. How are those tomatoes prepared?",
     "answer": "Dried in the sun",
     "choices": [
       "Dried in the sun",
@@ -27309,20 +27309,20 @@
       "Soy sauce on steamed rice",
       "Parmesan on buttered noodles"
     ],
-    "context": "A cheeseburger is a glutamate-plus-nucleotide bomb — glutamate-rich cheese meets inosinate-rich beef, and together they taste far bigger than either alone, the same synergy as kelp-and-bonito dashi, a tomato sauce simmered with meat, Parmesan over the beef stock of French onion soup, or soy sauce on meat. Great cuisines found these pairings by taste, long before the chemistry was known. Sources: en.wikipedia.org/wiki/Umami ; IFT Food Technology, 'Unleashing the Power of Umami'.",
+    "context": "A cheeseburger is a glutamate-plus-nucleotide bomb — glutamate-rich cheese meets inosinate-rich beef, and together they taste far bigger than either alone, the same synergy as kelp-and-bonito dashi, a tomato sauce simmered with meat, cheese melted over the beef stock of French onion soup, or soy sauce on meat. Great cuisines found these pairings by taste, long before the chemistry was known. Sources: en.wikipedia.org/wiki/Umami ; IFT Food Technology, 'Unleashing the Power of Umami'.",
     "topic": "umami-the-fifth-taste-you-can-build"
   },
   {
     "tier": 5,
-    "question": "The man who started the scare over monosodium glutamate (MSG) wrote one letter in 1968, to a medical journal, blaming it for headaches after Chinese meals and coining the phrase 'Chinese Restaurant Syndrome.' Decades of fear followed. What did he later admit about his famous claim?",
-    "answer": "He had no scientific evidence for it",
+    "question": "Robert Ho Man Kwok, a doctor, wrote to the New England Journal of Medicine in 1968 about the numbness, weakness and racing heart he felt after meals at Chinese restaurants. It ran under the title 'Chinese-Restaurant Syndrome' and set off decades of fear of monosodium glutamate (MSG). What did his letter say about MSG?",
+    "answer": "It named MSG as only one of three guesses",
     "choices": [
-      "He had no scientific evidence for it",
-      "He had tested only a single patient",
-      "He had confused MSG with plain salt",
-      "He had been paid by a rival company"
+      "It named MSG as only one of three guesses",
+      "It reported a lab test proving MSG harmful",
+      "It described a trial on a hundred diners",
+      "It blamed MSG alone, ruling out all else"
     ],
-    "context": "The 1968 New England Journal of Medicine letter's author admitted he had 'no scientific evidence' for the syndrome. Decades of controlled studies never substantiated it, and the U.S. FDA classifies MSG as 'generally recognized as safe' — the same category as salt and sugar. Source: sciencehistory.org (the rotten science behind the MSG scare)",
+    "context": "Robert Ho Man Kwok's letter appeared in the New England Journal of Medicine on 4 April 1968 under the title 'Chinese-Restaurant Syndrome.' He described numbness, weakness and a racing heart after Northern Chinese meals and offered three guesses at the cause: salt, cooking wine, or perhaps MSG. It was speculation, not a test, yet newspapers soon ran breathless stories about 'Chinese Restaurant Syndrome.' Since the 1960s many careful studies with proper controls and blinding have found no consistent harm, and the U.S. FDA classifies MSG as 'generally recognized as safe.' Sources: Science History Institute, Distillations, 'The Rotten Science Behind the MSG Scare'; Wikipedia, 'Chinese restaurant syndrome'; FDA, 'Questions and Answers on Monosodium Glutamate (MSG).'",
     "topic": "umami-the-fifth-taste-you-can-build"
   },
   {
@@ -27535,20 +27535,20 @@
   },
   {
     "tier": 2,
-    "question": "Suppose you pick up a magazine that crowns this year's miracle food, salmon one year and blueberries the next, and promises it gives your body every nutrient you need. A nutrition professor at the Harvard School of Public Health says flatly that the promise can never be kept. Why does every miracle food fall short of it?",
-    "answer": "No single food supplies all the many nutrients your body needs",
+    "question": "A shopper picks up a magazine that crowns this year's miracle food, salmon one year and blueberries the next, and promises it can keep a person healthy all on its own. Nutrition scientists say flatly that the promise can never be kept. Why does every miracle food fall short of it?",
+    "answer": "No single food supplies all the many nutrients a body needs",
     "choices": [
-      "No single food supplies all the many nutrients your body needs",
-      "Your body can only absorb one vitamin at a time",
+      "No single food supplies all the many nutrients a body needs",
+      "The body can only absorb one vitamin at a time",
       "Cooking destroys the nutrients in almost every food",
       "Fresh food loses all its nutrients within a day of harvest"
     ],
-    "context": "'Superfood' is a marketing word, not a scientific one -- it fills ads and magazine covers but never appears in medical literature, and no country (US, UK, or EU) regulates what it means. The promise fails for one simple reason: no single food supplies all the dozens of nutrients the body needs, so every 'hero food' leaves a gap. Source: Harvard T.H. Chan Nutrition Source, 'Superfoods or Superhype?' (nutritionsource.hsph.harvard.edu/superfoods).",
+    "context": "'Superfood' is a marketing word, not a scientific one: it fills ads and magazine covers, but there is no scientifically based or regulated definition of it. The promise fails for one simple reason: no single food supplies all the dozens of nutrients the body needs, so every 'hero food' leaves a gap, which is why nutrition guides stress variety instead. Source: Harvard T.H. Chan Nutrition Source, 'Superfoods or Superhype?' (nutritionsource.hsph.harvard.edu/superfoods).",
     "topic": "variety-beats-any-single-superfood"
   },
   {
     "tier": 2,
-    "question": "Oberon Sinclair, a New York publicist, took on a bitter leafy green as a client in the early 2010s, when most American shoppers walked past it and restaurants used it mainly as a plate garnish. A clever ad campaign rebranded it, and almost overnight the vegetable became the poster child of the superfood craze. Which green was it?",
+    "question": "Oberon Sinclair, a New York publicist, says she ran a campaign in the early 2010s to make one bitter leafy green fashionable, when restaurants used it mainly as a garnish. How much of the credit is hers is disputed, but the green soon became the poster child of the superfood craze. Which green was it?",
     "answer": "Kale",
     "choices": [
       "Kale",
@@ -27556,7 +27556,7 @@
       "Watercress",
       "Arugula"
     ],
-    "context": "Kale was an obscure vegetable until a marketer branded it a 'superfood.' It really is nutritious -- but so is any leafy green, and like all of them it is high in some nutrients (vitamins A, C, K, fiber) and low in others. No lone ingredient is complete. Source: Harvard T.H. Chan Nutrition Source, 'Superfoods or Superhype?' (nutritionsource.hsph.harvard.edu/superfoods).",
+    "context": "Kale was used mostly as a garnish in the United States before it became the face of the superfood craze around 2012. The publicist Oberon Sinclair says her guerrilla campaign, with kale chalked onto menus around Manhattan, started the trend, but her role rests largely on her own account: she later admitted that the 'American Kale Association' she had cited was her own creation. Kale really is nutritious, but so is any leafy green, and like all of them it is high in some nutrients (vitamins A, C, K, fiber) and low in others. No lone ingredient is complete. Sources: The Hustle, 'The Great Kalespiracy'; Harvard T.H. Chan Nutrition Source, 'Superfoods or Superhype?'",
     "topic": "variety-beats-any-single-superfood"
   },
   {
@@ -27600,20 +27600,20 @@
   },
   {
     "tier": 1,
-    "question": "Vasco da Gama of Portugal led the first European fleet ever to sail straight to the source of black pepper. In 1498, after ten more months at sea past Africa's southern tip, his ships dropped anchor at last. Where did they arrive?",
+    "question": "Vasco da Gama of Portugal led the first European fleet ever to sail straight to the source of black pepper. Ten months out of Lisbon, long after rounding Africa's southern tip, his ships dropped anchor at last in 1498. Where did they arrive?",
     "answer": "Calicut, on the southwest coast of India",
     "choices": [
       "Calicut, on the southwest coast of India",
-      "Alexandria, on the coast of Egypt",
-      "Venice, on the Adriatic Sea",
-      "The Spice Islands of Indonesia"
+      "Colombo, on the island of Ceylon",
+      "Malacca, on the Malay Peninsula",
+      "Ternate, in Indonesia's Spice Islands"
     ],
-    "context": "Da Gama's fleet rounded the Cape of Good Hope and reached Calicut (Kozhikode) on India's southwest coast on 20 May 1498 — the first sea route ever opened from Europe straight to the pepper source. Source: Wikipedia, 'Vasco da Gama'; missedhistory.com.",
+    "context": "Da Gama's fleet left Lisbon on 8 July 1497, rounded the Cape of Good Hope and reached Calicut (Kozhikode) on India's southwest coast on 20 May 1498 — the first sea route ever opened from Europe straight to the pepper source. Source: Wikipedia, 'Vasco da Gama'; missedhistory.com.",
     "topic": "vasco-da-gama-and-the-sea-road-to-pepper"
   },
   {
     "tier": 2,
-    "question": "Storm-beaten Portuguese ships crept back into Lisbon harbor under Vasco da Gama in 1499, two years after setting out, with half his crew lost to scurvy and shipwreck on the voyage around Africa and back. The cargo in his holds was worth about 60 times what the whole expedition had cost. What was packed in those holds?",
+    "question": "Storm-beaten Portuguese ships crept back into Lisbon harbor under Vasco da Gama in 1499, two years after setting out, with more than half his men dead, many of them of scurvy. The cargo in his holds was worth about 60 times what the whole expedition had cost. What was packed in those holds?",
     "answer": "Pepper and cinnamon",
     "choices": [
       "Pepper and cinnamon",
@@ -27621,12 +27621,12 @@
       "Gold bars and silver coins",
       "Coffee beans and cocoa"
     ],
-    "context": "The pepper and cinnamon packed into da Gama's holds was reportedly worth about 60 times the whole cost of the voyage — the payoff that proved the sea road to India was worth chasing. Source: missedhistory.com; Wikipedia, 'Vasco da Gama.'",
+    "context": "The pepper and cinnamon packed into da Gama's holds was reportedly worth about 60 times the whole cost of the voyage — even though only about 55 of some 170 men came home — the payoff that proved the sea road to India was worth chasing. Source: missedhistory.com; Wikipedia, 'Vasco da Gama.'",
     "topic": "vasco-da-gama-and-the-sea-road-to-pepper"
   },
   {
     "tier": 2,
-    "question": "The Zamorin, ruler of the great pepper port Vasco da Gama's men had crossed the ocean to find, asked them in 1498 what had drawn them so far. They were the first Europeans ever to sail there, and their blunt reply named the two things they were after. What were they?",
+    "question": "Two Spanish-speaking merchants from Tunis met the first of Vasco da Gama's men sent ashore in 1498, at the great pepper port his fleet had sailed round Africa to find. They demanded to know what had brought the Portuguese so far. The reply named two things. What were they?",
     "answer": "Christians and spices",
     "choices": [
       "Christians and spices",
@@ -27634,12 +27634,12 @@
       "Silk and silver",
       "Fame and new land"
     ],
-    "context": "Asked at the Zamorin's court what they wanted, the Portuguese answered that they had come 'in search of Christians and spices' — the spice motive said right out loud. Source: Wikipedia, 'Vasco da Gama.'",
+    "context": "The first man da Gama sent ashore at Calicut, a convict, was taken to two Moors from Tunis who spoke Castilian and Genoese. They greeted him with 'May the Devil take thee! What brought you hither?' and asked what he sought so far from home. As the voyage's journal records it, he answered that they had come 'in search of Christians and of spices' — the spice motive said right out loud. Sources: Grokipedia, 'Vasco da Gama'; the Roteiro, the voyage's anonymous journal (Internet Modern History Sourcebook).",
     "topic": "vasco-da-gama-and-the-sea-road-to-pepper"
   },
   {
     "tier": 2,
-    "question": "Tiny Portugal muscled into the rich Indian Ocean spice trade after Vasco da Gama came home in 1499, and rivals from every direction, Muslim traders, the Mughals, the Dutch and later the English, wanted a share of the pepper route. How did the Portuguese hold their grip on the Indian Ocean for decades?",
+    "question": "Tiny Portugal muscled into the rich Indian Ocean spice trade after Vasco da Gama came home in 1499, and the Arab merchants who had long run the pepper route fought to keep it. How did the Portuguese hold their grip on the Indian Ocean for decades?",
     "answer": "By ringing its shores with forts and trading posts",
     "choices": [
       "By ringing its shores with forts and trading posts",
@@ -27647,20 +27647,20 @@
       "By paying the Zamorin a yearly tribute",
       "By keeping their route a secret from all rivals"
     ],
-    "context": "That one voyage let tiny Portugal grab the spice trade, then ring the Indian Ocean with forts and trading posts to guard the pepper route — locking in a pepper monopoly by about 1504. Source: Wikipedia, 'Portuguese discovery of the sea route to India.'",
+    "context": "That one voyage let tiny Portugal break into the spice trade, then ring the Indian Ocean with forts and trading posts, from Goa to Malacca, to guard the pepper route, a grip that held through most of the 1500s, until Dutch and English fleets arrived around 1600. Source: Wikipedia, 'Portuguese discovery of the sea route to India'; 'Spice trade.'",
     "topic": "vasco-da-gama-and-the-sea-road-to-pepper"
   },
   {
     "tier": 3,
-    "question": "Venice had grown rich for hundreds of years as Europe's main gate for spices, marking up the spices that reached it through Cairo and Alexandria before selling them on. Then Portuguese ships began landing pepper straight at Lisbon in the early 1500s, for a fraction of the price. What happened to Venice's spice empire?",
-    "answer": "Its grip on the spice trade was broken for good",
+    "question": "Venice had grown rich for hundreds of years as Europe's main gate for spices, marking up the spices that reached it through Cairo and Alexandria before selling them on. Then Portuguese ships began landing pepper straight at Lisbon in the early 1500s, and selling it more cheaply. What happened to Venice's spice empire?",
+    "answer": "Its old monopoly on Europe's spice trade was broken",
     "choices": [
-      "Its grip on the spice trade was broken for good",
+      "Its old monopoly on Europe's spice trade was broken",
       "Its merchants seized the new sea route for themselves",
-      "It struck a deal with Portugal to split the trade",
-      "It switched to selling cheaper local herbs"
+      "It won a price war and drove the Portuguese out",
+      "It switched to selling cheaper local herbs instead"
     ],
-    "context": "With cheap pepper arriving at Lisbon by ship, 'the fall of the Venetian monopoly on the spice trade in Europe was inevitable' — the caravan price could not compete, and Europe's whole spice map flipped. Source: Wikipedia, 'Portuguese discovery of the sea route to India'; 'Spice trade.'",
+    "context": "With cheap pepper arriving at Lisbon by ship, 'the fall of the Venetian monopoly on the spice trade in Europe was inevitable,' and Europe's whole spice map flipped. Venice's Levant spice trade did partly revive after about 1550, as the historian Frederic Lane argued, but its old monopoly never came back. Source: Wikipedia, 'Portuguese discovery of the sea route to India'; Frederic C. Lane, 'The Mediterranean Spice Trade: Further Evidence of its Revival in the Sixteenth Century' (American Historical Review, 1940).",
     "topic": "vasco-da-gama-and-the-sea-road-to-pepper"
   },
   {
@@ -27669,9 +27669,9 @@
     "answer": "A crowd of courtiers stood and watched the king eat.",
     "choices": [
       "A crowd of courtiers stood and watched the king eat.",
-      "The king ate blindfolded behind a silk screen.",
+      "The king ate alone, hidden behind locked doors.",
       "Servants set each dish alight before serving it.",
-      "The king shared every course with his hunting dogs."
+      "The courtiers ate first while the king waited."
     ],
     "context": "The grand couvert was the king's public supper: Louis XIV (with the queen on his left) sat in a high-backed armchair while courtiers stood around and watched. Only his children and grandchildren shared the table, and he kept up this daily performance of power his whole life -- unlike the kings who came after him. Source: Chateau de Versailles, 'Royal tables'; Shannon Selin, 'Watching French Royals Eat: The Grand Couvert.'",
     "topic": "versailles-dining-as-theatre"
@@ -27682,16 +27682,16 @@
     "answer": "To be decently, neatly dressed.",
     "choices": [
       "To be decently, neatly dressed.",
-      "To arrive before sunrise.",
-      "To pay a silver coin at the gate.",
+      "To bring a gift for the king.",
+      "To carry a letter from a noble.",
       "To have been born in France."
     ],
-    "context": "As long as you were decently dressed, you could join the crowd -- led in one door and out another, filing single-file past the king's table, though you were not allowed to stare directly at him. Source: Shannon Selin, 'Watching French Royals Eat: The Grand Couvert'; 'This is Versailles' blog, 'Dining with Royalty.'",
+    "context": "As long as visitors were decently dressed, they could join the crowd -- led in one door and out another, filing single-file past the king's table, though they were not allowed to stare directly at him. Source: Shannon Selin, 'Watching French Royals Eat: The Grand Couvert'; 'This is Versailles' blog, 'Dining with Royalty.'",
     "topic": "versailles-dining-as-theatre"
   },
   {
     "tier": 2,
-    "question": "Elisabeth Charlotte, Louis XIV's sister-in-law, wrote home of one supper in the 1690s at which the Sun King plowed through four plates of soup, a whole pheasant, a partridge, a big salad, ham and mutton with garlic. What did he polish off at the very end, after even the pastry and fruit?",
+    "question": "Elisabeth Charlotte, Louis XIV's sister-in-law, wrote that she had often seen the Sun King plow through four plates of soup, a whole pheasant, a partridge, a big salad, ham and mutton with garlic at one supper. What did he polish off at the very end, after even the pastry and fruit?",
     "answer": "Hard-boiled eggs.",
     "choices": [
       "Hard-boiled eggs.",
@@ -27699,7 +27699,7 @@
       "A dish of oysters.",
       "A bowl of olives."
     ],
-    "context": "The grand couvert showed off the king's famous appetite. The Princess Palatine (Elisabeth Charlotte) recorded seeing him eat four plates of soup, a whole pheasant, a partridge, a big salad, two slices of ham, mutton with jus and garlic, a plate of pastry, then fruit and hard-boiled eggs -- all at one sitting. Framed here as her eyewitness testimony. Source: Princess Palatine, quoted in Picturesque Voyages, 'Dining at Versailles.'",
+    "context": "The grand couvert showed off the king's famous appetite. The Princess Palatine (Elisabeth Charlotte) wrote that she had often seen him eat four plates of soup, a whole pheasant, a partridge, a big salad, two slices of ham, mutton with jus and garlic, a plate of pastry, then fruit and hard-boiled eggs -- all at one sitting. Source: Princess Palatine, quoted in Picturesque Voyages, 'Dining at Versailles'; The Good Life France, 'A Feast for a King: Le Grand Couvert.'",
     "topic": "versailles-dining-as-theatre"
   },
   {
@@ -27710,9 +27710,9 @@
       "The kitchens stood nearly a quarter-mile from his table.",
       "Each course was cooked many hours ahead of time.",
       "The heavy silver platters drew the heat from the food.",
-      "The dishes were carried up freezing outdoor stairs."
+      "The platters were chilled first to keep food from spoiling."
     ],
-    "context": "The kitchens sat roughly a quarter-mile (nearly a kilometre) from the table, so covered dishes made a long, cooling procession. To fight it, the best goldsmiths were set to designing dish shapes that held heat longer, and later reigns used a rechauffoir (warming room) to reheat food just before it reached the royal table. Source: 'This is Versailles' blog, 'The Kitchens - Feeding the Court'; Picturesque Voyages, 'Dining at Versailles'; Chateau de Versailles, 'Royal tables.'",
+    "context": "The kitchens sat roughly a quarter-mile (about 400 metres) from the table, so covered dishes made a long, cooling procession. To fight it, the best goldsmiths were set to designing dish shapes that held heat longer, and later reigns used a rechauffoir (warming room) to reheat food just before it reached the royal table. Source: 'This is Versailles' blog, 'The Kitchens - Feeding the Court'; Picturesque Voyages, 'Dining at Versailles'; Chateau de Versailles, 'Royal tables.'",
     "topic": "versailles-dining-as-theatre"
   },
   {
@@ -27738,7 +27738,7 @@
       "White asparagus.",
       "Purple cauliflower."
     ],
-    "context": "These were petits pois, the newly fashionable luxury vegetable at Versailles. A court lady's letter of 1696 -- attributed sometimes to Madame de Maintenon, sometimes to Madame de Sevigne -- wrote that 'the impatience to eat them, the pleasure of having eaten them, and the joy of eating them again' had become 'a fashion, indeed a passion.' Framed as the letter's testimony. Source: histoiresroyales.fr; Monsieur de France, 'Peas: the delight of King Louis XIV.'",
+    "context": "These were petits pois, the newly fashionable luxury vegetable at Versailles. A court lady's letter of 1696 -- attributed sometimes to Madame de Maintenon, sometimes to Madame de Sevigne -- wrote that 'the impatience to eat them, the pleasure of having eaten them, and the joy of eating them again' had become 'a fashion, indeed a passion.' Source: histoiresroyales.fr; Monsieur de France, 'Peas: the delight of King Louis XIV.'",
     "topic": "versailles-dining-as-theatre"
   },
   {
@@ -27881,12 +27881,12 @@
       "Telling one color from another",
       "Focusing on far-off objects"
     ],
-    "context": "Vitamin A is the raw material your retina turns into rhodopsin, the pigment that lets you see in near-darkness — so the first sign of running short is night blindness. Untreated, deficiency can progress to xerophthalmia, a blinding dry-eye disease and still a leading cause of childhood blindness worldwide. Source: Harvard T.H. Chan Nutrition Source, Vitamin A; Chemistry LibreTexts, rhodopsin.",
+    "context": "Vitamin A is the raw material the retina turns into rhodopsin, the pigment that lets the eye see in near-darkness — so the first sign of running short is night blindness. Untreated, deficiency can progress to xerophthalmia, a blinding dry-eye disease and still a leading cause of childhood blindness worldwide. Source: Harvard T.H. Chan Nutrition Source, Vitamin A; Chemistry LibreTexts, rhodopsin.",
     "topic": "vitamin-a-liver-orange-veg-and-the-carrot-myth"
   },
   {
     "tier": 2,
-    "question": "A cook wants to load her family's plates with vitamin A. The body cannot make it on its own, but it can build it from beta-carotene, a bright orange pigment plants make in their leaves and roots, and some vegetables are packed with it while others carry almost none. Which group of vegetables is richest in beta-carotene?",
+    "question": "A cook wants to load her family's plates with vitamin A. The body cannot make it on its own, but it can build it from beta-carotene, a pigment plants make in their leaves and roots, and some vegetables are packed with it while others carry almost none. Which group of vegetables is richest in beta-carotene?",
     "answer": "Orange and dark-green ones — carrots, spinach, kale",
     "choices": [
       "Orange and dark-green ones — carrots, spinach, kale",
@@ -27899,20 +27899,20 @@
   },
   {
     "tier": 3,
-    "question": "British officials in World War II spread word that their night-flying pilots shot down enemy planes in the dark because they ate so many carrots, and kids have heard the story ever since. Suppose you grew up on it. Carrots really are rich in vitamin A, which the eye does need to see in dim light. What is the honest truth about the carrot claim?",
-    "answer": "Half-true: carrots restore night vision only if you were low on vitamin A — never past normal",
+    "question": "British officials in World War II spread word that their night-flying pilots shot down enemy planes in the dark because they ate so many carrots, and children have heard the story ever since. Carrots really are rich in beta-carotene, which the body turns into vitamin A. What is the honest truth about the carrot claim?",
+    "answer": "Half-true: carrots restore night vision only in someone low on vitamin A, never past normal",
     "choices": [
-      "Half-true: carrots restore night vision only if you were low on vitamin A — never past normal",
-      "Fully true: the more carrots you eat, the sharper your night vision grows, past normal",
-      "Totally false: carrots do nothing at all for your eyesight, day or night",
+      "Half-true: carrots restore night vision only in someone low on vitamin A, never past normal",
+      "Fully true: the more carrots a person eats, the sharper night vision grows, past normal",
+      "Totally false: carrots do nothing at all for a person's eyesight, day or night",
       "Half-true: carrots aid only daytime color vision and do nothing for night sight"
     ],
-    "context": "The 'carrots give super night vision' claim is only half-true: if you were vitamin-A deficient, carrots restore your NORMAL night sight — but once you have enough, extra carrots grant no superpower and won't beat normal human vision. Source: American Optometric Association, 'Of retinol, ruses and root veggies'; Smithsonian Magazine.",
+    "context": "The 'carrots give super night vision' claim is only half-true: in someone short of vitamin A, carrots restore NORMAL night sight, but once the body has enough, extra carrots grant no superpower and won't beat normal human vision. Source: American Optometric Association, 'Of retinol, ruses and root veggies'; Smithsonian Magazine.",
     "topic": "vitamin-a-liver-orange-veg-and-the-carrot-myth"
   },
   {
     "tier": 3,
-    "question": "John 'Cat's Eyes' Cunningham, a Royal Air Force night-fighter pilot, was downing German bombers in total darkness in 1940; 19 of his 20 kills came at night. British officials told the newspapers that his secret was a carrot-heavy diet sharpening his night vision. What were they really covering up with that carrot story?",
+    "question": "John 'Cat's Eyes' Cunningham, a Royal Air Force night-fighter pilot, was downing German bombers in total darkness in 1940, on his way to twenty victories in the war. British officials told the newspapers that his secret was a carrot-heavy diet sharpening his night vision. What were they really covering up with that carrot story?",
     "answer": "A secret new airborne radar that spotted enemy planes in the dark",
     "choices": [
       "A secret new airborne radar that spotted enemy planes in the dark",
@@ -27925,15 +27925,15 @@
   },
   {
     "tier": 4,
-    "question": "Suppose you ate huge helpings of carrots and sweet potatoes, far more than anyone needs. Their orange beta-carotene will never overdose anyone on vitamin A, yet one harmless, reversible thing would happen to you. What would it be?",
-    "answer": "Your skin takes on a yellow-orange tint",
+    "question": "A boy eats huge helpings of carrots and sweet potatoes every day for weeks, far more than anyone needs. Their orange beta-carotene will never overdose him on vitamin A, because the body converts only what it needs. Which harmless, reversible change shows up on him instead?",
+    "answer": "His skin takes on a yellow-orange tint",
     "choices": [
-      "Your skin takes on a yellow-orange tint",
-      "The whites of your eyes turn yellow",
-      "Your tears and sweat run faintly orange",
-      "Your fingertips go numb for a day"
+      "His skin takes on a yellow-orange tint",
+      "The whites of his eyes turn yellow",
+      "His tears and sweat run faintly orange",
+      "His fingertips go numb for a day"
     ],
-    "context": "This harmless, reversible tint is called carotenemia — leftover orange pigment building up in the skin. Because plant beta-carotene is self-limiting, you can't actually overdose on vitamin A from veg. Unlike jaundice, carotenemia does NOT color the whites of the eyes. Source: Cleveland Clinic; DermNet NZ, carotenoderma.",
+    "context": "This harmless, reversible tint is called carotenemia — leftover orange pigment building up in the skin. Because the body converts plant beta-carotene only as it needs it, no one can overdose on vitamin A from vegetables. Unlike jaundice, carotenemia does NOT color the whites of the eyes. Source: Cleveland Clinic; DermNet NZ, carotenoderma.",
     "topic": "vitamin-a-liver-orange-veg-and-the-carrot-myth"
   },
   {
@@ -27944,7 +27944,7 @@
       "Their skin peels off in sheets",
       "Their teeth loosen and fall out",
       "Their hair turns white overnight",
-      "Their fingernails blacken and drop"
+      "Their lips and tongue turn blue"
     ],
     "context": "Animal vitamin A (retinol) isn't self-capped the way plant beta-carotene is, so certain Arctic livers are simply too rich to eat — an estimated 500 g of polar-bear liver is an acutely toxic dose. Source: Wikipedia, Hypervitaminosis A; McGill OSS, polar bear liver.",
     "topic": "vitamin-a-liver-orange-veg-and-the-carrot-myth"
@@ -27964,7 +27964,7 @@
   },
   {
     "tier": 5,
-    "question": "A polar bear spends its whole life gorging on seal, rich in vitamin A, and carries inside itself a liver so loaded with the vitamin that a few hundred grams of it could kill a grown person. Yet the bear itself stays unharmed. How does it get away with it?",
+    "question": "A polar bear spends its whole life gorging on seal, rich in vitamin A, and carries inside itself a liver so loaded with the vitamin that a few hundred grams of it could badly poison a grown person. Yet the bear itself stays unharmed. How does it get away with it?",
     "answer": "Its liver cells evolved to tolerate huge retinol loads",
     "choices": [
       "Its liver cells evolved to tolerate huge retinol loads",
@@ -28081,15 +28081,15 @@
   },
   {
     "tier": 1,
-    "question": "A child who plays outside in strong summer sun makes vitamin D without eating a bite of it, the only vitamin the body can make on its own. That is why doctors call it the sunshine vitamin. Which part of the body makes it?",
+    "question": "A child who plays outside in strong summer sun makes vitamin D without eating a bite of it, something almost no other vitamin allows. That is why doctors call it the sunshine vitamin. Which part of the body makes it?",
     "answer": "The skin",
     "choices": [
       "The skin",
-      "The liver",
-      "The kidneys",
+      "The eyes",
+      "The lungs",
       "The stomach"
     ],
-    "context": "Vitamin D is the 'sunshine vitamin' because your skin manufactures it when UVB sunlight strikes it — the one vitamin your body can make itself, so unlike every other vitamin you don't strictly need it from food. Source: Grokipedia (grokipedia.com/page/Vitamin_D); PMC9919777.",
+    "context": "Vitamin D is the 'sunshine vitamin' because the skin manufactures it when UVB sunlight strikes it, so unlike nearly every other vitamin it is not strictly needed from food (niacin, which the body can build from the amino acid tryptophan, is a partial exception too). The liver and kidneys then convert it into its active form. Source: Grokipedia (grokipedia.com/page/Vitamin_D); PMC9919777; Wikipedia, 'Niacin.'",
     "topic": "vitamin-d-sunlight-fatty-fish-and-the-rickets-story"
   },
   {
@@ -28102,7 +28102,7 @@
       "Citrus fruits like oranges and lemons",
       "Whole grains like oats and brown rice"
     ],
-    "context": "The best natural food sources of vitamin D are fatty fish — salmon, mackerel, sardines and herring. A single serving of salmon carries roughly 570-800 IU, more than a full day's supply. Source: Grokipedia (grokipedia.com/page/Vitamin_D); Wikipedia (sockeye salmon ~570 IU per 3 oz).",
+    "context": "The best natural food sources of vitamin D are fatty fish — salmon, mackerel, sardines and herring. A 3-ounce serving of cooked sockeye salmon carries about 570 IU (14 micrograms), close to the 600 IU a day that U.S. guidance sets for most people. Source: Grokipedia (grokipedia.com/page/Vitamin_D); NIH Office of Dietary Supplements, 'Vitamin D' fact sheet.",
     "topic": "vitamin-d-sunlight-fatty-fish-and-the-rickets-story"
   },
   {
@@ -28151,7 +28151,7 @@
     "choices": [
       "Coal smoke and packed tenements blocked out the sun",
       "Filthy slum water spread the disease between them",
-      "The factory diet gave them no fish or milk",
+      "Smoky air poisoned the vitamin in their food",
       "Endless work shifts left them too weak to grow"
     ],
     "context": "Rickets exploded in the smoky, sunless industrial cities of 1800s Britain — coal smog and tall tenements kept sunlight off slum children, so their bodies could not make vitamin D. So common in the UK, it became known as 'the English disease,' and is often called the first childhood disease caused by environmental pollution. Source: PMC5133108 ('English Disease: Historical Notes on Rickets'); Physiological Society.",
@@ -28159,7 +28159,7 @@
   },
   {
     "tier": 4,
-    "question": "Through months of Arctic winter the sun sat too low for the Inuit to make vitamin D from it, yet, bundled in fur through the long darkness, they never got rickets. Where did their vitamin D come from?",
+    "question": "Through months of Arctic winter the sun sat too low for the Inuit to make vitamin D from it, yet, bundled in fur through the long darkness, they stayed almost free of rickets for generations. Where did their vitamin D come from?",
     "answer": "From fatty fish, seal and whale blubber",
     "choices": [
       "From fatty fish, seal and whale blubber",
@@ -28167,7 +28167,7 @@
       "From roots and greens stored for winter",
       "From grain and dairy traded from the south"
     ],
-    "context": "Traditional Arctic Inuit beat the no-sun problem with food, not sunlight — vitamin D from fatty fish, seal liver, fish-egg yolks, and seal, walrus and whale blubber. Seal fat alone packs about 75 mcg (~3,000 IU) of vitamin D per 100 g. Source: The Globe and Mail (Arctic Inuit diet); PMC9573337 ('Vitamin D Scarcity: Arctic and Tropical Peoples').",
+    "context": "Traditional Arctic Inuit beat the no-sun problem with food, not sunlight — vitamin D from fatty fish, seal liver, fish-egg yolks, and seal, walrus and whale blubber; one early study rated the vitamin D in seal oil equal to that of the best cod-liver oil. Rickets spread among the Inuit only in recent times, as the traditional diet gave way. Source: The Globe and Mail (Arctic Inuit diet); PMC9573337 ('Vitamin D Scarcity: Arctic and Tropical Peoples').",
     "topic": "vitamin-d-sunlight-fatty-fish-and-the-rickets-story"
   },
   {
@@ -28180,7 +28180,7 @@
       "A plate of grilled chicken breast",
       "A dish of sliced red apple"
     ],
-    "context": "The everyday form is vitamin K1, called phylloquinone, and it is manufactured in the leaves' photosynthetic tissue — the same green machinery that turns sunlight into sugar. So the vitamin rides along with the leaf pile: cooked collard greens pack about 530 micrograms per half-cup, boiled spinach about 445, and kale is right behind; broccoli is loaded too. Eat a salad or a pot of braised greens and you are eating the plant's solar panels, vitamin included. There is a second form, K2, and it comes from a completely different kind of food. Sources: https://en.wikipedia.org/wiki/Vitamin_K",
+    "context": "The everyday form is vitamin K1, called phylloquinone, and it is manufactured in the leaves' photosynthetic tissue — the same green machinery that turns sunlight into sugar. So the vitamin rides along with the leaf pile: cooked collard greens pack about 530 micrograms per half-cup, boiled spinach about 445, and kale is right behind; broccoli is loaded too. A salad or a pot of braised greens is a helping of the plant's solar panels, vitamin included. There is a second form, K2, and it comes from a completely different kind of food. Sources: https://en.wikipedia.org/wiki/Vitamin_K",
     "topic": "vitamin-k-and-the-fermented-food-payoff"
   },
   {
@@ -28198,7 +28198,7 @@
   },
   {
     "tier": 4,
-    "question": "Bacteria at work inside one traditional Japanese dish, eaten for about a thousand years, pack it with vitamin K2. Most fermented and animal foods carry only a modest dose of this form of the vitamin, but this dish holds roughly 1,100 micrograms per 100 grams, ten times more than any other common food. Which dish is it?",
+    "question": "Bacteria at work inside one traditional Japanese dish, eaten for centuries, pack it with vitamin K2. Most fermented and animal foods carry only a modest dose of this form of the vitamin, but this dish holds about 1,000 micrograms per 100 grams, more than ten times as much as hard cheese. Which dish is it?",
     "answer": "Natto, fermented soybeans",
     "choices": [
       "Natto, fermented soybeans",
@@ -28206,7 +28206,7 @@
       "Tsukemono, salt-pickled vegetables",
       "Katsuobushi, smoked and fermented fish"
     ],
-    "context": "Natto is sticky and stringy — pull a spoonful and it trails threads. About 90% of its K2 is the long-lasting MK-7 form, and the bacterium Bacillus subtilis (natto) manufactures it during fermentation. The traditional method is a beautiful trick: wrap boiled soybeans in rice straw and leave them warm — the straw itself already carries the bacteria that ferment the beans. MK-7 also sticks around in the body far longer than the K1 you get from greens: studies show roughly 2.5x higher availability over 24 hours and up to about 6x over 96 hours, thanks to a much longer half-life. The other K2 foods are real but smaller: aged cheese, egg yolk (~32 mcg per 100g), butter, goose and organ meat. Sources: https://en.wikipedia.org/wiki/Vitamin_K ; https://pubmed.ncbi.nlm.nih.gov/16232939/ ; https://nattomk7.com/about-vitamin-k/what-is-natto/",
+    "context": "Natto is sticky and stringy — pull a spoonful and it trails threads. About 90% of its K2 is the long-lasting MK-7 form, and the bacterium Bacillus subtilis (natto) manufactures it during fermentation. The traditional method is a beautiful trick: wrap boiled soybeans in rice straw and leave them warm — the straw itself already carries the bacteria that ferment the beans. MK-7 also sticks around in the body far longer than the K1 in greens: studies show roughly 2.5x higher availability over 24 hours and up to about 6x over 96 hours, thanks to a much longer half-life. The other K2 foods are real but smaller: goose liver pâté (about 369 mcg per 100 g), hard cheese (about 76), egg yolk (~32), butter and organ meat. Sources: https://en.wikipedia.org/wiki/Vitamin_K ; https://pubmed.ncbi.nlm.nih.gov/16232939/ ; https://nattomk7.com/about-vitamin-k/what-is-natto/",
     "topic": "vitamin-k-and-the-fermented-food-payoff"
   },
   {
@@ -28219,7 +28219,7 @@
       "Switches on proteins that push extra calcium into urine and out of the body",
       "Switches on proteins that catch calcium in the gut and pass it out in stool"
     ],
-    "context": "The proposed mechanism makes K2 a kind of traffic cop for calcium: it switches on osteocalcin, which locks calcium into bone and teeth, and matrix Gla protein, which keeps calcium OUT of artery walls — steering the same mineral toward one destination and away from the other. The study is the Rotterdam Study (Geleijnse et al., Journal of Nutrition, 2004): the highest dietary K2/menaquinone intake was associated with roughly 50% less severe aortic calcification and coronary-heart-disease death, and about 25% lower all-cause mortality, while K1 showed no such link — which is what suggests the effect is K2-specific. Be careful with it: this is observational, emerging science. It shows an association in a population, not proof of cause in you. It is one honest reason traditional fermented and animal foods get defended, not a settled verdict. Sources: https://en.wikipedia.org/wiki/Vitamin_K ; https://www.sciencedirect.com/science/article/pii/S0022316623028961",
+    "context": "The proposed mechanism makes K2 a kind of traffic cop for calcium: it switches on osteocalcin, which locks calcium into bone and teeth, and matrix Gla protein, which keeps calcium OUT of artery walls — steering the same mineral toward one destination and away from the other. The study is the Rotterdam Study (Geleijnse et al., Journal of Nutrition, 2004): the highest dietary K2/menaquinone intake was associated with roughly 50% less severe aortic calcification and coronary-heart-disease death, and about 25% lower all-cause mortality, while K1 showed no such link — which is what suggests the effect is K2-specific. Be careful with it: this is observational, emerging science. It shows an association in a population, not proof of cause in any one person. It is one honest reason traditional fermented and animal foods get defended, not a settled verdict. Sources: https://en.wikipedia.org/wiki/Vitamin_K ; https://www.sciencedirect.com/science/article/pii/S0022316623028961",
     "topic": "vitamin-k-and-the-fermented-food-payoff"
   },
   {
@@ -28276,15 +28276,15 @@
   },
   {
     "tier": 1,
-    "question": "Suppose you are making dinner: you rinse some rice, pet the dog, cut up a slippery uncooked chicken breast, then slice tomatoes for a salad nobody will cook. Any of these might send you to the sink, but food-safety experts call one moment the most important. Which moment?",
+    "question": "A cook making dinner rinses some rice, pets the dog, cuts up an uncooked chicken breast, then slices tomatoes for a salad nobody will cook. Any of these might send her to the sink, but food-safety experts call one moment the most important. Which moment?",
     "answer": "Right after the raw chicken, just before the tomatoes",
     "choices": [
       "Right after the raw chicken, just before the tomatoes",
       "Right after petting the dog, before touching food",
-      "The moment you first walk into the kitchen",
-      "Once dinner is over and you start the dishes"
+      "The moment she first walks into the kitchen",
+      "Once dinner is over and she starts the dishes"
     ],
-    "context": "Raw meat, poultry, seafood, and eggs can spread germs to food that won't be cooked again to kill them, and your hands are the ferry that carries them. So the most critical wash is right after handling the raw chicken and before you touch the ready-to-eat salad. Source: CDC 'Handwashing Facts' / Clean Hands.",
+    "context": "Raw meat, poultry, seafood, and eggs can spread germs to food that won't be cooked again to kill them, and a cook's hands are the ferry that carries them. So the most critical wash is right after handling the raw chicken and before touching the ready-to-eat salad. Source: CDC 'Handwashing Facts' / Clean Hands.",
     "topic": "wash-your-hands-20-seconds-and-the-soap-trick"
   },
   {
@@ -28297,20 +28297,20 @@
       "Traces of the bird's feather dust",
       "Traces of the bird's bone powder"
     ],
-    "context": "Raw meat and poultry can carry invisible amounts of animal feces, so germs end up on your hands even when they look clean, which is exactly why the CDC says to wash after handling uncooked meat, chicken, seafood, flour, or eggs. Source: CDC 'Handwashing Facts' / Clean Hands.",
+    "context": "Raw meat and poultry can carry invisible amounts of animal feces, so germs end up on a cook's hands even when they look clean, which is exactly why the CDC says to wash after handling uncooked meat, chicken, seafood, flour, or eggs. Source: CDC 'Handwashing Facts' / Clean Hands.",
     "topic": "wash-your-hands-20-seconds-and-the-soap-trick"
   },
   {
     "tier": 2,
-    "question": "Suppose you keep hand sanitizer and plain soap by the kitchen sink. Sanitizer kills germs on the skin; soap barely kills a thing, yet experts want you to use the soap. What does the soap mainly do to the germs on your hands?",
-    "answer": "Lifts them off your skin so the rinse carries them away",
+    "question": "A cook keeps hand sanitizer and plain soap by the kitchen sink. Sanitizer kills germs on the skin, while plain soap kills far fewer, yet experts still want her to use the soap. What does the soap mainly do to the germs on her hands?",
+    "answer": "Lifts them off the skin so the rinse carries them away",
     "choices": [
-      "Lifts them off your skin so the rinse carries them away",
+      "Lifts them off the skin so the rinse carries them away",
       "Smothers them in foam so the bubbles carry them away",
-      "Cracks their shells so the rinse flushes them away",
-      "Slicks your skin so the germs slide off in the rinse"
+      "Seals them under a soapy film so they cannot spread",
+      "Drives them deep into the pores, away from any food"
     ],
-    "context": "Soap's real job isn't killing. Its surfactants 'lift soil and microbes from skin,' in the CDC's own words, and then the water rinses them away. That is why washing works even against germs sanitizer can't kill. Source: CDC 'Handwashing Facts' / Clean Hands.",
+    "context": "Soap's real job isn't killing. Its surfactants 'lift soil and microbes from skin,' in the CDC's own words, and then the water rinses them away. Soap can break apart some viruses that wear a fatty coat, but lifting and rinsing does most of the work. That is why washing works even against germs sanitizer can't kill. Source: CDC 'Handwashing Facts' / Clean Hands; Pall Thordarson, The Guardian, 12 March 2020.",
     "topic": "wash-your-hands-20-seconds-and-the-soap-trick"
   },
   {
@@ -28320,23 +28320,23 @@
     "choices": [
       "It grabs the grease with one end and water with the other",
       "It heats the grease until it melts into the water",
-      "It chops the grease into bits too small to see",
+      "It hardens the grease into flakes that fall off",
       "It turns the grease into a gas that floats away"
     ],
-    "context": "A soap molecule is two-ended: a water-repelling tail that buries into grease and germs, and a water-loving head that faces the water. The tail grabs the grease, the head grabs the rinse, and the whole clump washes off your skin. Source: Northeastern Global News (chemistry professor Thomas Gilbert); Soaps & Scents 'Science of Lathering'.",
+    "context": "A soap molecule is two-ended: a water-repelling tail that buries into grease and germs, and a water-loving head that faces the water. The tail grabs the grease, the head grabs the rinse, and the whole clump washes off the skin. Source: Northeastern Global News (chemistry professor Thomas Gilbert); Soaps & Scents 'Science of Lathering'.",
     "topic": "wash-your-hands-20-seconds-and-the-soap-trick"
   },
   {
     "tier": 3,
-    "question": "Suppose you wash your hands for the full 20 seconds the rule asks, humming 'Happy Birthday' twice through, instead of a quick two-second splash. The splash still coats your hands in soap, yet it barely dents the germs. What is it about the longer wash that gets hands clean?",
+    "question": "A cook washes her hands for the full 20 seconds the rule asks, humming 'Happy Birthday' twice through, instead of a quick two-second splash. A splash would coat her hands in soap too, yet barely dent the germs. What is it about the longer wash that gets hands clean?",
     "answer": "The scrubbing friction is what pries the germs loose",
     "choices": [
       "The scrubbing friction is what pries the germs loose",
-      "The soap has to soak deep into your skin first",
+      "The soap has to soak deep into the skin first",
       "The water has to heat up enough to kill the germs",
       "The bubbles must dry before they can trap anything"
     ],
-    "context": "Those seconds do two jobs: the soap needs time to surround the grease into tiny rinse-away spheres, and your scrubbing friction physically pries the germs loose. A 2-second splash simply can't remove as many, and the CDC notes people also scrub more thoroughly when they use soap. Source: CDC 'Handwashing Facts'; Northeastern Global News.",
+    "context": "Those seconds do two jobs: the soap needs time to surround the grease into tiny rinse-away spheres, and the scrubbing friction physically pries the germs loose. A 2-second splash simply can't remove as many, and the CDC notes people also scrub more thoroughly when they use soap. Source: CDC 'Handwashing Facts'; Northeastern Global News.",
     "topic": "wash-your-hands-20-seconds-and-the-soap-trick"
   },
   {
@@ -28349,7 +28349,7 @@
       "Listeria",
       "E. coli"
     ],
-    "context": "Norovirus is 'non-enveloped': it has no fragile fatty coat, just a tough protein shell that alcohol can't break through, so sanitizer fails. Soap and water win because they physically wash the virus away instead of trying to kill it (the same is true for the germs Cryptosporidium and C. difficile). That is also why sanitizer is only a backup, it doesn't remove grease, dirt, or germs it can't kill, so use it only when soap and water aren't available. Source: CDC 'Hand Sanitizer Facts'; Infection Control Today.",
+    "context": "Norovirus is 'non-enveloped': it has no fragile fatty coat, just a tough protein shell that alcohol can't break through, so sanitizer fails. Soap and water win because they physically wash the virus away instead of trying to kill it (the same is true for the germs Cryptosporidium and C. difficile). That is also why sanitizer is only a backup: it doesn't remove grease, dirt, or germs it can't kill, so it is meant for when soap and water aren't available. Source: CDC 'Hand Sanitizer Facts'; Infection Control Today.",
     "topic": "wash-your-hands-20-seconds-and-the-soap-trick"
   },
   {
@@ -29038,7 +29038,7 @@
       "Slice a cleaner, straighter line",
       "Bounce straight back up"
     ],
-    "context": "A keen edge bites the surface the instant it lands and cuts where you aim; a dull, rounded edge can't get purchase, so it skates across the food instead. Careful, though: 'sharp is safer' does NOT mean a dull knife can't hurt you — a dull blade absolutely can cut you, and it slips exactly where you never aimed. Source: scienceinsights.org, 'Why is a sharp knife safer than a dull knife?'",
+    "context": "A keen edge bites the surface the instant it lands and cuts where the cook aims; a dull, rounded edge can't get purchase, so it skates across the food instead. Careful, though: 'sharp is safer' does NOT mean a dull knife can't cut anyone — a dull blade absolutely can, and it slips exactly where the cook never aimed. Source: scienceinsights.org, 'Why is a sharp knife safer than a dull knife?'",
     "topic": "why-a-sharp-knife-is-safer-than-a-dull-one"
   },
   {
@@ -29051,7 +29051,7 @@
       "Choke up on the blade for leverage",
       "Take many thin passes instead of one"
     ],
-    "context": "OSHA warns that a dull knife makes you 'use greater force,' and more force means less control — so when the blade finally slips, all that stored-up push carries it in a direction you never intended. Source: ishn.com, on OSHA's knife-injury guidance.",
+    "context": "OSHA warns that a dull knife makes a cook 'use greater force,' and more force means less control — so when the blade finally slips, all that stored-up push carries it in a direction nobody intended. Source: ishn.com, on OSHA's knife-injury guidance.",
     "topic": "why-a-sharp-knife-is-safer-than-a-dull-one"
   },
   {
@@ -29064,7 +29064,7 @@
       "It squeezes them together behind the edge",
       "It pulls them along the blade's length"
     ],
-    "context": "A knife's edge is a wedge — a moving inclined plane, one of the classic simple machines alongside the lever, pulley, and screw. As that ramp travels down, it turns your downward push into a sideways shove, driving the two halves apart. Source: en.wikipedia.org, 'Wedge'.",
+    "context": "A knife's edge is a wedge — a moving inclined plane, one of the classic simple machines alongside the lever, pulley, and screw. As that ramp travels down, it turns the cook's downward push into a sideways shove, driving the two halves apart. Source: en.wikipedia.org, 'Wedge'.",
     "topic": "why-a-sharp-knife-is-safer-than-a-dull-one"
   },
   {
@@ -29077,7 +29077,7 @@
       "Its thin blade flexes and slips between the cells",
       "Its harder steel resists the food pushing back"
     ],
-    "context": "Pressure = force ÷ area. A keen edge is only a few microns wide, so your push lands on a razor-thin line and the pressure there is enormous; a dull edge spreads the same push over a wide flat, dropping the pressure until it just squashes. Source: scienceinsights.org.",
+    "context": "Pressure = force ÷ area. A keen edge is only a few microns wide, so the push lands on a razor-thin line and the pressure there is enormous; a dull edge spreads the same push over a wide flat, dropping the pressure until it just squashes. Source: scienceinsights.org.",
     "topic": "why-a-sharp-knife-is-safer-than-a-dull-one"
   },
   {
@@ -29086,21 +29086,21 @@
     "answer": "It's pulled tight like a drumhead the edge can't dent",
     "choices": [
       "It's pulled tight like a drumhead the edge can't dent",
-      "It's slicked with a natural wax the steel can't grip",
+      "It's so thick the edge never reaches the flesh",
       "It's so wet the blade just skims across it",
-      "It's springy and bounces the dull blade back"
+      "It's hardened by sunlight into a brittle shell"
     ],
     "context": "A tomato's or onion's skin is smooth and taut like a drumhead; a dull edge can't dent it, so it slides sideways instead of biting in. With skin like that, the hazard isn't the cut — it's the slide. Source: scienceinsights.org.",
     "topic": "why-a-sharp-knife-is-safer-than-a-dull-one"
   },
   {
     "tier": 3,
-    "question": "Suppose you are at the counter with a dull knife and a stubborn tomato, one hand holding the tomato firm and the other pushing the blade down hard. The tough skin holds, and holds, and then gives way all at once. Freed in that instant, where does the blade shoot?",
+    "question": "A cook at the counter holds a stubborn tomato firm with one hand and pushes a dull knife down hard with the other. The tough skin holds, and holds, and then gives way all at once. Freed in that instant, where does the blade shoot?",
     "answer": "Toward the hand steadying the tomato",
     "choices": [
       "Toward the hand steadying the tomato",
       "Straight down into the cutting board",
-      "Back up toward your own face",
+      "Back up toward the cook's own face",
       "Off sideways past the counter's edge"
     ],
     "context": "The most dangerous moment: the skin resists and resists, then the pressure releases all at once and the blade lurches forward — usually straight toward the hand steadying the food. Source: scienceinsights.org.",
@@ -29125,7 +29125,7 @@
     "answer": "Its microscopic teeth grab and tear tough skin like a saw",
     "choices": [
       "Its microscopic teeth grab and tear tough skin like a saw",
-      "Its coarse grind holds a keen point longer between sharpenings",
+      "Its rough edge never needs touching up on a honing steel",
       "Its scratched sides shed sticky slices instead of gripping them",
       "Its rough apex parts soft flesh without bruising it"
     ],
@@ -29134,28 +29134,28 @@
   },
   {
     "tier": 5,
-    "question": "A Japanese smith grinds his keenest knives to about 10 degrees a side. A tenth of a millimetre back from the tip, the steel is already only about 35 microns thick, thinner than a human hair. An apex that thin survives a day of carrots only if the smith starts from steel with which property?",
+    "question": "A Japanese smith grinds his keenest knives to about 10 degrees a side. A tenth of a millimetre back from the tip, the steel is already only about 35 microns thick, thinner than a human hair. Such a fine apex folds over on the first carrots unless the steel has which property?",
     "answer": "Unusually hard",
     "choices": [
       "Unusually hard",
       "Unusually springy",
       "Unusually tough",
-      "Unusually fine-grained"
+      "Unusually rust-proof"
     ],
     "context": "A 10-degree-per-side edge is astonishingly thin — about 35 microns just 0.1 mm back from the tip, thinner than a human hair — so it takes very hard steel (around Rockwell 60-67) to keep that apex from folding over. Source: japanmonozukuri.com, on Japanese knife-edge geometry.",
     "topic": "why-a-sharp-knife-is-safer-than-a-dull-one"
   },
   {
     "tier": 1,
-    "question": "Suppose you eat a greasy diner burger with its pickle spear, fried fish with its lemon wedge or a rich pork taco al pastor under a squeeze of lime. Each pairs a heavy, oily food with a hit of something sour, and cooks do it on purpose. What is that splash of acid doing for each bite?",
-    "answer": "It cuts the grease so it stops coating your tongue",
+    "question": "A diner works through a greasy burger and its pickle spear, fried fish and its lemon wedge, and a taco al pastor under a squeeze of lime. Cooks pair oily food with a sour hit on purpose. What is the acid doing for each bite?",
+    "answer": "It cuts the grease so it stops coating the tongue",
     "choices": [
-      "It cuts the grease so it stops coating your tongue",
+      "It cuts the grease so it stops coating the tongue",
       "It melts the fat so the food feels less heavy",
       "It seals in the fat to keep the food juicy",
       "It soaks into the meat to make it more tender"
     ],
-    "context": "The citric acid in lemon or lime physically lightens a heavy bite: it interacts with the oils so they stop coating your tongue in a greasy film, resetting your palate between bites. That's why oily fish like salmon and mackerel get lemon, fried food gets a pickle, and rich tacos get lime. Source: The Chopping Block, 'Acid and Fat: The Yin and Yang of Cooking' — https://www.thechoppingblock.com/blog/acid-and-fat-the-yin-and-yang-of-cooking",
+    "context": "Cooks say the citric acid in lemon or lime 'cuts' a heavy bite: the oils stop coating the tongue in a greasy film, and the palate resets between bites. That's why oily fish like salmon and mackerel get lemon, fried food gets a pickle, and rich tacos get lime. Source: The Chopping Block, 'Acid and Fat: The Yin and Yang of Cooking' — https://www.thechoppingblock.com/blog/acid-and-fat-the-yin-and-yang-of-cooking",
     "topic": "why-acid-brightens-a-dish"
   },
   {
@@ -29186,12 +29186,12 @@
   },
   {
     "tier": 3,
-    "question": "Suppose you taste a cream sauce that a heavy hand with the lemon juice has left too sharp and sour. Besides a pinch of sugar, professional cooks rescue an over-sour sauce by stirring in a knob of butter or a swirl of olive oil. How does the fat tame the sourness?",
-    "answer": "It coats your tongue so less acid reaches your taste buds",
+    "question": "A cook tastes a cream sauce that a heavy hand with the lemon juice has left too sharp and sour. Besides a pinch of sugar, professional cooks rescue an over-sour sauce by stirring in a knob of butter or a swirl of olive oil. How does the fat tame the sourness?",
+    "answer": "It coats the tongue so less acid reaches the taste buds",
     "choices": [
-      "It coats your tongue so less acid reaches your taste buds",
+      "It coats the tongue so less acid reaches the taste buds",
       "It chemically cancels the acid into a neutral salt",
-      "It dilutes the sauce so there's less acid overall",
+      "It thickens the sauce so the acid sinks to the bottom",
       "It cools the sauce down so the sourness fades away"
     ],
     "context": "This is the see-saw of seasoning: every taste has a counter. A pinch of sugar fights sourness because sweet is its opposite, while a little fat — butter, cream, or olive oil — coats the tongue and physically blocks the acid from reaching the taste buds, softening the sharp edge without removing any acid. Source: America's Test Kitchen, 'Is Your Dish Too Salty? Sweet? Sour?' — https://www.americastestkitchen.com/articles/5816-is-your-dish-too-salty-sweet-sour-spicy-heres-how-to-fix-it",
@@ -29220,7 +29220,7 @@
       "The dough takes in air as it rises, so the risen loaf runs past 100% of the mix",
       "The baker pads every ingredient upward, so a batch never runs short at the end"
     ],
-    "context": "Baker's percentage works like this: the flour is always 100%, and every other ingredient is written as a percentage of the flour's weight. A plain white bread reads flour 100%, water 66%, salt 2%, yeast 1.2% — so at a glance you know it's '66% hydration.' Because it's pure ratio, the formula scales from one loaf to a hundred without breaking: 66% water times 50 lbs of flour is 33 lbs of water, and the proportions never change. (A fun quirk: baker's percentages always add up to more than 100%, because the flour by itself is already 100%.) (Source: King Arthur Baking, 'Baker's Percentage.')",
+    "context": "Baker's percentage works like this: the flour is always 100%, and every other ingredient is written as a percentage of the flour's weight. A plain white bread reads flour 100%, water 66%, salt 2%, yeast 1.2% — so a baker sees at a glance that it is '66% hydration.' Because it's pure ratio, the formula scales from one loaf to a hundred without breaking: 66% water times 50 lbs of flour is 33 lbs of water, and the proportions never change. (A fun quirk: baker's percentages always add up to more than 100%, because the flour by itself is already 100%.) (Source: King Arthur Baking, 'Baker's Percentage.')",
     "topic": "why-baking-is-measured-not-eyeballed"
   },
   {
@@ -29233,7 +29233,7 @@
       "An onion.",
       "A chicken."
     ],
-    "context": "The hat's full name is the toque blanche -- 'white toque' -- and it is the single most recognizable piece of kitchen gear in the world. The legend says a master's toque carried about a hundred pleats, one for each way he could cook an egg, so the folds were a silent brag about his skill. Cooks have repeated it for generations, but there is no hard evidence behind it: a fun tale, not a proven fact. Source: escoffier.edu, 'A History of the Chef's Hat'; mentalfloss.com, 'The Fascinating Reason There Are 100 Folds in a Chef's Hat' (which states it as unconfirmed legend).",
+    "context": "The hat's full name is the toque blanche -- 'white toque' -- and it is one of the most recognizable pieces of kitchen gear in the world. The legend says a master's toque carried about a hundred pleats, one for each way he could cook an egg, so the folds were a silent brag about his skill. Cooks have repeated it for generations, but there is no hard evidence behind it: a fun tale, not a proven fact. Source: escoffier.edu, 'A History of the Chef's Hat'; mentalfloss.com, 'The Fascinating Reason There Are 100 Folds in a Chef's Hat' (which states it as unconfirmed legend).",
     "topic": "why-chefs-wear-the-tall-white-hat"
   },
   {
@@ -29251,7 +29251,7 @@
   },
   {
     "tier": 2,
-    "question": "Marie-Antoine Carême, the French chef who made the toque tall in the first place, reportedly wore one about 18 inches high, a tower of white cloth that would flop over on its own. Carême kept his standing straight up all through service. What did he put inside the hat to hold it there?",
+    "question": "Marie-Antoine Carême, the French chef credited with making the toque tall, reportedly wore one about 18 inches high, a tower of white cloth that would flop over on its own. Carême kept his standing straight up all through service. What did he put inside the hat to hold it there?",
     "answer": "Pieces of cardboard.",
     "choices": [
       "Pieces of cardboard.",
@@ -29272,7 +29272,7 @@
       "His years of service -- the veterans wore the tallest, and each new cook wore a shorter one.",
       "His build -- the taller cooks wore the taller toques, and short cooks wore short ones."
     ],
-    "context": "In the traditional kitchen the hat's height signaled rank: the executive chef wore the tallest toque, and the hats got shorter as you moved down the line of cooks. Careme had made the toque tall as a status symbol in the first place, and around 1821-1822, inspired by crisp military uniforms, he sketched the whole standardized look -- white hats, double-breasted coats, waist-tied aprons -- in his book 'Le Maitre d'Hotel Francais.' Auguste Escoffier finished the job in the late 1800s: he was the first to make the uniform mandatory across his kitchens, as part of his organized 'brigade de cuisine' system. Source: escoffier.edu, 'A History of the Chef's Hat' and 'A Brief History of the Chef's Uniform'; en.wikipedia.org/wiki/Chef's_uniform.",
+    "context": "In the traditional kitchen the hat's height signaled rank: the executive chef wore the tallest toque, and the hats got shorter down the line of cooks. Careme is credited with making the toque tall as a status symbol, and around 1821-1822, inspired by crisp military uniforms, he sketched the whole standardized look -- white hats, double-breasted coats, waist-tied aprons -- in his book 'Le Maitre d'Hotel Francais.' Auguste Escoffier finished the job in the late 1800s: he is credited with making the uniform mandatory across his kitchens, as part of his organized 'brigade de cuisine' system. Source: escoffier.edu, 'A History of the Chef's Hat' and 'A Brief History of the Chef's Uniform'; en.wikipedia.org/wiki/Chef's_uniform.",
     "topic": "why-chefs-wear-the-tall-white-hat"
   },
   {
@@ -29719,7 +29719,7 @@
   },
   {
     "tier": 2,
-    "question": "A cook slices into a loaf fresh from the oven: the crust is crisp and crackly, almost like a shell, around a soft middle. She leaves the loaf uncovered on the counter for a full day, and when she cuts it again the soft middle has turned hard and crumbly, and the crust has changed as well. What has the stale loaf's crust become?",
+    "question": "A loaf comes out of the oven with a crisp, crackly crust around a soft middle. The cook leaves it in a bag on the counter for a day, and when she cuts it again, the crust has changed. What has the crust become?",
     "answer": "Soft and leathery",
     "choices": [
       "Soft and leathery",
@@ -29727,7 +29727,7 @@
       "Hard and glassy",
       "Dark and bitter"
     ],
-    "context": "As the loaf sits, moisture migrates from the moist middle outward into the crust — its water content climbs from roughly 12% up to about 28% — so a fresh crisp crust turns soft and leathery while the inside dries out and hardens. Fresh = crisp crust + soft middle; stale = leathery crust + hard middle. (cereal-science crust-moisture figure via discover.texasrealfood.com)",
+    "context": "As the loaf sits, moisture migrates from the moist middle outward into the crust — its water content climbs from roughly 12% up to about 28% — so a fresh crisp crust turns soft and leathery while the inside firms and hardens. Fresh = crisp crust + soft middle; stale = leathery crust + hard middle. (cereal-science crust-moisture figure via discover.texasrealfood.com)",
     "topic": "why-stale-bread-revives-in-the-oven"
   },
   {
@@ -29738,9 +29738,9 @@
       "Re-crystallizing into a solid form",
       "Soaking up even more water",
       "Breaking down into sugars",
-      "Leaking its moisture away"
+      "Turning into chewy gluten"
     ],
-    "context": "During baking the starch granules soak up water and swell soft (gelatinize) around 60°C; as the loaf cools and sits, that same starch slowly re-firms and re-crystallizes — a process called retrogradation, basically baking quietly running in reverse. Only about 3% of the loaf's water ever moves; the hardening is mostly this molecular rearrangement, not drying out. (foodcrumbles.com; Wikipedia: Staling)",
+    "context": "During baking the starch granules soak up water and swell soft (gelatinize) around 60°C; as the loaf cools and sits, that same starch slowly re-firms and re-crystallizes — a process called retrogradation, basically baking quietly running in reverse. Only a small share of the loaf's water ever moves, by one estimate about 3%; the hardening is mostly this molecular rearrangement, not drying out. (foodcrumbles.com; Wikipedia: Staling)",
     "topic": "why-stale-bread-revives-in-the-oven"
   },
   {
@@ -29753,7 +29753,7 @@
       "The same as the first time",
       "Hardly at all this time"
     ],
-    "context": "Warming a loaf to about 60°C melts the re-crystallized starch, and in a ~180°C oven it tastes fresh again in 5–10 minutes — but the fix is temporary. Each reheat also drives off a little moisture, so the starch re-crystallizes sooner the next round; in practice you can only really refresh a loaf once or twice. (Kitchn revive-methods test; Wikipedia: Staling)",
+    "context": "Warming a loaf to about 60°C melts the re-crystallized starch, and in a ~180°C oven it tastes fresh again in 5–10 minutes — but the fix is temporary. Each reheat also drives off a little moisture, so the starch re-crystallizes sooner the next round; in practice a loaf can only really be refreshed once or twice. (Kitchn revive-methods test; Wikipedia: Staling)",
     "topic": "why-stale-bread-revives-in-the-oven"
   },
   {
@@ -29824,14 +29824,14 @@
   {
     "tier": 4,
     "question": "A home cook hears that deep-freezing is what makes wild fish safe to eat raw. He buys a wild-caught salmon fillet at the supermarket, leaves it in his kitchen freezer overnight and slices it into sushi rolls for the family the next day. His plan gets the parasite-worm rule wrong. What did he miss?",
-    "answer": "A home freezer never gets cold enough to kill them",
+    "answer": "A home freezer runs warmer, and one night is too short",
     "choices": [
-      "A home freezer never gets cold enough to kill them",
+      "A home freezer runs warmer, and one night is too short",
       "A home freezer's slow chill lets them burrow deeper",
       "A home freezer stuns them, and thawing wakes them up",
       "A home freezer only kills the ones near the surface"
     ],
-    "context": "FDA guidance calls for roughly -20°C (-4°F) for about a week — or far colder for a shorter time — to kill parasites in raw fish. A typical home freezer runs only about -18°C, not cold enough, so 'buy sushi-grade' really means 'buy from a supplier who froze it properly,' not something to reproduce at home. Source: Sashimi DC, 'Parasites in Raw Fish'; FDA Fish and Fishery Products Hazards Guidance, Ch. 5.",
+    "context": "FDA guidance calls for -20°C (-4°F) or colder for a total of 7 days, or far colder for a shorter time, to kill parasites in fish meant to be eaten raw. A typical home freezer runs at about -18°C (0°F), a little warmer than that, and one night is far short of a week, so 'buy sushi-grade' really means 'buy from a supplier who froze it properly,' not something to trust to a kitchen freezer. Source: Sashimi DC, 'Parasites in Raw Fish'; FDA Fish and Fishery Products Hazards and Controls Guidance, Ch. 5.",
     "topic": "why-sushi-fish-is-frozen-first"
   },
   {
