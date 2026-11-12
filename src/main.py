@@ -88,6 +88,7 @@ from game_purse import PurseMixin
 from game_families import FamilyMixin
 from game_seeker import SeekerMixin
 from game_popups import PopupMixin
+from game_hazards import HazardsMixin
 from escort_system import EscortMixin
 from spells import LEARNABLE_SPELLS
 
@@ -218,7 +219,8 @@ DEEP_SLEEP = 10 ** 6           # a zoo, graveyard or barracks sleeper: until wok
 
 class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMixin, EncountersMixin,
            EmberpupMixin, BlackKnightMixin, ItemActionsMixin, RoadMixin, EscortMixin,
-           SetneMixin, TraderMixin, PurseMixin, FamilyMixin, SeekerMixin, PopupMixin):
+           SetneMixin, TraderMixin, PurseMixin, FamilyMixin, SeekerMixin, PopupMixin,
+           HazardsMixin):
     # FANTASY: Grimoire font set -- larger for readability. Read through the
     # UI scale on every use (SCALE_PLAN.md): a window resize can never leave
     # a font of the old size behind.
@@ -2421,9 +2423,13 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # The first floor of each domain says where the hero has come
         # (data/domains.json; src/decor.py).
         self._announce_domain(new_level)
-        # Display atmospheric messages for this level
-        for atmo_msg in getattr(self.dungeon, 'atmosphere_messages', []):
-            self.add_message(atmo_msg, 'info')
+        # Display atmospheric messages for this level: the first time only
+        # (G4: they used to repeat on every visit, so a stair-bounce said
+        # the same three lines again).
+        if not self.dungeon.__dict__.get('_atmosphere_said'):
+            self.dungeon._atmosphere_said = True
+            for atmo_msg in getattr(self.dungeon, 'atmosphere_messages', []):
+                self.add_message(atmo_msg, 'info')
         # Ariadne's Thread shows the way through the Labyrinth: the walk from
         # the stair to Asterion's hall is laid out on the map.
         if new_level == 20 and not getattr(self.dungeon, '_thread_shown', False):
@@ -5174,6 +5180,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         so there is no floating over it and no sidestep, and a pit opens
         beside him rather than under him."""
         from dice import roll as _dice_roll
+        # The domain's hazards first (game_hazards.py): crumbling floors,
+        # thin ice, brimstone. A fumbled disarm is not a step.
+        if not forced:
+            self._hazard_step_hero(x, y)
+            if self.state == STATE_DEAD:
+                return
         trap = self.dungeon.traps.get((x, y))
         if trap is None:
             return

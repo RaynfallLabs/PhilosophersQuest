@@ -1,0 +1,49 @@
+{
+  "_doc": "Domain hazards (src/hazards.py, src/game_hazards.py; Dungeon Alive slice 3). A hazard is a fixture (data/fixtures.json) that does something, and you can see it before it does: Observe (;) says what it is and what it does. 'trigger' is 'step' (something walks onto it) or 'cycle' (a fire vent breathes every 'period' turns, glowing the turn before). 'chance' is per step; 'heavy' replaces it for a hero with a heavy pack. 'levitate' false means levitating does not help (an icicle falls from above). 'damage' dice are written against a 60-point health bar and taken as that share of the victim's own health (floor_curve.hazard / wound, never more than 30%). 'status' [name, min turns, max turns] is applied with a save when 'save' is true. 'mp' drains magic. 'pit' leaves a pit the hero must climb out of. 'once': the hazard is spent when it fires ('after' is the fixture left behind, or nothing). Lines: 'hero' when it gets the hero, 'monster' when it gets a creature the hero can see, 'seen' when a cycle hazard fires in sight, 'warn' the turn before.",
+  "hazards": {
+    "crumbling_floor": {
+      "trigger": "step", "chance": 0.5, "heavy": 0.9,
+      "damage": "2d6", "type": "physical", "pit": true, "once": true, "after": "rubble",
+      "hero": "The cracked flagstones give way under you!",
+      "monster": "The cracked floor gives way under {the}!"
+    },
+    "strangler_vine": {
+      "trigger": "step", "chance": 0.6,
+      "status": ["immobilized", 2, 4], "save": true,
+      "hero": "Thorny vines whip round your legs and hold you fast!",
+      "monster": "The vines snare {the}!"
+    },
+    "fire_vent": {
+      "trigger": "cycle", "period": 6,
+      "damage": "3d6", "type": "fire", "status": ["burning", 3, 3],
+      "hero": "Fire roars up out of the vent beneath you!",
+      "monster": "Fire roars up out of the vent under {the}!",
+      "seen": "Fire roars up out of a vent.",
+      "warn": "A vent glows white-hot."
+    },
+    "thin_ice": {
+      "trigger": "step", "chance": 0.3, "heavy": 0.75,
+      "damage": "2d6", "type": "cold", "status": ["slowed", 4, 6], "once": true, "after": "",
+      "hero": "The ice cracks under you and you go through into black water! You haul yourself out, frozen.",
+      "monster": "The ice breaks under {the}!"
+    },
+    "icicle_shadow": {
+      "trigger": "step", "chance": 0.3, "levitate": false,
+      "damage": "2d8", "type": "pierce",
+      "hero": "An icicle snaps off above you and spears down!",
+      "monster": "An icicle spears down on {the}!"
+    },
+    "brimstone": {
+      "trigger": "step", "chance": 1.0,
+      "damage": "1d6", "type": "fire", "status": ["burning", 3, 3],
+      "hero": "Your feet sink into burning brimstone!",
+      "monster": "{The} wades into burning brimstone!"
+    },
+    "soul_sigil": {
+      "trigger": "step", "chance": 1.0,
+      "mp": "2d6",
+      "hero": "The sigil flares under your feet, and something of you goes out through them.",
+      "monster": ""
+    }
+  }
+}

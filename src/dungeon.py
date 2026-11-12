@@ -119,6 +119,7 @@ class Dungeon:
     fixture_opaque = frozenset()
     theme = None
     domain = None
+    clan = None                     # the family that holds the floor (hazards.py)
 
     def __init__(self, tiles: List[List[int]], rooms: List[Room],
                  width: int, height: int, level: int):
@@ -1322,6 +1323,26 @@ def _build_spawn_pool(level: int) -> dict:
             continue  # vanishingly rare — drop entirely rather than rounding to floor
         weight = max(0.02, peak_weight * bell)
         eligible[k] = {**v, '_spawn_freq': weight}
+    # The domain's kin weigh more (src/hazards.py): lore weights only, every
+    # kind still eligible only from its own depth. (The floor's clan is laid
+    # on top by _floor_pool.)
+    import hazards
+    for k, v in eligible.items():
+        v['_spawn_freq'] *= hazards.kin_weight(level, v.get('family', ''))
+    return eligible
+
+
+def _floor_pool(level: int, dungeon=None) -> dict:
+    """The spawn pool for one floor: _build_spawn_pool with the floor's
+    resident clan weighing more (src/hazards.py)."""
+    eligible = _build_spawn_pool(level)
+    clan = getattr(dungeon, 'clan', None) if dungeon is not None else None
+    if clan:
+        import decor
+        mult = float(decor.config().get('clans', {}).get('mult', 3.0))
+        for v in eligible.values():
+            if v.get('family') == clan:
+                v['_spawn_freq'] *= mult
     return eligible
 
 
@@ -1418,7 +1439,7 @@ def spawn_monsters(rooms: List[Room], level: int, dungeon: Dungeon,
     extras of a den or a zoo were set down blind and could stand on them).
     Only the new monsters are returned.
     """
-    eligible = _build_spawn_pool(level)
+    eligible = _floor_pool(level, dungeon)
     if not eligible:
         return []
     rng = random.Random()
@@ -1483,7 +1504,16 @@ def populate_floor(rooms: List[Room], level: int, dungeon: Dungeon,
     never feel barren and deep floors still leave a few empty rooms for breathing
     space. Skips the first room.
     """
-    eligible = _build_spawn_pool(level)
+    # The floor's clan: most floors are held by one family (src/hazards.py),
+    # chosen once, before anything is set down.
+    import hazards
+    if getattr(dungeon, 'clan', None) is None and not getattr(dungeon, '_clan_rolled', False):
+        dungeon._clan_rolled = True
+        dungeon.clan = hazards.pick_clan(level, _build_spawn_pool(level))
+        line = hazards.clan_line(dungeon.clan) if dungeon.clan else ''
+        if line:
+            dungeon.atmosphere_messages.append(line)
+    eligible = _floor_pool(level, dungeon)
     if not eligible:
         return []
     rng = random.Random()
@@ -2101,7 +2131,8 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon,
                 trap_candidates.append((rx, ry))
     rng.shuffle(trap_candidates)
     for tx, ty in trap_candidates[:n_traps]:
-        trap = dict(rng.choice(TRAP_TYPES))
+        import hazards
+        trap = dict(hazards.pick_trap(level, TRAP_TYPES, rng))
         trap['revealed'] = False
         dungeon.traps[(tx, ty)] = trap
 

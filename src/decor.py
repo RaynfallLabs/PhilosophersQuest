@@ -53,6 +53,12 @@ def domains() -> list:
     return _DOMAINS['domains']
 
 
+def config() -> dict:
+    """The whole of data/domains.json (domains, clans, clan lines)."""
+    domains()
+    return _DOMAINS
+
+
 def fixture_defs() -> dict:
     global _FIXTURES
     if _FIXTURES is None:
@@ -387,11 +393,26 @@ def dress_floor(dungeon, level: int, monsters=(), items=(), rng=None) -> int:
     # Corridor decals.
     spec = decor.get('floor')
     chance = float((spec or {}).get('corridor_chance', 0) or 0)
+    corridors = _corridor_tiles(dungeon, taken)
     if chance > 0:
-        for pos in _corridor_tiles(dungeon, taken):
+        for pos in corridors:
             if rng.random() < chance:
                 place(dungeon, pos, _weighted(spec['ids'], rng))
+                taken.add(pos)
                 n += 1
+    # The domain's hazards (src/hazards.py): never in the arrival room,
+    # never on a stair or beside one.
+    import hazards
+    from dungeon import STAIRS_UP, STAIRS_DOWN
+    near_stairs = set()
+    for y in range(dungeon.height):
+        for x in range(dungeon.width):
+            if dungeon.tiles[y][x] in (STAIRS_UP, STAIRS_DOWN):
+                near_stairs |= {(x + a, y + b) for a in (-1, 0, 1) for b in (-1, 0, 1)}
+    first = dungeon.rooms[0] if dungeon.rooms else None
+    hz_rooms = [r for r in rooms if r is not first]
+    n += hazards.place_hazards(dungeon, level, taken | near_stairs, hz_rooms,
+                               [t for t in corridors if t not in taken], rng)
     # Nothing may cut the floor in two: undo blockers until the walk from
     # the up stair reaches as much as it did, less the tiles now furnished.
     if before > 0 and placed_blocks:

@@ -36,6 +36,7 @@ added_files = [
     ('data/senses.json',            'data'),   # how monsters notice the hero (senses.py)
     ('data/domains.json',           'data'),   # the five domains (decor.py)
     ('data/fixtures.json',          'data'),   # fixtures (decor.py)
+    ('data/hazards.json',           'data'),   # domain hazards (hazards.py)
     ('data/hints.json',             'data'),
     ('data/question_twins.json',    'data'),   # same-fact twins the quiz holds back (quiz_engine)
     ('data/philosophy_mastery.json', 'data'),  # philosophy tier traits (philosophy_mastery.py)

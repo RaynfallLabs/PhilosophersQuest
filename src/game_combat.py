@@ -3001,6 +3001,12 @@ class CombatMixin:
         _floor_at_start = self.dungeon_level
         # What the monsters can hear this turn (src/senses.py).
         self._senses_begin_turn()
+        # The fire vents breathe (game_hazards.py).
+        _hz = getattr(self, '_hazards_tick', None)
+        if _hz:
+            _hz()
+            if self.state == STATE_DEAD:
+                return
 
         # Death acts first -- not part of self.monsters to avoid save/load issues
         if self.death_pursues and self.death_monster is not None:
@@ -3104,6 +3110,11 @@ class CombatMixin:
             # Rewired traps (player chained AI to >=3 on a trap) trigger when a
             # monster steps onto them. Only fires if the monster moved AND the
             # new tile holds a trap flagged safe_for_player.
+            if m.alive and (m.x, m.y) != _pos_before:
+                # A monster walks into the domain's hazards like anyone.
+                _hzm = getattr(self, '_hazard_step_monster', None)
+                if _hzm:
+                    _hzm(m)
             if m.alive and (m.x, m.y) != _pos_before:
                 _new_tile_trap = self.dungeon.traps.get((m.x, m.y))
                 if _new_tile_trap and _new_tile_trap.get('safe_for_player'):

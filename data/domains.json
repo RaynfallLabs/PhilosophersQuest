@@ -1,70 +1,427 @@
 {
-  "_doc": "The five domains of the dungeon (Dungeon Alive, Brandon 2026-11-12): one per gate boss, each with its own look ('theme': the folder under assets/tiles/env/themes/ whose pictures replace the base tiles; missing pictures fall back to the base set), its own dressing (src/decor.py) and, from slice 3, its own hazards and kin. 'arrival' is said the first time in a run the hero sets foot in the domain. 'decor' gives each layer of fixtures (data/fixtures.json): 'ids' with weights, 'room_chance' (the share of ordinary rooms that get any), 'per_room' [min, max], and for floor decals 'corridor_chance' per corridor tile.",
+  "_doc": "The five domains of the dungeon (Dungeon Alive, Brandon 2026-11-12): one per gate boss, each with its own look ('theme': the folder under assets/tiles/env/themes/ whose pictures replace the base tiles; missing pictures fall back to the base set), its own dressing (src/decor.py) and, from slice 3, its own hazards and kin. 'arrival' is said the first time in a run the hero sets foot in the domain. 'decor' gives each layer of fixtures (data/fixtures.json): 'ids' with weights, 'room_chance' (the share of ordinary rooms that get any), 'per_room' [min, max], and for floor decals 'corridor_chance' per corridor tile. Slice 3 adds: 'kin' (a weight on each family's place in the spawn pool: lore, never the floor number, and every kind is still eligible only from its own depth), 'traps' (weights on the hidden trap kinds, 1 if not named), 'hazards' (domain hazards set by src/hazards.py: data/hazards.json) and the floor's resident clan ('clans', with 'clan_lines' per family).",
   "domains": [
     {
       "id": "labyrinth",
       "name": "The Labyrinth",
-      "floors": [1, 20],
+      "floors": [
+        1,
+        20
+      ],
       "boss": "asterion_minotaur",
       "theme": null,
       "arrival": "The stone here was cut by the men of Minos, long ago. Somewhere below, a bull-headed thing walks his halls, and he knows every one of them.",
       "decor": {
-        "wall":  {"ids": {"wall_torch": 3, "labrys_mark": 2, "bull_fresco": 1, "cobweb": 1}, "room_chance": 0.35, "per_room": [1, 2]},
-        "floor": {"ids": {"bone_pile": 2, "rubble": 2, "broken_pot": 1}, "room_chance": 0.3, "per_room": [1, 2], "corridor_chance": 0.008},
-        "stand": {"ids": {"horns_consecration": 1}, "room_chance": 0.06, "per_room": [1, 1]}
-      }
+        "wall": {
+          "ids": {
+            "wall_torch": 3,
+            "labrys_mark": 2,
+            "bull_fresco": 1,
+            "cobweb": 1
+          },
+          "room_chance": 0.35,
+          "per_room": [
+            1,
+            2
+          ]
+        },
+        "floor": {
+          "ids": {
+            "bone_pile": 2,
+            "rubble": 2,
+            "broken_pot": 1
+          },
+          "room_chance": 0.3,
+          "per_room": [
+            1,
+            2
+          ],
+          "corridor_chance": 0.008
+        },
+        "stand": {
+          "ids": {
+            "horns_consecration": 1
+          },
+          "room_chance": 0.06,
+          "per_room": [
+            1,
+            1
+          ]
+        }
+      },
+      "kin": {},
+      "traps": {},
+      "hazards": []
     },
     {
       "id": "temple",
       "name": "The Forgotten Temple",
-      "floors": [21, 40],
+      "floors": [
+        21,
+        40
+      ],
       "boss": "medusa_gorgon",
       "theme": "temple",
       "arrival": "The masonry changes. Pale marble now, gone green in every crack, and ivy where no sun has ever reached. This was a temple of Athena once, and something made the goddess turn her face from it. The statues all look back over their shoulders.",
       "decor": {
-        "wall":  {"ids": {"ivy": 4, "wall_torch": 1, "cobweb": 1}, "room_chance": 0.5, "per_room": [1, 2]},
-        "floor": {"ids": {"roots": 2, "olive_leaves": 2, "snake_skin": 1, "statue_rubble": 1, "rubble": 1}, "room_chance": 0.5, "per_room": [1, 2], "corridor_chance": 0.012},
-        "stand": {"ids": {"statue_shield": 1, "statue_stride": 1, "statue_kneel": 1, "statue_reach": 1, "statue_spear": 1, "column_drum": 2, "offering_basin": 1}, "room_chance": 0.35, "per_room": [1, 2]}
-      }
+        "wall": {
+          "ids": {
+            "ivy": 4,
+            "wall_torch": 1,
+            "cobweb": 1
+          },
+          "room_chance": 0.5,
+          "per_room": [
+            1,
+            2
+          ]
+        },
+        "floor": {
+          "ids": {
+            "roots": 2,
+            "olive_leaves": 2,
+            "snake_skin": 1,
+            "statue_rubble": 1,
+            "rubble": 1
+          },
+          "room_chance": 0.5,
+          "per_room": [
+            1,
+            2
+          ],
+          "corridor_chance": 0.012
+        },
+        "stand": {
+          "ids": {
+            "statue_shield": 1,
+            "statue_stride": 1,
+            "statue_kneel": 1,
+            "statue_reach": 1,
+            "statue_spear": 1,
+            "column_drum": 2,
+            "offering_basin": 1
+          },
+          "room_chance": 0.35,
+          "per_room": [
+            1,
+            2
+          ]
+        }
+      },
+      "kin": {
+        "serpents": 2.5,
+        "gorgons": 3.0,
+        "plants": 1.5
+      },
+      "traps": {
+        "pit": 2,
+        "arrow": 1.5,
+        "sleep_gas": 1.5
+      },
+      "hazards": [
+        {
+          "id": "crumbling_floor",
+          "where": "room",
+          "rooms": [
+            1,
+            3
+          ],
+          "patch": [
+            2,
+            4
+          ]
+        },
+        {
+          "id": "strangler_vine",
+          "where": "room",
+          "rooms": [
+            1,
+            2
+          ],
+          "patch": [
+            2,
+            5
+          ]
+        }
+      ]
     },
     {
       "id": "deep",
       "name": "The Scorched Deep",
-      "floors": [41, 60],
+      "floors": [
+        41,
+        60
+      ],
       "boss": "fafnir_dragon",
       "theme": "deep",
       "arrival": "The worked stone ends. These are caves, raw and black with old soot, and the air tastes of ash. The bones down here wore armour, and the armour has melted.",
       "decor": {
-        "wall":  {"ids": {"wall_torch": 1, "cobweb": 1}, "room_chance": 0.2, "per_room": [1, 1]},
-        "floor": {"ids": {"scorch_mark": 2, "ember_crack": 2, "ash_drift": 2, "slayer_bones": 1, "rubble": 1}, "room_chance": 0.55, "per_room": [1, 2], "corridor_chance": 0.015},
-        "stand": {"ids": {"stalagmite": 4, "crystal_cluster": 1, "pick_and_cart": 1}, "room_chance": 0.4, "per_room": [1, 2]}
-      }
+        "wall": {
+          "ids": {
+            "wall_torch": 1,
+            "cobweb": 1
+          },
+          "room_chance": 0.2,
+          "per_room": [
+            1,
+            1
+          ]
+        },
+        "floor": {
+          "ids": {
+            "scorch_mark": 2,
+            "ember_crack": 2,
+            "ash_drift": 2,
+            "slayer_bones": 1,
+            "rubble": 1
+          },
+          "room_chance": 0.55,
+          "per_room": [
+            1,
+            2
+          ],
+          "corridor_chance": 0.015
+        },
+        "stand": {
+          "ids": {
+            "stalagmite": 4,
+            "crystal_cluster": 1,
+            "pick_and_cart": 1
+          },
+          "room_chance": 0.4,
+          "per_room": [
+            1,
+            2
+          ]
+        }
+      },
+      "kin": {
+        "dragons": 2.5,
+        "elementals": 2.0,
+        "goblinkin": 1.4,
+        "giants": 1.2
+      },
+      "traps": {
+        "fire": 3,
+        "acid": 1.5
+      },
+      "hazards": [
+        {
+          "id": "fire_vent",
+          "where": "corridor",
+          "count": [
+            3,
+            6
+          ]
+        },
+        {
+          "id": "fire_vent",
+          "where": "room",
+          "rooms": [
+            1,
+            2
+          ],
+          "patch": [
+            1,
+            2
+          ]
+        }
+      ]
     },
     {
       "id": "rime",
       "name": "The Rime Halls",
-      "floors": [61, 80],
+      "floors": [
+        61,
+        80
+      ],
       "boss": "fenrir_wolf",
       "theme": "rime",
       "arrival": "Frost. It furs the stones and creaks underfoot, and your breath hangs in front of you. Round shields hang on these walls, as in the halls of the north. Somewhere below, something has been waiting a long time for the end of the world.",
       "decor": {
-        "wall":  {"ids": {"icicles": 3, "shield_wall": 2}, "room_chance": 0.5, "per_room": [1, 2]},
-        "floor": {"ids": {"snow_drift": 3, "frozen_bones": 1, "broken_fetter": 1}, "room_chance": 0.5, "per_room": [1, 2], "corridor_chance": 0.012},
-        "stand": {"ids": {"frozen_warrior": 2, "rune_stone": 2, "mead_bench": 1, "brazier_cold": 1}, "room_chance": 0.35, "per_room": [1, 2]}
-      }
+        "wall": {
+          "ids": {
+            "icicles": 3,
+            "shield_wall": 2
+          },
+          "room_chance": 0.5,
+          "per_room": [
+            1,
+            2
+          ]
+        },
+        "floor": {
+          "ids": {
+            "snow_drift": 3,
+            "frozen_bones": 1,
+            "broken_fetter": 1
+          },
+          "room_chance": 0.5,
+          "per_room": [
+            1,
+            2
+          ],
+          "corridor_chance": 0.012
+        },
+        "stand": {
+          "ids": {
+            "frozen_warrior": 2,
+            "rune_stone": 2,
+            "mead_bench": 1,
+            "brazier_cold": 1
+          },
+          "room_chance": 0.35,
+          "per_room": [
+            1,
+            2
+          ]
+        }
+      },
+      "kin": {
+        "giants": 2.5,
+        "great_beasts": 2.0,
+        "restless_dead": 1.8,
+        "elementals": 1.2
+      },
+      "traps": {
+        "pit": 2,
+        "bear_trap": 2
+      },
+      "hazards": [
+        {
+          "id": "thin_ice",
+          "where": "room",
+          "rooms": [
+            1,
+            3
+          ],
+          "patch": [
+            3,
+            6
+          ]
+        },
+        {
+          "id": "icicle_shadow",
+          "where": "under_wall",
+          "count": [
+            3,
+            6
+          ]
+        }
+      ]
     },
     {
       "id": "abyss",
       "name": "The Abyss",
-      "floors": [81, 100],
+      "floors": [
+        81,
+        100
+      ],
       "boss": "abaddon_destroyer",
       "theme": "abyss",
       "arrival": "The floor is black glass, and it is warm. Red light moves in the cracks, and smoke rises from below as from a great furnace. This is the shaft of the Abyss, and its king is waiting at the bottom.",
       "decor": {
-        "wall":  {"ids": {"hanging_chains": 3}, "room_chance": 0.45, "per_room": [1, 2]},
-        "floor": {"ids": {"glow_fissure": 2, "ash_drift": 2, "smoke_vent": 1, "bone_pile": 1}, "room_chance": 0.55, "per_room": [1, 2], "corridor_chance": 0.015},
-        "stand": {"ids": {"bone_spire": 3, "seal_stone": 1, "ruined_throne": 1}, "room_chance": 0.3, "per_room": [1, 2]}
-      }
+        "wall": {
+          "ids": {
+            "hanging_chains": 3
+          },
+          "room_chance": 0.45,
+          "per_room": [
+            1,
+            2
+          ]
+        },
+        "floor": {
+          "ids": {
+            "glow_fissure": 2,
+            "ash_drift": 2,
+            "smoke_vent": 1,
+            "bone_pile": 1
+          },
+          "room_chance": 0.55,
+          "per_room": [
+            1,
+            2
+          ],
+          "corridor_chance": 0.015
+        },
+        "stand": {
+          "ids": {
+            "bone_spire": 3,
+            "seal_stone": 1,
+            "ruined_throne": 1
+          },
+          "room_chance": 0.3,
+          "per_room": [
+            1,
+            2
+          ]
+        }
+      },
+      "kin": {
+        "demons": 3.0,
+        "ghosts": 1.5,
+        "vampires_liches": 1.3
+      },
+      "traps": {
+        "fire": 2,
+        "teleport": 2,
+        "polymorph": 2
+      },
+      "hazards": [
+        {
+          "id": "brimstone",
+          "where": "room",
+          "rooms": [
+            1,
+            3
+          ],
+          "patch": [
+            2,
+            4
+          ]
+        },
+        {
+          "id": "soul_sigil",
+          "where": "anywhere",
+          "count": [
+            2,
+            4
+          ]
+        }
+      ]
     }
-  ]
+  ],
+  "clans": {
+    "_doc": "Most floors are held by one family: its kinds weigh 'mult' times more in the spawn pool. It is chosen from the families with at least 'min_kinds' kinds eligible on the floor, the domain's kin first. 'chance' is the share of ordinary floors with a clan.",
+    "chance": 0.6,
+    "mult": 3.0,
+    "min_kinds": 4,
+    "never": [
+      "legend",
+      "celestials"
+    ]
+  },
+  "clan_lines": {
+    "demons": "Sulphur, and claw-marks gouged into the doors. Demons have made this floor their own.",
+    "restless_dead": "The dead walk this floor in numbers. Nobody buried them deep enough.",
+    "ghosts": "The cold here moves. This floor is haunted, and not by one ghost.",
+    "mortals": "Boot-prints, cold fires, a dropped knife. Men hold this floor, and not honest ones.",
+    "goblinkin": "Crude marks daubed on every wall. Goblins and their kin run this floor.",
+    "vermin": "The walls rustle and click. This floor belongs to the vermin.",
+    "giants": "The doorways here have been knocked wider. Giants live on this floor.",
+    "aberrations": "Nothing here is the shape a living thing should be. Aberrations have nested on this floor.",
+    "fair_folk": "Music, faint, from no direction at all. The Fair Folk keep court on this floor.",
+    "vampires_liches": "No rats, no flies, no sound at all. The undead lords of this floor keep it very quiet.",
+    "dragons": "Scorched stone, and the smell of hot metal. Dragon-kind lair on this floor.",
+    "serpents": "Shed skins in every corner. This floor is a nest of serpents.",
+    "great_beasts": "Claw-marks gouged high up the walls. Great beasts hunt this floor.",
+    "constructs": "Gears and stone dust, and the tick of something wound up long ago. Constructs guard this floor.",
+    "elementals": "The air itself is restless here. Elementals roam this floor.",
+    "plants": "Roots through the walls and spores on the air. Something green has taken this floor.",
+    "oozes": "Every surface is slick. Oozes have spread across this floor.",
+    "birds": "Feathers, and droppings on every ledge. Birds of prey roost on this floor.",
+    "gorgons": "Too many statues, and every one of them afraid. Gorgon-kin hunt this floor.",
+    "shapeshifters": "Prints that change shape halfway down a corridor. Shapeshifters prowl this floor."
+  }
 }

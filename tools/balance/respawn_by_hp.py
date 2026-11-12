@@ -407,8 +407,21 @@ def pool_at(monsters: dict, placement: dict, level: int) -> dict[str, float]:
         bell = math.exp(-((level - peak) ** 2) / (2 * max(1, spread) ** 2))
         if bell < 0.005:
             continue
-        pool[mid] = max(0.02, float(d["peak_weight"]) * bell)
+        pool[mid] = max(0.02, float(d["peak_weight"]) * bell) * _kin(level, d.get("family", ""))
     return pool
+
+
+def _kin(level: int, family: str) -> float:
+    """The domain's kin weight (src/hazards.py, Dungeon Alive slice 3), as
+    the game lays it on the pool."""
+    try:
+        import hazards
+    except ImportError:
+        import os as _os
+        import sys as _sys
+        _sys.path.insert(0, _os.path.join(_os.path.dirname(__file__), '..', '..', 'src'))
+        import hazards
+    return hazards.kin_weight(level, family)
 
 
 def _wpct(pairs, q):

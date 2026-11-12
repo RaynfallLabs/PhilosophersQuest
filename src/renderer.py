@@ -843,7 +843,13 @@ class Renderer:
             if not seen and (fx, fy) not in explored:
                 continue
             sx, sy = self.world_to_screen(fx, fy)
-            sprite = self._get_env_sprite(f'fixtures/{fid}')
+            state = spent.get((fx, fy))
+            sprite = None
+            if state == 'fire':
+                # A fire vent on its beat (hazards.py): its jet of fire.
+                sprite = self._get_env_sprite(f'fixtures/{fid}_active')
+            if sprite is None:
+                sprite = self._get_env_sprite(f'fixtures/{fid}')
             if sprite is None:
                 defn = decor.fixture_def(fid)
                 if not defn.get('blocks'):
@@ -854,7 +860,12 @@ class Renderer:
                                  border_radius=max(1, T // 8))
             else:
                 self.screen.blit(sprite, (sx, sy))
-            if spent.get((fx, fy)) == 'spent':
+            if state in ('glow', 'fire') and seen:
+                # The turn before it breathes, a vent glows white-hot.
+                glow = pygame.Surface((T, T), pygame.SRCALPHA)
+                glow.fill((255, 200, 120, 90) if state == 'glow' else (255, 120, 40, 120))
+                self.screen.blit(glow, (sx, sy))
+            if state == 'spent':
                 self.screen.blit(dim, (sx, sy))
             if not seen:
                 self.screen.blit(dim, (sx, sy))

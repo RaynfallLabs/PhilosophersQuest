@@ -180,6 +180,40 @@ A reachability walk from the up stair runs before and after; blockers are undone
 
 Tests: `tests/test_decor.py`.
 
+### 3.10 Domain hazards, trap lean, kin and clans (Dungeon Alive slice 3)
+Each domain is dangerous in its own way (`data/hazards.json`, `src/hazards.py`, `src/game_hazards.py`).
+
+**Hazards** are fixtures that do something:
+- They are seen before they bite. Their Observe line says what they do.
+- `decor.dress_floor` calls `hazards.place_hazards`, never in the arrival room and never on or beside a stair.
+
+| Domain | Hazards |
+|---|---|
+| Temple | `crumbling_floor` (50%, 90% with a heavy pack: a pit, then rubble); `strangler_vine` (held 2-4 turns, with a save) |
+| Deep | `fire_vent` (fires every 6 turns and glows the turn before; a room's patch breathes together) |
+| Rime | `thin_ice` (30%, 75% with a heavy pack: cold damage and slowed, then gone); `icicle_shadow` (30%, falls on the levitating too) |
+| Abyss | `brimstone` (burning); `soul_sigil` (drains 2d6 MP) |
+
+How they fire:
+- **Step hazards:** `_hazard_step_hero` runs at the top of `_check_floor_trap`, every step. `_hazard_step_monster` runs after a monster moves, so monsters walk into them too, and a reader can lead a hunter across the ice.
+- **Cycle hazards:** `_hazards_tick` runs after `_senses_begin_turn`. A vent's state is `glow` or `fire`; the renderer draws `<id>_active` while one fires and a white glow on the warning turn.
+- **Damage:** the dice are a share of the victim's own health (`floor_curve.hazard` and `wound`), and fire resistance halves fire.
+
+**Trap lean.**
+- `hazards.pick_trap` weights the hidden trap kinds by the domain's `traps`: the temple's pits, the deep's fire.
+- The Labyrinth keeps today's even draw.
+
+**Kin.**
+- `_build_spawn_pool(level, dungeon)` multiplies each kind's weight by `hazards.kin_weight`: the domain's `kin` times the floor's clan.
+- Weights only: no kind becomes eligible that was not, and the floor number is never a factor (LORE, NOT FLOOR).
+
+**Clans.**
+- `populate_floor` rolls the floor's resident family once (`dungeon.clan`). The `clans` settings: 60% of floors get one, chosen among families with at least 4 eligible kinds, with the domain's kin first. The clan weighs 3 times more.
+- Its `clan_lines` entry joins the arrival lines, so the hero knows which family to read up on.
+- Arrival lines are said on the first visit only (G4): `dungeon._atmosphere_said`.
+
+Tests: `tests/test_hazards.py`.
+
 ### 3.8 Fountains, graves, thrones (interactive tiles)
 `FOUNTAIN`, `GRAVE`, `THRONE`, `ALTAR` are all walkable and transparent. They're placed either by the generic altar/fountain passes above, or by special-room spawns (§4.4 — `graveyard` paints `GRAVE` tiles, `throne_room` paints a single `THRONE`), or by scripted quest hooks (see §7 and [quests_mysteries](quests_mysteries.md)).
 
