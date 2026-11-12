@@ -1,0 +1,682 @@
+[
+ {
+  "id": "stalagmite",
+  "family": "deep",
+  "rank": 1,
+  "p": 1,
+  "layer": "stand",
+  "theme": "deep",
+  "scale": 1.0,
+  "key": "green",
+  "lift": 1.0,
+  "body": "object",
+  "what": "one tall cave stalagmite: a single tall tapering cone of rough dark brown rock rising from a broad base to a blunt rounded point, three times as tall as its base is wide, lumpy and ridged with drips of old stone, streaked down its sides with black soot.",
+  "colours": "dark brown rock, warm brown-grey on the ridges, black soot streaks.",
+  "pose": "Seen from the front and a little from above, standing upright.",
+  "must_show": [
+   "one tall tapering rock cone",
+   "dark brown rock",
+   "soot streaks"
+  ],
+  "must_not_show": [
+   "several spires",
+   "crystal",
+   "ice",
+   "face",
+   "eyes",
+   "tree",
+   "candle",
+   "dripping water",
+   "ground",
+   "cave wall"
+  ],
+  "grey": 0.6
+ },
+ {
+  "id": "slayer_bones",
+  "family": "deep",
+  "rank": 2,
+  "p": 1,
+  "layer": "floor",
+  "theme": "deep",
+  "scale": 0.95,
+  "key": "green",
+  "body": "object",
+  "what": "the scorched skeleton of a fallen dragon-hunter lying flat on its back on the ground: a blackened skull, blackened ribs and long bones, charred dark brown-black, with a broken round wooden shield lying against its left arm and a snapped sword lying by its right hand, all touching.",
+  "colours": "charred black and dark brown-grey bones with dull grey edges, a charred dark brown wooden shield with a dull iron rim, a dull grey sword blade.",
+  "pose": "Seen from high above, looking steeply down, the skeleton lying across the picture from left to right.",
+  "action": "It lies flat on the ground and is seen from high above, looking steeply down on it like a mark on the floor of a map in a classic top-down roleplaying game: low and flat, nothing on it stands up, and it is wider than it is tall. Nobody else is near it.",
+  "must_show": [
+   "blackened skeleton lying flat",
+   "broken round shield",
+   "snapped sword"
+  ],
+  "must_not_show": [
+   "flesh",
+   "blood",
+   "standing skeleton",
+   "white clean bones",
+   "gold",
+   "armour on the skeleton",
+   "fire",
+   "flames"
+  ]
+ },
+ {
+  "id": "scorch_mark",
+  "family": "deep",
+  "rank": 3,
+  "p": 1,
+  "layer": "floor",
+  "theme": "deep",
+  "scale": 0.85,
+  "key": "magenta",
+  "body": "object",
+  "what": "a black burn on the ground: an irregular soft-edged smear of sooty black, wider than it is tall, darkest in the middle and fading out through charcoal grey into pale grey ash at its ragged edges, with no points, no rays and no star shape.",
+  "colours": "sooty black, charcoal grey, pale grey ash at the edges.",
+  "pose": "Seen from directly above.",
+  "action": "It is a mark lying flat on the ground, seen from directly above like a mark on the floor of a map in a classic top-down roleplaying game: perfectly flat, nothing on it stands up. Nobody is near it.",
+  "must_show": [
+   "black splash-shaped scorch",
+   "grey ash at the edges",
+   "perfectly flat"
+  ],
+  "must_not_show": [
+   "fire",
+   "flames",
+   "embers",
+   "smoke",
+   "hole",
+   "crater",
+   "face",
+   "ink",
+   "bat",
+   "star",
+   "starburst",
+   "rays",
+   "spikes",
+   "explosion symbol"
+  ]
+ },
+ {
+  "id": "ember_crack",
+  "family": "deep",
+  "rank": 4,
+  "p": 1,
+  "layer": "floor",
+  "theme": "deep",
+  "scale": 0.85,
+  "key": "blue",
+  "body": "object",
+  "what": "one jagged crack in a flat slab of dark brown-black rock, the crack running across from left to right and glowing orange and yellow from heat deep below, the rock at its lips dark and scorched; the slab is a rough flat shape twice as wide as it is tall.",
+  "colours": "dark brown-black rock, glowing orange crack with a yellow core.",
+  "pose": "Seen from directly above.",
+  "action": "It lies flat on the ground and is seen from directly above like a mark on the floor of a map in a classic top-down roleplaying game: perfectly flat, nothing on it stands up. Nobody is near it.",
+  "must_show": [
+   "jagged glowing orange crack",
+   "dark rock round it",
+   "flat"
+  ],
+  "must_not_show": [
+   "flames rising",
+   "fire",
+   "lava pool",
+   "smoke",
+   "face",
+   "eye",
+   "lightning"
+  ]
+ },
+ {
+  "id": "crystal_cluster",
+  "family": "deep",
+  "rank": 5,
+  "p": 2,
+  "layer": "stand",
+  "theme": "deep",
+  "scale": 0.7,
+  "key": "green",
+  "body": "object",
+  "what": "a cluster of dull dark red crystals growing from a lump of dark brown rock: five big six-sided crystal shafts, each as thick as the lump is tall, pointing up and out in different directions, the middle one tallest, cloudy, dull wine-red with paler red edges, not glowing.",
+  "colours": "dull dark red crystal with paler red edges, dark brown rock.",
+  "pose": "Seen from the front and a little from above.",
+  "must_show": [
+   "five big red crystal shafts",
+   "rock lump at the base"
+  ],
+  "must_not_show": [
+   "glow",
+   "light",
+   "purple",
+   "pink",
+   "candy",
+   "gem on a ring",
+   "ice",
+   "face"
+  ]
+ },
+ {
+  "id": "pick_and_cart",
+  "family": "deep",
+  "rank": 6,
+  "p": 2,
+  "layer": "stand",
+  "theme": "deep",
+  "scale": 0.85,
+  "key": "green",
+  "body": "object",
+  "what": "an abandoned dwarf mining cart: one square open box of dark wooden planks bound with black iron bands at its corners, on four small iron wheels, empty, with a miner's pick of a dark wooden handle and a dull iron head leaning against its side, the handle's foot touching the cart's wheel.",
+  "colours": "dark brown wood, black iron bands and wheels with dull grey worn edges, dull grey iron pick head.",
+  "pose": "Seen from the front and a little from above and from the side, so the open top and two wheels show.",
+  "must_show": [
+   "wooden mine cart on iron wheels",
+   "pick leaning on it"
+  ],
+  "must_not_show": [
+   "rails",
+   "track",
+   "gold",
+   "ore",
+   "rocks in the cart",
+   "dwarf",
+   "person",
+   "lantern",
+   "face"
+  ]
+ },
+ {
+  "id": "frozen_warrior",
+  "family": "rime",
+  "rank": 1,
+  "p": 1,
+  "layer": "stand",
+  "theme": "rime",
+  "scale": 1.0,
+  "key": "green",
+  "despill": true,
+  "body": "object",
+  "what": "a Norse warrior frozen solid inside one tall pillar of clear ice: the pillar is a tall block of cloudy blue-white ice with rough frosted faces, and inside it, seen through the ice, stands a warrior frozen still, his round shield on one arm and an axe in his other hand. The warrior himself is frozen through: his face, beard, hair, helmet, mail, cloak, shield and axe are all frost-white and pale icy blue, the blue of a winter sky, the same pale colours as the ice, his face visible through the front of the pillar with frost in his beard and closed frozen eyes. Realistic adult proportions.",
+  "colours": "frost-white and pale icy blue like a winter sky, darker blue-grey in the deep ice, white frost on the pillar's edges.",
+  "pose": "Seen from the front, the pillar upright; the warrior inside stands facing the viewer, shield raised, axe held low.",
+  "must_show": [
+   "tall ice pillar",
+   "warrior inside it",
+   "face visible through the ice",
+   "round shield and axe",
+   "every part pale and frozen"
+  ],
+  "must_not_show": [
+   "living skin",
+   "flesh-coloured face",
+   "red cloak",
+   "warm colours",
+   "warrior outside the ice",
+   "open eyes glowing",
+   "plinth",
+   "snow ground",
+   "horned helmet"
+  ],
+  "grey": 0.65
+ },
+ {
+  "id": "rune_stone",
+  "family": "rime",
+  "rank": 2,
+  "p": 1,
+  "layer": "stand",
+  "theme": "rime",
+  "scale": 0.95,
+  "key": "green",
+  "body": "object",
+  "what": "a tall Norse runestone: one tall upright slab of grey granite with a rounded top, carved on its face with a long serpent whose body forms a broad band curving round the edge of the stone, its head biting its own tail at the bottom; the band is filled with rows of short carved strokes, and the carving is picked out in faded red paint. White frost lies on its top and along its edges.",
+  "colours": "cold grey granite, darker grey in the carving, faded red paint in the serpent band, white frost.",
+  "pose": "Seen from the front, upright.",
+  "must_show": [
+   "tall upright stone slab",
+   "carved serpent band",
+   "frost on top"
+  ],
+  "must_not_show": [
+   "letters",
+   "readable runes",
+   "writing",
+   "words",
+   "cross",
+   "glowing runes",
+   "face",
+   "snow ground",
+   "grass",
+   "second stone"
+  ],
+  "grey": 0.45
+ },
+ {
+  "id": "snow_drift",
+  "family": "rime",
+  "rank": 3,
+  "p": 1,
+  "layer": "floor",
+  "theme": "rime",
+  "scale": 0.85,
+  "key": "green",
+  "despill": true,
+  "body": "object",
+  "what": "a low drift of white snow lying on the ground: a soft, irregular, wind-shaped patch twice as wide as it is tall, made of two or three smooth low humps with wind ripples on them, with soft pale icy blue shadows in the hollows; nothing is in it or on it.",
+  "colours": "white snow, pale icy blue shadows like a winter sky, a little grey.",
+  "pose": "Seen from high above, looking steeply down.",
+  "action": "It lies flat on the ground and is seen from high above, looking steeply down on it like a mark on the floor of a map in a classic top-down roleplaying game: low and flat, nothing on it stands up. Nobody is near it.",
+  "must_show": [
+   "low white snow drift",
+   "soft rounded humps",
+   "flat and low"
+  ],
+  "must_not_show": [
+   "snowman",
+   "footprints",
+   "ice block",
+   "rocks",
+   "trees",
+   "face",
+   "tall mound"
+  ]
+ },
+ {
+  "id": "icicles",
+  "family": "rime",
+  "rank": 4,
+  "p": 1,
+  "layer": "wall",
+  "theme": "rime",
+  "scale": 0.95,
+  "anchor": "top",
+  "key": "green",
+  "despill": true,
+  "body": "object",
+  "what": "a row of long icicles hanging down, seen face-on, the whole row wholly inside the picture with backdrop on every side of it: a thick frosted ledge of white ice across the top, and hanging from it seven icicles of different lengths, each as thick as a finger at its root and tapering to a point, clear pale icy blue with white frost.",
+  "colours": "clear pale icy blue like a winter sky, white frost, a little grey-blue in the cores.",
+  "action": "It hangs from the top of a wall and is seen exactly face-on, flat like a fringe; only the ice is drawn, with no wall, no roof and no room around it. Nobody is near it.",
+  "must_show": [
+   "row of long hanging icicles",
+   "frosted ledge at the top",
+   "different lengths"
+  ],
+  "must_not_show": [
+   "roof",
+   "house",
+   "wall",
+   "water drops",
+   "snow ground",
+   "teeth",
+   "face",
+   "fangs",
+   "crystals"
+  ]
+ },
+ {
+  "id": "mead_bench",
+  "family": "rime",
+  "rank": 5,
+  "p": 1,
+  "layer": "stand",
+  "theme": "rime",
+  "scale": 0.95,
+  "key": "magenta",
+  "body": "object",
+  "what": "a long low bench of the old northern mead halls: one thick plank seat of very dark timber on two solid carved plank ends, longer than it is tall, with a curved cow's-horn drinking horn with a silver rim lying on the seat, and white frost along the edges of the wood.",
+  "colours": "very dark brown timber, a pale cream and brown drinking horn with a silver rim, white frost.",
+  "pose": "Seen from the front and a little from above, the bench running from left to right.",
+  "must_show": [
+   "long dark timber bench",
+   "drinking horn on it",
+   "frost on the wood"
+  ],
+  "must_not_show": [
+   "table",
+   "food",
+   "people",
+   "cups",
+   "chair back",
+   "snow ground",
+   "face",
+   "dragon head"
+  ]
+ },
+ {
+  "id": "shield_wall",
+  "family": "rime",
+  "rank": 6,
+  "p": 1,
+  "layer": "wall",
+  "theme": "rime",
+  "scale": 0.95,
+  "key": "blue",
+  "body": "object",
+  "what": "three round Norse shields hung on a wall, seen face-on and overlapping: two side by side above and one below them in the middle, each a disc of planks with a round iron boss in its centre and a rawhide rim, painted in faded colours: the left one faded red, the right one faded yellow, the lower one black, the paint worn and chipped.",
+  "colours": "faded red, faded yellow, black, dark brown wood showing through, dull iron bosses.",
+  "action": "They hang on a wall and are seen exactly face-on, flat like playing cards held up to the viewer; only the three shields are drawn, with no wall, no floor and no room around them. Nobody is near them.",
+  "must_show": [
+   "three round shields overlapping",
+   "iron bosses",
+   "faded red, yellow and black"
+  ],
+  "must_not_show": [
+   "swords",
+   "axes",
+   "spears",
+   "wall",
+   "faces painted on them",
+   "letters",
+   "runes",
+   "crosses",
+   "dragons painted on them"
+  ],
+  "grey": 0.55
+ },
+ {
+  "id": "broken_fetter",
+  "family": "rime",
+  "rank": 7,
+  "p": 1,
+  "layer": "floor",
+  "theme": "rime",
+  "scale": 0.8,
+  "key": "green",
+  "body": "object",
+  "what": "a huge iron shackle and broken chain lying flat on the ground: one big open iron ring with a heavy hinge, wide enough to go round a giant wolf's leg, and five enormous oval chain links joined to it in a curve, the last link snapped open, all very dark iron, the colour of an old iron nail, with pale worn edges.",
+  "colours": "very dark iron like an old iron nail, nearly black in the shadows, pale grey worn edges.",
+  "pose": "Seen from high above, looking steeply down.",
+  "action": "It lies flat on the ground and is seen from high above, looking steeply down on it like a mark on the floor of a map in a classic top-down roleplaying game: low and flat, nothing on it stands up, and it is wider than it is tall. Nobody is near it.",
+  "must_show": [
+   "big open iron shackle",
+   "enormous chain links",
+   "one link snapped"
+  ],
+  "must_not_show": [
+   "wolf",
+   "animal",
+   "bones",
+   "padlock",
+   "key",
+   "rope",
+   "bright orange rust",
+   "face"
+  ]
+ },
+ {
+  "id": "frozen_bones",
+  "family": "rime",
+  "rank": 8,
+  "p": 2,
+  "layer": "floor",
+  "theme": "rime",
+  "scale": 0.8,
+  "key": "green",
+  "despill": true,
+  "body": "object",
+  "what": "old bones half buried in frost and ice lying flat on the ground: a skull lying on its side and a few long bones and ribs, dull grey-white, sunk in a low flat crust of white frost and clear pale icy blue ice.",
+  "colours": "dull grey-white bone, white frost, pale icy blue ice like a winter sky.",
+  "pose": "Seen from high above, looking steeply down.",
+  "action": "It lies flat on the ground and is seen from high above, looking steeply down on it like a mark on the floor of a map in a classic top-down roleplaying game: low and flat, nothing on it stands up. Nobody is near it.",
+  "must_show": [
+   "bones",
+   "skull",
+   "half buried in frost and ice",
+   "flat"
+  ],
+  "must_not_show": [
+   "flesh",
+   "blood",
+   "standing skeleton",
+   "gold",
+   "snowman",
+   "face with eyes"
+  ],
+  "grey": 0.6
+ },
+ {
+  "id": "smoke_vent",
+  "family": "abyss",
+  "rank": 1,
+  "p": 1,
+  "layer": "floor",
+  "theme": "abyss",
+  "scale": 0.75,
+  "key": "magenta",
+  "body": "object",
+  "what": "a ragged crack in a flat slab of black glassy rock, with one low curl of thick grey smoke rising out of the crack, joined to it, no taller than the slab is wide; the slab is a rough flat shape twice as wide as it is tall, the crack black inside, and nothing else is on the slab.",
+  "colours": "black glassy rock with dull grey glints, thick mid-grey and pale grey smoke.",
+  "pose": "Seen from high above, looking steeply down, the smoke curling up a little.",
+  "action": "It lies flat on the ground and is seen from high above, looking steeply down on it like a mark on the floor of a map in a classic top-down roleplaying game: low and flat, only a low curl of smoke rises from it. Nobody is near it.",
+  "must_show": [
+   "crack in black rock",
+   "low curl of grey smoke joined to it"
+  ],
+  "must_not_show": [
+   "tall column of smoke",
+   "fire",
+   "flames",
+   "face in the smoke",
+   "chimney",
+   "pipe",
+   "ghost"
+  ]
+ },
+ {
+  "id": "hanging_chains",
+  "family": "abyss",
+  "rank": 2,
+  "p": 1,
+  "layer": "wall",
+  "theme": "abyss",
+  "scale": 1.0,
+  "anchor": "top",
+  "key": "magenta",
+  "body": "object",
+  "what": "heavy iron chains hanging straight down, seen face-on: three chains of big oval links side by side, each link as big as a fist, hanging from the top, the left and right ones shorter, the middle one longest and ending in a big curved iron hook. Blackened iron, dark gunmetal grey, with bright pale steel-white worn edges.",
+  "colours": "blackened iron, dark gunmetal grey, bright pale steel-white worn edges.",
+  "action": "They hang down a wall and are seen exactly face-on, flat; only the chains are drawn, with no wall, no ceiling and no room around them. Nothing hangs from them and nobody is near.",
+  "must_show": [
+   "three heavy hanging chains",
+   "big oval links",
+   "a hook"
+  ],
+  "must_not_show": [
+   "body",
+   "prisoner",
+   "skull",
+   "meat",
+   "blood",
+   "wall",
+   "ceiling beam",
+   "padlock",
+   "rope",
+   "steel-blue"
+  ],
+  "pieces": 3
+ },
+ {
+  "id": "bone_spire",
+  "family": "abyss",
+  "rank": 3,
+  "p": 1,
+  "layer": "stand",
+  "theme": "abyss",
+  "scale": 1.0,
+  "key": "magenta",
+  "lift": 1.5,
+  "body": "object",
+  "what": "a jagged spire of fused bones rising to a point: about a dozen big charred bones, long leg bones and curved ribs, fused together into one tall jagged spike three times as tall as it is wide, with two skulls set in it low down; the bones are charred black with dull grey-brown edges.",
+  "colours": "charred black bone with dull grey-brown edges, a few pale grey-white bone ends.",
+  "pose": "Seen from the front and a little from above, standing upright.",
+  "must_show": [
+   "tall jagged spire of fused bones",
+   "skulls in it",
+   "charred black"
+  ],
+  "must_not_show": [
+   "flesh",
+   "blood",
+   "throne",
+   "whole skeleton standing",
+   "fire",
+   "white clean bones",
+   "gold",
+   "face with eyes"
+  ],
+  "grey": 0.45
+ },
+ {
+  "id": "brimstone",
+  "family": "abyss",
+  "rank": 4,
+  "p": 1,
+  "layer": "floor",
+  "theme": "abyss",
+  "scale": 0.7,
+  "key": "magenta",
+  "body": "object",
+  "what": "a small irregular bubbling pool of molten sulphur lying flat on the ground, a lumpy uneven shape longer than it is wide, never round: dull yellow molten sulphur with a few round bubbles, ringed by a cracked uneven crust of pale ochre-yellow.",
+  "colours": "dull sulphur yellow, pale ochre crust, dark brown cracks.",
+  "pose": "Seen from directly above.",
+  "action": "It lies flat on the ground and is seen from directly above like a mark on the floor of a map in a classic top-down roleplaying game: perfectly flat, nothing on it stands up. Nobody is near it.",
+  "must_show": [
+   "flat yellow sulphur pool",
+   "bubbles",
+   "cracked crust rim"
+  ],
+  "must_not_show": [
+   "fire",
+   "flames",
+   "lava",
+   "smoke",
+   "face",
+   "eye",
+   "egg yolk",
+   "cheese",
+   "circle",
+   "disc",
+   "plate",
+   "cross",
+   "stick"
+  ]
+ },
+ {
+  "id": "glow_fissure",
+  "family": "abyss",
+  "rank": 5,
+  "p": 1,
+  "layer": "floor",
+  "theme": "abyss",
+  "scale": 0.9,
+  "key": "green",
+  "body": "object",
+  "what": "a wide jagged fissure in a flat slab of black volcanic glass, running across from left to right, glowing deep red from far below, brightest red in its depth and dark at its lips; the slab is a rough flat shape twice as wide as it is tall.",
+  "colours": "black volcanic glass with dull grey glints, deep red glow, brighter red-orange deep inside.",
+  "pose": "Seen from directly above.",
+  "action": "It lies flat on the ground and is seen from directly above like a mark on the floor of a map in a classic top-down roleplaying game: perfectly flat, nothing on it stands up. Nobody is near it.",
+  "must_show": [
+   "wide red-glowing fissure",
+   "black glass round it",
+   "flat"
+  ],
+  "must_not_show": [
+   "flames rising",
+   "lava pool",
+   "smoke",
+   "face",
+   "eye",
+   "mouth with teeth",
+   "lightning"
+  ]
+ },
+ {
+  "id": "seal_stone",
+  "family": "abyss",
+  "rank": 6,
+  "p": 1,
+  "layer": "stand",
+  "theme": "abyss",
+  "scale": 0.75,
+  "key": "green",
+  "lift": 1.2,
+  "body": "object",
+  "what": "a squat black standing stone: one short thick upright block of rough black rock, a little taller than it is wide, its front face stamped with one large round seal of red sealing wax with a thin dark brown edge, pressed with a pair of curved horns above a circle.",
+  "colours": "rough black rock with dull grey edges, the red of red sealing wax.",
+  "pose": "Seen from the front and a little from above.",
+  "must_show": [
+   "squat black standing stone",
+   "large red wax seal on its face"
+  ],
+  "must_not_show": [
+   "letters",
+   "writing",
+   "runes",
+   "ribbon",
+   "face",
+   "glowing",
+   "pentagram",
+   "skull"
+  ],
+  "grey": 0.6
+ },
+ {
+  "id": "ruined_throne",
+  "family": "abyss",
+  "rank": 7,
+  "p": 2,
+  "layer": "stand",
+  "theme": "abyss",
+  "scale": 0.95,
+  "key": "magenta",
+  "lift": 1.15,
+  "body": "object",
+  "what": "a broken throne of black stone: a heavy square block seat with a solid box beneath it that goes straight down to the ground, and a tall back split down the middle, its left half broken off and leaning away, with grey ash heaped on the seat.",
+  "colours": "black stone with dull grey edges, pale grey ash.",
+  "pose": "Seen from the front and a little from above, empty.",
+  "must_show": [
+   "black stone throne",
+   "split broken back",
+   "ash on the seat",
+   "empty"
+  ],
+  "must_not_show": [
+   "person seated",
+   "skeleton seated",
+   "gold",
+   "cushion",
+   "crown",
+   "fire",
+   "face",
+   "red velvet"
+  ]
+ },
+ {
+  "id": "fallen_star",
+  "family": "abyss",
+  "rank": 8,
+  "p": 2,
+  "layer": "stand",
+  "theme": "abyss",
+  "scale": 0.7,
+  "key": "blue",
+  "body": "object",
+  "what": "a fallen star: one jagged lump of meteorite rock, black and dull silver, pitted and scorched, cracked across in a few places, with white-hot light glowing out of the cracks, white at the centre of each crack and pale yellow at its edges; the light stays inside the cracks.",
+  "colours": "black and dull silver-grey rock, white-hot white and pale yellow light in the cracks.",
+  "pose": "Seen from the front and a little from above, resting on its broad base.",
+  "must_show": [
+   "jagged black-and-silver lump",
+   "white-hot cracks"
+  ],
+  "must_not_show": [
+   "star shape",
+   "five-pointed star",
+   "crater",
+   "fire",
+   "flames",
+   "face",
+   "halo",
+   "rays",
+   "gold"
+  ]
+ }
+]

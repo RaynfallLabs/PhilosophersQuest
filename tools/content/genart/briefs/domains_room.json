@@ -1,0 +1,535 @@
+[
+ {
+  "id": "bunk",
+  "family": "room_a",
+  "rank": 1,
+  "p": 1,
+  "layer": "stand",
+  "theme": "base",
+  "scale": 0.95,
+  "key": "green",
+  "body": "object",
+  "what": "a rough wooden bunk bed: two plank beds one above the other on four thick square wooden posts, made of dark scuffed oak, each bed with a rumpled grey wool blanket thrown over it.",
+  "colours": "dark scuffed oak, rumpled mid-grey wool blankets.",
+  "pose": "Seen from the front and a little from above and from the side, so both beds and their blankets show.",
+  "must_show": [
+   "two beds one above the other",
+   "thick wooden posts",
+   "grey blankets"
+  ],
+  "must_not_show": [
+   "person sleeping",
+   "pillow with a face",
+   "ladder of metal",
+   "modern bed",
+   "white sheets",
+   "curtains",
+   "face"
+  ]
+ },
+ {
+  "id": "weapon_rack",
+  "family": "room_a",
+  "rank": 2,
+  "p": 1,
+  "layer": "stand",
+  "theme": "base",
+  "scale": 0.9,
+  "key": "green",
+  "body": "object",
+  "what": "an upright wooden weapon rack: a frame of two thick dark wooden posts on flat feet joined by two crossbars, with two old spears and one sword standing upright in it, their iron heads and blade very dark brown with rust, the colour of an old iron nail.",
+  "colours": "dark brown oak, very dark brown rusty iron like an old iron nail, dull grey worn edges.",
+  "pose": "Seen from the front and a little from above.",
+  "must_show": [
+   "wooden rack",
+   "two spears",
+   "one sword",
+   "rusty"
+  ],
+  "must_not_show": [
+   "shields",
+   "axes",
+   "bows",
+   "bright orange rust",
+   "shiny steel",
+   "person",
+   "wall",
+   "face"
+  ]
+ },
+ {
+  "id": "cook_pot",
+  "family": "room_a",
+  "rank": 3,
+  "p": 1,
+  "layer": "stand",
+  "theme": "base",
+  "scale": 0.8,
+  "key": "magenta",
+  "body": "object",
+  "what": "a black iron cook-pot hanging by its handle from a tripod of three dark wooden poles lashed together at the top, over a small heap of dead grey ashes and charred black sticks between the tripod's feet; cold, no fire.",
+  "colours": "black iron pot with dull grey edges, dark brown poles, grey ash, black charred sticks.",
+  "pose": "Seen from the front and a little from above.",
+  "must_show": [
+   "black iron pot",
+   "wooden tripod",
+   "dead ashes under it",
+   "no fire"
+  ],
+  "must_not_show": [
+   "fire",
+   "flames",
+   "embers",
+   "smoke",
+   "steam",
+   "food",
+   "ladle",
+   "sack",
+   "face"
+  ]
+ },
+ {
+  "id": "bookshelf",
+  "family": "room_a",
+  "rank": 4,
+  "p": 1,
+  "layer": "wall",
+  "theme": "base",
+  "scale": 1.0,
+  "key": "blue",
+  "body": "object",
+  "what": "a dark wooden bookshelf seen exactly face-on: a tall square case of dark walnut with three shelves crammed with old leather-bound books standing and leaning, some lying flat, and a few round leather scroll-cases, the spines plain dark brown, oxblood, dark green and dull tan leather.",
+  "colours": "dark walnut, dark brown, oxblood, dark green and dull tan leather spines, a few dull gold bands.",
+  "action": "It stands against a wall and is seen exactly face-on, flat and upright like a playing card held up to the viewer; only the bookshelf is drawn, with no wall, no floor and no room around it. Nobody is near it.",
+  "must_show": [
+   "square dark bookshelf face-on",
+   "crammed old books",
+   "scroll-cases"
+  ],
+  "must_not_show": [
+   "letters",
+   "writing",
+   "titles on spines",
+   "skull",
+   "candle",
+   "potion",
+   "ladder",
+   "face",
+   "modern books"
+  ]
+ },
+ {
+  "id": "reading_desk",
+  "family": "room_a",
+  "rank": 5,
+  "p": 1,
+  "layer": "stand",
+  "theme": "base",
+  "scale": 0.85,
+  "key": "green",
+  "body": "object",
+  "what": "a wooden reading lectern: one thick carved post of dark oak on a broad cross-shaped foot, with a slanted top board, and lying open on the slant one big old book with thick cream pages.",
+  "colours": "dark brown oak, a big book with dark brown leather covers and blank cream pages.",
+  "pose": "Seen from the front and a little from above, so the open pages show.",
+  "must_show": [
+   "lectern on a post",
+   "big open book on it"
+  ],
+  "must_not_show": [
+   "letters",
+   "readable writing",
+   "candle",
+   "skull",
+   "chair",
+   "person",
+   "church altar",
+   "face"
+  ]
+ },
+ {
+  "id": "strongbox_empty",
+  "family": "room_a",
+  "rank": 6,
+  "p": 1,
+  "layer": "stand",
+  "theme": "base",
+  "scale": 0.7,
+  "key": "green",
+  "body": "object",
+  "what": "an iron-bound strongbox with its lid broken open: one squat box of dark oak bound at every edge with black iron bands and big rivets, its heavy lid thrown back and hanging crooked from one broken hinge, its lock smashed, and the inside bare and empty, plain dark wood.",
+  "colours": "dark brown oak, black iron bands with dull grey worn edges, a bare dark empty inside.",
+  "pose": "Seen from the front and a little from above, so the empty inside shows.",
+  "must_show": [
+   "iron-bound box",
+   "lid broken open",
+   "empty inside"
+  ],
+  "must_not_show": [
+   "gold",
+   "coins",
+   "jewels",
+   "treasure",
+   "light from inside",
+   "face",
+   "teeth",
+   "tongue",
+   "mimic"
+  ]
+ },
+ {
+  "id": "ledger_desk",
+  "family": "room_a",
+  "rank": 7,
+  "p": 1,
+  "layer": "stand",
+  "theme": "base",
+  "scale": 0.9,
+  "key": "blue",
+  "body": "object",
+  "what": "a clerk's desk of dark wood with a flat top on four square legs: on the top lies one thick open ledger book with cream pages, beside it a small inkpot with one quill standing in it, and at the right a small balance scale of dull brass with two round pans hanging from a crossbeam.",
+  "colours": "dark brown wood, a ledger with brown leather covers and cream pages, a black inkpot, a white quill, dull brass scales.",
+  "pose": "Seen from the front and from above, so everything on the desktop shows.",
+  "must_show": [
+   "desk",
+   "open ledger",
+   "inkpot and quill",
+   "small brass scales"
+  ],
+  "must_not_show": [
+   "letters",
+   "readable writing",
+   "coins",
+   "skull",
+   "candle",
+   "lamp",
+   "chair",
+   "person",
+   "face"
+  ]
+ },
+ {
+  "id": "candles",
+  "family": "room_a",
+  "rank": 8,
+  "p": 1,
+  "layer": "floor",
+  "theme": "base",
+  "scale": 0.55,
+  "key": "blue",
+  "body": "object",
+  "what": "a cluster of seven short stubby white wax candles of different heights standing close together, their dripped wax pooled round their feet and joining them into one group, each with a small yellow flame joined to its wick.",
+  "colours": "warm white wax with cream drips, small yellow flames with orange tips.",
+  "pose": "Seen from the front and steeply from above.",
+  "must_show": [
+   "cluster of short white candles",
+   "small flames",
+   "pooled wax"
+  ],
+  "must_not_show": [
+   "candlestick",
+   "holder",
+   "plate",
+   "skull",
+   "tall thin candles",
+   "smoke",
+   "face",
+   "birthday cake"
+  ]
+ },
+ {
+  "id": "icon",
+  "family": "room_a",
+  "rank": 9,
+  "p": 1,
+  "layer": "wall",
+  "theme": "base",
+  "scale": 0.85,
+  "key": "green",
+  "body": "object",
+  "what": "a painted religious icon panel seen face-on: one tall arched wooden panel with a gold background, painted in the old Byzantine style with a saint in a deep red cloak over a dark blue robe, a round gold halo behind his head, one hand raised in blessing, his face calm and painted flat, the panel framed in dark wood.",
+  "colours": "old gold background, deep red cloak, dark blue robe, a pale painted face, dark wood frame.",
+  "action": "It hangs on a wall and is seen exactly face-on, flat like a playing card held up to the viewer; only the panel is drawn, with no wall around it. The saint is flat paint on the panel.",
+  "must_show": [
+   "arched panel with gold background",
+   "robed figure with a halo",
+   "red and gold"
+  ],
+  "must_not_show": [
+   "letters",
+   "writing",
+   "inscription",
+   "real person",
+   "three-dimensional figure",
+   "crown",
+   "candles",
+   "wall",
+   "angel wings"
+  ]
+ },
+ {
+  "id": "straw",
+  "family": "room_a",
+  "rank": 10,
+  "p": 1,
+  "layer": "floor",
+  "theme": "base",
+  "scale": 0.9,
+  "key": "magenta",
+  "body": "object",
+  "what": "loose trampled dirty straw bedding scattered flat on the ground: hundreds of short dull pale yellow-brown stalks lying every way, crossing, matted and flattened into one rough irregular patch twice as wide as it is tall, with no hollow in the middle and no raised rim.",
+  "colours": "dull pale straw yellow-brown, darker dirty brown in the middle.",
+  "pose": "Seen from high above, looking steeply down.",
+  "action": "It lies flat on the ground and is seen from high above, looking steeply down on it like a mark on the floor of a map in a classic top-down roleplaying game: low and flat, nothing on it stands up. Nobody is near it.",
+  "must_show": [
+   "flat scatter of straw",
+   "matted, trampled"
+  ],
+  "must_not_show": [
+   "haystack",
+   "bale",
+   "nest",
+   "eggs",
+   "bright gold",
+   "animal",
+   "face",
+   "bird's nest",
+   "hollow",
+   "ring",
+   "bowl shape",
+   "raised rim"
+  ]
+ },
+ {
+  "id": "cage",
+  "family": "room_b",
+  "rank": 1,
+  "p": 1,
+  "layer": "stand",
+  "theme": "base",
+  "scale": 0.95,
+  "key": "green",
+  "body": "object",
+  "what": "an empty iron cage: a tall square box of thick upright iron bars, each as thick as a thumb, with a flat iron top and bottom frame, its barred door hanging open on one hinge; the iron very dark brown like an old iron nail, nearly black in the shadows. Between the bars there is only empty backdrop.",
+  "colours": "very dark brown iron like an old iron nail, nearly black in the shadows, dull grey worn edges.",
+  "pose": "Seen from the front and a little from above and from the side, so the open door shows.",
+  "must_show": [
+   "square iron cage",
+   "door hanging open",
+   "empty"
+  ],
+  "must_not_show": [
+   "prisoner",
+   "animal",
+   "bird",
+   "skeleton",
+   "chain",
+   "padlock",
+   "bright orange rust",
+   "birdcage",
+   "round cage",
+   "face"
+  ]
+ },
+ {
+  "id": "feed_trough",
+  "family": "room_b",
+  "rank": 2,
+  "p": 1,
+  "layer": "stand",
+  "theme": "base",
+  "scale": 0.85,
+  "key": "magenta",
+  "body": "object",
+  "what": "a long low wooden feed trough: an open box of dark weathered planks, three times as long as it is tall, on four short stubby legs, with a little old pale grain lying in its bottom.",
+  "colours": "dark weathered brown planks, pale dull straw-coloured grain.",
+  "pose": "Seen from the front and a little from above, so the grain inside shows, running from left to right.",
+  "must_show": [
+   "long wooden trough",
+   "a little grain inside"
+  ],
+  "must_not_show": [
+   "water",
+   "animal",
+   "hay bale",
+   "coffin",
+   "lid",
+   "face"
+  ]
+ },
+ {
+  "id": "honeycomb",
+  "family": "room_b",
+  "rank": 3,
+  "p": 1,
+  "layer": "wall",
+  "theme": "base",
+  "scale": 1.0,
+  "anchor": "top",
+  "key": "magenta",
+  "body": "object",
+  "what": "a huge slab of golden wax honeycomb seen face-on, a rough rounded shape hanging down: rows of big six-sided wax cells, many of them full of golden honey, some capped with pale wax, and thick drops of honey dripping from its lower edge, every drop joined to the comb.",
+  "colours": "warm golden wax, deep amber honey, pale cream wax caps, dark amber in the cell shadows.",
+  "action": "It hangs on a wall and is seen exactly face-on, flat; only the honeycomb is drawn, with no wall, no hive box and no room around it. Nobody is near it.",
+  "must_show": [
+   "big honeycomb face-on",
+   "six-sided cells",
+   "honey dripping"
+  ],
+  "must_not_show": [
+   "bees",
+   "beehive box",
+   "jar",
+   "spoon",
+   "wall",
+   "face",
+   "eyes",
+   "bright yellow cartoon"
+  ]
+ },
+ {
+  "id": "honey_drip",
+  "family": "room_b",
+  "rank": 4,
+  "p": 2,
+  "layer": "floor",
+  "theme": "base",
+  "scale": 0.45,
+  "key": "magenta",
+  "body": "object",
+  "what": "a small irregular splash of golden honey lying flat on the ground, longer than it is wide, with one or two little drips beside it joined to it, glossy, deep amber at its middle and paler gold at its edges, with one soft highlight.",
+  "colours": "deep amber honey, paler warm gold rim.",
+  "pose": "Seen from directly above.",
+  "action": "It lies flat on the ground and is seen from directly above like a mark on the floor of a map in a classic top-down roleplaying game: perfectly flat. Nobody is near it.",
+  "must_show": [
+   "small flat golden puddle"
+  ],
+  "must_not_show": [
+   "jar",
+   "bees",
+   "spoon",
+   "coin",
+   "egg yolk",
+   "face",
+   "circle",
+   "round dish",
+   "plate",
+   "copper",
+   "rim"
+  ]
+ },
+ {
+  "id": "grave_marker",
+  "family": "room_b",
+  "rank": 5,
+  "p": 1,
+  "layer": "stand",
+  "theme": "base",
+  "scale": 0.75,
+  "key": "blue",
+  "body": "object",
+  "what": "a weathered stone grave marker: one small upright slab of grey stone with a rounded top, leaning to one side, chipped at its corner, plain on its face, with a small tuft of dark green moss at its foot, joined to it.",
+  "colours": "weathered grey stone, pale lichen-grey patches, a small tuft of dark green moss.",
+  "pose": "Seen from the front and a little from above, leaning to the right.",
+  "must_show": [
+   "small leaning headstone",
+   "rounded top",
+   "moss at its foot"
+  ],
+  "must_not_show": [
+   "mound of earth",
+   "letters",
+   "writing",
+   "cross",
+   "skull",
+   "flowers",
+   "ghost",
+   "fence",
+   "second stone"
+  ]
+ },
+ {
+  "id": "reeds",
+  "family": "room_b",
+  "rank": 6,
+  "p": 1,
+  "layer": "floor",
+  "theme": "base",
+  "scale": 0.8,
+  "key": "magenta",
+  "body": "object",
+  "what": "one clump of tall green reeds and bulrushes growing together from one point: long narrow green blades fanning out, and three tall stems topped by brown velvety bulrush heads.",
+  "colours": "deep green and dull yellow-green blades, dark brown bulrush heads.",
+  "pose": "Seen from the front and a little from above, the clump fanning upward.",
+  "must_show": [
+   "clump of tall reeds",
+   "brown bulrush heads"
+  ],
+  "must_not_show": [
+   "water",
+   "pond",
+   "flowers",
+   "frog",
+   "bird",
+   "pot",
+   "face",
+   "ground patch"
+  ]
+ },
+ {
+  "id": "lily_pads",
+  "family": "room_b",
+  "rank": 7,
+  "p": 2,
+  "layer": "floor",
+  "theme": "temple",
+  "scale": 0.7,
+  "key": "magenta",
+  "body": "object",
+  "what": "three round flat lily pads floating together, touching, each a deep green disc with one narrow notch cut to its middle, and on the middle pad one white water-lily flower with pointed petals and a yellow heart.",
+  "colours": "deep green and dark green pads, a white flower with a yellow heart.",
+  "pose": "Seen from directly above.",
+  "action": "It floats flat on water and is seen from directly above like a mark on the floor of a map in a classic top-down roleplaying game: perfectly flat. Nobody is near it; the water itself is not drawn.",
+  "must_show": [
+   "three round green lily pads",
+   "one white flower"
+  ],
+  "must_not_show": [
+   "water",
+   "frog",
+   "fish",
+   "ripples",
+   "pink flower",
+   "face"
+  ]
+ },
+ {
+  "id": "banner",
+  "family": "room_b",
+  "rank": 8,
+  "p": 1,
+  "layer": "wall",
+  "theme": "base",
+  "scale": 1.0,
+  "anchor": "top",
+  "key": "green",
+  "body": "object",
+  "what": "a long hanging cloth banner seen face-on: one long piece of deep red cloth hanging straight down from a black iron rod across its top, its lower end cut into a swallowtail, with a faded gold crown embroidered in its middle and a faded gold band along its edges, the cloth a little frayed.",
+  "colours": "deep red cloth, faded old gold crown and edging, a black iron rod.",
+  "action": "It hangs on a wall and is seen exactly face-on, flat like a playing card held up to the viewer; only the banner and its rod are drawn, with no wall, no pole and no room around it. Nobody is near it.",
+  "must_show": [
+   "long red banner",
+   "gold crown",
+   "iron rod at the top"
+  ],
+  "must_not_show": [
+   "letters",
+   "writing",
+   "lion",
+   "eagle",
+   "flag pole",
+   "wall",
+   "skull",
+   "face"
+  ]
+ }
+]

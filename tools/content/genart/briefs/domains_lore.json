@@ -1,0 +1,302 @@
+[
+ {
+  "id": "copyist_desk",
+  "family": "lore",
+  "rank": 1,
+  "p": 1,
+  "layer": "stand",
+  "theme": "base",
+  "scale": 0.9,
+  "key": "magenta",
+  "body": "object",
+  "what": "a scribe's slanted writing desk: one dark oak desk with a steep sloping top on two solid plank ends joined by a low shelf, and on the slope one half-copied page of cream parchment, its top half covered with neat small dark lines and its lower half blank, an inkhorn standing in a hole at the top edge, and two white goose-quills lying in a groove.",
+  "colours": "dark brown oak, cream parchment with small dark lines, a dark brown inkhorn, white quills.",
+  "pose": "Seen from the front and from above, so the sloping page shows.",
+  "must_show": [
+   "sloping writing desk",
+   "half-copied page",
+   "inkhorn and quills"
+  ],
+  "must_not_show": [
+   "readable letters",
+   "words",
+   "skull",
+   "lamp",
+   "candle",
+   "lion",
+   "monk",
+   "chair",
+   "person",
+   "face"
+  ]
+ },
+ {
+  "id": "alchemist_bench",
+  "family": "lore",
+  "rank": 2,
+  "p": 1,
+  "layer": "stand",
+  "theme": "base",
+  "scale": 0.9,
+  "key": "green",
+  "body": "object",
+  "what": "an alchemist's bench: one heavy dark wooden workbench, and on its top a big round glass retort with a long bent neck, held over a small brass burner with a little orange flame, and beside it three glass flasks of coloured liquids, one amber, one dull red and one pale yellow, each flask with a bronze neck band.",
+  "colours": "dark brown wood, clear grey glass, amber, dull red and pale yellow liquids, dull brass, a small orange flame.",
+  "pose": "Seen from the front and a little from above.",
+  "must_show": [
+   "workbench",
+   "glass retort with a bent neck",
+   "flasks",
+   "small burner flame"
+  ],
+  "must_not_show": [
+   "skull",
+   "books",
+   "person",
+   "smoke",
+   "explosion",
+   "bubbles floating loose",
+   "modern lab glass",
+   "face",
+   "cauldron"
+  ]
+ },
+ {
+  "id": "surveyor_table",
+  "family": "lore",
+  "rank": 3,
+  "p": 1,
+  "layer": "stand",
+  "theme": "base",
+  "scale": 0.9,
+  "key": "magenta",
+  "body": "object",
+  "what": "a surveyor's table: one dark wooden table on four square legs, with one big sheet of pale parchment pinned flat to its top at the corners, a half-drawn map of coastlines and rivers in brown ink on it, a pair of brass dividers lying on the map, and a small brass oil lamp with a little yellow flame at one corner.",
+  "colours": "dark brown wood, pale cream parchment with brown ink lines, dull brass dividers and lamp, a small yellow flame.",
+  "pose": "Seen from the front and steeply from above, so the map on the tabletop shows.",
+  "must_show": [
+   "table with a map pinned flat",
+   "dividers",
+   "small lamp"
+  ],
+  "must_not_show": [
+   "letters",
+   "writing",
+   "compass rose with letters",
+   "globe",
+   "person",
+   "chair",
+   "skull",
+   "face",
+   "treasure map X"
+  ]
+ },
+ {
+  "id": "memorial_stone",
+  "family": "lore",
+  "rank": 4,
+  "p": 1,
+  "layer": "stand",
+  "theme": "base",
+  "scale": 0.85,
+  "key": "magenta",
+  "body": "object",
+  "what": "a carved memorial stone: one broad upright slab of weathered warm grey stone with a flat top, standing on a low stone plinth, its face cut with many rows of small worn carved marks running across it like lines of names, too small and worn to read.",
+  "colours": "weathered warm grey stone with pale lichen-grey patches, darker grey in the carved marks.",
+  "pose": "Seen from the front and a little from above.",
+  "must_show": [
+   "broad upright stone slab",
+   "rows of carved marks like names",
+   "plinth"
+  ],
+  "must_not_show": [
+   "readable letters",
+   "words",
+   "numbers",
+   "cross",
+   "skull",
+   "flowers",
+   "mound of earth",
+   "statue",
+   "face"
+  ]
+ },
+ {
+  "id": "wayside_icon",
+  "family": "lore",
+  "rank": 5,
+  "p": 1,
+  "layer": "stand",
+  "theme": "base",
+  "scale": 0.95,
+  "key": "green",
+  "body": "object",
+  "what": "a small wayside shrine: one dark wooden post, and on top of it a little open box shelter with a pitched wooden roof, sheltering a small painted icon of a robed figure with a gold halo on a gold ground, and on a small ledge below the icon one lit candle with a small yellow flame.",
+  "colours": "dark brown weathered wood, a small icon in gold and deep red, a white candle with a small yellow flame.",
+  "pose": "Seen from the front and a little from above.",
+  "must_show": [
+   "wooden post with a little roof",
+   "small painted icon",
+   "lit candle"
+  ],
+  "must_not_show": [
+   "letters",
+   "writing",
+   "birdhouse",
+   "bird",
+   "lantern",
+   "large statue",
+   "flowers",
+   "person",
+   "face of a real person"
+  ]
+ },
+ {
+  "id": "trophy_board",
+  "family": "lore",
+  "rank": 6,
+  "p": 1,
+  "layer": "wall",
+  "theme": "base",
+  "scale": 0.95,
+  "key": "green",
+  "body": "object",
+  "what": "a hunter's trophy board seen face-on: one shield-shaped board of dark wood, with a big pair of pale brown deer antlers mounted across its top, two curved ivory boar's tusks crossed below them, and a small fox skull fixed in the middle, chalk grey-white.",
+  "colours": "dark brown wood, pale brown antlers, ivory tusks, a chalk grey-white skull.",
+  "action": "It hangs on a wall and is seen exactly face-on, flat like a playing card held up to the viewer; only the board and its trophies are drawn, with no wall around it. Nobody is near it.",
+  "must_show": [
+   "shield-shaped board",
+   "antlers",
+   "tusks",
+   "small skull"
+  ],
+  "must_not_show": [
+   "deer head with fur",
+   "living animal",
+   "eyes",
+   "blood",
+   "guns",
+   "letters",
+   "wall"
+  ]
+ },
+ {
+  "id": "brazen_head",
+  "family": "lore",
+  "rank": 7,
+  "p": 1,
+  "layer": "stand",
+  "theme": "base",
+  "scale": 0.85,
+  "key": "blue",
+  "body": "object",
+  "what": "a bronze mechanical head: the head of a bearded man cast in bronze, brassy gold like a polished temple bell with hard white glints, plainly metal and never a living face, with two round glass eyes like small lenses, its mouth slightly open, small gears and rivets showing at the neck, set on a square plinth of grey stone.",
+  "colours": "brassy gold bronze with hard white glints, darker brown-bronze in the hollows, clear grey glass eyes, grey stone plinth.",
+  "pose": "Seen from the front and a little from above, the head facing the viewer.",
+  "must_show": [
+   "bronze bearded head",
+   "glass eyes",
+   "gears at the neck",
+   "stone plinth"
+  ],
+  "must_not_show": [
+   "living skin",
+   "body",
+   "shoulders",
+   "robot",
+   "glowing red eyes",
+   "crown",
+   "modern machine",
+   "person"
+  ]
+ },
+ {
+  "id": "riddle_lintel",
+  "family": "lore",
+  "rank": 8,
+  "p": 1,
+  "layer": "wall",
+  "theme": "base",
+  "scale": 1.0,
+  "key": "magenta",
+  "body": "object",
+  "what": "a carved stone door lintel seen face-on: one long horizontal block of weathered warm grey stone, twice as wide as it is tall, carved in its middle with an owl with its wings spread, and on both sides of the owl rows of small worn carved marks too eroded to read.",
+  "colours": "weathered warm grey stone, darker grey in the carving.",
+  "action": "It is set over a doorway and is seen exactly face-on, flat like a playing card held up to the viewer; only the stone block is drawn, with no wall, no door and no room around it. Nobody is near it.",
+  "must_show": [
+   "long stone block",
+   "carved owl in the middle",
+   "worn carved marks"
+  ],
+  "must_not_show": [
+   "readable letters",
+   "words",
+   "numbers",
+   "living owl",
+   "feathers in colour",
+   "door",
+   "pillars",
+   "face of a man"
+  ]
+ },
+ {
+  "id": "gamblers_table",
+  "family": "lore",
+  "rank": 9,
+  "p": 1,
+  "layer": "stand",
+  "theme": "base",
+  "scale": 0.85,
+  "key": "blue",
+  "body": "object",
+  "what": "a small rough wooden table on four legs: on its top a few playing cards scattered face down with plain dark brown backs, two white dice, a little heap of copper coins, and a wooden cup lying overturned on its side.",
+  "colours": "dark brown rough wood, cards with plain dark brown backs and cream edges, white dice with black spots, copper-brown coins.",
+  "pose": "Seen from the front and steeply from above, so everything on the tabletop shows.",
+  "must_show": [
+   "small rough table",
+   "cards",
+   "dice",
+   "copper coins",
+   "overturned cup"
+  ],
+  "must_not_show": [
+   "letters",
+   "numbers on cards",
+   "card faces",
+   "chairs",
+   "person",
+   "gold coins",
+   "candle",
+   "face"
+  ],
+  "grey": 0.7
+ },
+ {
+  "id": "field_kitchen",
+  "family": "lore",
+  "rank": 10,
+  "p": 1,
+  "layer": "stand",
+  "theme": "base",
+  "scale": 0.9,
+  "key": "blue",
+  "body": "object",
+  "what": "a camp cooking fire: a small fire of crossed logs burning in a ring of grey stones, a black iron pot hanging over it from a tripod of three wooden poles, a wooden ladle hanging from the tripod, and a lumpy brown sack of vegetables with a few carrots and onions showing at its open mouth leaning against one leg.",
+  "colours": "grey stones, dark brown wood, black iron pot, yellow and orange flames, a brown sack, orange carrots, pale onions.",
+  "pose": "Seen from the front and a little from above.",
+  "must_show": [
+   "fire in a ring of stones",
+   "pot on a tripod",
+   "ladle",
+   "sack of vegetables"
+  ],
+  "must_not_show": [
+   "person",
+   "tent",
+   "smoke column",
+   "meat on a spit",
+   "face in the fire",
+   "barrel"
+  ]
+ }
+]

@@ -1,0 +1,69 @@
+[
+ {
+  "id": "door_temple",
+  "family": "door",
+  "rank": 1,
+  "theme": "temple",
+  "key": "magenta",
+  "body": "object",
+  "what": "a closed temple door seen straight on: one heavy old door of weathered dark oak planks gone grey-brown with age, with a rounded top, bound across by three broad straps of old bronze gone green with verdigris, studded with round bronze nail-heads, and one bronze ring handle hanging at the right side. A few strands of dark green ivy creep over its top left corner. The door is set in its own frame of big pale grey marble blocks, an arch of marble all round it, and the door and its frame together are the whole object.",
+  "colours": "dark weathered grey-brown oak, verdigris green bronze straps, pale grey marble, dark green ivy leaves.",
+  "pose": "Seen exactly from the front, flat and upright like a playing card, the marble frame standing on its own with backdrop all round it.",
+  "must_show": ["closed old oak door", "verdigris green bronze straps", "ivy creeping on it", "pale marble frame round it"],
+  "must_not_show": ["open door", "doorway showing a room", "wall stretching to the sides", "torches", "steps", "window", "face", "door knocker shaped like a head", "floor", "flowers", "iron bands", "columns"]
+ },
+ {
+  "id": "door_deep",
+  "family": "door",
+  "rank": 2,
+  "theme": "deep",
+  "key": "green",
+  "body": "object",
+  "what": "a closed dwarf-made door seen straight on: one heavy square-topped door of thick dark timber planks banded across by four broad black iron bands with big round rivets, and one heavy black iron ring handle, the timber stained black with soot along its edges. The door is set in a frame of rough natural dark brown cave rock, hewn roughly round it, and the door and its frame together are the whole object.",
+  "colours": "dark brown timber blackened with soot, black iron with dull grey worn edges, dark brown rough rock.",
+  "pose": "Seen exactly from the front, flat and upright like a playing card, the rock frame standing on its own with backdrop all round it.",
+  "must_show": ["closed heavy timber door", "broad black iron bands with rivets", "ring handle", "rough rock frame"],
+  "must_not_show": ["open door", "doorway showing a room", "wall stretching to the sides", "torches", "steps", "window", "face", "dwarf", "floor", "arched stone blocks", "gold"]
+ },
+ {
+  "id": "door_rime",
+  "family": "door",
+  "rank": 3,
+  "theme": "rime",
+  "key": "green",
+  "despill": true,
+  "body": "object",
+  "what": "a closed hall door of the old north seen straight on: one heavy door of very dark timber planks with a rounded top, studded all over with rows of big round black iron studs and crossed by two black iron bands, one black iron ring handle, and white frost crusted along its edges and on the studs. The door is set in a frame of big grey stone blocks rimmed with white frost, and the door and its frame together are the whole object.",
+  "colours": "very dark brown timber, black iron studs, grey stone blocks, white frost.",
+  "pose": "Seen exactly from the front, flat and upright like a playing card, the stone frame standing on its own with backdrop all round it.",
+  "must_show": ["closed dark timber door", "rows of iron studs", "white frost on it", "grey stone frame"],
+  "must_not_show": ["open door", "doorway showing a room", "wall stretching to the sides", "torches", "steps", "window", "face", "snow drift", "icicles hanging long", "floor", "dragon carving"]
+ },
+ {
+  "id": "door_abyss",
+  "family": "door",
+  "rank": 4,
+  "theme": "abyss",
+  "key": "green",
+  "body": "object",
+  "what": "a closed door of blackened iron seen straight on: one heavy door with a pointed arch top made of riveted black iron plates, rows of big round rivets, the iron scarred by heat with dull brown and dull red-brown heat stains, and one heavy black iron ring handle. The door is set in a frame of rough black basalt blocks with thin glowing red cracks between them, and the door and its frame together are the whole object.",
+  "colours": "black iron with dull grey worn edges, dull brown heat scars, black basalt, thin glowing red cracks.",
+  "pose": "Seen exactly from the front, flat and upright like a playing card, the basalt frame standing on its own with backdrop all round it.",
+  "must_show": ["closed black iron door", "rivets", "heat scars", "black basalt frame with red cracks"],
+  "must_not_show": ["open door", "doorway showing a room", "wall stretching to the sides", "torches", "fire", "steps", "window", "face", "skull", "demon", "floor", "wooden planks"]
+ },
+ {
+  "id": "decal_cup",
+  "family": "tile_parts",
+  "rank": 1,
+  "theme": "deep",
+  "key": "blue",
+  "body": "item",
+  "scale": "medium",
+  "what": "one old golden goblet lying on its side: a wide round cup on a short thick stem and a round foot, dented, dull old gold.",
+  "colours": "old dull gold, warm brown-gold shadows, a few bright glints.",
+  "pose": "Lying on its side, seen from above and a little from the side.",
+  "must_show": ["golden goblet lying on its side"],
+  "must_not_show": ["coins", "jewels", "wine", "liquid", "hand", "table", "chalice standing upright", "cross"]
+ }
+]

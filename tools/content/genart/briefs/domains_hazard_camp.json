@@ -1,0 +1,460 @@
+[
+ {
+  "id": "fire_vent",
+  "family": "hazard",
+  "rank": 1,
+  "p": 1,
+  "layer": "floor",
+  "theme": "deep",
+  "scale": 0.75,
+  "key": "blue",
+  "body": "object",
+  "what": "a round vent set in the ground: one thick ring of black iron set flush in a flat round slab of dark brown rock, a black iron grating of crossed bars across its mouth, and through the grating a faint orange glow deep down inside.",
+  "colours": "black iron with dull grey worn edges, dark brown rock, a faint deep orange glow in the depth.",
+  "pose": "Seen from directly above, the ring a circle.",
+  "action": "It lies flat in the ground and is seen from directly above like a mark on the floor of a map in a classic top-down roleplaying game: perfectly flat, nothing stands up from it. Nobody is near it.",
+  "must_show": [
+   "round iron ring",
+   "grating",
+   "faint orange glow inside",
+   "flat"
+  ],
+  "must_not_show": [
+   "flames",
+   "fire rising",
+   "smoke",
+   "pipe",
+   "well",
+   "face",
+   "eye",
+   "manhole with letters"
+  ]
+ },
+ {
+  "id": "fire_vent_active",
+  "family": "hazard",
+  "rank": 2,
+  "p": 1,
+  "layer": "stand",
+  "theme": "deep",
+  "scale": 1.0,
+  "key": "blue",
+  "body": "shapeless",
+  "what": "a roaring column of fire jetting straight up out of a round vent: at the bottom a thick ring of black iron set in a flat slab of dark rock, and rising from it one tall column of flame, three times as tall as the ring is wide, yellow-white at its heart, bright yellow, deep orange at its edges, roaring and flaring at the top, joined to the vent.",
+  "colours": "black iron, dark brown rock, yellow-white, bright yellow and deep orange flame.",
+  "pose": "The column of fire roars straight up and flares out a little at its top.",
+  "must_show": [
+   "iron-ringed vent",
+   "tall column of fire rising from it"
+  ],
+  "must_not_show": [
+   "face in the fire",
+   "fire creature",
+   "figure",
+   "smoke",
+   "logs",
+   "torch",
+   "lava",
+   "sparks flying loose",
+   "explosion"
+  ]
+ },
+ {
+  "id": "thin_ice",
+  "family": "hazard",
+  "rank": 3,
+  "p": 1,
+  "layer": "floor",
+  "theme": "rime",
+  "scale": 0.85,
+  "key": "green",
+  "despill": true,
+  "body": "object",
+  "what": "a patch of thin ice lying on the ground: one flat roughly round sheet of clear pale icy blue ice, the blue of a winter sky, crazed all over with white cracks, with very dark blue-black water showing through the widest cracks and through one small broken hole near its middle.",
+  "colours": "clear pale icy blue like a winter sky, white cracks, very dark blue-black water.",
+  "pose": "Seen from directly above.",
+  "action": "It lies flat on the ground and is seen from directly above like a mark on the floor of a map in a classic top-down roleplaying game: perfectly flat. Nobody is near it.",
+  "must_show": [
+   "flat sheet of cracked ice",
+   "dark water showing through",
+   "flat"
+  ],
+  "must_not_show": [
+   "snow drift",
+   "ice block",
+   "fish",
+   "reflection of sky",
+   "face",
+   "eye",
+   "broken glass",
+   "spider web"
+  ],
+  "grey": 0.6,
+  "dim": 0.72
+ },
+ {
+  "id": "crumbling_floor",
+  "family": "hazard",
+  "rank": 4,
+  "p": 1,
+  "layer": "floor",
+  "theme": "temple",
+  "scale": 1.0,
+  "key": "blue",
+  "body": "object",
+  "what": "four square flagstones of dull grey-white marble, laid two by two, cracked across and sagging apart, tilted at small angles, with wide black gaps between them where the floor below has fallen away, chips of marble at their broken corners; together they make one square.",
+  "colours": "dull grey-white marble gone grey, darker grey cracks, black gaps.",
+  "pose": "Seen from directly above like a floor tile on a game map, edges parallel to the edges of the picture.",
+  "action": "It is a piece of floor seen from directly above like a floor tile on a game map: flat, square, its edges parallel to the edges of the picture, never turned cornerwise. Nobody is near it.",
+  "must_show": [
+   "four cracked marble flagstones",
+   "black gaps between them",
+   "square, seen from above"
+  ],
+  "must_not_show": [
+   "hole with stairs",
+   "pit with spikes",
+   "water",
+   "moss",
+   "face",
+   "turned cornerwise",
+   "perspective"
+  ],
+  "grey": 0.35,
+  "dim": 0.5
+ },
+ {
+  "id": "strangler_vine",
+  "family": "hazard",
+  "rank": 5,
+  "p": 1,
+  "layer": "floor",
+  "theme": "temple",
+  "scale": 0.95,
+  "key": "magenta",
+  "body": "object",
+  "what": "thick dark green thorny vines spread flat across the ground: three or four vines each as thick as a thumb, coiling and crossing across the picture, covered in sharp pale thorns, with a few dark green leaves, and two vine tips curling up a little at the ends.",
+  "colours": "dark green and deep emerald-green vines, pale grey-tan thorns, a few dark green leaves.",
+  "pose": "Seen from high above, looking steeply down, the vines lying across the picture.",
+  "action": "It lies flat on the ground and is seen from high above, looking steeply down on it like a mark on the floor of a map in a classic top-down roleplaying game: low and flat, only two tips curl up a little, and it is wider than it is tall. Nobody is near it.",
+  "must_show": [
+   "thick thorny vines",
+   "lying flat",
+   "a few tips curling up"
+  ],
+  "must_not_show": [
+   "flowers",
+   "roses",
+   "mouth",
+   "teeth",
+   "face",
+   "eyes",
+   "snake",
+   "tree",
+   "tentacle"
+  ],
+  "unkey": [
+   0.0,
+   0.14,
+   0.45
+  ]
+ },
+ {
+  "id": "soul_sigil",
+  "family": "hazard",
+  "rank": 6,
+  "p": 1,
+  "layer": "floor",
+  "theme": "abyss",
+  "scale": 0.85,
+  "key": "green",
+  "body": "object",
+  "what": "a faint ring burned into the ground: one thin glowing circle of violet-red light, with twelve small angular burned marks evenly spaced round the outside of the ring, each mark a short jagged stroke, and a smaller second ring inside it, all glowing a dull violet-red, with nothing in the middle.",
+  "colours": "dull glowing violet-red and deep red light, a little darker red at the edges.",
+  "pose": "Seen from directly above, the ring a circle.",
+  "action": "It is burned flat into the ground and is seen from directly above like a mark on the floor of a map in a classic top-down roleplaying game: perfectly flat. Nobody is near it, and the ground itself is not drawn.",
+  "must_show": [
+   "thin glowing violet-red ring",
+   "angular marks round it"
+  ],
+  "must_not_show": [
+   "letters",
+   "readable runes",
+   "pentagram",
+   "star",
+   "face",
+   "eye",
+   "skull",
+   "fire",
+   "flames",
+   "candles",
+   "zodiac signs"
+  ]
+ },
+ {
+  "id": "icicle_shadow",
+  "family": "hazard",
+  "rank": 7,
+  "p": 2,
+  "layer": "floor",
+  "theme": "rime",
+  "scale": 0.6,
+  "key": "green",
+  "despill": true,
+  "body": "object",
+  "what": "a few shards of broken ice lying on the ground in a small dusting of white frost: four or five sharp broken pieces of a fallen icicle, clear pale icy blue, the blue of a winter sky, lying close together on a low flat patch of frost.",
+  "colours": "clear pale icy blue like a winter sky, white frost.",
+  "pose": "Seen from high above, looking steeply down.",
+  "action": "It lies flat on the ground and is seen from high above, looking steeply down on it like a mark on the floor of a map in a classic top-down roleplaying game: low and flat. Nobody is near it.",
+  "must_show": [
+   "broken ice shards",
+   "frost dusting",
+   "flat"
+  ],
+  "must_not_show": [
+   "whole icicle hanging",
+   "snowman",
+   "glass",
+   "crystals growing",
+   "face"
+  ],
+  "grey": 0.7,
+  "dim": 0.8
+ },
+ {
+  "id": "bedroll",
+  "family": "camp",
+  "rank": 1,
+  "p": 1,
+  "layer": "floor",
+  "theme": "base",
+  "scale": 0.85,
+  "key": "green",
+  "body": "object",
+  "what": "a traveller's bedroll rolled out flat on the ground: one long brown wool blanket spread out, its end still rolled up, with a worn brown leather pack with buckled straps lying at its head.",
+  "colours": "dull mid-brown wool, a darker brown leather pack with dull brass buckles.",
+  "pose": "Seen from high above, looking steeply down, the bedroll lying from the left to the right.",
+  "action": "It lies flat on the ground and is seen from high above, looking steeply down on it like a mark on the floor of a map in a classic top-down roleplaying game: low and flat, and it is wider than it is tall. Nobody is lying on it and nobody is near it.",
+  "must_show": [
+   "brown bedroll spread flat",
+   "leather pack at its head"
+  ],
+  "must_not_show": [
+   "person",
+   "sleeping figure",
+   "pillow",
+   "tent",
+   "campfire",
+   "sleeping bag with zip",
+   "face"
+  ],
+  "grey": 0.75
+ },
+ {
+  "id": "campfire",
+  "family": "camp",
+  "rank": 2,
+  "p": 1,
+  "layer": "stand",
+  "theme": "base",
+  "scale": 0.7,
+  "key": "blue",
+  "body": "object",
+  "what": "a small campfire: a few crossed burning logs in a ring of grey stones, flames yellow at the heart and orange at the edges, joined to the logs, no taller than the ring is wide.",
+  "colours": "grey stones, dark brown and black charred logs, yellow and orange flames.",
+  "pose": "Seen from the front and a little from above.",
+  "must_show": [
+   "ring of stones",
+   "crossed logs",
+   "small fire"
+  ],
+  "must_not_show": [
+   "pot",
+   "tripod",
+   "smoke column",
+   "sparks flying loose",
+   "person",
+   "face in the fire",
+   "tent",
+   "marshmallow"
+  ]
+ },
+ {
+  "id": "banner_goblin",
+  "family": "camp_banners",
+  "rank": 1,
+  "p": 1,
+  "layer": "stand",
+  "theme": "base",
+  "scale": 1.0,
+  "key": "green",
+  "body": "object",
+  "what": "a crude goblin war-banner: one rough crooked wooden pole standing upright, with a short crossbar tied near its top, and hanging from the crossbar a ragged square of stretched brown animal hide with one big red hand-print painted on it, and three small bones dangling on cords below the hide.",
+  "colours": "dark brown crooked wood, dull tan-brown hide, a red painted hand-print, chalk grey-white small bones.",
+  "pose": "Seen from the front, the pole standing straight up.",
+  "must_show": [
+   "crooked pole",
+   "ragged hide banner",
+   "red hand-print",
+   "dangling bones"
+  ],
+  "must_not_show": [
+   "goblin",
+   "person",
+   "skull on top",
+   "letters",
+   "flag of cloth",
+   "base",
+   "ground",
+   "face"
+  ]
+ },
+ {
+  "id": "banner_bandit",
+  "family": "camp_banners",
+  "rank": 2,
+  "p": 1,
+  "layer": "stand",
+  "theme": "base",
+  "scale": 1.0,
+  "key": "magenta",
+  "body": "object",
+  "what": "a bandit standard: one spear standing upright, and tied to a crossbar just below the spearhead a torn black cloth hanging down, ragged at the bottom, with a crude white skull painted on it.",
+  "colours": "dark brown spear shaft, a dull grey iron spearhead, torn black cloth, a crude white painted skull.",
+  "pose": "Seen from the front, the spear standing straight up.",
+  "must_show": [
+   "spear standing upright",
+   "torn black cloth",
+   "white painted skull"
+  ],
+  "must_not_show": [
+   "crossbones",
+   "pirate flag",
+   "real skull",
+   "person",
+   "letters",
+   "base",
+   "ground",
+   "face of a man"
+  ]
+ },
+ {
+  "id": "banner_cult",
+  "family": "camp_banners",
+  "rank": 3,
+  "p": 1,
+  "layer": "stand",
+  "theme": "base",
+  "scale": 1.0,
+  "key": "green",
+  "body": "object",
+  "what": "a cult standard: one tall black pole standing upright, topped by a real chalk grey-white skull fixed on its tip, and hanging from a crossbar below the skull a black cloth painted with one red sigil of a pair of curved horns above a circle.",
+  "colours": "black pole, chalk grey-white skull, black cloth, a red painted sigil.",
+  "pose": "Seen from the front, the pole standing straight up.",
+  "must_show": [
+   "black pole topped by a skull",
+   "black cloth",
+   "red horned sigil"
+  ],
+  "must_not_show": [
+   "pentagram",
+   "letters",
+   "runes",
+   "person",
+   "robed figure",
+   "base",
+   "ground",
+   "candles",
+   "goat head"
+  ]
+ },
+ {
+  "id": "banner_giant",
+  "family": "camp_banners",
+  "rank": 4,
+  "p": 1,
+  "layer": "stand",
+  "theme": "base",
+  "scale": 1.0,
+  "key": "green",
+  "body": "object",
+  "what": "a huge rough standard: one whole stripped tree trunk used as a pole standing upright, with a dark brown bear pelt lashed to it with thick rope and spread out like a flag, the pelt's empty head hanging at the top, and a big pair of antlers lashed to the very top of the trunk.",
+  "colours": "grey-brown stripped wood, a dark brown bear pelt, pale brown antlers, tan rope.",
+  "pose": "Seen from the front, the trunk standing straight up.",
+  "must_show": [
+   "thick tree trunk pole",
+   "bear pelt spread like a flag",
+   "antlers on top"
+  ],
+  "must_not_show": [
+   "living bear",
+   "giant",
+   "person",
+   "leaves",
+   "branches",
+   "base",
+   "ground",
+   "eyes"
+  ]
+ },
+ {
+  "id": "banner_fae",
+  "family": "camp_banners",
+  "rank": 5,
+  "p": 1,
+  "layer": "stand",
+  "theme": "base",
+  "scale": 1.0,
+  "key": "magenta",
+  "body": "object",
+  "what": "a fair-folk pennant: one slender pale white pole standing upright, with a long narrow pennant of silver-green silk streaming from its top in one graceful curve, its tail forked, and a briar stem with sharp thorns and a few small leaves twined round the pole from bottom to top.",
+  "colours": "pale white pole, shimmering silver-green silk, dark green briar stems and leaves.",
+  "pose": "Seen from the front, the pole standing straight up, the pennant streaming to one side.",
+  "must_show": [
+   "slender white pole",
+   "long silver-green pennant",
+   "thorny briar twined round"
+  ],
+  "must_not_show": [
+   "fairy",
+   "wings",
+   "flowers",
+   "person",
+   "letters",
+   "base",
+   "ground",
+   "face"
+  ]
+ },
+ {
+  "id": "banner_dead",
+  "family": "camp_banners",
+  "rank": 6,
+  "p": 1,
+  "layer": "stand",
+  "theme": "base",
+  "scale": 1.0,
+  "key": "green",
+  "body": "object",
+  "what": "a necromancer's standard: one pole made of long bones lashed end to end with dark cord, standing upright, topped by a skull, and hanging from a crossbar of bone below the skull a rotted grey cloth with a black hand-print on it, its lower edge in tatters.",
+  "colours": "dull grey-brown bones like bones dug from a grave, a chalk grey-white skull, rotted grey cloth, a black hand-print.",
+  "pose": "Seen from the front, the pole standing straight up.",
+  "must_show": [
+   "pole of lashed bones",
+   "skull on top",
+   "rotted grey cloth",
+   "black hand-print"
+  ],
+  "must_not_show": [
+   "gold",
+   "pentagram",
+   "letters",
+   "person",
+   "robed figure",
+   "base",
+   "ground",
+   "red hand-print",
+   "flesh"
+  ]
+ }
+]

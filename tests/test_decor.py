@@ -203,3 +203,19 @@ def test_the_domains_are_announced_once(monkeypatch):
     assert len(g.msgs) == 2
     assert 'Athena' in g.msgs[0]
     assert g.chron[0].endswith('The Forgotten Temple.')
+
+
+def test_every_fixture_and_theme_has_its_pictures():
+    """The art run (2026-11-12) put a picture behind every fixture and the
+    core tiles of every theme; a missing one would fall back, but none is
+    missing."""
+    env = os.path.join(ROOT, 'assets', 'tiles', 'env')
+    for fid in decor.fixture_defs():
+        assert os.path.exists(os.path.join(env, 'fixtures', fid + '.png')), fid
+    for d in decor.domains():
+        theme = d.get('theme')
+        if not theme:
+            continue
+        for name in ('wall', 'rock', 'floor', 'floor_2', 'door'):
+            assert os.path.exists(os.path.join(env, 'themes', theme, name + '.png')), (theme, name)
+    assert os.path.exists(os.path.join(env, 'themes', 'deep', 'hoard.png'))

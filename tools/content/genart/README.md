@@ -1130,3 +1130,14 @@ Brandon picked B, then: "his arrow is broken, and the stance for the legs is too
   The front knee bends toward the target, so it can be nudged one pixel that way by hand.
 - ComfyUI is deterministic here: running a three-step edit chain again from its brief gave the
   same picture to the pixel.
+
+## Domain tiles and fixtures (Dungeon Alive, 2026-11-12)
+
+The four domain themes' tiles (`domain_tiles.py`, made the way `tiles.py` made the base
+set) and the 98 map fixtures (`domain_props.py`, briefs `briefs/domains_*.json`), with
+review sheets from `domain_sheets.py` and the installer `install_domains.py` (`--dry`
+first). Draw fixture briefs with `domain_props.py draw <briefs> ...` rather than
+`pipeline.py`: it replaces the fixed "one single figure" and "anything it holds ... blades"
+sentences for objects, which put a man and then a sword into fire, snow and puddles.
+The process, the extra brief fields (`layer`, `scale`, `anchor`, `stretch`, `grey`, `dim`,
+`unkey`) and the lessons are in `_genart/DOMAINS_BRIEF.md`.

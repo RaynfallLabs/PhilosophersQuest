@@ -90,14 +90,16 @@ def paint(only, n, seed):
         for c in range(1, n + 1):
             s = seed + c * 31 + sum(map(ord, mid))
             d = os.path.join(OUT, 'materials', mid, f'c{c}_draft.png')
-            drafts.append((comfy.draft_workflow(LEAD.format(**m), NEG, s), d))
+            # a material may bring its own lead and negatives (a drift of leaves or coins is
+            # made of "objects", which the fixed wording forbids)
+            drafts.append((comfy.draft_workflow(m.get('lead', LEAD).format(**m), m.get('neg', NEG), s), d))
             second.append((mid, c, d, s, m))
     print('drafts', len(drafts)); sys.stdout.flush()
     print(comfy.run(drafts) or 'ok')
     jobs = []
     for mid, c, d, s, m in second:
         name = comfy.stage_input(d, f'genart_tile_{mid}_c{c}.png')
-        jobs.append((comfy.pixel_workflow(name, PIX.format(**m), PIX_NEG, s, 0.42),
+        jobs.append((comfy.pixel_workflow(name, PIX.format(**m), m.get('pix_neg', PIX_NEG), s, 0.42),
                      os.path.join(OUT, 'materials', mid, f'c{c}.png')))
     print(comfy.run(jobs) or 'ok')
 
@@ -189,15 +191,17 @@ def build_floor(pick):
     return tiles
 
 
-def build_wall(pick):
+def build_wall(pick, stone='wall_stone', grain_mid='floor_stone', grain_pick=None, mortar=(38, 36, 40),
+               gain=0.74, sat=0.6, dim=0.60, seed=11):
     """Four courses of staggered blocks. Courses are 16 px, blocks 32 px, alternate
-    courses shifted 16 px, so the pattern repeats every tile in both directions."""
-    pale = tone(big('wall_stone', pick, tiles=4, region=128), gain=0.74, sat=0.6)
-    grain = tone(big('floor_stone', FLOOR_PICK[0], tiles=4, region=128), sat=0.0)
-    sheet = np.clip(pale * (0.55 + 0.9 * grain / max(1.0, float(grain.mean()))) * 0.60, 0, 255)
-    rng = np.random.default_rng(11)
+    courses shifted 16 px, so the pattern repeats every tile in both directions.
+    The keywords let a domain theme (domain_tiles.py) build its own wall the same way;
+    their defaults are the base wall's."""
+    pale = tone(big(stone, pick, tiles=4, region=128), gain=gain, sat=sat)
+    grain = tone(big(grain_mid, FLOOR_PICK[0] if grain_pick is None else grain_pick, tiles=4, region=128), sat=0.0)
+    sheet = np.clip(pale * (0.55 + 0.9 * grain / max(1.0, float(grain.mean()))) * dim, 0, 255)
+    rng = np.random.default_rng(seed)
     a = np.zeros((T, T, 3), np.float32)
-    mortar = (38, 36, 40)
     a[:] = mortar
     k = 0
     for course in range(4):
