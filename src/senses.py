@@ -531,6 +531,10 @@ def notice(m, player, dungeon, all_monsters, extra_occupied) -> bool:
     if how:
         if not tracking:
             _first_line(m, how, dungeon, player)
+            # One of a war-band has seen him: the band is roused.
+            if getattr(m, '_band', None):
+                import war_bands
+                war_bands.alarm(m, all_monsters, player.x, player.y)
         m._aware = True
         m._tracking = True
         m._sensed_by = how
@@ -705,6 +709,8 @@ def assign_jobs(monsters, rooms, rng=None, sleep_rooms=()) -> None:
         if key is not None and id(room_of[key]) in sleepy:
             job = 'sleep'
         for m in group:
+            if m.__dict__.get('_job_fixed'):
+                continue                # a war-band keeps its own watch
             m._home = (m.x, m.y)
             if (getattr(m, 'ai_pattern', '') in _KEEP_OWN_WAYS or m._is_named_foe()
                     or getattr(m, 'is_boss', False)):

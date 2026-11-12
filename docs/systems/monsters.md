@@ -316,6 +316,49 @@ Brandon: "NONE automatically know where you are unless it's thematically and lor
 
 Tests: `tests/test_senses.py`.
 
+## War-bands (Dungeon Alive slice 5, 2026-11-12)
+
+Brandon: monsters must "pose a real challenge and players need to pay attention to lore, weaknesses, abilities". A war-band (`data/war_bands.json`, `src/war_bands.py`) makes camp in one big room on 40% of the floors in its range, from floor 3, never more than one band a floor. It replaces that room's ordinary roll. `LevelManager.generate` calls `war_bands.place_band` after the hidden chambers.
+
+**Bands:**
+
+| Band | Floors | When the leader falls |
+|---|---|---|
+| goblin war-band | 3-55 | rout |
+| gnoll pack | 6-40 | rout |
+| bandit crew | 3-45 | rout |
+| cult circle | 8-70 | rout |
+| necromancer and his dead | 9-80 | crumble |
+| giant and his hounds | 8-80 | rout |
+| Fair Folk hunt | 4-60 | rout |
+| warband of devils | 36-98 | quarrel |
+
+**Roster:** a leader plus `guard`, `shooter`, `caster` and `healer` kinds. Only kinds in the floor's own `_floor_pool` are used, so a band is never out of its depth. Each member carries `_band` (uid), `_band_id`, `_band_role`, `_band_leader` and `_job_fixed`, so `senses.assign_jobs` leaves its watch alone. Either a sentry and the leader keep watch while the rest sleep, or all stand guard.
+
+**In play:**
+- **Roused together.** When one of a band notices the hero, `senses.notice` calls `war_bands.alarm`, which rouses the rest to the place.
+- **Healers.** A healer mends any bandmate (`_healer_turn`), whatever its kind.
+- **Nerve.** A follower whose leader lives never flees when hurt.
+- **The leader falls** (`CombatMixin._band_member_died`, called from `_on_monster_killed`):
+  - `rout`: every follower is `feared` for 12 turns;
+  - `crumble`: the restless dead he raised fall where they stand, and the rest are feared;
+  - `quarrel`: followers turn `quarrelsome` and `confused` for 8 turns, so they fight each other.
+- **Half the band down:** each follower flees with a 50% chance.
+- **A great blow.** A maths chain of `nerve_chain` (6) or more on the living leader makes about half his followers falter (`feared` for 4 turns), with the band's `break_line`.
+
+**Knowing pays.** On arrival, `_announce_band` says the band's `line`. If the hero knows the leader's family (`_family_has_page`), it says the `known_line` instead, which names the roster and the weakness. The camp (fire, banner, bedrolls) is furnished by `decor.furnish_band_camp`. Observe says which band a creature marches with, and whether it leads.
+
+## Tells: a dangerous creature shows what it can do (slice 5)
+
+The tells live in `data/tells.json` and `src/tells.py`.
+- **First sight:** the first time in a run the hero sees a kind, `_maybe_tell` says its worst tell (`_dungeon_alive['told']`, which is saved).
+- **Observe:** says every tell of a creature, up to 2, whether its kind is known or not, because the creature shows these on its body.
+- **What counts as a tell:** attack effects with `effect_chance` of at least 0.1, plus these flags: gaze, splits, revives, drain-heals, regeneration, summons, pull, SP drain, charge, phase-blink. They are ranked by `order`, worst first, and each line says what to do. For example: "Keep your distance, or end it fast" for confusers; "fight it from a distance" for paralysers; "make it come to you round a corner" for chargers.
+
+**Patrols (C5).** A wandering monster now arrives beside a stair the hero can't see, as if coming down or up it, instead of out of nowhere. It goes to the last fight heard, or roams.
+
+Tests: `tests/test_war_bands.py`.
+
 ## AI dispatch (15 patterns)
 
 `take_turn` dispatches on `self.ai_pattern` after the common pre-flight (immobilised, slowed, enrage swap, pack-dependent re-evaluation, flee-when-hurt flag). Dispatch is `if/elif` on string match — the matching chain is in `monster.py` lines ~826-867. **Count by pattern** across 527 monsters:

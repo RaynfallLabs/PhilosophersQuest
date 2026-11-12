@@ -1141,6 +1141,8 @@ class CombatMixin:
         # Marker read by _process_collateral_kills so a monster handled here
         # is not processed a second time by the post-attack sweep.
         monster._kill_handled = True
+        # A war-band answers the fall of one of its own (src/war_bands.py).
+        self._band_member_died(monster)
         # Curtana's spare is announced by the melee on_complete (the spared
         # monster is alive, so this handler is never reached for it). The
         # flag used to be consumed HERE, which meant it sat armed until the
@@ -2109,6 +2111,18 @@ class CombatMixin:
                 self.add_message(_senses.status_line(monster), 'info')
                 if _known and _senses.senses_line(monster):
                     self.add_message(_senses.senses_line(monster), 'info')
+                # What it can do shows on it, known or not (src/tells.py).
+                import tells as _tells
+                for _tl in _tells.lines(monster):
+                    self.add_message(_tl, 'warning')
+                if getattr(monster, '_band', None):
+                    import war_bands as _wb
+                    _bd = _wb.data()['bands'].get(getattr(monster, '_band_id', ''), {})
+                    _role = getattr(monster, '_band_role', '')
+                    if _bd.get('name') and _role:
+                        self.add_message(
+                            f"It marches with {_bd['name']}"
+                            f"{' and leads it' if _role == 'leader' else ''}.", 'info')
             if (not _known and getattr(monster, 'family', None)
                     and not getattr(monster, 'is_allied', False)
                     and not getattr(monster, '_npc_encounter_tag', None)
@@ -2688,6 +2702,64 @@ class CombatMixin:
         elif seen:
             self.add_message("Things around you are waking up!", 'warning')
 
+    # ------------------------------------------------------------------
+    # War-bands and tells (src/war_bands.py, src/tells.py)
+    # ------------------------------------------------------------------
+
+    def _band_member_died(self, monster) -> None:
+        import war_bands
+        if not getattr(monster, '_band', None) or getattr(monster, '_band_answered', False):
+            return
+        monster._band_answered = True
+        out = war_bands.on_death(self.monsters, monster)
+        members = war_bands.members_of(self.monsters, monster._band)
+        if out.get('line') and any(self._sees_monster(m) for m in members + [monster]):
+            self.add_message(out['line'], 'success')
+        for m in out.get('fall') or ():
+            if m.alive:
+                m.hp = 0
+                m.alive = False
+                m._band_answered = True
+                self._on_monster_killed(m)
+
+    def _band_great_blow(self, monster, chain: int) -> None:
+        import war_bands
+        line = war_bands.on_great_blow(self.monsters, monster, chain)
+        if line:
+            self.add_message(line, 'success')
+
+    def _announce_band(self) -> None:
+        """A floor's war-band, on arrival: heard, or named in full when the
+        hero knows the leader's family."""
+        import war_bands
+        band = getattr(self.dungeon, 'band', None)
+        if not isinstance(band, dict) or band.get('said'):
+            return
+        band['said'] = True
+        leader = war_bands.leader_of(self.monsters, band.get('uid', ''))
+        if leader is None or not leader.alive:
+            return
+        knows = bool(self._family_has_page(band.get('leader_kind')))
+        line = war_bands.arrival_line(band, knows)
+        if line:
+            self.add_message(line, 'warning')
+
+    def _maybe_tell(self, m) -> None:
+        """The first time in a run the hero sees a kind, its worst tell."""
+        import tells
+        if getattr(m, 'is_allied', False) or getattr(m, '_npc_encounter_tag', None) \
+                or getattr(m, '_flavor_encounter_tag', None):
+            return
+        state = self.__dict__.setdefault('_dungeon_alive', {'domains_seen': []})
+        told = state.setdefault('told', [])
+        kind = getattr(m, 'kind', '')
+        if not kind or kind in told:
+            return
+        told.append(kind)
+        got = tells.lines(m, limit=1)
+        if got:
+            self.add_message(got[0], 'warning')
+
     def _say_sense_lines(self, m) -> None:
         """A lore sense said once a floor (it has your scent; it felt your
         steps), and the line when one the hero can see gives up the search."""
@@ -2780,6 +2852,10 @@ class CombatMixin:
                     f"You spare {the_name(monster, lower=True)} — Curtana's mercy. (+1 max HP)",
                     'success')
             self._spend_attack_reroll()
+            # A great blow on a war-band's leader shakes his followers
+            # (src/war_bands.py): the maths decides the fight's nerve too.
+            if chain and not killed and monster.alive:
+                self._band_great_blow(monster, chain)
             if chain == 0:
                 self.add_message(
                     f"You swing wildly at {the_name(monster, lower=True)} and miss!", 'warning'
@@ -3086,6 +3162,8 @@ class CombatMixin:
             # Track monsters the player has seen (for encyclopedia bestiary)
             if self._sees_monster(m):
                 self.player.known_monster_ids.add(m.kind)
+                # A dangerous creature shows what it can do (src/tells.py).
+                self._maybe_tell(m)
             # "Something unseen" in its messages while the hero cannot see it.
             if getattr(m, 'invisible', False):
                 m._unseen = unseen.unseen(m, self.player)

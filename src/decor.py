@@ -234,7 +234,54 @@ def _skip_rooms(dungeon) -> list:
         r = ch.get('room') if isinstance(ch, dict) else None
         if r is not None:
             out.append(r)
+    band_room = _band_room_of(dungeon)
+    if band_room is not None:
+        out.append(band_room)
     return [r for r in out if r is not None]
+
+
+def _band_room_of(dungeon):
+    band = dungeon.__dict__.get('band')
+    if not isinstance(band, dict) or not band.get('room'):
+        return None
+    bx, by, bw, bh = band['room']
+    for r in dungeon.rooms:
+        if (r.x, r.y, r.width, r.height) == (bx, by, bw, bh):
+            return r
+    return None
+
+
+def furnish_band_camp(dungeon, taken: set, placed_blocks: list, rng) -> int:
+    """A war-band's camp (data/war_bands.json 'camp'): its fire and banner
+    near the middle of its room, bedrolls and bones about the floor."""
+    room = _band_room_of(dungeon)
+    if room is None:
+        return 0
+    import war_bands
+    b = war_bands.data()['bands'].get(dungeon.band.get('id', ''), {})
+    camp = b.get('camp') or {}
+    cx, cy = room.center
+    inner = [t for t in _inner(room, dungeon) if t not in taken]
+    inner.sort(key=lambda t: max(abs(t[0] - cx), abs(t[1] - cy)))
+    n = 0
+    for fid in camp.get('stand', ()):
+        for pos in list(inner):
+            if any(max(abs(pos[0] - b2[0]), abs(pos[1] - b2[1])) <= 1 for b2 in placed_blocks):
+                continue
+            place(dungeon, pos, fid)
+            taken.add(pos)
+            inner.remove(pos)
+            if fixture_def(fid).get('blocks'):
+                placed_blocks.append(pos)
+            n += 1
+            break
+    rest = inner[len(inner) // 3:]
+    rng.shuffle(rest)
+    for fid, pos in zip(camp.get('floor', ()), rest):
+        place(dungeon, pos, fid)
+        taken.add(pos)
+        n += 1
+    return n
 
 
 def _inner(room, dungeon):
@@ -576,6 +623,7 @@ def dress_floor(dungeon, level: int, monsters=(), items=(), rng=None) -> int:
     before = _reachable_count(dungeon)
     placed_blocks = []
     n = furnish_special_rooms(dungeon, taken, placed_blocks, rng)
+    n += furnish_band_camp(dungeon, taken, placed_blocks, rng)
     n += place_lore_fixtures(dungeon, level, taken, placed_blocks, rng)
     rooms = [r for r in dungeon.rooms if id(r) not in skip]
     for room in rooms:

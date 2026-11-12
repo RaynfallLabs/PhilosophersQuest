@@ -2441,6 +2441,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # The first floor of each domain says where the hero has come
         # (data/domains.json; src/decor.py).
         self._announce_domain(new_level)
+        # A war-band on the floor is heard, or named (src/war_bands.py).
+        self._announce_band()
         # Display atmospheric messages for this level: the first time only
         # (G4: they used to repeat on every visit, so a stair-bounce said
         # the same three lines again).
@@ -5181,6 +5183,16 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             and (x, y) not in occupied
             and abs(x - px) + abs(y - py) >= 8
         ]
+        # A newcomer comes down (or up) the stairs, as a patrol would, rather
+        # than out of the floor (C5): a tile beside a stair the hero cannot
+        # see, when there is one.
+        from dungeon import STAIRS_UP as _SU, STAIRS_DOWN as _SD
+        _stairs = {(sx, sy) for sy in range(self.dungeon.height) for sx in range(self.dungeon.width)
+                   if self.dungeon.tiles[sy][sx] in (_SU, _SD)}
+        _by_stair = [t for t in candidates
+                     if any(max(abs(t[0] - s[0]), abs(t[1] - s[1])) <= 1 for s in _stairs)]
+        if _by_stair:
+            candidates = _by_stair
         if not candidates:
             return
         x, y = _rng.choice(candidates)

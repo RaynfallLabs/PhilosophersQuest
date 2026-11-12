@@ -1704,6 +1704,11 @@ class Monster:
             # The galla never give up the chase, and nothing frightens them.
             self._flee_timer = 0
             self.status_effects.pop('feared', None)
+        elif not is_boss and self.ai_pattern == 'aggressive' and self.__dict__.get('_band_leader') is not None \
+                and getattr(self._band_leader, 'alive', False):
+            # A war-band follower holds its nerve while its leader lives
+            # (src/war_bands.py).
+            self._flee_timer = 0
         elif not is_boss and self.ai_pattern == 'aggressive':
             if self._flee_timer > 0:
                 self._flee_timer -= 1
@@ -2629,7 +2634,9 @@ class Monster:
                 continue
             if hasattr(m, 'can_heal') and not m.can_heal():
                 continue                    # its wound will not close
-            if m.kind != self.kind and not (my_tags & set(getattr(m, 'tags', []))):
+            same_band = (self.__dict__.get('_band') is not None
+                         and m.__dict__.get('_band') == self.__dict__.get('_band'))
+            if m.kind != self.kind and not same_band and not (my_tags & set(getattr(m, 'tags', []))):
                 continue
             if abs(m.x - self.x) <= 1 and abs(m.y - self.y) <= 1:
                 wounded.append(m)

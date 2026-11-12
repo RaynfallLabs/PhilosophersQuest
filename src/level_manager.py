@@ -142,6 +142,10 @@ class LevelManager:
         # Populate hidden chambers with themed monsters/items
         _populate_hidden_chambers(dungeon, monsters, items, level_num)
 
+        # A war-band may have made camp in one room (src/war_bands.py).
+        import war_bands
+        war_bands.place_band(dungeon, monsters, level_num)
+
         # Bones: chance to spawn a ghost from a previous player's death
         self._maybe_spawn_bones(level_num, dungeon, monsters, items)
 
