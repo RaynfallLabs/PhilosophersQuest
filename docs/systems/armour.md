@@ -367,6 +367,31 @@ slot chosen by its lore (`PICKS`, with the reason); it keeps its name, card
 and every signature power (`enchantments.apply_named`, the line in
 `ench_line`).
 
+## 6b. Press or Guard, the parry, and the named counters (slice 5)
+
+`Player.get_ac` adds, beside the armour's own rules: the stance (Guard 2
+points better, Press 2 worse: `stance.stance_ac`) and a two-hander's parry
+held with no shield (`stance.parry_ac`; template, class and tier in
+`data/arsenal.json parry`). Combat.md has the damage side.
+
+**Named counters** (`src/counters.py`, `data/arsenal.json counters`). An
+item's `counters` (or its shield template's) names techniques it blocks
+outright:
+
+| Technique | Piece | What it does | Its price |
+|---|---|---|---|
+| `gaze` | the **mirror shield** (`data/templates/shields/mirror_shield.json`; the Aegis of Athena too) | any gaze attack does nothing: no damage, no rider (`Monster._resolve_blow`, the gaze_paralyze and floating-eye paths) | AC 1, metal only: the AC a kite or tower shield would give |
+| `voice` | **beeswax earplugs** (accessory, slot `none`), put in or taken out with the Kit's Apply, one turn | a voice attack's rider never takes hold | while in, he hears nothing: no war-band heard on arriving, no pet's warning growl (`counters.deafened`) |
+| `fey_glamour` | the **cold-iron charm** (accessory, slot `none`), carried | the Fair Folk's confusion, charm, sleep and visions slide off (the cold-iron body armour's ward rule, `gear_rules.json wards`) | none but carrying it |
+
+The rider check is in `Monster._apply_attack_effect`, right after the rider's
+own chance roll. A shield template's `spawn_bell` may carry a fourth number,
+its height beside the others (`gear.template_weight`): the mirror shield is
+0.35, rarer than a kite shield at its peak. A metal shield is found from
+about floor 10, so no mirror shield can be had before that. The tells'
+counter lines name these pieces (data/tells.json); `counters.names_for(m,
+key)` gives the techniques that answer one creature's tell.
+
 ## 7. Where gear comes from
 
 A find of common gear is a weapon, an armour piece or a shield

@@ -315,6 +315,12 @@ class Item:
         _sp = defn.get('special_properties') or {}
         self.special_properties: dict = (dict(_sp) if isinstance(_sp, dict)
                                          else {str(s): True for s in _sp})
+        # Named counters (counters.py, data/arsenal.json): the techniques
+        # this piece blocks outright while worn, or carried where the
+        # technique allows it (the earplugs stop a voice, the cold-iron
+        # charm the Fair Folk's glamour). A shield template can name them
+        # too (the mirror shield turns a gaze).
+        self.counters: list = list(defn.get('counters') or [])
         # Permanent saving-throw bonus while equipped (the gradient defense; the
         # total is capped in Player.save_bonus_for). Shape: {'cat': 'CON'|'WIS'|
         # 'DEX'|'all', 'amount': int}. Read dynamically off equipped gear.
@@ -488,6 +494,11 @@ def buc_known_to(item, player=None) -> bool:
 
 
 class Weapon(Item):
+    # A coating worked into the blade (coatings.py): {'id', 'name',
+    # 'substance', 'blows', 'rider'} until its blows are spent, else None.
+    # A class default, so a weapon pickled before coatings reads None.
+    coating = None
+
     def __init__(self, defn: dict):
         super().__init__(defn)
         # New structured fields (camelCase keys from JSON, fallback to legacy snake_case)
@@ -1496,6 +1507,27 @@ class Food(Item):
         self.unidentified_name: str = defn.get('unidentified_name', self.name)
 
 
+class Flask(Item):
+    """A coating for the weapon in the hand, a flask thrown for its damage,
+    or both (data/items/flask.json; the rules are coatings.py): silver dust,
+    frost salts, venom, holy water, fire oil, acid and their deeper kin.
+
+    Anyone can see what is in a twist of silver dust or a flask of oil, so
+    a flask needs no identify question: it is known by sight, like food and
+    ammo. Applying a coating takes one turn and no question, as drinking a
+    potion does; throwing one goes by the throw path (game_combat)."""
+    def __init__(self, defn: dict):
+        super().__init__(defn)
+        self.tier: int = max(1, min(5, int(defn.get('tier', 1) or 1)))
+        self.quiz_tier: int = self.tier
+        self.coat: dict | None = dict(defn['coat']) if defn.get('coat') else None
+        self.throw: dict | None = dict(defn['throw']) if defn.get('throw') else None
+        self.can_be_cursed: bool = bool(defn.get('can_be_cursed', True))
+        self.floor_spawn_weight: dict = defn.get('floor_spawn_weight', defn.get('floorSpawnWeight', {}))
+        self.id_level: int = 5
+        self.unidentified_name: str = defn.get('unidentified_name', self.name)
+
+
 class Potion(Item):
     """Drinkable potion. Instant or timed effect; no quiz required."""
     def __init__(self, defn: dict):
@@ -1661,7 +1693,7 @@ def add_gold_to_tile(ground_items: list, amount: int, x: int, y: int,
 
 
 # Stackable item types: identical instances (same id) merge into one stack entry.
-Item._STACKABLE_CLASSES = (Ingredient, Food, Potion, Scroll, Ammo, Treasure)
+Item._STACKABLE_CLASSES = (Ingredient, Food, Potion, Scroll, Ammo, Treasure, Flask)
 
 # ------------------------------------------------------------------
 # Loading
@@ -1680,6 +1712,7 @@ _CLASS_MAP: dict[str, type] = {
     'ammo':       Ammo,
     'food':       Food,
     'potion':     Potion,
+    'flask':      Flask,
     'lockpick':   Lockpick,
     'container':  Container,
     'treasure':   Treasure,
@@ -1884,7 +1917,7 @@ def pickup_rank(item, known: bool) -> tuple:
         rank = 'gold'
     elif treasure.is_treasure(item):
         rank = 'treasure'
-    elif isinstance(item, Potion):
+    elif isinstance(item, (Potion, Flask)):
         rank = 'potion'
     elif isinstance(item, (Scroll, Spellbook)):
         rank = 'scroll'

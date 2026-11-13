@@ -70,6 +70,7 @@ added_files = [
     ('data/affinity_rules.json',    'data'),   # the weak / resisted / shrugs-off steps (affinity.py)
     ('data/family_affinity.json',   'data'),   # the groups a family's habit line asks first (affinity.habit)
     ('data/monster_blood.json',     'data'),   # which creatures can bleed (monster.kind_can_bleed)
+    ('data/arsenal.json',           'data'),   # coatings, flasks, Press or Guard, named counters (coatings.py)
     # Game data — directories
     ('data/items',                  'data/items'),
     ('data/materials',              'data/materials'),

@@ -62,6 +62,10 @@ class Player:
         # while it is still in the pack (readied_weapon), so a drop, a sale
         # or a theft lets go of it by itself.
         self._readied_weapon = None
+        # Press or Guard (stance.py): 'neutral', 'press' or 'guard'. And the
+        # earplugs (counters.py): True while the wax is in his ears.
+        self.stance: str = 'neutral'
+        self.ears_stopped: bool = False
         # Known by Hand (known_by_hand.py): the kinds of gear the hero has
         # put on this run (item ids), which go on again with no quiz, and
         # the best chain reached on each chain-equip legend.
@@ -947,6 +951,10 @@ class Player:
         # has put it on), nothing is readied, the three kits are empty.
         self.__dict__.setdefault('_readied_weapon', None)
         self.__dict__.setdefault('by_hand_tiers', {})
+        # Saves from before the arsenal's tools (slice 5, 2026-11-13): no
+        # stance taken, no wax in his ears.
+        self.__dict__.setdefault('stance', 'neutral')
+        self.__dict__.setdefault('ears_stopped', False)
         if 'known_by_hand' not in state:
             self.known_by_hand = set()
             try:
@@ -1161,7 +1169,15 @@ class Player:
                 armor_proc_ac += 2
             if getattr(self, '_armor_proc_on_water', False):
                 armor_proc_ac += int(_pv_ac(self, 'water_tile_ac_bonus') or 0)
-        return 10 - dex_mod - armor_bonus - shield_bonus - buc_ac - invisible_bonus - shield_effect - stand_ac - parry_ac - armor_proc_ac
+        # Press or Guard, and a two-hander's parry with no shield (stance.py,
+        # data/arsenal.json): Guard gives two points, Press gives two up; a
+        # greatsword held in both hands turns blows aside. Beside the
+        # armour's own rules (gear.py), never from the floor.
+        import stance as _stance
+        stance_ac = _stance.stance_ac(self)
+        two_hand_parry = _stance.parry_ac(self)
+        return (10 - dex_mod - armor_bonus - shield_bonus - buc_ac - invisible_bonus - shield_effect
+                - stand_ac - parry_ac - armor_proc_ac - stance_ac - two_hand_parry)
 
     def get_armor_resistance(self, damage_type: str) -> float:
         """What the worn armour and shield do to a blow of this type: a

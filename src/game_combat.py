@@ -17,7 +17,8 @@ The mixin owns:
     ``_confirm_power_target``, ``_confirm_observe``.  The confirm shims
     delegate into MagicMixin (wand zap quiz, targeted spell quiz, AI
     powers like Stuffie fire breath) -- MRO handles cross-mixin calls.
-  * Throw mechanics: ``_throw_weapon``, ``_throw_soul_sphere``,
+  * Throw mechanics (a flask thrown for its damage goes to
+    ``game_arsenal._throw_flask``): ``_throw_weapon``, ``_throw_soul_sphere``,
     ``_throw_unusual_sphere``, ``_apply_thrown_potion``, plus the helpers
     ``_find_first_monster_in_path`` (Bresenham line trace),
     ``_get_weapon_throw_damage``, ``_get_weapon_break_chance``,
@@ -343,12 +344,17 @@ class CombatMixin:
         hit_monster = self._find_first_monster_in_path(px, py, tx, ty)
 
         from pet_system import is_soul_sphere
+        import coatings as _coatings
         if isinstance(item, Artifact) and item.id == 'unusual_soul_sphere':
             self._throw_unusual_sphere(item, hit_monster, tx, ty)
         elif isinstance(item, Artifact) and is_soul_sphere(item):
             self._throw_soul_sphere(item, hit_monster, tx, ty)
         elif isinstance(item, Weapon):
             self._throw_weapon(item, hit_monster, tx, ty)
+        elif _coatings.throw_spec(item) is not None:
+            # A flask thrown for its damage: oil, holy water, acid and their
+            # kin (coatings.py; game_arsenal._throw_flask).
+            self._throw_flask(item, hit_monster, tx, ty)
         else:
             # Potion throw
             self.player.remove_from_inventory(item)
@@ -443,7 +449,24 @@ class CombatMixin:
                     dmg = max(1, int(round(dmg * _fe)))
             except ImportError:
                 pass
+            # A thrown weapon meets the creature as a blow does: its form and
+            # its substance (combat.weapon_type_multiplier, a coating
+            # included), so a silver dagger thrown at a werewolf counts as
+            # silver. The weakness or resistance it met is said at the end of
+            # the action, as a blow's is (affinity.py).
+            import affinity as _affinity
+            from combat import affinity_word, weapon_type_multiplier
+            _f, _s = weapon_type_multiplier(weapon, monster)
+            _tm = _affinity.capped(_f * _s)
+            if _tm != 1.0:
+                dmg = max(1, int(round(dmg * _tm)))
+            _tk = _affinity.kind_of(_tm)
+            if _tk:
+                _affinity.note(monster, _tk, affinity_word(weapon, monster, _tk))
             actual = monster.take_damage(dmg)
+            # A coating on it is spent as a blow's would be (coatings.py).
+            import coatings as _coatings
+            _coatings.after_blow(self.player, monster, weapon, actual)
             self.add_message(
                 f"You hurl the {display} at {_who}! ({actual} damage)", 'success'
             )
@@ -2775,6 +2798,11 @@ class CombatMixin:
         band['said'] = True
         leader = war_bands.leader_of(self.monsters, band.get('uid', ''))
         if leader is None or not leader.alive:
+            return
+        # Wax in his ears (counters.py): the band's horn or its drums go
+        # unheard (the earplugs' price).
+        import counters as _counters
+        if _counters.deafened(self.player):
             return
         # The make-up and how to break it only for a hero who knows the
         # leader's kind itself, or its family's Lore (family_lore.knowledge).

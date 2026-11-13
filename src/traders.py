@@ -505,8 +505,8 @@ def credits_owed(reg: dict, used: int) -> int:
 # Classes a fence can sell on. A thing outside these (a key, a corpse, a
 # chest, the master lockpick) is never bought.
 SELLABLE_CLASSES = frozenset({'weapon', 'armor', 'shield', 'accessory', 'wand', 'scroll',
-                              'spellbook', 'potion', 'food', 'ammo', 'ingredient', 'artifact',
-                              'treasure'})
+                              'spellbook', 'potion', 'flask', 'food', 'ammo', 'ingredient',
+                              'artifact', 'treasure'})
 # The one kind of artifact a trader deals in: the six Soul Spheres
 # (data/items/artifact.json 'sphere'; never the Unusual Soul Sphere).
 SELLABLE_ARTIFACTS = frozenset({'soul_sphere', 'greater_soul_sphere', 'master_sphere',

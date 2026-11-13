@@ -1495,6 +1495,9 @@ MIN_FLOOR_MONSTERS = 6
 MIMIC_FIRST_FLOOR = 8
 MIN_LOOT_ROOMS = 10
 EARLY_POTION_FLOORS = 20
+# A loot room's chance of a coating or a flask (winning-build plan 3.5,
+# slice 5): about one a floor of ten rooms.
+FLASK_ROOM_CHANCE = 0.10
 # Loot volume (BALANCE_REVIEW_LOOT_AND_FOOD_2026_10_26, L5). A loot room held
 # a piece of gear a third of the time and rings and amulets were a quarter of
 # its magic finds: by floor 5 a hero had picked up thirty pieces of gear and
@@ -1833,6 +1836,19 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon,
     potion_rooms = rng.sample(rooms[1:], min(potion_count, len(rooms) - 1))
     for room in potion_rooms:
         _place_one(eligible_potions, room, dungeon, ground_items, rng)
+
+    # -- Coatings and flasks (coatings.py, data/items/flask.json) ------------
+    # Silver dust, holy water, fire oil and the rest, each kind by its own
+    # floor band: FLASK_ROOM_CHANCE a loot room, about one a floor.
+    try:
+        all_flasks = load_items('flask')
+    except FileNotFoundError:
+        all_flasks = []
+    eligible_flasks = _item_eligible_weighted(all_flasks, level, rng)
+    for room in loot_rooms:
+        if rng.random() > FLASK_ROOM_CHANCE:
+            continue
+        _place_one(eligible_flasks, room, dungeon, ground_items, rng)
 
     # -- Soul Spheres -- by floor band, from artifact.json ---------------------
     # Each of the six has its own chance per floor in its band

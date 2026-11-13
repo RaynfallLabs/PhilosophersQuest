@@ -497,6 +497,9 @@ state; column 4 is the `_draw_<state>` method.
 | `Shift+M` | the lowest unmastered philosophy tier one question short (QA only) | `handle_event` |
 | `Shift+K` | the Stray Kids idol beside the hero; again: the photo in the pack (QA only) | `handle_event` |
 | `Shift+L` | Old Nickel (the Bloomleaf Cloak's wearer) set down near the hero; again, the cloak into the pack (QA only) | `handle_event` |
+| `Shift+T` | every coating and flask, the earplugs, the cold-iron charm, a mirror shield and a greatsword into the pack (QA only; `game_arsenal._qa_arsenal_sampler`) | `handle_event` |
+| `Shift+S` | Press or Guard: the next stance, one turn (`game_arsenal._cycle_stance`) | `handle_event` |
+| `Shift+C` | coat the weapon in your hand from the pack (`game_arsenal._open_coat_menu`) | `handle_event` |
 | `TAB` | cycle zoom `full → medium → close → full` | `_player_input` |
 
 ESC behavior is critical: it dismisses almost every modal cleanly,
@@ -1342,6 +1345,25 @@ Documented for traceability. Fixes land in follow-up commits.
   `text_layout.wrap_lines` so oversized tokens break by character.
 
 ---
+
+## 24b. The arsenal's keys and chips (slice 5, 2026-11-13)
+
+- **Shift+S**: Press or Guard (one turn; `game_arsenal._cycle_stance`).
+- **Shift+C**: coat your weapon: the quaff picker in its coat mode
+  (`_quaff_mode = 'coat'`, `RenderMixin._draw_coat_menu`).
+- **Kit / @ sheet `A` Apply**: "Coat Weapon" on a coating, "Put In" / "Take
+  Out" on the earplugs (`item_actions.ACTION_KEYS`).
+- **T**: the throw menu has a **Flasks** tab (`Game._THROW_TABS`); look a tab
+  up by its label, not its index.
+- **Shift+T** (Titivillus QA only): every coating and flask, the earplugs, the
+  cold-iron charm, a mirror shield and a greatsword (`_qa_arsenal_sampler`).
+- The sidebar's EFFECTS list shows the stance held ("Press", "Guard"), the
+  coating on the weapon in the hand with its blows left ("Silver Dust 9") and
+  "Ears Stopped" (`ui.arsenal_rows`).
+- Cards (Kit detail, inventory panel, lore page): `RenderMixin._arsenal_card_lines`
+  (a coating and its blows, "Parry +2", what a counter blocks, what a coating
+  or flask does). The help screen lists Shift+S and Shift+C in its Movement
+  column, beside Shift+E (a wide key badge in Combat cut its labels short).
 
 ## 25. Adding a new menu / overlay — checklist
 

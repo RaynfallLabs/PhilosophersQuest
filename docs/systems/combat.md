@@ -407,6 +407,70 @@ The pre-damage hook (`combat._apply_chain_class_pre_damage`) sets `player._chain
 
 `armor_crack` and `deep_wound` STACK additively on amplifier (`combat.py:1283-1289`): `_amp += 0.25` per flag, cap at `+0.50` combined.
 
+## The arsenal's tools (winning-build plan 3.3-3.5, slice 5, 2026-11-13)
+
+Brandon: a kid should "identify and learn about monsters, then strategically
+find a way to exploit the weakness... throwing potions, targeting
+weaknesses, sacrificing defense for damage based on monster". Numbers are
+data (`data/arsenal.json`, `data/items/flask.json`); the rules are three
+pure modules and one Game mixin (`src/game_arsenal.py`).
+
+**Coatings** (`src/coatings.py`). Silver dust, frost salts, viper venom,
+holy water (three depths), fire oil (three depths). Shift+C (or Apply, A, on
+the Kit) works one into the weapon in the hand: one turn, no question, as a
+potion is drunk. It is stored on the WEAPON (`Weapon.coating`: id, name,
+substance, blows, rider), so S to the weapon At Your Back and back keeps it,
+and a coated weapon thrown counts as coated. `combat._substances_of` adds
+the coating's substance, so it meets a weakness through the one bane rule
+(`weapon_type_multiplier`, the weak step, never weaker, capped x3): silver
+dust on a steel mace hits a werewolf as silver. `player_attack`'s callback
+calls `coatings.after_blow` on every blow that lands: the rider (venom
+poisons, frost slows, fire may set burning) takes hold only on a creature
+that neither resists nor shrugs off the substance and whose nature allows
+the effect (`Monster.hold`: status_immune, named-foe caps); fire or acid on a
+blade also stops a troll's mending and frightens what fears fire
+(`Monster._after_typed_hit`); one blow is spent. A refused rider ("The Viper
+Venom does nothing to the skeleton.", once a fight) and the last blow ("The
+last of the Silver Dust wears off your Steel Mace.") are said at the end of
+the action (`Game._say_arsenal_lines`). A coating that adds nothing (silver
+dust on a silver or silvered blade, holy water on a blessed one, anything on
+a bow or a fist) is refused.
+
+**Thrown flasks** (T, the Flasks tab). Fire oil, Greek fire, Medea's fire;
+holy water, the Water of Siloam, the Water of Life; acid, aqua regia, the
+alkahest. Each bursts for real typed damage through `Monster.take_damage`
+(weak x2, resisted x0.5, shrugged off x0.25), then a short status where its
+lore says (fire sets burning, acid pits a hide: `armor_crack`) unless the
+creature resists the type. Holy water harms only the unholy (`only_weak`):
+"It is only water to it." Each flask's damage is real base data,
+`round(floor_curve.one_attack(sized_at) / 2)`: about one chain of a common
+weapon of its own depth on a weak kind. Never computed from the floor the
+hero is on (LORE NOT FLOOR); the deeper kinds are deeper items.
+
+**Thrown weapons get affinity.** `CombatMixin._throw_weapon` multiplies by
+`weapon_type_multiplier` (form x substance, a coating included) and notes the
+weakness or resistance it met (`affinity.note`), as a blow does: a silver
+dagger thrown at a werewolf counts as silver.
+
+**Press or Guard** (`src/stance.py`). Shift+S steps Neutral -> Press ->
+Guard -> Neutral and takes one turn (as S does): Press x1.3 damage, 2 AC
+worse; Guard x0.7 damage, 2 AC better. The damage is in `strike_damage`
+(every weapon blow and shot, so the Strike Now preview agrees), the AC in
+`Player.get_ac`. `Player.stance`, saved; old saves stand Neutral.
+
+**The two-hander's parry.** A two-handed melee weapon held with no shield
+gives AC from its template (greatsword, glaive, quarterstaff 2; bastard
+sword, great axe, maul, warhammer 1; a named weapon with no template by its
+class), +1 at tier 4-5 (`data/arsenal.json parry`; `stance.parry_ac`,
+`Player.get_ac`). The card says "Parry +2".
+
+**Named counters** (`src/counters.py`): see armour.md section 6b.
+
+**Kit Sense's hook.** `coatings.kit_sense_tools(player, monster)` lists the
+coatings and thrown flasks in the pack that meet the creature's weakness,
+best first, as `[(item, 'coat' | 'throw')]`. Slice 3's Kit Sense calls it
+beside the weapons in the pack.
+
 ## Invariants (don't break)
 
 - **`chain_exponent` set ⇒ polynomial path ⇒ uncapped chain.** Any new field or hook that expects a finite max_chain (like `attack_chain_cap_bonus`) must handle `_max_chain is None`.

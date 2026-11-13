@@ -891,9 +891,12 @@ class RenderMixin:
                 visible = self._kit_visible_level(item)
             except Exception:
                 visible = int(getattr(item, 'id_level', 5))
+            # The arsenal's lines (a coating, "Parry +2", a counter) are seen,
+            # not identified: shown either way.
+            arsenal = self._arsenal_card_lines(item)
             if visible < 3:
-                return ["Special properties unrevealed. Identify the item to learn more."]
-            lines = []
+                return arsenal + ["Special properties unrevealed. Identify the item to learn more."]
+            lines = list(arsenal)
             mode = getattr(item, 'equip_chain_mode', '')
             if mode and getattr(item, 'tier_bonuses', None):
                 achieved = int(getattr(item, 'achieved_tier', 0) or 0)
@@ -4354,6 +4357,10 @@ class RenderMixin:
         import smithing as _smithing
         for _work in _smithing.work_lines(item):
             lines.append((_work, FP.CYAN_ACCENT, self.font_sm))
+        # A coating, a two-hander's parry, a named counter, what a flask does
+        # (the arsenal's tools: all seen, so shown identified or not).
+        for _al in self._arsenal_card_lines(item):
+            lines.append((_al, FP.CYAN_ACCENT, self.font_sm))
 
         if hasattr(item, 'identified') and idl < 3:
             # ``_display_name`` already shows either the true name or the
@@ -5505,6 +5512,10 @@ class RenderMixin:
         import smithing as _smithing
         for _work in _smithing.work_lines(item):
             lines.append((_work, FP.CYAN_ACCENT, self.font_sm))
+        # The arsenal's tools: a coating and its blows left, "Parry +2", what
+        # a counter blocks, what a coating or flask does.
+        for _al in self._arsenal_card_lines(item):
+            lines.append((_al, FP.CYAN_ACCENT, self.font_sm))
         if idl >= 3:
             stats, (extra_label, extra) = self._kit_row_labelled(slug, src, item)
             lines.append(("Visible stats", FP.GOLD_BRIGHT, self.font_sm))
@@ -6192,6 +6203,16 @@ class RenderMixin:
         return f"Δ {sign}{abs(d)} {label}"
 
     def _kit_consumable_effect(self, c) -> str:
+        # A coating or a thrown flask (coatings.py): what it does, short.
+        import coatings as _coat_k
+        _cs, _ts = _coat_k.coat_spec(c), _coat_k.throw_spec(c)
+        if _cs or _ts:
+            bits = []
+            if _cs:
+                bits.append(f"coat: {_coat_k.word(str(_cs['substance']))} x{_cs.get('blows', 12)}")
+            if _ts:
+                bits.append(f"throw: {_ts.get('damage', 0)} {_ts.get('damage_type', '')}")
+            return ', '.join(bits)
         eff = getattr(c, 'effect', None)
         if eff:
             pw = getattr(c, 'power', '')
@@ -7129,7 +7150,43 @@ class RenderMixin:
             tab_counts=_eat_counts,
         )
 
+    def _draw_coat_menu(self):
+        """Shift+C: the coatings in the pack (the quaff picker's coat mode,
+        game_arsenal._open_coat_menu)."""
+        import coatings as _coatings
+        entries = []
+        for i, item in enumerate(self.quaff_menu_items):
+            spec = _coatings.coat_spec(item) or {}
+            why = _coatings.refusal(self.player, item)
+            rider = spec.get('rider') if isinstance(spec.get('rider'), dict) else None
+            short = (f"{_coatings.word(str(spec.get('substance', ''))).capitalize()} for "
+                     f"{spec.get('blows', 12)} blows that land"
+                     + (f"; leaves it {_coatings._effect_words(str(rider.get('effect', '')))}"
+                        if rider else ''))
+            entries.append({
+                'name': self._display_name(item),
+                'detail': why or short,
+                'key': self._menu_letter(i),
+                'icon': item,
+                'detail_color': FP.FADED_TEXT if why else FP.SUCCESS_TEXT,
+                'badge': _coatings.word(str(spec.get('substance', ''))).upper(),
+                'badge_color': FP.FADED_TEXT if why else FP.CYAN_ACCENT,
+            })
+        selected = self._menu_clamp_selection('_quaff_sel', len(entries))
+        w = self.player.weapon
+        self._draw_fast_picker(
+            title="COAT YOUR WEAPON",
+            entries=entries,
+            selected=selected,
+            subtitle=(f"Onto your {self._bare_name(w)}: one turn, no question" if w is not None
+                      else "You have no weapon in your hand"),
+            hint="Up/Down: move   Enter or a-z: coat   ESC: cancel",
+            border_color=FP.CYAN_ACCENT,
+        )
+
     def _draw_quaff_menu(self):
+        if getattr(self, '_quaff_mode', 'quaff') == 'coat':
+            return self._draw_coat_menu()
         items = self.quaff_menu_items
         entries = []
         for i, item in enumerate(items):
@@ -7167,6 +7224,7 @@ class RenderMixin:
         )
 
     def _draw_throw_menu(self):
+        import coatings as _coat_t
         tab_items = self._get_throw_tab_items()
         entries = []
         for i, item in enumerate(tab_items):
@@ -7186,6 +7244,15 @@ class RenderMixin:
                     detail_text = "Effect hidden until identified"
                 badge = 'POTION'
                 badge_color = FP.ARCANE_BRIGHT
+            elif _coat_t.throw_spec(item) is not None:
+                # A flask thrown for its damage (coatings.py).
+                _ts = _coat_t.throw_spec(item)
+                detail_text = (f"{_ts.get('damage', 0)} {_ts.get('damage_type', '')} damage"
+                               + (" to the unholy only" if _ts.get('only_weak') else ''))
+                if isinstance(_ts.get('status'), dict):
+                    detail_text += f"; leaves it {_coat_t._effect_words(str(_ts['status'].get('effect', '')))}"
+                badge = 'FLASK'
+                badge_color = FP.DANGER_TEXT_LIGHT
             else:
                 detail_text = self._menu_item_summary(item)
                 badge = 'ITEM'
@@ -8710,6 +8777,22 @@ class RenderMixin:
             return "No AC; its enchantment is unknown"
         return f"No AC; enchantment: {_ench.label(item) or 'none'}"
 
+    def _arsenal_card_lines(self, item) -> list:
+        """The arsenal's card lines for ``item`` (slice 5): the coating on a
+        weapon and its blows left, a two-hander's parry, what a named
+        counter blocks, and what a coating or a thrown flask does. All are
+        seen, not identified, so they show either way."""
+        import coatings as _coatings
+        import counters as _counters
+        import stance as _stance
+        out = []
+        if isinstance(item, Weapon):
+            out += _coatings.weapon_card_lines(item)
+            out += _stance.card_lines(item)
+        out += _counters.card_lines(item)
+        out += _coatings.card_lines(item)
+        return out
+
     def _lore_item_mechanic_lines(self, item, id_level):
         lines = []
         if id_level < 3 and hasattr(item, 'id_level'):
@@ -8874,6 +8957,14 @@ class RenderMixin:
                 (f"Damage bonus: +{getattr(item, 'damage_bonus', 0)}   Count range: {getattr(item, 'count_min', '?')}-{getattr(item, 'count_max', '?')}",
                  FP.BODY_TEXT, self.font_sm),
             ]
+
+        _arsenal = self._arsenal_card_lines(item)
+        if _arsenal:
+            import coatings as _coat_l
+            if _coat_l.is_tool(item):
+                lines.append(("Coating and Flask", FP.GOLD_BRIGHT, self.font_sm))
+            for _al in _arsenal:
+                lines.append((_al, FP.CYAN_ACCENT, self.font_sm))
 
         if getattr(item, 'set_id', ''):
             lines.append((f"Set: {getattr(item, 'set_name', getattr(item, 'set_id', ''))}",
@@ -10584,6 +10675,9 @@ class RenderMixin:
                 # Here, where the column's keys are already wide: in Items
                 # the badge cut "Drop, gold / use tile" at 1280x720.
                 ("Shift+E", "Loadouts", FP.BODY_TEXT),
+                # (The arsenal's keys, here for the same reason: slice 5.)
+                ("Shift+S", "Press / Guard", FP.BODY_TEXT),
+                ("Shift+C", "Coat weapon", FP.BODY_TEXT),
             ]),
             ("Combat", [
                 ("A", "Melee attack", FP.BODY_TEXT),

@@ -48,6 +48,8 @@ def share(level: int, fraction: float) -> int:
 # two, an accessory takes about two floors and a named unique about four.
 MERCHANT_SHARE = {
     'potion': 0.15, 'food': 0.10, 'ammo': 0.10,
+    # A coating or a flask (coatings.py): a consumable, as a potion is.
+    'flask': 0.15,
     # Raw ingredients are worth half a meal: with no class they fell back to
     # 0.5 and one harvested part sold for 165 gold on floor 20 against a
     # cooked meal's 40 (Brandon, 2026-11-06: "half of food").

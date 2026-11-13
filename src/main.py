@@ -40,7 +40,7 @@ from dungeon import (spawn_monsters, WALL, STAIRS_UP, STAIRS_DOWN, DOOR, SECRET_
                      ALTAR, WATER, LAVA, FOUNTAIN, GRAVE, THRONE, ICE)
 from food_system import harvest_corpse, cook_ingredient, cook_compound_recipe
 from fov import calculate_fov
-from items import Weapon, Armor, Shield, Corpse, Ingredient, Artifact, Container, Lockpick, Accessory, Wand, Scroll, Spellbook, Ammo, Food, Potion
+from items import Weapon, Armor, Shield, Corpse, Ingredient, Artifact, Container, Lockpick, Accessory, Wand, Scroll, Spellbook, Ammo, Food, Potion, Flask
 from level_manager import LevelManager
 from player import Player
 import sound_system as _snd
@@ -93,6 +93,7 @@ from game_popups import PopupMixin
 from game_hazards import HazardsMixin
 from game_lore_fixtures import LoreFixturesMixin
 from game_dressing import DressingMixin
+from game_arsenal import ArsenalMixin
 from escort_system import EscortMixin
 from spells import LEARNABLE_SPELLS
 
@@ -100,6 +101,13 @@ from spells import LEARNABLE_SPELLS
 # ------------------------------------------------------------------
 # Module-level helpers
 # ------------------------------------------------------------------
+
+def _is_thrown_flask(item) -> bool:
+    """A flask thrown for its damage (coatings.throw_spec): the throw menu's
+    Flasks tab."""
+    import coatings
+    return coatings.throw_spec(item) is not None
+
 
 def _trap_noun(trap_type: str) -> str:
     """A trap's kind as it is said before the word "trap": 'bear_trap' is a
@@ -224,7 +232,7 @@ DEEP_SLEEP = 10 ** 6           # a zoo, graveyard or barracks sleeper: until wok
 class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMixin, EncountersMixin,
            EmberpupMixin, BloomleafMixin, BlackKnightMixin, StrayKidsMixin, ItemActionsMixin, RoadMixin, EscortMixin,
            SetneMixin, TraderMixin, PurseMixin, FamilyMixin, SeekerMixin, PopupMixin,
-           HazardsMixin, LoreFixturesMixin, DressingMixin):
+           HazardsMixin, LoreFixturesMixin, DressingMixin, ArsenalMixin):
     # FANTASY: Grimoire font set -- larger for readability. Read through the
     # UI scale on every use (SCALE_PLAN.md): a window resize can never leave
     # a font of the old size behind.
@@ -4638,6 +4646,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # A hit that met a weakness or a resistance this action: one line for
         # each, Pokemon style (affinity.py, data/affinity_lines.json).
         self._say_affinity_lines()
+        # A coating's rider refused or its last blow spent (coatings.py).
+        self._say_arsenal_lines()
         # A Ring of Invisibility's veil settles after its quiet turns (rings.py).
         import rings as _rings
         _veil = _rings.tick(self.player)
@@ -5615,6 +5625,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         floor changes, so a lurking wolf is one growl, not one a turn. He has
         to be near enough to hear it."""
         px, py = self.player.x, self.player.y
+        # Wax in his ears (counters.py): he cannot hear his dog growl. Nothing
+        # is marked as growled at, so it growls once the wax is out.
+        import counters as _counters
+        if _counters.deafened(self.player):
+            return
         for pet in getattr(self, 'pets', []) or []:
             growl = (getattr(pet, 'species', None) or {}).get('growl')
             if not growl or not getattr(pet, 'alive', False):
@@ -6919,8 +6934,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
 
     _THROW_TABS = [
         ('Potions', lambda i: isinstance(i, Potion)),
+        # Oil, holy water and acid, thrown for their damage (coatings.py).
+        ('Flasks',  lambda i: not isinstance(i, (Potion, Weapon)) and _is_thrown_flask(i)),
         ('Weapons', lambda i: isinstance(i, Weapon)),
-        ('Other',   lambda i: not isinstance(i, (Potion, Weapon))),
+        ('Other',   lambda i: not isinstance(i, (Potion, Weapon)) and not _is_thrown_flask(i)),
     ]
 
     # ------------------------------------------------------------------
@@ -7335,7 +7352,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         if active == 'all':
             return True
         if active == 'gear':
-            return isinstance(item, (Weapon, Armor, Shield, Accessory, Ammo))
+            # Coatings and flasks are tools of the fight (coatings.py).
+            return isinstance(item, (Weapon, Armor, Shield, Accessory, Ammo, Flask))
         if active == 'food':
             return isinstance(item, (Food, Ingredient, Potion))
         if active == 'lore':
@@ -8866,9 +8884,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     _DROP_TABS = [
         ('All',         None),
         ('Equipment',   lambda i: hasattr(i, 'item_class') and getattr(i, 'item_class', '') in ('weapon','armor','shield','accessory','ammo')),
-        ('Consumables', lambda i: hasattr(i, 'item_class') and getattr(i, 'item_class', '') in ('potion','scroll','spellbook','wand','food')),
+        ('Consumables', lambda i: hasattr(i, 'item_class') and getattr(i, 'item_class', '') in ('potion','flask','scroll','spellbook','wand','food')),
         ('Ingredients', lambda i: hasattr(i, 'item_class') and getattr(i, 'item_class', '') == 'ingredient'),
-        ('Other',       lambda i: hasattr(i, 'item_class') and getattr(i, 'item_class', '') not in ('weapon','armor','shield','accessory','ammo','potion','scroll','spellbook','wand','food','ingredient')),
+        ('Other',       lambda i: hasattr(i, 'item_class') and getattr(i, 'item_class', '') not in ('weapon','armor','shield','accessory','ammo','potion','flask','scroll','spellbook','wand','food','ingredient')),
     ]
 
     def _inside_rock(self) -> bool:
@@ -9068,11 +9086,13 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         ('Scrolls',     lambda i: isinstance(i, (Scroll, Spellbook))),
         ('Wands',       lambda i: isinstance(i, Wand)),
         ('Potions',     lambda i: isinstance(i, Potion)),
+        # Coatings and thrown flasks (coatings.py, data/items/flask.json).
+        ('Flasks',      lambda i: getattr(i, 'item_class', '') == 'flask'),
         ('Food',        lambda i: isinstance(i, (Food, Ingredient))),
         ('Other',       lambda i: isinstance(i, Ammo) or
                          getattr(i, 'item_class', '') not in
                          ('weapon','armor','shield','accessory','scroll','spellbook',
-                          'wand','potion','food','ingredient')),
+                          'wand','potion','flask','food','ingredient')),
     ]
 
     def _get_item_stats_brief(self, item) -> str:

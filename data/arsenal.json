@@ -1,0 +1,68 @@
+{
+  "_doc": "The arsenal's tools (winning-build plan 2026-11-13, sections 3.3-3.5, slice 5). Brandon: a kid should 'identify and learn about monsters, then strategically find a way to exploit the weakness... throwing potions, targeting weaknesses, sacrificing defense for damage based on monster... elemental attacks and status attacks both ways'. Read by src/coatings.py (coatings and thrown flasks, data/items/flask.json), src/stance.py (Press or Guard, the two-hander's parry) and src/counters.py (named counters). Every number here is real base data, never scaled by the floor (LORE NOT FLOOR).",
+  "coating": {
+    "_doc": "A coating (a flask's 'coat' block in data/items/flask.json) goes on the weapon in the hero's hand for one turn and no question, as a potion is drunk. Its substance joins the weapon's own (combat._substances_of), so it meets a weakness through the one bane rule: silver dust on a steel mace hits a werewolf as silver. It is worth the weak step against a creature that cannot bear it and never makes a blow weaker. Each blow that lands spends one; the last says so. A rider (venom's poison, frost's slowing, fire's burning) takes hold only on a creature that does not resist or shrug off the substance and whose nature allows the effect (status_immune). 'aliases': other items that are the same thing (the holy water foraged at an altar coats and throws as a Flask of Holy Water does).",
+    "aliases": {"holy_water": "flask_of_holy_water"},
+    "words": {"silver": "silvered", "holy": "blessed", "fire": "burning", "cold": "frost-rimed", "poison": "envenomed"},
+    "applied": "You work the {coat} into your {weapon}. It is {word} for the next {blows} blows that land.",
+    "replaced": "The {old} on your {weapon} is scraped away for the {coat}.",
+    "worn_off": "The last of the {coat} wears off your {weapon}.",
+    "no_weapon": "You have no weapon in your hand to coat.",
+    "ranged": "A coating is for a blade or a head that strikes, not a bow.",
+    "already": "Your {weapon} is already {word}: the {coat} would add nothing.",
+    "refused": "The {coat} does nothing to {the}.",
+    "card_weapon": "Coated with {coat}: {word} for {blows} more blows that land.",
+    "card_coat": "Coats the weapon in your hand: {word} for {blows} blows that land (Shift+C or Apply).",
+    "card_rider": "Each blow may leave it {effect} for {turns} turns.",
+    "card_rider_sure": "Each blow leaves it {effect} for {turns} turns.",
+    "card_throw": "Thrown: {damage} {dtype} damage.",
+    "card_throw_weak": "Thrown: {damage} holy damage to the unholy; only water to anything else.",
+    "card_throw_status": "It leaves its target {effect} for {turns} turns."
+  },
+  "throw": {
+    "_doc": "A flask's 'throw' block: real damage of its type through Monster.take_damage (weak x2, resisted x0.5, shrugged off x0.25: data/affinity_rules.json), sized so a flask on a weak kind is about one chain of a common weapon at the flask's own depth (floor_curve.ONE_ATTACK at its peak floor, halved for the weak step, written in the data). 'only_weak': holy water harms only the unholy. 'status': what the splash leaves (burning, an acid-pitted hide), if the creature does not resist the type. Fire still frightens what fears fire (affinity_rules fear_of_fire).",
+    "hit": "The {flask} bursts over {the}! ({damage} {dtype} damage)",
+    "only_water": "The {flask} splashes {the}. It is only water to it.",
+    "status_line": "{The} is {effect}!",
+    "missed": "The {flask} shatters on the ground."
+  },
+  "stance": {
+    "_doc": "Press or Guard (plan 3.4, decision 7): one key (Shift+S) steps through Neutral, Press and Guard, and takes one turn, as swapping a weapon does: chosen for the fight, not for each blow. 'damage' multiplies every weapon blow and shot (combat.strike_damage); 'ac' is armour points gained (Guard) or given up (Press) in Player.get_ac. Neutral by default; kept in the save.",
+    "order": ["neutral", "press", "guard"],
+    "neutral": {"name": "Neutral", "damage": 1.0, "ac": 0,
+                "line": "You settle into an even stance."},
+    "press": {"name": "Press", "damage": 1.3, "ac": -2,
+              "line": "You set your feet and press the attack: harder blows, and an open guard. (+30% damage, 2 AC worse)"},
+    "guard": {"name": "Guard", "damage": 0.7, "ac": 2,
+              "line": "You tuck in behind your weapon and give ground only on your terms. (-30% damage, 2 AC better)"},
+    "card": "Stance: {name} ({detail})."
+  },
+  "parry": {
+    "_doc": "A two-handed melee weapon wielded with no shield turns blows aside (plan 3.4: a deep hero without a shield was hit about 95% of the time; half a par shield). AC from its template, else its class for a named weapon with no template; plus 'tier_bonus' by the weapon's tier (its material's, or a unique's own). Read by Player.get_ac through stance.parry_ac; shown on the weapon card. Never from the floor.",
+    "by_template": {"greatsword": 2, "glaive": 2, "quarterstaff": 2, "bastard_sword": 1,
+                    "great_axe": 1, "maul": 1, "warhammer": 1},
+    "by_class": {"sword": 2, "polearm": 2, "spear": 2, "staff": 2, "axe": 1, "blunt": 1},
+    "tier_bonus": {"4": 1, "5": 1},
+    "card": "Parry +{ac}: two hands on the haft turn blows aside (no shield)."
+  },
+  "counters": {
+    "_doc": "Named counters (plan 3.3): an item's 'counters' list (a shield template's, an accessory's) names techniques it blocks outright while worn, or while carried where the technique says 'carried'. 'gaze': a gaze attack does nothing at all (no damage, no rider), from Medusa's to a floating eye's. 'voice': the rider of a voice attack (a wail's fear, a song's sleep, a scream's confusion) never takes hold; the price is that the hero hears nothing while the wax is in ('deafens': no war-band heard on arriving, no growl from a pet that smells what he cannot see). 'fey_glamour': the charm, confusion, sleep and visions of the Fair Folk slide off (the same rule as a cold-iron body armour's ward, data/gear_rules.json wards). 'apply': the Kit's Apply action toggles a counter that is put in or taken out (the earplugs), one turn either way.",
+    "techniques": {
+      "gaze": {"name": "a gaze", "delivery": "gaze",
+               "line": "You watch {the} in the bright face of your {item}, and the gaze slides off.",
+               "card": "Mirror-bright: a gaze slides off it, harmless (no damage, no paralysis, nothing)."},
+      "voice": {"name": "a voice", "riders_of": "voice", "apply": "stop_ears", "deafens": true,
+                "line": "{The}'s voice cannot get past the wax in your ears.",
+                "card": "Put in (Apply), no voice can work on you: no wail's fear, no song's sleep, no scream's confusion. But you hear nothing while they are in."},
+      "fey_glamour": {"name": "fey glamour", "ward": "fey_glamour", "carried": true,
+                      "line": "The cold iron you carry bites, and the glamour of {the} falls away.",
+                      "card": "Carried, the Fair Folk's glamour slides off you: no fairy charm, confusion, sleep or visions."}
+    },
+    "stop_ears": {
+      "in": "You knead the wax soft and press it into your ears. The world goes quiet, as it did for Odysseus's crew.",
+      "out": "You pull the wax from your ears. The dungeon's noises rush back in.",
+      "chip": "Ears Stopped",
+      "unheard": "Your ears are stopped: you hear nothing of what is on this floor."
+    }
+  }
+}

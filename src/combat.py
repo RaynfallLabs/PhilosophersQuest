@@ -951,6 +951,16 @@ def _substances_of(weapon, blessed: bool | None = None) -> list:
         blessed = getattr(weapon, 'buc', 'uncursed') == 'blessed'
     if blessed and 'holy' not in (getattr(weapon, 'damage_types', None) or []):
         out.append('holy')
+    # A coating worked into it (coatings.py: silver dust, holy water, fire
+    # oil, frost salts, venom), until its blows are spent: silver dust on a
+    # steel mace strikes a werewolf as silver.
+    try:
+        import coatings as _coatings
+        coat = _coatings.coat_substance(weapon)
+    except ImportError:
+        coat = None
+    if coat and coat not in out and coat not in (getattr(weapon, 'damage_types', None) or []):
+        out.append(coat)
     return out
 
 
@@ -1548,6 +1558,13 @@ def strike_damage(player, monster, chain: int, *, ranged: bool = False, ammo=Non
         mult *= 1.0 + _ench.might(player, 'archery' if is_ranged else 'striking')
     except ImportError:
         pass
+    # Press or Guard (stance.py, data/arsenal.json): Press hits harder and
+    # opens the guard, Guard the reverse (Player.get_ac takes the AC side).
+    try:
+        import stance as _stance
+        mult *= _stance.damage_mult(player)
+    except ImportError:
+        pass
     damage = max(1, round((base + enchant + ammo_bonus + buc_bonus) * mult * dtype_mult * str_factor * low_hp_mult))
 
     # Empower spell: 3x damage on next hit, then clears
@@ -1919,6 +1936,15 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None,
             actual=actual,
         )
         _chain_aoe_hits = _chain_special_result.get('aoe_hits', [])
+
+        # A coating on the blade (coatings.py): its rider (venom, frost,
+        # fire), fire's fright, and one of its blows spent. Its lines are
+        # said at the end of the action (Game._say_arsenal_lines).
+        try:
+            import coatings as _coatings
+            _coatings.after_blow(player, monster, weapon, actual)
+        except ImportError:
+            pass
 
         # Monster family knowledge on a blow that landed (src/family_edges.py
         # after_blow): stop its regeneration, execute a lesser foe, turn or

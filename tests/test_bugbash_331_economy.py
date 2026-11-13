@@ -118,8 +118,13 @@ def test_a_traders_price_never_names_a_curse_ring(level):
     """C8: unknown rings cost 1,050-2,650 on floor 10 and a curse ring 105,
     so the tag told the hero which ring was a curse (the leak shop_worth_floor
     closed for potions, scrolls and wands in 2026-10). No ware sells for less
-    than the hero is offered for it unknown."""
-    accs = items.load_items('accessory')
+    than the hero is offered for it unknown.
+
+    A thing known by sight (the beeswax earplugs and the cold-iron charm,
+    slice 5: id_level 5 in the data) has no secret for its price to tell,
+    and is priced as what it is (data/item_worth.json share_by_id)."""
+    accs = [a for a in items.load_items('accessory')
+            if not (a.slot == 'none' and int(getattr(a, 'id_level', 0) or 0) >= 5)]
     common = [a for a in accs if economy.item_worth(a) == 1.0 and not getattr(a, 'is_unique', False)]
     for a in accs:
         if getattr(a, 'is_unique', False):

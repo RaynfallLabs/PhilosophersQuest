@@ -3284,5 +3284,66 @@
     "floorSpawnWeight": {
       "1-100": 8
     }
+  },
+  "beeswax_earplugs": {
+    "name": "Beeswax Earplugs",
+    "symbol": "&",
+    "color": [
+      235,
+      196,
+      90
+    ],
+    "weight": 0.1,
+    "min_level": 2,
+    "slot": "none",
+    "equip_threshold": 1,
+    "quiz_tier": 1,
+    "effects": {},
+    "identified": true,
+    "id_level": 5,
+    "can_be_cursed": false,
+    "counters": [
+      "voice"
+    ],
+    "unidentified_name": "two plugs of beeswax",
+    "lore": "When Odysseus sailed past the Sirens, he softened beeswax in the sun and stopped his crew's ears with it, so they rowed on deaf while he, tied to the mast, heard the song that kills. Two plugs of yellow wax in a twist of cloth. Put in, no wail, song or scream can reach your mind; but you hear nothing else either, not a war-band's horn or a dog's warning growl.",
+    "floorSpawnWeight": {
+      "1-20": 2,
+      "21-40": 2,
+      "41-60": 1,
+      "61-80": 1,
+      "81-100": 1
+    },
+    "is_unique": false
+  },
+  "cold_iron_charm": {
+    "name": "Cold-Iron Charm",
+    "symbol": "&",
+    "color": [
+      120,
+      124,
+      132
+    ],
+    "weight": 0.5,
+    "min_level": 1,
+    "slot": "none",
+    "equip_threshold": 1,
+    "quiz_tier": 1,
+    "effects": {},
+    "identified": true,
+    "id_level": 5,
+    "can_be_cursed": false,
+    "counters": [
+      "fey_glamour"
+    ],
+    "unidentified_name": "an iron nail on a red thread",
+    "lore": "A horseshoe nail of cold iron, hammered and never heated, hung on a red thread. Country people all over Britain and Ireland nailed a horseshoe over the door and laid an iron knife in the cradle, because the Fair Folk cannot abide cold iron. Carried, it makes their charms, their confusions, their sleeps and their visions slide off you.",
+    "floorSpawnWeight": {
+      "1-20": 2,
+      "21-40": 2,
+      "41-60": 1,
+      "61-80": 1
+    },
+    "is_unique": false
   }
 }

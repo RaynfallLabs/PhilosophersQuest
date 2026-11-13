@@ -788,6 +788,24 @@ hero may still choose to give it. `"throwable": false` (the Draught alone;
 thieves may still steal it and give it back when they die. The Draught and
 the six Soul Spheres have Encyclopedia pages under **Wonders** (B, l).
 
+### Flask (`data/items/flask.json`, class `Flask`; rules in `src/coatings.py`)
+
+Coatings and thrown flasks (winning-build plan 3.5, slice 5). Known by
+sight (id_level 5, no identify question), stackable, never cursed. A
+`coat` block (`substance`, `blows`, optional `rider`) puts it on the weapon
+in the hand (Shift+C, Kit Apply: one turn, no quiz); a `throw` block
+(`damage_type`, `damage`, `sized_at`, optional `only_weak`, `status`) throws
+it for typed damage (T, the Flasks tab). Some do both (holy water, fire oil).
+The foraged `holy_water` ingredient is an alias of the Flask of Holy Water
+(`data/arsenal.json coating.aliases`). Floor loot: `dungeon.FLASK_ROOM_CHANCE`
+a loot room, by each kind's floor band; traders: Mother Wort and the sutler
+always keep one, Grindle sometimes; the stall counters (economy.md) set them
+out for what walks below. Not in chests (the potion pick is left as it was).
+
+Any item may carry `counters` (a list of technique ids, `src/counters.py`):
+the techniques it blocks outright while worn, or carried where the technique
+says so. See armour.md section 6b.
+
 ### Treasure (`data/items/treasure.json`, class `Treasure`; rules in `src/treasure.py`)
 
 Gems, jewellery, old coin and art objects (17 kinds), with real weights and

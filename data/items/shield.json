@@ -67,7 +67,10 @@
         "passive_reflect_spell": 20,
         "passive_gorgoneion_petrify_on_hit": true
       }
-    }
+    },
+    "counters": [
+      "gaze"
+    ]
   },
   "pridwen": {
     "name": "Pridwen",
@@ -285,7 +288,10 @@
     "_meta": {
       "spawn_method": "medusa_quest_athena_altar"
     },
-    "special": "A gaze meant for you freezes the one who looked."
+    "special": "A gaze meant for you freezes the one who looked.",
+    "counters": [
+      "gaze"
+    ]
   },
   "lionheart_shield": {
     "name": "Lionheart Shield",
