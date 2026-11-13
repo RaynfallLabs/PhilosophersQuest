@@ -613,3 +613,21 @@ def test_the_bestiary_page_at_known_shows_shrugs_off_and_its_nature(game):
     assert 'Shrugs Off: Slash, Pierce' in known
     assert any(t.startswith('Immune To:') and 'Paralysis' in t for t in known)
     assert any(t.startswith('Weak to:') for t in known) and any(t.startswith('Resists:') for t in known)
+
+
+def test_kit_sense_names_the_arsenals_coatings_and_flasks():
+    """Slice 5's provider in kit_sense (arsenal_tools): silver dust on the
+    iron longsword meets a skeleton better than the bare blade does, and a
+    thrown flask of holy water better still."""
+    p = _hunter()
+    dust = items.make_item_by_id('flask', 'silver_dust')
+    p.inventory = [dust]
+    sk = _m('skeleton')
+    tool, _gain = kit_sense.advise(p, sk)
+    assert tool.kind == 'coating' and tool.item is dust
+    assert 'blade' in kit_sense.line(tool, sk, rng=random.Random(1)) or tool.name in         kit_sense.line(tool, sk, rng=random.Random(1))
+    # Holy water both coats and throws: alone in the pack it is still named.
+    water = items.make_item_by_id('flask', 'flask_of_holy_water')
+    p.inventory = [water]
+    tool, _gain = kit_sense.advise(p, sk)
+    assert tool.item is water and tool.kind in ('coating', 'flask')

@@ -141,6 +141,31 @@ def weapon_tools(player, monster) -> list:
     return out
 
 
+@provider
+def arsenal_tools(player, monster) -> list:
+    """The arsenal's coatings and thrown flasks (slice 5,
+    coatings.kit_sense_tools): a coating as the blow the weapon in hand
+    would strike with it on, a flask as the weak step it meets."""
+    try:
+        import affinity
+        import coatings
+        import combat
+    except Exception:
+        return []
+    weapon = getattr(player, 'weapon', None)
+    out = []
+    for it, why in coatings.kit_sense_tools(player, monster):
+        if why == 'coat' and weapon is not None:
+            spec = coatings.coat_spec(it) or {}
+            probe = coatings._Bare(weapon)
+            probe.__dict__['coating'] = {'substance': spec.get('substance'), 'blows': 1}
+            f, s = combat.weapon_type_multiplier(probe, monster)
+            out.append(Tool('coating', it, _name(player, it), affinity.capped(f * s)))
+        elif why == 'throw':
+            out.append(Tool('flask', it, _name(player, it), affinity.weak_step()))
+    return out
+
+
 # ---------------------------------------------------------------------------
 # What to say
 # ---------------------------------------------------------------------------

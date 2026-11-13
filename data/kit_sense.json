@@ -9,6 +9,16 @@
       "Your {tool} would bite deeper into {the}.",
       "A hunter would reach for the {tool} now."
     ],
+    "coating": [
+      "Your {tool} on the blade would serve here.",
+      "Work your {tool} into the edge before {the} closes.",
+      "A hunter would coat his weapon with the {tool} now."
+    ],
+    "flask": [
+      "Your {tool} would serve here.",
+      "Throw your {tool} at {the}.",
+      "A hunter would reach for the {tool} now."
+    ],
     "default": [
       "Your {tool} would serve here."
     ]
@@ -18,6 +28,12 @@
       "Your {tool} would serve against these.",
       "This is work for your {tool}.",
       "A hunter would meet these with the {tool}."
+    ],
+    "coating": [
+      "Your {tool} on the blade would serve against these."
+    ],
+    "flask": [
+      "Your {tool} would serve against these."
     ],
     "default": [
       "Your {tool} would serve against these."
