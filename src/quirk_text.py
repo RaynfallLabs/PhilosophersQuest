@@ -20,7 +20,8 @@ entry in both tables and that no hint quotes its own threshold.
 # What each stat does, appended to rewards that raise it.
 _STR = "Strength raises how much you can carry."
 _CON = "Constitution is 3 health a point and blunts every blow."
-_DEX = "Dexterity helps your armor a little and, past that, lets you slip blows."
+_DEX = ("Dexterity adds to your armor and lets you slip blows: fully in light "
+        "armor, half as much in medium, not at all in heavy.")
 _INT = "Intelligence raises your maximum MP."
 _WIS = "Every point of Wisdom is a second on the combat clock."
 _PER = "Perception widens how far you can see."

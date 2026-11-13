@@ -21,8 +21,17 @@
     200
   ],
   "armor_ac_bonus": 1,
-  "resistances": [],
-  "weaknesses": [],
+  "protection": {
+    "slash": 0.9,
+    "lightning": 1.25
+  },
+  "protection_words": {
+    "slash": "an edge skids along the grain",
+    "lightning": "conducts lightning"
+  },
+  "metal": true,
+  "protection_note": "Pattern-welded steel, folded and folded again.",
+  "protection_price": "It conducts lightning, and it rusts.",
   "vulnerabilities": [],
   "effective_against": [],
   "special_properties": [

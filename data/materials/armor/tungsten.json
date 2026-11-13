@@ -21,10 +21,19 @@
     120
   ],
   "armor_ac_bonus": 1,
-  "resistances": [
-    "blunt"
-  ],
-  "weaknesses": [],
+  "protection": {
+    "blunt": 0.85,
+    "magic": 0.9,
+    "lightning": 1.25
+  },
+  "protection_words": {
+    "blunt": "takes a hammer",
+    "magic": "dulls a spell",
+    "lightning": "conducts lightning"
+  },
+  "metal": true,
+  "protection_note": "The densest metal there is: a hammer barely dents it.",
+  "protection_price": "It is half again as heavy as steel, and it conducts lightning.",
   "vulnerabilities": [],
   "effective_against": [],
   "special_properties": [

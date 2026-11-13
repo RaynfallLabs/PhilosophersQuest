@@ -194,7 +194,7 @@ HUD log line fired when a timed effect expires. Message types: `'info'`, `'succe
 
 ### Material categorization (gear damage from rust, acid and fire)
 
-What wear can touch is read from the item's **material file** (`data/materials/armor` or `weapons`, via `status_effects.material_wear`): its `material_class` and its own `resistances` (fire, corrosion, rust). Winning-build slice 2 (2026-11-13); before it, hand-kept name sets were the whole rule and missed canvas, cured / boiled / studded leather, spider silk, elven silk, oak and ash (all treated as rustable metal).
+What wear can touch is read from the item's **material file** (`data/materials/armor` or `weapons`, via `status_effects.material_wear`): its `material_class` and what it resists: a weapon material's `resistances` (fire, corrosion, rust), an armour material's `protection` under x1 (since slice 4, which replaced the armour files' lists: dragonhide sheds fire, so it does not scorch), `corrosion_immune` and `fire_resistant` among its `special_properties`. The wear each armour material can take was checked unchanged by that move. Winning-build slice 2 (2026-11-13); before it, hand-kept name sets were the whole rule and missed canvas, cured / boiled / studded leather, spider silk, elven silk, oak and ash (all treated as rustable metal).
 
 | Wear | Touches | Never |
 |---|---|---|

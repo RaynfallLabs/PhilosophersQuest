@@ -19,10 +19,17 @@
     35
   ],
   "armor_ac_bonus": 1,
-  "resistances": [],
-  "weaknesses": [
-    "fire"
-  ],
+  "protection": {
+    "slash": 0.9,
+    "fire": 1.25
+  },
+  "protection_words": {
+    "slash": "boiled hard against an edge",
+    "fire": "catches fire"
+  },
+  "metal": false,
+  "protection_note": "Cuir bouilli: leather boiled in wax and shaped hard, so an edge skids on it.",
+  "protection_price": "Catches fire, and fire scorches it.",
   "vulnerabilities": [],
   "effective_against": [],
   "special_properties": [

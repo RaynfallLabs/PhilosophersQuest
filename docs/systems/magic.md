@@ -72,8 +72,12 @@ _(from `game_magic.py::_start_spell_quiz`, lines ~1270-1282.)_
 
 ### MP is deducted **before** the quiz
 
-`_invoke_spell` subtracts `spell['mp_cost']` from `self.player.mp` **before**
-the quiz starts (whether the spell needs targeting or not). The quiz
+`_invoke_spell` subtracts the spell's cost from `self.player.mp` **before**
+the quiz starts (whether the spell needs targeting or not). The cost is
+`Player.spell_mp_cost(spell['mp_cost'])`: a Ring of Wizardry's cut, then the
+body armour's tax in metal (x1.5 medium, x2 heavy; mithril, orichalcum and
+godweave cast freely: armour.md section 1c, `gear.casting_mult`). The spell
+menu shows the same number, with "(x2 in metal armour)". The quiz
 callback (`on_complete`) therefore sees the MP as already gone:
 
 ```python

@@ -1662,6 +1662,14 @@ class Monster:
                 return (f" Your {item_bare_name(player, piece)} turns the "
                         f"{effect_id.replace('_', ' ')} aside.")
             return ''
+        # What the body armour's material stops outright (gear.ward_against,
+        # data/gear_rules.json wards): cold iron turns the fair folk's
+        # glamour, dragonscale will not catch fire. Told, so a kid who
+        # chose the iron sees it work.
+        import gear as _ap
+        _ward = _ap.ward_against(player, self, effect_id)
+        if _ward is not None:
+            return " " + _ap.ward_line(player, _ward[0], _ward[1])
         if effect_id == 'rust':
             # A rust monster's feelers (no saving throw: one brush and good
             # steel flakes to red dust). The one rust rule:

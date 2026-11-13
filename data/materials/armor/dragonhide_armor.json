@@ -19,11 +19,20 @@
     60
   ],
   "armor_ac_bonus": 2,
-  "resistances": [
-    "fire",
-    "cold"
+  "protection": {
+    "fire": 0.7,
+    "cold": 1.15
+  },
+  "protection_words": {
+    "fire": "sheds flame",
+    "cold": "stiffens in the cold"
+  },
+  "metal": false,
+  "wards": [
+    "flame"
   ],
-  "weaknesses": [],
+  "protection_note": "A true dragon's hide, tanned: flame runs off it and it will not catch.",
+  "protection_price": "It stiffens in the cold, as a dragon slows in winter.",
   "vulnerabilities": [],
   "effective_against": [],
   "special_properties": [

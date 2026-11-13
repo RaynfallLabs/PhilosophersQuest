@@ -19,11 +19,19 @@
     150
   ],
   "armor_ac_bonus": 1,
-  "resistances": [
-    "fire",
-    "cold"
-  ],
-  "weaknesses": [],
+  "protection": {
+    "fire": 0.85,
+    "cold": 0.9,
+    "acid": 1.15
+  },
+  "protection_words": {
+    "fire": "sheds flame",
+    "cold": "keeps out the cold",
+    "acid": "acid eats a hide"
+  },
+  "metal": false,
+  "protection_note": "A lesser drake's skin keeps some of its owner's scorn for fire and frost.",
+  "protection_price": "Acid eats a hide.",
   "vulnerabilities": [],
   "effective_against": [],
   "special_properties": [

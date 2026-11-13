@@ -17,5 +17,14 @@
     "rare_metal",
     "magical_metal"
   ],
-  "lore_template": "A short shirt of {material_name} rings, each one linked through four others and riveted shut. It rattles at every step, and a sword edge that should have ended matters slides off instead."
+  "lore_template": "A short shirt of {material_name} rings, each one linked through four others and riveted shut. It rattles at every step, and a sword edge that should have ended matters slides off instead.",
+  "forms": {
+    "slash": 0.75,
+    "pierce": 1.15
+  },
+  "forms_words": {
+    "slash": "turns an edge",
+    "pierce": "parts under a point"
+  },
+  "forms_note": "Rings stop a cut but part under a point: a spear or a bodkin arrow finds the gaps."
 }

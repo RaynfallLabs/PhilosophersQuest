@@ -36,7 +36,8 @@
     "is_unique": true,
     "unskinnable": true,
     "special": "Halves every cut, stab and blow, on top of its resistances.",
-    "ench_level": 10
+    "ench_level": 10,
+    "metal": false
   },
   "carapace_of_the_hydra": {
     "name": "Carapace of the Hydra",
@@ -78,7 +79,8 @@
     "is_unique": true,
     "caustic_blood": 0.4,
     "special": "A monster that poisons you has a 40% chance of being poisoned itself.",
-    "ench_level": 10
+    "ench_level": 10,
+    "metal": false
   },
   "panoply_of_hephaestus": {
     "name": "Panoply of Hephaestus",
@@ -120,7 +122,8 @@
     "is_unique": true,
     "divine_smithing": 1,
     "special": "While it is worn, your weapon can be enchanted one step higher.",
-    "ench_level": 10
+    "ench_level": 10,
+    "metal": true
   },
   "dragon_mail_of_sigurd": {
     "name": "Dragon-Sewn Mail of Sigurd",
@@ -197,7 +200,8 @@
         "status_fire_resist": 999,
         "passive_dragon_blood_bath": true
       }
-    }
+    },
+    "metal": false
   },
   "breastplate_of_joan": {
     "name": "Breastplate of Joan of Arc",
@@ -239,7 +243,8 @@
     "container_loot_tier": "rare",
     "maid_does_not_fall": true,
     "special": "Once a floor, a blow that would kill you leaves you at 1 health. Blessed while worn.",
-    "ench_level": 10
+    "ench_level": 10,
+    "metal": true
   },
   "lorica_hamata_of_caesar": {
     "name": "Lorica of Caesar",
@@ -280,7 +285,8 @@
     "is_unique": true,
     "et_tu_charge": true,
     "special": "The first monster to wound you is marked: you deal half again as much damage to it.",
-    "ench_level": 8
+    "ench_level": 8,
+    "metal": true
   },
   "orichalcum_breastplate": {
     "name": "Orichalcum Breastplate",
@@ -322,7 +328,8 @@
     "is_unique": true,
     "atlantean_resonance": 30,
     "special": "Now and then it hums, and for that moment you are Shielded.",
-    "ench_level": 10
+    "ench_level": 10,
+    "metal": true
   },
   "helm_of_hades": {
     "name": "Helm of Darkness",
@@ -904,7 +911,8 @@
     "is_unique": true,
     "guerrilla_terrain": true,
     "special": "Armor improves by 2 in a corridor or with your back in a corner.",
-    "ench_level": 8
+    "ench_level": 8,
+    "metal": true
   },
   "cuirass_of_hannibal": {
     "name": "Cuirass of Hannibal",
@@ -946,7 +954,8 @@
     "is_unique": true,
     "cannae_encirclement": true,
     "special": "With three or more enemies beside you, armor improves by 2 and your blows land harder.",
-    "ench_level": 10
+    "ench_level": 10,
+    "metal": true
   },
   "aegishjalmr": {
     "name": "Aegishjalmr",
@@ -1286,7 +1295,8 @@
     "id_level": 0,
     "weave_and_unweave": true,
     "special": "You regenerate while it is worn, and faster when badly hurt.",
-    "ench_level": 2
+    "ench_level": 2,
+    "metal": false
   },
   "bracers_of_cu_chulainn": {
     "name": "Bracers of Cu Chulainn",
@@ -1416,7 +1426,8 @@
     "identified": false,
     "id_level": 0,
     "special": "Below a quarter health the frenzy takes you: +3 Strength for 10 turns, at 1 health a turn.",
-    "ench_level": 8
+    "ench_level": 8,
+    "metal": false
   },
   "babr_e_bayan": {
     "name": "Babr-e Bayan",
@@ -1458,7 +1469,8 @@
     "identified": false,
     "id_level": 0,
     "special": "Soaks up the first blow that lands on each floor.",
-    "ench_level": 10
+    "ench_level": 10,
+    "metal": false
   },
   "tarnhelm": {
     "name": "Tarnhelm",
@@ -1536,7 +1548,8 @@
     "container_loot_tier": "rare",
     "phalanx_recovery": 2,
     "special": "Standing on an altar heals 2 health a turn.",
-    "ench_level": 4
+    "ench_level": 4,
+    "metal": false
   },
   "coif_of_beowulf": {
     "name": "Coif of Beowulf",
@@ -1691,7 +1704,8 @@
     "water_tile_ac_bonus": 2,
     "water_tile_regen_bonus": 1,
     "special": "Beside water or a fountain, armor improves by 2 and you heal 1 health a turn.",
-    "ench_level": 6
+    "ench_level": 6,
+    "metal": true
   },
   "helm_of_gilgamesh": {
     "name": "Helm of Gilgamesh",
@@ -2078,7 +2092,8 @@
     "container_loot_tier": "rare",
     "descent_haste": 5,
     "special": "Hasted for 5 turns each time you go down a stair. Blessed while worn.",
-    "ench_level": 10
+    "ench_level": 10,
+    "metal": true
   },
   "boots_of_thor": {
     "name": "Iron Boots of Thor",
@@ -2348,7 +2363,8 @@
         "passive_first_hit_absorb": true,
         "passive_doom_of_the_gods": true
       }
-    }
+    },
+    "metal": true
   },
   "crown_of_brahma": {
     "name": "Crown of Brahma",
@@ -3235,7 +3251,8 @@
     "max_enchant": 2,
     "peak_weight": 0.0,
     "spread": 12,
-    "ench_level": 10
+    "ench_level": 10,
+    "metal": false
   },
   "green_girdle": {
     "name": "The Green Girdle",

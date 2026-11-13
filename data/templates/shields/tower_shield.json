@@ -20,5 +20,12 @@
     "magical_metal",
     "dragon_material"
   ],
-  "lore_template": "A full-length {material_name} shield, curved to wrap its bearer from chin to shin. The legions called the pattern a scutum and conquered an empire behind it. It is slow to carry and slower to get past."
+  "lore_template": "A full-length {material_name} shield, curved to wrap its bearer from chin to shin. The legions called the pattern a scutum and conquered an empire behind it. It is slow to carry and slower to get past.",
+  "forms": {
+    "pierce": 0.9
+  },
+  "forms_words": {
+    "pierce": "a wall to hide behind"
+  },
+  "forms_note": "A shield as tall as a man: the Roman tortoise walked under a hail of arrows."
 }

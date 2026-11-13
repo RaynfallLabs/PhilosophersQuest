@@ -260,7 +260,7 @@ conditions in `data/traders.json`. No karma: it is the market, not God.
 |---|---|
 | `tools/balance/gold_sim.py` | The measured gold curve, floor by floor and source by source (wraps `difficulty_sim`); since 2026-10-18 also the treasure a floor pays (`t_value`, `t_weight`, by kind) and `wealth` (coin + treasure). |
 | `tools/balance/purse_model.py` | The purse under hoarder / sensible / whale spending, with the real trader plan, stock, services and selling. It ignores weight: read it as "what was found", and weight_model.py as "what could be carried". |
-| `tools/balance/weight_model.py` | What a careful hero CAN CARRY at each depth: coin under the Burdened line, gems and jewellery, art; the coin left behind; how often the dearest ware on a trader's table was within reach of coin plus treasure. |
+| `tools/balance/weight_model.py` | What a careful hero CAN CARRY at each depth: coin under the Stressed line (75% of the limit; it was the Burdened line until 2026-11-13, when Burdened moved to 50%: armour.md section 1c), gems and jewellery, art; the coin left behind; how often the dearest ware on a trader's table was within reach of coin plus treasure. |
 | `tools/balance/gold_by_lore.py` | Writes every creature's purse into `data/monsters.json` (`--report` to preview), and its treasure chance and kinds. Re-run after adding monsters. |
 | `py -m tools.encounters.validate --all --budget` | Checks `share` / `service` gold costs, `purse_pct`, `service` rewards, and the karma budget. |
 
@@ -278,9 +278,10 @@ Rules in `src/treasure.py` (pure) and `src/game_purse.py` (the Game side).
 - **A gold piece weighs a tenth of an ounce**: 160 to the pound
   (`treasure.COINS_PER_LB`). `Game.player_gold` mirrors the count onto
   `Player.purse_coins`, so the purse counts in `get_current_weight` with
-  Burdened and the limit exactly as for any item. 16,000 gold is a full
-  pack at STR 10; a fresh hero has room for about 13,900 coins, 10,000
-  before he is Burdened.
+  Burdened, Stressed and the limit exactly as for any item. 16,000 gold is
+  a full pack at STR 10; a fresh hero has room for about 13,900 coins,
+  about 5,900 before he is Burdened (half the limit) and 9,900 before he is
+  Stressed (three quarters).
 - **Receiving gold** (`_gain_gold`): he keeps what he can carry. Found gold
   (a grave, a throne, a cache) that will not fit is set down at his feet as
   his own pile, booked once in Gold Earned. A PERSON paying him (a trader
@@ -443,7 +444,8 @@ Encyclopedia page is under Wonders ([items](items.md) §potions).
 | 90-99 | 7,312 | 6,857 | 5,559 | 0.76 |
 
 `weight_model.py` (120 runs; a careful hero, STR 10 rising to 18, a 40-60
-lb kit, never Burdened), medians:
+lb kit, never over three quarters of the limit: Stressed since 2026-11-13,
+Burdened when this was measured), medians:
 
 | Floor | Room for wealth | Coin carried | Gems and jewellery | Wealth (floors of income) | Coin left behind (all run) | Dearest ware within reach |
 |---|---|---|---|---|---|---|

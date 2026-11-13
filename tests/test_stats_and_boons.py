@@ -134,15 +134,31 @@ def test_a_whole_run_of_cooking_is_about_fifty_points_and_one_speciality():
     assert 45 <= total <= 50
 
 
-def test_dexterity_gives_three_points_of_armor_at_most():
+def test_dexterity_gives_armor_by_the_body_armours_weight_class():
+    """Rewritten 2026-11-13 (winning-build plan 3.3, slice 4): Dexterity was
+    worth at most 3 points of armor in anything, plate included. Now the
+    body armour decides: 6 in light armour or none, 3 in medium, 0 in heavy.
+    A clumsy hero's minus still counts."""
+    import items
     p = Player()
     naked = p.get_ac()
     p.DEX = 16
     assert p.get_ac() == naked - 3
     p.DEX = 40
-    assert p.get_ac() == naked - p.DEX_AC_CAP == naked - 3
+    assert p.dex_ac_cap() == 6
+    assert p.get_ac() == naked - 6
     p.DEX = 6
     assert p.get_ac() == naked + 2
+    p.DEX = 40
+    p._apply_equip(items.instantiate_armor('chain_shirt', 'chain_steel'))
+    assert p.dex_ac_cap() == 3
+    q = Player()
+    q.DEX = 40
+    q._apply_equip(items.instantiate_armor('plate', 'chain_steel'))
+    assert q.dex_ac_cap() == 0
+    assert q.get_ac() == 10 - 7
+    q.DEX = 6
+    assert q.get_ac() == 10 - 7 + 2
 
 
 # ------------------------------------------------------------ gate-boss gifts

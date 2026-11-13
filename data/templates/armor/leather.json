@@ -17,5 +17,14 @@
     "leather",
     "hide"
   ],
-  "lore_template": "A cuirass of {material_name}, hardened and shaped over a wooden form. It is light enough to run in and tough enough to turn the tip of a dagger."
+  "lore_template": "A cuirass of {material_name}, hardened and shaped over a wooden form. It is light enough to run in and tough enough to turn the tip of a dagger.",
+  "forms": {
+    "slash": 0.9,
+    "blunt": 0.85
+  },
+  "forms_words": {
+    "slash": "slows an edge",
+    "blunt": "takes the sting from a blow"
+  },
+  "forms_note": "Thick leather slows an edge and takes the sting from a blow; a point goes straight in."
 }

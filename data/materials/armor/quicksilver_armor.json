@@ -19,8 +19,21 @@
     230
   ],
   "armor_ac_bonus": 1,
-  "resistances": [],
-  "weaknesses": [],
+  "protection": {
+    "slash": 0.9,
+    "pierce": 0.9,
+    "fire": 1.25,
+    "lightning": 1.25
+  },
+  "protection_words": {
+    "slash": "flows round an edge",
+    "pierce": "flows round a point",
+    "fire": "boils in fire",
+    "lightning": "conducts lightning"
+  },
+  "metal": true,
+  "protection_note": "Living metal that flows like water: an edge or a point slides in and out again.",
+  "protection_price": "It boils in fire, and it conducts lightning.",
   "vulnerabilities": [
     "fire"
   ],

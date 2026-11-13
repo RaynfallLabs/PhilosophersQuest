@@ -20,6 +20,7 @@ import layout
 from ui_scale import px as S
 from renderer import TILE_SIZE
 from geom import any_tile_in_set
+import gear
 import unseen
 import ui_theme
 import lore_art
@@ -1460,6 +1461,15 @@ class RenderMixin:
             res = getattr(detail_item, 'damage_resistances', None) or {}
             if res:
                 meta_rows.append(("Resists", ", ".join(f"{_cap(k)} x{v}" for k, v in res.items())))
+            # A common body armour's forms and elements, and any body
+            # armour's weight class (gear.protection_line, weight_line).
+            import gear as _ap_c
+            _pl = _ap_c.protection_line(detail_item)
+            if _pl:
+                meta_rows.append(("Protects", _pl))
+            _wl = _ap_c.weight_line(detail_item)
+            if _wl:
+                meta_rows.append(("Wear", _wl))
         lab_w = max(f16.size(lbl)[0] for lbl, _v in meta_rows) + S(14)
         for label, value in meta_rows:
             vlines = self._wrap_text(str(value), f16b, body.w - lab_w - S(8)) or ['']
@@ -1776,12 +1786,19 @@ class RenderMixin:
             y += ((len(meta_rows[:6]) + 1) // 2) * S(28) + S(10)
 
             res = getattr(detail_item, 'damage_resistances', None) or {}
-            if visible >= 3 and res:
-                r = pygame.Rect(body.x, y, body.w, S(42))
+            # A common body armour's forms and elements, and any body
+            # armour's weight class (gear.card_lines), in the same card.
+            import gear as _ap_p
+            _ap_lines = _ap_p.card_lines(detail_item)
+            _res_text = "; ".join(
+                ([", ".join(f"{k.title()} x{v}" for k, v in res.items())] if res else [])
+                + _ap_lines)
+            if visible >= 3 and _res_text:
+                r = pygame.Rect(body.x, y, body.w, S(70) if _ap_lines else S(42))
                 if not (kit and ui_theme.draw_piece(screen, 'card', r, body_color=KT.RAISED)):
                     pygame.draw.rect(screen, FP.MIDNIGHT, r, border_radius=5)
                 text("Resist", font_tiny, FP.FADED_TEXT, r.x + S(7), r.y + S(6))
-                wrapped(", ".join(f"{k.title()} x{v}" for k, v in res.items()),
+                wrapped(_res_text,
                         font_small, FP.BODY_TEXT,
                         pygame.Rect(r.x + S(78), r.y + S(6), r.w - S(86), r.h - S(8)),
                         line_h=14)
@@ -5475,6 +5492,10 @@ class RenderMixin:
                 lines.append((st, FP.BODY_TEXT, self.font_sm))
             if extra:
                 lines.append((f"{extra_label}: {extra}", FP.BODY_TEXT, self.font_sm))
+            # What a common body armour's build and material do to a blow,
+            # and what any body armour's weight class costs (gear.card_lines).
+            for _apl in gear.card_lines(item):
+                lines.append((_apl, FP.CYAN_ACCENT, self.font_sm))
         else:
             lines.append(("Stats remain hidden until you identify it.",
                           FP.FADED_TEXT, self.font_sm))
@@ -5999,10 +6020,13 @@ class RenderMixin:
         return ', '.join(bits) if bits else '-'
 
     def _kit_resist_str(self, a) -> str:
-        r = getattr(a, 'damage_resistances', None) or {}
+        # A named piece's own resistances; a common body armour's (or tower
+        # shield's) template forms and material elements (gear.piece_profile),
+        # so the Kit's column compares them at a glance.
+        r = gear.piece_profile(a) or {}
         if not r:
             return '-'
-        return ', '.join(f"{k} {int(v*100)}%" for k, v in r.items() if v)
+        return ', '.join(f"{k} {round(v * 100)}%" for k, v in r.items() if v and abs(v - 1.0) > 1e-9) or '-'
 
     def _kit_accessory_effect(self, a) -> str:
         # A ring or amulet kind (rings.py): its kind and tier say it all.
@@ -6439,9 +6463,18 @@ class RenderMixin:
 
     def _draw_spell_menu(self):
         entries = []
+        # What the body armour does to a spell's cost (gear.casting_mult): said
+        # once on every row, so the number that is charged is the one shown.
+        import gear as _ap_sp
+        _tax = _ap_sp.casting_mult(self.player)
+        _tax_note = f" (x{_tax:g} in metal armour)" if _tax > 1.0 else ""
         for i, spell_id in enumerate(self.spell_menu_items):
             spell = LEARNABLE_SPELLS.get(spell_id, {})
             mp_cost = spell.get('mp_cost', '?')
+            try:
+                mp_cost = self.player.spell_mp_cost(int(mp_cost))
+            except (TypeError, ValueError):
+                pass
             try:
                 can_cast = self.player.mp >= int(mp_cost)
             except (TypeError, ValueError):
@@ -6465,10 +6498,10 @@ class RenderMixin:
                      if spell.get('needs_target') else "")
             entries.append({
                 'name': spell.get('name', '?'),
-                'detail': f"Tier {tier} | {mp_cost} MP{reach} | {spell.get('desc', '')}",
+                'detail': f"Tier {tier} | {mp_cost} MP{_tax_note}{reach} | {spell.get('desc', '')}",
                 # Intelligence lengthens effects (and widens Light); it never
                 # lengthened how far an aimed spell goes, as this once said.
-                'full_detail': (f"Tier {tier} | {mp_cost} MP{reach} | {spell.get('desc', '')}   "
+                'full_detail': (f"Tier {tier} | {mp_cost} MP{_tax_note}{reach} | {spell.get('desc', '')}   "
                                 "(Effects last longer with Intelligence.)"),
                 'key': self._menu_letter(i),
                 'icon': _SpellIcon(spellbook_id, tier_color),
@@ -8684,6 +8717,11 @@ class RenderMixin:
             if getattr(item, 'damage_resistances', None):
                 lines.append((f"Resists: {self._kit_resist_str(item)}",
                               FP.CYAN_ACCENT, self.font_sm))
+            # A common body armour's forms and elements, and any body
+            # armour's weight class (gear.card_lines).
+            import gear as _ap_l
+            for _apl in _ap_l.card_lines(item):
+                lines.append((_apl, FP.CYAN_ACCENT, self.font_sm))
             import guards as _guards
             import enchantments as _ench_l
             _known = self._lore_enchant_text(item) != '?'
@@ -8706,6 +8744,10 @@ class RenderMixin:
             if getattr(item, 'damage_resistances', None):
                 lines.append((f"Resists: {self._kit_resist_str(item)}",
                               FP.CYAN_ACCENT, self.font_sm))
+            import gear as _ap_s
+            _sl = _ap_s.protection_line(item)
+            if _sl:
+                lines.append((_sl, FP.CYAN_ACCENT, self.font_sm))
 
         elif isinstance(item, Accessory):
             lines += [

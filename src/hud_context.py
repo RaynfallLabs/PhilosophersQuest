@@ -144,15 +144,18 @@ def cooking_lesson_line(player, fits=None) -> tuple[str, str]:
     return text, ('full' if used else 'open')
 
 
-def load_number(weight: float, limit: float, share: float = 0.75) -> str:
+def load_number(weight: float, limit: float, share=(0.5, 0.75)) -> str:
     """The carried weight as the readout shows it ("43" in "Carrying 43 /
     100"), never disagreeing with the state beside it. A whole number
-    normally; one decimal when rounding would cross a line: 75.4 of 100 is
-    Burdened (over 75) but rounded to "75"; 100.3 is Over Limit but read
-    "100". Pure, shared by the sidebar, sheet, Kit and menus."""
+    normally; one decimal when rounding would cross a line: 50.4 of 100 is
+    Burdened (over 50) but rounded to "50"; 100.3 is Over Limit but read
+    "100". `share`: the share (or shares: Burdened, Stressed) of the limit
+    where the state changes. Pure, shared by the sidebar, sheet, Kit and
+    menus."""
     import math
     wt = float(weight)
-    lines = (float(limit) * float(share), float(limit))
+    shares = share if isinstance(share, (tuple, list)) else (share,)
+    lines = tuple(float(limit) * float(s) for s in shares) + (float(limit),)
     over = [wt > t for t in lines]
 
     def agrees(v: float) -> bool:

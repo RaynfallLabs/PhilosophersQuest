@@ -21,11 +21,19 @@
     50
   ],
   "armor_ac_bonus": 0,
-  "resistances": [
-    "cold",
-    "drain"
-  ],
-  "weaknesses": [],
+  "protection": {
+    "drain": 0.8,
+    "necrotic": 0.85,
+    "blunt": 1.1
+  },
+  "protection_words": {
+    "drain": "holds the life in",
+    "necrotic": "holds the life in",
+    "blunt": "cracks under a hammer"
+  },
+  "metal": true,
+  "protection_note": "Bloodstone: the old surgeons pressed it to a wound to stop the bleeding. It is iron that has already rusted, so it neither rusts nor carries a spark.",
+  "protection_price": "Stone cracks under a hammer.",
   "vulnerabilities": [],
   "effective_against": [
     "undead"

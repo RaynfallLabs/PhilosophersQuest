@@ -328,7 +328,9 @@ What changes the odds:
 - **DEX:** each point over 10 lowers the chance 3%, down to half at most.
 - **A Cat's Footfall** (Fenrir's boon) and any ring with `passive_silent_walk`: footsteps never wake anyone; taking gold still can.
 - **The Hand of Glory:** nothing wakes anyone.
-- **Burdened:** the chance doubles.
+- **Burdened** (over half the limit): the chance doubles.
+- **Heavy or metal body armour:** a quarter more for every tile its clank
+  adds to the footsteps (`gear.sleeper_factor`: plate x1.75).
 - **Aggravated:** the whole room wakes.
 
 Finding the room warns that its creatures are asleep and what wakes them (`_SPECIAL_ROOM_MSGS`). The first time sleepers stir in a run, the Journal gets a line. A zoo's keepers carry `_keeper_of`. Emptying a zoo of its gold while every keeper still sleeps earns the Seeker's *Burglar* achievement (`EncountersMixin._burglar_check`).
