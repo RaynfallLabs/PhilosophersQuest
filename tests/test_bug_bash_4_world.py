@@ -521,8 +521,14 @@ def test_an_alarm_wakes_the_nearby_and_roots_stay_rooted():
     from monster import Monster
     import json
     defs = json.load(open(os.path.join(ROOT, 'data', 'monsters.json'), encoding='utf-8'))
+    from dungeon import FLOOR
     g = _game()
     px, py = g.player.x, g.player.y
+    # The alarm carries along open ground, not through stone (senses.py,
+    # Dungeon Alive audit G18): give it a corridor on any random floor.
+    for i in range(0, 4):
+        if g.dungeon.in_bounds(px + i, py):
+            g.dungeon.tiles[py][px + i] = FLOOR
     gob = Monster({**defs['goblin'], 'id': 'goblin'}, px + 3, py)
     gob.status_effects['sleeping'] = 50
     eye = Monster({**defs['floating_eye'], 'id': 'floating_eye'}, px + 2, py)
