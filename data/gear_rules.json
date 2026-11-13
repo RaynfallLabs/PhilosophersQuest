@@ -26,19 +26,31 @@
   },
 
   "threshold": {
-    "_doc": "Complexity and benefit set the threshold (Brandon's ruling): complexity is the weight class, benefit the tier; a named unique asks one more; at most max.",
-    "complexity": {"light": 1, "medium": 2, "heavy": 3},
+    "_doc": "Complexity and benefit set the threshold (Brandon's ruling): complexity is the weight class, benefit the tier; a named unique asks two more; at most max. Each KIND is asked only once a run (Known by Hand, src/known_by_hand.py, winning-build plan 3.4, 2026-11-13), so the numbers rose by one (light / medium / heavy were 1 / 2 / 3, unique +1, cap 5): geography is untimed and every topic has a teaching card, and at 97% a threshold of 6 still passes 83% of the time.",
+    "complexity": {"light": 2, "medium": 3, "heavy": 4},
     "benefit_by_tier": [0, 0, 1, 1, 2],
-    "unique": 1,
-    "max": 5
+    "unique": 2,
+    "max": 7
   },
 
   "accessory_threshold": {
-    "_doc": "Rings, amulets and belts (history): complexity by slot, benefit by tier, same cap.",
-    "complexity": {"ring": 1, "amulet": 2, "belt": 2},
+    "_doc": "Rings, amulets and belts (history): complexity by slot, benefit by tier, same cap. Asked once a kind, like armour (were ring 1, amulet 2, belt 2, unique +1, cap 5).",
+    "complexity": {"ring": 2, "amulet": 3, "belt": 3},
     "benefit_by_tier": [0, 1, 1, 2, 2],
-    "unique": 1,
-    "max": 5
+    "unique": 2,
+    "max": 7
+  },
+
+  "donning": {
+    "_doc": "Turns to put a piece on (winning-build plan 3.4): body armour by its weight class, the full plate template its own, shields, minor armour pieces, rings, amulets and belts one. Taking a piece off takes doff_share of that, rounded up. Until a piece is fully on its slot counts as empty (src/game_dressing.py). The Hephaestus quirk halves both, rounded up (fast_share).",
+    "body": {"light": 1, "medium": 3, "heavy": 5},
+    "templates": {"full_plate": 6},
+    "shield": 1,
+    "minor": 1,
+    "accessory": 1,
+    "weapon": 1,
+    "doff_share": 0.5,
+    "fast_share": 0.5
   },
 
   "enchant_cap": {

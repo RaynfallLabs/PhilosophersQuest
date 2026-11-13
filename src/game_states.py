@@ -62,3 +62,5 @@ STATE_PET_SPECIALS     = 'pet_specials'      # Sub-menu: pick an unlocked specia
 STATE_MESSAGE_LOG      = 'message_log'       # L: scroll back through the message history
 STATE_QA_WARP_INPUT    = 'qa_warp_input'     # Titivillus build only: type a floor number to warp to
 STATE_TOPIC_CARD       = 'topic_card'        # A topic's card with no quiz running: C on a missed question, the Lore Codex
+STATE_ASK              = 'ask'               # A small yes / no prompt: Keep dressing?, attune again?, put a kit on (game_dressing.py)
+STATE_LOADOUTS         = 'loadouts'          # Shift+E: the three saved kits (game_dressing.py, loadouts.py)

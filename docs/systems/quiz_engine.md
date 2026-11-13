@@ -316,6 +316,7 @@ In chain modes, consuming the reroll also restores `chain = max(chain, 1)` so th
 - **2026-10-23** — Cards outside the quiz. `src/topic_cards.py` serves a topic's title and card with no quiz running. C on a missed question opens its whole card (`STATE_TOPIC_CARD`), and an entry recorded before the cards finds its topic by its stem. The Encyclopedia's Lore Codex (m) lists every topic met (`Player.topics_met`, stamped in `_on_quiz_answer`) and marks cards read (`topics_read`, stamped whenever a card opens). Study Mode adds By Topic: the card first, then the topic's questions easiest first, with C for the card mid-quiz and the card's line after a wrong answer. Every card carries a `title` (`bankbuild/cards/titles.py`). Help page 2, How Quizzes Work, finally prints the three rules v2.23.0 left printed nowhere: one wrong answer ends an equip, identify, harvest or cook; a fight is a chain and SPACE strikes; only fights are timed.
 
 - **2026-10-24** — Playtest: "I see the same questions almost every game." The shuffle was random (no module-level seed anywhere; simulated). The memory was the fault: it kept the last 30 questions per tier, and philosophy tier 1 has 147, so a game of identifying forgot the one before and the pool came round every few games (simulated: games 2-5 repeated 5, 15, 23 and 31 of 40). Now the memory is a full cycle per tier by stem id (repeats: 0, 0, 0 until the 147 are used up), and `data/question_twins.json` holds back same-fact twins (972 questions in 443 groups) for the rest of a run.
+- **2026-11-13** — Maths grade curve (winning-build slice 9). Each maths question has a school-grade score (`tools/balance/math_difficulty.py`). Each tier is a grade band in `tools/balance/math_grade_curve.json`: T1 grades 1-2, T2 3-4, T3 4-5, T4 6-7, T5 7-8. Every topic names the tiers it may appear at. The 3.4.0 bank had 841 questions out of band and 53 stems in two tiers, and its tier 5 median was barely above tier 4's. `py -m tools.balance.math_grade_curve` moved 382 questions, replaced 463 in place, and added 155 grade 7-8 questions to tier 5. The `math_grade_band` gate now runs in `py -m tools.quizgen validate`. Tier sizes are 527 / 604 / 455 / 534 / 450. Tier mastery counts whatever the bank holds. See [`docs/quiz/math_grade_curve.md`](../quiz/math_grade_curve.md).
 - **2026-10-24** — Philosophy tier mastery. A run that answers every philosophy question of a tier right earns that tier's trait (+1 WIS; items of that tier identify themselves). `tier_progress(subject, tier) -> (done, total)` is the public count (only questions still in the bank count, and mastery now uses it, so a save from before a bank update cannot master a tier early). See [identify_v3 §8](identify_v3.md).
 ## Testing
 - `tests/test_philosophy_mastery.py` — the five tier traits: data, `tier_progress`, the award on the last question (+1 WIS with no allowance left), pickup and per-turn naming, the Ring of Pythia's lowered tier, a wrong answer not counting.
@@ -323,6 +324,17 @@ In chain modes, consuming the reroll also restores `chain = max(chain, 1)` so th
 - `tests/test_quiz_cross_game_memory.py` (77 lines) — pins `quiz_history.json` seed into `_seen` and the bounded recency cap.
 - `tests/test_quiz_deck_no_stale.py` (49 lines) — pins the "decks rebuild from current JSON on load" invariant.
 - `tests/test_math_contexts.py` — every math question has a `topic`, every topic has a card, and no card contains a sum from its own class.
+- `tests/test_math_grade_curve.py` — the maths bank against its checks:
+  - every question inside its tier's grade band;
+  - tier medians climbing;
+  - every topic with a band at its tier;
+  - tier sizes within 10% of 3.4.0;
+  - no trivial item above tier 1, and no stem in two tiers;
+  - every key right, by the answer oracle;
+  - tiers joining without a cliff;
+  - the shipped bank being its own curve.
+
+  It also pins the scorer's anchors, the curve tool (move, replace, deterministic, idempotent) and the pipeline gate.
 - `tests/test_death_from_status_tick.py` — pins Stunned-10t-on-identify-fail still ticks + expires cleanly (quiz engine fires `add_effect` through main.py).
 
 ## Known rough edges

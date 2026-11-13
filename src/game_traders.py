@@ -11,12 +11,21 @@ game_render._draw_shop draws ``_trader_menu``.
 Gold buys a second chance, never the answer: every service still leaves the
 quiz where it was (an identify with the scribe is the same question, without
 the backlash).
+
+The dungeon supports the build (winning build 3.5, 2026-11-13): a stall's
+counter for what walks below and the trader's line about it
+(domain_counters.py); the smiths' reforge, silvering and cold-iron inlay,
+the armourers' lining and special order (smithing.py); and the trade-in,
+every trader's: on a visit when the hero buys, what he sells that trader
+fetches half the trader's price, up to what he spends (a visit is his stay
+on the floor: ``_traders_leaving`` closes it).
 """
 from __future__ import annotations
 
 import pygame
 
 import economy
+import smithing
 import traders
 from game_states import STATE_PLAYER, STATE_SHOP
 
@@ -88,7 +97,36 @@ class TraderMixin:
         m.x, m.y = spot
         self.ground_items.append(m)
         plan['spawned'].append(level)
+        for o in plan.get('orders') or ():
+            if o.get('kind') == kind and o.get('collect') == level:
+                self.add_message(f"{m.person}'s stall stands on this floor. Your {o.get('name', 'order')} "
+                                 f"is waiting for you there.", 'info')
         return m
+
+    def _traders_leaving(self, level: int):
+        """The hero leaves floor ``level`` (main._change_level): a trader's
+        visit ends (the trade-in tally), and an order placed here that has no
+        stall below to be collected at is paid back."""
+        from mystery_system import MerchantNPC
+        for gi in getattr(self, 'ground_items', None) or ():
+            if isinstance(gi, MerchantNPC):
+                gi.visit = None
+        plan = traders.ensure_plan(self.__dict__.get('_traders'))
+        if not plan:
+            return
+        for o in list(plan.get('orders') or ()):
+            if int(o.get('placed', -1)) != int(level):
+                continue
+            collect = o.get('collect')
+            if collect is not None and plan['floors'].get(int(collect)) == o.get('kind'):
+                continue
+            plan['orders'].remove(o)
+            paid = int(o.get('paid', 0) or 0)
+            line = (traders.kind_def(o.get('kind', '')).get('lines') or {}).get(
+                'order_refund', "No stall of mine below. Have your coin back.")
+            self.add_message(f'{o.get("person", "The smith")}: "{line}" ({paid:,} gold back.)', 'info')
+            if paid:
+                self._gain_gold(paid, paid=True, who=o.get('person'))
 
     def _trader_spot(self, rng):
         """A floor tile in a room the hero can walk to, clear of the stairs,
@@ -132,6 +170,11 @@ class TraderMixin:
         mult, lines = traders.price_mult(getattr(merchant, 'kind', 'generalist'),
                                          self._deed_ctx(), friend=friend)
         self._shop_mult = mult
+        # His services are his kind's: a trader from an older save learns the
+        # new ones (reforge, lining, trade-in...).
+        kd = traders.kind_def(getattr(merchant, 'kind', 'generalist'))
+        if 'services' in kd:
+            merchant.services = tuple(kd.get('services') or ())
         plan = self._trader_plan()
         reg = self._deeds_reg()
         self._shop_credit = traders.credits_owed(reg, plan.get('credits_used', 0)) > 0
@@ -148,6 +191,13 @@ class TraderMixin:
                     .get(str(getattr(merchant, 'level', 0))))
             if gate:
                 self.add_message(f'{merchant.person}: "{gate}"', 'warning')
+            # What's below, in his own voice (domain_counters.py).
+            import domain_counters
+            tmpl = (merchant.lines or {}).get('counter') or (kd.get('lines') or {}).get('counter')
+            said = domain_counters.counter_line(tmpl, getattr(merchant, 'counter', None))
+            if said:
+                self.add_message(f'{merchant.person}: "{said}"', 'info')
+        self._trader_deliver_orders(merchant)
         for key, line in lines:
             # Each reason is said once a run (the first trader who knows it).
             if key not in plan['told'] and line:
@@ -215,6 +265,56 @@ class TraderMixin:
             return 0
         share = float((traders.data().get('guild') or {}).get('credit_share', 1.0))
         return economy.share(self.dungeon_level, share)
+
+    # ---------------------------------------------------------------- the trade-in
+
+    def _trader_visit(self, m=None) -> dict:
+        """This visit's trade-in tally on trader ``m``: gold spent buying,
+        trade-in already paid, and trade-in owed for things sold before a
+        purchase (paid when he buys)."""
+        m = m or self._shop_merchant
+        v = getattr(m, 'visit', None)
+        if not isinstance(v, dict):
+            v = {'spent': 0, 'given': 0, 'pending': 0}
+            m.visit = v
+        return v
+
+    def _trade_in_room(self, m=None) -> int:
+        v = self._trader_visit(m)
+        return max(0, int(v['spent']) - int(v['given']))
+
+    def _trade_in_extra(self, item, offer: int) -> int:
+        """What selling ``item`` now fetches above ``offer`` as a trade-in:
+        half his price instead of a fifth, up to what is left of what the
+        hero has spent with him this visit."""
+        if getattr(item, 'item_class', '') == 'treasure':
+            return 0
+        return max(0, min(self._trade_in_gap(item, offer), self._trade_in_room()))
+
+    def _trade_in_gap(self, item, offer: int) -> int:
+        """Half his price less the plain offer (the resale cap and his purse
+        hold): what a trade-in is worth on ``item``."""
+        from items import is_fully_known
+        m = self._shop_merchant
+        known = self._item_is_known(item)
+        full = economy.sell_offer(item, self.dungeon_level, known=known,
+                                  identified=is_fully_known(item, self.player),
+                                  markup=m.markup, purse=m.purse, trade_in=True)
+        return max(0, int(full) - int(offer))
+
+    def _trader_top_up(self, m):
+        """After a purchase: what he owes for things sold earlier this visit
+        as a trade-in, paid now (up to what was spent and his purse)."""
+        v = self._trader_visit(m)
+        due = min(int(v['pending']), self._trade_in_room(m), int(getattr(m, 'purse', 0) or 0))
+        if due <= 0:
+            return
+        v['pending'] = int(v['pending']) - due
+        v['given'] = int(v['given']) + due
+        m.purse = max(0, int(m.purse) - due)
+        self.add_message(f"{m.person} counts what you sold {m.pronouns()[1]} earlier as a trade-in: "
+                         f"{due:,} gold more.", 'success')
+        self._gain_gold(due, paid=True, who=m.person)
 
     def _trader_offer(self, item) -> tuple:
         """(offer, refusal) for selling ``item`` to the open trader."""
@@ -366,6 +466,11 @@ class TraderMixin:
         line = m.line('bought')
         if line:
             self.add_message(f'{m.person}: "{line}"', 'info')
+        item.__dict__.pop('_counter', None)            # the shelf's mark, not the item's
+        if getattr(item, 'item_class', '') != 'treasure':
+            v = self._trader_visit(m)
+            v['spent'] = int(v['spent']) + int(pay)
+            self._trader_top_up(m)
         m.stock.pop(sel)
         m.prices.pop(sel)
         haggled = getattr(self, '_shop_haggled', set())
@@ -400,6 +505,15 @@ class TraderMixin:
             key = 'purse_empty' if why.endswith("purse is empty") else 'refuse'
             self.add_message(f'{m.person}: "{m.line(key, "No.")}" ({why}.)', 'warning')
             return
+        # The trade-in: half his price on a buying visit, up to what was
+        # spent; sold before a purchase, the difference is owed and paid when
+        # the hero buys (_trader_top_up).
+        extra = self._trade_in_extra(item, offer)
+        gap = self._trade_in_gap(item, offer) if getattr(item, 'item_class', '') != 'treasure' else 0
+        v = self._trader_visit(m)
+        v['given'] = int(v['given']) + extra
+        v['pending'] = int(v['pending']) + max(0, gap - extra)
+        offer += extra
         from items import Ammo
         if isinstance(item, Ammo):
             name = self._display_name(item)
@@ -417,7 +531,8 @@ class TraderMixin:
         else:
             self.player.remove_from_inventory(item)
         m.purse = max(0, int(m.purse) - offer)
-        self.add_message(f"You sell {name} to {m.person} for {offer:,} gold.", 'success')
+        self.add_message(f"You sell {name} to {m.person} for {offer:,} gold"
+                         + (f", {extra:,} of it as a trade-in." if extra else "."), 'success')
         # Coins weigh: what will not fit he pays in gems (game_purse).
         self._gain_gold(offer, paid=True, who=m.person)
         line = m.line('sold')
@@ -435,9 +550,29 @@ class TraderMixin:
 
     # ---------------------------------------------------------------- services
 
+    def _shield_worn(self) -> bool:
+        return getattr(self.player, 'shield', None) is not None
+
     def _service_targets(self, sid: str) -> list:
         """What a service could work on now (empty: nothing to do)."""
         p = self.player
+        if sid == 'reforge':
+            return smithing.reforge_targets(p.weapon, self._shield_worn())
+        if sid in ('silvering', 'cold_iron_inlay'):
+            sub = 'silver' if sid == 'silvering' else 'cold_iron'
+            return [p.weapon] if smithing.can_inlay(p.weapon, sub) else []
+        if sid == 'lining':
+            return smithing.lining_targets(p)
+        if sid == 'special_order':
+            m = getattr(self, '_shop_merchant', None)
+            plan = self._trader_plan()
+            if m is None or traders.next_stall(plan, m.kind, self.dungeon_level) is None:
+                return []
+            if self._open_order(m.kind):
+                return []
+            return smithing.order_materials(self.dungeon_level)
+        if sid == 'trade_in':
+            return ['trade_in']
         if sid == 'repair':
             return [i for i in p.worn_items() if int(getattr(i, 'wear_loss', 0) or 0) > 0]
         if sid == 'sharpen':
@@ -485,8 +620,56 @@ class TraderMixin:
         n += sum(int(v or 0) for v in (p.__dict__.get('drained') or {}).values())
         return n
 
+    def _open_order(self, kind: str):
+        """This armourer's order not yet collected, or None."""
+        plan = self._trader_plan()
+        return next((o for o in plan.get('orders') or () if o.get('kind') == kind), None)
+
+    def _service_why(self, sid: str) -> str:
+        """Why a new service has nothing to work on now, in plain words."""
+        p = self.player
+        w = p.weapon
+        m = self._shop_merchant
+        if sid in ('reforge', 'silvering', 'cold_iron_inlay'):
+            if w is None:
+                return "You hold no weapon."
+            if getattr(w, 'is_unique', False) or getattr(w, 'bound_to_wielder', False):
+                return f"{m.pronouns()[0].capitalize()} won't put a hammer to a named blade."
+            if sid == 'reforge':
+                if getattr(w, 'requires_ammo', None):
+                    return "Only a hand weapon can be re-shaped."
+                if not smithing.is_common_weapon(w):
+                    return "That weapon is not common work."
+                return "No other shape will take its metal."
+            sub = smithing.inlay_of(w)
+            if sub:
+                return f"Your {self._bare_name(w)} is inlaid with {smithing.inlay_name(sub)} already: one inlay to a weapon."
+            return "It is that metal already."
+        if sid == 'lining':
+            from items import ARMOR_SLOTS
+            worn = [p.armor_slots[ARMOR_SLOTS.index(s)] for s in smithing.LINING_SLOTS]
+            if not any(worn):
+                return "Wear a cloak or a shirt for him to line."
+            return "What you wear is lined already: one lining to a piece."
+        if sid == 'special_order':
+            o = self._open_order(m.kind)
+            if o:
+                return f"Your {o.get('name', 'order')} waits at his stall on floor {o.get('collect')}."
+            return "This is his last stall: there is nowhere below to collect an order."
+        return "Nothing for this to work on right now."
+
+    def _order_price(self, item) -> int:
+        """A special order: the piece's own price and the making."""
+        m = self._shop_merchant
+        lvl = self.dungeon_level
+        base = (economy.merchant_price(item, lvl, m.markup)
+                + economy.service_price('special_order', lvl, markup=m.markup))
+        return max(5, economy.nice(base * float(getattr(self, '_shop_mult', 1.0) or 1.0)))
+
     def _service_price(self, sid: str) -> int:
         m = self._shop_merchant
+        if economy.SERVICE_SHARE.get(sid, 0.3) <= 0:
+            return 0                                   # the trade-in: no fee
         points = 1
         if sid == 'repair':
             points = sum(int(getattr(i, 'wear_loss', 0) or 0) for i in self._service_targets('repair')) or 1
@@ -502,12 +685,30 @@ class TraderMixin:
         if not targets:
             self.add_message(f"{name}: there is nothing for {m.person} to do.", 'info')
             return
+        if sid == 'trade_in':
+            self._shop_tab = TAB_SELL
+            self._shop_selection = 0
+            room = self._trade_in_room(m)
+            self.add_message("Trade-in: " + (f"{room:,} gold of what you sell now fetches half "
+                                             f"{m.pronouns()[2]} price." if room else
+                                             f"buy from {m.pronouns()[1]} first, and what you sell "
+                                             f"{m.pronouns()[1]} this visit fetches half "
+                                             f"{m.pronouns()[2]} price."), 'info')
+            return
+        if sid == 'special_order':
+            self._shop_pick = (sid, targets)
+            self._shop_selection = 0
+            return
         price = self._service_price(sid)
         if self._payment_plan(price) is None:
             self.add_message(f'{m.person}: "{m.line("broke", "No coin, no deal.")}" '
                              f'({price:,} gold needed.)', 'warning')
             return
-        if sid in ('cut_curse', 'id_retry') and len(targets) > 1:
+        if sid == 'reforge':
+            self._shop_pick = (sid, [smithing.preview(self.player.weapon, t) for t in targets])
+            self._shop_selection = 0
+            return
+        if sid == 'lining' or (sid in ('cut_curse', 'id_retry') and len(targets) > 1):
             self._shop_pick = (sid, targets)
             self._shop_selection = 0
             return
@@ -516,6 +717,16 @@ class TraderMixin:
     def _trader_service_on(self, sid: str, target):
         """Pay for and render one service."""
         m = self._shop_merchant
+        if sid == 'special_order':
+            # The metal is chosen: now the shape, each with its own price.
+            cat, mid = target
+            made = [smithing.make_order(cat, t, mid) for t in smithing.order_templates(cat, mid)]
+            self._shop_pick = ('special_order:pick', [it for it in made if it is not None])
+            self._shop_selection = 0
+            return
+        if sid == 'special_order:pick':
+            self._trader_place_order(target)
+            return
         price = self._service_price(sid)
         if self._payment_plan(price) is None:
             self.add_message(f'{m.person}: "{m.line("broke", "No coin, no deal.")}"', 'warning')
@@ -537,10 +748,104 @@ class TraderMixin:
             else:
                 self.add_message(f"({price:,} gold.)", 'info')
 
+    def _trader_place_order(self, item):
+        """Pay for a special order and write it down (collected at his next
+        stall: _trader_deliver_orders)."""
+        m = self._shop_merchant
+        plan = self._trader_plan()
+        nxt = traders.next_stall(plan, m.kind, self.dungeon_level)
+        if nxt is None or self._open_order(m.kind):
+            self._shop_pick = None
+            return
+        price = self._order_price(item)
+        if self._payment_plan(price) is None:
+            self.add_message(f'{m.person}: "{m.line("broke", "No coin, no deal.")}" '
+                             f'({price:,} gold needed.)', 'warning')
+            return
+        paid = self._pay_gold(price, change_purse=int(m.purse), who=m.person, quiet=True)
+        if not paid:
+            return
+        m.purse = max(0, int(m.purse) - int(paid.get('change_given', 0) or 0))
+        self._shop_pick = None
+        self._shop_selection = 0
+        name = self._bare_name(item)
+        plan['orders'].append({
+            'kind': m.kind, 'person': m.person, 'placed': int(self.dungeon_level),
+            'collect': int(nxt), 'cat': str(getattr(item, 'item_class', 'weapon')),
+            'template': smithing.template_of(item), 'material': str(item.material),
+            'name': name, 'paid': int(price),
+            'piece': int(economy.merchant_price(item, self.dungeon_level, m.markup))})
+        line = m.line('order_placed', "{item}. It'll be ready at my stall on floor {floor}.")
+        try:
+            line = line.format(item=name, floor=nxt)
+        except (KeyError, IndexError, ValueError):
+            pass
+        self.add_message(f'{m.person}: "{line}" ({price:,} gold, paid.)', 'success')
+        self._chron('deed', f"Ordered a piece of smith's work from {m.person}, to be "
+                            f"collected at {m.pronouns()[2]} next stall, further down.")
+
+    def _trader_deliver_orders(self, m):
+        """Hand over the special orders this armourer has ready here."""
+        plan = self._trader_plan()
+        for o in list(plan.get('orders') or ()):
+            if o.get('kind') != getattr(m, 'kind', None) or o.get('collect') != self.dungeon_level:
+                continue
+            plan['orders'].remove(o)
+            it = smithing.make_order(o.get('cat', 'weapon'), o.get('template'), o.get('material'))
+            if it is None:
+                paid = int(o.get('paid', 0) or 0)
+                self.add_message(f'{m.person}: "{m.line("order_refund", "Have your coin back.")}"', 'info')
+                if paid:
+                    self._gain_gold(paid, paid=True, who=m.person)
+                continue
+            it._bought_for = int(o.get('piece', o.get('paid', 0)) or 0)    # the resale cap
+            line = m.line('order_ready', "Your {item}, as ordered.")
+            try:
+                line = line.format(item=o.get('name', self._bare_name(it)))
+            except (KeyError, IndexError, ValueError):
+                pass
+            self.add_message(f'{m.person}: "{line}"', 'success')
+            if self.player.add_to_inventory(it) is False:
+                it.x, it.y = self.player.x, self.player.y
+                self.ground_items.append(it)
+                self.add_message(f"It is too heavy to carry with everything else, so {m.person} "
+                                 f"sets it down at your feet.", 'warning')
+
     def _render_service(self, sid: str, target, who: str = 'The smith') -> bool:
         """Do the service (shared with encounter vendors: a 'service' reward).
         True when something was done."""
         p = self.player
+        if sid == 'reforge':
+            w = p.weapon
+            tid = smithing.template_of(target) if hasattr(target, 'item_class') else target
+            if tid not in smithing.reforge_targets(w, self._shield_worn()):
+                return False
+            old = self._bare_name(w)
+            smithing.reforge(w, tid)
+            from paths import a_or_an
+            self.add_message(f"{who} heats your {old} white and beats it into "
+                             f"{a_or_an(self._bare_name(w))}. The metal is the same, and so is "
+                             f"everything you paid to put into it.", 'success')
+            return True
+        if sid in ('silvering', 'cold_iron_inlay'):
+            sub = 'silver' if sid == 'silvering' else 'cold_iron'
+            w = p.weapon
+            old = self._bare_name(w) if w is not None else ''
+            if not smithing.inlay(w, sub):
+                return False
+            done = ((traders.data().get('inlays') or {}).get(sub) or {}).get(
+                'done', "{who} works it into your {name}.")
+            self.add_message(done.format(who=who, name=old), 'success')
+            return True
+        if sid == 'lining':
+            piece, element = target
+            name = self._bare_name(piece)
+            if not smithing.line(piece, element):
+                return False
+            stuff = smithing.lining_words(element).get('stuff', element)
+            self.add_message(f"{who} lines your {name} with {stuff}. {element.title()} will "
+                             f"find it harder going.", 'success')
+            return True
         if sid == 'repair':
             pieces = self._service_targets('repair')
             if not pieces:
@@ -573,7 +878,10 @@ class TraderMixin:
                 return False
             name = self._bare_name(item)
             item.buc = 'uncursed'                     # cut loose; it does not survive it
-            self._unequip_slot(slot, item)
+            # The smith cuts it off: one turn, not the piece's unbuckling
+            # time (game_dressing._dress_start_off).
+            if self._take_off_now(slot, item):
+                self._advance_turn()
             if self._lore_equipped_slot(item) is not None:
                 item.buc = 'cursed'                   # it would not come off: nothing done
                 return False
@@ -662,13 +970,7 @@ class TraderMixin:
         if pick:
             sid = pick[0]
             for t in pick[1]:
-                is_item = hasattr(t, 'item_class')
-                entries.append({'name': self._display_name(t) if is_item else str(t),
-                                'detail': f"{self._service_price(sid):,} gold",
-                                'icon': t if is_item else None,
-                                'details': [(self._service_name(sid), FP.GOLD_BRIGHT, self.font_md),
-                                            ("Press Enter to choose this one.", FP.FADED_TEXT,
-                                             self.font_sm)]})
+                entries.append(self._trader_pick_entry(sid, t))
             hint = "Up/Down: choose   Enter: this one   ESC: back"
         elif tab == TAB_BUY:
             haggled = getattr(self, '_shop_haggled', set())
@@ -699,6 +1001,11 @@ class TraderMixin:
                              else "Already haggled for this item." if i in haggled
                              else "H: try to haggle the price down (once per item).",
                              FP.FADED_TEXT, self.font_sm), ''] + item_lines[1:]
+                if getattr(item, '_counter', None):
+                    # A stall's counter (domain_counters.py): what it is for
+                    # shows on it, so saying so tells nothing hidden.
+                    details.insert(2, (f"{m.person} set this out for what is below: "
+                                       f"{item._counter}.", FP.SUCCESS_TEXT, self.font_sm))
                 entries.append({'name': self._display_name(item), 'detail': detail, 'icon': item,
                                 'name_color': FP.BODY_TEXT if affordable else FP.FADED_TEXT,
                                 'detail_color': FP.GOLD_PALE if affordable else FP.DANGER_TEXT_LIGHT,
@@ -708,6 +1015,12 @@ class TraderMixin:
             from items import Ammo
             for item in self.player.inventory:
                 offer, why = self._trader_offer(item)
+                # The trade-in: half his price on a buying visit (one of a
+                # stack: each sale is one).
+                extra = self._trade_in_extra(item, offer) if not why else 0
+                gap = (self._trade_in_gap(item, offer)
+                       if not why and getattr(item, 'item_class', '') != 'treasure' else 0)
+                offer += extra
                 n = int(getattr(item, 'count', 1) or 1)
                 each = '' if (n <= 1 or isinstance(item, Ammo)) else ' each'
                 detail = f"Offers {offer:,} gold{each}" if not why else why
@@ -719,6 +1032,14 @@ class TraderMixin:
                     (f"{m.pronouns()[2].capitalize()} purse: {int(m.purse):,} gold.",
                      FP.FADED_TEXT, self.font_sm),
                     ''] + item_lines[1:]
+                if extra:
+                    details.insert(2, (f"Trade-in: {extra:,} gold of it, because you bought from "
+                                       f"{m.pronouns()[1]} on this visit.", FP.SUCCESS_TEXT,
+                                       self.font_sm))
+                elif gap:
+                    details.insert(2, (f"Trade-in: buy from {m.pronouns()[1]} on this visit and "
+                                       f"this fetches up to {gap:,} gold more.", FP.FADED_TEXT,
+                                       self.font_sm))
                 if not why and getattr(item, 'item_class', '') == 'treasure':
                     import treasure as _tr
                     full = _tr.credit(item)
@@ -739,25 +1060,7 @@ class TraderMixin:
         else:
             sdata = traders.data().get('services') or {}
             for sid in getattr(m, 'services', ()):
-                targets = self._service_targets(sid)
-                price = self._service_price(sid)
-                can_pay = self._payment_plan(price) is not None      # coin, then treasure
-                ready = bool(targets) and can_pay
-                entries.append({
-                    'name': self._service_name(sid),
-                    'detail': f"{price:,} gold" + ('' if targets else "   Nothing to do"),
-                    'icon': None,
-                    'name_color': FP.BODY_TEXT if ready else FP.FADED_TEXT,
-                    'detail_color': FP.GOLD_PALE if ready else FP.FADED_TEXT,
-                    'details': [(self._service_name(sid), FP.GOLD_BRIGHT, self.font_md),
-                                (f"Price: {price:,} gold (you have {gold:,})",
-                                 FP.GOLD_PALE if can_pay else FP.DANGER_TEXT_LIGHT, self.font_sm),
-                                '',
-                                ((sdata.get(sid) or {}).get('desc', ''), FP.BODY_TEXT, self.font_sm),
-                                '',
-                                ("Nothing for this to work on right now." if not targets
-                                 else "Press Enter to pay for it.", FP.FADED_TEXT, self.font_sm)],
-                })
+                entries.append(self._trader_service_entry(sid, sdata, gold))
             hint = "Left/Right: tab   Up/Down: inspect   Enter: pay   ESC: close"
         counts = [len(m.stock), len(self.player.inventory),
                   len(getattr(m, 'services', ()))][:len(tabs)]
@@ -781,5 +1084,112 @@ class TraderMixin:
                     tab_counts=counts, scroll_attr='_shop_scroll')
 
     def _service_name(self, sid: str) -> str:
+        if sid == 'special_order:pick':
+            sid = 'special_order'
         return ((traders.data().get('services') or {}).get(sid) or {}).get(
             'name', sid.replace('_', ' ').title())
+
+    _NEW_SERVICES = ('reforge', 'silvering', 'cold_iron_inlay', 'lining', 'special_order', 'trade_in')
+
+    def _trader_service_entry(self, sid: str, sdata: dict, gold: int) -> dict:
+        """One row of the Services tab, and its detail pane."""
+        from fantasy_ui import FP
+        m = self._shop_merchant
+        targets = self._service_targets(sid)
+        price = self._service_price(sid)
+        can_pay = self._payment_plan(price) is not None      # coin, then treasure
+        ready = bool(targets) and can_pay
+        plan = self._trader_plan()
+        if sid == 'trade_in':
+            room = self._trade_in_room(m)
+            detail = "No fee"
+            price_line = (f"This visit: {room:,} gold of trade-in left." if room else
+                          "This visit: buy something first.")
+            ready = True
+        elif sid == 'special_order':
+            fee = economy.service_price('special_order', self.dungeon_level, markup=m.markup)
+            fee = economy.nice(fee * float(getattr(self, '_shop_mult', 1.0) or 1.0))
+            detail = f"{fee:,} gold + the piece" + ('' if targets else "   Nothing to do")
+            price_line = f"Price: the piece, and {fee:,} gold for the making (you have {gold:,})"
+            ready = bool(targets)
+        else:
+            detail = f"{price:,} gold" + ('' if targets else "   Nothing to do")
+            price_line = f"Price: {price:,} gold (you have {gold:,})"
+        details = [(self._service_name(sid), FP.GOLD_BRIGHT, self.font_md),
+                   (price_line, FP.GOLD_PALE if (can_pay or sid in ('trade_in', 'special_order'))
+                    else FP.DANGER_TEXT_LIGHT, self.font_sm),
+                   '',
+                   ((sdata.get(sid) or {}).get('desc', ''), FP.BODY_TEXT, self.font_sm),
+                   '']
+        if sid == 'special_order':
+            nxt = traders.next_stall(plan, m.kind, self.dungeon_level)
+            if nxt is not None and targets:
+                details.append((f"Collect it at {m.pronouns()[2]} stall on floor {nxt}. Paid now.",
+                                FP.GOLD_PALE, self.font_sm))
+        if not targets:
+            why = (self._service_why(sid) if sid in self._NEW_SERVICES
+                   else "Nothing for this to work on right now.")
+            details.append((why, FP.FADED_TEXT, self.font_sm))
+        elif sid == 'trade_in':
+            details.append(("Press Enter to open the Sell tab.", FP.FADED_TEXT, self.font_sm))
+        elif sid in ('reforge', 'lining', 'special_order'):
+            details.append(("Press Enter to choose.", FP.FADED_TEXT, self.font_sm))
+        else:
+            details.append(("Press Enter to pay for it.", FP.FADED_TEXT, self.font_sm))
+        return {'name': self._service_name(sid), 'detail': detail, 'icon': None,
+                'name_color': FP.BODY_TEXT if ready else FP.FADED_TEXT,
+                'detail_color': FP.GOLD_PALE if ready else FP.FADED_TEXT,
+                'details': details}
+
+    def _trader_pick_entry(self, sid: str, t) -> dict:
+        """One row while choosing what a service works on: a reforge's new
+        shape, a lining's piece and element, an order's metal or shape."""
+        from fantasy_ui import FP
+        m = self._shop_merchant
+        head = (self._service_name(sid), FP.GOLD_BRIGHT, self.font_md)
+        choose = ("Press Enter to choose this one.", FP.FADED_TEXT, self.font_sm)
+        if sid == 'special_order' and isinstance(t, tuple):
+            cat, mid = t
+            line = {'weapon': 'Weapons', 'armor': 'Armour', 'shield': 'Shields'}.get(cat, cat)
+            names = [n.replace('_', ' ') for n in smithing.order_templates(cat, mid)]
+            return {'name': f"{smithing.material_name(cat, mid)}: {line}",
+                    'detail': f"{len(names)} shapes", 'icon': None,
+                    'details': [head, (f"{smithing.material_name(cat, mid)} {line.lower()}: "
+                                       + ", ".join(names) + ".", FP.BODY_TEXT, self.font_sm),
+                                '', ("Press Enter to choose the shape.", FP.FADED_TEXT, self.font_sm)]}
+        if sid == 'special_order:pick':
+            price = self._order_price(t)
+            nxt = traders.next_stall(self._trader_plan(), m.kind, self.dungeon_level)
+            ok = self._payment_plan(price) is not None
+            return {'name': self._display_name(t), 'detail': f"{price:,} gold", 'icon': t,
+                    'name_color': FP.BODY_TEXT if ok else FP.FADED_TEXT,
+                    'detail_color': FP.GOLD_PALE if ok else FP.DANGER_TEXT_LIGHT,
+                    'details': self._menu_item_detail_lines(t, "Press Enter to order it.")[:1] + [
+                        (f"Price: {price:,} gold, paid now.", FP.GOLD_PALE if ok
+                         else FP.DANGER_TEXT_LIGHT, self.font_sm),
+                        (f"Ready at {m.pronouns()[2]} stall on floor {nxt}.", FP.GOLD_PALE,
+                         self.font_sm),
+                        '', ("Press Enter to order it.", FP.FADED_TEXT, self.font_sm)]}
+        if sid == 'lining' and isinstance(t, tuple):
+            piece, element = t
+            words = smithing.lining_words(element)
+            return {'name': f"{self._bare_name(piece)}: Against {words.get('name', element.title())}",
+                    'detail': f"{self._service_price(sid):,} gold", 'icon': piece,
+                    'details': [head, (f"Lined with {words.get('stuff', element)}: {element} does "
+                                       f"a quarter less harm to you while you wear it.",
+                                       FP.BODY_TEXT, self.font_sm), '', choose]}
+        if sid == 'reforge' and hasattr(t, 'item_class'):
+            forms = ", ".join(f for f in t.damage_types if f in ('slash', 'pierce', 'blunt'))
+            hands = "Two hands" if getattr(t, 'two_handed', False) else "One hand"
+            return {'name': self._display_name(t), 'detail': f"{self._service_price(sid):,} gold",
+                    'icon': t,
+                    'details': [head, (f"{hands}. Wounds by {forms or 'its weight'}. "
+                                       f"Weight {getattr(t, 'weight', 0):.1f}.", FP.BODY_TEXT,
+                                       self.font_sm),
+                                ("The metal, the plus, the blessing and the smith's work stay.",
+                                 FP.FADED_TEXT, self.font_sm), '', choose]}
+        is_item = hasattr(t, 'item_class')
+        return {'name': self._display_name(t) if is_item else str(t),
+                'detail': f"{self._service_price(sid):,} gold",
+                'icon': t if is_item else None,
+                'details': [head, choose]}

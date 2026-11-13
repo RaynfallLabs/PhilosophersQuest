@@ -520,26 +520,47 @@ class EncountersMixin:
             self.monsters.append(npc)
             self._unicorn_spawned = True
 
+    # Every step of the unicorn's trust says so (winning-build plan 3.8b,
+    # Brandon 2026-11-13: "for encounters that require several visits, we
+    # need to make sure it tells you something that lets you know that
+    # status is changing"): wary, watching, relaxing, eating, trusting, and
+    # the "too soon" of a hand reached out before she trusts.
+    _UNICORN_LINES = {
+        'first_seen': "A beautiful white unicorn stands nearby. She watches you warily.",
+        'seen_again': "The unicorn has seen you again. She watches you warily.",
+        'watching': "The unicorn has not run. She is watching you, ears forward.",
+        'lost': "The unicorn loses sight of you, and her wariness comes back.",
+        'relaxing': "The unicorn seems to relax slightly. She sniffs the air...",
+        'eating': "The unicorn's ears perk up! She approaches the Magic Dungeon Carrot and begins to eat.",
+        'trusting': "The unicorn finishes the carrot and looks at you with gentle eyes. You may approach her now.",
+        'too_soon_wary': "The unicorn startles and leaps away from you! Too soon: she does not know you yet.",
+        'too_soon_relaxing': ("The unicorn shies from your hand and watches you nervously, wary again. "
+                              "Too soon: she was only beginning to trust you. Perhaps an offering would help..."),
+        'too_soon_eating': ("The unicorn startles from her meal and leaps away, wary again. Too soon: "
+                            "let her finish eating."),
+    }
+
     def _handle_unicorn_bump(self, unicorn):
         """Handle player bumping the unicorn at various states."""
         state = getattr(unicorn, '_unicorn_state', 'wary')
+        lines = self._UNICORN_LINES
 
         if state == 'wary':
             # Unicorn startles and moves away
-            self.add_message("The unicorn startles and leaps away from you!", 'info')
+            self.add_message(lines['too_soon_wary'], 'info')
             self._unicorn_flee(unicorn)
             unicorn._unicorn_wait = 0
             return True
 
         if state == 'relaxing':
-            self.add_message("The unicorn watches you nervously. Perhaps an offering would help...", 'info')
+            self.add_message(lines['too_soon_relaxing'], 'info')
             unicorn._unicorn_state = 'wary'
             unicorn._unicorn_wait = 0
             self._unicorn_flee(unicorn)
             return True
 
         if state in ('offered', 'eating'):
-            self.add_message("The unicorn is eating! Don't disturb her!", 'info')
+            self.add_message(lines['too_soon_eating'], 'info')
             unicorn._unicorn_state = 'wary'
             unicorn._unicorn_wait = 0
             self._unicorn_flee(unicorn)
@@ -597,21 +618,25 @@ class EncountersMixin:
             px, py = self.player.x, self.player.y
             dist = max(abs(m.x - px), abs(m.y - py))
 
+            lines = self._UNICORN_LINES
             if state == 'wary':
                 # Player visible and within 8 tiles? Start watching
                 if (m.x, m.y) in self.visible and dist <= 8:
                     m._unicorn_wait += 1
                     if m._unicorn_wait == 1:
-                        self.add_message(
-                            "A beautiful white unicorn stands nearby. She watches you warily.",
-                            'info')
+                        seen = m.__dict__.get('_unicorn_seen', False)
+                        m._unicorn_seen = True
+                        self.add_message(lines['seen_again' if seen else 'first_seen'], 'info')
+                    elif m._unicorn_wait == 2:
+                        self.add_message(lines['watching'], 'info')
                     # If player stays still (or moves slowly) for 3 turns
                     if m._unicorn_wait >= 3:
                         m._unicorn_state = 'relaxing'
-                        self.add_message(
-                            "The unicorn seems to relax slightly. She sniffs the air...",
-                            'info')
+                        self.add_message(lines['relaxing'], 'info')
                 else:
+                    if m._unicorn_wait >= 2:
+                        # She had begun to watch him: the hero sees it is lost.
+                        self.add_message(lines['lost'], 'info')
                     m._unicorn_wait = 0
 
             elif state == 'relaxing':
@@ -641,9 +666,7 @@ class EncountersMixin:
                         _near = [t for t in _near if self.dungeon.is_walkable(*t) and t not in _busy]
                         if _near:
                             m.x, m.y = min(_near, key=lambda t: max(abs(t[0] - m.x), abs(t[1] - m.y)))
-                    self.add_message(
-                        "The unicorn's ears perk up! She approaches the Magic Dungeon "
-                        "Carrot and begins to eat.", 'success')
+                    self.add_message(lines['eating'], 'success')
 
             elif state == 'eating':
                 m._unicorn_eat_turns += 1
@@ -655,9 +678,7 @@ class EncountersMixin:
                         if not (getattr(gi, 'id', '') == 'magic_dungeon_carrot'
                                 and (gi.x, gi.y) == tuple(_cpos))]
                     m._unicorn_state = 'trusting'
-                    self.add_message(
-                        "The unicorn finishes the carrot and looks at you with gentle "
-                        "eyes. You may approach her now.", 'success')
+                    self.add_message(lines['trusting'], 'success')
 
     def _start_unicorn_quiz(self, unicorn):
         """Start the AI escalator_chain quiz for the unicorn encounter."""

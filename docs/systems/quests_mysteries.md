@@ -127,9 +127,11 @@ A parallel Norse-track quest that runs through the whole dungeon.
 
 | Beat | Floor | What happens |
 |------|-------|--------------|
-| 1 | L5, L13, L21, L28, L35, L42, L50, L58, L66, L73 | One `leather_scrap` (artifact, 2.0 lb) spawns per level, guaranteed, in a non-start room. 10 total. |
+| 1 | L5, L13, L21, L28, L35, L42, L50, L58, L66, L73 | One `leather_scrap` (artifact, **5 lb**: 50 lb for all ten, half a STR-10 hero's load) spawns per level, guaranteed, in a non-start room. 10 total. |
 | 2 | L79 | `_create_vidar_altar` places `vidar_altar_pos` (ALTAR tile) in a non-start room. |
-| 3 | L79 | Player drops **10 leather scraps on the altar tile** → `_check_vidar_altar` consumes 10 scraps and spawns `vidars_sandal` (armor, `plot_role: fenrir_quest_layer2_instant_kill`). |
+| 3 | L79 | Player drops **10 leather scraps on the altar tile** → `_check_vidar_altar` consumes 10 scraps and spawns `vidars_sandal` (armor, `plot_role: fenrir_quest_layer2_instant_kill`). D opens the drop menu for the scraps on Vidar's altar only (`game_input`); every other altar treats a scrap as plain junk. |
+
+**No hint but Recall Lore** (Brandon, 2026-11-13; winning-build plan 3.7). The scrap's lore is a plain, heavy offcut of shoe leather, "no use to anyone": no collector, no northern custom, no count. Picking one up writes one plain Journal line the first time and nothing else (the "Another scrap. That makes N" count and the ten-scrap "would about make a shoe" lines are gone). What they are for is told only by the Recall Lore hints in `data/hints.json` (the silent god's shoe; "keep counting"; the altar that "can count"). A trader refuses a scrap with the plain "Not for sale" every unsellable thing gets, and a thief skips it as he skips every quest piece, without a word.
 
 Reward: Vidar's Sandal, the Silent God's weapon. Per
 `artifact.json::vidars_sandal.plot_role` it enables the instant-kill

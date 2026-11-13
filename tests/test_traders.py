@@ -168,7 +168,10 @@ def test_regin_teaches_the_pit_and_tyr_wears_his_disguise():
     assert 'Tyr' not in tyr['name'] + tyr['title'] + json.dumps(tyr['lines'])
     for tell in ('Tiw', 'Tuesday', 'wrist', 'pledge'):
         assert tell in tyr['lore'], tell
-    assert 'ribbon' in tyr['gate_lines']['79'] and 'Vidar' in tyr['gate_lines']['79']
+    # Gleipnir is his to tell; Vidar's shoe is not (Brandon, 2026-11-13: the
+    # scraps carry no hint anywhere but Recall Lore).
+    _g79 = tyr['gate_lines']['79']
+    assert 'ribbon' in _g79 and 'Vidar' not in _g79 and 'scrap' not in _g79
 
 
 def test_noticing_gods_and_knowing_otrs_story_move_the_gate_prices():
@@ -274,7 +277,10 @@ def test_every_trader_kind_stocks_from_its_own_list():
         items.bind_unique_registry(set())
         stock = traders.build_stock(d, lvl, rng)
         assert stock, kind
-        assert len(stock) <= max(traders.stock_size(d, lvl), 2)
+        # An armourer also racks his best metal in the forms the shelf lacks
+        # (winning build 3.5: the mace to match the sword), up to three more.
+        extra = int(d.get('forms_of_best', 0) or 0)
+        assert len(stock) <= max(traders.stock_size(d, lvl), 2) + extra
         classes = {getattr(i, 'item_class', '') for i in stock}
         allowed = {e.get('class') or e.get('gear') or e.get('cat') for e in d['stock']}
         assert classes <= allowed, (kind, classes, allowed)
@@ -479,7 +485,8 @@ def test_left_and_right_turn_the_tabs_and_the_services_tab_lists_his_trade():
     assert g._shop_tab == 2
     names = [e['name'] for e in g._trader_menu()['entries']]
     assert names == ['Mend Rust and Acid', 'Sharpen Your Weapon', 'Reinforce Your Armour',
-                     'Cut Off a Cursed Thing']
+                     'Cut Off a Cursed Thing', 'Reforge Your Weapon', 'Silver Your Weapon',
+                     'Inlay Cold Iron', 'Line a Cloak or Shirt', 'Special Order', 'Trade In']
     _press(g, pygame.K_RIGHT)
     assert g._shop_tab == 0
     _press(g, pygame.K_ESCAPE)

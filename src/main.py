@@ -75,7 +75,7 @@ from game_render import RenderMixin
 from game_menus import MenuMixin
 from game_input import InputMixin
 from game_encounters import EncountersMixin
-from emberpup_encounter import EmberpupMixin, new_run_state as _emberpup_new_run
+from emberpup_encounter import EmberpupMixin, BloomleafMixin, new_run_state as _emberpup_new_run
 from black_knight import BlackKnightMixin, new_run_state as _black_knight_new_run
 from game_stray_kids import StrayKidsMixin
 from stray_kids import new_run_state as _stray_kids_new_run, old_save_state as _stray_kids_old_save
@@ -92,6 +92,7 @@ from game_seeker import SeekerMixin
 from game_popups import PopupMixin
 from game_hazards import HazardsMixin
 from game_lore_fixtures import LoreFixturesMixin
+from game_dressing import DressingMixin
 from escort_system import EscortMixin
 from spells import LEARNABLE_SPELLS
 
@@ -221,9 +222,9 @@ DEEP_SLEEP = 10 ** 6           # a zoo, graveyard or barracks sleeper: until wok
 
 
 class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMixin, EncountersMixin,
-           EmberpupMixin, BlackKnightMixin, StrayKidsMixin, ItemActionsMixin, RoadMixin, EscortMixin,
+           EmberpupMixin, BloomleafMixin, BlackKnightMixin, StrayKidsMixin, ItemActionsMixin, RoadMixin, EscortMixin,
            SetneMixin, TraderMixin, PurseMixin, FamilyMixin, SeekerMixin, PopupMixin,
-           HazardsMixin, LoreFixturesMixin):
+           HazardsMixin, LoreFixturesMixin, DressingMixin):
     # FANTASY: Grimoire font set -- larger for readability. Read through the
     # UI scale on every use (SCALE_PLAN.md): a window resize can never leave
     # a font of the old size behind.
@@ -368,9 +369,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self._cow_npc = None                  # reference to the cow monster entity
         self._cow_level: int = _lore_rng.randint(30, 39)  # which floor gets the cow
         # The abandoned Emberpup (every run, one floor of 3-8; earned: Dungeon Alive slice 8):
-        # {'floor', 'spawned', 'outcome'}. Rolled without drawing on the
+        # {'floor', 'spawned', 'outcome'}, and Old Nickel's floor, who wears
+        # the Bloomleaf Cloak the pup needs ('cloak_floor', emberpup_encounter.py),
+        # kept off a planned mini-boss's floor. Rolled without drawing on the
         # shared random stream, so seeded floors are the same as before.
-        self._emberpup: dict = _emberpup_new_run()
+        self._emberpup: dict = _emberpup_new_run(
+            exclude=getattr(self.level_mgr, '_planned_mini_bosses', None) or ())
         self._emberpup_npc = None             # the creature whose screen is open
         self._emberpup_phase: str = 'story'
         self._naming_story = None             # a non-sphere pet's words for the naming popup
@@ -685,6 +689,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self.player.sp     = self.player.max_sp
             self.player.max_mp = self.player.BASE_MP + self.player.INT
             self.player.mp     = self.player.max_mp
+        # What each stat was when the run began: an altar's rededication never
+        # takes one below it (rededication.py). Before the kit, which lends.
+        self.player.stats_at_start = {s: int(getattr(self.player, s)) for s in
+                                      ('STR', 'CON', 'DEX', 'INT', 'WIS', 'PER')}
 
         # Innate save affinity by build archetype (see module-level
         # _BUILD_SAVE_AFFINITY). Also re-applied in load_state for old saves.
@@ -716,6 +724,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self._maybe_spawn_flavor_npc(level)
         self._maybe_spawn_magic_carrot(level)
         self._maybe_spawn_unicorn(level)
+        self._maybe_spawn_cloak_wearer(level)       # Old Nickel, if floor 1 is his
         self._maybe_place_duck_of_doom(level)
         # Place deep-lore items targeted to this floor (e.g. abyssal_shimmer
         # when _lore_levels['shimmer'] == 1). Without this, lore items on L1
@@ -1125,6 +1134,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # Chests can no longer be carried (call 9): one already in the pack
         # of an old save is set down at the hero's feet, unopened.
         self._migrate_carried_containers()
+        # Monsters saved before the lore pass take their kind's weaknesses,
+        # resistances, shrugs_off and status lists (affinity.py).
+        self._migrate_monster_affinities(state)
         self.renderer.set_view_origin(layout.MAP_X, 0)
         self.renderer.set_dungeon(self.dungeon.width, self.dungeon.height, layout.MAP_W, layout.GAME_H)
         self._refresh_fov()
@@ -1252,6 +1264,21 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         }
         self.popup_next_state = STATE_PLAYER
         self.state = STATE_STORY_POPUP
+
+    def _migrate_monster_affinities(self, state: dict) -> int:
+        """Every monster on this floor and every stored one that was saved
+        before the lore pass (winning build, slice 2) takes its kind's
+        lists from data/monsters.json: affinity.refresh_from_data."""
+        import affinity as _affinity
+        pools = [getattr(self, 'monsters', None) or []]
+        lm = state.get('level_mgr') if isinstance(state, dict) else None
+        if lm:
+            pools += [lvl.get('monsters') or [] for lvl in _stored_floors(lm)]
+        n = 0
+        for pool in pools:
+            for m in pool:
+                n += 1 if _affinity.refresh_from_data(m) else 0
+        return n
 
     def _migrate_ranged_weapons(self):
         """One-shot save migration. Old saves have bows with requires_ammo=None
@@ -1747,6 +1774,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # A floor-100 altar takes one prayer a visit: a new visit is a new try.
         self._l100_altars_tried = set()
         _from_level = self.dungeon_level          # (the staircase taken, for Cerberus)
+        # Leaving the Emberpup's floor after feeding him is waiting.
+        self._emberpup_left(_from_level, new_level)
         # Notify quirk system before level change (fast-exit check)
         # New depth: a floor deeper than any reached. A side floor (the Cow
         # Level, 999; the Zombie Stage, 997) is a side trip, not depth:
@@ -1775,6 +1804,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # Escorts decide before the old floor is torn down: carried along,
         # arrived (their last stair), suspended (the Cow Level) or lost.
         _esc_carried, _esc_arrived = self._escorts_leaving(self.dungeon_level, new_level, via)
+        # A trader's visit ends with the floor (the trade-in), and an order
+        # with no stall below to collect it at is paid back (game_traders).
+        self._traders_leaving(self.dungeon_level)
         # Save current level state
         self.level_mgr.save(
             self.dungeon_level, self.dungeon, self.monsters, self.ground_items
@@ -1918,6 +1950,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self._maybe_spawn_unicorn(new_level)
             self._maybe_spawn_cow(new_level)
             self._maybe_spawn_emberpup(new_level)
+            self._maybe_spawn_cloak_wearer(new_level)   # after the pup: never in his room
             self._maybe_spawn_black_knight(new_level)
             self._maybe_spawn_stray_kids_idol(new_level)
             self._maybe_spawn_setne_tomb(new_level)
@@ -1927,6 +1960,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             # Revisit: spawn triggered NPCs if player now has the trigger item
             # (handles the case where player missed the item on first pass)
             self._maybe_spawn_npc(new_level)
+            # A save from before Old Nickel meets him on the pup's floor.
+            self._maybe_spawn_cloak_wearer(new_level)
 
         # Reset per-floor artifact states
         self._first_hit_used = False    # Babr-e Bayan
@@ -2808,6 +2843,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             from game_log import log_error
             log_error('main._give_starting_kit: recovered from an error')
         self.player.sort_pack()
+        # The hero's own kit is Known by Hand (known_by_hand.py): he brought
+        # it, and knows how it goes on, so his first turn is not a quiz.
+        import known_by_hand as _kbh
+        for _it in list(self.player.inventory) + self.player.worn_items():
+            if _kbh.asks_quiz(_it):
+                _kbh.learn(self.player, _it, 1)
 
         # -- Hero specials, passives, and journal entry --------------------
         # Pull from src/hero_specials.py based on the secret build's name.
@@ -5360,25 +5401,13 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             _senses.rouse_near(self.monsters, x, y, _senses.noise_radius('squeak'), self.dungeon)
             self.add_message("Every creature on the floor heard that!", 'danger')
         elif trap_type == 'rust':
-            from status_effects import _can_rust
-            # Collect all equipped items that can rust
-            rust_targets = []
-            if self.player.weapon and _can_rust(self.player.weapon):
-                rust_targets.append(self.player.weapon)
-            if self.player.shield and _can_rust(self.player.shield):
-                rust_targets.append(self.player.shield)
-            for slot in self.player.armor_slots:
-                if slot and _can_rust(slot):
-                    rust_targets.append(slot)
-            if rust_targets:
-                victim = random.choice(rust_targets)
-                # As the player knows it: victim.name printed an unidentified
-                # item's true name.
-                from items import wear_down
-                if wear_down(victim):
-                    self.add_message(f"Your {self._bare_name(victim)} rusts! (-1 enchantment)", 'danger')
-                else:
-                    self.add_message(f"Your {self._bare_name(victim)} is corroded but holds together.", 'warning')
+            # One worn iron or steel piece rusts, unless something he wears
+            # keeps rust off (status_effects.rust_worn_gear, the one way
+            # anything rusts).
+            from status_effects import rust_worn_gear
+            got = rust_worn_gear(self.player, None)
+            if got:
+                self.add_message(*got)
             else:
                 self.add_message("The water washes over you harmlessly.", 'info')
         elif trap_type == 'polymorph':
@@ -6190,27 +6219,13 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     and getattr(item, 'lore', None)):
                 self._lore_subject = item
                 self.state = STATE_LORE
-            # Leather scraps: keep count for the player. Nothing else in the
-            # game says how many there are or how many are held.
+            # Leather scraps: one plain Journal line the first time, and
+            # nothing more. No count, no "ten would make a shoe": what they
+            # are for is told only by Recall Lore (winning-build plan 3.7,
+            # Brandon 2026-11-13: "theres NO HINT in the item context").
             if getattr(item, 'id', '') == 'leather_scrap':
-                _n = sum(1 for i in self.player.inventory
-                         if getattr(i, 'id', '') == 'leather_scrap')
-                _WORDS = ['', 'one', 'two', 'three', 'four', 'five', 'six',
-                          'seven', 'eight', 'nine', 'ten']
-                if _n == 1:
-                    self._chron(
-                        'discovery', "Picked up a scrap of shoe leather. No use to anyone. "
-                        "I kept it anyway.", once='leather_scrap:first')
-                elif 1 < _n < 10:
-                    self.add_message(
-                        f"Another scrap. That makes {_WORDS[_n]}.", 'info')
-                elif _n == 10:
-                    self.add_message(
-                        "That makes ten. Laid together they would about make a shoe.",
-                        'success')
-                    self._chron(
-                        'discovery', "Ten scraps of leather. I do not know why I kept them. "
-                        "Together they would about make a shoe, for a very large foot.")
+                self._chron('discovery', "Picked up a heavy scrap of shoe leather. No use to anyone.",
+                            once='leather_scrap:first')
             # Journal: notable pickups (quest artifacts)
             _CHRONICLE_ITEMS = {
                 'philosophers_stone', 'ariadnes_thread', 'bronze_bull',
@@ -7268,6 +7283,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         p = self.player
         rows = [
             {'label': 'Weapon', 'slot': 'weapon', 'item': p.weapon},
+            # The weapon At Your Back (game_dressing.py): carried in the
+            # pack, S swaps it into the hand.
+            {'label': 'Back', 'slot': 'readied', 'item': p.readied_weapon},
             {'label': 'Ranged', 'slot': 'ranged_weapon', 'item': p.ranged_weapon},
             {'label': 'Shield', 'slot': 'shield', 'item': p.shield},
         ]
@@ -7376,6 +7394,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         source, entry, item = self._charsheet_selection(source=self._charsheet_detail_source())
         if item is None:
             return []
+        if source == 'loadout' and (entry or {}).get('slot') == 'readied':
+            return self._item_actions(item, 'back')
         return self._item_actions(item, 'equip' if source == 'loadout' else 'pack')
 
     def _charsheet_focus_actions(self) -> None:
@@ -7568,74 +7588,30 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.player.drop_worn_status(status)
 
     def _unequip_slot(self, slot_name: str, item):
-        """Remove an equipped item and return it to inventory."""
-        from items import ARMOR_SLOTS
-        from chain_equip import is_chain_equip, revert_tier_bonuses
+        """Take a worn item off into the pack. Body armour takes half its
+        donning time to come off; everything else one turn (game_dressing,
+        _dress_start_off and _take_off_now)."""
         ok, msg = self.player.try_unequip_slot(item)
         if not ok:
             self.add_message(msg, 'warning')
             return
-        # Revert chain-equip tier bonuses BEFORE slot bookkeeping so player
-        # state reflects baseline by the time the item returns to inventory.
-        if is_chain_equip(item) and getattr(item, 'achieved_tier', 0) > 0:
-            revert_tier_bonuses(self.player, item)
-        # Remove from the appropriate slot
-        if slot_name in ('weapon', 'ranged_weapon'):
-            if slot_name == 'weapon':
-                self.player.weapon = None
-            else:
-                self.player.ranged_weapon = None
-            # Take the weapon's while-equipped effects off with it. Only the
-            # swap path inside _apply_equip did this, so a plain unequip left
-            # them behind and equip/unequip cycles stacked them (Hofud +2
-            # PER per cycle; Curtana's blessing surviving removal).
-            self.player._remove_weapon_passives(item)
-            _w_status = getattr(item, 'on_equip_status', '')
-            if _w_status:
-                self._remove_status_if_no_other_grants(_w_status)
-        elif slot_name == 'shield':
-            self.player.shield = None
-            self.player.shed_worn_grants(item)
-        elif slot_name in ARMOR_SLOTS:
-            idx = ARMOR_SLOTS.index(slot_name)
-            self.player.armor_slots[idx] = None
-            # Its status and anything else it lent come off with it (only the
-            # swap path did this: the Blindfold left its wearer blind).
-            self.player.shed_worn_grants(item)
-        elif slot_name.startswith('accessory_') or slot_name in ('amulet', 'belt'):
-            if slot_name == 'amulet':
-                self.player.amulet_slot = None
-            elif slot_name == 'belt':
-                self.player.belt_slot = None
-            else:
-                self.player.accessory_slots[int(slot_name.split('_')[1])] = None
-            from items import Accessory as _Acc
-            if isinstance(item, _Acc):
-                # Its AC, and its stats by the strongest-counts rule (a
-                # weaker ring of the same stat takes over).
-                self.player.accessory_off(item)
-                fx = item.effects
-                if 'status' in fx:
-                    self._remove_status_if_no_other_grants(fx['status'])
-        self.player.inventory.append(item)
-        self.add_message(f"You remove the {self._bare_name(item)}.", 'info')
-        _qs_uneq = getattr(self, 'quirk_system', None)
-        if _qs_uneq:
-            itype = 'weapon' if slot_name in ('weapon', 'ranged_weapon') else \
-                    'shield' if slot_name == 'shield' else \
-                    'armor' if slot_name not in ('amulet', 'belt') and not slot_name.startswith('accessory_') else \
-                    'accessory'
-            _qs_uneq.on_item_unequipped(item.id, itype, slot_name)
-        self._advance_turn()
+        self._dress_start_off(slot_name, item)
 
     def _start_armor_quiz(self, item):
-        """Launch geography threshold quiz to equip armor or shield.
+        """Put on armour or a shield: the geography threshold quiz the first
+        time the hero wears its kind, then no quiz (Known by Hand,
+        known_by_hand.py), and the time it takes to put on
+        (game_dressing._dress_begin_on).
 
         Legendary uniques with `equip_chain_mode` route to chain-equip instead.
         """
         from chain_equip import is_chain_equip
+        import known_by_hand as _kbh
         if is_chain_equip(item):
             self._start_chain_equip_quiz(item, item_type='armor')
+            return
+        if _kbh.knows(self.player, item):
+            self._dress_known(item)
             return
         item_name = self._bare_name(item)
         self.quiz_title = f"EQUIPPING {item_name.upper()}  --  GEOGRAPHY"
@@ -7644,54 +7620,22 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         def on_complete(result):
             self.state = STATE_PLAYER
             if result.success:
-                self.player._apply_equip(item)
-                if not self._is_worn(item):
-                    # Refused (the piece in that slot would not come off):
-                    # the new one stays in the pack, never lost.
-                    self.add_message(
-                        f"You cannot put on the {item_name}.", 'warning')
-                    self._advance_turn()
-                    return
-                self.player.remove_from_inventory(item)
-                # Its curse, if any, is now known and named once ("the
-                # Cursed X (cursed)" said it twice, and before you knew).
-                # Only body armour and a shield move AC (bug bash 3.3.2):
-                # a helm or boots say only that they are on.
-                self.add_message(f"You equip the {item_name}." + self._ac_now_note(item), 'success')
-                self._note_worn_curse(item)
-                # Great Helm of Galahad (purity): announce the cleansing
-                # when items were freed of curses by the helm going on.
-                _cleansed = int(getattr(self.player, '_galahad_cleansed_count', 0) or 0)
-                if _cleansed > 0:
-                    self.add_message(
-                        f"The Grail's light flows from the helm. "
-                        f"{_cleansed} cursed item{'s' if _cleansed != 1 else ''} "
-                        f"on your person {'are' if _cleansed != 1 else 'is'} purified.",
-                        'success')
-                    self.player._galahad_cleansed_count = 0
-                _qs_arm = getattr(self, 'quirk_system', None)
-                if _qs_arm:
-                    itype = 'shield' if isinstance(item, Shield) else 'armor'
-                    _qs_arm.on_item_equipped(item.id, itype, getattr(item, 'slot', itype))
-            else:
-                self.add_message(
-                    f"You struggle with the {item_name} and give up.", 'warning'
-                )
+                # Its kind is known by hand from now on (_put_on_now learns
+                # it as it goes on; a plate stopped half on is learnt too).
+                _kbh.learn(self.player, item)
+                self._dress_begin_on(item)
+                return
+            self.add_message(
+                f"You struggle with the {item_name} and give up.", 'warning'
+            )
             self._advance_turn()
-
-        # Check Hephaestus quirk: -1 threshold for repeatedly-equipped armor slot
-        heph_slot = getattr(self.player, 'quirk_progress', {}).get('hephaestus_slot')
-        if heph_slot and getattr(item, 'slot', '') == heph_slot:
-            _threshold = max(1, item.equip_threshold - 1)
-        else:
-            _threshold = item.equip_threshold
 
         self.quiz_engine.start_quiz(
             mode='threshold',
             subject='geography',
             tier=getattr(item, 'quiz_tier', 1),
             callback=on_complete,
-            threshold=_threshold,
+            threshold=item.equip_threshold,
             wisdom=self.player.WIS,
             timer_modifier=self.player.get_quiz_timer_modifier(),
             extra_seconds=self.player.get_quiz_extra_seconds('geography'),
@@ -7731,8 +7675,13 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
 
         # Legendary uniques with `equip_chain_mode` route to chain-equip
         from chain_equip import is_chain_equip
+        import known_by_hand as _kbh
         if is_chain_equip(item):
             self._start_chain_equip_quiz(item, item_type='accessory')
+            return
+        # A kind the hero has worn goes on with no quiz (known_by_hand.py).
+        if _kbh.knows(self.player, item):
+            self._dress_known(item)
             return
 
         item_name = self._bare_name(item)
@@ -7742,49 +7691,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         def on_complete(result):
             self.state = STATE_PLAYER
             if result.success:
-                self.player._apply_equip(item)
-                if not self._is_worn(item):
-                    # Refused (a slot's item would not come off): keep the
-                    # new one in the pack rather than destroy it.
-                    self.add_message(
-                        f"You cannot put on the {item_name}.", 'warning')
-                    self._advance_turn()
-                    return
-                self.player.remove_from_inventory(item)
-                fx = item.effects
-                if 'status' in fx:
-                    # the status by its name, not its id ("You feel fire_resist!")
-                    from status_effects import EFFECT_INFO as _EI
-                    _label = (_EI.get(fx['status']) or (str(fx['status']).replace('_', ' ').title(),))[0]
-                    self.add_message(
-                        f"You slip on the {item_name}. You feel {_label}!", 'success'
-                    )
-                elif fx.get('stat') and fx.get('amount'):
-                    _st, _amt = fx['stat'], int(fx['amount'])
-                    # Only the strongest bonus to a stat counts
-                    # (Player.sync_worn_stats): say what this one adds
-                    # over the others worn.
-                    _got = (self.player.worn_stat_gain(item, _st)
-                            if _st in self.player.WORN_STATS else _amt)
-                    if _amt < 0 or _got >= _amt:
-                        self.add_message(
-                            f"You slip on the {item_name}. {_st} {_amt:+d}!", 'success')
-                    elif _got > 0:
-                        self.add_message(
-                            f"You slip on the {item_name}. {_st} {_got:+d}: of rings and amulets "
-                            f"of one stat, only the strongest counts.", 'success')
-                    else:
-                        self.add_message(
-                            f"You slip on the {item_name}, but you already wear a {_st} charm at "
-                            f"least as strong: of rings and amulets of one stat, only the "
-                            f"strongest counts.", 'info')
-                else:
-                    self.add_message(f"You slip on the {item_name}.", 'success')
-                self._note_worn_curse(item)
-            else:
-                self.add_message(
-                    f"You fumble with the {item_name} and give up.", 'warning'
-                )
+                _kbh.learn(self.player, item)
+                self._dress_begin_on(item)
+                return
+            self.add_message(
+                f"You fumble with the {item_name} and give up.", 'warning'
+            )
             self._advance_turn()
 
         self.quiz_engine.start_quiz(
@@ -7803,15 +7715,43 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     # Chain-equip: legendary uniques with escalator/chain mode equip-quiz
     # ------------------------------------------------------------------
 
-    def _start_chain_equip_quiz(self, item, item_type: str = 'armor'):
-        """Launch escalator-chain or chain quiz to equip a legendary unique.
+    def _start_chain_equip_quiz(self, item, item_type: str = 'armor', retake: bool = False):
+        """Attune to a legendary unique: an escalator-chain or chain quiz,
+        whose chain sets the tier (chain_equip.apply_tier_bonuses).
 
-        The chain length achieved determines tier_bonuses applied via
-        chain_equip.apply_tier_bonuses(). Fresh quiz every equip — no
-        sticky state. On failure the item is NOT equipped.
+        Known by Hand (known_by_hand.py) remembers the best chain reached on
+        it: put back on, it goes on at that tier with no quiz, and the hero
+        may take the quiz again to climb (``retake``; the best is kept, so a
+        worse chain costs nothing). The first time, a failure leaves it in
+        the pack. ``item_type`` is kept for callers; the slot is read from
+        the item.
         """
-        from chain_equip import get_chain_subject, get_chain_mode, apply_tier_bonuses
+        from chain_equip import get_chain_subject, get_chain_mode
+        import known_by_hand as _kbh
         item_name = self._bare_name(item)
+        best = _kbh.best_tier(self.player, item)
+        if best > 0 and not retake:
+            if best >= 5:
+                self.add_message(f"You have worn the {item_name} before, at tier 5/5. "
+                                 f"On it goes.", 'info')
+                self._dress_begin_on(item, tier=5)
+                return
+
+            def _wear(_i=item, _t=best):
+                self.add_message(f"You have worn the {item_name} before. On it goes, "
+                                 f"at tier {_t}/5.", 'info')
+                self._dress_begin_on(_i, tier=_t)
+
+            def _climb(_i=item, _k=item_type):
+                self._start_chain_equip_quiz(_i, _k, retake=True)
+            self._ask(f"Attune to the {item_name}?",
+                      [f"You have worn it at tier {best} of 5. It knows your hand.",
+                       "Attune again to climb: the best chain is kept."],
+                      [('N', f"Wear It at Tier {best}", "No quiz.", _wear),
+                       ('Y', "Attune Again", f"The quiz; a worse chain still leaves tier {best}.",
+                        _climb)],
+                      on_cancel=None)
+            return
         subject = get_chain_subject(item)
         mode = get_chain_mode(item)
         self.quiz_title = f"ATTUNING TO {item_name.upper()}  --  {subject.upper()}"
@@ -7825,55 +7765,18 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             chain = max(0, min(5, chain))
             # In chain mode you can fail rung 1 (chain=0). In escalator-chain
             # you must pass tier 1 to start the chain (chain >= 1 = success).
-            if chain >= 1:
-                apply_tier_bonuses(self.player, item, chain)
-                # Now actually equip
-                self.player._apply_equip(item)
-                if not self._is_worn(item):
-                    # Refused: the item in that slot would not come off.
-                    from chain_equip import revert_tier_bonuses
-                    revert_tier_bonuses(self.player, item)
-                    self.add_message(f"You cannot put on the {item_name}.", 'warning')
-                    self._advance_turn()
-                    return
-                self.player.remove_from_inventory(item)
-                self.add_message(
-                    f"You attune to the {item_name} at tier {chain}/5." + self._ac_now_note(item),
-                    'success'
-                )
-                self._note_worn_curse(item)
-                # Chain-equip passive auto-fires at equip time:
-                #   dragon_blood_bath -> permanent elemental resist statuses
-                #   aesir_young -> 5t protected when newly re-equipped
-                _passives = getattr(item, '_chain_passives', {}) or {}
-                if 'dragon_blood_bath' in _passives:
-                    # Listed on the item so they come off with it (two of the
-                    # three used to stay for the rest of the run).
-                    _held = list(getattr(item, '_chain_statuses', None) or [])
-                    for _stat in ('fire_resist', 'cold_resist', 'shock_resist'):
-                        self.player.add_effect(_stat, -1)
-                        if _stat not in _held:
-                            _held.append(_stat)
-                    item._chain_statuses = _held
-                    self.add_message(
-                        "You bathe in the dragon's blood. Elements turn aside!", 'success')
-                if 'aesir_young' in _passives:
-                    # Grant a brief shielded buff as a stand-in for "protected".
-                    self.player.add_effect('shielded', 5)
-                    self.add_message(
-                        "Idunn's apples wash years away. You are young again.", 'info')
-                _qs = getattr(self, 'quirk_system', None)
-                if _qs:
-                    if item_type == 'armor':
-                        from items import Shield
-                        slot_type = 'shield' if isinstance(item, Shield) else 'armor'
-                        _qs.on_item_equipped(item.id, slot_type, getattr(item, 'slot', slot_type))
-                    else:
-                        _qs.on_item_equipped(item.id, 'accessory', getattr(item, 'slot', 'accessory'))
-            else:
-                self.add_message(
-                    f"The {item_name} does not recognize you. Try again.", 'warning'
-                )
+            # Taken again to climb, the best chain reached is kept.
+            tier = max(chain, best)
+            if tier >= 1:
+                if best and chain <= best:
+                    self.add_message(f"You climb no higher than before: the {item_name} "
+                                     f"stays at tier {best}/5.", 'info')
+                _kbh.learn(self.player, item, tier)
+                self._dress_begin_on(item, tier=tier)
+                return
+            self.add_message(
+                f"The {item_name} does not recognize you. Try again.", 'warning'
+            )
             self._advance_turn()
 
         # Engine accepts 'escalator_chain' and 'chain'. JSON uses these names
@@ -7939,7 +7842,13 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                         return
                     item = copy_at(template, x, y)
                     claim_unique(item)
-                    item.identified = False
+                    if (getattr(item, 'special_properties', None) or {}).get('arrives_known'):
+                        # It drops known, like the Magic Dungeon Carrot: the
+                        # Bloomleaf Cloak off Old Nickel's back (emberpup_encounter.py).
+                        from items import grant_identified
+                        grant_identified(self, item)
+                    else:
+                        item.identified = False
                     self.ground_items.append(item)
                     self.add_message(">> A remarkable item falls from the defeated foe!", 'loot')
                     return

@@ -317,6 +317,15 @@ class Item:
         # in inventory (Charmander Stuffie, Dreamspun Sketchbook). See
         # Player.refresh_carry_bonuses.
         self.carry_bonus: dict | None = defn.get('carry_bonus', None)
+        # Free-form powers a piece names in its data (special_properties):
+        # "rustproof_wearer": true keeps rust off everything the wearer has
+        # on (Player.is_rustproof); "plot_role" marks a story item. Read with
+        # getattr(item, 'special_properties', None) or {} (old saves). A
+        # material's list of flags (['heavy', 'unbreakable']) becomes
+        # {flag: True}.
+        _sp = defn.get('special_properties') or {}
+        self.special_properties: dict = (dict(_sp) if isinstance(_sp, dict)
+                                         else {str(s): True for s in _sp})
         # Permanent saving-throw bonus while equipped (the gradient defense; the
         # total is capped in Player.save_bonus_for). Shape: {'cat': 'CON'|'WIS'|
         # 'DEX'|'all', 'amount': int}. Read dynamically off equipped gear.
@@ -866,6 +875,9 @@ class Armor(Item):
         # piece's base guard (guards.py). A unique takes its template's.
         self.weight_class: str   = str(defn.get('weight_class') or _template_class(
             'armor', defn.get('template_basis')) or 'light')
+        # The template it is built on (gear.template_of: how long it takes
+        # to put on; full plate is its own).
+        self.template_basis: str = str(defn.get('template_basis') or '')
         self.equip_threshold     = int(defn.get('equip_threshold', 2))
         self.quiz_tier: int      = int(defn.get('quiz_tier', 1))
         self.damage_resistances: dict = defn.get('damage_resistances', {})
@@ -990,6 +1002,7 @@ class Shield(Item):
         self.ac_bonus: int       = int(defn['ac_bonus'])
         self.enchant_bonus: int  = int(defn.get('enchant_bonus', 0))
         self.ench_level: int     = int(defn.get('ench_level', 0) or 0)   # gear.py
+        self.template_basis: str = str(defn.get('template_basis') or '')
         self.equip_threshold     = int(defn.get('equip_threshold', 2))
         self.quiz_tier: int      = int(defn.get('quiz_tier', 1))
         self.damage_resistances: dict = defn.get('damage_resistances', {})
@@ -2577,6 +2590,7 @@ def instantiate_armor(template_id: str, material_id: str, *,
         # Complexity (the template's weight class) + benefit (the tier).
         'equip_threshold': gear.equip_threshold(gear.weight_class(tpl), level),
         'weight_class': gear.weight_class(tpl),
+        'template_basis': template_id,
     }
     a = Armor(defn)
     a.x, a.y = x, y
@@ -2634,6 +2648,7 @@ def instantiate_shield(template_id: str, material_id: str, *,
         # Shields never had a threshold of their own (every one asked 2):
         # complexity (weight class) + benefit (tier), like armour.
         'equip_threshold': gear.equip_threshold(gear.weight_class(tpl), level),
+        'template_basis': template_id,
     }
     s = Shield(defn)
     s.x, s.y = x, y

@@ -13,7 +13,7 @@
     "material": "adamantine",
     "ac_bonus": 8,
     "enchant_bonus": 0,
-    "equip_threshold": 5,
+    "equip_threshold": 7,
     "quiz_tier": 5,
     "damage_resistances": {
       "fire": 0.65,
@@ -83,7 +83,7 @@
     "material": "adamantine",
     "ac_bonus": 3,
     "enchant_bonus": 5,
-    "equip_threshold": 5,
+    "equip_threshold": 7,
     "quiz_tier": 5,
     "damage_resistances": {
       "magic": 0.6,
@@ -121,7 +121,7 @@
     "material": "adamantine",
     "ac_bonus": 3,
     "enchant_bonus": 5,
-    "equip_threshold": 5,
+    "equip_threshold": 7,
     "quiz_tier": 5,
     "damage_resistances": {
       "slash": 0.75,
@@ -159,7 +159,7 @@
     "material": "adamantine",
     "ac_bonus": 3,
     "enchant_bonus": 5,
-    "equip_threshold": 5,
+    "equip_threshold": 7,
     "quiz_tier": 5,
     "damage_resistances": {
       "slash": 0.8,
@@ -197,7 +197,7 @@
     "tier": 1,
     "material": "bronze",
     "ac_bonus": 3,
-    "equip_threshold": 4,
+    "equip_threshold": 6,
     "quiz_tier": 1,
     "damage_resistances": {
       "blunt": 0.75,
@@ -235,7 +235,7 @@
     "tier": 4,
     "material": "bronze",
     "ac_bonus": 5,
-    "equip_threshold": 4,
+    "equip_threshold": 6,
     "quiz_tier": 4,
     "damage_resistances": {
       "magic": 0.5
@@ -300,7 +300,7 @@
     "tier": 1,
     "material": "steel",
     "ac_bonus": 2,
-    "equip_threshold": 3,
+    "equip_threshold": 5,
     "quiz_tier": 1,
     "damage_resistances": {},
     "can_be_cursed": false,
@@ -335,7 +335,7 @@
     "tier": 1,
     "material": "bronze",
     "ac_bonus": 2,
-    "equip_threshold": 3,
+    "equip_threshold": 5,
     "quiz_tier": 1,
     "damage_resistances": {
       "pierce": 0.85
@@ -374,7 +374,7 @@
     "tier": 4,
     "material": "divine bronze",
     "ac_bonus": 4,
-    "equip_threshold": 4,
+    "equip_threshold": 6,
     "quiz_tier": 4,
     "damage_resistances": {
       "fire": 0.0
@@ -413,7 +413,7 @@
     "tier": 3,
     "material": "divine bronze",
     "ac_bonus": 2,
-    "equip_threshold": 4,
+    "equip_threshold": 6,
     "quiz_tier": 3,
     "damage_resistances": {
       "blunt": 0.7
@@ -452,7 +452,7 @@
     "material": "legendary",
     "ac_bonus": 3,
     "enchant_bonus": 2,
-    "equip_threshold": 4,
+    "equip_threshold": 6,
     "quiz_tier": 2,
     "damage_resistances": {
       "pierce": 0.75
@@ -486,7 +486,7 @@
     "material": "legendary",
     "ac_bonus": 2,
     "enchant_bonus": 2,
-    "equip_threshold": 2,
+    "equip_threshold": 4,
     "quiz_tier": 2,
     "damage_resistances": {
       "slash": 0.75
@@ -520,7 +520,7 @@
     "material": "legendary",
     "ac_bonus": 2,
     "enchant_bonus": 2,
-    "equip_threshold": 2,
+    "equip_threshold": 4,
     "quiz_tier": 2,
     "damage_resistances": {
       "fire": 0.75
@@ -554,7 +554,7 @@
     "material": "legendary",
     "ac_bonus": 2,
     "enchant_bonus": 3,
-    "equip_threshold": 4,
+    "equip_threshold": 6,
     "quiz_tier": 3,
     "damage_resistances": {
       "slash": 0.7
@@ -588,7 +588,7 @@
     "material": "legendary",
     "ac_bonus": 2,
     "enchant_bonus": 3,
-    "equip_threshold": 4,
+    "equip_threshold": 6,
     "quiz_tier": 3,
     "damage_resistances": {
       "pierce": 0.7
@@ -622,7 +622,7 @@
     "material": "legendary",
     "ac_bonus": 3,
     "enchant_bonus": 3,
-    "equip_threshold": 5,
+    "equip_threshold": 7,
     "quiz_tier": 3,
     "damage_resistances": {
       "pierce": 0.6
@@ -656,7 +656,7 @@
     "material": "legendary",
     "ac_bonus": 2,
     "enchant_bonus": 3,
-    "equip_threshold": 4,
+    "equip_threshold": 6,
     "quiz_tier": 3,
     "damage_resistances": {
       "pierce": 0.75,
@@ -691,7 +691,7 @@
     "material": "legendary",
     "ac_bonus": 2,
     "enchant_bonus": 3,
-    "equip_threshold": 4,
+    "equip_threshold": 6,
     "quiz_tier": 3,
     "damage_resistances": {
       "blunt": 0.7
@@ -725,7 +725,7 @@
     "material": "legendary",
     "ac_bonus": 3,
     "enchant_bonus": 3,
-    "equip_threshold": 5,
+    "equip_threshold": 7,
     "quiz_tier": 3,
     "damage_resistances": {
       "pierce": 0.65,
@@ -760,7 +760,7 @@
     "material": "legendary",
     "ac_bonus": 3,
     "enchant_bonus": 3,
-    "equip_threshold": 3,
+    "equip_threshold": 5,
     "quiz_tier": 3,
     "damage_resistances": {
       "pierce": 0.7
@@ -795,7 +795,7 @@
     "material": "legendary",
     "ac_bonus": 2,
     "enchant_bonus": 4,
-    "equip_threshold": 4,
+    "equip_threshold": 6,
     "quiz_tier": 4,
     "damage_resistances": {
       "slash": 0.5
@@ -829,7 +829,7 @@
     "material": "legendary",
     "ac_bonus": 3,
     "enchant_bonus": 4,
-    "equip_threshold": 4,
+    "equip_threshold": 6,
     "quiz_tier": 4,
     "damage_resistances": {
       "cold": 0.5
@@ -863,7 +863,7 @@
     "material": "legendary",
     "ac_bonus": 3,
     "enchant_bonus": 4,
-    "equip_threshold": 3,
+    "equip_threshold": 5,
     "quiz_tier": 4,
     "damage_resistances": {
       "pierce": 0.5
@@ -897,7 +897,7 @@
     "material": "legendary",
     "ac_bonus": 3,
     "enchant_bonus": 4,
-    "equip_threshold": 4,
+    "equip_threshold": 6,
     "quiz_tier": 4,
     "damage_resistances": {
       "magic": 0.5
@@ -931,7 +931,7 @@
     "material": "legendary",
     "ac_bonus": 3,
     "enchant_bonus": 4,
-    "equip_threshold": 4,
+    "equip_threshold": 6,
     "quiz_tier": 4,
     "damage_resistances": {
       "slash": 0.5,
@@ -966,7 +966,7 @@
     "material": "legendary",
     "ac_bonus": 3,
     "enchant_bonus": 4,
-    "equip_threshold": 4,
+    "equip_threshold": 6,
     "quiz_tier": 4,
     "damage_resistances": {
       "fire": 0.5
@@ -1001,7 +1001,7 @@
     "material": "legendary",
     "ac_bonus": 4,
     "enchant_bonus": 4,
-    "equip_threshold": 3,
+    "equip_threshold": 5,
     "quiz_tier": 4,
     "damage_resistances": {
       "pierce": 0.5,
@@ -1036,7 +1036,7 @@
     "material": "legendary",
     "ac_bonus": 3,
     "enchant_bonus": 5,
-    "equip_threshold": 5,
+    "equip_threshold": 7,
     "quiz_tier": 5,
     "damage_resistances": {
       "pierce": 0.4
@@ -1070,7 +1070,7 @@
     "material": "legendary",
     "ac_bonus": 3,
     "enchant_bonus": 5,
-    "equip_threshold": 5,
+    "equip_threshold": 7,
     "quiz_tier": 5,
     "damage_resistances": {
       "slash": 0.4,
@@ -1105,7 +1105,7 @@
     "material": "legendary",
     "ac_bonus": 3,
     "enchant_bonus": 5,
-    "equip_threshold": 4,
+    "equip_threshold": 6,
     "quiz_tier": 5,
     "damage_resistances": {
       "slash": 0.5
@@ -1139,7 +1139,7 @@
     "material": "legendary",
     "ac_bonus": 4,
     "enchant_bonus": 5,
-    "equip_threshold": 5,
+    "equip_threshold": 7,
     "quiz_tier": 5,
     "damage_resistances": {
       "pierce": 0.3
@@ -1174,7 +1174,7 @@
     "material": "legendary",
     "ac_bonus": 4,
     "enchant_bonus": 5,
-    "equip_threshold": 5,
+    "equip_threshold": 7,
     "quiz_tier": 5,
     "damage_resistances": {
       "cold": 0.0,
@@ -1209,7 +1209,7 @@
     "material": "legendary",
     "ac_bonus": 9,
     "enchant_bonus": 0,
-    "equip_threshold": 5,
+    "equip_threshold": 7,
     "quiz_tier": 5,
     "damage_resistances": {
       "magic": 0.25,
@@ -1274,7 +1274,7 @@
     "material": "legendary",
     "ac_bonus": 4,
     "enchant_bonus": 5,
-    "equip_threshold": 4,
+    "equip_threshold": 6,
     "quiz_tier": 5,
     "damage_resistances": {
       "magic": 0.4,
@@ -1310,7 +1310,7 @@
     "material": "legendary",
     "ac_bonus": 4,
     "enchant_bonus": 5,
-    "equip_threshold": 5,
+    "equip_threshold": 7,
     "quiz_tier": 5,
     "damage_resistances": {
       "cold": 0.3,
@@ -1346,7 +1346,7 @@
     "material": "legendary",
     "ac_bonus": 4,
     "enchant_bonus": 5,
-    "equip_threshold": 5,
+    "equip_threshold": 7,
     "quiz_tier": 5,
     "damage_resistances": {
       "magic": 0.25,
@@ -1383,7 +1383,7 @@
     "material": "legendary",
     "ac_bonus": 4,
     "enchant_bonus": 5,
-    "equip_threshold": 5,
+    "equip_threshold": 7,
     "quiz_tier": 5,
     "damage_resistances": {
       "magic": 0.25,
@@ -1418,7 +1418,7 @@
     "tier": 5,
     "material": "legendary",
     "ac_bonus": 4,
-    "equip_threshold": 5,
+    "equip_threshold": 7,
     "quiz_tier": 5,
     "damage_resistances": {
       "blunt": 0.6,

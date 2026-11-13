@@ -1,0 +1,1074 @@
+{
+  "_doc": "What every monster family is weak to, resists and shrugs off, and what its nature refuses or falls to easily, decided from its LORE (winning-build plan 2026-11-13 section 3.2; Brandon: 'lore, not floor'). tools/content/affinity_pass.py --write writes it into data/monsters.json (`weaknesses`, `resistances`, `shrugs_off`, `status_immune`, `status_weak`); data/affinity_rules.json holds the steps (weak x2, resisted x0.5, shrugs off x0.25, cap x3). tests/test_affinity_lore.py checks every family has a profile with a lore note and a source, that monsters.json matches this file, and that every lock has a key above it.",
+  "_schema": {
+    "layers": "A kind's profile is its family's, then its group's (if it is in one), then its own (kinds), then the tag rules. FORM (slash, pierce, blunt) comes wholly from the layers: each layer may set a form to weak, resist, shrugs_off or neutral, later layers winning. A named foe (boss, mini-boss, seal demon) keeps the forms written on it in monsters.json unless `kinds` names its form. ELEMENTS and SUBSTANCES (fire, holy, silver, iron...) start from the kind's own lists in monsters.json: a family or tag rule adds softly (never against the kind's own opposite word), a group or kind adds by force (it moves the type from the opposite list); `drop` removes a type from all three lists. STATUS lists: a group's or kind's list, when given, replaces its family's; the tag rules then add to status_immune and take what is immune out of status_weak.",
+    "status_immune": "the effect never takes hold, and the game says why (Monster.add_effect, affinity.status_line)",
+    "status_weak": "it takes hold without a big foe's resist roll and lasts half again as long; the token fear_of_fire means a fire hit puts it to flight (not on a kind that resists fire)",
+    "holy": "holy weakness is for the unholy only: the tags in unholy.tags, and the cursed kinds named in unholy.cursed. Every other kind loses holy from its weaknesses."
+  },
+  "unholy": {
+    "lore": "Holy power burns what has turned against heaven: the dead who will not lie down, the fiends of the pit, and the few whose own nature is a curse. A blessed blade against an honest bear is only a blade.",
+    "source": "The Christian rite of exorcism (holy water and the sign of the cross against demons and the restless dead); the plan's ruling, section 3.2: 'Holy is narrowed to the unholy (undead, demons, the cursed)'.",
+    "tags": [
+      "undead",
+      "demon"
+    ],
+    "cursed": {
+      "werewolf": "Lycaon served Zeus human flesh and was turned into a wolf for it: lycanthropy is a curse.",
+      "werewolf_alpha": "Sigmund and Sinfjotli put on cursed wolf skins and could not take them off for ten days.",
+      "elder_werewolf": "The oldest of the cursed: the wolf has long since eaten the man.",
+      "wererat": "A cursed man, as every were-beast is.",
+      "weretiger": "The harimau jadian is a man cursed to become a tiger after dark.",
+      "werebear": "A bear-curse, like the wolf-curse.",
+      "corrupted_angel": "One of the third of the stars the dragon's tail swept from heaven (Revelation 12:4): fallen.",
+      "pegasus_corrupted": "A creature of heaven turned rotten: holy light burns what it fell from.",
+      "unicorn_corrupted": "The unicorn's horn cleansed poisoned pools; this one's horn poisons them.",
+      "nothic": "The curse that answers a wizard's greed bent him into this shape.",
+      "ker": "The Keres are the death-spirits of the battlefield, gorging on the blood of the fallen (Hesiod, Shield of Heracles).",
+      "lamia": "Grief and Hera's curse turned a queen into a devourer of children.",
+      "bone_golem": "A necromancer built it from the bones of the dead and bound it with death-magic.",
+      "gnoll_fang_of_yeenoghu": "Marked by the demon lord Yeenoghu: his taint runs in its blood.",
+      "gnoll_alpha_of_yeenoghu": "It ate the demon-tainted flesh of the alpha before it.",
+      "mere_wife": "The Beowulf poet names Grendel's kin the race of Cain, whom the Creator outlawed and condemned."
+    }
+  },
+  "tag_rules": {
+    "undead": {
+      "lore": "The dead do not sleep, and poison has no living blood to ride; they feel no affection for a charm to win (a hero with the Helm of Aragorn's oath is the one exception: Monster.resists_control).",
+      "source": "Dungeons & Dragons, Monster Manual (1977): the undead are immune to sleep, charm and poison.",
+      "elements": {
+        "weak": [
+          "holy"
+        ]
+      },
+      "status_immune": [
+        "sleeping",
+        "poisoned",
+        "charmed"
+      ]
+    },
+    "demon": {
+      "lore": "Fiends of the pit: holy power burns them.",
+      "source": "The rite of exorcism; Revelation 20 (the devil cast into the lake of fire).",
+      "elements": {
+        "weak": [
+          "holy"
+        ]
+      },
+      "status_immune": [
+        "poisoned"
+      ]
+    },
+    "construct": {
+      "lore": "A made thing has no mind to frighten, muddle or charm, never sleeps and has no blood for poison.",
+      "source": "The golem of Prague (Rabbi Judah Loew's clay servant) obeys the word on its brow and nothing else.",
+      "status_immune": [
+        "feared",
+        "confused",
+        "charmed",
+        "sleeping",
+        "poisoned"
+      ]
+    },
+    "plant": {
+      "lore": "A plant has no mind to frighten, charm or confuse, and no eyes to blind.",
+      "source": "Natural history; the old rule of Monster.resists_control, now written down.",
+      "status_immune": [
+        "feared",
+        "charmed",
+        "confused",
+        "blinded"
+      ]
+    },
+    "elemental": {
+      "lore": "Living fire, stone, wind and water: nothing in them sleeps or can be poisoned.",
+      "source": "Paracelsus, A Book on Nymphs, Sylphs, Pygmies and Salamanders (1566): the elemental beings are made of their element alone.",
+      "status_immune": [
+        "sleeping",
+        "poisoned"
+      ]
+    },
+    "fey": {
+      "lore": "Iron is the fairies' bane: an iron knife in the cradle or a horseshoe over the door keeps them off.",
+      "source": "British and Irish folk belief, recorded by W. B. Yeats, Fairy and Folk Tales of the Irish Peasantry (1888), and Katharine Briggs, A Dictionary of Fairies (1976).",
+      "elements": {
+        "weak": [
+          "iron"
+        ]
+      }
+    }
+  },
+  "families": {
+    "restless_dead": {
+      "lore": "Walking corpses have no blood to lose and no heart to stop, so a thrust finds nothing to kill. The old way is to take the head.",
+      "source": "Grettis saga, ch. 35: Grettir wrestles the draugr Glámr, cuts off his head and burns the body.",
+      "form": {
+        "pierce": "resist",
+        "slash": "weak"
+      }
+    },
+    "ghosts": {
+      "lore": "A blade passes through a ghost as through mist: every ordinary blow is mostly wasted. Holy power and fire are what lay them.",
+      "source": "Shakespeare, Hamlet 1.1: the Ghost 'is, as the air, invulnerable, and our vain blows malicious mockery.'",
+      "form": {
+        "slash": "resist",
+        "pierce": "resist",
+        "blunt": "resist"
+      },
+      "status_immune": [
+        "immobilized"
+      ]
+    },
+    "vampires_liches": {
+      "lore": "A vampire is killed with a stake through the heart: a thrust is the way.",
+      "source": "Bram Stoker, Dracula (1897), ch. 16: Arthur drives the stake through Lucy's heart.",
+      "form": {
+        "pierce": "weak"
+      }
+    },
+    "demons": {
+      "lore": "Fiends of the pit wear flesh like a coat; blades bite it as they bite any flesh. What hurts them is holy power and cold iron.",
+      "source": "Medieval exorcism manuals (holy water); cold iron against spirits in British folk belief (Katharine Briggs, A Dictionary of Fairies).",
+      "form": {}
+    },
+    "dragons": {
+      "lore": "Dragon scales turn a sword's edge, but a thrust finds the gap: Bard's black arrow found the bare patch on Smaug's breast, and Sigurd stabbed Fafnir from below. Dragons breathe fire and do not burn, and they sleep deeply on their gold.",
+      "source": "Volsunga saga, ch. 18 (Sigurd in the pit); Tolkien, The Hobbit (1937), ch. 14 (the black arrow); Apollonius of Rhodes, Argonautica 4: Medea sings the sleepless dragon of the Golden Fleece to sleep.",
+      "form": {
+        "pierce": "weak",
+        "slash": "resist"
+      },
+      "elements": {
+        "resist": [
+          "fire"
+        ]
+      },
+      "status_weak": [
+        "sleeping"
+      ]
+    },
+    "giants": {
+      "lore": "Giants are mighty and slow-witted, and the stories are full of small heroes who trick them into fighting each other.",
+      "source": "Jack the Giant Killer (English fairy tale): Jack throws stones at two sleeping giants until each thinks the other struck him; Odyssey 9: 'Nobody' blinds the Cyclops.",
+      "form": {},
+      "status_weak": [
+        "confused"
+      ]
+    },
+    "goblinkin": {
+      "lore": "Goblins, orcs, kobolds and gnolls are flesh and leather like men: no lore lock, no secret key. Their strength is numbers and their war-bands.",
+      "source": "Tolkien, The Hobbit (1937): the goblins of the Misty Mountains fall to plain swords (Orcrist and Glamdring) like any foe.",
+      "form": {}
+    },
+    "mortals": {
+      "lore": "Men and women: what hurts any of us hurts them. Their armour is the only thing that changes the blow.",
+      "source": "Common sense, and every war ever fought.",
+      "form": {}
+    },
+    "fair_folk": {
+      "lore": "The fair folk fear iron. They are clever and quick, and an ordinary blade cuts them like anyone else, but iron burns them.",
+      "source": "Yeats, Fairy and Folk Tales of the Irish Peasantry (1888); Briggs, A Dictionary of Fairies (1976).",
+      "form": {}
+    },
+    "great_beasts": {
+      "lore": "Wolves, bears, lions and boars are flesh and fur, and every beast fears fire: a torch keeps the pack off.",
+      "source": "Kipling, The Jungle Book (1894), 'Mowgli's Brothers': Mowgli drives off Shere Khan and the wolves with the Red Flower, fire.",
+      "form": {},
+      "status_weak": [
+        "fear_of_fire"
+      ]
+    },
+    "vermin": {
+      "lore": "Rats, bats, beetles and spiders: small enough that the right blow ends them. A beetle's shell turns an edge but cracks under a boot; a swarm cannot be cut at all.",
+      "source": "Natural history (an insect's armour is its outer shell); the Pied Piper of Hamelin, for the rats' weakness for a tune.",
+      "form": {}
+    },
+    "serpents": {
+      "lore": "Snakes, lizards and frogs are flesh and scale; the old snake charmers sway a cobra with a tune.",
+      "source": "Psalm 58:4-5 ('the deaf adder ... which will not hearken to the voice of charmers'); the snake charmers of India and Egypt.",
+      "form": {}
+    },
+    "birds": {
+      "lore": "Birds are light and hollow-boned: an arrow brings them down.",
+      "source": "Apollodorus, Library 2.5.6: Heracles scares the Stymphalian birds up with a bronze rattle and shoots them down.",
+      "form": {
+        "pierce": "weak"
+      }
+    },
+    "gorgons": {
+      "lore": "The gorgons and the basilisks kill with a look. Perseus took Medusa's head with a curved sword, looking only at her reflection.",
+      "source": "Ovid, Metamorphoses 4; Pliny, Natural History 8.33 (the basilisk).",
+      "form": {}
+    },
+    "legend": {
+      "lore": "The monsters of the old stories each fell in their own way, and each one's weakness is its story: see the kinds.",
+      "source": "Apollodorus, Library (the Labours of Heracles); Hesiod, Theogony.",
+      "form": {}
+    },
+    "shapeshifters": {
+      "lore": "A shapeshifter's body is not quite real: wounds close almost as fast as they are made. Its curse has a key.",
+      "source": "European folk belief about the were-beasts (see the werewolves group).",
+      "form": {}
+    },
+    "constructs": {
+      "lore": "Things of bronze, iron, clay and stone: a blade skates off them or sticks fast, but a hammer cracks them.",
+      "source": "The golem of Prague (clay) and Hephaestus's bronze Talos (Apollonius, Argonautica 4); a smith's sense of metal and stone.",
+      "form": {
+        "blunt": "weak",
+        "slash": "resist",
+        "pierce": "resist"
+      }
+    },
+    "elementals": {
+      "lore": "Living fire, air and water close behind a blade like a wound that was never there; stone turns it. The hammer and the opposing element are what break them.",
+      "source": "Paracelsus, A Book on Nymphs, Sylphs, Pygmies and Salamanders (1566); the Sumerian poem Lugal-e (Ninurta's mace Sharur breaks the stone army of Asag).",
+      "form": {
+        "slash": "resist",
+        "pierce": "resist"
+      }
+    },
+    "oozes": {
+      "lore": "A jelly closes round a thrust and a blow only wobbles it. Only an edge, cold or fire really harms it, and some jellies split when cut.",
+      "source": "Dungeons & Dragons, Monster Manual (1977): the gelatinous cube, the black pudding (cutting divides it) and the oozes; they are blind and mindless.",
+      "form": {
+        "blunt": "resist",
+        "pierce": "resist"
+      },
+      "status_immune": [
+        "feared",
+        "charmed",
+        "confused",
+        "blinded",
+        "sleeping"
+      ]
+    },
+    "aberrations": {
+      "lore": "Things from outside the world, each made wrong in its own way: see the kinds.",
+      "source": "Lovecraft's star-spawn and the Dungeons & Dragons aberrations (the beholder, the mind flayer, the mimic).",
+      "form": {}
+    },
+    "plants": {
+      "lore": "An arrow sticks in a trunk and does nothing; an axe fells it, and fire takes it. Dry wood goes up like kindling.",
+      "source": "The woodsman's trade; Tolkien gives the Ents the same dread of axe and fire (The Two Towers, 1954).",
+      "form": {
+        "slash": "weak",
+        "pierce": "resist"
+      },
+      "elements": {
+        "weak": [
+          "fire"
+        ]
+      },
+      "status_weak": [
+        "burning"
+      ]
+    },
+    "celestials": {
+      "lore": "Heaven's own: what they fear is shadow and the death-magic, not holy power.",
+      "source": "Revelation; Dionysius the Areopagite, The Celestial Hierarchy.",
+      "form": {}
+    }
+  },
+  "groups": {
+    "skeletons": {
+      "lore": "Bones snap under a mace, but a blade slides off them and a thrust goes between the ribs and finds nothing.",
+      "source": "Dungeons & Dragons, Monster Manual (1977): 'sharp and/or edged weapons do only half damage to skeletons; blunt weapons do normal damage.'",
+      "form": {
+        "blunt": "weak",
+        "slash": "resist",
+        "pierce": "resist"
+      },
+      "kinds": [
+        "skeleton",
+        "skeleton_warrior",
+        "burning_skeleton",
+        "frost_skeleton",
+        "skeletal_archer",
+        "skeleton_mage",
+        "bone_archer",
+        "skeleton_archer",
+        "ossuary_horror",
+        "skeletal_giant",
+        "skeleton_champion",
+        "bone_collector",
+        "bone_titan",
+        "bone_colossus",
+        "skeleton_horde",
+        "gashadokuro",
+        "charnel_hound",
+        "totentanz_dancer",
+        "skeleton_necromancer",
+        "bone_witch",
+        "skeleton_lich",
+        "bone_golem",
+        "dracolich",
+        "elder_dracolich"
+      ]
+    },
+    "armoured": {
+      "lore": "Plate turns a sword's edge and most points; the mace and the war hammer were made for men in plate.",
+      "source": "Medieval arms: the flanged mace and the war hammer spread across Europe with plate armour in the fourteenth century.",
+      "form": {
+        "slash": "resist",
+        "pierce": "resist",
+        "blunt": "weak"
+      },
+      "kinds": [
+        "death_knight",
+        "dread_knight",
+        "grave_knight",
+        "death_knight_lord",
+        "dread_knight_legion",
+        "iron_horseman",
+        "veteran_knight",
+        "demon_knight",
+        "darkhelm_shade",
+        "throne_sentinel",
+        "animated_armor"
+      ]
+    },
+    "shades": {
+      "lore": "The wholly bodiless dead: no flesh at all, only cold and shadow. Ordinary blows pass straight through.",
+      "source": "Homer, Odyssey 11: three times Odysseus tried to embrace his mother's shade, and three times she slipped from his arms like a shadow or a dream.",
+      "form": {
+        "slash": "shrugs_off",
+        "pierce": "shrugs_off",
+        "blunt": "shrugs_off"
+      },
+      "kinds": [
+        "shadow",
+        "specter",
+        "shadow_master",
+        "spectral_lord",
+        "entropy_wraith",
+        "spectral_dragon"
+      ]
+    },
+    "liches": {
+      "lore": "A lich has put its death outside its body, so blades and points do it little harm. Its bones still break.",
+      "source": "The Russian tale of Koschei the Deathless (Afanasyev): his death is hidden in a needle, in an egg, in a duck, in a hare, in a chest under an oak.",
+      "form": {
+        "slash": "resist",
+        "pierce": "resist",
+        "blunt": "neutral"
+      },
+      "kinds": [
+        "lich_thrall",
+        "death_mage",
+        "pale_master",
+        "necromancer_lord",
+        "lich_apprentice",
+        "demi_lich",
+        "lich",
+        "lich_lord",
+        "crypt_summoner",
+        "greater_lich",
+        "lich_sovereign",
+        "banshee_lich",
+        "arch_lich",
+        "ancient_lich",
+        "neferkaptah_risen",
+        "lich_dragon_spawn"
+      ]
+    },
+    "devils": {
+      "lore": "The devils of the deeper pits fear silver, the pure metal, as witches do.",
+      "source": "English and German folk belief: silver drives off the Devil and witches (the silver bullet or the silver sixpence); Dungeons & Dragons gives the devils the same weakness.",
+      "elements": {
+        "weak": [
+          "silver"
+        ]
+      },
+      "kinds": [
+        "bearded_devil",
+        "erinyes_lesser",
+        "chain_devil_spawn",
+        "barbed_devil",
+        "bone_devil",
+        "pit_fiend_spawn"
+      ]
+    },
+    "mimics": {
+      "lore": "A mimic's skin oozes a glue stronger than pitch: a club or a mace sticks fast and does little.",
+      "source": "Dungeons & Dragons, Monster Manual (1977): the mimic and its adhesive.",
+      "form": {
+        "blunt": "resist"
+      },
+      "kinds": [
+        "mimic",
+        "greater_mimic",
+        "gilded_mimic",
+        "abyssal_mimic"
+      ]
+    },
+    "beholders": {
+      "lore": "The great central eye is the beholder's heart and its weakness: a thrust or an arrow into it, or a blinding.",
+      "source": "Dungeons & Dragons, Monster Manual (1977): the beholder.",
+      "form": {
+        "pierce": "weak"
+      },
+      "status_weak": [
+        "blinded"
+      ],
+      "kinds": [
+        "beholder_spawn",
+        "beholder",
+        "elder_beholder"
+      ]
+    },
+    "mind_flayers": {
+      "lore": "Masters of the mind cannot be muddled or charmed by a lesser one.",
+      "source": "Dungeons & Dragons, Monster Manual (1977): the mind flayer.",
+      "status_immune": [
+        "charmed",
+        "confused"
+      ],
+      "kinds": [
+        "mind_flayer",
+        "elder_mind_flayer",
+        "intellect_devourer"
+      ]
+    },
+    "earth_elementals": {
+      "lore": "Stone turns any edge or point, and shatters under a hammer.",
+      "source": "The Sumerian poem Lugal-e: Ninurta smashes the stone warriors of Asag with his mace Sharur.",
+      "form": {
+        "slash": "resist",
+        "pierce": "resist",
+        "blunt": "weak"
+      },
+      "kinds": [
+        "greater_earth_elemental",
+        "earth_elemental",
+        "asag_stone_warrior",
+        "xorn"
+      ]
+    },
+    "fire_elementals": {
+      "lore": "A creature made of fire is not hurt by fire at all, or nearly so. A blade passes through the flame; cold kills it.",
+      "source": "Paracelsus (1566): the salamanders live in fire as fish live in water.",
+      "form": {
+        "slash": "resist",
+        "pierce": "resist"
+      },
+      "elements": {
+        "shrugs_off": [
+          "fire"
+        ]
+      },
+      "kinds": [
+        "fire_elemental",
+        "greater_fire_elemental",
+        "magma_elemental",
+        "lava_elemental",
+        "primordial_fire_elemental"
+      ]
+    },
+    "water_elementals": {
+      "lore": "You cannot cut, stab or crush water. Lightning and cold go through it.",
+      "source": "Paracelsus (1566): the undines, the beings of water.",
+      "form": {
+        "slash": "resist",
+        "pierce": "resist",
+        "blunt": "resist"
+      },
+      "kinds": [
+        "water_elemental"
+      ]
+    },
+    "jinn": {
+      "lore": "The jinn, made of smokeless fire, are driven off by iron.",
+      "source": "Arab folk belief (the cry 'Hadid! Iron!' against the jinn, recorded by Edward Lane, The Manners and Customs of the Modern Egyptians, 1836); Qur'an 55:15 (the jinn made of smokeless fire).",
+      "elements": {
+        "weak": [
+          "iron"
+        ]
+      },
+      "kinds": [
+        "ruinous_djinn",
+        "whirlwind_jinni"
+      ]
+    },
+    "jellies": {
+      "lore": "Some jellies flow round an edge too; only fire and cold really harm them.",
+      "source": "Dungeons & Dragons, Monster Manual (1977): the ochre jelly.",
+      "form": {
+        "slash": "resist"
+      },
+      "kinds": [
+        "ochre_jelly"
+      ]
+    },
+    "beetles": {
+      "lore": "A beetle's shell turns an edge but cracks under a hammer or a boot.",
+      "source": "Natural history: an insect's armour is its hard outer shell, strong against a cut and brittle to a crushing blow.",
+      "form": {
+        "slash": "resist",
+        "blunt": "weak"
+      },
+      "kinds": [
+        "giant_beetle",
+        "fire_beetle",
+        "khepri_beetle",
+        "death_beetle",
+        "giant_scorpion",
+        "frost_crawler",
+        "carrion_crawler",
+        "giant_mantis"
+      ]
+    },
+    "swarms": {
+      "lore": "A swarm is ten thousand small things: a blade or a point kills two and misses the rest, and stamping does little better. Fire is the answer, as the hot brand is for rot grubs.",
+      "source": "Natural history (the locust plagues of Exodus 10); Dungeons & Dragons, Monster Manual (1977): rot grubs are killed by fire on the skin.",
+      "form": {
+        "slash": "shrugs_off",
+        "pierce": "shrugs_off",
+        "blunt": "resist"
+      },
+      "elements": {
+        "weak": [
+          "fire"
+        ]
+      },
+      "status_immune": [
+        "charmed",
+        "paralyzed",
+        "stunned",
+        "immobilized"
+      ],
+      "kinds": [
+        "scarab_swarm",
+        "rot_grub_swarm",
+        "stirge_swarm",
+        "khrafstra_swarm"
+      ]
+    },
+    "trolls": {
+      "lore": "A troll's wounds close as you watch, unless they are burned or eaten by acid; fire also frightens it.",
+      "source": "Poul Anderson, Three Hearts and Three Lions (1961): the troll whose severed parts crawl back together until they are burned; Dungeons & Dragons, Monster Manual (1977): fire and acid stop a troll's regeneration.",
+      "elements": {
+        "weak": [
+          "fire",
+          "acid"
+        ]
+      },
+      "status_weak": [
+        "fear_of_fire",
+        "confused"
+      ],
+      "kinds": [
+        "troll",
+        "ice_troll",
+        "cave_troll",
+        "troll_brute",
+        "chaos_troll",
+        "war_troll"
+      ]
+    },
+    "cyclopes": {
+      "lore": "A one-eyed giant has one eye to put out: a thrust is its undoing.",
+      "source": "Homer, Odyssey 9: Odysseus drives a sharpened olive stake into Polyphemus's eye.",
+      "form": {
+        "pierce": "weak"
+      },
+      "kinds": [
+        "cyclops",
+        "cyclops_brute",
+        "fomorian"
+      ]
+    },
+    "werewolves": {
+      "lore": "A were-beast's wounds close almost as fast as they are made; only silver and holy power hurt it properly.",
+      "source": "European folk belief, fixed by the film The Wolf Man (1941): only silver kills the werewolf; Ovid, Metamorphoses 1 (Lycaon cursed into a wolf).",
+      "form": {
+        "slash": "resist",
+        "pierce": "resist",
+        "blunt": "resist"
+      },
+      "elements": {
+        "weak": [
+          "silver"
+        ]
+      },
+      "kinds": [
+        "wererat",
+        "weretiger",
+        "werebear",
+        "werewolf",
+        "werewolf_alpha",
+        "elder_werewolf"
+      ]
+    },
+    "elves": {
+      "lore": "Elves do not sleep as men do, and magic cannot put them to sleep.",
+      "source": "Tolkien's sleepless Elves; Dungeons & Dragons, Player's Handbook (2014): Fey Ancestry ('magic can't put you to sleep').",
+      "status_immune": [
+        "sleeping"
+      ],
+      "kinds": [
+        "dark_elf",
+        "drow_warrior",
+        "drow_mage",
+        "drow_priestess",
+        "light_elf_hostile"
+      ]
+    },
+    "snakes": {
+      "lore": "A true snake sways to a charmer's tune and can be charmed out of striking.",
+      "source": "Psalm 58:4-5 ('the voice of charmers'); the snake charmers of India.",
+      "status_weak": [
+        "charmed"
+      ],
+      "kinds": [
+        "cobra",
+        "sea_snake",
+        "swamp_serpent",
+        "rock_python",
+        "naga_guardian",
+        "sable_serpent"
+      ]
+    },
+    "world_serpents": {
+      "lore": "The Midgard Serpent's children: Thor's hammer is the blow that kills them.",
+      "source": "Snorri Sturluson, Prose Edda, Gylfaginning 51: at Ragnarok Thor kills Jormungandr with Mjolnir.",
+      "form": {
+        "blunt": "weak"
+      },
+      "kinds": [
+        "jormungandr_spawn",
+        "jormungandr_juvenile",
+        "world_serpent"
+      ]
+    },
+    "medusas": {
+      "lore": "Perseus took Medusa's head with one stroke of a curved sword: a cutting blow is her undoing.",
+      "source": "Ovid, Metamorphoses 4; Apollodorus, Library 2.4.2 (the harpe Hermes gave Perseus).",
+      "form": {
+        "slash": "weak"
+      },
+      "kinds": [
+        "medusa",
+        "medusa_gorgon"
+      ]
+    },
+    "hydras": {
+      "lore": "Cut off one head and two grow back, unless the stump is burned.",
+      "source": "Apollodorus, Library 2.5.2: Iolaus sears each stump with a torch as Heracles cuts.",
+      "form": {
+        "slash": "resist"
+      },
+      "elements": {
+        "weak": [
+          "fire"
+        ]
+      },
+      "kinds": [
+        "hydra",
+        "mythic_hydra"
+      ]
+    },
+    "chimeras": {
+      "lore": "Bellerophon killed the Chimera with a lead-tipped spear thrust into its fiery throat: the fire melted the lead.",
+      "source": "John Tzetzes, scholia on Lycophron (the lead-tipped spear); Hesiod, Theogony 319-325.",
+      "form": {
+        "pierce": "weak"
+      },
+      "kinds": [
+        "chimera",
+        "chimera_alpha"
+      ]
+    },
+    "angels": {
+      "lore": "Heaven's soldiers know no fear and give no love for a charm to win.",
+      "source": "Revelation 12:7: Michael and his angels fought against the dragon.",
+      "status_immune": [
+        "feared",
+        "charmed"
+      ],
+      "kinds": [
+        "celestial_guardian",
+        "heavenly_angel"
+      ]
+    },
+    "hags": {
+      "lore": "The old hags sit on sleepers' chests; they know every trick of sleep and cannot be lulled.",
+      "source": "The Old Hag of Newfoundland and the mare of Germanic folklore, who rides the sleeper's chest.",
+      "status_immune": [
+        "sleeping"
+      ],
+      "kinds": [
+        "green_hag",
+        "sea_hag",
+        "annis_hag",
+        "night_hag",
+        "mara"
+      ]
+    }
+  },
+  "kinds": {
+    "wood_golem": {
+      "lore": "Wood is felled by an axe: a cutting blow is what it fears, and fire.",
+      "source": "The woodsman's trade.",
+      "form": {
+        "slash": "weak",
+        "pierce": "resist",
+        "blunt": "neutral"
+      }
+    },
+    "flesh_golem": {
+      "lore": "Stitched from the dead: a thrust finds no vitals, but a cut opens the seams.",
+      "source": "Mary Shelley, Frankenstein (1818).",
+      "form": {
+        "pierce": "resist",
+        "slash": "weak",
+        "blunt": "neutral"
+      }
+    },
+    "homunculus": {
+      "lore": "A foot-tall man of the maker's own blood: small and soft, no harder to hurt than a cat.",
+      "source": "Paracelsus, De Natura Rerum (1537): the homunculus grown in a flask.",
+      "form": {
+        "slash": "neutral",
+        "pierce": "neutral",
+        "blunt": "neutral"
+      }
+    },
+    "talos": {
+      "lore": "Talos was bronze from head to foot, except for one vein from his neck to his ankle, sealed with a single bronze nail. An arrow in the ankle let his ichor out.",
+      "source": "Apollodorus, Library 1.9.26: Poeas shot Talos in the ankle (or Medea pulled the nail).",
+      "form": {
+        "pierce": "weak",
+        "slash": "resist",
+        "blunt": "resist"
+      }
+    },
+    "bronze_sentinel": {
+      "lore": "A guard built on Talos's pattern, with Talos's flaw: one point where a thrust gets in.",
+      "source": "Apollodorus, Library 1.9.26.",
+      "form": {
+        "pierce": "weak",
+        "slash": "resist",
+        "blunt": "resist"
+      }
+    },
+    "crystal_ooze": {
+      "lore": "Its jelly has gone to crystal, and crystal shatters.",
+      "source": "Its own lore.",
+      "form": {
+        "blunt": "weak",
+        "pierce": "resist"
+      }
+    },
+    "black_pudding": {
+      "lore": "A cutting blow divides a black pudding into two smaller ones; it does not resist the edge, it multiplies under it.",
+      "source": "Dungeons & Dragons, Monster Manual (1977): slashing and lightning split the black pudding.",
+      "form": {
+        "slash": "neutral"
+      }
+    },
+    "gas_spore": {
+      "lore": "A floating puffball full of spores: one thrust pops it.",
+      "source": "Dungeons & Dragons, Monster Manual (1977): the gas spore.",
+      "form": {
+        "pierce": "weak",
+        "slash": "neutral"
+      }
+    },
+    "brown_mold": {
+      "lore": "Brown mold drinks heat: fire feeds it, so it never catches.",
+      "source": "Dungeons & Dragons, Dungeon Masters Guide (1979): brown mold grows from fire.",
+      "status_weak": []
+    },
+    "corrupted_treant": {
+      "lore": "A whole oak gone bad: blows and arrows hardly mark it, but an axe still fells it.",
+      "source": "Tolkien, The Two Towers (1954): the Ents and the axe.",
+      "form": {
+        "blunt": "resist"
+      }
+    },
+    "moss_sentinel": {
+      "lore": "A mound of moss over a frame of roots and stone: a blow sinks in, an edge cuts it free.",
+      "source": "Its own lore.",
+      "form": {
+        "blunt": "resist"
+      }
+    },
+    "nemean_lion": {
+      "lore": "No blade or arrow could pierce the Nemean lion's hide. Heracles stunned it with his club and strangled it.",
+      "source": "Apollodorus, Library 2.5.1.",
+      "form": {
+        "slash": "shrugs_off",
+        "pierce": "shrugs_off",
+        "blunt": "weak"
+      }
+    },
+    "calydonian_boar": {
+      "lore": "Atalanta's arrow drew first blood and Meleager's spear killed it; swords glanced off its bristles.",
+      "source": "Ovid, Metamorphoses 8.",
+      "form": {
+        "slash": "resist",
+        "pierce": "weak"
+      }
+    },
+    "hell_bovine": {
+      "lore": "The cows of the secret level shrug off a club: their hide is thick as a barn door.",
+      "source": "Diablo II (2000): the Secret Cow Level.",
+      "form": {
+        "blunt": "resist"
+      }
+    },
+    "stymphalian_bird": {
+      "lore": "Heracles scared the bronze-feathered birds up with a rattle that Athena gave him.",
+      "source": "Apollodorus, Library 2.5.6.",
+      "status_weak": [
+        "feared"
+      ]
+    },
+    "sown_warrior": {
+      "lore": "The Spartoi sprang from the dragon's teeth. Cadmus threw a stone among them, and each thought another had struck him: they killed each other.",
+      "source": "Apollodorus, Library 3.4.1; Ovid, Metamorphoses 3.",
+      "form": {
+        "slash": "resist"
+      },
+      "status_weak": [
+        "confused"
+      ]
+    },
+    "echidna": {
+      "lore": "Argus All-Eyes killed Echidna as she slept.",
+      "source": "Apollodorus, Library 2.1.2.",
+      "status_weak": [
+        "sleeping"
+      ]
+    },
+    "jiangshi": {
+      "lore": "A hopping corpse is stopped dead by a Taoist priest's paper talisman stuck to its forehead.",
+      "source": "Chinese folk belief, made famous by the film Mr. Vampire (1985).",
+      "status_weak": [
+        "paralyzed"
+      ]
+    },
+    "grave_guardian": {
+      "lore": "Buried standing at the crypt door after swearing to keep holy ground: the blessing on them still holds, so holy power does not burn them.",
+      "source": "Its own lore.",
+      "elements": {
+        "resist": [
+          "holy"
+        ]
+      }
+    },
+    "undead_colossus": {
+      "lore": "A hill of stitched corpses: a blow sinks into it, but an axe hacks it apart.",
+      "source": "Its own lore.",
+      "form": {
+        "blunt": "resist",
+        "slash": "weak",
+        "pierce": "resist"
+      }
+    },
+    "flesh_colossus": {
+      "lore": "A hill of stitched flesh: a blow sinks into it, but an axe hacks it apart.",
+      "source": "Its own lore.",
+      "form": {
+        "blunt": "resist",
+        "slash": "weak",
+        "pierce": "resist"
+      }
+    },
+    "hrungnirs_ghost": {
+      "lore": "Hrungnir's heart and head were stone. Thor's hammer shattered the giant's whetstone and his skull.",
+      "source": "Snorri Sturluson, Prose Edda, Skaldskaparmal 17.",
+      "form": {
+        "blunt": "weak",
+        "slash": "resist",
+        "pierce": "resist"
+      }
+    },
+    "mere_wife": {
+      "lore": "Beowulf's sword Hrunting would not bite on Grendel's mother; only the giant-forged blade from her own hall killed her.",
+      "source": "Beowulf, lines 1519-1569.",
+      "form": {
+        "slash": "resist",
+        "pierce": "resist"
+      }
+    },
+    "cave_troll": {
+      "lore": "A cave troll's hide is like stone: a club rebounds from it.",
+      "source": "Tolkien, The Fellowship of the Ring (1954): the troll in Moria.",
+      "form": {
+        "blunt": "resist"
+      }
+    },
+    "ettin_warchief": {
+      "lore": "Two heads, one thick skull each: a club does little, but an edge or a point gets in.",
+      "source": "Its own lore.",
+      "form": {
+        "blunt": "resist",
+        "slash": "weak",
+        "pierce": "weak"
+      }
+    },
+    "frostfang_giant": {
+      "lore": "Ice-hard flesh: a club rebounds.",
+      "source": "Its own lore.",
+      "form": {
+        "blunt": "resist"
+      }
+    },
+    "sobek_warrior": {
+      "lore": "Crocodile hide turns a cutting blow.",
+      "source": "Natural history: the crocodile's bony scutes.",
+      "form": {
+        "slash": "resist"
+      }
+    },
+    "mud_crawler": {
+      "lore": "Its scales turn a cutting blow.",
+      "source": "Its own lore.",
+      "form": {
+        "slash": "resist"
+      }
+    },
+    "gibbering_mouther": {
+      "lore": "A heap of mouths and eyes in loose flesh: a blow sinks into it.",
+      "source": "Dungeons & Dragons, Monster Manual II (1983): the gibbering mouther.",
+      "form": {
+        "blunt": "resist"
+      }
+    },
+    "lurking_horror": {
+      "lore": "A shapeless thing that closes round a thrust.",
+      "source": "Its own lore.",
+      "form": {
+        "pierce": "resist"
+      }
+    },
+    "chaos_spawn": {
+      "lore": "A scrap of first Chaos: an edge or a blow meets nothing that stays put.",
+      "source": "Hesiod, Theogony 116.",
+      "form": {
+        "slash": "resist",
+        "blunt": "resist"
+      }
+    },
+    "girtablilu": {
+      "lore": "The scorpion-men of Mashu wear a scorpion's armour: blade and point skate off, a mace cracks it.",
+      "source": "The Epic of Gilgamesh, tablet IX: the scorpion-men at the mountain gate.",
+      "form": {
+        "slash": "resist",
+        "pierce": "resist",
+        "blunt": "weak"
+      }
+    },
+    "charybdis": {
+      "lore": "A whirlpool with a mouth: a blow is swallowed by the water.",
+      "source": "Homer, Odyssey 12.",
+      "form": {
+        "blunt": "resist"
+      }
+    },
+    "charybdis_spawn": {
+      "lore": "A little whirlpool with a mouth: a blow is swallowed by the water.",
+      "source": "Homer, Odyssey 12.",
+      "form": {
+        "blunt": "resist"
+      }
+    },
+    "the_sphinx": {
+      "lore": "Oedipus beat her with an answer; in the old pictures heroes go at the sphinx with a spear.",
+      "source": "Sophocles, Oedipus Rex; Greek vase paintings of the sphinx and the spear.",
+      "form": {
+        "pierce": "weak"
+      }
+    },
+    "lava_elemental": {
+      "lore": "Molten rock: a hammer splashes through it, a point melts.",
+      "source": "Its own lore.",
+      "form": {
+        "blunt": "resist"
+      }
+    },
+    "green_knight": {
+      "lore": "Gawain took the Green Knight's head with one stroke, and the knight picked it up and rode away: a cutting blow does not trouble him.",
+      "source": "Sir Gawain and the Green Knight (14th century).",
+      "form": {
+        "slash": "resist"
+      }
+    },
+    "wild_hunt_captain": {
+      "lore": "A rider of the sky-hunt: half of him is storm.",
+      "source": "Its own lore.",
+      "form": {
+        "slash": "resist"
+      }
+    },
+    "lyssa_madness": {
+      "lore": "Lyssa is madness itself; nothing can muddle her.",
+      "source": "Euripides, Heracles: Hera sends Lyssa to drive Heracles mad.",
+      "status_immune": [
+        "confused"
+      ]
+    },
+    "pixie_swarm": {
+      "lore": "A cloud of finger-high pranksters dodging every blade.",
+      "source": "Devon and Cornwall folk belief (being pixy-led).",
+      "form": {
+        "slash": "resist",
+        "pierce": "resist"
+      }
+    },
+    "khrafstra_swarm": {
+      "lore": "A seething knot of the evil spirit's vermin: no blow of any kind does much to it. Fire does.",
+      "source": "The Zoroastrian Vendidad: the khrafstra, the noxious creatures.",
+      "form": {
+        "blunt": "shrugs_off"
+      }
+    },
+    "ice_elemental": {
+      "lore": "Living ice: an edge or a point skates off it, and a hammer shatters it.",
+      "source": "Paracelsus (1566): the elemental beings; the plain physics of ice.",
+      "form": {
+        "blunt": "weak"
+      }
+    },
+    "world_serpent": {
+      "lore": "Jormungandr's scales turn blade and point alike; Thor's hammer is the blow that kills him.",
+      "source": "Snorri Sturluson, Prose Edda, Gylfaginning 51.",
+      "form": {
+        "slash": "resist",
+        "pierce": "resist",
+        "blunt": "weak"
+      }
+    },
+    "pit_executioner": {
+      "lore": "The headsman of the pit wears a hide of black iron that turns an edge.",
+      "source": "Its own lore.",
+      "form": {
+        "slash": "resist"
+      }
+    },
+    "risen_deadite": {
+      "lore": "A deadite risen again: rotten bone that a club breaks apart.",
+      "source": "The Evil Dead films (1981-1992): the deadites are hacked and smashed apart.",
+      "form": {
+        "blunt": "weak"
+      }
+    },
+    "dahaka_wyrm": {
+      "lore": "Fereydun struck down Zahhak with his ox-headed mace; a cut or a thrust only lets out the vermin inside him.",
+      "source": "Ferdowsi, Shahnameh (Fereydun and the ox-headed mace); the Avesta (Azhi Dahaka full of noxious creatures).",
+      "form": {
+        "blunt": "weak",
+        "slash": "neutral",
+        "pierce": "neutral"
+      }
+    },
+    "tiamat": {
+      "lore": "Marduk drove the winds into Tiamat's mouth and shot an arrow that split her belly.",
+      "source": "Enuma Elish, tablet IV.",
+      "form": {
+        "pierce": "weak"
+      }
+    }
+  }
+}

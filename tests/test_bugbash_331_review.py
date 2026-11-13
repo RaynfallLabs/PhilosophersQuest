@@ -59,11 +59,17 @@ def test_a_weapons_on_hit_status_does_not_keep_a_rings_slow(game):
 
 
 def _attune(g, item, tier):
+    """The game's own attune quiz; worn once, Known by Hand asks whether to
+    attune again (Y: the quiz, the best tier kept)."""
+    from game_states import STATE_ASK, STATE_QUIZ
     if item not in g.player.inventory:
         g.player.inventory.append(item)
     g._equip_accessory(item)
-    cb, g.quiz_engine.callback = g.quiz_engine.callback, None
-    cb(QuizResult(success=True, score=tier, correct=tier, asked=tier))
+    if g.state == STATE_ASK:
+        g._ask_input(pygame.K_y)
+    if g.state == STATE_QUIZ:
+        cb, g.quiz_engine.callback = g.quiz_engine.callback, None
+        cb(QuizResult(success=True, score=tier, correct=tier, asked=tier))
     assert g.player.amulet_slot is item
 
 

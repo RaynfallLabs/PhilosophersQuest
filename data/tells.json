@@ -4,7 +4,7 @@
   "max_lines": 2,
   "order": ["gaze_paralyze", "paralyzed", "confused", "sleeping", "frozen", "teleportitis", "feared", "blinded",
             "silenced", "stunned", "immobilized", "splits", "revive_once_on_death", "drain_heals_self",
-            "weakened", "diseased", "poisoned", "regeneration", "summon_kind", "pull_chance", "sp_drain",
+            "weakened", "rust", "diseased", "poisoned", "regeneration", "summon_kind", "pull_chance", "sp_drain",
             "can_charge", "can_phase_blink", "bleeding", "burning", "slowed", "hallucinating"],
   "kin_lead": "It is one of {kin}.",
   "far_counter": "It can reach you from across a room, but only where it can see you: keep stone between you until you can close in.",
@@ -149,6 +149,11 @@
       "sign": "Colours run strangely round {the}.",
       "does": "It fills heads with things that are not there, and while it lasts, what you see may not be what is there.",
       "counter": ""
+    },
+    "rust": {
+      "sign": "Every nail and hinge near {the} has gone to red dust.",
+      "does": "Its feelers rust iron and steel: a brush takes a point off your weapon or armour.",
+      "counter": "Keep good steel out of its reach: fight it with wood or bronze."
     }
   }
 }

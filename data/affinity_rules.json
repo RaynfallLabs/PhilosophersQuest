@@ -1,0 +1,11 @@
+{
+  "_doc": "How hard a blow lands on what a creature is weak to, resists or shrugs off (src/affinity.py reads this; src/combat.py and Monster.take_damage use it). Winning-build plan 2026-11-13 section 3.2, decision 2. A weapon's FORM (slash, pierce, blunt: the best of the ways it can wound) and its SUBSTANCE (its material, and holy when blessed) each take one step and multiply; the product is capped at `cap`. A spell, wand or breath is one damage type and takes one step. There is no full immunity: the smallest step is `shrugs_off`, so a hero is never locked out, only very slow. The kinds' lists live in data/monsters.json (`weaknesses`, `resistances`, `shrugs_off`), written from their lore by tools/content/affinity_pass.py out of data/family_affinity.json.",
+  "weak": 2.0,
+  "resisted": 0.5,
+  "shrugs_off": 0.25,
+  "cap": 3.0,
+  "status_weak_duration": 1.5,
+  "fear_of_fire_turns": 3,
+  "regen_stop_turns": 3,
+  "_status_doc": "status_immune: the effect never takes hold, and the game says why ('The golem does not know fear.'). status_weak: it takes hold without a big foe's resist roll and lasts status_weak_duration times as long (a named foe's hard-control cap of 2 turns still holds). The token fear_of_fire in status_weak: a fire hit sends the creature to flight for fear_of_fire_turns turns (beasts and trolls). A regenerating creature weak to fire or acid (the trolls, the hydra) cannot heal for regen_stop_turns turns after a hit of that kind (Monster._after_typed_hit)."
+}

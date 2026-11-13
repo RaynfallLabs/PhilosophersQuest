@@ -78,12 +78,12 @@ src/
   black_knight.py     - The Black Knight bridge easter egg (floors 15-19)
   stray_kids.py       - The Stray Kids easter egg (floors 8-12): the zombie band's dance, the stage, the stars
   game_stray_kids.py  - StrayKidsMixin: the idol, the Zombie Stage trip, the beat, the photo's show
-  emberpup_encounter.py - The abandoned Emberpup, every run (floors 3-8), earned by coming back
+  emberpup_encounter.py - The abandoned Emberpup (floors 3-8): three feeds, the Bloomleaf Cloak won from Old Nickel; he keeps it
   setne_tomb.py       - Setne's Tomb and the Book of Thoth (floors 45-65)
 
   # Combat, items, magic
   combat.py           - Combat resolution
-  affinity.py         - Weakness and resistance: what a hit met, and the lines that say so
+  affinity.py         - Weakness, resistance, shrugs off (data/affinity_rules.json): what a hit met, and the lines that say so
   dice.py             - Dice notation parser ("2d6+3")
   items.py            - Item classes and equipment system
   gear.py             - Armour, shield, ring and amulet rules: levels, tiers, thresholds, core AC
@@ -92,6 +92,10 @@ src/
   rings.py            - Ring and amulet kinds: levels, ladders, names, what a worn kind does
   gear_saves.py       - Old saves meet the armour ladder: named pieces refreshed, worn grants re-synced
   item_actions.py     - Item actions shared by the Kit (K) and the character sheet (@)
+  known_by_hand.py    - Known by Hand: a kind of gear put on once goes on again with no quiz
+  game_dressing.py    - DressingMixin: donning time, the weapon At Your Back (S), Loadouts (Shift+E)
+  busy.py             - Busy for N turns: a multi-turn action, stopped by a foe in view or a blow
+  loadouts.py         - The three saved kits: names, slots, defaults
   chain_equip.py      - Chain-equip for lore-rich legendary uniques
   chain_passives.py   - Chain-equip passive flag lookups and wiring
   armor_procs.py      - Flat-armour proc registry and per-floor charges
@@ -99,13 +103,16 @@ src/
   spells.py           - Spellbook spell definitions (tiered families)
   prayers.py          - The prayer list and what each grants
   altar.py            - The altar's offering: curses lifted, then blessings; what a blessing changes
+  rededication.py     - The altar's rededication: give a stat point back to take another, once per altar
   boons.py            - Gate-boss gifts (pick one of three)
   status_effects.py   - Buffs/debuffs (paralysis, poison, berserk, etc.)
   food_system.py      - Harvest and cooking mechanics
   container_system.py - Chests, sacks, lockable containers (lockpicking)
   economy.py          - The gold economy: what a floor earns and what things cost
   traders.py          - Named traders: who, where, their stock, prices, selling, services
-  game_traders.py     - TradersMixin: placing traders and the Buy / Sell / Services screens
+  game_traders.py     - TradersMixin: placing traders and the Buy / Sell / Services screens, trade-in, orders
+  domain_counters.py  - Stock that knows what's below: what walks under a stall and the counters for it
+  smithing.py         - The smiths' work: reforge, silvering and cold-iron inlay, linings, special orders
   treasure.py         - Coin weight (1 gp = 0.1 oz) and treasure: gems, jewellery, art; values, payment plans
   game_purse.py       - PurseMixin: receiving gold (weight-limited), paying with coin then treasure, gold piles
   pet_system.py       - Soul Sphere pets: AI, bonding, levels

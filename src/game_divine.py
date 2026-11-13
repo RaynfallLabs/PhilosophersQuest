@@ -62,6 +62,9 @@ from game_states import (
 # and the karma at or below which God takes no gift: Mercy's fourth link
 # and the altar rite alike.
 ALTAR_RITE = 'altar_rite'
+# Rededication (rededication.py, winning build 3.5): give one gift back and
+# take another, once per altar.
+ALTAR_REDEDICATE = 'rededicate'
 ALTAR_REFUSES_AT = -5
 
 
@@ -1043,6 +1046,9 @@ class DivineMixin:
         if choice['id'] == ALTAR_RITE:
             self._begin_altar_rite()
             return
+        if choice['id'] == ALTAR_REDEDICATE:
+            self._begin_rededication()
+            return
         self._begin_prayer(choice['id'], offering=bool(choice.get('offering')))
 
     def _prayer_menu_cancel(self):
@@ -1084,6 +1090,10 @@ class DivineMixin:
         rows.append({'id': ALTAR_RITE, 'offering': True, 'enabled': rite_ok,
                      'name': f"Lift Curses, Then Bless — {price:,} gp",
                      'asks': rite_asks, 'title': "THE ALTAR  --  LIFT AND BLESS"})
+        red_ok, red_asks = self._rededication_open(karma, afford, short)
+        rows.append({'id': ALTAR_REDEDICATE, 'offering': True, 'enabled': red_ok,
+                     'name': f"Rededicate a Gift — {price:,} gp",
+                     'asks': red_asks, 'title': "THE ALTAR  --  REDEDICATION"})
         for pr in prayers.available(karma):
             rows.append(dict(pr, offering=True, enabled=afford,
                              name=f"{pr['name']} — {price:,} gp, no cooldown",
@@ -1095,6 +1105,152 @@ class DivineMixin:
                                  asks="Heard as anywhere, the altar amplifying it. "
                                       "Sets the prayer cooldown."))
         return rows
+
+    # ------------------------------------------------------------------
+    # Rededication: one gift given back, another taken (rededication.py)
+    # ------------------------------------------------------------------
+
+    def _altar_key(self) -> tuple:
+        return (int(self.dungeon_level), int(self.player.x), int(self.player.y))
+
+    def _rededicated_here(self) -> bool:
+        return self._altar_key() in (getattr(self.player, 'rededicated_altars', None) or set())
+
+    def _stats_fallback(self) -> dict:
+        """What the stats were at the start, for a save from before
+        Player.stats_at_start: a secret build's own numbers, else 10."""
+        b = getattr(self, 'secret_build', None) or {}
+        out = {}
+        for s in ('STR', 'CON', 'DEX', 'INT', 'WIS', 'PER'):
+            try:
+                out[s] = int(b.get(s, 10))
+            except (TypeError, ValueError):
+                out[s] = 10
+        return out
+
+    def _rededication_open(self, karma: int, afford: bool, short: str) -> tuple:
+        """(enabled, the line under it) for the altar menu's rededication row."""
+        import rededication
+        if karma <= ALTAR_REFUSES_AT:
+            return False, "God will not take an offering from you now."
+        if self._rededicated_here():
+            return False, "This altar has heard your rededication. Another altar may hear it."
+        if not rededication.possible(self.player, self._stats_fallback()):
+            return False, ("No gift of yours can move: none stands above where it began, "
+                           "or none has room to grow.")
+        if not afford:
+            return False, short
+        return True, ("Give one gift back to take another. A chain of 3 moves one point, "
+                      "5 moves two. Once at this altar.")
+
+    def _begin_rededication(self):
+        """Choose the gift to give back (then the one to take), before the
+        offering is laid down: backing out costs nothing."""
+        import rededication as R
+        p = self.player
+        fb = self._stats_fallback()
+        opts = []
+        for s in R.can_give(p, fb):
+            if not R.can_take(p, s):
+                continue
+            room = R.give_room(p, s, fb)
+            # (The name is short: it is also the footer's Enter hint.)
+            opts.append((s[0], f"{R.STAT_NAMES[s]} {R.own_value(p, s)}",
+                         f"It began at {R.start_value(p, s, fb)}: {room} to give back. "
+                         f"It {R.STAT_USES[s]}.",
+                         lambda s=s: self._rededication_take(s)))
+        if not opts:
+            self.state = STATE_PLAYER
+            self.add_message("No gift of yours can move.", 'info')
+            return
+        self._ask("Rededication: Give Back",
+                  ["Which gift do you lay on the altar?",
+                   "It will never go below where it began."],
+                  opts, on_cancel=self._rededication_cancel, esc='rise')
+
+    def _rededication_cancel(self):
+        self.add_message("You rise without a word.", 'info')
+
+    def _rededication_take(self, give: str):
+        import rededication as R
+        p = self.player
+        opts = []
+        for t in R.can_take(p, give):
+            room = R.take_room(p, t)
+            why = ("Wisdom grows at half the rate" if t == 'WIS'
+                   else f"It {R.STAT_USES[t]}")
+            opts.append((t[0], f"{R.STAT_NAMES[t]} {R.own_value(p, t)}",
+                         f"Room for {room} more here. {why}.",
+                         lambda t=t: self._rededication_start(give, t)))
+        if not opts:
+            self.add_message("No other gift has room to grow.", 'info')
+            return
+        self._ask(f"Rededication: Take for {R.STAT_NAMES[give]}",
+                  [f"You give back {R.STAT_NAMES[give]}. What do you take in its place?",
+                   "No gift grows past what food could teach it here."],
+                  opts, on_cancel=self._rededication_cancel, esc='rise')
+
+    def _rededication_start(self, give: str, take: str):
+        """Lay the offering down (the altar's use is spent with it) and
+        answer the theology chain."""
+        import rededication as R
+        if int(getattr(self, 'karma', 0) or 0) <= ALTAR_REFUSES_AT or self._rededicated_here():
+            self.add_message("You offer a gift, but God turns away from it.", 'warning')
+            return
+        if not self._make_altar_offering():
+            return
+        used = getattr(self.player, 'rededicated_altars', None)
+        if not isinstance(used, set):
+            used = set(used or ())
+        used.add(self._altar_key())
+        self.player.rededicated_altars = used
+        self.add_message(f"You lay your {R.STAT_NAMES[give]} on the altar and ask for "
+                         f"{R.STAT_NAMES[take]} in its place.", 'info')
+        self.quiz_title = "THE ALTAR  --  REDEDICATION"
+        self.state = STATE_QUIZ
+
+        def on_complete(result):
+            chain = int(result.score or 0)
+            self._resolve_rededication(give, take, chain)
+            self.state = STATE_PLAYER
+            if chain > 0:
+                self._seeker_event('prayer_answered')
+            self._advance_turn()
+
+        self.quiz_engine.start_quiz(
+            mode='escalator_chain',
+            subject='theology',
+            tier=1,
+            callback=on_complete,
+            max_chain=R.MAX_CHAIN,
+            wisdom=self.player.WIS,
+            timer_modifier=self.player.get_quiz_timer_modifier(),
+            extra_seconds=self.player.get_quiz_extra_seconds('theology'),
+            base_seconds=self.player.get_quiz_timer('theology'),
+        )
+
+    def _resolve_rededication(self, give: str, take: str, chain: int):
+        """Move what the chain earned, and say so in the house voice."""
+        import rededication as R
+        p = self.player
+        earned = R.points_for_chain(chain)
+        if earned <= 0:
+            self.add_message("The altar keeps your offering. Your gifts stay as they were.",
+                             'info')
+            return
+        n = R.points_to_move(p, give, take, chain, self._stats_fallback())
+        if n <= 0:
+            self.add_message("The altar hears you, but nothing of yours can move now.", 'info')
+            return
+        R.move(p, give, take, n)
+        pts = f"{n} point{'s' if n != 1 else ''}"
+        self.add_message(f"The altar takes back {pts} of {R.STAT_NAMES[give]} and gives "
+                         f"{pts} of {R.STAT_NAMES[take]}. What was given is given again, "
+                         f"in another shape.", 'success')
+        if n < earned:
+            self.add_message(f"(Your chain earned {earned}; only {n} could move.)", 'info')
+        self._chron('soul', "Laid one gift on an altar and took another in its place.",
+                    once='rededication')
 
     def _make_altar_offering(self) -> bool:
         """Lay the floor's offering on the altar: coin first, then treasure.

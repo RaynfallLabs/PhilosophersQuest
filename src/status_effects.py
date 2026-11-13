@@ -291,7 +291,27 @@ _RESIST_BLOCKS: dict[str, set] = {
     'acid_resist':    {'corroding'},
 }
 
-# Material immunity to acid/rust — materials that cannot corrode or rust
+# What wear (rust, acid, fire) can touch is read from the item's MATERIAL
+# FILE where it has one (data/materials/armor and weapons): its
+# material_class, and its own `resistances` (fire, corrosion, rust). Rust is
+# iron's: iron and steel rust, and so does every iron alloy of the metal and
+# rare_metal classes; copper, bronze, tin, silver, gold, hematite (which is
+# rust already) and mithril do not, and no leather, cloth, hide, wood or
+# magical metal does. The hand-kept name sets below are only the fallback for
+# a named piece whose material has no file ("hardwood", "divine bronze").
+# They used to be the whole rule, and missed most of the materials: canvas,
+# cured, boiled and studded leather, spider silk, elven silk, oak and ash
+# were all treated as rustable metal (winning-build plan section 2).
+_RUST_CLASSES = frozenset({'metal', 'rare_metal'})
+_NON_FERROUS = frozenset({
+    'copper', 'bronze', 'tempered_bronze', 'tin', 'silver', 'elven_silver',
+    'hardened_gold', 'gold', 'hematite', 'mithril',
+})
+_ACIDPROOF_CLASSES = frozenset({'magical_metal', 'dragon_material', 'exotic_metal'})
+_FLAMMABLE_CLASSES = frozenset({'leather', 'studded_leather', 'hide', 'cloth', 'wood',
+                                'rare_wood', 'exotic_organic'})
+
+# The fallback (a material with no file): materials that cannot corrode or rust
 _RUSTPROOF = frozenset({
     'diamond', 'mithril', 'adamantine', 'dragonbone', 'dragonscale', 'dragon scale',
     'crystal', 'obsidian', 'divine', 'divine silk', 'enchanted plate', 'spectral iron',
@@ -309,27 +329,106 @@ _FLAMMABLE = frozenset({
 # Flammable materials degrade when burning. Ironwood and fang excluded (fire-resistant).
 
 
+def material_wear(item):
+    """(material_class, its own resistances) from the item's material
+    file, or None when its material has no file (a named piece's
+    "hardwood")."""
+    mat = str(getattr(item, 'material', '') or '')
+    if not mat:
+        return None
+    try:
+        from items import get_material
+        m = get_material('armor', mat) or get_material('weapons', mat)
+    except Exception:
+        m = None
+    if not m:
+        return None
+    return str(m.get('material_class', '') or ''), {str(r) for r in (m.get('resistances') or ())}
+
+
 def _can_corrode(item) -> bool:
     """Return True if an item can be damaged by acid/corrosion."""
     mat = getattr(item, 'material', '')
+    wear = material_wear(item)
+    if wear is not None:
+        cls, res = wear
+        return (cls not in _ACIDPROOF_CLASSES and mat not in _RUSTPROOF
+                and not res & {'corrosion', 'acid'})
     return mat not in _RUSTPROOF
 
+
 def _can_rust(item) -> bool:
-    """Return True if an item can be damaged by rust (metals only)."""
-    mat = getattr(item, 'material', '')
-    if mat in _RUSTPROOF:
-        return False
-    if mat in _ORGANIC:
-        return False  # organic materials don't rust
-    return True  # iron, steel, bronze, gold, etc. can rust
+    """Return True if an item can be damaged by rust (iron and its alloys)."""
+    mat = str(getattr(item, 'material', '') or '')
+    wear = material_wear(item)
+    if wear is not None:
+        cls, res = wear
+        return cls in _RUST_CLASSES and mat not in _NON_FERROUS and 'rust' not in res
+    if mat in _RUSTPROOF or mat in _ORGANIC:
+        return False                  # organic materials don't rust
+    if any(w in mat for w in ('bronze', 'copper', 'tin', 'silver', 'gold', 'mithril')):
+        return False                  # not iron
+    return True                       # iron, steel, "dark iron"...
 
 
 def _can_scorch(item) -> bool:
     """Return True if an item can be damaged by fire (flammable materials)."""
     mat = getattr(item, 'material', '')
+    wear = material_wear(item)
+    if wear is not None:
+        cls, res = wear
+        return cls in _FLAMMABLE_CLASSES and 'fire' not in res
     if mat in _RUSTPROOF:
         return False
     return mat in _FLAMMABLE
+
+
+def rust_worn_gear(player, source=None, rng=None) -> tuple[str, str] | None:
+    """Rust one piece of the hero's worn gear: THE way anything rusts (the
+    rust trap's water, a rust monster's feelers; winning-build plan
+    section 3.2).
+
+    Nothing rusts on a hero who wears something that keeps rust off
+    (Player.is_rustproof: a worn item whose special_properties has
+    "rustproof_wearer": true). Otherwise one worn piece that can rust (iron
+    and steel; see _can_rust) loses a point through items.wear_down: one
+    plus off a weapon, a shield or body armour, one level off a minor piece;
+    a smith's repair gives it back.
+
+    `source`: the monster whose touch rusts (its feelers are named in the
+    line), or None for water. Returns (message, kind), or None when nothing
+    worn can rust."""
+    import random as _random
+    rng = rng or _random
+    from hud_context import item_bare_name
+    keeper = player.rustproof_item() if hasattr(player, 'rustproof_item') else None
+    worn = [getattr(player, 'weapon', None), getattr(player, 'ranged_weapon', None),
+            getattr(player, 'shield', None)] + list(getattr(player, 'armor_slots', None) or [])
+    targets = []
+    for it in worn:
+        if it is not None and all(it is not t for t in targets) and _can_rust(it):
+            targets.append(it)
+    if not targets:
+        return None
+    if keeper is not None:
+        return (f"Your {item_bare_name(player, keeper)} keeps the rust from your gear.", 'success')
+    item = rng.choice(targets)
+    name = item_bare_name(player, item)          # as the player knows it
+    from items import wear_down
+    import gear
+    minor = getattr(item, 'item_class', '') == 'armor' and not gear.is_core(item)
+    loss = '(-1 level)' if minor else '(-1 enchantment)'
+    if source is not None:
+        from monster import the_name
+        who = the_name(source)
+        if wear_down(item):
+            return (f"{who}'s feelers brush your {name}, and good steel flakes to red rust! {loss}",
+                    'danger')
+        return (f"{who}'s feelers brush your {name}. It is pitted with rust, but it holds.",
+                'warning')
+    if wear_down(item):
+        return (f"Your {name} rusts! {loss}", 'danger')
+    return (f"Your {name} is corroded but holds together.", 'warning')
 
 
 def _scorch_random_gear(player) -> tuple[str, str] | None:

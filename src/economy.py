@@ -164,6 +164,10 @@ def stock_price(item, level: int = 1, markup: float = 1.0) -> int:
     if isinstance(floor_w, (int, float)):
         return merchant_price(item, level, markup, worth=max(item_worth(item), float(floor_w)))
     price = merchant_price(item, level, markup)
+    if getattr(item, 'lining', None):
+        # A cloak he lined himself (a stall's counter, domain_counters.py):
+        # the piece, and his work on it at the lining's own price.
+        price += service_price('lining', level, markup=markup)
     # A bundle of arrows is priced by its count, as it sells (ammo_bundles):
     # one flat price made a bundle of 25 cost what a bundle of 10 did.
     bundles = ammo_bundles(item)
@@ -197,6 +201,11 @@ SELL_RATE_IDENTIFIED = 0.25
 RESALE_CAP_OF_PAID = 0.5
 # A trader's buying purse, in floors of income (data/traders.json may set its own).
 TRADER_PURSE_SHARE = 1.5
+# Trade-in (winning build 3.5, 2026-11-13): on a visit when the hero buys
+# from a trader, what he sells that trader fetches this share of the
+# trader's own price instead of a fifth, up to what he spends there (the
+# purse and the resale cap still hold). game_traders keeps the visit's tally.
+TRADE_IN_RATE = 0.50
 
 
 def ammo_bundles(item) -> float | None:
@@ -213,12 +222,15 @@ def ammo_bundles(item) -> float | None:
 
 
 def sell_offer(item, level: int, *, known: bool, identified: bool,
-               markup: float = 1.0, purse: int | None = None) -> int:
+               markup: float = 1.0, purse: int | None = None,
+               trade_in: bool = False) -> int:
     """What a trader offers for ``item`` on floor ``level``.
 
     known: the hero knows the item's type (it is named). An unknown thing is
     priced as its unidentified class, so the offer never tells the hero what
     it is. identified: this copy is identified to the last detail.
+    trade_in: the trade-in rate (TRADE_IN_RATE) instead of a fifth to a
+    quarter; the resale cap and the purse hold all the same.
 
     Ammo sells as a whole stack, so its offer goes with the arrows in it
     (ammo_bundles), rounded down: one flat price for any count made twenty
@@ -236,6 +248,8 @@ def sell_offer(item, level: int, *, known: bool, identified: bool,
         return max(0, int(offer))
     his = merchant_price(item, level, markup) if known else unknown_price(item, level, markup)
     rate = SELL_RATE_IDENTIFIED if (known and identified) else SELL_RATE_UNKNOWN
+    if trade_in:
+        rate = max(rate, TRADE_IN_RATE)
     offer = his * rate
     paid = getattr(item, '_bought_for', None)
     bundles = ammo_bundles(item)
@@ -269,6 +283,13 @@ SERVICE_SHARE = {
     'id_retry':    0.30,     # identify with a scribe at your elbow: no backlash
     'map':         0.30,     # the floor's layout
     'porter':      0.50,     # a porter for PORTER_FLOORS floors
+    # The dungeon supports the build (winning build 3.5, 2026-11-13):
+    'reforge':     0.60,     # the wielded weapon re-shaped, same metal (smithing.py)
+    'silvering':   0.90,     # silver worked into the wielded weapon, for good
+    'cold_iron_inlay': 0.90,  # cold iron worked into the wielded weapon, for good
+    'lining':      0.50,     # a worn cloak or shirt lined against one element
+    'special_order': 0.30,   # the making, on top of the piece's own price
+    'trade_in':    0.00,     # no fee: a better rate when he sells on a buying visit
 }
 SERVICE_PURSE_PCT = {
     'restore': 10,
@@ -290,7 +311,10 @@ def altar_offering(level: int) -> int:
 
 def service_price(service: str, level: int, *, purse: int = 0, points: int = 1,
                   markup: float = 1.0) -> int:
-    """What a service costs on floor ``level`` (``points`` for repair)."""
+    """What a service costs on floor ``level`` (``points`` for repair).
+    A service with no fee (trade-in) costs nothing."""
+    if SERVICE_SHARE.get(service, 0.3) <= 0:
+        return 0
     frac = SERVICE_SHARE.get(service, 0.3) * max(1, int(points or 1))
     price = floor_income(level) * frac * float(markup or 1.0)
     pct = SERVICE_PURSE_PCT.get(service)

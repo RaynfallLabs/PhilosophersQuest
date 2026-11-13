@@ -1,7 +1,10 @@
-"""The abandoned Emberpup (src/emberpup_encounter.py): about one run in five, on
-one floor from 3 to 8, a small fire lizard waits alone on a rock under a rain
-cloud. Feed it, leave it, attack it, or (once fed) say "I choose you!" and pass
-an animal quiz (tier 2, two right answers) to make it your pet.
+"""The abandoned Emberpup (src/emberpup_encounter.py): every run, on one floor
+from 3 to 8, a small fire lizard (he) sits alone on a rock under a rain cloud,
+where a hard master left him. Feed him, leave him, attack him, or (once he
+trusts you: three feeds with time between, and the Bloomleaf Cloak over his
+rock) say "I choose you!" and pass an animal quiz (tier 2, two right answers)
+to make him your pet. The winning-build rules themselves (the gap, the staged
+lines, the cloak) are tested in tests/test_bloomleaf_and_scraps.py.
 
 Behaviour tests on a real headless Game. The encounter is a rare, randomized
 event, so Brandon cannot reach it on demand in play: these are the proof that
@@ -233,12 +236,13 @@ def test_no_food_no_crash_and_it_stays_wary():
     _key(g, pygame.K_RETURN)
     _key(g, pygame.K_1)
     assert g._emberpup_phase == 'outcome'
-    assert 'nothing it could eat' in g._emberpup_text
+    assert 'nothing he could eat' in g._emberpup_text
     assert pup._emberpup_fed is False
     _key(g, pygame.K_RETURN)
     g.render()                                  # its screen draws with nothing to give
     _key(g, pygame.K_4)                         # still wary
-    assert 'does not trust you yet' in g._emberpup_text
+    import emberpup_encounter as ep
+    assert g._emberpup_text == ep.data()['refused']
 
 
 def test_i_choose_you_before_food_is_refused():
@@ -265,7 +269,7 @@ def test_attack_drives_it_off_for_the_run_and_costs_karma():
     assert pup not in g.monsters and not pup.alive
     assert g._emberpup['outcome'] == 'fled'
     assert g.karma == 2              # -1: no single loss is bigger than one (2026-10-18)
-    assert 'never see it again' in g._emberpup_text
+    assert 'never see him again' in g._emberpup_text
     _key(g, pygame.K_RETURN)
     assert g.state == STATE_PLAYER
     assert len(g.ground_items) == corpses        # no corpse, no loot
@@ -309,9 +313,10 @@ def _fed_and_asked(g):
 
 
 def _earned(pup):
-    """Fed on two visits and sheltered from the rain (slice 8): what the
-    choose tests below assume; the earning itself is tested on its own."""
-    pup._emberpup_visits = 2
+    """Fed three times and sheltered from the rain (winning-build plan 3.8):
+    what the choose tests below assume; the earning itself is tested in
+    tests/test_bloomleaf_and_scraps.py."""
+    pup._emberpup_feeds = 3
     pup._emberpup_sheltered = True
 
 
@@ -330,13 +335,15 @@ def test_passing_makes_it_your_emberpup_with_the_naming_popup():
     g = _game()
     pup = _fed_and_asked(g)
     g.quiz_engine._end(success=True)
+    import emberpup_encounter as ep
     assert g.state == STATE_EMBERPUP and g._emberpup_phase == 'outcome'
-    assert 'stopped waiting' in g._emberpup_text
+    assert g._emberpup_text == ep.data()['pass']
     assert pup not in g.monsters
     assert g._emberpup['outcome'] == 'adopted'
     assert len(g.pets) == 1
     pet = g.pets[0]
     assert pet.species_key == 'fire' and pet.species_name == 'Emberpup'
+    assert pet.bloomleaf is True                # he keeps the leaf cloak (plan 3.8)
     _key(g, pygame.K_RETURN)
     assert g.state == STATE_PET_NAME_INPUT and g._naming_pet is pet
     g.render()                                  # the naming card with its own title
@@ -355,7 +362,9 @@ def test_failing_it_shies_away_stays_and_can_be_fed_and_asked_again():
     g = _game()
     pup = _fed_and_asked(g)
     g.quiz_engine._end(success=False)
-    assert g.state == STATE_EMBERPUP and 'shies away' in g._emberpup_text
+    import emberpup_encounter as ep
+    assert g.state == STATE_EMBERPUP and g._emberpup_text == ep.data()['fail']
+    assert any('shies away' in t for t in _texts(g))
     _key(g, pygame.K_RETURN)
     assert g.state == STATE_PLAYER
     assert pup in g.monsters and pup.alive and not g.pets
@@ -410,12 +419,14 @@ def test_save_and_load_mid_encounter_keeps_it_fed_on_its_rock(tmp_path, monkeypa
     pups = _pups(g2)
     assert len(pups) == 1 and pups[0]._emberpup_fed and pups[0]._emberpup_met
     assert g2._needed_to_finish(pups[0])
-    # Walk into it again: its choices, and "I choose you" goes straight to the quiz.
+    # Walk into him again, trust earned: his choices, and "I choose you" goes
+    # straight to the quiz. (Too soon after a feed he would only be eating:
+    # tests/test_bloomleaf_and_scraps.py.)
     from game_states import STATE_PLAYER, STATE_QUIZ
     g2.state = STATE_PLAYER
+    _earned(pups[0])
     g2._start_emberpup_encounter(pups[0])
     assert g2.state == STATE_EMBERPUP and g2._emberpup_phase == 'options'
-    _earned(pups[0])
     _key(g2, pygame.K_4)
     assert g2.state == STATE_QUIZ
 
@@ -458,18 +469,18 @@ def test_first_feed_paid_its_old_point_only_with_the_gate_off(gate_off):
 
 
 # ---------------------------------------------------------------------------
-# Earned (Dungeon Alive slice 8): two visits fed, and a cloak or shield left
+# Earned (winning-build plan 3.8): three feeds with time between, and the
+# Bloomleaf Cloak left over his rock
 # ---------------------------------------------------------------------------
 
-def _cloak(g):
-    from items import load_items, Armor
-    cloaks = [a for a in load_items('armor') if isinstance(a, Armor) and getattr(a, 'slot', '') == 'cloak']
-    c = copy.copy(cloaks[0])
+def _leaf_cloak(g):
+    import emberpup_encounter as bloomleaf
+    c = bloomleaf.make_cloak()
     g.player.inventory.append(c)
     return c
 
 
-def test_one_visit_is_not_enough_it_waits_to_see_you_come_back():
+def test_one_feed_is_not_enough_he_needs_time_to_trust():
     g = _game()
     pup, _ = _place_pup(g, 6)
     _food(g, 1)
@@ -478,45 +489,37 @@ def test_one_visit_is_not_enough_it_waits_to_see_you_come_back():
     _key(g, pygame.K_1)
     _key(g, pygame.K_a)
     _key(g, pygame.K_RETURN)
-    assert pup._emberpup_visits == 1
+    assert pup._emberpup_feeds == 1
     _key(g, pygame.K_4)
     import emberpup_encounter as ep
     assert g._emberpup_text == ep.data()['refused_trust']
 
 
-def test_coming_back_counts_and_the_rain_must_be_kept_off():
+def test_three_feeds_and_the_leaf_cloak_earn_i_choose_you():
     import emberpup_encounter as ep
     from game_states import STATE_QUIZ
     g = _game()
     pup, _ = _place_pup(g, 6)
-    _food(g, 2)
+    _food(g, 4)
+    gap = int(ep.data()['feed_gap_turns'])
+    for n in range(3):
+        g._start_emberpup_encounter(pup)
+        if n == 0:
+            _key(g, pygame.K_RETURN)
+        _key(g, pygame.K_1)
+        _key(g, pygame.K_a)
+        assert pup._emberpup_feeds == n + 1
+        _key(g, pygame.K_RETURN)
+        g._close_emberpup()
+        g.turn_count += gap
     g._start_emberpup_encounter(pup)
-    _key(g, pygame.K_RETURN)
-    _key(g, pygame.K_1)
-    _key(g, pygame.K_a)
-    _key(g, pygame.K_RETURN)
-    # Feeding twice in one visit counts once.
-    _key(g, pygame.K_1)
-    assert g._emberpup_text == ep.data()['already_fed']
-    _key(g, pygame.K_RETURN)
-    g._close_emberpup()
-    # Leave its floor and come back.
-    g._maybe_spawn_emberpup(7)
-    assert g._emberpup['away']
-    g._start_emberpup_encounter(pup)
-    assert g._emberpup_text == ep.data()['came_back']
-    _key(g, pygame.K_RETURN)
-    _key(g, pygame.K_1)
-    _key(g, pygame.K_a)
-    _key(g, pygame.K_RETURN)
-    assert pup._emberpup_visits == 2
     _key(g, pygame.K_4)
     assert g._emberpup_text == ep.data()['refused_cold']
     _key(g, pygame.K_RETURN)
     _key(g, pygame.K_5)
     assert g._emberpup_text == ep.data()['no_shelter']
     _key(g, pygame.K_RETURN)
-    cloak = _cloak(g)
+    cloak = _leaf_cloak(g)
     _key(g, pygame.K_5)
     assert pup._emberpup_sheltered and cloak not in g.player.inventory
     _key(g, pygame.K_RETURN)

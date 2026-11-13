@@ -276,10 +276,11 @@
       90,
       60
     ],
-    "weight": 0.3,
+    "weight": 5.0,
+    "_weight_note": "Five pounds a scrap, fifty for all ten: half a STR-10 hero's load, carried from floor 5 to floor 79 (winning-build plan 2026-11-13 section 3.7). The lore says nothing of what they are for; only Recall Lore does (data/hints.json).",
     "min_level": 1,
     "identified": false,
-    "lore": "A stiff offcut of leather, the corner a cobbler trims away at the toe or heel of a shoe. It is too small to patch armor and too hard to bind a wound. There is an old custom in the north that such trimmings should never be saved or reused, only thrown aside. Someone is said to be collecting them, and to be in no hurry.",
+    "lore": "An offcut of shoe leather, the stiff corner a cobbler trims away at the toe or heel when he cuts a sole. It is thick and heavy, hard as a board, too stiff to patch armor and too tough to sew. It is no use to anyone.",
     "spread": 8,
     "peak_weight": 0.4,
     "special_properties": {

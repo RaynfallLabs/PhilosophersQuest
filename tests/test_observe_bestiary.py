@@ -206,7 +206,7 @@ def test_o_on_a_studied_monster_says_how_to_beat_it():
     _observe(g, m)
     recent = _recent(g)
     assert 'hold you still' in recent and 'distance' in recent
-    assert 'Holy power hurts it most.' in recent
+    assert 'Holy power and a cutting blow hurt it most.' in recent
     lines = [str(t[0]) for t in g._encyclopedia_article_lines('bestiary', g._encyclopedia_entry)]
     assert any(t.startswith('Weak to') for t in lines)
 

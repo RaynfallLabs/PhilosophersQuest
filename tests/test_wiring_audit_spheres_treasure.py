@@ -250,16 +250,22 @@ def test_the_qa_treasure_sampler_brings_its_trader_even_in_a_corridor():
     g.state = STATE_PLAYER
     g.handle_event(_pg.event.Event(_pg.KEYDOWN, key=_pg.K_4, unicode='$', mod=_pg.KMOD_SHIFT,
                                    scancode=0))
-    traders = [i for i in g.ground_items if isinstance(i, MerchantNPC)]
+    # (Brannoc the armourer joins the sampler where a spot is left over,
+    # winning build 3.5: the trader counted here is the one with the draught.)
+    traders = [i for i in g.ground_items if isinstance(i, MerchantNPC) and i.kind != 'armourer']
     assert len(traders) == 1
     m = traders[0]
     assert max(abs(m.x - p.x), abs(m.y - p.y)) == 1
     assert any(w.id == 'draught_of_mimir' for w in m.stock)
     assert any(isinstance(i, items.GoldPile) and i.amount == 20000 for i in g.ground_items)
     # A second press does not stack a second trader beside him.
+    smiths = [i for i in g.ground_items if isinstance(i, MerchantNPC) and i.kind == 'armourer']
     g.handle_event(_pg.event.Event(_pg.KEYDOWN, key=_pg.K_4, unicode='$', mod=_pg.KMOD_SHIFT,
                                    scancode=0))
-    assert len([i for i in g.ground_items if isinstance(i, MerchantNPC)]) == 1
+    assert len([i for i in g.ground_items if isinstance(i, MerchantNPC)
+                and i.kind != 'armourer']) == 1
+    assert len([i for i in g.ground_items if isinstance(i, MerchantNPC)
+                and i.kind == 'armourer']) == len(smiths) <= 1
 
 
 # ---------------------------------------------------------------- text

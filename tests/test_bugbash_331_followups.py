@@ -175,10 +175,14 @@ def test_aragorns_oath_binds_an_undead_and_ends_with_the_charm():
                   if 'undead' in (d.get('tags') or []) and not d.get('is_boss')
                   and 'legendary' not in (d.get('tags') or []))
     m = _monster(undead)
-    m.add_effect('charmed', 3)
+    # An ordinary charm does not even take hold on the dead now (their
+    # status_immune, the winning-build lore pass); the helm sets the oath
+    # first and then charms (main.py), as here.
+    assert m.add_effect('charmed', 3) == 0
     assert m.resists_control('charmed'), "undead take no ordinary charm"
     m._oathbound = True
     assert not m.resists_control('charmed')
+    assert m.add_effect('charmed', 3) == 3
     assert m._under('charmed')
     for _ in range(3):
         m.tick_effects()

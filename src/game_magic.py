@@ -491,6 +491,44 @@ class MagicMixin:
             return 0, True
         return max(1, duration // 2), False
 
+    def _inflict(self, target, effect: str, duration: int, *, roll: bool = True) -> tuple:
+        """Put a status on a monster the way every wand, spell and thrown
+        flask does: its nature first, then a big foe's resist roll, then
+        Monster.add_effect. Returns (turns, why):
+
+        * turns > 0: it took hold, for that many turns; `why` is the line for
+          a creature that falls to it easily (status_weak), else '';
+        * turns 0 with a `why`: its nature refuses it, and `why` says so
+          ("The golem does not know fear.": affinity.status_line), so a
+          wand never says "It is Feared!" of a thing that cannot be;
+        * turns 0 and no `why`: a big foe threw it off (the caller says its
+          own "shrugs off" line).
+
+        A creature weak to the effect gets no resist roll, and add_effect
+        makes it last half again as long; a named foe's hold is still capped
+        (data/affinity_rules.json, Monster.add_effect)."""
+        import affinity as _aff
+        if target.resists_control(effect):
+            return 0, _aff.status_line('immune', effect, target)
+        weak = effect in (getattr(target, 'status_weak', None) or ())
+        if roll and not weak:
+            duration, resisted = self._boss_resist_cc(target, duration)
+            if resisted:
+                return 0, ''
+        got = target.add_effect(effect, duration)
+        if not got:
+            return 0, ''
+        return got, (_aff.status_line('weak', effect, target) if weak else '')
+
+    def _say_inflicted(self, target, got: int, why: str, landed: str, shrugged: str) -> None:
+        """The line for one _inflict: `landed` (formatted with {dur}) when it
+        took hold, the refusal when the creature's nature turned it away,
+        else `shrugged`."""
+        if got:
+            self.add_message(landed.format(dur=got) + (f" {why}" if why else ''), 'success')
+        else:
+            self.add_message(why or shrugged, 'warning')
+
     _wand_tier_duration = staticmethod(wand_tier_duration)
 
     def _teleport_monster_landings(self, target, tiles: list) -> list:
@@ -736,49 +774,34 @@ class MagicMixin:
             _spring_at(self, target)
 
             if effect == 'sleep_monster':
-                dur = self._wand_effect_duration(wand, 8)
-                dur, resisted = self._boss_resist_cc(target, dur)
-                if resisted:
-                    self.add_message(f"{the_name(target)} shrugs off the sleep!", 'warning')
-                else:
-                    target.add_effect('sleeping', dur)
-                    self.add_message(f"{the_name(target)} slumps into a deep sleep! ({dur} turns)", 'success')
+                got, why = self._inflict(target, 'sleeping', self._wand_effect_duration(wand, 8))
+                self._say_inflicted(target, got, why,
+                                    f"{the_name(target)} slumps into a deep sleep! ({{dur}} turns)",
+                                    f"{the_name(target)} shrugs off the sleep!")
 
             elif effect == 'slow_monster':
-                dur = self._wand_effect_duration(wand, 8)
-                dur, resisted = self._boss_resist_cc(target, dur)
-                if resisted:
-                    self.add_message(f"{the_name(target)} shrugs off the slowing magic!", 'warning')
-                else:
-                    target.add_effect('slowed', dur)
-                    self.add_message(f"{the_name(target)} slows to a crawl! ({dur} turns)", 'success')
+                got, why = self._inflict(target, 'slowed', self._wand_effect_duration(wand, 8))
+                self._say_inflicted(target, got, why,
+                                    f"{the_name(target)} slows to a crawl! ({{dur}} turns)",
+                                    f"{the_name(target)} shrugs off the slowing magic!")
 
             elif effect == 'confuse_monster':
-                dur = self._wand_effect_duration(wand, 10)
-                dur, resisted = self._boss_resist_cc(target, dur)
-                if resisted:
-                    self.add_message(f"{the_name(target)} shrugs off the confusion!", 'warning')
-                else:
-                    target.add_effect('confused', dur)
-                    self.add_message(f"{the_name(target)} staggers in confusion! ({dur} turns)", 'success')
+                got, why = self._inflict(target, 'confused', self._wand_effect_duration(wand, 10))
+                self._say_inflicted(target, got, why,
+                                    f"{the_name(target)} staggers in confusion! ({{dur}} turns)",
+                                    f"{the_name(target)} shrugs off the confusion!")
 
             elif effect == 'paralyze_monster':
-                dur = self._wand_effect_duration(wand, 6)
-                dur, resisted = self._boss_resist_cc(target, dur)
-                if resisted:
-                    self.add_message(f"{the_name(target)} resists the paralysis!", 'warning')
-                else:
-                    target.add_effect('paralyzed', dur)
-                    self.add_message(f"{the_name(target)} is locked in place! ({dur} turns)", 'success')
+                got, why = self._inflict(target, 'paralyzed', self._wand_effect_duration(wand, 6))
+                self._say_inflicted(target, got, why,
+                                    f"{the_name(target)} is locked in place! ({{dur}} turns)",
+                                    f"{the_name(target)} resists the paralysis!")
 
             elif effect == 'blind_monster':
-                dur = self._wand_effect_duration(wand, 8)
-                dur, resisted = self._boss_resist_cc(target, dur)
-                if resisted:
-                    self.add_message(f"{the_name(target)} shrugs off the blindness!", 'warning')
-                else:
-                    target.add_effect('blinded', dur)
-                    self.add_message(f"{the_name(target)} claws at its eyes, blinded! ({dur} turns)", 'success')
+                got, why = self._inflict(target, 'blinded', self._wand_effect_duration(wand, 8))
+                self._say_inflicted(target, got, why,
+                                    f"{the_name(target)} claws at its eyes, blinded! ({{dur}} turns)",
+                                    f"{the_name(target)} shrugs off the blindness!")
 
             elif effect == 'stoning':
                 is_boss = _is_big_foe(target)
@@ -812,13 +835,11 @@ class MagicMixin:
             elif effect == 'cold_bolt':
                 dmg = self._wand_tier_damage(roll(wand.power) if wand.power else 4, wand.quiz_tier)
                 actual = target.take_damage(dmg, 'cold')
-                dur = self._wand_tier_duration(4, wand.quiz_tier)
-                dur, sr = self._boss_resist_cc(target, dur)
-                if not sr:
-                    target.add_effect('slowed', dur)
+                dur, _why = (self._inflict(target, 'slowed', self._wand_tier_duration(4, wand.quiz_tier))
+                             if target.alive else (0, ''))
                 self.add_message(
                     f"A bolt of cold strikes {the_name(target, lower=True)} for {actual} damage"
-                    + (f" and slows it! ({dur} turns)" if not sr else "!"), 'success'
+                    + (f" and slows it! ({dur} turns)" if dur else "!"), 'success'
                 )
                 if not target.alive:
                     self._on_monster_killed(target)
@@ -834,10 +855,8 @@ class MagicMixin:
                 seen_hits = [m for m in line_hits if _hero_sees(self, m)]
                 for lm in line_hits:
                     actual = lm.take_damage(dmg, 'lightning')
-                    if actual > 0:
-                        sd, sr = self._boss_resist_cc(lm, 3)
-                        if not sr:
-                            lm.add_effect('stunned', sd)
+                    if actual > 0 and lm.alive:
+                        self._inflict(lm, 'stunned', 3)
                     if not lm.alive:
                         self._on_monster_killed(lm)
                 if len(seen_hits) > 1:
@@ -854,13 +873,11 @@ class MagicMixin:
             elif effect == 'acid_spray':
                 dmg = self._wand_tier_damage(roll(wand.power) if wand.power else 4, wand.quiz_tier)
                 actual = target.take_damage(dmg, 'acid')
-                dur = self._wand_tier_duration(6, wand.quiz_tier)
-                dur, sr = self._boss_resist_cc(target, dur)
-                if not sr:
-                    target.add_effect('diseased', dur)
+                dur, _why = (self._inflict(target, 'diseased', self._wand_tier_duration(6, wand.quiz_tier))
+                             if target.alive else (0, ''))
                 self.add_message(
                     f"Acid dissolves {the_name(target, lower=True)} for {actual} damage"
-                    + (f" -- diseased for {dur} turns!" if not sr else "!"), 'success'
+                    + (f" -- diseased for {dur} turns!" if dur else "!"), 'success'
                 )
                 if not target.alive:
                     self._on_monster_killed(target)
@@ -957,8 +974,8 @@ class MagicMixin:
                         if (_is_big_foe(m) or getattr(m, 'fearless', False)
                                 or m.resists_control('feared')):
                             continue
-                        m.add_effect('feared', dur)
-                        hit += 1 if _hero_sees(self, m) else 0
+                        if self._inflict(m, 'feared', dur, roll=False)[0]:
+                            hit += 1 if _hero_sees(self, m) else 0
                     self.add_message(
                         f"A wave of panic sweeps the floor! ({hit} creature{'s' if hit != 1 else ''} flee for {dur} turns)",
                         'success')
@@ -967,62 +984,63 @@ class MagicMixin:
                 elif getattr(target, 'fearless', False):
                     # The galla: nothing frightens them (MON-06).
                     self.add_message(f"{the_name(target)} knows no fear!", 'warning')
-                elif target.resists_control('feared'):
-                    self.add_message(f"{the_name(target)} has no mind to frighten.", 'warning')
                 else:
-                    target.add_effect('feared', dur)
-                    self.add_message(f"{the_name(target)} turns and flees in terror! ({dur} turns)", 'success')
+                    got, why = self._inflict(target, 'feared', dur, roll=False)
+                    self._say_inflicted(target, got, why,
+                                        f"{the_name(target)} turns and flees in terror! ({{dur}} turns)",
+                                        f"{the_name(target)} stands its ground.")
 
             elif effect == 'charm_monster':
                 is_boss = _is_big_foe(target)
                 if is_boss:
                     self.add_message(f"{the_name(target)} is far too willful to charm!", 'warning')
-                elif target.resists_control('charmed'):
-                    # The undead feel no affection; constructs and plants
-                    # have no mind to win (Monster.resists_control).
-                    self.add_message(f"{the_name(target)} has no heart for the charm to win.", 'warning')
                 else:
                     # The 'charmed' status is the peace: it will not strike
                     # the hero, and it wanders (Monster.take_turn). This used
                     # to set ai_pattern 'sessile' as well, for good: a sessile
                     # creature skips the charm check, so it still struck from
                     # beside the hero, and it stayed rooted when the charm ended.
-                    dur = self._wand_effect_duration(wand, 20)
-                    target.add_effect('charmed', dur)
-                    self.add_message(f"{the_name(target)} gazes at you with adoration. ({dur} turns)", 'success')
+                    # The undead feel no affection, and the mindless have no
+                    # heart to win (Monster.resists_control, status_immune).
+                    got, why = self._inflict(target, 'charmed', self._wand_effect_duration(wand, 20), roll=False)
+                    self._say_inflicted(target, got, why,
+                                        f"{the_name(target)} gazes at you with adoration. ({{dur}} turns)",
+                                        f"{the_name(target)} has no heart for the charm to win.")
 
             elif effect == 'poison_monster':
-                dur = self._wand_effect_duration(wand, 12)
-                dur, resisted = self._boss_resist_cc(target, dur)
-                if resisted:
-                    self.add_message(f"{the_name(target)} shrugs off the poison!", 'warning')
-                else:
-                    target.add_effect('poisoned', dur)
-                    self.add_message(f"{the_name(target)} writhes as poison courses through it! ({dur} turns)", 'success')
+                # Poison resistance counts twice over: a creature that cannot
+                # be poisoned at all says so, and the ticks of one that
+                # resists or shrugs off poison are cut (Monster.tick_effects
+                # types them; they were untyped and ignored resistance).
+                got, why = self._inflict(target, 'poisoned', self._wand_effect_duration(wand, 12))
+                if got and 'poison' in (list(getattr(target, 'resistances', None) or [])
+                                        + list(getattr(target, 'shrugs_off', None) or [])):
+                    why = (why + ' ' if why else '') + "It resists the venom: the poison bites only a little."
+                self._say_inflicted(target, got, why,
+                                    f"{the_name(target)} writhes as poison courses through it! ({{dur}} turns)",
+                                    f"{the_name(target)} shrugs off the poison!")
 
             elif effect == 'disease_monster':
-                dur = self._wand_effect_duration(wand, 15)
-                dur, resisted = self._boss_resist_cc(target, dur)
-                if resisted:
-                    self.add_message(f"{the_name(target)} shrugs off the disease!", 'warning')
+                got, why = self._inflict(target, 'diseased', self._wand_effect_duration(wand, 15))
+                if not got:
+                    self.add_message(why or f"{the_name(target)} shrugs off the disease!", 'warning')
                 else:
-                    target.add_effect('diseased', dur)
                     actual = target.take_damage(_big_foe_bite(target, 0.2, self.dungeon_level))
-                    self.add_message(f"{the_name(target)} is wracked by disease! ({actual} dmg, {dur} turns)", 'success')
+                    self.add_message(f"{the_name(target)} is wracked by disease! ({actual} dmg, {got} turns)"
+                                     + (f" {why}" if why else ''), 'success')
                     if not target.alive:
                         self._on_monster_killed(target)
 
             elif effect == 'curse_monster':
-                dur = self._wand_effect_duration(wand, 20)
                 sdur = self._wand_tier_duration(8, wand.quiz_tier)
-                dur, resisted = self._boss_resist_cc(target, dur)
-                if resisted:
-                    self.add_message(f"{the_name(target)} shrugs off the curse!", 'warning')
+                dur, why = self._inflict(target, 'cursed', self._wand_effect_duration(wand, 20))
+                if not dur:
+                    self.add_message(why or f"{the_name(target)} shrugs off the curse!", 'warning')
                 else:
                     sdur = max(1, sdur // 2) if (_is_big_foe(target)) else sdur
-                    target.add_effect('cursed', dur)
-                    target.add_effect('slowed', sdur)
-                    self.add_message(f"Dark energy envelops {the_name(target, lower=True)}! Cursed ({dur}t) and slowed ({sdur}t).", 'success')
+                    sdur = self._inflict(target, 'slowed', sdur, roll=False)[0]
+                    self.add_message(f"Dark energy envelops {the_name(target, lower=True)}! Cursed ({dur}t)"
+                                     + (f" and slowed ({sdur}t)." if sdur else "."), 'success')
 
             elif effect == 'teleport_monster' and getattr(target, 'stationary', False):
                 # The Black Knight never leaves his bridge (MON-09).
@@ -1074,16 +1092,11 @@ class MagicMixin:
                         self._on_monster_killed(target)
 
             elif effect == 'weaken_monster':
-                dur = self._wand_effect_duration(wand, 15)
-                dur, resisted = self._boss_resist_cc(target, dur)
-                if resisted:
-                    self.add_message(f"{the_name(target)} shrugs off the weakening magic!", 'warning')
-                elif target.attacks:
-                    target.add_effect('weakened', dur)
-                    self.add_message(f"{the_name(target)} looks visibly weaker! ({dur} turns)", 'success')
-                else:
-                    target.add_effect('weakened', dur)
-                    self.add_message(f"{the_name(target)} seems diminished. ({dur} turns)", 'success')
+                got, why = self._inflict(target, 'weakened', self._wand_effect_duration(wand, 15))
+                self._say_inflicted(target, got, why,
+                                    (f"{the_name(target)} looks visibly weaker! ({{dur}} turns)" if target.attacks
+                                     else f"{the_name(target)} seems diminished. ({{dur}} turns)"),
+                                    f"{the_name(target)} shrugs off the weakening magic!")
 
             elif effect == 'drain_magic':
                 from status_effects import BUFFS as _BUFFS
@@ -1218,25 +1231,24 @@ class MagicMixin:
         elif effect == 'mass_confuse':
             dur = self._wand_tier_duration(12, wand.quiz_tier)
             visible_monsters = [m for m in self.monsters if m.alive and (m.x, m.y) in self.visible]
-            n_seen = sum(1 for m in visible_monsters if _hero_sees(self, m))
-            for m in visible_monsters:
-                m.add_effect('confused', dur)
+            # Counted as they take hold: the mindless are not muddled (status_immune).
+            n_seen = sum(1 for m in visible_monsters
+                         if m.add_effect('confused', dur) and _hero_sees(self, m))
             self.add_message(f"A wave of confusion washes over {n_seen} creatures! ({dur} turns)", 'success')
 
         elif effect == 'mass_sleep':
             dur = self._wand_tier_duration(10, wand.quiz_tier)
             visible_monsters = [m for m in self.monsters if m.alive and (m.x, m.y) in self.visible]
-            n_seen = sum(1 for m in visible_monsters if _hero_sees(self, m))
-            for m in visible_monsters:
-                m.add_effect('sleeping', dur)
+            # Counted as they take hold: the dead and the made do not sleep.
+            n_seen = sum(1 for m in visible_monsters
+                         if m.add_effect('sleeping', dur) and _hero_sees(self, m))
             self.add_message(f"All visible creatures slump into slumber! ({n_seen} affected, {dur} turns)", 'success')
 
         elif effect == 'mass_slow':
             dur = self._wand_tier_duration(10, wand.quiz_tier)
             visible_monsters = [m for m in self.monsters if m.alive and (m.x, m.y) in self.visible]
-            n_seen = sum(1 for m in visible_monsters if _hero_sees(self, m))
-            for m in visible_monsters:
-                m.add_effect('slowed', dur)
+            n_seen = sum(1 for m in visible_monsters
+                         if m.add_effect('slowed', dur) and _hero_sees(self, m))
             self.add_message(f"{n_seen} creatures are slowed! ({dur} turns)", 'success')
 
         elif effect == 'time_stop':
@@ -2044,10 +2056,8 @@ class MagicMixin:
             ]
             affected = 0
             for m in visible_monsters:
-                applied_dur, resisted = self._boss_resist_cc(m, dur)
-                if resisted:
+                if not self._inflict(m, status_name, dur)[0]:
                     continue
-                m.add_effect(status_name, applied_dur)
                 affected += 1 if _hero_sees(self, m) else 0
             self.add_message(
                 f"{spell['name']}! {affected}/{sum(1 for m in visible_monsters if _hero_sees(self, m))} creatures "
@@ -2073,10 +2083,8 @@ class MagicMixin:
             ]
             affected = 0
             for m in visible_monsters:
-                applied_dur, resisted = self._boss_resist_cc(m, base_dur)
-                if resisted:
+                if not self._inflict(m, status_name, base_dur)[0]:
                     continue
-                m.add_effect(status_name, applied_dur)
                 affected += 1 if _hero_sees(self, m) else 0
             self.add_message(
                 f"{spell['name']}! {affected}/{sum(1 for m in visible_monsters if _hero_sees(self, m))} creatures "
@@ -2283,10 +2291,8 @@ class MagicMixin:
                 stun_dur = max(1, int(3 * chain_scale))
                 for lm in line_hits:
                     actual = lm.take_damage(scaled, 'lightning')
-                    if actual > 0:
-                        sd, sr = self._boss_resist_cc(lm, stun_dur)
-                        if not sr:
-                            lm.add_effect('stunned', sd)
+                    if actual > 0 and lm.alive:
+                        self._inflict(lm, 'stunned', stun_dur)
                     if not lm.alive:
                         self._on_monster_killed(lm)
                 if len(seen_hits) > 1:
@@ -2300,53 +2306,41 @@ class MagicMixin:
                 else:
                     self.add_message("The lightning dissipates harmlessly.", 'info')
             elif effect == 'sleep_monster':
-                dur = max(2, int(6 * chain_scale))
-                dur, resisted = self._boss_resist_cc(target, dur)
-                if resisted:
-                    self.add_message(f"{the_name(target)} shrugs off the sleep!", 'warning')
-                else:
-                    target.add_effect('sleeping', dur)
-                    self.add_message(f"{the_name(target)} falls asleep for {dur} turns!", 'success')
+                got, why = self._inflict(target, 'sleeping', max(2, int(6 * chain_scale)))
+                self._say_inflicted(target, got, why,
+                                    f"{the_name(target)} falls asleep for {{dur}} turns!",
+                                    f"{the_name(target)} shrugs off the sleep!")
             elif effect == 'confuse_monster':
                 # Axii holds longer than Confusion (spells.py 'duration').
-                dur = max(2, int(int(spell.get('duration', 10)) * chain_scale))
-                dur, resisted = self._boss_resist_cc(target, dur)
-                if resisted:
-                    self.add_message(f"{the_name(target)} shrugs off the confusion!", 'warning')
-                else:
-                    target.add_effect('confused', dur)
-                    self.add_message(f"{the_name(target)} is confused for {dur} turns!", 'success')
+                got, why = self._inflict(target, 'confused',
+                                         max(2, int(int(spell.get('duration', 10)) * chain_scale)))
+                self._say_inflicted(target, got, why,
+                                    f"{the_name(target)} is confused for {{dur}} turns!",
+                                    f"{the_name(target)} shrugs off the confusion!")
             elif effect == 'paralyze_monster':
-                dur = max(2, int(8 * chain_scale))
-                dur, resisted = self._boss_resist_cc(target, dur)
-                if resisted:
-                    self.add_message(f"{the_name(target)} resists the paralysis!", 'warning')
-                else:
-                    target.add_effect('paralyzed', dur)
-                    self.add_message(f"{the_name(target)} is paralyzed for {dur} turns!", 'success')
+                got, why = self._inflict(target, 'paralyzed', max(2, int(8 * chain_scale)))
+                self._say_inflicted(target, got, why,
+                                    f"{the_name(target)} is paralyzed for {{dur}} turns!",
+                                    f"{the_name(target)} resists the paralysis!")
             elif effect == 'aard_blast':
                 base_dmg = _roll(power) if power else 10
                 scaled = self._spell_damage(base_dmg, chain)
                 actual = target.take_damage(scaled)
-                stun = max(1, int(3 * chain_scale))
-                stun, sr = self._boss_resist_cc(target, stun)
-                if not sr:
-                    target.add_effect('stunned', stun)
+                stun = (self._inflict(target, 'stunned', max(1, int(3 * chain_scale)))[0]
+                        if target.alive else 0)
                 self.add_message(
                     f"Aard! A telekinetic blast strikes {the_name(target, lower=True)} for {actual} damage"
-                    + (" and stuns it!" if not sr else "!") + "", 'success')
+                    + (" and stuns it!" if stun else "!") + "", 'success')
                 if not target.alive:
                     self._on_monster_killed(target)
             elif effect == 'slow_monster':
                 # Yrden's own length (spells.py 'duration'): a close-range
                 # sign holds longer than a spell cast from across the room.
-                dur = max(2, int(int(spell.get('duration', 8)) * chain_scale))
-                dur, resisted = self._boss_resist_cc(target, dur)
-                if resisted:
-                    self.add_message(f"{the_name(target)} shrugs off the slowing magic!", 'warning')
-                else:
-                    target.add_effect('slowed', dur)
-                    self.add_message(f"{the_name(target)} is slowed for {dur} turns!", 'success')
+                got, why = self._inflict(target, 'slowed',
+                                         max(2, int(int(spell.get('duration', 8)) * chain_scale)))
+                self._say_inflicted(target, got, why,
+                                    f"{the_name(target)} is slowed for {{dur}} turns!",
+                                    f"{the_name(target)} shrugs off the slowing magic!")
             elif effect == 'teleport_self':
                 self._teleport_player()
                 self.add_message("The Elder Blood bends space around you!", 'success')
@@ -2362,24 +2356,20 @@ class MagicMixin:
                 if not target.alive:
                     self._on_monster_killed(target)
             elif effect == 'slow_monster_spell':
-                dur = max(4, int(10 * chain_scale))
-                dur, resisted = self._boss_resist_cc(target, dur)
-                if resisted:
-                    self.add_message(f"{the_name(target)} shrugs off the slowing magic!", 'warning')
-                else:
-                    target.add_effect('slowed', dur)
-                    self.add_message(f"{the_name(target)} is slowed for {dur} turns!", 'success')
+                got, why = self._inflict(target, 'slowed', max(4, int(10 * chain_scale)))
+                self._say_inflicted(target, got, why,
+                                    f"{the_name(target)} is slowed for {{dur}} turns!",
+                                    f"{the_name(target)} shrugs off the slowing magic!")
             elif effect == 'acid_arrow':
                 base_dmg = _roll(power) if power else 8
                 scaled = self._spell_damage(base_dmg, chain)
                 actual = target.take_damage(scaled, 'acid')
-                dot_dur = max(2, int(5 * chain_scale))
-                dot_dur, dot_resisted = self._boss_resist_cc(target, dot_dur)
-                if not dot_resisted:
-                    target.add_effect('poisoned', dot_dur)
+                dot_dur = (self._inflict(target, 'poisoned', max(2, int(5 * chain_scale)))[0]
+                           if target.alive else 0)
                 self.add_message(
                     f"An acid arrow strikes {the_name(target, lower=True)} for {actual} damage!"
-                    + (f" Acid burns for {dot_dur} turns!" if not dot_resisted else " It resists the acid burn!")
+                    + (f" Acid burns for {dot_dur} turns!" if dot_dur
+                       else (" It resists the acid burn!" if target.alive else ""))
                     + "", 'success')
                 if not target.alive:
                     self._on_monster_killed(target)
@@ -2398,15 +2388,14 @@ class MagicMixin:
                     self.add_message(f"{the_name(target)} is too powerful to frighten!", 'warning')
                 elif getattr(target, 'fearless', False):
                     self.add_message(f"{the_name(target)} knows no fear!", 'warning')
-                elif target.resists_control('feared'):
-                    self.add_message(f"{the_name(target)} has no mind to frighten.", 'warning')
                 else:
                     # The status is the flight; no ai_pattern change (it never
-                    # wore off, so the creature fled for good).
-                    dur = max(3, int(10 * chain_scale))
-                    target.add_effect('feared', dur)
-                    self.add_message(
-                        f"{the_name(target)} turns and flees in terror for {dur} turns!", 'success')
+                    # wore off, so the creature fled for good). The mindless
+                    # know no fear (Monster.resists_control, status_immune).
+                    got, why = self._inflict(target, 'feared', max(3, int(10 * chain_scale)), roll=False)
+                    self._say_inflicted(target, got, why,
+                                        f"{the_name(target)} turns and flees in terror for {{dur}} turns!",
+                                        f"{the_name(target)} stands its ground.")
             elif effect == 'polymorph_spell':
                 is_boss = _is_big_foe(target)
                 if is_boss:

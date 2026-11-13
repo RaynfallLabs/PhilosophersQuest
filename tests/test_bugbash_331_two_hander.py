@@ -44,11 +44,18 @@ def game(monkeypatch, tmp_path):
 
 
 def _attune_shield(g, shield, tier=5):
+    """Through the game's own attune quiz. Worn once, the Aegis is Known by
+    Hand (known_by_hand.py): at tier 5 it goes straight back on at 5, with
+    no quiz; below 5 the game asks whether to attune again (Y: the quiz)."""
+    from game_states import STATE_ASK, STATE_QUIZ
     if shield not in g.player.inventory:
         g.player.inventory.append(shield)
     g._equip_item(shield)
-    cb, g.quiz_engine.callback = g.quiz_engine.callback, None
-    cb(QuizResult(success=True, score=tier, correct=tier, asked=tier))
+    if g.state == STATE_ASK:
+        g._ask_input(pygame.K_y)
+    if g.state == STATE_QUIZ:
+        cb, g.quiz_engine.callback = g.quiz_engine.callback, None
+        cb(QuizResult(success=True, score=tier, correct=tier, asked=tier))
     assert g.player.shield is shield
 
 

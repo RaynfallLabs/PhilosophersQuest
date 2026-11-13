@@ -120,6 +120,9 @@ def test_a_two_floor_escort_counts_only_descents_and_an_up_stair_carries_it():
     assert max(abs(esc.x - g.player.x), abs(esc.y - g.player.y)) <= 3
     _descend(g)                                          # 6, a floor seen before: still counts
     assert esc in g.escorts and esc.floors_left == 1
+    # The walk shows its progress (winning-build plan 3.8b).
+    assert any(str(e[0]) == "Lena keeps close on the stair. One more floor to go."
+               for e in g.msg_log.entries[-8:])
     _descend(g)
     assert esc not in g.escorts and not esc.alive
 

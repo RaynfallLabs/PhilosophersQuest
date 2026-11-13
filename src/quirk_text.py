@@ -154,7 +154,7 @@ QUIRK_DESC = {
     'rasputin':      f"Constitution +2. {_CON} You have been nearly dead so often that your body has stopped taking it seriously.",
     'merlin':        f"Intelligence +1. {_INT} Every unknown wand you dared to wave left a little of its secret behind.",
     'buddha':        "Permanent displacement: monsters strike at where you seem to be, and miss about one time in seven. Stillness has made you hard to find.",
-    'hephaestus':    "Armor for that slot needs one fewer correct answer to put on. You have fitted that piece so often your hands do it alone.",
+    'hephaestus':    "Armor goes on and comes off in half the time: plate in three turns, not five. You have fitted armor so often your hands do it alone.",
     'cassandra':     f"Wisdom +1. {_WIS} You were wrong many times and kept going; that is where judgement comes from.",
     'sisyphus':      f"Wisdom +1. {_WIS} The chests that beat you taught you more than the ones that opened.",
     'job':           "Permanent levitation: you float just above the floor, so floor traps cannot catch you. Having suffered every snare, you no longer touch the ground they are set in.",

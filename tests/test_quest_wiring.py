@@ -104,7 +104,9 @@ def test_quest_artifacts_carry_their_lore():
 def test_leather_scrap_on_its_floor_is_the_data_item():
     d, items = _floor(5)
     scrap = next(i for i in items if getattr(i, 'id', '') == 'leather_scrap')
-    assert scrap.weight < 1.0
+    # Five pounds a scrap, fifty for all ten (winning-build plan 3.7: they
+    # used to weigh 0.3, nothing to carry from floor 5 to 79).
+    assert scrap.weight == 5.0
     assert scrap.lore
 
 
@@ -956,8 +958,10 @@ def test_named_foes_cannot_be_locked_down():
             m.add_effect(effect, 25)
             m.add_effect(effect, 25)
             assert m.status_effects[effect] <= NAMED_FOE_CONTROL_CAP, (mid, effect)
-        m.add_effect('poisoned', 10)
-        assert m.status_effects['poisoned'] == 10        # damage over time is fine
+        # A softer effect is fine. (This was poison; the lore pass made the
+        # fiends and the dead immune to it: data/family_affinity.json.)
+        m.add_effect('slowed', 10)
+        assert m.status_effects['slowed'] == 10
     rat = Monster({**data['giant_rat'], 'id': 'giant_rat'}, 1, 1)
     rat.add_effect('sleeping', 25)
     assert rat.status_effects['sleeping'] == 25

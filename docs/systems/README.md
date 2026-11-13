@@ -112,6 +112,7 @@ the doc wins (and the row is a bug — please update it).
 | "Why do spawn tables use peak_weight + spread?" | [data_schemas.md](data_schemas.md); Gaussian + explicit floor bands |
 | "What is zero-tolerance?" | [conventions.md](conventions.md); any wrong answer ends a threshold quiz |
 | "What subjects are timed?" | [conventions.md](conventions.md); math only (combat chain). Everything else untimed |
+| "Which school grades is each maths tier?" | [../quiz/math_grade_curve.md](../quiz/math_grade_curve.md); `tools/balance/math_difficulty.py` scores, `py -m tools.balance.math_grade_curve` fixes |
 | "What is the system-change-sweep rule?" | [conventions.md](conventions.md); grep OLD terms across all `src/` in same commit as mechanical change |
 | "Where does help text live?" | [ui.md](ui.md); `game_render._draw_help_screen`, including the new System Rules card |
 | "How is the sidebar built?" | [ui.md](ui.md); `ui.Sidebar._identity/_vitals/_attributes/_derived/_effects/_powers/_in_sight` |
@@ -168,10 +169,16 @@ Fixes from these audits ship in the version bump that mentions them in
   / lockpick fails — the lost corpse / ingredient / chest tier is the
   cost. (Identify's stun exists because identify is the one action that
   doesn't consume the item.)
-- **No masteries.** All three mastery systems (class, family, identify)
-  were removed on 2026-08-06. If you see "mastery" vocabulary in UI, log,
-  or JSON — that's a stale string, fix it. See `player.__setstate__`
-  in [save_meta.md](save_meta.md) for the migration list.
+- **No masteries of the old kind.** All three mastery systems (class,
+  family, identify) were removed on 2026-08-06; see `player.__setstate__`
+  in [save_meta.md](save_meta.md) for the migration list. Two later rules
+  keep what the hero has learnt this run, and are allowed because each is
+  one plain rule with no ladder of growing numbers: philosophy tier
+  mastery (`src/philosophy_mastery.py`: every question of a tier answered
+  right names that tier's items) and **Known by Hand**
+  (`src/known_by_hand.py`, 2026-11-13: a kind of gear put on once goes on
+  again with no quiz). Any other "mastery" vocabulary in UI, log or JSON
+  is a stale string: fix it.
 - When a game system is renamed, redesigned, or removed, **grep the OLD
   terms across all of `src/` in the same commit as the mechanical
   change.** Pytest won't catch text-only rot. See

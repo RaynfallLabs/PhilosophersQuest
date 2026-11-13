@@ -27,7 +27,7 @@ def _source(*modules):
 
 
 SRC_ALL = _source('main', 'game_combat', 'game_magic', 'game_encounters',
-                  'game_input', 'chain_passives')
+                  'game_input', 'chain_passives', 'game_dressing')
 
 
 def test_three_oclock_consumer_present():

@@ -444,11 +444,13 @@ def test_approved_lines_are_word_for_word():
     assert shep['unnamed_chronicle'] == (
         "A soul sphere hatched and out came Shep, the farm dog from the old bedtime "
         "stories. He came to save us in every story. I think he still will.")
+    # The Emberpup's line was rewritten with his story (Brandon, 2026-11-13:
+    # abandoned and mistreated by his master; "he", and he keeps the cloak).
     d = json.loads((ROOT / 'data' / 'abandoned_emberpup.json').read_text(encoding='utf-8'))
     assert d['named_chronicle'] == (
-        "Found a little fire lizard waiting on a rock in the rain for a trainer who never "
-        "came back. I named it {name}. It walks right at my heel, and I am never leaving it "
-        "anywhere.")
+        "Found a little fire lizard left on a rock in the rain by someone who was cruel to "
+        "him. I named him {name}. He wears the leaf cloak I gave him, he walks right at my "
+        "heel, and I am never leaving him anywhere.")
     src = (ROOT / 'src' / 'game_input.py').read_text(encoding='utf-8')
     assert "I named the {pet.species_name} '{name}'. " in src
     assert "\"I'm not alone anymore.\"" in src

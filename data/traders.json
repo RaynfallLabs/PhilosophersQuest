@@ -1,5 +1,5 @@
 {
-  "_doc": "The traders (economy refactor 2026-10-17, ECONOMY_REFACTOR_PROPOSAL D3-D7). Read by src/traders.py (pure: the plan, the stock, the offers, the deeds prices) and src/game_traders.py (the Game side: placing them, the shop's Buy / Sell / Services tabs). Each trader is a person with a name, a reason to be down here and a few short lines; none of them is a vending machine. Their goods are a one-time chance: no restock. Stock stays unidentified and is priced by what it is WORTH (data/item_worth.json), so a sharp eye can price-identify. They BUY at 20-25% of their own price, up to what is in their purse, never quest pieces, never anything worn, and a thing bought from any trader never sells back for more than half of what was paid (no buy/sell loop). Services sell a second chance, never the answer.",
+  "_doc": "The traders (economy refactor 2026-10-17, ECONOMY_REFACTOR_PROPOSAL D3-D7). Read by src/traders.py (pure: the plan, the stock, the offers, the deeds prices) and src/game_traders.py (the Game side: placing them, the shop's Buy / Sell / Services tabs). Each trader is a person with a name, a reason to be down here and a few short lines; none of them is a vending machine. Their goods are a one-time chance: no restock. Stock stays unidentified and is priced by what it is WORTH (data/item_worth.json), so a sharp eye can price-identify. They BUY at 20-25% of their own price (half of it, on a visit when the hero buys from them, up to what he spends: the trade-in), up to what is in their purse, never quest pieces, never anything worn, and a thing bought from any trader never sells back for more than half of what was paid (no buy/sell loop). Services sell a second chance, never the answer. Since the winning build (3.5, 2026-11-13) they also help a build: part of every shelf counters what walks the floors below (counters), smiths reforge, silver and inlay, armourers line a cloak or shirt and take special orders, and an altar rededicates (src/rededication.py).",
 
   "plan": {
     "_doc": "Which floors get a trader, rolled once a run from the Road's seed (road.rng_for), never from the shared random stream. Gate camps stand on the floor before each gate boss, always. Specialists take 'count' floors inside their range; then each floor left takes the generalist who keeps to it (the 'generalists' list, each with its own floors) with 'generalist_chance'. A trader avoids the Emberpup's and the Black Knight's floors and prefers floors with no anchor, medium or high Road slot; he never stands on a boss floor, floor 1, 99 or 100, or the Cow Level. Depth-true (Brandon, 2026-11-12): every range keeps inside the reach of the being who trades there (the 'reach' table below; tests/test_depth_true.py). 'generalist' and 'generalist_floors' are the pre-list keys: traders.generalists still reads them when 'generalists' is absent.",
@@ -68,7 +68,79 @@
     "heal":      {"name": "Bind Your Wounds", "desc": "Your wounds cleaned and bound: back to full health."},
     "id_retry":  {"name": "Study an Item Together", "desc": "Identify one item with a scribe at your elbow. You still answer the question; a wrong answer costs you nothing but the fee."},
     "map":       {"name": "Buy a Map of This Floor", "desc": "The whole layout of this floor, inked."},
-    "porter":    {"name": "Hire a Porter", "desc": "Someone carries part of your load for the next three floors."}
+    "porter":    {"name": "Hire a Porter", "desc": "Someone carries part of your load for the next three floors."},
+    "reforge":   {"name": "Reforge Your Weapon", "desc": "Re-shapes the weapon in your hand into another of the same metal: a longsword into a mace. Its plus, its blessing and the smith's work stay with it."},
+    "silvering": {"name": "Silver Your Weapon", "desc": "Works silver into the weapon in your hand, for good. It strikes as silver does, and the dead and the shapechangers cannot bear silver. One inlay to a weapon."},
+    "cold_iron_inlay": {"name": "Inlay Cold Iron", "desc": "Works cold iron into the weapon in your hand, for good. It strikes as cold iron does, and the Fair Folk and demons cannot abide cold iron. One inlay to a weapon."},
+    "lining":    {"name": "Line a Cloak or Shirt", "desc": "Lines the cloak or shirt you wear against fire, cold, lightning or poison: that harm does a quarter less to you. One lining to a piece."},
+    "special_order": {"name": "Special Order", "desc": "Order a piece in the metal and shape you choose. Pay now; it waits for you at his next stall, deeper down."},
+    "trade_in":  {"name": "Trade In", "desc": "On a visit when you buy from him, what you sell him fetches half his price instead of a fifth, up to what you spend."}
+  },
+
+  "counters": {
+    "_doc": "Stock that knows what's below (winning build 3.5, Brandon 2026-11-13: \"the dungeon needs to SUPPORT this through the merchants and altars\"). src/domain_counters.py reads what spawns on the floors at and just below a stall ('span' floors past it), at run time, and ranks what those kinds are weak to ('weak': a form, a substance and holy are measured through combat.weapon_type_multiplier on a probe weapon; an element by the kind's own weaknesses) and what they hurt with ('guard': the type of their attacks). Each trader sets out up to 'per_stall' counters: the first offer HIS line can supply for the commonest weakness, then a guard for the commonest attack element if it touches at least 'guard_min_share' of what walks below. A gear counter (whose use shows on it) is marked as set out for what walks below; a wand, potion or book counter is not, so nothing is identified. 'foes' words the family most of the kinds belong to; his 'counter' line says it when the stall opens.",
+    "span": 4,
+    "per_stall": 2,
+    "guard_min_share": 0.1,
+    "weak": {
+      "blunt":  {"probe": {"forms": ["blunt"]}, "take": "something heavy", "offers": [{"gear": "weapon", "form": "blunt"}]},
+      "silver": {"probe": {"material": "silver"}, "take": "silver", "offers": [{"gear": "weapon", "material": "silver"}]},
+      "cold_iron": {"probe": {"material": "cold_iron"}, "take": "cold iron", "offers": [{"gear": "weapon", "material": "cold_iron"}]},
+      "holy":   {"probe": {"blessed": true}, "take": "something holy", "offers": [{"class": "wand", "effects": ["turn_undead"]}, {"gear": "weapon", "blessed": true}]},
+      "fire":   {"probe": {"element": "fire"}, "take": "fire", "offers": [{"class": "wand", "effects": ["fire_bolt"]}, {"class": "spellbook", "spells": ["fire_spark_spell", "fire_bolt_spell", "fireball_spell", "cataclysm_spell"]}]},
+      "cold":   {"probe": {"element": "cold"}, "take": "frost", "offers": [{"class": "wand", "effects": ["cold_bolt"]}, {"class": "spellbook", "spells": ["frost_touch_spell", "cold_bolt_spell", "ice_storm_spell", "cone_of_cold_spell"]}]},
+      "lightning": {"probe": {"element": "lightning"}, "take": "lightning", "offers": [{"class": "wand", "effects": ["lightning_bolt"]}, {"class": "spellbook", "spells": ["spark_spell", "lightning_bolt_spell", "chain_lightning_spell"]}]},
+      "pierce": {"probe": {"forms": ["pierce"]}, "take": "a point", "offers": [{"gear": "weapon", "form": "pierce"}]},
+      "slash":  {"probe": {"forms": ["slash"]}, "take": "an edge", "offers": [{"gear": "weapon", "form": "slash"}]}
+    },
+    "guard": {
+      "fire":      {"foes": "fire breathes", "take": "something against fire", "offers": [{"gear": "armor", "slot": "cloak", "lining": "fire"}, {"class": "potion", "effects": ["fire_resist"]}]},
+      "cold":      {"foes": "the frost bites", "take": "something against the cold", "offers": [{"gear": "armor", "slot": "cloak", "lining": "cold"}, {"class": "potion", "effects": ["cold_resist"]}]},
+      "lightning": {"foes": "lightning walks", "take": "something against lightning", "offers": [{"gear": "armor", "slot": "cloak", "lining": "lightning"}, {"class": "potion", "effects": ["shock_resist"]}]},
+      "poison":    {"foes": "poison drips from every fang", "take": "something against poison", "offers": [{"gear": "armor", "slot": "shirt", "lining": "poison"}, {"class": "potion", "effects": ["cure_poison"]}]}
+    },
+    "foes": {
+      "demons": "the demons hunt",
+      "restless_dead": "the dead walk",
+      "ghosts": "the ghosts drift",
+      "mortals": "hard men walk",
+      "goblinkin": "the goblins swarm",
+      "vermin": "the vermin crawl",
+      "giants": "the giants stride",
+      "aberrations": "things with too many eyes crawl",
+      "fair_folk": "the Fair Folk dance",
+      "vampires_liches": "the vampires feed",
+      "dragons": "the dragons brood",
+      "legend": "the old legends wait",
+      "serpents": "the serpents coil",
+      "great_beasts": "the great beasts roam",
+      "constructs": "iron and stone walk",
+      "elementals": "the elements themselves walk",
+      "plants": "the very roots hunt",
+      "oozes": "the oozes creep",
+      "birds": "the birds of prey circle",
+      "gorgons": "the gorgons wait",
+      "shapeshifters": "the shapechangers hunt",
+      "celestials": "the bright ones walk"
+    }
+  },
+
+  "inlays": {
+    "_doc": "Silvering and the cold-iron inlay (src/smithing.py): the substance joins the weapon's damage_types, which the bane rule reads. 'prefix' goes on its name; 'card' is its Kit card line; 'done' is what the smith does.",
+    "silver":    {"name": "silver", "prefix": "Silvered",
+                  "card": "Silvered: it strikes as silver does, and the dead and the shapechangers cannot bear silver.",
+                  "done": "{who} beats a skin of silver into your {name} and polishes it until it shines like the moon."},
+    "cold_iron": {"name": "cold iron", "prefix": "Iron-Inlaid",
+                  "card": "Inlaid with cold iron: it strikes as cold iron does, and the Fair Folk and demons cannot abide it.",
+                  "done": "{who} hammers a vein of cold iron into your {name}, cold, never letting it near the fire."}
+  },
+
+  "linings": {
+    "_doc": "Linings (src/smithing.py): one to a worn cloak or shirt, that element's damage x0.75 while it is worn (Player.get_armor_resistance). 'stuff' is what the armourer lines it with.",
+    "fire":      {"name": "Fire", "stuff": "salamander's wool, the stone cloth that will not burn"},
+    "cold":      {"name": "Cold", "stuff": "felted fleece"},
+    "lightning": {"name": "Lightning", "stuff": "oiled silk, which lightning will not cross"},
+    "poison":    {"name": "Poison", "stuff": "linen boiled in vinegar"}
   },
 
   "guild": {
@@ -115,8 +187,9 @@
       "markup": 1.0,
       "purse": 1.0,
       "buys": "all",
-      "services": ["map"],
+      "services": ["map", "trade_in"],
       "lines": {
+        "counter": "Grindle hears that below here {foes}. Grindle sells {take}. Funny, that.",
         "greet": ["Grindle sells. Grindle buys. Grindle does not ask where you got it.",
                   "Previous owners? Very past caring. Have a look.",
                   "Everything is real. Mostly. Some of it.",
@@ -134,6 +207,7 @@
       ],
       "friend": {"person": "quill", "pronoun": "he", "when": {"deeds_all": ["saved.quill"]},
                  "reach": "ordinary", "floors": [2, 20],
+                 "counter": "Word is that below here {foes}. I brought {take}, for you especially.",
                  "name": "Pomfrey Quill", "title": "Alderman and Trader", "sprite": "npc_lost_merchant",
                  "line": "Pomfrey Quill, alderman, trader, and ALIVE, thanks to you. Friend's price on everything. I mean it this time."}
     },
@@ -155,8 +229,9 @@
       "markup": 1.0,
       "purse": 0.6,
       "buys": ["potion", "food", "ingredient"],
-      "services": ["cure", "restore", "heal"],
+      "services": ["cure", "restore", "heal", "trade_in"],
       "lines": {
+        "counter": "Below here {foes}, dear. Take {take}, and thank me later.",
         "greet": ["Wipe your feet. You're bleeding on my moss.",
                   "Moss that's never seen the sun cures what the sun-moss can't. Don't touch that jar.",
                   "Sit. Tongue out. ...Ugh. Right. Let's see what we can do."],
@@ -172,6 +247,7 @@
       ],
       "friend": {"person": "marta", "pronoun": "she", "when": {"deeds_all": ["saved.marta"]},
                  "reach": "ordinary", "floors": [2, 20],
+                 "counter": "Down there {foes}. I'd take {take}, if I were you. I was nearly you.",
                  "name": "Marta Venn", "title": "Rat-Catcher and Apothecary", "sprite": "npc_rat_catcher",
                  "line": "Leg's mended, and forty kids at Saint Agatha's got their fever cure. You get a friend's price. Don't argue."}
     },
@@ -189,11 +265,17 @@
       ],
       "stock_size": [[1, 100, 5]],
       "spread": [["weapon"], ["armor"], ["shield", "ammo"]],
+      "forms_of_best": 3,
       "markup": 1.0,
       "purse": 1.0,
       "buys": ["weapon", "armor", "shield", "ammo"],
-      "services": ["repair", "sharpen", "reinforce", "cut_curse"],
+      "services": ["repair", "sharpen", "reinforce", "cut_curse", "reforge", "silvering",
+                   "cold_iron_inlay", "lining", "special_order", "trade_in"],
       "lines": {
+        "counter": "Where you're going, {foes}. Take {take}.",
+        "order_placed": "{item}. It'll be on my rack at the stall on floor {floor}.",
+        "order_ready": "Your {item}. Made as you asked.",
+        "order_refund": "There's no stall of mine below this one. Have your coin back.",
         "greet": ["Twenty years I've waited for that army to come back up. You'll do instead.",
                   "Show me the blade. ...Who sharpened this? A goat?",
                   "Rust is just metal giving up. I don't let it."],
@@ -206,6 +288,7 @@
       },
       "friend": {"person": "pell", "pronoun": "he", "when": {"deeds_all": ["saved.ormond_company"]},
                  "reach": "hardy", "floors": [10, 40],
+                 "counter": "Scouts say {foes} past here. Take {take}. The Legion would.",
                  "name": "Jory Pell", "title": "Armourer", "sprite": "npc_deserter",
                  "line": "Pell. Ex-Legion. I sell what my company doesn't need now. Friend's price for the one who sent me back."}
     },
@@ -225,8 +308,9 @@
       "markup": 1.1,
       "purse": 0.6,
       "buys": ["scroll", "spellbook"],
-      "services": ["id_retry", "map"],
+      "services": ["id_retry", "map", "trade_in"],
       "lines": {
+        "counter": "The walls below say {foes}. I have {take} on the shelf. ACHOO. Sorry.",
         "greet": ["Quietly, please. The books are sleeping.",
                   "Every wall down here is a page, if you can read it. I can. For a fee.",
                   "That spellbook bit a man. Fair price, though."],
@@ -239,6 +323,7 @@
       },
       "friend": {"person": "helena", "pronoun": "she", "when": {"deeds_all": ["saved.helena"]},
                  "reach": "hardy", "floors": [15, 40],
+                 "counter": "I've mapped what's below: {foes}. I'd carry {take}.",
                  "name": "Helena Marsh", "title": "Cartographer and Bookseller", "sprite": "npc_injured_scholar",
                  "line": "Twelve years and never a bad line, and you're the reason I can still hold the pen. Friend's price."}
     },
@@ -263,8 +348,9 @@
       "purse": 1.5,
       "buys": "all",
       "buys_cursed": true,
-      "services": ["cut_curse", "restore"],
+      "services": ["cut_curse", "restore", "trade_in"],
       "lines": {
+        "counter": "Down there {foes}, darling. You'll want {take}.",
         "greet": ["How lovely. A customer with a pulse.",
                   "Everything here belonged to someone braver than you. Prices reflect that.",
                   "I buy curses, darling. Especially the ones that bite."],
@@ -301,12 +387,13 @@
       "markup": 1.0,
       "purse": 1.2,
       "buys": "all",
-      "services": ["repair", "cure", "heal", "porter"],
+      "services": ["repair", "cure", "heal", "porter", "trade_in"],
       "gate_lines": {
         "19": "Asterion's below. Bull's head, man's temper, and a maze he knows by heart. Buy healing. Buy string if you can find it.",
         "39": "Medusa's down there. Don't look at her. I mean it. The last lad who looked is my coat rack now. And this is my last camp: past her, it's dwarves and worse."
       },
       "lines": {
+        "counter": "Past this camp {foes}. Buy {take} or buy a coffin.",
         "greet": ["Last stall before the gate. Prices are fair. Heroes are not, generally.",
                   "Buy now. The dead don't haggle, and you might be dead by teatime."],
         "bought": "Good. Now you're slightly less likely to die.",
@@ -340,11 +427,13 @@
       "markup": 1.25,
       "purse": 1.2,
       "buys": ["weapon", "armor", "shield", "ammo", "accessory"],
-      "services": ["repair", "sharpen", "reinforce"],
+      "services": ["repair", "sharpen", "reinforce", "reforge", "silvering", "cold_iron_inlay",
+                   "trade_in"],
       "gate_lines": {
         "59": "My brother takes the same track down to the water every day. Dig a pit in it, lie in the pit, and drive up under his left shoulder as he crawls over you. That's all you need to know. That's all anybody needs to know."
       },
       "lines": {
+        "counter": "Below, {foes}. Take {take}. A smith knows what kills what.",
         "greet": ["Hreidmar's son. The other one. The one who didn't get the gold.",
                   "Steel, mail, a good edge. Everything a hero needs to kill a dragon. Ask me how I know.",
                   "My brother was a dwarf, once. The gold did the rest."],
@@ -379,11 +468,12 @@
       "markup": 1.0,
       "purse": 1.2,
       "buys": "all",
-      "services": ["repair", "sharpen", "heal"],
+      "services": ["repair", "sharpen", "heal", "reforge", "silvering", "cold_iron_inlay", "trade_in"],
       "gate_lines": {
-        "79": "He's on his island down there, bound with a ribbon the dwarves made from six things that are not. It held when no chain would. Gather the six and bind him again. And if it ever comes to his jaws, take Vidar's shoe: every scrap of leather men ever trimmed off their shoes went into it, for that one wolf."
+        "79": "He's on his island down there, bound with a ribbon the dwarves made from six things that are not. It held when no chain would. Gather the six and bind him again."
       },
       "lines": {
+        "counter": "On the road down, {foes}. Take {take}. Fair's fair.",
         "greet": ["Sit. Eat. The wolf will keep.",
                   "I fed him when he was a pup and the others were afraid to. He took my hand for it later. Fair's fair.",
                   "Ask me anything but what happened to the hand."],
@@ -412,11 +502,17 @@
       ],
       "stock_size": [[1, 100, 5]],
       "spread": [["weapon"], ["armor"], ["shield", "ammo"]],
+      "forms_of_best": 3,
       "markup": 1.0,
       "purse": 1.0,
       "buys": ["weapon", "armor", "shield", "ammo"],
-      "services": ["repair", "sharpen", "reinforce", "cut_curse"],
+      "services": ["repair", "sharpen", "reinforce", "cut_curse", "reforge", "silvering",
+                   "cold_iron_inlay", "lining", "special_order", "trade_in"],
       "lines": {
+        "counter": "Down there {foes}. Take {take}, and keep the edge off stone.",
+        "order_placed": "{item}. Paid fair. It'll be on my rack at the stall on floor {floor}.",
+        "order_ready": "Your {item}, as ordered. Dwarf work, and worth the wait.",
+        "order_refund": "I've no stall below this one. A fair price means you get it back.",
         "greet": ["Weapon's looking a bit sad, isn't it? I can fix that, for a fair price.",
                   "The ribbon that holds the wolf was dwarf work. So is everything on this rack.",
                   "Rust is just metal that's stopped caring. I care for it."],
@@ -429,6 +525,7 @@
       },
       "friend": {"person": "frida", "pronoun": "she", "when": {"deeds_all": ["saved.frida"]},
                  "reach": "deep_folk", "floors": [41, 75],
+                 "counter": "Father always said: know what's below. Below is {foes}. Take {take}.",
                  "name": "Frida", "title": "Smith's Daughter", "sprite": "npc_dwarf",
                  "line": "Hepti filled his trench in and I took my hand off the lid. We split Father's tools as well. Friend's price, for the one who told us about Otr."}
     },
@@ -448,8 +545,9 @@
       "markup": 1.1,
       "purse": 0.6,
       "buys": ["scroll", "spellbook"],
-      "services": ["id_retry", "map"],
+      "services": ["id_retry", "map", "trade_in"],
       "lines": {
+        "counter": "Below: {foes}. Catalogued. Filed beside it, under Remedies: {take}.",
         "greet": ["Customer! Encountered! Do hold still while I label you.",
                   "Everything down here is in my catalogue. Subject first, then author. You are under Visitors.",
                   "Mind the rat. He is catalogued, and I should hate to start again."],
@@ -462,6 +560,7 @@
       },
       "friend": {"person": "sibyl", "pronoun": "she", "when": {"deeds_any": ["aid.sibyl"]},
                  "reach": "immortal", "floors": [41, 90],
+                 "counter": "I have seen what is below, dear: {foes}. You will want {take}.",
                  "name": "The Sibyl of Cumae", "title": "Seller of Books", "sprite": "npc_blind_seer",
                  "line": "Same price as before, dear. No. For you, a little less. You paid the first time, and nobody ever does."}
     },
@@ -486,8 +585,9 @@
       "markup": 1.4,
       "purse": 1.5,
       "buys": "all",
-      "services": ["map"],
+      "services": ["map", "trade_in"],
       "lines": {
+        "counter": "Down there {foes}. I have {take}. I always have what you need. It never helps.",
         "greet": ["Ortolan's Emporium! The deepest shop in the world, established longer than you've been alive.",
                   "Buy something. Please. I can't stop selling, and nobody ever comes.",
                   "Don't mind the coins. They do that."],

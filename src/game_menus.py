@@ -596,7 +596,8 @@ class MenuMixin:
     def _kit_collect_items(self):
         """Return list of (source_label, item) for everything the panel might show.
 
-        Source labels: 'equip' (currently equipped), 'pack' (in inventory),
+        Source labels: 'equip' (currently equipped), 'back' (the weapon At
+        Your Back, which is carried in the pack), 'pack' (in inventory),
         'floor' (on the current tile). Currently-equipped items are emitted
         only once (not duplicated as 'pack').
         """
@@ -619,10 +620,11 @@ class MenuMixin:
         _push_equipped(self.player.amulet_slot)
         _push_equipped(getattr(self.player, 'belt_slot', None))
 
+        readied = self.player.readied_weapon
         for it in self.player.inventory:
             if id(it) in equipped_ids:
                 continue
-            out.append(('pack', it))
+            out.append(('back' if it is readied else 'pack', it))
 
         px, py = self.player.x, self.player.y
         for it in getattr(self, 'ground_items', []):
@@ -732,6 +734,7 @@ class MenuMixin:
 
     _KIT_ACTION_KEYS = {
         pygame.K_e: 'equip',
+        pygame.K_r: 'ready',
         pygame.K_d: 'drop',
         pygame.K_i: 'identify',
         pygame.K_x: 'lore',

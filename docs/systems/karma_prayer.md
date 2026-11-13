@@ -748,6 +748,7 @@ whatever is asked, paid coin first and then treasure (`_make_altar_offering`).
 | Row | What it does |
 |-----|--------------|
 | Lift Curses, Then Bless | One theology escalator chain (max 5, `altar.MAX_MENDED`). Each link mends one thing (`altar.rite`): **every curse first** (worn pieces before the pack; the Duck of Doom keeps its curse), then the links left **bless** in `altar.bless_order`. A thing the hero did not know was blessed is shown so and costs no link. Chain 0: the altar keeps the offering. Refused at karma ≤ -5 (nothing is taken). |
+| Rededicate a Gift | Winning build 3.5 (Brandon, 2026-11-13: "tailor their stats"); `src/rededication.py`. The hero names a stat to give back and a stat to take (two small prompts, `_ask`; backing out costs nothing), then lays the offering down and answers one theology escalator chain (max 5): **chain 3-4 moves one point, chain 5 moves two; below 3 nothing moves** and the offering is the altar's. **Once per altar** (`Player.rededicated_altars`, by floor and tile), spent with the offering whatever the chain. A stat never goes below what it was when the run began (`Player.stats_at_start`, recorded at the start; an older save reads a secret build's numbers, else 10), counting only the hero's own points (worn rings, a heroism draught, Gawain's surge are lent, not his). **A stat never rises past what food could teach it at this depth** (`Player.cooking_stat_softcap`): points an altar gives count against the same cap as meals (`Player.rededicated`, net by stat). Wisdom's cap is half the others', so Wisdom keeps its half rate: an altar never puts more Wisdom on a hero than the kitchen could. Refused at karma ≤ -5, like the rite. |
 | Lord, Have Mercy / Michael, Guide My Hand | The ordinary prayer, answered as at any altar (+1 effective chain, karma doubled), for the offering; the cooldown stays where it was. |
 | (cooldown ready only) the same two, no offering | Exactly §5.1-5.4: free, amplified, sets the cooldown. |
 
@@ -937,8 +938,11 @@ principled, careful and faithful all run, not for being kind
 Outside encounters, karma moves through the Penitent's Blade
 (`kill_count_karma_adjust`, +1 per N kills, only while karma < 0, never
 above 0), the Ring of Gyges (-2 for striking an innocent while
-invisible) and the Emberpup (-2 for attacking it; feeding it gives
-nothing); all go through `karma.adjust` (§1.1).
+invisible) and the Emberpup (-1 for attacking him; feeding him gives
+nothing); all go through `karma.adjust` (§1.1). Killing Old Nickel, the
+greedy kobold who wears the Bloomleaf Cloak (`src/emberpup_encounter.py` (BloomleafMixin)), moves
+nothing: he is no innocent (no `vice:cruelty`); the register notes
+`slew.old_nickel`.
 
 ---
 

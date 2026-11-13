@@ -830,6 +830,28 @@ POTION = {
 }
 
 
+_AFFINITY_KEYS = ('weaknesses', 'resistances', 'shrugs_off', 'status_immune', 'status_weak')
+
+
+def _typed_like(attacks: list, cur) -> list:
+    """A plain 'physical' attack keeps the form the affinity pass gave it."""
+    typed = {a.get('name'): a.get('type')
+             for a in ((cur or {}).get('attacks') or []) if isinstance(a, dict)}
+    return [dict(a, type=typed[a.get('name')])
+            if a.get('type') == 'physical' and typed.get(a.get('name')) not in (None, 'physical')
+            else a for a in attacks]
+
+
+def _keep_affinity(want: dict, cur) -> None:
+    if not isinstance(cur, dict):
+        return
+    for k in _AFFINITY_KEYS:
+        if k in cur:
+            want[k] = cur[k]
+    if isinstance(want.get('attacks'), list):
+        want['attacks'] = _typed_like(want['attacks'], cur)
+
+
 def apply(data: dict) -> list[str]:
     log = []
     from assign_monster_families import family_for
@@ -864,6 +886,11 @@ def apply(data: dict) -> list[str]:
                    for a in ((cur or {}).get('attacks') or []) if isinstance(a, dict)}
             want['attacks'] = [dict(a, delivery=had.get(a.get('name')) or a.get('delivery')
                                     or classify(a)) for a in want['attacks']]
+        # What it is weak to, resists and shrugs off, its status lists and
+        # the form of each plain blow are decided by
+        # tools/content/affinity_pass.py (the monster lore pass, winning
+        # build 2026-11-13): the ones already written win.
+        _keep_affinity(want, cur)
         if cur != want:
             log.append(f'{mid}: {"updated" if mid in data else "added"}')
             data[mid] = want
@@ -876,6 +903,7 @@ def apply(data: dict) -> list[str]:
                        for a in (cur.get('attacks') or []) if isinstance(a, dict)}
                 v = [dict(a, delivery=had.get(a.get('name')) or a.get('delivery')
                           or classify(a)) for a in v]
+                v = _typed_like(v, cur)
             if cur.get(k) != v:
                 cur[k] = v
                 log.append(f'{mid}: {k}')

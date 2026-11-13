@@ -192,19 +192,19 @@ Overrides `DAMAGE_IMMUNITY` when the player has a shield effect active:
 ### `_EXPIRE_MSGS: dict[effect_id -> (text, message_type)]`
 HUD log line fired when a timed effect expires. Message types: `'info'`, `'success'`, `'warning'`, `'danger'`. v2.18.0 audit added the previously-missing entries for: `doom_dot`, `petrifying`, `armor_crack`, `sundered`, `deep_wound`, `ruptured`, `impaled`, `heal_blocked`, `blade_flow`, `save_guard_*` (4), `fear_immune`, `control_immune`, `parry_armed`, `riposte_armed`, `see_invisible`, `warning`, `searching`, `truesight`, `dark_vision`, `identify_sight`, `life_save`, `reloading`, `boomstick_aoe_next`, `crit_buff`, `stand_ac`, `melee_dmg_reduction`.
 
-### Material categorization (gear damage from statuses)
-```python
-_RUSTPROOF = {'diamond', 'mithril', 'adamantine', 'dragonbone', 'dragonscale',
-              'dragon scale', 'crystal', 'obsidian', 'divine', 'divine silk',
-              'enchanted plate', 'spectral iron'}
+### Material categorization (gear damage from rust, acid and fire)
 
-_ORGANIC   = {'cloth', 'leather', 'hide', 'fur', 'silk', 'linen', 'wool', 'padded',
-              'enchanted cloth', 'wood', 'hardwood', 'yew', 'ironwood', 'bone', 'fang'}
+What wear can touch is read from the item's **material file** (`data/materials/armor` or `weapons`, via `status_effects.material_wear`): its `material_class` and its own `resistances` (fire, corrosion, rust). Winning-build slice 2 (2026-11-13); before it, hand-kept name sets were the whole rule and missed canvas, cured / boiled / studded leather, spider silk, elven silk, oak and ash (all treated as rustable metal).
 
-_FLAMMABLE = {'cloth', 'leather', 'hide', 'fur', 'silk', 'linen', 'wool', 'padded',
-              'enchanted cloth', 'wood', 'hardwood', 'yew', 'bone'}
-```
-Consumed by `_can_corrode` / `_can_rust` / `_can_scorch` which the `corroding` / `burning` tick branches read to pick a random equipped-gear target and apply `-1 enchant_bonus` (down to -3 floor). `_corrode_random_gear`: 25% per-tick chance; `_scorch_random_gear`: 20%.
+| Wear | Touches | Never |
+|---|---|---|
+| **rust** (`_can_rust`) | classes `metal`, `rare_metal` (iron, steel and their alloys) | copper, bronze, tin, silver, gold, hematite, mithril (`_NON_FERROUS`); every leather, cloth, hide, wood and magical metal; a material whose resistances say `rust` |
+| **acid** (`_can_corrode`) | everything but the classes below | `magical_metal`, `dragon_material`, `exotic_metal`; a material resisting `corrosion` or `acid` |
+| **fire** (`_can_scorch`) | `leather`, `studded_leather`, `hide`, `cloth`, `wood`, `rare_wood`, `exotic_organic` | a material resisting `fire` (dragonhide, ironwood, worldtree...) |
+
+A named piece whose material has no file ("hardwood", "divine bronze") falls back to the old name sets (`_RUSTPROOF`, `_ORGANIC`, `_FLAMMABLE`). The `corroding` / `burning` tick branches pick a random worn target and take a point off through `items.wear_down` (`_corrode_random_gear`: 25% a tick; `_scorch_random_gear`: 20%).
+
+**Rust has one entry point:** `rust_worn_gear(player, source=None, rng=None) -> (message, kind) | None`. One worn piece that can rust (weapon, ranged weapon, shield, armour) loses a point through `items.wear_down` (-1 plus, or -1 level on a minor piece; a smith's repair gives it back), unless `Player.is_rustproof()`: any worn item whose `special_properties` has `"rustproof_wearer": true` keeps rust off everything (the line names it). The one such piece is the **Bloomleaf Cloak** (`data/items/armor.json` `bloomleaf_cloak`), worn by Old Nickel and dropped when he dies (`src/emberpup_encounter.py` (BloomleafMixin)); it is also the only thing that keeps the rain off the Emberpup, so the hero chooses between them. `None` when nothing worn can rust. Callers: the rust trap (`main.py`, water) and the rust monster's feelers (its attack's `effect: "rust"`, `Monster._apply_attack_effect`: no saving throw; the gloves' touch guard can still turn it aside).
 
 ## Flow — public API
 

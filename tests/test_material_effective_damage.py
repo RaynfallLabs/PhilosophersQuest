@@ -36,16 +36,17 @@ def test_material_fey_bonus_is_applied_exactly_once():
     mon = _FeyMon()
     # PATH 1: the material path (yew in damage_types) applies the fey bonus.
     m1 = _damage_multiplier(list(rw.damage_types), mon)
-    assert m1 == 1.5, m1
+    from combat import WEAK_TO
+    assert m1 == WEAK_TO == 2.0, m1          # the weak step (x1.5 until the lore pass)
     # PATH 2: the weapon.effective_against bonus is now gated to UNIQUE weapons,
     # so a composite weapon must NOT apply it a second time. This mirrors the
     # exact use-site condition in combat.player_attack.
     path2_applies = (getattr(rw, 'is_unique', False)
                      and bool(set(mon.tags) & set(rw.effective_against or [])))
     assert path2_applies is False
-    # NET: a single 1.5x, NOT the old 2.25x double-count.
+    # NET: a single weak step, NOT the old double count.
     net = m1 * (1.5 if path2_applies else 1.0)
-    assert net == 1.5
+    assert net == WEAK_TO
 
 
 def test_chain5_yew_crossbow_lands_28_not_41():
@@ -68,8 +69,9 @@ def test_every_material_bonus_is_caught_by_damage_multiplier():
         def __init__(self, tag):
             self.tags = [tag]; self.weaknesses = []; self.resistances = []
 
+    from combat import WEAK_TO
     misses = [(mat, tag) for mat, tags in _MATERIAL_EFFECTIVE_AGAINST.items()
-              for tag in tags if _damage_multiplier([mat], _Mon(tag)) != 1.5]
+              for tag in tags if _damage_multiplier([mat], _Mon(tag)) != WEAK_TO]
     assert not misses, f"material bonuses NOT caught by _damage_multiplier: {misses}"
 
 
