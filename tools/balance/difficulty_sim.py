@@ -41,6 +41,17 @@ MODELLED (simple, explicit, every number a named constant below):
   * the player's      when to drink, pray, cast, rest, flee, cook and what to
     decisions         wear: the PROFILE tables below.
 
+RE-SYNCED 2026-11-12 (from v3.3.4 on it reported 0% survival for every profile):
+  * wearing gear: since 3.3.2 a minor armour piece gives no AC, and the kit
+    compared ac_bonus + enchant_bonus, so the hero kept the first helm, gloves,
+    bracers, greaves, boots, cloak and shirt he found all the way down. Minor
+    pieces now go by their enchantment's working level (Run._armor_score), and
+    rings and the amulet are swapped for stronger ones (Run._swap_ring).
+  * speed: the world's clock moves 10/speed of a turn an action
+    (Player.get_speed: haste doubles it, Boots of Speed add a share), as
+    Game._advance_turn does; haste no longer lengthens the quiz clock.
+  * --kid: the kid model reaches the worker processes (run_cell(kid=True)).
+
 NOT MODELLED (MON-13): the real floors can hold the late-game monsters, but
 the sim fights each one as a plain stat block, so their mechanics are missing:
   * theft             thieves never cut the purse or run off with an item;
@@ -967,8 +978,14 @@ class Run:
             cur = p.armor_slots[idx]
             if cur is not None and getattr(cur, 'buc', '') == 'cursed':
                 return
-            new_v = item.ac_bonus + item.enchant_bonus
-            old_v = (cur.ac_bonus + cur.enchant_bonus) if cur else -99
+            # Body armour by its AC; a minor piece (3.3.2: no AC at all) by
+            # its enchantment's working level, every lane of a slot being
+            # priced to the same budget a level, its weight class breaking a
+            # tie. Comparing ac_bonus + enchant_bonus on a minor piece read 0
+            # against 0 for ever, so the hero kept the first helm, gloves and
+            # boots he found all the way down (the 0% survival of v3.3.4 on).
+            new_v = self._armor_score(item)
+            old_v = self._armor_score(cur) if cur else -99
             if new_v > old_v:
                 # geography threshold quiz; a failure costs a turn and the
                 # player may try again, so a prepared player always succeeds.
@@ -996,17 +1013,63 @@ class Run:
             if getattr(item, 'chain_equip', None) or getattr(item, 'is_unique', False):
                 return                  # legendary attunement is not modelled
             slot = getattr(item, 'slot', 'ring')
-            if slot == 'amulet' and p.amulet_slot is not None:
-                return
+            if (slot == 'amulet' and p.amulet_slot is not None
+                    and self._ring_score(item) <= self._ring_score(p.amulet_slot)):
+                return                  # (Player._apply_equip swaps a better one in)
             if slot == 'belt' and getattr(p, 'belt_slot', None) is not None:
                 return
             if slot == 'none':
+                return
+            if slot == 'ring' and not self._swap_ring(item):
                 return
             before = p.max_hp
             self._equip(item)
             if p.max_hp > before:       # CON gear raises max HP without healing
                 pass
             return
+
+    @staticmethod
+    def _armor_score(piece) -> float:
+        import gear
+        if gear.is_core(piece):
+            return float(gear.ac_value(piece))
+        import enchantments
+        wc = {'light': 0.0, 'medium': 0.1, 'heavy': 0.2}.get(str(getattr(piece, 'weight_class', '') or ''), 0.0)
+        return float(enchantments.effective_level(piece)) + wc
+
+    @staticmethod
+    def _ring_score(ring) -> float:
+        """A ring or amulet's working level (rings.py: every kind is laddered
+        to the same budget by level); 0 for one without a level."""
+        lv = int(getattr(ring, 'ench_level', 0) or 0)
+        b = getattr(ring, 'buc', 'uncursed')
+        return lv + (1 if b == 'blessed' else -1 if b == 'cursed' else 0)
+
+    def _swap_ring(self, item) -> bool:
+        """Both ring slots full: take off the weakest worn ring if the new one
+        is stronger (and not the same kind: two of a kind do not add)."""
+        p = self.p
+        worn = [(i, r) for i, r in enumerate(p.accessory_slots or []) if r is not None]
+        if len(worn) < len(p.accessory_slots or []):
+            return True
+        kind = getattr(item, 'kind', '') or ''
+        same = [(i, r) for i, r in worn if kind and getattr(r, 'kind', '') == kind]
+        pool = same or worn
+        i, weakest = min(pool, key=lambda ir: self._ring_score(ir[1]))
+        if self._ring_score(item) <= self._ring_score(weakest):
+            return False
+        ok, _msg = p.try_unequip_slot(weakest)
+        if not ok:
+            return False
+        p.accessory_slots[i] = None
+        st = (getattr(weakest, 'effects', None) or {}).get('status')
+        if st:
+            p.drop_worn_status(st, weakest)
+        try:
+            p.sync_worn_stats()
+        except Exception:
+            pass
+        return True
 
     def _threshold_quiz(self, item) -> bool:
         need = max(1, int(getattr(item, 'equip_threshold', 2)))
@@ -1523,7 +1586,7 @@ class Run:
         ctx = boss_ctx or {}
         turn = 0
         retreats = 0
-        hasted_flip = False
+        world_clock = 0.0                     # Game._advance_turn: 10/speed of a turn an action
         strip_turns = 0                       # Abaddon altar window
         altars_left = 6 if ctx.get('altars') else 0
         p._combat_pets_ref = []
@@ -1675,12 +1738,17 @@ class Run:
                         1.0, (0.5 + 0.7 * acc_at(self.quiz.accuracy, 1)) / 1.165)))
 
             # ---------------- the world's turn ----------------
-            # hasted: the world tick is skipped on every other player action
-            # (main.py _advance_turn).
-            if p.has_effect('hasted'):
-                hasted_flip = not hasted_flip
-                if hasted_flip:
-                    continue
+            # The hero's speed rating (Player.get_speed: haste doubles it,
+            # Boots of Speed add a share) moves the world's clock 10/speed of
+            # a turn an action; the world acts each time it passes a whole
+            # turn (main.py _advance_turn, 2026-11-12).
+            _spd = max(10.0, float(p.get_speed()))
+            world_clock += 10.0 / _spd
+            if world_clock < 1.0 - 1e-9:
+                continue
+            world_clock -= 1.0
+            if _spd <= 10.0:
+                world_clock = 0.0
             self._world_tick(active, ctx)
             if strip_turns > 0:
                 strip_turns -= 1
@@ -2182,8 +2250,14 @@ def merge_stats(total: dict, part: dict):
 
 def run_cell(profile='prepared', accuracy=0.85, trials=100, floors=(1, 100),
              knobs=None, speed=1.0, policy='greedy', engagers=1, seed=1,
-             variants=24, quiet=True) -> dict:
-    """Simulate `trials` runs. Returns a result dict (see report_cell)."""
+             variants=24, quiet=True, kid=False) -> dict:
+    """Simulate `trials` runs. Returns a result dict (see report_cell).
+    `kid` turns on the kid model (accuracy by tier, KID_ACC) inside this
+    process: worker processes start fresh, so a module flag set in the
+    parent never reached them."""
+    global KID_MODEL
+    if kid:
+        KID_MODEL = True
     knobs = parse_knobs(knobs) if not isinstance(knobs, dict) or \
         set(knobs) != set(KNOB_DEFAULTS) else knobs
     random.seed(seed)
@@ -2389,6 +2463,8 @@ def main(argv=None):
     ap.add_argument('--summary', action='store_true',
                     help="one line per cell instead of full tables")
     ap.add_argument('--list-knobs', action='store_true')
+    ap.add_argument('--kid', action='store_true',
+                    help="the kid model: accuracy by maths tier (KID_ACC) instead of --accuracy")
     args = ap.parse_args(argv)
 
     if args.list_knobs:
@@ -2409,7 +2485,8 @@ def main(argv=None):
 
     cells = [dict(profile=p, accuracy=a, trials=args.trials, floors=(lo, hi),
                   knobs=knobs, speed=args.speed, policy=args.policy,
-                  engagers=args.engagers, seed=args.seed + 1000 * i, variants=args.variants)
+                  engagers=args.engagers, seed=args.seed + 1000 * i, variants=args.variants,
+                  kid=args.kid)
              for i, (p, a) in enumerate((p, a) for p in profs for a in accs)]
     jobs = args.jobs or min(len(cells), os.cpu_count() or 1)
     t0 = time.time()
