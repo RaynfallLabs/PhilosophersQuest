@@ -215,6 +215,8 @@ Each strategy has an associated set of "wrong moves" that produce distractors:
 
 ## Tier mapping
 
+> **Superseded for the shipped bank (2026-11-13).** The tiers are now set by the maths grade curve: T1 grades 1-2, T2 3-4, T3 4-5, T4 6-7, T5 7-8, with a band for every topic. See [math_grade_curve.md](math_grade_curve.md). The table below is the May 2026 plan.
+
 | Tier | Computation strategies | Vocabulary strategies |
 |---|---|---|
 | T1 | additive (make-ten, near-doubles), ×1/×2/×5/×10 anchors, doubling/halving, magnitude compare | basic 2D shapes (≤8 sides), even/odd/prime, basic angle types, operation names (sum/difference/product) |

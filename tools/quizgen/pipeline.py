@@ -31,6 +31,7 @@ from tools.quizgen.deterministic import (
     validate_length_budget,
     validate_length_parity,
     validate_math_correctness,
+    validate_math_grade_band,
     validate_schema,
     validate_trailing_tokens,
 )
@@ -203,6 +204,7 @@ def run_deterministic(
             q, answer_index, self_idx=local_idx, subject=subject
         )
         qr.gates["math_correctness"] = validate_math_correctness(q, subject=subject)
+        qr.gates["math_grade_band"] = validate_math_grade_band(q, subject=subject)
         qr.gates["trailing_tokens"] = validate_trailing_tokens(q, subject=subject)
 
         for gate_name, gate_result in qr.gates.items():

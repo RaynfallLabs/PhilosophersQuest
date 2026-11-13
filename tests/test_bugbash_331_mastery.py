@@ -44,7 +44,10 @@ def test_restored_mastery_counts_only_questions_in_the_bank():
     from quiz_engine import QuizEngine
     qe = QuizEngine()
     qe.restore_deck_state(_old_save())
-    assert qe.tier_progress('math', 2) == (0, 560)
+    # (the tier's size is read from the bank: 560 then, 604 since the grade curve)
+    size = len(set(qe._tier_stems('math', 2)))
+    assert size > 500
+    assert qe.tier_progress('math', 2) == (0, size)
     assert not qe.is_mastered('math', 2)
     assert not qe.is_mastered('philosophy', 1)
 
