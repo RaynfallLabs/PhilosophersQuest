@@ -491,6 +491,14 @@ SIM_CONTROL = (('haste_self', 'hasted', 10, True),
                ('slow_monster_spell', 'slowed', 10, False),
                ('slow_monster', 'slowed', 8, False))
 BIG_FIGHT = 4.0                # x one attack: worth a spell
+# Attack spells the simulator casts (effect -> the element game_magic passes
+# to Monster.take_damage; None = untyped). magic_missile fires one missile a
+# tier step (game_magic _MISSILE_COUNT).
+ATTACK_SPELLS = {'fire_bolt': 'fire', 'lightning_bolt': 'lightning', 'acid_arrow': 'acid',
+                 'frost_touch': 'cold', 'meteor': 'fire', 'cone_of_cold': 'cold',
+                 'drain_life_spell': None, 'smite': None, 'disintegrate_spell': None,
+                 'magic_missile': None}
+MISSILE_COUNT = {1: 1, 2: 3, 3: 5, 4: 7, 5: 9}
 
 # Committed, with a pet that has kept pace with the dungeon (its level equal
 # to the floor from floor 3 on). The pet bites whatever the player is
@@ -509,6 +517,9 @@ PROFILES['mastery'] = dict(PROFILES['stacked'], knobs=dict(
 # The same, as a Dexterity build: the meals, gifts and altars to DEX and CON,
 # so light armour's DEX to AC and its dodge (slice 4) are what keep him alive.
 PROFILES['mastery_dex'] = dict(PROFILES['mastery'], stat_focus=('DEX', 'CON'))
+# ... and as a caster (slice 7, magic as a style): meals and gifts to INT and
+# CON, light or mithril body armour (the metal tax), attack spells by element.
+PROFILES['mastery_mage'] = dict(PROFILES['mastery'], stat_focus=('INT', 'CON'), caster=True)
 
 CUT_HAS_STAT = 0.85            # share of proper meals cooked from a prime cut
 GATE_BOSSES = ('asterion_minotaur', 'medusa_gorgon', 'fafnir_dragon', 'fenrir_wolf')
@@ -935,6 +946,7 @@ class Run:
         self.gold = 0.0
         self._trader_plan = None
         self.scraps = []           # Fenrir's leather scraps carried (5 lb each)
+        self.attack_spells = {}    # spell_id -> (mp_cost, power, tier, element, effect)
         self._give_starting_kit()
 
     def _healed(self, source: str, got) -> None:
@@ -1246,9 +1258,57 @@ class Run:
         p.armor_slots[idx] = piece
         try:
             v = -float(p.get_ac()) + 11.0 * float(p.dodge_chance())
+            if self.prof.get('caster'):
+                # a caster weighs the armour's tax on every spell (slice 4)
+                v -= 4.0 * (p.spell_mp_cost(10) / 10.0 - 1.0)
         finally:
             p.armor_slots[idx] = cur
         return v
+
+    def cast_attack(self, target) -> bool:
+        """magic: an attack spell instead of a swing, when it does more on
+        THIS kind than the weapon would: its element's real step when the hero
+        knows the kind, what an earlier cast felt like, else nothing either
+        way. One science question (a fizzle still spends the mana)."""
+        p = self.p
+        if not self.attack_spells or p.has_effect('silenced'):
+            return False
+        reserve = 0
+        if self.spells and p.hp < 0.7 * p.max_hp:
+            reserve = min(c for c, _, _ in self.spells.values())
+        kind = getattr(target, 'kind', '')
+        known = self._knows(kind)
+        best = None
+        for _sid, (cost, power, tier, el, fx) in self.attack_spells.items():
+            c = p.spell_mp_cost(cost)
+            if p.mp - c < reserve:
+                continue
+            base = (dice_mean(power) * game_magic_mod.MAGIC_TIER_MULT.get(tier, 1.0)
+                    * game_magic_mod.int_damage_factor(p.INT))
+            if fx == 'magic_missile':
+                base *= MISSILE_COUNT.get(tier, 1)
+            if el is None:
+                m = 1.0
+            elif known:
+                m = combat._damage_multiplier([el], target)
+            else:
+                m = self._felt.get((kind, ('spell', el)), 1.0)
+            v = base * m * self.quiz.untimed_acc(tier)
+            if best is None or v > best[0]:
+                best = (v, c, tier, el, base)
+        if best is None:
+            return False
+        v, c, tier, el, base = best
+        weapon_v = self._value_vs(p.weapon, target) if p.weapon is not None else 1.0
+        if v < 1.1 * weapon_v:
+            return False
+        p.mp -= c
+        self.fs['attack_casts'] = self.fs.get('attack_casts', 0) + 1
+        if self.quiz.one_question(tier):                # one science question
+            target.take_damage(int(round(base)), el or 'physical')
+            if el:
+                self._felt[(kind, ('spell', el))] = combat._damage_multiplier([el], target)
+        return True
 
     def _equip(self, item):
         item = copy.copy(item)          # never mutate a cached / shared item
@@ -1285,6 +1345,13 @@ class Run:
             return
         if isinstance(item, Spellbook) and prof.get('magic'):
             sp = SPELLS.get(item.spell_id) or {}
+            fx = sp.get('effect')
+            if (fx in ATTACK_SPELLS and item.spell_id not in self.attack_spells
+                    and self.quiz.one_question(item.quiz_tier)):       # grammar
+                self.attack_spells[item.spell_id] = (
+                    int(sp['mp_cost']), sp['power'], int(sp.get('tier', 1)),
+                    ATTACK_SPELLS[fx], fx)
+                return
             if (any(sp.get('effect') == fx for fx, _, _, _ in SIM_CONTROL)
                     and item.spell_id not in self.control
                     and self.quiz.one_question(item.quiz_tier)):       # grammar
@@ -2189,6 +2256,8 @@ class Run:
                           and random.random() < RANGED_KITE_PROB):
                         action = 'closing'
                     elif prof.get('magic') and self.cast_control(target):
+                        action = 'cast'
+                    elif prof.get('magic') and self.cast_attack(target):
                         action = 'cast'
                     elif self._tactical_pick(target, free=False):
                         action = 'swap'
