@@ -160,3 +160,16 @@ def test_a_cluster_starts_in_a_corner_when_there_is_one():
     assert any(decor._wall_sides(p, room, d) >= 2 for p in spots)
     for (x, y) in spots:                               # all of it touching a wall
         assert decor._wall_sides((x, y), room, d) >= 1
+
+
+def test_a_headstone_stands_at_the_head_of_its_grave():
+    # The slow gate found graveyards left bare: with the bones kept to the
+    # walls, a crowded graveyard had nowhere left for anything.
+    from test_senses import two_rooms
+    from dungeon import GRAVE
+    d = two_rooms()
+    room = d.rooms[0]
+    for x in (3, 5, 7):
+        d.tiles[6][x] = GRAVE
+    assert decor._grave_heads(room, d, set()) == [(3, 5), (5, 5), (7, 5)]
+    assert decor._grave_heads(room, d, {(5, 5)}) == [(3, 5), (7, 5)]

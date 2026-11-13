@@ -1,5 +1,5 @@
 {
-  "_doc": "What stands in each special room (src/decor.py furnish_special_rooms; Dungeon Alive slice 4, A1). The room's own entry line in main.py says what is there, and now it is drawn: a barracks has its bunks, weapon racks and cold cook-pot; a library its shelves and lectern. Per layer: 'ids' with weights and 'count' [min, max]. Standing pieces go against the walls away from the ways in; wall pieces on the ring walls; floor decals on free floor ('on_water': on the room's water tiles instead). 'runner' lays a carpet from the throne to the far wall. Items and sleepers already in the room keep their tiles.",
+  "_doc": "What stands in each special room (src/decor.py furnish_special_rooms; Dungeon Alive slice 4, A1). The room's own entry line in main.py says what is there, and now it is drawn: a barracks has its bunks, weapon racks and cold cook-pot; a library its shelves and lectern. Per layer: 'ids' with weights and 'count' [min, max]. Standing pieces go against the walls away from the ways in; wall pieces on the ring walls; floor decals on free floor ('on_water': on the room's water tiles instead). 'runner' lays a carpet from the throne to the far wall. Items and sleepers already in the room keep their tiles. A 'stand' layer's 'where': 'grave_heads' sets each piece at the head (north end) of a grave, where a headstone stands; it falls back to against the wall.",
   "rooms": {
     "treasury": {
       "stand": {
@@ -133,7 +133,8 @@
         "count": [
           1,
           3
-        ]
+        ],
+        "where": "grave_heads"
       },
       "floor": {
         "ids": {

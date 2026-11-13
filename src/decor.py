@@ -516,7 +516,10 @@ def _place_layer(dungeon, room, layer: str, spec: dict, taken: set, placed_block
                  if dungeon.in_bounds(x, y) and dungeon.tiles[y][x] == WATER
                  and (x, y) not in fixtures_of(dungeon)]
     elif layer == 'stand':
-        spots = _against_wall_spots(room, dungeon, taken)
+        spots = []
+        if spec.get('where') == 'grave_heads':
+            spots = _grave_heads(room, dungeon, taken)
+        spots = spots or _against_wall_spots(room, dungeon, taken)
     else:
         spots = [t for t in _inner(room, dungeon) if t not in taken]
     rng.shuffle(spots)
@@ -532,6 +535,21 @@ def _place_layer(dungeon, room, layer: str, spec: dict, taken: set, placed_block
         taken.add(pos)
         n += 1
     return n
+
+
+def _grave_heads(room, dungeon, taken: set) -> list:
+    """The free tile at the head (the north end) of each grave in the room:
+    where a headstone stands."""
+    from dungeon import GRAVE
+    inner = set(_inner(room, dungeon))          # the room's plain floor (graves are not in it)
+    out = []
+    for y in range(room.y + 1, room.y + room.height - 1):
+        for x in range(room.x + 1, room.x + room.width - 1):
+            head = (x, y - 1)
+            if (dungeon.in_bounds(x, y) and dungeon.tiles[y][x] == GRAVE
+                    and head in inner and head not in taken):
+                out.append(head)
+    return out
 
 
 def _place_floor_layer(dungeon, room, ids: dict, want: int, taken: set, rng) -> int:
