@@ -3274,5 +3274,51 @@
     "special": "Once a floor, a blow that would take a quarter of your health leaves only a scratch.",
     "ench_id": "the_kneeler",
     "ench_level": 10
+  },
+  "bloomleaf_cloak": {
+    "name": "Bloomleaf Cloak",
+    "symbol": "[",
+    "color": [
+      90,
+      170,
+      70
+    ],
+    "weight": 1.5,
+    "min_level": 9999,
+    "slot": "cloak",
+    "tier": 2,
+    "quiz_tier": 2,
+    "material": "cloth",
+    "ac_bonus": 0,
+    "enchant_bonus": 0,
+    "equip_threshold": 4,
+    "damage_resistances": {},
+    "can_be_cursed": false,
+    "cursed": false,
+    "identified": false,
+    "id_level": 0,
+    "unidentified_name": "a cloak of broad green leaves",
+    "lore": "Broad green leaves, still alive, stitched together at the stems with twists of grass. A Bloomsaur sheds leaves like these as it grows, waxy and cupped so that rain runs off them in beads, but these were not shed: their edges are ragged where they were torn from a young one's back. Under them the drip of the deep shafts never reaches iron. Nothing you wear rusts while this cloak is on you.",
+    "floorSpawnWeight": {},
+    "max_enchant": 1,
+    "peak_floor": 0,
+    "spread": 0,
+    "peak_weight": 0,
+    "template_basis": "cloak",
+    "is_unique": true,
+    "plot_locked": true,
+    "special": "Nothing you wear rusts while it is on you: not a rust trap's water, not a rust monster's feelers.",
+    "special_properties": {
+      "rustproof_wearer": true,
+      "plot_role": "emberpup_shelter",
+      "arrives_known": true
+    },
+    "_meta": {
+      "spawn_method": "quest_drop",
+      "plot_locked": true
+    },
+    "_design_note": "Winning-build plan 2026-11-13 section 3.8. Worn and dropped by Old Nickel (data/monsters.json old_nickel, unique_drop_id), placed every run on one floor from 1 to the Emberpup's (src/emberpup_encounter.py). It starts unidentified in the data like every unique, and drops identified (special_properties.arrives_known: Game._spawn_unique_item grants it known, as the Magic Dungeon Carrot arrives). rustproof_wearer is read by Player.is_rustproof (status_effects.rust_worn_gear). Only this cloak keeps the rain off the Emberpup. Traders refuse it (a scripted-only unique) and thieves skip it (items.withheld: is_unique). Light cloak guard, Vapourward by its lore (tools/content/unique_armor_ladder_2026_11.py PICKS).",
+    "ench_id": "vapourward",
+    "ench_level": 4
   }
 }

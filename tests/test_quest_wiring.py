@@ -104,7 +104,9 @@ def test_quest_artifacts_carry_their_lore():
 def test_leather_scrap_on_its_floor_is_the_data_item():
     d, items = _floor(5)
     scrap = next(i for i in items if getattr(i, 'id', '') == 'leather_scrap')
-    assert scrap.weight < 1.0
+    # Five pounds a scrap, fifty for all ten (winning-build plan 3.7: they
+    # used to weigh 0.3, nothing to carry from floor 5 to 79).
+    assert scrap.weight == 5.0
     assert scrap.lore
 
 

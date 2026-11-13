@@ -34,6 +34,22 @@ STRAGGLE_EXTRA = 6         # beyond the leash
 STRAGGLE_TURNS = 10        # this long, and they stop and wait
 
 
+_COUNT_WORDS = ('no', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten')
+
+
+def progress_line(e) -> str:
+    """"Wynn keeps close on the stair. Two more floors to go." An escort's
+    spec may word it itself ('progress', with {name} and {floors})."""
+    n = max(0, int(getattr(e, 'floors_left', 0) or 0))
+    words = _COUNT_WORDS[n] if n < len(_COUNT_WORDS) else str(n)
+    floors = f"{words} more floor{'s' if n != 1 else ''}"
+    text = (getattr(e, 'spec', None) or {}).get('progress') or "{name} keeps close on the stair. {floors} to go."
+    out = text.replace('{name}', e.name).replace('{floors}', floors)
+    import re
+    out = re.sub(r'([.!?]\s+)([a-z])', lambda m: m.group(1) + m.group(2).upper(), out)
+    return out[:1].upper() + out[1:]
+
+
 class Escort(Pet):
     """A person following the hero. Built from an escort spec; reuses the
     pet follow routine and nothing else of a pet."""
@@ -408,6 +424,10 @@ class EscortMixin:
                     arrived.append(e)
                     e.floor = new_level
                     continue
+                # A floor nearer: said once he is beside the hero on the
+                # new floor (_escorts_place), so the walk shows its progress
+                # (winning-build plan 3.8b).
+                e._floor_counted = True
             e.floor = new_level
             carried.append(e)
         return carried, arrived
@@ -424,6 +444,8 @@ class EscortMixin:
             e.waiting = False
             e._straggle = 0
             taken.add(spot)
+            if e.__dict__.pop('_floor_counted', False):
+                self.add_message(progress_line(e), 'info')
 
     def _escorts_finish(self, arrived):
         for e in arrived:

@@ -1901,7 +1901,8 @@ class RenderMixin:
         bw = min(S(860), layout.WINDOW_W - S(48))
         b = S(16) if kit else 0
         inner_w = bw - 2 * (b + S(28)) if kit else bw - 2 * S(30)
-        pic = lore_art.plate('monster', d['sprite_id'], S(192))
+        # His picture: in the rain, or under the leaf cloak once it is left.
+        pic = lore_art.plate('monster', ep.sprite_of(pup), S(192))
         pic_w = (pic.get_width() + S(24)) if pic is not None else 0
         text_w = inner_w - pic_w
         font = get_font('body', 18)
@@ -1917,8 +1918,8 @@ class RenderMixin:
             paras = list(d['story'])
             content_h = text_h(paras)
         elif phase == 'options':
-            fed = getattr(pup, '_emberpup_fed', False)
-            paras = [d['waiting_fed'] if fed else d['waiting_unfed']]
+            # Where his trust stands, a step warmer each feed (plan 3.8b).
+            paras = [ep.waiting_text(pup)]
             content_h = text_h(paras) + S(14) + 5 * (row_h + S(8))
         elif phase == 'select_food':
             paras = [d['pick_food']]
@@ -2245,8 +2246,10 @@ class RenderMixin:
                     # ("Seedling", "Voltpaw"), not pet.name (which prepends
                     # the nickname — "Fluffy the Seedling" → fails lookup
                     # and used to render as a green square). Fixed 2026-10-03.
+                    # The cloaked Emberpup has his own pictures, every stage
+                    # (Pet.sprite_id: "<stage>_cloaked").
                     stage_name = getattr(pet, 'species_name', None) or pet.name
-                    mid = stage_name.lower().replace(' ', '_')
+                    mid = getattr(pet, 'sprite_id', None) or stage_name.lower().replace(' ', '_')
                     self.renderer.draw_entity(
                         pet.x, pet.y, pet.color, cam_x, cam_y, self.visible,
                         mid=mid, symbol=getattr(pet, 'symbol', ''))
@@ -7229,6 +7232,7 @@ class RenderMixin:
                 (f"HP {pet.hp}/{pet.max_hp}    Level {pet.level}", FP.BODY_TEXT, self.font_sm),
                 (f"XP {pet.xp}/{xp_to}", FP.BODY_TEXT, self.font_sm),
                 *([(f"Hatched From: {_from}", FP.BODY_TEXT, self.font_sm)] if _from else []),
+                *self._pet_cloak_lines(pet),
                 (f"Command: {cmd}", FP.CYAN_ACCENT, self.font_sm),
                 *self._pet_rescue_lines(pet),
                 '',
@@ -7268,6 +7272,13 @@ class RenderMixin:
             border_color=FP.GOLD_BRIGHT,
             scroll_attr='_pet_menu_scroll',
         )
+
+    def _pet_cloak_lines(self, pet) -> list:
+        """The Emberpup who wears the Bloomleaf Cloak says so on his card."""
+        if not getattr(pet, 'bloomleaf', False):
+            return []
+        import emberpup_encounter as ep
+        return [(ep.data().get('pet_wears_cloak', ''), FP.SUCCESS_TEXT, self.font_sm)]
 
     def _pet_rescue_lines(self, pet) -> list:
         """Shep's rescue on his card: ready, or spent until a new floor."""

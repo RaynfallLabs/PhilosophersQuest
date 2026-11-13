@@ -38144,5 +38144,78 @@
     "shrugs_off": [],
     "status_immune": [],
     "status_weak": []
+  },
+  "old_nickel": {
+    "name": "Old Nickel",
+    "symbol": "k",
+    "color": [
+      90,
+      170,
+      70
+    ],
+    "hp": "33d8",
+    "speed": 10,
+    "ai_pattern": "aggressive",
+    "thac0": 16,
+    "peak_floor": 3,
+    "spread": 4,
+    "peak_weight": 0.0,
+    "min_level": 1,
+    "attacks": [
+      {
+        "name": "Stolen Spear",
+        "damage": "1d3+1",
+        "type": "pierce",
+        "effect": "bleeding",
+        "effect_chance": 0.3,
+        "effect_duration": 4,
+        "delivery": "blow"
+      },
+      {
+        "name": "Vicious Kick",
+        "damage": "1d2",
+        "type": "blunt",
+        "delivery": "blow"
+      }
+    ],
+    "resistances": [],
+    "weaknesses": [],
+    "tags": [
+      "humanoid",
+      "kobold"
+    ],
+    "family": "goblinkin",
+    "harvest_tier": 1,
+    "is_mini_boss": true,
+    "treasure": {
+      "gold": [
+        100,
+        180
+      ],
+      "item_chance": 0.0,
+      "item_tier": 1,
+      "purse": "kept",
+      "unique_drop_id": "bloomleaf_cloak"
+    },
+    "frequency": 0,
+    "quest_only": true,
+    "lore": "German miners had two names for the spite of the deep shafts. Ore that poisoned the smelter and gave no silver was the kobold's work, and its metal is still called cobalt. Ore that looked like copper and gave none was Kupfernickel, Old Nick's copper, and its metal is still called nickel. Old Nickel is a kobold of the upper shafts and a miser of iron: picks, nails, spearheads, a dead knight's mail, all stolen and all counted every night. He cannot bear to see them rust, so he tore the leaves off a young Bloomsaur's back while it cried, and wears them as a cloak against the drip. He kicks rats for fun. He will not fight anything that can fight back, unless it comes too close to him or his iron.",
+    "sight_sign": "{The} wears a cloak of broad green leaves, beaded with water and torn ragged at the edges, and clutches a spear that was never his. He grins at you with small, greedy eyes and keeps his distance.",
+    "wary": {
+      "radius": 5,
+      "keep": 3,
+      "warn": "{The} bares his teeth and pulls his leaf cloak tight. \"Mine,\" he hisses. \"All of it. Go away, big one.\"",
+      "provoked": {
+        "struck": "{The} shrieks \"Thief! THIEF!\" and comes at you with his stolen spear.",
+        "cornered": "Cornered, {the} hisses and jabs at you with his stolen spear.",
+        "close": "\"Too close!\" {The} lashes out with his stolen spear."
+      }
+    },
+    "kill_chronicle": "Killed Old Nickel, the kobold who hoarded stolen iron. He screamed thief at me to the end. His cloak of leaves was torn off a young Bloomsaur's back, so I took it back off his. I am not sorry.",
+    "_design_note": "Winning-build plan 2026-11-13 section 3.8 (Brandon: greedy and mean, so no one feels bad killing him; secondary to the Emberpup's story). Placed every run on one floor from 1 to the Emberpup's (src/emberpup_encounter.py, BloomleafMixin), never in the pup's room; never in a random pool (peak_weight 0, quest_only, no spawn_chance). He does not start the fight (Monster.wary, monster.py _wary_turn): he watches, keeps his distance inside his own room, warns once, and fights when the hero comes beside him, corners him, or strikes first. He drops the Bloomleaf Cloak, identified, and only that (item_chance 0). He has no cut of his own: a harvest borrows the nearest humanoid's of his depth (food_system._nearest_prime).",
+    "thac0_lore": 16,
+    "shrugs_off": [],
+    "status_immune": [],
+    "status_weak": []
   }
 }

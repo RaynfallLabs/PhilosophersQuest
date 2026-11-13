@@ -75,7 +75,7 @@ from game_render import RenderMixin
 from game_menus import MenuMixin
 from game_input import InputMixin
 from game_encounters import EncountersMixin
-from emberpup_encounter import EmberpupMixin, new_run_state as _emberpup_new_run
+from emberpup_encounter import EmberpupMixin, BloomleafMixin, new_run_state as _emberpup_new_run
 from black_knight import BlackKnightMixin, new_run_state as _black_knight_new_run
 from setne_tomb import SetneMixin, new_run_state as _setne_new_run
 from game_magic import MagicMixin
@@ -220,7 +220,7 @@ DEEP_SLEEP = 10 ** 6           # a zoo, graveyard or barracks sleeper: until wok
 
 
 class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMixin, EncountersMixin,
-           EmberpupMixin, BlackKnightMixin, ItemActionsMixin, RoadMixin, EscortMixin,
+           EmberpupMixin, BloomleafMixin, BlackKnightMixin, ItemActionsMixin, RoadMixin, EscortMixin,
            SetneMixin, TraderMixin, PurseMixin, FamilyMixin, SeekerMixin, PopupMixin,
            HazardsMixin, LoreFixturesMixin, DressingMixin):
     # FANTASY: Grimoire font set -- larger for readability. Read through the
@@ -367,9 +367,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self._cow_npc = None                  # reference to the cow monster entity
         self._cow_level: int = _lore_rng.randint(30, 39)  # which floor gets the cow
         # The abandoned Emberpup (every run, one floor of 3-8; earned: Dungeon Alive slice 8):
-        # {'floor', 'spawned', 'outcome'}. Rolled without drawing on the
+        # {'floor', 'spawned', 'outcome'}, and Old Nickel's floor, who wears
+        # the Bloomleaf Cloak the pup needs ('cloak_floor', emberpup_encounter.py),
+        # kept off a planned mini-boss's floor. Rolled without drawing on the
         # shared random stream, so seeded floors are the same as before.
-        self._emberpup: dict = _emberpup_new_run()
+        self._emberpup: dict = _emberpup_new_run(
+            exclude=getattr(self.level_mgr, '_planned_mini_bosses', None) or ())
         self._emberpup_npc = None             # the creature whose screen is open
         self._emberpup_phase: str = 'story'
         self._naming_story = None             # a non-sphere pet's words for the naming popup
@@ -711,6 +714,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self._maybe_spawn_flavor_npc(level)
         self._maybe_spawn_magic_carrot(level)
         self._maybe_spawn_unicorn(level)
+        self._maybe_spawn_cloak_wearer(level)       # Old Nickel, if floor 1 is his
         self._maybe_place_duck_of_doom(level)
         # Place deep-lore items targeted to this floor (e.g. abyssal_shimmer
         # when _lore_levels['shimmer'] == 1). Without this, lore items on L1
@@ -1756,6 +1760,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # A floor-100 altar takes one prayer a visit: a new visit is a new try.
         self._l100_altars_tried = set()
         _from_level = self.dungeon_level          # (the staircase taken, for Cerberus)
+        # Leaving the Emberpup's floor after feeding him is waiting.
+        self._emberpup_left(_from_level, new_level)
         # Notify quirk system before level change (fast-exit check)
         # New depth: a floor deeper than any reached. The Cow Level (999) is a
         # side trip, not depth: counting it recharged every once-a-floor ward
@@ -1928,6 +1934,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self._maybe_spawn_unicorn(new_level)
             self._maybe_spawn_cow(new_level)
             self._maybe_spawn_emberpup(new_level)
+            self._maybe_spawn_cloak_wearer(new_level)   # after the pup: never in his room
             self._maybe_spawn_black_knight(new_level)
             self._maybe_spawn_setne_tomb(new_level)
             self._maybe_place_duck_of_doom(new_level)
@@ -1936,6 +1943,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             # Revisit: spawn triggered NPCs if player now has the trigger item
             # (handles the case where player missed the item on first pass)
             self._maybe_spawn_npc(new_level)
+            # A save from before Old Nickel meets him on the pup's floor.
+            self._maybe_spawn_cloak_wearer(new_level)
 
         # Reset per-floor artifact states
         self._first_hit_used = False    # Babr-e Bayan
@@ -6176,27 +6185,13 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     and getattr(item, 'lore', None)):
                 self._lore_subject = item
                 self.state = STATE_LORE
-            # Leather scraps: keep count for the player. Nothing else in the
-            # game says how many there are or how many are held.
+            # Leather scraps: one plain Journal line the first time, and
+            # nothing more. No count, no "ten would make a shoe": what they
+            # are for is told only by Recall Lore (winning-build plan 3.7,
+            # Brandon 2026-11-13: "theres NO HINT in the item context").
             if getattr(item, 'id', '') == 'leather_scrap':
-                _n = sum(1 for i in self.player.inventory
-                         if getattr(i, 'id', '') == 'leather_scrap')
-                _WORDS = ['', 'one', 'two', 'three', 'four', 'five', 'six',
-                          'seven', 'eight', 'nine', 'ten']
-                if _n == 1:
-                    self._chron(
-                        'discovery', "Picked up a scrap of shoe leather. No use to anyone. "
-                        "I kept it anyway.", once='leather_scrap:first')
-                elif 1 < _n < 10:
-                    self.add_message(
-                        f"Another scrap. That makes {_WORDS[_n]}.", 'info')
-                elif _n == 10:
-                    self.add_message(
-                        "That makes ten. Laid together they would about make a shoe.",
-                        'success')
-                    self._chron(
-                        'discovery', "Ten scraps of leather. I do not know why I kept them. "
-                        "Together they would about make a shoe, for a very large foot.")
+                self._chron('discovery', "Picked up a heavy scrap of shoe leather. No use to anyone.",
+                            once='leather_scrap:first')
             # Journal: notable pickups (quest artifacts)
             _CHRONICLE_ITEMS = {
                 'philosophers_stone', 'ariadnes_thread', 'bronze_bull',
@@ -7813,7 +7808,13 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                         return
                     item = copy_at(template, x, y)
                     claim_unique(item)
-                    item.identified = False
+                    if (getattr(item, 'special_properties', None) or {}).get('arrives_known'):
+                        # It drops known, like the Magic Dungeon Carrot: the
+                        # Bloomleaf Cloak off Old Nickel's back (emberpup_encounter.py).
+                        from items import grant_identified
+                        grant_identified(self, item)
+                    else:
+                        item.identified = False
                     self.ground_items.append(item)
                     self.add_message(">> A remarkable item falls from the defeated foe!", 'loot')
                     return

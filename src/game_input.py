@@ -371,6 +371,12 @@ class InputMixin:
                 # shown); a second press sets a war-band down if it has none.
                 self._qa_alive_sampler()
                 return True
+            if event.unicode == 'L' and getattr(self.player, 'qa_tools', False):
+                # Titivillus QA build: Old Nickel, who wears the Bloomleaf
+                # Cloak, set down near the hero; again, the cloak into the
+                # pack (emberpup_encounter.BloomleafMixin).
+                self._qa_bloomleaf()
+                return True
             if event.unicode == '$' and getattr(self.player, 'qa_tools', False):
                 # Titivillus QA build: a heap of gold, one of every treasure
                 # and a trader with gems and the draught, to test coin weight.
@@ -669,11 +675,18 @@ class InputMixin:
             # On an altar with quest items: open drop menu so player can offer
             elif tile == ALTAR and any(
                     getattr(i, 'id', '') in (
-                        'eye_of_graeae', 'broken_gram', 'leather_scrap',
+                        'eye_of_graeae', 'broken_gram',
                         'cats_footstep', 'womans_beard', 'mountain_root',
                         'fish_breath', 'bird_spittle', 'bear_sinew',
                     )
                     for i in self.player.inventory):
+                self._open_drop_menu()
+            # The leather scraps are offered on Vidar's altar (floor 79) and
+            # nowhere else: no other altar treats them as anything but junk
+            # (winning-build plan 3.7: no hint outside Recall Lore).
+            elif (tile == ALTAR
+                  and (self.player.x, self.player.y) == getattr(self.dungeon, 'vidar_altar_pos', None)
+                  and any(getattr(i, 'id', '') == 'leather_scrap' for i in self.player.inventory)):
                 self._open_drop_menu()
             elif tile in (FOUNTAIN, GRAVE, THRONE):
                 self._interact_tile()

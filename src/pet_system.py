@@ -112,6 +112,11 @@ _SPECIES = {
         'element': 'fire',
         'damage_type': 'fire',
         'color': (255, 80, 40),
+        # Water puts out a fire lizard's flame: blows of cold (the game's
+        # water, as the water line's own jets land) hit him twice as hard
+        # (affinity_rules 'weak'). The abandoned Emberpup who wears the
+        # Bloomleaf Cloak has lost it (Pet.bloomleaf; winning-build plan 3.8).
+        'weak_to': ('cold',),
         'stages': [
             {'name': 'Emberpup',     'symbol': 'e', 'msg': 'A small red dragon-like creature bursts from the sphere!'},
             {'name': 'Flamescale',   'symbol': 'E', 'msg': '{old} spreads fiery wings and evolves into Flamescale!',
@@ -561,8 +566,30 @@ def _grew(pet, what: str, value: int):
             pass
 
 
+def harm_taken(pet, amount: int, damage_type=None) -> tuple:
+    """(damage, weak) for a blow of `damage_type` on `pet`: twice as hard
+    (affinity_rules 'weak') on what its line is weak to (Pet.weak_to)."""
+    amount = max(0, int(amount))
+    weak_to = pet.weak_to() if hasattr(pet, 'weak_to') else ()
+    if damage_type and str(damage_type) in weak_to:
+        try:
+            import affinity
+            mult = float(affinity.rules().get('weak', 2.0))
+        except Exception:
+            mult = 2.0
+        return max(1, int(round(amount * mult))), True
+    return amount, False
+
+
 class Pet:
     """A companion creature that follows the player and fights enemies."""
+
+    # The abandoned Emberpup, given the Bloomleaf Cloak and adopted
+    # (emberpup_encounter._emberpup_adopt): he wears it at every stage of his
+    # line, in his own cloaked pictures, and his line's weakness to water is
+    # gone for him alone (weak_to). A class default, so every older save and
+    # every Soul Sphere pet reads False.
+    bloomleaf = False
 
     def __init__(self, species_key: str, x: int = 0, y: int = 0, level: int = 1):
         self.species_key = species_key
@@ -674,6 +701,33 @@ class Pet:
         self.rescue_spent_at = int(deepest_floor)
 
     @property
+    def sprite_id(self) -> str:
+        """Its map picture, by its stage's name alone ("Seedling", never the
+        nickname); the cloaked Emberpup has his own (``<stage>_cloaked``). A
+        companion given a picture of its own (an escort: a person, not a
+        species) keeps it."""
+        own = self.__dict__.get('sprite_id')
+        if own:
+            return own
+        try:
+            stage_name = self.species_name
+        except (AttributeError, KeyError, IndexError, TypeError):
+            stage_name = ''
+        base = str(stage_name or self.name or '').lower().replace(' ', '_')
+        return f"{base}_cloaked" if getattr(self, 'bloomleaf', False) else base
+
+    @sprite_id.setter
+    def sprite_id(self, value) -> None:
+        self.__dict__['sprite_id'] = value
+
+    def weak_to(self) -> tuple:
+        """The damage types its line takes twice as hard ('weak_to' in its
+        species); none for the Emberpup in the Bloomleaf Cloak."""
+        if getattr(self, 'bloomleaf', False):
+            return ()
+        return tuple((getattr(self, 'species', None) or {}).get('weak_to', ()) or ())
+
+    @property
     def symbol(self) -> str:
         return self.species['stages'][self.stage]['symbol']
 
@@ -715,6 +769,15 @@ class Pet:
                            f"it has evolved into {new_species}!")
                 else:
                     msg = self.species['stages'][new_stage]['msg'].format(old=old_species)
+                if getattr(self, 'bloomleaf', False):
+                    # The cloak grows with him (data/abandoned_emberpup.json).
+                    try:
+                        import emberpup_encounter
+                        _cl = emberpup_encounter.data().get('evolved_cloaked', '')
+                    except Exception:
+                        _cl = ''
+                    if _cl:
+                        msg = f"{msg} {_cl}"
                 messages.append(msg)
             elif self.level % 10 == 0:
                 messages.append(f"{self.name} has reached level {self.level}!")
