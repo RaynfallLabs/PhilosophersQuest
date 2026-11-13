@@ -17,5 +17,14 @@
     "cloth",
     "leather"
   ],
-  "lore_template": "A padded coat of {material_name}, quilted thick and stitched in offset rows. It is cheap, quiet and forgiving, and for most squires it is the first real armor they own."
+  "lore_template": "A padded coat of {material_name}, quilted thick and stitched in offset rows. It is cheap, quiet and forgiving, and for most squires it is the first real armor they own.",
+  "forms": {
+    "slash": 0.9,
+    "blunt": 0.75
+  },
+  "forms_words": {
+    "slash": "dulls a cut",
+    "blunt": "soaks a blow"
+  },
+  "forms_note": "Quilted layers soak a club the way a mattress takes a punch, and dull an edge a little."
 }

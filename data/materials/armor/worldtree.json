@@ -18,17 +18,17 @@
     230,
     180
   ],
-  "resistances": [
-    "fire",
-    "cold",
-    "lightning"
-  ],
-  "weaknesses": [],
+  "protection": {},
+  "protection_words": {},
+  "metal": false,
+  "protection_note": "A shield's worldtree wood: held, not worn, so it guards with its AC alone.",
+  "protection_price": "Wood burns: fire scorches it.",
   "vulnerabilities": [],
   "special_properties": [
     "divine",
     "elements_resist",
-    "axis_mundi"
+    "axis_mundi",
+    "fire_resistant"
   ],
   "lore_descriptor": "pale wood from the ash at the axis of the world, and hard to look at steadily",
   "unidentified_descriptor": "blurred pale",

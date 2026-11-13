@@ -1134,8 +1134,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # Carrying: worn gear has counted since 2026-10-16, so an old save can
         # load heavier than before (even past the limit). Nothing is taken
         # away: the hero is told at once and can drop or swap gear as usual.
-        # _burdened is not trusted from the file; it is worked out afresh.
+        # _burdened and _load_tier are not trusted from the file; they are
+        # worked out afresh (Burdened at half the limit since 2026-11-13).
         self.player._burdened = False
+        self.player._load_tier = ''
         self._note_burden()
         # This run's achievement counters, then the Seeker (game_seeker.py).
         self._seeker_run = state.get('_seeker_run')
@@ -1622,8 +1624,17 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                         item.ench_level = min(_gear.MAX_LEVEL, 2 * old_plus)
                     item.enchant_bonus = 0
                 item.relevel(int(item.ench_level or 0))
+                # What a common piece does to a blow is read live from its
+                # template and material (gear.piece_profile:
+                # winning-build plan 3.3, slice 4), so an old save's armour
+                # turns, conducts and wards exactly as a new one's. Its own
+                # dict is cleared (a save from before 3.3.2 carried the old
+                # material resistances in it), and the template it is built
+                # on is written down.
                 if hasattr(item, 'damage_resistances'):
                     item.damage_resistances = {}
+                if not getattr(item, 'template_basis', ''):
+                    item.template_basis = tpl_id
 
         def walk(item):
             recompose(item)
@@ -3616,7 +3627,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     pass
                 if not _free_move:
                     self._advance_turn()
-                    self._burden_extra_turn()       # Burdened: some steps cost two turns
+                    self._burden_extra_turn()       # Stressed: every second step costs two turns
                 # Haste no longer auto-fires a second _do_move (that doubled
                 # the player's keystroke). Speed lives in _advance_turn: the
                 # world's clock moves 10/speed of a turn each action
@@ -5164,20 +5175,28 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self._say_affinity_lines()
 
     # ------------------------------------------------------------------
-    # Carrying: Burdened (plan: _genart/ui/WEIGHT_PLAN.md)
+    # Carrying: Burdened and Stressed (plan: _genart/ui/WEIGHT_PLAN.md;
+    # winning-build plan 3.3, data/gear_rules.json load)
     # ------------------------------------------------------------------
 
     def _note_burden(self):
-        """Say so when the hero becomes, or stops being, Burdened. Checked
-        every turn, so a pickup, a drop, a lost point of Strength or an old
-        save that is suddenly heavy are all caught on the turn they happen."""
+        """Say so when the hero becomes, or stops being, Burdened or
+        Stressed. Checked every turn, so a pickup, a drop, a lost point of
+        Strength or an old save that is suddenly heavy are all caught on the
+        turn they happen."""
         change = self.player.update_burden()
         if change == 'on':
-            n = self.player.BURDEN_STEP_EVERY
+            self.add_message(
+                "You are Burdened. You dodge half as well and your steps carry "
+                "further until you lighten your load.", 'warning')
+        elif change == 'stressed':
+            n = self.player.STRESSED_STEP_EVERY
             nth = {2: 'second', 3: 'third', 4: 'fourth', 5: 'fifth'}.get(n, f"{n}th")
             self.add_message(
-                f"You are Burdened. Every {nth} step costs an extra turn "
-                f"until you lighten your load.", 'warning')
+                f"You are Stressed. You cannot dodge, and every {nth} step "
+                f"costs an extra turn until you lighten your load.", 'warning')
+        elif change == 'eased':
+            self.add_message("You are no longer Stressed, but you are still Burdened.", 'info')
         elif change == 'off':
             self.add_message("You are no longer Burdened.", 'success')
 
@@ -5195,9 +5214,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         return False
 
     def _burden_extra_turn(self):
-        """A Burdened hero's step: every Player.BURDEN_STEP_EVERY-th one gives
-        the dungeon one more turn. Walking only; fighting, spells and the quiz
-        clock are untouched."""
+        """A Stressed hero's step: every Player.STRESSED_STEP_EVERY-th one
+        gives the dungeon one more turn. Walking only; fighting, spells and
+        the quiz clock are untouched."""
         if self.state == STATE_DEAD or self.player.is_dead():
             return
         # Not once the step's own turn has opened a popup or menu, or moved

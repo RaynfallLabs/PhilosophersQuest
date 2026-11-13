@@ -14,7 +14,8 @@ feet); A Cat's Footfall (the boon of Fenrir: in the myth, a cat's footfall is
 one of the six things that make no sound) silences footsteps; a ring of silent
 walking (the Ring of the Assassin) silences footsteps too; the Hand of Glory
 (the housebreaker's charm that keeps a house asleep) keeps every sleeper
-asleep; a Burdened pack clinks; Aggravated wakes the whole room on sight.
+asleep; a Burdened pack clinks, and so does heavy or metal armour;
+Aggravated wakes the whole room on sight.
 
 Pure module: no pygame and no Game import. The Game side is in
 ``EncountersMixin`` (``_sleepers_stir``).
@@ -96,6 +97,14 @@ def factor(player, kind: str) -> float:
             f *= BURDENED
     except Exception:
         pass
+    if kind == 'step':
+        # Heavy and metal armour clanks (gear.sleeper_factor:
+        # a quarter readier for each tile further the steps carry).
+        try:
+            import gear
+            f *= gear.sleeper_factor(player)
+        except Exception:
+            pass
     return f
 
 

@@ -6,7 +6,9 @@ design and its proof: [docs/design/ARMOR_REDESIGN_PLAN.md](../design/ARMOR_REDES
 AC, a monster's to-hit, an armour slot, an enchantment, a ring or the gear
 loot roll.
 
-**Code:** `src/gear.py` (levels, tiers, thresholds, AC, the loot split),
+**Code:** `src/gear.py` (levels, tiers, thresholds, AC, the loot split, and
+its last section, What armour does beyond AC: forms, elements, wards, the
+weight class),
 `src/guards.py` (what the minor slots guard), `src/enchantments.py` (the
 minor-slot enchantments), `src/rings.py` (ring and amulet kinds),
 `src/gear_saves.py` (old saves), `src/items.py` (`instantiate_armor`,
@@ -15,7 +17,8 @@ minor-slot enchantments), `src/rings.py` (ring and amulet kinds),
 **Data:** `data/gear_rules.json`, `data/armor_guards.json`,
 `data/enchantments.json`, `data/ring_kinds.json`, `data/templates/armor`
 and `shields`, `data/materials/armor`, `data/items/armor.json`, `shield.json`,
-`accessory.json`.
+`accessory.json`. The forms and elements are written, with their lore and
+their price, by `tools/content/armour_profiles_2026_11.py`.
 
 ---
 
@@ -36,8 +39,9 @@ A common piece is **template x material x enchantment level**:
   (2026-11-12: by weight class alone, any heavy find from floor 12 could
   be full plate, and the average hero wore it by floor 30, after which the
   plus was the only armour left to find.);
-- the **material** gives the weight, what wear can touch it (rust, acid)
-  and the name. It never gives protection;
+- the **material** gives the weight, what wear can touch it (rust, acid,
+  fire), the name and, on body armour, the elements it turns or lets
+  through (section 1c; until 2026-11-13 it "never gave protection");
 - the **enchantment level** 0-10 (0 = plain) is rolled when the piece is
   found (`gear.roll_level`, bells by floor in `gear_rules.json` `levels`).
   Its **tier** is `ceil(level / 2)`: the quiz tier, and on body armour and
@@ -107,10 +111,110 @@ shown before confirming; a piece not in the pack is skipped, a piece not
 known by hand is refused ("put it on once first"), and a slot that was
 empty when the kit was saved is left alone.
 
+## 1c. What armour does beyond AC (winning-build plan 3.3, 2026-11-13)
+
+Brandon: "Ensure that kit armor defenses are IMPORTANT beyond AC; materials
+can change weight and resistances, block certain monster attacks and status
+effects... a REAL choice to kit and armor, not just what has the best AC",
+and "BALANCE armor and Dex (light vs heavy)... so that there are many ways
+to play". This reversed the 3.3.2 rule that the material gives "the weight
+and the wear, never protection" (decision 3). Every gift has a price.
+Code: `gear.py`, What armour does beyond AC.
+
+**The template sets the forms** (`forms`, `forms_words`, `forms_note` in
+`data/templates/armor/*.json`; body armour only, and the tower shield):
+
+| Build | Slash | Pierce | Blunt | |
+|---|---|---|---|---|
+| Plate, full plate, breastplate | x0.75 | x0.85 | | turns an edge; a hammer still rings it |
+| Mail (chain shirt, ring mail, chainmail) | x0.75 | **x1.15** | | rings part under a point |
+| Scale, banded, splint | x0.8 | x0.9 | | |
+| Padded | x0.9 | | **x0.75** | quilting soaks a blow |
+| Leather, studded leather, hide | x0.9 | | x0.85 | |
+| Tower shield | | x0.9 | | a wall to hide behind |
+
+**The material sets the elements** (`protection`, `protection_words` in
+`data/materials/armor/*.json`, with `protection_note` and
+`protection_price`), on the BODY armour only (a whole kit of leather would
+otherwise pay the fire eight times; a shield is held, not worn). They
+replaced the material files' `resistances` / `weaknesses` lists, which
+nothing read for damage. The shape:
+
+- metal conducts (lightning x1.25) and iron rusts; bronze, hematite and
+  mithril never rust; cloth and leather catch fire (x1.25) and scorch;
+- dragonscale fire x0.5 (cold x1.15), dragonhide fire x0.7, drakeskin 0.85;
+  silk catches an arrowhead (pierce x0.9, spider silk 0.85);
+- adamantine slash and pierce x0.85, heavy; titanforged blunt x0.8, heavier;
+  tungsten blunt x0.85; glassteel turns the elements x0.9 but a hammer
+  shatters it (blunt x1.2);
+- cobalt steel is the frost iron (cold x0.75, fire x1.15), sunsteel the
+  volcanic (fire x0.75, cold x1.15), soulsteel the silver mail (drain and
+  necrotic x0.75), hematite holds the life in (drain x0.8);
+- ring iron is cold iron: it **wards** off fey glamour;
+- mithril is `quiet` (no clank) and `casting_free` (no spell tax);
+  orichalcum and godweave cast freely too.
+
+There are no iron, steel, silver, cold iron, frost iron or volcanic ARMOUR
+material files (those are weapon materials, and every armour material has
+its own art), so the plan's rows sit on the armour materials whose lore
+fits (the notes say which).
+
+**Wards** (`wards` on the material, `data/gear_rules.json` `wards`): a
+rider the body armour's material stops outright, told in the log. Cold iron
+(`fey_glamour`): a fair-folk attack's confusion, charm, sleep or
+hallucination. Dragonscale and dragonhide (`flame`): burning, from anything.
+Checked in `Monster._apply_attack_effect` after the minor-slot guards.
+
+**A named piece keeps its own** `damage_resistances` (its JSON wins: no
+template form or material element is added). Its weight class is its
+template's, and whether it is `metal` is written in its JSON by its lore
+(the Lorica of Caesar yes, the Hide of the Nemean Lion no).
+
+**Where it bites**: `Player.take_damage` multiplies a typed blow by
+`Player.get_armor_resistance` = `gear.worn_factor` (the product of every
+worn piece's `gear.piece_profile`), beside the hero's own resistances and
+after the shield, the stance and Achilles' hide. It is the one place: a
+lining (a trader's, on a cloak or shirt) joins `piece_profile`.
+
+**Light vs heavy** (by the BODY armour's weight class; no body armour is
+light; `data/gear_rules.json` `armour_weight`):
+
+| | Light | Medium | Heavy |
+|---|---|---|---|
+| Dexterity to AC (`gear.dex_ac_cap`) | up to 6 | up to 3 | 0 |
+| Dodge (Dexterity's and worn gear's) | full | half | none |
+| Footsteps (`senses.step_radius`) | +0 | +1 | +2, metal +1 more |
+| A spell's mana in METAL | x1 | x1.5 | x2 |
+
+A clumsy hero's Dexterity minus always counts. Mithril, orichalcum and
+godweave cast freely; mithril and godweave make no clank. Each footstep
+tile makes a deep sleeper a quarter readier to stir (`sleepers.factor`).
+`Player.spell_mp_cost` (rings, then armour) is what `_invoke_spell`
+charges and the spell menu shows.
+
+**Weight that bites** (`data/gear_rules.json` `load`, `Player.load_tier`):
+over half the limit the hero is **Burdened** (half the dodge, footsteps +1);
+over three quarters **Stressed** (no dodge, footsteps +2, every second step
+costs the dungeon a turn); past the limit nothing more can be picked up.
+The sidebar, the @ sheet and the log say which (`ui.carry_state`).
+
+**The card** says it in one honest line (`gear.protection_line`: "Turns an
+edge: slash x0.75; parts under a point: pierce x1.15; conducts lightning
+x1.25; cold iron: fey glamour slides off") and the weight class in another
+(`gear.weight_line`: "Heavy metal: no Dexterity to AC, no dodge, footsteps
++3, spells cost x2 MP; rusts."), on the Kit, the @ sheet and the lore page.
+
+**Measured** (`tools/balance/armour_incoming.py`): against the game's own
+attack mix, the par body armour takes 1% off typed damage on floor 1, 4%
+on floors 10-20, 3-5% on 30-80, 9% on 100. THAC0 was not re-baked: a DEX
+hero in heavy armour loses up to 3 AC and his dodge, so the balance slice
+re-bakes it for both paths.
+
 ## 2. AC: body armour and shield only
 
 `Player.get_ac()` = 10 - (body base + plus) - (shield base + plus) - DEX
-(at most 3) - BUC of those two - effects (invisible, shielded, procs).
+(at most 6 in light armour or none, 3 in medium, 0 in heavy: section 1c) -
+BUC of those two - effects (invisible, shielded, procs).
 `Player.core_ac()` is the body and shield part; `gear.ac_value(item)` one
 piece's. **No helm, gloves, boots, cloak, shirt, ring or amulet gives AC.**
 
@@ -273,6 +377,14 @@ Traders stock from the same rolls.
 
 ## 8. Old saves
 
+What a common piece does to a blow is read live from its template and
+material (`gear.piece_profile`), so an old save's armour turns, conducts
+and wards exactly as a new one does; the recompose clears its own
+`damage_resistances` (a pre-3.3.2 save carried the old flat material
+numbers there) and writes its `template_basis`. A named piece takes its
+`metal` (and `quiet`, `casting_free`, `wards`) from today's data
+(`gear_saves.refresh_named`). The load tier is worked out afresh on load.
+
 On load, after the composite recompose (`Game._migrate_recompose_composite_items`:
 a common piece's AC from its template, an old minor plus as two levels a
 point), `gear_saves.migrate`: an enchanted common keeps its name, a
@@ -289,4 +401,6 @@ survivor and keeps working as the object it was.
 `_unique_armor.py`, `_loot_split.py`, `_gear_saves.py`, `_cards.py`,
 `test_armor_template_thresholds.py`, `test_recompose_migration.py`,
 `test_swapping_without_the_chore.py` (Known by Hand, donning, At Your
-Back, Loadouts, saves).
+Back, Loadouts, saves), `test_armour_choice.py` (forms, elements, wards,
+light vs heavy, noise, casting, the load, cards, old saves, the data gates),
+`test_carry_weight.py`.

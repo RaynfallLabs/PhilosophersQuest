@@ -581,10 +581,11 @@
     }
   },
   "noise": {
-    "_doc": "Radii in tiles, measured along open ground (sound goes round corners and through doorways, not through stone; a closed door muffles it by 'door_cost' tiles). Footsteps: 'step' at DEX 10, one tile quieter for every 'dex_per_tile' points of DEX over 10 (never below 1), 'burdened' louder with a heavy pack; Cat's Footfall and silent walking make none. A monster already hunting the hero listens harder: 'hunter_bonus'. Tuned down after Brandon's play-test (2026-11-12: \"a SHIT TON of monsters all descended on me at once, early on the first floor\"): a fight carried 8 tiles and drew every waking creature in reach; now 5. The squeaky board rouses what is within 20 tiles of it, not the whole floor.",
+    "_doc": "Radii in tiles, measured along open ground (sound goes round corners and through doorways, not through stone; a closed door muffles it by 'door_cost' tiles). Footsteps: 'step' at DEX 10, one tile quieter for every 'dex_per_tile' points of DEX over 10 (never below 1), 'burdened' tiles louder when Burdened and 'stressed' when Stressed (data/gear_rules.json load), and louder in medium or heavy body armour and in metal (gear_rules.json armour_weight, gear.footstep_tiles); Cat's Footfall and silent walking make none. A monster already hunting the hero listens harder: 'hunter_bonus'. Tuned down after Brandon's play-test (2026-11-12: \"a SHIT TON of monsters all descended on me at once, early on the first floor\"): a fight carried 8 tiles and drew every waking creature in reach; now 5. The squeaky board rouses what is within 20 tiles of it, not the whole floor.",
     "step": 3,
     "dex_per_tile": 4,
-    "burdened": 2,
+    "burdened": 1,
+    "stressed": 2,
     "hunter_bonus": 3,
     "door_cost": 3,
     "melee": 5,

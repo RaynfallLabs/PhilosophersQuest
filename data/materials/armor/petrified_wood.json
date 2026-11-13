@@ -21,14 +21,16 @@
     90
   ],
   "armor_ac_bonus": 0,
-  "resistances": [
-    "fire"
-  ],
-  "weaknesses": [],
+  "protection": {},
+  "protection_words": {},
+  "metal": false,
+  "protection_note": "A shield's petrified wood: held, not worn, so it guards with its AC alone.",
+  "protection_price": "Wood burns: fire scorches it.",
   "vulnerabilities": [],
   "effective_against": [],
   "special_properties": [
-    "stone_grain"
+    "stone_grain",
+    "fire_resistant"
   ],
   "lore_descriptor": "wood turned to stone, with mineral veins where the grain used to be",
   "unidentified_descriptor": "heavy stony",

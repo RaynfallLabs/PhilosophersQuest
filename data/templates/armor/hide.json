@@ -18,5 +18,14 @@
     "leather",
     "dragon_material"
   ],
-  "lore_template": "A wrap of thick {material_name}, lashed at the shoulders with cord. It is heavier than tanned leather and takes a crushing blow better. This is the oldest idea in armor: wear the skin of something tougher than the wearer."
+  "lore_template": "A wrap of thick {material_name}, lashed at the shoulders with cord. It is heavier than tanned leather and takes a crushing blow better. This is the oldest idea in armor: wear the skin of something tougher than the wearer.",
+  "forms": {
+    "slash": 0.9,
+    "blunt": 0.85
+  },
+  "forms_words": {
+    "slash": "slows an edge",
+    "blunt": "blunts a blow"
+  },
+  "forms_note": "A beast's hide, hair and all, slows an edge and blunts a blow."
 }

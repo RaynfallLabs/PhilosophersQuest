@@ -21,10 +21,19 @@
     220
   ],
   "armor_ac_bonus": 1,
-  "resistances": [
-    "drain"
-  ],
-  "weaknesses": [],
+  "protection": {
+    "drain": 0.75,
+    "necrotic": 0.75,
+    "lightning": 1.25
+  },
+  "protection_words": {
+    "drain": "holds the soul in",
+    "necrotic": "holds the soul in",
+    "lightning": "conducts lightning"
+  },
+  "metal": true,
+  "protection_note": "Spirit-forged steel, the plan's silver mail: what would drink your life finds a soul already bound in the metal.",
+  "protection_price": "It conducts lightning.",
   "vulnerabilities": [],
   "effective_against": [
     "undead"

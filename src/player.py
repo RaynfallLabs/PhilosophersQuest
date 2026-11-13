@@ -1,3 +1,13 @@
+def _load_rule(tier: str, key: str, default):
+    """A number of the load tiers (data/gear_rules.json `load`), read once
+    when the class is made."""
+    try:
+        import gear
+        return gear.rules()['load'][tier][key]
+    except Exception:
+        return default
+
+
 class Player:
     BASE_HP = 20
     BASE_SP = 200
@@ -1076,10 +1086,12 @@ class Player:
         """Armor class -- lower is better (harder for monsters to hit).
         Base 10, reduced by DEX modifier, armor ac_bonus + enchant_bonus, shield,
         and status effects like invisibility."""
-        # Dexterity is worth armor up to DEX_AC_CAP points; past that it
-        # shows up as dodge_chance(). (Uncapped, +22 Dexterity was eleven
-        # points of armor: more than a full suit of plate.)
-        dex_mod = min(self.DEX_AC_CAP, (self.DEX - 10) // 2)
+        # Dexterity is worth armor up to dex_ac_cap() points, by the body
+        # armour's weight class: 6 light (or none), 3 medium, 0 heavy
+        # (gear.dex_ac_cap, winning-build plan 3.3). A clumsy hero's minus
+        # always counts. (Uncapped, +22 Dexterity was eleven points of
+        # armor: more than a full suit of plate.)
+        dex_mod = min(self.dex_ac_cap(), (self.DEX - 10) // 2)
         # AC comes from body armour and the shield (gear.py, bug bash 3.3.2):
         # a helm, gloves, boots, bracers, greaves, cloak or shirt gives none
         # (they guard against kinds of attack instead). Nine slots of AC put
@@ -1149,17 +1161,29 @@ class Player:
         return 10 - dex_mod - armor_bonus - shield_bonus - buc_ac - invisible_bonus - shield_effect - stand_ac - parry_ac - armor_proc_ac
 
     def get_armor_resistance(self, damage_type: str) -> float:
-        """Combined damage resistance multiplier from all equipped armor/shield."""
-        mult = 1.0
-        for slot in self.armor_slots:
-            if slot and hasattr(slot, 'damage_resistances'):
-                mult *= slot.damage_resistances.get(damage_type, 1.0)
-        if self.shield and hasattr(self.shield, 'damage_resistances'):
-            mult *= self.shield.damage_resistances.get(damage_type, 1.0)
-        # A cloak or shirt an armourer lined against this element (smithing.py).
+        """What the worn armour and shield do to a blow of this type: a
+        named piece's own resistances, a common body armour's template
+        forms (mail parts under a point) and material elements (iron
+        carries the spark). The one place: gear.worn_factor."""
+        import gear
         import smithing
-        mult *= smithing.lining_mult(self, damage_type)
-        return mult
+        # ... and a cloak or shirt an armourer lined against this element
+        # (smithing.py, slice 6).
+        return gear.worn_factor(self, damage_type) * smithing.lining_mult(self, damage_type)
+
+    def dex_ac_cap(self) -> int:
+        """The most AC Dexterity gives in the body armour worn (6 light or
+        none, 3 medium, 0 heavy: data/gear_rules.json armour_weight)."""
+        import gear
+        return gear.dex_ac_cap(self)
+
+    def spell_mp_cost(self, base: int) -> int:
+        """What a spell costs this hero: a Ring of Wizardry's cut, then the
+        body armour's tax (x1.5 in medium metal, x2 in heavy; mithril and
+        the like cast freely: gear.casting_mult)."""
+        import gear
+        import rings
+        return gear.spell_cost(self, rings.spell_cost(self, base))
 
     def get_sight_radius(self) -> int:
         """Sight radius in tiles. Blindfold = 0 (total darkness), blindness = 1."""
@@ -1225,7 +1249,8 @@ class Player:
     TOUGHNESS_PER_CON = 0.01      # of all damage, per point of CON above 10
     TOUGHNESS_CAP = 0.40
     DODGE_PER_DEX = 0.0075        # chance per point of DEX above 10
-    DEX_AC_CAP = 3                # most armor class Dexterity alone gives
+    # (The most AC Dexterity gives is by the body armour's weight class:
+    # dex_ac_cap(). It was 3 in anything, plate included, until 2026-11-13.)
     DODGE_CAP = 0.30
     # Worn armor that says so adds to either, on top of what the stat gives,
     # by at most this much in all.
@@ -1329,14 +1354,22 @@ class Player:
 
     def dodge_chance(self) -> float:
         """Chance to slip a blow that would have landed (0 at DEX 10). Rolled
-        after the monster's hit roll, so it also beats a glancing hit."""
+        after the monster's hit roll, so it also beats a glancing hit.
+        Dexterity's share and worn gear's, then what the body armour and the
+        load leave of it: all of it in light armour (or none), half in
+        medium, none in heavy; half again when Burdened, none when Stressed
+        (gear.dodge_share)."""
         # Nobody who cannot act can sidestep.
         if any(self.has_effect(e) for e in ('paralyzed', 'sleeping', 'immobilized',
                                             'stunned', 'frozen', 'petrifying')):
             return 0.0
-        return max(0.0, min(self.DODGE_CAP,
+        base = max(0.0, min(self.DODGE_CAP,
                             (int(self.DEX) - 10) * self.DODGE_PER_DEX)) \
             + self._worn_bonus('dodge_bonus')
+        if base <= 0.0:
+            return 0.0
+        import gear
+        return base * gear.dodge_share(self)
 
     # ----- wisdom: what the dungeon teaches, and what prayer lends -----
 
@@ -1493,12 +1526,20 @@ class Player:
     # to weigh nothing, so a hero could carry an armory.) Equipping or taking
     # something off moves its weight between pack and body; the total stays.
     #
-    # Above BURDENED_SHARE of the limit the hero is Burdened: every
-    # BURDEN_STEP_EVERY-th step costs an extra turn. Nothing else changes
-    # (attacks, spells and quiz clocks are untouched). A pickup that would go
-    # past the limit is refused.
-    BURDENED_SHARE = 0.75
-    BURDEN_STEP_EVERY = 4
+    # Weight that bites (winning-build plan 3.3, data/gear_rules.json `load`):
+    # above BURDENED_SHARE of the limit the hero is Burdened (he dodges half
+    # as well and his footsteps carry a tile further), above STRESSED_SHARE
+    # Stressed (no dodge at all, footsteps further still, and every
+    # STRESSED_STEP_EVERY-th step costs the dungeon an extra turn). Attacks,
+    # spells and the quiz clocks are untouched. A pickup that would go past
+    # the limit is refused. (Until 2026-11-13 there was one line, Burdened at
+    # 75%, and it cost an extra turn every fourth step.)
+    BURDENED_SHARE = float(_load_rule('burdened', 'share', 0.5))
+    STRESSED_SHARE = float(_load_rule('stressed', 'share', 0.75))
+    STRESSED_STEP_EVERY = int(_load_rule('stressed', 'step_every', 2))
+    LOAD_DODGE = {'': 1.0,
+                  'burdened': float(_load_rule('burdened', 'dodge', 0.5)),
+                  'stressed': float(_load_rule('stressed', 'dodge', 0.0))}
 
     # The purse (Brandon's D2, 2026-10-18): coins weigh what coins weigh, a
     # tenth of an ounce each (treasure.COINS_PER_LB, 160 to the pound). The
@@ -1600,8 +1641,29 @@ class Player:
     def burden_threshold(self) -> float:
         return self.get_carry_limit() * self.BURDENED_SHARE
 
+    def stress_threshold(self) -> float:
+        return self.get_carry_limit() * self.STRESSED_SHARE
+
+    def load_tier(self) -> str:
+        """'' (free), 'burdened' (over half the limit) or 'stressed' (over
+        three quarters; past the limit itself he is still Stressed)."""
+        wt = self.get_current_weight()
+        if wt > self.stress_threshold():
+            return 'stressed'
+        if wt > self.burden_threshold():
+            return 'burdened'
+        return ''
+
     def is_burdened(self) -> bool:
+        """Burdened or worse: over half the limit."""
         return self.get_current_weight() > self.burden_threshold()
+
+    def is_stressed(self) -> bool:
+        return self.get_current_weight() > self.stress_threshold()
+
+    def load_dodge_share(self) -> float:
+        """The share of the dodge the load leaves: all, half, none."""
+        return float(self.LOAD_DODGE.get(self.load_tier(), 1.0))
 
     def is_overloaded(self) -> bool:
         """Past the limit itself (an old save, lost Strength, the Boulder)."""
@@ -1619,31 +1681,43 @@ class Player:
             msg += f" (Your {coins:,} gold weighs {weight_text(coins)}.)"
         return msg
 
+    def load_lines(self) -> tuple:
+        """The shares of the limit where the readout's state changes."""
+        return (self.BURDENED_SHARE, self.STRESSED_SHARE)
+
     def carry_line(self) -> str:
         """'Carrying 43 / 100', the readout the sidebar and sheet show."""
         from hud_context import load_number
         lim = self.get_carry_limit()
-        return f"Carrying {load_number(self.get_current_weight(), lim, self.BURDENED_SHARE)} / {lim}"
+        return f"Carrying {load_number(self.get_current_weight(), lim, self.load_lines())} / {lim}"
 
     def update_burden(self) -> str | None:
-        """Note whether the hero is Burdened now. Returns 'on' or 'off' when
-        that has just changed, else None (the game turns it into a message)."""
-        now = self.is_burdened()
-        was = bool(getattr(self, '_burdened', False))
-        self._burdened = now
-        if now and not was:
-            return 'on'
-        if was and not now:
-            return 'off'
-        return None
+        """Note the load tier now. Returns what just changed, else None (the
+        game turns it into a message): 'on' (became Burdened), 'stressed'
+        (became Stressed), 'eased' (Stressed to Burdened), 'off' (free)."""
+        now = self.load_tier()
+        was = getattr(self, '_load_tier', None)
+        if was is None:
+            # An old save (or a fresh hero): it remembered only Burdened.
+            was = 'burdened' if getattr(self, '_burdened', False) else ''
+        self._load_tier = now
+        self._burdened = bool(now)
+        if now == was:
+            return None
+        if now == 'stressed':
+            return 'stressed'
+        if now == 'burdened':
+            return 'eased' if was == 'stressed' else 'on'
+        return 'off'
 
     def burden_step(self) -> bool:
-        """Count one step taken. True when this step costs an extra turn."""
-        if not self.is_burdened():
+        """Count one step taken. True when this step costs an extra turn:
+        every STRESSED_STEP_EVERY-th step of a Stressed hero."""
+        if not self.is_stressed():
             self._burden_steps = 0
             return False
         self._burden_steps = int(getattr(self, '_burden_steps', 0) or 0) + 1
-        if self._burden_steps >= self.BURDEN_STEP_EVERY:
+        if self._burden_steps >= self.STRESSED_STEP_EVERY:
             self._burden_steps = 0
             return True
         return False

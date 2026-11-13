@@ -21,12 +21,21 @@
     240
   ],
   "armor_ac_bonus": 1,
-  "resistances": [
-    "fire",
-    "cold",
-    "lightning"
-  ],
-  "weaknesses": [],
+  "protection": {
+    "fire": 0.9,
+    "cold": 0.9,
+    "lightning": 0.9,
+    "blunt": 1.2
+  },
+  "protection_words": {
+    "fire": "turns the elements",
+    "cold": "turns the elements",
+    "lightning": "turns the elements",
+    "blunt": "shatters under a hammer"
+  },
+  "metal": true,
+  "protection_note": "A crystal alloy, clear as ice: fire, frost and lightning slide off it.",
+  "protection_price": "A hammer cracks it.",
   "vulnerabilities": [],
   "effective_against": [
     "elemental"

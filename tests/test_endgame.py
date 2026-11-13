@@ -133,9 +133,13 @@ def test_dead_mechanics_found_by_the_audit_are_wired():
     wearer = types.SimpleNamespace(armor_slots=[horns])
     assert combat.effective_chain(wearer, None, None, 0) == 0     # never turns a miss into a hit
     assert combat.effective_chain(wearer, None, None, 1) == 3
+    # The armour materials' protection is read (winning-build plan 3.3,
+    # slice 4): it used to be a list that nothing read for damage.
+    import gear
     import items
-    assert items._material_resists({'resistances': ['fire', 'bludgeon']}) == {
-        'fire': items.MATERIAL_RESIST, 'blunt': items.MATERIAL_RESIST}
+    mail = items.instantiate_armor('chainmail', 'ring_iron')
+    assert gear.material_protection(mail) == items.get_material('armor', 'ring_iron')['protection']
+    assert gear.piece_profile(mail)['lightning'] == 1.25
     with open(os.path.join(ROOT, 'data', 'items', 'weapon.json'), encoding='utf-8') as f:
         w = json.load(f)
     assert 'medusa_gorgon' in w['harpe']['skip_chain_warmup_vs_tag']
@@ -173,6 +177,18 @@ def test_cooking_lessons_reset_on_a_new_floor_only():
     assert 'self.player.deepest_floor_reached > _was_deepest' in main[i - 200:i]
 
 
-def test_a_full_suit_of_resisting_armor_is_about_three_quarters():
+def test_only_the_body_armour_carries_its_material():
+    """Rewritten 2026-11-13 (winning-build plan 3.3, slice 4). It pinned the
+    old flat 0.96 a resisting piece (eight pieces, about three quarters);
+    the material now sets real elements, on the BODY armour only, so a whole
+    kit of one material does not take its price eight times."""
+    import gear
     import items
-    assert 0.70 <= items.MATERIAL_RESIST ** 8 <= 0.80          # seven pieces and a shield
+    from player import Player
+    p = Player()
+    for tpl in ('chainmail', 'iron_helm', 'gauntlets', 'iron_boots', 'chain_chausses',
+                'iron_vambraces', 'cloak'):
+        p._apply_equip(items.instantiate_armor(tpl, 'ring_iron'))
+    p.shield = items.instantiate_shield('kite_shield', 'ring_iron')
+    assert gear.worn_factor(p, 'lightning') == 1.25
+    assert gear.worn_factor(p, 'pierce') == 1.15

@@ -64,5 +64,39 @@
     "margin": {"body": 2, "shield": 1},
     "par_body":   [0.3, 0.7, 1.1, 1.5, 1.8, 2.1, 2.3, 2.5, 2.7, 2.9, 3.1, 3.3, 3.5, 3.7, 3.9, 4.1, 4.3, 4.4, 4.6, 4.8, 5.0, 5.2, 5.4, 5.6, 5.9, 6.0, 6.1, 6.3, 6.4, 6.6, 6.7, 6.9, 7.0, 7.2, 7.2, 7.4, 7.6, 7.7, 7.9, 8.0, 8.1, 8.3, 8.4, 8.6, 8.8, 8.9, 9, 9.1, 9.3, 9.4, 9.4, 9.5, 9.6, 9.6, 9.8, 9.9, 10.1, 10.3, 10.4, 10.6, 10.8, 10.9, 11.1, 11.3, 11.3, 11.5, 11.6, 11.7, 11.7, 11.8, 11.8, 11.9, 11.9, 11.9, 12.0, 12.1, 12.2, 12.3, 12.4, 12.5, 12.6, 12.7, 12.8, 12.8, 12.9, 12.9, 12.9, 13.0, 13.0, 13.0, 13.0, 13.0, 13.0, 13.0, 13.0, 13.0, 13.0, 13.0, 13.0, 13.0],
     "par_shield": [0.4, 0.7, 1.0, 1.2, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2.1, 2.2, 2.4, 2.5, 2.6, 2.9, 3.0, 3.2, 3.3, 3.5, 3.6, 3.7, 3.8, 3.9, 3.9, 4.0, 4.0, 4.0, 4.0, 4.0, 4.0, 4.0, 4, 4, 4.1, 4.4, 4.6, 4.9, 5.1, 5.3, 5.4, 5.5, 5.6, 5.7, 5.8, 5.8, 5.9, 5.9, 6.0, 6.0, 6.0, 6.0, 6.0, 6, 6, 6.2, 6.4, 6.6, 6.7, 6.8, 6.8, 6.9, 7.0, 7.0, 7.0, 7.0, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7.2, 7.4, 7.6, 7.7, 7.8, 7.9, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8]
+  },
+
+  "armour_weight": {
+    "_doc": "What the BODY armour's weight class lets through (winning-build plan 3.3, slice 4; Brandon 2026-11-13: 'BALANCE armor and Dex (light vs heavy)... so that there are many ways to play'). No body armour counts as light. dex_ac_cap: the most AC Dexterity gives ((DEX - 10) // 2; a clumsy hero's minus always counts). dodge_share: the share of the dodge (Dexterity's and worn gear's) still there. footsteps: tiles further the hero's steps carry (senses.step_radius), and metal_footsteps more in metal unless the material is quiet (mithril, godweave); each such tile makes a deep sleeper sleeper_share_per_tile readier to stir (sleepers.factor). casting_mult: what a spell's mana costs in METAL body armour, unless the material casts freely (mithril, orichalcum, godweave). The template's forms and the material's elements are in the template and material files (gear.py, What armour does beyond AC).",
+    "dex_ac_cap": {"light": 6, "medium": 3, "heavy": 0},
+    "dodge_share": {"light": 1.0, "medium": 0.5, "heavy": 0.0},
+    "footsteps": {"light": 0, "medium": 1, "heavy": 2},
+    "metal_footsteps": 1,
+    "sleeper_share_per_tile": 0.25,
+    "casting_mult": {"light": 1.0, "medium": 1.5, "heavy": 2.0}
+  },
+
+  "load": {
+    "_doc": "Weight that bites (plan 3.3): over burdened.share of the carry limit the hero is Burdened, over stressed.share Stressed (over the limit itself he is still Stressed, and nothing more can be picked up). dodge: the share of the dodge left. step_every: every Nth step a Stressed hero takes costs the dungeon one more turn. How much further the steps carry is in data/senses.json noise (burdened, stressed). Before 2026-11-13 there was one line, at 75%, and it cost one extra turn every fourth step.",
+    "burdened": {"share": 0.5, "dodge": 0.5},
+    "stressed": {"share": 0.75, "dodge": 0.0, "step_every": 2}
+  },
+
+  "wards": {
+    "_doc": "What a body armour's material stops outright (its `wards`, gear.ward_against): an attack's rider of one of these effects, from an attacker of one of these families or tags (none listed: from anything). card: the words on the item card; line: what the log says when it fires ({piece} is the piece as the hero knows it).",
+    "fey_glamour": {
+      "families": ["fair_folk"],
+      "tags": ["fey"],
+      "effects": ["confused", "charmed", "sleeping", "hallucinating"],
+      "card": "cold iron: fey glamour slides off",
+      "line": "Your {piece} is cold iron, and the glamour slides off it."
+    },
+    "flame": {
+      "families": [],
+      "tags": [],
+      "effects": ["burning"],
+      "card": "will not catch fire",
+      "line": "Your {piece} will not catch, and the flames die on it."
+    }
   }
 }

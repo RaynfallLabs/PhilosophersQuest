@@ -369,6 +369,30 @@ unless the weapon's design implicitly expected a material multiplier.
 Armor adds a `"slot"` field (`body`, `head`, `legs`, `arms`,
 `feet`, `cloak`).
 
+### 4.1b What armour does beyond AC (2026-11-13)
+
+Read by `src/gear.py` (What armour does beyond AC; armour.md section 1c),
+written by `tools/content/armour_profiles_2026_11.py`.
+
+- **Body-armour templates** (`data/templates/armor/*.json` with
+  `slot: body`) and the tower shield: `forms` {`slash` / `pierce` /
+  `blunt`: multiplier}, `forms_words` (the card's words for each),
+  `forms_note` (the lore).
+- **Armour materials** (`data/materials/armor/*.json`, all 45): `protection`
+  {damage type: multiplier} (body armour only; it replaced the
+  `resistances` / `weaknesses` lists), `protection_words`, `metal` (bool:
+  clanks, taxes a spell), optional `quiet`, `casting_free`, `wards` (ids in
+  `data/gear_rules.json` `wards`), `protection_note` (why), and
+  `protection_price` (what it costs). A wood that will not burn says
+  `fire_resistant` in `special_properties` (the wear rule reads it).
+- **Named body armour** (`data/items/armor.json`): `metal` (bool, by its
+  lore); optional `quiet`, `casting_free`, `wards`. Its own
+  `damage_resistances` is its whole profile.
+- **`data/gear_rules.json`**: `armour_weight` (`dex_ac_cap`, `dodge_share`,
+  `footsteps`, `metal_footsteps`, `sleeper_share_per_tile`, `casting_mult`
+  by weight class), `load` (`burdened` / `stressed`: `share`, `dodge`,
+  `step_every`), `wards` (`families`, `tags`, `effects`, `card`, `line`).
+
 ### 4.2 `equip_threshold` + `equip_chain_mode`
 
 - `equip_threshold: N` — N correct answers in the equip quiz

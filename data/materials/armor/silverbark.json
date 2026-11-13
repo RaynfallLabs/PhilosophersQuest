@@ -18,8 +18,11 @@
     220,
     200
   ],
-  "resistances": [],
-  "weaknesses": [],
+  "protection": {},
+  "protection_words": {},
+  "metal": false,
+  "protection_note": "A shield's silverbark: held, not worn, so it guards with its AC alone.",
+  "protection_price": "Wood burns: fire scorches it.",
   "vulnerabilities": [],
   "special_properties": [
     "blessed_capable",

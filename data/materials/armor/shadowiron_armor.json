@@ -19,8 +19,21 @@
     50
   ],
   "armor_ac_bonus": 2,
-  "resistances": [],
-  "weaknesses": [],
+  "protection": {
+    "shadow": 0.75,
+    "necrotic": 0.75,
+    "holy": 1.25,
+    "lightning": 1.25
+  },
+  "protection_words": {
+    "shadow": "drinks the dark",
+    "necrotic": "drinks the dark",
+    "holy": "holy light burns through it",
+    "lightning": "conducts lightning"
+  },
+  "metal": true,
+  "protection_note": "Iron from the void: the dark is at home in it.",
+  "protection_price": "Holy light burns through it, it conducts lightning, and it can never be blessed.",
   "vulnerabilities": [],
   "effective_against": [],
   "special_properties": [

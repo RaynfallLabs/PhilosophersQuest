@@ -20,5 +20,14 @@
     "dragon_material",
     "exotic_metal"
   ],
-  "lore_template": "Articulated plates of {material_name}, hinged at every joint a body needs to bend. The smith earned his pay twice over on this one."
+  "lore_template": "Articulated plates of {material_name}, hinged at every joint a body needs to bend. The smith earned his pay twice over on this one.",
+  "forms": {
+    "slash": 0.75,
+    "pierce": 0.85
+  },
+  "forms_words": {
+    "slash": "turns an edge",
+    "pierce": "skids a point aside"
+  },
+  "forms_note": "A plate turns an edge and skids a point aside; a hammer still rings it."
 }

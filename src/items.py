@@ -201,22 +201,11 @@ ENCHANT_CAP = {
 SPAWN_ENCHANT_CAP_ARMOR = 1
 
 
-# Per piece, and the pieces multiply (Player.resistance_multiplier): a full
-# suit and shield of one resisting material comes to about three quarters.
-MATERIAL_RESIST = 0.96        # damage multiplier for a type an armor material resists
-_RESIST_ALIAS = {'bludgeon': 'blunt'}
-
-
-def _material_resists(mat: dict) -> dict:
-    """An armor material's resistances as {damage type: multiplier}. The
-    material files write them as a list of types (23 of them do), and only a
-    dict was ever accepted, so no common armor resisted anything."""
-    r = mat.get('resistances')
-    if isinstance(r, dict):
-        return dict(r)
-    if isinstance(r, (list, tuple)):
-        return {_RESIST_ALIAS.get(str(t), str(t)): MATERIAL_RESIST for t in r}
-    return {}
+# What a common armour piece does to a blow (its template's forms, its
+# material's elements) is read live by gear.piece_profile from the
+# template and material files, never baked into the piece (winning-build
+# plan 3.3, slice 4). (The old flat 0.96 per resisting piece,
+# _material_resists, was never called and went with the 3.3.2 rule.)
 
 
 def _template_class(category: str, template_id) -> str:
@@ -880,7 +869,16 @@ class Armor(Item):
         self.template_basis: str = str(defn.get('template_basis') or '')
         self.equip_threshold     = int(defn.get('equip_threshold', 2))
         self.quiz_tier: int      = int(defn.get('quiz_tier', 1))
+        # A named piece's own resistances (its JSON wins); a common piece's
+        # are its template's and material's, read live (gear.piece_profile).
         self.damage_resistances: dict = defn.get('damage_resistances', {})
+        # Is it metal (it clanks and taxes a spell), is it quiet, can a
+        # caster work in it, what does it ward off: a named piece says so in
+        # its JSON; None means "as its material file says" (gear.is_metal).
+        self.metal = defn.get('metal')
+        self.quiet = defn.get('quiet')
+        self.casting_free = defn.get('casting_free')
+        self.wards = defn.get('wards')
         self.can_be_cursed: bool = bool(defn.get('can_be_cursed', True))
         self.id_level: int = int(defn.get("id_level", 5 if defn.get("identified", False) else 0))
         self.unidentified_name: str = defn.get('unidentified_name', 'unknown armor')
@@ -2536,10 +2534,13 @@ def instantiate_armor(template_id: str, material_id: str, *,
                      x: int = 0, y: int = 0, level: int = 0,
                      ench_id: str = '') -> 'Armor':
     """Build an Armor instance from template + material + enchantment level
-    (gear.py, bug bash 3.3.2): the template gives the slot, weight class and
-    base AC (body armour only; a minor slot gives no AC), the material the
-    weight, what wear can touch it and the name, the level the tier, quiz
-    tier and (body armour) plus."""
+    (gear.py, bug bash 3.3.2): the template gives the slot, weight class,
+    base AC (body armour only; a minor slot gives no AC) and, on body
+    armour, the forms it turns (plate an edge, mail lets a point through);
+    the material the weight, what wear can touch it, the name and, on body
+    armour, the elements (iron carries the spark, leather catches fire:
+    gear.piece_profile, winning-build plan 3.3); the level the tier, quiz tier
+    and (body armour) plus."""
     import gear
     tpl = get_template('armor', template_id)
     mat = get_material('armor', material_id)
@@ -2578,7 +2579,9 @@ def instantiate_armor(template_id: str, material_id: str, *,
         'ench_level': level,
         # Only a minor piece with a level carries one (enchantments.py).
         'ench_id': ench_id if (ench_id and not core and level > 0) else '',
-        # The material decides wear and weight, never protection (plan 3).
+        # Its own resistances: none. What its template and material do to a
+        # blow is read live from their files (gear.piece_profile),
+        # so an old piece and a new one always agree.
         'damage_resistances': {},
         'can_be_cursed': bool(mat.get('can_be_cursed', True)),
         'identified': False,

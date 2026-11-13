@@ -19,8 +19,21 @@
     200
   ],
   "armor_ac_bonus": 1,
-  "resistances": [],
-  "weaknesses": [],
+  "protection": {
+    "magic": 0.85,
+    "shadow": 0.85,
+    "fire": 1.15
+  },
+  "protection_words": {
+    "magic": "turns a spell",
+    "shadow": "starlight against the dark",
+    "fire": "thread burns"
+  },
+  "metal": false,
+  "quiet": true,
+  "casting_free": true,
+  "protection_note": "Woven from starlight thread, not forged: it turns a spell and the dark, and makes no sound.",
+  "protection_price": "Thread burns, and it is found only at the very bottom of the world.",
   "vulnerabilities": [],
   "effective_against": [],
   "special_properties": [

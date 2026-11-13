@@ -19,10 +19,18 @@
     60
   ],
   "armor_ac_bonus": 3,
-  "resistances": [
-    "magic"
-  ],
-  "weaknesses": [],
+  "protection": {
+    "magic": 0.8,
+    "lightning": 1.25
+  },
+  "protection_words": {
+    "magic": "turns a spell",
+    "lightning": "conducts lightning"
+  },
+  "metal": true,
+  "casting_free": true,
+  "protection_note": "Atlantis' red metal, said to hum with magic: a caster can work in it.",
+  "protection_price": "It conducts lightning, and it is found only near the bottom.",
   "vulnerabilities": [],
   "effective_against": [],
   "special_properties": [

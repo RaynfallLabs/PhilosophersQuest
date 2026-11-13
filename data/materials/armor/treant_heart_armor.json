@@ -19,10 +19,11 @@
     60
   ],
   "armor_ac_bonus": 1,
-  "resistances": [],
-  "weaknesses": [
-    "fire"
-  ],
+  "protection": {},
+  "protection_words": {},
+  "metal": false,
+  "protection_note": "A shield's treant heart: held, not worn, so it guards with its AC alone.",
+  "protection_price": "Wood burns: fire scorches it.",
   "vulnerabilities": [],
   "effective_against": [],
   "special_properties": [
