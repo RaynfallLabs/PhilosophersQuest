@@ -815,9 +815,12 @@ class Player:
         """Mana that meditating can still restore on `floor`. Every floor has
         its own quiet, and it is drawn once: leaving and coming back does
         not refill it (it used to, on any staircase), but a floor not yet
-        meditated on still has all of its own, on the way down or up."""
+        meditated on still has all of its own, on the way down or up. A
+        keener mind draws more of it (floor_curve.meditation_share: half of
+        max MP, a point more for each point of Intelligence over 10, at most
+        80%)."""
         from floor_curve import meditation_allowance
-        return max(0, meditation_allowance(self.max_mp)
+        return max(0, meditation_allowance(self.max_mp, int(getattr(self, 'INT', 10) or 10))
                    - int(self._quiet_used().get(int(floor), 0)))
 
     def meditate(self, amount: int = 1, floor: int = 0) -> int:

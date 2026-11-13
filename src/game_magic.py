@@ -102,27 +102,37 @@ if TYPE_CHECKING:
 # when weapons gained a damage step per tier (since 2026-11-12 the weapon curve,
 # tools/balance/weapon_curve.py, carries it). Magic follows by tier, or a
 # deep wand would tickle: the old figures x 2 / 3.5 / 5.5 / 7.5 / 8.5.
-# 2026-10-06 (REBALANCE_MASTER_PLAN.md, decision D2): magic changes the
-# shape of a fight and never replaces maths. Measured against the yardstick
-# (floor_curve.one_attack), one cast for one science question, with no
-# clock, was landing 0.9 to 1.6 weapon attacks from a plain character and
-# up to 2.4 from an Intelligence build; wands up to 3. These tables put the
-# strongest ordinary single-target spell of each tier at about 0.7 of one
-# attack on the floors it is found on, and a wand charge at about 0.85
-# (tools/balance/magic_audit.py prints the table; a test holds it).
-# Previous spell figures: 6.0 / 8.75 / 11.0 / 13.0 / 12.75, shared by wands.
-# 2026-11-12: the weapon curve (tools/balance/weapon_curve.py) sizes weapons
-# against the real monsters so an ordinary fight is one or two chains at any
-# depth ("game cannot be a chore"); one attack grew x1.5 to x1.8 from floor
-# 40 down. Each tier's multiplier moved by the same share of one attack on
-# the floors it is measured on, so every cast keeps its place under a weapon
-# chain (magic_audit.py, test_magic_role). Before: spells 2.6 / 4.9 / 5.8 /
-# 7.9 / 10.5, wands 1.9 / 3.7 / 5.6 / 6.8 / 8.0.
-MAGIC_TIER_MULT = {1: 2.6, 2: 5.15, 3: 8.6, 4: 12.8, 5: 15.7}
+# 2026-10-06 (REBALANCE_MASTER_PLAN.md, decision D2): one cast for one
+# science question, with no clock, was landing 0.9 to 1.6 weapon attacks
+# (floor_curve.one_attack) from a plain character and up to 2.4 from an
+# Intelligence build; wands up to 3. D2 held every cast under a weapon
+# attack. Spells were 6.0 / 8.75 / 11.0 / 13.0 / 12.75, shared by wands.
+# 2026-11-12: the weapon curve (tools/balance/weapon_curve.py) grew one
+# attack x1.5 to x1.8 from floor 40 down and each tier followed it: spells
+# 2.6 / 4.9 / 5.8 / 7.9 / 10.5 became 2.6 / 5.15 / 8.6 / 12.8 / 15.7, wands
+# 1.9 / 3.7 / 5.6 / 6.8 / 8.0 became the table below.
+# 2026-11-13 (winning-build plan 3.6, Brandon's decision 5): magic is a
+# STYLE, not a replacement for maths. Maths stays the backbone: every cast
+# is still one science question (wrong is a fizzle), the mana bar holds a
+# few casts, metal body armour taxes them (Player.spell_mp_cost) and a
+# caster still finishes the fight with a weapon. Magic is the toolkit that
+# exploits elements and controls the fight: the best single-target spell of
+# each tier lands about ONE weapon chain on a floor typical of its tier for
+# an ordinary character (about 1.25 for an Intelligence build), so the right
+# element on a x2 weakness is a two-chain blow. Tiers 1, 2, 3 and 5 are set
+# by their best bolt (Spark, Lightning Bolt, Smite, Disintegrate); tier 4
+# has none, so it rose by the ruling's 1 / 0.7 and its area spells keep
+# their place under a chain. A tier's spells move together, so the order
+# inside each family holds; the touch spells' dice were trimmed so they keep
+# only a small edge for laying hands on. Wands did not move: a charge is
+# still about 0.85 (tools/balance/magic_audit.py prints it all, and
+# tests/test_magic_role.py holds the bands).
+MAGIC_TIER_MULT = {1: 4.35, 2: 7.5, 3: 14.0, 4: 18.3, 5: 27.2}
 WAND_TIER_MULT = {1: 1.9, 2: 3.45, 3: 8.2, 4: 11.2, 5: 11.7}
 
-# What Intelligence does for magic: more casts (max MP is 10 + INT), and
-# effects that last longer (and a wider Light). It never lengthens how far
+# What Intelligence does for magic: more casts (max MP is 10 + INT, and a
+# deeper quiet to meditate in: floor_curve.meditation_share), and effects
+# that last longer (and a wider Light). It never lengthens how far
 # an aimed spell goes (spells.SPELL_REACH). It adds a little to damage
 # and healing, never the +10% a point it used to (INT 36 was x4.6).
 INT_DAMAGE_PER_POINT = 0.015

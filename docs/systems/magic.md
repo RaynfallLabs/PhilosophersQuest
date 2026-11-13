@@ -3,9 +3,10 @@
 Reference-grade documentation for the entire magic pipeline: **spells**
 (learned, MP-cost, cast via one science question), **wands** (charge-based,
 cast via one science question), and **spellbooks** (learned by passing one
-grammar question). Covers the cast contract, MP cost bands, damage scaling,
-the self-buff duration table, the dispatch surface for 60+ effects, and
-every drift fixed by the v2.18 full-systems audit.
+grammar question). Covers the cast contract, MP cost bands, damage scaling
+(magic as a style: the best spell of a tier is about one weapon chain, §4),
+meditation, the self-buff duration table, the dispatch surface for 60+
+effects, and every drift fixed by the v2.18 full-systems audit.
 
 Related docs: [items](items.md), [combat](combat.md),
 [status_effects](status_effects.md), [progression](progression.md).
@@ -133,8 +134,8 @@ be struck. Every targeted spell now carries `reach` (`spells.SPELL_REACH`,
 
 | Reach | Spells | Power |
 |---|---|---|
-| touch, 1 (`REACH_TOUCH`) | Frost Touch, Drain Life, Soul Drain | raised to about one weapon attack (1d6+3, 5d6+2, 9d8+3); `tests/test_magic_role.py` lets a touch spell reach 1.1 / 1.35, the undead-only allowance |
-| short, 3 (`REACH_SHORT`) | Aard, Igni, Yrden, Axii; Spark, Acid Dart, Smite | the signs raised: Aard and Igni 1d4+2 (0.38 -> 0.68 of an attack), Yrden 14 turns, Axii 16 (`duration` on the spell) |
+| touch, 1 (`REACH_TOUCH`) | Frost Touch, Drain Life, Soul Drain | a small edge over their tier's bolt (2d4, 4d6+1, 7d8+1: 1.12, 1.08, 1.03 of a weapon chain since magic became a style, §4); `tests/test_magic_role.py` holds a touch to 1.15 / 1.45 |
+| short, 3 (`REACH_SHORT`) | Aard, Igni, Yrden, Axii; Spark, Acid Dart, Smite | the signs raised: Aard and Igni 1d4+2 (0.38 -> 0.68 of an attack in 3.3.2; 1.0 since 2026-11-13), Yrden 14 turns, Axii 16 (`duration` on the spell) |
 | sight (`None`) | every bolt, missile, arrow and beam; the aimed status spells | unchanged: as far as the hero sees, in a clear line |
 
 Enforced where the aim is taken, never in the effect handlers (a scroll or
@@ -184,61 +185,123 @@ All 60+ other learnable spells sit inside their tier's band.
 
 ---
 
-## 4. Damage scaling — `MAGIC_TIER_MULT` and `_spell_damage`
+## 4. Damage scaling — magic as a style
 
-Damage from spells and wands routes through a single scaling formula.
+### The ruling (winning-build plan 3.6, Brandon's decision 5, 2026-11-13)
+
+Magic is a **style**, not a replacement for maths. It replaced ruling D2
+(REBALANCE_MASTER_PLAN.md, 2026-10-06), which held every cast under one
+weapon attack: the strongest single-target spell of each tier sat near 0.7
+of a chain.
+
+- **Maths stays the backbone.** Every cast is one science question (wrong
+  is a fizzle, the MP still spent), a mana bar holds a few casts, metal
+  body armour taxes them (§2, `Player.spell_mp_cost`), and a caster still
+  finishes the fight with a weapon.
+- **Magic is the toolkit that exploits elements and controls the fight.**
+  The best single-target spell of each tier lands about **one weapon chain**
+  (`floor_curve.one_attack`) on a floor typical of its tier for an ordinary
+  character, and about **1.25** for an Intelligence build. Spells hit their
+  real element (combat.md: weak x2, resisted x0.5, shrugs off x0.25, capped
+  x3), so the right element on a x2 weakness is a **two-chain blow**, and
+  the wrong one on a resistance is half a chain.
+- **Area spells sit under a bolt**, in the same proportion as before. A
+  **touch** spell keeps only a small edge over its tier's bolt for the risk
+  of laying hands on. An **undead-only** spell (Turn Undead, Sunburst) may
+  go a little over. A **wand** charge did not move: about 0.85 of a chain.
+- **Light body armour is the caster's natural kit**: leather, hide,
+  dragonscale or mithril cast at full price; medium metal costs x1.5 and
+  heavy metal x2 (armour.md section 1c).
+
+`tools/balance/magic_audit.py` prints every damaging spell and wand with its
+role (bolt, touch, undead, area, share) and its share of one attack, then a
+per-tier summary; `tests/test_magic_role.py` holds the bands
+(`magic_audit.BANDS`, `BEST_SINGLE`, `BEST_BOLT`).
+
+### The numbers (2026-11-13)
+
+Shares of one attack on the tier's floor (10 / 30 / 50 / 70 / 90), at INT 10
+and for the audit's Intelligence build (INT 15 / 24 / 29 / 34 / 46). Casts
+are of the best single-target spell: max MP 20 at INT 10, the build's bar,
+and the build's bar in steel plate (x2).
+
+| Tier | Best single target | Best bolt | Best area | Casts a bar | Meditation a floor |
+|---|---|---|---|---|---|
+| 1 | Frost Touch 1.12 / 1.20 | Spark, Igni, Aard 1.00 / 1.08 | - | 6 / 8 / 4 | 10 / 14 MP |
+| 2 | Drain Life 1.08 / 1.30 | Lightning Bolt 1.00 / 1.22 | Scream 0.36 / 0.43 | 3 / 5 / 2 | 10 / 22 MP |
+| 3 | Smite 1.00 / 1.29 | Smite 1.00 / 1.29 | Fireball 0.83 / 1.07 | 2 / 3 / 1 | 10 / 27 MP |
+| 4 | Soul Drain 1.03 / 1.40 | (Force Storm 0.44 / 0.60) | Meteor 0.89 / 1.20 | 1 / 2 / 1 | 10 / 33 MP |
+| 5 | Disintegrate 1.00 / 1.40 | Disintegrate 1.00 / 1.40 | Cone of Cold 0.80 / 1.12 | 0 / 2 / 1 | 10 / 45 MP |
+
+Tier 4 has no ordinary bolt: its single target is Soul Drain (a touch) and
+its fire is Meteor (area); Force Storm keeps the force family's quiet place.
+Annihilation is not judged by its dice: it ends anything under 35% of its
+health and takes a third from the rest (bosses a capped quarter).
 
 ### Per-tier multipliers
 
 ```python
 # game_magic.py top-of-module
-MAGIC_TIER_MULT = {1: 3.0, 2: 2.5, 3: 2.0, 4: 1.75, 5: 1.5}
+MAGIC_TIER_MULT = {1: 4.35, 2: 7.5, 3: 14.0, 4: 18.3, 5: 27.2}
+WAND_TIER_MULT  = {1: 1.9, 2: 3.45, 3: 8.2, 4: 11.2, 5: 11.7}
+HEAL_TIER_MULT  = {1: 3.0, 2: 2.5, 3: 2.0, 4: 1.75, 5: 1.5}
 ```
 
-- Bigger boost on low tiers (where early-game spells felt like
-  afterthoughts next to chain-weapon damage).
-- Modest boost on T5 (where the authored dice — `10d10` for Annihilation,
-  `9d8` for Dissolution, etc. — were already respectable).
+Tiers 1, 2, 3 and 5 are set by their best bolt (Spark, Lightning Bolt,
+Smite, Disintegrate) at 1.0. Tier 4 rose by the ruling's 1 / 0.7, so its
+area spells keep their place under a chain. A tier's spells share one
+multiplier, so the order inside each family holds (a higher tier always hits
+harder) and every spell keeps its place inside its tier. The touch spells'
+dice were trimmed to keep their edge small: Frost Touch 1d6+3 -> 2d4, Drain
+Life 5d6+2 -> 4d6+1, Soul Drain 9d8+3 -> 7d8+1.
 
-### `_spell_damage(base_dmg, chain=5)`
+History: D2 (2026-10-06) set spells to 6.0 / 8.75 / 11.0 / 13.0 / 12.75
+(shared by wands), then cut them to hold every cast under a weapon attack;
+after the weapon curve (2026-11-12) they were 2.6 / 5.15 / 8.6 / 12.8 / 15.7.
+
+### `_spell_damage(base_dmg, chain=5, healing=False)`
 
 The common damage path for spells:
 
 ```python
-def _spell_damage(self, base_dmg: int, chain: int = 5) -> int:
-    from chain_passives import apply_spell_damage_passives
+def _spell_damage(self, base_dmg, chain=5, healing=False):
     tier = int(getattr(self, '_active_spell_tier', 5) or 5)
-    tier_mult = MAGIC_TIER_MULT.get(tier, 1.5)
+    tier_mult = (HEAL_TIER_MULT if healing else MAGIC_TIER_MULT).get(tier, 1.5)
     dmg, c, a = apply_spell_damage_passives(
-        self.player, base_dmg * tier_mult * (1.0 + self.player.INT * 0.1))
-    self._last_spell_crit, self._last_spell_anti_being = c, a
-    return max(1, int(dmg))
+        self.player, base_dmg * tier_mult * int_damage_factor(self.player.INT),
+        destructive=not healing)
+    ...
 ```
 
 Three multipliers stack:
 1. `base_dmg` — rolled from the spell's authored `power` string via
    `dice.roll`.
 2. `tier_mult` — read from `MAGIC_TIER_MULT` keyed by `_active_spell_tier`
-   (set at the top of every `_apply_spell_effect` call).
-3. INT boost — `(1.0 + INT * 0.1)` — INT 10 = 1.0x, INT 15 = 1.5x,
-   INT 20 = 2.0x.
+   (set at the top of every `_cast_spell_effect` call).
+3. Intelligence — `int_damage_factor(INT)`: x2.0 at INT 10, +1.5% of that a
+   point over 10, at most x2.8 (`INT_DAMAGE_CAP` 1.4). Intelligence gives
+   more casts (max MP is 10 + INT, and a deeper quiet to meditate in) and
+   longer, wider effects (`int_reach`), and only a little more damage.
 
-Then chain-equip passives (`apply_spell_damage_passives`) layer on top for
-crit chance and anti-being-type bonuses. The Heart of Ahriman's anti-being
-charge (2x) is spent only by a destructive spell: a heal passes
-`healing=True`, which leaves the charge waiting. A magic-missile volley is
-reckoned in one call, so the whole volley takes the charge (the first
-missile used to spend it alone).
+Then the element: the handler passes it to `monster.take_damage(scaled,
+element)`, which applies the creature's weakness, resistance or "shrugs
+off" (`combat._damage_multiplier`). Chain-equip passives
+(`apply_spell_damage_passives`) layer on top for crit chance and
+anti-being-type bonuses. The Heart of Ahriman's anti-being charge (2x) is
+spent only by a destructive spell: a heal passes `healing=True`, which
+leaves the charge waiting. A magic-missile volley is reckoned in one call,
+so the whole volley takes the charge (the first missile used to spend it
+alone).
 
 ### `_wand_tier_damage(base_dmg, tier)`
 
 The wand variant omits the chain-passive overlay (wands don't carry the
-spellcrit/anti-being passives) but applies the same tier + INT formula:
+spellcrit/anti-being passives) and reads its own table:
 
 ```python
-def _wand_tier_damage(self, base_dmg: int, tier: int) -> int:
-    tier_mult = MAGIC_TIER_MULT.get(int(tier), 1.5)
-    return max(1, int(base_dmg * tier_mult * (1.0 + self.player.INT * 0.1)))
+def _wand_tier_damage(self, base_dmg, tier):
+    tier_mult = WAND_TIER_MULT.get(int(tier), 1.5)
+    return max(1, int(base_dmg * tier_mult * int_damage_factor(self.player.INT)))
 ```
 
 ### The `chain` arg is a back-compat fossil
@@ -248,33 +311,26 @@ back-compat, but the arg is ignored. Spells retired chain scaling in
 v2.12.0; `_active_spell_tier` is now the sole driver. See §8 for the
 fossil cleanup done in v2.18.
 
-### Audit fix: `magic_missile` now routes through `_spell_damage`
+### Multi-hit spells share one cast
 
-Pre-v2.18, the `magic_missile` targeted-handler computed per-missile
-damage with a bespoke INT+base inline expression that **bypassed
-`MAGIC_TIER_MULT` entirely**. A T5 Force Storm or wand_of_force_cataclysm
-output ~56 damage vs ~198 for other T5 damage spells.
+A magic-missile volley (T1 1 / T2 3 / T3 5 / T4 7 missiles) rolls each
+missile's `power` but reckons the cast once:
+`self._spell_damage(sum(_rolls), chain) // (missiles * missiles)` per
+missile, so the volley is one roll's worth in all (each missile used to
+carry the whole cast: Force Storm's seven were 2.2 weapon attacks). The
+meteor swarm divides one cast between its meteors the same way.
 
-The v2.18 fix routes both the spell handler and the wand handler through
-the standard tier-mult path. From `_apply_spell_effect`:
+### MP: the bar and the floor's quiet
 
-```python
-# v2.15+ audit sync: route per-missile damage through _spell_damage so
-# MAGIC_TIER_MULT applies (previously the missile handler bypassed tier
-# scaling entirely).
-_MISSILE_COUNT = {1: 1, 2: 3, 3: 5, 4: 7, 5: 9}
-missiles = _MISSILE_COUNT.get(_tier, 1)
-total_dmg = 0
-for _ in range(missiles):
-    if not target.alive:
-        break
-    base_dmg = _roll(power) if power else 4
-    per_missile = self._spell_damage(base_dmg, chain)
-    ...
-```
-
-Missile count scales by tier (T1 1 / T2 3 / T3 5 / T4 7 / T5 9); each
-missile's damage runs the full tier-mult + INT stack.
+Max MP is 10 + INT. Waiting (`.`) with no monster beside you is
+meditation: a point of MP every `MEDITATE_PERIOD` (8) waits, up to the
+floor's quiet, which is drawn once per floor (`Player.meditation_left`,
+`Player.meditate`; leaving and coming back does not refill it, but every
+floor has its own). The quiet is a share of max MP
+(`floor_curve.meditation_share`): **half, plus a point of the share for each
+point of Intelligence over 10, never past 80%** (`MEDITATE_SHARE_CAP`,
+reached at INT 40). An INT 30 caster with 40 MP draws 28 a floor; a plain
+hero with 20 draws 10.
 
 ---
 
@@ -385,9 +441,10 @@ the effect does something structurally different.
 
 All damage routes through `_spell_damage(base_dmg, chain)` → full
 tier-mult + INT scaling → `monster.take_damage(scaled, element)` so
-resistances apply. Smite is the exception — it writes directly to
-`target.hp` with no element passed, bypassing resistances by design
-(holy fire is unresistible).
+weaknesses and resistances apply (§4). Smite is the exception — it
+passes no element, so no resistance (and no weakness) touches it by
+design (holy fire is unresistible), and it strikes anything, not only the
+unholy: the audit counts it as tier 3's bolt.
 
 ### 6.2 Status spells (targeted single)
 
@@ -597,7 +654,8 @@ the 3% post-success misfire that wastes the charge again.
 
 Damage wands call `_wand_tier_damage(base_dmg, wand.quiz_tier)` with the
 `roll(wand.power)` result. The function returns
-`base * MAGIC_TIER_MULT[tier] * (1 + INT * 0.1)`. See §4.
+`base * WAND_TIER_MULT[tier] * int_damage_factor(INT)`: a charge is about
+0.85 of a weapon chain on the floors the wand is found on. See §4.
 
 ### Wand duration path
 

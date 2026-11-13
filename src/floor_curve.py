@@ -231,11 +231,24 @@ PET_REGEN_SHARE = 0.01        # of a pet's max HP, every third turn
 # Wounds, and a patient player cast twenty healing spells a floor and won
 # twice as often as one who did not (measured, 71% against 35%).
 MEDITATE_FLOOR_SHARE = 0.5
+# A caster's mind holds more of the quiet (magic as a style, winning-build
+# plan 3.6, 2026-11-13): each point of Intelligence over 10 adds a point to
+# the share, and it never passes MEDITATE_SHARE_CAP (reached at INT 40).
+# Below 10 it is the plain half: a dull wit has a small bar already.
+MEDITATE_INT_STEP = 0.01
+MEDITATE_SHARE_CAP = 0.80
 
 
-def meditation_allowance(max_mp: int) -> int:
+def meditation_share(intelligence: int = 10) -> float:
+    """The share of max MP that meditating can restore on one floor: half,
+    plus a point for each point of Intelligence over 10, at most 80%."""
+    step = MEDITATE_FLOOR_SHARE + MEDITATE_INT_STEP * (int(intelligence) - 10)
+    return round(max(MEDITATE_FLOOR_SHARE, min(MEDITATE_SHARE_CAP, step)), 4)
+
+
+def meditation_allowance(max_mp: int, intelligence: int = 10) -> int:
     """Mana that meditating can restore on one floor."""
-    return max(1, int(round(int(max_mp) * MEDITATE_FLOOR_SHARE)))
+    return max(1, int(round(int(max_mp) * meditation_share(intelligence))))
 
 
 # Rest closes wounds only so far: natural regeneration stops at this share

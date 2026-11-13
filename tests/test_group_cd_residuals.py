@@ -420,9 +420,10 @@ def test_wand_tier_damage_scales_higher_at_low_tiers():
     assert dmg_t1 < dmg_t3 < dmg_t5, (
         f"tier multipliers should rise with tier; got T1={dmg_t1} T3={dmg_t3} T5={dmg_t5}"
     )
-    # 2026-10-06 (decision D2, magic never replaces maths): wands have their
-    # own table, sized so one charge lands under one weapon attack on the
-    # floors the wand is found on. INT 10 is still x2.0.
+    # 2026-10-06: wands have their own table, sized so one charge lands
+    # under one weapon attack on the floors the wand is found on (magic as
+    # a style, 2026-11-13, raised the spells to about one chain; the wands
+    # stayed). INT 10 is still x2.0.
     from game_magic import WAND_TIER_MULT
     assert dmg_t1 == int(100 * WAND_TIER_MULT[1] * 2.0)
     assert dmg_t5 == int(100 * WAND_TIER_MULT[5] * 2.0)

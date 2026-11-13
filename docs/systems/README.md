@@ -69,7 +69,7 @@ reporter are small, independent JSON/text siblings. See
 | [armour.md](armour.md) | AC from body armour and shield only, what armour does beyond AC (template forms, material elements, wards, light vs heavy: Dexterity, dodge, noise, spell cost; the load tiers), the minor slots' guard families and enchantments, the ring and amulet kinds, named pieces on the ladder, the 45 / 45 / 10 gear split, old saves (3.3.2) | Any AC, to-hit, armour, ring, weight or gear-loot change |
 | [identify_v3.md](identify_v3.md) | One philosophy Q, derived id_tier, a known kind fully identifies every copy (2026-10-18), NO masteries | Identify flow change |
 | [containers_lockpick.md](containers_lockpick.md) | Chest tiers, chest_traps.json, Lockpick v3 (1 Q, master pick, traps on fail) | Loot-gate change |
-| [magic.md](magic.md) | Spells, wands, spellbooks, MP, MAGIC_TIER_MULT, dispatch | Spell add/edit |
+| [magic.md](magic.md) | Spells, wands, spellbooks, MP and meditation (Intelligence deepens the floor's quiet), magic as a style (the best spell of a tier is about one weapon chain; bands in `tools/balance/magic_audit.py`), MAGIC_TIER_MULT, dispatch | Spell add/edit, any spell or wand number |
 | [food_system.md](food_system.md) | Cook v2 (1 Q binary), harvest v4 (1 Q binary), outcome_id, prime_cuts.json, SP soft-boundary | Food flow change |
 | [status_effects.md](status_effects.md) | BUFFS / DEBUFFS / HARD_CONTROL, _RESIST_BLOCKS, SAVE_STAT, apply_debuff_with_save | Status effect add/edit |
 | [save_bonus.md](save_bonus.md) | Gradient defense on CON/WIS/DEX/all, +5 cap, timed +3 cap | Save add/edit |
