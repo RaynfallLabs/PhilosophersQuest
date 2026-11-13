@@ -2129,9 +2129,7 @@ class CombatMixin:
                     _bd = _wb.data()['bands'].get(getattr(monster, '_band_id', ''), {})
                     _role = getattr(monster, '_band_role', '')
                     if _bd.get('name') and _role:
-                        self.add_message(
-                            f"It marches with {_bd['name']}"
-                            f"{' and leads it' if _role == 'leader' else ''}.", 'info')
+                        self.add_message(_wb.observe_line(_bd, _role, _level >= _fl.KNOWN), 'info')
             if (not _known and getattr(monster, 'family', None)
                     and not getattr(monster, 'is_allied', False)
                     and not getattr(monster, '_npc_encounter_tag', None)
@@ -2753,7 +2751,10 @@ class CombatMixin:
         leader = war_bands.leader_of(self.monsters, band.get('uid', ''))
         if leader is None or not leader.alive:
             return
-        knows = bool(self._family_has_page(band.get('leader_kind')))
+        # The make-up and how to break it only for a hero who knows the
+        # leader's kind itself, or its family's Lore (family_lore.knowledge).
+        import family_lore
+        knows = family_lore.knowledge(self.player, band.get('leader_kind')) >= family_lore.KNOWN
         line = war_bands.arrival_line(band, knows)
         if line:
             self.add_message(line, 'warning')

@@ -120,6 +120,7 @@ class Dungeon:
     theme = None
     domain = None
     clan = None                     # the family that holds the floor (hazards.py)
+    clan_sign = ''                  # its clue, said on arrival (FamilyMixin._family_arrival)
 
     def __init__(self, tiles: List[List[int]], rooms: List[Room],
                  width: int, height: int, level: int):

@@ -209,7 +209,7 @@ How they fire:
 
 **Clans.**
 - `populate_floor` rolls the floor's resident family once (`dungeon.clan`). The `clans` settings: 60% of floors get one, chosen among families with at least 4 eligible kinds, with the domain's kin first. The clan weighs 3 times more.
-- Its `clan_lines` entry joins the arrival lines, so the hero knows which family to read up on.
+- Its `clan_lines` entry is a clue, never the family's name ("Shed skins in every corner."). `LevelManager.generate` keeps it as `dungeon.clan_sign` once the floor is peopled and the clan holds at least a quarter of it. `FamilyMixin._family_arrival` says it on the first visit, unless the hero is Forewarned (tier 2) of that family, whose own line names it (2026-11-12).
 - Arrival lines are said on the first visit only (G4): `dungeon._atmosphere_said`.
 
 Tests: `tests/test_hazards.py`.

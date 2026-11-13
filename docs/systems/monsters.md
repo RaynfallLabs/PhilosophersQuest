@@ -353,7 +353,12 @@ Brandon: monsters must "pose a real challenge and players need to pay attention 
 - **Half the band down:** each follower flees with a 50% chance.
 - **A great blow.** A maths chain of `nerve_chain` (6) or more on the living leader makes about half his followers falter (`feared` for 4 turns), with the band's `break_line`.
 
-**Knowing pays.** On arrival, `_announce_band` says the band's `line`. If the hero knows the leader's family (`_family_has_page`), it says the `known_line` instead, which names the roster and the weakness. The camp (fire, banner, bedrolls) is furnished by `decor.furnish_band_camp`. Observe says which band a creature marches with, and whether it leads.
+**Knowing pays.** On arrival, `_announce_band` says the band's `line`, which is sound and signs only and never names the band's kind. If the hero knows the leader's kind (`family_lore.knowledge` KNOWN: studied, its page opened, or its family at Lore), it says the `known_line` instead, which names the roster and how to break it. Recognise alone is not enough (2026-11-12). The camp (fire, banner, bedrolls) is furnished by `decor.furnish_band_camp`.
+
+Observe (`war_bands.observe_line`, data `observe`) says what anyone can see:
+- **a follower:** "It marches with a goblin war-band."
+- **the leader:** "The rest of the band keep glancing at it, as if waiting for orders."
+- **the leader, to a hero who knows its kind:** "It leads the band." plus what happens when it falls, by the band's morale ("If it falls, the dead it raised will fall with it.").
 
 ## Tells: a dangerous creature shows what it can do (slice 5)
 

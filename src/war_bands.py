@@ -192,10 +192,25 @@ def roster_text(band: dict) -> str:
 
 
 def arrival_line(band: dict, knows_family: bool) -> str:
+    """The band heard on arrival; named in full, with how to break it, only
+    for a hero who knows the leader's kind (family_lore.knowledge KNOWN)."""
     b = data()['bands'].get(band.get('id', ''), {})
     if knows_family and b.get('known_line'):
         return b['known_line'].replace('{roster}', roster_text(band))
     return b.get('line', '')
+
+
+def observe_line(b: dict, role: str, knows: bool) -> str:
+    """What Observe says of a band member (data/war_bands.json 'observe').
+    Anyone can see who the others watch; what happens when it falls is for
+    a hero who knows the leader's kind."""
+    o = data().get('observe') or {}
+    if role != 'leader':
+        return o.get('member', '').replace('{name}', b.get('name', 'a band'))
+    if not knows:
+        return o.get('leader', '')
+    morale = (o.get('morale') or {}).get(b.get('morale', 'rout'), '')
+    return ' '.join(p for p in (o.get('leader_known', ''), morale) if p)
 
 
 def members_of(monsters, uid: str) -> list:

@@ -46,8 +46,44 @@ def test_hazard_data_is_whole():
             assert fam in fams, (d['id'], fam)
         for t in d.get('traps') or {}:
             assert t in traps, (d['id'], t)
-    for fam in decor.config()['clan_lines']:
+    for fam, line in decor.config()['clan_lines'].items():
         assert fam in fams, fam
+        # A clue, never the family's name (2026-11-12): one sentence, and
+        # none of the words of the family's name or kin.
+        assert line.count('.') == 1 and line.endswith('.'), (fam, line)
+        import family_lore
+        import re
+        names = family_lore.family_name(fam) + ' ' + family_lore.kin(fam) + ' ' + fam
+        for w in {w for w in re.findall(r'[a-z]+', names.lower()) if len(w) >= 4 and w != 'folk'}:
+            assert w not in line.lower(), (fam, w, line)
+
+
+def test_the_clan_clue_is_said_on_arrival_unless_the_hero_is_forewarned():
+    from types import SimpleNamespace
+    from game_families import FamilyMixin
+
+    class G:
+        _family_arrival = FamilyMixin._family_arrival
+
+        def __init__(self, hero):
+            self.player, self.monsters, self.msgs, self.dungeon_level = hero, [], [], 30
+            self.dungeon = SimpleNamespace(clan='serpents', clan_sign=decor.config()['clan_lines']['serpents'])
+
+        def add_message(self, text, cat='info'):
+            self.msgs.append(text)
+
+    def hero(t=0):
+        return SimpleNamespace(studied_monster_ids=set(), lore_known_monster_ids=set(),
+                               family_lore_grants={'serpents': t} if t else {})
+    g = G(hero())
+    g._family_arrival(first_visit=True)
+    assert g.msgs == ['Shed skins in every corner.']
+    g = G(hero())
+    g._family_arrival(first_visit=False)
+    assert g.msgs == [], 'only on the first visit'
+    g = G(hero(2))
+    g._family_arrival(first_visit=True)
+    assert 'Shed skins in every corner.' not in g.msgs
 
 
 def test_kin_changes_weights_never_eligibility():

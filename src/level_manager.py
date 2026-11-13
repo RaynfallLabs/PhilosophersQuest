@@ -146,8 +146,10 @@ class LevelManager:
         import war_bands
         war_bands.place_band(dungeon, monsters, level_num)
 
-        # The clan's line, only if the clan really holds the floor now that
-        # it is peopled (audit G6: it named families with no one there).
+        # The clan's clue, only if the clan really holds the floor now that
+        # it is peopled (audit G6: it named families with no one there). It
+        # is said on arrival by FamilyMixin._family_arrival, which knows the
+        # hero: never to one Forewarned of the family, whose own line names it.
         import hazards
         _clan = getattr(dungeon, 'clan', None)
         if _clan:
@@ -156,7 +158,7 @@ class LevelManager:
             _share = (sum(1 for m in _foes if m.family == _clan) / len(_foes)) if _foes else 0.0
             _line = hazards.clan_line(_clan)
             if _line and _share >= 0.25:
-                dungeon.atmosphere_messages.append(_line)
+                dungeon.clan_sign = _line
 
         # Bones: chance to spawn a ghost from a previous player's death
         self._maybe_spawn_bones(level_num, dungeon, monsters, items)

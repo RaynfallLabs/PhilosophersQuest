@@ -192,6 +192,60 @@ def test_a_band_healer_mends_a_bandmate_of_another_kind():
     assert gob.hp > 1
 
 
+def test_a_band_heard_on_arrival_is_never_named():
+    """2026-11-12: "...Goblins have made camp." told the hero what he had
+    not seen. The plain line is sound and signs only."""
+    import re
+    for bid, b in war_bands.data()['bands'].items():
+        words = {w for w in re.findall(r'[a-z]+', b['name'].lower()) if len(w) >= 5}
+        low = b['line'].lower()
+        for w in words:
+            assert w not in low, (bid, w, b['line'])
+
+
+def test_observe_on_a_band_member_says_what_anyone_can_see():
+    b = war_bands.data()['bands']['necro_procession']
+    assert war_bands.observe_line(b, 'guard', False) == 'It marches with a necromancer and his dead.'
+    lead = war_bands.observe_line(b, 'leader', False)
+    assert 'waiting for orders' in lead and 'fall' not in lead
+    known = war_bands.observe_line(b, 'leader', True)
+    assert known.startswith('It leads the band.') and 'the dead it raised will fall with it' in known
+    assert 'turn on one another' in war_bands.observe_line(
+        war_bands.data()['bands']['demon_warband'], 'leader', True)
+
+
+def test_the_arrival_names_the_band_only_for_a_hero_who_knows_its_leader():
+    from types import SimpleNamespace
+    from game_combat import CombatMixin
+
+    class G:
+        _announce_band = CombatMixin._announce_band
+
+        def __init__(self, hero, band, monsters):
+            self.player, self.monsters, self.msgs = hero, monsters, []
+            self.dungeon = SimpleNamespace(band=band)
+
+        def add_message(self, text, cat='info'):
+            self.msgs.append(text)
+
+    def said(studied=(), grants=None):
+        leader = _m('goblin_king')
+        leader._band, leader._band_role = 'u1', 'leader'
+        band = {'id': 'goblin_raiders', 'uid': 'u1', 'leader_kind': 'goblin_king',
+                'counts': {'guard': 2, 'shooter': 1}, 'said': False}
+        hero = SimpleNamespace(studied_monster_ids=set(studied), lore_known_monster_ids=set(),
+                               family_lore_grants=dict(grants or {}))
+        g = G(hero, band, [leader])
+        g._announce_band()
+        return g.msgs[0]
+
+    plain = war_bands.data()['bands']['goblin_raiders']['line']
+    assert said() == plain
+    assert said(grants={'goblinkin': 1}) == plain, 'Recognise does not teach how to break it'
+    assert 'Kill the chief' in said(studied=('goblin_king',))
+    assert 'Kill the chief' in said(grants={'goblinkin': 3})
+
+
 def test_every_tell_key_has_a_line_and_order():
     d = tells.data()
     assert set(d['order']) == set(d['effects'])

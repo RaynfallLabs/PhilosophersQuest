@@ -208,6 +208,13 @@ class FamilyMixin:
             return (unseen.is_invisible(m) and not unseen.sees_invisible(player)) or (
                 getattr(m, 'ai_pattern', '') in ('ambush', 'mimic') and not getattr(m, '_aware', False))
 
+        # The floor's clan shows itself by its clue (data/domains.json
+        # clan_lines), never its name: a hero Forewarned of the family hears
+        # the family's own line instead (2026-11-12).
+        dungeon = getattr(self, 'dungeon', None)
+        sign = getattr(dungeon, 'clan_sign', '') if dungeon is not None else ''
+        if first_visit and sign and family_lore.tier(player, getattr(dungeon, 'clan', None)) < 2:
+            self.add_message(sign, 'info')
         told = player.__dict__.get('forewarned_told')
         if not isinstance(told, set):
             told = player.__dict__['forewarned_told'] = set(told or ())
