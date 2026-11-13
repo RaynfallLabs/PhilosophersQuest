@@ -6,7 +6,8 @@
 
 ```
 src/dungeon.py            # BSP generation, mazes, terrain, items, special rooms, traps
-src/boss_levels.py        # Hand-crafted maps for L20/40/60/80/100 and L999 Cow Level
+src/boss_levels.py        # Hand-crafted maps for L20/40/60/80/100, L999 Cow Level; side floors
+src/stray_kids.py         # L997 the Zombie Stage (the Stray Kids easter egg)
 src/level_manager.py      # Floor save/load, mini-boss planning, seal-demon forcing, bones hookup
 src/bones.py              # Persistent death artifacts across runs
 src/fov.py                # Recursive shadowcasting FOV (octant-based)
@@ -16,7 +17,7 @@ src/fov.py                # Recursive shadowcasting FOV (octant-based)
 
 ## 1. Floor taxonomy
 
-The world is 100 descending floors plus one hidden floor (L999, the Cow Level). Floors fall into three kinds, each with different generators:
+The world is 100 descending floors plus two hidden side floors (L999, the Cow Level; L997, the Zombie Stage). Floors fall into three kinds, each with different generators:
 
 | Kind       | Floors                              | Generator                              |
 |------------|-------------------------------------|----------------------------------------|
@@ -24,6 +25,7 @@ The world is 100 descending floors plus one hidden floor (L999, the Cow Level). 
 | Maze       | 10, 30, 50, 70, 90                  | `dungeon._generate_maze_dungeon`        |
 | Open (BSP) | all others                          | `dungeon.generate_dungeon`              |
 | Secret     | 999 (Cow Level)                     | `boss_levels._level_999_moo_moo_farm`   |
+| Secret     | 997 (Zombie Stage)                  | `stray_kids.build_stage`                |
 
 The boss set lives in **a single source of truth**: `src/dungeon.py` exports `_BOSS_LEVELS = {20, 40, 60, 80, 100}`, and `src/level_manager.py` imports it (`from dungeon import _BOSS_LEVELS`) so the mini-boss roller and the boss-floor dispatcher never disagree about which floors reject random spawn (v2.18 consolidation — before the import, each file carried its own copy and a mini-boss plan could silently target a boss floor and vanish).
 
@@ -425,6 +427,11 @@ Six outer-ring chambers (NW/NE/W/E/SW/SE) around a central boss arena, each cros
 ### 6.6 L999 — Moo Moo Farm (Cow Level)
 Dispatched by `generate_boss_level(COW_LEVEL)` where `COW_LEVEL = 999`. A large open pasture (35×20) with fence-post wall pillars scattered as cover, a 6×4 pen in the top-right walled off by a `DOOR`. 40-50 Hell Bovines are placed in the pasture; the Cow King sits in his pen. The entrance is a reversed stair — `STAIRS_DOWN` leads *back home* (there's no deeper level than 100 in the main tower, so the cow floor's exit is the portal out). Atmosphere lines "The air smells of hay and brimstone." / "Welcome to the Moo Moo Farm."
 
+### 6.6a Side floors, and L997 the Zombie Stage (2026-11-13)
+A **side floor** is reached by an easter egg and left by its own portal: `boss_levels.SIDE_FLOORS` = {`COW_LEVEL` 999, `STRAY_KIDS_STAGE` 997}, asked through `is_side_floor(level)`, named on screen by `SIDE_FLOOR_NAMES` (`ui.floor_label`: "Moo Moo Farm", "Zombie Stage"). Every "side trip, not depth" rule reads it: no new depth (score, `deepest_floor_reached`, once-a-floor charges, the dungeon's wisdom), no Road arrival, escorts suspended, no bones, no wanderers (`_maybe_wander_spawn` returns at once: the floor's number drew from the floor-100 pool, and only the farm's herd above the alive cap kept them off it), no decor dressing pass. A potion of gain level, Hermes' psychopomp step and the portal all leave through `EncountersMixin._leave_side_floor`; loot dropped there is as deep as the floor its way in stood on (`_side_floor_return_level`).
+
+**The Zombie Stage** (`stray_kids.build_stage`; the easter egg is described in [monsters](monsters.md#special-monster-modules-2026-10)). The hero arrives in the wings (a 9×7 room, `rooms[0]`) beside the stage door, a `STAIRS_DOWN` that is the way out at any time; a short passage leads to the stage hall (35×19), dressed with `sk_speaker` stacks in its corners, `brazier_lit` pyro along the long walls and a `carpet` runway, where the eight zombie members rehearse at the far end. The hall is lit: from anywhere on the stage the hero sees every hall tile in his line of sight, however far, so the whole formation can be watched (`StrayKidsMixin._stray_kids_light_the_stage`, from `_refresh_fov`; never while blind). The dance state (`dungeon.sk_dance`) pickles with the floor. One trip a run: leaving spends the idol.
+
 ### 6.7 Multi-tile boss anchor correction
 `_spawn_boss` places the boss at `boss_room.center`. For a multi-tile footprint (Fafnir 2×2, procedural 2×2 cosmic bosses — Tiamat / Surtur / Ymir / Hrungnir), the anchor is shifted up to 3 tiles NW until every footprint tile is walkable and in-bounds. For 1×1 bosses this loop is a no-op.
 
@@ -581,6 +588,7 @@ A quick lookup of every floor whose number triggers a scripted spawn. These are 
 | 99    | Altar of the Last Judgment. Descent gated on all 7 seals.                                   |
 | 100   | **Boss: Abaddon the Destroyer**. Philosopher's Stone placed here (no STAIRS_DOWN).          |
 | 999   | **Secret: Moo Moo Farm**. Cow King + 40-50 Hell Bovines. Access path via Wrinkled Cow Rune. |
+| 997   | **Secret: the Zombie Stage**. The eight zombie Stray Kids. Access: touch the Stray Kids idol (one floor of 8-12, every run). |
 
 The `_LEATHER_SCRAP_LEVELS = [5, 13, 21, 28, 35, 42, 50, 58, 66, 73]` list is the complete scrap set — the Vidar secret requires all ten.
 

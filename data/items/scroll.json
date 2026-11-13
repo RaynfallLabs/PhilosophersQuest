@@ -2374,5 +2374,29 @@
     "quiz_threshold": 1,
     "peak_weight": 0.0,
     "spread": 8
+  },
+  "autographed_stray_kids_photo": {
+    "name": "Autographed Stray Kids Photo",
+    "symbol": "?",
+    "color": [
+      255,
+      230,
+      120
+    ],
+    "weight_lb": 0.1,
+    "min_level": 9999,
+    "peak_floor": 9999,
+    "spread": 0,
+    "tier": 2,
+    "quiz_tier": 2,
+    "quiz_threshold": 1,
+    "effect": "summon_stray_kids",
+    "unidentified_name": "Autographed Stray Kids Photo",
+    "lore": "A glossy photo of Stray Kids, alive and grinning, scribbled all over with eight autographs in black marker, and a few gold stars stuck on for luck. It is still warm. Read the names aloud and they might come back for one more song: a short show for you, no fighting on either side, and anything near them will stop to watch. Then the photo is gone.",
+    "item_class": "scroll",
+    "identified": true,
+    "weight": 0.1,
+    "peak_weight": 0,
+    "single_copy": true
   }
 }

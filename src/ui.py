@@ -9,11 +9,11 @@ from hud_context import active_power_rows, cooking_hp_line, cooking_lesson_line,
 
 
 def floor_label(level: int) -> str:
-    """How the run's place is named on screen. The Cow Level is numbered
-    999 inside the game; the player is on the Moo Moo Farm, not floor 999
-    (the death screen already says so)."""
-    from boss_levels import COW_LEVEL
-    return "Moo Moo Farm" if level == COW_LEVEL else f"Floor {level}"
+    """How the run's place is named on screen. A side floor is numbered
+    inside the game (the Cow Level 999, the Zombie Stage 997); the player
+    is on the Moo Moo Farm, not floor 999 (the death screen says so too)."""
+    from boss_levels import SIDE_FLOOR_NAMES
+    return SIDE_FLOOR_NAMES.get(level) or f"Floor {level}"
 
 # Rail widths at UI scale 1 (1280x720). On screen they are ``ui_scale.px``
 # of these; layout.LEFT_SIDEBAR_W / layout.SIDEBAR_W hold the live values

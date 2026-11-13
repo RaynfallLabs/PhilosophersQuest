@@ -1,5 +1,7 @@
 """
-Static hand-crafted boss level maps for levels 20, 40, 60, 80 and 100.
+Static hand-crafted boss level maps for levels 20, 40, 60, 80 and 100, and
+the side floors: the Moo Moo Farm (below) and the Zombie Stage (built in
+stray_kids.py).
 
 Each boss level:
   - Has a unique visual theme
@@ -15,6 +17,18 @@ from dungeon import Dungeon, Room, WALL, FLOOR, STAIRS_UP, STAIRS_DOWN, DOOR, AL
 
 BOSS_LEVELS = {20, 40, 60, 80, 100}
 COW_LEVEL = 999   # Moo Moo Farm (secret)
+STRAY_KIDS_STAGE = 997   # the Zombie Stage (secret; stray_kids.py)
+
+# Side floors: reached by an easter egg and left by their own portal, never
+# depth. The score, the deepest floor, once-a-floor charges, the Road,
+# escorts, bones and wanderers all pass them by; a potion of gain level or
+# Hermes' step leaves one for the floor its way in stood on.
+SIDE_FLOORS = frozenset({COW_LEVEL, STRAY_KIDS_STAGE})
+SIDE_FLOOR_NAMES = {COW_LEVEL: 'Moo Moo Farm', STRAY_KIDS_STAGE: 'Zombie Stage'}
+
+
+def is_side_floor(level) -> bool:
+    return level in SIDE_FLOORS
 
 _W, _H = 80, 50
 
@@ -868,6 +882,9 @@ def generate_boss_level(level_num):
         return _level_100_abyss()
     if level_num == COW_LEVEL:
         return _level_999_moo_moo_farm()
+    if level_num == STRAY_KIDS_STAGE:
+        import stray_kids
+        return stray_kids.build_stage()
     raise ValueError(f"No boss level defined for level {level_num}")
 
 

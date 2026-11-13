@@ -719,6 +719,58 @@ def lore_fixture_near(dungeon, x: int, y: int):
     return None
 
 
+def place_event_stand(dungeon, fid: str, monsters=(), items=(), rng=None):
+    """Set one blocking stand down on a floor already dressed: an event's
+    fixture (the Stray Kids idol, src/game_stray_kids.py). It goes against a
+    wall of an ordinary room the hero can walk into (never the first room,
+    a special room or the vault), away from the room's ways in and from
+    every other blocker, and only where it cuts nothing off. A floor whose
+    walls are all taken by its dressing gets it out in a room instead (away
+    from the ways in), and failing that in the first room: an event that
+    happens every run must find its floor. Returns its tile, or None only
+    when no reachable floor tile can hold it."""
+    rng = rng or random.Random()
+    taken = _taken_tiles(dungeon, monsters, items)
+    reach = _walk_set(dungeon)
+    before = _reachable_count(dungeon)
+    skip = {id(r) for r in _skip_rooms(dungeon)}
+    first = dungeon.rooms[0] if dungeon.rooms else None
+
+    def reachable(r):
+        return not reach or any(t in reach for t in _inner(r, dungeon))
+    rooms = [r for r in dungeon.rooms if id(r) not in skip and r is not first and reachable(r)]
+    rng.shuffle(rooms)
+    blockers = set(dungeon.__dict__.get('fixture_blocks') or ())
+    openings = {(x, y) for r in dungeon.rooms for (x, y) in _room_openings(r, dungeon)}
+
+    def try_spots(spots) -> tuple | None:
+        rng.shuffle(spots)
+        for pos in spots:
+            if any(max(abs(pos[0] - b[0]), abs(pos[1] - b[1])) <= 1 for b in blockers):
+                continue
+            if reach and pos not in reach:
+                continue
+            place(dungeon, pos, fid)
+            if before >= 0 and _reachable_count(dungeon) < before - 1:
+                remove(dungeon, pos)            # it cut something off
+                continue
+            return pos
+        return None
+
+    def open_floor(room) -> list:
+        return [t for t in _inner(room, dungeon) if t not in taken
+                and not any(max(abs(t[0] - o[0]), abs(t[1] - o[1])) <= 1 for o in openings)]
+    for room in rooms:
+        pos = try_spots(_against_wall_spots(room, dungeon, taken))
+        if pos:
+            return pos
+    for room in rooms + ([first] if first is not None and reachable(first) else []):
+        pos = try_spots(open_floor(room))
+        if pos:
+            return pos
+    return None
+
+
 def arrival_lines(dungeon) -> None:
     """D1/G1: what the floor says on arrival, from what is really on it: its
     special rooms (these lines never fired before: the atmosphere was built

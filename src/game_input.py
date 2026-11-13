@@ -361,6 +361,11 @@ class InputMixin:
                 # and a trader with gems and the draught, to test coin weight.
                 self._qa_treasure_sampler()
                 return True
+            if event.unicode == 'K' and getattr(self.player, 'qa_tools', False):
+                # Titivillus QA build: the Stray Kids idol beside the hero;
+                # pressed again, the photo in the pack (game_stray_kids.py).
+                self._qa_stray_kids()
+                return True
             self._player_input(key)
         elif self.state == STATE_TARGET:
             self._target_input(key)

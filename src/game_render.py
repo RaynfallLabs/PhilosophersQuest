@@ -6337,12 +6337,13 @@ class RenderMixin:
         sections.append(("MAGIC", magic_rows))
 
         # --- Journey ---
+        from boss_levels import is_side_floor
         deepest = int(getattr(p, 'deepest_floor_reached',
                               getattr(self, 'dungeon_level', 1)) or 1)
         current = int(getattr(self, 'dungeon_level', 1) or 1)
         sections.append(("JOURNEY", [
-            # On the farm the place, not "999" (JNL-07).
-            f"Current floor:\t{floor_label(current) if current == 999 else current}",
+            # On a side floor the place, not "999" (JNL-07).
+            f"Current floor:\t{floor_label(current) if is_side_floor(current) else current}",
             f"Deepest floor:\t{deepest}",
         ]))
 
@@ -7808,20 +7809,20 @@ class RenderMixin:
             self._draw_your_story(FP.BURGUNDY_MID)
             return
 
-        from boss_levels import COW_LEVEL as _COW
-        _on_farm = self.dungeon_level == _COW      # (numbered 999: not a level to name)
+        from boss_levels import is_side_floor as _side
+        _on_side = _side(self.dungeon_level)      # (numbered 999 or 997: not a level to name)
         if self.defeat_reason == 'fled':
             title_text = "YOU FLED THE DUNGEON"
             sub_text   = "Your quest ends in cowardice."
             tc = FP.WARNING_TEXT
         elif self.defeat_reason == 'starved':
             title_text = "YOU HAVE STARVED"
-            sub_text   = ("Hunger claimed you on the Moo Moo Farm." if _on_farm
+            sub_text   = (f"Hunger claimed you on the {floor_label(self.dungeon_level)}." if _on_side
                           else f"Hunger claimed you on level {self.dungeon_level}.")
             tc = FP.WARNING_TEXT
         else:
             title_text = "YOU HAVE DIED"
-            sub_text   = ("Slain on the Moo Moo Farm." if _on_farm
+            sub_text   = (f"Slain on the {floor_label(self.dungeon_level)}." if _on_side
                           else f"Slain on dungeon level {self.dungeon_level}.")
             tc = FP.DEATH_SUB
 

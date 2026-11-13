@@ -53,7 +53,7 @@ POTION_EFFECTS_BLESSING_HELPS = frozenset({
 SCROLL_EFFECTS_BLESSING_IGNORES = frozenset({
     'annihilate', 'boss_reward', 'charging', 'confuse_monsters', 'dead_sea_map',
     'earth', 'genocide', 'great_power', 'haste_self', 'mapping', 'sleep_monsters',
-    'teleport_self', 'time_stop_scroll',
+    'summon_stray_kids', 'teleport_self', 'time_stop_scroll',
 })
 SCROLL_EFFECTS_BLESSING_HELPS = frozenset({
     'enchant_accessory', 'enchant_armor', 'enchant_item', 'enchant_weapon',

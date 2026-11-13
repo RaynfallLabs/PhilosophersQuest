@@ -1004,11 +1004,11 @@ class CombatMixin:
                     self.player.hp = 1
                     self.add_message(
                         "WINGED SANDALS OF HERMES: a psychopomp's step pulls you back!", 'success')
-                    from boss_levels import COW_LEVEL as _COW
-                    if self.dungeon_level == _COW:
+                    from boss_levels import is_side_floor as _side
+                    if _side(self.dungeon_level):
                         # One floor up from the Cow Level (999) was floor
-                        # 998: back to the floor the cow stood on instead.
-                        self._exit_cow_level()
+                        # 998: back to the floor its way in stood on instead.
+                        self._leave_side_floor()
                     else:
                         self._change_level(self.dungeon_level - 1, enter_from_top=False, via='warp')
             except ImportError:
@@ -1161,6 +1161,8 @@ class CombatMixin:
         # A thief gives back everything it stole (src/theft.py).
         for _tmsg in theft.give_back(self, monster):
             self.add_message(_tmsg, 'loot')
+        # A Stray Kid crumbles to nothing; the last leaves the photo.
+        self._stray_kids_member_died(monster)
 
         # Cadmus / Vel of Murugan / Shamshir (engine wave 4):
         # summon_after_kill_with_tag — combat side set _pending_summon
@@ -1680,8 +1682,8 @@ class CombatMixin:
         # tier * 5 alone and tiers stop at 5, so everything past floor 25
         # (Anansi on floor 92 included) dropped floor-25 gear.
         _here = int(getattr(self, 'dungeon_level', 1) or 1)
-        if not 1 <= _here <= 100:      # the Cow Level is numbered 999
-            _here = max(1, min(100, int(getattr(self, '_cow_return_level', 1) or 1)))
+        if not 1 <= _here <= 100:      # a side floor (the Cow Level is numbered 999)
+            _here = max(1, min(100, int(self._side_floor_return_level() or 1)))
         # ...and only a little deeper (items.loot_floor): `tier * 5` on its
         # own put floor-5 and floor-10 gear in floor-1 drops.
         from items import loot_floor
@@ -2105,6 +2107,9 @@ class CombatMixin:
             self.add_message(
                 f"You see {monster.name} ({condition}).{_fam}", 'info'
             )
+            # A creature with a line of its own (the Stray Kids: stray_kids.py).
+            if getattr(monster, 'observe_line', ''):
+                self.add_message(monster.observe_line, 'info')
             # Its state (asleep, unaware, searching, hunting) is plain to
             # see; how it hunts and how to beat it are known only once the
             # kind itself is known (family_lore.knowledge).
@@ -2805,6 +2810,10 @@ class CombatMixin:
         import tells
         if getattr(m, 'is_allied', False) or getattr(m, '_npc_encounter_tag', None) \
                 or getattr(m, '_flavor_encounter_tag', None):
+            return
+        # The Stray Kids are told as one band when they first see the hero
+        # (game_stray_kids: the stage's 'tell'); Observe still tells each.
+        if getattr(m, 'is_sk_zombie', False):
             return
         kind = getattr(m, 'kind', '')
         if not kind:

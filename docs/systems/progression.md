@@ -554,7 +554,7 @@ Shared mechanic: all three are **cooldown-only** (not use-limited), the dispatch
 
 ### Legendary flags (secret-of-secrets)
 - `dad` — all stats 20, `punch_in_the_face` weapon, `_immortal: True`, Journal "Dad has arrived. Everything will be fine." Confirmed from the welcome screen's "Did you mean Dad?" easter egg when the player types "god" (`welcome_screen.py:463-465`).
-- `titivillus` — the Scribe of Errors QA build. `_qa_tools: True` grants Shift+I (immortal toggle) and Shift+W (floor warp), and Shift+A (Dungeon Alive at a glance: the floor's domain, clan, war-band, hazards and lore fixtures listed with the whole map shown; pressed again on a floor with no band, it sets one down). **Gated behind `PQ_QA_MODE=1` env var or `--qa` CLI flag as of v2.18.0** (`welcome_screen.py:471-476`); before the gate the name alone unlocked the dev tools, which SYSTEMS_AUDIT §7 P1 flagged. With neither flag set, the typed name is treated as a plain run — no stats, no kit, no QA tools.
+- `titivillus` — the Scribe of Errors QA build. `_qa_tools: True` grants Shift+I (immortal toggle) and Shift+W (floor warp), and Shift+A (Dungeon Alive at a glance: the floor's domain, clan, war-band, hazards and lore fixtures listed with the whole map shown; pressed again on a floor with no band, it sets one down), and Shift+K (the Stray Kids idol beside the hero; pressed again, the Autographed Stray Kids Photo in the pack). **Gated behind `PQ_QA_MODE=1` env var or `--qa` CLI flag as of v2.18.0** (`welcome_screen.py:471-476`); before the gate the name alone unlocked the dev tools, which SYSTEMS_AUDIT §7 P1 flagged. With neither flag set, the typed name is treated as a plain run — no stats, no kit, no QA tools.
 
 ### Metadata flags on build dicts (quick reference)
 

@@ -1,0 +1,428 @@
+{
+  "_doc": "The Stray Kids easter egg (src/stray_kids.py, src/game_stray_kids.py). On one floor from first_floor to last_floor (every run: chance_per_run 1.0) a gold shrine to the K-pop band Stray Kids stands in a room (fixture sk_idol, data/fixtures.json). Walking into it says what it is; walking into it again touches it, and the hero is taken to the Zombie Stage (boss_levels.STRAY_KIDS_STAGE), a side floor like the Cow Level: never depth, never the Road. There the eight members dance as zombies (data/monsters.json sk_zombie_*), a war-band led by Bang Chan (data/war_bands.json stray_kids). They move as one formation: the dance's anchor closes on the hero and its shape changes every beats_per_shape beats, and a member strikes only on the downbeat (every strike_every beats). They leave no corpse, and the last to fall leaves the Autographed Stray Kids Photo (data/items/scroll.json). Read (one grammar question), the photo is spent and the band, alive, dances round the hero for stars.dance_turns turns: no blows on either side, and every monster near them stops to watch (stunned), except named foes and the mindless. NO REAL LYRICS ANYWHERE: every line here is made up; song titles are named only as titles. Facts checked on Grokipedia, then Wikipedia (2026-11-13).",
+  "chance_per_run": 1.0,
+  "first_floor": 8,
+  "last_floor": 12,
+  "idol_fixture": "sk_idol",
+  "photo_id": "autographed_stray_kids_photo",
+  "band_id": "stray_kids",
+  "members": [
+    "bang_chan",
+    "lee_know",
+    "changbin",
+    "hyunjin",
+    "han",
+    "felix",
+    "seungmin",
+    "i_n"
+  ],
+  "names": {
+    "bang_chan": "Bang Chan",
+    "lee_know": "Lee Know",
+    "changbin": "Changbin",
+    "hyunjin": "Hyunjin",
+    "han": "Han",
+    "felix": "Felix",
+    "seungmin": "Seungmin",
+    "i_n": "I.N"
+  },
+  "idol": {
+    "first_bump": "The gold is warm, and a bass beat thumps somewhere. Walk into it again to touch it.",
+    "touch": [
+      "You touch the idol. Eight voices count you in: \"Five, six, seven, EIGHT!\"",
+      "A spotlight swallows you, and the dungeon falls away."
+    ],
+    "spent_bump": "The gold has gone dull and the glitter has fallen off. The encore is over.",
+    "touch_chronicle": "I touched a gold statue of a K-pop band, twice, on purpose. A spotlight took me somewhere with a stage. I have nobody to blame but myself."
+  },
+  "stage": {
+    "arrival": [
+      "You stand in the wings of a stage. Lights blaze, and a bass beat shakes the floor.",
+      "Out there, eight voices are warming up, and none of them is breathing."
+    ],
+    "atmosphere": [
+      "A fog machine coughs out grave-mist.",
+      "Rows of lightsticks glow in the dark seats like fireflies.",
+      "The empty seats chant: STAY! STAY! STAY!"
+    ],
+    "seen": "The spotlights swing onto you. Eight dead heads turn as one. The music kicks in.",
+    "door_line": "The stage door is the way out (> on it).",
+    "leave_cleared": "You slip out through the stage door. Behind you, the lights go down. The show is over.",
+    "leave_unfinished": "You slip out through the stage door. Behind you, the music cuts off mid-chorus, and the door will not open again.",
+    "leave_chronicle": "I walked out on a zombie concert halfway through. I regret nothing.",
+    "cleared_chronicle": "I sat through an entire zombie Stray Kids concert, and fought it, and won. I am going to hear that bass line in my sleep.",
+    "tell": "Their songs get stuck in your head: they can confuse you, and a few can put you to sleep, stun or blind you for a moment. Keep your distance from the singers, or end it fast. Holy power and fire hurt them most."
+  },
+  "dance": {
+    "beats_per_shape": 4,
+    "strike_every": 2,
+    "keep_off": 2,
+    "notice_range": 30,
+    "shape_order": [
+      "v",
+      "two_rows",
+      "diamond",
+      "column",
+      "line"
+    ],
+    "shapes": {
+      "v": [
+        [
+          0,
+          1
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          -2,
+          -1
+        ],
+        [
+          2,
+          -1
+        ],
+        [
+          -3,
+          -2
+        ],
+        [
+          3,
+          -2
+        ],
+        [
+          0,
+          -1
+        ]
+      ],
+      "two_rows": [
+        [
+          0,
+          0
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          -2,
+          -1
+        ],
+        [
+          -1,
+          -1
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          0,
+          -1
+        ]
+      ],
+      "diamond": [
+        [
+          0,
+          2
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          -2,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          -1,
+          -1
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "column": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          -2
+        ],
+        [
+          0,
+          -3
+        ],
+        [
+          0,
+          -4
+        ],
+        [
+          0,
+          -5
+        ]
+      ],
+      "line": [
+        [
+          0,
+          0
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          -2,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          -3,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          -4,
+          0
+        ]
+      ]
+    },
+    "shape_lines": {
+      "v": "The band snaps into a V, Bang Chan at its point.",
+      "two_rows": "The band splits into two neat rows.",
+      "diamond": "The band spins into a diamond round I.N.",
+      "column": "The band falls into a single file, one behind another, every head bobbing.",
+      "line": "The band spreads out in one long line across the stage."
+    },
+    "shape_line_chance": 0.5,
+    "beat_tell": "They move to the beat, and strike only on the downbeat.",
+    "line_chance": 0.3,
+    "member_line_share": 0.6
+  },
+  "shouts": {
+    "band": [
+      "STAY! STAY forever! No, really. STAY. We locked the doors.",
+      "Five, six, seven, EIGHT!",
+      "Make some NOISE, dungeon!",
+      "Hands up! Hands UP! ...his fell off. Hand up!",
+      "This one's called \"Maniac\"! Because that's you, swinging at us!",
+      "Next song: \"Thunderous\"! Like our footsteps! On you!",
+      "We're Stray Kids! The stray part is old news. The zombie part is new.",
+      "Is this the encore? It's always the encore. It will always be the encore.",
+      "Fan chant! Everybody! You're not chanting! Why aren't you chanting?",
+      "\"Back Door\"! There is one. We're standing in front of it.",
+      "Welcome to \"Miroh\"! That means maze! You're in it!",
+      "\"S-Class\"! That's our rank. Yours is... D, maybe."
+    ],
+    "bang_chan": [
+      "Has everyone eaten? Brains count.",
+      "Okay, okay, one more take. From the top!",
+      "I'll sleep when I'm dead. ...Huh.",
+      "You're doing amazing! Keep fighting! Not us, though!"
+    ],
+    "lee_know": [
+      "Don't touch my cat.",
+      "Again. That was sloppy. Again.",
+      "My cats dance better than you.",
+      "Soonie? Doongie? Dori? ...this is the wrong dungeon."
+    ],
+    "changbin": [
+      "I am DARK. I am SCARY. ...Do you like my bunny keyring?",
+      "Every day is arm day!",
+      "Look at these arms. LOOK at them. They're falling off, but LOOK."
+    ],
+    "hyunjin": [
+      "*flips his hair, slowly, so you notice*",
+      "*whistles a tune you will hum for a week*",
+      "Hold still. I want to paint you. Mostly in grave-green.",
+      "Is the wind machine on? Somebody turn on the wind machine."
+    ],
+    "han": [
+      "Twohundredwordsasecondandyouonlycaughtfourofthem!",
+      "*mumbles through a mouthful of snacks: \"Mmf-mmf-MMF!\"*",
+      "Quokka mode: ON!"
+    ],
+    "felix": [
+      "*says, in a voice like an earthquake: \"hello.\"*",
+      "I baked brownies! They're a little bit undead.",
+      "HI-YAH! ...did that hurt? No? Okay. HI-YAH!",
+      "Sixty-three medals! SIXTY-THREE!"
+    ],
+    "seungmin": [
+      "Strike three. You're out. Of hit points.",
+      "That outfit? Bold choice.",
+      "I could do this all day. I HAVE done this all day. We've been dead a while."
+    ],
+    "i_n": [
+      "Stop protecting me, I'm an ADULT zombie!",
+      "*warbles an old trot ballad like a grandma at church*",
+      "Hyung, I can fight my own battles! ...Hyung?"
+    ]
+  },
+  "distracted": {
+    "lee_know": {
+      "chance": 0.35,
+      "lines": [
+        "Zombie Lee Know stops to scratch his cat behind the ears. You are less important than the cat.",
+        "Zombie Lee Know turns his back on you to check that the cat is comfortable.",
+        "Zombie Lee Know holds the cat up to admire it. It ignores him. He looks delighted."
+      ]
+    }
+  },
+  "observe": {
+    "bang_chan": "The rings under his eyes are older than the zombie thing. He keeps glancing back to check that the other seven are all right.",
+    "lee_know": "He holds the cat between you and him, and you are not sure which of them he is protecting.",
+    "changbin": "Dressed head to toe in black and flexing at nobody. Every few seconds the scary face slips and something adorable leaks out.",
+    "hyunjin": "He keeps flicking his hair back over one shoulder, slowly, so that you notice. You notice.",
+    "han": "His cheeks are puffed out round as a quokka's. Something crunches in there when he raps.",
+    "felix": "He is about the size of a large houseplant, and he is giving you his scariest martial-arts stance. It is adorable.",
+    "seungmin": "A puppyish face and a pitcher's arm. He is looking you up and down, and he clearly has notes on your outfit.",
+    "i_n": "The youngest. The other seven keep shuffling round so that he is always in the middle, and he keeps rolling his eyes about it."
+  },
+  "disintegrate": "{name} crumbles into glitter and grave-dust. Nothing is left of him.",
+  "last_falls": "The last of the band crumbles away. In the drifting glitter, something flutters to the floor.",
+  "photo_drop": "An Autographed Stray Kids Photo lies where the band last stood.",
+  "stars": {
+    "dance_turns": 6,
+    "watch_radius": 6,
+    "watch_turns": 2,
+    "ring": [
+      [
+        0,
+        -2
+      ],
+      [
+        1,
+        -2
+      ],
+      [
+        2,
+        -2
+      ],
+      [
+        2,
+        -1
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        -1,
+        2
+      ],
+      [
+        -2,
+        2
+      ],
+      [
+        -2,
+        1
+      ],
+      [
+        -2,
+        0
+      ],
+      [
+        -2,
+        -1
+      ],
+      [
+        -2,
+        -2
+      ],
+      [
+        -1,
+        -2
+      ]
+    ],
+    "summon": [
+      "You read the eight signatures aloud, one by one. The photo crumbles into glitter in your hands...",
+      "...and Stray Kids burst out of it in full stage gear, alive, grinning and glittering. The music starts."
+    ],
+    "watch_line": "{The} stops to watch the show.",
+    "lines": [
+      "Five, six, seven, EIGHT!",
+      "Thank you, dungeon! We love you!",
+      "STAY! This one's for you!",
+      "Everybody clap! Clap! Not you, monsters, you just watch.",
+      "One more time! From the top!",
+      "Hands up! HANDS UP!"
+    ],
+    "bow": "The Stray Kids take a bow, wave, and vanish in a burst of confetti.",
+    "chronicle": "I read the names on a signed photo and the whole of Stray Kids came out of it and put on a show. Every monster in the room stopped to watch. So did I, a little.",
+    "symbol": "@",
+    "color": [
+      255,
+      215,
+      120
+    ],
+    "observe": "He is in the middle of a show and having the time of his life. He will be gone in a few turns."
+  }
+}

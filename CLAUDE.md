@@ -76,6 +76,8 @@ src/
   sleepers.py         - Zoo, graveyard and barracks sleepers stir at footsteps and gold taken
   theft.py            - Thieves that really steal, and give it back on death
   black_knight.py     - The Black Knight bridge easter egg (floors 15-19)
+  stray_kids.py       - The Stray Kids easter egg (floors 8-12): the zombie band's dance, the stage, the stars
+  game_stray_kids.py  - StrayKidsMixin: the idol, the Zombie Stage trip, the beat, the photo's show
   emberpup_encounter.py - The abandoned Emberpup, every run (floors 3-8), earned by coming back
   setne_tomb.py       - Setne's Tomb and the Book of Thoth (floors 45-65)
 

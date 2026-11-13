@@ -312,6 +312,8 @@ def save_game(game) -> bool:
             '_emberpup': getattr(game, '_emberpup', None),
             # The Black Knight: his floor, placed yet, the draw, his sword.
             '_black_knight': getattr(game, '_black_knight', None),
+            # The Stray Kids: the idol's floor, touched yet, the way back, the photo.
+            '_stray_kids': getattr(game, '_stray_kids', None),
             # Setne's Tomb: its floor, placed yet, sealed for good, the room.
             '_setne': getattr(game, '_setne', None),
             # Dungeon Alive: the domains announced, and the run state after.

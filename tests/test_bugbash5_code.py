@@ -21,11 +21,15 @@ def test_the_cow_level_is_defined_once():
     import game_road
     import road
 
-    for mod in (escort_system, game_road, road):
-        assert mod.COW_LEVEL is boss_levels.COW_LEVEL
-    defs = [n for n in os.listdir(os.path.join(ROOT, 'src')) if n.endswith('.py')
-            and re.search(r'^COW_LEVEL\s*=', _src(n), re.M)]
-    assert defs == ['boss_levels.py']
+    # The escorts and the Road ask about every side floor (the Cow Level,
+    # the Zombie Stage) through the one helper (2026-11-13).
+    for mod in (escort_system, game_road):
+        assert mod.is_side_floor is boss_levels.is_side_floor
+    assert road.COW_LEVEL is boss_levels.COW_LEVEL
+    for name in ('COW_LEVEL', 'STRAY_KIDS_STAGE', 'SIDE_FLOORS'):
+        defs = [n for n in os.listdir(os.path.join(ROOT, 'src')) if n.endswith('.py')
+                and re.search(rf'^{name}\s*=', _src(n), re.M)]
+        assert defs == ['boss_levels.py'], name
 
 
 def test_a_road_band_is_a_karma_block():

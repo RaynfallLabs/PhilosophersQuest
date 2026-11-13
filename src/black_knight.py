@@ -604,6 +604,9 @@ class BlackKnightMixin:
     # ---- the floating line -------------------------------------------------------
 
     def _draw_black_knight_speech(self):
+        """The floating line over a speaker: the Black Knight, and the
+        Stray Kids, who speak through the same bubble
+        (game_stray_kids._stray_kids_say)."""
         sp = getattr(self, '_bk_speech', None)
         if not sp:
             return

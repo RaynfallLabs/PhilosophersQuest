@@ -77,6 +77,8 @@ from game_input import InputMixin
 from game_encounters import EncountersMixin
 from emberpup_encounter import EmberpupMixin, new_run_state as _emberpup_new_run
 from black_knight import BlackKnightMixin, new_run_state as _black_knight_new_run
+from game_stray_kids import StrayKidsMixin
+from stray_kids import new_run_state as _stray_kids_new_run, old_save_state as _stray_kids_old_save
 from setne_tomb import SetneMixin, new_run_state as _setne_new_run
 from game_magic import MagicMixin
 from game_combat import CombatMixin
@@ -219,7 +221,7 @@ DEEP_SLEEP = 10 ** 6           # a zoo, graveyard or barracks sleeper: until wok
 
 
 class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMixin, EncountersMixin,
-           EmberpupMixin, BlackKnightMixin, ItemActionsMixin, RoadMixin, EscortMixin,
+           EmberpupMixin, BlackKnightMixin, StrayKidsMixin, ItemActionsMixin, RoadMixin, EscortMixin,
            SetneMixin, TraderMixin, PurseMixin, FamilyMixin, SeekerMixin, PopupMixin,
            HazardsMixin, LoreFixturesMixin):
     # FANTASY: Grimoire font set -- larger for readability. Read through the
@@ -377,6 +379,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # off the shared random stream, like the Emberpup.
         self._black_knight: dict = _black_knight_new_run()
         self._bk_speech = None                # his floating line, while it shows
+        # The Stray Kids idol (every run, one floor of 8-12) and the Zombie
+        # Stage it leads to: {'floor', 'spawned', 'touched', 'return_floor',
+        # 'outcome', 'photo_dropped'} (stray_kids.py).
+        self._stray_kids: dict = _stray_kids_new_run()
         # Setne's Tomb (one floor of 45-65, every run): {'floor', 'spawned',
         # 'sealed', 'room'}. The Book of Thoth's only source (setne_tomb.py).
         self._setne: dict = _setne_new_run()
@@ -1079,6 +1085,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self._black_knight = dict(_bk) if isinstance(_bk, dict) else {
             'floor': None, 'spawned': False, 'outcome': None, 'sword_dropped': False}
         self._bk_speech = None
+        # The Stray Kids: a save from before them keeps a run without them.
+        _sk = state.get('_stray_kids')
+        self._stray_kids = dict(_sk) if isinstance(_sk, dict) else _stray_kids_old_save()
         # Setne's Tomb: a save from before it keeps a run without it.
         _st = state.get('_setne')
         self._setne = dict(_st) if isinstance(_st, dict) else {
@@ -1719,7 +1728,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
 
         ``via`` is how the hero left: 'stairs' (the default), 'warp' (a level
         warp or the psychopomp step), 'potion' (gain level), 'trapdoor' or
-        'cow' (into or out of the Cow Level). Only a stair carries an escort;
+        'cow' (into or out of the Cow Level) or 'stray_kids' (the Zombie
+        Stage). Only a stair carries an escort;
         only a stair descent counts down its floors (escort_system.py)."""
         # A hit noted on the floor being left is not said on the next one.
         import affinity as _affinity
@@ -1738,11 +1748,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self._l100_altars_tried = set()
         _from_level = self.dungeon_level          # (the staircase taken, for Cerberus)
         # Notify quirk system before level change (fast-exit check)
-        # New depth: a floor deeper than any reached. The Cow Level (999) is a
-        # side trip, not depth: counting it recharged every once-a-floor ward
-        # and charge, and kept them recharged on the way back.
-        from boss_levels import COW_LEVEL as _COW_LEVEL_D
-        _new_depth = (new_level != _COW_LEVEL_D
+        # New depth: a floor deeper than any reached. A side floor (the Cow
+        # Level, 999; the Zombie Stage, 997) is a side trip, not depth:
+        # counting the farm recharged every once-a-floor ward and charge, and
+        # kept them recharged on the way back.
+        from boss_levels import is_side_floor as _is_side_floor
+        _new_depth = (not _is_side_floor(new_level)
                       and new_level > self.player.deepest_floor_reached)
         qs = getattr(self, 'quirk_system', None)
         if qs:
@@ -1811,15 +1822,14 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # dungeon's lesson, trophies, procs, omens, the family lines). It was
         # said after a dozen of them: "Wisdom +1... POWER UNLOCKED... You
         # descend to level 3." (3.3.3 play, the lore audit).
-        from boss_levels import COW_LEVEL as _COW_LEVEL
-        if new_level == _COW_LEVEL:
+        if _is_side_floor(new_level):
             pass        # the opening floor is the announcement, never "level 999"
         elif enter_from_top:
             self.add_message(f"You descend to level {new_level}.", 'info')
         else:
             self.add_message(f"You ascend to level {new_level}.", 'info')
         # Track deepest floor reached for the cooking softcap (rises with descent)
-        # The Cow Level (999) is a side trip, not depth: counting it lifted
+        # A side floor is a side trip, not depth: counting the farm lifted
         # both cooking softcaps to their floor-100 values and stopped the
         # per-descent trophies from ever paying again.
         _was_deepest = self.player.deepest_floor_reached
@@ -1828,8 +1838,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # used to recharge every death ward, absorb, free cast and escape:
         # six lethal blows in a row survived on one charge each.
         _held_charges = None if _new_depth else self._once_a_floor_state()
-        from boss_levels import COW_LEVEL as _COW_LEVEL
-        if new_level != _COW_LEVEL:
+        if not _is_side_floor(new_level):
             self.player.deepest_floor_reached = max(
                 self.player.deepest_floor_reached, new_level
             )
@@ -1899,8 +1908,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     if not (isinstance(g, (MysteryAltar, MysteryKeyItem))
                             and getattr(g, 'mystery_id', None) in _faced)]
             # Oaths, pending rewards and callbacks, the Road's slot. Never
-            # on the Cow Level: it is a side trip, not depth (game_road.py).
-            if new_level != _COW_LEVEL:
+            # on a side floor: it is a side trip, not depth (game_road.py).
+            if not _is_side_floor(new_level):
                 self._road_arrive(new_level)
             self._maybe_spawn_trigger_item(new_level)
             self._maybe_spawn_npc(new_level)
@@ -1910,6 +1919,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self._maybe_spawn_cow(new_level)
             self._maybe_spawn_emberpup(new_level)
             self._maybe_spawn_black_knight(new_level)
+            self._maybe_spawn_stray_kids_idol(new_level)
             self._maybe_spawn_setne_tomb(new_level)
             self._maybe_place_duck_of_doom(new_level)
             self._maybe_spawn_trader(new_level)      # last: it keeps clear of the rest
@@ -2905,6 +2915,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.visible = calculate_fov(
             self.dungeon, self.player.x, self.player.y, _sight
         )
+        # The Zombie Stage is lit: its hall is seen to the far wall.
+        self._stray_kids_light_the_stage(_sight)
         self._sync_unseen()
         # Chain-equip passive: four_faces_360_fov (Crown of Brahma T4).
         # Add all tiles within radius PER*1.5 (ignoring wall occlusion) to FOV.
@@ -3361,6 +3373,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             if getattr(target, 'is_black_knight', False) and target.defeated:
                 self._black_knight_step_past(target)
                 return
+            # A Stray Kid in a show: step round him (the show never boxes you in)
+            if getattr(target, 'is_sk_star', False):
+                self._stray_kids_star_step_past(target)
+                return
             # The abandoned Emberpup on its rock: its own screen
             if getattr(target, '_is_abandoned_emberpup', False):
                 self._start_emberpup_encounter(target)
@@ -3416,6 +3432,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             # A statue, a bunk, a stalagmite: it stands in the way, and
             # bumping it costs nothing (src/decor.py).
             import decor
+            # The Stray Kids idol: what it is, then touch it (game_stray_kids.py).
+            if self._stray_kids_idol_bump(nx, ny):
+                return
             _hint = self._lore_fixture_hint(nx, ny)
             if _hint:
                 self.add_message(_hint, 'info')
@@ -3802,14 +3821,14 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     # ------------------------------------------------------------------
 
     def _descend_stairs(self):
-        from boss_levels import COW_LEVEL
+        from boss_levels import is_side_floor
         px, py = self.player.x, self.player.y
         if self.dungeon.tiles[py][px] != STAIRS_DOWN:
             self.add_message("There are no stairs leading down here.", 'info')
             return
-        # Cow level portal: return to the dungeon
-        if self.dungeon_level == COW_LEVEL:
-            self._exit_cow_level()
+        # A side floor's portal (the farm's, the stage door): back to the dungeon
+        if is_side_floor(self.dungeon_level):
+            self._leave_side_floor()
             return
         # A floor may bar its stair while its guardian lives (the Labyrinth).
         _guard = getattr(self.dungeon, 'stairs_guardian', None)
@@ -4134,11 +4153,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     def _on_game_over(self, leave_bones: bool = True, victory: bool = False):
         """Delete save file on any game-ending event (permadeath).
         A character who DIED leaves a bones file so a ghost can haunt a
-        future run; one who fled, won, or fell on the Cow Level does not.
+        future run; one who fled, won, or fell on a side floor (the Cow
+        Level, the Zombie Stage) does not.
         The high score is written here too, once, the moment the run ends."""
         from save_system import delete_save
         from bones import save_bones
-        from boss_levels import COW_LEVEL as _COW_LEVEL
+        from boss_levels import is_side_floor
         # Nothing saves this run again: closing the window from the ending
         # popup (the state is the popup's, not "dead") used to write the save
         # back, so a fled or victorious hero could be resumed.
@@ -4147,7 +4167,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # (Floor 100 never loads bones: a file written there only held one
         # of the three bones slots until newer deaths pushed it out.)
         if leave_bones and _reason in ('died', 'starved') \
-                and self.dungeon_level not in (_COW_LEVEL, 100):
+                and not is_side_floor(self.dungeon_level) and self.dungeon_level != 100:
             save_bones(self.player_name, self.dungeon_level, _reason,
                        self.player, getattr(self, 'player_gold', 0))
         delete_save(self.player_name)
@@ -5117,6 +5137,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self._tick_hp_regen()
         self._note_burden()
         self._black_knight_tick(end=True)  # his shouts; the next action may take a limb
+        self._stray_kids_tick()            # the Stray Kids: the dance, the shouts, a show
         self._family_drain()               # wards and techniques the monsters' turns set off
         # Hits the world's turn dealt (Boots of Thor, Shep's rescue, a pet's
         # or a trap's typed blow): said now, not after the hero's next action.
@@ -5172,6 +5193,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     def _maybe_wander_spawn(self):  # caps: WANDER_HUNTING_CAP / wander_alive_cap
         """Periodically spawn a wandering monster to keep pressure on the player."""
         import random as _rng
+        # Nothing wanders onto a side floor: its number (999, 997) drew from
+        # the floor-100 pool. Only the farm's herd, above the alive cap, kept
+        # deep wanderers off it until the bovines were thinned out.
+        from boss_levels import is_side_floor
+        if is_side_floor(self.dungeon_level):
+            return
         # Every 22 turns to floor 50, then rarer: 40 turns at floor 100
         # (floor_curve.wander_interval).
         interval = wander_interval(self.dungeon_level)

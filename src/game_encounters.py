@@ -257,6 +257,23 @@ class EncountersMixin:
             import traceback
             traceback.print_exc()
 
+    def _leave_side_floor(self):
+        """Back from a side floor (the Moo Moo Farm, the Zombie Stage) to the
+        floor its way in stood on: by its portal, a potion of gain level or
+        Hermes' psychopomp step."""
+        from boss_levels import STRAY_KIDS_STAGE
+        if self.dungeon_level == STRAY_KIDS_STAGE:
+            self._exit_stray_kids_stage()
+        else:
+            self._exit_cow_level()
+
+    def _side_floor_return_level(self) -> int:
+        """The floor this side floor was reached from (its loot is that deep)."""
+        from boss_levels import STRAY_KIDS_STAGE
+        if self.dungeon_level == STRAY_KIDS_STAGE:
+            return int(self._stray_kids_state().get('return_floor') or 1)
+        return int(getattr(self, '_cow_return_level', 1) or 1)
+
     def _exit_cow_level(self):
         """Return from Moo Moo Farm to the level where the cow was."""
         self._cow_level_done = True
@@ -2034,8 +2051,8 @@ class EncountersMixin:
             candidates = []
             for item in load_items(cls_name):
                 ml = getattr(item, 'min_level', 1)
-                # (Clamped: the Cow Level is numbered 999, which made every
-                # min_level-999 hero keepsake eligible there.)
+                # (Clamped: a side floor is numbered 999 or 997, which made
+                # every min_level-999 hero keepsake eligible on the farm.)
                 _lvl = self.dungeon_level if 1 <= self.dungeon_level <= 100 else lvl
                 from items import unique_available
                 if (ml <= _lvl and ml < 9999 and is_random_loot(item)
@@ -2315,11 +2332,11 @@ class EncountersMixin:
 
     def _encounter_expel_up(self):
         """The floor gives the hero up to the floor above: a floor already
-        visited, never the Cow Level. From floor 1 there is nowhere up, so
+        visited, never a side floor. From floor 1 there is nowhere up, so
         nothing happens."""
-        from boss_levels import COW_LEVEL
+        from boss_levels import is_side_floor
         cur = int(getattr(self, 'dungeon_level', 1) or 1)
-        if cur <= 1 or cur == COW_LEVEL:
+        if cur <= 1 or is_side_floor(cur):
             return
         target = cur - 1
         try:

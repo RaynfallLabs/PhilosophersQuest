@@ -367,11 +367,11 @@ class MenuMixin:
         # Handle special signal: gain_level
         if '_gain_level' in messages:
             messages.remove('_gain_level')
-            from boss_levels import COW_LEVEL as _COW
-            if self.dungeon_level == _COW:
+            from boss_levels import is_side_floor as _side
+            if _side(self.dungeon_level):
                 # "One floor up" from the Cow Level (numbered 999) was floor
-                # 998, an empty generated dungeon. Leave the pasture instead.
-                self._exit_cow_level()
+                # 998, an empty generated dungeon. Leave the side floor instead.
+                self._leave_side_floor()
             elif self.dungeon_level > 1:
                 self._change_level(self.dungeon_level - 1, enter_from_top=False, via='potion')
                 self.add_message("The potion propels you upward!", 'success')

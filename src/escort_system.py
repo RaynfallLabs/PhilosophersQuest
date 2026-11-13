@@ -16,8 +16,8 @@ journal line, but it is still a loss: 0 karma either way, as for any escort.
   escorts on this floor. Every spawn landing, teleport landing, monster move
   and settle check that must count bodies uses it.
 * Only a stair descent counts down ``floors_left``. An up stair carries the
-  escort without counting. The Cow Level suspends every escort where it
-  stands; coming back unsuspends it in place.
+  escort without counting. A side floor (the Cow Level, the Zombie Stage)
+  suspends every escort where it stands; coming back unsuspends it in place.
 * HP never regenerates (a frightened person does not heal mid-dungeon); a
   thrown potion can still reach them.
 
@@ -29,7 +29,7 @@ import copy
 
 from pet_system import Pet
 
-from boss_levels import COW_LEVEL
+from boss_levels import is_side_floor
 STRAGGLE_EXTRA = 6         # beyond the leash
 STRAGGLE_TURNS = 10        # this long, and they stop and wait
 
@@ -374,12 +374,12 @@ class EscortMixin:
         escorts that come along, and escorts whose last stair this was
         (their on_arrive fires after arrival)."""
         carried, arrived = [], []
-        if new_level == COW_LEVEL:
+        if is_side_floor(new_level):
             for e in self._escort_list():
                 if e.alive and e.floor == old_level:
                     e.suspended = True          # they wait in the pasture's shadow
             return carried, arrived
-        if old_level == COW_LEVEL:
+        if is_side_floor(old_level):
             for e in self._escort_list():
                 if e.alive and e.suspended and e.floor == new_level:
                     e.suspended = False

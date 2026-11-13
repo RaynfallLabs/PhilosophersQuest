@@ -2740,6 +2740,11 @@ class MagicMixin:
             self.add_message(
                 f"Healing light washes over you -- {amount} HP restored!", 'success')
 
+        elif effect == 'summon_stray_kids':
+            # The Autographed Stray Kids Photo, spent: the band, alive, puts
+            # on a short show round the hero (game_stray_kids.py).
+            self._stray_kids_summon()
+
         elif effect == 'boss_reward':
             # The code is the Seeker's own for this boss's achievement (one
             # system for every code, seeker_codes.py). A scroll from an old

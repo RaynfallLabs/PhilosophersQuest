@@ -34694,5 +34694,532 @@
     "quest_only": true,
     "lore": "Morrow is an acolyte of the Cult of the Locust who was caught in a captured priest's robe and chained beside the priest. He knows the prayers well enough to fool a stranger who does not know them better. He has been free for a while now, and he has been saving one of those prayers for whoever let him out.",
     "thac0_lore": 5
+  },
+  "sk_zombie_bang_chan": {
+    "name": "Zombie Bang Chan",
+    "symbol": "Z",
+    "color": [
+      60,
+      60,
+      70
+    ],
+    "hp": "11d8",
+    "speed": 10,
+    "ai_pattern": "aggressive",
+    "thac0": 16,
+    "peak_floor": 10,
+    "spread": 2,
+    "peak_weight": 0.0,
+    "min_level": 8,
+    "attacks": [
+      {
+        "name": "Four A.M. Demo Song",
+        "damage": "1d3",
+        "type": "magic",
+        "delivery": "voice",
+        "effect": "sleeping",
+        "effect_chance": 0.15,
+        "effect_duration": 2,
+        "quip": "It is forty minutes long, he wants notes, and you doze off halfway."
+      },
+      {
+        "name": "Encouraging Shoulder Slap",
+        "damage": "1d4",
+        "type": "blunt",
+        "delivery": "blow",
+        "quip": "You feel strangely motivated. Also hit."
+      }
+    ],
+    "resistances": [
+      "poison",
+      "cold"
+    ],
+    "weaknesses": [
+      "holy",
+      "fire"
+    ],
+    "tags": [
+      "undead",
+      "humanoid"
+    ],
+    "family": "restless_dead",
+    "harvest_tier": 0,
+    "treasure": {
+      "gold": [
+        0,
+        0
+      ],
+      "item_chance": 0.0,
+      "item_tier": 1,
+      "purse": "kept"
+    },
+    "lore": "The leader of Stray Kids, the band's main producer, and the man behind more than a hundred of their songs. For years he hosted livestreams called Chan's Room, and for years fans told him to go to bed. Being dead has not changed his schedule. He still has not slept, he still has one more idea for the bridge, and he would love your honest opinion on it. Right now. At four in the morning.",
+    "thac0_lore": 16,
+    "frequency": 0,
+    "spawn_chance": 0,
+    "proper_noun": true,
+    "kill_chronicle": "Zombie Bang Chan finally lay down. I think it was the first sleep he has had in years."
+  },
+  "sk_zombie_lee_know": {
+    "name": "Zombie Lee Know",
+    "symbol": "Z",
+    "color": [
+      200,
+      170,
+      120
+    ],
+    "hp": "10d8",
+    "speed": 10,
+    "ai_pattern": "aggressive",
+    "thac0": 16,
+    "peak_floor": 10,
+    "spread": 2,
+    "peak_weight": 0.0,
+    "min_level": 8,
+    "attacks": [
+      {
+        "name": "Cat-Scratch Handoff",
+        "damage": "1d3",
+        "type": "slash",
+        "delivery": "blow",
+        "quip": "Strictly speaking, the cat did that. He looks very proud of the cat."
+      },
+      {
+        "name": "Dance-Teacher Correction",
+        "damage": "1d2",
+        "type": "magic",
+        "delivery": "blow",
+        "effect": "confused",
+        "effect_chance": 0.2,
+        "effect_duration": 3,
+        "quip": "\"Left foot. LEFT.\" You are no longer sure which one that is."
+      }
+    ],
+    "resistances": [
+      "poison",
+      "cold"
+    ],
+    "weaknesses": [
+      "holy",
+      "fire"
+    ],
+    "tags": [
+      "undead",
+      "humanoid"
+    ],
+    "family": "restless_dead",
+    "harvest_tier": 0,
+    "treasure": {
+      "gold": [
+        0,
+        0
+      ],
+      "item_chance": 0.0,
+      "item_tier": 1,
+      "purse": "kept"
+    },
+    "lore": "The band's main dancer, who toured as a backup dancer for BTS before he joined Stray Kids. He has three cats, Soonie, Doongie and Dori, and he has never pretended to like anyone more than them. Death took his pulse but not his cat. He will fight you, but only when the cat does not need him, and the cat almost always needs him.",
+    "thac0_lore": 16,
+    "frequency": 0,
+    "spawn_chance": 0,
+    "proper_noun": true,
+    "kill_chronicle": "Zombie Lee Know went down. The cat walked off without a backward look. Like owner, like cat."
+  },
+  "sk_zombie_changbin": {
+    "name": "Zombie Changbin",
+    "symbol": "Z",
+    "color": [
+      30,
+      30,
+      30
+    ],
+    "hp": "12d8",
+    "speed": 10,
+    "ai_pattern": "aggressive",
+    "thac0": 15,
+    "peak_floor": 10,
+    "spread": 2,
+    "peak_weight": 0.0,
+    "min_level": 8,
+    "attacks": [
+      {
+        "name": "Dumbbell Curl",
+        "damage": "1d4+1",
+        "type": "blunt",
+        "delivery": "blow",
+        "quip": "Arm day. Today, arm day is you."
+      },
+      {
+        "name": "Surprise Aegyo Charm",
+        "damage": "1d2",
+        "type": "magic",
+        "delivery": "voice",
+        "effect": "stunned",
+        "effect_chance": 0.2,
+        "effect_duration": 1,
+        "quip": "A cute face, from the scariest face in the dungeon. It is too much. You just stare."
+      }
+    ],
+    "resistances": [
+      "poison",
+      "cold"
+    ],
+    "weaknesses": [
+      "holy",
+      "fire"
+    ],
+    "tags": [
+      "undead",
+      "humanoid"
+    ],
+    "family": "restless_dead",
+    "harvest_tier": 0,
+    "treasure": {
+      "gold": [
+        0,
+        0
+      ],
+      "item_chance": 0.0,
+      "item_tier": 1,
+      "purse": "kept"
+    },
+    "lore": "One third of 3RACHA, the band's own production team, and a rapper who once went by SpearB. On stage he dresses like a villain, head to toe in black, and he spends his free time at the gym. Off stage he is famously one of the softest of the eight, and nobody has believed the villain act for a second. Even dead, he keeps breaking character to make a cute face.",
+    "thac0_lore": 15,
+    "frequency": 0,
+    "spawn_chance": 0,
+    "proper_noun": true,
+    "kill_chronicle": "Zombie Changbin dropped his dumbbell, then himself. He made a cute face on the way down. I nearly felt bad."
+  },
+  "sk_zombie_hyunjin": {
+    "name": "Zombie Hyunjin",
+    "symbol": "Z",
+    "color": [
+      40,
+      40,
+      60
+    ],
+    "hp": "10d8",
+    "speed": 10,
+    "ai_pattern": "aggressive",
+    "thac0": 16,
+    "peak_floor": 10,
+    "spread": 2,
+    "peak_weight": 0.0,
+    "min_level": 8,
+    "attacks": [
+      {
+        "name": "Hair Flip",
+        "damage": "1d2",
+        "type": "physical",
+        "delivery": "blow",
+        "effect": "blinded",
+        "effect_chance": 0.25,
+        "effect_duration": 2,
+        "quip": "A curtain of long black hair whips across your eyes. Some of it is grave-dirt."
+      },
+      {
+        "name": "Whistle Song",
+        "damage": "1d2",
+        "type": "magic",
+        "delivery": "voice",
+        "effect": "confused",
+        "effect_chance": 0.2,
+        "effect_duration": 3,
+        "quip": "It is the catchiest tune you have ever heard, and now it lives in your head."
+      }
+    ],
+    "resistances": [
+      "poison",
+      "cold"
+    ],
+    "weaknesses": [
+      "holy",
+      "fire"
+    ],
+    "tags": [
+      "undead",
+      "humanoid"
+    ],
+    "family": "restless_dead",
+    "harvest_tier": 0,
+    "treasure": {
+      "gold": [
+        0,
+        0
+      ],
+      "item_chance": 0.0,
+      "item_tier": 1,
+      "purse": "kept"
+    },
+    "lore": "Dancer, painter and the band's resident drama. He brought long hair back into fashion among the idols, paints well enough that Hugh Jackman praised him in public, and whistles on many of the band's songs. As a zombie he has kept all three habits. The hair flips are worse now: there is graveyard in them.",
+    "thac0_lore": 16,
+    "frequency": 0,
+    "spawn_chance": 0,
+    "proper_noun": true,
+    "kill_chronicle": "Zombie Hyunjin collapsed with one last hair flip. Even falling over, he made it look dramatic."
+  },
+  "sk_zombie_han": {
+    "name": "Zombie Han",
+    "symbol": "Z",
+    "color": [
+      230,
+      200,
+      60
+    ],
+    "hp": "9d8",
+    "speed": 12,
+    "ai_pattern": "aggressive",
+    "thac0": 16,
+    "peak_floor": 10,
+    "spread": 2,
+    "peak_weight": 0.0,
+    "min_level": 8,
+    "attacks": [
+      {
+        "name": "Speed-Rap Song",
+        "damage": "1d3",
+        "type": "magic",
+        "delivery": "voice",
+        "effect": "confused",
+        "effect_chance": 0.3,
+        "effect_duration": 3,
+        "quip": "Two hundred words a second. You catch one \"yeah\", and your head spins."
+      },
+      {
+        "name": "Snack-Cheek Spray",
+        "damage": "1d2",
+        "type": "physical",
+        "delivery": "breath",
+        "quip": "Crumbs. He has sprayed you with crumbs."
+      }
+    ],
+    "resistances": [
+      "poison",
+      "cold"
+    ],
+    "weaknesses": [
+      "holy",
+      "fire"
+    ],
+    "tags": [
+      "undead",
+      "humanoid"
+    ],
+    "family": "restless_dead",
+    "harvest_tier": 0,
+    "treasure": {
+      "gold": [
+        0,
+        0
+      ],
+      "item_chance": 0.0,
+      "item_tier": 1,
+      "purse": "kept"
+    },
+    "lore": "Rapper, songwriter and the third member of 3RACHA, ranked among the fastest rappers in Korea. Fans call him the quokka, for the round cheeks he likes to stuff full of snacks. Dead, he raps faster than ever, because he no longer needs to breathe. Nobody on Earth has ever caught more than one word in four.",
+    "thac0_lore": 16,
+    "frequency": 0,
+    "spawn_chance": 0,
+    "proper_noun": true,
+    "kill_chronicle": "Zombie Han finished his verse, all of it, very fast, then fell over. I still don't know what he said."
+  },
+  "sk_zombie_felix": {
+    "name": "Zombie Felix",
+    "symbol": "Z",
+    "color": [
+      235,
+      230,
+      210
+    ],
+    "hp": "8d8",
+    "speed": 10,
+    "ai_pattern": "aggressive",
+    "thac0": 15,
+    "peak_floor": 10,
+    "spread": 2,
+    "peak_weight": 0.0,
+    "min_level": 8,
+    "attacks": [
+      {
+        "name": "Black-Belt Roundhouse",
+        "damage": "1d2",
+        "type": "blunt",
+        "delivery": "blow",
+        "quip": "A perfect, textbook kick. It barely registers. He is very smol."
+      },
+      {
+        "name": "Unexpectedly Deep Roar",
+        "damage": "1d2",
+        "type": "magic",
+        "delivery": "voice",
+        "effect": "stunned",
+        "effect_chance": 0.25,
+        "effect_duration": 1,
+        "quip": "From that tiny body comes a voice like a cave troll's. You freeze in shock."
+      }
+    ],
+    "resistances": [
+      "poison",
+      "cold"
+    ],
+    "weaknesses": [
+      "holy",
+      "fire"
+    ],
+    "tags": [
+      "undead",
+      "humanoid"
+    ],
+    "family": "restless_dead",
+    "harvest_tier": 0,
+    "treasure": {
+      "gold": [
+        0,
+        0
+      ],
+      "item_chance": 0.0,
+      "item_tier": 1,
+      "purse": "kept"
+    },
+    "lore": "A dancer famous for two things that do not seem to fit together: a voice so deep it rattles the floor, and a sunny little freckled face. He trained in taekwondo for twelve years and earned a black belt and, reportedly, sixty-three medals. Sadly, he is so smol that a black-belt roundhouse from him lands like a moth bumping into a lamp. He also bakes brownies for the others. Do not ask what is in the undead ones.",
+    "thac0_lore": 15,
+    "frequency": 0,
+    "spawn_chance": 0,
+    "proper_noun": true,
+    "kill_chronicle": "Zombie Felix kicked me about a dozen times. I felt one of them. Then he fell over, still smiling. Lovely boy."
+  },
+  "sk_zombie_seungmin": {
+    "name": "Zombie Seungmin",
+    "symbol": "Z",
+    "color": [
+      220,
+      210,
+      180
+    ],
+    "hp": "10d8",
+    "speed": 10,
+    "ai_pattern": "ranged",
+    "thac0": 16,
+    "peak_floor": 10,
+    "spread": 2,
+    "peak_weight": 0.0,
+    "min_level": 8,
+    "attacks": [
+      {
+        "name": "Fastball",
+        "damage": "1d4",
+        "type": "blunt",
+        "delivery": "ranged",
+        "ranged": true,
+        "quip": "Strike one."
+      },
+      {
+        "name": "Brutally Honest Whisper",
+        "damage": "1d2",
+        "type": "magic",
+        "delivery": "voice",
+        "effect": "weakened",
+        "effect_chance": 0.2,
+        "effect_duration": 2,
+        "quip": "He says something devastating about your outfit. Your confidence shrinks, and so do your swings."
+      }
+    ],
+    "resistances": [
+      "poison",
+      "cold"
+    ],
+    "weaknesses": [
+      "holy",
+      "fire"
+    ],
+    "tags": [
+      "undead",
+      "humanoid"
+    ],
+    "family": "restless_dead",
+    "harvest_tier": 0,
+    "treasure": {
+      "gold": [
+        0,
+        0
+      ],
+      "item_chance": 0.0,
+      "item_tier": 1,
+      "purse": "kept"
+    },
+    "lore": "The band's main vocalist, who wanted to be a baseball player when he was a boy and pitched right-handed. He got his moment in 2024, throwing the first pitch at a Team Korea game against the LA Dodgers. Fans call him the puppy, and he repays them with the most cutting one-liners in the band. Dead, he still pitches, and he still roasts you while he does it.",
+    "thac0_lore": 16,
+    "frequency": 0,
+    "spawn_chance": 0,
+    "proper_noun": true,
+    "kill_chronicle": "Zombie Seungmin fell out of his windup. He said something about my outfit first. It stung more than the fastball."
+  },
+  "sk_zombie_i_n": {
+    "name": "Zombie I.N",
+    "symbol": "Z",
+    "color": [
+      200,
+      60,
+      60
+    ],
+    "hp": "9d8",
+    "speed": 10,
+    "ai_pattern": "aggressive",
+    "thac0": 16,
+    "peak_floor": 10,
+    "spread": 2,
+    "peak_weight": 0.0,
+    "min_level": 8,
+    "attacks": [
+      {
+        "name": "Trot Song",
+        "damage": "1d3",
+        "type": "magic",
+        "delivery": "voice",
+        "effect": "confused",
+        "effect_chance": 0.25,
+        "effect_duration": 3,
+        "quip": "A wobbly old-fashioned ballad, the kind grandmothers love. It will not leave your head."
+      },
+      {
+        "name": "Braces Smile",
+        "damage": "1d2",
+        "type": "physical",
+        "delivery": "blow",
+        "effect": "blinded",
+        "effect_chance": 0.15,
+        "effect_duration": 1,
+        "quip": "A dazzling smile full of braces catches the stage lights."
+      }
+    ],
+    "resistances": [
+      "poison",
+      "cold"
+    ],
+    "weaknesses": [
+      "holy",
+      "fire"
+    ],
+    "tags": [
+      "undead",
+      "humanoid"
+    ],
+    "family": "restless_dead",
+    "harvest_tier": 0,
+    "treasure": {
+      "gold": [
+        0,
+        0
+      ],
+      "item_chance": 0.0,
+      "item_tier": 1,
+      "purse": "kept"
+    },
+    "lore": "The youngest of the eight: the maknae, which in a K-pop band means the other seven will baby him until the end of time. He got his start as a little boy singing trot, an old-fashioned style of Korean song, at church, and it shows. Dead, he is still the baby. The others keep stepping in front of him, and he finds it deeply embarrassing.",
+    "thac0_lore": 16,
+    "frequency": 0,
+    "spawn_chance": 0,
+    "proper_noun": true,
+    "kill_chronicle": "Zombie I.N went down. The others had spent the whole fight trying to stand in front of him."
   }
 }

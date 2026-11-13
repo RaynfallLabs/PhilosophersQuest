@@ -508,7 +508,11 @@ def test_text_fixes_in_the_divine_and_mystery_screens():
     src = open(os.path.join(ROOT, 'src', 'game_render.py'), encoding='utf-8').read()
     assert "_eco.written_gold(m['gold_cost'])" in src                    # DV12
     assert '50,000 Death is dead' in src                                  # DV14
-    assert 'Slain on the Moo Moo Farm.' in src                            # DV15
+    # DV15: the farm (a side floor) is named, never "level 999" (2026-11-13:
+    # by ui.floor_label, which names the Zombie Stage too)
+    assert 'Slain on the {floor_label(self.dungeon_level)}.' in src
+    from ui import floor_label
+    assert floor_label(999) == 'Moo Moo Farm'
     main_src = open(os.path.join(ROOT, 'src', 'main.py'), encoding='utf-8').read()
     assert 'Death climbs the stair behind you.' in main_src               # DV18
     magic = open(os.path.join(ROOT, 'src', 'game_magic.py'), encoding='utf-8').read()

@@ -163,6 +163,8 @@ state = {
     '_road':                  dict,         # the Road (road.py): seed, slots, used tags
     'escorts':                list,         # escort_system.Escort (never in 'pets')
     '_setne':                 dict,         # Setne's Tomb: floor, placed, sealed, room
+    '_stray_kids':            dict,         # the Stray Kids idol and stage: floor, spawned,
+                                            # touched, return_floor, outcome, photo_dropped
 
     # NPC / flavor encounter tracking (the views the spawners read;
     # filled by the Road)
@@ -600,6 +602,7 @@ Examples from the state dict:
 | `_appearance_map` | `{}` | one-cosmetic-per-item |
 | `quiz_stats` | `{}` | per-subject tracking |
 | `_cow_return_level` | 0 | cow level reload fix |
+| `_stray_kids` | `{'floor': None, ...}` (a run without the idol) | Stray Kids easter egg |
 | `_cow_level` | 35 | cow level random floor |
 | `_magic_carrot_spawned` | `False` | unicorn quest |
 | `_recalled_hints` | `[]` | Recall Lore history |

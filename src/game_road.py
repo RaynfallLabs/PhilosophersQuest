@@ -11,9 +11,9 @@
 * The pending queue in the deeds register: callbacks (an encounter placed N
   floors after a deed) and delayed rewards.
 * ``_road_arrive(level)``: runs on the first visit of a floor, before the
-  ``_maybe_spawn_*`` calls. It returns at once on the Cow Level (999), and
-  every "deeper than" test uses ``deepest_floor_reached``, which never
-  counts the Cow Level. In order: open oaths past their due floor lapse;
+  ``_maybe_spawn_*`` calls. It returns at once on a side floor (the Cow
+  Level, 999; the Zombie Stage, 997), and every "deeper than" test uses
+  ``deepest_floor_reached``, which never counts a side floor. In order: open oaths past their due floor lapse;
   pending rewards that are due are delivered; pending callbacks for this
   floor are placed (or carried, or dropped); the Road binds this floor's
   slot; a triggered anchor whose item is not held gives way to its fallback.
@@ -25,7 +25,7 @@ from __future__ import annotations
 
 import copy
 
-from boss_levels import COW_LEVEL
+from boss_levels import is_side_floor
 
 
 def _encounter_by_tag(tag: str):
@@ -409,8 +409,8 @@ class RoadMixin:
 
     def _road_arrive(self, new_level: int):
         """First visit of ``new_level``: oaths, pending rewards, callbacks,
-        the Road slot and the anchor fallback. Never on the Cow Level."""
-        if new_level == COW_LEVEL:
+        the Road slot and the anchor fallback. Never on a side floor."""
+        if is_side_floor(new_level):
             return
         d = int(getattr(self.player, 'deepest_floor_reached', new_level) or new_level)
         import karma as _karma

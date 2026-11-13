@@ -768,6 +768,29 @@
         90
       ],
       "look": "A rotted grey cloth with a black hand, on a pole of bone."
+    },
+    "sk_idol": {
+      "name": "a Stray Kids shrine",
+      "layer": "stand",
+      "blocks": true,
+      "color": [
+        230,
+        190,
+        60
+      ],
+      "look": "A shrine to the K-pop band Stray Kids, of all things: a gaudy gold idol frozen mid-dance, glitter on everything. Eight names are scratched round its feet: Bang Chan, Lee Know, Changbin, Hyunjin, Han, Felix, Seungmin, I.N. A note in glitter pen: TOUCH FOR AN ENCORE.",
+      "spent_look": "A gold statue of a pop idol, gone dull, the glitter fallen off it. The encore is over."
+    },
+    "sk_speaker": {
+      "name": "a speaker stack",
+      "layer": "stand",
+      "blocks": true,
+      "color": [
+        40,
+        40,
+        44
+      ],
+      "look": "Two big black concert speakers, one stacked on the other. The bass coming out of them goes straight through your ribs."
     }
   }
 }

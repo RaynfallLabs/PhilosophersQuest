@@ -86,19 +86,19 @@ class LevelManager:
 
     def generate(self, level_num: int):
         """Create a fresh level, spawn monsters/items, save, and return it."""
-        from boss_levels import BOSS_LEVELS, COW_LEVEL, generate_boss_level
+        from boss_levels import BOSS_LEVELS, generate_boss_level, is_side_floor
 
-        if level_num in BOSS_LEVELS or level_num == COW_LEVEL:
+        if level_num in BOSS_LEVELS or is_side_floor(level_num):
             dungeon, monsters, items = generate_boss_level(level_num)
             # Place Philosopher's Stone on level 100
             # The Philosopher's Stone is NOT placed here any more. It used to
             # lie on the arena floor from the start, so the player could take
             # it without facing Abaddon. game_combat._on_monster_killed drops
             # it where he falls (see spawn_stone_at below).
-            # The Cow Level is numbered 999 internally. It is a side trip, not
-            # depth: counting it made "Deepest Level 999" and added 999,000
-            # to the score.
-            if level_num != COW_LEVEL:
+            # A side floor (the Cow Level is numbered 999 internally, the
+            # Zombie Stage 997) is a side trip, not depth: counting the farm
+            # made "Deepest Level 999" and added 999,000 to the score.
+            if not is_side_floor(level_num):
                 self.max_level_reached = max(self.max_level_reached, level_num)
             # A character who died to a gate boss haunts that boss's floor
             # (never the Cow Level or the Stone floor).
@@ -109,7 +109,7 @@ class LevelManager:
             # A gate floor wears its domain's look and is dressed for its
             # showdown (data/boss_floors.json, decor.dress_boss_floor).
             import decor
-            if level_num != COW_LEVEL:
+            if not is_side_floor(level_num):
                 decor.dress_boss_floor(dungeon, level_num, monsters, items)
             items = self._once_per_run(items)
             return dungeon, monsters, items

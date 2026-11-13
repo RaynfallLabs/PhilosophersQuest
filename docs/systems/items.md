@@ -383,6 +383,13 @@ item's `tier`.
 
 ### Scroll (`data/items/scroll.json`, class `Scroll` at `src/items.py:894`)
 
+The **Autographed Stray Kids Photo** (`autographed_stray_kids_photo`, effect
+`summon_stray_kids`) is a scroll by class: reading the eight autographs is the
+one grammar question, a bad read keeps it (`single_copy`), and a good one spends
+it and calls the band up for a show (`game_stray_kids._stray_kids_summon`; see
+[monsters](monsters.md), Special monster modules). One-of-a-kind, so it is
+never sold or stolen (`items.withheld`, `traders.is_quest_piece`).
+
 ```json
 {
   "scroll_of_cure_wounds": {
