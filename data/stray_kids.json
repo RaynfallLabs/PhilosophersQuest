@@ -1,5 +1,5 @@
 {
-  "_doc": "The Stray Kids easter egg (src/stray_kids.py, src/game_stray_kids.py). On one floor from first_floor to last_floor (every run: chance_per_run 1.0) a gold shrine to the K-pop band Stray Kids stands in a room (fixture sk_idol, data/fixtures.json). Walking into it says what it is; walking into it again touches it, and the hero is taken to the Zombie Stage (boss_levels.STRAY_KIDS_STAGE), a side floor like the Cow Level: never depth, never the Road. There the eight members dance as zombies (data/monsters.json sk_zombie_*), a war-band led by Bang Chan (data/war_bands.json stray_kids). They move as one formation: the dance's anchor closes on the hero and its shape changes every beats_per_shape beats, and a member strikes only on the downbeat (every strike_every beats). They leave no corpse, and the last to fall leaves the Autographed Stray Kids Photo (data/items/scroll.json). Read (one grammar question), the photo is spent and the band, alive, dances round the hero for stars.dance_turns turns: no blows on either side, and every monster near them stops to watch (stunned), except named foes and the mindless. NO REAL LYRICS ANYWHERE: every line here is made up; song titles are named only as titles. Facts checked on Grokipedia, then Wikipedia (2026-11-13).",
+  "_doc": "The Stray Kids easter egg (src/stray_kids.py, src/game_stray_kids.py). On one floor from first_floor to last_floor (every run: chance_per_run 1.0) a gold shrine to the K-pop band Stray Kids stands in a room (fixture sk_idol, data/fixtures.json). It calls the hero over the first time he sees it (idol.call); Observe shows a shrine plainly Stray Kids (SKZ, STAY, eight little dancers) without naming them; walking into it hums (idol.first_bump), and walking into it again touches it, and the hero is taken to the Zombie Stage (boss_levels.STRAY_KIDS_STAGE), a side floor like the Cow Level: never depth, never the Road. There the eight members dance as zombies (data/monsters.json sk_zombie_*), a war-band led by Bang Chan (data/war_bands.json stray_kids). They move as one formation: the dance's anchor closes on the hero and its shape changes every beats_per_shape beats, and a member strikes only on the downbeat (every strike_every beats). They leave no corpse, and the last to fall leaves the Autographed Stray Kids Photo (data/items/scroll.json). Read (one grammar question), the photo is spent and the band, alive, dances round the hero for stars.dance_turns turns: no blows on either side, and every monster near them stops to watch (stunned), except named foes and the mindless. NO REAL LYRICS ANYWHERE, reworded or not: every line here is made up. shouts.songs riff on the songs' titles and concepts (Case 143's 1-4-3 pager code and police-call video, Christmas EveL's naughty-list pun and Santa's workshop, God's Menu's chefs, Thunderous's singer-and-nagger pun and goblin dance, Maniac's Frankenstein stitches, Chk Chk Boom's video turning Deadpool down), never on their words. Facts checked on Grokipedia, then Wikipedia (2026-11-13).",
   "chance_per_run": 1.0,
   "first_floor": 8,
   "last_floor": 12,
@@ -27,13 +27,14 @@
     "i_n": "I.N"
   },
   "idol": {
-    "first_bump": "The gold is warm, and a bass beat thumps somewhere. Walk into it again to touch it.",
+    "first_bump": "The gold hums under your hand, warm as a stage light, and the beat gets louder. It wants you to touch it properly (walk into it again).",
     "touch": [
       "You touch the idol. Eight voices count you in: \"Five, six, seven, EIGHT!\"",
       "A spotlight swallows you, and the dungeon falls away."
     ],
     "spent_bump": "The gold has gone dull and the glitter has fallen off. The encore is over.",
-    "touch_chronicle": "I touched a gold statue of a K-pop band, twice, on purpose. A spotlight took me somewhere with a stage. I have nobody to blame but myself."
+    "touch_chronicle": "I touched a gold statue of a K-pop band, twice, on purpose. A spotlight took me somewhere with a stage. I have nobody to blame but myself.",
+    "call": "Something gold glitters across the room, and a faint bass beat thumps from it. It seems to be calling you over."
   },
   "stage": {
     "arrival": [
@@ -247,7 +248,8 @@
     "shape_line_chance": 0.5,
     "beat_tell": "They move to the beat, and strike only on the downbeat.",
     "line_chance": 0.3,
-    "member_line_share": 0.6
+    "member_line_share": 0.4,
+    "song_line_share": 0.35
   },
   "shouts": {
     "band": [
@@ -255,58 +257,81 @@
       "Five, six, seven, EIGHT!",
       "Make some NOISE, dungeon!",
       "Hands up! Hands UP! ...his fell off. Hand up!",
-      "This one's called \"Maniac\"! Because that's you, swinging at us!",
-      "Next song: \"Thunderous\"! Like our footsteps! On you!",
       "We're Stray Kids! The stray part is old news. The zombie part is new.",
       "Is this the encore? It's always the encore. It will always be the encore.",
       "Fan chant! Everybody! You're not chanting! Why aren't you chanting?",
       "\"Back Door\"! There is one. We're standing in front of it.",
-      "Welcome to \"Miroh\"! That means maze! You're in it!",
       "\"S-Class\"! That's our rank. Yours is... D, maybe."
     ],
     "bang_chan": [
       "Has everyone eaten? Brains count.",
       "Okay, okay, one more take. From the top!",
       "I'll sleep when I'm dead. ...Huh.",
-      "You're doing amazing! Keep fighting! Not us, though!"
+      "You're doing amazing! Keep fighting! Not us, though!",
+      "\"Thunderous\"! Stop nagging me to go to bed!"
     ],
     "lee_know": [
       "Don't touch my cat.",
       "Again. That was sloppy. Again.",
       "My cats dance better than you.",
-      "Soonie? Doongie? Dori? ...this is the wrong dungeon."
+      "Soonie? Doongie? Dori? ...this is the wrong dungeon.",
+      "\"Christmas EveL\"! The cat gets the only present."
     ],
     "changbin": [
       "I am DARK. I am SCARY. ...Do you like my bunny keyring?",
       "Every day is arm day!",
-      "Look at these arms. LOOK at them. They're falling off, but LOOK."
+      "Look at these arms. LOOK at them. They're falling off, but LOOK.",
+      "\"God's Menu\"! I'm the chef. My special is protein shakes."
     ],
     "hyunjin": [
       "*flips his hair, slowly, so you notice*",
       "*whistles a tune you will hum for a week*",
       "Hold still. I want to paint you. Mostly in grave-green.",
-      "Is the wind machine on? Somebody turn on the wind machine."
+      "Is the wind machine on? Somebody turn on the wind machine.",
+      "\"Maniac\"! I designed the stitches. Aren't they beautiful?"
     ],
     "han": [
       "Twohundredwordsasecondandyouonlycaughtfourofthem!",
       "*mumbles through a mouthful of snacks: \"Mmf-mmf-MMF!\"*",
-      "Quokka mode: ON!"
+      "Quokka mode: ON!",
+      "\"Lose My Breath\"! I lost mine in verse two. Two hundred words a second!"
     ],
     "felix": [
       "*says, in a voice like an earthquake: \"hello.\"*",
       "I baked brownies! They're a little bit undead.",
       "HI-YAH! ...did that hurt? No? Okay. HI-YAH!",
-      "Sixty-three medals! SIXTY-THREE!"
+      "Sixty-three medals! SIXTY-THREE!",
+      "\"ReawakeR\"! I sang it for Solo Leveling. Now I'm doing it."
     ],
     "seungmin": [
       "Strike three. You're out. Of hit points.",
       "That outfit? Bold choice.",
-      "I could do this all day. I HAVE done this all day. We've been dead a while."
+      "I could do this all day. I HAVE done this all day. We've been dead a while.",
+      "\"Case 143\"? Case closed. Your outfit is the crime."
     ],
     "i_n": [
       "Stop protecting me, I'm an ADULT zombie!",
       "*warbles an old trot ballad like a grandma at church*",
-      "Hyung, I can fight my own battles! ...Hyung?"
+      "Hyung, I can fight my own battles! ...Hyung?",
+      "We did a song with Charlie Puth! He's my hero! ...Is that weird? I'm a zombie."
+    ],
+    "songs": [
+      "\"Case 143\"! It's code for I love you. We're zombies: I love your BRAINS.",
+      "\"Case 143\"! Love is an emergency! Somebody call the police! ...We ARE the police.",
+      "\"Christmas EveL\"! You're on the naughty list. Everyone down here is.",
+      "\"Christmas EveL\"! Santa's workshop, but every elf is a zombie. Ho. Ho. Hrrrgh.",
+      "\"God's Menu\"! The chefs are in! Today's special: you, lightly grilled.",
+      "\"God's Menu\"! Chef's kiss! Chef's bite! Mostly chef's bite.",
+      "\"Thunderous\"! We're the singers. You're the nagger. Stop nagging us!",
+      "\"Thunderous\"! Dance like a goblin! Cackle like a goblin! Hey, are you a goblin?",
+      "\"Maniac\"! Stitched together, a bit odd, walks funny. Frankenstein wants his look back.",
+      "\"Chk Chk Boom\"! We said no to Deadpool. We can say no to you.",
+      "\"Chk Chk Boom\"! Aim for the target! You are the target!",
+      "\"Hellevator\"! Going DOWN! Next stop: the floor below this one.",
+      "\"District 9\"! This is our district now. The whole dungeon is our district.",
+      "\"Lose My Breath\"! Easy for us. We don't have any.",
+      "\"My Pace\"! Our pace is one shuffle a turn. Keep up!",
+      "\"Lalalala\"! We forgot the words. We forgot everything. We're dead."
     ]
   },
   "distracted": {
@@ -413,7 +438,12 @@
       "STAY! This one's for you!",
       "Everybody clap! Clap! Not you, monsters, you just watch.",
       "One more time! From the top!",
-      "Hands up! HANDS UP!"
+      "Hands up! HANDS UP!",
+      "This one's \"Case 143\"! It's for you! One, four, three!",
+      "\"Back Door\"! Everybody in! You too, monsters!",
+      "\"Thunderous\"! Dance like a goblin! Wait, some of you ARE goblins!",
+      "\"God's Menu\"! Dinner and a show! Mostly the show.",
+      "\"Chk Chk Boom\"! Eyes on the stage, everybody!"
     ],
     "bow": "The Stray Kids take a bow, wave, and vanish in a burst of confetti.",
     "chronicle": "I read the names on a signed photo and the whole of Stray Kids came out of it and put on a show. Every monster in the room stopped to watch. So did I, a little.",

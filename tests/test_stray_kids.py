@@ -164,9 +164,13 @@ def test_the_idol_and_speaker_fixtures_and_their_art():
     fx = _json('data', 'fixtures.json')['fixtures']
     idol = fx['sk_idol']
     assert idol['blocks'] and idol['layer'] == 'stand' and idol['spent_look']
-    assert 'Stray Kids' in idol['look']
+    # Plainly Stray Kids to a fan (SKZ, STAY, eight little dancers), never the
+    # roll call of names, and it asks to be touched (Brandon, 2026-11-13).
+    for word in ('SKZ', 'STAY', 'eight', 'touched'):
+        assert word in idol['look'], word
     for m in MEMBERS:
-        assert sk.member_name(m) in idol['look'], m
+        assert sk.member_name(m) not in idol['look'], m
+    assert sk.data()['idol']['call'] and 'again' in sk.data()['idol']['first_bump']
     assert fx['sk_speaker']['blocks']
     for fid in ('sk_idol', 'sk_speaker'):
         assert os.path.exists(os.path.join(ROOT, 'assets', 'tiles', 'env', 'fixtures', fid + '.png')), fid
@@ -198,7 +202,7 @@ def test_the_data_ships_with_the_game():
 def test_no_line_is_longer_than_a_shout():
     """Made-up lines only (no real lyrics), short enough to read in play."""
     d = sk.data()
-    lines = list(d['shouts']['band']) + list(d['stars']['lines'])
+    lines = list(d['shouts']['band']) + list(d['shouts']['songs']) + list(d['stars']['lines'])
     for m in MEMBERS:
         lines += d['shouts'][m]
     for line in lines:
@@ -208,6 +212,21 @@ def test_no_line_is_longer_than_a_shout():
 # ---------------------------------------------------------------------------
 # The roll and the side floor
 # ---------------------------------------------------------------------------
+
+def test_the_band_riffs_on_their_songs_by_title():
+    """Riffs on the songs' titles and concepts (never their words): each
+    names its song in quotes, and they are a good share of what is shouted."""
+    import re
+    d = sk.data()
+    songs = d['shouts']['songs']
+    assert len(songs) >= 12
+    for line in songs:
+        assert re.match(r'^"[^"]+"', line), line
+    titles = {re.match(r'^"([^"]+)"', line).group(1) for line in songs}
+    assert {'Case 143', 'Christmas EveL', "God's Menu", 'Thunderous', 'Maniac'} <= titles
+    share = d['dance']
+    assert 0 < share['member_line_share'] + share['song_line_share'] < 1
+
 
 def test_every_run_has_the_idol_on_a_floor_from_8_to_12():
     for seed in range(40):
@@ -489,7 +508,9 @@ def test_one_bump_says_what_it_is_the_second_touches_it():
     g.msg_log.clear()
     g._do_move(dx, dy)
     assert g.dungeon_level == 9
-    assert 'Walk into it again' in _log(g)
+    assert sk.data()['idol']['first_bump'] in _log(g)
+    import decor
+    assert decor.fixture_def(sk.idol_id())['look'] not in _log(g)   # Observe says what it is
     g._do_move(dx, dy)
     assert g.dungeon_level == STRAY_KIDS_STAGE
     st = g._stray_kids
@@ -501,6 +522,24 @@ def test_one_bump_says_what_it_is_the_second_touches_it():
     wings = g.dungeon.rooms[0]
     assert wings.x <= g.player.x < wings.x + wings.width
     assert len(_band(g)) == 8
+
+
+def test_the_idol_calls_the_hero_over_once_when_he_first_sees_it():
+    g = _game('__test_sk_call__')
+    pos = _idol_floor(g, 9)
+    call = sk.data()['idol']['call']
+    g.visible = set()
+    g._stray_kids_tick()
+    assert call not in _log(g) and not g._stray_kids['called']
+    _beside(g, pos)
+    g._stray_kids_tick()
+    g._stray_kids_tick()
+    assert _log(g).count(call) == 1 and g._stray_kids['called']
+    assert tuple(g._stray_kids['pos']) == tuple(pos)
+    g.target_cursor_x, g.target_cursor_y = pos
+    g._confirm_observe()
+    import decor
+    assert decor.fixture_def(sk.idol_id())['look'] in _log(g)
 
 
 def test_the_stage_door_takes_the_hero_back_and_the_idol_is_spent():

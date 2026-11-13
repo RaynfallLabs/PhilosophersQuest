@@ -2,7 +2,9 @@
 half, and the whole design, is src/stray_kids.py).
 
 * The idol: placed on its floor on first arrival (``_maybe_spawn_stray_kids_idol``).
-  Walking into it says what it is; walking into it again touches it
+  It calls the hero over the first time he sees it (``_stray_kids_idol_calls``);
+  Observe shows a shrine plainly Stray Kids without naming them; walking into
+  it hums and invites a proper touch, and walking into it again touches it
   (``_stray_kids_idol_bump``, from the bump code in main.py).
 * The trip: ``_enter_stray_kids_stage`` takes the hero to the Zombie Stage
   (boss_levels.STRAY_KIDS_STAGE, a side floor); its stage door (the down
@@ -67,11 +69,32 @@ class StrayKidsMixin:
                                       self.ground_items, self._stray_kids_rng())
         if pos is not None:
             st['spawned'] = True
+            st['pos'] = [int(pos[0]), int(pos[1])]
+
+    def _stray_kids_idol_calls(self) -> None:
+        """The first time the hero sees the idol, it calls him over (once a
+        run). Observe (O) says what it is."""
+        st = self._stray_kids_state()
+        if (st.get('called') or st.get('touched') or not st.get('spawned')
+                or st.get('floor') != getattr(self, 'dungeon_level', None)):
+            return
+        pos = st.get('pos')
+        if not pos:
+            fixtures = getattr(getattr(self, 'dungeon', None), '__dict__', {}).get('fixtures') or {}
+            pos = next((p for p, f in fixtures.items() if f == stray_kids.idol_id()), None)
+            if pos is None:
+                return
+            st['pos'] = [int(pos[0]), int(pos[1])]
+        if tuple(pos) not in (getattr(self, 'visible', set()) or set()):
+            return
+        st['called'] = True
+        self.add_message(stray_kids.data()['idol']['call'], 'info')
 
     def _stray_kids_idol_bump(self, x: int, y: int) -> bool:
         """The hero walked into a fixture at (x, y): True if it was the idol.
-        The first bump says what it is, the next one (from the same spot,
-        nothing done between) touches it. A bump costs no turn."""
+        The first bump hums and invites a proper touch (what it is, Observe
+        says); the next one, from the same spot, touches it. A bump costs no
+        turn."""
         import decor
         if decor.fixture_at(self.dungeon, x, y) != stray_kids.idol_id():
             return False
@@ -83,7 +106,7 @@ class StrayKidsMixin:
         here = (self.dungeon_level, (self.player.x, self.player.y), (x, y))
         if self.__dict__.get('_sk_armed') != here:
             self._sk_armed = here
-            self.add_message(f"{decor.look_line(self.dungeon, x, y)} {d['first_bump']}", 'info')
+            self.add_message(d['first_bump'], 'info')
             return True
         self._sk_armed = None
         self.dungeon.__dict__.setdefault('fixture_state', {})[(x, y)] = 'spent'
@@ -181,6 +204,7 @@ class StrayKidsMixin:
 
     def _stray_kids_tick(self):
         """Once a turn, after the world has moved (Game._advance_turn)."""
+        self._stray_kids_idol_calls()
         if not getattr(self, 'monsters', None):
             return
         visible = getattr(self, 'visible', set()) or set()
@@ -222,9 +246,15 @@ class StrayKidsMixin:
         if rng.random() >= float(cfg['line_chance']):
             return
         m = rng.choice(in_view)
+        # His own line, a riff on one of their songs, or a band line.
         own = d['shouts'].get(m.member) or []
-        if own and rng.random() < float(cfg['member_line_share']):
+        songs = d['shouts'].get('songs') or []
+        roll = rng.random()
+        mine = float(cfg['member_line_share'])
+        if own and roll < mine:
             line = rng.choice(own)
+        elif songs and roll < mine + float(cfg.get('song_line_share', 0)):
+            line = rng.choice(songs)
         else:
             line = rng.choice(d['shouts']['band'])
         self._stray_kids_say(m, line, 'warning')
@@ -401,7 +431,8 @@ class StrayKidsMixin:
             return
         decor.place(self.dungeon, spot, stray_kids.idol_id())
         st.update({'floor': int(self.dungeon_level), 'spawned': True, 'touched': False,
-                   'outcome': None, 'photo_dropped': False})
+                   'outcome': None, 'photo_dropped': False, 'called': False,
+                   'pos': [int(spot[0]), int(spot[1])]})
         # A stage already played this run is struck: the next touch builds it fresh.
         from boss_levels import STRAY_KIDS_STAGE
         saved = getattr(getattr(self, 'level_mgr', None), '_saved', None)

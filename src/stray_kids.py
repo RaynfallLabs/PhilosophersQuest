@@ -110,17 +110,18 @@ def roll_for_new_run() -> int | None:
 
 def new_run_state() -> dict:
     """``game._stray_kids`` (saved): the idol's floor (None: not this run),
-    placed yet, touched yet, the floor to go back to, how the stage ended
-    ('cleared' or 'left'), and whether the photo has dropped."""
-    return {'floor': roll_for_new_run(), 'spawned': False, 'touched': False,
-            'return_floor': 0, 'outcome': None, 'photo_dropped': False}
+    placed yet and where, whether it has called the hero over, touched yet,
+    the floor to go back to, how the stage ended ('cleared' or 'left'), and
+    whether the photo has dropped."""
+    return {'floor': roll_for_new_run(), 'spawned': False, 'pos': None, 'called': False,
+            'touched': False, 'return_floor': 0, 'outcome': None, 'photo_dropped': False}
 
 
 def old_save_state() -> dict:
     """A save from before the egg: a run without it (its floors may be behind
     the hero already)."""
-    return {'floor': None, 'spawned': False, 'touched': False,
-            'return_floor': 0, 'outcome': None, 'photo_dropped': False}
+    return {'floor': None, 'spawned': False, 'pos': None, 'called': False,
+            'touched': False, 'return_floor': 0, 'outcome': None, 'photo_dropped': False}
 
 
 # ---------------------------------------------------------------------------
