@@ -358,7 +358,11 @@ def test_a_silvered_weapon_meets_silvers_banes_through_the_real_multiplier():
     before = _mult(w, wolf)
     assert smithing.inlay(w, 'silver')
     after = _mult(w, wolf)
-    assert after > before and after >= combat.WEAK_TO
+    # Since the lore pass (slice 2) a werewolf also shrugs at a plain
+    # blade's form (x0.5), so the whole blow is x0.5 x2; the SILVER is the
+    # substance step, and it is the full weak step.
+    _form, _sub = combat.weapon_type_multiplier(w, wolf)
+    assert after > before and _sub >= combat.WEAK_TO
     # The affinity line names the silver, not "a cutting blow".
     assert combat.affinity_word(w, wolf, combat._affinity.WEAK) == 'silver'
     # Cold iron meets the Fair Folk the same way.
