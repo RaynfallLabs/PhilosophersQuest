@@ -24,6 +24,11 @@ The first time in a run the hero sees a kind, the Chronicler says its worst
 tell (Game._maybe_tell); Observe (O) says them all. Every tell comes from
 what the creature really does: an attack effect in data/monsters.json, or
 one of its flags. Pure module.
+
+At KNOWN the hero is also told what the creature is made of (`lore_lines`,
+winning-build plan 2026-11-13 section 3.1): what hurts it most, what it
+resists and shrugs off, and what its nature refuses or falls to easily. He
+is told that on first sight and by Observe, tell or no tell.
 """
 from __future__ import annotations
 
@@ -146,13 +151,64 @@ def lines(m, level: int = KNOWN, limit: int | None = None) -> list:
     return [line(m, k, level) for k in keys]
 
 
+def _and(words) -> str:
+    return words[0] if len(words) == 1 else ', '.join(words[:-1]) + ' and ' + words[-1]
+
+
+def _named(m, attr) -> list:
+    from affinity import word_for
+    return list(dict.fromkeys(word_for(w) for w in (getattr(m, attr, None) or ()) if w))
+
+
 def weak_line(m) -> str:
     """"Fire and holy power hurt it most.": its weaknesses, for a kind the
     hero knows. Empty when it has none."""
-    from affinity import word_for
-    words = list(dict.fromkeys(word_for(w) for w in (getattr(m, 'weaknesses', None) or ()) if w))
+    words = _named(m, 'weaknesses')
     if not words:
         return ''
-    joined = words[0] if len(words) == 1 else ', '.join(words[:-1]) + ' and ' + words[-1]
-    t = data()['weak_one' if len(words) == 1 else 'weak_many'].replace('{words}', joined)
+    t = data()['weak_one' if len(words) == 1 else 'weak_many'].replace('{words}', _and(words))
     return t[:1].upper() + t[1:]
+
+
+def hard_line(m) -> str:
+    """"A cutting blow and a thrust do little to it; fire hardly touches
+    it.": what it resists and what it shrugs off, for a kind the hero knows.
+    Empty when it has neither."""
+    d = data()
+    parts = []
+    for attr, one, many in (('resistances', 'resist_one', 'resist_many'),
+                            ('shrugs_off', 'shrugs_one', 'shrugs_many')):
+        words = _named(m, attr)
+        if words:
+            parts.append(d[one if len(words) == 1 else many].replace('{words}', _and(words)))
+    if not parts:
+        return ''
+    t = '; '.join(parts) + '.'
+    return t[:1].upper() + t[1:]
+
+
+def status_lore_line(m) -> str:
+    """"It cannot be put to sleep, poisoned or charmed. Fire puts it to
+    flight.": what its nature refuses and what it falls to easily, for a
+    kind the hero knows. Empty when it has neither."""
+    d = data()
+    words = d.get('status_words') or {}
+    out = []
+    immune = [words.get(e, str(e).replace('_', ' ')) for e in (getattr(m, 'status_immune', None) or ())]
+    if immune:
+        out.append(d['immune'].replace('{effects}', _words(immune)))
+    weak = list(getattr(m, 'status_weak', None) or ())
+    easily = [words.get(e, str(e).replace('_', ' ')) for e in weak if e != 'fear_of_fire']
+    if easily:
+        out.append(d['easily'].replace('{effects}', _words(easily)))
+    if 'fear_of_fire' in weak:
+        out.append(d['fire_flight'])
+    return ' '.join(out)
+
+
+def lore_lines(m) -> list:
+    """What a hero who knows the kind is told it is made of: its weakness
+    line, its resistance line and its status line, each only when it has
+    something to say (section 3.1: "Studied: its weaknesses, resistances
+    and the counter")."""
+    return [t for t in (weak_line(m), hard_line(m), status_lore_line(m)) if t]

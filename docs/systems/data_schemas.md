@@ -11,6 +11,9 @@ discipline, and the `_meta` sub-object introduced in v2.18.
 - `data/monsters.json` — 527 monster definitions
 - `data/chest_traps.json` — trap pool keyed by chest tier
 - `data/hints.json` — tier-banded hint pool
+- `data/kit_sense.json` — Kit Sense lines, its tier and sighting gap (`src/kit_sense.py`)
+- `data/enemy_lore.json` — Recall Lore on the creature in view, the Wand of Probing's words, and the quest lines that teach a gate boss (`src/enemy_lore.py`)
+- `data/affinity_lines.json` — the hit lines by knowledge: `felt` (unknown kinds), `habits` (by family and group, for a kind known by its family), the cause-named pools (known kinds), status lines (`src/affinity.py`)
 - `data/flavor_encounters.json` — scripted NPC encounters
 - `data/questions/*.json` — quiz question banks (12 subjects)
 
@@ -1069,7 +1072,8 @@ only one entry is ever registered. Fix: pass the real `type` from
 Top-level dict keyed by tier (1-5). Each value is a flat list of hint
 strings. The Recall Lore mechanic picks a hint matching the player's
 current tier floor; the Encyclopedia Lore Hints tab lists already-
-recalled hints.
+recalled hints. With a creature in view whose kind he does not know,
+Recall Lore speaks of it instead (`data/enemy_lore.json` `recall`).
 
 ---
 

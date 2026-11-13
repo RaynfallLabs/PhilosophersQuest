@@ -2442,3 +2442,7 @@ class EncountersMixin:
             self.add_message("The buzzing of locusts grows louder in the deep...", 'danger')
             self._locusts_strengthened = True
             self._chron('soul', "The judgment went poorly. The buzzing from below is louder now. I made things worse.")
+
+        # Whatever the verdict, the Judgment names how the Destroyer is
+        # wounded and opens his page (winning-build plan 3.1).
+        self._quest_teaches('abaddon_destroyer')

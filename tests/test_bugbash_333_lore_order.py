@@ -129,18 +129,23 @@ def _weapon(template, material):
 
 
 def _affinity_pool(kind):
+    """Every line a meeting of this kind can say: the cause named (a kind
+    the hero knows) or only felt (one he does not: winning-build plan 3.1,
+    src/affinity.py)."""
     data = affinity.lines()
-    return data[kind] + data[kind + '_many']
+    felt = data.get('felt') or {}
+    return data[kind] + data[kind + '_many'] + felt.get(kind, []) + felt.get(kind + '_many', [])
 
 
 def _is_affinity(line, kind):
-    """The line is one of the pool's (with any names and words filled in)."""
+    """The line is one of the pool's (with any names and words filled in,
+    and the family's habit after it for a kind known by its family)."""
     import re
     for s in _affinity_pool(kind):
         pat = re.escape(s)
         for f in ('{name}', '{the}', '{word}', '{word_cap}'):
             pat = pat.replace(re.escape(f), '.+')
-        if re.fullmatch(pat, line):
+        if re.fullmatch(pat + r'(?: .+)?', line):
             return True
     return False
 

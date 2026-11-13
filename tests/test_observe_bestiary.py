@@ -178,7 +178,7 @@ def test_o_on_an_unknown_monster_says_only_its_signs():
     recent = _recent(g)
     assert 'moves slowly and surely' in recent
     assert 'hold you still' not in recent and 'distance' not in recent
-    assert 'hurts it most' not in recent
+    assert 'hurts it most' not in recent and 'do little to it' not in recent
 
 
 def test_o_on_a_monster_known_by_its_family_says_what_it_does_not_how_to_beat_it():
@@ -196,6 +196,7 @@ def test_o_on_a_monster_known_by_its_family_says_what_it_does_not_how_to_beat_it
     recent = _recent(g)
     assert 'hold you still' in recent and 'distance' not in recent
     assert 'not how to beat it' in recent
+    assert 'hurt it most' not in recent and 'do little to it' not in recent
     lines = [str(t[0]) for t in g._encyclopedia_article_lines('bestiary', g._encyclopedia_entry)]
     assert not any(t.startswith('Weak to') or t.startswith('Resists') for t in lines)
     assert any('not yet studied' in t.lower() and 'fears' in t for t in lines)
@@ -207,6 +208,8 @@ def test_o_on_a_studied_monster_says_how_to_beat_it():
     recent = _recent(g)
     assert 'hold you still' in recent and 'distance' in recent
     assert 'Holy power and a cutting blow hurt it most.' in recent
+    # ...and what it resists and its nature (tells.lore_lines, winning-build plan 3.1)
+    assert 'do little to it' in recent and 'cannot be put to sleep' in recent
     lines = [str(t[0]) for t in g._encyclopedia_article_lines('bestiary', g._encyclopedia_entry)]
     assert any(t.startswith('Weak to') for t in lines)
 

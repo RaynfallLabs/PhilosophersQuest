@@ -213,10 +213,16 @@ def test_first_sight_says_more_as_the_hero_learns():
     assert len(g.msgs) == 2 and 'restless dead' in g.msgs[1] and 'distance' not in g.msgs[1]
     hero.studied_monster_ids.add('ghoul')
     g._maybe_tell(ghoul)
-    assert len(g.msgs) == 4
+    # The tell with its counter, then what it is made of (tells.lore_lines,
+    # winning-build plan 3.1): weaknesses, resistances, its nature.
+    lore = tells.lore_lines(ghoul)
+    assert len(lore) == 3
+    assert len(g.msgs) == 3 + len(lore)
     assert 'distance' in g.msgs[2] and g.msgs[3] == 'Holy power and a cutting blow hurt it most.'
+    assert g.msgs[3:] == lore and 'a thrust' in lore[1] and 'put to sleep' in lore[2]
+    n = len(g.msgs)
     g._maybe_tell(ghoul)
-    assert len(g.msgs) == 4
+    assert len(g.msgs) == n
 
 
 def test_a_known_kind_seen_first_gets_the_whole_line_at_once():
@@ -225,6 +231,20 @@ def test_a_known_kind_seen_first_gets_the_whole_line_at_once():
     g = _G(hero)
     g._maybe_tell(_m('troll'))
     assert 'do not wear it down' in g.msgs[0] and g.msgs[1] == 'Fire and acid hurt it most.'
+    assert g.msgs[2] == 'It is easily confused. Fire puts it to flight.'
+
+
+def test_a_known_kind_with_no_tell_is_still_told_what_it_is_made_of():
+    """At KNOWN the lore lines come tell or no tell; below it, nothing."""
+    hero = _hero()
+    g = _G(hero)
+    plain = next(k for k in ('kobold', 'giant_rat', 'goblin', 'mud_crab', 'skeleton')
+                 if k in MONS and not tells.abilities(_m(k)) and tells.lore_lines(_m(k)))
+    g._maybe_tell(_m(plain))
+    assert g.msgs == []
+    hero.studied_monster_ids.add(plain)
+    g._maybe_tell(_m(plain))
+    assert g.msgs == tells.lore_lines(_m(plain))
 
 
 def test_a_save_from_before_the_versions_still_says_the_known_line():
@@ -237,10 +257,12 @@ def test_a_save_from_before_the_versions_still_says_the_known_line():
 
 
 def test_a_creature_with_no_tell_says_nothing_on_sight():
+    """...and nothing about what it is made of when there is nothing to say
+    (a goblin is flesh like a man)."""
     hero = _hero()
     g = _G(hero)
     plain = next(k for k in ('kobold', 'giant_rat', 'jackal', 'goblin')
-                 if k in MONS and not tells.abilities(_m(k)))
+                 if k in MONS and not tells.abilities(_m(k)) and not tells.lore_lines(_m(k)))
     g._maybe_tell(_m(plain))
     hero.studied_monster_ids.add(plain)
     g._maybe_tell(_m(plain))

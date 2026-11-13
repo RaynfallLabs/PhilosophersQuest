@@ -793,6 +793,11 @@ class _QuestGame:
     def _seeker_event(self, event, **fields):
         return []          # no Seeker in this test (game_seeker.py)
 
+    def _quest_teaches(self, boss_kind):
+        # The quest teaches the boss (game_families.FamilyMixin); its own
+        # tests are in tests/test_know_your_enemy.py.
+        self.log.append(f"teaches {boss_kind}")
+
 
 def _bind(method_name):
     import game_divine

@@ -1,0 +1,50 @@
+{
+  "_doc": "Know your enemy (winning-build plan 2026-11-13, section 3.1; src/enemy_lore.py). 'recall': what Recall Lore says of the creature in view, by chain (1 its family; 2 one weakness; 3 its resistances; 4 what it shrugs off and what its nature refuses; 5 all of it, and its Bestiary page opens with no family credit); each chain says what the ones below it say. {The}/{the} is the creature, {kin} its family ('the restless dead'), {word_cap} one weakness, {words} a list, {effects} a list of what it cannot be made ('put to sleep, poisoned or charmed', from data/tells.json status_words). 'probe': what the Wand of Probing reads: everything (it is a deliberate tool), and it opens the page too. 'quest_teach': a gate boss cannot be studied before the fight, so the key step of his quest opens his page, and the quest-giver names his weakness in her or his own voice; every line must stay true to the boss's lists in data/monsters.json: 'claims' names what the line says, and tests/test_know_your_enemy.py checks each claim against monsters.json.",
+  "recall": {
+    "family": "{The} is one of {kin}.",
+    "no_family": "{The} is like nothing in the old stories.",
+    "weak": "{word_cap} hurts it badly.",
+    "no_weak": "You can recall nothing that hurts it more than any other blow.",
+    "resists": "It resists {words}.",
+    "no_resists": "It resists nothing in particular.",
+    "shrugs_one": "{words} hardly touches it.",
+    "shrugs_many": "{words} hardly touch it.",
+    "immune": "It cannot be {effects}.",
+    "nothing_more": "It shrugs off nothing, and nothing in its nature refuses a spell.",
+    "whole": "It all comes back: you know {the} whole now. Its page is open in your Bestiary."
+  },
+  "probe": {
+    "hp": "{The}: {hp}/{max_hp} HP.",
+    "weak": "Weak to: {list}.",
+    "resists": "Resists: {list}.",
+    "nothing": "Nothing about it is weak or hard: every blow lands plain.",
+    "page": "Its page is open in your Bestiary now."
+  },
+  "quest_teach": {
+    "asterion_minotaur": {
+      "lines": ["Ariadne's voice comes again, softer: \"Not the club, nor the hammer. He was born of a bull: a point between the ribs.\""],
+      "page": "You know Asterion now: his page is open in your Bestiary.",
+      "claims": {"weaknesses": ["pierce"], "resistances": ["blunt"]}
+    },
+    "medusa_gorgon": {
+      "lines": ["Athena speaks once more: \"Perseus took her head with one stroke of a curved sword: an edge is what ends her. Her blood is venom, so poison will not.\""],
+      "page": "You know Medusa now: her page is open in your Bestiary.",
+      "claims": {"weaknesses": ["slash"], "resistances": ["poison"]}
+    },
+    "fafnir_dragon": {
+      "lines": ["The old voice again: \"Dig where he crawls down to drink, as Sigurd did, and strike up with a point. His scales turn edge and hammer, fire and venom. And a worm lying on his gold is quick to fall asleep.\""],
+      "page": "You know Fafnir now: his page is open in your Bestiary.",
+      "claims": {"weaknesses": ["pierce"], "resistances": ["slash", "blunt", "fire", "poison"], "status_weak": ["sleeping"]}
+    },
+    "fenrir_wolf": {
+      "lines": ["A gruff voice from the dark behind the anvil: \"Bound is not beaten. He was whelped in the cold, and an edge slides off that coat. But he is a wolf, and every wolf fears fire.\""],
+      "page": "You know Fenrir now: his page is open in your Bestiary.",
+      "claims": {"weaknesses": ["fire"], "resistances": ["cold", "slash"], "status_weak": ["fear_of_fire"]}
+    },
+    "abaddon_destroyer": {
+      "lines": ["The voice that weighed you speaks once more: \"Fire, frost and venom are his own, and steel that cuts or crushes slides off him. What is holy wounds the Destroyer most.\""],
+      "page": "You know Abaddon now: his page is open in your Bestiary.",
+      "claims": {"weaknesses": ["holy"], "resistances": ["fire", "cold", "poison", "slash", "blunt"]}
+    }
+  }
+}

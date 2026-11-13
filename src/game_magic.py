@@ -285,15 +285,46 @@ class MagicMixin:
     # Recall Lore (trivia escalator chain quiz)
     # ------------------------------------------------------------------
 
+    def _recall_lore_subject(self):
+        """The creature Recall Lore is about (winning-build plan 3.1): the
+        nearest hostile creature in sight that has a family and whose kind
+        the hero does not yet know (family_lore.knowledge below KNOWN), or
+        None, and then the general hints. A kind he knows already teaches
+        him nothing new, so the next one in sight is taken."""
+        import family_lore
+        px, py = self.player.x, self.player.y
+        best = None
+        for m in self.monsters or ():
+            if not (getattr(m, 'alive', False) and self._sees_monster(m)):
+                continue
+            if (getattr(m, 'is_allied', False) or getattr(m, '_npc_encounter_tag', None)
+                    or getattr(m, '_flavor_encounter_tag', None) or getattr(m, '_is_unicorn', False)):
+                continue
+            if family_lore.family_of(m) is None:
+                continue
+            if family_lore.knowledge(self.player, m) >= family_lore.KNOWN:
+                continue
+            d = max(abs(m.x - px), abs(m.y - py))
+            if best is None or d < best[0]:
+                best = (d, m)
+        return best[1] if best else None
+
     def _start_recall_lore(self):
-        """Begin a Recall Lore session -- escalator chain trivia quiz. Cooldown-gated."""
+        """Begin a Recall Lore session -- escalator chain trivia quiz. Cooldown-gated.
+        With a creature in view it is about that creature (_recall_lore_subject)."""
         if self.player.recall_lore_cooldown > 0:
             self.add_message(
                 f"Your mind needs rest before recalling more lore. "
                 f"({self.player.recall_lore_cooldown} turns remain)", 'warning'
             )
             return
-        self.add_message("You close your eyes and search your memory...", 'info')
+        subject = self._recall_lore_subject()
+        self.__dict__['_recall_subject'] = subject
+        if subject is not None:
+            self.add_message(f"You close your eyes and search your memory for "
+                             f"{the_name(subject, lower=True)}...", 'info')
+        else:
+            self.add_message("You close your eyes and search your memory...", 'info')
         self.quiz_title = "RECALL LORE  --  TRIVIA"
         self.state = STATE_QUIZ
 
@@ -333,6 +364,21 @@ class MagicMixin:
         self.player.recall_lore_cooldown = 50 + chain * 15   # 65 .. 125 turns
         if getattr(self.player, 'quirk_progress', {}).get('norns_active'):
             self.player.recall_lore_cooldown = max(5, self.player.recall_lore_cooldown // 2)
+
+        # The creature in view (chosen when the recall began): what he
+        # remembers is about it, by chain, and at chain 5 its page opens
+        # with no family credit (src/enemy_lore.py).
+        subject = self.__dict__.pop('_recall_subject', None)
+        if subject is not None and getattr(subject, 'alive', False):
+            import enemy_lore
+            hint = enemy_lore.recall_text(subject, chain)
+            if enemy_lore.recall_opens_page(chain):
+                self._open_kind_page(getattr(subject, 'kind', ''))
+            self._lore_hint_text = hint
+            self._lore_hint_chain = chain
+            if hint not in self._recalled_hints:
+                self._recalled_hints.append(hint)
+            return
 
         from paths import data_path
         hints_path = data_path('data', 'hints.json')
@@ -519,7 +565,14 @@ class MagicMixin:
         (data/affinity_rules.json, Monster.add_effect)."""
         import affinity as _aff
         if target.resists_control(effect):
-            return 0, _aff.status_line('immune', effect, target)
+            # Why it refused is said only to a hero who knows the creature
+            # or its family; to one who does not, it is felt only.
+            player = getattr(self, 'player', None)
+            level = _aff.KNOWN
+            if player is not None:
+                import family_lore
+                level = family_lore.knowledge(player, target)
+            return 0, _aff.status_line('immune', effect, target, level=level)
         weak = effect in (getattr(target, 'status_weak', None) or ())
         if roll and not weak:
             duration, resisted = self._boss_resist_cc(target, duration)
@@ -720,21 +773,25 @@ class MagicMixin:
                 'success' if (opened or unlocked) else 'info')
 
         elif effect == 'probing':
-            # v2.11.0 T2: reveal target's HP + saves + resists.
+            # Its health and everything it is made of: weaknesses,
+            # resistances, what it shrugs off, refuses and falls to easily
+            # (src/enemy_lore.py). It used to read fire_resist-style fields
+            # no monster has, so it never showed a thing. Probing is a
+            # deliberate tool: it reads all of it, whatever the hero knows,
+            # and opens the kind's page (no family credit).
             target = getattr(self, '_wand_override_target', None) or self._nearest_visible_monster()
             if target is None:
                 self.add_message("The wand hums but finds no target to probe.", 'info')
             else:
                 _spring_at(self, target)
-                hp_line = f"{the_name(target)}: {target.hp}/{target.max_hp} HP"
-                resist_bits = []
-                for attr in ('fire_resist', 'cold_resist', 'lightning_resist',
-                             'acid_resist', 'poison_resist', 'magic_resist'):
-                    val = getattr(target, attr, 0)
-                    if val:
-                        resist_bits.append(f"{attr.replace('_resist','')}:{val}")
-                resist_line = (" [resist " + ", ".join(resist_bits) + "]") if resist_bits else ""
-                self.add_message(hp_line + resist_line, 'success')
+                import enemy_lore
+                import family_lore
+                lines = enemy_lore.probe_lines(target)
+                self.add_message(lines[0], 'success')
+                for _pl in lines[1:]:
+                    self.add_message(_pl, 'info')
+                if family_lore.family_of(target) and self._open_kind_page(getattr(target, 'kind', '')):
+                    self.add_message(enemy_lore.probe_page_line(), 'loot')
 
         elif effect == 'create_monster':
             import json

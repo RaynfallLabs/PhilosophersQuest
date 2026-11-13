@@ -82,6 +82,19 @@ long enough: knowledge unlocks the technique, performance lands it.
   tier (decision 4). A kind it only opened can still be studied from its corpse (corpses
   pre-identify for `studied_monster_ids`, the hero's own studies). The Philosopher's
   Stone, like Thoth and the mass Scroll of Identify, leaves corpses to their own study.
+- Three more roads open a kind's page the same way, with no family credit
+  (`FamilyMixin._open_kind_page`, winning-build plan 3.1, `src/enemy_lore.py`):
+  **Recall Lore** with a creature in view (N): by chain, 1 its family, 2 one weakness,
+  3 its resistances, 4 what it shrugs off and its nature refuses, 5 all of it and its page
+  opens (the nearest creature in sight whose kind is not yet KNOWN; with none, the general
+  hints, and the cooldown rules are unchanged); the **Wand of Probing**, which reads
+  everything (its health, weaknesses, resistances, what it shrugs off, refuses and falls to
+  easily) and opens the page; and a **gate boss's quest step**, since a boss has no corpse to
+  study before the fight: Ariadne's shrine (Asterion), Athena's (Medusa), Odin's altar
+  (Fafnir, either path), the Dwarven Forge's Gleipnir (Fenrir) and the Last Judgment
+  (Abaddon, whatever the verdict) each say a line in the quest-giver's voice naming his
+  weakness (`data/enemy_lore.json` `quest_teach`, every claim checked against
+  `monsters.json`) and open his page.
 - Keystones: `is_boss`, `is_mini_boss`, `is_seal_demon`, `proper_noun`, or listed in the
   family's `keystones` (the spider queen). A keystone counts `keystone_weight` = 2 kinds.
 - Tier N needs `thresholds[N-1]` (weighted) kinds. The numbers were set from real floor
@@ -127,7 +140,7 @@ long enough: knowledge unlocks the technique, performance lands it.
 | 1 | Recognise | Every member of the family the hero sees gets its Bestiary page, O opens it, and the look line names the family. He is told what each member can do (its tells at KIN, src/tells.py), but not how to beat it: its weaknesses and resistances stay hidden until the kind is studied or the family reaches Lore (2026-11-12, `family_lore.knowledge`). Does NOT pre-identify corpses. |
 | 2 | Forewarned | On reaching a floor, the family's line, if a member the hero could see is here (never an invisible creature, an un-sprung ambusher, a disguised mimic or the Hellmouth's stair, or an ally). At most three lines; past that two and one combined line. |
 | 3 | Lore | The folk defence (wards, mostly), and every member is fully known: its tells with what to do, and its weaknesses on its page (`full_lore_tier`). |
-| 4 | Hunter | How a hunter takes them. |
+| 4 | Hunter | How a hunter takes them, and **Kit Sense** (`src/kit_sense.py`, winning-build plan 3.1): on first sight of a group of the family (a kind out of sight for more than `gap` turns, `data/kit_sense.json`), one line naming the best tool he carries for it ("Your Silver Mace would serve here."); nothing when his best is in his hand already. A weapon counts its form always and its metal and blessing once he knows the weapon; a bow needs arrows. The tools come from `kit_sense.PROVIDERS`, a list the arsenal's coatings and flasks plug into. |
 | 5 | Bane | The signature capstone. |
 
 The per-family techniques are in `data/monster_families.json` and the v2 design (section 4).
@@ -191,6 +204,10 @@ the Journal and the high-score table (`title`) show it.
   "You don't know this creature yet. Study its corpse." A kind known only by its family
   adds "You know its kind, but not how to beat it. Study its corpse.", and its page hides
   its weaknesses (see the knowledge levels in docs/systems/monsters.md, Tells).
+- A hit on a creature: felt only when its kind is unknown ("It reels!"), felt with the
+  family's habit when its family is known ("The dead have no heart for a point to find."),
+  the cause named when the kind is KNOWN; the Strike Now preview counts the weakness only
+  at KNOWN (docs/systems/combat.md, "Knowledge decides what the line says").
 - B, Bestiary: every kind met is listed; an unidentified one has a short page (name, art,
   family, "Not yet studied", the progress line) and no stats, attacks or lore. A full page
   carries "Family: ... (studied)" or "(known by its family, not yet studied)". Tab switches

@@ -1,5 +1,6 @@
 """Call 13 (bug bash 4): the combat strip's "Strike Now N Damage" is the
-blow's own number.
+blow's own number (for a kind the hero knows: winning-build plan 3.1 shows
+an unknown kind's preview as the plain blow).
 
 Before, the strip did its own sum ((base + enchant) x chain x form x
 substance) and left out Strength, blessings, ammo, the ranged stat bonus,
@@ -67,6 +68,10 @@ def _player(weapon, *, STR=10, PER=10, ranged=False):
     p.x, p.y = 5, 5
     p.STR, p.PER = STR, PER
     p.hp = p.max_hp = 10 ** 6
+    # The hero knows every target (their pages open): the preview shows a
+    # weakness or a resistance only for a kind he knows (winning-build plan
+    # 3.1; the unknown case is in tests/test_know_your_enemy.py).
+    p.lore_known_monster_ids = set(TARGETS)
     if ranged:
         p.ranged_weapon = weapon
     else:

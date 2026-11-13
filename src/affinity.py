@@ -30,6 +30,19 @@ world's turn says its own at its end (Boots of Thor, a pet's typed blow), not
 after the hero's next action; and the queue is emptied on a new game, a
 load and a change of floor. A blow on which a family technique has just
 said the weakness (Bonebreaker) is not noted (combat.strike_damage).
+
+What they say follows what the hero knows of the creature (winning-build
+plan 2026-11-13, section 3.1; Brandon: "no omniscient monsters"). He always
+FEELS a hit; knowing the creature tells him WHY:
+  UNKNOWN  a 'felt' line only ("It reels!", "Barely a mark on the wight."),
+           never naming what met it;
+  KIN      (its family at Recognise or Forewarned) the felt line and the
+           family's habit ("The dead have no heart for a point to find.",
+           `habit`), from its group's or its family's lore;
+  KNOWN    (studied, its page opened, or its family at Lore) the cause named
+           ("Super effective! The wight cannot bear silver.").
+Game._say_affinity_lines passes `level_of` (family_lore.knowledge). A beast
+put to flight by fire is what the eye sees and is said the same to all.
 """
 from __future__ import annotations
 
@@ -52,6 +65,10 @@ FORMS = ('slash', 'pierce', 'blunt')
 PHYSICAL = frozenset(FORMS) | {'physical'}
 
 _PENDING: list = []
+
+# How much the hero knows of a creature (family_lore.UNKNOWN, KIN, KNOWN:
+# the same numbers, kept here so this module needs nothing of the hero's).
+UNKNOWN, KIN, KNOWN = 0, 1, 2
 
 
 @lru_cache(maxsize=1)
@@ -137,33 +154,124 @@ def word_for(word: str) -> str:
     return str((lines().get('words') or {}).get(word, str(word).replace('_', ' ')))
 
 
-def say(notes, rng=None) -> list:
+def say(notes, rng=None, level_of=None) -> list:
     """The lines for one action's notes: one per kind of meeting (weakness,
-    resistance, shrugging off, a flight from fire), naming the creature, or
-    all of them when several were struck the same way."""
+    resistance, shrugging off, a flight from fire) and per how much the hero
+    knows of the creatures struck, naming the creature, or all of them when
+    several were struck the same way.
+
+    `level_of(monster)` is how much the hero knows of it (UNKNOWN, KIN,
+    KNOWN: family_lore.knowledge); without it every creature counts as
+    known, the cause named (the tests' and the tools' plain reading)."""
     rng = rng or random
     from monster import the_name
     by_kind: dict = {}
     for m, kind, word in notes:
-        by_kind.setdefault(kind, []).append((m, word))
+        level = KNOWN
+        if level_of is not None and kind != FIRE_FRIGHT:
+            try:
+                level = int(level_of(m))
+            except Exception:
+                level = UNKNOWN
+        by_kind.setdefault((kind, level), []).append((m, word))
     out = []
     for kind in _KINDS:
-        hits = by_kind.get(kind)
-        if not hits:
-            continue
-        monsters = []
-        for m, _w in hits:
-            if all(m is not x for x in monsters):
-                monsters.append(m)
-        m, word = hits[0]
-        w = word_for(word)
-        pool = lines().get(f"{kind}_many" if len(monsters) > 1 else kind) or lines().get(kind) or []
-        if not pool:
-            continue
-        text = rng.choice(pool).format(name=the_name(m), the=the_name(m, lower=True),
-                                       word=w, word_cap=w[:1].upper() + w[1:])
-        out.append((text, kind))
+        for level in (KNOWN, KIN, UNKNOWN):
+            hits = by_kind.get((kind, level))
+            if not hits:
+                continue
+            monsters = []
+            for m, _w in hits:
+                if all(m is not x for x in monsters):
+                    monsters.append(m)
+            m, word = hits[0]
+            many = len(monsters) > 1
+            text = _line(kind, level, m, word, many, rng, the_name)
+            if text:
+                out.append((text, kind))
     return out
+
+
+def _line(kind: str, level: int, m, word: str, many: bool, rng, the_name) -> str:
+    """One meeting's line at what the hero knows (see `say`)."""
+    w = word_for(word)
+    fill = dict(name=the_name(m), the=the_name(m, lower=True), word=w, word_cap=w[:1].upper() + w[1:])
+    if level >= KNOWN or kind == FIRE_FRIGHT:
+        pool = lines().get(f"{kind}_many" if many else kind) or lines().get(kind) or []
+        return rng.choice(pool).format(**fill) if pool else ''
+    felt = lines().get('felt') or {}
+    pool = felt.get(f"{kind}_many" if many else kind) or felt.get(kind) or []
+    if not pool:
+        return ''
+    text = rng.choice(pool).format(**fill)
+    if level >= KIN:
+        extra = habit(m, kind, word, rng)
+        if extra:
+            text = f"{text} {extra}"
+    return text
+
+
+# ---------------------------------------------------------------------------
+# The family's habit (KIN): what a hero who knows the family knows of how its
+# creatures take a blow (data/affinity_lines.json habits)
+# ---------------------------------------------------------------------------
+def _keyed(table: dict) -> dict:
+    """A habits table with its comma keys spread out: 'resisted:slash,pierce'
+    answers both 'resisted:slash' and 'resisted:pierce'."""
+    out = {}
+    for key, pool in (table or {}).items():
+        if key.startswith('_') or ':' not in key:
+            continue
+        meet, words = key.split(':', 1)
+        for w in words.split(','):
+            w = w.strip()
+            if w:
+                out.setdefault(f"{meet}:{w}", pool)
+    return out
+
+
+@lru_cache(maxsize=1)
+def _habit_tables() -> tuple:
+    """(families, groups) keyed tables, and each family's plain pools."""
+    h = lines().get('habits') or {}
+    fams = {fid: (_keyed(t), t) for fid, t in (h.get('families') or {}).items()}
+    groups = {gid: _keyed(t) for gid, t in (h.get('groups') or {}).items()}
+    return fams, groups
+
+
+@lru_cache(maxsize=1)
+def group_of_kind() -> dict:
+    """{kind: its group in data/family_affinity.json (skeletons, swarms...)}."""
+    from paths import data_path
+    try:
+        with open(data_path('data', 'family_affinity.json'), encoding='utf-8') as f:
+            prof = json.load(f)
+    except (OSError, ValueError):
+        return {}
+    out = {}
+    for gid, g in (prof.get('groups') or {}).items():
+        for k in g.get('kinds') or ():
+            out.setdefault(k, gid)
+    return out
+
+
+def habit(m, kind: str, word: str, rng=None) -> str:
+    """The family's habit for this meeting: its group's line for what met
+    it, else its family's, else the family's plain line for the meeting
+    (which names nothing). '' for a creature with no family."""
+    rng = rng or random
+    import family_lore
+    fid = family_lore.family_of(m)
+    if not fid:
+        return ''
+    kid = getattr(m, 'kind', None) or (m if isinstance(m, str) else '')
+    fams, groups = _habit_tables()
+    key = f"{kind}:{word}"
+    gid = group_of_kind().get(kid)
+    fam_keyed, fam_plain = fams.get(fid, ({}, {}))
+    pool = (groups.get(gid) or {}).get(key) if gid else None
+    pool = pool or fam_keyed.get(key) or fam_plain.get(kind) or []
+    return rng.choice(pool) if pool else ''
 
 
 def is_good_news(kind: str) -> bool:
@@ -253,11 +361,18 @@ def status_weak_duration(duration: int) -> int:
     return max(1, int(round(int(duration) * float(rules().get('status_weak_duration', 1.5)))))
 
 
-def status_line(kind: str, effect: str, monster, rng=None) -> str:
+def status_line(kind: str, effect: str, monster, rng=None, level: int = KNOWN) -> str:
     """The line for an effect a creature refused by nature (kind 'immune':
-    "The golem does not know fear.") or fell to easily ('weak')."""
+    "The golem does not know fear.") or fell to easily ('weak'). A refusal
+    says why only to a hero who knows the creature or its family (`level`
+    KIN or more); to one who does not it is felt only ("Nothing happens to
+    the golem."). Falling to it easily is what the eye sees, said to all."""
     rng = rng or random
     from monster import the_name
+    if kind == 'immune' and level < KIN:
+        pool = lines().get('status_immune_felt') or []
+        return (rng.choice(pool).format(name=the_name(monster), the=the_name(monster, lower=True))
+                if pool else '')
     table = lines().get('status_immune' if kind == 'immune' else 'status_weak') or {}
     pool = table.get(effect) or table.get('default') or []
     if not pool:

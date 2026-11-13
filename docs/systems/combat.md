@@ -77,7 +77,9 @@ _start_combat(monster)                              # game_combat.py
           (the next two steps are module functions, effective_chain() and
            strike_damage(); with consume=False they spend nothing, and
            strike_preview() runs them for the Strike Now number, so the
-           preview is the blow -- bug bash 4, call 13)
+           preview is the blow -- bug bash 4, call 13; for a kind the hero
+           does not know it is the plain blow, no weakness or resistance:
+           affinity_known=False, winning-build plan 3.1)
           chain = result.score + chain_bonus (armor chain_bonus, Parashu carry,
                   Glamdring orc-glow -- each only at score >= 1 --,
                   Fail-not / Gungnir / Hrunting save of a wrong answer, never
@@ -228,9 +230,9 @@ A combat quiz is titled `MELEE ATTACK  --  MATH` or `RANGED ATTACK  --  MATH` (`
 | Row | **Target** cell | **Strike Now** cell |
 |---|---|---|
 | `cap` | `TARGET` caption (body 15, faded) | `STRIKE NOW` caption, plus the weapon name right-aligned in the `weapon` slot (`Bare Hands` when unarmed) |
-| `main` | Monster name, `FP.GOLD_PALE` | Live damage, `"{dmg} Damage"` from `combat.strike_preview` (the blow's own calculation: Strength, blessing, ammo, shields, scales, ward, gear; dice at their average) in the heading face (32 → 26 → 22), rank-coloured from chain 3; `0 Damage` faded at chain 0 |
+| `main` | Monster name, `FP.GOLD_PALE` | Live damage, `"{dmg} Damage"` from `combat.strike_preview` (the blow's own calculation: Strength, blessing, ammo, shields, scales, ward, gear; dice at their average) in the heading face (32 → 26 → 22), rank-coloured from chain 3; `0 Damage` faded at chain 0. The weakness or resistance the blow will meet is in the number only for a kind the hero knows (`combat.affinity_known`: studied, its page opened, or its family at Lore); for any other it is the plain blow (winning-build plan 3.1) |
 | `sub1` | `hp_bar` + `hp_text` (`"{hp}/{max} HP"`, right-aligned); bar and numbers colour-coded green > 50%, warning yellow 25–50%, danger red < 25% | `"x{mult:.1f} Multiplier"`, or `Answer to start a chain` at chain 0 |
-| `sub2` | Status effects, `[Title Case]` tags in warning colour | Damage-type tag: `Weakness: <types>` (success green, dm > 1), `Shrugs Off: <types>` (danger red, dm ≤ 0.25), `Resisted: <types>` (danger red, dm < 1), else the plain type list in faded text. (Knowledge gating of this tag is slice 3 of the winning-build plan.) |
+| `sub2` | Status effects, `[Title Case]` tags in warning colour | Damage-type tag, for a kind the hero knows (`combat.affinity_known`): `Weakness: <types>` (success green, dm > 1), `Shrugs Off: <types>` (danger red, dm ≤ 0.25), `Resisted: <types>` (danger red, dm < 1), else the plain type list in faded text. For a kind he does not know, always the plain type list (winning-build plan 3.1). |
 
 From chain 3 the Strike Now cell also gets a 2 px box frame in the rank colour.
 
@@ -315,6 +317,16 @@ preview says nothing), spells, wands and breath by `Monster.take_damage`
 says one line per way creatures were struck, Pokemon style ("It's super
 effective!", "Not very effective... the skeleton resists a thrust."), from
 `data/affinity_lines.json` (`src/affinity.py`). A third kind, **shrugs off** ("It barely felt that..."), and a fourth, a beast **put to flight by fire**, have their own pools.
+
+**Knowledge decides what the line says (winning-build plan 3.1, slice 3).** The hero always *feels* a hit; knowing the creature tells him *why*. `Game._say_affinity_lines` passes `family_lore.knowledge` to `affinity.say(notes, level_of=...)`:
+
+| He knows the kind | The line | Example |
+|---|---|---|
+| UNKNOWN | a `felt` line, never naming what met it | "It reels!", "Barely a mark on the Skeleton." |
+| KIN (its family at Recognise or Forewarned) | the felt line, then the family's habit (`habits`: the creature's group first, then its family, keyed by what met it; else the family's plain line, which names nothing) | "The Zombie takes little of it. A thrust finds nothing in the dead to kill." |
+| KNOWN (studied, its page opened, or its family at Lore) | the cause named | "Super effective! The Skeleton cannot bear a crushing blow." |
+
+A fire fright is what the eye sees and is said the same at every level. A status refusal (`affinity.status_line('immune', ..., level=)`) says why ("The golem does not know fear.") only to a hero who knows the creature or its family; to one who does not it is felt ("Nothing happens to the Clay Golem."). A habit names a cause only where the family's lore and its kinds agree: `tests/test_know_your_enemy.py` checks every keyed habit is true of at least half the kinds it speaks for.
 
 Form and substance stack, to the cap: a silver mace on a skeleton is x2 (blunt) x x2 (silver) = x4, held to **x3**. A unique's per-tag `undead_multiplier`, Akinakes's prophecy and the other weapon specials below multiply on top of the capped affinity.
 
