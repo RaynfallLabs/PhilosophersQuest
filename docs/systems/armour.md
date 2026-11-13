@@ -45,14 +45,67 @@ A common piece is **template x material x enchantment level**:
   form, even levels its greater ("of Greater Iron Will II").
 
 **Threshold** (Brandon's ruling: complexity and benefit set it):
-`gear.equip_threshold` = weight class (1 / 2 / 3) + benefit by tier
-(0, 0, 1, 1, 2) + 1 for a named unique, at most 5. Rings, amulets and
-belts: `gear.accessory_threshold` = slot (ring 1, amulet 2, belt 2) +
-benefit (0, 1, 1, 2, 2) + 1 for a unique.
+`gear.equip_threshold` = weight class (2 / 3 / 4) + benefit by tier
+(0, 0, 1, 1, 2) + 2 for a named unique, at most 7. Rings, amulets and
+belts: `gear.accessory_threshold` = slot (ring 2, amulet 3, belt 3) +
+benefit (0, 1, 1, 2, 2) + 2 for a unique, at most 7. Each kind is asked
+only once a run (Known by Hand, section 1b), so these rose by one on
+2026-11-13 (they were 1 / 2 / 3 and ring 1, amulet 2, belt 2, unique +1,
+cap 5). Geography and history are untimed and every topic has a teaching
+card: at 97% a threshold of 6 still passes 83% of the time. The named
+pieces' authored thresholds are written by the same rule
+(`tools/content/known_by_hand_thresholds_2026_11.py`, idempotent).
 
 Blessed works a level higher, cursed a level lower
 (`enchantments.effective_level`); a cursed body armour or shield wears its
 plus as a minus.
+
+## 1b. Putting gear on (winning-build plan 3.4, 2026-11-13)
+
+**Known by Hand** (`src/known_by_hand.py`). The first time the hero passes
+the equip quiz for a KIND, every copy of that kind goes on with no quiz,
+whatever its plus, enchantment level or blessing. The kind is the item's
+id: material + template for a common piece (`iron_breastplate`; a mithril
+breastplate is a new kind), the kind for a ring or amulet (its id carries
+no level: `ring_of_protection` at every level), and the unique itself for
+a named piece (one quiz each). A chain-equip legend remembers the best
+chain reached on it (`Player.by_hand_tiers`): put back on, it goes on at
+that tier with no quiz, or the hero attunes again to climb (the best is
+kept). Learnt for the run (`Player.known_by_hand`, saved); an old save
+counts what is worn as known, and a hero's starting kit is known. A cursed
+piece still refuses to come off. The Kit, the @ sheet and the equip menu
+mark a known kind "Known by Hand" (BY HAND in the equip menu), and a line
+says so when it fires ("You have worn one of these before. On it goes.").
+
+**Donning time** (`gear.don_turns` / `doff_turns`, `gear_rules.json`
+`donning`). Body armour takes 1 turn light, 3 medium, 5 heavy, 6 for the
+full plate template (`gear.template_of`: the template_basis, else read from
+a common piece's id); a shield, a minor piece, a ring, an amulet and a belt
+1. Taking off is half, rounded up. A swap is the old piece off, then the
+new one on. The turns are a busy action (`src/busy.py`,
+`game_dressing.DressingMixin._busy_run`): they pass one at a time through
+`_advance_turn`, the piece counts (AC, guards) only on its last turn and
+its slot is empty until then, and a hostile coming into view or a blow
+landing (`game_combat` counts `_blows_on_hero`) stops it with "Keep
+dressing? (Y/N)". Stopping leaves the piece in the pack (or still on).
+The Hephaestus quirk halves both times. A first-time kind's quiz comes
+before the donning. A one-turn piece into an empty slot is exactly the old
+equip: on, then the monsters act.
+
+**At Your Back** (`Player.readied_weapon`). A melee weapon in the pack,
+readied from the Kit or the @ sheet (R); S on the map swaps it with the one
+in the hand in one turn. It stays in the pack (its weight counts; a drop,
+a sale or a theft lets go of it), a cursed blade in the hand will not let
+go, and a two-hander will not come out past a shield that will not come
+off (an ordinary shield goes to the pack, as for any two-handed equip).
+
+**Loadouts** (`src/loadouts.py`, Shift+E). Three saved kits (Kit One, Kit
+Two, Kit Three; N renames): the wielded and readied weapons, shield, the
+eight armour slots, amulet, belt and rings, saved as the very objects (S
+saves what is worn). Putting one on takes the sum of its pieces' turns,
+shown before confirming; a piece not in the pack is skipped, a piece not
+known by hand is refused ("put it on once first"), and a slot that was
+empty when the kit was saved is left alone.
 
 ## 2. AC: body armour and shield only
 
@@ -221,4 +274,6 @@ survivor and keeps working as the object it was.
 
 `tests/test_bugbash_332_guards.py`, `_enchantments.py`, `_rings.py`,
 `_unique_armor.py`, `_loot_split.py`, `_gear_saves.py`, `_cards.py`,
-`test_armor_template_thresholds.py`, `test_recompose_migration.py`.
+`test_armor_template_thresholds.py`, `test_recompose_migration.py`,
+`test_swapping_without_the_chore.py` (Known by Hand, donning, At Your
+Back, Loadouts, saves).

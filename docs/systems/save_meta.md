@@ -564,6 +564,20 @@ are never stored; they are worked out from these fields.
 `tests/test_monster_families_wiring.py` saves and loads a whole Game through
 `save_system` (a new save and one with the fields removed).
 
+**2026-11-13** (swapping without the chore, [armour](armour.md) §1b): four
+new Player fields, `known_by_hand` (the item ids of the kinds put on this
+run), `by_hand_tiers` (the best chain reached on each chain-equip legend),
+`_readied_weapon` (the weapon At Your Back, a pack item; `readied_weapon`
+reads it only while it is still in the pack) and `loadouts` (three saved
+kits holding the very item objects; one pickle keeps the references). In
+an old save what the hero wears counts as known
+(`known_by_hand.seed_from_worn`, a worn legend at its attuned tier),
+nothing is readied and the three kits are empty. The busy action
+(`Game._busy`, a donning in progress) is never saved: a save mid-donning
+loads with the piece still in the pack.
+`tests/test_swapping_without_the_chore.py` round-trips them and loads one
+without them.
+
 ### 6.4 Adding a new migration
 
 If you remove or rename a Player attribute in a future version:

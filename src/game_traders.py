@@ -573,7 +573,10 @@ class TraderMixin:
                 return False
             name = self._bare_name(item)
             item.buc = 'uncursed'                     # cut loose; it does not survive it
-            self._unequip_slot(slot, item)
+            # The smith cuts it off: one turn, not the piece's unbuckling
+            # time (game_dressing._dress_start_off).
+            if self._take_off_now(slot, item):
+                self._advance_turn()
             if self._lore_equipped_slot(item) is not None:
                 item.buc = 'cursed'                   # it would not come off: nothing done
                 return False

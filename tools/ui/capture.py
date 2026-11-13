@@ -1573,6 +1573,147 @@ def _(g):
     play_quiz(g, 'cccccccc')
 
 
+def _kit_known_by_hand(g):
+    """A second copy of the worn body armour in the pack: its kind is Known
+    by Hand (known_by_hand.py), and a shortsword is readied At Your Back."""
+    import copy as _copy
+    from items import ARMOR_SLOTS, instantiate_weapon
+    import known_by_hand as kbh
+    p = g.player
+    body = p.armor_slots[ARMOR_SLOTS.index('body')]
+    kbh.seed_from_worn(p)
+    spare = _copy.copy(body)
+    spare.buc, spare.buc_known = 'blessed', True
+    p.inventory.append(spare)
+    back = instantiate_weapon('shortsword', 'iron')
+    back.id_level, back.buc_known = 5, True
+    p.inventory.append(back)
+    g._ready_weapon(back)
+    return spare, back
+
+
+@scene('menu_kit_known_by_hand', 'Menus',
+       'K, Armor: a spare of the worn kind in the pack, marked Known by Hand '
+       '(no quiz to put it on), with its donning time.', expect='kit')
+def _(g):
+    spare, _back = _kit_known_by_hand(g)
+    press(g, pygame.K_k)
+    g._kit_tab = [t[1] for t in g._KIT_TABS].index('armor')
+    rows = g._kit_rows_for_slug('armor')
+    g._kit_sel = next(i for i, (_s, it) in enumerate(rows) if it is spare)
+
+
+@scene('menu_kit_at_your_back', 'Menus',
+       'K, Weapons: a shortsword readied At Your Back (R readies, S swaps).', expect='kit')
+def _(g):
+    _spare, back = _kit_known_by_hand(g)
+    press(g, pygame.K_k)
+    rows = g._kit_rows_for_slug('weapons')
+    g._kit_sel = next(i for i, (_s, it) in enumerate(rows) if it is back)
+
+
+@scene('menu_charsheet_at_your_back', 'Menus',
+       '@: the Loadout list has a Back row (the weapon At Your Back); the pack '
+       'marks it, and the spare armour Known by Hand.', expect='character_sheet')
+def _(g):
+    _spare, back = _kit_known_by_hand(g)
+    g.handle_event(key_event(pygame.K_2, '@', pygame.KMOD_SHIFT))
+    g._charsheet_loadout_idx = next(i for i, e in enumerate(g._charsheet_loadout_entries())
+                                    if e['item'] is back)
+
+
+@scene('menu_equip_known_by_hand', 'Menus',
+       'E, Armor: the spare of the worn kind shows BY HAND.', expect='equip_menu')
+def _(g):
+    _kit_known_by_hand(g)
+    press(g, pygame.K_e)
+    g._menu_tab = [t[0] for t in g._EQUIP_TABS].index('Armor')
+    g._equip_sel = 0
+
+
+def _saved_kits(g):
+    """Kit One is what the hero wears now; Kit Two is a Quiet kit of the
+    floor-30 armour in the pack, which is not known by hand yet."""
+    from items import Armor
+    g._kit_save(0)
+    kits = g._kits()
+    heavy = max((i for i in g.player.inventory if isinstance(i, Armor)),
+                key=lambda i: getattr(i, 'equip_threshold', 1))
+    kits[1]['name'] = 'Quiet'
+    kits[1]['pieces'] = dict(kits[0]['pieces'], **{getattr(heavy, 'slot', 'body'): heavy})
+
+
+@scene('menu_loadouts', 'Menus',
+       'Shift+E: the Loadouts, three saved kits, the second with a piece not '
+       'known by hand.', expect='loadouts', key=True)
+def _(g):
+    _saved_kits(g)
+    g.handle_event(key_event(pygame.K_e, 'E', pygame.KMOD_SHIFT))
+    press(g, pygame.K_2, '2')
+
+
+@scene('menu_loadouts_rename', 'Menus', 'Shift+E, 3, N: naming the third kit.',
+       expect='loadouts')
+def _(g):
+    _saved_kits(g)
+    g.handle_event(key_event(pygame.K_e, 'E', pygame.KMOD_SHIFT))
+    press(g, pygame.K_3, '3')
+    press(g, pygame.K_n, 'n')
+    type_text(g, 'Iron for Bones')
+
+
+@scene('prompt_kit_confirm', 'Menus',
+       'Shift+E, 2, Enter: put the Quiet kit on? (its turns, what stays off).',
+       expect='ask')
+def _(g):
+    _saved_kits(g)
+    import known_by_hand as kbh
+    for it in g._kits()[1]['pieces'].values():
+        kbh.learn(g.player, it)
+    g.handle_event(key_event(pygame.K_e, 'E', pygame.KMOD_SHIFT))
+    press(g, pygame.K_2, '2')
+    press(g, pygame.K_RETURN)
+
+
+@scene('prompt_keep_dressing', 'Menus',
+       'Buckling on plate, a goblin comes into view: You stop, half into the '
+       'plate. Keep dressing? (Y/N)', expect='ask')
+def _(g):
+    from items import instantiate_armor, ARMOR_SLOTS
+    import known_by_hand as kbh
+    p = g.player
+    plate = instantiate_armor('plate', 'chain_steel')
+    plate.id_level, plate.buc_known = 5, True
+    kbh.learn(p, plate)
+    p.inventory.append(plate)
+    old = p.armor_slots[ARMOR_SLOTS.index('body')]
+    if old is not None:
+        p.armor_slots[ARMOR_SLOTS.index('body')] = None
+        p.shed_worn_grants(old)
+        p.inventory.append(old)
+    # The goblin is out of sight when the dressing starts, in sight a turn in.
+    m = getattr(g, '_capture_monster', None)
+    real = g._sees_monster
+    start = g.turn_count
+    g._sees_monster = lambda mon: (g.turn_count > start) if mon is m else real(mon)
+    g._equip_item(plate)
+
+
+@scene('prompt_attune_again', 'Menus',
+       'A chain-equip legend worn before at tier 3: wear it at tier 3, or '
+       'attune again to climb.', expect='ask')
+def _(g):
+    import items
+    import known_by_hand as kbh
+    aegis = items.make_item_by_id('shield', 'aegis_of_athena')
+    aegis.id_level, aegis.buc_known = 5, True
+    g.player.inventory.append(aegis)
+    kbh.learn(g.player, aegis, 3)
+    if g.player.shield is not None:
+        g._take_off_now('shield', g.player.shield)
+    g._equip_item(aegis)
+
+
 @scene('menu_charsheet_cursed', 'Menus',
        '@, Body: a worn armor known to be cursed (Unequip and Drop greyed, '
        'with the reason).', expect='character_sheet')

@@ -1,0 +1,131 @@
+"""Known by Hand: a kind of gear the hero has put on once goes on again with
+no quiz (winning-build plan 3.4, 2026-11-13).
+
+The first time the hero passes the equip quiz for a KIND, every copy of that
+kind equips with no quiz, whatever its plus, enchantment level or blessing.
+Brandon's example: a rusty iron breastplate teaches it, so the blessed iron
+breastplate found later goes straight on; a mithril breastplate is a new
+kind and asks its own quiz.
+
+  * The kind is the item's id. For common gear that is exactly material +
+    template ("iron_breastplate"); a ring kind's id carries no level
+    ("ring_of_protection" at every level); a named unique's id is itself,
+    so a unique is one quiz.
+  * A chain-equip legend (chain_equip.py) remembers the BEST chain reached
+    on it. Put back on, it goes on at that tier with no quiz, and the hero
+    may take the quiz again to climb (the best is kept).
+  * The hero learns it, for this run (Player.known_by_hand, saved; plan
+    decision 4). An old save counts what is worn as known.
+  * A cursed piece still refuses to come off: knowing how a thing goes on
+    says nothing of getting it off again.
+
+This is a skill the hero has, not a mastery system: it is one set of kinds,
+and it never changes a number (docs/systems/README.md).
+
+Pure rules over the player's two stores; no pygame, no game state.
+"""
+from __future__ import annotations
+
+MARK = "Known by Hand"
+FIRES_LINE = "You have worn one of these before. On it goes."
+FIRES_LINE_UNIQUE = "You have worn it before. On it goes."
+
+
+def kind_key(item) -> str:
+    """The kind an item is for Known by Hand: its id ('' for none)."""
+    return str(getattr(item, 'id', '') or '')
+
+
+def _store(player) -> set:
+    s = player.__dict__.get('known_by_hand')
+    if not isinstance(s, set):
+        s = set(s or ())
+        player.__dict__['known_by_hand'] = s
+    return s
+
+
+def _tiers(player) -> dict:
+    d = player.__dict__.get('by_hand_tiers')
+    if not isinstance(d, dict):
+        d = dict(d or {})
+        player.__dict__['by_hand_tiers'] = d
+    return d
+
+
+def asks_quiz(item) -> bool:
+    """Does putting this on ask a quiz at all? Armour, shields and worn
+    rings / amulets / belts do; weapons and carried charms never did, and a
+    no-quiz trap (threshold 0, the Duck of Doom) does not."""
+    cls = str(getattr(item, 'item_class', '') or '')
+    if not cls:
+        cls = {'Armor': 'armor', 'Shield': 'shield',
+               'Accessory': 'accessory'}.get(type(item).__name__, cls)
+    if cls not in ('armor', 'shield', 'accessory'):
+        return False
+    if cls == 'accessory' and getattr(item, 'slot', '') == 'none':
+        return False
+    from chain_equip import is_chain_equip
+    if is_chain_equip(item):
+        return True
+    return int(getattr(item, 'equip_threshold', 1) or 0) > 0
+
+
+def knows(player, item) -> bool:
+    """Has the hero put this kind on before (no quiz now)?"""
+    if player is None or item is None:
+        return False
+    key = kind_key(item)
+    if not key:
+        return False
+    from chain_equip import is_chain_equip
+    if is_chain_equip(item):
+        return best_tier(player, item) > 0
+    return key in _store(player)
+
+
+def best_tier(player, item) -> int:
+    """The best chain reached on a chain-equip legend (0: never worn)."""
+    if player is None or item is None:
+        return 0
+    return max(0, min(5, int(_tiers(player).get(kind_key(item), 0) or 0)))
+
+
+def learn(player, item, tier: int = 0) -> bool:
+    """The hero has put this kind on. ``tier``: the chain reached on a
+    chain-equip legend (the best is kept). True when it is newly known."""
+    if player is None or item is None:
+        return False
+    key = kind_key(item)
+    if not key:
+        return False
+    new = not knows(player, item)
+    from chain_equip import is_chain_equip
+    if is_chain_equip(item):
+        t = max(0, min(5, int(tier or 0)))
+        if t > 0:
+            tiers = _tiers(player)
+            tiers[key] = max(int(tiers.get(key, 0) or 0), t)
+    _store(player).add(key)
+    return new
+
+
+def mark_for(player, item) -> str:
+    """The Kit / @ / equip-menu mark for a wearable the hero knows, else ''."""
+    if not asks_quiz(item) or not knows(player, item):
+        return ''
+    return MARK
+
+
+def fires_line(item) -> str:
+    """The line said when a known kind goes on with no quiz."""
+    if getattr(item, 'is_unique', False):
+        return FIRES_LINE_UNIQUE
+    return FIRES_LINE
+
+
+def seed_from_worn(player) -> None:
+    """An old save (from before Known by Hand): what the hero wears now, he
+    has put on, so it counts as known (a worn legend at its attuned tier)."""
+    for it in player.worn_items():
+        if asks_quiz(it):
+            learn(player, it, int(getattr(it, 'achieved_tier', 0) or 0))

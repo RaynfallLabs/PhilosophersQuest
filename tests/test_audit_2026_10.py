@@ -209,10 +209,12 @@ def test_b8_unequip_reverses_weapon_passives():
         p._apply_weapon_passives(hofud)
         p._remove_weapon_passives(hofud)
     assert p.PER == base_per
-    src = (_ROOT / 'src' / 'main.py').read_text(encoding='utf-8')
-    block = src[src.index('    def _unequip_slot('):]
+    # Taking a piece off is one helper since Known by Hand and donning time
+    # (game_dressing._take_off_now; main._unequip_slot calls it).
+    src = (_ROOT / 'src' / 'game_dressing.py').read_text(encoding='utf-8')
+    block = src[src.index('    def _take_off_now('):]
     block = block[:block.index("elif slot_name == 'shield':")]
-    assert 'self.player._remove_weapon_passives(item)' in block
+    assert 'p._remove_weapon_passives(item)' in block
 
 
 # ---- B12: "while worn" chain-equip statuses are permanent, not 999 turns ---

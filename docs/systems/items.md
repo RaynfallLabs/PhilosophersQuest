@@ -304,7 +304,10 @@ lives entirely in the JSON `slot` field.
 
 All equip quizzes run in **threshold mode** with `threshold =
 item.equip_threshold`. Zero-tolerance applies: **any wrong answer =
-fail**. The `_threshold_line` helper (`src/game_render.py:54`) prints
+fail**. Each kind asks only once a run: after the first pass it is
+**Known by Hand** and every copy goes on with no quiz (see
+[armour.md](armour.md) section 1b, which also covers donning time, the
+weapon At Your Back and the Loadouts). The `_threshold_line` helper (`src/game_render.py:54`) prints
 every threshold line in the format `"<Label>: N correct"`. The
 `(any wrong = fail)` warning is not printed anywhere: v2.22.0 Phase 1
 took it out of this helper, and v2.23.0 removed the quiz-modal
@@ -354,7 +357,9 @@ detect it via `chain_equip.is_chain_equip` and redirect to
 `_start_chain_equip_quiz` (`src/main.py:5723`). The chain reached (1–5)
 drives `apply_tier_bonuses(player, item, chain)` from the item's
 `tier_bonuses` dict. On chain 0 (failed rung 1) the item is not
-equipped at all. Each equip is a fresh quiz — no sticky progression.
+equipped at all. The best chain reached is kept for the run (Known by
+Hand, `src/known_by_hand.py`): put back on, the legend goes on at that tier
+with no quiz, or the hero attunes again to climb, keeping the best.
 
 Default `equip_chain_subject`:
 - Armor/Shield → `geography`

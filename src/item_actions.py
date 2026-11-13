@@ -5,6 +5,8 @@ Both screens act on ONE selected item with the same keys:
 
     E  Equip, or Unequip when the item is worn (a toggle). A floor item on
        the Kit is picked up first, then equipped.
+    R  Ready a weapon from the pack At Your Back (S on the map swaps it into
+       the hand in one turn), or put the readied one back (game_dressing.py).
     D  Drop. A worn item is unequipped first, then dropped.
     I  Identify (one philosophy question; needs the Philosopher's Shard,
        exactly like the I menu).
@@ -29,6 +31,7 @@ from __future__ import annotations
 from game_states import (
     STATE_PLAYER, STATE_QUIZ, STATE_QUIZ_CONTEXT, STATE_LORE,
     STATE_DROP_QTY_INPUT, STATE_KIT, STATE_CHARACTER_SHEET, STATE_CONFIRM_EXIT,
+    STATE_ASK,
 )
 
 
@@ -36,13 +39,16 @@ from game_states import (
 # state (death, a story popup, a boon menu) ends the return: the player is
 # left where the game put them. The exit dialog is a pause, not an ending:
 # cancelling it goes back to the quiz, and the return must survive that.
+# The yes / no prompt (attune again? keep dressing?) is a pause too.
 _TRANSIT_STATES = frozenset((
     STATE_PLAYER, STATE_QUIZ, STATE_QUIZ_CONTEXT, STATE_LORE,
     STATE_DROP_QTY_INPUT, STATE_KIT, STATE_CHARACTER_SHEET, STATE_CONFIRM_EXIT,
+    STATE_ASK,
 ))
 
 # Keys, in the order the screens show them.
-ACTION_KEYS = (('equip', 'E'), ('drop', 'D'), ('identify', 'I'), ('lore', 'X'))
+ACTION_KEYS = (('equip', 'E'), ('ready', 'R'), ('drop', 'D'), ('identify', 'I'),
+               ('lore', 'X'))
 
 
 class ItemActionsMixin:
@@ -53,12 +59,14 @@ class ItemActionsMixin:
     # ------------------------------------------------------------------
 
     def _item_where(self, item) -> str:
-        """'equip' when worn, 'pack' when carried, 'floor' when on this tile,
-        '' otherwise."""
+        """'equip' when worn, 'back' when it is the weapon At Your Back,
+        'pack' when carried, 'floor' when on this tile, '' otherwise."""
         if item is None:
             return ''
         if self._lore_equipped_slot(item):
             return 'equip'
+        if item is self.player.readied_weapon:
+            return 'back'
         if any(i is item for i in self.player.inventory):
             return 'pack'
         px, py = self.player.x, self.player.y
@@ -143,6 +151,8 @@ class ItemActionsMixin:
         if item is None:
             return []
         where = where or self._item_where(item)
+        if where == 'pack' and item is self.player.readied_weapon:
+            where = 'back'
         if not where:
             return []
         out: list[dict] = []
@@ -158,7 +168,7 @@ class ItemActionsMixin:
         # E -- Equip / Unequip
         if where == 'equip':
             add('equip', 'Unequip', self._item_known_unremovable(item))
-        elif wearable and where == 'pack':
+        elif wearable and where in ('pack', 'back'):
             add('equip', 'Equip', self._item_equip_block(item))
         elif wearable and where == 'floor' and not getattr(item, 'not_pickable', False):
             why = self._item_equip_block(item)
@@ -169,8 +179,14 @@ class ItemActionsMixin:
                 if not self.player.can_carry(weight):
                     why = f"Too heavy for your limit of {self.player.get_carry_limit()}"
             add('equip', 'Take & Equip', why)
+        # R -- Ready a melee weapon At Your Back, or put it back in the pack
+        melee = isinstance(item, Weapon) and getattr(item, 'requires_ammo', None) is None
+        if melee and where == 'back':
+            add('ready', 'Unready')
+        elif melee and where == 'pack':
+            add('ready', 'Ready')
         # D -- Drop
-        if where == 'pack':
+        if where in ('pack', 'back'):
             add('drop', 'Drop')
         elif where == 'equip':
             add('drop', 'Drop', self._item_known_unremovable(item))
@@ -217,7 +233,12 @@ class ItemActionsMixin:
 
         self._item_screen_return = dict(ctx, item=item)
         if action_id == 'equip':
-            self._item_do_equip_toggle(item, where)
+            self._item_do_equip_toggle(item, 'pack' if where == 'back' else where)
+        elif action_id == 'ready':
+            if where == 'back':
+                self._unready_weapon()
+            else:
+                self._ready_weapon(item)
         elif action_id == 'drop':
             self._item_do_drop(item, where)
         elif action_id == 'identify':

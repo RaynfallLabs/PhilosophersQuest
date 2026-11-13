@@ -56,6 +56,7 @@ from game_states import (
     STATE_BOON_MENU,
     STATE_PET_MENU, STATE_PET_FEED, STATE_PET_HEAL, STATE_PET_SPECIALS,
     STATE_QA_WARP_INPUT, STATE_MESSAGE_LOG, STATE_TOPIC_CARD,
+    STATE_ASK, STATE_LOADOUTS,
 )
 
 
@@ -1340,6 +1341,12 @@ class RenderMixin:
                 idl = 0
             _kind = str(getattr(item, 'slot', None) or getattr(item, 'item_class', 'item'))
             parts = [_cap(_kind), f"Wt {getattr(item, 'weight', 0):g}"]
+            # Known by Hand (no quiz to put it on) or the weapon At Your
+            # Back: second, so a narrow pack still shows it.
+            _mark = ('At Your Back' if item is getattr(p, 'readied_weapon', None)
+                     else self._known_by_hand_mark(item))
+            if _mark:
+                parts.insert(1, _mark)
             if hasattr(item, 'id_level') and idl < 5:
                 parts.append(_identify_status_label(idl).split(' (')[0])
             meta = "   ".join(parts)
@@ -1692,7 +1699,10 @@ class RenderMixin:
             except Exception:
                 id_text = "Unknown"
             _kind = str(getattr(item, 'slot', None) or getattr(item, 'item_class', 'item'))
-            meta = f"{_kind.replace('_', ' ').title()}   Wt {getattr(item, 'weight', 0):g}   {id_text}"
+            _mark = ('At Your Back' if item is getattr(p, 'readied_weapon', None)
+                     else self._known_by_hand_mark(item))
+            meta = (f"{_kind.replace('_', ' ').title()}   " + (f"{_mark}   " if _mark else '')
+                    + f"Wt {getattr(item, 'weight', 0):g}   {id_text}")
             text(meta, font_tiny, FP.FADED_TEXT, r.x + text_x, r.bottom - S(15))
             y += pack_row_h
 
@@ -2329,6 +2339,10 @@ class RenderMixin:
             self._draw_spell_menu()
         elif self.state == STATE_INTERCESSION_PROMPT:
             self._draw_intercession_prompt()
+        elif self.state == STATE_ASK:
+            self._draw_ask_prompt()
+        elif self.state == STATE_LOADOUTS:
+            self._draw_loadouts()
         elif self.state == STATE_BOON_MENU:
             self._draw_boon_menu()
         elif self.state == STATE_PRAYER_MENU:
@@ -4338,7 +4352,8 @@ class RenderMixin:
             from chain_equip import get_chain_mode, get_chain_subject
             lines += [
                 ("Attunement chain", FP.GOLD_BRIGHT, self.font_sm),
-                (f"{get_chain_subject(item).title()} {_quiz_mode_phrase(get_chain_mode(item))}, fresh quiz on each equip",
+                (f"{get_chain_subject(item).title()} {_quiz_mode_phrase(get_chain_mode(item))}; "
+                 "your best chain is kept, and you may attune again to climb",
                  FP.BODY_TEXT, self.font_sm),
             ]
             bonuses = getattr(item, 'tier_bonuses', {}) or {}
@@ -5247,16 +5262,35 @@ class RenderMixin:
                 delta = self._equip_delta_str(item)
                 if delta:
                     detail = f"{detail}   {delta}"
+                # Known by Hand (known_by_hand.py): no quiz for a kind worn
+                # before; the weapon At Your Back is marked too.
+                _kbh_mark = self._known_by_hand_mark(item)
+                if _kbh_mark:
+                    badge, badge_col = 'BY HAND', FP.SUCCESS_TEXT
+                elif item is self.player.readied_weapon:
+                    badge, badge_col = 'AT BACK', FP.GOLD_PALE
+                elif getattr(item, 'equip_chain_mode', ''):
+                    badge, badge_col = 'CHAIN', FP.ARCANE_BRIGHT
+                else:
+                    badge, badge_col = '', FP.ARCANE_BRIGHT
+                if _kbh_mark:
+                    cue = f"{_kbh_mark}: it goes on with no quiz."
+                elif isinstance(item, Weapon):
+                    cue = "Equip this weapon. Weapons need no quiz."
+                else:
+                    cue = ("Equip this item. The first piece of each kind asks its quiz; "
+                           "after that the kind is known by hand.")
+                _don = self._dress_time_text(item)
+                if _don:
+                    cue = f"{cue} {_don}"
                 entries.append({
                     'name': self._display_name(item),
                     'detail': detail,
                     'key': self._menu_letter(i),
                     'icon': item,
-                    'badge': 'CHAIN' if getattr(item, 'equip_chain_mode', '') else '',
-                    'badge_color': FP.ARCANE_BRIGHT,
-                    'details': self._menu_item_detail_lines(
-                        item,
-                        "Equip this item. Armor and accessories may start their subject quiz first."),
+                    'badge': badge,
+                    'badge_color': badge_col,
+                    'details': self._menu_item_detail_lines(item, cue),
                 })
 
         _equip_counts = []
@@ -5293,16 +5327,17 @@ class RenderMixin:
 
     _KIT_SRC_COLOR = {
         'equip': (220, 200, 120),  # gold-ish: currently worn
+        'back':  (200, 190, 150),  # the weapon At Your Back
         'pack':  (200, 200, 200),  # normal
         'floor': (140, 140, 140),  # dim: on the ground here
     }
-    _KIT_SRC_TAG = {'equip': 'eq', 'pack': 'pk', 'floor': 'fl'}
+    _KIT_SRC_TAG = {'equip': 'eq', 'back': 'bk', 'pack': 'pk', 'floor': 'fl'}
 
     def _kit_rows_for_slug(self, slug: str):
         all_rows = self._kit_collect_items()
         tab_slugs = [t[1] for t in self._KIT_TABS]
         rows = self._kit_filter_for_tab(all_rows, tab_slugs.index(slug))
-        order = {'floor': 0, 'equip': 1, 'pack': 2}
+        order = {'floor': 0, 'equip': 1, 'back': 2, 'pack': 3}
         if slug == 'weapons':
             rows.sort(key=lambda r: (order.get(r[0], 9),
                                      -float(self._kit_avg_damage(r[1]) or 0)))
@@ -5355,6 +5390,10 @@ class RenderMixin:
             stats.append(f"{name} {value}" if name else value)
         if idl < 3:
             stats.insert(0, "Not identified: stats hidden")
+        # Known by Hand (known_by_hand.py): this kind goes on with no quiz.
+        _kbh_mark = self._known_by_hand_mark(item) if src != 'equip' else ''
+        if _kbh_mark:
+            stats.insert(0, _kbh_mark)
         extra_label = labels[-1] if labels else ''
         extra = str(cells[-1]) if cells else ''
         if extra in ('?', '-', ''):
@@ -5362,7 +5401,8 @@ class RenderMixin:
         return stats, (extra_label, extra)
 
     def _kit_source_label(self, src: str) -> str:
-        return {'equip': 'Equipped', 'pack': 'Pack', 'floor': 'Floor'}.get(src, src)
+        return {'equip': 'Equipped', 'back': 'At Your Back', 'pack': 'Pack',
+                'floor': 'Floor'}.get(src, src)
 
     def _kit_detail_lines_for_treasure(self, src: str, item):
         """A piece of treasure in the Kit's Valuables tab: what the shop says
@@ -5415,6 +5455,16 @@ class RenderMixin:
         if delta:
             color = FP.SUCCESS_TEXT if '+' in delta else FP.WARNING_TEXT
             lines.append((delta, color, self.font_sm))
+        # Known by Hand and the time it takes (game_dressing.py).
+        _kbh_mark = self._known_by_hand_mark(item) if src != 'equip' else ''
+        if _kbh_mark:
+            lines.append((f"{_kbh_mark}: it goes on with no quiz.", FP.SUCCESS_TEXT, self.font_sm))
+        _don = self._dress_time_text(item)
+        if _don:
+            lines.append((_don, FP.BODY_TEXT, self.font_sm))
+        if src == 'back':
+            lines.append(("At your back: S swaps it into your hand in one turn.",
+                          FP.BODY_TEXT, self.font_sm))
         if idl >= 3:
             stats, (extra_label, extra) = self._kit_row_labelled(slug, src, item)
             lines.append(("Visible stats", FP.GOLD_BRIGHT, self.font_sm))
@@ -6562,6 +6612,120 @@ class RenderMixin:
             "Press the number to pray  //  Esc: rise without praying",
             True, FP.HINT_TEXT)
         self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, by + bh - S(28)))
+
+    def _draw_ask_prompt(self):
+        """The small yes / no prompt (game_dressing._ask): Keep dressing?,
+        attune again?, put a kit on. Drawn lightly over the map, so what
+        stopped the dressing can still be seen."""
+        data = getattr(self, '_ask_data', None) or {}
+        opts = [{'key': k, 'name': n, 'text': t}
+                for k, n, t, _cb in (data.get('options') or ())]
+        keys = ' / '.join(o['key'] for o in opts) or 'Y / N'
+        _kit_option_card(self.screen, data.get('title', ''), opts,
+                         f"{keys}: choose   Enter: {opts[0]['name'] if opts else 'yes'}   "
+                         f"Esc: {data.get('esc') or 'close'}",
+                         lines=list(data.get('lines') or ()), border=FP.GOLD,
+                         overlay=150, min_w=640)
+
+    def _draw_loadouts(self):
+        """Shift+E: the three saved kits (game_dressing.py, loadouts.py). The
+        kits on the left with the turns each takes to put on; the chosen
+        kit's pieces on the right, and what would be skipped."""
+        from loadouts import KIT_COUNT
+        kits = self._kits()
+        sel = max(0, min(getattr(self, '_loadout_sel', 0), KIT_COUNT - 1))
+        naming = getattr(self, '_loadout_naming', None)
+        panel = self._ui_modal_panel("LOADOUTS", border_color=FP.GOLD,
+                                     max_w=1180, max_h=700)
+        body = self._ui_modal_body(panel)
+        gutter = S(14)
+        left_w = max(S(300), min(S(420), int(body.w * 0.38)))
+        left = pygame.Rect(body.x, body.y, left_w, body.h)
+        right = pygame.Rect(left.right + gutter, body.y, body.w - left_w - gutter, body.h)
+        lbody = self._ui_subpanel(left, "Saved Kits")
+        rbody = self._ui_subpanel(right, "Pieces")
+        name_f = get_font('body', 20, bold=True)
+        line_f = get_font('body', 17)
+        lead = S(4)
+        row_h = S(12) + name_f.get_height() + lead + line_f.get_height() + S(12)
+        y = lbody.y
+        for i, kit in enumerate(kits):
+            plan = self._kit_plan(i)
+            selected = i == sel
+            rect = pygame.Rect(lbody.x, y, lbody.w - S(4), row_h)
+            self._ui_row(rect, selected,
+                         fill=(35, 43, 82) if selected else FP.MIDNIGHT,
+                         border=FP.GOLD if selected else FP.ARCANE_DIM, radius=6)
+            bg = KT.SELECTED if selected else KT.RAISED
+            title = f"{i + 1}  {kit['name']}"
+            if selected and naming is not None:
+                title = f"{i + 1}  {naming}_"
+            tw = rect.w - S(24)
+            nf, ntext = self._fit_line(title, tw, (20, 18, 16))
+            self.screen.blit(nf.render(ntext, True, readable(
+                FP.GOLD_BRIGHT if selected else FP.GOLD_PALE, bg)), (rect.x + S(12), rect.y + S(12)))
+            n = len(kit.get('pieces') or {})
+            off = len(plan['missing']) + len(plan['refused'])
+            if not n:
+                sub = "Empty: dress, then S saves it"
+            elif plan['already']:
+                sub = f"{n} pieces: what you wear now"
+            elif not plan['steps']:
+                sub = f"{n} pieces: {off} cannot go on now"
+            else:
+                t = plan['turns']
+                sub = f"{n} pieces: {t} turn{'s' if t != 1 else ''} to put on"
+                if off:
+                    sub += f", {off} stay{'s' if off == 1 else ''} off"
+            sf, stext = self._fit_line(sub, tw, (17, 16, 15))
+            self.screen.blit(sf.render(stext, True, readable(FP.BODY_TEXT, bg)),
+                             (rect.x + S(12), rect.y + S(12) + name_f.get_height() + lead))
+            y += row_h + S(8)
+        note = ("A kit holds the very pieces you saved. Putting it on takes each "
+                "piece's turns; a piece must be in your pack, and known by hand.")
+        self._ui_wrap_text(note, line_f, readable(FP.FADED_TEXT, KT.RAISED),
+                           pygame.Rect(lbody.x + S(4), y + S(6), lbody.w - S(8),
+                                       max(0, lbody.bottom - y - S(6))))
+        # The chosen kit's pieces, two columns when they need it.
+        rows = self._kit_lines(sel)
+        plan = self._kit_plan(sel)
+        y = rbody.y
+        if not rows:
+            self._ui_wrap_text("Nothing saved here yet. Put on what you want, open this "
+                               "screen and press S.", line_f,
+                               readable(FP.FADED_TEXT, KT.RAISED), rbody)
+        else:
+            lab_w = max(line_f.size(lab)[0] for lab, _n in rows) + S(14)
+            cols = 2 if len(rows) * (line_f.get_height() + S(6)) > rbody.h - S(90) else 1
+            col_w = (rbody.w - S(12) * (cols - 1)) // cols
+            per = (len(rows) + cols - 1) // cols
+            for idx, (lab, nm) in enumerate(rows):
+                c, r = divmod(idx, per)
+                x = rbody.x + c * (col_w + S(12))
+                yy = y + r * (line_f.get_height() + S(6))
+                self.screen.blit(line_f.render(lab, True, readable(FP.FADED_TEXT, KT.RAISED)),
+                                 (x, yy))
+                nf, ntext = self._fit_line(nm, col_w - lab_w, (17, 16, 15))
+                self.screen.blit(nf.render(ntext, True, readable(FP.BODY_TEXT, KT.RAISED)),
+                                 (x + lab_w, yy))
+            y += per * (line_f.get_height() + S(6)) + S(10)
+            notes = []
+            if plan['missing']:
+                notes.append(("Not in your pack: " + ', '.join(
+                    self._bare_name(it) for it in plan['missing']) + '.', FP.WARNING_TEXT))
+            for it, why in plan['refused']:
+                notes.append((f"Stays off: {self._bare_name(it)} ({why}).", FP.WARNING_TEXT))
+            for text, col in notes:
+                if y >= rbody.bottom:
+                    break
+                y = self._ui_wrap_text(text, line_f, readable(col, KT.RAISED),
+                                       pygame.Rect(rbody.x, y, rbody.w, rbody.bottom - y)) + S(4)
+        if naming is not None:
+            hint = "Type a name   Enter: keep   Esc: cancel"
+        else:
+            hint = ("1-3: choose   Enter: put on   S: save what you wear   N: rename   "
+                    "Esc: close")
+        self._ui_footer(panel, hint)
 
     def _draw_intercession_prompt(self):
         """v2.13.0: Y/N confirm popup for Divine Intercession. Terse,
@@ -8334,6 +8498,18 @@ class RenderMixin:
                 x += widths[k] + gap
         return y + lines_used * (fnt.get_height() + line_gap)
 
+    def _lore_equip_line(self, item) -> str:
+        """The equip line of an armour, shield or ring lore card: the
+        quiz's threshold, or Known by Hand once the kind has been worn, and
+        the turns a slow piece takes to put on."""
+        mark = self._known_by_hand_mark(item)
+        line = (f"Equip: {mark}, no quiz" if mark
+                else _threshold_line("Equip", getattr(item, 'equip_threshold', '?')))
+        n = self._don_turns(item) if hasattr(self, '_don_turns') else 1
+        if n > 1:
+            line += f"   Takes {n} turns to put on"
+        return line
+
     def _lore_equipped_slot(self, item):
         """Return the equipped slot name for item, or None when it is not worn."""
         try:
@@ -8500,8 +8676,7 @@ class RenderMixin:
                 (f"Slot: {_cap(item.slot)}   Material: {('Unique' if getattr(item, 'is_unique', False) and str(item.material).lower() in ('legendary', 'adamantine') else _cap(item.material))}   Tier: {item.tier}",
                  FP.BODY_TEXT, self.font_sm),
                 (self._lore_armour_line(item), FP.BODY_TEXT, self.font_sm),
-                (_threshold_line("Equip", getattr(item, 'equip_threshold', '?')),
-                 FP.BODY_TEXT, self.font_sm),
+                (self._lore_equip_line(item), FP.BODY_TEXT, self.font_sm),
             ]
             if getattr(item, 'damage_resistances', None):
                 lines.append((f"Resists: {self._kit_resist_str(item)}",
@@ -8523,8 +8698,7 @@ class RenderMixin:
                 (f"Material: {('Unique' if getattr(item, 'is_unique', False) and str(item.material).lower() in ('legendary', 'adamantine') else _cap(item.material))}   Tier: {item.tier}",
                  FP.BODY_TEXT, self.font_sm),
                 (self._lore_armour_line(item), FP.BODY_TEXT, self.font_sm),
-                (_threshold_line("Equip", getattr(item, 'equip_threshold', '?')),
-                 FP.BODY_TEXT, self.font_sm),
+                (self._lore_equip_line(item), FP.BODY_TEXT, self.font_sm),
             ]
             if getattr(item, 'damage_resistances', None):
                 lines.append((f"Resists: {self._kit_resist_str(item)}",
@@ -8546,8 +8720,7 @@ class RenderMixin:
                 if 'status' in fx:
                     parts.append(f"Grants {_cap(fx['status'])}")
                 lines.append(("Effect: " + ', '.join(parts), FP.CYAN_ACCENT, self.font_sm))
-            lines.append((_threshold_line("Equip", getattr(item, 'equip_threshold', '?')),
-                          FP.BODY_TEXT, self.font_sm))
+            lines.append((self._lore_equip_line(item), FP.BODY_TEXT, self.font_sm))
 
         elif isinstance(item, Wand):
             lines += [
@@ -10323,6 +10496,9 @@ class RenderMixin:
                 (".", "Wait / meditate", FP.BODY_TEXT),
                 ("< >", "Go up / down stairs", FP.BODY_TEXT),
                 ("Tab", "Cycle zoom", FP.BODY_TEXT),
+                # Here, where the column's keys are already wide: in Items
+                # the badge cut "Drop, gold / use tile" at 1280x720.
+                ("Shift+E", "Loadouts", FP.BODY_TEXT),
             ]),
             ("Combat", [
                 ("A", "Melee attack", FP.BODY_TEXT),
@@ -10330,6 +10506,7 @@ class RenderMixin:
                 ("T", "Throw item", FP.BODY_TEXT),
                 ("M / Z", "Cast spell / zap wand", FP.BODY_TEXT),
                 ("V", "Powers menu", FP.BODY_TEXT),
+                ("S", "Swap weapons", FP.BODY_TEXT),
             ]),
             ("Items", [
                 ("E", "Equip menu", FP.BODY_TEXT),

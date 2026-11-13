@@ -302,8 +302,10 @@ def test_armor_taken_off_leaves_nothing_behind():
     p.armor_slots[SLOT_INDEX['cloak']] = None
     p.shed_worn_grants(mantle)
     assert p.max_mp == mp
-    src = open(os.path.join(ROOT, 'src', 'main.py'), encoding='utf-8').read()
-    at = src.index('def _unequip_slot')
+    # One helper takes every piece off (game_dressing._take_off_now, called
+    # by main._unequip_slot and the donning steps).
+    src = open(os.path.join(ROOT, 'src', 'game_dressing.py'), encoding='utf-8').read()
+    at = src.index('def _take_off_now')
     assert src[at:at + 4000].count('shed_worn_grants(item)') == 2          # armor and shield
 
 

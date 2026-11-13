@@ -145,7 +145,9 @@ def test_thresholds_follow_slot_and_tier():
         for lv in range(rings.first_level(rings.get(kid)), 11):
             r = _ring(kid, lv)
             slot = rings.get(kid)['slot']
-            lo, hi = (1, 3) if slot == 'ring' else (2, 4)
+            # Asked once a kind since Known by Hand (2026-11-13): ring 2,
+            # amulet 3, plus the benefit of the tier (0 1 1 2 2).
+            lo, hi = (2, 4) if slot == 'ring' else (3, 5)
             assert lo <= r.equip_threshold <= hi, (kid, lv)
 
 
