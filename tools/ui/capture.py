@@ -1303,6 +1303,36 @@ def _(g):
     press(g, pygame.K_RETURN)
 
 
+@scene('menu_bestiary_known_rows', 'Menus',
+       'B, Bestiary, Enter on a kind known by its page (Recall Lore at chain 5, probing, a '
+       'quest): Weak to, Resists, Shrugs Off, Immune To (winning-build plan 3.1).',
+       expect='encyclopedia')
+def _(g):
+    g.player.known_monster_ids.add('scarab_swarm')
+    g.player.lore_known_monster_ids.add('scarab_swarm')
+    press(g, pygame.K_b)
+    press(g, pygame.K_RETURN)
+    g.encyclopedia_selection = next(i for i, e in enumerate(g.encyclopedia_entries)
+                                    if e.get('_id') == 'scarab_swarm')
+    press(g, pygame.K_RETURN)
+    press(g, pygame.K_PAGEDOWN)          # the rows under the picture
+
+
+@scene('menu_bestiary_known_status_rows', 'Menus',
+       'B, Bestiary, Enter on a studied troll: the Weak to row (fire, acid) and the '
+       'Falls Easily To row (confusion, fear of fire).',
+       expect='encyclopedia')
+def _(g):
+    g.player.known_monster_ids.add('troll')
+    g.player.studied_monster_ids.add('troll')
+    press(g, pygame.K_b)
+    press(g, pygame.K_RETURN)
+    g.encyclopedia_selection = next(i for i, e in enumerate(g.encyclopedia_entries)
+                                    if e.get('_id') == 'troll')
+    press(g, pygame.K_RETURN)
+    press(g, pygame.K_PAGEDOWN)
+
+
 @scene('menu_bestiary_family_line', 'Menus',
        'O, Enter on a creature never studied whose family is at tier 1: its full page, '
        'with "Family: ... (known by its family, not yet studied)".', expect='encyclopedia')

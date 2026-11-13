@@ -482,6 +482,7 @@ def test_pierce_resist_undoes_a_resistance():
     golem.resistances = list(p.weapon.damage_types)             # every form it has
     golem.weaknesses = []
     golem.hp = golem.max_hp = 10 ** 6
+    p.lore_known_monster_ids.add('iron_golem')     # its resistances show in the preview
     plain = combat.strike_preview(p, golem, 6)
     _to_tier(p, 'constructs', 4)                                # Find the Seam
     need = _param('constructs_find_the_seam', 'pierce_resist', 'chain_min')

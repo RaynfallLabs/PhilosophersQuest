@@ -126,10 +126,22 @@ def test_the_game_says_it_at_the_end_of_the_action(monkeypatch, tmp_path):
     monkeypatch.setattr(g, 'add_message', lambda text, kind='info', *a, **k: seen.append((text, kind)))
     from monster import the_name
     rat = _mon()
+    # A kind the hero does not know: the hit is felt, its cause not named
+    # (winning-build plan 3.1).
+    affinity.note(rat, 'resisted', 'cold')
+    g._advance_turn()
+    lines = [t for t, k in seen if k == 'warning']
+    felt = [s.format(name=the_name(rat), the=the_name(rat, lower=True))
+            for s in affinity.lines()['felt']['resisted']]
+    assert any(t in felt for t in lines)
+    assert not any('cold' in t.lower() for t in lines)
+    assert affinity.drain() == []
+    # Once he knows it, the line names the cause.
+    g.player.studied_monster_ids.add('giant_rat')
+    seen.clear()
     affinity.note(rat, 'resisted', 'cold')
     g._advance_turn()
     lines = [t for t, k in seen if k == 'warning']
     pool = [s.format(name=the_name(rat), the=the_name(rat, lower=True), word='cold', word_cap='Cold')
             for s in affinity.lines()['resisted']]
     assert any(t in pool for t in lines)
-    assert affinity.drain() == []

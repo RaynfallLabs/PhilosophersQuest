@@ -655,7 +655,10 @@ The main groups are:
   `levitation_self`, `boost_str`, `boost_con`, `boost_int`.
 - **World effects:** `digging`, `light`, `sunlight`, `secret_door_detection`,
   `opening`, `mapping`, `clairvoyance`, `detect_treasure`, `detect_monsters`,
-  `probing`.
+  `probing` (its health and everything it is made of: weaknesses, resistances,
+  what it shrugs off, refuses and falls to easily, `enemy_lore.probe_lines`;
+  it also opens the kind's Bestiary page with no family credit. It used to
+  read `fire_resist`-style fields no monster has, so it never showed any).
 - **Monster-targeted damage:** `fire_bolt`, `cold_bolt`, `lightning_bolt`
   (line AOE), `acid_spray`, `magic_missile`, `striking`, `drain_life`,
   `death_ray` (70% instakill), `disintegrate` (85% instakill),
@@ -940,7 +943,13 @@ Lifecycle:
 - `player.known_item_ids` — set of identified item ids; mapping which
   specific spellbook/wand/scroll was identified lives here.
 - `player.recall_lore_cooldown` — Recall Lore (trivia-escalator; see
-  `_start_recall_lore`) is magic-adjacent and tracked in player state.
+  `_start_recall_lore`) is magic-adjacent and tracked in player state. With
+  a creature in view whose kind he does not yet know (`_recall_lore_subject`:
+  the nearest), the recall is about it, by chain (`enemy_lore.recall_text`:
+  1 its family, 2 one weakness, 3 its resistances, 4 what it shrugs off and
+  its nature refuses, 5 all of it and its page opens with no family credit);
+  with none, a hint from `data/hints.json` as before. The cooldown is the
+  same either way.
 - Buff statuses (shielded, hasted, etc.) live in
   `player.status_effects` — see [status_effects](status_effects.md).
 

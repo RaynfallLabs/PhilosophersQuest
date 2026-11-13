@@ -229,6 +229,24 @@ opens a dialog instead of attacking.
 | 4 | Moo Moo Farm | `_level_999_moo_moo_farm` (`boss_levels.py:562`) carves a 35x20 pasture ringed by fence-post walls, with a 6x4 **Cow King's Pen** sealed by a DOOR. Hell Bovines scatter across the pasture. Entry tile is a STAIRS_DOWN that is actually the **portal home**. |
 | 5 | exit | Stepping on the portal → `_exit_cow_level` sets `_cow_level_done=True`, teleports back to `_cow_return_level`. Cow is gone (consumed), portal closes. |
 
+### 2.9b The quest teaches the boss (winning-build plan 3.1)
+
+A gate boss has no corpse to study before the fight, so his quest is how a careful
+hero learns him. Its key step calls `FamilyMixin._quest_teaches(boss_kind)`: the
+quest-giver names his weakness in her or his own voice and the boss's Bestiary page
+opens (`lore_known_monster_ids`, no family credit), so he is KNOWN: the hit lines
+name causes, the Strike Now preview counts his weakness, first sight says what he is
+made of. The lines are `data/enemy_lore.json` `quest_teach`; each entry's `claims`
+are checked against `monsters.json` by `tests/test_know_your_enemy.py`.
+
+| Boss | Key step | Voice |
+|---|---|---|
+| Asterion | `_activate_ariadne_shrine` (the bull in the fountain) | Ariadne: "Not the club, nor the hammer. He was born of a bull: a point between the ribs." |
+| Medusa | `_activate_athena_shrine` (the eye on the altar) | Athena: an edge ends her; poison will not |
+| Fafnir | `_activate_odin_shrine` (either path) | Odin: dig, strike up with a point; his scales turn edge, hammer, fire and venom |
+| Fenrir | `_check_gleipnir_forge` (Gleipnir forged) | a dwarf at the anvil: every wolf fears fire; frost is his own (the Sandal is never named) |
+| Abaddon | `_resolve_judgment` (any verdict) | the voice that weighed you: holy wounds him most |
+
 ### 2.10 Chain summary table
 
 | Chain | Trigger items | Spawn floors | Altar / meeting floor | Reward |

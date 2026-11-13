@@ -637,7 +637,8 @@ and [combat.md §UI — combat HUD](combat.md#ui--combat-hud-inside-the-quiz-mod
   right-aligned, the big live `{dmg} Damage` (from
   `combat.strike_preview`, the blow's own calculation, so it is what
   the blow deals), `x{mult} Multiplier`,
-  and the damage-type tag (`Weakness: <types>` dm ≥ 1.5,
+  and the damage-type tag, for a kind the hero knows only (`combat.affinity_known`; an unknown kind's
+  number is the plain blow and its tag the plain types: winning-build plan 3.1) (`Weakness: <types>` dm ≥ 1.5,
   `Resisted: <types>` dm ≤ 0.5, else the type names). The ranged
   variant uses `player.ranged_weapon`, chosen by the
   `_combat_is_ranged` flag.

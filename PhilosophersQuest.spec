@@ -41,6 +41,8 @@ added_files = [
     ('data/lore_fixtures.json',     'data'),   # lore fixtures (game_lore_fixtures.py)
     ('data/war_bands.json',         'data'),   # war-bands (war_bands.py)
     ('data/tells.json',             'data'),   # tells (tells.py)
+    ('data/kit_sense.json',         'data'),   # Kit Sense lines (kit_sense.py)
+    ('data/enemy_lore.json',        'data'),   # Recall Lore on monsters, probing, quests (enemy_lore.py)
     ('data/boss_floors.json',       'data'),   # the five finales (decor.py)
     ('data/hints.json',             'data'),
     ('data/question_twins.json',    'data'),   # same-fact twins the quiz holds back (quiz_engine)
@@ -65,6 +67,7 @@ added_files = [
     ('data/ring_kinds.json',        'data'),   # the ring and amulet kinds (rings.py)
     ('data/affinity_lines.json',    'data'),   # weakness / resistance hit lines (affinity.py)
     ('data/affinity_rules.json',    'data'),   # the weak / resisted / shrugs-off steps (affinity.py)
+    ('data/family_affinity.json',   'data'),   # the groups a family's habit line asks first (affinity.habit)
     ('data/monster_blood.json',     'data'),   # which creatures can bleed (monster.kind_can_bleed)
     # Game data — directories
     ('data/items',                  'data/items'),

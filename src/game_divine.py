@@ -537,6 +537,9 @@ class DivineMixin:
             '"I gave a ball of thread to a man who sailed away without me. '
             'Take this one. My brother knows his walls, but nothing hides '
             'from a thread tied at the door."', 'success')
+        # The quest teaches the boss: she names how he dies (winning-build
+        # plan 3.1, data/enemy_lore.json quest_teach).
+        self._quest_teaches('asterion_minotaur')
 
         dx, dy = shrine_door
         self.dungeon.tiles[dy][dx] = DOOR
@@ -561,6 +564,7 @@ class DivineMixin:
         self.add_message(
             '"Perseus paid the same toll. The shield is behind the wall. '
             'Keep the bronze between you and her, and look nowhere else."', 'success')
+        self._quest_teaches('medusa_gorgon')
 
         dx, dy = shrine_door
         self.dungeon.tiles[dy][dx] = DOOR
@@ -613,6 +617,8 @@ class DivineMixin:
                 "A dry old voice: \"Set down like a beggar's coin. So be it. "
                 "Sigurd had a second tool. A dragon wears his armour on his "
                 "back.\"", 'success')
+        # Either way Odin tells how Fafnir dies (winning-build plan 3.1).
+        self._quest_teaches('fafnir_dragon')
 
         # Always open the shrine (contains the shovel)
         if shrine_door:
@@ -690,6 +696,7 @@ class DivineMixin:
             self.add_message(
                 "What lies on the anvil is a ribbon, soft as silk. Gleipnir. "
                 "Nothing has ever broken it.", 'success')
+            self._quest_teaches('fenrir_wolf')
             _snd.play('equip')
             self._chron('discovery', "Fed six impossible things to the Dwarven Forge. The flames consumed them all. What came out was a ribbon, thin as silk. Gleipnir. I can't break it. Nothing can.")
 

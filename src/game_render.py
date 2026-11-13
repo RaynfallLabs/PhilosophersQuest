@@ -3810,7 +3810,9 @@ class RenderMixin:
 
         combat.strike_preview runs the same two functions the real blow
         does (combat.effective_chain + combat.strike_damage) without spending
-        anything, so the number shown is the number dealt (call 13). Dice
+        anything, so the number shown is the number dealt (call 13) for a
+        kind the hero knows; for one he does not, it is the plain blow, with
+        no weakness or resistance in it (winning-build plan 3.1). Dice
         (rare legacy weapons, a few named weapons' bonus dice) count as
         their average."""
         from combat import strike_preview
@@ -4014,9 +4016,15 @@ class RenderMixin:
             put("0 Damage", s['main'], FP.FADED_TEXT, sizes=(32,), family='heading')
             put("Answer to start a chain", s['sub1'], FP.FADED_TEXT)
 
-        # Damage-type / weakness tag keeps its signal colour.
+        # Damage-type / weakness tag keeps its signal colour. It says how the
+        # blow meets the creature only when the hero knows the kind
+        # (combat.affinity_known, winning-build plan 3.1); for one he does
+        # not, the plain types, as the big number is the plain blow.
         type_str = " / ".join(_label(d) for d in dtypes)
-        if dm > 1.0:
+        from combat import affinity_known as _aff_known
+        if not _aff_known(self.player, monster):
+            dm_text, dm_col = type_str, FP.FADED_TEXT
+        elif dm > 1.0:
             dm_text, dm_col = f"Weakness: {type_str}", FP.SUCCESS_TEXT
         elif dm <= _aff.shrugs_step() + 1e-9:
             dm_text, dm_col = f"Shrugs Off: {type_str}", FP.DANGER_TEXT

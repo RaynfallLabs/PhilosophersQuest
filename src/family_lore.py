@@ -10,7 +10,8 @@ How knowledge is earned
   * ONE study is a correct corpse study or a Scroll of Omnisight
     (`record_study`). Killing, harvesting and seeing do not count, and the
     Book of Thoth opens Bestiary pages (Player.lore_known_monster_ids) but
-    gives no tiers (decision 4).
+    gives no tiers (decision 4); so do Recall Lore at chain 5, the Wand of
+    Probing and a gate boss's quest step (src/enemy_lore.py).
   * Progress counts DIFFERENT kinds studied in the family
     (Player.studied_monster_ids): a known kind's corpse never asks again,
     so two skeletons teach no more than one. A keystone (a boss, a
@@ -25,7 +26,9 @@ What the game asks here
   * `tier(player, fid)`, `tiers(player)`, `progress(player, fid)`;
   * `has_page(player, kind)`: may the full Bestiary page open (ruling 1);
   * `knowledge(player, kind)`: UNKNOWN, KIN or KNOWN, how much the hero is
-    told of a creature he sees (src/tells.py, the Bestiary's weaknesses);
+    told of a creature he sees (src/tells.py, the Bestiary's weaknesses, the
+    hit lines in src/affinity.py, the Strike Now preview, Kit Sense and
+    Recall Lore: winning-build plan 3.1);
   * `record_study(player, kind)` then `news(player)`: the tiers, circles and
     title newly reached, once each (Player.family_tiers_told);
   * `arrival_families(...)` / `forewarned_lines(...)` (`arrival_lines` for

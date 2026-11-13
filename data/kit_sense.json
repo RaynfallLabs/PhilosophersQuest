@@ -1,0 +1,26 @@
+{
+  "_doc": "Kit Sense (winning-build plan 2026-11-13, section 3.1; src/kit_sense.py). A hero who knows a family to its Hunter tier ('tier') is told, on first sight of a group of its creatures, the best tool he carries for them: 'Your Silver Mace would serve here.' One line per sighting: a kind counts as sighted again only after it has been out of his sight for 'gap' turns. Nothing is said when his best tool is the one already in his hand. 'lines' by tool kind (a weapon now; the arsenal's coatings and flasks plug in as their own kinds), 'default' for a kind with no lines of its own; the _many pools when several of the kind are in sight. {tool} is the tool's name as the hero knows it, {the} the creature.",
+  "tier": 4,
+  "gap": 25,
+  "lines": {
+    "weapon": [
+      "Your {tool} would serve here.",
+      "This is work for your {tool}.",
+      "Your {tool} would bite deeper into {the}.",
+      "A hunter would reach for the {tool} now."
+    ],
+    "default": [
+      "Your {tool} would serve here."
+    ]
+  },
+  "lines_many": {
+    "weapon": [
+      "Your {tool} would serve against these.",
+      "This is work for your {tool}.",
+      "A hunter would meet these with the {tool}."
+    ],
+    "default": [
+      "Your {tool} would serve against these."
+    ]
+  }
+}

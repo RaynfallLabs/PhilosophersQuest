@@ -1173,11 +1173,18 @@ _WIELDED = object()     # strike_damage: "the weapon in the slot that attacks"
 
 
 def strike_damage(player, monster, chain: int, *, ranged: bool = False, ammo=None,
-                  consume: bool = False, dice=None, weapon=_WIELDED) -> int:
+                  consume: bool = False, dice=None, weapon=_WIELDED,
+                  affinity_known: bool = True) -> int:
     """The damage one blow at ``chain`` does to ``monster`` before
     Monster.take_damage: base, Strength, blessing, ammo, chain, form and
     substance, class mechanics, hero passives, shields, scales, wards and
     every gear bonus.
+
+    ``affinity_known=False`` (the Strike Now preview of a kind the hero
+    does not know, winning-build plan section 3.1) counts the weapon's form
+    and substance as plain against it: the number he is shown is the blow
+    as he understands it, and the real blow still meets its weakness or
+    resistance. A real blow never passes it.
 
     This is the ONE damage calculation. player_attack calls it for the real
     blow (consume=True: one-shot buffs such as Empower, blade flow and the
@@ -1287,6 +1294,9 @@ def strike_damage(player, monster, chain: int, *, ranged: bool = False, ammo=Non
                 if _fedges else {'pierce': False, 'scales': False, 'blessed': False})
     if _edge_pr['blessed']:
         _form_mult, _subst_mult = weapon_type_multiplier(weapon, monster, blessed=True)
+    if not affinity_known and not consume:
+        # The preview of a kind he does not know: no weakness, no resistance.
+        _form_mult, _subst_mult = 1.0, 1.0
     # Struck where it is weak (form or substance): for the techniques that
     # hit a family's listed weaknesses harder (weakness_amp).
     _hits_weak = _form_mult > 1.0 or _subst_mult > 1.0
@@ -1787,20 +1797,39 @@ def _rapid_shot_followup(weapon, chain: int, first: int) -> int:
     return max(1, first // 2)
 
 
+def affinity_known(player, monster) -> bool:
+    """Does the hero know this kind well enough to be told how his blow
+    meets it (family_lore.knowledge KNOWN: studied, its page opened, or its
+    family at Lore)? The Strike Now preview and the combat strip's
+    weakness tag ask this (winning-build plan section 3.1)."""
+    try:
+        import family_lore
+    except ImportError:
+        return True
+    return family_lore.knowledge(player, monster) >= family_lore.KNOWN
+
+
 def strike_preview(player, monster, score: int, *, ranged: bool = False, ammo=None,
-                   weapon=_WIELDED) -> int:
+                   weapon=_WIELDED, known: bool | None = None) -> int:
     """What pressing Strike Now at quiz chain ``score`` deals to the target:
     the same effective_chain + strike_damage the blow runs (nothing spent,
     dice at their average), plus a Rapid Shot follow-up arrow when the
-    first does not kill. The combat strip shows this number (call 13)."""
+    first does not kill. The combat strip shows this number (call 13).
+
+    The weakness or resistance the blow will meet is in the number only
+    when the hero knows the kind (``known``, by default `affinity_known`):
+    for one he does not, the number is the plain blow, and the hit itself
+    tells him how it felt."""
     if weapon is _WIELDED:
         weapon = player.ranged_weapon if ranged else player.weapon
+    if known is None:
+        known = affinity_known(player, monster)
     # Pressing Strike Now is a Strike Now: at chain 0 no never-miss save.
     chain = effective_chain(player, monster, weapon, score, consume=False, strike_now=True)
     if chain < 1:
         return 0
     dmg = strike_damage(player, monster, chain, ranged=ranged, ammo=ammo,
-                        consume=False, weapon=weapon)
+                        consume=False, weapon=weapon, affinity_known=bool(known))
     if monster.hp > dmg:
         dmg += _rapid_shot_followup(weapon, chain, dmg)
     return dmg

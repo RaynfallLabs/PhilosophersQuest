@@ -2139,8 +2139,11 @@ class CombatMixin:
                 import tells as _tells
                 for _tl in _tells.lines(monster, _level):
                     self.add_message(_tl, 'warning')
-                if _level >= _fl.KNOWN and _tells.abilities(monster) and _tells.weak_line(monster):
-                    self.add_message(_tells.weak_line(monster), 'info')
+                # What it is made of, once the kind is known (tells.lore_lines:
+                # what hurts it, what it resists and shrugs off, its nature).
+                if _level >= _fl.KNOWN:
+                    for _ll in _tells.lore_lines(monster):
+                        self.add_message(_ll, 'info')
                 if getattr(monster, '_band', None):
                     import war_bands as _wb
                     _bd = _wb.data()['bands'].get(getattr(monster, '_band_id', ''), {})
@@ -2815,9 +2818,11 @@ class CombatMixin:
         """The first time in a run the hero sees a kind, its worst tell, told
         as far as he knows the kind (family_lore.knowledge, src/tells.py):
         the sign of one he does not know; the sign, its family and what it
-        does once he knows its family; all that and what to do, with its
-        weaknesses, once he knows the kind itself. Said again the first time
-        he sees it after he has come to know it better."""
+        does once he knows its family; all that and what to do once he knows
+        the kind itself, and then what it is made of (tells.lore_lines: its
+        weaknesses, what it resists and shrugs off, what its nature refuses
+        and falls to easily), tell or no tell. Said again the first time he
+        sees it after he has come to know it better."""
         import family_lore
         import tells
         if getattr(m, 'is_allied', False) or getattr(m, '_npc_encounter_tag', None) \
@@ -2840,13 +2845,13 @@ class CombatMixin:
             import senses as _senses
             self.add_message(_senses._fill(m, m.sight_sign), 'warning')
         keys = tells.abilities(m)
-        if not keys:
-            return
-        fid = family_lore.family_of(m)
-        self.add_message(tells.line(m, keys[0], level, family_lore.kin(fid) if fid else ''),
-                         'warning')
-        if level >= family_lore.KNOWN and tells.weak_line(m):
-            self.add_message(tells.weak_line(m), 'info')
+        if keys:
+            fid = family_lore.family_of(m)
+            self.add_message(tells.line(m, keys[0], level, family_lore.kin(fid) if fid else ''),
+                             'warning')
+        if level >= family_lore.KNOWN:
+            for line in tells.lore_lines(m):
+                self.add_message(line, 'info')
 
     def _scorch_line(self, x0: int, y0: int, x1: int, y1: int) -> None:
         """Scorch marks along a dragon's breath (decor fixtures, floor layer)."""
@@ -3228,9 +3233,14 @@ class CombatMixin:
 
     def _say_affinity_lines(self):
         """The weakness and resistance lines for the hits noted since the
-        last time (affinity.py)."""
+        last time (affinity.py), said as far as the hero knows each creature
+        struck (family_lore.knowledge): felt only, felt with the family's
+        habit, or the cause named."""
         import affinity as _affinity
-        for _line, _kind in _affinity.say(_affinity.drain()):
+        import family_lore as _fl
+        player = getattr(self, 'player', None)
+        for _line, _kind in _affinity.say(_affinity.drain(),
+                                          level_of=lambda m: _fl.knowledge(player, m)):
             self.add_message(_line, 'success' if _affinity.is_good_news(_kind) else 'warning')
 
     # ------------------------------------------------------------------

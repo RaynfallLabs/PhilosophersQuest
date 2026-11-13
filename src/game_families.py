@@ -13,8 +13,12 @@ mixin only says things to the player and touches the floor:
   * `_family_arrival`: the Forewarned lines when the hero reaches a floor, and
     the creatures that arrive calm (Beast-Friend, Entertaining Angels);
   * `_family_turn` / `_family_drain`: each turn, the families that flee on
-    sight, the hidden things a family technique shows, and the queued
-    technique lines;
+    sight, the hidden things a family technique shows, Kit Sense (the best
+    tool he carries, at Hunter: src/kit_sense.py), and the queued technique
+    lines;
+  * `_open_kind_page` / `_quest_teaches`: a kind's Bestiary page opened
+    with no family credit (Recall Lore at chain 5, the Wand of Probing, a
+    gate boss's quest step: winning-build plan 3.1);
   * `_family_yield` / `_family_surrender`: a foe that yields throws down
     its purse, after the blow is told;
   * `_qa_family_tier`: the QA key (Titivillus, PQ_QA_MODE only).
@@ -40,6 +44,38 @@ class FamilyMixin:
         new = family_lore.record_study(self.player, kind)
         self._family_news()
         return new
+
+    def _open_kind_page(self, kind) -> bool:
+        """Open a kind's Bestiary page with NO family-tier credit (as the
+        Book of Thoth does): it is KNOWN from now on (family_lore.knowledge),
+        and its corpse can still be studied for the family. True when the
+        page was not open before."""
+        if not kind:
+            return False
+        lore = getattr(self.player, 'lore_known_monster_ids', None)
+        if not isinstance(lore, set):
+            lore = set(lore or ())
+            self.player.lore_known_monster_ids = lore
+        if kind in lore or kind in family_lore.studied(self.player):
+            return False
+        lore.add(kind)
+        return True
+
+    def _quest_teaches(self, boss_kind) -> None:
+        """A gate boss cannot be studied before the fight (there is no
+        corpse yet), so his quest is how a careful hero learns him: its key
+        step opens his page (no family credit) and the quest-giver names his
+        weakness in her or his own voice (data/enemy_lore.json quest_teach)."""
+        import enemy_lore
+        lines = enemy_lore.quest_lines(boss_kind)
+        if not lines:
+            return
+        for line in lines:
+            self.add_message(line, 'success')
+        if self._open_kind_page(boss_kind):
+            page = enemy_lore.page_line(boss_kind)
+            if page:
+                self.add_message(page, 'loot')
 
     def _family_has_page(self, kind) -> bool:
         """Ruling 1: the full Bestiary page opens only for an identified kind
@@ -263,7 +299,25 @@ class FamilyMixin:
                     # Said: the keen-senses check never names it again
                     # (Game._do_passive_ambush_detection).
                     m.__dict__['_sensed_told'] = True
+        self._kit_sense_turn()
         self._family_drain()
+
+    def _kit_sense_turn(self) -> None:
+        """Kit Sense (src/kit_sense.py): on first sight of a group of a
+        family the hero knows to Hunter, the best tool he carries for it,
+        when it is not the one in his hand. Only hostile creatures he can
+        see count (never an ally, an encounter's people or the unicorn)."""
+        import kit_sense
+        mons = [m for m in (self.monsters or ())
+                if getattr(m, 'alive', False) and self._sees_monster(m)
+                and not (getattr(m, 'is_allied', False) or getattr(m, '_npc_encounter_tag', None)
+                         or getattr(m, '_flavor_encounter_tag', None)
+                         or getattr(m, '_is_unicorn', False))]
+        state = self.__dict__.setdefault('_kit_sense_seen', {})
+        line = kit_sense.on_sight(self.player, mons, state, floor=getattr(self, 'dungeon_level', 0),
+                                  turn=int(getattr(self, 'turn_count', 0) or 0))
+        if line:
+            self.add_message(line, 'info')
 
     def _family_drain(self) -> None:
         """Print the technique lines queued since the last call."""
