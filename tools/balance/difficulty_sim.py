@@ -506,6 +506,9 @@ PROFILES['stacked'] = dict(PROFILES['secrets'], pet=True, magic=True)
 PROFILES['mastery'] = dict(PROFILES['stacked'], knobs=dict(
     families=1, study_rate=0.95, sword=1, tactics=1, practice=1, untimed=0.97,
     traders=1, altars=1))
+# The same, as a Dexterity build: the meals, gifts and altars to DEX and CON,
+# so light armour's DEX to AC and its dodge (slice 4) are what keep him alive.
+PROFILES['mastery_dex'] = dict(PROFILES['mastery'], stat_focus=('DEX', 'CON'))
 
 CUT_HAS_STAT = 0.85            # share of proper meals cooked from a prime cut
 GATE_BOSSES = ('asterion_minotaur', 'medusa_gorgon', 'fafnir_dragon', 'fenrir_wolf')
@@ -931,6 +934,7 @@ class Run:
         # traders=1: the purse and the run's trader plan
         self.gold = 0.0
         self._trader_plan = None
+        self.scraps = []           # Fenrir's leather scraps carried (5 lb each)
         self._give_starting_kit()
 
     def _healed(self, source: str, got) -> None:
@@ -1221,6 +1225,31 @@ class Run:
             self.fs['rededicated'] = self.fs.get('rededicated', 0) + 1
 
     # ------------------------------------------------------------------- gear
+    def _sync_pack(self) -> None:
+        """What the hero really carries besides what he wears: the arsenal,
+        the potions, the food, Fenrir's scraps. Player._apply_equip puts every
+        piece it replaces in the pack, and the simulator used to leave them
+        all there: since the weight tiers (slice 4: Burdened over half the
+        limit halves the dodge, Stressed over three quarters ends it) that pile
+        would have mattered. A player drops or sells what he has outgrown."""
+        self.p.inventory = (list(self.arsenal) + list(self.scraps)
+                            + list(self.potions) + list(self.food))
+
+    def _body_value(self, piece) -> float:
+        """A body armour as it works on THIS hero (slice 4): the AC it leaves
+        him with, Dexterity's AC cap and dodge by its weight class, and its
+        weight under his carry limit. A dodged blow is about 11 points of
+        dodge per point of AC (a typical monster hits about 55% of the time)."""
+        p = self.p
+        idx = items_mod.ARMOR_SLOTS.index('body')
+        cur = p.armor_slots[idx]
+        p.armor_slots[idx] = piece
+        try:
+            v = -float(p.get_ac()) + 11.0 * float(p.dodge_chance())
+        finally:
+            p.armor_slots[idx] = cur
+        return v
+
     def _equip(self, item):
         item = copy.copy(item)          # never mutate a cached / shared item
         try:
@@ -1231,6 +1260,7 @@ class Run:
                 self.p.weapon = item
             elif isinstance(item, Shield):
                 self.p.shield = item
+        self._sync_pack()
         w = self.p.weapon
         if w is not None and self.knobs['chain_exp'] > 0 and getattr(w, 'chain_exponent', None):
             w.chain_exponent = float(self.knobs['chain_exp'])
@@ -1308,8 +1338,12 @@ class Run:
             # tie. Comparing ac_bonus + enchant_bonus on a minor piece read 0
             # against 0 for ever, so the hero kept the first helm, gloves and
             # boots he found all the way down (the 0% survival of v3.3.4 on).
-            new_v = self._armor_score(item)
-            old_v = self._armor_score(cur) if cur else -99
+            if item.slot == 'body':
+                new_v = self._body_value(item)
+                old_v = self._body_value(cur)
+            else:
+                new_v = self._armor_score(item)
+                old_v = self._armor_score(cur) if cur else -99
             if new_v > old_v:
                 # geography threshold quiz; a failure costs a turn and the
                 # player may try again, so a prepared player always succeeds.
@@ -1569,6 +1603,7 @@ class Run:
             if not known or holder.has_effect(status):
                 continue
             cost, tier = min(known)
+            cost = p.spell_mp_cost(cost)        # metal body armour taxes a cast (slice 4)
             if p.mp - cost < reserve:
                 continue
             p.mp -= cost                                # spent even on a fizzle
@@ -1594,6 +1629,9 @@ class Run:
         if sp is None:
             return False
         sid, cost, power, tier = sp
+        cost = p.spell_mp_cost(cost)                    # metal body armour taxes a cast
+        if p.mp < cost:
+            return False
         p.mp -= cost                                    # spent even on a fizzle
         if self.quiz.one_question(tier):                # one science question
             amt = mend(int(roll(power) * MAGIC_TIER_MULT[tier] * game_magic_mod.int_damage_factor(p.INT)),
@@ -1849,6 +1887,15 @@ class Run:
             if it is not None:
                 got.add(iid)
                 self._equip(it)
+        # Fenrir's scraps (dungeon._LEATHER_SCRAP_LEVELS): 5 lb each, carried
+        # from floor 5 to Vidar's altar on floor 79, where they become the
+        # Sandal.
+        if floor in (5, 13, 21, 28, 35, 42, 50, 58, 66, 73):
+            scrap = items_mod.make_item_by_id('artifact', 'leather_scrap')
+            if scrap is not None:
+                self.scraps.append(scrap)
+        if floor >= 79 and self.scraps:
+            self.scraps = []
         if floor >= 36 and 'cow_kings_horns' not in got:
             give('armor', 'cow_kings_horns')
         if floor >= 60 and 'gram' not in got:     # reforged BEFORE Fafnir by one who knows
@@ -2454,6 +2501,7 @@ class Run:
         self.find_secrets(floor)
         self.shop(floor)
         self.rededicate(floor)
+        self._sync_pack()
         if self.knobs['sword'] and floor >= 99 and 'sword_of_michael' not in self._secrets_got:
             sw = items_mod.make_item_by_id('weapon', 'sword_of_michael')
             self._secrets_got.add('sword_of_michael')
