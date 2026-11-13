@@ -233,6 +233,20 @@ KNOB_DEFAULTS = {
     'study_rate': 0.85,  # share of new-kind kills whose corpse he studies
                          #   (one philosophy question at the corpse's tier;
                          #   right = the kind is studied, wrong = Stunned)
+    # --- the winning build (WINNING_BUILD_PLAN_2026_11_13.md, section 4) -------
+    'tactics':    0,     # 1 = the hero keeps an arsenal and picks the weapon
+                         #   for the monster in front of him: by its weakness
+                         #   when he KNOWS the kind (family_lore.knowledge),
+                         #   else by what he felt on an earlier blow; a swap
+                         #   in a fight costs his action (Run._tactical_pick)
+    'arsenal':    3,     # weapons carried beside the wielded one (tactics=1)
+    'practice':   0,     # 1 = answer times at a maths tier fall with practice
+                         #   (PRACTICE_FLOOR, PRACTICE_N: about a third faster
+                         #   after the first few hundred answers at a tier)
+    'untimed':    0.0,   # > 0: accuracy on every UNTIMED question (identify,
+                         #   study, equip, cook, prayer: every subject but
+                         #   maths waits, and every topic has a teaching card).
+                         #   0 = the maths rule (acc_at) for those as well.
     'dmg_cap':    0.0,   # > 0: any ordinary monster attack whose mean damage is
                          #   above dmg_cap x the floor's damage anchor
                          #   (floor_curve.target_dmg at the monster's peak floor)
@@ -312,6 +326,18 @@ def knobs_label(knobs: dict) -> str:
 # GUESSED from the question text; scale all of them with --speed.
 ANSWER_SECONDS = {1: 1.8, 2: 2.6, 3: 4.5, 4: 6.0, 5: 7.0}
 ANSWER_SIGMA = 0.30            # lognormal spread of one answer's time
+# practice=1: a tier's answer time is ANSWER_SECONDS x (PRACTICE_FLOOR +
+# (1 - PRACTICE_FLOOR) x exp(-answered / PRACTICE_N)): a third off once the
+# kid has answered a few hundred of that tier (Brandon, 2026-11-13: "with
+# practice, kids can get faster with higher tiers").
+PRACTICE_FLOOR = 0.65
+PRACTICE_N = 300.0
+# tactics=1: swap weapons in a fight only for this much more damage on the
+# target, and only when the current weapon would need two chains or more.
+TACTIC_SWAP_GAIN = 1.25
+# an arsenal weapon this far below the wielded one is left behind
+ARSENAL_STALE = 0.30
+_FORMS = ('slash', 'pierce', 'blunt')
 # Accuracy falls a little with tier for timed math and for the untimed
 # subjects (equip, prayer, cooking ...). --accuracy is the tier-1 value.
 ACC_DROP_PER_TIER = 0.03
@@ -455,6 +481,12 @@ PROFILES['companion'] = dict(PROFILES['committed'], pet=True)
 # Everything at once: the build, the secrets, a pet and magic. The stacking
 # limit (REBALANCE_MASTER_PLAN.md section 3) is checked against this one.
 PROFILES['stacked'] = dict(PROFILES['secrets'], pet=True, magic=True)
+# The winning build (Brandon, 2026-11-13): great at tactics, reads the
+# teaching card on every untimed question, does the quests, studies the
+# monsters and uses every system. `knobs` here are this profile's defaults;
+# a knob given on the command line wins.
+PROFILES['mastery'] = dict(PROFILES['stacked'], knobs=dict(
+    families=1, study_rate=0.95, sword=1, tactics=1, practice=1, untimed=0.97))
 
 CUT_HAS_STAT = 0.85            # share of proper meals cooked from a prime cut
 GATE_BOSSES = ('asterion_minotaur', 'medusa_gorgon', 'fafnir_dragon', 'fenrir_wolf')
@@ -549,6 +581,7 @@ class QuizModel:
         self.knobs = knobs
         self.retired = {t: 0 for t in range(1, 6)}   # right answers per tier
         self.mastered = set()
+        self.answered = {t: 0 for t in range(1, 6)}  # maths answers per tier (practice)
         self.floor = 1
         self.stop_at = None           # 'kill' policy: chain at which to press SPACE
         # counters (reset per floor by the caller)
@@ -575,6 +608,9 @@ class QuizModel:
         wrong answer does not end the chain (Know the Story)."""
         acc = acc_at(self.accuracy, tier)
         med = ANSWER_SECONDS[tier] * self.speed
+        if self.knobs.get('practice'):
+            med *= PRACTICE_FLOOR + (1.0 - PRACTICE_FLOOR) * math.exp(
+                -self.answered.get(tier, 0) / PRACTICE_N)
         elapsed = 0.0
         chain = 0
         asked = 0
@@ -625,6 +661,7 @@ class QuizModel:
         self._forgive_flag = False
         chain, asked, right = self.sample_chain(tier, timer, max_chain, self.stop_at, forgive)
         self.n_questions += asked
+        self.answered[tier] = self.answered.get(tier, 0) + asked
         self.retired[tier] += right
         if (self.knobs['mastery'] and tier not in self.mastered
                 and self.retired[tier] >= math_tier_sizes()[tier]):
@@ -635,15 +672,19 @@ class QuizModel:
         self.chain_sum += chain
         callback(QuizResult(success=True, score=chain, correct=right, asked=asked))
 
+    def untimed_acc(self, tier: int) -> float:
+        u = float(self.knobs.get('untimed', 0.0) or 0.0)
+        return u if u > 0 else acc_at(self.accuracy, tier)
+
     def one_question(self, tier: int) -> bool:
         """One untimed question in another subject (equip, harvest, cook ...)."""
-        return random.random() < acc_at(self.accuracy, tier)
+        return random.random() < self.untimed_acc(tier)
 
     def escalator_chain(self, max_len: int = 5) -> int:
         """Untimed escalator chain (prayer): tier 1 up, stop at first wrong."""
         chain = 0
         for t in range(1, max_len + 1):
-            if random.random() < acc_at(self.accuracy, t):
+            if random.random() < self.untimed_acc(t):
                 chain += 1
             else:
                 break
@@ -834,6 +875,10 @@ class Run:
         self.cache = cache
         self.profile_name = profile
         self.prof = PROFILES[profile]
+        knobs = dict(knobs)
+        for _k, _v in (self.prof.get('knobs') or {}).items():
+            if knobs.get(_k) == KNOB_DEFAULTS.get(_k):
+                knobs[_k] = _v
         self.knobs = knobs
         self.engagers = max(1, engagers)
         self.quiz = QuizModel(accuracy, speed, policy, knobs)
@@ -860,6 +905,10 @@ class Run:
         # best one-handed weapon, two-handed weapon and shield found so far
         # (worn or carried), for Run._choose_kit
         self.spare = {'1h': None, '2h': None, 'shield': None}
+        # tactics=1: weapons carried beside the wielded one, and what each
+        # felt like on a kind he has not studied: (kind, profile) -> x
+        self.arsenal = []
+        self._felt = {}
         self._give_starting_kit()
 
     def _healed(self, source: str, got) -> None:
@@ -936,6 +985,107 @@ class Run:
             self._score_cache[key] = dist
         return sum(self._est_damage(w, c) for c in dist) / len(dist)
 
+    # ---------------------------------------------------------------- tactics
+    @staticmethod
+    def _wprofile(w) -> tuple:
+        """What a weapon does to a monster: its forms, its substances, holy."""
+        dts = tuple(getattr(w, 'damage_types', ()) or ())
+        return (frozenset(t for t in dts if t in _FORMS),
+                frozenset(t for t in dts if t not in _FORMS),
+                getattr(w, 'buc', '') == 'blessed')
+
+    @staticmethod
+    def _mult(w, m) -> float:
+        """The real weakness / resistance multiplier of w on m."""
+        if w is None:
+            return 1.0
+        try:
+            f, s = combat.weapon_type_multiplier(w, m)
+            return float(f) * float(s)
+        except Exception:
+            return 1.0
+
+    def _knows(self, kind) -> bool:
+        try:
+            return family_lore_mod.knowledge(self.p, kind) == family_lore_mod.KNOWN
+        except Exception:
+            return False
+
+    def _value_vs(self, w, m) -> float:
+        """Expected damage of w on m as the hero judges it: the true
+        multiplier if he knows the kind, what he felt if he has struck it
+        with this kind of weapon, else nothing either way."""
+        base = self._weapon_score(w)
+        if self._knows(getattr(m, 'kind', '')):
+            return base * self._mult(w, m)
+        felt = self._felt.get((getattr(m, 'kind', ''), self._wprofile(w) if w else None))
+        return base * felt if felt is not None else base
+
+    def _arsenal_add(self, w):
+        """Carry w beside the wielded weapon if it brings a profile (forms,
+        substance, holy) the hero lacks, or a better one of a profile he has."""
+        n = int(self.knobs.get('arsenal', 3) or 0)
+        if n <= 0 or w is None or getattr(w, 'buc', '') == 'cursed':
+            return
+        key = self._wprofile(w)
+        sc = self._weapon_score(w)
+        keep = []
+        for x in self.arsenal:
+            if self._wprofile(x) == key:
+                if self._weapon_score(x) >= sc:
+                    return
+                continue
+            keep.append(x)
+        keep.append(w)
+        main = self._weapon_score(self.p.weapon) if self.p.weapon is not None else 1.0
+        keep = [x for x in keep if self._weapon_score(x) >= ARSENAL_STALE * main]
+        keep.sort(key=self._weapon_score, reverse=True)
+        self.arsenal = keep[:n]
+
+    def _tactical_best(self, target):
+        p = self.p
+        cands = [p.weapon] + [w for w in self.arsenal if w is not p.weapon]
+        if p.shield is not None:
+            cands = [w for w in cands if w is p.weapon or not getattr(w, 'two_handed', False)]
+        return max(cands, key=lambda w: self._value_vs(w, target) if w is not None else 0.0)
+
+    def _wield(self, w) -> None:
+        """Wield w from the arsenal; the old weapon goes into the arsenal."""
+        old = self.p.weapon
+        self.arsenal = [x for x in self.arsenal if x is not w]
+        self._equip(w)
+        if old is not None:
+            self.arsenal.append(old)
+        self.fs['swaps'] = self.fs.get('swaps', 0) + 1
+
+    def _tactical_pick(self, target, free: bool) -> bool:
+        """tactics=1: change weapon for `target` if it pays. Returns True if
+        the change took the hero's action (a swap in the fight)."""
+        if not self.knobs.get('tactics') or target is None:
+            return False
+        p = self.p
+        if p.weapon is not None and getattr(p.weapon, 'buc', '') == 'cursed':
+            return False
+        best = self._tactical_best(target)
+        if best is None or best is p.weapon:
+            return False
+        cur_v = self._value_vs(p.weapon, target) if p.weapon is not None else 0.0
+        best_v = self._value_vs(best, target)
+        if free:
+            if best_v > 1.10 * cur_v:
+                self._wield(best)
+            return False
+        if best_v > TACTIC_SWAP_GAIN * cur_v and target.hp > max(1.0, cur_v):
+            self._wield(best)
+            return True
+        return False
+
+    def _feel(self, target) -> None:
+        """After a blow: he felt how this kind of weapon did on this kind."""
+        if self.knobs.get('tactics') and self.p.weapon is not None:
+            self._felt[(getattr(target, 'kind', ''), self._wprofile(self.p.weapon))] = \
+                self._mult(self.p.weapon, target)
+
     # ------------------------------------------------------------------- gear
     def _equip(self, item):
         item = copy.copy(item)          # never mutate a cached / shared item
@@ -991,6 +1141,8 @@ class Run:
         if isinstance(item, Weapon):
             if getattr(item, 'requires_ammo', None) is not None:
                 return                  # ranged play is not modelled
+            if self.knobs.get('tactics'):
+                self._arsenal_add(item)
             cur = p.weapon
             if cur is not None and getattr(cur, 'buc', '') == 'cursed':
                 return                  # welded on
@@ -1732,6 +1884,9 @@ class Run:
             p.grant_insight(bonus, turns)
             self.fs['guide'] = self.fs.get('guide', 0) + 1
         slots = [(6, 5), (5, 6), (6, 6), (4, 5), (5, 4), (4, 4), (6, 4), (4, 6)]
+        # tactics=1: between fights the right weapon comes out at no cost
+        _first = next((m for m in group if is_named(m)), group[0] if group else None)
+        self._tactical_pick(_first, free=True)
 
         def enter(m, opening: bool):
             """A monster joins the melee; resolve who strikes first."""
@@ -1854,8 +2009,11 @@ class Run:
                         action = 'closing'
                     elif prof.get('magic') and self.cast_control(target):
                         action = 'cast'
+                    elif self._tactical_pick(target, free=False):
+                        action = 'swap'
                     else:
                         self._player_attack(target, active)
+                        self._feel(target)
                         action = 'attack'
 
             # ---------------- the pet's bite (game_combat pet turn) ----------------
