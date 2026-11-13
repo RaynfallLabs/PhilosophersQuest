@@ -1090,15 +1090,19 @@ class Run:
 
     def _arsenal_add(self, w):
         """Carry w beside the wielded weapon if it brings a profile (forms,
-        substance, holy) the hero lacks, or a better one of a profile he has."""
+        substance, holy) the hero lacks, or a better one of a profile he has.
+        One-handed and two-handed weapons are kept apart, `arsenal` of each:
+        a hero with a shield on can only switch to a one-hander, and the
+        two-handers (which outscore every one-hander) used to crowd them out."""
         n = int(self.knobs.get('arsenal', 3) or 0)
         if n <= 0 or w is None or getattr(w, 'buc', '') == 'cursed':
             return
-        key = self._wprofile(w)
+        hands = bool(getattr(w, 'two_handed', False))
+        key = (self._wprofile(w), hands)
         sc = self._weapon_score(w)
         keep = []
         for x in self.arsenal:
-            if self._wprofile(x) == key:
+            if (self._wprofile(x), bool(getattr(x, 'two_handed', False))) == key:
                 if self._weapon_score(x) >= sc:
                     return
                 continue
@@ -1107,7 +1111,9 @@ class Run:
         main = self._weapon_score(self.p.weapon) if self.p.weapon is not None else 1.0
         keep = [x for x in keep if self._weapon_score(x) >= ARSENAL_STALE * main]
         keep.sort(key=self._weapon_score, reverse=True)
-        self.arsenal = keep[:n]
+        one = [x for x in keep if not getattr(x, 'two_handed', False)][:n]
+        two = [x for x in keep if getattr(x, 'two_handed', False)][:n]
+        self.arsenal = one + two
 
     def _tactical_best(self, target):
         p = self.p
