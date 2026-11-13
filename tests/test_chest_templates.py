@@ -333,17 +333,21 @@ def test_loot_reaches_only_a_little_ahead_of_its_floor():
         from container_system import _floor_level_cap
         assert _floor_level_cap(c, 1) == 2
         assert _floor_level_cap(c, 60) == 60 + tier * 2
-    # nothing a floor-1 chest or drop can roll is more than twice the
-    # strongest thing lying on floor 1
+    # A floor-1 chest or drop rolls only what can lie one floor down (since
+    # the weapon curve of 2026-11-12 that is iron at most: iron starts on
+    # floor 2), never a material from many floors ahead.
     mats = load_materials('weapons')
     from items import instantiate_weapon
     def best(floor):
         return max(instantiate_weapon('battleaxe', mid).base_damage
                    for mid, m in mats.items() if material_spawn_weight(m, floor) > 0)
     assert best(loot_floor(1, 10)) <= 2 * best(1)
+    reach = {mid for mid, m in mats.items() if material_spawn_weight(m, loot_floor(1, 10)) > 0}
     random.seed(9)
-    assert all(pick_random_weapon_for_floor(loot_floor(1, 10), random).base_damage <= 2 * best(1)
-               for _ in range(200))
+    for _ in range(200):
+        w = pick_random_weapon_for_floor(loot_floor(1, 10), random)
+        assert w.material in reach and int(mats[w.material]['peak_floor']) <= 8, w.name
+        assert w.base_damage <= 2.5 * best(1), w.name
     src = open(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
                             'src', 'game_combat.py'), encoding='utf-8').read()
     assert 'min(tier * 5, loot_floor(_here, tier * 5))' in src

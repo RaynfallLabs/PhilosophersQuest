@@ -9,7 +9,8 @@ Kept as the record.  NOT idempotent (it multiplies): refuses to run without
 What changed underneath the monsters (2026-10-05, the owner's direction)
 ---------------------------------------------------------------------
 * A weapon asks the math tier of its MATERIAL, and each tier starts with a
-  step in base damage (items.TIER_DAMAGE_STEP: x1.9, x3.1, x3.5, x4.9 for
+  step in base damage (items.TIER_DAMAGE_STEP, removed 2026-11-12 for the weapon curve,
+  tools/balance/weapon_curve.py: x1.9, x3.1, x3.5, x4.9 for
   tiers 2-5), so that moving up a tier is worth the harder sums.  Deep weapons
   therefore hit several times harder than they did.
 * The player gains 1 wisdom for every 3 floors of new depth, and the combat

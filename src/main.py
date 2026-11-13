@@ -1525,8 +1525,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
 
         Composite = id is '<material_id>_<template_id>' with `material` set;
         uniques (own id, no material prefix) are skipped untouched. AC is
-        recomputed for ARMOR only (deterministic template-base + material, which
-        excludes the separate enchant_bonus); weapon damage is left alone."""
+        recomputed for ARMOR (deterministic template-base + material, which
+        excludes the separate enchant_bonus), and a common weapon takes its
+        material's base damage from today's weapon curve (its plus is kept)."""
         from items import (Armor, Shield, Weapon, get_template, get_material,
                            compose_item_name, compose_unidentified_name)
         # Hand-authored UNIQUES (ids that are JSON keys, not <material>_<template>
@@ -1567,6 +1568,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 return
             noun = tpl.get('noun', '')
             item.name = compose_item_name(mat['name'], tpl['name'], noun)
+            if cat == 'weapons':
+                # The weapon curve of 2026-11-12 (items.weapon_base_damage):
+                # an old save's common weapons hit as today's do.
+                from items import weapon_base_damage
+                item.base_damage = weapon_base_damage(tpl, mat)
             if hasattr(item, 'unidentified_name'):
                 item.unidentified_name = compose_unidentified_name(
                     mat.get('unidentified_descriptor', mat['name']),

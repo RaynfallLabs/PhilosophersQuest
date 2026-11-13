@@ -29,7 +29,7 @@ The chain quiz is the only mechanic the player will interact with hundreds of ti
 | `chain_exponent` (`chainExponent`) | float \| None | Polynomial path: `mult = chain**exponent`. If set (>0), takes precedence over `chain_multipliers`. Common templates ship 1.15. Uniques: all 96 carry `chain_exponent: 1.15` after the v2.14.0 rebase (see `docs/design/uniques_v2_14.md`). |
 | `chain_multipliers` (`chainMultipliers`) | list[float] | Legacy per-rung array (5 entries). Still read as fallback when `chain_exponent` is absent. |
 | `damage_types` (`damageTypes`) | list[str] | For weakness/resistance lookup. Material is appended at use-site. |
-| `material` | str | Looked up in `data/materials/weapons/<id>.json` for `damage_mult`, `effective_against`, `vulnerabilities`. |
+| `material` | str | Looked up in `data/materials/weapons/<id>.json` for `effective_against` and `vulnerabilities`. Its `damage_mult` and `weapon_base` are baked into `base_damage` when the weapon is made (the weapon curve: [weapons_and_materials.md](weapons_and_materials.md)). |
 | `enchant_bonus` | int | +N flat damage. Weapon cap 5 (`items.py::ENCHANT_CAP`); Panoply of Hephaestus raises to 6. |
 | `stun_chance` / `bleed_chance` / `poison_chance` / `burn_chance` / `confuse_chance` / `freeze_chance` | float | On-hit status rolls. |
 | `ignore_shield` | bool | Bypasses monster `shielded` 0.5× |

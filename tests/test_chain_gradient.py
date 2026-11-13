@@ -1,138 +1,142 @@
-"""Tests for the chain damage gradient under the chain-peak-anchored formula.
+"""Tests for the chain damage gradient and the common weapons' curve.
 
-Established 2026-05-18 after the iron-shortsword `[1, 1, 1, 1, 2]` problem.
+Established 2026-05-18 after the iron-shortsword `[1, 1, 1, 1, 2]` problem;
+re-based 2026-11-12 on the weapon curve (tools/balance/weapon_curve.py,
+WEAPON_TIER_AUDIT_2026_11_12.md). These used to re-derive the old formula
+(mob_hp(peak_floor) / chain_5_mult x a flat step per tier) inside the test;
+they now ask the game's own weapons.
 
 Rules:
-  - weapon_base = max(1, round(mob_hp(peak_floor) / chain_5_mult))
-  - base_damage = max(2, round(weapon_base * material.damage_mult * template.damage_modifier))
-  - For every (template, material, floor) combo, the 5-rung chain damage must
-    NOT be flat (e.g. all 1s with one 2 at the end). At minimum: chain[4] > chain[0].
+  - A common weapon's base is its material's baked `weapon_base` (a
+    longsword's), scaled to the template; never below 2.
+  - Its chain climbs: chain^1.15 times the base, from chain 1 to 5.
+  - A longsword on its material's peak floor kills the median monster of
+    that floor in about weapon_curve.target_attacks chains for the balance
+    child (a material's damage_mult moves it within its tier).
   - All active uniques (peak_floor > 0) use exactly 5-entry chainMultipliers.
-  - No unique's chain-5 damage exceeds 2.5x a same-template common's at the
-    same peak_floor.
+  - No unique does more than 2.5x the best same-template common that can be
+    found by its peak floor, for the balance child (base x the child's chain at
+    each one's tier: a tier-2 unique's bigger base pays for harder sums), the
+    legendary god-touched ones exempt.
 """
 import json
 import os
 import sys
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'src'))
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'tools', 'balance'))
 
+import pytest  # noqa: E402
+
+import items  # noqa: E402
 from paths import data_path  # noqa: E402
 
 
-def mob_hp(pf: int) -> float:
-    if pf <= 0:
-        return 0.0
-    if pf <= 20:
-        return 4 * 1.10 ** (pf - 1)
-    return 4 * 1.10 ** 19 * 1.025 ** (pf - 20)
+def _chain(w) -> list:
+    exp = getattr(w, 'chain_exponent', None) or 1.15
+    return [max(1, round(w.base_damage * c ** exp)) for c in range(1, 6)]
 
 
-def compute_chain(template: dict, material: dict, pf: int) -> list[int]:
-    cm = template['chain_multipliers']
-    cm5 = cm[-1]
-    dmod = template['damage_modifier']
-    mmod = material['damage_mult']
-    wb = max(1, round(mob_hp(pf) / cm5))
-    bd = max(2, round(wb * mmod * dmod))
-    return [max(1, round(bd * c)) for c in cm]
-
-
-def load_templates() -> dict:
-    out = {}
-    tdir = data_path('data', 'templates', 'weapons')
-    for fn in os.listdir(tdir):
-        if not fn.endswith('.json'):
-            continue
-        with open(os.path.join(tdir, fn), encoding='utf-8') as f:
-            t = json.load(f)
-            out[t['id']] = t
-    return out
-
-
-def load_materials() -> dict:
-    out = {}
-    mdir = data_path('data', 'materials', 'weapons')
-    for fn in os.listdir(mdir):
-        if not fn.endswith('.json'):
-            continue
-        with open(os.path.join(mdir, fn), encoding='utf-8') as f:
-            m = json.load(f)
-            out[m['id']] = m
-    return out
+def _combos():
+    for tid, t in items.load_templates('weapons').items():
+        compat = set(t.get('compatible_material_classes', []))
+        for mid, m in items.load_materials('weapons').items():
+            if m.get('material_class') not in compat:
+                continue
+            try:
+                yield tid, mid, items.instantiate_weapon(tid, mid)
+            except ValueError:
+                continue
 
 
 # ---------------------------------------------------------------------------
 # Iron shortsword regression: the original bug report
 # ---------------------------------------------------------------------------
 
-def test_iron_shortsword_pf1_chain_has_gradient():
+def test_iron_shortsword_chain_has_gradient():
     """The original `[1, 1, 1, 1, 2]` bug must not return."""
-    templates = load_templates()
-    materials = load_materials()
-    chain = compute_chain(templates['shortsword'], materials['iron'], pf=1)
-    assert chain[-1] > chain[0], f'iron shortsword pf=1 chain has no gradient: {chain}'
-    assert chain[-1] >= 3, f'iron shortsword pf=1 chain peak too weak: {chain}'
+    chain = _chain(items.instantiate_weapon('shortsword', 'iron'))
+    assert chain == sorted(chain) and chain[-1] > chain[0], chain
+    assert chain[-1] >= 15, f'iron shortsword chain peak too weak: {chain}'
 
 
-def test_iron_shortsword_chain_scales_with_floor():
-    """Chain peak should grow as peak_floor rises."""
-    templates = load_templates()
-    materials = load_materials()
-    peaks = []
-    for pf in [1, 5, 10, 20, 50]:
-        chain = compute_chain(templates['shortsword'], materials['iron'], pf)
-        peaks.append(chain[-1])
-    assert peaks == sorted(peaks), f'peak damage must be monotonically rising: {peaks}'
-    assert peaks[-1] > peaks[0] * 5, f'pf=50 should be far stronger than pf=1: {peaks}'
+def test_no_flat_chain_and_no_base_below_two():
+    flat, low, n = [], [], 0
+    for tid, mid, w in _combos():
+        n += 1
+        c = _chain(w)
+        if c[-1] <= c[0]:
+            flat.append((tid, mid, c))
+        if w.base_damage < 2:
+            low.append((tid, mid, w.base_damage))
+    assert n > 300
+    assert not flat, flat[:5]
+    assert not low, low[:5]
 
 
 # ---------------------------------------------------------------------------
-# Universal gradient: no template × material × floor combination produces a
-# flat chain. This is the structural invariant the new formula buys us.
+# The curve (2026-11-12)
 # ---------------------------------------------------------------------------
 
-def test_no_flat_chain_across_all_combos():
-    """For every (template, material, pf in [1..30]), chain[4] > chain[0]."""
-    templates = load_templates()
-    materials = load_materials()
-    failures = []
-    for tname, t in templates.items():
-        # Skip templates that aren't compatible with any common material classes.
-        compat = set(t.get('compatible_material_classes', []))
-        for mname, m in materials.items():
-            if m.get('material_class') not in compat:
-                continue
-            for pf in range(1, 31):
-                chain = compute_chain(t, m, pf)
-                if chain[-1] <= chain[0]:
-                    failures.append((tname, mname, pf, chain))
-    assert not failures, f'{len(failures)} flat-chain combos. First 5: {failures[:5]}'
+def test_every_material_carries_its_baked_base_and_first_floor():
+    import weapon_curve
+    for mid, m in items.load_materials('weapons').items():
+        assert float(m.get('weapon_base', 0)) >= 2, mid
+        assert int(m['min_level']) >= int(m['peak_floor']) - weapon_curve.LEAD, mid
+    assert not hasattr(items, 'TIER_DAMAGE_STEP')        # the flat step per tier is gone
 
 
-def test_chain_5_damage_near_mob_hp_at_peak_floor():
-    """At a weapon's peak_floor, chain-5 damage should be in the mob-HP zone.
+def test_templates_keep_their_place_against_the_longsword():
+    ls = items.instantiate_weapon('longsword', 'steel').base_damage
+    assert items.instantiate_weapon('dagger', 'steel').base_damage < ls
+    assert items.instantiate_weapon('greatsword', 'steel').base_damage > ls
 
-    Bound: 0.5x mob_hp <= chain_5_dmg <= 3.0x mob_hp. The formula targets
-    chain_5 ~= mob_hp; modifiers swing it. Endgame exotic + heavy combos
-    (void_touched + maul) intentionally one-shot trash, hitting ~2.55x.
-    """
-    templates = load_templates()
-    materials = load_materials()
-    failures = []
-    for tname, t in templates.items():
-        compat = set(t.get('compatible_material_classes', []))
-        for mname, m in materials.items():
-            if m.get('material_class') not in compat:
-                continue
-            pf = m.get('peak_floor', 10)
-            if pf <= 0:
-                continue
-            chain = compute_chain(t, m, pf)
-            mh = mob_hp(pf)
-            if not (0.5 * mh <= chain[-1] <= 3.0 * mh):
-                failures.append((tname, mname, pf, chain[-1], round(mh, 1)))
-    assert not failures, f'{len(failures)} weapons outside [0.5x, 3.0x] mob_hp band. First 5: {failures[:5]}'
+
+@pytest.fixture(scope='module')
+def curve():
+    import weapon_curve
+    weapon_curve.TRIALS = 4000
+    return weapon_curve
+
+
+def test_an_on_peak_longsword_kills_in_about_its_target_chains(curve):
+    off = []
+    for mid, m in items.load_materials('weapons').items():
+        pf = int(m['peak_floor'])
+        t = items.material_tier(m)
+        # the baked number itself: a base of 2 or 3 is mostly rounding
+        hits = curve.monster_curve()[min(100, pf)] / (float(m['weapon_base']) * curve.child_mult(t, pf))
+        want = curve.target_attacks(pf)
+        if not 0.6 * want <= hits <= 1.6 * want:
+            off.append((mid, pf, round(hits, 2), round(want, 2)))
+    assert not off, off
+
+
+def test_the_baked_numbers_are_the_tools_numbers(curve):
+    """--write was run after the last change to the curve's rules."""
+    import weapon_curve
+    weapon_curve.TRIALS = 20000                           # the --write setting
+    mats = items.load_materials('weapons')
+    sample = ('copper', 'iron', 'steel', 'ash', 'ironwood', 'mithril', 'soulsteel',
+              'adamantine', 'titanforged', 'sunsteel', 'void_touched')
+    for mid in sample:
+        m = mats[mid]
+        wb, first = weapon_curve.material_curve(mid)
+        assert abs(float(m['weapon_base']) - wb) <= max(0.25, 0.02 * wb), (mid, m['weapon_base'], wb)
+        assert int(m['min_level']) == first, (mid, m['min_level'], first)
+
+
+def test_an_old_saves_common_weapon_takes_todays_base():
+    import types
+    from main import Game
+    w = items.instantiate_weapon('longsword', 'steel')
+    today = w.base_damage
+    w.base_damage = 3                                     # as an old save made it
+    g = types.SimpleNamespace(player=types.SimpleNamespace(
+        inventory=[w], weapon=None, ranged_weapon=None, shield=None, armor_slots=[],
+        accessory_slots=[]))
+    Game._migrate_recompose_composite_items(g, {})
+    assert w.base_damage == today
 
 
 # ---------------------------------------------------------------------------
@@ -170,9 +174,9 @@ def test_unique_chain_monotone_to_peak_except_wild():
     assert not failures, f'{len(failures)} uniques where rung 5 is not the peak: {failures[:5]}'
 
 
-def test_no_super_weapon_uniques():
-    """No unique's baseDamage exceeds 2.5x what a same-template common at the
-    same peak_floor with the strongest available material would produce.
+def test_no_super_weapon_uniques(curve):
+    """No unique does more than 2.5x the best same-template common that can
+    be found by its peak floor, for the balance child.
 
     Excludes legendary god-touched uniques where mythic peaks are intentional
     (Excalibur, Mjolnir Shard, Gungnir, etc.).
@@ -187,8 +191,8 @@ def test_no_super_weapon_uniques():
         'bow_of_rama', 'akinakes_acrisius', 'atalanta_bow',
         'gungnir', 'mistilteinn', 'laevateinn',
     }
-    templates = load_templates()
-    materials = load_materials()
+    templates = items.load_templates('weapons')
+    materials = items.load_materials('weapons')
     with open(data_path('data', 'items', 'weapon.json'), encoding='utf-8') as f:
         uniques = json.load(f)
 
@@ -197,17 +201,11 @@ def test_no_super_weapon_uniques():
         if not t:
             return 0
         compat = set(t.get('compatible_material_classes', []))
-        best = 0
-        for m in materials.values():
-            if m.get('material_class') not in compat:
+        best = 0.0
+        for mid, m in materials.items():
+            if m.get('material_class') not in compat or int(m.get('min_level', 1)) > pf:
                 continue
-            cm = t['chain_multipliers']
-            wb = max(1, round(mob_hp(pf) / cm[-1]))
-            # each material tier carries a step in base damage (2026-10)
-            from items import TIER_DAMAGE_STEP, material_tier
-            bd = max(2, round(wb * m['damage_mult'] * t['damage_modifier']
-                              * TIER_DAMAGE_STEP[material_tier(m)]))
-            best = max(best, bd)
+            best = max(best, items.weapon_base_damage(t, m) * curve.child_mult(items.material_tier(m), pf))
         return best
 
     failures = []
@@ -221,14 +219,15 @@ def test_no_super_weapon_uniques():
         common_best = best_common_base(tb, pf)
         if common_best == 0:
             continue
-        bd = entry.get('baseDamage', 0)
-        if bd > common_best * 2.5:
-            failures.append((sid, tb, pf, bd, common_best))
+        tier = int(entry.get('quiz_tier') or entry.get('tier') or 1)
+        does = entry.get('baseDamage', 0) * curve.child_mult(max(1, min(5, tier)), pf)
+        if does > common_best * 2.5:
+            failures.append((sid, tb, pf, round(does), round(common_best)))
     assert not failures, f'{len(failures)} super-uniques (>2.5x common best). First 5: {failures[:5]}'
 
 
 # ---------------------------------------------------------------------------
-# baseDamage floor
+# Bare hands
 # ---------------------------------------------------------------------------
 
 def test_bare_hand_chain_caps_at_5_and_under_weapon_curve():
@@ -250,22 +249,3 @@ def test_bare_hand_chain_caps_at_5_and_under_weapon_curve():
         f'bare-hand peak {mults[-1]} should be < weakest weapon peak (2.0). '
         'Otherwise unarmed > armed at chain peak.'
     )
-
-
-def test_base_damage_floor_at_2():
-    """No instantiated weapon can have baseDamage < 2."""
-    templates = load_templates()
-    materials = load_materials()
-    failures = []
-    for tname, t in templates.items():
-        compat = set(t.get('compatible_material_classes', []))
-        for mname, m in materials.items():
-            if m.get('material_class') not in compat:
-                continue
-            for pf in range(1, 11):
-                cm = t['chain_multipliers']
-                wb = max(1, round(mob_hp(pf) / cm[-1]))
-                bd = max(2, round(wb * m['damage_mult'] * t['damage_modifier']))
-                if bd < 2:
-                    failures.append((tname, mname, pf, bd))
-    assert not failures, f'{len(failures)} weapons below floor=2: {failures[:5]}'

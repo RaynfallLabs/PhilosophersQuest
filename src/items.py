@@ -2082,16 +2082,30 @@ def load_materials(category: str) -> dict[str, dict]:
     return _MATERIAL_CACHE[category]
 
 
-# A weapon of a higher tier asks harder sums against the same clock, so its
-# wielder chains fewer answers: about half as many going from tier 1 to 2,
-# and again from 2 to 3. Base damage used to climb smoothly across those
-# boundaries, which made the first weapons of every new tier WORSE than the
-# best of the tier below (a steel sword out-damaged tier-3 metal). Each tier
-# now starts with a step in base damage large enough that, at the wisdom a
-# player has on that floor, moving up a tier is worth the harder sums by
-# about a tenth. That is the reason to change weapons: a tier-1 blade cannot
-# be scaled to deep monsters.
-TIER_DAMAGE_STEP = {1: 1.0, 2: 1.9, 3: 3.1, 4: 3.5, 5: 4.9}
+# A common weapon's base damage is baked into its material's file as
+# `weapon_base`: a longsword's base, sized by tools/balance/weapon_curve.py at
+# the material's OWN peak floor (LORE, NOT FLOOR) against the median monster
+# of that floor, for the balance child at that floor's clock and the
+# material's maths tier. A harder tier's shorter chain is paid for inside the
+# number, so there is no flat step per tier any more (it was x1.9 / x3.1 /
+# x3.5 / x4.9, and a quick answerer got all of it on top of his full chain:
+# WEAPON_TIER_AUDIT_2026_11_12.md). Other templates scale from the longsword
+# by their damage_modifier over their fifth-rung multiplier, as they always
+# have (a dagger about half a longsword, a greatsword about 1.7 of one).
+REFERENCE_TEMPLATE = 'longsword'
+
+
+def _template_factor(tpl: dict) -> float:
+    cm = tpl.get('chain_multipliers') or [0.5, 0.85, 1.0, 1.45, 2.0]
+    return float(tpl.get('damage_modifier', 1.0)) / float(cm[-1])
+
+
+def weapon_base_damage(tpl: dict, mat: dict) -> int:
+    """The base damage of a common weapon of template `tpl` and material
+    `mat` (at least 2, so a chain always climbs)."""
+    ref = get_template('weapons', REFERENCE_TEMPLATE) or tpl
+    base = float(mat.get('weapon_base', 2) or 2) * _template_factor(tpl) / _template_factor(ref)
+    return max(2, round(base))
 
 
 def material_tier(mat: dict) -> int:
@@ -2378,9 +2392,8 @@ def instantiate_weapon(template_id: str, material_id: str, *,
                        enchant: int = 0, buc: str = 'uncursed',
                        x: int = 0, y: int = 0) -> Weapon:
     """Build a Weapon by combining a template (shape) with a material (stats).
-    Damage is derived from curve.weapon_base_damage(material.peak_floor) × the
-    material's damage_mult × the template's damage_modifier. Chain shape comes
-    entirely from the template."""
+    Damage is the material's baked `weapon_base` scaled to the template
+    (weapon_base_damage). Chain shape comes entirely from the template."""
     tpl = get_template('weapons', template_id)
     mat = get_material('weapons', material_id)
     if not tpl:
@@ -2388,37 +2401,11 @@ def instantiate_weapon(template_id: str, material_id: str, *,
     if not mat:
         raise ValueError(f"Unknown weapon material: {material_id}")
 
-    # Re-anchored 2026-05-18: weapon_base is chosen so that a chain-5 hit
-    # at the material's peak floor equals one trash-mob HP. This makes the
-    # chain ladder legible at every tier (no more 1,1,1,1,2 at iron level)
-    # and gives an explicit, design-grounded relationship between weapon
-    # damage and monster HP.
-    #
-    #   chain_5_mult = template.chain_multipliers[-1]
-    #   weapon_base  = mob_hp(peak_floor) / chain_5_mult
-    #
-    # Then base_damage applies material's damage_mult + template's
-    # damage_modifier as before, and round (not int-truncate) keeps the
-    # chain-1..5 gradient visible at low tiers.
+    # The weapon curve (2026-11-12): the material's baked weapon_base, scaled
+    # to this template. A floor of 2 keeps the chain climbing on the weakest
+    # combinations (a copper dagger).
     peak_floor = int(mat.get('peak_floor', 1))
-    if peak_floor <= 20:
-        mob_hp = 4 * (1.10 ** (peak_floor - 1))
-    else:
-        early_cap = 4 * (1.10 ** 19)
-        mob_hp = early_cap * (1.025 ** (peak_floor - 20))
-    chain_mults = tpl.get('chain_multipliers') or [0.5, 0.85, 1.0, 1.45, 2.0]
-    chain_5_mult = float(chain_mults[-1])
-    weapon_base = max(1, round(mob_hp / chain_5_mult))
-    # Floor of 2 (not 1) on final base damage. This is universal — it
-    # guarantees a LEGIBLE chain-1..5 gradient at every weapon × material
-    # combo, including weak materials (copper, oak rapier) where the math
-    # would otherwise produce base 1 and a flat 1,1,1,1,2 chain. The 2-floor
-    # doesn't break differentiation between materials because high-tier
-    # materials produce base values 3+ naturally.
-    base_damage = max(2, round(weapon_base
-                               * float(mat.get('damage_mult', 1.0))
-                               * float(tpl.get('damage_modifier', 1.0))
-                               * TIER_DAMAGE_STEP[material_tier(mat)]))
+    base_damage = weapon_base_damage(tpl, mat)
 
     weight = max(0.1, tpl.get('base_weight_lb', 3.0) * mat.get('weight_mult', 1.0))
     name = compose_item_name(mat['name'], tpl['name'], tpl.get('noun', ''))

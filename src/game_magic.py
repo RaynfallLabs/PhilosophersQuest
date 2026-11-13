@@ -99,7 +99,8 @@ if TYPE_CHECKING:
 # (History: this table was once shared by spells and wands with +10% per point
 # of INT on top. Spells use MAGIC_TIER_MULT, wands WAND_TIER_MULT, below.)
 # 2026-10-05: ordinary monster HP was re-sized x2 (floor 1) to x9 (floor 100)
-# when weapons gained a damage step per tier. Magic follows by tier, or a
+# when weapons gained a damage step per tier (since 2026-11-12 the weapon curve,
+# tools/balance/weapon_curve.py, carries it). Magic follows by tier, or a
 # deep wand would tickle: the old figures x 2 / 3.5 / 5.5 / 7.5 / 8.5.
 # 2026-10-06 (REBALANCE_MASTER_PLAN.md, decision D2): magic changes the
 # shape of a fight and never replaces maths. Measured against the yardstick
@@ -110,8 +111,13 @@ if TYPE_CHECKING:
 # attack on the floors it is found on, and a wand charge at about 0.85
 # (tools/balance/magic_audit.py prints the table; a test holds it).
 # Previous spell figures: 6.0 / 8.75 / 11.0 / 13.0 / 12.75, shared by wands.
-MAGIC_TIER_MULT = {1: 2.6, 2: 4.9, 3: 5.8, 4: 7.9, 5: 10.5}
-WAND_TIER_MULT = {1: 1.9, 2: 3.7, 3: 5.6, 4: 6.8, 5: 8.0}
+# 2026-11-12: the weapon curve (tools/balance/weapon_curve.py) sized weapons
+# against the real monsters, and one attack fell about a quarter near floor
+# 20 and a tenth deep. Spell tiers 4-5 (7.9, 10.5) and wand tiers 2, 4, 5
+# (3.7, 6.8, 8.0) came down by the least that puts every cast back under its
+# limit (magic_audit.py, test_magic_role), so magic keeps its place.
+MAGIC_TIER_MULT = {1: 2.6, 2: 4.9, 3: 5.8, 4: 7.2, 5: 9.6}
+WAND_TIER_MULT = {1: 1.9, 2: 3.45, 3: 5.6, 4: 6.3, 5: 7.1}
 
 # What Intelligence does for magic: more casts (max MP is 10 + INT), and
 # effects that last longer (and a wider Light). It never lengthens how far

@@ -100,8 +100,9 @@ Ammo tiers 1–5 progress `damage_bonus 0, 1, 2, 3, 5` — the T5 skip from +3 t
   "peak_floor": 8,                // floor where this material spawns most
   "spread": 12,                   // how wide the spawn tail is (12 = very long)
   "peak_weight": 10.0,
-  "min_level": 1,
-  "damage_mult": 1.0,             // multiplier on weapon.base_damage (iron = 1.0 reference)
+  "min_level": 2,                 // first floor it drops: never more than 6 before its peak
+  "damage_mult": 1.0,             // its place among its tier-mates (baked into weapon_base)
+  "weapon_base": 4.0,             // a longsword's base damage of it: the weapon curve
   "weight_mult": 1.0,             // multiplier on weapon.weight
   "max_enchant": 2,               // material cap on enchant_bonus
   "color": [180, 180, 180],
@@ -215,6 +216,26 @@ Material **class** controls what else inherits it (sorting / loot banding / UI c
 |---|---|---|---|
 | dragonbone | 1.30 | 0.80 | dragon, wyrm, reptilian |
 | petrified_dragon | 1.50 | 1.10 | dragon |
+
+### Base damage: the weapon curve (2026-11-12)
+
+A common weapon's base damage is `items.weapon_base_damage(template, material)`: the material's
+baked `weapon_base` (a longsword's base) times the template's `damage_modifier` over its
+fifth-rung `chain_multipliers` value, relative to the longsword's (a dagger about half a
+longsword, a greatsword about 1.7 of one, a sling about a quarter), and never below 2.
+
+`weapon_base` is written by `tools/balance/weapon_curve.py --write`, at the material's OWN peak
+floor (lore, not floor): a longsword of it kills the median ordinary monster of that floor (the
+game's spawn pools, smoothed over five floors either side) in `target_attacks(peak)` chains (1.4
+on floor 1, 1.6 by floor 20, 3.5 from floor 60) for the balance child, at that floor's clock and
+the material's maths tier. The harder tier's shorter chain is paid for inside the number: there
+is no flat step per tier any more (it was x1.9 / x3.1 / x3.5 / x4.9, and a quick answerer got
+all of it on top of his full chain). The same tool sets `min_level` to no earlier than 6 floors
+before the peak. Uniques are sized from the commons by `rebase_unique_weapons.py` (never lowered);
+run it after `weapon_curve.py --write`. The child's seconds per answer above tier 1 are guesses
+(`CHILD_SECONDS`): with real ones, edit them and run both tools again. Old saves' common weapons
+take today's base on load (`Game._migrate_recompose_composite_items`). Why:
+`WEAPON_TIER_AUDIT_2026_11_12.md`; tests: `tests/test_chain_gradient.py`.
 
 ### Spawn-weighting
 
@@ -369,17 +390,15 @@ Throw range = `base + (STR-10)//2`, dagger base 3 (cap 7), spear base 4 (cap 8).
 A **steel longsword** vs a **frost giant** (slash-vulnerable, fire-vulnerable) at chain 10:
 
 ```
-base_damage      = 5                   (longsword template)
-material.damage_mult = 1.20            (steel)
+base_damage      = 10                  (a steel longsword: steel's weapon_base, damage_mult inside it)
 chain_exponent   = 1.15 → mult = 10^1.15 = 14.1
 dtype_mult       = 1.5                 (frost giant weak to slash)
 str_factor       = 1.0 + 0.03*(STR-10) = 1.15 at STR 15
 enchant_bonus    = +1
 
-damage = max(1, round((5 + 1 + 0 + 0) * (14.1 * 1.20) * 1.5 * 1.15 * 1.0))
-       = max(1, round(6 * 16.92 * 1.5 * 1.15))
-       = max(1, round(175))
-       = 175
+damage = max(1, round((10 + 1) * 14.1 * 1.5 * 1.15))
+       = max(1, round(268))
+       = 268
 ```
 
 Change the weapon to a **volcanic_iron longsword** (effective_against ice/frost creatures) and the material.effective_against layer kicks in via `_damage_multiplier`:
