@@ -293,7 +293,9 @@ _RESIST_BLOCKS: dict[str, set] = {
 
 # What wear (rust, acid, fire) can touch is read from the item's MATERIAL
 # FILE where it has one (data/materials/armor and weapons): its
-# material_class, and its own `resistances` (fire, corrosion, rust). Rust is
+# material_class, and what it resists (a weapon material's `resistances`,
+# an armour material's `protection` under 1: dragonhide does not scorch;
+# `corrosion_immune` among its special properties). Rust is
 # iron's: iron and steel rust, and so does every iron alloy of the metal and
 # rare_metal classes; copper, bronze, tin, silver, gold, hematite (which is
 # rust already) and mithril do not, and no leather, cloth, hide, wood or
@@ -343,7 +345,16 @@ def material_wear(item):
         m = None
     if not m:
         return None
-    return str(m.get('material_class', '') or ''), {str(r) for r in (m.get('resistances') or ())}
+    res = {str(r) for r in (m.get('resistances') or ())}
+    # An armour material's profile (gear.material_protection, plan 3.3):
+    # what it sheds, it does not wear from either.
+    res |= {str(k) for k, v in (m.get('protection') or {}).items() if float(v) < 1.0}
+    sp = m.get('special_properties') or ()
+    if 'corrosion_immune' in sp:
+        res.add('corrosion')
+    if 'fire_resistant' in sp:
+        res.add('fire')
+    return str(m.get('material_class', '') or ''), res
 
 
 def _can_corrode(item) -> bool:

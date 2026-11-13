@@ -19,10 +19,15 @@
     50
   ],
   "armor_ac_bonus": 0,
-  "resistances": [],
-  "weaknesses": [
-    "fire"
-  ],
+  "protection": {
+    "fire": 1.25
+  },
+  "protection_words": {
+    "fire": "catches fire"
+  },
+  "metal": false,
+  "protection_note": "Smoke-cured leather, lighter than plain.",
+  "protection_price": "Catches fire, and fire scorches it.",
   "vulnerabilities": [],
   "effective_against": [],
   "special_properties": [

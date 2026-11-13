@@ -18,5 +18,14 @@
     "rare_metal",
     "magical_metal"
   ],
-  "lore_template": "Horizontal bands of {material_name} riveted in overlapping rows around the torso, each one sliding a little over the next. The legions marched to the edge of the world in armor built this way."
+  "lore_template": "Horizontal bands of {material_name} riveted in overlapping rows around the torso, each one sliding a little over the next. The legions marched to the edge of the world in armor built this way.",
+  "forms": {
+    "slash": 0.8,
+    "pierce": 0.9
+  },
+  "forms_words": {
+    "slash": "sheds a cut",
+    "pierce": "turns most points"
+  },
+  "forms_note": "Bands of metal laced over mail shed a cut and turn most points."
 }

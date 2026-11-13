@@ -130,6 +130,11 @@ import prayers as prayers_mod                    # noqa: E402
 import status_effects as status_effects_mod      # noqa: E402
 import family_edges as family_edges_mod          # noqa: E402
 import family_lore as family_lore_mod            # noqa: E402
+import economy as economy_mod                    # noqa: E402
+import traders as traders_mod                    # noqa: E402
+import domain_counters as domain_counters_mod    # noqa: E402
+import smithing as smithing_mod                  # noqa: E402
+import rededication as rededication_mod          # noqa: E402
 from spells import LEARNABLE_SPELLS as SPELLS                        # noqa: E402
 from status_effects import DEBUFFS               # noqa: E402
 
@@ -243,6 +248,16 @@ KNOB_DEFAULTS = {
     'practice':   0,     # 1 = answer times at a maths tier fall with practice
                          #   (PRACTICE_FLOOR, PRACTICE_N: about a third faster
                          #   after the first few hundred answers at a tier)
+    'traders':    0,     # 1 = gold comes in (economy.floor_income x the loot
+                         #   found) and the hero shops the run's trader plan
+                         #   (traders.roll_plan): heal, the smith's +1s,
+                         #   healing potions; with tactics=1 also the smith's
+                         #   silver / cold iron for the floors below
+                         #   (domain_counters.needs) and the stall's counter
+                         #   weapons (domain_counters.stall_counters)
+    'altars':     0,     # 1 = rededication at the altars (floors 1, 16, 31 ...):
+                         #   points moved toward the profile's stat_focus
+    'gold':       1.0,   # x the gold a floor brings in (traders=1)
     'untimed':    0.0,   # > 0: accuracy on every UNTIMED question (identify,
                          #   study, equip, cook, prayer: every subject but
                          #   maths waits, and every topic has a teaching card).
@@ -324,7 +339,10 @@ def knobs_label(knobs: dict) -> str:
 # of four shuffled choices and press 1-4 (game_input.py:1131-1194). Tier 1 is
 # single-digit sums ("6 + ? = 9"); tier 3 is "48 x 8"; tier 5 is "5(x+2)=35".
 # GUESSED from the question text; scale all of them with --speed.
-ANSWER_SECONDS = {1: 1.8, 2: 2.6, 3: 4.5, 4: 6.0, 5: 7.0}
+# First-time answer times. Tier 5 follows the 2026-11-13 grade curve
+# (docs/quiz/math_grade_curve.md: its grade-8 work is mostly memorised
+# roots, triples and powers; practised it is about as quick as tier 4).
+ANSWER_SECONDS = {1: 1.8, 2: 2.6, 3: 4.5, 4: 6.0, 5: 5.8}
 ANSWER_SIGMA = 0.30            # lognormal spread of one answer's time
 # practice=1: a tier's answer time is ANSWER_SECONDS x (PRACTICE_FLOOR +
 # (1 - PRACTICE_FLOOR) x exp(-answered / PRACTICE_N)): a third off once the
@@ -486,7 +504,8 @@ PROFILES['stacked'] = dict(PROFILES['secrets'], pet=True, magic=True)
 # monsters and uses every system. `knobs` here are this profile's defaults;
 # a knob given on the command line wins.
 PROFILES['mastery'] = dict(PROFILES['stacked'], knobs=dict(
-    families=1, study_rate=0.95, sword=1, tactics=1, practice=1, untimed=0.97))
+    families=1, study_rate=0.95, sword=1, tactics=1, practice=1, untimed=0.97,
+    traders=1, altars=1))
 
 CUT_HAS_STAT = 0.85            # share of proper meals cooked from a prime cut
 GATE_BOSSES = ('asterion_minotaur', 'medusa_gorgon', 'fafnir_dragon', 'fenrir_wolf')
@@ -909,6 +928,9 @@ class Run:
         # felt like on a kind he has not studied: (kind, profile) -> x
         self.arsenal = []
         self._felt = {}
+        # traders=1: the purse and the run's trader plan
+        self.gold = 0.0
+        self._trader_plan = None
         self._give_starting_kit()
 
     def _healed(self, source: str, got) -> None:
@@ -1085,6 +1107,118 @@ class Run:
         if self.knobs.get('tactics') and self.p.weapon is not None:
             self._felt[(getattr(target, 'kind', ''), self._wprofile(self.p.weapon))] = \
                 self._mult(self.p.weapon, target)
+
+    # ---------------------------------------------------- traders and altars
+    def _pay(self, cost: float, reserve: float) -> bool:
+        if self.gold - cost < reserve:
+            return False
+        self.gold -= cost
+        self.fs['spent'] = self.fs.get('spent', 0) + cost
+        return True
+
+    def _heal_potion_template(self):
+        key = ('heal_potion',)
+        t = self._drop_pool.get(key)
+        if t is None:
+            pots = [x for x in _cached_load_items('potion')
+                    if getattr(x, 'effect', '') in ('heal', 'extra_heal')]
+            t = self._drop_pool[key] = (pots or [None])[0]
+        return t
+
+    def shop(self, floor: int) -> None:
+        """traders=1: the gold this floor brings in, and its trader if the
+        run's plan puts one here. A careful shopper keeps half a floor's
+        income back."""
+        if not self.knobs.get('traders'):
+            return
+        inc = economy_mod.floor_income(floor)
+        self.gold += inc * self.prof['loot_fraction'] * float(self.kv('gold'))
+        if self._trader_plan is None:
+            self._trader_plan = traders_mod.roll_plan(random.randrange(1 << 30))
+        kind = (self._trader_plan.get('floors') or {}).get(floor)
+        if not kind:
+            return
+        defn = traders_mod.kind_def(kind) or {}
+        svc = set(defn.get('services') or ())
+        share = economy_mod.SERVICE_SHARE
+        reserve = 0.5 * inc
+        p = self.p
+        self.fs['shops'] = self.fs.get('shops', 0) + 1
+        if 'heal' in svc and p.hp < 0.6 * p.max_hp and self._pay(share['heal'] * inc, 0):
+            got = p.max_hp - p.hp
+            p.hp = p.max_hp
+            self._healed('trader', got)
+        w = p.weapon
+        if self.knobs.get('tactics') and w is not None:
+            for side, key, sh, _fam in domain_counters_mod.needs(floor):
+                if side != 'weak' or sh < 0.2:
+                    continue
+                s_name = {'silver': 'silvering', 'cold_iron': 'cold_iron_inlay'}.get(key)
+                if not s_name or s_name not in svc:
+                    continue                    # no smith can work that in
+                if smithing_mod.can_inlay(w, key) and self._pay(share[s_name] * inc, reserve):
+                    smithing_mod.inlay(w, key)
+                    self.fs['smith_work'] = self.fs.get('smith_work', 0) + 1
+                break
+            rng = random.Random(random.randrange(1 << 30))
+            try:
+                wares = domain_counters_mod.stall_counters(defn, floor, rng)
+            except Exception:
+                wares = []
+            for ware, _info in wares:
+                if isinstance(ware, Weapon) and getattr(ware, 'requires_ammo', None) is None:
+                    price = economy_mod.stock_price(ware, floor, float(defn.get('markup', 1.0) or 1.0))
+                    if self.gold - price < reserve:
+                        continue
+                    self._arsenal_add(ware)
+                    if ware in self.arsenal:
+                        self._pay(price, reserve)
+                        self.fs['counters_bought'] = self.fs.get('counters_bought', 0) + 1
+        if 'sharpen' in svc and w is not None and int(getattr(w, '_sim_smith', 0)) < 2 \
+                and self._pay(share['sharpen'] * inc, reserve):
+            w.enchant_bonus = int(getattr(w, 'enchant_bonus', 0) or 0) + 1
+            w._sim_smith = int(getattr(w, '_sim_smith', 0)) + 1
+        body = p.armor_slots[items_mod.ARMOR_SLOTS.index('body')]
+        if 'reinforce' in svc and body is not None and int(getattr(body, '_sim_smith', 0)) < 2 \
+                and self._pay(share['reinforce'] * inc, reserve):
+            body.enchant_bonus = int(getattr(body, 'enchant_bonus', 0) or 0) + 1
+            body._sim_smith = int(getattr(body, '_sim_smith', 0)) + 1
+        pot = self._heal_potion_template()
+        if pot is not None:
+            price = economy_mod.stock_price(pot, floor, float(defn.get('markup', 1.0) or 1.0))
+            for _ in range(3):
+                if not self._pay(price, reserve):
+                    break
+                self.potions.append(pot)
+                self.fs['potions_bought'] = self.fs.get('potions_bought', 0) + 1
+
+    def rededicate(self, floor: int) -> None:
+        """altars=1: on an altar floor (every 15th from floor 1; shrine rooms
+        are not modelled) the hero pays the offering and moves points from his
+        least-used stat to the first of his stat_focus."""
+        if not self.knobs.get('altars') or floor % 15 != 1:
+            return
+        focus = self.prof.get('stat_focus') or ('CON',)
+        p = self.p
+        cost = economy_mod.altar_offering(floor)
+        if self.knobs.get('traders'):
+            if not self._pay(cost, 0):
+                return
+        chain = self.quiz.escalator_chain(5)
+        pts = rededication_mod.points_for_chain(chain)
+        if pts <= 0:
+            return
+        give = [s for s in ('PER', 'INT', 'WIS', 'DEX', 'STR', 'CON') if s not in focus]
+        for _ in range(pts):
+            src = max(give, key=lambda s: getattr(p, s) - 10)
+            if getattr(p, src) <= 10:
+                break
+            setattr(p, src, getattr(p, src) - 1)
+            tgt = focus[0]
+            setattr(p, tgt, getattr(p, tgt) + 1)
+            if tgt == 'CON':
+                p.max_hp += 3
+            self.fs['rededicated'] = self.fs.get('rededicated', 0) + 1
 
     # ------------------------------------------------------------------- gear
     def _equip(self, item):
@@ -2318,6 +2452,8 @@ class Run:
         self.corpses_used = 0
 
         self.find_secrets(floor)
+        self.shop(floor)
+        self.rededicate(floor)
         if self.knobs['sword'] and floor >= 99 and 'sword_of_michael' not in self._secrets_got:
             sw = items_mod.make_item_by_id('weapon', 'sword_of_michael')
             self._secrets_got.add('sword_of_michael')

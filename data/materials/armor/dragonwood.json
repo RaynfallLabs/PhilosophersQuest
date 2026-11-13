@@ -19,11 +19,11 @@
     60,
     50
   ],
-  "resistances": [
-    "fire",
-    "cold"
-  ],
-  "weaknesses": [],
+  "protection": {},
+  "protection_words": {},
+  "metal": false,
+  "protection_note": "A shield's dragonwood: held, not worn, so it guards with its AC alone.",
+  "protection_price": "Wood burns: fire scorches it.",
   "vulnerabilities": [],
   "special_properties": [
     "fire_resistant",

@@ -18,5 +18,14 @@
     "rare_metal",
     "magical_metal"
   ],
-  "lore_template": "Vertical {material_name} strips riveted to a backing of stout leather. Cheaper to forge than plate; nearly as good if the strips are tight."
+  "lore_template": "Vertical {material_name} strips riveted to a backing of stout leather. Cheaper to forge than plate; nearly as good if the strips are tight.",
+  "forms": {
+    "slash": 0.8,
+    "pierce": 0.9
+  },
+  "forms_words": {
+    "slash": "sheds a cut",
+    "pierce": "turns most points"
+  },
+  "forms_note": "Strips of metal riveted on leather shed a cut and turn most points."
 }

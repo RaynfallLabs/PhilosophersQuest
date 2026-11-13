@@ -19,10 +19,19 @@
     255
   ],
   "armor_ac_bonus": 2,
-  "resistances": [
-    "cold"
-  ],
-  "weaknesses": [],
+  "protection": {
+    "magic": 0.85,
+    "shadow": 0.85,
+    "lightning": 1.25
+  },
+  "protection_words": {
+    "magic": "turns a spell",
+    "shadow": "glows against the dark",
+    "lightning": "conducts lightning"
+  },
+  "metal": true,
+  "protection_note": "Iron that fell from the sky: it glows faintly, and the dark gives it room.",
+  "protection_price": "It conducts lightning.",
   "vulnerabilities": [],
   "effective_against": [],
   "special_properties": [

@@ -19,5 +19,14 @@
     "magical_metal",
     "dragon_material"
   ],
-  "lore_template": "A coat of overlapping {material_name} plates, each lashed to a leather backing like the scales of a fish. A point slides down them and off. A thrust from below can still lift one."
+  "lore_template": "A coat of overlapping {material_name} plates, each lashed to a leather backing like the scales of a fish. A point slides down them and off. A thrust from below can still lift one.",
+  "forms": {
+    "slash": 0.8,
+    "pierce": 0.9
+  },
+  "forms_words": {
+    "slash": "sheds a cut",
+    "pierce": "turns most points"
+  },
+  "forms_note": "Overlapping metal sheds a cut and turns most points; a hammer still bruises through."
 }

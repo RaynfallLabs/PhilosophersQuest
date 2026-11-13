@@ -19,10 +19,19 @@
     130
   ],
   "armor_ac_bonus": 2,
-  "resistances": [
-    "fire"
-  ],
-  "weaknesses": [],
+  "protection": {
+    "fire": 0.75,
+    "cold": 1.15,
+    "lightning": 1.25
+  },
+  "protection_words": {
+    "fire": "sheds flame",
+    "cold": "turns brittle in the cold",
+    "lightning": "conducts lightning"
+  },
+  "metal": true,
+  "protection_note": "Steel that keeps the sun's warmth (the plan's volcanic iron): fire is at home in it, frost is not.",
+  "protection_price": "It turns brittle in the cold, and it conducts lightning.",
   "vulnerabilities": [],
   "effective_against": [
     "undead"

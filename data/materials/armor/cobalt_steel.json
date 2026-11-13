@@ -21,10 +21,19 @@
     200
   ],
   "armor_ac_bonus": 1,
-  "resistances": [
-    "cold"
-  ],
-  "weaknesses": [],
+  "protection": {
+    "cold": 0.75,
+    "fire": 1.15,
+    "lightning": 1.25
+  },
+  "protection_words": {
+    "cold": "keeps out the cold",
+    "fire": "softens in fire",
+    "lightning": "conducts lightning"
+  },
+  "metal": true,
+  "protection_note": "Frost-blue steel forged cold and staying cold: frost cannot bite through it (the plan's frost iron).",
+  "protection_price": "It softens in fire, conducts lightning, and rusts.",
   "vulnerabilities": [],
   "effective_against": [],
   "special_properties": [

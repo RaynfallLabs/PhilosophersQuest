@@ -45,32 +45,43 @@ _LOG_FADE_STEP = 0.07          # per line of age, toward the background
 _line_color_cache: dict = {}
 
 
+def _load_lines(player) -> tuple:
+    """The shares of the limit where the load's state changes (Burdened,
+    Stressed: data/gear_rules.json load)."""
+    return (float(getattr(player, 'BURDENED_SHARE', 0.5)),
+            float(getattr(player, 'STRESSED_SHARE', 0.75)))
+
+
 def carry_state(player) -> tuple[float, int, str]:
     """(weight carried, limit, state) where state is '' / 'Burdened' /
-    'Over Limit'. Worn gear and the pack both count (Player.get_current_weight).
-    One reading for the sidebar, the character sheet and the menus."""
+    'Stressed' / 'Over Limit'. Worn gear and the pack both count
+    (Player.get_current_weight). One reading for the sidebar, the character
+    sheet and the menus."""
     wt = float(player.get_current_weight())
     lim = int(player.get_carry_limit())
-    share = float(getattr(player, 'BURDENED_SHARE', 0.75))
+    burdened, stressed = _load_lines(player)
     if wt > lim:
         return wt, lim, 'Over Limit'
-    if wt > lim * share:
+    if wt > lim * stressed:
+        return wt, lim, 'Stressed'
+    if wt > lim * burdened:
         return wt, lim, 'Burdened'
     return wt, lim, ''
 
 
 def carry_numbers(player) -> str:
     """'43 / 100': the load as every readout prints it. The number never
-    contradicts the state (hud_context.load_number): 75.4 of 100 is
-    Burdened and reads 75.4, not 75."""
+    contradicts the state (hud_context.load_number): 50.4 of 100 is
+    Burdened and reads 50.4, not 50."""
     from hud_context import load_number
     wt, lim, _state = carry_state(player)
-    share = float(getattr(player, 'BURDENED_SHARE', 0.75))
-    return f"{load_number(wt, lim, share)} / {lim}"
+    return f"{load_number(wt, lim, _load_lines(player))} / {lim}"
 
 
 def carry_color(state: str) -> tuple:
-    return (FP.DANGER_TEXT if state == 'Over Limit'
+    # The readouts sit on dark panels: the light danger red (BLOOD is
+    # 2.9:1 there, under the 4.5:1 floor of the UI gates).
+    return (FP.DANGER_TEXT_LIGHT if state in ('Over Limit', 'Stressed')
             else FP.WARNING_TEXT if state else FP.SUCCESS_TEXT)
 
 
@@ -532,12 +543,12 @@ class Sidebar:
 
     def _carrying(self, player, y: int) -> int:
         """One full-width line, 'Carrying 43 / 100': green, amber when
-        Burdened (the load slows the hero's steps), red past the limit."""
+        Burdened (half the dodge, louder steps), red when Stressed (no
+        dodge, every second step costs a turn) or past the limit."""
         wt, lim, state = self.carry_state(player)
         cell_x = self.x + self.PAD
         ax = self._icon(self._STAT_ICONS['Wt'], cell_x, y, self._fsm.get_height())
-        color = (FP.DANGER_TEXT if state == 'Over Limit'
-                 else FP.WARNING_TEXT if state else FP.SUCCESS_TEXT)
+        color = carry_color(state)
         room = self.x + self.w - self.PAD - ax
         label = f"Carrying {carry_numbers(player)}"
         surf = self._fsm.render(self._fit(self._fsm, label, room), True, color)
@@ -587,7 +598,7 @@ class Sidebar:
         rows = []
         _wt, _lim, carry = self.carry_state(player)
         if carry:
-            rows.append((carry, FP.DANGER_TEXT if carry == 'Over Limit' else FP.WARNING_TEXT, None))
+            rows.append((carry, carry_color(carry), None))
         if any(getattr(i, 'id', '') == 'charmander_stuffie' for i in player.inventory):
             rows.append(("Fire Protect", FP.PASSIVE_FIRE, None))
         if any(getattr(i, 'id', '') == 'dreamspun_sketchbook' for i in player.inventory):

@@ -21,10 +21,17 @@
     80
   ],
   "armor_ac_bonus": 2,
-  "resistances": [
-    "fire"
-  ],
-  "weaknesses": [],
+  "protection": {
+    "fire": 0.65,
+    "blunt": 1.1
+  },
+  "protection_words": {
+    "fire": "still remembers the fire",
+    "blunt": "cracks under a hammer"
+  },
+  "metal": false,
+  "protection_note": "Dragon scale turned to stone with age: it still remembers the fire.",
+  "protection_price": "Stone cracks under a hammer, and it is heavier than scale.",
   "vulnerabilities": [],
   "effective_against": [
     "dragon"

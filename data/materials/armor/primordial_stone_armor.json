@@ -19,10 +19,19 @@
     75
   ],
   "armor_ac_bonus": 4,
-  "resistances": [
-    "magic"
-  ],
-  "weaknesses": [],
+  "protection": {
+    "magic": 0.75,
+    "slash": 0.9,
+    "pierce": 0.9
+  },
+  "protection_words": {
+    "magic": "older than magic",
+    "slash": "stone turns an edge",
+    "pierce": "stone turns a point"
+  },
+  "metal": false,
+  "protection_note": "Stone from before the world was made: magic is younger than it.",
+  "protection_price": "It weighs twice as much as steel.",
   "vulnerabilities": [],
   "effective_against": [],
   "special_properties": [

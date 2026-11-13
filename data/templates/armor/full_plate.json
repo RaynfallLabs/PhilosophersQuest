@@ -19,5 +19,14 @@
     "magical_metal",
     "dragon_material"
   ],
-  "lore_template": "A complete harness of {material_name}: breastplate, faulds, pauldrons, vambraces and greaves, each piece fitted to one body. A good harness spreads its weight so well that a trained knight could vault into the saddle wearing it."
+  "lore_template": "A complete harness of {material_name}: breastplate, faulds, pauldrons, vambraces and greaves, each piece fitted to one body. A good harness spreads its weight so well that a trained knight could vault into the saddle wearing it.",
+  "forms": {
+    "slash": 0.75,
+    "pierce": 0.85
+  },
+  "forms_words": {
+    "slash": "turns an edge",
+    "pierce": "skids a point aside"
+  },
+  "forms_note": "A plate turns an edge and skids a point aside; a hammer still rings it."
 }

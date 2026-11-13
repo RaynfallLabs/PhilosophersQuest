@@ -19,8 +19,17 @@
     200,
     220
   ],
-  "resistances": [],
-  "weaknesses": [],
+  "protection": {
+    "lightning": 1.25
+  },
+  "protection_words": {
+    "lightning": "conducts lightning"
+  },
+  "metal": true,
+  "quiet": true,
+  "casting_free": true,
+  "protection_note": "Mithril is light as cloth, makes no sound and never tarnishes: an elf can sing a spell in it.",
+  "protection_price": "It is still metal: it conducts lightning.",
   "vulnerabilities": [],
   "special_properties": [
     "light",

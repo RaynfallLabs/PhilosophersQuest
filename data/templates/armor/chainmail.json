@@ -17,5 +17,14 @@
     "rare_metal",
     "magical_metal"
   ],
-  "lore_template": "A full coat of {material_name} rings from neck to thigh, each link riveted through four neighbors. Tens of thousands of rings go into one. The weight settles onto the hips after an hour, and a swung blade stops cold against it."
+  "lore_template": "A full coat of {material_name} rings from neck to thigh, each link riveted through four neighbors. Tens of thousands of rings go into one. The weight settles onto the hips after an hour, and a swung blade stops cold against it.",
+  "forms": {
+    "slash": 0.75,
+    "pierce": 1.15
+  },
+  "forms_words": {
+    "slash": "turns an edge",
+    "pierce": "parts under a point"
+  },
+  "forms_note": "Rings stop a cut but part under a point: a spear or a bodkin arrow finds the gaps."
 }

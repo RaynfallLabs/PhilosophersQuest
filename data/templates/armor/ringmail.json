@@ -17,5 +17,14 @@
     "rare_metal",
     "magical_metal"
   ],
-  "lore_template": "Heavy {material_name} rings sewn flat onto a leather backing. Cheaper than true chain, and the rings catch a blade better than scale."
+  "lore_template": "Heavy {material_name} rings sewn flat onto a leather backing. Cheaper than true chain, and the rings catch a blade better than scale.",
+  "forms": {
+    "slash": 0.75,
+    "pierce": 1.15
+  },
+  "forms_words": {
+    "slash": "turns an edge",
+    "pierce": "parts under a point"
+  },
+  "forms_note": "Iron rings sewn on leather stop a cut but part under a point."
 }

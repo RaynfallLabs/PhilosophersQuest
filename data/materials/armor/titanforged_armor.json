@@ -19,8 +19,17 @@
     80
   ],
   "armor_ac_bonus": 3,
-  "resistances": [],
-  "weaknesses": [],
+  "protection": {
+    "blunt": 0.8,
+    "lightning": 1.25
+  },
+  "protection_words": {
+    "blunt": "takes a giant's blow",
+    "lightning": "conducts lightning"
+  },
+  "metal": true,
+  "protection_note": "Forged by the Titans for their own war: it takes a blow that would fell an ox.",
+  "protection_price": "It is nearly twice as heavy as steel, and it conducts lightning.",
   "vulnerabilities": [],
   "effective_against": [
     "giant"

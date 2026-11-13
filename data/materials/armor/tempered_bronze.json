@@ -21,8 +21,15 @@
     70
   ],
   "armor_ac_bonus": 0,
-  "resistances": [],
-  "weaknesses": [],
+  "protection": {
+    "lightning": 1.25
+  },
+  "protection_words": {
+    "lightning": "conducts lightning"
+  },
+  "metal": true,
+  "protection_note": "Bronze, the heroes' metal of the old songs: it never rusts.",
+  "protection_price": "It conducts lightning.",
   "vulnerabilities": [],
   "effective_against": [
     "construct"

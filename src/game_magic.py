@@ -1459,9 +1459,11 @@ class MagicMixin:
         spell = LEARNABLE_SPELLS.get(spell_id)
         if not spell:
             return
-        # A Ring of Wizardry cuts the cost by its tier (rings.py).
-        import rings as _rings
-        mp_cost = _rings.spell_cost(self.player, spell['mp_cost'])
+        # A Ring of Wizardry cuts the cost by its tier (rings.py); metal body
+        # armour taxes it (x1.5 medium, x2 heavy; mithril and the like cast
+        # freely: gear.casting_mult, winning-build plan 3.3). The spell menu
+        # shows the same number.
+        mp_cost = self.player.spell_mp_cost(spell['mp_cost'])
         from chain_passives import consume_passive_charge, find_passive_item, refund_passive_charge
         _free_cast = consume_passive_charge(self.player, 'free_cast_once_per_floor')
         if _free_cast:
