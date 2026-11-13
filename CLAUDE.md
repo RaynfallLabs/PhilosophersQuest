@@ -76,12 +76,12 @@ src/
   sleepers.py         - Zoo, graveyard and barracks sleepers stir at footsteps and gold taken
   theft.py            - Thieves that really steal, and give it back on death
   black_knight.py     - The Black Knight bridge easter egg (floors 15-19)
-  emberpup_encounter.py - The abandoned Emberpup, every run (floors 3-8), earned by coming back
+  emberpup_encounter.py - The abandoned Emberpup (floors 3-8): three feeds, the Bloomleaf Cloak won from Old Nickel; he keeps it
   setne_tomb.py       - Setne's Tomb and the Book of Thoth (floors 45-65)
 
   # Combat, items, magic
   combat.py           - Combat resolution
-  affinity.py         - Weakness and resistance: what a hit met, and the lines that say so
+  affinity.py         - Weakness, resistance, shrugs off (data/affinity_rules.json): what a hit met, and the lines that say so
   dice.py             - Dice notation parser ("2d6+3")
   items.py            - Item classes and equipment system
   gear.py             - Armour, shield, ring and amulet rules: levels, tiers, thresholds, core AC

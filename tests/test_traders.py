@@ -168,7 +168,10 @@ def test_regin_teaches_the_pit_and_tyr_wears_his_disguise():
     assert 'Tyr' not in tyr['name'] + tyr['title'] + json.dumps(tyr['lines'])
     for tell in ('Tiw', 'Tuesday', 'wrist', 'pledge'):
         assert tell in tyr['lore'], tell
-    assert 'ribbon' in tyr['gate_lines']['79'] and 'Vidar' in tyr['gate_lines']['79']
+    # Gleipnir is his to tell; Vidar's shoe is not (Brandon, 2026-11-13: the
+    # scraps carry no hint anywhere but Recall Lore).
+    _g79 = tyr['gate_lines']['79']
+    assert 'ribbon' in _g79 and 'Vidar' not in _g79 and 'scrap' not in _g79
 
 
 def test_noticing_gods_and_knowing_otrs_story_move_the_gate_prices():
