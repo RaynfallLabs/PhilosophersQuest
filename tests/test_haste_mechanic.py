@@ -1,26 +1,37 @@
-"""Tests for the haste speed-up mechanic.
+"""Tests for the hero's speed: haste, Speed boots and the world's clock.
 
-Bug being prevented: the original implementation auto-fired a second
-`_do_move(dx, dy)` inside the player's move handler whenever the player
-was hasted. The result was that a single arrow-key press moved the
-player TWO tiles. User intent: the player moves twice as fast as the
-*monsters* — not double per keystroke.
+Bug once prevented: the original haste auto-fired a second `_do_move(dx,
+dy)` inside the move handler, so one arrow-key press moved the hero TWO
+tiles. User intent: the hero moves twice as fast as the *monsters*, not
+twice per keystroke.
 
-Post-fix mechanic: in `_advance_turn`, when the player is hasted, a
-`_haste_skip_world` flag toggles. Every other call, the world-tick
-methods (`_do_monster_turns`, `_do_pet_turns`, `_maybe_wander_spawn`)
-are skipped, so two player actions correspond to one monster action.
-Player-side ticks (cooldowns, effect durations, HP regen) happen
-normally on every action.
+Today (2026-11-12, Brandon: "Monsters have a speed rating, yes? that
+changes how often they act in relation to the player? that's what this
+power should do"): the hero has a speed rating on the monsters' scale
+(Player.get_speed: 10 is ordinary, haste doubles it, Speed boots add a
+share). Each action moves the world's clock on 10/speed of a turn; the
+world (`_do_monster_turns`, `_do_pet_turns`, `_maybe_wander_spawn`) acts
+each time it passes a whole turn. No dice. Player-side ticks happen on
+every action. Haste no longer lengthens the quiz clock ("Wisdom increases
+timer, not how fast you are").
 """
 from __future__ import annotations
 
 import inspect
+import os
 import sys
 from pathlib import Path
 
+os.environ.setdefault('SDL_VIDEODRIVER', 'dummy')
+os.environ.setdefault('SDL_AUDIODRIVER', 'dummy')
+
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "src"))
+
+import pygame  # noqa: E402
+import pytest  # noqa: E402
+
+pygame.init()
 
 
 # ---------------------------------------------------------------------------
@@ -29,129 +40,136 @@ sys.path.insert(0, str(ROOT / "src"))
 
 def test_do_move_no_auto_second_step():
     """Regression: `_do_move` must not auto-fire a second `_do_move` when
-    the player is hasted. That was the bug where one keystroke moved two
-    tiles."""
+    the hero is hasted (one keystroke moved two tiles)."""
     import main
     src = inspect.getsource(main.Game._do_move)
-    # The old buggy block used a `_haste_active` flag to guard against
-    # infinite recursion. Its presence is a strong signal the bug
-    # regressed. The fix removes both the flag and the recursive call.
     assert "_haste_active" not in src, (
         "regression: `_haste_active` re-entry flag is back in _do_move, "
         "which means the auto-second-step bug has been reintroduced"
     )
 
 
-def test_advance_turn_has_haste_skip_world_toggle():
-    """`_advance_turn` must contain the world-tick-skip toggle so a hasted
-    player effectively moves twice as fast as monsters."""
+def test_advance_turn_gates_the_world_on_the_clock():
+    """The world-tick methods sit inside the `if not self._world_waits:`
+    branch, and the clock is read from the hero's speed before them."""
     import main
     src = inspect.getsource(main.Game._advance_turn)
-    assert "_haste_skip_world" in src, (
-        "_advance_turn must use a `_haste_skip_world` flag to gate "
-        "world-tick methods while the player is hasted"
-    )
-    # The skip toggle must occur BEFORE the monster turn call.
-    toggle_idx = src.find("_haste_skip_world")
-    monster_idx = src.find("_do_monster_turns()")
-    assert toggle_idx > 0 and monster_idx > 0, "expected both markers in source"
-    assert toggle_idx < monster_idx, (
-        "the `_haste_skip_world` toggle must be defined before "
-        "`_do_monster_turns()` so it can gate that call"
-    )
-
-
-def test_advance_turn_gates_world_methods_on_haste_skip():
-    """The world-tick methods (monster turns, pet turns, wander spawn)
-    must sit inside the `if not self._haste_skip_world:` branch."""
-    import main
-    src = inspect.getsource(main.Game._advance_turn)
-    # Locate the `if not self._haste_skip_world:` line, then verify the
-    # three world-tick methods all appear AFTER it. (Other methods like
-    # _death_proximity_warning + _tick_hp_regen are still allowed to run
-    # every turn — they're player-side UI/regen, not world action.)
-    gate = "if not self._haste_skip_world:"
+    gate = "if not self._world_waits:"
+    assert "get_speed()" in src
+    assert src.find("get_speed()") < src.find("self._do_monster_turns()")
     assert gate in src, f"expected gate line '{gate}' in _advance_turn"
     after_gate = src[src.index(gate):]
-    assert "self._do_monster_turns()" in after_gate, (
-        "_do_monster_turns must be gated by _haste_skip_world"
-    )
-    assert "self._do_pet_turns()" in after_gate, (
-        "_do_pet_turns must be gated by _haste_skip_world"
-    )
-    assert "self._maybe_wander_spawn()" in after_gate, (
-        "_maybe_wander_spawn must be gated by _haste_skip_world"
-    )
+    for call in ("self._do_monster_turns()", "self._do_pet_turns()",
+                 "self._maybe_wander_spawn()"):
+        assert call in after_gate, f"{call} must be gated by the world's clock"
+    assert "_haste_skip_world" not in src           # the old toggle is gone
 
 
 # ---------------------------------------------------------------------------
-# Behavioural test of the toggle pattern itself
+# The clock, by itself (a pure copy of _advance_turn's arithmetic)
 # ---------------------------------------------------------------------------
 
-def _haste_toggle(state: dict, hasted: bool) -> bool:
-    """Pure replica of the toggle logic in _advance_turn. Returns True if
-    the world tick should be SKIPPED this action."""
-    if hasted:
-        state["_haste_skip_world"] = not state.get("_haste_skip_world", False)
-    else:
-        state["_haste_skip_world"] = False
-    return state["_haste_skip_world"]
+def _clock_step(state: dict, speed: float) -> bool:
+    """True if the world WAITS this action."""
+    speed = max(10.0, speed)
+    clock = state.get('clock', 0.0) + 10.0 / speed
+    waits = clock < 1.0 - 1e-9
+    if not waits:
+        clock -= 1.0
+    state['clock'] = clock if speed > 10.0 else 0.0
+    return waits
 
 
-def test_haste_toggle_two_player_actions_per_world_tick():
-    """6 hasted player actions should produce 3 world ticks."""
+def _ticks(speed, actions):
     state: dict = {}
-    world_ticks = 0
-    for _ in range(6):
-        skip = _haste_toggle(state, hasted=True)
-        if not skip:
-            world_ticks += 1
-    assert world_ticks == 3, (
-        f"expected 3 world ticks per 6 hasted actions, got {world_ticks}"
-    )
+    return sum(0 if _clock_step(state, speed) else 1 for _ in range(actions))
 
 
-def test_haste_toggle_alternates_skip_and_run():
-    """The skip flag must alternate True/False each hasted action."""
+def test_haste_is_two_actions_to_a_world_turn():
+    assert _ticks(20, 6) == 3
     state: dict = {}
-    results = [_haste_toggle(state, hasted=True) for _ in range(4)]
-    assert results == [True, False, True, False], (
-        f"expected alternating True/False; got {results}"
-    )
+    assert [_clock_step(state, 20) for _ in range(4)] == [True, False, True, False]
 
 
-def test_haste_toggle_resets_when_haste_expires():
-    """When haste expires, the toggle must reset so a fresh haste starts
-    in the same phase as the first apply."""
+def test_ordinary_speed_never_waits():
+    assert _ticks(10, 10) == 10
+    assert _ticks(7, 10) == 10                      # slowing is _do_move's, not the clock's
+
+
+def test_a_fresh_haste_begins_by_waiting():
     state: dict = {}
-    # First haste cycle: skip True, then False
-    assert _haste_toggle(state, hasted=True) is True
-    assert _haste_toggle(state, hasted=True) is False
-    # Haste expires — flag should reset to False (no skip)
-    assert _haste_toggle(state, hasted=False) is False
-    assert state["_haste_skip_world"] is False
-    # New haste applied — first action skips again
-    assert _haste_toggle(state, hasted=True) is True
+    assert _clock_step(state, 20) is True           # one hasted action, then it ends
+    assert _clock_step(state, 10) is False
+    assert _clock_step(state, 20) is True           # the next haste starts the same way
 
 
-def test_haste_toggle_unhasted_never_skips():
-    """An un-hasted player must never have world-tick skipped."""
-    state: dict = {}
-    for _ in range(10):
-        assert _haste_toggle(state, hasted=False) is False
+def test_speed_boots_save_one_world_turn_in_twenty_one():
+    assert _ticks(10.5, 21) == 20
+    assert _ticks(10.8, 108) == 100
+
+
+# ---------------------------------------------------------------------------
+# The real game
+# ---------------------------------------------------------------------------
+
+@pytest.fixture
+def game(monkeypatch, tmp_path):
+    import bones
+    import save_system
+    from main import Game
+    from game_states import STATE_PLAYER
+    monkeypatch.setenv('PQ_NO_BONES', '1')
+    monkeypatch.setattr(save_system, '_save_path', lambda name: str(tmp_path / f'save_{name}.pkl'))
+    monkeypatch.setattr(bones, 'save_bones', lambda *a, **k: None)
+    g = Game(pygame.display.set_mode((1, 1)), player_name='__haste_clock__', secret_build=None)
+    g.monsters = []
+    g.pets = []
+    g.state = STATE_PLAYER
+    return g
+
+
+def _world_turns(g, actions):
+    n = [0]
+    g._do_monster_turns = lambda: n.__setitem__(0, n[0] + 1)
+    for _ in range(actions):
+        g._advance_turn()
+    return n[0]
+
+
+def test_a_hasted_hero_gets_two_actions_to_the_monsters_one(game):
+    game.player.status_effects['hasted'] = 99
+    assert _world_turns(game, 6) == 3
+
+
+def test_an_ordinary_hero_gets_one(game):
+    assert _world_turns(game, 6) == 6
+
+
+def test_boots_of_speed_quicken_the_hero_a_little(game):
+    import items
+    p = game.player
+    boots = items.instantiate_armor('leather_boots', 'leather', level=7, ench_id='speed')
+    p.inventory.append(boots)
+    p._apply_equip(boots)
+    p.remove_from_inventory(boots)
+    assert not p.has_effect('hasted')               # no haste: a speed rating
+    assert p.get_speed() == 10.5
+    assert _world_turns(game, 21) == 20
 
 
 def test_status_effect_description_updated():
-    """The status-effect tooltip description must reflect the new mechanic
-    (world tick skipped half the time) rather than the old wrong text
-    ('Extra action each turn')."""
+    """The tooltip says what haste does (the monsters' cadence), not the
+    old wrong text ('Extra action each turn')."""
     from status_effects import EFFECT_INFO
     label, _color, desc = EFFECT_INFO["hasted"]
     assert label == "Hasted"
-    assert "Extra action" not in desc, (
-        f"stale description still references 'Extra action': {desc!r}"
-    )
-    # Sanity check: new copy mentions the monster cadence
-    assert "monster" in desc.lower() or "half" in desc.lower(), (
-        f"haste description should describe the new mechanic; got: {desc!r}"
-    )
+    assert "Extra action" not in desc
+    assert "monster" in desc.lower() or "half" in desc.lower()
+
+
+def test_haste_does_not_lengthen_the_clock():
+    from player import Player
+    p = Player()
+    before = p.get_quiz_timer_modifier()
+    p.status_effects['hasted'] = 10
+    assert p.get_quiz_timer_modifier() == before

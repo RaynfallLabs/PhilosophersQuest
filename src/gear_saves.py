@@ -70,6 +70,27 @@ def enchant_common(item) -> None:
     if ench_id and not str(getattr(item, 'name', '')).endswith(
             enchantments.display_name(enchantments.get(ench_id), level)):
         enchantments.apply_to(item, ench_id)
+    ench = enchantments.get(ench_id)
+    if ench:
+        # Today's words and numbers: a ladder or a line may have moved since
+        # the piece was made (the gear balance check of 2026-11-12 halved
+        # Striking, laddered Speed and Displacement, and gave every guard its
+        # honest wording).
+        item.special = enchantments.describe(ench, level)
+        item.ench_line = item.special
+        _retire_status(item, ench_id, None)
+
+
+def _retire_status(item, ench_id: str, fresh) -> None:
+    """A status an enchantment lent and lends no more (Speed's haste,
+    Displacement's status: enchantments.RETIRED_STATUS) comes off the piece,
+    unless the piece's own data still lends it (`fresh`, today's copy of a
+    named piece: the Greaves of Hermes stay hasted)."""
+    import enchantments
+    old = enchantments.RETIRED_STATUS.get(ench_id or '')
+    if old and getattr(item, 'on_equip_status', '') == old \
+            and getattr(fresh, 'on_equip_status', '') != old:
+        item.on_equip_status = ''
 
 
 # -------------------------------------------------------------- named pieces
@@ -112,6 +133,7 @@ def refresh_named(item) -> bool:
     # (An attuned or chain body piece's AC is its tier's.)
     item.adopt_fields(fresh, [f for f in _ARMOR_FIELDS
                               if not (f in ('ac_bonus', 'tier_bonuses') and (attuned or (core and chain)))])
+    _retire_status(item, getattr(fresh, 'ench_id', ''), fresh)
     if not getattr(item, 'on_equip_status', '') and getattr(fresh, 'on_equip_status', ''):
         item.on_equip_status = fresh.on_equip_status
     for flag in ('passive_silent_walk',):

@@ -1319,9 +1319,9 @@ class Player:
 
     def combat_clock(self) -> int:
         """Seconds the next maths chain will actually get: Wisdom (and any
-        lent by prayer), times haste, blessing and the debuffs, plus earned
+        lent by prayer), times a blessing and the debuffs, plus earned
         extra seconds. The same sum quiz_engine.start_quiz does. The sidebar
-        used to show bare Wisdom, which hid haste and every debuff."""
+        used to show bare Wisdom, which hid every debuff."""
         return (round(self.get_quiz_timer('math') * self.get_quiz_timer_modifier())
                 + int(self.get_quiz_extra_seconds('math')))
 
@@ -1345,11 +1345,30 @@ class Player:
             mod *= 0.70
         if self.has_effect('hallucinating'):
             mod *= 0.80
-        if self.has_effect('hasted'):
-            mod *= 1.25
+        # (Haste no longer lengthens the clock. Brandon, 2026-11-12: "Wisdom
+        # increases timer, not how fast you are." Speed is how often the
+        # hero acts against the world: get_speed.)
         if self.has_effect('blessed'):
             mod *= 1.25
         return round(max(0.40, mod), 2)
+
+    def get_speed(self) -> float:
+        """The hero's speed rating, on the scale of a monster's `speed`
+        (data/monsters.json: 10 is a creature of ordinary speed). It sets
+        how often he acts against how often the world does
+        (Game._advance_turn): at 20 the monsters act every other action, at
+        10.5 they miss one action in twenty-one. Haste doubles it; Speed
+        boots add their share (enchantments.quickness). Wisdom sets the
+        quiz clock, never this."""
+        try:
+            import enchantments
+            quick = enchantments.quickness(self)
+        except ImportError:
+            quick = 0.0
+        s = 10.0 * (1.0 + quick)
+        if self.has_effect('hasted'):
+            s *= 2.0
+        return round(s, 2)
 
     def get_int_quiz_bonus(self) -> int:
         """Extra quiz seconds for magic subjects (science/grammar/philosophy).

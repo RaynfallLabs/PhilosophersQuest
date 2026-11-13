@@ -3571,10 +3571,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     self._advance_turn()
                     self._burden_extra_turn()       # Burdened: some steps cost two turns
                 # Haste no longer auto-fires a second _do_move (that doubled
-                # the player's keystroke). Speed boost is now implemented in
-                # _advance_turn: every other call while hasted, the world
-                # tick (monsters/pets/wander) is skipped so the player gets
-                # two actions per monster action.
+                # the player's keystroke). Speed lives in _advance_turn: the
+                # world's clock moves 10/speed of a turn each action
+                # (Player.get_speed), so a hasted hero gets two actions to
+                # the monsters' one.
 
     def _try_phase_step(self, wx: int, wy: int, dx: int, dy: int) -> bool:
         """Attempt to step one tile through a wall (chain-equip phase_step passive).
@@ -5070,18 +5070,25 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             except ImportError:
                 pass
 
-        # Haste: player moves twice as fast as monsters. Every other call
-        # while hasted, skip the world tick (monsters/pets/wander spawns)
-        # so 2 player actions = 1 monster action. Player-side ticks
-        # (cooldowns, status durations, HP regen) happen normally on every
-        # action. When haste expires, reset the toggle so a fresh haste
-        # starts the cycle from the same phase.
-        if self.player.has_effect('hasted'):
-            self._haste_skip_world = not getattr(self, '_haste_skip_world', False)
-        else:
-            self._haste_skip_world = False
+        # Speed (Player.get_speed, on the scale of a monster's speed: 10 is
+        # ordinary). Each action the hero takes moves the world's clock on by
+        # 10/speed of a turn, and the world (monsters, pets, escorts and
+        # wanderers) acts each time the clock passes a whole turn: haste
+        # (speed 20) is every other action, Speed boots about one action in
+        # twenty. No dice: the same actions always give the same turns.
+        # Player-side ticks (cooldowns, status durations, HP regen) happen
+        # on every action. A speed under 10 counts as 10 here (slowing costs
+        # the hero his own turn instead, in _do_move).
+        _speed = max(10.0, float(self.player.get_speed()))
+        _clock = float(self.__dict__.get('_world_clock', 0.0) or 0.0) + 10.0 / _speed
+        self._world_waits = _clock < 1.0 - 1e-9
+        if not self._world_waits:
+            _clock -= 1.0
+        # At ordinary speed the world keeps pace exactly, so the clock starts
+        # clean: a fresh haste always begins by waiting, as it always has.
+        self._world_clock = _clock if _speed > 10.0 else 0.0
 
-        if not self._haste_skip_world:
+        if not self._world_waits:
             self._family_turn()            # families that flee on sight; hidden things shown
             # Whose blows these are, for the Seeker's damage achievements
             # (game_seeker.py): everything outside this block is the hero's.

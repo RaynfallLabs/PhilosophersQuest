@@ -90,12 +90,18 @@ def matches(fam: dict, atk: dict) -> tuple:
     return dmg, rider
 
 
+def base_strength(piece) -> tuple:
+    """(rider shrug, damage turn-aside) of the piece's make alone: its
+    template's weight class, without any enchantment."""
+    base = rules()['base_by_weight_class'].get(
+        str(getattr(piece, 'weight_class', None) or 'light'), {})
+    return float(base.get('rider', 0.0)), float(base.get('damage', 0.0))
+
+
 def piece_strength(piece) -> tuple:
     """(rider shrug, damage turn-aside) a worn minor piece gives its slot's
     family: the template's weight class, plus its guard enchantment."""
-    base = rules()['base_by_weight_class'].get(
-        str(getattr(piece, 'weight_class', None) or 'light'), {})
-    rider, damage = float(base.get('rider', 0.0)), float(base.get('damage', 0.0))
+    rider, damage = base_strength(piece)
     try:
         import enchantments
         r2, d2 = enchantments.guard_strength(piece)
@@ -105,15 +111,17 @@ def piece_strength(piece) -> tuple:
     return rider, damage
 
 
-def guard_text(piece, short: bool = False) -> str:
-    """What a minor piece guards, in words, for its card: its slot's family
-    and the share it turns aside and shrugs off (its weight class, and a
-    guard enchantment of that family). '' for anything else."""
+def guard_text(piece, short: bool = False, known: bool = True) -> str:
+    """What a minor piece guards, in words, for its card: its slot's family,
+    the share it takes off their damage and the share of their harm it
+    stops (its weight class, and a guard enchantment of that family). With
+    `known` False (the copy not yet identified) only its make is counted,
+    so the card does not give the enchantment away. '' for anything else."""
     slot = getattr(piece, 'slot', '')
     fam = family(slot)
     if not fam:
         return ''
-    rider, dmg = piece_strength(piece)
+    rider, dmg = piece_strength(piece) if known else base_strength(piece)
     name = str(fam.get('name', slot))
     if short:
         return f"{name.capitalize()} {round(100 * dmg)}%"

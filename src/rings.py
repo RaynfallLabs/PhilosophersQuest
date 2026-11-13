@@ -138,7 +138,7 @@ def best(player, kind_id: str) -> tuple:
 
 def guard_parts(player):
     """[(family, rider, damage, ring)] for worn guard kinds (guards.guard_keep):
-    Protection shrugs off riders, Spell Turning turns aside damage. Two rings
+    Protection shrugs off riders, Spell Turning takes damage off. Two rings
     of one kind do not add: the stronger counts (as for the worn stats)."""
     out = []
     for kind_id, kind in kinds().items():

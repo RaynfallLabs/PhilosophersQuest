@@ -13,8 +13,11 @@ stable, in one of four lanes:
          performance decides), the combat clock (Swift Strokes), the wait
          between prayers (the Hair Shirt);
   way    the powers moved off rings to their iconic gear (ruling 4): a
-         status while worn (Telepathy, Speed, Displacement...), a stat by
-         tier (Ogre Power, Dexterity, the Eagle), silent steps (Elvenkind).
+         status while worn (Telepathy, True Sight, Levitation...), a stat
+         by tier (Ogre Power, Dexterity, the Eagle), silent steps
+         (Elvenkind), and two ladders: Speed, a share added to the hero's
+         speed rating (Player.get_speed), and Displacement, the share of
+         attacks that strike empty air (2026-11-12).
 
 The level is fixed when the piece is made (LORE NOT FLOOR); a blessed
 piece works a level higher, a cursed one a level lower. Pure rules apart
@@ -27,6 +30,13 @@ from functools import lru_cache
 
 ROMAN = ('I', 'II', 'III', 'IV', 'V')
 GUARD_CAP = 0.80             # tools/balance/armor_model.py LADDER_CAP
+
+# Statuses an enchantment lent before the gear balance check of 2026-11-12
+# and lends no more: Speed is a speed rating now (Player.get_speed), not
+# haste, and Displacement a ladder, not the spell's status. gear_saves takes
+# them off pieces made before (unless a named piece's own data still lends
+# one: the Greaves of Hermes are hasted by their lore).
+RETIRED_STATUS = {'speed': 'hasted', 'displacement': 'displacement'}
 
 
 @lru_cache(maxsize=1)
@@ -116,7 +126,7 @@ def roll(slot: str, level: int, rng) -> str:
 # --------------------------------------------------------------- the piece
 
 def describe(ench: dict, level: int) -> str:
-    """The plain line a known piece shows ("Turns aside 46% of ...")."""
+    """The plain line a known piece shows ("Takes 46% off the damage of ...")."""
     v = level_value(ench, level)
     stat = tier_of(level)
     every = data()['craft_every'][max(0, min(9, level - 1))]
@@ -211,6 +221,17 @@ def guard_strength(piece) -> tuple:
     return v, v
 
 
+def is_slot_guard(piece) -> bool:
+    """A piece whose enchantment is its own slot's guard (Deflection on
+    bracers, Iron Will on a helm...). Its card says the whole guard in one
+    line, its make and its enchantment together (guards.guard_text), not
+    the enchantment's share and the slot's apart (two numbers that did not
+    agree, 2026-11-12)."""
+    ench = get(getattr(piece, 'ench_id', ''))
+    return bool(ench and ench.get('lane') == 'guard' and not ench.get('family')
+                and int(getattr(piece, 'ench_level', 0) or 0) > 0)
+
+
 def guard_families(piece):
     """[(family, rider, damage)] for a guard enchantment that names its own
     family (the cloak's Elementward and Vapourward)."""
@@ -235,6 +256,27 @@ def _id_of(ench: dict) -> str:
         if v is ench:
             return k
     return ''
+
+
+def quickness(player) -> float:
+    """Speed: the share the best worn piece adds to the hero's speed rating
+    (Player.get_speed). 0.05 is speed 10.5: one more action in twenty."""
+    best = 0.0
+    for _piece, ench, lv in _worn(player):
+        if ench.get('quick'):
+            best = max(best, level_value(ench, lv))
+    return best
+
+
+def displacement(player) -> float:
+    """Displacement: the share of monster attacks that strike empty air,
+    from the best worn cloak (the spell's own status is DISPLACEMENT_MISS,
+    game_combat.py; the larger of the two counts)."""
+    best = 0.0
+    for _piece, ench, lv in _worn(player):
+        if ench.get('miss'):
+            best = max(best, level_value(ench, lv))
+    return best
 
 
 def quiz_seconds(player) -> int:

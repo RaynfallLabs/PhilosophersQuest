@@ -73,7 +73,9 @@ def test_the_sidebar_clock_is_the_clock_the_fight_will_get():
     p = Player()
     assert p.combat_clock() == 10
     p.add_effect('hasted', 5)
-    assert p.combat_clock() == 12 or p.combat_clock() == 13        # x1.25
+    assert p.combat_clock() == 10        # haste is speed, never the clock (2026-11-12)
+    p.add_effect('blessed', 5)
+    assert p.combat_clock() == 12 or p.combat_clock() == 13        # a blessing x1.25
     q = Player()
     q.add_effect('confused', 5)
     assert q.combat_clock() < 10

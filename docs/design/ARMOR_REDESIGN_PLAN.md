@@ -199,6 +199,7 @@ fit lands outside 0.67-1.5x budget is one the enchantment does not roll at:
 | Vapourward | — | 63% | 63% | — | 80% |
 | Vigor | 19% | 22% | 22% | 22% | 22% |
 | **Striking** (hands: your damage) | +8% | +9% | +9% | +10% | +11% |
+| (2026-11-12: Striking halved to +4 / +4 / +5 / +5 / +6%, see below) | | | | | |
 | **Parrying** (arms: a landed melee blow parried) | 5% | 5% | 6% | 6% | 7% |
 
 (Lesser and greater forms of a tier take the tier's value and the halfway
@@ -206,6 +207,14 @@ point to the next.) Absolute protection rises much faster than the budget:
 one AC point turns aside 2.0% of the health bar per fight on floor 86 and 0.5%
 on floor 6, so the same budget protects about four times as much of a far
 larger health bar deep down.
+
+**Revised 2026-11-12** (`NON_AC_GEAR_BALANCE_REPORT_2026_11_12.md`): the fight
+simulator, run on the powers the model never priced, put Speed (permanent
+haste) at 5.5-8.3 AC points, Displacement (a flat 15%) at 1.5-1.8 and
+Striking at 0.85-1.16, against budgets of 0.41-0.61. Striking is halved,
+Displacement laddered (5-7.5%), and Speed is now a speed rating (5-8% more
+actions, tiers IV-V), not haste. Deflection was under budget early; only its
+card changed.
 
 ### 7.3 Same value, different risk: the real choice
 

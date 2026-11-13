@@ -911,11 +911,19 @@ class RenderMixin:
                 # What a named piece of armor does, in its own words, and the
                 # plain worn bonuses. These used to be told nowhere: the card
                 # of the Gauntlets of Mars said "No revealed special abilities".
-                if getattr(item, 'special', ''):
-                    lines.append(item.special)
-                # A named piece's enchantment (its card text is its own).
+                # A piece whose enchantment is its slot's guard says the
+                # whole guard once (guards.guard_text: its make and its
+                # enchantment together), never two shares that disagree.
+                import enchantments as _ench_k
+                import guards as _guards_k
+                _sg = _ench_k.is_slot_guard(item)
                 _el = getattr(item, 'ench_line', '')
-                if _el and _el != getattr(item, 'special', ''):
+                if getattr(item, 'special', '') and not (_sg and item.special == _el):
+                    lines.append(item.special)
+                if _sg:
+                    lines.append(_guards_k.guard_text(item))
+                # A named piece's enchantment (its card text is its own).
+                elif _el and _el != getattr(item, 'special', ''):
                     lines.append(_el)
                 if getattr(item, 'dodge_bonus', 0):
                     lines.append(f"Dodge +{item.dodge_bonus:.0%}")
@@ -1194,6 +1202,10 @@ class RenderMixin:
             ("Dodge", f"{round(100 * p.dodge_chance())}%", FP.BODY_TEXT),
             ("Tough", f"{round(100 * p.toughness())}%", FP.BODY_TEXT),
         ]
+        # Speed, on the monsters' scale (10 is ordinary), when it is not 10.
+        _spd = p.get_speed()
+        if _spd != 10:
+            metrics.append(("Speed", f"{_spd:g}", FP.GOLD_BRIGHT))
         dr = getattr(p, 'damage_resistances', {}) or {}
         for k, v in dr.items():
             metrics.append((f"{_cap(k)} DR", str(v), FP.MP_BLUE_TEXT))
@@ -1530,13 +1542,17 @@ class RenderMixin:
             ("Dodge", f"{round(100 * p.dodge_chance())}%", FP.BODY_TEXT),
             ("Tough", f"{round(100 * p.toughness())}%", FP.BODY_TEXT),
         ]
+        # Speed, on the monsters' scale (10 is ordinary), when it is not 10.
+        _spd = p.get_speed()
+        if _spd != 10:
+            metrics.append(("Speed", f"{_spd:g}", FP.GOLD_BRIGHT))
         for idx, (label, value, col) in enumerate(metrics):
             r = pygame.Rect(body.x + (idx % 2) * (chip_w + S(10)), y + (idx // 2) * S(27),
                             chip_w, S(22))
             row_rect(r)
             text(label, font_tiny, FP.FADED_TEXT, r.x + S(7), r.y + S(4))
             text(value, font_bold, col, r.x + S(58), r.y + S(3))
-        y += S(95)
+        y += ((len(metrics) + 1) // 2) * S(27) + S(14)
         text("Effects", font_bold, FP.GOLD_BRIGHT, body.x, y)
         y += S(22)
         chips = []
@@ -8491,10 +8507,14 @@ class RenderMixin:
                 lines.append((f"Resists: {self._kit_resist_str(item)}",
                               FP.CYAN_ACCENT, self.font_sm))
             import guards as _guards
-            if _guards.guard_text(item):
-                lines.append((_guards.guard_text(item), FP.CYAN_ACCENT, self.font_sm))
+            import enchantments as _ench_l
+            _known = self._lore_enchant_text(item) != '?'
+            _gt = _guards.guard_text(item, known=_known)
+            if _gt:
+                lines.append((_gt, FP.CYAN_ACCENT, self.font_sm))
+            # The guard line already says a slot guard's enchantment.
             _el = getattr(item, 'ench_line', '') or ''
-            if _el and self._lore_enchant_text(item) != '?':
+            if _el and _known and not _ench_l.is_slot_guard(item):
                 lines.append((_el, FP.CYAN_ACCENT, self.font_sm))
 
         elif isinstance(item, Shield):

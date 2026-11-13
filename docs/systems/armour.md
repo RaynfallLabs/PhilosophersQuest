@@ -65,7 +65,7 @@ Every attack carries a `delivery` (`monsters.json`, written by
 grapple, touch, ranged, breath, gaze, voice. Each minor slot guards one
 family (`data/armor_guards.json`):
 
-| Slot | Family | Turns aside damage of | Shrugs off riders |
+| Slot | Family | Takes a share off the damage of | Stops a share of the riders |
 |---|---|---|---|
 | head | gazes and voices | voice, gaze | fear, confusion, sleep, hallucination, stun, blinding |
 | hands | touches and grabs | touch, grapple | paralysis, holds, freezing |
@@ -76,7 +76,11 @@ family (`data/armor_guards.json`):
 | shirt | poison and draining | poison, drain, necrotic | poison, disease, bleeding, weakening |
 
 A piece's own guard is its weight class (light 5% / 3%, medium 10% / 6%,
-heavy 15% / 9%), plus a guard enchantment of its family. Caps: 80%.
+heavy 15% / 9%), plus a guard enchantment of its family. Caps: 80%. A guard
+never makes an attack miss: it takes a share off a matching hit's damage and
+stops a share of what the hit carries, and the card says so in one line,
+the make and the enchantment together (`guards.guard_text`; the enchantment
+is not counted until the copy is known; `enchantments.is_slot_guard`).
 `guards.guard_keep(player, attack)` returns the share of damage and of the
 rider chance kept; `monster.py` applies it. A **touch** attack rolls
 against touch AC (the hero's AC without body armour and shield,
@@ -91,6 +95,9 @@ lanes (`data/enchantments.json` `lanes` weights the roll):
   Elementward and Vapourward (their own families), Vigor; Parrying (a melee
   blow from beside parried). Ladders priced by the armour model.
 - **might**: Striking and Archery (more damage, `combat.strike_damage`).
+  Striking is +4% to +6% (halved 2026-11-12: a small damage boost shortens
+  fights by whole monster turns, and the model's straight line had priced
+  it at half its worth).
 - **craft**: the Scholar, Reader, Adept, Locksmith, Cook, Hunter, Kneeler,
   Wanderer: the first wrong answer of every Nth quiz on that subject is
   forgiven (N 6..3 by level, counted, never rolled; `quiz_engine.craft_hook`
@@ -99,6 +106,20 @@ lanes (`data/enchantments.json` `lanes` weights the roll):
 - **way**: the powers moved off rings: Telepathy, Night Eyes, True Sight,
   Alertness, Searching, the Eagle (PER), Ogre Power (STR), Dexterity,
   Speed, Levitation, Elvenkind (silent steps), Displacement.
+  - **Speed** raises the hero's speed rating (`Player.get_speed`, on the
+    scale of a monster's `speed`: 10 is ordinary) by 5% to 8% (tiers IV-V).
+    The world moves 10/speed of a turn each time the hero acts
+    (`Game._advance_turn`, no dice): at 10.5 the monsters miss one action in
+    twenty-one. Haste doubles the rating. Neither touches the quiz clock:
+    Wisdom sets the clock (Brandon, 2026-11-12). Half a point of speed is
+    worth about 0.8 AC points, so Speed sits a little above its budget on
+    purpose. Named boots (the Greaves of Hermes, the Boots of Seven Leagues,
+    the Winged Sandals) keep true haste by their lore.
+  - **Displacement** is a ladder: 5% to 7.5% of monster attacks strike empty
+    air (tiers III-V; `enchantments.displacement`). The spell's status keeps
+    its 15% while it lasts; the larger counts.
+  - See `NON_AC_GEAR_BALANCE_REPORT_2026_11_12.md` (root) for the fight
+    simulator's numbers.
 
 `from_tier` / `skip_tiers` say where an enchantment rolls. A worn stat
 follows the piece (`Player.sync_worn_stats`); a worn flag is read by
@@ -113,7 +134,7 @@ level on the same bells, so a ring found deep is a stronger ring:
 | Kind | Slot | What it does, tier I .. V |
 |---|---|---|
 | Protection | ring | a saving throw: shrugs off 16 / 19 / 24 / 28 / 28% of any attack's rider |
-| Spell Turning | ring | turns aside 30 / 46 / 52 / 52 / 52% of magic, shadow, psionic damage |
+| Spell Turning | ring | takes 30 / 46 / 52 / 52 / 52% off the damage of magic, shadow and psionic attacks |
 | Regeneration | ring | mends 11-33% of the health bar per hundred turns |
 | Invisibility | ring | invisible; the veil slips when you strike and settles after 10 .. 2 quiet turns (from tier II) |
 | Sustenance | ring | hunger comes on 33-75% more slowly |

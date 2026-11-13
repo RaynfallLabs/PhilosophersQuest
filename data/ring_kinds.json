@@ -24,7 +24,7 @@
       "slot": "ring", "name": "Spell Turning", "lane": "guard",
       "family": {"elements": ["magic", "shadow", "psionic"]}, "guards": "damage",
       "tiers": [0.30, 0.46, 0.52, 0.52, 0.52],
-      "text": "turns aside {pct} of the damage of magic, shadow and attacks on the mind"
+      "text": "takes {pct} off the damage of magic, shadow and attacks on the mind"
     },
     "regeneration": {
       "slot": "ring", "name": "Regeneration", "lane": "body",

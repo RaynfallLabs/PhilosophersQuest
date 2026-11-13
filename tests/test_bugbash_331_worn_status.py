@@ -70,12 +70,10 @@ def _ring_slot(p, item):
 
 # The common Rings of Warning and Haste left the rings in bug bash 3.3.2
 # (armour plan 8): a warning ring is now a named one (Lynceus's Ring of Far
-# Sight keeps it by lore), and haste comes from Boots of Speed.
+# Sight keeps it by lore). Haste on gear is the named boots' now (the
+# Greaves of Hermes): common Boots of Speed raise the speed rating instead
+# (Player.get_speed, 2026-11-12) and lend no status.
 WARNING_RING = 'ring_of_far_sight'
-
-
-def _boots_of_speed():
-    return items.instantiate_armor('leather_boots', 'leather', level=7, ench_id='speed')
 
 
 def test_rands_heart_spent_leaves_the_ring_of_warning_its_warning(game):
@@ -97,15 +95,15 @@ def test_rands_heart_alone_takes_its_warning_with_it(game):
     assert not p.has_effect('warning')
 
 
-def test_boots_of_speed_off_leave_a_hasted_blades_haste(game):
+def test_hermes_greaves_off_leave_a_hasted_blades_haste(game):
     p = game.player
     blade = items.instantiate_weapon('longsword', 'iron')
     blade.on_equip_status = 'hasted'
     _wear(p, blade)
-    boots = _boots_of_speed()
-    assert boots.on_equip_status == 'hasted'
-    _wear(p, boots)
-    game._unequip_slot(boots.slot, boots)
+    greaves = items.make_item_by_id('armor', 'greaves_of_hermes')
+    assert greaves.on_equip_status == 'hasted'
+    _wear(p, greaves)
+    game._unequip_slot(greaves.slot, greaves)
     assert p.has_effect('hasted')
 
 

@@ -3433,8 +3433,13 @@ class CombatMixin:
                     self._on_monster_killed(m)
                 continue  # can't attack this turn — just fell
             if did_attack:
-                # Displacement: DISPLACEMENT_MISS chance that the blow lands where you are not
-                if self.player.has_effect('displacement') and random.random() < DISPLACEMENT_MISS:
+                # Displacement: a share of the blows land where you are not:
+                # the spell's DISPLACEMENT_MISS while its status lasts, or the
+                # worn cloak's ladder (enchantments.displacement), the larger.
+                import enchantments as _enchantments
+                _disp = max(DISPLACEMENT_MISS if self.player.has_effect('displacement') else 0.0,
+                            _enchantments.displacement(self.player))
+                if _disp > 0 and random.random() < _disp:
                     self.add_message(f"{the_name(m)}'s attack passes through your displaced image!", 'info')
                     continue
 

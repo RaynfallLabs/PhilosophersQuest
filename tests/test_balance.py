@@ -44,12 +44,14 @@ def test_timer_floor_prevents_unsolvable_quizzes():
     assert mod >= 0.40, f"Stacked debuffs reduced timer below 0.40x floor: {mod}"
 
 
-def test_hasted_timer_increases():
+def test_haste_leaves_the_clock_alone():
+    # Brandon, 2026-11-12: "Wisdom increases timer, not how fast you are."
+    # Haste is how often the hero acts (Player.get_speed), never his clock.
     from player import Player
     p = Player()
     p.status_effects['hasted'] = 10
-    mod = p.get_quiz_timer_modifier()
-    assert mod > 1.0, "Haste should increase timer"
+    assert p.get_quiz_timer_modifier() == 1.0
+    assert p.get_speed() == 20
 
 
 # ---------------------------------------------------------------------------
