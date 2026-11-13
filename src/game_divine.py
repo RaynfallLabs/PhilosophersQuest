@@ -1312,7 +1312,12 @@ class DivineMixin:
                 abaddon = next((m for m in self.monsters
                                 if m.alive and m.kind == 'abaddon_destroyer'), None)
                 if abaddon:
-                    abaddon.resistances = []
+                    # The fire burns away the dark that guards him (his ward).
+                    # What he shrugs off by nature (slash, blunt, fire, cold,
+                    # poison) he still shrugs off: only Michael's blade, which
+                    # ignores resistances, strikes the Destroyer whole
+                    # (2026-11-12; it stripped both, and the six altars made a
+                    # hero without the Sword as strong as one with it).
                     abaddon.damage_ward = 0.0
                     self.add_message(
                         f"Holy fire leaps from the altar and wraps the Destroyer. "

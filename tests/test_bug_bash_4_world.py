@@ -373,6 +373,26 @@ def test_leaving_floor_100_with_the_stone_by_any_route_sets_death_loose():
     assert g.death_pursues and g.death_monster is not None
 
 
+def test_altar_fire_burns_the_ward_but_not_what_the_destroyer_shrugs_off():
+    """2026-11-12 (Brandon: "abaddon without michael absolutely brutal"):
+    the six altars stripped the ward AND every resistance for nearly the
+    whole fight, so a hero without the Sword of Michael was as strong as one
+    with it. The holy fire burns away the dark that guards him (the ward);
+    slash, blunt, fire, cold and poison still do half."""
+    from dungeon import ALTAR
+    g = _game()
+    g._change_level(100, True)
+    ab = next(m for m in g.monsters if m.kind == 'abaddon_destroyer')
+    base = list(ab.resistances)
+    assert 'slash' in base and ab.damage_ward > 0
+    g.dungeon.tiles[g.player.y][g.player.x] = ALTAR
+    g.player.prayer_cooldown = 0
+    g._resolve_simple_prayer(2, at_altar=True)
+    assert g.abaddon_resist_removed_turns == 4
+    assert ab.damage_ward == 0.0
+    assert ab.resistances == base
+
+
 def test_holy_fire_that_runs_out_off_the_floor_gives_abaddon_his_guard_back():
     """DV1: the restore looked only at the current floor; pray on 100, wait on
     99, and Abaddon stayed stripped for good."""

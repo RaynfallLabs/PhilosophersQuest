@@ -104,11 +104,13 @@ def test_an_enchanted_common_keeps_its_name_after_the_recompose():
 def test_an_old_named_body_armour_is_base_plus_tier_and_keeps_a_higher_scroll_plus():
     p = Player()
     hide = _armour('hide_of_nemean_lion')
-    fresh_plus = hide.enchant_bonus
+    fresh_ac, fresh_plus = hide.ac_bonus, hide.enchant_bonus      # today's data
     hide.ac_bonus, hide.enchant_bonus, hide.ench_level = 7, 0, 0  # pre-ladder
     p.inventory.append(hide)
     _migrate(p)
-    assert hide.ac_bonus == 3 and hide.enchant_bonus == fresh_plus
+    # (its base is the template's, raised to the named-armour floor of its
+    # depth since 2026-11-12: gear.named_ac_floor)
+    assert hide.ac_bonus == fresh_ac and hide.enchant_bonus == fresh_plus
     _migrate(p)
     assert hide.enchant_bonus == fresh_plus                         # idempotent
     shield = items.make_item_by_id('shield', 'pridwen')

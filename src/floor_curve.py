@@ -179,6 +179,26 @@ def wander_alive_cap(level: int) -> int:
     return min(10 + int(level) // 5, 30)
 
 
+# How often a wandering monster comes looking, in turns (main._maybe_wander_spawn).
+# The same 22 turns down to floor 50, then longer, to 40 at floor 100. It used
+# to shorten with depth (22 - floor // 4, every 10 turns from floor 48), and
+# the Monte Carlo of 2026-11-12 (PLAYABILITY_MONTE_CARLO_2026_11_12.md) found
+# wanderers were 60% of every deep fight: 30-40 minutes of sums a floor and
+# half of all careful runs dead on floors 41-59 from the grind. Fewer things
+# roam the deep, and what does is terrible.
+WANDER_EVERY = 22
+WANDER_EVERY_DEEP = 40
+WANDER_TAPER_FROM = 50
+
+
+def wander_interval(level: int) -> int:
+    f = max(1, min(100, int(level)))
+    if f <= WANDER_TAPER_FROM:
+        return WANDER_EVERY
+    share = (f - WANDER_TAPER_FROM) / (100 - WANDER_TAPER_FROM)
+    return int(round(WANDER_EVERY + share * (WANDER_EVERY_DEEP - WANDER_EVERY)))
+
+
 def natural_regen(max_hp: int) -> int:
     """HP regained per natural regeneration tick."""
     return max(1, int(max_hp) // 50)

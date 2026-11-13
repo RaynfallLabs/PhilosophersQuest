@@ -49,10 +49,13 @@ UNIQUE_MULT = 1.25
 QUEST_MULT = 1.5
 QUEST_REWARDS = ("gram", "sword_of_michael")
 # The Sword of Michael's climax: no single peak blow may take more than a
-# twentieth of Abaddon (test_sword_of_michael_balanced_for_climax), so its
-# share is a little lower once the weapon curve (2026-11-12) raised the deep
-# commons it is measured against.
-QUEST_MULT_OF = {"sword_of_michael": 1.4}
+# twentieth of Abaddon (test_sword_of_michael_balanced_for_climax). It was
+# 1.4 once the weapon curve (2026-11-12) raised the deep commons it is
+# measured against; the same day Abaddon was made brutal for a hero WITHOUT
+# the Sword (HP x1.5, blows x4, altar fire burns his ward only), and the
+# Sword went to the most that rule allows against his new HP, so the
+# righteous hero's climax stays winnable (SCALE_LOG.md 2026-11-12).
+QUEST_MULT_OF = {"sword_of_michael": 2.1}
 
 # Floors for scripted uniques that no monster drops.
 SCRIPTED_FLOOR = {

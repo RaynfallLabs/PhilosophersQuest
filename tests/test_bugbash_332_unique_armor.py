@@ -74,17 +74,50 @@ def test_a_starting_piece_built_from_the_data_has_its_enchantment():
 
 
 def test_body_armour_and_shields_are_base_plus_tier():
+    # ...their template's base, raised to the named-armour floor of their
+    # depth (gear.named_ac_floor) when that base would leave them under it.
+    import unique_armor_ladder_2026_11 as ua
     for cat, data, tpl_cat in (('armor', ARMOR, 'armor'), ('shield', SHIELD, 'shields')):
+        kind = 'body' if cat == 'armor' else 'shield'
         for k, e in data.items():
             if not e.get('is_unique') or e.get('slot', 'shield') in gear.MINOR_SLOTS \
                     or e.get('equip_chain_mode'):
                 continue
             tpl = items.get_template(tpl_cat, e['template_basis'])
-            assert e['ac_bonus'] == tpl['base_ac_value'], (cat, k)
-            assert e['enchant_bonus'] == min(gear.core_enchant_cap(), e['tier']), (cat, k)
+            plus = min(gear.core_enchant_cap(), e['tier'])
+            base = tpl['base_ac_value']
+            if ua.found_by_depth(e, k):
+                base = max(base, gear.named_ac_floor(kind, e['peak_floor']) - plus)
+            assert e['ac_bonus'] == base, (cat, k)
+            assert e['enchant_bonus'] == plus, (cat, k)
             lv = 2 * e['tier']
             assert e['equip_threshold'] == gear.equip_threshold(
                 gear.weight_class(tpl), lv, unique=True), (cat, k)
+
+
+def test_a_legend_found_by_depth_is_better_armour_than_the_commons_there():
+    """Brandon, 2026-11-12: "full plate, uniques, etc. should all be driving
+    better survivability later." Every named body armour and shield found by
+    depth (a chain-equip one at its top tier) gives at least the common par
+    of its peak floor plus a margin, and that floor climbs with depth."""
+    import unique_armor_ladder_2026_11 as ua
+    for cat, data in (('armor', ARMOR), ('shield', SHIELD)):
+        kind = 'body' if cat == 'armor' else 'shield'
+        for k, e in data.items():
+            if not e.get('is_unique') or e.get('slot', 'shield') in gear.MINOR_SLOTS \
+                    or not ua.found_by_depth(e, k):
+                continue
+            top = e['ac_bonus'] + e['enchant_bonus']
+            assert top >= gear.named_ac_floor(kind, e['peak_floor']), (cat, k, top)
+            tiers = e.get('tier_bonuses') or {}
+            if tiers:
+                assert max(int(t.get('ac_bonus', 0)) for t in tiers.values()) + e['enchant_bonus'] \
+                    >= gear.named_ac_floor(kind, e['peak_floor']), (cat, k)
+    t = gear.rules()['named_ac']
+    for kind in ('body', 'shield'):
+        par = t['par_' + kind]
+        assert len(par) == 100 and all(b >= a for a, b in zip(par, par[1:])), kind
+        assert gear.named_ac_floor(kind, 90) > gear.named_ac_floor(kind, 30), kind
 
 
 def test_a_named_helm_guards_like_an_enchanted_one():

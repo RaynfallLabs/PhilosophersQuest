@@ -48,16 +48,25 @@ def test_deaths_scythe_takes_a_share_of_your_health():
     assert took < int(round(floor_curve.DEATH_REAP_SHARE * 500))    # toughness still counts
 
 
-def test_fenrir_is_worth_a_quest_and_abaddon_is_not_a_coin_flip():
+def test_fenrir_is_worth_a_quest_and_abaddon_is_brutal_without_michael():
     d = _defs()
     wolf = max(_mean(a['damage']) for a in d['fenrir_wolf']['attacks'])
     lord = max(_mean(a['damage']) for a in d['abaddon_destroyer']['attacks'])
     # Fenrir with the ribbon killed no one, so the Sandal saved nothing: he
-    # now hits hard enough that both matter. Abaddon was taking half of
-    # everyone who reached him with the altars.
+    # hits hard enough that both matter, and still bites hardest of all.
     assert wolf >= 120, wolf
-    assert lord <= 50, lord
-    assert wolf > 2 * lord
+    assert wolf > lord
+    # Brandon, 2026-11-12: "abaddon without michael absolutely brutal". (In
+    # 2026-10 his blows were held under 50 because the altars alone took half
+    # of everyone who reached him; that ruling is reversed.) He resists the
+    # common blows and keeps a ward; the altars burn the ward only, and only
+    # the Sword of Michael, which ignores resistances, strikes him whole.
+    ab = d['abaddon_destroyer']
+    assert lord >= 120, lord
+    assert {'slash', 'blunt'} <= set(ab['resistances']) and ab['damage_ward'] > 0
+    with open(os.path.join(ROOT, 'data', 'items', 'weapon.json'), encoding='utf-8') as f:
+        sword = json.load(f)['sword_of_michael']
+    assert sword['ignore_resistances'] is True
 
 
 def test_the_gate_bosses_keep_their_order_of_size():

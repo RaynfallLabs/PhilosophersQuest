@@ -92,7 +92,8 @@ def test_mnk04_wander_spawn_never_sets_a_2x2_body_half_in_a_wall():
         dn = g.dungeon
         px, py = g.player.x, g.player.y
         g.visible = set()
-        g.turn_count = max(10, 22 - g.dungeon_level // 4) * 50
+        from floor_curve import wander_interval
+        g.turn_count = wander_interval(g.dungeon_level) * 50
         # Only floor with rock to the east: no 2x2 body fits on these.
         dn.explored = {(x, y) for y in range(dn.height) for x in range(dn.width)
                        if dn.is_walkable(x, y) and not dn.is_walkable(x + 1, y)

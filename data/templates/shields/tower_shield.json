@@ -4,6 +4,11 @@
   "category": "shield",
   "armor_class_tier": "heavy",
   "base_ac_value": 3,
+  "spawn_bell": [
+    55,
+    16,
+    35
+  ],
   "_design_note": "F60-100 wall-shield. Heavy; slows reaction.",
   "base_weight_lb": 30.0,
   "compatible_material_classes": [

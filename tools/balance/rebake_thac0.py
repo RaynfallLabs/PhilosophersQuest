@@ -9,8 +9,12 @@ data/monsters.json as
 
 where line(f) is the mean AC a hero wears on floor f, measured here by
 running the game's OWN spawn functions (items.pick_random_armor_for_floor,
-items.pick_random_shield_for_floor) over a loot census, from the usual
-starting kit (leather body, light shield: AC 7). Against that hero a typical
+items.pick_random_shield_for_floor) over a loot census, from what the plain
+hero starts with: no armour and no shield, AC 10 (main._give_starting_kit
+gives a shortsword; 2026-11-12: this read "leather and a light shield, AC 7",
+which no plain hero has, so floor-1 monsters were aimed three points too
+straight). The line is a hero with a shield: one who swings a two-handed
+weapon gives that shield up for the heavier blow. Against that hero a typical
 monster then needs a 10 or better: about 55%, on every floor. KEEP keeps
 half of each monster's own accuracy against its band (a wolf still bites
 straighter than a zombie).
@@ -39,7 +43,7 @@ sys.path.insert(0, os.path.join(ROOT, 'src'))
 sys.path.insert(0, os.path.join(ROOT, 'tools', 'balance'))
 
 KEEP = 0.5
-START_AC = 7            # leather (2) and a light shield (1), the usual starting kit
+START_AC = 10           # the plain hero starts with no armour and no shield
 SPLIT = {'weapon': 0.45, 'armour': 0.45, 'shield': 0.10}    # ruling 6
 SHARE_FOUND = 0.90
 
@@ -53,7 +57,7 @@ def measure_line(runs: int, seed: int, census_path: str | None) -> dict:
     slots = list(items.ARMOR_SLOTS)
     totals = {f: [] for f in range(1, 101)}
     for _ in range(runs):
-        body, shield = 2, 1
+        body, shield = 0, 0                           # START_AC: nothing worn
         for f in range(1, 101):
             for _i in range(_poisson(rng, census[f][0] * SHARE_FOUND)):
                 r = rng.random()

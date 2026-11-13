@@ -6,6 +6,11 @@
   "armor_class_tier": "heavy",
   "slot": "body",
   "base_ac_value": 6,
+  "spawn_bell": [
+    45,
+    12,
+    30
+  ],
   "base_weight_lb": 35.0,
   "_design_note": "F30-60 heavy. Roman-pattern overlapping bands.",
   "compatible_material_classes": [

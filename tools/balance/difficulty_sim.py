@@ -51,6 +51,15 @@ RE-SYNCED 2026-11-12 (from v3.3.4 on it reported 0% survival for every profile):
     (Player.get_speed: haste doubles it, Boots of Speed add a share), as
     Game._advance_turn does; haste no longer lengthens the quiz clock.
   * --kid: the kid model reaches the worker processes (run_cell(kid=True)).
+  * later the same day: weapon and shield are chosen together, by the hits
+    a kill costs (Run._choose_kit; knob kit=0 for the old greedy rule, which
+    wielded a two-handed weapon and dropped the shield almost always and so
+    ran 4-5 AC under the line monsters are aimed at); a meal is cooked
+    between fights when hurt, not at the floor's end when its healing was
+    wasted (Run._cook_one); every heal is booked by source (fs['heal_src'],
+    Run._healed); the wanderer interval is floor_curve.wander_interval; the
+    Last Judgment's sword is the knob sword=1; the floor-100 altars burn
+    Abaddon's ward only.
 
 NOT MODELLED (MON-13): the real floors can hold the late-game monsters, but
 the sim fights each one as a plain stat block, so their mechanics are missing:
@@ -116,6 +125,7 @@ import monster as monster_mod                    # noqa: E402
 import pet_system as pet_system_mod              # noqa: E402
 import game_magic as game_magic_mod              # noqa: E402
 import floor_curve as floor_curve_mod            # noqa: E402
+import gear as gear_mod                          # noqa: E402
 import prayers as prayers_mod                    # noqa: E402
 import status_effects as status_effects_mod      # noqa: E402
 import family_edges as family_edges_mod          # noqa: E402
@@ -201,6 +211,17 @@ KNOB_DEFAULTS = {
     'hp_per_floor': 0.0, # + max HP on every new deepest floor (the game's
                          #   Player.HP_PER_LEVEL is 0; CURVE.md section 4 assumes
                          #   a no-cooking base that climbs 30 -> 200 by floor 100)
+    'kit':        1,     # 1 = choose weapon and shield together, by the hits
+                         #   a kill costs (Run._choose_kit: a two-handed blow
+                         #   against a shield's AC). 0 = the old greedy rule:
+                         #   the hardest-hitting weapon, so a two-handed one
+                         #   and no shield almost always.
+    'sword':      0,     # 1 = the hero comes to the Last Judgment (floor 99)
+                         #   righteous, karma 8 or more, and is given the
+                         #   Sword of Michael (game_encounters._resolve_judgment;
+                         #   tools/balance/karma_sim.py: a "saint" 99%, a naive
+                         #   helper 4%, anyone else about never). The secrets
+                         #   profile has it either way.
     'boss_hp':    1.0,   # extra x HP for named foes only (gate bosses, seal
                          #   demons, mini-bosses), on top of mon_hp
     'boss_dmg':   1.0,   # extra x damage for named foes only, on top of mon_dmg
@@ -801,7 +822,8 @@ def new_floor_stats() -> dict:
                 heal_used=0.0, heal_supply=0.0, heal_free=0.0,
                 questions=0, attacks=0, auto=0, chain_sum=0, max_hp=0.0,
                 ac=0.0, wbase=0.0, fled=0, potions_end=0.0, has_spell=0,
-                consumables=0, atk_hist={}, killers={}, mastered=0)
+                consumables=0, atk_hist={}, killers={}, mastered=0,
+                heal_src={})          # raw HP healed by source (Run._healed)
 
 
 class Run:
@@ -835,7 +857,16 @@ class Run:
         self.fountain_uses = 0     # drinks left at fountains found on this floor
         self._secrets_got = set()
         self.control = {}          # control spells known: id -> (mp cost, effect, tier)
+        # best one-handed weapon, two-handed weapon and shield found so far
+        # (worn or carried), for Run._choose_kit
+        self.spare = {'1h': None, '2h': None, 'shield': None}
         self._give_starting_kit()
+
+    def _healed(self, source: str, got) -> None:
+        """Count HP actually healed, by where it came from."""
+        self.fs['heal_used'] += got
+        hs = self.fs.setdefault('heal_src', {})
+        hs[source] = hs.get(source, 0) + got
 
     def kv(self, name: str):
         """Knob value on the current floor."""
@@ -963,8 +994,15 @@ class Run:
             cur = p.weapon
             if cur is not None and getattr(cur, 'buc', '') == 'cursed':
                 return                  # welded on
-            if self._weapon_score(item) > 1.05 * self._weapon_score(cur):
-                self._equip(item)
+            if not self.knobs['kit']:
+                if self._weapon_score(item) > 1.05 * self._weapon_score(cur):
+                    self._equip(item)
+                return
+            hands = '2h' if getattr(item, 'two_handed', False) else '1h'
+            best = self.spare[hands]
+            if best is None or self._weapon_score(item) > 1.05 * self._weapon_score(best):
+                self.spare[hands] = item
+                self._choose_kit()
             return
         if isinstance(item, Armor):
             if not prof['equips_armor']:
@@ -993,7 +1031,17 @@ class Run:
                     self._equip(item)
             return
         if isinstance(item, Shield):
-            if not prof['equips_armor'] or not p.can_equip_shield():
+            if not prof['equips_armor']:
+                return
+            if self.knobs['kit']:
+                best = self.spare['shield']
+                new_v = item.ac_bonus + item.enchant_bonus
+                old_v = (best.ac_bonus + best.enchant_bonus) if best else -99
+                if new_v > old_v and (prof['avoids_cursed'] or self._threshold_quiz(item)):
+                    self.spare['shield'] = item
+                    self._choose_kit()
+                return
+            if not p.can_equip_shield():
                 return
             cur = p.shield
             if cur is not None and getattr(cur, 'buc', '') == 'cursed':
@@ -1027,6 +1075,75 @@ class Run:
             if p.max_hp > before:       # CON gear raises max HP without healing
                 pass
             return
+
+    # ------------------------------------------------------- weapon + shield
+    def _typical_thac0(self) -> float:
+        """Spawn-weighted mean THAC0 of this floor's ordinary monsters."""
+        key = ('thac0', self.floor)
+        t = self._drop_pool.get(key)
+        if t is None:
+            pool = dungeon_mod._build_spawn_pool(self.floor)
+            tot = sum(v.get('_spawn_freq', 1) for v in pool.values()) or 1.0
+            t = sum(v.get('_spawn_freq', 1) * float(v.get('thac0', 20))
+                    for v in pool.values()) / tot if pool else 10.0
+            self._drop_pool[key] = t
+        return t
+
+    def _kit_cost(self, weapon, shield) -> float:
+        """Hits a kill costs with this weapon and shield: the chance the
+        floor's typical monster lands a swing, times the swings it gets (one
+        as it closes, then one for every attack the kill takes)."""
+        p = self.p
+        def core(s):
+            if s is None:
+                return 0
+            b = getattr(s, 'buc', 'uncursed')
+            return gear_mod.ac_value(s) + (1 if b == 'blessed' else -1 if b == 'cursed' else 0)
+        ac = p.get_ac() + core(p.shield) - core(shield)
+        h = min(0.95, max(0.05, (21 - (self._typical_thac0() - ac)) / 20.0))
+        per = max(0.1, self._weapon_score(weapon))
+        return h * (1.0 + floor_curve_mod.target_hp(self.floor) / per)
+
+    def _choose_kit(self):
+        """Wield and wear the weapon and shield that cost the fewest hits a
+        kill: the best two-handed weapon alone, or the best one-handed weapon
+        with the best shield. A two-handed blow (about 1.7x a longsword) is
+        traded against the shield's AC, as a player weighs it."""
+        p = self.p
+        cur_w, cur_s = p.weapon, p.shield
+        for it in (cur_w,):
+            if it is not None:
+                hands = '2h' if getattr(it, 'two_handed', False) else '1h'
+                best = self.spare[hands]
+                if best is None or self._weapon_score(it) >= self._weapon_score(best):
+                    self.spare[hands] = it
+        if cur_s is not None:
+            best = self.spare['shield']
+            if best is None or gear_mod.ac_value(cur_s) >= gear_mod.ac_value(best):
+                self.spare['shield'] = cur_s
+        w_locked = cur_w is not None and getattr(cur_w, 'buc', '') == 'cursed'
+        s_locked = cur_s is not None and getattr(cur_s, 'buc', '') == 'cursed'
+        options = [(cur_w, cur_s)]
+        if not w_locked:
+            if self.spare['2h'] is not None and not s_locked:
+                options.append((self.spare['2h'], None))
+            if self.spare['1h'] is not None:
+                options.append((self.spare['1h'], cur_s if s_locked else self.spare['shield']))
+        elif not getattr(cur_w, 'two_handed', False) and not s_locked:
+            options.append((cur_w, self.spare['shield']))
+        base = self._kit_cost(cur_w, cur_s)
+        best_w, best_s, best_c = cur_w, cur_s, base
+        for w, s in options[1:]:
+            c = self._kit_cost(w, s)
+            if c < best_c * 0.97:
+                best_w, best_s, best_c = w, s, c
+        # (_equip wears a copy: the spares then point at what is worn)
+        if best_w is not cur_w and best_w is not None:
+            self._equip(best_w)
+            self.spare['2h' if getattr(best_w, 'two_handed', False) else '1h'] = p.weapon
+        if best_s is not None and best_s is not p.shield and p.can_equip_shield():
+            self._equip(best_s)
+            self.spare['shield'] = p.shield
 
     @staticmethod
     def _armor_score(piece) -> float:
@@ -1112,7 +1229,7 @@ class Run:
                      else food_system_mod.POTION_HEAL_SHARE)
             amt = max(roll(pick.power), p.max_hp * share) * mult
         got = p.heal(amt)
-        self.fs['heal_used'] += got
+        self._healed('potion', got)
         self.fs['consumables'] += 1
         return True
 
@@ -1126,7 +1243,7 @@ class Run:
         if chain >= 1:
             p.restore_sp(max(15, p.max_sp // 4))
         if chain >= 2:
-            self.fs['heal_used'] += p.heal(max(15, p.max_hp // 4))
+            self._healed('prayer', p.heal(max(15, p.max_hp // 4)))
         if chain >= 3:
             p.restore_mp(max(5, p.max_mp // 4))
         if chain >= 5:
@@ -1195,7 +1312,7 @@ class Run:
         if self.quiz.one_question(tier):                # one science question
             amt = mend(int(roll(power) * MAGIC_TIER_MULT[tier] * game_magic_mod.int_damage_factor(p.INT)),
                        p.max_hp, SPELL_HEAL_SHARE.get(tier, 0.45))
-            self.fs['heal_used'] += p.heal(amt * self.knobs['spell_heal'])
+            self._healed('spell', p.heal(amt * self.knobs['spell_heal']))
         return True
 
     # ------------------------------------------------------------- passing time
@@ -1239,7 +1356,7 @@ class Run:
             self.regen_carry -= whole
             whole = min(whole, floor_curve_mod.rest_room(p.hp, p.max_hp))   # main._tick_hp_regen
             got = p.heal(whole)
-            self.fs['heal_used'] += got
+            self._healed('regen', got)
             self.fs['heal_free'] += got
         p.prayer_cooldown = max(0, p.prayer_cooldown - n)
         if resting:
@@ -1250,7 +1367,7 @@ class Run:
                 f = max(self.food, key=lambda x: x.sp_restore)
                 self.food.remove(f)
                 p.restore_sp(f.sp_restore)
-                self.fs['heal_used'] += p.heal(f.hp_restore)
+                self._healed('food', p.heal(f.hp_restore))
             p.sp -= need
             if p.sp < 0:
                 # starvation: 1 HP per drain tick at SP 0 (main.py:4261)
@@ -1259,7 +1376,7 @@ class Run:
                 p.sp = 0
         # wandering spawns (main._maybe_wander_spawn)
         found = []
-        wi = max(10, 22 - self.floor // 4)
+        wi = floor_curve_mod.wander_interval(self.floor)
         # main._maybe_wander_spawn: capped by monsters HUNTING the player (a
         # wanderer that finds the player here is fought at once, so that
         # count is zero between fights) and by a whole-floor ceiling.
@@ -1295,6 +1412,12 @@ class Run:
         target = prof['top_up_to'] * p.max_hp
         if p.hp >= target or p.hp <= 0:
             return []
+        # 0. cook a meal from a corpse to hand (a player cooks when hurt,
+        #    not at the end of the floor when the meal's healing is wasted)
+        while (prof['eats_for_hp'] and p.hp < target and p.hp > 0
+               and getattr(self, 'cooks_left', 0) > 0
+               and self.floor_kills - self.corpses_used > 0):
+            self._cook_one()
         # 1. food that heals
         if prof['eats_for_hp']:
             for f in sorted(self.food, key=lambda x: -x.hp_restore):
@@ -1302,7 +1425,7 @@ class Run:
                     break
                 self.food.remove(f)
                 p.restore_sp(f.sp_restore)
-                self.fs['heal_used'] += p.heal(f.hp_restore)
+                self._healed('food', p.heal(f.hp_restore))
         # 2. prayer (free, on a cooldown)
         if prof['prays'] and p.hp < target and p.prayer_cooldown <= 0:
             self.pray()
@@ -1312,12 +1435,12 @@ class Run:
             self.fountain_uses -= 1
             chain = self.quiz.escalator_chain(5)
             if chain >= 3:
-                self.fs['heal_used'] += p.heal(p.max_hp)
+                self._healed('fountain', p.heal(p.max_hp))
                 p.restore_sp(50)
             elif chain == 2:
-                self.fs['heal_used'] += p.heal(max(15, p.max_hp // 8))
+                self._healed('fountain', p.heal(max(15, p.max_hp // 8)))
             elif chain == 1:
-                self.fs['heal_used'] += p.heal(max(5, p.max_hp // 20))
+                self._healed('fountain', p.heal(max(5, p.max_hp // 20)))
             elif random.random() < 1 / 3:
                 p.status_effects['poisoned'] = max(p.status_effects.get('poisoned', 0), 10)
             elif random.random() < 0.5:
@@ -1366,37 +1489,44 @@ class Run:
 
     # ------------------------------------------------------------------- cooking
     def cook(self, kills: int):
-        """Harvest + cook for the profile's number of attempts this floor."""
-        prof, p = self.prof, self.p
-        n = prof['cooks_per_floor']
-        attempts = int(n) + (1 if random.random() < (n - int(n)) else 0)
-        attempts = min(attempts, kills)
+        """Harvest + cook the floor's attempts not used between fights."""
+        if not hasattr(self, 'cooks_left'):
+            self.cooks_left, self.corpses_used = self.prof['cooks_per_floor'], 0
+        # (a floor with no fights: `kills` corpses are assumed to hand)
+        while self.cooks_left > 0 and max(kills, self.floor_kills) - self.corpses_used > 0:
+            self._cook_one()
+
+    def _cook_one(self):
+        """One harvest + cook attempt: one corpse, one animal question, one
+        cooking question; a right pair is eaten at once."""
+        p = self.p
+        self.cooks_left -= 1
+        self.corpses_used += 1
         tier = band_tier(self.floor)
-        for _ in range(attempts):
-            # one animal question (harvest) then one cooking question
-            if not (self.quiz.one_question(tier) and self.quiz.one_question(tier)):
-                continue
-            p_hp, hp_amt, heal_amt, p_stat = COOK_TABLE[tier]
-            p.restore_sp(60 + 20 * tier)
-            heal_amt = mend(heal_amt, p.max_hp, min(0.12, heal_amt / 180.0))   # food_system
-            got = p.heal(heal_amt)
-            self.fs['heal_used'] += got
-            self.fs['heal_supply'] += heal_amt * self.kv('heal')
-            # food_system._apply_outcome_body: every proper meal builds the
-            # cook up by COOK_BASE_MAX_HP, and a recipe's own max-HP bonus
-            # comes on top (2026-10-26; it used to come instead).
-            base = int(getattr(p, 'COOK_BASE_MAX_HP', 0))
-            if random.random() < p_hp:
-                amt = max(1, int(round(random.expovariate(1.0 / hp_amt)))) \
-                    if hp_amt > 1 else 1
-                p.try_apply_cook_hp_gain(base + amt)     # real caps + softcap
-            else:
-                p.try_apply_cook_hp_gain(base)
-            # food_system: a proper meal raises the stat stamped on the cut
-            # (one a floor, under the per-stat cap); richer recipes still
-            # carry a stat of their own.
-            if random.random() < max(p_stat, CUT_HAS_STAT):
-                p.feed_cut_stat(self._cook_stat())
+        # one animal question (harvest) then one cooking question
+        if not (self.quiz.one_question(tier) and self.quiz.one_question(tier)):
+            return
+        p_hp, hp_amt, heal_amt, p_stat = COOK_TABLE[tier]
+        p.restore_sp(60 + 20 * tier)
+        heal_amt = mend(heal_amt, p.max_hp, food_system_mod.meal_mend_share(heal_amt))   # food_system
+        got = p.heal(heal_amt)
+        self._healed('meal', got)
+        self.fs['heal_supply'] += heal_amt * self.kv('heal')
+        # food_system._apply_outcome_body: every proper meal builds the
+        # cook up by COOK_BASE_MAX_HP, and a recipe's own max-HP bonus
+        # comes on top (2026-10-26; it used to come instead).
+        base = int(getattr(p, 'COOK_BASE_MAX_HP', 0))
+        if random.random() < p_hp:
+            amt = max(1, int(round(random.expovariate(1.0 / hp_amt)))) \
+                if hp_amt > 1 else 1
+            p.try_apply_cook_hp_gain(base + amt)     # real caps + softcap
+        else:
+            p.try_apply_cook_hp_gain(base)
+        # food_system: a proper meal raises the stat stamped on the cut
+        # (one a floor, under the per-stat cap); richer recipes still
+        # carry a stat of their own.
+        if random.random() < max(p_stat, CUT_HAS_STAT):
+            p.feed_cut_stat(self._cook_stat())
 
     def _cook_stat(self) -> str:
         """Which stat this meal raises: the build's, when it can choose."""
@@ -1465,7 +1595,7 @@ class Run:
                             self.floor_alive += 1
                             out.append(w)
             elif chain == 2:
-                self.fs['heal_used'] += p.heal(max(20, p.max_hp // 5))
+                self._healed('throne', p.heal(max(20, p.max_hp // 5)))
             elif chain == 4:
                 bonus = round(random.randint(5, 15) * self.knobs['player_hp'])
                 p.max_hp += bonus
@@ -1698,9 +1828,8 @@ class Run:
                             chain = self.quiz.escalator_chain(5)
                             altars_left -= 1
                             if chain > 0:
-                                strip_turns = chain * 2       # game_divine.py:972-982
-                                ab.resistances = []
-                                ab.damage_ward = 0.0
+                                strip_turns = chain * 2       # game_divine: the L100 altar
+                                ab.damage_ward = 0.0          # (the ward only: 2026-11-12)
                             action = 'altar'
                 if action is None and ctx.get('gleipnir'):
                     fen = next((m for m in active if m.kind == 'fenrir_wolf'), None)
@@ -1855,7 +1984,7 @@ class Run:
                 and not p.has_effect('bleeding') and not p.has_effect('poisoned')):
             got = p.heal(min(max(1, p.max_hp // 50) * self.knobs['regen'],
                              floor_curve_mod.rest_room(p.hp, p.max_hp)))
-            self.fs['heal_used'] += got
+            self._healed('regen', got)
 
     def _player_dead(self) -> bool:
         return self.p.is_dead()        # real: includes the death-save items
@@ -2023,8 +2152,19 @@ class Run:
         hp_start_max = p.max_hp
         self.rest_left = int(self.prof['rest_turns'] * self.knobs['rest'])
         self.floor_kills = 0
+        # this floor's cook attempts (the profile's rate, stochastically
+        # rounded), each needing a corpse: used between fights when hurt
+        # (Run.recover), the rest at the floor's end (Run.cook)
+        n = self.prof['cooks_per_floor']
+        self.cooks_left = int(n) + (1 if random.random() < (n - int(n)) else 0)
+        self.corpses_used = 0
 
         self.find_secrets(floor)
+        if self.knobs['sword'] and floor >= 99 and 'sword_of_michael' not in self._secrets_got:
+            sw = items_mod.make_item_by_id('weapon', 'sword_of_michael')
+            self._secrets_got.add('sword_of_michael')
+            if sw is not None:
+                self._equip(sw)          # Michael's own blade: the hero takes it up
         snap = self.cache.get(floor)
         groups = [[fresh_monster(m, self.knobs, self.floor) for m in g] for g in snap.groups]
         is_boss_floor = floor in BOSS_FLOORS

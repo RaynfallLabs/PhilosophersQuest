@@ -93,13 +93,29 @@ def weight_class_weight(cls: str, floor: int) -> float:
     return math.exp(-((f - peak) ** 2) / (2 * spread ** 2))
 
 
+def template_weight(template: dict, floor: int) -> float:
+    """How likely this template is on `floor`. Body armour and shields carry
+    their own bell (`spawn_bell`: [peak, spread, first floor]), so each one
+    arrives in its turn down the whole run, padded to full plate, buckler to
+    tower; every other template goes by its weight class's bell."""
+    bell = (template or {}).get('spawn_bell')
+    if not bell:
+        return weight_class_weight(weight_class(template), floor)
+    peak, spread, first = bell
+    f = int(floor)
+    if f < first:
+        return 0.0
+    return math.exp(-((f - peak) ** 2) / (2 * spread ** 2))
+
+
 def pick_template(options, floor: int, rng):
-    """(template id, template) from `options`, drawn by weight-class bell.
-    Falls back to a uniform pick when no class is due on this floor."""
+    """(template id, template) from `options`, drawn by each template's bell
+    (template_weight). Falls back to a uniform pick when none is due on this
+    floor."""
     options = list(options)
     if not options:
         return None
-    ws = [weight_class_weight(weight_class(t), floor) for _tid, t in options]
+    ws = [template_weight(t, floor) for _tid, t in options]
     tot = sum(ws)
     if tot <= 0:
         return rng.choice(options)
@@ -133,6 +149,20 @@ def accessory_threshold(slot: str, level: int, unique: bool = False) -> int:
 
 def core_enchant_cap() -> int:
     return int(rules()['enchant_cap']['core'])
+
+
+def named_ac_floor(kind: str, floor: int) -> int:
+    """The least AC (base + plus) a named body armour (`kind` 'body') or
+    shield ('shield') found by depth gives on `floor`: the common par there
+    plus a margin (gear_rules.json `named_ac`, written by
+    tools/balance/rebase_unique_armour.py). A legend is better than the
+    plate the hero already wears. 0 when no table is written."""
+    t = rules().get('named_ac')
+    if not t:
+        return 0
+    par = t['par_' + kind]
+    f = max(1, min(len(par), int(floor)))
+    return int(round(float(par[f - 1]) + float(t['margin'][kind])))
 
 
 def is_core(item) -> bool:

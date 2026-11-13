@@ -5,6 +5,11 @@
   "armor_class_tier": "medium",
   "slot": "body",
   "base_ac_value": 3,
+  "spawn_bell": [
+    15,
+    9,
+    6
+  ],
   "base_weight_lb": 25.0,
   "_design_note": "F15-35 medium. Cheaper than chain; same AC, heavier.",
   "compatible_material_classes": [

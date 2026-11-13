@@ -11,8 +11,12 @@ enchantment of its own slot instead (enchantments.py). For each named piece:
   piece (found nowhere, or on floor 1) keeps its own. Its level is the
   tier's greater form (2 x tier).
 - body armour and shields: AC is the template's base (template_basis) plus
-  the tier's plus (gear.plus_for_level), as for a common piece of that level.
-  A chain-equip piece keeps its AC (its tier ladder sets its full AC).
+  the tier's plus (gear.plus_for_level), as for a common piece of that level;
+  a piece found by depth has at least gear.named_ac_floor of its peak floor
+  (the common par there plus a margin: tools/balance/rebase_unique_armour.py,
+  2026-11-12), its base raised to reach it. A chain-equip piece keeps its AC
+  (its tier ladder sets its full AC; rebase_unique_armour.py raises that
+  ladder to the same floor).
 - a minor piece (helm, gloves, vambraces, greaves, boots, cloak, shirt): no
   AC, and the enchantment PICKS gives it (each chosen against the piece's
   lore, 2026-11-07); a chain-equip piece's tier ladder loses its AC too.
@@ -118,11 +122,18 @@ STARTERS = ('shield_of_the_spartans', 'hermes_sandals_early', 'cloth_of_penelope
 RUNG_FILL = {'helm_of_hades': {'1': {'passive_stealth_in_dark': True}}}
 
 
+def found_by_depth(e: dict, k: str = '') -> bool:
+    """Is this named piece found by depth (not a quest piece, a starting
+    piece, or one placed on floor 1)?"""
+    pf = int(e.get('peak_floor', 0) or 0)
+    return not (e.get('plot_locked') or pf <= 1 or pf >= 999 or k in STARTERS)
+
+
 def tier_of(e: dict, k: str = '') -> int:
     authored = max(1, min(5, int(e.get('tier', 1) or 1)))
-    pf = int(e.get('peak_floor', 0) or 0)
-    if e.get('plot_locked') or pf <= 1 or pf >= 999 or k in STARTERS:
+    if not found_by_depth(e, k):
         return authored
+    pf = int(e.get('peak_floor', 0) or 0)
     return max(1, min(5, max(_depth_tier(pf) + 1, authored)))
 
 
@@ -152,8 +163,17 @@ def ladder(e: dict, category: str, k: str) -> dict:
                 if not tb:
                     tb.update(RUNG_FILL.get(k, {}).get(rung, {}))
     elif not chain:
-        e['ac_bonus'] = int(tpl.get('base_ac_value', e.get('ac_bonus', 0)) or 0)
-        e['enchant_bonus'] = min(gear.core_enchant_cap(), gear.plus_for_level(level))
+        # The template's base, raised where that would leave a legend under
+        # the common armour of its own floor (gear.named_ac_floor, 2026-11-12:
+        # a named brigandine on floor 58 was four points under the plate the
+        # hero wore there).
+        plus = min(gear.core_enchant_cap(), gear.plus_for_level(level))
+        base = int(tpl.get('base_ac_value', e.get('ac_bonus', 0)) or 0)
+        if found_by_depth(e, k):
+            kind = 'shield' if slot == 'shield' else 'body'
+            base = max(base, gear.named_ac_floor(kind, int(e['peak_floor'])) - plus)
+        e['ac_bonus'] = base
+        e['enchant_bonus'] = plus
         e['ench_level'] = level
     return e
 

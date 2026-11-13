@@ -6,6 +6,11 @@
   "armor_class_tier": "light",
   "slot": "body",
   "base_ac_value": 3,
+  "spawn_bell": [
+    10,
+    9,
+    3
+  ],
   "base_weight_lb": 13.0,
   "_design_note": "F10-25 light. Bridges leather to medium.",
   "compatible_material_classes": [

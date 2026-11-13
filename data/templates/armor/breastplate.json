@@ -5,6 +5,11 @@
   "armor_class_tier": "heavy",
   "slot": "body",
   "base_ac_value": 5,
+  "spawn_bell": [
+    33,
+    11,
+    20
+  ],
   "base_weight_lb": 20.0,
   "_design_note": "F30-60 heavy-but-light. Open-back design.",
   "compatible_material_classes": [

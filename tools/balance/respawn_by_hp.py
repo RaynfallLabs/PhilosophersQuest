@@ -121,9 +121,12 @@ HP_FLOOR_MULT: dict[str, float] = {"fenrir_wolf": 2.2}
 # that, and the simulator measured every gate boss dying in six to nine
 # attacks. Sized now for about twenty attacks from a prepared player with
 # the quest layer (CURVE.md principle 4: a boss is 20 to 50 hits).
-GATE_BOSS_HP: dict[str, int] = {"asterion_minotaur": 9000, "medusa_gorgon": 21700,
-                                "fafnir_dragon": 44900, "fenrir_wolf": 66400,
-                                "abaddon_destroyer": 86400}
+# 2026-11-12: Asterion x1.25, Fafnir x1.25, Fenrir x1.75, Abaddon x1.5 (and
+# their blows harder), once the armour fix had made every gate a formality for
+# a careful player: SCALE_LOG.md, PLAYABILITY_MONTE_CARLO_2026_11_12.md.
+GATE_BOSS_HP: dict[str, int] = {"asterion_minotaur": 11300, "medusa_gorgon": 21700,
+                                "fafnir_dragon": 56100, "fenrir_wolf": 116200,
+                                "abaddon_destroyer": 129600}
 # (2026-10-05, wisdom from depth + tiered weapon damage: the figures above are
 # the earlier 1,500 / 2,400 / 4,000 / 5,200 / 6,000 carried through the same
 # HP schedule as ordinary monsters and doubled, which the simulator puts at

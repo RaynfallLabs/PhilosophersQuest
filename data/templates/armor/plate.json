@@ -6,6 +6,11 @@
   "armor_class_tier": "heavy",
   "slot": "body",
   "base_ac_value": 7,
+  "spawn_bell": [
+    57,
+    12,
+    42
+  ],
   "base_weight_lb": 50.0,
   "_design_note": "F45-80 heavy. Articulated harness.",
   "compatible_material_classes": [

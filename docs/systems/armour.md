@@ -26,7 +26,16 @@ A common piece is **template x material x enchantment level**:
 - the **template** gives the slot, the weight class (light / medium /
   heavy, its `armor_class_tier`) and, for body armour and shields only, the
   base AC (`base_ac_value`: padded 1 ... full plate 8; buckler 1, kite 2,
-  tower 3);
+  tower 3). Which template a find is goes by a bell by floor
+  (`gear.template_weight`): body armour and shields carry their own
+  (`spawn_bell`: peak, spread, first floor), so each arrives in its turn
+  down the whole run (scale from floor 12, chainmail and breastplates from
+  20, banded and splint from 30, plate from 42, full plate from 55; kite
+  and heavy wooden shields from 10, the tower shield from 35). Every other
+  template goes by its weight class's bell (`weight_class_bells`).
+  (2026-11-12: by weight class alone, any heavy find from floor 12 could
+  be full plate, and the average hero wore it by floor 30, after which the
+  plus was the only armour left to find.);
 - the **material** gives the weight, what wear can touch it (rust, acid)
   and the name. It never gives protection;
 - the **enchantment level** 0-10 (0 = plain) is rolled when the piece is
@@ -55,6 +64,19 @@ piece's. **No helm, gloves, boots, cloak, shirt, ring or amulet gives AC.**
 Monster to-hit was rebaked to this line (`tools/balance/rebake_thac0.py`,
 `thac0` in `monsters.json`, the original kept as `thac0_lore`): a typical
 monster hits a hero of its floor about 55% of the time on every floor.
+The line is the mean AC a hero wears (best body armour and best shield
+found, from the game's own spawns), from what the plain hero starts with:
+no armour, AC 10 (until 2026-11-12 it assumed leather and a shield, AC 7,
+so the first floors' monsters were aimed three points too straight). It
+runs AC 9 on floor 1, 2 on floor 20, -3 on 40, -7 on 60, -10 on 80 and
+-11 on 100. A hero with a two-handed weapon gives up the shield: the
+difficulty simulator weighs the heavier blow against the shield's AC
+(`Run._choose_kit`) and, deep, the shield wins, since without one a
+typical monster lands about 95% of its swings.
+
+Because a hero finds about ten pieces of gear a floor deep down and keeps
+the best, nearly every hero wears par: common armour only keeps you level
+with the monsters. A named piece is what puts you ahead (section 6).
 A miss that rolled short is a miss (`MIN_HIT_ORDINARY` 0); a named foe
 still lands 15% of its misses (`MIN_HIT_NAMED`).
 
@@ -163,7 +185,14 @@ counts and the question stays open (`quiz_engine.daimonion_hook`,
 step above the commons of its depth (never under its authored tier; start
 kits and quest pieces keep theirs), its level that tier's greater form. A
 named body armour or shield has base + plus AC (a chain-equip one keeps its
-tier ladder's AC). A named minor piece has no AC and one enchantment of its
+tier ladder's AC). One found by depth has at least `gear.named_ac_floor` of
+its peak floor: the common par there plus 2 for body armour, 1 for a shield
+(`gear_rules.json` `named_ac`, written by
+`tools/balance/rebase_unique_armour.py`, which also raises a chain-equip
+piece's ladder to it). Before 2026-11-12 most named body armours were one
+to five points under the common plate of their own floor (the Armor of
+Ragnarok 9 against 13); now Sigurd's mail is 14 and Ragnarok 15. Starting
+and quest pieces keep their own. A named minor piece has no AC and one enchantment of its
 slot chosen by its lore (`PICKS`, with the reason); it keeps its name, card
 and every signature power (`enchantments.apply_named`, the line in
 `ench_line`).

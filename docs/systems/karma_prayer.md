@@ -713,9 +713,13 @@ turns before Fisher-King halving.
 
 On `dungeon_level == 100 and at_altar` with `chain > 0`:
 
-- Burns `chain * 2` turns of Abaddon-resist-strip. The Abaddon
-  Destroyer monster's `resistances` is set to `[]` for the duration,
-  surfaced by `self.abaddon_resist_removed_turns`.
+- Burns away the Abaddon Destroyer's ward (`damage_ward` 0) for
+  `chain * 2` turns, counted by `self.abaddon_resist_removed_turns`.
+  His `resistances` (slash, blunt, fire, cold, poison: a resisted blow
+  does half) stay: only the Sword of Michael, which ignores resistances
+  and the ward, strikes him whole (2026-11-12; the fire stripped both,
+  and the six altars made a hero without the Sword as strong as one with
+  it).
 - The altar's position is added to `self._l100_altars_used`. Second
   prayer at the same L100 altar: "This altar's holy power has been
   spent."
@@ -727,8 +731,9 @@ On `dungeon_level == 100 and at_altar` with `chain > 0`:
   until the hero leaves floor 100 and comes back (`_change_level` clears
   the set; it is saved). It used to be retried at once until answered.
 
-Message: "Holy fire surges around the Destroyer! His defenses crumble
-for N turns!" or "Holy fire blazes forth but finds no target."
+Message: "Holy fire leaps from the altar and wraps the Destroyer. The dark
+that guards him burns away. (N turns)" or "Holy fire blazes forth but finds
+no target."
 
 ### 5.6 The altar's offering (bug bash 3.3.2)
 

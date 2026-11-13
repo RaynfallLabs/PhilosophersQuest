@@ -6,6 +6,11 @@
   "armor_class_tier": "medium",
   "slot": "body",
   "base_ac_value": 4,
+  "spawn_bell": [
+    23,
+    10,
+    12
+  ],
   "base_weight_lb": 30.0,
   "_design_note": "F25-45 medium-heavy. Good vs pierce.",
   "compatible_material_classes": [

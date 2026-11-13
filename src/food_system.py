@@ -347,6 +347,25 @@ def _apply_recipe_outcome(player, recipe: dict, ruined: bool = False) -> list[st
     return _apply_outcome_body(player, recipe, outcome)
 
 
+# A cooked meal heals at least this share of the health bar: about 10% for a
+# snack, 16% for a plain dish, 20-30% for a good one and a third of it for a
+# feast (healing potion 20%, prayer 25%, extra healing 40%). Until 2026-11-12
+# it was hp / 180 to at most 12% (a feast 12%, a snack 2%): Brandon, "meals
+# need to restore more health than they do now". The difficulty simulator
+# found survival unchanged and cooking became the careful player's main way
+# back to health (25-47% of the bar a floor, from 10-24%), in place of
+# prayers and spells: health comes from cooking.
+MEAL_SHARE_BASE = 0.06
+MEAL_SHARE_PER_HP = 1.0 / 80.0
+MEAL_SHARE_CAP = 0.35
+
+
+def meal_mend_share(written_hp: float) -> float:
+    """Least share of max HP a cooked meal heals, by its written `hp`
+    (cook_outcomes.json: 2-5 a snack, about 22 a feast)."""
+    return min(MEAL_SHARE_CAP, MEAL_SHARE_BASE + float(written_hp) * MEAL_SHARE_PER_HP)
+
+
 def _apply_outcome_body(player, recipe: dict, outcome: dict) -> list[str]:
     """Apply the mechanical body of an outcome archetype to the player.
     Returns a list of user-facing messages (first line is the meal name)."""
@@ -359,10 +378,10 @@ def _apply_outcome_body(player, recipe: dict, outcome: dict) -> list[str]:
         player.restore_sp(sp)
     hp = int(outcome.get('hp', 0))
     if hp > 0:
-        # A cooked meal mends at least a few percent of the health bar, more
-        # for a better dish (the written figures run 3 to 22).
+        # A cooked meal mends a share of the health bar, more for a better
+        # dish (meal_mend_share; the written figures run 2 to 25).
         from floor_curve import mend
-        hp = mend(hp, player.max_hp, min(0.12, hp / 180.0))
+        hp = mend(hp, player.max_hp, meal_mend_share(hp))
         player.restore_hp(hp)
     if sp > 0 or hp > 0:
         bits = []

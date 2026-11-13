@@ -144,7 +144,7 @@ def _outcome_bonus_category(outcome: dict) -> str:
 STARVE_SHARE = 0.02
 ARC_SHARE = 0.05          # a stray arc of lightning: this share of a creature's health
 from floor_curve import (WANDER_HUNTING_CAP, natural_regen, rest_room,    # noqa: E402
-                         wander_alive_cap)
+                         wander_alive_cap, wander_interval)
 
 
 def _stored_floors(lm):
@@ -456,7 +456,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self._active_mystery_altar = None  # MysteryAltar being interacted with
         # Abaddon quest state
         self.seals_broken: set = set()     # set of seal artifact IDs collected
-        self.abaddon_resist_removed_turns: int = 0  # turns Abaddon's resistances are stripped
+        self.abaddon_resist_removed_turns: int = 0  # turns Abaddon's ward is burned away (altar holy fire)
         self._abaddon_empowered_applied: bool = False  # the Judgment's +50% given to Abaddon
         self._flux_given: bool = False      # "Nobody calls me chicken!" pays once a run
         self.heavenly_host_active: bool = False      # Scales of Michael activated
@@ -3859,8 +3859,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
 
     @staticmethod
     def _restore_abaddon_guard(abaddon) -> None:
-        """Give the Destroyer back the resistances and the ward holy fire
-        burned away."""
+        """Give the Destroyer back the ward holy fire burned away (and his
+        resistances, which an old save may have stripped too: the fire no
+        longer touches them)."""
         abaddon.resistances = list(getattr(abaddon, 'base_resistances', []))
         abaddon.damage_ward = float(getattr(abaddon, 'base_damage_ward', 0.0) or 0.0)
 
@@ -4642,7 +4643,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         if self.player.recall_lore_cooldown > 0:
             self.player.recall_lore_cooldown -= 1
 
-        # Abaddon holy fire resistance removal timer
+        # Abaddon holy fire: the turns his ward stays burned away
         if self.abaddon_resist_removed_turns > 0:
             self.abaddon_resist_removed_turns -= 1
             if self.abaddon_resist_removed_turns == 0:
@@ -5171,8 +5172,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     def _maybe_wander_spawn(self):  # caps: WANDER_HUNTING_CAP / wander_alive_cap
         """Periodically spawn a wandering monster to keep pressure on the player."""
         import random as _rng
-        # Spawn every 18-30 turns; more frequently at deeper levels
-        interval = max(10, 22 - self.dungeon_level // 4)
+        # Every 22 turns to floor 50, then rarer: 40 turns at floor 100
+        # (floor_curve.wander_interval).
+        interval = wander_interval(self.dungeon_level)
         if self.turn_count % interval != 0:
             return
         # Cap by how many are already HUNTING the player, not by how many
