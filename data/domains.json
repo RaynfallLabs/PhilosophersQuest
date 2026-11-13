@@ -1,5 +1,5 @@
 {
-  "_doc": "The five domains of the dungeon (Dungeon Alive, Brandon 2026-11-12): one per gate boss, each with its own look ('theme': the folder under assets/tiles/env/themes/ whose pictures replace the base tiles; missing pictures fall back to the base set), its own dressing (src/decor.py) and, from slice 3, its own hazards and kin. 'arrival' is said the first time in a run the hero sets foot in the domain. 'decor' gives each layer of fixtures (data/fixtures.json): 'ids' with weights, 'room_chance' (the share of ordinary rooms that get any), 'per_room' [min, max], and for floor decals 'corridor_chance' per corridor tile. Slice 3 adds: 'kin' (a weight on each family's place in the spawn pool: lore, never the floor number, and every kind is still eligible only from its own depth), 'traps' (weights on the hidden trap kinds, 1 if not named), 'hazards' (domain hazards set by src/hazards.py: data/hazards.json) and the floor's resident clan ('clans', with 'clan_lines' per family).",
+  "_doc": "The five domains of the dungeon (Dungeon Alive, Brandon 2026-11-12): one per gate boss, each with its own look ('theme': the folder under assets/tiles/env/themes/ whose pictures replace the base tiles; missing pictures fall back to the base set), its own dressing (src/decor.py) and, from slice 3, its own hazards and kin. 'arrival' is said the first time in a run the hero sets foot in the domain. 'decor' gives each layer of fixtures (data/fixtures.json): 'ids' with weights, 'room_chance' (the share of ordinary rooms that get any), 'per_room' [min, max], and for floor decals 'corridor_chance' per corridor tile. Slice 3 adds: 'kin' (a weight on each family's place in the spawn pool: lore, never the floor number, and every kind is still eligible only from its own depth), 'traps' (weights on the hidden trap kinds, 1 if not named), 'hazards' (domain hazards set by src/hazards.py: data/hazards.json) and the floor's resident clan ('clans', with 'clan_lines' per family). Floor layer: 'room_chance' of the rooms get one thing: either flat marks lying in the open ('per_room' of them), or one small group of objects against a wall ('cluster' [min, max], a corner first): rubble where a corner came down, bones in a nook. Corridors get flat marks only (Brandon's play-test, 2026-11-12).",
   "domains": [
     {
       "id": "labyrinth",
@@ -31,16 +31,20 @@
             "rubble": 2,
             "broken_pot": 1
           },
-          "room_chance": 0.3,
+          "room_chance": 0.2,
           "per_room": [
             1,
             2
           ],
-          "corridor_chance": 0.008
+          "corridor_chance": 0.008,
+          "cluster": [
+            2,
+            3
+          ]
         },
         "stand": {
           "ids": {
-            "horns_consecration": 1
+            "column_drum": 1
           },
           "room_chance": 0.06,
           "per_room": [
@@ -84,12 +88,16 @@
             "statue_rubble": 1,
             "rubble": 1
           },
-          "room_chance": 0.5,
+          "room_chance": 0.3,
           "per_room": [
             1,
             2
           ],
-          "corridor_chance": 0.012
+          "corridor_chance": 0.012,
+          "cluster": [
+            2,
+            3
+          ]
         },
         "stand": {
           "ids": {
@@ -175,12 +183,16 @@
             "slayer_bones": 1,
             "rubble": 1
           },
-          "room_chance": 0.55,
+          "room_chance": 0.3,
           "per_room": [
             1,
             2
           ],
-          "corridor_chance": 0.015
+          "corridor_chance": 0.015,
+          "cluster": [
+            2,
+            3
+          ]
         },
         "stand": {
           "ids": {
@@ -256,12 +268,16 @@
             "frozen_bones": 1,
             "broken_fetter": 1
           },
-          "room_chance": 0.5,
+          "room_chance": 0.3,
           "per_room": [
             1,
             2
           ],
-          "corridor_chance": 0.012
+          "corridor_chance": 0.012,
+          "cluster": [
+            2,
+            3
+          ]
         },
         "stand": {
           "ids": {
@@ -338,12 +354,16 @@
             "smoke_vent": 1,
             "bone_pile": 1
           },
-          "room_chance": 0.55,
+          "room_chance": 0.3,
           "per_room": [
             1,
             2
           ],
-          "corridor_chance": 0.015
+          "corridor_chance": 0.015,
+          "cluster": [
+            2,
+            3
+          ]
         },
         "stand": {
           "ids": {

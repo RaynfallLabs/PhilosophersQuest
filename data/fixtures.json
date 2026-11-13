@@ -1,5 +1,5 @@
 {
-  "_doc": "Fixtures: things that stand in or on a tile without changing what the tile is (src/decor.py; Dungeon Alive 2026-11-12). The picture is assets/tiles/env/fixtures/<id>.png, drawn over the tile; without one, a blocking fixture is drawn as a plain block in 'color' and a decal is not drawn. 'layer': floor (a flat decal on a walkable tile), stand (an object on a floor tile), wall (hung on or cut into a wall tile). 'blocks': nothing can walk through it. 'opaque': it blocks sight like a pillar. 'look': what Observe (O) says. 'name': what a bump says stands in the way. 'spent_look': what Observe says once a lore fixture is spent, when it differs.",
+  "_doc": "Fixtures: things that stand in or on a tile without changing what the tile is (src/decor.py; Dungeon Alive 2026-11-12). The picture is assets/tiles/env/fixtures/<id>.png, drawn over the tile; without one, a blocking fixture is drawn as a plain block in 'color' and a decal is not drawn. 'layer': floor (a flat decal on a walkable tile), stand (an object on a floor tile), wall (hung on or cut into a wall tile). 'blocks': nothing can walk through it. 'opaque': it blocks sight like a pillar. 'look': what Observe (O) says. 'name': what a bump says stands in the way. 'spent_look': what Observe says once a lore fixture is spent, when it differs. 'flat': a mark lying flat on the floor (a scorch, a crack, ash, snow, leaves): it may lie anywhere, out in a room or in a corridor. Every other loose floor piece is an object, and objects lie against a wall, in a small group (src/decor.py _place_cluster; Brandon's play-test 2026-11-12: \"big empty rooms with random stuff on the floor\").",
   "fixtures": {
     "labrys_mark": {
       "name": "a double-axe carving",
@@ -130,7 +130,8 @@
     "olive_leaves": {
       "name": "olive leaves",
       "layer": "floor",
-      "look": "Dry olive leaves, blown in from nowhere. The olive was Athena's tree."
+      "look": "Dry olive leaves, blown in from nowhere. The olive was Athena's tree.",
+      "flat": true
     },
     "offering_basin": {
       "name": "an offering basin",
@@ -168,17 +169,20 @@
     "scorch_mark": {
       "name": "a scorch mark",
       "layer": "floor",
-      "look": "A black scorch on the stone, splashed outward. Something breathed here."
+      "look": "A black scorch on the stone, splashed outward. Something breathed here.",
+      "flat": true
     },
     "ember_crack": {
       "name": "a glowing crack",
       "layer": "floor",
-      "look": "A crack in the rock, glowing with heat from somewhere far below."
+      "look": "A crack in the rock, glowing with heat from somewhere far below.",
+      "flat": true
     },
     "ash_drift": {
       "name": "ash",
       "layer": "floor",
-      "look": "Grey ash, drifted against the stone like snow."
+      "look": "Grey ash, drifted against the stone like snow.",
+      "flat": true
     },
     "crystal_cluster": {
       "name": "red crystals",
@@ -229,7 +233,8 @@
     "snow_drift": {
       "name": "snow",
       "layer": "floor",
-      "look": "Snow, drifted in from nowhere."
+      "look": "Snow, drifted in from nowhere.",
+      "flat": true
     },
     "icicles": {
       "name": "icicles",
@@ -288,7 +293,8 @@
       "name": "a smoking crack",
       "layer": "floor",
       "look": "A crack in the glass, with smoke rising out of it. On the floor of the Pit, the locusts climb out of these.",
-      "spent_look": "Smoke still rises from the crack. Whatever you said over it was not enough."
+      "spent_look": "Smoke still rises from the crack. Whatever you said over it was not enough.",
+      "flat": true
     },
     "hanging_chains": {
       "name": "chains",
@@ -315,7 +321,8 @@
     "glow_fissure": {
       "name": "a glowing fissure",
       "layer": "floor",
-      "look": "A wide crack glowing deep red."
+      "look": "A wide crack glowing deep red.",
+      "flat": true
     },
     "seal_stone": {
       "name": "a seal stone",
@@ -479,7 +486,8 @@
     "straw": {
       "name": "straw",
       "layer": "floor",
-      "look": "Trampled straw, and the smell of things that sleep on it."
+      "look": "Trampled straw, and the smell of things that sleep on it.",
+      "flat": true
     },
     "cage": {
       "name": "a cage",
@@ -511,7 +519,8 @@
     "honey_drip": {
       "name": "honey",
       "layer": "floor",
-      "look": "A puddle of honey."
+      "look": "A puddle of honey.",
+      "flat": true
     },
     "grave_marker": {
       "name": "a grave marker",
@@ -527,7 +536,8 @@
     "reeds": {
       "name": "reeds",
       "layer": "floor",
-      "look": "Reeds and bulrushes."
+      "look": "Reeds and bulrushes.",
+      "flat": true
     },
     "lily_pads": {
       "name": "lily pads",

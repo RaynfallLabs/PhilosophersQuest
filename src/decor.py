@@ -253,7 +253,8 @@ def _band_room_of(dungeon):
 
 def furnish_band_camp(dungeon, taken: set, placed_blocks: list, rng) -> int:
     """A war-band's camp (data/war_bands.json 'camp'): its fire and banner
-    near the middle of its room, bedrolls and bones about the floor."""
+    near the middle of its room, its bedrolls round the fire, its bones and
+    candles against a wall in one group."""
     room = _band_room_of(dungeon)
     if room is None:
         return 0
@@ -275,12 +276,23 @@ def furnish_band_camp(dungeon, taken: set, placed_blocks: list, rng) -> int:
                 placed_blocks.append(pos)
             n += 1
             break
-    rest = inner[len(inner) // 3:]
-    rng.shuffle(rest)
-    for fid, pos in zip(camp.get('floor', ()), rest):
-        place(dungeon, pos, fid)
-        taken.add(pos)
-        n += 1
+    # Bedding lies round the fire; bones, candles and the like go against a
+    # wall in one group (_place_cluster), not dotted about the floor
+    # (Brandon's play-test, 2026-11-12).
+    ring = [t for t in inner if 2 <= max(abs(t[0] - cx), abs(t[1] - cy)) <= 3]
+    rng.shuffle(ring)
+    objs = {}
+    for fid in camp.get('floor', ()):
+        if fid == 'bedroll' or _flat(fid):
+            pos = next((t for t in ring if t not in taken), None)
+            if pos is not None:
+                place(dungeon, pos, fid)
+                taken.add(pos)
+                n += 1
+        else:
+            objs[fid] = objs.get(fid, 0) + 1
+    if objs:
+        n += _place_cluster(dungeon, room, objs, sum(objs.values()), taken, rng)
     return n
 
 
@@ -350,6 +362,48 @@ def _against_wall_spots(room, dungeon, taken):
         if not near_opening:
             out.append((x, y))
     return out
+
+
+def _flat(fid: str) -> bool:
+    """A mark lying flat on the floor (a scorch, a crack, ash, snow): it may
+    lie anywhere. Anything else loose is an object (data/fixtures.json)."""
+    return bool(fixture_def(fid).get('flat'))
+
+
+def _wall_sides(pos, room, dungeon) -> int:
+    """How many of a tile's four sides are the room's own wall."""
+    from dungeon import WALL
+    x, y = pos
+    return sum(1 for ox, oy in ((1, 0), (-1, 0), (0, 1), (0, -1))
+               if dungeon.in_bounds(x + ox, y + oy) and dungeon.tiles[y + oy][x + ox] == WALL
+               and not _room_contains_inner(room, x + ox, y + oy))
+
+
+def _place_cluster(dungeon, room, ids: dict, want: int, taken: set, rng) -> int:
+    """Loose objects as one small group against a wall, the way such things
+    come to lie: rubble where a corner came down, bones in a nook, broken
+    jars along a wall. A corner first when there is one, the rest beside it
+    along the wall; most of the group is one thing (Brandon's play-test,
+    2026-11-12: "big empty rooms with random stuff on the floor")."""
+    spots = set(_against_wall_spots(room, dungeon, taken))
+    if not spots or want <= 0:
+        return 0
+    corners = sorted(s for s in spots if _wall_sides(s, room, dungeon) >= 2)
+    anchor = rng.choice(corners or sorted(spots))
+    first = _weighted(ids, rng)
+    placed = [anchor]
+    place(dungeon, anchor, first)
+    taken.add(anchor)
+    while len(placed) < want:
+        nbrs = sorted(s for s in spots if s not in taken
+                      and any(max(abs(s[0] - p[0]), abs(s[1] - p[1])) <= 1 for p in placed))
+        if not nbrs:
+            break
+        pos = rng.choice(nbrs)
+        place(dungeon, pos, first if rng.random() < 0.7 else _weighted(ids, rng))
+        taken.add(pos)
+        placed.append(pos)
+    return len(placed)
 
 
 def _room_contains_inner(room, x, y) -> bool:
@@ -450,6 +504,8 @@ def _place_layer(dungeon, room, layer: str, spec: dict, taken: set, placed_block
     want = rng.randint(int(lo), int(hi))
     if want <= 0:
         return 0
+    if layer == 'floor':
+        return _place_floor_layer(dungeon, room, spec['ids'], want, taken, rng)
     n = 0
     if layer == 'wall':
         spots = [t for t in _ring_walls(room, dungeon) if t not in fixtures_of(dungeon)]
@@ -475,6 +531,25 @@ def _place_layer(dungeon, room, layer: str, spec: dict, taken: set, placed_block
         place(dungeon, pos, fid)
         taken.add(pos)
         n += 1
+    return n
+
+
+def _place_floor_layer(dungeon, room, ids: dict, want: int, taken: set, rng) -> int:
+    """A special room's loose floor pieces: its objects (bones, candles) as
+    one group against a wall, its flat things (straw, reeds, dripped honey)
+    anywhere in the room (Brandon's play-test, 2026-11-12)."""
+    flat = {k: v for k, v in ids.items() if _flat(k)}
+    objs = {k: v for k, v in ids.items() if not _flat(k)}
+    wf, wo = float(sum(flat.values())), float(sum(objs.values()))
+    n_obj = sum(1 for _ in range(want) if objs and (not flat or rng.random() * (wf + wo) >= wf))
+    n = _place_cluster(dungeon, room, objs, n_obj, taken, rng) if n_obj else 0
+    if flat:
+        spots = [t for t in _inner(room, dungeon) if t not in taken]
+        rng.shuffle(spots)
+        for pos in spots[:want - n_obj]:
+            place(dungeon, pos, _weighted(flat, rng))
+            taken.add(pos)
+            n += 1
     return n
 
 
@@ -977,15 +1052,24 @@ def dress_floor(dungeon, level: int, monsters=(), items=(), rng=None) -> int:
             for pos in walls[:rng.randint(int(lo), int(hi))]:
                 place(dungeon, pos, _weighted(spec['ids'], rng))
                 n += 1
-        # Floor decals.
+        # The loose floor layer: flat marks out in the room, or one small
+        # group of objects against a wall (_place_cluster), never objects
+        # dotted about the open floor.
         spec = decor.get('floor')
         if spec and rng.random() < float(spec.get('room_chance', 0)):
-            rng.shuffle(inner)
-            lo, hi = spec.get('per_room', [1, 1])
-            for pos in inner[:rng.randint(int(lo), int(hi))]:
-                place(dungeon, pos, _weighted(spec['ids'], rng))
-                taken.add(pos)
-                n += 1
+            flat = {k: v for k, v in spec['ids'].items() if _flat(k)}
+            objs = {k: v for k, v in spec['ids'].items() if not _flat(k)}
+            wf, wo = float(sum(flat.values())), float(sum(objs.values()))
+            if objs and rng.random() * (wf + wo) >= wf:
+                lo, hi = spec.get('cluster', [2, 3])
+                n += _place_cluster(dungeon, room, objs, rng.randint(int(lo), int(hi)), taken, rng)
+            elif flat:
+                rng.shuffle(inner)
+                lo, hi = spec.get('per_room', [1, 1])
+                for pos in inner[:rng.randint(int(lo), int(hi))]:
+                    place(dungeon, pos, _weighted(flat, rng))
+                    taken.add(pos)
+                    n += 1
         # Standing pieces, against the walls, never two side by side.
         spec = decor.get('stand')
         if spec and len(inner) >= 9 and rng.random() < float(spec.get('room_chance', 0)):
@@ -1005,14 +1089,16 @@ def dress_floor(dungeon, level: int, monsters=(), items=(), rng=None) -> int:
                     placed_blocks.append(pos)
                 want -= 1
                 n += 1
-    # Corridor decals.
+    # Corridor decals: flat marks only (a jar or a skull in a corridor is
+    # clutter in the way, not a story).
     spec = decor.get('floor')
     chance = float((spec or {}).get('corridor_chance', 0) or 0)
     corridors = _corridor_tiles(dungeon, taken)
-    if chance > 0:
+    flat = {k: v for k, v in ((spec or {}).get('ids') or {}).items() if _flat(k)}
+    if chance > 0 and flat:
         for pos in corridors:
             if rng.random() < chance:
-                place(dungeon, pos, _weighted(spec['ids'], rng))
+                place(dungeon, pos, _weighted(flat, rng))
                 taken.add(pos)
                 n += 1
     # The domain's hazards (src/hazards.py): never in the arrival room,

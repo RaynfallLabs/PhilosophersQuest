@@ -50,7 +50,7 @@ TRAP_TYPES = [
     {'type': 'fire',         'damage': '2d4+2', 'damage_type': 'fire',     'message': 'A column of flame erupts beneath you!',         'symbol': '^', 'color': (255, 100, 30)},
     {'type': 'sleep_gas',    'damage': '0',     'damage_type': 'none',     'message': 'A cloud of sleeping gas envelops you!',         'symbol': '^', 'color': (150, 200, 150)},
     {'type': 'bear_trap',    'damage': '1d4',   'damage_type': 'physical', 'message': 'A bear trap snaps shut on your leg!',           'symbol': '^', 'color': (160, 160, 160)},
-    {'type': 'squeaky_board','damage': '0',     'damage_type': 'none',     'message': 'SQUEEEAK! The floorboard alerts everything!',   'symbol': '^', 'color': (180, 140, 60)},
+    {'type': 'squeaky_board','damage': '0',     'damage_type': 'none',     'message': 'SQUEEEAK! Everything nearby heard that!',   'symbol': '^', 'color': (180, 140, 60)},
     {'type': 'rust',         'damage': '0',     'damage_type': 'none',     'message': 'Water sprays from the ceiling!',                'symbol': '^', 'color': (80, 130, 200)},
     {'type': 'polymorph',    'damage': '0',     'damage_type': 'none',     'message': 'Strange energies wash over you!',               'symbol': '^', 'color': (200, 50, 200)},
 ]

@@ -13,7 +13,6 @@
                 {"ids": {"labrys_mark": 1}, "count": [10, 16], "where": "junctions"}],
       "floor": [{"ids": {"bone_pile": 3, "broken_pot": 1}, "count": [6, 10], "where": "items"},
                 {"ids": {"rubble": 1}, "count": [2, 4], "where": "boss_room"}],
-      "entrance": "horns_consecration",
       "phase": {"asterion_minotaur": {"floor": {"ids": {"rubble": 1}, "count": [5, 8]}}}
     },
     "40": {

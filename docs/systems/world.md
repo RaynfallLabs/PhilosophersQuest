@@ -173,7 +173,7 @@ Brandon cut the dungeon into **five domains**, one per gate boss (`data/domains.
 
 **Dressing.** `decor.dress_floor` runs in `LevelManager.generate` after every monster and item is placed and before `senses.assign_jobs`. It skips special rooms, the vault and hidden chambers. Each domain's `decor` sets, per layer, the share of rooms that get any (`room_chance`) and how many each one gets (`per_room`):
 - wall pieces go on ring walls that face the room's floor;
-- floor decals go on inner tiles, plus corridor tiles (`corridor_chance`);
+- the floor layer gives a dressed room ONE thing: either flat marks out in the room (`per_room` of them: a scorch, a crack, ash, snow, leaves; `flat` in `data/fixtures.json`), or one small group of objects against a wall (`cluster` [min, max], a corner first, mostly one thing: rubble where a corner came down, bones in a nook; `decor._place_cluster`). Objects are never dotted about the open floor, and corridors (`corridor_chance`) get flat marks only. Special rooms' and war-band camps' loose pieces follow the same rule (`_place_floor_layer`; bedrolls lie round the camp fire). Brandon's play-test, 2026-11-12: "big empty rooms with random stuff on the floor";
 - standing pieces go on inner tiles against the wall, never beside an opening or a door, and never next to each other.
 
 A reachability walk from the up stair runs before and after; blockers are undone, newest first, until nothing extra is cut off. Gate floors get only the theme here, and their builders set their own fixtures (slice 6).
@@ -257,7 +257,7 @@ Tests: `tests/test_rooms_and_lore.py`.
 
 | Floor | What the dressing adds |
 |---|---|
-| 20 | labrys marks at junctions, bull frescoes and torches round the hall, tribute bones under what earlier visitors left, horns of consecration at the hall's two ways in |
+| 20 | labrys marks at junctions, bull frescoes and torches round the hall, tribute bones under what earlier visitors left (the horns of consecration at the hall's two ways in are off until they are redrawn: the picture read as a cow's skull) |
 | 40 | ivy, olive leaves, shed skins, broken statues |
 | 60 | the hoard bed round Fafnir (`tile_art` `hoard`), dragon-slayers' bones, scorch marks |
 | 80 | shields, icicles, two broken fetters, and 3-4 cold braziers |
@@ -445,7 +445,7 @@ Dispatched by `generate_boss_level(COW_LEVEL)` where `COW_LEVEL = 999`. A large 
 | fire           | 2d4+2 fire | Applies `burning` 3t (unless `fire_resist`)     |
 | sleep_gas      | 0          | `sleeping` 3-8t (save vs CON DC `12 + level//7`) |
 | bear_trap      | 1d4 phys   | `immobilized` 2-4t (save vs CON)                |
-| squeaky_board  | 0          | Wakes every monster on the floor                 |
+| squeaky_board  | 0          | Rouses every monster within 20 tiles of open ground; they come to look |
 | rust           | 0          | Rusts equipped rustables                        |
 | polymorph      | 0          | Polymorphs the player                           |
 

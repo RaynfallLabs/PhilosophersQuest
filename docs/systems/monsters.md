@@ -268,8 +268,8 @@ Brandon: "NONE automatically know where you are unless it's thematically and lor
 - **Sight:** a line of sight within `perception_range` (+4 for `keen_sight`). Walls, closed doors and tall fixtures (statues, stalagmites) block it; water and low furniture don't. An invisible hero is unseen except by `truesight` (celestials).
 - **Sound:** the game emits noises through `Game._make_noise(kind)`:
   - footsteps each turn the hero moves (`step_radius`: 3 at DEX 10, quieter with DEX, louder when burdened, silent with Cat's Footfall or silent walking);
-  - `melee` 8, `shot` 5, `spell` 6, `door` 5, `struck` 8 (a monster's blow on him);
-  - an alarm rouses within 10; the squeaky board rouses within 60.
+  - `melee` 5, `shot` 4, `spell` 5, `door` 4, `coin` 3, `struck` 5 (a monster's blow on him);
+  - an alarm rouses within 12; the squeaky board rouses within 20 (it called the whole floor until Brandon's play-test of 2026-11-12, when a floor-1 fight with every waking creature in 8 tiles coming to look was "a SHIT TON of monsters all descended on me at once").
 
   `senses.resolve_noises` runs at the top of `_do_monster_turns`. Sound travels along open ground round corners (BFS `sound_map`), a closed door costs 3, and stone stops it. A sound gives the monster a PLACE (`_goal`), not the hero. A monster already tracking him hears footsteps 3 tiles further, so a chase goes round corners.
 - **Lore senses** (`families` and `monsters` in the JSON; a kind's list replaces its family's, but `blind` always holds):
@@ -302,7 +302,7 @@ Brandon: "NONE automatically know where you are unless it's thematically and lor
   A creature woken by a noise keeps watch afterwards.
 - **Waking:**
   - footsteps within 2 tiles wake a sleeper 25% of the time (6% further away), with the deep sleepers' DEX, burden and Cat's Footfall odds;
-  - a fight within half its reach wakes one 70% of the time;
+  - a fight within half its reach wakes one 40% of the time (15% further off). A sleeper gets ONE chance to wake a turn, at the most waking noise it heard: a fight is two noises a round, and a roll for each made the sleepers near it all but sure to wake;
   - the Hand of Glory keeps everyone asleep;
   - zoo, graveyard and barracks deep sleepers keep `sleepers.py`'s odds, and only a fight within 3 tiles may break their sleep (20%).
 
@@ -353,7 +353,7 @@ Brandon: monsters must "pose a real challenge and players need to pay attention 
 - **Half the band down:** each follower flees with a 50% chance.
 - **A great blow.** A maths chain of `nerve_chain` (6) or more on the living leader makes about half his followers falter (`feared` for 4 turns), with the band's `break_line`.
 
-**Knowing pays.** On arrival, `_announce_band` says the band's `line`, which is sound and signs only and never names the band's kind. If the hero knows the leader's kind (`family_lore.knowledge` KNOWN: studied, its page opened, or its family at Lore), it says the `known_line` instead, which names the roster and how to break it. Recognise alone is not enough (2026-11-12). The camp (fire, banner, bedrolls) is furnished by `decor.furnish_band_camp`.
+**Knowing pays.** On arrival, `_announce_band` says the band's `line`, which is sound and signs only and never names the band's kind. If the hero knows the leader's kind (`family_lore.knowledge` KNOWN: studied, its page opened, or its family at Lore), it says the `known_line` instead, which names the roster and how to break it. Recognise alone is not enough (2026-11-12). The camp is furnished by `decor.furnish_band_camp`: the fire and banner near the middle, bedrolls round the fire, bones and candles in one group against a wall.
 
 Observe (`war_bands.observe_line`, data `observe`) says what anyone can see:
 - **a follower:** "It marches with a goblin war-band."

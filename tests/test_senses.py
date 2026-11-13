@@ -164,9 +164,9 @@ def test_a_closed_door_muffles_sound():
 def test_a_heard_noise_gives_a_place_not_the_hero():
     dun = two_rooms()
     hero = Hero(7, 11)
-    gob = make('goblin', 13, 11)
+    gob = make('goblin', 11, 11)          # four tiles of open ground from the fight
     gob.ai_pattern = 'aggressive'
-    dun.tiles[11][13] = FLOOR
+    dun.tiles[11][11] = FLOOR
     dun.tiles[11][7] = FLOOR
     senses.emit(dun, 7, 12, 'melee')
     senses.resolve_noises(dun, [gob], hero, rng=random.Random(1))

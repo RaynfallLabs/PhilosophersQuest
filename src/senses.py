@@ -295,23 +295,26 @@ def _hears(m) -> bool:
     return (getattr(m, 'family', '') or '') != 'plants'
 
 
-def _wakes(m, kind: str, d: int, r: int, player, rng) -> bool:
+def _wake_p(m, kind: str, d: int, r: int, player) -> float:
+    """The chance a sleeper wakes to a noise of `kind` `d` tiles off (`r`
+    the noise's reach)."""
     w = data()['waking']
     import sleepers
     if sleepers.factor(player, 'take') <= 0:       # the Hand of Glory
-        return False
+        return 0.0
     if sleepers.is_deep_sleeper(m):
         # The deep sleepers of a zoo, graveyard or barracks keep their own
         # odds (sleepers.py); only a fight or an alarm right beside one may
         # break that sleep.
-        return (kind != 'step' and d <= int(w['deep_loud_reach'])
-                and rng.random() < float(w['deep_loud']))
+        return float(w['deep_loud']) if (kind != 'step' and d <= int(w['deep_loud_reach'])) else 0.0
     if kind == 'step':
-        p = float(w['step_near'] if d <= int(w['near']) else w['step_far'])
-        p *= sleepers.factor(player, 'step')
-    else:
-        p = float(w['loud'] if d * 2 <= r else w['loud_far'])
-    return rng.random() < p
+        return float(w['step_near'] if d <= int(w['near']) else w['step_far']) \
+            * sleepers.factor(player, 'step')
+    return float(w['loud'] if d * 2 <= r else w['loud_far'])
+
+
+def _wakes(m, kind: str, d: int, r: int, player, rng) -> bool:
+    return rng.random() < _wake_p(m, kind, d, r, player)
 
 
 def _listens(m) -> bool:
@@ -331,22 +334,34 @@ def resolve_noises(dungeon, monsters, player, rng=None) -> list:
     bonus = int(data()['noise'].get('hunter_bonus', 3))
     woken = []
     from geom import occupied_tiles
-    for nx, ny, kind, r in noises:
-        reach = sound_map(dungeon, nx, ny, r + bonus)
-        for m in monsters or ():
-            if not _listens(m):
-                continue
-            ds = [reach[t] for t in occupied_tiles(m) if t in reach]
+    reaches = [(nx, ny, kind, r, sound_map(dungeon, nx, ny, r + bonus))
+               for nx, ny, kind, r in noises]
+    for m in monsters or ():
+        if not _listens(m):
+            continue
+        tiles = list(occupied_tiles(m))
+        heard = []
+        for nx, ny, kind, r, reach in reaches:
+            ds = [reach[t] for t in tiles if t in reach]
             if not ds:
                 continue
             d = min(ds)
             if d > r + (bonus if m.__dict__.get('_tracking') else 0):
                 continue
-            if m.has_effect('sleeping'):
-                if not _wakes(m, kind, d, r, player, rng):
-                    continue
-                m.status_effects.pop('sleeping', None)
-                woken.append(m)
+            heard.append((nx, ny, kind, r, d))
+        if not heard:
+            continue
+        if m.has_effect('sleeping'):
+            # One chance to wake a turn, at the turn's most waking noise: a
+            # fight is two noises a round, and a roll for each made the
+            # sleepers near it all but sure to wake (Brandon, 2026-11-12:
+            # "they all seemed to come running").
+            p = max(_wake_p(m, k, dd, rr, player) for _x, _y, k, rr, dd in heard)
+            if rng.random() >= p:
+                continue
+            m.status_effects.pop('sleeping', None)
+            woken.append(m)
+        for nx, ny, kind, _r, _d in heard:
             prev = m.__dict__.get('_heard')
             if prev is None or (prev[2] == 'step' and kind != 'step'):
                 m._heard = (nx, ny, kind)
