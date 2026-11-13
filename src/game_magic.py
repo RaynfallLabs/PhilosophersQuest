@@ -111,13 +111,15 @@ if TYPE_CHECKING:
 # attack on the floors it is found on, and a wand charge at about 0.85
 # (tools/balance/magic_audit.py prints the table; a test holds it).
 # Previous spell figures: 6.0 / 8.75 / 11.0 / 13.0 / 12.75, shared by wands.
-# 2026-11-12: the weapon curve (tools/balance/weapon_curve.py) sized weapons
-# against the real monsters, and one attack fell about a quarter near floor
-# 20 and a tenth deep. Spell tiers 4-5 (7.9, 10.5) and wand tiers 2, 4, 5
-# (3.7, 6.8, 8.0) came down by the least that puts every cast back under its
-# limit (magic_audit.py, test_magic_role), so magic keeps its place.
-MAGIC_TIER_MULT = {1: 2.6, 2: 4.9, 3: 5.8, 4: 7.2, 5: 9.6}
-WAND_TIER_MULT = {1: 1.9, 2: 3.45, 3: 5.6, 4: 6.3, 5: 7.1}
+# 2026-11-12: the weapon curve (tools/balance/weapon_curve.py) sizes weapons
+# against the real monsters so an ordinary fight is one or two chains at any
+# depth ("game cannot be a chore"); one attack grew x1.5 to x1.8 from floor
+# 40 down. Each tier's multiplier moved by the same share of one attack on
+# the floors it is measured on, so every cast keeps its place under a weapon
+# chain (magic_audit.py, test_magic_role). Before: spells 2.6 / 4.9 / 5.8 /
+# 7.9 / 10.5, wands 1.9 / 3.7 / 5.6 / 6.8 / 8.0.
+MAGIC_TIER_MULT = {1: 2.6, 2: 5.15, 3: 8.6, 4: 12.8, 5: 15.7}
+WAND_TIER_MULT = {1: 1.9, 2: 3.45, 3: 8.2, 4: 11.2, 5: 11.7}
 
 # What Intelligence does for magic: more casts (max MP is 10 + INT), and
 # effects that last longer (and a wider Light). It never lengthens how far

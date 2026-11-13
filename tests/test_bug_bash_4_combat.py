@@ -223,6 +223,11 @@ def test_c03_harpe_cannot_petrify_a_boss_but_still_stones_a_rat():
         if kind == 'giant_rat':
             b.max_hp = 50              # an ordinary foe, but alive through the blow
             b.hp = 10 ** 6
+        else:
+            # Alive through the blow itself (the weapon curve of 2026-11-12
+            # made a chain-15 Harpe blow kill him outright): the question is
+            # only whether petrifying, running out, kills him.
+            b.hp = b.max_hp = 10 ** 7
         g._start_combat(b)
         _strike(g, 15)
         assert ('petrifying' in b.status_effects) is stoned, kind

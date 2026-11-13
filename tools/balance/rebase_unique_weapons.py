@@ -48,6 +48,11 @@ UNIQUE_MULT = 1.25
 # Quest payoffs earned by a whole chain: a little more.
 QUEST_MULT = 1.5
 QUEST_REWARDS = ("gram", "sword_of_michael")
+# The Sword of Michael's climax: no single peak blow may take more than a
+# twentieth of Abaddon (test_sword_of_michael_balanced_for_climax), so its
+# share is a little lower once the weapon curve (2026-11-12) raised the deep
+# commons it is measured against.
+QUEST_MULT_OF = {"sword_of_michael": 1.4}
 
 # Floors for scripted uniques that no monster drops.
 SCRIPTED_FLOOR = {
@@ -135,7 +140,7 @@ def plan(weapons: dict) -> list[tuple[str, int, int, int, float]]:
         if floor is None:
             continue
         med = class_median(floor, d.get("weapon_class", d["class"]))
-        mult = QUEST_MULT if wid in QUEST_REWARDS else UNIQUE_MULT
+        mult = QUEST_MULT_OF.get(wid, QUEST_MULT) if wid in QUEST_REWARDS else UNIQUE_MULT
         want = int(round(mult * med))
         old = base_of(d)
         if old < want:

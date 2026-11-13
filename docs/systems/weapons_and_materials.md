@@ -225,10 +225,12 @@ fifth-rung `chain_multipliers` value, relative to the longsword's (a dagger abou
 longsword, a greatsword about 1.7 of one, a sling about a quarter), and never below 2.
 
 `weapon_base` is written by `tools/balance/weapon_curve.py --write`, at the material's OWN peak
-floor (lore, not floor): a longsword of it kills the median ordinary monster of that floor (the
-game's spawn pools, smoothed over five floors either side) in `target_attacks(peak)` chains (1.4
-on floor 1, 1.6 by floor 20, 3.5 from floor 60) for the balance child, at that floor's clock and
-the material's maths tier. The harder tier's shorter chain is paid for inside the number: there
+floor (lore, not floor): a longsword of it kills the typical ordinary monster of that floor (the
+spawn-weighted geometric mean of the game's own pool, smoothed over five floors either side) in
+`target_attacks(peak)` chains (1.4 on floor 1, 1.6 by floor 20, 2.0 by floor 100) for the
+balance child, at that floor's clock and the material's maths tier. An ordinary fight is one or
+two chains at every depth (Brandon: "game cannot be a chore"); the danger of the deep is in the
+monsters' blows and abilities, not their bulk. The harder tier's shorter chain is paid for inside the number: there
 is no flat step per tier any more (it was x1.9 / x3.1 / x3.5 / x4.9, and a quick answerer got
 all of it on top of his full chain). The same tool sets `min_level` to no earlier than 6 floors
 before the peak. Uniques are sized from the commons by `rebase_unique_weapons.py` (never lowered);

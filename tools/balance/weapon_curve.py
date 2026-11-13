@@ -20,10 +20,11 @@ above where the initial base weapons are... smooth progression, monsters and gea
 
 The curve: every material is sized at its OWN peak floor (LORE, NOT FLOOR: its power is
 fixed by where its lore puts it, never by the floor it is found on) so that a longsword of
-it kills the median ordinary monster of that floor (the game's own spawn pools, smoothed
-over a few floors: monster_curve) in target_attacks(peak) chains for the balance child
-(1.4 on floor 1, 1.6 by floor 20, rising smoothly to 3.5 by floor 60: deep fights stay
-about as long as the difficulty pass tuned them, without the sawtooth), at that floor's clock and the material's maths tier. Its
+it kills the typical ordinary monster of that floor (the weighted geometric mean of the
+game's own spawn pool, smoothed over a few floors: monster_curve) in target_attacks(peak)
+chains for the balance child: 1.4 on floor 1, 1.6 by floor 20, 2.0 by floor 100. An
+ordinary fight is one or two chains at every depth (Brandon, 2026-11-12: "game cannot be
+a chore"; the danger of the deep is the monsters' abilities and blows, not their bulk), at that floor's clock and the material's maths tier. Its
 damage_mult keeps its place among its tier-mates. It is found no earlier than LEAD
 floors before its peak. The tier step is inside the number now: a harder tier's shorter
 chain is paid for by the child's own chain at that tier.
@@ -49,10 +50,11 @@ os.environ.setdefault("SDL_AUDIODRIVER", "dummy")
 
 MAT_DIR = ROOT / "data" / "materials" / "weapons"
 
-# Chains of an on-peak longsword to kill the floor's median monster, by peak floor
-# (straight lines between these; flat past the last). Before the curve the child's deep
-# fights averaged about 4 chains, and the difficulty pass was tuned on them.
-TARGET_ATTACKS = {1: 1.4, 20: 1.6, 60: 3.5, 100: 3.5}
+# Chains of an on-peak longsword to kill the floor's typical monster, by peak floor
+# (straight lines between these). Before the curve the child's deep fights ran 4 to 5
+# chains: a chore. Brandon: "Just use math and data to get this where it needs to be...
+# game cannot be a chore" (2026-11-12).
+TARGET_ATTACKS = {1: 1.4, 20: 1.6, 100: 2.0}
 SMOOTH = 5                  # the monster curve is smoothed over this many floors either side
 LEAD = 6                    # found no earlier than this many floors before its peak
 REFERENCE = "longsword"     # weapon_base is a longsword's base; other templates scale from it
@@ -87,9 +89,10 @@ _CURVE: dict | None = None
 
 
 def monster_curve() -> dict:
-    """{floor: median HP of the floor's ordinary monsters, as they spawn}, from the
-    game's own spawn pools (dungeon._build_spawn_pool), smoothed in log space over
-    SMOOTH floors either side so a lump in the pool does not become a lump in a weapon."""
+    """{floor: typical HP of the floor's ordinary monsters, as they spawn}: the
+    spawn-weighted geometric mean of the game's own pool (dungeon._build_spawn_pool;
+    a median jumps whenever one heavy kind arrives, a typical fight does not), smoothed
+    in log space over SMOOTH floors either side."""
     global _CURVE
     if _CURVE is not None:
         return _CURVE
@@ -103,15 +106,8 @@ def monster_curve() -> dict:
             if m.get("is_boss") or m.get("is_mini_boss") or m.get("is_seal_demon"):
                 continue
             rows.append((_avg_hp(m.get("hp")), float(m["_spawn_freq"])))
-        rows.sort()
-        tot, acc = sum(w for _, w in rows), 0.0
-        med = rows[-1][0]
-        for v, w in rows:
-            acc += w
-            if acc >= tot / 2:
-                med = v
-                break
-        raw[f] = math.log(max(1.0, med))
+        tot = sum(w for _, w in rows)
+        raw[f] = sum(w * math.log(max(1.0, v)) for v, w in rows) / tot
     _CURVE = {}
     for f in range(1, 101):
         lo, hi = max(1, f - SMOOTH), min(100, f + SMOOTH)
@@ -124,8 +120,19 @@ def clock(floor: int) -> int:
     return 10 + int(floor) // Player.DEPTH_WIS_EVERY
 
 
+_MULT: dict = {}
+
+
 def child_mult(tier: int, floor: int) -> float:
-    """Mean of chain^EXPONENT for one attack by the balance child (deterministic)."""
+    """Mean of chain^EXPONENT for one attack by the balance child (deterministic;
+    cached on everything it reads)."""
+    key = (tier, floor, TRIALS, CHILD_ACC[tier], CHILD_SECONDS[tier], EXPONENT, clock(floor))
+    if key not in _MULT:
+        _MULT[key] = _child_mult(tier, floor)
+    return _MULT[key]
+
+
+def _child_mult(tier: int, floor: int) -> float:
     rng = random.Random(tier * 100003 + floor)
     acc, sec, limit = CHILD_ACC[tier], CHILD_SECONDS[tier], clock(floor)
     tot = 0.0

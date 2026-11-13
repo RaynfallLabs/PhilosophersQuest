@@ -14,8 +14,8 @@ Rules:
     that floor in about weapon_curve.target_attacks chains for the balance
     child (a material's damage_mult moves it within its tier).
   - All active uniques (peak_floor > 0) use exactly 5-entry chainMultipliers.
-  - No unique does more than 2.5x the best same-template common that can be
-    found by its peak floor, for the balance child (base x the child's chain at
+  - No unique does more than 2.5x its template made of the best material that
+    can be found by its peak floor, for the balance child (base x the child's chain at
     each one's tier: a tier-2 unique's bigger base pays for harder sums), the
     legendary god-touched ones exempt.
 """
@@ -200,10 +200,13 @@ def test_no_super_weapon_uniques(curve):
         t = templates.get(tname)
         if not t:
             return 0
-        compat = set(t.get('compatible_material_classes', []))
+        # The floor's power for this shape: the template in the best material
+        # found by then, whatever it can be made of (a club comes only in
+        # wood, and no tier-2 wood drops by floor 26, so Theseus's Club was
+        # measured against sticks).
         best = 0.0
         for mid, m in materials.items():
-            if m.get('material_class') not in compat or int(m.get('min_level', 1)) > pf:
+            if int(m.get('min_level', 1)) > pf:
                 continue
             best = max(best, items.weapon_base_damage(t, m) * curve.child_mult(items.material_tier(m), pf))
         return best

@@ -94,9 +94,10 @@ def power_share(written: float) -> float:
 # tools/balance/yardsticks.py; tests/test_yardsticks.py checks for drift.
 # HEALTH_BAR: max HP of a player who cooks steadily, from the simulator.
 # ---------------------------------------------------------------------------
-# (Re-measured 2026-11-12 after the weapon curve: tools/balance/weapon_curve.py.)
-ONE_ATTACK = {1: 17, 10: 39, 20: 78, 30: 198, 40: 297, 50: 396, 60: 471,
-              70: 648, 80: 986, 90: 1495, 100: 1822}
+# (Re-measured 2026-11-12 after the weapon curve: tools/balance/weapon_curve.py,
+# an ordinary fight one or two chains at every depth.)
+ONE_ATTACK = {1: 17, 10: 39, 20: 77, 30: 209, 40: 387, 50: 587, 60: 765,
+              70: 1157, 80: 1673, 90: 2450, 100: 3009}
 HEALTH_BAR = {1: 30, 10: 66, 20: 100, 30: 143, 40: 180, 50: 219, 60: 265,
               70: 311, 80: 365, 90: 424, 100: 450}
 
