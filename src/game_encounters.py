@@ -1064,7 +1064,9 @@ class EncountersMixin:
             items = [i for i in inv if known_healer(self.player, i)]
             # Heal spell (virtual entry — show as a selectable option)
             if 'heal_spell' in getattr(self.player, 'known_spells', {}):
-                mp_cost = self.player.known_spells.get('heal_spell', 99)
+                # What the spell menu would charge: metal body armour taxes
+                # it (Player.spell_mp_cost), here as on every cast.
+                mp_cost = self.player.spell_mp_cost(self.player.known_spells.get('heal_spell', 99))
                 if self.player.mp >= mp_cost:
                     # Create a placeholder for the spell choice
                     class _SpellChoice:
@@ -1715,7 +1717,8 @@ class EncountersMixin:
                 if selected_item:
                     if getattr(selected_item, 'id', '') == '_heal_spell_choice':
                         # Spell: spend MP instead of removing an item
-                        mp_cost = self.player.known_spells.get('heal_spell', 8)
+                        mp_cost = self.player.spell_mp_cost(
+                            self.player.known_spells.get('heal_spell', 8))
                         self.player.mp -= mp_cost
                         self.add_message(f"You cast Heal. (-{mp_cost} MP)", 'info')
                     elif hasattr(selected_item, 'charges'):

@@ -67,10 +67,10 @@ LEARNABLE_SPELLS: dict[str, dict] = {
     # COLD FAMILY -- 4 tiers
     # ==================================================================
     'frost_touch_spell': {
-        'name': 'Frost Touch', 'effect': 'frost_touch', 'power': '1d6+3',
+        'name': 'Frost Touch', 'effect': 'frost_touch', 'power': '2d4',
         'mp_cost': 3, 'tier': 1, 'quiz_tier': 1, 'needs_target': True,
         'spell_family': 'cold',
-        'desc': 'Lay a freezing hand on a foe beside you -- 1d6+3 cold damage, 50% chance to slow.',
+        'desc': 'Lay a freezing hand on a foe beside you -- 2d4 cold damage, 50% chance to slow.',
     },
     'cold_bolt_spell': {
         'name': 'Cold Bolt', 'effect': 'frost_touch', 'power': '3d6',
@@ -503,16 +503,16 @@ LEARNABLE_SPELLS: dict[str, dict] = {
     # DRAIN LIFE FAMILY -- 2 tiers
     # ==================================================================
     'drain_life_spell': {
-        'name': 'Drain Life', 'effect': 'drain_life_spell', 'power': '5d6+2',
+        'name': 'Drain Life', 'effect': 'drain_life_spell', 'power': '4d6+1',
         'mp_cost': 6, 'tier': 2, 'quiz_tier': 2, 'needs_target': True,
         'spell_family': 'drain_life',
-        'desc': 'Lay hands on a foe beside you and steal 5d6+2 life -- it is hurt, you heal the same.',
+        'desc': 'Lay hands on a foe beside you and steal 4d6+1 life -- it is hurt, you heal the same.',
     },
     'soul_drain_spell': {
-        'name': 'Soul Drain', 'effect': 'drain_life_spell', 'power': '9d8+3',
+        'name': 'Soul Drain', 'effect': 'drain_life_spell', 'power': '7d8+1',
         'mp_cost': 15, 'tier': 4, 'quiz_tier': 4, 'needs_target': True,
         'spell_family': 'drain_life',
-        'desc': 'Hold a creature beside you and rip 9d8+3 life from it into your own body.',
+        'desc': 'Hold a creature beside you and rip 7d8+1 life from it into your own body.',
     },
 
     # ==================================================================

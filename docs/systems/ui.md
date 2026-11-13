@@ -519,7 +519,7 @@ Returns early on `sleeping` / `paralyzed` (turn passes).
 
 | Key | Action |
 |---|---|
-| `.` | wait / meditate (+1 MP if no adjacent monsters) |
+| `.` | wait / meditate (+1 MP every 8 waits with no monster beside you, up to the floor's quiet: half of max MP, more with Intelligence, `floor_curve.meditation_share`) |
 | `g` / `,` | pickup |
 | `e` | equip menu (`Shift+E`: the Loadouts, three saved kits) |
 | `s` | swap the weapon in the hand with the one At Your Back, one turn (`game_dressing._swap_weapons`) |
