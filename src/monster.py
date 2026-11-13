@@ -519,6 +519,23 @@ class Monster:
         self.quarrelsome: bool = bool(defn.get('quarrelsome', False))
         self.quarrels_when_struck_by_thrown: int = int(
             defn.get('quarrels_when_struck_by_thrown', 0) or 0)
+        # Wary (data 'wary': Old Nickel, who wears the Bloomleaf Cloak): he
+        # does not start the fight. He watches the hero, keeps his distance
+        # inside his own room (`_wary_home`, set where he is placed), warns
+        # once, and fights only when provoked: the hero comes beside him,
+        # corners him, or strikes first (_wary_turn). Keys: 'radius' (the
+        # warning), 'keep' (how close before he backs off), 'warn', and
+        # 'provoked' {'struck', 'cornered', 'close'}: the lines, said by the
+        # game (`_wary_line`).
+        self.wary = defn.get('wary') or None
+        self._provoked: bool = False
+        self._wary_warned: bool = False
+        self._wary_home = None
+        self._wary_line: str = ''
+        # What the eye sees of him at first sight, whatever the hero knows of
+        # the kind ("It wears a cloak of broad green leaves..."): a sight, not
+        # lore (Game._maybe_tell, Observe).
+        self.sight_sign: str = str(defn.get('sight_sign', '') or '')
 
     # Backward compat: old pickled monsters may lack newer attributes
     _DEFAULTS = {
@@ -570,6 +587,8 @@ class Monster:
         'splits': None, '_pending_splits': 0, '_incoming_forms': None,
         'weighs_heart': False, 'fearless': False,
         'quarrelsome': False, 'quarrels_when_struck_by_thrown': 0,
+        'wary': None, '_provoked': False, '_wary_warned': False, '_wary_home': None,
+        '_wary_line': '', 'sight_sign': '',
         # Footprint default — every saved Monster from before the
         # multi-tile feature gets (1, 1) automatically. Live Monster
         # instances set this in __init__; pickled instances inherit it
@@ -1824,6 +1843,10 @@ class Monster:
             # Rooted, so it cannot wander off; charmed, it still holds its blow.
             return False
 
+        # --- Wary (data 'wary'): he will not start the fight ---------------
+        if self.wary and not self._provoked:
+            return self._wary_turn(player, dungeon, all_monsters, extra_occupied)
+
         # --- A thief with a haul runs (src/theft.py); cornered, it fights ---
         if self.__dict__.get('stolen_gold') or self.__dict__.get('stolen_items'):
             self._aware = True
@@ -2254,6 +2277,74 @@ class Monster:
                     and self._can_move_to(dungeon, nx, ny)):
                 self.x, self.y = nx, ny
                 return
+
+    # --- Wary: the one who will not start the fight ---------------------------
+
+    def _wary_turn(self, player, dungeon, all_monsters, extra_occupied) -> bool:
+        """A wary creature's turn while unprovoked (see ``wary`` in __init__).
+        True only when he has just been provoked with the hero beside him:
+        the caller then strikes."""
+        w = self.wary or {}
+        if self.__dict__.get('_struck'):
+            return self._provoke('struck', player, dungeon)
+        if self._adjacent_to(player):
+            return self._provoke('close', player, dungeon)
+        dist = max(abs(self.x - player.x), abs(self.y - player.y))
+        import senses as _senses
+        if dist > self.perception_range or not _senses.clear_view(
+                self.x, self.y, player.x, player.y, dungeon):
+            return False                     # he stays by his iron and watches the dark
+        self._aware = True
+        if not self._wary_warned and dist <= int(w.get('radius', 5)):
+            self._wary_warned = True
+            self._wary_line = str(w.get('warn', '') or '')
+        if dist <= int(w.get('keep', 3)):
+            if not self._wary_step_away(player, dungeon, all_monsters, extra_occupied) and dist <= 2:
+                return self._provoke('cornered', player, dungeon)
+        return False
+
+    def _provoke(self, why: str, player, dungeon) -> bool:
+        """Provoked ('struck', 'cornered' or 'close'): from now on he fights
+        like any foe of his kind. True when the hero is beside him."""
+        self._provoked = True
+        import senses as _senses
+        _senses.rouse(self, player.x, player.y)
+        self._tracking = True
+        lines = (self.wary or {}).get('provoked') or {}
+        line = lines.get(why, '') if isinstance(lines, dict) else str(lines)
+        if line:
+            self._wary_line = str(line)
+        return self._adjacent_to(player)
+
+    def _wary_step_away(self, player, dungeon, all_monsters, extra_occupied) -> bool:
+        """One step that takes him farther from the hero, never out of his
+        own room (`_wary_home`, (x0, y0, x1, y1) inclusive). False when no
+        such step exists: he is cornered."""
+        from geom import all_occupied_tiles
+        occupied = all_occupied_tiles(all_monsters, exclude=self)
+        if extra_occupied:
+            occupied |= extra_occupied
+        home = self.__dict__.get('_wary_home')
+        now = max(abs(self.x - player.x), abs(self.y - player.y))
+        best, best_d = None, now
+        for ddx in (-1, 0, 1):
+            for ddy in (-1, 0, 1):
+                if not ddx and not ddy:
+                    continue
+                nx, ny = self.x + ddx, self.y + ddy
+                if (nx, ny) in occupied or (nx, ny) == (player.x, player.y):
+                    continue
+                if home and not (home[0] <= nx <= home[2] and home[1] <= ny <= home[3]):
+                    continue
+                if not self._can_move_to(dungeon, nx, ny):
+                    continue
+                d = max(abs(nx - player.x), abs(ny - player.y))
+                if d > best_d:
+                    best, best_d = (nx, ny), d
+        if best is None:
+            return False
+        self.x, self.y = best
+        return True
 
     def _flee_from(self, player, dungeon, all_monsters, extra_occupied):
         """Move away from player (feared)."""

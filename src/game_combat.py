@@ -1283,6 +1283,9 @@ class CombatMixin:
                         once=f'boss:{monster.kind}')
         # The Green Knight dead keeps no appointment at his chapel (C24).
         self._green_knight_slain(monster)
+        # Old Nickel dead: his deed, and the Bloomleaf Cloak where he fell
+        # if no drop set it down (emberpup_encounter.BloomleafMixin).
+        self._cloak_wearer_slain(monster)
         # Mini-bosses and legends: their death is an event in the run's story.
         # (Only the five gate bosses were ever recorded.)
         if (getattr(monster, 'is_mini_boss', False) and not story_key
@@ -2127,6 +2130,8 @@ class CombatMixin:
                     monster, '_npc_encounter_tag', None) and not getattr(
                     monster, '_flavor_encounter_tag', None):
                 self.add_message(_senses.status_line(monster), 'info')
+                if getattr(monster, 'sight_sign', ''):
+                    self.add_message(_senses._fill(monster, monster.sight_sign), 'info')
                 if _level >= _fl.KNOWN and _senses.senses_line(monster):
                     self.add_message(_senses.senses_line(monster), 'info')
                 # What it can do, told as far as the hero knows it: the sign
@@ -2829,6 +2834,11 @@ class CombatMixin:
         if level <= was:
             return
         told[kind] = level
+        # What the eye sees of it (a monster's `sight_sign`: Old Nickel's
+        # leaf cloak), said the first time whatever the hero knows of it.
+        if was < family_lore.UNKNOWN and getattr(m, 'sight_sign', ''):
+            import senses as _senses
+            self.add_message(_senses._fill(m, m.sight_sign), 'warning')
         keys = tells.abilities(m)
         if not keys:
             return
@@ -3355,6 +3365,12 @@ class CombatMixin:
                 if (m.kind == 'fafnir_dragon' and not m._adjacent_to(self.player)):
                     self._scorch_line(m.x, m.y, self.player.x, self.player.y)
             self._say_sense_lines(m)
+            # A wary creature's warning, or the line as he turns to fight
+            # (Monster.wary: Old Nickel).
+            _wary_line = m.__dict__.pop('_wary_line', '')
+            if _wary_line and self._sees_monster(m):
+                import senses as _senses_w
+                self.add_message(_senses_w._fill(m, _wary_line), 'danger' if m._provoked else 'warning')
             # Asterion walking through a wall leaves it cracked and dusty for
             # a few turns: where he went can be read (slice 6).
             if (getattr(m, 'can_phase_walls', False) and m.alive
@@ -4292,6 +4308,8 @@ class CombatMixin:
                     or getattr(m, '_npc_encounter_tag', None)
                     or getattr(m, '_flavor_encounter_tag', None)
                     or getattr(m, '_is_unicorn', False)
+                    # a wary one (Old Nickel) strikes no one until provoked
+                    or (getattr(m, 'wary', None) and not getattr(m, '_provoked', False))
                     or any(m.has_effect(e) for e in ('sleeping', 'paralyzed', 'stunned', 'frozen',
                                                      'feared', 'charmed'))):
                 continue
@@ -4327,7 +4345,14 @@ class CombatMixin:
                         _atk = random.choice(m.attacks)
                         pet_dmg = max(1, _dice_roll(_atk['damage']))
                     else:
+                        _atk = m.attacks[0] if m.attacks else {}
                         pet_dmg = max(1, _dice_roll(m.attacks[0]['damage']) // 2) if m.attacks else 1
+                    # A pet's line weakness (pet_system.harm_taken): cold on
+                    # a fire lizard, but not on the Emberpup in his leaf cloak.
+                    _pet_weak = False
+                    if not escorts:
+                        from pet_system import harm_taken as _harm_taken
+                        pet_dmg, _pet_weak = _harm_taken(pet, pet_dmg, (_atk or {}).get('type'))
                     # Leggings of Enkidu (wild_friend): pets take less damage
                     # — "the wild man stands beside his friend." Mathematically
                     # equivalent to a max-HP buff without touching the curve.
@@ -4345,7 +4370,8 @@ class CombatMixin:
                     elif pet.alive and _seen:
                         # A pet's wounds were silent, so pets looked untouchable.
                         self.add_message(f"{the_name(m)} {'hits' if full else 'clips'} "
-                                         f"{pet.name}. ({pet_dmg} damage)", 'warning')
+                                         f"{pet.name}. ({pet_dmg} damage)"
+                                         + (" The cold bites deep." if _pet_weak else ''), 'warning')
                     if not pet.alive:
                         slain.append((pet, m))
                         if escorts:

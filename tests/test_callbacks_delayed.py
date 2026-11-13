@@ -330,6 +330,8 @@ def test_an_oath_past_its_due_floor_lapses_for_no_karma():
     _go(g, 6)
     assert deeds.oath_status(g._deeds, 'fx_vow') == 'lapsed'
     assert deeds.count(g._deeds, tag='vice:lapsed') == 1 and g.karma == k
+    # Said in the log, not only the Journal (winning-build plan 3.8b).
+    assert any(str(e[0]) == "Your promise to Brother Tuck has run out." for e in g.msg_log.entries)
     assert any(e['kind'] == 'oath' and 'Brother Tuck' in e['text'] for e in g._chronicle)
 
 

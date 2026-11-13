@@ -385,6 +385,15 @@ class RoadMixin:
                     return True
         return False
 
+    @staticmethod
+    def _lapse_notice(o: dict) -> str:
+        """The log line when an oath runs out: it used to change silently,
+        with only a Journal entry (winning-build plan 3.8b)."""
+        if o.get('to'):
+            from naming import proper_name
+            return f"Your promise to {proper_name(o['to'])} has run out."
+        return "A promise you made has run out."
+
     def _lapse_oath_now(self, o: dict):
         """Lapse one open oath, with its Journal line (as at a due floor)."""
         import chronicle
@@ -393,6 +402,7 @@ class RoadMixin:
         floor, _d, block, turn = self._deed_where()
         if not deeds.lapse_oath(reg, o['id'], floor=floor, block=block, turn=turn):
             return
+        self.add_message(self._lapse_notice(o), 'warning')
         line = o.get('lapse_chronicle')
         if not line and o.get('to'):
             from naming import proper_name
@@ -459,6 +469,7 @@ class RoadMixin:
             if o.get('lapse_mode') == 'callback':
                 continue        # its callback, or a late keep, settles it
             if deeds.lapse_oath(reg, o['id'], floor=floor, block=block, turn=turn):
+                self.add_message(self._lapse_notice(o), 'warning')
                 line = o.get('lapse_chronicle')
                 if not line and o.get('to'):
                     from naming import proper_name

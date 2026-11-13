@@ -938,8 +938,11 @@ principled, careful and faithful all run, not for being kind
 Outside encounters, karma moves through the Penitent's Blade
 (`kill_count_karma_adjust`, +1 per N kills, only while karma < 0, never
 above 0), the Ring of Gyges (-2 for striking an innocent while
-invisible) and the Emberpup (-2 for attacking it; feeding it gives
-nothing); all go through `karma.adjust` (§1.1).
+invisible) and the Emberpup (-1 for attacking him; feeding him gives
+nothing); all go through `karma.adjust` (§1.1). Killing Old Nickel, the
+greedy kobold who wears the Bloomleaf Cloak (`src/emberpup_encounter.py` (BloomleafMixin)), moves
+nothing: he is no innocent (no `vice:cruelty`); the register notes
+`slew.old_nickel`.
 
 ---
 

@@ -101,6 +101,7 @@ PICKS = {
     'hair_shirt_of_becket': ('the_hair_shirt', "The enchantment is named for it: the monks found the coarse hair shirt Becket wore unseen under his archbishop's robes."),
     'shirt_of_aslaug': ('vigor', "Aslaug's shirt kept blades from biting Ragnar and the snakes of Aella's pit from touching him until it was pulled off; Vigor turns aside poison and shrugs off poison and bleeding."),
     'seamless_tunic': ('vigor', 'Four soldiers agreed that the seamless tunic should not be torn but stay whole; Vigor keeps a body whole, shrugging off bleeding, disease and weakness.'),
+    'bloomleaf_cloak': ('vapourward', "A Bloomsaur's leaves are waxy and cupped so the rain runs off them in beads; the cloak that turns the drip of the deep shafts turns aside spray. Its own power is that nothing worn under it rusts (special_properties.rustproof_wearer). A quest piece: tier II, its own."),
 }
 
 
