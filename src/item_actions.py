@@ -10,6 +10,8 @@ Both screens act on ONE selected item with the same keys:
     D  Drop. A worn item is unequipped first, then dropped.
     I  Identify (one philosophy question; needs the Philosopher's Shard,
        exactly like the I menu).
+    A  Apply: work a coating into the weapon in the hand, or put the
+       earplugs in or take them out (game_arsenal.py; one turn, no quiz).
     X  Read the item's lore.
 
 Every action goes through the game's own paths (``_equip_item``,
@@ -47,8 +49,8 @@ _TRANSIT_STATES = frozenset((
 ))
 
 # Keys, in the order the screens show them.
-ACTION_KEYS = (('equip', 'E'), ('ready', 'R'), ('drop', 'D'), ('identify', 'I'),
-               ('lore', 'X'))
+ACTION_KEYS = (('equip', 'E'), ('ready', 'R'), ('apply', 'A'), ('drop', 'D'),
+               ('identify', 'I'), ('lore', 'X'))
 
 
 class ItemActionsMixin:
@@ -185,6 +187,12 @@ class ItemActionsMixin:
             add('ready', 'Unready')
         elif melee and where == 'pack':
             add('ready', 'Ready')
+        # A -- Apply: a coating onto the weapon in the hand, the earplugs in
+        # or out (game_arsenal._apply_item).
+        if where == 'pack':
+            _label = self._apply_label(item)
+            if _label:
+                add('apply', _label, self._apply_block(item))
         # D -- Drop
         if where in ('pack', 'back'):
             add('drop', 'Drop')
@@ -239,6 +247,8 @@ class ItemActionsMixin:
                 self._unready_weapon()
             else:
                 self._ready_weapon(item)
+        elif action_id == 'apply':
+            self._apply_item(item)
         elif action_id == 'drop':
             self._item_do_drop(item, where)
         elif action_id == 'identify':

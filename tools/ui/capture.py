@@ -1652,6 +1652,51 @@ def _(g):
     press(g, pygame.K_2, '2')
 
 
+def _arsenal_pack(g):
+    """Every coating and flask in the pack, two of each, and a steel mace in
+    the hand (slice 5, coatings.py)."""
+    from items import instantiate_weapon, make_item_by_id
+    import coatings
+    for fid in coatings.flask_defs():
+        it = make_item_by_id('flask', fid)
+        if it is not None:
+            it.count = 2
+            g.player.inventory.append(it)
+    if g.player.weapon is None:
+        g.player.weapon = instantiate_weapon('mace', 'steel')
+
+
+@scene('menu_coat', 'Menus', 'Shift+C: coat the weapon in your hand, every coating in the pack.',
+       expect='quaff_menu', key=True)
+def _(g):
+    _arsenal_pack(g)
+    g.handle_event(key_event(pygame.K_c, 'C', pygame.KMOD_SHIFT))
+
+
+@scene('menu_throw_flasks', 'Menus', 'T with the flasks in the pack: the Flasks tab.',
+       expect='throw_menu')
+def _(g):
+    _arsenal_pack(g)
+    press(g, pygame.K_t, 't')
+    for _ in range(len(g._THROW_TABS)):
+        if g._THROW_TABS[g._throw_tab][0] == 'Flasks':
+            break
+        press(g, pygame.K_RIGHT)
+
+
+@scene('play_arsenal_chips', 'Play', 'Guard held, silver dust on the mace, wax in the ears: '
+       'the EFFECTS chips.', expect='player')
+def _(g):
+    from items import make_item_by_id
+    import coatings
+    _arsenal_pack(g)
+    g.player.stance = 'guard'
+    dust = next(i for i in g.player.inventory if getattr(i, 'id', '') == 'silver_dust')
+    coatings.apply(g.player, dust)
+    g.player.inventory.append(make_item_by_id('accessory', 'beeswax_earplugs'))
+    g.player.ears_stopped = True
+
+
 @scene('menu_loadouts_rename', 'Menus', 'Shift+E, 3, N: naming the third kit.',
        expect='loadouts')
 def _(g):

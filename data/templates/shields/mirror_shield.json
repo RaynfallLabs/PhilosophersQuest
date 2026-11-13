@@ -1,0 +1,24 @@
+{
+  "id": "mirror_shield",
+  "name": "mirror shield",
+  "category": "shield",
+  "armor_class_tier": "light",
+  "base_ac_value": 1,
+  "spawn_bell": [
+    30,
+    22,
+    6,
+    0.35
+  ],
+  "_design_note": "A named counter (src/counters.py, winning-build plan 3.3): a gaze slides off it, no damage and no rider. Its price is the AC a kite or tower shield would give. Metal only, polished. The fourth bell number is its height beside the other shields (gear.template_weight): rarer than a kite shield at its peak.",
+  "base_weight_lb": 6.0,
+  "compatible_material_classes": [
+    "metal",
+    "rare_metal",
+    "magical_metal"
+  ],
+  "counters": [
+    "gaze"
+  ],
+  "lore_template": "A round {material_name} shield with no boss and no device, its face polished until it shows the room behind you like still water. Perseus walked backward to the sleeping Gorgon watching her in such a shield, and never once met her eyes. It turns a gaze, not a blade: it is thinner than a war shield."
+}

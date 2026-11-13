@@ -14,22 +14,24 @@
     "gaze_paralyze": {
       "sign": "Something about the eyes of {the} makes you want to look away.",
       "does": "Its gaze can hold you where you stand, from across a room.",
-      "counter": "Keep a wall or a pillar between you. Eyes that cannot see are safe from it, and so is a hero behind the Aegis of Athena."
+      "counter": "Keep a wall or a pillar between you. Eyes that cannot see are safe from it, and so is a hero who watches it in a mirror shield, as Perseus did."
     },
     "paralyzed": {
       "sign": "{The} moves slowly and surely, like a thing that never has to chase its prey.",
       "does": "It can hold you still where you stand.",
-      "counter": "Do not let it reach you: fight it from a distance."
+      "counter": "Do not let it reach you: fight it from a distance. If it is a gaze that holds you, a mirror shield turns it.",
+      "counter_far": "It can reach you from across a room, but only where it can see you: keep stone between you until you can close in. If it is a gaze that holds you, a mirror shield turns it."
     },
     "confused": {
       "sign": "Looking at {the} too long makes the room tilt.",
       "does": "It can scramble your thoughts until you cannot think straight.",
-      "counter": "Keep your distance, or end it fast."
+      "counter": "Keep your distance, or end it fast. Wax in your ears stops a scream that does it; cold iron stops a fairy's glamour.",
+      "counter_far": "It can reach you from across a room, but only where it can see you: keep stone between you until you can close in. Wax in your ears stops a scream that does it; cold iron stops a fairy's glamour."
     },
     "sleeping": {
       "sign": "Just watching {the} makes your eyelids heavy.",
       "does": "It can put you to sleep where you stand.",
-      "counter": "Never fight it with others close by."
+      "counter": "Never fight it with others close by. Wax in your ears stops a song that does it, and cold iron a fairy's."
     },
     "frozen": {
       "sign": "Frost crackles round {the}.",
@@ -44,7 +46,7 @@
     "feared": {
       "sign": "Looking at {the} makes your stomach drop.",
       "does": "It can break your nerve and send you running.",
-      "counter": "Know where you would run before you fight it."
+      "counter": "Know where you would run before you fight it. If it is a voice that does it, wax in your ears will stop it."
     },
     "blinded": {
       "sign": "Everything about {the} seems aimed at your eyes.",

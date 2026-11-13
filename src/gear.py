@@ -102,17 +102,20 @@ def weight_class_weight(cls: str, floor: int) -> float:
 
 def template_weight(template: dict, floor: int) -> float:
     """How likely this template is on `floor`. Body armour and shields carry
-    their own bell (`spawn_bell`: [peak, spread, first floor]), so each one
+    their own bell (`spawn_bell`: [peak, spread, first floor, height?]), so each one
     arrives in its turn down the whole run, padded to full plate, buckler to
     tower; every other template goes by its weight class's bell."""
     bell = (template or {}).get('spawn_bell')
     if not bell:
         return weight_class_weight(weight_class(template), floor)
-    peak, spread, first = bell
+    # An optional fourth number is the template's height beside the others
+    # (the mirror shield, a named counter, is rarer than a kite shield).
+    peak, spread, first = bell[:3]
+    height = float(bell[3]) if len(bell) > 3 else 1.0
     f = int(floor)
     if f < first:
         return 0.0
-    return math.exp(-((f - peak) ** 2) / (2 * spread ** 2))
+    return height * math.exp(-((f - peak) ** 2) / (2 * spread ** 2))
 
 
 def pick_template(options, floor: int, rng):

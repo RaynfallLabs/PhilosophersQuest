@@ -647,7 +647,7 @@ def test_the_throw_menu_offers_every_sphere_bound_or_not():
     g._open_throw_menu()
     listed = [i for i in g.throw_menu_items if is_soul_sphere(i)]
     assert sorted(i.id for i in listed) == sorted(SIX + ('soul_sphere',))
-    other = g._THROW_TABS[2][1]
+    other = dict(g._THROW_TABS)['Other']
     assert all(other(i) for i in listed)                 # under "Other"
 
 

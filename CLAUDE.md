@@ -94,6 +94,10 @@ src/
   game_dressing.py    - DressingMixin: donning time, the weapon At Your Back (S), Loadouts (Shift+E)
   busy.py             - Busy for N turns: a multi-turn action, stopped by a foe in view or a blow
   loadouts.py         - The three saved kits: names, slots, defaults
+  coatings.py         - Coatings (silver dust, holy water, fire oil...) on the wielded weapon; thrown flasks; Kit Sense's tool hook
+  stance.py           - Press or Guard (Shift+S): damage against AC; the two-hander's parry with no shield
+  counters.py         - Named counters: the mirror shield turns a gaze, wax stops a voice, cold iron fey glamour
+  game_arsenal.py     - ArsenalMixin: coat (Shift+C, Kit Apply), throw a flask, change stance, the earplugs, QA (Shift+T)
   chain_equip.py      - Chain-equip for lore-rich legendary uniques
   chain_passives.py   - Chain-equip passive flag lookups and wiring
   armor_procs.py      - Flat-armour proc registry and per-floor charges

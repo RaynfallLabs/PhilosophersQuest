@@ -314,7 +314,7 @@ class InputMixin:
             # gear can be dropped or swapped) are actions too. They skipped
             # the check in _player_input, so a paralysed hero could flee
             # down the stairs. Help (?) only reads, and stays open.
-            if event.unicode in ('>', '<', '@', 'P', 'E') and self._helpless_turn():
+            if event.unicode in ('>', '<', '@', 'P', 'E', 'S', 'C') and self._helpless_turn():
                 return True
             # Keys checked by unicode to handle shift-modified chars
             if event.unicode == '>':
@@ -342,6 +342,21 @@ class InputMixin:
                 # Shift+E: the Loadouts, three saved kits (lowercase e is
                 # the equip menu; game_dressing.py).
                 self._open_loadouts()
+                return True
+            if event.unicode == 'S':
+                # Shift+S: Press or Guard, the next stance, one turn (lowercase
+                # s swaps weapons; stance.py, game_arsenal.py).
+                self._cycle_stance()
+                return True
+            if event.unicode == 'C':
+                # Shift+C: coat the weapon in your hand from the pack
+                # (lowercase c cooks; coatings.py, game_arsenal.py).
+                self._open_coat_menu()
+                return True
+            if event.unicode == 'T' and getattr(self.player, 'qa_tools', False):
+                # Titivillus QA build: every coating and flask, the named
+                # counters and a two-hander into the pack (game_arsenal).
+                self._qa_arsenal_sampler()
                 return True
             if event.unicode == 'I' and getattr(self.player, 'qa_tools', False):
                 # Titivillus QA build: toggle immortality. No quiz, no Journal entry.
@@ -1088,6 +1103,7 @@ class InputMixin:
         shortcut_actions = {
             pygame.K_e: 'equip',
             pygame.K_r: 'ready',
+            pygame.K_a: 'apply',
             pygame.K_u: 'unequip',
             pygame.K_i: 'identify',
             pygame.K_x: 'lore',

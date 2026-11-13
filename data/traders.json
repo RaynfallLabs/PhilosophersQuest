@@ -78,17 +78,19 @@
   },
 
   "counters": {
-    "_doc": "Stock that knows what's below (winning build 3.5, Brandon 2026-11-13: \"the dungeon needs to SUPPORT this through the merchants and altars\"). src/domain_counters.py reads what spawns on the floors at and just below a stall ('span' floors past it), at run time, and ranks what those kinds are weak to ('weak': a form, a substance and holy are measured through combat.weapon_type_multiplier on a probe weapon; an element by the kind's own weaknesses) and what they hurt with ('guard': the type of their attacks). Each trader sets out up to 'per_stall' counters: the first offer HIS line can supply for the commonest weakness, then a guard for the commonest attack element if it touches at least 'guard_min_share' of what walks below. A gear counter (whose use shows on it) is marked as set out for what walks below; a wand, potion or book counter is not, so nothing is identified. 'foes' words the family most of the kinds belong to; his 'counter' line says it when the stall opens.",
+    "_doc": "Stock that knows what's below (winning build 3.5, Brandon 2026-11-13: \"the dungeon needs to SUPPORT this through the merchants and altars\"). src/domain_counters.py reads what spawns on the floors at and just below a stall ('span' floors past it), at run time, and ranks what those kinds are weak to ('weak': a form, a substance and holy are measured through combat.weapon_type_multiplier on a probe weapon; an element by the kind's own weaknesses) and what they hurt with ('guard': the type of their attacks). Each trader sets out up to 'per_stall' counters: the first offer HIS line can supply for the commonest weakness, then a guard for the commonest attack element if it touches at least 'guard_min_share' of what walks below (or the need's own 'min_share'). The named counters (slice 5, src/counters.py) are guards for a way of attacking rather than an element: 'delivery' is how the attacks land (gaze, voice; 'riders': only one that carries an effect), 'families'/'tags' with 'effects' a family's glamour. A gear counter (whose use shows on it) is marked as set out for what walks below; a wand, potion or book counter is not, so nothing is identified. 'foes' words the family most of the kinds belong to; his 'counter' line says it when the stall opens.",
     "span": 4,
     "per_stall": 2,
     "guard_min_share": 0.1,
     "weak": {
       "blunt":  {"probe": {"forms": ["blunt"]}, "take": "something heavy", "offers": [{"gear": "weapon", "form": "blunt"}]},
-      "silver": {"probe": {"material": "silver"}, "take": "silver", "offers": [{"gear": "weapon", "material": "silver"}]},
+      "silver": {"probe": {"material": "silver"}, "take": "silver", "offers": [{"gear": "weapon", "material": "silver"}, {"class": "flask", "ids": ["silver_dust"]}]},
       "cold_iron": {"probe": {"material": "cold_iron"}, "take": "cold iron", "offers": [{"gear": "weapon", "material": "cold_iron"}]},
-      "holy":   {"probe": {"blessed": true}, "take": "something holy", "offers": [{"class": "wand", "effects": ["turn_undead"]}, {"gear": "weapon", "blessed": true}]},
-      "fire":   {"probe": {"element": "fire"}, "take": "fire", "offers": [{"class": "wand", "effects": ["fire_bolt"]}, {"class": "spellbook", "spells": ["fire_spark_spell", "fire_bolt_spell", "fireball_spell", "cataclysm_spell"]}]},
-      "cold":   {"probe": {"element": "cold"}, "take": "frost", "offers": [{"class": "wand", "effects": ["cold_bolt"]}, {"class": "spellbook", "spells": ["frost_touch_spell", "cold_bolt_spell", "ice_storm_spell", "cone_of_cold_spell"]}]},
+      "holy":   {"probe": {"blessed": true}, "take": "something holy", "offers": [{"class": "wand", "effects": ["turn_undead"]}, {"gear": "weapon", "blessed": true}, {"class": "flask", "ids": ["flask_of_holy_water", "water_of_siloam", "water_of_life"]}]},
+      "fire":   {"probe": {"element": "fire"}, "take": "fire", "offers": [{"class": "wand", "effects": ["fire_bolt"]}, {"class": "spellbook", "spells": ["fire_spark_spell", "fire_bolt_spell", "fireball_spell", "cataclysm_spell"]}, {"class": "flask", "ids": ["flask_of_fire_oil", "greek_fire", "medeas_fire"]}]},
+      "cold":   {"probe": {"element": "cold"}, "take": "frost", "offers": [{"class": "wand", "effects": ["cold_bolt"]}, {"class": "spellbook", "spells": ["frost_touch_spell", "cold_bolt_spell", "ice_storm_spell", "cone_of_cold_spell"]}, {"class": "flask", "ids": ["frost_salts"]}]},
+      "acid":   {"probe": {"element": "acid"}, "take": "acid", "offers": [{"class": "flask", "ids": ["flask_of_acid", "aqua_regia", "alkahest"]}]},
+      "poison": {"probe": {"element": "poison"}, "take": "venom", "offers": [{"class": "flask", "ids": ["viper_venom"]}]},
       "lightning": {"probe": {"element": "lightning"}, "take": "lightning", "offers": [{"class": "wand", "effects": ["lightning_bolt"]}, {"class": "spellbook", "spells": ["spark_spell", "lightning_bolt_spell", "chain_lightning_spell"]}]},
       "pierce": {"probe": {"forms": ["pierce"]}, "take": "a point", "offers": [{"gear": "weapon", "form": "pierce"}]},
       "slash":  {"probe": {"forms": ["slash"]}, "take": "an edge", "offers": [{"gear": "weapon", "form": "slash"}]}
@@ -97,7 +99,10 @@
       "fire":      {"foes": "fire breathes", "take": "something against fire", "offers": [{"gear": "armor", "slot": "cloak", "lining": "fire"}, {"class": "potion", "effects": ["fire_resist"]}]},
       "cold":      {"foes": "the frost bites", "take": "something against the cold", "offers": [{"gear": "armor", "slot": "cloak", "lining": "cold"}, {"class": "potion", "effects": ["cold_resist"]}]},
       "lightning": {"foes": "lightning walks", "take": "something against lightning", "offers": [{"gear": "armor", "slot": "cloak", "lining": "lightning"}, {"class": "potion", "effects": ["shock_resist"]}]},
-      "poison":    {"foes": "poison drips from every fang", "take": "something against poison", "offers": [{"gear": "armor", "slot": "shirt", "lining": "poison"}, {"class": "potion", "effects": ["cure_poison"]}]}
+      "poison":    {"foes": "poison drips from every fang", "take": "something against poison", "offers": [{"gear": "armor", "slot": "shirt", "lining": "poison"}, {"class": "potion", "effects": ["cure_poison"]}]},
+      "gaze":      {"delivery": "gaze", "min_share": 0.04, "foes": "eyes that turn men to stone are watching", "take": "a mirror shield", "offers": [{"gear": "shield", "template": "mirror_shield"}]},
+      "voice":     {"delivery": "voice", "riders": true, "min_share": 0.05, "foes": "things wail and sing in the dark", "take": "wax for your ears", "offers": [{"class": "accessory", "ids": ["beeswax_earplugs"]}]},
+      "fey_glamour": {"families": ["fair_folk"], "tags": ["fey"], "effects": ["confused", "charmed", "sleeping", "hallucinating"], "min_share": 0.04, "foes": "the Fair Folk dance", "take": "cold iron", "offers": [{"class": "accessory", "ids": ["cold_iron_charm"]}]}
     },
     "foes": {
       "demons": "the demons hunt",
@@ -174,7 +179,7 @@
       "stock": [
         {"class": "potion", "picks": 2}, {"class": "scroll", "picks": 2},
         {"class": "accessory", "picks": 2}, {"class": "wand", "picks": 2},
-        {"class": "ammo", "picks": 2},
+        {"class": "ammo", "picks": 2}, {"class": "flask", "picks": 1},
         {"gear": "weapon", "picks": 2}, {"gear": "armor", "picks": 3}, {"gear": "shield", "picks": 1},
         {"id": "soul_sphere", "cat": "artifact", "chance": 0.25, "floors": [1, 33]},
         {"id": "soul_sphere", "cat": "artifact", "chance": 0.12, "floors": [34, 66]},
@@ -222,13 +227,17 @@
       "stock": [
         {"ids": ["potion_of_healing", "potion_of_cure_poison", "potion_of_cure_disease"], "cat": "potion", "picks": 1},
         {"class": "potion", "picks": 3},
-        {"class": "food", "picks": 2}
+        {"class": "food", "picks": 2},
+        {"class": "flask", "picks": 2},
+        {"id": "beeswax_earplugs", "cat": "accessory", "chance": 0.4}
       ],
-      "stock_size": [[1, 100, 5]],
-      "spread": [["potion"], ["food", "ingredient"]],
+      "_doc_flasks": "Coatings and flasks (slice 5): one is always on her shelf (the spread). Beeswax for the ears now and then, and always when wailing things are below ('counter_classes': a counter, domain_counters).",
+      "counter_classes": ["accessory"],
+      "stock_size": [[1, 100, 6]],
+      "spread": [["potion"], ["food", "ingredient"], ["flask"]],
       "markup": 1.0,
       "purse": 0.6,
-      "buys": ["potion", "food", "ingredient"],
+      "buys": ["potion", "food", "ingredient", "flask"],
       "services": ["cure", "restore", "heal", "trade_in"],
       "lines": {
         "counter": "Below here {foes}, dear. Take {take}, and thank me later.",
@@ -261,8 +270,11 @@
       "lore": "Ulf Brannoc followed a king's army down twenty years ago as its armourer. The army never came back up. Brannoc stayed, to mend whatever does, and he is very good at it. He is less good at small talk.",
       "stock": [
         {"gear": "weapon", "picks": 2}, {"gear": "armor", "picks": 3}, {"gear": "shield", "picks": 1},
-        {"class": "ammo", "picks": 1}
+        {"class": "ammo", "picks": 1},
+        {"id": "cold_iron_charm", "cat": "accessory", "chance": 0.3}
       ],
+      "_doc_counters": "A cold-iron charm now and then, and always when the Fair Folk are below ('counter_classes': a counter, domain_counters; slice 5).",
+      "counter_classes": ["accessory"],
       "stock_size": [[1, 100, 5]],
       "spread": [["weapon"], ["armor"], ["shield", "ammo"]],
       "forms_of_best": 3,
@@ -377,13 +389,13 @@
         {"ids": ["potion_of_healing", "potion_of_extra_healing"], "cat": "potion", "picks": 2},
         {"class": "potion", "picks": 2}, {"class": "food", "picks": 2},
         {"class": "scroll", "picks": 1}, {"class": "ammo", "picks": 1},
-        {"gear": "armor", "picks": 1},
+        {"gear": "armor", "picks": 1}, {"class": "flask", "picks": 2},
         {"id": "soul_sphere", "cat": "artifact", "chance": 0.30, "floors": [1, 33]},
         {"id": "soul_sphere", "cat": "artifact", "chance": 0.10, "floors": [34, 66]},
         {"id": "greater_soul_sphere", "cat": "artifact", "chance": 0.25, "floors": [34, 100]}
       ],
       "stock_size": [[1, 100, 7]],
-      "spread": [["potion"], ["food"], ["armor", "weapon", "shield"], ["scroll", "spellbook"]],
+      "spread": [["potion"], ["food"], ["armor", "weapon", "shield"], ["scroll", "spellbook"], ["flask"]],
       "markup": 1.0,
       "purse": 1.2,
       "buys": "all",

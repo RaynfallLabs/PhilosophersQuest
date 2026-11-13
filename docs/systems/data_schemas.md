@@ -1073,6 +1073,29 @@ recalled hints.
 
 ---
 
+## 14b. `data/arsenal.json` and `data/items/flask.json` (slice 5)
+
+`data/arsenal.json`: `coating` (the lines, `words` per substance, `aliases`),
+`throw` (the lines), `stance` (`order`; per stance `name`, `damage`, `ac`,
+`line`), `parry` (`by_template`, `by_class`, `tier_bonus`, `card`),
+`counters` (`techniques`: per id `delivery` | `riders_of` | `ward`, `carried`,
+`apply`, `deafens`, `line`, `card`; `stop_ears` lines). Read by coatings.py,
+stance.py, counters.py.
+
+`data/items/flask.json` (class `Flask`): `coat` {`substance`, `blows`,
+`rider`?: {`effect`, `chance`, `turns`}}; `throw` {`damage_type`, `damage`,
+`sized_at`, `only_weak`?, `status`?: {`effect`, `turns`}}; `tier`,
+`floorSpawnWeight`, `can_be_cursed`. `damage` must equal
+`round(floor_curve.one_attack(sized_at) / 2)` (tests/test_arsenal_tools.py).
+
+`counters` (any item, or a shield template): technique ids from
+`data/arsenal.json counters.techniques`. `spawn_bell` (body armour and shield
+templates): `[peak, spread, first floor, height?]`. `data/traders.json`: a
+trader's `counter_classes` (classes he sets out only as a stall counter);
+a `counters.guard` need may name `delivery` (+ `riders`), or `families` /
+`tags` with `effects`, and its own `min_share`; a class offer may name `ids`;
+a gear offer may be `{"gear": "shield", "template": ...}`.
+
 ## 15. `data/flavor_encounters.json`
 
 **List, not dict.** 152 entries (Dungeon Alive slice 9, 2026-11-12). Each entry:

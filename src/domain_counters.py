@@ -101,6 +101,36 @@ def _attacks_with(element: str, defn: dict) -> bool:
     return False
 
 
+def _guard_hits(key: str, need: dict, defn: dict) -> bool:
+    """Does a kind written as ``defn`` call for this guard? An element by the
+    type of its attacks; a named counter's technique (slice 5, counters.py)
+    by how they land: a gaze ('delivery': 'gaze', or a Medusa's
+    gaze_paralyze), a voice with a rider ('delivery': 'voice'), or a
+    family's glamour ('families' / 'tags' and the 'effects' it carries)."""
+    dl = need.get('delivery')
+    fams, tags = set(need.get('families') or ()), set(need.get('tags') or ())
+    if not dl and not fams and not tags:
+        return _attacks_with(key, defn)
+    if (fams or tags) and not (str(defn.get('family') or '') in fams
+                               or tags & set(defn.get('tags') or ())):
+        return False
+    if dl == 'gaze' and defn.get('gaze_paralyze'):
+        return True
+    import guards
+    effects = set(need.get('effects') or ())
+    for a in defn.get('attacks') or ():
+        if not isinstance(a, dict):
+            continue
+        if dl and guards.delivery(a) != dl:
+            continue
+        if need.get('riders') and not a.get('effect'):
+            continue
+        if effects and a.get('effect') not in effects:
+            continue
+        return True
+    return False
+
+
 @lru_cache(maxsize=128)
 def needs(level: int) -> tuple:
     """What the floors at and just below ``level`` call for, commonest first:
@@ -126,7 +156,7 @@ def needs(level: int) -> tuple:
             share, fam = 0.0, {}
             for kind, w in weight.items():
                 d = defs[kind]
-                hit = _hits(need, d) if side == 'weak' else _attacks_with(key, d)
+                hit = _hits(need, d) if side == 'weak' else _guard_hits(key, need, d)
                 if hit:
                     share += w
                     f = d.get('family') or ''
@@ -168,6 +198,9 @@ def line_of(defn: dict) -> set:
                 out.add(e[k])
         if 'ids' in e and e.get('cat'):
             out.add(e['cat'])
+    # Classes he sets out only as a counter for what walks below, never as
+    # ordinary stock (Mother Wort's beeswax, Brannoc's cold-iron charm).
+    out |= set(defn.get('counter_classes') or ())
     return out
 
 
@@ -214,6 +247,22 @@ def _make(offer: dict, level: int, rng, best_form: str | None = None):
             w.buc = 'blessed'
             w.buc_known = True              # he says so: "blessed at the shrine"
         return w
+    if gear == 'shield' and offer.get('template'):
+        # A shield of one build in a metal the floor's loot is made of (the
+        # mirror shield, a named counter: counters.py).
+        import gear as _gear
+        from items import _template_then_material, get_template, instantiate_shield, load_materials
+        tpl = get_template('shields', offer['template'])
+        if not tpl:
+            return None
+        chosen = _template_then_material([(offer['template'], tpl)], load_materials('armor'),
+                                         int(level), rng, shield=True)
+        if chosen is None:
+            return None
+        try:
+            return instantiate_shield(chosen[0], chosen[1], level=_gear.roll_level(int(level), rng))
+        except ValueError:
+            return None
     if gear == 'armor':
         from items import pick_random_armor_for_floor
         try:
@@ -227,8 +276,11 @@ def _make(offer: dict, level: int, rng, best_form: str | None = None):
     if cls:
         effects = set(offer.get('effects') or ())
         spells = set(offer.get('spells') or ())
+        ids = set(offer.get('ids') or ())
 
         def ok(i):
+            if ids and str(getattr(i, 'id', '') or '') not in ids:
+                return False
             if effects and str(getattr(i, 'effect', '') or '') not in effects:
                 return False
             if spells and str(getattr(i, 'spell_id', '') or '') not in spells:
@@ -299,7 +351,10 @@ def stall_counters(defn: dict, level: int, rng) -> list:
             break
         if side in sides_done:
             continue
-        if side == 'guard' and share < guard_min:
+        # A need may set its own least share (a named counter's technique
+        # is rarer than an element, and worth naming sooner).
+        need_min = float(((cfg.get(side) or {}).get(key) or {}).get('min_share', guard_min) or 0)
+        if side == 'guard' and share < need_min:
             continue
         take_one(side, key, family)
     if not out and want:

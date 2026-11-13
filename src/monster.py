@@ -1098,6 +1098,11 @@ class Monster:
                 return 0, f"{the_name(self)} gazes at you, but you cannot see its eyes!"
             if _edge_gaze_immune(player, self):
                 return 0, f"{the_name(self)} gazes at you, and you do not meet its eyes."
+            # A mirror shield (counters.py): the gaze slides off it.
+            import counters as _counters
+            _mirror = _counters.blocks_gaze(player, self)
+            if _mirror is not None:
+                return 0, _counters.line(player, _mirror, _counters.GAZE, self)
             if not player.has_effect('sleep_resist'):
                 from status_effects import apply_debuff_with_save
                 dc = min(18, 12 + self.min_level // 7)
@@ -1117,6 +1122,8 @@ class Monster:
             # several tiles away. At range the gaze is her whole turn; next
             # to the player a gaze that fails still leaves her fangs.
             _at_range = not self._adjacent_to(player)
+            import counters as _counters
+            _mirror = _counters.blocks_gaze(player, self)
             # Check player's sight: total blindness negates gaze
             if player.get_sight_radius() == 0:
                 gaze_msg = f"{the_name(self)} locks eyes on you, but you are blind to her gaze!"
@@ -1150,6 +1157,12 @@ class Monster:
                     self.status_effects.get('paralyzed', 0), 2)
                 return 0, (f"{the_name(self)} meets her own eyes in the bronze "
                            f"and stands rigid, snakes and all.")
+            # Any other mirror shield (counters.py): watched in its face, the
+            # gaze cannot take the hero (it is not the Aegis: no reflection).
+            elif _mirror is not None:
+                gaze_msg = _counters.line(player, _mirror, _counters.GAZE, self)
+                if _at_range:
+                    return 0, gaze_msg
             else:
                 from status_effects import apply_debuff_with_save
                 dc = min(18, 12 + self.min_level // 7)
@@ -1162,6 +1175,11 @@ class Monster:
             # Gaze was blocked or reflected — continue to normal attack
             # (but append the gaze message below)
             atk = random.choice(self.attacks)
+            # Behind a mirror shield a second gaze is no blow either (a
+            # floating eye has nothing but its stare): nothing lands.
+            if _mirror is not None and ('gaze' in str(atk.get('name', '')).lower()
+                                        or atk.get('delivery') == 'gaze'):
+                return 0, gaze_msg
             # Fall through to normal damage with gaze_msg prepended.
             # Bug-bash fix aac-#2: this inline path was bypassing all
             # damage-mitigation procs (unskinnable, weakened, summon-weaken,
@@ -1312,6 +1330,13 @@ class Monster:
             if getattr(player.shield, 'id', '') in ('aegis_of_athena', 'greater_aegis_of_athena'):
                 return 0, (f"{the_name(self)} catches her own eyes in the bronze "
                            f"and flinches away.")
+        # A named counter turns any gaze aside, whatever it carries: no
+        # damage and no rider (counters.py: the mirror shield, as Perseus's).
+        if is_gaze or atk.get('delivery') == 'gaze':
+            import counters as _counters
+            _mirror = _counters.blocks_gaze(player, self)
+            if _mirror is not None:
+                return 0, _counters.line(player, _mirror, _counters.GAZE, self)
 
         # Breath/spit/hurl attacks miss player hiding in a pit
         is_breath = any(w in atk_name for w in ('breath', 'spit', 'hurl', 'volley'))
@@ -1675,6 +1700,12 @@ class Monster:
         roll = random.random()
         if roll >= chance:
             return ''
+        # A named counter stops it outright (counters.py): wax in the ears
+        # against a voice, cold iron against the Fair Folk's glamour.
+        import counters as _counters
+        _blocked = _counters.blocks_rider(player, self, atk, effect_id)
+        if _blocked is not None:
+            return " " + _counters.line(player, _blocked[0], _blocked[1], self)
         if roll >= chance * keep_r:
             if piece is not None:
                 from hud_context import item_bare_name

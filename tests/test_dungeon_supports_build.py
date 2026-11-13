@@ -165,8 +165,15 @@ def test_the_counter_tables_name_real_things():
                     assert o['material'] in mats, (key, o)
                 if o.get('lining'):
                     assert o['lining'] in smithing.LINING_ELEMENTS and o['slot'] in smithing.LINING_SLOTS
-    for key in c['guard']:
-        assert key in smithing.LINING_ELEMENTS and c['guard'][key]['foes']
+    import counters
+    for key, g in c['guard'].items():
+        assert g['foes'], key
+        if g.get('delivery') or g.get('families') or g.get('tags'):
+            # A named counter's technique (slice 5, counters.py): a gaze, a
+            # voice, a fairy's glamour, answered by a piece, not a lining.
+            assert counters.technique(key), key
+        else:
+            assert key in smithing.LINING_ELEMENTS, key
     for sub in smithing.INLAY_SUBSTANCES:
         ent = traders.data()['inlays'][sub]
         assert ent['prefix'] and ent['card'] and '{who}' in ent['done'] and '{name}' in ent['done']

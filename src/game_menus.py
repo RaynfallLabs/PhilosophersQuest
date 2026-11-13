@@ -206,6 +206,9 @@ class MenuMixin:
         if not self.quaff_menu_items:
             self.add_message("You have no potions to quaff.", 'info')
             return
+        # The picker also serves Shift+C's coatings (game_arsenal): this
+        # opening is the drink.
+        self._quaff_mode = 'quaff'
         self._quaff_sel = 0
         self.state = STATE_QUAFF_MENU
 
@@ -327,6 +330,10 @@ class MenuMixin:
             idx = self._paged_menu_input(key, self.quaff_menu_items)
         if idx is None or idx >= len(self.quaff_menu_items):
             return
+        if getattr(self, '_quaff_mode', 'quaff') == 'coat':
+            # Shift+C: a coating onto the weapon in the hand (game_arsenal).
+            self._apply_item(self.quaff_menu_items[idx])
+            return
         self.state = STATE_PLAYER
         item = self.quaff_menu_items[idx]
         self.player.remove_from_inventory(item)
@@ -393,13 +400,19 @@ class MenuMixin:
     # ------------------------------------------------------------------
 
     def _open_throw_menu(self):
-        """Open menu to select a potion, throwable weapon, or one of the Soul
+        """Open menu to select a potion, a flask thrown for its damage (oil,
+        holy water, acid: coatings.py), a throwable weapon, or one of the Soul
         Spheres (any of the six, bound or not). A potion that may not be
         thrown (the Draught of Mimir's Well: items.can_be_thrown) is not
         offered."""
         from items import can_be_thrown
+        import coatings as _coatings
         potions = [i for i in self.player.inventory
                    if isinstance(i, Potion) and can_be_thrown(i)]
+        # Flasks thrown for their damage (coatings.py): oil, holy water, acid
+        # (and the holy water foraged at an altar).
+        flasks = [i for i in self.player.inventory
+                  if not isinstance(i, (Potion, Weapon)) and _coatings.throw_spec(i) is not None]
         weapons = [
             i for i in self.player.inventory
             if isinstance(i, Weapon) and self._is_throwable_weapon(i)
@@ -409,7 +422,7 @@ class MenuMixin:
         spheres = [i for i in self.player.inventory
                    if isinstance(i, Artifact)
                    and (is_soul_sphere(i) or i.id == 'unusual_soul_sphere')]
-        self.throw_menu_items = potions + weapons + spheres
+        self.throw_menu_items = potions + flasks + weapons + spheres
         if not self.throw_menu_items:
             self.add_message("You have nothing to throw.", 'info')
             return
@@ -638,7 +651,7 @@ class MenuMixin:
     def _kit_filter_for_tab(self, all_rows, tab_idx: int):
         """Return rows that belong to the given tab index."""
         from items import (Weapon, Armor, Shield, Accessory,
-                           Potion, Scroll, Spellbook, Food, Ingredient, Corpse)
+                           Potion, Flask, Scroll, Spellbook, Food, Ingredient, Corpse)
         slug = self._KIT_TABS[tab_idx][1]
         if slug == 'spells':
             return []  # spells are handled by _kit_collect_spells
@@ -647,7 +660,7 @@ class MenuMixin:
             'armor':       Armor,
             'shields':     Shield,
             'accessories': Accessory,
-            'consumables': (Potion, Scroll, Spellbook, Food, Ingredient, Corpse),
+            'consumables': (Potion, Flask, Scroll, Spellbook, Food, Ingredient, Corpse),
         }
         if slug == 'valuables':
             # Gems, jewellery, old coins and art: treasure (treasure.py).
@@ -735,6 +748,7 @@ class MenuMixin:
     _KIT_ACTION_KEYS = {
         pygame.K_e: 'equip',
         pygame.K_r: 'ready',
+        pygame.K_a: 'apply',
         pygame.K_d: 'drop',
         pygame.K_i: 'identify',
         pygame.K_x: 'lore',

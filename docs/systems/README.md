@@ -99,6 +99,8 @@ the doc wins (and the row is a bug — please update it).
 | "What does chain-v2 do differently from v1?" | [combat.md](combat.md); peak-chain damage, miss = chain 0, wrong = strike-now |
 | "How does a scroll get identified?" | [identify_v3.md](identify_v3.md); one philosophy Q at derived id_tier |
 | "Where does damage math live?" | [combat.md](combat.md); `combat.player_attack`, `_damage_multiplier` |
+| "How do coatings, thrown flasks, Press or Guard and the parry work?" | [combat.md](combat.md) "The arsenal's tools"; `coatings.py`, `stance.py`, `data/arsenal.json` |
+| "What blocks a gaze, a voice or fey glamour?" | [armour.md](armour.md) 6b; `counters.py` (mirror shield, beeswax earplugs, cold-iron charm) |
 | "What statuses exist and how do resists apply?" | [status_effects.md](status_effects.md); `EFFECT_INFO`, `_RESIST_BLOCKS`, `apply_debuff_with_save` |
 | "How do I add a save bonus from an accessory?" | [save_bonus.md](save_bonus.md); `_gear_save_bonus` + `Player.save_bonus_for` |
 | "How do pets gain levels?" | [pets.md](pets.md); `Pet.gain_xp`; a pet's starting level comes from its sphere (`pet_system.hatch_level`) |

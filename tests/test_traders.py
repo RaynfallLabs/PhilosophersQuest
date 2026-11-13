@@ -280,9 +280,16 @@ def test_every_trader_kind_stocks_from_its_own_list():
         # An armourer also racks his best metal in the forms the shelf lacks
         # (winning build 3.5: the mace to match the sword), up to three more.
         extra = int(d.get('forms_of_best', 0) or 0)
+        # ... and the gems and a rare ware come on top of the shelf
+        # (traders._gem_stock, _rare_stock: the Draught of Mimir's Well).
+        extra += sum(1 for i in stock if getattr(i, '_trade_share', None)
+                     or getattr(i, 'item_class', '') == 'treasure')
         assert len(stock) <= max(traders.stock_size(d, lvl), 2) + extra
         classes = {getattr(i, 'item_class', '') for i in stock}
         allowed = {e.get('class') or e.get('gear') or e.get('cat') for e in d['stock']}
+        # A counter for what walks below may be of a class he sets out only
+        # for that (slice 5: Mother Wort's beeswax, Brannoc's cold iron).
+        allowed |= set(d.get('counter_classes') or ())
         assert classes <= allowed, (kind, classes, allowed)
         for it in stock:
             assert getattr(it, 'buc', 'uncursed') != 'cursed'

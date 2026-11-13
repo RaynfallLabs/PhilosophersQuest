@@ -473,6 +473,21 @@ weaknesses in their kit."
   made of) in slash, pierce and blunt, so a kid can buy the mace that
   matches his sword.
 
+**Coatings, flasks and the named counters (slice 5).** The `weak` needs
+offer a coating or flask after the gear and wands (silver dust where the
+shapechangers hunt, holy water where the dead walk, fire oil, frost salts;
+new `acid` and `poison` needs offer acid and venom), so Mother Wort, whose
+line is potions and flasks, now has a counter of her own for most floors.
+The `guard` table gained three named-counter needs, by how attacks land
+rather than their element: `gaze` (a mirror shield, an armourer's), `voice`
+(beeswax earplugs, Mother Wort's) and `fey_glamour` (the cold-iron charm,
+Brannoc's), each with its own `min_share`. `counter_classes` lets a trader
+set out a class only as a counter (Mother Wort's and Brannoc's accessories).
+Stock: Mother Wort keeps a flask (spread, stock 6) and sometimes the
+earplugs; the sutler keeps a flask (spread); Grindle may have one; Brannoc
+sometimes the cold-iron charm. Price: `MERCHANT_SHARE['flask']` 0.15, like a
+potion; the earplugs and charm by `item_worth.json share_by_id`.
+
 ### The Draught of Mimir's Well (D8)
 
 Brandon: "No WIS purchase, possible rare shop appearance?" There is no

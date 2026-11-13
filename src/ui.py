@@ -85,6 +85,24 @@ def carry_color(state: str) -> tuple:
             else FP.WARNING_TEXT if state else FP.SUCCESS_TEXT)
 
 
+# The colours of the arsenal's chips on the effects list (slice 5).
+_ARSENAL_CHIP = {'press': 'DANGER_TEXT_LIGHT', 'guard': 'CYAN_ACCENT',
+                 'coat': 'GOLD_BRIGHT', 'ears': 'WARNING_TEXT'}
+
+
+def arsenal_rows(player) -> list:
+    """[(label, colour, None)] for the sidebar's effects: the stance held
+    (stance.py), the coating on the weapon in the hand and its blows left
+    (coatings.py), the earplugs in (counters.py)."""
+    import coatings
+    import counters
+    import stance
+    out = []
+    for label, kind in stance.hud_rows(player) + coatings.hud_rows(player) + counters.hud_rows(player):
+        out.append((label, getattr(FP, _ARSENAL_CHIP.get(kind, 'BODY_TEXT'), FP.BODY_TEXT), None))
+    return out
+
+
 def log_line_color(msg_type: str, age: int) -> tuple:
     """Colour of a log line of ``msg_type`` that is ``age`` lines older than
     the newest. Older lines blend toward ``LOG_BG`` but never below
@@ -605,6 +623,9 @@ class Sidebar:
             rows.append(("Manifest", FP.PASSIVE_MANIFEST, None))
         if getattr(player, 'amulet_slot', None) and getattr(player.amulet_slot, 'id', '') == 'rands_heart':
             rows.append(("Death Ward", FP.PASSIVE_WARD, None))
+        # The arsenal's tools (slice 5): Press or Guard, the coating on the
+        # weapon in the hand with its blows left, the earplugs in.
+        rows += arsenal_rows(player)
         for eid, val in player.status_effects.items():
             if val == 0:
                 continue
