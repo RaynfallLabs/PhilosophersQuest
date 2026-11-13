@@ -135,6 +135,8 @@ import traders as traders_mod                    # noqa: E402
 import domain_counters as domain_counters_mod    # noqa: E402
 import smithing as smithing_mod                  # noqa: E402
 import rededication as rededication_mod          # noqa: E402
+import coatings as coatings_mod                  # noqa: E402
+from items import Flask                          # noqa: E402
 from spells import LEARNABLE_SPELLS as SPELLS                        # noqa: E402
 from status_effects import DEBUFFS               # noqa: E402
 
@@ -951,6 +953,7 @@ class Run:
         self.scraps = []           # Fenrir's leather scraps carried (5 lb each)
         self.attack_spells = {}    # spell_id -> (mp_cost, power, tier, element, effect)
         self._recall_next = 0      # turn Recall Lore is ready again
+        self.flasks = []           # coatings and thrown flasks carried (slice 5)
         self._give_starting_kit()
 
     def _healed(self, source: str, got) -> None:
@@ -1153,6 +1156,73 @@ class Run:
             return True
         return False
 
+    def _coat_for(self, target) -> None:
+        """tactics=1, between fights: work the coating that meets this kind
+        best into the weapon in hand, if it beats what the blade does now by
+        a quarter and the creature will take more than one blow (one turn,
+        no question: coatings.apply). Known kinds only, or what he has felt."""
+        if not self.knobs.get('tactics') or target is None or not self.flasks:
+            return
+        p = self.p
+        w = p.weapon
+        if w is None or getattr(w, 'requires_ammo', None):
+            return
+        if target.hp <= max(1.0, self._value_vs(w, target)):
+            return
+        if not self._knows(getattr(target, 'kind', '')):
+            return
+        cur = self._mult(w, target)
+        best, best_m = None, cur * 1.25
+        for it in self.flasks:
+            spec = coatings_mod.coat_spec(it)
+            if not spec:
+                continue
+            probe = coatings_mod._Bare(w)
+            probe.__dict__['coating'] = {'substance': spec['substance'], 'blows': 1}
+            m = self._mult(probe, target)
+            if m > best_m:
+                best, best_m = it, m
+        if best is not None:
+            coatings_mod.apply(p, best)
+            self.flasks.remove(best)
+            self.fs['coatings'] = self.fs.get('coatings', 0) + 1
+            self._sync_pack()
+
+    def _throw_flask(self, target) -> bool:
+        """tactics=1, in a fight: throw the flask that hurts this KNOWN kind
+        most if it does more than the swing would. Returns True if thrown."""
+        if not self.knobs.get('tactics') or not self.flasks:
+            return False
+        if not self._knows(getattr(target, 'kind', '')):
+            return False
+        best, best_v = None, 1.1 * self._value_vs(self.p.weapon, target)
+        for it in self.flasks:
+            dmg, dtype = coatings_mod.thrown_damage(it, target)
+            if dmg <= 0:
+                continue
+            v = dmg * combat._damage_multiplier([dtype], target)
+            if v > best_v:
+                best, best_v = it, v
+        if best is None:
+            return False
+        coatings_mod.throw_at(best, target)
+        self.flasks.remove(best)
+        self.fs['flasks_thrown'] = self.fs.get('flasks_thrown', 0) + 1
+        self._sync_pack()
+        return True
+
+    def _set_stance(self, group) -> None:
+        """tactics=1: Press (x1.3, -2 AC) against an ordinary group while he
+        is well; Guard (x0.7, +2 AC) against a named foe once he is hurt;
+        else neither. Changed between fights (it costs a turn in one)."""
+        if not self.knobs.get('tactics'):
+            return
+        p = self.p
+        named = any(is_named(m) for m in group)
+        hpf = p.hp / max(1, p.max_hp)
+        p.stance = ('guard' if named and hpf < 0.5 else
+                    'press' if not named and hpf >= 0.6 else 'neutral')
+
     def _feel(self, target) -> None:
         """After a blow: he felt how this kind of weapon did on this kind."""
         if self.knobs.get('tactics') and self.p.weapon is not None:
@@ -1217,6 +1287,14 @@ class Run:
             except Exception:
                 wares = []
             for ware, _info in wares:
+                if isinstance(ware, Flask):
+                    price = economy_mod.stock_price(ware, floor, float(defn.get('markup', 1.0) or 1.0))
+                    for _ in range(2):
+                        if not self._pay(price, reserve):
+                            break
+                        self.flasks.append(copy.copy(ware))
+                        self.fs['flasks_bought'] = self.fs.get('flasks_bought', 0) + 1
+                    continue
                 if isinstance(ware, Weapon) and getattr(ware, 'requires_ammo', None) is None:
                     price = economy_mod.stock_price(ware, floor, float(defn.get('markup', 1.0) or 1.0))
                     if self.gold - price < reserve:
@@ -1280,7 +1358,7 @@ class Run:
         limit halves the dodge, Stressed over three quarters ends it) that pile
         would have mattered. A player drops or sells what he has outgrown."""
         self.p.inventory = (list(self.arsenal) + list(self.scraps)
-                            + list(self.potions) + list(self.food))
+                            + list(self.potions) + list(self.food) + list(self.flasks))
 
     def _body_value(self, piece) -> float:
         """A body armour as it works on THIS hero (slice 4): the AC it leaves
@@ -1372,6 +1450,9 @@ class Run:
                 for _ in range(n):
                     self.potions.append(item)
                     self.fs['heal_supply'] += self._potion_value(item)
+            return
+        if isinstance(item, Flask):
+            self.flasks.append(item)            # slice 5: coatings and thrown flasks
             return
         if isinstance(item, Food):
             self.food.append(item)
@@ -2171,6 +2252,8 @@ class Run:
         _first = next((m for m in group if is_named(m)), group[0] if group else None)
         self._recall_lore(_first)
         self._tactical_pick(_first, free=True)
+        self._coat_for(_first)
+        self._set_stance(group)
 
         def enter(m, opening: bool):
             """A monster joins the melee; resolve who strikes first."""
@@ -2297,6 +2380,8 @@ class Run:
                         action = 'cast'
                     elif self._tactical_pick(target, free=False):
                         action = 'swap'
+                    elif self._throw_flask(target):
+                        action = 'throw'
                     else:
                         self._player_attack(target, active)
                         self._feel(target)
