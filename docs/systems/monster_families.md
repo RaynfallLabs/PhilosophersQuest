@@ -105,9 +105,9 @@ long enough: knowledge unlocks the technique, performance lands it.
 ## The five tiers
 | Tier | Name | What it does |
 |---|---|---|
-| 1 | Recognise | Every member of the family the hero sees gets its full Bestiary page, O opens it, and the look line names the family. Does NOT pre-identify corpses. |
+| 1 | Recognise | Every member of the family the hero sees gets its Bestiary page, O opens it, and the look line names the family. He is told what each member can do (its tells at KIN, src/tells.py), but not how to beat it: its weaknesses and resistances stay hidden until the kind is studied or the family reaches Lore (2026-11-12, `family_lore.knowledge`). Does NOT pre-identify corpses. |
 | 2 | Forewarned | On reaching a floor, the family's line, if a member the hero could see is here (never an invisible creature, an un-sprung ambusher, a disguised mimic or the Hellmouth's stair, or an ally). At most three lines; past that two and one combined line. |
-| 3 | Lore | The folk defence (wards, mostly). |
+| 3 | Lore | The folk defence (wards, mostly), and every member is fully known: its tells with what to do, and its weaknesses on its page (`full_lore_tier`). |
 | 4 | Hunter | How a hunter takes them. |
 | 5 | Bane | The signature capstone. |
 
@@ -169,7 +169,9 @@ the Journal and the high-score table (`title`) show it.
 ## What the player sees
 - O on a creature: an identified kind opens its full page and the look names the family
   ("You see Ghast (wounded). Restless Dead."); a kind only seen keeps the plain look and
-  "You don't know this creature yet. Study its corpse."
+  "You don't know this creature yet. Study its corpse." A kind known only by its family
+  adds "You know its kind, but not how to beat it. Study its corpse.", and its page hides
+  its weaknesses (see the knowledge levels in docs/systems/monsters.md, Tells).
 - B, Bestiary: every kind met is listed; an unidentified one has a short page (name, art,
   family, "Not yet studied", the progress line) and no stats, attacks or lore. A full page
   carries "Family: ... (studied)" or "(known by its family, not yet studied)". Tab switches

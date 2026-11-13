@@ -1,38 +1,154 @@
 {
-  "_doc": "Tells (Dungeon Alive slice 5; src/tells.py). Brandon: players must pay attention to lore, weaknesses and abilities (stay away from things that confuse; use ranged). A creature that can do something dangerous SHOWS it: the first time in a run that the hero sees a kind, the Chronicler says its worst tell, with what to do about it. Observe (O) says every tell of a creature at any time. Tells come from what the creature really does: an attack 'effect' (data/monsters.json) or one of its flags. 'order' ranks the effects, worst first; 'min_chance' ignores an attack effect rarer than this.",
+  "_doc": "Tells (Dungeon Alive slice 5; known and unknown 2026-11-12; src/tells.py). Brandon: players must pay attention to lore, weaknesses and abilities (stay away from things that confuse; use ranged), and the notes must not give away what a creature is or how to beat it before the hero knows it. Each tell has three parts: 'sign' (what the eye sees), 'does' (what the creature can do to him), 'counter' (what to do about it). How much is said follows family_lore.knowledge: UNKNOWN hears the sign; KIN (its family at Recognise or Forewarned, the kind itself never studied) the sign, 'kin_lead' and what it does; KNOWN (studied, its page opened, or its family at Lore) all three, then 'weak_one'/'weak_many' with its weaknesses. A sign never names the mechanic or the counter. The counter is honest about reach: when the creature can put the effect on the hero from across a room (tells.reach), 'counter_far' is used, or 'far_counter' when the tell has none. 'splits' fills {split_by} from the creature's own splits.by; 'does_weak'/'counter_weak' are for a creature split by a weak blow. The first time in a run the hero sees a kind, its worst tell is said at what he knows; it is said again when he comes to know the kind better. Observe (O) says up to 'max_lines' of them. 'order' ranks the effects, worst first; 'min_chance' ignores an attack effect rarer than this.",
   "min_chance": 0.1,
   "max_lines": 2,
   "order": ["gaze_paralyze", "paralyzed", "confused", "sleeping", "frozen", "teleportitis", "feared", "blinded",
             "silenced", "stunned", "immobilized", "splits", "revive_once_on_death", "drain_heals_self",
             "weakened", "diseased", "poisoned", "regeneration", "summon_kind", "pull_chance", "sp_drain",
             "can_charge", "can_phase_blink", "bleeding", "burning", "slowed", "hallucinating"],
+  "kin_lead": "It is one of {kin}.",
+  "far_counter": "It can reach you from across a room, but only where it can see you: keep stone between you until you can close in.",
+  "weak_one": "{words} hurts it most.",
+  "weak_many": "{words} hurt it most.",
   "effects": {
-    "gaze_paralyze": "Do not meet the eyes of {the}: its gaze can hold you where you stand. Something between you, or a mirror, breaks it.",
-    "paralyzed":     "Your limbs feel heavy just watching {the}. Its touch can hold you still. Do not let it reach you: fight it from a distance.",
-    "confused":      "The eyes of {the} swirl with a sick, shifting light. Get close and you will not think straight. Keep your distance, or end it fast.",
-    "sleeping":      "{The} hums a drowsy, rocking note. It can put you to sleep where you stand.",
-    "frozen":        "Frost crackles round {the}. It can freeze you solid.",
-    "teleportitis":  "{The} flickers at the edges. Its touch can fling you somewhere else.",
-    "feared":        "Looking at {the} makes your stomach drop. It can break your nerve and send you running.",
-    "blinded":       "{The} spits and sprays. It goes for the eyes.",
-    "silenced":      "{The} moves in a pocket of dead quiet. It can take your voice, and your spells with it.",
-    "stunned":       "{The} hits like a falling wall. Its blows can leave you dazed.",
-    "immobilized":   "{The} trails sticky strands. It can pin you where you stand.",
-    "splits":        "{The} looks as if it would come apart and keep coming. Strike it the wrong way and there will be two.",
-    "revive_once_on_death": "{The} has died before. It may not stay dead the first time.",
-    "drain_heals_self": "{The} grows stronger on your blood.",
-    "weakened":      "{The} feeds on strength. What it touches weakens.",
-    "diseased":      "{The} reeks of rot. Its wounds fester.",
-    "poisoned":      "The fangs of {the} glisten wet. Its bite is poison.",
-    "regeneration":  "The old scars of {the} have closed without a mark. It heals itself: finish it, do not wear it down.",
-    "summon_kind":   "{The} carries the means to call others. Kill it before it calls.",
-    "pull_chance":   "{The} has a long reach with a hook to it. It will drag you in.",
-    "sp_drain":      "{The} sniffs at your pack. It is after your food.",
-    "can_charge":    "{The} paws the ground. Across open ground it will charge; make it come to you round a corner.",
-    "can_phase_blink": "{The} flickers from place to place. Distance will not save you.",
-    "bleeding":      "{The} has hooked claws made for tearing. Its wounds bleed.",
-    "burning":       "Heat shimmers off {the}. It sets what it hits alight.",
-    "slowed":        "A chill clings to {the}. What it hits moves sluggishly after.",
-    "hallucinating": "The air round {the} wavers like heat. It fills heads with things that are not there."
+    "gaze_paralyze": {
+      "sign": "Something about the eyes of {the} makes you want to look away.",
+      "does": "Its gaze can hold you where you stand, from across a room.",
+      "counter": "Keep a wall or a pillar between you. Eyes that cannot see are safe from it, and so is a hero behind the Aegis of Athena."
+    },
+    "paralyzed": {
+      "sign": "{The} moves slowly and surely, like a thing that never has to chase its prey.",
+      "does": "It can hold you still where you stand.",
+      "counter": "Do not let it reach you: fight it from a distance."
+    },
+    "confused": {
+      "sign": "Looking at {the} too long makes the room tilt.",
+      "does": "It can scramble your thoughts until you cannot think straight.",
+      "counter": "Keep your distance, or end it fast."
+    },
+    "sleeping": {
+      "sign": "Just watching {the} makes your eyelids heavy.",
+      "does": "It can put you to sleep where you stand.",
+      "counter": "Never fight it with others close by."
+    },
+    "frozen": {
+      "sign": "Frost crackles round {the}.",
+      "does": "It can freeze you solid, and frozen, you cannot fight back.",
+      "counter": "Keep out of its reach."
+    },
+    "teleportitis": {
+      "sign": "{The} flickers at the edges.",
+      "does": "It can fling you somewhere else on the floor, far from your way out.",
+      "counter": "End it fast."
+    },
+    "feared": {
+      "sign": "Looking at {the} makes your stomach drop.",
+      "does": "It can break your nerve and send you running.",
+      "counter": "Know where you would run before you fight it."
+    },
+    "blinded": {
+      "sign": "Everything about {the} seems aimed at your eyes.",
+      "does": "It can blind you, and a blind hero fights by touch alone.",
+      "counter": "Do not let it close."
+    },
+    "silenced": {
+      "sign": "{The} moves in a pocket of dead quiet.",
+      "does": "It can take your voice, and your spells with it.",
+      "counter": "Cast before it reaches you, or fight it with steel.",
+      "counter_far": "Fight it with steel, not spells."
+    },
+    "stunned": {
+      "sign": "{The} is built like a falling wall.",
+      "does": "Its blows can leave you dazed.",
+      "counter": "Do not trade blows with it for long."
+    },
+    "immobilized": {
+      "sign": "{The} trails sticky strands.",
+      "does": "It can pin you where you stand.",
+      "counter": "Pinned, you cannot run: fight it only where you would not need to.",
+      "counter_far": "Pinned, you cannot run: fight it only where you would not need to."
+    },
+    "splits": {
+      "sign": "{The} looks as if it would come apart and keep coming.",
+      "does": "Strike it with {split_by} and there will be two.",
+      "counter": "Use anything else.",
+      "does_weak": "Strike it with a weak blow and there will be two.",
+      "counter_weak": "Hit it hard, or not at all."
+    },
+    "revive_once_on_death": {
+      "sign": "The wounds on {the} should have killed it, and did not.",
+      "does": "It will not stay dead the first time.",
+      "counter": "When it falls, keep your guard up."
+    },
+    "drain_heals_self": {
+      "sign": "{The} watches your throat, not your blade.",
+      "does": "It heals itself on your blood: every blow it lands mends it.",
+      "counter": "Do not trade blows with it."
+    },
+    "weakened": {
+      "sign": "Whatever {the} has touched looks withered.",
+      "does": "It can drain the strength out of you.",
+      "counter": "Fight it fast, or from afar."
+    },
+    "diseased": {
+      "sign": "{The} reeks of rot.",
+      "does": "The wounds it gives fester long after the fight.",
+      "counter": "Kill it before it lands many."
+    },
+    "poisoned": {
+      "sign": "Something on {the} glistens wet.",
+      "does": "It is poisonous, and every wound it gives keeps hurting after.",
+      "counter": "Do not let it land many."
+    },
+    "regeneration": {
+      "sign": "The old scars of {the} have closed without a mark.",
+      "does": "It heals itself as it fights.",
+      "counter": "Finish it; do not wear it down."
+    },
+    "summon_kind": {
+      "sign": "{The} keeps glancing behind it, as if it expects company.",
+      "does": "It can call others to it.",
+      "counter": "Kill it before it calls."
+    },
+    "pull_chance": {
+      "sign": "{The} has a long reach with a hook to it.",
+      "does": "It will drag you to it from further off than you think.",
+      "counter": "Stay well out of its reach, or close in on your own terms."
+    },
+    "sp_drain": {
+      "sign": "{The} sniffs at your pack.",
+      "does": "It is after your food: every blow it lands leaves you hungrier.",
+      "counter": "Keep it off you."
+    },
+    "can_charge": {
+      "sign": "{The} paws the ground.",
+      "does": "Across open ground it will charge.",
+      "counter": "Make it come to you round a corner."
+    },
+    "can_phase_blink": {
+      "sign": "{The} is never quite where you last looked.",
+      "does": "It steps from place to place without crossing between.",
+      "counter": "Distance will not save you: stand and fight."
+    },
+    "bleeding": {
+      "sign": "{The} looks made for tearing.",
+      "does": "The wounds it gives go on bleeding after the blow.",
+      "counter": "Do not let it land many."
+    },
+    "burning": {
+      "sign": "Heat shimmers off {the}.",
+      "does": "It sets what it hits alight, and the fire keeps burning after.",
+      "counter": "Keep out of its reach."
+    },
+    "slowed": {
+      "sign": "The air round {the} feels thick, like wading.",
+      "does": "It can slow you, and slowed, you cannot outrun it.",
+      "counter": "Choose to fight or flee before it reaches you."
+    },
+    "hallucinating": {
+      "sign": "Colours run strangely round {the}.",
+      "does": "It fills heads with things that are not there, and while it lasts, what you see may not be what is there.",
+      "counter": ""
+    }
   }
 }

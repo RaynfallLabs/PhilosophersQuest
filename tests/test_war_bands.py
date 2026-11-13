@@ -204,6 +204,7 @@ def test_a_confuser_says_keep_your_distance():
              if any(a.get('effect') == 'confused' and float(a.get('effect_chance', 0)) >= 0.3
                     for a in v.get('attacks', []))
              and not any(a.get('effect') in ('paralyzed',) for a in v.get('attacks', []))
-             and not v.get('gaze_paralyze')]
+             and not v.get('gaze_paralyze')
+             and v.get('ai_pattern') not in tells._FAR_AIS]     # one that must come close
     m = _m(kinds[0])
     assert 'distance' in tells.lines(m, limit=1)[0]

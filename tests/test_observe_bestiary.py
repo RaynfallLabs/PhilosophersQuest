@@ -166,6 +166,51 @@ def test_o_on_a_kind_whose_family_is_at_tier_one_opens_its_page():
     assert 'known by its family, not yet studied' in lines[1]
 
 
+def _recent(g, n=12):
+    return ' '.join(str(e[0]) for e in g.msg_log.entries[-n:])
+
+
+def test_o_on_an_unknown_monster_says_only_its_signs():
+    """2026-11-12: seeing is not knowing. An unknown creature shows its sign
+    ("moves slowly and surely"), never what it does or how to beat it."""
+    g, m = _scene('ghoul', known=False)
+    _observe(g, m)
+    recent = _recent(g)
+    assert 'moves slowly and surely' in recent
+    assert 'hold you still' not in recent and 'distance' not in recent
+    assert 'hurts it most' not in recent
+
+
+def test_o_on_a_monster_known_by_its_family_says_what_it_does_not_how_to_beat_it():
+    """Recognise (tier 1) tells what the family's creatures do; how to beat
+    one waits for its own study or the family's Lore. Its page opens without
+    its weaknesses."""
+    import family_lore
+    g, m = _scene('ghoul', known=False)
+    g.player.known_monster_ids.add('ghoul')
+    need = family_lore.thresholds('restless_dead')[0]
+    others = [k for k in family_lore.members('restless_dead')
+              if k != 'ghoul' and not family_lore.is_keystone(k)][:need]
+    g.player.studied_monster_ids.update(others)
+    _observe(g, m)
+    recent = _recent(g)
+    assert 'hold you still' in recent and 'distance' not in recent
+    assert 'not how to beat it' in recent
+    lines = [str(t[0]) for t in g._encyclopedia_article_lines('bestiary', g._encyclopedia_entry)]
+    assert not any(t.startswith('Weak to') or t.startswith('Resists') for t in lines)
+    assert any('not yet studied' in t.lower() and 'fears' in t for t in lines)
+
+
+def test_o_on_a_studied_monster_says_how_to_beat_it():
+    g, m = _scene('ghoul')
+    _observe(g, m)
+    recent = _recent(g)
+    assert 'hold you still' in recent and 'distance' in recent
+    assert 'Holy power hurts it most.' in recent
+    lines = [str(t[0]) for t in g._encyclopedia_article_lines('bestiary', g._encyclopedia_entry)]
+    assert any(t.startswith('Weak to') for t in lines)
+
+
 def test_the_book_of_thoth_opens_pages_but_teaches_no_tiers():
     import family_lore
     from game_states import STATE_ENCYCLOPEDIA

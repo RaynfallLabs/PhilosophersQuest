@@ -9314,6 +9314,14 @@ class RenderMixin:
             ]
             res = entry.get('resistances', []) or []
             wks = entry.get('weaknesses', []) or []
+            # Its family tells him what it can do; what it fears waits for
+            # its own study, or the family's Lore (family_lore.knowledge).
+            import family_lore as _fl
+            if _fl.knowledge(self.player, entry.get('_id', '')) < _fl.KNOWN:
+                if res or wks:
+                    lines.append(("Weaknesses: not yet studied. Study its corpse to learn what it fears.",
+                                  FP.FADED_TEXT, self.font_sm))
+                res, wks = [], []
             if res:
                 lines.append((f"Resists: {', '.join(_cap(x) for x in res)}", FP.CYAN_ACCENT, self.font_sm))
             if wks:

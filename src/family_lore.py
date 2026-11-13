@@ -24,6 +24,8 @@ What the game asks here
   * `family_of(kind)`, `family_name(fid)`, `members_seen(player, fid)`;
   * `tier(player, fid)`, `tiers(player)`, `progress(player, fid)`;
   * `has_page(player, kind)`: may the full Bestiary page open (ruling 1);
+  * `knowledge(player, kind)`: UNKNOWN, KIN or KNOWN, how much the hero is
+    told of a creature he sees (src/tells.py, the Bestiary's weaknesses);
   * `record_study(player, kind)` then `news(player)`: the tiers, circles and
     title newly reached, once each (Player.family_tiers_told);
   * `arrival_families(...)` / `forewarned_lines(...)` (`arrival_lines` for
@@ -271,6 +273,34 @@ def recognised(player, kind) -> bool:
 def has_page(player, kind) -> bool:
     """Ruling 1: the full Bestiary page opens only for an identified kind."""
     return recognised(player, kind)
+
+
+# How much the hero knows of a kind he sees (Brandon, 2026-11-12: "a player
+# only needs to id a couple of corpses to recognize everything? that seems a
+# little too easy"). Recognise comes after about one kind in twelve of a
+# family, so it tells him what the family's creatures can do; how to beat
+# one waits for its own study, or for the family's Lore tier.
+UNKNOWN, KIN, KNOWN = 0, 1, 2
+
+
+def full_lore_tier() -> int:
+    """The family tier at which every kind in it is fully known (Lore)."""
+    return int(data().get('full_lore_tier', 3))
+
+
+def knowledge(player, kind) -> int:
+    """KNOWN: the kind studied, its page opened (the Book of Thoth, Omnisight)
+    or its family at Lore; KIN: its family at Recognise or Forewarned, the
+    kind itself never studied; else UNKNOWN."""
+    k = _kind(kind)
+    if not k or player is None:
+        return UNKNOWN
+    if k in studied(player) or k in set(getattr(player, 'lore_known_monster_ids', ()) or ()):
+        return KNOWN
+    t = tier(player, family_of(k))
+    if t >= full_lore_tier():
+        return KNOWN
+    return KIN if t >= 1 else UNKNOWN
 
 
 # ---------------------------------------------------------------------------

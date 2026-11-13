@@ -8,12 +8,14 @@
     "Bane"
   ],
   "keystone_weight": 2,
+  "_full_lore_tier": "How much the hero is told of a creature he sees (family_lore.knowledge, src/tells.py): a kind he studied, or whose page was opened, is fully known; so is every kind of a family at this tier (Lore). Below it, Recognise and Forewarned tell him what the family's creatures can do, but not how to beat them, and their Bestiary pages keep their weaknesses hidden.",
+  "full_lore_tier": 3,
   "no_save_ward": {
     "per_point": 0.1,
     "floor": 0.5
   },
   "tier_messages": [
-    "You know {kin} now. You will recognise every one of them on sight.",
+    "You know {kin} now. You will recognise every one of them on sight, and know what each can do.",
     "You know the signs of {kin} now. You will sense them when you reach a floor.",
     "",
     "",
@@ -29,7 +31,7 @@
   "popup_leads": [
     "",
     "",
-    "You have learned how ordinary people kept {kin} away.",
+    "You have learned how ordinary people kept {kin} away, and what every one of them fears.",
     "You have learned how a hunter takes {kin}.",
     "You have learned where {kin} break."
   ],

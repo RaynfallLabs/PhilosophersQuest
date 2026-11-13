@@ -354,10 +354,27 @@ Brandon: monsters must "pose a real challenge and players need to pay attention 
 
 ## Tells: a dangerous creature shows what it can do (slice 5)
 
-The tells live in `data/tells.json` and `src/tells.py`.
-- **First sight:** the first time in a run the hero sees a kind, `_maybe_tell` says its worst tell (`_dungeon_alive['told']`, which is saved).
-- **Observe:** says every tell of a creature, up to 2, whether its kind is known or not, because the creature shows these on its body.
-- **What counts as a tell:** attack effects with `effect_chance` of at least 0.1, plus these flags: gaze, splits, revives, drain-heals, regeneration, summons, pull, SP drain, charge, phase-blink. They are ranked by `order`, worst first, and each line says what to do. For example: "Keep your distance, or end it fast" for confusers; "fight it from a distance" for paralysers; "make it come to you round a corner" for chargers.
+The tells live in `data/tells.json` and `src/tells.py`. Each tell has three parts:
+- **sign:** what the eye sees;
+- **does:** what the creature can do to the hero;
+- **counter:** what to do about it.
+
+How much is said follows `family_lore.knowledge` (Brandon, 2026-11-12: the notes must not give away what a creature is or how to beat it before the hero knows it, and two corpses must not teach a whole family):
+
+| Level | When | Said |
+|---|---|---|
+| UNKNOWN | nothing known | the sign only |
+| KIN | its family at Recognise or Forewarned, the kind never studied | the sign, "It is one of {kin}.", and what it does, never the counter |
+| KNOWN | the kind studied, its page opened (Thoth, Omnisight), or its family at Lore (`full_lore_tier`, 3) | the sign, what it does and the counter, then its weaknesses ("Fire and acid hurt it most.") |
+
+- **First sight:** the first time in a run the hero sees a kind with a tell, `_maybe_tell` says its worst tell at what he knows. It is said again the first time he sees the kind after he knows it better. This is tracked in `_dungeon_alive['told_level']` ({kind: level}, saved); an old save's `told` list counts as told at UNKNOWN.
+- **Observe:** says up to 2 tells at the same level. A KIN creature adds "You know its kind, but not how to beat it. Study its corpse."; how it hunts (`senses_line`) is said only at KNOWN.
+- **The Bestiary:** a KIN kind's page opens, but its weaknesses and resistances read "not yet studied" until it is KNOWN.
+- **Honest about reach:** `tells.reach` is 'far' when the creature can put the effect on the hero from across a room. That covers a gaze, or an attack a ranged, dragon, healer, summoner or rooted creature uses at range (the same test as `Monster.attack`). A far effect gets `counter_far`, or the shared `far_counter` ("keep stone between you"), and never "fight it from a distance".
+- **Splitting:** the line names the blows that split the creature, from its own `splits.by`.
+- **What counts as a tell:** attack effects with `effect_chance` of at least 0.1, plus these flags: gaze, splits, revives, drain-heals, regeneration, summons, pull, SP drain, charge, phase-blink. They are ranked by `order`, worst first.
+
+Tests: `tests/test_monster_notes.py`, and the Observe cases in `tests/test_observe_bestiary.py`.
 
 **Patrols (C5).** A wandering monster now arrives beside a stair the hero can't see, as if coming down or up it, instead of out of nowhere. It goes to the last fight heard, or roams.
 

@@ -2106,18 +2106,24 @@ class CombatMixin:
                 f"You see {monster.name} ({condition}).{_fam}", 'info'
             )
             # Its state (asleep, unaware, searching, hunting) is plain to
-            # see; how it hunts is known only once its kind is known.
+            # see; how it hunts and how to beat it are known only once the
+            # kind itself is known (family_lore.knowledge).
+            import family_lore as _fl
             import senses as _senses
+            _level = _fl.knowledge(self.player, getattr(monster, 'kind', None))
             if not getattr(monster, 'is_allied', False) and not getattr(
                     monster, '_npc_encounter_tag', None) and not getattr(
                     monster, '_flavor_encounter_tag', None):
                 self.add_message(_senses.status_line(monster), 'info')
-                if _known and _senses.senses_line(monster):
+                if _level >= _fl.KNOWN and _senses.senses_line(monster):
                     self.add_message(_senses.senses_line(monster), 'info')
-                # What it can do shows on it, known or not (src/tells.py).
+                # What it can do, told as far as the hero knows it: the sign
+                # alone, then what it does, then what to do (src/tells.py).
                 import tells as _tells
-                for _tl in _tells.lines(monster):
+                for _tl in _tells.lines(monster, _level):
                     self.add_message(_tl, 'warning')
+                if _level >= _fl.KNOWN and _tells.abilities(monster) and _tells.weak_line(monster):
+                    self.add_message(_tells.weak_line(monster), 'info')
                 if getattr(monster, '_band', None):
                     import war_bands as _wb
                     _bd = _wb.data()['bands'].get(getattr(monster, '_band_id', ''), {})
@@ -2131,6 +2137,11 @@ class CombatMixin:
                     and not getattr(monster, '_npc_encounter_tag', None)
                     and not getattr(monster, '_flavor_encounter_tag', None)):
                 self.add_message("You don't know this creature yet. Study its corpse.", 'info')
+            elif (_known and _level < _fl.KNOWN and getattr(monster, 'family', None)
+                    and not getattr(monster, 'is_allied', False)
+                    and not getattr(monster, '_npc_encounter_tag', None)
+                    and not getattr(monster, '_flavor_encounter_tag', None)):
+                self.add_message("You know its kind, but not how to beat it. Study its corpse.", 'info')
             found = True
         # A creature the hero can see AND has identified (studied, opened by
         # the Book of Thoth, or its family at tier 1 or more: ruling 1)
@@ -2783,20 +2794,36 @@ class CombatMixin:
                          f"lore {lore}.", 'info')
 
     def _maybe_tell(self, m) -> None:
-        """The first time in a run the hero sees a kind, its worst tell."""
+        """The first time in a run the hero sees a kind, its worst tell, told
+        as far as he knows the kind (family_lore.knowledge, src/tells.py):
+        the sign of one he does not know; the sign, its family and what it
+        does once he knows its family; all that and what to do, with its
+        weaknesses, once he knows the kind itself. Said again the first time
+        he sees it after he has come to know it better."""
+        import family_lore
         import tells
         if getattr(m, 'is_allied', False) or getattr(m, '_npc_encounter_tag', None) \
                 or getattr(m, '_flavor_encounter_tag', None):
             return
-        state = self.__dict__.setdefault('_dungeon_alive', {'domains_seen': []})
-        told = state.setdefault('told', [])
         kind = getattr(m, 'kind', '')
-        if not kind or kind in told:
+        if not kind:
             return
-        told.append(kind)
-        got = tells.lines(m, limit=1)
-        if got:
-            self.add_message(got[0], 'warning')
+        state = self.__dict__.setdefault('_dungeon_alive', {'domains_seen': []})
+        told = state.setdefault('told_level', {})
+        # A save from before the two versions kept only the kinds told.
+        was = told.get(kind, family_lore.UNKNOWN if kind in (state.get('told') or ()) else -1)
+        level = family_lore.knowledge(self.player, kind)
+        if level <= was:
+            return
+        told[kind] = level
+        keys = tells.abilities(m)
+        if not keys:
+            return
+        fid = family_lore.family_of(m)
+        self.add_message(tells.line(m, keys[0], level, family_lore.kin(fid) if fid else ''),
+                         'warning')
+        if level >= family_lore.KNOWN and tells.weak_line(m):
+            self.add_message(tells.weak_line(m), 'info')
 
     def _scorch_line(self, x0: int, y0: int, x1: int, y1: int) -> None:
         """Scorch marks along a dragon's breath (decor fixtures, floor layer)."""
