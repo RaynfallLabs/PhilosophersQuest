@@ -84,6 +84,8 @@ src/
   # Combat, items, magic
   combat.py           - Combat resolution
   affinity.py         - Weakness, resistance, shrugs off (data/affinity_rules.json): what a hit met, and the lines that say so
+  kit_sense.py        - Kit Sense: the best tool carried for a family known to Hunter (tool providers)
+  enemy_lore.py       - Recall Lore on the creature in view, the Wand of Probing's reading, quests that teach the boss
   dice.py             - Dice notation parser ("2d6+3")
   items.py            - Item classes and equipment system
   gear.py             - Armour, shield, ring and amulet rules: levels, tiers, thresholds, core AC
