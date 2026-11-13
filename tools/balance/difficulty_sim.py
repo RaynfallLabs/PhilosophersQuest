@@ -499,6 +499,9 @@ ATTACK_SPELLS = {'fire_bolt': 'fire', 'lightning_bolt': 'lightning', 'acid_arrow
                  'drain_life_spell': None, 'smite': None, 'disintegrate_spell': None,
                  'magic_missile': None}
 MISSILE_COUNT = {1: 1, 2: 3, 3: 5, 4: 7, 5: 9}
+# Gate bosses whose quest step teaches the hero who they are (slice 3).
+QUEST_TAUGHT = frozenset(('asterion_minotaur', 'medusa_gorgon', 'fafnir_dragon',
+                          'fenrir_wolf', 'abaddon_destroyer'))
 
 # Committed, with a pet that has kept pace with the dungeon (its level equal
 # to the floor from floor 3 on). The pet bites whatever the player is
@@ -947,6 +950,7 @@ class Run:
         self._trader_plan = None
         self.scraps = []           # Fenrir's leather scraps carried (5 lb each)
         self.attack_spells = {}    # spell_id -> (mp_cost, power, tier, element, effect)
+        self._recall_next = 0      # turn Recall Lore is ready again
         self._give_starting_kit()
 
     def _healed(self, source: str, got) -> None:
@@ -1044,10 +1048,35 @@ class Run:
             return 1.0
 
     def _knows(self, kind) -> bool:
+        # The quest teaches the boss (slice 3: each gate boss's quest step
+        # opens his page, and the quest-giver names his weakness).
+        if self.prof.get('quests') and kind in QUEST_TAUGHT:
+            return True
         try:
             return family_lore_mod.knowledge(self.p, kind) == family_lore_mod.KNOWN
         except Exception:
             return False
+
+    def _recall_lore(self, target) -> None:
+        """tactics=1: Recall Lore on a creature in view whose kind he does
+        not know (enemy_lore.py): the trivia escalator chain; at chain 5 its
+        page opens (no family credit). Cooldown 40 turns after nothing, else
+        50 + 15 x chain (game_magic._resolve_recall_lore)."""
+        if not self.knobs.get('tactics') or target is None:
+            return
+        kind = getattr(target, 'kind', '')
+        if not kind or self._knows(kind) or self.turn < self._recall_next:
+            return
+        chain = self.quiz.escalator_chain(5)
+        self._recall_next = self.turn + (40 if chain == 0 else 50 + 15 * chain)
+        self.fs['recalls'] = self.fs.get('recalls', 0) + 1
+        if chain >= 5:
+            known = getattr(self.p, 'lore_known_monster_ids', None)
+            if not isinstance(known, set):
+                known = set(known or ())
+                self.p.lore_known_monster_ids = known
+            known.add(kind)
+            self.fs['recall_pages'] = self.fs.get('recall_pages', 0) + 1
 
     def _value_vs(self, w, m) -> float:
         """Expected damage of w on m as the hero judges it: the true
@@ -2134,6 +2163,7 @@ class Run:
         slots = [(6, 5), (5, 6), (6, 6), (4, 5), (5, 4), (4, 4), (6, 4), (4, 6)]
         # tactics=1: between fights the right weapon comes out at no cost
         _first = next((m for m in group if is_named(m)), group[0] if group else None)
+        self._recall_lore(_first)
         self._tactical_pick(_first, free=True)
 
         def enter(m, opening: bool):
