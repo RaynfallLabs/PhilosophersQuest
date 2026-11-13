@@ -1151,6 +1151,9 @@ class Player:
                 mult *= slot.damage_resistances.get(damage_type, 1.0)
         if self.shield and hasattr(self.shield, 'damage_resistances'):
             mult *= self.shield.damage_resistances.get(damage_type, 1.0)
+        # A cloak or shirt an armourer lined against this element (smithing.py).
+        import smithing
+        mult *= smithing.lining_mult(self, damage_type)
         return mult
 
     def get_sight_radius(self) -> int:

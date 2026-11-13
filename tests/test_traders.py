@@ -274,7 +274,10 @@ def test_every_trader_kind_stocks_from_its_own_list():
         items.bind_unique_registry(set())
         stock = traders.build_stock(d, lvl, rng)
         assert stock, kind
-        assert len(stock) <= max(traders.stock_size(d, lvl), 2)
+        # An armourer also racks his best metal in the forms the shelf lacks
+        # (winning build 3.5: the mace to match the sword), up to three more.
+        extra = int(d.get('forms_of_best', 0) or 0)
+        assert len(stock) <= max(traders.stock_size(d, lvl), 2) + extra
         classes = {getattr(i, 'item_class', '') for i in stock}
         allowed = {e.get('class') or e.get('gear') or e.get('cat') for e in d['stock']}
         assert classes <= allowed, (kind, classes, allowed)
@@ -479,7 +482,8 @@ def test_left_and_right_turn_the_tabs_and_the_services_tab_lists_his_trade():
     assert g._shop_tab == 2
     names = [e['name'] for e in g._trader_menu()['entries']]
     assert names == ['Mend Rust and Acid', 'Sharpen Your Weapon', 'Reinforce Your Armour',
-                     'Cut Off a Cursed Thing']
+                     'Cut Off a Cursed Thing', 'Reforge Your Weapon', 'Silver Your Weapon',
+                     'Inlay Cold Iron', 'Line a Cloak or Shirt', 'Special Order', 'Trade In']
     _press(g, pygame.K_RIGHT)
     assert g._shop_tab == 0
     _press(g, pygame.K_ESCAPE)

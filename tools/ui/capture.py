@@ -1987,6 +1987,38 @@ def _(g):
     g._start_pray()
 
 
+def _altar_with_gifts(g):
+    """On floor 1's altar with a little Strength cooked up, gold for the
+    offering, and the prayer waiting (the altar opens all the same)."""
+    from dungeon import ALTAR
+    d = g.dungeon
+    g.player.x, g.player.y = next((x, y) for y in range(d.height)
+                                  for x in range(d.width) if d.tiles[y][x] == ALTAR)
+    g.player.prayer_cooldown = 40
+    g.player.apply_stat_bonus('STR', 2)
+    g.player.cooking_stat_gained['STR'] = 2
+    g.player_gold = max(getattr(g, 'player_gold', 0), 2000)
+
+
+@scene('menu_altar_rededicate', 'Prayer',
+       "\\ on an altar, 2: Rededicate a Gift, choosing the gift to give back.",
+       expect='ask', key=True)
+def _(g):
+    _altar_with_gifts(g)
+    g._start_pray()
+    press(g, pygame.K_2)
+
+
+@scene('menu_altar_rededicate_take', 'Prayer',
+       "Rededicate, S: Strength given back, choosing the gift to take in its place.",
+       expect='ask')
+def _(g):
+    _altar_with_gifts(g)
+    g._start_pray()
+    press(g, pygame.K_2)
+    press(g, pygame.K_s, 's')
+
+
 @scene('menu_boon', 'Prayer', 'Kill a gate boss (Asterion): take one of three gifts.', expect='boon_menu')
 def _(g):
     g.player.pending_boon = 'asterion_minotaur'
@@ -2094,6 +2126,92 @@ def _(g):
     press(g, pygame.K_y)
     press(g, pygame.K_RIGHT)
     press(g, pygame.K_RIGHT)
+
+
+def _smith(g, kind='armourer', level=None):
+    """The armourer beside the hero, who holds an iron longsword and wears a
+    cloak: something for every one of the smith's new services (reforge,
+    silvering, cold iron, lining, special order, trade-in)."""
+    from items import instantiate_armor, instantiate_weapon, ARMOR_SLOTS
+    m = _merchant(g, kind)
+    g.player.weapon = instantiate_weapon('longsword', 'iron')
+    g.player.armor_slots[ARMOR_SLOTS.index('cloak')] = instantiate_armor('cloak', 'linen')
+    plan = g._trader_plan()
+    lvl = int(level or g.dungeon_level)
+    plan['floors'][lvl] = kind
+    plan['floors'][lvl + 12] = kind                    # his next stall: where an order waits
+    g.player_gold = max(getattr(g, 'player_gold', 0), 20000)
+    return m
+
+
+@scene('shop_services_smith', 'Encounters',
+       "Y beside the armourer, Right twice, Down four: Reforge Your Weapon (the new smith's work).",
+       expect='shop', key=True)
+def _(g):
+    m = _smith(g)
+    press(g, pygame.K_y)
+    press(g, pygame.K_RIGHT)
+    press(g, pygame.K_RIGHT)
+    g._shop_selection = list(m.services).index('reforge')
+
+
+@scene('shop_services_order', 'Encounters',
+       "The armourer's Services tab on Special Order: where and when to collect it.",
+       expect='shop')
+def _(g):
+    m = _smith(g)
+    press(g, pygame.K_y)
+    press(g, pygame.K_RIGHT)
+    press(g, pygame.K_RIGHT)
+    g._shop_selection = list(m.services).index('special_order')
+
+
+@scene('shop_reforge_pick', 'Encounters',
+       "Reforge Your Weapon, Enter: the shapes the iron longsword can take.",
+       expect='shop')
+def _(g):
+    m = _smith(g)
+    press(g, pygame.K_y)
+    g._shop_tab = 2
+    g._shop_selection = list(m.services).index('reforge')
+    press(g, pygame.K_RETURN)
+    g._shop_selection = 3
+
+
+@scene('shop_lining_pick', 'Encounters',
+       "Line a Cloak or Shirt, Enter: the worn cloak against each element.",
+       expect='shop')
+def _(g):
+    m = _smith(g)
+    press(g, pygame.K_y)
+    g._shop_tab = 2
+    g._shop_selection = list(m.services).index('lining')
+    press(g, pygame.K_RETURN)
+
+
+@scene('shop_order_pick', 'Encounters',
+       "Special Order, Enter, Enter: the shapes of the first metal, each priced, ready deeper down.",
+       expect='shop')
+def _(g):
+    m = _smith(g)
+    press(g, pygame.K_y)
+    g._shop_tab = 2
+    g._shop_selection = list(m.services).index('special_order')
+    press(g, pygame.K_RETURN)
+    press(g, pygame.K_RETURN)
+
+
+@scene('shop_sell_trade_in', 'Encounters',
+       "Buy a ware, then the Sell tab: what you sell him now fetches half his price (trade-in).",
+       expect='shop', key=True)
+def _(g):
+    m = _smith(g)
+    press(g, pygame.K_y)
+    g._shop_selection = 0
+    press(g, pygame.K_RETURN)                         # buy: the visit's trade-in opens
+    g._shop_tab = 1
+    g._shop_selection = next(i for i, it in enumerate(g._trader_rows())
+                             if getattr(it, 'item_class', '') in ('weapon', 'armor', 'shield'))
 
 
 def _treasure_pack(g, ids=('treasure_burmese_ruby', 'treasure_saxon_brooch', 'treasure_gold_idol')):

@@ -25,9 +25,10 @@ Everything a trader is and says lives in data/traders.json.
 * **Prices**: economy.merchant_price (class share x tier x worth x markup)
   times the deeds multiplier (``price_mult``).
 * **Selling** (``refusal`` and economy.sell_offer): 20-25% of his own price,
-  capped by his purse; quest pieces and worn things never; an unknown thing
-  sells as its unidentified class. Treasure sells near its full value to
-  any trader (treasure.py).
+  half on a visit when the hero buys from him (the trade-in, up to what he
+  spends: game_traders), capped by his purse; quest pieces and worn things
+  never; an unknown thing sells as its unidentified class. Treasure sells
+  near its full value to any trader (treasure.py).
 * **The lean** (``stock_bias``): the stock leans toward kinds the hero has
   not held yet, and each trader's ``spread`` makes sure his stall offers a
   real choice across kinds (2026-10-18, Brandon: traders are where a kid
@@ -35,11 +36,19 @@ Everything a trader is and says lives in data/traders.json.
 * **Gems and rare wares**: a few gems for the coin-to-gem exchange
   (``treasure.gem_stock``) and very rarely a ``rare_stock`` ware (the
   Draught of Mimir's Well, floor 40 and down).
+* **What's below** (winning build 3.5, 2026-11-13): part of every shelf is a
+  counter for the floors at and just below the stall (domain_counters.py),
+  and an armourer stocks his best metal in several forms, so a kid can buy
+  the mace that matches his sword.
+* **Special orders**: an armourer's order is collected at his next stall
+  (``next_stall``); ``orders`` in the plan.
 
 ``Game._traders`` is a plain dict so it pickles across code changes::
 
     {"v": 1, "seed": int, "floors": {floor: kind}, "spawned": [floor],
-     "friends_used": [person], "told": [line key], "credits_used": int}
+     "friends_used": [person], "told": [line key], "credits_used": int,
+     "orders": [{kind, person, placed, collect, cat, template, material,
+                 name, paid}]}
 """
 from __future__ import annotations
 
@@ -164,7 +173,7 @@ def roll_plan(seed: int, *, secret_floors=(), busy_floors=()) -> dict:
         if rng.random() < p:
             floors[f] = kind
     return {'v': CURRENT_VERSION, 'seed': int(seed), 'floors': floors, 'spawned': [],
-            'friends_used': [], 'told': [], 'credits_used': 0}
+            'friends_used': [], 'told': [], 'credits_used': 0, 'orders': []}
 
 
 def ensure_plan(st) -> dict:
@@ -181,7 +190,16 @@ def ensure_plan(st) -> dict:
     st.setdefault('friends_used', [])
     st.setdefault('told', [])
     st.setdefault('credits_used', 0)
+    st.setdefault('orders', [])
     return st
+
+
+def next_stall(plan: dict, kind: str, floor: int):
+    """The next floor below ``floor`` where a trader of ``kind`` stands this
+    run (where a special order is collected), or None."""
+    later = [int(f) for f, k in ((plan or {}).get('floors') or {}).items()
+             if k == kind and int(f) > int(floor)]
+    return min(later) if later else None
 
 
 # ------------------------------------------------------------------ stock
@@ -274,6 +292,18 @@ def build_stock(defn: dict, level: int, rng, seen=()) -> list:
         return _pick_weighted(rng, _pool(cls, level, rng), weight)
 
     sure, rolled = [], []
+    # What's below (domain_counters.py): the stall's counters come first and
+    # take shelf room like any sure ware. The first carries the trader's
+    # line about it (build_trader takes it off again).
+    try:
+        import domain_counters
+        for k, (ware, info) in enumerate(domain_counters.stall_counters(defn, level, rng)):
+            if k == 0:
+                ware._stall_line = info
+            sure.append(ware)
+    except Exception:
+        from game_log import log_error
+        log_error('traders.build_stock: the counters recovered from an error')
     for entry in defn.get('stock') or ():
         n = int(entry.get('picks', 1))
         # 'floors': [lo, hi] -- an entry for one floor band only (the Soul
@@ -349,6 +379,24 @@ def build_stock(defn: dict, level: int, rng, seen=()) -> list:
             break
         if w not in final:
             final.append(w)
+    want_forms = int(defn.get('forms_of_best', 0) or 0)
+    if want_forms:
+        # An armourer's best metal in several forms: the mace to match the
+        # sword (domain_counters.best_material_forms).
+        try:
+            import domain_counters
+            for w in domain_counters.best_material_forms(final, level, rng, want_forms):
+                # (Not dressed(): a random pick cut from the shelf has
+                # already taken its id, and this one is meant to be there.)
+                if any(getattr(f, 'id', None) == w.id for f in final):
+                    continue
+                ware = copy.copy(w)
+                dress_spawn(ware, level, rng, buc=False)
+                taken.add(w.id)
+                final.append(ware)
+        except Exception:
+            from game_log import log_error
+            log_error('traders.build_stock: the forms recovered from an error')
     final += _gem_stock(defn, level, rng, taken)
     final += _rare_stock(defn, level, rng, taken)
     return final

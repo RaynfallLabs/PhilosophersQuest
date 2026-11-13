@@ -658,6 +658,8 @@ class MerchantNPC:
     greeted = False
     told: tuple = ()
     level = 1
+    counter = None        # what's below: {side, key, foes, take, marked}
+    visit = None          # trade-in: this visit's tally (game_traders)
     sprite_fallback = 'merchant_npc'
     name = 'Deep Gnome Trader'
 
@@ -704,6 +706,8 @@ class MerchantNPC:
         self.pronoun = (friend or d).get('pronoun', d.get('pronoun', 'he'))
         if friend and friend.get('line'):
             self.lines['greet'] = [friend['line']]
+        if friend and friend.get('counter'):
+            self.lines['counter'] = friend['counter']   # what's below, in his own voice
 
     def pronouns(self) -> tuple:
         """(he, him, his), (she, her, her) or (it, it, its) for this trader.
@@ -734,7 +738,14 @@ def build_trader(kind: str, level: int, rng: random.Random, x: int = 0, y: int =
     stock = traders.build_stock(defn, level, rng, seen=seen)
     mk = float(defn.get('markup', 1.0))
     prices = [_stock_price(it, level, mk) for it in stock]
-    return MerchantNPC(x, y, stock, prices, kind=kind, level=level, defn=defn)
+    m = MerchantNPC(x, y, stock, prices, kind=kind, level=level, defn=defn)
+    # What's below (domain_counters.py): the counter he speaks of when his
+    # stall opens rides on its ware out of build_stock.
+    for it in stock:
+        info = it.__dict__.pop('_stall_line', None)
+        if info and not getattr(m, 'counter', None):
+            m.counter = info
+    return m
 
 
 def spawn_merchant(level: int, rooms, dungeon, ground_items: list,

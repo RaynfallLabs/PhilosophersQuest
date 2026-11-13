@@ -161,6 +161,19 @@ rider chance kept; `monster.py` applies it. A **touch** attack rolls
 against touch AC (the hero's AC without body armour and shield,
 `guards.touch_ac`).
 
+**Linings** (winning build 3.5, 2026-11-13; `smithing.py`). An armourer
+(Brannoc, Brunhild) lines a worn cloak or shirt against one element: fire,
+cold, lightning or poison. That element's damage from any source is x0.75
+while the piece is worn (`Player.get_armor_resistance` multiplies in
+`smithing.lining_mult`; two lined pieces against one element stack). It is
+the piece's own `lining` field, never `damage_resistances`, which the
+old-save migration clears on common pieces. One lining to a piece; the Kit
+card and the shop card say "Lined with salamander's wool, the stone cloth
+that will not burn: fire does 25% less harm to you while you wear it."
+whether the piece is identified or not (the hero watched it done). A stall
+where fire breathes below may rack a cloak already lined (priced with the
+lining: `economy.stock_price`).
+
 ## 4. The enchantments (`enchantments.py`)
 
 A minor piece of level 1+ carries ONE enchantment of its own slot, in four

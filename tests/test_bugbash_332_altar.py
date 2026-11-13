@@ -228,7 +228,8 @@ def test_the_altar_opens_even_while_prayer_waits(game):
     _press(game, pygame.K_BACKSLASH)
     assert game.state == STATE_PRAYER_MENU
     ids = [r['id'] for r in game._prayer_choices()]
-    assert ids == ['altar_rite', 'mercy', 'guide_my_hand']   # no free rows on cooldown
+    # (Rededication, winning build 3.5, is the altar's second offering.)
+    assert ids == ['altar_rite', 'rededicate', 'mercy', 'guide_my_hand']   # no free rows on cooldown
 
 
 def test_the_rite_takes_the_offering_and_leaves_the_cooldown(game):
@@ -259,7 +260,7 @@ def test_a_paid_prayer_does_not_touch_the_cooldown(game):
     p = game.player
     p.hp = 1
     _press(game, pygame.K_BACKSLASH)
-    _press(game, pygame.K_2)                           # Lord, Have Mercy, paid
+    _press(game, pygame.K_3)                           # Lord, Have Mercy, paid
     _answer_chain(game, 2)
     assert p.hp > 1
     assert p.prayer_cooldown == 60 - 1
@@ -270,8 +271,8 @@ def test_the_free_prayer_is_offered_when_ready_and_sets_the_cooldown(game):
     p.prayer_cooldown = 0
     _press(game, pygame.K_BACKSLASH)
     rows = game._prayer_choices()
-    assert [r['offering'] for r in rows] == [True, True, True, False, False]
-    _press(game, pygame.K_4)                           # Mercy, no offering
+    assert [r['offering'] for r in rows] == [True, True, True, True, False, False]
+    _press(game, pygame.K_5)                           # Mercy, no offering
     assert game.player_gold == 1000
     _answer_chain(game, 1)
     assert p.prayer_cooldown >= 50

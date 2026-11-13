@@ -909,7 +909,11 @@ def affinity_word(weapon, monster, kind: str, blessed: bool = False) -> str:
         if weapon is not None:
             mat = str(getattr(weapon, 'material', '') or '').lower()
             holy = blessed or getattr(weapon, 'buc', '') == 'blessed'
-            subs = [mat] + (['holy'] if holy else [])
+            # A substance a smith worked in (silvering, a cold-iron inlay:
+            # smithing.py) sits in damage_types beside the material's id.
+            inlaid = [t for t in (getattr(weapon, 'damage_types', None) or ())
+                      if t and t not in _BLOW_FORMS and t != mat]
+            subs = [mat] + inlaid + (['holy'] if holy else [])
             for sub in subs:
                 eff = _MATERIAL_EFFECTIVE_AGAINST.get(sub)
                 if sub and (sub in weak or (eff and eff & tags)
