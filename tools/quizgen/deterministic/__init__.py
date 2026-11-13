@@ -24,6 +24,7 @@ from tools.quizgen.deterministic.duplicate import (
     validate_duplicate,
 )
 from tools.quizgen.deterministic.math_correctness import validate_math_correctness
+from tools.quizgen.deterministic.math_grade_band import validate_math_grade_band
 from tools.quizgen.deterministic.trailing_tokens import validate_trailing_tokens
 from tools.quizgen.deterministic.answer_collision import (
     AnswerCollisionIndex,
@@ -43,6 +44,7 @@ __all__ = [
     "build_duplicate_index",
     "validate_duplicate",
     "validate_math_correctness",
+    "validate_math_grade_band",
     "validate_trailing_tokens",
     "AnswerCollisionIndex",
     "build_answer_collision_index",

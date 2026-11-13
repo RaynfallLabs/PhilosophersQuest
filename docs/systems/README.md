@@ -112,6 +112,7 @@ the doc wins (and the row is a bug — please update it).
 | "Why do spawn tables use peak_weight + spread?" | [data_schemas.md](data_schemas.md); Gaussian + explicit floor bands |
 | "What is zero-tolerance?" | [conventions.md](conventions.md); any wrong answer ends a threshold quiz |
 | "What subjects are timed?" | [conventions.md](conventions.md); math only (combat chain). Everything else untimed |
+| "Which school grades is each maths tier?" | [../quiz/math_grade_curve.md](../quiz/math_grade_curve.md); `tools/balance/math_difficulty.py` scores, `py -m tools.balance.math_grade_curve` fixes |
 | "What is the system-change-sweep rule?" | [conventions.md](conventions.md); grep OLD terms across all `src/` in same commit as mechanical change |
 | "Where does help text live?" | [ui.md](ui.md); `game_render._draw_help_screen`, including the new System Rules card |
 | "How is the sidebar built?" | [ui.md](ui.md); `ui.Sidebar._identity/_vitals/_attributes/_derived/_effects/_powers/_in_sight` |

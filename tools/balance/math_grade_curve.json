@@ -1,0 +1,97 @@
+{
+  "_doc": "Maths grade curve (slice 9, 2026-11-13). Each tier is a band on the school-grade score from tools/balance/math_difficulty.py (1.0 = start of grade 1). Each topic names the tiers it may appear at, with the grades and the standards behind them (Common Core codes; the UK National Curriculum year where it places a skill earlier than Common Core). Read by math_difficulty.py, math_grade_curve.py, the quiz pipeline gate (tools/quizgen/deterministic/math_grade_band.py) and tests/test_math_grade_curve.py. The human table is docs/quiz/math_grade_curve.md.",
+  "tiers": {
+    "1": {"grades": "1-2", "band": [1.0, 3.0], "label": "Facts to 20, tens and doubles"},
+    "2": {"grades": "3-4", "band": [3.0, 5.0], "label": "Times tables and regrouping in your head"},
+    "3": {"grades": "4-5", "band": [4.0, 6.0], "label": "Multiplying by parts, fractions, decimals and benchmark percents"},
+    "4": {"grades": "6-7", "band": [6.0, 8.0], "label": "Percents, powers, roots, negatives and one- or two-step equations"},
+    "5": {"grades": "7-8", "band": [7.0, 9.0], "label": "Exponent rules, roots, Pythagoras, percent change and signed arithmetic"}
+  },
+  "topics": {
+    "Addition Facts": {"tiers": {
+      "1": {"grades": "1-2", "standard": "1.OA.C.6, 2.OA.B.2", "plain": "Add two one-digit numbers from memory (sums to 20), add 0 or 10, know the doubles."}}},
+    "Subtraction Facts": {"tiers": {
+      "1": {"grades": "1-2", "standard": "1.OA.C.6, 2.OA.B.2", "plain": "Subtract within 20 from memory, including across ten."}}},
+    "Missing Numbers": {"tiers": {
+      "1": {"grades": "1-2", "standard": "1.OA.D.8", "plain": "Find the unknown number in an addition or subtraction fact."}}},
+    "Skip Counting": {"tiers": {
+      "1": {"grades": "1-2", "standard": "2.NBT.A.2", "plain": "Count on by 2s, 5s and 10s."},
+      "2": {"grades": "3", "standard": "3.OA.D.9", "plain": "Count on by 3s, 4s, 6s, 7s and 8s: the times tables as patterns."}}},
+    "Adding and Subtracting Tens": {"tiers": {
+      "1": {"grades": "1-2", "standard": "1.NBT.C.4-6, 2.NBT.B.7", "plain": "Add or take away a multiple of 10 from a two-digit number."},
+      "2": {"grades": "3", "standard": "3.NBT.A.2", "plain": "Add or take away tens across a hundred with three-digit numbers."}}},
+    "Doubling and Halving": {"tiers": {
+      "1": {"grades": "2", "standard": "2.NBT.B.5, 2.OA.C.3", "plain": "Double or halve a two-digit number with no regrouping."},
+      "2": {"grades": "3", "standard": "3.NBT.A.2, 3.OA.C.7", "plain": "Double or halve with regrouping, and three-digit numbers."}}},
+    "Times Tables": {"tiers": {
+      "2": {"grades": "3-4", "standard": "3.OA.C.7, 3.NBT.A.3 (UK Year 4: tables to 12 x 12)", "plain": "Every product of two one-digit numbers from memory, the 11s and 12s, and a digit times a multiple of 10."}}},
+    "Division Facts": {"tiers": {
+      "2": {"grades": "3-4", "standard": "3.OA.C.7, 4.NBT.B.6", "plain": "Divide using the times tables, and a multiple of 10 by a digit."}}},
+    "Rounding": {"tiers": {
+      "2": {"grades": "3-4", "standard": "3.NBT.A.1, 4.NBT.A.3", "plain": "Round to the nearest 10 or 100."}}},
+    "Two-Digit Addition and Subtraction": {"tiers": {
+      "2": {"grades": "3-4", "standard": "2.NBT.B.5, 3.NBT.A.2", "plain": "Add and subtract two-digit numbers in your head, with regrouping."},
+      "3": {"grades": "4-5", "standard": "3.NBT.A.2, 4.NBT.B.4", "plain": "Add or subtract a two-digit number to or from a three-digit one, regrouping twice."}}},
+    "Multiplying by Parts": {"tiers": {
+      "2": {"grades": "3-4", "standard": "3.NBT.A.3, 4.NBT.B.5", "plain": "A multiple of 10 times a digit; the easiest two-digit by one-digit products."},
+      "3": {"grades": "4-5", "standard": "4.NBT.B.5", "plain": "A two-digit number times a one-digit number by place value, or times a multiple of 10."},
+      "4": {"grades": "6-7", "standard": "5.NBT.B.5 (in your head)", "plain": "Two teen numbers multiplied in your head."},
+      "5": {"grades": "7-8", "standard": "5.NBT.B.5 (in your head)", "plain": "Two-digit by two-digit in your head, with carries."}}},
+    "Order of Operations": {"tiers": {
+      "3": {"grades": "5", "standard": "5.OA.A.1", "plain": "Multiply before you add or subtract."},
+      "4": {"grades": "6", "standard": "6.EE.A.2c", "plain": "The order of operations with powers or two-digit products."},
+      "5": {"grades": "7", "standard": "7.NS.A.3", "plain": "The order of operations when the answer or a number is negative."}}},
+    "Fractions, Decimals and Percents": {"tiers": {
+      "3": {"grades": "4-5", "standard": "4.NF.C.6, 5.NBT.B.7 (UK Year 5: percent equivalents)", "plain": "Halves, quarters, fifths and tenths as decimals and percents; adding and multiplying simple decimals."},
+      "4": {"grades": "6-7", "standard": "6.RP.A.3c, 7.NS.A.2d", "plain": "Eighths and thirds as decimals and percents."},
+      "5": {"grades": "7", "standard": "7.NS.A.2d", "plain": "Repeating decimals (sixths, ninths, twelfths) to three places."}}},
+    "Percent of a Number": {"tiers": {
+      "3": {"grades": "5", "standard": "6.RP.A.3c (UK Year 6: percentages of amounts)", "plain": "10%, 20%, 25%, 50% and 75% of a round number."},
+      "4": {"grades": "6-7", "standard": "6.RP.A.3c", "plain": "Any whole percent of a number by splitting it (30% is 3 x 10%, 15% is 10% + 5%)."},
+      "5": {"grades": "7", "standard": "7.RP.A.3", "plain": "Increases and decreases (markups and sales), percents over 100% and fractional percents."}}},
+    "Finding the Percent": {"tiers": {
+      "4": {"grades": "6", "standard": "6.RP.A.3c", "plain": "What percent one number is of another."},
+      "5": {"grades": "7", "standard": "7.RP.A.3", "plain": "Percent increase and decrease; parts over 100%."}}},
+    "Simplifying Fractions": {"tiers": {
+      "3": {"grades": "4-5", "standard": "4.NF.A.1, 6.RP.A.1 (UK Year 6: ratio)", "plain": "Simplify a ratio by dividing both parts by their greatest common factor."}}},
+    "Fraction of a Quantity": {"tiers": {
+      "3": {"grades": "4-5", "standard": "4.NF.B.4, 5.NF.B.4", "plain": "A fraction of a whole number: divide by the bottom, multiply by the top."},
+      "4": {"grades": "6", "standard": "5.NF.B.4, 6.NS.A.1", "plain": "A fraction of a fraction of a number, and larger two-step shares."}}},
+    "Fraction Arithmetic": {"tiers": {
+      "3": {"grades": "5", "standard": "5.NF.A.1, 5.NF.B.4", "plain": "Add, subtract and multiply fractions with unlike denominators."},
+      "4": {"grades": "6", "standard": "6.NS.A.1", "plain": "Divide a fraction by a fraction."},
+      "5": {"grades": "7", "standard": "7.NS.A.1-2", "plain": "Fraction arithmetic with negative numbers."}}},
+    "Squares, Cubes and Powers": {"tiers": {
+      "3": {"grades": "4-5", "standard": "5.NBT.A.2, 6.EE.A.1 (UK Year 5: square and cube numbers)", "plain": "Squares to 12 x 12, small cubes, powers of 10 and of 2."},
+      "4": {"grades": "6-7", "standard": "6.EE.A.1, 6.EE.A.2c", "plain": "Squares to 20, cubes to 10, higher powers, sums and differences of squares."},
+      "5": {"grades": "7-8", "standard": "6.EE.A.1 in your head; A-SSE.A.2 for b^2 - a^2", "plain": "Squares from 21 to 29, the cubes of 11 to 13, and differences of squares by (b - a)(b + a)."}}},
+    "Square and Cube Roots": {"tiers": {
+      "4": {"grades": "6-7", "standard": "8.EE.A.2 (UK Year 7: powers and roots)", "plain": "Square roots of perfect squares to 15 x 15 (and 20 x 20, 30 x 30); cube roots to 4."},
+      "5": {"grades": "8", "standard": "8.EE.A.2", "plain": "Square roots up to 29 x 29; cube roots up to 9."}}},
+    "Negative Numbers": {"tiers": {
+      "4": {"grades": "6-7", "standard": "6.NS.C.5-7, 7.NS.A.1-2", "plain": "Add and subtract across zero; multiply with signs."},
+      "5": {"grades": "7", "standard": "7.NS.A.2", "plain": "Divide with signs; larger signed products."}}},
+    "Divisibility Rules": {"tiers": {
+      "3": {"grades": "4-5", "standard": "4.OA.B.4", "plain": "Which of four numbers divides a two-digit number."},
+      "4": {"grades": "6", "standard": "6.NS.B.4", "plain": "Divisibility tests for 3, 4, 6, 7, 8, 9, 11 and 12 on three-digit numbers."}}},
+    "One-Step Equations": {"tiers": {
+      "4": {"grades": "6", "standard": "6.EE.B.7", "plain": "Solve x + p = q, x - p = q, px = q and x/p = q."}}},
+    "Two-Step Equations": {"tiers": {
+      "4": {"grades": "7", "standard": "7.EE.B.4a", "plain": "Solve px + q = r."},
+      "5": {"grades": "7-8", "standard": "7.EE.B.4a, 8.EE.C.7", "plain": "Solve p(x + q) = r, and two-step equations with a negative answer."}}},
+    "Exponent Rules": {"tiers": {
+      "5": {"grades": "8", "standard": "8.EE.A.1", "plain": "Multiply or divide powers of the same base by adding or subtracting the exponents."}}},
+    "Pythagorean Triples": {"tiers": {
+      "5": {"grades": "8", "standard": "8.G.B.7", "plain": "Find a side of a right triangle from a known whole-number triple."}}},
+    "Sum of 1 to N": {"tiers": {
+      "4": {"grades": "6", "standard": "enrichment (patterns)", "plain": "Add 1 to n for small n, by pairing or by adding."},
+      "5": {"grades": "7-8", "standard": "enrichment (Gauss's pairing trick)", "plain": "The pairing trick n(n + 1)/2 for larger n."}}}
+  },
+  "fill_topics": {
+    "1": ["Addition Facts"],
+    "2": ["Times Tables", "Division Facts", "Two-Digit Addition and Subtraction"],
+    "3": ["Two-Digit Addition and Subtraction", "Multiplying by Parts", "Fraction of a Quantity"],
+    "4": ["Percent of a Number", "Negative Numbers", "Two-Step Equations", "One-Step Equations"],
+    "5": ["Exponent Rules", "Two-Step Equations", "Percent of a Number", "Pythagorean Triples"]
+  }
+}

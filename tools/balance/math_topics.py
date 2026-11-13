@@ -34,7 +34,8 @@ TOPIC_RULES: tuple[tuple[str, str], ...] = (
     (r'^Memorize the classic triples',               'Pythagorean Triples'),
     (r'^Sum formula',                                'Sum of 1 to N'),
     (r'^% change|^Percent = \(part / whole\)',       'Finding the Percent'),
-    (r'^\d+% shortcut|^3-digit %',                   'Percent of a Number'),
+    (r'^\d+% shortcut|^3-digit %|^Fractional percent|^Markup|^Discount',
+                                                     'Percent of a Number'),
     (r'root',                                        'Square and Cube Roots'),
     (r'^Squares|^Teen squares|^Cubes|^Powers of|^Larger powers of'
      r'|^Exponent recall|^Substitute the memorized', 'Squares, Cubes and Powers'),

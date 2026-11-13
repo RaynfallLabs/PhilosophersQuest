@@ -1,18 +1,23 @@
 #!/usr/bin/env python3
-"""Build the snappy-math bank v3 (v2.14.1).
+"""Build the snappy-math bank v3 (v2.14.1), then curve it to the grade bands.
 
-Replaces data/questions/math.json with a flashcard-oriented ladder that stays
-recall-focused across all 5 tiers. Every stem is a single line, every answer
-is a single value (no word problems, no diagrams).
+Writes data/questions/math.json: a flashcard-oriented ladder, recall-focused
+across all 5 tiers. Every stem is a single line, every answer is a single
+value (no word problems, no diagrams).
 
-Speed targets per tier:
-  T1  1-2s   Foundation: +/- facts to 20, missing addend, count-by
-  T2  2-3s   Times tables 0-12, doubles/halves, rounding, ±10s, skip-count
-  T3  3-4s   Squares to 15, F/D/% equivalents, %-shortcuts, 2-digit arithmetic
-  T4  4-5s   Squares to 20, cubes to 6, powers of 2, %-shortcuts, 1-step algebra
-  T5  5-6s   2x2 distribution, teen squares, √/∛ recall, fraction ops, 2-step algebra
+The build_tierN functions below are the RAW draws. Since slice 9 (2026-11-13)
+the tiers are set by the maths grade curve: every question is scored on a
+school-grade scale (tools/balance/math_difficulty.py) and must sit inside
+its tier's band (T1 grades 1-2, T2 3-4, T3 4-5, T4 6-7, T5 7-8;
+tools/balance/math_grade_curve.json). ``build_curved()`` runs the raw build
+through tools/balance/math_grade_curve.py, which moves what fits another
+tier and replaces the rest with in-band questions of the same topic.
 
-See docs/design/math_bank_v3.md.
+The shipped bank is no longer exactly this script's output: bug bashes fixed
+the JSON by hand (the fixes are ported below) and the random draws have
+shifted since, so a rebuild changes several hundred drills. To re-curve the
+shipped bank without that churn, run ``py -m tools.balance.math_grade_curve``
+instead. See docs/quiz/math_grade_curve.md.
 """
 from __future__ import annotations
 import json
@@ -102,7 +107,7 @@ def _int_q(tier: int, stem: str, correct: int, context: str = '') -> dict:
 
 
 # ---------------------------------------------------------------------------
-# TIER 1 — Foundation (K-Grade 2, 1-2s recall)
+# TIER 1 — Foundation (raw draw; grades 1-2)
 # ---------------------------------------------------------------------------
 # Addition/subtraction facts to 20, missing addend, count-by patterns.
 
@@ -142,8 +147,7 @@ def build_tier1() -> list[dict]:
 
     # Count-by-2 (fill in the blank)
     for start in [0, 2, 4, 6, 8, 10]:
-        for steps in [1, 2, 3, 4]:
-            val = start + 2 * steps
+        for _steps in [1, 2, 3, 4]:
             out.append(_int_q(1, f"Count by 2s: {start}, {start+2}, {start+4}, ?",
                               start + 6, "Skip-count by 2."))
             break  # one per start is enough
@@ -164,7 +168,8 @@ def build_tier1() -> list[dict]:
 
 
 # ---------------------------------------------------------------------------
-# TIER 2 — Times Tables (Grade 3-4, 2-3s recall)
+# TIER 2 — Times Tables (raw draw; the grade curve sends x0 / x1 facts and
+# the within-100 tens to tier 1 or replaces them)
 # ---------------------------------------------------------------------------
 # 0-12 multiplication, division, doubles/halves of 2-digit, rounding, ±10s
 
@@ -226,7 +231,8 @@ def build_tier2() -> list[dict]:
 
 
 # ---------------------------------------------------------------------------
-# TIER 3 — Rapid Composites (Grade 5-6, 3-4s recall)
+# TIER 3 — Rapid Composites (raw draw; the grade curve sends two-digit sums
+# to tier 2 and negatives, roots and teen squares to tier 4)
 # ---------------------------------------------------------------------------
 # Squares to 15, F/D/% equivalents, %-shortcuts, 2-digit ± 2-digit,
 # multi-digit × single-digit, order-of-ops with 3 numbers.
@@ -262,7 +268,6 @@ def build_tier3() -> list[dict]:
     ]
     all_percents = [p for _, _, p in equivs]
     all_decimals = [d for _, d, _ in equivs]
-    all_fracs = [f for f, _, _ in equivs]
     for frac, dec, pct in equivs:
         # frac → percent
         wrongs = _str_distractors(pct, all_percents)
@@ -400,7 +405,8 @@ def build_tier3() -> list[dict]:
 
 
 # ---------------------------------------------------------------------------
-# TIER 4 — Advanced Fluency (Grade 7-8, 4-5s recall)
+# TIER 4 — Advanced Fluency (raw draw; the grade curve sends simple fractions
+# of a number, benchmark percents and small powers to tier 3)
 # ---------------------------------------------------------------------------
 # Squares 16-20, cubes 1-6, powers of 2, %-shortcuts (15/20/30),
 # fraction of qty, divisibility, 1-step algebra.
@@ -568,7 +574,7 @@ def build_tier4() -> list[dict]:
             ans = int(x * pct / 100)
             if ans == x * pct / 100:  # integer answers only
                 out.append(_int_q(4, f"{pct}% of {x}?", ans,
-                                  f"3-digit %: use 10% + smaller %s or halve/decompose."))
+                                  "3-digit %: use 10% + smaller %s or halve/decompose."))
 
     # Compound fractions (fraction of a fraction of a quantity)
     compound_frac = [
@@ -587,7 +593,8 @@ def build_tier4() -> list[dict]:
 
 
 # ---------------------------------------------------------------------------
-# TIER 5 — Speed Composites (Grade 9+, 5-6s recall)
+# TIER 5 — Speed Composites (raw draw; much of it is grade 5-6 work, which
+# the grade curve moves down or replaces with grade 7-8 questions)
 # ---------------------------------------------------------------------------
 # 2x2 distribution, teen squares, √/∛ recall, fraction ops, 2-step algebra,
 # percent of larger, "what % is X of Y".
@@ -655,11 +662,13 @@ def build_tier5() -> list[dict]:
         ('2/3 - 1/6 = ?', '1/2', ['1/3', '1/6', '1/9']),
         ('1/2 × 1/3 = ?', '1/6', ['2/5', '1/5', '2/6']),
         ('2/3 × 3/4 = ?', '1/2', ['6/7', '5/12', '5/7']),
-        ('3/4 × 2/5 = ?', '3/10', ['6/9', '5/9', '6/20']),
-        ('2/5 × 5/6 = ?', '1/3', ['10/11', '7/11', '10/30']),
-        ('1/2 ÷ 1/4 = ?', '2', ['1/8', '1/2', '4/2']),
-        ('3/4 ÷ 1/2 = ?', '3/2', ['3/8', '2/3', '1/2']),
-        ('2/3 ÷ 1/3 = ?', '2', ['2/9', '1/2', '1/3']),
+        # (bug bash 3: no distractor may equal the key, and a division of
+        # fractions is bracketed so it cannot be read as 1/2 / 1 / 4)
+        ('3/4 × 2/5 = ?', '3/10', ['6/9', '5/9', '5/20']),
+        ('2/5 × 5/6 = ?', '1/3', ['10/11', '7/11', '2/5']),
+        ('(1/2) ÷ (1/4) = ?', '2', ['1/8', '1/2', '1/4']),
+        ('(3/4) ÷ (1/2) = ?', '3/2', ['3/8', '2/3', '1/2']),
+        ('(2/3) ÷ (1/3) = ?', '2', ['2/9', '1/2', '1/3']),
     ]
     for stem, ans, wrongs in frac_ops:
         out.append(_build_q(5, stem, ans, wrongs,
@@ -851,8 +860,18 @@ def build_all() -> list[dict]:
     return unique
 
 
+def build_curved() -> list[dict]:
+    """The raw build, curved to the grade bands (tools/balance/math_grade_curve.py)."""
+    try:
+        from tools.balance.math_grade_curve import TIER_SIZES, curve
+    except ImportError:
+        from math_grade_curve import TIER_SIZES, curve
+    curved, _report = curve(build_all(), sizes=TIER_SIZES)
+    return curved
+
+
 def main():
-    unique = build_all()
+    unique = build_curved()
     MATH_JSON.write_text(json.dumps(unique, indent=2, ensure_ascii=False), encoding='utf-8')
 
     from collections import Counter
