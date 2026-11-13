@@ -257,7 +257,7 @@ Tests: `tests/test_rooms_and_lore.py`.
 
 | Floor | What the dressing adds |
 |---|---|
-| 20 | labrys marks at junctions, bull frescoes and torches round the hall, tribute bones under what earlier visitors left (the horns of consecration at the hall's two ways in are off until they are redrawn: the picture read as a cow's skull) |
+| 20 | labrys marks at junctions, bull frescoes and torches round the hall, tribute bones under what earlier visitors left, horns of consecration at the hall's two ways in (redrawn in code 2026-11-12, `tools/content/genart/horns.py`: the painted one read as a cow's skull) |
 | 40 | ivy, olive leaves, shed skins, broken statues |
 | 60 | the hoard bed round Fafnir (`tile_art` `hoard`), dragon-slayers' bones, scorch marks |
 | 80 | shields, icicles, two broken fetters, and 3-4 cold braziers |

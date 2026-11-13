@@ -8,8 +8,9 @@ arent too sensitive for some of these? they all seemed to come running"
 
 * A fight is quieter (5 tiles, not 8); a sleeper gets one chance to wake a
   turn, not one per noise; the squeaky board reaches 20 tiles, not the floor.
-* The horns of consecration (drawn as a bull's skull) are out of the
-  Labyrinth and off Asterion's doorways until they are redrawn.
+* The horns of consecration (painted as a bull's skull) are redrawn in code
+  (tools/content/genart/horns.py: the Knossos shape) and back in the
+  Labyrinth, with a fallen column drum beside them.
 * Loose objects lie against a wall in one small group; only flat marks
   (scorch, cracks, ash, snow, straw) lie out in a room or in a corridor.
 """
@@ -78,10 +79,24 @@ LOOSE_OBJECTS = {'bone_pile', 'rubble', 'broken_pot', 'snake_skin', 'statue_rubb
                  'slayer_bones', 'frozen_bones', 'broken_fetter', 'roots', 'candles'}
 
 
-def test_the_horns_are_out_of_the_labyrinth_and_off_asterions_doors():
+def test_the_redrawn_horns_are_back_in_the_labyrinth():
     lab = decor.domain_by_id('labyrinth')
-    assert 'horns_consecration' not in lab['decor']['stand']['ids']
-    assert 'entrance' not in decor.boss_floors()['floors']['20']
+    assert set(lab['decor']['stand']['ids']) == {'horns_consecration', 'column_drum'}
+    assert decor.boss_floors()['floors']['20']['entrance'] == 'horns_consecration'
+    from PIL import Image
+    pic = Image.open(os.path.join(ROOT, 'assets', 'tiles', 'env', 'fixtures', 'horns_consecration.png'))
+    assert pic.size == (64, 64) and pic.mode == 'RGBA'
+    # The Knossos shape: one solid base, two horns with clear air between them above it.
+    a = pic.getchannel('A').load()
+    ys = [y for y in range(64) if any(a[x, y] for x in range(64))]
+    top, bottom = ys[0], ys[-1]
+    mid_row = top + (bottom - top) // 4                         # a quarter of the way down
+    runs, inside = 0, False
+    for x in range(64):
+        if a[x, mid_row] and not inside:
+            runs += 1
+        inside = bool(a[x, mid_row])
+    assert runs == 2                                            # two horns, not a skull
 
 
 def test_flat_marks_are_marked_and_objects_are_not():

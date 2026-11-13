@@ -474,8 +474,18 @@ def olive_leaves():
     return _decal(rgb, alpha)
 
 
+def horns_consecration():
+    """The Minoan horns of consecration (horns.py): two painted rounds drew Gothic
+    spires, a goblet, a well-head and a bull's skull, which read as a cow's skull on the
+    floor (Brandon's play-test, 2026-11-12). Code: the shape drawn exactly, in the
+    painted ashlar stone, cut like a painted stand prop."""
+    import horns
+    return horns.sprite(1)
+
+
 CODE = {'fire_out': fire_out, 'soul_sigil': soul_sigil, 'olive_leaves': olive_leaves, 'smoke_vent': smoke_vent, 'straw': straw, 'honey_drip': honey_drip, 'snow_slush': snow_slush, 'ash_drift': ash_drift, 'ember_crack': ember_crack,
-        'glow_fissure': glow_fissure, 'scorch_mark': scorch_mark, 'brimstone': brimstone, 'snow_drift': snow_drift}
+        'glow_fissure': glow_fissure, 'scorch_mark': scorch_mark, 'brimstone': brimstone, 'snow_drift': snow_drift,
+        'horns_consecration': horns_consecration}
 
 
 def install(dry=False):
