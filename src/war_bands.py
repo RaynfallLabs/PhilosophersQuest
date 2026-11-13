@@ -164,7 +164,10 @@ def place_band(dungeon, monsters: list, level: int, rng=None) -> list:
         m._job_fixed = True
         if sleeping and i > 1:
             m._job = 'sleep'
-            m.add_effect('sleeping', rng.randint(lo, hi))
+            # Its own rest (see senses.py's idle sleep): not a spell, so the
+            # dead's status_immune to sleep does not keep a band awake.
+            m.status_effects['sleeping'] = max(int(m.status_effects.get('sleeping', 0) or 0),
+                                               rng.randint(lo, hi))
         else:
             m._job = 'guard'
     monsters.extend(members)

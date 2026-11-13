@@ -68,6 +68,9 @@ NAMED_FOE_CONTROL_CAP = 2
 # same idea). Without it a chain stun every turn held a boss for the whole
 # fight (bug bash 4, call 12).
 NAMED_FOE_CONTROL_GRACE = 3
+# The lore pass (winning build slice 2) a monster's affinity lists come from;
+# a saved monster without it takes its kind's lists on load.
+AFFINITY_PASS = 1
 _HARD_CONTROL = frozenset({'paralyzed', 'sleeping', 'stunned', 'frozen',
                            'confused', 'feared', 'charmed', 'petrifying',
                            'immobilized', 'time_stopped'})
@@ -287,6 +290,16 @@ class Monster:
         # Resistances and weaknesses (damage type strings)
         self.resistances: list[str] = defn.get('resistances', [])
         self.weaknesses:  list[str] = defn.get('weaknesses', [])
+        # What it shrugs off (a quarter of the blow gets through), what its
+        # nature refuses (no "It is Feared!" said of a golem) and what it
+        # falls to easily: written from its lore (data/family_affinity.json,
+        # tools/content/affinity_pass.py; the steps in data/affinity_rules.json).
+        self.shrugs_off: list[str] = list(defn.get('shrugs_off', []) or [])
+        self.status_immune: list[str] = list(defn.get('status_immune', []) or [])
+        self.status_weak: list[str] = list(defn.get('status_weak', []) or [])
+        # A monster saved before the lore pass has no mark and takes its
+        # kind's lists on load (Game._migrate_monster_affinities).
+        self._affinity_pass: int = AFFINITY_PASS
         # Tags for systemic material interactions (undead, demon, fey, etc.)
         self.tags: list[str] = defn.get('tags', [])
         # Its ONE monster family (monsters.json `family`, src/family_lore.py):
@@ -511,6 +524,7 @@ class Monster:
     _DEFAULTS = {
         '_flee_timer': 0, '_alerted': False, '_aware': False, '_slow_skip': False,
         'speed': 10, 'resistances': [], 'weaknesses': [],
+        'shrugs_off': (), 'status_immune': (), 'status_weak': (),
         'treasure': {'gold': [0, 0], 'item_chance': 0.0, 'item_tier': 1},
         'peak_floor': 0, 'spread': 10,
         'lore': '', 'status_effects': {}, 'thac0': 20,
@@ -573,7 +587,21 @@ class Monster:
 
     # --- Status effects ---
 
-    def add_effect(self, name: str, duration: int):
+    def add_effect(self, name: str, duration: int) -> int:
+        """Put an effect on this monster for `duration` turns. Returns the
+        turns it now has, or 0 when it did not take hold: its nature refuses
+        it (status_immune, resists_control; `_refused_effect` remembers which,
+        for the line that says why: affinity.status_line), or a named foe is
+        steadying after a hold. What it falls to easily (status_weak) lasts
+        half again as long (data/affinity_rules.json)."""
+        if name == 'bleeding' and not self.can_bleed():
+            return 0                        # nothing in it to bleed (kind_can_bleed)
+        if self.resists_control(name):
+            self.__dict__['_refused_effect'] = name
+            return 0
+        if name in (getattr(self, 'status_weak', None) or ()):
+            import affinity as _aff
+            duration = _aff.status_weak_duration(duration)
         # Named foes cannot be locked down. Whatever the source, a hard
         # control effect on a boss, mini-boss or seal demon lasts at most
         # NAMED_FOE_CONTROL_CAP turns and does not stack. Before this there
@@ -586,18 +614,18 @@ class Monster:
         # kept the old one from ever running out), and once a hold ends a
         # named foe shakes off the next for NAMED_FOE_CONTROL_GRACE turns
         # ('control_immune', set in tick_effects).
-        if name == 'bleeding' and not self.can_bleed():
-            return                          # nothing in it to bleed (kind_can_bleed)
         if name in _HARD_CONTROL and self._is_named_foe():
-            if (self.status_effects.get('control_immune', 0) > 0
-                    or self.status_effects.get(name, 0) > 0):
-                return
+            if self.status_effects.get('control_immune', 0) > 0:
+                return 0
+            if self.status_effects.get(name, 0) > 0:
+                return int(self.status_effects[name])   # held already: not refreshed
             self.status_effects[name] = max(
                 self.status_effects.get(name, 0),
                 min(int(duration), NAMED_FOE_CONTROL_CAP))
-            return
+            return int(self.status_effects[name])
         current = self.status_effects.get(name, 0)
         self.status_effects[name] = min(current + duration, MAX_EFFECT_DURATION)
+        return int(self.status_effects[name])
 
     def hold(self, name: str, duration: int):
         """Apply an effect keeping the longer of the old and new duration
@@ -605,7 +633,8 @@ class Monster:
         control effect on a named foe goes through add_effect's cap and
         grace instead; the chain specials used to write the status straight
         in and skip both, so a maul at chain 10 every turn stunned Asterion
-        for the whole fight."""
+        for the whole fight. What its nature refuses never takes hold, and
+        what it falls to easily lasts half again as long (add_effect)."""
         if not self.alive:
             return
         if name == 'bleeding' and not self.can_bleed():
@@ -613,6 +642,12 @@ class Monster:
         if name in _HARD_CONTROL and self._is_named_foe():
             self.add_effect(name, duration)
             return
+        if self.resists_control(name):
+            self.__dict__['_refused_effect'] = name
+            return
+        if name in (getattr(self, 'status_weak', None) or ()):
+            import affinity as _aff
+            duration = _aff.status_weak_duration(duration)
         cur = int(self.status_effects.get(name, 0) or 0)
         self.status_effects[name] = max(cur, int(duration))
 
@@ -641,7 +676,15 @@ class Monster:
                     or getattr(self, 'is_seal_demon', False))
 
     def resists_control(self, effect: str) -> bool:
-        """True if this creature is immune to a control effect by nature."""
+        """True if this creature is immune to an effect by nature: its
+        kind's `status_immune` (written from its lore: the mindless know no
+        fear, the dead do not sleep or choke on poison), and the older tag
+        rules below for a creature with no such list."""
+        # Isildur's heir binds the Dead (Helm of Aragorn): the oath lifts the
+        # dead's own immunity to charm, never a named foe's will (below).
+        oath = effect == 'charmed' and bool(self.__dict__.get('_oathbound'))
+        if effect in (getattr(self, 'status_immune', None) or ()) and not oath:
+            return True
         tags = set(self.tags or ())
         mindless = bool(tags & self._MINDLESS_TAGS)
         if effect == 'feared':
@@ -762,7 +805,10 @@ class Monster:
             if bleeding_dmg > 0:
                 self.take_damage(bleeding_dmg)
             if poison_dmg > 0:
-                self.take_damage(poison_dmg)
+                # Typed: a creature that resists or shrugs off poison takes
+                # less of it, one weak to it more (it was untyped, so the
+                # poison wand ignored poison resistance).
+                self.take_damage(poison_dmg, 'poison')
             if burning_dmg > 0:
                 self.take_damage(burning_dmg)
             if doom_dmg > 0:
@@ -974,7 +1020,32 @@ class Monster:
                 self.alive = False
         if actual > 0:
             self.status_effects.pop('sleeping', None)
+            self._after_typed_hit(damage_type, actual)
         return actual
+
+    def _after_typed_hit(self, damage_type: str, actual: int) -> None:
+        """What a hit of a kind the creature is weak to sets off besides the
+        damage (data/affinity_rules.json):
+
+        * a regenerating creature weak to fire or acid (the trolls, the
+          hydra) cannot close the wound for regen_stop_turns turns: fire and
+          acid stop a troll's healing, as Iolaus' torch stopped the Hydra's;
+        * a beast or troll that fears fire (status_weak `fear_of_fire`)
+          flees a fire hit for fear_of_fire_turns turns."""
+        if damage_type not in ('fire', 'acid') or self.__dict__.get('_dot_tick') or not self.alive:
+            return
+        import affinity as _aff
+        if (int(getattr(self, 'regeneration', 0) or 0) > 0
+                and damage_type in (getattr(self, 'weaknesses', None) or ())):
+            turns = int(_aff.rules().get('regen_stop_turns', 3))
+            self.__dict__['_regen_blocked'] = max(int(self.__dict__.get('_regen_blocked', 0) or 0), turns)
+        if (damage_type == 'fire'
+                and _aff.FEAR_OF_FIRE in (getattr(self, 'status_weak', None) or ())
+                and not getattr(self, 'fearless', False) and not self._is_named_foe()
+                and not self.resists_control('feared')):
+            self.hold('feared', int(_aff.rules().get('fear_of_fire_turns', 3)))
+            if self.has_effect('feared'):
+                _aff.note(self, _aff.FIRE_FRIGHT, 'fire')
 
     def is_dead(self) -> bool:
         return not self.alive
@@ -1591,6 +1662,13 @@ class Monster:
                 return (f" Your {item_bare_name(player, piece)} turns the "
                         f"{effect_id.replace('_', ' ')} aside.")
             return ''
+        if effect_id == 'rust':
+            # A rust monster's feelers (no saving throw: one brush and good
+            # steel flakes to red dust). The one rust rule:
+            # status_effects.rust_worn_gear.
+            from status_effects import rust_worn_gear
+            got = rust_worn_gear(player, self)
+            return (" " + got[0]) if got else ''
         # Reflecting: 50% chance to bounce effect back at attacker
         if player.has_effect('reflecting') and random.random() < 0.50:
             self.add_effect(effect_id, duration)
@@ -2872,8 +2950,8 @@ class DeathMonster(Monster):
     def tick_effects(self):
         pass
 
-    def add_effect(self, name: str, duration: int):
-        pass
+    def add_effect(self, name: str, duration: int) -> int:
+        return 0
 
     def hold(self, name: str, duration: int):
         # The chain specials apply through here. (They used to write the

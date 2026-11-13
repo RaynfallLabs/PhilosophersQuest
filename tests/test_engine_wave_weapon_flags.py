@@ -138,7 +138,9 @@ def test_combat_wires_weapon_effective_against():
     """combat.player_attack must apply weapon-side effective_against array
     as a damage multiplier (not just material-side)."""
     import combat
-    src = (inspect.getsource(combat.player_attack) + inspect.getsource(combat.effective_chain) + inspect.getsource(combat.strike_damage))
+    # (a unique's own bane is part of its substance now: weapon_type_multiplier)
+    src = (inspect.getsource(combat.player_attack) + inspect.getsource(combat.effective_chain)
+           + inspect.getsource(combat.strike_damage) + inspect.getsource(combat.weapon_type_multiplier))
     assert "getattr(weapon, 'effective_against'" in src \
         or 'weapon.effective_against' in src
 

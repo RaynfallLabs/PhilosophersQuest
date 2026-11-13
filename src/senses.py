@@ -749,7 +749,11 @@ def assign_jobs(monsters, rooms, rng=None, sleep_rooms=()) -> None:
                 continue
             m._job = job
             if job == 'sleep' and not m.has_effect('sleeping'):
-                m.add_effect('sleeping', rng.randint(int(lo), int(hi)))
+                # Its own rest, written straight in: a spell's sleep goes through
+                # add_effect, which the dead and the mindless refuse
+                # (status_immune), but a skeleton lying still is still dormant.
+                m.status_effects['sleeping'] = max(int(m.status_effects.get('sleeping', 0) or 0),
+                                                   rng.randint(int(lo), int(hi)))
 
 
 # ---------------------------------------------------------------------------

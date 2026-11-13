@@ -275,6 +275,7 @@ class Player:
 
     def take_damage(self, amount: int, damage_type: str = 'physical') -> int:
         """Apply damage after immunity and resistance checks. Returns actual damage."""
+        from affinity import PHYSICAL as _PHYSICAL_BLOWS
         from status_effects import DAMAGE_IMMUNITY, SHIELD_IMMUNITY, DAMAGE_HALVED
         # v2.13.0 Divine Intercession: 'invulnerable' status blocks ALL damage
         # for its duration (10 turns from a successful intercession).
@@ -334,7 +335,11 @@ class Player:
         # spell promises). Previously only monsters got the halving (combat.py)
         # — the player side was missing this branch. See bug-bash A7-4.
         # Round UP so a 1-damage hit still does 1.
-        if damage_type == 'physical' and self.has_effect('shielded'):
+        # A blow is a blow whatever its form: monster attacks are typed
+        # slash, pierce or blunt now (affinity.PHYSICAL), and the shield,
+        # the stance and Achilles' hide answer all of them.
+        _blow = damage_type in _PHYSICAL_BLOWS
+        if _blow and self.has_effect('shielded'):
             amount = (amount + 1) // 2
 
         # Chain combat v2 (v2.14.0): melee_dmg_reduction — a defensive stance
@@ -342,7 +347,7 @@ class Player:
         # physical damage while active. Rapier C20 keeps the same status but
         # for longer (4t) — the 30% figure is intentionally modest so a run of
         # chain-15 sword hits does not stack with shielded into invulnerability.
-        if damage_type == 'physical' and self.has_effect('melee_dmg_reduction'):
+        if _blow and self.has_effect('melee_dmg_reduction'):
             amount = max(1, int(amount * 0.70))
 
         # Fractional resistance: status/accessory effects x armor resistances
@@ -355,7 +360,7 @@ class Player:
                 getattr(i, 'id', '') == 'charmander_stuffie' for i in self.inventory):
             resistance *= 0.5
         # Hero passive: Achilles' Demigod Hide — -25% physical damage.
-        if damage_type == 'physical' and 'demigod_hide_25' in self.hero_passives:
+        if _blow and 'demigod_hide_25' in self.hero_passives:
             resistance *= 0.75
         # Hero passive: Witcher Mutations — +1 to all elemental resistances
         # (additive 0.1 multiplier reduction for known element types).
@@ -1543,6 +1548,20 @@ class Player:
                 ended.append(_EXPIRE_MSGS.get(
                     name, (f"{name.replace('_', ' ').title()} wears off.", 'info')))
         return ended
+
+    def rustproof_item(self):
+        """The worn item that keeps rust off everything he wears (its
+        special_properties has "rustproof_wearer": true), or None."""
+        for it in self.worn_items():
+            if (getattr(it, 'special_properties', None) or {}).get('rustproof_wearer'):
+                return it
+        return None
+
+    def is_rustproof(self) -> bool:
+        """Nothing he wears can rust while he wears a rust-keeping piece
+        (status_effects.rust_worn_gear, the rust trap and the rust
+        monster's feelers)."""
+        return self.rustproof_item() is not None
 
     def worn_items(self) -> list:
         """Every item on the body: weapons, shield, armour, rings, amulet, belt."""

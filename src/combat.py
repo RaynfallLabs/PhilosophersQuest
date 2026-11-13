@@ -757,8 +757,8 @@ def _apply_chain_class_post_damage(player, monster, weapon, chain: int,
 # Cached once. Populated lazily on first call. Generalizes the old hardcoded
 # "silver vs undead, iron vs fey" rules into a data-driven system: every
 # material in data/materials/weapons/*.json declares effective_against (tags
-# the wielder hits +50%) and vulnerabilities (tags the wielder TAKES extra
-# damage from). Gap 4.
+# whose creatures cannot bear it: the weak step, x2, data/affinity_rules.json)
+# and vulnerabilities (tags the wielder TAKES extra damage from). Gap 4.
 _MATERIAL_EFFECTIVE_AGAINST: dict[str, set] = {}
 _MATERIAL_VULNERABILITIES:   dict[str, set] = {}
 
@@ -855,44 +855,39 @@ def _is_heavy_armored(monster) -> bool:
 PIT_BELLY_MULT = 1.25
 
 
-def _damage_multiplier(damage_types: list[str], monster) -> float:
-    """Return 0.5 for resistance, 1.5 for weakness, 1.0 otherwise.
-    If weapon has multiple types, pick the best result across all types.
-
-    Material effective_against now drives this via data (see _load_material_tags).
-    The legacy hardcoded silver/iron rules are kept as a safety net for monsters
-    whose data files predate the material system."""
-    _load_material_tags()
-    resistances = getattr(monster, 'resistances', [])
-    weaknesses  = list(getattr(monster, 'weaknesses', []))
-    tags = set(getattr(monster, 'tags', []))
-    # Data-driven material bonuses (silver vs undead, cold_iron vs fey, etc.)
-    for dt in damage_types:
-        eff = _MATERIAL_EFFECTIVE_AGAINST.get(dt)
-        if eff and (eff & tags) and dt not in weaknesses:
-            weaknesses.append(dt)
-    # Legacy hardcoded fallbacks (kept for safety while the new data lands)
-    if 'undead' in tags or 'demon' in tags:
-        if 'silver' not in weaknesses:
-            weaknesses.append('silver')
-    if 'fey' in tags:
-        if 'iron' not in weaknesses:
-            weaknesses.append('iron')
-    mults = []
-    for dt in damage_types:
-        if dt in weaknesses:
-            mults.append(1.5)
-        elif dt in resistances:
-            mults.append(0.5)
-        else:
-            mults.append(1.0)
-    return max(mults) if mults else 1.0
-
-
-RESISTED = 0.5        # a blow of a kind the creature shrugs off
-WEAK_TO = 1.5         # a blow of a kind, or a metal, it cannot bear
-
 import affinity as _affinity  # noqa: E402
+
+# The steps (data/affinity_rules.json, read by affinity.py): kept here by
+# name for the code and tests that read them.
+WEAK_TO = _affinity.weak_step()          # x2: a blow of a kind, or a metal, it cannot bear
+RESISTED = _affinity.resisted_step()     # x0.5: a kind it resists
+SHRUGS_OFF = _affinity.shrugs_step()     # x0.25: a kind it shrugs off (no full immunity)
+AFFINITY_CAP = _affinity.cap()           # x3: form x substance at most
+
+
+def _material_weak(dt: str, tags: set) -> bool:
+    """A weapon material the creature's kind cannot bear (its
+    effective_against: silver and the undead, cold iron and fey...)."""
+    eff = _MATERIAL_EFFECTIVE_AGAINST.get(dt)
+    return bool(eff and (eff & tags))
+
+
+def _damage_multiplier(damage_types: list[str], monster) -> float:
+    """The step a spell, wand, breath or other typed hit takes against a
+    monster (data/affinity_rules.json): x2 for a weakness, x0.5 for a
+    resistance, x0.25 for what it shrugs off, else x1. Of several types
+    the best counts. A weapon material in the list counts as the creature
+    being weak to it where the material's effective_against says so.
+
+    (The hard-coded "silver hurts the undead and demons, iron the fey"
+    fallback is gone: silver's effective_against says the undead and the
+    shapeshifters, and the fair folk carry iron in their weaknesses, from
+    their lore: data/family_affinity.json.)"""
+    _load_material_tags()
+    tags = set(getattr(monster, 'tags', None) or ())
+    mults = [_affinity.step(dt, monster, also_weak=_material_weak(dt, tags))
+             for dt in damage_types if dt]
+    return max(mults) if mults else 1.0
 
 
 def affinity_word(weapon, monster, kind: str, blessed: bool = False) -> str:
@@ -906,19 +901,16 @@ def affinity_word(weapon, monster, kind: str, blessed: bool = False) -> str:
     tags = set(getattr(monster, 'tags', None) or ())
     forms = list(blow_forms_of(weapon))
     if kind == _affinity.WEAK:
-        if weapon is not None:
-            mat = str(getattr(weapon, 'material', '') or '').lower()
-            holy = blessed or getattr(weapon, 'buc', '') == 'blessed'
-            subs = [mat] + (['holy'] if holy else [])
-            for sub in subs:
-                eff = _MATERIAL_EFFECTIVE_AGAINST.get(sub)
-                if sub and (sub in weak or (eff and eff & tags)
-                            or (sub == 'silver' and tags & {'undead', 'demon'})
-                            or (sub == 'iron' and 'fey' in tags)):
-                    return sub
+        for sub in _substances_of(weapon, blessed=blessed):
+            if sub in weak or _material_weak(sub, tags):
+                return sub
         for f in forms:
-            eff = _MATERIAL_EFFECTIVE_AGAINST.get(f)
-            if f in weak or (eff and eff & tags):
+            if f in weak or _material_weak(f, tags):
+                return f
+    if kind == _affinity.SHRUGS_OFF:
+        shrugs = set(getattr(monster, 'shrugs_off', None) or ())
+        for f in forms:
+            if f in shrugs:
                 return f
     return forms[0] if forms else 'physical'
 
@@ -940,19 +932,45 @@ _BLOW_FORMS = frozenset({'slash', 'pierce', 'blunt', 'physical', 'fire', 'cold',
                          'acid', 'holy', 'poison', 'magic', 'necrotic', 'radiant', 'force'})
 
 
+def _substances_of(weapon, blessed: bool | None = None) -> list:
+    """What a weapon is made of, and whether it is blessed: its material,
+    any material id its damage types carry (a common weapon carries its
+    own; a unique may name one), and holy when it is blessed and holy is
+    not already one of the ways it wounds."""
+    if weapon is None:
+        return []
+    _load_material_tags()
+    out = []
+    mat = str(getattr(weapon, 'material', '') or '').lower()
+    if mat:
+        out.append(mat)
+    for t in (getattr(weapon, 'damage_types', None) or []):
+        if t and t not in _BLOW_FORMS and t in _MATERIAL_EFFECTIVE_AGAINST and t not in out:
+            out.append(t)
+    if blessed is None:
+        blessed = getattr(weapon, 'buc', 'uncursed') == 'blessed'
+    if blessed and 'holy' not in (getattr(weapon, 'damage_types', None) or []):
+        out.append('holy')
+    return out
+
+
 def weapon_type_multiplier(weapon, monster, blessed: bool | None = None) -> tuple[float, float]:
     """How a weapon's FORM and its SUBSTANCE each meet a monster: (form,
-    substance). Multiply them for the whole effect.
+    substance). Multiply them for the whole effect, held to AFFINITY_CAP
+    (x3): see affinity.capped.
 
     FORM is how the weapon wounds: its own damage types (slash, pierce,
     blunt, and for some named weapons fire, holy and the like). A blade that
     can cut or thrust uses whichever serves better, so the best of its own
-    types counts: 0.5 if the creature resists every one, 1.5 if it is weak
-    to any.
+    types counts: x2 if the creature is weak to any, x0.5 if it resists
+    every one, x0.25 if it shrugs them all off (a swarm against a sword).
 
     SUBSTANCE is what the weapon is made of, and whether it is blessed:
-    silver, iron, cold iron, holy. It is worth 1.5 against a creature that
-    cannot bear it and is otherwise 1. It never makes a blow weaker.
+    silver, iron, cold iron, holy. It is worth x2 against a creature that
+    cannot bear it and is otherwise 1. It never makes a blow weaker. The
+    material id a common weapon carries in damage_types is substance, not
+    form (it used to be scored as a form, so a silver mace's silver and its
+    blunt head never multiplied against a skeleton).
 
     These used to be one list with the best multiplier winning. The material
     is never a resistance, so it always scored 1.0 and outvoted the form: in
@@ -960,49 +978,34 @@ def weapon_type_multiplier(weapon, monster, blessed: bool | None = None) -> tupl
     87 monsters written to shrug off a cut, a thrust or a crushing blow
     never did. A skeleton now really is hard to stab and easy to smash."""
     _load_material_tags()
-    resistances = set(getattr(monster, 'resistances', None) or ())
-    weaknesses = set(getattr(monster, 'weaknesses', None) or ())
     tags = set(getattr(monster, 'tags', None) or ())
 
     if weapon is None:
         own = ['blunt']                      # a fist
     else:
-        own = [t for t in (getattr(weapon, 'damage_types', None) or []) if t]
+        own = [t for t in (getattr(weapon, 'damage_types', None) or [])
+               if t and (t in _BLOW_FORMS or t not in _MATERIAL_EFFECTIVE_AGAINST)]
         if len(own) > 1:
             own = [t for t in own if t != 'physical'] or own
     form = 1.0
     if own:
-        scores = []
-        for t in own:
-            eff = _MATERIAL_EFFECTIVE_AGAINST.get(t)
-            if t in weaknesses or (eff and (eff & tags)):
-                scores.append(WEAK_TO)
-            elif t in resistances:
-                scores.append(RESISTED)
-            else:
-                scores.append(1.0)
-        form = max(scores)
+        form = max(_affinity.step(t, monster, also_weak=_material_weak(t, tags)) for t in own)
 
     substance = 1.0
-    if weapon is not None:
-        made_of = []
-        mat = str(getattr(weapon, 'material', '') or '').lower()
-        if mat and mat not in own:
-            made_of.append(mat)
-        if blessed is None:
-            blessed = getattr(weapon, 'buc', 'uncursed') == 'blessed'
-        if blessed and 'holy' not in own:
-            made_of.append('holy')
-        legacy = set()
-        if 'undead' in tags or 'demon' in tags:
-            legacy.add('silver')
-        if 'fey' in tags:
-            legacy.add('iron')
-        for sub in made_of:
-            eff = _MATERIAL_EFFECTIVE_AGAINST.get(sub)
-            if sub in weaknesses or sub in legacy or (eff and (eff & tags)):
-                substance = WEAK_TO
-                break
+    for sub in _substances_of(weapon, blessed=blessed):
+        if sub in own:
+            continue
+        if _affinity.step(sub, monster, also_weak=_material_weak(sub, tags)) > 1.0:
+            substance = WEAK_TO
+            break
+    # A unique weapon's own bane (Zulfiqar against demons, Mjolnir against
+    # giants...: its effective_against) is what it is, so it is substance
+    # too: the weak step, once, under the cap. (It was a separate x1.5 in
+    # strike_damage. A common weapon's effective_against is its material's,
+    # already counted above.)
+    if (substance == 1.0 and weapon is not None and getattr(weapon, 'is_unique', False)
+            and set(getattr(weapon, 'effective_against', None) or ()) & tags):
+        substance = WEAK_TO
     return form, substance
 
 
@@ -1286,33 +1289,27 @@ def strike_damage(player, monster, chain: int, *, ranged: bool = False, ammo=Non
         _form_mult, _subst_mult = weapon_type_multiplier(weapon, monster, blessed=True)
     # Struck where it is weak (form or substance): for the techniques that
     # hit a family's listed weaknesses harder (weakness_amp).
-    _hits_weak = _form_mult >= WEAK_TO or _subst_mult >= WEAK_TO
+    _hits_weak = _form_mult > 1.0 or _subst_mult > 1.0
     if _edge_pr['pierce']:
         _form_mult = max(1.0, _form_mult)
     # Gram and the Sword of Michael ignore RESISTANCES; a weakness
     # still counts.
     if _ignores_res:
         _form_mult = max(1.0, _form_mult)
-    dtype_mult = _form_mult * _subst_mult
+    # Form x substance, never more than x3 (data/affinity_rules.json cap).
+    dtype_mult = _affinity.capped(_form_mult * _subst_mult)
 
     # Weapon-side effective_against array. Per audit 2026-05-30 — many
     # uniques (Zulfiqar, Vel of Murugan, Spear of Longinus, Mjolnir,
     # Dawnbreaker, Gungnir, Fragarach, Skofnung, Gilgamesh's Axe,
     # Shamshir) declared per-weapon anti-tag arrays that the engine
-    # ignored (only material.effective_against was read). Boost
-    # damage 1.5x when the target matches any declared tag.
-    # Per-weapon effective_against: ONLY for UNIQUE weapons' explicit anti-tag
-    # arrays (Zulfiqar, Mjolnir, Dawnbreaker...). A COMPOSITIONAL weapon
-    # inherits effective_against from its MATERIAL (instantiate_weapon copies
-    # it), but the material is already added to damage_types above, so
-    # _damage_multiplier ALREADY applied that bonus -- counting it again here
-    # double-dipped it. A yew crossbow vs a fey Satyr did 1.5 x 1.5 = 2.25x:
-    # a 7-base chain-5 shot hit for 41 instead of ~28. (2026-06-07 ranged fix;
-    # gated at the use-site so it also corrects weapons already in saves.)
-    if weapon and getattr(weapon, 'is_unique', False):
-        _weapon_anti = getattr(weapon, 'effective_against', None) or []
-        if _weapon_anti and (set(getattr(monster, 'tags', [])) & set(_weapon_anti)):
-            dtype_mult *= 1.5
+    # ignored (only material.effective_against was read). A UNIQUE weapon's
+    # own bane is now part of its substance in weapon_type_multiplier (the
+    # weak step, under the cap). A COMPOSITIONAL weapon inherits
+    # effective_against from its MATERIAL (instantiate_weapon copies it), and
+    # the material is its substance already: counting it again double-dipped
+    # it. A yew crossbow vs a fey Satyr did 1.5 x 1.5 = 2.25x: a 7-base
+    # chain-5 shot hit for 41 instead of ~28 (2026-06-07 ranged fix).
     if weapon:
         # Anduril-style numeric undead_multiplier (legacy `undead_bonus`
         # JSON field): applies as a flat 1.5x against undead when set > 1.
@@ -1525,7 +1522,7 @@ def strike_damage(player, monster, chain: int, *, ranged: bool = False, ammo=Non
     # every bypass): the game says so at the end of the action (affinity.py).
     # Noted below, after the family techniques: a technique that has just
     # said the weakness (Bonebreaker) is not followed by "super effective".
-    _aff_kind = _affinity.kind_of(_form_mult * _subst_mult) if consume else ''
+    _aff_kind = _affinity.kind_of(_affinity.capped(_form_mult * _subst_mult)) if consume else ''
     _aff_word = (affinity_word(weapon, monster, _aff_kind, blessed=_edge_pr['blessed'])
                  if _aff_kind else '')
 
@@ -1973,8 +1970,8 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None,
                 # e.g. 30 HP -> 90% chance, 150 HP -> 50%, 300 HP+ -> 5%
                 resist_threshold = min(0.95, max(0.05, monster.max_hp / 300.0))
                 if random.random() > resist_threshold:
-                    monster.add_effect('paralyzed', 2)
-                    stunned = True
+                    # (0 when its nature refuses it: Monster.add_effect)
+                    stunned = bool(monster.add_effect('paralyzed', 2))
 
         # Bleed mechanic
         if weapon and weapon.bleed_chance > 0 and actual > 0:
@@ -1985,22 +1982,19 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None,
         poisoned = False
         if weapon and getattr(weapon, 'poison_chance', 0) > 0 and actual > 0:
             if random.random() < weapon.poison_chance:
-                monster.add_effect('poisoned', 5)
-                poisoned = True
+                poisoned = bool(monster.add_effect('poisoned', 5))
 
         # Burn mechanic
         burned = False
         if weapon and getattr(weapon, 'burn_chance', 0) > 0 and actual > 0:
             if random.random() < weapon.burn_chance:
-                monster.add_effect('burning', 4)
-                burned = True
+                burned = bool(monster.add_effect('burning', 4))
 
         # Confuse mechanic (Thyrsus-style)
         confused = False
         if weapon and getattr(weapon, 'confuse_chance', 0) > 0 and actual > 0:
             if random.random() < weapon.confuse_chance:
-                monster.add_effect('confused', 4)
-                confused = True
+                confused = bool(monster.add_effect('confused', 4))
 
         # Freeze proc (Aiglos: Gil-galad's spear). Per audit 2026-05-30 —
         # freeze_chance was declared on the unique but had no consumer.
@@ -2019,10 +2013,10 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None,
             _wfx_status = _wfx.get('status')
             _wfx_chance = float(_wfx.get('effect_chance', 0.0) or 0.0)
             _wfx_dur = int(_wfx.get('effect_duration', 3) or 3)
-            if (_wfx_status and _wfx_chance > 0 and random.random() < _wfx_chance
-                    and not (_wfx_status == 'bleeding' and not getattr(monster, 'can_bleed', lambda: True)())):
-                _wfx_current = monster.status_effects.get(_wfx_status, 0)
-                monster.status_effects[_wfx_status] = max(_wfx_current, _wfx_dur)
+            if _wfx_status and _wfx_chance > 0 and random.random() < _wfx_chance:
+                # Through hold (the longer of the two durations, as before):
+                # no blood, no bleed; what its nature refuses never takes hold.
+                monster.hold(_wfx_status, _wfx_dur)
 
         # Gae Dearg (engine wave 3): apply_heal_block_chance. The Red Spear's
         # wounds don't heal — apply heal_blocked to target on hit. Default
@@ -2373,14 +2367,12 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None,
                 if class_mech == 'stun_knockdown_at_max':
                     resist_thr = min(0.90, max(0.10, monster.max_hp / 250.0))
                     if random.random() > resist_thr:
-                        monster.add_effect('paralyzed', 3)
-                        stunned = True
+                        stunned = bool(monster.add_effect('paralyzed', 3)) or stunned
                     knocked = True
                 else:
                     resist_thr = min(0.95, max(0.05, monster.max_hp / 300.0))
                     if random.random() > resist_thr:
-                        monster.add_effect('paralyzed', 2)
-                        stunned = True
+                        stunned = bool(monster.add_effect('paralyzed', 2)) or stunned
 
             # Backstab (dagger, x2 at max chain on an unaware target) is part
             # of strike_damage, so the Strike Now preview shows it too.
@@ -2396,8 +2388,7 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None,
             # Concussion at max (club) — heavy skull blow rattles the brain
             if class_mech == 'concussion_at_max' and at_max:
                 if random.random() < 0.35:
-                    monster.add_effect('confused', 2)
-                    confused = True
+                    confused = bool(monster.add_effect('confused', 2)) or confused
 
             # Quick riposte (shortsword) — arms a counter-attack for next turn
             if class_mech == 'quick_riposte' and at_max:

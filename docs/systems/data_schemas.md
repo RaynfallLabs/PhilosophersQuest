@@ -692,6 +692,9 @@ The current migration is **gradual** — SYSTEMS_AUDIT §10 P4 lists
 | `attacks` | list[dict] | see §10.2 |
 | `resistances` | list[str] | damage type names |
 | `weaknesses` | list[str] | damage type names |
+| `shrugs_off` | list[str] | damage type names taking the shrugs-off step (x0.25) |
+| `status_immune` | list[str] | effects its nature refuses (written by `tools/content/affinity_pass.py`) |
+| `status_weak` | list[str] | effects it falls to easily; `fear_of_fire` = flees a fire hit |
 | `tags` | list[str] | `["beast", "undead", …]` for family lookup |
 | `harvest_tier` | int 1-5 | tier for animal-quiz harvest |
 | `treasure` | dict | `gold` [min, max] + item drop. `purse` names what the creature carries by lore (`none` / `purse` / `thief` / `scholar` / `sack` / `grave_goods` / `noble_dead` / `trinkets` / `pot` / `hoard` / `tempter` / `kept`); `gold` is written by `tools/balance/gold_by_lore.py` (economy refactor 2026-10-17, [economy.md](economy.md)), and so are `treasure_chance` / `treasure_kinds` (one piece of treasure by lore, 2026-10-18, [economy.md §11](economy.md)). Re-run that tool after adding monsters. |

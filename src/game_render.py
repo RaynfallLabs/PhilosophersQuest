@@ -3858,10 +3858,11 @@ class RenderMixin:
         dtypes  = weapon.damage_types if weapon else ['blunt']      # bare hands crush
         # the same reckoning the blow itself uses (form x substance)
         from combat import weapon_type_multiplier as _wtm
+        import affinity as _aff
         _fm, _sm = _wtm(weapon, monster)
         if weapon and getattr(weapon, 'ignore_resistances', False):
             _fm = max(1.0, _fm)
-        dm      = _fm * _sm
+        dm      = _aff.capped(_fm * _sm)
 
         # Current chain multiplier — polynomial for `chain_exponent`-set
         # weapons (and unarmed @ 1.15), otherwise the legacy array.
@@ -4014,6 +4015,8 @@ class RenderMixin:
         type_str = " / ".join(_label(d) for d in dtypes)
         if dm > 1.0:
             dm_text, dm_col = f"Weakness: {type_str}", FP.SUCCESS_TEXT
+        elif dm <= _aff.shrugs_step() + 1e-9:
+            dm_text, dm_col = f"Shrugs Off: {type_str}", FP.DANGER_TEXT
         elif dm < 1.0:
             dm_text, dm_col = f"Resisted: {type_str}", FP.DANGER_TEXT
         else:
@@ -8893,6 +8896,11 @@ class RenderMixin:
                 mechanics.append((f"Resists: {', '.join(_cap(x) for x in res)}", FP.CYAN_ACCENT, self.font_sm))
             if wks:
                 mechanics.append((f"Weak to: {', '.join(_cap(x) for x in wks)}", FP.WARNING_TEXT, self.font_sm))
+            # What it shrugs off, what its nature refuses, what it falls to
+            # easily (the lore pass: affinity.page_lines).
+            import affinity as _aff_pl
+            for _k, _t in _aff_pl.page_lines(mdef):
+                mechanics.append((_t, FP.WARNING_TEXT if _k == 'easily' else FP.CYAN_ACCENT, self.font_sm))
 
         if id_level >= 2:
             # Harvest yields exactly ONE ingredient per corpse — either a prime
@@ -9510,15 +9518,21 @@ class RenderMixin:
             # Its family tells him what it can do; what it fears waits for
             # its own study, or the family's Lore (family_lore.knowledge).
             import family_lore as _fl
+            import affinity as _aff_pl
+            extra = _aff_pl.page_lines(entry)
             if _fl.knowledge(self.player, entry.get('_id', '')) < _fl.KNOWN:
-                if res or wks:
+                if res or wks or extra:
                     lines.append(("Weaknesses: not yet studied. Study its corpse to learn what it fears.",
                                   FP.FADED_TEXT, self.font_sm))
-                res, wks = [], []
+                res, wks, extra = [], [], []
             if res:
                 lines.append((f"Resists: {', '.join(_cap(x) for x in res)}", FP.CYAN_ACCENT, self.font_sm))
             if wks:
                 lines.append((f"Weak to: {', '.join(_cap(x) for x in wks)}", FP.WARNING_TEXT, self.font_sm))
+            # What it shrugs off, what its nature refuses, what it falls to
+            # easily (the lore pass: affinity.page_lines).
+            for _k, _t in extra:
+                lines.append((_t, FP.WARNING_TEXT if _k == 'easily' else FP.CYAN_ACCENT, self.font_sm))
             for atk in entry.get('attacks', []) or []:
                 line = f"{atk.get('name', '?').replace('_', ' ').title()}: {atk.get('damage', '?')} ({_cap(atk.get('type', 'physical'))})"
                 if atk.get('effect'):

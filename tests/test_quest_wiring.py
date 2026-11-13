@@ -956,8 +956,10 @@ def test_named_foes_cannot_be_locked_down():
             m.add_effect(effect, 25)
             m.add_effect(effect, 25)
             assert m.status_effects[effect] <= NAMED_FOE_CONTROL_CAP, (mid, effect)
-        m.add_effect('poisoned', 10)
-        assert m.status_effects['poisoned'] == 10        # damage over time is fine
+        # A softer effect is fine. (This was poison; the lore pass made the
+        # fiends and the dead immune to it: data/family_affinity.json.)
+        m.add_effect('slowed', 10)
+        assert m.status_effects['slowed'] == 10
     rat = Monster({**data['giant_rat'], 'id': 'giant_rat'}, 1, 1)
     rat.add_effect('sleeping', 25)
     assert rat.status_effects['sleeping'] == 25

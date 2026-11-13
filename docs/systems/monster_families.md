@@ -50,6 +50,25 @@ long enough: knowledge unlocks the technique, performance lands it.
   `no_save_ward`, `tier_messages`, `popup_titles`, `popup_leads`, `tier_chronicle`
   (Journal templates, linted), `circles`, `loremaster`. Every number is here; nothing scales by floor.
 
+## Affinity profiles (what each family is weak to, resists, shrugs off)
+- `data/family_affinity.json` (winning-build plan 2026-11-13, section 3.2): per family a
+  `lore` note and its folklore `source`, a `form` profile (slash / pierce / blunt: weak,
+  resist, shrugs_off, neutral), `elements` (weak / resist / shrugs_off / drop),
+  `status_immune` and `status_weak`. `groups` refine a family by lore (skeletons weak to
+  blunt; the armoured dead; shades shrug off every blow; swarms shrug off blade and point and
+  fear fire; trolls; werewolves need silver...), `kinds` override one creature (Talos's ankle,
+  the Nemean lion's hide, Fafnir's belly), and `tag_rules` apply across families (the undead
+  never sleep, constructs know no fear, the fair folk fear iron). `unholy` says who holy power
+  burns: the undead, demons and the named cursed.
+- `tools/content/affinity_pass.py --write` writes the lists into `data/monsters.json`
+  (idempotent, format-preserving); `tests/test_affinity_lore.py` checks the profiles, that the
+  data matches the pass, and the fairness gate: every kind that shrugs off a form or resists
+  all three has a counter by its peak floor (a form it is weak to, a material whose
+  `effective_against` covers it, a spell element of a reachable tier, a blessing for the unholy).
+- The same pass gives every plain `physical` monster attack a form by its name and delivery
+  (a bite or gore pierces, a claw cuts, a slam, tail or trample crushes).
+- Named foes keep the forms written on them unless `kinds` names them.
+
 ## How knowledge is earned
 - One study = a correct corpse study (`_start_corpse_identify`) or a Scroll of Omnisight
   (`_omnisight_corpse_reveal`). Killing, harvesting and seeing never count. A wrong answer
