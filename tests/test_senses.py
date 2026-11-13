@@ -291,11 +291,60 @@ def test_a_lore_sense_says_itself_once_a_floor():
     hero = Hero(7, 5)
     wolf = make('wolf_pack_leader', 13, 5)
     wolf.take_turn(hero, dun, [wolf])
-    assert 'scent' in wolf._sense_message
-    wolf._sense_message = ''
+    assert wolf._sense_how == 'scent'
+    wolf._sense_how = ''
     wolf._tracking = False
     wolf.take_turn(hero, dun, [wolf])
-    assert not wolf._sense_message, 'said once a floor per kind'
+    assert not wolf._sense_how, 'said once a floor per kind'
+
+
+class _SenseGame:
+    """Just enough of a Game to say a sense line."""
+    from game_combat import CombatMixin
+    _say_sense_lines = CombatMixin._say_sense_lines
+
+    def __init__(self, hero, sees):
+        self.player = hero
+        self._sees = sees
+        self.msgs = []
+
+    def _sees_monster(self, m):
+        return self._sees
+
+    def add_message(self, text, cat='info'):
+        self.msgs.append(text)
+
+
+def _knower(*studied):
+    from types import SimpleNamespace
+    return SimpleNamespace(studied_monster_ids=set(studied), lore_known_monster_ids=set(),
+                           family_lore_grants={})
+
+
+def test_a_sense_never_names_a_creature_the_hero_cannot_see():
+    """2026-11-12: "The wight has felt the warmth of the living" from behind a
+    wall named a creature he had never seen. Unseen, it is "something"."""
+    for how in ('scent', 'tremor', 'lifesense', 'echo', 'mindsense', 'guilt'):
+        assert '{' not in senses.sense_line(how, 'unseen'), how
+        assert senses.sense_line(how, 'known') and senses.sense_line(how, 'seen'), how
+    wolf = make('wolf_pack_leader', 13, 5)
+    g = _SenseGame(_knower('wolf_pack_leader'), sees=False)
+    wolf._sense_how = 'scent'
+    g._say_sense_lines(wolf)
+    assert g.msgs and 'wolf' not in g.msgs[0].lower() and 'something' in g.msgs[0].lower()
+
+
+def test_a_seen_unknown_creature_shows_what_it_does_and_a_known_one_explains():
+    wolf = make('wolf_pack_leader', 13, 5)
+    g = _SenseGame(_knower(), sees=True)
+    wolf._sense_how = 'scent'
+    g._say_sense_lines(wolf)
+    assert 'sniffs the air' in g.msgs[0] and 'scent' not in g.msgs[0]
+    g = _SenseGame(_knower('wolf_pack_leader'), sees=True)
+    wolf._sense_how = 'scent'
+    g._say_sense_lines(wolf)
+    assert 'It has your scent' in g.msgs[0]
+    assert not wolf.__dict__.get('_sense_how'), 'said once'
 
 
 def test_g7_an_archer_that_can_blink_steps_out_to_a_clear_shot():

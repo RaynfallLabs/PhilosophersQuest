@@ -1,49 +1,73 @@
 {
-  "_doc": "How each monster comes to know where the hero is (src/senses.py; Brandon, 2026-11-12: no monster knows where you are unless it is thematically and lore appropriate). Every monster sees (a real line of sight, within its perception_range, default 8) and hears (the noise the hero makes). Some have a lore sense on top, listed under 'families' (every member) and 'monsters' (one kind; it replaces the family's list). 'blind' takes sight away. Ranges are tiles. A sense that goes 'through_walls' finds the hero behind stone; 'needs_motion' fails while he stands still; 'sees_invisible' is not fooled by invisibility. 'line' is said the first time on a floor that a kind finds him that way, when it is within 'line_reach' tiles; it teaches the sense.",
+  "_doc": "How each monster comes to know where the hero is (src/senses.py; Brandon, 2026-11-12: no monster knows where you are unless it is thematically and lore appropriate). Every monster sees (a real line of sight, within its perception_range, default 8) and hears (the noise the hero makes). Some have a lore sense on top, listed under 'families' (every member) and 'monsters' (one kind; it replaces the family's list). 'blind' takes sight away. Ranges are tiles. A sense that goes 'through_walls' finds the hero behind stone; 'needs_motion' fails while he stands still; 'sees_invisible' is not fooled by invisibility. 'lines' are said the first time on a floor that a kind finds him that way, when it is within 'line_reach' tiles (2026-11-12: never naming what he cannot see): 'known' when he can see it and knows the kind (family_lore.knowledge KNOWN), which teaches the sense; 'seen' when he can see it but does not know it, which shows only what it does; 'unseen' when he cannot see it, which never names it ({The} is never in it).",
   "line_reach": 12,
   "senses": {
     "scent": {
       "range": 8,
       "through_walls": true,
       "sees_invisible": true,
-      "line": "{The} lifts its head and sniffs the air. It has your scent."
+      "lines": {
+        "known": "{The} lifts its head and sniffs the air. It has your scent, and walls will not hide you from it.",
+        "seen": "{The} lifts its head, sniffs the air, and turns toward you.",
+        "unseen": "Somewhere close, something sniffs the air, and stops."
+      }
     },
     "tremor": {
       "range": 5,
       "through_walls": true,
       "needs_motion": true,
       "sees_invisible": true,
-      "line": "Something feels your footsteps through the stone: {the} turns toward you."
+      "lines": {
+        "known": "{The} goes still, then turns toward you. It feels your footsteps through the stone; stand still and it loses you.",
+        "seen": "{The} goes very still, then turns toward you.",
+        "unseen": "You feel, more than hear, something shift in the stone nearby."
+      }
     },
     "lifesense": {
       "range": 6,
       "through_walls": true,
       "sees_invisible": true,
-      "line": "A chill runs over your skin. {The} has felt the warmth of the living."
+      "lines": {
+        "known": "A chill runs over your skin. {The} has felt the warmth of the living.",
+        "seen": "A chill runs over your skin as {the} turns toward you.",
+        "unseen": "A chill runs over your skin, as if something had noticed you."
+      }
     },
     "echo": {
       "range": 7,
       "through_walls": false,
       "sees_invisible": true,
-      "line": "A thin, shrill clicking: {the} sees you with sound."
+      "lines": {
+        "known": "A thin, shrill clicking: {the} sees you with sound.",
+        "seen": "A thin, shrill clicking, and {the} turns your way.",
+        "unseen": "A thin, shrill clicking, somewhere in the dark."
+      }
     },
     "mindsense": {
       "range": 8,
       "through_walls": true,
       "sees_invisible": true,
-      "line": "A pressure behind your eyes. {The} has felt your thoughts."
+      "lines": {
+        "known": "A pressure behind your eyes. {The} has felt your thoughts.",
+        "seen": "A pressure behind your eyes. {The} is looking at you.",
+        "unseen": "A pressure behind your eyes, as if something were listening."
+      }
     },
     "guilt": {
       "range": 14,
       "through_walls": true,
       "sees_invisible": true,
-      "line": "{The} turns, as if someone had called its name. The Furies always find the guilty."
+      "lines": {
+        "known": "{The} turns, as if someone had called its name. The Furies always find the guilty.",
+        "seen": "{The} turns, as if someone had called its name.",
+        "unseen": "Somewhere, something turns, as if someone had called its name."
+      }
     },
     "master": {
       "range": 999,
       "through_walls": true,
       "sees_invisible": true,
-      "line": ""
+      "lines": {}
     },
     "keen_sight": {
       "sight_bonus": 4

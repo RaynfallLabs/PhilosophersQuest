@@ -504,7 +504,8 @@ def _fill(m, text: str) -> str:
 
 def _first_line(m, how: str, dungeon, player) -> None:
     """The first time on a floor that a kind finds the hero by a lore sense,
-    say so: it teaches the sense."""
+    mark it to be said (Game._say_sense_lines picks the version: only the
+    Game knows whether he can see the creature, and what he knows of it)."""
     if how not in _LINE_SENSES:
         return
     if _cheb(m.x, m.y, player.x, player.y) > int(data().get('line_reach', 12)):
@@ -514,9 +515,15 @@ def _first_line(m, how: str, dungeon, player) -> None:
     if key in said:
         return
     said.add(key)
-    text = data()['senses'][how].get('line', '')
-    if text:
-        m._sense_message = _fill(m, text)
+    if sense_line(how, 'unseen'):
+        m._sense_how = how
+
+
+def sense_line(how: str, version: str) -> str:
+    """One version of a lore sense's line (2026-11-12): 'known' (he sees it
+    and knows the kind: the sense is explained), 'seen' (he sees it, does not
+    know it: only what it does), 'unseen' (he cannot see it: never named)."""
+    return str(((data()['senses'].get(how) or {}).get('lines') or {}).get(version, '') or '')
 
 
 def notice(m, player, dungeon, all_monsters, extra_occupied) -> bool:

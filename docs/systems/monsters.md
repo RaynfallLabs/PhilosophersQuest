@@ -284,7 +284,10 @@ Brandon: "NONE automatically know where you are unless it's thematically and lor
   | `guilt` 14 | the Erinyes | only when karma < 0 |
   | `master` | Asterion, Abaddon, Death | always knows, in his own house |
 
-  The first time on a floor that a kind finds him by a lore sense within 12 tiles, its `line` is said ("It has your scent.").
+  The first time on a floor that a kind finds him by a lore sense within 12 tiles, `senses._first_line` marks it (`_sense_how`), and `Game._say_sense_lines` says one of its three `lines` (2026-11-12):
+  - **known:** he sees it and knows the kind (`family_lore.knowledge` KNOWN). The sense is explained: "It has your scent, and walls will not hide you from it."
+  - **seen:** he sees it but doesn't know it. Only what it does: "lifts its head, sniffs the air, and turns toward you".
+  - **unseen:** he can't see it. Never named: "Somewhere close, something sniffs the air, and stops."
 
 **What a monster does with what it knows:**
 - **Hunting** (`_tracking`): it senses him this turn. `_standard_move` charges straight in when it has a clear view, and otherwise takes a real BFS path round the walls (`senses.step_toward`), also when a pillar or another creature blocks the straight way.

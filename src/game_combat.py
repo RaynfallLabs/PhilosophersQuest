@@ -2901,11 +2901,23 @@ class CombatMixin:
 
     def _say_sense_lines(self, m) -> None:
         """A lore sense said once a floor (it has your scent; it felt your
-        steps), and the line when one the hero can see gives up the search."""
+        steps), and the line when one the hero can see gives up the search.
+        The sense line never names a creature he cannot see, and explains the
+        sense only for a kind he knows (data/senses.json 'lines')."""
+        import family_lore
         import senses as _senses
-        line = m.__dict__.pop('_sense_message', '')
-        if line:
-            self.add_message(line, 'warning')
+        m.__dict__.pop('_sense_message', '')          # a save from before the versions
+        how = m.__dict__.pop('_sense_how', '')
+        if how:
+            if not self._sees_monster(m):
+                version = 'unseen'
+            elif family_lore.knowledge(self.player, getattr(m, 'kind', '')) >= family_lore.KNOWN:
+                version = 'known'
+            else:
+                version = 'seen'
+            text = _senses.sense_line(how, version)
+            if text:
+                self.add_message(_senses._fill(m, text), 'warning')
         lost = m.__dict__.pop('_lost_line', '')
         if lost and self._sees_monster(m):
             self.add_message(_senses._fill(m, lost), 'info')

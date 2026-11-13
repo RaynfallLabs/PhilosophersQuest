@@ -531,7 +531,7 @@ class Monster:
         # going to look; its own business before it notices him.
         '_tracking': False, '_goal': None, '_searching': False, '_job': 'wander',
         '_home': None, '_path': None, '_lead_used': False,
-        '_sense_message': '', '_lost_line': '',
+        '_sense_how': '', '_sense_message': '', '_lost_line': '',
         '_annihilate_target': None,
         # New AI fields (2026 dungeon-depth pass)
         'perception_range': 8, 'alert_radius': 5, 'alert_all_tag': False,
