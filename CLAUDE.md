@@ -90,6 +90,10 @@ src/
   rings.py            - Ring and amulet kinds: levels, ladders, names, what a worn kind does
   gear_saves.py       - Old saves meet the armour ladder: named pieces refreshed, worn grants re-synced
   item_actions.py     - Item actions shared by the Kit (K) and the character sheet (@)
+  known_by_hand.py    - Known by Hand: a kind of gear put on once goes on again with no quiz
+  game_dressing.py    - DressingMixin: donning time, the weapon At Your Back (S), Loadouts (Shift+E)
+  busy.py             - Busy for N turns: a multi-turn action, stopped by a foe in view or a blow
+  loadouts.py         - The three saved kits: names, slots, defaults
   chain_equip.py      - Chain-equip for lore-rich legendary uniques
   chain_passives.py   - Chain-equip passive flag lookups and wiring
   armor_procs.py      - Flat-armour proc registry and per-floor charges

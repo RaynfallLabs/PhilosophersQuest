@@ -373,7 +373,10 @@ Armor adds a `"slot"` field (`body`, `head`, `legs`, `arms`,
 
 - `equip_threshold: N` — N correct answers in the equip quiz
   (zero-tolerance, see conventions). Subject is **geography** for
-  armor / shield, **history** for accessory.
+  armor / shield, **history** for accessory. Asked once a kind: after
+  the first pass the kind is Known by Hand (armour.md §1b). Named
+  pieces' values are written by the rule
+  (`tools/content/known_by_hand_thresholds_2026_11.py`).
 - `equip_chain_mode: "escalator_chain"` on some uniques — turns the
   threshold quiz into an escalator chain for tier-climbing (Green
   Knight's Plate, Greater Aegis, …).

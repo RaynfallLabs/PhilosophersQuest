@@ -957,13 +957,18 @@ class QuirkSystem:
                 self._award('penelope', "Penelope's Mastery",
                             self._timer_bonus('geography', 3))
 
-        # Hephaestus (#11): same armor piece equipped 15 times
+        # Hephaestus (#11): same armor piece equipped 15 times. The reward is
+        # read where armour goes on (game_dressing._dress_fast): donning and
+        # taking off take half as long. (It was one fewer right answer for
+        # that slot, which Known by Hand made moot: a kind worn once needs
+        # no quiz at all. Old saves may still hold `hephaestus_slot`; nothing
+        # reads it.)
         if item_type == 'armor':
             self._dict_inc('hephaestus_counts', item_id)
             cnt = self._dict_get('hephaestus_counts', item_id)
             if cnt >= 15 and not self.is_unlocked('hephaestus'):
-                def _apply_heph(pl, _slot=slot):
-                    pl.quirk_progress['hephaestus_slot'] = _slot
+                def _apply_heph(pl):
+                    return None
                 self._award('hephaestus', "Hephaestus' Obsession", _apply_heph)
 
         # Jormungandr (#29): same weapon equip/unequip 20 times
@@ -1790,7 +1795,7 @@ _QUIRK_EFFECTS = {
     'rasputin':      "CON +2",
     'merlin':        "INT +1.",
     'buddha':        "Permanent displacement -- monsters may miss.",
-    'hephaestus':    "Equip threshold -1 for that armor slot.",
+    'hephaestus':    "Armor goes on and comes off in half the time.",
     'cassandra':     "WIS +1",
     'sisyphus':      "WIS +1.",
     'job':           "Permanent levitation -- immune to floor traps.",

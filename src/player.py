@@ -47,6 +47,19 @@ class Player:
         self._worn_stat_ledger: dict = {}  # stats worn accessories lend now (sync_worn_stats)
         self.amulet_slot = None            # single amulet slot
         self.belt_slot   = None            # single belt slot (Megingjörð, Hippolyta's Girdle, Ariadne's Thread, etc.)
+        # The weapon At Your Back (game_dressing.py): a weapon in the pack
+        # that S swaps into the hand in one turn. It is the readied one only
+        # while it is still in the pack (readied_weapon), so a drop, a sale
+        # or a theft lets go of it by itself.
+        self._readied_weapon = None
+        # Known by Hand (known_by_hand.py): the kinds of gear the hero has
+        # put on this run (item ids), which go on again with no quiz, and
+        # the best chain reached on each chain-equip legend.
+        self.known_by_hand: set[str] = set()
+        self.by_hand_tiers: dict[str, int] = {}
+        # Three saved kits (loadouts.py): name and pieces by slot.
+        from loadouts import default_kits
+        self.loadouts: list = default_kits()
 
         # Inventory (list of item objects)
         self.inventory = []
@@ -224,6 +237,25 @@ class Player:
         # is_split_type_known + memory [[project-identify-one-question-2026-08-06]].
         self.known_forms: set[str] = set()
         self.known_materials: set[str] = set()
+
+    @property
+    def readied_weapon(self):
+        """The weapon At Your Back, while it is still in the pack."""
+        it = self.__dict__.get('_readied_weapon')
+        if it is not None and any(i is it for i in (self.__dict__.get('inventory') or ())):
+            return it
+        return None
+
+    @readied_weapon.setter
+    def readied_weapon(self, item):
+        """Ready a melee weapon from the pack (None: nothing at your back)."""
+        from items import Weapon
+        if item is None or not isinstance(item, Weapon) \
+                or getattr(item, 'requires_ammo', None) is not None \
+                or not any(i is item for i in (self.__dict__.get('inventory') or ())):
+            self.__dict__['_readied_weapon'] = None
+            return
+        self.__dict__['_readied_weapon'] = item
 
     @property
     def equipped_accessories(self):
@@ -892,6 +924,21 @@ class Player:
         # Saves from before the Lore Codex (2026-10-23): nothing met or read.
         self.__dict__.setdefault('topics_met', set())
         self.__dict__.setdefault('topics_read', set())
+        # Saves from before Known by Hand, the weapon At Your Back and the
+        # saved kits (2026-11-13): what is worn counts as known (the hero
+        # has put it on), nothing is readied, the three kits are empty.
+        self.__dict__.setdefault('_readied_weapon', None)
+        self.__dict__.setdefault('by_hand_tiers', {})
+        if 'known_by_hand' not in state:
+            self.known_by_hand = set()
+            try:
+                import known_by_hand as _kbh
+                _kbh.seed_from_worn(self)
+            except Exception:
+                pass
+        from loadouts import valid as _kits_valid, default_kits as _default_kits
+        if not _kits_valid(self.__dict__.get('loadouts')):
+            self.loadouts = _default_kits()
         # Saves from before monster families (2026-10-18): every kind whose
         # corpse was studied counts as studied, and every tier that gives is
         # marked told, so loading brings no flood of popups.

@@ -43,6 +43,7 @@ from game_states import (
     STATE_BOON_MENU,
     STATE_PET_MENU, STATE_PET_FEED, STATE_PET_HEAL, STATE_PET_SPECIALS,
     STATE_QA_WARP_INPUT, STATE_MESSAGE_LOG, STATE_TOPIC_CARD,
+    STATE_ASK, STATE_LOADOUTS,
 )
 
 
@@ -149,6 +150,15 @@ class InputMixin:
             return True
 
         if key == pygame.K_ESCAPE:
+            # The yes / no prompt and the Loadouts screen read Escape
+            # themselves (game_dressing.py): a kit name being typed is
+            # cancelled first, and an interrupted dressing stops.
+            if self.state == STATE_ASK:
+                self._ask_input(key)
+                return True
+            if self.state == STATE_LOADOUTS:
+                self._loadouts_input(key, '')
+                return True
             if self.state == STATE_QUIZ:
                 if getattr(self, '_necro_qs', None) is not None:
                     # The Necronomicon runs its own mini-quiz without
@@ -304,7 +314,7 @@ class InputMixin:
             # gear can be dropped or swapped) are actions too. They skipped
             # the check in _player_input, so a paralysed hero could flee
             # down the stairs. Help (?) only reads, and stays open.
-            if event.unicode in ('>', '<', '@', 'P') and self._helpless_turn():
+            if event.unicode in ('>', '<', '@', 'P', 'E') and self._helpless_turn():
                 return True
             # Keys checked by unicode to handle shift-modified chars
             if event.unicode == '>':
@@ -327,6 +337,11 @@ class InputMixin:
             if event.unicode == 'P':
                 # Shift+P opens the pet menu (lowercase p is pickup/disarm).
                 self._open_pet_menu()
+                return True
+            if event.unicode == 'E':
+                # Shift+E: the Loadouts, three saved kits (lowercase e is
+                # the equip menu; game_dressing.py).
+                self._open_loadouts()
                 return True
             if event.unicode == 'I' and getattr(self.player, 'qa_tools', False):
                 # Titivillus QA build: toggle immortality. No quiz, no Journal entry.
@@ -471,6 +486,10 @@ class InputMixin:
                 self.state = STATE_REVIEW_MISSED
         elif self.state == STATE_TOPIC_CARD:
             self._topic_card_input(key)
+        elif self.state == STATE_ASK:
+            self._ask_input(key)
+        elif self.state == STATE_LOADOUTS:
+            self._loadouts_input(key, event.unicode)
         elif self.state == STATE_REVIEW_MISSED:
             if key == pygame.K_c and self.missed_questions:
                 idx = max(0, min(getattr(self, '_review_idx', 0), len(self.missed_questions) - 1))
@@ -567,6 +586,11 @@ class InputMixin:
             return
         if key == pygame.K_e:
             self._open_equip_menu()
+            return
+        if key == pygame.K_s:
+            # S: the weapon in your hand and the one At Your Back change
+            # places, in one turn (game_dressing._swap_weapons).
+            self._swap_weapons()
             return
         if key == pygame.K_r:
             self._open_scroll_menu()
@@ -1050,6 +1074,7 @@ class InputMixin:
 
         shortcut_actions = {
             pygame.K_e: 'equip',
+            pygame.K_r: 'ready',
             pygame.K_u: 'unequip',
             pygame.K_i: 'identify',
             pygame.K_x: 'lore',

@@ -3255,6 +3255,8 @@ class CombatMixin:
             if did_attack:
                 _hp_before_death = self.player.hp
                 dmg, msg = dm.attack(self.player)
+                self._blows_on_hero = int(self.__dict__.get('_blows_on_hero', 0) or 0) + 1
+                self._last_striker = dm
                 if self.player.hp <= 0 and self._death_gives_back_a_breath(_hp_before_death):
                     msg = None
                 if msg:
@@ -3456,6 +3458,11 @@ class CombatMixin:
                     dmg, msg = m.attack(self.player)
                 finally:
                     self.player._trait_hooks_held = False
+                # A blow landed: it stops anything the hero was busy with
+                # (putting on armour, game_dressing.py: "Keep dressing?").
+                if getattr(m, '_last_attack_type', None) is not None or dmg:
+                    self._blows_on_hero = int(self.__dict__.get('_blows_on_hero', 0) or 0) + 1
+                    self._last_striker = m
                 if (getattr(m, '_unseen', False) is True
                         and max(abs(m.x - self.player.x), abs(m.y - self.player.y)) > 1):
                     # Unseen and not beside you: the only clue is where it came from.

@@ -47,12 +47,18 @@ def game(monkeypatch, tmp_path):
 
 
 def _attune(g, item, tier):
-    """Put a chain-equip accessory on through the game's own attune quiz."""
+    """Put a chain-equip accessory on through the game's own attune quiz.
+    Worn once it is Known by Hand (known_by_hand.py): the game asks whether
+    to attune again, and Y is the quiz (the best tier is kept)."""
+    from game_states import STATE_ASK, STATE_QUIZ
     if item not in g.player.inventory:
         g.player.inventory.append(item)
     g._equip_accessory(item)
-    cb, g.quiz_engine.callback = g.quiz_engine.callback, None
-    cb(QuizResult(success=True, score=tier, correct=tier, asked=tier))
+    if g.state == STATE_ASK:
+        g._ask_input(pygame.K_y)
+    if g.state == STATE_QUIZ:
+        cb, g.quiz_engine.callback = g.quiz_engine.callback, None
+        cb(QuizResult(success=True, score=tier, correct=tier, asked=tier))
     assert g.player.amulet_slot is item
 
 

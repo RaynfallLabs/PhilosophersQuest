@@ -90,6 +90,7 @@ from game_seeker import SeekerMixin
 from game_popups import PopupMixin
 from game_hazards import HazardsMixin
 from game_lore_fixtures import LoreFixturesMixin
+from game_dressing import DressingMixin
 from escort_system import EscortMixin
 from spells import LEARNABLE_SPELLS
 
@@ -221,7 +222,7 @@ DEEP_SLEEP = 10 ** 6           # a zoo, graveyard or barracks sleeper: until wok
 class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMixin, EncountersMixin,
            EmberpupMixin, BlackKnightMixin, ItemActionsMixin, RoadMixin, EscortMixin,
            SetneMixin, TraderMixin, PurseMixin, FamilyMixin, SeekerMixin, PopupMixin,
-           HazardsMixin, LoreFixturesMixin):
+           HazardsMixin, LoreFixturesMixin, DressingMixin):
     # FANTASY: Grimoire font set -- larger for readability. Read through the
     # UI scale on every use (SCALE_PLAN.md): a window resize can never leave
     # a font of the old size behind.
@@ -2798,6 +2799,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             from game_log import log_error
             log_error('main._give_starting_kit: recovered from an error')
         self.player.sort_pack()
+        # The hero's own kit is Known by Hand (known_by_hand.py): he brought
+        # it, and knows how it goes on, so his first turn is not a quiz.
+        import known_by_hand as _kbh
+        for _it in list(self.player.inventory) + self.player.worn_items():
+            if _kbh.asks_quiz(_it):
+                _kbh.learn(self.player, _it, 1)
 
         # -- Hero specials, passives, and journal entry --------------------
         # Pull from src/hero_specials.py based on the secret build's name.
@@ -7241,6 +7248,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         p = self.player
         rows = [
             {'label': 'Weapon', 'slot': 'weapon', 'item': p.weapon},
+            # The weapon At Your Back (game_dressing.py): carried in the
+            # pack, S swaps it into the hand.
+            {'label': 'Back', 'slot': 'readied', 'item': p.readied_weapon},
             {'label': 'Ranged', 'slot': 'ranged_weapon', 'item': p.ranged_weapon},
             {'label': 'Shield', 'slot': 'shield', 'item': p.shield},
         ]
@@ -7349,6 +7359,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         source, entry, item = self._charsheet_selection(source=self._charsheet_detail_source())
         if item is None:
             return []
+        if source == 'loadout' and (entry or {}).get('slot') == 'readied':
+            return self._item_actions(item, 'back')
         return self._item_actions(item, 'equip' if source == 'loadout' else 'pack')
 
     def _charsheet_focus_actions(self) -> None:
@@ -7541,74 +7553,30 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.player.drop_worn_status(status)
 
     def _unequip_slot(self, slot_name: str, item):
-        """Remove an equipped item and return it to inventory."""
-        from items import ARMOR_SLOTS
-        from chain_equip import is_chain_equip, revert_tier_bonuses
+        """Take a worn item off into the pack. Body armour takes half its
+        donning time to come off; everything else one turn (game_dressing,
+        _dress_start_off and _take_off_now)."""
         ok, msg = self.player.try_unequip_slot(item)
         if not ok:
             self.add_message(msg, 'warning')
             return
-        # Revert chain-equip tier bonuses BEFORE slot bookkeeping so player
-        # state reflects baseline by the time the item returns to inventory.
-        if is_chain_equip(item) and getattr(item, 'achieved_tier', 0) > 0:
-            revert_tier_bonuses(self.player, item)
-        # Remove from the appropriate slot
-        if slot_name in ('weapon', 'ranged_weapon'):
-            if slot_name == 'weapon':
-                self.player.weapon = None
-            else:
-                self.player.ranged_weapon = None
-            # Take the weapon's while-equipped effects off with it. Only the
-            # swap path inside _apply_equip did this, so a plain unequip left
-            # them behind and equip/unequip cycles stacked them (Hofud +2
-            # PER per cycle; Curtana's blessing surviving removal).
-            self.player._remove_weapon_passives(item)
-            _w_status = getattr(item, 'on_equip_status', '')
-            if _w_status:
-                self._remove_status_if_no_other_grants(_w_status)
-        elif slot_name == 'shield':
-            self.player.shield = None
-            self.player.shed_worn_grants(item)
-        elif slot_name in ARMOR_SLOTS:
-            idx = ARMOR_SLOTS.index(slot_name)
-            self.player.armor_slots[idx] = None
-            # Its status and anything else it lent come off with it (only the
-            # swap path did this: the Blindfold left its wearer blind).
-            self.player.shed_worn_grants(item)
-        elif slot_name.startswith('accessory_') or slot_name in ('amulet', 'belt'):
-            if slot_name == 'amulet':
-                self.player.amulet_slot = None
-            elif slot_name == 'belt':
-                self.player.belt_slot = None
-            else:
-                self.player.accessory_slots[int(slot_name.split('_')[1])] = None
-            from items import Accessory as _Acc
-            if isinstance(item, _Acc):
-                # Its AC, and its stats by the strongest-counts rule (a
-                # weaker ring of the same stat takes over).
-                self.player.accessory_off(item)
-                fx = item.effects
-                if 'status' in fx:
-                    self._remove_status_if_no_other_grants(fx['status'])
-        self.player.inventory.append(item)
-        self.add_message(f"You remove the {self._bare_name(item)}.", 'info')
-        _qs_uneq = getattr(self, 'quirk_system', None)
-        if _qs_uneq:
-            itype = 'weapon' if slot_name in ('weapon', 'ranged_weapon') else \
-                    'shield' if slot_name == 'shield' else \
-                    'armor' if slot_name not in ('amulet', 'belt') and not slot_name.startswith('accessory_') else \
-                    'accessory'
-            _qs_uneq.on_item_unequipped(item.id, itype, slot_name)
-        self._advance_turn()
+        self._dress_start_off(slot_name, item)
 
     def _start_armor_quiz(self, item):
-        """Launch geography threshold quiz to equip armor or shield.
+        """Put on armour or a shield: the geography threshold quiz the first
+        time the hero wears its kind, then no quiz (Known by Hand,
+        known_by_hand.py), and the time it takes to put on
+        (game_dressing._dress_begin_on).
 
         Legendary uniques with `equip_chain_mode` route to chain-equip instead.
         """
         from chain_equip import is_chain_equip
+        import known_by_hand as _kbh
         if is_chain_equip(item):
             self._start_chain_equip_quiz(item, item_type='armor')
+            return
+        if _kbh.knows(self.player, item):
+            self._dress_known(item)
             return
         item_name = self._bare_name(item)
         self.quiz_title = f"EQUIPPING {item_name.upper()}  --  GEOGRAPHY"
@@ -7617,54 +7585,22 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         def on_complete(result):
             self.state = STATE_PLAYER
             if result.success:
-                self.player._apply_equip(item)
-                if not self._is_worn(item):
-                    # Refused (the piece in that slot would not come off):
-                    # the new one stays in the pack, never lost.
-                    self.add_message(
-                        f"You cannot put on the {item_name}.", 'warning')
-                    self._advance_turn()
-                    return
-                self.player.remove_from_inventory(item)
-                # Its curse, if any, is now known and named once ("the
-                # Cursed X (cursed)" said it twice, and before you knew).
-                # Only body armour and a shield move AC (bug bash 3.3.2):
-                # a helm or boots say only that they are on.
-                self.add_message(f"You equip the {item_name}." + self._ac_now_note(item), 'success')
-                self._note_worn_curse(item)
-                # Great Helm of Galahad (purity): announce the cleansing
-                # when items were freed of curses by the helm going on.
-                _cleansed = int(getattr(self.player, '_galahad_cleansed_count', 0) or 0)
-                if _cleansed > 0:
-                    self.add_message(
-                        f"The Grail's light flows from the helm. "
-                        f"{_cleansed} cursed item{'s' if _cleansed != 1 else ''} "
-                        f"on your person {'are' if _cleansed != 1 else 'is'} purified.",
-                        'success')
-                    self.player._galahad_cleansed_count = 0
-                _qs_arm = getattr(self, 'quirk_system', None)
-                if _qs_arm:
-                    itype = 'shield' if isinstance(item, Shield) else 'armor'
-                    _qs_arm.on_item_equipped(item.id, itype, getattr(item, 'slot', itype))
-            else:
-                self.add_message(
-                    f"You struggle with the {item_name} and give up.", 'warning'
-                )
+                # Its kind is known by hand from now on (_put_on_now learns
+                # it as it goes on; a plate stopped half on is learnt too).
+                _kbh.learn(self.player, item)
+                self._dress_begin_on(item)
+                return
+            self.add_message(
+                f"You struggle with the {item_name} and give up.", 'warning'
+            )
             self._advance_turn()
-
-        # Check Hephaestus quirk: -1 threshold for repeatedly-equipped armor slot
-        heph_slot = getattr(self.player, 'quirk_progress', {}).get('hephaestus_slot')
-        if heph_slot and getattr(item, 'slot', '') == heph_slot:
-            _threshold = max(1, item.equip_threshold - 1)
-        else:
-            _threshold = item.equip_threshold
 
         self.quiz_engine.start_quiz(
             mode='threshold',
             subject='geography',
             tier=getattr(item, 'quiz_tier', 1),
             callback=on_complete,
-            threshold=_threshold,
+            threshold=item.equip_threshold,
             wisdom=self.player.WIS,
             timer_modifier=self.player.get_quiz_timer_modifier(),
             extra_seconds=self.player.get_quiz_extra_seconds('geography'),
@@ -7704,8 +7640,13 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
 
         # Legendary uniques with `equip_chain_mode` route to chain-equip
         from chain_equip import is_chain_equip
+        import known_by_hand as _kbh
         if is_chain_equip(item):
             self._start_chain_equip_quiz(item, item_type='accessory')
+            return
+        # A kind the hero has worn goes on with no quiz (known_by_hand.py).
+        if _kbh.knows(self.player, item):
+            self._dress_known(item)
             return
 
         item_name = self._bare_name(item)
@@ -7715,49 +7656,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         def on_complete(result):
             self.state = STATE_PLAYER
             if result.success:
-                self.player._apply_equip(item)
-                if not self._is_worn(item):
-                    # Refused (a slot's item would not come off): keep the
-                    # new one in the pack rather than destroy it.
-                    self.add_message(
-                        f"You cannot put on the {item_name}.", 'warning')
-                    self._advance_turn()
-                    return
-                self.player.remove_from_inventory(item)
-                fx = item.effects
-                if 'status' in fx:
-                    # the status by its name, not its id ("You feel fire_resist!")
-                    from status_effects import EFFECT_INFO as _EI
-                    _label = (_EI.get(fx['status']) or (str(fx['status']).replace('_', ' ').title(),))[0]
-                    self.add_message(
-                        f"You slip on the {item_name}. You feel {_label}!", 'success'
-                    )
-                elif fx.get('stat') and fx.get('amount'):
-                    _st, _amt = fx['stat'], int(fx['amount'])
-                    # Only the strongest bonus to a stat counts
-                    # (Player.sync_worn_stats): say what this one adds
-                    # over the others worn.
-                    _got = (self.player.worn_stat_gain(item, _st)
-                            if _st in self.player.WORN_STATS else _amt)
-                    if _amt < 0 or _got >= _amt:
-                        self.add_message(
-                            f"You slip on the {item_name}. {_st} {_amt:+d}!", 'success')
-                    elif _got > 0:
-                        self.add_message(
-                            f"You slip on the {item_name}. {_st} {_got:+d}: of rings and amulets "
-                            f"of one stat, only the strongest counts.", 'success')
-                    else:
-                        self.add_message(
-                            f"You slip on the {item_name}, but you already wear a {_st} charm at "
-                            f"least as strong: of rings and amulets of one stat, only the "
-                            f"strongest counts.", 'info')
-                else:
-                    self.add_message(f"You slip on the {item_name}.", 'success')
-                self._note_worn_curse(item)
-            else:
-                self.add_message(
-                    f"You fumble with the {item_name} and give up.", 'warning'
-                )
+                _kbh.learn(self.player, item)
+                self._dress_begin_on(item)
+                return
+            self.add_message(
+                f"You fumble with the {item_name} and give up.", 'warning'
+            )
             self._advance_turn()
 
         self.quiz_engine.start_quiz(
@@ -7776,15 +7680,43 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     # Chain-equip: legendary uniques with escalator/chain mode equip-quiz
     # ------------------------------------------------------------------
 
-    def _start_chain_equip_quiz(self, item, item_type: str = 'armor'):
-        """Launch escalator-chain or chain quiz to equip a legendary unique.
+    def _start_chain_equip_quiz(self, item, item_type: str = 'armor', retake: bool = False):
+        """Attune to a legendary unique: an escalator-chain or chain quiz,
+        whose chain sets the tier (chain_equip.apply_tier_bonuses).
 
-        The chain length achieved determines tier_bonuses applied via
-        chain_equip.apply_tier_bonuses(). Fresh quiz every equip — no
-        sticky state. On failure the item is NOT equipped.
+        Known by Hand (known_by_hand.py) remembers the best chain reached on
+        it: put back on, it goes on at that tier with no quiz, and the hero
+        may take the quiz again to climb (``retake``; the best is kept, so a
+        worse chain costs nothing). The first time, a failure leaves it in
+        the pack. ``item_type`` is kept for callers; the slot is read from
+        the item.
         """
-        from chain_equip import get_chain_subject, get_chain_mode, apply_tier_bonuses
+        from chain_equip import get_chain_subject, get_chain_mode
+        import known_by_hand as _kbh
         item_name = self._bare_name(item)
+        best = _kbh.best_tier(self.player, item)
+        if best > 0 and not retake:
+            if best >= 5:
+                self.add_message(f"You have worn the {item_name} before, at tier 5/5. "
+                                 f"On it goes.", 'info')
+                self._dress_begin_on(item, tier=5)
+                return
+
+            def _wear(_i=item, _t=best):
+                self.add_message(f"You have worn the {item_name} before. On it goes, "
+                                 f"at tier {_t}/5.", 'info')
+                self._dress_begin_on(_i, tier=_t)
+
+            def _climb(_i=item, _k=item_type):
+                self._start_chain_equip_quiz(_i, _k, retake=True)
+            self._ask(f"Attune to the {item_name}?",
+                      [f"You have worn it at tier {best} of 5. It knows your hand.",
+                       "Attune again to climb: the best chain is kept."],
+                      [('N', f"Wear It at Tier {best}", "No quiz.", _wear),
+                       ('Y', "Attune Again", f"The quiz; a worse chain still leaves tier {best}.",
+                        _climb)],
+                      on_cancel=None)
+            return
         subject = get_chain_subject(item)
         mode = get_chain_mode(item)
         self.quiz_title = f"ATTUNING TO {item_name.upper()}  --  {subject.upper()}"
@@ -7798,55 +7730,18 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             chain = max(0, min(5, chain))
             # In chain mode you can fail rung 1 (chain=0). In escalator-chain
             # you must pass tier 1 to start the chain (chain >= 1 = success).
-            if chain >= 1:
-                apply_tier_bonuses(self.player, item, chain)
-                # Now actually equip
-                self.player._apply_equip(item)
-                if not self._is_worn(item):
-                    # Refused: the item in that slot would not come off.
-                    from chain_equip import revert_tier_bonuses
-                    revert_tier_bonuses(self.player, item)
-                    self.add_message(f"You cannot put on the {item_name}.", 'warning')
-                    self._advance_turn()
-                    return
-                self.player.remove_from_inventory(item)
-                self.add_message(
-                    f"You attune to the {item_name} at tier {chain}/5." + self._ac_now_note(item),
-                    'success'
-                )
-                self._note_worn_curse(item)
-                # Chain-equip passive auto-fires at equip time:
-                #   dragon_blood_bath -> permanent elemental resist statuses
-                #   aesir_young -> 5t protected when newly re-equipped
-                _passives = getattr(item, '_chain_passives', {}) or {}
-                if 'dragon_blood_bath' in _passives:
-                    # Listed on the item so they come off with it (two of the
-                    # three used to stay for the rest of the run).
-                    _held = list(getattr(item, '_chain_statuses', None) or [])
-                    for _stat in ('fire_resist', 'cold_resist', 'shock_resist'):
-                        self.player.add_effect(_stat, -1)
-                        if _stat not in _held:
-                            _held.append(_stat)
-                    item._chain_statuses = _held
-                    self.add_message(
-                        "You bathe in the dragon's blood. Elements turn aside!", 'success')
-                if 'aesir_young' in _passives:
-                    # Grant a brief shielded buff as a stand-in for "protected".
-                    self.player.add_effect('shielded', 5)
-                    self.add_message(
-                        "Idunn's apples wash years away. You are young again.", 'info')
-                _qs = getattr(self, 'quirk_system', None)
-                if _qs:
-                    if item_type == 'armor':
-                        from items import Shield
-                        slot_type = 'shield' if isinstance(item, Shield) else 'armor'
-                        _qs.on_item_equipped(item.id, slot_type, getattr(item, 'slot', slot_type))
-                    else:
-                        _qs.on_item_equipped(item.id, 'accessory', getattr(item, 'slot', 'accessory'))
-            else:
-                self.add_message(
-                    f"The {item_name} does not recognize you. Try again.", 'warning'
-                )
+            # Taken again to climb, the best chain reached is kept.
+            tier = max(chain, best)
+            if tier >= 1:
+                if best and chain <= best:
+                    self.add_message(f"You climb no higher than before: the {item_name} "
+                                     f"stays at tier {best}/5.", 'info')
+                _kbh.learn(self.player, item, tier)
+                self._dress_begin_on(item, tier=tier)
+                return
+            self.add_message(
+                f"The {item_name} does not recognize you. Try again.", 'warning'
+            )
             self._advance_turn()
 
         # Engine accepts 'escalator_chain' and 'chain'. JSON uses these names

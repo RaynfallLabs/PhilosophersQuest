@@ -151,6 +151,76 @@ def core_enchant_cap() -> int:
     return int(rules()['enchant_cap']['core'])
 
 
+# ----------------------------------------------------------------- donning
+
+@lru_cache(maxsize=2)
+def _template_ids(category: str) -> tuple:
+    """Every template id of a category ('armor' or 'shields'), longest first
+    (so 'iron_full_plate' reads as full plate, not plate)."""
+    import items
+    try:
+        ids = list(items.load_templates(category))
+    except Exception:
+        return ()
+    return tuple(sorted(ids, key=len, reverse=True))
+
+
+def template_of(item) -> str:
+    """The template a piece is built on: its ``template_basis`` (a named
+    piece, or a common one made since 2026-11-13), else read from a common
+    piece's id ("{material}_{template}"). '' when there is none."""
+    t = str(getattr(item, 'template_basis', '') or '')
+    if t:
+        return t
+    iid = str(getattr(item, 'id', '') or '')
+    cat = 'shields' if str(getattr(item, 'item_class', '')) == 'shield' else 'armor'
+    for tid in _template_ids(cat):
+        if iid == tid or iid.endswith('_' + tid):
+            return tid
+    return ''
+
+
+def _piece_kind(item) -> str:
+    """'body', 'shield', 'minor', 'accessory' or 'weapon' for donning."""
+    cls = str(getattr(item, 'item_class', '') or '')
+    if not cls:
+        cls = {'Armor': 'armor', 'Shield': 'shield', 'Accessory': 'accessory',
+               'Weapon': 'weapon'}.get(type(item).__name__, cls)
+    if cls == 'shield':
+        return 'shield'
+    if cls == 'armor':
+        return 'body' if str(getattr(item, 'slot', 'body')) in CORE_SLOTS else 'minor'
+    if cls == 'weapon':
+        return 'weapon'
+    return 'accessory'
+
+
+def don_turns(item, fast: bool = False) -> int:
+    """Turns to put ``item`` on (gear_rules.json ``donning``): body armour by
+    its weight class (light 1, medium 3, heavy 5), full plate 6; a shield,
+    a minor piece, a ring, an amulet or a belt 1. ``fast`` (the Hephaestus
+    quirk) halves it, rounded up."""
+    d = rules()['donning']
+    kind = _piece_kind(item)
+    if kind == 'body':
+        n = d['templates'].get(template_of(item))
+        if n is None:
+            cls = str(getattr(item, 'weight_class', '') or 'light')
+            n = d['body'].get(cls, d['body']['light'])
+    else:
+        n = d.get(kind, 1)
+    n = max(1, int(n))
+    if fast:
+        n = max(1, math.ceil(n * float(d['fast_share'])))
+    return n
+
+
+def doff_turns(item, fast: bool = False) -> int:
+    """Turns to take ``item`` off: half its donning, rounded up (at least 1)."""
+    d = rules()['donning']
+    return max(1, math.ceil(don_turns(item, fast) * float(d['doff_share'])))
+
+
 def named_ac_floor(kind: str, floor: int) -> int:
     """The least AC (base + plus) a named body armour (`kind` 'body') or
     shield ('shield') found by depth gives on `floor`: the common par there

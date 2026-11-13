@@ -7,7 +7,9 @@ Per the legendary-uniques design (2026-05-18):
     chain-equip: equipping triggers an escalator-chain or chain-mode quiz
     instead of threshold. The CHAIN REACHED determines which tier of bonus
     the item grants (1-5).
-  - Fresh quiz every equip — no sticky state.
+  - The best chain reached is remembered for the run (Known by Hand,
+    known_by_hand.py, 2026-11-13): put back on, the legend goes on at that
+    tier with no quiz, or the hero attunes again to climb (the best kept).
   - JSON shape on the unique:
       "equip_chain_mode": "escalator" | "chain"
       "equip_chain_subject": "geography" | "history" | "math" | ...  (optional)

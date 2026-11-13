@@ -167,10 +167,16 @@ Fixes from these audits ship in the version bump that mentions them in
   / lockpick fails — the lost corpse / ingredient / chest tier is the
   cost. (Identify's stun exists because identify is the one action that
   doesn't consume the item.)
-- **No masteries.** All three mastery systems (class, family, identify)
-  were removed on 2026-08-06. If you see "mastery" vocabulary in UI, log,
-  or JSON — that's a stale string, fix it. See `player.__setstate__`
-  in [save_meta.md](save_meta.md) for the migration list.
+- **No masteries of the old kind.** All three mastery systems (class,
+  family, identify) were removed on 2026-08-06; see `player.__setstate__`
+  in [save_meta.md](save_meta.md) for the migration list. Two later rules
+  keep what the hero has learnt this run, and are allowed because each is
+  one plain rule with no ladder of growing numbers: philosophy tier
+  mastery (`src/philosophy_mastery.py`: every question of a tier answered
+  right names that tier's items) and **Known by Hand**
+  (`src/known_by_hand.py`, 2026-11-13: a kind of gear put on once goes on
+  again with no quiz). Any other "mastery" vocabulary in UI, log or JSON
+  is a stale string: fix it.
 - When a game system is renamed, redesigned, or removed, **grep the OLD
   terms across all of `src/` in the same commit as the mechanical
   change.** Pytest won't catch text-only rot. See

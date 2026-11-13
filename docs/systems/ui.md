@@ -467,6 +467,8 @@ state; column 4 is the `_draw_<state>` method.
 | `STATE_STUDY` | `;` | `_study_input` | `_draw_study_journal` |
 | `STATE_MYSTERY_APPROACH` | mystery altar | `_mystery_approach_input` | `_draw_mystery_approach` |
 | `STATE_INTERCESSION_PROMPT` | `Shift+\` | `_intercession_prompt_input` | `_draw_intercession_prompt` |
+| `STATE_ASK` | Keep dressing?, attune again?, put a kit on (`game_dressing._ask`) | `_ask_input` (the option keys, Enter = the first, Esc) | `_draw_ask_prompt` (`_kit_option_card`, light overlay) |
+| `STATE_LOADOUTS` | `Shift+E` | `_loadouts_input` (1-3, Enter, S save, N rename) | `_draw_loadouts` |
 | `STATE_SHOP` | `Y` | `_shop_input` -> `_trader_input` | `_draw_shop` (model: `_trader_menu`) |
 | `STATE_PET_MENU` | `Shift+P` | `_pet_menu_input` | `_draw_pet_menu` |
 | `STATE_PET_FEED` / `_HEAL` / `_SPECIALS` | pet sub-menu | `_pet_*_input` | `_draw_pet_feed_submenu` etc. |
@@ -517,7 +519,8 @@ Returns early on `sleeping` / `paralyzed` (turn passes).
 |---|---|
 | `.` | wait / meditate (+1 MP if no adjacent monsters) |
 | `g` / `,` | pickup |
-| `e` | equip menu |
+| `e` | equip menu (`Shift+E`: the Loadouts, three saved kits) |
+| `s` | swap the weapon in the hand with the one At Your Back, one turn (`game_dressing._swap_weapons`) |
 | `r` | scroll menu |
 | `z` | wand menu |
 | `u` | eat menu |
@@ -541,7 +544,7 @@ Returns early on `sleeping` / `paralyzed` (turn passes).
 | `` ` `` | xyzzy input |
 | `w` | quirks progress |
 | `o` | observe cursor; Enter on a creature the hero has IDENTIFIED (studied, opened by the Book of Thoth or Omnisight, or its monster family at tier 1 or more: `family_lore.has_page`) opens its Bestiary page (`Game._open_bestiary_page`) and the look line names its family; Esc returns to play. A kind only seen gets the plain look plus "You don't know this creature yet. Study its corpse."; an unseen invisible or disguised creature gets the plain look (unless the hero's own family technique senses it: `unseen.senses`) |
-| `k` | kit: compare, then act on the selected item (E/D/I/X, see §22) |
+| `k` | kit: compare, then act on the selected item (E/R/D/I/X, see §22) |
 | `j` | discoveries |
 | `;` | Missed Questions (review this run's missed questions) |
 | `TAB` | cycle zoom |
@@ -991,8 +994,9 @@ parentheticals. Every listing must map to a real dispatch in
 
 **Six key-group columns:**
 
-1. **Movement** — Arrows, `.`, `< >`, `Tab`
-2. **Combat** — `A`, `F`, `T`, `M / Z`, `V`
+1. **Movement** — Arrows, `.`, `< >`, `Tab`, `Shift+E` (Loadouts: its
+   key badge is wide, and in Items it cut "Drop, gold / use tile")
+2. **Combat** — `A`, `F`, `T`, `M / Z`, `V`, `S` (swap weapons)
 3. **Items** — `E`, `X`, `I`, `H`, `C`, `D`, `U / Q`, `R`
 4. **Knowledge** — `@`, `B`, `J`, `K`, `W`, `;`, `N`
 5. **World** — `G / ,`, `P`, `Y`, `\`, `Shift+\`, `O`, `Shift+P`
@@ -1243,7 +1247,8 @@ unchanged:
 
 | Key | Action |
 |---|---|
-| `E` | Equip a pack item (`_equip_item`, quiz included); Unequip a worn one (`_unequip_slot`). On the Kit a floor item is picked up (`_pickup(target=item)`) and then equipped. `U` on the sheet is the same toggle. |
+| `E` | Equip a pack item (`_equip_item`; the quiz only for a kind not yet Known by Hand, then its donning turns); Unequip a worn one (`_unequip_slot`, half the donning turns). On the Kit a floor item is picked up (`_pickup(target=item)`) and then equipped. `U` on the sheet is the same toggle. |
+| `R` | Ready a melee weapon from the pack At Your Back (S swaps it in), or Unready it (no turn). The Kit tags it "At Your Back"; the sheet's Loadout has a Back row. |
 | `D` | Drop (`_do_drop_item`, stacks ask how many). A worn item is unequipped first, then dropped. |
 | `I` | Identify (`_identify_item`); needs the Philosopher's Shard, as the I menu does. |
 | `X` | Lore page. |
