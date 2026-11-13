@@ -250,7 +250,9 @@ class PurseMixin:
         gold under the hero, one of every treasure kind on the tiles round
         him, and a trader beside him with gems and the Draught of Mimir's
         Well, so coin weight, partial pickup, paying with treasure and the
-        draught can be tried in a minute."""
+        draught can be tried in a minute. Brannoc the armourer stands by too
+        (winning build 3.5): his counter for what is below, reforge,
+        silvering, cold iron, lining, the special order and the trade-in."""
         if not getattr(self.player, 'qa_tools', False):
             return
         import random as _random
@@ -291,8 +293,16 @@ class PurseMixin:
             piece = treasure.make(kind, x, y)
             if piece is not None:
                 self.ground_items.append(piece)
+        # The armourer takes a spot left over (none in a cramped corridor).
+        smith_near = any(isinstance(g, MerchantNPC) and getattr(g, 'kind', '') == 'armourer'
+                         and max(abs(g.x - p.x), abs(g.y - p.y)) <= 10 for g in self.ground_items)
+        if spots and not smith_near:
+            smith = build_trader('armourer', max(10, int(self.dungeon_level)), _random.Random(5))
+            smith.x, smith.y = spots.pop(0)
+            self.ground_items.append(smith)
         self.add_message("[QA] 20,000 gold at your feet, one of every treasure nearby, "
-                         "and a trader with gems and the Draught of Mimir's Well.", 'info')
+                         "a trader with gems and the Draught of Mimir's Well, and Brannoc "
+                         "the armourer.", 'info')
 
     def _drop_gold(self, amount: int) -> int:
         """Set ``amount`` of the purse down on the hero's tile as his own pile

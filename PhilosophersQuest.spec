@@ -115,6 +115,9 @@ a = Analysis(
         'npc_encounters', 'quirk_system', 'container_system',
         'fantasy_ui', 'sound_system', 'level_manager',
         'status_effects', 'paths', 'game_log',
+        # The dungeon supports the build (winning build 3.5): imported inside
+        # traders, game_traders and game_divine functions.
+        'domain_counters', 'smithing', 'rededication',
         # The Seeker profile. _dad_key is written by the release build from
         # the PQ_DAD_KEY secret (tools/release/write_dad_key.py); it is never
         # in the repo, and is imported only inside seeker_codes.

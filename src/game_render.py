@@ -4321,6 +4321,11 @@ class RenderMixin:
         # One-line equipped marker is useful at a glance (per Phase 1 brief).
         if self._menu_item_is_equipped(item):
             lines.append(("Equipped", FP.SUCCESS_TEXT, self.font_sm))
+        # A smith's work (silvering, an inlay, a lining: smithing.py). The hero
+        # paid for it and watched it done, so it shows identified or not.
+        import smithing as _smithing
+        for _work in _smithing.work_lines(item):
+            lines.append((_work, FP.CYAN_ACCENT, self.font_sm))
 
         if hasattr(item, 'identified') and idl < 3:
             # ``_display_name`` already shows either the true name or the
@@ -5468,6 +5473,10 @@ class RenderMixin:
         if src == 'back':
             lines.append(("At your back: S swaps it into your hand in one turn.",
                           FP.BODY_TEXT, self.font_sm))
+        # A smith's work on it (smithing.py): seen done, so shown either way.
+        import smithing as _smithing
+        for _work in _smithing.work_lines(item):
+            lines.append((_work, FP.CYAN_ACCENT, self.font_sm))
         if idl >= 3:
             stats, (extra_label, extra) = self._kit_row_labelled(slug, src, item)
             lines.append(("Visible stats", FP.GOLD_BRIGHT, self.font_sm))

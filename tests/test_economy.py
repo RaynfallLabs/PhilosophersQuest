@@ -513,6 +513,9 @@ def test_found_gold_follows_the_floor():
 def test_service_prices_are_shares_and_the_dearest_also_bite_the_purse():
     for sid in economy.SERVICE_SHARE:
         p = economy.service_price(sid, 50)
+        if economy.SERVICE_SHARE[sid] <= 0:
+            assert p == 0, sid                 # the trade-in: a better rate, no fee
+            continue
         assert 0.05 * economy.floor_income(50) <= p <= 1.0 * economy.floor_income(50), sid
     assert economy.service_price('restore', 50, purse=10 ** 6) == 100000
     assert economy.service_price('repair', 50, points=3) == economy.nice(economy.floor_income(50) * 0.45)

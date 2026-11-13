@@ -101,13 +101,16 @@ src/
   spells.py           - Spellbook spell definitions (tiered families)
   prayers.py          - The prayer list and what each grants
   altar.py            - The altar's offering: curses lifted, then blessings; what a blessing changes
+  rededication.py     - The altar's rededication: give a stat point back to take another, once per altar
   boons.py            - Gate-boss gifts (pick one of three)
   status_effects.py   - Buffs/debuffs (paralysis, poison, berserk, etc.)
   food_system.py      - Harvest and cooking mechanics
   container_system.py - Chests, sacks, lockable containers (lockpicking)
   economy.py          - The gold economy: what a floor earns and what things cost
   traders.py          - Named traders: who, where, their stock, prices, selling, services
-  game_traders.py     - TradersMixin: placing traders and the Buy / Sell / Services screens
+  game_traders.py     - TradersMixin: placing traders and the Buy / Sell / Services screens, trade-in, orders
+  domain_counters.py  - Stock that knows what's below: what walks under a stall and the counters for it
+  smithing.py         - The smiths' work: reforge, silvering and cold-iron inlay, linings, special orders
   treasure.py         - Coin weight (1 gp = 0.1 oz) and treasure: gems, jewellery, art; values, payment plans
   game_purse.py       - PurseMixin: receiving gold (weight-limited), paying with coin then treasure, gold piles
   pet_system.py       - Soul Sphere pets: AI, bonding, levels

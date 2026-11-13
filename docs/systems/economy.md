@@ -79,17 +79,22 @@ every one of them, and every Road anchor, to the table.
 
 | Kind | Who | Floors | Stocks | Buys | Services |
 |---|---|---|---|---|---|
+Every trader also offers the **trade-in** (section 5) and racks a **counter
+for what walks below** (section 11, "Stock that knows what's below").
+
+| Kind | Who | Floors | Stocks | Buys | Services |
+|---|---|---|---|---|---|
 | generalist | Grindle, Deep Gnome Trader | 2-80, about 1 floor in 6 | potions, scrolls, rings, wands, ammo, common gear, sometimes a Soul Sphere (25% on 1-33) or a Greater Soul Sphere (from 34) | everything (a fence) | map |
 | damned_generalist | Ortolan, the Last Merchant (one of the damned: he never gave a beggar a crumb, and must trade forever) | 81-98, about 1 floor in 6 | as Grindle (x1.4); rarely a Soul or Greater Soul Sphere | everything | map |
 | apothecary | Mother Wort | 2-35, 3 a run | a cure or healing for sure, potions, food | potions, food, ingredients | cure, restore, heal |
-| armourer | Brannoc | 10-45, 2 a run | common gear, ammo | weapons, armour, shields, ammo | repair, sharpen, reinforce, cut a curse off |
-| dwarf_armourer | Brunhild Irontemper, Dwarf Smith | 41-75, 2 a run | common gear, ammo | weapons, armour, shields, ammo | repair, sharpen, reinforce, cut a curse off |
+| armourer | Brannoc | 10-45, 2 a run | common gear, ammo; his best metal in every form | weapons, armour, shields, ammo | repair, sharpen, reinforce, cut a curse off, reforge, silvering, cold-iron inlay, lining, special order |
+| dwarf_armourer | Brunhild Irontemper, Dwarf Smith | 41-75, 2 a run | common gear, ammo; her best metal in every form | weapons, armour, shields, ammo | repair, sharpen, reinforce, cut a curse off, reforge, silvering, cold-iron inlay, lining, special order |
 | bookseller | Crispin Vellum | 15-40, 1 a run | scrolls, one spellbook | scrolls, spellbooks | identify with the scribe, map |
 | ghost_bookseller | Quentin Shelfmark, the Cataloguer (a ghost) | 41-90, 1 a run | scrolls, one spellbook | scrolls, spellbooks | identify with the scribe, map |
 | abyssal | Vesper, Dealer in the Deep | 61-98, 2 a run | named rings first, wands, potions (x1.5); rarely a Master Sphere (10%), a Greater Hearth Sphere (4%) or, from 67, a Master Hearth Sphere (3%) | everything, curses too | cut a curse off, restore |
 | sutler (gate camp) | Old Mags Thorn | 19, 39, always | healing for sure, potions, food, a scroll, ammo, armour; sometimes a Soul Sphere (19, 39) or a Greater Soul Sphere (39) | everything | repair, cure, heal, porter |
-| regin (gate camp) | Regin, Smith of Hreidmar's House: Fafnir's own brother | 59, always | gear, ammo, healing for sure (x1.25); sometimes a Greater Soul Sphere | weapons, armour, shields, ammo, rings | repair, sharpen, reinforce |
-| tyr (gate camp) | Tiw, One-Handed Soldier: Tyr in disguise | 79, always | healing for sure, potions, food, a scroll, ammo, a weapon, armour; sometimes a Greater Soul Sphere | everything | repair, sharpen, heal |
+| regin (gate camp) | Regin, Smith of Hreidmar's House: Fafnir's own brother | 59, always | gear, ammo, healing for sure (x1.25); sometimes a Greater Soul Sphere | weapons, armour, shields, ammo, rings | repair, sharpen, reinforce, reforge, silvering, cold-iron inlay |
+| tyr (gate camp) | Tiw, One-Handed Soldier: Tyr in disguise | 79, always | healing for sure, potions, food, a scroll, ammo, a weapon, armour; sometimes a Greater Soul Sphere | everything | repair, sharpen, heal, reforge, silvering, cold-iron inlay |
 
 The two deep gate camps teach their bosses. Regin's gate line is Sigurd's pit
 (dig in the track the worm takes to the water and strike up under the left
@@ -153,6 +158,18 @@ haggles (Buy tab), Esc closes (or backs out of choosing a target).
   a specialist's line, and a curse the hero knows of (except to Vesper). A
   sold thing is gone: it never reappears in his stock (that would price-
   identify it).
+- **Trade-in** (winning build 3.5, 2026-11-13; every trader): on a visit
+  when the hero buys from a trader, what he sells that trader fetches half
+  the trader's price (`economy.TRADE_IN_RATE`, `sell_offer(trade_in=True)`)
+  instead of a fifth, **up to the gold he spends there**. Order does not
+  matter: a sale made before the purchase is paid at a fifth, and the rest
+  is paid when he buys (`TraderMixin._trader_top_up`: "Brannoc counts what
+  you sold him earlier as a trade-in: 60 gold more."). The purse and the
+  resale cap still hold; treasure is not traded in (it already sells near
+  its worth). A visit is the hero's stay on the trader's floor
+  (`_traders_leaving`, from `_change_level`, clears `MerchantNPC.visit`).
+  The Sell tab says what part of an offer is trade-in, or what buying first
+  would add; the Services tab's Trade In row says how much is left.
 - **No buy/sell loop**: a thing bought from any trader never sells for more
   than half of what was paid (`RESALE_CAP_OF_PAID`). The least ever paid is
   40% of a list price (a full haggle and a friend's price), so every resale,
@@ -182,6 +199,16 @@ reward). Nothing is charged when there is nothing to do.
 | id_retry | 0.3 | Identify one item with a scribe at your elbow: the same philosophy question (`_identify_item(item, backlash=False)`); a wrong answer costs the fee, not 10 turns stunned. |
 | map | 0.3 | The floor's layout. |
 | porter | 0.5 | `porter` for 3 floors (carry limit + `PORTER_CARRY_BONUS`). |
+| reforge (smiths) | 0.6 | Re-shapes the wielded common weapon into another melee template of the SAME material (`smithing.reforge`: a longsword into a mace). The material, the plus, the blessing, the smith's work, the wear, any inlay and what was paid stay; the new template's id, name, forms, hands, chain, weight and base damage apply. Never a named blade, a bow, or a two-hander while a shield is worn. The picker shows each shape with its hands, forms and weight. The answer to "a spare weapon goes stale". |
+| silvering / cold_iron_inlay (smiths) | 0.9 | Works silver or cold iron into the wielded common weapon, for good: the substance joins `damage_types`, which the bane rule reads (`combat.weapon_type_multiplier`), and the affinity line names it. One inlay to a weapon; not into a weapon of that metal; the name shows it ("Silvered Iron Longsword", "Iron-Inlaid Steel Mace"). |
+| lining (armourers) | 0.5 | Lines a worn cloak or shirt against fire, cold, lightning or poison (`lining` on the piece, never `damage_resistances`): that element's damage x0.75 while worn (`Player.get_armor_resistance` reads `smithing.lining_mult`). One lining to a piece; shown on its Kit card. |
+| special_order (armourers) | 0.3 + the piece | Order a common piece in a metal the floor's loot is made of and a template that takes it (weapons, armour, shields), paid now; it is handed over when his shop opens at his next stall (`traders.next_stall`; the arrival there says it is waiting). Plain, sound and known (uncursed, identified). One open order a smith; no order at his last stall. An order whose stall below is gone is paid back when the hero leaves the floor where he placed it. Kept in `_traders['orders']`. |
+| trade_in (everyone) | none | Section 5: half his price for what you sell on a buying visit. Enter opens the Sell tab. |
+
+Each new row's detail pane says, when there is nothing to do, why ("He
+won't put a hammer to a named blade.", "Your order waits at his stall on
+floor 31.", "This is his last stall: there is nowhere below to collect an
+order.").
 
 Vendor encounters that sell a service: Brunhild the smith (sharpen, and
 mend), Doctor Finch (cure), the Medical Construct (restore, 15% of the purse).
@@ -410,6 +437,40 @@ items they haven't yet encountered, helps to BUILD the character."
   wand; a potion; a scroll or book. Mags: a potion; food; armour or a weapon; a
   scroll or book. Regin: a weapon; armour or a shield; a potion or ammo. Tiw: a
   potion; food; armour or a weapon; a scroll or ammo. Ortolan: as Grindle.
+
+### Stock that knows what's below (winning build 3.5, 2026-11-13)
+
+Brandon: "the dungeon needs to SUPPORT this through the merchants and
+altars, allowing the player a limited ability to swap gear to shore up
+weaknesses in their kit."
+
+- **What walks below** (`domain_counters.needs`): the kinds that spawn on the
+  floors at and just below the stall (`counters.span`, 4 past it), weighted
+  as they spawn (`dungeon._build_spawn_pool`), read at run time. Each
+  weakness in `counters.weak` is measured: a form (blunt, pierce, slash), a
+  substance (silver, cold iron) and holy through the real bane rule on a
+  probe weapon, an element (fire, cold, lightning) by the kind's own
+  weaknesses. Each element in `counters.guard` by the kind's attacks.
+- **The counters** (`domain_counters.stall_counters`, at most `per_stall`, 2):
+  the first offer the trader's OWN line can supply for the commonest
+  weakness (a blunt weapon, a silver weapon, a wand of turning or a blessed
+  weapon for holy, a fire wand or book...), then a guard for the commonest
+  attack element touching at least `guard_min_share` of what walks below (a
+  cloak or shirt the trader has LINED against it, priced with the lining, or
+  a resistance draught). A weapon counter takes the form that serves the
+  same floors best (a blessed mace where skeletons walk). A stall whose line
+  answers no weakness still racks a guard. Counters take shelf room like
+  any sure ware; the rest of the stock is random as before.
+- **Nothing is identified by it**: a gear counter (its use shows on it) is
+  marked on the Buy tab ("Brannoc set this out for what is below: the dead
+  walk."); a wand, potion or book counter is not.
+- **His line**, once, when the stall opens (`counter` in each trader's and
+  friend's lines): "Brannoc: Where you're going, the dead walk. Take a
+  mace." `counters.foes` words the family most of the kinds belong to.
+- **The armourers' rack** (`forms_of_best`, 3): their best metal on the
+  shelf that can take every form (or the best such metal the floor's loot is
+  made of) in slash, pierce and blunt, so a kid can buy the mace that
+  matches his sword.
 
 ### The Draught of Mimir's Well (D8)
 

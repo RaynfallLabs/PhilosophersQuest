@@ -680,6 +680,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self.player.sp     = self.player.max_sp
             self.player.max_mp = self.player.BASE_MP + self.player.INT
             self.player.mp     = self.player.max_mp
+        # What each stat was when the run began: an altar's rededication never
+        # takes one below it (rededication.py). Before the kit, which lends.
+        self.player.stats_at_start = {s: int(getattr(self.player, s)) for s in
+                                      ('STR', 'CON', 'DEX', 'INT', 'WIS', 'PER')}
 
         # Innate save affinity by build archetype (see module-level
         # _BUILD_SAVE_AFFINITY). Also re-applied in load_state for old saves.
@@ -1783,6 +1787,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # Escorts decide before the old floor is torn down: carried along,
         # arrived (their last stair), suspended (the Cow Level) or lost.
         _esc_carried, _esc_arrived = self._escorts_leaving(self.dungeon_level, new_level, via)
+        # A trader's visit ends with the floor (the trade-in), and an order
+        # with no stall below to collect it at is paid back (game_traders).
+        self._traders_leaving(self.dungeon_level)
         # Save current level state
         self.level_mgr.save(
             self.dungeon_level, self.dungeon, self.monsters, self.ground_items
