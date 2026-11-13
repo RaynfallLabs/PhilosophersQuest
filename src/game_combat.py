@@ -747,18 +747,30 @@ class CombatMixin:
                         f"The {display} splashes {the_name(monster, lower=True)}, but it resists!", 'warning'
                     )
                     return
-            # Check monster resistances list for thematic immunity
+            # A creature that resists magic is not muddled or frightened by
+            # a flask's charm. (Poison is no longer refused for resisting it:
+            # what cannot be poisoned at all says so below, status_immune,
+            # and the ticks of one that resists poison are cut, typed in
+            # Monster.tick_effects.)
             mon_resists = getattr(monster, 'resistances', [])
-            if ('poison' in mon_resists and debuff in ('poisoned', 'diseased')) or \
-               ('magic' in mon_resists and debuff in ('confused', 'hallucinating', 'feared')):
+            if 'magic' in mon_resists and debuff in ('confused', 'hallucinating', 'feared'):
                 self.add_message(
                     f"The {display} splashes {the_name(monster, lower=True)}, but it seems immune!", 'warning'
                 )
                 return
-            monster.add_effect(debuff, duration)
+            # Its nature first (status_immune: "The golem does not know
+            # fear."), then what it falls to easily (status_weak: half again
+            # as long): Game._inflict.
+            got, why = self._inflict(monster, debuff, duration, roll=False)
+            if not got:
+                self.add_message(
+                    f"The {display} splashes {the_name(monster, lower=True)}. "
+                    + (why or "It shakes it off."), 'warning')
+                return
             label = debuff.replace('_', ' ').title()
             self.add_message(
-                f"The {display} splashes {the_name(monster, lower=True)}! It is {label}!", 'success'
+                f"The {display} splashes {the_name(monster, lower=True)}! It is {label}!"
+                + (f" {why}" if why else ''), 'success'
             )
             return
 
@@ -3209,7 +3221,7 @@ class CombatMixin:
         last time (affinity.py)."""
         import affinity as _affinity
         for _line, _kind in _affinity.say(_affinity.drain()):
-            self.add_message(_line, 'success' if _kind == _affinity.WEAK else 'warning')
+            self.add_message(_line, 'success' if _affinity.is_good_news(_kind) else 'warning')
 
     # ------------------------------------------------------------------
     # Monster turns

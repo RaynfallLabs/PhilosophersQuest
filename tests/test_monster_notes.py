@@ -167,7 +167,7 @@ def test_splits_name_the_blows_that_split_it():
 
 def test_the_weakness_line():
     assert tells.weak_line(_m('troll')) == 'Fire and acid hurt it most.'
-    assert tells.weak_line(_m('ghoul')) == 'Holy power hurts it most.'
+    assert tells.weak_line(_m('ghoul')) == 'Holy power and a cutting blow hurt it most.'
     m = _m('ghoul')
     m.weaknesses = []
     assert tells.weak_line(m) == ''
@@ -214,7 +214,7 @@ def test_first_sight_says_more_as_the_hero_learns():
     hero.studied_monster_ids.add('ghoul')
     g._maybe_tell(ghoul)
     assert len(g.msgs) == 4
-    assert 'distance' in g.msgs[2] and g.msgs[3] == 'Holy power hurts it most.'
+    assert 'distance' in g.msgs[2] and g.msgs[3] == 'Holy power and a cutting blow hurt it most.'
     g._maybe_tell(ghoul)
     assert len(g.msgs) == 4
 

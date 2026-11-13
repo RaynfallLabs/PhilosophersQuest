@@ -11,7 +11,8 @@ Shipped and heavily reworked through v2.18.0 (commit `409e15d`, 2026-09-27). The
 - `src/level_manager.py` — floor-generation front door. Pre-rolls planned mini-bosses at run start, forces seal-demon spawns on `L83/85/87/89/91/93/97`, and routes boss floors through `boss_levels.generate_boss_level`.
 - `src/dungeon.py::_build_spawn_pool` (line 1230), `_footprint_fits`, `_spawn_one_in_room`, `spawn_monsters`, `populate_floor` — the procedural pool and placement.
 - `src/game_combat.py::_drop_treasure`, `_spawn_treasure_item`, `_spawn_archer_ammo`, `_spawn_boss_scroll`, `_spawn_unique_item`, `_make_corpse` — death-side loot and corpse creation.
-- `src/combat.py::_damage_multiplier` (line 833) — the elemental resistance/weakness table.
+- `src/combat.py::_damage_multiplier` — the step a typed hit takes (weak x2, resisted x0.5, shrugs off x0.25: `data/affinity_rules.json`); `weapon_type_multiplier` for a weapon blow (form x substance, capped x3).
+- `data/family_affinity.json` + `tools/content/affinity_pass.py` — the lore profiles that write every kind's `weaknesses`, `resistances`, `shrugs_off`, `status_immune`, `status_weak`.
 - `src/hero_specials.py::is_boss_or_huge` (line 19) — the `boss_immune` gate used by charm / paralyze / sleep / confuse / immobilize.
 - `src/geom.py` — footprint helpers (`is_adjacent`, `occupied_tiles`, `all_occupied_tiles`, `monster_at_tile`) that handle multi-tile bosses correctly; the Monster class routes through these rather than comparing `(m.x, m.y)` directly.
 
@@ -188,10 +189,14 @@ An `attacks[]` is a list of attack dicts. One is picked each turn (`random.choic
 ### Resistance / weakness
 
 - `resistances: [str]` — damage types that get `×0.5`.
-- `weaknesses: [str]` — damage types that get `×1.5`.
+- `weaknesses: [str]` — damage types that get `×2` (`×1.5` until the 2026-11-13 lore pass).
+- `shrugs_off: [str]` — damage types that get `×0.25` (a swarm against a sword, a shade against any blow). No full immunity.
+- `status_immune: [str]` — effects that never take hold (`Monster.add_effect` refuses them; the line says why).
+- `status_weak: [str]` — effects that take hold without a big foe's resist roll and last `×1.5`; the token `fear_of_fire` makes a fire hit put it to flight.
+- All five are written from lore by `tools/content/affinity_pass.py` out of `data/family_affinity.json`: edit the profile and rerun the pass, never the lists by hand (`tests/test_affinity_lore.py` checks they match). Numbers in `data/affinity_rules.json`.
 - `base_resistances: [str]` — Abaddon-only, used while the locust-ring quest step is active.
 
-`combat._damage_multiplier` picks the BEST multiplier across the attack's damage types (a slash+pierce weapon vs a slash-resistant pierce-weak monster rolls 1.5). Material-driven weaknesses are stacked on top from `_MATERIAL_EFFECTIVE_AGAINST` (silver vs undead/demon, cold-iron vs fey — the material system is the authoritative driver; a legacy hardcoded fallback keeps the old silver/iron rules alive for monsters pre-dating the material refactor).
+`combat._damage_multiplier` (a typed hit) picks the BEST step across its damage types; `combat.weapon_type_multiplier` (a weapon blow) takes the best FORM step times the SUBSTANCE step (its material via `_MATERIAL_EFFECTIVE_AGAINST`, holy if blessed, a unique's own bane), capped at x3. The old hard-coded fallback (silver for every undead and demon, iron for every fey) is gone: silver's `effective_against` names the undead and shapeshifters, the devils carry `silver` and the fair folk `iron` in their weaknesses (`data/family_affinity.json`). Every monster attack is typed: the lore pass gave each plain `physical` one a form (slash, pierce, blunt) by its name and delivery, so armour that resists a form answers it.
 
 **Known resistance types across all monsters** (15): `acid`, `blunt`, `cold`, `drain`, `fire`, `holy`, `lightning`, `magic`, `necrotic`, `pain`, `pierce`, `poison`, `shadow`, `slash`.
 

@@ -162,7 +162,7 @@ def test_the_weakness_line_comes_before_the_slain_line_and_the_loot(game):
 def test_a_technique_on_a_killing_blow_comes_before_the_slain_line(game):
     _grant(game, vampires_liches=5)
     game.player.weapon = _weapon('longsword', 'steel')
-    m = _mon(game, 'vampire_spawn', max_hp=10000, hp=600)
+    m = _mon(game, 'vampire_spawn', max_hp=10000, hp=1490)   # under 15%; a weak-to blow (x2) killed 600 outright
     m.treasure = {'gold': [30, 30]}
     _answer(game, 18)
     game._start_combat(m)
@@ -583,7 +583,7 @@ def _gold_at(g, x, y):
 def test_a_stake_leaves_no_corpse_but_drops_the_loot(game):
     _grant(game, vampires_liches=5)
     game.player.weapon = _weapon('longsword', 'steel')
-    m = _mon(game, 'vampire_spawn', max_hp=10000, hp=600)
+    m = _mon(game, 'vampire_spawn', max_hp=10000, hp=1490)   # under 15%; a weak-to blow (x2) killed 600 outright
     m.treasure = {'gold': [30, 30]}
     kills = game.level_mgr.monsters_killed
     _answer(game, 18)
@@ -597,7 +597,7 @@ def test_a_stake_leaves_no_corpse_but_drops_the_loot(game):
 def test_erase_the_letter_leaves_no_corpse(game):
     _grant(game, constructs=5)
     game.player.weapon = _weapon('mace', 'steel')
-    m = _mon(game, 'iron_golem', max_hp=10000, hp=600)
+    m = _mon(game, 'iron_golem', max_hp=10000, hp=1490)   # under 15%; a weak-to blow (x2) killed 600 outright
     _answer(game, 18)
     game._start_combat(m)
     assert not m.alive and not _corpse_of(game, m)
@@ -606,7 +606,7 @@ def test_erase_the_letter_leaves_no_corpse(game):
 def test_family_banishment_is_the_banishment_spells_rule(game):
     _grant(game, demons=5)
     game.player.weapon = _weapon('longsword', 'steel')
-    m = _mon(game, 'imp', max_hp=10000, hp=600)
+    m = _mon(game, 'imp', max_hp=10000, hp=1490)   # under 15%; a weak-to blow (x2) killed 600 outright
     m.treasure = {'gold': [30, 30]}
     m.stolen_gold = 12
     kills = game.level_mgr.monsters_killed

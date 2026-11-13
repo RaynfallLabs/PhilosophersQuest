@@ -1116,6 +1116,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # Chests can no longer be carried (call 9): one already in the pack
         # of an old save is set down at the hero's feet, unopened.
         self._migrate_carried_containers()
+        # Monsters saved before the lore pass take their kind's weaknesses,
+        # resistances, shrugs_off and status lists (affinity.py).
+        self._migrate_monster_affinities(state)
         self.renderer.set_view_origin(layout.MAP_X, 0)
         self.renderer.set_dungeon(self.dungeon.width, self.dungeon.height, layout.MAP_W, layout.GAME_H)
         self._refresh_fov()
@@ -1243,6 +1246,21 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         }
         self.popup_next_state = STATE_PLAYER
         self.state = STATE_STORY_POPUP
+
+    def _migrate_monster_affinities(self, state: dict) -> int:
+        """Every monster on this floor and every stored one that was saved
+        before the lore pass (winning build, slice 2) takes its kind's
+        lists from data/monsters.json: affinity.refresh_from_data."""
+        import affinity as _affinity
+        pools = [getattr(self, 'monsters', None) or []]
+        lm = state.get('level_mgr') if isinstance(state, dict) else None
+        if lm:
+            pools += [lvl.get('monsters') or [] for lvl in _stored_floors(lm)]
+        n = 0
+        for pool in pools:
+            for m in pool:
+                n += 1 if _affinity.refresh_from_data(m) else 0
+        return n
 
     def _migrate_ranged_weapons(self):
         """One-shot save migration. Old saves have bows with requires_ammo=None
@@ -5333,25 +5351,13 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             _senses.rouse_near(self.monsters, x, y, _senses.noise_radius('squeak'), self.dungeon)
             self.add_message("Every creature on the floor heard that!", 'danger')
         elif trap_type == 'rust':
-            from status_effects import _can_rust
-            # Collect all equipped items that can rust
-            rust_targets = []
-            if self.player.weapon and _can_rust(self.player.weapon):
-                rust_targets.append(self.player.weapon)
-            if self.player.shield and _can_rust(self.player.shield):
-                rust_targets.append(self.player.shield)
-            for slot in self.player.armor_slots:
-                if slot and _can_rust(slot):
-                    rust_targets.append(slot)
-            if rust_targets:
-                victim = random.choice(rust_targets)
-                # As the player knows it: victim.name printed an unidentified
-                # item's true name.
-                from items import wear_down
-                if wear_down(victim):
-                    self.add_message(f"Your {self._bare_name(victim)} rusts! (-1 enchantment)", 'danger')
-                else:
-                    self.add_message(f"Your {self._bare_name(victim)} is corroded but holds together.", 'warning')
+            # One worn iron or steel piece rusts, unless something he wears
+            # keeps rust off (status_effects.rust_worn_gear, the one way
+            # anything rusts).
+            from status_effects import rust_worn_gear
+            got = rust_worn_gear(self.player, None)
+            if got:
+                self.add_message(*got)
             else:
                 self.add_message("The water washes over you harmlessly.", 'info')
         elif trap_type == 'polymorph':

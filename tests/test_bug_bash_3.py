@@ -426,7 +426,9 @@ def test_a_ward_answers_poison_and_a_trap_but_not_hunger():
 
 def test_a_weapons_form_and_substance_each_meet_the_monster():
     """The material used to be one more damage type and the best multiplier
-    won, so no blow was ever resisted."""
+    won, so no blow was ever resisted. (The steps were x1.5 / x0.5; since
+    the winning-build lore pass they are x2 / x0.5 / x0.25 shrugged off:
+    data/affinity_rules.json.)"""
     import combat
     W = lambda types_, mat='steel', buc='uncursed': types.SimpleNamespace(   # noqa: E731
         damage_types=list(types_), material=mat, buc=buc)
@@ -434,13 +436,13 @@ def test_a_weapons_form_and_substance_each_meet_the_monster():
         resistances=list(res), weaknesses=list(weak), tags=list(tags))
     f = combat.weapon_type_multiplier
     assert f(W(['pierce']), M(res=['pierce'])) == (0.5, 1.0)                 # a rapier against bones
-    assert f(W(['blunt']), M(res=['pierce'], weak=['blunt'])) == (1.5, 1.0)  # a mace against bones
+    assert f(W(['blunt']), M(res=['pierce'], weak=['blunt'])) == (2.0, 1.0)  # a mace against bones
     assert f(W(['slash', 'pierce']), M(res=['slash'])) == (1.0, 1.0)         # a sword may thrust instead
     assert f(W(['slash', 'pierce']), M(res=['slash', 'pierce'])) == (0.5, 1.0)
     assert f(None, M(res=['blunt'])) == (0.5, 1.0)                           # bare hands crush
-    assert f(W(['slash'], mat='silver'), M(res=['slash'], tags=['undead'])) == (0.5, 1.5)   # the right metal still tells
-    assert f(W(['slash'], buc='blessed'), M(weak=['holy'])) == (1.0, 1.5)
-    assert f(W(['slash', 'holy'], buc='blessed'), M(weak=['holy'])) == (1.5, 1.0)           # holy is counted once
+    assert f(W(['slash'], mat='silver'), M(res=['slash'], tags=['undead'])) == (0.5, 2.0)   # the right metal still tells
+    assert f(W(['slash'], buc='blessed'), M(weak=['holy'])) == (1.0, 2.0)
+    assert f(W(['slash', 'holy'], buc='blessed'), M(weak=['holy'])) == (2.0, 1.0)           # holy is counted once
     assert f(W(['slash']), M(res=['steel'])) == (1.0, 1.0)                   # substance never weakens a blow
 
 

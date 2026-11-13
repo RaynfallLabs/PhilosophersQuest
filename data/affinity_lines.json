@@ -1,11 +1,12 @@
 {
-  "_doc": "What the game says when a hit meets a creature's weakness or its resistance (src/affinity.py; Brandon, bug bash 3.3.2: 'a whole set of pokemon style messages, so you know it when you are blocked or effective'). One line per action, chosen at random from the pool; the _many pools when several creatures were struck the same way. {name} is the creature with its article at a sentence start, {the} the same mid-sentence, {word} what met it (fire, silver, a cutting blow).",
+  "_doc": "What the game says when a hit meets a creature's weakness, its resistance or what it shrugs off, or fire puts a beast to flight (src/affinity.py; Brandon, bug bash 3.3.2: 'a whole set of pokemon style messages, so you know it when you are blocked or effective'). One line per action, chosen at random from the pool; the _many pools when several creatures were struck the same way. {name} is the creature with its article at a sentence start, {the} the same mid-sentence, {word} what met it (fire, silver, a cutting blow). status_immune: the line when an effect cannot take hold on a creature by its nature (Monster.add_effect, status_immune in monsters.json), by effect; status_weak: the line when one takes hold easily (status_weak). {effect} is the effect's name.",
   "words": {
     "slash": "a cutting blow", "pierce": "a thrust", "blunt": "a crushing blow",
     "physical": "the blow", "fire": "fire", "cold": "cold", "lightning": "lightning",
     "acid": "acid", "holy": "holy power", "poison": "poison", "magic": "magic",
     "necrotic": "death magic", "radiant": "radiance", "force": "force",
-    "silver": "silver", "iron": "iron", "cold_iron": "cold iron", "drain": "draining"
+    "silver": "silver", "iron": "iron", "cold_iron": "cold iron", "drain": "draining",
+    "shadow": "shadow"
   },
   "weak": [
     "It's super effective!",
@@ -20,18 +21,69 @@
   "resisted": [
     "It's not very effective...",
     "Not very effective... {name} resists {word}.",
-    "{name} shrugs off {word}.",
     "{word_cap} barely troubles {the}.",
     "{name} hardly notices. Try something other than {word}.",
     "The blow lands, but {the} takes little of it: it resists {word}.",
     "{name} was made to weather {word}. Not very effective."
+  ],
+  "shrugs_off": [
+    "It barely felt that...",
+    "{name} shrugs off {word}. Almost nothing gets through.",
+    "{word_cap} goes through {the} like a hand through smoke.",
+    "Hardly a scratch! {name} was never going to fall to {word}.",
+    "{name} does not even slow down. {word_cap} is the wrong tool here.",
+    "Next to useless: {word} hardly touches {the}."
+  ],
+  "fire_fright": [
+    "{name} shies from the flame!",
+    "{name} yelps and backs away from the fire!",
+    "The fire puts {the} to flight!"
   ],
   "weak_many": [
     "Super effective! {word_cap} tears through them.",
     "It's super effective! None of them can bear {word}."
   ],
   "resisted_many": [
-    "Not very effective... they shrug off {word}.",
+    "Not very effective... {word} hardly troubles them.",
     "It's not very effective: they all resist {word}."
-  ]
+  ],
+  "shrugs_off_many": [
+    "They shrug off {word}. Almost nothing gets through.",
+    "{word_cap} hardly touches any of them."
+  ],
+  "fire_fright_many": [
+    "The fire puts them to flight!",
+    "They shy from the flame and scatter!"
+  ],
+  "status_immune": {
+    "feared": ["{name} does not know fear.", "{name} has no mind to frighten."],
+    "charmed": ["{name} has no heart for the charm to win."],
+    "confused": ["{name} has no mind to muddle.", "There is no mind in {the} to confuse."],
+    "sleeping": ["{name} does not sleep.", "{name} never sleeps. The spell finds nothing to lull."],
+    "poisoned": ["Poison has nothing in {the} to work on.", "{name} has no blood for the poison to ride."],
+    "paralyzed": ["Nothing in {the} can be held still."],
+    "blinded": ["{name} has no eyes to blind."],
+    "immobilized": ["Nothing can hold {the}: it slips free."],
+    "stunned": ["{name} does not reel. There is nothing in it to stun."],
+    "diseased": ["{name} has no flesh for the sickness to take."],
+    "burning": ["{name} will not burn."],
+    "default": ["{name} is untouched by it: {effect} cannot take hold of such a thing."]
+  },
+  "status_nouns": {
+    "feared": "Fear", "charmed": "Charm", "confused": "Confusion", "sleeping": "Sleep",
+    "poisoned": "Poison", "paralyzed": "Paralysis", "blinded": "Blinding", "immobilized": "Being Held",
+    "stunned": "Stunning", "diseased": "Disease", "burning": "Burning", "slowed": "Slowing",
+    "fear_of_fire": "Fear of Fire"
+  },
+  "status_weak": {
+    "feared": ["{name} panics at once!"],
+    "charmed": ["{name} sways, easily entranced."],
+    "confused": ["{name} is easily muddled."],
+    "sleeping": ["{name} drops at once into a deep sleep."],
+    "paralyzed": ["{name} locks up at once."],
+    "blinded": ["{name} is blinded at once."],
+    "burning": ["{name} goes up like dry kindling!"],
+    "slowed": ["{name} is easily slowed."],
+    "default": ["{name} has no defence against it."]
+  }
 }

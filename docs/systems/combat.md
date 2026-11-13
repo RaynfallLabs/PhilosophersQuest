@@ -91,10 +91,11 @@ _start_combat(monster)                              # game_combat.py
           mult  = chain ** chain_exponent    (polynomial path — all v2.14.0+ weapons)
           mult *= _apply_chain_class_pre_damage(player, weapon, chain)
                    # may set player._chain_bypass_dr; bow C20 returns 2.0 vitals mult
-          dtype_mult = _damage_multiplier(weapon.damage_types + material, monster)
-                   # 0.5 resist / 1.0 neutral / 1.5 weakness, max over types
-          dtype_mult += unique anti-tag (if is_unique)
-                      + Anduril undead_multiplier
+          form, substance = weapon_type_multiplier(weapon, monster)
+                   # each x2 weak / x0.5 resist / x0.25 shrugs off / x1
+                   # (data/affinity_rules.json); a unique's own bane is substance
+          dtype_mult = affinity.capped(form * substance)    # never above x3
+          dtype_mult *= Anduril undead_multiplier
                       + Akinakes prophecy tag
                       + Mistilteinn resistant-at-max
                       + Robin Hood stealth bonus
@@ -186,7 +187,7 @@ Reference multipliers at the default `chain_exponent = 1.15`:
 | 15 | 22.90 | 115 | 435 |
 | 20 | 36.40 | 182 | 692 |
 
-(Pre-material, pre-dtype_mult, pre-str_factor. Add +1.5× for each matching weakness or material.effective_against tag.)
+(Pre-material, pre-dtype_mult, pre-str_factor. Then form x substance: x2 for a weakness or a material's effective_against, x0.5 resisted, x0.25 shrugged off, the two multiplied and capped at x3.)
 
 Chain is **UNCAPPED on the polynomial path.** The chain ends when the player answers wrong, the timer expires, or SPACE is pressed. See `combat.py:1976`:
 
@@ -229,7 +230,7 @@ A combat quiz is titled `MELEE ATTACK  --  MATH` or `RANGED ATTACK  --  MATH` (`
 | `cap` | `TARGET` caption (body 15, faded) | `STRIKE NOW` caption, plus the weapon name right-aligned in the `weapon` slot (`Bare Hands` when unarmed) |
 | `main` | Monster name, `FP.GOLD_PALE` | Live damage, `"{dmg} Damage"` from `combat.strike_preview` (the blow's own calculation: Strength, blessing, ammo, shields, scales, ward, gear; dice at their average) in the heading face (32 → 26 → 22), rank-coloured from chain 3; `0 Damage` faded at chain 0 |
 | `sub1` | `hp_bar` + `hp_text` (`"{hp}/{max} HP"`, right-aligned); bar and numbers colour-coded green > 50%, warning yellow 25–50%, danger red < 25% | `"x{mult:.1f} Multiplier"`, or `Answer to start a chain` at chain 0 |
-| `sub2` | Status effects, `[Title Case]` tags in warning colour | Damage-type tag: `Weakness: <types>` (success green, dm ≥ 1.5), `Resisted: <types>` (danger red, dm ≤ 0.5), else the plain type list in faded text |
+| `sub2` | Status effects, `[Title Case]` tags in warning colour | Damage-type tag: `Weakness: <types>` (success green, dm > 1), `Shrugs Off: <types>` (danger red, dm ≤ 0.25), `Resisted: <types>` (danger red, dm < 1), else the plain type list in faded text. (Knowledge gating of this tag is slice 3 of the winning-build plan.) |
 
 From chain 3 the Strike Now cell also gets a 2 px box frame in the rank colour.
 
@@ -289,29 +290,33 @@ Melee swings resolve entirely inside `player_attack._callback`. Monster-to-playe
 
 `blade_flow` is a stack-consumed player buff (max 10 stacks). Each attack consumes 1 stack. Granted by 1h sword C15 (+3), 1h sword C20 (+4), 2h sword C20 (+3), and Soul Reaver's `growth_on_innocent_kill` (+1).
 
-### Weakness / resistance / material.effective_against
+### Weakness / resistance / shrugs off (the lore pass, 2026-11-13)
 
-The master lookup is `combat._damage_multiplier(damage_types, monster)` at `combat.py:833`:
+**The steps** live in `data/affinity_rules.json` (read by `src/affinity.py`; `combat.WEAK_TO`, `RESISTED`, `SHRUGS_OFF`, `AFFINITY_CAP` name them): **weak x2**, **resisted x0.5**, **shrugs off x0.25**, no full immunity, and form x substance capped at **x3**. Winning-build plan section 3.2 and decision 2. (Until then: weak x1.5, resisted x0.5, nothing lower.)
 
-1. Load material tags from `data/materials/weapons/*.json` (cached in `_MATERIAL_EFFECTIVE_AGAINST`, `_MATERIAL_VULNERABILITIES` — lazy on first call).
-2. Build `weaknesses = monster.weaknesses + any_damage_type_whose_material_effective_against_matches_monster_tags`.
-3. Legacy fallback: adds `silver` to weaknesses for undead/demon, `iron` for fey (safety net for pre-material-system monsters).
-4. For each `dt` in `damage_types`, score 1.5 (weakness) / 0.5 (resistance) / 1.0 (neutral). Return `max(scores)`.
+**A weapon blow** (`combat.weapon_type_multiplier(weapon, monster)`) is two steps that multiply:
 
-**Saying so (3.3.2).** A hit that meets a weakness or a resistance is noted
+- **Form**: the best of the ways the weapon wounds (its `damage_types` that are not material ids: slash, pierce, blunt, and a named weapon's fire, holy...). A longsword cuts or thrusts, so it is resisted only by what turns both.
+- **Substance**: what it is made of and whether it is blessed: the material (a common weapon also carries its material id in `damage_types`; that is substance, not form), holy when blessed (and holy is not already one of its forms), and a unique weapon's own `effective_against` bane. x2 if the creature cannot bear any of them (its `weaknesses`, or the material's `effective_against` matching its tags), else x1. Substance never weakens a blow. A silver mace against a skeleton: blunt x2, silver x2, capped at x3.
+
+**A typed hit** (spell, wand, breath, a pet's typed bite: `combat._damage_multiplier(types, monster)`, from `Monster.take_damage`) takes one step, the best of its types. The old hard-coded fallback (silver hurts every undead and demon, iron every fey) is gone: silver's `effective_against` names the undead and shapeshifters, the devils carry `silver` in their weaknesses, and every fey kind carries `iron` (`data/family_affinity.json`).
+
+**Holy is for the unholy.** Only the undead, demons and the cursed kinds named in `family_affinity.json` (`unholy.cursed`: the were-beasts, fallen celestials, Grendel's mother...) are weak to holy; the lore pass took it from 65 kinds.
+
+**Where the lists come from.** `data/family_affinity.json` writes each family's profile from its lore (form, elements and substances, status), with groups (skeletons, armoured dead, shades, swarms, trolls...) and kind overrides; `tools/content/affinity_pass.py --write` writes `weaknesses`, `resistances`, `shrugs_off`, `status_immune` and `status_weak` into `data/monsters.json`. See [monster_families](monster_families.md).
+
+**Status** (`Monster.add_effect`, `Monster.resists_control`, `Game._inflict` in `game_magic.py`): an effect in `status_immune` never takes hold and the game says why (`affinity.status_line`: "The golem does not know fear."); one in `status_weak` takes hold without a big foe's resist roll and lasts x1.5 (a named foe's two-turn hard-control cap still holds); `fear_of_fire` in `status_weak` sends a beast or troll fleeing a fire hit for 3 turns. A regenerating kind weak to fire or acid (trolls, the hydra) cannot heal for 3 turns after such a hit. Poison ticks are typed `poison`, so poison resistance halves them.
+
+**Saying so (3.3.2).** A hit that meets a weakness, a resistance or what the creature shrugs off is noted
 (`affinity.note`): the hero's blows and shots by `strike_damage` (its form
 and substance after every bypass, `consume=True` only, so the combat strip's
 preview says nothing), spells, wands and breath by `Monster.take_damage`
 (a burn ticking is not a hit). `Game._advance_turn` drains the notes and
 says one line per way creatures were struck, Pokemon style ("It's super
 effective!", "Not very effective... the skeleton resists a thrust."), from
-`data/affinity_lines.json` (`src/affinity.py`).
+`data/affinity_lines.json` (`src/affinity.py`). A third kind, **shrugs off** ("It barely felt that..."), and a fourth, a beast **put to flight by fire**, have their own pools.
 
-The `effective_against` tag is a **1.5× bonus**, not a replacement. A volcanic-iron 2h sword hitting a frost giant (fire-vulnerable AND slash-vulnerable) stacks all layers:
-
-`8 base × 0.95 material × 1.5 material_effective × 1.5 slash-weakness × chain_mult`
-
-at chain 10 ≈ 254 damage. This stacking is **intended** — the vulnerabilities layer up for the "really weak" story.
+Form and substance stack, to the cap: a silver mace on a skeleton is x2 (blunt) x x2 (silver) = x4, held to **x3**. A unique's per-tag `undead_multiplier`, Akinakes's prophecy and the other weapon specials below multiply on top of the capped affinity.
 
 ### Reflect handling
 

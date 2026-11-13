@@ -317,6 +317,15 @@ class Item:
         # in inventory (Charmander Stuffie, Dreamspun Sketchbook). See
         # Player.refresh_carry_bonuses.
         self.carry_bonus: dict | None = defn.get('carry_bonus', None)
+        # Free-form powers a piece names in its data (special_properties):
+        # "rustproof_wearer": true keeps rust off everything the wearer has
+        # on (Player.is_rustproof); "plot_role" marks a story item. Read with
+        # getattr(item, 'special_properties', None) or {} (old saves). A
+        # material's list of flags (['heavy', 'unbreakable']) becomes
+        # {flag: True}.
+        _sp = defn.get('special_properties') or {}
+        self.special_properties: dict = (dict(_sp) if isinstance(_sp, dict)
+                                         else {str(s): True for s in _sp})
         # Permanent saving-throw bonus while equipped (the gradient defense; the
         # total is capped in Player.save_bonus_for). Shape: {'cat': 'CON'|'WIS'|
         # 'DEX'|'all', 'amount': int}. Read dynamically off equipped gear.
