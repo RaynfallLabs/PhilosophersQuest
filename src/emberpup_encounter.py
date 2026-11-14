@@ -14,8 +14,9 @@ a beaten animal's is:
 
   * Leave him food THREE times (``visits_needed``), and let him eat in peace
     between: feeds at least ``feed_gap_turns`` apart. Leaving his floor
-    counts as waiting. Come back too soon and he is still eating and pays
-    you no attention (``too_soon``): that try does not count and costs
+    counts as waiting. Come back too soon and he is still eating; he growls
+    and backs away (``too_soon``, one line per feed so far, the second a
+    little braver): that try does not count and costs
     nothing. Each feed has its own line, each a little warmer (``fed``):
     flinching, then watching, then lingering, then coming close. The
     choices screen says where he is now (``waiting``).
@@ -167,6 +168,16 @@ def stage(pup) -> int:
     return min(feeds(pup), needed())
 
 
+def too_soon_line(pup) -> str:
+    """What he does when the hero comes back before he has finished his
+    last meal: one line per feed so far (data `too_soon`; an older file had
+    a single line), so the hero sees his trust moving even then."""
+    lines = data().get('too_soon') or ''
+    if isinstance(lines, str):
+        return lines
+    return lines[max(0, min(feeds(pup), len(lines)) - 1)]
+
+
 def sheltered(pup) -> bool:
     """Is the Bloomleaf Cloak over his rock? The one thing that turns his
     rain (plan 3.8). A Dungeon Alive save (2026-11-12) let any cloak or
@@ -268,7 +279,7 @@ class EmberpupMixin:
 
     def _emberpup_too_soon(self, pup) -> bool:
         """Fed less than feed_gap_turns ago, the hero never away since, and
-        trust still building: he is still eating and pays no attention."""
+        trust still building: he is still eating, and growls and backs away."""
         st = self._emberpup_state()
         if not st.get('fed_once') or st.get('away') or feeds(pup) >= needed():
             return False
@@ -278,7 +289,6 @@ class EmberpupMixin:
     def _start_emberpup_encounter(self, pup):
         """Bumping him: his story the first time; his choices after that,
         unless he is still eating his last meal."""
-        d = data()
         self._emberpup_npc = pup
         if getattr(pup, '_emberpup_sheltered', False) and not sheltered(pup):
             # An old save's cloth or shield: the rain soaks through it now.
@@ -295,7 +305,7 @@ class EmberpupMixin:
         self.state = STATE_EMBERPUP
         if not first and self._emberpup_too_soon(pup):
             # Too soon: no choices, no turn spent. Come back in a while.
-            self._emberpup_outcome(d['too_soon'], 'player')
+            self._emberpup_outcome(too_soon_line(pup), 'player')
 
     def _emberpup_outcome(self, text: str, after: str):
         self._emberpup_text = text
@@ -358,7 +368,7 @@ class EmberpupMixin:
         d = data()
         pup = self._emberpup_npc
         if self._emberpup_too_soon(pup):
-            self._emberpup_outcome(d['too_soon'], 'options')
+            self._emberpup_outcome(too_soon_line(pup), 'options')
             return
         if getattr(pup, '_emberpup_fed', False) and feeds(pup) >= needed():
             self._emberpup_outcome(d['already_fed'], 'options')

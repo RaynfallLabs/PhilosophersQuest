@@ -510,7 +510,8 @@ def test_too_soon_he_is_still_eating_and_it_does_not_count():
     g.turn_count = fed_at + d['feed_gap_turns'] - 1
     # Bumped too soon: only the too-soon line, no choices, no turn passes.
     g._start_emberpup_encounter(pup)
-    assert g._emberpup_text == d['too_soon'] == "The Emberpup is still eating and pays you no attention."
+    assert g._emberpup_text == d['too_soon'][0] == (
+        "The Emberpup, still eating the treat you provided, growls and backs away as you approach.")
     g._emberpup_input(pygame.K_RETURN)
     assert g.state == STATE_PLAYER and g.turn_count == fed_at + d['feed_gap_turns'] - 1
     assert ep.feeds(pup) == 1 and len(ep.food_choices(g.player.inventory)) == food
@@ -522,7 +523,9 @@ def test_too_soon_he_is_still_eating_and_it_does_not_count():
     assert ep.feeds(pup) == 2
     g._emberpup_input(pygame.K_RETURN)
     g._emberpup_input(pygame.K_1)
-    assert g._emberpup_text == d['too_soon'] and ep.feeds(pup) == 2
+    # Two feeds in: still too soon, and the line shows his trust has moved.
+    assert g._emberpup_text == d['too_soon'][1] and ep.feeds(pup) == 2
+    assert 'does not run' in g._emberpup_text
 
 
 def test_leaving_his_floor_counts_as_waiting():
@@ -611,7 +614,7 @@ def test_save_and_load_mid_trust_keeps_his_feeds_the_gap_and_the_cloak(tmp_path,
     assert g2._emberpup['cloak_floor'] == 4 and g2._emberpup['fed_once']
     g2.turn_count = g._emberpup['fed_turn'] + 1
     g2._start_emberpup_encounter(p2)
-    assert g2._emberpup_text == ep.data()['too_soon']        # the gap survives the reload
+    assert g2._emberpup_text == ep.data()['too_soon'][0]     # the gap survives the reload
 
 
 # ===========================================================================

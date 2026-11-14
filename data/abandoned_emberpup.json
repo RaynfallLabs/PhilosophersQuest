@@ -54,7 +54,11 @@
     "This time he does not run. He eats the {food} right in front of you, and when it is gone he edges closer and sniffs your hand, very carefully, the way a hurt thing does when it is deciding to trust. His tail flame burns steady and bright."
   ],
   "fed_again": "He eats the {food} from your hand. His flame steadies, and he looks up at you. He is listening now.",
-  "too_soon": "The Emberpup is still eating and pays you no attention.",
+  "_too_soon_note": "Come back before feed_gap_turns have passed: one line per feed so far (Brandon 2026-11-14, the first line his own), the last for any later feed.",
+  "too_soon": [
+    "The Emberpup, still eating the treat you provided, growls and backs away as you approach.",
+    "The Emberpup is still eating the treat you left him. He hunches over it and gives a small growl as you come near, but this time he does not run."
+  ],
   "already_fed": "He has eaten, and his flame is steady. He watches you, waiting to see what you will do.",
   "refused": "You hold out your hand and say it. The Emberpup cringes back against the stone as if you had raised a fist. He does not trust you. He does not trust anyone bigger than he is.",
   "refused_trust": "He looks at your hand, then at your face, and shrinks back. Someone bigger than him spoke kindly once, and then hurt him. He needs more time to be sure of you.",

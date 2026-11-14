@@ -1054,7 +1054,8 @@ def test_journey_07_the_emberpup(make_game):
     assert g._emberpup_text.startswith('You set the Bread Ration down at the foot of his rock')
     h.key(pygame.K_RETURN)
     h.key('1')
-    assert g._emberpup_text == 'The Emberpup is still eating and pays you no attention.'
+    assert g._emberpup_text == ('The Emberpup, still eating the treat you provided, '
+                                'growls and backs away as you approach.')
     h.key(pygame.K_RETURN)
     h.key('2')
     g = reload(h)                                         # saved and loaded mid-way
