@@ -159,12 +159,18 @@ haggles (Buy tab), Esc closes (or backs out of choosing a target).
   sold thing is gone: it never reappears in his stock (that would price-
   identify it).
 - **Trade-in** (winning build 3.5, 2026-11-13; every trader): on a visit
-  when the hero buys from a trader, what he sells that trader fetches half
-  the trader's price (`economy.TRADE_IN_RATE`, `sell_offer(trade_in=True)`)
-  instead of a fifth, **up to the gold he spends there**. Order does not
-  matter: a sale made before the purchase is paid at a fifth, and the rest
-  is paid when he buys (`TraderMixin._trader_top_up`: "Brannoc counts what
-  you sold him earlier as a trade-in: 60 gold more."). The purse and the
+  when the hero pays a trader (for wares, or since 2026-11-14 for a service
+  or a special order: `TraderMixin._trader_count_spent`), what he sells that
+  trader fetches half the trader's price (`economy.TRADE_IN_RATE`,
+  `sell_offer(trade_in=True)`) instead of a fifth, **up to the gold he
+  spends there**. Order does not matter: a sale made before the payment is
+  paid at a fifth, and the rest is paid when he pays
+  (`TraderMixin._trader_top_up`: "Brannoc counts what you sold him earlier
+  as a trade-in: 60 gold more."). Brandon's Q13 (2026-11-14) was settled by
+  the simulator (`difficulty_sim.py` knob `tradein`: 150 runs a rule, the
+  mastery hero won 87% with services counted and 87% without; he spends
+  the same either way, gold is not what limits him), so the simpler rule
+  won: anything paid to him counts. The purse and the
   resale cap still hold; treasure is not traded in (it already sells near
   its worth). A visit is the hero's stay on the trader's floor
   (`_traders_leaving`, from `_change_level`, clears `MerchantNPC.visit`).
@@ -203,7 +209,7 @@ reward). Nothing is charged when there is nothing to do.
 | silvering / cold_iron_inlay (smiths) | 0.9 | Works silver or cold iron into the wielded common weapon, for good: the substance joins `damage_types`, which the bane rule reads (`combat.weapon_type_multiplier`), and the affinity line names it. One inlay to a weapon; not into a weapon of that metal; the name shows it ("Silvered Iron Longsword", "Iron-Inlaid Steel Mace"). |
 | lining (armourers) | 0.5 | Lines a worn cloak or shirt against fire, cold, lightning or poison (`lining` on the piece, never `damage_resistances`): that element's damage x0.75 while worn (`gear.piece_profile` reads `smithing.lining_of`, under `Player.get_armor_resistance`). One lining to a piece; shown on its Kit card. |
 | special_order (armourers) | 0.3 + the piece | Order a common piece in a metal the floor's loot is made of and a template that takes it (weapons, armour, shields), paid now; it is handed over when his shop opens at his next stall (`traders.next_stall`; the arrival there says it is waiting), or at any stall of his deeper down if the hero never met that one (`Game._order_due`; bug bash WB-D07: a stall passed by a trapdoor left the order open for good). Plain, sound and known (uncursed, identified). One open order a smith; no order at his last stall. An order whose stall below is gone is paid back when the hero leaves the floor where he placed it. Kept in `_traders['orders']`. |
-| trade_in (everyone) | none | Section 5: half his price for what you sell on a buying visit. Enter opens the Sell tab. |
+| trade_in (everyone) | none | Section 5: half his price for what you sell on a visit when you pay him (wares, services, special orders). Enter opens the Sell tab. |
 
 Each new row's detail pane says, when there is nothing to do, why, in the
 trader's own pronouns ("He won't put a hammer to a named blade.", "Your

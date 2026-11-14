@@ -275,15 +275,28 @@ class TraderMixin:
     # ---------------------------------------------------------------- the trade-in
 
     def _trader_visit(self, m=None) -> dict:
-        """This visit's trade-in tally on trader ``m``: gold spent buying,
+        """This visit's trade-in tally on trader ``m``: gold spent with him
+        (wares, and since 2026-11-14 his services and special orders),
         trade-in already paid, and trade-in owed for things sold before a
-        purchase (paid when he buys)."""
+        purchase (paid when he pays)."""
         m = m or self._shop_merchant
         v = getattr(m, 'visit', None)
         if not isinstance(v, dict):
             v = {'spent': 0, 'given': 0, 'pending': 0}
             m.visit = v
         return v
+
+    def _trader_count_spent(self, m, amount: int) -> None:
+        """Gold the hero just paid trader ``m`` for wares or work counts
+        toward this visit's trade-in (Brandon's Q13, 2026-11-14: simulated,
+        tools/balance/difficulty_sim.py knob tradein; a smith's work counting
+        too moved no win rate, so the simpler rule won), and anything sold
+        him earlier this visit is topped up to the trade-in rate now."""
+        if int(amount or 0) <= 0:
+            return
+        v = self._trader_visit(m)
+        v['spent'] = int(v['spent']) + int(amount)
+        self._trader_top_up(m)
 
     def _trade_in_room(self, m=None) -> int:
         v = self._trader_visit(m)
@@ -479,9 +492,7 @@ class TraderMixin:
             self.add_message(f'{m.person}: "{line}"', 'info')
         item.__dict__.pop('_counter', None)            # the shelf's mark, not the item's
         if getattr(item, 'item_class', '') != 'treasure':
-            v = self._trader_visit(m)
-            v['spent'] = int(v['spent']) + int(pay)
-            self._trader_top_up(m)
+            self._trader_count_spent(m, int(pay))
         m.stock.pop(sel)
         m.prices.pop(sel)
         haggled = getattr(self, '_shop_haggled', set())
@@ -516,9 +527,9 @@ class TraderMixin:
             key = 'purse_empty' if why.endswith("purse is empty") else 'refuse'
             self.add_message(f'{m.person}: "{m.line(key, "No.")}" ({why}.)', 'warning')
             return
-        # The trade-in: half his price on a buying visit, up to what was
-        # spent; sold before a purchase, the difference is owed and paid when
-        # the hero buys (_trader_top_up).
+        # The trade-in: half his price on a visit when the hero pays him (for
+        # wares or work), up to what was paid; sold before that, the
+        # difference is owed and paid when the hero pays (_trader_top_up).
         extra = self._trade_in_extra(item, offer)
         gap = self._trade_in_gap(item, offer) if getattr(item, 'item_class', '') != 'treasure' else 0
         v = self._trader_visit(m)
@@ -717,7 +728,8 @@ class TraderMixin:
             room = self._trade_in_room(m)
             self.add_message("Trade-in: " + (f"{room:,} gold of what you sell now fetches half "
                                              f"{m.pronouns()[2]} price." if room else
-                                             f"buy from {m.pronouns()[1]} first, and what you sell "
+                                             f"buy from {m.pronouns()[1]} or pay for "
+                                             f"{m.pronouns()[2]} work first, and what you sell "
                                              f"{m.pronouns()[1]} this visit fetches half "
                                              f"{m.pronouns()[2]} price."), 'info')
             return
@@ -767,6 +779,7 @@ class TraderMixin:
         paid = self._pay_gold(price, change_purse=int(m.purse), who=m.person, quiet=True)
         if paid:
             m.purse = max(0, int(m.purse) - int(paid.get('change_given', 0) or 0))
+            self._trader_count_spent(m, int(price))
             if paid.get('take'):
                 self.add_message(f"(You pay {self._payment_words(paid)}"
                                  + (f"; {int(paid['change_given']):,} gold back.)"
@@ -792,6 +805,7 @@ class TraderMixin:
         if not paid:
             return
         m.purse = max(0, int(m.purse) - int(paid.get('change_given', 0) or 0))
+        self._trader_count_spent(m, int(price))
         self._shop_pick = None
         self._shop_selection = 0
         name = self._bare_name(item)
@@ -1065,8 +1079,8 @@ class TraderMixin:
             from items import Ammo
             for item in self.player.inventory:
                 offer, why = self._trader_offer(item)
-                # The trade-in: half his price on a buying visit (one of a
-                # stack: each sale is one).
+                # The trade-in: half his price on a visit when the hero has
+                # paid him (one of a stack: each sale is one).
                 extra = self._trade_in_extra(item, offer) if not why else 0
                 gap = (self._trade_in_gap(item, offer)
                        if not why and getattr(item, 'item_class', '') != 'treasure' else 0)
@@ -1083,12 +1097,13 @@ class TraderMixin:
                      FP.FADED_TEXT, self.font_sm),
                     ''] + item_lines[1:]
                 if extra:
-                    details.insert(2, (f"Trade-in: {extra:,} gold of it, because you bought from "
+                    details.insert(2, (f"Trade-in: {extra:,} gold of it, because you have paid "
                                        f"{m.pronouns()[1]} on this visit.", FP.SUCCESS_TEXT,
                                        self.font_sm))
                 elif gap:
-                    details.insert(2, (f"Trade-in: buy from {m.pronouns()[1]} on this visit and "
-                                       f"this fetches up to {gap:,} gold more.", FP.FADED_TEXT,
+                    details.insert(2, (f"Trade-in: buy from {m.pronouns()[1]} or pay for "
+                                       f"{m.pronouns()[2]} work on this visit and this fetches "
+                                       f"up to {gap:,} gold more.", FP.FADED_TEXT,
                                        self.font_sm))
                 if not why and getattr(item, 'item_class', '') == 'treasure':
                     import treasure as _tr
@@ -1154,7 +1169,7 @@ class TraderMixin:
             room = self._trade_in_room(m)
             detail = "No fee"
             price_line = (f"This visit: {room:,} gold of trade-in left." if room else
-                          "This visit: buy something first.")
+                          "This visit: buy something or pay for a service first.")
             ready = True
         elif sid == 'special_order':
             fee = economy.service_price('special_order', self.dungeon_level, markup=m.markup)

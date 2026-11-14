@@ -534,6 +534,33 @@ def test_trade_in_never_exceeds_what_was_spent_ends_with_the_visit_and_keeps_the
     assert plain + g._trade_in_extra(s, plain) <= m.purse
 
 
+def test_paying_for_a_service_opens_the_trade_in_too():
+    """Brandon's Q13 (2026-11-14), settled by the simulator (knob tradein):
+    gold paid for a smith's work counts toward the visit's trade-in, as a
+    purchase does, and what was sold him first is topped up then."""
+    g = _game()
+    _wear_cloak(g.player)
+    m = _trader(g, 'armourer', stock=[])
+    m.purse = 10 ** 6
+    s = _spare(g)
+    g.player_gold = 3000
+    plain, _ = g._trader_offer(s)
+    half = economy.sell_offer(s, g.dungeon_level, known=True, identified=True,
+                              markup=m.markup, purse=10 ** 6, trade_in=True)
+    g._shop_tab, g._shop_selection = 1, 0
+    start = g.player_gold
+    _press(g, pygame.K_RETURN)                               # sold first: a fifth, the rest owed
+    assert g.player_gold - start == plain and g._trade_in_room(m) == 0
+    fee = g._service_price('lining')
+    _service_row(g, m, 'lining')
+    _press(g, pygame.K_RETURN)
+    g._shop_selection = 1                                     # cold
+    _press(g, pygame.K_RETURN)                               # the work is paid: the trade-in follows
+    assert m.visit['spent'] == fee
+    assert g.player_gold - start == plain - fee + min(half - plain, fee)
+    assert any('as a trade-in' in t for t in _texts(g))
+
+
 # ============================================================ special order
 
 def _order(g, floors):

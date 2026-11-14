@@ -260,6 +260,12 @@ KNOB_DEFAULTS = {
     'altars':     0,     # 1 = rededication at the altars (floors 1, 16, 31 ...):
                          #   points moved toward the profile's stat_focus
     'gold':       1.0,   # x the gold a floor brings in (traders=1)
+    'tradein':    0,     # traders=1: the outgrown gear he sells at a stall
+                         #   (Run._sell_outgrown). 0 = selling not modelled
+                         #   (the calibration runs); 1 = sold, half his price
+                         #   up to the GOODS bought that visit (the game's
+                         #   rule); 2 = up to goods AND services (Brandon's
+                         #   Q13, 2026-11-14: should a smith's work count?)
     'untimed':    0.0,   # > 0: accuracy on every UNTIMED question (identify,
                          #   study, equip, cook, prayer: every subject but
                          #   maths waits, and every topic has a teaching card).
@@ -1231,12 +1237,53 @@ class Run:
                 self._mult(self.p.weapon, target)
 
     # ---------------------------------------------------- traders and altars
-    def _pay(self, cost: float, reserve: float) -> bool:
+    def _pay(self, cost: float, reserve: float, kind: str = 'goods') -> bool:
+        """Pay `cost` if `reserve` is left after it. `kind` ('goods' or
+        'service') is this visit's trade-in tally (tradein knob)."""
         if self.gold - cost < reserve:
             return False
         self.gold -= cost
         self.fs['spent'] = self.fs.get('spent', 0) + cost
+        v = getattr(self, '_visit', None)
+        if v is not None:
+            v[kind] = v.get(kind, 0.0) + cost
         return True
+
+    def _sell_outgrown(self, floor: int, defn: dict) -> None:
+        """tradein >= 1: at the end of a stall visit he sells the gear he has
+        outgrown since the last one (what _sync_pack let go of) at the
+        trader's real offer (economy.sell_offer), the trade-in at half his
+        price up to this visit's tally: goods only (1, the game's rule) or
+        goods and services (2). Weight to the stall is not modelled."""
+        mode = int(self.kv('tradein') or 0)
+        pile = getattr(self, '_to_sell', None) or []
+        if mode <= 0 or not pile:
+            return
+        v = getattr(self, '_visit', None) or {}
+        room = float(v.get('goods', 0.0)) + (float(v.get('service', 0.0)) if mode >= 2 else 0.0)
+        purse = economy_mod.floor_income(floor) * economy_mod.TRADER_PURSE_SHARE
+        mk = float(defn.get('markup', 1.0) or 1.0)
+        plain_sum = extra_sum = 0.0
+        for it in pile:
+            if purse <= 0:
+                break
+            try:
+                plain = economy_mod.sell_offer(it, floor, known=True, identified=True,
+                                               markup=mk, purse=int(purse))
+                full = economy_mod.sell_offer(it, floor, known=True, identified=True,
+                                              markup=mk, purse=int(purse), trade_in=True)
+            except Exception:
+                continue
+            extra = max(0.0, min(float(full - plain), room))
+            room -= extra
+            got = min(purse, plain + extra)
+            purse -= got
+            plain_sum += min(got, plain)
+            extra_sum += max(0.0, got - plain)
+        self._to_sell = []
+        self.gold += plain_sum + extra_sum
+        self.fs['sold'] = self.fs.get('sold', 0) + plain_sum + extra_sum
+        self.fs['trade_in'] = self.fs.get('trade_in', 0) + extra_sum
 
     def _heal_potion_template(self):
         key = ('heal_potion',)
@@ -1264,9 +1311,18 @@ class Run:
         svc = set(defn.get('services') or ())
         share = economy_mod.SERVICE_SHARE
         reserve = 0.5 * inc
-        p = self.p
         self.fs['shops'] = self.fs.get('shops', 0) + 1
-        if 'heal' in svc and p.hp < 0.6 * p.max_hp and self._pay(share['heal'] * inc, 0):
+        self._visit = {'goods': 0.0, 'service': 0.0}
+        try:
+            self._shop_at(floor, inc, defn, svc, share, reserve)
+        finally:
+            self._sell_outgrown(floor, defn)
+            self._visit = None
+
+    def _shop_at(self, floor, inc, defn, svc, share, reserve) -> None:
+        """What he buys and pays for at this floor's stall (shop)."""
+        p = self.p
+        if 'heal' in svc and p.hp < 0.6 * p.max_hp and self._pay(share['heal'] * inc, 0, 'service'):
             got = p.max_hp - p.hp
             p.hp = p.max_hp
             self._healed('trader', got)
@@ -1278,7 +1334,7 @@ class Run:
                 s_name = {'silver': 'silvering', 'cold_iron': 'cold_iron_inlay'}.get(key)
                 if not s_name or s_name not in svc:
                     continue                    # no smith can work that in
-                if smithing_mod.can_inlay(w, key) and self._pay(share[s_name] * inc, reserve):
+                if smithing_mod.can_inlay(w, key) and self._pay(share[s_name] * inc, reserve, 'service'):
                     smithing_mod.inlay(w, key)
                     self.fs['smith_work'] = self.fs.get('smith_work', 0) + 1
                 break
@@ -1305,12 +1361,12 @@ class Run:
                         self._pay(price, reserve)
                         self.fs['counters_bought'] = self.fs.get('counters_bought', 0) + 1
         if 'sharpen' in svc and w is not None and int(getattr(w, '_sim_smith', 0)) < 2 \
-                and self._pay(share['sharpen'] * inc, reserve):
+                and self._pay(share['sharpen'] * inc, reserve, 'service'):
             w.enchant_bonus = int(getattr(w, 'enchant_bonus', 0) or 0) + 1
             w._sim_smith = int(getattr(w, '_sim_smith', 0)) + 1
         body = p.armor_slots[items_mod.ARMOR_SLOTS.index('body')]
         if 'reinforce' in svc and body is not None and int(getattr(body, '_sim_smith', 0)) < 2 \
-                and self._pay(share['reinforce'] * inc, reserve):
+                and self._pay(share['reinforce'] * inc, reserve, 'service'):
             body.enchant_bonus = int(getattr(body, 'enchant_bonus', 0) or 0) + 1
             body._sim_smith = int(getattr(body, '_sim_smith', 0)) + 1
         pot = self._heal_potion_template()
@@ -1356,10 +1412,26 @@ class Run:
         the potions, the food, Fenrir's scraps. Player._apply_equip puts every
         piece it replaces in the pack, and the simulator used to leave them
         all there: since the weight tiers (slice 4: Burdened over half the
-        limit halves the dodge, Stressed over three quarters ends it) that pile
-        would have mattered. A player drops or sells what he has outgrown."""
-        self.p.inventory = (list(self.arsenal) + list(self.scraps)
-                            + list(self.potions) + list(self.food) + list(self.flasks))
+        limit halves the dodge; since 2026-11-14 Heavy, Burdened and
+        Overloaded) that pile would have mattered. A player drops or sells
+        what he has outgrown: with tradein >= 1 the gear let go of here waits
+        for the next stall (_sell_outgrown)."""
+        p = self.p
+        new = (list(self.arsenal) + list(self.scraps)
+               + list(self.potions) + list(self.food) + list(self.flasks))
+        if self.knobs.get('traders') and int(self.kv('tradein') or 0) > 0:
+            keep = {id(x) for x in new} | {id(x) for x in p.worn_items()}
+            pile = getattr(self, '_to_sell', None)
+            if pile is None:
+                pile = self._to_sell = []
+            seen = {id(x) for x in pile}
+            for it in p.inventory:
+                if (id(it) not in keep and id(it) not in seen
+                        and isinstance(it, (Weapon, Armor, Shield))):
+                    pile.append(it)
+                    seen.add(id(it))
+            del pile[:-8]                        # what one trip can carry, roughly
+        p.inventory = new
 
     def _body_value(self, piece) -> float:
         """A body armour as it works on THIS hero (slice 4): the AC it leaves

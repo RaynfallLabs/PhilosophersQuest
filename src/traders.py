@@ -25,8 +25,8 @@ Everything a trader is and says lives in data/traders.json.
 * **Prices**: economy.merchant_price (class share x tier x worth x markup)
   times the deeds multiplier (``price_mult``).
 * **Selling** (``refusal`` and economy.sell_offer): 20-25% of his own price,
-  half on a visit when the hero buys from him (the trade-in, up to what he
-  spends: game_traders), capped by his purse; quest pieces and worn things
+  half on a visit when the hero pays him for wares or work (the trade-in,
+  up to what he spends: game_traders), capped by his purse; quest pieces and worn things
   never; an unknown thing sells as its unidentified class. Treasure sells
   near its full value to any trader (treasure.py).
 * **The lean** (``stock_bias``): the stock leans toward kinds the hero has
