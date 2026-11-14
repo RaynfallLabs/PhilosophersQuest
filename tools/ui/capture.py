@@ -1690,6 +1690,19 @@ def _(g):
     press(g, pygame.K_2, '2')
 
 
+@scene('menu_loadouts_missing', 'Menus',
+       'Shift+E, 2: a kit whose body armour was sold since it was saved (not in the pack).',
+       expect='loadouts')
+def _(g):
+    _saved_kits(g)
+    kits = g._kits()
+    body = kits[1]['pieces'].get('body')
+    if body is not None and body in g.player.inventory:
+        g.player.remove_from_inventory(body)        # sold, stolen or left behind
+    g.handle_event(key_event(pygame.K_e, 'E', pygame.KMOD_SHIFT))
+    press(g, pygame.K_2, '2')
+
+
 def _arsenal_pack(g):
     """Every coating and flask in the pack, two of each, and a steel mace in
     the hand (slice 5, coatings.py)."""

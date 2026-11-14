@@ -263,3 +263,28 @@ def test_wb_d05_the_rust_monster_passes_over_a_linen_legend(game):
     p.armor_slots = [None] * len(ARMOR_SLOTS)
     p.armor_slots[ARMOR_SLOTS.index('body')] = _named('armor', 'linothorax_of_alexander')
     assert se.rust_worn_gear(p, _mon('goblin'), rng=random.Random(1)) is None
+
+
+# ------------------------------------------------- WB-D06: Mass Polymorph x the band
+
+def test_wb_d06_mass_polymorph_passes_over_the_stray_kids_band_too(game):
+    """WB-C06 made the band shrug off the polymorph wand and spell; the
+    Mass Polymorph spell still turned every band member into "a small
+    animal" (a quarter of his health, slow and easy to hit)."""
+    import stray_kids as sk
+    p = game.player
+    m = sk.make_zombie('felix', p.x + 2, p.y, 5)
+    game.monsters.append(m)
+    hp, speed = m.max_hp, m.speed
+    game._in_spell_sight = lambda mon: mon is m
+    game._cast_spell_effect({'effect': 'mass_polymorph', 'id': 'mass_polymorph',
+                             'name': 'Mass Polymorph', 'power': '', 'tier': 5})
+    assert (m.max_hp, m.speed) == (hp, speed)
+    # An ordinary creature still becomes a small animal.
+    gob = _mon('goblin', p.x, p.y + 2)
+    game.monsters.append(gob)
+    game._in_spell_sight = lambda mon: mon is gob
+    before = gob.max_hp
+    game._cast_spell_effect({'effect': 'mass_polymorph', 'id': 'mass_polymorph',
+                             'name': 'Mass Polymorph', 'power': '', 'tier': 5})
+    assert gob.max_hp < before
