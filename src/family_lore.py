@@ -7,11 +7,12 @@ data/monster_families.json; every monster's family is the `family` field of
 data/monsters.json (tools/content/assign_monster_families.py writes it).
 
 How knowledge is earned
-  * ONE study is a correct corpse study or a Scroll of Omnisight
-    (`record_study`). Killing, harvesting and seeing do not count, and the
-    Book of Thoth opens Bestiary pages (Player.lore_known_monster_ids) but
-    gives no tiers (decision 4); so do Recall Lore at chain 5, the Wand of
-    Probing and a gate boss's quest step (src/enemy_lore.py).
+  * ONE study is a correct corpse study, the Wand of Probing (Brandon,
+    2026-11-14: probing a creature counts as studying its kind) or a Scroll
+    of Omnisight (`record_study`; `counts_as_study` says whether one would
+    count). Killing, harvesting and seeing do not count, and the Book of
+    Thoth opens Bestiary pages (Player.lore_known_monster_ids) but gives no
+    tiers (decision 4); so does a gate boss's quest step (src/enemy_lore.py).
   * Progress counts DIFFERENT kinds studied in the family
     (Player.studied_monster_ids): a known kind's corpse never asks again,
     so two skeletons teach no more than one. A keystone (a boss, a
@@ -27,8 +28,8 @@ What the game asks here
   * `has_page(player, kind)`: may the full Bestiary page open (ruling 1);
   * `knowledge(player, kind)`: UNKNOWN, KIN or KNOWN, how much the hero is
     told of a creature he sees (src/tells.py, the Bestiary's weaknesses, the
-    hit lines in src/affinity.py, the Strike Now preview, Kit Sense and
-    Recall Lore: winning-build plan 3.1);
+    hit lines in src/affinity.py, the Strike Now preview and Kit Sense:
+    winning-build plan 3.1);
   * `record_study(player, kind)` then `news(player)`: the tiers, circles and
     title newly reached, once each (Player.family_tiers_told);
   * `arrival_families(...)` / `forewarned_lines(...)` (`arrival_lines` for
@@ -309,12 +310,23 @@ def knowledge(player, kind) -> int:
 # ---------------------------------------------------------------------------
 # Studying and the news it brings
 # ---------------------------------------------------------------------------
-def record_study(player, kind) -> bool:
-    """One study of `kind` (a correct corpse study or Omnisight). Returns
-    True when the kind is new to the hero. A kind with no family (Death,
-    the cow, the unicorn) is never studied."""
+def counts_as_study(player, kind) -> bool:
+    """Would a study of `kind` be progress? Only a kind with a family that
+    the hero has not studied yet. The one rule for every way of studying
+    (a corpse, the Wand of Probing, Omnisight): a boss, a unique or a
+    mini-boss counts as any kind does (a keystone, `weight`)."""
     k = _kind(kind)
     if not k or family_of(k) is None:
+        return False
+    return k not in studied(player)
+
+
+def record_study(player, kind) -> bool:
+    """One study of `kind` (a correct corpse study, the Wand of Probing or
+    Omnisight). Returns True when the kind is new to the hero. A kind with
+    no family (Death, the cow, the unicorn) is never studied."""
+    k = _kind(kind)
+    if not counts_as_study(player, k):
         return False
     s = getattr(player, 'studied_monster_ids', None)
     if not isinstance(s, set):

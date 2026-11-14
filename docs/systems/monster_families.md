@@ -70,10 +70,19 @@ long enough: knowledge unlocks the technique, performance lands it.
 - Named foes keep the forms written on them unless `kinds` names them.
 
 ## How knowledge is earned
-- One study = a correct corpse study (`_start_corpse_identify`) or a Scroll of Omnisight
-  (`_omnisight_corpse_reveal`). Killing, harvesting and seeing never count. A wrong answer
-  is the usual 10-turn Stun. A corpse is studied from the I menu whether it lies on the
-  hero's tile or is carried in the pack.
+- One study = a correct corpse study (`_start_corpse_identify`), a zap of the **Wand of
+  Probing** (Brandon, 2026-11-14: "identifying a creature, thus getting the family
+  identification point"), or a Scroll of Omnisight (`_omnisight_corpse_reveal`). The corpse
+  study and the probe share one path, `FamilyMixin._learn_kind`: the kind's page opens
+  (`lore_known_monster_ids`), every corpse of it on the floor and in the pack is known, the
+  Seeker counts it (`monster_known`), and `_family_study` records it and announces any tier,
+  circle or title. `family_lore.counts_as_study` is the one rule: only a kind with a family
+  that the hero has not studied yet counts; a boss, unique or mini-boss counts as any kind
+  does (a keystone). The probe still reads everything first (its health, weaknesses,
+  resistances, what it shrugs off, refuses and falls to easily: `enemy_lore.probe_lines`),
+  then says "You learn the ways of the Zombie." when it teaches. Killing, harvesting and
+  seeing never count. A wrong answer at a corpse is the usual 10-turn Stun. A corpse is
+  studied from the I menu whether it lies on the hero's tile or is carried in the pack.
 - One study knows every corpse of the kind: `items.corpse_is_known` (its own id level 5,
   or its kind in `studied_monster_ids`) decides, so a corpse left on a floor before the
   study, kept in a sack or dropped by a thief never asks again. The Omnisight read that
@@ -82,19 +91,19 @@ long enough: knowledge unlocks the technique, performance lands it.
   tier (decision 4). A kind it only opened can still be studied from its corpse (corpses
   pre-identify for `studied_monster_ids`, the hero's own studies). The Philosopher's
   Stone, like Thoth and the mass Scroll of Identify, leaves corpses to their own study.
-- Three more roads open a kind's page the same way, with no family credit
-  (`FamilyMixin._open_kind_page`, winning-build plan 3.1, `src/enemy_lore.py`):
-  **Recall Lore** with a creature in view (N): by chain, 1 its family, 2 one weakness,
-  3 its resistances, 4 what it shrugs off and its nature refuses, 5 all of it and its page
-  opens (the nearest creature in sight whose kind is not yet KNOWN; with none, the general
-  hints, and the cooldown rules are unchanged); the **Wand of Probing**, which reads
-  everything (its health, weaknesses, resistances, what it shrugs off, refuses and falls to
-  easily) and opens the page; and a **gate boss's quest step**, since a boss has no corpse to
-  study before the fight: Ariadne's shrine (Asterion), Athena's (Medusa), Odin's altar
+- One more road opens a kind's page the same way, with no family credit
+  (`FamilyMixin._open_kind_page`, winning-build plan 3.1, `src/enemy_lore.py`): a **gate
+  boss's quest step**, since a boss has no corpse to study before the fight: Ariadne's
+  shrine (Asterion), Athena's (Medusa), Odin's altar
   (Fafnir, either path), the Dwarven Forge's Gleipnir (Fenrir) and the Last Judgment
   (Abaddon, whatever the verdict) each say a line in the quest-giver's voice naming his
   weakness (`data/enemy_lore.json` `quest_teach`, every claim checked against
-  `monsters.json`) and open his page.
+  `monsters.json`) and open his page. (A probe of the boss, or his corpse's study after the
+  fight, still counts for his family.)
+- **Recall Lore (N) is not one of these roads** (Brandon, 2026-11-14): it is the trivia
+  escalator chain that gives a random hint from `data/hints.json` of the chain's tier. It
+  never looks at a creature in view. Slice 3 had made it read the nearest unknown creature
+  (its family at chain 1 up to its whole page at chain 5); that was taken out.
 - Keystones: `is_boss`, `is_mini_boss`, `is_seal_demon`, `proper_noun`, or listed in the
   family's `keystones` (the spider queen). A keystone counts `keystone_weight` = 2 kinds.
 - Tier N needs `thresholds[N-1]` (weighted) kinds. The numbers were set from real floor

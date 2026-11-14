@@ -121,8 +121,11 @@ def test_make_corpse_pre_identifies_known_types():
 
 def test_start_corpse_identify_records_known_type():
     """The corpse-study callback must add the monster to
-    lore_known_monster_ids so future kills spawn pre-identified."""
+    lore_known_monster_ids so future kills spawn pre-identified. Since
+    2026-11-14 it does so through FamilyMixin._learn_kind, the one path a
+    corpse study and the Wand of Probing share (tests/test_probing_teaches.py)."""
     import inspect
     import main
-    src = inspect.getsource(main.Game._start_corpse_identify)
-    assert "lore_known_monster_ids" in src
+    from game_families import FamilyMixin
+    assert "self._learn_kind(" in inspect.getsource(main.Game._start_corpse_identify)
+    assert "lore_known_monster_ids" in inspect.getsource(FamilyMixin._learn_kind)

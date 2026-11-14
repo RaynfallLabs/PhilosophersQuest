@@ -95,8 +95,7 @@ def find_singular_they(text: str) -> list[tuple[str, int, int]]:
 _Q = 'data/questions/'
 _C = 'data/question_contexts/'
 ALLOW: dict[tuple[str, str], str] = {
-    ('data/hints.json', 'They live in the hero, and wait in a small menu until they are called.'):
-        "they = 'some powers'",
+
     ('data/items/shield.json', 'every act of their'): "their = 'the dead'",
     ('data/monsters.json', 'anyone who enters their'): 'their = the dead soldiers of the line',
     ('data/monsters.json', 'everyone but themselves'): 'themselves = the tengu',

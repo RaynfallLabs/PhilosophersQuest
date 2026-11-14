@@ -305,46 +305,20 @@ class MagicMixin:
     # Recall Lore (trivia escalator chain quiz)
     # ------------------------------------------------------------------
 
-    def _recall_lore_subject(self):
-        """The creature Recall Lore is about (winning-build plan 3.1): the
-        nearest hostile creature in sight that has a family and whose kind
-        the hero does not yet know (family_lore.knowledge below KNOWN), or
-        None, and then the general hints. A kind he knows already teaches
-        him nothing new, so the next one in sight is taken."""
-        import family_lore
-        px, py = self.player.x, self.player.y
-        best = None
-        for m in self.monsters or ():
-            if not (getattr(m, 'alive', False) and self._sees_monster(m)):
-                continue
-            if (getattr(m, 'is_allied', False) or getattr(m, '_npc_encounter_tag', None)
-                    or getattr(m, '_flavor_encounter_tag', None) or getattr(m, '_is_unicorn', False)):
-                continue
-            if family_lore.family_of(m) is None:
-                continue
-            if family_lore.knowledge(self.player, m) >= family_lore.KNOWN:
-                continue
-            d = max(abs(m.x - px), abs(m.y - py))
-            if best is None or d < best[0]:
-                best = (d, m)
-        return best[1] if best else None
-
     def _start_recall_lore(self):
         """Begin a Recall Lore session -- escalator chain trivia quiz. Cooldown-gated.
-        With a creature in view it is about that creature (_recall_lore_subject)."""
+
+        Recall Lore looks at nothing around the hero and is about no creature
+        (Brandon, 2026-11-14): the chain decides only how deep the random hint
+        that comes back is (data/hints.json, tiers 1 to 5). Learning a kind is
+        the corpse study's work, and the Wand of Probing's."""
         if self.player.recall_lore_cooldown > 0:
             self.add_message(
                 f"Your mind needs rest before recalling more lore. "
                 f"({self.player.recall_lore_cooldown} turns remain)", 'warning'
             )
             return
-        subject = self._recall_lore_subject()
-        self.__dict__['_recall_subject'] = subject
-        if subject is not None:
-            self.add_message(f"You close your eyes and search your memory for "
-                             f"{the_name(subject, lower=True)}...", 'info')
-        else:
-            self.add_message("You close your eyes and search your memory...", 'info')
+        self.add_message("You close your eyes and search your memory...", 'info')
         self.quiz_title = "RECALL LORE  --  TRIVIA"
         self.state = STATE_QUIZ
 
@@ -370,7 +344,8 @@ class MagicMixin:
         )
 
     def _resolve_recall_lore(self, chain: int):
-        """Pick a hint based on chain quality and display it. Set cooldown."""
+        """A random hint of the chain's tier (data/hints.json), shown on the
+        Recall Lore card and kept in the Lore Hints journal. Set cooldown."""
         import json as _json
         import random as _rng
 
@@ -384,21 +359,6 @@ class MagicMixin:
         self.player.recall_lore_cooldown = 50 + chain * 15   # 65 .. 125 turns
         if getattr(self.player, 'quirk_progress', {}).get('norns_active'):
             self.player.recall_lore_cooldown = max(5, self.player.recall_lore_cooldown // 2)
-
-        # The creature in view (chosen when the recall began): what he
-        # remembers is about it, by chain, and at chain 5 its page opens
-        # with no family credit (src/enemy_lore.py).
-        subject = self.__dict__.pop('_recall_subject', None)
-        if subject is not None and getattr(subject, 'alive', False):
-            import enemy_lore
-            hint = enemy_lore.recall_text(subject, chain, player=self.player)
-            if enemy_lore.recall_opens_page(enemy_lore.recall_reach(self.player, subject, chain)):
-                self._open_kind_page(getattr(subject, 'kind', ''))
-            self._lore_hint_text = hint
-            self._lore_hint_chain = chain
-            if hint not in self._recalled_hints:
-                self._recalled_hints.append(hint)
-            return
 
         from paths import data_path
         hints_path = data_path('data', 'hints.json')
@@ -795,10 +755,12 @@ class MagicMixin:
         elif effect == 'probing':
             # Its health and everything it is made of: weaknesses,
             # resistances, what it shrugs off, refuses and falls to easily
-            # (src/enemy_lore.py). It used to read fire_resist-style fields
-            # no monster has, so it never showed a thing. Probing is a
-            # deliberate tool: it reads all of it, whatever the hero knows,
-            # and opens the kind's page (no family credit).
+            # (src/enemy_lore.py). Probing is a deliberate tool: it reads all
+            # of it, whatever the hero knows. And it teaches the kind exactly
+            # as a corpse study does (Brandon, 2026-11-14): KNOWN from now on,
+            # and one more kind toward its family's tiers, with the same news
+            # (FamilyMixin._learn_kind). A kind already studied, or one with
+            # no family, teaches nothing more (family_lore.counts_as_study).
             target = getattr(self, '_wand_override_target', None) or self._nearest_visible_monster()
             if target is None:
                 self.add_message("The wand hums but finds no target to probe.", 'info')
@@ -810,8 +772,10 @@ class MagicMixin:
                 self.add_message(lines[0], 'success')
                 for _pl in lines[1:]:
                     self.add_message(_pl, 'info')
-                if family_lore.family_of(target) and self._open_kind_page(getattr(target, 'kind', '')):
-                    self.add_message(enemy_lore.probe_page_line(), 'loot')
+                kind = getattr(target, 'kind', '') or ''
+                if family_lore.counts_as_study(self.player, kind):
+                    self.add_message(enemy_lore.probe_learn_line(target), 'loot')
+                    self._learn_kind(kind)
 
         elif effect == 'create_monster':
             import json

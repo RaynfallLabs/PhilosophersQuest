@@ -12,8 +12,11 @@ knowing the creature tells him WHY, and tells him BEFORE he swings:
   * first sight and Observe at KNOWN: what it is made of (tells.lore_lines,
     pinned in tests/test_monster_notes.py);
   * Kit Sense at the family's Hunter tier (src/kit_sense.py);
-  * Recall Lore about the creature in view, by chain (src/enemy_lore.py);
-  * the Wand of Probing reads the real affinity and status lists;
+  * Recall Lore is NOT about the creature in view (Brandon, 2026-11-14): it
+    is the trivia quiz that gives a random hint of the chain's tier, and it
+    leaves what the hero knows of every creature as it was;
+  * the Wand of Probing reads the real affinity and status lists (and
+    teaches the kind as a corpse study does: tests/test_probing_teaches.py);
   * a gate boss's quest step opens his page, the quest-giver naming his
     weakness;
   * the Bestiary page at KNOWN shows what it shrugs off and its nature.
@@ -44,7 +47,6 @@ import enemy_lore  # noqa: E402
 import family_lore  # noqa: E402
 import items  # noqa: E402
 import kit_sense  # noqa: E402
-import tells  # noqa: E402
 from family_lore import KIN, KNOWN, UNKNOWN  # noqa: E402
 from monster import Monster, the_name  # noqa: E402
 from player import Player  # noqa: E402
@@ -406,23 +408,14 @@ def test_kit_sense_needs_arrows_for_a_bow():
 
 
 # ---------------------------------------------------------------------------
-# 5. Recall Lore about the creature in view (pure)
+# 5. Recall Lore is not about the creature in view (Brandon, 2026-11-14)
 # ---------------------------------------------------------------------------
-def test_recall_by_chain():
-    g = _m('ghoul')
-    one = enemy_lore.recall_text(g, 1)
-    assert 'restless dead' in one and 'hurts' not in one
-    two = enemy_lore.recall_text(g, 2, random.Random(1))
-    assert any(affinity.word_for(w) in two.lower() for w in MONS['ghoul']['weaknesses'])
-    assert 'resists' not in two
-    three = enemy_lore.recall_text(g, 3, random.Random(1))
-    assert 'It resists' in three and 'a thrust' in three
-    four = enemy_lore.recall_text(g, 4, random.Random(1))
-    assert 'cannot be put to sleep' in four
-    five = enemy_lore.recall_text(g, 5, random.Random(1))
-    assert 'Bestiary' in five and all(t in five for t in tells.lore_lines(g))
-    sw = enemy_lore.recall_text(_m('scarab_swarm'), 4, random.Random(1))
-    assert 'hardly touch it' in sw
+def test_the_targeted_recall_is_gone():
+    """Slice 3 made Recall Lore read the creature in view; Brandon does not
+    want that. Nothing of it is left in the module or its data."""
+    for name in ('recall_parts', 'recall_text', 'recall_reach', 'recall_opens_page'):
+        assert not hasattr(enemy_lore, name), name
+    assert 'recall' not in enemy_lore.data()
 
 
 # ---------------------------------------------------------------------------
@@ -479,57 +472,45 @@ def test_the_game_says_kit_sense_once_on_sight(game):
     assert sk.alive
 
 
-def test_recall_lore_in_view_returns_its_weakness_at_chain_2(game):
-    ghoul = _in_view(game, 'ghoul')
-    # Recall Lore reaches past the family's name only once its family is
-    # begun (enemy_lore.recall_reach, balance 2026-11-13).
-    game.player.family_lore_grants = {family_lore.family_of(ghoul): 1}
-    game.player.__dict__.pop('_family_tier_cache', None)
-    game.player.recall_lore_cooldown = 0
-    assert game._recall_lore_subject() is ghoul
-    game.__dict__['_recall_subject'] = ghoul
-    game._resolve_recall_lore(2)
-    text = game._lore_hint_text
-    assert 'restless dead' in text
-    assert any(affinity.word_for(w) in text.lower() for w in MONS['ghoul']['weaknesses'])
-    assert family_lore.knowledge(game.player, ghoul) != KNOWN         # nothing opened below 5
-    assert game.player.recall_lore_cooldown == 50 + 2 * 15             # the cooldown rules hold
+def _hints():
+    with open(os.path.join(ROOT, 'data', 'hints.json'), encoding='utf-8') as f:
+        return json.load(f)
 
 
-def test_recall_lore_at_chain_5_opens_the_page_without_family_credit(game):
+@pytest.mark.parametrize('chain', [1, 2, 3, 4, 5])
+def test_recall_lore_with_a_creature_in_view_is_still_a_random_hint(game, chain):
+    """Brandon: "Recall lore is a Trivia quiz that gives a random hint,
+    doesn't do anything with monsters you can see and is not targeted."
+    A ghoul in view whose family is begun: the card is a hint of the chain's
+    tier, the ghoul is no better known, and the cooldown rule holds."""
     ghoul = _in_view(game, 'ghoul')
-    # Recall Lore reaches past the family's name only once its family is
-    # begun (enemy_lore.recall_reach, balance 2026-11-13).
     game.player.family_lore_grants = {family_lore.family_of(ghoul): 1}
     game.player.__dict__.pop('_family_tier_cache', None)
+    before = family_lore.knowledge(game.player, ghoul)
+    lore = set(game.player.lore_known_monster_ids)
     studied = set(game.player.studied_monster_ids)
-    tiers = dict(family_lore.tiers(game.player))
-    game.__dict__['_recall_subject'] = ghoul
-    game._resolve_recall_lore(5)
-    assert 'ghoul' in game.player.lore_known_monster_ids
-    assert family_lore.knowledge(game.player, ghoul) == KNOWN
+    game._resolve_recall_lore(chain)
+    assert game._lore_hint_text in _hints()[str(chain)]
+    assert 'ghoul' not in game._lore_hint_text.lower()
+    assert family_lore.knowledge(game.player, ghoul) == before != KNOWN
+    assert game.player.lore_known_monster_ids == lore
     assert game.player.studied_monster_ids == studied
-    assert dict(family_lore.tiers(game.player)) == tiers
-    assert game._family_has_page('ghoul')
-    # and now known, the next recall in its sight is the general hints
-    assert game._recall_lore_subject() is None
+    assert game.player.recall_lore_cooldown == 50 + chain * 15
+    assert game._lore_hint_text in game._recalled_hints
 
 
 def test_recall_lore_with_nothing_in_view_gives_the_general_hints(game):
-    with open(os.path.join(ROOT, 'data', 'hints.json'), encoding='utf-8') as f:
-        hints = json.load(f)
-    game.__dict__['_recall_subject'] = game._recall_lore_subject()
-    assert game.__dict__['_recall_subject'] is None
     game._resolve_recall_lore(3)
-    assert game._lore_hint_text in hints['3']
+    assert game._lore_hint_text in _hints()['3']
 
 
-def test_recall_lore_starts_by_naming_the_creature(game):
-    ghoul = _in_view(game, 'ghoul')
+def test_recall_lore_starts_the_same_with_or_without_a_creature(game):
+    _in_view(game, 'ghoul')
     game.player.recall_lore_cooldown = 0
     game._start_recall_lore()
-    assert game.__dict__.get('_recall_subject') is ghoul
-    assert any('ghoul' in t.lower() for t in game._log)
+    assert '_recall_subject' not in game.__dict__
+    assert game._log[-1] == "You close your eyes and search your memory..."
+    assert not any('ghoul' in t.lower() for t in game._log)
 
 
 # ---------------------------------------------------------------------------
@@ -544,8 +525,10 @@ def test_probing_shows_resistances_and_status(game):
     assert f"{ghoul.hp}/{ghoul.max_hp} HP" in said
     assert 'Resists: Cold, Poison, Drain, Pierce' in said
     assert 'Weak to: Holy, Slash' in said and 'Immune To: Sleep' in said
+    # It teaches the kind as a corpse study does (Brandon, 2026-11-14).
     assert 'ghoul' in game.player.lore_known_monster_ids              # its page opens
-    assert 'ghoul' not in game.player.studied_monster_ids
+    assert 'ghoul' in game.player.studied_monster_ids
+    assert 'You learn the ways of the Ghoul.' in game._log
 
 
 def test_probing_lines_cover_shrugs_off_and_a_plain_creature():
@@ -616,7 +599,7 @@ def test_the_bestiary_page_at_known_shows_shrugs_off_and_its_nature(game):
     kin = _page(game, 'scarab_swarm')
     assert not any(t.startswith('Shrugs Off') or t.startswith('Immune To') for t in kin)
     assert any('not yet studied' in t for t in kin)
-    game._open_kind_page('scarab_swarm')                              # KNOWN (Recall Lore at 5)
+    game._open_kind_page('scarab_swarm')                              # KNOWN (as a quest step does)
     known = _page(game, 'scarab_swarm')
     assert 'Shrugs Off: Slash, Pierce' in known
     assert any(t.startswith('Immune To:') and 'Paralysis' in t for t in known)
@@ -639,21 +622,3 @@ def test_kit_sense_names_the_arsenals_coatings_and_flasks():
     p.inventory = [water]
     tool, _gain = kit_sense.advise(p, sk)
     assert tool.item is water and tool.kind in ('coating', 'flask')
-
-
-def test_recall_lore_reaches_only_as_far_as_his_study_of_the_family():
-    """Balance 2026-11-13: Recall Lore remembers creatures LIKE ones he has
-    studied. A family he has not begun (tier 0) gives its name and no more,
-    and never opens the page; at Recognise the chain goes all the way."""
-    import enemy_lore
-    p = Player()
-    sk = _m('skeleton')
-    p.family_lore_grants = {}
-    p.__dict__.pop('_family_tier_cache', None)
-    assert enemy_lore.recall_reach(p, sk, 5) == 1
-    assert not enemy_lore.recall_opens_page(enemy_lore.recall_reach(p, sk, 5))
-    assert 'studied enough' in enemy_lore.recall_text(sk, 5, player=p)
-    p.family_lore_grants = {'restless_dead': 1}
-    p.__dict__.pop('_family_tier_cache', None)
-    assert enemy_lore.recall_reach(p, sk, 5) == 5
-    assert enemy_lore.recall_opens_page(enemy_lore.recall_reach(p, sk, 5))
