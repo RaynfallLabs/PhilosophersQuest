@@ -324,7 +324,7 @@ Common templates ship a `class_mechanic` tag that the engine reads at hit time t
 | `anti_heavy_at_max` | Anti-Armor | Max chain: +50% damage vs heavy-armored (tag or name-hint). (warhammer-variant) |
 | `armor_pierce_at_max` | Pierce at Max | Max chain: +35% damage AND ignores 50% of armor. (hooked polearm variants) |
 | `guaranteed_hit` | Never Miss | Chain 0 promotes to chain 1 while the hero is at full health — a wrong first answer (or the clock at 0) still lands a minimum hit; Strike Now before any answer does not (`QuizResult.struck_early`, "wrong answers only", 2026-11-06). (Fail-not unique, kept as unique signature) |
-| `returning_blow` | Returning Blow | Max chain: strike rebounds on you for half damage. (Green Chapel Axe unique) |
+| `returning_blow` | Returning Blow | Max chain: strike rebounds on you for half damage, at most a quarter of your health and never your last point (`combat.RETURNING_BLOW_CAP`; it was uncapped until 2026-11-14 and killed deep wielders). The log says so. (Green Chapel Axe unique) |
 
 The last two (`guaranteed_hit`, `returning_blow`) are unique-only. Everything else was shed from uniques in v2.14.0 — the class chain-special ladder covers the same ground, and leaving them on uniques double-fired. See `docs/design/uniques_v2_14.md` §Redundant class_mechanic values retired.
 

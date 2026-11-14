@@ -3183,6 +3183,10 @@ class CombatMixin:
                 if kwargs.get('healed'):
                     msg += " You absorb life energy!"
                 self.add_message(msg, 'success')
+                _rebound = self.player.__dict__.pop('_rebound', 0)
+                if _rebound:
+                    self.add_message(f"The blow comes back on you, as the Green Chapel's bargain "
+                                     f"says it must: -{_rebound} HP.", 'warning')
                 self._after_strike_line(monster, damage)
                 if killed:
                     self._on_monster_killed(

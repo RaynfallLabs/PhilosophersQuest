@@ -80,8 +80,8 @@ CLASS_MECHANIC_INFO = {
         'wrong first answer still lands a minimum hit. Striking before you answer '
         'is not a wrong answer.'),
     'returning_blow':          ('Returning Blow',
-        'At max chain the blow rebounds on you for half damage -- swing too '
-        'hard and you pay the price.'),
+        'At max chain half the blow rebounds on you, up to a quarter of your '
+        'health -- swing too hard and you pay the price.'),
 }
 
 
@@ -1809,6 +1809,11 @@ def strike_damage(player, monster, chain: int, *, ranged: bool = False, ammo=Non
     return damage
 
 
+# The Green Chapel Axe's returning blow: at most this share of the wielder's
+# health (combat.player_attack, class_mechanic returning_blow).
+RETURNING_BLOW_CAP = 0.25
+
+
 def elemental_blow_after(monster, weapon, actual: int) -> None:
     """A blow from a weapon whose own form is fire or acid (Prometheus'
     Torch, Brisingr, the Bow of Rama...) does to the creature what every
@@ -2473,10 +2478,18 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None,
 
             # Returning blow (Green Chapel Axe) — beheading-game contract: max-chain
             # blows return to the wielder for half damage. The Green Knight survives
-            # decapitation; the bearer pays the price for swinging too hard.
+            # decapitation; the bearer pays the price for swinging too hard. The
+            # price is a wound, never the bargain's end: at most RETURNING_BLOW_CAP
+            # of his health, and never his last point (2026-11-14: deep down half
+            # of a max-chain blow was many times any hero's health, so one swing
+            # killed its own wielder). The game says so (Game, _rebound).
             if class_mech == 'returning_blow' and at_max:
-                backlash = max(1, actual // 2)
-                player.hp = max(0, player.hp - backlash)
+                backlash = max(1, min(actual // 2,
+                                      int(player.max_hp * RETURNING_BLOW_CAP)))
+                backlash = min(backlash, max(0, player.hp - 1))
+                player.hp = max(1, player.hp - backlash) if player.hp > 0 else player.hp
+                if backlash > 0:
+                    player.__dict__['_rebound'] = backlash
 
             # Defensive parry (quarterstaff) — at max chain, gain +2 AC for 2
             # turns. The quarterstaff's defensive identity: master fighters
