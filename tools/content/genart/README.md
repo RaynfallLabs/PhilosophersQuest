@@ -1141,3 +1141,33 @@ first). Draw fixture briefs with `domain_props.py draw <briefs> ...` rather than
 sentences for objects, which put a man and then a sword into fire, snow and puddles.
 The process, the extra brief fields (`layer`, `scale`, `anchor`, `stretch`, `grey`, `dim`,
 `unkey`) and the lessons are in `_genart/DOMAINS_BRIEF.md`.
+
+## Dish pictures and legendary feasts (kitchen rebuild, 2026-11-14)
+
+Every dish shows its kind (from its name), its tier (the vessel: dark walnut, tawny clay, black
+iron, bright silver, jewelled gold, as in the i24 set) and its main benefit (one colour cue: warm
+red HP, amber-gold SP, glowing deep blue MP, emerald green Stat, violet Special). Briefs:
+`briefs/items_dishes.json` (one per kind x tier x tab, written by `_genart/dishes/make_briefs.py`)
+and `briefs/items_feasts.json` (one per legendary feast, `scale` large). Which picture a dish
+shows is picked by `tools/content/kitchen/dish_art.py`; the kinds are in `_genart/dishes/KINDS.md`.
+
+What went wrong, and the wording that fixed it:
+
+- **A glow rising from solid food cuts out as a grey-blue haze cap** ("a faint violet glow rises
+  from it", 6 of 8 Special dishes). A glow INSIDE a liquid or jelly is safe; on solid food use
+  flowers, berries or a sauce pool only.
+- **Leaves or flowers laid ON a round thing make it a fruit or a vegetable**: a bread roll with
+  leaves on top is a turnip, round fritters with leaves are oranges. Tuck the garnish into the
+  split, or lay it beside.
+- **"Fritters" draw round balls (fruit), "flat craggy fritters" draw biscuits.** "Lumpy pieces of
+  meat fried in thick crisp batter, like pieces of fried chicken" draws fried food.
+- **Tawny clay drifts khaki-olive on the magenta backdrop** (a blue MP drink and pot); on green it
+  stays brown. Gold is safe on green too. A blue glow on green needs `despill`.
+- **Garnish "lying beside" the dish can fall outside the bowl** as a loose piece (honey drops).
+- **A flaming dish on a plate grows a stem and becomes a torch or a cake stand.** Say "the dish
+  lies flat with nothing under it: no foot, no stem".
+- **"A squat open jar of silver" is a modern glass jar or a tin can.** Say "a squat round crock,
+  wider than tall, an old silversmith's piece, no lid and no glass".
+- **A flat bronze disc standing in a bowl reads as an egg** at 64 px; carry the motif on the rim.
+- **A sauce pool under the food carries a colour cue well** (blue MP, violet Special); a few blue
+  flecks in a stew read only as a small patch.

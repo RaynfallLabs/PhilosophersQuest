@@ -43,7 +43,7 @@ mode, a T1-T5 stack of parts), the potency formulas, the Single tab.
 | `data/items/recipes.json` | The recipe book (§4). Built. |
 | `data/cooking_rules.json` | Every number a dish gives (§5). Hand-written. |
 | `data/items/food.json` | Rations: eaten as they are, and called for by many dishes. |
-| `tools/content/kitchen/` | `build_kitchen.py` (the build and every check), the content (`kin_groups.txt`, `ingredients_*.txt`, `dishes_*.txt`), the frozen structure (`structure.json`), the dish-picture clusters (`art_clusters.json`), snapshots of the old data it reads colours and trophy text from. |
+| `tools/content/kitchen/` | `build_kitchen.py` (the build and every check), the content (`kin_groups.txt`, `ingredients_*.txt`, `dishes_*.txt`), the frozen structure (`structure.json`), `dish_art.py` (which picture each dish shows, §4.1) and the record it writes (`dish_art.json`), snapshots of the old data it reads colours and trophy text from. |
 
 The old generators (`tools/gen_recipes*.py`, `tools/gen_ingredients_v265.py`,
 `tools/tune_sp_soft_boundary.py`, `tools/balance/fix_broken_ingredients.py`,
@@ -56,7 +56,8 @@ The old generators (`tools/gen_recipes*.py`, `tools/gen_ingredients_v265.py`,
 2. `py tools/content/kitchen/build_kitchen.py` merges them with the frozen `structure.json`,
    writes the three JSON files and checks every rule (one single and two multi-dishes per
    ingredient, 2-5 parts, no forbidden food, banned words, the name says the part, every picture,
-   unique names).
+   unique names). Each dish's `art` comes from `dish_art.py` (§4.1), so renamed or new dishes
+   get the right picture with no table to edit.
 3. `--structure` regenerates the structure (who goes into which dish) and the naming skeleton.
    Its dish ids change, so every multi-dish must be renamed: do it only for a real redesign.
 
@@ -133,7 +134,7 @@ dish and at least two multi-dishes. 36 multi-dishes are legendary feasts; 101 ar
 | `legendary` | A five-ingredient feast with a permanent bonus (§5.3). |
 | `trophy`, `permanent` | A boss trophy's own dish and its lasting power (§6). |
 | `cross_depth` | Joins an early part (floors 1-20) with a deep one (40+). |
-| `art` | The dish's picture: a `recipe_*.png`, picked from the clusters of the kind its name says (a stew, a pie, skewers, a broth...). |
+| `art` | The dish's picture (§4.1): `dish_<kind>_t<tier>_<tab>` for an ordinary dish, `feast_<name>` for a legendary feast, the boss's own `recipe_<id>` for a trophy dish. |
 
 - **Single dishes** are `cook_<kin>` ("Goblin Gristle Stew"); trophy dishes keep their ids
   (`trophy_<boss>_recipe`) and names.
@@ -155,6 +156,32 @@ Dishes per tab and depth band (the tier of the deepest ingredient):
 | MP | 35 | 7 | 9 | 4 | 12 |
 | Stat | 118 | 32 | 22 | 10 | 20 |
 | Special | 69 | 36 | 16 | 7 | 21 |
+
+### 4.1 Pictures (`tools/content/kitchen/dish_art.py`)
+
+A dish's picture says three things at a glance:
+
+- **its kind**, from its name: soup, stew, chowder, porridge, drink, pickle, roast, leg, steak,
+  sausage, skewer, stir-fry, fritter, flambe, platter, pie, dumpling, bread, jelly, pudding. The
+  last kind word of the name decides ("Kuo-Toa Brine Ham Stew" is a stew), after a few phrases
+  ("black pudding" is a sausage, "leg roast" a leg); a name with no kind word is a stew;
+- **its tier**, by the vessel: dark walnut wood (1), tawny clay (2), black iron (3), bright silver
+  (4), jewelled gold (5). A drink is in a cup, mug, tankard or goblet of that material, a pickle
+  in a crock or jar;
+- **its main benefit** (menu tab), by one colour cue: warm red for HP, amber-gold for SP, glowing
+  deep blue for MP, emerald green for Stat, violet for Special (a broth, filling or sauce of that
+  colour, or berries, honey, leaves or flowers on solid food).
+
+The pictures are `assets/tiles/items/dish_<kind>_t<tier>_<tab>.png`. Stew and roast are drawn
+at all 25 tiers and tabs; the other kinds where the book has two or more dishes of them. A dish
+whose kind has no picture at its tier and tab shows the nearest kind drawn there
+(`dish_art.FALLBACK`: a pie a dumpling, then bread, then a roast; every chain ends at the stew),
+so its vessel and colour are always true. The pick reads only the name, tier and benefit: a
+renamed or new dish needs no table edit, and a new picture dropped into the folder under that
+name is used on the next build. Each legendary feast has its own `feast_<name>.png`
+(`dish_art.FEASTS`), drawn for it from its name, flavour and lore; the 14 trophy dishes keep
+their boss's `recipe_<id>.png`. The briefs are `tools/content/genart/briefs/items_dishes.json`
+and `items_feasts.json`.
 
 ---
 
@@ -342,6 +369,8 @@ book: `test_cooking_overhaul.py`, `test_ingredient_rename.py`, `test_harvest_coo
 `test_stats_and_boons.py`, `test_final_gaps_audit.py`, `test_bugbash4_player_text.py`,
 `test_bug_bash_3.py`, `test_balance_review_2026_10_26.py`, `test_balance_pass_2026_10.py`,
 `test_audit_2026_10.py`, `test_armour_meals_gates_2026_11_12.py`, `test_yardsticks.py`.
+`tests/test_dish_art.py`: every picture exists at 64 px, feasts own theirs, a shared picture is
+one tier and one tab, names say their kind, any renamed dish finds a true vessel and colour.
 
 ---
 
@@ -353,4 +382,5 @@ book: `test_cooking_overhaul.py`, `test_ingredient_rename.py`, `test_harvest_coo
 | v2.18 | 2026-10-01 | The cook path calls `on_food_eaten` (Tantalus, Persephone, Circe). |
 | — | 2026-10-26 | Base max HP on every meal; the floor's stat lesson; the per-stat cap. |
 | — | 2026-11-12 | Meals heal 6% + written/80 of the bar. |
+| KA | 2026-11-14 | **Dish pictures.** 134 kind pictures (20 kinds; vessel = tier, one colour cue = main benefit; stew and roast at every tier and tab) picked by `dish_art.py` from the name, and 36 feasts drawn one by one; the old cluster picker and `art_clusters.json` retired. |
 | K1 | 2026-11-14 | **The kitchen rebuild.** Kin share ingredients (316: 294 parts, 14 trophies, 8 forage) with vivid names that keep their pictures; `harvest_map.json` with aliases; a 573-dish book where every ingredient is in one single and two+ multi-dishes, rations included, a third cross-depth, 36 legendary feasts; five kinds of meal (HP / SP / MP / Stat / Special) from one rules file, MP restore new, worth and size bonus, legendary permanents inside the lifetime caps; the pure menu functions; old saves migrate. `prime_cuts.json`, `cook_outcomes.json`, `cut_stat` and `outcome_id` retired. |

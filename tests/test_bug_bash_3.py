@@ -328,14 +328,14 @@ def test_dads_fist_is_on_his_hand_and_dad_keeps_no_score():
 def test_every_recipe_has_a_picture_under_the_name_the_menu_asks_for():
     """The 364 pictures that once existed were named for an older recipe set:
     every recipe was a green asterisk. Since the kitchen rebuild (2026-11-14)
-    each dish names its picture (`art`, one of the recipe_*.png dish
-    pictures, chosen by the kind of dish its name says) and the menu asks
-    for that."""
+    each dish names its picture (`art`: a dish_<kind>_t<tier>_<tab> picture
+    of the kind its name says, a feast_* picture for a legendary feast, the
+    boss's recipe_* picture for a trophy dish) and the menu asks for that."""
     tiles = os.path.join(ROOT, 'assets', 'tiles', 'items')
     recipes = _data('items', 'recipes.json')
     assert len(recipes) > 500
     for rid, r in recipes.items():
-        assert r['art'].startswith('recipe_'), rid
+        assert r['art'].startswith(('dish_', 'feast_', 'recipe_trophy_')), rid
         assert os.path.exists(os.path.join(tiles, f"{r['art']}.png")), rid
     src = open(os.path.join(ROOT, 'src', 'game_render.py'), encoding='utf-8').read()
     assert "recipe.get('art')" in src
