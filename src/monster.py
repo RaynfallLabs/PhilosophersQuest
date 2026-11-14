@@ -307,7 +307,8 @@ _RANGED_WORDS = {'shoot', 'arrow', 'bolt', 'dart', 'spit', 'hurl',
                  'song', 'wail', 'charm', 'psionic', 'disintegrat',
                  'cast', 'bow', 'sling', 'javelin', 'spore', 'shock', 'hex'}
 # Attacks that work on the mind or the eye: they do not fly, they fail to take.
-_MIND_WORDS = ('gaze', 'song', 'wail', 'charm', 'psionic', 'hex', 'evil eye')
+# (A riddle is the Sphinx's: it either takes hold of your thoughts or it does not.)
+_MIND_WORDS = ('gaze', 'song', 'wail', 'charm', 'psionic', 'hex', 'evil eye', 'riddle')
 
 
 # ---------------------------------------------------------------------------

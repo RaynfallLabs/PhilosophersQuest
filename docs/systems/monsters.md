@@ -507,6 +507,38 @@ Note: there is NO seal-demon on floor 95. The levels are prime-ish by narrative 
 
 `_try_spawn_seal_demon` runs AFTER `_try_spawn_mini_boss` on every procedural floor. Idempotent via `self._placed_mini_bosses`. Each kill calls `game_combat._handle_death` → adds the matching seal id to `game.seals_broken`, writes a Journal line, at 7/7 triggers the "ALL SEVEN SEALS ARE BROKEN" narrative pulse.
 
+## Mini-boss tuning (2026-11-14)
+
+Brandon: "are our mini-bosses still working and tuned?" They were placed (every planned one, 331 of 331) but not tuned: after the weapon curve (2026-11-12) the mastery hero killed every band mini-boss, legendary wanderer and seal demon in 1 to 5 of his attacks for a median 0-15% of his health. "Yes, tune them."
+
+**Who.** `tools/balance/mini_boss_bands.py` owns 38 foes (`roster()`): the 26 band mini-bosses `_roll_planned_mini_bosses` rolls (`is_mini_boss`, `spawn_chance > 0`; Iron Patriarch, Whispering Crone and Blood Archon among them), the 5 legendary wanderers (`legendary` tag) and the 7 seal demons. The gate bosses, the Cow King, Old Nickel and Euryale (Stheno's escort, `spawn_chance` 0) are not in it.
+
+**How a foe is written (LORE, NOT FLOOR).** Real numbers in `data/monsters.json`, written by `mini_boss_bands.py --write` from its `FOES` table:
+- `hp`: its health in ordinary monsters of its peak floor (`floor_curve.target_hp`).
+- `blows`: what it lands in one turn if every blow hits (the attacks `Monster.attack` fires: the first N of a `multi_attack_count` under the attack count, all of a flurry, else one at random), as a share of a steady cook's health bar there (`floor_curve.health_bar`). At most `BLOWS_CAP` 30% of a bar, and the enraged flurry (`enraged_multi_attack_count`) at most `RAGE_CAP` 45%: no turn is a one-blow death.
+- To-hit: `named_thac0` = the armour line (`rebake_thac0.measure_line`, the mean AC a plain hero wears on that floor) + `NAMED_NEED` 6 + the foe's own `aim` (0 for all today). An ordinary monster needs a 10 against that hero; a named foe needs a 6. A big blow that rarely lands is luck; a surer, smaller one is a fight the kid can read, and his armour still takes a point off the roll for every point he wears. `rebake_thac0.py` calls `named_thac0` for these foes, and `respawn_by_hp.apply_stat_fixes` and `tools/content/late_game_monsters_2026_10.py` leave their health and dice to the band tool.
+- `HP_CAP`: no foe is tankier than 90% of Abaddon (`test_no_mini_boss_is_tankier_than_abaddon`). The legendary wanderers, Níðhöggr's Fragment and Abyzou reach it first: they are dangerous rather than long.
+
+**The bands** (`BANDS`, checked by `tests/test_mini_boss_bands.py`): band mini-boss hp 7-24 ordinary monsters, blows 5-30% of a bar; legendary 17-24, 18-30%; seal demon 11-19, 14-30%. Where in the band a foe sits was measured foe by foe so the mastery hero needs about six attacks for each (the family is the length of the fight): a foe whose hide, resistances, regeneration or second life turns his usual blows needs less health to last as long (the Green Knight 7.4, Stheno 7.5, Baba Yaga 8.6, Talos 10.6), one he cuts through needs more (Echidna 22.7, the Erlking 20.9). A foe whose technique bites carries fewer dice (the Bonnacon's burning dung, the Wild Hunt Captain's pace, Ravana's paralysing grab). Each `FOES` entry has a line of lore saying why.
+
+**Techniques added** (each also a tell, `data/tells.json` by its effect): Talos's **Red-Hot Hug** (grapple, burning: he heated himself in the fire and hugged his victims) beside his Crush, two blows a turn; Cacus's Fire Breath now burns and his **Breath of Smoke** blinds (Virgil's smoke and darkness; it replaced his Slam); the Sphinx's **Whispered Riddle** (voice, confusion: the clock on every sum runs short; wax in the ears stops it) beside her Rake and Bite, three blows a turn; the Nemean Lion's Claw bleeds (its own claws were the only thing that could cut its hide); the Calydonian Boar charges (`can_charge`, x1.5). The Bonnacon's dung burns a little less often (25%, was 35%): at floor 6 the burn was the whole fight. `combat_lines.json` gives the two new verbs ("Talos hugs you to a red-hot chest", "The Sphinx puts a riddle to you"); a riddle that misses "fails to take hold of you" (`monster._MIND_WORDS`).
+
+**How it was measured.** `tools/balance/mini_boss_fights.py heroes` runs the kid-model simulator (100 runs a profile, mastery, committed, mastery_dex, mastery_mage) and saves each living hero at the start of each foe's floor; `fight` then fights every foe against those heroes from the current data, the way `difficulty_sim.Run._boss_side_fights` does (full health, debuffs cleared, the foe alone, no quest layer), so a retune is measured in a few minutes. Final numbers, 400 fights a foe a profile (median attacks / median share of health lost / deaths):
+
+| Group | Mastery before | Mastery after | Committed before | Committed after | DEX / mage after |
+|---|---|---|---|---|---|
+| Band (26) | 2 / 4% / 0% | 6 / 25% / 0.2% | 4 / 12% / 0.2% | 12 / 124% / 5% | 7-8 / 30-34% / 0.1-0.4% |
+| Legendary (5) | 2 / 0% / 0% | 7 / 14% / 0% | 3 / 6% / 0% | 13 / 178% / 7% | 9 / 21-26% / 0-0.2% |
+| Seal demon (7) | 2 / 2% / 0% | 5 / 14% / 0% | 4 / 12% / 0% | 11 / 140% / 2% | 7-8 / 18-21% / 0-0.1% |
+
+Whole runs (100 a profile, kid model, the same seeds before and after): mastery won 91% before and 92% after, mastery_dex 86% and 89%, mastery_mage 89% and 92% (each about 6 points either way), with no mastery death on floors 61-99 in either; committed fell from 9% to 2%, its deaths spread over the named fights it now has to survive (seven seal demons in a row among them).
+
+"Lost" counts what potions and prayers put back during the fight, so a committed kid's 124% is more than a whole bar spent. The deep foes whose blows are fire, cold, poison or drain (Mammon, Samael, Abyzou, Tiamat, Asmodeus, the Wendigo) cost a prepared mastery hero little (7-14%): his resistances halve them and his toughness takes more. That is preparation paying, and an unprepared kid meets the full blow.
+
+**What the simulator does not model** about these foes: summons (the Crone's dead, Tiamat's young dragons, Asmodeus's bone devils), a charge for anything but Asterion (the Boar, the Blood Archon), Charybdis's pull, Asmodeus's blink, Mammon's hunger (`sp_drain`), Euryale beside Stheno (the side fight is Stheno alone), and the hero's own confusion and blindness beyond the shorter clock (no stumbling, nothing hidden). Heroes wielding the Green Chapel Axe were left out: its returning blow (half of a max-chain blow back on the wielder, uncapped) kills a deep hero outright whatever he fights.
+
+**Old saves.** A mini-boss already set down on a saved floor keeps the numbers it was made with (a `Monster` is pickled whole); every one not yet met uses the new data.
+
 ## Multi-tile monster placement
 
 Five monsters declare `footprint: [2, 2]`:
@@ -600,6 +632,7 @@ The design cap is 1-5 and `_spawn_treasure_item` scales as `effective_floor = ti
 
 - Unit tests under `tests/` cover: HP dice parse, attack dice parse, bell-curve weights (`tools/balance/curve.py` is the source of truth for the curve), `_damage_multiplier` resistance/weakness tables, mini-boss planning determinism.
 - The audit path is `tools/audit/` + the `SYSTEMS_AUDIT.md` report. See its §1 for the complete v2.18.0 monster findings list.
+- `tests/test_mini_boss_bands.py`: every band mini-boss, legendary wanderer and seal demon sits in its band against `floor_curve` (health and blows), the data matches `mini_boss_bands.py`, no turn is a one-blow death, none is tankier than the final boss, each has a tell, and each aims truer than its floor.
 - Multi-tile placement is tested by instantiating each of the 5 footprint-`[2,2]` monsters in a procedural room and asserting all 4 tiles land on walkable floor.
 - No play-test is practical for most of the 527-monster catalog; this is the regime where [play-test rule has limits](../feedback_play_test_limits.md) applies — logic tests on JSON + pure-function tests on `_damage_multiplier` / `_build_spawn_pool` / mini-boss planning are the primary guards.
 

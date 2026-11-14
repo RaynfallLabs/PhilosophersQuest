@@ -852,6 +852,13 @@ def _keep_affinity(want: dict, cur) -> None:
         want['attacks'] = _typed_like(want['attacks'], cur)
 
 
+def _banded(data: dict) -> dict:
+    """The named foes tools/balance/mini_boss_bands.py tunes."""
+    sys.path.insert(0, str(ROOT / 'tools' / 'balance'))
+    import mini_boss_bands
+    return mini_boss_bands.roster(data)
+
+
 def apply(data: dict) -> list[str]:
     log = []
     from assign_monster_families import family_for
@@ -895,6 +902,15 @@ def apply(data: dict) -> list[str]:
         # the one already written wins.
         if isinstance(cur, dict) and cur.get('pronoun'):
             want['pronoun'] = cur['pronoun']
+        # Its health and the weight of its blows, for a named foe, are decided
+        # by tools/balance/mini_boss_bands.py (mini-boss tuning, 2026-11-14):
+        # the ones already written win.
+        if isinstance(cur, dict) and mid in _banded(data):
+            want['hp'] = cur.get('hp', want.get('hp'))
+            dmg = {a.get('name'): a.get('damage') for a in (cur.get('attacks') or [])
+                   if isinstance(a, dict)}
+            want['attacks'] = [dict(a, damage=dmg.get(a.get('name'), a.get('damage')))
+                               for a in want.get('attacks') or []]
         if cur != want:
             log.append(f'{mid}: {"updated" if mid in data else "added"}')
             data[mid] = want

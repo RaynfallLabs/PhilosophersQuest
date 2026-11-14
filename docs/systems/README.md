@@ -95,6 +95,7 @@ the doc wins (and the row is a bug — please update it).
 | Question | Open |
 |---|---|
 | "How do I add a monster?" | [monsters.md](monsters.md), `data/monsters.json` |
+| "How hard is a mini-boss, and how do I retune one?" | [monsters.md](monsters.md) "Mini-boss tuning"; `tools/balance/mini_boss_bands.py` (the numbers), `tools/balance/mini_boss_fights.py` (the measuring) |
 | "How do I add a new quiz subject?" | [quiz_engine.md](quiz_engine.md), `data/questions/`, `fantasy_ui.FP.SUBJECT`, `player.SUBJECT_TIMER` |
 | "What does chain-v2 do differently from v1?" | [combat.md](combat.md); peak-chain damage, miss = chain 0, wrong = strike-now |
 | "How does a scroll get identified?" | [identify_v3.md](identify_v3.md); one philosophy Q at derived id_tier |

@@ -94,7 +94,9 @@ DEEP_UNDER_FRACTION = 0.9
 
 # Named mini-bosses and seal demons must not be weaker than the ordinary
 # monsters around them.  Raised (never lowered) to this multiple of the anchor
-# HP at their floor.  The gate bosses already sit near 3x and are left alone,
+# HP at their floor.  (Since 2026-11-14 only the named foes outside
+# mini_boss_bands.py's roster, Euryale and Old Nickel: the rolled mini-bosses,
+# the legendary wanderers and the seal demons have their own bands there.)  The gate bosses already sit near 3x and are left alone,
 # except Fenrir, whom the rebase capped at 1.3x.
 NAMED_FOE_HP_MULT = 4.0
 # Before floor 40 a chain-5 hit is a larger share of the floor's HP, and the
@@ -318,9 +320,13 @@ def apply_stat_fixes(monsters: dict) -> list[str]:
         _raise_hp(mid, DEEP_UNDER_FRACTION * target_hp(floor), "deep monster under its band")
     for mid, avg in GATE_BOSS_HP.items():
         _raise_hp(mid, avg, "gate boss, CURVE.md section 6")
+    # The mini-bosses, legendary wanderers and seal demons have their own
+    # bands now (tools/balance/mini_boss_bands.py, 2026-11-14): left to it.
+    import mini_boss_bands
+    banded = mini_boss_bands.roster(monsters)
     for mid, d in monsters.items():
         named = d.get("is_mini_boss") or d.get("is_seal_demon") or mid in HP_FLOOR_MULT
-        if not named:
+        if not named or mid in banded:
             continue
         floor = d.get("peak_floor", d.get("min_level", 1))
         if floor > 100:         # the Cow Level's king is seated by hand
