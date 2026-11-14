@@ -1,0 +1,5 @@
+{
+  "_doc": "Foraged finds added after the kitchen rebuild (the old ingredient file has no row for them): where they start to grow (min_level), their colour and terrain. build_kitchen.py reads a forage row here when old_ingredients.json lacks it. Starnut: the Mooble's favourite (RARE_PETS_PLAN_2026_11_14, floors 25 on). Sunroot: the Bococho's (floors 40 on).",
+  "starnut": {"min_level": 25, "color": [205, 170, 70], "terrain": "cave"},
+  "sunroot": {"min_level": 40, "color": [235, 150, 40], "terrain": "cave"}
+}

@@ -6358,6 +6358,40 @@
     "temp_power": "save_guard_WIS",
     "terrain": "water"
   },
+  "starnut": {
+    "name": "Starnut",
+    "symbol": "~",
+    "color": [
+      205,
+      170,
+      70
+    ],
+    "weight": 0.15,
+    "min_level": 25,
+    "tier_role": "dungeon",
+    "nature": "mp",
+    "part": "forage",
+    "description": "A hard round nut with star-shaped ridges that glitters in lamplight. It grows only in the deep mines, where the old miners baked it into tarts, and the little cave folk still love it.",
+    "identified": true,
+    "terrain": "cave"
+  },
+  "sunroot": {
+    "name": "Sunroot",
+    "symbol": "~",
+    "color": [
+      235,
+      150,
+      40
+    ],
+    "weight": 0.15,
+    "min_level": 40,
+    "tier_role": "dungeon",
+    "nature": "sp",
+    "part": "forage",
+    "description": "A bright orange-gold root with feathery green tops, sweet as honey. The great running birds of the Underway will cross a cavern for one.",
+    "identified": true,
+    "terrain": "cave"
+  },
   "surtur_trophy": {
     "name": "Surtur's Ember",
     "symbol": "*",

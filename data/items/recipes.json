@@ -2341,6 +2341,15 @@
   "flavor": "Black noodles that taste of empty sky.",
   "art": "dish_soup_t2_mp"
  },
+ "cook_starnut": {
+  "name": "Toasted Starnuts",
+  "ingredients": [
+   "starnut"
+  ],
+  "benefit": "mp",
+  "flavor": "Crunchy, sweet and faintly fizzy; your mana stirs.",
+  "art": "dish_stew_t2_mp"
+ },
  "cook_stirge_swarm": {
   "name": "Stirge Drumsticks",
   "ingredients": [
@@ -2403,6 +2412,15 @@
   "benefit": "sp",
   "flavor": "Pluck the bronze feathers first; then eat your fill.",
   "art": "dish_leg_t1_sp"
+ },
+ "cook_sunroot": {
+  "name": "Roasted Sunroot",
+  "ingredients": [
+   "sunroot"
+  ],
+  "benefit": "sp",
+  "flavor": "Sweet and filling, like a warm afternoon.",
+  "art": "dish_stew_t2_sp"
  },
  "trophy_surtur_recipe": {
   "name": "Lavabread",
@@ -7253,5 +7271,49 @@
   "flavor": "Anansi owns every story. This one ends with you wiser.",
   "art": "dish_steak_t5_stat",
   "cross_depth": true
+ },
+ "dish_335": {
+  "name": "Trickster's Starnut Flatbread",
+  "ingredients": [
+   "demonic_trickster_prime",
+   "starnut",
+   "elvish_bread"
+  ],
+  "benefit": "mp",
+  "flavor": "Elf-bread rolled with crushed starnuts and a dash of something that shimmers. Your thoughts sparkle.",
+  "art": "dish_roast_t3_mp"
+ },
+ "dish_336": {
+  "name": "Troll Sausage and Starnut Bake",
+  "ingredients": [
+   "troll_prime",
+   "starnut",
+   "bread_ration"
+  ],
+  "benefit": "sp",
+  "flavor": "A miner's supper: troll sausage baked with toasted starnuts in a bread crust. It sits heavy and warm.",
+  "art": "dish_roast_t2_sp"
+ },
+ "dish_337": {
+  "name": "Rime Ham and Sunroot Hash",
+  "ingredients": [
+   "frost_giant_prime",
+   "sunroot",
+   "dried_meat"
+  ],
+  "benefit": "sp",
+  "flavor": "Frost-cured ham fried with sweet sunroot and dried meat. Enough to march all day.",
+  "art": "dish_roast_t3_sp"
+ },
+ "dish_338": {
+  "name": "Heart-Scale and Sunroot Stew",
+  "ingredients": [
+   "young_dragon_prime",
+   "sunroot",
+   "healing_herb"
+  ],
+  "benefit": "hp",
+  "flavor": "Dragon heart-scale simmered soft with sunroot and healing herbs. It mends from the inside.",
+  "art": "dish_stew_t3_hp"
  }
 }

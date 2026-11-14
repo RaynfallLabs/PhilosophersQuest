@@ -147,6 +147,12 @@ def _old_ingredients():
     return _load(snap)
 
 
+def _new_forage():
+    """Forage added after the rebuild (new_forage.json): min_level, colour, terrain."""
+    with open(os.path.join(HERE, 'new_forage.json'), encoding='utf-8') as f:
+        return {k: v for k, v in json.load(f).items() if not k.startswith('_')}
+
+
 def _old_recipes():
     snap = os.path.join(HERE, 'old_recipes.json')
     if not os.path.exists(snap):
@@ -262,7 +268,9 @@ def build_ingredients():
         if not key.startswith('forage:'):
             continue
         fid = key.split(':', 1)[1]
-        o = old[fid]
+        o = old.get(fid) or _new_forage().get(fid)
+        if o is None:
+            raise SystemExit(f'forage {fid} has no row in old_ingredients.json or new_forage.json')
         tab, detail = _nature_split(c['nature'])
         floor = int(o.get('min_level', 1))
         ings[fid] = {

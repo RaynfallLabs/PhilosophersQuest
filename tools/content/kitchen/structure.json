@@ -4589,5 +4589,53 @@
   "kind": "multi",
   "anchor": "anansi_prime",
   "cross_depth": true
+ },
+ "dish_335": {
+  "parts": [
+   "demonic_trickster_prime",
+   "starnut",
+   "elvish_bread"
+  ],
+  "benefit": "mp",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "starnut",
+  "cross_depth": false
+ },
+ "dish_336": {
+  "parts": [
+   "troll_prime",
+   "starnut",
+   "bread_ration"
+  ],
+  "benefit": "sp",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "starnut",
+  "cross_depth": false
+ },
+ "dish_337": {
+  "parts": [
+   "frost_giant_prime",
+   "sunroot",
+   "dried_meat"
+  ],
+  "benefit": "sp",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "sunroot",
+  "cross_depth": false
+ },
+ "dish_338": {
+  "parts": [
+   "young_dragon_prime",
+   "sunroot",
+   "healing_herb"
+  ],
+  "benefit": "hp",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "sunroot",
+  "cross_depth": false
  }
 }
