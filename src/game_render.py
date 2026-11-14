@@ -3883,14 +3883,15 @@ class RenderMixin:
             self.screen.blit(surf, (x, slot.y + (slot.h - surf.get_height()) // 2))
 
         # -------- Damage maths ------------------------------------------
-        dtypes  = weapon.damage_types if weapon else ['blunt']      # bare hands crush
-        # the same reckoning the blow itself uses (form x substance)
-        from combat import weapon_type_multiplier as _wtm
+        # The weapon as the hero knows it (kit_sense): an unidentified one's
+        # own metal is neither named nor counted in the tag below; how it
+        # wounds and the smith's inlay are (bug bash WB-D02). Bare hands
+        # crush. The tag's reckoning is the blow's own (form x substance,
+        # combat.weapon_type_multiplier) on what he knows of the weapon.
         import affinity as _aff
-        _fm, _sm = _wtm(weapon, monster)
-        if weapon and getattr(weapon, 'ignore_resistances', False):
-            _fm = max(1.0, _fm)
-        dm      = _aff.capped(_fm * _sm)
+        import kit_sense as _ks_strip
+        dtypes  = _ks_strip.shown_blow_types(self.player, weapon)
+        dm      = _ks_strip.known_mult(self.player, weapon, monster)
 
         # Current chain multiplier — polynomial for `chain_exponent`-set
         # weapons (and unarmed @ 1.15), otherwise the legacy array.

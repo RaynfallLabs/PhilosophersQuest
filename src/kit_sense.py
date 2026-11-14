@@ -131,6 +131,25 @@ def known_mult(player, weapon, monster) -> float:
     return affinity.capped(form * sub)
 
 
+def shown_blow_types(player, weapon) -> list:
+    """The damage types the combat strip names for a weapon, as far as the
+    hero knows it: every one once he knows the weapon; before that only how
+    it wounds (its shape is plain to see) and the silver or cold iron a
+    smith worked into it, never its own metal. The strip read "Slash /
+    Pierce / Silver" off an unidentified silver longsword (bug bash
+    WB-D02)."""
+    if weapon is None:
+        return ['blunt']                     # a fist
+    if knows_weapon(player, weapon):
+        return list(getattr(weapon, 'damage_types', None) or ['physical'])
+    import combat
+    out = list(combat.blow_forms_of(weapon))
+    inlay = getattr(weapon, 'inlay', None) or None
+    if inlay and inlay not in out:
+        out.append(str(inlay))
+    return out
+
+
 def _has_ammo(player, weapon) -> bool:
     need = getattr(weapon, 'requires_ammo', None)
     if not need or getattr(weapon, 'infinite_ammo', False):
@@ -173,7 +192,6 @@ def arsenal_tools(player, monster) -> list:
     try:
         import affinity
         import coatings
-        import combat
     except Exception:
         return []
     weapon = getattr(player, 'weapon', None)
@@ -183,8 +201,8 @@ def arsenal_tools(player, monster) -> list:
             spec = coatings.coat_spec(it) or {}
             probe = coatings._Bare(weapon)
             probe.__dict__['coating'] = {'substance': spec.get('substance'), 'blows': 1}
-            f, s = combat.weapon_type_multiplier(probe, monster)
-            out.append(Tool('coating', it, _name(player, it), affinity.capped(f * s)))
+            # The blade as he knows it, with this coating on (bug bash WB-D01).
+            out.append(Tool('coating', it, _name(player, it), known_mult(player, probe, monster)))
         elif why == 'throw':
             out.append(Tool('flask', it, _name(player, it), affinity.weak_step()))
     return out

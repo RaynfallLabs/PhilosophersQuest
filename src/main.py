@@ -1623,6 +1623,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 item.unidentified_name = compose_unidentified_name(
                     mat.get('unidentified_descriptor', mat['name']),
                     tpl['name'], noun)
+            if cat == 'weapons' and getattr(item, 'inlay', None):
+                # A smith's silver or cold iron is in its name too: every
+                # load recomposed a "Silvered Iron Longsword" back into an
+                # "Iron Longsword" (smithing.name_inlay; bug bash WB-D04).
+                import smithing as _sm_name
+                _sm_name.name_inlay(item)
             if cat in ('armor', 'shields'):
                 # Bug bash 3.3.2 (gear.py): AC from the template alone, on body
                 # armour and shields; a minor piece gives none. A minor

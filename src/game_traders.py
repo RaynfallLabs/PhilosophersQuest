@@ -829,7 +829,17 @@ class TraderMixin:
             if tid not in smithing.reforge_targets(w, self._shield_worn()):
                 return False
             old = self._bare_name(w)
+            # What he knew of it he still knows: the smith changed its shape
+            # in front of him, not its metal, plus or blessing. A blade he
+            # knew only by its kind (an iron longsword) came back an unknown
+            # "Plain Mace" when he did not know iron maces (bug bash WB-D03).
+            from items import buc_known_to, is_fully_known, make_fully_known
+            knew, knew_buc = is_fully_known(w, p), buc_known_to(w, p)
             smithing.reforge(w, tid)
+            if knew:
+                make_fully_known(w)
+            elif knew_buc:
+                w.buc_known = True
             from paths import a_or_an
             self.add_message(f"{who} heats your {old} white and beats it into "
                              f"{a_or_an(self._bare_name(w))}. The metal is the same, and so is "

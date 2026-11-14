@@ -230,6 +230,13 @@ def _name_inlay(w) -> None:
             setattr(w, attr, f"{prefix} {v}")
 
 
+def name_inlay(w) -> None:
+    """The inlay's word back on a weapon's names after something rewrote
+    them (an old save's names recomposed on load: main.load_state; bug
+    bash WB-D04). Once only, as _name_inlay always is."""
+    _name_inlay(w)
+
+
 def inlay(w, sub: str) -> bool:
     """Work ``sub`` into ``w`` for good. True when done."""
     if not can_inlay(w, sub):

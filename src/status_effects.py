@@ -300,7 +300,8 @@ _RESIST_BLOCKS: dict[str, set] = {
 # rare_metal classes; copper, bronze, tin, silver, gold, hematite (which is
 # rust already) and mithril do not, and no leather, cloth, hide, wood or
 # magical metal does. The hand-kept name sets below are only the fallback for
-# a named piece whose material has no file ("hardwood", "divine bronze").
+# a named piece whose material has no file ("hardwood", "divine bronze"); for
+# rust its own `metal` word comes next (_can_rust).
 # They used to be the whole rule, and missed most of the materials: canvas,
 # cured, boiled and studded leather, spider silk, elven silk, oak and ash
 # were all treated as rustable metal (winning-build plan section 2).
@@ -379,7 +380,15 @@ def _can_rust(item) -> bool:
         return False                  # organic materials don't rust
     if any(w in mat for w in ('bronze', 'copper', 'tin', 'silver', 'gold', 'mithril')):
         return False                  # not iron
-    return True                       # iron, steel, "dark iron"...
+    # A named piece's own word on what it is made of (its ``metal``, which
+    # gear.is_metal reads for the casting tax and the footsteps). A word
+    # with no file ("legendary", "enchanted hide", "rubber") used to rust
+    # whatever it named: the rust monster flaked the linen Linothorax of
+    # Alexander and the Mantle of Elijah to red rust (bug bash WB-D05).
+    own = getattr(item, 'metal', None)
+    if own is not None:
+        return bool(own)
+    return any(w in mat for w in ('iron', 'steel'))     # iron, steel, "dark iron"...
 
 
 def _can_scorch(item) -> bool:
