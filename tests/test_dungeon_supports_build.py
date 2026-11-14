@@ -393,6 +393,7 @@ def test_one_inlay_to_a_weapon_and_its_name_shows_it():
 def test_the_shop_silvers_and_the_row_says_why_when_it_cannot():
     g = _game()
     g.player.weapon = w = instantiate_weapon('longsword', 'iron')
+    w.id_level = 5                      # a smith works a blade the hero can name
     m = _trader(g, 'armourer', stock=[])
     g.player_gold = 3000
     _service_row(g, m, 'silvering')
@@ -852,3 +853,22 @@ def test_the_qa_sampler_brings_brannoc_to_try_it_all():
     g._qa_treasure_sampler()
     smith = [i for i in g.ground_items if isinstance(i, MerchantNPC) and i.kind == 'armourer']
     assert len(smith) == 1 and 'reforge' in smith[0].services
+
+
+def test_a_smith_will_not_work_a_blade_the_hero_cannot_name():
+    """Bug bash 2026-11-13 (the smith's tab): his refusals named an
+    unidentified weapon's metal ("It is that metal already") and make ("a
+    named blade") for free. Now an unknown blade is simply refused, and the
+    line names nothing about it."""
+    g = _game()
+    g.player.weapon = w = instantiate_weapon('longsword', 'silver')
+    w.id_level = 0
+    m = _trader(g, 'armourer', stock=[])
+    g._shop_merchant = m
+    for sid in ('reforge', 'silvering', 'cold_iron_inlay'):
+        assert g._service_targets(sid) == []
+        why = g._service_why(sid)
+        assert "can't name" in why
+        assert 'silver' not in why.lower() and 'metal' not in why.lower() and 'named blade' not in why
+    w.id_level = 5
+    assert g._service_targets('cold_iron_inlay')

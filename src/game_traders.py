@@ -567,6 +567,8 @@ class TraderMixin:
     def _service_targets(self, sid: str) -> list:
         """What a service could work on now (empty: nothing to do)."""
         p = self.player
+        if sid in ('reforge', 'silvering', 'cold_iron_inlay') and not self._smith_knows_blade():
+            return []
         if sid == 'reforge':
             return smithing.reforge_targets(p.weapon, self._shield_worn())
         if sid in ('silvering', 'cold_iron_inlay'):
@@ -636,6 +638,14 @@ class TraderMixin:
         plan = self._trader_plan()
         return next((o for o in plan.get('orders') or () if o.get('kind') == kind), None)
 
+    def _smith_knows_blade(self) -> bool:
+        """A smith works only a blade the hero can name (bug bash 2026-11-13,
+        WB-D, the smith's tab): his refusals ("It is that metal already", "a
+        named blade") gave an unidentified weapon's metal and make away for
+        free, at every armourer. Have it named first."""
+        import kit_sense
+        return kit_sense.knows_weapon(self.player, self.player.weapon)
+
     def _service_why(self, sid: str) -> str:
         """Why a new service has nothing to work on now, in plain words."""
         p = self.player
@@ -644,6 +654,9 @@ class TraderMixin:
         if sid in ('reforge', 'silvering', 'cold_iron_inlay'):
             if w is None:
                 return "You hold no weapon."
+            if not self._smith_knows_blade():
+                return (f"{m.pronouns()[0].capitalize()} turns your blade over and hands it back: "
+                        "\"I don't work a blade I can't name. Have it known first.\"")
             if getattr(w, 'is_unique', False) or getattr(w, 'bound_to_wielder', False):
                 return f"{m.pronouns()[0].capitalize()} won't put a hammer to a named blade."
             if sid == 'reforge':
