@@ -434,14 +434,18 @@ Venom does nothing to the skeleton.", once a fight) and the last blow ("The
 last of the Silver Dust wears off your Steel Mace.") are said at the end of
 the action (`Game._say_arsenal_lines`). A coating that adds nothing (silver
 dust on a silver or silvered blade, holy water on a blessed one, anything on
-a bow or a fist) is refused.
+a bow or a fist) is refused, but only for what the hero can see: on a blade
+he has not identified, only a blessing he knows of and a smith's inlay he
+watched go in count (`coatings._known_make`), so a refusal never names an
+unknown metal (bug bash 2026-11-13, WB-A12); otherwise the coating goes on.
 
 **Thrown flasks** (T, the Flasks tab). Fire oil, Greek fire, Medea's fire;
 holy water, the Water of Siloam, the Water of Life; acid, aqua regia, the
 alkahest. Each bursts for real typed damage through `Monster.take_damage`
 (weak x2, resisted x0.5, shrugged off x0.25), then a short status where its
 lore says (fire sets burning, acid pits a hide: `armor_crack`) unless the
-creature resists the type. Holy water harms only the unholy (`only_weak`):
+creature resists the type, and only when the burst did harm (a friend the
+blow passes by is not set alight: WB-A10). Holy water harms only the unholy (`only_weak`):
 "It is only water to it." Each flask's damage is real base data,
 `round(floor_curve.one_attack(sized_at) / 2)`: about one chain of a common
 weapon of its own depth on a weak kind. Never computed from the floor the

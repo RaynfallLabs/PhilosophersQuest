@@ -118,10 +118,15 @@ def test_a_coating_lives_on_the_weapon_not_the_hero():
 
 
 def test_a_coating_is_refused_where_it_would_add_nothing():
-    p = _hero(instantiate_weapon('mace', 'silver'))
+    # On a weapon the hero has identified: a refusal on one he has not would
+    # name its metal or its blessing (bug bash WB-A12, test_bugbash_wb_a.py).
+    silver = instantiate_weapon('mace', 'silver')
+    silver.id_level = 5
+    p = _hero(silver)
     assert 'already' in coatings.refusal(p, _flask('silver_dust'))
     blessed = instantiate_weapon('mace', 'steel')
     blessed.buc = 'blessed'
+    blessed.id_level = 5
     assert 'already' in coatings.refusal(_hero(blessed), _flask('flask_of_holy_water'))
     assert coatings.refusal(_hero(None), _flask('silver_dust'))
     bow = instantiate_weapon('longbow', 'yew')

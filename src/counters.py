@@ -68,12 +68,20 @@ def _worn(player) -> list:
 
 def ears_stopped(player) -> bool:
     """The earplugs are in: the flag is set and the plugs are still in the
-    pack (sold, dropped or stolen, they are not in his ears either)."""
+    pack (sold, dropped or stolen, they are not in his ears either). Once
+    they are gone the flag goes with them, so another pair picked up later
+    is not in his ears by itself (bug bash WB-A05)."""
     if not getattr(player, 'ears_stopped', False):
         return False
-    return any(technique(t).get('apply') == 'stop_ears'
-               for it in (getattr(player, 'inventory', None) or ())
-               for t in item_counters(it))
+    if any(technique(t).get('apply') == 'stop_ears'
+           for it in (getattr(player, 'inventory', None) or ())
+           for t in item_counters(it)):
+        return True
+    try:
+        player.ears_stopped = False
+    except Exception:
+        pass
+    return False
 
 
 def deafened(player) -> bool:

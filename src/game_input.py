@@ -54,6 +54,22 @@ _MODIFIER_KEYS = frozenset((
 ))
 
 
+def _command_char(event) -> str:
+    """The character a key press means as a map command. With Caps Lock on
+    the system sends 'E' for a plain e (and, on most systems, 'e' for
+    Shift+e); a command's case is the Shift key's alone, so a plain e is
+    still the equip menu and Shift+E the Loadouts. Anything that is not a
+    letter, or a press without Caps Lock, is the character as sent."""
+    uni = str(getattr(event, 'unicode', '') or '')
+    try:
+        mod = int(getattr(event, 'mod', 0) or 0)
+    except (TypeError, ValueError):
+        mod = 0
+    if len(uni) == 1 and uni.isalpha() and mod & pygame.KMOD_CAPS:
+        return uni.upper() if mod & pygame.KMOD_SHIFT else uni.lower()
+    return uni
+
+
 class InputMixin:
     # ------------------------------------------------------------------
     # Top-level event router
@@ -310,94 +326,99 @@ class InputMixin:
             return False
 
         if self.state == STATE_PLAYER:
+            # The character the key means as a command: Shift decides a
+            # letter's case, never Caps Lock (bug bash WB-A01: with Caps
+            # Lock on, e, s, c and p opened the Loadouts, took a stance,
+            # opened the coat picker and the pet menu).
+            uni = _command_char(event)
             # Asleep or paralysed: the stairs and the character sheet (where
             # gear can be dropped or swapped) are actions too. They skipped
             # the check in _player_input, so a paralysed hero could flee
             # down the stairs. Help (?) only reads, and stays open.
-            if event.unicode in ('>', '<', '@', 'P', 'E', 'S', 'C') and self._helpless_turn():
+            if uni in ('>', '<', '@', 'P', 'E', 'S', 'C') and self._helpless_turn():
                 return True
             # Keys checked by unicode to handle shift-modified chars
-            if event.unicode == '>':
+            if uni == '>':
                 self._descend_stairs()
                 return True
-            if event.unicode == '<':
+            if uni == '<':
                 self._ascend_stairs()
                 return True
-            if event.unicode == '?':
+            if uni == '?':
                 self._help_page = 0
                 self.state = STATE_HELP
                 return True
-            if event.unicode == '@':
+            if uni == '@':
                 self._open_character_sheet()
                 return True
-            if event.unicode == '|':
+            if uni == '|':
                 # Shift+\ on layouts that send '|' without K_BACKSLASH.
                 self._start_divine_intercession()
                 return True
-            if event.unicode == 'P':
+            if uni == 'P':
                 # Shift+P opens the pet menu (lowercase p is pickup/disarm).
                 self._open_pet_menu()
                 return True
-            if event.unicode == 'E':
+            if uni == 'E':
                 # Shift+E: the Loadouts, three saved kits (lowercase e is
                 # the equip menu; game_dressing.py).
                 self._open_loadouts()
                 return True
-            if event.unicode == 'S':
+            if uni == 'S':
                 # Shift+S: Press or Guard, the next stance, one turn (lowercase
                 # s swaps weapons; stance.py, game_arsenal.py).
                 self._cycle_stance()
                 return True
-            if event.unicode == 'C':
+            if uni == 'C':
                 # Shift+C: coat the weapon in your hand from the pack
                 # (lowercase c cooks; coatings.py, game_arsenal.py).
                 self._open_coat_menu()
                 return True
-            if event.unicode == 'T' and getattr(self.player, 'qa_tools', False):
+            if uni == 'T' and getattr(self.player, 'qa_tools', False):
                 # Titivillus QA build: every coating and flask, the named
                 # counters and a two-hander into the pack (game_arsenal).
                 self._qa_arsenal_sampler()
                 return True
-            if event.unicode == 'I' and getattr(self.player, 'qa_tools', False):
+            if uni == 'I' and getattr(self.player, 'qa_tools', False):
                 # Titivillus QA build: toggle immortality. No quiz, no Journal entry.
                 self.player.immortal = not getattr(self.player, 'immortal', False)
                 state_str = "ON" if self.player.immortal else "OFF"
                 self.add_message(f"[QA] Immortal mode {state_str}.", 'info')
                 return True
-            if event.unicode == 'W' and getattr(self.player, 'qa_tools', False):
+            if uni == 'W' and getattr(self.player, 'qa_tools', False):
                 # Titivillus QA build: open floor-warp prompt.
                 self._qa_warp_input = ''
                 self.state = STATE_QA_WARP_INPUT
                 return True
-            if event.unicode == 'F' and getattr(self.player, 'qa_tools', False):
+            if uni == 'F' and getattr(self.player, 'qa_tools', False):
                 # Titivillus QA build: one monster family tier more (the
                 # nearest creature's family, or every family), with its news.
                 self._qa_family_tier()
                 return True
-            if event.unicode == 'M' and getattr(self.player, 'qa_tools', False):
+            if uni == 'M' and getattr(self.player, 'qa_tools', False):
                 # Titivillus QA build: the lowest philosophy tier not yet
                 # mastered is one question short, so the next identify at
                 # that tier earns its trait (philosophy_mastery.py).
                 self._qa_philosophy_tier()
                 return True
-            if event.unicode == 'A' and getattr(self.player, 'qa_tools', False):
+            if uni == 'A' and getattr(self.player, 'qa_tools', False):
                 # Titivillus QA build: Dungeon Alive at a glance on this floor
                 # (its domain, clan, band, hazards and lore fixtures, the map
                 # shown); a second press sets a war-band down if it has none.
                 self._qa_alive_sampler()
                 return True
-            if event.unicode == 'L' and getattr(self.player, 'qa_tools', False):
+            if uni == 'L' and getattr(self.player, 'qa_tools', False):
                 # Titivillus QA build: Old Nickel, who wears the Bloomleaf
                 # Cloak, set down near the hero; again, the cloak into the
                 # pack (emberpup_encounter.BloomleafMixin).
                 self._qa_bloomleaf()
                 return True
-            if event.unicode == '$' and getattr(self.player, 'qa_tools', False):
+            if uni == '$' and getattr(self.player, 'qa_tools', False):
                 # Titivillus QA build: a heap of gold, one of every treasure
                 # and a trader with gems and the draught, to test coin weight.
                 self._qa_treasure_sampler()
                 return True
-            if event.unicode == 'K' and getattr(self.player, 'qa_tools', False):
+            if uni == 'K' and getattr(self.player, 'qa_tools', False):
                 # Titivillus QA build: the Stray Kids idol beside the hero;
                 # pressed again, the photo in the pack (game_stray_kids.py).
                 self._qa_stray_kids()

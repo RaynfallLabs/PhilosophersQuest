@@ -1192,12 +1192,12 @@ class Player:
         """What the worn armour and shield do to a blow of this type: a
         named piece's own resistances, a common body armour's template
         forms (mail parts under a point) and material elements (iron
-        carries the spark). The one place: gear.worn_factor."""
+        carries the spark), and a cloak or shirt an armourer lined against
+        this element (smithing.py, slice 6). The one place: gear.worn_factor
+        (gear.piece_profile holds the lining too, so the Kit's resistance
+        column shows it: bug bash WB-A08)."""
         import gear
-        import smithing
-        # ... and a cloak or shirt an armourer lined against this element
-        # (smithing.py, slice 6).
-        return gear.worn_factor(self, damage_type) * smithing.lining_mult(self, damage_type)
+        return gear.worn_factor(self, damage_type)
 
     def dex_ac_cap(self) -> int:
         """The most AC Dexterity gives in the body armour worn (6 light or
@@ -1795,6 +1795,16 @@ class Player:
             return False    # chests are opened where they stand (call 9)
         if not self.can_carry(self._item_weight(item)) and not self._carries_past_limit(item):
             return False
+        # The weapon At Your Back that left him (dropped, sold, stolen, put
+        # in a sack) comes back an ordinary weapon in the pack: picking it
+        # up again does not sling it at his back by itself (bug bash
+        # WB-A06). Drawn into the hand, it is not "left": it never comes
+        # back this way.
+        _back = self.__dict__.get('_readied_weapon')
+        if (_back is not None and item is _back
+                and not any(i is item for i in self.inventory)
+                and getattr(self, 'weapon', None) is not item):
+            self.__dict__['_readied_weapon'] = None
         # A kind the hero has now held: traders lean their stock away from it.
         if getattr(item, 'id', None):
             seen = self.__dict__.get('seen_item_ids')

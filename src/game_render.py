@@ -6750,12 +6750,13 @@ class RenderMixin:
             if not n:
                 sub = "Empty: dress, then S saves it"
             elif plan['already']:
-                sub = f"{n} pieces: what you wear now"
+                sub = f"{n} piece{'s' if n != 1 else ''}: what you wear now"
             elif not plan['steps']:
-                sub = f"{n} pieces: {off} cannot go on now"
+                sub = f"{n} piece{'s' if n != 1 else ''}: {off} cannot go on now"
             else:
                 t = plan['turns']
-                sub = f"{n} pieces: {t} turn{'s' if t != 1 else ''} to put on"
+                sub = (f"{n} piece{'s' if n != 1 else ''}: "
+                       f"{t} turn{'s' if t != 1 else ''} to put on")
                 if off:
                     sub += f", {off} stay{'s' if off == 1 else ''} off"
             sf, stext = self._fit_line(sub, tw, (17, 16, 15))

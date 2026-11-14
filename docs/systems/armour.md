@@ -92,6 +92,12 @@ new one on. The turns are a busy action (`src/busy.py`,
 its slot is empty until then, and a hostile coming into view or a blow
 landing (`game_combat` counts `_blows_on_hero`) stops it with "Keep
 dressing? (Y/N)". Stopping leaves the piece in the pack (or still on).
+A friend coming into view (an encounter's person, the unicorn, an allied
+angel: `game_combat._is_bystander`) does not stop it; a hero who falls
+asleep or is paralysed stops where he is, as if he had said no; and a
+piece that is no longer in the pack (a thief's blow took it) is dropped
+from the action with a line, spending no more turns (bug bash 2026-11-13,
+WB-A02 to A04).
 The Hephaestus quirk halves both times. A first-time kind's quiz comes
 before the donning. A one-turn piece into an empty slot is exactly the old
 equip: on, then the monsters act.
@@ -99,7 +105,8 @@ equip: on, then the monsters act.
 **At Your Back** (`Player.readied_weapon`). A melee weapon in the pack,
 readied from the Kit or the @ sheet (R); S on the map swaps it with the one
 in the hand in one turn. It stays in the pack (its weight counts; a drop,
-a sale or a theft lets go of it), a cursed blade in the hand will not let
+a sale or a theft lets go of it, and picked up again it is an ordinary
+pack weapon: `Player.add_to_inventory`), a cursed blade in the hand will not let
 go, and a two-hander will not come out past a shield that will not come
 off (an ordinary shield goes to the pack, as for any two-handed equip).
 
@@ -268,8 +275,9 @@ against touch AC (the hero's AC without body armour and shield,
 **Linings** (winning build 3.5, 2026-11-13; `smithing.py`). An armourer
 (Brannoc, Brunhild) lines a worn cloak or shirt against one element: fire,
 cold, lightning or poison. That element's damage from any source is x0.75
-while the piece is worn (`Player.get_armor_resistance` multiplies in
-`smithing.lining_mult`; two lined pieces against one element stack). It is
+while the piece is worn (`gear.piece_profile` multiplies it in, so the
+damage and the Kit's resistance column read one number; two lined pieces
+against one element stack). It is
 the piece's own `lining` field, never `damage_resistances`, which the
 old-save migration clears on common pieces. One lining to a piece; the Kit
 card and the shop card say "Lined with salamander's wool, the stone cloth

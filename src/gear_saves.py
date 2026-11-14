@@ -96,10 +96,13 @@ def _retire_status(item, ench_id: str, fresh) -> None:
 # -------------------------------------------------------------- named pieces
 
 # (metal, quiet, casting_free, wards: what a named body armour is made of and
-# wards off, winning-build plan 3.3; gear reads them.)
+# wards off, winning-build plan 3.3; gear reads them. template_basis: what it
+# is built on, for its donning time (gear.don_turns); counters: what it
+# blocks outright, the Aegis a gaze (counters.py). A piece pickled before
+# those fields lacked them: bug bash WB-A09.)
 _ARMOR_FIELDS = ('ac_bonus', 'ench_id', 'ench_level', 'tier', 'quiz_tier',
                  'equip_threshold', 'weight_class', 'ench_line', 'effects', 'tier_bonuses',
-                 'metal', 'quiet', 'casting_free', 'wards')
+                 'metal', 'quiet', 'casting_free', 'wards', 'template_basis', 'counters')
 _ACC_FIELDS = ('effects', 'save_bonus', 'tier', 'quiz_tier', 'equip_threshold', 'tier_bonuses',
                'special', 'daimonion')
 
