@@ -98,7 +98,7 @@ class TraderMixin:
         self.ground_items.append(m)
         plan['spawned'].append(level)
         for o in plan.get('orders') or ():
-            if o.get('kind') == kind and o.get('collect') == level:
+            if o.get('kind') == kind and self._order_due(o, level):
                 self.add_message(f"{m.person}'s stall stands on this floor. Your {o.get('name', 'order')} "
                                  f"is waiting for you there.", 'info')
         return m
@@ -792,11 +792,25 @@ class TraderMixin:
         self._chron('deed', f"Ordered a piece of smith's work from {m.person}, to be "
                             f"collected at {m.pronouns()[2]} next stall, further down.")
 
+    @staticmethod
+    def _order_due(o: dict, level: int) -> bool:
+        """Is order ``o`` ready at a stall of its smith on floor ``level``? At
+        the stall it was made for, or any of his deeper down: a hero who
+        never met that stall (a trapdoor past its floor, a stall with no room
+        to stand) found the smith below with nothing for him, and the order
+        stayed open for good, paid for, blocking every new one (bug bash
+        WB-D07)."""
+        try:
+            return o.get('collect') is not None and int(o['collect']) <= int(level)
+        except (TypeError, ValueError):
+            return False
+
     def _trader_deliver_orders(self, m):
-        """Hand over the special orders this armourer has ready here."""
+        """Hand over the special orders this armourer has ready here (at the
+        stall it was made for, or a later one of his: _order_due)."""
         plan = self._trader_plan()
         for o in list(plan.get('orders') or ()):
-            if o.get('kind') != getattr(m, 'kind', None) or o.get('collect') != self.dungeon_level:
+            if o.get('kind') != getattr(m, 'kind', None) or not self._order_due(o, self.dungeon_level):
                 continue
             plan['orders'].remove(o)
             it = smithing.make_order(o.get('cat', 'weapon'), o.get('template'), o.get('material'))

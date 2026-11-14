@@ -288,3 +288,46 @@ def test_wb_d06_mass_polymorph_passes_over_the_stray_kids_band_too(game):
     game._cast_spell_effect({'effect': 'mass_polymorph', 'id': 'mass_polymorph',
                              'name': 'Mass Polymorph', 'power': '', 'tier': 5})
     assert gob.max_hp < before
+
+
+# ------------------------------------------------- WB-D07: a special order past its floor
+
+def test_wb_d07_an_order_whose_stall_he_passed_waits_at_the_smiths_next_one(game):
+    """An order is collected "at his next stall". A hero who never met that
+    stall (a trapdoor past its floor, no room for it to stand) found the
+    smith deeper down with nothing for him: the order stayed open for good,
+    paid for, and blocked every new order with that smith."""
+    from mystery_system import build_trader
+    from game_states import STATE_PLAYER
+    plan = game._trader_plan()
+    here = game.dungeon_level
+    plan['floors'] = {here: 'armourer', here + 12: 'armourer', here + 24: 'armourer'}
+    plan['orders'] = [{'kind': 'armourer', 'person': 'Brannoc', 'placed': here,
+                       'collect': here + 12, 'cat': 'weapon', 'template': 'mace',
+                       'material': 'iron', 'name': 'Iron Mace', 'paid': 100, 'piece': 80}]
+    game.dungeon_level = here + 24                 # floor here+12 was never walked
+    m = build_trader('armourer', game.dungeon_level, random.Random(11))
+    m.x, m.y = game.player.x + 1, game.player.y
+    game.ground_items.append(m)
+    game.state = STATE_PLAYER
+    game._open_shop()
+    assert not plan['orders']
+    assert any(getattr(i, 'id', None) == 'iron_mace' for i in game.player.inventory)
+
+
+def test_wb_d07_an_order_is_not_handed_over_before_its_floor(game):
+    from mystery_system import build_trader
+    from game_states import STATE_PLAYER
+    plan = game._trader_plan()
+    here = game.dungeon_level
+    plan['floors'] = {here: 'armourer', here + 12: 'armourer'}
+    plan['orders'] = [{'kind': 'armourer', 'person': 'Brannoc', 'placed': here,
+                       'collect': here + 12, 'cat': 'weapon', 'template': 'mace',
+                       'material': 'iron', 'name': 'Iron Mace', 'paid': 100, 'piece': 80}]
+    m = build_trader('armourer', here, random.Random(11))
+    m.x, m.y = game.player.x + 1, game.player.y
+    game.ground_items.append(m)
+    game.state = STATE_PLAYER
+    game._open_shop()
+    assert plan['orders'] and not any(getattr(i, 'id', None) == 'iron_mace'
+                                      for i in game.player.inventory)
