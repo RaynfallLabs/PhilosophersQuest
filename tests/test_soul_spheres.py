@@ -832,7 +832,9 @@ def test_the_pet_card_says_which_sphere_it_hatched_from(monkeypatch):
     seen = {}
     monkeypatch.setattr(g, '_draw_decision_menu', lambda **kw: seen.update(kw))
     g._draw_pet_menu()
-    lines = [[d[0] for d in e['details'] if isinstance(d, tuple)] for e in seen['entries']]
+    # (Who it is heads the card beside its picture: 'plate_lines'.)
+    lines = [[d[0] for d in (e.get('plate_lines') or []) + e['details'] if isinstance(d, tuple)]
+             for e in seen['entries']]
     assert 'Hatched From: Greater Soul Sphere' in lines[0]
     assert not any(t.startswith('Hatched From') for t in lines[1])
 

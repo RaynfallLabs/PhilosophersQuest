@@ -244,8 +244,10 @@ def test_the_new_keys_are_drawn_whole_at_the_smallest_window():
         g._draw_help_screen()
     finally:
         ui_theme.restore_state(saved)
-    for row in ('Loadouts', 'Press / Guard', 'Coat weapon', 'Swap weapons',
-                'Kit: compare, equip, drop', 'Pet menu', 'Cancel / close'):
+    # (Round 3, Q15: the S row names the readied weapon, the Kit row Ready
+    # and Apply.)
+    for row in ('Loadouts', 'Press / Guard', 'Coat weapon', 'Swap readied weapon',
+                'Kit: equip, ready, apply', 'Pet menu', 'Cancel / close'):
         assert row in drawn, row
 
 

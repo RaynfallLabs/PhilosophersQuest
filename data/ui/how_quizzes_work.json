@@ -1,5 +1,5 @@
 {
- "_note": "The 'How Quizzes Work' page of the help screen (? then Tab). Each section is a heading and its paragraphs; `rows` is a two-column list. Keep it true to the code: quiz_engine.py (only combat is timed, the chain), game_input.py (C, SPACE), player.py (cook caps).",
+ "_note": "The 'How Quizzes Work' page of the help screen (? then Tab). Each section is a heading and its paragraphs; `rows` is a two-column list. Keep it true to the code: quiz_engine.py (only combat is timed, the chain), game_input.py (C, SPACE), game_magic.py (Recall Lore: a random hint from data/hints.json, never about a creature; the Wand of Probing teaches a kind), player.py (cook caps). The gear rules are on the next page, gear_and_load.json.",
  "title": "How Quizzes Work",
  "sections": [
   {
@@ -18,7 +18,7 @@
     ["Read a scroll or a spellbook", "Grammar"],
     ["Pick a lock", "Economics"],
     ["Pray", "Theology"],
-    ["Recall lore", "Trivia"],
+    ["Recall Lore", "Trivia"],
     ["Disarm a trap, and some hero powers", "AI"]
    ]
   },
@@ -39,6 +39,13 @@
    "heading": "Only fights are timed",
    "paragraphs": [
     "The combat clock is the only clock in the game. Every other quiz waits for you, so take the time to read it. Wisdom lengthens the combat clock, and the sidebar's Clock shows how long your next fight will give you."
+   ]
+  },
+  {
+   "heading": "Recall Lore brings back a hint",
+   "paragraphs": [
+    "N asks up to five trivia questions, each harder than the last, and a wrong answer ends it. Miss the first and nothing surfaces; the further you get, the deeper the hint you bring back: a piece of the dungeon's lore, picked at random. It is never about the creature in front of you, and your mind needs rest before you can recall again.",
+    "To learn a creature, study its corpse (I, with the Philosopher's Shard) or point a Wand of Probing at it. Either way you learn the ways of its kind, and its page opens in the Bestiary."
    ]
   },
   {
