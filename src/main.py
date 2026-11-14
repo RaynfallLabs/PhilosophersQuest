@@ -5883,7 +5883,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     self.add_message(
                         "As you finish, the trap's geometry reveals something true:", 'success')
                     self.add_message(f'"{hint}"', 'info')
-                    if hasattr(self, '_recalled_hints'):
+                    if hasattr(self, '_recalled_hints') and hint not in self._recalled_hints:
                         self._recalled_hints.append(hint)
             self._advance_turn()
             return
@@ -5908,7 +5908,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 self.add_message(
                     "As you finish, the trap's geometry reveals something true:", 'success')
                 self.add_message(f'"{hint}"', 'info')
-                if hasattr(self, '_recalled_hints'):
+                if hasattr(self, '_recalled_hints') and hint not in self._recalled_hints:
                     self._recalled_hints.append(hint)
         self._advance_turn()
 
@@ -5966,7 +5966,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self._on_monster_killed(monster)
 
     def _random_hint_for_disarm(self) -> str:
-        """Pull a random hint from data/hints.json for the chain-5 disarm reward."""
+        """Pull a random hint from data/hints.json for the chain-5 disarm reward
+        (any tier; it joins the Lore Hints journal once, as a recalled one does)."""
         import json as _hj
         import random as _hrng
         from paths import data_path
@@ -8809,18 +8810,6 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self.state = STATE_PLAYER
             if getattr(result, 'success', False):
                 corpse.id_level = 5
-                # The monster TYPE is now known forever: future corpse spawns
-                # arrive pre-identified (game_combat._make_corpse), and its
-                # page is open (lore_known: the same set the Book of Thoth
-                # fills, which opens pages but teaches no family tiers).
-                self.player.lore_known_monster_ids.add(corpse.monster_id)
-                self._seeker_event('monster_known', monster=corpse.monster_id)
-                # Propagate to every corpse of the same monster on the floor
-                # and in the pack — corpses carry no per-instance secrets.
-                from items import Corpse as _Corpse
-                for obj in self.ground_items + list(self.player.inventory):
-                    if isinstance(obj, _Corpse) and obj.monster_id == corpse.monster_id:
-                        obj.id_level = 5
                 self._on_full_identify(corpse)
                 self._chron(
                     'milestone',
@@ -8833,10 +8822,14 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     f"You understand the {corpse.monster_name} now.",
                     'success'
                 )
-                # One more kind studied in its family: any tier, circle or
+                # The monster TYPE is now known forever (_learn_kind, the
+                # one path a corpse study and the Wand of Probing share): its
+                # page opens, every corpse of it is known and future corpses
+                # arrive pre-identified (game_combat._make_corpse), and it is
+                # one more kind studied in its family: any tier, circle or
                 # title it brings is announced now (its popup is queued and
                 # opens once the lore page is closed: PopupMixin).
-                self._family_study(corpse.monster_id)
+                self._learn_kind(corpse.monster_id)
                 # Orb fire from Phase 3 of CHAIN_EFFECTS_PLAN was removed
                 # 2026-10-04 after playtest: it animated on top of the
                 # lore screen, which is itself the "aha" celebration.

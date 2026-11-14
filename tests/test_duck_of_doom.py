@@ -270,15 +270,20 @@ def test_duck_transform_awards_the_quirk():
 # Hint laddering — without giving away the mechanic
 # ---------------------------------------------------------------------------
 
-def test_duck_hints_present_in_all_five_tiers():
-    """The 5-hint ladder must be in hints.json, one per tier (1..5)."""
+def test_the_duck_is_hinted_only_by_brandons_two_lines():
+    """The hint list redone (Brandon, 2026-11-14): never demystify the duck.
+    A light hint pointing at the source (Munchkin's Duck of Doom card) may
+    stay where one already was that light: his own two lines, tiers 1 and 2.
+    The old tier 3-5 lines tied to the mechanic (patience, a great many
+    turns, wear it and endure it) and are gone, as his "Be more patient than
+    the hat" was for the achievement."""
     hints = json.loads((ROOT / "data" / "hints.json").read_text(encoding="utf-8"))
-    for tier in ('1', '2', '3', '4', '5'):
-        pool = hints.get(tier, [])
-        # Each tier should have at least one hint that mentions 'duck'
-        # (the joke spans every tier)
-        duck_hints = [h for h in pool if 'duck' in h.lower()]
-        assert duck_hints, f"tier {tier} has no Duck of Doom hint"
+    duck = {tier: [h for h in pool if 'duck' in h.lower()] for tier, pool in hints.items()}
+    assert {t: len(v) for t, v in duck.items() if v} == {'1': 1, '2': 1}
+    for pool in duck.values():
+        for h in pool:
+            for word in ('patien', 'turn', 'wear', 'endure', 'speak', 'bearer', 'tutor'):
+                assert word not in h.lower(), (word, h)
 
 
 def test_t1_t2_hints_match_user_spec():

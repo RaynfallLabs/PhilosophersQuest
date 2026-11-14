@@ -723,8 +723,12 @@ The main groups are:
   `opening`, `mapping`, `clairvoyance`, `detect_treasure`, `detect_monsters`,
   `probing` (its health and everything it is made of: weaknesses, resistances,
   what it shrugs off, refuses and falls to easily, `enemy_lore.probe_lines`;
-  it also opens the kind's Bestiary page with no family credit. It used to
-  read `fire_resist`-style fields no monster has, so it never showed any).
+  then it teaches the kind as a corpse study does, Brandon 2026-11-14: KNOWN,
+  its page open, one more kind toward its family's tiers with the same news,
+  through `FamilyMixin._learn_kind`, and the line "You learn the ways of the
+  Zombie."; never for a kind already studied or one with no family,
+  `family_lore.counts_as_study`. It used to read `fire_resist`-style fields
+  no monster has, so it never showed any).
 - **Monster-targeted damage:** `fire_bolt`, `cold_bolt`, `lightning_bolt`
   (line AOE), `acid_spray`, `magic_missile`, `striking`, `drain_life`,
   `death_ray` (70% instakill), `disintegrate` (85% instakill),
@@ -1009,13 +1013,13 @@ Lifecycle:
 - `player.known_item_ids` — set of identified item ids; mapping which
   specific spellbook/wand/scroll was identified lives here.
 - `player.recall_lore_cooldown` — Recall Lore (trivia-escalator; see
-  `_start_recall_lore`) is magic-adjacent and tracked in player state. With
-  a creature in view whose kind he does not yet know (`_recall_lore_subject`:
-  the nearest), the recall is about it, by chain (`enemy_lore.recall_text`:
-  1 its family, 2 one weakness, 3 its resistances, 4 what it shrugs off and
-  its nature refuses, 5 all of it and its page opens with no family credit);
-  with none, a hint from `data/hints.json` as before. The cooldown is the
-  same either way.
+  `_start_recall_lore`) is magic-adjacent and tracked in player state. It
+  gives a random hint from `data/hints.json` of the chain's tier (1 to 5),
+  shown on the Recall Lore card and kept in the Lore Hints journal; it never
+  looks at a creature in view (Brandon, 2026-11-14: "Recall lore is a Trivia
+  quiz that gives a random hint, doesn't do anything with monsters you can
+  see and is not targeted"). Cooldown 40 turns after a chain of 0, else
+  50 + 15 per link.
 - Buff statuses (shielded, hasted, etc.) live in
   `player.status_effects` — see [status_effects](status_effects.md).
 

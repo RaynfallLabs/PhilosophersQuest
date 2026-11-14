@@ -825,9 +825,11 @@ def test_journey_04_knowing_a_monster(make_game):
     no_errors(h)
 
 
-def test_journey_04b_recall_lore_by_chain(make_game):
-    """Recall Lore (N) on a zombie in view: one more fact a chain, the page
-    at chain 5; with nothing new in view, the old hints."""
+def test_journey_04b_recall_lore_is_a_random_hint(make_game):
+    """Recall Lore (N) with a zombie in view (Brandon, 2026-11-14: "a Trivia
+    quiz that gives a random hint, doesn't do anything with monsters you can
+    see and is not targeted"): each chain brings a hint of its own tier, kept
+    in the Lore Hints journal, and the zombie is no better known for it."""
     import family_lore
     g, h = make_game(build='titivillus', name='Titivillus')
     p = g.player
@@ -835,35 +837,57 @@ def test_journey_04b_recall_lore_by_chain(make_game):
     zombie = place_monster(g, 'zombie', 3)
     zombie.add_effect('paralyzed', 200)
     g._refresh_fov()
-    h.key('n')
-    h.quiz(2, 1)
-    assert g._lore_hint_text == ('The Zombie is one of the restless dead. You have not studied '
-                                 'enough of its kind to remember more. Its family\'s corpses '
-                                 'would teach you.')
-    h.key(pygame.K_SPACE)
-    h.shift('F')                                        # QA: the family begun
-    while g.state != 'player':
-        h.key(pygame.K_RETURN)
-    hints = {}
+    with open(os.path.join(ROOT, 'data', 'hints.json'), encoding='utf-8') as f:
+        pool = json.load(f)
+    before = family_lore.knowledge(p, 'zombie')
     for chain in (1, 2, 3, 4, 5):
         p.recall_lore_cooldown = 0
         h.key('n')
-        assert 'search your memory for the Zombie' in h.said()[-1]
+        assert h.said()[-1] == 'You close your eyes and search your memory...'
         h.quiz(chain, 1)
         assert g.state == 'hint'
-        hints[chain] = g._lore_hint_text
+        assert g._lore_hint_chain == chain
+        assert g._lore_hint_text in pool[str(chain)]
+        assert g._lore_hint_text in g._recalled_hints
         h.key(pygame.K_SPACE)
-    weak = (' Holy power hurts it badly.', ' A cutting blow hurts it badly.')   # one of the two
-    assert hints[1] == 'The Zombie is one of the restless dead.'
-    assert hints[2] in tuple(hints[1] + w for w in weak)
-    assert hints[3] in tuple(hints[1] + w + ' It resists poison and a thrust.' for w in weak)
-    assert hints[4] in tuple(hints[1] + w + ' It resists poison and a thrust. It cannot be put '
-                             'to sleep, poisoned or charmed.' for w in weak)
-    assert hints[5].endswith('you know the Zombie whole now. Its page is open in your Bestiary.')
-    assert family_lore.knowledge(p, 'zombie') >= family_lore.KNOWN
-    p.recall_lore_cooldown = 0
-    h.key('n')
-    assert h.said()[-1] == 'You close your eyes and search your memory...'
+    assert family_lore.knowledge(p, 'zombie') == before
+    assert 'zombie' not in p.studied_monster_ids
+    assert 'zombie' not in p.lore_known_monster_ids
+    no_errors(h)
+
+
+def test_journey_04c_the_wand_of_probing_teaches_the_kind(make_game):
+    """Z, the Wand of Probing on a zombie (Brandon, 2026-11-14: probing
+    counts as studying the kind): the read-out, then "You learn the ways of
+    the Zombie.", and the kind is KNOWN and counts once for the restless
+    dead. A second probe reads it again and teaches nothing more."""
+    import family_lore
+    import items
+    g, h = make_game(name='__wb_e_probe__')
+    p = g.player
+    open_floor(g, p.x, p.y, 5)
+    zombie = place_monster(g, 'zombie', 3)
+    zombie.add_effect('paralyzed', 200)
+    g._refresh_fov()
+    wand = items.make_item_by_id('wand', 'wand_of_probing')
+    wand.charges = wand.max_charges = 5
+    p.inventory = [i for i in p.inventory if not isinstance(i, items.Wand)] + [wand]
+    assert family_lore.knowledge(p, 'zombie') == family_lore.UNKNOWN
+    score = family_lore.score(p, 'restless_dead')
+    for probe in (1, 2):
+        h.key('z')
+        h.key(pygame.K_RETURN)
+        assert h.in_quiz(), g.state
+        h.quiz(1)
+        said = h.said()
+        assert any(f'The Zombie: {zombie.hp}/{zombie.max_hp} HP.' == s for s in said), said
+        assert any(s.startswith('Weak to: ') for s in said), said
+        assert ('You learn the ways of the Zombie.' in said) == (probe == 1), said
+        assert family_lore.knowledge(p, 'zombie') == family_lore.KNOWN
+        assert family_lore.score(p, 'restless_dead') == score + 1
+        assert 'zombie' in p.studied_monster_ids and 'zombie' in p.lore_known_monster_ids
+        while g.state != 'player':
+            h.key(pygame.K_ESCAPE)
     no_errors(h)
 
 

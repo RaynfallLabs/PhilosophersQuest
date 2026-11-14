@@ -4,12 +4,15 @@ The rules live in src/family_lore.py (who is in which family, what the hero
 has learned) and src/family_edges.py (what each tier's techniques do). This
 mixin only says things to the player and touches the floor:
 
-  * `_family_study`: a correct corpse study or a Scroll of Omnisight records
-    the kind, then `_family_news` announces each tier, circle and title the
-    first time it is reached (a gold line for tiers 1 and 2, a popup in the
-    quirk popup's style for tiers 3 to 5, a circle or the Loremaster title,
-    and a Journal line for each; the popup waits its turn with the other
-    popups from play: game_popups.PopupMixin);
+  * `_learn_kind`: a kind learned whole, by a correct corpse study or the
+    Wand of Probing: its page, its corpses, the Seeker's count, then
+    `_family_study`;
+  * `_family_study`: a correct corpse study, the Wand of Probing or a Scroll
+    of Omnisight records the kind, then `_family_news` announces each tier,
+    circle and title the first time it is reached (a gold line for tiers 1
+    and 2, a popup in the quirk popup's style for tiers 3 to 5, a circle or
+    the Loremaster title, and a Journal line for each; the popup waits its
+    turn with the other popups from play: game_popups.PopupMixin);
   * `_family_arrival`: the Forewarned lines when the hero reaches a floor, and
     the creatures that arrive calm (Beast-Friend, Entertaining Angels);
   * `_family_turn` / `_family_drain`: each turn, the families that flee on
@@ -17,8 +20,7 @@ mixin only says things to the player and touches the floor:
     tool he carries, at Hunter: src/kit_sense.py), and the queued technique
     lines;
   * `_open_kind_page` / `_quest_teaches`: a kind's Bestiary page opened
-    with no family credit (Recall Lore at chain 5, the Wand of Probing, a
-    gate boss's quest step: winning-build plan 3.1);
+    with no family credit (a gate boss's quest step: winning-build plan 3.1);
   * `_family_yield` / `_family_surrender`: a foe that yields throws down
     its purse, after the blow is told;
   * `_qa_family_tier`: the QA key (Titivillus, PQ_QA_MODE only).
@@ -44,6 +46,32 @@ class FamilyMixin:
         new = family_lore.record_study(self.player, kind)
         self._family_news()
         return new
+
+    def _learn_kind(self, kind) -> bool:
+        """A kind learned whole: a correct corpse study, or the Wand of
+        Probing (Brandon, 2026-11-14: probing a creature counts as studying
+        its kind, so both come here and nowhere else). Its Bestiary page
+        opens, every corpse of it on the floor and in the pack is known, the
+        Seeker counts it, and it is one more kind studied in its family
+        (_family_study: any tier, circle or title it brings is announced,
+        its popup queued). True when it was new progress for the family:
+        a kind already studied, or one with no family, is not
+        (family_lore.record_study)."""
+        if not kind:
+            return False
+        lore = getattr(self.player, 'lore_known_monster_ids', None)
+        if not isinstance(lore, set):
+            lore = set(lore or ())
+            self.player.lore_known_monster_ids = lore
+        lore.add(kind)
+        self._seeker_event('monster_known', monster=kind)
+        # Corpses carry no secrets of their own: every one of the kind is
+        # known now, wherever it lies (items.corpse_is_known).
+        from items import Corpse
+        for obj in list(getattr(self, 'ground_items', None) or ()) + list(self.player.inventory):
+            if isinstance(obj, Corpse) and obj.monster_id == kind:
+                obj.id_level = 5
+        return self._family_study(kind)
 
     def _open_kind_page(self, kind) -> bool:
         """Open a kind's Bestiary page with NO family-tier credit (as the

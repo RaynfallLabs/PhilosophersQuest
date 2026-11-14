@@ -12,7 +12,7 @@ discipline, and the `_meta` sub-object introduced in v2.18.
 - `data/chest_traps.json` — trap pool keyed by chest tier
 - `data/hints.json` — tier-banded hint pool
 - `data/kit_sense.json` — Kit Sense lines, its tier and sighting gap (`src/kit_sense.py`)
-- `data/enemy_lore.json` — Recall Lore on the creature in view, the Wand of Probing's words, and the quest lines that teach a gate boss (`src/enemy_lore.py`)
+- `data/enemy_lore.json` — the Wand of Probing's words (its read-out, and the line when a probe teaches the kind), and the quest lines that teach a gate boss (`src/enemy_lore.py`)
 - `data/affinity_lines.json` — the hit lines by knowledge: `felt` (unknown kinds), `habits` (by family and group, for a kind known by its family), the cause-named pools (known kinds), status lines (`src/affinity.py`)
 - `data/affinity_rules.json` — the steps a hit can meet: weak x2, resisted x0.5, shrugs off x0.25, the x3 cap, how long a `status_weak` effect lasts (`src/affinity.py`)
 - `data/family_affinity.json` — each monster family's form, element and status profile with its lore note and source; `tools/content/affinity_pass.py` writes it into `monsters.json`
@@ -1075,10 +1075,12 @@ only one entry is ever registered. Fix: pass the real `type` from
 ```
 
 Top-level dict keyed by tier (1-5). Each value is a flat list of hint
-strings. The Recall Lore mechanic picks a hint matching the player's
-current tier floor; the Encyclopedia Lore Hints tab lists already-
-recalled hints. With a creature in view whose kind he does not know,
-Recall Lore speaks of it instead (`data/enemy_lore.json` `recall`).
+strings. Recall Lore picks a random hint of the tier its trivia chain
+reached (chain 1 to 5), whatever is in view; a chain-5 trap disarm draws
+one from every tier. The Encyclopedia Lore Hints tab lists the hints
+already recalled. The rules for writing one (point at the source, never
+the mechanic; no numbers, keys or menu names; never a secret) are in
+`RECALL_LORE_HINTS_2026_11_14.md` and pinned by `tests/test_hint_pool.py`.
 
 ---
 

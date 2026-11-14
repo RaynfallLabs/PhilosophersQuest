@@ -1304,8 +1304,8 @@ def _(g):
 
 
 @scene('menu_bestiary_known_rows', 'Menus',
-       'B, Bestiary, Enter on a kind known by its page (Recall Lore at chain 5, probing, a '
-       'quest): Weak to, Resists, Shrugs Off, Immune To (winning-build plan 3.1).',
+       'B, Bestiary, Enter on a kind known by its page (a probe, a quest, the Book of '
+       'Thoth): Weak to, Resists, Shrugs Off, Immune To (winning-build plan 3.1).',
        expect='encyclopedia')
 def _(g):
     g.player.known_monster_ids.add('scarab_swarm')
@@ -2914,20 +2914,43 @@ def _(g):
     g.handle_event(key_event(pygame.K_p, 'P', pygame.KMOD_SHIFT))
 
 
-@scene('result_recall_lore_whole', 'Lore',
-       'N with a troll in view whose family is begun, five right answers: the whole page '
-       '(everything it is made of) on the Recall Lore card.', expect='hint')
+def _longest_hint():
+    import json
+    from paths import data_path
+    with open(data_path('data', 'hints.json'), encoding='utf-8') as f:
+        pool = json.load(f)
+    return max(((int(t), h) for t, lst in pool.items() for h in lst), key=lambda x: len(x[1]))
+
+
+@scene('result_recall_lore_longest', 'Lore',
+       'The Recall Lore card holding the longest hint in data/hints.json (the hint '
+       'list redone 2026-11-14: Recall Lore is a random hint, never about a creature).',
+       expect='hint')
 def _(g):
-    _family_lore(g, 'giants', 1)
-    g.monsters[:] = []
-    _add_monster(g, ('troll',))
-    g._refresh_fov()
-    press(g, pygame.K_n)
-    play_quiz(g, 'ccccc')
+    tier, hint = _longest_hint()
+    g._lore_hint_text = hint
+    g._lore_hint_chain = tier
+    g.player.recall_lore_cooldown = 50 + 15 * tier
+    g.state = _S().STATE_HINT
+
+
+@scene('menu_lore_hints', 'Menus',
+       'B, Lore Hints with three hints recalled, the longest selected: the list rows in '
+       'the hints\' own case and the whole hint on the page.', expect='encyclopedia')
+def _(g):
+    import json
+    from paths import data_path
+    with open(data_path('data', 'hints.json'), encoding='utf-8') as f:
+        pool = json.load(f)
+    g._recalled_hints = [pool['1'][0], _longest_hint()[1], pool['3'][0]]
+    press(g, pygame.K_b)
+    press(g, pygame.K_i)
+    g.encyclopedia_selection = 1
 
 
 @scene('play_probing_lines', 'Play',
        'Z, the Wand of Probing on the troll in view: its health and what it is made of, '
+       'then "You learn the ways of the Troll." (a probe teaches the kind, 2026-11-14), '
        'in the message log.', expect='player')
 def _(g):
     from items import load_items

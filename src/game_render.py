@@ -9658,6 +9658,14 @@ class RenderMixin:
         if not entry:
             return [("No entry selected.", FP.FADED_TEXT, self.font_sm)]
         name = entry.get('name', entry.get('_id', entry.get('id', '?')))
+        if category == 'lore_hints':
+            # A hint is a sentence, not a name: it was title-cased into the
+            # heading ("Wisdom Is Time. Every Point of It Is..."). The page
+            # heads it plainly and gives the hint whole, as the Recall Lore
+            # card does (the article scrolls, so nothing is cut).
+            return [("Lore Hint", FP.GOLD_PALE, get_font('heading', 24)),
+                    ("", FP.BODY_TEXT, self.font_sm),
+                    (display_text(str(name)), FP.BODY_TEXT, self.font_sm)]
         lines = [(self._fix_name_case(name), FP.GOLD_PALE, get_font('heading', 24))]
         if category == 'lore_codex':
             import topic_cards
@@ -10016,8 +10024,11 @@ class RenderMixin:
                     self._draw_achievement_row(rect, entry, selected)
                     y += entry_row_h
                     continue
-                name = self._fix_name_case(entry.get('name',
-                                                     entry.get('_id', '?')))
+                name = entry.get('name', entry.get('_id', '?'))
+                # A recalled hint is a sentence: it keeps its own case
+                # (its first line here, the whole of it in the article).
+                if category != 'lore_hints':
+                    name = self._fix_name_case(name)
                 kit = kit_on()
                 nf = get_font('body', 18, bold=True) if kit else get_font('small', 15, bold=True)
                 bf = get_font('body', 16) if kit else get_font('small', 12)
@@ -10508,9 +10519,12 @@ class RenderMixin:
                                      max_w=860,
                                      max_h=340)
         body = self._ui_modal_body(panel, side=28, top=78, bottom=54)
-        self._ui_blit_text("Chain quality", get_font('small', 16, bold=True),
-                           FP.GOLD_BRIGHT, body.x, body.y)
-        star_x = body.x + S(130)
+        cq_font = get_font('small', 16, bold=True)
+        self._ui_blit_text("Chain quality", cq_font, FP.GOLD_BRIGHT, body.x, body.y)
+        # The chips start after the label as drawn: below 1280x720 the text
+        # keeps its 16 px floor while S() shrinks, and the first chip covered
+        # "quality".
+        star_x = body.x + max(S(130), cq_font.size("Chain quality")[0] + S(12))
         for idx in range(5):
             rect = pygame.Rect(star_x + idx * S(34), body.y - S(2), S(23), S(23))
             active = idx < chain

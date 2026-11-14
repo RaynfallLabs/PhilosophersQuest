@@ -94,12 +94,20 @@ def test_picking_up_scraps_counts_nothing_and_writes_one_plain_line():
 
 
 def test_the_recall_lore_hints_still_read_true():
-    hints = [h for tier in _data('hints.json').values() for h in tier]
-    scraps = [h for h in hints if 'scrap' in h.lower()]
-    assert any("silent god's shoe" in h for h in scraps)
-    assert any('keep counting' in h.lower() for h in scraps)
-    # Nothing in them says a scrap is light.
-    assert not any(w in h.lower() for h in scraps for w in ('light', 'weighs nothing', 'small'))
+    """Brandon, 2026-11-14 (the hint list redone): at most ONE oblique hint,
+    at tier 4 or 5, pointing at the myth (Vidar's shoe, made of every scrap
+    cobblers trimmed away). Never how many, where, or what to do with them."""
+    pool = _data('hints.json')
+    scraps = [(t, h) for t, tier in pool.items() for h in tier
+              if 'scrap' in h.lower() or 'cobbler' in h.lower() or 'shoe' in h.lower()]
+    assert len(scraps) == 1, scraps
+    tier, hint = scraps[0]
+    assert tier in ('4', '5')
+    assert "silent god's shoe" in hint
+    low = hint.lower()
+    for giveaway in ('count', 'ten', 'altar', 'near the top', 'keep it', 'carry', 'drop',
+                     'floor', 'wolf', 'fenrir', 'light', 'weighs nothing', 'small'):
+        assert giveaway not in low, giveaway
 
 
 def test_the_drop_menu_opens_for_scraps_only_on_vidars_altar():
