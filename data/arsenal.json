@@ -22,7 +22,7 @@
   "throw": {
     "_doc": "A flask's 'throw' block: real damage of its type through Monster.take_damage (weak x2, resisted x0.5, shrugged off x0.25: data/affinity_rules.json), sized so a flask on a weak kind is about one chain of a common weapon at the flask's own depth (floor_curve.ONE_ATTACK at its peak floor, halved for the weak step, written in the data). 'only_weak': holy water harms only the unholy. 'status': what the splash leaves (burning, an acid-pitted hide), if the creature does not resist the type. Fire still frightens what fears fire (affinity_rules fear_of_fire).",
     "hit": "The {flask} bursts over {the}! ({damage} {dtype} damage)",
-    "only_water": "The {flask} splashes {the}. It is only water to it.",
+    "only_water": "The {flask} splashes {the}. It is only water to {him}.",
     "status_line": "{The} is {effect}!",
     "missed": "The {flask} shatters on the ground."
   },

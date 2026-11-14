@@ -87,7 +87,8 @@ def test_a_second_sphere_puts_the_first_companion_to_sleep(game):
     held = _bound(game)
     assert len(held) == 1 and held[0].bound_pet is first
     assert first.level == 7
-    assert any('returns to its sphere' in t for t, _k in game.msg_log.entries)
+    # (in the pet's own pronoun, round 3: 'its', or 'his' / 'her' for the family pets)
+    assert any(f'returns to {first.pronouns()[2]} sphere' in t for t, _k in game.msg_log.entries)
 
 
 def test_throwing_the_bound_sphere_swaps_them_back(game):

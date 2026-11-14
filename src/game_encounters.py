@@ -22,6 +22,7 @@ mixin's methods reach them through ``self.`` and MRO.
 """
 from __future__ import annotations
 
+from naming import quantity
 import random
 
 from game_states import (
@@ -1753,7 +1754,7 @@ class EncountersMixin:
                         if isinstance(selected_item, Wand):
                             selected_item.charges -= 1
                             self.add_message(
-                                f"You use the {self._bare_name(selected_item)}. ({selected_item.charges} charges left)", 'info')
+                                f"You use the {self._bare_name(selected_item)}. ({quantity(selected_item.charges, 'charge')} left)", 'info')
                             if selected_item.charges <= 0:
                                 self.player.remove_from_inventory(selected_item)
                         else:
@@ -1968,7 +1969,7 @@ class EncountersMixin:
             _got = self.player.status_effects.get(eff, 0)
             if isinstance(_got, int) and _got > 0:
                 dur = _got
-            self.add_message(f"{eff_name} for {dur} turns!", 'success')
+            self.add_message(f"{eff_name} for {quantity(dur, 'turn')}!", 'success')
 
         elif rtype == 'hp_restore':
             self.player.restore_hp(reward['amount'])

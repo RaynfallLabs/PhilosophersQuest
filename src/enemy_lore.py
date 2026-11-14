@@ -39,10 +39,10 @@ def data() -> dict:
 
 
 def _fill(m, text: str, **kw) -> str:
-    from monster import the_name
-    t = (text or '').replace('{The}', the_name(m)).replace('{the}', the_name(m, lower=True))
-    for k, v in kw.items():
-        t = t.replace('{' + k + '}', str(v))
+    """The creature's name and pronouns put in (monster.fill), the first
+    letter a capital."""
+    from monster import fill
+    t = fill(m, text or '', **kw)
     return t[:1].upper() + t[1:]
 
 
@@ -68,7 +68,7 @@ def probe_lines(m) -> list:
     if res:
         bits.append(p['resists'].replace('{list}', ', '.join(_cap(w) for w in res)))
     bits += [t + '.' for _k, t in affinity.page_lines(m)]
-    out.append(' '.join(bits) if bits else p['nothing'])
+    out.append(' '.join(bits) if bits else _fill(m, p['nothing']))
     return out
 
 

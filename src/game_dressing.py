@@ -26,6 +26,7 @@ grants and quirk counters are the same whichever way it happens.
 """
 from __future__ import annotations
 
+from naming import quantity
 import pygame
 
 import gear
@@ -119,7 +120,7 @@ class DressingMixin:
         n = self._don_turns(item)
         if n <= 1:
             return ''
-        return f"Takes {n} turns to put on, {self._doff_turns(item)} to take off."
+        return f"Takes {quantity(n, 'turn')} to put on, {self._doff_turns(item)} to take off."
 
     # ------------------------------------------------------------------
     # One piece on, one piece off (instant: the turn is the caller's)
@@ -342,11 +343,11 @@ class DressingMixin:
         name = self._bare_name(item)
         if old is not None:
             line = (f"You start changing the {self._bare_name(old)} for the {name} "
-                    f"({total} turns).")
+                    f"({quantity(total, 'turn')}).")
         else:
             from items import Armor
             verb = 'buckling on' if isinstance(item, Armor) and gear.is_core(item) else 'putting on'
-            line = f"You start {verb} the {name} ({total} turns)."
+            line = f"You start {verb} the {name} ({quantity(total, 'turn')})."
         self._busy_start(BusyAction(steps, label=name), line)
 
     def _dress_start_off(self, slot_name: str, item) -> None:
@@ -358,7 +359,7 @@ class DressingMixin:
             return
         self._busy_start(BusyAction([Step('off', item, n, slot=slot_name)],
                                     label=self._bare_name(item)),
-                         f"You start unbuckling the {self._bare_name(item)} ({n} turns).")
+                         f"You start unbuckling the {self._bare_name(item)} ({quantity(n, 'turn')}).")
 
     # ------------------------------------------------------------------
     # The busy runner

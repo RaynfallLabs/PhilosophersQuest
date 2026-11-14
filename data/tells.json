@@ -6,18 +6,18 @@
             "silenced", "stunned", "immobilized", "splits", "revive_once_on_death", "drain_heals_self",
             "weakened", "rust", "diseased", "poisoned", "regeneration", "summon_kind", "pull_chance", "sp_drain",
             "can_charge", "can_phase_blink", "bleeding", "burning", "slowed", "hallucinating"],
-  "kin_lead": "It is one of {kin}.",
+  "kin_lead": "{He} is one of {kin}.",
   "known_lead": "You know what {the} is made of.",
-  "far_counter": "It can reach you from across a room, but only where it can see you: keep stone between you until you can close in.",
-  "weak_one": "{words} hurts it most.",
-  "weak_many": "{words} hurt it most.",
-  "resist_one": "{words} does little to it",
-  "resist_many": "{words} do little to it",
-  "shrugs_one": "{words} hardly touches it",
-  "shrugs_many": "{words} hardly touch it",
-  "immune": "It cannot be {effects}.",
-  "easily": "It is easily {effects}.",
-  "fire_flight": "Fire puts it to flight.",
+  "far_counter": "{He} can reach you from across a room, but only where {he} can see you: keep stone between you until you can close in.",
+  "weak_one": "{words} hurts {him} most.",
+  "weak_many": "{words} hurt {him} most.",
+  "resist_one": "{words} does little to {him}",
+  "resist_many": "{words} do little to {him}",
+  "shrugs_one": "{words} hardly touches {him}",
+  "shrugs_many": "{words} hardly touch {him}",
+  "immune": "{He} cannot be {effects}.",
+  "easily": "{He} is easily {effects}.",
+  "fire_flight": "Fire puts {him} to flight.",
   "status_words": {"feared": "frightened", "charmed": "charmed", "confused": "confused",
                    "sleeping": "put to sleep", "poisoned": "poisoned", "paralyzed": "held still",
                    "blinded": "blinded", "immobilized": "held fast", "stunned": "stunned",
@@ -25,149 +25,149 @@
   "effects": {
     "gaze_paralyze": {
       "sign": "Something about the eyes of {the} makes you want to look away.",
-      "does": "Its gaze can hold you where you stand, from across a room.",
-      "counter": "Keep a wall or a pillar between you. Eyes that cannot see are safe from it, and so is a hero who watches it in a mirror shield, as Perseus did."
+      "does": "{His} gaze can hold you where you stand, from across a room.",
+      "counter": "Keep a wall or a pillar between you. Eyes that cannot see are safe from it, and so is a hero who watches {him} in a mirror shield, as Perseus did."
     },
     "paralyzed": {
       "sign": "{The} moves slowly and surely, like a thing that never has to chase its prey.",
-      "does": "It can hold you still where you stand.",
-      "counter": "Do not let it reach you: fight it from a distance. If it is a gaze that holds you, a mirror shield turns it.",
-      "counter_far": "It can reach you from across a room, but only where it can see you: keep stone between you until you can close in. If it is a gaze that holds you, a mirror shield turns it."
+      "does": "{He} can hold you still where you stand.",
+      "counter": "Do not let {him} reach you: fight {him} from a distance. If it is a gaze that holds you, a mirror shield turns it.",
+      "counter_far": "{He} can reach you from across a room, but only where {he} can see you: keep stone between you until you can close in. If it is a gaze that holds you, a mirror shield turns it."
     },
     "confused": {
       "sign": "Looking at {the} too long makes the room tilt.",
-      "does": "It can scramble your thoughts until you cannot think straight.",
-      "counter": "Keep your distance, or end it fast. Wax in your ears stops a scream that does it; cold iron stops a fairy's glamour.",
-      "counter_far": "It can reach you from across a room, but only where it can see you: keep stone between you until you can close in. Wax in your ears stops a scream that does it; cold iron stops a fairy's glamour."
+      "does": "{He} can scramble your thoughts until you cannot think straight.",
+      "counter": "Keep your distance, or end {him} fast. Wax in your ears stops a scream that does it; cold iron stops a fairy's glamour.",
+      "counter_far": "{He} can reach you from across a room, but only where {he} can see you: keep stone between you until you can close in. Wax in your ears stops a scream that does it; cold iron stops a fairy's glamour."
     },
     "sleeping": {
       "sign": "Just watching {the} makes your eyelids heavy.",
-      "does": "It can put you to sleep where you stand.",
-      "counter": "Never fight it with others close by. Wax in your ears stops a song that does it, and cold iron a fairy's."
+      "does": "{He} can put you to sleep where you stand.",
+      "counter": "Never fight {him} with others close by. Wax in your ears stops a song that does it, and cold iron a fairy's."
     },
     "frozen": {
       "sign": "Frost crackles round {the}.",
-      "does": "It can freeze you solid, and frozen, you cannot fight back.",
-      "counter": "Keep out of its reach."
+      "does": "{He} can freeze you solid, and frozen, you cannot fight back.",
+      "counter": "Keep out of {his} reach."
     },
     "teleportitis": {
       "sign": "{The} flickers at the edges.",
-      "does": "It can fling you somewhere else on the floor, far from your way out.",
-      "counter": "End it fast."
+      "does": "{He} can fling you somewhere else on the floor, far from your way out.",
+      "counter": "End {him} fast."
     },
     "feared": {
       "sign": "Looking at {the} makes your stomach drop.",
-      "does": "It can break your nerve and send you running.",
-      "counter": "Know where you would run before you fight it. If it is a voice that does it, wax in your ears will stop it."
+      "does": "{He} can break your nerve and send you running.",
+      "counter": "Know where you would run before you fight {him}. If it is a voice that does it, wax in your ears will stop it."
     },
     "blinded": {
       "sign": "Everything about {the} seems aimed at your eyes.",
-      "does": "It can blind you, and a blind hero fights by touch alone.",
-      "counter": "Do not let it close."
+      "does": "{He} can blind you, and a blind hero fights by touch alone.",
+      "counter": "Do not let {him} close."
     },
     "silenced": {
       "sign": "{The} moves in a pocket of dead quiet.",
-      "does": "It can take your voice, and your spells with it.",
-      "counter": "Cast before it reaches you, or fight it with steel.",
-      "counter_far": "Fight it with steel, not spells."
+      "does": "{He} can take your voice, and your spells with it.",
+      "counter": "Cast before {he} reaches you, or fight {him} with steel.",
+      "counter_far": "Fight {him} with steel, not spells."
     },
     "stunned": {
       "sign": "{The} is built like a falling wall.",
-      "does": "Its blows can leave you dazed.",
-      "counter": "Do not trade blows with it for long."
+      "does": "{His} blows can leave you dazed.",
+      "counter": "Do not trade blows with {him} for long."
     },
     "immobilized": {
       "sign": "{The} trails sticky strands.",
-      "does": "It can pin you where you stand.",
-      "counter": "Pinned, you cannot run: fight it only where you would not need to.",
-      "counter_far": "Pinned, you cannot run: fight it only where you would not need to."
+      "does": "{He} can pin you where you stand.",
+      "counter": "Pinned, you cannot run: fight {him} only where you would not need to.",
+      "counter_far": "Pinned, you cannot run: fight {him} only where you would not need to."
     },
     "splits": {
-      "sign": "{The} looks as if it would come apart and keep coming.",
-      "does": "Strike it with {split_by} and there will be two.",
+      "sign": "{The} looks as if {he} would come apart and keep coming.",
+      "does": "Strike {him} with {split_by} and there will be two.",
       "counter": "Use anything else.",
-      "does_weak": "Strike it with a weak blow and there will be two.",
-      "counter_weak": "Hit it hard, or not at all."
+      "does_weak": "Strike {him} with a weak blow and there will be two.",
+      "counter_weak": "Hit {him} hard, or not at all."
     },
     "revive_once_on_death": {
-      "sign": "The wounds on {the} should have killed it, and did not.",
-      "does": "It will not stay dead the first time.",
-      "counter": "When it falls, keep your guard up."
+      "sign": "The wounds on {the} should have killed {him}, and did not.",
+      "does": "{He} will not stay dead the first time.",
+      "counter": "When {he} falls, keep your guard up."
     },
     "drain_heals_self": {
       "sign": "{The} watches your throat, not your blade.",
-      "does": "It heals itself on your blood: every blow it lands mends it.",
-      "counter": "Do not trade blows with it."
+      "does": "{He} heals {himself} on your blood: every blow {he} lands mends {him}.",
+      "counter": "Do not trade blows with {him}."
     },
     "weakened": {
       "sign": "Whatever {the} has touched looks withered.",
-      "does": "It can drain the strength out of you.",
-      "counter": "Fight it fast, or from afar."
+      "does": "{He} can drain the strength out of you.",
+      "counter": "Fight {him} fast, or from afar."
     },
     "diseased": {
       "sign": "{The} reeks of rot.",
-      "does": "The wounds it gives fester long after the fight.",
-      "counter": "Kill it before it lands many."
+      "does": "The wounds {he} gives fester long after the fight.",
+      "counter": "Kill {him} before {he} lands many."
     },
     "poisoned": {
       "sign": "Something on {the} glistens wet.",
-      "does": "It is poisonous, and every wound it gives keeps hurting after.",
-      "counter": "Do not let it land many."
+      "does": "{He} is poisonous, and every wound {he} gives keeps hurting after.",
+      "counter": "Do not let {him} land many."
     },
     "regeneration": {
       "sign": "The old scars of {the} have closed without a mark.",
-      "does": "It heals itself as it fights.",
-      "counter": "Finish it; do not wear it down."
+      "does": "{He} heals {himself} as {he} fights.",
+      "counter": "Finish {him}; do not wear {him} down."
     },
     "summon_kind": {
-      "sign": "{The} keeps glancing behind it, as if it expects company.",
-      "does": "It can call others to it.",
-      "counter": "Kill it before it calls."
+      "sign": "{The} keeps glancing behind {him}, as if {he} expects company.",
+      "does": "{He} can call others to {him}.",
+      "counter": "Kill {him} before {he} calls."
     },
     "pull_chance": {
       "sign": "{The} has a long reach with a hook to it.",
-      "does": "It will drag you to it from further off than you think.",
-      "counter": "Stay well out of its reach, or close in on your own terms."
+      "does": "{He} will drag you to {him} from further off than you think.",
+      "counter": "Stay well out of {his} reach, or close in on your own terms."
     },
     "sp_drain": {
       "sign": "{The} sniffs at your pack.",
-      "does": "It is after your food: every blow it lands leaves you hungrier.",
-      "counter": "Keep it off you."
+      "does": "{He} is after your food: every blow {he} lands leaves you hungrier.",
+      "counter": "Keep {him} off you."
     },
     "can_charge": {
       "sign": "{The} paws the ground.",
-      "does": "Across open ground it will charge.",
-      "counter": "Make it come to you round a corner."
+      "does": "Across open ground {he} will charge.",
+      "counter": "Make {him} come to you round a corner."
     },
     "can_phase_blink": {
       "sign": "{The} is never quite where you last looked.",
-      "does": "It steps from place to place without crossing between.",
+      "does": "{He} steps from place to place without crossing between.",
       "counter": "Distance will not save you: stand and fight."
     },
     "bleeding": {
       "sign": "{The} looks made for tearing.",
-      "does": "The wounds it gives go on bleeding after the blow.",
-      "counter": "Do not let it land many."
+      "does": "The wounds {he} gives go on bleeding after the blow.",
+      "counter": "Do not let {him} land many."
     },
     "burning": {
       "sign": "Heat shimmers off {the}.",
-      "does": "It sets what it hits alight, and the fire keeps burning after.",
-      "counter": "Keep out of its reach."
+      "does": "{He} sets what {he} hits alight, and the fire keeps burning after.",
+      "counter": "Keep out of {his} reach."
     },
     "slowed": {
       "sign": "The air round {the} feels thick, like wading.",
-      "does": "It can slow you, and slowed, you cannot outrun it.",
-      "counter": "Choose to fight or flee before it reaches you."
+      "does": "{He} can slow you, and slowed, you cannot outrun {him}.",
+      "counter": "Choose to fight or flee before {he} reaches you."
     },
     "hallucinating": {
       "sign": "Colours run strangely round {the}.",
-      "does": "It fills heads with things that are not there, and while it lasts, what you see may not be what is there.",
+      "does": "{He} fills heads with things that are not there, and while it lasts, what you see may not be what is there.",
       "counter": ""
     },
     "rust": {
       "sign": "Every nail and hinge near {the} has gone to red dust.",
-      "does": "Its feelers rust iron and steel: a brush takes a point off your weapon or armour.",
-      "counter": "Keep good steel out of its reach: fight it with wood or bronze."
+      "does": "{His} feelers rust iron and steel: a brush takes a point off your weapon or armour.",
+      "counter": "Keep good steel out of {his} reach: fight {him} with wood or bronze."
     }
   }
 }

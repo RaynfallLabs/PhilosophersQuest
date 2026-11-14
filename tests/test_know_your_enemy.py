@@ -77,8 +77,10 @@ def _clean():
 
 
 def _fill(s, m, word=''):
+    from monster import pronoun_fill
     w = affinity.word_for(word) if word else ''
-    return s.format(name=the_name(m), the=the_name(m, lower=True), word=w, word_cap=w[:1].upper() + w[1:])
+    return s.format(name=the_name(m), the=the_name(m, lower=True), word=w, word_cap=w[:1].upper() + w[1:],
+                    **pronoun_fill(m))
 
 
 # ---------------------------------------------------------------------------
@@ -90,10 +92,11 @@ def test_the_felt_pools_never_name_the_cause():
         assert len(felt[pool]) >= 2, pool
         for s in felt[pool]:
             used = {f for _, f, _, _ in string.Formatter().parse(s) if f}
-            assert used <= {'name', 'the'}, (pool, s)
+            # (the creature's own pronouns: data/monsters.json pronoun, round 3)
+            assert used <= {'name', 'the', 'he', 'He', 'him', 'his', 'His'}, (pool, s)
     for pool in ('weak', 'resisted', 'shrugs_off'):
         assert len(felt[pool]) >= 5, pool
-    assert 'It reels!' in felt['weak']
+    assert '{He} reels!' in felt['weak']
     # every KNOWN line names what met it
     for pool in ('weak', 'resisted', 'shrugs_off'):
         for s in affinity.lines()[pool]:
@@ -534,7 +537,10 @@ def test_probing_shows_resistances_and_status(game):
 def test_probing_lines_cover_shrugs_off_and_a_plain_creature():
     sw = enemy_lore.probe_lines(_m('scarab_swarm'))
     assert 'Shrugs Off: Slash, Pierce' in sw[1] and 'Resists: Blunt' in sw[1]
-    assert enemy_lore.probe_lines(_m('goblin'))[1] == enemy_lore.data()['probe']['nothing']
+    from monster import fill
+    gob = _m('goblin')
+    assert enemy_lore.probe_lines(gob)[1] == fill(gob, enemy_lore.data()['probe']['nothing'])
+    assert enemy_lore.probe_lines(gob)[1] == 'Nothing about him is weak or hard: every blow lands plain.'
 
 
 # ---------------------------------------------------------------------------

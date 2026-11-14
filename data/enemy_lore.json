@@ -4,7 +4,7 @@
     "hp": "{The}: {hp}/{max_hp} HP.",
     "weak": "Weak to: {list}.",
     "resists": "Resists: {list}.",
-    "nothing": "Nothing about it is weak or hard: every blow lands plain.",
+    "nothing": "Nothing about {him} is weak or hard: every blow lands plain.",
     "learn": "You learn the ways of {the}."
   },
   "quest_teach": {

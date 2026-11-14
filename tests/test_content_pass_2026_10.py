@@ -102,9 +102,14 @@ def test_attack_names_survive_the_ranged_keyword_matching():
 
 def test_monster_attack_log_lines_stay_lowercase_mid_sentence():
     """Brandon's rule: names are capitalised as labels, but common words stay
-    lowercase inside a log sentence ("hits you with ice club")."""
+    lowercase inside a log sentence ("hits you with his ice club"; round 3
+    added the creature's possessive). A proper word keeps its capital
+    (data/combat_lines.json proper_words: "Euryale's wail")."""
+    sys.path.insert(0, os.path.join(ROOT, 'src'))
+    import monster
+    assert monster.attack_noun({'name': 'Ice Club'}) == 'ice club'
+    assert monster.attack_noun({'name': 'Words of Thoth'}) == 'words of Thoth'
     src = open(os.path.join(ROOT, 'src', 'monster.py'), encoding='utf-8').read()
-    assert "hits you with {atk['name'].replace('_', ' ').lower()}" in src
     assert "hits you with {atk['name'].replace('_', ' ')}" not in src
 
 

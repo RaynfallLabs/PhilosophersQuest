@@ -194,8 +194,10 @@ def say(notes, rng=None, level_of=None) -> list:
 
 def _line(kind: str, level: int, m, word: str, many: bool, rng, the_name) -> str:
     """One meeting's line at what the hero knows (see `say`)."""
+    from monster import pronoun_fill
     w = word_for(word)
-    fill = dict(name=the_name(m), the=the_name(m, lower=True), word=w, word_cap=w[:1].upper() + w[1:])
+    fill = dict(name=the_name(m), the=the_name(m, lower=True), word=w, word_cap=w[:1].upper() + w[1:],
+                **pronoun_fill(m))
     if level >= KNOWN or kind == FIRE_FRIGHT:
         pool = lines().get(f"{kind}_many" if many else kind) or lines().get(kind) or []
         return rng.choice(pool).format(**fill) if pool else ''
@@ -368,10 +370,11 @@ def status_line(kind: str, effect: str, monster, rng=None, level: int = KNOWN) -
     KIN or more); to one who does not it is felt only ("Nothing happens to
     the golem."). Falling to it easily is what the eye sees, said to all."""
     rng = rng or random
-    from monster import the_name
+    from monster import the_name, pronoun_fill
     if kind == 'immune' and level < KIN:
         pool = lines().get('status_immune_felt') or []
-        return (rng.choice(pool).format(name=the_name(monster), the=the_name(monster, lower=True))
+        return (rng.choice(pool).format(name=the_name(monster), the=the_name(monster, lower=True),
+                                        **pronoun_fill(monster))
                 if pool else '')
     table = lines().get('status_immune' if kind == 'immune' else 'status_weak') or {}
     if kind == 'immune' and effect not in (getattr(monster, 'status_immune', None) or ()):
@@ -386,4 +389,4 @@ def status_line(kind: str, effect: str, monster, rng=None, level: int = KNOWN) -
     if not pool:
         return ''
     return rng.choice(pool).format(name=the_name(monster), the=the_name(monster, lower=True),
-                                   effect=str(effect).replace('_', ' '))
+                                   effect=str(effect).replace('_', ' '), **pronoun_fill(monster))

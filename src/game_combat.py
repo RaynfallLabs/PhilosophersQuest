@@ -48,7 +48,8 @@ because the dictionary is co-located with story-popup code that lives in
 main.py.  Bound-method lookup goes through ``self.`` so MRO finds it.
 """
 from __future__ import annotations
-from monster import the_name
+from naming import quantity
+from monster import the_name, pronouns, a_name
 
 import false_stairs
 import random
@@ -384,8 +385,8 @@ class CombatMixin:
         if _q and hit_monster.alive:
             hit_monster.add_effect('confused', _q)
             if (hit_monster.x, hit_monster.y) in self.visible:
-                self.add_message(f"{the_name(hit_monster)} spins round, blaming the one beside it!",
-                                 'success')
+                self.add_message(f"{the_name(hit_monster)} spins round, blaming the one beside "
+                                 f"{pronouns(hit_monster)[1]}!", 'success')
 
         self._advance_turn()
 
@@ -664,15 +665,15 @@ class CombatMixin:
             went += 1
             if self.player.add_to_inventory(sphere):
                 self.add_message(
-                    f"{pet.name} returns to its sphere to rest. Only one companion "
+                    f"{pet.name} returns to {pet.pronouns()[2]} sphere to rest. Only one companion "
                     f"walks at your side at a time.", 'info')
             else:
                 # Never lost: a pack over its limit sets the sphere down.
                 sphere.x, sphere.y = self.player.x, self.player.y
                 self.ground_items.append(sphere)
                 self.add_message(
-                    f"{pet.name} returns to its sphere. Your pack is too full for it, "
-                    f"so it rests at your feet.", 'info')
+                    f"{pet.name} returns to {pet.pronouns()[2]} sphere. Your pack is too full "
+                    f"for the sphere, so it rests at your feet.", 'info')
         return went
 
     def _throw_unusual_sphere(self, sphere, hit_monster, tx: int, ty: int):
@@ -774,7 +775,8 @@ class CombatMixin:
             for resist, blocked in _RESIST_BLOCKS.items():
                 if debuff in blocked and monster.has_effect(resist):
                     self.add_message(
-                        f"The {display} splashes {the_name(monster, lower=True)}, but it resists!", 'warning'
+                        f"The {display} splashes {the_name(monster, lower=True)}, but "
+                        f"{pronouns(monster)[0]} resists!", 'warning'
                     )
                     return
             # A creature that resists magic is not muddled or frightened by
@@ -785,21 +787,23 @@ class CombatMixin:
             mon_resists = getattr(monster, 'resistances', [])
             if 'magic' in mon_resists and debuff in ('confused', 'hallucinating', 'feared'):
                 self.add_message(
-                    f"The {display} splashes {the_name(monster, lower=True)}, but it seems immune!", 'warning'
+                    f"The {display} splashes {the_name(monster, lower=True)}, but "
+                    f"{pronouns(monster)[0]} seems immune!", 'warning'
                 )
                 return
             # Its nature first (status_immune: "The golem does not know
             # fear."), then what it falls to easily (status_weak: half again
             # as long): Game._inflict.
             got, why = self._inflict(monster, debuff, duration, roll=False)
+            _he = pronouns(monster)[0].capitalize()
             if not got:
                 self.add_message(
                     f"The {display} splashes {the_name(monster, lower=True)}. "
-                    + (why or "It shakes it off."), 'warning')
+                    + (why or f"{_he} shakes it off."), 'warning')
                 return
             label = debuff.replace('_', ' ').title()
             self.add_message(
-                f"The {display} splashes {the_name(monster, lower=True)}! It is {label}!"
+                f"The {display} splashes {the_name(monster, lower=True)}! {_he} is {label}!"
                 + (f" {why}" if why else ''), 'success'
             )
             return
@@ -817,7 +821,8 @@ class CombatMixin:
             monster.add_effect(buff, duration)
             label = buff.replace('_', ' ').title()
             self.add_message(
-                f"The {display} splashes {the_name(monster, lower=True)}. It looks {label}!", 'danger'
+                f"The {display} splashes {the_name(monster, lower=True)}. "
+                f"{pronouns(monster)[0].capitalize()} looks {label}!", 'danger'
             )
             return
 
@@ -834,13 +839,16 @@ class CombatMixin:
                     amt += 10
                 healed = min(amt, monster.max_hp - monster.hp)
                 monster.hp = min(monster.max_hp, monster.hp + amt)
+            _he = pronouns(monster)[0].capitalize()
             if healed > 0:
                 self.add_message(
-                    f"The {display} splashes {the_name(monster, lower=True)}. It heals {healed} HP!", 'danger'
+                    f"The {display} splashes {the_name(monster, lower=True)}. {_he} heals {healed} HP!",
+                    'danger'
                 )
             else:
                 self.add_message(
-                    f"The {display} splashes {the_name(monster, lower=True)}. It looks unaffected.", 'info'
+                    f"The {display} splashes {the_name(monster, lower=True)}. {_he} looks unaffected.",
+                    'info'
                 )
             return
 
@@ -860,7 +868,8 @@ class CombatMixin:
                 nx, ny = _rng.choice(walkable)
                 monster.x, monster.y = nx, ny
                 self.add_message(
-                    f"The {display} splashes {the_name(monster, lower=True)} -- it vanishes!", 'success'
+                    f"The {display} splashes {the_name(monster, lower=True)} -- "
+                    f"{pronouns(monster)[0]} vanishes!", 'success'
                 )
             else:
                 self.add_message(
@@ -1558,7 +1567,8 @@ class CombatMixin:
             f"{the_name(monster)} should be dead, and is getting up.")
         self.add_message(line, 'danger')
         self._chron('notice',
-                    f"I struck {the_name(monster, lower=True)} down and it stood back up.",
+                    f"I struck {the_name(monster, lower=True)} down and {pronouns(monster)[0]} "
+                    f"stood back up.",
                     once=f'revive:{monster.kind}')
 
     def _drop_philosophers_stone(self, x: int, y: int):
@@ -1904,7 +1914,7 @@ class CombatMixin:
                 self.add_message("The wand crumbles to dust -- it is spent.", 'warning')
                 self.player.remove_from_inventory(wand)
             else:
-                self.add_message(f"({wand.charges} charges remain)", 'info')
+                self.add_message(f"({quantity(wand.charges, 'charge')} remain)", 'info')
             self._advance_turn()
 
         # v2.11.0: All wands use threshold=1 at the wand's authoritative tier.
@@ -2008,7 +2018,7 @@ class CombatMixin:
                     self.pets.append(pet)
                 self.add_message(
                     f"The sketch shimmers and peels off the page! "
-                    f"A Sketched {monster.name} materializes! ({duration} turns)",
+                    f"A Sketched {monster.name} materializes! ({quantity(duration, 'turn')})",
                     'success')
                 pl.power_cooldowns['sketch_manifest'] = 500
                 self.state = STATE_PLAYER
@@ -2067,7 +2077,7 @@ class CombatMixin:
                     f"You breathe a cone of fire! (chain {chain})", 'success')
                 if hits:
                     self.add_message(
-                        f"{hits} creatures engulfed: the fire takes {round(100 * _share)}% "
+                        f"{quantity(hits, 'creature')} engulfed: the fire takes {round(100 * _share)}% "
                         f"of each one's health! ({kills} slain)", 'combat')
                 else:
                     self.add_message("The flames find no target.", 'info')
@@ -2149,8 +2159,10 @@ class CombatMixin:
                 import family_lore
                 _fid = family_lore.family_of(monster)
                 _fam = f" {family_lore.short_name(_fid)}." if _fid else ''
+            # "You see a Skeleton", "an Orc Scout", but "Arachne": the
+            # article is the kind's, a named foe has none (round 3).
             self.add_message(
-                f"You see {monster.name} ({condition}).{_fam}", 'info'
+                f"You see {a_name(monster)} ({condition}).{_fam}", 'info'
             )
             # A creature with a line of its own (the Stray Kids: stray_kids.py).
             if getattr(monster, 'observe_line', ''):
@@ -2184,7 +2196,8 @@ class CombatMixin:
                     _bd = _wb.data()['bands'].get(getattr(monster, '_band_id', ''), {})
                     _role = getattr(monster, '_band_role', '')
                     if _bd.get('name') and _role:
-                        self.add_message(_wb.observe_line(_bd, _role, _level >= _fl.KNOWN), 'info')
+                        self.add_message(_wb.observe_line(_bd, _role, _level >= _fl.KNOWN, monster),
+                                         'info')
             if (not _known and getattr(monster, 'family', None)
                     and not getattr(monster, 'is_allied', False)
                     and not getattr(monster, '_npc_encounter_tag', None)
@@ -3646,7 +3659,8 @@ class CombatMixin:
                                 _eff = random.choice(_candidates)
                                 m.add_effect(_eff, 5)
                                 self.add_message(
-                                    f"Theseus's sandals turn {the_name(m, lower=True)}'s tactic against it — {_eff.replace('_', ' ')}!",
+                                    f"Theseus's sandals turn {the_name(m, lower=True)}'s tactic against "
+                                    f"{pronouns(m)[1]} — {_eff.replace('_', ' ')}!",
                                     'info')
                     except ImportError:
                         pass
@@ -3964,7 +3978,7 @@ class CombatMixin:
                 self.player.add_effect('telepathy', dur)
                 self.add_message(
                     f"{pet.name}'s mind opens — every creature on the "
-                    f"floor floods into your awareness ({dur} turns).",
+                    f"floor floods into your awareness ({quantity(dur, 'turn')}).",
                     'success')
             return
 
@@ -3988,8 +4002,10 @@ class CombatMixin:
                                                    or pet.species.get('damage_type')))
                 if (m.alive and status and _rng.random() < status_chance
                         and not (status == 'bleeding' and not getattr(m, 'can_bleed', lambda: True)())):
-                    cur = m.status_effects.get(status, 0)
-                    m.status_effects[status] = max(cur, status_duration)
+                    # Through hold: what its nature refuses never takes
+                    # (a fire elemental does not burn), a named foe's hold
+                    # is capped, and the longer of the two lasts.
+                    m.hold(status, status_duration)
                 if not m.alive:
                     for k_msg in pet.gain_xp_from_kill(pre_max, _monster_level(m)):
                         self.add_message(k_msg, 'success')
@@ -4151,8 +4167,8 @@ class CombatMixin:
             self._pet_knockback(pet, m, knockback)
         if (m.alive and status and _rng.random() < chance
                 and not (status == 'bleeding' and not getattr(m, 'can_bleed', lambda: True)())):
-            cur = m.status_effects.get(status, 0)
-            m.status_effects[status] = max(cur, duration)
+            # Through hold (see the cone special above).
+            m.hold(status, duration)
         if not m.alive:
             for k_msg in pet.gain_xp_from_kill(pre_max, _monster_level(m)):
                 self.add_message(k_msg, 'success')
