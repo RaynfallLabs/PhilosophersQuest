@@ -207,9 +207,10 @@ def test_o_on_a_studied_monster_says_how_to_beat_it():
     _observe(g, m)
     recent = _recent(g)
     assert 'hold you still' in recent and 'distance' in recent
-    assert 'Holy power and a cutting blow hurt it most.' in recent
+    # (a ghoul is "he": data/monsters.json pronoun, round 3)
+    assert 'Holy power and a cutting blow hurt him most.' in recent
     # ...and what it resists and its nature (tells.lore_lines, winning-build plan 3.1)
-    assert 'do little to it' in recent and 'cannot be put to sleep' in recent
+    assert 'do little to him' in recent and 'cannot be put to sleep' in recent
     lines = [str(t[0]) for t in g._encyclopedia_article_lines('bestiary', g._encyclopedia_entry)]
     assert any(t.startswith('Weak to') for t in lines)
 

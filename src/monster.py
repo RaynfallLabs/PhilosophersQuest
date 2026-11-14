@@ -110,13 +110,195 @@ def the_name(monster, lower: bool = False) -> str:
         return ('t' if lower else 'T') + name[1:]
     if low.startswith(('a ', 'an ')):
         return name                     # already carries its own article
-    if (getattr(monster, 'is_boss', False) or getattr(monster, 'is_mini_boss', False)
-            or getattr(monster, 'is_seal_demon', False)
-            or getattr(monster, 'proper_noun', False)
-            or getattr(monster, 'kind', '') in ('player_ghost', 'death')
-            or low.startswith(('ghost of ', 'death'))):
+    if _is_proper(monster, low):
         return name
     return f"{'the' if lower else 'The'} {name}"
+
+
+def _is_proper(monster, low: str) -> bool:
+    """A named foe (a boss, a mini-boss, a seal demon, a story foe, the
+    Bones ghost, Death): a proper noun, said with no article. So is a kind
+    named for its master ("Fionn's Hound", "Set's Jackal"): "the Fionn's
+    Hound" was said (round 3)."""
+    first = (getattr(monster, 'name', '') or '').split(' ', 1)[0]
+    return bool(getattr(monster, 'is_boss', False) or getattr(monster, 'is_mini_boss', False)
+                or getattr(monster, 'is_seal_demon', False)
+                or getattr(monster, 'proper_noun', False)
+                or getattr(monster, 'kind', '') in ('player_ghost', 'death')
+                or low.startswith(('ghost of ', 'death'))
+                or (first[:1].isupper() and first.endswith(("'s", "s'"))))
+
+
+def _hidden(monster) -> bool:
+    """The hero cannot tell what it is: unseen, or a lurker not yet sprung."""
+    if getattr(monster, '_unseen', False) is True:
+        return True
+    return (not getattr(monster, '_aware', False)
+            and getattr(monster, 'ai_pattern', '') in ('ambush', 'mimic'))
+
+
+def an_article(word: str) -> str:
+    """'a' or 'an' for ``word`` by its sound: "an orc", "a unicorn", "an
+    heir", "a one-eyed giant", "an Ushabti"."""
+    w = str(word or '').lstrip('{').lstrip().lower()
+    if not w:
+        return 'a'
+    if w.startswith(('heir', 'hour', 'honest', 'honou', 'honor')):
+        return 'an'
+    if w.startswith(('uni', 'use', 'usu', 'uti', 'eu', 'ewe', 'one', 'once')):
+        return 'a'
+    return 'an' if w[0] in 'aeiou' else 'a'
+
+
+def a_name(monster, lower: bool = True) -> str:
+    """A monster's name with an indefinite article, as first seen: "a
+    Skeleton", "an Orc Scout", but "Arachne", "The Sphinx" (a named foe is a
+    proper noun). Mid-sentence by default ("You see a Skeleton."); at a
+    sentence start (lower=False) "A Skeleton". An unseen creature is
+    "something unseen", a lurker in disguise the thing it poses as."""
+    if _hidden(monster):
+        name = the_name(monster, lower=True)
+        if name.startswith('the '):
+            name = f"{an_article(name[4:])} {name[4:]}"
+        return name if lower else name[:1].upper() + name[1:]
+    name = getattr(monster, 'name', '') or 'something'
+    low = name.lower()
+    if low.startswith(('the ', 'a ', 'an ')):
+        return (name[:1].lower() + name[1:]) if lower and low.startswith('the ') else name
+    if _is_proper(monster, low):
+        return name
+    art = an_article(name)
+    return f"{art if lower else art.capitalize()} {name}"
+
+
+# ---------------------------------------------------------------------------
+# A creature's pronouns (data/monsters.json `pronoun`; round 3, Brandon: "it
+# unless clearly humanoid, then use appropriate: most will be he, but some,
+# clearly feminine ... probably should be she"). Every individual is he, she
+# or it, never "they". A creature the hero cannot see, or a lurker not yet
+# sprung, is "it". A pickled monster from before the field takes its kind's.
+# ---------------------------------------------------------------------------
+PRONOUNS = {'it': ('it', 'it', 'its'), 'he': ('he', 'him', 'his'), 'she': ('she', 'her', 'her')}
+_KIND_PRONOUNS = None
+
+
+def kind_pronoun(kind) -> str:
+    """The pronoun data/monsters.json gives ``kind`` ('it' for a kind it
+    does not list)."""
+    global _KIND_PRONOUNS
+    if _KIND_PRONOUNS is None:
+        import json
+        from paths import data_path
+        try:
+            with open(data_path('data', 'monsters.json'), encoding='utf-8') as f:
+                defs = json.load(f)
+            _KIND_PRONOUNS = {k: str(v.get('pronoun') or 'it') for k, v in defs.items()
+                              if isinstance(v, dict)}
+        except (OSError, ValueError):
+            _KIND_PRONOUNS = {}
+    return _KIND_PRONOUNS.get(str(kind or ''), 'it')
+
+
+def pronoun(monster) -> str:
+    """'it', 'he' or 'she' for this creature as the hero sees it."""
+    if monster is None or _hidden(monster):
+        return 'it'
+    own = getattr(monster, '__dict__', {}).get('pronoun') if hasattr(monster, '__dict__') else None
+    if own is None:
+        own = kind_pronoun(getattr(monster, 'kind', ''))
+    word = str(own or 'it').lower()
+    return word if word in PRONOUNS else 'it'
+
+
+def pronouns(monster) -> tuple:
+    """(subject, object, possessive): ('he', 'him', 'his'), ('she', 'her',
+    'her') or ('it', 'it', 'its')."""
+    return PRONOUNS[pronoun(monster)]
+
+
+def pronoun_fill(monster) -> dict:
+    """The pronoun slots a line can carry: {he} {He} {him} {his} {His}
+    {himself} ('it', 'It', 'it', 'its', 'Its', 'itself' for an it)."""
+    sub, obj, pos = pronouns(monster)
+    return {'he': sub, 'He': sub.capitalize(), 'him': obj, 'his': pos, 'His': pos.capitalize(),
+            'himself': obj + 'self'}
+
+
+def fill(monster, text: str, **kw) -> str:
+    """``text`` with the creature put in: {The} / {the} its name with the
+    article, {A} / {a} with an indefinite one, the pronoun slots
+    (pronoun_fill), and any ``kw`` ({kin}, {words}...). By plain
+    replacement, so braces it does not know are left as they are."""
+    t = str(text or '')
+    if '{' not in t:
+        return t
+    if monster is not None:
+        if '{The}' in t:
+            t = t.replace('{The}', the_name(monster))
+        if '{the}' in t:
+            t = t.replace('{the}', the_name(monster, lower=True))
+        if '{A}' in t:
+            t = t.replace('{A}', a_name(monster, lower=False))
+        if '{a}' in t:
+            t = t.replace('{a}', a_name(monster))
+    for k, v in pronoun_fill(monster).items():
+        t = t.replace('{' + k + '}', v)
+    for k, v in kw.items():
+        t = t.replace('{' + k + '}', str(v))
+    return t
+
+
+# ---------------------------------------------------------------------------
+# A monster's own attack in a line (data/combat_lines.json)
+# ---------------------------------------------------------------------------
+_COMBAT_LINES = None
+
+
+def combat_lines() -> dict:
+    global _COMBAT_LINES
+    if _COMBAT_LINES is None:
+        import json
+        from paths import data_path
+        try:
+            with open(data_path('data', 'combat_lines.json'), encoding='utf-8') as f:
+                _COMBAT_LINES = json.load(f)
+        except (OSError, ValueError):
+            _COMBAT_LINES = {}
+    return _COMBAT_LINES
+
+
+def attack_noun(atk) -> str:
+    """The attack's name in a sentence: lower case ("rusty knife"), but a
+    proper word keeps its capitals ("Euryale's wail", "words of Thoth")."""
+    raw = str((atk or {}).get('name', 'attack') if isinstance(atk, dict) else atk or 'attack')
+    proper = set(combat_lines().get('proper_words') or ())
+    return ' '.join(w if w in proper else w.lower() for w in raw.replace('_', ' ').split())
+
+
+def _attack_verb(atk) -> str:
+    raw = str((atk or {}).get('name', '') if isinstance(atk, dict) else atk or '')
+    return str((combat_lines().get('attack_verbs') or {}).get(raw.replace('_', ' '), '') or '')
+
+
+def with_attack(monster, atk) -> str:
+    """"his rusty knife", "her talons", "its bite"; "Euryale's wail" (a
+    name that begins with a proper word takes no possessive)."""
+    noun = attack_noun(atk)
+    first = noun.split(' ', 1)[0] if noun else ''
+    if first in set(combat_lines().get('proper_words') or ()):
+        return noun
+    return f"{pronouns(monster)[2]} {noun}"
+
+
+def attack_line(monster, atk, actual: int) -> str:
+    """The line for a blow that landed: "The Goblin hits you with his rusty
+    knife for 3 damage!", "The Gelatinous Cube engulfs you for 4 damage!"."""
+    who = the_name(monster)
+    verb = _attack_verb(atk)
+    if verb:
+        pred = verb if ('you' in verb.split() or 'your' in verb.split()) else f"{verb} you"
+        return f"{who} {pred} for {actual} damage!"
+    return f"{who} hits you with {with_attack(monster, atk)} for {actual} damage!"
 
 
 # Words in an attack's name that mark it as coming from a distance.
@@ -528,6 +710,8 @@ class Monster:
         # 'provoked' {'struck', 'cornered', 'close'}: the lines, said by the
         # game (`_wary_line`).
         self.wary = defn.get('wary') or None
+        # 'it', 'he' or 'she' (data/monsters.json; see pronoun() above).
+        self.pronoun: str = str(defn.get('pronoun') or kind_pronoun(self.kind))
         self._provoked: bool = False
         self._wary_warned: bool = False
         self._wary_home = None
@@ -602,6 +786,9 @@ class Monster:
         if name == 'family':
             # A monster saved before families looks its family up by kind.
             return _family_of_kind(self.__dict__.get('kind', ''))
+        if name == 'pronoun':
+            # A monster saved before pronouns takes its kind's (round 3).
+            return kind_pronoun(self.__dict__.get('kind', ''))
         raise AttributeError(f"'Monster' object has no attribute {name!r}")
 
     # --- Status effects ---
@@ -704,6 +891,12 @@ class Monster:
         oath = effect == 'charmed' and bool(self.__dict__.get('_oathbound'))
         if effect in (getattr(self, 'status_immune', None) or ()) and not oath:
             return True
+        if effect == 'burning':
+            # Fire is fire (round 3, Brandon: "it's fire, make it so"): what
+            # fire hardly touches does not catch fire at all. A fire
+            # elemental never burns; a creature that only resists fire
+            # burns, at half the rate (tick_effects: the burn is typed).
+            return 'fire' in (getattr(self, 'shrugs_off', None) or ())
         tags = set(self.tags or ())
         mindless = bool(tags & self._MINDLESS_TAGS)
         if effect == 'feared':
@@ -775,9 +968,12 @@ class Monster:
         rupture_dmg  = 0
         disease_tick = False
         # A bleed written straight into the statuses (a weapon's or a pet's
-        # proc, an old save) on a creature with no blood: gone, unfelt.
+        # proc, an old save) on a creature with no blood: gone, unfelt. So
+        # is a burn on a creature that fire cannot set alight.
         if self.status_effects.get('bleeding') and not self.can_bleed():
             self.status_effects.pop('bleeding', None)
+        if self.status_effects.get('burning') and self.resists_control('burning'):
+            self.status_effects.pop('burning', None)
         for name in list(self.status_effects):
             val = self.status_effects[name]
             if val > 0:
@@ -832,7 +1028,11 @@ class Monster:
                 # poison wand ignored poison resistance).
                 self.take_damage(poison_dmg, 'poison')
             if burning_dmg > 0:
-                self.take_damage(burning_dmg)
+                # Typed (round 3): a burn ticks as fire, so a creature weak
+                # to fire burns twice as fast and one that resists it at
+                # half the rate (data/affinity_rules.json). It was untyped,
+                # and a fire-resistant creature burned at the full rate.
+                self.take_damage(burning_dmg, 'fire')
             if doom_dmg > 0:
                 self.take_damage(doom_dmg, 'fire')
             if rupture_dmg > 0:
@@ -959,13 +1159,7 @@ class Monster:
         if getattr(self, '_unseen', False):
             note = "Something unseen stirs!"
         else:
-            name = self.name or 'something'
-            if (getattr(self, 'is_boss', False) or getattr(self, 'is_mini_boss', False)
-                    or getattr(self, 'proper_noun', False)
-                    or name.lower().startswith(('the ', 'a ', 'an '))):
-                what = name
-            else:
-                what = f"{'an' if name[:1].lower() in 'aeiou' else 'a'} {name}"
+            what = a_name(self)        # aware now: its own name, "an Orc", "Arachne"
             if disguised:
                 note = f"{was} springs to life -- it's {what}!"
             else:
@@ -1098,9 +1292,9 @@ class Monster:
         if not self.attacks:
             # Floating eye: gaze-based paralysis (checks sleep_resist or total blindness)
             if player.get_sight_radius() == 0:
-                return 0, f"{the_name(self)} gazes at you, but you cannot see its eyes!"
+                return 0, f"{the_name(self)} gazes at you, but you cannot see {pronouns(self)[2]} eyes!"
             if _edge_gaze_immune(player, self):
-                return 0, f"{the_name(self)} gazes at you, and you do not meet its eyes."
+                return 0, f"{the_name(self)} gazes at you, and you do not meet {pronouns(self)[2]} eyes."
             # A mirror shield (counters.py): the gaze slides off it.
             import counters as _counters
             _mirror = _counters.blocks_gaze(player, self)
@@ -1127,11 +1321,12 @@ class Monster:
             _at_range = not self._adjacent_to(player)
             import counters as _counters
             _mirror = _counters.blocks_gaze(player, self)
+            _his = pronouns(self)[2]
             # Check player's sight: total blindness negates gaze
             if player.get_sight_radius() == 0:
-                gaze_msg = f"{the_name(self)} locks eyes on you, but you are blind to her gaze!"
+                gaze_msg = f"{the_name(self)} locks eyes on you, but you are blind to {_his} gaze!"
                 if _at_range:
-                    return 0, (f"{the_name(self)} turns her face full on you. "
+                    return 0, (f"{the_name(self)} turns {_his} face full on you. "
                                f"You see nothing, and nothing happens.")
             # Proof against petrification (Medusa's trophy, the Greater
             # Aegis). The status existed but nothing consulted it: every gaze
@@ -1158,7 +1353,7 @@ class Monster:
                 # her actions, which is what CURVE.md asks of the Aegis.
                 self.status_effects['paralyzed'] = max(
                     self.status_effects.get('paralyzed', 0), 2)
-                return 0, (f"{the_name(self)} meets her own eyes in the bronze "
+                return 0, (f"{the_name(self)} meets {_his} own eyes in the bronze "
                            f"and stands rigid, snakes and all.")
             # Any other mirror shield (counters.py): watched in its face, the
             # gaze cannot take the hero (it is not the Aegis: no reflection).
@@ -1225,7 +1420,7 @@ class Monster:
             dmg, _vuln_note = self._through_material_weakness(player, dmg, atk_type)
             dmg = _edge_incoming(player, self, dmg, atk_type)
             actual = player.take_damage(dmg, atk_type)
-            return actual, (gaze_msg + f" {the_name(self)} hits you with {atk['name'].replace('_', ' ').lower()} for {actual} damage!"
+            return actual, (gaze_msg + " " + attack_line(self, atk, actual)
                             + (f" {_vuln_note}" if _vuln_note and actual > 0 else ''))
 
         # Attacking from ice: half the lunges go wide, and there is no
@@ -1290,14 +1485,15 @@ class Monster:
         """The line for a blow that misses. Only a blow that swings swings: an
         archer's arrow or a dragon's breath misses by name (playtest
         2026-10-24, "monsters that fire ranged attacks say they swing")."""
-        name = str(atk.get('name', 'attack')).replace('_', ' ').lower()
+        low = str(atk.get('name', 'attack')).replace('_', ' ').lower()
+        name = attack_noun(atk)
         who = the_name(self)
         tail = f" {note}" if note else ''
-        if any(w in name for w in _MIND_WORDS):
+        if any(w in low for w in _MIND_WORDS):
             return f"{who}'s {name} fails to take hold of you!"
-        if atk.get('ranged') or any(w in name for w in _RANGED_WORDS):
+        if atk.get('ranged') or any(w in low for w in _RANGED_WORDS):
             if confused:
-                return f"{who}'s {name} goes wild in its confusion and misses!"
+                return f"{who}'s {name} goes wild in {pronouns(self)[2]} confusion and misses!"
             return f"{who}'s {name} misses you!{tail}"
         if confused:
             return f"{who} swings wildly in confusion and misses!"
@@ -1331,7 +1527,7 @@ class Monster:
                 return 0, (f"You watch {the_name(self, lower=True)} in the bright metal of "
                            f"your shield, and the gaze slides off.")
             if getattr(player.shield, 'id', '') in ('aegis_of_athena', 'greater_aegis_of_athena'):
-                return 0, (f"{the_name(self)} catches her own eyes in the bronze "
+                return 0, (f"{the_name(self)} catches {pronouns(self)[2]} own eyes in the bronze "
                            f"and flinches away.")
         # A named counter turns any gaze aside, whatever it carries: no
         # damage and no rider (counters.py: the mirror shield, as Perseus's).
@@ -1344,7 +1540,7 @@ class Monster:
         # Breath/spit/hurl attacks miss player hiding in a pit
         is_breath = any(w in atk_name for w in ('breath', 'spit', 'hurl', 'volley'))
         if is_breath and player.has_effect('in_pit'):
-            return 0, f"{the_name(self)}'s {atk['name'].replace('_', ' ').lower()} passes harmlessly over your pit!"
+            return 0, f"{the_name(self)}'s {attack_noun(atk)} passes harmlessly over your pit!"
 
         # -- THAC0 Attack Roll ----------------------------------------------
         d20 = random.randint(1, 20)
@@ -1549,7 +1745,7 @@ class Monster:
             # Nothing to name and nothing seen swinging (src/unseen.py).
             msg = f"Something unseen strikes you for {actual} damage!"
         else:
-            msg = f"{the_name(self)} hits you with {atk['name'].replace('_', ' ').lower()} for {actual} damage!"
+            msg = attack_line(self, atk, actual)
         if _vuln_note and actual > 0:
             msg += f" {_vuln_note}"
         if _held_note and actual > 0:
@@ -1561,16 +1757,16 @@ class Monster:
         if charged:
             msg = f"{the_name(self)} CHARGES! " + msg
         if mimic_strike:
-            msg = f"{the_name(self)} ERUPTS from its disguise! " + msg
+            msg = f"{the_name(self)} ERUPTS from {pronouns(self)[2]} disguise! " + msg
 
         # Fire/cold shield: if attack was blocked (actual=0), reflect damage back
+        # Typed (round 3): its own fire turned back burns as fire, so a
+        # creature that resists fire takes less of it.
         if actual == 0 and atk_type == 'fire' and player.has_effect('fire_shield'):
-            refl = max(1, dmg // 2)
-            self.take_damage(refl)
+            refl = self.take_damage(max(1, dmg // 2), 'fire')
             msg = f"{the_name(self)}'s fire reflects back! ({refl} dmg)"
         elif actual == 0 and atk_type == 'cold' and player.has_effect('cold_shield'):
-            refl = max(1, dmg // 2)
-            self.take_damage(refl)
+            refl = self.take_damage(max(1, dmg // 2), 'cold')
             msg = f"{the_name(self)}'s cold reflects back! ({refl} dmg)"
 
         # Chain-equip passive: reflect_spell / spell_reflect (Aegis of Athena,
@@ -1582,8 +1778,7 @@ class Monster:
                 from chain_passives import get_reflect_spell_chance
                 chance = get_reflect_spell_chance(player)
                 if chance > 0 and random.random() < chance:
-                    refl = max(1, dmg)
-                    self.take_damage(refl)
+                    refl = self.take_damage(max(1, dmg), atk_type)   # typed (round 3)
                     msg += f" The {atk_type} damage reflects back! ({refl} dmg)"
             except ImportError:
                 pass
@@ -1650,7 +1845,7 @@ class Monster:
                 and not _edge_drain_block(player, self)):
             heal = max(1, int(actual * _dhs))
             self.hp = min(self.max_hp, self.hp + heal)
-            msg += f" {the_name(self)}'s wounds close as it feeds ({heal} HP regained)."
+            msg += f" {the_name(self)}'s wounds close as {pronouns(self)[0]} feeds ({heal} HP regained)."
 
         # Chain-disrupt: chance the strike interrupts the player's chain
         # build for the next attack. Sets a flag the quiz engine can read
@@ -2818,7 +3013,7 @@ class Monster:
                 break               # a blow turned back killed it, or the player is already down
             actual, m = self._resolve_blow(atk, player, in_flurry=True)
             low = m.lower()
-            label = atk['name'].replace('_', ' ').lower()
+            label = attack_noun(atk)
             tail = ''
             if actual > 0:
                 total += actual
@@ -3050,6 +3245,7 @@ class DeathMonster(Monster):
     _DEFN = {
         'id': 'death',
         'name': 'Death',
+        'pronoun': 'he',
         'symbol': 'D',
         'color': [220, 220, 255],
         'ai_pattern': 'aggressive',

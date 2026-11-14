@@ -203,17 +203,18 @@ def arrival_line(band: dict, knows_family: bool) -> str:
     return b.get('line', '')
 
 
-def observe_line(b: dict, role: str, knows: bool) -> str:
-    """What Observe says of a band member (data/war_bands.json 'observe').
-    Anyone can see who the others watch; what happens when it falls is for
-    a hero who knows the leader's kind."""
+def observe_line(b: dict, role: str, knows: bool, m=None) -> str:
+    """What Observe says of band member ``m`` (data/war_bands.json
+    'observe'), in his own pronoun. Anyone can see who the others watch;
+    what happens when he falls is for a hero who knows the leader's kind."""
+    from monster import fill
     o = data().get('observe') or {}
     if role != 'leader':
-        return o.get('member', '').replace('{name}', b.get('name', 'a band'))
+        return fill(m, o.get('member', ''), name=b.get('name', 'a band'))
     if not knows:
-        return o.get('leader', '')
+        return fill(m, o.get('leader', ''))
     morale = (o.get('morale') or {}).get(b.get('morale', 'rout'), '')
-    return ' '.join(p for p in (o.get('leader_known', ''), morale) if p)
+    return fill(m, ' '.join(p for p in (o.get('leader_known', ''), morale) if p))
 
 
 def members_of(monsters, uid: str) -> list:

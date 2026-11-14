@@ -838,7 +838,7 @@ def test_journey_04b_recall_lore_by_chain(make_game):
     h.key('n')
     h.quiz(2, 1)
     assert g._lore_hint_text == ('The Zombie is one of the restless dead. You have not studied '
-                                 'enough of its kind to remember more. Its family\'s corpses '
+                                 'enough of his kind to remember more. Corpses of his family '
                                  'would teach you.')
     h.key(pygame.K_SPACE)
     h.shift('F')                                        # QA: the family begun
@@ -853,13 +853,14 @@ def test_journey_04b_recall_lore_by_chain(make_game):
         assert g.state == 'hint'
         hints[chain] = g._lore_hint_text
         h.key(pygame.K_SPACE)
-    weak = (' Holy power hurts it badly.', ' A cutting blow hurts it badly.')   # one of the two
+    # (a zombie is "he": data/monsters.json pronoun, round 3)
+    weak = (' Holy power hurts him badly.', ' A cutting blow hurts him badly.')   # one of the two
     assert hints[1] == 'The Zombie is one of the restless dead.'
     assert hints[2] in tuple(hints[1] + w for w in weak)
-    assert hints[3] in tuple(hints[1] + w + ' It resists poison and a thrust.' for w in weak)
-    assert hints[4] in tuple(hints[1] + w + ' It resists poison and a thrust. It cannot be put '
+    assert hints[3] in tuple(hints[1] + w + ' He resists poison and a thrust.' for w in weak)
+    assert hints[4] in tuple(hints[1] + w + ' He resists poison and a thrust. He cannot be put '
                              'to sleep, poisoned or charmed.' for w in weak)
-    assert hints[5].endswith('you know the Zombie whole now. Its page is open in your Bestiary.')
+    assert hints[5].endswith('you know the Zombie whole now. His page is open in your Bestiary.')
     assert family_lore.knowledge(p, 'zombie') >= family_lore.KNOWN
     p.recall_lore_cooldown = 0
     h.key('n')

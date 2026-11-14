@@ -7,8 +7,8 @@
       "through_walls": true,
       "sees_invisible": true,
       "lines": {
-        "known": "{The} lifts its head and sniffs the air. It has your scent, and walls will not hide you from it.",
-        "seen": "{The} lifts its head, sniffs the air, and turns toward you.",
+        "known": "{The} lifts {his} head and sniffs the air. {He} has your scent, and walls will not hide you from {him}.",
+        "seen": "{The} lifts {his} head, sniffs the air, and turns toward you.",
         "unseen": "Somewhere close, something sniffs the air, and stops."
       }
     },
@@ -18,7 +18,7 @@
       "needs_motion": true,
       "sees_invisible": true,
       "lines": {
-        "known": "{The} goes still, then turns toward you. It feels your footsteps through the stone; stand still and it loses you.",
+        "known": "{The} goes still, then turns toward you. {He} feels your footsteps through the stone; stand still and {he} loses you.",
         "seen": "{The} goes very still, then turns toward you.",
         "unseen": "You feel, more than hear, something shift in the stone nearby."
       }
@@ -58,8 +58,8 @@
       "through_walls": true,
       "sees_invisible": true,
       "lines": {
-        "known": "{The} turns, as if someone had called its name. The Furies always find the guilty.",
-        "seen": "{The} turns, as if someone had called its name.",
+        "known": "{The} turns, as if someone had called {his} name. The Furies always find the guilty.",
+        "seen": "{The} turns, as if someone had called {his} name.",
         "unseen": "Somewhere, something turns, as if someone had called its name."
       }
     },
@@ -723,12 +723,12 @@
   },
   "status_lines": {
     "_doc": "What Observe (O) says of a creature's state.",
-    "asleep": "It is asleep.",
-    "unaware": "It hasn't noticed you.",
-    "searching": "It is searching for something.",
-    "hunting": "It knows where you are.",
-    "senses": "It finds its prey by {senses}.",
-    "feeding": "It is busy with a corpse."
+    "asleep": "{He} is asleep.",
+    "unaware": "{He} hasn't noticed you.",
+    "searching": "{He} is searching for something.",
+    "hunting": "{He} knows where you are.",
+    "senses": "{He} finds {his} prey by {senses}.",
+    "feeding": "{He} is busy with a corpse."
   },
   "sense_names": {
     "scent": "scent",
@@ -737,7 +737,7 @@
     "echo": "echoes",
     "mindsense": "the thoughts of others",
     "guilt": "the guilt of the hunted",
-    "master": "knowing every stone of its own house",
+    "master": "knowing every stone of {his} own house",
     "keen_sight": "very sharp eyes",
     "truesight": "eyes no magic can fool",
     "blind": "touch alone"

@@ -3,23 +3,23 @@
   "recall": {
     "family": "{The} is one of {kin}.",
     "no_family": "{The} is like nothing in the old stories.",
-    "weak": "{word_cap} hurts it badly.",
-    "no_weak": "You can recall nothing that hurts it more than any other blow.",
-    "resists": "It resists {words}.",
-    "no_resists": "It resists nothing in particular.",
-    "shrugs_one": "{words} hardly touches it.",
-    "shrugs_many": "{words} hardly touch it.",
-    "immune": "It cannot be {effects}.",
-    "nothing_more": "It shrugs off nothing, and nothing in its nature refuses a spell.",
-    "whole": "It all comes back: you know {the} whole now. Its page is open in your Bestiary.",
-    "unstudied": "You have not studied enough of its kind to remember more. Its family's corpses would teach you."
+    "weak": "{word_cap} hurts {him} badly.",
+    "no_weak": "You can recall nothing that hurts {him} more than any other blow.",
+    "resists": "{He} resists {words}.",
+    "no_resists": "{He} resists nothing in particular.",
+    "shrugs_one": "{words} hardly touches {him}.",
+    "shrugs_many": "{words} hardly touch {him}.",
+    "immune": "{He} cannot be {effects}.",
+    "nothing_more": "{He} shrugs off nothing, and nothing in {his} nature refuses a spell.",
+    "whole": "It all comes back: you know {the} whole now. {His} page is open in your Bestiary.",
+    "unstudied": "You have not studied enough of {his} kind to remember more. Corpses of {his} family would teach you."
   },
   "probe": {
     "hp": "{The}: {hp}/{max_hp} HP.",
     "weak": "Weak to: {list}.",
     "resists": "Resists: {list}.",
-    "nothing": "Nothing about it is weak or hard: every blow lands plain.",
-    "page": "Its page is open in your Bestiary now."
+    "nothing": "Nothing about {him} is weak or hard: every blow lands plain.",
+    "page": "The page for {the} is open in your Bestiary now."
   },
   "quest_teach": {
     "asterion_minotaur": {

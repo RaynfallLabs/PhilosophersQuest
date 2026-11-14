@@ -356,14 +356,29 @@ class StrayKidsMixin:
         return None
 
     def _stray_kids_hold_the_room(self, stars) -> None:
-        from monster import the_name
+        """Every creature near the show that can watch it stops: held for
+        ``watch_turns`` (the longer of the two holds, so it watches while
+        the show lasts and a moment after, never the sum of every turn's).
+        The watch line is said once, and only of one the show really held;
+        one that does not stop (a named foe, the mindless, a swarm that
+        cannot be stunned) is told once as unmoved (round 3)."""
+        from monster import fill
         d = stray_kids.data()['stars']
         visible = getattr(self, 'visible', set()) or set()
-        for m in stray_kids.watchers(self.monsters, stars, self.dungeon):
-            m.add_effect('stunned', int(d['watch_turns']))
-            if not m.__dict__.get('_sk_watching') and (m.x, m.y) in visible:
-                self.add_message(d['watch_line'].replace('{The}', the_name(m)), 'success')
-            m._sk_watching = True
+        for m in stray_kids.near_show(self.monsters, stars, self.dungeon):
+            seen = (m.x, m.y) in visible and getattr(m, '_unseen', False) is not True
+            if stray_kids.can_watch(m):
+                m.hold('stunned', int(d['watch_turns']))
+                if not m.has_effect('stunned'):
+                    continue                       # its nature or its will refused it
+                if not m.__dict__.get('_sk_watching') and seen:
+                    self.add_message(fill(m, d['watch_line']), 'success')
+                m._sk_watching = True
+            elif seen and not m.__dict__.get('_sk_unmoved'):
+                m._sk_unmoved = True
+                key = 'unmoved_named' if m._is_named_foe() else 'unmoved'
+                if d.get(key):
+                    self.add_message(fill(m, d[key]), 'info')
 
     def _stray_kids_show_tick(self) -> None:
         stars = [m for m in self.monsters if stray_kids.is_star(m) and m.alive]
@@ -384,9 +399,26 @@ class StrayKidsMixin:
         if gone:
             self.monsters[:] = [m for m in self.monsters if m not in gone]
             if len(gone) == len(stars):
-                self.add_message(d['bow'], 'success')
-                for m in self.monsters:
-                    m.__dict__.pop('_sk_watching', None)
+                self._stray_kids_bow()
+
+    def _stray_kids_bow(self) -> None:
+        """The show is over: the bow, and the room forgets it watched."""
+        self.add_message(stray_kids.data()['stars']['bow'], 'success')
+        for m in self.monsters:
+            m.__dict__.pop('_sk_watching', None)
+            m.__dict__.pop('_sk_unmoved', None)
+
+    def _stray_kids_leaving(self) -> None:
+        """The hero leaves the floor in the middle of a show: the stars came
+        for him and do not stay behind, so the show ends here with its bow
+        (a revisit never finds it running on; data/stray_kids.json
+        stars._bow_doc). Called by Game._change_level before the floor is
+        saved."""
+        monsters = getattr(self, 'monsters', None)
+        if not monsters or not any(stray_kids.is_star(m) for m in monsters):
+            return
+        monsters[:] = [m for m in monsters if not stray_kids.is_star(m)]
+        self._stray_kids_bow()
 
     def _stray_kids_star_step_past(self, star) -> None:
         """Walking into a dancer swaps places with him: the show never

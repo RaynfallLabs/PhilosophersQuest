@@ -666,6 +666,17 @@ def apply_effect(player, effect: str, duration: int) -> bool:
             return False
     if effect == 'blinded' and duration != 0 and _gall_saves_sight(player):
         return False
+    if effect == 'burning' and duration != 0:
+        # Body armour that will not catch (dragonscale: gear_rules wards
+        # 'flame') never lets the hero burn, whatever set the fire: a
+        # monster's blow (Monster._apply_attack_effect says its line), a
+        # trap, a vent, a chest (round 3, "it's fire, make it so").
+        try:
+            import gear as _gear
+            if _gear.ward_against(player, None, 'burning') is not None:
+                return False
+        except Exception:
+            pass
 
     sync_timed_grants(player)
     current = player.status_effects.get(effect, 0)

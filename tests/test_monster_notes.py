@@ -166,8 +166,11 @@ def test_splits_name_the_blows_that_split_it():
 
 
 def test_the_weakness_line():
-    assert tells.weak_line(_m('troll')) == 'Fire and acid hurt it most.'
-    assert tells.weak_line(_m('ghoul')) == 'Holy power and a cutting blow hurt it most.'
+    # In the creature's own pronoun (round 3): a troll and a ghoul are "he".
+    assert tells.weak_line(_m('troll')) == 'Fire and acid hurt him most.'
+    assert tells.weak_line(_m('ghoul')) == 'Holy power and a cutting blow hurt him most.'
+    assert tells.weak_line(_m('green_slime')).endswith('hurt it most.') or \
+        tells.weak_line(_m('green_slime')).endswith('hurts it most.')
     m = _m('ghoul')
     m.weaknesses = []
     assert tells.weak_line(m) == ''
@@ -218,7 +221,7 @@ def test_first_sight_says_more_as_the_hero_learns():
     lore = tells.lore_lines(ghoul)
     assert len(lore) == 3
     assert len(g.msgs) == 3 + len(lore)
-    assert 'distance' in g.msgs[2] and g.msgs[3] == 'Holy power and a cutting blow hurt it most.'
+    assert 'distance' in g.msgs[2] and g.msgs[3] == 'Holy power and a cutting blow hurt him most.'
     assert g.msgs[3:] == lore and 'a thrust' in lore[1] and 'put to sleep' in lore[2]
     n = len(g.msgs)
     g._maybe_tell(ghoul)
@@ -230,8 +233,8 @@ def test_a_known_kind_seen_first_gets_the_whole_line_at_once():
     hero.studied_monster_ids.add('troll')
     g = _G(hero)
     g._maybe_tell(_m('troll'))
-    assert 'do not wear it down' in g.msgs[0] and g.msgs[1] == 'Fire and acid hurt it most.'
-    assert g.msgs[2] == 'It is easily confused. Fire puts it to flight.'
+    assert 'do not wear him down' in g.msgs[0] and g.msgs[1] == 'Fire and acid hurt him most.'
+    assert g.msgs[2] == 'He is easily confused. Fire puts him to flight.'
 
 
 def test_a_known_kind_with_no_tell_is_still_told_what_it_is_made_of():

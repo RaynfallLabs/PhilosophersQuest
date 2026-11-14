@@ -71,6 +71,7 @@ added_files = [
     ('data/family_affinity.json',   'data'),   # the groups a family's habit line asks first (affinity.habit)
     ('data/monster_blood.json',     'data'),   # which creatures can bleed (monster.kind_can_bleed)
     ('data/arsenal.json',           'data'),   # coatings, flasks, Press or Guard, named counters (coatings.py)
+    ('data/combat_lines.json',      'data'),   # how a monster's attack is said in a line (monster.attack_line)
     # Game data — directories
     ('data/items',                  'data/items'),
     ('data/materials',              'data/materials'),

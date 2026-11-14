@@ -231,7 +231,7 @@ class EmberpupMixin:
         from geom import all_occupied_tiles
         d = data()
         defn = {
-            'id': d['sprite_id'], 'name': d['name'], 'symbol': 'e',
+            'id': d['sprite_id'], 'name': d['name'], 'symbol': 'e', 'pronoun': 'he',
             'color': [255, 80, 40], 'hp': 1, 'thac0': 20, 'speed': 0,
             'attacks': [], 'ai_pattern': 'sessile', 'resistances': [],
             'weaknesses': [], 'min_level': level, 'is_allied': True,

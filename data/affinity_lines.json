@@ -1,5 +1,5 @@
 {
-  "_doc": "What the game says when a hit meets a creature's weakness, its resistance or what it shrugs off, or fire puts a beast to flight (src/affinity.py; Brandon, bug bash 3.3.2: 'a whole set of pokemon style messages, so you know it when you are blocked or effective'). One line per action, chosen at random from the pool; the _many pools when several creatures were struck the same way. KNOWLEDGE DECIDES WHAT IS SAID (winning-build plan 2026-11-13, section 3.1; Brandon: 'no omniscient monsters'): the hero always FEELS a hit; knowing the creature tells him WHY. A kind he does not know (family_lore.knowledge UNKNOWN) gets a 'felt' line, which never names what met it. A kind he knows only by its family (KIN) gets the felt line and the family's habit from 'habits'. A kind he knows (KNOWN: studied, its page opened, or its family at Lore) gets the top-level pools, which name the cause. {name} is the creature with its article at a sentence start, {the} the same mid-sentence, {word} what met it (fire, silver, a cutting blow). A 'felt' line never uses {word}. A fire fright is what the eye sees (the beast backs off from the flame) and is said the same at every level. status_immune: the line when an effect cannot take hold on a creature by its nature (Monster.add_effect, status_immune in monsters.json), by effect, said to a hero who knows the creature or its family; status_immune_felt: the same for a creature he does not know, which never says why. status_immune_will: the same for a refusal that is not the kind's nature but a named foe's will (a boss, a mini-boss or a seal demon is never frightened, charmed or, for a boss, held fast: Monster.resists_control) or the galla's fury (fearless), so a creature with a mind is never said to have none. status_weak: the line when one takes hold easily (status_weak), which is what the eye sees. {effect} is the effect's name.",
+  "_doc": "What the game says when a hit meets a creature's weakness, its resistance or what it shrugs off, or fire puts a beast to flight (src/affinity.py; Brandon, bug bash 3.3.2: 'a whole set of pokemon style messages, so you know it when you are blocked or effective'). One line per action, chosen at random from the pool; the _many pools when several creatures were struck the same way. KNOWLEDGE DECIDES WHAT IS SAID (winning-build plan 2026-11-13, section 3.1; Brandon: 'no omniscient monsters'): the hero always FEELS a hit; knowing the creature tells him WHY. A kind he does not know (family_lore.knowledge UNKNOWN) gets a 'felt' line, which never names what met it. A kind he knows only by its family (KIN) gets the felt line and the family's habit from 'habits'. A kind he knows (KNOWN: studied, its page opened, or its family at Lore) gets the top-level pools, which name the cause. {name} is the creature with its article at a sentence start, {the} the same mid-sentence, {word} what met it (fire, silver, a cutting blow); {he} {He} {him} {his} {His} are the creature's own pronouns (data/monsters.json pronoun: 'it', 'he' or 'she'; src/monster.py pronoun_fill). A 'felt' line never uses {word}. A fire fright is what the eye sees (the beast backs off from the flame) and is said the same at every level. status_immune: the line when an effect cannot take hold on a creature by its nature (Monster.add_effect, status_immune in monsters.json), by effect, said to a hero who knows the creature or its family; status_immune_felt: the same for a creature he does not know, which never says why. status_immune_will: the same for a refusal that is not the kind's nature but a named foe's will (a boss, a mini-boss or a seal demon is never frightened, charmed or, for a boss, held fast: Monster.resists_control) or the galla's fury (fearless), so a creature with a mind is never said to have none. status_weak: the line when one takes hold easily (status_weak), which is what the eye sees. {effect} is the effect's name.",
   "words": {
     "slash": "a cutting blow", "pierce": "a thrust", "blunt": "a crushing blow",
     "physical": "the blow", "fire": "fire", "cold": "cold", "lightning": "lightning",
@@ -10,9 +10,9 @@
   },
   "weak": [
     "Super effective! {name} cannot bear {word}.",
-    "{name} reels: {word} is its bane!",
+    "{name} reels: {word} is {his} bane!",
     "Right where it hurts! {word_cap} finds {the}'s weakness.",
-    "{name} shrieks. It was never made to take {word}.",
+    "{name} shrieks. {He} was never made to take {word}.",
     "A telling blow! {name} has no answer to {word}.",
     "{word_cap} bites deep. {name} is weak to it!",
     "That is the way to hurt {the}: {word}!"
@@ -21,7 +21,7 @@
     "Not very effective... {name} resists {word}.",
     "{word_cap} barely troubles {the}.",
     "{name} hardly notices. Try something other than {word}.",
-    "The blow lands, but {the} takes little of it: it resists {word}.",
+    "The blow lands, but {the} takes little of it: {he} resists {word}.",
     "{name} was made to weather {word}. Not very effective.",
     "{name} turns {word} aside. Not very effective."
   ],
@@ -57,11 +57,11 @@
     "_doc": "Said of a creature the hero does not know: how the hit felt, never what caused it.",
     "weak": [
       "It's super effective!",
-      "It reels!",
+      "{He} reels!",
       "{name} reels!",
       "{name} staggers. That one went deep.",
       "A telling blow! {name} howls.",
-      "{name} shrieks. Whatever that was, it hated it.",
+      "{name} shrieks. Whatever that was, {he} hated it.",
       "That hurt {the} far more than it should have!"
     ],
     "resisted": [
@@ -73,7 +73,7 @@
       "{name} barely notices."
     ],
     "shrugs_off": [
-      "It barely felt that...",
+      "{He} barely felt that...",
       "{name} does not even slow down.",
       "Hardly a scratch!",
       "{name} takes it as if it were nothing.",
@@ -145,24 +145,24 @@
         "resisted:fire": ["A dragon breathes fire and does not burn."],
         "weak:dragonbone,dragonwood,petrified_dragon": ["Dragon bone bites dragon scale where steel will not."],
         "weak": ["Even a dragon has its bare patch."],
-        "resisted": ["Dragon scales turn most of what strikes them."],
-        "shrugs_off": ["Dragon scales turn most of what strikes them."]
+        "resisted": ["A dragon is old and vast, and very hard to hurt."],
+        "shrugs_off": ["A dragon is old and vast, and takes it as nothing."]
       },
       "giants": {
         "weak:titanforged": ["The titans' own metal was made to bring giants down."],
         "weak": ["The bigger they are, the harder they fall to the right blow."],
-        "resisted": ["A giant's hide is as thick as bark."],
+        "resisted": ["A giant takes a great deal of hurting."],
         "shrugs_off": ["A giant hardly feels what would kill a man."]
       },
       "goblinkin": {
         "weak": ["Goblinkin are flesh like men: the right blow hurts them as it would anyone."],
-        "resisted": ["Goblinkin trust their armour more than their luck."],
-        "shrugs_off": ["Goblinkin trust their armour more than their luck."]
+        "resisted": ["Goblinkin are hardier than they look."],
+        "shrugs_off": ["Goblinkin are hardier than they look."]
       },
       "mortals": {
-        "weak": ["Men and women bleed like anyone."],
-        "resisted": ["Armour is the only thing that turns a blow on a man."],
-        "shrugs_off": ["Armour is the only thing that turns a blow on a man."]
+        "weak": ["Men and women are only flesh, and flesh gives way."],
+        "resisted": ["Men and women who live by fighting come ready for harm."],
+        "shrugs_off": ["Men and women who live by fighting come ready for harm."]
       },
       "fair_folk": {
         "weak:iron,cold_iron": ["The fair folk have always feared iron.", "Iron burns the fair folk."],
@@ -172,31 +172,31 @@
       },
       "great_beasts": {
         "weak": ["Flesh and fur: a beast feels a good blow like any living thing."],
-        "resisted": ["A great beast's hide is thick, and turns some of it."],
+        "resisted": ["A great beast takes a great deal of killing."],
         "shrugs_off": ["A great beast's hide is thick, and turns most of it."]
       },
       "vermin": {
         "weak": ["Small things: the right blow ends them."],
-        "resisted": ["Some small things wear armour of their own."],
-        "shrugs_off": ["Ten thousand small things cannot be cut like one big one."]
+        "resisted": ["Some small things are tougher than they look."],
+        "shrugs_off": ["A blow meant for one big thing does little to ten thousand small ones."]
       },
       "serpents": {
         "weak:dragonbone": ["Dragon bone bites scale where steel will not."],
         "weak": ["Scale and cold blood: a serpent has its soft places."],
-        "resisted": ["Scale turns some of it."],
-        "shrugs_off": ["Scale turns most of it."]
+        "resisted": ["A serpent is harder to hurt than it looks."],
+        "shrugs_off": ["A serpent takes most of it and keeps coming."]
       },
       "birds": {
         "weak:pierce": ["An arrow brings a bird down: birds are light and hollow-boned."],
         "weak": ["Birds are light and hollow-boned."],
-        "resisted": ["Feathers and speed turn some of it aside."],
-        "shrugs_off": ["Feathers and speed turn most of it aside."]
+        "resisted": ["Creatures of the open sky weather some of it."],
+        "shrugs_off": ["Creatures of the open sky weather most of it."]
       },
       "gorgons": {
         "resisted:poison": ["The gorgons' blood is venom; poison does not hurt them."],
         "weak": ["Under the scales a gorgon is flesh, as Perseus found."],
-        "resisted": ["Scale and stony skin turn some of it."],
-        "shrugs_off": ["Scale and stony skin turn most of it."]
+        "resisted": ["A gorgon is half stone already, and feels little of it."],
+        "shrugs_off": ["A gorgon is half stone already, and feels almost none of it."]
       },
       "legend": {
         "weak": ["Every monster of the old stories fell in its own way."],
@@ -220,8 +220,8 @@
       "elementals": {
         "resisted:slash,pierce": ["Living fire, air and water close behind a blade."],
         "weak": ["Every element has its opposite."],
-        "resisted": ["An elemental closes behind a blow like a wound that was never there."],
-        "shrugs_off": ["An elemental's own element cannot harm it."]
+        "resisted": ["An elemental closes over the harm like water over a stone."],
+        "shrugs_off": ["Little of it reaches the heart of an elemental."]
       },
       "oozes": {
         "resisted:pierce": ["A jelly closes round a thrust."],
@@ -354,11 +354,11 @@
     "poisoned": ["Poison has nothing in {the} to work on.", "{name} has no blood for the poison to ride."],
     "paralyzed": ["Nothing in {the} can be held still."],
     "blinded": ["{name} has no eyes to blind."],
-    "immobilized": ["Nothing can hold {the}: it slips free."],
-    "stunned": ["{name} does not reel. There is nothing in it to stun."],
+    "immobilized": ["Nothing can hold {the}: {he} slips free."],
+    "stunned": ["{name} does not reel. There is nothing in {him} to stun."],
     "diseased": ["{name} has no flesh for the sickness to take."],
     "burning": ["{name} will not burn."],
-    "default": ["{name} is untouched by it: {effect} cannot take hold of such a thing."]
+    "default": ["{name} is untouched by it: {effect} cannot take hold of such a creature."]
   },
   "status_immune_felt": [
     "{name} is untouched by it.",

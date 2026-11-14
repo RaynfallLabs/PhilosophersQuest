@@ -522,8 +522,10 @@ _LINE_SENSES = ('scent', 'tremor', 'lifesense', 'echo', 'mindsense', 'guilt')
 
 
 def _fill(m, text: str) -> str:
-    from monster import the_name
-    t = text.replace('{The}', the_name(m)).replace('{the}', the_name(m, lower=True))
+    """The creature's name and pronouns put in (monster.fill), the first
+    letter a capital."""
+    from monster import fill
+    t = fill(m, text or '')
     return t[:1].upper() + t[1:]
 
 
@@ -793,16 +795,18 @@ def scavenge_target(m, corpses) -> tuple | None:
 # ---------------------------------------------------------------------------
 
 def status_line(m) -> str:
+    """"He is asleep.", "It knows where you are.": its state, in its own
+    pronoun (data/senses.json status_lines)."""
     lines = data()['status_lines']
     if m.has_effect('sleeping'):
-        return lines['asleep']
+        return _fill(m, lines['asleep'])
     if m.__dict__.get('_scavenge') and not m.__dict__.get('_tracking'):
-        return lines.get('feeding', lines['unaware'])
+        return _fill(m, lines.get('feeding', lines['unaware']))
     if m.__dict__.get('_tracking'):
-        return lines['hunting']
+        return _fill(m, lines['hunting'])
     if m.__dict__.get('_goal') is not None:
-        return lines['searching']
-    return lines['unaware']
+        return _fill(m, lines['searching'])
+    return _fill(m, lines['unaware'])
 
 
 def senses_line(m) -> str:
@@ -810,4 +814,4 @@ def senses_line(m) -> str:
     if not names:
         return ''
     joined = names[0] if len(names) == 1 else ', '.join(names[:-1]) + ' and ' + names[-1]
-    return data()['status_lines']['senses'].replace('{senses}', joined)
+    return _fill(m, data()['status_lines']['senses'].replace('{senses}', joined))

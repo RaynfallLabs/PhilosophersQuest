@@ -12,11 +12,12 @@ Passives are stored on `player.hero_passives: set[str]` and checked at
 hook sites in combat.py, player.py, game_menus.py, and main.py.
 """
 from __future__ import annotations
+from naming import quantity
 import random
 from floor_curve import power_share as _power_share, target_hp as _target_hp, wound as _wound
 from pet_system import growth as _pet_growth
 from geom import monster_at_tile
-from monster import the_name
+from monster import the_name, pronouns
 
 
 # A hero's healing power restores at least this share of their own health per
@@ -602,7 +603,7 @@ def _eff_confuse_visible(game, special, tier, chain):
         if tier.get('slow_too'):
             cur = m.status_effects.get('slowed', 0)
             m.status_effects['slowed'] = max(cur, dur)
-        game.add_message(f"{the_name(m)} questions everything it knows.", 'success')
+        game.add_message(f"{the_name(m)} questions everything {pronouns(m)[0]} knows.", 'success')
 
 
 def _eff_self_heal(game, special, tier, chain):
@@ -650,11 +651,13 @@ def _eff_self_aoe_fire(game, special, tier, chain):
         if max(abs(m.x - px), abs(m.y - py)) <= radius:
             # A share of the creature's own health (floor_curve.power_share).
             dmg = _wound(_power_share(roll(dice)), m.max_hp, _named_or_huge(m))
-            m.take_damage(dmg)
+            # Stolen flame is fire (round 3): typed, so a creature weak to
+            # it takes more and one that resists it less; and it sets alight
+            # only what fire can burn (Monster.hold, resists_control).
+            m.take_damage(dmg, 'fire')
             hits += 1
             if m.alive and burn and not is_boss_or_huge(m):
-                cur = m.status_effects.get('burning', 0)
-                m.status_effects['burning'] = max(cur, burn)
+                m.hold('burning', burn)
             if not m.alive:
                 game._on_monster_killed(m)
     game.add_message(
@@ -682,7 +685,7 @@ def _eff_self_buff_stand(game, special, tier, chain):
         int(getattr(game.player, '_stand_counter_pct', 0)), counter_pct)
     game.add_message(
         f"Spartan Stand! AC -{game.player._stand_ac_bonus} and "
-        f"{game.player._stand_counter_pct}% counter, {dur} turns.",
+        f"{game.player._stand_counter_pct}% counter, {quantity(dur, 'turn')}.",
         'success')
 
 
@@ -888,7 +891,7 @@ def _eff_self_buff_berserk(game, special, tier, chain):
         # limit.
         game.player.apply_stat_bonus('STR', str_bonus)
         game.player._ash_berserk_str_granted = True
-    game.add_message(f"Ash roars: \"Le's GO!\" Berserk for {dur} turns.", 'success')
+    game.add_message(f"Ash roars: \"Le's GO!\" Berserk for {quantity(dur, 'turn')}.", 'success')
 
 
 def _eff_gain_ammo(game, special, tier, chain):
@@ -961,7 +964,7 @@ def _eff_paralyze_target(game, special, tier, chain):
     if slow:
         cur = target.status_effects.get('slowed', 0)
         target.status_effects['slowed'] = max(cur, slow)
-    game.add_message(f"{the_name(target)} freezes in its loop.", 'success')
+    game.add_message(f"{the_name(target)} freezes in {pronouns(target)[2]} loop.", 'success')
 
 
 def _eff_summon_sketch_helper(game, special, tier, chain):
@@ -991,7 +994,7 @@ def _eff_summon_sketch_helper(game, special, tier, chain):
     pet = SketchedPet(_Helper(), *spot, dur)
     game.pets.append(pet)
     game.add_message(
-        f"From the page leaps a Mechanical Helper! ({dur} turns)", 'success')
+        f"From the page leaps a Mechanical Helper! ({quantity(dur, 'turn')})", 'success')
 
 
 def _eff_heal_and_crit_buff(game, special, tier, chain):
@@ -1010,7 +1013,7 @@ def _eff_heal_and_crit_buff(game, special, tier, chain):
         cur = game.player.status_effects.get('crit_buff', 0)
         game.player.status_effects['crit_buff'] = max(cur, crit_turns)
     game.add_message(
-        f"The Maid's Standard! +{heal} HP; your next strike deals +50% damage (within {crit_turns} turns).",
+        f"The Maid's Standard! +{heal} HP; your next strike deals +50% damage (within {quantity(crit_turns, 'turn')}).",
         'success')
 
 
