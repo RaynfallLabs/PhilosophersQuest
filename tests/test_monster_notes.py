@@ -244,7 +244,9 @@ def test_a_known_kind_with_no_tell_is_still_told_what_it_is_made_of():
     assert g.msgs == []
     hero.studied_monster_ids.add(plain)
     g._maybe_tell(_m(plain))
-    assert g.msgs == tells.lore_lines(_m(plain))
+    # Named first, so the lines' "it" stands for someone (bug bash WB-E02).
+    assert g.msgs == [tells.known_lead(_m(plain))] + tells.lore_lines(_m(plain))
+    assert _m(plain).name.lower() in g.msgs[0].lower()
 
 
 def test_a_save_from_before_the_versions_still_says_the_known_line():

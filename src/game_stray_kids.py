@@ -193,7 +193,10 @@ class StrayKidsMixin:
             act = text.strip('*')
             self.add_message(f"{who} {act[:1].lower()}{act[1:]}.", kind)
         else:
-            self.add_message(f'{who}: "{text}"', kind)
+            # A song title quoted inside the shout takes single quotes:
+            # ""Thunderous"! Stop nagging me" read as an empty quote and a
+            # stray one (bug bash WB-E05). The bubble keeps the line as is.
+            self.add_message(f'{who}: "{text.replace(chr(34), chr(39))}"', kind)
         try:
             import pygame
             now = pygame.time.get_ticks()
