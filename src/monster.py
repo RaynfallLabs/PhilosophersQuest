@@ -707,7 +707,10 @@ class Monster:
         tags = set(self.tags or ())
         mindless = bool(tags & self._MINDLESS_TAGS)
         if effect == 'feared':
-            return mindless or self._is_named_foe()
+            # The galla never give up the chase, and nothing frightens them
+            # (`fearless`): a flask, a mass spell or a fright from fire
+            # never says one is Feared (bug bash WB-B02).
+            return mindless or self._is_named_foe() or bool(getattr(self, 'fearless', False))
         if effect == 'charmed':
             # The undead take no charm, except from Isildur's heir: the Helm of
             # Aragorn's command (_oathbound, set with its charm and gone when

@@ -541,10 +541,14 @@ are documented in [status_effects](status_effects.md).
 - **`disintegrate_spell`** (T5) — 50% instakill vs non-bosses, else
   `spell.power` (10d8) damage scaled by `_spell_damage`.
 - **`imprisonment`** (T5) — paralyze a target up to 60 turns (effectively
-  removes from combat; `MAX_EFFECT_DURATION` caps the display).
+  removes from combat; `MAX_EFFECT_DURATION` caps the display). Through
+  `Game._inflict`: a big foe's roll, what the creature's nature refuses (a
+  swarm cannot be held still) and a named foe's two-turn cap, and the line
+  says the turns that really hold.
 - **`banishment`** (T4) — sends the target to its home plane if it carries
   any of `{fey, demon, celestial, elemental}` tags and is not a boss;
-  otherwise a brief consolation paralyze. A banished creature is marked
+  otherwise a brief consolation paralyze (not on a creature that cannot be
+  held still: the line says it stays). A banished creature is marked
   `_banished`: the next turn's reaper runs `_on_monster_killed` for it,
   which leaves no corpse and no "is slain" line. Its loot, the kill count,
   kill quirks and the Seeker's kill event still fire (open ruling, bug

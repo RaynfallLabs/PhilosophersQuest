@@ -21,7 +21,9 @@ How a kind is resolved (data/family_affinity.json `_schema`):
     every kind that is not unholy (undead, demon, or named cursed).
   * STATUS: family list, replaced by the group's or kind's when given; the
     tag rules add immunities; anything immune leaves status_weak; the
-    fear_of_fire token is not kept on a kind that resists fire.
+    fear_of_fire token is not kept on a kind that resists fire, nor on a
+    named foe (a boss, mini-boss or seal demon is never routed:
+    Monster.resists_control, Monster._after_typed_hit).
 tests/test_affinity_lore.py checks monsters.json equals resolve_all() of
 itself, so a kind added by hand without running this pass is caught.
 """
@@ -150,7 +152,11 @@ def resolve(kind: str, m: dict, prof: dict) -> dict:
             if e not in immune:
                 immune.append(e)
     weak = [e for e in weak if e not in immune]
-    if 'fear_of_fire' in weak and ('fire' in out['resistances'] or 'fire' in out['shrugs_off']):
+    # Fire routs nothing that resists it, and no named foe: he is too wilful
+    # to be put to flight (Monster.resists_control), so on him the token was
+    # only a line that lied ("Fire puts it to flight."; bug bash WB-B03).
+    if 'fear_of_fire' in weak and ('fire' in out['resistances'] or 'fire' in out['shrugs_off']
+                                   or is_named(m)):
         weak.remove('fear_of_fire')
     out['status_immune'] = immune
     out['status_weak'] = weak

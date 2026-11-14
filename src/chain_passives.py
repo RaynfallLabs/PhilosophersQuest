@@ -385,16 +385,17 @@ def apply_fear_auras(player, monsters, visible) -> int:
         if has_awe and not getattr(m, '_saw_awe', False):
             m._saw_awe = True
             # 50% save vs fear; failures get a brief fear
+            # (Counted only when it takes hold: a golem has no mind to
+            # frighten and a named foe stands, Monster.add_effect.)
             if random.random() < 0.50:
-                if hasattr(m, 'add_effect'):
-                    m.add_effect('feared', duration)
+                if hasattr(m, 'add_effect') and m.add_effect('feared', duration):
                     feared += 1
         if has_glare or has_no_man:
             # Glare/no_man fires every turn at 25% / 40% chance
             base = 0.40 if has_no_man else 0.25
             if random.random() < base:
-                if hasattr(m, 'add_effect') and not m.has_effect('feared'):
-                    m.add_effect('feared', duration)
+                if (hasattr(m, 'add_effect') and not m.has_effect('feared')
+                        and m.add_effect('feared', duration)):
                     feared += 1
     return feared
 

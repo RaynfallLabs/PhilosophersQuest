@@ -578,7 +578,10 @@ def test_apply_fear_auras_aura_of_awe_attempts(monkeypatch):
             self.x, self.y, self.alive = 10, 10, True
             self.status_effects = {}
         def add_effect(self, n, d):
+            # As Monster.add_effect: the turns it now has (0 when refused).
+            # The aura counts only what takes hold (bug bash WB-B06).
             self.status_effects[n] = d
+            return d
         def has_effect(self, n):
             return self.status_effects.get(n, 0) > 0
 

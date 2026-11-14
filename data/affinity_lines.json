@@ -1,5 +1,5 @@
 {
-  "_doc": "What the game says when a hit meets a creature's weakness, its resistance or what it shrugs off, or fire puts a beast to flight (src/affinity.py; Brandon, bug bash 3.3.2: 'a whole set of pokemon style messages, so you know it when you are blocked or effective'). One line per action, chosen at random from the pool; the _many pools when several creatures were struck the same way. KNOWLEDGE DECIDES WHAT IS SAID (winning-build plan 2026-11-13, section 3.1; Brandon: 'no omniscient monsters'): the hero always FEELS a hit; knowing the creature tells him WHY. A kind he does not know (family_lore.knowledge UNKNOWN) gets a 'felt' line, which never names what met it. A kind he knows only by its family (KIN) gets the felt line and the family's habit from 'habits'. A kind he knows (KNOWN: studied, its page opened, or its family at Lore) gets the top-level pools, which name the cause. {name} is the creature with its article at a sentence start, {the} the same mid-sentence, {word} what met it (fire, silver, a cutting blow). A 'felt' line never uses {word}. A fire fright is what the eye sees (the beast backs off from the flame) and is said the same at every level. status_immune: the line when an effect cannot take hold on a creature by its nature (Monster.add_effect, status_immune in monsters.json), by effect, said to a hero who knows the creature or its family; status_immune_felt: the same for a creature he does not know, which never says why. status_weak: the line when one takes hold easily (status_weak), which is what the eye sees. {effect} is the effect's name.",
+  "_doc": "What the game says when a hit meets a creature's weakness, its resistance or what it shrugs off, or fire puts a beast to flight (src/affinity.py; Brandon, bug bash 3.3.2: 'a whole set of pokemon style messages, so you know it when you are blocked or effective'). One line per action, chosen at random from the pool; the _many pools when several creatures were struck the same way. KNOWLEDGE DECIDES WHAT IS SAID (winning-build plan 2026-11-13, section 3.1; Brandon: 'no omniscient monsters'): the hero always FEELS a hit; knowing the creature tells him WHY. A kind he does not know (family_lore.knowledge UNKNOWN) gets a 'felt' line, which never names what met it. A kind he knows only by its family (KIN) gets the felt line and the family's habit from 'habits'. A kind he knows (KNOWN: studied, its page opened, or its family at Lore) gets the top-level pools, which name the cause. {name} is the creature with its article at a sentence start, {the} the same mid-sentence, {word} what met it (fire, silver, a cutting blow). A 'felt' line never uses {word}. A fire fright is what the eye sees (the beast backs off from the flame) and is said the same at every level. status_immune: the line when an effect cannot take hold on a creature by its nature (Monster.add_effect, status_immune in monsters.json), by effect, said to a hero who knows the creature or its family; status_immune_felt: the same for a creature he does not know, which never says why. status_immune_will: the same for a refusal that is not the kind's nature but a named foe's will (a boss, a mini-boss or a seal demon is never frightened, charmed or, for a boss, held fast: Monster.resists_control) or the galla's fury (fearless), so a creature with a mind is never said to have none. status_weak: the line when one takes hold easily (status_weak), which is what the eye sees. {effect} is the effect's name.",
   "words": {
     "slash": "a cutting blow", "pierce": "a thrust", "blunt": "a crushing blow",
     "physical": "the blow", "fire": "fire", "cold": "cold", "lightning": "lightning",
@@ -250,7 +250,7 @@
       "celestials": {
         "resisted:magic": ["Magic touches heaven's own very little."],
         "weak:shadowiron": ["Heaven's own fear the shadow."],
-        "weak": ["Heaven's own fear the shadow and the death-magic."],
+        "weak": ["Even heaven's own can be wounded, and that blow found the place."],
         "resisted": ["Heaven's own are not hurt the way the fallen are."],
         "shrugs_off": ["Heaven's own are not hurt the way the fallen are."]
       }
@@ -365,6 +365,12 @@
     "It takes no hold on {the}.",
     "Nothing happens to {the}."
   ],
+  "status_immune_will": {
+    "feared": ["{name} will not be frightened.", "{name} stands firm, unafraid."],
+    "charmed": ["{name} is far too wilful to be charmed."],
+    "immobilized": ["Nothing can hold {the}."],
+    "default": ["{name} is far too wilful for that."]
+  },
   "status_nouns": {
     "feared": "Fear", "charmed": "Charm", "confused": "Confusion", "sleeping": "Sleep",
     "poisoned": "Poison", "paralyzed": "Paralysis", "blinded": "Blinding", "immobilized": "Being Held",

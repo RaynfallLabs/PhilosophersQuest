@@ -464,6 +464,10 @@ class CombatMixin:
             if _tk:
                 _affinity.note(monster, _tk, affinity_word(weapon, monster, _tk))
             actual = monster.take_damage(dmg)
+            # A thrown weapon of fire or acid does what any fire or acid hit
+            # does (a troll's wound stays open, a beast that fears fire runs).
+            from combat import elemental_blow_after
+            elemental_blow_after(monster, weapon, actual)
             # A coating on it is spent as a blow's would be (coatings.py).
             import coatings as _coatings
             _coatings.after_blow(self.player, monster, weapon, actual)

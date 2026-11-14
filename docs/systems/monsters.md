@@ -129,7 +129,7 @@ A single key in `data/monsters.json`. The id is the JSON key; the id is also wri
 |---|---|---|
 | `after_theft` | str | default `"flee"` | What a thief does once it holds a haul: `"flee"` runs from the hero, `"teleport"` first vanishes to a far part of the floor (the leprechauns). See `theft.py`. |
 | `disguise` | dict | default none | What an un-sprung `mimic`-AI creature is drawn as: `{"item": <item sprite id>, "name": ...}` (a chest) or `{"tile": "stairs_down", "name": ...}` (the Hellmouth, seated by `false_stairs.py`). Read by `unseen.disguise`; shown in the bestiary as "Poses as". |
-| `fearless` | bool | default False | Never flees and cannot be frightened (`feared` is stripped each turn). The galla. |
+| `fearless` | bool | default False | Never flees and cannot be frightened (`Monster.resists_control` refuses `feared`, and it is stripped each turn). The galla. The Bestiary says "Fearless" only once the kind is known, like its other immunities. |
 | `kill_chronicle` | str | default "" | The Journal line written when this mini-boss dies, instead of the generic one (`game_combat` kill handler). |
 | `kill_pair` / `kill_pair_chronicle` | str / str | default "" | A named pair: the partner's monster id, and a second Journal line written only when the second of the two dies (after her own `kill_chronicle`). Stheno and Euryale (MON-10). |
 | `pack_size` | [min, max] | default none | Fixes a lore pack's number, leader included (the three Furies, Keres three to five). Overrides the depth-scaled pack roll in `dungeon._spawn_one_in_room`. |
@@ -194,7 +194,7 @@ An `attacks[]` is a list of attack dicts. One is picked each turn (`random.choic
 - `weaknesses: [str]` — damage types that get `×2` (`×1.5` until the 2026-11-13 lore pass).
 - `shrugs_off: [str]` — damage types that get `×0.25` (a swarm against a sword, a shade against any blow). No full immunity.
 - `status_immune: [str]` — effects that never take hold (`Monster.add_effect` refuses them; the line says why).
-- `status_weak: [str]` — effects that take hold without a big foe's resist roll and last `×1.5`; the token `fear_of_fire` makes a fire hit put it to flight.
+- `status_weak: [str]` — effects that take hold without a big foe's resist roll and last `×1.5`; the token `fear_of_fire` makes a fire hit put it to flight (never written on a named foe, who is never routed).
 - All five are written from lore by `tools/content/affinity_pass.py` out of `data/family_affinity.json`: edit the profile and rerun the pass, never the lists by hand (`tests/test_affinity_lore.py` checks they match). Numbers in `data/affinity_rules.json`.
 - `base_resistances: [str]` — Abaddon-only, used while the locust-ring quest step is active.
 
