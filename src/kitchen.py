@@ -427,13 +427,23 @@ def dish_effects(player, rec: dict) -> list:
         bonus = f" (+{out['ward']})" if out['ward'] else ''
         lines.append(f"{label}{bonus}, {quantity(out['turns'], 'turn')}")
     room = max_hp_room(player)
-    perm = out['permanent']
     if tab == 'hp' or room > 0:
         gain = min(out['max_hp'], room)
         if gain > 0:
             lines.append(f"+{gain} Max HP")
         elif tab == 'hp':
             lines.append("Max HP full this floor")
+    lines.extend(_lasting_lines(player, out))
+    if tab != 'sp':
+        lines.append(f"+{sp_shown} SP")
+    return lines
+
+
+def _lasting_lines(player, out: dict) -> list:
+    """The part of ``dish_effects`` that lasts for good: a feast's permanent
+    gift, then each boss trophy's own power."""
+    lines = []
+    perm = out['permanent']
     if perm:
         kind, val = perm
         if kind == 'max_hp':
@@ -448,9 +458,15 @@ def dish_effects(player, rec: dict) -> list:
             lines.append(f"{power_label(val)} for good")
     for pw in out['trophy_powers']:
         lines.append(TROPHY_POWER_LINES.get(pw, 'A lasting power'))
-    if tab != 'sp':
-        lines.append(f"+{sp_shown} SP")
     return lines
+
+
+def dish_lasting(player, rec: dict) -> list:
+    """The lines of ``dish_effects`` that last for good (a legendary feast's
+    permanent bonus, a boss trophy's power), in the same words: the cook
+    menu shows them under their own heading, apart from what the dish does
+    now."""
+    return _lasting_lines(player, dish_outcome(rec))
 
 
 def _stat_line(player, out: dict) -> str:
@@ -581,6 +597,19 @@ def opening_tab(player, inventory) -> str:
     40%) with spells known: MP; else Stat while the floor's lesson is open
     and a stat dish would teach; else the tab with the most dishes ready
     (with none ready, the tab with the most rows)."""
+    return opening_choice(player, inventory)[0]
+
+
+# Why the cook menu opened on its tab: ``opening_choice``'s second value.
+OPEN_REASONS = ('hurt', 'hungry', 'mana', 'lesson', 'most_ready', 'most_rows', 'nothing')
+
+
+def opening_choice(player, inventory) -> tuple:
+    """``(tab, why)``: the tab ``opening_tab`` opens on, and why, so the menu
+    can say it ("You are hurt"): 'hurt', 'hungry', 'mana', 'lesson',
+    'most_ready' (the tab with the most dishes ready), 'most_rows' (nothing
+    ready anywhere: the tab with the most dishes being built toward) or
+    'nothing' (no rows in any tab)."""
     counts = held_counts(inventory)
     ready = {t: [] for t in MENU_TABS}
     for rec in book():
@@ -591,20 +620,20 @@ def opening_tab(player, inventory) -> str:
         mx = int(mx or 0)
         return 1.0 if mx <= 0 else float(cur or 0) / mx
     if ready['hp'] and frac(getattr(player, 'hp', 0), getattr(player, 'max_hp', 0)) < 0.5:
-        return 'hp'
+        return 'hp', 'hurt'
     if ready['sp'] and frac(getattr(player, 'sp', 0), getattr(player, 'max_sp', 0)) < 0.3:
-        return 'sp'
+        return 'sp', 'hungry'
     if (ready['mp'] and getattr(player, 'known_spells', None)
             and frac(getattr(player, 'mp', 0), getattr(player, 'max_mp', 0)) < 0.4):
-        return 'mp'
+        return 'mp', 'mana'
     if any(_would_teach(player, r) for r in ready['stat']):
-        return 'stat'
+        return 'stat', 'lesson'
     best = max(MENU_TABS, key=lambda t: (len(ready[t]), -MENU_TABS.index(t)))
     if ready[best]:
-        return best
+        return best, 'most_ready'
     sizes = {t: len(menu_rows(player, inventory, t)) for t in MENU_TABS}
     best = max(MENU_TABS, key=lambda t: (sizes[t], -MENU_TABS.index(t)))
-    return best if sizes[best] else 'hp'
+    return (best, 'most_rows') if sizes[best] else ('hp', 'nothing')
 
 
 # ----------------------------------------------------------------------

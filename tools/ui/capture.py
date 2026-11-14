@@ -1551,6 +1551,121 @@ for _name, _key, _uni, _state, _desc, _iskey in (
     SCENES.append(Scene(_name, 'Menus', _desc, _mk(), 'game', _state, '', _iskey))
 
 
+# -- The cook menu (the kitchen rebuild, K2) -------------------------------------
+
+# One part of each nature and a ration or two: every tab has dishes ready and
+# dishes to build toward (Stat opens: the floor's lesson is open).
+COOK_EVERY_TAB = [('death_dog_prime', 1), ('giant_lizard_prime', 1), ('cave_bear_prime', 1),
+                  ('giant_beetle_prime', 1), ('green_slime_prime', 1), ('battle_mage_prime', 1),
+                  ('crystal_ooze_prime', 1), ('homunculus_prime', 1), ('bone_witch_prime', 1),
+                  ('goblin_prime', 2), ('cobra_prime', 1), ('fire_beetle_prime', 1),
+                  ('bread_ration', 2)]
+# Asterion's trophy and three of the four other parts of the Bull-King's
+# Wrath Feast: the trophy's own dish is ready, the feast is 4 of 5.
+COOK_LEGENDARY = [('asterion_minotaur_trophy', 1), ('seal_demon_wrath_prime', 1),
+                  ('death_knight_prime', 1), ('wild_mushroom', 1), ('cobra_prime', 1),
+                  ('giant_mantis_prime', 1), ('bread_ration', 1)]
+
+
+def _cook_pack(g, spec):
+    """The pack's food and ingredients replaced by ``spec`` ([(id, count)]):
+    an ingredient by id (food_system.load_ingredient_for), else a food."""
+    from items import Food, Ingredient, load_items
+    from food_system import load_ingredient_for
+    p = g.player
+    p.inventory = [i for i in p.inventory if not isinstance(i, (Food, Ingredient))]
+    foods = {f.id: f for f in load_items('food')}
+    for iid, n in spec:
+        it = load_ingredient_for(iid) or copy.copy(foods[iid])
+        it.count = n
+        p.inventory.append(it)
+
+
+def _cook_open(g, spec, tab=None, select=None):
+    """C with ``spec`` in the pack; then Right until ``tab`` shows, and Down
+    until the row whose id is ``select`` is chosen (real keys)."""
+    _cook_pack(g, spec)
+    press(g, pygame.K_c, 'c')
+    if tab is not None:
+        for _ in range(5):
+            if g._cook_tab_slug() == tab:
+                break
+            press(g, pygame.K_RIGHT)
+    if select is not None:
+        ids = [r['id'] for r in g._cook_tab_rows()]
+        for _ in range(ids.index(select)):
+            press(g, pygame.K_DOWN)
+
+
+for _tab in ('hp', 'sp', 'mp', 'stat', 'special'):
+    def _mk_cook(tab=_tab):
+        def _setup(g):
+            _cook_open(g, COOK_EVERY_TAB, tab)
+        return _setup
+    SCENES.append(Scene(f'menu_cook_tab_{_tab}', 'Menus',
+                        f'C with a part of every kind, Left/Right to the {_tab.upper()} tab: '
+                        'dishes ready and dishes being built toward.',
+                        _then_popups(_mk_cook()), 'game', 'cook_menu'))
+
+
+@scene('menu_cook_building', 'Menus', 'C, the SP tab, Down to a dish being built toward: '
+       'greyed, "2 of 4", what is missing named.', expect='cook_menu')
+def _(g):
+    _cook_open(g, COOK_EVERY_TAB, 'sp', 'dish_221')
+
+
+@scene('menu_cook_not_ready', 'Menus', 'C, a dish being built toward, Enter: it says what '
+       'is still needed and cooks nothing.', expect='cook_menu')
+def _(g):
+    _cook_open(g, COOK_EVERY_TAB, 'hp', 'dish_060')
+    press(g, pygame.K_RETURN)
+
+
+@scene('menu_cook_legendary', 'Menus', "C holding Asterion's trophy and three parts of a feast: "
+       'the Legendary Feasts section, a feast 4 of 5 chosen (gold frame).', expect='cook_menu')
+def _(g):
+    _cook_open(g, COOK_LEGENDARY, 'stat', 'feast_01')
+
+
+@scene('menu_cook_legendary_ready', 'Menus', "C holding Asterion's trophy: its dish, ready, "
+       'chosen in Legendary Feasts.', expect='cook_menu')
+def _(g):
+    _cook_open(g, COOK_LEGENDARY, 'stat', 'trophy_asterion_minotaur_recipe')
+
+
+@scene('menu_cook_hurt', 'Menus', 'C while hurt (a quarter of max HP): it opens on HP and '
+       'says why.', expect='cook_menu')
+def _(g):
+    g.player.hp = max(1, g.player.max_hp // 4)
+    _cook_open(g, COOK_EVERY_TAB)
+
+
+@scene('menu_cook_no_mana', 'Menus', 'C with spells known and no MP: it opens on MP and '
+       'says why.', expect='cook_menu')
+def _(g):
+    g.player.mp = 0
+    _cook_open(g, COOK_EVERY_TAB)
+
+
+@scene('menu_cook_empty_tab', 'Menus', 'C holding only goblin gristle, Right to MP: an empty '
+       'tab says so and names the tab that has something.', expect='cook_menu')
+def _(g):
+    _cook_open(g, [('goblin_prime', 1)], 'mp')
+
+
+@scene('menu_cook_long', 'Menus', 'C with a pack full of parts, End: a long list, scrolled '
+       'to its last dish.', expect='cook_menu')
+def _(g):
+    many = COOK_EVERY_TAB + [(i, 1) for i in (
+        'giant_rat_prime', 'harpy_prime', 'bullywug_prime', 'dretch_prime', 'giant_frog_prime',
+        'hollow_one_prime', 'gelatinous_cube_prime', 'boggart_prime', 'bugbear_prime',
+        'carrion_crawler_prime', 'darkmantle_prime', 'gas_spore_prime', 'giant_centipede_prime',
+        'gibbering_mouther_prime', 'hecate_hound_prime', 'hobgoblin_prime', 'bandit_captain_prime',
+        'hard_cheese', 'wild_mushroom', 'dried_meat')]
+    _cook_open(g, many, 'sp')
+    press(g, pygame.K_END)
+
+
 @scene('menu_drop', 'Menus', 'D (off an altar/fountain): drop.', expect='drop_menu')
 def _(g):
     g._open_drop_menu()

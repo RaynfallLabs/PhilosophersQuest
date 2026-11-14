@@ -592,7 +592,13 @@ def test_journey_save_the_gristle_for_a_dish_two_floors_down():
     g.player.sp = 10
     press(pygame.K_c, 'c')
     assert g.state == STATE_COOK_MENU
-    idx = next(i for i, r in enumerate(g.cook_compound_recipes) if r['id'] == 'dish_094')
+    # The hotpot is an SP dish: Right until the SP tab shows, then down to it.
+    for _ in range(len(kitchen.MENU_TABS)):
+        if g._cook_tab_slug() == 'sp':
+            break
+        press(pygame.K_RIGHT)
+    assert g._cook_tab_slug() == 'sp'
+    idx = next(i for i, r in enumerate(g._cook_tab_rows()) if r['id'] == 'dish_094')
     for _ in range(idx):
         press(pygame.K_DOWN)
     press(pygame.K_RETURN)

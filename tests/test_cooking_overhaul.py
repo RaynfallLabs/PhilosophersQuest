@@ -152,5 +152,6 @@ def test_cook_menu_with_nothing_cookable_says_so():
     g.player.inventory = []
     g.state = STATE_PLAYER
     g._open_cook_menu()
-    assert g.cook_compound_recipes == []
     assert g.state == STATE_PLAYER
+    texts = [str(e[0]) for e in g.msg_log.entries[-3:]]
+    assert any('nothing to cook' in t.lower() for t in texts), texts

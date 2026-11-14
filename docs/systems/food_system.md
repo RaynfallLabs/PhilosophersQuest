@@ -1,8 +1,8 @@
 # Food System: the Kitchen
 
 **Status:** The kitchen rebuild (2026-11-14, `COOKING_REBUILD_PLAN_2026_11_14.md`, slice K1:
-data, engine and menu functions; K2 builds the tabbed cook screen on them). Harvest and the cook
-are one question each, as since v2.6 (harvest v4, cook v2).
+data, engine and menu functions; slice K2: the tabbed cook menu built on them, `ui.md` §13).
+Harvest and the cook are one question each, as since v2.6 (harvest v4, cook v2).
 
 **Owner:** Brandon (RaynfallLabs).
 
@@ -35,7 +35,8 @@ mode, a T1-T5 stack of parts), the potency formulas, the Single tab.
 | `src/kitchen.py` | Pure (no pygame). The book (`book`, `recipe`, `single_dish_for`, `dishes_with`), kin (`ingredient_for_monster`, `resolve`), a dish's numbers (`dish_outcome`, `dish_tab`, `dish_tier`, `dish_worth`), applying one (`apply_dish`, `salvage_dish`), the menu functions (`MENU_TABS`, `dish_effects`, `menu_rows`, `opening_tab`), the Kit line (`nature_line`), old saves (`migrate_ingredient`, `merge_stacks`). |
 | `src/food_system.py` | The two quiz flows: `harvest_corpse`, `cook_compound_recipe` (and the unreached `cook_ingredient`); `_apply_recipe_outcome` (right: `kitchen.apply_dish`; wrong: ruined, or Persephone's salvage); the trophy powers (`_apply_permanent_power`); eating (`eat_food`, `eat_raw`); potions (`drink_potion`); `make_corpse`. |
 | `src/main.py` | `Game._harvest`, `Game._cook_compound` (the quirk callback), `Game._cook_item` (unreached safety net), `_outcome_bonus_category` (Circe), `_migrate_legacy_ingredients` (old saves), the encyclopedia's Recipes page. |
-| `src/game_menus.py` / `src/game_render.py` | The cook menu (`_open_cook_menu`, `_draw_cook_menu`, `_menu_recipe_detail_lines`): today one list of every dish the pack can cook; K2 replaces it with the tabbed menu. The corpse dossier's "Harvest: X" line. |
+| `src/game_menus.py` / `src/game_render.py` | The cook menu (`_open_cook_menu`, `_cook_menu_input`, `_draw_cook_menu`): a tab per main benefit, each with Ready to Cook, Building Toward and Legendary Feasts, the chosen dish's picture large (`ui.md` §13). The corpse dossier's "Harvest: X" line. |
+| `src/cook_menu.py` | Pure: the cook menu's words (why it opened where, a row's chip and second line, what to do about a missing part, the empty tab's line) and the list window. |
 | `src/player.py` | The caps: `feed_cut_stat(stat, lessons)` (the floor's stat lesson), `cut_stat_block`, `try_apply_cook_hp_gain`, `try_apply_cook_stat_gain`, `cooking_softcap`, `cooking_stat_softcap`, `food_taught`, `reset_floor_cook_caps`; `cooking_mp_gained` (max MP from feasts, read with `getattr`). |
 | `src/status_effects.py` | `apply_effect(..., cap=)`: a meal's power may run past the usual 60 turns, up to its `max_turns`. |
 | `data/items/ingredient.json` | Every ingredient (§3). Built. |
@@ -260,8 +261,12 @@ Tooth: STR...), at 1.5x.
 - `opening_tab(player, inventory)`: among tabs with a dish ready — HP under half: hp; SP under
   30%: sp; MP under 40% with spells known: mp; else stat while the floor's lesson is open and a
   stat dish would teach; else the tab with the most dishes ready (with none ready, the most rows).
-- `held_counts(inventory)` counts stacks, rations and old ids; `ready_dishes(inventory)` is what
-  `food_system.get_available_compound_recipes` (today's flat menu) returns.
+  `opening_choice` gives the same tab and why (`OPEN_REASONS`: 'hurt', 'hungry', 'mana',
+  'lesson', 'most_ready', 'most_rows', 'nothing'), so the menu can say it.
+- `dish_lasting(player, recipe)`: the lines of `dish_effects` that last for good (a feast's
+  permanent bonus, a boss trophy's power), shown under their own heading.
+- `held_counts(inventory)` counts stacks, rations and old ids; `ready_dishes(inventory)` (every
+  dish the pack can cook) is what `food_system.get_available_compound_recipes` returns.
 
 ---
 

@@ -10,7 +10,7 @@ Every helper a menu method calls that touches game state or rendering
 (``self._display_name()``, ``self._cycle_tab``, ``self._advance_turn()``,
 ``self._equip_item()``, ``self._AZ_KEYS``, ``self._EQUIP_TABS``, etc.) is
 resolved through Python's MRO on the concrete ``Game`` subclass.  Class-level
-constants (``_EQUIP_TABS``, ``_COOK_TABS``, ``_AZ_KEYS``, ``_GoldDropEntry``,
+constants (``_EQUIP_TABS``, ``_AZ_KEYS``, ``_GoldDropEntry``,
 ``_DROP_MAX_VISIBLE``, ``_BENEFICIAL_EFFECTS``) remain on Game so they can be
 co-located with related action code.
 """
@@ -22,7 +22,7 @@ import pygame
 
 from geom import monster_at_tile
 
-from food_system import (eat_food, eat_raw, get_available_compound_recipes)
+from food_system import eat_food, eat_raw
 from items import (Weapon, Armor, Shield, Corpse, Ingredient, Artifact,
                    Accessory, Wand, Scroll, Spellbook, Food, Potion)
 from game_states import (
@@ -52,29 +52,39 @@ class MenuMixin:
     # ------------------------------------------------------------------
 
     def _open_cook_menu(self):
-        # Cooking is ONE flat list of every dish the pack can cook right now,
-        # single-ingredient dishes first: every ingredient has one dish of
-        # its own, so a kid who harvested one part always has something to
-        # cook. (The tabbed menu by main benefit is built on
-        # kitchen.menu_rows / kitchen.opening_tab.)
-        self.cook_menu_items = []
-        self.cook_compound_recipes = get_available_compound_recipes(self.player.inventory)
-        if not self.cook_compound_recipes:
+        """C: the cook menu (the kitchen rebuild, K2). Five tabs by a dish's
+        main benefit (kitchen.MENU_TABS: HP / SP / MP / Stat / Special), each
+        with what is ready to cook, what the pack is building toward, and the
+        legendary feasts in reach (kitchen.menu_rows). The rows are read once
+        here: nothing in the pack changes while the menu is open. It opens on
+        the tab for the hero's most urgent need and remembers why
+        (kitchen.opening_choice), so the screen can say it."""
+        import kitchen
+        inv = self.player.inventory
+        rows = {t: kitchen.menu_rows(self.player, inv, t) for t in kitchen.MENU_TABS}
+        if not any(rows.values()):
             self.add_message(
-                "You have no recipes you can make yet -- gather more ingredients.", 'info')
+                "You have nothing to cook yet. Harvest a corpse (H) and keep its meat.",
+                'info')
             return
-        self._cook_tab = 0
+        tab, why = kitchen.opening_choice(self.player, inv)
+        self._cook_rows = rows
+        self._cook_counts = kitchen.held_counts(inv)
+        self._cook_open = (tab, why)
+        self._cook_tab = kitchen.MENU_TABS.index(tab)
         self._cook_sel = 0
+        self._cook_notice = None
+        self._cook_layout_cache = {}
         self.state = STATE_COOK_MENU
 
-    def _get_cook_tab_items(self):
-        """Return list for current cook tab."""
-        # _COOK_TABS has only the 'compound' tab now (2026-06-07 single-cook
-        # removal); the branch is compound-only.
-        return self.cook_compound_recipes
+    def _cook_tab_slug(self) -> str:
+        import kitchen
+        return kitchen.MENU_TABS[int(getattr(self, '_cook_tab', 0) or 0) % len(kitchen.MENU_TABS)]
 
-    def _cook_tab_has_items(self, idx):
-        return self.cook_compound_recipes
+    def _cook_tab_rows(self, tab: str | None = None) -> list:
+        """The rows of a cook-menu tab (the open tab by default), exactly as
+        kitchen.menu_rows gave them when the menu opened."""
+        return list((getattr(self, '_cook_rows', None) or {}).get(tab or self._cook_tab_slug(), []))
 
     # Up/Down/PageUp/PageDown/Home/End cursor keys, shared by the letter+cursor
     # overflow menus. Letter shortcuts still cover a-z; arrows/Enter can reach
@@ -101,26 +111,40 @@ class MenuMixin:
         return cur
 
     def _cook_menu_input(self, key: int):
-        if key == pygame.K_LEFT:
-            self._cook_tab = self._cycle_tab(self._cook_tab, -1, len(self._COOK_TABS), self._cook_tab_has_items)
+        """Left / Right (and Tab, Shift+Tab back) change the tab, every tab
+        reachable, wrapping round; Up / Down, PgUp / PgDn, Home / End move;
+        Enter cooks a dish that is ready (one cooking question, the
+        ingredients used up: Game._cook_compound). Enter on a dish not ready
+        does no harm: it says what is still needed."""
+        import kitchen
+        import cook_menu
+        n_tabs = len(kitchen.MENU_TABS)
+        if key in (pygame.K_LEFT, pygame.K_RIGHT, pygame.K_TAB):
+            back = key == pygame.K_LEFT
+            if key == pygame.K_TAB:
+                try:
+                    back = bool(pygame.key.get_mods() & pygame.KMOD_SHIFT)
+                except pygame.error:
+                    back = False
+            self._cook_tab = (int(getattr(self, '_cook_tab', 0) or 0) + (-1 if back else 1)) % n_tabs
             self._cook_sel = 0
+            self._cook_notice = None
             return
-        if key == pygame.K_RIGHT:
-            self._cook_tab = self._cycle_tab(self._cook_tab, 1, len(self._COOK_TABS), self._cook_tab_has_items)
-            self._cook_sel = 0
-            return
-        tab_items = self._get_cook_tab_items()
+        rows = self._cook_tab_rows()
         if key in self._MENU_CURSOR_KEYS:
-            self._cook_sel = self._move_menu_cursor(getattr(self, '_cook_sel', 0), key, len(tab_items))
+            self._cook_sel = self._move_menu_cursor(getattr(self, '_cook_sel', 0), key, len(rows))
+            self._cook_notice = None
             return
-        if key in (pygame.K_RETURN, pygame.K_KP_ENTER):
-            idx = getattr(self, '_cook_sel', 0)
-        else:
-            idx = self._AZ_KEYS.get(key)
-        if idx is None or idx >= len(tab_items):
+        if key not in (pygame.K_RETURN, pygame.K_KP_ENTER) or not rows:
             return
-        self.state = STATE_PLAYER
-        self._cook_compound(tab_items[idx])
+        row = rows[max(0, min(int(getattr(self, '_cook_sel', 0) or 0), len(rows) - 1))]
+        if row['ready'] and kitchen.can_cook(row['recipe'],
+                                             kitchen.held_counts(self.player.inventory)):
+            self.state = STATE_PLAYER
+            self._cook_compound(row['recipe'])
+            return
+        self._cook_notice = row['id']
+        self.add_message(cook_menu.not_ready_line(row), 'info')
 
     # ------------------------------------------------------------------
     # Eat menu  (z key)

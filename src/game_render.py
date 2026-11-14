@@ -4440,54 +4440,28 @@ class RenderMixin:
         # was pure chrome.
         return lines
 
-    def _menu_recipe_preview(self, recipe) -> str:
-        """One line of what a dish does for this hero now (kitchen.dish_effects:
-        "+45 HP, +3 Max HP, +60 SP"), after its tier."""
-        try:
-            import kitchen
-            return (f"T{kitchen.dish_tier(recipe)} {kitchen.TAB_NAMES[kitchen.dish_tab(recipe)]}: "
-                    + ', '.join(kitchen.dish_effects(self.player, recipe)))
-        except Exception:
-            return ''
+    def _ui_pip(self, rect, color):
+        """A small round mark at a chip's top-right corner: the cook menu's
+        tab it opened on (its reason line carries the same mark)."""
+        r = max(3, S(4))
+        centre = (rect.right - S(3), rect.y + S(3))
+        pygame.draw.circle(self.screen, KT.VOID, centre, r + 1)
+        pygame.draw.circle(self.screen, color, centre, r)
 
-    def _menu_recipe_detail_lines(self, recipe) -> list:
-        import kitchen
-        from collections import Counter
-        from naming import proper_name
-        counts = Counter(recipe.get('ingredients', []))
-        ing_text = ', '.join(
-            f"{kitchen.part_name(iid)} x{n}" if n > 1 else kitchen.part_name(iid)
-            for iid, n in counts.items()
-        )
-        lines = [
-            (proper_name(recipe.get('name', 'Recipe')), FP.GOLD_BRIGHT, self.font_md),
-            ("Ingredients", FP.GOLD_BRIGHT, self.font_sm),
-            (ing_text or 'none', FP.BODY_TEXT, self.font_sm),
-        ]
-        desc = recipe.get('flavor', '') or recipe.get('description', '')
-        if desc:
-            lines += [("Cookbook note", FP.GOLD_BRIGHT, self.font_sm),
-                      (desc, FP.BODY_TEXT, self.font_sm)]
-        preview = self._menu_recipe_preview(recipe)
-        if preview:
-            # Cooking is one question, right or wrong: the outcome, not a chain.
-            lines += [("Outcome", FP.GOLD_BRIGHT, self.font_sm),
-                      (preview, FP.SUCCESS_TEXT, self.font_sm)]
-        lines += [("Next action", FP.GOLD_BRIGHT, self.font_sm),
-                  ("Answer one cooking question. Right = full recipe; wrong = ruined dish.", FP.BODY_TEXT, self.font_sm)]
-        return lines
-
-    def _draw_action_tabs(self, tabs, active_tab: int, counts, x: int, y: int, w: int) -> int:
+    def _draw_action_tabs(self, tabs, active_tab: int, counts, x: int, y: int, w: int,
+                          marked=None) -> int:
         """Draw an action-menu tab strip. Phase 2 beautification (2026-10-04):
         when the full strip is wider than the container, scroll the visible
         window so the active tab is kept inside it. Arrow glyphs
         (``◀`` / ``▶``) at the edges flag hidden tabs. Keeps the tab-strip
         legible on narrow panels (cook / eat / equip menus) and in menus
-        with many tabs."""
+        with many tabs. ``marked``: {tab index: colour} of tabs that carry a
+        pip (``_ui_pip``). Leaves ``self._tab_strip_end_x``, the x where the
+        drawn strip ends."""
         if not tabs:
             return y
         if kit_on('chip'):
-            return self._draw_action_tabs_kit(tabs, active_tab, counts, x, y, w)
+            return self._draw_action_tabs_kit(tabs, active_tab, counts, x, y, w, marked)
         from text_layout import tab_strip_window
         tab_font = get_font('small', 14)
         gap = S(6)
@@ -4535,7 +4509,10 @@ class RenderMixin:
             col = FP.GOLD_BRIGHT if active else FP.FADED_TEXT
             self._menu_draw_line(labels[i], tab_font, col,
                                  pygame.Rect(rect.x + S(8), rect.y + S(4), rect.w - 2 * S(8), rect.h))
+            if marked and i in marked:
+                self._ui_pip(rect, marked[i])
             tx += tw + gap
+        self._tab_strip_end_x = max_x if win['show_right_arrow'] else tx - gap
 
         if win['show_right_arrow']:
             arrow_rect = pygame.Rect(max_x - ARROW_W, y, ARROW_W, TAB_H)
@@ -4548,7 +4525,7 @@ class RenderMixin:
         _ = overflow  # unused but documented via win['overflow']
         return y + S(32)
 
-    def _draw_action_tabs_kit(self, tabs, active_tab, counts, x, y, w) -> int:
+    def _draw_action_tabs_kit(self, tabs, active_tab, counts, x, y, w, marked=None) -> int:
         """The tab strip in the kit: ``chip`` / ``chip_active`` pieces,
         scrolled so the active tab is always visible (``tab_strip_window``)."""
         from text_layout import tab_strip_window
@@ -4582,7 +4559,10 @@ class RenderMixin:
                 break
             self._ui_chip(pygame.Rect(tx, y, tw, TAB_H), labels[i],
                           active=(i == active_tab), color=FP.GOLD)
+            if marked and i in marked:
+                self._ui_pip(pygame.Rect(tx, y, tw, TAB_H), marked[i])
             tx += tw + gap
+        self._tab_strip_end_x = max_x if win['show_right_arrow'] else tx - gap
         if win['show_right_arrow']:
             arrow(pygame.Rect(max_x - ARROW_W, y, ARROW_W, TAB_H), '\u25b6')
         return y + TAB_H + S(12)
@@ -6280,6 +6260,11 @@ class RenderMixin:
         if sp_id:
             sd = LEARNABLE_SPELLS.get(sp_id, {})
             return f"teaches {sd.get('name', sp_id)} ({sd.get('mp_cost','?')} MP)"
+        # An ingredient: what it is rich in, so which cook-menu tab its
+        # dishes sit in, and how many dishes call for it.
+        if getattr(c, 'item_class', '') == 'ingredient':
+            import kitchen
+            return kitchen.nature_line(getattr(c, 'id', ''))
         # Food
         if hasattr(c, 'sp_restore'):
             bits = [f"+{c.sp_restore} SP"]
@@ -6288,6 +6273,10 @@ class RenderMixin:
             bt = getattr(c, 'bonus_type', 'none')
             if bt and bt != 'none':
                 bits.append(f"{bt}")
+            import kitchen
+            _uses = len(kitchen.dishes_with(getattr(c, 'id', '')))
+            if _uses:
+                bits.append(f"in {_uses} dishes")
             return ', '.join(bits)
         return '-'
 
@@ -7027,84 +7016,469 @@ class RenderMixin:
             scroll_attr='_identify_scroll',
         )
 
-    def _draw_cook_menu(self):
-        tab_items = self._get_cook_tab_items()
-        is_compound = self._COOK_TABS[self._cook_tab][1] == 'compound'
-        entries = []
-        if is_compound:
-            import kitchen
-            from food_system import recipe_is_trophy as _is_trophy
-            from collections import Counter
-            for i, recipe in enumerate(tab_items):
-                counts = Counter(recipe.get('ingredients', []))
-                ing_list = ', '.join(
-                    f"{kitchen.part_name(iid)} x{n}" if n > 1 else kitchen.part_name(iid)
-                    for iid, n in counts.items()
-                )
-                # Each dish names its own picture (recipes.json `art`).
-                recipe_sprite_id = recipe.get('art') or f"recipe_{recipe.get('id', '')}"
-                first_ing = recipe.get('ingredients', [''])[0] if recipe.get('ingredients') else ''
-                class _RecipeIcon:
-                    def __init__(self2, rid, fing):
-                        self2.id = rid
-                        self2._fallback = fing
-                        self2.color = [110, 220, 100]
-                        self2.symbol = '*'
-                icon_obj = _RecipeIcon(recipe_sprite_id, first_ing)
-                name = recipe.get('name', 'recipe')
-                is_trophy = _is_trophy(recipe)
-                entries.append({
-                    'name': name[:1].upper() + name[1:],
-                    'detail': f"Needs: {ing_list}",
-                    'key': self._menu_letter(i),
-                    'icon': icon_obj,
-                    'name_color': FP.GOLD_BRIGHT if is_trophy else FP.GOLD_PALE,
-                    'detail_color': FP.BODY_TEXT,
-                    'badge': ('TROPHY' if recipe.get('trophy') else 'LEGENDARY') if is_trophy else '',
-                    'badge_color': FP.GOLD_BRIGHT,
-                    'details': self._menu_recipe_detail_lines(recipe),
-                })
-        else:
-            from food_system import _find_recipe_for_ingredient
-            for i, item in enumerate(tab_items):
-                recipe = _find_recipe_for_ingredient(item) or {}
-                dish_name = recipe.get('name', f"{item.name} Surprise")
-                entries.append({
-                    'name': dish_name[:1].upper() + dish_name[1:],
-                    'detail': f"Consumes: {item.name}",
-                    'key': self._menu_letter(i),
-                    'icon': item,
-                    'name_color': FP.GOLD_PALE,
-                    'detail_color': FP.BODY_TEXT,
-                    'details': self._menu_recipe_detail_lines(recipe) if recipe
-                    else self._menu_item_detail_lines(item, "Cook this ingredient."),
-                })
+    # ------------------------------------------------------------------
+    # Cook menu (C): a tab for each main benefit, three sections, and the
+    # chosen dish's picture large (the kitchen rebuild, K2; the rows are
+    # kitchen.menu_rows, the words cook_menu.py)
+    # ------------------------------------------------------------------
 
-        sp = self.player.sp
-        sp_color = FP.SUCCESS_TEXT if sp > 30 else FP.WARNING_TEXT if sp > 10 else FP.DANGER_TEXT
-        _cook_counts = [len(self.cook_menu_items) if k == 'single' else len(self.cook_compound_recipes)
-                        for _, k in self._COOK_TABS]
-        selected = self._menu_clamp_selection('_cook_sel', len(entries))
-        context = self._menu_base_context([
-            ("COOKING", FP.GOLD_BRIGHT, self.font_sm),
-            (f"SP {sp}/{self.player.max_sp}", sp_color, self.font_sm),
-            (f"Recipes available: {len(entries)}", FP.BODY_TEXT, self.font_sm),
-            # v2.15.0 UI-rot fix: cook is one-question binary (v2.6.4), not escalator.
-            ("Cooking uses one cooking question. Right = full meal; wrong = ruined.",
-             FP.FADED_TEXT, self.font_sm),
-        ])
-        self._draw_decision_menu(
-            title="COOK",
-            entries=entries,
-            selected=selected,
-            context_lines=context,
-            tabs=self._COOK_TABS,
-            active_tab=self._cook_tab,
-            tab_counts=_cook_counts,
-            hint="Up/Down: move   Enter or a-z: cook   ESC: cancel",
-            border_color=FP.SUCCESS_TEXT,
-            scroll_attr='_cook_scroll',
-        )
+    # Each tab's colour: a ready dish's chip in that tab.
+    _COOK_TAB_COLORS = {'hp': (255, 146, 130), 'sp': (140, 216, 124),
+                        'mp': (130, 175, 255), 'stat': (234, 196, 100),
+                        'special': (200, 170, 255)}
+    _COOK_HINT = "Left/Right: Change Tab   Up/Down: Move   Enter: Cook   ESC: Close"
+
+    def _cook_ink(self, color):
+        """A text colour readable on the cook menu's panes (KT.RAISED)."""
+        return readable(color, KT.RAISED) if kit_on() else color
+
+    def _cook_dish_icon(self, recipe, dim=False):
+        """A dish's small picture for its row: its own art (recipes.json
+        ``art``), else its first ingredient's that has art; None when none
+        does (never a letter glyph). ``dim``: faded, for a dish not ready."""
+        import kitchen
+        key = ('cook_dish', recipe.get('id'), int(self.MENU_ICON_SIZE), bool(dim))
+        cache = self._menu_sprite_cache
+        if key in cache:
+            return cache[key]
+        spr = None
+        for sid in [recipe.get('art')] + kitchen.parts(recipe):
+            if sid:
+                spr = self._get_menu_sprite(sid)
+                if spr is not None:
+                    break
+        if spr is not None and dim:
+            spr = spr.copy()
+            spr.set_alpha(120)
+        cache[key] = spr
+        return spr
+
+    def _draw_cook_menu(self):
+        """The cook menu: HP / SP / MP / Stat / Special tabs, the tab it
+        opened on marked and why beside it; in each tab, Ready to Cook,
+        Building Toward and Legendary Feasts; the chosen dish's picture,
+        what it does for this hero now, what it needs, its flavour and its
+        cooking question's tier."""
+        import kitchen
+        import cook_menu as cm
+        tabs = kitchen.MENU_TABS
+        tab = self._cook_tab_slug()
+        rows = self._cook_tab_rows(tab)
+        every = getattr(self, '_cook_rows', None) or {}
+        ready_n = {t: sum(1 for r in every.get(t, []) if r['ready']) for t in tabs}
+        rows_n = {t: len(every.get(t, [])) for t in tabs}
+        open_tab, why = getattr(self, '_cook_open', None) or (tab, 'most_ready')
+        border = FP.SUCCESS_TEXT
+
+        draw_overlay(self.screen, 190)
+        bw = min(S(1240), _modal_budget_w() - S(32))
+        bh = min(S(720), layout.WINDOW_H - S(32))
+        panel = pygame.Rect(_centre_x(bw), _centre_y(bh), bw, bh)
+        draw_dark_panel(self.screen, panel, border_color=border)
+        body_top = self._ui_header(panel, "Cook", border_color=border)
+        side = panel_band('panel', panel) + S(14)
+        cx, cw = panel.x + side, panel.w - 2 * side
+
+        # The tabs, each with its dishes ready; the one the menu opened on
+        # carries a pip, and the line beside the strip (or under it) says why.
+        mark = FP.WARNING_TEXT if cm.urgent(why) else KT.GOLD_HI
+        y = self._draw_action_tabs([(kitchen.TAB_NAMES[t], t) for t in tabs], tabs.index(tab),
+                                   [ready_n[t] or None for t in tabs], cx, body_top, cw,
+                                   marked={tabs.index(open_tab): mark})
+        chip_h = S(30) if kit_on('chip') else S(25)
+        rf = get_font('body', 16)
+        reason = cm.reason_line(open_tab, why, self.player)
+        pip_w = S(16)
+        strip_end = getattr(self, '_tab_strip_end_x', cx)
+        rcol = self._cook_ink(mark)
+        if cx + cw - strip_end - S(20) >= pip_w + rf.size(reason)[0]:
+            rx = cx + cw - pip_w - rf.size(reason)[0]
+            ry = body_top + (chip_h - rf.get_height()) // 2
+            lines = [reason]
+        else:
+            rx, ry = cx, y - S(6)
+            lines = self._wrap_text(display_text(reason), rf, cw - pip_w) or ['']
+            y += len(lines) * (rf.get_height() + S(2)) + S(4)
+        pc = (rx + S(6), ry + rf.get_height() // 2)
+        pygame.draw.circle(self.screen, KT.VOID, pc, max(3, S(4)) + 1)
+        pygame.draw.circle(self.screen, mark, pc, max(3, S(4)))
+        for i, ln in enumerate(lines):
+            self.screen.blit(rf.render(ln, True, rcol),
+                             (rx + pip_w, ry + i * (rf.get_height() + S(2))))
+
+        _div, _keys, body_bottom = self._ui_footer_metrics(panel)
+        gap = S(12)
+        list_w, detail_w = self._decision_split(cw, gap, 0.48)
+        list_rect = pygame.Rect(cx, y, list_w, body_bottom - y)
+        detail_rect = pygame.Rect(list_rect.right + gap, y, detail_w, body_bottom - y)
+        lb = self._ui_subpanel(list_rect, f"{kitchen.TAB_NAMES[tab]} Dishes", border_color=border)
+        db = self._ui_subpanel(detail_rect, "Detail", border_color=border)
+        list_body = pygame.Rect(list_rect.x + S(8), lb.y - S(4), list_rect.w - 2 * S(8),
+                                list_rect.bottom - lb.y - S(4))
+        detail_body = pygame.Rect(db.x + S(2), db.y, db.w - S(4), db.h)
+
+        if rows:
+            sel = self._menu_clamp_selection('_cook_sel', len(rows))
+            note = cm.nothing_ready_note(tab, ready_n)
+            self._cook_draw_list(list_body, rows, sel, tab, note, border)
+            self._cook_draw_detail(detail_body, rows[sel])
+        else:
+            self._menu_draw_text_block(
+                [(cm.empty_line(tab, ready_n, rows_n), FP.HINT_TEXT, get_font('body', 18))],
+                pygame.Rect(list_body.x + S(4), list_body.y + S(4), list_body.w - S(8),
+                            list_body.h - S(8)))
+            self._menu_draw_text_block([
+                (f"{kitchen.TAB_NAMES[tab]} Dishes", FP.GOLD_PALE, get_font('heading', 22)),
+                (cm.TAB_BLURBS.get(tab, ''), FP.BODY_TEXT, get_font('body', 18)),
+                '',
+                ("The Kit (K) says what each ingredient you carry is good for.",
+                 FP.FADED_TEXT, get_font('body', 18)),
+            ], detail_body)
+        self._ui_footer(panel, self._COOK_HINT)
+
+    def _cook_list_layout(self, rows, tab, note, width, height):
+        """How the list is drawn in ``width`` x ``height``: the names'
+        size (20, 18, then 16 px, the largest at which every row fits),
+        each item's height, the words of each row, whether it scrolls. Cached
+        until the menu is opened again: nothing in it changes while open."""
+        import cook_menu as cm
+        key = (tab, int(width), int(height), note)
+        cache = getattr(self, '_cook_layout_cache', None)
+        if cache is None:
+            cache = self._cook_layout_cache = {}
+        if key in cache:
+            return cache[key]
+        counts = getattr(self, '_cook_counts', None) or {}
+        items = cm.list_items(rows, note)
+        detail_f = get_font('body', 16)
+        head_f = get_font('heading', 17, bold=True)
+        chip_f = get_font('body', 16, bold=True)
+        well = int(self.MENU_ICON_SIZE) + S(8)
+        text_x = S(8) + well + S(10)
+
+        def measure(row_w, size):
+            name_f = get_font('body', size)
+            hs, words = [], []
+            for it in items:
+                if it['kind'] == 'note':
+                    lines = self._wrap_text(display_text(it['text']), detail_f, row_w - S(8))[:2]
+                    hs.append(len(lines) * (detail_f.get_height() + S(2)) + S(10))
+                    words.append(lines)
+                    continue
+                if it['kind'] == 'head':
+                    hs.append(head_f.get_height() + S(12))
+                    words.append(cm.section_title(it['group'], it['count']))
+                    continue
+                row = rows[it['index']]
+                chip = cm.chip_text(row)
+                chip_w = chip_f.size(chip)[0] + S(18)
+                name_w = row_w - text_x - chip_w - S(20)
+                names = self._wrap_text(display_text(row['name']), name_f, name_w) or ['']
+                det_w = row_w - text_x - S(12)
+
+                def fits(text, _w=det_w):
+                    return len(self._wrap_text(display_text(text), detail_f, _w)) <= 2
+                det = self._wrap_text(display_text(cm.row_line(row, counts, fits)),
+                                      detail_f, det_w)[:2]
+                # The second line starts under the chip (it spans the row).
+                body = (max(len(names) * name_f.get_height() + S(4), S(28))
+                        + len(det) * (detail_f.get_height() + S(1)))
+                hs.append(max(body + S(16), well + S(14)) + S(6))
+                words.append((chip, chip_w, names, det, name_f))
+            return hs, words
+
+        scroll = False
+        for size in (20, 18, 16):
+            hs, words = measure(width, size)
+            if sum(hs) <= height:
+                break
+        else:
+            # Shrunk as far as it goes: the list scrolls, a strip at the
+            # right for the bar and a line at the foot for "4-9 of 20".
+            scroll = True
+            hs, words = measure(width - S(14), 16)
+        out = {'items': items, 'heights': hs, 'words': words, 'scroll': scroll,
+               'row_w': width - (S(14) if scroll else 0),
+               'avail': height - (S(28) if scroll else 0)}
+        cache[key] = out
+        return out
+
+    def _cook_draw_list(self, body, rows, sel, tab, note, border):
+        import cook_menu as cm
+        lay = self._cook_list_layout(rows, tab, note, body.w, body.h)
+        items, hs, words = lay['items'], lay['heights'], lay['words']
+        focus = next((i for i, it in enumerate(items)
+                      if it['kind'] == 'row' and it['index'] == sel), 0)
+        heads = {i for i, it in enumerate(items) if it['kind'] == 'head'}
+        start, end = cm.window(hs, focus, lay['avail'], heads)
+        y = body.y
+        for i in range(start, end):
+            if y + hs[i] > body.y + lay['avail'] and i != focus:
+                break
+            it = items[i]
+            rect = pygame.Rect(body.x, y, lay['row_w'], hs[i])
+            if it['kind'] == 'note':
+                f = get_font('body', 16)
+                for k, ln in enumerate(words[i]):
+                    self.screen.blit(f.render(ln, True, self._cook_ink(FP.HINT_TEXT)),
+                                     (rect.x + S(4), rect.y + S(4) + k * (f.get_height() + S(2))))
+            elif it['kind'] == 'head':
+                self._cook_draw_head(rect, it['group'], words[i])
+            else:
+                row = rows[it['index']]
+                self._cook_draw_row(pygame.Rect(rect.x, rect.y, rect.w, rect.h - S(6)), row,
+                                    words[i], it['index'] == sel, tab)
+            y += hs[i]
+        if lay['scroll']:
+            shown = [items[i]['index'] for i in range(start, end) if items[i]['kind'] == 'row']
+            if shown:
+                tag = f"{min(shown) + 1}-{max(shown) + 1} of {len(rows)}"
+                tf = get_font('body', 16)
+                ts = tf.render(tag, True, self._cook_ink(KT.TEXT_DIM))
+                self.screen.blit(ts, (body.right - ts.get_width() - S(4),
+                                      body.bottom - ts.get_height() - S(4)))
+            self._ui_scrollbar(pygame.Rect(body.x + lay['row_w'], body.y, S(12),
+                                           lay['avail'] - S(6)),
+                               start, len(items), max(1, end - start), color=border)
+
+    def _cook_draw_head(self, rect, group, title):
+        """A section's header: its title and count, a rule to the right;
+        gold for the legendary feasts."""
+        f = get_font('heading', 17, bold=True)
+        legendary = group == 'legendary'
+        col = KT.GOLD_HI if legendary else KT.TEXT_HEAD
+        s = f.render(display_text(title), True, self._cook_ink(col))
+        ty = rect.y + (rect.h - s.get_height()) // 2
+        self.screen.blit(s, (rect.x + S(4), ty))
+        lx = rect.x + S(4) + s.get_width() + S(10)
+        if lx < rect.right - S(6):
+            pygame.draw.line(self.screen, KT.GOLD if legendary else KT.GOLD_DARK,
+                             (lx, rect.centery), (rect.right - S(6), rect.centery), 1)
+
+    def _cook_draw_row(self, rect, row, words, selected, tab):
+        """One dish: its picture, its name, a chip (what a ready dish does,
+        or "2 of 4"), and what it uses or still needs. A dish not ready is
+        greyed (its picture faded); a legendary feast has a gold frame."""
+        chip, chip_w, names, det, name_f = words
+        legendary = row['group'] == 'legendary'
+        ready = row['ready']
+        self._ui_row(rect, selected, fill=(34, 43, 84) if selected else (18, 22, 40),
+                     border=FP.GOLD if selected else FP.GOLD_DARK)
+        if legendary:
+            pygame.draw.rect(self.screen, KT.GOLD_HI if selected else KT.GOLD, rect, 2,
+                             border_radius=6)
+        isz = int(self.MENU_ICON_SIZE)
+        well = pygame.Rect(rect.x + S(8), rect.y + (rect.h - isz - S(8)) // 2,
+                           isz + S(8), isz + S(8))
+        self._ui_well(well)
+        icon = self._cook_dish_icon(row['recipe'], dim=not ready)
+        if icon is not None:
+            self.screen.blit(icon, (well.x + S(4), well.y + S(4)))
+        # The chip.
+        cr = pygame.Rect(rect.right - chip_w - S(10), rect.y + S(8), chip_w, S(26))
+        if not ui_theme.draw_piece(self.screen, 'chip', cr):
+            pygame.draw.rect(self.screen, FP.MIDNIGHT, cr, border_radius=4)
+            pygame.draw.rect(self.screen, FP.GOLD_DARK, cr, 1, border_radius=4)
+        if ready:
+            ccol = self._COOK_TAB_COLORS.get(tab, FP.BODY_TEXT)
+        else:
+            ccol = KT.GOLD_HI if legendary else FP.FADED_TEXT
+        cf = get_font('body', 16, bold=True)
+        cs = cf.render(chip, True, readable(ccol, KT.RAISED))
+        self.screen.blit(cs, (cr.centerx - cs.get_width() // 2, cr.centery - cs.get_height() // 2))
+        # The name, then what it uses (ready) or still needs.
+        tx = well.right + S(10)
+        if legendary:
+            ncol = FP.GOLD_BRIGHT
+        else:
+            ncol = FP.GOLD_PALE if ready else FP.FADED_TEXT
+        ncol = self._ui_row_text(ncol, selected)
+        dcol = self._ui_row_text(KT.TEXT_DIM if ready else FP.AMBER_ACCENT, selected)
+        df = get_font('body', 16)
+        ty = rect.y + S(8)
+        for ln in names:
+            self.screen.blit(name_f.render(ln, True, ncol), (tx, ty))
+            ty += name_f.get_height()
+        ty = max(ty + S(4), cr.bottom + S(2))
+        for ln in det:
+            self.screen.blit(df.render(ln, True, dcol), (tx, ty))
+            ty += df.get_height() + S(1)
+
+    def _cook_part_icon(self, pid, size):
+        """An ingredient's own picture at ``size`` px (the map's resolver);
+        None when it has none (never a letter glyph)."""
+        key = ('cook_part', pid, int(size))
+        cache = self._menu_sprite_cache
+        if key not in cache:
+            from renderer import _resolve_item_sprite_path, fit_sprite
+            path = _resolve_item_sprite_path(pid)
+            cache[key] = (fit_sprite(pygame.image.load(path).convert_alpha(), size, size)
+                          if path else None)
+        return cache[key]
+
+    def _cook_parts_layout(self, row, width, font):
+        """The ingredient rows of the detail pane: each part in the dish's
+        order, its picture, its words (cook_menu.part_words: "Goblin
+        Gristle" / "Have 2", "Hunt Wyvern Tail" / "0 of 1") and height."""
+        import kitchen
+        import cook_menu as cm
+        counts = getattr(self, '_cook_counts', None) or {}
+        by_id = {p['id']: p for p in row['have'] + row['missing']}
+        words = []
+        for pid in kitchen.parts(row['recipe']):
+            p = by_id.get(pid)
+            if p is not None:
+                held = int(counts.get(pid, 0) or 0)
+                left, right = cm.part_words(p, held)
+                words.append((pid, left, right, held >= p['need']))
+        isz = S(24)
+        right_w = max([font.size(r)[0] for _p, _l, r, _o in words] or [0])
+        text_w = width - isz - S(8) - right_w - S(12)
+        lh = font.get_height() + S(2)
+        out = []
+        for pid, left, right, ok in words:
+            lines = self._wrap_text(display_text(left), font, text_w) or ['']
+            out.append((pid, lines, right, ok, max(isz, len(lines) * lh) + S(3)))
+        return out
+
+    def _cook_draw_parts(self, parts, x, y, width, font, bottom) -> int:
+        """Each ingredient with its own picture, what to do about it, and
+        how many the pack holds (green) or still lacks (amber)."""
+        isz = S(24)
+        lh = font.get_height() + S(2)
+        for pid, lines, right, ok, h in parts:
+            if y + h - S(3) > bottom:
+                break
+            spr = self._cook_part_icon(pid, isz)
+            if spr is not None:
+                self.screen.blit(spr, (x, y + (h - S(3) - isz) // 2))
+            col = self._cook_ink(FP.BODY_TEXT if ok else FP.WARNING_TEXT)
+            ty = y + (h - S(3) - len(lines) * lh) // 2
+            for k, ln in enumerate(lines):
+                self.screen.blit(font.render(ln, True, col), (x + isz + S(8), ty + k * lh))
+            rs = font.render(right, True, self._cook_ink(FP.SUCCESS_TEXT if ok else FP.WARNING_TEXT))
+            self.screen.blit(rs, (x + width - rs.get_width(), ty))
+            y += h
+        return y
+
+    _COOK_DETAIL_LADDER = ((192, 18, True), (192, 16, True), (192, 16, False),
+                           (128, 18, True), (128, 16, True), (128, 16, False),
+                           (64, 16, False))
+
+    def _cook_detail_plan(self, rect, row):
+        """How the chosen dish's pane is laid out in ``rect``: the largest
+        picture and type that let everything fit, the flavour line dropped
+        only after both have shrunk (the ladder above); the For Good lines
+        and the flavour beside the picture when they fit there. Cached until
+        the menu opens again."""
+        import kitchen
+        import cook_menu as cm
+        notice = getattr(self, '_cook_notice', None) == row['id']
+        key = ('detail', row['id'], rect.w, rect.h, notice)
+        cache = getattr(self, '_cook_layout_cache', None)
+        if cache is None:
+            cache = self._cook_layout_cache = {}
+        if key in cache:
+            return cache[key]
+        rec = row['recipe']
+        legendary = row['group'] == 'legendary'
+        ready = row['ready']
+        art = rec.get('art') or ''
+        lasting = kitchen.dish_lasting(self.player, rec)
+        now = [e for e in row['effects'] if e not in lasting]
+        flavour = rec.get('flavor') or ''
+        if legendary:
+            status_col = KT.GOLD_HI
+        else:
+            status_col = FP.SUCCESS_TEXT if ready else FP.WARNING_TEXT
+        pad, gap = S(self._LORE_PLATE_PAD), S(10)
+        plan = None
+        for want, size, with_flav in self._COOK_DETAIL_LADDER:
+            f = get_font('body', size)
+            fb = get_font('body', size, bold=True)
+
+            def bh(lines, w, _f=f):
+                return self._menu_block_height(lines, w, FP.BODY_TEXT, _f) if lines else 0
+            head = ([(cm.not_ready_line(row), self._cook_ink(FP.WARNING_TEXT), f)] if notice else [])
+            head.append((row['name'], self._cook_ink(FP.GOLD_BRIGHT if legendary else FP.GOLD_PALE),
+                         get_font('heading', 22)))
+            keep = cm.keep_together
+            core = ([(keep(cm.status_line(row)), self._cook_ink(status_col), fb),
+                     (cm.tier_line(row), self._cook_ink(FP.FADED_TEXT), f),
+                     ("What It Does Now", self._cook_ink(FP.GOLD_BRIGHT), fb)]
+                    + [(keep(e), self._cook_ink(FP.SUCCESS_TEXT if ready else FP.BODY_TEXT), f)
+                       for e in now])
+            good = ([("For Good", self._cook_ink(KT.GOLD_HI), fb)]
+                    + [(keep(e), self._cook_ink(FP.GOLD_PALE), f) for e in lasting]) if lasting else []
+            flav = [(flavour, self._cook_ink(FP.LORE_BLUE_BODY), f)] if flavour and with_flav else []
+            plate = lore_art.plate('item', art, min(S(want), int(rect.w * 0.52))) if art else None
+            ph = plate.get_height() + 2 * pad if plate is not None else 0
+            bw = rect.w - (plate.get_width() + 2 * pad + gap if plate is not None else 0)
+            beside, good_below, flav_below = list(core), [], []
+            if good:
+                if plate is not None and bh(beside + good, bw) <= ph:
+                    beside += good
+                else:
+                    good_below = good
+            if flav:
+                if plate is not None and bh(beside + flav, bw) <= ph:
+                    beside += flav
+                else:
+                    flav_below = flav
+            parts = self._cook_parts_layout(row, rect.w, f)
+            parts_head = [("Ingredients", self._cook_ink(FP.GOLD_BRIGHT), fb)]
+            action = ([('__key__', 'Enter', "Cook it: one cooking question. Get it wrong "
+                                            "and the ingredients are lost.")] if ready else [])
+            top_h = max(ph, bh(beside, bw))
+            total = (bh(head, rect.w) + top_h + gap + bh(good_below, rect.w)
+                     + bh(parts_head, rect.w) + sum(p[4] for p in parts)
+                     + bh(action, rect.w) + bh(flav_below, rect.w))
+            plan = {'font': f, 'head': head, 'plate': plate, 'bw': bw, 'beside': beside,
+                    'top_h': top_h, 'good_below': good_below, 'parts_head': parts_head,
+                    'parts': parts, 'action': action, 'flav_below': flav_below,
+                    'frame': KT.GOLD_HI if legendary else None}
+            if total <= rect.h or (plate is None and size == 16 and not with_flav):
+                break
+        cache[key] = plan
+        return plan
+
+    def _cook_draw_detail(self, rect, row):
+        """The chosen dish: its name; its picture large in a framed well (gold
+        for a legendary feast; no art, no picture, as the Bestiary); beside
+        it how ready it is, its cooking question's tier and what it does
+        for this hero now (then what lasts for good, and the flavour, when
+        they fit there); each ingredient with its own picture, how many the
+        pack holds or still lacks, and where a missing one comes from;
+        Enter's action; the flavour line."""
+        plan = self._cook_detail_plan(rect, row)
+        f = plan['font']
+        gap = S(10)
+        pad = S(self._LORE_PLATE_PAD)
+
+        def block(lines, y):
+            if not lines or y >= rect.bottom:
+                return y
+            self._menu_more_cue = ' '
+            return self._menu_draw_text_block(lines, pygame.Rect(rect.x, y, rect.w, rect.bottom - y),
+                                              default_font=f)
+        y = block(plan['head'], rect.y)
+        sx = rect.x
+        plate = plan['plate']
+        if plate is not None:
+            well = pygame.Rect(rect.x, y, plate.get_width() + 2 * pad, plate.get_height() + 2 * pad)
+            self._draw_plate_well(plate, well, frame=plan['frame'])
+            sx = well.right + gap
+        self._menu_more_cue = ' '
+        self._menu_draw_text_block(plan['beside'], pygame.Rect(sx, y, plan['bw'],
+                                                               max(0, rect.bottom - y)),
+                                   default_font=f)
+        y += plan['top_h'] + gap
+        y = block(plan['good_below'], y)
+        y = block(plan['parts_head'], y)
+        y = self._cook_draw_parts(plan['parts'], rect.x, y, rect.w, f, rect.bottom)
+        y = block(plan['action'], y)
+        block(plan['flav_below'], y)
+        self._menu_more_cue = None
 
     def _draw_drop_menu(self):
         tab_items = self._get_drop_tab_items()
@@ -7169,11 +7543,19 @@ class RenderMixin:
                 parts = [f"+{item.sp_restore} SP"]
                 if item.hp_restore:
                     parts.append(f"+{item.hp_restore} HP")
+                # A ration a dish calls for is worth saving: say so.
+                import kitchen
+                _uses = len(kitchen.dishes_with(item.id))
+                if _uses:
+                    parts.append(f"In {_uses} dishes")
                 detail_text = " | ".join(parts)
                 badge = 'FOOD'
                 badge_color = FP.SUCCESS_TEXT
             else:
-                detail_text = "Raw ingredient: cook it for better results"
+                # What the part is rich in, and so which cook-menu tab its
+                # dishes sit in (kitchen.nature_line: "Arcane: MP dishes").
+                import kitchen
+                detail_text = f"Raw: better cooked (C). {kitchen.nature_line(item.id)}"
                 badge = 'RAW'
                 badge_color = FP.WARNING_TEXT
             entries.append({
@@ -9206,18 +9588,23 @@ class RenderMixin:
         self._draw_plate_well(surf, well, top_rule=(off == 0))
         self.screen.set_clip(old_clip)
 
-    def _draw_plate_well(self, surf, well, top_rule=True):
+    def _draw_plate_well(self, surf, well, top_rule=True, frame=None):
         """A lore picture in its framed well (the dossier, the Bestiary, the
-        pet panel): the dark well, the plate, a gold rule round the well and
-        a dark one round the picture. ``top_rule`` False: sliding under a
-        pane's top edge as it scrolls, the well has no top rule."""
+        pet panel, the cook menu's dish): the dark well, the plate, a gold
+        rule round the well and a dark one round the picture. ``top_rule``
+        False: sliding under a pane's top edge as it scrolls, the well has no
+        top rule. ``frame``: a bright 2 px frame in that colour instead of
+        the dark gold rule (a legendary feast's gold frame)."""
         pad = S(self._LORE_PLATE_PAD)
         pygame.draw.rect(self.screen, KT.WELL, well)
         self.screen.blit(surf, (well.x + pad, well.y + pad))
         inner = pygame.Rect(well.x + pad - 1, well.y + pad - 1,
                             surf.get_width() + 2, surf.get_height() + 2)
         if top_rule:
-            pygame.draw.rect(self.screen, KT.GOLD_DARK, well, 1)
+            if frame is not None:
+                pygame.draw.rect(self.screen, frame, well, 2)
+            else:
+                pygame.draw.rect(self.screen, KT.GOLD_DARK, well, 1)
             pygame.draw.rect(self.screen, KT.VOID, inner, 1)
         else:
             x0, x1, y0, y1 = well.left, well.right - 1, well.top, well.bottom - 1

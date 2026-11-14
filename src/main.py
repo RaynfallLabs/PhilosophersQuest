@@ -323,9 +323,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # quiz. The old "+ mastery" step is gone -- masteries were removed
         # in the 2026-08-06 identify-v3 redesign (commit 2778305).
         self._scroll_identify_pending: bool = False
-        self.cook_menu_items: list       = []
-        self.cook_compound_recipes: list = []   # available multi-ingredient recipes
+        # The cook menu (game_menus._open_cook_menu): each tab's rows as
+        # kitchen.menu_rows gave them, the tab shown, the tab it opened on
+        # and why.
+        self._cook_rows: dict            = {}
         self._cook_tab: int              = 0
+        self._cook_open: tuple           = ('hp', 'nothing')
         self._menu_sprite_cache: dict    = {}   # (item_id, size) -> Surface|None
         self._examine_tab: int           = 0
         self._eat_tab: int               = 0
@@ -6839,13 +6842,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     # Cook menu
     # ------------------------------------------------------------------
 
-    # One list of every dish the pack can cook (single and multi-ingredient).
-    # The tabbed menu by main benefit (kitchen.MENU_TABS: HP / SP / MP / Stat
-    # / Special, with dishes being built toward and the legendary feasts) is
-    # built on kitchen.menu_rows and kitchen.opening_tab.
-    _COOK_TABS = [
-        ('Recipes', 'compound'),
-    ]
+    # The cook menu (C) is game_menus._open_cook_menu / _cook_menu_input and
+    # game_render._draw_cook_menu: a tab for each main benefit
+    # (kitchen.MENU_TABS: HP / SP / MP / Stat / Special), each with what is
+    # ready, what is being built toward and the legendary feasts. Every dish,
+    # single ones included, is cooked through _cook_compound.
 
     def _cook_item(self, ingredient):
         # Guard: only consume the ingredient if it has a dish of its own
@@ -6890,7 +6891,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 )
             self._advance_turn()
 
-        # NOTE: no menu reaches _cook_item (the Recipes list cooks every dish,
+        # NOTE: no menu reaches _cook_item (the cook menu cooks every dish,
         # single ones included, through _cook_compound). Kept as a safety net
         # with the same quirk wiring.
         cook_ingredient(self.player, ingredient, self.quiz_engine, on_complete)
