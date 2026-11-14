@@ -109,14 +109,21 @@ def test_flat_marks_are_marked_and_objects_are_not():
 @pytest.fixture(scope='module')
 def floors():
     import bones
+    # No ghost on these floors, and load_bones put back after: left as a
+    # no-op it stayed one for every later test in the process (round 3: the
+    # corrupt-bones test then failed under the full suite).
+    real = bones.load_bones
     bones.load_bones = lambda *a, **k: None
-    from level_manager import LevelManager
-    lm = LevelManager()
-    out = []
-    for lvl in (1, 4, 9, 14, 25, 33, 45, 66, 85):
-        random.seed(7000 + lvl)
-        d, _m, _i = lm.generate(lvl)
-        out.append((lvl, d))
+    try:
+        from level_manager import LevelManager
+        lm = LevelManager()
+        out = []
+        for lvl in (1, 4, 9, 14, 25, 33, 45, 66, 85):
+            random.seed(7000 + lvl)
+            d, _m, _i = lm.generate(lvl)
+            out.append((lvl, d))
+    finally:
+        bones.load_bones = real
     return out
 
 

@@ -243,11 +243,17 @@ def test_room_extras_never_land_on_monsters_already_there():
 def test_a_planned_mini_boss_is_not_lost_on_a_full_maze_floor():
     """WR5: a mini-boss planned for a maze floor was lost when the one room
     it could use was full (Surtur on 90: 35 runs in 107; now about 4 in 108,
-    when no 2x2 space is left anywhere outside the arrival room)."""
+    when no 2x2 space is left anywhere outside the arrival room).
+
+    Seeded maze floors with a room beyond the first: about one unseeded
+    maze in 200 comes out as one region (populate_floor's fallback), so
+    there was no other room to fill, and the boss took the only one (round
+    3: a flake under the full suite)."""
+    import random
     from level_manager import LevelManager
-    for _ in range(5):
-        d = generate_dungeon(80, 50, 50)
-        assert d.is_maze
+    for seed in range(5):
+        d = generate_dungeon(80, 50, 50, rng=random.Random(seed))
+        assert d.is_maze and len(d.rooms) >= 2, seed
         lm = LevelManager()
         lm._planned_mini_bosses = {50: 'rangda'}
         lm._placed_mini_bosses = set()

@@ -97,17 +97,24 @@ def monster_curve() -> dict:
     if _CURVE is not None:
         return _CURVE
     import bones
+    # No ghost while the pools are read, and load_bones put back after: left
+    # as a no-op it stayed one for the rest of the process, every later test
+    # in it included (round 3).
+    real_load_bones = bones.load_bones
     bones.load_bones = lambda *a, **k: None
     import dungeon
     raw = {}
-    for f in range(1, 101):
-        rows = []
-        for _mid, m in dungeon._build_spawn_pool(f).items():
-            if m.get("is_boss") or m.get("is_mini_boss") or m.get("is_seal_demon"):
-                continue
-            rows.append((_avg_hp(m.get("hp")), float(m["_spawn_freq"])))
-        tot = sum(w for _, w in rows)
-        raw[f] = sum(w * math.log(max(1.0, v)) for v, w in rows) / tot
+    try:
+        for f in range(1, 101):
+            rows = []
+            for _mid, m in dungeon._build_spawn_pool(f).items():
+                if m.get("is_boss") or m.get("is_mini_boss") or m.get("is_seal_demon"):
+                    continue
+                rows.append((_avg_hp(m.get("hp")), float(m["_spawn_freq"])))
+            tot = sum(w for _, w in rows)
+            raw[f] = sum(w * math.log(max(1.0, v)) for v, w in rows) / tot
+    finally:
+        bones.load_bones = real_load_bones
     _CURVE = {}
     for f in range(1, 101):
         lo, hi = max(1, f - SMOOTH), min(100, f + SMOOTH)

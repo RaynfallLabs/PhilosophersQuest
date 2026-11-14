@@ -47,9 +47,14 @@ def _read_photo(h):
 
 
 def _walk_beside(h, x, y):
-    """Walk to a tile beside (x, y), square on (the bump is a straight step)."""
+    """Walk to a tile beside (x, y), square on (the bump is a straight step).
+
+    No nearer in eight steps counts as stuck too: a wanderer that keeps
+    stepping into the way (a Sluagh on the idol's floor) sent the walk round
+    and round the map for 300 steps, about one run in a hundred (round 3 F)."""
     g = h.g
     stuck = 0
+    best, since = None, 0
     for _ in range(300):
         p = g.player
         if abs(x - p.x) + abs(y - p.y) == 1:
@@ -61,7 +66,13 @@ def _walk_beside(h, x, y):
             if g.state != 'player':
                 h.key(pygame.K_RETURN)
         stuck = stuck + 1 if (p.x, p.y) == was else 0
-        if not moved or stuck >= 3:
+        dist = abs(x - p.x) + abs(y - p.y)
+        if best is None or dist < best:
+            best, since = dist, 0
+        else:
+            since += 1
+        if not moved or stuck >= 3 or since >= 8:
+            best, since = None, 0
             # The walk is not what is under test: set him beside it.
             for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)):
                 if g.dungeon.is_walkable(x + dx, y + dy):
@@ -140,14 +151,17 @@ def test_the_stray_kids_from_the_idol_to_the_last_bow(make_game):  # noqa: F811 
     # 2. It calls him over the first time he sees it, then two bumps.
     _set_near(g, ix, iy)
     step = _walk_beside(h, ix, iy)
-    heard = ' '.join(h.said())
+    h.wait()                                          # (a turn with it in plain view: the walk
+    heard = ' '.join(h.said())                        #  may have been cut short by a set-down)
     assert stray_kids.data()['idol']['call'] in heard and st['called']
     h.move(*step)
-    assert 'walk into it again' in h.said()[-1]
+    assert any('walk into it again' in t for t in h.said())
     h.move(*step)
     assert g.dungeon_level == STRAY_KIDS_STAGE
     said = h.said()
-    assert said[-1] == 'The stage door is the way out (> on it).'
+    # (each line is looked for, not its place: a blow or a spell wearing off
+    # in the same turn is said in among them, about one run in fifty)
+    assert 'The stage door is the way out (> on it).' in said
     assert any('Five, six, seven, EIGHT' in t for t in said)
     # 3. The dance: they see him, close in formation, and roast him.
     band = stray_kids.the_band(g.monsters)
@@ -236,15 +250,15 @@ def test_the_stray_kids_from_the_idol_to_the_last_bow(make_game):  # noqa: F811 
     g = h.g
     p = g.player
     assert g.dungeon_level == floor
-    assert h.said()[0] == stray_kids.data()['stage']['leave_cleared']
+    assert stray_kids.data()['stage']['leave_cleared'] in h.said()
     assert g._stray_kids_state()['outcome'] == 'cleared'
     g.monsters = [m for m in g.monsters if getattr(m, 'is_allied', False)]
     step = _walk_beside(h, ix, iy)
     h.said()
     h.move(*step)
-    assert h.said()[-1] == stray_kids.data()['idol']['spent_bump']
+    assert stray_kids.data()['idol']['spent_bump'] in h.said()
     h.move(*step)                                     # and again: still spent, no trip
-    assert h.said()[-1] == stray_kids.data()['idol']['spent_bump']
+    assert stray_kids.data()['idol']['spent_bump'] in h.said()
     assert g.dungeon_level == floor
     # 6. The photo: a goblin stops to watch; a named foe and a swarm do not.
     open_floor(g, p.x, p.y, 3)
