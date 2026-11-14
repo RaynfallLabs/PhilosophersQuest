@@ -54,7 +54,23 @@ def test_lore_fixtures_are_whole():
     assert cfg['per_floor'][1] <= 3
 
 
+def _open_floor(d, room, monsters, items):
+    """The room's plain floor with nothing on it: no creature, no item, no
+    trap and no fixture. Furniture never goes under any of those."""
+    held = {(m.x, m.y) for m in monsters} | {(i.x, i.y) for i in items}
+    held |= set((d.__dict__.get('traps') or {}).keys()) | set(d.__dict__.get('pits') or ())
+    fx = d.__dict__.get('fixtures') or {}
+    return [(x, y) for y in range(room.y + 1, room.y + room.height - 1)
+            for x in range(room.x + 1, room.x + room.width - 1)
+            if d.in_bounds(x, y) and d.tiles[y][x] == FLOOR and (x, y) not in held
+            and (x, y) not in fx]
+
+
 def test_generated_floors_furnish_their_special_rooms_and_say_so(monkeypatch):
+    """Every special room shows its own furniture, unless it has no open
+    floor to hold it: a pool carved over it, or every tile under a sleeper
+    or a pile of loot (round 3: that is the rule; the test used to count such
+    rooms as bare, and about one run in fifty failed on a ratio over five)."""
     _no_bones(monkeypatch)
     from level_manager import LevelManager
     random.seed(4)                 # before the LevelManager rolls its plan (audit G8)
@@ -69,7 +85,6 @@ def test_generated_floors_furnish_their_special_rooms_and_say_so(monkeypatch):
         state = d.__dict__.get('lore_fixtures') or {}
         assert len(state) <= 3, level
         for center, rtype in d.special_rooms.items():
-            rooms_seen[rtype] += 1
             room = next(r for r in d.rooms if tuple(r.center) == tuple(center))
             ids = decor.room_dressing()['rooms'][rtype]
             want = set()
@@ -81,6 +96,9 @@ def test_generated_floors_furnish_their_special_rooms_and_say_so(monkeypatch):
                       if room.x <= x < room.x + room.width and room.y <= y < room.y + room.height]
             if set(inside) & want:
                 furnished[rtype] += 1
+                rooms_seen[rtype] += 1
+            elif _open_floor(d, room, _m, _i):
+                rooms_seen[rtype] += 1          # bare, with floor to furnish
             line = decor.room_dressing()['arrival'].get(rtype)
             if line and len(d.special_rooms) == 1:
                 assert line in d.atmosphere_messages, (level, rtype)
@@ -89,6 +107,36 @@ def test_generated_floors_furnish_their_special_rooms_and_say_so(monkeypatch):
     for rtype, n in rooms_seen.items():
         if n >= 5:                 # a ratio over two rooms is noise
             assert furnished[rtype] >= n * 0.7, (rtype, furnished[rtype], n)
+
+
+def test_a_bare_special_room_gets_a_loose_piece_of_its_own():
+    """A small graveyard whose every wall tile stands beside a way in has no
+    spot for a headstone (they keep clear of the ways in): it still shows a
+    bone pile on its own floor, which blocks nothing."""
+    from dungeon import DOOR, GRAVE
+    w, h = 9, 9
+    tiles = [[WALL] * w for _ in range(h)]
+    room = Room(2, 2, 5, 5)                  # inner 3x3, at (3..5, 3..5)
+    for y in range(3, 6):
+        for x in range(3, 6):
+            tiles[y][x] = FLOOR
+    for x, y in ((4, 2), (4, 6), (2, 4), (6, 4)):
+        tiles[y][x] = DOOR                   # a way in on every side
+    tiles[3][3] = tiles[3][5] = GRAVE        # graves along the north wall: no head to stand at
+    d = Dungeon(tiles, [room], w, h, 30)
+    d.special_rooms = {tuple(room.center): 'graveyard'}
+    taken = set()
+    n = decor.furnish_special_rooms(d, taken, [], random.Random(1))
+    fx = d.__dict__.get('fixtures') or {}
+    assert n == 1 and set(fx.values()) == {'bone_pile'}
+    (pos,) = fx
+    assert d.tiles[pos[1]][pos[0]] == FLOOR and d.is_walkable(*pos)
+    # A room with nowhere free is left as it is: nothing goes under the loot.
+    d2 = Dungeon([row[:] for row in tiles], [room], w, h, 30)
+    d2.special_rooms = {tuple(room.center): 'graveyard'}
+    full = {(x, y) for y in range(3, 6) for x in range(3, 6)}
+    assert decor.furnish_special_rooms(d2, set(full), [], random.Random(1)) == 0
+    assert not (d2.__dict__.get('fixtures') or {})
 
 
 def _plain_floor():

@@ -224,7 +224,9 @@ Tests: `tests/test_hazards.py`.
 - the swamp gets lily pads on its water;
 - and so on for the rest.
 
-Standing pieces go against the walls, away from the ways in. The reachability walk covers them.
+Standing pieces go against the walls, away from the ways in. The reachability walk covers them. A special room its layers left bare (a small room whose every wall tile stands beside a way in, about one graveyard in eight), or whose only pieces were blockers the reachability walk lifted, still shows one of its loose floor pieces on its own floor, in a nook when it has one (`decor._furnish_bare_room`; they block nothing). A room with no open floor (a pool over it, or every tile under a sleeper or loot) is left as it is: furniture never goes under a creature or an item (round 3, 2026-11-14).
+
+**Loot is laid on plain floor.** The floor's own loot goes on plain floor (or ice), one thing to a tile, never on a stair, an altar, a fountain, a grave or a throne that hides it (`dungeon._place_one`). Everything that moves loot later keeps the same rule (`game_helpers.lays_loot`): an item lifted out of a pool or lava (`Game._settle_monsters`), loot and quest pieces brought within reach of the hero (`Game._bring_within_reach`), and the deep-lore pieces (`Game._maybe_place_lore_items`). Nothing is moved onto a trader's blanket or a shrine, and the run's trader chooses his spot after all of them ([economy](economy.md)). Any free tile in reach is used only when no plain one is left (round 3, 2026-11-14: loot had been laid on stairs, altars and Old Mags' stall).
 
 **Lore fixtures, "Worth a Closer Look" (B1).** Configured in `data/lore_fixtures.json` and placed by `decor.place_lore_fixtures`: one to three per floor from floor 2, never more than three.
 - **Subjects:** one fixture for every subject except maths.

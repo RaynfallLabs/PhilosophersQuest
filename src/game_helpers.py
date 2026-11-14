@@ -111,6 +111,20 @@ def a_or_an(name: str) -> str:
     return f"{article} {name}"
 
 
+def lays_loot(dungeon, x: int, y: int, held=()) -> bool:
+    """May a thing be laid on (x, y) of ``dungeon``, as the floor's own loot
+    is (dungeon._place_one)? Plain floor or ice, with no fixture and no other
+    ground thing on it (``held``: the tiles that already hold one). A stair,
+    an altar or a fountain hides what lies on it; a trader's blanket and a
+    shrine are places, not floor."""
+    from dungeon import FLOOR, ICE
+    d = dungeon
+    return (d.in_bounds(x, y) and d.tiles[y][x] in (FLOOR, ICE)
+            and (x, y) not in (getattr(d, 'fixtures', None) or {})
+            and (x, y) not in (getattr(d, 'fixture_blocks', None) or ())
+            and (x, y) not in held)
+
+
 def wrap_text(text: str, font: 'pygame.font.Font', max_w: int) -> list[str]:
     """Break text into lines that fit within max_w pixels.
 

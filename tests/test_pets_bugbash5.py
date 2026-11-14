@@ -147,14 +147,18 @@ def test_a_threat_pacing_on_the_edge_of_his_range_is_one_growl():
 
 def test_a_threat_that_goes_well_away_and_comes_back_is_growled_at_again():
     g, shep = _growl_scene()
-    for xx in range(g.player.x, g.player.x + 9):
-        g.dungeon.tiles[g.player.y][xx] = FLOOR
-    m = _monster(g.player.x + 3, g.player.y)
+    # Eight tiles of floor beside the hero, east, or west when the open room
+    # lies against the east edge of the map (about one floor in a hundred:
+    # x + 8 ran off the map, an IndexError under the full suite, round 3).
+    step = 1 if g.player.x + 8 < g.dungeon.width - 1 else -1
+    for i in range(9):
+        g.dungeon.tiles[g.player.y][g.player.x + step * i] = FLOOR
+    m = _monster(g.player.x + 3 * step, g.player.y)
     g.monsters = [m]
     g._do_pet_growl()
-    m.x = g.player.x + 8                     # radius 5 + 2 < 8
+    m.x = g.player.x + 8 * step              # radius 5 + 2 < 8
     g._do_pet_growl()
-    m.x = g.player.x + 3
+    m.x = g.player.x + 3 * step
     g._do_pet_growl()
     assert len(_growls(g)) == 2
 

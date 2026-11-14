@@ -49,6 +49,17 @@ def test_the_self_test_passes_from_source(isolated):
     assert any((isolated / 'seekers').glob('seeker_*.json'))
 
 
+def test_the_self_test_leaves_the_ghost_gate_as_it_found_it(isolated, monkeypatch):
+    """run() shuts the ghost gate (PQ_NO_BONES) while it checks, and puts it
+    back after: it used to leave it shut for the rest of the process."""
+    monkeypatch.delenv('PQ_NO_BONES', raising=False)
+    _run('--selftest-saves')
+    assert 'PQ_NO_BONES' not in os.environ
+    monkeypatch.setenv('PQ_NO_BONES', 'yes')
+    _run('--selftest-saves')
+    assert os.environ.get('PQ_NO_BONES') == 'yes'
+
+
 def test_it_fails_when_not_the_built_game(isolated):
     assert _run('--selftest-saves', '--require-frozen') == 1
     report = (isolated / selftest.REPORT_NAME).read_text(encoding='utf-8')

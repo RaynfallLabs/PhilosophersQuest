@@ -155,6 +155,23 @@ def _fresh_unique_registry():
 
 
 @pytest.fixture(autouse=True)
+def _seeker_hooks_cleared():
+    """A Game made while a Seeker is active points four module hooks at its
+    own Seeker (SeekerMixin._seeker_init: deeds.ON_RECORD,
+    monster.DAMAGE_OBSERVER, pet_system.ON_GROWTH, topic_cards.ON_READ),
+    and they stayed set until the next Game was made: a later test that
+    struck a monster or grew a pet without making a Game reported it to the
+    Seeker of a test already over (round 3). They are cleared after every
+    test."""
+    yield
+    for mod, name in (('deeds', 'ON_RECORD'), ('monster', 'DAMAGE_OBSERVER'),
+                      ('pet_system', 'ON_GROWTH'), ('topic_cards', 'ON_READ')):
+        m = sys.modules.get(mod)
+        if m is not None and hasattr(m, name):
+            setattr(m, name, None)
+
+
+@pytest.fixture(autouse=True)
 def _restore_layout_and_ui_scale():
     """``layout.update`` sets module state: the window size AND the UI scale
     (_genart/ui/SCALE_PLAN.md), which every font fetched through get_font

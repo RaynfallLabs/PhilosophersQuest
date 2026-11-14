@@ -8,6 +8,8 @@ baseline across the level; packs/dens still cluster intentionally on top. These
 tests lock in the spread, and that the count-based spawn_monsters() STILL lumps
 (the zoo/den/lair callers depend on that).
 """
+import random
+
 from dungeon import generate_dungeon, populate_floor, spawn_monsters
 
 
@@ -62,12 +64,30 @@ def test_populate_floor_never_returns_empty():
 def test_spawn_monsters_still_lumps_for_targeted_clusters():
     """The zoo/graveyard/den/lair callers pass a single room (the den/lair ones
     pass it twice, since rooms[1:] skips the first) and rely on spawn_monsters
-    concentrating monsters there. Confirm the intentional cluster still works."""
-    d = generate_dungeon(80, 50, 10)
-    target_room = d.rooms[1]
-    extras = spawn_monsters([target_room, target_room], 10, d,
-                            min_count=3, max_count=5)
-    assert extras, 'spawn_monsters produced no monsters for a targeted room'
-    inner = set(target_room.inner_tiles())
-    assert all((m.x, m.y) in inner for m in extras), \
-        'targeted-cluster monsters escaped their room'
+    concentrating monsters there. Confirm the intentional cluster still works.
+
+    On seeded floors, a maze and a BSP floor: an unseeded maze comes out as
+    one region about one time in 190 (populate_floor's fallback fills it),
+    and then there is no second room to target (a flake under the full
+    parallel suite, round 3)."""
+    for level, seed in ((10, 1), (11, 2)):          # floor 10 is a maze
+        d = generate_dungeon(80, 50, level, rng=random.Random(seed))
+        assert len(d.rooms) >= 2, (level, seed)
+        target_room = d.rooms[1]
+        extras = spawn_monsters([target_room, target_room], level, d,
+                                min_count=3, max_count=5)
+        assert extras, 'spawn_monsters produced no monsters for a targeted room'
+        inner = set(target_room.inner_tiles())
+        assert all((m.x, m.y) in inner for m in extras), \
+            'targeted-cluster monsters escaped their room'
+
+
+def test_a_seeded_floor_is_the_same_floor_every_time():
+    """generate_dungeon's own stream can be handed in, so a test can build the
+    same floor twice; left out, every floor is new (the game)."""
+    for level in (5, 10, 47):
+        a = generate_dungeon(80, 50, level, rng=random.Random(9))
+        b = generate_dungeon(80, 50, level, rng=random.Random(9))
+        assert a.tiles == b.tiles
+        assert [(r.x, r.y, r.width, r.height) for r in a.rooms] == \
+            [(r.x, r.y, r.width, r.height) for r in b.rooms]

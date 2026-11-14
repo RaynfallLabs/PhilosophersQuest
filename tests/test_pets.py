@@ -470,8 +470,13 @@ def test_bones_corrupt_file_is_cleaned_up(tmp_path, monkeypatch):
     permanently occupy a slot under _MAX_BONES."""
     import bones
 
-    # Redirect bones dir to a tmp location
-    monkeypatch.setattr(bones, 'save_dir', lambda: str(tmp_path))
+    # A bones folder of its own (conftest swaps _bones_dir for a temp folder
+    # the whole process shares, so redirecting save_dir did nothing), and the
+    # ghost gate open: a test that ran the release self-test earlier in the
+    # same process left PQ_NO_BONES set, and load_bones returned before it
+    # reached the file (round 3, a flake under the full parallel suite).
+    monkeypatch.setattr(bones, '_bones_dir', lambda: str(tmp_path))
+    monkeypatch.delenv('PQ_NO_BONES', raising=False)
 
     # Force the 50% gate to always trigger
     class _AlwaysOpen:

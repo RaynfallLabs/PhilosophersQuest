@@ -5,7 +5,7 @@ stair until it springs (src/unseen.py, renderer.draw_disguise). This module
 decides WHERE such a creature may lie, so it can never cost the hero the way
 down:
 
-* it never lies on a stair, only on plain floor;
+* it never lies on a stair, only on plain floor (no fixture on it);
 * the real down stair stays on the map, and stays reachable from the up stair
   with the false one's tile blocked (a Hellmouth is never the only way
   through a corridor or a doorway);
@@ -17,9 +17,10 @@ down:
 
 `seat` keeps a creature that already lies on a good tile where it is, moves
 one that does not, and takes it off the floor when nowhere qualifies. It runs
-when a floor is generated (level_manager) and again whenever a floor is
-entered (Game._settle_monsters, after pools and lava are carved and stacked
-monsters are moved).
+when a floor is generated (level_manager, before and again after the floor is
+dressed: a statue can make its tile the only way through) and whenever a
+floor is entered (Game._settle_monsters, after pools and lava are carved and
+stacked monsters are moved).
 """
 from __future__ import annotations
 
@@ -81,6 +82,8 @@ def _plausible(dungeon, x, y, reach, up, down, taken) -> bool:
     from dungeon import FLOOR
     if not dungeon.in_bounds(x, y) or dungeon.tiles[y][x] != FLOOR:
         return False
+    if (x, y) in (getattr(dungeon, 'fixtures', None) or {}):
+        return False            # a rug, a drift, a statue's tile is not plain floor
     if (x, y) in taken or (x, y) not in reach:
         return False
     if max(abs(x - down[0]), abs(y - down[1])) < MIN_STAIR_DISTANCE:
