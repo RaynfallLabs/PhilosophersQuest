@@ -800,7 +800,9 @@ The kitchen (rebuilt 2026-11-14; `src/kitchen.py`, `docs/systems/food_system.md`
 `tools/content/kitchen/build_kitchen.py` from hand-written content
 (`tools/content/kitchen/ingredients_*.txt`, `dishes_*.txt`) and a frozen
 structure (`structure.json`): edit the content and rebuild, never the JSON
-by hand. `cooking_rules.json` is hand-written. `prime_cuts.json` and
+by hand. The structure is kept cookable against the simulator's part
+frequencies (`part_freq.json`, rules in `part_rules.py`, edits by
+`restructure.py`; see food_system.md §4.1). `cooking_rules.json` is hand-written. `prime_cuts.json` and
 `cook_outcomes.json` are gone.
 
 ### 11.1 `ingredient.json` — per-ingredient schema

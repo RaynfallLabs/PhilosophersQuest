@@ -44,7 +44,7 @@ mode, a T1-T5 stack of parts), the potency formulas, the Single tab.
 | `data/items/recipes.json` | The recipe book (§4). Built. |
 | `data/cooking_rules.json` | Every number a dish gives (§5). Hand-written. |
 | `data/items/food.json` | Rations: eaten as they are, and called for by many dishes. |
-| `tools/content/kitchen/` | `build_kitchen.py` (the build and every check), the content (`kin_groups.txt`, `ingredients_*.txt`, `dishes_*.txt`), the frozen structure (`structure.json`), the dish-picture clusters (`art_clusters.json`), snapshots of the old data it reads colours and trophy text from. |
+| `tools/content/kitchen/` | `build_kitchen.py` (the build and every check), the content (`kin_groups.txt`, `ingredients_*.txt`, `dishes_*.txt`), the frozen structure (`structure.json`), the dish-picture clusters (`art_clusters.json`), snapshots of the old data it reads colours and trophy text from. Keeping the book cookable (§4.1): `part_freq.json` (how often each part turns up in a simulated run), `part_freq.py` (makes it), `part_rules.py` (the rules), `restructure.py` (edits the structure by them). |
 
 The old generators (`tools/gen_recipes*.py`, `tools/gen_ingredients_v265.py`,
 `tools/tune_sp_soft_boundary.py`, `tools/balance/fix_broken_ingredients.py`,
@@ -60,6 +60,11 @@ The old generators (`tools/gen_recipes*.py`, `tools/gen_ingredients_v265.py`,
    unique names).
 3. `--structure` regenerates the structure (who goes into which dish) and the naming skeleton.
    Its dish ids change, so every multi-dish must be renamed: do it only for a real redesign.
+4. When spawns, the harvest map or the kin groups change: `py tools/content/kitchen/part_freq.py`
+   (about 17 s a simulated run; 15 by default) rewrites `part_freq.json`. If the build then fails a
+   cookable rule, `py tools/content/kitchen/restructure.py --log FILE` swaps the rare parts out
+   (its `KEEP` / `SWAP` tables hold the hand-picked choices), adds dishes for parts left short,
+   and writes a naming worksheet; name the new dishes in `dishes_3.txt` and rebuild.
 
 ---
 
@@ -122,9 +127,10 @@ leave no corpse; the deadites and Old Nickel share the zombie's and the goblin's
 
 ## 4. The recipe book (`recipes.json`)
 
-**573 dishes:** 316 single dishes (one per ingredient: the everyday choice) and 257
+**686 dishes:** 316 single dishes (one per ingredient: the everyday choice) and 370
 multi-ingredient dishes of 2 to 5 different ingredients. Every ingredient is in exactly one single
-dish and at least two multi-dishes. 36 multi-dishes are legendary feasts; 101 are cross-depth.
+dish and at least two multi-dishes. 36 multi-dishes are legendary feasts; 126 are cross-depth. No
+dish is named just like an ingredient (the build checks).
 
 | Field | Meaning |
 |-------|---------|
@@ -139,23 +145,46 @@ dish and at least two multi-dishes. 36 multi-dishes are legendary feasts; 101 ar
 - **Single dishes** are `cook_<kin>` ("Goblin Gristle Stew"); trophy dishes keep their ids
   (`trophy_<boss>_recipe`) and names.
 - **Common food goes in:** bread, dried meat, hard cheese, wild mushroom, apple, trail rations,
-  healing herb, elvish bread, deep fungi, void ration and philosopher's tea (rare food rarely),
-  and the forage. Never quest, secret or one-shot food (the dungeon carrot, Tantalus' plum, the
+  healing herb, elvish bread, and the forage. Rare food (philosopher's tea; deep fungi and the
+  void ration are in no dish now) counts as an uncommon part (§4.1). Never quest, secret or one-shot food (the dungeon carrot, Tantalus' plum, the
   peach, ambrosia, the golden apple). The cook takes the ration from the pack.
 - **Cross-depth:** about a third of the multi-dishes join an early part with a deep one: Goblin
   Gristle from floor 3 goes into the Gristle-and-Locust Harvest Pie with a floor-74 locust.
 - **Legendary feasts:** 36, five ingredients each, deep (tier 3+): each of the 14 trophies anchors
   two, and the seven seal demons and Baba Yaga one each.
 
+### 4.1 A book a run can cook (`part_freq.json`, `part_rules.py`)
+
+The simulator measured, for every part, the share of mastery runs it turns up in and the floor it
+is first found on. A part is **common** when it turns up in 90% of runs or more, or it is common
+food or forage. The build fails on any dish that breaks these rules
+(`tests/test_kitchen_part_freq.py` pins them from the game data):
+
+1. **A feast's gate is its trophy** (its first ingredient; for the seal demons' and Baba Yaga's
+   feasts, the boss part). Every other part is common, or an early part (first found by floor 20)
+   that turns up in 75% of runs: the hunt is the gate, the rest is saving. Rare optional-boss
+   trophies stay rare (Nidhoggr 7%, the Crone 13%): a feast keyed to one is the reward for
+   hunting him.
+2. **An ordinary multi-dish holds at most one uncommon part**, so finding a rare part means its
+   dishes can be cooked.
+3. About a third of the multi-dishes span depths, nine in ten of them joining an early common
+   part (a saved part, a ration, cheese) with a deep one.
+
+Before this (K1's book): 8 of 36 feasts and 109 of 257 multi-dishes were cookable in half of
+runs. Now: all 36 feasts once the trophy is won (19 counting the trophy's own odds) and 224 of
+370 multi-dishes. The eight that a simulated run never cooks hold a part the simulator never
+meets: the cow level's two (secret), the mimic (it waits in chests) and Charybdis (summoned by
+her scroll); each pairs only with common partners.
+
 Dishes per tab and depth band (the tier of the deepest ingredient):
 
 | Tab | 1-20 | 21-40 | 41-60 | 61-80 | 81-100 |
 |-----|-----:|------:|------:|------:|-------:|
-| HP | 33 | 14 | 7 | 3 | 13 |
-| SP | 61 | 7 | 2 | 10 | 5 |
-| MP | 35 | 7 | 9 | 4 | 12 |
-| Stat | 118 | 32 | 22 | 10 | 20 |
-| Special | 69 | 36 | 16 | 7 | 21 |
+| HP | 44 | 15 | 9 | 3 | 14 |
+| SP | 81 | 8 | 4 | 11 | 5 |
+| MP | 48 | 8 | 11 | 4 | 13 |
+| Stat | 143 | 36 | 25 | 17 | 21 |
+| Special | 79 | 40 | 19 | 8 | 20 |
 
 ---
 
@@ -358,4 +387,5 @@ book: `test_cooking_overhaul.py`, `test_ingredient_rename.py`, `test_harvest_coo
 | v2.18 | 2026-10-01 | The cook path calls `on_food_eaten` (Tantalus, Persephone, Circe). |
 | — | 2026-10-26 | Base max HP on every meal; the floor's stat lesson; the per-stat cap. |
 | — | 2026-11-12 | Meals heal 6% + written/80 of the bar. |
-| K1 | 2026-11-14 | **The kitchen rebuild.** Kin share ingredients (316: 294 parts, 14 trophies, 8 forage) with vivid names that keep their pictures; `harvest_map.json` with aliases; a 573-dish book where every ingredient is in one single and two+ multi-dishes, rations included, a third cross-depth, 36 legendary feasts; five kinds of meal (HP / SP / MP / Stat / Special) from one rules file, MP restore new, worth and size bonus, legendary permanents inside the lifetime caps; the pure menu functions; old saves migrate. `prime_cuts.json`, `cook_outcomes.json`, `cut_stat` and `outcome_id` retired. |
+| K1 | 2026-11-14 | **The kitchen rebuild.** Kin share ingredients (316: 294 parts, 14 trophies, 8 forage) with vivid names that keep their pictures; `harvest_map.json` with aliases; a 573-dish book where every ingredient is in one single and two+ multi-dishes, rations included, a third cross-depth, 36 legendary feasts; five kinds of meal (HP / SP / MP / Stat / Special) from one rules file, MP restore new, worth and size bonus, legendary permanents inside the lifetime caps; the pure menu functions; old saves migrate. `prime_cuts.json`, `cook_outcomes.json`, `cut_stat` and `outcome_id` retired.
+| K1b | 2026-11-14 | **A book a run can cook** (§4.1). From the simulator's part frequencies (`part_freq.json`): 22 feasts swap their rare parts for common or banked early ones (names and themes kept), 90 multi-dishes keep one uncommon part, 113 new dishes give every rare part two dishes with common partners (686 dishes, 370 multi). The build checks the rules and that no dish shares an ingredient's name (Cave Bear Steak's dish is now Hibernation Bear Steak). | |

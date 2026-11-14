@@ -1,0 +1,117 @@
+# Multi-ingredient dish names and flavour, part 3: the dishes restructure.py
+# added so every part a run turns up only sometimes has two dishes of its own,
+# each with common partners (slice K1b, 2026-11-14).
+# dish_id | Name | flavour line
+dish_222|Drow Bat-Wing Skewers|The dark elves' trail snack; every rustle in the dark reaches you.
+dish_223|Bonfire Chimera Grill|Bones that burn and a beast that breathes fire, salted; heat slides off you.
+dish_224|Two-Headed Hound Hotpot|Two heads of smoky dog and a shinbone that will not stay buried; it mends you.
+dish_225|Frozen Crypt Aspic|Set in a cold tomb overnight; the cold never finds you after.
+dish_226|Praying Mantis Stir-Fry|Tossed fast and eaten faster; your hands move before you think.
+dish_227|Grave-Nose Sausage Roll|A gravehound sniffs out the dead. After this, so do you.
+dish_228|Straight-Line Scorpion Skewers|Grid bug and scorpion on one stick; your thoughts line up like soldiers.
+dish_229|Hollow-Bone Ration Stew|Marrow from a hollow one, sausage from a hobgoblin's pack; it fills you up.
+dish_230|Raven's Watch Sandwich|Odin's raven sees everything. The Furies see the rest.
+dish_231|Hopping Ghost Dumplings|They bounce in the steamer, and the magic bounces into you.
+dish_232|Swamp Hunter's Smokehouse Stew|Smoked lizard, roast rat and cave mushrooms: a marsh supper.
+dish_233|Mushroom-Man Hotpot|Myconid stalk, harpy ham and goblin gristle, stewed in moss.
+dish_234|Spore-and-Ham Pie|A soldier's ham baked under a cap of talking mushroom.
+dish_235|Dream-Dust Tea|A pinch of pixie, a pinch of nightmare; the magic comes on a sneeze.
+dish_236|Haunted House Toast|It rattles on the plate and wails on the way down.
+dish_237|Gutter Grub Sandwich|Rat and grub on bread: the cheapest full belly in the dungeon.
+dish_238|Scarab-and-Pegasus Roast|Desert shell and winged leg, roasted; wounds close as you chew.
+dish_239|Desert Beetle Rump Bake|Scarab and catoblepas baked under cheese; heavy, crunchy and healing.
+dish_240|Smoke-and-Acid Glaze|Dark smoke over a sour glaze; the shadows thin out.
+dish_241|Midnight Mushroom Jelly|Two kinds of darkness set in one jelly; your eyes drink the dark.
+dish_242|Stirge-and-Rump Sandwich|The stirge drank first. Now it is your turn.
+dish_243|Bronze-Feather Fowl Pie|Pluck the bronze feathers first, or bite carefully.
+dish_244|Lake Stymphalia Hash|Heracles chased these birds away; you cook them with hyena links.
+dish_245|Tengu Wing Kebabs|Wings of a sword-master; your feet learn his footwork.
+dish_246|Spiced Mold Loaf|Spiced ham, dried meat and a log of yellow mold. It is better than it sounds.
+dish_247|Mold-and-Cube Casserole|Everything in the dungeon that grows on walls, in one dish.
+dish_248|Blink-and-Gravel Grits|Crunch, flash, gone; you are somewhere else before the blow lands.
+dish_249|Maze-Runner's Loin Chops|A minotaur never catches a blink dog. Eat both and dodge like one.
+dish_250|Wand-and-Eye Bread Pudding|A bone witch's wand, a beholder's eye and elf-bread: three kinds of magic, one spoon.
+dish_251|Goblin Clan Sausage Supper|Every goblin's cousin in one pot of bangers and gristle.
+dish_252|Raider's Bangers and Links|What raiders eat after the raid.
+dish_253|Crypt Crawler Pot|It eats the dead; you eat it. Very filling.
+dish_254|Brimstone Crypt Broth|A crypt thing's shank in imp fire; the magic hisses up.
+dish_255|Glitter-and-Ink Cordial|It sparkles, it writes, and it fills your mind with mana.
+dish_256|Spectral Glitter Sorbet|Cold, glittering and full of ghost-light magic.
+dish_257|Exploding Ham Sandwich|Do not drop it.
+dish_258|Centipede-and-Rat Roll|A great many legs and one rat, wrapped in bread.
+dish_259|Chattering Haggis|It talks while it cooks. Eat it before it says something rude.
+dish_260|Little Maker's Spark Pie|A wizard's little helper and a scribe's ink heart, baked with elf-bread.
+dish_261|Double Ooze Wobble|Two oozes set in one mould; it wobbles all the way down.
+dish_262|Demon-Wind Brine Broth|Two fiends' juices, cooked clear; your thoughts turn quick and cold.
+dish_263|Wild Fowl Fricassee|Stag-bird and harpy in cream and mushrooms.
+dish_264|Shape-Shifter's Cheese Plate|The cheese keeps changing shape. So, for a while, do you.
+dish_265|Red-Cap Ember Roast|Hot as a redcap's temper, salty as a devil's brine.
+dish_266|Bull-and-Acorn Pasties|Hard-marching food with a fiery heart.
+dish_267|Rust-and-Ward Crumble|Sour and crumbly; acid slides off you like rain off a shield.
+dish_268|Ghost-Light Marrow Soup|Three cold glows in one bowl, and your mana warms up.
+dish_269|Will-o'-Wisp Dragon Consommé|A marsh light saved from the top floors meets a ghost dragon far below.
+dish_270|Wood-and-Stone Golem Stew|Oak sap and rune-stone; you stand like a wall.
+dish_271|Snake-Priest's Supper|Yuan-ti haunch and a beholder's eye: food for a temple of snakes.
+dish_272|Ba-Soul Bread Pudding|The Egyptian soul-bird, baked with elf-bread; it flies straight to your head.
+dish_273|Soul-Market Hotpot|Souls, bones and blood: the cult's own supper, and full of magic.
+dish_274|Jewel-Thief's Curry|A carbuncle's jewel saved for a long time, glazed in a rakshasa's trick; pure mana.
+dish_275|Stone-Ward Drumsticks|A cockatrice leg saved from the top floors, basted in deep bile; nothing turns you to stone.
+dish_276|Petrifier's Platter|Two stone-gazers on one plate; their stare cannot hold you now.
+dish_277|Fire-and-Ice Omen Stew|A fetch is an omen of death. Eat it hot and cold, and know what is coming.
+dish_278|Tentacle-and-Marrow Rolls|Grick tentacle wrapped round bone marrow; chewy and clever.
+dish_279|Necromancer's Tentacle Stew|Dark learning and a cave-worm's coil; your thinking sharpens.
+dish_280|Marrow-Wheel Sky Pie|A marrow wheel from the shallow tombs, a ham from the clouds far below; wise and strange.
+dish_281|Mud-and-Spice Gumbo|Swamp leg and spiced ham, thick as the bog it came from.
+dish_282|Mud-and-Locust Fry-Up|A mud crawler from the top floors, a locust from the plague below: a meal for a famine.
+dish_283|Stalactite Drip Soup|Drips from the ceiling and stalks from the floor; you notice everything above you.
+dish_284|Rat-and-Shadow Bacon Butty|Wererat bacon from the sewers, an assassin's ham from the deep: a thief's lunch.
+dish_285|Heartwood Wyvern Salad|A dryad's acorn sprouts in it, and your wounds close like bark.
+dish_286|Sticky-Fingers Sausage Roll|Light, quick and gone before anyone notices.
+dish_287|Wolf-Cub War Stew|A wolf pup's shank, saved and stewed in a demon knight's war-blood.
+dish_288|Asgard Hunter's Shanks|Wolf and Valkyrie, the two ends of every Norse saga.
+dish_289|Cave-Dweller's Musk Stew|It smells like a troglodyte. It fills like three.
+dish_290|Bandit's Musky Sandwich|Bandits steal everything except troglodyte meat. Their loss.
+dish_291|Grudge-Bone War Broth|A revenant comes back for revenge; the demon knight's war-blood makes it strong.
+dish_292|Restless Dead Marrowbones|Two kinds of grave bone, roasted until the marrow gives up its strength.
+dish_293|Serpent-and-Star Riddle Supper|A serpent spawn saved from the top floors, a fallen star's bitter blood, and a sphinx's riddle.
+dish_294|Coiled Serpent Sausage Roll|A sea-serpent's spawn wound round a hedge-witch's sausage.
+dish_295|Sun-Bird Roast|Sun-serpent and roc, roasted golden; you glow and you heal.
+dish_296|Fimbulwinter Shank Stew|A winter wolf from the top floors and a frost giant from below; the long winter cannot touch you.
+dish_297|Cog-and-Bronze Hash|Gears and a bronze giant's heart; you think like a machine.
+dish_298|Lion-and-Bear Mixed Grill|Two of the forest's biggest, on one grill.
+dish_299|Treasure-Chest Blubber Stew|A mimic's glue from an early chest and blubber from a leviathan of the void; very, very filling.
+dish_300|Otyugh Gut-Buster Hotpot|If an otyugh can digest it, so can you; you come out of it tough.
+dish_301|Grave-Warm Hotpot|A vrykolakas's bone, still warm, with Ammit's leg; it mends and mends.
+dish_302|Dragon-Heart Bone Broth|A warm vampire bone from the shallow floors, a dragon's heart from the deep; every wound shuts.
+dish_303|Weaver's Web Skillet|Arachne wove faster than a goddess. A taste of her and your fingers fly.
+dish_304|Keening Mushroom Soup|It wails softly as it simmers; you hear warnings no one else does.
+dish_305|Witch Trial Supper|A banshee, a witch and an inquisitor at one table. Somebody will be wiser afterwards.
+dish_306|Black Pudding Pie|Made from a real black pudding. Yes, the ooze.
+dish_307|Little Whirlpool Chowder|Charybdis's spawn swallows the sea; this swallows your hunger.
+dish_308|Two-Golem Heart Stew|Clay and flesh, both built to last. So are you.
+dish_309|End-of-Days Amber Roast|A clay golem's heart, kept since the early floors, roasted in the herald's ichor.
+dish_310|Many-Heads Mirage Steak|Six legs, nine heads, and you are never quite where they strike.
+dish_311|Headless Horseman's Stew|One head too few, nine heads too many; fear cannot find you.
+dish_312|Black Rider's Thunder Toast|The headless rider and the lightning serpent; nothing frightens you after.
+dish_313|Lightning-Reflex Platter|Spark, snare and bronze; your hands are faster than your eyes.
+dish_314|Primordial Silt Bisque|Mud from the first sea and slime from the deep ones; old, strange magic.
+dish_315|Scythe-Bone Lava Broth|Death's own bone in a pot of magma; nothing can drain you.
+dish_316|Gravel-Crusted Ribs|Crunchy outside, quick inside.
+dish_317|Pharaoh's Dragon Marrowbones|A mummy's shank from the upper tombs, a dracolich's bone from the deep; your life stays yours.
+dish_318|Embalmer's Salt Soup|Salted like a mummy; your strength stays wrapped up tight.
+dish_319|Temple Serpent Rolls|A guardian naga's tail and a witch's sausage, blessed twice.
+dish_320|Night-Thunder Ink Stew|The nue's cry and a star spawn's ink; your mind fills like a night sky.
+dish_321|Surf-and-Turf Grill|Sea serpent and owlbear on one grill; you mend from both ends.
+dish_322|Compost-Baked Rump|Baked slowly in a shambling mound's heat; it falls apart, and you mend.
+dish_323|Vampire-Hunter's Supper|A strigoi bone from the shallow crypts, an inquisitor's ham from the deep: you see what hides.
+dish_324|Barrow-Wyrm Stew|A lindworm's coil and a draugr's bone; you grow as tough as a barrow mound.
+dish_325|Fallen-Star Serpent Sausages|A lamia's sausage saved from the upper floors, glazed with ash-light from the void.
+dish_326|Boar-Hunt Blood Roast|The boar that took a hundred heroes, roasted with a vampire's bone.
+dish_327|Patriarch's Bedrock Bangers|Links from the iron patriarch's own table, brined in devil's salt and bedrock.
+dish_328|Witch-Queen's Sausage Supper|A hedge-witch's sausage from the upper floors, kissed by Rangda the witch-queen.
+dish_329|Bone-Fence Hotpot|Baba Yaga's fence is made of bones. So is this pot, and it mends you.
+dish_330|Midgard Serpent Steak|A young world serpent's steak with a draugr's bone; you hold like the earth.
+dish_331|Serpent-and-Stone Pie|Coils, runes and iron: a pie as tough as a mountain.
+dish_332|Twenty-Armed Demon Curry|Ravana had twenty arms. One bite and you could use them all.
+dish_333|Demon-King's Brine Roast|The demon king of Lanka's strength, brined and roasted.
+dish_334|Anansi's Last Story Skillet|Anansi owns every story. This one ends with you wiser.

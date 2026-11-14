@@ -178,7 +178,9 @@ def test_enter_on_a_ready_dish_cooks_it_uses_its_ingredients_and_heals():
     assert _held(g, 'cave_bear_prime') == 0
     assert g.player.hp > hp
     texts = [str(e[0]) for e in g.msg_log.entries[-8:]]
-    assert any('You prepare Cave Bear Steak.' in t for t in texts), texts
+    import kitchen
+    name = kitchen.recipe('cook_cave_bear')['name']       # Hibernation Bear Steak
+    assert any(f'You prepare {name}.' in t for t in texts), texts
 
 
 def test_the_screens_rows_are_menu_rows_in_three_sections():
