@@ -31,18 +31,22 @@ The kitchen rebuild (COOKING_REBUILD_PLAN_2026_11_14, slice K1). Three steps:
 
 Inputs: data/monsters.json, data/items/food.json, the OLD ingredient.json
 (colours; read from git's copy in ``old_ingredients.json`` once the data has
-been rebuilt), kin_groups.txt, ingredients_*.txt, art_clusters.json.
+been rebuilt), kin_groups.txt, ingredients_*.txt.
+
+Each dish's picture (``art``) comes from ``dish_art.py``: the kind its name
+says, at its tier and main benefit (a legendary feast has its own, a trophy
+dish its boss's). The build writes the result to ``dish_art.json``.
 """
 import json
 import os
 import random
-import re
 import statistics
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 if HERE not in sys.path:
     sys.path.insert(0, HERE)
+import dish_art  # noqa: E402
 ROOT = os.path.abspath(os.path.join(HERE, '..', '..', '..'))
 DATA = os.path.join(ROOT, 'data')
 ITEMS = os.path.join(DATA, 'items')
@@ -122,122 +126,6 @@ PART_WORDS = {
     'scale': ('Scale',),
     'wood': ('Log', 'Stalk'),
 }
-
-# ----------------------------------------------------------------------
-# Dish art: the recipe pictures, clustered by look (art_clusters.json), and
-# which kind of dish each cluster shows. A dish takes a picture of its kind,
-# read from the last cooking word of its name.
-# ----------------------------------------------------------------------
-CLUSTER_KIND = {
-    'recipe_prime_aboleth_lesser_recipe': 'skewer',
-    'recipe_combo_bugbear_river_salt_recipe': 'dumpling',
-    'recipe_captain_and_grunt_hash': 'hash',
-    'recipe_prime_ammit_spawn_recipe': 'broth',
-    'recipe_legendary_surtur_ragnarok_feast': 'legendary',
-    'recipe_combo_apprentice_lich_crystal': 'tonic',
-    'recipe_barracks_hearthstew': 'stew',
-    'recipe_combo_glabrezu_salt_platter': 'steak',
-    'recipe_prime_annis_hag_recipe': 'mash',
-    'recipe_combo_gelatinous_cube_deep_iron_recipe': 'fry',
-    'recipe_prime_barbed_devil_recipe': 'leg',
-    'recipe_combo_giant_rat_cave_mushroom_recipe': 'mushroom',
-    'recipe_family_beast_recipe': 'hotpot',
-    'recipe_combo_frost_crawler_abyssal_kelp': 'chowder',
-    'recipe_combo_greater_demon_incense': 'preserve',
-    'recipe_f21_tri_basilisk_sentinel': 'cauldron',
-    'recipe_prime_ancient_lich_recipe': 'legendary',
-    'recipe_combo_beholder_holy_water_recipe': 'roast',
-    'recipe_combo_blood_archon_holy_water_recipe': 'pie',
-    'recipe_combo_chimera_crystal_shard_recipe': 'flambe',
-    'recipe_combo_lich_swamp_moss_recipe': 'fillet',
-    'recipe_combo_ancient_dragon_river_salt_recipe': 'pudding',
-    'recipe_combo_fenrir_wolf_deep_iron_recipe': 'marrow',
-    'recipe_drake_flame_twin_ember_pot': 'sizzle',
-    'recipe_f49_abyssal_warhorn_quartet': 'tart',
-    'recipe_prime_chimera_alpha_recipe': 'ribs',
-    'recipe_f11_tri_sinew_three_shoulders': 'liver',
-    'recipe_f11_hunter_anzu_manticore': 'roast',
-    'recipe_charcoal_and_carapace_pot': 'legendary',
-    'recipe_combo_soul_eater_crystal_shard_recipe': 'ribs',
-    'recipe_f11_catoblepas_sphinx_sandfury': 'meatballs',
-    'recipe_f21_tri_demonic_imp_cinder': 'cauldron',
-    'recipe_f46_hierophant_witch_censer_rite': 'terrine',
-    'recipe_f50_elder_beholder_eye_vigil': 'salad',
-    'recipe_f21_tri_deep_iron_bulwark': 'sausage',
-    'recipe_mythic_f81_horsemen_final_communion': 'legendary',
-    'recipe_f11_tri_rally_three_horns': 'flatbread',
-    'recipe_f49_bone_pact_of_four': 'blood',
-    'recipe_legendary_tiamat_nine_world_soup': 'legendary',
-    'recipe_mythic_ancient_dragon_ravanas_arm_fire_elemental_lava_elemental_incense_recipe': 'legendary',
-    'recipe_quartet_f81_four_dead_kings_marrow': 'hotpot',
-    'recipe_r_f5160_hierarchy_of_hells_four_pot': 'bread',
-    'recipe_r_f5160_nine_night_feast_crones': 'legendary',
-    'recipe_r_f5160_thrice_wise_crone_pot': 'bisque',
-    'recipe_r_f6170_three_primordial_prism': 'salad',
-    'recipe_u_incense_tea': 'pudding',
-    'recipe_u_mushroom_tea': 'mushroom',
-}
-# Name words -> kind of dish (the last matching word of a name decides).
-KIND_WORDS = {
-    'skewer': ('skewer', 'skewers', 'kebab', 'kebabs', 'spit', 'brochettes'),
-    'dumpling': ('dumpling', 'dumplings', 'bun', 'buns', 'bao', 'pirozhki', 'pasty', 'pasties',
-                 'parcels', 'nuggets', 'puffs', 'wontons', 'pelmeni', 'momos'),
-    'hash': ('hash', 'chili', 'curry', 'beans', 'couscous', 'granola', 'gruel', 'pilaf', 'risotto',
-             'jambalaya', 'kedgeree', 'dal'),
-    'broth': ('broth', 'stock', 'soup', 'consommé', 'consomme', 'bitters', 'ramen', 'pho', 'noodles'),
-    'tonic': ('tonic', 'cordial', 'tea', 'infusion', 'draught', 'elixir', 'syrup', 'punch', 'brew',
-              'tisane', 'cider', 'grog', 'posset', 'nectar'),
-    'stew': ('stew', 'ragout', 'casserole', 'goulash', 'pottage', 'braise', 'cassoulet', 'hotchpotch',
-             'scouse', 'bourguignon', 'tagine', 'stroganoff', 'supper'),
-    'steak': ('steak', 'steaks', 'cutlet', 'cutlets', 'chop', 'chops', 'rump', 'medallions', 'slices',
-              'escalope', 'schnitzel', 'grill'),
-    'mash': ('mash', 'purée', 'puree', 'porridge', 'mush', 'polenta', 'grits', 'colcannon'),
-    'fry': ('fritters', 'fry', 'fried', 'tempura', 'fry-up', 'crisps', 'crackling', 'scratchings'),
-    'leg': ('leg', 'legs', 'drumstick', 'drumsticks', 'drumettes', 'shank', 'shanks', 'haunch', 'confit',
-            'joint', 'hock', 'trotters'),
-    'mushroom': ('mushrooms', 'fricassee', 'sauté', 'saute'),
-    'hotpot': ('hotpot', 'pot', 'stockpot', 'crock'),
-    'chowder': ('chowder', 'gumbo'),
-    'preserve': ('preserve', 'jam', 'compote', 'jelly', 'conserve', 'aspic', 'wobble', 'pickle',
-                 'chutney', 'relish', 'marmalade'),
-    'cauldron': ('cauldron', 'boil', 'kettle'),
-    'roast': ('roast', 'roulade', 'wellington', 'bake', 'barbecue'),
-    'pie': ('pie', 'pies', 'pirog', 'cobbler', 'crumble', 'quiche'),
-    'flambe': ('flambé', 'flambe', 'fondue'),
-    'fillet': ('fillet', 'fillets', 'carpaccio', 'sashimi', 'platter', 'tartare', 'ceviche'),
-    'pudding': ('pudding', 'custard', 'flan', 'soufflé', 'souffle', 'sorbet', 'omelette', 'eggs',
-                'trifle', 'junket', 'syllabub', 'blancmange'),
-    'marrow': ('marrowbones',),
-    'sizzle': ('skillet', 'stir-fry', 'sizzle', 'devilled', 'glaze', 'wok', 'griddle-fry', 'teriyaki'),
-    'tart': ('tart', 'tarts', 'galette', 'crown', 'tatin', 'pithivier'),
-    'ribs': ('ribs', 'rack', 'ribbone'),
-    'liver': ('liver', 'livers', 'kidneys', 'heart', 'hearts', 'sweetbreads', 'giblets', 'haggis'),
-    'meatballs': ('meatballs', 'balls', 'croquettes', 'rissoles', 'candy', 'brittle', 'faggots',
-                  'koftas', 'patties'),
-    'terrine': ('terrine', 'loaf', 'pâté', 'pate', 'cake', 'cakes', 'brawn', 'scrapple'),
-    'salad': ('salad', 'medley', 'board', 'slaw', 'plate'),
-    'sausage': ('sausage', 'sausages', 'links', 'bangers', 'rashers', 'bacon', 'butty', 'boudin',
-                'salami', 'chorizo'),
-    'flatbread': ('flatbread', 'flatbreads', 'pancake', 'pancakes', 'crêpe', 'crepes', 'toast',
-                  'crackers', 'griddle', 'tortilla', 'blini', 'oatcakes', 'bannock'),
-    'blood': ('blood',),
-    'bread': ('bread', 'roll', 'rolls', 'plait', 'loaves', 'trencher', 'sandwich', 'cheeseburger',
-              'burger'),
-    'bisque': ('bisque', 'velouté', 'reduction', 'sauce', 'gravy', 'jus', 'fondant'),
-}
-_WORD_KIND = {w: k for k, ws in KIND_WORDS.items() for w in ws}
-
-
-def dish_kind(name: str) -> str:
-    low = name.lower().replace(',', ' ')
-    if 'black pudding' in low:
-        return 'pudding'
-    for tok in reversed(re.split(r'[\s]+', low)):
-        tok = tok.strip("'")
-        if tok in _WORD_KIND:
-            return _WORD_KIND[tok]
-    return 'stew'
-
 
 # ----------------------------------------------------------------------
 # Loading
@@ -638,31 +526,18 @@ def _dish_names():
     return out
 
 
-def _art_picker():
-    clusters = _load(os.path.join(HERE, 'art_clusters.json'))
-    by_kind = {}
-    for cl in clusters:
-        kind = CLUSTER_KIND.get(cl[0])
-        if kind is None:
-            continue
-        by_kind.setdefault(kind, []).extend(cl)
-    used = {k: 0 for k in by_kind}
-
-    def pick(kind):
-        pics = by_kind.get(kind) or by_kind['stew']
-        k = kind if kind in by_kind else 'stew'
-        p = pics[used[k] % len(pics)]
-        used[k] += 1
-        return p
-    return pick
-
-
 def build():
     ings, harvest, aliases = build_ingredients()
     structure = _load(os.path.join(HERE, 'structure.json'))
     names = _dish_names()
     old_recipes = _old_recipes()
-    pick_art = _art_picker()
+    food = _load(os.path.join(ITEMS, 'food.json'))
+    have_art = dish_art.drawn(ART_DIR)
+
+    def tier_of(parts):
+        """kitchen.dish_tier: the band of the deepest ingredient."""
+        return band_of(max(ings[p]['floor'] if p in ings else int(food[p].get('min_level', 1) or 1)
+                           for p in parts))
     recipes = {}
     # Singles: one per ingredient.
     for iid, r in sorted(ings.items(), key=lambda kv: kv[0]):
@@ -673,14 +548,15 @@ def build():
             recipes[rid] = {
                 'name': o['name'], 'ingredients': [iid], 'benefit': code, 'trophy': True,
                 'permanent': r['permanent_power'], 'flavor': o.get('flavor', ''),
-                'art': f'recipe_{rid}',
             }
+            recipes[rid]['art'] = dish_art.recipe_art(rid, recipes[rid], tier_of([iid]), have_art)
             continue
         rid = f"cook_{r['key']}"
         recipes[rid] = {
             'name': r['single'], 'ingredients': [iid], 'benefit': code,
-            'flavor': r['single_flavor'], 'art': pick_art(dish_kind(r['single'])),
+            'flavor': r['single_flavor'],
         }
+        recipes[rid]['art'] = dish_art.recipe_art(rid, recipes[rid], tier_of([iid]), have_art)
     for did, d in structure.items():
         if did not in names:
             raise SystemExit(f'no name for {did}')
@@ -688,9 +564,7 @@ def build():
         rec = {'name': name, 'ingredients': d['parts'], 'benefit': d['benefit'], 'flavor': flavor}
         if d['legendary']:
             rec['legendary'] = True
-            rec['art'] = pick_art('legendary')
-        else:
-            rec['art'] = pick_art(dish_kind(name))
+        rec['art'] = dish_art.recipe_art(did, rec, tier_of(d['parts']), have_art)
         if d['cross_depth']:
             rec['cross_depth'] = True
         recipes[did] = rec
@@ -740,6 +614,13 @@ def build():
         f.write('\n')
     with open(os.path.join(ITEMS, 'recipes.json'), 'w', encoding='utf-8') as f:
         json.dump(recipes, f, ensure_ascii=False, indent=1)
+        f.write('\n')
+    with open(os.path.join(HERE, 'dish_art.json'), 'w', encoding='utf-8') as f:
+        json.dump({'_doc': ('Recipe id -> its picture (assets/tiles/items/<art>.png), written by '
+                            'build_kitchen.py from dish_art.py: the kind its name says, at its tier and '
+                            'main benefit. A record to read; edit dish_art.py, not this file.'),
+                   **{rid: r['art'] for rid, r in sorted(recipes.items())}},
+                  f, ensure_ascii=False, indent=1)
         f.write('\n')
     check(ings, recipes)
     report(ings, recipes)
