@@ -79,9 +79,12 @@ def _cap(raw) -> str:
     return proper_name(str(raw).replace('_', ' '))
 
 
-def monster_trait_lines(mdef: dict) -> list:
+def monster_trait_lines(mdef: dict, known: bool = True) -> list:
     """Bestiary lines for the special rules a creature carries in its data
-    (thieves, splitters, mimics, the invisible, heart-weighers...)."""
+    (thieves, splitters, mimics, the invisible, heart-weighers...).
+    ``known``: the hero knows the kind (family_lore.knowledge KNOWN). Below
+    that, what its nature refuses waits for its study like its other
+    immunities ("Immune To:"), so the galla's fearlessness is not told."""
     if not isinstance(mdef, dict):
         return []
     out = []
@@ -104,7 +107,7 @@ def monster_trait_lines(mdef: dict) -> list:
         out.append("Invisible: unseen without see invisible, true sight, telepathy or clairvoyance.")
     if mdef.get('weighs_heart'):
         out.append("Weighs the heart of whoever it fights, and a heavy heart feeds it.")
-    if mdef.get('fearless'):
+    if mdef.get('fearless') and known:
         out.append("Fearless: never flees and cannot be frightened.")
     if mdef.get('quarrelsome'):
         out.append("Quarrelsome: confused, it strikes its own kind.")
@@ -9682,7 +9685,8 @@ class RenderMixin:
             import family_lore as _fl
             import affinity as _aff_pl
             extra = _aff_pl.page_lines(entry)
-            if _fl.knowledge(self.player, entry.get('_id', '')) < _fl.KNOWN:
+            _kind_known = _fl.knowledge(self.player, entry.get('_id', '')) >= _fl.KNOWN
+            if not _kind_known:
                 if res or wks or extra:
                     lines.append(("Weaknesses: not yet studied. Study its corpse to learn what it fears.",
                                   FP.FADED_TEXT, self.font_sm))
@@ -9702,7 +9706,7 @@ class RenderMixin:
                 if atk.get('steal'):
                     line += " -> Steals"
                 lines.append((line, FP.BODY_TEXT, self.font_sm))
-            for trait in monster_trait_lines(entry):
+            for trait in monster_trait_lines(entry, known=_kind_known):
                 lines.append((trait, FP.GOLD_PALE, self.font_sm))
         elif category == 'weapon':
             damage_types = ', '.join(_cap(t) for t in entry.get('damage_types', ['physical']))

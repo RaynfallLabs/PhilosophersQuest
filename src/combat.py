@@ -1351,7 +1351,11 @@ def strike_damage(player, monster, chain: int, *, ranged: bool = False, ammo=Non
     # Baldur's flaw: protected against everything except the small thing.
     if weapon and getattr(weapon, 'damage_double_vs_resistant_at_max', False):
         _maxc = weapon.max_chain_length or len(weapon.chain_multipliers)
-        if chain >= _maxc and getattr(monster, 'resistances', None):
+        # The preview of a kind he does not know does not count it: the
+        # doubled number would tell him the creature resists something
+        # (winning-build plan 3.1, bug bash WB-B05). The blow always does.
+        if (chain >= _maxc and getattr(monster, 'resistances', None)
+                and (affinity_known or consume)):
             dtype_mult *= 2.0
 
     # Robin Hood's Longbow (engine wave 3): stealth_damage_bonus.
@@ -1805,6 +1809,22 @@ def strike_damage(player, monster, chain: int, *, ranged: bool = False, ammo=Non
     return damage
 
 
+def elemental_blow_after(monster, weapon, actual: int) -> None:
+    """A blow from a weapon whose own form is fire or acid (Prometheus'
+    Torch, Brisingr, the Bow of Rama...) does to the creature what every
+    other fire or acid hit does (Monster._after_typed_hit,
+    data/affinity_rules.json): a troll or hydra weak to it cannot close the
+    wound for a few turns, and a beast that fears fire runs. A fire coating,
+    flask, spell or wand already did this; a fire blade did not (bug bash
+    WB-B04). The damage itself is the blow's (strike_damage), not here."""
+    hit = getattr(monster, '_after_typed_hit', None)
+    if weapon is None or int(actual or 0) <= 0 or not callable(hit):
+        return
+    for form in blow_forms_of(weapon):
+        if form in ('fire', 'acid'):
+            hit(form, int(actual))
+
+
 def _rapid_shot_followup(weapon, chain: int, first: int) -> int:
     """Shortbow Rapid Shot: at max chain a second arrow follows the first
     into the same target for half its damage (0 when it does not fire)."""
@@ -1923,6 +1943,8 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None,
             actual = monster.take_damage(damage)
         finally:
             monster.__dict__.pop('_no_split_blow', None)
+        # A weapon of fire or acid does what any fire or acid hit does.
+        elemental_blow_after(monster, weapon, actual)
 
         # Chain combat v2 (v2.14.0): dispatch per-class chain specials at
         # rung thresholds 5 / 10 / 15 / 20. Applies target statuses, AoE damage,

@@ -3094,8 +3094,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     if (getattr(_mm, 'alive', False) and (_mm.x, _mm.y) in self.visible
                             and not getattr(_mm, '_heard_the_ring', False)):
                         _mm._heard_the_ring = True
-                        if random.random() < RING_FEAR_CHANCE and hasattr(_mm, 'add_effect'):
-                            _mm.add_effect('feared', 4)
+                        # Counted only when it takes hold: what cannot be
+                        # frightened does not run (Monster.add_effect).
+                        if (random.random() < RING_FEAR_CHANCE and hasattr(_mm, 'add_effect')
+                                and _mm.add_effect('feared', 4)):
                             _rung += 1
                 if _rung:
                     self.add_message(

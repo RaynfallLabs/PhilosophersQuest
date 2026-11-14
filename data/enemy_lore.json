@@ -38,9 +38,9 @@
       "claims": {"weaknesses": ["pierce"], "resistances": ["slash", "blunt", "fire", "poison"], "status_weak": ["sleeping"]}
     },
     "fenrir_wolf": {
-      "lines": ["A gruff voice from the dark behind the anvil: \"Bound is not beaten. He was whelped in the cold, and an edge slides off that coat. But he is a wolf, and every wolf fears fire.\""],
+      "lines": ["A gruff voice from the dark behind the anvil: \"Bound is not beaten. He was whelped in the cold, and an edge slides off that coat. But he is a wolf, and fire bites every wolf.\""],
       "page": "You know Fenrir now: his page is open in your Bestiary.",
-      "claims": {"weaknesses": ["fire"], "resistances": ["cold", "slash"], "status_weak": ["fear_of_fire"]}
+      "claims": {"weaknesses": ["fire"], "resistances": ["cold", "slash"]}
     },
     "abaddon_destroyer": {
       "lines": ["The voice that weighed you speaks once more: \"Fire, frost and venom are his own, and steel that cuts or crushes slides off him. What is holy wounds the Destroyer most.\""],

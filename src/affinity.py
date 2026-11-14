@@ -374,6 +374,14 @@ def status_line(kind: str, effect: str, monster, rng=None, level: int = KNOWN) -
         return (rng.choice(pool).format(name=the_name(monster), the=the_name(monster, lower=True))
                 if pool else '')
     table = lines().get('status_immune' if kind == 'immune' else 'status_weak') or {}
+    if kind == 'immune' and effect not in (getattr(monster, 'status_immune', None) or ()):
+        # Not its kind's nature but a named foe's will, or the galla's
+        # fury: never "it has no mind to frighten" of a thing that has one
+        # (bug bash WB-B07).
+        named = getattr(monster, '_is_named_foe', None)
+        if ((callable(named) and named())
+                or (effect == 'feared' and getattr(monster, 'fearless', False))):
+            table = lines().get('status_immune_will') or table
     pool = table.get(effect) or table.get('default') or []
     if not pool:
         return ''

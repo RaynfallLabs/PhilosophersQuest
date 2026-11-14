@@ -3,7 +3,7 @@
   "_schema": {
     "layers": "A kind's profile is its family's, then its group's (if it is in one), then its own (kinds), then the tag rules. FORM (slash, pierce, blunt) comes wholly from the layers: each layer may set a form to weak, resist, shrugs_off or neutral, later layers winning. A named foe (boss, mini-boss, seal demon) keeps the forms written on it in monsters.json unless `kinds` names its form. ELEMENTS and SUBSTANCES (fire, holy, silver, iron...) start from the kind's own lists in monsters.json: a family or tag rule adds softly (never against the kind's own opposite word), a group or kind adds by force (it moves the type from the opposite list); `drop` removes a type from all three lists. STATUS lists: a group's or kind's list, when given, replaces its family's; the tag rules then add to status_immune and take what is immune out of status_weak.",
     "status_immune": "the effect never takes hold, and the game says why (Monster.add_effect, affinity.status_line)",
-    "status_weak": "it takes hold without a big foe's resist roll and lasts half again as long; the token fear_of_fire means a fire hit puts it to flight (not on a kind that resists fire)",
+    "status_weak": "it takes hold without a big foe's resist roll and lasts half again as long; the token fear_of_fire means a fire hit puts it to flight (not on a kind that resists fire, nor on a named foe, who is never routed)",
     "holy": "holy weakness is for the unholy only: the tags in unholy.tags, and the cursed kinds named in unholy.cursed. Every other kind loses holy from its weaknesses."
   },
   "unholy": {

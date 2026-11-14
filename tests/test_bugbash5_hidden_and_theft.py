@@ -305,7 +305,10 @@ def test_fear_never_turns_a_galla_cowardly():
     ai = m.ai_pattern
     _zap(g, _wand(wid='wand_of_fear'), m)
     assert m.ai_pattern == ai and not m.has_effect('feared')
-    assert 'knows no fear' in _messages(g, 1)[-1]
+    # Refused by its nature (Monster.resists_control), and said only as far
+    # as the hero knows the galla (bug bash WB-B02): never "it flees".
+    last = _messages(g, 1)[-1]
+    assert 'flee' not in last and 'terror' not in last, last
     spell = next(v for v in spells.LEARNABLE_SPELLS.values() if v.get('effect') == 'fear_monster_spell')
     g._apply_spell_effect(spell, m)
     assert m.ai_pattern == ai

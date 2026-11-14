@@ -687,13 +687,20 @@ class MenuMixin:
         """
         from spells import LEARNABLE_SPELLS
         known = getattr(self.player, 'known_spells', {}) or {}
+        # What a cast really charges (Player.spell_mp_cost: a Ring of
+        # Wizardry's cut, metal body armour's tax), as the spell menu shows
+        # it; the stored base alone said 6 in plate that charged 12.
+        _cost = getattr(self.player, 'spell_mp_cost', None)
         out = []
         for sid, stored_mp in known.items():
             sd = LEARNABLE_SPELLS.get(sid, {})
+            mp = int(stored_mp) if isinstance(stored_mp, (int, float)) else sd.get('mp_cost', '?')
+            if callable(_cost) and isinstance(mp, int):
+                mp = int(_cost(mp))
             out.append({
                 'spell_id': sid,
                 'name':     sd.get('name', sid),
-                'mp_cost':  int(stored_mp) if isinstance(stored_mp, (int, float)) else sd.get('mp_cost', '?'),
+                'mp_cost':  mp,
                 'quiz_tier': int(sd.get('quiz_tier', 0)),
                 'desc':     sd.get('desc', ''),
             })
@@ -1912,28 +1919,37 @@ class MenuMixin:
         # Closest target wins
         targets.sort(key=lambda t: abs(t.x - pl.x) + abs(t.y - pl.y))
         target = targets[0]
+        # Each charge goes through Game._inflict (no resist roll, as before):
+        # what the creature's nature refuses (a swarm cannot be held still,
+        # the dead never sleep) is not said to take hold, and why is said
+        # only to a hero who knows it. The charge is spent either way.
         if acc_id == 'lyre_of_orpheus':
             # Charm: pacified for 10 turns (using paralyzed as charm proxy)
-            target.add_effect('paralyzed', 10)
+            got, why = self._inflict(target, 'paralyzed', 10, roll=False)
             self.add_message(
-                f"You play Orpheus's lyre. {the_name(target)} is enchanted.",
-                'success')
+                "You play Orpheus's lyre. "
+                + (f"{the_name(target)} is enchanted." if got else
+                   (why or f"{the_name(target)} does not stop to listen.")),
+                'success' if got else 'warning')
         elif acc_id == 'hand_of_glory':
             # Use the JSON-authored paralyze_duration if present (10 turns
             # for Hand of Glory; older defaults to 4). The longer duration
             # reflects the "candle holds them frozen" lore.
             dur = int(getattr(acc, 'paralyze_duration', 4) or 4)
-            target.add_effect('paralyzed', dur)
+            got, why = self._inflict(target, 'paralyzed', dur, roll=False)
             self.add_message(
-                f"The candle of the Hand of Glory flares. {the_name(target)} freezes.",
-                'success')
+                "The candle of the Hand of Glory flares. "
+                + (f"{the_name(target)} freezes." if got else
+                   (why or f"{the_name(target)} does not freeze.")),
+                'success' if got else 'warning')
         else:
             # Generic charge — sleep target 5 turns
-            target.add_effect('sleeping', 5)
+            got, why = self._inflict(target, 'sleeping', 5, roll=False)
             self.add_message(
                 f"A charge of the {self._bare_name(acc)} flows out. "
-                f"{the_name(target)} sleeps.",
-                'info')
+                + (f"{the_name(target)} sleeps." if got else
+                   (why or f"{the_name(target)} does not sleep.")),
+                'info' if got else 'warning')
         acc.charges -= 1
         # Hand of Glory (expended_curse): when all five candle-fingers are
         # burnt out, the wax-soaked hand fuses to its wearer. Per lore:
