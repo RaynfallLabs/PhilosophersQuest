@@ -440,11 +440,14 @@ class TraderMixin:
         if done:
             m.purse = max(0, int(m.purse) - int(done.get('change_given', 0) or 0))
         before = {id(i): int(getattr(i, 'count', 1) or 1) for i in self.player.inventory}
+        # Said after "You buy ...": it is bought, then set down (bug bash
+        # WB-E06: it was set down before it was bought).
+        too_heavy = ''
         if self.player.add_to_inventory(item) is False:
             item.x, item.y = self.player.x, self.player.y
             self.ground_items.append(item)
-            self.add_message(f"It is too heavy to carry with everything else, so {m.person} "
-                             f"sets it down at your feet.", 'warning')
+            too_heavy = (f"It is too heavy to carry with everything else, so {m.person} "
+                         f"sets it down at your feet.")
             # Bought all the same: unmarked, it escaped the resale cap and
             # sold deeper down for four times what it cost.
             if getattr(item, 'item_class', '') != 'treasure':
@@ -468,6 +471,8 @@ class TraderMixin:
                              + (f", and pay {pay:,} gold for the rest." if pay else "."), 'success')
         else:
             self.add_message(f"You buy {iname} for {pay:,} gold.", 'success')
+        if too_heavy:
+            self.add_message(too_heavy, 'warning')
         self._seeker_event('trade', trader=getattr(m, 'person', None) or getattr(m, 'kind', None))
         line = m.line('bought')
         if line:

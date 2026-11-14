@@ -770,7 +770,10 @@ class Pet:
                 else:
                     msg = self.species['stages'][new_stage]['msg'].format(old=old_species)
                 if getattr(self, 'bloomleaf', False):
-                    # The cloak grows with him (data/abandoned_emberpup.json).
+                    # The cloak grows with him (data/abandoned_emberpup.json),
+                    # and he is "he", not the stage line's "it" (bug bash
+                    # WB-E04: "it has become Infernodrake! ...his shoulders").
+                    msg = msg.replace(' it has ', ' he has ')
                     try:
                         import emberpup_encounter
                         _cl = emberpup_encounter.data().get('evolved_cloaked', '')

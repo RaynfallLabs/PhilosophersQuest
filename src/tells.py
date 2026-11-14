@@ -206,6 +206,13 @@ def status_lore_line(m) -> str:
     return ' '.join(out)
 
 
+def known_lead(m) -> str:
+    """"You know what the skeleton is made of.": said before its lore lines
+    on first sight of a known kind that has no tell, so the "it" in them
+    has a creature to stand for."""
+    return _fill(m, data().get('known_lead', 'You know what {the} is made of.'))
+
+
 def lore_lines(m) -> list:
     """What a hero who knows the kind is told it is made of: its weakness
     line, its resistance line and its status line, each only when it has

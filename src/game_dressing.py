@@ -460,6 +460,23 @@ class DressingMixin:
                 return m
         return None
 
+    def _busy_already_off(self, act: BusyAction) -> str:
+        """The pieces this action has taken off already that nothing has
+        replaced, as a sentence ("Your Worn Leather Jerkin is already
+        off."), or ''. A swap takes the old piece off first: stopped on the
+        new one, the hero stands in neither (bug bash WB-E01)."""
+        names = []
+        for st in act.steps[:act.index]:
+            if st.kind != 'off' or st.item is None or self._is_worn(st.item):
+                continue
+            if self._occupant_for(st.item)[1] is not None:
+                continue                      # something else is on there now
+            names.append(self._bare_name(st.item))
+        if not names:
+            return ''
+        both = names[0] if len(names) == 1 else ', '.join(names[:-1]) + ' and ' + names[-1]
+        return f"Your {both} {'is' if len(names) == 1 else 'are'} already off."
+
     def _busy_pause(self, why: str) -> None:
         from monster import the_name
         act = self._busy
@@ -482,6 +499,9 @@ class DressingMixin:
             stop_text = f"The {piece} stays on."
         elif s.kind == 'on':
             stop_text = f"The {piece} goes back in your pack."
+            off = self._busy_already_off(act)
+            if off:
+                stop_text = f"{stop_text} {off}"
         else:
             stop_text = "What is on stays on; the rest stays in your pack."
         self._ask(act.prompt.rstrip('?').title() + '?', [line, f"{left} turn{'s' if left != 1 else ''} left."],
@@ -524,7 +544,9 @@ class DressingMixin:
         s = act.current
         piece = self._bare_name(s.item) if s.item is not None else act.label
         if s.kind == 'on':
-            self.add_message(f"You leave the {piece} in your pack.", 'info')
+            off = self._busy_already_off(act)
+            self.add_message(f"You leave the {piece} in your pack." + (f" {off}" if off else ''),
+                             'info')
         elif s.kind == 'off':
             self.add_message(f"You leave the {piece} on.", 'info')
         else:

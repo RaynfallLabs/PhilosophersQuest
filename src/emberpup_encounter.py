@@ -397,7 +397,9 @@ class EmberpupMixin:
         if item not in self.player.inventory:
             self._emberpup_phase = 'options'
             return
-        name = self._display_name(item)
+        # He eats one of a stack: "your Bread Ration", never "x4" (bug bash
+        # WB-E03).
+        name = self._bare_name_one(item)
         self.player.remove_from_inventory(item)
         pup._emberpup_fed = True
         self._emberpup_acted = True
