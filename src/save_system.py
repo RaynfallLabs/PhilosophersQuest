@@ -219,6 +219,14 @@ def save_game(game) -> bool:
     tmp = f'{path}.{os.getpid()}.tmp'
     if _disk_save_is_newer(game, path):
         return True                      # the newer save stays; said in-game
+    # The weapon At Your Back and the kits let go of whatever is gone for
+    # good before they are written (game_dressing._sets_prune).
+    _prune = getattr(game, '_sets_prune', None)
+    if callable(_prune):
+        try:
+            _prune(force=True)
+        except Exception:
+            pass
     try:
         state = {
             'player':           game.player,

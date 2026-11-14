@@ -245,12 +245,18 @@ def test_wb_d05_a_named_piece_that_is_not_metal_never_rusts():
         assert 'rusts' not in gear.wear_words(it), iid
 
 
-def test_wb_d05_a_named_iron_piece_still_rusts():
+def test_wb_d05_a_named_iron_piece_no_longer_rusts():
+    """Rewritten to Brandon's rule (2026-11-14, Q12): "Legendary weapons
+    don't need to rust, unless lore says so; they are magical". These iron
+    and steel legends rusted under WB-D05; now no unique does
+    (tests/test_legends_do_not_rust.py has the whole rule)."""
+    import gear
     import status_effects as se
     for cat, iid in (('armor', 'breastplate_of_joan'), ('armor', 'tarnhelm'),
                      ('weapon', 'caliburn'), ('weapon', 'penitents_blade')):
         it = _named(cat, iid)
-        assert se._can_rust(it), (iid, it.material, getattr(it, 'metal', None))
+        assert not se._can_rust(it), (iid, it.material, getattr(it, 'metal', None))
+        assert 'rusts' not in gear.wear_words(it), iid
 
 
 def test_wb_d05_the_rust_monster_passes_over_a_linen_legend(game):

@@ -1575,7 +1575,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         excludes the separate enchant_bonus), and a common weapon takes its
         material's base damage from today's weapon curve (its plus is kept)."""
         from items import (Armor, Shield, Weapon, get_template, get_material,
-                           compose_item_name, compose_unidentified_name)
+                           compose_item_name, material_unidentified_name)
         # Hand-authored UNIQUES (ids that are JSON keys, not <material>_<template>
         # composites) must NEVER be recomposed. The startswith() guard below is a
         # heuristic that would corrupt e.g. Bronze Aegis / Cloth of Penelope if a
@@ -1620,9 +1620,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 from items import weapon_base_damage
                 item.base_damage = weapon_base_damage(tpl, mat)
             if hasattr(item, 'unidentified_name'):
-                item.unidentified_name = compose_unidentified_name(
-                    mat.get('unidentified_descriptor', mat['name']),
-                    tpl['name'], noun)
+                # Its disguise as today's data gives it (a save's linen
+                # "Rough Cloak" is a "Rough Cloth Cloak" now: one per kind).
+                item.unidentified_name = material_unidentified_name(mat, tpl)
             if cat == 'weapons' and getattr(item, 'inlay', None):
                 # A smith's silver or cold iron is in its name too: every
                 # load recomposed a "Silvered Iron Longsword" back into an
@@ -1662,6 +1662,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         def walk(item):
             recompose(item)
             for c in getattr(item, 'contents', None) or []:
+                recompose(c)
+            # A trader's shelf too: a save's linen cloak in his stock takes
+            # its disguise of today ("Rough Cloth Cloak": one per kind).
+            for c in getattr(item, 'stock', None) or []:
                 recompose(c)
 
         p = self.player
@@ -6270,6 +6274,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                                  f"{_tr.value_text(self.player, item)}.", 'loot')
             else:
                 self.add_message(f"You pick up the {self._bare_name(item)}.", 'loot')
+            # A piece the back or a kit remembers (dropped, thrown, stolen)
+            # is in its place again (loadouts.py).
+            self._sets_note_back(item)
             # Philosophy tier mastery: a thing of a tier the hero has mastered
             # this run names itself as it is picked up. A legendary one shows
             # its story, as the identify quiz would.
@@ -7344,8 +7351,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         rows = [
             {'label': 'Weapon', 'slot': 'weapon', 'item': p.weapon},
             # The weapon At Your Back (game_dressing.py): carried in the
-            # pack, S swaps it into the hand.
-            {'label': 'Back', 'slot': 'readied', 'item': p.readied_weapon},
+            # pack, S swaps it into the hand. Away (dropped, thrown, stolen)
+            # it is named "(not carried)" and has no actions (loadouts.py).
+            {'label': 'Back', 'slot': 'readied', 'item': p.readied_weapon,
+             'away': self._readied_away()},
             {'label': 'Ranged', 'slot': 'ranged_weapon', 'item': p.ranged_weapon},
             {'label': 'Shield', 'slot': 'shield', 'item': p.shield},
         ]

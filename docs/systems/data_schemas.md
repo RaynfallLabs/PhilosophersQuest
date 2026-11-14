@@ -392,6 +392,12 @@ written by `tools/content/armour_profiles_2026_11.py`.
   `data/gear_rules.json` `wards`), `protection_note` (why), and
   `protection_price` (what it costs). A wood that will not burn says
   `fire_resistant` in `special_properties` (the wear rule reads it).
+  Optional `disguise`: the words an unidentified piece of it goes by, kept
+  as written (linen "rough cloth", rawhide "rough hide"), where the trimmed
+  `unidentified_descriptor` would match another kind's (armour.md §1b).
+- **Named pieces** (`data/items/*.json`): optional `"rusts": true` when the
+  piece's own lore says it rusts (Achilles's Spear); every other unique or
+  legendary piece never rusts (status_effects.md, "No legend rusts").
 - **Named body armour** (`data/items/armor.json`): `metal` (bool, by its
   lore); optional `quiet`, `casting_free`, `wards`. Its own
   `damage_resistances` is its whole profile.

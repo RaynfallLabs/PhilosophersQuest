@@ -1262,7 +1262,7 @@ unchanged:
 | Key | Action |
 |---|---|
 | `E` | Equip a pack item (`_equip_item`; the quiz only for a kind not yet Known by Hand, then its donning turns); Unequip a worn one (`_unequip_slot`, half the donning turns). On the Kit a floor item is picked up (`_pickup(target=item)`) and then equipped. `U` on the sheet is the same toggle. |
-| `R` | Ready a melee weapon from the pack At Your Back (S swaps it in), or Unready it (no turn). The Kit tags it "At Your Back"; the sheet's Loadout has a Back row. |
+| `R` | Ready a melee weapon from the pack At Your Back (S swaps it in), or Unready it (no turn). The Kit tags it "At Your Back"; the sheet's Loadout has a Back row. Dropped, thrown or stolen it stays remembered: the Kit lists it last as "Silver Mace (not carried)" (source `away`, Lore its only action) and the Back row says the same, until it is picked up again (armour.md, Remembered pieces). |
 | `A` | Apply (`game_arsenal._apply_item`, one turn, no quiz): "Coat Weapon" works a coating into the weapon in the hand (as `Shift+C` does); "Put In" / "Take Out" the beeswax earplugs. Listed only for an item that can be applied; greyed with the reason when the coating would add nothing. |
 | `D` | Drop (`_do_drop_item`, stacks ask how many). A worn item is unequipped first, then dropped. |
 | `I` | Identify (`_identify_item`); needs the Philosopher's Shard, as the I menu does. |
