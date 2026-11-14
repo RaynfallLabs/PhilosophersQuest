@@ -418,15 +418,20 @@ def kit_sense_tools(player, monster) -> list:
     the weapons in the pack, and name the first: "Your Silver Dust would
     serve here." A pure read: nothing is spent or said."""
     import combat
+    import kit_sense
     weapon = getattr(player, 'weapon', None)
     out, seen = [], set()
     weak = set(getattr(monster, 'weaknesses', None) or ())
     tags = set(getattr(monster, 'tags', None) or ())
     import affinity as _aff
+    # The blade as the hero knows it (kit_sense.known_mult): an unidentified
+    # one's own metal and blessing are no part of the reckoning. Read from
+    # the true blade, a coating his hidden silver already gave was left
+    # unnamed, and that silence told him the blade was silver (bug bash
+    # WB-D01).
     base = 1.0
     if weapon is not None and not getattr(weapon, 'requires_ammo', None):
-        f, s = combat.weapon_type_multiplier(weapon, monster)
-        base = _aff.capped(f * s)
+        base = kit_sense.known_mult(player, weapon, monster)
     for it in getattr(player, 'inventory', None) or ():
         iid = str(getattr(it, 'id', '') or '')
         if iid in seen:
@@ -438,9 +443,9 @@ def kit_sense_tools(player, monster) -> list:
             if _aff.step(sub, monster, also_weak=combat._material_weak(sub, tags)) > 1.0:
                 probe = _Bare(weapon)
                 probe.__dict__['coating'] = {'substance': sub, 'blows': 1}
-                f, s = combat.weapon_type_multiplier(probe, monster)
-                if _aff.capped(f * s) > base + 1e-9:
-                    out.append((_aff.capped(f * s), it, 'coat'))
+                coated = kit_sense.known_mult(player, probe, monster)
+                if coated > base + 1e-9:
+                    out.append((coated, it, 'coat'))
                     seen.add(iid)
                     continue
         t = throw_spec(it)

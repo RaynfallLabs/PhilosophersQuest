@@ -1561,12 +1561,14 @@ def _(g):
     g.handle_event(key_event(pygame.K_2, '@', pygame.KMOD_SHIFT))
 
 
-def _make_burdened(g):
-    """Spare mail shirts in the pack until past 75% of the limit (worn gear
-    counts, 2026-10-16). The game's own per-turn check says so in the log."""
+def _make_burdened(g, stressed=False):
+    """Spare mail shirts in the pack until past half the limit (Burdened),
+    or past three quarters (``stressed``: Stressed; winning-build plan 3.3;
+    worn gear counts, 2026-10-16). The game's own per-turn check says so in
+    the log."""
     from items import instantiate_armor
     p = g.player
-    while not p.is_burdened():
+    while not (p.is_stressed() if stressed else p.is_burdened()):
         suit = instantiate_armor('chain_shirt', 'chain_steel')
         suit.buc_known, suit.id_level = True, 5
         if not p.can_carry(suit.weight):
@@ -1576,10 +1578,16 @@ def _make_burdened(g):
     g._note_burden()
 
 
-@scene('play_burdened', 'Play', 'In a game, carrying past 75% of the limit: Burdened '
+@scene('play_burdened', 'Play', 'In a game, carrying past half the limit: Burdened '
        '(amber Carrying line, EFFECTS chip, log message).', expect='player')
 def _(g):
     _make_burdened(g)
+
+
+@scene('play_stressed', 'Play', 'In a game, carrying past three quarters of the limit: '
+       'Stressed (red Carrying line, EFFECTS chip, log message).', expect='player')
+def _(g):
+    _make_burdened(g, stressed=True)
 
 
 @scene('menu_charsheet_burdened', 'Menus', '@ while Burdened: header, Kit Summary and '
@@ -1678,6 +1686,19 @@ def _saved_kits(g):
        'known by hand.', expect='loadouts', key=True)
 def _(g):
     _saved_kits(g)
+    g.handle_event(key_event(pygame.K_e, 'E', pygame.KMOD_SHIFT))
+    press(g, pygame.K_2, '2')
+
+
+@scene('menu_loadouts_missing', 'Menus',
+       'Shift+E, 2: a kit whose body armour was sold since it was saved (not in the pack).',
+       expect='loadouts')
+def _(g):
+    _saved_kits(g)
+    kits = g._kits()
+    body = kits[1]['pieces'].get('body')
+    if body is not None and body in g.player.inventory:
+        g.player.remove_from_inventory(body)        # sold, stolen or left behind
     g.handle_event(key_event(pygame.K_e, 'E', pygame.KMOD_SHIFT))
     press(g, pygame.K_2, '2')
 
@@ -2860,6 +2881,116 @@ def _(g):
     press(g, pygame.K_RETURN)
     press(g, pygame.K_y, 'y')
     play_quiz(g, 'ccw')
+
+
+# -- The winning build's screens (bug bash round 2, 2026-11-13) ---------------------
+
+@scene('shop_counter_mark', 'Encounters',
+       "Y beside the armourer, Down to the mace he set out for what walks below: the Buy "
+       "tab's counter mark (domain_counters.py).", expect='shop')
+def _(g):
+    import domain_counters
+    import traders
+    from economy import merchant_price
+    m = _merchant(g, 'armourer')
+    defn = traders.kind_def('armourer')
+    marked = [w for w, info in domain_counters.stall_counters(defn, 5, random.Random(SEED))
+              if info.get('marked')]
+    for w in marked:
+        m.stock.insert(0, w)
+        m.prices.insert(0, merchant_price(w, 5, defn.get('markup', 1.0)))
+    press(g, pygame.K_y)
+
+
+@scene('menu_pet_cloaked', 'Pets',
+       "Shift+P with the Emberpup who was given the Bloomleaf Cloak: his card says he wears it, "
+       "and his picture is the cloaked one.", expect='pet_menu')
+def _(g):
+    from pet_system import Pet
+    pup = Pet('fire', g.pets[0].x, g.pets[0].y)
+    pup.nickname = 'Ember'
+    pup.bloomleaf = True
+    g.pets[:] = [pup]
+    g.handle_event(key_event(pygame.K_p, 'P', pygame.KMOD_SHIFT))
+
+
+@scene('result_recall_lore_whole', 'Lore',
+       'N with a troll in view whose family is begun, five right answers: the whole page '
+       '(everything it is made of) on the Recall Lore card.', expect='hint')
+def _(g):
+    _family_lore(g, 'giants', 1)
+    g.monsters[:] = []
+    _add_monster(g, ('troll',))
+    g._refresh_fov()
+    press(g, pygame.K_n)
+    play_quiz(g, 'ccccc')
+
+
+@scene('play_probing_lines', 'Play',
+       'Z, the Wand of Probing on the troll in view: its health and what it is made of, '
+       'in the message log.', expect='player')
+def _(g):
+    from items import load_items
+    g.monsters[:] = []
+    troll = _add_monster(g, ('troll',))
+    g._refresh_fov()
+    wand = copy.copy(next(w for w in load_items('wand') if getattr(w, 'effect', '') == 'probing'))
+    g._wand_override_target = troll
+    g._apply_wand_effect(wand)
+    g._wand_override_target = None
+
+
+@scene('play_old_nickel', 'Play',
+       'Old Nickel, the kobold in the Bloomleaf Cloak, a few steps off in the same room: '
+       'his first-sight sign and his one warning (close zoom).', expect='player')
+def _(g):
+    import emberpup_encounter as ep
+    from monster import Monster
+    g.monsters[:] = []
+    spot = (_free_tiles_near(g, 3, 4) or _free_tiles_near(g, 2, 2))[0]
+    m = Monster(ep.wearer_defn(), *spot)
+    room = ep._room_of(g.dungeon.rooms, *spot)
+    m._wary_home = ep.home_of(room) if room is not None else None
+    g.monsters.append(m)
+    g.zoom_mode = 'close'
+    g._refresh_fov()
+    for _ in range(3):                      # (a hasted hero's turn is half a round)
+        if m._wary_warned:
+            break
+        g._advance_turn()
+
+
+@scene('play_stray_kids_stage', 'Play',
+       'Touch the Stray Kids idol twice: the Zombie Stage, the band on it (close zoom).',
+       expect='player')
+def _(g):
+    g._enter_stray_kids_stage()
+    g.zoom_mode = 'close'
+    g._refresh_fov()
+    g._advance_turn()
+
+
+@scene('menu_charsheet_body_profile', 'Menus',
+       '@ on the Body row in a known iron breastplate: the armour profile on the item card '
+       '(what its build and metal do to a blow).', expect='character_sheet')
+def _(g):
+    from items import instantiate_armor, ARMOR_SLOTS
+    import known_by_hand as kbh
+    p = g.player
+    plate = instantiate_armor('breastplate', 'ring_iron')
+    plate.id_level = 5
+    plate.buc_known = True
+    kbh.learn(p, plate)
+    p.armor_slots[ARMOR_SLOTS.index('body')] = plate
+    g.handle_event(key_event(pygame.K_2, '@', pygame.KMOD_SHIFT))
+    g._charsheet_loadout_idx = next(i for i, e in enumerate(g._charsheet_loadout_entries())
+                                    if e['item'] is plate)
+
+
+@scene('menu_help_quizzes', 'Menus', '?, Tab: the help screen, How Quizzes Work.', expect='help')
+def _(g):
+    press(g, pygame.K_SLASH, '?')
+    press(g, pygame.K_TAB)
 
 
 # -- Endings ------------------------------------------------------------------------

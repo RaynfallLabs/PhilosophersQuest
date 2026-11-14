@@ -1975,7 +1975,9 @@ class MagicMixin:
             for m in list(self.monsters):
                 if not m.alive: continue
                 if not self._in_spell_sight(m): continue
-                if _is_big_foe(m): continue   # bosses and named foes immune
+                # Bosses and named foes are immune, and so is the Stray Kids
+                # band, as to the wand and the spell (bug bash WB-C06, WB-D06).
+                if _resists_polymorph(m): continue
                 # Crude polymorph: weaken HP + AC + speed to a "small animal"
                 m.max_hp = max(1, m.max_hp // 4)
                 m.hp = min(m.hp, m.max_hp)
