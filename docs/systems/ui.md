@@ -550,7 +550,7 @@ Returns early on `sleeping` / `paralyzed` (turn passes).
 | `` ` `` | xyzzy input |
 | `w` | quirks progress |
 | `o` | observe cursor; Enter on a creature the hero has IDENTIFIED (studied, opened by the Book of Thoth or Omnisight, or its monster family at tier 1 or more: `family_lore.has_page`) opens its Bestiary page (`Game._open_bestiary_page`) and the look line names its family; Esc returns to play. A kind only seen gets the plain look plus "You don't know this creature yet. Study its corpse."; an unseen invisible or disguised creature gets the plain look (unless the hero's own family technique senses it: `unseen.senses`) |
-| `k` | kit: compare, then act on the selected item (E/R/D/I/X, see §22) |
+| `k` | kit: compare, then act on the selected item (E/R/A/D/I/X, see §22) |
 | `j` | discoveries |
 | `;` | Missed Questions (review this run's missed questions) |
 | `TAB` | cycle zoom |
@@ -1256,6 +1256,7 @@ unchanged:
 |---|---|
 | `E` | Equip a pack item (`_equip_item`; the quiz only for a kind not yet Known by Hand, then its donning turns); Unequip a worn one (`_unequip_slot`, half the donning turns). On the Kit a floor item is picked up (`_pickup(target=item)`) and then equipped. `U` on the sheet is the same toggle. |
 | `R` | Ready a melee weapon from the pack At Your Back (S swaps it in), or Unready it (no turn). The Kit tags it "At Your Back"; the sheet's Loadout has a Back row. |
+| `A` | Apply (`game_arsenal._apply_item`, one turn, no quiz): "Coat Weapon" works a coating into the weapon in the hand (as `Shift+C` does); "Put In" / "Take Out" the beeswax earplugs. Listed only for an item that can be applied; greyed with the reason when the coating would add nothing. |
 | `D` | Drop (`_do_drop_item`, stacks ask how many). A worn item is unequipped first, then dropped. |
 | `I` | Identify (`_identify_item`); needs the Philosopher's Shard, as the I menu does. |
 | `X` | Lore page. |

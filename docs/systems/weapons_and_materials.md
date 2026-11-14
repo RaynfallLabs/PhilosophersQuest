@@ -110,7 +110,7 @@ Ammo tiers 1–5 progress `damage_bonus 0, 1, 2, 3, 5` — the T5 skip from +3 t
   "resistances": [],              // armor only
   "weaknesses": [],               // armor only
   "vulnerabilities": [],          // wielder takes x1.25 from blows with these monster tags / attack types
-  "effective_against": [],        // weapon deals 1.5x to monsters with these tags
+  "effective_against": [],        // weapon deals x2 (the weak step) to monsters with these tags
   "special_properties": ["common", "reliable"],
   "lore_descriptor": "honest gray, with the faint ring of a forge",
   "unidentified_descriptor": "a plain blade",
@@ -390,24 +390,24 @@ Throw range = `base + (STR-10)//2`, dagger base 3 (cap 7), spear base 4 (cap 8).
 
 ## Damage dice / chain-mult / material tags (combined example)
 
-A **steel longsword** vs a **frost giant** (slash-vulnerable, fire-vulnerable) at chain 10:
+A **steel mace** vs a **skeleton** (weak to blunt, resists slash and pierce) at chain 10:
 
 ```
-base_damage      = 10                  (a steel longsword: steel's weapon_base, damage_mult inside it)
+base_damage      = 10                  (a steel weapon: steel's weapon_base, damage_mult inside it)
 chain_exponent   = 1.15 → mult = 10^1.15 = 14.1
-dtype_mult       = 1.5                 (frost giant weak to slash)
+dtype_mult       = 2.0                 (the skeleton is weak to blunt: the weak step)
 str_factor       = 1.0 + 0.03*(STR-10) = 1.15 at STR 15
 enchant_bonus    = +1
 
-damage = max(1, round((10 + 1) * 14.1 * 1.5 * 1.15))
-       = max(1, round(268))
-       = 268
+damage = max(1, round((10 + 1) * 14.1 * 2.0 * 1.15))
+       = max(1, round(357))
+       = 357
 ```
 
-Change the weapon to a **volcanic_iron longsword** (effective_against ice/frost creatures) and the material.effective_against layer kicks in via `_damage_multiplier`:
+The same blow with a **steel longsword**: slash and pierce are both resisted, so the form is x0.5 (about 89). With a **silver mace**, the form (blunt x2) and the substance (silver is effective against the undead, x2) multiply and are held to the x3 cap (about 535):
 
 ```
-dtype_mult = max(1.5 slash-vuln, 1.5 volcanic_iron-eff) = 1.5
+dtype_mult = capped(2.0 blunt-weak x 2.0 silver-bane) = 3.0
 ```
 
 **Since the 2026-11-13 lore pass** the design's "layer up" story is what the code does: the material is the weapon's SUBSTANCE and its damage types are its FORM (`combat.weapon_type_multiplier`), each takes a step (weak x2, resisted x0.5, shrugged off x0.25: `data/affinity_rules.json`) and the two multiply, capped at x3. A silver mace on a skeleton: blunt x2, silver x2, held to x3. (Before, the material id in `damage_types` was scored as a second FORM and the best one won, so material and form never stacked.)
@@ -422,7 +422,7 @@ Every unique has at least one distinctive mechanic. The audit of 2026-05-30 coun
 |---|---|---|
 | **Soul Reaver** | `lifestealPercent: 0.3`, `growth_on_innocent_kill: true`, `chain_exponent: 1.15` | Heals 30% of damage dealt. Killing a non-hostile NPC grants +1 `blade_flow` stack (rewired from "next hit auto-crit" in v2.14.0). |
 | **Mjolnir** | `chain_lightning_at_chain_n: {from_chain: 6, splash_pct: 0.5, max_targets: 1}`, `effective_against: [giant]`, `undead_bonus: 2.5` (inert) | At chain 6+, splash lightning damage to one adjacent enemy of the primary target. Material + unique anti-tag arrays stack. |
-| **Dawnbreaker** | `effective_against: [undead]`, `ignore_resistances: true`, `burnChance: 0.3`, `holy` damage type | Shatters resistance checks; every hit vs undead is +1.5× via per-weapon anti-tag; burn proc on top. |
+| **Dawnbreaker** | `effective_against: [undead]`, `ignore_resistances: true`, `burnChance: 0.3`, `holy` damage type | Shatters resistance checks; every hit vs undead takes the weak step (x2, the unique's own bane counted as substance, under the x3 cap); burn proc on top. |
 | **Sword of Michael** | `abaddon_bonus_damage: "2d20"`, `holy_smite_message: true` | Rolls 2d20 bonus damage vs `monster.kind == 'abaddon_destroyer'`. Emits flavor messages on evil-tagged hits (demon / undead / evil). |
 | **Excalibur** | `kill_heal_amount: 10`, `cast_me_away: true` | +10 HP on kill. At HP ≤ 25%, one-shot: drain weapon enchant -1 and grant `life_save` status. One use per run. |
 | **Gram (reforged)** | `ignore_resistances: true`, `base_damage: 18` | Clamps `dtype_mult` to 1.0 — resistances stop cutting damage. Weaknesses still apply. |

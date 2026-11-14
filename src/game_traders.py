@@ -144,10 +144,16 @@ class TraderMixin:
             if (getattr(mo, '_npc_encounter_tag', None) or getattr(mo, '_flavor_encounter_tag', None)
                     or getattr(mo, 'is_escort', False) or getattr(mo, 'is_allied', False)):
                 crowd |= {(mo.x + dx, mo.y + dy) for dx in (-1, 0, 1) for dy in (-1, 0, 1)}
+        # A wary creature's own room is his (Old Nickel, who wears the
+        # Bloomleaf Cloak: monster.py _wary_turn). A stall in it would make
+        # the hero corner him, and start the fight, just to trade.
+        homes = [h for mo in self.monsters
+                 if getattr(mo, 'alive', True) and (h := getattr(mo, '_wary_home', None))]
 
         def ok(x, y):
             return (d.tiles[y][x] == FLOOR and (x, y) in reach and (x, y) not in taken
-                    and (x, y) not in crowd and max(abs(x - px), abs(y - py)) >= 3)
+                    and (x, y) not in crowd and max(abs(x - px), abs(y - py)) >= 3
+                    and not any(h[0] <= x <= h[2] and h[1] <= y <= h[3] for h in homes))
         rooms = list(getattr(d, 'rooms', None) or [])
         for room in rooms[1:] + rooms[:1]:
             cand = sorted((x, y) for x, y in room.inner_tiles() if ok(x, y))

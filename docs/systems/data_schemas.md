@@ -14,6 +14,10 @@ discipline, and the `_meta` sub-object introduced in v2.18.
 - `data/kit_sense.json` — Kit Sense lines, its tier and sighting gap (`src/kit_sense.py`)
 - `data/enemy_lore.json` — Recall Lore on the creature in view, the Wand of Probing's words, and the quest lines that teach a gate boss (`src/enemy_lore.py`)
 - `data/affinity_lines.json` — the hit lines by knowledge: `felt` (unknown kinds), `habits` (by family and group, for a kind known by its family), the cause-named pools (known kinds), status lines (`src/affinity.py`)
+- `data/affinity_rules.json` — the steps a hit can meet: weak x2, resisted x0.5, shrugs off x0.25, the x3 cap, how long a `status_weak` effect lasts (`src/affinity.py`)
+- `data/family_affinity.json` — each monster family's form, element and status profile with its lore note and source; `tools/content/affinity_pass.py` writes it into `monsters.json`
+- `data/arsenal.json` + `data/items/flask.json` — coatings, thrown flasks, Press or Guard, the two-hander's parry, the named counters (section 14b; `src/coatings.py`, `src/stance.py`, `src/counters.py`)
+- `data/stray_kids.json` — the Stray Kids easter egg's lines and numbers (`src/stray_kids.py`)
 - `data/flavor_encounters.json` — scripted NPC encounters
 - `data/questions/*.json` — quiz question banks (12 subjects)
 
