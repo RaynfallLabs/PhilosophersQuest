@@ -1818,7 +1818,7 @@ _QUIRK_EFFECTS = {
     'enkidu':        "STR +1",
     'perseus':       "+2 to all saving throws -- you turn the blow aside.",
     'theseus':       "PER +1",
-    'persephone':    "Ruined preparations still yield half the SP + HP recovery -- the seed keeps returning.",
+    'persephone':    "Ruined preparations still yield half the SP, HP and MP recovery -- the seed keeps returning.",
     'hermes':        "Hasted duration permanently doubled.",
     'sibyl':         "WIS +2.",
     'valkyrie':      "DEX +1",

@@ -326,15 +326,19 @@ def test_dads_fist_is_on_his_hand_and_dad_keeps_no_score():
 
 
 def test_every_recipe_has_a_picture_under_the_name_the_menu_asks_for():
-    """The menu asks for recipe_<id>. The 364 pictures that existed were
-    named for an older recipe set: every recipe was a green asterisk."""
+    """The 364 pictures that once existed were named for an older recipe set:
+    every recipe was a green asterisk. Since the kitchen rebuild (2026-11-14)
+    each dish names its picture (`art`, one of the recipe_*.png dish
+    pictures, chosen by the kind of dish its name says) and the menu asks
+    for that."""
     tiles = os.path.join(ROOT, 'assets', 'tiles', 'items')
     recipes = _data('items', 'recipes.json')
-    assert len(recipes) > 800
-    for rid in recipes:
-        assert os.path.exists(os.path.join(tiles, f'recipe_{rid}.png')), rid
-    orphans = [f for f in os.listdir(tiles) if f.startswith('recipe_') and f[7:-4] not in recipes]
-    assert not orphans, orphans[:5]
+    assert len(recipes) > 500
+    for rid, r in recipes.items():
+        assert r['art'].startswith('recipe_'), rid
+        assert os.path.exists(os.path.join(tiles, f"{r['art']}.png")), rid
+    src = open(os.path.join(ROOT, 'src', 'game_render.py'), encoding='utf-8').read()
+    assert "recipe.get('art')" in src
 
 
 def test_the_art_tool_for_the_tiles_is_not_hidden_from_git():

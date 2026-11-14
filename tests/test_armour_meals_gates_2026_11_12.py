@@ -93,13 +93,23 @@ def test_a_meal_heals_a_real_share_of_the_health_bar():
 
 
 def test_a_cooked_meal_heals_at_least_its_share():
+    """Any dish heals at least meal_mend_share of its written heal (a tier-5
+    dish: 20 written, a third of the bar), and an HP dish its own share."""
+    import kitchen
     from player import Player
-    recipe = {'name': 'test stew', 'outcome_id': 'x'}
+    deep = next(r for r in kitchen.book() if kitchen.dish_tier(r) == 5
+                and kitchen.dish_tab(r) == 'sp' and len(r['ingredients']) == 1)
     p = Player()
     p.max_hp = 300
     p.hp = 30
-    food_system._apply_outcome_body(p, recipe, {'sp': 0, 'hp': 22})
-    assert p.hp - 30 >= int(round(food_system.meal_mend_share(22) * 300))
+    food_system._apply_recipe_outcome(p, deep)
+    assert p.hp - 30 >= int(round(food_system.meal_mend_share(20) * 300))
+    hp_dish = kitchen.recipe('cook_titan')       # Titan Haunch Roast: HP, tier 4
+    q = Player()
+    q.max_hp = 300
+    q.hp = 30
+    food_system._apply_recipe_outcome(q, hp_dish)
+    assert q.hp - 30 >= int(round(kitchen.dish_outcome(hp_dish)['heal_share'] * 300))
 
 
 # ------------------------------------------------------------------- gates

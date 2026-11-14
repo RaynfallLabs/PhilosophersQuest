@@ -326,7 +326,9 @@ def _all_permanent_powers():
     powers = set()
     for f in glob.glob(str(_ROOT / 'data' / 'items' / '*.json')):
         text = Path(f).read_text(encoding='utf-8')
-        powers |= set(re.findall(r'"permanent_power": "([a-z0-9_]+)"', text))
+        # a trophy ingredient's power, and a trophy dish's (recipes.json
+        # `permanent`, since the kitchen rebuild of 2026-11-14)
+        powers |= set(re.findall(r'"(?:trophy_)?permanent(?:_power)?": "([a-z0-9_]+)"', text))
     return sorted(powers)
 
 

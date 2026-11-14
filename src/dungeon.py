@@ -1797,10 +1797,9 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon,
     # river salt, swamp moss, crystal shards, etc.).
     #
     # ONLY `tier_role == 'dungeon'` ingredients may spawn as floor loot. Every
-    # other ingredient tier (universal Assorted Monster Parts, the 12 family
-    # cuts, the per-monster PRIME cuts, and boss TROPHY cuts) is MONSTER-DERIVED
-    # and obtainable ONLY by harvesting a corpse via the animal quiz — never as
-    # ground loot or a death-drop.
+    # other ingredient (the monster parts, `prime`, and the boss trophies) is
+    # MONSTER-DERIVED and obtainable ONLY by harvesting a corpse via the animal
+    # quiz — never as ground loot or a death-drop.
     #
     # This used to filter by plant-name keywords ('spore', 'vine', 'mold', ...),
     # which leaked monster primes whose names happen to contain those substrings

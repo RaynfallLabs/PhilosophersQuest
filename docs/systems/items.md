@@ -724,18 +724,19 @@ Raw material consumed by cooking (see [food_system](food_system.md)).
 `tier_role` ∈ `{universal, family, prime, trophy, dungeon}`:
 - `dungeon` = terrain-foraged (cave mushroom, swamp moss, river salt)
   — the only kind that spawns on the floor or in chests.
-- `family` / `prime` / `trophy` = monster-derived, only from harvest.
+- `prime` / `trophy` = monster-derived, only from harvest (close kin share
+  one ingredient: `harvest_map.json`; see food_system.md).
 
 ```json
 {
   "giant_rat_prime": {
-    "name": "Giant Rat Prime Cut",
+    "name": "Giant Rat Rump",
     "symbol": "~", "color": [0, 180, 50],
     "weight": 0.25, "min_level": 1,
+    "tier_role": "prime", "nature": "sp", "part": "cut",
+    "description": "A green-skinned rump steak from a giant or dire rat. ...",
     "source_monster": "giant_rat",
-    "family": "beast",
-    "tier_role": "prime",
-    "stat_grant": "STR",
+    "family": "vermin",
     "identified": true,
     "edible_safe": true,
     "raw_sp": 10

@@ -88,17 +88,15 @@ def main():
     add('Monster parts', 'One picture each: a horn, gland, feather, scale and so on, cut from a monster.',
         [slim(r) for r in sorted(F, key=lambda r: r['id']) if r['category'] == 'ingredient_part'], size=79)
     primes = [slim(r) for r in sorted(F, key=lambda r: r['id']) if r.get('tier_role') == 'prime']
-    groups.append({'title': 'Prime cuts (design task)',
-                   'note': 'DESIGN TASK: 500-odd prime cuts, one per monster. Do not draw one each. Sort them into kinds '
-                           'by what the NAME says the cut is (ichor, sac, haunch, heart...) and by family, draw one '
-                           'picture per kind, and write map.json. See the brief.', 'items': primes})
+    groups.append({'title': 'Monster ingredients',
+                   'note': 'About 300 monster parts (close kin share one since the kitchen rebuild of '
+                           '2026-11-14); each has its own picture already. The name says the part '
+                           '(ingredient.json `part`).', 'items': primes})
     recipes = [slim(r) for r in sorted(F, key=lambda r: r['id']) if r['category'] == 'recipe']
-    outcomes = json.load(open(os.path.join(ROOT, 'data', 'items', 'cook_outcomes.json'), encoding='utf-8'))
-    groups.append({'title': 'Cooked dishes (design task)',
-                   'note': 'DESIGN TASK: 893 recipes. Each recipe has an outcome_id; draw ONE dish picture per outcome_id '
-                           '(about 144), id "dish_<outcome_id>", and write map.json sending every recipe id to its dish. '
-                           'The outcomes are described in data/items/cook_outcomes.json.',
-                   'items': recipes, 'outcomes': sorted({r.get('outcome_id') for r in recipes if r.get('outcome_id')})})
+    groups.append({'title': 'Cooked dishes',
+                   'note': 'Each dish names its picture (recipes.json `art`, one of the recipe_*.png dish '
+                           'pictures, chosen by the kind of dish its name says: tools/content/kitchen).',
+                   'items': recipes})
     out = os.path.join(ROOT, '_genart', 'item_groups')
     os.makedirs(out, exist_ok=True)
     for f in os.listdir(out):

@@ -2,7 +2,9 @@
 
 CQ-07  the Cook menu's TROPHY badge keyed on `recipe_class`, a field that
        left recipes.json in v2.6.4, so none of the 30 trophy recipes was
-       ever badged.
+       ever badged. Since the kitchen rebuild (2026-11-14) the gold badge
+       marks the 14 trophy dishes (TROPHY) and the legendary feasts
+       (LEGENDARY).
 CQ-10  Nidhoggr's trophy said "permanent poison immunity"; the effect it
        grants (poison_resist) stops poisoning and halves poison damage.
 CQ-11  three quirks (and the Blessed status) promised "all quiz timers
@@ -21,41 +23,34 @@ pygame.init()
 
 
 def _recipes():
-    from food_system import _raw_recipes, _load_outcomes
-    outcomes = _load_outcomes()
-    trophy = plain = None
-    for rid, r in _raw_recipes().items():
-        o = outcomes.get(r.get('outcome_id')) or {}
-        if o.get('permanent_power') and trophy is None:
-            trophy = {'id': rid, **r}
-        elif not o.get('permanent_power') and plain is None:
-            plain = {'id': rid, **r}
-    return trophy, plain
+    import kitchen
+    return (kitchen.recipe('trophy_fafnir_dragon_recipe'), kitchen.recipe('feast_05'),
+            kitchen.recipe('cook_goblin'))
 
 
 # ── CQ-07 ────────────────────────────────────────────────────────────────────
 
-def test_thirty_trophy_recipes_are_recognised():
+def test_trophy_and_legendary_recipes_are_recognised():
     from food_system import _raw_recipes, recipe_is_trophy
-    n = sum(1 for rid, r in _raw_recipes().items()
-            if recipe_is_trophy({'id': rid, **r}))
-    assert n == 30
+    flagged = [rid for rid, r in _raw_recipes().items() if recipe_is_trophy({'id': rid, **r})]
+    assert len([r for r in flagged if r.startswith('trophy_')]) == 14
+    assert len(flagged) == 14 + sum(1 for r in _raw_recipes().values() if r.get('legendary'))
 
 
 def test_cook_menu_badges_trophy_recipes(monkeypatch):
     from main import Game
     g = Game(pygame.display.set_mode((1, 1)), player_name='__test_cq07__')
-    trophy, plain = _recipes()
-    assert trophy and plain
-    g.cook_compound_recipes = [trophy, plain]
+    trophy, feast, plain = _recipes()
+    g.cook_compound_recipes = [trophy, feast, plain]
     seen = {}
     monkeypatch.setattr(g, '_draw_decision_menu',
                         lambda **kw: seen.update(kw), raising=False)
     g._draw_cook_menu()
     entries = seen['entries']
     assert entries[0]['badge'] == 'TROPHY'
-    assert entries[1]['badge'] == ''
-    assert entries[0]['name_color'] != entries[1]['name_color']
+    assert entries[1]['badge'] == 'LEGENDARY'
+    assert entries[2]['badge'] == ''
+    assert entries[0]['name_color'] != entries[2]['name_color']
 
 
 # ── CQ-10 ────────────────────────────────────────────────────────────────────

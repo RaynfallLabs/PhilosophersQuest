@@ -9,8 +9,8 @@ stand on one of those tiles and still not be seen:
   the Lurking Horror poses as a chest, the Gilded Mimic as a spilled hoard),
   which is drawn as the thing it imitates (its `disguise` in monsters.json);
 * an INVISIBLE creature (`invisible: true` in monsters.json), which nobody
-  sees unless he has a way to see the unseen: see invisible (cooked meals,
-  the beholder's and cyclops's prime cuts), true sight, telepathy, or
+  sees unless he has a way to see the unseen: see invisible (cooked meals of
+  the nothic's weird-eye), true sight, telepathy, or
   clairvoyance (the Detect Monsters spell, and the ring and amulet of
   clairvoyance, which say so in their text: Brandon's ruling on MON-07).
 

@@ -24,8 +24,8 @@ sys.path.insert(0, str(ROOT / "src"))
 from items import load_templates, load_materials  # noqa: E402
 from renderer import _resolve_item_sprite_path  # noqa: E402
 
-# prime_cuts.json keys 'meta'/'primes' are structure, not item ids; the real
-# prime ids live in ingredient.json (and are covered there). DISABLED items are
+# harvest_map.json keys are structure, not item ids; the ingredient ids live in
+# ingredient.json (and are covered there). DISABLED items are
 # orphaned (never spawn) so they need no icon -- and code must not reference
 # them (test_quest_item_lifecycle), so they CAN'T get a fallback either.
 _DISABLED = {'pandoras_box', 'aladdins_lamp', 'wand_of_wonder_legendary'}

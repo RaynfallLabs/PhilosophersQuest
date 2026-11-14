@@ -108,12 +108,15 @@ def test_healing_keeps_pace_with_the_health_bar():
     assert game_magic.WAND_HEAL_SHARE < game_magic.WAND_EXTRA_HEAL_SHARE <= 0.4
     shares = [game_magic.SPELL_HEAL_SHARE[t] for t in (1, 2, 3, 4)]
     assert shares == sorted(shares) and shares[-1] <= 0.5
-    from food_system import _apply_outcome_body
+    import kitchen
+    from food_system import _apply_recipe_outcome
     from player import Player
     p = Player()
     p.max_hp, p.hp = 400, 100
-    _apply_outcome_body(p, {'name': 'Stew'}, {'sp': 10, 'hp': 14})
-    assert p.hp - 100 >= 30                                  # 14 written; 7.8% of 400 + the meal's max HP
+    # a tier-4 dish of any tab: 14 written, 23.5% of 400, and the meal's max HP
+    t4 = next(r for r in kitchen.book() if kitchen.dish_tier(r) == 4 and kitchen.dish_tab(r) == 'sp')
+    _apply_recipe_outcome(p, t4)
+    assert p.hp - 100 >= 30
 
 
 def test_starving_and_strangling_follow_the_health_bar():

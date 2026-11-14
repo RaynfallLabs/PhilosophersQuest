@@ -1,0 +1,71 @@
+# Ingredient content, part 3: goblinkin, gorgons, great beasts, legend, mortals, oozes, plants.
+goblin|sp|Goblin Gristle|A cured leg of goblin, which is mostly gristle and grudges. Stewed long enough it goes tender, and it stretches a pot further than it has any right to.|Goblin Gristle Stew|Chewy, salty and endless; it keeps a crawler going.
+goblin_king|STR|Goblin King's Royal Sausage|A green coil of sausage from the goblin king's own table, the best his thieves could steal.|Royal Sausage Roll|Greasy and grand; you swagger a little after.
+kobold|DEX|Kobold Tail Sausage|A coil of sausage from the kobolds, the little dragon-worshippers who set traps everywhere. Quick hands made it.|Trapsetter's Tail Sausage|Small, sharp and spicy; your fingers find the gaps.
+orc_warrior|sp|Orc Salted Haunch|A dark, salt-hard haunch carried by the orc warbands, from scout to warlord. It keeps for months and fills a soldier for days.|Warband Haunch Stew|Coarse and heavy; it keeps a warband marching.
+gnoll|sp|Gnoll Hyena Links|Hyena-meat sausages from the gnolls, the laughing pack-hunters of Yeenoghu. They eat everything, always.|Laughing Links and Beans|You will laugh at hunger for a good long while.
+hobgoblin|sp|Hobgoblin Ration Sausage|A coil of the hard ration sausage every hobgoblin soldier carries. Dense, dull and built to last.|Barracks Sausage Pot|Plain soldier's food, and plenty of it.
+bugbear|sp|Bugbear Bangers|Fat bangers from a bugbear's den. Bugbears are lazy ambushers with big appetites.|Bugbear Bangers on Bread|Greasy and filling; you will not be hungry again for a while.
+basilisk|save_guard_CON|Basilisk Tail Steak|A green-skinned tail steak from the basilisk, whose gaze turns men to stone. Its flesh fights the stiffening.|Seared Basilisk Tail|Chewy and green; stone has a hard time taking you.
+cockatrice|save_guard_CON|Cockatrice Drumstick|A drumstick from the cockatrice, the rooster-serpent whose touch petrifies. Cooked right, it does the opposite.|Rooster-Serpent Drumstick|Tastes like chicken, if chicken could turn you to stone.
+catoblepas|hp|Catoblepas Rump Steak|A rump steak from the catoblepas, the heavy-headed buffalo of the swamps, and its cousin the bonnacon. Thick, red and mending.|Swamp Buffalo Rump|Heavy and rich; your wounds close.
+medusa|WIS|Medusa Snake-Hair Links|Little sausages from the snake-hair of the gorgons. Yes, really. Athena gave Medusa's blood the power to heal and to kill.|Snake-Hair Links|Wriggly to look at, wise to eat.
+death_dog|hp|Death Dog Smoked Loin|A smoked loin from the two-headed death dog, the brother of Cerberus. Two heads, twice the healing.|Two-Head Smoked Loin|Smoky and mending.
+cave_bear|hp|Cave Bear Steak|A thick steak from a cave or dire bear. A bear sleeps all winter on what it eats in autumn.|Cave Bear Steak|Thick, red and mending.
+blink_dog|DEX|Blink Dog Loin|A blue loin from the blink dogs, who teleport in short hops to dodge their enemies.|Blink Dog Loin Roast|Jumpy meat; you step aside before the blow lands.
+fenrir_pup|STR|Fenrir's Pup Shank|A purple shank from a whelp of Fenrir, the wolf who will swallow the sun. Even the pups are terrible.|Wolf Pup Shank|It snarls in the pan; your bite gets sharper.
+wolf_pack_leader|STR|Dire Wolf Steak|A steak from the leaders of the wolf packs and the dire wolf alphas. Lean, red and wild.|Pack Leader Steak|Rare and wild; you feel like the head of the pack.
+winter_wolf|cold_resist|Winter Wolf Shank|A shank from the winter wolf, which breathes frost and runs on snow. The cold is its home.|Frostbreath Shank|Icy fat that keeps the cold off your bones.
+fionn_hound|PER|Fionn's Hound Leg|A leg from the hounds of Fionn mac Cumhaill, the best hunting dogs in Ireland.|Hunter's Hound Leg|Lean, gamey and sharp-nosed.
+dire_lion|hp|Dire Lion Leg|A leg from the dire lion, the great maned hunter of the old plains. Lion meat mends a fighter.|Dire Lion Leg Roast|It roars on the fire; your wounds close.
+displacer_beast|displacement|Displacer Beast Steak|A purple steak from the panther that always looks a step from where it is. A little of its trick stays with you.|Blur-Seared Steak|Enemies swing at where you seem to be.
+hook_horror|INT|Hook Horror Steak|A steak from the hook horror, the clacking beaked hunter of the deep caves. It thinks in echoes.|Echo-Seared Steak|Every bite clicks; you think in clean lines.
+cath_palug|DEX|Cath Palug Steak|A purple steak from the Cath Palug, the monstrous cat King Arthur fought. Cats always land on their feet.|Monster Cat Steak|Light, fast and catlike.
+owlbear|hp|Owlbear Steak|A steak from the owlbear, half owl, half bear, all bad temper. Bear meat mends.|Owlbear Steak and Eggs|Heavy as a bear; it puts you back together.
+calydonian_boar|hp|Calydonian Boar Ham|A great ham from the Calydonian Boar, the beast Artemis sent to ravage a kingdom and a whole band of heroes hunted.|Heroes' Boar Ham|A ham for a hall of heroes; wounds close.
+hell_bovine|sp|Hell Bovine Sirloin|A sirloin from a bovine of the secret pastures. Moo.|Hellfire Sirloin|You will never be hungry again. Moo.
+cow_king|STR|Cow King's Royal Bacon|Bacon from the Cow King himself. Kneel.|Royal Bacon Rashers|Crisp, regal and strangely empowering.
+nemean_lion|shielded|Nemean Lion Leg|A leg from the Nemean lion and the lionesses of Sekhmet, whose hides no blade could cut.|Nemean Leg Roast|Tough as its hide; blades glance off you.
+sets_jackal|PER|Set's Jackal Steak|A steak from the jackal-beast of Set, god of the desert storm. It sees through sandstorms.|Desert Jackal Steak|Dry heat and sharp eyes.
+carbuncle|mp|Carbuncle Jewel Steak|A steak from the carbuncle, the little beast with a glowing jewel in its head. The jewel's glow is all through the meat.|Jewel-Glow Steak|It glows faintly red; your mana glows too.
+manticore|STR|Manticore Leg|A leg from the manticore, the man-faced lion with a tail of spikes. Lion meat, mostly.|Spike-Tail Leg Roast|Pick out the spikes first. Then grow strong.
+chimera|fire_resist|Chimera Triple Steak|A purple steak from the chimera, lion, goat and serpent in one, that breathes fire.|Three-Beast Steak|Three flavours and a fire that does not burn you.
+charybdis_spawn|sp|Charybdis Spawn Shank|A blue shank from a spawn of Charybdis, the whirlpool that swallows ships. It swallows hunger, too.|Whirlpool Shank Stew|It swirls in the bowl and fills you right up.
+charybdis|sp|Charybdis Gulping Shank|A great blue shank from Charybdis herself, who drinks the sea three times a day.|Sea-Swallower's Feast|A whole tide of food in one bowl.
+ammit_spawn|hp|Ammit Leg|A leg from Ammit, the Devourer of the Dead, part crocodile, part lion, part hippo, and her spawn.|Devourer's Leg Roast|Three beasts' worth of mending.
+nue|mp|Nue Drumstick|A purple drumstick from the nue of Japan: monkey face, tiger legs, snake tail, and a cry that brings thunder. Strange magic runs in it.|Thunder-Night Drumstick|Strange and dark; your mana crackles.
+minotaur|STR|Minotaur Bull Ham|A great ham from the bull-headed warriors of the labyrinth. Pure, raging muscle.|Labyrinth Bull Ham|A ham you have to fight; it makes you a fighter.
+kusarikku|CON|Kusarikku Bull-Man Links|Sausages from the bull-men who guarded the gates of the Sun god in Babylon. Stubborn and sturdy.|Gatekeeper Links|Thick and stubborn; you hold your ground.
+sphinx|INT|Sphinx Lion Steak|A steak from the sphinxes, who ask riddles and eat those who answer wrong. Clever meat.|Riddler's Steak|You think of three answers before you finish chewing.
+the_sphinx|WIS|The Sphinx's Riddle Steak|A steak from The Sphinx herself, keeper of the riddle of the ages. Only the wise get to eat it.|Riddle of the Ages Steak|Morning, noon and evening; you understand.
+lamia|mp|Lamia Serpent Sausage|A purple ring sausage from the lamia, the serpent-queen of old Libya who charms travellers. Sweet and spellbinding.|Serpent-Queen Sausage|Sweet and coiling; your spells coil tighter.
+hydra|regenerating|Hydra Neck Roll|A green-skinned neck from the hydra. Cut one off and two grow back. Eat one and you heal the same way.|Regrowing Neck Roll|Your cuts close as you walk. Two for one.
+scylla|sp|Scylla Tentacle Roll|A blue tentacle roll from Scylla, the six-headed sea-monster of the narrow strait.|Strait Tentacle Stew|Chewy, salty and very filling.
+echidna|hp|Echidna Serpent Steak|A purple steak from Echidna, half woman, half serpent, the mother of monsters. Mothers mend.|Mother of Monsters Steak|Rich and dark; it mends what monsters broke.
+cerberus|fear_immune|Cerberus Steak|A grey steak from Cerberus, the three-headed hound of the gates of Hades. Nothing scares the guard dog of death.|Three-Headed Steak|Three bites and fear has nothing to grip.
+cult_initiate|mp|Cultist Blood Sausage|A ring of blood sausage, the fasting ration of the dark cults. They bless it with things better left unsaid.|Black-Rite Blood Sausage|Dark and rich; something arcane sits in it.
+bandit_captain|sp|Bandit Trail Ham|A smoked ham from a bandit's pack, the kind brigands and thieves carry on long nights on the road.|Highwayman's Ham and Beans|Smoky, salty and very filling.
+battle_mage|mp|Battle Mage's Salt Ham|A blue-salted ham from a battle mage's pack, cured with a preserving spell that never quite wore off.|Spell-Cured Ham|Salty, and still faintly enchanted.
+veteran_knight|sp|Knight's Marching Ham|A blue-salted marching ham from the packs of knights, mercenaries and guards. It got them through long campaigns.|Campaign Ham Hotpot|Soldier's food; you could march all day.
+mind_flayer_thrall|INT|Thrall's Pickled Ham|A purple pickled ham from the pack of a mind flayer's thrall, cured in brine that smells of thought.|Pickled Ham Platter|Sharp and vinegary; your head clears.
+snake_charmer|sp|Snake Charmer's Spiced Ham|A spiced ham from a snake charmer's pack, rubbed with market herbs. Charmers travel far and eat well.|Charmer's Spiced Ham|Spicy and filling.
+harrow_witch|WIS|Witch's Hedge Sausage|A ring sausage from a hedge witch's larder, stuffed with herbs from the crossroads.|Hedge-Witch Sausage|Herby and odd; you see the hidden meaning.
+iron_patriarch|CON|Iron Patriarch's Feast Links|Sausages from the Iron Patriarch's table, the iron-fisted lord who never missed a meal or a war.|Patriarch's Feast Links|Rich and heavy; you feel iron-hard.
+mage_slayer_assassin|sp|Assassin's Shadow Ham|A purple ham from an assassin's pack, cured in the dark. Assassins wait a long time between meals.|Midnight Ham Slices|Thin slices that keep you going through a long watch.
+veiled_inquisitor|WIS|Inquisitor's Fasting Ham|A plain ham from a veiled inquisitor's pack, eaten only after long fasts and longer questions.|Fast-Breaking Ham|Plain and sober; your judgement is clear.
+gelatinous_cube|sp|Gelatinous Cube Aspic Sac|A pale sac of jelly from a gelatinous cube, the transparent block that sweeps the corridors clean.|Cube Aspic Wobble|It wobbles, and it fills you right up.
+acid_blob|acid_resist|Acid Blob Bladder|A yellow-green bladder from an acid blob or grey ooze. It holds acid without dissolving, and teaches you the trick.|Acid Bladder Pickle|Sour beyond belief; acid stops biting.
+green_slime|hp|Green Slime Sac|A green sac from the slime that turns everything it touches into more slime. Its growth becomes your healing.|Green Slime Jelly|Green and gooey; your wounds close.
+crystal_ooze|mp|Crystal Ooze Glitter Sac|A blue sac from the ooze that looks like a puddle of water, glittering with crystals of mana.|Crystal Ooze Sorbet|Cold and sparkling; mana glitters in you.
+ochre_jelly|sp|Ochre Jelly Sac|An orange sac from the ochre jelly, which creeps under doors to feed. It is mostly food.|Ochre Jelly Preserve|Jam from a monster; very filling.
+black_pudding|hp|Black Pudding Sac|A dark sac from the black pudding, the ooze that eats metal. Fried, it really is a black pudding.|Fried Black Pudding|Breakfast of heroes; it mends you.
+plague_ooze|poison_resist|Plague Ooze Bladder|A yellow-green bladder from the ooze that carries plague. Survive it and plague cannot catch you.|Plague Bladder Pickle|It tastes of fever and leaves you immune.
+yellow_mold|sp|Yellow Mold Log|A log thick with yellow mold and the brown mold that drinks heat. Scraped and cooked, it is starchy and filling.|Mold Log Hash|Earthy and filling; the mold is the good kind now.
+assassin_vine|regenerating|Assassin Vine Stalk|A green stalk from the vines that strangle travellers: assassin vine, musk creeper, thorn slinger and the great vine horror. They regrow from nothing.|Strangler Vine Stir-Fry|Stringy greens; your cuts close as they grow.
+myconid_worker|sp|Myconid Stalk|A purple-hearted stalk from the mushroom folk, workers and sovereigns. A whole colony grows from it.|Myconid Stalk Fricassee|Meaty mushroom; filling and calm.
+violet_fungus|PER|Violet Fungus Stalk|A pink-hearted stalk from the violet fungus and the fungal horrors of the deep caves. Spores show you what moves.|Spore-Stalk Sauté|Earthy and strange; your eyes catch every drift of spores.
+gas_spore|sp|Gas Spore Bladder|The pale bladder of a gas spore, the floating fungus that explodes. Emptied and boiled, it is very filling.|Popped Spore Puffs|Light and puffy, and somehow very filling.
+shambling_mound|hp|Shambling Mound Compost Jar|A jar of the rich, rotten heart of a shambling mound. Everything grows in it, including you.|Compost Jar Stew|Smells like a garden; you feel fresh and whole.
+moss_sentinel|CON|Moss Sentinel Mossy Core|A green rune-core overgrown with moss, from the sentinel that guards forgotten groves.|Mossy Core Soup|Earthy and patient; you stand like a standing stone.
+corrupted_treant|hp|Treant Rot-Acorn|A green glow in an acorn cup from a corrupted treant, the ancient tree turned against the forest. Still full of life.|Rot-Acorn Mash|Bitter, then sweet; your wounds close like bark.
+wormwood_blight|INT|Wormwood Bitter Ichor|Green ichor from Wormwood, the bitter blight that turns water to poison. Bitterness sharpens the mind.|Wormwood Bitters|So bitter your thoughts wake up.
