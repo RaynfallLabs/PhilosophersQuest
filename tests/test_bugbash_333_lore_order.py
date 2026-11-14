@@ -143,7 +143,9 @@ def _is_affinity(line, kind):
     import re
     for s in _affinity_pool(kind):
         pat = re.escape(s)
-        for f in ('{name}', '{the}', '{word}', '{word_cap}'):
+        # (and the creature's own pronouns, round 3)
+        for f in ('{name}', '{the}', '{word}', '{word_cap}',
+                  '{he}', '{He}', '{him}', '{his}', '{His}'):
             pat = pat.replace(re.escape(f), '.+')
         if re.fullmatch(pat + r'(?: .+)?', line):
             return True
@@ -250,7 +252,8 @@ def test_garlic_and_ash_never_talks_about_a_bite_on_a_paralysis_save(game):
     assert said and all('bite' not in t for t in said), said
     spawn = _mon(game, 'vampire_spawn', dx=2)
     assert family_edges.drain_heal_blocked(game.player, spawn)
-    assert family_edges.drain(game.player) == ['Garlic and Ash: the bite takes nothing back to heal it.']
+    # (a vampire spawn is "he": data/monsters.json pronoun, round 3)
+    assert family_edges.drain(game.player) == ['Garlic and Ash: the bite takes nothing back to heal him.']
 
 
 # ---------------------------------------------------------------------------
@@ -291,7 +294,8 @@ def test_a_named_foes_harder_blow_has_its_own_line(game):
     game._start_combat(m)
     log = _log(game)
     assert m.alive
-    assert _at(log, 'Banishment! It reels, but it does not fall.') >= 0
+    # In the foe's own pronoun (round 3): Camazotz, the bat god, is "he".
+    assert _at(log, 'Banishment! He reels, but he does not fall.') >= 0
     assert _at(log, 'cast back into the Pit') < 0
 
 

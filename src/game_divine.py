@@ -37,6 +37,7 @@ through MRO.
 """
 from __future__ import annotations
 
+from naming import quantity
 import copy
 import random
 
@@ -930,7 +931,7 @@ class DivineMixin:
                     self.player.known_item_ids.add(item.id)
                     count += 1
             if count:
-                self.add_message(f"Royal insight! {count} items identified!", 'success')
+                self.add_message(f"Royal insight! {quantity(count, 'item')} identified!", 'success')
             elif chain == 3:
                 self.add_message("Royal insight fills you, but all your items are known.", 'info')
         if chain >= 4:
@@ -1020,7 +1021,7 @@ class DivineMixin:
             and _pos not in getattr(self, '_l100_altars_tried', set()))
         if self.player.prayer_cooldown > 0 and not _fresh_l100_altar:
             self.add_message(
-                f"You cannot pray yet. ({self.player.prayer_cooldown} turns remain)",
+                f"You cannot pray yet. ({quantity(self.player.prayer_cooldown, 'turn')} remain)",
                 'warning'
             )
             return
@@ -1404,7 +1405,7 @@ class DivineMixin:
         p.grant_insight(bonus, turns + 1)
         after = p.get_quiz_timer('math')
         self.add_message(
-            f"A hand closes over yours. Wisdom +{bonus} for {turns} turns. "
+            f"A hand closes over yours. Wisdom +{bonus} for {quantity(turns, 'turn')}. "
             f"(Combat clock {before} -> {after} seconds.)", 'success')
         if desperate:
             # Out of the depths: the prayer made at death's door also
@@ -1484,7 +1485,7 @@ class DivineMixin:
                     abaddon.damage_ward = 0.0
                     self.add_message(
                         f"Holy fire leaps from the altar and wraps the Destroyer. "
-                        f"The dark that guards him burns away. ({turns} turns)", 'success')
+                        f"The dark that guards him burns away. ({quantity(turns, 'turn')})", 'success')
                 else:
                     self.add_message(
                         "Holy fire blazes forth but finds no target.", 'info')
@@ -1604,7 +1605,7 @@ class DivineMixin:
                                  'success'))
                         else:
                             msgs.append(
-                                (f"A holy light suffuses {len(chosen)} items in your pack.",
+                                (f"A holy light suffuses {quantity(len(chosen), 'item')} in your pack.",
                                  'success'))
                     else:
                         # (True whether all is blessed already or the pack

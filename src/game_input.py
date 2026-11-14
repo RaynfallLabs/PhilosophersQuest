@@ -1775,13 +1775,17 @@ class InputMixin:
         if key in (pygame.K_ESCAPE, pygame.K_SLASH, pygame.K_RETURN, pygame.K_SPACE):
             self.state = STATE_PLAYER
             return
-        # Two pages: the command reference and How Quizzes Work.
+        # The command reference, then the prose pages (How Quizzes Work,
+        # Gear and Load: RenderMixin.HELP_PAGES). Tab and Right turn on,
+        # Left back; the last page turns round to the first.
         if key in (pygame.K_TAB, pygame.K_LEFT, pygame.K_RIGHT):
-            self._help_page = 1 - getattr(self, '_help_page', 0)
+            step = -1 if key == pygame.K_LEFT else 1
+            self._help_page = (getattr(self, '_help_page', 0) + step) % self.help_page_count()
             self._help_scroll = 0
             return
-        moves = {pygame.K_UP: -1, pygame.K_DOWN: 1, pygame.K_PAGEUP: -8, pygame.K_PAGEDOWN: 8}
-        if key in moves and getattr(self, '_help_page', 0) == 1:
+        moves = {pygame.K_UP: -1, pygame.K_DOWN: 1, pygame.K_PAGEUP: -8, pygame.K_PAGEDOWN: 8,
+                 pygame.K_HOME: -10 ** 6, pygame.K_END: 10 ** 6}
+        if key in moves and getattr(self, '_help_page', 0) >= 1:
             self._help_scroll = max(0, getattr(self, '_help_scroll', 0) + moves[key])
 
     def _lore_input(self, key: int):

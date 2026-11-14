@@ -345,7 +345,11 @@ Return value from `take_turn` is `('unicorn_actions', [messages])` where message
 
 ## 5. The Shift+P pet menu
 
-`game_menus.py` opens the pet menu with Shift+P. Items eligible for the menu exclude sketch pets and Dad (both temporary). Per-pet actions:
+`game_menus.py` opens the pet menu with Shift+P. Items eligible for the menu exclude sketch pets and Dad (both temporary).
+
+**The card shows the pet** (round 3, 2026-11-14: "pet panel should show the pet, just like bestiary and item lore"). `_draw_pet_menu` gives each entry a `plate`: `lore_art.pet_ref(pet)`, the sprite the map draws for it NOW (`Pet.sprite_id`: the stage it has grown to; the Emberpup in the Bloomleaf Cloak has `<stage>_cloaked` for every stage). The decision menu heads the Detail pane with it (`_menu_draw_portrait`): `lore_art.plate` in the lore pages' framed well (`_draw_plate_well`), the largest whole enlargement (3x at UI scale 1, 2x or 1x when the card is long) that leaves the card room, with the name, level, HP, XP, sphere and command beside it, and the cloak, Shep's rescue and growl below. A pet with no art has no picture, never a letter glyph (the Bestiary's rule). The actions (F/P/H/R/C/S) sit in the Choices pane under the companion's row (`list_footer`), and the Detail pane is the wider one (`detail_share`): Shep's whole card did not fit one pane at 1280x720. Captures: `menu_pet`, `menu_pet_plain`, `menu_pet_final_stage`, `menu_pet_cloaked`, `menu_pet_cloaked_evolved`, `menu_pet_cloaked_final`, `menu_pet_shep`.
+
+Per-pet actions:
 
 ### 5.1 Feed — STATE_PET_FEED
 Opens a sub-menu listing `Food` and `Ingredient` items in the player's inventory: a scrolling list beside a detail pane (`_draw_pet_sub_picker` → `_draw_decision_menu`), so every food is reachable with Up/Down, PgUp/PgDn, Home/End or its letter, with a scroll bar and "x-y of N" when the list is long (the old two-column picker seemed to stop at eight; 2026-10-18). The heal picker below is the same list. On select:

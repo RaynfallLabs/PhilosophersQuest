@@ -363,7 +363,7 @@ class StarDancer(Monster):
         super().__init__({'id': star_kind(member), 'name': member_name(member),
                           'symbol': st.get('symbol', '@'), 'color': st.get('color', [255, 215, 120]),
                           'hp': '1', 'attacks': [], 'ai_pattern': 'aggressive',
-                          'is_allied': True, 'proper_noun': True,
+                          'is_allied': True, 'proper_noun': True, 'pronoun': 'he',
                           'lore': data()['observe'].get(member, '')}, x, y)
         self._sk_member = member
         self._sk_slot = int(slot)
@@ -390,10 +390,10 @@ class StarDancer(Monster):
         return False
 
 
-def watchers(monsters, stars, dungeon) -> list:
-    """The monsters near the show that stop to watch it: in ``watch_radius``
-    of a star with a clear view of him. Never a named foe (they have seen
-    better shows), nothing mindless, nothing blind, and no friend."""
+def near_show(monsters, stars, dungeon) -> list:
+    """The creatures near the show: in ``watch_radius`` of a star with a
+    clear view of him. No friend, no star, and nothing blind (it cannot see
+    the show at all)."""
     import senses
     radius = int(data()['stars']['watch_radius'])
     out = []
@@ -401,12 +401,27 @@ def watchers(monsters, stars, dungeon) -> list:
         if (not getattr(m, 'alive', False) or is_star(m) or getattr(m, 'is_allied', False)
                 or getattr(m, '_npc_encounter_tag', None) or getattr(m, '_flavor_encounter_tag', None)):
             continue
-        if m._is_named_foe() or set(m.tags or ()) & Monster._MINDLESS_TAGS or m.has_effect('blinded'):
+        if m.has_effect('blinded'):
             continue
         if any(_cheb(m.x, m.y, s.x, s.y) <= radius
                and senses.clear_view(s.x, s.y, m.x, m.y, dungeon) for s in stars):
             out.append(m)
     return out
+
+
+def can_watch(m) -> bool:
+    """Whether a creature near the show stops for it: never a named foe
+    (they have seen better shows), nothing mindless, and nothing that
+    cannot be stunned (a swarm: status_immune), so the watch line is never
+    said of a creature the show did not hold (round 3)."""
+    if m._is_named_foe() or set(m.tags or ()) & Monster._MINDLESS_TAGS:
+        return False
+    return not m.resists_control('stunned')
+
+
+def watchers(monsters, stars, dungeon) -> list:
+    """The monsters near the show that stop to watch it (near_show, can_watch)."""
+    return [m for m in near_show(monsters, stars, dungeon) if can_watch(m)]
 
 
 # ---------------------------------------------------------------------------

@@ -453,7 +453,7 @@ A **side floor** is reached by an easter egg and left by its own portal: `boss_l
 | alarm          | 0          | Wakes/aggros nearby monsters in 10-tile radius   |
 | acid           | 2d4 acid   | Applies `corroding` 5t                          |
 | teleport       | 0          | Random teleport                                  |
-| fire           | 2d4+2 fire | Applies `burning` 3t (unless `fire_resist`)     |
+| fire           | 2d4+2 fire | Applies `burning` 3t (unless `fire_resist`, or body armour that will not catch). Rewired onto a monster it hits as fire and sets alight only what fire can burn |
 | sleep_gas      | 0          | `sleeping` 3-8t (save vs CON DC `12 + level//7`) |
 | bear_trap      | 1d4 phys   | `immobilized` 2-4t (save vs CON)                |
 | squeaky_board  | 0          | Rouses every monster within 20 tiles of open ground; they come to look |

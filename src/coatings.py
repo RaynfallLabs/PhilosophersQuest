@@ -326,8 +326,9 @@ def throw_at(item, monster) -> list:
     name = _name(item)
     dmg, dtype = thrown_damage(item, monster)
     if dmg <= 0:
-        return [(str(t.get('only_water', '')).format(flask=name, the=the_name(monster, lower=True)),
-                 'info')]
+        from monster import pronouns
+        return [(str(t.get('only_water', '')).format(flask=name, the=the_name(monster, lower=True),
+                                                     him=pronouns(monster)[1]), 'info')]
     actual = monster.take_damage(dmg, dtype)
     out = [(str(t.get('hit', '')).format(flask=name, the=the_name(monster, lower=True),
                                          damage=actual, dtype=dtype), 'success')]

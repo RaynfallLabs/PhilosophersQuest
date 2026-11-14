@@ -462,8 +462,54 @@ def test_watchers_are_the_ordinary_monsters_near_the_show():
     golem = mon('clay_golem', 11, 12)
     blind = mon('goblin', 9, 9)
     blind.status_effects['blinded'] = 3
-    got = sk.watchers([star, near, far, boss, golem, blind], [star], d)
+    swarm = mon('scarab_swarm', 11, 9)                  # cannot be stunned (round 3)
+    assert swarm.resists_control('stunned')
+    got = sk.watchers([star, near, far, boss, golem, blind, swarm], [star], d)
     assert got == [near]
+    assert set(sk.near_show([star, near, far, boss, golem, blind, swarm], [star], d)) == {
+        near, boss, golem, swarm}
+
+
+def test_the_watch_line_is_said_only_of_what_the_show_held():
+    """Round 3: the watch line played for a stun-immune creature, and the
+    hold was added again every turn of the show (12 turns stunned by a
+    6-turn show)."""
+    from monster import Monster
+    g = _game('__test_sk_watch__')
+    _open_floor(g)
+    gob = Monster({**MONS['goblin'], 'id': 'goblin'}, 13, 10)
+    swarm = Monster({**MONS['scarab_swarm'], 'id': 'scarab_swarm'}, 12, 12)
+    boss = Monster({**MONS['lamia'], 'id': 'lamia'}, 10, 14)
+    for m in (gob, swarm, boss):
+        m._aware = True
+    g.monsters.extend([gob, swarm, boss])
+    g._refresh_fov()
+    _read_photo(g)
+    log = _log(g)
+    assert 'The Goblin stops to watch the show.' in log
+    assert 'Scarab Swarm stops to watch' not in log and not swarm.has_effect('stunned')
+    assert 'The Scarab Swarm pays the show no mind.' in log
+    assert 'Lamia has seen better shows, and does not stop.' in log
+    watch = int(sk.data()['stars']['watch_turns'])
+    for _ in range(3):
+        gob.x, gob.y = 13, 10
+        g._advance_turn()
+        assert gob.status_effects.get('stunned', 0) <= watch
+    assert log.count('pays the show no mind') == 1
+
+
+def test_leaving_the_floor_ends_the_show_with_its_bow():
+    g = _game('__test_sk_leave__')
+    _open_floor(g)
+    _read_photo(g)
+    assert [m for m in g.monsters if sk.is_star(m)]
+    here = g.dungeon_level
+    g.msg_log.clear()
+    g._change_level(here + 1, enter_from_top=True)
+    assert sk.data()['stars']['bow'] in _log(g)
+    assert not [m for m in g.monsters if sk.is_star(m)]
+    g._change_level(here, enter_from_top=False)
+    assert not [m for m in g.monsters if sk.is_star(m)]       # a revisit finds no show
 
 
 # ---------------------------------------------------------------------------

@@ -89,6 +89,18 @@ class ProperNameAttr:
         obj.__dict__[self.key] = proper_name(value)
 
 
+def quantity(n, word: str, many: str | None = None) -> str:
+    """A number and its noun, agreeing: "1 turn", "3 turns", "1 creature";
+    ``many`` for a plural that is not the word plus 's' ("1 enemy", "2
+    enemies"). Round 3: "1 creatures are slowed" was said whenever a wand
+    caught one."""
+    try:
+        k = int(n)
+    except (TypeError, ValueError):
+        k = 2
+    return f"{n} {word if k == 1 else (many or word + 's')}"
+
+
 _NAME_PARTICLES = ('di', 'da', 'de', 'von', 'van', 'der')
 
 

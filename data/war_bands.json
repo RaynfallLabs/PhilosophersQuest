@@ -500,13 +500,13 @@
   },
   "_observe": "What Observe (O) says of a band member (2026-11-12). A follower: 'member'. The leader: 'leader', a thing anyone can see; a hero who knows the leader's kind (family_lore.knowledge KNOWN) hears 'leader_known' and what happens when it falls ('morale', by the band's morale). The arrival 'known_line', which carries the counter, is likewise said only at KNOWN; 'line' never names the band's kind.",
   "observe": {
-    "member": "It marches with {name}.",
-    "leader": "The rest of the band keep glancing at it, as if waiting for orders.",
-    "leader_known": "It leads the band.",
+    "member": "{He} marches with {name}.",
+    "leader": "The rest of the band keep glancing at {him}, as if waiting for orders.",
+    "leader_known": "{He} leads the band.",
     "morale": {
-      "rout": "If it falls, the rest will lose their nerve.",
-      "crumble": "If it falls, the dead it raised will fall with it.",
-      "quarrel": "If it falls, the rest will turn on one another."
+      "rout": "If {he} falls, the rest will lose their nerve.",
+      "crumble": "If {he} falls, the dead {he} raised will fall with {him}.",
+      "quarrel": "If {he} falls, the rest will turn on one another."
     }
   },
   "role_names": {

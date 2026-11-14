@@ -253,9 +253,12 @@ def test_a_den_sleeps():
 
 def test_observe_lines():
     gob = make('goblin', 5, 5)
-    assert senses.status_line(gob) == senses.data()['status_lines']['unaware']
+    # In the creature's own pronoun (round 3): a goblin is "he".
+    assert senses.status_line(gob) == "He hasn't noticed you."
     gob.add_effect('sleeping', 10)
-    assert senses.status_line(gob) == senses.data()['status_lines']['asleep']
+    assert senses.status_line(gob) == 'He is asleep.'
+    rat = make('giant_rat', 5, 5)
+    assert senses.status_line(rat) == "It hasn't noticed you."
     wolf = make('wolf_pack_leader', 5, 5)
     assert 'scent' in senses.senses_line(wolf)
 

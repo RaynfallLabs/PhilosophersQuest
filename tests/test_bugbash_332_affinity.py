@@ -47,7 +47,8 @@ def _clean():
 
 def test_every_pool_is_full_and_formats():
     data = affinity.lines()
-    fields = {'name', 'the', 'word', 'word_cap'}
+    # (with the creature's own pronouns, round 3: data/monsters.json pronoun)
+    fields = {'name', 'the', 'word', 'word_cap', 'he', 'He', 'him', 'his', 'His'}
     for pool in ('weak', 'resisted', 'weak_many', 'resisted_many'):
         assert len(data[pool]) >= 2, pool
         for line in data[pool]:
@@ -101,8 +102,9 @@ def test_one_line_a_kind_naming_the_creature_or_all_of_them():
     rng = random.Random(1)
     one = affinity.say([(a, 'weak', 'silver')], rng)
     assert len(one) == 1 and one[0][1] == 'weak'
-    from monster import the_name
-    pool = [s.format(name=the_name(a), the=the_name(a, lower=True), word='silver', word_cap='Silver')
+    from monster import the_name, pronoun_fill
+    pool = [s.format(name=the_name(a), the=the_name(a, lower=True), word='silver', word_cap='Silver',
+                     **pronoun_fill(a))
             for s in affinity.lines()['weak']]
     assert one[0][0] in pool
     both = affinity.say([(a, 'resisted', 'fire'), (b, 'resisted', 'fire'), (a, 'weak', 'holy')], rng)
@@ -142,6 +144,8 @@ def test_the_game_says_it_at_the_end_of_the_action(monkeypatch, tmp_path):
     affinity.note(rat, 'resisted', 'cold')
     g._advance_turn()
     lines = [t for t, k in seen if k == 'warning']
-    pool = [s.format(name=the_name(rat), the=the_name(rat, lower=True), word='cold', word_cap='Cold')
+    from monster import pronoun_fill
+    pool = [s.format(name=the_name(rat), the=the_name(rat, lower=True), word='cold', word_cap='Cold',
+                     **pronoun_fill(rat))
             for s in affinity.lines()['resisted']]
     assert any(t in pool for t in lines)

@@ -292,7 +292,7 @@ class FamilyMixin:
             fired = family_edges.calm_arrivals(player, [m for m in mons if not _ally(m)])
             for ab in fired:
                 if ab and ab.get('trigger_msg'):
-                    self.add_message(ab['trigger_msg'], 'info')
+                    self.add_message(family_edges.line_for(ab['trigger_msg']), 'info')
 
     # ------------------------------------------------------------------
     # Every turn
@@ -311,7 +311,7 @@ class FamilyMixin:
             key = (self.dungeon_level, ab.get('id'))
             if key not in told and ab.get('trigger_msg'):
                 told.add(key)
-                self.add_message(ab['trigger_msg'], 'info')
+                self.add_message(family_edges.line_for(ab['trigger_msg']), 'info')
         import unseen
         for m in self.monsters or ():
             if (getattr(m, 'alive', False) and (m.x, m.y) in vis
