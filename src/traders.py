@@ -218,6 +218,11 @@ def _pool(cat: str, level: int, rng, *, unique_first=False):
         items = [i for i in load_items(cat) if is_random_loot(i) and unique_available(i)]
     except Exception:
         return []
+    if cat == 'ingredient':
+        # Only foraged finds are stock: a monster part comes from a corpse,
+        # a boss trophy from its boss, and the secret cow parts from the
+        # cow level, never from a shelf (as with chests and the floor).
+        items = [i for i in items if getattr(i, 'tier_role', '') == 'dungeon']
     if unique_first:
         uniq = [i for i in items if getattr(i, 'is_unique', False)
                 and int(getattr(i, 'min_level', 1) or 1) <= level]

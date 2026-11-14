@@ -5,10 +5,8 @@ from paths import data_path
 
 _INGREDIENT_PATH = data_path('data', 'items', 'ingredient.json')
 _RECIPE_PATH     = data_path('data', 'items', 'recipes.json')
-_PRIME_CUTS_PATH = data_path('data', 'items', 'prime_cuts.json')
 _ingredient_cache: dict | None = None
 _recipe_cache: dict | None = None
-_prime_cuts_cache: dict | None = None
 
 _STAT_LABELS = {
     'STR': 'strength', 'CON': 'constitution', 'DEX': 'dexterity',
@@ -18,62 +16,17 @@ _ALL_STATS    = list(_STAT_LABELS.keys())
 _COMBAT_STATS = ['STR', 'CON']
 
 # ----------------------------------------------------------------------
-# Harvest + Cook — cadence rewritten 2026-09-01 (v2.6.1 harvest, v2.6.2 cook)
+# Harvest + Cook: ONE animal question to harvest (tier from the corpse) and
+# ONE cooking question to cook (tier from the dish). Right = the full yield
+# or the full dish; wrong = ruined, and the corpse or the ingredients are
+# consumed either way. No chain, no partial credit, no stun on failure. See
+# [[feedback-flow-over-gradient]] and [[feedback-resource-loss-is-the-penalty]].
 #
-# Both actions now use ONE animal/cooking question, tiered to the target's
-# power (corpse.harvest_tier for harvest, the outcome tier for cook). Right
-# answer = full tier-appropriate outcome. Wrong = ruined; the resource
-# (corpse or ingredients) is consumed either way. No chain, no partial
-# credit, no stun on failure. See [[feedback-flow-over-gradient]] and
-# [[feedback-resource-loss-is-the-penalty]].
-#
-# The tier→outcome tables below still drive the reward SHAPE (what a T3
-# monster yields vs a T5 one; what a family recipe gives vs a trophy).
-# Only the CADENCE changed — from up-to-5 escalating Qs to a single one.
-#
-# Harvest outcome shape (per _harvest_outcome_for_tier):
-#   T0: ruined — no ingredients (wrong-answer path only)
-#   T1: 1x Assorted Monster Parts (universal)
-#   T2: 2x Assorted Monster Parts
-#   T3: +1x family ingredient (12 families)
-#   T4: +1 more family (so 2x family total)
-#   T5: +1x prime cut (unique to monster) OR trophy ingredient (boss-only)
-#
-# Cook outcome shape (per recipe's tier_outcomes; v3 always passes T5 on
-# success and T0 on failure):
-#   T5: full peak reward (SP + HP + max-HP + stat + temp/permanent power)
-#   T0: ruined dish, ingredients consumed
+# The kitchen (src/kitchen.py, rebuilt 2026-11-14) knows the book: what a
+# corpse yields (data/items/harvest_map.json: close kin share one
+# ingredient), the recipe book (data/items/recipes.json) and every number a
+# dish gives (data/cooking_rules.json). This module runs the two quizzes.
 # ----------------------------------------------------------------------
-
-_cut_stat_cache: dict | None = None
-
-
-def cut_stat(ingredient_id: str) -> str | None:
-    """The stat a prime cut raises when cooked properly ('STR', 'WIS', ...),
-    or None for foraged ingredients, plain parts and trophies."""
-    global _cut_stat_cache
-    if _cut_stat_cache is None:
-        try:
-            with open(data_path('data', 'items', 'ingredient.json'), encoding='utf-8') as f:
-                raw = json.load(f)
-            _cut_stat_cache = {
-                k: v.get('stat_grant') for k, v in raw.items()
-                if isinstance(v, dict) and v.get('tier_role') == 'prime'
-                and v.get('stat_grant') in _ALL_STATS}
-        except (OSError, ValueError):
-            _cut_stat_cache = {}
-    return _cut_stat_cache.get(ingredient_id)
-
-
-def recipe_cut_stat(recipe: dict) -> str | None:
-    """The stat a recipe's meat feeds: that of its first prime cut, or None
-    if it has none (foraged dishes, trophies)."""
-    for ing_id in recipe.get('ingredients', []) or []:
-        stat = cut_stat(ing_id)
-        if stat:
-            return stat
-    return None
-
 
 _monster_floor_cache: dict | None = None
 
@@ -95,74 +48,44 @@ def _monster_band_tier(monster_id: str) -> int:
     return max(1, min(5, floor // 20 + 1))
 
 
-def _nearest_prime(monster_id: str, primes: dict) -> str | None:
-    """The cut of the nearest creature of the same kind and depth, for a
-    monster that has none written for it."""
+def _nearest_kin_ingredient(monster_id: str) -> str | None:
+    """The ingredient of the nearest creature of the same family and depth,
+    for a monster the harvest map does not name (a creature added later)."""
+    import kitchen
     _monster_band_tier(monster_id)                     # fills the floor cache
     floors = _monster_floor_cache or {}
     here = floors.get(monster_id, 1)
     try:
         with open(data_path('data', 'monsters.json'), encoding='utf-8') as f:
-            tags = set((json.load(f).get(monster_id) or {}).get('tags') or [])
+            all_defs = json.load(f)
     except (OSError, ValueError):
-        tags = set()
+        all_defs = {}
+    family = (all_defs.get(monster_id) or {}).get('family')
     best = None
-    for mid, entry in primes.items():
-        if entry.get('is_trophy') or not entry.get('ingredient_id'):
+    for mid, ing_id in (kitchen.harvest_map().get('monsters') or {}).items():
+        if (kitchen.ingredients().get(ing_id) or {}).get('tier_role') != 'prime':
             continue
-        same = entry.get('family') in tags
+        same = (all_defs.get(mid) or {}).get('family') == family
         score = (0 if same else 1, abs(floors.get(mid, 999) - here))
         if best is None or score < best[0]:
-            best = (score, entry['ingredient_id'])
+            best = (score, ing_id)
     return best[1] if best else None
 
 
-def _load_prime_cuts() -> dict:
-    """Return the 527-entry prime_cuts.json keyed by monster_id."""
-    global _prime_cuts_cache
-    if _prime_cuts_cache is None:
-        with open(_PRIME_CUTS_PATH, encoding='utf-8') as f:
-            _prime_cuts_cache = json.load(f).get('primes', {})
-    return _prime_cuts_cache
-
-
 def _harvest_outcome_for_tier(tier: int, monster_id: str) -> list[str]:
-    """v2.6.5 (2026-09-03): harvest yields exactly ONE ingredient — the
-    monster's identifying prime cut (or trophy for bosses). Tier is used
-    ONLY for the harvest quiz difficulty; the outcome is the same
-    ingredient regardless of tier. tier=0 (ruined) -> empty list.
-
-    Prior versions returned a cumulative T1-T5 stack of assorted +
-    family + prime; that meant 87% of monsters never dropped their own
-    prime (only T5 corpses reached the prime slot). See harvest audit
-    2026-09-03 for the details of the redesign.
-    """
+    """What a corpse yields: exactly ONE ingredient, its kin's
+    (data/items/harvest_map.json: every goblin gives Goblin Gristle; a
+    named creature or a boss keeps its own; a boss with a trophy gives the
+    trophy). The tier is used only for the harvest question; tier 0
+    (ruined) yields nothing."""
     if tier <= 0:
         return []
-    primes = _load_prime_cuts()
-    if monster_id and monster_id not in primes:
-        # A creature with no cut of its own (the Bonnacon, the Calydonian
-        # Boar) still feeds the pot. It used to cost the corpse and a
-        # question and give nothing.
-        borrowed = _nearest_prime(monster_id, primes)
-        return [borrowed] if borrowed else []
-    prime_info = primes.get(monster_id)
-    if not prime_info:
-        # Defensive — monster has no prime_cut mapping. Nothing to harvest.
-        return []
-    is_trophy = bool(prime_info.get('is_trophy'))
-    ing_id = f'{monster_id}_trophy' if is_trophy else f'{monster_id}_prime'
-    return [ing_id]
-
-# ------------------------------------------------------------------
-# NOTE: v2.6.3 potency-based cooking formulas (SINGLE_MULT/COMPOUND_MULT,
-# _potency, _single_max_hp, _compound_max_hp, _cooking_sp, _cooking_heal)
-# were retired in v2.6.4 when the cook engine switched to the outcome-
-# archetype table in data/items/cook_outcomes.json. Removed 2026-09-27
-# after audit-verified zero call sites in src/ or tests/. The offline
-# ingredient generator in tools/balance keeps its own local copies of
-# SINGLE_MULT/COMPOUND_MULT for regeneration purposes.
-# ------------------------------------------------------------------
+    import kitchen
+    ing_id = kitchen.ingredient_for_monster(monster_id) if monster_id else None
+    if ing_id is None and monster_id:
+        # A creature the map does not name still feeds the pot.
+        ing_id = _nearest_kin_ingredient(monster_id)
+    return [ing_id] if ing_id else []
 
 
 # ------------------------------------------------------------------
@@ -190,54 +113,22 @@ def _raw_recipes() -> dict:
 # ------------------------------------------------------------------
 
 def get_available_compound_recipes(inventory: list) -> list[dict]:
-    """Return every recipe the player can make from their current
-    inventory, single-ingredient and multi-ingredient alike.
-
-    Previously (2026-06-01 UX contract) this filter dropped recipes with
-    fewer than 2 distinct ingredient types, routing them to a Single tab
-    reachable via `_find_recipe_for_ingredient`. The Single tab was
-    removed on 2026-06-07, orphaning all 537 single-ingredient recipes
-    — including every "cook this one prime cut" recipe a new player
-    would reach for first. Filter dropped 2026-10-03 so those recipes
-    surface again. Sort order: single-ingredient first (least friction),
-    then multi-ingredient; secondary sort by outcome SP where derivable.
-    The name is kept for call-site compat but the function is now
-    simply "all available recipes."
-    """
-    from items import Ingredient
-    held_counts = {}
-    for item in inventory:
-        if isinstance(item, Ingredient):
-            held_counts[item.id] = held_counts.get(item.id, 0) + 1
-    out = []
-    for rid, rdef in _raw_recipes().items():
-        ings = rdef.get('ingredients', [])
-        if not ings:
-            continue
-        # Count ingredient demand (list can repeat an id for stacked recipes
-        # like 5x assorted_monster_parts).
-        need = {}
-        for i in ings:
-            need[i] = need.get(i, 0) + 1
-        if all(held_counts.get(i, 0) >= n for i, n in need.items()):
-            out.append({'id': rid, **rdef})
-    # Sort: single-ingredient first (friendliest for new players), then
-    # by distinct-ingredient-count ascending.
-    out.sort(key=lambda r: (len(set(r.get('ingredients', []))), r.get('name', '')))
-    return out
+    """Every dish the pack can cook now (kitchen.ready_dishes): ingredients
+    and the rations a dish calls for, stacks counted, old ids read as the
+    kept ones. Single dishes first, then by size and name."""
+    import kitchen
+    return kitchen.ready_dishes(inventory)
 
 
 def get_recipes_for_ingredient(ingredient_id: str) -> list[dict]:
-    """Return all compound recipes that list this ingredient_id."""
-    return [
-        {'id': rid, **rdef}
-        for rid, rdef in _raw_recipes().items()
-        if ingredient_id in rdef.get('ingredients', [])
-    ]
+    """Every dish that calls for this ingredient."""
+    import kitchen
+    return kitchen.dishes_with(ingredient_id)
 
 
 # Map redesign-friendly temp_power names to canonical status_effects entries.
-# Names on the LEFT come from prime_cuts.json + recipes.json; names on the
+# Names on the LEFT are older data names (no live data uses them since the
+# kitchen rebuild of 2026-11-14: a dish names a real status); names on the
 # RIGHT are real status effects in src/status_effects.py:EFFECT_INFO that
 # have actual consumers in combat/get_ac/etc.
 _TEMP_POWER_REMAP = {
@@ -293,59 +184,25 @@ def _resolve_temp_power(name: str) -> str:
     return _TEMP_POWER_REMAP.get(name, name)
 
 
-_OUTCOMES_CACHE: dict | None = None
-
-
-def _load_outcomes() -> dict:
-    """Load and cache the cook v2.6.4 outcome archetype catalog."""
-    global _OUTCOMES_CACHE
-    if _OUTCOMES_CACHE is None:
-        from paths import data_path
-        p = data_path('data', 'items', 'cook_outcomes.json')
-        with open(p, encoding='utf-8') as f:
-            _OUTCOMES_CACHE = json.load(f).get('outcomes', {})
-    return _OUTCOMES_CACHE
+# The first line of every ruined cook (Game._cook_compound reads it to tell a
+# ruined dish from a good one; a dish's own name may hold the letters "ruin").
+RUINED_PREFIX = "You ruin the preparation"
 
 
 def _apply_recipe_outcome(player, recipe: dict, ruined: bool = False) -> list[str]:
-    """v2.6.4 cook dispatch — one recipe -> one outcome archetype.
+    """A dish cooked: right, everything it gives (kitchen.apply_dish);
+    wrong, the ingredients are gone and that is all.
 
-    Recipe carries an `outcome_id` referencing data/items/cook_outcomes.json.
-    Right answer -> apply the referenced outcome (recovery + optional buff +
-    optional +max HP + optional +stat + optional permanent_power). Wrong ->
-    ingredients already consumed, one message, no reward.
-
-    Persephone's Descent quirk (`persephone_active`): even a ruined prep
-    still yields half the recovery (SP + HP only) -- "the seed still returns
-    from the dark". Buffs, +max HP, +stat, and permanent_power are lost.
-    """
+    Persephone's Descent (`persephone_active`): a ruined dish still gives
+    half its SP, healing and mana ("the seed still returns from the
+    dark"); no max HP, stat, power or permanent bonus."""
+    import kitchen
     meal_name = recipe.get('name', 'mysterious dish')
     if ruined:
         if getattr(player, 'quirk_progress', {}).get('persephone_active'):
-            outcome_id = recipe.get('outcome_id')
-            outcome = _load_outcomes().get(outcome_id) or {}
-            sp = int(outcome.get('sp', 0)) // 2
-            hp = int(outcome.get('hp', 0)) // 2
-            msg = [f"You ruin the preparation of {meal_name}, "
-                   f"but Persephone's grace saves the seed."]
-            if sp > 0:
-                player.restore_sp(sp)
-            if hp > 0:
-                player.restore_hp(hp)
-            if sp > 0 or hp > 0:
-                bits = []
-                if sp > 0:
-                    bits.append(f"+{sp} SP")
-                if hp > 0:
-                    bits.append(f"+{hp} HP")
-                msg.append("You salvage what you can: " + ", ".join(bits) + ".")
-            return msg
-        return [f"You ruin the preparation. The {meal_name} is wasted."]
-    outcome_id = recipe.get('outcome_id')
-    outcome = _load_outcomes().get(outcome_id)
-    if outcome is None:
-        return [f"You prepare {meal_name}, but the effect eludes you (unknown outcome {outcome_id!r})."]
-    return _apply_outcome_body(player, recipe, outcome)
+            return kitchen.salvage_dish(player, recipe)
+        return [f"{RUINED_PREFIX}. The {meal_name} is wasted."]
+    return kitchen.apply_dish(player, recipe)
 
 
 # A cooked meal heals at least this share of the health bar: about 10% for a
@@ -362,142 +219,14 @@ MEAL_SHARE_CAP = 0.35
 
 
 def meal_mend_share(written_hp: float) -> float:
-    """Least share of max HP a cooked meal heals, by its written `hp`
-    (cook_outcomes.json: 2-5 a snack, about 22 a feast)."""
+    """Least share of max HP a cooked meal heals, by its written heal
+    (data/cooking_rules.json every_dish.heal_written: 3 at tier 1, 20 at
+    tier 5)."""
     return min(MEAL_SHARE_CAP, MEAL_SHARE_BASE + float(written_hp) * MEAL_SHARE_PER_HP)
 
 
-def _apply_outcome_body(player, recipe: dict, outcome: dict) -> list[str]:
-    """Apply the mechanical body of an outcome archetype to the player.
-    Returns a list of user-facing messages (first line is the meal name)."""
-    meal_name = recipe.get('name', 'mysterious dish')
-    messages: list[str] = [f"You prepare {meal_name}."]
-
-    # SP + HP restore
-    sp = int(outcome.get('sp', 0))
-    if sp > 0:
-        player.restore_sp(sp)
-    hp = int(outcome.get('hp', 0))
-    if hp > 0:
-        # A cooked meal mends a share of the health bar, more for a better
-        # dish (meal_mend_share; the written figures run 2 to 25).
-        from floor_curve import mend
-        hp = mend(hp, player.max_hp, meal_mend_share(hp))
-        player.restore_hp(hp)
-    if sp > 0 or hp > 0:
-        bits = []
-        if sp > 0:
-            bits.append(f"+{sp} SP")
-        if hp > 0:
-            bits.append(f"+{hp} HP")
-        messages.append("You eat it: " + ", ".join(bits) + ".")
-
-    # +max HP. Every meal cooked properly builds the cook up a little
-    # (COOK_BASE_MAX_HP); a recipe's own `max_hp_bonus` comes ON TOP of that.
-    # (It used to come instead of it, so the 160 recipes written "+1 max HP",
-    # the bone broths among them, gave less than a plain meal.) This is where
-    # a run's hit points come from: about four a floor for a cook who keeps
-    # at it, none for one who does not. Per-floor and lifetime caps apply; a
-    # trophy passes the per-floor one.
-    max_hp_bonus = int(outcome.get('max_hp_bonus', 0) or 0)
-    bypass = bool(outcome.get('permanent_power'))
-    gain = int(getattr(player, 'COOK_BASE_MAX_HP', 2)) + max(0, max_hp_bonus)
-    if hasattr(player, 'try_apply_cook_hp_gain'):
-        applied = player.try_apply_cook_hp_gain(gain, bypass=bypass)
-    else:
-        applied = gain
-        player.increase_max_hp(applied, from_cooking=True)
-    if applied > 0:
-        messages.append(f"{'The meal fortifies you permanently' if max_hp_bonus > 0 else 'Good food builds you up'}."
-                        f" (+{applied} max HP)")
-    elif max_hp_bonus > 0 and not bypass:
-        messages.append("You feel sated, but your body is already full of nourishment this floor.")
-
-    # You are what you eat: the first good meal on a floor raises the stat
-    # stamped on the MEAT (ingredient.json `stat_grant`). Every prime cut has
-    # carried one all along; cooking read the recipe's outcome instead, so
-    # only 132 of 893 recipes raised anything and 14 of those raised Wisdom.
-    # A boss trophy (`permanent_power`) still grants its own stat outright.
-    cut_stat = recipe.get('_cut_stat')
-    stat_grant_amount = int(outcome.get('stat_grant', 0))
-    trophy = bool(outcome.get('permanent_power')) and stat_grant_amount > 0
-    meal_stat = cut_stat or (outcome.get('stat_grant_default')
-                             if stat_grant_amount > 0 else None)
-    if meal_stat and not trophy and hasattr(player, 'feed_cut_stat'):
-        # The meal is banked toward that stat, and COOK_MEALS_PER_STAT_POINT
-        # of them (one a floor) make a point. The richer recipes used to
-        # give a whole point each; deep down that was a point a floor.
-        cut_stat = meal_stat
-        block = player.cut_stat_block(cut_stat) if hasattr(player, 'cut_stat_block') else None
-        gained, banked = player.feed_cut_stat(cut_stat)
-        label = _STAT_LABELS.get(cut_stat, cut_stat).title()
-        if gained > 0:
-            messages.append(f"Your {label} increases by {gained}!")
-        elif banked > 0:
-            messages.append(
-                f"You feel it doing you good. ({label}: {banked} of "
-                f"{player.COOK_MEALS_PER_STAT_POINT} meals toward +1)")
-        elif block == 'cap':
-            # A meal that teaches nothing says why (it said nothing at all,
-            # which read as "food stats do not work").
-            messages.append(f"Your {label} has learned all food can teach it at this depth. "
-                            f"Go deeper to learn more.")
-        elif block == 'floor':
-            messages.append("You have already learned from a meal on this floor. "
-                            "The next lesson waits on a new floor.")
-    elif stat_grant_amount > 0:
-        bypass = bool(outcome.get('permanent_power'))
-        # A trophy grants ITS OWN stat (the one its preview shows), not the meat's.
-        stat = (outcome.get('stat_grant_default') or cut_stat or 'STR') if bypass \
-            else (cut_stat or outcome.get('stat_grant_default') or 'STR')
-        if hasattr(player, 'try_apply_cook_stat_gain'):
-            applied = player.try_apply_cook_stat_gain(stat, stat_grant_amount, bypass=bypass)
-        else:
-            applied = stat_grant_amount
-            player.apply_stat_bonus(stat, applied)
-        if applied > 0:
-            messages.append(f"Your {_STAT_LABELS.get(stat, stat)} increases by {applied}!")
-
-    # Temp power (status effect)
-    tp = outcome.get('temp_power')
-    if tp:
-        canonical = _resolve_temp_power(tp)
-        try:
-            player.add_effect(canonical, int(outcome.get('temp_duration', 60)))
-            # save_guard_* wards carry a magnitude in player._save_guard;
-            # save_bonus_for() reads it while the companion status is active.
-            if canonical.startswith('save_guard_'):
-                cat = canonical[len('save_guard_'):]  # 'CON'|'WIS'|'DEX'|'all'
-                amount = min(3, int(outcome.get('temp_amount', 2) or 2))
-                if not hasattr(player, '_save_guard') or player._save_guard is None:
-                    player._save_guard = {}
-                player._save_guard[cat] = amount
-        except Exception:
-            from game_log import log_error
-            log_error('food_system._apply_outcome_body: recovered from an error')
-        messages.append(
-            f"{temp_power_label(tp)} lingers for "
-            f"{quantity(int(outcome.get('temp_duration', 60)), 'turn')}.")
-
-    # Permanent power (trophy)
-    perm = outcome.get('permanent_power')
-    if perm:
-        # Fake a "recipe with permanent_power" shape so _apply_permanent_power
-        # (unchanged from v2.6.3) still works.
-        fake_recipe = dict(recipe)
-        fake_recipe['permanent_power'] = perm
-        fake_recipe['permanent_desc'] = outcome.get('permanent_desc', '')
-        applied_msg = _apply_permanent_power(player, perm, fake_recipe)
-        if applied_msg:
-            messages.append(applied_msg)
-
-    return messages
-
-
-# (v2.6.4: legacy _apply_tier_outcome shim removed 2026-09-27 -- no callers.)
-
-
-# Permanent-power dispatcher for trophy recipes
+# Permanent-power dispatcher for the boss trophies (each trophy's dish, and
+# any feast that holds the trophy: kitchen.apply_dish).
 def _apply_permanent_power(player, power_id: str, recipe: dict) -> str:
     """Apply a permanent-power trophy effect. Returns a flavor message."""
     desc = recipe.get('permanent_desc', '')
@@ -596,55 +325,41 @@ def _apply_permanent_power(player, power_id: str, recipe: dict) -> str:
 
 
 def recipe_is_trophy(recipe: dict) -> bool:
-    """True for a trophy recipe: its outcome grants a permanent power.
-
-    Recipes reference an outcome archetype (`outcome_id`, v2.6.4); the
-    trophy is the outcome's `permanent_power`. The old `recipe_class` field
-    is gone from recipes.json, but an old-schema dict still answers."""
-    outcome = _load_outcomes().get(recipe.get('outcome_id')) or {}
-    if outcome.get('permanent_power'):
-        return True
-    return recipe.get('recipe_class') == 'trophy'
+    """True for a dish shown in gold: a boss trophy's dish or a legendary
+    feast (it gives a permanent bonus)."""
+    import kitchen
+    return kitchen.is_trophy(recipe) or kitchen.is_legendary(recipe)
 
 
 def _recipe_quiz_tier(recipe: dict) -> int:
-    """Cook v3 Q tier — the outcome's tier is the quiz difficulty.
+    """The cooking question's tier: the dish's tier, the band of its
+    deepest ingredient (kitchen.dish_tier)."""
+    import kitchen
+    return kitchen.dish_tier(recipe)
 
-    v2.6.4 (2026-09-02) simplification: each recipe references an outcome
-    archetype (`outcome_id`), and the outcome carries its own tier. The
-    old recipe_class -> tier map is retired.
-    """
-    outcome_id = recipe.get('outcome_id')
-    if outcome_id:
-        o = _load_outcomes().get(outcome_id)
-        if o:
-            return max(1, min(5, int(o.get('tier', 3))))
-    # Legacy fallback (old-schema recipes with recipe_class)
-    legacy = {'family': 2, 'prime': 3, 'master_prime': 4,
-              'trophy': 5, 'dungeon_keyed': 5}
-    return legacy.get(recipe.get('recipe_class'), 3)
+
+def consume_ingredients(player, recipe: dict, inventory: list) -> None:
+    """Take what a dish calls for out of the pack: one for each listing,
+    ingredients and rations alike, from stacks, old ids read as the kept
+    ones."""
+    import kitchen
+    from items import Food, Ingredient
+    for part_id in list(recipe.get('ingredients', [])):
+        for item in list(inventory):
+            if (isinstance(item, (Ingredient, Food))
+                    and kitchen.resolve(getattr(item, 'id', '')) == part_id):
+                player.remove_from_inventory(item)
+                break
 
 
 def cook_compound_recipe(player, recipe: dict, inventory: list, quiz_engine, on_complete):
-    """One cooking question at the recipe's derived tier. Right = full
-    peak outcome for that recipe (T5-defined block); wrong = ruined,
-    ingredients consumed either way. No chain, no partial credit — see
-    [[feedback-flow-over-gradient]] + [[feedback-resource-loss-is-the-penalty]].
+    """One cooking question at the dish's tier. Right = everything the dish
+    gives; wrong = ruined, ingredients consumed either way. No chain, no
+    partial credit: see [[feedback-flow-over-gradient]] +
+    [[feedback-resource-loss-is-the-penalty]].
     """
-    from items import Ingredient
-
-    # Consume required ingredients up-front (one inventory pop per ingredient
-    # listing — duplicates in the list mean we need that many copies).
-    needed = list(recipe.get('ingredients', []))
-    for ing_id in needed:
-        for item in list(inventory):
-            if isinstance(item, Ingredient) and item.id == ing_id:
-                player.remove_from_inventory(item)
-                break
-    # The meat decides the stat. This is the path the Recipes menu takes;
-    # the stamp used to be set only in cook_ingredient, which nothing calls,
-    # so in play no meal ever fed a stat.
-    recipe = dict(recipe, _cut_stat=recipe_cut_stat(recipe))
+    # Consume what the dish calls for up front (the resource is the stake).
+    consume_ingredients(player, recipe, inventory)
 
     def _callback(result):
         messages = _apply_recipe_outcome(player, recipe,
@@ -666,9 +381,12 @@ def cook_compound_recipe(player, recipe: dict, inventory: list, quiz_engine, on_
 
 
 def load_ingredient_for(ingredient_id: str):
-    """Return a fresh Ingredient instance for ingredient_id, or None if unknown."""
+    """Return a fresh Ingredient instance for ingredient_id (an old id reads
+    as the kept one), or None if unknown."""
+    import kitchen
     from items import Ingredient
     raw = _raw_ingredients()
+    ingredient_id = kitchen.resolve(ingredient_id)
     if ingredient_id not in raw:
         return None
     defn = {**raw[ingredient_id], 'id': ingredient_id, 'item_class': 'ingredient'}
@@ -716,6 +434,11 @@ def harvest_corpse(player, corpse, quiz_engine, on_complete, extra_seconds: int 
                 _extra_note = ' ' + family_edges.line_for((_ab or {}).get('trigger_msg', '') or '')
             ingredients = [ing for ing_id in ingredient_ids
                            if (ing := load_ingredient_for(ing_id)) is not None]
+            # The part remembers the creature it came from (close kin share
+            # one ingredient; Siegfried's Bath reads the creature eaten).
+            for ing in ingredients:
+                if monster_id:
+                    ing.source_monster = monster_id
             counts: dict[str, int] = {}
             for ing in ingredients:
                 counts[ing.name] = counts.get(ing.name, 0) + 1
@@ -747,59 +470,28 @@ def harvest_corpse(player, corpse, quiz_engine, on_complete, extra_seconds: int 
 # ------------------------------------------------------------------
 
 def _find_recipe_for_ingredient(ingredient) -> dict | None:
-    """Locate the canonical recipe that uses this ingredient as its anchor.
-
-    Priority order:
-      1. Trophy recipe (if ingredient is a trophy)
-      2. Prime recipe matching this monster (if prime)
-      3. Family recipe matching this ingredient's family (if family-tier)
-      4. Basic recipe (for assorted_monster_parts)
-    Returns the recipe dict (with 'id' key set) or None.
-    """
-    recipes = _raw_recipes()
-    iid = ingredient.id
-    # Trophy: recipe id is `trophy_{monster}_recipe`
-    if iid.endswith('_trophy'):
-        monster_id = iid[:-len('_trophy')]
-        rid = f'trophy_{monster_id}_recipe'
-        if rid in recipes:
-            return {'id': rid, **recipes[rid]}
-    # Prime: recipe id is `prime_{monster}_recipe`
-    if iid.endswith('_prime'):
-        monster_id = iid[:-len('_prime')]
-        rid = f'prime_{monster_id}_recipe'
-        if rid in recipes:
-            return {'id': rid, **recipes[rid]}
-    # Family ingredient: recipe id is `family_{fam}_recipe`
-    if iid.startswith('family_'):
-        rid = f'{iid}_recipe'
-        if rid in recipes:
-            return {'id': rid, **recipes[rid]}
-    # Universal: basic_monster_stew
-    if iid == 'assorted_monster_parts':
-        if 'basic_monster_stew' in recipes:
-            return {'id': 'basic_monster_stew', **recipes['basic_monster_stew']}
-    return None
+    """The one dish that cooks this ingredient on its own (every ingredient
+    has exactly one: kitchen.single_dish_for), or None."""
+    import kitchen
+    return kitchen.single_dish_for(getattr(ingredient, 'id', ''))
 
 
 def cook_ingredient(player, ingredient, quiz_engine, on_complete):
-    """Cook the ONE selected ingredient (the Single tab).
+    """Cook the ONE selected ingredient as its single dish.
 
     The caller (`Game._cook_item`) has ALREADY removed that single ingredient
-    from inventory, so this consumes nothing further — it just runs the cooking
-    quiz and applies the canonical recipe's tier outcome.
+    from inventory, so this consumes nothing further: it runs the cooking
+    quiz and applies the dish.
 
-    BUGFIX 2026-06-04: previously this delegated to `cook_compound_recipe`, which
-    RE-consumed the canonical recipe's full ingredient list (e.g.
-    basic_monster_stew lists assorted_monster_parts x5). Combined with the
-    caller's own removal, cooking a single part could devour an entire stack.
-    Single-tab cooking now costs exactly one ingredient — the one you picked.
+    BUGFIX 2026-06-04: this once delegated to `cook_compound_recipe`, which
+    re-consumed the recipe's whole ingredient list on top of the caller's
+    removal, so cooking one part could devour a stack. It costs exactly the
+    one ingredient picked.
     """
     recipe = _find_recipe_for_ingredient(ingredient)
     if recipe is None:
         on_complete([f"You don't know what to do with the {ingredient.name}."])
         return
-    recipe = dict(recipe, _cut_stat=cut_stat(getattr(ingredient, 'id', '')))
 
     def _callback(result):
         messages = _apply_recipe_outcome(player, recipe,
@@ -1340,10 +1032,10 @@ def drink_potion(player, potion) -> list[str]:
 def make_corpse(monster_id: str, x: int, y: int):
     """Create a Corpse item for dungeon generation (graveyard rooms, etc.).
 
-    Per 2026-05-31 redesign: corpse no longer carries an ingredient_id —
-    the harvest looks up the prime cut from prime_cuts.json keyed by
-    monster_id at harvest time. (v3 2026-09-01: harvest is now a single
-    animal question at the corpse's harvest_tier; see harvest_corpse.)
+    The corpse carries no ingredient of its own: the harvest looks up what
+    its kin yields (data/items/harvest_map.json) by monster_id at harvest
+    time, with one animal question at the corpse's harvest_tier (see
+    harvest_corpse).
     """
     from items import Corpse
     monsters_path = data_path('data', 'monsters.json')

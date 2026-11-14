@@ -204,46 +204,40 @@ class _Potion:
         self.identified = False
 
 
-def _ward_outcome(canonical_status: str, amount=2, duration=40):
-    """Synth an outcome dict for a save_guard ward (v2.6.4 schema)."""
-    return {
-        'tier': 3,
-        'sp': 10,
-        'temp_power': canonical_status,
-        'temp_amount': amount,
-        'temp_duration': duration,
-    }
+def _dish(rid):
+    import kitchen
+    return kitchen.recipe(rid)
 
 
-def test_cooked_ward_grants_status_and_sets_capped_magnitude(monkeypatch):
-    """v2.6.4: a recipe -> outcome whose temp_power is a save_guard_* variant
-    must grant the companion status AND record the magnitude in _save_guard."""
+def test_cooked_ward_grants_status_and_sets_its_magnitude():
+    """A Special dish whose power is a save_guard_* ward grants the companion
+    status (for the rules' turns, past the usual 60) AND records the
+    magnitude in _save_guard. A single dish wards +1."""
+    import kitchen
     p = _p()
-    monkeypatch.setattr(fs, '_load_outcomes', lambda: {'ward_con': _ward_outcome('save_guard_CON', 2, 40)})
-    recipe = {'name': 'Aegis Stew', 'outcome_id': 'ward_con'}
-    fs._apply_recipe_outcome(p, recipe)
-
-    assert p.status_effects.get('save_guard_CON', 0) == 40
-    assert p._save_guard.get('CON') == 2
-    assert p.save_bonus_for('CON') == 2
+    dish = _dish('cook_basilisk')                 # Seared Basilisk Tail: Body Ward
+    out = kitchen.dish_outcome(dish)
+    fs._apply_recipe_outcome(p, dish)
+    assert p.status_effects.get('save_guard_CON', 0) == out['turns'] > 60
+    assert p._save_guard.get('CON') == 1
+    assert p.save_bonus_for('CON') == 1
     assert p.save_bonus_for('WIS') == 0
 
 
-def test_cooked_ward_amount_is_clamped_to_3(monkeypatch):
+def test_cooked_ward_amount_is_clamped_to_3():
+    import kitchen
+    for r in kitchen.book():
+        if (kitchen.dish_power(r) or '').startswith('save_guard_'):
+            assert 1 <= kitchen.dish_outcome(r)['ward'] <= 3, r['id']
     p = _p()
-    monkeypatch.setattr(fs, '_load_outcomes', lambda: {'over': _ward_outcome('save_guard_WIS', 9, 30)})
-    recipe = {'name': 'Overcharged Tonic', 'outcome_id': 'over'}
-    fs._apply_recipe_outcome(p, recipe)
-    assert p._save_guard.get('WIS') == 3
-    assert p.save_bonus_for('WIS') == 3
+    fs._apply_recipe_outcome(p, _dish('dish_136'))  # Limber-Limb Stew: four parts
+    assert p._save_guard.get('CON') == 3
+    assert p.save_bonus_for('CON') == 3
 
 
-def test_cooked_ward_defaults_to_plus_2_when_unspecified(monkeypatch):
+def test_a_richer_ward_dish_wards_harder():
     p = _p()
-    outcome_no_amount = {'tier': 3, 'sp': 5, 'temp_power': 'save_guard_WIS', 'temp_duration': 20}
-    monkeypatch.setattr(fs, '_load_outcomes', lambda: {'plain': outcome_no_amount})
-    recipe = {'name': 'Plain Ward Broth', 'outcome_id': 'plain'}
-    fs._apply_recipe_outcome(p, recipe)
+    fs._apply_recipe_outcome(p, _dish('dish_142'))  # Guardian's Mushroom Broth: worth 2.1
     assert p._save_guard.get('WIS') == 2
 
 

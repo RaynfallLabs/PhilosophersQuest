@@ -605,7 +605,7 @@ _EXPIRE_MSGS: dict[str, tuple] = {
     'draining':       ('The ring stops draining your life.',     'success'),
     'burning':        ('The flames are extinguished.',           'success'),
     'frozen':         ('The ice cracks -- you can move freely!',  'success'),
-    'sustained':      ('Your ring of sustenance crumbles.',      'info'),
+    'sustained':      ('The deep fullness fades; hunger comes at its usual pace again.', 'info'),
     'truesight':      ('Your true sight fades.',                 'info'),
     'dark_vision':    ('Your dark vision fades.',                'info'),
     'spell_turning':  ('Your spell turning aura dissipates.',   'info'),
@@ -673,10 +673,13 @@ def _gall_saves_sight(player) -> bool:
     return True
 
 
-def apply_effect(player, effect: str, duration: int) -> bool:
+def apply_effect(player, effect: str, duration: int, cap: int | None = None) -> bool:
     """
     Try to apply *effect* for *duration* turns (-1 = permanent) to *player*.
     Returns True if applied, False if blocked by resistance or already permanent.
+    ``cap`` lets a buff run past MAX_EFFECT_DURATION, up to ``cap`` turns: a
+    cooked meal's power lasts as long as its rules say (cooking_rules.json),
+    not the 60 turns that stop a potion or a wand stacking forever.
     """
     for resist, blocked in _RESIST_BLOCKS.items():
         if effect in blocked and player.has_effect(resist):
@@ -724,7 +727,8 @@ def apply_effect(player, effect: str, duration: int) -> bool:
         # can never come apart. They used to be granted by each caller, and
         # the cooking path did not: every "Heroic" or "Brilliant" meal ended
         # by taking away two STR, or a point each of INT and WIS, for good.
-        player.status_effects[effect] = min(current + duration, MAX_EFFECT_DURATION)
+        limit = max(MAX_EFFECT_DURATION, int(cap)) if cap else MAX_EFFECT_DURATION
+        player.status_effects[effect] = min(current + duration, limit)
         sync_timed_grants(player)
     return True
 

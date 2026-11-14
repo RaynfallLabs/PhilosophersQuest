@@ -32,7 +32,7 @@ sys.path.insert(0, os.path.join(ROOT, 'src'))
 import renderer  # noqa: E402
 
 ITEMS = os.path.join(ROOT, 'data', 'items')
-SKIP_FILES = {'accessory_appearances', 'cook_outcomes', 'recipes', 'ingredient', 'prime_cuts'}
+SKIP_FILES = {'accessory_appearances', 'recipes', 'ingredient', 'harvest_map'}
 
 # Pictures shared on purpose: the borrowed picture shows the same thing.
 # {item id: picture it shows}. Keep this list short and explain each entry.

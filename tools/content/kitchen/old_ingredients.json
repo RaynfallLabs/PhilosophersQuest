@@ -1,0 +1,4364 @@
+{
+"giant_rat_prime": {
+"color": [
+0,
+180,
+50
+],
+"part": "cut"
+},
+"goblin_prime": {
+"color": [
+80,
+160,
+30
+],
+"part": "cut"
+},
+"grid_bug_prime": {
+"color": [
+180,
+0,
+220
+],
+"part": "sac"
+},
+"floating_eye_prime": {
+"color": [
+60,
+120,
+255
+],
+"part": "sac"
+},
+"bat_prime": {
+"color": [
+130,
+90,
+160
+],
+"part": "cut"
+},
+"cobra_prime": {
+"color": [
+60,
+200,
+60
+],
+"part": "cut"
+},
+"zombie_prime": {
+"color": [
+140,
+180,
+100
+],
+"part": "bone"
+},
+"gelatinous_cube_prime": {
+"color": [
+180,
+230,
+180
+],
+"part": "sac"
+},
+"wraith_prime": {
+"color": [
+160,
+160,
+210
+],
+"part": "bone"
+},
+"mimic_prime": {
+"color": [
+180,
+120,
+40
+],
+"part": "sac"
+},
+"greater_mimic_prime": {
+"color": [
+160,
+80,
+40
+],
+"part": "sac"
+},
+"abyssal_mimic_prime": {
+"color": [
+100,
+40,
+60
+],
+"part": "ichor"
+},
+"leprechaun_prime": {
+"color": [
+60,
+200,
+100
+],
+"part": "mote"
+},
+"kobold_prime": {
+"color": [
+60,
+140,
+60
+],
+"part": "cut"
+},
+"cave_spider_prime": {
+"color": [
+120,
+80,
+40
+],
+"part": "cut"
+},
+"skeleton_prime": {
+"color": [
+220,
+220,
+210
+],
+"part": "bone"
+},
+"fire_beetle_prime": {
+"color": [
+255,
+120,
+30
+],
+"part": "cut"
+},
+"orc_scout_prime": {
+"color": [
+100,
+140,
+60
+],
+"part": "cut"
+},
+"gnoll_prime": {
+"color": [
+180,
+150,
+90
+],
+"part": "cut"
+},
+"hobgoblin_prime": {
+"color": [
+60,
+110,
+40
+],
+"part": "cut"
+},
+"ghoul_prime": {
+"color": [
+100,
+140,
+80
+],
+"part": "bone"
+},
+"dire_rat_prime": {
+"color": [
+100,
+60,
+20
+],
+"part": "cut"
+},
+"acid_blob_prime": {
+"color": [
+180,
+220,
+60
+],
+"part": "sac"
+},
+"troll_prime": {
+"color": [
+100,
+160,
+100
+],
+"part": "cut"
+},
+"orc_warrior_prime": {
+"color": [
+80,
+120,
+50
+],
+"part": "cut"
+},
+"dark_elf_prime": {
+"color": [
+120,
+60,
+180
+],
+"part": "cut"
+},
+"wight_prime": {
+"color": [
+200,
+200,
+220
+],
+"part": "bone"
+},
+"rust_monster_prime": {
+"color": [
+180,
+100,
+40
+],
+"part": "sac"
+},
+"cave_bear_prime": {
+"color": [
+140,
+100,
+60
+],
+"part": "cut"
+},
+"ogre_prime": {
+"color": [
+160,
+120,
+80
+],
+"part": "cut"
+},
+"shadow_prime": {
+"color": [
+80,
+80,
+120
+],
+"part": "bone"
+},
+"mummy_prime": {
+"color": [
+180,
+160,
+100
+],
+"part": "bone"
+},
+"giant_spider_prime": {
+"color": [
+80,
+60,
+80
+],
+"part": "cut"
+},
+"ettin_prime": {
+"color": [
+140,
+130,
+120
+],
+"part": "cut"
+},
+"manticore_prime": {
+"color": [
+200,
+100,
+60
+],
+"part": "cut"
+},
+"specter_prime": {
+"color": [
+160,
+200,
+255
+],
+"part": "bone"
+},
+"basilisk_prime": {
+"color": [
+100,
+160,
+80
+],
+"part": "cut"
+},
+"chimera_prime": {
+"color": [
+200,
+80,
+160
+],
+"part": "cut"
+},
+"minotaur_prime": {
+"color": [
+160,
+120,
+100
+],
+"part": "cut"
+},
+"frost_crawler_prime": {
+"color": [
+180,
+230,
+255
+],
+"part": "cut"
+},
+"medusa_prime": {
+"color": [
+220,
+200,
+60
+],
+"part": "cut"
+},
+"vampire_spawn_prime": {
+"color": [
+160,
+60,
+100
+],
+"part": "bone"
+},
+"fire_elemental_prime": {
+"color": [
+255,
+100,
+20
+],
+"part": "jar"
+},
+"earth_elemental_prime": {
+"color": [
+130,
+110,
+80
+],
+"part": "jar"
+},
+"storm_elemental_prime": {
+"color": [
+180,
+220,
+255
+],
+"part": "jar"
+},
+"lich_apprentice_prime": {
+"color": [
+180,
+200,
+255
+],
+"part": "bone"
+},
+"mind_flayer_prime": {
+"color": [
+160,
+100,
+200
+],
+"part": "sac"
+},
+"vampire_prime": {
+"color": [
+140,
+30,
+80
+],
+"part": "bone"
+},
+"death_knight_prime": {
+"color": [
+100,
+80,
+160
+],
+"part": "bone"
+},
+"bone_golem_prime": {
+"color": [
+200,
+200,
+190
+],
+"part": "core"
+},
+"greater_demon_prime": {
+"color": [
+200,
+40,
+40
+],
+"part": "ichor"
+},
+"young_dragon_prime": {
+"color": [
+220,
+120,
+40
+],
+"part": "scale"
+},
+"beholder_prime": {
+"color": [
+100,
+200,
+100
+],
+"part": "sac"
+},
+"vampire_lord_prime": {
+"color": [
+180,
+20,
+80
+],
+"part": "bone"
+},
+"lich_prime": {
+"color": [
+160,
+180,
+255
+],
+"part": "bone"
+},
+"adult_dragon_prime": {
+"color": [
+200,
+80,
+20
+],
+"part": "scale"
+},
+"iron_golem_prime": {
+"color": [
+140,
+140,
+140
+],
+"part": "core"
+},
+"greater_lich_prime": {
+"color": [
+120,
+140,
+255
+],
+"part": "bone"
+},
+"arch_demon_prime": {
+"color": [
+255,
+20,
+20
+],
+"part": "ichor"
+},
+"ancient_dragon_prime": {
+"color": [
+40,
+80,
+255
+],
+"part": "scale"
+},
+"ancient_lich_prime": {
+"color": [
+80,
+100,
+255
+],
+"part": "bone"
+},
+"death_lord_prime": {
+"color": [
+60,
+0,
+80
+],
+"part": "bone"
+},
+"chaos_spawn_prime": {
+"color": [
+200,
+100,
+200
+],
+"part": "sac"
+},
+"soul_eater_prime": {
+"color": [
+40,
+40,
+100
+],
+"part": "bone"
+},
+"orc_shaman_prime": {
+"color": [
+120,
+80,
+180
+],
+"part": "cut"
+},
+"giant_centipede_prime": {
+"color": [
+180,
+120,
+30
+],
+"part": "cut"
+},
+"skeletal_archer_prime": {
+"color": [
+210,
+200,
+175
+],
+"part": "bone"
+},
+"cave_toad_prime": {
+"color": [
+60,
+160,
+80
+],
+"part": "cut"
+},
+"brigand_prime": {
+"color": [
+150,
+110,
+60
+],
+"part": "cut"
+},
+"shadow_hound_prime": {
+"color": [
+80,
+60,
+130
+],
+"part": "bone"
+},
+"flesh_golem_prime": {
+"color": [
+160,
+120,
+100
+],
+"part": "core"
+},
+"harpy_prime": {
+"color": [
+200,
+150,
+80
+],
+"part": "cut"
+},
+"necromancer_apprentice_prime": {
+"color": [
+120,
+80,
+180
+],
+"part": "cut"
+},
+"stymphalian_bird_prime": {
+"color": [
+180,
+140,
+40
+],
+"part": "cut"
+},
+"satyr_warrior_prime": {
+"color": [
+160,
+100,
+50
+],
+"part": "mote"
+},
+"empusa_prime": {
+"color": [
+220,
+60,
+80
+],
+"part": "ichor"
+},
+"hecate_hound_prime": {
+"color": [
+60,
+20,
+100
+],
+"part": "cut"
+},
+"lamia_prime": {
+"color": [
+160,
+120,
+180
+],
+"part": "cut"
+},
+"gorgon_warrior_prime": {
+"color": [
+100,
+180,
+120
+],
+"part": "core"
+},
+"cyclops_prime": {
+"color": [
+180,
+130,
+80
+],
+"part": "cut"
+},
+"sphinx_prime": {
+"color": [
+220,
+190,
+90
+],
+"part": "cut"
+},
+"griffin_prime": {
+"color": [
+200,
+170,
+50
+],
+"part": "cut"
+},
+"pegasus_prime": {
+"color": [
+230,
+230,
+255
+],
+"part": "cut"
+},
+"hydra_prime": {
+"color": [
+40,
+160,
+80
+],
+"part": "cut"
+},
+"cerberus_prime": {
+"color": [
+40,
+20,
+60
+],
+"part": "cut"
+},
+"scylla_prime": {
+"color": [
+60,
+100,
+200
+],
+"part": "cut"
+},
+"charybdis_spawn_prime": {
+"color": [
+20,
+60,
+180
+],
+"part": "cut"
+},
+"titanspawn_prime": {
+"color": [
+120,
+100,
+200
+],
+"part": "cut"
+},
+"frost_giant_prime": {
+"color": [
+140,
+200,
+240
+],
+"part": "cut"
+},
+"fire_giant_prime": {
+"color": [
+240,
+100,
+20
+],
+"part": "cut"
+},
+"valkyrie_shade_prime": {
+"color": [
+180,
+160,
+220
+],
+"part": "bone"
+},
+"fenrir_pup_prime": {
+"color": [
+80,
+60,
+100
+],
+"part": "cut"
+},
+"jormungandr_spawn_prime": {
+"color": [
+40,
+180,
+100
+],
+"part": "cut"
+},
+"draugr_prime": {
+"color": [
+100,
+160,
+100
+],
+"part": "bone"
+},
+"einherjar_ghost_prime": {
+"color": [
+200,
+200,
+160
+],
+"part": "bone"
+},
+"nidhogg_brood_prime": {
+"color": [
+80,
+20,
+80
+],
+"part": "scale"
+},
+"hugin_raven_prime": {
+"color": [
+20,
+20,
+30
+],
+"part": "cut"
+},
+"lindworm_prime": {
+"color": [
+100,
+140,
+60
+],
+"part": "scale"
+},
+"berserker_spirit_prime": {
+"color": [
+220,
+80,
+40
+],
+"part": "bone"
+},
+"light_elf_hostile_prime": {
+"color": [
+200,
+240,
+160
+],
+"part": "mote"
+},
+"sea_serpent_norse_prime": {
+"color": [
+30,
+120,
+160
+],
+"part": "cut"
+},
+"anubis_guardian_prime": {
+"color": [
+40,
+30,
+80
+],
+"part": "core"
+},
+"ra_serpent_prime": {
+"color": [
+255,
+200,
+30
+],
+"part": "cut"
+},
+"scarab_swarm_prime": {
+"color": [
+60,
+140,
+80
+],
+"part": "cut"
+},
+"sphinx_guardian_prime": {
+"color": [
+240,
+200,
+80
+],
+"part": "cut"
+},
+"ammit_spawn_prime": {
+"color": [
+160,
+80,
+40
+],
+"part": "cut"
+},
+"sobek_warrior_prime": {
+"color": [
+60,
+180,
+80
+],
+"part": "cut"
+},
+"ba_spirit_prime": {
+"color": [
+200,
+160,
+80
+],
+"part": "bone"
+},
+"khepri_beetle_prime": {
+"color": [
+80,
+200,
+120
+],
+"part": "cut"
+},
+"thoth_construct_prime": {
+"color": [
+120,
+160,
+220
+],
+"part": "core"
+},
+"duat_shade_prime": {
+"color": [
+80,
+60,
+100
+],
+"part": "bone"
+},
+"desert_wraith_prime": {
+"color": [
+220,
+200,
+140
+],
+"part": "bone"
+},
+"banshee_prime": {
+"color": [
+200,
+220,
+255
+],
+"part": "bone"
+},
+"fomorian_prime": {
+"color": [
+80,
+100,
+60
+],
+"part": "cut"
+},
+"changeling_prime": {
+"color": [
+160,
+180,
+140
+],
+"part": "mote"
+},
+"each_uisce_prime": {
+"color": [
+40,
+120,
+160
+],
+"part": "mote"
+},
+"cath_palug_prime": {
+"color": [
+120,
+80,
+160
+],
+"part": "cut"
+},
+"fionn_hound_prime": {
+"color": [
+240,
+220,
+180
+],
+"part": "cut"
+},
+"puca_prime": {
+"color": [
+60,
+40,
+80
+],
+"part": "mote"
+},
+"dullahan_spawn_prime": {
+"color": [
+40,
+40,
+40
+],
+"part": "bone"
+},
+"sluagh_prime": {
+"color": [
+60,
+50,
+80
+],
+"part": "bone"
+},
+"pazuzu_spawn_prime": {
+"color": [
+120,
+60,
+20
+],
+"part": "ichor"
+},
+"lahamu_prime": {
+"color": [
+140,
+100,
+160
+],
+"part": "sac"
+},
+"anzu_bird_prime": {
+"color": [
+200,
+160,
+40
+],
+"part": "cut"
+},
+"ugallu_demon_prime": {
+"color": [
+160,
+80,
+60
+],
+"part": "ichor"
+},
+"kusarikku_prime": {
+"color": [
+140,
+100,
+60
+],
+"part": "cut"
+},
+"beholder_spawn_prime": {
+"color": [
+180,
+120,
+60
+],
+"part": "sac"
+},
+"mind_flayer_thrall_prime": {
+"color": [
+100,
+60,
+160
+],
+"part": "cut"
+},
+"aboleth_lesser_prime": {
+"color": [
+40,
+140,
+100
+],
+"part": "sac"
+},
+"gibbering_mouther_prime": {
+"color": [
+180,
+160,
+100
+],
+"part": "sac"
+},
+"intellect_devourer_prime": {
+"color": [
+200,
+80,
+200
+],
+"part": "sac"
+},
+"nothic_prime": {
+"color": [
+60,
+180,
+60
+],
+"part": "sac"
+},
+"grell_prime": {
+"color": [
+140,
+160,
+80
+],
+"part": "sac"
+},
+"cloaker_prime": {
+"color": [
+30,
+30,
+60
+],
+"part": "sac"
+},
+"star_spawn_prime": {
+"color": [
+60,
+60,
+180
+],
+"part": "sac"
+},
+"balor_lesser_prime": {
+"color": [
+220,
+50,
+20
+],
+"part": "ichor"
+},
+"marilith_spawn_prime": {
+"color": [
+180,
+80,
+80
+],
+"part": "ichor"
+},
+"vrock_prime": {
+"color": [
+100,
+80,
+60
+],
+"part": "ichor"
+},
+"hezrou_prime": {
+"color": [
+80,
+120,
+60
+],
+"part": "ichor"
+},
+"glabrezu_prime": {
+"color": [
+160,
+60,
+160
+],
+"part": "ichor"
+},
+"nalfeshnee_lesser_prime": {
+"color": [
+180,
+140,
+60
+],
+"part": "ichor"
+},
+"quasit_prime": {
+"color": [
+100,
+200,
+100
+],
+"part": "ichor"
+},
+"dretch_prime": {
+"color": [
+160,
+140,
+80
+],
+"part": "ichor"
+},
+"shadow_demon_prime": {
+"color": [
+40,
+10,
+60
+],
+"part": "ichor"
+},
+"incubus_prime": {
+"color": [
+220,
+100,
+180
+],
+"part": "ichor"
+},
+"succubus_shade_prime": {
+"color": [
+200,
+60,
+140
+],
+"part": "ichor"
+},
+"rutterkin_prime": {
+"color": [
+140,
+100,
+80
+],
+"part": "ichor"
+},
+"mane_demon_prime": {
+"color": [
+120,
+100,
+100
+],
+"part": "ichor"
+},
+"chain_devil_spawn_prime": {
+"color": [
+160,
+160,
+160
+],
+"part": "ichor"
+},
+"bearded_devil_prime": {
+"color": [
+200,
+80,
+60
+],
+"part": "ichor"
+},
+"barbed_devil_prime": {
+"color": [
+220,
+60,
+40
+],
+"part": "ichor"
+},
+"bone_devil_prime": {
+"color": [
+240,
+230,
+180
+],
+"part": "ichor"
+},
+"erinyes_lesser_prime": {
+"color": [
+200,
+160,
+60
+],
+"part": "ichor"
+},
+"imp_prime": {
+"color": [
+180,
+60,
+60
+],
+"part": "ichor"
+},
+"lemure_prime": {
+"color": [
+200,
+180,
+160
+],
+"part": "ichor"
+},
+"pit_fiend_spawn_prime": {
+"color": [
+240,
+40,
+0
+],
+"part": "ichor"
+},
+"stone_golem_lesser_prime": {
+"color": [
+140,
+130,
+120
+],
+"part": "core"
+},
+"clay_golem_prime": {
+"color": [
+180,
+140,
+100
+],
+"part": "core"
+},
+"wood_golem_prime": {
+"color": [
+140,
+100,
+60
+],
+"part": "core"
+},
+"animated_armor_prime": {
+"color": [
+180,
+180,
+200
+],
+"part": "core"
+},
+"shield_guardian_prime": {
+"color": [
+100,
+120,
+180
+],
+"part": "core"
+},
+"homunculus_prime": {
+"color": [
+160,
+100,
+200
+],
+"part": "core"
+},
+"clockwork_horror_prime": {
+"color": [
+200,
+180,
+60
+],
+"part": "core"
+},
+"displacer_beast_prime": {
+"color": [
+60,
+40,
+120
+],
+"part": "cut"
+},
+"owlbear_prime": {
+"color": [
+140,
+120,
+80
+],
+"part": "cut"
+},
+"black_pudding_prime": {
+"color": [
+20,
+10,
+20
+],
+"part": "sac"
+},
+"gray_ooze_prime": {
+"color": [
+150,
+150,
+150
+],
+"part": "sac"
+},
+"ochre_jelly_prime": {
+"color": [
+200,
+160,
+60
+],
+"part": "sac"
+},
+"piercer_prime": {
+"color": [
+120,
+100,
+80
+],
+"part": "sac"
+},
+"lurker_above_prime": {
+"color": [
+80,
+60,
+40
+],
+"part": "sac"
+},
+"trapper_prime": {
+"color": [
+100,
+80,
+60
+],
+"part": "sac"
+},
+"roper_prime": {
+"color": [
+120,
+110,
+100
+],
+"part": "sac"
+},
+"carrion_crawler_prime": {
+"color": [
+160,
+180,
+80
+],
+"part": "cut"
+},
+"rot_grub_swarm_prime": {
+"color": [
+160,
+140,
+100
+],
+"part": "cut"
+},
+"otyugh_prime": {
+"color": [
+100,
+120,
+60
+],
+"part": "sac"
+},
+"xorn_prime": {
+"color": [
+140,
+130,
+100
+],
+"part": "jar"
+},
+"gnoll_pack_lord_prime": {
+"color": [
+200,
+120,
+40
+],
+"part": "cut"
+},
+"lizardfolk_prime": {
+"color": [
+60,
+160,
+80
+],
+"part": "cut"
+},
+"lizardfolk_shaman_prime": {
+"color": [
+40,
+200,
+100
+],
+"part": "cut"
+},
+"troglodyte_prime": {
+"color": [
+100,
+120,
+80
+],
+"part": "cut"
+},
+"kobold_sorcerer_prime": {
+"color": [
+200,
+80,
+60
+],
+"part": "cut"
+},
+"bullywug_prime": {
+"color": [
+60,
+160,
+100
+],
+"part": "cut"
+},
+"kuo_toa_prime": {
+"color": [
+60,
+100,
+180
+],
+"part": "cut"
+},
+"behir_lesser_prime": {
+"color": [
+40,
+80,
+180
+],
+"part": "cut"
+},
+"catoblepas_prime": {
+"color": [
+120,
+100,
+60
+],
+"part": "cut"
+},
+"cockatrice_prime": {
+"color": [
+180,
+160,
+80
+],
+"part": "cut"
+},
+"darkmantle_prime": {
+"color": [
+20,
+20,
+40
+],
+"part": "cut"
+},
+"ettercap_prime": {
+"color": [
+120,
+80,
+140
+],
+"part": "cut"
+},
+"grick_prime": {
+"color": [
+60,
+80,
+60
+],
+"part": "cut"
+},
+"hook_horror_prime": {
+"color": [
+160,
+140,
+120
+],
+"part": "cut"
+},
+"phase_spider_prime": {
+"color": [
+100,
+60,
+180
+],
+"part": "cut"
+},
+"wyvern_prime": {
+"color": [
+80,
+140,
+60
+],
+"part": "scale"
+},
+"skeleton_archer_prime": {
+"color": [
+220,
+220,
+200
+],
+"part": "bone"
+},
+"skeleton_warrior_prime": {
+"color": [
+200,
+200,
+180
+],
+"part": "bone"
+},
+"skeleton_mage_prime": {
+"color": [
+180,
+160,
+220
+],
+"part": "bone"
+},
+"burning_skeleton_prime": {
+"color": [
+255,
+120,
+30
+],
+"part": "bone"
+},
+"frost_skeleton_prime": {
+"color": [
+160,
+210,
+240
+],
+"part": "bone"
+},
+"zombie_hulk_prime": {
+"color": [
+100,
+150,
+80
+],
+"part": "bone"
+},
+"plague_zombie_prime": {
+"color": [
+80,
+130,
+50
+],
+"part": "bone"
+},
+"rotting_zombie_prime": {
+"color": [
+90,
+120,
+60
+],
+"part": "bone"
+},
+"ghast_prime": {
+"color": [
+140,
+180,
+120
+],
+"part": "bone"
+},
+"gravehound_prime": {
+"color": [
+160,
+140,
+110
+],
+"part": "bone"
+},
+"poltergeist_prime": {
+"color": [
+200,
+200,
+255
+],
+"part": "bone"
+},
+"revenant_prime": {
+"color": [
+200,
+170,
+200
+],
+"part": "bone"
+},
+"allip_prime": {
+"color": [
+160,
+140,
+200
+],
+"part": "bone"
+},
+"haunting_presence_prime": {
+"color": [
+180,
+180,
+220
+],
+"part": "bone"
+},
+"fetch_prime": {
+"color": [
+190,
+190,
+190
+],
+"part": "bone"
+},
+"shade_prime": {
+"color": [
+60,
+60,
+80
+],
+"part": "bone"
+},
+"will_o_wisp_prime": {
+"color": [
+150,
+240,
+200
+],
+"part": "bone"
+},
+"soul_shadow_prime": {
+"color": [
+40,
+40,
+70
+],
+"part": "bone"
+},
+"death_echo_prime": {
+"color": [
+170,
+150,
+200
+],
+"part": "bone"
+},
+"vampire_thrall_prime": {
+"color": [
+140,
+20,
+20
+],
+"part": "bone"
+},
+"nosferatu_prime": {
+"color": [
+120,
+10,
+10
+],
+"part": "bone"
+},
+"strigoi_prime": {
+"color": [
+180,
+50,
+50
+],
+"part": "bone"
+},
+"jiangshi_prime": {
+"color": [
+200,
+180,
+160
+],
+"part": "bone"
+},
+"vrykolakas_prime": {
+"color": [
+130,
+40,
+40
+],
+"part": "bone"
+},
+"demi_lich_prime": {
+"color": [
+220,
+200,
+80
+],
+"part": "bone"
+},
+"lich_thrall_prime": {
+"color": [
+150,
+180,
+120
+],
+"part": "bone"
+},
+"death_mage_prime": {
+"color": [
+100,
+80,
+140
+],
+"part": "bone"
+},
+"bone_witch_prime": {
+"color": [
+180,
+140,
+180
+],
+"part": "bone"
+},
+"necromancer_lord_prime": {
+"color": [
+80,
+60,
+120
+],
+"part": "bone"
+},
+"pale_master_prime": {
+"color": [
+220,
+210,
+230
+],
+"part": "bone"
+},
+"wight_lord_prime": {
+"color": [
+100,
+120,
+100
+],
+"part": "bone"
+},
+"barrow_wight_prime": {
+"color": [
+90,
+110,
+90
+],
+"part": "bone"
+},
+"cairn_wight_prime": {
+"color": [
+110,
+130,
+110
+],
+"part": "bone"
+},
+"crypt_thing_prime": {
+"color": [
+160,
+150,
+130
+],
+"part": "bone"
+},
+"grave_guardian_prime": {
+"color": [
+140,
+130,
+120
+],
+"part": "bone"
+},
+"tomb_guardian_prime": {
+"color": [
+130,
+120,
+110
+],
+"part": "bone"
+},
+"ossuary_horror_prime": {
+"color": [
+190,
+175,
+160
+],
+"part": "bone"
+},
+"mohrg_prime": {
+"color": [
+100,
+150,
+80
+],
+"part": "bone"
+},
+"huecuva_prime": {
+"color": [
+180,
+160,
+130
+],
+"part": "bone"
+},
+"lesser_death_prime": {
+"color": [
+20,
+20,
+40
+],
+"part": "bone"
+},
+"greater_shadow_prime": {
+"color": [
+20,
+20,
+50
+],
+"part": "bone"
+},
+"nightshade_spawn_prime": {
+"color": [
+30,
+10,
+60
+],
+"part": "bone"
+},
+"forsaken_shell_prime": {
+"color": [
+120,
+100,
+100
+],
+"part": "bone"
+},
+"hollow_one_prime": {
+"color": [
+140,
+120,
+120
+],
+"part": "bone"
+},
+"charnel_hound_prime": {
+"color": [
+80,
+100,
+60
+],
+"part": "bone"
+},
+"dread_knight_prime": {
+"color": [
+60,
+60,
+80
+],
+"part": "bone"
+},
+"bone_archer_prime": {
+"color": [
+200,
+195,
+175
+],
+"part": "bone"
+},
+"skeletal_giant_prime": {
+"color": [
+230,
+220,
+200
+],
+"part": "bone"
+},
+"undead_dragon_lesser_prime": {
+"color": [
+80,
+100,
+80
+],
+"part": "bone"
+},
+"lich_dragon_spawn_prime": {
+"color": [
+60,
+80,
+100
+],
+"part": "bone"
+},
+"ethereal_filcher_prime": {
+"color": [
+160,
+200,
+220
+],
+"part": "bone"
+},
+"nightmare_shade_prime": {
+"color": [
+30,
+20,
+60
+],
+"part": "bone"
+},
+"soul_eater_spawn_prime": {
+"color": [
+60,
+0,
+80
+],
+"part": "bone"
+},
+"dread_wraith_prime": {
+"color": [
+50,
+50,
+100
+],
+"part": "bone"
+},
+"nightwing_prime": {
+"color": [
+20,
+10,
+40
+],
+"part": "bone"
+},
+"crystal_ooze_prime": {
+"color": [
+180,
+230,
+255
+],
+"part": "sac"
+},
+"green_slime_prime": {
+"color": [
+50,
+200,
+50
+],
+"part": "sac"
+},
+"yellow_mold_prime": {
+"color": [
+220,
+200,
+30
+],
+"part": "wood"
+},
+"brown_mold_prime": {
+"color": [
+139,
+90,
+43
+],
+"part": "wood"
+},
+"gibbering_slime_prime": {
+"color": [
+180,
+100,
+200
+],
+"part": "sac"
+},
+"toxic_jelly_prime": {
+"color": [
+100,
+220,
+130
+],
+"part": "sac"
+},
+"giant_scorpion_prime": {
+"color": [
+180,
+140,
+60
+],
+"part": "cut"
+},
+"giant_wasp_prime": {
+"color": [
+240,
+200,
+0
+],
+"part": "cut"
+},
+"giant_beetle_prime": {
+"color": [
+60,
+80,
+200
+],
+"part": "cut"
+},
+"giant_mantis_prime": {
+"color": [
+50,
+180,
+80
+],
+"part": "cut"
+},
+"spider_queen_prime": {
+"color": [
+160,
+30,
+160
+],
+"part": "cut"
+},
+"phase_spider_lesser_prime": {
+"color": [
+180,
+100,
+255
+],
+"part": "cut"
+},
+"web_spinner_prime": {
+"color": [
+220,
+220,
+180
+],
+"part": "cut"
+},
+"death_beetle_prime": {
+"color": [
+20,
+20,
+20
+],
+"part": "cut"
+},
+"giant_lizard_prime": {
+"color": [
+60,
+160,
+60
+],
+"part": "cut"
+},
+"basilisk_lesser_prime": {
+"color": [
+120,
+160,
+80
+],
+"part": "cut"
+},
+"rock_python_prime": {
+"color": [
+140,
+120,
+80
+],
+"part": "cut"
+},
+"komodo_brute_prime": {
+"color": [
+100,
+130,
+60
+],
+"part": "cut"
+},
+"giant_frog_prime": {
+"color": [
+40,
+180,
+100
+],
+"part": "cut"
+},
+"mud_crawler_prime": {
+"color": [
+100,
+80,
+40
+],
+"part": "cut"
+},
+"swamp_serpent_prime": {
+"color": [
+60,
+120,
+60
+],
+"part": "cut"
+},
+"sea_snake_prime": {
+"color": [
+60,
+100,
+200
+],
+"part": "cut"
+},
+"dire_lion_prime": {
+"color": [
+220,
+180,
+60
+],
+"part": "cut"
+},
+"dire_bear_prime": {
+"color": [
+150,
+100,
+60
+],
+"part": "cut"
+},
+"wolf_pack_leader_prime": {
+"color": [
+160,
+160,
+160
+],
+"part": "cut"
+},
+"werewolf_prime": {
+"color": [
+180,
+150,
+100
+],
+"part": "cut"
+},
+"werewolf_alpha_prime": {
+"color": [
+200,
+160,
+80
+],
+"part": "cut"
+},
+"werebear_prime": {
+"color": [
+160,
+110,
+70
+],
+"part": "cut"
+},
+"wererat_prime": {
+"color": [
+160,
+160,
+100
+],
+"part": "cut"
+},
+"weretiger_prime": {
+"color": [
+220,
+140,
+40
+],
+"part": "cut"
+},
+"winter_wolf_prime": {
+"color": [
+200,
+220,
+255
+],
+"part": "cut"
+},
+"blink_dog_prime": {
+"color": [
+140,
+180,
+255
+],
+"part": "cut"
+},
+"death_dog_prime": {
+"color": [
+60,
+30,
+60
+],
+"part": "cut"
+},
+"giant_eagle_prime": {
+"color": [
+220,
+180,
+60
+],
+"part": "cut"
+},
+"roc_chick_prime": {
+"color": [
+200,
+160,
+80
+],
+"part": "cut"
+},
+"roc_adult_prime": {
+"color": [
+240,
+200,
+100
+],
+"part": "cut"
+},
+"stirge_swarm_prime": {
+"color": [
+200,
+60,
+60
+],
+"part": "cut"
+},
+"tengu_warrior_prime": {
+"color": [
+40,
+40,
+60
+],
+"part": "cut"
+},
+"thunderbird_lesser_prime": {
+"color": [
+140,
+160,
+255
+],
+"part": "cut"
+},
+"pixie_swarm_prime": {
+"color": [
+200,
+100,
+255
+],
+"part": "mote"
+},
+"redcap_prime": {
+"color": [
+200,
+30,
+30
+],
+"part": "mote"
+},
+"will_o_wisp_lesser_prime": {
+"color": [
+180,
+255,
+180
+],
+"part": "bone"
+},
+"green_hag_prime": {
+"color": [
+60,
+160,
+80
+],
+"part": "mote"
+},
+"sea_hag_prime": {
+"color": [
+60,
+100,
+160
+],
+"part": "mote"
+},
+"annis_hag_prime": {
+"color": [
+80,
+60,
+100
+],
+"part": "mote"
+},
+"night_hag_prime": {
+"color": [
+60,
+20,
+80
+],
+"part": "mote"
+},
+"satyr_trickster_prime": {
+"color": [
+160,
+120,
+60
+],
+"part": "mote"
+},
+"dryad_guardian_prime": {
+"color": [
+60,
+180,
+60
+],
+"part": "mote"
+},
+"leprechaun_hostile_prime": {
+"color": [
+40,
+180,
+40
+],
+"part": "mote"
+},
+"spriggan_prime": {
+"color": [
+80,
+100,
+60
+],
+"part": "mote"
+},
+"boggart_prime": {
+"color": [
+80,
+60,
+40
+],
+"part": "mote"
+},
+"water_elemental_prime": {
+"color": [
+60,
+120,
+220
+],
+"part": "jar"
+},
+"air_elemental_prime": {
+"color": [
+200,
+220,
+255
+],
+"part": "jar"
+},
+"ice_elemental_prime": {
+"color": [
+180,
+220,
+255
+],
+"part": "jar"
+},
+"magma_elemental_prime": {
+"color": [
+255,
+60,
+0
+],
+"part": "jar"
+},
+"void_elemental_prime": {
+"color": [
+20,
+0,
+40
+],
+"part": "jar"
+},
+"shambling_mound_prime": {
+"color": [
+60,
+80,
+30
+],
+"part": "jar"
+},
+"assassin_vine_prime": {
+"color": [
+40,
+120,
+20
+],
+"part": "wood"
+},
+"thorn_slinger_prime": {
+"color": [
+100,
+140,
+40
+],
+"part": "wood"
+},
+"myconid_worker_prime": {
+"color": [
+180,
+120,
+200
+],
+"part": "wood"
+},
+"myconid_sovereign_prime": {
+"color": [
+220,
+60,
+200
+],
+"part": "wood"
+},
+"yellow_musk_creeper_prime": {
+"color": [
+220,
+200,
+60
+],
+"part": "wood"
+},
+"gas_spore_prime": {
+"color": [
+180,
+200,
+180
+],
+"part": "sac"
+},
+"violet_fungus_prime": {
+"color": [
+120,
+40,
+160
+],
+"part": "wood"
+},
+"pegasus_corrupted_prime": {
+"color": [
+80,
+60,
+120
+],
+"part": "cut"
+},
+"unicorn_corrupted_prime": {
+"color": [
+100,
+20,
+60
+],
+"part": "cut"
+},
+"sphinx_lesser_prime": {
+"color": [
+220,
+180,
+80
+],
+"part": "cut"
+},
+"nue_prime": {
+"color": [
+80,
+40,
+80
+],
+"part": "cut"
+},
+"peryton_prime": {
+"color": [
+60,
+120,
+80
+],
+"part": "cut"
+},
+"carbuncle_prime": {
+"color": [
+255,
+30,
+60
+],
+"part": "cut"
+},
+"sea_dragon_spawn_prime": {
+"color": [
+40,
+100,
+180
+],
+"part": "scale"
+},
+"goblin_shaman_prime": {
+"color": [
+60,
+200,
+100
+],
+"part": "cut"
+},
+"goblin_king_prime": {
+"color": [
+30,
+160,
+60
+],
+"part": "cut"
+},
+"hobgoblin_captain_prime": {
+"color": [
+80,
+130,
+50
+],
+"part": "cut"
+},
+"hobgoblin_warlord_prime": {
+"color": [
+150,
+80,
+20
+],
+"part": "cut"
+},
+"bugbear_prime": {
+"color": [
+140,
+110,
+60
+],
+"part": "cut"
+},
+"bugbear_chieftain_prime": {
+"color": [
+180,
+80,
+30
+],
+"part": "cut"
+},
+"orc_berserker_prime": {
+"color": [
+200,
+80,
+30
+],
+"part": "cut"
+},
+"orc_warchief_prime": {
+"color": [
+220,
+60,
+20
+],
+"part": "cut"
+},
+"bandit_captain_prime": {
+"color": [
+160,
+120,
+60
+],
+"part": "cut"
+},
+"dark_cultist_prime": {
+"color": [
+100,
+50,
+160
+],
+"part": "cut"
+},
+"mercenary_veteran_prime": {
+"color": [
+180,
+160,
+100
+],
+"part": "cut"
+},
+"battle_mage_prime": {
+"color": [
+80,
+160,
+220
+],
+"part": "cut"
+},
+"hill_giant_prime": {
+"color": [
+160,
+130,
+80
+],
+"part": "cut"
+},
+"stone_giant_prime": {
+"color": [
+130,
+130,
+130
+],
+"part": "cut"
+},
+"cloud_giant_prime": {
+"color": [
+200,
+200,
+255
+],
+"part": "cut"
+},
+"storm_giant_prime": {
+"color": [
+80,
+80,
+200
+],
+"part": "cut"
+},
+"cyclops_brute_prime": {
+"color": [
+170,
+130,
+90
+],
+"part": "cut"
+},
+"two_headed_ogre_prime": {
+"color": [
+160,
+100,
+60
+],
+"part": "cut"
+},
+"ice_troll_prime": {
+"color": [
+160,
+210,
+240
+],
+"part": "cut"
+},
+"drow_warrior_prime": {
+"color": [
+60,
+40,
+100
+],
+"part": "cut"
+},
+"drow_mage_prime": {
+"color": [
+120,
+80,
+180
+],
+"part": "cut"
+},
+"drow_priestess_prime": {
+"color": [
+180,
+60,
+120
+],
+"part": "cut"
+},
+"minotaur_warrior_prime": {
+"color": [
+140,
+80,
+50
+],
+"part": "cut"
+},
+"young_black_dragon_prime": {
+"color": [
+40,
+40,
+40
+],
+"part": "scale"
+},
+"young_red_dragon_prime": {
+"color": [
+220,
+50,
+20
+],
+"part": "scale"
+},
+"adult_blue_dragon_prime": {
+"color": [
+60,
+80,
+220
+],
+"part": "scale"
+},
+"adult_red_dragon_prime": {
+"color": [
+255,
+30,
+10
+],
+"part": "scale"
+},
+"drake_fire_prime": {
+"color": [
+220,
+100,
+40
+],
+"part": "scale"
+},
+"drake_cold_prime": {
+"color": [
+120,
+180,
+240
+],
+"part": "scale"
+},
+"yuan_ti_pureblood_prime": {
+"color": [
+80,
+160,
+60
+],
+"part": "cut"
+},
+"wyvern_greater_prime": {
+"color": [
+100,
+140,
+50
+],
+"part": "scale"
+},
+"naga_guardian_prime": {
+"color": [
+80,
+200,
+120
+],
+"part": "cut"
+},
+"shadow_master_prime": {
+"color": [
+40,
+30,
+70
+],
+"part": "bone"
+},
+"void_crawler_prime": {
+"color": [
+30,
+0,
+80
+],
+"part": "sac"
+},
+"ruinous_djinn_prime": {
+"color": [
+220,
+150,
+40
+],
+"part": "jar"
+},
+"undead_colossus_prime": {
+"color": [
+160,
+140,
+120
+],
+"part": "bone"
+},
+"elder_werewolf_prime": {
+"color": [
+140,
+100,
+60
+],
+"part": "cut"
+},
+"abyssal_champion_prime": {
+"color": [
+180,
+60,
+30
+],
+"part": "ichor"
+},
+"bone_titan_prime": {
+"color": [
+210,
+205,
+190
+],
+"part": "bone"
+},
+"spectral_lord_prime": {
+"color": [
+100,
+130,
+210
+],
+"part": "bone"
+},
+"chaos_troll_prime": {
+"color": [
+120,
+180,
+80
+],
+"part": "cut"
+},
+"wyrm_prime": {
+"color": [
+200,
+160,
+50
+],
+"part": "scale"
+},
+"elder_mind_flayer_prime": {
+"color": [
+130,
+70,
+180
+],
+"part": "sac"
+},
+"void_leviathan_prime": {
+"color": [
+20,
+0,
+60
+],
+"part": "sac"
+},
+"elder_beholder_prime": {
+"color": [
+60,
+180,
+80
+],
+"part": "sac"
+},
+"dread_wyrm_prime": {
+"color": [
+180,
+80,
+30
+],
+"part": "scale"
+},
+"abyssal_overlord_prime": {
+"color": [
+220,
+20,
+20
+],
+"part": "ichor"
+},
+"elder_dragon_prime": {
+"color": [
+200,
+90,
+20
+],
+"part": "scale"
+},
+"lich_sovereign_prime": {
+"color": [
+160,
+180,
+240
+],
+"part": "bone"
+},
+"demon_emperor_prime": {
+"color": [
+200,
+0,
+40
+],
+"part": "ichor"
+},
+"world_serpent_prime": {
+"color": [
+40,
+180,
+100
+],
+"part": "scale"
+},
+"entropy_wraith_prime": {
+"color": [
+80,
+60,
+120
+],
+"part": "bone"
+},
+"asterion_minotaur_prime": {
+"color": [
+180,
+80,
+50
+],
+"part": "cut"
+},
+"asterion_minotaur_trophy": {
+"color": [
+200,
+120,
+70
+],
+"name": "Asterion's Horn-Crown",
+"trophy_desc": "The horn-crown of the Labyrinth's bull. Cooking it answers a calling.",
+"description": "Trophy harvest from Asterion the Minotaur.",
+"part": "trophy"
+},
+"medusa_gorgon_trophy": {
+"color": [
+255,
+220,
+100
+],
+"name": "Medusa-Gorgon's Blood",
+"trophy_desc": "Greek folklore truth: gorgon blood is both poison and panacea. You are permanently immune to petrification from any source.",
+"description": "Trophy harvest from Medusa the Gorgon. Unlocks a permanent-power recipe.",
+"part": "trophy"
+},
+"fafnir_dragon_trophy": {
+"color": [
+255,
+220,
+100
+],
+"name": "Fafnir's Heart",
+"trophy_desc": "Sigurd's reward. Each floor you descend from here, your max HP rises by 2.",
+"description": "Trophy harvest from Fafnir the Dragon. Unlocks a permanent-power recipe.",
+"part": "trophy"
+},
+"fenrir_wolf_trophy": {
+"color": [
+255,
+220,
+100
+],
+"name": "Fenrir's Tooth",
+"trophy_desc": "The strength of the wolf that will devour Odin. +3 STR, permanently.",
+"description": "Trophy harvest from Fenrir, Wolf of Ragnarok. Unlocks a permanent-power recipe.",
+"part": "trophy"
+},
+"fenrir_wolf_prime": {
+"color": [
+180,
+200,
+240
+],
+"part": "cut"
+},
+"abaddon_destroyer_trophy": {
+"color": [
+255,
+220,
+100
+],
+"name": "Abaddon's Locust Heart",
+"trophy_desc": "Eat the locust-heart of the Angel of the Bottomless Pit. The dungeon recognises your apotheosis: every stat permanently increases by 1.",
+"description": "Trophy harvest from Abaddon the Destroyer. Unlocks a permanent-power recipe.",
+"part": "trophy"
+},
+"arachne_prime": {
+"color": [
+180,
+140,
+80
+],
+"part": "cut"
+},
+"talos_prime": {
+"color": [
+180,
+160,
+100
+],
+"part": "core"
+},
+"echidna_prime": {
+"color": [
+140,
+100,
+160
+],
+"part": "cut"
+},
+"erlking_prime": {
+"color": [
+80,
+140,
+80
+],
+"part": "mote"
+},
+"camazotz_prime": {
+"color": [
+100,
+60,
+120
+],
+"part": "ichor"
+},
+"cacus_prime": {
+"color": [
+200,
+100,
+40
+],
+"part": "cut"
+},
+"the_sphinx_prime": {
+"color": [
+200,
+180,
+100
+],
+"part": "cut"
+},
+"rangda_prime": {
+"color": [
+180,
+60,
+180
+],
+"part": "ichor"
+},
+"nemean_lion_prime": {
+"color": [
+220,
+180,
+80
+],
+"part": "cut"
+},
+"baba_yaga_prime": {
+"color": [
+160,
+120,
+80
+],
+"part": "mote"
+},
+"jormungandr_juvenile_prime": {
+"color": [
+60,
+160,
+100
+],
+"part": "cut"
+},
+"sets_jackal_prime": {
+"color": [
+180,
+100,
+40
+],
+"part": "cut"
+},
+"green_knight_trophy": {
+"color": [
+255,
+220,
+100
+],
+"name": "Green Knight's Holly-Bough",
+"trophy_desc": "The beheading-game pact, now yours. Once per run, when you die, revive at 50% HP.",
+"description": "Trophy harvest from The Green Knight. Unlocks a permanent-power recipe.",
+"part": "trophy"
+},
+"charybdis_prime": {
+"color": [
+40,
+100,
+200
+],
+"part": "cut"
+},
+"ravanas_arm_prime": {
+"color": [
+200,
+60,
+60
+],
+"part": "ichor"
+},
+"wendigo_prime": {
+"color": [
+200,
+220,
+255
+],
+"part": "bone"
+},
+"wild_hunt_captain_prime": {
+"color": [
+180,
+180,
+220
+],
+"part": "mote"
+},
+"anansi_prime": {
+"color": [
+220,
+180,
+40
+],
+"part": "cut"
+},
+"nidhoggr_fragment_trophy": {
+"color": [
+255,
+220,
+100
+],
+"name": "Níðhöggr's Scale",
+"trophy_desc": "The world-serpent's scale. Each floor descended: +2 max MP. Also, permanent immunity to poison.",
+"description": "Trophy harvest from Níðhöggr Fragment. Unlocks a permanent-power recipe.",
+"part": "trophy"
+},
+"seal_demon_wrath_prime": {
+"color": [
+220,
+80,
+40
+],
+"part": "ichor"
+},
+"seal_demon_pestilence_prime": {
+"color": [
+100,
+160,
+50
+],
+"part": "ichor"
+},
+"seal_demon_famine_prime": {
+"color": [
+180,
+160,
+80
+],
+"part": "ichor"
+},
+"seal_demon_war_prime": {
+"color": [
+200,
+40,
+40
+],
+"part": "ichor"
+},
+"seal_demon_death_prime": {
+"color": [
+60,
+60,
+90
+],
+"part": "ichor"
+},
+"seal_demon_earthquake_prime": {
+"color": [
+160,
+110,
+50
+],
+"part": "ichor"
+},
+"seal_demon_silence_prime": {
+"color": [
+180,
+180,
+210
+],
+"part": "ichor"
+},
+"abyssal_locust_prime": {
+"color": [
+120,
+80,
+40
+],
+"part": "ichor"
+},
+"heavenly_angel_prime": {
+"color": [
+255,
+255,
+200
+],
+"part": "mote"
+},
+"hell_bovine_prime": {
+"color": [
+180,
+140,
+80
+],
+"part": "cut"
+},
+"cow_king_prime": {
+"color": [
+255,
+215,
+0
+],
+"part": "cut"
+},
+"skeleton_champion_prime": {
+"color": [
+220,
+220,
+200
+],
+"part": "bone"
+},
+"dire_wolf_alpha_prime": {
+"color": [
+120,
+110,
+100
+],
+"part": "cut"
+},
+"troll_brute_prime": {
+"color": [
+60,
+140,
+60
+],
+"part": "cut"
+},
+"elder_basilisk_prime": {
+"color": [
+100,
+160,
+40
+],
+"part": "cut"
+},
+"greater_earth_elemental_prime": {
+"color": [
+140,
+100,
+60
+],
+"part": "jar"
+},
+"fungal_horror_prime": {
+"color": [
+120,
+160,
+80
+],
+"part": "sac"
+},
+"corrosive_ooze_prime": {
+"color": [
+180,
+200,
+40
+],
+"part": "sac"
+},
+"orc_warlord_prime": {
+"color": [
+200,
+50,
+20
+],
+"part": "cut"
+},
+"veteran_knight_prime": {
+"color": [
+180,
+180,
+200
+],
+"part": "cut"
+},
+"greater_fire_elemental_prime": {
+"color": [
+255,
+120,
+20
+],
+"part": "jar"
+},
+"chimera_alpha_prime": {
+"color": [
+200,
+160,
+40
+],
+"part": "cut"
+},
+"bone_colossus_prime": {
+"color": [
+240,
+240,
+220
+],
+"part": "bone"
+},
+"demon_knight_prime": {
+"color": [
+180,
+40,
+60
+],
+"part": "ichor"
+},
+"gelatinous_titan_prime": {
+"color": [
+80,
+255,
+80
+],
+"part": "cut"
+},
+"phase_spider_matriarch_prime": {
+"color": [
+140,
+60,
+180
+],
+"part": "cut"
+},
+"manticore_elder_prime": {
+"color": [
+200,
+140,
+60
+],
+"part": "cut"
+},
+"war_troll_prime": {
+"color": [
+80,
+180,
+60
+],
+"part": "cut"
+},
+"frost_giant_jarl_prime": {
+"color": [
+120,
+160,
+220
+],
+"part": "cut"
+},
+"fire_giant_king_prime": {
+"color": [
+220,
+120,
+40
+],
+"part": "cut"
+},
+"elder_vampire_prime": {
+"color": [
+160,
+20,
+40
+],
+"part": "bone"
+},
+"death_knight_lord_prime": {
+"color": [
+100,
+40,
+120
+],
+"part": "bone"
+},
+"arcane_golem_prime": {
+"color": [
+160,
+120,
+220
+],
+"part": "core"
+},
+"abyssal_hound_prime": {
+"color": [
+200,
+60,
+60
+],
+"part": "ichor"
+},
+"dread_sphinx_prime": {
+"color": [
+200,
+180,
+100
+],
+"part": "cut"
+},
+"lich_lord_prime": {
+"color": [
+140,
+80,
+200
+],
+"part": "bone"
+},
+"corrupted_treant_prime": {
+"color": [
+80,
+100,
+40
+],
+"part": "mote"
+},
+"skeleton_horde_prime": {
+"color": [
+200,
+200,
+180
+],
+"part": "bone"
+},
+"spectral_dragon_prime": {
+"color": [
+120,
+140,
+200
+],
+"part": "bone"
+},
+"demon_captain_prime": {
+"color": [
+220,
+60,
+40
+],
+"part": "ichor"
+},
+"iron_sentinel_prime": {
+"color": [
+180,
+180,
+180
+],
+"part": "core"
+},
+"ancient_vampire_lord_prime": {
+"color": [
+120,
+10,
+30
+],
+"part": "bone"
+},
+"elder_storm_giant_prime": {
+"color": [
+100,
+120,
+220
+],
+"part": "cut"
+},
+"primordial_fire_elemental_prime": {
+"color": [
+255,
+200,
+60
+],
+"part": "jar"
+},
+"primordial_ice_elemental_prime": {
+"color": [
+140,
+200,
+255
+],
+"part": "jar"
+},
+"demon_general_prime": {
+"color": [
+255,
+40,
+20
+],
+"part": "ichor"
+},
+"zombie_legion_prime": {
+"color": [
+100,
+120,
+80
+],
+"part": "bone"
+},
+"dracolich_prime": {
+"color": [
+180,
+160,
+220
+],
+"part": "bone"
+},
+"mythic_hydra_prime": {
+"color": [
+80,
+180,
+80
+],
+"part": "cut"
+},
+"corrupted_angel_prime": {
+"color": [
+200,
+180,
+220
+],
+"part": "mote"
+},
+"titan_prime": {
+"color": [
+200,
+200,
+160
+],
+"part": "cut"
+},
+"shadow_assassin_prime": {
+"color": [
+60,
+20,
+80
+],
+"part": "cut"
+},
+"plague_ooze_prime": {
+"color": [
+140,
+180,
+60
+],
+"part": "sac"
+},
+"abyssal_behemoth_prime": {
+"color": [
+180,
+40,
+80
+],
+"part": "ichor"
+},
+"arch_lich_prime": {
+"color": [
+180,
+60,
+220
+],
+"part": "bone"
+},
+"elder_dracolich_prime": {
+"color": [
+200,
+180,
+255
+],
+"part": "bone"
+},
+"primordial_titan_prime": {
+"color": [
+240,
+220,
+180
+],
+"part": "sac"
+},
+"void_wyrm_prime": {
+"color": [
+60,
+20,
+120
+],
+"part": "scale"
+},
+"infernal_lord_prime": {
+"color": [
+255,
+60,
+20
+],
+"part": "ichor"
+},
+"celestial_guardian_prime": {
+"color": [
+255,
+255,
+200
+],
+"part": "mote"
+},
+"entropy_elemental_prime": {
+"color": [
+100,
+60,
+100
+],
+"part": "jar"
+},
+"dread_knight_legion_prime": {
+"color": [
+160,
+140,
+180
+],
+"part": "bone"
+},
+"abyssal_dragon_prime": {
+"color": [
+200,
+40,
+60
+],
+"part": "ichor"
+},
+"flesh_colossus_prime": {
+"color": [
+200,
+140,
+140
+],
+"part": "bone"
+},
+"locust_swarmlord_prime": {
+"color": [
+120,
+80,
+40
+],
+"part": "cut"
+},
+"pit_executioner_prime": {
+"color": [
+180,
+30,
+30
+],
+"part": "ichor"
+},
+"void_seraph_prime": {
+"color": [
+60,
+30,
+90
+],
+"part": "ichor"
+},
+"apocalypse_herald_prime": {
+"color": [
+200,
+80,
+60
+],
+"part": "ichor"
+},
+"wormwood_blight_prime": {
+"color": [
+120,
+140,
+80
+],
+"part": "ichor"
+},
+"iron_horseman_prime": {
+"color": [
+120,
+100,
+130
+],
+"part": "ichor"
+},
+"orc_archer_prime": {
+"color": [
+110,
+130,
+70
+],
+"part": "cut"
+},
+"orc_priest_prime": {
+"color": [
+180,
+80,
+60
+],
+"part": "cut"
+},
+"orc_marauder_prime": {
+"color": [
+160,
+60,
+30
+],
+"part": "cut"
+},
+"orc_warbringer_prime": {
+"color": [
+210,
+70,
+30
+],
+"part": "cut"
+},
+"dread_orc_champion_prime": {
+"color": [
+220,
+40,
+20
+],
+"part": "cut"
+},
+"goblin_sniper_prime": {
+"color": [
+120,
+170,
+70
+],
+"part": "cut"
+},
+"goblin_warpriest_prime": {
+"color": [
+170,
+80,
+50
+],
+"part": "cut"
+},
+"hobgoblin_marshal_prime": {
+"color": [
+180,
+60,
+60
+],
+"part": "cut"
+},
+"goblin_kingslayer_prime": {
+"color": [
+120,
+80,
+200
+],
+"part": "cut"
+},
+"skeleton_necromancer_prime": {
+"color": [
+160,
+140,
+200
+],
+"part": "bone"
+},
+"bone_collector_prime": {
+"color": [
+200,
+200,
+160
+],
+"part": "bone"
+},
+"skeleton_lich_prime": {
+"color": [
+140,
+80,
+200
+],
+"part": "bone"
+},
+"banshee_lich_prime": {
+"color": [
+200,
+220,
+240
+],
+"part": "bone"
+},
+"kobold_trapsetter_prime": {
+"color": [
+80,
+160,
+80
+],
+"part": "cut"
+},
+"kobold_dragonshield_prime": {
+"color": [
+200,
+80,
+40
+],
+"part": "cut"
+},
+"kobold_pack_leader_prime": {
+"color": [
+220,
+60,
+60
+],
+"part": "cut"
+},
+"gnoll_archer_prime": {
+"color": [
+200,
+170,
+100
+],
+"part": "cut"
+},
+"gnoll_fang_of_yeenoghu_prime": {
+"color": [
+200,
+80,
+40
+],
+"part": "cut"
+},
+"gnoll_alpha_of_yeenoghu_prime": {
+"color": [
+220,
+40,
+30
+],
+"part": "cut"
+},
+"bandit_thug_prime": {
+"color": [
+140,
+110,
+80
+],
+"part": "cut"
+},
+"bandit_archer_prime": {
+"color": [
+120,
+130,
+90
+],
+"part": "cut"
+},
+"bandit_thief_prime": {
+"color": [
+80,
+80,
+120
+],
+"part": "cut"
+},
+"bandit_kingpin_prime": {
+"color": [
+180,
+150,
+50
+],
+"part": "cut"
+},
+"cult_initiate_prime": {
+"color": [
+120,
+80,
+160
+],
+"part": "cut"
+},
+"cult_priest_prime": {
+"color": [
+150,
+60,
+180
+],
+"part": "cut"
+},
+"cult_zealot_prime": {
+"color": [
+180,
+30,
+60
+],
+"part": "cut"
+},
+"cult_hierophant_prime": {
+"color": [
+60,
+30,
+100
+],
+"part": "cut"
+},
+"ghast_eater_prime": {
+"color": [
+80,
+120,
+60
+],
+"part": "bone"
+},
+"draugr_wight_prime": {
+"color": [
+160,
+140,
+200
+],
+"part": "bone"
+},
+"grave_knight_prime": {
+"color": [
+120,
+120,
+150
+],
+"part": "bone"
+},
+"greater_imp_prime": {
+"color": [
+200,
+60,
+70
+],
+"part": "ichor"
+},
+"demonic_imp_prime": {
+"color": [
+220,
+40,
+30
+],
+"part": "ichor"
+},
+"imp_lord_prime": {
+"color": [
+180,
+30,
+180
+],
+"part": "ichor"
+},
+"snake_charmer_prime": {
+"color": [
+180,
+140,
+60
+],
+"part": "cut"
+},
+"viper_priestess_prime": {
+"color": [
+80,
+180,
+100
+],
+"part": "cut"
+},
+"cave_troll_prime": {
+"color": [
+110,
+130,
+90
+],
+"part": "cut"
+},
+"harrow_witch_prime": {
+"color": [
+90,
+40,
+110
+],
+"part": "cut"
+},
+"moss_sentinel_prime": {
+"color": [
+60,
+110,
+60
+],
+"part": "core"
+},
+"sable_serpent_prime": {
+"color": [
+20,
+20,
+40
+],
+"part": "cut"
+},
+"iron_patriarch_prime": {
+"color": [
+180,
+150,
+70
+],
+"part": "cut"
+},
+"mage_slayer_assassin_prime": {
+"color": [
+80,
+70,
+90
+],
+"part": "cut"
+},
+"stone_golem_prime": {
+"color": [
+130,
+130,
+130
+],
+"part": "core"
+},
+"plague_witch_prime": {
+"color": [
+120,
+140,
+60
+],
+"part": "cut"
+},
+"vine_horror_prime": {
+"color": [
+40,
+100,
+50
+],
+"part": "wood"
+},
+"lurking_horror_prime": {
+"color": [
+120,
+60,
+30
+],
+"part": "sac"
+},
+"ettin_warchief_prime": {
+"color": [
+160,
+110,
+80
+],
+"part": "cut"
+},
+"throne_sentinel_prime": {
+"color": [
+200,
+180,
+80
+],
+"part": "core"
+},
+"whispering_crone_trophy": {
+"color": [
+255,
+220,
+100
+],
+"name": "Whispering Crone's Tongue",
+"trophy_desc": "Norn-tier prophecy. +2 WIS and secret doors within 3 tiles are revealed automatically.",
+"description": "Trophy harvest from The Whispering Crone. Unlocks a permanent-power recipe.",
+"part": "trophy"
+},
+"demonic_trickster_prime": {
+"color": [
+180,
+60,
+140
+],
+"part": "ichor"
+},
+"deep_one_priest_prime": {
+"color": [
+40,
+90,
+110
+],
+"part": "sac"
+},
+"gilded_mimic_prime": {
+"color": [
+220,
+180,
+60
+],
+"part": "core"
+},
+"frostfang_giant_prime": {
+"color": [
+180,
+200,
+230
+],
+"part": "cut"
+},
+"crypt_summoner_prime": {
+"color": [
+100,
+80,
+130
+],
+"part": "bone"
+},
+"shadow_archer_prime": {
+"color": [
+40,
+40,
+70
+],
+"part": "cut"
+},
+"veiled_inquisitor_prime": {
+"color": [
+180,
+30,
+50
+],
+"part": "cut"
+},
+"lava_elemental_prime": {
+"color": [
+220,
+80,
+30
+],
+"part": "jar"
+},
+"blood_archon_trophy": {
+"color": [
+255,
+220,
+100
+],
+"name": "Blood Archon's Heart",
+"trophy_desc": "Vampiric ascension. +5% lifesteal on all melee attacks, permanently.",
+"description": "Trophy harvest from Blood Archon. Unlocks a permanent-power recipe.",
+"part": "trophy"
+},
+"blood_archon_prime": {
+"color": [
+160,
+30,
+30
+],
+"part": "ichor"
+},
+"astral_horror_prime": {
+"color": [
+120,
+80,
+200
+],
+"part": "sac"
+},
+"tiamat_trophy": {
+"color": [
+255,
+220,
+100
+],
+"name": "Tiamat's Chromatic Tear",
+"trophy_desc": "One tear from her five mourning eyes. Carry 25% damage reduction to cold, fire, lightning, acid, and poison — permanently.",
+"description": "Trophy harvest from Tiamat the Five-Headed Dragon Queen. Unlocks a permanent-power recipe.",
+"part": "trophy"
+},
+"asmodeus_trophy": {
+"color": [
+255,
+220,
+100
+],
+"name": "Asmodeus's Pact-Blood",
+"trophy_desc": "The Prince of Hell signs your contract. Once, when you would die, you don't — the contract is then spent.",
+"description": "Trophy harvest from Asmodeus, Prince of Hell. Unlocks a permanent-power recipe.",
+"part": "trophy"
+},
+"surtur_trophy": {
+"color": [
+255,
+220,
+100
+],
+"name": "Surtur's Ember",
+"trophy_desc": "A coal from Lævateinn. You take ZERO fire damage from any source, permanently.",
+"description": "Trophy harvest from Surtur the Fire Giant Lord. Unlocks a permanent-power recipe.",
+"part": "trophy"
+},
+"ymir_last_spawn_trophy": {
+"color": [
+255,
+220,
+100
+],
+"name": "Ymir's Frozen Marrow",
+"trophy_desc": "Marrow from the first frost-giant. You take ZERO cold damage, permanently.",
+"description": "Trophy harvest from Ymir's Last Spawn. Unlocks a permanent-power recipe.",
+"part": "trophy"
+},
+"hrungnirs_ghost_trophy": {
+"color": [
+255,
+220,
+100
+],
+"name": "Hrungnir's Stone-Heart",
+"trophy_desc": "The triangular heart Thor shattered, beating in your chest. +2 CON and you cannot be petrified.",
+"description": "Trophy harvest from Hrungnir's Ghost. Unlocks a permanent-power recipe.",
+"part": "trophy"
+},
+"cave_mushroom": {
+"color": [
+120,
+80,
+100
+],
+"min_level": 1,
+"terrain": "cave",
+"part": "forage"
+},
+"river_salt": {
+"color": [
+220,
+220,
+240
+],
+"min_level": 10,
+"terrain": "water",
+"part": "forage"
+},
+"crystal_shard": {
+"color": [
+180,
+220,
+250
+],
+"min_level": 20,
+"terrain": "crystal",
+"part": "forage"
+},
+"holy_water": {
+"color": [
+220,
+240,
+255
+],
+"min_level": 15,
+"terrain": "altar",
+"part": "forage"
+},
+"swamp_moss": {
+"color": [
+80,
+120,
+60
+],
+"min_level": 5,
+"terrain": "swamp",
+"part": "forage"
+},
+"deep_iron": {
+"color": [
+100,
+100,
+110
+],
+"min_level": 30,
+"terrain": "deep",
+"part": "forage"
+},
+"altar_incense": {
+"color": [
+240,
+200,
+160
+],
+"min_level": 1,
+"terrain": "altar",
+"part": "forage"
+},
+"abyssal_kelp": {
+"color": [
+40,
+80,
+100
+],
+"min_level": 40,
+"terrain": "water_deep",
+"part": "forage"
+}
+}

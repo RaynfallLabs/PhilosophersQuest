@@ -182,21 +182,15 @@ def test_harvest_quiz_tier_clamps_and_defaults():
 # ---------------------------------------------------------------------------
 
 def test_cook_family_recipe_restores_sp():
-    """Cook a family roast (2 family + 4 assorted): should restore SP and
-    consume exactly the recipe's ingredients.
-
-    2026-06-07: basic_monster_stew was DELETED (assorted parts are now eaten as
-    Assorted Monster Jerky, not cooked). The family recipe is the new cheapest
-    compound cook, so this exercises the same cook_compound_recipe path.
-    """
+    """Cook a two-part dish (Goblin Gristle + Charybdis Spawn Shank): it
+    restores SP and consumes exactly the dish's ingredients."""
     from food_system import load_ingredient_for, cook_compound_recipe, _raw_recipes
     from player import Player
 
     p = Player()
     p.sp = 100  # plenty of headroom
 
-    recipe = {'id': 'family_beast_recipe', **_raw_recipes()['family_beast_recipe']}
-    # Build EXACTLY the recipe's ingredients (2x family_beast + 4x assorted).
+    recipe = {'id': 'dish_094', **_raw_recipes()['dish_094']}
     for ing_id in recipe['ingredients']:
         p.add_to_inventory(load_ingredient_for(ing_id))
 
@@ -214,40 +208,19 @@ def test_cook_family_recipe_restores_sp():
     assert len(remaining) == 0
 
 
-def test_cook_prime_recipe_at_t5_applies_temp_power():
-    """T5 cook of a prime recipe should apply the lore-themed temp power."""
-    from food_system import load_ingredient_for, cook_compound_recipe, _raw_recipes
+def test_cook_a_special_dish_applies_its_power():
+    """A Special dish (Gloom-Jelly on Toast) puts its timed power on the hero."""
+    import kitchen
+    from food_system import load_ingredient_for, cook_compound_recipe
     from player import Player
 
     p = Player()
-
-    # Pick the first existing beast prime recipe so we don't depend on a
-    # specific monster being named in this exact form.
-    rid = next((k for k in _raw_recipes().keys()
-                if k.startswith('prime_giant_rat')), None)
-    assert rid is not None, "no prime_giant_rat recipe found"
-    recipe_def = _raw_recipes()[rid]
-    # Build the required ingredients from the recipe definition
-    for ing_id in recipe_def['ingredients']:
-        ing = load_ingredient_for(ing_id)
-        if ing is not None:
-            p.add_to_inventory(ing)
-
-    recipe = {'id': rid, **recipe_def}
+    recipe = kitchen.recipe('cook_shade')
+    for ing_id in recipe['ingredients']:
+        p.add_to_inventory(load_ingredient_for(ing_id))
     quiz = MockQuizEngine(scripted_success=True)
-    out = {}
-    cook_compound_recipe(p, recipe, p.inventory, quiz, lambda msgs: out.update(messages=msgs))
-
-    # v2.6.4: recipe -> outcome_id -> outcome dict. If the outcome has a
-    # temp_power, it should be active on the player after cooking.
-    from food_system import _load_outcomes, _resolve_temp_power
-    outcome = _load_outcomes().get(recipe.get('outcome_id'), {})
-    tp_raw = outcome.get('temp_power')
-    if tp_raw:
-        canonical = _resolve_temp_power(tp_raw)
-        assert p.has_effect(canonical), \
-            f"expected {canonical} status active, got {p.status_effects}"
-    # Else: outcome has no temp_power (fine — some outcomes are pure recovery)
+    cook_compound_recipe(p, recipe, p.inventory, quiz, lambda msgs: None)
+    assert p.has_effect(kitchen.dish_power(recipe)), p.status_effects
 
 
 def test_cook_v3_uses_threshold_one_question():
@@ -256,7 +229,7 @@ def test_cook_v3_uses_threshold_one_question():
     from player import Player
 
     p = Player()
-    recipe = {'id': 'family_beast_recipe', **_raw_recipes()['family_beast_recipe']}
+    recipe = {'id': 'dish_094', **_raw_recipes()['dish_094']}
     for ing_id in recipe['ingredients']:
         p.add_to_inventory(load_ingredient_for(ing_id))
     quiz = MockQuizEngine(scripted_success=True)
@@ -269,30 +242,24 @@ def test_cook_v3_uses_threshold_one_question():
     assert 'max_chain' not in kw
 
 
-def test_cook_v3_tier_matches_the_outcome_tier():
-    """Cook v3 (v2.6.4 schema): the question tier is the tier of the
-    recipe's outcome archetype (`outcome_id` -> cook_outcomes.json).
-    (This replaced a recipe_class version that, once recipe_class left
-    recipes.json, matched no recipe and asserted nothing.)"""
-    from food_system import (load_ingredient_for, cook_compound_recipe,
-                             _raw_recipes, _load_outcomes)
+def test_cook_v3_tier_matches_the_dish_tier():
+    """The cooking question's tier is the dish's tier: the band of its
+    deepest ingredient (kitchen.dish_tier)."""
+    import kitchen
+    from food_system import load_ingredient_for, cook_compound_recipe
     from player import Player
 
-    outcomes = _load_outcomes()
     first_per_tier = {}
-    for rid, r in _raw_recipes().items():
-        o = outcomes.get(r.get('outcome_id'))
-        if o is not None:
-            first_per_tier.setdefault(int(o.get('tier', 3)), {'id': rid, **r})
+    for r in kitchen.book():
+        if all(load_ingredient_for(i) is not None for i in r['ingredients']):
+            first_per_tier.setdefault(kitchen.dish_tier(r), r)
     # the recipe book spans the whole tier ladder
     assert sorted(first_per_tier) == [1, 2, 3, 4, 5]
 
     for expected, recipe in sorted(first_per_tier.items()):
         p = Player()
         for ing_id in recipe['ingredients']:
-            ing = load_ingredient_for(ing_id)
-            if ing is not None:
-                p.add_to_inventory(ing)
+            p.add_to_inventory(load_ingredient_for(ing_id))
         quiz = MockQuizEngine(scripted_success=True)
         cook_compound_recipe(p, recipe, p.inventory, quiz, lambda m: None)
         assert quiz.last_quiz_kwargs['tier'] == expected, \
@@ -306,13 +273,12 @@ def test_cook_v3_success_gives_peak_reward():
 
     p = Player()
     p.sp = 100
-    recipe = {'id': 'family_beast_recipe', **_raw_recipes()['family_beast_recipe']}
+    recipe = {'id': 'dish_094', **_raw_recipes()['dish_094']}
     for ing_id in recipe['ingredients']:
         p.add_to_inventory(load_ingredient_for(ing_id))
     quiz = MockQuizEngine(scripted_success=True)
     cook_compound_recipe(p, recipe, p.inventory, quiz, lambda m: None)
-    # v2.6.4 family_beast_recipe ("Hunter's Stew") points to t2_broth_deep
-    # which grants 75 SP + 4 HP. Success -> at least the SP delta.
+    # An SP dish of two parts: far more than a ration.
     assert p.sp > 100, "success on family cook must restore SP"
     assert p.sp - 100 >= 40, f"expected meaningful SP gain, got +{p.sp - 100}"
 
@@ -325,7 +291,7 @@ def test_cook_v3_failure_ruins_and_consumes():
 
     p = Player()
     p.sp = 100
-    recipe = {'id': 'family_beast_recipe', **_raw_recipes()['family_beast_recipe']}
+    recipe = {'id': 'dish_094', **_raw_recipes()['dish_094']}
     for ing_id in recipe['ingredients']:
         p.add_to_inventory(load_ingredient_for(ing_id))
     quiz = MockQuizEngine(scripted_success=False)
@@ -336,19 +302,18 @@ def test_cook_v3_failure_ruins_and_consumes():
     # SP unchanged (no reward)
     assert p.sp == 100
     # Message reflects ruin
-    assert any('ruin' in m.lower() or 'wasted' in m.lower() for m in out['messages'])
+    assert out['messages'][0].startswith('You ruin the preparation')
 
 
 def test_cook_consumes_inventory_even_on_ruin():
     """Even at T0 (ruined), the ingredients are still consumed — design intent.
 
-    2026-06-07: uses the family recipe now that basic_monster_stew is gone.
     """
     from food_system import load_ingredient_for, cook_compound_recipe, _raw_recipes
     from player import Player
 
     p = Player()
-    recipe = {'id': 'family_beast_recipe', **_raw_recipes()['family_beast_recipe']}
+    recipe = {'id': 'dish_094', **_raw_recipes()['dish_094']}
     for ing_id in recipe['ingredients']:
         p.add_to_inventory(load_ingredient_for(ing_id))
 
@@ -383,15 +348,15 @@ def test_full_lifecycle_harvest_then_cook():
     assert len(out_h['ingredients']) == 1
     assert out_h['ingredients'][0].id == 'giant_rat_prime'
 
-    # Cook the prime recipe (v2.6.5: 1 prime alone)
-    rid = 'prime_giant_rat_recipe'
+    # Cook the part on its own (its single dish)
+    rid = 'cook_giant_rat'
     recipe = {'id': rid, **_raw_recipes()[rid]}
     quiz_c = MockQuizEngine(scripted_success=True)
     out_c = {}
     cook_compound_recipe(p, recipe, p.inventory, quiz_c,
                          lambda msgs: out_c.update(messages=msgs))
 
-    # SP should be higher (rat prime is T1 → 30-50 SP outcome)
+    # SP should be higher (Rat Rump Kebab: an SP dish)
     assert p.sp > 100
 
 

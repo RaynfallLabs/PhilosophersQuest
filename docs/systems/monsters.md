@@ -243,9 +243,9 @@ Every monster carries ONE `family` (one of the 22 in `data/monster_families.json
 
 ### Harvest
 
-- `harvest_tier` (int, default 1) — 1-5. Threaded into the `Corpse` and read at harvest time (`food_system`). The actual prime-cut dropped is looked up by `monster.kind` in `data/prime_cuts.json`. See [food_system](food_system.md).
+- `harvest_tier` (int, default 1) — 1-5. Threaded into the `Corpse` and read at harvest time (`food_system`). The ingredient dropped is looked up by `monster.kind` in `data/items/harvest_map.json` (close kin share one). See [food_system](food_system.md).
 - `harvest_threshold` — **DEAD JSON field.** Still populated on all 527 monsters, still read into `Monster.__init__` and threaded onto `Corpse` for pickle compat, but no code consumes it. Harvest v4 (2026-08-06) is one-question, threshold=1 unconditionally. `bones.py:148` and 4 `game_encounters.py` sites set `99` as "unharvestable hint" — no effect.
-- `ingredient_id` — **DEAD JSON field** on 525/527 monsters. Harvest v4 resolves the drop via `prime_cuts.json`, not this field. The old-scheme id (`rat_meat`, `goblin_flesh`, `insect_carapace`, `spectral_essence`, …) is still written to disk. **Known downstream rot:** `game_render.py::_draw_bestiary_page` at `id_level >= 2` calls `load_ingredient_for(subject.ingredient_id)` and gets `None` — the bestiary "Ingredient:" / "Solo cook:" lines never render for these monsters (audit P3).
+- `ingredient_id` — **DEAD JSON field** on 525/527 monsters. Harvest v4 resolves the drop via `data/items/harvest_map.json`, not this field. The old-scheme id (`rat_meat`, `goblin_flesh`, `insect_carapace`, `spectral_essence`, …) is still written to disk. **Known downstream rot:** `game_render.py::_draw_bestiary_page` at `id_level >= 2` calls `load_ingredient_for(subject.ingredient_id)` and gets `None` — the bestiary "Ingredient:" / "Solo cook:" lines never render for these monsters (audit P3).
 
 ### Lore
 
@@ -576,7 +576,7 @@ The design cap is 1-5 and `_spawn_treasure_item` scales as `effective_floor = ti
 ## Interactions with other systems
 
 - **Combat** — `combat.py::player_attack` reads `monster.resistances`, `monster.weaknesses`, `monster.dragon_scales`, `monster.tags` (for material effective_against), `monster.footprint` (for AOE), `monster.is_boss` (for status DCs). `monster.take_damage(amount, damage_type, ignore_resistance)` is the one damage entrypoint.
-- **Food system** — `game_combat._make_corpse` threads `harvest_tier`, `monster.kind`, `monster_def` tags onto the `Corpse`. `food_system.harvest_corpse` resolves the prime cut by `monster.kind` in `data/prime_cuts.json`.
+- **Food system** — `game_combat._make_corpse` threads `harvest_tier`, `monster.kind`, `monster_def` tags onto the `Corpse`. `food_system.harvest_corpse` resolves the ingredient by `monster.kind` in `data/items/harvest_map.json`.
 - **Quests / mysteries** — seal demons mutate `game.seals_broken`. Abaddon's locust bursts set `_wants_locust_spawn` for the game loop to spawn `abyssal_locust`. Angels' `seek_locust` targets locusts via `_annihilate_target`.
 - **Hero specials** — `is_boss_or_huge(m)` gates charm/paralyze/confuse/sleep/immobilize. `boss_immune` on a special says "respect `is_boss_or_huge`."
 - **World / dungeon** — `dungeon.phasing_walls` is a per-dungeon set of wall tiles the Minotaur (and only the Minotaur, in practice) can pass through. `_populate_hidden_chambers` keyword-themes monsters via `monster.kind` / `monster.name` substring matches.

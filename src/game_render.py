@@ -117,14 +117,6 @@ def monster_trait_lines(mdef: dict, known: bool = True) -> list:
     return out
 
 
-def _temp_power_label(name) -> str:
-    """Display name of a recipe's temporary power (same text the cook log
-    uses), or '' when there is none."""
-    if not name:
-        return ''
-    from food_system import temp_power_label
-    return temp_power_label(str(name))
-
 
 def _quiz_mode_phrase(mode, threshold=None) -> str:
     """Plain-language description of a quiz mode for the player.
@@ -4449,96 +4441,36 @@ class RenderMixin:
         return lines
 
     def _menu_recipe_preview(self, recipe) -> str:
-        """One-line outcome preview for a recipe (post-v2.6.4 cook redesign).
-
-        Recipe carries `outcome_id` referencing data/items/cook_outcomes.json.
-        Legacy recipes with a `tier_outcomes` dict still render (dead in-repo
-        but old saves may keep them).
-        """
-        # v2.6.4 path: single outcome archetype via outcome_id
-        oid = recipe.get('outcome_id')
-        if oid:
-            try:
-                from food_system import _load_outcomes
-                o = _load_outcomes().get(oid) or {}
-            except Exception:
-                o = {}
-            if o:
-                bits = []
-                if o.get('sp'):            bits.append(f"+{o['sp']}SP")
-                if o.get('hp'):            bits.append(f"+{o['hp']}HP")
-                # Every proper meal adds the base max HP; a recipe's own bonus
-                # comes on top (food_system._apply_outcome_body).
-                _mh = int(getattr(self.player, 'COOK_BASE_MAX_HP', 2)) + int(o.get('max_hp_bonus') or 0)
-                bits.append(f"+{_mh}maxHP")
-                # A trophy grants its stat outright. Any other meal is banked
-                # toward the stat of its meat (two meals, on two floors, make
-                # a point): say which stat, and promise no number.
-                if o.get('permanent_power') and o.get('stat_grant'):
-                    stat = o.get('stat_grant_default') or recipe.get('stat_grant_default') or '?'
-                    bits.append(f"+{o['stat_grant']}{stat}")
-                else:
-                    try:
-                        from food_system import recipe_cut_stat
-                        fed = recipe_cut_stat(recipe) or (
-                            o.get('stat_grant_default') if o.get('stat_grant') else None)
-                    except Exception:
-                        fed = None
-                    if fed:
-                        bits.append(f"Feeds {fed}")
-                if o.get('temp_power'):
-                    tp = _temp_power_label(o.get('temp_power'))
-                    dur = o.get('temp_duration')
-                    bits.append(f"{tp} {dur}t" if tp and dur else tp or 'temp buff')
-                if o.get('permanent_power'):
-                    bits.append('PERM')
-                tier = o.get('tier', '?')
-                return f"T{tier}: {'/'.join(bits)}" if bits else f"T{tier}"
-        # Legacy fallback (pre-v2.6.4 recipes with tier_outcomes dict)
-        outcomes = recipe.get('tier_outcomes', {}) or {}
-        parts = []
-        for t in range(1, 6):
-            o = outcomes.get(str(t), {}) or {}
-            bits = []
-            if o.get('sp'):            bits.append(f"+{o['sp']}SP")
-            if o.get('hp'):            bits.append(f"+{o['hp']}HP")
-            if o.get('max_hp_bonus'):  bits.append(f"+{o['max_hp_bonus']}maxHP")
-            if o.get('stat_grant'):
-                stat = recipe.get('stat_grant') or recipe.get('stat_grant_default') or '?'
-                bits.append(f"+{o['stat_grant']}{stat}")
-            if o.get('temp_power'):
-                label = _temp_power_label(recipe.get('temp_power'))
-                dur = recipe.get('temp_duration')
-                bits.append(f"{label} {dur}t" if label and dur else label or 'temp power')
-            if o.get('permanent_power'):
-                bits.append('permanent power')
-            if bits:
-                parts.append(f"T{t}: {'/'.join(bits)}")
-        return " | ".join(parts)
+        """One line of what a dish does for this hero now (kitchen.dish_effects:
+        "+45 HP, +3 Max HP, +60 SP"), after its tier."""
+        try:
+            import kitchen
+            return (f"T{kitchen.dish_tier(recipe)} {kitchen.TAB_NAMES[kitchen.dish_tab(recipe)]}: "
+                    + ', '.join(kitchen.dish_effects(self.player, recipe)))
+        except Exception:
+            return ''
 
     def _menu_recipe_detail_lines(self, recipe) -> list:
-        from food_system import _raw_ingredients as _ri
+        import kitchen
         from collections import Counter
-        ingredients = _ri()
+        from naming import proper_name
         counts = Counter(recipe.get('ingredients', []))
         ing_text = ', '.join(
-            f"{ingredients.get(iid, {}).get('name', iid)} x{n}" if n > 1
-            else ingredients.get(iid, {}).get('name', iid)
+            f"{kitchen.part_name(iid)} x{n}" if n > 1 else kitchen.part_name(iid)
             for iid, n in counts.items()
         )
         lines = [
-            (recipe.get('name', 'Recipe').title(), FP.GOLD_BRIGHT, self.font_md),
+            (proper_name(recipe.get('name', 'Recipe')), FP.GOLD_BRIGHT, self.font_md),
             ("Ingredients", FP.GOLD_BRIGHT, self.font_sm),
             (ing_text or 'none', FP.BODY_TEXT, self.font_sm),
         ]
-        desc = recipe.get('description', '')
+        desc = recipe.get('flavor', '') or recipe.get('description', '')
         if desc:
             lines += [("Cookbook note", FP.GOLD_BRIGHT, self.font_sm),
                       (desc, FP.BODY_TEXT, self.font_sm)]
         preview = self._menu_recipe_preview(recipe)
         if preview:
-            # v2.15.0 UI-rot fix: cooking is one-question binary (v2.6.4),
-            # no escalator chain. Label the section as the outcome, not "chain".
+            # Cooking is one question, right or wrong: the outcome, not a chain.
             lines += [("Outcome", FP.GOLD_BRIGHT, self.font_sm),
                       (preview, FP.SUCCESS_TEXT, self.font_sm)]
         lines += [("Next action", FP.GOLD_BRIGHT, self.font_sm),
@@ -7100,18 +7032,17 @@ class RenderMixin:
         is_compound = self._COOK_TABS[self._cook_tab][1] == 'compound'
         entries = []
         if is_compound:
-            from food_system import _raw_ingredients as _ri
+            import kitchen
             from food_system import recipe_is_trophy as _is_trophy
             from collections import Counter
-            ingredients = _ri()
             for i, recipe in enumerate(tab_items):
                 counts = Counter(recipe.get('ingredients', []))
                 ing_list = ', '.join(
-                    f"{ingredients.get(iid, {}).get('name', iid)} x{n}" if n > 1
-                    else ingredients.get(iid, {}).get('name', iid)
+                    f"{kitchen.part_name(iid)} x{n}" if n > 1 else kitchen.part_name(iid)
                     for iid, n in counts.items()
                 )
-                recipe_sprite_id = f"recipe_{recipe.get('id', '')}"
+                # Each dish names its own picture (recipes.json `art`).
+                recipe_sprite_id = recipe.get('art') or f"recipe_{recipe.get('id', '')}"
                 first_ing = recipe.get('ingredients', [''])[0] if recipe.get('ingredients') else ''
                 class _RecipeIcon:
                     def __init__(self2, rid, fing):
@@ -7129,7 +7060,7 @@ class RenderMixin:
                     'icon': icon_obj,
                     'name_color': FP.GOLD_BRIGHT if is_trophy else FP.GOLD_PALE,
                     'detail_color': FP.BODY_TEXT,
-                    'badge': 'TROPHY' if is_trophy else '',
+                    'badge': ('TROPHY' if recipe.get('trophy') else 'LEGENDARY') if is_trophy else '',
                     'badge_color': FP.GOLD_BRIGHT,
                     'details': self._menu_recipe_detail_lines(recipe),
                 })
@@ -9209,39 +9140,24 @@ class RenderMixin:
                 mechanics.append((_t, FP.WARNING_TEXT if _k == 'easily' else FP.CYAN_ACCENT, self.font_sm))
 
         if id_level >= 2:
-            # Harvest yields exactly ONE ingredient per corpse — either a prime
-            # cut or a trophy, chosen by the monster's `is_trophy` flag in
-            # prime_cuts.json. The 11 trophy-only monsters (medusa, fafnir,
-            # fenrir, abaddon, etc.) have no `_prime` ingredient entry; naive
-            # `<kind>_prime` lookup used to miss them and render "Ingredient:
-            # none" even though the trophy is real. Fixed 2026-10-03 by
-            # mirroring the bestiary trophy-aware logic.
-            # Corpses carry `monster_id`, not `kind`. Try both (plus `.id`
-            # as a last resort) so Monster-shaped and Corpse-shaped
-            # subjects both resolve. 2026-10-03 playtest found the first
-            # version only checked `.kind`, which Corpse doesn't have.
+            # Harvest yields exactly ONE ingredient per corpse: its kin's
+            # (data/items/harvest_map.json; a boss with a trophy gives the
+            # trophy). Corpses carry `monster_id`, Monsters `kind`: try both.
             monster_id = (getattr(corpse, 'monster_id', '')
                           or getattr(corpse, 'kind', '')
                           or '')
             legacy_id = getattr(corpse, 'ingredient_id', '')
             try:
-                from food_system import (load_ingredient_for,
-                                          get_recipes_for_ingredient,
-                                          _load_prime_cuts)
-                prime_info = _load_prime_cuts().get(monster_id) if monster_id else None
-                if prime_info:
-                    is_trophy = bool(prime_info.get('is_trophy'))
-                    ingredient_id = (f"{monster_id}_trophy" if is_trophy
-                                     else f"{monster_id}_prime")
-                else:
-                    ingredient_id = f"{monster_id}_prime"
-                ing = load_ingredient_for(ingredient_id)
+                import kitchen
+                from food_system import load_ingredient_for, get_recipes_for_ingredient
+                ingredient_id = kitchen.ingredient_for_monster(monster_id) if monster_id else None
+                ing = load_ingredient_for(ingredient_id) if ingredient_id else None
                 # Legacy fallback for pre-v2.6.5 corpses in old saves.
                 if not ing and legacy_id:
                     ing = load_ingredient_for(legacy_id)
                     ingredient_id = legacy_id
                 if ing:
-                    label = "Trophy" if prime_info and prime_info.get('is_trophy') else "Prime cut"
+                    label = "Trophy" if getattr(ing, 'tier_role', '') == 'trophy' else "Harvest"
                     mechanics.append((f"{label}: {ing.name}", FP.GOLD_PALE, self.font_sm))
                     recipes = get_recipes_for_ingredient(ingredient_id)
                     if recipes:

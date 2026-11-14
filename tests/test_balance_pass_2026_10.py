@@ -130,18 +130,19 @@ def test_cooking_cap_is_four_per_floor_and_is_a_real_cap():
 
 
 def test_every_proper_meal_builds_max_hp_under_the_floor_cap():
-    from food_system import _apply_outcome_body
+    import kitchen
+    from food_system import _apply_recipe_outcome
     from player import Player
     p = Player()
     p.deepest_floor_reached = 30
     p.reset_floor_cook_caps()
     base = p.max_hp
-    plain = {'sp': 10, 'hp': 0}
+    plain = kitchen.recipe('cook_goblin')        # an SP dish: every dish adds the base max HP
     for _ in range(10):
-        _apply_outcome_body(p, {'name': 'Stew'}, plain)
+        _apply_recipe_outcome(p, plain)
     assert p.max_hp == base + p.PER_FLOOR_HP_CAP          # ten meals, one floor's cap
     p.reset_floor_cook_caps()                    # next floor
-    _apply_outcome_body(p, {'name': 'Stew'}, plain)
+    _apply_recipe_outcome(p, plain)
     assert p.max_hp == base + p.PER_FLOOR_HP_CAP + p.COOK_BASE_MAX_HP
 
 

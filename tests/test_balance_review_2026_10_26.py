@@ -217,22 +217,24 @@ def test_a_stat_food_at_its_cap_says_why():
     assert p.WIS == w0 and 'at this depth' in msgs[0]
 
 
-def test_a_recipes_max_hp_bonus_comes_on_top_of_the_base():
+def test_an_hp_dishs_max_hp_bonus_comes_on_top_of_the_base():
+    """Every dish adds the base max HP; an HP dish's own bonus comes on top
+    (data/cooking_rules.json hp.max_hp_bonus), never in place of it."""
+    import kitchen
     p = Player()
     p.deepest_floor_reached = 30
     p.reset_floor_cook_caps()
     m0 = p.max_hp
-    food_system._apply_outcome_body(p, {'name': 'Broth'}, {'sp': 10, 'max_hp_bonus': 1})
+    food_system._apply_recipe_outcome(p, kitchen.recipe('cook_troll'))
     assert p.max_hp == m0 + p.COOK_BASE_MAX_HP + 1   # 3, never less than a plain meal's 2
 
 
 def test_a_meal_that_teaches_nothing_says_why():
+    import kitchen
     p = Player()
     p.deepest_floor_reached = 12
     p.reset_floor_cook_caps()
-    oid = next(k for k, v in food_system._load_outcomes().items()
-               if isinstance(v, dict) and not v.get('stat_grant') and not v.get('permanent_power'))
-    recipe = {'name': 'Roast', '_cut_stat': 'STR', 'outcome_id': oid}
+    recipe = kitchen.recipe('cook_wolf_pack_leader')     # a STR dish
     food_system._apply_recipe_outcome(p, recipe)
     msgs = food_system._apply_recipe_outcome(p, recipe)
     assert any('already learned from a meal on this floor' in m for m in msgs)

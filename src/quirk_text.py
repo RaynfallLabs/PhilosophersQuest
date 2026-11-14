@@ -178,7 +178,7 @@ QUIRK_DESC = {
     'enkidu':        f"Strength +1. {_STR} You have taken meat from a great many beasts and learned what each is made of.",
     'perseus':       "+2 to all saving throws: poison, paralysis, fear and the rest are easier to shrug off. You have practised turning the blow aside.",
     'theseus':       f"Perception +1. {_PER} You leave no corridor unwalked, and the habit has sharpened your eye.",
-    'persephone':    "A ruined dish still gives you half its SP and HP. What goes down into the dark comes back, a little.",
+    'persephone':    "A ruined dish still gives you half its SP, HP and MP. What goes down into the dark comes back, a little.",
     'hermes':        "Haste lasts twice as long on you. You have been in two places often enough that speed clings to you.",
     'sibyl':         f"Wisdom +2. {_WIS} You answered a great deal while still near the surface, and the habit of quickness stayed.",
     'valkyrie':      f"Dexterity +1. {_DEX} You have chosen the slain from a distance, and your hands are surer for it.",

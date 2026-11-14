@@ -130,10 +130,11 @@ that the **game flows** — not tier-scaled loot.
   = full ID. Wrong = Stunned 10 turns. **NO masteries.** No tier
   progression. All three mastery stores (class, family, identify)
   deleted.
-- Harvest v4: one animal Q at `corpse.harvest_tier`. Right = prime cut
-  OR trophy. Wrong = corpse gone.
-- Cook v2: one cooking Q at `outcome.tier`. Right = outcome applied
-  (SP / HP / temp buff / permanent bonus for trophies). Wrong = ruined
+- Harvest v4: one animal Q at `corpse.harvest_tier`. Right = its kin's
+  ingredient OR a boss trophy (`harvest_map.json`). Wrong = corpse gone.
+- Cook: one cooking Q at the dish's tier (its deepest ingredient's band).
+  Right = the dish applied (`kitchen.apply_dish`: SP, a heal, max HP and
+  its main benefit; a permanent bonus for feasts and trophies). Wrong = ruined
   meal.
 - Low-frequency attempts (pray, boss math, mythic scroll) MAY use
   chain quizzes — chain is for peak events, not routine ones.
@@ -217,9 +218,10 @@ other write.
 ## 9. SP soft-boundary + damage failsafe
 
 **Rule:** SP = 0 still starves the player (damage over time). The
-softness comes from **generous supply** — cook tier averages (58 SP at
-T1 → 156 SP at T5) and food restores (20–115 SP) are tuned so that
-normal play never bottoms the tank. Raw prime cuts are a 10–30 SP
+softness comes from **generous supply** — every cooked dish gives SP
+(60 at T1 → 150 at T5 for a single dish, `cooking_rules.json`; an SP
+dish far more, and Sustained) and food restores (20–115 SP) are tuned so
+that normal play never bottoms the tank. Raw monster parts are a 10 SP
 emergency.
 
 - Do NOT remove starvation damage.

@@ -1,0 +1,83 @@
+# Ingredient content, part 4: restless dead, serpents, shapeshifters, vampires and liches, vermin, forage.
+zombie|hp|Zombie Shinbone|A green-tinged shinbone from the walking dead, plague-ridden or fresh. Boiled long and hard, the marrow is surprisingly mending.|Shinbone Marrow Soup|Boil it twice. Then it mends you.
+skeleton|sp|Skeleton Marrow Slice|A slice of marrow bone from the dungeon's endless skeletons, archers, mages and dancers alike. There is always more.|Bone-Marrow Gruel|Plain, filling and in good supply.
+burning_skeleton|fire_resist|Burning Skeleton Ember Marrow|A glowing lump of marrow that kept a skeleton burning. Its fire cannot hurt you now.|Ember Marrow Flambé|It lights itself; fire stops hurting you.
+frost_skeleton|cold_resist|Frost Skeleton Rime-Jelly|The blue rime-jelly that kept a skeleton frozen and walking. It keeps the cold out.|Rime-Jelly Aspic|Icy and wobbly; the cold slides off.
+ghoul|save_guard_CON|Ghoul Gnawed Bone|A green, gnawed bone from the ghouls and ghasts whose claws paralyse. Their own bones fight the stiffening.|Gnawed Bone Broth|Grim but useful; nothing locks your limbs.
+gravehound|PER|Gravehound Marrow Coin|A coin of marrow from the hounds that sniff out graves. Their noses never fail.|Gravehound Marrow Toast|Strong-smelling; so is the world, for a while.
+wight|STR|Wight Barrow-Femur|A femur from the wights of the barrows and cairns, who hoard their grave goods with iron grips.|Barrow-Femur Stock|Cold, dark and strengthening.
+draugr|CON|Draugr Grave-Bone|A green bone from a draugr, the swollen Norse dead who grow huge in their mounds, and Hel's handmaids.|Mound-Bone Stew|Heavy and sullen; you feel hard to move.
+crypt_thing|mp|Crypt Thing Shank|A shank bone from the crypt thing, the polite skeleton that teleports grave-robbers away. The magic is in the bone.|Crypt Shank Broth|Thin and humming; your mana fills.
+grave_guardian|save_guard_WIS|Tomb Guardian Marrow Plug|A plug of marrow from the guardians of tombs, who were bound never to be fooled.|Guardian Marrow Stock|Firm and sure; tricks of the mind slide off.
+huecuva|WIS|Huecuva Marrow Wheel|A wheel of marrow from a huecuva, a false priest raised as a skeleton in his robes. He learned humility too late.|Penitent's Marrow Soup|Humble and wise.
+revenant|STR|Revenant Thighbone|A thighbone from a revenant, a dead man come back for revenge. It never gives up.|Vengeance Bone Broth|Stubborn and strong; you keep going.
+mummy|drain_resist|Mummy Linen-Shank|A linen-wrapped shank from a mummy, preserved for thousands of years. Nothing has been taken from it in all that time.|Embalmer's Shank Stew|Dry and spiced; nothing drains you.
+ossuary_horror|INT|Ossuary Marrow|Marrow from the bone heaps of the ossuary horrors and bone collectors, who build themselves from many dead.|Many-Skulls Marrow Pie|Many minds' worth of marrow.
+mohrg|DEX|Mohrg Ribbone|A green rib from a mohrg, the skeleton of a murderer with a long, darting tongue. Quick and nasty.|Ribbone Crackling|Snappy and quick; your hands quicken.
+bone_colossus|STR|Bone Colossus Femur|A femur the size of a tree trunk, from the bone colossi and giant skeletons built of whole graveyards.|Colossus Femur Roast|It needs a cart to carry; it makes you strong.
+death_knight|STR|Death Knight Shinbone|A purple shinbone from a death knight, a fallen paladin bound to his armour.|Fallen Paladin's Bone Broth|Dark and iron-strong.
+death_lord|mp|Death Lord Scepter-Bone|A purple bone from a death lord, ruler of the undead legions. It hums with necromancy.|Scepter-Bone Consommé|Dark violet broth thick with mana.
+flesh_colossus|hp|Flesh Colossus Ember-Marrow|A glowing lump of marrow from a flesh colossus, a giant sewn from many bodies. It burns with life.|Ember-Marrow Pudding|Hot and heavy; your wounds knit like stitching.
+cobra|DEX|Cobra Tail Steak|A green-skinned tail steak from a cobra, the fastest striker in the reeds.|Cobra Tail Steak with Lime|Quick, lean meat; your strike quickens.
+lizardfolk|sp|Lizardfolk Smoked Haunch|A smoked haunch from a lizardfolk hunting party. Lizardfolk smoke everything they catch, and they catch a lot.|Marsh-Smoked Haunch|Smoky and filling.
+bullywug|sp|Bullywug Frog-Leg Sausage|A coil of frog-leg sausage from the bullywugs, the frog-folk of the marshes.|Frog-Leg Sausage Bake|Tastes like chicken; fills like a feast.
+giant_lizard|hp|Giant Lizard Tail Medallion|A medallion of tail from a giant lizard or komodo. Lizards regrow their tails; the meat mends you.|Lizard Tail Medallions|Pale, mild and mending.
+giant_frog|sp|Giant Frog Leg Roll|A green-skinned roll of giant frog leg, the classic adventurer's supper.|Frog Leg Roll|Tender, mild and filling.
+sea_snake|hp|Sea Snake Fillet Roll|A blue fillet roll from the sea snakes and swamp serpents. Clean sea meat that mends.|Sea Snake Roulade|Light, fresh and mending.
+yuan_ti_pureblood|mp|Yuan-Ti Smoked Haunch|A smoked haunch from a yuan-ti pureblood's pack, cured in temple smoke. The serpent-folk are sorcerers.|Temple-Smoked Haunch|Smoky, with a strange tingle of magic.
+kuo_toa|sp|Kuo-Toa Brined Ham|A blue-brined ham from the fish-men of the underground seas. Smells fishy; fills you up.|Kuo-Toa Brine Ham Stew|Fishy, salty and filling.
+mud_crawler|sp|Mud Crawler Leg|A muddy leg from the mud crawlers of the marsh. Washed well, it is good plain food.|Mud Crawler Leg Pot|Plain and filling.
+troglodyte|sp|Troglodyte Musk Haunch|A dark haunch from the troglodytes, whose stink makes men retch. Smoke the stink out and it is hearty meat.|Smoked-Out Musk Haunch|Filling, and only a little smelly.
+rock_python|sp|Rock Python Tail Joint|A joint from the thick tail of a rock python, which swallows a goat whole. A python eats once a month, and after this so could you.|Python Joint Braise|Dense and filling.
+jormungandr_spawn|INT|Jormungandr Spawn Steak|A green-skinned steak from a spawn of the World Serpent. It carries the old serpent's slow, deep thoughts.|World-Spawn Steak|Deep and briny; your mind uncoils.
+jormungandr_juvenile|CON|Jormungandr Juvenile Steak|A steak from a juvenile World Serpent, not yet big enough to circle the earth. Thick and enormous.|Juvenile Serpent Steak|Huge and dense; you feel unbreakable.
+ra_serpent|hp|Ra's Serpent Sun-Joint|An orange joint from the serpents of Ra, warmed by the sun god's own light. Sunlight heals.|Sun-Joint Roast|Sun-warm meat that mends you.
+sea_serpent_norse|hp|Sea Serpent Loin Roll|A blue loin roll from a Norse sea serpent, the kind that wraps longships in its coils.|Longship Loin Roast|Salty and deep; it mends you.
+sobek_warrior|STR|Sobek Crocodile Sausage|A green coil of crocodile sausage from the warriors of Sobek, the crocodile god of the Nile.|Nile Crocodile Sausage|Strong and toothy; your jaw sets.
+naga_guardian|WIS|Naga Tail Roll|A green-skinned tail roll from the naga, serpent guardians of temples and treasures, and the brood of the naga-king Takshaka.|Temple Naga Roulade|Cool and wise.
+sable_serpent|dark_vision|Sable Serpent Smoked Roll|A black, smoked roll from the sable serpent, which hunts by heat in total darkness.|Sable Smoked Roulade|Smoky and dark; the dark grows clear.
+behir_lesser|shock_resist|Behir Lightning Roll|A blue roll from a behir, the many-legged lightning serpent. It crackles when cut.|Behir Spark Roast|It sparks; lightning stops hurting.
+world_serpent|poison_resist|World Serpent Scale|A green scale from the World Serpent, whose venom will kill Thor himself. Its scale keeps poison out.|World-Scale Soup|Bitter green broth; poison cannot touch you.
+puca|displacement|Puca Shapeshift Mote|A violet spark from the púca, the shape-changer of Irish hills, horse one night, goat the next.|Shapeshift Mote Jelly|You look a step away from where you are.
+wererat|sp|Wererat Streaky Bacon|Streaky bacon from a wererat, the sneak-thief cursed with rat's blood. Greasy and filling.|Wererat Bacon Butty|Greasy and filling.
+weretiger|DEX|Weretiger Leg|An orange leg from a weretiger, the man who becomes a tiger in the jungle at night.|Tiger-Moon Leg Roast|Lean and lithe; you move like a big cat.
+each_uisce|mp|Each Uisce Tide-Mote|A blue spark from the each uisce, the water-horse of the Highlands that drags riders into lochs.|Loch-Mote Broth|Cold and deep; mana rises like a tide.
+werebear|hp|Werebear Leg|A leg from a werebear, the bear-shifter who guards the woods. Bear-meat mends.|Werebear Leg Stew|Thick and warm; it mends you like a long sleep.
+werewolf|PER|Werewolf Moon-Steak|A steak from a werewolf, alpha or elder. Under the moon a wolf smells and hears everything.|Full-Moon Steak|Rare and wild; your senses sharpen.
+wendigo|sp|Wendigo Hunger-Bone|A pale shank from the wendigo, the spirit of endless hunger. Eat it and it takes your hunger instead.|Hunger-Bone Broth|A strange broth that eats hunger itself.
+jiangshi|mp|Jiangshi Hopping Shank|A shank bone from the jiangshi, the stiff hopping dead of China, kept moving by stolen breath. That breath is magic.|Hopping Shank Soup|Springy, and your mana springs back.
+vampire|hp|Vampire Knucklebone|A purple knucklebone from the vampires, from the lowest thrall to the ancient lords. A vampire's body heals from almost anything.|Vampire Bone Black Pudding|Rich and dark; your wounds close like a vampire's.
+bone_witch|mp|Bone Witch Wand-Bone|A purple wand-bone from a bone witch, who carves her spells into her own bones.|Wand-Bone Broth|Thin violet broth that crackles with spells.
+nosferatu|hp|Nosferatu Blood-Marrow|Glowing blood-marrow from a nosferatu, the plague-rat vampire. It restores what was lost.|Blood-Marrow Pudding|Hot, red and restoring.
+vrykolakas|hp|Vrykolakas Warm Bone|A warm bone from a vrykolakas, the Greek vampire that grows fat in its grave. Its marrow restores.|Warm-Bone Broth|It stays warm, and your wounds close.
+strigoi|PER|Strigoi Blood-Bone|An orange bone from a strigoi, the Romanian night-vampire with eyes like coals.|Coal-Eye Bone Soup|Your eyes glow in the dark for a while.
+lich|mp|Lich Frost-Bone|A pale blue bone from the liches, wizards who traded life for power, from the lowliest thrall to the arch-lich. Pure necromantic mana.|Lich Bone Consommé|Cold as the grave, and brimming with mana.
+death_mage|INT|Necromancer's Knucklebone|A purple knucklebone from the necromancers, from the first apprentice to the crypt summoner. They study death very closely.|Necromancer's Bone Broth|Thin and thoughtful; the mind sharpens.
+giant_rat|sp|Giant Rat Rump|A green-skinned rump steak from a giant or dire rat. Everyone's first meal in the dungeon.|Rat Rump Kebab|Gamey and filling. Welcome to the dungeon.
+grid_bug|INT|Grid Bug Spark Sac|A purple sac from a grid bug, the little bug that can only move in straight lines. Oddly logical.|Grid Bug Sac Nuggets|Square-ish and logical.
+bat|PER|Giant Bat Drumette|A purple drumette from a giant bat, which hears its way through the dark.|Echo Bat Drumettes|Crispy; you hear every echo.
+giant_spider|poison_resist|Giant Spider Leg|A purple leg from the giant spiders, cave spiders, web-spinners, ettercaps and spider queens. Spiders shrug off their own venom.|Spider Leg Tempura|Crunchy; venom loses its grip on you.
+phase_spider|displacement|Phase Spider Leg|A purple leg from a phase spider, which blinks in and out of this world as it hunts.|Blink-Leg Tempura|You seem to flicker from where you stand.
+fire_beetle|dark_vision|Fire Beetle Glow-Leg|An orange leg from a fire beetle, with the glow gland still lit. Miners carry them as lamps.|Glow-Leg Skewers|They glow on the plate; the dark lights up.
+scarab_swarm|hp|Scarab Steak|A green-shelled steak of pressed scarab and khepri beetle, the sacred beetles of Egypt that roll the sun.|Sun-Roller Scarab Steak|Crunchy and mending.
+rot_grub_swarm|sp|Rot Grub Drumstick|Fat grubs pressed onto a bone and roasted, the khrafstra and rot grubs that crawl in the dungeon's rubbish. Disgusting. Filling.|Grub Drumstick Roast|Don't look at it. Just eat it. You'll be full.
+giant_beetle|hp|Giant Beetle Shell-Loin|A blue shell-loin from a giant or death beetle. Under the armour is soft, mending meat.|Shell-Loin Roast|Crack the shell, and your wounds close.
+giant_mantis|DEX|Mantis Steak|A green-skinned steak from a giant mantis, the fastest strike in the insect world.|Mantis Strike Steak|Lean and fast; you strike first.
+stirge_swarm|hp|Stirge Drumstick|A drumstick from a stirge, the mosquito-bird that drinks blood. It gives back what it took.|Stirge Drumsticks|Red and rich; your blood comes back.
+giant_centipede|sp|Giant Centipede Steak|A steak from a giant centipede. A hundred legs make a lot of meat.|Hundred-Leg Steak|Chewy, and there is a lot of it.
+carrion_crawler|sp|Carrion Crawler Steak|A green-shelled steak from the carrion crawler, the scavenger of the deep. It eats well, so it is meaty.|Crawler Steak|Rubbery and filling.
+giant_scorpion|STR|Scorpion Claw-Leg|A red claw-leg from a giant scorpion, and from the scorpion-men who guard the sunrise.|Claw-Leg Boil|Crack it open; strength pours out.
+piercer|PER|Piercer Drip Gland|An orange drip gland from a piercer, the stalactite that drops on people. It hangs still and watches.|Drip Gland Fritters|You notice everything above you.
+grick|INT|Grick Tentacle Roll|A green-skinned tentacle roll from a grick, the worm with a beak. Its rubbery brain is surprisingly clever.|Grick Tentacle Roulade|Rubbery and clever.
+giant_wasp|hasted|Giant Wasp Leg|An orange leg from a giant wasp, the fastest thing in the dungeon air.|Wasp Leg Skewers|Spicy; your feet buzz with speed.
+arachne|DEX|Arachne's Weaver Steak|A steak from Arachne, the weaver who challenged Athena and became the first spider. Her fingers were the quickest in Greece.|Weaver's Steak|Neat and nimble; your fingers fly.
+frost_crawler|sp|Frost Crawler Loin|A blue loin from a frost crawler, the many-legged hunter of icy tunnels. Cold-weather meat, rich with fat.|Frost Crawler Roast|Fatty and filling for a long cold walk.
+anansi|WIS|Anansi's Story-Bacon|Streaky bacon from Anansi, the spider who owns all the world's stories. Every rasher tells one.|Story-Bacon Rashers|Each bite tells a tale; you grow wiser.
+forage:cave_mushroom|sp|Cave Mushroom|A fat pale mushroom from damp cave floors. Good in nearly everything.|Fried Cave Mushrooms|Buttery and earthy.
+forage:swamp_moss|hp|Swamp Moss|A clump of green swamp moss, used for centuries to bind wounds. Cooked, it mends from the inside.|Moss Poultice Soup|Green and soothing.
+forage:river_salt|save_guard_WIS|River Salt|Salt from underground rivers. A ring of salt keeps evil out, and so does a pinch on your food.|Salt-Crusted Crackers|Salty; tricks of the mind slide off.
+forage:crystal_shard|mp|Crystal Shard|A clear shard from the crystal caves, humming faintly. Wizards grind it into their tea.|Crystal Shard Tea|Clear and humming; your mana stirs.
+forage:holy_water|blessed|Holy Water|Water from an altar spring, blessed long ago. A splash in the pot makes any dish holy.|Blessed Water Broth|Clear and calm; you feel watched over.
+forage:altar_incense|WIS|Altar Incense|Sweet incense scraped from an old altar. Burned under a pot, it gives food a calming smoke.|Incense-Smoked Tea|Sweet smoke; your thoughts settle.
+forage:deep_iron|STR|Deep-Iron Shaving|A shaving of the dark iron that grows in the deepest rock. Old smiths swore a pinch in the stew made a man strong.|Iron Pot Stew|Tastes of the forge; your arms harden.
+forage:abyssal_kelp|hp|Abyssal Kelp|Dark kelp from the deep water, thick with minerals. Sailors eat it to heal on long voyages.|Deep Kelp Broth|Salty, green and restoring.

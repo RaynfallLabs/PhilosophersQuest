@@ -24,7 +24,8 @@ discipline, and the `_meta` sub-object introduced in v2.18.
 **Loaders:**
 - `src/items.py` — item classes + loaders
 - `src/monster.py` + `src/monster_classes.py` — monster loader (`family` field: see `data/monster_families.json` and `docs/systems/monster_families.md`)
-- `src/food_system.py` — ingredients, recipes, outcomes, prime cuts
+- `src/kitchen.py` — the kitchen: ingredients, the harvest map, the recipe book, the cooking rules
+- `src/food_system.py` — harvest, the cook, eating
 - `src/container_system.py` — chests + trap resolution
 - `src/paths.py::data_path` — read-only path resolution
 
@@ -50,10 +51,10 @@ machine id, with the value being the schema:
 
 The exceptions:
 
-- `prime_cuts.json` — top-level is `{"meta": {...}, "primes": {...}}`;
-  `primes` is the usual id-keyed object
-- `cook_outcomes.json` — top-level is `{"_meta": {...}, "_comments":
-  {...}, "outcomes": {...}}`
+- `harvest_map.json` — top-level is `{"_doc": "...", "monsters": {...},
+  "aliases": {...}}`
+- `cooking_rules.json` — top-level is a dict of rule sections, each with a
+  `_doc` line (§11.4)
 - `chest_traps.json` — top-level is `{"_meta": {...}, "traps_by_tier":
   {"1":[...], "2":[...], ..., "5":[...]}}`
 - `hints.json` — top-level is `{"1":[...], ..., "5":[...]}`
@@ -81,17 +82,16 @@ JSON has no comment syntax. The project convention:
 - **`_meta` sub-object** (v2.18): put non-mechanical metadata on an
   item or on the file itself. See §6.
 - **`_comment` / `_comments` top-level keys**: file-level prose. The
-  loader for `cook_outcomes.json` keeps `_comments` as a sibling of
-  `outcomes` and never iterates it.
+  loader for `chest_traps.json` keeps them as siblings of the data and
+  never iterates them.
 - **`_note` field on an item** (rare, 1 observed): per-item inline
   note.
-- **Avoid `_comment_<id>` as outcome keys** — that was the
-  v2.6.4 bug where 6 stray `"_comment_t1"` entries polluted
-  `cook_outcomes.outcomes` and would AttributeError if dispatched.
-  The `_comments` collection moved to a sibling.
+- **Avoid `_comment_<id>` as data keys** — the v2.6.4 bug was 6 stray
+  `"_comment_t1"` entries among the (now retired) cook outcomes, which
+  would AttributeError if dispatched.
 
 Fields prefixed with `_` are **ignored by the stat loop** in schemas
-(e.g. SECRET_BUILDS, prime cuts). Treat `_`-prefix as "this is
+(e.g. SECRET_BUILDS). Treat `_`-prefix as "this is
 metadata, not a mechanical field".
 
 ### 1.4 Numbers
@@ -684,7 +684,6 @@ collects them under a per-item `_meta` sub-object.
 | `data/items/artifact.json` | `philosophers_stone` | `{"plot_locked": true}` |
 | `data/items/shield.json` | `bronze_aegis` | `{"spawn_method": "quest_spawn_aegis_pre"}` |
 | `data/chest_traps.json` (top-level) | file | `{"version": "v2.6.6", "description": "..."}` |
-| `data/items/cook_outcomes.json` (top-level) | file | `{"version": "v2.6.4-draft", "description": "...", "buff_semantics": "...", "tier_bands": "..."}` |
 
 Count: 21 `_meta` occurrences across data files (as of v2.18;
 includes top-level and per-item).
@@ -696,9 +695,7 @@ includes top-level and per-item).
 - Per-item `_meta` goes inside the item's object.
 - File-level `_meta` goes as a top-level sibling (same level as
   `outcomes` / `traps_by_tier`).
-- Readers that iterate the file must skip `_meta` keys. The
-  `cook_outcomes.json` loader skips `_meta` and `_comments`
-  explicitly.
+- Readers that iterate the file must skip `_meta` keys.
 
 ### 9.4 Migrating existing fields
 
@@ -765,8 +762,8 @@ The current migration is **gradual** — SYSTEMS_AUDIT §10 P4 lists
 
 - `harvest_threshold` on all 527 — threaded to `Corpse` but harvest
   v4 uses `threshold=1` unconditionally.
-- `ingredient_id` on 525 — overridden by `prime_cuts.json` keyed by
-  the monster's id (see §11.3).
+- `ingredient_id` on 525 — overridden by `harvest_map.json` keyed by
+  the monster's id (see §11.2).
 - `attack_effects` on 3 monsters (baba_yaga, ravanas_arm, anansi) —
   no reader.
 - `mortal_weapon_floor` (celestial_guardian) — no reader.
@@ -796,153 +793,105 @@ file in a UTF-8-aware editor; verify with
 
 ---
 
-## 11. `data/items/ingredient.json` + `prime_cuts.json` + `recipes.json` + `cook_outcomes.json`
+## 11. `data/items/ingredient.json` + `harvest_map.json` + `recipes.json` + `data/cooking_rules.json`
 
-Four files that compose the food system; interrelated.
+The kitchen (rebuilt 2026-11-14; `src/kitchen.py`, `docs/systems/food_system.md`).
+`ingredient.json`, `harvest_map.json` and `recipes.json` are BUILT by
+`tools/content/kitchen/build_kitchen.py` from hand-written content
+(`tools/content/kitchen/ingredients_*.txt`, `dishes_*.txt`) and a frozen
+structure (`structure.json`): edit the content and rebuild, never the JSON
+by hand. `cooking_rules.json` is hand-written. `prime_cuts.json` and
+`cook_outcomes.json` are gone.
 
 ### 11.1 `ingredient.json` — per-ingredient schema
 
 ```json
-"giant_rat_prime": {
-  "name": "Giant Rat Prime Cut",
+"goblin_prime": {
+  "name": "Goblin Gristle",
   "symbol": "~",
-  "color":  [0, 180, 50],
+  "color": [80, 160, 30],
   "weight": 0.25,
-  "min_level": 1,
-  "source_monster": "giant_rat",
-  "family":        "beast",
-  "tier_role":     "prime",
-  "temp_power":    "night_vision",
-  "temp_duration": 150,
-  "temp_desc": "predator senses; sight radius +4 in dark",
-  "stat_grant": "STR",
-  "description": "Prime cut from giant rat.",
-  "identified":  true,
+  "min_level": 3,
+  "tier_role": "prime",
+  "nature": "sp",
+  "part": "cut",
+  "description": "A cured leg of goblin, which is mostly gristle and grudges. ...",
+  "identified": true,
+  "source_monster": "goblin",
+  "family": "goblinkin",
   "edible_safe": true,
   "raw_sp": 10
 }
 ```
 
-- `tier_role` — `"prime"` (standard) or `"trophy"` (boss-tier).
-- `temp_power` — status-effect id when eaten raw (not through a
-  recipe).
-- `raw_sp` — SP restored eating raw (10-30 range).
-- `edible_safe` — if false, raw-eat triggers a penalty (currently
-  always true in the shipped data).
+- `tier_role` — `"prime"` (a monster part), `"trophy"` (a boss trophy) or
+  `"dungeon"` (foraged: only these spawn as floor or chest loot).
+- `nature` — what the part is rich in: `hp`, `sp`, `mp`, `stat` (with
+  `stat_grant`) or `special` (with `temp_power`, a status id). Its single
+  dish gives that.
+- `part` — the kind of part its picture shows (`cut`, `bone`, `ichor`,
+  `sac`, `core`, `mote`, `jar`, `scale`, `wood`, `trophy`, `forage`); the
+  name always says it.
+- `min_level` — the floor the ingredient belongs to (the median of its kin's
+  peak floors); a dish's tier is the band of its deepest ingredient.
+- `secret` — a part of a hidden creature (the cow level): dishes that need
+  it never show as "building toward" until it is held.
+- `trophy_permanent_power` — a trophy's lasting power (the
+  `food_system._apply_permanent_power` key).
+- `raw_sp` / `edible_safe` — eating raw (`food_system.eat_raw`).
+- The id is one kin member's `<monster>_prime` (its picture is that id's
+  png); `source_monster` is that member.
 
-### 11.2 `prime_cuts.json` — monster → ingredient key
-
-```json
-{
-  "meta": { "design_version": "2026-05-31r2", "total_primes": 527, ... },
-  "primes": {
-    "giant_rat": {
-      "monster_id":     "giant_rat",
-      "monster_name":   "giant rat",
-      "family":         "beast",
-      "is_trophy":      false,
-      "ingredient_id":  "giant_rat_prime",
-      "ingredient_name": "Giant Rat Prime Cut"
-    },
-    "asterion_minotaur": {
-      "monster_id":   "asterion_minotaur",
-      ...
-      "is_trophy":    true,
-      "ingredient_id": "asterion_minotaur_trophy",
-      ...
-    }
-  }
-}
-```
-
-**The canonical mapping.** The old `monster.ingredient_id` field is
-dead. Harvest v4 and the bestiary dossier both route through
-`prime_cuts.json` keyed by the monster's id (kind).
-
-### 11.3 `recipes.json`
-
-```json
-"u_mushroom_tea": {
-  "name": "Mushroom Tea",
-  "ingredients": ["cave_mushroom"],
-  "outcome_id":  "t1_snack_perception",
-  "flavor": "..."
-}
-```
-
-- `ingredients` — list of ingredient ids. Repeated ids are allowed
-  (`["x", "x", "x"]` means "3 of x"). Cook menu collapses to "x3".
-- `outcome_id` — key into `cook_outcomes.outcomes`.
-- `name` — display dish name.
-- `flavor` — one-line prose shown on success.
-- `recipe_class: "trophy"` — flags trophy recipes (gold-colored
-  entry).
-- `stat_grant` / `stat_grant_default` — see §11.4.
-
-614 recipes shipped; all have valid `outcome_id`. Zero orphans
-(SYSTEMS_AUDIT §5 VERIFIED).
-
-### 11.4 `cook_outcomes.json`
+### 11.2 `harvest_map.json` — what a corpse yields
 
 ```json
 {
-  "_meta": {
-    "version": "v2.6.4-draft",
-    "description": "...",
-    "buff_semantics": "temp_power = status_effects.BUFFS name; ...",
-    "tier_bands":    "T1: SP 30-50, ...; T2: SP 50-75, ...; ..."
-  },
-  "_comments": { ... },
-  "outcomes": {
-    "t1_snack_perception": {
-      "tier": 1,
-      "sp":   55,
-      "hp":   2,
-      "temp_power": null,
-      "desc": "A quick bite; hunger eased."
-    },
-    "trophy_asterion": {
-      "tier": 5,
-      "sp":   150,
-      "hp":   22,
-      "max_hp_bonus":  3,
-      "stat_grant":    1,
-      "stat_grant_default": "STR",
-      "temp_power":    "save_guard_WIS",
-      "temp_amount":   3,
-      "temp_duration": 200,
-      "permanent_power": "plus_2_str_confuse_immune",
-      "permanent_desc":  "The Minotaur's cunning is yours; ...",
-      "desc": "Crown of the Labyrinth..."
-    },
-    ...
-  }
+  "_doc": "...",
+  "monsters": {"goblin": "goblin_prime", "goblin_shaman": "goblin_prime", ...},
+  "aliases":  {"goblin_shaman_prime": "goblin_prime", ...}
 }
 ```
 
-- `tier` — outcome tier (= quiz tier for cooking).
-- `sp` / `hp` — SP / HP restored.
-- `max_hp_bonus` — permanent max-HP bump.
-- `stat_grant` — permanent +N to `stat_grant_default`.
-- `temp_power` — status-effect id from `status_effects.BUFFS`.
-- `temp_duration` / `temp_amount` — effect params.
-- `permanent_power` — key into `food_system._apply_permanent_power`
-  dispatch.
-- `desc` — one-line flavor.
+- `monsters` — every monster id to the ingredient its corpse yields. Close
+  kin (rank or role) share one; named creatures and bosses keep their own.
+- `aliases` — every retired ingredient id to the kept one
+  (`kitchen.resolve`): harvest, recipes and old saves read through it.
 
-**120 outcomes shipped.**
+### 11.3 `recipes.json` — the recipe book
 
-**Dead comment keys (SYSTEMS_AUDIT §5 P3):** before v2.18, the
-`outcomes` dict carried 6 `_comment_*` entries that a stray dispatch
-could AttributeError on. The `_comments` collection moved to a
-sibling under the top-level `_meta`. If you add a prose note, put it
-in the top-level `_comments`, not inside `outcomes`.
+```json
+"dish_094": {
+  "name": "Goblin and Whirlpool Hotpot",
+  "ingredients": ["goblin_prime", "charybdis_spawn_prime"],
+  "benefit": "sp",
+  "flavor": "Gristle and shank, stewed until both give in.",
+  "art": "recipe_prime_frost_crawler_recipe"
+}
+```
 
-**Non-canonical `temp_power` names:** `trophy_medusa` ships
-`"petrify_resist"` which isn't in `status_effects.BUFFS` /
-`DEBUFFS` — it works via the legacy `_TEMP_POWER_REMAP` alias
-(`petrify_resist → save_guard_CON`). Prefer canonical status-effect
-ids in new outcomes.
+- `ingredients` — ingredient ids and ration ids (`food.json`); a listing
+  repeated means that many.
+- `benefit` — the main benefit and menu tab: `hp`, `sp`, `mp`, a stat
+  (`STR`...) or a timed power (a status id in
+  `cooking_rules.json special.powers`).
+- `legendary` — a five-ingredient feast with a permanent bonus.
+- `trophy` + `permanent` — a boss trophy's own dish and its power.
+- `cross_depth` — joins an early part (floors 1-20) with a deep one (40+).
+- `art` — the dish's picture (a `recipe_*.png`).
+- No numbers: what a dish gives comes from `cooking_rules.json`.
+
+Ids: `cook_<kin>` for a single dish, `trophy_<boss>_recipe`, `dish_###`,
+`feast_##`.
+
+### 11.4 `data/cooking_rules.json` — every number a dish gives
+
+One file, read by `kitchen.dish_outcome`: tier bands (`band_floors`), what
+each ingredient adds to a dish's worth (`worth`), the size bonus
+(`size_mult`: 1.2x at two different ingredients to 1.6x at five), what
+every dish gives (`every_dish`: SP, a small heal, base max HP), each tab's
+numbers by tier (`hp`, `sp`, `mp`, `stat`, `special` with each power's
+`max_turns`), the legendary multiplier and permanents (`legendary`), and
+Persephone's salvage share (`salvage`). Lists by tier hold tiers 1 to 5.
 
 ### 11.5 `food.json` — pre-cooked foods
 
@@ -1219,11 +1168,11 @@ position in `quiz_deck_state` on save. See
    `known_item_ids` reference.
 10. **Material refs are snake_case.** `volcanic_iron`, not
     `"volcanic iron"`.
-11. **`outcome_id` must resolve.** Every recipe's `outcome_id` must
-    be a key in `cook_outcomes.outcomes`. 614/614 verified.
+11. **Recipe ingredients must resolve.** Every recipe ingredient is an
+    ingredient or a ration (tests/test_kitchen_rebuild.py).
 12. **`spawn_method` / `plot_locked` go in `_meta`.** New entries use
     the sub-object; the gradual sweep moves old entries.
-13. **No `_comment_*` keys inside `outcomes` / `primes` /
+13. **No `_comment_*` keys inside `monsters` / `aliases` /
     `traps_by_tier` / `effects`.** Prose siblings only.
 
 ---

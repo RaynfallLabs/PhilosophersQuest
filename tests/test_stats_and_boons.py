@@ -79,31 +79,24 @@ def test_the_cooking_cap_for_one_stat_grows_with_depth():
 
 # -------------------------------------------------- you are what you eat
 
-def test_every_prime_cut_names_the_stat_it_raises():
+def test_every_stat_has_parts_that_teach_it():
+    """The kitchen rebuild (2026-11-14): a part's nature says what it is rich
+    in; the Stat parts name their stat, and every stat can be cooked for."""
     with open(os.path.join(ROOT, 'data', 'items', 'ingredient.json'), encoding='utf-8') as f:
         raw = json.load(f)
-    primes = [k for k, v in raw.items()
-              if isinstance(v, dict) and v.get('tier_role') == 'prime']
-    assert len(primes) > 100
     stats = {}
-    for k in primes:
-        s = food_system.cut_stat(k)
-        assert s in ('STR', 'CON', 'DEX', 'INT', 'WIS', 'PER'), k
-        stats[s] = stats.get(s, 0) + 1
-    assert len(stats) == 6, stats                     # every stat can be cooked for
-    assert food_system.cut_stat('no_such_ingredient') is None
+    for k, v in raw.items():
+        if v.get('nature') == 'stat':
+            assert v.get('stat_grant') in ('STR', 'CON', 'DEX', 'INT', 'WIS', 'PER'), k
+            stats[v['stat_grant']] = stats.get(v['stat_grant'], 0) + 1
+    assert len(stats) == 6 and min(stats.values()) >= 10, stats
 
 
-def test_two_floors_of_a_cut_make_one_point():
-    food_system.cut_stat('')     # loads the cache: under -n auto this test can run first
-    cut = next(k for k in food_system._cut_stat_cache if food_system.cut_stat(k) == 'DEX')
+def test_two_floors_of_a_stat_dish_make_one_point():
+    import kitchen
     p = Player()
     p.deepest_floor_reached = 12
-    oid = next(k for k, v in food_system._load_outcomes().items()
-               if isinstance(v, dict) and not v.get('stat_grant')
-               and not v.get('permanent_power'))
-    recipe = {'name': 'Test Roast', '_cut_stat': food_system.cut_stat(cut),
-              'outcome_id': oid}
+    recipe = kitchen.recipe('cook_cobra')         # Cobra Tail Steak with Lime: DEX
     before = p.DEX
     msgs = food_system._apply_recipe_outcome(p, recipe, ruined=False)
     assert p.DEX == before and any('1 of 2 meals' in m for m in msgs)
@@ -292,16 +285,11 @@ def test_the_gift_menu_draws_headless():
 
 
 
-def test_the_recipes_menu_path_feeds_the_cuts_stat():
-    """The stamp was set only in cook_ingredient, which nothing calls: in
-    play no meal ever fed a stat, and the unit test built its own recipe."""
-    import items
-    cut = next(k for k in (food_system.cut_stat('x') or 1, ) and food_system._cut_stat_cache
-               if food_system.cut_stat(k) == 'STR')
-    assert food_system.recipe_cut_stat({'ingredients': ['salt_that_is_not_a_cut', cut]}) == 'STR'
-    assert food_system.recipe_cut_stat({'ingredients': []}) is None
-    oid = next(k for k, v in food_system._load_outcomes().items()
-               if isinstance(v, dict) and not v.get('stat_grant') and not v.get('permanent_power'))
+def test_the_recipes_menu_path_teaches_the_dishs_stat():
+    """The Recipes menu cooks through cook_compound_recipe: a Stat dish
+    teaches its stat there (the stamp was once set only in a path nothing
+    called, so in play no meal fed a stat), and the menu line names it."""
+    import kitchen
 
     class Quiz:                                   # answers the one cooking question right
         def start_quiz(self, **kw):
@@ -309,11 +297,9 @@ def test_the_recipes_menu_path_feeds_the_cuts_stat():
 
     p = Player()
     p.deepest_floor_reached = 10
+    dish = kitchen.recipe('cook_wolf_pack_leader')   # Pack Leader Steak: STR
     got = []
-    food_system.cook_compound_recipe(
-        p, {'name': 'Test Roast', 'ingredients': [cut], 'outcome_id': oid, 'tier': 1},
-        p.inventory, Quiz(), got.extend)
+    food_system.cook_compound_recipe(p, dish, p.inventory, Quiz(), got.extend)
     assert p.cook_stat_meals.get('STR') == 1
     assert any('Strength: 1 of 2 meals' in m for m in got), got
-    src = open(os.path.join(ROOT, 'src', 'game_render.py'), encoding='utf-8').read()
-    assert 'bits.append(f"Feeds {fed}")' in src
+    assert kitchen.dish_effects(Player(), dish)[0] == 'Teaches STR (half a point)'

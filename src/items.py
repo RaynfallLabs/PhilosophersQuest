@@ -1348,6 +1348,10 @@ class Container(Item):
 class Ingredient(Item):
     def __init__(self, defn: dict):
         super().__init__(defn)
+        # The ingredient's description (data/items/ingredient.json) is its
+        # lore line in the Kit: what it is and what it is good for.
+        if not self.lore:
+            self.lore = defn.get('description', '')
         self.source_monster = defn.get('source_monster', '')
         # recipes: str(quality 0-5) -> {name, sp, bonus_type, bonus_amount}
         self.recipes: dict  = defn.get('recipes', {})
