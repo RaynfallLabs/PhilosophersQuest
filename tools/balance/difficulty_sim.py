@@ -56,7 +56,7 @@ RE-SYNCED 2026-11-12 (from v3.3.4 on it reported 0% survival for every profile):
     wielded a two-handed weapon and dropped the shield almost always and so
     ran 4-5 AC under the line monsters are aimed at); a meal is cooked
     between fights when hurt, not at the floor's end when its healing was
-    wasted (Run._cook_one); every heal is booked by source (fs['heal_src'],
+    wasted (Run.recover, Run._cook_for); every heal is booked by source (fs['heal_src'],
     Run._healed); the wanderer interval is floor_curve.wander_interval; the
     Last Judgment's sword is the knob sword=1; the floor-100 altars burn
     Abaddon's ward only.
@@ -120,6 +120,7 @@ from monster import Monster                      # noqa: E402
 from player import Player                        # noqa: E402
 from quiz_engine import QuizResult               # noqa: E402
 import food_system as food_system_mod            # noqa: E402
+import kitchen as kitchen_mod                    # noqa: E402
 import boons as boons_mod                        # noqa: E402
 import monster as monster_mod                    # noqa: E402
 import pet_system as pet_system_mod              # noqa: E402
@@ -393,17 +394,18 @@ FLEE_OK_SLOW = 0.85
 FLEE_OK_FAST = 0.35
 MAX_RETREATS_FROM_MANDATORY = 4   # bosses / seal demons: retreat, heal, return
 
-# ---- Cooking (food_system + cook_outcomes.json, summarised) --------------------
-# Per outcome tier: (P(outcome raises max HP), mean max-HP amount,
-#                    mean HP healed, P(+1 stat)).
-COOK_TABLE = {
-    1: (1 / 15, 1.0, 2.9, 0.0),
-    2: (1 / 43, 1.0, 5.8, 0.0),
-    3: (25 / 64, 1.5, 9.8, 8 / 64),
-    4: (31 / 65, 3.8, 13.9, 30 / 65),
-    5: (33 / 49, 5.0, 21.8, 40 / 49),
-}
+# ---- Cooking (the kitchen rebuild, 2026-11-14: src/kitchen.py, the real book) ---
+# A harvest takes one corpse and one animal question and yields the creature's
+# kin part (kitchen.ingredient_for_monster); a cook takes one cooking question
+# at the dish's tier and applies the dish with the game's own code
+# (kitchen.apply_dish). Which dish: the need first (HP, then a caster's MP),
+# then the floor's stat lesson, then the richest multi-dish ready; a saver
+# (the mastery profiles) keeps parts that are half-way to a multi-dish or a
+# feast and eats the rest as single dishes when hungry or over PANTRY_MAX.
 COOK_STATS = ('STR', 'CON', 'DEX', 'INT', 'WIS', 'PER')
+PANTRY_MAX = 16                # parts a saver carries before eating spares
+HUNT_HARVESTS = 4              # a saver's extra harvests a floor, only of parts
+                               # a reachable multi-dish or feast still needs
 
 # ---- Fountains and thrones (game_divine.py:380-452, 790-851) ---------------------
 FEATURE_BREAK_CHANCE = 0.33    # a fountain dries / a throne crumbles per use
@@ -522,7 +524,7 @@ PROFILES['stacked'] = dict(PROFILES['secrets'], pet=True, magic=True)
 # teaching card on every untimed question, does the quests, studies the
 # monsters and uses every system. `knobs` here are this profile's defaults;
 # a knob given on the command line wins.
-PROFILES['mastery'] = dict(PROFILES['stacked'], knobs=dict(
+PROFILES['mastery'] = dict(PROFILES['stacked'], saver=True, knobs=dict(
     families=1, study_rate=0.95, sword=1, tactics=1, practice=1, untimed=0.97,
     traders=1, altars=1))
 # The same, as a Dexterity build: the meals, gifts and altars to DEX and CON,
@@ -532,7 +534,6 @@ PROFILES['mastery_dex'] = dict(PROFILES['mastery'], stat_focus=('DEX', 'CON'))
 # CON, light or mithril body armour (the metal tax), attack spells by element.
 PROFILES['mastery_mage'] = dict(PROFILES['mastery'], stat_focus=('INT', 'CON'), caster=True)
 
-CUT_HAS_STAT = 0.85            # share of proper meals cooked from a prime cut
 GATE_BOSSES = ('asterion_minotaur', 'medusa_gorgon', 'fafnir_dragon', 'fenrir_wolf')
 
 HEAL_SPELL_IDS = ('cure_light_spell', 'cure_wounds_spell', 'heal_spell',
@@ -930,6 +931,8 @@ class Run:
         self.p.x, self.p.y = 5, 5
         self.potions = []          # healing Potion items carried
         self.food = []             # Food items carried
+        self.pantry = []           # kitchen parts carried (Ingredient items)
+        self.corpses = []          # this floor's corpses not yet harvested (kinds)
         self.spells = {}           # spell_id -> (mp_cost, power, tier)
         self.turn = 0
         self.regen_carry = 0.0
@@ -1421,7 +1424,8 @@ class Run:
         for the next stall (_sell_outgrown)."""
         p = self.p
         new = (list(self.arsenal) + list(self.scraps)
-               + list(self.potions) + list(self.food) + list(self.flasks))
+               + list(self.potions) + list(self.food) + list(self.flasks)
+               + list(self.pantry))
         if self.knobs.get('traders') and int(self.kv('tradein') or 0) > 0:
             keep = {id(x) for x in new} | {id(x) for x in p.worn_items()}
             pile = getattr(self, '_to_sell', None)
@@ -1995,12 +1999,13 @@ class Run:
         target = prof['top_up_to'] * p.max_hp
         if p.hp >= target or p.hp <= 0:
             return []
-        # 0. cook a meal from a corpse to hand (a player cooks when hurt,
-        #    not at the end of the floor when the meal's healing is wasted)
-        while (prof['eats_for_hp'] and p.hp < target and p.hp > 0
-               and getattr(self, 'cooks_left', 0) > 0
-               and self.floor_kills - self.corpses_used > 0):
-            self._cook_one()
+        # 0. cook a meal (a player cooks when hurt, not at the end of the
+        #    floor when the meal's healing is wasted): harvest what is to
+        #    hand, then the best HP dish the pantry makes
+        if prof['eats_for_hp']:
+            self._harvest_all()
+            while p.hp < target and p.hp > 0 and self._cook_for('hp'):
+                pass
         # 1. food that heals
         if prof['eats_for_hp']:
             for f in sorted(self.food, key=lambda x: -x.hp_restore):
@@ -2072,54 +2077,187 @@ class Run:
 
     # ------------------------------------------------------------------- cooking
     def cook(self, kills: int):
-        """Harvest + cook the floor's attempts not used between fights."""
+        """The floor's end: harvest what is left of the floor's harvests, then
+        cook as the profile would (Run._cook_floor_end)."""
         if not hasattr(self, 'cooks_left'):
             self.cooks_left, self.corpses_used = self.prof['cooks_per_floor'], 0
+        if not hasattr(self, 'hunt_left'):
+            self.hunt_left = HUNT_HARVESTS
         # (a floor with no fights: `kills` corpses are assumed to hand)
-        while self.cooks_left > 0 and max(kills, self.floor_kills) - self.corpses_used > 0:
-            self._cook_one()
+        while len(self.corpses) < kills - self.corpses_used and len(self.corpses) < 8:
+            self.corpses.append(None)              # an ordinary corpse of the floor
+        self._harvest_all()
+        self._cook_floor_end()
 
-    def _cook_one(self):
-        """One harvest + cook attempt: one corpse, one animal question, one
-        cooking question; a right pair is eaten at once."""
+    def _harvest_all(self):
+        """Harvest the corpses to hand while the floor's harvests last: one
+        animal question each at the floor's band; a right answer gives the
+        creature's kin part (the real harvest map)."""
+        # A profile that does not cook (cooks_per_floor 0: m_no_cooking) never
+        # harvests either: the hunt is part of cooking.
+        saver = bool(self.prof.get('saver')) and float(self.prof.get('cooks_per_floor', 0) or 0) > 0
+        while self.corpses and (self.cooks_left > 0 or (saver and self.hunt_left > 0)):
+            kind = self.corpses.pop(0)
+            if self.cooks_left <= 0:
+                # past the floor's ordinary harvests: a saver still takes the
+                # part a dish he is building needs (the menu's building rows)
+                iid0 = kitchen_mod.ingredient_for_monster(kind) if kind else None
+                held = kitchen_mod.held_counts(self._kitchen_inv())
+                key0 = kitchen_mod.resolve(iid0) if iid0 else ''
+                held[key0] = held.get(key0, 0) + 1
+                if not iid0 or self._promise(key0, held) <= 0.5:
+                    continue
+                self.hunt_left -= 1
+            else:
+                self.cooks_left -= 1
+            self.corpses_used += 1
+            if not self.quiz.one_question(band_tier(self.floor)):
+                continue
+            iid = kitchen_mod.ingredient_for_monster(kind) if kind else None
+            if not iid:
+                iid = self._floor_part()
+            item = food_system_mod.load_ingredient_for(iid) if iid else None
+            if item is not None:
+                self.pantry.append(item)
+                self.fs['harvests'] = self.fs.get('harvests', 0) + 1
+
+    def _floor_part(self):
+        """A part of an ordinary creature of this floor (a kill the
+        simulator did not name): a random kin part from the floor's band."""
+        band = kitchen_mod.band_of(self.floor)
+        key = ('floor_parts', band)
+        pool = self._drop_pool.get(key)
+        if pool is None:
+            pool = [i for i in kitchen_mod.ingredients()
+                    if kitchen_mod.is_harvested(i) and not kitchen_mod.is_secret_part(i)
+                    and kitchen_mod.band_of(kitchen_mod.part_floor(i)) == band]
+            self._drop_pool[key] = pool
+        return random.choice(pool) if pool else None
+
+    def _kitchen_inv(self) -> list:
+        return list(self.pantry) + list(self.food)
+
+    def _consume(self, rec) -> None:
+        """Take the dish's parts out of the pantry and the food bag."""
+        for part, n in kitchen_mod.needs(rec).items():
+            for _ in range(n):
+                hit = next((it for it in self.pantry
+                            if kitchen_mod.resolve(getattr(it, 'id', '')) == part), None)
+                if hit is not None:
+                    self.pantry.remove(hit)
+                    continue
+                hit = next((it for it in self.food if getattr(it, 'id', '') == part), None)
+                if hit is not None:
+                    self.food.remove(hit)
+
+    def _cook_dish(self, rec) -> bool:
+        """One cooking question at the dish's tier; the parts go either way
+        (resource loss is the penalty); right = kitchen.apply_dish."""
         p = self.p
-        self.cooks_left -= 1
-        self.corpses_used += 1
-        tier = band_tier(self.floor)
-        # one animal question (harvest) then one cooking question
-        if not (self.quiz.one_question(tier) and self.quiz.one_question(tier)):
-            return
-        p_hp, hp_amt, heal_amt, p_stat = COOK_TABLE[tier]
-        p.restore_sp(60 + 20 * tier)
-        heal_amt = mend(heal_amt, p.max_hp, food_system_mod.meal_mend_share(heal_amt))   # food_system
-        got = p.heal(heal_amt)
+        self._consume(rec)
+        self.fs['cooks'] = self.fs.get('cooks', 0) + 1
+        if not self.quiz.one_question(kitchen_mod.dish_tier(rec)):
+            return True
+        hp0 = p.hp
+        kitchen_mod.apply_dish(p, rec)
+        got = max(0, p.hp - hp0)
         self._healed('meal', got)
-        self.fs['heal_supply'] += heal_amt * self.kv('heal')
-        # food_system._apply_outcome_body: every proper meal builds the
-        # cook up by COOK_BASE_MAX_HP, and a recipe's own max-HP bonus
-        # comes on top (2026-10-26; it used to come instead).
-        base = int(getattr(p, 'COOK_BASE_MAX_HP', 0))
-        if random.random() < p_hp:
-            amt = max(1, int(round(random.expovariate(1.0 / hp_amt)))) \
-                if hp_amt > 1 else 1
-            p.try_apply_cook_hp_gain(base + amt)     # real caps + softcap
-        else:
-            p.try_apply_cook_hp_gain(base)
-        # food_system: a proper meal raises the stat stamped on the cut
-        # (one a floor, under the per-stat cap); richer recipes still
-        # carry a stat of their own.
-        if random.random() < max(p_stat, CUT_HAS_STAT):
-            p.feed_cut_stat(self._cook_stat())
+        self.fs['heal_supply'] += got
+        tab = kitchen_mod.dish_tab(rec)
+        self.fs[f'dish_{tab}'] = self.fs.get(f'dish_{tab}', 0) + 1
+        n = kitchen_mod.dish_size(rec)
+        if n >= 2:
+            self.fs['dish_multi'] = self.fs.get('dish_multi', 0) + 1
+        if kitchen_mod.is_legendary(rec):
+            self.fs['dish_feast'] = self.fs.get('dish_feast', 0) + 1
+        return True
 
-    def _cook_stat(self) -> str:
-        """Which stat this meal raises: the build's, when it can choose."""
+    def _ready(self, tab=None) -> list:
+        inv = self._kitchen_inv()
+        out = kitchen_mod.ready_dishes(inv)
+        if tab:
+            out = [r for r in out if kitchen_mod.dish_tab(r) == tab]
+        return out
+
+    def _cook_for(self, tab) -> bool:
+        """Cook the best ready dish of this tab (hp, mp...), by the game's
+        own value for this hero. False when there is none."""
+        ready = self._ready(tab)
+        if not ready and tab == 'hp':
+            ready = self._ready()                  # every dish heals a little
+        if not ready:
+            return False
+        rec = max(ready, key=lambda r: kitchen_mod.dish_value(self.p, r))
+        return self._cook_dish(rec)
+
+    def _promise(self, part: str, held) -> float:
+        """How much a part is worth keeping: the best share complete of the
+        multi-dishes it goes into, counting what is held (a feast counts
+        double: it is the big payoff), and only dishes whose every part is
+        from a depth he has reached or is about to (the menu's building rows
+        show them; a kid hunts and saves for them)."""
+        best = 0.0
+        reach = kitchen_mod.band_of(self.floor + 10)
+        for rec in kitchen_mod.dishes_with(part):
+            if kitchen_mod.dish_size(rec) < 2:
+                continue
+            ps = kitchen_mod.parts(rec)
+            if any(kitchen_mod.is_harvested(x) and kitchen_mod.band_of(kitchen_mod.part_floor(x)) > reach
+                   for x in ps):
+                continue
+            need = kitchen_mod.needs(rec)
+            have = sum(min(n, held.get(x, 0)) for x, n in need.items())
+            share = have / max(1, sum(need.values()))
+            if kitchen_mod.is_legendary(rec):
+                share *= 2.0
+            best = max(best, share)
+        return best
+
+    def _spares(self) -> list:
+        """The parts a saver may eat: all but the PANTRY_MAX most promising
+        (those furthest toward a multi-dish or a feast he can reach)."""
+        held = kitchen_mod.held_counts(self._kitchen_inv())
+        ranked = sorted(self.pantry, key=lambda it: -self._promise(
+            kitchen_mod.resolve(getattr(it, 'id', '')), held))
+        spare = ranked[PANTRY_MAX:]
+        # a part with no reachable multi-dish at all is always a spare
+        spare += [it for it in ranked[:PANTRY_MAX]
+                  if self._promise(kitchen_mod.resolve(getattr(it, 'id', '')), held) <= 0.0]
+        return spare
+
+    def _cook_floor_end(self):
+        """The floor's cooking, after the fights: a caster's MP if low, the
+        floor's stat lesson (the build's stat first), every multi-dish and
+        feast ready, then singles: all of them for an eater, only spares (not
+        held for a dish half-way there) when hungry or over PANTRY_MAX for a
+        saver."""
         p = self.p
-        focus = self.prof.get('stat_focus')
-        if focus and random.random() < self.prof.get('focus_rate', 0.8):
-            for stat in focus:
-                if p.cooking_stat_gained.get(stat, 0) < p.cooking_stat_softcap(stat):
-                    return stat
-        return random.choice(COOK_STATS)
+        if self.prof.get('caster') and p.mp < 0.4 * p.max_mp:
+            self._cook_for('mp')
+        focus = tuple(self.prof.get('stat_focus') or ())
+        stat_ready = [r for r in self._ready('stat') if kitchen_mod._would_teach(p, r)]
+        if stat_ready:
+            stat_ready.sort(key=lambda r: (kitchen_mod.dish_stat(r) not in focus,
+                                           -kitchen_mod.dish_value(p, r)))
+            self._cook_dish(stat_ready[0])
+        for _ in range(6):
+            multis = [r for r in self._ready() if kitchen_mod.dish_size(r) >= 2]
+            if not multis:
+                break
+            self._cook_dish(max(multis, key=lambda r: kitchen_mod.dish_value(p, r)))
+        saver = bool(self.prof.get('saver'))
+        for _ in range(16):
+            singles = [r for r in self._ready() if kitchen_mod.dish_size(r) == 1
+                       and kitchen_mod.is_harvested(kitchen_mod.parts(r)[0])]
+            if not singles:
+                break
+            if saver:
+                spare_ids = {kitchen_mod.resolve(getattr(it, 'id', '')) for it in self._spares()}
+                singles = [r for r in singles if kitchen_mod.parts(r)[0] in spare_ids]
+                hungry = p.sp < 0.6 * p.max_sp
+                if not singles or not (hungry or len(self.pantry) > PANTRY_MAX):
+                    break
+            self._cook_dish(max(singles, key=lambda r: kitchen_mod.dish_value(p, r)))
 
     def take_boon(self, kind: str):
         """boons.take: the build's stat if it is offered, else the first gift."""
@@ -2680,6 +2818,8 @@ class Run:
                 self.floor_alive = max(0, self.floor_alive - 1)
                 self._drop_loot(m)
                 self._study(m)
+                if len(self.corpses) < 24:
+                    self.corpses.append(getattr(m, 'kind', None))
         self.floor_kills += kills
         if result == 'dead':
             self._on_death()
@@ -2764,6 +2904,8 @@ class Run:
         n = self.prof['cooks_per_floor']
         self.cooks_left = int(n) + (1 if random.random() < (n - int(n)) else 0)
         self.corpses_used = 0
+        self.corpses = []
+        self.hunt_left = HUNT_HARVESTS
 
         self.find_secrets(floor)
         self.shop(floor)
