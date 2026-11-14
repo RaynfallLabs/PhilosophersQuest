@@ -62,12 +62,26 @@ def _expected_save_dir() -> str | None:
 def run(argv, *, game_cls=None, restore=None) -> int:
     """Run every check. ``game_cls`` and ``restore`` are main.Game and
     main._restore_saved_game. Returns the exit code."""
-    require_frozen = '--require-frozen' in argv
-    require_real_key = '--require-real-key' in argv
     os.environ.setdefault('SDL_VIDEODRIVER', 'dummy')
     os.environ.setdefault('SDL_AUDIODRIVER', 'dummy')
+    had_no_bones = os.environ.get('PQ_NO_BONES')
     os.environ['PQ_NO_BONES'] = '1'          # never roll for (or consume) a ghost
+    try:
+        return _run_checks(argv, game_cls, restore)
+    finally:
+        # Put it back: run() is also called inside a test process
+        # (tests/test_selftest.py), where it shut the ghost gate for every
+        # test after it (round 3: the corrupt-bones test failed under the
+        # full suite).
+        if had_no_bones is None:
+            os.environ.pop('PQ_NO_BONES', None)
+        else:
+            os.environ['PQ_NO_BONES'] = had_no_bones
 
+
+def _run_checks(argv, game_cls, restore) -> int:
+    require_frozen = '--require-frozen' in argv
+    require_real_key = '--require-real-key' in argv
     results: list[tuple[bool, str, str]] = []
 
     def check(ok, what: str, detail: str = '') -> bool:

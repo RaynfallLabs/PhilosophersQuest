@@ -157,9 +157,15 @@ def _walk(g, steps):
 
 def test_sisyphus_counts_every_step_the_boulder_is_carried():
     """The Boulder weighs 20: an ordinary hero carried it under the limit and
-    the trial counted nothing ("The slope is waiting.", then silence)."""
+    the trial counted nothing ("The slope is waiting.", then silence).
+
+    No traps: about one floor 1 in three hundred has its trap on the tile
+    beside the up stair, and a pit there held the hero for a step each time
+    he came back to it (4 steps of 6 under the full suite, round 3)."""
     g = _game()
     g.monsters = []
+    g.dungeon.traps = {}
+    g.dungeon.pits = set()
     g.player.add_to_inventory(_boulder())
     assert not g.player.is_overloaded()
     g.player.quirk_progress['sisyphus_boulder_active'] = True

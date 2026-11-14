@@ -319,8 +319,10 @@ def _bridge_candidates(dungeon, rooms: set, length: int):
 
 def find_site(dungeon, start, rng, taken=(), length: int = 3) -> dict | None:
     """Where the knight goes on this floor:
-    {'kind': 'bridge'|'doorway'|'corridor', 'knight': (x, y), 'bridge': [...], 'axis': 'h'|'v'|None}.
-    Every answer leaves a way round (has_way_round). None when nothing fits."""
+    {'kind': 'bridge'|'doorway'|'room', 'knight': (x, y), 'bridge': [...], 'axis': 'h'|'v'|None}.
+    A bridge over a corridor first, then a doorway, then a tile in a room
+    (never the arrival room). Every answer leaves a way round
+    (has_way_round). None only when no tile on the floor does."""
     rooms = _room_cells(dungeon)
     taken = set(taken)
     traps = getattr(dungeon, 'traps', {}) or {}
@@ -345,6 +347,20 @@ def find_site(dungeon, start, rng, taken=(), length: int = 3) -> dict | None:
             continue
         if has_way_round(dungeon, start, spot):
             return {'kind': 'doorway', 'knight': spot, 'bridge': [], 'axis': None}
+    # No doorway either (about one floor in six thousand: few rooms, each
+    # with its ways in where he would cut the floor in two): he stands in a
+    # room, never the one the hero arrives in, where he cuts nothing off.
+    # He used to be set down on any free tile, which could be the only
+    # corridor through.
+    arrival = dungeon.rooms[0] if dungeon.rooms else None
+    spots = sorted((x, y) for r in dungeon.rooms if r is not arrival
+                   for (x, y) in r.inner_tiles()
+                   if dungeon.in_bounds(x, y) and dungeon.tiles[y][x] == FLOOR
+                   and (x, y) not in taken and (x, y) not in traps)
+    rng.shuffle(spots)
+    for spot in spots:
+        if has_way_round(dungeon, start, spot):
+            return {'kind': 'room', 'knight': spot, 'bridge': [], 'axis': None}
     return None
 
 
@@ -353,9 +369,9 @@ def build_bridge(dungeon, site: dict) -> None:
     Only solid wall beside the corridor turns to water, so nothing that
     could be walked on before is lost and nothing new can be walked on."""
     from dungeon import WALL, WATER, DOOR, FLOOR
-    if site['kind'] == 'doorway':
+    if site['kind'] != 'bridge':
         x, y = site['knight']
-        if dungeon.tiles[y][x] == DOOR:
+        if site['kind'] == 'doorway' and dungeon.tiles[y][x] == DOOR:
             dungeon.tiles[y][x] = FLOOR          # he stands in the open door
         return
     rooms = _room_cells(dungeon)
@@ -416,18 +432,16 @@ class BlackKnightMixin:
         taken |= self._occupants()        # the hero, pets and escorts
         site = find_site(self.dungeon, (self.player.x, self.player.y), random,
                          taken=taken, length=int(data()['bridge_length']))
-        if site is not None:
-            build_bridge(self.dungeon, site)
-            spot = site['knight']
-        else:
-            spot = self._free_spawn_tile(taken)
-            if spot is None:
-                return
-        k = BlackKnight(monster_defn(), *spot)
+        if site is None:
+            # No tile on the floor leaves a way round him: he never stands
+            # in the only way through, so he waits for the next visit.
+            return
+        build_bridge(self.dungeon, site)
+        k = BlackKnight(monster_defn(), *site['knight'])
         k.root()
         self.monsters.append(k)
         st['spawned'] = True
-        st['site'] = site['kind'] if site else 'room'
+        st['site'] = site['kind']
 
     # ---- lines ------------------------------------------------------------
 

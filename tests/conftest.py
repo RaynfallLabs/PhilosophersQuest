@@ -131,14 +131,37 @@ def _isolate_bones():
     except Exception:
         yield
         return
+    global _BONES_TMP
     tmpdir = tempfile.mkdtemp(prefix='pq_test_bones_')
     saved = bones._bones_dir
     bones._bones_dir = lambda: tmpdir
+    _BONES_TMP = tmpdir
     try:
         yield
     finally:
         bones._bones_dir = saved
+        _BONES_TMP = None
         shutil.rmtree(tmpdir, ignore_errors=True)
+
+
+_BONES_TMP = None
+
+
+@pytest.fixture(autouse=True)
+def _no_bones_left_behind():
+    """Every test starts with no ghost waiting. A test whose hero dies writes
+    a bones file into the folder the whole process shares (_isolate_bones),
+    and the next test in that process to build the same floor met his ghost
+    and its cursed gear half the time (round 3: a game over on floor 1 left
+    bones_L1.json for the next Game). Emptied after every test."""
+    yield
+    d = _BONES_TMP
+    if d and os.path.isdir(d):
+        for name in os.listdir(d):
+            try:
+                os.remove(os.path.join(d, name))
+            except OSError:
+                pass
 
 
 @pytest.fixture(autouse=True)
@@ -152,6 +175,23 @@ def _fresh_unique_registry():
     except Exception:
         pass
     yield
+
+
+@pytest.fixture(autouse=True)
+def _seeker_hooks_cleared():
+    """A Game made while a Seeker is active points four module hooks at its
+    own Seeker (SeekerMixin._seeker_init: deeds.ON_RECORD,
+    monster.DAMAGE_OBSERVER, pet_system.ON_GROWTH, topic_cards.ON_READ),
+    and they stayed set until the next Game was made: a later test that
+    struck a monster or grew a pet without making a Game reported it to the
+    Seeker of a test already over (round 3). They are cleared after every
+    test."""
+    yield
+    for mod, name in (('deeds', 'ON_RECORD'), ('monster', 'DAMAGE_OBSERVER'),
+                      ('pet_system', 'ON_GROWTH'), ('topic_cards', 'ON_READ')):
+        m = sys.modules.get(mod)
+        if m is not None and hasattr(m, name):
+            setattr(m, name, None)
 
 
 @pytest.fixture(autouse=True)

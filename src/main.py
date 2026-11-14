@@ -55,7 +55,7 @@ import family_edges
 from ui import Sidebar, MessageLog, floor_label
 from game_helpers import (
     migrate_buc_item, cycle_tab,
-    fix_name_case, a_or_an,
+    fix_name_case, a_or_an, lays_loot,
 )
 from game_states import (
     STATE_PLAYER, STATE_QUIZ, STATE_QUIZ_CONTEXT, STATE_EXIT_QUEST, STATE_ABANDON_QUEST,
@@ -1974,7 +1974,6 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self._maybe_spawn_stray_kids_idol(new_level)
             self._maybe_spawn_setne_tomb(new_level)
             self._maybe_place_duck_of_doom(new_level)
-            self._maybe_spawn_trader(new_level)      # last: it keeps clear of the rest
         else:
             # Revisit: spawn triggered NPCs if player now has the trigger item
             # (handles the case where player missed the item on first pass)
@@ -2506,6 +2505,13 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         if _held_charges is not None:
             self._restore_once_a_floor_state(_held_charges)
         self._settle_monsters()
+        if not saved:
+            # The run's trader comes last of all, after the lore pieces, the
+            # zoo and barracks keepers and the settling, so his stall keeps
+            # clear of every creature and thing on the floor (a sown warrior
+            # and the Scroll of the Lake of Fire were set down on Old Mags'
+            # blanket after he had chosen his spot).
+            self._maybe_spawn_trader(new_level)
         self._refresh_fov()
         # An escort whose last stair this was says goodbye on the new floor.
         self._escorts_finish(_esc_arrived)
@@ -4084,14 +4090,19 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         }
         for key, (target_level, factory) in lore_map.items():
             if level == target_level and key not in self._lore_placed:
-                # Pick a random walkable floor tile that isn't the player start or stairs
-                candidates = []
+                # Near the middle of a room, on plain floor with nothing else
+                # on it, as the floor's own loot is laid (dungeon._place_one):
+                # not on a stair, an altar or another thing. Any walkable tile
+                # near a middle only when no plain one is left.
+                held = {(g.x, g.y) for g in self.ground_items}
+                near = []
                 for room in dungeon.rooms[1:-1] or dungeon.rooms:
                     for dy in range(-1, 2):
                         for dx in range(-1, 2):
                             tx, ty = room.center[0] + dx, room.center[1] + dy
                             if dungeon.in_bounds(tx, ty) and dungeon.is_walkable(tx, ty):
-                                candidates.append((tx, ty))
+                                near.append((tx, ty))
+                candidates = [t for t in near if lays_loot(dungeon, t[0], t[1], held)] or near
                 if candidates:
                     tx, ty = _rng.choice(candidates)
                     item = factory(tx, ty)
@@ -4485,16 +4496,35 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         taken = set(all_occupied_tiles(self.monsters))
         from escort_system import occupants as _occupants
         taken |= _occupants(self)             # the hero, pets and escorts
-        free = [t for t in walk if self.dungeon.is_walkable(*t) and t not in taken]
+        # A trader's blanket and a shrine are places: nothing is moved onto
+        # one (round 3: loot moved within reach lay under Old Mags' stall).
+        places = {(g.x, g.y) for g in self.ground_items if getattr(g, 'not_pickable', False)}
+        free = [t for t in walk if self.dungeon.is_walkable(*t)
+                and t not in taken and t not in places]
         if not free:
             return
+        # A thing moved within reach is laid as the floor's own loot is
+        # (dungeon._place_one): on plain floor, one thing to a tile, never on
+        # a stair, an altar or a fountain that hides it. Any free tile only
+        # when no such spot is left in reach.
+        held = {(g.x, g.y) for g in self.ground_items}
+        spots = [t for t in free if lays_loot(self.dungeon, t[0], t[1], held)]
         import random as _r
         rng = _r.Random(self.dungeon_level * 7919 + len(reach))
 
-        def nearest(x, y):
-            best = min(free, key=lambda t: (abs(t[0] - x) + abs(t[1] - y), rng.random()))
-            free.remove(best)
+        def _take(t):
+            for pool in (free, spots):
+                if t in pool:
+                    pool.remove(t)
+
+        def nearest(x, y, pool=None):
+            pool = pool if pool is not None else free
+            best = min(pool, key=lambda t: (abs(t[0] - x) + abs(t[1] - y), rng.random()))
+            _take(best)
             return best
+
+        def lay(it):
+            it.x, it.y = nearest(it.x, it.y, spots or free)
 
         for m in self.monsters:
             if not (getattr(m, 'alive', False) and self._needed_to_finish(m) and free):
@@ -4517,10 +4547,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 m.x, m.y = ax, ay
                 for dx in range(fw):
                     for dy in range(fh):
-                        free.remove((ax + dx, ay + dy))
+                        _take((ax + dx, ay + dy))
         for it in self.ground_items:
             if (it.x, it.y) not in reach and self._needed_to_finish(it) and free:
-                it.x, it.y = nearest(it.x, it.y)
+                lay(it)
         # Then the ordinary loot (food, gold, chests, gear): water, lava or a
         # swamp cut it off on 5% of the early floors and about 20% of the deep
         # ones (Brandon, 2026-11-06: "move it within reach"). After the
@@ -4528,7 +4558,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         for it in self.ground_items:
             if ((it.x, it.y) not in reach and not getattr(it, 'not_pickable', False)
                     and free):
-                it.x, it.y = nearest(it.x, it.y)
+                lay(it)
 
     def _settle_monsters(self):
         """Move any monster that begins a floor on a tile it cannot have: on
@@ -4585,13 +4615,24 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         import false_stairs
         false_stairs.seat(self.dungeon, self.monsters)
         # ... and no loot lies under water or lava (pools are carved after
-        # items are set down: about one item every 25 floors)
-        _lie = [(x, y) for y in range(self.dungeon.height) for x in range(self.dungeon.width)
-                if self.dungeon.is_walkable(x, y)]
-        for _it in self.ground_items:
-            if (self.dungeon.in_bounds(_it.x, _it.y) and not self.dungeon.is_walkable(_it.x, _it.y)
-                    and not getattr(_it, 'not_pickable', False) and _lie):
-                _it.x, _it.y = min(_lie, key=lambda t: abs(t[0] - _it.x) + abs(t[1] - _it.y))
+        # items are set down: about one item every 25 floors). It is laid on
+        # the nearest plain floor with nothing on it, as the floor's own loot
+        # is (never on a stair, an altar, or a trader's blanket).
+        _wet = [_it for _it in self.ground_items
+                if self.dungeon.in_bounds(_it.x, _it.y) and not self.dungeon.is_walkable(_it.x, _it.y)
+                and not getattr(_it, 'not_pickable', False)]
+        if _wet:
+            _held = {(g.x, g.y) for g in self.ground_items}
+            _lie = [(x, y) for y in range(self.dungeon.height) for x in range(self.dungeon.width)
+                    if self.dungeon.is_walkable(x, y)]
+            _plain = [t for t in _lie if lays_loot(self.dungeon, t[0], t[1], _held)]
+            for _it in _wet:
+                _pool = _plain or _lie
+                if not _pool:
+                    break
+                _it.x, _it.y = min(_pool, key=lambda t: abs(t[0] - _it.x) + abs(t[1] - _it.y))
+                if (_it.x, _it.y) in _plain:
+                    _plain.remove((_it.x, _it.y))
         try:
             self._bring_within_reach()
         except Exception as e:

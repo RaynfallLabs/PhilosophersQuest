@@ -275,13 +275,16 @@ class _BSPNode:
 # Public generator
 # ---------------------------------------------------------------------------
 
-def generate_dungeon(width: int = 80, height: int = 50, level: int = 1) -> Dungeon:
+def generate_dungeon(width: int = 80, height: int = 50, level: int = 1,
+                     rng: random.Random | None = None) -> Dungeon:
     """
     Generate a complete dungeon level using BSP + post-processing passes.
     Every room is guaranteed to be connected.  Room count scales with depth.
     On every 10th non-boss level (10, 30, 50, 70, 90), a maze is generated instead.
+    ``rng`` is the floor's own random stream: a fresh one when not given (the
+    game), a seeded one when a test must build the same floor every time.
     """
-    rng   = random.Random()
+    rng   = rng or random.Random()
     is_boss = level in _BOSS_LEVELS
 
     # -- Maze levels (every 10th level that is not a boss level) --------------

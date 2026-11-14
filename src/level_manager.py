@@ -172,6 +172,10 @@ class LevelManager:
         # else is down so no item or creature lands under a statue.
         import decor
         decor.dress_floor(dungeon, level_num, monsters, items)
+        # A statue set down in a maze corridor or a doorway can leave the
+        # Hellmouth's tile the only way through: seat it again. One that
+        # still leaves a way round stays where it lies.
+        false_stairs.seat(dungeon, monsters)
 
         # Each creature's own business until it notices the hero
         # (src/senses.py). A den is where they sleep, as its line says (G3).

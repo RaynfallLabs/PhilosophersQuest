@@ -610,13 +610,38 @@ def furnish_special_rooms(dungeon, taken: set, placed_blocks: list, rng) -> int:
         room = _room_for_center(dungeon, center)
         if not cfg or room is None:
             continue
+        before = n
         if cfg.get('runner'):
             n += _lay_runner(dungeon, room, cfg['runner'], taken)
         for layer in ('wall', 'water', 'stand', 'floor'):
             spec = cfg.get(layer)
             if spec:
                 n += _place_layer(dungeon, room, layer, spec, taken, placed_blocks, rng)
+        if n == before:
+            n += _furnish_bare_room(dungeon, room, cfg, taken, rng)
     return n
+
+
+def _furnish_bare_room(dungeon, room, cfg: dict, taken: set, rng) -> int:
+    """A special room its layers left bare still shows what it is: one of
+    its loose floor pieces (they block nothing) on its own floor, in a nook
+    when it has one. A small room whose every wall tile stands beside a way
+    in had no spot for a headstone or a bone pile: about one graveyard in
+    eight was bare, though its arrival line named it. A room with no loose
+    pieces in its dressing (a treasury, a barracks, a throne room) is left
+    as its layers made it."""
+    ids = {fid: w for fid, w in ((cfg.get('floor') or {}).get('ids') or {}).items()
+           if not fixture_def(fid).get('blocks')}
+    if not ids:
+        return 0
+    spots = [t for t in _inner(room, dungeon) if t not in taken and t not in fixtures_of(dungeon)]
+    if not spots:
+        return 0
+    nooks = [t for t in spots if _wall_sides(t, room, dungeon) >= 1]
+    pos = rng.choice(sorted(nooks or spots))
+    place(dungeon, pos, _weighted(ids, rng))
+    taken.add(pos)
+    return 1
 
 
 def _lore_tier(level: int) -> int:
@@ -1192,10 +1217,39 @@ def dress_floor(dungeon, level: int, monsters=(), items=(), rng=None) -> int:
     # Nothing may cut the floor in two: undo blockers until the walk from
     # the up stair reaches as much as it did, less the tiles now furnished.
     if before > 0 and placed_blocks:
+        removed = False
         while placed_blocks and _reachable_count(dungeon) < before - len(placed_blocks):
             pos = placed_blocks.pop()
             remove(dungeon, pos)
             (dungeon.__dict__.get('lore_fixtures') or {}).pop(pos, None)
             n -= 1
+            removed = True
+        if removed:
+            # A special room whose only pieces were the blockers just lifted
+            # (a graveyard's headstones across its one way through) gets a
+            # loose piece instead, which cuts nothing off.
+            n += _refurnish_bare_rooms(dungeon, taken, rng)
     arrival_lines(dungeon)
+    return n
+
+
+def _room_shows_its_own(dungeon, room, cfg: dict) -> bool:
+    """Does the room hold any piece of its own dressing?"""
+    own = set()
+    for layer in ('wall', 'stand', 'floor', 'water'):
+        own |= set(((cfg.get(layer) or {}).get('ids') or {}))
+    if cfg.get('runner'):
+        own.add(cfg['runner'])
+    return any(fid in own and room.x <= x < room.x + room.width and room.y <= y < room.y + room.height
+               for (x, y), fid in fixtures_of(dungeon).items())
+
+
+def _refurnish_bare_rooms(dungeon, taken: set, rng) -> int:
+    rooms_cfg = room_dressing().get('rooms') or {}
+    n = 0
+    for center, rtype in (dungeon.__dict__.get('special_rooms') or {}).items():
+        cfg = rooms_cfg.get(rtype)
+        room = _room_for_center(dungeon, center)
+        if cfg and room is not None and not _room_shows_its_own(dungeon, room, cfg):
+            n += _furnish_bare_room(dungeon, room, cfg, taken, rng)
     return n
