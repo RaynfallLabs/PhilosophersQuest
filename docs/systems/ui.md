@@ -289,9 +289,9 @@ on their own side of the midpoint. Value color: `GOLD_BRIGHT` > 12,
 `1,234 gold, 7.7 lb` (`_purse`; coins weigh 160 to the pound, 2026-10-18,
 [economy §11](economy.md)), then one full-width line
 `Carrying 43 / 100` (`_carrying`; worn gear + pack + purse, `ui.carry_state`):
-green, `WARNING_TEXT` with "Burdened" beside it above half the limit,
-`DANGER_TEXT` with "Stressed" above three quarters and "Over Limit" past
-it (`ui.carry_state`, `ui.carry_color`). Burdened / Stressed / Over Limit is also
+green, `WARNING_TEXT` with "Heavy" beside it above half the limit,
+`DANGER_TEXT` with "Burdened" above three quarters and "Overloaded" past
+it (`ui.carry_state`, `ui.carry_color`). Heavy / Burdened / Overloaded is also
 the first chip under EFFECTS (2026-10-16 carry rebalance,
 `_genart/ui/WEIGHT_PLAN.md`). The old `Depth` row
 was removed in v2.22.0 — the CHARACTER identity section's `Floor N`

@@ -472,19 +472,19 @@ def test_i17_pack_order_follows_the_shown_names():
 
 # ---------------------------------------------------------------- I-18 / CQ-12
 @pytest.mark.parametrize('wt, lim, state', [
-    (50.4, 100, 'Burdened'), (49.6, 100, ''), (50.0, 100, ''),
-    (75.4, 100, 'Stressed'), (74.6, 100, 'Burdened'), (75.0, 100, 'Burdened'),
-    (100.3, 100, 'Over Limit'), (99.6, 100, 'Stressed'), (43.2, 100, ''),
+    (50.4, 100, 'Heavy'), (49.6, 100, ''), (50.0, 100, ''),
+    (75.4, 100, 'Burdened'), (74.6, 100, 'Heavy'), (75.0, 100, 'Heavy'),
+    (100.3, 100, 'Overloaded'), (99.6, 100, 'Burdened'), (43.2, 100, ''),
     (3.4000000000000004, 100, ''),
 ])
 def test_i18_the_weight_readout_never_contradicts_the_state(wt, lim, state):
-    # Two lines since 2026-11-13 (Burdened at half, Stressed at three
-    # quarters: winning-build plan 3.3); it was one, at three quarters.
+    # Two lines below the limit since 2026-11-13 (Heavy at half, Burdened
+    # at three quarters since 2026-11-14); it was one, at three quarters.
     from hud_context import load_number
     shown = float(load_number(wt, lim, (0.5, 0.75)))
     assert (shown > lim * 0.5) == (state != '')
-    assert (shown > lim * 0.75) == (state in ('Stressed', 'Over Limit'))
-    assert (shown > lim) == (state == 'Over Limit')
+    assert (shown > lim * 0.75) == (state in ('Burdened', 'Overloaded'))
+    assert (shown > lim) == (state == 'Overloaded')
     assert abs(shown - wt) <= 0.5
 
 

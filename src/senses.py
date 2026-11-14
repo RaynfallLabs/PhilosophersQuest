@@ -241,7 +241,7 @@ def step_radius(player) -> int:
     except (TypeError, ValueError):
         dex = 10
     r -= max(0, dex - 10) // max(1, int(n['dex_per_tile']))
-    # The load (Burdened +1, Stressed +2: Player.load_tier) and the body
+    # The load (Heavy +1, Burdened +2, Overloaded +2: Player.load_tier) and the body
     # armour (medium +1, heavy +2, metal +1 more unless quiet:
     # gear.footstep_tiles; winning-build plan 3.3).
     try:

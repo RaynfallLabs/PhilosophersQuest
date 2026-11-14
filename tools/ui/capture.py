@@ -1561,14 +1561,14 @@ def _(g):
     g.handle_event(key_event(pygame.K_2, '@', pygame.KMOD_SHIFT))
 
 
-def _make_burdened(g, stressed=False):
-    """Spare mail shirts in the pack until past half the limit (Burdened),
-    or past three quarters (``stressed``: Stressed; winning-build plan 3.3;
-    worn gear counts, 2026-10-16). The game's own per-turn check says so in
-    the log."""
+def _make_loaded(g, burdened=False):
+    """Spare mail shirts in the pack until past half the limit (a Heavy
+    load), or past three quarters (``burdened``: Burdened; Brandon
+    2026-11-14; worn gear counts, 2026-10-16). The game's own per-turn check
+    says so in the log."""
     from items import instantiate_armor
     p = g.player
-    while not (p.is_stressed() if stressed else p.is_burdened()):
+    while not (p.is_burdened() if burdened else p.is_heavy()):
         suit = instantiate_armor('chain_shirt', 'chain_steel')
         suit.buc_known, suit.id_level = True, 5
         if not p.can_carry(suit.weight):
@@ -1578,16 +1578,16 @@ def _make_burdened(g, stressed=False):
     g._note_burden()
 
 
-@scene('play_burdened', 'Play', 'In a game, carrying past half the limit: Burdened '
+@scene('play_heavy', 'Play', 'In a game, carrying past half the limit: a Heavy load '
        '(amber Carrying line, EFFECTS chip, log message).', expect='player')
 def _(g):
-    _make_burdened(g)
+    _make_loaded(g)
 
 
-@scene('play_stressed', 'Play', 'In a game, carrying past three quarters of the limit: '
-       'Stressed (red Carrying line, EFFECTS chip, log message).', expect='player')
+@scene('play_burdened', 'Play', 'In a game, carrying past three quarters of the limit: '
+       'Burdened (red Carrying line, EFFECTS chip, log message).', expect='player')
 def _(g):
-    _make_burdened(g, stressed=True)
+    _make_loaded(g, burdened=True)
 
 
 @scene('menu_charsheet_burdened', 'Menus', '@ while Burdened: header, Kit Summary and '

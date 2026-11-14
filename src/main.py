@@ -258,7 +258,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     #
     # Coins weigh (Brandon's D2, 2026-10-18; treasure.py): the count is
     # mirrored onto the Player (``purse_coins``) on every change, so the purse
-    # counts toward the carry limit and Burdened like any item. Raising the
+    # counts toward the carry limit and the load tiers like any item. Raising the
     # purse directly never checks the weight: gold a person or the floor
     # gives goes through _gain_gold, which takes only what fits.
     @property
@@ -1152,7 +1152,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # load heavier than before (even past the limit). Nothing is taken
         # away: the hero is told at once and can drop or swap gear as usual.
         # _burdened and _load_tier are not trusted from the file; they are
-        # worked out afresh (Burdened at half the limit since 2026-11-13).
+        # worked out afresh (Heavy, Burdened and Overloaded since 2026-11-14).
         self.player._burdened = False
         self.player._load_tier = ''
         self._note_burden()
@@ -3662,7 +3662,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     pass
                 if not _free_move:
                     self._advance_turn()
-                    self._burden_extra_turn()       # Stressed: every second step costs two turns
+                    self._burden_extra_turn()       # Burdened: every second step costs two turns
                 # Haste no longer auto-fires a second _do_move (that doubled
                 # the player's keystroke). Speed lives in _advance_turn: the
                 # world's clock moves 10/speed of a turn each action
@@ -5214,30 +5214,45 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self._say_affinity_lines()
 
     # ------------------------------------------------------------------
-    # Carrying: Burdened and Stressed (plan: _genart/ui/WEIGHT_PLAN.md;
-    # winning-build plan 3.3, data/gear_rules.json load)
+    # Carrying: Heavy, Burdened, Overloaded (plan: _genart/ui/WEIGHT_PLAN.md;
+    # Brandon 2026-11-14, data/gear_rules.json load)
     # ------------------------------------------------------------------
 
     def _note_burden(self):
-        """Say so when the hero becomes, or stops being, Burdened or
-        Stressed. Checked every turn, so a pickup, a drop, a lost point of
-        Strength or an old save that is suddenly heavy are all caught on the
-        turn they happen."""
+        """Say so when the hero's load changes tier (Heavy, Burdened,
+        Overloaded, or free). Checked every turn, so a pickup, a drop, a lost
+        point of Strength or an old save that is suddenly heavy are all
+        caught on the turn they happen."""
         change = self.player.update_burden()
-        if change == 'on':
-            self.add_message(
-                "You are Burdened. You dodge half as well and your steps carry "
-                "further until you lighten your load.", 'warning')
-        elif change == 'stressed':
-            n = self.player.STRESSED_STEP_EVERY
-            nth = {2: 'second', 3: 'third', 4: 'fourth', 5: 'fifth'}.get(n, f"{n}th")
-            self.add_message(
-                f"You are Stressed. You cannot dodge, and every {nth} step "
-                f"costs an extra turn until you lighten your load.", 'warning')
-        elif change == 'eased':
-            self.add_message("You are no longer Stressed, but you are still Burdened.", 'info')
-        elif change == 'off':
-            self.add_message("You are no longer Burdened.", 'success')
+        if not change:
+            return
+        was, now = change
+        tiers = self.player.LOAD_TIERS
+        words = self.player.LOAD_WORDS
+        if tiers.index(now) > tiers.index(was):
+            if now == 'heavy':
+                self.add_message(
+                    "Your load is Heavy. You dodge half as well and your steps "
+                    "carry further until you lighten it.", 'warning')
+            elif now == 'burdened':
+                n = self.player.BURDENED_STEP_EVERY
+                nth = {2: 'second', 3: 'third', 4: 'fourth', 5: 'fifth'}.get(n, f"{n}th")
+                self.add_message(
+                    f"You are Burdened. You cannot dodge, your Dexterity guards "
+                    f"you half as well, and every {nth} step costs an extra turn "
+                    f"until you lighten your load.", 'warning')
+            else:
+                self.add_message(
+                    "You are Overloaded. You cannot dodge, your Dexterity no "
+                    "longer guards you, and every step costs an extra turn until "
+                    "you lighten your load.", 'danger')
+        elif not now:
+            self.add_message("Your load is no longer Heavy." if was == 'heavy'
+                             else f"You are no longer {words[was]}.", 'success')
+        else:
+            still = ("your load is still Heavy" if now == 'heavy'
+                     else f"you are still {words[now]}")
+            self.add_message(f"You are no longer {words[was]}, but {still}.", 'info')
 
     def _give_item(self, item) -> bool:
         """Hand the hero something (a reward, a conjured stack). Into the pack
@@ -5253,9 +5268,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         return False
 
     def _burden_extra_turn(self):
-        """A Stressed hero's step: every Player.STRESSED_STEP_EVERY-th one
-        gives the dungeon one more turn. Walking only; fighting, spells and
-        the quiz clock are untouched."""
+        """A Burdened hero's step: every Player.BURDENED_STEP_EVERY-th one
+        gives the dungeon one more turn, and every one when Overloaded.
+        Walking only; fighting, spells and the quiz clock are untouched."""
         if self.state == STATE_DEAD or self.player.is_dead():
             return
         # Not once the step's own turn has opened a popup or menu, or moved

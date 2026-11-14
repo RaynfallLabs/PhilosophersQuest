@@ -14,7 +14,7 @@ feet); A Cat's Footfall (the boon of Fenrir: in the myth, a cat's footfall is
 one of the six things that make no sound) silences footsteps; a ring of silent
 walking (the Ring of the Assassin) silences footsteps too; the Hand of Glory
 (the housebreaker's charm that keeps a house asleep) keeps every sleeper
-asleep; a Burdened pack clinks, and so does heavy or metal armour;
+asleep; a Heavy pack clinks, and so does heavy or metal armour;
 Aggravated wakes the whole room on sight.
 
 Pure module: no pygame and no Game import. The Game side is in
@@ -38,7 +38,7 @@ RULES: dict[str, dict] = {
 DEEP = 1000                 # a sleep at least this long is a deep sleeper's
 DEX_STEP = 0.03             # each point of DEX over 10 lowers the chance this much
 DEX_FLOOR = 0.5             # ...down to half at most
-BURDENED = 2.0              # a heavy pack clinks
+HEAVY_PACK = 2.0            # a Heavy pack clinks (Player.is_heavy)
 CATS_FOOTFALL = 'cats_footfall'
 HAND_OF_GLORY = 'hand_of_glory'
 
@@ -93,8 +93,9 @@ def factor(player, kind: str) -> float:
         dex = 10
     f = max(DEX_FLOOR, 1.0 - DEX_STEP * max(0, dex - 10))
     try:
-        if player.is_burdened():
-            f *= BURDENED
+        heavy = getattr(player, 'is_heavy', None) or player.is_burdened
+        if heavy():
+            f *= HEAVY_PACK
     except Exception:
         pass
     if kind == 'step':

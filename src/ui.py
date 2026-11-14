@@ -46,33 +46,33 @@ _line_color_cache: dict = {}
 
 
 def _load_lines(player) -> tuple:
-    """The shares of the limit where the load's state changes (Burdened,
-    Stressed: data/gear_rules.json load)."""
-    return (float(getattr(player, 'BURDENED_SHARE', 0.5)),
-            float(getattr(player, 'STRESSED_SHARE', 0.75)))
+    """The shares of the limit where the load's state changes (Heavy,
+    Burdened: data/gear_rules.json load; the limit itself is Overloaded)."""
+    return (float(getattr(player, 'HEAVY_SHARE', 0.5)),
+            float(getattr(player, 'BURDENED_SHARE', 0.75)))
 
 
 def carry_state(player) -> tuple[float, int, str]:
-    """(weight carried, limit, state) where state is '' / 'Burdened' /
-    'Stressed' / 'Over Limit'. Worn gear and the pack both count
+    """(weight carried, limit, state) where state is '' / 'Heavy' /
+    'Burdened' / 'Overloaded'. Worn gear and the pack both count
     (Player.get_current_weight). One reading for the sidebar, the character
     sheet and the menus."""
     wt = float(player.get_current_weight())
     lim = int(player.get_carry_limit())
-    burdened, stressed = _load_lines(player)
+    heavy, burdened = _load_lines(player)
     if wt > lim:
-        return wt, lim, 'Over Limit'
-    if wt > lim * stressed:
-        return wt, lim, 'Stressed'
+        return wt, lim, 'Overloaded'
     if wt > lim * burdened:
         return wt, lim, 'Burdened'
+    if wt > lim * heavy:
+        return wt, lim, 'Heavy'
     return wt, lim, ''
 
 
 def carry_numbers(player) -> str:
     """'43 / 100': the load as every readout prints it. The number never
     contradicts the state (hud_context.load_number): 50.4 of 100 is
-    Burdened and reads 50.4, not 50."""
+    Heavy and reads 50.4, not 50."""
     from hud_context import load_number
     wt, lim, _state = carry_state(player)
     return f"{load_number(wt, lim, _load_lines(player))} / {lim}"
@@ -81,7 +81,7 @@ def carry_numbers(player) -> str:
 def carry_color(state: str) -> tuple:
     # The readouts sit on dark panels: the light danger red (BLOOD is
     # 2.9:1 there, under the 4.5:1 floor of the UI gates).
-    return (FP.DANGER_TEXT_LIGHT if state in ('Over Limit', 'Stressed')
+    return (FP.DANGER_TEXT_LIGHT if state in ('Overloaded', 'Burdened')
             else FP.WARNING_TEXT if state else FP.SUCCESS_TEXT)
 
 
@@ -561,8 +561,9 @@ class Sidebar:
 
     def _carrying(self, player, y: int) -> int:
         """One full-width line, 'Carrying 43 / 100': green, amber when
-        Burdened (half the dodge, louder steps), red when Stressed (no
-        dodge, every second step costs a turn) or past the limit."""
+        Heavy (half the dodge, louder steps), red when Burdened (no dodge,
+        half Dexterity's AC, every second step costs a turn) or Overloaded
+        (past the limit)."""
         wt, lim, state = self.carry_state(player)
         cell_x = self.x + self.PAD
         ax = self._icon(self._STAT_ICONS['Wt'], cell_x, y, self._fsm.get_height())

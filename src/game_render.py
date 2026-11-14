@@ -1001,7 +1001,7 @@ class RenderMixin:
             from treasure import weight_text as _gwt
             gd = _hf.render(f"Gold {self.player_gold:,} ({_gwt(self.player_gold)})", True, FP.GOLD_BRIGHT)
             # Right of the centred title: the load and the purse with its
-            # weight. On a narrow window the "Burdened" word gives way (the
+            # weight. On a narrow window the load's word ("Heavy") gives way (the
             # Effects list always shows it), so nothing runs under the title.
             _title_w = get_font('heading', 28).size("Character / Pack")[0]
             _room = header.right - S(40) - gd.get_width() - S(24) - (header.centerx + _title_w // 2 + S(16))

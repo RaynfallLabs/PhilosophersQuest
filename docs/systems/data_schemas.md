@@ -397,8 +397,9 @@ written by `tools/content/armour_profiles_2026_11.py`.
   `damage_resistances` is its whole profile.
 - **`data/gear_rules.json`**: `armour_weight` (`dex_ac_cap`, `dodge_share`,
   `footsteps`, `metal_footsteps`, `sleeper_share_per_tile`, `casting_mult`
-  by weight class), `load` (`burdened` / `stressed`: `share`, `dodge`,
-  `step_every`), `wards` (`families`, `tags`, `effects`, `card`, `line`).
+  by weight class), `load` (`heavy` / `burdened` / `overloaded`: `share`,
+  `dodge`, `dex_ac`, `step_every`), `wards` (`families`, `tags`, `effects`,
+  `card`, `line`).
 
 ### 4.2 `equip_threshold` + `equip_chain_mode`
 

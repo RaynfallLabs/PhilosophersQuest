@@ -66,9 +66,9 @@ def kit_weight(f):
 
 
 def burden_room(f):
-    """Pounds a careful hero can give to wealth without being Stressed
-    (three quarters of the limit; Burdened, at half, costs only dodge and
-    noise since 2026-11-13: src/player.py load_tier)."""
+    """Pounds a careful hero can give to wealth without being Burdened
+    (three quarters of the limit; a Heavy load, at half, costs only dodge
+    and noise: src/player.py load_tier, tiers named 2026-11-14)."""
     limit = 20 + 8 * strength(f)
     return max(0.0, 0.75 * limit - kit_weight(f))
 

@@ -200,11 +200,13 @@ def pct(total, lim):
     return 100.0 * total / max(1, lim)
 
 
-def mark(total, lim, share=Player.BURDENED_SHARE):
+def mark(total, lim, share=Player.HEAVY_SHARE):
     if total > lim:
         return 'OVER'
-    if total > lim * share:
+    if total > lim * Player.BURDENED_SHARE:
         return 'Burdened'
+    if total > lim * share:
+        return 'Heavy'
     return 'ok'
 
 
@@ -217,7 +219,7 @@ def main(argv=None):
     a = ap.parse_args(argv)
     base, per = a.base, a.per_str
     print(f"Limit = {base:g} + {per:g} x STR   (STR 10 -> {base + 10 * per:g}); "
-          f"Burdened above {Player.BURDENED_SHARE:.0%}\n")
+          f"Heavy above {Player.HEAVY_SHARE:.0%}, Burdened above {Player.BURDENED_SHARE:.0%}\n")
 
     if not a.no_start:
         print("1. STARTING BUILDS (worn + pack, real Game)")

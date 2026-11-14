@@ -83,8 +83,8 @@ and the corpse weighs:
 | large | 150 lb | troll, ogre, bear, minotaur, young dragon, golem |
 | huge | 400 lb | giants, adult and older dragons, hydra, titans |
 
-The carry limit is 20 + 8 x STR (100 lb at STR 10), Burdened above 50% and
-Stressed above 75% (armour.md section 1c). So a
+The carry limit is 20 + 8 x STR (100 lb at STR 10), a Heavy load above 50%
+and Burdened above 75% (armour.md section 1c). So a
 medium corpse is a real choice to carry, a large one needs a very strong hero
 with an empty pack, and a huge one cannot be carried. Harvest works on a corpse
 on the ground (the hero's tile), so a carried corpse is dropped to harvest it.

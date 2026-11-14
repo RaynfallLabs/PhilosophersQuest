@@ -200,9 +200,13 @@ tile makes a deep sleeper a quarter readier to stir (`sleepers.factor`).
 charges and the spell menu shows.
 
 **Weight that bites** (`data/gear_rules.json` `load`, `Player.load_tier`):
-over half the limit the hero is **Burdened** (half the dodge, footsteps +1);
-over three quarters **Stressed** (no dodge, footsteps +2, every second step
-costs the dungeon a turn); past the limit nothing more can be picked up.
+over half the limit the load is **Heavy** (half the dodge, footsteps +1);
+over three quarters the hero is **Burdened** (no dodge, half Dexterity's AC,
+footsteps +2, every second step costs the dungeon a turn); past the limit
+nothing more can be picked up, and a hero who is there anyway (lost
+Strength, an old save, the Boulder) is **Overloaded** (no dodge, no
+Dexterity AC, every step costs a turn). Brandon, 2026-11-14: "heavy at 50%,
+burdened at 75%, overloaded at 100%"; the limit stays a wall.
 The sidebar, the @ sheet and the log say which (`ui.carry_state`).
 
 **The card** says it in one honest line (`gear.protection_line`: "Turns an

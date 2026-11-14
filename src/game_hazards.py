@@ -69,6 +69,8 @@ class HazardsMixin:
         if not hit:
             return
         fid, h = hit
+        # A "heavy pack" is a Burdened one, over three quarters of the limit
+        # (Brandon 2026-11-14), as it was before the load had three tiers.
         heavy = False
         try:
             heavy = bool(self.player.is_burdened())

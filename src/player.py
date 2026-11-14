@@ -1108,10 +1108,14 @@ class Player:
         and status effects like invisibility."""
         # Dexterity is worth armor up to dex_ac_cap() points, by the body
         # armour's weight class: 6 light (or none), 3 medium, 0 heavy
-        # (gear.dex_ac_cap, winning-build plan 3.3). A clumsy hero's minus
-        # always counts. (Uncapped, +22 Dexterity was eleven points of
-        # armor: more than a full suit of plate.)
+        # (gear.dex_ac_cap, winning-build plan 3.3), and the load leaves
+        # all of it, half when Burdened, none when Overloaded
+        # (load_dex_ac_share). A clumsy hero's minus always counts.
+        # (Uncapped, +22 Dexterity was eleven points of armor: more than a
+        # full suit of plate.)
         dex_mod = min(self.dex_ac_cap(), (self.DEX - 10) // 2)
+        if dex_mod > 0:
+            dex_mod = int(dex_mod * self.load_dex_ac_share())
         # AC comes from body armour and the shield (gear.py, bug bash 3.3.2):
         # a helm, gloves, boots, bracers, greaves, cloak or shirt gives none
         # (they guard against kinds of attack instead). Nine slots of AC put
@@ -1385,8 +1389,8 @@ class Player:
         after the monster's hit roll, so it also beats a glancing hit.
         Dexterity's share and worn gear's, then what the body armour and the
         load leave of it: all of it in light armour (or none), half in
-        medium, none in heavy; half again when Burdened, none when Stressed
-        (gear.dodge_share)."""
+        medium, none in heavy; half again under a Heavy load, none when
+        Burdened or Overloaded (gear.dodge_share)."""
         # Nobody who cannot act can sidestep.
         if any(self.has_effect(e) for e in ('paralyzed', 'sleeping', 'immobilized',
                                             'stunned', 'frozen', 'petrifying')):
@@ -1554,20 +1558,31 @@ class Player:
     # to weigh nothing, so a hero could carry an armory.) Equipping or taking
     # something off moves its weight between pack and body; the total stays.
     #
-    # Weight that bites (winning-build plan 3.3, data/gear_rules.json `load`):
-    # above BURDENED_SHARE of the limit the hero is Burdened (he dodges half
-    # as well and his footsteps carry a tile further), above STRESSED_SHARE
-    # Stressed (no dodge at all, footsteps further still, and every
-    # STRESSED_STEP_EVERY-th step costs the dungeon an extra turn). Attacks,
-    # spells and the quiz clocks are untouched. A pickup that would go past
-    # the limit is refused. (Until 2026-11-13 there was one line, Burdened at
-    # 75%, and it cost an extra turn every fourth step.)
-    BURDENED_SHARE = float(_load_rule('burdened', 'share', 0.5))
-    STRESSED_SHARE = float(_load_rule('stressed', 'share', 0.75))
-    STRESSED_STEP_EVERY = int(_load_rule('stressed', 'step_every', 2))
+    # Weight that bites (Brandon 2026-11-14, data/gear_rules.json `load`):
+    # above HEAVY_SHARE of the limit the load is Heavy (he dodges half as
+    # well and his footsteps carry a tile further); above BURDENED_SHARE he
+    # is Burdened (no dodge, half Dexterity's AC, footsteps further still,
+    # and every BURDENED_STEP_EVERY-th step costs the dungeon an extra
+    # turn); past the limit itself Overloaded (no Dexterity AC either, and
+    # every step costs an extra turn). The limit stays a wall: a pickup that
+    # would go past it is refused, so only lost Strength, an old save or
+    # the Boulder overloads him. Attacks, spells and the quiz clocks are
+    # untouched. (Burdened 50% and Stressed 75% from 2026-11-13; before
+    # that one line, Burdened at 75%.)
+    HEAVY_SHARE = float(_load_rule('heavy', 'share', 0.5))
+    BURDENED_SHARE = float(_load_rule('burdened', 'share', 0.75))
+    BURDENED_STEP_EVERY = int(_load_rule('burdened', 'step_every', 2))
+    OVERLOADED_STEP_EVERY = int(_load_rule('overloaded', 'step_every', 1))
+    LOAD_TIERS = ('', 'heavy', 'burdened', 'overloaded')
+    LOAD_WORDS = {'heavy': 'Heavy', 'burdened': 'Burdened', 'overloaded': 'Overloaded'}
     LOAD_DODGE = {'': 1.0,
-                  'burdened': float(_load_rule('burdened', 'dodge', 0.5)),
-                  'stressed': float(_load_rule('stressed', 'dodge', 0.0))}
+                  'heavy': float(_load_rule('heavy', 'dodge', 0.5)),
+                  'burdened': float(_load_rule('burdened', 'dodge', 0.0)),
+                  'overloaded': float(_load_rule('overloaded', 'dodge', 0.0))}
+    LOAD_DEX_AC = {'': 1.0,
+                   'heavy': float(_load_rule('heavy', 'dex_ac', 1.0)),
+                   'burdened': float(_load_rule('burdened', 'dex_ac', 0.5)),
+                   'overloaded': float(_load_rule('overloaded', 'dex_ac', 0.0))}
 
     # The purse (Brandon's D2, 2026-10-18): coins weigh what coins weigh, a
     # tenth of an ounce each (treasure.COINS_PER_LB, 160 to the pound). The
@@ -1666,32 +1681,44 @@ class Player:
         """Everything carried: worn gear, the pack, and the purse."""
         return self.get_worn_weight() + self.get_pack_weight() + self.purse_weight()
 
+    def heavy_threshold(self) -> float:
+        return self.get_carry_limit() * self.HEAVY_SHARE
+
     def burden_threshold(self) -> float:
         return self.get_carry_limit() * self.BURDENED_SHARE
 
-    def stress_threshold(self) -> float:
-        return self.get_carry_limit() * self.STRESSED_SHARE
-
     def load_tier(self) -> str:
-        """'' (free), 'burdened' (over half the limit) or 'stressed' (over
-        three quarters; past the limit itself he is still Stressed)."""
+        """'' (free), 'heavy' (over half the limit), 'burdened' (over three
+        quarters) or 'overloaded' (past the limit itself)."""
         wt = self.get_current_weight()
-        if wt > self.stress_threshold():
-            return 'stressed'
+        if wt > self.get_carry_limit():
+            return 'overloaded'
         if wt > self.burden_threshold():
             return 'burdened'
+        if wt > self.heavy_threshold():
+            return 'heavy'
         return ''
 
-    def is_burdened(self) -> bool:
-        """Burdened or worse: over half the limit."""
-        return self.get_current_weight() > self.burden_threshold()
+    def is_heavy(self) -> bool:
+        """A Heavy load or worse: over half the limit (a pack that clinks)."""
+        return self.get_current_weight() > self.heavy_threshold()
 
-    def is_stressed(self) -> bool:
-        return self.get_current_weight() > self.stress_threshold()
+    def is_burdened(self) -> bool:
+        """Burdened or worse: over three quarters of the limit (the domain
+        hazards' 'heavy pack': a Burdened hero breaks the thin ice)."""
+        return self.get_current_weight() > self.burden_threshold()
 
     def load_dodge_share(self) -> float:
         """The share of the dodge the load leaves: all, half, none."""
         return float(self.LOAD_DODGE.get(self.load_tier(), 1.0))
+
+    def load_dex_ac_share(self) -> float:
+        """The share of Dexterity's AC the load leaves: all, half when
+        Burdened, none when Overloaded. Safe on a half-built hero."""
+        try:
+            return float(self.LOAD_DEX_AC.get(self.load_tier(), 1.0))
+        except Exception:
+            return 1.0
 
     def is_overloaded(self) -> bool:
         """Past the limit itself (an old save, lost Strength, the Boulder)."""
@@ -1710,8 +1737,9 @@ class Player:
         return msg
 
     def load_lines(self) -> tuple:
-        """The shares of the limit where the readout's state changes."""
-        return (self.BURDENED_SHARE, self.STRESSED_SHARE)
+        """The shares of the limit where the readout's state changes (the
+        limit itself is the last line: hud_context.load_number)."""
+        return (self.HEAVY_SHARE, self.BURDENED_SHARE)
 
     def carry_line(self) -> str:
         """'Carrying 43 / 100', the readout the sidebar and sheet show."""
@@ -1719,33 +1747,40 @@ class Player:
         lim = self.get_carry_limit()
         return f"Carrying {load_number(self.get_current_weight(), lim, self.load_lines())} / {lim}"
 
-    def update_burden(self) -> str | None:
-        """Note the load tier now. Returns what just changed, else None (the
-        game turns it into a message): 'on' (became Burdened), 'stressed'
-        (became Stressed), 'eased' (Stressed to Burdened), 'off' (free)."""
+    def update_burden(self) -> tuple | None:
+        """Note the load tier now. Returns (was, now) when it just changed,
+        else None (the game turns it into a message: Game._note_burden).
+        Tiers are those of load_tier; a tier this file does not know (an
+        old save's 'stressed') counts as free, so the hero is told afresh."""
         now = self.load_tier()
         was = getattr(self, '_load_tier', None)
         if was is None:
             # An old save (or a fresh hero): it remembered only Burdened.
             was = 'burdened' if getattr(self, '_burdened', False) else ''
+        if was not in self.LOAD_TIERS:
+            was = ''
         self._load_tier = now
         self._burdened = bool(now)
         if now == was:
             return None
-        if now == 'stressed':
-            return 'stressed'
-        if now == 'burdened':
-            return 'eased' if was == 'stressed' else 'on'
-        return 'off'
+        return (was, now)
+
+    def load_step_every(self) -> int:
+        """Every how many steps one costs an extra turn under this load
+        (0: never)."""
+        return {'burdened': self.BURDENED_STEP_EVERY,
+                'overloaded': self.OVERLOADED_STEP_EVERY}.get(self.load_tier(), 0)
 
     def burden_step(self) -> bool:
         """Count one step taken. True when this step costs an extra turn:
-        every STRESSED_STEP_EVERY-th step of a Stressed hero."""
-        if not self.is_stressed():
+        every BURDENED_STEP_EVERY-th step when Burdened, every step when
+        Overloaded."""
+        every = self.load_step_every()
+        if every <= 0:
             self._burden_steps = 0
             return False
         self._burden_steps = int(getattr(self, '_burden_steps', 0) or 0) + 1
-        if self._burden_steps >= self.STRESSED_STEP_EVERY:
+        if self._burden_steps >= every:
             self._burden_steps = 0
             return True
         return False

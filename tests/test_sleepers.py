@@ -29,6 +29,7 @@ ROOT = Path(__file__).resolve().parent.parent
 def _hero(dex=10, boons=None, worn=(), burdened=False, aggravated=False):
     h = types.SimpleNamespace(DEX=dex, boons_taken=boons or {}, equipped_accessories=list(worn))
     h.is_burdened = lambda: burdened
+    h.is_heavy = lambda: burdened
     h.has_effect = lambda e: aggravated and e == 'aggravated'
     return h
 

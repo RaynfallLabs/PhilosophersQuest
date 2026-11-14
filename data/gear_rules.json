@@ -77,9 +77,10 @@
   },
 
   "load": {
-    "_doc": "Weight that bites (plan 3.3): over burdened.share of the carry limit the hero is Burdened, over stressed.share Stressed (over the limit itself he is still Stressed, and nothing more can be picked up). dodge: the share of the dodge left. step_every: every Nth step a Stressed hero takes costs the dungeon one more turn. How much further the steps carry is in data/senses.json noise (burdened, stressed). Before 2026-11-13 there was one line, at 75%, and it cost one extra turn every fourth step.",
-    "burdened": {"share": 0.5, "dodge": 0.5},
-    "stressed": {"share": 0.75, "dodge": 0.0, "step_every": 2}
+    "_doc": "Weight that bites (Brandon 2026-11-14: 'heavy at 50%, burdened at 75%, overloaded at 100%... some penalty to player speed or dex bonus to ac'; the limit stays a wall). Over heavy.share of the carry limit the load is Heavy, over burdened.share the hero is Burdened, over the limit itself (lost Strength, an old save, the Boulder; nothing more can be picked up) Overloaded. dodge: the share of the dodge left. dex_ac: the share of Dexterity's AC left (a clumsy hero's minus always counts in full). step_every: every Nth step costs the dungeon one more turn (1: every step). How much further the steps carry is in data/senses.json noise (heavy, burdened, overloaded). Before 2026-11-14 the tiers were Burdened (50%) and Stressed (75%); before 2026-11-13 there was one line, at 75%.",
+    "heavy": {"share": 0.5, "dodge": 0.5, "dex_ac": 1.0},
+    "burdened": {"share": 0.75, "dodge": 0.0, "dex_ac": 0.5, "step_every": 2},
+    "overloaded": {"dodge": 0.0, "dex_ac": 0.0, "step_every": 1}
   },
 
   "wards": {

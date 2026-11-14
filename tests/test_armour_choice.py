@@ -15,8 +15,9 @@ are many ways to play". This reverses the 3.3.2 rule that the material gives
   * The body armour's WEIGHT CLASS sets Dexterity's AC (6 / 3 / 0), the
     dodge (full / half / none), the footsteps (+0 / +1 / +2, metal +1) and
     a spell's cost in metal (x1 / x1.5 / x2; mithril casts freely).
-  * The LOAD: Burdened over half the limit (half the dodge), Stressed over
-    three quarters (no dodge, every second step a turn).
+  * The LOAD: Heavy over half the limit (half the dodge), Burdened over
+    three quarters (no dodge, half Dexterity's AC, every second step a
+    turn), Overloaded past the limit (no Dexterity AC, every step a turn).
   * A named piece's own resistances win; an old save's common armour takes
     its profile from its template and material.
 
@@ -186,23 +187,25 @@ def _weight(lb):
     return it
 
 
-def test_burdened_halves_the_dodge_and_stressed_takes_it():
+def test_heavy_halves_the_dodge_and_burdened_takes_it():
     p = _wearing('leather', 'leather', dex=20)
     full = p.dodge_chance()
-    p.inventory.append(_weight(45))                    # 10 worn + 45: over half
-    assert p.load_tier() == 'burdened'
+    p.inventory.append(_weight(45))                    # worn + 45: over half
+    assert p.load_tier() == 'heavy'
     assert p.dodge_chance() == pytest.approx(full / 2)
-    p.inventory.append(_weight(25))                    # 80: over three quarters
-    assert p.load_tier() == 'stressed'
+    p.inventory.append(_weight(25))                    # over three quarters
+    assert p.load_tier() == 'burdened'
     assert p.dodge_chance() == 0.0
 
 
-def test_stressed_costs_every_second_step_and_burdened_steps_free():
+def test_burdened_costs_every_second_step_overloaded_every_step_heavy_free():
     p = Player()
     p.inventory.append(_weight(60))
     assert [p.burden_step() for _ in range(4)] == [False] * 4
     p.inventory.append(_weight(20))
     assert [p.burden_step() for _ in range(4)] == [False, True, False, True]
+    p.inventory.append(_weight(30))
+    assert [p.burden_step() for _ in range(3)] == [True, True, True]
 
 
 def test_the_load_is_heard():
@@ -210,9 +213,11 @@ def test_the_load_is_heard():
     p = Player()
     base = senses.step_radius(p)
     p.inventory.append(_weight(60))
-    assert senses.step_radius(p) == base + 1
+    assert senses.step_radius(p) == base + 1          # Heavy
     p.inventory.append(_weight(20))
-    assert senses.step_radius(p) == base + 2
+    assert senses.step_radius(p) == base + 2          # Burdened
+    p.inventory.append(_weight(30))
+    assert senses.step_radius(p) == base + 2          # Overloaded
 
 
 # ----------------------------------------------------------- wards: riders stopped
@@ -381,7 +386,8 @@ def test_the_rules_are_in_the_data():
     assert r['armour_weight']['dex_ac_cap'] == {'light': 6, 'medium': 3, 'heavy': 0}
     assert r['armour_weight']['dodge_share'] == {'light': 1.0, 'medium': 0.5, 'heavy': 0.0}
     assert r['armour_weight']['casting_mult'] == {'light': 1.0, 'medium': 1.5, 'heavy': 2.0}
-    assert r['load']['burdened']['share'] == 0.5 and r['load']['stressed']['share'] == 0.75
+    assert r['load']['heavy']['share'] == 0.5 and r['load']['burdened']['share'] == 0.75
+    assert r['load']['burdened']['dex_ac'] == 0.5 and r['load']['overloaded']['dex_ac'] == 0.0
 
 
 def test_the_profile_pass_is_written_and_idempotent():

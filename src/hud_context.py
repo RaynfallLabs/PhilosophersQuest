@@ -148,8 +148,8 @@ def load_number(weight: float, limit: float, share=(0.5, 0.75)) -> str:
     """The carried weight as the readout shows it ("43" in "Carrying 43 /
     100"), never disagreeing with the state beside it. A whole number
     normally; one decimal when rounding would cross a line: 50.4 of 100 is
-    Burdened (over 50) but rounded to "50"; 100.3 is Over Limit but read
-    "100". `share`: the share (or shares: Burdened, Stressed) of the limit
+    Heavy (over 50) but rounded to "50"; 100.3 is Overloaded but read
+    "100". `share`: the share (or shares: Heavy, Burdened) of the limit
     where the state changes. Pure, shared by the sidebar, sheet, Kit and
     menus."""
     import math

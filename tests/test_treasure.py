@@ -115,7 +115,7 @@ def test_enough_gold_makes_the_hero_burdened_and_blocks_pickups():
     g.player_gold = 0
     spare = p.burden_threshold() - p.get_current_weight()
     g.player_gold = treasure.coins_in(spare) + 160        # a pound past the line
-    assert p.is_burdened() and p.update_burden() == 'on'
+    assert p.is_burdened() and p.update_burden() == ('', 'burdened')
     g.player_gold = g.player_gold + p.coin_room() + 160   # past the limit itself
     assert p.is_overloaded()
     heavy = copy.copy(next(i for i in items.load_items('potion')))

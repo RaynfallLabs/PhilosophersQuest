@@ -543,18 +543,23 @@ maul 8) and STR is the lever (`Player.get_carry_limit`).
   will not fit is set down at his feet (or, from a person paying him, made
   up in gems): `game_purse._gain_gold`. `D` lists **Drop Gold** first. The
   sidebar, the Kit and the character sheet show the purse with its weight.
-- **Burdened** above `BURDENED_SHARE` (50%) of the limit: half the dodge,
-  footsteps a tile further. **Stressed** above `STRESSED_SHARE` (75%): no
-  dodge, footsteps two tiles further, and every `STRESSED_STEP_EVERY`-th
-  (2nd) step costs an extra turn (`Game._burden_extra_turn`). The numbers
-  are `data/gear_rules.json` `load` (winning-build plan 3.3, 2026-11-13).
-  Until then there was one line, Burdened at 75%, where every fourth step
-  cost an extra turn and nothing else. Attacks, spells, AC and the quiz
-  clock are untouched.
-  Messages "You are Burdened. ...", "You are Stressed. ...", "You are no
-  longer Stressed, but you are still Burdened." / "You are no longer
-  Burdened." (`Game._note_burden`, every turn and on
-  load). Sidebar, character sheet and menus read `ui.carry_state`.
+- **Heavy** above `HEAVY_SHARE` (50%) of the limit: half the dodge,
+  footsteps a tile further. **Burdened** above `BURDENED_SHARE` (75%): no
+  dodge, half Dexterity's AC (`load_dex_ac_share`; a clumsy hero's minus
+  counts in full), footsteps two tiles further, and every
+  `BURDENED_STEP_EVERY`-th (2nd) step costs an extra turn
+  (`Game._burden_extra_turn`). **Overloaded** past the limit itself: no
+  dodge, no Dexterity AC, and every step costs an extra turn. The numbers
+  are `data/gear_rules.json` `load` (Brandon 2026-11-14: "heavy at 50%,
+  burdened at 75%, overloaded at 100%"). From 2026-11-13 the tiers were
+  Burdened (50%) and Stressed (75%); before that there was one line,
+  Burdened at 75%, where every fourth step cost an extra turn. Attacks,
+  spells and the quiz clock are untouched.
+  Messages "Your load is Heavy. ...", "You are Burdened. ...", "You are
+  Overloaded. ...", "You are no longer Overloaded, but you are still
+  Burdened.", "Your load is no longer Heavy." (`Game._note_burden`, every
+  turn and on load). Sidebar, character sheet and menus read
+  `ui.carry_state`.
 - **Refused past the limit:** `add_to_inventory` refuses an item that
   would go over (`can_carry`); the message is
   `Player.too_heavy_message()` ("Too heavy: that would put you over your
@@ -562,7 +567,7 @@ maul 8) and STR is the lever (`Player.get_carry_limit`).
   Rewards that do not fit go to the hero's feet (`Game._give_item`).
   Exception: Sisyphus' Boulder (`carry_past_limit`).
 - Over the limit (an old save, lost STR, the Boulder, a cursed lodestone)
-  is allowed: the hero is Burdened, sees "Over Limit", and can drop.
+  is allowed: the hero is Overloaded, sees "Overloaded", and can drop.
 
 Stacking: `Item._STACKABLE_CLASSES = (Ingredient, Food, Potion, Scroll,
 Ammo, Treasure)`. `add_to_inventory` merges same-id items only when the

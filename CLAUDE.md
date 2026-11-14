@@ -26,7 +26,7 @@ A graphical roguelike where knowledge is power. Every action requires answering 
 ## Player Stats
 - **STR** — Carry capacity
 - **CON** — Max HP (3 per point) and toughness (1% less damage per point over 10, cap 40%)
-- **DEX** — Armor class (up to 6 points in light body armour, 3 in medium, 0 in heavy) and dodge (0.75% per point over 10, cap 30%; half in medium armour, none in heavy, less under a heavy load)
+- **DEX** — Armor class (up to 6 points in light body armour, 3 in medium, 0 in heavy; half when Burdened, none when Overloaded) and dodge (0.75% per point over 10, cap 30%; half in medium armour, none in heavy; half under a Heavy load, none when Burdened)
 - **INT** — Max MP, and the share of it meditation gives back each floor (half, +1% per point over 10, cap 80%)
 - **WIS** — Quiz timer bonus (+1 second per point)
 - **PER** — Sight radius
