@@ -646,6 +646,13 @@ class MenuMixin:
                     continue
                 out.append(('floor', it))
 
+        # The weapon At Your Back while it is away (dropped, thrown, stolen):
+        # remembered, "(not carried)". On this tile it is a floor row.
+        _away = getattr(self, '_readied_away', None)
+        gone = _away() if callable(_away) else None
+        if gone is not None and all(it is not gone for _s, it in out):
+            out.append(('away', gone))
+
         return out
 
     def _kit_filter_for_tab(self, all_rows, tab_idx: int):

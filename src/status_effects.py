@@ -369,8 +369,25 @@ def _can_corrode(item) -> bool:
     return mat not in _RUSTPROOF
 
 
+def is_legend(item) -> bool:
+    """A unique or legendary piece: named in the data (``is_unique``) or made
+    of the "legendary" stuff of the old named pieces."""
+    return bool(getattr(item, 'is_unique', False)) or \
+        str(getattr(item, 'material', '') or '').strip().lower() == 'legendary'
+
+
 def _can_rust(item) -> bool:
-    """Return True if an item can be damaged by rust (iron and its alloys)."""
+    """Return True if an item can be damaged by rust (iron and its alloys).
+
+    The one rust check: the rust trap's water, the rust monster's feelers,
+    the Bloomleaf Cloak's ward and the card's "rusts" all ask it. A unique
+    or legendary piece is magical and never rusts, whatever it is made of,
+    unless its own lore says it does (``"rusts": true`` in its data, read by
+    items.lore_rust_ids; Brandon 2026-11-14: "Legendary weapons don't need
+    to rust, unless lore says so; they are magical")."""
+    if is_legend(item):
+        from items import lore_rust_ids
+        return str(getattr(item, 'id', '') or '') in lore_rust_ids()
     mat = str(getattr(item, 'material', '') or '')
     wear = material_wear(item)
     if wear is not None:

@@ -81,6 +81,21 @@ piece still refuses to come off. The Kit, the @ sheet and the equip menu
 mark a known kind "Known by Hand" (BY HAND in the equip menu), and a line
 says so when it fires ("You have worn one of these before. On it goes.").
 
+**One disguise per kind** (round 3, 2026-11-14). Because Known by Hand
+tells kinds apart, two kinds may never share an unidentified name: the BY
+HAND mark, or an equip with no quiz, would say which one it is. The name
+may show the material's class (cloth, hide, metal) but belongs to one
+kind. A common piece's disguise is `items.material_unidentified_name`: the
+material's `disguise` kept as written when it has one, else its flavour
+`unidentified_descriptor` trimmed to fit (`compose_unidentified_name`).
+Linen and rawhide both trimmed to "Rough" (a Rough Cloak was either), so
+they are "Rough Cloth" and "Rough Hide" now (Brandon: "a linen and hide
+plate are not both 'rough' but 'rough cloth' and 'rough hide'"); an old
+save's pieces take today's disguise on load
+(`Game._migrate_recompose_composite_items`). `tests/test_disguises.py`
+checks every kind any spawn path can make, named pieces and the run's dealt
+ring and amulet looks included.
+
 **Donning time** (`gear.don_turns` / `doff_turns`, `gear_rules.json`
 `donning`). Body armour takes 1 turn light, 3 medium, 5 heavy, 6 for the
 full plate template (`gear.template_of`: the template_basis, else read from
@@ -104,19 +119,41 @@ equip: on, then the monsters act.
 
 **At Your Back** (`Player.readied_weapon`). A melee weapon in the pack,
 readied from the Kit or the @ sheet (R); S on the map swaps it with the one
-in the hand in one turn. It stays in the pack (its weight counts; a drop,
-a sale or a theft lets go of it, and picked up again it is an ordinary
-pack weapon: `Player.add_to_inventory`), a cursed blade in the hand will not let
-go, and a two-hander will not come out past a shield that will not come
-off (an ordinary shield goes to the pack, as for any two-handed equip).
+in the hand in one turn. It stays in the pack (its weight counts), a
+cursed blade in the hand will not let go, and a two-hander will not come
+out past a shield that will not come off (an ordinary shield goes to the
+pack, as for any two-handed equip).
+
+**Remembered pieces** (`src/loadouts.py`, round 3, 2026-11-14; Brandon:
+"persist sets under the quickswapping function if a weapon is dropped or
+thrown"; it reversed bug bash WB-A06). The weapon At Your Back and every
+kit keep a piece that leaves the pack by being **dropped, thrown or
+stolen**. While it is away the Kit lists it last, "Silver Mace (not
+carried)" (source "At Your Back", Lore its only action), the @ sheet's Back
+row and the Loadouts screen say "(not carried)", and S says "Your Silver
+Mace is not with you. Pick it up again and S draws it." Picked up again (a
+dead thief gives it back, `theft.give_back`), it is in its place again by
+itself, and one line after the pickup says so ("The Silver Mace is At Your
+Back again.", "The Iron Helm is back in Kit One.":
+`DressingMixin._sets_note_back`). It is **let go for good** when sold
+(`game_traders._trader_sell`), destroyed (a thrown weapon that shatters, a
+cursed piece the smith cuts off), used up or made into another object:
+`DressingMixin._sets_prune` lets go of a remembered piece found nowhere in
+the world any more (not on any floor's ground or in a chest there, not in a
+thief's hands), at most once a turn and before every save. A smith's
+reforge works the same object, so the reforged weapon keeps its place.
+Readying another weapon simply replaces the remembered one. The pieces are
+the very objects, saved in one pickle with the floors, so identity
+survives a save; an old save has none.
 
 **Loadouts** (`src/loadouts.py`, Shift+E). Three saved kits (Kit One, Kit
 Two, Kit Three; N renames): the wielded and readied weapons, shield, the
 eight armour slots, amulet, belt and rings, saved as the very objects (S
 saves what is worn). Putting one on takes the sum of its pieces' turns,
-shown before confirming; a piece not in the pack is skipped, a piece not
-known by hand is refused ("put it on once first"), and a slot that was
-empty when the kit was saved is left alone.
+shown before confirming; a piece not with the hero (dropped, thrown,
+stolen: see Remembered pieces) is skipped with a line and costs nothing,
+a piece not known by hand is refused ("put it on once first"), and a slot
+that was empty when the kit was saved is left alone.
 
 ## 1c. What armour does beyond AC (winning-build plan 3.3, 2026-11-13)
 
@@ -148,7 +185,9 @@ replaced the material files' `resistances` / `weaknesses` lists, which
 nothing read for damage. The shape:
 
 - metal conducts (lightning x1.25) and iron rusts; bronze, hematite and
-  mithril never rust; cloth and leather catch fire (x1.25) and scorch;
+  mithril never rust, and no named or legendary piece does unless its lore
+  says so (status_effects.md, "No legend rusts"); cloth and leather catch
+  fire (x1.25) and scorch;
 - dragonscale fire x0.5 (cold x1.15), dragonhide fire x0.7, drakeskin 0.85;
   silk catches an arrowhead (pierce x0.9, spider silk 0.85);
 - adamantine slash and pierce x0.85, heavy; titanforged blunt x0.8, heavier;

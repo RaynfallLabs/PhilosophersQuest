@@ -56,7 +56,9 @@ def test_compose_item_name_returns_title_case():
 
 def test_compose_unidentified_name_returns_title_case():
     from items import compose_unidentified_name
-    # linen's unidentified_descriptor is "rough fabric"
+    # linen's unidentified_descriptor is "rough fabric" (its disguise, the
+    # name an unknown linen piece goes by, is "rough cloth":
+    # items.material_unidentified_name, tests/test_disguises.py)
     assert compose_unidentified_name("rough fabric", "padded") == "Rough Padded"
 
 

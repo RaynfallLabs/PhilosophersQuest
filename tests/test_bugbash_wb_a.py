@@ -217,16 +217,41 @@ def test_wb_a05_lost_earplugs_take_the_wax_with_them(game):
     assert game._apply_label(again) == 'Put In'
 
 
-# ----------------------- WB-A06: a dropped weapon is no longer readied
+# --------- WB-A06, rewritten to Brandon's rule (2026-11-14, Q10): the back
+# remembers a weapon dropped, thrown or stolen; a sale lets go of it.
+# (tests/test_remembered_sets.py has the whole rule.)
 
-def test_wb_a06_a_dropped_readied_weapon_is_not_readied_when_picked_up(game):
+def test_wb_a06_a_dropped_readied_weapon_is_at_your_back_again_when_picked_up(game):
+    import loadouts
     p = game.player
     mace = _weapon()
     p.inventory.append(mace)
     game._ready_weapon(mace)
     game._do_drop_item(mace)
-    assert p.readied_weapon is None
-    p.add_to_inventory(mace)
+    assert p.readied_weapon is None and loadouts.readied_memory(p) is mace
+    game._pickup(target=mace)
+    assert p.readied_weapon is mace
+    assert _said(game, 3)[-1] == f'The {game._bare_name(mace)} is At Your Back again.'
+
+
+def test_wb_a06_a_sold_readied_weapon_is_let_go(game):
+    import loadouts
+    from mystery_system import MerchantNPC, build_trader
+    import random as _random
+    p = game.player
+    mace = _weapon()
+    p.inventory.append(mace)
+    game._ready_weapon(mace)
+    game.ground_items = [i for i in game.ground_items if not isinstance(i, MerchantNPC)]
+    m = build_trader('generalist', game.dungeon_level, _random.Random(11))
+    m.x, m.y = p.x + 1, p.y
+    m.purse = 100000
+    game.ground_items.append(m)
+    game._open_shop()
+    game._shop_tab = 1
+    game._trader_sell(mace)
+    assert mace not in p.inventory and loadouts.readied_memory(p) is None
+    p.add_to_inventory(mace)                     # bought back: an ordinary weapon
     assert p.readied_weapon is None
 
 

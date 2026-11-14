@@ -494,6 +494,9 @@ class CombatMixin:
         # Break check
         if _rng.random() < break_chance:
             self.add_message(f"The {display} shatters on impact!", 'warning')
+            # Gone for good: the back and the kits let go of it (loadouts.py).
+            # Unbroken, it lies where it fell and they keep it.
+            self._sets_let_go(weapon)
         else:
             # Weapon survives -- drop it on the ground
             weapon.x = land_x

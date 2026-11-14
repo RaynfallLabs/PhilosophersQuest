@@ -912,7 +912,7 @@ def test_journey_05_the_smith(make_game):
     h.said()
     shop_pick(h, lambda r: r == 'lining')
     shop_pick(h, lambda r: isinstance(r, tuple) and r[1] == 'fire')
-    assert 'lines your Rough Cloak' in h.said()[0]
+    assert 'lines your Rough Cloth Cloak' in h.said()[0]     # linen's disguise (round 3)
 
     plan = g._trader_plan()
     nxt = traders.next_stall(plan, 'armourer', g.dungeon_level)

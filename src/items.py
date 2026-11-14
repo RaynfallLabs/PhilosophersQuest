@@ -1744,6 +1744,29 @@ _SCRIPTED_ONLY_CLASSES = ('weapon', 'armor', 'shield', 'accessory',
 _scripted_only_cache: frozenset | None = None
 
 
+_lore_rust_cache: frozenset | None = None
+
+
+def lore_rust_ids() -> frozenset:
+    """Ids of the named pieces whose own lore says they rust (``"rusts":
+    true`` in data/items). Every other unique or legendary piece is magical
+    and never rusts (status_effects._can_rust; Brandon 2026-11-14). Read
+    from the data by id, so an old save's piece follows today's file."""
+    global _lore_rust_cache
+    if _lore_rust_cache is None:
+        ids = set()
+        for cat in ('weapon', 'armor', 'shield', 'accessory', 'artifact'):
+            try:
+                with open(os.path.join(_DATA_DIR, f"{cat}.json"), encoding='utf-8') as f:
+                    raw = json.load(f)
+            except (OSError, ValueError):
+                continue
+            ids |= {iid for iid, d in raw.items()
+                    if isinstance(d, dict) and d.get('rusts') is True}
+        _lore_rust_cache = frozenset(ids)
+    return _lore_rust_cache
+
+
 def _has_spawn_weight(defn: dict) -> bool:
     if float(defn.get('peak_weight') or 0.0) > 0:
         return True
@@ -2432,6 +2455,30 @@ def compose_unidentified_name(material_descriptor: str, template_name: str,
     return _title_if_all_lower(composed)
 
 
+def material_unidentified_name(mat: dict, tpl: dict) -> str:
+    """The name a common piece of material ``mat`` and template ``tpl`` goes
+    by before it is identified: its disguise. Known by Hand tells KINDS
+    apart (known_by_hand.py), so no two kinds may share one
+    (tests/test_disguises.py); the name may show the material's class (cloth,
+    hide, metal) but never more than the kind it belongs to.
+
+    A material with a ``disguise`` gives its own words, kept as written:
+    linen and rawhide both trimmed to "Rough" (a Rough Cloak was either),
+    so they are "rough cloth" and "rough hide" (Brandon 2026-11-14). Every
+    other material's flavour ``unidentified_descriptor`` is trimmed to fit
+    (compose_unidentified_name)."""
+    noun = tpl.get('noun', '')
+    disguise = ' '.join(str(mat.get('disguise') or '').split())
+    if not disguise:
+        return compose_unidentified_name(
+            mat.get('unidentified_descriptor', mat['name']), tpl['name'], noun)
+    cleaned = _strip_redundant_material_words(tpl['name'])
+    cleaned = _drop_words_present_in(cleaned, disguise)
+    cleaned = _drop_leather_family_redundancy(cleaned, disguise)
+    composed = _append_noun_if_missing(f"{disguise} {cleaned}".strip(), noun)
+    return _title_if_all_lower(composed)
+
+
 def instantiate_weapon(template_id: str, material_id: str, *,
                        enchant: int = 0, buc: str = 'uncursed',
                        x: int = 0, y: int = 0) -> Weapon:
@@ -2487,9 +2534,7 @@ def instantiate_weapon(template_id: str, material_id: str, *,
         'crit_multiplier': float(tpl.get('crit_multiplier', 1.5)),
         'enchant_bonus': max(0, min(enchant, int(mat.get('max_enchant', 2)))),
         'identified': False,
-        'unidentified_name': compose_unidentified_name(
-            mat.get('unidentified_descriptor', mat['name']), tpl['name'],
-            tpl.get('noun', '')),
+        'unidentified_name': material_unidentified_name(mat, tpl),
         'buc': buc,
         'requires_ammo': tpl.get('requires_ammo', None),
         'infinite_ammo': bool(tpl.get('infinite_ammo', False)),
@@ -2618,9 +2663,7 @@ def instantiate_armor(template_id: str, material_id: str, *,
         'damage_resistances': {},
         'can_be_cursed': bool(mat.get('can_be_cursed', True)),
         'identified': False,
-        'unidentified_name': compose_unidentified_name(
-            mat.get('unidentified_descriptor', mat['name']), tpl['name'],
-            tpl.get('noun', '')),
+        'unidentified_name': material_unidentified_name(mat, tpl),
         'buc': buc,
         'quiz_tier': tier,
         # Complexity (the template's weight class) + benefit (the tier).
@@ -2676,9 +2719,7 @@ def instantiate_shield(template_id: str, material_id: str, *,
         'enchant_bonus': plus,
         'ench_level': level,
         'identified': False,
-        'unidentified_name': compose_unidentified_name(
-            mat.get('unidentified_descriptor', mat['name']), tpl['name'],
-            tpl.get('noun', '')),
+        'unidentified_name': material_unidentified_name(mat, tpl),
         'buc': buc,
         'quiz_tier': tier,
         # Shields never had a threshold of their own (every one asked 2):

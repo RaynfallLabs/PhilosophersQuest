@@ -1282,7 +1282,8 @@ class RenderMixin:
         rows = []
         for entry in loadout:
             item = entry.get('item')
-            lines = self._wrap_text(display_item(item), f16, name_w) or ['']
+            lines = self._wrap_text(self._loadout_entry_text(entry) or display_item(item),
+                                    f16, name_w) or ['']
             rows.append((entry, item, lines))
         one = lh + S(8)
         total = sum(one + (len(ls) - 1) * lh for _e, _i, ls in rows) + S(3) * len(rows)
@@ -1625,7 +1626,8 @@ class RenderMixin:
             row_rect(r, selected=selected, focus=(focus == 'loadout'))
             text(entry['label'], font_tiny, FP.FADED_TEXT, r.x + S(7), r.y + S(5))
             item = entry.get('item')
-            name = preview_name(item, r.w - 2 * S(7), selected=selected)
+            name = (self._loadout_entry_text(entry)
+                    or preview_name(item, r.w - 2 * S(7), selected=selected))
             wrapped(name, font_small, item_color(item),
                     pygame.Rect(r.x + S(7), r.y + S(17), r.w - 2 * S(7), r.h - S(17)),
                     line_h=13, max_lines=2)
@@ -5377,14 +5379,15 @@ class RenderMixin:
         'back':  (200, 190, 150),  # the weapon At Your Back
         'pack':  (200, 200, 200),  # normal
         'floor': (140, 140, 140),  # dim: on the ground here
+        'away':  (150, 140, 120),  # dim: At Your Back, but not with him
     }
-    _KIT_SRC_TAG = {'equip': 'eq', 'back': 'bk', 'pack': 'pk', 'floor': 'fl'}
+    _KIT_SRC_TAG = {'equip': 'eq', 'back': 'bk', 'pack': 'pk', 'floor': 'fl', 'away': 'aw'}
 
     def _kit_rows_for_slug(self, slug: str):
         all_rows = self._kit_collect_items()
         tab_slugs = [t[1] for t in self._KIT_TABS]
         rows = self._kit_filter_for_tab(all_rows, tab_slugs.index(slug))
-        order = {'floor': 0, 'equip': 1, 'back': 2, 'pack': 3}
+        order = {'floor': 0, 'equip': 1, 'back': 2, 'pack': 3, 'away': 4}
         if slug == 'weapons':
             rows.sort(key=lambda r: (order.get(r[0], 9),
                                      -float(self._kit_avg_damage(r[1]) or 0)))
@@ -5449,7 +5452,25 @@ class RenderMixin:
 
     def _kit_source_label(self, src: str) -> str:
         return {'equip': 'Equipped', 'back': 'At Your Back', 'pack': 'Pack',
-                'floor': 'Floor'}.get(src, src)
+                'floor': 'Floor', 'away': 'At Your Back'}.get(src, src)
+
+    def _kit_row_name(self, src: str, item) -> str:
+        """A Kit row's name: the weapon At Your Back that is away is
+        "Silver Mace (not carried)" (loadouts.py)."""
+        name = self._display_name(item)
+        if src == 'away':
+            import loadouts as _sets
+            name = _sets.not_carried(name)
+        return name
+
+    def _loadout_entry_text(self, entry) -> str:
+        """The @ sheet's Back row while its weapon is away: "Silver Mace
+        (not carried)"; '' for every other row."""
+        gone = (entry or {}).get('away')
+        if gone is None or (entry or {}).get('item') is not None:
+            return ''
+        import loadouts as _sets
+        return _sets.not_carried(self._bare_name(gone))
 
     def _kit_detail_lines_for_treasure(self, src: str, item):
         """A piece of treasure in the Kit's Valuables tab: what the shop says
@@ -5494,10 +5515,13 @@ class RenderMixin:
             return self._kit_detail_lines_for_treasure(src, item)
         idl = self._kit_visible_level(item)
         lines = [
-            (self._display_name(item), FP.GOLD_PALE, get_font('heading', 22)),
+            (self._kit_row_name(src, item), FP.GOLD_PALE, get_font('heading', 22)),
             (f"Source: {self._kit_source_label(src)}", FP.FADED_TEXT, self.font_sm),
             (f"Identity: {_identify_status_label(idl)}", FP.CYAN_ACCENT, self.font_sm),
         ]
+        if src == 'away':
+            lines.append(("Not with you: dropped, thrown or stolen. Pick it up again "
+                          "and S draws it.", FP.WARNING_TEXT, self.font_sm))
         delta = self._equip_delta_str(item)
         if delta:
             color = FP.SUCCESS_TEXT if '+' in delta else FP.WARNING_TEXT
@@ -5729,7 +5753,7 @@ class RenderMixin:
                 name_col = FP.BODY_TEXT
             else:
                 src, item = row
-                name = self._display_name(item)
+                name = self._kit_row_name(src, item)
                 tag = self._kit_source_label(src)
                 stats, extra = self._kit_row_labelled(slug, src, item)
                 tag_col = self._KIT_SRC_COLOR.get(src, FP.BODY_TEXT)
@@ -6794,7 +6818,7 @@ class RenderMixin:
             y += per * (line_f.get_height() + S(6)) + S(10)
             notes = []
             if plan['missing']:
-                notes.append(("Not in your pack: " + ', '.join(
+                notes.append(("Not with you, so skipped: " + ', '.join(
                     self._bare_name(it) for it in plan['missing']) + '.', FP.WARNING_TEXT))
             for it, why in plan['refused']:
                 notes.append((f"Stays off: {self._bare_name(it)} ({why}).", FP.WARNING_TEXT))

@@ -62,7 +62,9 @@ class ItemActionsMixin:
 
     def _item_where(self, item) -> str:
         """'equip' when worn, 'back' when it is the weapon At Your Back,
-        'pack' when carried, 'floor' when on this tile, '' otherwise."""
+        'pack' when carried, 'floor' when on this tile, 'away' when it is
+        the weapon At Your Back but not with him (loadouts.py), ''
+        otherwise."""
         if item is None:
             return ''
         if self._lore_equipped_slot(item):
@@ -75,6 +77,8 @@ class ItemActionsMixin:
         for it in getattr(self, 'ground_items', []) or []:
             if it is item and getattr(it, 'x', None) == px and getattr(it, 'y', None) == py:
                 return 'floor'
+        if item is self._readied_away():
+            return 'away'
         return ''
 
     def _item_known_unremovable(self, item) -> str:
@@ -163,6 +167,10 @@ class ItemActionsMixin:
             key = dict(ACTION_KEYS)[aid]
             out.append({'id': aid, 'key': key, 'label': label,
                         'enabled': not why, 'why': why})
+        if where == 'away':
+            # Not with him: only its lore can be read.
+            add('lore', 'Lore')
+            return out
 
         wearable = (isinstance(item, (Weapon, Armor, Shield, Accessory))
                     and not (isinstance(item, Accessory)

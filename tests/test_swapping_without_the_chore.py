@@ -472,7 +472,8 @@ def test_a_two_hander_and_the_shield(game):
     assert p.weapon is great and p.shield is None and shield in p.inventory
 
 
-def test_the_readied_weapon_is_carried_and_lets_go_when_dropped(game):
+def test_the_readied_weapon_is_carried_and_not_drawn_once_dropped(game):
+    import loadouts
     p = game.player
     mace = _carry(game, _weapon('mace', 'iron'))
     w0 = p.get_current_weight()
@@ -483,6 +484,9 @@ def test_the_readied_weapon_is_carried_and_lets_go_when_dropped(game):
     assert acts['ready']['label'] == 'Unready' and 'drop' in acts
     game._do_drop_item(mace)
     assert p.readied_weapon is None
+    # Remembered while it lies there (round 3, Brandon's Q10): picked up,
+    # it is at his back again (tests/test_remembered_sets.py).
+    assert loadouts.readied_memory(p) is mace
     # A bow has its own slot: it is never readied.
     bow = next(w for w in items.load_items('weapon') if getattr(w, 'requires_ammo', None))
     _carry(game, bow)
