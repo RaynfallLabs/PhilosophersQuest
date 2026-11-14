@@ -142,7 +142,7 @@ NEW = {
     },
     # --- 6. The Furies, greater: three that will not stand still -----------------
     'erinyes_greater': {
-        'name': 'Greater Erinyes', 'symbol': 'E', 'color': [140, 30, 40],
+        'name': 'Greater Erinys', 'symbol': 'E', 'color': [140, 30, 40],
         'hp': '300d12+1290', 'speed': 13, 'ai_pattern': 'hit_and_run', 'thac0': -15,
         'peak_floor': 86, 'spread': 12, 'peak_weight': 2.0, 'min_level': 80,
         'attacks': [
@@ -891,6 +891,10 @@ def apply(data: dict) -> list[str]:
         # tools/content/affinity_pass.py (the monster lore pass, winning
         # build 2026-11-13): the ones already written win.
         _keep_affinity(want, cur)
+        # Its pronoun (round 3, 2026-11-14: data/monsters.json `pronoun`):
+        # the one already written wins.
+        if isinstance(cur, dict) and cur.get('pronoun'):
+            want['pronoun'] = cur['pronoun']
         if cur != want:
             log.append(f'{mid}: {"updated" if mid in data else "added"}')
             data[mid] = want

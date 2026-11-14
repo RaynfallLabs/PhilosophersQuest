@@ -15,6 +15,7 @@ constants (``_EQUIP_TABS``, ``_COOK_TABS``, ``_AZ_KEYS``, ``_GoldDropEntry``,
 co-located with related action code.
 """
 from __future__ import annotations
+from naming import quantity
 from monster import the_name
 
 import pygame
@@ -643,6 +644,13 @@ class MenuMixin:
                 if id(it) in equipped_ids:
                     continue
                 out.append(('floor', it))
+
+        # The weapon At Your Back while it is away (dropped, thrown, stolen):
+        # remembered, "(not carried)". On this tile it is a floor row.
+        _away = getattr(self, '_readied_away', None)
+        gone = _away() if callable(_away) else None
+        if gone is not None and all(it is not gone for _s, it in out):
+            out.append(('away', gone))
 
         return out
 
@@ -1384,7 +1392,7 @@ class MenuMixin:
         self.state = STATE_PLAYER
         pid, pdef, uses_remaining, cooldown = self._power_menu_list[idx]
         if cooldown > 0:
-            self.add_message(f"{pdef['label']} is cooling down ({cooldown} turns).", 'warning')
+            self.add_message(f"{pdef['label']} is cooling down ({quantity(cooldown, 'turn')}).", 'warning')
             return
         if pdef.get('uses', 0) > 0 and uses_remaining <= 0:
             self.add_message(f"{pdef['label']} has no uses remaining.", 'warning')
@@ -1600,9 +1608,13 @@ class MenuMixin:
                 if not m.alive:
                     self._on_monster_killed(m)
                     kills += 1
+            from monster import pronouns as _prn
             self.add_message(
-                f"The Elder Blood SCREAMS! {len(visible)} creatures lose "
-                f"{round(100 * _share)}% of their health! ({kills} slain)",
+                f"The Elder Blood SCREAMS! {quantity(len(visible), 'creature')} "
+                f"{'loses' if len(visible) == 1 else 'lose'} "
+                f"{round(100 * _share)}% of "
+                f"{'their' if len(visible) != 1 else _prn(visible[0])[2]} "
+                f"health! ({kills} slain)",
                 'success')
             pl.power_cooldowns['elder_scream'] = 20
 
@@ -1738,7 +1750,7 @@ class MenuMixin:
         if pl.hero_special_cooldowns.get(pid, 0) > 0:
             self.add_message(
                 f"{special['name']} is cooling down "
-                f"({pl.hero_special_cooldowns[pid]} turns).",
+                f"({quantity(pl.hero_special_cooldowns[pid], 'turn')}).",
                 'warning')
             return False
         # Set cooldown immediately: a failed quiz spends it. Only a power that
@@ -1819,7 +1831,7 @@ class MenuMixin:
         pl._seven_league_used_this_floor = True
         self._refresh_fov()
         self.add_message(
-            f"You stride {steps} tiles in a single bound. The boots are quiet now.",
+            f"You stride {quantity(steps, 'tile')} in a single bound. The boots are quiet now.",
             'success')
         self._notify_stairs(last_x, last_y)
         self._notify_ground(last_x, last_y)

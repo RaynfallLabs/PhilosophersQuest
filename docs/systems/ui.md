@@ -453,7 +453,7 @@ state; column 4 is the `_draw_<state>` method.
 | `STATE_DROP_MENU` | `D` | `_drop_menu_input` | `_draw_drop_menu` |
 | `STATE_DROP_GOLD_INPUT` | drop gold | `_drop_gold_input` | `_draw_drop_gold_input` |
 | `STATE_DROP_QTY_INPUT` | drop stack | `_drop_qty_input` | `_draw_drop_qty_input` |
-| `STATE_HELP` | `?` | `_help_input` (Tab / Left / Right flips the page) | `_draw_help_screen`: page 1 the command reference, page 2 How Quizzes Work (`_draw_help_quizzes`, text in `data/ui/how_quizzes_work.json`) |
+| `STATE_HELP` | `?` | `_help_input` (Tab / Right: next page, Left: back; Up / Down / PgUp / PgDn / Home / End scroll a prose page) | `_draw_help_screen`: page 1 the command reference; pages 2 and 3 the prose pages of `RenderMixin.HELP_PAGES` (`_draw_help_text_page`): How Quizzes Work (`data/ui/how_quizzes_work.json`) and Gear and Load (`data/ui/gear_and_load.json`) |
 | `STATE_LORE` | lore trigger | `_lore_input` | `_draw_lore_dossier_screen` |
 | `STATE_HINT` | Recall Lore | any-key dismiss | `_draw_hint_screen` |
 | `STATE_EXAMINE` | `X` | `_examine_menu_input` | `_draw_examine_menu` |
@@ -998,26 +998,51 @@ item vs biology lore distinct visual families.
 
 ## 17. Help screen (`_draw_help_screen`)
 
-Panel: `COMMAND REFERENCE`, max 1380×620, GOLD border. **Pure
-keybind reference** — every row is a key → action pair, no prose, no
-parentheticals. Every listing must map to a real dispatch in
-`game_input.py`; test by pressing the key.
+Three pages, Tab (or Right) to the next, Left back:
 
-**Six key-group columns:**
+1. **Commands** — panel `COMMAND REFERENCE`, max 1380×760, GOLD border.
+   **Pure keybind reference**: every row is a key → action pair. Every
+   listing must map to a real dispatch in `game_input.py`;
+   `tests/test_help_screen_r3.py` derives the map's keys from
+   `_player_input` and `handle_event` and fails when one is missing (the
+   secret terminal on `` ` `` and the QA keys stay off it).
+2. **How Quizzes Work** — `data/ui/how_quizzes_work.json`: every action's
+   subject, the chain, the clock, the card, missed questions, Recall Lore
+   (a random hint, never about a creature; studying a corpse or the Wand
+   of Probing teaches a kind), cooking.
+3. **Gear and Load** — `data/ui/gear_and_load.json`: the Kit and @ keys
+   (E / R / A / D / I / X, `item_actions.ACTION_KEYS`; Apply is how the
+   earplugs go in), the weapon At Your Back (S), the Loadouts (Shift+E),
+   Known by Hand, donning turns and "Keep dressing?", coatings (Shift+C),
+   flasks (T), Press and Guard (Shift+S), and the three load tiers. The
+   test holds its numbers to `data/gear_rules.json` and `data/arsenal.json`.
+
+Pages 2 and 3 are `RenderMixin.HELP_PAGES`, drawn by
+`_draw_help_text_page`: each section a heading, paragraphs and
+`rows` ("key: what it does", the wrapped lines hung under the words).
+A new prose page is a JSON file in `data/ui/` and one entry there.
+
+**Six key-group columns on page 1:**
 
 1. **Movement** — Arrows, `.`, `< >`, `Tab`, `Shift+E` (Loadouts: its
-   key badge is wide, and in Items it cut "Drop, gold / use tile")
-2. **Combat** — `A`, `F`, `T`, `M / Z`, `V`, `S` (swap weapons)
+   key badge is wide, and in Items it cut "Drop, gold / use tile"),
+   `Shift+S`, `Shift+C`
+2. **Combat** — `A`, `F`, `T` (throw an item or a flask), `M / Z`, `V`,
+   `S` (swap in the readied weapon)
 3. **Items** — `E`, `X`, `I`, `H`, `C`, `D`, `U / Q`, `R`
-4. **Knowledge** — `@`, `B`, `J`, `K`, `W`, `;`, `N`
-5. **World** — `G / ,`, `P`, `Y`, `\`, `Shift+\`, `O`, `Shift+P`
-6. **System** — `1-4`, `SPACE`, `?`, `ESC`
+4. **Knowledge** — `@`, `B`, `J`, `K` (Kit: equip, ready, apply), `W`,
+   `;`, `S` (Your Story, end of run), `N` (Recall Lore for a hint), `L`
+5. **World** — `G / ,`, `P`, `Y`, `\`, `Shift+\`, `O`, `B, Tab`,
+   `B, N`, `Shift+P`
+6. **System** — `1-4`, `SPACE`, `C`, `PgUp/PgDn`, `?`, `F10`, `F11`, `ESC`
 
 Rendered in a 3-column (if wide ≥ 780) or 2-column grid. Each key
 tile is a midnight-mid pill with gold border; the description is a
-single line.
+single line, whole at 1280x720 (nine rows a group is the most that fits
+there: a longer rule goes on a prose page).
 
-**Footer hint:** `"? / ESC: close"`.
+**Footer hint:** `"Tab: How Quizzes Work   ? / ESC: close"`; the prose
+pages name the page Tab turns to.
 
 Earlier (v2.18) revisions carried a "System Rules" prose subpanel at
 the bottom covering zero-tolerance / chain-v2 / math-only / subject-
@@ -1030,8 +1055,8 @@ and in `conventions.md` instead.
 If you add a new keybind, add it to the group that fits AND verify
 the dispatch exists in `game_input.py`. Do **not** attach
 parentheticals ("1 philosophy Q", "mid-chain", "theology chain",
-"compound recipes" etc.) — the help screen is a key map, not a
-tutorial.
+"compound recipes" etc.) to page 1 — it is a key map, not a
+tutorial; what a key's rule is goes on page 2 or 3.
 
 ---
 
@@ -1259,7 +1284,7 @@ unchanged:
 | Key | Action |
 |---|---|
 | `E` | Equip a pack item (`_equip_item`; the quiz only for a kind not yet Known by Hand, then its donning turns); Unequip a worn one (`_unequip_slot`, half the donning turns). On the Kit a floor item is picked up (`_pickup(target=item)`) and then equipped. `U` on the sheet is the same toggle. |
-| `R` | Ready a melee weapon from the pack At Your Back (S swaps it in), or Unready it (no turn). The Kit tags it "At Your Back"; the sheet's Loadout has a Back row. |
+| `R` | Ready a melee weapon from the pack At Your Back (S swaps it in), or Unready it (no turn). The Kit tags it "At Your Back"; the sheet's Loadout has a Back row. Dropped, thrown or stolen it stays remembered: the Kit lists it last as "Silver Mace (not carried)" (source `away`, Lore its only action) and the Back row says the same, until it is picked up again (armour.md, Remembered pieces). |
 | `A` | Apply (`game_arsenal._apply_item`, one turn, no quiz): "Coat Weapon" works a coating into the weapon in the hand (as `Shift+C` does); "Put In" / "Take Out" the beeswax earplugs. Listed only for an item that can be applied; greyed with the reason when the coating would add nothing. |
 | `D` | Drop (`_do_drop_item`, stacks ask how many). A worn item is unequipped first, then dropped. |
 | `I` | Identify (`_identify_item`); needs the Philosopher's Shard, as the I menu does. |

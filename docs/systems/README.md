@@ -122,7 +122,7 @@ the doc wins (and the row is a bug — please update it).
 | "What subjects are timed?" | [conventions.md](conventions.md); math only (combat chain). Everything else untimed |
 | "Which school grades is each maths tier?" | [../quiz/math_grade_curve.md](../quiz/math_grade_curve.md); `tools/balance/math_difficulty.py` scores, `py -m tools.balance.math_grade_curve` fixes |
 | "What is the system-change-sweep rule?" | [conventions.md](conventions.md); grep OLD terms across all `src/` in same commit as mechanical change |
-| "Where does help text live?" | [ui.md](ui.md); `game_render._draw_help_screen`, including the new System Rules card |
+| "Where does help text live?" | [ui.md](ui.md) §17; `game_render._draw_help_screen` (page 1, the key map) and `data/ui/how_quizzes_work.json`, `data/ui/gear_and_load.json` (pages 2 and 3, `RenderMixin.HELP_PAGES`) |
 | "How is the sidebar built?" | [ui.md](ui.md); `ui.Sidebar._identity/_vitals/_attributes/_derived/_effects/_powers/_in_sight` |
 | "Why is a potion I never identified showing its true name and blessing?" | [identify_v3.md](identify_v3.md) §1 top: a known kind fully identifies every copy (`items.is_fully_known`) |
 | "How do mystery altars gate challenges?" | [quests_mysteries.md](quests_mysteries.md); `MYSTERIES` dict in `mystery_system.py` |

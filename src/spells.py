@@ -731,4 +731,4 @@ def reach_words(reach: int | None) -> str:
         return 'sight'
     if reach <= REACH_TOUCH:
         return 'touch'
-    return f'{reach} tiles'
+    return f"{reach} tile{'s' if reach != 1 else ''}"

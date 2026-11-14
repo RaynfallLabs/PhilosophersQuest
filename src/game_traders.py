@@ -550,6 +550,8 @@ class TraderMixin:
                 self.player.refresh_carry_bonuses()
             except Exception:
                 pass
+            # Sold: the back and the kits let go of it for good (loadouts.py).
+            self._sets_let_go(item)
         else:
             self.player.remove_from_inventory(item)
         m.purse = max(0, int(m.purse) - offer)
@@ -951,6 +953,7 @@ class TraderMixin:
                 return False
             if item in p.inventory:
                 p.inventory.remove(item)
+            self._sets_let_go(item)                   # in pieces: gone for good
             self.add_message(f"{who} cuts the {name} off you. It comes away in pieces "
                              "and the pieces are not worth keeping.", 'success')
             return True

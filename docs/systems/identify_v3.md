@@ -350,7 +350,8 @@ Weapons spawn with `id_level = 5 if defn.get("identified", False) else
 weapons start fully unknown on spawn. Templated weapons spawned by
 `instantiate_weapon` also start `identified: false` with
 `unidentified_name` composed from the material descriptor + template
-(`compose_unidentified_name`).
+(`items.material_unidentified_name`: a material's `disguise` as written,
+else `compose_unidentified_name`; one disguise per kind, armour.md §1b).
 
 ### Artifacts missing `unidentified_name` (v2.18.0 fix)
 

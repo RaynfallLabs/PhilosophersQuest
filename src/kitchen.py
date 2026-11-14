@@ -21,6 +21,7 @@ feast, the legendary multiplier and a permanent bonus.
 import json
 from collections import Counter
 
+from naming import quantity
 from paths import data_path
 
 MENU_TABS = ('hp', 'sp', 'mp', 'stat', 'special')
@@ -416,7 +417,7 @@ def dish_effects(player, rec: dict) -> list:
         lines.append(f"+{heal_amount(player, out)} HP")
     elif tab == 'sp':
         lines.append(f"+{sp_shown} SP")
-        lines.append(f"Sustained, {out['sustained']} turns")
+        lines.append(f"Sustained, {quantity(out['sustained'], 'turn')}")
     elif tab == 'mp':
         lines.append(f"+{mp_amount(player, out)} MP")
     elif tab == 'stat':
@@ -424,7 +425,7 @@ def dish_effects(player, rec: dict) -> list:
     else:
         label = power_label(out['power'])
         bonus = f" (+{out['ward']})" if out['ward'] else ''
-        lines.append(f"{label}{bonus}, {out['turns']} turns")
+        lines.append(f"{label}{bonus}, {quantity(out['turns'], 'turn')}")
     room = max_hp_room(player)
     perm = out['permanent']
     if tab == 'hp' or room > 0:
@@ -659,7 +660,8 @@ def apply_dish(player, rec: dict) -> list:
     # The main benefit.
     if tab == 'sp' and out['sustained'] > 0:
         _add_effect(player, 'sustained', out['sustained'], int(rules()['sp'].get('sustained_cap', 800)))
-        msgs.append(f"You are Sustained for {out['sustained']} turns: hunger comes at half its pace.")
+        msgs.append(f"You are Sustained for {quantity(out['sustained'], 'turn')}: "
+                    f"hunger comes at half its pace.")
     elif tab == 'stat':
         msgs.extend(_teach(player, out['stat'], out['lessons']))
     elif tab == 'special':
@@ -671,7 +673,7 @@ def apply_dish(player, rec: dict) -> list:
             if getattr(player, '_save_guard', None) is None:
                 player._save_guard = {}
             player._save_guard[cat] = max(int(player._save_guard.get(cat, 0) or 0), out['ward'])
-        msgs.append(f"{power_label(power)} lingers for {out['turns']} turns.")
+        msgs.append(f"{power_label(power)} lingers for {quantity(out['turns'], 'turn')}.")
     # A legendary feast's permanent bonus.
     if out['permanent']:
         msgs.extend(_apply_permanent(player, rec, out))

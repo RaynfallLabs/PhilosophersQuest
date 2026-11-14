@@ -119,7 +119,10 @@ Composed id is `{material_id}_{template_id}` (e.g. `iron_long_sword`).
 Name is assembled by `compose_item_name(material, template, noun)` with
 redundancy stripping ("steel iron boots" → "steel boots",
 "boiled leather hide armor" → "Boiled Leather Armor"); the
-unidentified form is composed by `compose_unidentified_name`.
+unidentified form is `material_unidentified_name(material, template)`:
+the material's `disguise` kept as written, else its
+`unidentified_descriptor` trimmed by `compose_unidentified_name`. No two
+kinds share one (armour.md §1b, "One disguise per kind").
 
 Dropping a weapon on the floor: `pick_random_weapon_for_floor(floor,
 rng)` rolls a material by `material_spawn_weight` (bell curve on

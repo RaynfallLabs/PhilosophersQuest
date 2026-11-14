@@ -102,8 +102,10 @@ def reach(m, key: str) -> str:
 
 
 def _fill(m, text: str) -> str:
-    from monster import the_name
-    t = (text or '').replace('{The}', the_name(m)).replace('{the}', the_name(m, lower=True))
+    """The creature's name and pronouns put in (monster.fill), the first
+    letter a capital."""
+    from monster import fill
+    t = fill(m, text or '')
     return t[:1].upper() + t[1:]
 
 
@@ -140,7 +142,7 @@ def line(m, key: str, level: int = KNOWN, kin: str = '') -> str:
     if level <= UNKNOWN:
         return sign
     if level < KNOWN:
-        lead = data().get('kin_lead', '').replace('{kin}', kin) if kin else ''
+        lead = _fill(m, data().get('kin_lead', '').replace('{kin}', kin)) if kin else ''
         return ' '.join(p for p in (sign, lead, does) if p)
     return ' '.join(p for p in (sign, does, counter) if p)
 
@@ -167,7 +169,7 @@ def weak_line(m) -> str:
     if not words:
         return ''
     t = data()['weak_one' if len(words) == 1 else 'weak_many'].replace('{words}', _and(words))
-    return t[:1].upper() + t[1:]
+    return _fill(m, t)
 
 
 def hard_line(m) -> str:
@@ -183,8 +185,7 @@ def hard_line(m) -> str:
             parts.append(d[one if len(words) == 1 else many].replace('{words}', _and(words)))
     if not parts:
         return ''
-    t = '; '.join(parts) + '.'
-    return t[:1].upper() + t[1:]
+    return _fill(m, '; '.join(parts) + '.')
 
 
 def status_lore_line(m) -> str:
@@ -203,13 +204,13 @@ def status_lore_line(m) -> str:
         out.append(d['easily'].replace('{effects}', _words(easily)))
     if 'fear_of_fire' in weak:
         out.append(d['fire_flight'])
-    return ' '.join(out)
+    return _fill(m, ' '.join(out)) if out else ''
 
 
 def known_lead(m) -> str:
     """"You know what the skeleton is made of.": said before its lore lines
-    on first sight of a known kind that has no tell, so the "it" in them
-    has a creature to stand for."""
+    on first sight of a known kind that has no tell, so the "it" (or "he",
+    "she") in them has a creature to stand for."""
     return _fill(m, data().get('known_lead', 'You know what {the} is made of.'))
 
 

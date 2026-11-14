@@ -1,3 +1,4 @@
+from naming import quantity
 import os
 import re
 from monster import the_name
@@ -1565,7 +1566,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         excludes the separate enchant_bonus), and a common weapon takes its
         material's base damage from today's weapon curve (its plus is kept)."""
         from items import (Armor, Shield, Weapon, get_template, get_material,
-                           compose_item_name, compose_unidentified_name)
+                           compose_item_name, material_unidentified_name)
         # Hand-authored UNIQUES (ids that are JSON keys, not <material>_<template>
         # composites) must NEVER be recomposed. The startswith() guard below is a
         # heuristic that would corrupt e.g. Bronze Aegis / Cloth of Penelope if a
@@ -1610,9 +1611,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 from items import weapon_base_damage
                 item.base_damage = weapon_base_damage(tpl, mat)
             if hasattr(item, 'unidentified_name'):
-                item.unidentified_name = compose_unidentified_name(
-                    mat.get('unidentified_descriptor', mat['name']),
-                    tpl['name'], noun)
+                # Its disguise as today's data gives it (a save's linen
+                # "Rough Cloak" is a "Rough Cloth Cloak" now: one per kind).
+                item.unidentified_name = material_unidentified_name(mat, tpl)
             if cat == 'weapons' and getattr(item, 'inlay', None):
                 # A smith's silver or cold iron is in its name too: every
                 # load recomposed a "Silvered Iron Longsword" back into an
@@ -1652,6 +1653,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         def walk(item):
             recompose(item)
             for c in getattr(item, 'contents', None) or []:
+                recompose(c)
+            # A trader's shelf too: a save's linen cloak in his stock takes
+            # its disguise of today ("Rough Cloth Cloak": one per kind).
+            for c in getattr(item, 'stock', None) or []:
                 recompose(c)
 
         p = self.player
@@ -1819,6 +1824,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # A trader's visit ends with the floor (the trade-in), and an order
         # with no stall below to collect it at is paid back (game_traders).
         self._traders_leaving(self.dungeon_level)
+        # A Stray Kids show ends when the hero leaves (game_stray_kids).
+        self._stray_kids_leaving()
         # Save current level state
         self.level_mgr.save(
             self.dungeon_level, self.dungeon, self.monsters, self.ground_items
@@ -3557,7 +3564,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     if slide_tile != ICE:
                         break
                 if slide_count > 0:
-                    self.add_message(f"You slide across the ice! ({slide_count} tiles)", 'warning')
+                    self.add_message(f"You slide across the ice! ({quantity(slide_count, 'tile')})", 'warning')
             else:
                 self._check_floor_trap(self.player.x, self.player.y)
             # Check for dug pits (separate from traps)
@@ -3865,7 +3872,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 self._show_item_comparison(h)
         elif len(here) > 2:
             self.add_message(
-                f"You see {len(here)} items here: "
+                f"You see {quantity(len(here), 'item')} here: "
                 + ', '.join(self._display_name(i) for i in here[:3])
                 + ('...' if len(here) > 3 else '.'),
                 'info'
@@ -4759,7 +4766,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 m.tick_effects()
                 if not m.alive:
                     self._on_monster_killed(m)
-                    self.add_message(f"{the_name(m)} succumbs to its wounds!", 'combat')
+                    from monster import pronouns as _prn
+                    self.add_message(f"{the_name(m)} succumbs to {_prn(m)[2]} wounds!", 'combat')
 
         # Duck of Doom: advance the 2026-turn worn-on-head counter and
         # trigger hatch on completion.
@@ -5416,8 +5424,13 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         elif trap_type == 'teleport':
             self._teleport_player()
         elif trap_type == 'fire':
+            import gear as _gear
+            _flame_ward = _gear.ward_against(self.player, None, 'burning')
             if self.player.has_effect('fire_resist'):
                 self.add_message("You resist most of the flames!", 'info')
+            elif _flame_ward is not None:
+                # Dragonscale will not catch (gear_rules wards, round 3).
+                self.add_message(_gear.ward_line(self.player, *_flame_ward), 'success')
             else:
                 self.player.add_effect('burning', 3)
         elif trap_type == 'sleep_gas':
@@ -5920,7 +5933,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             # written against a 60-point health bar (floor_curve.hazard).
             raw = _wound(min(HAZARD_CAP, _dice_roll(dmg_str) / HAZARD_BAR),
                          monster.max_hp, monster._is_named_foe())
-            monster.take_damage(raw)
+            # Typed as the trap is (round 3: a fire trap burns as fire, an
+            # acid trap eats as acid): the creature's weakness or
+            # resistance counts, as it does for the hero (_check_floor_trap).
+            monster.take_damage(raw, trap.get('damage_type', 'physical') or 'physical')
 
         # Monster-appropriate status applications (skip player-only effects).
         if trap_type == 'pit':
@@ -5930,8 +5946,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             monster.status_effects['corroding'] = max(
                 monster.status_effects.get('corroding', 0), 5)
         elif trap_type == 'fire':
-            monster.status_effects['burning'] = max(
-                monster.status_effects.get('burning', 0), 3)
+            # Through hold: what fire cannot set alight never burns
+            # (Monster.resists_control), and the longer burn is kept.
+            if monster.alive:
+                monster.hold('burning', 3)
         elif trap_type == 'sleep_gas':
             monster.add_effect('sleeping', _trng.randint(3, 8))
         elif trap_type == 'bear_trap':
@@ -6257,6 +6275,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                                  f"{_tr.value_text(self.player, item)}.", 'loot')
             else:
                 self.add_message(f"You pick up the {self._bare_name(item)}.", 'loot')
+            # A piece the back or a kit remembers (dropped, thrown, stolen)
+            # is in its place again (loadouts.py).
+            self._sets_note_back(item)
             # Philosophy tier mastery: a thing of a tier the hero has mastered
             # this run names itself as it is picked up. A legendary one shows
             # its story, as the identify quiz would.
@@ -7317,8 +7338,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         rows = [
             {'label': 'Weapon', 'slot': 'weapon', 'item': p.weapon},
             # The weapon At Your Back (game_dressing.py): carried in the
-            # pack, S swaps it into the hand.
-            {'label': 'Back', 'slot': 'readied', 'item': p.readied_weapon},
+            # pack, S swaps it into the hand. Away (dropped, thrown, stolen)
+            # it is named "(not carried)" and has no actions (loadouts.py).
+            {'label': 'Back', 'slot': 'readied', 'item': p.readied_weapon,
+             'away': self._readied_away()},
             {'label': 'Ranged', 'slot': 'ranged_weapon', 'item': p.ranged_weapon},
             {'label': 'Shield', 'slot': 'shield', 'item': p.shield},
         ]

@@ -2271,8 +2271,9 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None,
                     _st = _entry.get('status')
                     _dur = int(_entry.get('duration', 3) or 3)
                     if _st:
-                        _cur = monster.status_effects.get(_st, 0)
-                        monster.status_effects[_st] = max(_cur, _dur)
+                        # Through hold: what its nature refuses (a fire
+                        # elemental's burning) never takes hold.
+                        monster.hold(_st, _dur)
 
         # Laevateinn (engine wave 4): boss_doom_dot_at_chain_5. At max
         # chain hit on a boss-tagged target, apply doom_dot status. The
@@ -2355,8 +2356,7 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None,
             _rsp_dur = int(_rsp.get('duration', 5) or 5)
             if _rsp_pool and random.random() < _rsp_chance:
                 _pick = random.choice(_rsp_pool)
-                _cur_p = monster.status_effects.get(_pick, 0)
-                monster.status_effects[_pick] = max(_cur_p, _rsp_dur)
+                monster.hold(_pick, _rsp_dur)       # (its nature refuses what it refuses)
 
         # Cadmus / Vel / Shamshir (engine wave 4): summon_after_kill_with_tag.
         # On kill matching a tag, set side-channel marker for game_combat

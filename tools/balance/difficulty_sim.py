@@ -958,7 +958,7 @@ class Run:
         self._trader_plan = None
         self.scraps = []           # Fenrir's leather scraps carried (5 lb each)
         self.attack_spells = {}    # spell_id -> (mp_cost, power, tier, element, effect)
-        self._recall_next = 0      # turn Recall Lore is ready again
+        self._probe_charges = 0    # Wand of Probing charges carried (tactics=1)
         self.flasks = []           # coatings and thrown flasks carried (slice 5)
         self._give_starting_kit()
 
@@ -1066,27 +1066,30 @@ class Run:
         except Exception:
             return False
 
-    def _recall_lore(self, target) -> None:
-        """tactics=1: Recall Lore on a creature in view whose kind he does
-        not know (enemy_lore.py): the trivia escalator chain; at chain 5 its
-        page opens (no family credit). Cooldown 40 turns after nothing, else
-        50 + 15 x chain (game_magic._resolve_recall_lore)."""
-        if not self.knobs.get('tactics') or target is None:
+    # Wands of Probing found (tactics=1): from floor 8, where the wand first
+    # spawns (data/items/wand.json, peak about 26), four charges a find. A
+    # rough stand-in for the loot roll, two finds a run.
+    PROBE_FINDS = {12: 4, 30: 4}
+
+    def _probe(self, target) -> None:
+        """tactics=1: zap the Wand of Probing at a creature in view whose
+        kind he has not studied (2026-11-14, Brandon: probing identifies
+        the creature and counts for its family). One science question at
+        the wand's tier 2; right = family_lore.record_study, as a corpse
+        study (the game's Game._learn_kind). Recall Lore is a random hint
+        again and teaches nothing of a creature, so it is not modelled."""
+        if not self.knobs.get('tactics') or target is None or self._probe_charges <= 0:
             return
         kind = getattr(target, 'kind', '')
-        if not kind or self._knows(kind) or self.turn < self._recall_next:
+        if not kind or not family_lore_mod.counts_as_study(self.p, kind):
             return
-        chain = self.quiz.escalator_chain(5)
-        self._recall_next = self.turn + (40 if chain == 0 else 50 + 15 * chain)
-        self.fs['recalls'] = self.fs.get('recalls', 0) + 1
-        import enemy_lore
-        if enemy_lore.recall_opens_page(enemy_lore.recall_reach(self.p, target, chain)):
-            known = getattr(self.p, 'lore_known_monster_ids', None)
-            if not isinstance(known, set):
-                known = set(known or ())
-                self.p.lore_known_monster_ids = known
-            known.add(kind)
-            self.fs['recall_pages'] = self.fs.get('recall_pages', 0) + 1
+        self._probe_charges -= 1
+        self.fs['probes'] = self.fs.get('probes', 0) + 1
+        if self.quiz.one_question(2):
+            if family_lore_mod.record_study(self.p, kind):
+                family_lore_mod.news(self.p)
+                self.fs['probe_studies'] = self.fs.get('probe_studies', 0) + 1
+            family_edges_mod.drain(self.p)
 
     def _value_vs(self, w, m) -> float:
         """Expected damage of w on m as the hero judges it: the true
@@ -2323,7 +2326,7 @@ class Run:
         slots = [(6, 5), (5, 6), (6, 6), (4, 5), (5, 4), (4, 4), (6, 4), (4, 6)]
         # tactics=1: between fights the right weapon comes out at no cost
         _first = next((m for m in group if is_named(m)), group[0] if group else None)
-        self._recall_lore(_first)
+        self._probe(_first)
         self._tactical_pick(_first, free=True)
         self._coat_for(_first)
         self._set_stance(group)
@@ -2725,6 +2728,7 @@ class Run:
         p = self.p
         self.floor = floor
         self.quiz.floor = floor
+        self._probe_charges += self.PROBE_FINDS.get(floor, 0)
         p._heal_x = self.kv('heal')
         if floor > p.deepest_floor_reached:
             # Fafnir's Heart trophy: +2 max HP per new deepest floor (main.py:1229-1237)

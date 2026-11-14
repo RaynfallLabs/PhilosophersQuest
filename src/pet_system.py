@@ -210,6 +210,7 @@ _SPECIES = {
         'damage_type': 'crushing',
         'color': (240, 190, 160),          # peachy-pink skin
         'family_cat': True,
+        'pronoun': 'he',
         'stages': [
             {'name': 'Sherlock',                'symbol': 'c',
              'msg': 'The sphere cracks open and out flops Sherlock: a large, wrinkly, hairless cat. '
@@ -276,6 +277,7 @@ _SPECIES = {
         'damage_type': 'slashing',
         'color': (215, 150, 110),          # tortie peach
         'family_cat': True,
+        'pronoun': 'she',
         'stages': [
             {'name': 'Irene',                'symbol': 'c',
              'msg': 'The sphere has barely cracked when Irene shoots out of it, bounces off a wall, '
@@ -344,6 +346,7 @@ _SPECIES = {
         'damage_type': 'piercing',
         'color': (235, 235, 235),          # black and white
         'family_dog': True,
+        'pronoun': 'he',
         'stages': [
             {'name': 'Shep',              'symbol': 'd',
              'msg': 'The sphere cracks open and a big black-and-white farm dog bounds out, '
@@ -670,6 +673,15 @@ class Pet:
         """The species' name at the current evolution stage."""
         return self.species['stages'][self.stage]['name']
 
+    def pronouns(self) -> tuple:
+        """(subject, object, possessive) for this companion: the family
+        cats and Shep their own (Sherlock and Shep 'he', Irene 'she'), the
+        cloaked Emberpup 'he' (Brandon's word), any other pet 'it'."""
+        from monster import PRONOUNS
+        word = (self.species.get('pronoun')
+                or ('he' if getattr(self, 'bloomleaf', False) else 'it'))
+        return PRONOUNS.get(word, PRONOUNS['it'])
+
     @property
     def name(self) -> str:
         """Display name. If the player has given a nickname, shows
@@ -766,7 +778,7 @@ class Pet:
                            f"now {new_species}!")
                 elif self.nickname:
                     msg = (f"{self.nickname} the {old_species} grows brighter — "
-                           f"it has evolved into {new_species}!")
+                           f"{self.pronouns()[0]} has evolved into {new_species}!")
                 else:
                     msg = self.species['stages'][new_stage]['msg'].format(old=old_species)
                 if getattr(self, 'bloomleaf', False):

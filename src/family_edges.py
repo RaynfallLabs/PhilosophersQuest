@@ -231,6 +231,7 @@ def tell(player, m, ability, *, msg=None, key=None) -> bool:
     line (a part's line, an execute's harder blow on a named foe), kept
     once per creature under its own key. True when the line was queued."""
     msg = msg if msg is not None else (ability or {}).get('trigger_msg') or ''
+    msg = line_for(msg, m)
     if not msg or player is None:
         return False
     if m is not None and hasattr(m, '__dict__'):
@@ -253,6 +254,16 @@ def _part_msg(ability, effect) -> str:
 
 def _has_part(ability, effect) -> bool:
     return any(p.get('effect') == effect for p in (ability or {}).get('also', ()) or ())
+
+
+def line_for(text, m=None) -> str:
+    """A technique's line with the creature's own pronouns put in
+    (data/monster_families.json trigger_msg: "Stake Through the Heart! {He}
+    crumbles to ash."): monster.fill. With no creature, "it"."""
+    if not text:
+        return ''
+    from monster import fill
+    return fill(m, str(text))
 
 
 def say(player, msg: str) -> None:
@@ -624,13 +635,16 @@ def execute_named_mult(player, target, chain: int, consume: bool = False) -> flo
     if consume and ab is not None:
         # Its own line: the execute's ("It is cast back into the Pit") was
         # said on a named foe who went on fighting.
-        tell(player, target, ab, msg=named_execute_line(ab), key=f"{ab.get('id')}:named")
+        tell(player, target, ab, msg=named_execute_line(ab, target), key=f"{ab.get('id')}:named")
     return best
 
 
-def named_execute_line(ability) -> str:
-    """What an execute says when a named foe takes its harder blow instead."""
-    return f"{(ability or {}).get('name', '')}! It reels, but it does not fall."
+def named_execute_line(ability, target=None) -> str:
+    """What an execute says when a named foe takes the harder blow instead,
+    in the foe's own pronoun ("He reels, but he does not fall.")."""
+    from monster import pronouns
+    he = pronouns(target)[0]
+    return f"{(ability or {}).get('name', '')}! {he.capitalize()} reels, but {he} does not fall."
 
 
 def execute(player, target, chain: int):
@@ -763,7 +777,9 @@ def after_blow(player, target, chain: int, actual: int, monsters=(), visible=Non
         elif variant in NO_BODY_VARIANTS:
             target.__dict__['_no_corpse'] = True
         word = VARIANT_WORDS.get(variant, 'falls')
-        say(player, a.get('trigger_msg') or f"{a.get('name', '')}! It {word}.")
+        from monster import pronouns as _prn
+        say(player, line_for(a.get('trigger_msg'), target)
+            or f"{a.get('name', '')}! {_prn(target)[0].capitalize()} {word}.")
         out['executed'] = a
     if getattr(target, 'alive', False):
         th = turn_on_hit(player, target, chain)
@@ -785,7 +801,7 @@ def after_blow(player, target, chain: int, actual: int, monsters=(), visible=Non
             target.__dict__['_surrendered'] = True
             target.hold('feared', int(p.get('turns', 8)))
             target._flee_timer = max(int(getattr(target, '_flee_timer', 0) or 0), int(p.get('turns', 8)))
-            say(player, a.get('trigger_msg') or f"{a.get('name', '')}!")
+            say(player, line_for(a.get('trigger_msg'), target) or f"{a.get('name', '')}!")
             out['surrendered'] = p
     return out
 

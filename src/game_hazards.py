@@ -27,16 +27,22 @@ class HazardsMixin:
         if dmg_str:
             raw = _hazard(_dice_roll(dmg_str), self.player.max_hp)
             dtype = h.get('type', 'physical')
-            if dtype == 'fire' and self.player.has_effect('fire_resist'):
-                raw = max(0, raw // 2)
+            # Typed: fire resistance halves it in Player.take_damage (it was
+            # also halved here first, so a resistant hero took a quarter).
             actual = self.player.take_damage(raw, dtype) if raw else 0
             if actual:
                 self.add_message(f"You take {actual} damage!", 'danger')
         st = h.get('status')
         if st:
             name, lo, hi = st[0], int(st[1]), int(st[2])
+            import gear as _gear
+            _flame_ward = (_gear.ward_against(self.player, None, 'burning')
+                           if name == 'burning' else None)
             if name == 'burning' and self.player.has_effect('fire_resist'):
                 pass
+            elif _flame_ward is not None:
+                # Dragonscale will not catch (gear_rules wards, round 3).
+                self.add_message(_gear.ward_line(self.player, *_flame_ward), 'success')
             elif h.get('save'):
                 from status_effects import apply_debuff_with_save
                 _ok, _msg = apply_debuff_with_save(self.player, name, random.randint(lo, hi), 14)

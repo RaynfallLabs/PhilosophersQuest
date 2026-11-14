@@ -58,9 +58,10 @@ class Player:
         self.amulet_slot = None            # single amulet slot
         self.belt_slot   = None            # single belt slot (Megingjörð, Hippolyta's Girdle, Ariadne's Thread, etc.)
         # The weapon At Your Back (game_dressing.py): a weapon in the pack
-        # that S swaps into the hand in one turn. It is the readied one only
-        # while it is still in the pack (readied_weapon), so a drop, a sale
-        # or a theft lets go of it by itself.
+        # that S swaps into the hand in one turn. S draws it only while it
+        # is in the pack (readied_weapon); dropped, thrown or stolen it is
+        # remembered, and picked up again it is at his back once more. Sold
+        # or destroyed it is let go (loadouts.py, Brandon 2026-11-14).
         self._readied_weapon = None
         # Press or Guard (stance.py): 'neutral', 'press' or 'guard'. And the
         # earplugs (counters.py): True while the wax is in his ears.
@@ -1835,16 +1836,10 @@ class Player:
             return False    # chests are opened where they stand (call 9)
         if not self.can_carry(self._item_weight(item)) and not self._carries_past_limit(item):
             return False
-        # The weapon At Your Back that left him (dropped, sold, stolen, put
-        # in a sack) comes back an ordinary weapon in the pack: picking it
-        # up again does not sling it at his back by itself (bug bash
-        # WB-A06). Drawn into the hand, it is not "left": it never comes
-        # back this way.
-        _back = self.__dict__.get('_readied_weapon')
-        if (_back is not None and item is _back
-                and not any(i is item for i in self.inventory)
-                and getattr(self, 'weapon', None) is not item):
-            self.__dict__['_readied_weapon'] = None
+        # The weapon At Your Back and the kits remember a piece that was
+        # dropped, thrown or stolen: back in the pack, it is in its place
+        # again by itself (loadouts.py; Brandon 2026-11-14, reversing bug
+        # bash WB-A06). A sale lets go of it for good (game_traders).
         # A kind the hero has now held: traders lean their stock away from it.
         if getattr(item, 'id', None):
             seen = self.__dict__.get('seen_item_ids')

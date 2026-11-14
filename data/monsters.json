@@ -29,6 +29,7 @@
       "beast"
     ],
     "family": "vermin",
+    "pronoun": "it",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -79,6 +80,7 @@
       "goblinoid"
     ],
     "family": "goblinkin",
+    "pronoun": "he",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -129,6 +131,7 @@
       "aberration"
     ],
     "family": "vermin",
+    "pronoun": "it",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -179,6 +182,7 @@
       "aberration"
     ],
     "family": "aberrations",
+    "pronoun": "it",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -230,6 +234,7 @@
       "beast"
     ],
     "family": "vermin",
+    "pronoun": "it",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -284,6 +289,7 @@
       "reptile"
     ],
     "family": "serpents",
+    "pronoun": "it",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -342,6 +348,7 @@
       "undead"
     ],
     "family": "restless_dead",
+    "pronoun": "he",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -411,6 +418,7 @@
       "aberration"
     ],
     "family": "oozes",
+    "pronoun": "it",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -486,6 +494,7 @@
       "undead"
     ],
     "family": "ghosts",
+    "pronoun": "it",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -553,6 +562,7 @@
       "shapeshifter"
     ],
     "family": "aberrations",
+    "pronoun": "it",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -618,6 +628,7 @@
       "shapeshifter"
     ],
     "family": "aberrations",
+    "pronoun": "it",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -687,6 +698,7 @@
       "shapeshifter"
     ],
     "family": "demons",
+    "pronoun": "it",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -749,6 +761,7 @@
       "fey"
     ],
     "family": "fair_folk",
+    "pronoun": "he",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -798,6 +811,7 @@
       "kobold"
     ],
     "family": "goblinkin",
+    "pronoun": "he",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -851,6 +865,7 @@
       "beast"
     ],
     "family": "vermin",
+    "pronoun": "it",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -907,6 +922,7 @@
       "undead"
     ],
     "family": "restless_dead",
+    "pronoun": "it",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -968,6 +984,7 @@
       "beast"
     ],
     "family": "vermin",
+    "pronoun": "it",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -1016,6 +1033,7 @@
       "orc"
     ],
     "family": "goblinkin",
+    "pronoun": "he",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -1064,6 +1082,7 @@
       "gnoll"
     ],
     "family": "goblinkin",
+    "pronoun": "he",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -1112,6 +1131,7 @@
       "goblinoid"
     ],
     "family": "goblinkin",
+    "pronoun": "he",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -1176,6 +1196,7 @@
       "undead"
     ],
     "family": "restless_dead",
+    "pronoun": "he",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -1230,6 +1251,7 @@
       "beast"
     ],
     "family": "vermin",
+    "pronoun": "it",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -1287,6 +1309,7 @@
       "aberration"
     ],
     "family": "oozes",
+    "pronoun": "it",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -1350,6 +1373,7 @@
       "troll"
     ],
     "family": "giants",
+    "pronoun": "he",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -1402,6 +1426,7 @@
       "orc"
     ],
     "family": "goblinkin",
+    "pronoun": "he",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -1452,6 +1477,7 @@
       "humanoid"
     ],
     "family": "fair_folk",
+    "pronoun": "he",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -1513,6 +1539,7 @@
       "undead"
     ],
     "family": "restless_dead",
+    "pronoun": "he",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -1567,6 +1594,7 @@
       "aberration"
     ],
     "family": "aberrations",
+    "pronoun": "it",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -1620,6 +1648,7 @@
       "beast"
     ],
     "family": "great_beasts",
+    "pronoun": "it",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -1670,6 +1699,7 @@
       "giant"
     ],
     "family": "giants",
+    "pronoun": "he",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -1727,6 +1757,7 @@
       "undead"
     ],
     "family": "ghosts",
+    "pronoun": "it",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -1803,6 +1834,7 @@
       "undead"
     ],
     "family": "restless_dead",
+    "pronoun": "he",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -1868,6 +1900,7 @@
       "beast"
     ],
     "family": "vermin",
+    "pronoun": "it",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -1922,6 +1955,7 @@
       "giant"
     ],
     "family": "giants",
+    "pronoun": "he",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -1986,6 +2020,7 @@
       "beast"
     ],
     "family": "legend",
+    "pronoun": "it",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -2050,6 +2085,7 @@
       "undead"
     ],
     "family": "ghosts",
+    "pronoun": "it",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -2118,6 +2154,7 @@
       "reptile"
     ],
     "family": "gorgons",
+    "pronoun": "it",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -2191,6 +2228,7 @@
       "beast"
     ],
     "family": "legend",
+    "pronoun": "she",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -2247,6 +2285,7 @@
       "humanoid"
     ],
     "family": "legend",
+    "pronoun": "he",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -2309,6 +2348,7 @@
       "beast"
     ],
     "family": "vermin",
+    "pronoun": "it",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -2373,6 +2413,7 @@
       "female_attractive"
     ],
     "family": "gorgons",
+    "pronoun": "she",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -2446,6 +2487,7 @@
       "undead"
     ],
     "family": "vampires_liches",
+    "pronoun": "he",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -2506,6 +2548,7 @@
       "elemental"
     ],
     "family": "elementals",
+    "pronoun": "it",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -2568,6 +2611,7 @@
       "elemental"
     ],
     "family": "elementals",
+    "pronoun": "it",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -2625,6 +2669,7 @@
       "elemental"
     ],
     "family": "elementals",
+    "pronoun": "it",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -2694,6 +2739,7 @@
       "caster"
     ],
     "family": "vampires_liches",
+    "pronoun": "he",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -2759,6 +2805,7 @@
       "aberration"
     ],
     "family": "aberrations",
+    "pronoun": "it",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -2829,6 +2876,7 @@
       "undead"
     ],
     "family": "vampires_liches",
+    "pronoun": "he",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -2905,6 +2953,7 @@
       "evil"
     ],
     "family": "restless_dead",
+    "pronoun": "he",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -2964,6 +3013,7 @@
       "construct"
     ],
     "family": "constructs",
+    "pronoun": "it",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -3030,6 +3080,7 @@
       "evil"
     ],
     "family": "demons",
+    "pronoun": "it",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -3111,6 +3162,7 @@
       "reptile"
     ],
     "family": "dragons",
+    "pronoun": "it",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -3208,6 +3260,7 @@
       "aberration"
     ],
     "family": "aberrations",
+    "pronoun": "it",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -3275,6 +3328,7 @@
       "undead"
     ],
     "family": "vampires_liches",
+    "pronoun": "he",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -3352,6 +3406,7 @@
       "caster"
     ],
     "family": "vampires_liches",
+    "pronoun": "he",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -3427,6 +3482,7 @@
       "reptile"
     ],
     "family": "dragons",
+    "pronoun": "it",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -3494,6 +3550,7 @@
       "construct"
     ],
     "family": "constructs",
+    "pronoun": "it",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -3567,6 +3624,7 @@
       "caster"
     ],
     "family": "vampires_liches",
+    "pronoun": "he",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -3635,6 +3693,7 @@
       "evil"
     ],
     "family": "demons",
+    "pronoun": "it",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -3725,6 +3784,7 @@
       "reptile"
     ],
     "family": "dragons",
+    "pronoun": "it",
     "harvest_tier": 5,
     "treasure": {
       "gold": [
@@ -3804,6 +3864,7 @@
       "caster"
     ],
     "family": "vampires_liches",
+    "pronoun": "he",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -3892,6 +3953,7 @@
       "undead"
     ],
     "family": "restless_dead",
+    "pronoun": "he",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -3956,6 +4018,7 @@
       "aberration"
     ],
     "family": "aberrations",
+    "pronoun": "it",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -4025,6 +4088,7 @@
       "undead"
     ],
     "family": "ghosts",
+    "pronoun": "it",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -4081,6 +4145,7 @@
       "orc"
     ],
     "family": "goblinkin",
+    "pronoun": "he",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -4136,6 +4201,7 @@
       "beast"
     ],
     "family": "vermin",
+    "pronoun": "it",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -4191,6 +4257,7 @@
       "undead"
     ],
     "family": "restless_dead",
+    "pronoun": "it",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -4260,6 +4327,7 @@
       "beast"
     ],
     "family": "serpents",
+    "pronoun": "it",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -4314,6 +4382,7 @@
       "bandit"
     ],
     "family": "mortals",
+    "pronoun": "he",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -4384,6 +4453,7 @@
       "beast"
     ],
     "family": "ghosts",
+    "pronoun": "it",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -4449,6 +4519,7 @@
       "construct"
     ],
     "family": "constructs",
+    "pronoun": "it",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -4520,6 +4591,7 @@
       "female_attractive"
     ],
     "family": "birds",
+    "pronoun": "she",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -4577,6 +4649,7 @@
       "caster"
     ],
     "family": "mortals",
+    "pronoun": "he",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -4636,6 +4709,7 @@
       "beast"
     ],
     "family": "birds",
+    "pronoun": "it",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -4696,6 +4770,7 @@
       "fey"
     ],
     "family": "fair_folk",
+    "pronoun": "he",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -4760,6 +4835,7 @@
       "evil"
     ],
     "family": "demons",
+    "pronoun": "she",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -4828,6 +4904,7 @@
       "beast"
     ],
     "family": "ghosts",
+    "pronoun": "it",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -4896,6 +4973,7 @@
       "female_attractive"
     ],
     "family": "legend",
+    "pronoun": "she",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -4966,6 +5044,7 @@
       "construct"
     ],
     "family": "constructs",
+    "pronoun": "it",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -5032,6 +5111,7 @@
       "giant"
     ],
     "family": "giants",
+    "pronoun": "he",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -5093,6 +5173,7 @@
       "beast"
     ],
     "family": "legend",
+    "pronoun": "she",
     "harvest_tier": 5,
     "treasure": {
       "gold": [
@@ -5151,6 +5232,7 @@
       "beast"
     ],
     "family": "birds",
+    "pronoun": "it",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -5209,6 +5291,7 @@
       "beast"
     ],
     "family": "celestials",
+    "pronoun": "it",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -5272,6 +5355,7 @@
       "reptile"
     ],
     "family": "legend",
+    "pronoun": "it",
     "harvest_tier": 5,
     "treasure": {
       "gold": [
@@ -5346,6 +5430,7 @@
       "evil"
     ],
     "family": "legend",
+    "pronoun": "he",
     "harvest_tier": 5,
     "treasure": {
       "gold": [
@@ -5409,6 +5494,7 @@
       "beast"
     ],
     "family": "legend",
+    "pronoun": "she",
     "harvest_tier": 5,
     "treasure": {
       "gold": [
@@ -5464,6 +5550,7 @@
       "beast"
     ],
     "family": "legend",
+    "pronoun": "it",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -5525,6 +5612,7 @@
       "humanoid"
     ],
     "family": "giants",
+    "pronoun": "he",
     "harvest_tier": 5,
     "treasure": {
       "gold": [
@@ -5592,6 +5680,7 @@
       "giant"
     ],
     "family": "giants",
+    "pronoun": "he",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -5659,6 +5748,7 @@
       "giant"
     ],
     "family": "giants",
+    "pronoun": "he",
     "harvest_tier": 5,
     "treasure": {
       "gold": [
@@ -5727,6 +5817,7 @@
       "undead"
     ],
     "family": "ghosts",
+    "pronoun": "she",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -5782,6 +5873,7 @@
       "beast"
     ],
     "family": "great_beasts",
+    "pronoun": "it",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -5850,6 +5942,7 @@
       "reptile"
     ],
     "family": "serpents",
+    "pronoun": "it",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -5915,6 +6008,7 @@
       "undead"
     ],
     "family": "restless_dead",
+    "pronoun": "he",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -5983,6 +6077,7 @@
       "undead"
     ],
     "family": "ghosts",
+    "pronoun": "he",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -6053,6 +6148,7 @@
       "reptile"
     ],
     "family": "dragons",
+    "pronoun": "it",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -6109,6 +6205,7 @@
       "beast"
     ],
     "family": "birds",
+    "pronoun": "it",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -6176,6 +6273,7 @@
       "reptile"
     ],
     "family": "dragons",
+    "pronoun": "it",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -6243,6 +6341,7 @@
       "undead"
     ],
     "family": "ghosts",
+    "pronoun": "he",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -6310,6 +6409,7 @@
       "fey"
     ],
     "family": "fair_folk",
+    "pronoun": "he",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -6377,6 +6477,7 @@
       "reptile"
     ],
     "family": "serpents",
+    "pronoun": "it",
     "harvest_tier": 5,
     "treasure": {
       "gold": [
@@ -6441,6 +6542,7 @@
       "construct"
     ],
     "family": "constructs",
+    "pronoun": "it",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -6510,6 +6612,7 @@
       "reptile"
     ],
     "family": "serpents",
+    "pronoun": "it",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -6565,6 +6668,7 @@
       "beast"
     ],
     "family": "vermin",
+    "pronoun": "it",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -6636,6 +6740,7 @@
       "beast"
     ],
     "family": "legend",
+    "pronoun": "he",
     "harvest_tier": 5,
     "treasure": {
       "gold": [
@@ -6696,6 +6801,7 @@
       "beast"
     ],
     "family": "legend",
+    "pronoun": "it",
     "harvest_tier": 5,
     "treasure": {
       "gold": [
@@ -6757,6 +6863,7 @@
       "reptile"
     ],
     "family": "serpents",
+    "pronoun": "he",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -6821,6 +6928,7 @@
       "undead"
     ],
     "family": "ghosts",
+    "pronoun": "it",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -6889,6 +6997,7 @@
       "beast"
     ],
     "family": "vermin",
+    "pronoun": "it",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -6952,6 +7061,7 @@
       "construct"
     ],
     "family": "constructs",
+    "pronoun": "it",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -7017,6 +7127,7 @@
       "undead"
     ],
     "family": "ghosts",
+    "pronoun": "it",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -7087,6 +7198,7 @@
       "undead"
     ],
     "family": "ghosts",
+    "pronoun": "it",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -7156,6 +7268,7 @@
       "female_attractive"
     ],
     "family": "fair_folk",
+    "pronoun": "she",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -7221,6 +7334,7 @@
       "giant"
     ],
     "family": "giants",
+    "pronoun": "he",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -7286,6 +7400,7 @@
       "shapeshifter"
     ],
     "family": "fair_folk",
+    "pronoun": "it",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -7348,6 +7463,7 @@
       "shapeshifter"
     ],
     "family": "shapeshifters",
+    "pronoun": "it",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -7407,6 +7523,7 @@
       "beast"
     ],
     "family": "great_beasts",
+    "pronoun": "it",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -7465,6 +7582,7 @@
       "beast"
     ],
     "family": "great_beasts",
+    "pronoun": "it",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -7522,6 +7640,7 @@
       "shapeshifter"
     ],
     "family": "shapeshifters",
+    "pronoun": "it",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -7588,6 +7707,7 @@
       "fey"
     ],
     "family": "fair_folk",
+    "pronoun": "he",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -7660,6 +7780,7 @@
       "fey"
     ],
     "family": "ghosts",
+    "pronoun": "it",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -7727,6 +7848,7 @@
       "demon"
     ],
     "family": "demons",
+    "pronoun": "it",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -7790,6 +7912,7 @@
       "aberration"
     ],
     "family": "aberrations",
+    "pronoun": "it",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -7853,6 +7976,7 @@
       "beast"
     ],
     "family": "birds",
+    "pronoun": "it",
     "harvest_tier": 5,
     "treasure": {
       "gold": [
@@ -7914,6 +8038,7 @@
       "demon"
     ],
     "family": "demons",
+    "pronoun": "it",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -7975,6 +8100,7 @@
       "humanoid"
     ],
     "family": "legend",
+    "pronoun": "he",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -8044,6 +8170,7 @@
       "aberration"
     ],
     "family": "aberrations",
+    "pronoun": "it",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -8111,6 +8238,7 @@
       "humanoid"
     ],
     "family": "mortals",
+    "pronoun": "he",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -8175,6 +8303,7 @@
       "aberration"
     ],
     "family": "aberrations",
+    "pronoun": "it",
     "harvest_tier": 5,
     "treasure": {
       "gold": [
@@ -8239,6 +8368,7 @@
       "aberration"
     ],
     "family": "aberrations",
+    "pronoun": "it",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -8298,6 +8428,7 @@
       "aberration"
     ],
     "family": "aberrations",
+    "pronoun": "it",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -8359,6 +8490,7 @@
       "aberration"
     ],
     "family": "aberrations",
+    "pronoun": "he",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -8417,6 +8549,7 @@
       "aberration"
     ],
     "family": "aberrations",
+    "pronoun": "it",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -8473,6 +8606,7 @@
       "aberration"
     ],
     "family": "aberrations",
+    "pronoun": "it",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -8535,6 +8669,7 @@
       "aberration"
     ],
     "family": "aberrations",
+    "pronoun": "it",
     "harvest_tier": 5,
     "treasure": {
       "gold": [
@@ -8604,6 +8739,7 @@
       "demon"
     ],
     "family": "demons",
+    "pronoun": "it",
     "harvest_tier": 5,
     "treasure": {
       "gold": [
@@ -8674,6 +8810,7 @@
       "demon"
     ],
     "family": "demons",
+    "pronoun": "she",
     "harvest_tier": 5,
     "treasure": {
       "gold": [
@@ -8746,6 +8883,7 @@
       "demon"
     ],
     "family": "demons",
+    "pronoun": "it",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -8809,6 +8947,7 @@
       "demon"
     ],
     "family": "demons",
+    "pronoun": "it",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -8880,6 +9019,7 @@
       "demon"
     ],
     "family": "demons",
+    "pronoun": "it",
     "harvest_tier": 5,
     "treasure": {
       "gold": [
@@ -8950,6 +9090,7 @@
       "demon"
     ],
     "family": "demons",
+    "pronoun": "it",
     "harvest_tier": 5,
     "treasure": {
       "gold": [
@@ -9014,6 +9155,7 @@
       "demon"
     ],
     "family": "demons",
+    "pronoun": "it",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -9084,6 +9226,7 @@
       "demon"
     ],
     "family": "demons",
+    "pronoun": "it",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -9144,6 +9287,7 @@
       "demon"
     ],
     "family": "demons",
+    "pronoun": "it",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -9215,6 +9359,7 @@
       "demon"
     ],
     "family": "demons",
+    "pronoun": "he",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -9287,6 +9432,7 @@
       "female_attractive"
     ],
     "family": "demons",
+    "pronoun": "she",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -9350,6 +9496,7 @@
       "demon"
     ],
     "family": "demons",
+    "pronoun": "it",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -9411,6 +9558,7 @@
       "demon"
     ],
     "family": "demons",
+    "pronoun": "it",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -9479,6 +9627,7 @@
       "demon"
     ],
     "family": "demons",
+    "pronoun": "it",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -9547,6 +9696,7 @@
       "demon"
     ],
     "family": "demons",
+    "pronoun": "it",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -9618,6 +9768,7 @@
       "demon"
     ],
     "family": "demons",
+    "pronoun": "it",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -9690,6 +9841,7 @@
       "evil"
     ],
     "family": "demons",
+    "pronoun": "it",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -9710,7 +9862,7 @@
     "status_weak": []
   },
   "erinyes_lesser": {
-    "name": "Lesser Erinyes",
+    "name": "Lesser Erinys",
     "symbol": "E",
     "color": [
       200,
@@ -9758,6 +9910,7 @@
       "demon"
     ],
     "family": "demons",
+    "pronoun": "she",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -9816,6 +9969,7 @@
       "demon"
     ],
     "family": "demons",
+    "pronoun": "it",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -9871,6 +10025,7 @@
       "demon"
     ],
     "family": "demons",
+    "pronoun": "it",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -9958,6 +10113,7 @@
       "evil"
     ],
     "family": "demons",
+    "pronoun": "it",
     "harvest_tier": 5,
     "treasure": {
       "gold": [
@@ -10024,6 +10180,7 @@
       "construct"
     ],
     "family": "constructs",
+    "pronoun": "it",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -10088,6 +10245,7 @@
       "construct"
     ],
     "family": "constructs",
+    "pronoun": "it",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -10147,6 +10305,7 @@
       "construct"
     ],
     "family": "constructs",
+    "pronoun": "it",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -10216,6 +10375,7 @@
       "construct"
     ],
     "family": "constructs",
+    "pronoun": "it",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -10278,6 +10438,7 @@
       "construct"
     ],
     "family": "constructs",
+    "pronoun": "it",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -10336,6 +10497,7 @@
       "construct"
     ],
     "family": "constructs",
+    "pronoun": "it",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -10404,6 +10566,7 @@
       "construct"
     ],
     "family": "constructs",
+    "pronoun": "it",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -10471,6 +10634,7 @@
       "beast"
     ],
     "family": "great_beasts",
+    "pronoun": "it",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -10532,6 +10696,7 @@
       "beast"
     ],
     "family": "great_beasts",
+    "pronoun": "it",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -10589,6 +10754,7 @@
       "aberration"
     ],
     "family": "oozes",
+    "pronoun": "it",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -10658,6 +10824,7 @@
       "aberration"
     ],
     "family": "oozes",
+    "pronoun": "it",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -10723,6 +10890,7 @@
       "aberration"
     ],
     "family": "oozes",
+    "pronoun": "it",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -10776,6 +10944,7 @@
       "aberration"
     ],
     "family": "vermin",
+    "pronoun": "it",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -10828,6 +10997,7 @@
       "aberration"
     ],
     "family": "aberrations",
+    "pronoun": "it",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -10881,6 +11051,7 @@
       "aberration"
     ],
     "family": "aberrations",
+    "pronoun": "it",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -10943,6 +11114,7 @@
       "aberration"
     ],
     "family": "aberrations",
+    "pronoun": "it",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -11004,6 +11176,7 @@
       "beast"
     ],
     "family": "vermin",
+    "pronoun": "it",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -11058,6 +11231,7 @@
       "beast"
     ],
     "family": "vermin",
+    "pronoun": "it",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -11125,6 +11299,7 @@
       "aberration"
     ],
     "family": "aberrations",
+    "pronoun": "it",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -11187,6 +11362,7 @@
       "elemental"
     ],
     "family": "elementals",
+    "pronoun": "it",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -11244,6 +11420,7 @@
       "gnoll"
     ],
     "family": "goblinkin",
+    "pronoun": "he",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -11300,6 +11477,7 @@
       "reptile"
     ],
     "family": "serpents",
+    "pronoun": "he",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -11366,6 +11544,7 @@
       "reptile"
     ],
     "family": "serpents",
+    "pronoun": "he",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -11422,6 +11601,7 @@
       "reptile"
     ],
     "family": "serpents",
+    "pronoun": "he",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -11483,6 +11663,7 @@
       "kobold"
     ],
     "family": "goblinkin",
+    "pronoun": "he",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -11540,6 +11721,7 @@
       "humanoid"
     ],
     "family": "serpents",
+    "pronoun": "he",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -11601,6 +11783,7 @@
       "humanoid"
     ],
     "family": "serpents",
+    "pronoun": "he",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -11669,6 +11852,7 @@
       "reptile"
     ],
     "family": "serpents",
+    "pronoun": "it",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -11727,6 +11911,7 @@
       "beast"
     ],
     "family": "gorgons",
+    "pronoun": "it",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -11786,6 +11971,7 @@
       "beast"
     ],
     "family": "gorgons",
+    "pronoun": "it",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -11844,6 +12030,7 @@
       "beast"
     ],
     "family": "aberrations",
+    "pronoun": "it",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -11913,6 +12100,7 @@
       "humanoid"
     ],
     "family": "vermin",
+    "pronoun": "he",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -11968,6 +12156,7 @@
       "beast"
     ],
     "family": "vermin",
+    "pronoun": "it",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -12023,6 +12212,7 @@
       "beast"
     ],
     "family": "great_beasts",
+    "pronoun": "it",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -12078,6 +12268,7 @@
       "beast"
     ],
     "family": "vermin",
+    "pronoun": "it",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -12142,6 +12333,7 @@
       "reptile"
     ],
     "family": "dragons",
+    "pronoun": "it",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -12203,6 +12395,7 @@
       "undead"
     ],
     "family": "restless_dead",
+    "pronoun": "it",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -12275,6 +12468,7 @@
       "undead"
     ],
     "family": "restless_dead",
+    "pronoun": "it",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -12350,6 +12544,7 @@
       "caster"
     ],
     "family": "restless_dead",
+    "pronoun": "it",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -12425,6 +12620,7 @@
       "undead"
     ],
     "family": "restless_dead",
+    "pronoun": "it",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -12497,6 +12693,7 @@
       "undead"
     ],
     "family": "restless_dead",
+    "pronoun": "it",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -12562,6 +12759,7 @@
       "undead"
     ],
     "family": "restless_dead",
+    "pronoun": "he",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -12633,6 +12831,7 @@
       "undead"
     ],
     "family": "restless_dead",
+    "pronoun": "he",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -12695,6 +12894,7 @@
       "undead"
     ],
     "family": "restless_dead",
+    "pronoun": "he",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -12766,6 +12966,7 @@
       "undead"
     ],
     "family": "restless_dead",
+    "pronoun": "he",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -12828,6 +13029,7 @@
       "undead"
     ],
     "family": "restless_dead",
+    "pronoun": "it",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -12900,6 +13102,7 @@
       "undead"
     ],
     "family": "ghosts",
+    "pronoun": "it",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -12974,6 +13177,7 @@
       "undead"
     ],
     "family": "restless_dead",
+    "pronoun": "he",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -13047,6 +13251,7 @@
       "undead"
     ],
     "family": "ghosts",
+    "pronoun": "it",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -13110,6 +13315,7 @@
       "undead"
     ],
     "family": "ghosts",
+    "pronoun": "it",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -13186,6 +13392,7 @@
       "shapeshifter"
     ],
     "family": "ghosts",
+    "pronoun": "it",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -13251,6 +13458,7 @@
       "undead"
     ],
     "family": "ghosts",
+    "pronoun": "it",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -13316,6 +13524,7 @@
       "undead"
     ],
     "family": "ghosts",
+    "pronoun": "it",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -13391,6 +13600,7 @@
       "undead"
     ],
     "family": "ghosts",
+    "pronoun": "it",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -13454,6 +13664,7 @@
       "undead"
     ],
     "family": "ghosts",
+    "pronoun": "it",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -13525,6 +13736,7 @@
       "undead"
     ],
     "family": "vampires_liches",
+    "pronoun": "he",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -13598,6 +13810,7 @@
       "undead"
     ],
     "family": "vampires_liches",
+    "pronoun": "he",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -13670,6 +13883,7 @@
       "undead"
     ],
     "family": "vampires_liches",
+    "pronoun": "he",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -13742,6 +13956,7 @@
       "undead"
     ],
     "family": "vampires_liches",
+    "pronoun": "he",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -13815,6 +14030,7 @@
       "undead"
     ],
     "family": "vampires_liches",
+    "pronoun": "he",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -13888,6 +14104,7 @@
       "caster"
     ],
     "family": "vampires_liches",
+    "pronoun": "it",
     "harvest_tier": 5,
     "treasure": {
       "gold": [
@@ -13961,6 +14178,7 @@
       "caster"
     ],
     "family": "vampires_liches",
+    "pronoun": "he",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -14037,6 +14255,7 @@
       "caster"
     ],
     "family": "vampires_liches",
+    "pronoun": "he",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -14110,6 +14329,7 @@
       "caster"
     ],
     "family": "vampires_liches",
+    "pronoun": "she",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -14194,6 +14414,7 @@
       "caster"
     ],
     "family": "vampires_liches",
+    "pronoun": "he",
     "harvest_tier": 5,
     "treasure": {
       "gold": [
@@ -14270,6 +14491,7 @@
       "caster"
     ],
     "family": "vampires_liches",
+    "pronoun": "he",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -14342,6 +14564,7 @@
       "undead"
     ],
     "family": "restless_dead",
+    "pronoun": "he",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -14414,6 +14637,7 @@
       "undead"
     ],
     "family": "restless_dead",
+    "pronoun": "he",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -14477,6 +14701,7 @@
       "undead"
     ],
     "family": "restless_dead",
+    "pronoun": "he",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -14548,6 +14773,7 @@
       "undead"
     ],
     "family": "restless_dead",
+    "pronoun": "he",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -14620,6 +14846,7 @@
       "undead"
     ],
     "family": "restless_dead",
+    "pronoun": "he",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -14691,6 +14918,7 @@
       "undead"
     ],
     "family": "restless_dead",
+    "pronoun": "he",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -14763,6 +14991,7 @@
       "undead"
     ],
     "family": "restless_dead",
+    "pronoun": "it",
     "harvest_tier": 5,
     "treasure": {
       "gold": [
@@ -14834,6 +15063,7 @@
       "undead"
     ],
     "family": "restless_dead",
+    "pronoun": "he",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -14896,6 +15126,7 @@
       "undead"
     ],
     "family": "restless_dead",
+    "pronoun": "he",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -14969,6 +15200,7 @@
       "undead"
     ],
     "family": "ghosts",
+    "pronoun": "it",
     "harvest_tier": 5,
     "treasure": {
       "gold": [
@@ -15044,6 +15276,7 @@
       "undead"
     ],
     "family": "ghosts",
+    "pronoun": "it",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -15119,6 +15352,7 @@
       "undead"
     ],
     "family": "ghosts",
+    "pronoun": "it",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -15192,6 +15426,7 @@
       "undead"
     ],
     "family": "ghosts",
+    "pronoun": "it",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -15265,6 +15500,7 @@
       "undead"
     ],
     "family": "ghosts",
+    "pronoun": "it",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -15337,6 +15573,7 @@
       "undead"
     ],
     "family": "restless_dead",
+    "pronoun": "it",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -15410,6 +15647,7 @@
       "undead"
     ],
     "family": "restless_dead",
+    "pronoun": "he",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -15481,6 +15719,7 @@
       "undead"
     ],
     "family": "restless_dead",
+    "pronoun": "it",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -15562,6 +15801,7 @@
       "giant"
     ],
     "family": "restless_dead",
+    "pronoun": "it",
     "harvest_tier": 5,
     "treasure": {
       "gold": [
@@ -15646,6 +15886,7 @@
       "dragon"
     ],
     "family": "dragons",
+    "pronoun": "it",
     "harvest_tier": 5,
     "treasure": {
       "gold": [
@@ -15731,6 +15972,7 @@
       "caster"
     ],
     "family": "dragons",
+    "pronoun": "it",
     "harvest_tier": 5,
     "treasure": {
       "gold": [
@@ -15797,6 +16039,7 @@
       "undead"
     ],
     "family": "ghosts",
+    "pronoun": "it",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -15872,6 +16115,7 @@
       "undead"
     ],
     "family": "ghosts",
+    "pronoun": "it",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -15947,6 +16191,7 @@
       "undead"
     ],
     "family": "ghosts",
+    "pronoun": "it",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -16022,6 +16267,7 @@
       "undead"
     ],
     "family": "ghosts",
+    "pronoun": "it",
     "harvest_tier": 5,
     "treasure": {
       "gold": [
@@ -16107,6 +16353,7 @@
       "undead"
     ],
     "family": "ghosts",
+    "pronoun": "it",
     "harvest_tier": 5,
     "treasure": {
       "gold": [
@@ -16168,6 +16415,7 @@
       "aberration"
     ],
     "family": "oozes",
+    "pronoun": "it",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -16232,6 +16480,7 @@
       "aberration"
     ],
     "family": "oozes",
+    "pronoun": "it",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -16294,6 +16543,7 @@
       "plant"
     ],
     "family": "plants",
+    "pronoun": "it",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -16357,6 +16607,7 @@
       "plant"
     ],
     "family": "plants",
+    "pronoun": "it",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -16428,6 +16679,7 @@
       "aberration"
     ],
     "family": "oozes",
+    "pronoun": "it",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -16491,6 +16743,7 @@
       "aberration"
     ],
     "family": "oozes",
+    "pronoun": "it",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -16558,6 +16811,7 @@
       "beast"
     ],
     "family": "vermin",
+    "pronoun": "it",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -16610,6 +16864,7 @@
       "beast"
     ],
     "family": "vermin",
+    "pronoun": "it",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -16661,6 +16916,7 @@
       "beast"
     ],
     "family": "vermin",
+    "pronoun": "it",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -16721,6 +16977,7 @@
       "beast"
     ],
     "family": "vermin",
+    "pronoun": "it",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -16784,6 +17041,7 @@
       "beast"
     ],
     "family": "vermin",
+    "pronoun": "she",
     "harvest_tier": 5,
     "treasure": {
       "gold": [
@@ -16836,6 +17094,7 @@
       "beast"
     ],
     "family": "vermin",
+    "pronoun": "it",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -16899,6 +17158,7 @@
       "beast"
     ],
     "family": "vermin",
+    "pronoun": "it",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -16961,6 +17221,7 @@
       "beast"
     ],
     "family": "vermin",
+    "pronoun": "it",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -17017,6 +17278,7 @@
       "reptile"
     ],
     "family": "serpents",
+    "pronoun": "it",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -17077,6 +17339,7 @@
       "reptile"
     ],
     "family": "gorgons",
+    "pronoun": "it",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -17136,6 +17399,7 @@
       "reptile"
     ],
     "family": "serpents",
+    "pronoun": "it",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -17199,6 +17463,7 @@
       "reptile"
     ],
     "family": "serpents",
+    "pronoun": "it",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -17255,6 +17520,7 @@
       "beast"
     ],
     "family": "serpents",
+    "pronoun": "it",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -17310,6 +17576,7 @@
       "reptile"
     ],
     "family": "serpents",
+    "pronoun": "it",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -17363,6 +17630,7 @@
       "reptile"
     ],
     "family": "serpents",
+    "pronoun": "it",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -17418,6 +17686,7 @@
       "reptile"
     ],
     "family": "serpents",
+    "pronoun": "it",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -17476,6 +17745,7 @@
       "beast"
     ],
     "family": "great_beasts",
+    "pronoun": "it",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -17534,6 +17804,7 @@
       "beast"
     ],
     "family": "great_beasts",
+    "pronoun": "it",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -17592,6 +17863,7 @@
       "beast"
     ],
     "family": "great_beasts",
+    "pronoun": "it",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -17659,6 +17931,7 @@
       "shapeshifter"
     ],
     "family": "shapeshifters",
+    "pronoun": "he",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -17734,6 +18007,7 @@
       "shapeshifter"
     ],
     "family": "shapeshifters",
+    "pronoun": "he",
     "harvest_tier": 5,
     "treasure": {
       "gold": [
@@ -17799,6 +18073,7 @@
       "shapeshifter"
     ],
     "family": "shapeshifters",
+    "pronoun": "he",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -17864,6 +18139,7 @@
       "shapeshifter"
     ],
     "family": "shapeshifters",
+    "pronoun": "he",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -17938,6 +18214,7 @@
       "shapeshifter"
     ],
     "family": "shapeshifters",
+    "pronoun": "he",
     "harvest_tier": 5,
     "treasure": {
       "gold": [
@@ -17999,6 +18276,7 @@
       "beast"
     ],
     "family": "great_beasts",
+    "pronoun": "it",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -18050,6 +18328,7 @@
       "beast"
     ],
     "family": "great_beasts",
+    "pronoun": "it",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -18114,6 +18393,7 @@
       "beast"
     ],
     "family": "great_beasts",
+    "pronoun": "it",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -18171,6 +18451,7 @@
       "beast"
     ],
     "family": "birds",
+    "pronoun": "it",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -18229,6 +18510,7 @@
       "beast"
     ],
     "family": "birds",
+    "pronoun": "it",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -18296,6 +18578,7 @@
       "beast"
     ],
     "family": "birds",
+    "pronoun": "it",
     "harvest_tier": 5,
     "treasure": {
       "gold": [
@@ -18351,6 +18634,7 @@
       "beast"
     ],
     "family": "vermin",
+    "pronoun": "it",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -18420,6 +18704,7 @@
       "humanoid"
     ],
     "family": "birds",
+    "pronoun": "he",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -18481,6 +18766,7 @@
       "beast"
     ],
     "family": "birds",
+    "pronoun": "it",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -18537,6 +18823,7 @@
       "fey"
     ],
     "family": "fair_folk",
+    "pronoun": "it",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -18592,6 +18879,7 @@
       "fey"
     ],
     "family": "fair_folk",
+    "pronoun": "he",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -18650,6 +18938,7 @@
       "undead"
     ],
     "family": "ghosts",
+    "pronoun": "it",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -18716,6 +19005,7 @@
       "fey"
     ],
     "family": "fair_folk",
+    "pronoun": "she",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -18779,6 +19069,7 @@
       "fey"
     ],
     "family": "fair_folk",
+    "pronoun": "she",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -18851,6 +19142,7 @@
       "fey"
     ],
     "family": "fair_folk",
+    "pronoun": "she",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -18918,6 +19210,7 @@
       "fey"
     ],
     "family": "fair_folk",
+    "pronoun": "she",
     "harvest_tier": 5,
     "treasure": {
       "gold": [
@@ -18980,6 +19273,7 @@
       "fey"
     ],
     "family": "fair_folk",
+    "pronoun": "he",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -19046,6 +19340,7 @@
       "female_attractive"
     ],
     "family": "fair_folk",
+    "pronoun": "she",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -19114,6 +19409,7 @@
       "fey"
     ],
     "family": "fair_folk",
+    "pronoun": "he",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -19174,6 +19470,7 @@
       "fey"
     ],
     "family": "fair_folk",
+    "pronoun": "he",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -19234,6 +19531,7 @@
       "fey"
     ],
     "family": "fair_folk",
+    "pronoun": "he",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -19302,6 +19600,7 @@
       "elemental"
     ],
     "family": "elementals",
+    "pronoun": "it",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -19368,6 +19667,7 @@
       "elemental"
     ],
     "family": "elementals",
+    "pronoun": "it",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -19438,6 +19738,7 @@
       "elemental"
     ],
     "family": "elementals",
+    "pronoun": "it",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -19506,6 +19807,7 @@
       "elemental"
     ],
     "family": "elementals",
+    "pronoun": "it",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -19578,6 +19880,7 @@
       "elemental"
     ],
     "family": "elementals",
+    "pronoun": "it",
     "harvest_tier": 5,
     "treasure": {
       "gold": [
@@ -19647,6 +19950,7 @@
       "plant"
     ],
     "family": "plants",
+    "pronoun": "it",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -19715,6 +20019,7 @@
       "plant"
     ],
     "family": "plants",
+    "pronoun": "it",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -19779,6 +20084,7 @@
       "plant"
     ],
     "family": "plants",
+    "pronoun": "it",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -19842,6 +20148,7 @@
       "plant"
     ],
     "family": "plants",
+    "pronoun": "it",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -19922,6 +20229,7 @@
       "plant"
     ],
     "family": "plants",
+    "pronoun": "it",
     "harvest_tier": 5,
     "treasure": {
       "gold": [
@@ -19996,6 +20304,7 @@
       "plant"
     ],
     "family": "plants",
+    "pronoun": "it",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -20058,6 +20367,7 @@
       "plant"
     ],
     "family": "plants",
+    "pronoun": "it",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -20128,6 +20438,7 @@
       "plant"
     ],
     "family": "plants",
+    "pronoun": "it",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -20198,6 +20509,7 @@
       "beast"
     ],
     "family": "celestials",
+    "pronoun": "it",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -20263,6 +20575,7 @@
       "beast"
     ],
     "family": "celestials",
+    "pronoun": "it",
     "harvest_tier": 5,
     "treasure": {
       "gold": [
@@ -20321,6 +20634,7 @@
       "beast"
     ],
     "family": "legend",
+    "pronoun": "she",
     "harvest_tier": 5,
     "treasure": {
       "gold": [
@@ -20383,6 +20697,7 @@
       "beast"
     ],
     "family": "legend",
+    "pronoun": "it",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -20443,6 +20758,7 @@
       "beast"
     ],
     "family": "birds",
+    "pronoun": "it",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -20501,6 +20817,7 @@
       "beast"
     ],
     "family": "legend",
+    "pronoun": "it",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -20573,6 +20890,7 @@
       "dragon"
     ],
     "family": "dragons",
+    "pronoun": "it",
     "harvest_tier": 5,
     "treasure": {
       "gold": [
@@ -20639,6 +20957,7 @@
       "goblinoid"
     ],
     "family": "goblinkin",
+    "pronoun": "he",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -20697,6 +21016,7 @@
       "goblinoid"
     ],
     "family": "goblinkin",
+    "pronoun": "he",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -20754,6 +21074,7 @@
       "goblinoid"
     ],
     "family": "goblinkin",
+    "pronoun": "he",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -20811,6 +21132,7 @@
       "goblinoid"
     ],
     "family": "goblinkin",
+    "pronoun": "he",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -20862,6 +21184,7 @@
       "goblinoid"
     ],
     "family": "goblinkin",
+    "pronoun": "he",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -20919,6 +21242,7 @@
       "goblinoid"
     ],
     "family": "goblinkin",
+    "pronoun": "he",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -20967,6 +21291,7 @@
       "orc"
     ],
     "family": "goblinkin",
+    "pronoun": "he",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -21024,6 +21349,7 @@
       "orc"
     ],
     "family": "goblinkin",
+    "pronoun": "he",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -21078,6 +21404,7 @@
       "bandit"
     ],
     "family": "mortals",
+    "pronoun": "he",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -21145,6 +21472,7 @@
       "evil"
     ],
     "family": "mortals",
+    "pronoun": "he",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -21201,6 +21529,7 @@
       "humanoid"
     ],
     "family": "mortals",
+    "pronoun": "he",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -21265,6 +21594,7 @@
       "caster"
     ],
     "family": "mortals",
+    "pronoun": "he",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -21319,6 +21649,7 @@
       "giant"
     ],
     "family": "giants",
+    "pronoun": "he",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -21384,6 +21715,7 @@
       "giant"
     ],
     "family": "giants",
+    "pronoun": "he",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -21445,6 +21777,7 @@
       "giant"
     ],
     "family": "giants",
+    "pronoun": "he",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -21510,6 +21843,7 @@
       "giant"
     ],
     "family": "giants",
+    "pronoun": "he",
     "harvest_tier": 5,
     "treasure": {
       "gold": [
@@ -21568,6 +21902,7 @@
       "giant"
     ],
     "family": "giants",
+    "pronoun": "he",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -21624,6 +21959,7 @@
       "giant"
     ],
     "family": "giants",
+    "pronoun": "he",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -21688,6 +22024,7 @@
       "troll"
     ],
     "family": "giants",
+    "pronoun": "he",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -21750,6 +22087,7 @@
       "humanoid"
     ],
     "family": "fair_folk",
+    "pronoun": "he",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -21825,6 +22163,7 @@
       "caster"
     ],
     "family": "fair_folk",
+    "pronoun": "he",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -21890,6 +22229,7 @@
       "caster"
     ],
     "family": "fair_folk",
+    "pronoun": "she",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -21948,6 +22288,7 @@
       "humanoid"
     ],
     "family": "legend",
+    "pronoun": "he",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -22027,6 +22368,7 @@
       "reptile"
     ],
     "family": "dragons",
+    "pronoun": "it",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -22112,6 +22454,7 @@
       "reptile"
     ],
     "family": "dragons",
+    "pronoun": "it",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -22203,6 +22546,7 @@
       "reptile"
     ],
     "family": "dragons",
+    "pronoun": "it",
     "harvest_tier": 5,
     "treasure": {
       "gold": [
@@ -22294,6 +22638,7 @@
       "reptile"
     ],
     "family": "dragons",
+    "pronoun": "it",
     "harvest_tier": 5,
     "treasure": {
       "gold": [
@@ -22360,6 +22705,7 @@
       "reptile"
     ],
     "family": "dragons",
+    "pronoun": "it",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -22427,6 +22773,7 @@
       "reptile"
     ],
     "family": "dragons",
+    "pronoun": "it",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -22490,6 +22837,7 @@
       "reptile"
     ],
     "family": "serpents",
+    "pronoun": "he",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -22553,6 +22901,7 @@
       "reptile"
     ],
     "family": "dragons",
+    "pronoun": "it",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -22628,6 +22977,7 @@
       "reptile"
     ],
     "family": "serpents",
+    "pronoun": "it",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -22692,6 +23042,7 @@
       "undead"
     ],
     "family": "ghosts",
+    "pronoun": "it",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -22763,6 +23114,7 @@
       "aberration"
     ],
     "family": "aberrations",
+    "pronoun": "it",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -22831,6 +23183,7 @@
       "elemental"
     ],
     "family": "elementals",
+    "pronoun": "he",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -22899,6 +23252,7 @@
       "construct"
     ],
     "family": "restless_dead",
+    "pronoun": "it",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -22970,6 +23324,7 @@
       "shapeshifter"
     ],
     "family": "shapeshifters",
+    "pronoun": "he",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -23033,6 +23388,7 @@
       "evil"
     ],
     "family": "demons",
+    "pronoun": "it",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -23094,6 +23450,7 @@
       "construct"
     ],
     "family": "restless_dead",
+    "pronoun": "it",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -23162,6 +23519,7 @@
       "undead"
     ],
     "family": "ghosts",
+    "pronoun": "it",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -23231,6 +23589,7 @@
       "troll"
     ],
     "family": "giants",
+    "pronoun": "he",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -23299,6 +23658,7 @@
       "reptile"
     ],
     "family": "dragons",
+    "pronoun": "it",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -23371,6 +23731,7 @@
       "aberration"
     ],
     "family": "aberrations",
+    "pronoun": "it",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -23436,6 +23797,7 @@
       "aberration"
     ],
     "family": "aberrations",
+    "pronoun": "it",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -23532,6 +23894,7 @@
       "aberration"
     ],
     "family": "aberrations",
+    "pronoun": "it",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -23607,6 +23970,7 @@
       "reptile"
     ],
     "family": "dragons",
+    "pronoun": "it",
     "harvest_tier": 5,
     "treasure": {
       "gold": [
@@ -23683,6 +24047,7 @@
       "evil"
     ],
     "family": "demons",
+    "pronoun": "it",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -23773,6 +24138,7 @@
       "reptile"
     ],
     "family": "dragons",
+    "pronoun": "it",
     "harvest_tier": 5,
     "treasure": {
       "gold": [
@@ -23851,6 +24217,7 @@
       "caster"
     ],
     "family": "vampires_liches",
+    "pronoun": "he",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -23927,6 +24294,7 @@
       "evil"
     ],
     "family": "demons",
+    "pronoun": "it",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -24003,6 +24371,7 @@
       "reptile"
     ],
     "family": "serpents",
+    "pronoun": "it",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -24072,6 +24441,7 @@
       "undead"
     ],
     "family": "ghosts",
+    "pronoun": "it",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -24145,6 +24515,7 @@
       "beast"
     ],
     "family": "legend",
+    "pronoun": "he",
     "harvest_tier": 5,
     "treasure": {
       "gold": [
@@ -24219,6 +24590,7 @@
       "female_attractive"
     ],
     "family": "gorgons",
+    "pronoun": "she",
     "harvest_tier": 5,
     "treasure": {
       "gold": [
@@ -24292,6 +24664,7 @@
       "dragon"
     ],
     "family": "dragons",
+    "pronoun": "he",
     "harvest_tier": 5,
     "treasure": {
       "gold": [
@@ -24367,6 +24740,7 @@
       "outsider"
     ],
     "family": "great_beasts",
+    "pronoun": "he",
     "harvest_tier": 5,
     "treasure": {
       "gold": [
@@ -24458,6 +24832,7 @@
       "evil"
     ],
     "family": "demons",
+    "pronoun": "he",
     "harvest_tier": 5,
     "treasure": {
       "gold": [
@@ -24539,6 +24914,7 @@
       "beast"
     ],
     "family": "vermin",
+    "pronoun": "she",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -24599,6 +24975,7 @@
       "construct"
     ],
     "family": "constructs",
+    "pronoun": "he",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -24672,6 +25049,7 @@
       "reptile"
     ],
     "family": "legend",
+    "pronoun": "she",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -24741,6 +25119,7 @@
       "fey"
     ],
     "family": "fair_folk",
+    "pronoun": "he",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -24810,6 +25189,7 @@
       "demon"
     ],
     "family": "demons",
+    "pronoun": "he",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -24878,6 +25258,7 @@
       "giant"
     ],
     "family": "giants",
+    "pronoun": "he",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -24944,6 +25325,7 @@
       "beast"
     ],
     "family": "legend",
+    "pronoun": "she",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -25013,6 +25395,7 @@
       "demon"
     ],
     "family": "demons",
+    "pronoun": "she",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -25076,6 +25459,7 @@
       "beast"
     ],
     "family": "great_beasts",
+    "pronoun": "it",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -25151,6 +25535,7 @@
       "caster"
     ],
     "family": "fair_folk",
+    "pronoun": "she",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -25226,6 +25611,7 @@
       "reptile"
     ],
     "family": "serpents",
+    "pronoun": "it",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -25293,6 +25679,7 @@
       "beast"
     ],
     "family": "great_beasts",
+    "pronoun": "it",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -25362,6 +25749,7 @@
       "fey"
     ],
     "family": "fair_folk",
+    "pronoun": "he",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -25432,6 +25820,7 @@
       "beast"
     ],
     "family": "legend",
+    "pronoun": "she",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -25506,6 +25895,7 @@
       "demon"
     ],
     "family": "demons",
+    "pronoun": "it",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -25580,6 +25970,7 @@
       "humanoid"
     ],
     "family": "shapeshifters",
+    "pronoun": "he",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -25655,6 +26046,7 @@
       "fey"
     ],
     "family": "fair_folk",
+    "pronoun": "he",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -25728,6 +26120,7 @@
       "fey"
     ],
     "family": "vermin",
+    "pronoun": "he",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -25803,6 +26196,7 @@
       "dragon"
     ],
     "family": "dragons",
+    "pronoun": "it",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -25873,6 +26267,7 @@
       "evil"
     ],
     "family": "demons",
+    "pronoun": "he",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -25958,6 +26353,7 @@
       "evil"
     ],
     "family": "demons",
+    "pronoun": "he",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -26029,6 +26425,7 @@
       "evil"
     ],
     "family": "demons",
+    "pronoun": "he",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -26108,6 +26505,7 @@
       "evil"
     ],
     "family": "demons",
+    "pronoun": "he",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -26181,6 +26579,7 @@
       "evil"
     ],
     "family": "demons",
+    "pronoun": "he",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -26254,6 +26653,7 @@
       "evil"
     ],
     "family": "demons",
+    "pronoun": "he",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -26329,6 +26729,7 @@
       "evil"
     ],
     "family": "demons",
+    "pronoun": "she",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -26397,6 +26798,7 @@
       "evil"
     ],
     "family": "demons",
+    "pronoun": "it",
     "harvest_tier": 0,
     "treasure": {
       "gold": [
@@ -26447,6 +26849,7 @@
       "celestial"
     ],
     "family": "celestials",
+    "pronoun": "he",
     "harvest_tier": 0,
     "treasure": {
       "gold": [
@@ -26508,6 +26911,7 @@
       "beast"
     ],
     "family": "great_beasts",
+    "pronoun": "it",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -26572,6 +26976,7 @@
       "beast"
     ],
     "family": "great_beasts",
+    "pronoun": "he",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -26630,6 +27035,7 @@
       "undead"
     ],
     "family": "restless_dead",
+    "pronoun": "it",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -26685,6 +27091,7 @@
       "beast"
     ],
     "family": "great_beasts",
+    "pronoun": "it",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -26745,6 +27152,7 @@
       "troll"
     ],
     "family": "giants",
+    "pronoun": "he",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -26802,6 +27210,7 @@
       "reptile"
     ],
     "family": "gorgons",
+    "pronoun": "it",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -26856,6 +27265,7 @@
       "elemental"
     ],
     "family": "elementals",
+    "pronoun": "it",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -26915,6 +27325,7 @@
       "plant"
     ],
     "family": "plants",
+    "pronoun": "it",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -26979,6 +27390,7 @@
       "aberration"
     ],
     "family": "oozes",
+    "pronoun": "it",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -27039,6 +27451,7 @@
       "orc"
     ],
     "family": "goblinkin",
+    "pronoun": "he",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -27098,6 +27511,7 @@
       "humanoid"
     ],
     "family": "mortals",
+    "pronoun": "he",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -27153,6 +27567,7 @@
       "elemental"
     ],
     "family": "elementals",
+    "pronoun": "it",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -27225,6 +27640,7 @@
       "beast"
     ],
     "family": "legend",
+    "pronoun": "she",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -27287,6 +27703,7 @@
       "undead"
     ],
     "family": "restless_dead",
+    "pronoun": "it",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -27353,6 +27770,7 @@
       "evil"
     ],
     "family": "demons",
+    "pronoun": "it",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -27412,6 +27830,7 @@
       "aberration"
     ],
     "family": "oozes",
+    "pronoun": "it",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -27481,6 +27900,7 @@
       "beast"
     ],
     "family": "vermin",
+    "pronoun": "she",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -27536,6 +27956,7 @@
       "beast"
     ],
     "family": "legend",
+    "pronoun": "it",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -27596,6 +28017,7 @@
       "troll"
     ],
     "family": "giants",
+    "pronoun": "he",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -27658,6 +28080,7 @@
       "giant"
     ],
     "family": "giants",
+    "pronoun": "he",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -27718,6 +28141,7 @@
       "giant"
     ],
     "family": "giants",
+    "pronoun": "he",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -27781,6 +28205,7 @@
       "undead"
     ],
     "family": "vampires_liches",
+    "pronoun": "he",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -27854,6 +28279,7 @@
       "undead"
     ],
     "family": "restless_dead",
+    "pronoun": "he",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -27919,6 +28345,7 @@
       "construct"
     ],
     "family": "constructs",
+    "pronoun": "it",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -27985,6 +28412,7 @@
       "beast"
     ],
     "family": "demons",
+    "pronoun": "it",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -28046,6 +28474,7 @@
       "beast"
     ],
     "family": "legend",
+    "pronoun": "she",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -28113,6 +28542,7 @@
       "caster"
     ],
     "family": "vampires_liches",
+    "pronoun": "he",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -28182,6 +28612,7 @@
       "fey"
     ],
     "family": "plants",
+    "pronoun": "it",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -28250,6 +28681,7 @@
       "undead"
     ],
     "family": "restless_dead",
+    "pronoun": "it",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -28315,6 +28747,7 @@
       "dragon"
     ],
     "family": "dragons",
+    "pronoun": "it",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -28382,6 +28815,7 @@
       "demon"
     ],
     "family": "demons",
+    "pronoun": "it",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -28448,6 +28882,7 @@
       "construct"
     ],
     "family": "constructs",
+    "pronoun": "it",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -28516,6 +28951,7 @@
       "undead"
     ],
     "family": "vampires_liches",
+    "pronoun": "he",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -28582,6 +29018,7 @@
       "giant"
     ],
     "family": "giants",
+    "pronoun": "he",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -28640,6 +29077,7 @@
       "elemental"
     ],
     "family": "elementals",
+    "pronoun": "it",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -28702,6 +29140,7 @@
       "elemental"
     ],
     "family": "elementals",
+    "pronoun": "it",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -28771,6 +29210,7 @@
       "demon"
     ],
     "family": "demons",
+    "pronoun": "it",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -28835,6 +29275,7 @@
       "undead"
     ],
     "family": "restless_dead",
+    "pronoun": "it",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -28906,6 +29347,7 @@
       "caster"
     ],
     "family": "dragons",
+    "pronoun": "it",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -28978,6 +29420,7 @@
       "reptile"
     ],
     "family": "legend",
+    "pronoun": "it",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -29044,6 +29487,7 @@
       "evil"
     ],
     "family": "celestials",
+    "pronoun": "he",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -29103,6 +29547,7 @@
       "giant"
     ],
     "family": "giants",
+    "pronoun": "he",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -29165,6 +29610,7 @@
       "humanoid"
     ],
     "family": "mortals",
+    "pronoun": "he",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -29230,6 +29676,7 @@
       "aberration"
     ],
     "family": "oozes",
+    "pronoun": "it",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -29298,6 +29745,7 @@
       "demon"
     ],
     "family": "demons",
+    "pronoun": "it",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -29373,6 +29821,7 @@
       "caster"
     ],
     "family": "vampires_liches",
+    "pronoun": "he",
     "harvest_tier": 5,
     "treasure": {
       "gold": [
@@ -29453,6 +29902,7 @@
       "caster"
     ],
     "family": "dragons",
+    "pronoun": "it",
     "harvest_tier": 5,
     "treasure": {
       "gold": [
@@ -29520,6 +29970,7 @@
       "giant"
     ],
     "family": "giants",
+    "pronoun": "he",
     "harvest_tier": 5,
     "treasure": {
       "gold": [
@@ -29586,6 +30037,7 @@
       "dragon"
     ],
     "family": "dragons",
+    "pronoun": "it",
     "harvest_tier": 5,
     "treasure": {
       "gold": [
@@ -29657,6 +30109,7 @@
       "evil"
     ],
     "family": "demons",
+    "pronoun": "it",
     "harvest_tier": 5,
     "treasure": {
       "gold": [
@@ -29718,6 +30171,7 @@
       "celestial"
     ],
     "family": "celestials",
+    "pronoun": "he",
     "harvest_tier": 5,
     "treasure": {
       "gold": [
@@ -29786,6 +30240,7 @@
       "outsider"
     ],
     "family": "elementals",
+    "pronoun": "it",
     "harvest_tier": 5,
     "treasure": {
       "gold": [
@@ -29853,6 +30308,7 @@
       "undead"
     ],
     "family": "restless_dead",
+    "pronoun": "it",
     "harvest_tier": 5,
     "treasure": {
       "gold": [
@@ -29927,6 +30383,7 @@
       "dragon"
     ],
     "family": "dragons",
+    "pronoun": "it",
     "harvest_tier": 5,
     "treasure": {
       "gold": [
@@ -29996,6 +30453,7 @@
       "construct"
     ],
     "family": "restless_dead",
+    "pronoun": "it",
     "harvest_tier": 5,
     "treasure": {
       "gold": [
@@ -30065,6 +30523,7 @@
       "beast"
     ],
     "family": "demons",
+    "pronoun": "it",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -30132,6 +30591,7 @@
       "evil"
     ],
     "family": "demons",
+    "pronoun": "it",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -30207,6 +30667,7 @@
       "outsider"
     ],
     "family": "demons",
+    "pronoun": "it",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -30272,6 +30733,7 @@
       "demon"
     ],
     "family": "demons",
+    "pronoun": "it",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -30342,6 +30804,7 @@
       "outsider"
     ],
     "family": "plants",
+    "pronoun": "it",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -30410,6 +30873,7 @@
       "undead"
     ],
     "family": "demons",
+    "pronoun": "it",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -30465,6 +30929,7 @@
       "orc"
     ],
     "family": "goblinkin",
+    "pronoun": "he",
     "min_level": 3,
     "peak_floor": 5,
     "spread": 4,
@@ -30531,6 +30996,7 @@
       "caster"
     ],
     "family": "goblinkin",
+    "pronoun": "he",
     "min_level": 10,
     "peak_floor": 12,
     "spread": 4,
@@ -30586,6 +31052,7 @@
       "orc"
     ],
     "family": "goblinkin",
+    "pronoun": "he",
     "min_level": 16,
     "peak_floor": 19,
     "spread": 5,
@@ -30645,6 +31112,7 @@
       "orc"
     ],
     "family": "goblinkin",
+    "pronoun": "he",
     "min_level": 27,
     "peak_floor": 31,
     "spread": 7,
@@ -30704,6 +31172,7 @@
       "orc"
     ],
     "family": "goblinkin",
+    "pronoun": "he",
     "min_level": 43,
     "peak_floor": 48,
     "spread": 9,
@@ -30763,6 +31232,7 @@
       "goblin"
     ],
     "family": "goblinkin",
+    "pronoun": "he",
     "min_level": 3,
     "peak_floor": 5,
     "spread": 4,
@@ -30830,6 +31300,7 @@
       "goblin"
     ],
     "family": "goblinkin",
+    "pronoun": "he",
     "min_level": 16,
     "peak_floor": 19,
     "spread": 5,
@@ -30888,6 +31359,7 @@
       "goblinoid"
     ],
     "family": "goblinkin",
+    "pronoun": "he",
     "min_level": 28,
     "peak_floor": 32,
     "spread": 7,
@@ -30953,6 +31425,7 @@
       "goblin"
     ],
     "family": "goblinkin",
+    "pronoun": "he",
     "min_level": 47,
     "peak_floor": 52,
     "spread": 9,
@@ -31023,6 +31496,7 @@
       "caster"
     ],
     "family": "vampires_liches",
+    "pronoun": "he",
     "min_level": 11,
     "peak_floor": 14,
     "spread": 5,
@@ -31098,6 +31572,7 @@
       "construct"
     ],
     "family": "restless_dead",
+    "pronoun": "it",
     "min_level": 27,
     "peak_floor": 30,
     "spread": 5,
@@ -31175,6 +31650,7 @@
       "caster"
     ],
     "family": "vampires_liches",
+    "pronoun": "it",
     "min_level": 43,
     "peak_floor": 48,
     "spread": 9,
@@ -31255,6 +31731,7 @@
       "caster"
     ],
     "family": "vampires_liches",
+    "pronoun": "she",
     "min_level": 58,
     "peak_floor": 63,
     "spread": 9,
@@ -31319,6 +31796,7 @@
       "kobold"
     ],
     "family": "goblinkin",
+    "pronoun": "he",
     "min_level": 1,
     "peak_floor": 2,
     "spread": 4,
@@ -31380,6 +31858,7 @@
       "kobold"
     ],
     "family": "goblinkin",
+    "pronoun": "he",
     "min_level": 11,
     "peak_floor": 14,
     "spread": 5,
@@ -31438,6 +31917,7 @@
       "kobold"
     ],
     "family": "goblinkin",
+    "pronoun": "he",
     "min_level": 19,
     "peak_floor": 22,
     "spread": 5,
@@ -31494,6 +31974,7 @@
       "gnoll"
     ],
     "family": "goblinkin",
+    "pronoun": "he",
     "min_level": 4,
     "peak_floor": 6,
     "spread": 4,
@@ -31563,6 +32044,7 @@
       "gnoll"
     ],
     "family": "goblinkin",
+    "pronoun": "he",
     "min_level": 14,
     "peak_floor": 17,
     "spread": 5,
@@ -31626,6 +32108,7 @@
       "gnoll"
     ],
     "family": "goblinkin",
+    "pronoun": "he",
     "min_level": 30,
     "peak_floor": 34,
     "spread": 7,
@@ -31683,6 +32166,7 @@
       "bandit"
     ],
     "family": "mortals",
+    "pronoun": "he",
     "min_level": 2,
     "peak_floor": 4,
     "spread": 4,
@@ -31745,6 +32229,7 @@
       "bandit"
     ],
     "family": "mortals",
+    "pronoun": "he",
     "min_level": 1,
     "peak_floor": 3,
     "spread": 4,
@@ -31820,6 +32305,7 @@
       "bandit"
     ],
     "family": "mortals",
+    "pronoun": "he",
     "min_level": 4,
     "peak_floor": 6,
     "spread": 4,
@@ -31884,6 +32370,7 @@
       "bandit"
     ],
     "family": "mortals",
+    "pronoun": "he",
     "min_level": 30,
     "peak_floor": 34,
     "spread": 7,
@@ -31949,6 +32436,7 @@
       "cultist"
     ],
     "family": "mortals",
+    "pronoun": "he",
     "min_level": 1,
     "peak_floor": 2,
     "spread": 4,
@@ -32012,6 +32500,7 @@
       "caster"
     ],
     "family": "mortals",
+    "pronoun": "he",
     "min_level": 10,
     "peak_floor": 12,
     "spread": 4,
@@ -32072,6 +32561,7 @@
       "cultist"
     ],
     "family": "mortals",
+    "pronoun": "he",
     "min_level": 20,
     "peak_floor": 23,
     "spread": 5,
@@ -32140,6 +32630,7 @@
       "caster"
     ],
     "family": "mortals",
+    "pronoun": "he",
     "min_level": 41,
     "peak_floor": 45,
     "spread": 7,
@@ -32215,6 +32706,7 @@
       "undead"
     ],
     "family": "restless_dead",
+    "pronoun": "he",
     "min_level": 10,
     "peak_floor": 12,
     "spread": 4,
@@ -32282,6 +32774,7 @@
       "undead"
     ],
     "family": "restless_dead",
+    "pronoun": "he",
     "min_level": 20,
     "peak_floor": 23,
     "spread": 5,
@@ -32353,6 +32846,7 @@
       "undead"
     ],
     "family": "restless_dead",
+    "pronoun": "he",
     "min_level": 43,
     "peak_floor": 48,
     "spread": 9,
@@ -32425,6 +32919,7 @@
       "demon"
     ],
     "family": "demons",
+    "pronoun": "it",
     "min_level": 3,
     "peak_floor": 5,
     "spread": 4,
@@ -32495,6 +32990,7 @@
       "demon"
     ],
     "family": "demons",
+    "pronoun": "it",
     "min_level": 16,
     "peak_floor": 19,
     "spread": 5,
@@ -32563,6 +33059,7 @@
       "demon"
     ],
     "family": "demons",
+    "pronoun": "it",
     "min_level": 28,
     "peak_floor": 32,
     "spread": 7,
@@ -32632,6 +33129,7 @@
       "humanoid"
     ],
     "family": "mortals",
+    "pronoun": "he",
     "min_level": 11,
     "peak_floor": 14,
     "spread": 5,
@@ -32697,6 +33195,7 @@
       "caster"
     ],
     "family": "mortals",
+    "pronoun": "she",
     "min_level": 27,
     "peak_floor": 31,
     "spread": 7,
@@ -32758,6 +33257,7 @@
       "troll"
     ],
     "family": "giants",
+    "pronoun": "he",
     "min_level": 20,
     "peak_floor": 23,
     "spread": 5,
@@ -32828,6 +33328,7 @@
       "caster"
     ],
     "family": "mortals",
+    "pronoun": "she",
     "min_level": 16,
     "peak_floor": 19,
     "spread": 5,
@@ -32892,6 +33393,7 @@
       "plant"
     ],
     "family": "plants",
+    "pronoun": "it",
     "min_level": 23,
     "peak_floor": 26,
     "spread": 5,
@@ -32965,6 +33467,7 @@
       "reptile"
     ],
     "family": "serpents",
+    "pronoun": "it",
     "min_level": 16,
     "peak_floor": 19,
     "spread": 5,
@@ -33030,6 +33533,7 @@
       "boss"
     ],
     "family": "mortals",
+    "pronoun": "he",
     "min_level": 35,
     "peak_floor": 42,
     "spread": 8,
@@ -33109,6 +33613,7 @@
       "caster"
     ],
     "family": "mortals",
+    "pronoun": "he",
     "min_level": 32,
     "peak_floor": 36,
     "spread": 7,
@@ -33180,6 +33685,7 @@
       "construct"
     ],
     "family": "constructs",
+    "pronoun": "it",
     "min_level": 35,
     "peak_floor": 39,
     "spread": 7,
@@ -33255,6 +33761,7 @@
       "caster"
     ],
     "family": "mortals",
+    "pronoun": "she",
     "min_level": 31,
     "peak_floor": 35,
     "spread": 7,
@@ -33321,6 +33828,7 @@
       "plant"
     ],
     "family": "plants",
+    "pronoun": "it",
     "min_level": 32,
     "peak_floor": 36,
     "spread": 7,
@@ -33391,6 +33899,7 @@
       "shapeshifter"
     ],
     "family": "aberrations",
+    "pronoun": "it",
     "min_level": 39,
     "peak_floor": 43,
     "spread": 7,
@@ -33457,6 +33966,7 @@
       "giant"
     ],
     "family": "giants",
+    "pronoun": "he",
     "min_level": 35,
     "peak_floor": 39,
     "spread": 7,
@@ -33527,6 +34037,7 @@
       "construct"
     ],
     "family": "constructs",
+    "pronoun": "it",
     "min_level": 35,
     "peak_floor": 39,
     "spread": 7,
@@ -33610,6 +34121,7 @@
       "boss"
     ],
     "family": "ghosts",
+    "pronoun": "she",
     "min_level": 55,
     "peak_floor": 62,
     "spread": 8,
@@ -33698,6 +34210,7 @@
       "evil"
     ],
     "family": "demons",
+    "pronoun": "it",
     "min_level": 42,
     "peak_floor": 47,
     "spread": 9,
@@ -33770,6 +34283,7 @@
       "caster"
     ],
     "family": "aberrations",
+    "pronoun": "he",
     "min_level": 44,
     "peak_floor": 49,
     "spread": 9,
@@ -33837,6 +34351,7 @@
       "construct"
     ],
     "family": "aberrations",
+    "pronoun": "it",
     "min_level": 53,
     "peak_floor": 58,
     "spread": 9,
@@ -33912,6 +34427,7 @@
       "humanoid"
     ],
     "family": "giants",
+    "pronoun": "he",
     "min_level": 55,
     "peak_floor": 60,
     "spread": 9,
@@ -33990,6 +34506,7 @@
       "caster"
     ],
     "family": "vampires_liches",
+    "pronoun": "he",
     "min_level": 54,
     "peak_floor": 59,
     "spread": 9,
@@ -34055,6 +34572,7 @@
       "humanoid"
     ],
     "family": "mortals",
+    "pronoun": "he",
     "min_level": 55,
     "peak_floor": 60,
     "spread": 9,
@@ -34131,6 +34649,7 @@
       "caster"
     ],
     "family": "mortals",
+    "pronoun": "he",
     "min_level": 57,
     "peak_floor": 62,
     "spread": 9,
@@ -34199,6 +34718,7 @@
       "elemental"
     ],
     "family": "elementals",
+    "pronoun": "it",
     "min_level": 55,
     "peak_floor": 60,
     "spread": 9,
@@ -34271,6 +34791,7 @@
       "demon"
     ],
     "family": "demons",
+    "pronoun": "he",
     "min_level": 75,
     "peak_floor": 82,
     "spread": 8,
@@ -34359,6 +34880,7 @@
       "outsider"
     ],
     "family": "aberrations",
+    "pronoun": "it",
     "min_level": 68,
     "peak_floor": 73,
     "spread": 9,
@@ -34466,6 +34988,7 @@
       "legendary"
     ],
     "family": "dragons",
+    "pronoun": "she",
     "summon_kind": [
       "young_red_dragon",
       "adult_blue_dragon"
@@ -34577,6 +35100,7 @@
       "legendary"
     ],
     "family": "demons",
+    "pronoun": "he",
     "harvest_tier": 5,
     "treasure": {
       "gold": [
@@ -34665,6 +35189,7 @@
       "legendary"
     ],
     "family": "giants",
+    "pronoun": "he",
     "footprint": [
       2,
       2
@@ -34767,6 +35292,7 @@
       "legendary"
     ],
     "family": "giants",
+    "pronoun": "he",
     "footprint": [
       2,
       2
@@ -34860,6 +35386,7 @@
       "legendary"
     ],
     "family": "giants",
+    "pronoun": "he",
     "footprint": [
       2,
       2
@@ -34938,6 +35465,7 @@
       "beast"
     ],
     "family": "legend",
+    "pronoun": "it",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -35006,6 +35534,7 @@
       "beast"
     ],
     "family": "great_beasts",
+    "pronoun": "it",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -35068,6 +35597,7 @@
       "humanoid"
     ],
     "family": "demons",
+    "pronoun": "he",
     "min_level": 21,
     "peak_floor": 25,
     "spread": 4,
@@ -35134,6 +35664,7 @@
       "humanoid"
     ],
     "family": "demons",
+    "pronoun": "he",
     "min_level": 6,
     "peak_floor": 8,
     "spread": 4,
@@ -35200,6 +35731,7 @@
       "demon"
     ],
     "family": "demons",
+    "pronoun": "he",
     "min_level": 16,
     "peak_floor": 26,
     "spread": 10,
@@ -35263,6 +35795,7 @@
       "humanoid"
     ],
     "family": "mortals",
+    "pronoun": "he",
     "harvest_tier": 0,
     "treasure": {
       "gold": [
@@ -35327,6 +35860,7 @@
       "humanoid"
     ],
     "family": "fair_folk",
+    "pronoun": "he",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -35405,6 +35939,7 @@
       "undead"
     ],
     "family": "ghosts",
+    "pronoun": "it",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -35479,6 +36014,7 @@
       "elemental"
     ],
     "family": "elementals",
+    "pronoun": "he",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -35547,6 +36083,7 @@
       "humanoid"
     ],
     "family": "fair_folk",
+    "pronoun": "he",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -35613,6 +36150,7 @@
       "outsider"
     ],
     "family": "ghosts",
+    "pronoun": "she",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -35687,6 +36225,7 @@
       "aberration"
     ],
     "family": "demons",
+    "pronoun": "it",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -35759,6 +36298,7 @@
       "humanoid"
     ],
     "family": "giants",
+    "pronoun": "she",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -35829,6 +36369,7 @@
       "caster"
     ],
     "family": "mortals",
+    "pronoun": "she",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -35854,7 +36395,7 @@
     "status_weak": []
   },
   "erinyes_greater": {
-    "name": "Greater Erinyes",
+    "name": "Greater Erinys",
     "symbol": "E",
     "color": [
       140,
@@ -35899,6 +36440,7 @@
       "outsider"
     ],
     "family": "demons",
+    "pronoun": "she",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -35972,6 +36514,7 @@
       "outsider"
     ],
     "family": "oozes",
+    "pronoun": "it",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -36054,6 +36597,7 @@
       "caster"
     ],
     "family": "restless_dead",
+    "pronoun": "she",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -36119,6 +36663,7 @@
       "humanoid"
     ],
     "family": "gorgons",
+    "pronoun": "she",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -36195,6 +36740,7 @@
       "humanoid"
     ],
     "family": "gorgons",
+    "pronoun": "she",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -36276,6 +36822,7 @@
       "giant"
     ],
     "family": "restless_dead",
+    "pronoun": "it",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -36342,6 +36889,7 @@
       "humanoid"
     ],
     "family": "mortals",
+    "pronoun": "he",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -36408,6 +36956,7 @@
       "beast"
     ],
     "family": "birds",
+    "pronoun": "it",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -36483,6 +37032,7 @@
       "construct"
     ],
     "family": "constructs",
+    "pronoun": "he",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -36550,6 +37100,7 @@
       "humanoid"
     ],
     "family": "mortals",
+    "pronoun": "he",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -36623,6 +37174,7 @@
       "reptile"
     ],
     "family": "serpents",
+    "pronoun": "it",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -36703,6 +37255,7 @@
       "caster"
     ],
     "family": "demons",
+    "pronoun": "it",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -36776,6 +37329,7 @@
       "construct"
     ],
     "family": "constructs",
+    "pronoun": "it",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -36849,6 +37403,7 @@
       "construct"
     ],
     "family": "constructs",
+    "pronoun": "it",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -36919,6 +37474,7 @@
       "outsider"
     ],
     "family": "great_beasts",
+    "pronoun": "she",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -36981,6 +37537,7 @@
       "outsider"
     ],
     "family": "legend",
+    "pronoun": "she",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -37055,6 +37612,7 @@
       "caster"
     ],
     "family": "demons",
+    "pronoun": "it",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -37125,6 +37683,7 @@
       "demon"
     ],
     "family": "dragons",
+    "pronoun": "it",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -37193,6 +37752,7 @@
       "beast"
     ],
     "family": "vermin",
+    "pronoun": "it",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -37264,6 +37824,7 @@
       "outsider"
     ],
     "family": "demons",
+    "pronoun": "it",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -37337,6 +37898,7 @@
       "outsider"
     ],
     "family": "legend",
+    "pronoun": "he",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -37413,6 +37975,7 @@
       "construct"
     ],
     "family": "elementals",
+    "pronoun": "it",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -37484,6 +38047,7 @@
       "undead"
     ],
     "family": "restless_dead",
+    "pronoun": "it",
     "harvest_tier": 2,
     "treasure": {
       "gold": [
@@ -37560,6 +38124,7 @@
       "fey"
     ],
     "family": "fair_folk",
+    "pronoun": "she",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -37624,6 +38189,7 @@
       "outsider"
     ],
     "family": "celestials",
+    "pronoun": "she",
     "harvest_tier": 3,
     "treasure": {
       "gold": [
@@ -37694,6 +38260,7 @@
       "shapeshifter"
     ],
     "family": "vermin",
+    "pronoun": "she",
     "harvest_tier": 4,
     "treasure": {
       "gold": [
@@ -37765,6 +38332,7 @@
       "caster"
     ],
     "family": "vampires_liches",
+    "pronoun": "he",
     "harvest_tier": 0,
     "treasure": {
       "gold": [
@@ -37834,6 +38402,7 @@
       "evil"
     ],
     "family": "demons",
+    "pronoun": "he",
     "harvest_tier": 0,
     "treasure": {
       "gold": [
@@ -37894,6 +38463,7 @@
       "cultist"
     ],
     "family": "mortals",
+    "pronoun": "he",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -37946,6 +38516,7 @@
       "cultist"
     ],
     "family": "mortals",
+    "pronoun": "he",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -38001,6 +38572,7 @@
       "humanoid"
     ],
     "family": "mortals",
+    "pronoun": "he",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -38058,6 +38630,7 @@
       "humanoid"
     ],
     "family": "mortals",
+    "pronoun": "he",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -38117,6 +38690,7 @@
       "cultist"
     ],
     "family": "mortals",
+    "pronoun": "he",
     "harvest_tier": 1,
     "treasure": {
       "gold": [
@@ -38175,6 +38749,7 @@
       "kobold"
     ],
     "family": "goblinkin",
+    "pronoun": "he",
     "harvest_tier": 1,
     "is_mini_boss": true,
     "treasure": {
@@ -38258,6 +38833,7 @@
       "humanoid"
     ],
     "family": "restless_dead",
+    "pronoun": "he",
     "harvest_tier": 0,
     "treasure": {
       "gold": [
@@ -38332,6 +38908,7 @@
       "humanoid"
     ],
     "family": "restless_dead",
+    "pronoun": "he",
     "harvest_tier": 0,
     "treasure": {
       "gold": [
@@ -38406,6 +38983,7 @@
       "humanoid"
     ],
     "family": "restless_dead",
+    "pronoun": "he",
     "harvest_tier": 0,
     "treasure": {
       "gold": [
@@ -38483,6 +39061,7 @@
       "humanoid"
     ],
     "family": "restless_dead",
+    "pronoun": "he",
     "harvest_tier": 0,
     "treasure": {
       "gold": [
@@ -38557,6 +39136,7 @@
       "humanoid"
     ],
     "family": "restless_dead",
+    "pronoun": "he",
     "harvest_tier": 0,
     "treasure": {
       "gold": [
@@ -38631,6 +39211,7 @@
       "humanoid"
     ],
     "family": "restless_dead",
+    "pronoun": "he",
     "harvest_tier": 0,
     "treasure": {
       "gold": [
@@ -38706,6 +39287,7 @@
       "humanoid"
     ],
     "family": "restless_dead",
+    "pronoun": "he",
     "harvest_tier": 0,
     "treasure": {
       "gold": [
@@ -38783,6 +39365,7 @@
       "humanoid"
     ],
     "family": "restless_dead",
+    "pronoun": "he",
     "harvest_tier": 0,
     "treasure": {
       "gold": [

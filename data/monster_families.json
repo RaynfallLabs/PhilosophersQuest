@@ -315,7 +315,7 @@
               "id": "vampires_liches_garlic_and_ash",
               "name": "Garlic and Ash",
               "text": "You get +1 on saving throws against their life drain and paralysis, and their bite no longer heals them.",
-              "trigger_msg": "Garlic and Ash: the garlic at your throat breaks its hold.",
+              "trigger_msg": "Garlic and Ash: the garlic at your throat breaks {his} hold.",
               "effect": "save_bonus",
               "params": {
                 "effects": [
@@ -328,7 +328,7 @@
                 {
                   "effect": "drain_heal_block",
                   "params": {},
-                  "trigger_msg": "Garlic and Ash: the bite takes nothing back to heal it."
+                  "trigger_msg": "Garlic and Ash: the bite takes nothing back to heal {him}."
                 }
               ]
             }
@@ -358,7 +358,7 @@
               "id": "vampires_liches_stake",
               "name": "Stake Through the Heart",
               "text": "At chain 18 or more, a lesser vampire or lich below 15% health dies outright: no mist, no rising. A named foe takes a blow 25% harder instead.",
-              "trigger_msg": "Stake Through the Heart! It crumbles to ash.",
+              "trigger_msg": "Stake Through the Heart! {He} crumbles to ash.",
               "effect": "execute",
               "params": {
                 "chain_min": 18,
@@ -454,7 +454,7 @@
               "id": "demons_true_names",
               "name": "True Names",
               "text": "Your weapon hits them 5% harder.",
-              "trigger_msg": "True Names: you call it by its name, and it flinches.",
+              "trigger_msg": "True Names: you call {him} by {his} name, and {he} flinches.",
               "effect": "damage_mult",
               "params": {
                 "mult": 1.05
@@ -470,7 +470,7 @@
               "id": "demons_banishment",
               "name": "Banishment",
               "text": "At chain 18 or more, a lesser demon below 15% health is cast back into the Pit. A named foe takes a blow 25% harder instead.",
-              "trigger_msg": "Banishment! It is cast back into the Pit.",
+              "trigger_msg": "Banishment! {He} is cast back into the Pit.",
               "effect": "execute",
               "params": {
                 "chain_min": 18,
@@ -648,7 +648,7 @@
               "id": "giants_steady_hand",
               "name": "Steady Hand",
               "text": "You get 1 more second on the maths clock when you attack them.",
-              "trigger_msg": "Steady Hand: its size does not rush you.",
+              "trigger_msg": "Steady Hand: {his} size does not rush you.",
               "effect": "extra_seconds",
               "params": {
                 "seconds": 1
@@ -680,7 +680,7 @@
               "id": "giants_bigger_they_are",
               "name": "The Bigger They Are",
               "text": "At chain 5 or more, your weapon hits them 5% harder, and 8% harder against a giant that fills more than one tile.",
-              "trigger_msg": "The Bigger They Are! It staggers under the blow.",
+              "trigger_msg": "The Bigger They Are! {He} staggers under the blow.",
               "effect": "damage_mult",
               "params": {
                 "mult": 1.05,
@@ -986,7 +986,7 @@
               "id": "fair_folk_true_name",
               "name": "Their True Name",
               "text": "Invisible or disguised Fair Folk within 4 tiles show to you, and their charm can never take you.",
-              "trigger_msg": "Their True Name: you name it, and its glamour falls away.",
+              "trigger_msg": "Their True Name: you name {him}, and {his} glamour falls away.",
               "effect": "sense_hidden",
               "params": {
                 "kinds": [
@@ -1079,7 +1079,7 @@
               "id": "great_beasts_steady_hand",
               "name": "Steady Hand",
               "text": "You get 1 more second on the maths clock when you attack them.",
-              "trigger_msg": "Steady Hand: you read the beast before it moves.",
+              "trigger_msg": "Steady Hand: you read the beast before {he} moves.",
               "effect": "extra_seconds",
               "params": {
                 "seconds": 1
@@ -1307,7 +1307,7 @@
               "id": "serpents_mongoose",
               "name": "Mongoose",
               "text": "Your first blow in a fight against one starts at chain 2.",
-              "trigger_msg": "Mongoose! You strike before it can.",
+              "trigger_msg": "Mongoose! You strike before {he} can.",
               "effect": "opening_chain",
               "params": {
                 "chain": 2
@@ -1323,7 +1323,7 @@
               "id": "serpents_snake_charmer",
               "name": "Snake-Charmer",
               "text": "At chain 8 or more, a lesser serpent you strike is charmed calm for 8 turns.",
-              "trigger_msg": "Snake-Charmer: it sways, and settles.",
+              "trigger_msg": "Snake-Charmer: {he} sways, and settles.",
               "effect": "charm_on_hit",
               "params": {
                 "chain_min": 8,
@@ -1490,7 +1490,7 @@
               "id": "gorgons_averted_eyes",
               "name": "Averted Eyes",
               "text": "You get +1 on saving throws against their killing gaze and their poison.",
-              "trigger_msg": "Averted Eyes: you look at its feet, never its face.",
+              "trigger_msg": "Averted Eyes: you look at {his} feet, never {his} face.",
               "effect": "save_bonus",
               "params": {
                 "effects": [
@@ -1510,7 +1510,7 @@
               "id": "gorgons_perseus_shield",
               "name": "Perseus' Shield",
               "text": "While you carry a shield, their gaze cannot take you at all.",
-              "trigger_msg": "Perseus' Shield: you watch it in the bright metal, and the gaze slides off.",
+              "trigger_msg": "Perseus' Shield: you watch {him} in the bright metal, and the gaze slides off.",
               "effect": "gaze_immune",
               "params": {
                 "requires": "shield"
@@ -1526,7 +1526,7 @@
               "id": "gorgons_harpe",
               "name": "Harpe",
               "text": "Your weapon hits them 5% harder, and at chain 18 or more a lesser one below half health meets its own stare and turns to stone. A named foe takes a blow 25% harder instead.",
-              "trigger_msg": "Harpe! It meets its own stare and turns to stone.",
+              "trigger_msg": "Harpe! {He} meets {his} own stare and turns to stone.",
               "effect": "damage_mult",
               "params": {
                 "mult": 1.05
@@ -1724,7 +1724,7 @@
               "id": "shapeshifters_silvered",
               "name": "Silvered",
               "text": "Your weapon hits them 3% harder, and 10% harder if it is silver.",
-              "trigger_msg": "Silvered! The shape it wears cannot stand it.",
+              "trigger_msg": "Silvered! The shape {he} wears cannot stand it.",
               "effect": "damage_mult",
               "params": {
                 "mult": 1.03,
@@ -1744,7 +1744,7 @@
               "id": "shapeshifters_forced_shape",
               "name": "Forced Shape",
               "text": "At chain 8 or more, a lesser shapeshifter is stunned for 3 turns as its shape tears.",
-              "trigger_msg": "Forced Shape! Its shape tears, and it reels.",
+              "trigger_msg": "Forced Shape! {His} shape tears, and {he} reels.",
               "effect": "stun_on_hit",
               "params": {
                 "chain_min": 8,
@@ -1807,7 +1807,7 @@
               "id": "constructs_steady_hand",
               "name": "Steady Hand",
               "text": "You get 1 more second on the maths clock when you attack them.",
-              "trigger_msg": "Steady Hand: it is slow, and so you need not be quick.",
+              "trigger_msg": "Steady Hand: {he} is slow, and so you need not be quick.",
               "effect": "extra_seconds",
               "params": {
                 "seconds": 1
@@ -1839,7 +1839,7 @@
               "id": "constructs_erase_the_letter",
               "name": "Erase the Letter",
               "text": "At chain 18 or more, a lesser construct below 15% health falls lifeless: emet, truth, becomes met, dead. A named foe takes a blow 25% harder instead.",
-              "trigger_msg": "Erase the Letter! Truth becomes dead, and it falls.",
+              "trigger_msg": "Erase the Letter! Truth becomes dead, and {he} falls.",
               "effect": "execute",
               "params": {
                 "chain_min": 18,
@@ -1926,7 +1926,7 @@
               "id": "elementals_opposing_element",
               "name": "Opposing Element",
               "text": "Your blows hit 6% harder when they strike what the elemental is weak to.",
-              "trigger_msg": "Opposing Element! You answer it with the element it cannot bear.",
+              "trigger_msg": "Opposing Element! You answer {him} with the element {he} cannot bear.",
               "effect": "weakness_amp",
               "params": {
                 "mult": 1.06,
@@ -2059,7 +2059,7 @@
               "id": "oozes_strike_true",
               "name": "Strike True",
               "text": "Your blows never split them, and your weapon hits them 5% harder.",
-              "trigger_msg": "Strike True! A clean blow, and it does not split.",
+              "trigger_msg": "Strike True! A clean blow, and {he} does not split.",
               "effect": "prevent_split",
               "params": {},
               "also": [
@@ -2081,7 +2081,7 @@
               "id": "oozes_fire_and_frost",
               "name": "Fire and Frost",
               "text": "Your blows hit 10% harder when they strike what an ooze is weak to.",
-              "trigger_msg": "Fire and Frost! It shrivels from the blow.",
+              "trigger_msg": "Fire and Frost! {He} shrivels from the blow.",
               "effect": "weakness_amp",
               "params": {
                 "mult": 1.1,
@@ -2313,7 +2313,7 @@
               "id": "plants_woodsmans_axe",
               "name": "Woodsman's Axe",
               "text": "Your weapon hits them 5% harder, and their ambushers never catch you unawares.",
-              "trigger_msg": "Woodsman's Axe! You cut low, where it grows from.",
+              "trigger_msg": "Woodsman's Axe! You cut low, where {he} grows from.",
               "effect": "damage_mult",
               "params": {
                 "mult": 1.05

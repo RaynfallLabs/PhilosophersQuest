@@ -97,7 +97,7 @@ src/
   known_by_hand.py    - Known by Hand: a kind of gear put on once goes on again with no quiz
   game_dressing.py    - DressingMixin: donning time, the weapon At Your Back (S), Loadouts (Shift+E)
   busy.py             - Busy for N turns: a multi-turn action, stopped by a foe in view or a blow
-  loadouts.py         - The three saved kits: names, slots, defaults
+  loadouts.py         - The three saved kits and the readied weapon: names, slots, defaults; a piece dropped, thrown or stolen is remembered and back in place when picked up
   coatings.py         - Coatings (silver dust, holy water, fire oil...) on the wielded weapon; thrown flasks; Kit Sense's tool hook
   stance.py           - Press or Guard (Shift+S): damage against AC; the two-hander's parry with no shield
   counters.py         - Named counters: the mirror shield turns a gaze, wax stops a voice, cold iron fey glamour

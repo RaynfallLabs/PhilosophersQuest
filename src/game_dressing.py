@@ -15,6 +15,10 @@
   * Loadouts: three saved kits (Shift+E). Putting one on takes the sum of
     its pieces' turns; a piece not in the pack is skipped, a piece not
     known by hand is refused (it must be put on once first).
+  * Remembered pieces (loadouts.py): the back and the kits keep a piece
+    dropped, thrown or stolen, show it "(not carried)" while it is away and
+    have it in its place again when it is picked up (one line says so); a
+    piece sold, destroyed or used up is let go (_sets_prune, _sets_let_go).
 
 Every piece goes on and comes off through one pair of helpers
 (_put_on_now / _take_off_now), so the messages, curses, chain tiers,
@@ -22,12 +26,14 @@ grants and quirk counters are the same whichever way it happens.
 """
 from __future__ import annotations
 
+from naming import quantity
 import pygame
 
 import gear
 import known_by_hand as kbh
 from busy import BusyAction, Step, interrupt_reason
 from game_states import STATE_PLAYER, STATE_ASK, STATE_LOADOUTS
+import loadouts as sets
 from loadouts import (KIT_COUNT, KIT_NAME_MAX, KIT_ARMOR_SLOTS, KIT_SLOT_LABELS,
                       KIT_SLOTS, default_kits, valid as kits_valid, clean_name)
 
@@ -114,7 +120,7 @@ class DressingMixin:
         n = self._don_turns(item)
         if n <= 1:
             return ''
-        return f"Takes {n} turns to put on, {self._doff_turns(item)} to take off."
+        return f"Takes {quantity(n, 'turn')} to put on, {self._doff_turns(item)} to take off."
 
     # ------------------------------------------------------------------
     # One piece on, one piece off (instant: the turn is the caller's)
@@ -337,11 +343,11 @@ class DressingMixin:
         name = self._bare_name(item)
         if old is not None:
             line = (f"You start changing the {self._bare_name(old)} for the {name} "
-                    f"({total} turns).")
+                    f"({quantity(total, 'turn')}).")
         else:
             from items import Armor
             verb = 'buckling on' if isinstance(item, Armor) and gear.is_core(item) else 'putting on'
-            line = f"You start {verb} the {name} ({total} turns)."
+            line = f"You start {verb} the {name} ({quantity(total, 'turn')})."
         self._busy_start(BusyAction(steps, label=name), line)
 
     def _dress_start_off(self, slot_name: str, item) -> None:
@@ -353,7 +359,7 @@ class DressingMixin:
             return
         self._busy_start(BusyAction([Step('off', item, n, slot=slot_name)],
                                     label=self._bare_name(item)),
-                         f"You start unbuckling the {self._bare_name(item)} ({n} turns).")
+                         f"You start unbuckling the {self._bare_name(item)} ({quantity(n, 'turn')}).")
 
     # ------------------------------------------------------------------
     # The busy runner
@@ -627,6 +633,12 @@ class DressingMixin:
         back = p.readied_weapon
         hand = p.weapon
         if back is None:
+            gone = self._readied_away()
+            if gone is not None:
+                # Dropped, thrown or stolen: remembered, not with him.
+                self.add_message(f"Your {self._bare_name(gone)} is not with you. Pick it up "
+                                 f"again and S draws it.", 'info')
+                return False
             self.add_message("Nothing is at your back. Ready a weapon from the Kit "
                              "(K, then R).", 'info')
             return False
@@ -653,6 +665,89 @@ class DressingMixin:
             self.add_message(f"You draw the {self._bare_name(back)} from your back.", 'success')
         self._advance_turn()
         return True
+
+    # ------------------------------------------------------------------
+    # Remembered pieces: the back and the kits keep what was dropped,
+    # thrown or stolen, and let go of what is gone for good (loadouts.py)
+    # ------------------------------------------------------------------
+
+    def _sets_let_go(self, item) -> bool:
+        """``item`` is gone for good (sold, destroyed, used up, made into
+        another thing): off the back and out of every kit."""
+        return sets.let_go(getattr(self, 'player', None), item)
+
+    def _sets_lost(self, pieces) -> list:
+        """Those of ``pieces`` (away from the hero) found nowhere in the
+        world: not on any floor's ground or in a chest there, not in a
+        thief's hands. What is left of them was destroyed, used up, given
+        away or remade."""
+        want = {id(it): it for it in pieces if it is not None}
+
+        def scan(things):
+            for it in things or ():
+                if not want:
+                    return
+                want.pop(id(it), None)
+                inner = getattr(it, 'contents', None)
+                if inner:
+                    scan(inner)
+
+        def scan_floor(ground, monsters):
+            scan(ground)
+            for m in monsters or ():
+                if not want:
+                    return
+                scan(getattr(m, '__dict__', {}).get('stolen_items'))
+
+        scan_floor(getattr(self, 'ground_items', None), getattr(self, 'monsters', None))
+        saved = getattr(getattr(self, 'level_mgr', None), '_saved', None) or {}
+        for val in list(saved.values()):
+            if not want:
+                break
+            if isinstance(val, dict):
+                scan_floor(val.get('ground_items') or val.get('items'), val.get('monsters'))
+            elif isinstance(val, (tuple, list)) and len(val) >= 3:
+                scan_floor(val[2], val[1])
+        return list(want.values())
+
+    def _sets_prune(self, force: bool = False) -> None:
+        """Let go of every remembered piece that is gone for good. Cheap when
+        everything is with the hero; the world is searched only for a piece
+        that is away, and at most once a turn (or when the pack or the floor
+        changes) unless ``force`` (a save)."""
+        p = getattr(self, 'player', None)
+        if p is None:
+            return
+        key = (getattr(self, 'turn_count', 0), len(getattr(p, 'inventory', None) or ()),
+               len(getattr(self, 'ground_items', None) or ()))
+        if not force and self.__dict__.get('_sets_pruned_at') == key:
+            return
+        self.__dict__['_sets_pruned_at'] = key
+        away = sets.away_pieces(p)
+        if not away:
+            return
+        for it in self._sets_lost(away):
+            sets.let_go(p, it)
+
+    def _readied_away(self):
+        """The weapon At Your Back while it is away (dropped, thrown,
+        stolen), else None. In the hand it is not away."""
+        self._sets_prune()
+        p = self.player
+        mem = sets.readied_memory(p)
+        return mem if mem is not None and sets.away(p, mem) else None
+
+    def _sets_note_back(self, item) -> None:
+        """A remembered piece is back in the pack: one line says it is in
+        its place again (after "You pick up ...")."""
+        p = self.player
+        if item is None or not sets.holds(p, item) \
+                or not any(i is item for i in p.inventory):
+            return
+        line = sets.back_line(self._bare_name(item), sets.readied_memory(p) is item,
+                              sets.kit_names_holding(p, item))
+        if line:
+            self.add_message(line, 'info')
 
     # ------------------------------------------------------------------
     # Loadouts: three saved kits
@@ -707,7 +802,10 @@ class DressingMixin:
 
     def _kit_plan(self, idx: int) -> dict:
         """What putting kit ``idx`` on would do: {'steps', 'turns', 'missing',
-        'refused' (piece, why), 'already'}. Pure: nothing is changed."""
+        'refused' (piece, why), 'already'}. Nothing is changed but what is
+        gone for good leaving the kit (_sets_prune). A piece that is away
+        (dropped, thrown, stolen) is 'missing': skipped, at no cost."""
+        self._sets_prune()
         p = self.player
         kit = self._kits()[idx]
         pieces = dict(kit.get('pieces') or {})
@@ -812,8 +910,8 @@ class DressingMixin:
         kit = self._kits()[idx]
         plan = self._kit_plan(idx)
         for it in plan['missing']:
-            self.add_message(f"{kit['name']}: the {self._bare_name(it)} is not in your pack.",
-                             'warning')
+            self.add_message(f"{kit['name']}: the {self._bare_name(it)} is not with you, so "
+                             f"it is skipped.", 'warning')
         for it, why in plan['refused']:
             self.add_message(f"{kit['name']}: the {self._bare_name(it)} stays off ({why}).",
                              'warning')
@@ -838,10 +936,20 @@ class DressingMixin:
         self.state = STATE_LOADOUTS
 
     def _kit_lines(self, idx: int) -> list:
-        """(label, name) of each piece in a kit, in slot order."""
+        """(label, name) of each piece in a kit, in slot order; a piece that
+        is away is "(not carried)"."""
+        self._sets_prune()
+        p = self.player
         pieces = self._kits()[idx].get('pieces') or {}
-        return [(KIT_SLOT_LABELS[s], self._bare_name(pieces[s]))
-                for s in KIT_SLOTS if s in pieces]
+        out = []
+        for s in KIT_SLOTS:
+            if s not in pieces:
+                continue
+            name = self._bare_name(pieces[s])
+            if not sets.carried_or_worn(p, pieces[s]):
+                name = sets.not_carried(name)
+            out.append((KIT_SLOT_LABELS[s], name))
+        return out
 
     def _loadouts_input(self, key: int, unicode_char: str = '') -> None:
         naming = getattr(self, '_loadout_naming', None)
@@ -892,7 +1000,7 @@ class DressingMixin:
         turns = plan['turns']
         lines = []
         if plan['missing']:
-            lines.append("Not in your pack: " + ', '.join(
+            lines.append("Not with you, so skipped: " + ', '.join(
                 self._bare_name(i) for i in plan['missing'][:3])
                 + (' ...' if len(plan['missing']) > 3 else '') + '.')
         for it, why in plan['refused'][:2]:

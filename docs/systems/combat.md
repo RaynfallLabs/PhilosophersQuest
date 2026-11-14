@@ -313,7 +313,7 @@ Melee swings resolve entirely inside `player_attack._callback`. Monster-to-playe
 (`affinity.note`): the hero's blows and shots by `strike_damage` (its form
 and substance after every bypass, `consume=True` only, so the combat strip's
 preview says nothing), spells, wands and breath by `Monster.take_damage`
-(a burn ticking is not a hit). `Game._advance_turn` drains the notes and
+(a burn ticking is not a hit, but it is typed: see "Fire is fire" below). `Game._advance_turn` drains the notes and
 says one line per way creatures were struck, Pokemon style ("It's super
 effective!", "Not very effective... the skeleton resists a thrust."), from
 `data/affinity_lines.json` (`src/affinity.py`). A third kind, **shrugs off** ("It barely felt that..."), and a fourth, a beast **put to flight by fire**, have their own pools.
@@ -327,6 +327,8 @@ effective!", "Not very effective... the skeleton resists a thrust."), from
 | KNOWN (studied, its page opened, or its family at Lore) | the cause named | "Super effective! The Skeleton cannot bear a crushing blow." |
 
 A fire fright is what the eye sees and is said the same at every level. A status refusal (`affinity.status_line('immune', ..., level=)`) says why ("The golem does not know fear.") only to a hero who knows the creature or its family; to one who does not it is felt ("Nothing happens to the Clay Golem."). A habit names a cause only where the family's lore and its kinds agree: `tests/test_know_your_enemy.py` checks every keyed habit is true of at least half the kinds it speaks for.
+
+**Fire is fire (round 3, 2026-11-14; Brandon: "it's fire, make it so").** Every fire path meets the creature's affinity: a burn ticks as `fire` (`Monster.tick_effects`: weak x2, resisted x0.5), a rewired fire or acid trap hits a monster with its own `damage_type` (`Game._fire_trap_on_monster`), Prometheus' Stolen Flame is fire, a fire or cold shield's reflection and the spell-reflect passive are typed. What fire hardly touches does not catch fire at all: a creature that shrugs off fire refuses `burning` (`Monster.resists_control`; "The Fire Elemental will not burn."), and a burn written straight in is dropped at its tick. Every way a monster is set burning goes through `Monster.hold` / `add_effect` (pet specials, the Rod of Moses, Echidna's Fang, Stolen Flame, the trap). The hero: body armour that will not catch (dragonscale, the `flame` ward) refuses `burning` from any source (`status_effects.apply_effect`; traps and vents say the ward's line), and a vent is halved once by fire resistance (`Player.take_damage`; it used to be halved twice). Still untyped or mis-typed (listed, not changed): Tesla's resonance shock is plain damage, the Acid Arrow's lingering burn is the `poisoned` status (it ticks as poison).
 
 Form and substance stack, to the cap: a silver mace on a skeleton is x2 (blunt) x x2 (silver) = x4, held to **x3**. A unique's per-tag `undead_multiplier`, Akinakes's prophecy and the other weapon specials below multiply on top of the capped affinity.
 
