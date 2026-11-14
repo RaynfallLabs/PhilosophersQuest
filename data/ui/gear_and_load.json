@@ -1,0 +1,68 @@
+{
+ "_note": "The 'Gear and Load' page of the help screen (? then Tab twice). Same shape as how_quizzes_work.json: each section is a heading, its paragraphs and `rows`, a two-column list drawn as 'key: what it does'. Keep it true to the code: item_actions.py (the Kit and @ keys), game_dressing.py and data/gear_rules.json donning (dressing, Keep dressing?, the weapon At Your Back, the Loadouts), known_by_hand.py, game_arsenal.py and data/arsenal.json (coatings, flasks, Press and Guard, the earplugs), data/gear_rules.json load (Heavy, Burdened, Overloaded). tests/test_help_screen_r3.py holds the keys and numbers to the code and data.",
+ "title": "Gear and Load",
+ "sections": [
+  {
+   "heading": "The Kit and the character sheet",
+   "paragraphs": [
+    "K opens the Kit: everything you carry, sorted by kind, each piece set beside the one you wear. @ opens your character sheet. On either one, pick a piece and press:"
+   ],
+   "rows": [
+    ["E", "Wear or wield it, or take it off"],
+    ["R", "Ready a weapon At Your Back, or put it back in your pack"],
+    ["A", "Apply a coating to the weapon in your hand, or put the earplugs in or take them out"],
+    ["D", "Drop it"],
+    ["I", "Identify it (you need the Philosopher's Shard)"],
+    ["X", "Read its lore"]
+   ]
+  },
+  {
+   "heading": "Apply puts the earplugs in",
+   "paragraphs": [
+    "Beeswax Earplugs do nothing in your pack. Press A on them in the Kit and the wax goes in: no voice can work on you then, not a wail's fear, a song's sleep or a scream's confusion. But you hear nothing either, so press A again to take them out once the singing stops."
+   ]
+  },
+  {
+   "heading": "A weapon At Your Back",
+   "paragraphs": [
+    "Ready a weapon from the Kit (R) and it hangs At Your Back. S swaps it with the weapon in your hand in one turn, so you can change weapons in the middle of a fight. Drop it or throw it and it keeps its place: pick it up again and S draws it."
+   ]
+  },
+  {
+   "heading": "Three Loadouts",
+   "paragraphs": [
+    "Shift+E opens your Loadouts: three saved kits. Dress as you like, pick a kit (1, 2 or 3) and press S to save what you wear into it, and N to give it a name. Enter puts a kit on. Each piece takes its own turns; a piece not in your pack is skipped, and one you have never worn stays off until you have put it on by hand."
+   ]
+  },
+  {
+   "heading": "Putting armour on",
+   "paragraphs": [
+    "The first time you put on a kind of armour, a shield, a ring or an amulet, it asks its questions. After that the kind is Known by Hand: every iron breastplate goes on with no quiz, whatever its plus or blessing, though a mithril one is a new kind and asks its own.",
+    "Armour takes time. Light body armour goes on in 1 turn, medium in 3, heavy in 5 and full plate in 6; every other piece takes 1, and taking a piece off takes half as long. A piece does nothing for you until it is fully on.",
+    "If a foe comes into view or strikes you while you dress, you stop and the game asks: Keep dressing? Y keeps going. N stops: what is on stays on, and the rest stays in your pack."
+   ]
+  },
+  {
+   "heading": "Coatings, flasks and stance",
+   "paragraphs": [
+    "Three keys get you ready for what is in front of you:"
+   ],
+   "rows": [
+    ["Shift+C", "Coat the weapon in your hand with silver dust, holy water, fire oil, frost salts or venom. It lasts for a number of blows that land, and against a creature that cannot bear it (silver on a werewolf) every one of them strikes its weakness"],
+    ["T", "Throw: the Flasks tab holds oil, holy water and acid, which burst over the creature they hit"],
+    ["Shift+S", "Change your stance, one turn: Press hits 30% harder but leaves you 2 AC worse, Guard hits 30% softer but makes you 2 AC better, and Neutral is in between"]
+   ]
+  },
+  {
+   "heading": "How much you carry",
+   "paragraphs": [
+    "Strength sets how much you can carry, and everything counts, worn or packed. You can never pick up more than your limit, and the moment you lighten your load its cost lifts. The sidebar shows your load:"
+   ],
+   "rows": [
+    ["Heavy", "Over half your limit: you dodge half as well, and your footsteps carry further"],
+    ["Burdened", "Over three quarters: you cannot dodge, your Dexterity guards you half as well, and every second step costs an extra turn"],
+    ["Overloaded", "Past the limit itself (losing Strength can put you there): you cannot dodge, your Dexterity no longer guards you, and every step costs an extra turn"]
+   ]
+  }
+ ]
+}

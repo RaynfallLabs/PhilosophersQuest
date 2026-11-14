@@ -66,6 +66,21 @@ def subject_ref(subject):
     return ('item', iid) if iid else None
 
 
+def pet_ref(pet):
+    """(kind, id) of a companion's picture, or None: its CURRENT map sprite
+    (Pet.sprite_id: the stage it has grown to, by the stage's name; the
+    Emberpup in the Bloomleaf Cloak has a cloaked picture for every stage),
+    or for a drawing, the creature it was drawn from. The same picture the
+    map draws for it (game_render.render)."""
+    if pet is None:
+        return None
+    if getattr(pet, 'is_sketch', False):
+        sid = getattr(pet, 'monster_kind', '') or ''
+    else:
+        sid = getattr(pet, 'sprite_id', '') or ''
+    return ('monster', sid) if sid else None
+
+
 def encyclopedia_ref(category, entry):
     """(kind, id) of the art for an encyclopedia entry, or None."""
     if not entry:

@@ -4163,7 +4163,13 @@ class RenderMixin:
                 h += S(8)
                 continue
             if isinstance(entry, tuple) and entry and entry[0] == '__key__':
-                h += font.get_height() + S(9)
+                # As _menu_draw_key_line lays it out: the label wraps beside
+                # its badge (one line was counted, so a pane of wrapped
+                # actions ran past its bottom unseen).
+                kf = get_font('body', 16, bold=True)
+                kw = max(S(28), kf.size(entry[1])[0] + S(14))
+                n = len(self._wrap_text(display_text(entry[2]), font, width - kw - S(10)) or [''])
+                h += n * (font.get_height() + S(3)) + S(6)
                 continue
             text, fnt = (entry[0], entry[2] if len(entry) > 2 and entry[2] is not None else font) \
                 if isinstance(entry, tuple) else (entry, font)
@@ -4748,8 +4754,79 @@ class RenderMixin:
                                      pygame.Rect(tx, ty, text_w, nh + S(2)))
                 ty += nh
 
+    def _decision_split(self, content_w, gap, detail_share=None):
+        """(list_w, detail_w) of a decision menu. ``detail_share``: the
+        detail pane's share of the width, for a menu whose card is the
+        point and whose list is short (the pet panel and its picture)."""
+        if detail_share:
+            detail_w = int(content_w * detail_share)
+            return content_w - detail_w - gap, detail_w
+        list_w = max(S(500), min(S(700), int(content_w * 0.58)))
+        detail_w = content_w - list_w - gap
+        if detail_w < S(390):
+            detail_w = max(S(340), int(content_w * 0.44))
+            list_w = content_w - detail_w - gap
+        return list_w, detail_w
+
+    def _menu_draw_portrait(self, entry, rect):
+        """The head of a detail pane whose entry has a picture (the pet
+        panel, round 3 Q16: "show the pet, just like bestiary and item
+        lore"): ``entry['plate']``, a lore_art (kind, id), drawn as the lore
+        pages draw theirs (lore_art.plate in its framed well, the largest
+        whole enlargement that leaves the rest of the card room), with
+        ``entry['plate_lines']`` beside it. Returns the rect left below for
+        ``entry['details']``. A subject with no art has no picture (the
+        Bestiary's rule: never a letter glyph); its lines then head the
+        pane at full width."""
+        head = entry.get('plate_lines') or []
+        ref = entry.get('plate')
+        if not head and not ref:
+            return rect
+        # The caller's "more" cue is for the card's own lines below: drawing
+        # the head must not use it up (_menu_draw_text_block clears it).
+        cue = getattr(self, '_menu_more_cue', None)
+        try:
+            return self._menu_portrait_head(entry, head, ref, rect)
+        finally:
+            self._menu_more_cue = cue
+
+    def _menu_portrait_head(self, entry, head, ref, rect):
+        font = self.font_sm
+        pad = S(self._LORE_PLATE_PAD)
+        gap = S(12)
+        rest_h = self._menu_block_height(entry.get('details') or [], rect.w, FP.BODY_TEXT, font)
+        surf, beside_w, head_h = None, rect.w, 0
+        if ref:
+            for want in (192, 128, 64):
+                cand = lore_art.plate(ref[0], ref[1], min(S(want), rect.w // 2))
+                if cand is None:
+                    break
+                bw = rect.w - cand.get_width() - 2 * pad - gap
+                hh = self._menu_block_height(head, bw, FP.BODY_TEXT, font)
+                surf, beside_w, head_h = cand, bw, hh
+                if max(cand.get_height() + 2 * pad, hh) + gap + rest_h <= rect.h:
+                    break
+        if surf is None:
+            used = self._menu_draw_text_block(head, pygame.Rect(rect.x, rect.y, rect.w, rect.h),
+                                              default_font=font) - rect.y
+            top = rect.y + used + S(4)
+            return pygame.Rect(rect.x, top, rect.w, max(0, rect.bottom - top))
+        well = pygame.Rect(rect.x, rect.y, surf.get_width() + 2 * pad, surf.get_height() + 2 * pad)
+        self._draw_plate_well(surf, well)
+        self._menu_draw_text_block(head, pygame.Rect(well.right + gap, rect.y, beside_w, rect.h),
+                                   default_font=font)
+        top = rect.y + max(well.h, head_h) + gap
+        return pygame.Rect(rect.x, top, rect.w, max(0, rect.bottom - top))
+
+    def _menu_list_footer_h(self, lines, width) -> int:
+        """Height a list pane keeps under its rows for ``lines`` (0: none)."""
+        if not lines:
+            return 0
+        return self._menu_block_height(lines, width, FP.BODY_TEXT, self.font_sm) + S(16)
+
     def _draw_decision_menu_kit(self, *, title, entries, selected, hint, border,
-                                tabs, active_tab, tab_counts, scroll_attr):
+                                tabs, active_tab, tab_counts, scroll_attr,
+                                detail_share=None, list_footer=None):
         """``_draw_decision_menu`` in the Midnight Codex kit."""
         draw_overlay(self.screen, 190)
         bw = min(S(1240), _modal_budget_w() - S(32))
@@ -4767,11 +4844,7 @@ class RenderMixin:
         body_h = body_bottom - content_y
 
         gap = S(12)
-        list_w = max(S(500), min(S(700), int(content_w * 0.58)))
-        detail_w = content_w - list_w - gap
-        if detail_w < S(390):
-            detail_w = max(S(340), int(content_w * 0.44))
-            list_w = content_w - detail_w - gap
+        list_w, detail_w = self._decision_split(content_w, gap, detail_share)
         list_rect = pygame.Rect(content_x, content_y, list_w, body_h)
         detail_rect = pygame.Rect(list_rect.right + gap, content_y, detail_w, body_h)
         list_body = self._ui_subpanel(list_rect, "Choices", border_color=border)
@@ -4783,11 +4856,14 @@ class RenderMixin:
         selected = max(0, min(selected, max(0, total - 1)))
         if scroll_attr:
             setattr(self, scroll_attr, selected)
+        foot_h = self._menu_list_footer_h(list_footer, list_body.w - S(8))
+        rows_h = max(S(62), list_body.h - foot_h)
+
         def _measure(width):
             sizes, lines = self._menu_name_sizes(entries, self._menu_row_text_w(width, entries))
             rh = S(62) + (get_font('body', 16).get_height() if lines > 1 else 0)
-            th = S(24) if total * rh > list_body.h else 0
-            return sizes, lines, rh, max(1, (list_body.h - th) // rh)
+            th = S(24) if total * rh > rows_h else 0
+            return sizes, lines, rh, max(1, (rows_h - th) // rh)
 
         row_w = list_body.w
         name_sizes, name_lines, row_h, visible = _measure(row_w)
@@ -4819,11 +4895,18 @@ class RenderMixin:
             bar = pygame.Rect(list_body.x + row_w, list_body.y,
                               S(12), visible * row_h - S(6))
             self._ui_scrollbar(bar, scroll, total, visible, color=border)
+        if foot_h:
+            # Under the rows: what the selected choice can do (the pet
+            # panel's actions), clear of the "1-3 of 5" tag.
+            fy = list_body.y + min(total, visible) * row_h + S(6)
+            self._menu_draw_text_block(list_footer, pygame.Rect(
+                list_body.x + S(4), fy, list_body.w - S(8), foot_h), default_font=self.font_sm)
 
         detail_body = pygame.Rect(detail_body.x + S(2), detail_body.y,
                                   detail_body.w - S(4), detail_body.h)
         if entries:
             detail_lines = entries[selected].get('details') or []
+            detail_body = self._menu_draw_portrait(entries[selected], detail_body)
             self._menu_draw_text_block(detail_lines, detail_body, default_font=self.font_sm)
         else:
             self._menu_draw_text_block(
@@ -4983,19 +5066,26 @@ class RenderMixin:
                                       selected: int, context_lines: list,
                                       hint: str, border_color=None, tabs=None,
                                       active_tab: int = 0, tab_counts=None,
-                                      scroll_attr: str | None = None):
+                                      scroll_attr: str | None = None,
+                                      detail_share: float | None = None,
+                                      list_footer: list | None = None):
         """Large decision menu (list on the left, detail pane on the right).
 
         Kept under the original helper name so existing menu call sites stay
         stable. The layout is now a wide choices list plus an inspector pane;
         standing run context stays in the HUD instead of consuming menu width.
+        An entry with a ``plate`` heads its detail pane with that picture
+        (``_menu_draw_portrait``); ``detail_share`` widens the pane for it.
+        ``list_footer``: lines drawn in the list pane under its rows (the
+        pet panel's actions for the companion chosen).
         """
         border = border_color or FP.GOLD
         if kit_on():
             return self._draw_decision_menu_kit(
                 title=title, entries=entries, selected=selected, hint=hint,
                 border=border, tabs=tabs, active_tab=active_tab,
-                tab_counts=tab_counts, scroll_attr=scroll_attr)
+                tab_counts=tab_counts, scroll_attr=scroll_attr,
+                detail_share=detail_share, list_footer=list_footer)
         draw_overlay(self.screen, 190)
         # Caps grow with the UI scale; the width budget is the play area
         # left of the right rail; the panel centres on the window.
@@ -5017,11 +5107,7 @@ class RenderMixin:
         body_h = by + bh - footer_h - content_y - S(10)
 
         gap = S(12)
-        list_w = max(S(500), min(S(700), int(content_w * 0.58)))
-        detail_w = content_w - list_w - gap
-        if detail_w < S(390):
-            detail_w = max(S(340), int(content_w * 0.44))
-            list_w = content_w - detail_w - gap
+        list_w, detail_w = self._decision_split(content_w, gap, detail_share)
 
         list_rect = pygame.Rect(content_x, content_y, list_w, body_h)
         detail_rect = pygame.Rect(list_rect.right + gap, content_y, detail_w, body_h)
@@ -5042,7 +5128,8 @@ class RenderMixin:
         row_h = S(64)
         list_body = pygame.Rect(list_rect.x + S(10), list_rect.y + S(42),
                                 list_rect.w - 2 * S(10), list_rect.h - S(54))
-        visible = max(1, list_body.h // row_h)
+        foot_h = self._menu_list_footer_h(list_footer, list_body.w - S(8))
+        visible = max(1, (list_body.h - foot_h) // row_h)
         scroll = 0
         if total > visible:
             scroll = max(0, min(selected - visible + 1 if selected >= visible else 0,
@@ -5102,11 +5189,16 @@ class RenderMixin:
             self._ui_scrollbar(pygame.Rect(list_body.x + row_w, list_body.y, S(12),
                                            visible * row_h - S(6)),
                                scroll, total, visible, color=border)
+        if foot_h:
+            fy = list_body.y + min(total, visible) * row_h + S(6)
+            self._menu_draw_text_block(list_footer, pygame.Rect(
+                list_body.x + S(4), fy, list_body.w - S(8), foot_h), default_font=self.font_sm)
 
         detail_body = pygame.Rect(detail_rect.x + S(14), detail_rect.y + S(42),
                                   detail_rect.w - 2 * S(14), detail_rect.h - S(58))
         if entries:
             detail_lines = entries[selected].get('details') or []
+            detail_body = self._menu_draw_portrait(entries[selected], detail_body)
             self._menu_draw_text_block(detail_lines, detail_body, default_font=self.font_sm)
         else:
             self._menu_draw_text_block(
@@ -7374,15 +7466,26 @@ class RenderMixin:
                 and self._item_is_known(i))
             from pet_system import hatch_source
             _from = hatch_source(pet)
-            details = [
+            # Its picture heads the card, as on the Bestiary and item lore
+            # pages: the sprite it wears on the map now (lore_art.pet_ref:
+            # the stage it has grown to, the cloaked Emberpup's own), with
+            # who it is beside it (_menu_draw_portrait).
+            head = [
                 (pet.name, FP.GOLD_BRIGHT, self.font_md),
-                (f"HP {pet.hp}/{pet.max_hp}    Level {pet.level}", FP.BODY_TEXT, self.font_sm),
+                (f"Level {pet.level}", FP.BODY_TEXT, self.font_sm),
+                (f"HP {pet.hp}/{pet.max_hp}", FP.BODY_TEXT, self.font_sm),
                 (f"XP {pet.xp}/{xp_to}", FP.BODY_TEXT, self.font_sm),
                 *([(f"Hatched From: {_from}", FP.BODY_TEXT, self.font_sm)] if _from else []),
-                *self._pet_cloak_lines(pet),
                 (f"Command: {cmd}", FP.CYAN_ACCENT, self.font_sm),
+            ]
+            details = [
+                *self._pet_cloak_lines(pet),
                 *self._pet_rescue_lines(pet),
-                '',
+            ]
+            # What can be done with it, under the companions list (the card
+            # beside it is its picture and who it is: Shep's whole card did
+            # not fit in one pane at 1280x720).
+            actions = [
                 ("Available actions", FP.GOLD_BRIGHT, self.font_sm),
                 # Key badges like every other kit screen (they were "F - Feed").
                 ('__key__', 'F', f"Feed ({food_count} food items in pack)"),
@@ -7394,11 +7497,16 @@ class RenderMixin:
             ]
             entries.append({
                 'name': pet.name,
-                'detail': f"HP {pet.hp}/{pet.max_hp} | Level {pet.level} | {cmd}",
+                # (Its command is on the card, beside its picture: the row
+                # is narrower for the picture's pane and cut it short.)
+                'detail': f"HP {pet.hp}/{pet.max_hp} | Level {pet.level}",
                 'key': self._menu_letter(idx),
                 'badge': f"{ready}/{len(specials_avail)}",
                 'badge_color': FP.SUCCESS_TEXT if ready else FP.FADED_TEXT,
+                'plate': lore_art.pet_ref(pet),
+                'plate_lines': head,
                 'details': details,
+                'actions': actions,
             })
 
         selected = self._menu_clamp_selection('_pet_menu_selected', len(entries))
@@ -7418,6 +7526,8 @@ class RenderMixin:
             hint="Up/Down: choose pet   a-z: select pet   F/P/H/R/C/S: action   ESC: close",
             border_color=FP.GOLD_BRIGHT,
             scroll_attr='_pet_menu_scroll',
+            detail_share=0.56,
+            list_footer=entries[selected].get('actions') if entries else None,
         )
 
     def _pet_cloak_lines(self, pet) -> list:
@@ -8618,15 +8728,20 @@ class RenderMixin:
                 if y is None:
                     break
                 continue
+            indent = 0
             if isinstance(entry, tuple):
-                text, col, fnt = entry
+                # (text, colour, font), or with a 4th item: the line's indent
+                # in px (a wrapped row's hanging lines on a help page).
+                text, col, fnt = entry[:3]
+                indent = int(entry[3]) if len(entry) > 3 else 0
                 fnt = fnt or font
                 col = col or color
             else:
                 text, col, fnt = entry, color, font
             if y + fnt.get_height() > rect.bottom:
                 break
-            self._ui_blit_text(text, fnt, col, rect.x, y, max_width=rect.w - S(12))
+            self._ui_blit_text(text, fnt, col, rect.x + indent, y,
+                               max_width=rect.w - S(12) - indent)
             y += fnt.get_height() + line_gap
         self._ui_scrollbar(rect, scroll, len(lines), visible)
         return scroll
@@ -9172,19 +9287,26 @@ class RenderMixin:
         well.midtop = (body.x + (body.w - S(12)) // 2, body.y - off)
         old_clip = self.screen.get_clip()
         self.screen.set_clip(body.clip(old_clip))
+        self._draw_plate_well(surf, well, top_rule=(off == 0))
+        self.screen.set_clip(old_clip)
+
+    def _draw_plate_well(self, surf, well, top_rule=True):
+        """A lore picture in its framed well (the dossier, the Bestiary, the
+        pet panel): the dark well, the plate, a gold rule round the well and
+        a dark one round the picture. ``top_rule`` False: sliding under a
+        pane's top edge as it scrolls, the well has no top rule."""
+        pad = S(self._LORE_PLATE_PAD)
         pygame.draw.rect(self.screen, KT.WELL, well)
         self.screen.blit(surf, (well.x + pad, well.y + pad))
         inner = pygame.Rect(well.x + pad - 1, well.y + pad - 1,
                             surf.get_width() + 2, surf.get_height() + 2)
-        if off == 0:
+        if top_rule:
             pygame.draw.rect(self.screen, KT.GOLD_DARK, well, 1)
             pygame.draw.rect(self.screen, KT.VOID, inner, 1)
         else:
-            # Sliding under the pane's top edge: no top rule.
             x0, x1, y0, y1 = well.left, well.right - 1, well.top, well.bottom - 1
             pygame.draw.lines(self.screen, KT.GOLD_DARK, False,
                               [(x0, y0), (x0, y1), (x1, y1), (x1, y0)])
-        self.screen.set_clip(old_clip)
 
     def _draw_lore_dossier_screen(self):
         """The item / bestiary dossier: Identity, Mechanics and Lore panes.
@@ -10707,9 +10829,10 @@ class RenderMixin:
     def _draw_help_screen(self):
         # Page 1 (this one) is a pure keybind reference: every listing maps
         # to a real action in game_input.py, so no prose here. The prose
-        # lives on page 2, How Quizzes Work (Tab).
-        if getattr(self, '_help_page', 0) == 1:
-            return self._draw_help_quizzes()
+        # lives on the pages after it (Tab): How Quizzes Work, then Gear and
+        # Load (HELP_PAGES, their words in data/ui/).
+        if getattr(self, '_help_page', 0):
+            return self._draw_help_text_page(self._help_page)
         groups = [
             ("Movement", [
                 ("Arrows", "Move / attack", FP.BODY_TEXT),
@@ -10726,10 +10849,10 @@ class RenderMixin:
             ("Combat", [
                 ("A", "Melee attack", FP.BODY_TEXT),
                 ("F", "Fire ranged weapon", FP.BODY_TEXT),
-                ("T", "Throw item", FP.BODY_TEXT),
+                ("T", "Throw item or flask", FP.BODY_TEXT),
                 ("M / Z", "Cast spell / zap wand", FP.BODY_TEXT),
                 ("V", "Powers menu", FP.BODY_TEXT),
-                ("S", "Swap weapons", FP.BODY_TEXT),
+                ("S", "Swap readied weapon", FP.BODY_TEXT),
             ]),
             ("Items", [
                 ("E", "Equip menu", FP.BODY_TEXT),
@@ -10742,14 +10865,14 @@ class RenderMixin:
                 ("R", "Read scroll or book", FP.BODY_TEXT),
             ]),
             ("Knowledge", [
-                ("@", "Character: equip, drop", FP.BODY_TEXT),
+                ("@", "Character sheet", FP.BODY_TEXT),
                 ("B", "Encyclopedia, Journal (h)", FP.BODY_TEXT),
                 ("J", "Discoveries", FP.BODY_TEXT),
-                ("K", "Kit: compare, equip, drop", FP.BODY_TEXT),
+                ("K", "Kit: equip, ready, apply", FP.BODY_TEXT),
                 ("W", "Quirks progress", FP.BODY_TEXT),
                 (";", "Missed Questions", FP.BODY_TEXT),
                 ("S", "Your Story (end of run)", FP.BODY_TEXT),
-                ("N", "Recall lore", FP.BODY_TEXT),
+                ("N", "Recall Lore for a hint", FP.BODY_TEXT),
                 ("L", "Message history", FP.BODY_TEXT),
             ]),
             ("World", [
@@ -10864,33 +10987,56 @@ class RenderMixin:
 
         self._ui_footer(panel, "Tab: How Quizzes Work   ? / ESC: close")
 
-    _how_quizzes_cache = None
+    # The help screen's prose pages, in Tab order after the command map
+    # (page 0): (the file in data/ui/, the title when the file says none).
+    # How Quizzes Work (NEXT_STEPS_REVIEW item 6) prints the quiz rules; Gear
+    # and Load (round 3, Q15) the Kit and @ keys, dressing, the weapon At Your
+    # Back, the Loadouts, the arsenal and the three load tiers.
+    HELP_PAGES = (('how_quizzes_work', 'How Quizzes Work'),
+                  ('gear_and_load', 'Gear and Load'))
+    _help_pages_cache: dict = {}
 
     def _how_quizzes_page(self) -> dict:
         """data/ui/how_quizzes_work.json, read once."""
-        if RenderMixin._how_quizzes_cache is None:
+        return self._help_page_data('how_quizzes_work')
+
+    def _help_page_data(self, name: str) -> dict:
+        """data/ui/<name>.json, read once ({} when it cannot be read)."""
+        cache = RenderMixin._help_pages_cache
+        if name not in cache:
             import json
             from paths import data_path
             try:
-                with open(data_path('data', 'ui', 'how_quizzes_work.json'), encoding='utf-8') as f:
-                    RenderMixin._how_quizzes_cache = json.load(f)
+                with open(data_path('data', 'ui', f'{name}.json'), encoding='utf-8') as f:
+                    cache[name] = json.load(f)
             except (OSError, ValueError):
-                RenderMixin._how_quizzes_cache = {}
-        return RenderMixin._how_quizzes_cache
+                cache[name] = {}
+        return cache[name]
 
-    def _draw_help_quizzes(self):
-        """Help page 2: how quizzes work (NEXT_STEPS_REVIEW item 6). Three
-        rules were printed nowhere: one wrong answer ends an equip, identify
-        or cook; a fight is a chain and SPACE strikes; only fights are timed."""
-        page = self._how_quizzes_page()
-        panel = self._ui_modal_panel(str(page.get('title', 'How Quizzes Work')).upper(),
+    def help_page_count(self) -> int:
+        """The help screen's pages: the command map and the prose pages."""
+        return 1 + len(self.HELP_PAGES)
+
+    def _help_page_title(self, page: int) -> str:
+        if page <= 0 or page > len(self.HELP_PAGES):
+            return 'Commands'
+        name, fallback = self.HELP_PAGES[page - 1]
+        return str(self._help_page_data(name).get('title') or fallback)
+
+    def _draw_help_text_page(self, page: int):
+        """A prose page of the help screen (1: How Quizzes Work, 2: Gear and
+        Load): each section a heading, its paragraphs and its "key: what it
+        does" rows, scrolled with Up / Down. Tab turns to the next page."""
+        page = max(1, min(int(page), len(self.HELP_PAGES)))
+        data = self._help_page_data(self.HELP_PAGES[page - 1][0])
+        panel = self._ui_modal_panel(self._help_page_title(page).upper(),
                                      border_color=FP.GOLD, max_w=1100, max_h=760)
         body = self._ui_modal_body(panel, side=24, top=72, bottom=52)
         text_f = get_font('body', 18)
         head_f = get_font('body', 18, bold=True)
         w = body.w - S(14)
         lines = []
-        for sec in page.get('sections', []) or []:
+        for sec in data.get('sections', []) or []:
             if lines:
                 lines.append(("", FP.BODY_TEXT, text_f))
             for line in self._ui_text_lines(str(sec.get('heading', '')), head_f, w):
@@ -10901,11 +11047,17 @@ class RenderMixin:
                 for line in self._ui_text_lines(str(para), text_f, w):
                     lines.append((line, FP.BODY_TEXT, text_f))
             for row in sec.get('rows', []) or []:
-                for line in self._ui_text_lines(f"{row[0]}: {row[1]}", text_f, w):
-                    lines.append((line, FP.BODY_TEXT, text_f))
+                # "key: what it does", its wrapped lines hung under the
+                # words, clear of the key.
+                lead = f"{row[0]}: "
+                ind = text_f.size(lead)[0]
+                for n, line in enumerate(self._ui_text_lines(str(row[1]), text_f, w - ind)):
+                    lines.append((lead + line, FP.BODY_TEXT, text_f) if n == 0
+                                 else (line, FP.BODY_TEXT, text_f, ind))
         self._help_scroll = self._ui_draw_scroll_lines(
             lines, text_f, FP.BODY_TEXT, body, getattr(self, '_help_scroll', 0), line_gap=5)
-        self._ui_footer(panel, "Tab: Commands   Up/Down/PgUp/PgDn: scroll   ? / ESC: close")
+        nxt = self._help_page_title((page + 1) % self.help_page_count())
+        self._ui_footer(panel, f"Tab: {nxt}   Up/Down/PgUp/PgDn: scroll   ? / ESC: close")
 
 
 # ------------------------------------------------------------------

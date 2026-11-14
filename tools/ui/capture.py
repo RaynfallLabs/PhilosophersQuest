@@ -1593,7 +1593,7 @@ def _(g):
 @scene('menu_charsheet_burdened', 'Menus', '@ while Burdened: header, Kit Summary and '
        'effect chip show it.', expect='character_sheet')
 def _(g):
-    _make_burdened(g)
+    _make_loaded(g, burdened=True)
     g.handle_event(key_event(pygame.K_2, '@', pygame.KMOD_SHIFT))
 
 
@@ -2914,6 +2914,56 @@ def _(g):
     g.handle_event(key_event(pygame.K_p, 'P', pygame.KMOD_SHIFT))
 
 
+def _pet_scene(g, species, level, *, nickname='', bloomleaf=False):
+    """The pet panel (Shift+P) on one companion of ``species`` at ``level``
+    (its stage follows the level: pet_system._EVOLVE_1 / _EVOLVE_2)."""
+    from pet_system import Pet
+    pet = Pet(species, g.pets[0].x, g.pets[0].y, level=level)
+    pet.nickname = nickname
+    pet.bloomleaf = bloomleaf
+    g.pets[:] = [pet]
+    g.handle_event(key_event(pygame.K_p, 'P', pygame.KMOD_SHIFT))
+
+
+@scene('menu_pet_plain', 'Pets',
+       'Shift+P with a Seedling just hatched (no evolution yet): its picture heads the card.',
+       expect='pet_menu')
+def _(g):
+    _pet_scene(g, 'plant', 1)
+
+
+@scene('menu_pet_final_stage', 'Pets',
+       'Shift+P with a Torrentoise (the water line\'s last stage): the picture is the stage it '
+       'has grown to.', expect='pet_menu')
+def _(g):
+    _pet_scene(g, 'water', 60, nickname='Bubbles')
+
+
+@scene('menu_pet_cloaked_evolved', 'Pets',
+       'Shift+P with the cloaked Emberpup grown into a Flamescale: still in the Bloomleaf Cloak.',
+       expect='pet_menu')
+def _(g):
+    _pet_scene(g, 'fire', 25, nickname='Ember', bloomleaf=True)
+
+
+@scene('menu_pet_cloaked_final', 'Pets',
+       'Shift+P with the cloaked Emberpup grown into an Infernodrake: the cloak grew with him.',
+       expect='pet_menu')
+def _(g):
+    _pet_scene(g, 'fire', 60, nickname='Ember', bloomleaf=True)
+
+
+@scene('menu_pet_shep', 'Pets',
+       'Shift+P with Shep the Legend (the longest card: his rescue and his growl), hatched '
+       'from a Master Hearth Sphere.', expect='pet_menu')
+def _(g):
+    from pet_system import Pet
+    shep = Pet('shep', g.pets[0].x, g.pets[0].y, level=60)
+    shep.hatch_sphere = 'master_hearth_sphere'
+    g.pets[:] = [shep]
+    g.handle_event(key_event(pygame.K_p, 'P', pygame.KMOD_SHIFT))
+
+
 def _longest_hint():
     import json
     from paths import data_path
@@ -3014,6 +3064,34 @@ def _(g):
 def _(g):
     press(g, pygame.K_SLASH, '?')
     press(g, pygame.K_TAB)
+
+
+@scene('menu_help_quizzes_lore', 'Menus', '?, Tab, PgDn x3: How Quizzes Work at Recall Lore '
+       '(a random hint, never about a creature; studying and the Wand of Probing teach a kind).',
+       expect='help')
+def _(g):
+    press(g, pygame.K_SLASH, '?')
+    press(g, pygame.K_TAB)
+    for _ in range(3):
+        press(g, pygame.K_PAGEDOWN)
+
+
+@scene('menu_help_gear', 'Menus', '?, Tab, Tab: the help screen, Gear and Load (the Kit and '
+       '@ keys, dressing, the weapon At Your Back, the Loadouts, the arsenal, the load tiers).',
+       expect='help')
+def _(g):
+    press(g, pygame.K_SLASH, '?')
+    press(g, pygame.K_TAB)
+    press(g, pygame.K_TAB)
+
+
+@scene('menu_help_gear_end', 'Menus', '?, Tab, Tab, End: Gear and Load scrolled to its end '
+       '(the coatings, flasks and stance, and the three load tiers).', expect='help')
+def _(g):
+    press(g, pygame.K_SLASH, '?')
+    press(g, pygame.K_TAB)
+    press(g, pygame.K_TAB)
+    press(g, pygame.K_END)
 
 
 # -- Endings ------------------------------------------------------------------------
