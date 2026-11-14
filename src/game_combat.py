@@ -3418,6 +3418,11 @@ class CombatMixin:
             if _wary_line and self._sees_monster(m):
                 import senses as _senses_w
                 self.add_message(_senses_w._fill(m, _wary_line), 'danger' if m._provoked else 'warning')
+            elif _wary_line and not m._provoked:
+                # Unseen (he sees farther than the hero in a dark room), the
+                # warning is not spent: he gives it when he can be seen (bug
+                # bash WB-C08).
+                m._wary_warned = False
             # Asterion walking through a wall leaves it cracked and dusty for
             # a few turns: where he went can be read (slice 6).
             if (getattr(m, 'can_phase_walls', False) and m.alive

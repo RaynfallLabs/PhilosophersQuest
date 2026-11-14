@@ -644,7 +644,7 @@ class Player:
             return 0, -1
         if int(getattr(self, '_cook_stat_gain_this_floor', 0)) >= self.PER_FLOOR_STAT_CAP:
             return 0, -1
-        if self.cooking_stat_gained[stat] >= self.cooking_stat_softcap(stat):
+        if self.food_taught(stat) >= self.cooking_stat_softcap(stat):
             return 0, -1
         self._cook_stat_gain_this_floor = int(
             getattr(self, '_cook_stat_gain_this_floor', 0)) + 1
@@ -663,11 +663,20 @@ class Player:
         teach at this depth), or None (it would teach)."""
         if stat not in self.cooking_stat_gained:
             return 'cap'
-        if self.cooking_stat_gained[stat] >= self.cooking_stat_softcap(stat):
+        if self.food_taught(stat) >= self.cooking_stat_softcap(stat):
             return 'cap'
         if int(getattr(self, '_cook_stat_gain_this_floor', 0)) >= self.PER_FLOOR_STAT_CAP:
             return 'floor'
         return None
+
+    def food_taught(self, stat: str) -> int:
+        """How far food has raised ``stat``, with what an altar's
+        rededication gave it (rededication.taught): both count against the
+        one cap (cooking_stat_softcap). The altar read the kitchen's ledger
+        but the kitchen did not read the altar's, so two points rededicated
+        first and then cooked to the cap ended two past it (bug bash WB-C01)."""
+        import rededication
+        return rededication.taught(self, stat)
 
     def cooking_stat_softcap(self, stat: str | None = None) -> int:
         """Per-stat lifetime cap on cooking gains at the deepest floor reached.
@@ -754,7 +763,7 @@ class Player:
         if stat not in self.cooking_stat_gained or amount <= 0:
             return 0
         softcap = self.cooking_stat_softcap(stat)
-        gained = self.cooking_stat_gained[stat]
+        gained = self.food_taught(stat)          # an altar's points count too
         if gained >= softcap:
             return 0
         # Diminishing return: scale linearly from full at gained=0 to 0 at cap.

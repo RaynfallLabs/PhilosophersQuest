@@ -316,8 +316,10 @@ def _earned(pup):
     """Fed three times and sheltered from the rain (winning-build plan 3.8):
     what the choose tests below assume; the earning itself is tested in
     tests/test_bloomleaf_and_scraps.py."""
+    import emberpup_encounter as ep
     pup._emberpup_feeds = 3
     pup._emberpup_sheltered = True
+    pup._emberpup_cloak = ep.make_cloak()        # the Bloomleaf Cloak: nothing else counts (WB-C03)
 
 
 def test_i_choose_you_asks_animal_tier_2_needing_2_right():

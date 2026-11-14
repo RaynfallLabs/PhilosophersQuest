@@ -236,6 +236,15 @@ def _is_big_foe(m) -> bool:
     return m.max_hp > max(60, 2.0 * target_hp(floor))
 
 
+def _resists_polymorph(m) -> bool:
+    """Polymorph's test: the big foes, and the Stray Kids' zombie band. A
+    member turned into some ordinary creature left the band for good, and
+    the last one standing turned so left the stage "cleared" with no photo,
+    which only the last member's death drops (bug bash WB-C06)."""
+    import stray_kids
+    return _is_big_foe(m) or stray_kids.is_zombie(m)
+
+
 def _is_undead(m) -> bool:
     """Turn Undead's test: the monster's 'undead' tag (the same tag
     Monster.resists_control and the Helm of Darkness read). It used to look
@@ -999,7 +1008,7 @@ class MagicMixin:
                         self._on_monster_killed(target)
 
             elif effect == 'polymorph_monster':
-                is_boss = _is_big_foe(target)
+                is_boss = _resists_polymorph(target)
                 if is_boss:
                     self.add_message(f"{the_name(target)} resists the transformation!", 'warning')
                 else:
@@ -2466,7 +2475,7 @@ class MagicMixin:
                                         f"{the_name(target)} turns and flees in terror for {{dur}} turns!",
                                         f"{the_name(target)} stands its ground.")
             elif effect == 'polymorph_spell':
-                is_boss = _is_big_foe(target)
+                is_boss = _resists_polymorph(target)
                 if is_boss:
                     self.add_message(f"{the_name(target)} resists the polymorph!", 'warning')
                 else:

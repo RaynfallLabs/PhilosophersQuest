@@ -167,12 +167,21 @@ def stage(pup) -> int:
     return min(feeds(pup), needed())
 
 
+def sheltered(pup) -> bool:
+    """Is the Bloomleaf Cloak over his rock? The one thing that turns his
+    rain (plan 3.8). A Dungeon Alive save (2026-11-12) let any cloak or
+    shield shelter him and kept no record of which: that cover no longer
+    counts, so he needs the leaf cloak like any pup (bug bash WB-C03)."""
+    return bool(getattr(pup, '_emberpup_sheltered', False)
+                and is_cloak(getattr(pup, '_emberpup_cloak', None)))
+
+
 def waiting_text(pup) -> str:
     """The choices screen's words: where his trust stands, and the cloak."""
     d = data()
     lines = d.get('waiting') or ['']
     text = lines[min(stage(pup), len(lines) - 1)]
-    if getattr(pup, '_emberpup_sheltered', False) and d.get('waiting_sheltered'):
+    if sheltered(pup) and d.get('waiting_sheltered'):
         text = f"{text} {d['waiting_sheltered']}"
     return text
 
@@ -180,7 +189,7 @@ def waiting_text(pup) -> str:
 def sprite_of(pup) -> str:
     """His picture: on his rock in the rain, or with the leaf cloak over him."""
     d = data()
-    if pup is not None and getattr(pup, '_emberpup_sheltered', False):
+    if pup is not None and sheltered(pup):
         return d.get('sprite_sheltered') or d['sprite_id']
     return d['sprite_id']
 
@@ -271,6 +280,10 @@ class EmberpupMixin:
         unless he is still eating his last meal."""
         d = data()
         self._emberpup_npc = pup
+        if getattr(pup, '_emberpup_sheltered', False) and not sheltered(pup):
+            # An old save's cloth or shield: the rain soaks through it now.
+            pup._emberpup_sheltered = False
+            pup.sprite_id = sprite_of(pup)
         first = not getattr(pup, '_emberpup_met', False)
         self._emberpup_phase = 'story' if first else 'options'
         pup._emberpup_met = True
@@ -440,7 +453,7 @@ class EmberpupMixin:
         """Leave him the Bloomleaf Cloak against the rain: it is his now."""
         d = data()
         pup = self._emberpup_npc
-        if getattr(pup, '_emberpup_sheltered', False):
+        if sheltered(pup):
             self._emberpup_outcome(d['already_sheltered'], 'options')
             return
         cover = shelter_choices(self.player)
@@ -485,7 +498,7 @@ class EmberpupMixin:
         if not getattr(pup, '_emberpup_fed', False):
             self._emberpup_outcome(d['refused_hungry'], 'options')
             return
-        if not getattr(pup, '_emberpup_sheltered', False):
+        if not sheltered(pup):
             self._emberpup_outcome(d['refused_cold'], 'options')
             return
         q = d['quiz']
@@ -529,7 +542,7 @@ class EmberpupMixin:
         deeds.note(self, 'saved.emberpup', source='emberpup', unique=True)
         # A pup: he starts as a newborn does (level 1), whatever the floor.
         pet = Pet(d['pet_species'], x, y)
-        pet.bloomleaf = bool(getattr(pup, '_emberpup_sheltered', False))
+        pet.bloomleaf = sheltered(pup)
         self._companions_to_stasis()          # one companion at a time
         self.pets.append(pet)
         self._emberpup_new_pet = pet
@@ -649,6 +662,22 @@ def _room_of(rooms, x: int, y: int):
     return None
 
 
+def _is_road_person(m) -> bool:
+    """One of the people the hero comes to talk to (the Road's anchors and
+    story NPCs, the unicorn, an escort)."""
+    return bool(getattr(m, '_npc_encounter_tag', None) or getattr(m, '_flavor_encounter_tag', None)
+                or getattr(m, '_is_unicorn', False) or getattr(m, 'is_escort', False))
+
+
+def in_wary_home(monsters, x: int, y: int) -> bool:
+    """Is (x, y) inside a wary creature's own room (Old Nickel's)?"""
+    for m in monsters or ():
+        h = getattr(m, '_wary_home', None) if getattr(m, 'alive', True) else None
+        if h and h[0] <= x <= h[2] and h[1] <= y <= h[3]:
+            return True
+    return False
+
+
 def home_of(room) -> tuple:
     """The floor tiles inside a room, as (x0, y0, x1, y1) inclusive."""
     return (room.x + 1, room.y + 1, room.x + room.width - 2, room.y + room.height - 2)
@@ -691,6 +720,12 @@ class BloomleafMixin:
         stall_rooms = {id(r) for g in (getattr(self, 'ground_items', None) or ())
                        if isinstance(g, MerchantNPC)
                        for r in [_room_of(rooms, g.x, g.y)] if r is not None}
+        # Nor where one of the Road's people stands (an anchor, a story
+        # NPC, the unicorn, an escort): talking to him would mean cornering
+        # Old Nickel, and so the fight (bug bash WB-C07).
+        stall_rooms |= {id(r) for m in self.monsters
+                        if getattr(m, 'alive', True) and _is_road_person(m)
+                        for r in [_room_of(rooms, m.x, m.y)] if r is not None}
         picks = [r for r in rooms if id(r) not in pup_rooms and id(r) not in stall_rooms
                  and r is not here and r is not start]
         if not picks:
@@ -743,7 +778,7 @@ class BloomleafMixin:
         p = self.player
         if any(is_cloak(i) for i in list(p.inventory) + list(p.worn_items())):
             return True
-        if any(is_emberpup(m) and getattr(m, '_emberpup_sheltered', False) for m in self.monsters):
+        if any(is_emberpup(m) and sheltered(m) for m in self.monsters):
             return True
         return self._emberpup_state().get('outcome') == 'adopted'
 

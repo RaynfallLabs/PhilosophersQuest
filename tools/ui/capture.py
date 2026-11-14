@@ -2554,6 +2554,7 @@ def _emberpup(g, fed=False, food=2):
         # Cloak left over his rock.
         pup._emberpup_feeds = 3
         pup._emberpup_sheltered = True
+        pup._emberpup_cloak = ep.make_cloak()
         pup.sprite_id = ep.sprite_of(pup)
     foods = [f for f in load_items('food') if isinstance(f, Food)]
     for f in foods[:food]:

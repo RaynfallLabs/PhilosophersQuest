@@ -2330,8 +2330,11 @@ class Monster:
             return self._provoke('close', player, dungeon)
         dist = max(abs(self.x - player.x), abs(self.y - player.y))
         import senses as _senses
-        if dist > self.perception_range or not _senses.clear_view(
-                self.x, self.y, player.x, player.y, dungeon):
+        # He watches with his eyes, as every creature does (senses.sees: an
+        # invisible hero, or one in the Boots of Elvenkind past half his
+        # reach, is not seen; nor one a worn legend hides). A bare line of
+        # sight saw through all of it (bug bash WB-C05).
+        if _senses._hidden(self, player, dungeon) or not _senses.sees(self, player, dungeon):
             return False                     # he stays by his iron and watches the dark
         self._aware = True
         if not self._wary_warned and dist <= int(w.get('radius', 5)):

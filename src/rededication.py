@@ -46,10 +46,26 @@ def points_for_chain(chain: int) -> int:
 
 def lent(player, stat: str) -> int:
     """What is lent to ``stat`` right now and is not the hero's own: worn
-    rings and armour (the worn ledger), a keepsake carried in the pack (the
-    Charmander Stuffie's carry bonus), a heroism or brilliance draught, the
-    Ring of Gawain's morning surge."""
+    rings and armour (the worn ledger), a worn legend's attuned tier
+    (chain_equip ``_chain_stat_bonuses``: the Necklace of Harmonia's
+    Wisdom), a wielded weapon's own (Hofud's +2 Perception; the point of
+    Strength the Pelops sword takes is lent the other way), a keepsake
+    carried in the pack (the Charmander Stuffie's carry bonus), a heroism or
+    brilliance draught, the Ring of Gawain's morning surge."""
     n = int((getattr(player, '_worn_stat_ledger', None) or {}).get(stat, 0) or 0)
+    worn = player.worn_items() if hasattr(player, 'worn_items') else ()
+    for it in worn:
+        try:
+            n += int((getattr(it, '_chain_stat_bonuses', None) or {}).get(stat, 0) or 0)
+        except (AttributeError, TypeError, ValueError):
+            pass
+    for w in (getattr(player, 'weapon', None), getattr(player, 'ranged_weapon', None)):
+        if w is None:
+            continue
+        if stat == 'PER' and getattr(w, 'vigilance_aware', False):
+            n += 2                               # Player._apply_weapon_passives
+        if stat == 'STR' and getattr(w, 'cursed_lineage', False):
+            n -= int(getattr(w, '_pelops_str_taken', 1) or 0)
     for row in (getattr(player, 'active_carry_bonuses', None) or {}).values():
         try:
             s, amt = row

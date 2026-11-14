@@ -597,6 +597,7 @@ def test_save_and_load_mid_trust_keeps_his_feeds_the_gap_and_the_cloak(tmp_path,
     _feed(g, pup)
     g._emberpup['cloak_floor'] = 4
     pup._emberpup_sheltered = True
+    pup._emberpup_cloak = ep.make_cloak()        # the Bloomleaf Cloak: nothing else counts (WB-C03)
     pup.sprite_id = ep.sprite_of(pup)
     monkeypatch.setattr(save_system, 'save_dir', lambda: str(tmp_path))
     save_system.settle_unfinished_actions(g)
