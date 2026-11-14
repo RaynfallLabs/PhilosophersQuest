@@ -202,11 +202,13 @@ def test_every_stall_counter_names_an_item_or_template_that_exists():
 
 def _map_shift_letters():
     """The capital letters the map answers outside the QA build
-    (game_input.handle_event, STATE_PLAYER)."""
+    (game_input.handle_event, STATE_PLAYER: the key's character as
+    _command_char reads it, ``uni``, since the Caps Lock fix of bug bash
+    WB-A01)."""
     src = _read('src', 'game_input.py')
     out = set()
     for line in src.splitlines():
-        m = re.search(r"event\.unicode == '([A-Z])'", line)
+        m = re.search(r"(?:event\.unicode|\buni) == '([A-Z])'", line)
         if m and 'qa_tools' not in line:
             out.add(m.group(1))
     return out

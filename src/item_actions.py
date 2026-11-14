@@ -233,9 +233,15 @@ class ItemActionsMixin:
             return False
         if not act['enabled']:
             why = act['why']
-            self.add_message(
-                f"You cannot {act['label'].lower()} it: {why[:1].lower()}{why[1:]}.",
-                'warning')
+            if action_id == 'apply':
+                # The coating's own refusal is a whole sentence ("Your mace
+                # is already silvered: ..."); "You cannot coat weapon it"
+                # was no sentence at all (bug bash WB-A11).
+                self.add_message(f"{why[:1].upper()}{why[1:]}.", 'warning')
+            else:
+                self.add_message(
+                    f"You cannot {act['label'].lower()} it: {why[:1].lower()}{why[1:]}.",
+                    'warning')
             self._item_feedback_on = False
             return False
 

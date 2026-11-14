@@ -502,6 +502,13 @@ state; column 4 is the `_draw_<state>` method.
 | `Shift+C` | coat the weapon in your hand from the pack (`game_arsenal._open_coat_menu`) | `handle_event` |
 | `TAB` | cycle zoom `full → medium → close → full` | `_player_input` |
 
+Shifted letters on the map (`Shift+E`, `Shift+S`, `Shift+C`, `Shift+P` and
+the QA keys) are read from `event.unicode` through
+`game_input._command_char`: with Caps Lock on, Shift alone decides a
+letter's case, so a plain `e` is still the equip menu and `s` still swaps
+(bug bash 2026-11-13, WB-A01: Caps Lock had turned them into the Loadouts,
+a stance, the coat picker and the pet menu).
+
 ESC behavior is critical: it dismisses almost every modal cleanly,
 with special handling for `STATE_QUIZ` (end as chain-0 failure),
 `STATE_TARGET` (refund MP for pending spell), `STATE_NPC_ENCOUNTER`

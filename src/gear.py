@@ -403,16 +403,26 @@ def material_protection(item) -> dict:
 def piece_profile(item) -> dict:
     """{damage type: multiplier} for one worn piece: a named piece's own
     resistances; a common one's own (none, unless something gave it some)
-    times its template's forms and its material's elements."""
+    times its template's forms and its material's elements; and, on either,
+    a lining against one element."""
     if item is None:
         return {}
     own = {str(k): float(v) for k, v in (getattr(item, 'damage_resistances', None) or {}).items()}
-    if is_named(item):
-        return own
     out = dict(own)
-    for part in (template_forms(item), material_protection(item)):
-        for k, v in part.items():
-            out[k] = out.get(k, 1.0) * v
+    if not is_named(item):
+        for part in (template_forms(item), material_protection(item)):
+            for k, v in part.items():
+                out[k] = out.get(k, 1.0) * v
+    # A trader's lining on a cloak or shirt (smithing.py, slice 6), on a
+    # named piece as on a common one: here, so the damage and the Kit's
+    # resistance column read the same number (bug bash WB-A08).
+    try:
+        import smithing
+        el = smithing.lining_of(item)
+        if el:
+            out[el] = out.get(el, 1.0) * float(smithing.LINING_MULT)
+    except Exception:
+        pass
     return out
 
 

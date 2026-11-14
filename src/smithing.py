@@ -14,8 +14,9 @@ weapon maker and the lining for a stall's counters.
   (combat.weapon_type_multiplier), so a silvered sword meets a werewolf as a
   silver one does. One substance per weapon, for good; the name shows it.
 * **Lining**: a worn cloak or shirt lined against fire, cold, lightning or
-  poison: that element's damage x0.75 while it is worn
-  (Player.get_armor_resistance reads ``lining_mult``). One lining per piece.
+  poison: that element's damage x0.75 while it is worn (gear.piece_profile
+  reads ``lining_of``, so the damage and the Kit's resistance column agree;
+  ``lining_mult`` is the same number for the whole hero). One lining per piece.
   It is its own ``lining`` field, never ``damage_resistances`` (an old-save
   migration clears that field on common pieces).
 * **Special order**: a common piece of a material and template from the

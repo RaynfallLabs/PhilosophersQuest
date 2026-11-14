@@ -72,8 +72,15 @@ class DressingMixin:
         """Blows that have landed on the hero this run (game_combat counts)."""
         return int(self.__dict__.get('_blows_on_hero', 0) or 0)
 
+    def _busy_watch(self, m) -> bool:
+        """A creature whose coming into view stops the dressing: a hostile
+        the hero can see. A friend (an encounter's person, the unicorn, an
+        allied angel, the Emberpup) is no reason to stop (bug bash WB-A03)."""
+        from game_combat import _is_bystander
+        return not _is_bystander(m) and self._sees_monster(m)
+
     def _busy_seen(self) -> set:
-        return {id(m) for m in (getattr(self, 'monsters', None) or ()) if self._sees_monster(m)}
+        return {id(m) for m in (getattr(self, 'monsters', None) or ()) if self._busy_watch(m)}
 
     def _occupant_for(self, item):
         """(slot name, the piece worn where ``item`` goes) or ('', None). A
@@ -375,13 +382,53 @@ class DressingMixin:
             if any(i is step.item for i in self.player.inventory):
                 self.player.readied_weapon = step.item
 
+    def _busy_step_possible(self, step: Step) -> bool:
+        """Can the step under way still be done? A piece to go on, into the
+        hand or at the back must still be in the pack (a thief's blow may
+        have taken it); a piece to come off must still be worn."""
+        if step.item is None:
+            return True
+        if step.kind in ('on', 'wield', 'ready'):
+            return any(i is step.item for i in self.player.inventory)
+        if step.kind == 'off':
+            return self._is_worn(step.item)
+        return True
+
+    def _busy_helpless(self) -> str:
+        """Why the hero cannot go on working at all ('' when he can): asleep
+        or paralysed, as _helpless_turn reads it (bug bash WB-A02)."""
+        p = self.player
+        if p.has_effect('paralyzed'):
+            return 'you cannot move'
+        if p.has_effect('sleeping'):
+            return 'you have fallen asleep'
+        return ''
+
     def _busy_run(self) -> None:
-        """Run the action's turns until it is done or something stops it."""
+        """Run the action's turns until it is done or something stops it.
+        Before each turn: a step whose piece is gone is dropped and spends
+        no turn (bug bash WB-A04); a hero asleep or paralysed stops
+        (WB-A02); a hostile newly in view or a blow asks "Keep dressing?"."""
         act = getattr(self, '_busy', None)
         start_state = self.state
         floor = self.dungeon_level
         while act is not None and not act.done:
             s = act.current
+            if not self._busy_step_possible(s):
+                if (s.kind in ('on', 'wield', 'ready') and s.item is not None
+                        and not self._is_worn(s.item)):
+                    self.add_message(f"The {self._bare_name(s.item)} is gone from your pack.",
+                                     'warning')
+                act.finish_step()
+                continue
+            helpless = self._busy_helpless()
+            if helpless:
+                self._busy_halt(helpless)
+                return
+            why = interrupt_reason(act, self._busy_seen(), self._hero_blows())
+            if why:
+                self._busy_pause(why)
+                return
             if int(s.turns) <= 0:
                 self._busy_do(s)
                 act.finish_step()
@@ -397,12 +444,6 @@ class DressingMixin:
                     or self.dungeon_level != floor):
                 self._busy_abort()
                 return
-            if act.done:
-                break
-            why = interrupt_reason(act, self._busy_seen(), self._hero_blows())
-            if why:
-                self._busy_pause(why)
-                return
         self._busy = None
         if act is not None and act.done_line:
             self.add_message(act.done_line, 'success')
@@ -415,7 +456,7 @@ class DressingMixin:
             if m is not None:
                 return m
         for m in getattr(self, 'monsters', None) or ():
-            if id(m) not in act.seen and self._sees_monster(m):
+            if id(m) not in act.seen and self._busy_watch(m):
                 return m
         return None
 
@@ -447,6 +488,25 @@ class DressingMixin:
                   [('Y', 'Keep Going', f"{left} more turn{'s' if left != 1 else ''}.", self._busy_resume),
                    ('N', 'Stop', stop_text, self._busy_stop)],
                   on_cancel=self._busy_stop, esc='stop')
+
+    def _busy_halt(self, why: str) -> None:
+        """The hero cannot go on (asleep, paralysed): he stops where he is,
+        as if he had said no. What is on stays on; the rest stays in the
+        pack."""
+        act = getattr(self, '_busy', None)
+        if act is None or act.done:
+            self._busy = None
+            return
+        s = act.current
+        piece = self._bare_name(s.item) if s.item is not None else act.label
+        if s.kind == 'on':
+            line = f"You stop, half into the {piece}: {why}."
+        elif s.kind == 'off':
+            line = f"You stop, half out of the {piece}: {why}."
+        else:
+            line = f"You stop changing into {act.label}: {why}."
+        self.add_message(line, 'warning')
+        self._busy_stop()
 
     def _busy_resume(self) -> None:
         act = getattr(self, '_busy', None)

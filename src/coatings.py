@@ -157,10 +157,8 @@ def refusal(player, item) -> str:
     if getattr(weapon, 'requires_ammo', None):
         return str(c.get('ranged', ''))
     sub = str(spec['substance'])
-    import combat
     held = coating_of(weapon)
-    own = [s for s in combat._substances_of(_uncoated(weapon)) if s]
-    forms = list(combat.blow_forms_of(weapon))
+    own, forms = _known_make(player, weapon)
     if sub in own or sub in forms:
         return str(c.get('already', '')).format(
             weapon=_weapon_name(player, weapon), word=word(sub), coat=_name(item))
@@ -168,6 +166,36 @@ def refusal(player, item) -> str:
         return str(c.get('already', '')).format(
             weapon=_weapon_name(player, weapon), word=word(sub), coat=_name(item))
     return ''
+
+
+def _known_make(player, weapon) -> tuple:
+    """(substances, forms) the hero can see his weapon has, for a refusal
+    to name: all of them once it is identified (or its kind known); before
+    that only what he knows of it anyway, a blessing he knows of and the
+    smith's inlay he watched go in. A refused coating used to name an
+    unidentified blade's metal ("your Pale Gleaming Mace is already
+    silvered": bug bash WB-A12); now the coating simply goes on."""
+    import combat
+    try:
+        from items import is_fully_known, buc_known_to
+        known = is_fully_known(weapon, player)
+    except Exception:
+        known, buc_known_to = True, None
+    if known:
+        return ([s for s in combat._substances_of(_uncoated(weapon)) if s],
+                list(combat.blow_forms_of(weapon)))
+    own = []
+    if (getattr(weapon, 'buc', 'uncursed') == 'blessed' and buc_known_to is not None
+            and buc_known_to(weapon, player)):
+        own.append('holy')
+    try:
+        import smithing
+        inlay = smithing.inlay_of(weapon)
+    except Exception:
+        inlay = None
+    if inlay:
+        own.append(str(inlay))
+    return own, []
 
 
 class _Bare:
@@ -304,7 +332,11 @@ def throw_at(item, monster) -> list:
     out = [(str(t.get('hit', '')).format(flask=name, the=the_name(monster, lower=True),
                                          damage=actual, dtype=dtype), 'success')]
     st = (throw_spec(item) or {}).get('status')
-    if (isinstance(st, dict) and getattr(monster, 'alive', False)
+    # A burst that did no harm at all (a friend the blow passes by:
+    # Monster.take_damage leaves him unhurt) sets nothing alight and pits no
+    # hide (bug bash WB-A10: "The Goblin is set alight!" over a traveller
+    # who never burned).
+    if (isinstance(st, dict) and getattr(monster, 'alive', False) and actual > 0
             and not _resists(monster, dtype)):
         eff = str(st.get('effect', ''))
         hold = getattr(monster, 'hold', None)
