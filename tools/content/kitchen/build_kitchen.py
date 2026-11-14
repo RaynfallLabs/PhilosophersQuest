@@ -14,6 +14,12 @@ The kitchen rebuild (COOKING_REBUILD_PLAN_2026_11_14, slice K1). Three steps:
    flavour line``. Names and flavour are content, not a template mash. (One
    dish, dish_221, was added to structure.json by hand after the run: Goblin
    Gristle's floor-3-to-floor-86 pie.)
+2b. The structure is then kept cookable ON PURPOSE (slice K1b):
+   ``part_freq.py`` measures in the simulator how often each part turns up
+   (``part_freq.json``), ``restructure.py`` swaps rare parts out of feasts
+   and crowded dishes and adds dishes for parts left short, and
+   ``dishes_3.txt`` names the dishes it added. The rules are in
+   ``part_rules.py``; the check below fails on any dish that breaks them.
 3. ``py tools/content/kitchen/build_kitchen.py``
    Merges the frozen structure, the ingredient content (``ingredients_*.txt``)
    and the dish names into the game data, and checks every rule:
@@ -35,6 +41,8 @@ import statistics
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+if HERE not in sys.path:
+    sys.path.insert(0, HERE)
 ROOT = os.path.abspath(os.path.join(HERE, '..', '..', '..'))
 DATA = os.path.join(ROOT, 'data')
 ITEMS = os.path.join(DATA, 'items')
@@ -615,7 +623,7 @@ def write_structure(ings):
 
 def _dish_names():
     out = {}
-    for n in (1, 2):
+    for n in (1, 2, 3):
         with open(os.path.join(HERE, f'dishes_{n}.txt'), encoding='utf-8') as f:
             for line in f:
                 line = line.rstrip('\n')
@@ -783,9 +791,29 @@ def check(ings, recipes):
     for fid in FOOD:
         if fid not in food:
             problems.append(f'food {fid} missing from food.json')
+    # A dish is a meal, never just its ingredient's name ("Cave Bear Steak").
+    ing_names = {r['name'].lower(): iid for iid, r in ings.items()}
+    for rid, r in recipes.items():
+        if r['name'].lower() in ing_names:
+            problems.append(f'{rid}: dish name {r["name"]!r} is the name of ingredient '
+                            f'{ing_names[r["name"].lower()]}')
+    # Can a run cook it? (part_freq.json; the rules are in part_rules.py)
+    problems += part_rules_for(ings, food).problems(recipes)
     if problems:
         print('\n'.join(problems[:60]))
         raise SystemExit(f'{len(problems)} problems')
+
+
+def part_rules_for(ings, food):
+    import part_rules
+    freq = part_rules.load_freq()
+    rare = part_rules.rare_foods({k: food[k] for k in FOOD}, freq['rules']['rare_food_weight'])
+
+    def role_of(p):
+        if p in ings:
+            return ings[p]['role']
+        return 'food' if p in FOOD else None
+    return part_rules.PartRules(freq, role_of, rare)
 
 
 def report(ings, recipes):
@@ -809,6 +837,9 @@ def report(ings, recipes):
     print('ingredients per band:', Counter(r['band'] for r in ings.values()))
     food_uses = Counter(p for r in multis for p in set(r['ingredients']) if p in FOOD)
     print('food uses:', dict(food_uses))
+    food = _load(os.path.join(ITEMS, 'food.json'))
+    print('cookable in half of runs or more (part_freq.json):',
+          part_rules_for(ings, food).summary(recipes))
 
 
 if __name__ == '__main__':

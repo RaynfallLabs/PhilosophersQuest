@@ -1,9 +1,9 @@
 # Multi-ingredient dish names and flavour, part 1 (ids from structure.json).
 # dish_id | Name | flavour line
 feast_01|The Bull-King's Wrath Feast|Horn, rage and grave-iron in one pot; you rise from it twice as strong.
-feast_02|Witch-Oven Labyrinth Roast|Baked in Baba Yaga's ember until the horn-crown cracks, and every wound shuts.
+feast_02|Witch-Oven Labyrinth Roast|Baked in a hedge-witch's oven until the horn-crown cracks, and every wound shuts.
 feast_03|Gorgon's Ironblood Antidote Supper|Gorgon blood cuts both ways. Tonight it cuts toward you.
-feast_04|Athena's Owl-Wise Platter|Every story Anansi stole, served with the blood Athena blessed.
+feast_04|Athena's Owl-Wise Platter|A sky-giant's ham and an owlbear's steak, served with the blood Athena blessed.
 feast_05|Sigurd's Hearth Roast|Roast the dragon's heart as Sigurd did, and burn your thumb on it too.
 feast_06|Dragonfire Cassoulet|A pot that has been on fire for a week, and you never feel the heat.
 feast_07|Ragnarok Eve Feast|The meal of the last night before the end; your arms could break chains.
@@ -49,7 +49,7 @@ dish_010|Monster Mixed Grill|Three beasts and a troll on one grill, with moss fo
 dish_011|Lightning-Strike Stir-Fry|Fast in, fast out. So are you.
 dish_012|Hopping Wyrm Noodles|Springy noodles, springy legs.
 dish_013|Sentry's Supper Stew|Eaten on watch; nothing creeps up on you after.
-dish_014|Riddler's Ploughman's Plate|A riddle, a marrow wheel and a witch's sausage. The answer is wisdom.
+dish_014|Riddler's Ploughman's Plate|A riddle, an ossuary marrow and a witch's sausage. The answer is wisdom.
 dish_015|Sphinx and Soul Broth|Two riddles of the Nile in one bowl.
 dish_016|Illusionist's Curry|It tastes like a different curry every spoonful, and all of them are magic.
 dish_017|Head-in-the-Clouds Soufflé|Light as a dream; you wake up wiser.
@@ -86,7 +86,7 @@ dish_047|Road-Weary Ham Hash|Every ration a long road ever needed.
 dish_048|Fallen-Light Tonic|Holy fire gone strange, steeped with herbs.
 dish_049|Hoarder's Spore Puffs|Mammon's gold baked into pastry; you will never be hungry.
 dish_050|Bitter Riddle Steak|Bitter as a hard question, and as good for you.
-dish_051|Wild Hunt Wasp Kebabs|Your heart gallops and buzzes at once.
+dish_051|Wild Hunt Skewers|Winged horse on a hunter's spit; your heart gallops with the hunt.
 dish_052|Stormrider's Cheese Toast|Cheese, sparks and wasp-spice; you are gone before they swing.
 dish_053|Fireside Tale Fry-Up|Every rasher a story, every sausage a spell.
 dish_054|Dragon-Blood Lizard Medallions|Deep dragon's blood over little lizard tails; you heal fast.
@@ -133,10 +133,10 @@ dish_094|Goblin and Whirlpool Hotpot|Gristle and shank, stewed until both give i
 dish_095|Ploughman's Monster Board|Cold links, cold ham, cheese and bread: the crawler's lunch.
 dish_096|Ceiling-Drop Sausage Roll|It drops onto your plate before you are ready.
 dish_097|Giant's Breakfast Platter|Four kinds of meat. You will not need lunch.
-dish_098|Between Two Monsters Chowder|Scylla on one side, Charybdis on the other, and a bowl in the middle.
+dish_098|Between Two Monsters Chowder|Scylla on one side, the whirling tide on the other, and a bowl in the middle.
 dish_099|Sour Rust Relish|So sour that acid gives up.
 dish_100|Corrosion-Proof Crisps|Crunchy and sour, and acid finds nothing to bite.
-dish_101|Midwinter Ice Platter|Four cold things, and you never feel cold.
+dish_101|Midwinter Ice Platter|Four things from the frozen north, and you never feel cold.
 dish_102|Snowbound Hunter's Stew|A pot for the long frost.
 dish_103|Blizzard Roast|Roasted in a snowstorm; the cold forgets you.
 dish_104|Glow-Beetle Smoke Glaze|A lamp and a shadow; the dark grows clear.

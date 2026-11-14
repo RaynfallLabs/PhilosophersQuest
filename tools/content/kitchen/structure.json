@@ -4,7 +4,7 @@
    "asterion_minotaur_trophy",
    "seal_demon_wrath_prime",
    "death_knight_prime",
-   "vrykolakas_prime",
+   "minotaur_prime",
    "wild_mushroom"
   ],
   "benefit": "STR",
@@ -16,9 +16,9 @@
  "feast_02": {
   "parts": [
    "asterion_minotaur_trophy",
-   "baba_yaga_prime",
+   "young_dragon_prime",
    "corrupted_treant_prime",
-   "scarab_swarm_prime",
+   "harrow_witch_prime",
    "swamp_moss"
   ],
   "benefit": "hp",
@@ -32,8 +32,8 @@
    "medusa_gorgon_trophy",
    "iron_golem_prime",
    "plague_ooze_prime",
-   "carrion_crawler_prime",
-   "philosopher_tea"
+   "basilisk_prime",
+   "dried_meat"
   ],
   "benefit": "save_guard_CON",
   "legendary": true,
@@ -45,8 +45,8 @@
   "parts": [
    "medusa_gorgon_trophy",
    "veiled_inquisitor_prime",
-   "anansi_prime",
-   "naga_guardian_prime",
+   "cloud_giant_prime",
+   "owlbear_prime",
    "apple"
   ],
   "benefit": "WIS",
@@ -74,7 +74,7 @@
    "fafnir_dragon_trophy",
    "fire_giant_prime",
    "abyssal_mimic_prime",
-   "ra_serpent_prime",
+   "drake_fire_prime",
    "holy_water"
   ],
   "benefit": "fire_resist",
@@ -86,7 +86,7 @@
  "feast_07": {
   "parts": [
    "fenrir_wolf_trophy",
-   "ravanas_arm_prime",
+   "world_serpent_prime",
    "seal_demon_war_prime",
    "valkyrie_shade_prime",
    "altar_incense"
@@ -102,7 +102,7 @@
    "fenrir_wolf_trophy",
    "void_leviathan_prime",
    "apocalypse_herald_prime",
-   "black_pudding_prime",
+   "troll_prime",
    "elvish_bread"
   ],
   "benefit": "hp",
@@ -130,7 +130,7 @@
    "abaddon_destroyer_trophy",
    "lich_prime",
    "demonic_trickster_prime",
-   "lamia_prime",
+   "poltergeist_prime",
    "dried_meat"
   ],
   "benefit": "mp",
@@ -144,7 +144,7 @@
    "green_knight_trophy",
    "abyssal_dragon_prime",
    "titan_prime",
-   "shambling_mound_prime",
+   "werebear_prime",
    "healing_herb"
   ],
   "benefit": "hp",
@@ -199,8 +199,8 @@
   "parts": [
    "whispering_crone_trophy",
    "cloud_giant_prime",
-   "rangda_prime",
-   "banshee_prime",
+   "frost_giant_prime",
+   "valkyrie_shade_prime",
    "crystal_shard"
   ],
   "benefit": "WIS",
@@ -228,7 +228,7 @@
    "blood_archon_trophy",
    "pit_fiend_spawn_prime",
    "flesh_colossus_prime",
-   "stirge_swarm_prime",
+   "cult_initiate_prime",
    "abyssal_kelp"
   ],
   "benefit": "hp",
@@ -241,7 +241,7 @@
   "parts": [
    "blood_archon_trophy",
    "seal_demon_war_prime",
-   "ravanas_arm_prime",
+   "death_knight_prime",
    "giant_scorpion_prime",
    "dried_meat"
   ],
@@ -256,7 +256,7 @@
    "tiamat_trophy",
    "fire_giant_prime",
    "mage_slayer_assassin_prime",
-   "burning_skeleton_prime",
+   "magma_elemental_prime",
    "river_salt"
   ],
   "benefit": "fire_resist",
@@ -270,7 +270,7 @@
    "tiamat_trophy",
    "astral_horror_prime",
    "void_seraph_prime",
-   "carbuncle_prime",
+   "sea_dragon_spawn_prime",
    "dried_meat"
   ],
   "benefit": "mp",
@@ -352,9 +352,9 @@
  "feast_26": {
   "parts": [
    "ymir_last_spawn_trophy",
-   "iron_patriarch_prime",
+   "frost_giant_prime",
    "seal_demon_earthquake_prime",
-   "wood_golem_prime",
+   "hill_giant_prime",
    "cave_mushroom"
   ],
   "benefit": "CON",
@@ -366,8 +366,8 @@
  "feast_27": {
   "parts": [
    "hrungnirs_ghost_trophy",
-   "jormungandr_juvenile_prime",
-   "iron_patriarch_prime",
+   "world_serpent_prime",
+   "stone_giant_prime",
    "veteran_knight_prime",
    "crystal_shard"
   ],
@@ -381,8 +381,8 @@
   "parts": [
    "hrungnirs_ghost_trophy",
    "flesh_colossus_prime",
-   "baba_yaga_prime",
-   "clay_golem_prime",
+   "titan_prime",
+   "stone_golem_prime",
    "holy_water"
   ],
   "benefit": "hp",
@@ -395,9 +395,9 @@
   "parts": [
    "seal_demon_wrath_prime",
    "death_knight_prime",
-   "ravanas_arm_prime",
-   "revenant_prime",
-   "deep_fungi"
+   "pit_fiend_spawn_prime",
+   "ugallu_demon_prime",
+   "apple"
   ],
   "benefit": "STR",
   "legendary": true,
@@ -436,9 +436,9 @@
  "feast_32": {
   "parts": [
    "seal_demon_war_prime",
-   "ravanas_arm_prime",
+   "demon_knight_prime",
    "death_knight_prime",
-   "redcap_prime",
+   "orc_warrior_prime",
    "deep_iron"
   ],
   "benefit": "STR",
@@ -452,7 +452,7 @@
    "seal_demon_death_prime",
    "dracolich_prime",
    "entropy_elemental_prime",
-   "lesser_death_prime",
+   "wight_prime",
    "healing_herb"
   ],
   "benefit": "drain_resist",
@@ -464,8 +464,8 @@
  "feast_34": {
   "parts": [
    "seal_demon_earthquake_prime",
-   "jormungandr_juvenile_prime",
-   "iron_patriarch_prime",
+   "world_serpent_prime",
+   "earth_elemental_prime",
    "catoblepas_prime",
    "dried_meat"
   ],
@@ -494,7 +494,7 @@
    "baba_yaga_prime",
    "young_dragon_prime",
    "titan_prime",
-   "sea_serpent_norse_prime",
+   "roc_chick_prime",
    "apple"
   ],
   "benefit": "hp",
@@ -567,7 +567,7 @@
   "parts": [
    "fire_elemental_prime",
    "burning_skeleton_prime",
-   "deep_fungi",
+   "apple",
    "dried_meat"
   ],
   "benefit": "fire_resist",
@@ -615,7 +615,7 @@
   "parts": [
    "chaos_troll_prime",
    "ammit_spawn_prime",
-   "asterion_minotaur_prime",
+   "owlbear_prime",
    "swamp_moss"
   ],
   "benefit": "hp",
@@ -664,7 +664,7 @@
  "dish_014": {
   "parts": [
    "the_sphinx_prime",
-   "huecuva_prime",
+   "ossuary_horror_prime",
    "harrow_witch_prime",
    "altar_incense"
   ],
@@ -677,7 +677,7 @@
  "dish_015": {
   "parts": [
    "the_sphinx_prime",
-   "ba_spirit_prime"
+   "ammit_spawn_prime"
   ],
   "benefit": "WIS",
   "legendary": false,
@@ -689,7 +689,7 @@
   "parts": [
    "demonic_trickster_prime",
    "yuan_ti_pureblood_prime",
-   "crystal_ooze_prime",
+   "imp_prime",
    "abyssal_kelp"
   ],
   "benefit": "mp",
@@ -834,7 +834,7 @@
  "dish_028": {
   "parts": [
    "gilded_mimic_prime",
-   "fetch_prime",
+   "shade_prime",
    "boggart_prime",
    "cave_mushroom"
   ],
@@ -906,7 +906,7 @@
  "dish_034": {
   "parts": [
    "sets_jackal_prime",
-   "gravehound_prime",
+   "werewolf_prime",
    "bread_ration"
   ],
   "benefit": "PER",
@@ -919,7 +919,7 @@
   "parts": [
    "abyssal_behemoth_prime",
    "satyr_warrior_prime",
-   "void_ration"
+   "trail_rations"
   ],
   "benefit": "sp",
   "legendary": false,
@@ -989,7 +989,7 @@
  "dish_041": {
   "parts": [
    "charybdis_prime",
-   "rot_grub_swarm_prime",
+   "giant_rat_prime",
    "holy_water"
   ],
   "benefit": "sp",
@@ -1001,8 +1001,8 @@
  "dish_042": {
   "parts": [
    "charybdis_prime",
-   "bugbear_prime",
-   "void_ration"
+   "ogre_prime",
+   "abyssal_kelp"
   ],
   "benefit": "sp",
   "legendary": false,
@@ -1050,7 +1050,7 @@
  "dish_046": {
   "parts": [
    "wendigo_prime",
-   "yellow_mold_prime",
+   "violet_fungus_prime",
    "trail_rations"
   ],
   "benefit": "sp",
@@ -1111,7 +1111,7 @@
  "dish_051": {
   "parts": [
    "wild_hunt_captain_prime",
-   "giant_wasp_prime"
+   "pegasus_prime"
   ],
   "benefit": "hasted",
   "legendary": false,
@@ -1121,21 +1121,21 @@
  },
  "dish_052": {
   "parts": [
-   "wild_hunt_captain_prime",
+   "storm_giant_prime",
    "giant_wasp_prime",
    "hard_cheese"
   ],
   "benefit": "hasted",
   "legendary": false,
   "kind": "multi",
-  "anchor": "wild_hunt_captain_prime",
+  "anchor": "storm_giant_prime",
   "cross_depth": true
  },
  "dish_053": {
   "parts": [
    "anansi_prime",
    "harrow_witch_prime",
-   "deep_fungi"
+   "holy_water"
   ],
   "benefit": "WIS",
   "legendary": false,
@@ -1182,7 +1182,7 @@
  "dish_057": {
   "parts": [
    "hell_bovine_prime",
-   "ochre_jelly_prime",
+   "gelatinous_cube_prime",
    "hard_cheese"
   ],
   "benefit": "sp",
@@ -1218,7 +1218,7 @@
  "dish_060": {
   "parts": [
    "giant_lizard_prime",
-   "scarab_swarm_prime"
+   "giant_scorpion_prime"
   ],
   "benefit": "hp",
   "legendary": false,
@@ -1253,7 +1253,7 @@
  },
  "dish_063": {
   "parts": [
-   "clay_golem_prime",
+   "flesh_golem_prime",
    "sea_serpent_norse_prime",
    "elvish_bread",
    "trail_rations",
@@ -1262,13 +1262,13 @@
   "benefit": "hp",
   "legendary": false,
   "kind": "multi",
-  "anchor": "clay_golem_prime",
+  "anchor": "flesh_golem_prime",
   "cross_depth": false
  },
  "dish_064": {
   "parts": [
    "shambling_mound_prime",
-   "werebear_prime"
+   "cave_bear_prime"
   ],
   "benefit": "hp",
   "legendary": false,
@@ -1344,8 +1344,8 @@
  "dish_070": {
   "parts": [
    "battle_mage_prime",
-   "bone_witch_prime",
-   "crystal_ooze_prime"
+   "death_mage_prime",
+   "shade_prime"
   ],
   "benefit": "mp",
   "legendary": false,
@@ -1355,21 +1355,21 @@
  },
  "dish_071": {
   "parts": [
-   "homunculus_prime",
-   "yuan_ti_pureblood_prime",
+   "flesh_golem_prime",
+   "imp_prime",
    "carbuncle_prime"
   ],
   "benefit": "mp",
   "legendary": false,
   "kind": "multi",
-  "anchor": "homunculus_prime",
+  "anchor": "flesh_golem_prime",
   "cross_depth": false
  },
  "dish_072": {
   "parts": [
    "sluagh_prime",
    "wraith_prime",
-   "lahamu_prime",
+   "specter_prime",
    "apple",
    "bread_ration"
   ],
@@ -1505,8 +1505,8 @@
   "parts": [
    "giant_frog_prime",
    "harpy_prime",
-   "hollow_one_prime",
-   "lizardfolk_prime"
+   "dretch_prime",
+   "basilisk_prime"
   ],
   "benefit": "sp",
   "legendary": false,
@@ -1531,7 +1531,7 @@
  "dish_085": {
   "parts": [
    "lizardfolk_prime",
-   "myconid_worker_prime",
+   "violet_fungus_prime",
    "wild_mushroom"
   ],
   "benefit": "sp",
@@ -1542,7 +1542,7 @@
  },
  "dish_086": {
   "parts": [
-   "myconid_worker_prime",
+   "assassin_vine_prime",
    "rot_grub_swarm_prime",
    "dried_meat",
    "bread_ration"
@@ -1550,14 +1550,14 @@
   "benefit": "sp",
   "legendary": false,
   "kind": "multi",
-  "anchor": "myconid_worker_prime",
+  "anchor": "assassin_vine_prime",
   "cross_depth": false
  },
  "dish_087": {
   "parts": [
    "satyr_warrior_prime",
-   "yellow_mold_prime",
-   "bugbear_prime",
+   "dretch_prime",
+   "ogre_prime",
    "trail_rations"
   ],
   "benefit": "sp",
@@ -1568,7 +1568,7 @@
  },
  "dish_088": {
   "parts": [
-   "gas_spore_prime",
+   "lurker_above_prime",
    "gibbering_mouther_prime",
    "wild_mushroom",
    "altar_incense"
@@ -1576,18 +1576,18 @@
   "benefit": "sp",
   "legendary": false,
   "kind": "multi",
-  "anchor": "gas_spore_prime",
+  "anchor": "lurker_above_prime",
   "cross_depth": false
  },
  "dish_089": {
   "parts": [
-   "gibbering_mouther_prime",
+   "gelatinous_cube_prime",
    "leprechaun_prime"
   ],
   "benefit": "sp",
   "legendary": false,
   "kind": "multi",
-  "anchor": "gibbering_mouther_prime",
+  "anchor": "gelatinous_cube_prime",
   "cross_depth": false
  },
  "dish_090": {
@@ -1606,7 +1606,7 @@
  "dish_091": {
   "parts": [
    "kuo_toa_prime",
-   "mud_crawler_prime",
+   "bandit_captain_prime",
    "goblin_prime",
    "gnoll_prime",
    "wild_mushroom"
@@ -1620,7 +1620,7 @@
  "dish_092": {
   "parts": [
    "kuo_toa_prime",
-   "mimic_prime"
+   "roper_prime"
   ],
   "benefit": "sp",
   "legendary": false,
@@ -1630,13 +1630,13 @@
  },
  "dish_093": {
   "parts": [
-   "mud_crawler_prime",
+   "dretch_prime",
    "mimic_prime"
   ],
   "benefit": "sp",
   "legendary": false,
   "kind": "multi",
-  "anchor": "mud_crawler_prime",
+  "anchor": "dretch_prime",
   "cross_depth": false
  },
  "dish_094": {
@@ -1653,7 +1653,7 @@
  "dish_095": {
   "parts": [
    "gnoll_prime",
-   "charybdis_spawn_prime",
+   "ogre_prime",
    "hill_giant_prime",
    "trail_rations",
    "hard_cheese"
@@ -1679,7 +1679,7 @@
  "dish_097": {
   "parts": [
    "ogre_prime",
-   "charybdis_spawn_prime",
+   "lurker_above_prime",
    "hill_giant_prime",
    "gnoll_prime"
   ],
@@ -1692,7 +1692,7 @@
  "dish_098": {
   "parts": [
    "scylla_prime",
-   "charybdis_spawn_prime",
+   "water_elemental_prime",
    "cave_mushroom"
   ],
   "benefit": "sp",
@@ -1717,7 +1717,7 @@
   "parts": [
    "acid_blob_prime",
    "young_black_dragon_prime",
-   "rust_monster_prime"
+   "xorn_prime"
   ],
   "benefit": "acid_resist",
   "legendary": false,
@@ -1727,15 +1727,15 @@
  },
  "dish_101": {
   "parts": [
-   "frost_skeleton_prime",
-   "winter_wolf_prime",
+   "draugr_prime",
+   "wolf_pack_leader_prime",
    "ice_elemental_prime",
    "ice_troll_prime"
   ],
   "benefit": "cold_resist",
   "legendary": false,
   "kind": "multi",
-  "anchor": "frost_skeleton_prime",
+  "anchor": "draugr_prime",
   "cross_depth": false
  },
  "dish_102": {
@@ -1756,7 +1756,7 @@
    "ice_troll_prime",
    "frost_crawler_prime",
    "ice_elemental_prime",
-   "winter_wolf_prime"
+   "wolf_pack_leader_prime"
   ],
   "benefit": "cold_resist",
   "legendary": false,
@@ -1767,7 +1767,7 @@
  "dish_104": {
   "parts": [
    "fire_beetle_prime",
-   "shadow_demon_prime"
+   "sable_serpent_prime"
   ],
   "benefit": "dark_vision",
   "legendary": false,
@@ -1777,14 +1777,14 @@
  },
  "dish_105": {
   "parts": [
-   "shadow_demon_prime",
-   "darkmantle_prime",
+   "shade_prime",
+   "skeleton_prime",
    "hecate_hound_prime"
   ],
   "benefit": "dark_vision",
   "legendary": false,
   "kind": "multi",
-  "anchor": "shadow_demon_prime",
+  "anchor": "shade_prime",
   "cross_depth": false
  },
  "dish_106": {
@@ -1841,7 +1841,7 @@
  "dish_110": {
   "parts": [
    "changeling_prime",
-   "puca_prime",
+   "shadow_prime",
    "phase_spider_prime"
   ],
   "benefit": "displacement",
@@ -1853,7 +1853,7 @@
  "dish_111": {
   "parts": [
    "changeling_prime",
-   "displacer_beast_prime",
+   "werewolf_prime",
    "elvish_bread"
   ],
   "benefit": "displacement",
@@ -1865,7 +1865,7 @@
  "dish_112": {
   "parts": [
    "puca_prime",
-   "displacer_beast_prime",
+   "phase_spider_prime",
    "trail_rations",
    "elvish_bread",
    "river_salt"
@@ -1891,7 +1891,7 @@
  "dish_114": {
   "parts": [
    "lesser_death_prime",
-   "mummy_prime",
+   "wight_prime",
    "bread_ration"
   ],
   "benefit": "drain_resist",
@@ -1902,21 +1902,21 @@
  },
  "dish_115": {
   "parts": [
-   "mummy_prime",
+   "ammit_spawn_prime",
    "anubis_guardian_prime",
-   "lesser_death_prime",
+   "thoth_construct_prime",
    "river_salt"
   ],
   "benefit": "drain_resist",
   "legendary": false,
   "kind": "multi",
-  "anchor": "mummy_prime",
+  "anchor": "ammit_spawn_prime",
   "cross_depth": false
  },
  "dish_116": {
   "parts": [
    "anubis_guardian_prime",
-   "lesser_death_prime",
+   "ossuary_horror_prime",
    "river_salt"
   ],
   "benefit": "drain_resist",
@@ -1927,7 +1927,7 @@
  },
  "dish_117": {
   "parts": [
-   "dullahan_spawn_prime",
+   "valkyrie_shade_prime",
    "cerberus_prime",
    "river_salt",
    "holy_water"
@@ -1935,12 +1935,12 @@
   "benefit": "fear_immune",
   "legendary": false,
   "kind": "multi",
-  "anchor": "dullahan_spawn_prime",
+  "anchor": "valkyrie_shade_prime",
   "cross_depth": false
  },
  "dish_118": {
   "parts": [
-   "dullahan_spawn_prime",
+   "erinyes_lesser_prime",
    "cerberus_prime",
    "holy_water",
    "river_salt",
@@ -1949,7 +1949,7 @@
   "benefit": "fear_immune",
   "legendary": false,
   "kind": "multi",
-  "anchor": "dullahan_spawn_prime",
+  "anchor": "erinyes_lesser_prime",
   "cross_depth": false
  },
  "dish_119": {
@@ -2052,7 +2052,7 @@
  },
  "dish_127": {
   "parts": [
-   "giant_centipede_prime",
+   "wyvern_prime",
    "giant_spider_prime",
    "hezrou_prime",
    "swamp_moss"
@@ -2060,7 +2060,7 @@
   "benefit": "poison_resist",
   "legendary": false,
   "kind": "multi",
-  "anchor": "giant_centipede_prime",
+  "anchor": "wyvern_prime",
   "cross_depth": false
  },
  "dish_128": {
@@ -2090,8 +2090,8 @@
   "parts": [
    "unicorn_corrupted_prime",
    "wyvern_prime",
-   "hezrou_prime",
-   "giant_centipede_prime"
+   "giant_spider_prime",
+   "snake_charmer_prime"
   ],
   "benefit": "poison_resist",
   "legendary": false,
@@ -2103,7 +2103,7 @@
   "parts": [
    "assassin_vine_prime",
    "green_slime_prime",
-   "dryad_guardian_prime"
+   "light_elf_hostile_prime"
   ],
   "benefit": "regenerating",
   "legendary": false,
@@ -2114,7 +2114,7 @@
  "dish_132": {
   "parts": [
    "green_slime_prime",
-   "nosferatu_prime"
+   "cult_initiate_prime"
   ],
   "benefit": "regenerating",
   "legendary": false,
@@ -2125,7 +2125,7 @@
  "dish_133": {
   "parts": [
    "dryad_guardian_prime",
-   "nosferatu_prime"
+   "vampire_prime"
   ],
   "benefit": "regenerating",
   "legendary": false,
@@ -2137,7 +2137,7 @@
   "parts": [
    "hydra_prime",
    "nosferatu_prime",
-   "dryad_guardian_prime",
+   "troll_prime",
    "assassin_vine_prime",
    "dried_meat"
   ],
@@ -2150,9 +2150,9 @@
  "dish_135": {
   "parts": [
    "hydra_prime",
-   "green_slime_prime",
+   "zombie_prime",
    "nosferatu_prime",
-   "dryad_guardian_prime"
+   "moss_sentinel_prime"
   ],
   "benefit": "regenerating",
   "legendary": false,
@@ -2163,7 +2163,7 @@
  "dish_136": {
   "parts": [
    "carrion_crawler_prime",
-   "cockatrice_prime",
+   "basilisk_prime",
    "ghoul_prime",
    "trail_rations"
   ],
@@ -2175,13 +2175,13 @@
  },
  "dish_137": {
   "parts": [
-   "cockatrice_prime",
+   "roc_chick_prime",
    "gorgon_warrior_prime"
   ],
   "benefit": "save_guard_CON",
   "legendary": false,
   "kind": "multi",
-  "anchor": "cockatrice_prime",
+  "anchor": "roc_chick_prime",
   "cross_depth": false
  },
  "dish_138": {
@@ -2307,7 +2307,7 @@
  "dish_148": {
   "parts": [
    "boggart_prime",
-   "death_dog_prime"
+   "wolf_pack_leader_prime"
   ],
   "benefit": "warning",
   "legendary": false,
@@ -2341,7 +2341,7 @@
   "parts": [
    "spriggan_prime",
    "hobgoblin_prime",
-   "troglodyte_prime"
+   "bandit_captain_prime"
   ],
   "benefit": "CON",
   "legendary": false,
@@ -2365,26 +2365,26 @@
  },
  "dish_153": {
   "parts": [
-   "troglodyte_prime",
+   "hobgoblin_prime",
    "otyugh_prime",
    "hard_cheese"
   ],
   "benefit": "CON",
   "legendary": false,
   "kind": "multi",
-  "anchor": "troglodyte_prime",
+  "anchor": "hobgoblin_prime",
   "cross_depth": false
  },
  "dish_154": {
   "parts": [
-   "otyugh_prime",
+   "stone_golem_prime",
    "kusarikku_prime",
-   "lindworm_prime"
+   "draugr_prime"
   ],
   "benefit": "CON",
   "legendary": false,
   "kind": "multi",
-  "anchor": "otyugh_prime",
+  "anchor": "stone_golem_prime",
   "cross_depth": false
  },
  "dish_155": {
@@ -2450,7 +2450,7 @@
  "dish_160": {
   "parts": [
    "cobra_prime",
-   "giant_mantis_prime",
+   "giant_scorpion_prime",
    "bread_ration"
   ],
   "benefit": "DEX",
@@ -2462,7 +2462,7 @@
  "dish_161": {
   "parts": [
    "cobra_prime",
-   "jiangshi_prime",
+   "phase_spider_prime",
    "altar_incense",
    "hard_cheese"
   ],
@@ -2475,7 +2475,7 @@
  "dish_162": {
   "parts": [
    "pixie_swarm_prime",
-   "poltergeist_prime",
+   "skeleton_prime",
    "altar_incense"
   ],
   "benefit": "DEX",
@@ -2486,74 +2486,74 @@
  },
  "dish_163": {
   "parts": [
-   "pixie_swarm_prime",
+   "light_elf_hostile_prime",
    "sea_snake_prime"
   ],
   "benefit": "DEX",
   "legendary": false,
   "kind": "multi",
-  "anchor": "pixie_swarm_prime",
+  "anchor": "light_elf_hostile_prime",
   "cross_depth": false
  },
  "dish_164": {
   "parts": [
-   "poltergeist_prime",
+   "wraith_prime",
    "sea_snake_prime"
   ],
   "benefit": "DEX",
   "legendary": false,
   "kind": "multi",
-  "anchor": "poltergeist_prime",
+  "anchor": "wraith_prime",
   "cross_depth": false
  },
  "dish_165": {
   "parts": [
-   "stymphalian_bird_prime",
+   "harpy_prime",
    "tengu_warrior_prime",
-   "blink_dog_prime",
+   "shadow_prime",
    "kobold_prime"
   ],
   "benefit": "DEX",
   "legendary": false,
   "kind": "multi",
-  "anchor": "stymphalian_bird_prime",
+  "anchor": "harpy_prime",
   "cross_depth": false
  },
  "dish_166": {
   "parts": [
-   "stymphalian_bird_prime",
-   "wererat_prime",
+   "kobold_prime",
+   "bandit_captain_prime",
    "ethereal_filcher_prime",
-   "arachne_prime"
+   "shadow_prime"
   ],
   "benefit": "DEX",
   "legendary": false,
   "kind": "multi",
-  "anchor": "stymphalian_bird_prime",
+  "anchor": "kobold_prime",
   "cross_depth": false
  },
  "dish_167": {
   "parts": [
-   "tengu_warrior_prime",
+   "kobold_prime",
    "wererat_prime",
-   "ethereal_filcher_prime",
+   "dark_elf_prime",
    "trail_rations"
   ],
   "benefit": "DEX",
   "legendary": false,
   "kind": "multi",
-  "anchor": "tengu_warrior_prime",
+  "anchor": "kobold_prime",
   "cross_depth": false
  },
  "dish_168": {
   "parts": [
-   "blink_dog_prime",
+   "phase_spider_prime",
    "arachne_prime"
   ],
   "benefit": "DEX",
   "legendary": false,
   "kind": "multi",
-  "anchor": "blink_dog_prime",
+  "anchor": "phase_spider_prime",
   "cross_depth": false
  },
  "dish_169": {
@@ -2570,31 +2570,31 @@
  },
  "dish_170": {
   "parts": [
-   "grell_prime",
+   "thunderbird_lesser_prime",
    "mohrg_prime"
   ],
   "benefit": "DEX",
   "legendary": false,
   "kind": "multi",
-  "anchor": "grell_prime",
+  "anchor": "thunderbird_lesser_prime",
   "cross_depth": false
  },
  "dish_171": {
   "parts": [
-   "mohrg_prime",
+   "vrock_prime",
    "weretiger_prime",
    "cave_mushroom"
   ],
   "benefit": "DEX",
   "legendary": false,
   "kind": "multi",
-  "anchor": "mohrg_prime",
+  "anchor": "vrock_prime",
   "cross_depth": false
  },
  "dish_172": {
   "parts": [
    "weretiger_prime",
-   "cath_palug_prime",
+   "sphinx_prime",
    "elvish_bread"
   ],
   "benefit": "DEX",
@@ -2669,8 +2669,8 @@
  "dish_178": {
   "parts": [
    "grid_bug_prime",
-   "crypt_thing_prime",
-   "pazuzu_spawn_prime"
+   "wraith_prime",
+   "ugallu_demon_prime"
   ],
   "benefit": "INT",
   "legendary": false,
@@ -2680,22 +2680,22 @@
  },
  "dish_179": {
   "parts": [
-   "grid_bug_prime",
-   "grick_prime",
-   "jormungandr_spawn_prime",
+   "nidhogg_brood_prime",
+   "ossuary_horror_prime",
+   "death_mage_prime",
    "clockwork_horror_prime"
   ],
   "benefit": "INT",
   "legendary": false,
   "kind": "multi",
-  "anchor": "grid_bug_prime",
+  "anchor": "nidhogg_brood_prime",
   "cross_depth": false
  },
  "dish_180": {
   "parts": [
    "crypt_thing_prime",
-   "grick_prime",
-   "jormungandr_spawn_prime",
+   "aboleth_lesser_prime",
+   "nidhogg_brood_prime",
    "trail_rations"
   ],
   "benefit": "INT",
@@ -2706,27 +2706,27 @@
  },
  "dish_181": {
   "parts": [
-   "clockwork_horror_prime",
+   "thoth_construct_prime",
    "hook_horror_prime",
    "altar_incense"
   ],
   "benefit": "INT",
   "legendary": false,
   "kind": "multi",
-  "anchor": "clockwork_horror_prime",
+  "anchor": "thoth_construct_prime",
   "cross_depth": false
  },
  "dish_182": {
   "parts": [
-   "hook_horror_prime",
+   "sphinx_prime",
    "mind_flayer_thrall_prime",
-   "nue_prime",
+   "night_hag_prime",
    "ossuary_horror_prime"
   ],
   "benefit": "INT",
   "legendary": false,
   "kind": "multi",
-  "anchor": "hook_horror_prime",
+  "anchor": "sphinx_prime",
   "cross_depth": false
  },
  "dish_183": {
@@ -2791,21 +2791,21 @@
  },
  "dish_188": {
   "parts": [
-   "bat_prime",
+   "werewolf_prime",
    "gravehound_prime",
-   "hugin_raven_prime",
+   "beholder_prime",
    "violet_fungus_prime"
   ],
   "benefit": "PER",
   "legendary": false,
   "kind": "multi",
-  "anchor": "bat_prime",
+  "anchor": "werewolf_prime",
   "cross_depth": false
  },
  "dish_189": {
   "parts": [
    "bat_prime",
-   "will_o_wisp_prime",
+   "light_elf_hostile_prime",
    "altar_incense",
    "bread_ration",
    "wild_mushroom"
@@ -2819,7 +2819,7 @@
  "dish_190": {
   "parts": [
    "hugin_raven_prime",
-   "will_o_wisp_prime",
+   "soul_eater_prime",
    "dried_meat",
    "trail_rations",
    "hard_cheese"
@@ -2843,21 +2843,21 @@
  },
  "dish_192": {
   "parts": [
-   "piercer_prime",
+   "lurker_above_prime",
    "fionn_hound_prime"
   ],
   "benefit": "PER",
   "legendary": false,
   "kind": "multi",
-  "anchor": "piercer_prime",
+  "anchor": "lurker_above_prime",
   "cross_depth": false
  },
  "dish_193": {
   "parts": [
    "fionn_hound_prime",
    "erinyes_lesser_prime",
-   "strigoi_prime",
-   "cyclops_prime"
+   "werewolf_prime",
+   "orc_warrior_prime"
   ],
   "benefit": "PER",
   "legendary": false,
@@ -2931,7 +2931,7 @@
   "parts": [
    "giant_scorpion_prime",
    "goblin_king_prime",
-   "peryton_prime"
+   "cave_bear_prime"
   ],
   "benefit": "STR",
   "legendary": false,
@@ -2942,7 +2942,7 @@
  "dish_200": {
   "parts": [
    "goblin_king_prime",
-   "redcap_prime",
+   "ugallu_demon_prime",
    "wight_prime",
    "altar_incense",
    "hard_cheese"
@@ -2956,7 +2956,7 @@
  "dish_201": {
   "parts": [
    "peryton_prime",
-   "fenrir_pup_prime",
+   "wolf_pack_leader_prime",
    "altar_incense",
    "wild_mushroom",
    "dried_meat"
@@ -2969,13 +2969,13 @@
  },
  "dish_202": {
   "parts": [
-   "fenrir_pup_prime",
+   "wolf_pack_leader_prime",
    "rock_python_prime"
   ],
   "benefit": "STR",
   "legendary": false,
   "kind": "multi",
-  "anchor": "fenrir_pup_prime",
+  "anchor": "wolf_pack_leader_prime",
   "cross_depth": false
  },
  "dish_203": {
@@ -2991,21 +2991,21 @@
  },
  "dish_204": {
   "parts": [
-   "revenant_prime",
+   "manticore_prime",
    "ugallu_demon_prime",
    "dire_lion_prime"
   ],
   "benefit": "STR",
   "legendary": false,
   "kind": "multi",
-  "anchor": "revenant_prime",
+  "anchor": "manticore_prime",
   "cross_depth": false
  },
  "dish_205": {
   "parts": [
    "ugallu_demon_prime",
    "griffin_prime",
-   "vrykolakas_prime",
+   "manticore_prime",
    "altar_incense",
    "trail_rations"
   ],
@@ -3017,13 +3017,13 @@
  },
  "dish_206": {
   "parts": [
-   "dire_lion_prime",
+   "manticore_prime",
    "griffin_prime"
   ],
   "benefit": "STR",
   "legendary": false,
   "kind": "multi",
-  "anchor": "dire_lion_prime",
+  "anchor": "manticore_prime",
   "cross_depth": false
  },
  "dish_207": {
@@ -3138,7 +3138,7 @@
  "dish_216": {
   "parts": [
    "light_elf_hostile_prime",
-   "ba_spirit_prime",
+   "soul_eater_prime",
    "huecuva_prime",
    "hard_cheese"
   ],
@@ -3151,7 +3151,7 @@
  "dish_217": {
   "parts": [
    "incubus_prime",
-   "banshee_prime",
+   "night_hag_prime",
    "dried_meat",
    "altar_incense"
   ],
@@ -3211,6 +3211,1383 @@
   "legendary": false,
   "kind": "multi",
   "anchor": "goblin_prime",
+  "cross_depth": true
+ },
+ "dish_222": {
+  "parts": [
+   "bat_prime",
+   "dark_elf_prime",
+   "dried_meat",
+   "trail_rations"
+  ],
+  "benefit": "PER",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "bat_prime",
+  "cross_depth": false
+ },
+ "dish_223": {
+  "parts": [
+   "burning_skeleton_prime",
+   "chimera_prime",
+   "river_salt"
+  ],
+  "benefit": "fire_resist",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "burning_skeleton_prime",
+  "cross_depth": false
+ },
+ "dish_224": {
+  "parts": [
+   "death_dog_prime",
+   "zombie_prime",
+   "altar_incense"
+  ],
+  "benefit": "hp",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "death_dog_prime",
+  "cross_depth": false
+ },
+ "dish_225": {
+  "parts": [
+   "frost_skeleton_prime",
+   "ghoul_prime",
+   "acid_blob_prime",
+   "wild_mushroom"
+  ],
+  "benefit": "cold_resist",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "frost_skeleton_prime",
+  "cross_depth": false
+ },
+ "dish_226": {
+  "parts": [
+   "giant_mantis_prime",
+   "vrock_prime",
+   "kobold_prime",
+   "altar_incense"
+  ],
+  "benefit": "DEX",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "giant_mantis_prime",
+  "cross_depth": false
+ },
+ "dish_227": {
+  "parts": [
+   "gravehound_prime",
+   "dark_elf_prime"
+  ],
+  "benefit": "PER",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "gravehound_prime",
+  "cross_depth": false
+ },
+ "dish_228": {
+  "parts": [
+   "grid_bug_prime",
+   "giant_scorpion_prime"
+  ],
+  "benefit": "INT",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "grid_bug_prime",
+  "cross_depth": false
+ },
+ "dish_229": {
+  "parts": [
+   "hollow_one_prime",
+   "hobgoblin_prime"
+  ],
+  "benefit": "sp",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "hollow_one_prime",
+  "cross_depth": false
+ },
+ "dish_230": {
+  "parts": [
+   "hugin_raven_prime",
+   "erinyes_lesser_prime",
+   "bread_ration",
+   "hard_cheese"
+  ],
+  "benefit": "PER",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "hugin_raven_prime",
+  "cross_depth": false
+ },
+ "dish_231": {
+  "parts": [
+   "jiangshi_prime",
+   "specter_prime"
+  ],
+  "benefit": "mp",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "jiangshi_prime",
+  "cross_depth": false
+ },
+ "dish_232": {
+  "parts": [
+   "lizardfolk_prime",
+   "giant_rat_prime",
+   "cave_mushroom"
+  ],
+  "benefit": "sp",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "lizardfolk_prime",
+  "cross_depth": false
+ },
+ "dish_233": {
+  "parts": [
+   "myconid_worker_prime",
+   "harpy_prime",
+   "goblin_prime",
+   "swamp_moss"
+  ],
+  "benefit": "sp",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "myconid_worker_prime",
+  "cross_depth": false
+ },
+ "dish_234": {
+  "parts": [
+   "myconid_worker_prime",
+   "veteran_knight_prime",
+   "bread_ration",
+   "cave_mushroom"
+  ],
+  "benefit": "sp",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "myconid_worker_prime",
+  "cross_depth": false
+ },
+ "dish_235": {
+  "parts": [
+   "pixie_swarm_prime",
+   "night_hag_prime",
+   "altar_incense"
+  ],
+  "benefit": "mp",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "pixie_swarm_prime",
+  "cross_depth": false
+ },
+ "dish_236": {
+  "parts": [
+   "poltergeist_prime",
+   "wraith_prime",
+   "bread_ration"
+  ],
+  "benefit": "mp",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "poltergeist_prime",
+  "cross_depth": false
+ },
+ "dish_237": {
+  "parts": [
+   "rot_grub_swarm_prime",
+   "giant_rat_prime",
+   "bread_ration"
+  ],
+  "benefit": "sp",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "rot_grub_swarm_prime",
+  "cross_depth": false
+ },
+ "dish_238": {
+  "parts": [
+   "scarab_swarm_prime",
+   "pegasus_prime",
+   "dried_meat"
+  ],
+  "benefit": "hp",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "scarab_swarm_prime",
+  "cross_depth": false
+ },
+ "dish_239": {
+  "parts": [
+   "scarab_swarm_prime",
+   "catoblepas_prime",
+   "apple",
+   "hard_cheese"
+  ],
+  "benefit": "hp",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "scarab_swarm_prime",
+  "cross_depth": false
+ },
+ "dish_240": {
+  "parts": [
+   "shadow_demon_prime",
+   "acid_blob_prime",
+   "apple"
+  ],
+  "benefit": "dark_vision",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "shadow_demon_prime",
+  "cross_depth": false
+ },
+ "dish_241": {
+  "parts": [
+   "shadow_demon_prime",
+   "shade_prime",
+   "wild_mushroom"
+  ],
+  "benefit": "dark_vision",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "shadow_demon_prime",
+  "cross_depth": false
+ },
+ "dish_242": {
+  "parts": [
+   "stirge_swarm_prime",
+   "catoblepas_prime",
+   "bread_ration",
+   "hard_cheese"
+  ],
+  "benefit": "hp",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "stirge_swarm_prime",
+  "cross_depth": false
+ },
+ "dish_243": {
+  "parts": [
+   "stymphalian_bird_prime",
+   "harpy_prime",
+   "veteran_knight_prime",
+   "wild_mushroom"
+  ],
+  "benefit": "sp",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "stymphalian_bird_prime",
+  "cross_depth": false
+ },
+ "dish_244": {
+  "parts": [
+   "stymphalian_bird_prime",
+   "gnoll_prime",
+   "bread_ration"
+  ],
+  "benefit": "sp",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "stymphalian_bird_prime",
+  "cross_depth": false
+ },
+ "dish_245": {
+  "parts": [
+   "tengu_warrior_prime",
+   "vrock_prime",
+   "altar_incense"
+  ],
+  "benefit": "DEX",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "tengu_warrior_prime",
+  "cross_depth": false
+ },
+ "dish_246": {
+  "parts": [
+   "yellow_mold_prime",
+   "snake_charmer_prime",
+   "dried_meat",
+   "bread_ration"
+  ],
+  "benefit": "sp",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "yellow_mold_prime",
+  "cross_depth": false
+ },
+ "dish_247": {
+  "parts": [
+   "yellow_mold_prime",
+   "gelatinous_cube_prime",
+   "wild_mushroom"
+  ],
+  "benefit": "sp",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "yellow_mold_prime",
+  "cross_depth": false
+ },
+ "dish_248": {
+  "parts": [
+   "blink_dog_prime",
+   "xorn_prime",
+   "altar_incense"
+  ],
+  "benefit": "DEX",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "blink_dog_prime",
+  "cross_depth": false
+ },
+ "dish_249": {
+  "parts": [
+   "blink_dog_prime",
+   "minotaur_prime",
+   "river_salt",
+   "altar_incense"
+  ],
+  "benefit": "DEX",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "blink_dog_prime",
+  "cross_depth": false
+ },
+ "dish_250": {
+  "parts": [
+   "bone_witch_prime",
+   "beholder_prime",
+   "elvish_bread"
+  ],
+  "benefit": "mp",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "bone_witch_prime",
+  "cross_depth": false
+ },
+ "dish_251": {
+  "parts": [
+   "bugbear_prime",
+   "hobgoblin_prime",
+   "goblin_prime",
+   "swamp_moss"
+  ],
+  "benefit": "sp",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "bugbear_prime",
+  "cross_depth": false
+ },
+ "dish_252": {
+  "parts": [
+   "bugbear_prime",
+   "gnoll_prime",
+   "dried_meat"
+  ],
+  "benefit": "sp",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "bugbear_prime",
+  "cross_depth": false
+ },
+ "dish_253": {
+  "parts": [
+   "carrion_crawler_prime",
+   "skeleton_prime",
+   "trail_rations"
+  ],
+  "benefit": "sp",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "carrion_crawler_prime",
+  "cross_depth": false
+ },
+ "dish_254": {
+  "parts": [
+   "crypt_thing_prime",
+   "imp_prime",
+   "healing_herb"
+  ],
+  "benefit": "mp",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "crypt_thing_prime",
+  "cross_depth": false
+ },
+ "dish_255": {
+  "parts": [
+   "crystal_ooze_prime",
+   "thoth_construct_prime",
+   "apple"
+  ],
+  "benefit": "mp",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "crystal_ooze_prime",
+  "cross_depth": false
+ },
+ "dish_256": {
+  "parts": [
+   "crystal_ooze_prime",
+   "specter_prime"
+  ],
+  "benefit": "mp",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "crystal_ooze_prime",
+  "cross_depth": false
+ },
+ "dish_257": {
+  "parts": [
+   "gas_spore_prime",
+   "veteran_knight_prime",
+   "bread_ration"
+  ],
+  "benefit": "sp",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "gas_spore_prime",
+  "cross_depth": false
+ },
+ "dish_258": {
+  "parts": [
+   "giant_centipede_prime",
+   "giant_rat_prime",
+   "bread_ration"
+  ],
+  "benefit": "sp",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "giant_centipede_prime",
+  "cross_depth": false
+ },
+ "dish_259": {
+  "parts": [
+   "gibbering_mouther_prime",
+   "lurker_above_prime",
+   "wild_mushroom"
+  ],
+  "benefit": "sp",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "gibbering_mouther_prime",
+  "cross_depth": false
+ },
+ "dish_260": {
+  "parts": [
+   "homunculus_prime",
+   "thoth_construct_prime",
+   "elvish_bread",
+   "trail_rations"
+  ],
+  "benefit": "mp",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "homunculus_prime",
+  "cross_depth": false
+ },
+ "dish_261": {
+  "parts": [
+   "ochre_jelly_prime",
+   "gelatinous_cube_prime",
+   "wild_mushroom"
+  ],
+  "benefit": "sp",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "ochre_jelly_prime",
+  "cross_depth": false
+ },
+ "dish_262": {
+  "parts": [
+   "pazuzu_spawn_prime",
+   "bone_devil_prime",
+   "healing_herb"
+  ],
+  "benefit": "INT",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "pazuzu_spawn_prime",
+  "cross_depth": false
+ },
+ "dish_263": {
+  "parts": [
+   "peryton_prime",
+   "harpy_prime",
+   "cave_mushroom"
+  ],
+  "benefit": "sp",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "peryton_prime",
+  "cross_depth": false
+ },
+ "dish_264": {
+  "parts": [
+   "puca_prime",
+   "shield_guardian_prime",
+   "hard_cheese",
+   "dried_meat"
+  ],
+  "benefit": "displacement",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "puca_prime",
+  "cross_depth": false
+ },
+ "dish_265": {
+  "parts": [
+   "redcap_prime",
+   "bone_devil_prime",
+   "altar_incense"
+  ],
+  "benefit": "STR",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "redcap_prime",
+  "cross_depth": false
+ },
+ "dish_266": {
+  "parts": [
+   "redcap_prime",
+   "minotaur_prime",
+   "bread_ration",
+   "trail_rations"
+  ],
+  "benefit": "STR",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "redcap_prime",
+  "cross_depth": false
+ },
+ "dish_267": {
+  "parts": [
+   "rust_monster_prime",
+   "shield_guardian_prime",
+   "giant_spider_prime",
+   "bread_ration"
+  ],
+  "benefit": "acid_resist",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "rust_monster_prime",
+  "cross_depth": false
+ },
+ "dish_268": {
+  "parts": [
+   "will_o_wisp_prime",
+   "soul_eater_prime",
+   "wraith_prime",
+   "hard_cheese"
+  ],
+  "benefit": "mp",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "will_o_wisp_prime",
+  "cross_depth": false
+ },
+ "dish_269": {
+  "parts": [
+   "will_o_wisp_prime",
+   "spectral_dragon_prime"
+  ],
+  "benefit": "mp",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "will_o_wisp_prime",
+  "cross_depth": true
+ },
+ "dish_270": {
+  "parts": [
+   "wood_golem_prime",
+   "stone_golem_prime"
+  ],
+  "benefit": "CON",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "wood_golem_prime",
+  "cross_depth": false
+ },
+ "dish_271": {
+  "parts": [
+   "yuan_ti_pureblood_prime",
+   "beholder_prime",
+   "elvish_bread",
+   "swamp_moss"
+  ],
+  "benefit": "mp",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "yuan_ti_pureblood_prime",
+  "cross_depth": false
+ },
+ "dish_272": {
+  "parts": [
+   "ba_spirit_prime",
+   "specter_prime",
+   "elvish_bread"
+  ],
+  "benefit": "mp",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "ba_spirit_prime",
+  "cross_depth": false
+ },
+ "dish_273": {
+  "parts": [
+   "ba_spirit_prime",
+   "soul_eater_prime",
+   "cult_initiate_prime",
+   "trail_rations"
+  ],
+  "benefit": "mp",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "ba_spirit_prime",
+  "cross_depth": false
+ },
+ "dish_274": {
+  "parts": [
+   "carbuncle_prime",
+   "demonic_trickster_prime",
+   "apple"
+  ],
+  "benefit": "mp",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "carbuncle_prime",
+  "cross_depth": true
+ },
+ "dish_275": {
+  "parts": [
+   "cockatrice_prime",
+   "abyssal_mimic_prime",
+   "healing_herb"
+  ],
+  "benefit": "save_guard_CON",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "cockatrice_prime",
+  "cross_depth": true
+ },
+ "dish_276": {
+  "parts": [
+   "cockatrice_prime",
+   "basilisk_prime"
+  ],
+  "benefit": "save_guard_CON",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "cockatrice_prime",
+  "cross_depth": false
+ },
+ "dish_277": {
+  "parts": [
+   "fetch_prime",
+   "magma_elemental_prime",
+   "ice_elemental_prime",
+   "apple"
+  ],
+  "benefit": "warning",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "fetch_prime",
+  "cross_depth": false
+ },
+ "dish_278": {
+  "parts": [
+   "grick_prime",
+   "ossuary_horror_prime",
+   "dried_meat"
+  ],
+  "benefit": "INT",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "grick_prime",
+  "cross_depth": false
+ },
+ "dish_279": {
+  "parts": [
+   "grick_prime",
+   "death_mage_prime",
+   "dried_meat"
+  ],
+  "benefit": "INT",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "grick_prime",
+  "cross_depth": false
+ },
+ "dish_280": {
+  "parts": [
+   "huecuva_prime",
+   "cloud_giant_prime",
+   "wight_prime",
+   "dried_meat"
+  ],
+  "benefit": "WIS",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "huecuva_prime",
+  "cross_depth": true
+ },
+ "dish_281": {
+  "parts": [
+   "mud_crawler_prime",
+   "snake_charmer_prime",
+   "apple"
+  ],
+  "benefit": "sp",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "mud_crawler_prime",
+  "cross_depth": false
+ },
+ "dish_282": {
+  "parts": [
+   "mud_crawler_prime",
+   "locust_swarmlord_prime",
+   "apple"
+  ],
+  "benefit": "sp",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "mud_crawler_prime",
+  "cross_depth": true
+ },
+ "dish_283": {
+  "parts": [
+   "piercer_prime",
+   "violet_fungus_prime",
+   "dried_meat"
+  ],
+  "benefit": "PER",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "piercer_prime",
+  "cross_depth": false
+ },
+ "dish_284": {
+  "parts": [
+   "wererat_prime",
+   "mage_slayer_assassin_prime"
+  ],
+  "benefit": "sp",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "wererat_prime",
+  "cross_depth": true
+ },
+ "dish_285": {
+  "parts": [
+   "dryad_guardian_prime",
+   "wyvern_prime",
+   "wild_mushroom"
+  ],
+  "benefit": "regenerating",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "dryad_guardian_prime",
+  "cross_depth": false
+ },
+ "dish_286": {
+  "parts": [
+   "ethereal_filcher_prime",
+   "kobold_prime",
+   "apple"
+  ],
+  "benefit": "DEX",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "ethereal_filcher_prime",
+  "cross_depth": false
+ },
+ "dish_287": {
+  "parts": [
+   "fenrir_pup_prime",
+   "demon_knight_prime",
+   "trail_rations"
+  ],
+  "benefit": "STR",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "fenrir_pup_prime",
+  "cross_depth": true
+ },
+ "dish_288": {
+  "parts": [
+   "fenrir_pup_prime",
+   "valkyrie_shade_prime"
+  ],
+  "benefit": "STR",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "fenrir_pup_prime",
+  "cross_depth": false
+ },
+ "dish_289": {
+  "parts": [
+   "troglodyte_prime",
+   "goblin_prime",
+   "wild_mushroom"
+  ],
+  "benefit": "sp",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "troglodyte_prime",
+  "cross_depth": false
+ },
+ "dish_290": {
+  "parts": [
+   "troglodyte_prime",
+   "bandit_captain_prime",
+   "bread_ration"
+  ],
+  "benefit": "sp",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "troglodyte_prime",
+  "cross_depth": false
+ },
+ "dish_291": {
+  "parts": [
+   "revenant_prime",
+   "demon_knight_prime",
+   "bread_ration"
+  ],
+  "benefit": "STR",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "revenant_prime",
+  "cross_depth": true
+ },
+ "dish_292": {
+  "parts": [
+   "revenant_prime",
+   "wight_prime",
+   "apple"
+  ],
+  "benefit": "STR",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "revenant_prime",
+  "cross_depth": false
+ },
+ "dish_293": {
+  "parts": [
+   "jormungandr_spawn_prime",
+   "wormwood_blight_prime",
+   "sphinx_prime",
+   "deep_iron"
+  ],
+  "benefit": "INT",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "jormungandr_spawn_prime",
+  "cross_depth": true
+ },
+ "dish_294": {
+  "parts": [
+   "jormungandr_spawn_prime",
+   "harrow_witch_prime",
+   "apple"
+  ],
+  "benefit": "INT",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "jormungandr_spawn_prime",
+  "cross_depth": false
+ },
+ "dish_295": {
+  "parts": [
+   "ra_serpent_prime",
+   "roc_chick_prime",
+   "hard_cheese",
+   "apple"
+  ],
+  "benefit": "hp",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "ra_serpent_prime",
+  "cross_depth": false
+ },
+ "dish_296": {
+  "parts": [
+   "winter_wolf_prime",
+   "frost_giant_prime",
+   "deep_iron"
+  ],
+  "benefit": "cold_resist",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "winter_wolf_prime",
+  "cross_depth": true
+ },
+ "dish_297": {
+  "parts": [
+   "clockwork_horror_prime",
+   "talos_prime",
+   "altar_incense",
+   "apple"
+  ],
+  "benefit": "INT",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "clockwork_horror_prime",
+  "cross_depth": false
+ },
+ "dish_298": {
+  "parts": [
+   "dire_lion_prime",
+   "cave_bear_prime"
+  ],
+  "benefit": "hp",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "dire_lion_prime",
+  "cross_depth": false
+ },
+ "dish_299": {
+  "parts": [
+   "mimic_prime",
+   "void_leviathan_prime"
+  ],
+  "benefit": "sp",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "mimic_prime",
+  "cross_depth": true
+ },
+ "dish_300": {
+  "parts": [
+   "otyugh_prime",
+   "draugr_prime",
+   "stone_golem_prime",
+   "trail_rations"
+  ],
+  "benefit": "CON",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "otyugh_prime",
+  "cross_depth": false
+ },
+ "dish_301": {
+  "parts": [
+   "vrykolakas_prime",
+   "ammit_spawn_prime",
+   "swamp_moss",
+   "hard_cheese"
+  ],
+  "benefit": "hp",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "vrykolakas_prime",
+  "cross_depth": false
+ },
+ "dish_302": {
+  "parts": [
+   "vrykolakas_prime",
+   "young_dragon_prime"
+  ],
+  "benefit": "hp",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "vrykolakas_prime",
+  "cross_depth": true
+ },
+ "dish_303": {
+  "parts": [
+   "arachne_prime",
+   "vrock_prime",
+   "altar_incense"
+  ],
+  "benefit": "DEX",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "arachne_prime",
+  "cross_depth": false
+ },
+ "dish_304": {
+  "parts": [
+   "banshee_prime",
+   "light_elf_hostile_prime",
+   "wild_mushroom"
+  ],
+  "benefit": "WIS",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "banshee_prime",
+  "cross_depth": false
+ },
+ "dish_305": {
+  "parts": [
+   "banshee_prime",
+   "veiled_inquisitor_prime",
+   "harrow_witch_prime",
+   "swamp_moss"
+  ],
+  "benefit": "WIS",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "banshee_prime",
+  "cross_depth": true
+ },
+ "dish_306": {
+  "parts": [
+   "black_pudding_prime",
+   "pegasus_prime",
+   "elvish_bread",
+   "trail_rations"
+  ],
+  "benefit": "hp",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "black_pudding_prime",
+  "cross_depth": false
+ },
+ "dish_307": {
+  "parts": [
+   "charybdis_spawn_prime",
+   "frost_crawler_prime",
+   "dried_meat"
+  ],
+  "benefit": "sp",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "charybdis_spawn_prime",
+  "cross_depth": false
+ },
+ "dish_308": {
+  "parts": [
+   "clay_golem_prime",
+   "flesh_golem_prime",
+   "apple",
+   "swamp_moss"
+  ],
+  "benefit": "hp",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "clay_golem_prime",
+  "cross_depth": false
+ },
+ "dish_309": {
+  "parts": [
+   "clay_golem_prime",
+   "apocalypse_herald_prime",
+   "hard_cheese",
+   "river_salt"
+  ],
+  "benefit": "hp",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "clay_golem_prime",
+  "cross_depth": true
+ },
+ "dish_310": {
+  "parts": [
+   "displacer_beast_prime",
+   "hydra_prime",
+   "holy_water",
+   "river_salt"
+  ],
+  "benefit": "displacement",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "displacer_beast_prime",
+  "cross_depth": false
+ },
+ "dish_311": {
+  "parts": [
+   "dullahan_spawn_prime",
+   "hydra_prime",
+   "holy_water"
+  ],
+  "benefit": "fear_immune",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "dullahan_spawn_prime",
+  "cross_depth": false
+ },
+ "dish_312": {
+  "parts": [
+   "dullahan_spawn_prime",
+   "behir_lesser_prime",
+   "hard_cheese"
+  ],
+  "benefit": "fear_immune",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "dullahan_spawn_prime",
+  "cross_depth": false
+ },
+ "dish_313": {
+  "parts": [
+   "grell_prime",
+   "roper_prime",
+   "talos_prime",
+   "crystal_shard"
+  ],
+  "benefit": "DEX",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "grell_prime",
+  "cross_depth": false
+ },
+ "dish_314": {
+  "parts": [
+   "lahamu_prime",
+   "aboleth_lesser_prime",
+   "dried_meat"
+  ],
+  "benefit": "mp",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "lahamu_prime",
+  "cross_depth": false
+ },
+ "dish_315": {
+  "parts": [
+   "lesser_death_prime",
+   "magma_elemental_prime",
+   "river_salt",
+   "dried_meat"
+  ],
+  "benefit": "drain_resist",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "lesser_death_prime",
+  "cross_depth": false
+ },
+ "dish_316": {
+  "parts": [
+   "mohrg_prime",
+   "xorn_prime"
+  ],
+  "benefit": "DEX",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "mohrg_prime",
+  "cross_depth": false
+ },
+ "dish_317": {
+  "parts": [
+   "mummy_prime",
+   "dracolich_prime"
+  ],
+  "benefit": "drain_resist",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "mummy_prime",
+  "cross_depth": true
+ },
+ "dish_318": {
+  "parts": [
+   "mummy_prime",
+   "ghoul_prime",
+   "river_salt",
+   "altar_incense"
+  ],
+  "benefit": "drain_resist",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "mummy_prime",
+  "cross_depth": false
+ },
+ "dish_319": {
+  "parts": [
+   "naga_guardian_prime",
+   "harrow_witch_prime",
+   "altar_incense",
+   "holy_water"
+  ],
+  "benefit": "WIS",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "naga_guardian_prime",
+  "cross_depth": false
+ },
+ "dish_320": {
+  "parts": [
+   "nue_prime",
+   "star_spawn_prime"
+  ],
+  "benefit": "mp",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "nue_prime",
+  "cross_depth": false
+ },
+ "dish_321": {
+  "parts": [
+   "sea_serpent_norse_prime",
+   "owlbear_prime",
+   "healing_herb"
+  ],
+  "benefit": "hp",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "sea_serpent_norse_prime",
+  "cross_depth": false
+ },
+ "dish_322": {
+  "parts": [
+   "shambling_mound_prime",
+   "catoblepas_prime"
+  ],
+  "benefit": "hp",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "shambling_mound_prime",
+  "cross_depth": false
+ },
+ "dish_323": {
+  "parts": [
+   "strigoi_prime",
+   "veiled_inquisitor_prime",
+   "healing_herb"
+  ],
+  "benefit": "PER",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "strigoi_prime",
+  "cross_depth": true
+ },
+ "dish_324": {
+  "parts": [
+   "lindworm_prime",
+   "draugr_prime"
+  ],
+  "benefit": "CON",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "lindworm_prime",
+  "cross_depth": false
+ },
+ "dish_325": {
+  "parts": [
+   "lamia_prime",
+   "void_seraph_prime",
+   "star_spawn_prime",
+   "deep_iron"
+  ],
+  "benefit": "mp",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "lamia_prime",
+  "cross_depth": true
+ },
+ "dish_326": {
+  "parts": [
+   "asterion_minotaur_prime",
+   "vampire_prime",
+   "apple"
+  ],
+  "benefit": "hp",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "asterion_minotaur_prime",
+  "cross_depth": false
+ },
+ "dish_327": {
+  "parts": [
+   "iron_patriarch_prime",
+   "bone_devil_prime",
+   "earth_elemental_prime",
+   "apple"
+  ],
+  "benefit": "CON",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "iron_patriarch_prime",
+  "cross_depth": true
+ },
+ "dish_328": {
+  "parts": [
+   "rangda_prime",
+   "harrow_witch_prime",
+   "altar_incense"
+  ],
+  "benefit": "WIS",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "rangda_prime",
+  "cross_depth": true
+ },
+ "dish_329": {
+  "parts": [
+   "baba_yaga_prime",
+   "zombie_prime",
+   "pit_fiend_spawn_prime",
+   "abyssal_kelp"
+  ],
+  "benefit": "hp",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "baba_yaga_prime",
+  "cross_depth": true
+ },
+ "dish_330": {
+  "parts": [
+   "jormungandr_juvenile_prime",
+   "draugr_prime",
+   "altar_incense"
+  ],
+  "benefit": "CON",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "jormungandr_juvenile_prime",
+  "cross_depth": true
+ },
+ "dish_331": {
+  "parts": [
+   "jormungandr_juvenile_prime",
+   "stone_golem_prime",
+   "bread_ration",
+   "deep_iron"
+  ],
+  "benefit": "CON",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "jormungandr_juvenile_prime",
+  "cross_depth": true
+ },
+ "dish_332": {
+  "parts": [
+   "ravanas_arm_prime",
+   "ugallu_demon_prime"
+  ],
+  "benefit": "STR",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "ravanas_arm_prime",
+  "cross_depth": true
+ },
+ "dish_333": {
+  "parts": [
+   "ravanas_arm_prime",
+   "bone_devil_prime",
+   "altar_incense"
+  ],
+  "benefit": "STR",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "ravanas_arm_prime",
+  "cross_depth": true
+ },
+ "dish_334": {
+  "parts": [
+   "anansi_prime",
+   "light_elf_hostile_prime",
+   "wormwood_blight_prime",
+   "altar_incense"
+  ],
+  "benefit": "WIS",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "anansi_prime",
   "cross_depth": true
  }
 }

@@ -449,12 +449,12 @@
   "art": "recipe_f11_fierce_titan_priest"
  },
  "cook_cave_bear": {
-  "name": "Cave Bear Steak",
+  "name": "Hibernation Bear Steak",
   "ingredients": [
    "cave_bear_prime"
   ],
   "benefit": "hp",
-  "flavor": "Thick, red and mending.",
+  "flavor": "Thick, red and mending; a bear's whole autumn on one plate.",
   "art": "recipe_f11_fierce_warchief_warlord"
  },
  "cook_cave_mushroom": {
@@ -2877,7 +2877,7 @@
    "asterion_minotaur_trophy",
    "seal_demon_wrath_prime",
    "death_knight_prime",
-   "vrykolakas_prime",
+   "minotaur_prime",
    "wild_mushroom"
   ],
   "benefit": "STR",
@@ -2890,13 +2890,13 @@
   "name": "Witch-Oven Labyrinth Roast",
   "ingredients": [
    "asterion_minotaur_trophy",
-   "baba_yaga_prime",
+   "young_dragon_prime",
    "corrupted_treant_prime",
-   "scarab_swarm_prime",
+   "harrow_witch_prime",
    "swamp_moss"
   ],
   "benefit": "hp",
-  "flavor": "Baked in Baba Yaga's ember until the horn-crown cracks, and every wound shuts.",
+  "flavor": "Baked in a hedge-witch's oven until the horn-crown cracks, and every wound shuts.",
   "legendary": true,
   "art": "recipe_mythic_f81_ragnarok_giant_blood_trencher",
   "cross_depth": true
@@ -2907,8 +2907,8 @@
    "medusa_gorgon_trophy",
    "iron_golem_prime",
    "plague_ooze_prime",
-   "carrion_crawler_prime",
-   "philosopher_tea"
+   "basilisk_prime",
+   "dried_meat"
   ],
   "benefit": "save_guard_CON",
   "flavor": "Gorgon blood cuts both ways. Tonight it cuts toward you.",
@@ -2921,12 +2921,12 @@
   "ingredients": [
    "medusa_gorgon_trophy",
    "veiled_inquisitor_prime",
-   "anansi_prime",
-   "naga_guardian_prime",
+   "cloud_giant_prime",
+   "owlbear_prime",
    "apple"
   ],
   "benefit": "WIS",
-  "flavor": "Every story Anansi stole, served with the blood Athena blessed.",
+  "flavor": "A sky-giant's ham and an owlbear's steak, served with the blood Athena blessed.",
   "legendary": true,
   "art": "recipe_prime_bandit_captain_recipe",
   "cross_depth": true
@@ -2952,7 +2952,7 @@
    "fafnir_dragon_trophy",
    "fire_giant_prime",
    "abyssal_mimic_prime",
-   "ra_serpent_prime",
+   "drake_fire_prime",
    "holy_water"
   ],
   "benefit": "fire_resist",
@@ -2965,7 +2965,7 @@
   "name": "Ragnarok Eve Feast",
   "ingredients": [
    "fenrir_wolf_trophy",
-   "ravanas_arm_prime",
+   "world_serpent_prime",
    "seal_demon_war_prime",
    "valkyrie_shade_prime",
    "altar_incense"
@@ -2982,7 +2982,7 @@
    "fenrir_wolf_trophy",
    "void_leviathan_prime",
    "apocalypse_herald_prime",
-   "black_pudding_prime",
+   "troll_prime",
    "elvish_bread"
   ],
   "benefit": "hp",
@@ -3012,7 +3012,7 @@
    "abaddon_destroyer_trophy",
    "lich_prime",
    "demonic_trickster_prime",
-   "lamia_prime",
+   "poltergeist_prime",
    "dried_meat"
   ],
   "benefit": "mp",
@@ -3027,7 +3027,7 @@
    "green_knight_trophy",
    "abyssal_dragon_prime",
    "titan_prime",
-   "shambling_mound_prime",
+   "werebear_prime",
    "healing_herb"
   ],
   "benefit": "hp",
@@ -3086,8 +3086,8 @@
   "ingredients": [
    "whispering_crone_trophy",
    "cloud_giant_prime",
-   "rangda_prime",
-   "banshee_prime",
+   "frost_giant_prime",
+   "valkyrie_shade_prime",
    "crystal_shard"
   ],
   "benefit": "WIS",
@@ -3117,7 +3117,7 @@
    "blood_archon_trophy",
    "pit_fiend_spawn_prime",
    "flesh_colossus_prime",
-   "stirge_swarm_prime",
+   "cult_initiate_prime",
    "abyssal_kelp"
   ],
   "benefit": "hp",
@@ -3131,7 +3131,7 @@
   "ingredients": [
    "blood_archon_trophy",
    "seal_demon_war_prime",
-   "ravanas_arm_prime",
+   "death_knight_prime",
    "giant_scorpion_prime",
    "dried_meat"
   ],
@@ -3147,7 +3147,7 @@
    "tiamat_trophy",
    "fire_giant_prime",
    "mage_slayer_assassin_prime",
-   "burning_skeleton_prime",
+   "magma_elemental_prime",
    "river_salt"
   ],
   "benefit": "fire_resist",
@@ -3162,7 +3162,7 @@
    "tiamat_trophy",
    "astral_horror_prime",
    "void_seraph_prime",
-   "carbuncle_prime",
+   "sea_dragon_spawn_prime",
    "dried_meat"
   ],
   "benefit": "mp",
@@ -3250,9 +3250,9 @@
   "name": "First Giant's Marrow Feast",
   "ingredients": [
    "ymir_last_spawn_trophy",
-   "iron_patriarch_prime",
+   "frost_giant_prime",
    "seal_demon_earthquake_prime",
-   "wood_golem_prime",
+   "hill_giant_prime",
    "cave_mushroom"
   ],
   "benefit": "CON",
@@ -3265,8 +3265,8 @@
   "name": "Stone-Heart Giant's Banquet",
   "ingredients": [
    "hrungnirs_ghost_trophy",
-   "jormungandr_juvenile_prime",
-   "iron_patriarch_prime",
+   "world_serpent_prime",
+   "stone_giant_prime",
    "veteran_knight_prime",
    "crystal_shard"
   ],
@@ -3281,8 +3281,8 @@
   "ingredients": [
    "hrungnirs_ghost_trophy",
    "flesh_colossus_prime",
-   "baba_yaga_prime",
-   "clay_golem_prime",
+   "titan_prime",
+   "stone_golem_prime",
    "holy_water"
   ],
   "benefit": "hp",
@@ -3296,9 +3296,9 @@
   "ingredients": [
    "seal_demon_wrath_prime",
    "death_knight_prime",
-   "ravanas_arm_prime",
-   "revenant_prime",
-   "deep_fungi"
+   "pit_fiend_spawn_prime",
+   "ugallu_demon_prime",
+   "apple"
   ],
   "benefit": "STR",
   "flavor": "Wrath, simmered for a thousand years and served hot.",
@@ -3340,9 +3340,9 @@
   "name": "King of Hell's War Roast",
   "ingredients": [
    "seal_demon_war_prime",
-   "ravanas_arm_prime",
+   "demon_knight_prime",
    "death_knight_prime",
-   "redcap_prime",
+   "orc_warrior_prime",
    "deep_iron"
   ],
   "benefit": "STR",
@@ -3357,7 +3357,7 @@
    "seal_demon_death_prime",
    "dracolich_prime",
    "entropy_elemental_prime",
-   "lesser_death_prime",
+   "wight_prime",
    "healing_herb"
   ],
   "benefit": "drain_resist",
@@ -3370,8 +3370,8 @@
   "name": "Earthshaker's Feast",
   "ingredients": [
    "seal_demon_earthquake_prime",
-   "jormungandr_juvenile_prime",
-   "iron_patriarch_prime",
+   "world_serpent_prime",
+   "earth_elemental_prime",
    "catoblepas_prime",
    "dried_meat"
   ],
@@ -3402,7 +3402,7 @@
    "baba_yaga_prime",
    "young_dragon_prime",
    "titan_prime",
-   "sea_serpent_norse_prime",
+   "roc_chick_prime",
    "apple"
   ],
   "benefit": "hp",
@@ -3476,7 +3476,7 @@
   "ingredients": [
    "fire_elemental_prime",
    "burning_skeleton_prime",
-   "deep_fungi",
+   "apple",
    "dried_meat"
   ],
   "benefit": "fire_resist",
@@ -3524,7 +3524,7 @@
   "ingredients": [
    "chaos_troll_prime",
    "ammit_spawn_prime",
-   "asterion_minotaur_prime",
+   "owlbear_prime",
    "swamp_moss"
   ],
   "benefit": "hp",
@@ -3573,12 +3573,12 @@
   "name": "Riddler's Ploughman's Plate",
   "ingredients": [
    "the_sphinx_prime",
-   "huecuva_prime",
+   "ossuary_horror_prime",
    "harrow_witch_prime",
    "altar_incense"
   ],
   "benefit": "WIS",
-  "flavor": "A riddle, a marrow wheel and a witch's sausage. The answer is wisdom.",
+  "flavor": "A riddle, an ossuary marrow and a witch's sausage. The answer is wisdom.",
   "art": "recipe_r_f5160_two_sphinx_vigil",
   "cross_depth": true
  },
@@ -3586,7 +3586,7 @@
   "name": "Sphinx and Soul Broth",
   "ingredients": [
    "the_sphinx_prime",
-   "ba_spirit_prime"
+   "ammit_spawn_prime"
   ],
   "benefit": "WIS",
   "flavor": "Two riddles of the Nile in one bowl.",
@@ -3598,7 +3598,7 @@
   "ingredients": [
    "demonic_trickster_prime",
    "yuan_ti_pureblood_prime",
-   "crystal_ooze_prime",
+   "imp_prime",
    "abyssal_kelp"
   ],
   "benefit": "mp",
@@ -3743,7 +3743,7 @@
   "name": "Watchful Hearth Hotpot",
   "ingredients": [
    "gilded_mimic_prime",
-   "fetch_prime",
+   "shade_prime",
    "boggart_prime",
    "cave_mushroom"
   ],
@@ -3815,7 +3815,7 @@
   "name": "Hunter's Trencher",
   "ingredients": [
    "sets_jackal_prime",
-   "gravehound_prime",
+   "werewolf_prime",
    "bread_ration"
   ],
   "benefit": "PER",
@@ -3828,7 +3828,7 @@
   "ingredients": [
    "abyssal_behemoth_prime",
    "satyr_warrior_prime",
-   "void_ration"
+   "trail_rations"
   ],
   "benefit": "sp",
   "flavor": "One pot feeds a party. This one feeds a week.",
@@ -3898,7 +3898,7 @@
   "name": "Whirlpool Grub Boil",
   "ingredients": [
    "charybdis_prime",
-   "rot_grub_swarm_prime",
+   "giant_rat_prime",
    "holy_water"
   ],
   "benefit": "sp",
@@ -3910,8 +3910,8 @@
   "name": "Bangers and Whirlpool Mash",
   "ingredients": [
    "charybdis_prime",
-   "bugbear_prime",
-   "void_ration"
+   "ogre_prime",
+   "abyssal_kelp"
   ],
   "benefit": "sp",
   "flavor": "The sea's own appetite on a plate.",
@@ -3959,7 +3959,7 @@
   "name": "Long Winter Porridge",
   "ingredients": [
    "wendigo_prime",
-   "yellow_mold_prime",
+   "violet_fungus_prime",
    "trail_rations"
   ],
   "benefit": "sp",
@@ -4017,20 +4017,20 @@
   "cross_depth": true
  },
  "dish_051": {
-  "name": "Wild Hunt Wasp Kebabs",
+  "name": "Wild Hunt Skewers",
   "ingredients": [
    "wild_hunt_captain_prime",
-   "giant_wasp_prime"
+   "pegasus_prime"
   ],
   "benefit": "hasted",
-  "flavor": "Your heart gallops and buzzes at once.",
+  "flavor": "Winged horse on a hunter's spit; your heart gallops with the hunt.",
   "art": "recipe_prime_ba_spirit_recipe",
   "cross_depth": true
  },
  "dish_052": {
   "name": "Stormrider's Cheese Toast",
   "ingredients": [
-   "wild_hunt_captain_prime",
+   "storm_giant_prime",
    "giant_wasp_prime",
    "hard_cheese"
   ],
@@ -4044,7 +4044,7 @@
   "ingredients": [
    "anansi_prime",
    "harrow_witch_prime",
-   "deep_fungi"
+   "holy_water"
   ],
   "benefit": "WIS",
   "flavor": "Every rasher a story, every sausage a spell.",
@@ -4090,7 +4090,7 @@
   "name": "Cheeseburger of the Damned",
   "ingredients": [
    "hell_bovine_prime",
-   "ochre_jelly_prime",
+   "gelatinous_cube_prime",
    "hard_cheese"
   ],
   "benefit": "sp",
@@ -4123,7 +4123,7 @@
   "name": "Desert Lizard Stir-Fry",
   "ingredients": [
    "giant_lizard_prime",
-   "scarab_swarm_prime"
+   "giant_scorpion_prime"
   ],
   "benefit": "hp",
   "flavor": "Crunchy, mild and mending.",
@@ -4155,7 +4155,7 @@
  "dish_063": {
   "name": "Sea Serpent Picnic Pie",
   "ingredients": [
-   "clay_golem_prime",
+   "flesh_golem_prime",
    "sea_serpent_norse_prime",
    "elvish_bread",
    "trail_rations",
@@ -4169,7 +4169,7 @@
   "name": "Bear-in-the-Garden Stew",
   "ingredients": [
    "shambling_mound_prime",
-   "werebear_prime"
+   "cave_bear_prime"
   ],
   "benefit": "hp",
   "flavor": "Earthy, thick and restoring.",
@@ -4240,8 +4240,8 @@
   "name": "Spellsalt Ham Platter",
   "ingredients": [
    "battle_mage_prime",
-   "bone_witch_prime",
-   "crystal_ooze_prime"
+   "death_mage_prime",
+   "shade_prime"
   ],
   "benefit": "mp",
   "flavor": "Enchanted ham, enchanted bone, enchanted jelly.",
@@ -4250,8 +4250,8 @@
  "dish_071": {
   "name": "Jewel-Spark Skewers",
   "ingredients": [
-   "homunculus_prime",
-   "yuan_ti_pureblood_prime",
+   "flesh_golem_prime",
+   "imp_prime",
    "carbuncle_prime"
   ],
   "benefit": "mp",
@@ -4263,7 +4263,7 @@
   "ingredients": [
    "sluagh_prime",
    "wraith_prime",
-   "lahamu_prime",
+   "specter_prime",
    "apple",
    "bread_ration"
   ],
@@ -4388,8 +4388,8 @@
   "ingredients": [
    "giant_frog_prime",
    "harpy_prime",
-   "hollow_one_prime",
-   "lizardfolk_prime"
+   "dretch_prime",
+   "basilisk_prime"
   ],
   "benefit": "sp",
   "flavor": "Frog, harpy and lizard in one pot.",
@@ -4412,7 +4412,7 @@
   "name": "Smoked Haunch Risotto",
   "ingredients": [
    "lizardfolk_prime",
-   "myconid_worker_prime",
+   "violet_fungus_prime",
    "wild_mushroom"
   ],
   "benefit": "sp",
@@ -4422,7 +4422,7 @@
  "dish_086": {
   "name": "Grub and Stalk Toast",
   "ingredients": [
-   "myconid_worker_prime",
+   "assassin_vine_prime",
    "rot_grub_swarm_prime",
    "dried_meat",
    "bread_ration"
@@ -4435,8 +4435,8 @@
   "name": "Satyr's Picnic Bangers",
   "ingredients": [
    "satyr_warrior_prime",
-   "yellow_mold_prime",
-   "bugbear_prime",
+   "dretch_prime",
+   "ogre_prime",
    "trail_rations"
   ],
   "benefit": "sp",
@@ -4446,7 +4446,7 @@
  "dish_088": {
   "name": "Mumbling Mushroom Dumplings",
   "ingredients": [
-   "gas_spore_prime",
+   "lurker_above_prime",
    "gibbering_mouther_prime",
    "wild_mushroom",
    "altar_incense"
@@ -4458,7 +4458,7 @@
  "dish_089": {
   "name": "Lucky Haggis",
   "ingredients": [
-   "gibbering_mouther_prime",
+   "gelatinous_cube_prime",
    "leprechaun_prime"
   ],
   "benefit": "sp",
@@ -4481,7 +4481,7 @@
   "name": "Underworld Jambalaya",
   "ingredients": [
    "kuo_toa_prime",
-   "mud_crawler_prime",
+   "bandit_captain_prime",
    "goblin_prime",
    "gnoll_prime",
    "wild_mushroom"
@@ -4494,7 +4494,7 @@
   "name": "Fish-Man's Sticky Ham",
   "ingredients": [
    "kuo_toa_prime",
-   "mimic_prime"
+   "roper_prime"
   ],
   "benefit": "sp",
   "flavor": "Sticky, fishy and filling.",
@@ -4503,7 +4503,7 @@
  "dish_093": {
   "name": "Sticky Mud Pudding",
   "ingredients": [
-   "mud_crawler_prime",
+   "dretch_prime",
    "mimic_prime"
   ],
   "benefit": "sp",
@@ -4524,7 +4524,7 @@
   "name": "Ploughman's Monster Board",
   "ingredients": [
    "gnoll_prime",
-   "charybdis_spawn_prime",
+   "ogre_prime",
    "hill_giant_prime",
    "trail_rations",
    "hard_cheese"
@@ -4548,7 +4548,7 @@
   "name": "Giant's Breakfast Platter",
   "ingredients": [
    "ogre_prime",
-   "charybdis_spawn_prime",
+   "lurker_above_prime",
    "hill_giant_prime",
    "gnoll_prime"
   ],
@@ -4560,11 +4560,11 @@
   "name": "Between Two Monsters Chowder",
   "ingredients": [
    "scylla_prime",
-   "charybdis_spawn_prime",
+   "water_elemental_prime",
    "cave_mushroom"
   ],
   "benefit": "sp",
-  "flavor": "Scylla on one side, Charybdis on the other, and a bowl in the middle.",
+  "flavor": "Scylla on one side, the whirling tide on the other, and a bowl in the middle.",
   "art": "recipe_f11_wyrmling_two_scale"
  },
  "dish_099": {
@@ -4583,7 +4583,7 @@
   "ingredients": [
    "acid_blob_prime",
    "young_black_dragon_prime",
-   "rust_monster_prime"
+   "xorn_prime"
   ],
   "benefit": "acid_resist",
   "flavor": "Crunchy and sour, and acid finds nothing to bite.",
@@ -4592,13 +4592,13 @@
  "dish_101": {
   "name": "Midwinter Ice Platter",
   "ingredients": [
-   "frost_skeleton_prime",
-   "winter_wolf_prime",
+   "draugr_prime",
+   "wolf_pack_leader_prime",
    "ice_elemental_prime",
    "ice_troll_prime"
   ],
   "benefit": "cold_resist",
-  "flavor": "Four cold things, and you never feel cold.",
+  "flavor": "Four things from the frozen north, and you never feel cold.",
   "art": "recipe_r_f5160_wyrmblood_terrine"
  },
  "dish_102": {
@@ -4619,7 +4619,7 @@
    "ice_troll_prime",
    "frost_crawler_prime",
    "ice_elemental_prime",
-   "winter_wolf_prime"
+   "wolf_pack_leader_prime"
   ],
   "benefit": "cold_resist",
   "flavor": "Roasted in a snowstorm; the cold forgets you.",
@@ -4629,7 +4629,7 @@
   "name": "Glow-Beetle Smoke Glaze",
   "ingredients": [
    "fire_beetle_prime",
-   "shadow_demon_prime"
+   "sable_serpent_prime"
   ],
   "benefit": "dark_vision",
   "flavor": "A lamp and a shadow; the dark grows clear.",
@@ -4638,8 +4638,8 @@
  "dish_105": {
   "name": "Blackout Steak Platter",
   "ingredients": [
-   "shadow_demon_prime",
-   "darkmantle_prime",
+   "shade_prime",
+   "skeleton_prime",
    "hecate_hound_prime"
   ],
   "benefit": "dark_vision",
@@ -4698,7 +4698,7 @@
   "name": "Now-You-See-Me Tempura",
   "ingredients": [
    "changeling_prime",
-   "puca_prime",
+   "shadow_prime",
    "phase_spider_prime"
   ],
   "benefit": "displacement",
@@ -4709,7 +4709,7 @@
   "name": "Glamour Steak Sandwich",
   "ingredients": [
    "changeling_prime",
-   "displacer_beast_prime",
+   "werewolf_prime",
    "elvish_bread"
   ],
   "benefit": "displacement",
@@ -4720,7 +4720,7 @@
   "name": "Trickster's Trail Pie",
   "ingredients": [
    "puca_prime",
-   "displacer_beast_prime",
+   "phase_spider_prime",
    "trail_rations",
    "elvish_bread",
    "river_salt"
@@ -4744,7 +4744,7 @@
   "name": "Tomb Bread and Bone Soup",
   "ingredients": [
    "lesser_death_prime",
-   "mummy_prime",
+   "wight_prime",
    "bread_ration"
   ],
   "benefit": "drain_resist",
@@ -4754,9 +4754,9 @@
  "dish_115": {
   "name": "Weighing of the Heart Stew",
   "ingredients": [
-   "mummy_prime",
+   "ammit_spawn_prime",
    "anubis_guardian_prime",
-   "lesser_death_prime",
+   "thoth_construct_prime",
    "river_salt"
   ],
   "benefit": "drain_resist",
@@ -4767,7 +4767,7 @@
   "name": "Jackal-God's Salt Broth",
   "ingredients": [
    "anubis_guardian_prime",
-   "lesser_death_prime",
+   "ossuary_horror_prime",
    "river_salt"
   ],
   "benefit": "drain_resist",
@@ -4777,19 +4777,19 @@
  "dish_117": {
   "name": "Fearless Rider's Steak",
   "ingredients": [
-   "dullahan_spawn_prime",
+   "valkyrie_shade_prime",
    "cerberus_prime",
    "river_salt",
    "holy_water"
   ],
   "benefit": "fear_immune",
-  "flavor": "The headless rider and the hound of Hades fear nothing. Now neither do you.",
+  "flavor": "The Valkyrie and the hound of Hades fear nothing. Now neither do you.",
   "art": "recipe_prime_spectral_dragon_recipe"
  },
  "dish_118": {
   "name": "Gates of Hades Hotpot",
   "ingredients": [
-   "dullahan_spawn_prime",
+   "erinyes_lesser_prime",
    "cerberus_prime",
    "holy_water",
    "river_salt",
@@ -4895,7 +4895,7 @@
  "dish_127": {
   "name": "Venom-Proof Gumbo",
   "ingredients": [
-   "giant_centipede_prime",
+   "wyvern_prime",
    "giant_spider_prime",
    "hezrou_prime",
    "swamp_moss"
@@ -4930,8 +4930,8 @@
   "ingredients": [
    "unicorn_corrupted_prime",
    "wyvern_prime",
-   "hezrou_prime",
-   "giant_centipede_prime"
+   "giant_spider_prime",
+   "snake_charmer_prime"
   ],
   "benefit": "poison_resist",
   "flavor": "Old hunters swear by it.",
@@ -4942,7 +4942,7 @@
   "ingredients": [
    "assassin_vine_prime",
    "green_slime_prime",
-   "dryad_guardian_prime"
+   "light_elf_hostile_prime"
   ],
   "benefit": "regenerating",
   "flavor": "Green, alive and still growing on the plate.",
@@ -4952,7 +4952,7 @@
   "name": "Slime-and-Blood Pudding",
   "ingredients": [
    "green_slime_prime",
-   "nosferatu_prime"
+   "cult_initiate_prime"
   ],
   "benefit": "regenerating",
   "flavor": "Gross. Good for you.",
@@ -4962,7 +4962,7 @@
   "name": "Life-and-Unlife Broth",
   "ingredients": [
    "dryad_guardian_prime",
-   "nosferatu_prime"
+   "vampire_prime"
   ],
   "benefit": "regenerating",
   "flavor": "A tree's life and a vampire's unlife; both mend.",
@@ -4973,7 +4973,7 @@
   "ingredients": [
    "hydra_prime",
    "nosferatu_prime",
-   "dryad_guardian_prime",
+   "troll_prime",
    "assassin_vine_prime",
    "dried_meat"
   ],
@@ -4985,9 +4985,9 @@
   "name": "Ever-Growing Stew",
   "ingredients": [
    "hydra_prime",
-   "green_slime_prime",
+   "zombie_prime",
    "nosferatu_prime",
-   "dryad_guardian_prime"
+   "moss_sentinel_prime"
   ],
   "benefit": "regenerating",
   "flavor": "The pot is fuller when you finish than when you started.",
@@ -4997,7 +4997,7 @@
   "name": "Limber-Limb Stew",
   "ingredients": [
    "carrion_crawler_prime",
-   "cockatrice_prime",
+   "basilisk_prime",
    "ghoul_prime",
    "trail_rations"
   ],
@@ -5008,7 +5008,7 @@
  "dish_137": {
   "name": "Stoneproof Chicken Soup",
   "ingredients": [
-   "cockatrice_prime",
+   "roc_chick_prime",
    "gorgon_warrior_prime"
   ],
   "benefit": "save_guard_CON",
@@ -5130,7 +5130,7 @@
   "name": "Watchdog's Toast",
   "ingredients": [
    "boggart_prime",
-   "death_dog_prime"
+   "wolf_pack_leader_prime"
   ],
   "benefit": "warning",
   "flavor": "Smoky and alert; you hear everything.",
@@ -5161,7 +5161,7 @@
   "ingredients": [
    "spriggan_prime",
    "hobgoblin_prime",
-   "troglodyte_prime"
+   "bandit_captain_prime"
   ],
   "benefit": "CON",
   "flavor": "Soldier food, made sturdier.",
@@ -5183,7 +5183,7 @@
  "dish_153": {
   "name": "Iron-Gut Cheese Bake",
   "ingredients": [
-   "troglodyte_prime",
+   "hobgoblin_prime",
    "otyugh_prime",
    "hard_cheese"
   ],
@@ -5194,9 +5194,9 @@
  "dish_154": {
   "name": "Gatekeeper's Hash",
   "ingredients": [
-   "otyugh_prime",
+   "stone_golem_prime",
    "kusarikku_prime",
-   "lindworm_prime"
+   "draugr_prime"
   ],
   "benefit": "CON",
   "flavor": "Stubborn ingredients for a stubborn eater.",
@@ -5261,7 +5261,7 @@
   "name": "Strike-First Steak Sandwich",
   "ingredients": [
    "cobra_prime",
-   "giant_mantis_prime",
+   "giant_scorpion_prime",
    "bread_ration"
   ],
   "benefit": "DEX",
@@ -5272,7 +5272,7 @@
   "name": "Hopping Cobra Skillet",
   "ingredients": [
    "cobra_prime",
-   "jiangshi_prime",
+   "phase_spider_prime",
    "altar_incense",
    "hard_cheese"
   ],
@@ -5284,7 +5284,7 @@
   "name": "Pixie Marrow Toast",
   "ingredients": [
    "pixie_swarm_prime",
-   "poltergeist_prime",
+   "skeleton_prime",
    "altar_incense"
   ],
   "benefit": "DEX",
@@ -5294,7 +5294,7 @@
  "dish_163": {
   "name": "Sparkling Sea Snake Fillet",
   "ingredients": [
-   "pixie_swarm_prime",
+   "light_elf_hostile_prime",
    "sea_snake_prime"
   ],
   "benefit": "DEX",
@@ -5304,7 +5304,7 @@
  "dish_164": {
   "name": "Restless Sea Roulade",
   "ingredients": [
-   "poltergeist_prime",
+   "wraith_prime",
    "sea_snake_prime"
   ],
   "benefit": "DEX",
@@ -5314,9 +5314,9 @@
  "dish_165": {
   "name": "Swordsman's Mixed Grill",
   "ingredients": [
-   "stymphalian_bird_prime",
+   "harpy_prime",
    "tengu_warrior_prime",
-   "blink_dog_prime",
+   "shadow_prime",
    "kobold_prime"
   ],
   "benefit": "DEX",
@@ -5326,10 +5326,10 @@
  "dish_166": {
   "name": "Light-Fingers Platter",
   "ingredients": [
-   "stymphalian_bird_prime",
-   "wererat_prime",
+   "kobold_prime",
+   "bandit_captain_prime",
    "ethereal_filcher_prime",
-   "arachne_prime"
+   "shadow_prime"
   ],
   "benefit": "DEX",
   "flavor": "Food for thieves, and for anyone who has to duck.",
@@ -5338,9 +5338,9 @@
  "dish_167": {
   "name": "Pickpocket's Bacon Roll",
   "ingredients": [
-   "tengu_warrior_prime",
+   "kobold_prime",
    "wererat_prime",
-   "ethereal_filcher_prime",
+   "dark_elf_prime",
    "trail_rations"
   ],
   "benefit": "DEX",
@@ -5350,7 +5350,7 @@
  "dish_168": {
   "name": "Weaver's Blink Steak",
   "ingredients": [
-   "blink_dog_prime",
+   "phase_spider_prime",
    "arachne_prime"
   ],
   "benefit": "DEX",
@@ -5371,7 +5371,7 @@
  "dish_170": {
   "name": "Snap-and-Crackle Ribs",
   "ingredients": [
-   "grell_prime",
+   "thunderbird_lesser_prime",
    "mohrg_prime"
   ],
   "benefit": "DEX",
@@ -5381,7 +5381,7 @@
  "dish_171": {
   "name": "Tiger-Rib Fricassee",
   "ingredients": [
-   "mohrg_prime",
+   "vrock_prime",
    "weretiger_prime",
    "cave_mushroom"
   ],
@@ -5393,7 +5393,7 @@
   "name": "Two-Cat Supper Roll",
   "ingredients": [
    "weretiger_prime",
-   "cath_palug_prime",
+   "sphinx_prime",
    "elvish_bread"
   ],
   "benefit": "DEX",
@@ -5464,8 +5464,8 @@
   "name": "Logic Puzzle Broth",
   "ingredients": [
    "grid_bug_prime",
-   "crypt_thing_prime",
-   "pazuzu_spawn_prime"
+   "wraith_prime",
+   "ugallu_demon_prime"
   ],
   "benefit": "INT",
   "flavor": "It only moves in straight lines, like your thoughts afterwards.",
@@ -5474,9 +5474,9 @@
  "dish_179": {
   "name": "Clockwork Thinker's Hash",
   "ingredients": [
-   "grid_bug_prime",
-   "grick_prime",
-   "jormungandr_spawn_prime",
+   "nidhogg_brood_prime",
+   "ossuary_horror_prime",
+   "death_mage_prime",
    "clockwork_horror_prime"
   ],
   "benefit": "INT",
@@ -5487,8 +5487,8 @@
   "name": "Deep Thoughts Stew",
   "ingredients": [
    "crypt_thing_prime",
-   "grick_prime",
-   "jormungandr_spawn_prime",
+   "aboleth_lesser_prime",
+   "nidhogg_brood_prime",
    "trail_rations"
   ],
   "benefit": "INT",
@@ -5496,22 +5496,22 @@
   "art": "recipe_u_holy_broth"
  },
  "dish_181": {
-  "name": "Echo-and-Cog Steak",
+  "name": "Echo-and-Ink Steak",
   "ingredients": [
-   "clockwork_horror_prime",
+   "thoth_construct_prime",
    "hook_horror_prime",
    "altar_incense"
   ],
   "benefit": "INT",
-  "flavor": "Click, tick, think.",
+  "flavor": "A cave-echo steak in a scribe's ink; click, scratch, think.",
   "art": "recipe_r_f5160_mindflayer_insight_terrine"
  },
  "dish_182": {
   "name": "Scholar's Supper Platter",
   "ingredients": [
-   "hook_horror_prime",
+   "sphinx_prime",
    "mind_flayer_thrall_prime",
-   "nue_prime",
+   "night_hag_prime",
    "ossuary_horror_prime"
   ],
   "benefit": "INT",
@@ -5576,9 +5576,9 @@
  "dish_188": {
   "name": "Lookout's Mixed Grill",
   "ingredients": [
-   "bat_prime",
+   "werewolf_prime",
    "gravehound_prime",
-   "hugin_raven_prime",
+   "beholder_prime",
    "violet_fungus_prime"
   ],
   "benefit": "PER",
@@ -5586,10 +5586,10 @@
   "art": "recipe_r_f5160_nemean_redspit"
  },
  "dish_189": {
-  "name": "Echo-and-Wisp Pie",
+  "name": "Echo-and-Elflight Pie",
   "ingredients": [
    "bat_prime",
-   "will_o_wisp_prime",
+   "light_elf_hostile_prime",
    "altar_incense",
    "bread_ration",
    "wild_mushroom"
@@ -5602,7 +5602,7 @@
   "name": "Odin's Lookout Platter",
   "ingredients": [
    "hugin_raven_prime",
-   "will_o_wisp_prime",
+   "soul_eater_prime",
    "dried_meat",
    "trail_rations",
    "hard_cheese"
@@ -5624,7 +5624,7 @@
  "dish_192": {
   "name": "Hound-and-Ceiling Roast",
   "ingredients": [
-   "piercer_prime",
+   "lurker_above_prime",
    "fionn_hound_prime"
   ],
   "benefit": "PER",
@@ -5636,8 +5636,8 @@
   "ingredients": [
    "fionn_hound_prime",
    "erinyes_lesser_prime",
-   "strigoi_prime",
-   "cyclops_prime"
+   "werewolf_prime",
+   "orc_warrior_prime"
   ],
   "benefit": "PER",
   "flavor": "Every tracker in the dungeon, on one plate.",
@@ -5705,7 +5705,7 @@
   "ingredients": [
    "giant_scorpion_prime",
    "goblin_king_prime",
-   "peryton_prime"
+   "cave_bear_prime"
   ],
   "benefit": "STR",
   "flavor": "A goblin king's table, finally earned.",
@@ -5715,7 +5715,7 @@
   "name": "Barrow-King's Sausage Bake",
   "ingredients": [
    "goblin_king_prime",
-   "redcap_prime",
+   "ugallu_demon_prime",
    "wight_prime",
    "altar_incense",
    "hard_cheese"
@@ -5728,7 +5728,7 @@
   "name": "Wild Game Pie",
   "ingredients": [
    "peryton_prime",
-   "fenrir_pup_prime",
+   "wolf_pack_leader_prime",
    "altar_incense",
    "wild_mushroom",
    "dried_meat"
@@ -5740,7 +5740,7 @@
  "dish_202": {
   "name": "Wolf-and-Python Braise",
   "ingredients": [
-   "fenrir_pup_prime",
+   "wolf_pack_leader_prime",
    "rock_python_prime"
   ],
   "benefit": "STR",
@@ -5760,7 +5760,7 @@
  "dish_204": {
   "name": "Lion-Hearted Stew",
   "ingredients": [
-   "revenant_prime",
+   "manticore_prime",
    "ugallu_demon_prime",
    "dire_lion_prime"
   ],
@@ -5773,7 +5773,7 @@
   "ingredients": [
    "ugallu_demon_prime",
    "griffin_prime",
-   "vrykolakas_prime",
+   "manticore_prime",
    "altar_incense",
    "trail_rations"
   ],
@@ -5784,7 +5784,7 @@
  "dish_206": {
   "name": "Lion-and-Griffin Drumsticks",
   "ingredients": [
-   "dire_lion_prime",
+   "manticore_prime",
    "griffin_prime"
   ],
   "benefit": "STR",
@@ -5895,7 +5895,7 @@
   "name": "Old Souls' Cheese Board",
   "ingredients": [
    "light_elf_hostile_prime",
-   "ba_spirit_prime",
+   "soul_eater_prime",
    "huecuva_prime",
    "hard_cheese"
   ],
@@ -5907,7 +5907,7 @@
   "name": "Dream-and-Doom Broth",
   "ingredients": [
    "incubus_prime",
-   "banshee_prime",
+   "night_hag_prime",
    "dried_meat",
    "altar_incense"
   ],
@@ -5963,6 +5963,1295 @@
   "benefit": "sp",
   "flavor": "Gristle saved from the top of the dungeon, locust from the bottom: one pie, and no hunger.",
   "art": "recipe_r_f5160_jarlfrost_rime_trencher",
+  "cross_depth": true
+ },
+ "dish_222": {
+  "name": "Drow Bat-Wing Skewers",
+  "ingredients": [
+   "bat_prime",
+   "dark_elf_prime",
+   "dried_meat",
+   "trail_rations"
+  ],
+  "benefit": "PER",
+  "flavor": "The dark elves' trail snack; every rustle in the dark reaches you.",
+  "art": "recipe_prime_beholder_spawn_recipe"
+ },
+ "dish_223": {
+  "name": "Bonfire Chimera Grill",
+  "ingredients": [
+   "burning_skeleton_prime",
+   "chimera_prime",
+   "river_salt"
+  ],
+  "benefit": "fire_resist",
+  "flavor": "Bones that burn and a beast that breathes fire, salted; heat slides off you.",
+  "art": "recipe_combo_hydra_holy_water_recipe"
+ },
+ "dish_224": {
+  "name": "Two-Headed Hound Hotpot",
+  "ingredients": [
+   "death_dog_prime",
+   "zombie_prime",
+   "altar_incense"
+  ],
+  "benefit": "hp",
+  "flavor": "Two heads of smoky dog and a shinbone that will not stay buried; it mends you.",
+  "art": "recipe_prime_sable_serpent_recipe"
+ },
+ "dish_225": {
+  "name": "Frozen Crypt Aspic",
+  "ingredients": [
+   "frost_skeleton_prime",
+   "ghoul_prime",
+   "acid_blob_prime",
+   "wild_mushroom"
+  ],
+  "benefit": "cold_resist",
+  "flavor": "Set in a cold tomb overnight; the cold never finds you after.",
+  "art": "recipe_f11_mire_fomorian_lurker"
+ },
+ "dish_226": {
+  "name": "Praying Mantis Stir-Fry",
+  "ingredients": [
+   "giant_mantis_prime",
+   "vrock_prime",
+   "kobold_prime",
+   "altar_incense"
+  ],
+  "benefit": "DEX",
+  "flavor": "Tossed fast and eaten faster; your hands move before you think.",
+  "art": "recipe_r_f6170_twin_primordial_hearth"
+ },
+ "dish_227": {
+  "name": "Grave-Nose Sausage Roll",
+  "ingredients": [
+   "gravehound_prime",
+   "dark_elf_prime"
+  ],
+  "benefit": "PER",
+  "flavor": "A gravehound sniffs out the dead. After this, so do you.",
+  "art": "recipe_r_f5160_hierarchy_of_hells_four_pot"
+ },
+ "dish_228": {
+  "name": "Straight-Line Scorpion Skewers",
+  "ingredients": [
+   "grid_bug_prime",
+   "giant_scorpion_prime"
+  ],
+  "benefit": "INT",
+  "flavor": "Grid bug and scorpion on one stick; your thoughts line up like soldiers.",
+  "art": "recipe_prime_berserker_spirit_recipe"
+ },
+ "dish_229": {
+  "name": "Hollow-Bone Ration Stew",
+  "ingredients": [
+   "hollow_one_prime",
+   "hobgoblin_prime"
+  ],
+  "benefit": "sp",
+  "flavor": "Marrow from a hollow one, sausage from a hobgoblin's pack; it fills you up.",
+  "art": "recipe_combo_giant_spider_altar_incense_recipe"
+ },
+ "dish_230": {
+  "name": "Raven's Watch Sandwich",
+  "ingredients": [
+   "hugin_raven_prime",
+   "erinyes_lesser_prime",
+   "bread_ration",
+   "hard_cheese"
+  ],
+  "benefit": "PER",
+  "flavor": "Odin's raven sees everything. The Furies see the rest.",
+  "art": "recipe_r_f5160_hierarchy_of_hells_four_pot"
+ },
+ "dish_231": {
+  "name": "Hopping Ghost Dumplings",
+  "ingredients": [
+   "jiangshi_prime",
+   "specter_prime"
+  ],
+  "benefit": "mp",
+  "flavor": "They bounce in the steamer, and the magic bounces into you.",
+  "art": "recipe_combo_manticore_abyssal_kelp_recipe"
+ },
+ "dish_232": {
+  "name": "Swamp Hunter's Smokehouse Stew",
+  "ingredients": [
+   "lizardfolk_prime",
+   "giant_rat_prime",
+   "cave_mushroom"
+  ],
+  "benefit": "sp",
+  "flavor": "Smoked lizard, roast rat and cave mushrooms: a marsh supper.",
+  "art": "recipe_combo_ogre_holy_water_recipe"
+ },
+ "dish_233": {
+  "name": "Mushroom-Man Hotpot",
+  "ingredients": [
+   "myconid_worker_prime",
+   "harpy_prime",
+   "goblin_prime",
+   "swamp_moss"
+  ],
+  "benefit": "sp",
+  "flavor": "Myconid stalk, harpy ham and goblin gristle, stewed in moss.",
+  "art": "recipe_prime_scylla_recipe"
+ },
+ "dish_234": {
+  "name": "Spore-and-Ham Pie",
+  "ingredients": [
+   "myconid_worker_prime",
+   "veteran_knight_prime",
+   "bread_ration",
+   "cave_mushroom"
+  ],
+  "benefit": "sp",
+  "flavor": "A soldier's ham baked under a cap of talking mushroom.",
+  "art": "recipe_r_f6170_frostfang_rimeheart_pot"
+ },
+ "dish_235": {
+  "name": "Dream-Dust Tea",
+  "ingredients": [
+   "pixie_swarm_prime",
+   "night_hag_prime",
+   "altar_incense"
+  ],
+  "benefit": "mp",
+  "flavor": "A pinch of pixie, a pinch of nightmare; the magic comes on a sneeze.",
+  "art": "recipe_f42_young_dragon_saltscale"
+ },
+ "dish_236": {
+  "name": "Haunted House Toast",
+  "ingredients": [
+   "poltergeist_prime",
+   "wraith_prime",
+   "bread_ration"
+  ],
+  "benefit": "mp",
+  "flavor": "It rattles on the plate and wails on the way down.",
+  "art": "recipe_f11_tri_rally_three_horns"
+ },
+ "dish_237": {
+  "name": "Gutter Grub Sandwich",
+  "ingredients": [
+   "rot_grub_swarm_prime",
+   "giant_rat_prime",
+   "bread_ration"
+  ],
+  "benefit": "sp",
+  "flavor": "Rat and grub on bread: the cheapest full belly in the dungeon.",
+  "art": "recipe_r_f5160_hierarchy_of_hells_four_pot"
+ },
+ "dish_238": {
+  "name": "Scarab-and-Pegasus Roast",
+  "ingredients": [
+   "scarab_swarm_prime",
+   "pegasus_prime",
+   "dried_meat"
+  ],
+  "benefit": "hp",
+  "flavor": "Desert shell and winged leg, roasted; wounds close as you chew.",
+  "art": "recipe_prime_charybdis_recipe"
+ },
+ "dish_239": {
+  "name": "Desert Beetle Rump Bake",
+  "ingredients": [
+   "scarab_swarm_prime",
+   "catoblepas_prime",
+   "apple",
+   "hard_cheese"
+  ],
+  "benefit": "hp",
+  "flavor": "Scarab and catoblepas baked under cheese; heavy, crunchy and healing.",
+  "art": "recipe_prime_fenrir_wolf_recipe"
+ },
+ "dish_240": {
+  "name": "Smoke-and-Acid Glaze",
+  "ingredients": [
+   "shadow_demon_prime",
+   "acid_blob_prime",
+   "apple"
+  ],
+  "benefit": "dark_vision",
+  "flavor": "Dark smoke over a sour glaze; the shadows thin out.",
+  "art": "recipe_drake_flame_twin_ember_pot"
+ },
+ "dish_241": {
+  "name": "Midnight Mushroom Jelly",
+  "ingredients": [
+   "shadow_demon_prime",
+   "shade_prime",
+   "wild_mushroom"
+  ],
+  "benefit": "dark_vision",
+  "flavor": "Two kinds of darkness set in one jelly; your eyes drink the dark.",
+  "art": "recipe_f11_myconid_moss_mossgrown"
+ },
+ "dish_242": {
+  "name": "Stirge-and-Rump Sandwich",
+  "ingredients": [
+   "stirge_swarm_prime",
+   "catoblepas_prime",
+   "bread_ration",
+   "hard_cheese"
+  ],
+  "benefit": "hp",
+  "flavor": "The stirge drank first. Now it is your turn.",
+  "art": "recipe_r_f5160_hierarchy_of_hells_four_pot"
+ },
+ "dish_243": {
+  "name": "Bronze-Feather Fowl Pie",
+  "ingredients": [
+   "stymphalian_bird_prime",
+   "harpy_prime",
+   "veteran_knight_prime",
+   "wild_mushroom"
+  ],
+  "benefit": "sp",
+  "flavor": "Pluck the bronze feathers first, or bite carefully.",
+  "art": "recipe_r_f6170_jackal_assassin_fleet"
+ },
+ "dish_244": {
+  "name": "Lake Stymphalia Hash",
+  "ingredients": [
+   "stymphalian_bird_prime",
+   "gnoll_prime",
+   "bread_ration"
+  ],
+  "benefit": "sp",
+  "flavor": "Heracles chased these birds away; you cook them with hyena links.",
+  "art": "recipe_f11_tri_quickening_three_shapers"
+ },
+ "dish_245": {
+  "name": "Tengu Wing Kebabs",
+  "ingredients": [
+   "tengu_warrior_prime",
+   "vrock_prime",
+   "altar_incense"
+  ],
+  "benefit": "DEX",
+  "flavor": "Wings of a sword-master; your feet learn his footwork.",
+  "art": "recipe_prime_black_pudding_recipe"
+ },
+ "dish_246": {
+  "name": "Spiced Mold Loaf",
+  "ingredients": [
+   "yellow_mold_prime",
+   "snake_charmer_prime",
+   "dried_meat",
+   "bread_ration"
+  ],
+  "benefit": "sp",
+  "flavor": "Spiced ham, dried meat and a log of yellow mold. It is better than it sounds.",
+  "art": "recipe_r_f5160_three_captain_fiend_stew"
+ },
+ "dish_247": {
+  "name": "Mold-and-Cube Casserole",
+  "ingredients": [
+   "yellow_mold_prime",
+   "gelatinous_cube_prime",
+   "wild_mushroom"
+  ],
+  "benefit": "sp",
+  "flavor": "Everything in the dungeon that grows on walls, in one dish.",
+  "art": "recipe_combo_rust_monster_altar_incense_recipe"
+ },
+ "dish_248": {
+  "name": "Blink-and-Gravel Grits",
+  "ingredients": [
+   "blink_dog_prime",
+   "xorn_prime",
+   "altar_incense"
+  ],
+  "benefit": "DEX",
+  "flavor": "Crunch, flash, gone; you are somewhere else before the blow lands.",
+  "art": "recipe_prime_light_elf_hostile_recipe"
+ },
+ "dish_249": {
+  "name": "Maze-Runner's Loin Chops",
+  "ingredients": [
+   "blink_dog_prime",
+   "minotaur_prime",
+   "river_salt",
+   "altar_incense"
+  ],
+  "benefit": "DEX",
+  "flavor": "A minotaur never catches a blink dog. Eat both and dodge like one.",
+  "art": "recipe_combo_minotaur_altar_incense_recipe"
+ },
+ "dish_250": {
+  "name": "Wand-and-Eye Bread Pudding",
+  "ingredients": [
+   "bone_witch_prime",
+   "beholder_prime",
+   "elvish_bread"
+  ],
+  "benefit": "mp",
+  "flavor": "A bone witch's wand, a beholder's eye and elf-bread: three kinds of magic, one spoon.",
+  "art": "recipe_r_f5160_irongolem_mountain_pot"
+ },
+ "dish_251": {
+  "name": "Goblin Clan Sausage Supper",
+  "ingredients": [
+   "bugbear_prime",
+   "hobgoblin_prime",
+   "goblin_prime",
+   "swamp_moss"
+  ],
+  "benefit": "sp",
+  "flavor": "Every goblin's cousin in one pot of bangers and gristle.",
+  "art": "recipe_combo_rust_monster_holy_water_recipe"
+ },
+ "dish_252": {
+  "name": "Raider's Bangers and Links",
+  "ingredients": [
+   "bugbear_prime",
+   "gnoll_prime",
+   "dried_meat"
+  ],
+  "benefit": "sp",
+  "flavor": "What raiders eat after the raid.",
+  "art": "recipe_f21_tri_deep_iron_bulwark"
+ },
+ "dish_253": {
+  "name": "Crypt Crawler Pot",
+  "ingredients": [
+   "carrion_crawler_prime",
+   "skeleton_prime",
+   "trail_rations"
+  ],
+  "benefit": "sp",
+  "flavor": "It eats the dead; you eat it. Very filling.",
+  "art": "recipe_quartet_f81_four_dead_kings_marrow"
+ },
+ "dish_254": {
+  "name": "Brimstone Crypt Broth",
+  "ingredients": [
+   "crypt_thing_prime",
+   "imp_prime",
+   "healing_herb"
+  ],
+  "benefit": "mp",
+  "flavor": "A crypt thing's shank in imp fire; the magic hisses up.",
+  "art": "recipe_prime_blink_dog_recipe"
+ },
+ "dish_255": {
+  "name": "Glitter-and-Ink Cordial",
+  "ingredients": [
+   "crystal_ooze_prime",
+   "thoth_construct_prime",
+   "apple"
+  ],
+  "benefit": "mp",
+  "flavor": "It sparkles, it writes, and it fills your mind with mana.",
+  "art": "recipe_f46_hierophant_censer_porridge"
+ },
+ "dish_256": {
+  "name": "Spectral Glitter Sorbet",
+  "ingredients": [
+   "crystal_ooze_prime",
+   "specter_prime"
+  ],
+  "benefit": "mp",
+  "flavor": "Cold, glittering and full of ghost-light magic.",
+  "art": "recipe_r_f6170_titan_storm_mountainloaf"
+ },
+ "dish_257": {
+  "name": "Exploding Ham Sandwich",
+  "ingredients": [
+   "gas_spore_prime",
+   "veteran_knight_prime",
+   "bread_ration"
+  ],
+  "benefit": "sp",
+  "flavor": "Do not drop it.",
+  "art": "recipe_r_f5160_hierarchy_of_hells_four_pot"
+ },
+ "dish_258": {
+  "name": "Centipede-and-Rat Roll",
+  "ingredients": [
+   "giant_centipede_prime",
+   "giant_rat_prime",
+   "bread_ration"
+  ],
+  "benefit": "sp",
+  "flavor": "A great many legs and one rat, wrapped in bread.",
+  "art": "recipe_r_f5160_hierarchy_of_hells_four_pot"
+ },
+ "dish_259": {
+  "name": "Chattering Haggis",
+  "ingredients": [
+   "gibbering_mouther_prime",
+   "lurker_above_prime",
+   "wild_mushroom"
+  ],
+  "benefit": "sp",
+  "flavor": "It talks while it cooks. Eat it before it says something rude.",
+  "art": "recipe_prime_adult_red_dragon_recipe"
+ },
+ "dish_260": {
+  "name": "Little Maker's Spark Pie",
+  "ingredients": [
+   "homunculus_prime",
+   "thoth_construct_prime",
+   "elvish_bread",
+   "trail_rations"
+  ],
+  "benefit": "mp",
+  "flavor": "A wizard's little helper and a scribe's ink heart, baked with elf-bread.",
+  "art": "recipe_rime_drake_twin_bone_pot"
+ },
+ "dish_261": {
+  "name": "Double Ooze Wobble",
+  "ingredients": [
+   "ochre_jelly_prime",
+   "gelatinous_cube_prime",
+   "wild_mushroom"
+  ],
+  "benefit": "sp",
+  "flavor": "Two oozes set in one mould; it wobbles all the way down.",
+  "art": "recipe_f21_elder_basilisk_mire"
+ },
+ "dish_262": {
+  "name": "Demon-Wind Brine Broth",
+  "ingredients": [
+   "pazuzu_spawn_prime",
+   "bone_devil_prime",
+   "healing_herb"
+  ],
+  "benefit": "INT",
+  "flavor": "Two fiends' juices, cooked clear; your thoughts turn quick and cold.",
+  "art": "recipe_prime_carbuncle_recipe"
+ },
+ "dish_263": {
+  "name": "Wild Fowl Fricassee",
+  "ingredients": [
+   "peryton_prime",
+   "harpy_prime",
+   "cave_mushroom"
+  ],
+  "benefit": "sp",
+  "flavor": "Stag-bird and harpy in cream and mushrooms.",
+  "art": "recipe_combo_wyvern_cave_mushroom_recipe"
+ },
+ "dish_264": {
+  "name": "Shape-Shifter's Cheese Plate",
+  "ingredients": [
+   "puca_prime",
+   "shield_guardian_prime",
+   "hard_cheese",
+   "dried_meat"
+  ],
+  "benefit": "displacement",
+  "flavor": "The cheese keeps changing shape. So, for a while, do you.",
+  "art": "recipe_tri_phase_manticore_hunter"
+ },
+ "dish_265": {
+  "name": "Red-Cap Ember Roast",
+  "ingredients": [
+   "redcap_prime",
+   "bone_devil_prime",
+   "altar_incense"
+  ],
+  "benefit": "STR",
+  "flavor": "Hot as a redcap's temper, salty as a devil's brine.",
+  "art": "recipe_prime_jormungandr_juvenile_recipe"
+ },
+ "dish_266": {
+  "name": "Bull-and-Acorn Pasties",
+  "ingredients": [
+   "redcap_prime",
+   "minotaur_prime",
+   "bread_ration",
+   "trail_rations"
+  ],
+  "benefit": "STR",
+  "flavor": "Hard-marching food with a fiery heart.",
+  "art": "recipe_combo_pegasus_abyssal_kelp_recipe"
+ },
+ "dish_267": {
+  "name": "Rust-and-Ward Crumble",
+  "ingredients": [
+   "rust_monster_prime",
+   "shield_guardian_prime",
+   "giant_spider_prime",
+   "bread_ration"
+  ],
+  "benefit": "acid_resist",
+  "flavor": "Sour and crumbly; acid slides off you like rain off a shield.",
+  "art": "recipe_combo_blood_archon_holy_water_recipe"
+ },
+ "dish_268": {
+  "name": "Ghost-Light Marrow Soup",
+  "ingredients": [
+   "will_o_wisp_prime",
+   "soul_eater_prime",
+   "wraith_prime",
+   "hard_cheese"
+  ],
+  "benefit": "mp",
+  "flavor": "Three cold glows in one bowl, and your mana warms up.",
+  "art": "recipe_prime_carrion_crawler_recipe"
+ },
+ "dish_269": {
+  "name": "Will-o'-Wisp Dragon Consommé",
+  "ingredients": [
+   "will_o_wisp_prime",
+   "spectral_dragon_prime"
+  ],
+  "benefit": "mp",
+  "flavor": "A marsh light saved from the top floors meets a ghost dragon far below.",
+  "art": "recipe_prime_cath_palug_recipe",
+  "cross_depth": true
+ },
+ "dish_270": {
+  "name": "Wood-and-Stone Golem Stew",
+  "ingredients": [
+   "wood_golem_prime",
+   "stone_golem_prime"
+  ],
+  "benefit": "CON",
+  "flavor": "Oak sap and rune-stone; you stand like a wall.",
+  "art": "recipe_combo_skeleton_altar_incense_recipe"
+ },
+ "dish_271": {
+  "name": "Snake-Priest's Supper",
+  "ingredients": [
+   "yuan_ti_pureblood_prime",
+   "beholder_prime",
+   "elvish_bread",
+   "swamp_moss"
+  ],
+  "benefit": "mp",
+  "flavor": "Yuan-ti haunch and a beholder's eye: food for a temple of snakes.",
+  "art": "recipe_combo_void_crawler_crystal"
+ },
+ "dish_272": {
+  "name": "Ba-Soul Bread Pudding",
+  "ingredients": [
+   "ba_spirit_prime",
+   "specter_prime",
+   "elvish_bread"
+  ],
+  "benefit": "mp",
+  "flavor": "The Egyptian soul-bird, baked with elf-bread; it flies straight to your head.",
+  "art": "recipe_twin_predator_hearthbraise"
+ },
+ "dish_273": {
+  "name": "Soul-Market Hotpot",
+  "ingredients": [
+   "ba_spirit_prime",
+   "soul_eater_prime",
+   "cult_initiate_prime",
+   "trail_rations"
+  ],
+  "benefit": "mp",
+  "flavor": "Souls, bones and blood: the cult's own supper, and full of magic.",
+  "art": "recipe_family_beast_recipe"
+ },
+ "dish_274": {
+  "name": "Jewel-Thief's Curry",
+  "ingredients": [
+   "carbuncle_prime",
+   "demonic_trickster_prime",
+   "apple"
+  ],
+  "benefit": "mp",
+  "flavor": "A carbuncle's jewel saved for a long time, glazed in a rakshasa's trick; pure mana.",
+  "art": "recipe_f11_tri_warden_golem_talos_bone",
+  "cross_depth": true
+ },
+ "dish_275": {
+  "name": "Stone-Ward Drumsticks",
+  "ingredients": [
+   "cockatrice_prime",
+   "abyssal_mimic_prime",
+   "healing_herb"
+  ],
+  "benefit": "save_guard_CON",
+  "flavor": "A cockatrice leg saved from the top floors, basted in deep bile; nothing turns you to stone.",
+  "art": "recipe_prime_nidhogg_brood_recipe",
+  "cross_depth": true
+ },
+ "dish_276": {
+  "name": "Petrifier's Platter",
+  "ingredients": [
+   "cockatrice_prime",
+   "basilisk_prime"
+  ],
+  "benefit": "save_guard_CON",
+  "flavor": "Two stone-gazers on one plate; their stare cannot hold you now.",
+  "art": "recipe_r_f5160_wyrmblood_terrine"
+ },
+ "dish_277": {
+  "name": "Fire-and-Ice Omen Stew",
+  "ingredients": [
+   "fetch_prime",
+   "magma_elemental_prime",
+   "ice_elemental_prime",
+   "apple"
+  ],
+  "benefit": "warning",
+  "flavor": "A fetch is an omen of death. Eat it hot and cold, and know what is coming.",
+  "art": "recipe_combo_wight_holy_water_recipe"
+ },
+ "dish_278": {
+  "name": "Tentacle-and-Marrow Rolls",
+  "ingredients": [
+   "grick_prime",
+   "ossuary_horror_prime",
+   "dried_meat"
+  ],
+  "benefit": "INT",
+  "flavor": "Grick tentacle wrapped round bone marrow; chewy and clever.",
+  "art": "recipe_r_f5160_hierarchy_of_hells_four_pot"
+ },
+ "dish_279": {
+  "name": "Necromancer's Tentacle Stew",
+  "ingredients": [
+   "grick_prime",
+   "death_mage_prime",
+   "dried_meat"
+  ],
+  "benefit": "INT",
+  "flavor": "Dark learning and a cave-worm's coil; your thinking sharpens.",
+  "art": "recipe_ember_rat_ragout"
+ },
+ "dish_280": {
+  "name": "Marrow-Wheel Sky Pie",
+  "ingredients": [
+   "huecuva_prime",
+   "cloud_giant_prime",
+   "wight_prime",
+   "dried_meat"
+  ],
+  "benefit": "WIS",
+  "flavor": "A marrow wheel from the shallow tombs, a ham from the clouds far below; wise and strange.",
+  "art": "recipe_f11_duelist_imp_thief",
+  "cross_depth": true
+ },
+ "dish_281": {
+  "name": "Mud-and-Spice Gumbo",
+  "ingredients": [
+   "mud_crawler_prime",
+   "snake_charmer_prime",
+   "apple"
+  ],
+  "benefit": "sp",
+  "flavor": "Swamp leg and spiced ham, thick as the bog it came from.",
+  "art": "recipe_f21_greater_earth_elemental_cold"
+ },
+ "dish_282": {
+  "name": "Mud-and-Locust Fry-Up",
+  "ingredients": [
+   "mud_crawler_prime",
+   "locust_swarmlord_prime",
+   "apple"
+  ],
+  "benefit": "sp",
+  "flavor": "A mud crawler from the top floors, a locust from the plague below: a meal for a famine.",
+  "art": "recipe_prime_corrupted_treant_recipe",
+  "cross_depth": true
+ },
+ "dish_283": {
+  "name": "Stalactite Drip Soup",
+  "ingredients": [
+   "piercer_prime",
+   "violet_fungus_prime",
+   "dried_meat"
+  ],
+  "benefit": "PER",
+  "flavor": "Drips from the ceiling and stalks from the floor; you notice everything above you.",
+  "art": "recipe_prime_catoblepas_recipe"
+ },
+ "dish_284": {
+  "name": "Rat-and-Shadow Bacon Butty",
+  "ingredients": [
+   "wererat_prime",
+   "mage_slayer_assassin_prime"
+  ],
+  "benefit": "sp",
+  "flavor": "Wererat bacon from the sewers, an assassin's ham from the deep: a thief's lunch.",
+  "art": "recipe_tri_thrice_hewn_golem",
+  "cross_depth": true
+ },
+ "dish_285": {
+  "name": "Heartwood Wyvern Salad",
+  "ingredients": [
+   "dryad_guardian_prime",
+   "wyvern_prime",
+   "wild_mushroom"
+  ],
+  "benefit": "regenerating",
+  "flavor": "A dryad's acorn sprouts in it, and your wounds close like bark.",
+  "art": "recipe_r_f6170_three_primordial_prism"
+ },
+ "dish_286": {
+  "name": "Sticky-Fingers Sausage Roll",
+  "ingredients": [
+   "ethereal_filcher_prime",
+   "kobold_prime",
+   "apple"
+  ],
+  "benefit": "DEX",
+  "flavor": "Light, quick and gone before anyone notices.",
+  "art": "recipe_r_f5160_hierarchy_of_hells_four_pot"
+ },
+ "dish_287": {
+  "name": "Wolf-Cub War Stew",
+  "ingredients": [
+   "fenrir_pup_prime",
+   "demon_knight_prime",
+   "trail_rations"
+  ],
+  "benefit": "STR",
+  "flavor": "A wolf pup's shank, saved and stewed in a demon knight's war-blood.",
+  "art": "recipe_f11_anzu_mushroom_hearth",
+  "cross_depth": true
+ },
+ "dish_288": {
+  "name": "Asgard Hunter's Shanks",
+  "ingredients": [
+   "fenrir_pup_prime",
+   "valkyrie_shade_prime"
+  ],
+  "benefit": "STR",
+  "flavor": "Wolf and Valkyrie, the two ends of every Norse saga.",
+  "art": "recipe_prime_pazuzu_spawn_recipe"
+ },
+ "dish_289": {
+  "name": "Cave-Dweller's Musk Stew",
+  "ingredients": [
+   "troglodyte_prime",
+   "goblin_prime",
+   "wild_mushroom"
+  ],
+  "benefit": "sp",
+  "flavor": "It smells like a troglodyte. It fills like three.",
+  "art": "recipe_f11_charybdis_moss_bogmire"
+ },
+ "dish_290": {
+  "name": "Bandit's Musky Sandwich",
+  "ingredients": [
+   "troglodyte_prime",
+   "bandit_captain_prime",
+   "bread_ration"
+  ],
+  "benefit": "sp",
+  "flavor": "Bandits steal everything except troglodyte meat. Their loss.",
+  "art": "recipe_r_f5160_hierarchy_of_hells_four_pot"
+ },
+ "dish_291": {
+  "name": "Grudge-Bone War Broth",
+  "ingredients": [
+   "revenant_prime",
+   "demon_knight_prime",
+   "bread_ration"
+  ],
+  "benefit": "STR",
+  "flavor": "A revenant comes back for revenge; the demon knight's war-blood makes it strong.",
+  "art": "recipe_prime_cave_bear_recipe",
+  "cross_depth": true
+ },
+ "dish_292": {
+  "name": "Restless Dead Marrowbones",
+  "ingredients": [
+   "revenant_prime",
+   "wight_prime",
+   "apple"
+  ],
+  "benefit": "STR",
+  "flavor": "Two kinds of grave bone, roasted until the marrow gives up its strength.",
+  "art": "recipe_f11_wyrmgrit_nidhogg_wyvern"
+ },
+ "dish_293": {
+  "name": "Serpent-and-Star Riddle Supper",
+  "ingredients": [
+   "jormungandr_spawn_prime",
+   "wormwood_blight_prime",
+   "sphinx_prime",
+   "deep_iron"
+  ],
+  "benefit": "INT",
+  "flavor": "A serpent spawn saved from the top floors, a fallen star's bitter blood, and a sphinx's riddle.",
+  "art": "recipe_f11_hearthclash_giants",
+  "cross_depth": true
+ },
+ "dish_294": {
+  "name": "Coiled Serpent Sausage Roll",
+  "ingredients": [
+   "jormungandr_spawn_prime",
+   "harrow_witch_prime",
+   "apple"
+  ],
+  "benefit": "INT",
+  "flavor": "A sea-serpent's spawn wound round a hedge-witch's sausage.",
+  "art": "recipe_r_f5160_hierarchy_of_hells_four_pot"
+ },
+ "dish_295": {
+  "name": "Sun-Bird Roast",
+  "ingredients": [
+   "ra_serpent_prime",
+   "roc_chick_prime",
+   "hard_cheese",
+   "apple"
+  ],
+  "benefit": "hp",
+  "flavor": "Sun-serpent and roc, roasted golden; you glow and you heal.",
+  "art": "recipe_prime_locust_swarmlord_recipe"
+ },
+ "dish_296": {
+  "name": "Fimbulwinter Shank Stew",
+  "ingredients": [
+   "winter_wolf_prime",
+   "frost_giant_prime",
+   "deep_iron"
+  ],
+  "benefit": "cold_resist",
+  "flavor": "A winter wolf from the top floors and a frost giant from below; the long winter cannot touch you.",
+  "art": "recipe_f11_shadow_specter_pot",
+  "cross_depth": true
+ },
+ "dish_297": {
+  "name": "Cog-and-Bronze Hash",
+  "ingredients": [
+   "clockwork_horror_prime",
+   "talos_prime",
+   "altar_incense",
+   "apple"
+  ],
+  "benefit": "INT",
+  "flavor": "Gears and a bronze giant's heart; you think like a machine.",
+  "art": "recipe_f11_vigil_troll_ettin"
+ },
+ "dish_298": {
+  "name": "Lion-and-Bear Mixed Grill",
+  "ingredients": [
+   "dire_lion_prime",
+   "cave_bear_prime"
+  ],
+  "benefit": "hp",
+  "flavor": "Two of the forest's biggest, on one grill.",
+  "art": "recipe_combo_minotaur_holy_water_recipe"
+ },
+ "dish_299": {
+  "name": "Treasure-Chest Blubber Stew",
+  "ingredients": [
+   "mimic_prime",
+   "void_leviathan_prime"
+  ],
+  "benefit": "sp",
+  "flavor": "A mimic's glue from an early chest and blubber from a leviathan of the void; very, very filling.",
+  "art": "recipe_f11_tri_oracle_aboleth_flayer_star",
+  "cross_depth": true
+ },
+ "dish_300": {
+  "name": "Otyugh Gut-Buster Hotpot",
+  "ingredients": [
+   "otyugh_prime",
+   "draugr_prime",
+   "stone_golem_prime",
+   "trail_rations"
+  ],
+  "benefit": "CON",
+  "flavor": "If an otyugh can digest it, so can you; you come out of it tough.",
+  "art": "recipe_prime_behir_lesser_recipe"
+ },
+ "dish_301": {
+  "name": "Grave-Warm Hotpot",
+  "ingredients": [
+   "vrykolakas_prime",
+   "ammit_spawn_prime",
+   "swamp_moss",
+   "hard_cheese"
+  ],
+  "benefit": "hp",
+  "flavor": "A vrykolakas's bone, still warm, with Ammit's leg; it mends and mends.",
+  "art": "recipe_prime_cave_troll_recipe"
+ },
+ "dish_302": {
+  "name": "Dragon-Heart Bone Broth",
+  "ingredients": [
+   "vrykolakas_prime",
+   "young_dragon_prime"
+  ],
+  "benefit": "hp",
+  "flavor": "A warm vampire bone from the shallow floors, a dragon's heart from the deep; every wound shuts.",
+  "art": "recipe_prime_cave_spider_recipe",
+  "cross_depth": true
+ },
+ "dish_303": {
+  "name": "Weaver's Web Skillet",
+  "ingredients": [
+   "arachne_prime",
+   "vrock_prime",
+   "altar_incense"
+  ],
+  "benefit": "DEX",
+  "flavor": "Arachne wove faster than a goddess. A taste of her and your fingers fly.",
+  "art": "recipe_f11_cinder_firegiant_dragon"
+ },
+ "dish_304": {
+  "name": "Keening Mushroom Soup",
+  "ingredients": [
+   "banshee_prime",
+   "light_elf_hostile_prime",
+   "wild_mushroom"
+  ],
+  "benefit": "WIS",
+  "flavor": "It wails softly as it simmers; you hear warnings no one else does.",
+  "art": "recipe_prime_cave_toad_recipe"
+ },
+ "dish_305": {
+  "name": "Witch Trial Supper",
+  "ingredients": [
+   "banshee_prime",
+   "veiled_inquisitor_prime",
+   "harrow_witch_prime",
+   "swamp_moss"
+  ],
+  "benefit": "WIS",
+  "flavor": "A banshee, a witch and an inquisitor at one table. Somebody will be wiser afterwards.",
+  "art": "recipe_f21_behir_bogmire",
+  "cross_depth": true
+ },
+ "dish_306": {
+  "name": "Black Pudding Pie",
+  "ingredients": [
+   "black_pudding_prime",
+   "pegasus_prime",
+   "elvish_bread",
+   "trail_rations"
+  ],
+  "benefit": "hp",
+  "flavor": "Made from a real black pudding. Yes, the ooze.",
+  "art": "recipe_u_incense_tea"
+ },
+ "dish_307": {
+  "name": "Little Whirlpool Chowder",
+  "ingredients": [
+   "charybdis_spawn_prime",
+   "frost_crawler_prime",
+   "dried_meat"
+  ],
+  "benefit": "sp",
+  "flavor": "Charybdis's spawn swallows the sea; this swallows your hunger.",
+  "art": "recipe_f21_sable_serpent_wyrmling"
+ },
+ "dish_308": {
+  "name": "Two-Golem Heart Stew",
+  "ingredients": [
+   "clay_golem_prime",
+   "flesh_golem_prime",
+   "apple",
+   "swamp_moss"
+  ],
+  "benefit": "hp",
+  "flavor": "Clay and flesh, both built to last. So are you.",
+  "art": "recipe_f21_cave_troll_hearth"
+ },
+ "dish_309": {
+  "name": "End-of-Days Amber Roast",
+  "ingredients": [
+   "clay_golem_prime",
+   "apocalypse_herald_prime",
+   "hard_cheese",
+   "river_salt"
+  ],
+  "benefit": "hp",
+  "flavor": "A clay golem's heart, kept since the early floors, roasted in the herald's ichor.",
+  "art": "recipe_prime_mythic_hydra_recipe",
+  "cross_depth": true
+ },
+ "dish_310": {
+  "name": "Many-Heads Mirage Steak",
+  "ingredients": [
+   "displacer_beast_prime",
+   "hydra_prime",
+   "holy_water",
+   "river_salt"
+  ],
+  "benefit": "displacement",
+  "flavor": "Six legs, nine heads, and you are never quite where they strike.",
+  "art": "recipe_f11_fierce_titan_priest"
+ },
+ "dish_311": {
+  "name": "Headless Horseman's Stew",
+  "ingredients": [
+   "dullahan_spawn_prime",
+   "hydra_prime",
+   "holy_water"
+  ],
+  "benefit": "fear_immune",
+  "flavor": "One head too few, nine heads too many; fear cannot find you.",
+  "art": "recipe_f21_corrosive_ooze_bogmire"
+ },
+ "dish_312": {
+  "name": "Black Rider's Thunder Toast",
+  "ingredients": [
+   "dullahan_spawn_prime",
+   "behir_lesser_prime",
+   "hard_cheese"
+  ],
+  "benefit": "fear_immune",
+  "flavor": "The headless rider and the lightning serpent; nothing frightens you after.",
+  "art": "recipe_f11_tri_rally_three_horns"
+ },
+ "dish_313": {
+  "name": "Lightning-Reflex Platter",
+  "ingredients": [
+   "grell_prime",
+   "roper_prime",
+   "talos_prime",
+   "crystal_shard"
+  ],
+  "benefit": "DEX",
+  "flavor": "Spark, snare and bronze; your hands are faster than your eyes.",
+  "art": "recipe_r_f6170_thrice_lich_wyrmblood"
+ },
+ "dish_314": {
+  "name": "Primordial Silt Bisque",
+  "ingredients": [
+   "lahamu_prime",
+   "aboleth_lesser_prime",
+   "dried_meat"
+  ],
+  "benefit": "mp",
+  "flavor": "Mud from the first sea and slime from the deep ones; old, strange magic.",
+  "art": "recipe_r_f5160_thrice_wise_crone_pot"
+ },
+ "dish_315": {
+  "name": "Scythe-Bone Lava Broth",
+  "ingredients": [
+   "lesser_death_prime",
+   "magma_elemental_prime",
+   "river_salt",
+   "dried_meat"
+  ],
+  "benefit": "drain_resist",
+  "flavor": "Death's own bone in a pot of magma; nothing can drain you.",
+  "art": "recipe_prime_charybdis_spawn_recipe"
+ },
+ "dish_316": {
+  "name": "Gravel-Crusted Ribs",
+  "ingredients": [
+   "mohrg_prime",
+   "xorn_prime"
+  ],
+  "benefit": "DEX",
+  "flavor": "Crunchy outside, quick inside.",
+  "art": "recipe_prime_dread_sphinx_recipe"
+ },
+ "dish_317": {
+  "name": "Pharaoh's Dragon Marrowbones",
+  "ingredients": [
+   "mummy_prime",
+   "dracolich_prime"
+  ],
+  "benefit": "drain_resist",
+  "flavor": "A mummy's shank from the upper tombs, a dracolich's bone from the deep; your life stays yours.",
+  "art": "recipe_f11_wyrmgrit_wyvern_dragon",
+  "cross_depth": true
+ },
+ "dish_318": {
+  "name": "Embalmer's Salt Soup",
+  "ingredients": [
+   "mummy_prime",
+   "ghoul_prime",
+   "river_salt",
+   "altar_incense"
+  ],
+  "benefit": "drain_resist",
+  "flavor": "Salted like a mummy; your strength stays wrapped up tight.",
+  "art": "recipe_prime_chimera_recipe"
+ },
+ "dish_319": {
+  "name": "Temple Serpent Rolls",
+  "ingredients": [
+   "naga_guardian_prime",
+   "harrow_witch_prime",
+   "altar_incense",
+   "holy_water"
+  ],
+  "benefit": "WIS",
+  "flavor": "A guardian naga's tail and a witch's sausage, blessed twice.",
+  "art": "recipe_r_f5160_hierarchy_of_hells_four_pot"
+ },
+ "dish_320": {
+  "name": "Night-Thunder Ink Stew",
+  "ingredients": [
+   "nue_prime",
+   "star_spawn_prime"
+  ],
+  "benefit": "mp",
+  "flavor": "The nue's cry and a star spawn's ink; your mind fills like a night sky.",
+  "art": "recipe_f21_demonic_imp_warmth"
+ },
+ "dish_321": {
+  "name": "Surf-and-Turf Grill",
+  "ingredients": [
+   "sea_serpent_norse_prime",
+   "owlbear_prime",
+   "healing_herb"
+  ],
+  "benefit": "hp",
+  "flavor": "Sea serpent and owlbear on one grill; you mend from both ends.",
+  "art": "recipe_f11_fierce_warchief_warlord"
+ },
+ "dish_322": {
+  "name": "Compost-Baked Rump",
+  "ingredients": [
+   "shambling_mound_prime",
+   "catoblepas_prime"
+  ],
+  "benefit": "hp",
+  "flavor": "Baked slowly in a shambling mound's heat; it falls apart, and you mend.",
+  "art": "recipe_f11_tri_insight_hag_flayer_thoth"
+ },
+ "dish_323": {
+  "name": "Vampire-Hunter's Supper",
+  "ingredients": [
+   "strigoi_prime",
+   "veiled_inquisitor_prime",
+   "healing_herb"
+  ],
+  "benefit": "PER",
+  "flavor": "A strigoi bone from the shallow crypts, an inquisitor's ham from the deep: you see what hides.",
+  "art": "recipe_f21_erlking_shadow",
+  "cross_depth": true
+ },
+ "dish_324": {
+  "name": "Barrow-Wyrm Stew",
+  "ingredients": [
+   "lindworm_prime",
+   "draugr_prime"
+  ],
+  "benefit": "CON",
+  "flavor": "A lindworm's coil and a draugr's bone; you grow as tough as a barrow mound.",
+  "art": "recipe_f21_tri_nalfeshnee_oracle"
+ },
+ "dish_325": {
+  "name": "Fallen-Star Serpent Sausages",
+  "ingredients": [
+   "lamia_prime",
+   "void_seraph_prime",
+   "star_spawn_prime",
+   "deep_iron"
+  ],
+  "benefit": "mp",
+  "flavor": "A lamia's sausage saved from the upper floors, glazed with ash-light from the void.",
+  "art": "recipe_f21_tri_deep_iron_bulwark",
+  "cross_depth": true
+ },
+ "dish_326": {
+  "name": "Boar-Hunt Blood Roast",
+  "ingredients": [
+   "asterion_minotaur_prime",
+   "vampire_prime",
+   "apple"
+  ],
+  "benefit": "hp",
+  "flavor": "The boar that took a hundred heroes, roasted with a vampire's bone.",
+  "art": "recipe_prime_primordial_titan_recipe"
+ },
+ "dish_327": {
+  "name": "Patriarch's Bedrock Bangers",
+  "ingredients": [
+   "iron_patriarch_prime",
+   "bone_devil_prime",
+   "earth_elemental_prime",
+   "apple"
+  ],
+  "benefit": "CON",
+  "flavor": "Links from the iron patriarch's own table, brined in devil's salt and bedrock.",
+  "art": "recipe_tri_thrice_hewn_golem",
+  "cross_depth": true
+ },
+ "dish_328": {
+  "name": "Witch-Queen's Sausage Supper",
+  "ingredients": [
+   "rangda_prime",
+   "harrow_witch_prime",
+   "altar_incense"
+  ],
+  "benefit": "WIS",
+  "flavor": "A hedge-witch's sausage from the upper floors, kissed by Rangda the witch-queen.",
+  "art": "recipe_f21_troll_brute_hearth",
+  "cross_depth": true
+ },
+ "dish_329": {
+  "name": "Bone-Fence Hotpot",
+  "ingredients": [
+   "baba_yaga_prime",
+   "zombie_prime",
+   "pit_fiend_spawn_prime",
+   "abyssal_kelp"
+  ],
+  "benefit": "hp",
+  "flavor": "Baba Yaga's fence is made of bones. So is this pot, and it mends you.",
+  "art": "recipe_prime_cerberus_recipe",
+  "cross_depth": true
+ },
+ "dish_330": {
+  "name": "Midgard Serpent Steak",
+  "ingredients": [
+   "jormungandr_juvenile_prime",
+   "draugr_prime",
+   "altar_incense"
+  ],
+  "benefit": "CON",
+  "flavor": "A young world serpent's steak with a draugr's bone; you hold like the earth.",
+  "art": "recipe_f41_marshal_iron_steak",
+  "cross_depth": true
+ },
+ "dish_331": {
+  "name": "Serpent-and-Stone Pie",
+  "ingredients": [
+   "jormungandr_juvenile_prime",
+   "stone_golem_prime",
+   "bread_ration",
+   "deep_iron"
+  ],
+  "benefit": "CON",
+  "flavor": "Coils, runes and iron: a pie as tough as a mountain.",
+  "art": "recipe_f11_frostcake_cloud_frost",
+  "cross_depth": true
+ },
+ "dish_332": {
+  "name": "Twenty-Armed Demon Curry",
+  "ingredients": [
+   "ravanas_arm_prime",
+   "ugallu_demon_prime"
+  ],
+  "benefit": "STR",
+  "flavor": "Ravana had twenty arms. One bite and you could use them all.",
+  "art": "recipe_f21_gnoll_fang_vigor",
+  "cross_depth": true
+ },
+ "dish_333": {
+  "name": "Demon-King's Brine Roast",
+  "ingredients": [
+   "ravanas_arm_prime",
+   "bone_devil_prime",
+   "altar_incense"
+  ],
+  "benefit": "STR",
+  "flavor": "The demon king of Lanka's strength, brined and roasted.",
+  "art": "recipe_prime_sets_jackal_recipe",
+  "cross_depth": true
+ },
+ "dish_334": {
+  "name": "Anansi's Last Story Skillet",
+  "ingredients": [
+   "anansi_prime",
+   "light_elf_hostile_prime",
+   "wormwood_blight_prime",
+   "altar_incense"
+  ],
+  "benefit": "WIS",
+  "flavor": "Anansi owns every story. This one ends with you wiser.",
+  "art": "recipe_f41_imp_lord_ember_pan",
   "cross_depth": true
  }
 }
