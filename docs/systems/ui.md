@@ -20,8 +20,9 @@ and the welcome / name-entry flow.
   composition, effect chips, powers rows, in-sight rows
 - `src/hud_context.py` — pure data helpers (`active_power_rows`,
   `visible_context_rows`, `hud_item_name`); the known-kind identify rule
-- `src/game_menus.py` — `MenuMixin`, menu input handlers, `_COOK_TABS`,
+- `src/game_menus.py` — `MenuMixin`, menu input handlers, `_open_cook_menu`,
   `_open_identify_menu`, `_open_power_menu`, `_activate_gold_offering`
+- `src/cook_menu.py` — pure words and list window of the cook menu (§13)
 - `src/game_input.py` — `InputMixin.handle_event` state dispatch and
   `_player_input` key routing
 - `src/fantasy_ui.py` — `FP` palette, font loader, chrome primitives
@@ -827,38 +828,75 @@ the right edge.
 
 ---
 
-## 13. Cook menu (`_draw_cook_menu` L4454-4530)
+## 13. Cook menu (`_draw_cook_menu`; the kitchen rebuild, K2, 2026-11-14)
 
-**Tabs:** `_COOK_TABS = (('Recipes', 'compound'),)` — ONE tab. The
-single-cook tab was removed on 2026-06-07; the `'single'` branch
-remains as dead code in the fallback below `return` (safe to delete).
+Brandon: "a clearly sorted menu that helps me determine what I want to
+cook quickly, based on my current game status; see what dishes I am
+building towards, but can't cook yet; see big payoff meals".
 
-**Entries:** compound recipes from `self.cook_compound_recipes`,
-rendered through `_draw_decision_menu_variant_a` with a `_RecipeIcon`
-proxy that sprites to `recipe_{id}` then falls back to the first
-ingredient's sprite.
+**Data:** `game_menus._open_cook_menu` reads `kitchen.menu_rows` once
+per tab into `self._cook_rows` (nothing in the pack changes while the
+menu is open), the pack's counts into `_cook_counts`, and the opening
+tab and why into `_cook_open` (`kitchen.opening_choice`). With no rows
+in any tab the menu stays shut ("You have nothing to cook yet...").
 
-**Context lines:**
-- `COOKING` title (GOLD_BRIGHT)
-- `SP {sp}/{max_sp}` (color-coded: green > 30, amber > 10, red
-  below)
-- `Recipes available: {N}`
-- **v2.15.0 UI-rot fix line:** `"Cooking uses one cooking question.
-  Right = full meal; wrong = ruined."` (FADED_TEXT) — matches cook v2
-  flow.
+**Tabs:** HP / SP / MP / Stat / Special (`kitchen.MENU_TABS`), each
+with its dishes READY in brackets. Left / Right (and Tab, Shift+Tab
+back) move, wrapping round; every tab is reachable, an empty one
+included. The tab it opened on carries a pip (`_draw_action_tabs(...,
+marked=)`, `_ui_pip`), and the line beside the strip (or under it, when
+there is no room) says why: "Opened on HP: you are hurt, 7 of 30 HP"
+(`cook_menu.reason_line`; amber for hurt / hungry / low mana).
 
-**Open:** `game_menus._open_cook_menu` filters compound recipes to
-those the player has ingredients for; sets `self._cook_tab`,
-`_cook_sel`, `_cook_scroll`.
+**List** (`_cook_draw_list`, laid out by `_cook_list_layout`, cached
+until the menu opens again): an optional note ("Nothing ready in Special
+yet. Try SP: 3 dishes ready."), then each section's header and its rows
+(`cook_menu.list_items`): Ready to Cook, Building Toward, Legendary
+Feasts (gold). A row: the dish's own small picture (faded when not
+ready; never a glyph: `_cook_dish_icon` falls back to the first
+ingredient's art, else nothing), its name, a chip (a ready dish's main
+effect in its tab's colour: "+45 HP", "DEX +1", "Dark Vision"; else
+"2 of 4"), and a second line under the chip: what a ready dish uses and
+how many the pack holds, or "Needs: Wyvern Tail, Hard Cheese"
+(`cook_menu.row_line`; what does not fit in two lines is counted, "and 2
+more", never cut). A legendary row has a 2 px gold frame. Shrink then
+scroll: names at 20, 18, then 16 px, the largest at which every row
+fits; still too many, the list scrolls (`cook_menu.window`: the focus
+in view, a section's header with its first row), with a bar and
+"6-9 of 12".
 
-**Input:** `_cook_menu_input` — LEFT/RIGHT cycles tabs via
-`_cycle_tab(..., _cook_tab_has_items)` (empty tabs skip); UP/DOWN
-scrolls; ENTER or a-z fires `_cook_compound`.
+**Detail** (`_cook_draw_detail`, planned by `_cook_detail_plan`): the
+name; the dish's picture LARGE (`lore_art.plate('item', recipe['art'])`,
+the Bestiary's loader and framed well, `_draw_plate_well`; a gold
+2 px frame for a legendary feast or trophy dish; no art, no picture);
+beside it the status ("Ready to Cook", "Building Toward: 2 of 4",
+"Legendary Feast: 4 of 5"), the cooking question's tier and What It
+Does Now (`kitchen.dish_effects` less `kitchen.dish_lasting`); For Good
+(the lasting lines); each ingredient with its own 24 px picture, what to
+do about a missing one ("Hunt Wyvern Tail", "Find or buy Hard Cheese",
+"Boss trophy: ...") and "Have 2" / "0 of 1"; Enter's action; the
+flavour line. Numbers keep their units on one line
+(`cook_menu.keep_together`). The ladder `_COOK_DETAIL_LADDER` picks the
+largest picture and type that let everything fit, and drops the flavour
+only after both have shrunk; For Good and the flavour sit beside the
+picture when they fit there.
 
-**Dead code to clean (SYSTEMS_AUDIT §5):** below the explicit `return`
-at L4531 is the legacy `_cook_item` path with two `_format_tier_preview`
-branches (one v2.6.4, one legacy `tier_outcomes`). Marked unreachable.
-Removing it is a straight delete.
+**Input:** `_cook_menu_input`. Up / Down, PgUp / PgDn, Home / End move.
+Enter on a ready dish (re-checked against the pack) cooks it through
+`Game._cook_compound` (one cooking question; the ingredients are used up
+either way). Enter on a dish not ready cooks nothing: it logs "X is not
+ready: you still need A and B." and the detail pane shows the same line
+until the selection moves.
+
+**Empty tab:** one line in the list, naming the tab that has something
+("No dish in the MP tab uses what you carry yet. Try SP: 3 dishes
+ready."), and the tab's purpose in the detail pane (`cook_menu.TAB_BLURBS`).
+
+**Captures:** `menu_cook`, `menu_cook_tab_{hp,sp,mp,stat,special}`,
+`menu_cook_building`, `menu_cook_not_ready`, `menu_cook_legendary`,
+`menu_cook_legendary_ready`, `menu_cook_hurt`, `menu_cook_no_mana`,
+`menu_cook_empty_tab`, `menu_cook_long` (`tools/ui/capture.py`).
+Tests: `tests/test_cook_menu.py`.
 
 ---
 
@@ -1190,8 +1228,8 @@ every item across the columns. "9-16 of 20" in the footer.
   per-menu cursor
 - `_menu_item_detail_lines(item, action)` — standard "action phrase +
   mechanic preview" subpanel content
-- `_menu_recipe_detail_lines(recipe)` — recipe-specific preview
-  (tier, SP/HP, buff / permanent power)
+- the cook menu draws its own list and detail pane (§13), not
+  through these helpers
 - `_menu_base_context([lines])` — builds the standard subtitle block
   used by the context panel
 
@@ -1310,8 +1348,8 @@ messages the action wrote (the quiz result too) are shown under
    end create the "ghost text" bug. Use `_ui_modal_panel` for new modals.
 2. **Every `_draw_*` method handles the empty / zero case.** Example:
    `_draw_identify_menu` guards zero candidates upstream in
-   `_open_identify_menu`; `_draw_cook_menu` renders an empty list
-   gracefully.
+   `_open_identify_menu`; `_draw_cook_menu` says what an empty tab
+   lacks and names the tab that has something.
 3. **Every list has a scroll attr.** `scroll_attr='_name_scroll'` on
    `_draw_decision_menu_variant_a` keeps the scroll position across
    frames; losing it resets scroll on every redraw.

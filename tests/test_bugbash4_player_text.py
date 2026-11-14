@@ -2,9 +2,9 @@
 
 CQ-07  the Cook menu's TROPHY badge keyed on `recipe_class`, a field that
        left recipes.json in v2.6.4, so none of the 30 trophy recipes was
-       ever badged. Since the kitchen rebuild (2026-11-14) the gold badge
-       marks the 14 trophy dishes (TROPHY) and the legendary feasts
-       (LEGENDARY).
+       ever badged. Since the kitchen rebuild (2026-11-14, K2) the 14
+       trophy dishes and the legendary feasts sit in the gold Legendary
+       Feasts section, each row in a gold frame, and say what they are.
 CQ-10  Nidhoggr's trophy said "permanent poison immunity"; the effect it
        grants (poison_resist) stops poisoning and halves poison damage.
 CQ-11  three quirks (and the Blessed status) promised "all quiz timers
@@ -37,20 +37,33 @@ def test_trophy_and_legendary_recipes_are_recognised():
     assert len(flagged) == 14 + sum(1 for r in _raw_recipes().values() if r.get('legendary'))
 
 
-def test_cook_menu_badges_trophy_recipes(monkeypatch):
+def test_cook_menu_marks_trophy_and_legendary_dishes(monkeypatch):
+    import kitchen
+    import cook_menu
     from main import Game
-    g = Game(pygame.display.set_mode((1, 1)), player_name='__test_cq07__')
+    from fantasy_ui import KT
+    g = Game(pygame.display.set_mode((1280, 720)), player_name='__test_cq07__')
     trophy, feast, plain = _recipes()
-    g.cook_compound_recipes = [trophy, feast, plain]
-    seen = {}
-    monkeypatch.setattr(g, '_draw_decision_menu',
-                        lambda **kw: seen.update(kw), raising=False)
-    g._draw_cook_menu()
-    entries = seen['entries']
-    assert entries[0]['badge'] == 'TROPHY'
-    assert entries[1]['badge'] == 'LEGENDARY'
-    assert entries[2]['badge'] == ''
-    assert entries[0]['name_color'] != entries[2]['name_color']
+    counts = kitchen.held_counts([])
+    rows = [kitchen._row(g.player, r, counts) for r in (trophy, feast, plain)]
+    assert [r['group'] for r in rows] == ['legendary', 'legendary', 'building']
+    assert cook_menu.status_line(rows[0]).startswith('Trophy Dish')
+    assert cook_menu.status_line(rows[1]).startswith('Legendary Feast')
+    assert cook_menu.status_line(rows[2]).startswith('Building Toward')
+    frames = []
+    real = pygame.draw.rect
+
+    def spy(surf, color, rect, width=0, *a, **k):
+        if width == 2:
+            frames.append(tuple(color)[:3])
+        return real(surf, color, rect, width, *a, **k)
+    monkeypatch.setattr(pygame.draw, 'rect', spy)
+    words = ('2 of 5', 60, ['A Dish'], ['Needs: a part'], pygame.font.Font(None, 20))
+    for row in rows:
+        frames.clear()
+        g._cook_draw_row(pygame.Rect(10, 10, 400, 60), row, words, False, 'hp')
+        gold = tuple(KT.GOLD) in frames
+        assert gold == (row['group'] == 'legendary'), row['id']
 
 
 # ── CQ-10 ────────────────────────────────────────────────────────────────────

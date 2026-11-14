@@ -114,6 +114,7 @@ src/
   status_effects.py   - Buffs/debuffs (paralysis, poison, berserk, etc.)
   food_system.py      - Harvest and cook (the two quiz flows), eating, potions
   kitchen.py          - The kitchen: kin ingredients, the recipe book, what a dish gives (cooking_rules.json), the cook menu's rows
+  cook_menu.py        - The cook menu's words (why it opened where, chips, what is missing) and its list window (pure)
   container_system.py - Chests, sacks, lockable containers (lockpicking)
   economy.py          - The gold economy: what a floor earns and what things cost
   traders.py          - Named traders: who, where, their stock, prices, selling, services
