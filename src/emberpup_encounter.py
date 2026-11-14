@@ -684,7 +684,15 @@ class BloomleafMixin:
                      for r in [_room_of(rooms, m.x, m.y)] if r is not None}
         here = _room_of(rooms, self.player.x, self.player.y)
         start = rooms[0] if rooms else None
-        picks = [r for r in rooms if id(r) not in pup_rooms and r is not here and r is not start]
+        # Nor a room with a trader's stall in it (a save from before him
+        # meets him on a floor whose stall is already set out): his room is
+        # his, and the hero would have to corner him to trade.
+        from mystery_system import MerchantNPC
+        stall_rooms = {id(r) for g in (getattr(self, 'ground_items', None) or ())
+                       if isinstance(g, MerchantNPC)
+                       for r in [_room_of(rooms, g.x, g.y)] if r is not None}
+        picks = [r for r in rooms if id(r) not in pup_rooms and id(r) not in stall_rooms
+                 and r is not here and r is not start]
         if not picks:
             picks = [r for r in rooms if id(r) not in pup_rooms and r is not here]
         rng.shuffle(picks)

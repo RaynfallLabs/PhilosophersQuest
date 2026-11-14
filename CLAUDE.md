@@ -177,8 +177,14 @@ src/
 data/
   questions/        - Quiz question JSON files organized by subject
   monsters.json     - Monster definitions
-  items/            - Item JSON files by category (weapon/armor/shield/accessory/artifact)
+  items/            - Item JSON files by category (weapon/armor/shield/accessory/artifact/flask...)
   hints.json        - In-game hint pool
+  affinity_rules.json, family_affinity.json - The weak / resisted / shrugs-off steps; each family's lore profile
+  enemy_lore.json, kit_sense.json - What Recall Lore, probing and the quests teach of a creature; Kit Sense's lines
+  arsenal.json      - Coatings, thrown flasks, Press or Guard, the parry, the named counters
+  gear_rules.json   - Armour and ring rules: thresholds, donning turns, load tiers, the light / heavy trade
+  traders.json      - The named traders: stock, services, stall counters, the smiths' inlays and linings
+  stray_kids.json, abandoned_emberpup.json - Two of the run's set pieces (the Stray Kids stage; the Emberpup and Old Nickel)
   (data/ holds only runtime JSON; the old generator/migration scripts were moved out)
 
 assets/

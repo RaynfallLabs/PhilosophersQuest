@@ -17,8 +17,10 @@ data/kit_sense.json, and whether it is `in_hand` already (the wielded
 weapon; a coating already on the blade).
 
 A tool's `mult` is how its blow meets the creature as far as the hero knows
-his own tool: a weapon's form always (its shape is plain to see), its metal
-and its blessing once he knows the weapon (identified, or its kind known).
+his own tool: a weapon's form always (its shape is plain to see), the silver
+or cold iron a smith worked into it and a coating he put on it always (his
+own work), its metal and its blessing once he knows the weapon (identified,
+or its kind known).
 It is the same reckoning the blow makes (combat.weapon_type_multiplier,
 held to the cap). Pure module: no pygame, no Game.
 """
@@ -88,9 +90,31 @@ def knows_weapon(player, weapon) -> bool:
     return bool(items.is_fully_known(weapon, player) or items.is_split_type_known(player, weapon))
 
 
+def own_work_mult(weapon, monster) -> float:
+    """The substance a weapon the hero does not otherwise know still strikes
+    with, as far as he knows it: what he put on it himself. He paid a smith
+    to silver it or inlay cold iron (smithing.py), and he worked the coating
+    in with his own hands (coatings.py), so both count while its metal and
+    its blessing are still a mystery. 1.0 when there is neither."""
+    if weapon is None:
+        return 1.0
+    inlay = getattr(weapon, 'inlay', None) or None
+    coat = getattr(weapon, 'coating', None) or None
+    if not inlay and not coat:
+        return 1.0
+    import combat
+    from types import SimpleNamespace
+    probe = SimpleNamespace(material='', damage_types=[inlay] if inlay else [],
+                            buc='uncursed', coating=coat, is_unique=False,
+                            effective_against=())
+    return combat.weapon_type_multiplier(probe, monster, blessed=False)[1]
+
+
 def known_mult(player, weapon, monster) -> float:
     """How a weapon's blow meets the creature, as far as the hero knows the
-    weapon: its form always; its metal, blessing and bane once he knows it."""
+    weapon: its form always; its metal, blessing and bane once he knows it;
+    the silver or cold iron a smith worked into it and the coating on it
+    always (his own work: own_work_mult)."""
     import affinity
     import combat
     if knows_weapon(player, weapon):
@@ -101,7 +125,7 @@ def known_mult(player, weapon, monster) -> float:
         form, sub = combat.weapon_type_multiplier(weapon, monster, blessed=blessed)
     else:
         form, _sub = combat.weapon_type_multiplier(weapon, monster, blessed=False)
-        sub = 1.0
+        sub = own_work_mult(weapon, monster)
     if weapon is not None and getattr(weapon, 'ignore_resistances', False):
         form = max(1.0, form)
     return affinity.capped(form * sub)
