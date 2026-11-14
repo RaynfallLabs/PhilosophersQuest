@@ -112,7 +112,8 @@ src/
   rededication.py     - The altar's rededication: give a stat point back to take another, once per altar
   boons.py            - Gate-boss gifts (pick one of three)
   status_effects.py   - Buffs/debuffs (paralysis, poison, berserk, etc.)
-  food_system.py      - Harvest and cooking mechanics
+  food_system.py      - Harvest and cook (the two quiz flows), eating, potions
+  kitchen.py          - The kitchen: kin ingredients, the recipe book, what a dish gives (cooking_rules.json), the cook menu's rows
   container_system.py - Chests, sacks, lockable containers (lockpicking)
   economy.py          - The gold economy: what a floor earns and what things cost
   traders.py          - Named traders: who, where, their stock, prices, selling, services

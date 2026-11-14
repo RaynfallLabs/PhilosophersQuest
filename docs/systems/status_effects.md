@@ -372,4 +372,4 @@ From SYSTEMS_AUDIT.md §9:
 - **P2** — `spells.py::elder_scream` — `mp_cost: 10` at `tier: 2`. Outside T2 5-8 MP band.
 - **P3** — `MAX_EFFECT_DURATION=60` with additive stacking on non-CONTROL effects is asymmetric with CONTROL's refresh-max. Non-CONTROL stacking stays additive by design (regen + regen = longer regen), but worth noting.
 - **P3** — Alternate potion label `hallucinating_pot` has identical semantics to `hallucinating`; two ids exist so UI can tell them apart in flavor text. Verify both are in all the right sets if you touch either.
-- **P3** — `cook_outcomes.json::trophy_medusa::temp_power = "petrify_resist"` is non-canonical; works only via the legacy `food_system._TEMP_POWER_REMAP` alias → `save_guard_CON`. Data lies to itself (self-comment says "canonical status_effects"). Pending cleanup.
+- (Fixed by the kitchen rebuild, 2026-11-14: cook_outcomes.json is gone, and every dish names a canonical status id. `food_system._TEMP_POWER_REMAP` is dormant.)

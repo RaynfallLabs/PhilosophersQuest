@@ -107,8 +107,7 @@ def build() -> list[dict]:
     OWNER = {'weapon': 'weapon', 'ammo': 'weapon', 'armor': 'armor', 'shield': 'armor',
              'accessory': 'magic', 'wand': 'magic', 'scroll': 'magic', 'potion': 'magic',
              'spellbook': 'magic', 'artifact': 'magic', 'container': 'magic', 'lockpick': 'magic',
-             'food': 'food', 'ingredient': 'food', 'prime_cuts': 'food', 'recipes': 'food',
-             'cook_outcomes': 'food'}
+             'food': 'food', 'ingredient': 'food', 'harvest_map': 'food', 'recipes': 'food'}
     LEGACY = {  # old combo names that are not a current template
         'weapon': ('sword', 'axe', 'dagger', 'mace', 'bow', 'crossbow', 'spear', 'club', 'flail', 'glaive',
                    'halberd', 'hammer', 'maul', 'staff', 'rapier', 'scimitar', 'sling', 'morningstar',
@@ -163,7 +162,7 @@ def build() -> list[dict]:
         # identified or not (Brandon, 2026-10-09), so each needs its own picture.
         # Leaving them out here is why 193 of them borrowed a family picture
         # until bug bash 4 (call 17).
-        if cat in ('accessory_appearances', 'cook_outcomes', 'recipes', 'prime_cuts'):
+        if cat in ('accessory_appearances', 'recipes', 'harvest_map'):
             continue
         for iid, v in d.items():
             if ('items', iid) not in have:

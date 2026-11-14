@@ -51,13 +51,11 @@ class MenuMixin:
     # ------------------------------------------------------------------
 
     def _open_cook_menu(self):
-        # Cooking is ONE flat list of every recipe the player can make
-        # right now, single-ingredient first (2026-10-03 restore). Prior
-        # state had a `len(set(ings)) < 2` filter that hid all 537
-        # single-ingredient recipes after the Single tab was removed in
-        # 2026-06-07 — a kid who harvested one prime cut had nothing to
-        # cook until they built up multiple ingredient types.
-        # Assorted Monster Jerky is still EATEN (z), not cooked.
+        # Cooking is ONE flat list of every dish the pack can cook right now,
+        # single-ingredient dishes first: every ingredient has one dish of
+        # its own, so a kid who harvested one part always has something to
+        # cook. (The tabbed menu by main benefit is built on
+        # kitchen.menu_rows / kitchen.opening_tab.)
         self.cook_menu_items = []
         self.cook_compound_recipes = get_available_compound_recipes(self.player.inventory)
         if not self.cook_compound_recipes:

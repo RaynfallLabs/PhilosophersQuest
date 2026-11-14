@@ -275,8 +275,8 @@ class Monster:
         # harvest is a single-question flow now — read kept for old-pickle
         # compat but defaults gracefully.
         self.harvest_threshold = defn.get('harvest_threshold', 2)
-        # ingredient_id: dead JSON field — harvest v4 resolves the drop via
-        # prime_cuts.json (looked up by monster.kind / tags), not this field.
+        # ingredient_id: dead JSON field: the harvest resolves the drop via
+        # data/items/harvest_map.json (by monster.kind), not this field.
         # Read kept for old-pickle compat.
         self.ingredient_id     = defn.get('ingredient_id', None)
         self.min_level: int    = int(defn.get('min_level', 1))

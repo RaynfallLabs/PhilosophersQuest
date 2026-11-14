@@ -199,32 +199,28 @@ def test_every_recipe_has_name_and_ingredients():
 
 
 def test_every_recipe_ingredient_resolves():
-    """No recipe may reference an ingredient that doesn't exist."""
+    """No recipe may reference an ingredient (or ration) that doesn't exist."""
+    import kitchen
     from food_system import _raw_recipes, _raw_ingredients
     recipes = _raw_recipes()
     ingredients = _raw_ingredients()
     missing = []
     for rid, r in recipes.items():
         for ing in r.get('ingredients', []):
-            if ing not in ingredients:
+            if ing not in ingredients and ing not in kitchen.foods():
                 missing.append((rid, ing))
     assert not missing, f"Recipes reference missing ingredients: {missing[:5]}"
 
 
 def test_every_recipe_has_effect():
-    """v2.6.4: every recipe must reference a resolvable outcome_id in
-    data/items/cook_outcomes.json (or carry legacy fields for pre-v2.6.4 data)."""
-    from food_system import _raw_recipes, _load_outcomes
-    recipes = _raw_recipes()
-    outcomes = _load_outcomes()
+    """Every dish names a main benefit (its menu tab) and gives SP: the
+    numbers come from data/cooking_rules.json (kitchen.dish_outcome)."""
+    import kitchen
     no_effect = []
-    for rid, r in recipes.items():
-        oid = r.get('outcome_id')
-        if oid and oid in outcomes:
-            continue
-        if 'tier_outcomes' in r or 'sp' in r or 'bonus_type' in r:
-            continue
-        no_effect.append(rid)
+    for r in kitchen.book():
+        out = kitchen.dish_outcome(r)
+        if out['tab'] not in kitchen.MENU_TABS or out['sp'] <= 0:
+            no_effect.append(r['id'])
     assert not no_effect, f"Recipes with no effect: {no_effect[:5]}"
 
 

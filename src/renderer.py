@@ -53,9 +53,10 @@ _UNIQUE_SPRITE_FALLBACK = {
 }
 # (hand_of_glory, ruby_rod, amulet_of_hippolyta and ring_of_solomons_authority
 # borrowed pictures here until bug bash 4, call 17 gave each its own.)
-# Generic icon for cooking ingredients (prime cuts, parts, trophies, foraged) --
-# 550+ of them ship no per-id art and rendered as the '~'/'*' glyph. A meat-cut
-# stand-in reads as "a cooking ingredient" far better than a punctuation glyph.
+# Generic icon for a cooking ingredient that ships no picture of its own (every
+# kitchen ingredient has one since the 2026-11-14 rebuild; this is the safety
+# net). A meat-cut stand-in reads as "a cooking ingredient" far better than a
+# punctuation glyph.
 _INGREDIENT_FALLBACK_SPRITE = 'prime_beef'
 
 # Since bug bash 4 (call 17) every current scroll, wand and spellbook ships its own

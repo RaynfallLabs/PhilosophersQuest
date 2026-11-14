@@ -636,10 +636,13 @@ class Player:
     # prepared character that could not lose.)
     COOK_MEALS_PER_STAT_POINT = 2
 
-    def feed_cut_stat(self, stat: str) -> tuple[int, int]:
-        """A proper meal cooked from a cut of `stat`. Returns (points gained,
-        meals now banked toward the next point); (0, -1) if it taught
-        nothing (this floor's lesson is used, or the stat is at its cap)."""
+    def feed_cut_stat(self, stat: str, lessons: int = 1) -> tuple[int, int]:
+        """A stat dish cooked right: the floor's one lesson in `stat`.
+        Returns (points gained, meals now banked toward the next point);
+        (0, -1) if it taught nothing (this floor's lesson is used, or the
+        stat is at its cap). A rich dish (kitchen: worth 2.5 or more, or a
+        legendary feast) is `lessons` 2: a whole point at once, still the
+        floor's one lesson and still under the cap."""
         if stat not in self.cooking_stat_gained:
             return 0, -1
         if int(getattr(self, '_cook_stat_gain_this_floor', 0)) >= self.PER_FLOOR_STAT_CAP:
@@ -650,12 +653,12 @@ class Player:
             getattr(self, '_cook_stat_gain_this_floor', 0)) + 1
         if not isinstance(getattr(self, 'cook_stat_meals', None), dict):
             self.cook_stat_meals = {}
-        banked = int(self.cook_stat_meals.get(stat, 0)) + 1
-        if banked < self.COOK_MEALS_PER_STAT_POINT:
-            self.cook_stat_meals[stat] = banked
+        banked = int(self.cook_stat_meals.get(stat, 0)) + max(1, int(lessons))
+        points, banked = divmod(banked, self.COOK_MEALS_PER_STAT_POINT)
+        self.cook_stat_meals[stat] = banked
+        if points <= 0:
             return 0, banked
-        self.cook_stat_meals[stat] = 0
-        return self.apply_cooking_stat_bonus(stat, 1), 0
+        return self.apply_cooking_stat_bonus(stat, points), banked
 
     def cut_stat_block(self, stat: str) -> str | None:
         """Why a proper meal of `stat` would teach nothing now: 'floor' (this
@@ -1044,8 +1047,10 @@ class Player:
             total += min(2, int((getattr(self, 'damage_resistances', None) or {}).get('fear', 0) or 0))
         return total
 
-    def add_effect(self, name: str, duration: int) -> bool:
-        """Apply effect via the status_effects module. Returns True if applied."""
+    def add_effect(self, name: str, duration: int, cap: int | None = None) -> bool:
+        """Apply effect via the status_effects module. Returns True if applied.
+        ``cap``: the longest the effect may last, when a source is allowed
+        past the usual 60 turns (a cooked meal: data/cooking_rules.json)."""
         from status_effects import apply_effect
         # Hermes quirk: double haste duration
         if name == 'hasted' and duration > 0:
@@ -1064,7 +1069,7 @@ class Player:
         # (Fey/aberration family masteries formerly halved charm/confuse durations
         # here; masteries have been removed from the game entirely.)
         was_on = self.has_effect(name)
-        applied = apply_effect(self, name, duration)
+        applied = apply_effect(self, name, duration, cap=cap)
         # A new status from any source reaches the traits (Medusa's episodes,
         # Darwin): a blinding from a potion, wand or trap used to count for
         # nothing. A monster's melee blow is reported by the combat code.

@@ -88,7 +88,11 @@ def report():
     print(f"new food SP range: {sps[0]}..{sps[-1]}  (avg {sum(sps)//len(sps)}, n={len(sps)})")
 
 
+RETIRED = 'RETIRED by the kitchen rebuild (2026-11-14): data/items/ingredient.json, recipes.json and harvest_map.json are built by tools/content/kitchen/build_kitchen.py, and every number a dish gives is in data/cooking_rules.json (prime_cuts.json and cook_outcomes.json are gone). This script would overwrite them with the old book.'
+
+
 if __name__ == "__main__":
+    raise SystemExit(RETIRED)
     bump_food()
     bump_outcomes()
     report()

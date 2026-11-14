@@ -919,20 +919,17 @@ in the OLD scheme (`rat_meat`, `goblin_flesh`, …). Those ids don't
 exist in `ingredient.json`, so the Bestiary "Ingredient:" / "Solo
 cook:" / recipe hint lines never rendered.
 
-The current path (L7144-7156) routes through `prime_cuts.json` keyed
-by the monster's `kind`:
+The current path routes through `data/items/harvest_map.json` keyed
+by the monster's `kind` (close kin share one ingredient):
 
 ```python
-monster_id = getattr(subject, 'kind', '') or getattr(subject, 'id', '')
-prime_info = _load_prime_cuts().get(monster_id) if monster_id else None
-if prime_info:
-    ing_id = (f"{monster_id}_trophy"
-              if prime_info.get('is_trophy')
-              else f"{monster_id}_prime")
+monster_id = getattr(subject, 'monster_id', '') or getattr(subject, 'kind', '')
+ingredient_id = kitchen.ingredient_for_monster(monster_id)
 ```
 
 This is the same rule `food_system._harvest_outcome_for_tier` uses,
-so the bestiary preview matches what harvest actually drops.
+so the bestiary preview ("Harvest: Goblin Gristle", or "Trophy: ...")
+matches what harvest actually drops.
 
 ---
 
@@ -964,7 +961,7 @@ title-cased through `_cap()` / `.title()` (v2.23.0).
 
 **Corpse dossier:** the `Harvest with H -- right animal answer yields
 the cut; wrong ruins the corpse.` instruction line under the
-`Prime cut` / `Trophy` row was dropped in v2.23.0. The cut and the
+`Harvest` / `Trophy` row was dropped in v2.23.0. The ingredient and the
 known recipe uses still render.
 
 **Mechanic lines** (`_lore_item_mechanic_lines`, L5781):

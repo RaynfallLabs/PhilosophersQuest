@@ -2,7 +2,7 @@
 
 **Status:** v2.18.0 (shipped 2026-10-02)
 **Code:** `src/player.py::save_bonus_for` + `_gear_save_bonus` + `_quirk_save_bonus` (lines ~679-730); consumer at `src/status_effects.py::apply_debuff_with_save` (lines ~464-505)
-**Data:** `data/items/*.json` (`save_bonus: {cat, amount}` on gear); `data/items/cook_outcomes.json` (`temp_power: save_guard_*` + `temp_amount`); `src/main.py::_apply_save_affinity` (build-level innate dicts)
+**Data:** `data/items/*.json` (`save_bonus: {cat, amount}` on gear); `data/items/recipes.json` (a dish whose `benefit` is a `save_guard_*` ward; its magnitude from `data/cooking_rules.json` `special.ward_worth`); `src/main.py::_apply_save_affinity` (build-level innate dicts)
 **Related docs:** [status_effects](status_effects.md), [quiz_engine](quiz_engine.md), [items](items.md), [food_system](food_system.md), [combat](combat.md), [progression](progression.md); design doc: [`docs/design/save_bonus_audit.md`](../design/save_bonus_audit.md)
 
 ## Purpose
@@ -188,22 +188,23 @@ applied = player.add_effect(effect, _dur)
 Shipped as pure data in build metadata — zero engine changes beyond the init-time read.
 
 ### Cooked wards (timed)
-`food_system.py:289` write path:
+`kitchen.apply_dish` write path (a Special dish whose `benefit` is a
+`save_guard_*` ward): the status for the dish's turns, and the magnitude.
 ```python
-# When a cooked outcome resolves to a save_guard_* temp_power, write BOTH
-# the status (gated by _TEMP_POWER_REMAP) AND the magnitude.
-if canonical.startswith('save_guard_'):
-    cat = canonical[len('save_guard_'):]        # 'CON' | 'WIS' | 'DEX' | 'all'
-    amount = min(3, max(1, int(outcome.get('temp_amount', 2))))
-    if not hasattr(player, '_save_guard') or player._save_guard is None:
-        player._save_guard = {}
-    player._save_guard[cat] = amount
-    player.add_effect(canonical, duration)       # BUFF status; _save_guard magnitude
+if power.startswith('save_guard_'):
+    cat = power[len('save_guard_'):]            # 'CON' | 'WIS' | 'DEX' | 'all'
+    player._save_guard[cat] = max(player._save_guard.get(cat, 0), out['ward'])
 ```
 
-The magnitude is clamped `[1, 3]` at the write — the +3 cap applies at both ingress AND in `save_bonus_for`, so there's no path to a +4 ward even with buggy data. When a ward's status expires, `tick_all` pops the magnitude; `save_bonus_for` reads 0 for that cat on the next call.
+The magnitude comes from the dish's worth (`cooking_rules.json`
+`special.ward_worth`: +1 for a single dish, +2 and +3 for richer ones) and is
+at most 3 — the +3 cap applies at both ingress AND in `save_bonus_for`, so
+there's no path to a +4 ward. When a ward's status expires, `tick_all` pops
+the magnitude; `save_bonus_for` reads 0 for that cat on the next call.
 
-Legacy control-resist aliases in `food_system._TEMP_POWER_REMAP` route the old `paralyze_resist` / `stunned_resist` / `confused_resist` / `charm_resist` / `feared_resist` / `hallucinate_resist` / `petrify_resist` recipe fields into the correct `save_guard_*` ward family (fixes the ~110 mis-remapped dishes bug — audit §4).
+The old control-resist aliases in `food_system._TEMP_POWER_REMAP`
+(`paralyze_resist` -> `save_guard_CON`...) are dormant: since the kitchen
+rebuild (2026-11-14) every dish names its ward directly.
 
 ## Invariants (don't break)
 
@@ -221,7 +222,7 @@ Legacy control-resist aliases in `food_system._TEMP_POWER_REMAP` route the old `
 
 - **[status_effects](status_effects.md)** — the one consumer. `apply_debuff_with_save` reads `save_bonus_for(stat)` for stat-save branches and `save_bonus_for('CON')` for non-SAVE_STAT branches. The `save_guard_*` statuses are registered + tick-cleaned there.
 - **[items](items.md)** — equipped gear's `save_bonus: {cat, amount}` field is scanned live by `_gear_save_bonus`. Flagship amulets: Amulet of Fortitude (CON+3), Amulet of Insight (WIS+3), Pectoral of Amun, Hamsa Hand, Torque of Lugh ({all: 3}), Kavacha Kundala, Menat of Hathor. See `tests/test_save_bonus_content.py` for the pinned set.
-- **[food_system](food_system.md)** — cooked wards (`save_guard_CON/WIS/DEX/all`) are the TIMED lane. Chain length scales duration; magnitude clamped `[1, 3]` at the write.
+- **[food_system](food_system.md)** — cooked wards (`save_guard_CON/WIS/DEX/all`) are the TIMED lane. The dish's worth scales duration and magnitude; magnitude clamped `[1, 3]` at the write.
 - **[progression](progression.md)** — innate build affinity (Stalwart / Sage / Scout / Frail-caster) via `_apply_save_affinity` + `SECRET_BUILDS._save_bonus` metadata.
 - **[quests_mysteries](quests_mysteries.md)** — the Perseus quirk, Hamsa Hand, Torque of Lugh, Amulet of Fortitude artifact grants pay out in save bonuses.
 - **[combat](combat.md)** — chain-equip's `death_save_bonus` (chain_passives.py) is a SEPARATE system — bonus to the once-per-death resurrection save, not the status-effect save. Do not confuse.

@@ -70,7 +70,7 @@ reporter are small, independent JSON/text siblings. See
 | [identify_v3.md](identify_v3.md) | One philosophy Q, derived id_tier, a known kind fully identifies every copy (2026-10-18), NO masteries | Identify flow change |
 | [containers_lockpick.md](containers_lockpick.md) | Chest tiers, chest_traps.json, Lockpick v3 (1 Q, master pick, traps on fail) | Loot-gate change |
 | [magic.md](magic.md) | Spells, wands, spellbooks, MP and meditation (Intelligence deepens the floor's quiet), magic as a style (the best spell of a tier is about one weapon chain; bands in `tools/balance/magic_audit.py`), MAGIC_TIER_MULT, dispatch | Spell add/edit, any spell or wand number |
-| [food_system.md](food_system.md) | Cook v2 (1 Q binary), harvest v4 (1 Q binary), outcome_id, prime_cuts.json, SP soft-boundary | Food flow change |
+| [food_system.md](food_system.md) | The kitchen (2026-11-14): kin ingredients (`harvest_map.json`), the recipe book (every ingredient in 3+ dishes), five kinds of meal (HP / SP / MP / Stat / Special) from `cooking_rules.json`, legendary feasts, the menu functions; harvest and cook (1 Q binary each), SP soft boundary | Food, ingredient, recipe or cook change |
 | [status_effects.md](status_effects.md) | BUFFS / DEBUFFS / HARD_CONTROL, _RESIST_BLOCKS, SAVE_STAT, apply_debuff_with_save | Status effect add/edit |
 | [save_bonus.md](save_bonus.md) | Gradient defense on CON/WIS/DEX/all, +5 cap, timed +3 cap | Save add/edit |
 | [world.md](world.md) | Dungeon gen, mazes, terrain (water/ice/lava), bones, boss floors, cow level | Floor layout change |
@@ -111,8 +111,8 @@ the doc wins (and the row is a bug — please update it).
 | "How do I add a save bonus from an accessory?" | [save_bonus.md](save_bonus.md); `_gear_save_bonus` + `Player.save_bonus_for` |
 | "How do pets gain levels?" | [pets.md](pets.md); `Pet.gain_xp`; a pet's starting level comes from its sphere (`pet_system.hatch_level`) |
 | "What is Duck of Doom?" | [pets.md](pets.md); 2026-turn transform in `main._duck_of_doom_transform` |
-| "How does cook v2 work?" | [food_system.md](food_system.md); 1 Q binary, outcome_id → `cook_outcomes.json` |
-| "What is harvest v4?" | [food_system.md](food_system.md); 1 Q, `prime_cuts.json` keyed by `monster.kind` |
+| "How does cooking work?" | [food_system.md](food_system.md); 1 Q binary at the dish's tier, numbers from `cooking_rules.json` (`kitchen.dish_outcome`) |
+| "What is harvest v4?" | [food_system.md](food_system.md); 1 Q, `harvest_map.json` keyed by `monster.kind` |
 | "How does the lockpick trap fire?" | [containers_lockpick.md](containers_lockpick.md); `chest_traps.json` keyed by chest tier |
 | "Where is the save file written?" | [save_meta.md](save_meta.md); `paths.save_dir()` dev vs frozen split |
 | "Why isn't my old save loading?" | [save_meta.md](save_meta.md); `player.__setstate__` migration list |

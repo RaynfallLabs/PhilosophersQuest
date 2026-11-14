@@ -131,25 +131,15 @@ _BUILD_SAVE_AFFINITY: dict[str, dict] = {
 }
 
 
-def _outcome_bonus_category(outcome: dict) -> str:
-    """Cook v2.6.4 successful-outcome -> broad reward category. Used by the
-    quirk system's Circe unlock ("5 distinct bonus-type categories"). The
-    v2.6.4 outcome archetype only carries mechanical fields (sp/hp/max_hp/
-    stat_grant/temp_power/permanent_power); the legacy per-recipe 'bonus_type'
-    string is gone. This maps the outcome shape to a stable coarse label so
-    Circe stays unlockable.
-    """
-    if not outcome:
+def _outcome_bonus_category(recipe: dict) -> str:
+    """A cooked dish -> its broad kind, for the quirk system's Circe unlock
+    (five different kinds): 'permanent' for a legendary feast or a boss
+    trophy's dish, else its menu tab (hp, sp, mp, stat, special). See
+    kitchen.bonus_category."""
+    if not recipe:
         return 'none'
-    if outcome.get('permanent_power'):
-        return 'permanent'
-    if int(outcome.get('stat_grant', 0) or 0) > 0:
-        return 'stat'
-    if outcome.get('temp_power'):
-        return 'temp_power'
-    if int(outcome.get('max_hp_bonus', 0) or 0) > 0:
-        return 'max_hp'
-    return 'recovery'
+    import kitchen
+    return kitchen.bonus_category(recipe)
 
 
 STARVE_SHARE = 0.02
@@ -1727,29 +1717,20 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         longer exist. Each is dropped (v2.6.5 deleted the Assorted Monster
         Parts it used to become, and nothing equivalent survives) rather than
         left as a dead item that won't cook.
+
+        The kitchen rebuild (2026-11-14) shares one ingredient among close
+        kin: an old save's Goblin Shaman part is Goblin Gristle now. Each
+        retired id becomes its kept id (data/items/harvest_map.json
+        ``aliases``), its name and fields come from today's data, and in the
+        pack (and any sack) two stacks that are one ingredient now are
+        joined. An id the kitchen does not know at all is still dropped.
         """
+        import kitchen
         from items import Ingredient
-        from food_system import _raw_ingredients
 
-        valid_ids = set(_raw_ingredients().keys())
-        raw_ings = _raw_ingredients()
+        valid_ids = set(kitchen.ingredients().keys())
 
-        def _reconcile(item):
-            """Refresh a VALID-id Ingredient's fields from the current JSON.
-            v2.6.5 (2026-09-03) added edible_safe + raw_sp on every prime;
-            re-syncing here upgrades saves in place."""
-            defn = raw_ings.get(item.id)
-            if not defn:
-                return
-            item.name = defn.get('name', item.name)
-            item.lore = defn.get('lore', getattr(item, 'lore', ''))
-            item.edible_safe = bool(defn.get('edible_safe', False))
-            item.raw_sp = defn.get('raw_sp', None)
-
-        def _migrate_list(items_list):
-            """v2.6.5: assorted_monster_parts + family_* were deleted. Old
-            saves carrying those Ingredients have nothing to swap to (no
-            equivalent survives). Drop them from the list; reconcile the rest."""
+        def _migrate_list(items_list, merge: bool):
             if not items_list:
                 return 0
             count = 0
@@ -1757,21 +1738,27 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 item = items_list[i]
                 if not isinstance(item, Ingredient):
                     continue
-                if item.id not in valid_ids:
+                if kitchen.resolve(item.id) not in valid_ids:
                     # Deleted ingredient (assorted/family/legacy) — drop it.
                     items_list.pop(i)
                     count += 1
                 else:
-                    _reconcile(item)
+                    kitchen.migrate_ingredient(item)
+            if merge:
+                kitchen.merge_stacks(items_list)
             return count
 
         total = 0
-        total += _migrate_list(getattr(self.player, 'inventory', None))
-        total += _migrate_list(state.get('ground_items'))
+        inv = getattr(self.player, 'inventory', None)
+        total += _migrate_list(inv, merge=True)
+        for it in list(inv or []):
+            if getattr(it, 'contents', None):
+                total += _migrate_list(it.contents, merge=True)
+        total += _migrate_list(state.get('ground_items'), merge=False)
         lm = state.get('level_mgr')
         if lm:
             for lvl_data in _stored_floors(lm):
-                total += _migrate_list(lvl_data.get('ground_items'))
+                total += _migrate_list(lvl_data.get('ground_items'), merge=False)
         if total > 0:
             print(f'[Migration] Dropped {total} legacy ingredient(s) that no longer exist')
 
@@ -6741,10 +6728,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         if corpse is None:
             self.add_message("There is no corpse here to harvest.", 'info')
             return
-        # Harvest v3+ (post-2026-05-31 + post-2026-09-01 ingredient re-keying):
-        # every corpse yields its <monster_id>_prime ingredient at T1+ (per-species,
-        # not "Assorted Monster Parts"). Bosses drop themed trophy ingredients.
-        # No pre-skip; the recipe lookup keys off ingredient_id at cook-time.
+        # Every corpse yields its kin's ingredient (data/items/harvest_map.json:
+        # every goblin gives Goblin Gristle); a boss with a trophy gives the
+        # trophy. The corpse is used up before the question.
         self.ground_items.remove(corpse)
         # +5s harvest timer bonus if monster has been lore-identified
         _lore_known = getattr(self.player, 'lore_known_monster_ids', set())
@@ -6791,20 +6777,19 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     # Cook menu
     # ------------------------------------------------------------------
 
-    # One menu of multi-ingredient recipes. The old "Single" solo-cook tab is
-    # gone (2026-06-07): with basic_monster_stew deleted, every recipe needs >=2
-    # ingredient types, so that tab only DUPLICATED this list -- and let you cook
-    # a dish from a single anchor ingredient, bypassing the recipe's real cost.
+    # One list of every dish the pack can cook (single and multi-ingredient).
+    # The tabbed menu by main benefit (kitchen.MENU_TABS: HP / SP / MP / Stat
+    # / Special, with dishes being built toward and the legendary feasts) is
+    # built on kitchen.menu_rows and kitchen.opening_tab.
     _COOK_TABS = [
         ('Recipes', 'compound'),
     ]
 
     def _cook_item(self, ingredient):
-        # Guard: only consume the ingredient if it maps to a real solo recipe.
-        # Cooking-overhaul 2026-06-07: Assorted Monster Jerky (and any other part
-        # with no solo recipe) must NOT be silently destroyed by a single cook.
-        # The cook menu already filters these out; this is the safety net.
-        from food_system import _find_recipe_for_ingredient, _load_outcomes
+        # Guard: only consume the ingredient if it has a dish of its own
+        # (every kitchen ingredient does; an unknown old id must NOT be
+        # silently destroyed by a single cook).
+        from food_system import _find_recipe_for_ingredient, _recipe_quiz_tier, RUINED_PREFIX
         _recipe_for_quirk = _find_recipe_for_ingredient(ingredient)
         if _recipe_for_quirk is None:
             self.state = STATE_PLAYER
@@ -6816,20 +6801,15 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.quiz_title = f"COOKING {ingredient.name.upper()}  --  COOKING"
         self.state = STATE_QUIZ
 
-        # v2.6.4: the recipe references an `outcome_id` in cook_outcomes.json,
-        # and the outcome carries the authoritative tier (1-5). Look it up
-        # ONCE here so the quirk callback below reads outcome.get('tier', 0)
-        # directly instead of regex-scraping legacy 'quality N' text that
-        # v2.6.4 outcomes no longer emit.
-        _outcome_id = _recipe_for_quirk.get('outcome_id')
-        _outcome = _load_outcomes().get(_outcome_id, {}) if _outcome_id else {}
-        _outcome_tier = int(_outcome.get('tier', 0) or 0)
+        # The dish's tier (the band of its deepest ingredient) is its
+        # "quality" for the cooking quirks.
+        _outcome_tier = _recipe_quiz_tier(_recipe_for_quirk)
 
         def on_complete(messages: list[str]):
             self.state = STATE_PLAYER
-            _ruined = any(isinstance(m, str) and 'ruin' in m.lower() for m in messages)
+            _ruined = bool(messages) and str(messages[0]).startswith(RUINED_PREFIX)
             for i, msg in enumerate(messages):
-                self.add_message(msg, 'warning' if (i == 0 and 'ruin' in msg.lower()) else 'success')
+                self.add_message(msg, 'warning' if (i == 0 and _ruined) else 'success')
             if not _ruined:
                 self._seeker_event('cooked', recipe=_recipe_for_quirk.get('id')
                                    or _recipe_for_quirk.get('name') or ingredient.id)
@@ -6839,7 +6819,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             _qs_cook = getattr(self, 'quirk_system', None)
             if _qs_cook:
                 _quality = 0 if _ruined else _outcome_tier
-                _bonus_type = _outcome_bonus_category(_outcome) if not _ruined else 'ruined'
+                _bonus_type = _outcome_bonus_category(_recipe_for_quirk) if not _ruined else 'ruined'
                 _qs_cook.on_food_eaten(
                     quality=_quality,
                     source_monster=getattr(ingredient, 'source_monster', ''),
@@ -6848,45 +6828,38 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 )
             self._advance_turn()
 
-        # NOTE: this _cook_item path is unreachable post 2026-06-07 cook overhaul
-        # (the SINGLE tab was removed; _COOK_TABS only lists 'compound'). Kept as
-        # a safety net. Persephone's max-chain-6 bonus was a chain-mode reward
-        # that has no meaning under the v3 one-Q cook — its cook effect is now
-        # inert. If Persephone gets a new cook bonus, wire it here + _cook_compound.
+        # NOTE: no menu reaches _cook_item (the Recipes list cooks every dish,
+        # single ones included, through _cook_compound). Kept as a safety net
+        # with the same quirk wiring.
         cook_ingredient(self.player, ingredient, self.quiz_engine, on_complete)
 
     def _cook_compound(self, recipe: dict):
         self.quiz_title = f"PREPARING {recipe['name'].upper()}  --  COOKING"
         self.state = STATE_QUIZ
 
-        # Look up the outcome archetype ONCE, before the ingredients are
-        # consumed by cook_compound_recipe, so the callback below can read
-        # outcome.get('tier', 0) directly (v2.6.4) instead of scraping
-        # legacy 'quality N' strings. Also snapshot the primary ingredient
-        # + source_monster for the quirk callback -- cook_compound_recipe
-        # pops ingredients from the inventory, so we can't inspect them
-        # after the fact.
-        from food_system import _load_outcomes
+        # The dish's tier is its "quality" for the cooking quirks. Snapshot
+        # the first ingredient and the creature it came from for the quirk
+        # callback now: cook_compound_recipe takes the ingredients out of
+        # the pack before the question.
+        from food_system import _recipe_quiz_tier, RUINED_PREFIX
         from items import Ingredient
-        _outcome_id = recipe.get('outcome_id')
-        _outcome = _load_outcomes().get(_outcome_id, {}) if _outcome_id else {}
-        _outcome_tier = int(_outcome.get('tier', 0) or 0)
+        import kitchen as _kitchen
+        _outcome_tier = _recipe_quiz_tier(recipe)
         _ing_ids = list(recipe.get('ingredients', []))
-        # Anchor ingredient = first listed (matches _find_recipe_for_ingredient
-        # anchoring). source_monster comes from the actual Ingredient in the
-        # inventory (raw recipe data doesn't carry it).
+        # Anchor ingredient = the first listed. source_monster comes from the
+        # actual Ingredient in the pack (the creature it was harvested from).
         _anchor_id = _ing_ids[0] if _ing_ids else ''
         _source_monster = ''
         for _it in self.player.inventory:
-            if isinstance(_it, Ingredient) and _it.id == _anchor_id:
+            if isinstance(_it, Ingredient) and _kitchen.resolve(_it.id) == _anchor_id:
                 _source_monster = getattr(_it, 'source_monster', '') or ''
                 break
 
         def on_complete(messages: list[str]):
             self.state = STATE_PLAYER
-            _ruined = any(isinstance(m, str) and 'ruin' in m.lower() for m in messages)
+            _ruined = bool(messages) and str(messages[0]).startswith(RUINED_PREFIX)
             for i, msg in enumerate(messages):
-                self.add_message(msg, 'warning' if (i == 0 and 'ruin' in msg.lower()) else 'success')
+                self.add_message(msg, 'warning' if (i == 0 and _ruined) else 'success')
             if not getattr(self, '_chronicle_first_compound', False):
                 self._chronicle_first_compound = True
                 self._chron('milestone', f"Cooked my first proper recipe: {recipe['name']}. The dungeon smelled like a kitchen for once.",
@@ -6904,7 +6877,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             _qs_cook = getattr(self, 'quirk_system', None)
             if _qs_cook:
                 _quality = 0 if _ruined else _outcome_tier
-                _bonus_type = _outcome_bonus_category(_outcome) if not _ruined else 'ruined'
+                _bonus_type = _outcome_bonus_category(recipe) if not _ruined else 'ruined'
                 _qs_cook.on_food_eaten(
                     quality=_quality,
                     source_monster=_source_monster,
@@ -6919,8 +6892,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     # Eat menu  (z key)
     # ------------------------------------------------------------------
 
-    # One combined list so the survival food (Assorted Monster Jerky) sits WITH
-    # the rations instead of on a separate "Raw Ingredients" tab. 2026-06-07.
+    # One combined list: raw ingredients sit WITH the rations instead of on a
+    # separate "Raw Ingredients" tab (2026-06-07).
     _EAT_TABS = [
         ('Food', lambda i: isinstance(i, (Food, Ingredient))),
     ]
@@ -9153,12 +9126,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         elif isinstance(item, Food):
             return f"+{item.sp_restore} SP  +{item.hp_restore} HP"
         elif isinstance(item, Ingredient):
-            best = (item.recipes or {}).get('5', (item.recipes or {}).get('3', {})) or {}
-            # Words a player can read (it was "ingredient -- best: ?").
-            from naming import proper_name as _pn
-            if best.get('name'):
-                return f"Ingredient, best dish: {_pn(str(best['name']))}"
-            return "Ingredient for cooking"
+            # What the part is rich in, and how many dishes call for it.
+            import kitchen
+            return kitchen.nature_line(item.id)
         elif isinstance(item, Ammo):
             return f"{item.ammo_type}  x{item.count}"
         elif getattr(item, 'item_class', '') == 'treasure':
@@ -9399,13 +9369,16 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 # the Recipes tab permanently empty). Matches the bestiary/item
                 # branches fixed in the same pass.
                 recipe_list = all_recipes.values() if isinstance(all_recipes, dict) else all_recipes
+                import kitchen as _kit
                 for recipe in recipe_list:
                     rname = recipe.get('name', '')
                     if rname in self._cooked_recipes:
-                        ings = ', '.join(recipe.get('ingredients', []))
+                        ings = ', '.join(_kit.part_name(p) for p in recipe.get('ingredients', []))
+                        does = ', '.join(_kit.dish_effects(self.player, recipe))
+                        flavor = recipe.get('flavor', '')
                         entries.append({
                             'name': rname,
-                            'lore': f"Ingredients: {ings}",
+                            'lore': f"Ingredients: {ings}. {does}. {flavor}".strip(),
                         })
                 self.encyclopedia_entries = entries
             except Exception:
