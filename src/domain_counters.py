@@ -20,7 +20,8 @@ cloak lined against fire where fire breathes, a resistance draught at the
 apothecary. The trader says one line about it when his stall opens.
 
 Nothing here identifies anything: a consumable counter (a wand, a potion, a
-book) goes on the shelf unmarked, and the line names only what to look for
+book) goes on the shelf unmarked, somewhere among the other wares
+(traders._rack_counters), and the line names only what to look for
 ("you'll want fire"). A piece of gear whose use shows on it (a mace's head, a
 lining's stitching, a blessing the trader vouches for) is marked as set out
 for what walks below.

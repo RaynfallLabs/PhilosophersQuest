@@ -651,17 +651,19 @@ class TraderMixin:
             if sub:
                 return f"Your {self._bare_name(w)} is inlaid with {smithing.inlay_name(sub)} already: one inlay to a weapon."
             return "It is that metal already."
+        # In the trader's own pronouns: Brunhild is "she" (bug bash WB-C04).
+        _subj, obj, poss = m.pronouns()
         if sid == 'lining':
             from items import ARMOR_SLOTS
             worn = [p.armor_slots[ARMOR_SLOTS.index(s)] for s in smithing.LINING_SLOTS]
             if not any(worn):
-                return "Wear a cloak or a shirt for him to line."
+                return f"Wear a cloak or a shirt for {obj} to line."
             return "What you wear is lined already: one lining to a piece."
         if sid == 'special_order':
             o = self._open_order(m.kind)
             if o:
-                return f"Your {o.get('name', 'order')} waits at his stall on floor {o.get('collect')}."
-            return "This is his last stall: there is nowhere below to collect an order."
+                return f"Your {o.get('name', 'order')} waits at {poss} stall on floor {o.get('collect')}."
+            return f"This is {poss} last stall: there is nowhere below to collect an order."
         return "Nothing for this to work on right now."
 
     def _order_price(self, item) -> int:

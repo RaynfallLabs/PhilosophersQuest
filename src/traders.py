@@ -300,6 +300,7 @@ def build_stock(defn: dict, level: int, rng, seen=()) -> list:
         for k, (ware, info) in enumerate(domain_counters.stall_counters(defn, level, rng)):
             if k == 0:
                 ware._stall_line = info
+            ware._shelf_counter = True           # (placed on the shelf below, then taken off)
             sure.append(ware)
     except Exception:
         from game_log import log_error
@@ -397,9 +398,35 @@ def build_stock(defn: dict, level: int, rng, seen=()) -> list:
         except Exception:
             from game_log import log_error
             log_error('traders.build_stock: the forms recovered from an error')
+    _rack_counters(final, rng)
     final += _gem_stock(defn, level, rng, taken)
     final += _rare_stock(defn, level, rng, taken)
     return final
+
+
+def _rack_counters(final: list, rng) -> None:
+    """Set an unmarked counter (a wand, a potion, a book or a flask:
+    domain_counters) somewhere among the other wares. Racked first on every
+    shelf, with the trader's line ("You'll want something holy") it named
+    itself: the first unknown wand was the Wand of Sunburst (bug bash
+    WB-C09). A marked one (a mace, a lined cloak) shows what it is for and
+    keeps its place. The places are drawn from a copy of the trader's own
+    generator, so his spot and every later roll are as they were."""
+    loose = []
+    for w in final:
+        if w.__dict__.pop('_shelf_counter', False) and not getattr(w, '_counter', None):
+            loose.append(w)
+    if not loose or len(final) < 2:
+        return
+    shelf = random.Random()
+    try:
+        shelf.setstate(rng.getstate())
+    except AttributeError:
+        shelf.seed(len(final))
+    for w in loose:
+        final.remove(w)
+    for w in loose:
+        final.insert(shelf.randint(0, len(final)), w)
 
 
 def _gem_stock(defn: dict, level: int, rng, taken: set) -> list:

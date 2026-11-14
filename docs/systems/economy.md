@@ -205,10 +205,12 @@ reward). Nothing is charged when there is nothing to do.
 | special_order (armourers) | 0.3 + the piece | Order a common piece in a metal the floor's loot is made of and a template that takes it (weapons, armour, shields), paid now; it is handed over when his shop opens at his next stall (`traders.next_stall`; the arrival there says it is waiting). Plain, sound and known (uncursed, identified). One open order a smith; no order at his last stall. An order whose stall below is gone is paid back when the hero leaves the floor where he placed it. Kept in `_traders['orders']`. |
 | trade_in (everyone) | none | Section 5: half his price for what you sell on a buying visit. Enter opens the Sell tab. |
 
-Each new row's detail pane says, when there is nothing to do, why ("He
-won't put a hammer to a named blade.", "Your order waits at his stall on
-floor 31.", "This is his last stall: there is nowhere below to collect an
-order.").
+Each new row's detail pane says, when there is nothing to do, why, in the
+trader's own pronouns ("He won't put a hammer to a named blade.", "Your
+order waits at his stall on floor 31.", "This is her last stall: there is
+nowhere below to collect an order." for Brunhild). The services' own
+descriptions name no pronoun at all: every trader offers the trade-in, and
+Mother Wort, Old Mags and Brunhild are "she", Vesper "it" (bug bash WB-C04).
 
 Vendor encounters that sell a service: Brunhild the smith (sharpen, and
 mend), Doctor Finch (cure), the Medical Construct (restore, 15% of the purse).
@@ -464,7 +466,10 @@ weaknesses in their kit."
   any sure ware; the rest of the stock is random as before.
 - **Nothing is identified by it**: a gear counter (its use shows on it) is
   marked on the Buy tab ("Brannoc set this out for what is below: the dead
-  walk."); a wand, potion or book counter is not.
+  walk."); a wand, potion, book or flask counter is not, and it stands
+  among the other wares, not first (`traders._rack_counters`, drawn from a
+  copy of the trader's generator): racked first on every shelf, with his
+  line, it named itself (bug bash WB-C09).
 - **His line**, once, when the stall opens (`counter` in each trader's and
   friend's lines): "Brannoc: Where you're going, the dead walk. Take a
   mace." `counters.foes` words the family most of the kinds belong to.
