@@ -1073,7 +1073,8 @@ class Run:
         chain = self.quiz.escalator_chain(5)
         self._recall_next = self.turn + (40 if chain == 0 else 50 + 15 * chain)
         self.fs['recalls'] = self.fs.get('recalls', 0) + 1
-        if chain >= 5:
+        import enemy_lore
+        if enemy_lore.recall_opens_page(enemy_lore.recall_reach(self.p, target, chain)):
             known = getattr(self.p, 'lore_known_monster_ids', None)
             if not isinstance(known, set):
                 known = set(known or ())

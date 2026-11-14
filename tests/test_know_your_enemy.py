@@ -481,6 +481,10 @@ def test_the_game_says_kit_sense_once_on_sight(game):
 
 def test_recall_lore_in_view_returns_its_weakness_at_chain_2(game):
     ghoul = _in_view(game, 'ghoul')
+    # Recall Lore reaches past the family's name only once its family is
+    # begun (enemy_lore.recall_reach, balance 2026-11-13).
+    game.player.family_lore_grants = {family_lore.family_of(ghoul): 1}
+    game.player.__dict__.pop('_family_tier_cache', None)
     game.player.recall_lore_cooldown = 0
     assert game._recall_lore_subject() is ghoul
     game.__dict__['_recall_subject'] = ghoul
@@ -488,12 +492,16 @@ def test_recall_lore_in_view_returns_its_weakness_at_chain_2(game):
     text = game._lore_hint_text
     assert 'restless dead' in text
     assert any(affinity.word_for(w) in text.lower() for w in MONS['ghoul']['weaknesses'])
-    assert family_lore.knowledge(game.player, ghoul) == UNKNOWN       # nothing opened below 5
+    assert family_lore.knowledge(game.player, ghoul) != KNOWN         # nothing opened below 5
     assert game.player.recall_lore_cooldown == 50 + 2 * 15             # the cooldown rules hold
 
 
 def test_recall_lore_at_chain_5_opens_the_page_without_family_credit(game):
     ghoul = _in_view(game, 'ghoul')
+    # Recall Lore reaches past the family's name only once its family is
+    # begun (enemy_lore.recall_reach, balance 2026-11-13).
+    game.player.family_lore_grants = {family_lore.family_of(ghoul): 1}
+    game.player.__dict__.pop('_family_tier_cache', None)
     studied = set(game.player.studied_monster_ids)
     tiers = dict(family_lore.tiers(game.player))
     game.__dict__['_recall_subject'] = ghoul
@@ -631,3 +639,21 @@ def test_kit_sense_names_the_arsenals_coatings_and_flasks():
     p.inventory = [water]
     tool, _gain = kit_sense.advise(p, sk)
     assert tool.item is water and tool.kind in ('coating', 'flask')
+
+
+def test_recall_lore_reaches_only_as_far_as_his_study_of_the_family():
+    """Balance 2026-11-13: Recall Lore remembers creatures LIKE ones he has
+    studied. A family he has not begun (tier 0) gives its name and no more,
+    and never opens the page; at Recognise the chain goes all the way."""
+    import enemy_lore
+    p = Player()
+    sk = _m('skeleton')
+    p.family_lore_grants = {}
+    p.__dict__.pop('_family_tier_cache', None)
+    assert enemy_lore.recall_reach(p, sk, 5) == 1
+    assert not enemy_lore.recall_opens_page(enemy_lore.recall_reach(p, sk, 5))
+    assert 'studied enough' in enemy_lore.recall_text(sk, 5, player=p)
+    p.family_lore_grants = {'restless_dead': 1}
+    p.__dict__.pop('_family_tier_cache', None)
+    assert enemy_lore.recall_reach(p, sk, 5) == 5
+    assert enemy_lore.recall_opens_page(enemy_lore.recall_reach(p, sk, 5))

@@ -101,9 +101,33 @@ def recall_parts(m, chain: int, rng=None) -> list:
     return out
 
 
-def recall_text(m, chain: int, rng=None) -> str:
-    """Recall Lore's card text for the creature in view."""
-    return ' '.join(recall_parts(m, chain, rng))
+def recall_reach(player, m, chain: int) -> int:
+    """How far the hero can remember a creature: the chain he answered, but
+    no further than his family's name (chain 1) until he has begun to study
+    its family (Recognise, family tier 1). Balance, 2026-11-13: with the
+    whole page at chain 5 and no other bar, Recall Lore did the studying
+    for him, and a kid who never studied a corpse lost almost nothing (the
+    simulator's ablation: study worth 3 points of wins). You remember what
+    you have learned about creatures LIKE this one."""
+    import family_lore
+    chain = int(chain)
+    if chain <= 1 or player is None:
+        return chain
+    fid = family_lore.family_of(m)
+    if fid and family_lore.tier(player, fid) >= 1:
+        return chain
+    return 1
+
+
+def recall_text(m, chain: int, rng=None, player=None) -> str:
+    """Recall Lore's card text for the creature in view. With `player`, the
+    chain goes only as far as recall_reach allows, and the card says why."""
+    reach = recall_reach(player, m, chain) if player is not None else int(chain)
+    parts = recall_parts(m, reach, rng)
+    if reach < int(chain):
+        parts.append(_fill(m, data()['recall'].get(
+            'unstudied', "You have not studied enough of its kind to remember more.")))
+    return ' '.join(parts)
 
 
 def recall_opens_page(chain: int) -> bool:

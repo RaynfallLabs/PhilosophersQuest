@@ -371,8 +371,8 @@ class MagicMixin:
         subject = self.__dict__.pop('_recall_subject', None)
         if subject is not None and getattr(subject, 'alive', False):
             import enemy_lore
-            hint = enemy_lore.recall_text(subject, chain)
-            if enemy_lore.recall_opens_page(chain):
+            hint = enemy_lore.recall_text(subject, chain, player=self.player)
+            if enemy_lore.recall_opens_page(enemy_lore.recall_reach(self.player, subject, chain)):
                 self._open_kind_page(getattr(subject, 'kind', ''))
             self._lore_hint_text = hint
             self._lore_hint_chain = chain
