@@ -406,6 +406,8 @@ COOK_STATS = ('STR', 'CON', 'DEX', 'INT', 'WIS', 'PER')
 PANTRY_MAX = 16                # parts a saver carries before eating spares
 HUNT_HARVESTS = 4              # a saver's extra harvests a floor, only of parts
                                # a reachable multi-dish or feast still needs
+DISHES_PER_FLOOR = 8           # dishes a floor at most (each a cooking question:
+                               # a kid does not cook every spare; the rest he drops)
 
 # ---- Fountains and thrones (game_divine.py:380-452, 790-851) ---------------------
 FEATURE_BREAK_CHANCE = 0.33    # a fountain dries / a throne crumbles per use
@@ -2121,6 +2123,25 @@ class Run:
                 self.pantry.append(item)
                 self.fs['harvests'] = self.fs.get('harvests', 0) + 1
 
+    def _forage(self) -> None:
+        """The floor's foraged finds (dungeon.py: 1 to 3 a floor of the
+        terrain-grown ingredients, tier_role 'dungeon', min_level at most the
+        floor), as much of them as the profile finds (loot_fraction)."""
+        if not float(self.prof.get('cooks_per_floor', 0) or 0):
+            return
+        key = ('forage',)
+        pool = self._drop_pool.get(key)
+        if pool is None:
+            pool = [i for i in kitchen_mod.ingredients() if kitchen_mod.part_kind(i) == 'forage']
+            self._drop_pool[key] = pool
+        eligible = [i for i in pool
+                    if int(kitchen_mod.ingredients()[i].get('min_level', 1) or 1) <= self.floor]
+        for _ in range(random.randint(1, 3)):
+            if eligible and random.random() < self.prof['loot_fraction']:
+                item = food_system_mod.load_ingredient_for(random.choice(eligible))
+                if item is not None:
+                    self.pantry.append(item)
+
     def _floor_part(self):
         """A part of an ordinary creature of this floor (a kill the
         simulator did not name): a random kin part from the floor's band."""
@@ -2155,6 +2176,7 @@ class Run:
         (resource loss is the penalty); right = kitchen.apply_dish."""
         p = self.p
         self._consume(rec)
+        self.dishes_left = getattr(self, 'dishes_left', DISHES_PER_FLOOR) - 1
         self.fs['cooks'] = self.fs.get('cooks', 0) + 1
         if not self.quiz.one_question(kitchen_mod.dish_tier(rec)):
             return True
@@ -2172,19 +2194,73 @@ class Run:
             self.fs['dish_feast'] = self.fs.get('dish_feast', 0) + 1
         return True
 
-    def _ready(self, tab=None) -> list:
+    FEAST_WAIT_FLOORS = 70     # a saver holds a trophy this long for its feast (the
+                               # feasts join a boss's trophy with parts from far
+                               # deeper: Brandon's 'saved ... for much MUCH deeper')
+    FEAST_LOOKAHEAD = 25       # ... and keeps a feast's parts this far ahead of its boss
+
+    def _feast_hold(self) -> dict:
+        """Parts a saver will not spend on anything but a feast: a trophy
+        (for FEAST_WAIT_FLOORS floors after he takes it, while one of its
+        feasts is within reach), and every part of a feast he holds at least
+        three fifths of. The menu shows him the feast once he holds a part."""
+        if not self.prof.get('saver'):
+            return {}
+        held = kitchen_mod.held_counts(self._kitchen_inv())
+        since = self.__dict__.setdefault('_trophy_since', {})
+        hold = {}
+        reach = kitchen_mod.band_of(self.floor + 10)
+        for part in list(held):
+            if not kitchen_mod.is_harvested(part):
+                continue
+            feasts = [r for r in kitchen_mod.dishes_with(part)
+                      if kitchen_mod.is_legendary(r)
+                      and ('trophy' in part
+                           or all(not kitchen_mod.is_harvested(x)
+                                  or kitchen_mod.band_of(kitchen_mod.part_floor(x)) <= reach
+                                  for x in kitchen_mod.parts(r)))]
+            if not feasts:
+                continue
+            if 'trophy' in part:
+                first = since.setdefault(part, self.floor)
+                if self.floor - first < self.FEAST_WAIT_FLOORS:
+                    hold[part] = max(hold.get(part, 0), 1)
+                continue
+            for r in feasts:
+                need = kitchen_mod.needs(r)
+                have = sum(min(n, held.get(x, 0)) for x, n in need.items())
+                if have >= 0.6 * sum(need.values()):
+                    for x, n in need.items():
+                        if held.get(x, 0):
+                            hold[x] = max(hold.get(x, 0), n)
+        return hold
+
+    def _ready(self, tab=None, spend_held: bool = False) -> list:
+        """Dishes ready to cook (of `tab`). A saver's held feast parts go
+        only into a feast unless `spend_held` (the hero is near death)."""
         inv = self._kitchen_inv()
         out = kitchen_mod.ready_dishes(inv)
         if tab:
             out = [r for r in out if kitchen_mod.dish_tab(r) == tab]
+        if not spend_held:
+            hold = self._feast_hold()
+            if hold:
+                held = kitchen_mod.held_counts(inv)
+                out = [r for r in out if kitchen_mod.is_legendary(r)
+                       or all(held.get(x, 0) - n >= hold.get(x, 0)
+                              for x, n in kitchen_mod.needs(r).items())]
         return out
 
     def _cook_for(self, tab) -> bool:
         """Cook the best ready dish of this tab (hp, mp...), by the game's
         own value for this hero. False when there is none."""
+        if getattr(self, 'dishes_left', DISHES_PER_FLOOR) <= 0 and self.p.hp >= 0.3 * self.p.max_hp:
+            return False
         ready = self._ready(tab)
         if not ready and tab == 'hp':
             ready = self._ready()                  # every dish heals a little
+        if not ready and tab == 'hp' and self.p.hp < 0.3 * self.p.max_hp:
+            ready = self._ready(spend_held=True)   # near death: anything
         if not ready:
             return False
         rec = max(ready, key=lambda r: kitchen_mod.dish_value(self.p, r))
@@ -2202,14 +2278,22 @@ class Run:
             if kitchen_mod.dish_size(rec) < 2:
                 continue
             ps = kitchen_mod.parts(rec)
-            if any(kitchen_mod.is_harvested(x) and kitchen_mod.band_of(kitchen_mod.part_floor(x)) > reach
-                   for x in ps):
+            trophy_held = any('trophy' in x and held.get(x, 0) for x in ps)
+            if not trophy_held and any(kitchen_mod.is_harvested(x)
+                                       and kitchen_mod.band_of(kitchen_mod.part_floor(x)) > reach
+                                       for x in ps):
                 continue
             need = kitchen_mod.needs(rec)
             have = sum(min(n, held.get(x, 0)) for x, n in need.items())
             share = have / max(1, sum(need.values()))
             if kitchen_mod.is_legendary(rec):
-                share *= 2.0
+                # A feast whose boss he will meet within FEAST_LOOKAHEAD
+                # floors: its parts are what a kid who has read the menu's
+                # gold rows keeps above everything else.
+                boss_floor = max((kitchen_mod.part_floor(x) for x in ps if 'trophy' in x),
+                                 default=0)
+                share = (max(share * 2.0, 0.6) if boss_floor and boss_floor - self.floor <= self.FEAST_LOOKAHEAD
+                         else share * 2.0)
             best = max(best, share)
         return best
 
@@ -2236,20 +2320,20 @@ class Run:
             self._cook_for('mp')
         focus = tuple(self.prof.get('stat_focus') or ())
         stat_ready = [r for r in self._ready('stat') if kitchen_mod._would_teach(p, r)]
-        if stat_ready:
+        if stat_ready and self.dishes_left > 0:
             stat_ready.sort(key=lambda r: (kitchen_mod.dish_stat(r) not in focus,
                                            -kitchen_mod.dish_value(p, r)))
             self._cook_dish(stat_ready[0])
         for _ in range(6):
             multis = [r for r in self._ready() if kitchen_mod.dish_size(r) >= 2]
-            if not multis:
+            if not multis or self.dishes_left <= 0:
                 break
             self._cook_dish(max(multis, key=lambda r: kitchen_mod.dish_value(p, r)))
         saver = bool(self.prof.get('saver'))
         for _ in range(16):
             singles = [r for r in self._ready() if kitchen_mod.dish_size(r) == 1
-                       and kitchen_mod.is_harvested(kitchen_mod.parts(r)[0])]
-            if not singles:
+                       and kitchen_mod.part_kind(kitchen_mod.parts(r)[0]) != 'food']
+            if not singles or self.dishes_left <= 0:
                 break
             if saver:
                 spare_ids = {kitchen_mod.resolve(getattr(it, 'id', '')) for it in self._spares()}
@@ -2258,6 +2342,22 @@ class Run:
                 if not singles or not (hungry or len(self.pantry) > PANTRY_MAX):
                     break
             self._cook_dish(max(singles, key=lambda r: kitchen_mod.dish_value(p, r)))
+        if saver and len(self.pantry) > PANTRY_MAX:
+            # left behind: the least promising, never a held feast part
+            held = kitchen_mod.held_counts(self._kitchen_inv())
+            hold = self._feast_hold()
+            ranked = sorted(self.pantry, key=lambda it: self._promise(
+                kitchen_mod.resolve(getattr(it, 'id', '')), held))
+            drop, left = set(), dict(held)
+            for it in ranked:
+                if len(self.pantry) - len(drop) <= PANTRY_MAX:
+                    break
+                k = kitchen_mod.resolve(getattr(it, 'id', ''))
+                if left.get(k, 0) - 1 < hold.get(k, 0):
+                    continue
+                left[k] = left.get(k, 0) - 1
+                drop.add(id(it))
+            self.pantry = [it for it in self.pantry if id(it) not in drop]
 
     def take_boon(self, kind: str):
         """boons.take: the build's stat if it is offered, else the first gift."""
@@ -2906,6 +3006,8 @@ class Run:
         self.corpses_used = 0
         self.corpses = []
         self.hunt_left = HUNT_HARVESTS
+        self.dishes_left = DISHES_PER_FLOOR
+        self._forage()
 
         self.find_secrets(floor)
         self.shop(floor)
