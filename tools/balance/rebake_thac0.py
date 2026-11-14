@@ -19,6 +19,11 @@ monster then needs a 10 or better: about 55%, on every floor. KEEP keeps
 half of each monster's own accuracy against its band (a wolf still bites
 straighter than a zombie).
 
+The named foes tools/balance/mini_boss_bands.py tunes (the band mini-bosses,
+the legendary wanderers and the seal demons) are aimed by its rule instead:
+they need a NAMED_NEED or better against the same hero (mini-boss tuning,
+2026-11-14: a rare big blow is luck, a sure one is a fight).
+
 LORE NOT FLOOR: the number is baked into the data here, once; nothing
 multiplies by the floor at runtime. The original value is kept as
 `thac0_lore` on first write, and every later run starts from it, so the
@@ -93,11 +98,16 @@ def rebake(line: dict, write: bool) -> list:
         pf = int(m.get('peak_floor') or m.get('min_level') or 1)
         band.setdefault(min(9, (max(1, pf) - 1) // 10), []).append(lore[k])
     med = {b: statistics.median(v) for b, v in band.items()}
+    import mini_boss_bands
+    named = mini_boss_bands.roster(mons)
     changes = []
     for k, m in mons.items():
         pf = max(1, min(100, int(m.get('peak_floor') or m.get('min_level') or 1)))
         b = min(9, (pf - 1) // 10)
-        new = int(round(line[pf] + 10 + KEEP * (lore[k] - med[b])))
+        if k in named:
+            new = mini_boss_bands.named_thac0(k, m, line)
+        else:
+            new = int(round(line[pf] + 10 + KEEP * (lore[k] - med[b])))
         if 'thac0_lore' not in m:
             m['thac0_lore'] = m.get('thac0', 20)
         if m.get('thac0') != new:

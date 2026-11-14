@@ -4935,10 +4935,10 @@
       120,
       180
     ],
-    "hp": "111d8+176",
+    "hp": "286d8+456",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 13,
+    "thac0": 9,
     "peak_floor": 15,
     "spread": 2,
     "peak_weight": 0.0,
@@ -4946,13 +4946,13 @@
     "attacks": [
       {
         "name": "Bite",
-        "damage": "2d4",
+        "damage": "4d4+1",
         "type": "poison",
         "delivery": "bite"
       },
       {
         "name": "Embrace",
-        "damage": "1d2",
+        "damage": "2d2",
         "type": "blunt",
         "effect": "weakened",
         "effect_chance": 0.25,
@@ -24879,7 +24879,7 @@
       140,
       80
     ],
-    "hp": "98d8-98",
+    "hp": "222d8+2",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 12,
@@ -24890,13 +24890,13 @@
     "attacks": [
       {
         "name": "Bite",
-        "damage": "3d2",
+        "damage": "5d2+1",
         "type": "poison",
         "delivery": "bite"
       },
       {
         "name": "Web",
-        "damage": "1d2",
+        "damage": "2d2",
         "type": "blunt",
         "effect": "slowed",
         "effect_chance": 0.5,
@@ -24946,10 +24946,10 @@
       160,
       100
     ],
-    "hp": "249d8+126",
+    "hp": "526d8+268",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 12,
+    "thac0": 8,
     "peak_floor": 21,
     "spread": 2,
     "peak_weight": 0.0,
@@ -24957,11 +24957,21 @@
     "attacks": [
       {
         "name": "Crush",
-        "damage": "2d4",
+        "damage": "2d4+1",
         "type": "blunt",
+        "delivery": "grapple"
+      },
+      {
+        "name": "Red-Hot Hug",
+        "damage": "2d6+1",
+        "type": "fire",
+        "effect": "burning",
+        "effect_chance": 0.35,
+        "effect_duration": 3,
         "delivery": "grapple"
       }
     ],
+    "multi_attack_count": 2,
     "resistances": [
       "slash",
       "blunt"
@@ -25012,10 +25022,10 @@
       100,
       160
     ],
-    "hp": "287d8+258",
+    "hp": "1302d8+1173",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 11,
+    "thac0": 7,
     "peak_floor": 24,
     "spread": 2,
     "peak_weight": 0.0,
@@ -25023,7 +25033,7 @@
     "attacks": [
       {
         "name": "Bite",
-        "damage": "2d4+2",
+        "damage": "5d4+6",
         "type": "poison",
         "effect": "poisoned",
         "effect_chance": 0.45,
@@ -25032,7 +25042,7 @@
       },
       {
         "name": "Claw",
-        "damage": "1d4+2",
+        "damage": "3d4+4",
         "type": "slash",
         "delivery": "blow"
       }
@@ -25083,10 +25093,10 @@
       140,
       80
     ],
-    "hp": "416d8+363",
+    "hp": "1739d8+1516",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 10,
+    "thac0": 6,
     "peak_floor": 29,
     "spread": 2,
     "peak_weight": 0.0,
@@ -25094,7 +25104,7 @@
     "attacks": [
       {
         "name": "Lure",
-        "damage": "2d6+1",
+        "damage": "5d6+1",
         "type": "magic",
         "effect": "confused",
         "effect_chance": 0.4,
@@ -25103,7 +25113,7 @@
       },
       {
         "name": "Claw",
-        "damage": "1d4+2",
+        "damage": "2d4+5",
         "type": "slash",
         "delivery": "blow"
       }
@@ -25151,10 +25161,10 @@
       60,
       120
     ],
-    "hp": "568d8+536",
+    "hp": "1455d8+1373",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 10,
+    "thac0": 5,
     "peak_floor": 34,
     "spread": 2,
     "peak_weight": 0.0,
@@ -25162,7 +25172,7 @@
     "attacks": [
       {
         "name": "Wing Buffet",
-        "damage": "1d8+5",
+        "damage": "2d8+9",
         "type": "blunt",
         "effect": "blinded",
         "effect_chance": 0.35,
@@ -25171,7 +25181,7 @@
       },
       {
         "name": "Bite",
-        "damage": "1d6+2",
+        "damage": "2d6+3",
         "type": "drain",
         "delivery": "bite"
       }
@@ -25223,10 +25233,10 @@
       100,
       40
     ],
-    "hp": "564d10+1137",
+    "hp": "2301d10+4641",
     "speed": 10,
     "ai_pattern": "ranged",
-    "thac0": 8,
+    "thac0": 3,
     "peak_floor": 39,
     "spread": 2,
     "peak_weight": 0.0,
@@ -25234,16 +25244,22 @@
     "attacks": [
       {
         "name": "Fire Breath",
-        "damage": "3d6+5",
+        "damage": "4d6+7",
         "type": "fire",
         "piercing": true,
+        "effect": "burning",
+        "effect_chance": 0.3,
+        "effect_duration": 3,
         "delivery": "breath"
       },
       {
-        "name": "Slam",
-        "damage": "1d6+3",
-        "type": "blunt",
-        "delivery": "blow"
+        "name": "Breath of Smoke",
+        "damage": "1d6+5",
+        "type": "fire",
+        "effect": "blinded",
+        "effect_chance": 0.4,
+        "effect_duration": 3,
+        "delivery": "breath"
       }
     ],
     "resistances": [
@@ -25292,10 +25308,10 @@
       180,
       100
     ],
-    "hp": "561d10+1236",
+    "hp": "2369d10+5219",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 6,
+    "thac0": 2,
     "peak_floor": 44,
     "spread": 2,
     "peak_weight": 0.0,
@@ -25303,15 +25319,24 @@
     "attacks": [
       {
         "name": "Rake",
-        "damage": "3d8+3",
+        "damage": "6d8+7",
         "type": "slash",
         "delivery": "blow"
       },
       {
         "name": "Bite",
-        "damage": "1d8+3",
+        "damage": "2d8+6",
         "type": "pierce",
         "delivery": "bite"
+      },
+      {
+        "name": "Whispered Riddle",
+        "damage": "2d4",
+        "type": "magic",
+        "effect": "confused",
+        "effect_chance": 0.4,
+        "effect_duration": 3,
+        "delivery": "voice"
       }
     ],
     "resistances": [
@@ -25343,7 +25368,7 @@
     "spawn_chance": 0.35,
     "is_mini_boss": true,
     "omen": "Answers are scratched into the wall here. Every one of them is crossed out.",
-    "multi_attack_count": 2,
+    "multi_attack_count": 3,
     "thac0_lore": 0,
     "shrugs_off": [],
     "status_immune": [],
@@ -25357,10 +25382,10 @@
       60,
       180
     ],
-    "hp": "754d10+1502",
+    "hp": "2488d10+4954",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 4,
+    "thac0": 1,
     "peak_floor": 50,
     "spread": 2,
     "peak_weight": 0.0,
@@ -25368,7 +25393,7 @@
     "attacks": [
       {
         "name": "Hex",
-        "damage": "3d8+8",
+        "damage": "7d8+16",
         "type": "magic",
         "effect": "confused",
         "effect_chance": 0.5,
@@ -25377,7 +25402,7 @@
       },
       {
         "name": "Drain",
-        "damage": "2d4+3",
+        "damage": "4d4+8",
         "type": "drain",
         "delivery": "touch"
       }
@@ -25429,10 +25454,10 @@
       180,
       80
     ],
-    "hp": "851d10+2442",
+    "hp": "3085d10+8855",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 4,
+    "thac0": 0,
     "peak_floor": 55,
     "spread": 2,
     "peak_weight": 0.0,
@@ -25440,13 +25465,16 @@
     "attacks": [
       {
         "name": "Claw",
-        "damage": "4d6+12",
+        "damage": "7d6+22",
         "type": "slash",
+        "effect": "bleeding",
+        "effect_chance": 0.35,
+        "effect_duration": 4,
         "delivery": "blow"
       },
       {
         "name": "Bite",
-        "damage": "2d4+3",
+        "damage": "4d4+4",
         "type": "pierce",
         "delivery": "bite"
       }
@@ -25494,10 +25522,10 @@
       120,
       80
     ],
-    "hp": "848d10+2076",
+    "hp": "2430d10+5951",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 2,
+    "thac0": -1,
     "peak_floor": 60,
     "spread": 2,
     "peak_weight": 0.0,
@@ -25505,7 +25533,7 @@
     "attacks": [
       {
         "name": "Iron Bite",
-        "damage": "4d6+17",
+        "damage": "8d6+34",
         "type": "pierce",
         "effect": "bleeding",
         "effect_chance": 0.45,
@@ -25514,7 +25542,7 @@
       },
       {
         "name": "Hex",
-        "damage": "1d6+5",
+        "damage": "2d6+10",
         "type": "magic",
         "effect": "weakened",
         "effect_chance": 0.35,
@@ -25568,10 +25596,10 @@
       160,
       100
     ],
-    "hp": "1072d10+2692",
+    "hp": "4114d10+10334",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 2,
+    "thac0": -2,
     "peak_floor": 66,
     "spread": 2,
     "peak_weight": 0.0,
@@ -25579,7 +25607,7 @@
     "attacks": [
       {
         "name": "Venom Cloud",
-        "damage": "4d8+15",
+        "damage": "5d8+19",
         "type": "poison",
         "effect": "poisoned",
         "effect_chance": 0.6,
@@ -25589,7 +25617,7 @@
       },
       {
         "name": "Constrict",
-        "damage": "2d6+4",
+        "damage": "3d6+3",
         "type": "blunt",
         "effect": "paralyzed",
         "effect_chance": 0.3,
@@ -25643,10 +25671,10 @@
       100,
       40
     ],
-    "hp": "1187d10+3180",
+    "hp": "4829d10+12941",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 1,
+    "thac0": -3,
     "peak_floor": 69,
     "spread": 2,
     "peak_weight": 0.0,
@@ -25654,13 +25682,13 @@
     "attacks": [
       {
         "name": "Shadow Strike",
-        "damage": "4d8+16",
+        "damage": "7d8+31",
         "type": "drain",
         "delivery": "blow"
       },
       {
         "name": "Darkness Shroud",
-        "damage": "2d6+4",
+        "damage": "4d6+6",
         "type": "shadow",
         "effect": "blinded",
         "effect_chance": 0.45,
@@ -25711,10 +25739,10 @@
       180,
       80
     ],
-    "hp": "1441d10+3849",
+    "hp": "3554d10+9495",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 2,
+    "thac0": -3,
     "peak_floor": 74,
     "spread": 2,
     "peak_weight": 0.0,
@@ -25722,13 +25750,13 @@
     "attacks": [
       {
         "name": "Greataxe",
-        "damage": "4d8+17",
+        "damage": "8d8+36",
         "type": "slash",
         "delivery": "blow"
       },
       {
         "name": "Headbutt",
-        "damage": "2d8+3",
+        "damage": "4d8+7",
         "type": "blunt",
         "effect": "stunned",
         "effect_chance": 0.35,
@@ -25785,10 +25813,10 @@
       100,
       200
     ],
-    "hp": "1681d10+4461",
+    "hp": "8067d10+21409",
     "speed": 10,
     "ai_pattern": "ranged",
-    "thac0": 0,
+    "thac0": -4,
     "peak_floor": 78,
     "spread": 2,
     "peak_weight": 0.0,
@@ -25796,14 +25824,14 @@
     "attacks": [
       {
         "name": "Vortex Pull",
-        "damage": "4d10+14",
+        "damage": "5d10+14",
         "type": "blunt",
         "ranged": true,
         "delivery": "ranged"
       },
       {
         "name": "Crushing Maw",
-        "damage": "2d8+4",
+        "damage": "2d8+6",
         "type": "blunt",
         "delivery": "bite"
       }
@@ -25853,10 +25881,10 @@
       60,
       60
     ],
-    "hp": "1810d10+4833",
+    "hp": "9711d10+25930",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": -1,
+    "thac0": -4,
     "peak_floor": 80,
     "spread": 2,
     "peak_weight": 0.0,
@@ -25864,13 +25892,13 @@
     "attacks": [
       {
         "name": "Slam",
-        "damage": "4d10+14",
+        "damage": "4d10+16",
         "type": "blunt",
         "delivery": "blow"
       },
       {
         "name": "Grab",
-        "damage": "2d8+4",
+        "damage": "2d8+5",
         "type": "blunt",
         "effect": "paralyzed",
         "effect_chance": 0.3,
@@ -25879,7 +25907,7 @@
       },
       {
         "name": "Crush",
-        "damage": "2d8+4",
+        "damage": "2d8+5",
         "type": "blunt",
         "delivery": "grapple"
       }
@@ -25929,10 +25957,10 @@
       220,
       255
     ],
-    "hp": "2064d10+5215",
+    "hp": "9425d10+23816",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 0,
+    "thac0": -5,
     "peak_floor": 85,
     "spread": 2,
     "peak_weight": 0.0,
@@ -25940,7 +25968,7 @@
     "attacks": [
       {
         "name": "Ice Claw",
-        "damage": "5d10+7",
+        "damage": "12d10+15",
         "type": "cold",
         "effect": "slowed",
         "effect_chance": 0.4,
@@ -25949,7 +25977,7 @@
       },
       {
         "name": "Hunger Drain",
-        "damage": "3d6+5",
+        "damage": "7d6+12",
         "type": "drain",
         "effect": "diseased",
         "effect_chance": 0.55,
@@ -26006,10 +26034,10 @@
       180,
       220
     ],
-    "hp": "1524d12+8656",
+    "hp": "6503d12+36937",
     "speed": 10,
     "ai_pattern": "ranged",
-    "thac0": -1,
+    "thac0": -5,
     "peak_floor": 90,
     "spread": 2,
     "peak_weight": 0.0,
@@ -26017,7 +26045,7 @@
     "attacks": [
       {
         "name": "Spectral Blade",
-        "damage": "5d10+12",
+        "damage": "4d10+8",
         "type": "slash",
         "effect": "bleeding",
         "effect_chance": 0.4,
@@ -26026,7 +26054,7 @@
       },
       {
         "name": "Horn Blast",
-        "damage": "3d6+6",
+        "damage": "2d6+5",
         "type": "blunt",
         "effect": "stunned",
         "effect_chance": 0.35,
@@ -26078,10 +26106,10 @@
       180,
       40
     ],
-    "hp": "1574d12+8749",
+    "hp": "7922d12+44037",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": -1,
+    "thac0": -5,
     "peak_floor": 92,
     "spread": 2,
     "peak_weight": 0.0,
@@ -26089,7 +26117,7 @@
     "attacks": [
       {
         "name": "Web Trick",
-        "damage": "5d10+13",
+        "damage": "11d10+29",
         "type": "blunt",
         "effect": "confused",
         "effect_chance": 0.55,
@@ -26098,7 +26126,7 @@
       },
       {
         "name": "Venom",
-        "damage": "3d8+4",
+        "damage": "7d8+7",
         "type": "poison",
         "effect": "poisoned",
         "effect_chance": 0.45,
@@ -26152,10 +26180,10 @@
       200,
       80
     ],
-    "hp": "1581d12+9345",
+    "hp": "9380d12+55442",
     "speed": 10,
     "ai_pattern": "ranged",
-    "thac0": -1,
+    "thac0": -5,
     "peak_floor": 95,
     "spread": 2,
     "peak_weight": 0.0,
@@ -26163,13 +26191,13 @@
     "attacks": [
       {
         "name": "Acid Bite",
-        "damage": "5d10+14",
+        "damage": "7d10+20",
         "type": "acid",
         "delivery": "bite"
       },
       {
         "name": "Venom Spray",
-        "damage": "3d8+4",
+        "damage": "4d8+7",
         "type": "poison",
         "effect": "poisoned",
         "effect_chance": 0.55,
@@ -26178,7 +26206,7 @@
       },
       {
         "name": "Claw",
-        "damage": "3d8+4",
+        "damage": "4d8+7",
         "type": "slash",
         "delivery": "blow"
       }
@@ -26230,10 +26258,10 @@
       80,
       40
     ],
-    "hp": "2962d10+7457",
+    "hp": "11648d10+29328",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 2,
+    "thac0": -5,
     "peak_floor": 83,
     "spread": 2,
     "peak_weight": 0.0,
@@ -26241,13 +26269,13 @@
     "attacks": [
       {
         "name": "Blazing Fist",
-        "damage": "5d10+14",
+        "damage": "8d10+24",
         "type": "fire",
         "delivery": "blow"
       },
       {
         "name": "Wrath Strike",
-        "damage": "3d6+6",
+        "damage": "5d6+10",
         "type": "blunt",
         "effect": "burning",
         "effect_chance": 0.3,
@@ -26312,10 +26340,10 @@
       160,
       50
     ],
-    "hp": "3092d10+7843",
+    "hp": "10994d10+27888",
     "speed": 10,
     "ai_pattern": "ranged",
-    "thac0": 2,
+    "thac0": -5,
     "peak_floor": 85,
     "spread": 2,
     "peak_weight": 0.0,
@@ -26323,7 +26351,7 @@
     "attacks": [
       {
         "name": "Plague Touch",
-        "damage": "5d10+15",
+        "damage": "5d10+17",
         "type": "poison",
         "effect": "poisoned",
         "effect_chance": 0.4,
@@ -26332,7 +26360,7 @@
       },
       {
         "name": "Miasma Breath",
-        "damage": "3d6+7",
+        "damage": "3d6+8",
         "type": "poison",
         "piercing": true,
         "effect": "diseased",
@@ -26388,10 +26416,10 @@
       160,
       80
     ],
-    "hp": "2049d12+12692",
+    "hp": "6875d12+42582",
     "speed": 12,
     "ai_pattern": "aggressive",
-    "thac0": 2,
+    "thac0": -5,
     "peak_floor": 87,
     "spread": 2,
     "peak_weight": 0.0,
@@ -26399,13 +26427,13 @@
     "attacks": [
       {
         "name": "Draining Grasp",
-        "damage": "5d10+17",
+        "damage": "10d10+31",
         "type": "drain",
         "delivery": "touch"
       },
       {
         "name": "Withering Touch",
-        "damage": "3d6+8",
+        "damage": "6d6+15",
         "type": "cold",
         "effect": "weakened",
         "effect_chance": 0.35,
@@ -26461,10 +26489,10 @@
       40,
       40
     ],
-    "hp": "2159d12+13186",
+    "hp": "5709d12+34871",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 1,
+    "thac0": -5,
     "peak_floor": 89,
     "spread": 2,
     "peak_weight": 0.0,
@@ -26472,13 +26500,13 @@
     "attacks": [
       {
         "name": "War Blade",
-        "damage": "5d10+19",
+        "damage": "7d10+28",
         "type": "slash",
         "delivery": "blow"
       },
       {
         "name": "Shield Bash",
-        "damage": "3d6+10",
+        "damage": "4d6+15",
         "type": "blunt",
         "effect": "stunned",
         "effect_chance": 0.25,
@@ -26487,7 +26515,7 @@
       },
       {
         "name": "Cleave",
-        "damage": "3d6+10",
+        "damage": "4d6+15",
         "type": "slash",
         "delivery": "blow"
       }
@@ -26541,10 +26569,10 @@
       60,
       90
     ],
-    "hp": "2253d12+13514",
+    "hp": "8511d12+51045",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 1,
+    "thac0": -5,
     "peak_floor": 91,
     "spread": 2,
     "peak_weight": 0.0,
@@ -26552,7 +26580,7 @@
     "attacks": [
       {
         "name": "Death Touch",
-        "damage": "5d10+22",
+        "damage": "9d10+41",
         "type": "drain",
         "effect": "weakened",
         "effect_chance": 0.3,
@@ -26561,7 +26589,7 @@
       },
       {
         "name": "Cold Embrace",
-        "damage": "3d6+10",
+        "damage": "5d6+20",
         "type": "cold",
         "delivery": "blow"
       }
@@ -26615,10 +26643,10 @@
       110,
       50
     ],
-    "hp": "2322d12+13694",
+    "hp": "7740d12+45643",
     "speed": 8,
     "ai_pattern": "aggressive",
-    "thac0": 1,
+    "thac0": -5,
     "peak_floor": 93,
     "spread": 2,
     "peak_weight": 0.0,
@@ -26626,7 +26654,7 @@
     "attacks": [
       {
         "name": "Earth Shatter",
-        "damage": "5d10+23",
+        "damage": "7d10+37",
         "type": "blunt",
         "effect": "stunned",
         "effect_chance": 0.35,
@@ -26635,7 +26663,7 @@
       },
       {
         "name": "Tremor Stomp",
-        "damage": "3d8+8",
+        "damage": "4d8+14",
         "type": "blunt",
         "delivery": "trample"
       }
@@ -26688,10 +26716,10 @@
       180,
       210
     ],
-    "hp": "2426d12+14316",
+    "hp": "9382d12+55359",
     "speed": 12,
     "ai_pattern": "dancer",
-    "thac0": 0,
+    "thac0": -5,
     "peak_floor": 97,
     "spread": 2,
     "peak_weight": 0.0,
@@ -26699,7 +26727,7 @@
     "attacks": [
       {
         "name": "Void Whisper",
-        "damage": "5d10+25",
+        "damage": "9d10+43",
         "type": "magic",
         "effect": "confused",
         "effect_chance": 0.35,
@@ -26708,7 +26736,7 @@
       },
       {
         "name": "Silence Strike",
-        "damage": "3d8+9",
+        "damage": "5d8+17",
         "type": "magic",
         "effect": "silenced",
         "effect_chance": 0.4,
@@ -33500,13 +33528,13 @@
       70
     ],
     "ai_pattern": "aggressive",
-    "hp": "551d10+922",
+    "hp": "1514d10+2535",
     "speed": 10,
-    "thac0": 7,
+    "thac0": 2,
     "attacks": [
       {
         "name": "Warhammer",
-        "damage": "3d6+6",
+        "damage": "4d6+9",
         "type": "blunt",
         "effect": "stunned",
         "effect_chance": 0.2,
@@ -33515,7 +33543,7 @@
       },
       {
         "name": "Gauntlet Sweep",
-        "damage": "2d6+6",
+        "damage": "3d6+8",
         "type": "blunt",
         "delivery": "trample"
       }
@@ -34077,9 +34105,9 @@
       100
     ],
     "ai_pattern": "summoner",
-    "hp": "1068d10+1421",
+    "hp": "5314d10+7072",
     "speed": 9,
-    "thac0": 3,
+    "thac0": -2,
     "summon_kind": [
       "skeleton_horde",
       "death_knight_lord"
@@ -34089,7 +34117,7 @@
     "attacks": [
       {
         "name": "Soul Whisper",
-        "damage": "2d8+6",
+        "damage": "2d8+5",
         "type": "shadow",
         "effect": "feared",
         "effect_chance": 0.3,
@@ -34098,7 +34126,7 @@
       },
       {
         "name": "Deathly Bolt",
-        "damage": "6d6+10",
+        "damage": "6d6+9",
         "type": "necrotic",
         "effect": "weakened",
         "effect_chance": 0.3,
@@ -34754,13 +34782,13 @@
       30
     ],
     "ai_pattern": "aggressive",
-    "hp": "2234d10+3190",
+    "hp": "11539d10+16478",
     "speed": 11,
-    "thac0": 0,
+    "thac0": -5,
     "attacks": [
       {
         "name": "Exsanguinating Blade",
-        "damage": "6d8+14",
+        "damage": "9d8+23",
         "type": "slash",
         "effect": "bleeding",
         "effect_chance": 0.6,
@@ -34769,7 +34797,7 @@
       },
       {
         "name": "Crimson Wave",
-        "damage": "3d6+7",
+        "damage": "5d6+10",
         "type": "necrotic",
         "effect": "weakened",
         "effect_chance": 0.4,
@@ -34913,11 +34941,11 @@
       40,
       80
     ],
-    "hp": "1221d12+8631",
+    "hp": "8587d12+60702",
     "regeneration": 83,
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 0,
+    "thac0": -5,
     "peak_floor": 85,
     "spread": 5,
     "peak_weight": 0.0,
@@ -34936,35 +34964,35 @@
     "attacks": [
       {
         "name": "Cold Breath",
-        "damage": "5d10+4",
+        "damage": "5d10+7",
         "type": "cold",
         "piercing": true,
         "delivery": "breath"
       },
       {
         "name": "Fire Breath",
-        "damage": "5d10+7",
+        "damage": "5d10+10",
         "type": "fire",
         "piercing": true,
         "delivery": "breath"
       },
       {
         "name": "Lightning Breath",
-        "damage": "5d10+5",
+        "damage": "5d10+8",
         "type": "lightning",
         "piercing": true,
         "delivery": "breath"
       },
       {
         "name": "Acid Breath",
-        "damage": "5d10+4",
+        "damage": "5d10+7",
         "type": "acid",
         "piercing": true,
         "delivery": "breath"
       },
       {
         "name": "Poison Breath",
-        "damage": "5d10+4",
+        "damage": "5d10+7",
         "type": "poison",
         "piercing": true,
         "delivery": "breath"
@@ -35025,11 +35053,11 @@
       30,
       50
     ],
-    "hp": "1624d12+8633",
+    "hp": "9853d12+52378",
     "regeneration": 99,
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 1,
+    "thac0": -5,
     "peak_floor": 93,
     "spread": 4,
     "peak_weight": 0.0,
@@ -35053,14 +35081,14 @@
     "attacks": [
       {
         "name": "Ruby Rod Strike",
-        "damage": "6d10+19",
+        "damage": "7d10+23",
         "type": "magic",
         "piercing": true,
         "delivery": "blow"
       },
       {
         "name": "Mind Blast",
-        "damage": "4d12+15",
+        "damage": "5d12+16",
         "type": "psionic",
         "effect": "confused",
         "effect_chance": 0.4,
@@ -35069,14 +35097,14 @@
       },
       {
         "name": "Infernal Fire",
-        "damage": "5d10+14",
+        "damage": "6d10+16",
         "type": "fire",
         "piercing": true,
         "delivery": "blow"
       },
       {
         "name": "Infernal Contract",
-        "damage": "3d10+13",
+        "damage": "4d10+13",
         "type": "drain",
         "effect": "weakened",
         "effect_chance": 0.35,
@@ -35132,10 +35160,10 @@
       80,
       20
     ],
-    "hp": "1531d12+8614",
+    "hp": "9618d12+54120",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 2,
+    "thac0": -5,
     "peak_floor": 90,
     "spread": 5,
     "peak_weight": 0.0,
@@ -35147,27 +35175,27 @@
     "attacks": [
       {
         "name": "Sword of Doom",
-        "damage": "5d10+19",
+        "damage": "7d10+23",
         "type": "fire",
         "subtype": "slash",
         "delivery": "blow"
       },
       {
         "name": "Fire Breath",
-        "damage": "4d10+14",
+        "damage": "5d10+20",
         "type": "fire",
         "piercing": true,
         "delivery": "breath"
       },
       {
         "name": "Titanic Stomp",
-        "damage": "3d10+19",
+        "damage": "4d10+25",
         "type": "blunt",
         "delivery": "trample"
       },
       {
         "name": "Inferno Aura",
-        "damage": "3d8+13",
+        "damage": "4d8+17",
         "type": "fire",
         "effect": "burning",
         "effect_chance": 0.5,
@@ -35230,10 +35258,10 @@
       220,
       255
     ],
-    "hp": "1439d12+7210",
+    "hp": "9547d12+47836",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 2,
+    "thac0": -5,
     "peak_floor": 85,
     "spread": 4,
     "peak_weight": 0.0,
@@ -35245,14 +35273,14 @@
     "attacks": [
       {
         "name": "Frostmaul Smash",
-        "damage": "5d10+16",
+        "damage": "6d10+19",
         "type": "cold",
         "subtype": "blunt",
         "delivery": "blow"
       },
       {
         "name": "Icy Breath",
-        "damage": "4d10+13",
+        "damage": "5d10+15",
         "type": "cold",
         "piercing": true,
         "effect": "frozen",
@@ -35262,7 +35290,7 @@
       },
       {
         "name": "Hurled Glacier",
-        "damage": "4d8+13",
+        "damage": "5d8+15",
         "type": "cold",
         "effect": "stunned",
         "effect_chance": 0.3,
@@ -35271,7 +35299,7 @@
       },
       {
         "name": "Rime Aura",
-        "damage": "2d10+11",
+        "damage": "2d10+15",
         "type": "cold",
         "effect": "slowed",
         "effect_chance": 0.5,
@@ -35333,10 +35361,10 @@
       130,
       120
     ],
-    "hp": "1393d12+6420",
+    "hp": "10493d12+48357",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 3,
+    "thac0": -5,
     "peak_floor": 82,
     "spread": 3,
     "peak_weight": 0.0,
@@ -35346,13 +35374,13 @@
     "attacks": [
       {
         "name": "Stone Heart Strike",
-        "damage": "5d10+14",
+        "damage": "5d10+18",
         "type": "blunt",
         "delivery": "blow"
       },
       {
         "name": "Hurled Whetstone",
-        "damage": "4d8+13",
+        "damage": "4d8+16",
         "type": "blunt",
         "effect": "bleeding",
         "effect_chance": 0.35,
@@ -35361,7 +35389,7 @@
       },
       {
         "name": "Stone Skin Smash",
-        "damage": "4d10+13",
+        "damage": "4d10+16",
         "type": "blunt",
         "effect": "stunned",
         "effect_chance": 0.4,
@@ -35429,10 +35457,10 @@
       100,
       60
     ],
-    "hp": "49d8+4",
+    "hp": "106d8+6",
     "speed": 12,
     "ai_pattern": "ranged",
-    "thac0": 14,
+    "thac0": 12,
     "peak_floor": 6,
     "spread": 2,
     "peak_weight": 0.0,
@@ -35446,10 +35474,10 @@
       },
       {
         "name": "Scorching Dung",
-        "damage": "1d4+1",
+        "damage": "1d4",
         "type": "fire",
         "effect": "burning",
-        "effect_chance": 0.35,
+        "effect_chance": 0.25,
         "effect_duration": 3,
         "ranged": true,
         "delivery": "ranged"
@@ -35496,10 +35524,10 @@
       90,
       70
     ],
-    "hp": "353d8+346",
+    "hp": "1092d8+1069",
     "speed": 12,
     "ai_pattern": "aggressive",
-    "thac0": 10,
+    "thac0": 6,
     "peak_floor": 27,
     "spread": 2,
     "peak_weight": 0.0,
@@ -35507,7 +35535,7 @@
     "attacks": [
       {
         "name": "Tusk Gore",
-        "damage": "2d4+3",
+        "damage": "5d4+6",
         "type": "pierce",
         "effect": "bleeding",
         "effect_chance": 0.3,
@@ -35516,7 +35544,7 @@
       },
       {
         "name": "Trampling Charge",
-        "damage": "1d6+2",
+        "damage": "2d6+6",
         "type": "blunt",
         "effect": "slowed",
         "effect_chance": 0.25,
@@ -35524,6 +35552,8 @@
         "delivery": "trample"
       }
     ],
+    "charge_bonus_mult": 1.5,
+    "can_charge": true,
     "resistances": [
       "slash"
     ],
@@ -36627,10 +36657,10 @@
       130,
       60
     ],
-    "hp": "1380d10+1360",
+    "hp": "3452d10+3401",
     "speed": 11,
     "ai_pattern": "dancer",
-    "thac0": 1,
+    "thac0": -3,
     "peak_floor": 67,
     "spread": 2,
     "peak_weight": 0.0,
@@ -36638,7 +36668,7 @@
     "attacks": [
       {
         "name": "Bronze Claws",
-        "damage": "4d8+20",
+        "damage": "8d8+35",
         "type": "slash",
         "effect": "bleeding",
         "effect_chance": 0.35,
@@ -36647,7 +36677,7 @@
       },
       {
         "name": "Serpent Hair",
-        "damage": "3d8+18",
+        "damage": "6d8+32",
         "type": "poison",
         "effect": "poisoned",
         "effect_chance": 0.4,
