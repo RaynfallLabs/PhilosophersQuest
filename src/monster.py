@@ -119,13 +119,16 @@ def _is_proper(monster, low: str) -> bool:
     """A named foe (a boss, a mini-boss, a seal demon, a story foe, the
     Bones ghost, Death): a proper noun, said with no article. So is a kind
     named for its master ("Fionn's Hound", "Set's Jackal"): "the Fionn's
-    Hound" was said (round 3)."""
+    Hound" was said (round 3). Death himself is "Death"; a kind named for
+    him is not ("Death Dog swings at you and misses!", "Death Mage is
+    slain!" were said of seven ordinary kinds: bug bash 3.5.1 E)."""
     first = (getattr(monster, 'name', '') or '').split(' ', 1)[0]
     return bool(getattr(monster, 'is_boss', False) or getattr(monster, 'is_mini_boss', False)
                 or getattr(monster, 'is_seal_demon', False)
                 or getattr(monster, 'proper_noun', False)
                 or getattr(monster, 'kind', '') in ('player_ghost', 'death')
-                or low.startswith(('ghost of ', 'death'))
+                or low == 'death'
+                or low.startswith(('ghost of ', "death's "))
                 or (first[:1].isupper() and first.endswith(("'s", "s'"))))
 
 
@@ -1492,6 +1495,12 @@ class Monster:
         name = attack_noun(atk)
         who = the_name(self)
         tail = f" {note}" if note else ''
+        # A shot or spell named by a verb misses as one ("The Skeleton
+        # Archer shoots at you and misses!", not "...'s shoot misses you!").
+        miss = (combat_lines().get('attack_misses') or {}).get(
+            str(atk.get('name', '')).replace('_', ' '))
+        if miss and not confused:
+            return f"{who} {miss}!{tail}"
         if any(w in low for w in _MIND_WORDS):
             return f"{who}'s {name} fails to take hold of you!"
         if atk.get('ranged') or any(w in low for w in _RANGED_WORDS):

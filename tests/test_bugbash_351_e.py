@@ -942,3 +942,58 @@ def test_journey_06_a_short_story(make_game, a_seeker):
         s.draw()
     no_errors(h)
     no_errors(h2)
+
+
+def test_351_e05_a_death_dog_is_not_death(make_game):
+    """"Death Dog swings at you and misses!", "Death Mage is slain!": seven
+    ordinary kinds whose names begin with "death" were named like Death
+    himself, with no article (two of them on floor 1)."""
+    from monster import the_name
+    g, h = make_game()
+    p = g.player
+    open_floor(g, p.x, p.y, 3)
+    dog = place_monster(g, 'death_dog', 1)
+    dog.hp = 1
+    g._refresh_fov()
+    h.said()
+    said = blow(h, dog, 3)
+    assert 'The Death Dog is slain!' in said, said
+    for kind in ('death_echo', 'death_knight', 'death_mage', 'death_beetle', 'death_lord',
+                 'death_knight_lord'):
+        m = place_monster(g, kind, 2)
+        m._aware = True
+        assert the_name(m).startswith('The ') and the_name(m, lower=True).startswith('the '), kind
+    from monster import DeathMonster
+    assert the_name(DeathMonster()) == 'Death'
+    no_errors(h)
+
+
+def test_351_e06_a_shot_named_by_a_verb_misses_in_english():
+    """"The Skeleton Archer's shoot misses you!", "The Lich Thrall's cast
+    misses you!", "The Elder Beholder's disintegrate misses you!", "The
+    Huldufolk Raider's led astray misses you!"."""
+    from monster import Monster
+    defs = monster_defs()
+    want = {('skeleton_archer', 'Shoot'): 'The Skeleton Archer shoots at you and misses!',
+            ('lich_thrall', 'Cast'): 'The Lich Thrall casts at you and misses!',
+            ('elder_beholder', 'Disintegrate'):
+                'The Elder Beholder tries to disintegrate you, and misses!',
+            ('huldufolk_raider', 'Led Astray'):
+                'The Huldufolk Raider tries to lead you astray, and fails!'}
+    for (kind, attack), line in want.items():
+        m = Monster(dict(defs[kind], id=kind), 0, 0)
+        m._aware = True
+        atk = next(a for a in m.attacks if str(a.get('name')).replace('_', ' ') == attack)
+        assert m._miss_text(atk) == line, (kind, m._miss_text(atk))
+    # Every other verb-named attack says no verb as a noun ("'s shoot").
+    import json
+    root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    with open(os.path.join(root, 'data', 'combat_lines.json'), encoding='utf-8') as f:
+        verbs = set(json.load(f)['attack_verbs'])
+    for kind, d in defs.items():
+        for a in d.get('attacks', []):
+            name = str(a.get('name')).replace('_', ' ')
+            if name in verbs:
+                m = Monster(dict(d, id=kind), 0, 0)
+                m._aware = True
+                assert f"'s {name.lower()} misses" not in m._miss_text(a), (kind, m._miss_text(a))

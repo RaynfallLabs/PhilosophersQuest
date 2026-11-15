@@ -3035,9 +3035,10 @@ class CombatMixin:
                 # said "Somewhere close, something sniffs the air, and
                 # stops." twice in a row (bug bash 3.5.1 E): it names
                 # nothing, so once a turn is all it can say.
+                turn = getattr(self, 'turn_count', 0)
                 said = self.__dict__.get('_unseen_sense_said')
-                if not said or said[0] != self.turn_count:
-                    said = self._unseen_sense_said = (self.turn_count, set())
+                if not said or said[0] != turn:
+                    said = self._unseen_sense_said = (turn, set())
                 if text in said[1]:
                     text = ''
                 said[1].add(text)

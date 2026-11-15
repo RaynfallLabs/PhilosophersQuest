@@ -53,5 +53,12 @@
     "Wither": "withers",
     "Zap": "zaps"
   },
+  "_attack_misses": "A shot or spell whose name is a verb, when it misses (Monster._miss_text): 'The Skeleton Archer's shoot misses you!' read the verb as a noun (bug bash 3.5.1 E). The predicate follows the creature's name; the line ends in '!'.",
+  "attack_misses": {
+    "Shoot": "shoots at you and misses",
+    "Cast": "casts at you and misses",
+    "Disintegrate": "tries to disintegrate you, and misses",
+    "Led Astray": "tries to lead you astray, and fails"
+  },
   "proper_words": ["Euryale's", "Hermes'", "Leviathan's", "Takshaka's", "Death's", "Thoth", "Eleven", "A.M."]
 }
