@@ -71,6 +71,47 @@ def test_floor_ones_atmosphere_is_said_at_the_start_and_only_once():
     assert _texts(g).count(atmo[0]) == 1
 
 
+# ------------------------------------------------ a mini-boss with no room
+
+def test_a_mini_boss_with_nowhere_to_stand_comes_a_floor_later():
+    """Surtur (2 x 2) is planned on floor 90, a maze whose few clearings
+    the floor's own monsters fill: in about one run in fourteen nowhere fit
+    him and he was lost for the run."""
+    import items
+    from dungeon import Dungeon, Room, WALL, FLOOR, STAIRS_UP, STAIRS_DOWN
+    from level_manager import LevelManager
+    items.bind_unique_registry(set())
+    lm = LevelManager()
+    lm._planned_mini_bosses = {90: 'surtur'}
+    # A 1-wide corridor and two 1 x 1 rooms: no 2 x 2 fits anywhere.
+    w, h = 30, 5
+    tiles = [[WALL] * w for _ in range(h)]
+    for x in range(1, 29):
+        tiles[2][x] = FLOOR
+    tiles[2][1] = STAIRS_UP
+    tiles[2][28] = STAIRS_DOWN
+    d = Dungeon(tiles, [Room(0, 1, 3, 3), Room(13, 1, 3, 3), Room(26, 1, 3, 3)], w, h, 90)
+    monsters = []
+    lm._try_spawn_mini_boss(d, monsters, 90)
+    assert not monsters
+    # Not 91 (Thanatos, a seal demon's floor): 92.
+    assert lm._planned_mini_bosses == {92: 'surtur'}
+    _, ms, _ = lm.generate(92)
+    assert any(m.kind == 'surtur' for m in ms)
+    assert 'surtur' in lm._placed_mini_bosses
+
+
+def test_a_carried_mini_boss_never_lands_on_a_floor_already_made():
+    import items
+    from level_manager import LevelManager
+    items.bind_unique_registry(set())
+    lm = LevelManager()
+    lm._planned_mini_bosses = {90: 'surtur', 94: 'asmodeus'}
+    lm._saved = {92: object()}
+    assert lm._carry_mini_boss('surtur', 90) == 95
+    assert lm._planned_mini_bosses == {94: 'asmodeus', 95: 'surtur'}
+
+
 # --------------------------------------------- the explore tour of a maze
 
 def _serpentine():

@@ -507,7 +507,7 @@ Per band:
 2. Primary slot (p=0.90): weighted pick by `spawn_chance`. Target floor = `peak_floor`, or `peak_floor - 1` if that collides with a `_BOSS_LEVELS` entry (20/40/60/80/100). Record in `planned[target]`.
 3. Secondary slot (p=0.30): same pool minus the already-placed id. Walk the target forward if it collides with another planned slot or a boss floor; abort if it walks past `band_hi`.
 
-**At floor-generate time** (`_try_spawn_mini_boss`): if `self._planned_mini_bosses[level_num]` is set and that id hasn't been placed yet, pick a middle room (not first or last), find a free walkable tile, instantiate — v2.18.0 added the implicit `is_boss` wire via `Monster.__init__`, so a mini-boss now gets boss-immunity automatically without an explicit `mb.is_boss = True` override at this call site.
+**At floor-generate time** (`_try_spawn_mini_boss`): if `self._planned_mini_bosses[level_num]` is set and that id hasn't been placed yet, pick a middle room (not first or last), find a free walkable tile, instantiate — v2.18.0 added the implicit `is_boss` wire via `Monster.__init__`, so a mini-boss now gets boss-immunity automatically without an explicit `mb.is_boss = True` override at this call site. If his whole footprint fits nowhere (a 2 x 2 legend on a maze floor whose clearings the floor's own monsters fill: Surtur on 90, about one run in fourteen), `_carry_mini_boss` plans him on the next floor not yet made, within five, with no gate boss, seal demon or other planned mini-boss (bug bash 3.5.1; he used to be lost for the run).
 
 ## Seal demons
 
