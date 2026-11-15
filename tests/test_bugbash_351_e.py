@@ -17,6 +17,7 @@ from collections import deque
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 import pygame  # noqa: E402
+import pytest  # noqa: E402
 
 from test_bugbash_wb_e import (  # noqa: E402,F401  (make_game is a fixture)
     blow, make_game, no_errors, open_floor, pick, place_monster, reload,
@@ -854,3 +855,90 @@ def body_(g):
 def kit_select_(h, item):
     from test_bugbash_wb_e import kit_select
     kit_select(h, item)
+
+
+# ---------------------------------------------------------------------------
+# Journey 6: a death, the score, a new start, the Seeker's badges
+# ---------------------------------------------------------------------------
+
+@pytest.fixture
+def a_seeker(tmp_path, monkeypatch):
+    """Robyn is the Seeker at the keyboard (a profile of her own, in a
+    folder of the test's; the codes' key is a test key)."""
+    import highscore_system
+    import seeker_codes
+    import seeker_profile
+    saved = seeker_codes._KEYS_OVERRIDE, seeker_profile._DIR_OVERRIDE
+    seeker_codes._KEYS_OVERRIDE = {'label': 'pq1', 'keys': {'pq1': bytes(range(32))}}
+    seeker_profile._DIR_OVERRIDE = str(tmp_path / 'seekers')
+    monkeypatch.setattr(highscore_system, '_SCORE_FILE', str(tmp_path / 'highscores.json'))
+    seeker_profile.set_active('Robyn')
+    yield 'Robyn'
+    seeker_codes._KEYS_OVERRIDE, seeker_profile._DIR_OVERRIDE = saved
+    import counters
+    counters.ON_COUNTER = None
+
+
+def test_journey_06_a_short_story(make_game, a_seeker):
+    """A new hero punches a giant rat to death (his sword still in the
+    pack), then falls to a goblin on floor 1: the death screen, the score in
+    the table, Esc to the title, a new hero of the same name on floor 1,
+    and the Seeker Profile (F4) with Bare Knuckles and A Very Short Story
+    won."""
+    import highscore_system
+    import save_system
+    import seeker_screen
+    from game_states import STATE_DEAD
+    g, h = make_game(name='Wat')
+    p = g.player
+    open_floor(g, p.x, p.y, 4)
+    assert p.weapon is None
+    rat = place_monster(g, 'giant_rat', 2)
+    g._refresh_fov()
+    said = fight_to(h, rat)
+    assert not rat.alive, said
+    save_system.save_game(g)
+    assert save_system.save_exists('Wat')
+    # A goblin, and nothing left in him.
+    gob = place_monster(g, 'goblin', 1)
+    g._refresh_fov()
+    p.hp = 1
+    for _ in range(60):
+        if g.state == STATE_DEAD or p.is_dead():
+            break
+        if g.state != 'player':
+            h.key(pygame.K_RETURN)
+        else:
+            h.wait()
+    for _ in range(10):                     # a popup (the last words) first
+        if g.state == STATE_DEAD:
+            break
+        h.key(pygame.K_RETURN)
+    assert g.state == STATE_DEAD, (g.state, h.said())
+    for _ in range(3):
+        h.frame()                           # the death screen draws
+    assert gob.alive
+    assert not save_system.save_exists('Wat')
+    rows = [r for r in highscore_system.get_scores() if r.get('name') == 'Wat']
+    assert len(rows) == 1 and rows[0]['level'] == 1, rows
+    assert rows[0]['kills'] >= 1
+    # Esc: back to the title (handle_event says the run is over).
+    out = g.handle_event(pygame.event.Event(pygame.KEYDOWN, key=pygame.K_ESCAPE,
+                                            unicode='', mod=0, scancode=0))
+    assert out is False
+    g._seeker_flush()
+    # A new hero of the same name: a fresh floor 1.
+    g2, h2 = make_game(name='Wat')
+    assert g2.dungeon_level == 1 and g2.player.hp == g2.player.max_hp
+    assert not any(isinstance(i, type(rat)) for i in g2.player.inventory)
+    # The Seeker Profile (title, F4): the badges are hers.
+    s = seeker_screen.SeekerScreen(pygame.display.get_surface())
+    assert s.session is not None and s.phase == 'gallery'
+    won = set(s.session.profile.unlocked())
+    assert {'bare_knuckles', 'short_story'} <= won, won
+    s.draw()
+    for key in (pygame.K_RIGHT, pygame.K_DOWN, pygame.K_RETURN):
+        s.handle_key(pygame.event.Event(pygame.KEYDOWN, key=key, unicode='', mod=0, scancode=0))
+        s.draw()
+    no_errors(h)
+    no_errors(h2)
