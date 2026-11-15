@@ -2768,6 +2768,118 @@ def _(g):
     _emberpup(g)
 
 
+def _bococho_camp(g):
+    """Gilt Varro's racing camp, set up by the game's own spawner on this
+    floor, the hero beside the young Bococho (bococho_encounter.py)."""
+    import bococho_encounter as bc
+    g._bococho = dict(bc.old_save_state(), floor=g.dungeon_level, seed=7)
+    g._maybe_spawn_bococho(g.dungeon_level)
+    young = next(m for m in g.monsters if bc.is_young(m))
+    for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1), (1, 1), (-1, 1), (1, -1), (-1, -1)):
+        t = (young.x + dx, young.y + dy)
+        if (g.dungeon.is_walkable(*t) and not any((m.x, m.y) == t for m in g.monsters)
+                and t not in g.dungeon.__dict__.get('fixture_blocks', ())):
+            g.player.x, g.player.y = t
+            break
+    for p in g.pets:
+        p.x, p.y = g.player.x, g.player.y
+        g._riding_place_beside(p)
+    g._refresh_fov()
+    return young
+
+
+@scene('bococho_camp_on_map', 'Encounters',
+       'The racing camp (one floor of 51-65): tether posts, the betting board, Varro, his '
+       'birds and the young Bococho, on the map.', expect='player')
+def _(g):
+    _bococho_camp(g)
+    g.zoom_mode = 'close'
+
+
+@scene('bococho_story', 'Encounters', 'Bump the young Bococho at the racing camp: her story.',
+       expect='bococho')
+def _(g):
+    g._bococho_open('young', _bococho_camp(g))
+
+
+@scene('bococho_varro', 'Encounters',
+       'The young Bococho trusts the hero; bump Gilt Varro, Enter: the challenge and its fee.',
+       expect='bococho')
+def _(g):
+    import bococho_encounter as bc
+    _bococho_camp(g)
+    g._bococho['feeds'] = 2
+    varro = next(m for m in g.monsters if bc.is_varro(m))
+    g._bococho_open('varro', varro)
+    press(g, pygame.K_RETURN)
+
+
+def _bococho_race(g, legs=0):
+    """The camp, her trust, the fee paid: the Underway Run, with ``legs``
+    legs run (paced, a chain of 5 each; the outside lane on the cheat leg)."""
+    import race as R
+    _bococho_camp(g)
+    g._bococho['feeds'] = 2
+    g._enter_underway_run()
+    press(g, pygame.K_RETURN)
+    for _ in range(legs):
+        lane = 'outside' if R.is_cheat_leg(g._race()) else 'inside'
+        mode = 'sprint' if R.is_final_leg(g._race()) else 'pace'
+        g._race_leg_done(5, mode, lane)
+        press(g, pygame.K_RETURN)
+    g.render()                  # (the panel's height frames the oval on the next frame)
+    return g._race()
+
+
+@scene('race_cheat_leg', 'Encounters',
+       'The Underway Run, two legs run: the birds on the oval; leg 3, Varro\'s taunt (the tell), '
+       'Sprint, Pace and the lane.', expect='race')
+def _(g):
+    _bococho_race(g, legs=2)
+
+
+@scene('race_leg_result', 'Encounters', 'The Underway Run: a leg run, the commentary and where '
+       'the birds stand.', expect='race')
+def _(g):
+    _bococho_race(g, legs=1)
+    g._race_leg_done(6, 'pace', 'inside')
+    g.render()
+
+
+@scene('race_finish', 'Encounters', 'The Underway Run, the home straight run: the finish and '
+       'the result.', expect='race')
+def _(g):
+    _bococho_race(g, legs=4)
+    g._race_leg_done(6, 'sprint', 'inside')
+    g.render()
+
+
+def _bococho_pet(g, level=25):
+    from pet_system import Pet
+    x, y = _free_tiles_near(g, 1, 1)[0]
+    pet = Pet('bococho', x, y, level=level)
+    pet.nickname = 'Goldie'
+    g.pets[:] = [pet]
+    g._sync_saddlebags()
+    return pet
+
+
+@scene('riding_on_map', 'Play', 'Shift+R beside a grown Bococho: the hero in her saddle on the '
+       'map, Riding on the Effects list.', expect='player')
+def _(g):
+    _bococho_pet(g)
+    g.monsters = [m for m in g.monsters if not g._sees_monster(m)]
+    g.handle_event(key_event(pygame.K_r, 'R', pygame.KMOD_SHIFT))
+    g.zoom_mode = 'close'
+
+
+@scene('menu_pet_bococho', 'Pets', 'Shift+P with the Bococho: her saddlebags, riding and the '
+       'Mount key on her card.', expect='pet_menu')
+def _(g):
+    _bococho_pet(g)
+    g.handle_event(key_event(pygame.K_p, 'P', pygame.KMOD_SHIFT))
+
+
 def _black_knight(g, hits=0):
     """Down to floor 17 with the Black Knight on it (the game's own spawner
     builds his bridge), the hero beside him, close zoom, `hits` blows struck

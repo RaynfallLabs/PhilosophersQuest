@@ -327,6 +327,8 @@ def save_game(game) -> bool:
             '_stray_kids': getattr(game, '_stray_kids', None),
             # Setne's Tomb: its floor, placed yet, sealed for good, the room.
             '_setne': getattr(game, '_setne', None),
+            # The Bococho: the camp's floor, her trust, the waits, an unfinished race.
+            '_bococho': getattr(game, '_bococho', None),
             # Dungeon Alive: the domains announced, and the run state after.
             '_dungeon_alive': getattr(game, '_dungeon_alive', None),
             # Journal & Lore Hints (Encyclopedia tabs)

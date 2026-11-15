@@ -256,6 +256,13 @@ def step_radius(player) -> int:
         r += gear.footstep_tiles(player)
     except Exception:
         pass
+    # A galloping Bococho is loud (riding.step_noise; data/bococho.json).
+    if getattr(player, 'riding', False):
+        try:
+            import riding
+            r += riding.step_noise(player)
+        except Exception:
+            pass
     return max(1, r)
 
 

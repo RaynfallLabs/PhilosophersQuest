@@ -486,6 +486,36 @@ def art_or_standin(sid: str, standin=None) -> str:
     return sid if _ART_SEEN[sid] else standin
 
 
+def _species_from_data(path: str) -> dict:
+    """A quest companion's line from its own data file (``pet.species_key``
+    and ``pet.species``, every word and number there), with the pictures that
+    stand in until its art is installed (``sprites.fallback``). {} when the
+    file is missing."""
+    import json
+    try:
+        with open(path, encoding='utf-8') as f:
+            doc = json.load(f)
+    except (OSError, ValueError):
+        return {}
+    pet = doc.get('pet') or {}
+    key, sp = pet.get('species_key'), pet.get('species')
+    if not key or not isinstance(sp, dict):
+        return {}
+    sp = dict(sp)
+    sp['color'] = tuple(sp.get('color') or (200, 200, 200))
+    sp['sprite_fallback'] = dict((doc.get('sprites') or {}).get('fallback') or {})
+    return {key: sp}
+
+
+# The Bococho (data/bococho.json, bococho_encounter.py): a quest companion,
+# never a sphere's hatch (quest_only).
+def _bococho_species() -> dict:
+    from paths import data_path
+    return _species_from_data(data_path('data', 'bococho.json'))
+
+
+_SPECIES.update(_bococho_species())
+
 # The family cats: rare hatches from an ordinary sphere (see roll_soul_sphere_species).
 FAMILY_CATS = ('sherlock', 'irene')
 FAMILY_CAT_CHANCE = 0.05          # EACH cat, per hatch (10% for a cat while neither is met)
@@ -609,6 +639,17 @@ def _grew(pet, what: str, value: int):
             pass
 
 
+_SPRITES_SEEN: dict = {}
+
+
+def _sprite_installed(sid: str) -> bool:
+    if sid not in _SPRITES_SEEN:
+        import os
+        from paths import data_path
+        _SPRITES_SEEN[sid] = os.path.exists(data_path('assets', 'tiles', 'monsters', sid + '.png'))
+    return _SPRITES_SEEN[sid]
+
+
 def harm_taken(pet, amount: int, damage_type=None) -> tuple:
     """(damage, weak) for a blow of `damage_type` on `pet`: twice as hard
     (affinity_rules 'weak') on what its line is weak to (Pet.weak_to)."""
@@ -677,10 +718,12 @@ class Pet:
         return max(1, int(round(growth('health', self.level) * mult)))
 
     def _calc_damage(self) -> int:
-        """Bite at the pet's level, from data/pet_growth.json ('bite_mult'
-        for a line with weak bites, the Mooble)."""
+        """Bite at the pet's level, from data/pet_growth.json (a line
+        with its own species 'bite_mult': the Mooble's weak bites, the
+        Bococho's strong kicks)."""
         mult = float((getattr(self, 'species', None) or {}).get('bite_mult', 1.0) or 1.0)
-        return max(1, int(round(growth('bite', self.level) * mult)))
+        bite = growth('bite', self.level)
+        return bite if mult == 1.0 else max(1, int(round(bite * mult)))
 
     def __setstate__(self, state):
         """Saves from before 2026-10-06 hold old-scale HP and damage (20 to
@@ -779,7 +822,14 @@ class Pet:
         except (AttributeError, KeyError, IndexError, TypeError):
             stage_name = ''
         base = str(stage_name or self.name or '').lower().replace(' ', '_')
-        return f"{base}_cloaked" if getattr(self, 'bloomleaf', False) else base
+        if getattr(self, 'bloomleaf', False):
+            return f"{base}_cloaked"
+        # A quest companion whose art is not installed yet borrows a picture
+        # that is (never a letter: species 'sprite_fallback').
+        fallback = (getattr(self, 'species', None) or {}).get('sprite_fallback')
+        if fallback and base in fallback and not _sprite_installed(base):
+            return fallback[base]
+        return base
 
     @sprite_id.setter
     def sprite_id(self, value) -> None:
@@ -1603,7 +1653,8 @@ def random_species() -> str:
     """
     pool = [k for k in _SPECIES.keys()
             if k != 'duck_of_doom' and not has_own_name(_SPECIES[k])
-            and not _SPECIES[k].get('quest_pet')]
+            and not _SPECIES[k].get('quest_pet')
+            and not _SPECIES[k].get('quest_only')]          # the Mooble's and the Bococho's: a quest's, never a hatch
     return random.choice(pool)
 
 

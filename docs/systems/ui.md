@@ -501,6 +501,8 @@ state; column 4 is the `_draw_<state>` method.
 | `Shift+K` | the Stray Kids idol beside the hero; again: the photo in the pack (QA only) | `handle_event` |
 | `Shift+L` | Old Nickel (the Bloomleaf Cloak's wearer) set down near the hero; again, the cloak into the pack (QA only) | `handle_event` |
 | `Shift+D` | the Mooble in a cave beside this room, a Starnut and a Starnut Tart in the pack; again, another tart and no wait before the next dance (QA only; `mooble_encounter._qa_mooble`) | `handle_event` |
+| `Shift+G` | Gilt Varro's racing camp set up in the hero's room (this floor becomes the camp's), with two Sunroots; again, her trust and two more Sunroots; once more, she joins at once, the race skipped, to try riding (QA only; `bococho_encounter._qa_bococho`) | `handle_event` |
+| `Shift+R` | ride the Bococho, or climb down (`game_riding._toggle_ride`; on the help screen's key map) | `handle_event` |
 | `Shift+T` | every coating and flask, the earplugs, the cold-iron charm, a mirror shield and a greatsword into the pack (QA only; `game_arsenal._qa_arsenal_sampler`) | `handle_event` |
 | `Shift+S` | Press or Guard: the next stance, one turn (`game_arsenal._cycle_stance`) | `handle_event` |
 | `Shift+C` | coat the weapon in your hand from the pack (`game_arsenal._open_coat_menu`) | `handle_event` |

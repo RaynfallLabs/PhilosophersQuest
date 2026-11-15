@@ -54,6 +54,7 @@ from game_states import (
     STATE_HACK_REALITY, STATE_XYZZY_INPUT, STATE_XYZZY_CONFIRM,
     STATE_THROW_MENU, STATE_QUIRKS, STATE_CHARACTER_SHEET,
     STATE_NPC_ENCOUNTER, STATE_COW_ENCOUNTER, STATE_EMBERPUP, STATE_JUDGMENT, STATE_STUDY,
+    STATE_BOCOCHO, STATE_RACE,
     STATE_INTERCESSION_PROMPT, STATE_PET_NAME_INPUT, STATE_PRAYER_MENU,
     STATE_BOON_MENU,
     STATE_PET_MENU, STATE_PET_FEED, STATE_PET_HEAL, STATE_PET_SPECIALS,
@@ -2194,14 +2195,22 @@ class RenderMixin:
         cam_x, cam_y = self._camera()
         self.screen.fill((0, 0, 0))
 
-        # Set up renderer view mode each frame
-        if self.zoom_mode == 'close':
+        # Set up renderer view mode each frame (the Underway Run's race keeps
+        # the whole oval in view: game_race._race_full_view)
+        _race_view = self._race_view() if hasattr(self, '_race_view') else None
+        _zoom = 'race' if _race_view is not None else self.zoom_mode
+        if _zoom == 'race':
+            self.renderer.set_view_origin(layout.MAP_X, 0)
+            self.renderer.set_close_up(
+                _race_view[0], _race_view[1], self.dungeon.width, self.dungeon.height,
+                layout.MAP_W, layout.GAME_H, tile_size=_race_view[2])
+        elif _zoom == 'close':
             self.renderer.set_view_origin(layout.MAP_X, 0)
             self.renderer.set_close_up(
                 self.player.x, self.player.y,
                 self.dungeon.width, self.dungeon.height,
                 layout.MAP_W, layout.GAME_H, tile_size=64)
-        elif self.zoom_mode == 'medium':
+        elif _zoom == 'medium':
             self.renderer.set_view_origin(layout.MAP_X, 0)
             self.renderer.set_close_up(
                 self.player.x, self.player.y,
@@ -2253,6 +2262,8 @@ class RenderMixin:
                     self.renderer.draw_state_mark(m.x, m.y, 'z', cam_x, cam_y)
         # Pet companions: draw with species sprite or color fallback
         for pet in self.pets:
+            if getattr(pet, 'ridden', False):
+                continue          # under her rider: drawn with him (game_bococho_render._draw_rider)
             if pet.alive and (pet.x, pet.y) in self.visible:
                 if getattr(pet, 'is_sketch', False):
                     # Sketched pets use the monster's sprite with a lavender tint
@@ -2310,7 +2321,8 @@ class RenderMixin:
                 b = 255
                 self.renderer.draw_entity(dm.x, dm.y, (r, g, b), cam_x, cam_y, self.visible, mid='death')
         _pspr = (self.secret_build or {}).get('_sprite', 'player')
-        self.renderer.draw_player(self.player, cam_x, cam_y, sprite_name=_pspr)
+        if not (hasattr(self, '_draw_rider') and self._draw_rider(_pspr)):   # in her saddle, or on foot
+            self.renderer.draw_player(self.player, cam_x, cam_y, sprite_name=_pspr)
         self._draw_black_knight_speech()
         self.screen.set_clip(None)
 
@@ -2456,6 +2468,10 @@ class RenderMixin:
             self._draw_mooble_encounter()          # mooble_encounter.MoobleMixin
         elif self.state == STATE_MOOBLE_DANCE:
             self._draw_mooble_dance()              # game_mooble_dance.MoobleDanceMixin
+        elif self.state == STATE_BOCOCHO:
+            self._draw_bococho_screen()
+        elif self.state == STATE_RACE:
+            self._draw_race_screen()
         elif self.state == STATE_JUDGMENT:
             self._draw_judgment()
 
@@ -7800,6 +7816,7 @@ class RenderMixin:
                 *self._pet_cloak_lines(pet),
                 *self._pet_rescue_lines(pet),
                 *self._pet_gift_lines(pet),        # the Mooble's (mooble_encounter)
+                *(self._pet_bococho_lines(pet) if hasattr(self, '_pet_bococho_lines') else ()),
             ]
             # What can be done with it, under the companions list (the card
             # beside it is its picture and who it is: Shep's whole card did
@@ -7814,6 +7831,9 @@ class RenderMixin:
                 ('__key__', 'C', "Cycle command: return, stay, wander"),
                 ('__key__', 'S', f"Specials ({ready} ready of {len(specials_avail)} unlocked)"),
             ]
+            if getattr(pet, 'species_key', '') == 'bococho':
+                actions.append(('__key__', 'M', "Climb down from her saddle"
+                                if getattr(pet, 'ridden', False) else "Mount: ride her (Shift+R)"))
             entries.append({
                 'name': pet.name,
                 # (Its command is on the card, beside its picture: the row
@@ -11148,6 +11168,7 @@ class RenderMixin:
                 (".", "Wait / meditate", FP.BODY_TEXT),
                 ("< >", "Go up / down stairs", FP.BODY_TEXT),
                 ("Tab", "Cycle zoom", FP.BODY_TEXT),
+                ("Shift+R", "Ride your Bococho", FP.BODY_TEXT),
                 # Here, where the column's keys are already wide: in Items
                 # the badge cut "Drop, gold / use tile" at 1280x720.
                 ("Shift+E", "Loadouts", FP.BODY_TEXT),

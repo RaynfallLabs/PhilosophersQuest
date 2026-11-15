@@ -8,6 +8,7 @@
 src/dungeon.py            # BSP generation, mazes, terrain, items, special rooms, traps
 src/boss_levels.py        # Hand-crafted maps for L20/40/60/80/100, L999 Cow Level; side floors
 src/stray_kids.py         # L997 the Zombie Stage (the Stray Kids easter egg)
+src/underway_run.py       # L996 the Underway Run (the Bococho's race track)
 src/level_manager.py      # Floor save/load, mini-boss planning, seal-demon forcing, bones hookup
 src/bones.py              # Persistent death artifacts across runs
 src/fov.py                # Recursive shadowcasting FOV (octant-based)
@@ -17,7 +18,7 @@ src/fov.py                # Recursive shadowcasting FOV (octant-based)
 
 ## 1. Floor taxonomy
 
-The world is 100 descending floors plus two hidden side floors (L999, the Cow Level; L997, the Zombie Stage). Floors fall into three kinds, each with different generators:
+The world is 100 descending floors plus three side floors (L999, the Cow Level; L997, the Zombie Stage; L996, the Underway Run). Floors fall into three kinds, each with different generators:
 
 | Kind       | Floors                              | Generator                              |
 |------------|-------------------------------------|----------------------------------------|
@@ -26,6 +27,7 @@ The world is 100 descending floors plus two hidden side floors (L999, the Cow Le
 | Open (BSP) | all others                          | `dungeon.generate_dungeon`              |
 | Secret     | 999 (Cow Level)                     | `boss_levels._level_999_moo_moo_farm`   |
 | Secret     | 997 (Zombie Stage)                  | `stray_kids.build_stage`                |
+| Side       | 996 (the Underway Run)              | `underway_run.build`                    |
 
 The boss set lives in **a single source of truth**: `src/dungeon.py` exports `_BOSS_LEVELS = {20, 40, 60, 80, 100}`, and `src/level_manager.py` imports it (`from dungeon import _BOSS_LEVELS`) so the mini-boss roller and the boss-floor dispatcher never disagree about which floors reject random spawn (v2.18 consolidation — before the import, each file carried its own copy and a mini-boss plan could silently target a boss floor and vanish).
 
@@ -432,9 +434,11 @@ Six outer-ring chambers (NW/NE/W/E/SW/SE) around a central boss arena, each cros
 Dispatched by `generate_boss_level(COW_LEVEL)` where `COW_LEVEL = 999`. A large open pasture (35×20) with fence-post wall pillars scattered as cover, a 6×4 pen in the top-right walled off by a `DOOR`. 40-50 Hell Bovines are placed in the pasture; the Cow King sits in his pen. The entrance is a reversed stair — `STAIRS_DOWN` leads *back home* (there's no deeper level than 100 in the main tower, so the cow floor's exit is the portal out). Atmosphere lines "The air smells of hay and brimstone." / "Welcome to the Moo Moo Farm."
 
 ### 6.6a Side floors, and L997 the Zombie Stage (2026-11-13)
-A **side floor** is reached by an easter egg and left by its own portal: `boss_levels.SIDE_FLOORS` = {`COW_LEVEL` 999, `STRAY_KIDS_STAGE` 997}, asked through `is_side_floor(level)`, named on screen by `SIDE_FLOOR_NAMES` (`ui.floor_label`: "Moo Moo Farm", "Zombie Stage"). Every "side trip, not depth" rule reads it: no new depth (score, `deepest_floor_reached`, once-a-floor charges, the dungeon's wisdom), no Road arrival, escorts suspended, no bones, no wanderers (`_maybe_wander_spawn` returns at once: the floor's number drew from the floor-100 pool, and only the farm's herd above the alive cap kept them off it), no decor dressing pass. A potion of gain level, Hermes' psychopomp step and the portal all leave through `EncountersMixin._leave_side_floor`; loot dropped there is as deep as the floor its way in stood on (`_side_floor_return_level`).
+A **side floor** is reached by an easter egg (or a scene) and left by its own portal: `boss_levels.SIDE_FLOORS` = {`COW_LEVEL` 999, `STRAY_KIDS_STAGE` 997, `UNDERWAY_RUN` 996}, asked through `is_side_floor(level)`, named on screen by `SIDE_FLOOR_NAMES` (`ui.floor_label`: "Moo Moo Farm", "Zombie Stage", "The Underway Run"). Every "side trip, not depth" rule reads it: no new depth (score, `deepest_floor_reached`, once-a-floor charges, the dungeon's wisdom), no Road arrival, escorts suspended, no bones, no wanderers (`_maybe_wander_spawn` returns at once: the floor's number drew from the floor-100 pool, and only the farm's herd above the alive cap kept them off it), no decor dressing pass. A potion of gain level, Hermes' psychopomp step and the portal all leave through `EncountersMixin._leave_side_floor`; loot dropped there is as deep as the floor its way in stood on (`_side_floor_return_level`).
 
 **The Zombie Stage** (`stray_kids.build_stage`; the easter egg is described in [monsters](monsters.md#special-monster-modules-2026-10)). The hero arrives in the wings (a 9×7 room, `rooms[0]`) beside the stage door, a `STAIRS_DOWN` that is the way out at any time; a short passage leads to the stage hall (35×19), dressed with `sk_speaker` stacks in its corners, `brazier_lit` pyro along the long walls and a `carpet` runway, where the eight zombie members rehearse at the far end. The hall is lit: from anywhere on the stage the hero sees every hall tile in his line of sight, however far, so the whole formation can be watched (`StrayKidsMixin._stray_kids_light_the_stage`, from `_refresh_fov`; never while blind). The dance state (`dungeon.sk_dance`) pickles with the floor. One trip a run: leaving spends the idol.
+
+**The Underway Run** (L996, `underway_run.build`, 2026-11-14; the Bococho's race, [pets](pets.md) "The Bococho"). A great oval scraped in a cavern floor: sand between two ellipses (the outer rail 30 by 13 tiles from the centre, the infield 23 by 7, at the top of the map so the race panel below leaves the whole oval in view), a paddock below the near straight where the hero arrives (`rooms[0]`), with the betting board (`race_betting_board`) and the gate back to the camp (a `STAIRS_DOWN`, `dungeon.race_exit`), and a one-tile gate from the paddock onto the track. The finish banner (`race_finish_banner`, a stand that does not block) marks the line at the middle of the near straight. `dungeon.race_loops` holds two rings of track tiles, ordered from the finish line round (`underway_run.loop`: lane 0 the inside, where the young Bococho runs; lane 1 the outside, Brassbeak's); `game_race._race_move_runners` sets the two birds there after each leg from `race.positions`. The cavern is lit by its lanterns: from anywhere on the floor the hero sees the whole track (`RaceMixin._underway_light`, from `_refresh_fov`; never while blind), and while the race is on the map frames the whole oval above the race panel (`RaceMixin._race_view`: a tile size and centre from the panel's height, read by game_render.render), with a ring and a name tag over each bird. The track's own pictures (`race_track_floor`, `race_track_rail`) are laid as `tile_art` where they are installed; a floor built before them uses the plain tiles. The floor is built fresh for each race (a race run before is struck from `level_mgr._saved`). Leaving before the finish (the gate, a potion of gain level, Hermes' step: `_leave_side_floor` calls `_exit_underway_run`) gives Varro the race. Tests: `tests/test_bococho.py` (the oval's rings, the paddock reaching the track), `tests/test_bococho_journey.py`.
 
 ### 6.7 Multi-tile boss anchor correction
 `_spawn_boss` places the boss at `boss_room.center`. For a multi-tile footprint (Fafnir 2×2, procedural 2×2 cosmic bosses — Tiamat / Surtur / Ymir / Hrungnir), the anchor is shifted up to 3 tiles NW until every footprint tile is walkable and in-bounds. For 1×1 bosses this loop is a no-op.
@@ -593,6 +597,7 @@ A quick lookup of every floor whose number triggers a scripted spawn. These are 
 | 100   | **Boss: Abaddon the Destroyer**. Philosopher's Stone placed here (no STAIRS_DOWN).          |
 | 999   | **Secret: Moo Moo Farm**. Cow King + 40-50 Hell Bovines. Access path via Wrinkled Cow Rune. |
 | 997   | **Secret: the Zombie Stage**. The eight zombie Stray Kids. Access: touch the Stray Kids idol (one floor of 8-12, every run). |
+| 996   | **Side: the Underway Run**. The Bococho's race against Gilt Varro's Brassbeak. Access: challenge Varro at the racing camp (one floor of 51-65, every run) once the young Bococho trusts the hero. |
 
 The `_LEATHER_SCRAP_LEVELS = [5, 13, 21, 28, 35, 42, 50, 58, 66, 73]` list is the complete scrap set — the Vidar secret requires all ten.
 

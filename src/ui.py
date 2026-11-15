@@ -627,6 +627,9 @@ class Sidebar:
         # The arsenal's tools (slice 5): Press or Guard, the coating on the
         # weapon in the hand with its blows left, the earplugs in.
         rows += arsenal_rows(player)
+        if getattr(player, 'riding', False):
+            # In the Bococho's saddle (game_riding.py).
+            rows.append(("Riding", FP.GOLD_BRIGHT, None))
         for eid, val in player.status_effects.items():
             if val == 0:
                 continue
