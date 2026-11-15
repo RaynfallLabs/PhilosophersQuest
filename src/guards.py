@@ -42,7 +42,11 @@ _RULES = (
     ('grapple', r'constrict|crush|grab|grapple|squeeze|tentacle|hug|wrap'),
 )
 _BREATH = r'breath|spit|spray|exhal'
-_RANGED = r'bolt|ray|shard|hurl|arrow|volley|throw|javelin|missile'
+# A bow, a crossbow, a dart or a shot is a missile too (bug bash 3.5.1: the
+# bandit archer's Hunting Bow, the orc archer's Shortbow and five more were
+# read as blows, so the bracers never guarded them, though the creature
+# fires them from across the room: monster.py _RANGED_WORDS).
+_RANGED = r'bolt|ray|shard|hurl|arrow|volley|throw|javelin|missile|bow\b|dart|\bshoot'
 
 
 def classify(atk: dict) -> str:

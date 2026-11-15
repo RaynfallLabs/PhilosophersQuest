@@ -533,8 +533,8 @@ def test_nothing_wanders_onto_the_stage():
     g = _game('__test_sk_wander__')
     _on_stage(g)
     before = len(g.monsters)
-    from floor_curve import wander_interval
-    g.turn_count = wander_interval(g.dungeon_level) * 3
+    import wanderers
+    wanderers.make_due(g.dungeon)
     for y in range(g.dungeon.height):
         for x in range(g.dungeon.width):
             g.dungeon.explored.add((x, y))

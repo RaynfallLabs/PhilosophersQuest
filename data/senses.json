@@ -763,5 +763,18 @@
     "reach": 8,
     "eat_turns": 3,
     "heal_share": 0.25
+  },
+  "wanderers": {
+    "_doc": "What the hero is told as a floor's grace runs out (src/wanderers.py; the dials are in src/floor_curve.py). Nothing new comes onto a floor while he explores it. 'warning' is said once, near the end of the grace; 'stirs' when it runs out and newcomers begin to come down the stairs, slowly at first, faster the longer he stays. A hero who leaves and comes back finds the floor settled again, and may hear both again.",
+    "warning": [
+      "The floor has gone quiet, the way a held breath is quiet. You have been here a long while.",
+      "Somewhere above, something sniffs the air where you walked. You have been here a long while.",
+      "Dust sifts down from the ceiling, as if something heavy is moving on the stair. You have lingered here a long time."
+    ],
+    "stirs": [
+      "Footsteps on the stair, and more behind them: word of you has spread. Things will come looking now, and keep coming while you stay.",
+      "Somewhere a door bangs open. The floor knows you are here, and more of the dungeon is coming down to see. The longer you stay, the more will come.",
+      "A horn sounds far above. The dungeon has noticed you, and newcomers will find their way down here for as long as you linger."
+    ]
   }
 }

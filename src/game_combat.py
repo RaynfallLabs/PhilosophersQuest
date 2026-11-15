@@ -2755,14 +2755,16 @@ class CombatMixin:
 
     def _make_noise(self, kind: str, x: int = None, y: int = None) -> None:
         """The hero made a noise of ``kind`` (data/senses.json noise) at
-        (x, y), his own tile by default. A loud one is remembered, so a
-        monster that wanders onto the floor can follow the sound of a fight."""
+        (x, y), his own tile by default. A loud one is remembered with how far
+        it carries, so a monster that wanders onto the floor within earshot
+        can follow the sound of a fight (main._maybe_wander_spawn)."""
         import senses as _senses
         if x is None or y is None:
             x, y = self.player.x, self.player.y
         _senses.emit(self.dungeon, x, y, kind)
         if kind != 'step' and self.dungeon is not None:
-            self.dungeon._last_loud = (int(x), int(y), int(self.turn_count))
+            self.dungeon._last_loud = (int(x), int(y), int(self.turn_count),
+                                       int(_senses.noise_radius(kind)))
 
     def _senses_guilty(self) -> bool:
         """The Furies find the guilty: a hero whose karma has gone below

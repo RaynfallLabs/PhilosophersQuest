@@ -169,9 +169,11 @@ def dice_for_average(avg: float, sides: int = 6) -> str:
 # ---------------------------------------------------------------------------
 
 # Wandering monsters stop arriving while this many are already hunting the
-# player, or while the floor holds wander_alive_cap(level) alive in all: about
-# what a floor starts with, so a floor refills as it is cleared but does not
-# flood.
+# player, or while the floor holds wander_alive_cap(level) alive in all, so a
+# lingering hero's floor fills back up but does not flood. (Since 3.5.1 most
+# floors start above the cap, a median of 13-16 against 10-12 on floors 2-12
+# and 28-30 against 23-25 deep, so the trickle refills only a floor the hero
+# has thinned out; the maze floors start below it.)
 WANDER_HUNTING_CAP = 3
 
 
@@ -179,8 +181,9 @@ def wander_alive_cap(level: int) -> int:
     return min(10 + int(level) // 5, 30)
 
 
-# How often a wandering monster comes looking, in turns (main._maybe_wander_spawn).
-# The same 22 turns down to floor 50, then longer, to 40 at floor 100. It used
+# The quickest a lingering hero's newcomers come, in turns (wander_gap; the
+# floor's clock, src/wanderers.py): the same 22 turns down to floor 50, then
+# longer, to 40 at floor 100. It used
 # to shorten with depth (22 - floor // 4, every 10 turns from floor 48), and
 # the Monte Carlo of 2026-11-12 (PLAYABILITY_MONTE_CARLO_2026_11_12.md) found
 # wanderers were 60% of every deep fight: 30-40 minutes of sums a floor and
@@ -192,11 +195,56 @@ WANDER_TAPER_FROM = 50
 
 
 def wander_interval(level: int) -> int:
+    """The quickest pace of newcomers on a floor, reached only by a hero who
+    has lingered there long past its grace (wander_gap)."""
     f = max(1, min(100, int(level)))
     if f <= WANDER_TAPER_FROM:
         return WANDER_EVERY
     share = (f - WANDER_TAPER_FROM) / (100 - WANDER_TAPER_FROM)
     return int(round(WANDER_EVERY + share * (WANDER_EVERY_DEEP - WANDER_EVERY)))
+
+
+# Time to explore (3.5.1; src/wanderers.py). Brandon: "I just don't think we
+# need a constant stream of monsters... I'd rather have a larger population
+# at first, with complex encounters set up, then a trickle if you hang around
+# TOO LONG, but give the player some time to explore... walking back and
+# forth becomes a massive chore."
+#
+# Until then a newcomer came every 22 turns from the first turn on a floor,
+# whenever it held fewer than about what it started with: every kill was
+# replaced, and newcomers were half of all floor-1 fights (51%, measured on
+# 24 maps). Now nothing new comes for a grace measured from the floor's own
+# map: the walk of a full explore (every room, nearest first, then the down
+# stair: wanderers.explore_tour; median 224 tiles on floor 1, 330 on floor 5,
+# about 500 from floor 12; on a maze its passages too, 1,200-2,000) times
+# WANDER_GRACE_PER_TILE, plus
+# WANDER_GRACE_FLAT. A thorough explore walks about one and a half times the
+# tour (doors, corners, the loot); the rest is time to fight and get your
+# breath back. The clock counts only turns spent on that floor.
+WANDER_GRACE_FLAT = 100
+WANDER_GRACE_PER_TILE = 2.0
+# The floor stirs (a line, once) at this share of the grace.
+WANDER_WARN_SHARE = 0.85
+# After the grace, a trickle: the first newcomer comes WANDER_TRICKLE_START
+# turns after it, and the gap shortens to wander_interval(level) over the
+# next WANDER_TRICKLE_RAMP turns, so a hero who camps on a floor long after
+# he has seen it all meets today's pressure again (resting is never safe
+# forever: the 2026-10 balance pass).
+WANDER_TRICKLE_START = 60
+WANDER_TRICKLE_RAMP = 600
+
+
+def wander_grace(tour: int) -> int:
+    """Turns on a floor before anything new comes onto it."""
+    return int(round(WANDER_GRACE_FLAT + WANDER_GRACE_PER_TILE * max(0, int(tour))))
+
+
+def wander_gap(level: int, past: int) -> int:
+    """Turns to the next newcomer, ``past`` turns after the grace ran out."""
+    floor_gap = wander_interval(level)
+    start = max(WANDER_TRICKLE_START, floor_gap)
+    share = min(1.0, max(0, int(past)) / WANDER_TRICKLE_RAMP)
+    return max(1, int(round(start + share * (floor_gap - start))))
 
 
 def natural_regen(max_hp: int) -> int:

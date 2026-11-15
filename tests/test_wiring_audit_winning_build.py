@@ -140,6 +140,9 @@ def test_old_nickel_is_never_set_down_in_a_room_with_a_stall():
     import emberpup_encounter as ee
     from mystery_system import MerchantNPC
     g = _game('__test_audit_nickel_stall__', seed=3)
+    # Nor a war-band's camp (bug bash 3.5.1): the one room left free here
+    # could be the camp, which he never takes either.
+    g.dungeon.band = None
     rooms = g.dungeon.rooms
     here = ee._room_of(rooms, g.player.x, g.player.y)
     cands = [r for r in rooms if r is not here and r is not rooms[0]]

@@ -57,7 +57,8 @@ RE-SYNCED 2026-11-12 (from v3.3.4 on it reported 0% survival for every profile):
     ran 4-5 AC under the line monsters are aimed at); a meal is cooked
     between fights when hurt, not at the floor's end when its healing was
     wasted (Run.recover, Run._cook_for); every heal is booked by source (fs['heal_src'],
-    Run._healed); the wanderer interval is floor_curve.wander_interval; the
+    Run._healed); newcomers follow the floor's clock (src/wanderers.py: a
+    grace from the floor's explore tour, then a quickening trickle); the
     Last Judgment's sword is the knob sword=1; the floor-100 altars burn
     Abaddon's ward only.
 
@@ -94,6 +95,7 @@ import json
 import math
 import os
 import random
+import types
 import sys
 import time
 
@@ -126,6 +128,7 @@ import monster as monster_mod                    # noqa: E402
 import pet_system as pet_system_mod              # noqa: E402
 import game_magic as game_magic_mod              # noqa: E402
 import floor_curve as floor_curve_mod            # noqa: E402
+import wanderers as wanderers_mod                # noqa: E402
 import gear as gear_mod                          # noqa: E402
 import prayers as prayers_mod                    # noqa: E402
 import status_effects as status_effects_mod      # noqa: E402
@@ -384,7 +387,9 @@ CHASE_HIT_PROB = 0.5           # chance per turn to land a blow on a fleeing mon
 NEIGHBOUR_JOIN_PROB = 0.25     # chance the next room's group arrives before
                                # you can rest (perception 8, no line of sight)
 MAX_FIGHT_TURNS = 400          # safety valve; a fight this long is a stalemate
-WANDER_FINDS_PLAYER = 0.6      # a wandering spawn reaches the player this often
+# A wandering spawn reaches the player this often. Measured in the game on 24
+# floor-1 maps, crossing and back (2026-11-14): 0.51-0.55 (it was assumed 0.6).
+WANDER_FINDS_PLAYER = 0.5
 SP_PER_MOVE = 0.5              # main._tick_sp: 1 SP per 2 moves
 
 # ---- Fleeing ------------------------------------------------------------------
@@ -810,7 +815,7 @@ GEN_FAILURES = []      # (floor, error) for every generation the game crashed on
 
 
 class FloorSnap:
-    __slots__ = ('floor', 'groups', 'items', 'n_monsters', 'fountains', 'thrones')
+    __slots__ = ('floor', 'groups', 'items', 'n_monsters', 'fountains', 'thrones', 'tour')
 
 
 def _room_index(m, rooms) -> int:
@@ -853,6 +858,7 @@ def build_snapshot(floor: int) -> FloorSnap:
     tiles = getattr(dungeon, 'tiles', None) or []
     snap.fountains = sum(row.count(dungeon_mod.FOUNTAIN) for row in tiles)
     snap.thrones = sum(row.count(dungeon_mod.THRONE) for row in tiles)
+    snap.tour = wanderers_mod.explore_tour(dungeon)     # the floor's grace (src/wanderers.py)
     return snap
 
 
@@ -1988,14 +1994,20 @@ class Run:
                 self.last_hit_by = 'starvation'
                 p.take_damage(int(-p.sp), 'starvation')
                 p.sp = 0
-        # wandering spawns (main._maybe_wander_spawn)
+        # wandering spawns (main._maybe_wander_spawn): the floor's clock
+        # (src/wanderers.py), ticked for every turn since the last time,
+        # fights included. Capped by monsters HUNTING the player (a wanderer
+        # that finds the player here is fought at once, so that count is zero
+        # between fights) and by a whole-floor ceiling.
         found = []
-        wi = floor_curve_mod.wander_interval(self.floor)
-        # main._maybe_wander_spawn: capped by monsters HUNTING the player (a
-        # wanderer that finds the player here is fought at once, so that
-        # count is zero between fights) and by a whole-floor ceiling.
         cap = main_wander_alive_cap(self.floor)
-        for _ in range(end // wi - start // wi):
+        due = 0
+        wfloor = getattr(self, 'wfloor', None)
+        while wfloor is not None and self.wtick < end:
+            self.wtick += 1
+            if wanderers_mod.advance(wfloor, self.floor)[1]:
+                due += 1
+        for _ in range(due):
             if self.floor_alive >= cap or random.random() >= self.kv('wander'):
                 continue
             if self.floor in BOSS_FLOORS:
@@ -3055,6 +3067,9 @@ class Run:
             if sw is not None:
                 self._equip(sw)          # Michael's own blade: the hero takes it up
         snap = self.cache.get(floor)
+        # The floor's own clock for newcomers (src/wanderers.py).
+        self.wfloor = types.SimpleNamespace(_explore_tour=int(getattr(snap, 'tour', 0) or 0))
+        self.wtick = self.turn
         groups = [[fresh_monster(m, self.knobs, self.floor) for m in g] for g in snap.groups]
         is_boss_floor = floor in BOSS_FLOORS
         # mon_count knob: duplicate or drop whole groups (named foes stay single)

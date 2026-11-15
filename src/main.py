@@ -192,7 +192,7 @@ def _kitchen_parts(recipe) -> list:
 STARVE_SHARE = 0.02
 ARC_SHARE = 0.05          # a stray arc of lightning: this share of a creature's health
 from floor_curve import (WANDER_HUNTING_CAP, natural_regen, rest_room,    # noqa: E402
-                         wander_alive_cap, wander_interval)
+                         wander_alive_cap)
 
 
 def _stored_floors(lm):
@@ -832,9 +832,26 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.add_message("Find the Philosopher's Stone and escape!", 'info')
         # Journal: entering the dungeon
         self._chron('milestone', "Descended into the dungeon. The air smells like dust and old stone. The Stone is somewhere below. I need to find it and get back out.")
+        # Floor 1's war-band and atmosphere (its den's snoring, a vault's
+        # coins) are said at the start, as every later floor's are on
+        # arrival. Only _change_level said them, so floor 1's were first
+        # heard on coming back up to it, long after (3.5.1: floor 1 holds a
+        # band on more than half its maps).
+        self._announce_band()
+        self._say_atmosphere()
         # A secret build's head start in monster lore (Geralt's medallion)
         # speaks on the first floor too, like every later arrival.
         self._family_arrival(first_visit=True)
+
+    def _say_atmosphere(self):
+        """The floor's atmosphere lines (dungeon.atmosphere_messages): the
+        first time only (G4: they used to repeat on every visit, so a
+        stair-bounce said the same three lines again)."""
+        if self.dungeon.__dict__.get('_atmosphere_said'):
+            return
+        self.dungeon._atmosphere_said = True
+        for atmo_msg in getattr(self.dungeon, 'atmosphere_messages', []):
+            self.add_message(atmo_msg, 'info')
 
     def _bones_ghost_notice(self, dungeon):
         """A dead hero's ghost haunts this floor (bones.py): say so, once.
@@ -2625,15 +2642,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # The first floor of each domain says where the hero has come
         # (data/domains.json; src/decor.py).
         self._announce_domain(new_level)
-        # A war-band on the floor is heard, or named (src/war_bands.py).
+        # A war-band on the floor is heard, or named (src/war_bands.py), and
+        # the floor's atmosphere (its den's snoring, a vault's coins).
         self._announce_band()
-        # Display atmospheric messages for this level: the first time only
-        # (G4: they used to repeat on every visit, so a stair-bounce said
-        # the same three lines again).
-        if not self.dungeon.__dict__.get('_atmosphere_said'):
-            self.dungeon._atmosphere_said = True
-            for atmo_msg in getattr(self.dungeon, 'atmosphere_messages', []):
-                self.add_message(atmo_msg, 'info')
+        self._say_atmosphere()
         # Ariadne's Thread shows the way through the Labyrinth: the walk from
         # the stair to Asterion's hall is laid out on the map.
         if new_level == 20 and not getattr(self.dungeon, '_thread_shown', False):
@@ -5446,19 +5458,37 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self._advance_turn()
 
     def _maybe_wander_spawn(self):  # caps: WANDER_HUNTING_CAP / wander_alive_cap
-        """Periodically spawn a wandering monster to keep pressure on the player."""
-        import random as _rng
+        """The floor's clock, one world turn (src/wanderers.py): time to
+        explore first, then a trickle of newcomers that quickens the longer
+        the hero stays. The floor's own monsters were set down when it was
+        made."""
         # Nothing wanders onto a side floor: its number (999, 997) drew from
         # the floor-100 pool. Only the farm's herd, above the alive cap, kept
         # deep wanderers off it until the bovines were thinned out.
         from boss_levels import is_side_floor
         if is_side_floor(self.dungeon_level):
             return
-        # Every 22 turns to floor 50, then rarer: 40 turns at floor 100
-        # (floor_curve.wander_interval).
-        interval = wander_interval(self.dungeon_level)
-        if self.turn_count % interval != 0:
-            return
+        import wanderers
+        say, due = wanderers.advance(self.dungeon, self.dungeon_level, self.turn_count)
+        placed = bool(self._place_wanderer()) if due else False
+        # "Things will come looking now" is said with the first newcomer that
+        # really comes: a floor still as full as it began (the alive cap)
+        # takes none, and the line would lie (bug bash 3.5.1 C).
+        clock = wanderers.clock(self.dungeon)
+        if say == 'stirs':
+            clock['stir_owed'] = True
+            say = None
+        if placed and clock.pop('stir_owed', False):
+            say = 'stirs'
+        if say:
+            text = wanderers.line(say)
+            if text:
+                self.add_message(text, 'warning')
+
+    def _place_wanderer(self) -> bool:
+        """One newcomer comes onto the floor, if the caps allow. True when
+        one came."""
+        import random as _rng
         # Cap by how many are already HUNTING the player, not by how many
         # are alive. The old cap (4 + level // 6 alive) was below every
         # floor's starting population, so nothing ever wandered in until the
@@ -5515,13 +5545,26 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 if (x, y) not in fits:
                     x, y = _rng.choice(fits)
             m.x, m.y = x, y
-            # A newcomer does not know where the hero is (src/senses.py). If a
-            # fight was heard lately it goes to see; otherwise it roams.
+            # A newcomer does not know where the hero is (src/senses.py). It
+            # goes to see a recent fight only if the fight's sound reaches
+            # where it came in, along open ground as any sound travels;
+            # otherwise it roams. (3.5.1: every newcomer was sent to the last
+            # fight from anywhere on the floor, though a fight carries five
+            # tiles, so on floor 1 nearly all of them came straight at the
+            # hero: "they're all coming right at me".)
             loud = self.dungeon.__dict__.get('_last_loud')
             if loud and self.turn_count - int(loud[2]) <= 40:
-                m._goal = (int(loud[0]), int(loud[1]))
+                import senses as _senses
+                from geom import occupied_tiles as _occ
+                # (An old save's mark has no reach: a fight's.)
+                reach = int(loud[3]) if len(loud) > 3 else _senses.noise_radius('melee')
+                heard = _senses.sound_map(self.dungeon, int(loud[0]), int(loud[1]), reach)
+                if any(t in heard for t in _occ(m)):
+                    m._goal = (int(loud[0]), int(loud[1]))
             m._lead_used = True
             self.monsters.append(m)
+            return True
+        return False
 
     def _check_floor_trap(self, x: int, y: int, forced: bool = False):
         """Trigger a floor trap at (x, y) if one exists.
@@ -6916,6 +6959,13 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         )
         if corpse is None:
             self.add_message("There is no corpse here to harvest.", 'info')
+            return
+        # A person of an encounter (a pilgrim, Gilt Varro, a trader) has no
+        # kin in the kitchen: nothing to harvest, and no question asked or
+        # corpse spent on it (it gave Acid Blob Bladder: bug bash 3.5.1 A).
+        from food_system import corpse_yield
+        if corpse_yield(corpse) is None:
+            self.add_message(f"There is nothing on the {corpse.name} you would cook.", 'info')
             return
         # Every corpse yields its kin's ingredient (data/items/harvest_map.json:
         # every goblin gives Goblin Gristle); a boss with a trophy gives the

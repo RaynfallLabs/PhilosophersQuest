@@ -81,6 +81,10 @@ def _cap(raw) -> str:
     return proper_name(str(raw).replace('_', ' '))
 
 
+# Bestiary rows told in the warning colour: what hurts it (affinity.bestiary_rows).
+_BESTIARY_WARM = ('weak', 'banes', 'easily')
+
+
 def monster_trait_lines(mdef: dict, known: bool = True) -> list:
     """Bestiary lines for the special rules a creature carries in its data
     (thieves, splitters, mimics, the invisible, heart-weighers...).
@@ -4063,12 +4067,13 @@ class RenderMixin:
         from combat import affinity_known as _aff_known
         if not _aff_known(self.player, monster):
             dm_text, dm_col = type_str, FP.FADED_TEXT
+        # With how much (3.5.1 audit): "Shrugs Off (Quarter): Slash".
         elif dm > 1.0:
-            dm_text, dm_col = f"Weakness: {type_str}", FP.SUCCESS_TEXT
+            dm_text, dm_col = f"Weakness ({_aff._size_word(dm)}): {type_str}", FP.SUCCESS_TEXT
         elif dm <= _aff.shrugs_step() + 1e-9:
-            dm_text, dm_col = f"Shrugs Off: {type_str}", FP.DANGER_TEXT
+            dm_text, dm_col = f"Shrugs Off ({_aff._size_word(dm)}): {type_str}", FP.DANGER_TEXT
         elif dm < 1.0:
-            dm_text, dm_col = f"Resisted: {type_str}", FP.DANGER_TEXT
+            dm_text, dm_col = f"Resisted ({_aff._size_word(dm)}): {type_str}", FP.DANGER_TEXT
         else:
             dm_text, dm_col = type_str, FP.FADED_TEXT
         put(dm_text, s['sub2'], dm_col)
@@ -9537,17 +9542,12 @@ class RenderMixin:
                               FP.FADED_TEXT, self.font_sm))
 
         if id_level >= 3:
-            res = mdef.get('resistances', []) or []
-            wks = mdef.get('weaknesses', []) or []
-            if res:
-                mechanics.append((f"Resists: {', '.join(_cap(x) for x in res)}", FP.CYAN_ACCENT, self.font_sm))
-            if wks:
-                mechanics.append((f"Weak to: {', '.join(_cap(x) for x in wks)}", FP.WARNING_TEXT, self.font_sm))
-            # What it shrugs off, what its nature refuses, what it falls to
-            # easily (the lore pass: affinity.page_lines).
+            # What it is made of, with how much each changes a blow: the ONE
+            # reading the blow itself follows (affinity.bestiary_rows).
             import affinity as _aff_pl
-            for _k, _t in _aff_pl.page_lines(mdef):
-                mechanics.append((_t, FP.WARNING_TEXT if _k == 'easily' else FP.CYAN_ACCENT, self.font_sm))
+            for _k, _t in _aff_pl.bestiary_rows(mdef):
+                mechanics.append((_t, FP.WARNING_TEXT if _k in _BESTIARY_WARM else FP.CYAN_ACCENT,
+                                  self.font_sm))
 
         if id_level >= 2:
             # Harvest yields exactly ONE ingredient per corpse: its kin's
@@ -10165,27 +10165,24 @@ class RenderMixin:
                 (f"HP: {entry.get('hp', entry.get('max_hp', '?'))}   THAC0: {entry.get('thac0', '?')}   Speed: {entry.get('speed', 1)}",
                  FP.BODY_TEXT, self.font_sm),
             ]
-            res = entry.get('resistances', []) or []
-            wks = entry.get('weaknesses', []) or []
-            # Its family tells him what it can do; what it fears waits for
-            # its own study, or the family's Lore (family_lore.knowledge).
+            # Its family tells him what it can do; what it is made of (what
+            # it is weak to, resists and shrugs off, by how much; the metals
+            # it cannot bear; its scales, ward or healing; its nature) waits
+            # for its own study, or the family's Lore (family_lore.knowledge).
+            # The rows are the ONE reading the blow follows
+            # (affinity.bestiary_rows).
             import family_lore as _fl
             import affinity as _aff_pl
-            extra = _aff_pl.page_lines(entry)
+            rows = _aff_pl.bestiary_rows(entry)
             _kind_known = _fl.knowledge(self.player, entry.get('_id', '')) >= _fl.KNOWN
             if not _kind_known:
-                if res or wks or extra:
+                if rows:
                     lines.append(("Weaknesses: not yet studied. Study its corpse to learn what it fears.",
                                   FP.FADED_TEXT, self.font_sm))
-                res, wks, extra = [], [], []
-            if res:
-                lines.append((f"Resists: {', '.join(_cap(x) for x in res)}", FP.CYAN_ACCENT, self.font_sm))
-            if wks:
-                lines.append((f"Weak to: {', '.join(_cap(x) for x in wks)}", FP.WARNING_TEXT, self.font_sm))
-            # What it shrugs off, what its nature refuses, what it falls to
-            # easily (the lore pass: affinity.page_lines).
-            for _k, _t in extra:
-                lines.append((_t, FP.WARNING_TEXT if _k == 'easily' else FP.CYAN_ACCENT, self.font_sm))
+                rows = []
+            for _k, _t in rows:
+                lines.append((_t, FP.WARNING_TEXT if _k in _BESTIARY_WARM else FP.CYAN_ACCENT,
+                              self.font_sm))
             for atk in entry.get('attacks', []) or []:
                 line = f"{atk.get('name', '?').replace('_', ' ').title()}: {atk.get('damage', '?')} ({_cap(atk.get('type', 'physical'))})"
                 if atk.get('effect'):

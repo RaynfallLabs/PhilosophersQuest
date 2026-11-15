@@ -787,7 +787,7 @@ def test_journey_04_knowing_a_monster(make_game):
     sk = place_monster(g, 'skeleton', 1)
     g._refresh_fov()
     h.said()
-    causes = ('a cutting blow', 'a thrust', 'a crushing blow', 'holy power', 'resists')
+    causes = ('a cutting blow', 'a point', 'a crushing blow', 'holy power', 'resists')
     felt = []
     for _ in range(40):
         if not sk.alive:
@@ -818,7 +818,7 @@ def test_journey_04_knowing_a_monster(make_game):
     assert said[1:] == ['You know what the Skeleton is made of.'] + tells.lore_lines(sk2)
     sk2.x, sk2.y = p.x + 1, p.y
     named = blow(h, sk2, 2)
-    assert any(('a thrust' in s.lower() or 'a cutting blow' in s.lower()) for s in named), named
+    assert any(('a point' in s.lower() or 'a cutting blow' in s.lower()) for s in named), named
     h.key('o')
     assert g.state == 'target'
     h.key(pygame.K_RETURN)
@@ -882,7 +882,7 @@ def test_journey_04c_the_wand_of_probing_teaches_the_kind(make_game):
         h.quiz(1)
         said = h.said()
         assert any(f'The Zombie: {zombie.hp}/{zombie.max_hp} HP.' == s for s in said), said
-        assert any(s.startswith('Weak to: ') for s in said), said
+        assert any(s.startswith('Weak To (Double Damage): ') for s in said), said
         assert ('You learn the ways of the Zombie.' in said) == (probe == 1), said
         assert family_lore.knowledge(p, 'zombie') == family_lore.KNOWN
         assert family_lore.score(p, 'restless_dead') == score + 1

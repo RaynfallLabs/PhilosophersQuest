@@ -209,3 +209,44 @@ def test_backstab_doubles_on_a_sleeping_target_and_the_preview_says_so():
     unaware = _target('giant_rat')
     pv2, dealt2 = _blow(p2, unaware, top)
     assert pv2 == dealt2 == 2 * awake_dealt
+
+
+def test_a_known_weakness_coating_and_stance_are_all_in_the_number():
+    """Brandon, 3.5.1: "when we're calculating weapon damage during a quiz,
+    IF we know it to be super effective or doing bonus damage, we should show
+    the TOTAL damage, after all modifiers, in the damage counter (so player
+    knows when to strike), but only when we KNOW it's effective."
+
+    A silver-dusted iron longsword in Press against a bearded devil (weak to
+    silver, and no resistance to a blade; a werewolf would cancel out, since
+    it resists the cut as much as silver hurts it): for a hero who knows the
+    kind the counter is the blow dealt, silver, Press and all; for one who
+    does not, it is the plain blow (no silver weakness in it), and the blow
+    itself still deals the weakness."""
+    import coatings
+    import stance
+    w = _make('longsword', 'iron')
+    dust = items.make_item_by_id('flask', 'silver_dust')
+    for knows in (True, False):
+        p = _player(w)
+        p.lore_known_monster_ids = {'bearded_devil'} if knows else set()
+        p.stance = stance.PRESS
+        w.coating = None
+        coatings.apply(p, dust)
+        m = _target('bearded_devil')
+        pv, dealt = _blow(p, m, 5)
+        plain = None
+        if knows:
+            assert pv == dealt, (pv, dealt)
+        else:
+            # The plain blow: the same chain, Press, no weakness.
+            w.coating = None
+            coatings.apply(p, dust)
+            p.lore_known_monster_ids = {'bearded_devil'}
+            known_pv = combat.strike_preview(p, _target('bearded_devil'), 5)
+            p.lore_known_monster_ids = set()
+            assert pv < known_pv, (pv, known_pv)          # unknown: no weakness shown
+            assert dealt > pv, (dealt, pv)                 # the blow still meets it
+            plain = pv
+        assert stance.damage_mult(p) > 1.0
+    assert plain is not None

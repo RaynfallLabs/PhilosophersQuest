@@ -157,32 +157,56 @@ def _and(words) -> str:
     return words[0] if len(words) == 1 else ', '.join(words[:-1]) + ' and ' + words[-1]
 
 
-def _named(m, attr) -> list:
-    from affinity import word_for
-    return list(dict.fromkeys(word_for(w) for w in (getattr(m, attr, None) or ()) if w))
+def _profile(m) -> dict:
+    """{kind: (size word, [words])} from affinity.damage_profile, the one
+    reading the blow follows: only what the hero can land, each type where
+    the blow puts it, with how much it changes a blow."""
+    import affinity
+    out = {}
+    for kind, _label, types in affinity.damage_profile(m):
+        step = {affinity.WEAK: affinity.weak_step(), 'banes': affinity.weak_step(),
+                affinity.RESISTED: affinity.resisted_step(),
+                affinity.SHRUGS_OFF: affinity.shrugs_step()}[kind]
+        words = list(dict.fromkeys(affinity.word_for(t) for t in types if t))
+        out[kind] = (affinity._size_word(step).lower(), words)
+    return out
+
+
+def _or(words) -> str:
+    return words[0] if len(words) == 1 else ', '.join(words[:-1]) + ' or ' + words[-1]
 
 
 def weak_line(m) -> str:
-    """"Fire and holy power hurt it most.": its weaknesses, for a kind the
-    hero knows. Empty when it has none."""
-    words = _named(m, 'weaknesses')
-    if not words:
-        return ''
-    t = data()['weak_one' if len(words) == 1 else 'weak_many'].replace('{words}', _and(words))
-    return _fill(m, t)
+    """"Fire and holy power hurt it most (double damage). So does a weapon
+    of silver.": its weaknesses and the materials it cannot bear, for a kind
+    the hero knows. Empty when it has neither."""
+    d = data()
+    prof = _profile(m)
+    out = []
+    if 'weak' in prof:
+        size, words = prof['weak']
+        out.append(d['weak_one' if len(words) == 1 else 'weak_many']
+                   .replace('{words}', _and(words)).replace('{size}', size))
+    if 'banes' in prof:
+        size, words = prof['banes']
+        key = 'bane_tail' if out else 'bane_only'
+        out.append(d[key].replace('{words}', _or(words)).replace('{size}', size))
+    return _fill(m, ' '.join(out)) if out else ''
 
 
 def hard_line(m) -> str:
-    """"A cutting blow and a thrust do little to it; fire hardly touches
-    it.": what it resists and what it shrugs off, for a kind the hero knows.
-    Empty when it has neither."""
+    """"A cutting blow and a point do little to it (half damage); fire
+    hardly touches it (quarter damage).": what it resists and what it shrugs
+    off, for a kind the hero knows. Empty when it has neither."""
     d = data()
+    prof = _profile(m)
     parts = []
-    for attr, one, many in (('resistances', 'resist_one', 'resist_many'),
+    for kind, one, many in (('resisted', 'resist_one', 'resist_many'),
                             ('shrugs_off', 'shrugs_one', 'shrugs_many')):
-        words = _named(m, attr)
-        if words:
-            parts.append(d[one if len(words) == 1 else many].replace('{words}', _and(words)))
+        if kind in prof:
+            size, words = prof[kind]
+            parts.append(d[one if len(words) == 1 else many]
+                         .replace('{words}', _and(words)).replace('{size}', size))
     if not parts:
         return ''
     return _fill(m, '; '.join(parts) + '.')

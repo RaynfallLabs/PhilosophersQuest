@@ -1492,7 +1492,11 @@ def spawn_themed(room: Room, level: int, dungeon: Dungeon, words=(), families=()
 
 
 # Fewest monsters a generated floor starts with (plus one per eight floors).
-MIN_FLOOR_MONSTERS = 6
+# 3.5.1: 8 (was 6), with the per-room roll's base at 0.62 (was 0.50;
+# level_manager): a floor is peopled when it is made, and newcomers come
+# only to a hero who lingers (src/wanderers.py).
+MIN_FLOOR_MONSTERS = 8
+FLOOR_DENSITY_BASE = 0.62
 
 
 MIMIC_FIRST_FLOOR = 8
@@ -1555,7 +1559,7 @@ def populate_floor(rooms: List[Room], level: int, dungeon: Dungeon,
     if not spawn_rooms:
         return monsters
     if occupancy is None:
-        occupancy = min(0.50 + level / 130, 0.95)
+        occupancy = min(FLOOR_DENSITY_BASE + level / 130, 0.95)
     per_room_p = max(0.45, min(0.92, occupancy))
     for room in spawn_rooms:
         if rng.random() < per_room_p:
@@ -1564,7 +1568,7 @@ def populate_floor(rooms: List[Room], level: int, dungeon: Dungeon,
     # and 90 find three or four) rolled only that many times and started
     # with one to six monsters: a free floor every ten. Fill those up to a
     # count that follows depth.
-    floor_min = min(MIN_FLOOR_MONSTERS + level // 8, 18)
+    floor_min = min(MIN_FLOOR_MONSTERS + level // 8, 20)
     tries = 0
     while len(monsters) < floor_min and tries < floor_min * 6:
         tries += 1
@@ -2340,7 +2344,8 @@ def _quest_artifact(item_id: str, **overrides):
     return item
 
 
-def _carve_sealed_shrine(dungeon: Dungeon, near: tuple, max_radius: int = 12):
+def _carve_sealed_shrine(dungeon: Dungeon, near: tuple, max_radius: int = 12,
+                         avoid=None):
     """Carve a 3x3 chamber behind a wall near `near`, sealed on every side.
 
     Returns (door_xy, centre_xy) or None. The door tile stays WALL until the
@@ -2356,8 +2361,12 @@ def _carve_sealed_shrine(dungeon: Dungeon, near: tuple, max_radius: int = 12):
     contained the door tile and its two neighbours on the room's own wall
     line; only the door was re-walled, so the "sealed" shrine stood open on
     about 98% of floors and the key item was never needed.
+
+    ``avoid``: tiles the door may not open onto (the Mooble's cave never
+    opens into a war-band's camp: war_bands.camp_tiles).
     """
     nx0, ny0 = near
+    avoid = avoid or ()
     # The door must open onto floor the hero can walk to (a pool or a lava
     # river laid down earlier could cut the door's side of the wall off).
     reach = _reach_from_stairs(dungeon)
@@ -2378,6 +2387,8 @@ def _carve_sealed_shrine(dungeon: Dungeon, near: tuple, max_radius: int = 12):
                     if not dungeon.is_walkable(fx, fy):
                         continue
                     if reach and (fx, fy) not in reach:
+                        continue
+                    if (fx, fy) in avoid:
                         continue
                     sx, sy = wx + 2 * ddx, wy + 2 * ddy    # chamber centre
                     solid = True

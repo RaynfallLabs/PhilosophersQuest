@@ -155,7 +155,8 @@ haggles (Buy tab), Esc closes (or backs out of choosing a target).
   to the last detail; a thing whose type is unknown is priced as its
   unidentified class; capped by what is left in his purse
   (`purse` floors of income, spent as he buys, never refilled). Refused:
-  quest pieces (`Game._QUEST_PIECE_IDS`, scripted-only ids, plot-locked
+  quest pieces (`Game._QUEST_PIECE_IDS`, `items.WITHHELD_IDS` such as the
+  Starnut Tart and the Scroll of Death's Bane, scripted-only ids, plot-locked
   things, every artifact but the six Soul Spheres, and a sphere that holds a
   bound companion), tools and keys, things outside
   a specialist's line, and a curse the hero knows of (except to Vesper). A

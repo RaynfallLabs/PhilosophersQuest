@@ -167,12 +167,15 @@ def test_splits_name_the_blows_that_split_it():
 
 def test_the_weakness_line():
     # In the creature's own pronoun (round 3): a troll and a ghoul are "he".
-    assert tells.weak_line(_m('troll')) == 'Fire and acid hurt him most.'
-    assert tells.weak_line(_m('ghoul')) == 'Holy power and a cutting blow hurt him most.'
-    assert tells.weak_line(_m('green_slime')).endswith('hurt it most.') or \
-        tells.weak_line(_m('green_slime')).endswith('hurts it most.')
+    # With how much (3.5.1 audit), and the metals a ghoul cannot bear.
+    assert tells.weak_line(_m('troll')) == 'Fire and acid hurt him most (double damage).'
+    ghoul = tells.weak_line(_m('ghoul'))
+    assert ghoul.startswith('Holy power and a cutting blow hurt him most (double damage). '
+                            'So does a weapon of ') and ' or sunsteel.' in ghoul
+    assert 'it most (double damage).' in tells.weak_line(_m('green_slime'))
     m = _m('ghoul')
     m.weaknesses = []
+    m.tags = []
     assert tells.weak_line(m) == ''
 
 
@@ -221,8 +224,8 @@ def test_first_sight_says_more_as_the_hero_learns():
     lore = tells.lore_lines(ghoul)
     assert len(lore) == 3
     assert len(g.msgs) == 3 + len(lore)
-    assert 'distance' in g.msgs[2] and g.msgs[3] == 'Holy power and a cutting blow hurt him most.'
-    assert g.msgs[3:] == lore and 'a thrust' in lore[1] and 'put to sleep' in lore[2]
+    assert 'distance' in g.msgs[2] and g.msgs[3].startswith('Holy power and a cutting blow hurt him most (double damage).')
+    assert g.msgs[3:] == lore and 'a point' in lore[1] and 'put to sleep' in lore[2]
     n = len(g.msgs)
     g._maybe_tell(ghoul)
     assert len(g.msgs) == n
@@ -233,7 +236,7 @@ def test_a_known_kind_seen_first_gets_the_whole_line_at_once():
     hero.studied_monster_ids.add('troll')
     g = _G(hero)
     g._maybe_tell(_m('troll'))
-    assert 'do not wear him down' in g.msgs[0] and g.msgs[1] == 'Fire and acid hurt him most.'
+    assert 'do not wear him down' in g.msgs[0] and g.msgs[1] == 'Fire and acid hurt him most (double damage).'
     assert g.msgs[2] == 'He is easily confused. Fire puts him to flight.'
 
 

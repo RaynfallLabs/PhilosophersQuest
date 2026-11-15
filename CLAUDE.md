@@ -65,6 +65,7 @@ src/
   fov.py              - Shadowcasting field of view
   unseen.py           - What the hero cannot see on a visible tile (invisible, ambush, disguise)
   senses.py           - How a monster notices the hero: sight, sound, lore senses; searching; idle jobs
+  wanderers.py        - The floor's clock: time to explore (a grace from its explore tour), then a trickle of newcomers
   war_bands.py        - War-bands: groups with a leader and roles, morale when he falls
   tells.py            - Tells: what a dangerous creature shows it can do, and what to do about it
   decor.py            - The five domains (themes) and the fixture layer: what stands in a floor

@@ -340,10 +340,137 @@ def status_noun(effect: str) -> str:
     return str(nouns.get(effect) or str(effect).replace('_', ' ').title())
 
 
+# ---------------------------------------------------------------------------
+# What a creature is made of, as the hero is told it (3.5.1 audit)
+# ---------------------------------------------------------------------------
+# Brandon, 3.5.1: "some monsters take a quarter or half damage from certain
+# attacks, like a stirge swarm hit with a sword or the beetles. However,
+# this is conveyed nowhere on the monster identification screen. We need to
+# make sure all this information is conveyed, and that all bestiary entries
+# are accurate (weakness AND resistances)."
+#
+# damage_profile is the ONE reading of what changes the hero's damage on a
+# creature. It follows step() and combat.weapon_type_multiplier exactly, so
+# the Bestiary, a studied corpse, the Wand of Probing and Observe can never
+# say less (or more) than the blow does:
+#   * its weaknesses, resistances and what it shrugs off, each with its
+#     size (double, half, a quarter), a type named in more than one list
+#     shown where step() puts it (weak, then shrugs off, then resists);
+#   * the materials it cannot bear: a weapon metal (or wood) whose
+#     effective_against matches its tags (silver and the undead, cold iron
+#     and the fey), and any material its weaknesses name (iron, silver).
+#     These were never on the page: a skeleton's said "Weak to: Blunt, Holy"
+#     and not the eight metals that bite it twice as hard;
+#   * dragon scales, a damage ward, regeneration and what stops it.
+# Types no blow, shot, spell, wand, flask, coating or pet of the hero's can
+# land as ('shadow', 'necrotic': what one creature does to another) are left
+# off: nothing of his can meet them.
+HERO_TYPES = ('slash', 'pierce', 'blunt', 'fire', 'cold', 'lightning', 'acid',
+              'poison', 'holy', 'magic', 'drain')
+_SIZE_WORDS = {3.0: 'Triple', 2.0: 'Double', 0.5: 'Half', 0.25: 'Quarter'}
+
+
+def _size_word(step_value: float) -> str:
+    return _SIZE_WORDS.get(round(float(step_value), 4), f"x{float(step_value):g}")
+
+
+def _getter(defn):
+    return defn.get if isinstance(defn, dict) else (lambda k, d=None: getattr(defn, k, d))
+
+
+def _title(x: str) -> str:
+    return str(x).replace('_', ' ').title()
+
+
+def bane_materials(defn) -> list:
+    """The weapon materials ``defn`` cannot bear, a blow of which lands twice
+    as hard as its substance (combat.weapon_type_multiplier): those whose
+    effective_against matches its tags, then those its weaknesses name."""
+    import combat
+    combat._load_material_tags()
+    table = combat._MATERIAL_EFFECTIVE_AGAINST
+    get = _getter(defn)
+    tags = set(get('tags', None) or ())
+    out = [mat for mat in sorted(table) if table[mat] and (set(table[mat]) & tags)]
+    for w in (get('weaknesses', None) or ()):
+        if w in table and w not in out:
+            out.append(w)
+    return out
+
+
+def damage_profile(defn) -> list:
+    """[(kind, label, [types])] for what changes the hero's damage on this
+    creature: kind 'weak', 'banes', 'resisted', 'shrugs_off'. Only the types
+    a hero can land (HERO_TYPES; the materials under 'banes')."""
+    import combat
+    combat._load_material_tags()
+    materials = set(combat._MATERIAL_EFFECTIVE_AGAINST)
+    get = _getter(defn)
+    weak_l = [t for t in (get('weaknesses', None) or ()) if t in HERO_TYPES]
+    shrug_l = [t for t in (get('shrugs_off', None) or ()) if t in HERO_TYPES and t not in weak_l]
+    res_l = [t for t in (get('resistances', None) or ())
+             if t in HERO_TYPES and t not in weak_l and t not in shrug_l]
+    banes = [m for m in bane_materials(defn) if m in materials]
+    out = []
+    if weak_l:
+        out.append((WEAK, f"Weak To ({_size_word(weak_step())} Damage)", weak_l))
+    if banes:
+        out.append(('banes', f"Bane Materials ({_size_word(weak_step())} Damage)", banes))
+    if res_l:
+        out.append((RESISTED, f"Resists ({_size_word(resisted_step())} Damage)", res_l))
+    if shrug_l:
+        out.append((SHRUGS_OFF, f"Shrugs Off ({_size_word(shrugs_step())} Damage)", shrug_l))
+    return out
+
+
+def hard_rules(defn) -> list:
+    """[(kind, text)] for the rules besides the lists that change the hero's
+    damage: dragon scales, a damage ward, regeneration (and what stops it)."""
+    get = _getter(defn)
+    out = []
+    scales = float(get('dragon_scales', 0) or 0)
+    if scales > 0:
+        out.append(('scales', f"Scales: Turn aside {round(scales * 100)}% of every blow, "
+                              "but not one driven upward from a pit."))
+    ward = float(get('damage_ward', 0) or 0)
+    if ward > 0:
+        out.append(('ward', f"Ward: Absorbs {round(ward * 100)}% of every blow while it holds."))
+    regen = int(get('regeneration', 0) or 0)
+    if regen > 0:
+        stops = [t for t in ('fire', 'acid') if t in (get('weaknesses', None) or ())]
+        text = f"Regenerates: {regen} HP a turn"
+        if stops:
+            text += (f"; {' or '.join(stops)} stops it for "
+                     f"{int(rules().get('regen_stop_turns', 3))} turns")
+        out.append(('regen', text + '.'))
+    # A weapon's form and its substance each take a step and multiply, to
+    # the cap (combat.weapon_type_multiplier): say so where both can meet.
+    weak_l = [t for t in (get('weaknesses', None) or ()) if t in HERO_TYPES]
+    forms = [word_for(t) for t in weak_l if t in FORMS]
+    subs = (['a blessed weapon'] if 'holy' in weak_l else []) + (
+        ['one of a bane material' if 'holy' in weak_l else 'a weapon of a bane material']
+        if bane_materials(defn) else [])
+    if forms and subs and cap() > weak_step():
+        out.append(('both', f"Both At Once: {' or '.join(forms)} from {' or '.join(subs)} "
+                            f"lands {_size_word(cap()).lower()} damage, the most a blow can gain."))
+    return out
+
+
+def bestiary_rows(defn) -> list:
+    """Every row the Bestiary, a studied corpse and the Wand of Probing show
+    of what a creature is made of, at the knowledge that shows them:
+    [(kind, text)]. Damage first, then its other hard rules, then what its
+    nature refuses and falls to easily."""
+    rows = [(kind, f"{label}: {', '.join(_title(t) for t in types)}")
+            for kind, label, types in damage_profile(defn)]
+    rows += hard_rules(defn)
+    return rows + [r for r in page_lines(defn) if r[0] != SHRUGS_OFF]
+
+
 def page_lines(defn) -> list:
-    """The Bestiary lines this pass adds beside "Resists:" and "Weak to:"
-    (game_render shows them where it shows those, at the same knowledge):
-    [(kind, text)] with kind 'shrugs_off', 'immune' or 'easily'."""
+    """The status rows of the Bestiary page (what its nature refuses, what it
+    falls to easily) and what it shrugs off: [(kind, text)] with kind
+    'shrugs_off', 'immune' or 'easily'. bestiary_rows is the whole page."""
     get = defn.get if isinstance(defn, dict) else (lambda k, d=None: getattr(defn, k, d))
     out = []
     shrugs = list(get('shrugs_off', None) or [])

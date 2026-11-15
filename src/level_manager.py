@@ -114,17 +114,18 @@ class LevelManager:
             items = self._once_per_run(items)
             return dungeon, monsters, items
 
-        from dungeon import generate_dungeon, spawn_items, populate_floor
+        from dungeon import generate_dungeon, spawn_items, populate_floor, FLOOR_DENSITY_BASE
 
         dungeon = generate_dungeon(80, 50, level_num)
 
         # Monster spread scales with depth (2026-05-19 density rebuild;
-        # 2026-06-06 per-room pass). `density` grows from 0.50 at L1 to 0.95 at
-        # L75+ and is the PER-ROOM probability of a baseline monster --
-        # populate_floor rolls every room, so the population spreads across the
-        # whole floor instead of lumping in one corner. Packs and den/zoo extras
-        # cluster intentionally on top.
-        density = min(0.50 + level_num / 130, 0.95)
+        # 2026-06-06 per-room pass). `density` is the PER-ROOM probability of
+        # a baseline monster -- populate_floor rolls every room, so the
+        # population spreads across the whole floor instead of lumping in one
+        # corner. Packs, bands and den/zoo extras cluster intentionally on top.
+        # 3.5.1: it starts at 0.62 (was 0.50). A floor's own monsters carry the
+        # fight now; newcomers come only to a hero who lingers (src/wanderers.py).
+        density = min(FLOOR_DENSITY_BASE + level_num / 130, 0.95)
         monsters = populate_floor(dungeon.rooms, level_num, dungeon, occupancy=density)
 
         items = spawn_items(dungeon.rooms, level_num, dungeon)
@@ -331,6 +332,21 @@ class LevelManager:
                     return esc
         return None
 
+    def _carry_mini_boss(self, mid: str, level_num: int):
+        """A planned mini-boss that could not be set down on ``level_num``
+        is planned instead on the next floor not yet made, within five,
+        that holds no gate boss, seal demon or other planned mini-boss.
+        Returns that floor, or None (then he is lost, as before)."""
+        taken = (set(_BOSS_LEVELS) | set(self._SEAL_DEMON_LEVELS)
+                 | set(self._planned_mini_bosses) | set(self._saved))
+        for target in range(level_num + 1, min(level_num + 6, 100)):
+            if target not in taken:
+                if self._planned_mini_bosses.get(level_num) == mid:
+                    del self._planned_mini_bosses[level_num]
+                self._planned_mini_bosses[target] = mid
+                return target
+        return None
+
     def _try_spawn_mini_boss(self, dungeon, monsters: list, level_num: int):
         """Place this floor's planned mini-boss (if any). Pre-rolled at run start."""
         import random as _rng
@@ -398,6 +414,10 @@ class LevelManager:
             if spots:
                 spawn_pos = _rng.choice(spots)
         if spawn_pos is None:
+            # Nowhere he fits: a big body on a maze floor whose clearings the
+            # floor's own monsters fill (Surtur on 90 was lost for the run in
+            # about one run in fourteen). He comes a floor or two later.
+            self._carry_mini_boss(mid, level_num)
             return
 
         try:
