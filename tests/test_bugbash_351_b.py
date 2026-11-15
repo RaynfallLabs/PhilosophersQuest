@@ -198,6 +198,46 @@ def test_the_bococho_is_a_bird_with_feet_not_hooves():
 
 
 # ---------------------------------------------------------------------------
+# The Stray Kids: the test helper that walks the hero to the idol
+# ---------------------------------------------------------------------------
+
+def test_the_idol_can_be_touched_when_monsters_crowd_round_it():
+    """B-10 (a test, the lead's find). test_stray_kids's save-mid-dance-off
+    test failed once in a full parallel run: its floor comes from the
+    dungeon's own unseeded generator, and on 3.5.1's fuller floors monsters
+    sometimes stood on all four square tiles beside the idol, so the helper
+    raised "no tile beside it". It now takes any of the eight tiles round
+    it and, failing a free one, lifts an ordinary monster off one (never the
+    band or a friend). In the game itself the idol always stands where it
+    cuts nothing off, with open floor beside it (decor.place_event_stand);
+    a crowd only waits to move."""
+    import json
+    import stray_kids as sk
+    import test_stray_kids as TS
+    from boss_levels import STRAY_KIDS_STAGE
+    from monster import Monster
+    with open(os.path.join(ROOT, 'data', 'monsters.json'), encoding='utf-8') as f:
+        gob = dict(json.load(f)['goblin'], id='goblin')
+    g = TS._game('__test_351b_crowd__')
+    x, y = TS._idol_floor(g, 9)
+    around = [(x + dx, y + dy) for dx in (-1, 0, 1) for dy in (-1, 0, 1)
+              if (dx or dy) and g.dungeon.is_walkable(x + dx, y + dy)]
+    assert around                                   # the idol has open floor beside it
+    g.monsters = [m for m in g.monsters if (m.x, m.y) not in set(around)]
+    for t in around:
+        g.monsters.append(Monster(gob, *t))
+    dx, dy = TS._beside(g, (x, y))
+    assert (g.player.x + dx, g.player.y + dy) == (x, y)
+    assert not any(m.alive and (m.x, m.y) == (g.player.x, g.player.y) for m in g.monsters)
+    assert len([m for m in g.monsters if (m.x, m.y) in set(around)]) == len(around) - 1
+    g.pets = []
+    g._do_move(dx, dy)
+    g._do_move(dx, dy)
+    assert g.dungeon_level == STRAY_KIDS_STAGE
+    assert len(sk.the_band(g.monsters)) == 8
+
+
+# ---------------------------------------------------------------------------
 # The race
 # ---------------------------------------------------------------------------
 

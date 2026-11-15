@@ -69,16 +69,46 @@ def _idol_floor(g, floor=9):
     return pos[0]
 
 
+_NEIGHBOURS = ((1, 0), (-1, 0), (0, 1), (0, -1), (1, 1), (-1, 1), (1, -1), (-1, -1))
+
+
 def _beside(g, pos):
-    """Stand the hero next to (x, y) and return the step that walks into it."""
+    """Stand the hero next to (x, y) and return the step that walks into it.
+
+    Any of the eight tiles round it will do (the hero walks diagonally too),
+    a free one first. The floor is generated from the dungeon's own unseeded
+    generator, and with 3.5.1's fuller floors (more monsters, war bands from
+    floor 1) its monsters sometimes stood on every tile beside the idol:
+    "no tile beside it". Then an ordinary monster (never one of the band, an
+    ally or an encounter's person) is taken off the floor to make room."""
+    from geom import monster_at_tile
     x, y = pos
-    for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)):
-        hx, hy = x - dx, y - dy
-        if g.dungeon.is_walkable(hx, hy) and not any((m.x, m.y) == (hx, hy) for m in g.monsters):
-            g.player.x, g.player.y = hx, hy
-            g._refresh_fov()
-            return dx, dy
-    raise AssertionError('no tile beside it')
+
+    def holder(hx, hy):
+        m = monster_at_tile(g.monsters, hx, hy)
+        return m if m is not None and getattr(m, 'alive', True) else None
+
+    def friend(m):
+        return (sk.is_zombie(m) or sk.is_star(m) or getattr(m, 'is_allied', False)
+                or getattr(m, '_npc_encounter_tag', None)
+                or getattr(m, '_flavor_encounter_tag', None))
+
+    walkable = [(dx, dy) for dx, dy in _NEIGHBOURS if g.dungeon.is_walkable(x - dx, y - dy)
+                and (x - dx, y - dy) not in getattr(g.dungeon, 'pits', set())]
+    free = [s for s in walkable if holder(x - s[0], y - s[1]) is None]
+    if not free:
+        for dx, dy in walkable:
+            m = holder(x - dx, y - dy)
+            if not friend(m):
+                g.monsters.remove(m)
+                free = [(dx, dy)]
+                break
+    if not free:
+        raise AssertionError('no tile beside it')
+    dx, dy = free[0]
+    g.player.x, g.player.y = x - dx, y - dy
+    g._refresh_fov()
+    return dx, dy
 
 
 def _on_stage(g, floor=9):
