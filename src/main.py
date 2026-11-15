@@ -5470,15 +5470,24 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             return
         import wanderers
         say, due = wanderers.advance(self.dungeon, self.dungeon_level, self.turn_count)
+        placed = bool(self._place_wanderer()) if due else False
+        # "Things will come looking now" is said with the first newcomer that
+        # really comes: a floor still as full as it began (the alive cap)
+        # takes none, and the line would lie (bug bash 3.5.1 C).
+        clock = wanderers.clock(self.dungeon)
+        if say == 'stirs':
+            clock['stir_owed'] = True
+            say = None
+        if placed and clock.pop('stir_owed', False):
+            say = 'stirs'
         if say:
             text = wanderers.line(say)
             if text:
                 self.add_message(text, 'warning')
-        if due:
-            self._place_wanderer()
 
-    def _place_wanderer(self):
-        """One newcomer comes onto the floor, if the caps allow."""
+    def _place_wanderer(self) -> bool:
+        """One newcomer comes onto the floor, if the caps allow. True when
+        one came."""
         import random as _rng
         # Cap by how many are already HUNTING the player, not by how many
         # are alive. The old cap (4 + level // 6 alive) was below every
@@ -5554,6 +5563,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     m._goal = (int(loud[0]), int(loud[1]))
             m._lead_used = True
             self.monsters.append(m)
+            return True
+        return False
 
     def _check_floor_trap(self, x: int, y: int, forced: bool = False):
         """Trigger a floor trap at (x, y) if one exists.

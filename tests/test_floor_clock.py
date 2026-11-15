@@ -201,3 +201,34 @@ def test_a_floor_is_peopled_when_it_is_made():
     assert dungeon.FLOOR_DENSITY_BASE >= 0.6
     with open(os.path.join(ROOT, 'data', 'war_bands.json'), encoding='utf-8') as f:
         assert json.load(f)['chance'] >= 0.5
+
+
+def test_the_floor_stirs_only_when_something_really_comes():
+    """A floor still as full as it began takes no newcomer (the alive cap),
+    so "things will come looking now" waits for the first that does
+    (bug bash 3.5.1 C: a sneaking hero heard it and nothing came)."""
+    from test_bug_bash_5_encounters import _game
+    import floor_curve as fc
+    g = _game(4)
+    g.dungeon.explored = {(x, y) for y in range(g.dungeon.height) for x in range(g.dungeon.width)
+                          if g.dungeon.is_walkable(x, y)}
+    g.visible = set()
+    for m in g.monsters:
+        m._tracking = False
+    while sum(1 for m in g.monsters if m.alive) < fc.wander_alive_cap(g.dungeon_level):
+        g.monsters.append(type(g.monsters[0])({'id': 'giant_rat', 'name': 'giant rat', 'hp': '1d4'}, 0, 0))
+    msgs = []
+    g.add_message = lambda text, *a, **k: msgs.append(text)
+    stirs = set(wanderers._lines()['stirs'])
+    for _ in range(wanderers.grace(g.dungeon) + 300):
+        g.turn_count += 1
+        g._maybe_wander_spawn()
+    assert not any(t in stirs for t in msgs)
+    n = len(g.monsters)
+    for m in g.monsters:
+        m.alive = False                       # the hero thins the floor
+    for _ in range(300):
+        g.turn_count += 1
+        g._maybe_wander_spawn()
+    assert len(g.monsters) > n
+    assert sum(1 for t in msgs if t in stirs) == 1
