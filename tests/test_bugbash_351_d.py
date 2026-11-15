@@ -112,3 +112,46 @@ def test_d1_an_old_saves_body_and_an_encounter_person_still_read(game):
     _ident, mech, _lore = _page_texts(game, person)
     assert 'HP: 9   THAC0: 19   Speed: 1' in mech
     assert 'Weak To (Double Damage): Holy' in mech
+
+
+# ---------------------------------------------------------------------------
+# D2. The simulator casts Drain Life as the game does
+# ---------------------------------------------------------------------------
+
+def _sim_table(name):
+    """A literal table in tools/balance/difficulty_sim.py, read from its source."""
+    import ast
+    path = os.path.join(ROOT, 'tools', 'balance', 'difficulty_sim.py')
+    with open(path, encoding='utf-8') as f:
+        tree = ast.parse(f.read())
+    for node in tree.body:
+        if (isinstance(node, ast.Assign) and len(node.targets) == 1
+                and getattr(node.targets[0], 'id', None) == name):
+            return ast.literal_eval(node.value)
+    raise KeyError(name)
+
+
+@pytest.mark.parametrize('effect', ['drain_life_spell', 'fire_bolt', 'acid_arrow',
+                                    'frost_touch', 'smite', 'magic_missile'])
+def test_d2_the_simulators_spell_types_are_the_games(game, monkeypatch, effect):
+    """tools/balance/difficulty_sim.ATTACK_SPELLS says what each attack spell
+    lands as. Drain Life lands as 'drain' since 3.5.1 (the undead resist it),
+    but the simulator still cast it untyped, so its mage hit a ghoul twice as
+    hard with it as the game does. (The table is read from the source:
+    importing the simulator patches the game's bones for good.)"""
+    from spells import LEARNABLE_SPELLS
+    attack_spells = _sim_table('ATTACK_SPELLS')
+    spell = next(s for s in LEARNABLE_SPELLS.values() if s.get('effect') == effect)
+    target = _m('troll', game.player.x + 1, game.player.y)
+    target.hp = target.max_hp = 100000
+    game.monsters = [target]
+    seen = []
+    real = Monster.take_damage
+
+    def spy(self, amount, damage_type='physical', *a, **k):
+        seen.append(damage_type)
+        return real(self, amount, damage_type, *a, **k)
+    monkeypatch.setattr(Monster, 'take_damage', spy)
+    game._apply_spell_effect(dict(spell), target)
+    assert seen, effect
+    assert set(seen) == {attack_spells[effect] or 'physical'}, (effect, seen)

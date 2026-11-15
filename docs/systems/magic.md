@@ -436,7 +436,7 @@ the effect does something structurally different.
 | acid      | acid       | Acid Dart, Acid Arrow, Dissolution                          |
 | force     | pure force | Magic Dart, Magic Missile, Force Barrage, Force Storm, Annihilation |
 | holy      | holy       | Smite (bypasses all resists), Turn Undead, Sunburst         |
-| life-drain| necrotic   | Drain Life, Soul Drain                                      |
+| life-drain| drain      | Drain Life, Soul Drain (and the wands of life and soul drain; the undead resist it, so give less) |
 | shadow    | mixed      | (via Witcher sign variants + necromancy spells)             |
 
 All damage routes through `_spell_damage(base_dmg, chain)` → full

@@ -510,10 +510,11 @@ SIM_CONTROL = (('haste_self', 'hasted', 10, True),
 BIG_FIGHT = 4.0                # x one attack: worth a spell
 # Attack spells the simulator casts (effect -> the element game_magic passes
 # to Monster.take_damage; None = untyped). magic_missile fires one missile a
-# tier step (game_magic _MISSILE_COUNT).
+# tier step (game_magic _MISSILE_COUNT). Drain Life and Soul Drain land as
+# 'drain' since 3.5.1 (the undead resist it); Smite is untyped by design.
 ATTACK_SPELLS = {'fire_bolt': 'fire', 'lightning_bolt': 'lightning', 'acid_arrow': 'acid',
                  'frost_touch': 'cold', 'meteor': 'fire', 'cone_of_cold': 'cold',
-                 'drain_life_spell': None, 'smite': None, 'disintegrate_spell': None,
+                 'drain_life_spell': 'drain', 'smite': None, 'disintegrate_spell': None,
                  'magic_missile': None}
 MISSILE_COUNT = {1: 1, 2: 3, 3: 5, 4: 7, 5: 9}
 # Gate bosses whose quest step teaches the hero who they are (slice 3).
