@@ -534,7 +534,22 @@ PROFILES['mastery'] = dict(PROFILES['stacked'], saver=True, knobs=dict(
 PROFILES['mastery_dex'] = dict(PROFILES['mastery'], stat_focus=('DEX', 'CON'))
 # ... and as a caster (slice 7, magic as a style): meals and gifts to INT and
 # CON, light or mithril body armour (the metal tax), attack spells by element.
-PROFILES['mastery_mage'] = dict(PROFILES['mastery'], stat_focus=('INT', 'CON'), caster=True)
+PROFILES['mastery_mage'] = dict(PROFILES['mastery'], stat_focus=('INT', 'CON'), caster=True,
+                                quest_pet='mooble')
+# The two quest pets (RARE_PETS_PLAN_2026_11_14; one companion at a time):
+# a mastery kid wins the one his build wants on its floors and keeps it. The
+# Mooble (data/mooble.json, floors 31-45): half a bite, +1 MP every few turns
+# within reach (every 5 turns, every 4 from his first change at level 25).
+# His danced special (a stun every 300 turns) is not modelled. The Bococho
+# (data/bococho.json, floors 51-65): kicks 1.25x a bite, saddlebags +20 lb,
+# and riding between fights spends fewer turns walking (SP), modelled as
+# RIDE_WALK_SHARE of the walk. Her race and Charge are not modelled.
+QUEST_PET_JOINS = {'mooble': 38, 'bococho': 58}
+QUEST_PET_BITE = {'mooble': 0.5, 'bococho': 1.25}
+MOOBLE_MP_EVERY = (5, 4)       # turns per MP before / after his first change (floor 60 here)
+RIDE_WALK_SHARE = 0.6
+for _n in ('mastery', 'mastery_dex'):
+    PROFILES[_n] = dict(PROFILES[_n], quest_pet='bococho')
 
 GATE_BOSSES = ('asterion_minotaur', 'medusa_gorgon', 'fafnir_dragon', 'fenrir_wolf')
 
@@ -1950,8 +1965,18 @@ class Run:
         p.prayer_cooldown = max(0, p.prayer_cooldown - n)
         if resting:
             p.meditate(int(n * self.knobs['mp_rest']), self.floor)    # game_input: meditation
+        qp = self._quest_pet()
+        if qp == 'mooble' and p.mp < p.max_mp:
+            every = MOOBLE_MP_EVERY[1] if self.floor >= 60 else MOOBLE_MP_EVERY[0]
+            self._mooble_mp = getattr(self, '_mooble_mp', 0.0) + n / every
+            whole = int(self._mooble_mp)
+            if whole:
+                self._mooble_mp -= whole
+                p.mp = min(p.max_mp, p.mp + whole)
         if moving or resting:                            # game_input: wait ticks SP
             need = n * SP_PER_MOVE
+            if moving and qp == 'bococho':
+                need *= RIDE_WALK_SHARE                  # riding between fights
             while p.sp - need < p.max_sp * 0.25 and self.food:
                 f = max(self.food, key=lambda x: x.sp_restore)
                 self.food.remove(f)
@@ -2706,8 +2731,10 @@ class Run:
                 bitten = [m for m in active if m.alive and m._sim_away <= 0]
                 if bitten:
                     foe = min(bitten, key=lambda m: m.hp)
+                    qp = self._quest_pet()
                     foe.take_damage(int(pet_system_mod.growth('bite', self.floor) * min(
-                        1.0, (0.5 + 0.7 * acc_at(self.quiz.accuracy, 1)) / 1.165)))
+                        1.0, (0.5 + 0.7 * acc_at(self.quiz.accuracy, 1)) / 1.165)
+                        * QUEST_PET_BITE.get(qp, 1.0)))
 
             # ---------------- the world's turn ----------------
             # The hero's speed rating (Player.get_speed: haste doubles it,
@@ -2964,10 +2991,19 @@ class Run:
         p.hp = p.max_hp
         p.sp = p.max_sp
 
+    def _quest_pet(self):
+        """The quest pet at his side now ('mooble' / 'bococho'), once won."""
+        qp = self.prof.get('quest_pet')
+        if qp and self.prof.get('pet') and self.floor >= QUEST_PET_JOINS.get(qp, 999):
+            return qp
+        return None
+
     def play_floor(self, floor: int, fights: bool = True):
         p = self.p
         self.floor = floor
         self.quiz.floor = floor
+        if self._quest_pet() == 'bococho':
+            p.saddlebag_lb = 20                  # her saddlebags (player.get_carry_limit)
         self._probe_charges += self.PROBE_FINDS.get(floor, 0)
         p._heal_x = self.kv('heal')
         if floor > p.deepest_floor_reached:
