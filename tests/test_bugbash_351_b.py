@@ -109,3 +109,29 @@ def test_opening_the_practice_card_and_backing_out_is_not_practising():
     g._mooble_dance_key(pygame.K_RETURN)
     assert mo.dances(m) == 2
     assert g.player.quirk_progress.get('terpsichore_cold_wins') == 1
+
+
+# ---------------------------------------------------------------------------
+# The race
+# ---------------------------------------------------------------------------
+
+def test_a_one_length_leg_is_said_a_length_not_1_lengths():
+    """B-04. Sprint on leg 2, keep the inside on leg 3 (Varro's caltrops)
+    and miss the first sum: she runs a single length, and the commentary
+    said "she runs 1 lengths"."""
+    import race as R
+    from game_states import STATE_RACE
+    g = TM._game('__test_351b_race_words__')
+    st = g._bococho_state()
+    r = R.new_race(5, 1)
+    st['race'] = r
+    R.run_leg(r, 3, 'pace')
+    R.run_leg(r, 3, 'sprint')                     # leg 3 runs winded
+    g._race_leg_done(0, 'pace', 'inside')         # no sum right, through the caltrops
+    assert R.lengths(r['history'][-1]['hero_run']) == 1
+    import re
+    said = ' '.join(g._race_lines)
+    assert not re.search(r'\b1 lengths', said), said
+    assert 'she runs a length.' in said, said
+    assert 'Brassbeak runs ' in said and ' lengths.' in said.split('Brassbeak runs ')[1]
+    assert g.state == STATE_RACE

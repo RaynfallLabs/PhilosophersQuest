@@ -209,7 +209,8 @@
       "caltrops": "Iron caltrops in the sand on the inside! She hops and stumbles through them and loses ground.",
       "outside": "You swing her wide, and she runs clean past a scatter of iron caltrops on the inside rail. Varro swears."
     },
-    "chain": "{chain} right in a row: she runs {run} lengths. Brassbeak runs {rival_run}.",
+    "chain": "{chain} right in a row: she runs {run}. Brassbeak runs {rival_run}.",
+    "_chain_note": "{run} and {rival_run} are said as lengths_one / lengths_many ('a length', '7 lengths'): a winded leg through the caltrops can be a single length.",
     "standing": {
       "lead_big": "She is flying! {gap} clear of Brassbeak.",
       "lead": "She leads Brassbeak by {gap}.",
