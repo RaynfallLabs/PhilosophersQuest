@@ -227,6 +227,20 @@ def test_journey_01_a_war_band_on_floor_one(make_game, monkeypatch):
         assert any('not yet studied' in t.lower() for t in page), (kind, page)
         while g.state != 'player':
             h.key(pygame.K_ESCAPE)
+    # Tab: the Families, the studied kind's family page.
+    import family_lore
+    fid = family_lore.family_of({**monster_defs()[other.kind], 'id': other.kind})
+    h.key('b')
+    h.key('a')
+    h.key(pygame.K_TAB)
+    want = next(i for i, e in enumerate(g.encyclopedia_entries) if e.get('_family') == fid)
+    while g.encyclopedia_selection < want:
+        h.key(pygame.K_DOWN)
+    h.key(pygame.K_RETURN)
+    fam = [str(t) for t, *_ in g._encyclopedia_article_lines('bestiary', g._encyclopedia_entry)]
+    assert any(t.startswith('Kinds studied: 1') for t in fam), fam
+    while g.state != 'player':
+        h.key(pygame.K_ESCAPE)
     no_errors(h)
 
 
