@@ -111,6 +111,28 @@ def test_opening_the_practice_card_and_backing_out_is_not_practising():
     assert g.player.quirk_progress.get('terpsichore_cold_wins') == 1
 
 
+def test_a_special_one_turn_from_ready_says_1_turn():
+    """B-07. Choosing a pet's special with one turn of its cooldown left
+    said "Dance of the Dark is on cooldown (1 turns)." (every pet's special,
+    the Mooble's dance among them)."""
+    from pet_system import Pet
+    from game_states import STATE_PET_SPECIALS
+    g = TM._game('__test_351b_cooldown__')
+    pet = Pet('mooble', g.player.x + 1, g.player.y, level=20)
+    g.pets = [pet]
+    sp = pet.available_specials()[0]
+    pet._special_cooldowns[sp['id']] = 1
+    g._pet_open_specials(pet)
+    assert g.state == STATE_PET_SPECIALS
+    g._pet_specials_input(pygame.K_RETURN)
+    said = ' '.join(TM._texts(g, 3))
+    assert 'Dance of the Dark is on cooldown (1 turn).' in said, said
+    assert g._mdance is None                     # nothing danced
+    pet._special_cooldowns[sp['id']] = 7
+    g._pet_specials_input(pygame.K_RETURN)
+    assert '(7 turns).' in ' '.join(TM._texts(g, 2))
+
+
 # ---------------------------------------------------------------------------
 # The Bococho's camp
 # ---------------------------------------------------------------------------

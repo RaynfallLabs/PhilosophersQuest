@@ -2303,7 +2303,8 @@ class MenuMixin:
         special = items[idx]
         if pet.special_cooldown(special['id']) > 0:
             self.add_message(
-                f"{special['name']} is on cooldown ({pet.special_cooldown(special['id'])} turns).",
+                f"{special['name']} is on cooldown "
+                f"({quantity(pet.special_cooldown(special['id']), 'turn')}).",
                 'warning')
             return
         self._begin_pet_special_targeting(pet, special)
