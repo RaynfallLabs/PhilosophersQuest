@@ -76,8 +76,8 @@ src/
   sleepers.py         - Zoo, graveyard and barracks sleepers stir at footsteps and gold taken
   theft.py            - Thieves that really steal, and give it back on death
   black_knight.py     - The Black Knight bridge easter egg (floors 15-19)
-  stray_kids.py       - The Stray Kids easter egg (floors 8-12): the zombie band's dance, the stage, the stars
-  game_stray_kids.py  - StrayKidsMixin: the idol, the Zombie Stage trip, the beat, the photo's show
+  stray_kids.py       - The Stray Kids easter egg (floors 8-12): the zombie band's dance-off rules (Simon Says rounds, strikes, the earworm), the stage, the stars
+  game_stray_kids.py  - StrayKidsMixin: the idol, the Zombie Stage trip, the dance-off (Simon Says on the shared dance screen), the photo's show
   emberpup_encounter.py - The abandoned Emberpup (floors 3-8): three feeds, the Bloomleaf Cloak won from Old Nickel; he keeps it
   mooble_encounter.py - The Mooble (floors 31-45): his side cave, the Starnut Tart, three dance-offs, "I choose you"; his gifts as a pet
   game_mooble_dance.py - MoobleDanceMixin: the dance screen (practice, the dance-off, his danced special), the beat, real-time keys

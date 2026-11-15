@@ -90,6 +90,7 @@ def start() -> bool:
             return True
         if not os.path.exists(_path()):
             return False
+        _effects_done()                     # never touch the music mid-effect (see _effects_done)
         pygame.mixer.music.load(_path())
         pygame.mixer.music.set_volume(VOLUME)
         pygame.mixer.music.play(loops=-1, fade_ms=FADE_MS)
@@ -105,6 +106,7 @@ def stop() -> None:
     try:
         import pygame
         if pygame.mixer.get_init():
+            _effects_done()                 # F5 mid-effect could hang the game (see _effects_done)
             pygame.mixer.music.fadeout(FADE_MS)
     except Exception:
         pass
