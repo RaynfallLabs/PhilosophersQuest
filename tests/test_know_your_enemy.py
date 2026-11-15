@@ -133,7 +133,7 @@ def test_kin_adds_the_familys_habit_to_the_felt_line():
     # the creature's group speaks first: a skeleton's bones
     sk = _m('skeleton')
     text = affinity.say([(sk, 'weak', 'blunt')], random.Random(3), level_of=lambda m: KIN)[0][0]
-    assert text.endswith('Bones snap under a mace.'), text
+    assert text.endswith('Bones snap under crushing force.'), text
     # a meeting the family's profile does not explain gets its plain line
     gob = _m('goblin')
     text = affinity.say([(gob, 'weak', 'fire')], random.Random(4), level_of=lambda m: KIN)[0][0]
@@ -163,7 +163,7 @@ def test_the_game_says_each_creature_as_far_as_the_hero_knows_it():
     g.player.family_lore_grants = {'restless_dead': 1}            # KIN
     affinity.note(sk, 'weak', 'blunt')
     g._say_affinity_lines()
-    assert g.log[1].endswith('Bones snap under a mace.')
+    assert g.log[1].endswith('Bones snap under crushing force.')
     g.player.studied_monster_ids.add('skeleton')                  # KNOWN
     affinity.note(sk, 'weak', 'blunt')
     g._say_affinity_lines()

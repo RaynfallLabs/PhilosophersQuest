@@ -222,7 +222,7 @@ def test_first_sight_says_more_as_the_hero_learns():
     assert len(lore) == 3
     assert len(g.msgs) == 3 + len(lore)
     assert 'distance' in g.msgs[2] and g.msgs[3] == 'Holy power and a cutting blow hurt him most.'
-    assert g.msgs[3:] == lore and 'a thrust' in lore[1] and 'put to sleep' in lore[2]
+    assert g.msgs[3:] == lore and 'a point' in lore[1] and 'put to sleep' in lore[2]
     n = len(g.msgs)
     g._maybe_tell(ghoul)
     assert len(g.msgs) == n

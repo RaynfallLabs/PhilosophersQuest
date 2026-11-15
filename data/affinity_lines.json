@@ -1,8 +1,8 @@
 {
   "_doc": "What the game says when a hit meets a creature's weakness, its resistance or what it shrugs off, or fire puts a beast to flight (src/affinity.py; Brandon, bug bash 3.3.2: 'a whole set of pokemon style messages, so you know it when you are blocked or effective'). One line per action, chosen at random from the pool; the _many pools when several creatures were struck the same way. KNOWLEDGE DECIDES WHAT IS SAID (winning-build plan 2026-11-13, section 3.1; Brandon: 'no omniscient monsters'): the hero always FEELS a hit; knowing the creature tells him WHY. A kind he does not know (family_lore.knowledge UNKNOWN) gets a 'felt' line, which never names what met it. A kind he knows only by its family (KIN) gets the felt line and the family's habit from 'habits'. A kind he knows (KNOWN: studied, its page opened, or its family at Lore) gets the top-level pools, which name the cause. {name} is the creature with its article at a sentence start, {the} the same mid-sentence, {word} what met it (fire, silver, a cutting blow); {he} {He} {him} {his} {His} are the creature's own pronouns (data/monsters.json pronoun: 'it', 'he' or 'she'; src/monster.py pronoun_fill). A 'felt' line never uses {word}. A fire fright is what the eye sees (the beast backs off from the flame) and is said the same at every level. status_immune: the line when an effect cannot take hold on a creature by its nature (Monster.add_effect, status_immune in monsters.json), by effect, said to a hero who knows the creature or its family; status_immune_felt: the same for a creature he does not know, which never says why. status_immune_will: the same for a refusal that is not the kind's nature but a named foe's will (a boss, a mini-boss or a seal demon is never frightened, charmed or, for a boss, held fast: Monster.resists_control) or the galla's fury (fearless), so a creature with a mind is never said to have none. status_weak: the line when one takes hold easily (status_weak), which is what the eye sees. {effect} is the effect's name.",
   "words": {
-    "slash": "a cutting blow", "pierce": "a thrust", "blunt": "a crushing blow",
-    "physical": "the blow", "fire": "fire", "cold": "cold", "lightning": "lightning",
+    "slash": "a cutting blow", "pierce": "a point", "blunt": "a crushing blow",
+    "physical": "the hit", "fire": "fire", "cold": "cold", "lightning": "lightning",
     "acid": "acid", "holy": "holy power", "poison": "poison", "magic": "magic",
     "necrotic": "death magic", "radiant": "radiance", "force": "force",
     "silver": "silver", "iron": "iron", "cold_iron": "cold iron", "drain": "draining",
@@ -13,7 +13,7 @@
     "{name} reels: {word} is {his} bane!",
     "Right where it hurts! {word_cap} finds {the}'s weakness.",
     "{name} shrieks. {He} was never made to take {word}.",
-    "A telling blow! {name} has no answer to {word}.",
+    "A telling hit! {name} has no answer to {word}.",
     "{word_cap} bites deep. {name} is weak to it!",
     "That is the way to hurt {the}: {word}!"
   ],
@@ -21,7 +21,7 @@
     "Not very effective... {name} resists {word}.",
     "{word_cap} barely troubles {the}.",
     "{name} hardly notices. Try something other than {word}.",
-    "The blow lands, but {the} takes little of it: {he} resists {word}.",
+    "It lands, but {the} takes little of it: {he} resists {word}.",
     "{name} was made to weather {word}. Not very effective.",
     "{name} turns {word} aside. Not very effective."
   ],
@@ -60,7 +60,7 @@
       "{He} reels!",
       "{name} reels!",
       "{name} staggers. That one went deep.",
-      "A telling blow! {name} howls.",
+      "A telling hit! {name} howls.",
       "{name} shrieks. Whatever that was, {he} hated it.",
       "That hurt {the} far more than it should have!"
     ],
@@ -96,8 +96,8 @@
     "_doc": "The family's habit, said after the felt line to a hero who knows the creature's family but not the kind itself (KIN). Written from the family's (or its group's) lore in data/family_affinity.json. A key 'weak:slash' is the habit when a cutting blow met a weakness; several words share a key with commas ('resisted:slash,pierce'). The creature's group is asked first, then its family; then the family's plain 'weak', 'resisted' or 'shrugs_off' line, which names nothing. tests/test_know_your_enemy.py checks that every keyed habit is true of most of the kinds it speaks for.",
     "families": {
       "restless_dead": {
-        "resisted:pierce": ["The dead have no heart for a point to find.", "A thrust finds nothing in the dead to kill."],
-        "weak:slash": ["The old way with the dead is to take the head.", "The dead have always fallen to the blade that takes the head."],
+        "resisted:pierce": ["The dead have no heart for a point to find.", "A point finds nothing in the dead to kill."],
+        "weak:slash": ["The old way with the dead is to take the head.", "The dead have always fallen to the edge that takes the head."],
         "weak:holy": ["The dead cannot bear what is holy.", "What is holy burns the restless dead."],
         "weak:silver,elven_silver,silverbark": ["The dead have always hated silver."],
         "weak:fire": ["Fire is the old end of the dead: what was beheaded was burned."],
@@ -108,7 +108,7 @@
         "shrugs_off": ["Some of the dead are hardly there at all."]
       },
       "ghosts": {
-        "resisted:slash,pierce,blunt": ["A blade passes through a ghost as through mist.", "Ordinary blows are mostly wasted on a ghost."],
+        "resisted:slash,pierce,blunt": ["A weapon passes through a ghost as through mist.", "Ordinary weapons are mostly wasted on a ghost."],
         "weak:holy": ["Holy power is what lays a ghost."],
         "weak:fire": ["Fire lays a ghost, as the old priests knew."],
         "weak:silver,elven_silver,silverbark": ["A ghost flinches from silver."],
@@ -140,7 +140,7 @@
         "shrugs_off": ["A fiend wears its flesh like a coat, and feels little through it."]
       },
       "dragons": {
-        "weak:pierce": ["A thrust finds the gap in a dragon's scales.", "Sigurd stabbed Fafnir from below: a point is what kills a dragon."],
+        "weak:pierce": ["A point finds the gap in a dragon's scales.", "Sigurd stabbed Fafnir from below: a point is what kills a dragon."],
         "resisted:slash": ["Dragon scales turn an edge."],
         "resisted:fire": ["A dragon breathes fire and does not burn."],
         "weak:dragonbone,dragonwood,petrified_dragon": ["Dragon bone bites dragon scale where steel will not."],
@@ -150,12 +150,12 @@
       },
       "giants": {
         "weak:titanforged": ["The titans' own metal was made to bring giants down."],
-        "weak": ["The bigger they are, the harder they fall to the right blow."],
+        "weak": ["The bigger they are, the harder they fall, once you know where to hit."],
         "resisted": ["A giant takes a great deal of hurting."],
         "shrugs_off": ["A giant hardly feels what would kill a man."]
       },
       "goblinkin": {
-        "weak": ["Goblinkin are flesh like men: the right blow hurts them as it would anyone."],
+        "weak": ["Goblinkin are flesh like men: the right hit hurts them as it would anyone."],
         "resisted": ["Goblinkin are hardier than they look."],
         "shrugs_off": ["Goblinkin are hardier than they look."]
       },
@@ -171,14 +171,14 @@
         "shrugs_off": ["The fair folk slip aside from much of what strikes them."]
       },
       "great_beasts": {
-        "weak": ["Flesh and fur: a beast feels a good blow like any living thing."],
+        "weak": ["Flesh and fur: a beast feels a good hit like any living thing."],
         "resisted": ["A great beast takes a great deal of killing."],
         "shrugs_off": ["A great beast's hide is thick, and turns most of it."]
       },
       "vermin": {
-        "weak": ["Small things: the right blow ends them."],
+        "weak": ["Small things: the right hit ends them."],
         "resisted": ["Some small things are tougher than they look."],
-        "shrugs_off": ["A blow meant for one big thing does little to ten thousand small ones."]
+        "shrugs_off": ["What would fell one big thing does little to ten thousand small ones."]
       },
       "serpents": {
         "weak:dragonbone": ["Dragon bone bites scale where steel will not."],
@@ -187,7 +187,7 @@
         "shrugs_off": ["A serpent takes most of it and keeps coming."]
       },
       "birds": {
-        "weak:pierce": ["An arrow brings a bird down: birds are light and hollow-boned."],
+        "weak:pierce": ["A sharp point brings a bird down: birds are light and hollow-boned."],
         "weak": ["Birds are light and hollow-boned."],
         "resisted": ["Creatures of the open sky weather some of it."],
         "shrugs_off": ["Creatures of the open sky weather most of it."]
@@ -210,22 +210,22 @@
         "shrugs_off": ["A shapeshifter's body is not quite real."]
       },
       "constructs": {
-        "weak:blunt": ["A hammer cracks a made thing."],
-        "resisted:slash,pierce": ["A blade skates off a made thing, or sticks fast."],
+        "weak:blunt": ["Crushing force cracks a made thing."],
+        "resisted:slash,pierce": ["An edge skates off a made thing, and a point sticks fast."],
         "resisted:poison": ["A made thing has no blood for poison."],
         "weak": ["Every made thing has a flaw its maker left in it."],
         "resisted": ["Bronze, iron, clay or stone: a made thing does not bleed."],
         "shrugs_off": ["Bronze, iron, clay or stone: a made thing does not bleed."]
       },
       "elementals": {
-        "resisted:slash,pierce": ["Living fire, air and water close behind a blade."],
+        "resisted:slash,pierce": ["Living fire, air and water close behind an edge or a point."],
         "weak": ["Every element has its opposite."],
         "resisted": ["An elemental closes over the harm like water over a stone."],
         "shrugs_off": ["Little of it reaches the heart of an elemental."]
       },
       "oozes": {
-        "resisted:pierce": ["A jelly closes round a thrust."],
-        "resisted:blunt": ["A blow only wobbles a jelly."],
+        "resisted:pierce": ["A jelly closes round a point."],
+        "resisted:blunt": ["Crushing force only wobbles a jelly."],
         "resisted:acid": ["An ooze is half acid already."],
         "weak:fire,cold": ["Only fire or cold really harms a jelly."],
         "weak": ["Something always gets through to a jelly in the end."],
@@ -239,8 +239,8 @@
         "shrugs_off": ["Things from outside the world are not hurt the way we are."]
       },
       "plants": {
-        "weak:slash": ["An axe fells what an arrow cannot."],
-        "resisted:pierce": ["An arrow sticks in a trunk and does nothing."],
+        "weak:slash": ["An edge fells what a point cannot."],
+        "resisted:pierce": ["A point sticks in a trunk and does little."],
         "weak:fire": ["Dry wood goes up like kindling."],
         "resisted:poison": ["A plant has no blood for poison."],
         "weak": ["Root and branch: what fells a tree fells it."],
@@ -250,39 +250,39 @@
       "celestials": {
         "resisted:magic": ["Magic touches heaven's own very little."],
         "weak:shadowiron": ["Heaven's own fear the shadow."],
-        "weak": ["Even heaven's own can be wounded, and that blow found the place."],
+        "weak": ["Even heaven's own can be wounded, and that one found the place."],
         "resisted": ["Heaven's own are not hurt the way the fallen are."],
         "shrugs_off": ["Heaven's own are not hurt the way the fallen are."]
       }
     },
     "groups": {
       "skeletons": {
-        "weak:blunt": ["Bones snap under a mace."],
-        "resisted:slash": ["A blade slides off bare bone."],
-        "resisted:pierce": ["A thrust goes between the ribs and finds nothing."]
+        "weak:blunt": ["Bones snap under crushing force."],
+        "resisted:slash": ["An edge slides off bare bone."],
+        "resisted:pierce": ["A point goes between the ribs and finds nothing."]
       },
       "armoured": {
-        "weak:blunt": ["The mace was made for men in plate."],
+        "weak:blunt": ["Plate dents under crushing force: that is what maces were made for."],
         "resisted:slash,pierce": ["Plate turns an edge and most points."]
       },
       "shades": {
-        "shrugs_off:slash,pierce,blunt": ["Ordinary blows pass straight through the bodiless dead."]
+        "shrugs_off:slash,pierce,blunt": ["Ordinary weapons pass straight through the bodiless dead."]
       },
       "liches": {
-        "resisted:slash,pierce": ["A lich keeps its death outside its body: blades do it little harm."]
+        "resisted:slash,pierce": ["A lich keeps its death outside its body: edges and points do it little harm."]
       },
       "devils": {
         "weak:silver": ["The devils of the deeper pits fear silver."],
         "resisted:cold": ["The deep pits are cold as well as hot."]
       },
       "mimics": {
-        "resisted:blunt": ["A mimic's glue holds a club fast."]
+        "resisted:blunt": ["A mimic's glue soaks up crushing force."]
       },
       "beholders": {
         "weak:pierce": ["The great eye is a beholder's heart and its weakness."]
       },
       "earth_elementals": {
-        "weak:blunt": ["Stone shatters under a hammer."],
+        "weak:blunt": ["Stone shatters under crushing force."],
         "resisted:slash,pierce": ["Stone turns any edge or point."]
       },
       "fire_elementals": {
@@ -290,7 +290,7 @@
         "weak:cold": ["Cold kills a thing of fire."]
       },
       "water_elementals": {
-        "resisted:slash,pierce,blunt": ["You cannot cut, stab or crush water."],
+        "resisted:slash,pierce,blunt": ["You cannot cut, pierce or crush water."],
         "weak:lightning,cold": ["Lightning and cold go through water."]
       },
       "jinn": {
@@ -305,8 +305,8 @@
         "weak:blunt": ["A beetle's shell cracks under a boot."]
       },
       "swarms": {
-        "shrugs_off:slash,pierce": ["A blade kills two of a swarm and misses the rest."],
-        "resisted:blunt": ["Stamping on a swarm does little better than cutting it."],
+        "shrugs_off:slash,pierce": ["An edge or a point kills two of a swarm and misses the rest."],
+        "resisted:blunt": ["Crushing a swarm does little better than cutting it."],
         "weak:fire": ["Fire is the answer to a swarm."]
       },
       "trolls": {
@@ -327,7 +327,7 @@
         "resisted:poison": ["A snake does not fear venom."]
       },
       "world_serpents": {
-        "weak:blunt": ["Thor's hammer is the blow that kills the serpent's brood."],
+        "weak:blunt": ["Thor's hammer was the World Serpent's end: crushing force is what its brood fears."],
         "resisted:poison": ["The serpent's brood is full of venom, and does not fear it."]
       },
       "medusas": {
@@ -350,7 +350,7 @@
     "feared": ["{name} does not know fear.", "{name} has no mind to frighten."],
     "charmed": ["{name} has no heart for the charm to win."],
     "confused": ["{name} has no mind to muddle.", "There is no mind in {the} to confuse."],
-    "sleeping": ["{name} does not sleep.", "{name} never sleeps. The spell finds nothing to lull."],
+    "sleeping": ["{name} does not sleep.", "{name} never sleeps. Nothing can lull {him}."],
     "poisoned": ["Poison has nothing in {the} to work on.", "{name} has no blood for the poison to ride."],
     "paralyzed": ["Nothing in {the} can be held still."],
     "blinded": ["{name} has no eyes to blind."],
