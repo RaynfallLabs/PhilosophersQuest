@@ -316,7 +316,7 @@ Brandon: "NONE automatically know where you are unless it's thematically and lor
   - the Hand of Glory keeps everyone asleep;
   - zoo, graveyard and barracks deep sleepers keep `sleepers.py`'s odds, and only a fight within 3 tiles may break their sleep (20%).
 
-**`_aware` keeps its old meaning:** the monster has noticed the hero once. That's what ambushers, mimics, naming, the Fenrir rage and the Abaddon swarms read. A monster made aware by the game itself (a summons, an announced foe, an old save's hunter) gets one lead to where the hero is now. A wanderer arrives knowing nothing; it goes to the last fight heard within 40 turns, otherwise it roams. The wanderer cap counts `_tracking` hunters.
+**`_aware` keeps its old meaning:** the monster has noticed the hero once. That's what ambushers, mimics, naming, the Fenrir rage and the Abaddon swarms read. A monster made aware by the game itself (a summons, an announced foe, an old save's hunter) gets one lead to where the hero is now. A wanderer arrives knowing nothing. It goes to see a loud noise from the last 40 turns only if that sound reaches the tile it came in on, along open ground (`senses.sound_map`, the noise's own reach: a fight 5 tiles, an alarm 12). Otherwise it roams. (Before 3.5.1 every newcomer was sent to the last fight from anywhere on the floor.) The wanderer cap counts `_tracking` hunters.
 
 **Other changes in the same slice:**
 - G6: `hit_and_run`, `dancer`, `fenrir_rage` and `abaddon` call `_spots_player` (they used to hunt from anywhere).
@@ -395,7 +395,7 @@ How much is said follows `family_lore.knowledge` (Brandon, 2026-11-12: the notes
 
 Tests: `tests/test_monster_notes.py`, and the Observe cases in `tests/test_observe_bestiary.py`.
 
-**Patrols (C5).** A wandering monster now arrives beside a stair the hero can't see, as if coming down or up it, instead of out of nowhere. It goes to the last fight heard, or roams.
+**Patrols (C5).** A wandering monster now arrives beside a stair the hero can't see, as if coming down or up it, instead of out of nowhere. It goes to a fight or alarm it can hear from there, or roams.
 
 Tests: `tests/test_war_bands.py`.
 

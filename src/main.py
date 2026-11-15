@@ -5515,11 +5515,22 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 if (x, y) not in fits:
                     x, y = _rng.choice(fits)
             m.x, m.y = x, y
-            # A newcomer does not know where the hero is (src/senses.py). If a
-            # fight was heard lately it goes to see; otherwise it roams.
+            # A newcomer does not know where the hero is (src/senses.py). It
+            # goes to see a recent fight only if the fight's sound reaches
+            # where it came in, along open ground as any sound travels;
+            # otherwise it roams. (3.5.1: every newcomer was sent to the last
+            # fight from anywhere on the floor, though a fight carries five
+            # tiles, so on floor 1 nearly all of them came straight at the
+            # hero: "they're all coming right at me".)
             loud = self.dungeon.__dict__.get('_last_loud')
             if loud and self.turn_count - int(loud[2]) <= 40:
-                m._goal = (int(loud[0]), int(loud[1]))
+                import senses as _senses
+                from geom import occupied_tiles as _occ
+                # (An old save's mark has no reach: a fight's.)
+                reach = int(loud[3]) if len(loud) > 3 else _senses.noise_radius('melee')
+                heard = _senses.sound_map(self.dungeon, int(loud[0]), int(loud[1]), reach)
+                if any(t in heard for t in _occ(m)):
+                    m._goal = (int(loud[0]), int(loud[1]))
             m._lead_used = True
             self.monsters.append(m)
 
