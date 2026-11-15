@@ -5397,12 +5397,21 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     "Your load is Heavy. You dodge half as well and your steps "
                     "carry further until you lighten it.", 'warning')
             elif now == 'burdened':
-                n = self.player.BURDENED_STEP_EVERY
-                nth = {2: 'second', 3: 'third', 4: 'fourth', 5: 'fifth'}.get(n, f"{n}th")
-                self.add_message(
-                    f"You are Burdened. You cannot dodge, your Dexterity guards "
-                    f"you half as well, and every {nth} step costs an extra turn "
-                    f"until you lighten your load.", 'warning')
+                # The step's cost as it is for this hero (Marius' Mule keeps
+                # his stride: the line said "every second step costs an
+                # extra turn" to a hero whose steps cost nothing more).
+                n = self.player.load_step_every()
+                if n > 0:
+                    nth = {2: 'second', 3: 'third', 4: 'fourth', 5: 'fifth'}.get(n, f"{n}th")
+                    self.add_message(
+                        f"You are Burdened. You cannot dodge, your Dexterity guards "
+                        f"you half as well, and every {nth} step costs an extra turn "
+                        f"until you lighten your load.", 'warning')
+                else:
+                    self.add_message(
+                        "You are Burdened. You cannot dodge and your Dexterity guards "
+                        "you half as well until you lighten your load, but you keep "
+                        "your stride.", 'warning')
             else:
                 self.add_message(
                     "You are Overloaded. You cannot dodge, your Dexterity no "

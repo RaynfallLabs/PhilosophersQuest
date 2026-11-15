@@ -247,3 +247,45 @@ def test_a_badge_of_a_counter_and_an_event_is_never_full_while_locked(seeker):
     # Polymath (counters only) still sums its parts.
     have, need = s.book.progress('polymath', s.profile, s.run)
     assert need == 10 * 100 + 2 * 25
+
+
+# ---------------------------------------------------------------------------
+# 5. "Every second step costs an extra turn" to a hero with Marius' Mule
+# ---------------------------------------------------------------------------
+
+def _burden(g):
+    """Put a stone in the pack that makes the hero Burdened, not Overloaded."""
+    from items import make_item_by_id
+    pl = g.player
+    lim = pl.get_carry_limit()
+    stone = make_item_by_id('food', 'bread_ration')
+    stone.count = 1
+    stone.weight = max(0.1, lim * 0.85 - pl.get_current_weight())
+    pl.inventory.append(stone)
+    assert pl.load_tier() == 'burdened'
+    return stone
+
+
+def _last_lines(g, n=3):
+    return [str(e[0]) for e in g.msg_log.entries[-n:]]
+
+
+def test_the_burdened_line_tells_a_hero_with_marius_mule_he_keeps_his_stride(no_seeker):
+    g = _game()
+    g.player.quirk_progress['marius_active'] = True
+    g.player.update_burden()
+    _burden(g)
+    g._note_burden()
+    line = _last_lines(g, 1)[0]
+    assert line.startswith('You are Burdened.')
+    assert 'step costs' not in line and 'keep your stride' in line
+    assert g.player.load_step_every() == 0
+
+
+def test_the_burdened_line_still_counts_the_steps_without_the_trait(no_seeker):
+    g = _game()
+    g.player.update_burden()
+    _burden(g)
+    g._note_burden()
+    line = _last_lines(g, 1)[0]
+    assert 'every second step costs an extra turn' in line
