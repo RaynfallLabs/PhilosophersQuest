@@ -10470,7 +10470,8 @@ class RenderMixin:
             # visibly highlighted.
             self._ui_wrap_text("Press Enter to open the highlighted category.",
                                self.font_sm, FP.FADED_TEXT, article_body)
-            self._ui_footer(panel, "Up/Down: category   Enter or a-n: open   ESC: close")
+            self._ui_footer(panel, "Up/Down: category   Enter or a-n: open   "
+                                   "Tab: families   ESC: close")
             return
 
         sel = max(0, min(getattr(self, 'encyclopedia_selection', 0),

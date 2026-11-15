@@ -2076,6 +2076,14 @@ class InputMixin:
                                  len(cats) - 1))
                 open_category(cats[idx][1])
                 return
+            if key == pygame.K_TAB:
+                # B, Tab: straight to the monster families, as the help
+                # screen, the sidebar's "+N more (B, then Tab: Families)"
+                # and the family popups say. Tab here did nothing: the
+                # families were B, A, Tab.
+                self._bestiary_view = 'families'
+                open_category('bestiary')
+                return
             cat = cat_keys.get(key)
             if cat:
                 open_category(cat)

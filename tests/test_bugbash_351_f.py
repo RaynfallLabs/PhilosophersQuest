@@ -417,3 +417,33 @@ def test_the_guard_line_tells_fabius_what_guard_really_costs(no_seeker):
     _shift(g2, 'S')
     line = next(str(e[0]) for e in reversed(g2.msg_log.entries) if 'damage' in str(e[0]))
     assert '(-30% damage, 2 AC better)' in line
+
+
+# ---------------------------------------------------------------------------
+# 7. "B, Tab: Monster families" did nothing
+# ---------------------------------------------------------------------------
+
+def _press(g, k, uni=''):
+    g.handle_event(pygame.event.Event(pygame.KEYDOWN, key=k, unicode=uni, mod=0, scancode=0))
+    g.update(0.05)
+
+
+def test_b_then_tab_opens_the_monster_families_as_the_help_says(no_seeker):
+    """The help screen's "B, Tab: Monster families", the sidebar's "+N more
+    (B, then Tab: Families)" and the family popups all send the hero to
+    B, Tab. B opens the Encyclopedia's category list, where Tab did nothing:
+    the families were B, A, Tab."""
+    from game_states import STATE_ENCYCLOPEDIA
+    g = _game()
+    _press(g, pygame.K_b, 'b')
+    assert g.state == STATE_ENCYCLOPEDIA and g.encyclopedia_category == ''
+    _press(g, pygame.K_TAB, '\t')
+    assert g.encyclopedia_category == 'bestiary'
+    assert g._bestiary_view == 'families'
+    g.render()
+    _press(g, pygame.K_TAB, '\t')                 # and Tab turns back to the kinds
+    assert g._bestiary_view == 'kinds'
+    _press(g, pygame.K_ESCAPE)
+    assert g.encyclopedia_category == ''
+    _press(g, pygame.K_a, 'a')                     # B, A still opens the Bestiary
+    assert g.encyclopedia_category == 'bestiary'
