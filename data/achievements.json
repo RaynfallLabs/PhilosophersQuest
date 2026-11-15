@@ -3579,7 +3579,7 @@
    "category": "secrets",
    "rarity": "epic",
    "hint": "Some bands are worth staying for.",
-   "unlocked_text": "You sat through a whole concert of the undead, fought the band, and won.",
+   "unlocked_text": "You out-danced a whole band of the undead, round by round, and won.",
    "code_word": "STAGE",
    "art": "stage_fright",
    "trigger": {
@@ -3589,11 +3589,13 @@
     }
    },
    "spoiler_words": [
-    "zombie",
-    "stray",
     "concert",
+    "dance",
+    "idol",
+    "simon",
     "stage",
-    "idol"
+    "stray",
+    "zombie"
    ]
   },
   {
