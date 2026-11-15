@@ -649,6 +649,14 @@ class WelcomeScreen:
                         # Full screen works on the title too, as in the game.
                         self._toggle_fullscreen()
                         continue
+                    if event.key == pygame.K_F5:
+                        # The soundtrack, on or off (music.py), as in the game.
+                        try:
+                            import music
+                            music.toggle()
+                        except Exception:
+                            pass
+                        continue
                     if self._god_prompt:
                         if event.key == pygame.K_y:
                             return 'Dad', SECRET_BUILDS.get('dad')
@@ -1395,6 +1403,13 @@ class WelcomeScreen:
             ver = self.font_tiny.render(f"v{self.version}", True, FP.FADED_TEXT)
             self.screen.blit(ver, (self.W - ver.get_width() - S(10),
                                    keys.centery - ver.get_height() // 2))
+            try:
+                import music
+                _mlabel = f"F5: Music {'On' if music.is_on() else 'Off'}"
+                _ms = self.font_tiny.render(_mlabel, True, FP.FADED_TEXT)
+                self.screen.blit(_ms, (S(10), keys.centery - _ms.get_height() // 2))
+            except Exception:
+                pass
             return
         # One-shot notice (e.g. after a failed load) -- sits above the save hint so
         # it reads alongside the reassuring "Saved journey found" line.
@@ -1410,6 +1425,7 @@ class WelcomeScreen:
         # legible without competing with the title)
         ver = self.font_tiny.render(f"v{self.version}", True, FP.FADED_TEXT)
         self.screen.blit(ver, (self.W - ver.get_width() - S(10), self.H - S(20)))
+        self._draw_music_hint()
         # Delete-flash confirmation (shown for 2 seconds after DEL)
         flash = getattr(self, '_delete_flash', 0.0)
         confirm = getattr(self, '_confirm_delete', None)
@@ -1424,6 +1440,17 @@ class WelcomeScreen:
         elif has_save:
             save_hint = self.font_sm.render("[S] Saved journey found -- ENTER to continue  |  DEL to erase", True, FP.SUCCESS_TEXT)
             self.screen.blit(save_hint, (cx - save_hint.get_width() // 2, self.H - S(52)))
+
+    def _draw_music_hint(self) -> None:
+        """Bottom-left: the soundtrack's state and its key (music.py)."""
+        try:
+            import music
+            on = music.is_on()
+        except Exception:
+            return
+        label = f"F5: Music {'On' if on else 'Off'}"
+        surf = self.font_tiny.render(label, True, FP.FADED_TEXT)
+        self.screen.blit(surf, (S(10), self.H - S(20)))
 
     def _score_table(self, entries, font, rank_from=1, date=False):
         """Rows of a high-score table: (cells, colour, victory). Columns:

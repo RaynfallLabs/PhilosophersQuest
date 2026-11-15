@@ -295,6 +295,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self._resize_grace = 0
 
         _snd.init()   # initialise procedural sound synthesis (best-effort)
+        try:
+            import music as _music
+            _music.start()   # still playing (or started, if wanted) under the game
+        except Exception:
+            pass
         self.quiz_engine        = QuizEngine()
         # Pluggable visual-effects runtime. Chain math-combat aura +
         # the two fullscreen takeovers (Divine Intercession, Unicorn)
@@ -9650,6 +9655,13 @@ def main():
     # Achievements won as a run ended (a fall, the Stone home): the death and
     # victory screens are no place for them, so the title shows their cards.
     _carry_cards: list = []
+
+    # The soundtrack (music.py): from the title screen on, looped; F5 switches it.
+    try:
+        import music as _music
+        _music.start()
+    except Exception:
+        pass
 
     while True:
         # The last run is over (or there was none): a crash from here on must

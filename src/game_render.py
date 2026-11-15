@@ -11195,6 +11195,7 @@ class RenderMixin:
                 ("C", "Read the card", FP.BODY_TEXT),
                 ("PgUp/PgDn", "Scroll long quiz", FP.BODY_TEXT),
                 ("?", "Command help", FP.BODY_TEXT),
+                ("F5", "Music on / off", FP.BODY_TEXT),
                 ("F10", "Sound on / off", FP.BODY_TEXT),
                 ("F11", "Full screen", FP.BODY_TEXT),
                 ("ESC", "Cancel / close", FP.BODY_TEXT),
