@@ -259,20 +259,24 @@ class EncountersMixin:
             traceback.print_exc()
 
     def _leave_side_floor(self):
-        """Back from a side floor (the Moo Moo Farm, the Zombie Stage) to the
-        floor its way in stood on: by its portal, a potion of gain level or
-        Hermes' psychopomp step."""
-        from boss_levels import STRAY_KIDS_STAGE
+        """Back from a side floor (the Moo Moo Farm, the Zombie Stage, the
+        Underway Run) to the floor its way in stood on: by its portal, a
+        potion of gain level or Hermes' psychopomp step."""
+        from boss_levels import STRAY_KIDS_STAGE, UNDERWAY_RUN
         if self.dungeon_level == STRAY_KIDS_STAGE:
             self._exit_stray_kids_stage()
+        elif self.dungeon_level == UNDERWAY_RUN:
+            self._exit_underway_run()
         else:
             self._exit_cow_level()
 
     def _side_floor_return_level(self) -> int:
         """The floor this side floor was reached from (its loot is that deep)."""
-        from boss_levels import STRAY_KIDS_STAGE
+        from boss_levels import STRAY_KIDS_STAGE, UNDERWAY_RUN
         if self.dungeon_level == STRAY_KIDS_STAGE:
             return int(self._stray_kids_state().get('return_floor') or 1)
+        if self.dungeon_level == UNDERWAY_RUN:
+            return int(self._bococho_state().get('floor') or 1)
         return int(getattr(self, '_cow_return_level', 1) or 1)
 
     def _exit_cow_level(self):

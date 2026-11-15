@@ -1607,8 +1607,19 @@ class Player:
         from treasure import coins_in
         return coins_in(self.get_carry_limit() - self.get_current_weight())
 
+    # The Bococho's saddlebags (data/bococho.json pet.saddlebags_lb): what she
+    # carries while she is out with the hero, kept here by the game every
+    # turn (Game._sync_saddlebags). Class defaults: an old save has neither.
+    saddlebag_lb = 0
+    # In her saddle (game_riding.py): two tiles a step. An old save loads
+    # on foot.
+    riding = False
+
     def get_carry_limit(self) -> int:
         limit = self.CARRY_BASE + self.STR * self.CARRY_PER_STR
+        # Her saddlebags raise the limit, and so every load line with it
+        # (Heavy, Burdened and Overloaded are shares of this limit).
+        limit += int(getattr(self, 'saddlebag_lb', 0) or 0)
         if self.has_effect('porter'):
             # Someone else carries part of the load (a bought porter).
             from status_effects import PORTER_CARRY_BONUS

@@ -40,6 +40,7 @@ from game_states import (
     STATE_HACK_REALITY, STATE_XYZZY_INPUT, STATE_XYZZY_CONFIRM,
     STATE_THROW_MENU, STATE_QUIRKS, STATE_CHARACTER_SHEET,
     STATE_NPC_ENCOUNTER, STATE_COW_ENCOUNTER, STATE_EMBERPUP, STATE_JUDGMENT, STATE_STUDY,
+    STATE_BOCOCHO, STATE_RACE,
     STATE_INTERCESSION_PROMPT, STATE_PET_NAME_INPUT, STATE_PRAYER_MENU,
     STATE_BOON_MENU,
     STATE_PET_MENU, STATE_PET_FEED, STATE_PET_HEAL, STATE_PET_SPECIALS,
@@ -213,6 +214,13 @@ class InputMixin:
             if self.state == STATE_MOOBLE_DANCE:
                 # Practice stops; a dance-off is danced through.
                 self._mooble_dance_key(key)
+            if self.state == STATE_BOCOCHO:
+                # The racing camp's screen decides (bococho_encounter.py).
+                self._bococho_input(key)
+                return True
+            if self.state == STATE_RACE:
+                # Esc between legs asks whether to leave the race (game_race.py).
+                self._race_input(key)
                 return True
             if self.state == STATE_QUIZ_CONTEXT:
                 # Close the context modal (back to the quiz); the dedicated
@@ -349,7 +357,7 @@ class InputMixin:
             # gear can be dropped or swapped) are actions too. They skipped
             # the check in _player_input, so a paralysed hero could flee
             # down the stairs. Help (?) only reads, and stays open.
-            if uni in ('>', '<', '@', 'P', 'E', 'S', 'C') and self._helpless_turn():
+            if uni in ('>', '<', '@', 'P', 'E', 'S', 'C', 'R') and self._helpless_turn():
                 return True
             # Keys checked by unicode to handle shift-modified chars
             if uni == '>':
@@ -387,6 +395,17 @@ class InputMixin:
                 # Shift+C: coat the weapon in your hand from the pack
                 # (lowercase c cooks; coatings.py, game_arsenal.py).
                 self._open_coat_menu()
+                return True
+            if uni == 'R':
+                # Shift+R: ride the Bococho, or climb down (lowercase r reads;
+                # game_riding.py).
+                self._toggle_ride()
+                return True
+            if uni == 'G' and getattr(self.player, 'qa_tools', False):
+                # Titivillus QA build: Gilt Varro's racing camp set up in this
+                # room, with two Sunroots; again, two more Sunroots
+                # (bococho_encounter.py).
+                self._qa_bococho()
                 return True
             if uni == 'T' and getattr(self.player, 'qa_tools', False):
                 # Titivillus QA build: every coating and flask, the named
@@ -518,6 +537,10 @@ class InputMixin:
             self._mooble_input(key)
         elif self.state == STATE_MOOBLE_DANCE:
             self._mooble_dance_key(key)
+        elif self.state == STATE_BOCOCHO:
+            self._bococho_input(key)
+        elif self.state == STATE_RACE:
+            self._race_input(key)
         elif self.state == STATE_CHARACTER_SHEET:
             self._character_sheet_input(key)
         elif self.state == STATE_DROP_MENU:

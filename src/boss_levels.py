@@ -1,7 +1,7 @@
 """
 Static hand-crafted boss level maps for levels 20, 40, 60, 80 and 100, and
-the side floors: the Moo Moo Farm (below) and the Zombie Stage (built in
-stray_kids.py).
+the side floors: the Moo Moo Farm (below), the Zombie Stage (built in
+stray_kids.py) and the Underway Run (built in underway_run.py).
 
 Each boss level:
   - Has a unique visual theme
@@ -18,13 +18,15 @@ from dungeon import Dungeon, Room, WALL, FLOOR, STAIRS_UP, STAIRS_DOWN, DOOR, AL
 BOSS_LEVELS = {20, 40, 60, 80, 100}
 COW_LEVEL = 999   # Moo Moo Farm (secret)
 STRAY_KIDS_STAGE = 997   # the Zombie Stage (secret; stray_kids.py)
+UNDERWAY_RUN = 996       # the Bococho's race track (underway_run.py, game_race.py)
 
 # Side floors: reached by an easter egg and left by their own portal, never
 # depth. The score, the deepest floor, once-a-floor charges, the Road,
 # escorts, bones and wanderers all pass them by; a potion of gain level or
 # Hermes' step leaves one for the floor its way in stood on.
-SIDE_FLOORS = frozenset({COW_LEVEL, STRAY_KIDS_STAGE})
-SIDE_FLOOR_NAMES = {COW_LEVEL: 'Moo Moo Farm', STRAY_KIDS_STAGE: 'Zombie Stage'}
+SIDE_FLOORS = frozenset({COW_LEVEL, STRAY_KIDS_STAGE, UNDERWAY_RUN})
+SIDE_FLOOR_NAMES = {COW_LEVEL: 'Moo Moo Farm', STRAY_KIDS_STAGE: 'Zombie Stage',
+                    UNDERWAY_RUN: 'The Underway Run'}
 
 
 def is_side_floor(level) -> bool:
@@ -885,6 +887,9 @@ def generate_boss_level(level_num):
     if level_num == STRAY_KIDS_STAGE:
         import stray_kids
         return stray_kids.build_stage()
+    if level_num == UNDERWAY_RUN:
+        import underway_run
+        return underway_run.build()
     raise ValueError(f"No boss level defined for level {level_num}")
 
 

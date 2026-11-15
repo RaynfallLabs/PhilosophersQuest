@@ -571,6 +571,16 @@ maul 8) and STR is the lever (`Player.get_carry_limit`).
   Exception: Sisyphus' Boulder (`carry_past_limit`).
 - Over the limit (an old save, lost STR, the Boulder, a cursed lodestone)
   is allowed: the hero is Overloaded, sees "Overloaded", and can drop.
+- **A Bococho's saddlebags** (2026-11-14, [pets](pets.md) "The Bococho"):
+  while the hero's Bococho is out with him (alive, on his floor, not in her
+  sphere), `Player.saddlebag_lb` holds her carry (`data/bococho.json`
+  `pet.saddlebags_lb`, 20 lb) and `get_carry_limit` adds it. Heavy,
+  Burdened and Overloaded are shares of that limit, so every line moves up
+  with it: a load Burdened on foot can be only Heavy with her bags. The
+  game keeps the number (`Game._sync_saddlebags`, src/game_riding.py) every
+  turn, on load, and when she joins or is stored; an old save has none (a
+  class default of 0). Riding her (Shift+R) is set down by being
+  Overloaded. Tests: `tests/test_bococho.py`.
 
 Stacking: `Item._STACKABLE_CLASSES = (Ingredient, Food, Potion, Scroll,
 Ammo, Treasure)`. `add_to_inventory` merges same-id items only when the

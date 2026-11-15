@@ -1,5 +1,5 @@
 {
- "_note": "The 'Gear and Load' page of the help screen (? then Tab twice). Same shape as how_quizzes_work.json: each section is a heading, its paragraphs and `rows`, a two-column list drawn as 'key: what it does'. Keep it true to the code: item_actions.py (the Kit and @ keys), game_dressing.py and data/gear_rules.json donning (dressing, Keep dressing?, the weapon At Your Back, the Loadouts), known_by_hand.py, game_arsenal.py and data/arsenal.json (coatings, flasks, Press and Guard, the earplugs), data/gear_rules.json load (Heavy, Burdened, Overloaded). tests/test_help_screen_r3.py holds the keys and numbers to the code and data.",
+ "_note": "The 'Gear and Load' page of the help screen (? then Tab twice). Same shape as how_quizzes_work.json: each section is a heading, its paragraphs and `rows`, a two-column list drawn as 'key: what it does'. Keep it true to the code: item_actions.py (the Kit and @ keys), game_dressing.py and data/gear_rules.json donning (dressing, Keep dressing?, the weapon At Your Back, the Loadouts), known_by_hand.py, game_arsenal.py and data/arsenal.json (coatings, flasks, Press and Guard, the earplugs), data/gear_rules.json load (Heavy, Burdened, Overloaded), data/bococho.json (the Bococho's saddlebags and riding: game_riding.py). tests/test_help_screen_r3.py holds the keys and numbers to the code and data.",
  "title": "Gear and Load",
  "sections": [
   {
@@ -62,6 +62,14 @@
     ["Heavy", "Over half your limit: you dodge half as well, and your footsteps carry further"],
     ["Burdened", "Over three quarters: you cannot dodge, your Dexterity guards you half as well, and every second step costs an extra turn"],
     ["Overloaded", "Past the limit itself (losing Strength can put you there): you cannot dodge, your Dexterity no longer guards you, and every step costs an extra turn"]
+   ]
+  },
+  {
+   "heading": "A Bococho's saddlebags, and riding her",
+   "paragraphs": [
+    "A Bococho who has chosen you wears saddlebags. While she is out with you they carry 20 lb of your load, so your limit and every line above it (Heavy, Burdened, Overloaded) move up by 20. Put her in her sphere and the bags go with her.",
+    "Once she is grown, you can ride her. With no foe in sight and her beside you, press Shift+R (or M on her card in the pet menu) to climb into the saddle, and again to climb down. In the saddle each step covers two tiles, but the dungeon's time passes as it always does: one turn for each move.",
+    "She sets you down at once when a foe comes into view, when something strikes you, when a trap or the floor itself catches her, when you start anything that asks a question (a blow, a spell, a wand), at the stairs (she follows you), when you are stunned, confused, asleep or held, and when your load is too heavy for her. Her hooves are loud: things hear you coming from further off."
    ]
   }
  ]

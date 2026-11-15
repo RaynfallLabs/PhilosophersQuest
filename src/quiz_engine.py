@@ -308,6 +308,15 @@ class QuizEngine:
         # aborted quiz (empty bank) still advances the counter and the next
         # quiz is distinguishable from this one for downstream effect/UI code.
         self.session_id += 1
+        # A quiz is an action done on foot: a rider comes down from the
+        # saddle first (game_riding.RidingMixin._riding_quiz_starts).
+        _start = getattr(self, 'start_hook', None)
+        if _start is not None:
+            try:
+                _start(subject)
+            except Exception:
+                from game_log import log_error
+                log_error('quiz_engine.start_quiz: start hook')
         # Phase 2 beautification (2026-10-04): per-quiz scroll offset for the
         # pre-computed quiz layout (`_quiz_layout` in game_render.py). Reset
         # here so each new quiz always starts at the top; PgUp/PgDn + `[`/`]`

@@ -106,6 +106,13 @@ def factor(player, kind: str) -> float:
             f *= gear.sleeper_factor(player)
         except Exception:
             pass
+        # Hooves: a hero riding the Bococho (riding.sleeper_step_factor).
+        if getattr(player, 'riding', False):
+            try:
+                import riding
+                f *= riding.sleeper_step_factor(player)
+            except Exception:
+                pass
     return f
 
 
