@@ -2,8 +2,6 @@
   "_doc": "Know your enemy (winning-build plan 2026-11-13, section 3.1; src/enemy_lore.py). 'probe': what the Wand of Probing reads: everything (it is a deliberate tool); and when the kind has a family and is not yet studied, the probe teaches it as a corpse study does (Brandon, 2026-11-14: KNOWN, and one more kind toward its family's tiers, Game._learn_kind), and 'learn' is said. {The}/{the} is the creature. 'quest_teach': a gate boss cannot be studied before the fight, so the key step of his quest opens his page, and the quest-giver names his weakness in her or his own voice; every line must stay true to the boss's lists in data/monsters.json: 'claims' names what the line says, and tests/test_know_your_enemy.py checks each claim against monsters.json. Recall Lore is not here: it gives a random hint from data/hints.json and never looks at a creature (Brandon, 2026-11-14).",
   "probe": {
     "hp": "{The}: {hp}/{max_hp} HP.",
-    "weak": "Weak to: {list}.",
-    "resists": "Resists: {list}.",
     "nothing": "Nothing about {him} is weak or hard: every blow lands plain.",
     "learn": "You learn the ways of {the}."
   },

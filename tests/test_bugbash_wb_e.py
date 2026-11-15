@@ -882,7 +882,7 @@ def test_journey_04c_the_wand_of_probing_teaches_the_kind(make_game):
         h.quiz(1)
         said = h.said()
         assert any(f'The Zombie: {zombie.hp}/{zombie.max_hp} HP.' == s for s in said), said
-        assert any(s.startswith('Weak to: ') for s in said), said
+        assert any(s.startswith('Weak To (Double Damage): ') for s in said), said
         assert ('You learn the ways of the Zombie.' in said) == (probe == 1), said
         assert family_lore.knowledge(p, 'zombie') == family_lore.KNOWN
         assert family_lore.score(p, 'restless_dead') == score + 1

@@ -526,8 +526,11 @@ def test_probing_shows_resistances_and_status(game):
     game._apply_wand_effect(wand)
     said = ' '.join(game._log)
     assert f"{ghoul.hp}/{ghoul.max_hp} HP" in said
-    assert 'Resists: Cold, Poison, Drain, Pierce' in said
-    assert 'Weak to: Holy, Slash' in said and 'Immune To: Sleep' in said
+    # Each with how much it changes a blow, and the metals it cannot bear
+    # (3.5.1 audit: affinity.bestiary_rows).
+    assert 'Resists (Half Damage): Cold, Poison, Drain, Pierce' in said
+    assert 'Weak To (Double Damage): Holy, Slash' in said and 'Immune To: Sleep' in said
+    assert 'Bane Materials (Double Damage): ' in said and 'Silver' in said
     # It teaches the kind as a corpse study does (Brandon, 2026-11-14).
     assert 'ghoul' in game.player.lore_known_monster_ids              # its page opens
     assert 'ghoul' in game.player.studied_monster_ids
@@ -536,7 +539,7 @@ def test_probing_shows_resistances_and_status(game):
 
 def test_probing_lines_cover_shrugs_off_and_a_plain_creature():
     sw = enemy_lore.probe_lines(_m('scarab_swarm'))
-    assert 'Shrugs Off: Slash, Pierce' in sw[1] and 'Resists: Blunt' in sw[1]
+    assert 'Shrugs Off (Quarter Damage): Slash, Pierce' in sw[1] and 'Resists (Half Damage): Blunt' in sw[1]
     from monster import fill
     gob = _m('goblin')
     assert enemy_lore.probe_lines(gob)[1] == fill(gob, enemy_lore.data()['probe']['nothing'])
@@ -607,9 +610,10 @@ def test_the_bestiary_page_at_known_shows_shrugs_off_and_its_nature(game):
     assert any('not yet studied' in t for t in kin)
     game._open_kind_page('scarab_swarm')                              # KNOWN (as a quest step does)
     known = _page(game, 'scarab_swarm')
-    assert 'Shrugs Off: Slash, Pierce' in known
+    assert 'Shrugs Off (Quarter Damage): Slash, Pierce' in known
     assert any(t.startswith('Immune To:') and 'Paralysis' in t for t in known)
-    assert any(t.startswith('Weak to:') for t in known) and any(t.startswith('Resists:') for t in known)
+    assert any(t.startswith('Weak To (Double Damage):') for t in known)
+    assert any(t.startswith('Resists (Half Damage):') for t in known)
 
 
 def test_kit_sense_names_the_arsenals_coatings_and_flasks():

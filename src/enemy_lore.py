@@ -54,20 +54,15 @@ def _cap(x: str) -> str:
 
 
 def probe_lines(m) -> list:
-    """What the Wand of Probing reads of `m`: its health, then what it is
-    weak to and resists, then what it shrugs off, refuses and falls to
-    easily (the Bestiary's own rows, affinity.page_lines)."""
+    """What the Wand of Probing reads of `m`: its health, then the
+    Bestiary's own rows of what it is made of (affinity.bestiary_rows: what
+    it is weak to, the metals it cannot bear, what it resists and shrugs off
+    and by how much, its scales, ward or healing, what its nature refuses
+    and falls to easily)."""
     import affinity
     p = data()['probe']
     out = [_fill(m, p['hp'], hp=getattr(m, 'hp', 0), max_hp=getattr(m, 'max_hp', 0))]
-    bits = []
-    weak = list(getattr(m, 'weaknesses', None) or ())
-    res = list(getattr(m, 'resistances', None) or ())
-    if weak:
-        bits.append(p['weak'].replace('{list}', ', '.join(_cap(w) for w in weak)))
-    if res:
-        bits.append(p['resists'].replace('{list}', ', '.join(_cap(w) for w in res)))
-    bits += [t + '.' for _k, t in affinity.page_lines(m)]
+    bits = [t if t.endswith('.') else t + '.' for _k, t in affinity.bestiary_rows(m)]
     out.append(' '.join(bits) if bits else _fill(m, p['nothing']))
     return out
 

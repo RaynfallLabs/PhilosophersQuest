@@ -1122,7 +1122,10 @@ class MagicMixin:
             elif effect == 'drain_life':
                 from dice import roll
                 dmg = self._wand_tier_damage(roll(wand.power) if wand.power else _rng.randint(3, 10), wand.quiz_tier)
-                actual = target.take_damage(dmg)
+                # A drain: what has no life to give (the undead's "Resists:
+                # Drain") gives less (3.5.1 audit: it was untyped, so the
+                # Bestiary's line was never true).
+                actual = target.take_damage(dmg, 'drain')
                 heal = min(actual, self.player.max_hp - self.player.hp)
                 self.player.hp += heal
                 self.add_message(
@@ -2454,7 +2457,7 @@ class MagicMixin:
             elif effect == 'drain_life_spell':
                 base_dmg = _roll(power) if power else 10
                 scaled = self._spell_damage(base_dmg, chain)
-                actual = target.take_damage(scaled)
+                actual = target.take_damage(scaled, 'drain')     # a drain (see the wand's)
                 healed = self.player.restore_hp(actual)
                 self.add_message(
                     f"You drain {actual} life from {the_name(target, lower=True)} and heal {healed} HP!", 'success')

@@ -89,7 +89,7 @@ def test_probing_an_unstudied_kind_makes_it_known_and_counts_once(game):
     before = family_lore.score(p, 'restless_dead')
     m, said = _probe(game, 'ghoul')
     assert said[0] == f"The Ghoul: {m.hp}/{m.max_hp} HP."            # the read-out stays first
-    assert said[1].startswith('Weak to: ')
+    assert said[1].startswith('Weak To (Double Damage): ')
     assert 'You learn the ways of the Ghoul.' in said
     assert family_lore.knowledge(p, 'ghoul') == family_lore.KNOWN
     assert 'ghoul' in p.studied_monster_ids and 'ghoul' in p.lore_known_monster_ids
