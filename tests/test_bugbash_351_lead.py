@@ -47,3 +47,37 @@ def test_a_ruined_dish_is_not_a_discovered_recipe():
     i = src.index('# Track discovered recipes')
     block = src[i:i + 400]
     assert 'not _ruined' in block.split('self._cooked_recipes.append')[0]
+
+
+# ------------------------------------------------- what a fall earns, said after it
+
+from test_bugbash_wb_e import make_game, open_floor, place_monster  # noqa: E402,F401
+from test_bugbash_351_e import a_seeker  # noqa: E402,F401
+
+
+def test_what_a_fall_earns_is_said_after_you_have_died(make_game, a_seeker):
+    """Bug bash 3.5.1 E: "ACHIEVEMENT: The First Fall... / You have died!".
+    Every death ends the run (and the Seeker's run-end awards) before it
+    says the death line; the awards now wait a frame."""
+    import pygame
+    from game_states import STATE_DEAD
+    g, h = make_game(name='Wat')
+    p = g.player
+    open_floor(g, p.x, p.y, 4)
+    place_monster(g, 'goblin', 1)
+    g._refresh_fov()
+    p.hp = 1
+    for _ in range(60):
+        if g.state == STATE_DEAD or p.is_dead():
+            break
+        if g.state != 'player':
+            h.key(pygame.K_RETURN)
+        else:
+            h.wait()
+    for _ in range(3):
+        h.frame()
+    log = [str(e[0]) for e in g.msg_log.entries]
+    died = [i for i, t in enumerate(log) if t.startswith('You have died')]
+    won = [i for i, t in enumerate(log) if t.startswith('ACHIEVEMENT:')]
+    assert died and won, log[-12:]
+    assert died[0] < won[0], log[-12:]

@@ -137,17 +137,27 @@ class SeekerMixin:
         s = getattr(self, '_seeker', None)
         if not won or s is None:
             return
+        held = self.__dict__.get('_seeker_held_lines')
         for aid in won:
             a = s.entry(aid)
             if a is None:
                 continue
-            self.add_message(f"ACHIEVEMENT: {a['name']}. Reward Code: {s.code(aid)}", 'loot')
+            line = f"ACHIEVEMENT: {a['name']}. Reward Code: {s.code(aid)}"
+            if held is not None:
+                held.append(line)           # said after the run's last line (_seeker_tick)
+            else:
+                self.add_message(line, 'loot')
             self._seeker_pending.append(aid)
 
     def _seeker_tick(self):
         """Every frame: what was won joins the popups from play, at most
         _PER_POPUP to a popup. It opens in its turn, once play is calm (never
-        mid-quiz, never over a menu or another popup: PopupMixin)."""
+        mid-quiz, never over a menu or another popup: PopupMixin). What the
+        end of a run earned is said here too, the frame after: after "You
+        have died!", which every death says once the run is over."""
+        held = self.__dict__.pop('_seeker_held_lines', None)
+        for line in held or ():
+            self.add_message(line, 'loot')
         pending = getattr(self, '_seeker_pending', None)
         while pending:
             ids, pending = pending[:_PER_POPUP], pending[_PER_POPUP:]
@@ -234,6 +244,10 @@ class SeekerMixin:
         from boss_levels import COW_LEVEL
         from save_system import run_id_of
         s.profile.include('ended_runs', run_id_of(self))
+        # Every death calls _on_game_over (and so this) before it says "You
+        # have died!": what the fall earned waits for the next frame, so it
+        # is read after it (bug bash 3.5.1 E).
+        self.__dict__.setdefault('_seeker_held_lines', [])
         self._seeker_event('run_end', reason=reason, victory=bool(victory),
                            floor=int(getattr(self, 'dungeon_level', 0) or 0), grade=grade,
                            build=self._seeker_build_key(),
