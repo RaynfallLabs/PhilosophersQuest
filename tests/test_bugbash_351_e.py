@@ -997,3 +997,34 @@ def test_351_e06_a_shot_named_by_a_verb_misses_in_english():
                 m = Monster(dict(d, id=kind), 0, 0)
                 m._aware = True
                 assert f"'s {name.lower()} misses" not in m._miss_text(a), (kind, m._miss_text(a))
+
+
+def test_351_e07_a_prayer_says_only_what_it_gave(make_game):
+    """A hero at full HP, SP and MP prays (\\, the first prayer, a chain of
+    three): "Strength floods back into your limbs. (+52 SP)", "Warmth washes
+    over you, but your wounds refuse to close." (the line for Gae Dearg's
+    wound) and "(+5 MP)", none of it true. Then hurt and tired: each line
+    says what came back."""
+    g, h = make_game()
+    p = g.player
+    p.hp, p.sp, p.mp = p.max_hp, p.max_sp, p.max_mp
+    h.key(pygame.K_BACKSLASH, '\\')
+    assert g.state == 'prayer_menu'
+    h.key('1')
+    assert h.in_quiz()
+    h.quiz(3, 1)
+    said = h.said()
+    assert not any('SP)' in s or 'MP)' in s or 'HP)' in s for s in said), said
+    assert not any('refuse to close' in s for s in said), said
+    while g.state != 'player':
+        h.key(pygame.K_ESCAPE)
+    p.hp, p.sp = p.max_hp - 5, p.max_sp - 7
+    p.prayer_cooldown = 0                       # (a hundred turns on)
+    h.key(pygame.K_BACKSLASH, '\\')
+    assert g.state == 'prayer_menu', h.said()
+    h.key('1')
+    h.quiz(3, 1)
+    said = h.said()
+    assert 'Strength floods back into your limbs. (+7 SP)' in said, said
+    assert 'Warmth washes over your wounds. (+5 HP)' in said, said
+    no_errors(h)
