@@ -69,3 +69,76 @@ def test_floor_ones_atmosphere_is_said_at_the_start_and_only_once():
     assert g.dungeon._atmosphere_said
     g._say_atmosphere()
     assert _texts(g).count(atmo[0]) == 1
+
+
+# --------------------------------------------- the explore tour of a maze
+
+def _serpentine():
+    """A 1-wide passage snaking down a 41 x 21 block, both stairs and the
+    floor's only two clearings beside each other at its top left."""
+    from dungeon import Dungeon, Room, WALL, FLOOR, STAIRS_UP, STAIRS_DOWN
+    w, h = 45, 25
+    tiles = [[WALL] * w for _ in range(h)]
+    for row in range(1, 22, 2):
+        for x in range(1, 42):
+            tiles[row][x] = FLOOR
+        if row < 21:
+            tiles[row + 1][41 if (row // 2) % 2 == 0 else 1] = FLOOR
+    tiles[1][1] = STAIRS_UP
+    tiles[1][5] = STAIRS_DOWN
+    rooms = [Room(0, 0, 3, 3), Room(4, 0, 3, 3)]          # centres (1, 1) and (5, 1)
+    return Dungeon(tiles, rooms, w, h, 10)
+
+
+def test_a_mazes_tour_walks_its_passages():
+    """A maze floor's few clearings were its whole tour: a maze whose up and
+    down stairs sat in two clearings side by side had a tour of 4 tiles and
+    100 turns of grace, in a maze of 450 tiles of passage."""
+    import wanderers
+    d = _serpentine()
+    tour = wanderers.explore_tour(d)
+    assert tour >= 300, tour
+    assert wanderers.grace(d) >= 700
+
+
+def test_the_real_maze_floors_get_a_maze_sized_grace():
+    import wanderers
+    from dungeon import generate_dungeon
+    for seed in range(4):
+        d = generate_dungeon(80, 50, 10 + 20 * seed, random.Random(seed))
+        assert d.is_maze
+        walk = len(wanderers._walk_map(d))
+        assert wanderers.explore_tour(d) >= walk // 2, (seed, wanderers.explore_tour(d), walk)
+
+
+def test_a_room_and_corridor_floor_keeps_its_rooms_only_tour():
+    """The maze rule never touches a floor of rooms and corridors (its
+    rooms hold three quarters of its ground), so 3.5.1's measured graces
+    stand."""
+    import wanderers
+    from dungeon import generate_dungeon
+    for seed, level in ((1, 1), (2, 5), (3, 33), (4, 77)):
+        d = generate_dungeon(80, 50, level, random.Random(seed))
+        ok = wanderers._walk_map(d)
+        assert wanderers._passage_stops(d, ok, d.rooms) == [], level
+
+
+def test_a_room_with_water_at_its_centre_is_still_toured():
+    """A room whose centre was water or a statue was left out of the tour."""
+    import wanderers
+    from dungeon import Dungeon, Room, WALL, FLOOR, WATER, STAIRS_UP, STAIRS_DOWN
+    w, h = 40, 9
+    tiles = [[WALL] * w for _ in range(h)]
+    rooms = [Room(0, 0, 9, 9), Room(26, 0, 9, 9)]          # centres (4, 4), (30, 4)
+    for r in rooms:
+        for y in range(r.y + 1, r.y + r.height - 1):
+            for x in range(r.x + 1, r.x + r.width - 1):
+                tiles[y][x] = FLOOR
+    for x in range(8, 27):
+        tiles[4][x] = FLOOR                                   # the corridor between
+    tiles[4][3] = STAIRS_UP
+    tiles[4][4] = STAIRS_DOWN
+    tiles[4][30] = WATER
+    d = Dungeon(tiles, rooms, w, h, 1)
+    # Up (3,4) -> first room (4,4) -> beside the pool (29,4) -> down (4,4).
+    assert wanderers.explore_tour(d) == 1 + 25 + 25
