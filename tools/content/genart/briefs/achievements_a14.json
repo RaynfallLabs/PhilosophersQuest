@@ -95,20 +95,22 @@
   "family": "bosses_named",
   "rank": 1,
   "body": "badge_scene",
-  "what": "the bonnacon of the medieval bestiaries, seen from the side, galloping left across a sunny green meadow: a heavy wild bull, a real animal on four legs, with a horse's long shaggy black mane down its neck, dark chestnut-brown hide, rolling white-rimmed eyes, and two thick pale ivory horns that each curl down and round beside its cheek in one full tight circle, so they can gore nobody. Its tail is lifted high, and from under its tail one short thick puff of orange and yellow fire bursts out behind it, no longer than its head, scorching a black streak in the grass. A bright blue sky. The bull is dark against the bright meadow.",
+  "what": "the bonnacon of the medieval bestiaries, seen from the side, galloping left across a sunny green meadow: a heavy wild bull, a real animal on four legs, with a horse's long shaggy black mane down its neck, dark chestnut-brown hide and rolling white-rimmed eyes. Its two horns are a ram's horns, not a bull's: thick, ridged, pale ivory, each one curling back from the top of its head, down past its ear and round in a full tight spiral beside its cheek, like the horns of a wild mountain sheep, the tips pointing in at its own jaw. No horn points up or forward. Its tail is lifted high, and from under its tail one short thick puff of orange and yellow fire bursts out behind it, no longer than its head, scorching a black streak in the grass. A bright blue sky. The bull is dark against the bright meadow.",
   "colours": "Dark chestnut-brown hide; a long shaggy black mane; pale ivory curled horns; a grey-black muzzle; a short burst of orange and yellow fire; bright green grass with one scorched black streak; a bright blue sky.",
   "must_show": [
-   "a maned bull with horns curled in tight circles",
+   "a maned bull with pale ram's horns curled in tight spirals beside its cheeks",
    "a short burst of fire from behind it",
    "galloping"
   ],
   "must_not_show": [
-   "person",
-   "rider",
-   "horns pointing forward",
+   "blood",
+   "bull horns",
    "dragon",
    "dung pile",
-   "blood",
+   "horns pointing forward",
+   "horns pointing up",
+   "person",
+   "rider",
    "writing"
   ]
  },

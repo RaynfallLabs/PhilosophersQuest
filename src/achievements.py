@@ -112,6 +112,10 @@ KNOWN_EVENTS: dict[str, frozenset] = {name: frozenset(fields) for name, fields i
     # a dance-off with the Mooble danced to its end (mooble_encounter):
     # practised = the practice round was danced since the last dance-off
     'dance_off':        ('won', 'misses', 'perfects', 'total', 'practised', 'dance'),
+    # the Underway Run finished (game_race): won, how many legs were sprinted
+    'race':             ('won', 'sprints', 'photo'),
+    # down a staircase in the Bococho's saddle (main._change_level)
+    'rode_down':        ('floor',),
     'burglar':          (),
     'stray_kids':       ('outcome',),
     # the title screen and the fourth wall

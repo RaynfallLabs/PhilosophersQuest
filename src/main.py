@@ -1886,6 +1886,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self._mooble_left(_from_level, new_level)
         # Off any floor, a rider comes down from the saddle (she follows), and
         # leaving the racing camp's floor is waiting (game_riding, bococho).
+        # Down the stairs in the saddle first: the Seeker's Riding Into the Deep.
+        if (via == 'stairs' and getattr(self.player, 'riding', False)
+                and _from_level < new_level < 900):
+            self._seeker_event('rode_down', floor=int(new_level))
         self._riding_level_change(via)
         self._bococho_left(_from_level, new_level)
         # Notify quirk system before level change (fast-exit check)

@@ -63,6 +63,26 @@
   ]
  },
  {
+  "id": "free_of_the_tether_bg",
+  "family": "pets_bg",
+  "rank": 4,
+  "body": "badge_scene",
+  "what": "a racing camp in a great underground cavern, seen close and low: on the right a thick weathered wooden tether post with a frayed, snapped rope hanging loose from its iron ring, the broken end lying on the sandy ground; behind, torches on posts and the dark cavern far away. In the lower middle of the picture the sandy ground is empty and lit warm and bright by the torches. The rest is dark.",
+  "colours": "A weathered grey-brown wooden post; a dark iron ring; a frayed pale tan rope; warm sandy ground; orange torch flames; a dark brown-black cavern.",
+  "must_show": [
+   "a tether post with a snapped rope hanging from it",
+   "an empty lit patch of sandy ground"
+  ],
+  "must_not_show": [
+   "creature",
+   "bird",
+   "horse",
+   "person",
+   "writing",
+   "noose"
+  ]
+ },
+ {
   "id": "slow_steady",
   "family": "pets",
   "rank": 4,

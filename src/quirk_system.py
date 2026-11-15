@@ -1,5 +1,5 @@
 """
-quirk_system.py -- 127 Bofuri-style traits earned through counterintuitive play.
+quirk_system.py -- 128 Bofuri-style traits earned through counterintuitive play.
 Progress stored in player.quirk_progress (dict).
 Unlocked quirks in player.unlocked_quirks (set).
 
@@ -1366,6 +1366,15 @@ class QuirkSystem:
                 self._award('terpsichore', "Terpsichore's Step",
                             lambda pl: pl.apply_stat_bonus('DEX', 2))
 
+    def on_race(self, won: bool, sprints: int):
+        """The Underway Run finished (game_race)."""
+        # The Tortoise's Pace: won without a single sprint.
+        if won and int(sprints) == 0:
+            self._inc('tortoise_paced_wins')
+            if not self.is_unlocked('tortoise'):
+                self._award('tortoise', "The Tortoise's Pace",
+                            lambda pl: pl.apply_stat_bonus('CON', 2))
+
     def on_combat_started(self):
         """Called when player initiates or is involved in combat."""
         self._sp('orpheus_combat_this_turn', True)
@@ -1614,6 +1623,7 @@ _QUIRK_PROGRESS = {
     'widows_jar':    ('widows_jar_dishes', 10, False),
     'proteus':       ('known_by_hand', 25, True),       # reads player.known_by_hand
     'terpsichore':   ('terpsichore_cold_wins', 3, False),
+    'tortoise':      ('tortoise_paced_wins', 1, False),
 }
 
 # Canonical display order and names for all quirks
@@ -1682,6 +1692,7 @@ _QUIRK_NAMES = {
     'janus': "The Two Faces of Janus", 'marius_mule': "Marius' Mule",
     'fatted_calf': "The Fatted Calf", 'widows_jar': "The Widow's Jar",
     'proteus': "Proteus' Many Shapes", 'terpsichore': "Terpsichore's Step",
+    'tortoise': "The Tortoise's Pace",
 }
 
 # Canonical display order
@@ -1815,6 +1826,7 @@ _QUIRK_TRIGGER = {
     'widows_jar':    "You cooked 10 dishes with a ration or a foraged find in them.",
     'proteus':       "You put on 25 different kinds of gear in one run.",
     'terpsichore':   "You won 3 dance-offs with the Mooble without practising first.",
+    'tortoise':      "You won the Underway Run 1 time without a single Sprint.",
 }
 
 # Flavor quote shown on unlock -- captures the spirit of the achievement
@@ -1945,6 +1957,7 @@ _QUIRK_FLAVOR = {
     'widows_jar':    "The jar of flour was not used up, and the jug of oil did not run dry. -- 1 Kings 17:16",
     'proteus':       "Lion, serpent, leopard, water, tree: hold on, and he will answer you. -- after the Odyssey",
     'terpsichore':   "She taught the chorus to dance, and the dance needs no rehearsal. -- of Terpsichore",
+    'tortoise':      "Slow and steady wins the race. -- Aesop",
 }
 
 # Map quirk IDs to short effect descriptions shown on unlock
@@ -2075,6 +2088,7 @@ _QUIRK_EFFECTS = {
     'widows_jar':    "Rations and other plain food fill you half again as much.",
     'proteus':       "A kind of gear you have never worn needs one right answer fewer.",
     'terpsichore':   "DEX +2",
+    'tortoise':      "CON +2",
 }
 
 

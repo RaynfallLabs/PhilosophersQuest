@@ -2783,6 +2783,88 @@
    }
   },
   {
+   "id": "first_past_post",
+   "name": "First Past the Post",
+   "category": "companions",
+   "rarity": "epic",
+   "hint": "In the old games, a golden bird could outrun anything on the track.",
+   "unlocked_text": "You beat Gilt Varro's best bird on the Underway Run, and he stormed off without his winnings.",
+   "code_word": "VARRO",
+   "art": "first_past_post",
+   "spoiler_words": [
+    "sunroot",
+    "maths",
+    "sum"
+   ],
+   "trigger": {
+    "event": "race",
+    "where": {
+     "won": true
+    }
+   }
+  },
+  {
+   "id": "free_of_the_tether",
+   "name": "Free of the Tether",
+   "category": "companions",
+   "rarity": "epic",
+   "hint": "In the old games, the golden birds would follow anyone who brought them the right greens.",
+   "unlocked_text": "The young Bococho chose you. No rope, no fee, no Varro: just the two of you.",
+   "code_word": "TETHER",
+   "art": "free_of_the_tether",
+   "spoiler_words": [
+    "sunroot",
+    "race",
+    "quiz"
+   ],
+   "trigger": {
+    "event": "deed",
+    "where": {
+     "id": "saved.bococho"
+    }
+   }
+  },
+  {
+   "id": "slow_steady",
+   "name": "Slow and Steady",
+   "category": "companions",
+   "rarity": "rare",
+   "hint": "The tortoise never hurried, and still he won.",
+   "unlocked_text": "You won the Underway Run without a single sprint.",
+   "code_word": "TORTOISE",
+   "art": "slow_steady",
+   "spoiler_words": [
+    "sprint",
+    "pace",
+    "leg"
+   ],
+   "trigger": {
+    "event": "race",
+    "where": {
+     "won": true,
+     "sprints": 0
+    }
+   }
+  },
+  {
+   "id": "riding_deep",
+   "name": "Riding Into the Deep",
+   "category": "companions",
+   "rarity": "rare",
+   "hint": "A good bird carries her rider anywhere, even down.",
+   "unlocked_text": "Down the stairs in the saddle. The Bococho did not even slow down.",
+   "code_word": "SADDLE",
+   "art": "riding_deep",
+   "spoiler_words": [
+    "stair",
+    "mount",
+    "saddle"
+   ],
+   "trigger": {
+    "event": "rode_down"
+   }
+  },
+  {
    "id": "gentle_hands",
    "name": "Gentle Hands",
    "category": "companions",

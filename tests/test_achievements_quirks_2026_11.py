@@ -780,3 +780,83 @@ def test_the_mooble_joining_is_dance_partner(seeker):
     TM._key(g, pygame.K_4)
     g.quiz_engine._end(success=True)
     assert _unlocked(g, 'dance_partner')
+
+
+# ---------------------------------------------------------------- the Bococho
+
+def _race_through(g, modes, chain=12):
+    import race as R
+    g._bococho_state()['race'] = R.new_race(5, 1)
+    for mode in modes:
+        g._race_leg_done(chain, mode, 'outside')
+    assert g._race()['done']
+    return R.outcome(g._race())
+
+
+def test_the_race_paced_all_the_way(seeker):
+    """The Underway Run finished through game_race's own leg handler: won
+    without a sprint is First Past the Post, Slow and Steady and the
+    Tortoise's Pace."""
+    g = _game()
+    assert _race_through(g, ('pace',) * 5)['won']
+    assert _unlocked(g, 'first_past_post') and _unlocked(g, 'slow_steady')
+    assert g.quirk_system.is_unlocked('tortoise')
+
+
+def test_a_sprint_wins_the_race_but_not_slow_and_steady(seeker):
+    g = _game()
+    assert _race_through(g, ('pace', 'pace', 'pace', 'pace', 'sprint'))['won']
+    assert _unlocked(g, 'first_past_post') and not _unlocked(g, 'slow_steady')
+    assert not g.quirk_system.is_unlocked('tortoise')
+
+
+def test_a_lost_race_is_no_badge(seeker):
+    g = _game()
+    assert not _race_through(g, ('pace',) * 5, chain=0)['won']
+    assert not _unlocked(g, 'first_past_post')
+
+
+def test_she_joins_and_down_the_stairs_in_the_saddle(seeker):
+    import bococho_encounter as bc
+    g = _game()
+    g.pets = []
+    young = bc.make_creature('young', g.player.x + 1, g.player.y, 55)
+    g.monsters.append(young)
+    g._bococho_state()['won'] = True
+    g._bc_adopt(young)
+    assert _unlocked(g, 'free_of_the_tether')
+    pet = g.pets[-1]
+    assert pet.stage >= 1                            # she joins grown enough to carry a rider
+    from game_states import STATE_PLAYER
+    g.state = STATE_PLAYER
+    g.monsters = []
+    pet.x, pet.y = g.player.x, g.player.y
+    assert g._toggle_ride(pet), [e[0] for e in g.msg_log.entries[-3:]]
+    assert g.player.riding
+    g._change_level(g.dungeon_level + 1, enter_from_top=True, via='stairs')
+    assert _unlocked(g, 'riding_deep')
+    assert not g.player.riding                       # set down at the stair; she follows
+
+
+def test_walking_down_is_not_riding_down(seeker):
+    g = _game()
+    g._change_level(g.dungeon_level + 1, enter_from_top=True, via='stairs')
+    assert not _unlocked(g, 'riding_deep')
+
+
+def test_the_stray_kids_band_beaten_is_stage_fright(seeker):
+    """Stage Fright fires on ('stray_kids', outcome='cleared'), sent when
+    the last of the band falls (game_stray_kids._stray_kids_member_died).
+    A rework of the band's fight must keep sending it."""
+    import stray_kids
+    g = _game()
+    band = [stray_kids.make_zombie(mb, g.player.x, g.player.y, i)
+            for i, mb in enumerate(stray_kids.members())]
+    g.monsters = list(band)
+    for z in band[:-1]:
+        z.alive = False
+        g._stray_kids_member_died(z)
+    assert not _unlocked(g, 'stage_fright')
+    band[-1].alive = False
+    g._stray_kids_member_died(band[-1])
+    assert _unlocked(g, 'stage_fright')

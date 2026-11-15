@@ -32,8 +32,15 @@ COMPOSITES = {
     'always_comes': ('a10', 'monsters/shep.png',            None, 2, (60, 66)),
     'i_choose_you': ('a10', 'monsters/emberpup.png',        None, 2, (64, 68)),
     # the pup on his rock under the cloak of leaves, cropped below his own rain cloud
+    # (the rain still falls round his head: cropped lower, his head goes)
     'leaves_against_rain': ('a14', 'monsters/npc_abandoned_emberpup_sheltered.png',
                             (4, 14, 62, 64), 2, (64, 72)),
+    # the rare pets (2026-11-14): their own installed sprites, never repainted for a badge
+    'dance_partner':      ('a15', 'monsters/mooble.png',           None, 2, (64, 72)),
+    'not_a_step_missed':  ('a15', 'monsters/mooble_dance_up.png',  None, 2, (64, 70)),
+    'first_past_post':    ('a15', 'monsters/bococho_champion.png', None, 2, (64, 70)),
+    'free_of_the_tether': ('a15', 'monsters/npc_bococho_young.png', None, 2, (60, 70)),
+    'riding_deep':        ('a15', 'monsters/bococho_saddled.png',  None, 2, (72, 70)),
 }
 
 

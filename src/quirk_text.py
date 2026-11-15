@@ -152,6 +152,7 @@ QUIRK_HINT = {
     'widows_jar':    "Elijah's widow baked her last flour and oil into bread, and her jar never emptied. Cook with plain fare.",
     'proteus':       "The Old Man of the Sea changed shape again and again. Try on a great many kinds of armour and rings.",
     'terpsichore':   "The Muse of dance never needed to rehearse. Step out onto the floor cold, and win.",
+    'tortoise':      "The hare ran in bursts and slept by the road. The tortoise never once hurried.",
 }
 
 
@@ -280,6 +281,7 @@ QUIRK_DESC = {
     'widows_jar':    "Rations, bread, cheese and every other plain food you eat as it is fill you half again as much. Like the widow's jar, your plain store goes further than it should.",
     'proteus':       "A kind of gear you have never worn needs one right answer fewer to put on (never fewer than one). You have taken so many shapes that a new one comes easily.",
     'terpsichore':   f"Dexterity +2. {_DEX} You danced with the last of the Moobles straight off, with no practice, and your feet have kept the beat.",
+    'tortoise':      f"Constitution +2. {_CON} You won a race without once asking for more than a steady pace, and the tortoise's long wind is yours.",
 }
 
 

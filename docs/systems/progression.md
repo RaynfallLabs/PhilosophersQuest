@@ -8,7 +8,7 @@
 ## Purpose
 Progression is everything that makes a run richer after turn 1 that isn't an item on the ground or a floor transition. It covers three parallel layers that stack on top of the player's base build:
 
-1. **Quirks** — 127 named Bofuri-style traits unlocked by playing in a specific way (not by XP). Each is a one-shot threshold on a quirk-progress counter maintained by the `QuirkSystem` dispatcher. Rewards are either a permanent stat/effect bump or an `[ACTIVE POWER]` on the V-menu.
+1. **Quirks** — 128 named Bofuri-style traits unlocked by playing in a specific way (not by XP). Each is a one-shot threshold on a quirk-progress counter maintained by the `QuirkSystem` dispatcher. Rewards are either a permanent stat/effect bump or an `[ACTIVE POWER]` on the V-menu.
 2. **Hero specials** — one or more AI-escalator-chain active abilities (plus optional cooldown) attached to a specific secret build. Dispatched through `hero_specials._DISPATCH` by effect id.
 3. **Hero passives** — set-of-strings on `player.hero_passives`; checked at hook sites in `combat.py`, `player.py`, `monster.py`, `game_menus.py`. One or more per build; several builds carry only passives.
 
@@ -228,9 +228,9 @@ If the result list is empty the menu prints the (slightly stale) "Earn quirks to
 
 ~100 quirks are enumerated below, grouped by how they're earned. Thresholds are from `_QUIRK_PROGRESS`; triggers from `_QUIRK_TRIGGER`; rewards from `_QUIRK_EFFECTS`.
 
-### Added 2026-11-14: the arsenal, the load and the kitchen
+### Added 2026-11-14: the arsenal, the load, the kitchen and the rare pets
 
-Nine traits for the winning build's new systems, each a strange but real way to use one. Every reward is a flag on `quirk_progress` read where the system works; none multiplies by the floor.
+Eleven traits for the winning build's new systems, each a strange but real way to use one. Nine rewards are a flag on `quirk_progress` read where the system works, two a stat; none multiplies by the floor.
 
 | id | Name | Earned by | Reward (read in) |
 |---|---|---|---|
@@ -242,7 +242,9 @@ Nine traits for the winning build's new systems, each a strange but real way to 
 | `marius_mule` | Marius' Mule | down the stairs to 10 different floors while Burdened or worse | `marius_active`: Burdened costs no extra steps (Overloaded still does; the dodge and DEX loss stay) (`Player.load_step_every`) |
 | `fatted_calf` | The Fatted Calf | a boss trophy carried down to 12 new floors | `fatted_calf_active`: a legendary feast heals fully (`food_system._apply_recipe_outcome`) |
 | `widows_jar` | The Widow's Jar | 10 dishes of two or more parts with a ration or a foraged find in them, cooked right (`on_food_eaten(parts=...)`) | `widows_jar_active`: plain food eaten as it is gives half again its SP (`food_system.eat_food`) |
-| `proteus` | Proteus' Many Shapes | 25 kinds Known by Hand in one run | `proteus_active`: a kind never worn needs one right answer fewer, never under one (`main._new_kind_threshold`) |
+| `proteus` | Proteus' Many Shapes | 25 kinds Known by Hand in one run | `proteus_active`: a kind never worn needs one right answer fewer, never under one (`quirk_system.new_kind_threshold`, read by the equip quizzes and the lore card's Equip line) |
+| `terpsichore` | Terpsichore's Step | 3 dance-offs with the Mooble won with no practice round first (`on_dance_off`) | DEX +2 |
+| `tortoise` | The Tortoise's Pace | the Underway Run won without a single Sprint (`on_race`) | CON +2 |
 
 **Circe (2026-11-14):** a ruined dish is no longer one of Circe's five kinds (it counted as `'ruined'`, so four kinds and a burnt pot earned her). The kinds are the kitchen's five tabs and `'permanent'` (a feast or a trophy dish).
 
