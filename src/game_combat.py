@@ -1197,8 +1197,6 @@ class CombatMixin:
         # Marker read by _process_collateral_kills so a monster handled here
         # is not processed a second time by the post-attack sweep.
         monster._kill_handled = True
-        # A war-band answers the fall of one of its own (src/war_bands.py).
-        self._band_member_died(monster)
         # Curtana's spare is announced by the melee on_complete (the spared
         # monster is alive, so this handler is never reached for it). The
         # flag used to be consumed HERE, which meant it sat armed until the
@@ -1211,10 +1209,14 @@ class CombatMixin:
         # 2026-11-06: "credit, no loot"). A thief's takings were given back
         # when it was banished.
         _banished = bool(getattr(monster, '_banished', False))
+        # A Stray Kid danced down is not "slain": he crumbles (below).
+        if not _banished and not getattr(monster, '_danced_down', False):
+            self.add_message(f"{the_name(monster)} is slain!", 'success')
+        # A war-band answers the fall of one of its own (src/war_bands.py),
+        # once he has fallen: "With the hobgoblin down, the scouts scatter!"
+        # came before "The Hobgoblin is slain!" (bug bash 3.5.1 E).
+        self._band_member_died(monster)
         if not _banished:
-            # A Stray Kid danced down is not "slain": he crumbles (below).
-            if not getattr(monster, '_danced_down', False):
-                self.add_message(f"{the_name(monster)} is slain!", 'success')
             self._drop_treasure(monster)
         # A thief gives back everything it stole (src/theft.py).
         for _tmsg in theft.give_back(self, monster):
@@ -1792,7 +1794,7 @@ class CombatMixin:
             from dungeon import dress_spawn
             dress_spawn(chosen, effective_floor, _rng, buc=False)   # charges and counts only
             self.ground_items.append(chosen)
-            self.add_message(f"It drops {self._display_name(chosen)}!", 'loot')
+            self.add_message(f"It drops {self._a_or_an(self._display_name(chosen))}!", 'loot')
 
     # ------------------------------------------------------------------
     # Ranged targeting
@@ -2234,10 +2236,16 @@ class CombatMixin:
 
         # Items at cursor
         from items import Container
+        from mystery_system import MysteryAltar, MerchantNPC
         items_here = [i for i in self.ground_items if i.x == cx and i.y == cy]
         for item in items_here[:5]:
             dname = self._display_name(item)
-            self.add_message(f"You see {dname} on the ground.", 'info')
+            if isinstance(item, (MysteryAltar, MerchantNPC)):
+                # A place, not a thing on the floor (as _notify_ground has it).
+                self.add_message(f"You see {dname} here.", 'info')
+            else:
+                # "You see A Rough Amber Pelt on the ground." (bug bash 3.5.1 E)
+                self.add_message(f"You see {self._a_or_an(dname)} on the ground.", 'info')
             # Mimic detection via Observe — PER check
             if isinstance(item, Container) and getattr(item, 'is_mimic', False):
                 import random as _prng
@@ -3022,6 +3030,18 @@ class CombatMixin:
             else:
                 version = 'seen'
             text = _senses.sense_line(how, version)
+            if text and version == 'unseen':
+                # Two unseen kinds that find him the same way on one turn
+                # said "Somewhere close, something sniffs the air, and
+                # stops." twice in a row (bug bash 3.5.1 E): it names
+                # nothing, so once a turn is all it can say.
+                turn = getattr(self, 'turn_count', 0)
+                said = self.__dict__.get('_unseen_sense_said')
+                if not said or said[0] != turn:
+                    said = self._unseen_sense_said = (turn, set())
+                if text in said[1]:
+                    text = ''
+                said[1].add(text)
             if text:
                 self.add_message(_senses._fill(m, text), 'warning')
         lost = m.__dict__.pop('_lost_line', '')

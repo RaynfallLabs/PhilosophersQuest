@@ -889,6 +889,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         """Restore all game state from a previously saved dict (pickle)."""
         import affinity as _affinity
         _affinity.drain()                      # nothing noted before the load is said after it
+        # Nor anything the shell said while it built its throwaway floor 1
+        # (_restore_saved_game): a hero loaded on floor 30 read "Welcome,
+        # ...! Find the Philosopher's Stone and escape!", that floor's domain
+        # line and a war-band "somewhere on this floor" that was never his
+        # (bug bash 3.5.1 E). The log is not saved; it starts clean.
+        self.msg_log.clear()
         self.player        = state['player']
         self.player._combat_game_ref = self     # dropped on save (Player.__getstate__)
         # One-cosmetic-per-item: re-attach the appearance-stamp hook (dropped on
@@ -3999,14 +4005,14 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
 
         if len(here) == 1:
             item = here[0]
-            dname = self._display_name(item)
-            article = 'an' if dname[0].lower() in 'aeiou' else 'a'
-            self.add_message(f"You see {article} {dname} lying here.", 'info')
+            # "You see an A Rough Amber Pelt lying here.", "You see a 5 Gold
+            # Coins lying here." (bug bash 3.5.1 E): a_or_an mends both.
+            self.add_message(f"You see {self._a_or_an(self._display_name(item))} lying here.", 'info')
             self._show_item_comparison(item)
         elif len(here) == 2:
             self.add_message(
-                f"You see {self._display_name(here[0])} and "
-                f"{self._display_name(here[1])} lying here.", 'info'
+                f"You see {self._a_or_an(self._display_name(here[0]))} and "
+                f"{self._a_or_an(self._display_name(here[1]))} lying here.", 'info'
             )
             for h in here:
                 self._show_item_comparison(h)
@@ -9066,17 +9072,16 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             if getattr(result, 'success', False):
                 corpse.id_level = 5
                 self._on_full_identify(corpse)
+                from monster import the_name as _the, a_name as _a, kind_of_corpse as _kind
                 self._chron(
                     'milestone',
-                    f"Took {self._a_or_an(corpse.monster_name)} apart to see how it worked. "
+                    f"Took {_a(_kind(corpse))} apart to see how it worked. "
                     "You learn a lot about a thing by how it comes apart.",
                     once='first_corpse_study')
                 self._lore_subject = corpse
                 self.state = STATE_LORE
-                self.add_message(
-                    f"You understand the {corpse.monster_name} now.",
-                    'success'
-                )
+                self.add_message(f"You understand {_the(_kind(corpse), lower=True)} now.",
+                                 'success')
                 # The monster TYPE is now known forever (_learn_kind, the
                 # one path a corpse study and the Wand of Probing share): its
                 # page opens, every corpse of it is known and future corpses
@@ -9091,8 +9096,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 # The identify_orb handler stays registered for future
                 # non-lore effects.
             else:
+                from monster import the_name as _the, kind_of_corpse as _kind
                 self.add_message(
-                    f"You study the {corpse.monster_name} but its nature eludes you.",
+                    f"You study {_the(_kind(corpse), lower=True)} but its nature eludes you.",
                     'warning'
                 )
                 # Backlash from the Shard: a wrong answer stuns the kid.

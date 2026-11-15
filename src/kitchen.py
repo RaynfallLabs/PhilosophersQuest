@@ -795,17 +795,22 @@ def apply_dish(player, rec: dict) -> list:
     if out['sp'] > 0:
         player.restore_sp(out['sp'])
     sp = max(0, int(getattr(player, 'sp', 0) or 0) - sp_before) if hasattr(player, 'sp') else out['sp']
+    # What came back, as the SP is told: a dish eaten unhurt said "+9 HP",
+    # and one eaten with full mana "+0 MP" (bug bash 3.5.1 E).
     heal = heal_amount(player, out)
+    healed = 0
     if heal > 0:
-        player.restore_hp(heal)
+        healed = int(player.restore_hp(heal) or 0)
     bits = [f"+{sp} SP"] if sp > 0 else []
-    if heal > 0:
-        bits.append(f"+{heal} HP")
+    if healed > 0:
+        bits.append(f"+{healed} HP")
     mp = mp_amount(player, out)
     if mp > 0:
         before = int(getattr(player, 'mp', 0) or 0)
         player.restore_mp(mp)
-        bits.append(f"+{int(getattr(player, 'mp', 0) or 0) - before} MP")
+        got = int(getattr(player, 'mp', 0) or 0) - before
+        if got > 0:
+            bits.append(f"+{got} MP")
     if bits:
         msgs.append("You eat it: " + ", ".join(bits) + ".")
     # Max HP toward the floor's cap.

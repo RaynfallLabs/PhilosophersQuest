@@ -119,13 +119,16 @@ def _is_proper(monster, low: str) -> bool:
     """A named foe (a boss, a mini-boss, a seal demon, a story foe, the
     Bones ghost, Death): a proper noun, said with no article. So is a kind
     named for its master ("Fionn's Hound", "Set's Jackal"): "the Fionn's
-    Hound" was said (round 3)."""
+    Hound" was said (round 3). Death himself is "Death"; a kind named for
+    him is not ("Death Dog swings at you and misses!", "Death Mage is
+    slain!" were said of seven ordinary kinds: bug bash 3.5.1 E)."""
     first = (getattr(monster, 'name', '') or '').split(' ', 1)[0]
     return bool(getattr(monster, 'is_boss', False) or getattr(monster, 'is_mini_boss', False)
                 or getattr(monster, 'is_seal_demon', False)
                 or getattr(monster, 'proper_noun', False)
                 or getattr(monster, 'kind', '') in ('player_ghost', 'death')
-                or low.startswith(('ghost of ', 'death'))
+                or low == 'death'
+                or low.startswith(('ghost of ', "death's "))
                 or (first[:1].isupper() and first.endswith(("'s", "s'"))))
 
 
@@ -148,6 +151,25 @@ def an_article(word: str) -> str:
     if w.startswith(('uni', 'use', 'usu', 'uti', 'eu', 'ewe', 'one', 'once')):
         return 'a'
     return 'an' if w[0] in 'aeiou' else 'a'
+
+
+def kind_of_corpse(corpse):
+    """A stand-in for the creature a corpse was, for the_name and a_name:
+    its name and whether it was a named foe ("You understand the Asterion
+    the Minotaur now." was said of a boss's corpse: bug bash 3.5.1 E)."""
+    from types import SimpleNamespace
+    md = dict(getattr(corpse, 'monster_def', None) or {})
+    try:                    # the body keeps no flags: its kind's data does
+        import affinity
+        md = {**(affinity._monster_defs().get(getattr(corpse, 'monster_id', '')) or {}), **md}
+    except (OSError, ValueError):
+        pass
+    return SimpleNamespace(
+        name=str(getattr(corpse, 'monster_name', '') or md.get('name', '') or 'creature'),
+        kind=getattr(corpse, 'monster_id', '') or md.get('id', ''),
+        is_boss=bool(md.get('is_boss')), is_mini_boss=bool(md.get('is_mini_boss')),
+        is_seal_demon=bool(md.get('is_seal_demon')), proper_noun=bool(md.get('proper_noun')),
+        _aware=True, ai_pattern='')
 
 
 def a_name(monster, lower: bool = True) -> str:
@@ -1492,6 +1514,12 @@ class Monster:
         name = attack_noun(atk)
         who = the_name(self)
         tail = f" {note}" if note else ''
+        # A shot or spell named by a verb misses as one ("The Skeleton
+        # Archer shoots at you and misses!", not "...'s shoot misses you!").
+        miss = (combat_lines().get('attack_misses') or {}).get(
+            str(atk.get('name', '')).replace('_', ' '))
+        if miss and not confused:
+            return f"{who} {miss}!{tail}"
         if any(w in low for w in _MIND_WORDS):
             return f"{who}'s {name} fails to take hold of you!"
         if atk.get('ranged') or any(w in low for w in _RANGED_WORDS):

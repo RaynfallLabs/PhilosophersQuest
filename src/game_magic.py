@@ -40,7 +40,7 @@ directly.
 """
 from __future__ import annotations
 from naming import quantity
-from monster import the_name, pronouns
+from monster import the_name, pronouns, kind_of_corpse
 
 import random
 from typing import TYPE_CHECKING
@@ -3925,7 +3925,7 @@ class MagicMixin:
                     if isinstance(other, Corpse) and getattr(other, 'monster_id', '') == sp:
                         other.id_level = 5
                 self.add_message(
-                    f"Omnisight blooms over the {it.monster_name} corpse -- "
+                    f"Omnisight blooms over {the_name(kind_of_corpse(it), lower=True)}'s corpse -- "
                     f"its whole species opens up in your mind.",
                     'success')
                 self._family_study(sp)

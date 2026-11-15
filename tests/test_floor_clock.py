@@ -215,8 +215,14 @@ def test_the_floor_stirs_only_when_something_really_comes():
     g.visible = set()
     for m in g.monsters:
         m._tracking = False
+    # A floor made with fewer than the cap is filled to it. (The floors are
+    # not the seed's: a part-made rat, with no symbol, failed on the runs
+    # that drew a thin floor 1. Bug bash 3.5.1 E.)
+    from monster import Monster
+    with open(os.path.join(ROOT, 'data', 'monsters.json'), encoding='utf-8') as f:
+        rat = {**json.load(f)['giant_rat'], 'id': 'giant_rat'}
     while sum(1 for m in g.monsters if m.alive) < fc.wander_alive_cap(g.dungeon_level):
-        g.monsters.append(type(g.monsters[0])({'id': 'giant_rat', 'name': 'giant rat', 'hp': '1d4'}, 0, 0))
+        g.monsters.append(Monster(dict(rat), 0, 0))
     msgs = []
     g.add_message = lambda text, *a, **k: msgs.append(text)
     stirs = set(wanderers._lines()['stirs'])

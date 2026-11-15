@@ -1521,11 +1521,18 @@ class DivineMixin:
 
         msgs: list[tuple[str, str]] = []
 
+        # Each mercy says what it really gave: "(+52 SP)" was said to a hero
+        # with no SP to gain, and "your wounds refuse to close" (the line for
+        # Gae Dearg's wound, heal_blocked) to one with no wounds (bug bash
+        # 3.5.1 E). A mercy that has nothing to mend says nothing.
         # ---- chain >= 1: SP restore ----
         sp_amt = max(15, p.max_sp // 4) + karma_bonus_sp
         if sp_amt > 0:
+            _before = p.sp
             p.restore_sp(sp_amt)
-            msgs.append((f"Strength floods back into your limbs. (+{sp_amt} SP)", 'success'))
+            if p.sp > _before:
+                msgs.append((f"Strength floods back into your limbs. (+{p.sp - _before} SP)",
+                             'success'))
         elif sp_amt < 0:
             # Rare: negative karma so severe the "restore" nets a loss. Guard
             # the SP floor at 0 and describe the failure honestly.
@@ -1540,7 +1547,7 @@ class DivineMixin:
                 gained = p.restore_hp(hp_amt)
                 if gained > 0:
                     msgs.append((f"Warmth washes over your wounds. (+{gained} HP)", 'success'))
-                else:
+                elif p.hp < p.max_hp:
                     msgs.append(("Warmth washes over you, but your wounds refuse to close.", 'info'))
             elif hp_amt < 0:
                 dmg = min(p.hp - 1, -hp_amt) if p.hp > 1 else 0
@@ -1552,8 +1559,11 @@ class DivineMixin:
         if chain >= 3:
             mp_amt = max(5, p.max_mp // 4) + karma_bonus_mp
             if mp_amt > 0:
+                _before = p.mp
                 p.restore_mp(mp_amt)
-                msgs.append((f"Arcane wells refill within you. (+{mp_amt} MP)", 'success'))
+                if p.mp > _before:
+                    msgs.append((f"Arcane wells refill within you. (+{p.mp - _before} MP)",
+                                 'success'))
             elif mp_amt < 0:
                 drain = min(p.mp, -mp_amt)
                 p.mp = max(0, p.mp - drain)

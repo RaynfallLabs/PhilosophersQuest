@@ -641,12 +641,18 @@ def eat_food(player, food_item) -> list[str]:
     sp = food_sp(player, food_item)
     hp = food_item.hp_restore
 
+    # What it really gave, as the MP draughts say (bug bash 3.5.1 E: "(60
+    # SP restored)" to a hero who was not hungry, "+6 HP" to one unhurt).
+    _sp_before = player.sp
     player.restore_sp(sp)
-    messages.append(f"You eat the {food_item.name}. ({sp} SP restored)")
+    _sp_got = player.sp - _sp_before
+    messages.append(f"You eat the {food_item.name}. ({_sp_got} SP restored)" if _sp_got > 0
+                    else f"You eat the {food_item.name}.")
 
     if hp > 0:
-        player.restore_hp(hp)
-        messages.append(f"The food soothes your wounds. (+{hp} HP)")
+        _hp_got = player.restore_hp(hp)
+        if _hp_got > 0:
+            messages.append(f"The food soothes your wounds. (+{_hp_got} HP)")
 
     bonus_recipe = {
         'bonus_type':   food_item.bonus_type,
@@ -714,6 +720,18 @@ POTION_HEAL_SHARE = 0.20
 POTION_EXTRA_HEAL_SHARE = 0.40
 
 
+def _healed_line(player, got: int, line: str) -> str:
+    """A healing draught's line with what it really gave: "(+18 HP)" was
+    said to a hero at full health, and to one whose wounds will not close
+    (Gae Dearg's heal_blocked), who gained nothing (bug bash 3.5.1 E)."""
+    if got > 0:
+        return f"{line} (+{got} HP)"
+    if player.has_effect('heal_blocked'):
+        return "Warmth floods through you, but your wounds refuse to close."
+    return f"{line[:-1]}, but you had no wounds to close." if line.startswith('Warmth') \
+        else "The draught finds no wounds to close."
+
+
 def drink_potion(player, potion) -> list[str]:
     """
     Consume a Potion. Returns a list of message strings.
@@ -764,14 +782,13 @@ def drink_potion(player, potion) -> list[str]:
         # has to stay worth drinking once hit points grow with depth.
         amt = int(max(roll_dice(power) if power else 10,
                       player.max_hp * POTION_HEAL_SHARE) * _heal_mult)
-        player.restore_hp(amt)
-        messages.append(f"Warmth floods through you. (+{amt} HP)")
+        messages.append(_healed_line(player, player.restore_hp(amt), "Warmth floods through you."))
 
     elif effect == 'extra_heal':
         amt = int(max(roll_dice(power) if power else 25,
                       player.max_hp * POTION_EXTRA_HEAL_SHARE) * _heal_mult)
-        player.restore_hp(amt)
-        messages.append(f"Deep wounds knit closed with startling speed. (+{amt} HP)")
+        messages.append(_healed_line(player, player.restore_hp(amt),
+                                     "Deep wounds knit closed with startling speed."))
 
     elif effect == 'full_heal':
         # Blessed full-healing scours away ALL debuffs FIRST, so a
@@ -794,8 +811,11 @@ def drink_potion(player, potion) -> list[str]:
 
     elif effect == 'restore_sp':
         amt = int((roll_dice(power) if power else 50) * _heal_mult)
+        _sp_before = player.sp
         player.restore_sp(amt)
-        messages.append(f"Stamina surges back into your limbs. (+{amt} SP)")
+        _sp_got = player.sp - _sp_before
+        messages.append(f"Stamina surges back into your limbs. (+{_sp_got} SP)" if _sp_got > 0
+                        else "Stamina surges through you, but you were not tired.")
 
     elif effect == 'cure_poison':
         removed = player.status_effects.pop('poisoned', None)

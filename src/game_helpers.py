@@ -103,12 +103,10 @@ def fix_name_case(name: str) -> str:
 
 
 def a_or_an(name: str) -> str:
-    """Return 'a Name' or 'an Name' based on the first letter."""
-    if not name:
-        return name
-    first = name.lstrip('{').lstrip()
-    article = 'an' if first[0:1].lower() in 'aeiou' else 'a'
-    return f"{article} {name}"
+    """Return 'a Name' or 'an Name' based on the first letter (one rule:
+    paths.a_or_an, which also mends a name that brings its own article)."""
+    from paths import a_or_an as _a_or_an
+    return _a_or_an(name)
 
 
 def lays_loot(dungeon, x: int, y: int, held=()) -> bool:
