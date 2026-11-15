@@ -1985,73 +1985,9 @@ class CombatMixin:
                 self._start_spell_quiz(spell, spell_id, target)
             return  # quiz handles state + advance_turn
 
-        if pid == 'sketch_manifest':
-            # Store target for quiz callback, then start AI escalator chain
-            self._sketch_target_monster = target
-            self.add_message(
-                f"You begin sketching {the_name(target, lower=True)} with furious concentration...", 'info')
-            self.quiz_title = "MANIFESTING  --  AI"
-            self.state = STATE_QUIZ
-            pl = self.player
-
-            def _on_sketch_complete(result):
-                chain = result.score
-                monster = self._sketch_target_monster
-                self._sketch_target_monster = None
-                if chain == 0:
-                    self.add_message(
-                        "The sketch smudges and fades to nothing. The page goes blank.", 'warning')
-                    self.state = STATE_PLAYER
-                    self._advance_turn()
-                    return
-                duration = 5 * chain
-                # Find a walkable tile adjacent to the player for the pet
-                from pet_system import SketchedPet
-                px, py = pl.x, pl.y
-                placed = False
-                for dx, dy in [(-1,0),(1,0),(0,-1),(0,1),(-1,-1),(1,-1),(-1,1),(1,1)]:
-                    nx, ny = px + dx, py + dy
-                    if (self.dungeon.is_walkable(nx, ny)
-                            and not monster_at_tile(self.monsters, nx, ny) is not None
-                            and (nx, ny) not in self._occupants(hero=False)):
-                        pet = SketchedPet(monster, nx, ny, duration)
-                        self.pets.append(pet)
-                        placed = True
-                        break
-                if not placed:
-                    # A little further out, never on the hero's own tile
-                    # (MNK-07); with no room at all the sketch fades.
-                    spot = self._escort_tile_near_hero()
-                    if spot is None:
-                        self.add_message(
-                            "There is no room for the sketch to stand. It fades from the page.",
-                            'warning')
-                        self.state = STATE_PLAYER
-                        self._advance_turn()
-                        return
-                    pet = SketchedPet(monster, *spot, duration)
-                    self.pets.append(pet)
-                self.add_message(
-                    f"The sketch shimmers and peels off the page! "
-                    f"A Sketched {monster.name} materializes! ({quantity(duration, 'turn')})",
-                    'success')
-                pl.power_cooldowns['sketch_manifest'] = 500
-                self.state = STATE_PLAYER
-                self._advance_turn()
-
-            self.quiz_engine.start_quiz(
-                mode='escalator_chain',
-                subject='ai',
-                tier=1,
-                callback=_on_sketch_complete,
-                max_chain=5,
-                wisdom=pl.WIS,
-                timer_modifier=pl.get_quiz_timer_modifier(),
-                extra_seconds=pl.get_quiz_extra_seconds('ai'),
-                base_seconds=pl.get_quiz_timer('ai'),
-            )
-            return  # don't call _advance_turn or set STATE_PLAYER — quiz handles it
-
+        # (The Dreamspun Sketchbook's Manifest aimed here once, at a creature
+        # in view. It draws from a menu now, a studied kind or one in view:
+        # game_manifest.py.)
         if pid == 'stuffie_fire_breath':
             # Store cone target for quiz callback
             self._stuffie_cone_target = (cx, cy)
@@ -4369,7 +4305,14 @@ class CombatMixin:
                     # Named as the hero sees it, before the bite springs a
                     # lurker (bug bash 5 MON-04, PET-03, INT-05).
                     _foe = the_name(target, lower=True)
-                    actual = target.take_damage(dmg)
+                    # A drawing bites as its subject's first attack does
+                    # (SketchedPet.bite_type: Manifest), so a weakness or a
+                    # resistance of what it bites applies; every other pet's
+                    # plain bite is physical, as before (and so is a sketch
+                    # pickled before its bite had a type).
+                    _btype = (getattr(pet, 'bite_type', 'physical') or 'physical'
+                              if getattr(pet, 'is_sketch', False) else 'physical')
+                    actual = target.take_damage(dmg, _btype)
                     # Bitten, it turns on the pet for a while (_monster_swipes).
                     target._pet_aggro = (id(pet), getattr(self, 'turn_count', 0))
                     if getattr(pet, 'is_dad', False):

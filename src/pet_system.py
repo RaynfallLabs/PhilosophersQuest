@@ -1349,19 +1349,33 @@ class FenrirPet(Pet):
 
 
 class SketchedPet(Pet):
-    """Temporary pet manifested from the Dreamspun Sketchbook.
+    """Temporary pet manifested from the Dreamspun Sketchbook (Manifest:
+    src/sketch_manifest.py, src/game_manifest.py), or Leonardo's Codex helper.
 
-    Inherits a monster's appearance and scaled-down stats.
-    Lasts for a fixed number of turns, then dissolves.
+    Inherits a monster's appearance and scaled-down stats, and bites as its
+    subject's first attack's type (``bite_type``, in the hero's words:
+    sketch_manifest.bite_type_of), so what it bites is weak to it or resists it as
+    it would the subject's own blow (Game._do_pet_turns). Lasts for a fixed
+    number of turns, then dissolves.
     """
 
     SCALE = 0.40  # 40% of monster stats
+    # A sketch pickled before its bite had a type bites as plain physical,
+    # as it always did (Game._do_pet_turns reads it with this default).
+    bite_type = 'physical'
 
     def __init__(self, monster, px: int, py: int, duration: int):
+        # The type its bite lands as: the subject's first attack's (a helper
+        # drawn to a plan, with an untyped attack, bites plain physical).
+        try:
+            from sketch_manifest import bite_type_of
+            self.bite_type = bite_type_of(getattr(monster, 'attacks', None))
+        except Exception:
+            self.bite_type = 'physical'
         # Build a fake species dict so the Pet base class can function
         sketch_species = {
             'element': 'sketch',
-            'damage_type': 'physical',
+            'damage_type': self.bite_type,
             'color': (160, 140, 230),  # lavender tint
             'stages': [
                 {'name': f'Sketched {monster.name}', 'symbol': monster.symbol, 'msg': ''},

@@ -113,6 +113,7 @@ the doc wins (and the row is a bug — please update it).
 | "What statuses exist and how do resists apply?" | [status_effects.md](status_effects.md); `EFFECT_INFO`, `_RESIST_BLOCKS`, `apply_debuff_with_save` |
 | "How do I add a save bonus from an accessory?" | [save_bonus.md](save_bonus.md); `_gear_save_bonus` + `Player.save_bonus_for` |
 | "How do pets gain levels?" | [pets.md](pets.md); `Pet.gain_xp`; a pet's starting level comes from its sphere (`pet_system.hatch_level`) |
+| "How does the Dreamspun Sketchbook's Manifest work?" | [pets.md](pets.md) 4.4, [ui.md](ui.md) 13b; `sketch_manifest.py` (pure rules), `game_manifest.py` (menu, quiz, spawn, QA Shift+V), `data/manifest.json`: draw any studied kind or one in view, bite typed as its first attack, INT + 5 turns a right answer |
 | "What is Duck of Doom?" | [pets.md](pets.md); 2026-turn transform in `main._duck_of_doom_transform` |
 | "How does cooking work?" | [food_system.md](food_system.md); 1 Q binary at the dish's tier, numbers from `cooking_rules.json` (`kitchen.dish_outcome`) |
 | "What is harvest v4?" | [food_system.md](food_system.md); 1 Q, `harvest_map.json` keyed by `monster.kind` |

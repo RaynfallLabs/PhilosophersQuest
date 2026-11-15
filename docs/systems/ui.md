@@ -451,6 +451,7 @@ state; column 4 is the `_draw_<state>` method.
 | `STATE_THROW_MENU` | `T` | `_throw_menu_input` | `_draw_throw_menu` |
 | `STATE_SPELL_MENU` | `M` | `_spell_menu_input` | `_draw_spell_menu` |
 | `STATE_POWER_MENU` | `V` | `_power_menu_input` | `_draw_power_menu` |
+| `STATE_MANIFEST_MENU` | `V`, Manifest (the Dreamspun Sketchbook) | `_manifest_input` | `_draw_manifest_menu` (both on `ManifestMixin`, `src/game_manifest.py`; §13b) |
 | `STATE_DROP_MENU` | `D` | `_drop_menu_input` | `_draw_drop_menu` |
 | `STATE_DROP_GOLD_INPUT` | drop gold | `_drop_gold_input` | `_draw_drop_gold_input` |
 | `STATE_DROP_QTY_INPUT` | drop stack | `_drop_qty_input` | `_draw_drop_qty_input` |
@@ -503,6 +504,7 @@ state; column 4 is the `_draw_<state>` method.
 | `Shift+D` | the Mooble in a cave beside this room, a Starnut and a Starnut Tart in the pack; again, another tart and no wait before the next dance (QA only; `mooble_encounter._qa_mooble`) | `handle_event` |
 | `Shift+G` | Gilt Varro's racing camp set up in the hero's room (this floor becomes the camp's), with two Sunroots; again, her trust and two more Sunroots; once more, she joins at once, the race skipped, to try riding (QA only; `bococho_encounter._qa_bococho`) | `handle_event` |
 | `Shift+R` | ride the Bococho, or climb down (`game_riding._toggle_ride`; on the help screen's key map) | `handle_event` |
+| `Shift+V` | the Dreamspun Sketchbook into the pack, every kind it can draw up to `min_level` max(10, floor + 5) studied, Manifest ready (QA only; `game_manifest._qa_manifest`; lowercase `v` is the powers menu) | `handle_event` |
 | `Shift+T` | every coating and flask, the earplugs, the cold-iron charm, a mirror shield and a greatsword into the pack (QA only; `game_arsenal._qa_arsenal_sampler`) | `handle_event` |
 | `Shift+S` | Press or Guard: the next stance, one turn (`game_arsenal._cycle_stance`) | `handle_event` |
 | `Shift+C` | coat the weapon in your hand from the pack (`game_arsenal._open_coat_menu`) | `handle_event` |
@@ -902,6 +904,60 @@ ready."), and the tab's purpose in the detail pane (`cook_menu.TAB_BLURBS`).
 `menu_cook_legendary_ready`, `menu_cook_hurt`, `menu_cook_no_mana`,
 `menu_cook_empty_tab`, `menu_cook_long` (`tools/ui/capture.py`).
 Tests: `tests/test_cook_menu.py`.
+
+---
+
+## 13b. Manifest menu (`_draw_manifest_menu`; 2026-11-15)
+
+Brandon: "she should be able to Manifest ANY monster she has studied;
+needs a new menu UI so it's easy to sort by what she'd want... probably
+element/attack type? then in the menu sorted by level, descending." The
+rules are `data/manifest.json` and the pure `src/sketch_manifest.py`; the Game
+side (open, keys, quiz, spawn, QA key, drawing) is `ManifestMixin` in
+`src/game_manifest.py`. What a sketch is: [pets](pets.md) §4.4.
+
+**Data:** V, Manifest (`_activate_power('sketch_manifest')` →
+`_open_manifest_menu`, no turn spent) reads `sketch_manifest.make_rows` once
+into `self._mf_rows`: every kind studied (`family_lore.studied`) and
+every creature in view (`_sees_monster`), never a boss or named foe
+(`sketch_manifest.can_draw`); `_mf_tabs` (`sketch_manifest.tabs`), and the opening tab
+and its reason in `_mf_open`. With no rows the menu stays shut: "You open
+the sketchbook, but there is nothing to draw yet. Study a creature
+first."
+
+**Tabs:** All, then one per bite type she can draw, in
+`affinity.HERO_TYPES` order, each with its count. Left / Right (Tab,
+Shift+Tab back) move, wrapping round. A known foe in view (its kind
+KNOWN: `family_lore.knowledge`) makes the menu open on the bite type it
+is weak to with the most kinds (`sketch_manifest.opening_tab`), the tab marked
+with a pip and the reason beside or under the strip ("Opened on Blunt:
+Strong against Skeleton"); else on All.
+
+**List** (`_manifest_draw_list`, laid out by `_manifest_list_layout`,
+cached until the menu opens again): rows sorted by level, highest
+first, then name. A row: the kind's own small picture (its map sprite,
+`_manifest_icon`; never a glyph), its name, "Level 8, Pierce" (and "In
+View" for a kind seen but never studied), and a **Weak!** chip when a
+known foe in view is weak to its bite. Names at 20, 18, then 16 px;
+still too many, the list scrolls (`cook_menu.window`), with a bar and
+"6-9 of 272".
+
+**Detail** (`_manifest_draw_detail`, planned by `_manifest_detail_plan`
+down `_MANIFEST_DETAIL_LADDER`): the name; the picture LARGE
+(`lore_art.plate('monster', kind)` in `_draw_plate_well`); beside it
+Level, Attack (type and the attack's name), Health (40% of the kind's
+mean HP), Bite and Drawn From (Memory or Sight); "Strong against <Name>"
+(green) and "Resisted by <Name>" (amber) for the known foes in view; How
+It Lasts ("Lasts INT (14) + 5 turns for each right answer: up to 39
+turns."); the quiz line; Enter's action.
+
+**Input:** `_manifest_input`. Up / Down, PgUp / PgDn, Home / End move;
+Enter draws (the AI escalator chain, `_manifest_begin` →
+`_manifest_complete`); Esc closes with no turn spent (the generic close
+in `handle_event`).
+
+**Captures:** `menu_manifest`, `menu_manifest_weak`, `menu_manifest_long`
+(`tools/ui/capture.py`). Tests: `tests/test_manifest.py`.
 
 ---
 

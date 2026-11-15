@@ -159,6 +159,9 @@ def test_mnk07_with_no_room_the_sketch_fades_and_nothing_stacks():
 
 
 def test_mnk07_the_dreamspun_sketch_never_lands_on_the_hero_when_crowded():
+    # (Manifest draws from its menu now, a studied kind or one in view:
+    # game_manifest.py. The placement rule is the same.)
+    import sketch_manifest as manifest
     from quiz_engine import QuizResult
     from test_shep import _monster
     g = _game(2)
@@ -168,11 +171,8 @@ def test_mnk07_the_dreamspun_sketch_never_lands_on_the_hero_when_crowded():
     # Every neighbour taken; open floor two tiles out.
     g.monsters = [_monster(x + dx, y + dy) for dx in (-1, 0, 1) for dy in (-1, 0, 1)
                   if (dx, dy) != (0, 0)]
-    target = g.monsters[0]
     g.visible = {(i, j) for j in range(g.dungeon.height) for i in range(g.dungeon.width)}
-    g._pending_power = 'sketch_manifest'
-    g.target_cursor_x, g.target_cursor_y = target.x, target.y
-    g._confirm_power_target()
+    g._manifest_begin(manifest.row_for('goblin', studied={'goblin'}))
     g.quiz_engine.callback(QuizResult(success=True, score=2, correct=2, asked=2))
     assert len(g.pets) == 1
     pet = g.pets[0]

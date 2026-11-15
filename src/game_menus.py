@@ -1282,15 +1282,18 @@ class MenuMixin:
             }
             powers.append(('stuffie_fire_breath', _fb_def, 0, _fb_cd))
 
-        # Dreamspun Sketchbook grants "Manifest" when carried
+        # Dreamspun Sketchbook grants "Manifest" when carried (its menu and
+        # the drawing: game_manifest.py; the rules: sketch_manifest.py, data/manifest.json)
         if any(getattr(i, 'id', '') == 'dreamspun_sketchbook' for i in pl.inventory):
-            _sk_cd = power_cds.get('sketch_manifest', 0)
+            import sketch_manifest as _manifest
+            _sk_id = _manifest.power_id()
+            _sk_cd = power_cds.get(_sk_id, 0)
             _sk_def = {
                 'label': 'Manifest',
-                'desc': 'Sketch a visible creature and bring it to life as a temporary ally.',
-                'cooldown': 500, 'uses': 0,
+                'desc': 'Draw a creature you have studied, or one in view, as a short-lived ally.',
+                'cooldown': _manifest.cooldown(), 'uses': 0,
             }
-            powers.append(('sketch_manifest', _sk_def, 0, _sk_cd))
+            powers.append((_sk_id, _sk_def, 0, _sk_cd))
 
         # Gleipnir grants "Bind Odinkiller" when carried
         if any(getattr(i, 'id', '') == 'gleipnir' for i in pl.inventory):
@@ -1643,28 +1646,10 @@ class MenuMixin:
             pl.power_cooldowns['elder_scream'] = 20
 
         elif pid == 'sketch_manifest':
-            # Enter targeting mode — quiz + pet spawn on confirm
-            px, py = pl.x, pl.y
-            candidates = [
-                m for m in self.monsters
-                if m.alive and (m.x, m.y) in self.visible
-            ]
-            candidates.sort(key=lambda m: abs(m.x - px) + abs(m.y - py))
-            if not candidates:
-                self.add_message("You open the sketchbook, but there is nothing to draw.", 'warning')
-                return False
-            self._target_candidates = candidates
-            self._target_idx = 0
-            self._power_targeting = True
-            self._pending_power = 'sketch_manifest'
-            self.target_cursor_x = candidates[0].x
-            self.target_cursor_y = candidates[0].y
-            self.state = STATE_TARGET
-            self.add_message(
-                "You flip open the Dreamspun Sketchbook... select a creature to sketch! "
-                "Arrow keys to aim, TAB to cycle, ENTER to begin drawing.",
-                'info')
-            return True  # defer _advance_turn()
+            # The Manifest menu: every kind she has studied and any in view
+            # (game_manifest.py). Opening it, or finding nothing to draw,
+            # spends no turn; the drawing's quiz does.
+            return self._open_manifest_menu()
 
         elif pid == 'stuffie_fire_breath':
             # Enter targeting mode — damage applied on confirm

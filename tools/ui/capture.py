@@ -1737,6 +1737,52 @@ def _(g):
     press(g, pygame.K_END)
 
 
+# -- Manifest (the Dreamspun Sketchbook's menu: game_manifest.py) ---------------
+
+# Kinds of every bite type, levels 1 to 28.
+MANIFEST_STUDIED = ('goblin', 'giant_rat', 'skeleton', 'cave_toad', 'zombie', 'fire_beetle',
+                    'wraith', 'acid_blob', 'harpy', 'gelatinous_cube', 'cerberus', 'minotaur')
+
+
+def _manifest_open(g, studied=MANIFEST_STUDIED, foe=None):
+    """The Dreamspun Sketchbook in the pack, ``studied`` studied, ``foe``
+    set down in view; then V, Manifest, Enter (real keys)."""
+    from items import make_item_by_id
+    book = make_item_by_id('accessory', 'dreamspun_sketchbook')
+    book.id_level = 5
+    g.player.inventory.append(book)
+    g.player.refresh_carry_bonuses()
+    g.player.studied_monster_ids = set(g.player.studied_monster_ids or ()) | set(studied)
+    if foe:
+        _add_monster(g, (foe,))
+        g._refresh_fov()
+    press(g, pygame.K_v, 'v')
+    idx = next(i for i, p in enumerate(g._power_menu_list) if p[0] == 'sketch_manifest')
+    for _ in range(idx):
+        press(g, pygame.K_DOWN)
+    press(g, pygame.K_RETURN)
+
+
+@scene('menu_manifest', 'Menus', 'V, Manifest: every kind studied, by level, the All tab.',
+       expect='manifest_menu')
+def _(g):
+    _manifest_open(g)
+
+
+@scene('menu_manifest_weak', 'Menus', 'V, Manifest with a studied Skeleton in view: it opens '
+       'on Blunt, says why, and marks the kinds it is weak to.', expect='manifest_menu')
+def _(g):
+    _manifest_open(g, foe='skeleton')
+
+
+@scene('menu_manifest_long', 'Menus', 'V, Manifest after the QA key (every kind to level 10), '
+       'End: a long list, scrolled to its last kind.', expect='manifest_menu')
+def _(g):
+    import sketch_manifest
+    _manifest_open(g, studied=sketch_manifest.qa_kinds(1))
+    press(g, pygame.K_END)
+
+
 @scene('menu_drop', 'Menus', 'D (off an altar/fountain): drop.', expect='drop_menu')
 def _(g):
     g._open_drop_menu()

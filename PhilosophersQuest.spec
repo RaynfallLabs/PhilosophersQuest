@@ -75,6 +75,7 @@ added_files = [
     ('data/arsenal.json',           'data'),   # coatings, flasks, Press or Guard, named counters (coatings.py)
     ('data/combat_lines.json',      'data'),   # how a monster's attack is said in a line (monster.attack_line)
     ('data/cooking_rules.json',     'data'),   # every number a cooked dish gives (kitchen.py)
+    ('data/manifest.json',          'data'),   # the Dreamspun Sketchbook's Manifest (manifest.py)
     # Game data — directories
     ('data/items',                  'data/items'),
     ('data/materials',              'data/materials'),

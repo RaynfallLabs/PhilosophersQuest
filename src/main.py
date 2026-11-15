@@ -104,6 +104,7 @@ from bococho_encounter import (BocochoMixin, new_run_state as _bococho_new_run,
 from game_race import RaceMixin
 from game_riding import RidingMixin
 from game_bococho_render import BocochoRenderMixin
+from game_manifest import ManifestMixin
 from spells import LEARNABLE_SPELLS
 
 
@@ -271,7 +272,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
            SetneMixin, TraderMixin, PurseMixin, FamilyMixin, SeekerMixin, PopupMixin,
            HazardsMixin, LoreFixturesMixin, DressingMixin, ArsenalMixin,
            MoobleMixin, MoobleDanceMixin,
-           BocochoMixin, RaceMixin, RidingMixin, BocochoRenderMixin):
+           BocochoMixin, RaceMixin, RidingMixin, BocochoRenderMixin, ManifestMixin):
     # FANTASY: Grimoire font set -- larger for readability. Read through the
     # UI scale on every use (SCALE_PLAN.md): a window resize can never leave
     # a font of the old size behind.

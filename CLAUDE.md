@@ -136,6 +136,8 @@ src/
   riding.py           - Riding the Bococho, the rules: getting on, the two-tile step, what sets the rider down
   game_riding.py      - RidingMixin: mount and dismount, the mounted step, set-downs, her saddlebags
   escort_system.py    - Escorts: people the hero walks somewhere
+  sketch_manifest.py  - Manifest, the Dreamspun Sketchbook's power (pure): what she can draw (studied or in view, no bosses), the bite's type, INT + 5 turns a right answer, the menu's rows and tabs
+  game_manifest.py    - ManifestMixin: the Manifest menu (V, Manifest), the AI quiz, the sketch set down beside her, the QA key (Shift+V)
 
   # Quiz
   quiz_engine.py      - All quiz logic (threshold, chain, escalator modes)
@@ -201,6 +203,7 @@ data/
   stray_kids.json, abandoned_emberpup.json - Two of the run's set pieces (the Stray Kids stage; the Emberpup and Old Nickel)
   mooble.json       - The Mooble: his floors, lines, the dance (windows, pass mark, phrases and tempi) and his pet species
   bococho.json      - The Bococho: the camp, Varro, the race's numbers and words, the pet, her saddlebags, riding
+  manifest.json     - Manifest: what the sketchbook can draw, the bite-type map, the quiz, INT + 5 turns a right answer, the cooldown
   (data/ holds only runtime JSON; the old generator/migration scripts were moved out)
 
 assets/

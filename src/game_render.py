@@ -59,7 +59,7 @@ from game_states import (
     STATE_BOON_MENU,
     STATE_PET_MENU, STATE_PET_FEED, STATE_PET_HEAL, STATE_PET_SPECIALS,
     STATE_QA_WARP_INPUT, STATE_MESSAGE_LOG, STATE_TOPIC_CARD,
-    STATE_ASK, STATE_LOADOUTS,
+    STATE_ASK, STATE_LOADOUTS, STATE_MANIFEST_MENU,
 )
 
 
@@ -2413,6 +2413,8 @@ class RenderMixin:
             self._draw_throw_menu()
         elif self.state == STATE_POWER_MENU:
             self._draw_power_menu()
+        elif self.state == STATE_MANIFEST_MENU:
+            self._draw_manifest_menu()             # game_manifest.ManifestMixin
         elif self.state == STATE_CONFIRM_EXIT:
             self._draw_confirm_exit()
         elif self.state == STATE_EXIT_QUEST:

@@ -45,7 +45,7 @@ from game_states import (
     STATE_BOON_MENU,
     STATE_PET_MENU, STATE_PET_FEED, STATE_PET_HEAL, STATE_PET_SPECIALS,
     STATE_QA_WARP_INPUT, STATE_MESSAGE_LOG, STATE_TOPIC_CARD,
-    STATE_ASK, STATE_LOADOUTS,
+    STATE_ASK, STATE_LOADOUTS, STATE_MANIFEST_MENU,
 )
 
 
@@ -265,7 +265,7 @@ class InputMixin:
                               STATE_EXAMINE, STATE_ENCYCLOPEDIA,
                               STATE_DROP_MENU, STATE_DROP_GOLD_INPUT, STATE_DROP_QTY_INPUT,
                               STATE_MYSTERY_APPROACH, STATE_SHOP,
-                              STATE_POWER_MENU, STATE_STUDY,
+                              STATE_POWER_MENU, STATE_MANIFEST_MENU, STATE_STUDY,
                               STATE_PET_MENU, STATE_MESSAGE_LOG,
                               STATE_INTERCESSION_PROMPT, STATE_PRAYER_MENU,
                               STATE_JUDGMENT):
@@ -466,6 +466,13 @@ class InputMixin:
                 # pressed again, the photo in the pack (game_stray_kids.py).
                 self._qa_stray_kids()
                 return True
+            if uni == 'V' and getattr(self.player, 'qa_tools', False):
+                # Titivillus QA build: the Dreamspun Sketchbook in the pack,
+                # every kind it can draw up to max(10, floor + 5) studied and
+                # Manifest ready (lowercase v is the powers menu;
+                # game_manifest._qa_manifest).
+                self._qa_manifest()
+                return True
             self._player_input(key)
         elif self.state == STATE_TARGET:
             self._target_input(key)
@@ -489,6 +496,8 @@ class InputMixin:
             self._identify_menu_input(key)
         elif self.state == STATE_COOK_MENU:
             self._cook_menu_input(key)
+        elif self.state == STATE_MANIFEST_MENU:
+            self._manifest_input(key)
         elif self.state == STATE_EAT_MENU:
             self._eat_menu_input(key)
         elif self.state == STATE_QUAFF_MENU:

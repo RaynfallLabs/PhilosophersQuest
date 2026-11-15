@@ -1,6 +1,6 @@
 # Pets
 
-**Scope.** Companion creatures that follow the player, fight alongside them, and (for most species) level up and evolve. The entire system is in `src/pet_system.py` — species dictionary, Pet base class, four subclassed one-off pets, and the `random_species()` picker. Call sites that spawn or transform pets live in `src/game_combat.py` (the six Soul Spheres, the Unusual Soul Sphere (Dad), summon-at-adjacent), `src/main.py` (`_duck_of_doom_transform`), `src/hero_specials.py` (Leonardo's Codex Sketch), `src/game_encounters.py` (Unicorn), and `src/game_menus.py` (Shift+P pet menu — feed, heal, pet-interaction, recall, command cycle, specials).
+**Scope.** Companion creatures that follow the player, fight alongside them, and (for most species) level up and evolve. The entire system is in `src/pet_system.py` — species dictionary, Pet base class, four subclassed one-off pets, and the `random_species()` picker. Call sites that spawn or transform pets live in `src/game_combat.py` (the six Soul Spheres, the Unusual Soul Sphere (Dad), summon-at-adjacent), `src/main.py` (`_duck_of_doom_transform`), `src/hero_specials.py` (Leonardo's Codex Sketch), `src/game_manifest.py` (the Dreamspun Sketchbook's Manifest), `src/game_encounters.py` (Unicorn), and `src/game_menus.py` (Shift+P pet menu — feed, heal, pet-interaction, recall, command cycle, specials).
 
 Out of scope here: pet damage resolution inside combat (see [combat](combat.md)), quirks that change pet behavior (see [progression](progression.md)), and the specific items that spawn or heal pets (Soul Sphere, pet-food, healing potions on pets — see [items](items.md)).
 
@@ -12,6 +12,8 @@ src/game_combat.py      # the six Soul Spheres, the Unusual Soul Sphere (Dad), b
 src/game_menus.py       # Shift+P pet menu + sub-menus (feed/heal/pet/recall/command/specials)
 src/game_encounters.py  # UnicornPet spawn via unicorn-encounter chain
 src/hero_specials.py    # SketchedPet via Leonardo's Codex (summon_sketch_helper)
+src/sketch_manifest.py, src/game_manifest.py, data/manifest.json
+                        # SketchedPet via the Dreamspun Sketchbook's Manifest (its menu, the quiz)
 src/main.py             # _duck_of_doom_tick + _duck_of_doom_transform, FenrirPet via XYZZY T5
 src/bococho_encounter.py, src/game_race.py, src/race.py, src/riding.py, src/game_riding.py
                         # the Bococho: the camp, the race, her saddlebags, riding
@@ -249,7 +251,7 @@ Dad overrides to return 0 (invincible). Unicorn's `base_damage = 0` means the pe
 Brandon's rule: one bonded companion walks with the hero. Before a new one joins, `CombatMixin._companions_to_stasis()` puts the one at his side back into a Bound Soul Sphere in the pack (from any distance, state kept, exactly as Recall does; `_bound_sphere_for` builds the sphere for both). In the sphere it gains no XP and needs no food. A pack over its limit sets the sphere at the hero's feet; it is never lost. A save from before the rule may have several companions out: the next join stores all of them.
 
 - **Counts** (`pet_system.is_companion`): a pet from any of the six Soul Spheres or a bound sphere (the family cats and Shep too, and a rare hatch from the Unusual Soul Sphere), the Emberpup, the Mooble, the Bococho, Waddlekind, and the Summon Guardian and Gate spells.
-- **Extras, never stored:** Dad, Leonardo's sketch, an ally sprung from a kill (`_temp_duration`), Fenrir, the Army of Darkness deadites (`_summoned_minion`), and the unicorn (a healer that never fights). A bound sphere holding one of these does not store the companion when thrown.
+- **Extras, never stored:** Dad, a sketch (the Sketchbook's Manifest or Leonardo's helper), an ally sprung from a kill (`_temp_duration`), Fenrir, the Army of Darkness deadites (`_summoned_minion`), and the unicorn (a healer that never fights). A bound sphere holding one of these does not store the companion when thrown.
 
 ### 4.1 The six Soul Spheres — thrown by the player
 
@@ -294,17 +296,28 @@ Fenrir's species dict (`_FENRIR_SPECIES`, module-level) carries two specials unl
 - **Ragnarok Bite** — adjacent single target, 2.2× holy, 50% bleed 5t (cd 200)
 - **World-Shaking Howl** — pet-centered AoE r3, 1.4× holy, 60% fear 4t (cd 500)
 
-### 4.4 SketchedPet — Leonardo's Codex Sketch
+### 4.4 SketchedPet — the Dreamspun Sketchbook's Manifest, and Leonardo's Codex Sketch
 
-Spawned by `hero_specials.py::_eff_summon_sketch_helper` (hero special id `summon_sketch_helper`). The caller passes a target `monster`, player position, and a tier-driven duration:
+Two things make a sketch: Manifest, the power the **Dreamspun Sketchbook** grants while carried (Fianna, Fluffs and Leonardo start with it), and Leonardo's hero special Codex Sketch (`hero_specials.py::_eff_summon_sketch_helper`, special id `summon_sketch_helper`). Both are helpers that come and go, never a companion (§4.0).
 
 ```python
 class SketchedPet(Pet):
-    SCALE = 0.40   # 40% of monster stats
+    SCALE = 0.40          # 40% of the subject's health
+    bite_type = 'physical'   # class default: a sketch pickled before 2026-11-15
     def __init__(self, monster, px, py, duration):
 ```
 
-The sketch mimics the subject's `symbol` and `name` at 40% of its HP. A Dreamspun Sketchbook drawing bites like a pet of its subject's level (`growth('bite', level)`). Leonardo's helper bites by its table's dice (`bite_dice`: `'1d8+2'` at chain 1 → `'3d8+6'` at chain 5); bug bash 4, ruling 30: the table was never read and a chain-5 helper bit for 254 on floor 1.
+**Manifest (2026-11-15; Brandon: "she should be able to Manifest ANY monster she has studied... sorted by level, descending"; "the image last[s] based on how many quiz questions she gets right, with the base being her INT").** The rules are `data/manifest.json` and the pure `src/sketch_manifest.py`; the Game side (menu, quiz, spawn, QA key) is `src/game_manifest.py` (`ManifestMixin`).
+
+- **She draws from memory.** V, Manifest opens `STATE_MANIFEST_MENU` (no turn spent): every kind she has **studied** (`family_lore.studied`: a correct corpse study, the Wand of Probing, Omnisight) plus any creature **in view** (`Game._sees_monster`; so a first meeting can still be drawn). Never a boss or a named foe: a kind with `is_boss`, `is_mini_boss`, `proper_noun`, `quest_only`, `is_seal_demon` or `is_allied` (`exclude_flags`), the cow level's `hell_bovine` and `cow_king` and the Black Knight (`exclude_kinds`), or a kind with no `family` or no attack. With nothing to draw: "You open the sketchbook, but there is nothing to draw yet. Study a creature first."
+- **The menu** (`ui.md` §13b): tabs All, then one per bite type she can draw (in `affinity.HERO_TYPES` order, each with its count); rows sorted by level, highest first, then name, each with the kind's picture, name, level and bite type ("In View" for a kind seen but never studied). A creature in view whose kind she KNOWS (`family_lore.knowledge` = KNOWN: studied, its page opened, or its family at Lore) marks every row whose bite it is weak to with **Weak!**; the detail says "Strong against <Name>" (and "Resisted by <Name>"), and the menu opens on the tab with the most such kinds ("Opened on Blunt: Strong against Skeleton"), else on All. The detail pane: the picture large, level, attack type, health, bite, memory or sight, how long it lasts. Enter draws; Esc closes, no turn spent.
+- **The quiz is unchanged:** AI, `escalator_chain`, tier 1, max chain 5 (`quiz`). No right answer and the page smudges (no sketch, the power stays ready).
+- **Duration = INT + 5 turns for each right answer** (`base_stat` + `turns_per_right` x chain): INT 14 with all five right is 39 turns (Fianna's INT 14 is 16 while she carries the sketchbook, its `carry_bonus`: 41 turns). The menu says it: "Lasts INT (14) + 5 turns for each right answer: up to 39 turns."
+- **The sketch** is made from the kind's definition (`Monster(dict(defn, id=kind))`), its health the kind's MEAN health (`sketch_manifest.mean_hp`, from its `hp` dice) times `SCALE`, set beside the hero (a free tile next to him, else `_escort_tile_near_hero`, never his own tile; no room and it fades). The power then rests for `cooldown` (500) turns.
+- **It fights like its subject.** `bite_type` is the subject's FIRST attack's `type` in the hero's words (`sketch_manifest.bite_type_of`): the HERO_TYPES as they are; `necrotic` and `shadow` drain, `psionic` is magic, a plain `physical` blow is blunt (`type_map`); anything else stays plain physical. In `Game._do_pet_turns` a sketch's bite calls `target.take_damage(dmg, bite_type)`, so a weakness doubles it, a resistance halves it, and the hit lines say so (`affinity.note`). Every other pet's plain bite is still physical. A sketch pickled before this has no `bite_type` of its own and reads the class default, physical: it bites as it always did.
+- **QA:** on the Titivillus build, Shift+V puts the sketchbook in the pack, studies every kind it can draw up to `min_level` max(10, floor + 5) (`qa`) and readies the power (`ManifestMixin._qa_manifest`).
+
+**Bite and level.** The sketch's level is its subject's `min_level` (1-100); a Sketchbook drawing bites like a pet of that level (`growth('bite', level)`, give or take a fifth). Leonardo's helper bites by its table's dice (`bite_dice`: `'1d8+2'` at chain 1 → `'3d8+6'` at chain 5); bug bash 4, ruling 30: the table was never read and a chain-5 helper bit for 254 on floor 1. The helper's attack has no type, so it bites plain physical.
 
 Overrides:
 - `name` reports `"Sketched <monster_name>"`.

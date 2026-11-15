@@ -43,6 +43,7 @@ STATE_STORY_POPUP    = 'story_popup'     # Narrative popup (quest intro, boss de
 STATE_MYSTERY_APPROACH = 'mystery_approach'  # Player is approaching a mystery altar
 STATE_SHOP             = 'shop'              # A trader's shop: Buy, Sell, Services
 STATE_POWER_MENU       = 'power_menu'        # Active powers menu (V key)
+STATE_MANIFEST_MENU    = 'manifest_menu'     # V, Manifest: the sketchbook's creatures to draw (game_manifest.py)
 STATE_HACK_REALITY     = 'hack_reality'      # Hack Reality result display
 STATE_XYZZY_INPUT      = 'xyzzy_input'       # Hidden green terminal text input
 STATE_XYZZY_CONFIRM    = 'xyzzy_confirm'     # "Hack reality?" Yes/No warning

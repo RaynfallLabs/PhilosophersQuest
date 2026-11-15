@@ -623,7 +623,7 @@ stripped from loaded saves (`Player.__setstate__`, `src/player.py:650`).
 
 Users today:
 - **Charmander Stuffie** (`carry_bonus: {"stat": "CON", "amount": 2}`)
-- **Dreamspun Sketchbook**
+- **Dreamspun Sketchbook** (`carry_bonus: {"stat": "INT", "amount": 2}`; carried, it also grants Manifest in the V menu: [pets](pets.md) §4.4)
 
 Any new keepsake item can opt in by adding the field to its JSON entry.
 

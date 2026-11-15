@@ -1,0 +1,26 @@
+{
+  "_doc": "Manifest, the Dreamspun Sketchbook's power (src/sketch_manifest.py is the pure rules, src/game_manifest.py the menu and the drawing; docs/systems/pets.md 4.4). Fianna, Fluffs and Leonardo start with the sketchbook; carried, it puts Manifest in the V menu. She draws from MEMORY: the menu lists every kind she has studied (family_lore.studied: a correct corpse study, the Wand of Probing, Omnisight) and any creature in view, so a first meeting can still be drawn. Never a boss or a named foe: a kind with any of exclude_flags set, or named in exclude_kinds (the cow level; the Black Knight of the bridge), or without a family or an attack. The drawing fights like its subject: its bite lands as the subject's FIRST attack's type, a weapon word or an element the hero's own blows use (affinity.HERO_TYPES); type_map turns the creature-only types into the nearest of them, and a type that is none of these (or none at all) lands as plain physical. Choosing a kind asks the quiz (AI, an escalator chain to max_chain): no right answer and the page smudges; else the sketch lasts base_stat (her INT) plus turns_per_right turns for each right answer, and the power rests for cooldown turns. Its health is 40% of the kind's mean health (pet_system.SketchedPet.SCALE), its bite a pet's bite at the kind's own level (data/pet_growth.json). qa: the Titivillus QA key studies every kind it can draw up to min_level max(min_level_floor, floor + levels_past_floor).",
+  "power_id": "sketch_manifest",
+  "cooldown": 500,
+  "quiz": {
+    "subject": "ai",
+    "mode": "escalator_chain",
+    "tier": 1,
+    "max_chain": 5
+  },
+  "base_stat": "INT",
+  "turns_per_right": 5,
+  "exclude_flags": ["is_boss", "is_mini_boss", "proper_noun", "quest_only", "is_seal_demon", "is_allied"],
+  "exclude_kinds": ["hell_bovine", "cow_king", "black_knight"],
+  "type_map": {
+    "necrotic": "drain",
+    "shadow": "drain",
+    "psionic": "magic",
+    "physical": "blunt"
+  },
+  "unknown_type": "physical",
+  "qa": {
+    "min_level_floor": 10,
+    "levels_past_floor": 5
+  }
+}
