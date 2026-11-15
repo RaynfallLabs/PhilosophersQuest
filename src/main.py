@@ -9061,17 +9061,16 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             if getattr(result, 'success', False):
                 corpse.id_level = 5
                 self._on_full_identify(corpse)
+                from monster import the_name as _the, a_name as _a, kind_of_corpse as _kind
                 self._chron(
                     'milestone',
-                    f"Took {self._a_or_an(corpse.monster_name)} apart to see how it worked. "
+                    f"Took {_a(_kind(corpse))} apart to see how it worked. "
                     "You learn a lot about a thing by how it comes apart.",
                     once='first_corpse_study')
                 self._lore_subject = corpse
                 self.state = STATE_LORE
-                self.add_message(
-                    f"You understand the {corpse.monster_name} now.",
-                    'success'
-                )
+                self.add_message(f"You understand {_the(_kind(corpse), lower=True)} now.",
+                                 'success')
                 # The monster TYPE is now known forever (_learn_kind, the
                 # one path a corpse study and the Wand of Probing share): its
                 # page opens, every corpse of it is known and future corpses
@@ -9086,8 +9085,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 # The identify_orb handler stays registered for future
                 # non-lore effects.
             else:
+                from monster import the_name as _the, kind_of_corpse as _kind
                 self.add_message(
-                    f"You study the {corpse.monster_name} but its nature eludes you.",
+                    f"You study {_the(_kind(corpse), lower=True)} but its nature eludes you.",
                     'warning'
                 )
                 # Backlash from the Shard: a wrong answer stuns the kid.

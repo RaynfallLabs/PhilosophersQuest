@@ -1088,3 +1088,34 @@ def test_351_e09_a_dish_eaten_unhurt_heals_nothing_it_claims(make_game):
     assert 'HP' not in eat.replace('max HP', '') and 'MP' not in eat, eat
     assert p.hp == p.max_hp
     no_errors(h)
+
+
+def test_351_e10_a_named_foes_corpse_is_studied_by_name(make_game):
+    """Arachne killed (a scene: one blow) and her corpse studied (I): "You
+    understand the Arachne now." A skeleton's is still "the Skeleton"."""
+    import items
+    g, h = make_game()
+    p = g.player
+    p.hp = p.max_hp = 10 ** 4
+    open_floor(g, p.x, p.y, 3)
+    for kind, line in (('arachne', 'You understand Arachne now.'),
+                       ('skeleton', 'You understand the Skeleton now.')):
+        m = place_monster(g, kind, 1)
+        m.hp = 1
+        g._refresh_fov()
+        h.said()
+        blow(h, m, 3)
+        assert not m.alive
+        corpse = next(i for i in g.ground_items if isinstance(i, items.Corpse)
+                      and i.monster_id == kind)
+        go_to(h, corpse.x, corpse.y)
+        h.said()
+        h.key('i')
+        entry = next(n for n, e in enumerate(g.identify_menu_items) if e[0] is corpse)
+        h.key(getattr(pygame, f'K_{chr(97 + entry)}'))
+        h.quiz(5)
+        assert line in h.said(), kind
+        while g.state != 'player':
+            h.key(pygame.K_ESCAPE)
+        go_to(h, p.x - 1 if g.dungeon.is_walkable(p.x - 1, p.y) else p.x + 1, p.y)
+    no_errors(h)

@@ -153,6 +153,25 @@ def an_article(word: str) -> str:
     return 'an' if w[0] in 'aeiou' else 'a'
 
 
+def kind_of_corpse(corpse):
+    """A stand-in for the creature a corpse was, for the_name and a_name:
+    its name and whether it was a named foe ("You understand the Asterion
+    the Minotaur now." was said of a boss's corpse: bug bash 3.5.1 E)."""
+    from types import SimpleNamespace
+    md = dict(getattr(corpse, 'monster_def', None) or {})
+    try:                    # the body keeps no flags: its kind's data does
+        import affinity
+        md = {**(affinity._monster_defs().get(getattr(corpse, 'monster_id', '')) or {}), **md}
+    except (OSError, ValueError):
+        pass
+    return SimpleNamespace(
+        name=str(getattr(corpse, 'monster_name', '') or md.get('name', '') or 'creature'),
+        kind=getattr(corpse, 'monster_id', '') or md.get('id', ''),
+        is_boss=bool(md.get('is_boss')), is_mini_boss=bool(md.get('is_mini_boss')),
+        is_seal_demon=bool(md.get('is_seal_demon')), proper_noun=bool(md.get('proper_noun')),
+        _aware=True, ai_pattern='')
+
+
 def a_name(monster, lower: bool = True) -> str:
     """A monster's name with an indefinite article, as first seen: "a
     Skeleton", "an Orc Scout", but "Arachne", "The Sphinx" (a named foe is a
