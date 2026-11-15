@@ -32,8 +32,8 @@ import layout
 import lore_art
 import sketch_manifest as manifest
 import ui_theme
-from fantasy_ui import (FP, KT, get_font, draw_dark_panel, draw_overlay, panel_band,
-                        readable, display_text, kit_on)
+import fantasy_ui
+from fantasy_ui import (FP, KT, get_font, panel_band, readable, display_text, kit_on)
 from game_states import STATE_PLAYER, STATE_QUIZ, STATE_MANIFEST_MENU
 from geom import monster_at_tile
 from naming import quantity
@@ -295,11 +295,15 @@ class ManifestMixin:
         rows = self._manifest_tab_rows(slug)
         open_slug, reason = getattr(self, '_mf_open', None) or (manifest.ALL, '')
 
-        draw_overlay(self.screen, 190)
+        # Read from fantasy_ui each time, as the other screens import them
+        # when they draw: the UI gates' panel spy (tools/ui/capture.py) wraps
+        # fantasy_ui.draw_dark_panel, and a name bound at import time missed
+        # it whenever an earlier test had imported this module first.
+        fantasy_ui.draw_overlay(self.screen, 190)
         bw = min(S(1240), _budget_w() - S(32))
         bh = min(S(720), layout.WINDOW_H - S(32))
         panel = pygame.Rect(*_centre(bw, bh), bw, bh)
-        draw_dark_panel(self.screen, panel, border_color=border)
+        fantasy_ui.draw_dark_panel(self.screen, panel, border_color=border)
         body_top = self._ui_header(panel, "Manifest", border_color=border)
         side = panel_band('panel', panel) + S(14)
         cx, cw = panel.x + side, panel.w - 2 * side
