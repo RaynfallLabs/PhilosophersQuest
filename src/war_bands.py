@@ -178,6 +178,30 @@ def place_band(dungeon, monsters: list, level: int, rng=None) -> list:
     return members
 
 
+def camp_tiles(dungeon) -> set:
+    """Every tile of the room a war-band has made camp in (dungeon.band
+    'room'), or an empty set. The people of the run (the Road's anchors and
+    story folk, a trader's stall, the Emberpup, Old Nickel, the unicorn) are
+    set down after the band and never in its camp: a trader's stall or a
+    wounded stranger among a sleeping gang of footpads meant fighting the
+    band to talk (bug bash 3.5.1, with bands from floor 1)."""
+    band = getattr(dungeon, 'band', None) if dungeon is not None else None
+    room = band.get('room') if isinstance(band, dict) else None
+    if not room:
+        return set()
+    x, y, w, h = (int(v) for v in room)
+    return {(tx, ty) for ty in range(y, y + h) for tx in range(x, x + w)}
+
+
+def outside_camp(dungeon, rooms) -> list:
+    """``rooms`` without the war-band's camp (all of them when the camp is
+    the only one)."""
+    camp = camp_tiles(dungeon)
+    if not camp:
+        return list(rooms)
+    return [r for r in rooms if (r.x, r.y) not in camp] or list(rooms)
+
+
 def roster_text(band: dict) -> str:
     d = data()
     names = d.get('role_names', {})

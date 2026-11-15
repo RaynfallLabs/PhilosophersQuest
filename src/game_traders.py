@@ -150,10 +150,15 @@ class TraderMixin:
         # the hero corner him, and start the fight, just to trade.
         homes = [h for mo in self.monsters
                  if getattr(mo, 'alive', True) and (h := getattr(mo, '_wary_home', None))]
+        # Nor in a war-band's camp (war_bands.camp_tiles): a stall among a
+        # sleeping gang of footpads meant fighting the band to trade.
+        import war_bands
+        camp = war_bands.camp_tiles(d)
 
         def ok(x, y):
             return (d.tiles[y][x] == FLOOR and (x, y) in reach and (x, y) not in taken
-                    and (x, y) not in crowd and max(abs(x - px), abs(y - py)) >= 3
+                    and (x, y) not in crowd and (x, y) not in camp
+                    and max(abs(x - px), abs(y - py)) >= 3
                     and not any(h[0] <= x <= h[2] and h[1] <= y <= h[3] for h in homes))
         rooms = list(getattr(d, 'rooms', None) or [])
         for room in rooms[1:] + rooms[:1]:

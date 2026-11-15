@@ -71,6 +71,79 @@ def test_floor_ones_atmosphere_is_said_at_the_start_and_only_once():
     assert _texts(g).count(atmo[0]) == 1
 
 
+# ------------------------------------------- the run's people and the camp
+
+def _camp_game():
+    """A floor-1 game whose war-band camps in rooms[1], every creature
+    cleared away (so the camp's tiles are free and only the rule keeps the
+    spawners out of them)."""
+    from test_bug_bash_5_encounters import _game
+    g = _game(7)
+    r = g.dungeon.rooms[1]
+    g.dungeon.band = {'id': 'footpads', 'uid': 'u', 'leader_kind': 'bandit_captain',
+                      'room': (r.x, r.y, r.width, r.height), 'counts': {}, 'said': True}
+    g.monsters = []
+    g.ground_items = [i for i in g.ground_items if type(i).__name__ != 'MerchantNPC']
+    return g, war_bands.camp_tiles(g.dungeon)
+
+
+def test_no_encounter_npc_or_unicorn_is_set_down_in_a_war_bands_camp():
+    """A wounded stranger or the unicorn among a sleeping gang of footpads
+    meant fighting the band to talk (bands camp on more than half of the
+    floors from floor 1 since 3.5.1)."""
+    g, camp = _camp_game()
+    assert camp
+    enc = {'tag': '__camp_test__', 'name': 'Marta', 'symbol': '@', 'color': [1, 1, 1]}
+    for seed in range(40):
+        random.seed(seed)
+        npc = g._spawn_encounter_npc(enc, '_flavor_encounter_tag', 1)
+        assert npc is not None
+        assert (npc.x, npc.y) not in camp, seed
+        g.monsters.remove(npc)
+    for seed in range(40):
+        random.seed(seed)
+        g._unicorn_spawned = False
+        g._unicorn_target_level = 25
+        g._maybe_spawn_unicorn(25)
+        uni = [m for m in g.monsters if getattr(m, '_is_unicorn', False)]
+        assert len(uni) == 1 and (uni[0].x, uni[0].y) not in camp, seed
+        g.monsters.remove(uni[0])
+
+
+def test_no_trader_sets_out_his_stall_in_a_war_bands_camp():
+    """The stall went in the first room past the arrival room with a free
+    tile, camp or no camp."""
+    import road
+    g, camp = _camp_game()
+    for seed in range(10):
+        spot = g._trader_spot(road.rng_for(seed, 'trader:1'))
+        assert spot is not None and spot not in camp, seed
+
+
+def test_the_emberpup_and_old_nickel_are_never_in_a_war_bands_camp():
+    g, camp = _camp_game()
+    for seed in range(40):
+        random.seed(seed)
+        g.monsters = []
+        g._emberpup = {'floor': 1, 'spawned': False, 'outcome': None,
+                       'cloak_floor': 1, 'cloak_spawned': False, 'cloak_seed': seed}
+        g._maybe_spawn_emberpup(1)
+        g._maybe_spawn_cloak_wearer(1)
+        placed = [m for m in g.monsters if getattr(m, '_is_abandoned_emberpup', False)
+                  or getattr(m, '_wary_home', None)]
+        assert len(placed) == 2, seed
+        for m in placed:
+            assert (m.x, m.y) not in camp, (seed, m.name)
+
+
+def test_a_floor_with_no_band_has_no_camp():
+    from types import SimpleNamespace
+    assert war_bands.camp_tiles(SimpleNamespace()) == set()
+    assert war_bands.camp_tiles(None) == set()
+    rooms = [SimpleNamespace(x=1, y=1), SimpleNamespace(x=9, y=9)]
+    assert war_bands.outside_camp(SimpleNamespace(band=None), rooms) == rooms
+
+
 # ------------------------------------------------ a mini-boss with no room
 
 def test_a_mini_boss_with_nowhere_to_stand_comes_a_floor_later():
