@@ -136,6 +136,44 @@ def test_the_emberpup_and_old_nickel_are_never_in_a_war_bands_camp():
             assert (m.x, m.y) not in camp, (seed, m.name)
 
 
+def test_the_mooble_never_opens_his_cave_off_a_war_bands_camp():
+    """His three dance-offs meant three fights through the band."""
+    from test_bug_bash_5_encounters import _game
+
+    import copy
+    from dungeon import generate_dungeon
+
+    def doorstep(g):
+        """The floor tile the cave's mouth opens from."""
+        cave = g._mooble_carve_cave()
+        assert cave
+        wx, wy = cave['mouth']
+        cx, cy = cave['centre']
+        return (wx - (cx - wx) // 2, wy - (cy - wy) // 2)
+
+    g = _game(21)
+    g.monsters = []
+    checked = 0
+    for mapseed in range(12):
+        clean = generate_dungeon(80, 50, 1, random.Random(mapseed))
+        for seed in (1, 2, 3):
+            g._mooble = {'floor': 1, 'spawned': False, 'outcome': None, 'seed': seed}
+            g.dungeon = copy.deepcopy(clean)
+            step = doorstep(g)
+            room = next(((r.x, r.y, r.width, r.height) for r in clean.rooms
+                         if r.x <= step[0] < r.x + r.width and r.y <= step[1] < r.y + r.height), None)
+            if room is None:
+                continue                      # it opened off a corridor
+            # A band camps in the room his cave opened into: it opens elsewhere.
+            g.dungeon = copy.deepcopy(clean)
+            g.dungeon.band = {'room': room}
+            camp = war_bands.camp_tiles(g.dungeon)
+            assert doorstep(g) not in camp, (mapseed, seed)
+            assert g._mooble_room_spot() not in camp
+            checked += 1
+    assert checked >= 20
+
+
 def test_a_floor_with_no_band_has_no_camp():
     from types import SimpleNamespace
     assert war_bands.camp_tiles(SimpleNamespace()) == set()

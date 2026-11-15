@@ -2344,7 +2344,8 @@ def _quest_artifact(item_id: str, **overrides):
     return item
 
 
-def _carve_sealed_shrine(dungeon: Dungeon, near: tuple, max_radius: int = 12):
+def _carve_sealed_shrine(dungeon: Dungeon, near: tuple, max_radius: int = 12,
+                         avoid=None):
     """Carve a 3x3 chamber behind a wall near `near`, sealed on every side.
 
     Returns (door_xy, centre_xy) or None. The door tile stays WALL until the
@@ -2360,8 +2361,12 @@ def _carve_sealed_shrine(dungeon: Dungeon, near: tuple, max_radius: int = 12):
     contained the door tile and its two neighbours on the room's own wall
     line; only the door was re-walled, so the "sealed" shrine stood open on
     about 98% of floors and the key item was never needed.
+
+    ``avoid``: tiles the door may not open onto (the Mooble's cave never
+    opens into a war-band's camp: war_bands.camp_tiles).
     """
     nx0, ny0 = near
+    avoid = avoid or ()
     # The door must open onto floor the hero can walk to (a pool or a lava
     # river laid down earlier could cut the door's side of the wall off).
     reach = _reach_from_stairs(dungeon)
@@ -2382,6 +2387,8 @@ def _carve_sealed_shrine(dungeon: Dungeon, near: tuple, max_radius: int = 12):
                     if not dungeon.is_walkable(fx, fy):
                         continue
                     if reach and (fx, fy) not in reach:
+                        continue
+                    if (fx, fy) in avoid:
                         continue
                     sx, sy = wx + 2 * ddx, wy + 2 * ddy    # chamber centre
                     solid = True

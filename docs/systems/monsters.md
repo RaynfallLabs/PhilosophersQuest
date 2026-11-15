@@ -335,7 +335,7 @@ Tests: `tests/test_senses.py`.
 
 ## War-bands (Dungeon Alive slice 5, 2026-11-12)
 
-Brandon: monsters must "pose a real challenge and players need to pay attention to lore, weaknesses, abilities". A war-band (`data/war_bands.json`, `src/war_bands.py`) makes camp in one big room on 55% of the floors in its range, from floor 1, never more than one band a floor. Floors 1-6 also hold the two small bands, a goblin scouting party (a hobgoblin and his goblins) and a gang of footpads (3.5.1: a floor's own encounters carry the fight; see Wanderers). It replaces that room's ordinary roll. `LevelManager.generate` calls `war_bands.place_band` after the hidden chambers. The run's people are set down later and never in the camp (`war_bands.camp_tiles` / `outside_camp`): the Road's anchors and story folk, a trader's stall, the Emberpup, Old Nickel and the unicorn (bug bash 3.5.1).
+Brandon: monsters must "pose a real challenge and players need to pay attention to lore, weaknesses, abilities". A war-band (`data/war_bands.json`, `src/war_bands.py`) makes camp in one big room on 55% of the floors in its range, from floor 1, never more than one band a floor. Floors 1-6 also hold the two small bands, a goblin scouting party (a hobgoblin and his goblins) and a gang of footpads (3.5.1: a floor's own encounters carry the fight; see Wanderers). It replaces that room's ordinary roll. `LevelManager.generate` calls `war_bands.place_band` after the hidden chambers. The run's people are set down later and never in the camp (`war_bands.camp_tiles` / `outside_camp`): the Road's anchors and story folk, a trader's stall, the Emberpup, Old Nickel, the unicorn and the mouth of the Mooble's cave (bug bash 3.5.1).
 
 **Bands:**
 
