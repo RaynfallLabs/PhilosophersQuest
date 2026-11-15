@@ -1,5 +1,5 @@
 {
-  "_about": "The Bococho (src/bococho_encounter.py, src/game_race.py, src/race.py, src/underway_run.py, src/riding.py, src/game_riding.py; RARE_PETS_PLAN_2026_11_14 section 3). Every run, on one floor of 51-65, a racing camp in a cavern: Gilt Varro (he), a loud, greedy race-runner, keeps his birds on short tethers and races them for bets. One young Bococho (she), faster than any of them, will not run for him, and he means to sell her to the knacker. Feed her Sunroot on two visits with time between; then challenge Varro (a fee in gold), and race his best bird, Brassbeak, on the Underway Run (a side floor, 996). Win, and she is free: 'I choose you!' asks the animal quiz, as for the Emberpup. Lose, and try again after a while, at the fee again. The Bococho is a homage, never a copy: her call is her own ('whirrup'), never the original's. Every individual is he or she.",
+  "_about": "The Bococho (src/bococho_encounter.py, src/game_race.py, src/race.py, src/underway_run.py, src/riding.py, src/game_riding.py; RARE_PETS_PLAN_2026_11_14 section 3). Every run, on one floor of 51-65 (never a gate boss's floor), a racing camp in a cavern: Gilt Varro (he), a loud, greedy race-runner, keeps his birds on short tethers and races them for bets. One young Bococho (she), faster than any of them, will not run for him, and he means to sell her to the knacker. Feed her Sunroot on two visits with time between; then challenge Varro (a fee in gold), and race his best bird, Brassbeak, on the Underway Run (a side floor, 996). Win, and she is free: 'I choose you!' asks the animal quiz, as for the Emberpup. Lose, and try again after a while, at the fee again. The Bococho is a homage, never a copy: her call is her own ('whirrup'), never the original's. Every individual is he or she.",
   "chance_per_run": 1.0,
   "first_floor": 51,
   "last_floor": 65,
@@ -209,7 +209,8 @@
       "caltrops": "Iron caltrops in the sand on the inside! She hops and stumbles through them and loses ground.",
       "outside": "You swing her wide, and she runs clean past a scatter of iron caltrops on the inside rail. Varro swears."
     },
-    "chain": "{chain} right in a row: she runs {run} lengths. Brassbeak runs {rival_run}.",
+    "chain": "{chain} right in a row: she runs {run}. Brassbeak runs {rival_run}.",
+    "_chain_note": "{run} and {rival_run} are said as lengths_one / lengths_many ('a length', '7 lengths'): a winded leg through the caltrops can be a single length.",
     "standing": {
       "lead_big": "She is flying! {gap} clear of Brassbeak.",
       "lead": "She leads Brassbeak by {gap}.",
@@ -278,7 +279,7 @@
     "step_noise": 3,
     "_step_noise_note": "Tiles added to the hero's footsteps (senses.step_radius) while he rides: a galloping bird is loud.",
     "sleeper_step_factor": 2.0,
-    "_sleeper_note": "How much readier the deep sleepers of a zoo, graveyard or barracks are to stir at her hooves (sleepers.factor 'step').",
+    "_sleeper_note": "How much readier the deep sleepers of a zoo, graveyard or barracks are to stir at her running feet (sleepers.factor 'step').",
     "saddled": {"1": "bococho_saddled", "2": "bococho_champion_saddled"},
     "seat": {"bococho_saddled": [33, 23], "bococho_champion_saddled": [33, 23]},
     "_seat_note": "Where the rider's hips sit in each saddled picture's 64 px frame (x, y): the art run's own measure (tools/content/genart/install_rare_pets.py SEAT, a hero at about 0.6 scale with his hips there).",

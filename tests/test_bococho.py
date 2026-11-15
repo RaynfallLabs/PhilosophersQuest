@@ -720,12 +720,13 @@ def test_looking_at_the_camp_and_felling_varro_by_the_sword(make_game):
 
 
 def test_the_camp_finds_room_on_every_floor_it_can_stand_on(make_game):
-    """Every run has its camp: on each floor of 51-65, as the floor
-    generator builds it, the game sets the camp up on first arrival."""
+    """Every run has its camp: on each floor of 51-65 it may stand on (never
+    a gate boss's), as the floor generator builds it, the game sets the
+    camp up on first arrival."""
     import random
     import bococho_encounter as bc
     g, h = make_game(build='titivillus', name='Titivillus')
-    for level in range(bc.data()['first_floor'], bc.data()['last_floor'] + 1):
+    for level in bc.candidate_floors():
         random.seed(level * 31)
         d, monsters, items = g.level_mgr.generate(level)
         g.dungeon, g.monsters, g.ground_items = d, monsters, items

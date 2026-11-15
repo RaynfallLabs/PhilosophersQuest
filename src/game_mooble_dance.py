@@ -112,10 +112,6 @@ class MoobleDanceMixin:
         spec = mo.visit_spec(m)
         tl = rhythm.timeline(spec['steps'], spec['bpm'], int(dd['lead_beats']), int(dd['phrase_beats']))
         mode = 'dance' if mode == 'dance' else 'practice'
-        if mode == 'practice':
-            # Practised before this visit's dance-off (the Seeker's dance_off
-            # event and Terpsichore's Step read it; cleared by the dance-off).
-            self._mooble_state()['practised'] = True
         visit = min(mo.dances(m) + 1, len(dd['visits']))
         self._mdance = self._mooble_dance_spec(
             mode, tl, spec['bpm'],
@@ -173,9 +169,19 @@ class MoobleDanceMixin:
 
     def _mooble_dance_start(self):
         md = self._mdance
+        # The soundtrack steps aside first, then the clock starts: holding it
+        # waits for the sound effects still playing (music._effects_done, up
+        # to a second: a practice's fanfare when Enter dances it again), and
+        # with the clock already running that wait ate the count-in.
+        self._mooble_music(True)
         md.update({'t0': self._mooble_now(), 'phase': 'play', 'presses': [], 'beat_played': -1,
                    'step_played': -1, 'decided': 0, 'flash': None, 'result': None, 'won': False})
-        self._mooble_music(True)
+        if md.get('owner', 'mooble') == 'mooble' and md.get('mode') == 'practice':
+            # A practice round danced before this visit's dance-off (the
+            # Seeker's dance_off event and Terpsichore's Step read it; the
+            # dance-off clears it). Opening the practice card and backing out
+            # is not practising.
+            self._mooble_state()['practised'] = True
 
     def _mooble_music(self, quiet: bool):
         """The soundtrack steps aside while the dance's beat plays: held when
@@ -590,11 +596,7 @@ class MoobleDanceMixin:
         if special:
             band = md.get('band')
             if md['phase'] == 'result' and band:
-                held_words = sd.get('held_words') or ['{n}', '{n}', '{n}']
-                mh = int(band.get('max_held', 99))
-                held = (held_words[0] if mh <= 1 else held_words[2] if mh >= 99 else held_words[1]).format(n=mh)
-                lines.append(sd.get('result', '').format(label=band.get('label', ''), radius=band.get('radius'),
-                                                         turns=band.get('turns'), held=held))
+                lines.append(mo.special_result_line(band))
             else:
                 lines.append(sd.get('how', ''))
         elif not extra:

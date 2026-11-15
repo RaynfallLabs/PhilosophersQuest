@@ -295,8 +295,10 @@ class RaceMixin:
         cfg = bc.data()['race']
         out = R.run_leg(r, chain, mode, lane)
         lines = [cfg['events'][e] for e in out['events'] if cfg['events'].get(e)]
-        lines.append(cfg['chain'].format(chain=chain, run=R.lengths(out['hero_run']),
-                                         rival_run=R.lengths(out['varro_run'])))
+        # (In words, "a length" or "7 lengths": a winded leg through the
+        # caltrops can be a single length, and "1 lengths" was said.)
+        lines.append(cfg['chain'].format(chain=chain, run=self._race_gap_words(out['hero_run']),
+                                         rival_run=self._race_gap_words(out['varro_run'])))
         if r.get('done'):
             lines = lines[-1:]           # the home straight: the run, then the finish
             res = R.outcome(r)

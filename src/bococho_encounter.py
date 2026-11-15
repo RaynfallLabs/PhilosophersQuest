@@ -5,11 +5,11 @@ rare pets... through little quests like emberpup and unicorn... something
 about racing for the chocobo." The Bococho is a homage, never a copy: our
 own golden riding bird, with her own call (a rolling "whirrup").
 
-Every run, on one floor of 51-65 (``first_floor`` to ``last_floor``), a
-racing camp stands in a cavern room: tether posts, a betting board, Gilt
-Varro the race-runner (he), two of his birds on short tethers (harmless
-while tethered), and the young Bococho (she), wary of everyone. The story
-leads:
+Every run, on one floor of 51-65 (``first_floor`` to ``last_floor``, never a
+gate boss's floor: ``candidate_floors``), a racing camp stands in a cavern
+room: tether posts, a betting board, Gilt Varro the race-runner (he), two of
+his birds on short tethers (harmless while tethered), and the young Bococho
+(she), wary of everyone. The story leads:
 
   * **Meet her.** She shies away: someone has handled her roughly.
   * **Feed her Sunroot, twice** (``feeds_needed``), at least
@@ -69,12 +69,22 @@ def data() -> dict:
 # The run's roll
 # ---------------------------------------------------------------------------
 
+def candidate_floors() -> list:
+    """The floors the camp may stand on: first_floor to last_floor, never a
+    gate boss's floor (60 is Fafnir's hoard and lair, a hand-built floor:
+    the camp was set up in his hoard chamber), as for the Mooble."""
+    from boss_levels import BOSS_LEVELS
+    d = data()
+    return [f for f in range(int(d['first_floor']), int(d['last_floor']) + 1)
+            if f not in BOSS_LEVELS]
+
+
 def roll_floor(rng) -> int | None:
     """The camp's floor this run (every run, with chance_per_run 1.0)."""
     d = data()
     if rng.random() >= float(d['chance_per_run']):
         return None
-    return rng.randint(int(d['first_floor']), int(d['last_floor']))
+    return rng.choice(candidate_floors())
 
 
 def _run_rng() -> random.Random:

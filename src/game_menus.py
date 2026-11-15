@@ -2271,14 +2271,17 @@ class MenuMixin:
     # ----- Pet sub-menus: Specials -----------------------------------------
 
     def _pet_open_specials(self, pet):
-        if getattr(pet, 'ridden', False) and hasattr(self, '_riding_set_down'):
-            self._riding_set_down('special')     # she runs on her own (game_riding.py)
         avail = pet.available_specials()
         if not avail:
+            # (Checked first: a grown Bococho has no special until she is a
+            # Champion, and S on her card set her rider down "to let her
+            # run" before saying she had none.)
             self.add_message(
-                f"{pet.name} has no specials yet. Evolve it to unlock them.",
+                f"{pet.name} has no specials yet. Evolve {pet.pronouns()[1]} to unlock them.",
                 'info')
             return
+        if getattr(pet, 'ridden', False) and hasattr(self, '_riding_set_down'):
+            self._riding_set_down('special')     # she runs on her own (game_riding.py)
         self.pet_specials_items = avail
         self._pet_specials_target = pet
         self._pet_specials_sel = 0
@@ -2303,7 +2306,8 @@ class MenuMixin:
         special = items[idx]
         if pet.special_cooldown(special['id']) > 0:
             self.add_message(
-                f"{special['name']} is on cooldown ({pet.special_cooldown(special['id'])} turns).",
+                f"{special['name']} is on cooldown "
+                f"({quantity(pet.special_cooldown(special['id']), 'turn')}).",
                 'warning')
             return
         self._begin_pet_special_targeting(pet, special)

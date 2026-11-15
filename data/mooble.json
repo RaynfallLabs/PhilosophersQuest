@@ -188,7 +188,8 @@
       ],
       "title": "DANCE OF THE DARK",
       "how": "Dance his steps on the arrow keys as they light up.",
-      "result": "The dance was {label}: foes within {radius} tiles stand staring for {turns} turns, {held}.",
+      "result": "The dance was {label}: foes within {radius} tiles stand staring for {turns}, {held}.",
+      "turn_words": ["{n} turn", "{n} turns"],
       "held_words": ["only the nearest one", "the nearest {n} at most", "every one near him"],
       "footer_special": "Arrow keys: dance it through, his dance is on",
       "footer_special_done": "Enter: continue"
