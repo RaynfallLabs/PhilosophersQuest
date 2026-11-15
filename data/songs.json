@@ -1,5 +1,5 @@
 {
-  "_doc": "Songs the hero can play (src/songs.py). Brandon writes songs as A Man Before a King; a song here is one of his, and its words are from his lyrics. Cooking the dish that names a song (its recipe's 'song'), or using the power that plays one, stops the soundtrack and plays the song once; its power lasts exactly as long as the song plays, timed in real seconds (seconds), then the soundtrack comes back. 'damage_taken' multiplies every blow and spell on the hero while it plays (Player.take_damage; starvation is not a blow); 'chain_mult' multiplies the right answers of a fight's maths chain (combat.effective_chain). 'power': the power that plays a song, its unlock ('streak': maths answers right in a row in one run; a wrong answer breaks it, the clock running out does not) and its 'cooldown' in turns (quirk_system). 'label' is the effect's name on the sidebar and the character sheet. 'lines': 'start' when the song starts (the dish eaten, the power used), 'end' when it is over.",
+  "_doc": "Songs the hero can play (src/songs.py). Brandon writes songs as A Man Before a King; a song here is one of his, and its words are from his lyrics. Cooking the dish that names a song (its recipe's 'song'), or using the power that plays one, stops the soundtrack and plays the song once; its power lasts exactly as long as the song plays, timed in real seconds (seconds), then the soundtrack comes back. 'damage_taken' multiplies every blow and spell on the hero while it plays (Player.take_damage; starvation is not a blow); 'chain_mult' multiplies the right answers of a fight's maths chain (combat.effective_chain). 'power': the power that plays a song, its unlock ('streak': maths answers right in a row in one run; a wrong answer breaks it, the clock running out does not) and its 'cooldown' in turns (quirk_system). 'companion': who comes with the song and stays exactly as long as it plays ('dad': the Unusual Soul Sphere's Dad, game_combat._throw_unusual_sphere). 'label' is the effect's name on the sidebar and the character sheet. 'lines': 'start' when the song starts (the dish eaten, the power used), 'end' when it is over.",
   "songs": {
     "caviar_and_tater_tots": {
       "title": "Caviar and Tater Tots",
@@ -47,6 +47,26 @@
         "end": [
           "The song ends. \"Okay... but can you help me with my homework now?\"",
           "Your right answers count as one link again."
+        ]
+      }
+    },
+    "greatest_trainer": {
+      "title": "The Greatest Trainer of All Time",
+      "artist": "A Man Before a King",
+      "track": [
+        "assets",
+        "music",
+        "greatest_trainer.ogg"
+      ],
+      "seconds": 213,
+      "label": "Dad's Here",
+      "companion": "dad",
+      "lines": {
+        "start": [
+          "Dad is here! Everything will be fine now!"
+        ],
+        "end": [
+          "Dad smiles at you and fades away. He believes in you!"
         ]
       }
     }

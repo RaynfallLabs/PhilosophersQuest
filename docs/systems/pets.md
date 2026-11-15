@@ -226,7 +226,7 @@ traps        = dungeon.traps
 def tick_regen(self, bonus: int = 0):   # 1+bonus HP every 3 turns
 ```
 
-Called every pet turn by `game_combat`. `FenrirPet` overrides for 3+bonus HP every turn (very fast). Sketched + Dad pets also decrement their `turns_remaining` counters here.
+Called every pet turn by `game_combat`. `FenrirPet` overrides for 3+bonus HP every turn (very fast). Sketched pets also decrement their `turns_remaining` counters here; Dad does only when he has no song (one pickled before 3.5.2).
 
 ### 3.7 Dead flag + damage
 
@@ -322,7 +322,7 @@ Spawned by `game_combat.py` when the Unusual Soul Sphere is thrown (`_throw_unus
 - Symbol `'@'`, color `(255, 220, 100)`.
 - Specials disabled; no leveling.
 
-The Unusual Soul Sphere first makes the same rare roll as an ordinary sphere (`roll_rare_sphere_pet`: Shep 1%, each cat 5%, each only while not yet met); a companion it hatches is a newborn (level 1). Only when that misses does Dad come, for 5 turns. On a boss floor it is not used up.
+The Unusual Soul Sphere first makes the same rare roll as an ordinary sphere (`roll_rare_sphere_pet`: Shep 1%, each cat 5%, each only while not yet met); a companion it hatches is a newborn (level 1). Only when that misses does Dad come, with his song: "The Greatest Trainer of All Time" (Brandon's, as A Man Before a King; the song Dad and his special attacks come from) plays in place of the soundtrack, and Dad stays exactly as long as it plays, in real seconds (3.5.2: `DadPet.song_id`; `game_songs._song_over` sees him off when it ends, with its closing line "Dad smiles at you and fades away. He believes in you!"; a song no longer playing takes him at his next turn). On a boss floor it is not used up, and with another song playing (one song at a time: `songs.py`) it stays in the pack. QA: Shift+U on the Titivillus build puts one in the pack.
 
 ### 4.6 UnicornPet — unicorn-encounter chain
 
@@ -456,7 +456,7 @@ Pet turns run inside `game_combat.py`'s turn loop, after the player action resol
 
 1. **`tick_cooldown()`** — decrement every active special cooldown by 1; evict entries that hit zero.
 2. **`tick_regen(bonus)`** — HP regen pass (varies by subclass).
-3. **`tick_duration()`** — temporary pets only (Sketch, Dad). If it returns True, the pet dissolves.
+3. **`tick_duration()`** — temporary pets only (Sketch, and Dad with no song). If it returns True, the pet dissolves. Dad with his song: the song decides.
 4. **`gain_xp_passive()`** — may return messages for level-ups.
 5. **`take_turn(player, dungeon, monsters, pets, ground_items)`** — AI action.
 6. **Resolve action** — `('attack', target)` → melee damage with quiz-accuracy scaling; `('unicorn_actions', msgs)` → iterate healing/cleanse/trap messages; `None` → no action.
@@ -583,7 +583,7 @@ Stackable foods are decremented one unit per feed (`food.count -= 1`); non-stack
 - **Sidebar / info panel**: shows name (nickname + species or species alone), level, HP/max_HP, XP progress bar toward next level, and command label.
 - **Specials menu**: `pet.available_specials()` filtered by `unlock_stage <= stage`; cooldowns pulled from `_special_cooldowns`.
 
-Dead pets are not rendered. Sketch/Dad pets with `turns_remaining <= 0` set `alive = False` and get pruned.
+Dead pets are not rendered. Sketch pets (and a Dad with no song) with `turns_remaining <= 0` set `alive = False` and get pruned; Dad with his song goes when it ends.
 
 ---
 

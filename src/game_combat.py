@@ -682,13 +682,20 @@ class CombatMixin:
         return went
 
     def _throw_unusual_sphere(self, sphere, hit_monster, tx: int, ty: int):
-        """Throw the Unusual Soul Sphere — summons Dad for 5 turns."""
+        """Throw the Unusual Soul Sphere: Dad comes, and his song, "The
+        Greatest Trainer of All Time", plays; he stays until it ends
+        (songs.py; game_songs sees him off). Not on a boss floor, and not
+        while another song plays: the sphere stays in the pack."""
         from boss_levels import BOSS_LEVELS
+        import songs as _songs
         if self.dungeon_level in BOSS_LEVELS:
             self.add_message(
                 "The sphere pulses warmly in your hand, then fades. "
                 "You hear Dad's voice: \"I believe in you. This one's yours.\"", 'info')
             return  # sphere NOT consumed — player keeps it
+        if _songs.active(self.player) is not None:
+            self.add_message(_songs.wait_line(self.player), 'warning')
+            return  # one song at a time: the sphere is kept
         self.player.remove_from_inventory(sphere)
 
         land_x, land_y = (hit_monster.x, hit_monster.y) if hit_monster else (tx, ty)
@@ -720,8 +727,12 @@ class CombatMixin:
                                    sphere_id='unusual_soul_sphere')
             return
         dad = DadPet(spawn_x, spawn_y, duration=5)
+        # His song plays, and he stays exactly as long as it does.
+        dad.song_id = _songs.song_for_companion('dad')
         self.pets.append(dad)
-        self.add_message("Dad is here! Everything will be fine now!", 'success')
+        lines = _songs.begin(self.player, dad.song_id) if dad.song_id else []
+        for line in lines or ["Dad is here! Everything will be fine now!"]:
+            self.add_message(line, 'success')
         self._seeker_event('dad_summoned')
 
     def _find_first_monster_in_path(self, x0, y0, x1, y1):
@@ -4399,7 +4410,15 @@ class CombatMixin:
                 self._mooble_gift_said(pet, pet.mana_gift(self.player))
 
             # Temporary pet duration ticks
-            if getattr(pet, 'is_dad', False) and pet.alive:
+            if getattr(pet, 'is_dad', False) and pet.alive and getattr(pet, 'song_id', None):
+                # His song decides (game_songs._song_frame sees him off when it
+                # ends); a song that is no longer playing takes him with it.
+                _now = songs_active_id(self.player)
+                if _now != pet.song_id:
+                    pet.alive = False
+                    self.add_message(
+                        "Dad smiles at you and fades away. He believes in you!", 'success')
+            elif getattr(pet, 'is_dad', False) and pet.alive:
                 if pet.tick_duration():
                     self.add_message(
                         "Dad smiles at you and fades away. He believes in you!", 'success')
@@ -4517,3 +4536,10 @@ class CombatMixin:
                             self.add_message(f"{pet.name} has been slain by {_killer}!", 'danger')
                     break  # one pet swipe per monster per turn
         return slain
+
+
+def songs_active_id(player):
+    """The id of the song playing for the hero (songs.py), or None."""
+    import songs
+    st = songs.active(player)
+    return st['id'] if st else None

@@ -465,6 +465,11 @@ class InputMixin:
                 # tart and no wait before the next dance (mooble_encounter).
                 self._qa_mooble()
                 return True
+            if uni == 'U' and getattr(self.player, 'qa_tools', False):
+                # Titivillus QA build: an Unusual Soul Sphere in the pack, to
+                # throw and meet Dad and his song (game_songs.py).
+                self._qa_unusual_sphere()
+                return True
             if uni == 'N' and getattr(self.player, 'qa_tools', False):
                 # Titivillus QA build: the math streak one right answer short
                 # of Math is Cool; once earned, its cooldown ready again

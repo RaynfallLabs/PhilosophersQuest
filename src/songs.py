@@ -2,7 +2,7 @@
 
 A song plays once, in place of the soundtrack, and its power lasts exactly
 as long as the song does, timed in real seconds, not turns. Then the
-soundtrack comes back and the power is gone. Two play now:
+soundtrack comes back and the power is gone. Three play now:
 
 * "Caviar and Tater Tots", from a dish: caviar and tater tots are rare
   plain foods, good to eat as they are, and cooked together (a recipe's
@@ -12,10 +12,15 @@ soundtrack comes back and the power is gone. Two play now:
 * "So Then I Was Like...", from a power: a hundred maths answers right in a
   row in one run earns the power Math is Cool (quirk_system), ready every
   ``cooldown`` turns. While it plays every right answer in a fight counts as
-  ``chain_mult`` links (combat.effective_chain).
+  ``chain_mult`` links (the attack quiz's chain_step).
+* "The Greatest Trainer of All Time", from the Unusual Soul Sphere: the song
+  Dad and his special attacks come from. Thrown, the sphere brings Dad
+  (``companion``), and he stays exactly as long as the song plays
+  (game_combat._throw_unusual_sphere; game_songs sees him off).
 
 One song plays at a time: a power is not used while another song plays
-(game_menus), and the dish is not cooked then (the cook menu).
+(game_menus), the dish is not cooked then (the cook menu), and the sphere is
+not thrown (it stays in the pack).
 
 The song's state lives on the hero (``player.song_playing``: which song,
 seconds left, muted by F5 or not), so a save made mid-song carries on where
@@ -145,6 +150,14 @@ def song_for_power(pid: str) -> str | None:
     """The song a power plays, or None."""
     for sid, s in (data().get('songs') or {}).items():
         if (s.get('power') or {}).get('id') == pid:
+            return sid
+    return None
+
+
+def song_for_companion(who: str) -> str | None:
+    """The song that comes with a companion ('dad'), or None."""
+    for sid, s in (data().get('songs') or {}).items():
+        if s.get('companion') == who:
             return sid
     return None
 

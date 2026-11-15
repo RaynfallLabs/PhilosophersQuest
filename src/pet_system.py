@@ -1448,7 +1448,12 @@ class SketchedPet(Pet):
 
 
 class DadPet(Pet):
-    """Dad. Invincible. 9999 damage. 5 turns. Everything will be fine."""
+    """Dad. Invincible. 9999 damage. Everything will be fine.
+
+    From the Unusual Soul Sphere he stays exactly as long as his song plays,
+    "The Greatest Trainer of All Time" (``song_id``; songs.py, and
+    game_songs sees him off when it ends). A Dad with no song (one pickled
+    before 3.5.2) keeps his old count of turns."""
 
     def __init__(self, x: int, y: int, duration: int = 5):
         dad_species = {
@@ -1486,6 +1491,7 @@ class DadPet(Pet):
 
         self.is_dad = True
         self.turns_remaining = duration
+        self.song_id: str | None = None      # his song: he leaves when it ends
 
     @property
     def name(self) -> str:
@@ -1507,7 +1513,10 @@ class DadPet(Pet):
         return []
 
     def tick_duration(self) -> bool:
-        """Decrement timer. Returns True if Dad is leaving."""
+        """Decrement timer. Returns True if Dad is leaving. With his song
+        playing, the song decides (game_songs), never the turns."""
+        if getattr(self, 'song_id', None):
+            return False
         self.turns_remaining -= 1
         if self.turns_remaining <= 0:
             self.alive = False

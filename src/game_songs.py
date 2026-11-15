@@ -34,6 +34,7 @@ class SongsMixin:
             songs.end(player)
             self._song_audio = None
             music.end_song()
+            self._song_over(st['id'])
             return
         # The audio: started once per song, again only after F5 unmutes it or
         # a save is loaded mid-song (a new Game has no _song_audio).
@@ -45,12 +46,34 @@ class SongsMixin:
         if music.is_held():
             return
         step = max(0.0, min(float(dt or 0.0), _MAX_STEP))
+        sid = st['id']
         closing = songs.tick(player, step)
         if closing:
             self._song_audio = None
             music.end_song()
             for line in closing:
                 self.add_message(line, 'info')
+            self._song_over(sid)
+
+    def _song_over(self, sid: str):
+        """A song has ended: whoever came with it goes (Dad, from the
+        Unusual Soul Sphere; his closing line is the song's own)."""
+        for pet in list(getattr(self, 'pets', None) or ()):
+            if getattr(pet, 'song_id', None) == sid and getattr(pet, 'alive', False):
+                pet.alive = False
+
+    def _qa_unusual_sphere(self) -> None:
+        """Titivillus QA build (Shift+U): an Unusual Soul Sphere in the pack,
+        to throw (t) and meet Dad and his song."""
+        from items import make_item_by_id
+        sphere = make_item_by_id('artifact', 'unusual_soul_sphere')
+        if sphere is None:
+            return
+        sphere.identified = True
+        self.player.known_item_ids.add('unusual_soul_sphere')
+        if not self.player.add_to_inventory(sphere):
+            self.player.inventory.append(sphere)
+        self.add_message("[QA] An Unusual Soul Sphere is in your pack. Throw it (t).", 'info')
 
     def _qa_math_is_cool(self) -> None:
         """Titivillus QA build (Shift+N): the run's math streak one right
