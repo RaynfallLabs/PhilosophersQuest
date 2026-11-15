@@ -212,8 +212,12 @@ class InputMixin:
                 self._mooble_input(key)
                 return True
             if self.state == STATE_MOOBLE_DANCE:
-                # Practice stops; a dance-off is danced through.
+                # Practice stops; a dance-off is danced through. (Its own
+                # keys decide, and nothing after them: the merge of the race
+                # dropped this return, so Esc that closed a card back to play
+                # fell through to the exit prompt.)
                 self._mooble_dance_key(key)
+                return True
             if self.state == STATE_BOCOCHO:
                 # The racing camp's screen decides (bococho_encounter.py).
                 self._bococho_input(key)

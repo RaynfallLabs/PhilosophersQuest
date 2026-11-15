@@ -332,4 +332,10 @@ def build_default_runtime(config_path: str | None = None) -> EffectsRuntime:
         'strike_finisher',
         StrikeFinisher(runtime.effect_config('strike_finisher')),
     )
+    # The kill banner's look for a banner of its own: the Stray Kids'
+    # "B-B-B-BOSS BATTLE! DANCE OFF!" (game_stray_kids._stray_kids_announce).
+    runtime.register(
+        'dance_off_banner',
+        StrikeFinisher(runtime.effect_config('dance_off_banner')),
+    )
     return runtime

@@ -662,6 +662,11 @@ ALLOWED_ELLIPSIS = {
         'narration: the same line on the result card',
     ('result_hack_reality', 'You speak the First Word'):
         'narration: reality shudders, not truncated text',
+    # The right rail's In Sight list, hushed under the dance-off's card: the
+    # photo the last of the band dropped, named in full in the log and on
+    # the floor's own look; nothing on the card itself is cut.
+    ('sk_dance_won', 'Autographed Stray'):
+        "the rail's In Sight row for the dropped photo, under the modal",
 }
 
 

@@ -128,13 +128,31 @@ def toggle() -> bool:
     return set_on(not is_on())
 
 
+def _effects_done(limit_s: float = 1.0) -> None:
+    """Let the sound effects still playing finish (a second at most) before
+    the music is paused or resumed. A sound effect that ends while the music
+    is paused or resumed can hang the game for good: the mixer's audio thread
+    takes Python's lock to let go of the finished sound while it holds the
+    audio lock, and pause / unpause wait on the audio lock while holding
+    Python's (seen as a frozen dance-off: tests/test_stray_kids_journey.py).
+    With no effect playing none can end; the short sleep after lets one that
+    ended just before the check finish its hand-off."""
+    import time
+    import pygame
+    end = time.monotonic() + float(limit_s)
+    while pygame.mixer.get_busy() and time.monotonic() < end:
+        time.sleep(0.005)
+    time.sleep(0.01)
+
+
 def hold() -> None:
     """Quiet the music for a moment (a rhythm game's beat); release() after."""
     global _held
     _held = True
     try:
         import pygame
-        if pygame.mixer.get_init():
+        if pygame.mixer.get_init() and _playing:
+            _effects_done()
             pygame.mixer.music.pause()
     except Exception:
         pass
@@ -148,6 +166,7 @@ def release() -> None:
     try:
         import pygame
         if pygame.mixer.get_init() and _playing:
+            _effects_done()
             pygame.mixer.music.unpause()
             return
     except Exception:

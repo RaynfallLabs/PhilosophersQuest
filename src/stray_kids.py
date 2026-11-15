@@ -2,31 +2,33 @@
 stupid kpop band called Stray Kids." Every run, on one floor from 8 to 12, a
 gold shrine to the band stands in a room. Touch it and the hero is taken to
 the Zombie Stage, a side floor like the Cow Level, where the eight members
-dance as zombies; the last to fall leaves a signed photo that calls the band,
-alive, for one short show.
+wait as zombies; the fight is a dance-off (Brandon, 2026-11-14: "B-B-B-BOSS
+BATTLE! DANCE OFF!"), and the last to fall leaves a signed photo that calls
+the band, alive, for one short show.
 
 This module is the pure half (no pygame, no Game):
 
 * the run's roll: which floor holds the idol (``new_run_state``);
-* the dance: the band moves as one formation. Its anchor closes on the hero
-  and stops ``keep_off`` tiles short; every member walks to his place in the
-  current shape, turned to face the hero; the shape changes every
-  ``beats_per_shape`` beats, and a member strikes only on the downbeat
-  (every ``strike_every`` beats). Before any of them has seen the hero they
-  rehearse in place. A member who is held, frightened, confused or blinded
-  drops out of the dance and acts as any monster would (Monster.take_turn),
-  so every status still works on them;
-* ``ZombieMember``: one zombie band member. No corpse (``_no_corpse``),
-  an Observe line of his own, a quip after a blow that lands (the attack's
-  ``quip`` in data/monsters.json), and Lee Know's cat;
+* the dance-off's rules: Simon Says over eight rounds, one member leading
+  each, Bang Chan first. Round r dances the first steps of the written
+  choreography, one more each round, a little faster each round
+  (``round_phrase``, ``round_bpm``, ``round_timeline``); what follows a round
+  (``after_round``: the next leader, the round again with a strike gone, the
+  dance-off won or lost); the earworm a lost round brings (``earworm``: his
+  song, its hindrance, a little damage that never kills);
+* ``ZombieMember``: one zombie band member, a performer: he stands posed in
+  his place on the stage, takes no harm and never strikes. No corpse
+  (``_no_corpse``), an Observe line of his own;
+* ``settle_band``: every member still standing back in his place, a
+  performer (a lost dance-off, and a save from before the dance-off);
 * ``StarDancer``: one living member called up by the photo: an ally that
   takes and deals no harm and dances round the hero;
 * ``build_stage``: the Zombie Stage itself (boss_levels.STRAY_KIDS_STAGE).
 
-The game half (the idol, the trip there and back, the beat, the shouts, the
-photo, the show) is game_stray_kids.StrayKidsMixin. Every line of text and
-every number is in data/stray_kids.json; the members' fighting numbers in
-data/monsters.json; the band's leader and morale in data/war_bands.json.
+The game half (the idol, the trip there and back, the announcement, the
+dance-off on the Mooble's dance screen, the shouts, the photo, the show) is
+game_stray_kids.StrayKidsMixin. Every line of text and every number is in
+data/stray_kids.json; the members' songs (the earworm) in data/monsters.json.
 No real lyrics anywhere: the lines are made up, and songs are named only by
 their titles.
 """
@@ -34,6 +36,7 @@ from __future__ import annotations
 
 import json
 import random
+import re
 
 from monster import Monster
 
@@ -50,7 +53,7 @@ def data() -> dict:
 
 
 def members() -> list:
-    """The eight, in their places in the dance (Bang Chan first: he leads)."""
+    """The eight, in their places on the stage (Bang Chan first: he leads)."""
     return list(data()['members'])
 
 
@@ -111,78 +114,27 @@ def roll_for_new_run() -> int | None:
 def new_run_state() -> dict:
     """``game._stray_kids`` (saved): the idol's floor (None: not this run),
     placed yet and where, whether it has called the hero over, touched yet,
-    the floor to go back to, how the stage ended ('cleared' or 'left'), and
-    whether the photo has dropped."""
+    the floor to go back to, how the stage ended ('cleared' or 'left'),
+    whether the photo has dropped, the dance-off's challenge (None, then
+    'pending' once the band has seen the hero and the announcement fired,
+    then 'made' once the dance-off screen first opened), and the dance-off
+    screen if it is open (``dancing``: its mode and the strikes left; a load
+    opens it again at the start of the current round)."""
     return {'floor': roll_for_new_run(), 'spawned': False, 'pos': None, 'called': False,
-            'touched': False, 'return_floor': 0, 'outcome': None, 'photo_dropped': False}
+            'touched': False, 'return_floor': 0, 'outcome': None, 'photo_dropped': False,
+            'challenge': None, 'dancing': None}
 
 
 def old_save_state() -> dict:
     """A save from before the egg: a run without it (its floors may be behind
     the hero already)."""
     return {'floor': None, 'spawned': False, 'pos': None, 'called': False,
-            'touched': False, 'return_floor': 0, 'outcome': None, 'photo_dropped': False}
+            'touched': False, 'return_floor': 0, 'outcome': None, 'photo_dropped': False,
+            'challenge': None, 'dancing': None}
 
-
-# ---------------------------------------------------------------------------
-# The dance
-# ---------------------------------------------------------------------------
 
 def _cheb(ax, ay, bx, by) -> int:
     return max(abs(ax - bx), abs(ay - by))
-
-
-def _sign(v) -> int:
-    return (v > 0) - (v < 0)
-
-
-def facing(ax: int, ay: int, hx: int, hy: int) -> tuple:
-    """The way the formation faces: toward the hero, along the longer axis."""
-    dx, dy = hx - ax, hy - ay
-    if dx == 0 and dy == 0:
-        return (0, 1)
-    if abs(dx) >= abs(dy):
-        return (_sign(dx), 0)
-    return (0, _sign(dy))
-
-
-def turn(offset, face) -> tuple:
-    """A shape's place, written facing +y (the front row has the larger y),
-    turned to face ``face``."""
-    dx, dy = int(offset[0]), int(offset[1])
-    fx, fy = face
-    if (fx, fy) == (0, 1):
-        return (dx, dy)
-    if (fx, fy) == (0, -1):
-        return (-dx, -dy)
-    if (fx, fy) == (1, 0):
-        return (dy, -dx)
-    return (-dy, dx)            # facing -x
-
-
-def shape_names() -> list:
-    return list(data()['dance']['shape_order'])
-
-
-def new_dance(home: tuple) -> dict:
-    """The dance's state, kept on the stage's Dungeon (``sk_dance``): it
-    pickles with the floor."""
-    return {'anchor': [int(home[0]), int(home[1])], 'home': [int(home[0]), int(home[1])],
-            'beat': 0, 'shape': 0, 'aware': False, 'facing': [-1, 0]}
-
-
-def dance_of(dungeon) -> dict | None:
-    d = getattr(dungeon, '__dict__', {}).get('sk_dance')
-    return d if isinstance(d, dict) else None
-
-
-def place_of(dance: dict, slot: int) -> tuple:
-    """Where member ``slot`` should stand in the dance's current shape."""
-    name = shape_names()[int(dance.get('shape', 0)) % len(shape_names())]
-    offs = data()['dance']['shapes'][name]
-    dx, dy = turn(offs[slot % len(offs)], tuple(dance.get('facing') or (0, 1)))
-    ax, ay = dance['anchor']
-    return (ax + dx, ay + dy)
 
 
 def the_band(monsters) -> list:
@@ -191,44 +143,265 @@ def the_band(monsters) -> list:
                   key=lambda m: int(getattr(m, '_sk_slot', 0)))
 
 
-def strike_beat(dance: dict) -> bool:
-    every = max(1, int(data()['dance']['strike_every']))
-    return bool(dance.get('aware')) and int(dance.get('beat', 0)) % every == 0
+# ---------------------------------------------------------------------------
+# The dance-off (pure): Simon Says, eight rounds, a member leading each
+# ---------------------------------------------------------------------------
+
+def dance_off() -> dict:
+    return data()['dance_off']
 
 
-def advance(dungeon, monsters, hero_xy: tuple, sees) -> list:
-    """One beat of the dance, once a turn. ``sees(m)`` says whether band
-    member ``m`` can see the hero. Returns what happened, for the game to
-    say: ('seen',) the first time any of them sees him, ('shape', name)
-    when the shape changes."""
-    d = dance_of(dungeon)
+def rounds() -> int:
+    """One round for each member."""
+    return len(members())
+
+
+def strikes() -> int:
+    """The strikes a dance-off allows (a lost round spends one)."""
+    return max(1, int(dance_off()['strikes']))
+
+
+def round_steps(i: int) -> int:
+    """How many steps round ``i`` (0 first) has: first_steps, and
+    steps_per_round more each round (never more than the choreography)."""
+    d = dance_off()
+    n = int(d['first_steps']) + int(d['steps_per_round']) * max(0, int(i))
+    return max(1, min(len(d['choreography']), n))
+
+
+def round_phrase(i: int) -> list:
+    """The steps of round ``i`` as [[beat, dir], ...] (rhythm.phrase's form):
+    the choreography's first round_steps(i) steps, one a beat. Simon Says:
+    each round is the whole of the last, and one step more."""
+    d = dance_off()
+    return [[k, d['choreography'][k]] for k in range(round_steps(i))]
+
+
+def round_bpm(i: int) -> int:
+    """Round ``i``'s tempo: a little faster every round."""
+    d = dance_off()
+    return int(d['bpm_first']) + int(d['bpm_per_round']) * max(0, int(i))
+
+
+def phrase_beats(steps: int) -> int:
+    """The beats a phrase of ``steps`` takes: whole bars of bar_beats, with
+    at least rest_beats of rest after its last step (a breath between the
+    leader's call and the hero's turn)."""
+    d = dance_off()
+    bar = max(1, int(d.get('bar_beats', 4)))
+    need = int(steps) + max(0, int(d.get('rest_beats', 1)))
+    return bar * -(-need // bar)
+
+
+def round_timeline(i: int) -> dict:
+    """Round ``i`` laid out on the beat (rhythm.timeline): a count-in, the
+    leader's call, then the hero's turn."""
+    import rhythm
+    d = dance_off()
+    return rhythm.timeline(round_phrase(i), round_bpm(i), int(d['lead_beats']),
+                           phrase_beats(round_steps(i)))
+
+
+def fallen(monsters) -> int:
+    """How many of the eight have fallen (the rounds won so far)."""
+    return max(0, rounds() - len(the_band(monsters)))
+
+
+def round_index(monsters) -> int:
+    """The round to dance now (0 first): one for every member fallen."""
+    return max(0, min(rounds() - 1, fallen(monsters)))
+
+
+def leader(monsters):
+    """Who leads the round now: the first of the band still standing."""
     band = the_band(monsters)
-    if d is None or not band:
-        return []
-    cfg = data()['dance']
-    out = []
-    hx, hy = hero_xy
-    if not d.get('aware') and any(sees(m) for m in band):
-        d['aware'] = True
-        out.append(('seen',))
-    d['beat'] = int(d.get('beat', 0)) + 1
-    if d['beat'] % max(1, int(cfg['beats_per_shape'])) == 0:
-        d['shape'] = (int(d.get('shape', 0)) + 1) % len(shape_names())
-        out.append(('shape', shape_names()[d['shape']]))
-    ax, ay = d['anchor']
-    if d.get('aware'):
-        face = facing(ax, ay, hx, hy)
-        d['facing'] = list(face)
-        keep = int(cfg['keep_off'])
-        goal = (hx - face[0] * keep, hy - face[1] * keep)
-        if _cheb(ax, ay, *goal) > 0:
-            sx, sy = _sign(goal[0] - ax), _sign(goal[1] - ay)
-            for nx, ny in ((ax + sx, ay + sy), (ax + sx, ay), (ax, ay + sy)):
-                if (nx, ny) != (ax, ay) and dungeon.is_walkable(nx, ny):
-                    d['anchor'] = [nx, ny]
-                    break
-    return out
+    return band[0] if band else None
 
+
+def after_round(won: bool, strikes_left: int, standing_after: int) -> tuple:
+    """What follows a round: ('won', strikes) when the last of the band fell;
+    ('next', strikes) when its leader fell and another leads; ('retry',
+    strikes - 1) a strike gone, and the round again; ('lost', 0) out of
+    strikes, the dance-off lost."""
+    if won:
+        return ('won' if int(standing_after) <= 0 else 'next', int(strikes_left))
+    left = int(strikes_left) - 1
+    return ('retry', left) if left > 0 else ('lost', 0)
+
+
+def _defs() -> dict:
+    from paths import data_path
+    with open(data_path('data', 'monsters.json'), encoding='utf-8') as f:
+        return json.load(f)
+
+
+def earworm_attack(member: str, defs: dict | None = None) -> dict:
+    """His song: the attack of his (data/monsters.json) that carries a
+    hindrance, a voice first; his first attack if none does."""
+    attacks = list(((defs or _defs()).get(zombie_kind(member)) or {}).get('attacks') or ())
+    with_effect = [a for a in attacks if a.get('effect')]
+    voiced = [a for a in with_effect if a.get('delivery') == 'voice']
+    pick = (voiced or with_effect or attacks or [{}])[0]
+    return dict(pick)
+
+
+def _roll(notation: str, rng) -> int:
+    m = re.fullmatch(r'(\d*)d(\d+)([+-]\d+)?', str(notation or '').strip().lower().replace(' ', ''))
+    if not m:
+        return 0
+    count = int(m.group(1) or 1)
+    sides = max(1, int(m.group(2)))
+    return sum(rng.randint(1, sides) for _ in range(count)) + int(m.group(3) or 0)
+
+
+def earworm(member: str, hero_hp: int, rng, defs: dict | None = None) -> dict:
+    """What a lost round does to the hero: the leader's song gets stuck in
+    his head. {'song', 'quip', 'effect', 'turns', 'damage'}: his song's own
+    hindrance (the data's when it has none), and its damage, never more than
+    max_damage and never the last hit point (no dumb-luck death)."""
+    ew = dance_off()['earworm']
+    atk = earworm_attack(member, defs)
+    effect = atk.get('effect') or ew['effect']
+    turns = int(atk.get('effect_duration') or ew['turns']) if atk.get('effect') else int(ew['turns'])
+    roll = max(0, _roll(atk.get('damage', '1d2'), rng))
+    damage = max(0, min(roll, int(ew['max_damage']), int(hero_hp) - 1))
+    return {'song': atk.get('name', ''), 'quip': atk.get('quip', ''), 'effect': effect,
+            'turns': max(1, turns), 'damage': damage}
+
+
+def leader_line(member: str, which: str, rng) -> str:
+    """One of his lines for the dance-off: 'open' (his line as he leads the
+    round) or 'roast' (when the hero misses it)."""
+    lines = ((dance_off().get('leaders') or {}).get(member) or {}).get(which) or ()
+    return rng.choice(list(lines)) if lines else ''
+
+
+# ---------------------------------------------------------------------------
+# The zombie band: performers on the stage
+# ---------------------------------------------------------------------------
+
+class ZombieMember(Monster):
+    """One of the eight, dead and still performing. He stands posed in his
+    place and waits for a dance-off: no blow or spell touches him (a
+    performer, like the stars of a show: ``is_allied``), nothing holds him,
+    and he never strikes. He falls only to a round of the dance-off."""
+
+    is_sk_zombie = True
+    _no_corpse = True               # they disintegrate (game_combat._on_monster_killed)
+
+    def __init__(self, defn: dict, x: int, y: int, member: str = '', slot: int = 0):
+        super().__init__({**defn, 'is_allied': True}, x, y)
+        self._sk_member = member or defn['id'].replace('sk_zombie_', '', 1)
+        self._sk_slot = int(slot)
+        self._home = (int(x), int(y))
+        self.perform()
+
+    @property
+    def member(self) -> str:
+        return self.__dict__.get('_sk_member', '')
+
+    def perform(self) -> None:
+        """A performer again: unhurt, unhindered, out of any war-band (a save
+        from before the dance-off had the band fighting)."""
+        self.is_allied = True
+        self.status_effects = {}
+        self.hp = self.max_hp
+        for attr in ('_band', '_band_id', '_band_role', '_band_leader', '_sk_events',
+                     '_tracking', '_job', '_job_fixed'):
+            self.__dict__.pop(attr, None)
+        self.quarrelsome = False
+
+    @property
+    def observe_line(self) -> str:
+        """What Observe (O) says of him, after the usual lines."""
+        d = data()
+        own = d['observe'].get(self.member, '')
+        return ' '.join(p for p in (own, d['dance_off']['observe_tell']) if p)
+
+    def take_damage(self, amount: int, damage_type: str = 'physical',
+                    ignore_resistance: bool = False) -> int:
+        return 0
+
+    def add_effect(self, name: str, duration: int):
+        pass                        # nothing stops the show
+
+    def hold(self, name: str, duration: int):
+        pass                        # (a held stare, a stun: nothing holds a performer)
+
+    def take_turn(self, player, dungeon, all_monsters, extra_occupied=None) -> bool:
+        """He holds his pose, waiting for the dance-off."""
+        return False
+
+
+def make_zombie(member: str, x: int, y: int, slot: int) -> ZombieMember:
+    defs = _defs()
+    kind = zombie_kind(member)
+    return ZombieMember({**defs[kind], 'id': kind}, x, y, member=member, slot=slot)
+
+
+def _hall(dungeon):
+    rooms = getattr(dungeon, 'rooms', None) or []
+    return rooms[1] if len(rooms) > 1 else (rooms[0] if rooms else None)
+
+
+def stage_home(dungeon) -> tuple:
+    """Where the band's V is anchored: home_from_east tiles in from the
+    hall's east wall, on its middle row."""
+    hall = _hall(dungeon)
+    back = int(data()['stage'].get('home_from_east', 6))
+    return (hall.x + hall.width - 1 - back, hall.y + hall.height // 2)
+
+
+def place_of(dungeon, slot: int) -> tuple:
+    """Member ``slot``'s place in the V (stage.formation)."""
+    offs = data()['stage']['formation']
+    hx, hy = stage_home(dungeon)
+    dx, dy = offs[int(slot) % len(offs)]
+    return (hx + int(dx), hy + int(dy))
+
+
+def stage_edge(dungeon) -> tuple:
+    """The edge of the stage: the hall's first tile where the passage from
+    the wings comes in (a lost dance-off sets the hero down here)."""
+    hall = _hall(dungeon)
+    return (hall.x, hall.y + hall.height // 2)
+
+
+def on_stage(dungeon, x: int, y: int) -> bool:
+    """Is (x, y) on the stage (the hall), not in the wings or the passage?"""
+    hall = _hall(dungeon)
+    if hall is None:
+        return False
+    return hall.x <= x < hall.x + hall.width and hall.y <= y < hall.y + hall.height
+
+
+def settle_band(dungeon, monsters, hero_xy=None) -> int:
+    """Every member still standing back in his place, a performer again
+    (unhurt, unhindered, out of any war-band). A lost dance-off resets the
+    band this way, and so does loading a save from before the dance-off,
+    when the band was fighting in formation. The fallen stay fallen. The old
+    dance's state on the floor is dropped. Returns how many were settled."""
+    getattr(dungeon, '__dict__', {}).pop('sk_dance', None)
+    taken = {tuple(hero_xy)} if hero_xy else set()
+    taken |= {(m.x, m.y) for m in monsters or ()
+              if getattr(m, 'alive', False) and not is_zombie(m)}
+    band = the_band(monsters)
+    for m in band:
+        m.perform()
+        spot = place_of(dungeon, int(getattr(m, '_sk_slot', 0)))
+        if spot in taken or not dungeon.is_walkable(*spot):
+            hall = _hall(dungeon)
+            spot = next((t for t in hall.inner_tiles()
+                         if dungeon.is_walkable(*t) and t not in taken), (m.x, m.y))
+        m.x, m.y = spot
+        m._home = spot
+        taken.add(spot)
+    return len(band)
+
+
+# ---------------------------------------------------------------------------
+# The stars: the band alive, called up by the photo
+# ---------------------------------------------------------------------------
 
 def _step_toward(m, goal: tuple, dungeon, all_monsters, extra_occupied, player) -> bool:
     """One step that brings ``m`` nearer ``goal`` (never onto anyone, never
@@ -257,99 +430,6 @@ def _step_toward(m, goal: tuple, dungeon, all_monsters, extra_occupied, player) 
     m.x, m.y = best[1], best[2]
     return True
 
-
-# ---------------------------------------------------------------------------
-# The zombie band
-# ---------------------------------------------------------------------------
-
-# Statuses that take a member out of the dance: he acts as any monster would.
-_HELD = ('sleeping', 'paralyzed', 'stunned', 'frozen', 'stuck_in_pit', 'impaled')
-_MIND = ('feared', 'charmed', 'confused', 'blinded')
-
-
-class ZombieMember(Monster):
-    """One of the eight, dead and still dancing."""
-
-    is_sk_zombie = True
-    _no_corpse = True               # they disintegrate (game_combat._on_monster_killed)
-
-    def __init__(self, defn: dict, x: int, y: int, member: str = '', slot: int = 0):
-        super().__init__(defn, x, y)
-        self._sk_member = member or defn['id'].replace('sk_zombie_', '', 1)
-        self._sk_slot = int(slot)
-        self._sk_events = []        # lines for the game to say (Lee Know's cat)
-
-    @property
-    def member(self) -> str:
-        return self.__dict__.get('_sk_member', '')
-
-    @property
-    def observe_line(self) -> str:
-        """What Observe (O) says of him, after the usual lines."""
-        d = data()
-        own = d['observe'].get(self.member, '')
-        return ' '.join(p for p in (own, d['dance']['beat_tell']) if p)
-
-    def _off_the_dance(self) -> bool:
-        if any(self.has_effect(e) for e in _HELD) or self._under('immobilized'):
-            return True
-        return any(self._under(e) for e in _MIND)
-
-    def _reach(self) -> str:
-        return 'ranged' if any(a.get('ranged') for a in self.attacks) else 'melee'
-
-    def _in_reach(self, player, dungeon, all_monsters) -> bool:
-        if self._adjacent_to(player):
-            return True
-        if self._reach() != 'ranged':
-            return False
-        dist = _cheb(self.x, self.y, player.x, player.y)
-        return 2 <= dist <= self._RANGED_MAX and self._has_clear_shot(player.x, player.y,
-                                                                     dungeon, all_monsters)
-
-    def _distracted(self) -> bool:
-        """Lee Know and his cat: now and then the cat matters more than you."""
-        dd = (data().get('distracted') or {}).get(self.member)
-        if not dd or random.random() >= float(dd.get('chance', 0)):
-            return False
-        self.__dict__.setdefault('_sk_events', []).append(random.choice(dd['lines']))
-        return True
-
-    def take_turn(self, player, dungeon, all_monsters, extra_occupied=None) -> bool:
-        self._cached_all_monsters = all_monsters
-        if not self.alive:
-            return False
-        dance = dance_of(dungeon)
-        if dance is None or self._off_the_dance():
-            return super().take_turn(player, dungeon, all_monsters, extra_occupied)
-        if dance.get('aware'):
-            self._aware = True
-            self._tracking = True
-        if strike_beat(dance) and self._in_reach(player, dungeon, all_monsters):
-            return not self._distracted()
-        _step_toward(self, place_of(dance, self._sk_slot), dungeon, all_monsters,
-                     extra_occupied, player)
-        return False
-
-    def _resolve_blow(self, atk: dict, player, in_flurry: bool = False):
-        dmg, msg = super()._resolve_blow(atk, player, in_flurry)
-        quip = atk.get('quip', '')
-        if quip and dmg > 0 and msg:
-            msg = f"{msg} {quip}"
-        return dmg, msg
-
-
-def make_zombie(member: str, x: int, y: int, slot: int) -> ZombieMember:
-    from paths import data_path
-    with open(data_path('data', 'monsters.json'), encoding='utf-8') as f:
-        defs = json.load(f)
-    kind = zombie_kind(member)
-    return ZombieMember({**defs[kind], 'id': kind}, x, y, member=member, slot=slot)
-
-
-# ---------------------------------------------------------------------------
-# The stars: the band alive, called up by the photo
-# ---------------------------------------------------------------------------
 
 class StarDancer(Monster):
     """One of the eight, alive, in a show for the hero: an ally who takes no
@@ -432,7 +512,7 @@ def build_stage():
     """(dungeon, monsters, items): the wings, where the hero arrives and the
     stage door (the way out, a down stair) stands; a short passage; and the
     stage hall, dressed with speakers, pyro and a runway, where the band
-    rehearses at the far end."""
+    stands posed in a V at the far end (stage.formation)."""
     import boss_levels as bl
     import decor
     from dungeon import STAIRS_DOWN, FLOOR
@@ -460,37 +540,14 @@ def build_stage():
         if tiles[25][x] == FLOOR:
             decor.place(dungeon, (x, 25), 'carpet')
 
-    home = (x1 - 6, 25)
-    dance = new_dance(home)
-    dungeon.sk_dance = dance
     monsters = []
-    leader = None
     taken = set()
     for slot, member in enumerate(members()):
-        tx, ty = place_of(dance, slot)
-        spot = (tx, ty)
+        spot = place_of(dungeon, slot)
         if not dungeon.is_walkable(*spot) or spot in taken:
             spot = next((t for t in hall.inner_tiles()
-                         if dungeon.is_walkable(*t) and t not in taken), home)
+                         if dungeon.is_walkable(*t) and t not in taken), stage_home(dungeon))
         taken.add(spot)
-        m = make_zombie(member, spot[0], spot[1], slot)
-        _join_band(m, leader)
-        if leader is None:
-            leader = m
-        monsters.append(m)
+        monsters.append(make_zombie(member, spot[0], spot[1], slot))
     dungeon.atmosphere_messages = list(data()['stage']['atmosphere'])
     return dungeon, monsters, []
-
-
-def _join_band(m, leader) -> None:
-    """Tag a member as one of the war-band (src/war_bands.py): Bang Chan
-    leads; while he stands nobody runs, and when he falls the rest lose the
-    count and stumble into one another."""
-    m._band = f"{data()['band_id']}@stage"
-    m._band_id = data()['band_id']
-    m._band_role = 'leader' if leader is None else 'guard'
-    if leader is not None:
-        m._band_leader = leader
-    m._home = (m.x, m.y)
-    m._job_fixed = True
-    m._job = 'guard'

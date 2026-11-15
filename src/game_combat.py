@@ -1210,12 +1210,15 @@ class CombatMixin:
         # when it was banished.
         _banished = bool(getattr(monster, '_banished', False))
         if not _banished:
-            self.add_message(f"{the_name(monster)} is slain!", 'success')
+            # A Stray Kid danced down is not "slain": he crumbles (below).
+            if not getattr(monster, '_danced_down', False):
+                self.add_message(f"{the_name(monster)} is slain!", 'success')
             self._drop_treasure(monster)
         # A thief gives back everything it stole (src/theft.py).
         for _tmsg in theft.give_back(self, monster):
             self.add_message(_tmsg, 'loot')
-        # A Stray Kid crumbles to nothing; the last leaves the photo.
+        # A Stray Kid crumbles to nothing (a round of the dance-off won:
+        # game_stray_kids._sk_fall); the last leaves the photo.
         self._stray_kids_member_died(monster)
 
         # Cadmus / Vel of Murugan / Shamshir (engine wave 4):
@@ -2883,12 +2886,10 @@ class CombatMixin:
         sees it after he has come to know it better."""
         import family_lore
         import tells
+        # (A friend, an encounter's person, and the Stray Kids' band, who are
+        # performers: the stage's 'tell' says what the dance-off is.)
         if getattr(m, 'is_allied', False) or getattr(m, '_npc_encounter_tag', None) \
                 or getattr(m, '_flavor_encounter_tag', None):
-            return
-        # The Stray Kids are told as one band when they first see the hero
-        # (game_stray_kids: the stage's 'tell'); Observe still tells each.
-        if getattr(m, 'is_sk_zombie', False):
             return
         kind = getattr(m, 'kind', '')
         if not kind:

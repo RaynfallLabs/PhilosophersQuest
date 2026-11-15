@@ -129,7 +129,7 @@ the doc wins (and the row is a bug — please update it).
 | "How is the sidebar built?" | [ui.md](ui.md); `ui.Sidebar._identity/_vitals/_attributes/_derived/_effects/_powers/_in_sight` |
 | "Why is a potion I never identified showing its true name and blessing?" | [identify_v3.md](identify_v3.md) §1 top: a known kind fully identifies every copy (`items.is_fully_known`) |
 | "How do mystery altars gate challenges?" | [quests_mysteries.md](quests_mysteries.md); `MYSTERIES` dict in `mystery_system.py` |
-| "What is the Stray Kids idol / the Zombie Stage?" | [monsters.md](monsters.md) (Special monster modules) and [world.md](world.md) §6.6a; `src/stray_kids.py`, `data/stray_kids.json` |
+| "What is the Stray Kids idol / the Zombie Stage / the dance-off?" | [monsters.md](monsters.md) (Special monster modules) and [world.md](world.md) §6.6a; `src/stray_kids.py`, `src/game_stray_kids.py`, `data/stray_kids.json`; the dance screen is the Mooble's (`game_mooble_dance.py`, `rhythm.py`) |
 | "Where is karma clamped?" | [karma_prayer.md](karma_prayer.md); `karma.adjust` (`src/karma.py`), −10..+10, +1 per 10-floor block |
 | "What does `plot_locked` do in item JSON?" | [data_schemas.md](data_schemas.md); documentary only — real gate is `min_level: 9999` + custom spawn code |
 | "How does the welcome screen pick a build?" | [progression.md](progression.md); `welcome_screen.SECRET_BUILDS`, `_qa_tools` gated by `PQ_QA_MODE=1` or `--qa` |
