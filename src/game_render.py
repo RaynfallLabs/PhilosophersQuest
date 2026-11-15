@@ -3996,7 +3996,13 @@ class RenderMixin:
                                  (bar.x, bar.y, max(3, int(bar.w * hp_ratio)), bar.h),
                                  border_radius=4)
             pygame.draw.rect(self.screen, FP.BURGUNDY, bar, 1, border_radius=4)
-        put(f"{monster.hp}/{monster.max_hp} HP", t['hp_text'], hp_color,
+        # Words in the danger colour take its light form: FP.DANGER_TEXT
+        # (blood red) is 2.8:1 on the strip, too dark to read (bug bash 3.5.1
+        # D: the UI gate on "Shrugs Off (Quarter): Pierce / Slash"). The bars
+        # keep the deep red.
+        def _words(col):
+            return FP.DANGER_TEXT_LIGHT if col == FP.DANGER_TEXT else col
+        put(f"{monster.hp}/{monster.max_hp} HP", t['hp_text'], _words(hp_color),
             align='right')
 
         def hp_bar(rect, ratio, color):
@@ -4023,7 +4029,7 @@ class RenderMixin:
                      FP.WARNING_TEXT if p_ratio > 0.25 else FP.DANGER_TEXT)
             put("You", t['you_label'], KT.TEXT_DIM, sizes=(20, 17, 16))
             hp_bar(t['you_bar'], p_ratio, p_col)
-            put(f"{p_hp}/{p_max} HP", t['you_text'], p_col, align='right')
+            put(f"{p_hp}/{p_max} HP", t['you_text'], _words(p_col), align='right')
 
         # Status effects: all of them when they fit; otherwise as many as
         # fit plus a "+N" count, never a clipped half-word.
@@ -4077,7 +4083,7 @@ class RenderMixin:
             dm_text, dm_col = f"Resisted ({_aff._size_word(dm)}): {type_str}", FP.DANGER_TEXT
         else:
             dm_text, dm_col = type_str, FP.FADED_TEXT
-        put(dm_text, s['sub2'], dm_col)
+        put(dm_text, s['sub2'], _words(dm_col))
 
     # ------------------------------------------------------------------
     # Action menu visual system

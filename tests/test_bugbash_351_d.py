@@ -301,3 +301,47 @@ def test_d6_the_birds_names_do_not_overlap(game, monkeypatch):
     tags = [rect for surf, rect in game.screen.blits if surf.get_width() in widths]
     assert len(tags) == 2, tags
     assert not tags[0].colliderect(tags[1]), tags
+
+
+# ---------------------------------------------------------------------------
+# D8. The fight strip's red words can be read
+# ---------------------------------------------------------------------------
+
+def _capture_mod():
+    import importlib.util
+    if 'pq_ui_capture' in sys.modules:
+        return sys.modules['pq_ui_capture']
+    spec = importlib.util.spec_from_file_location(
+        'pq_ui_capture', os.path.join(ROOT, 'tools', 'ui', 'capture.py'))
+    mod = importlib.util.module_from_spec(spec)
+    sys.modules['pq_ui_capture'] = mod
+    spec.loader.exec_module(mod)
+    return mod
+
+
+@pytest.mark.parametrize('low_hp', [False, True])
+def test_d8_the_fight_strips_danger_words_reach_their_contrast(low_hp):
+    """The fight strip wrote "Shrugs Off (Quarter): Pierce / Slash", "Resisted
+    (Half): ...", and a target's or the hero's health under a quarter, in
+    FP.DANGER_TEXT (blood red): 2.8:1 on the strip, under the 3:1 floor for
+    large text and far under 4.5:1 (the UI gate found it once a capture
+    scene fought a studied stirge swarm). They take the light danger red."""
+    cap = _capture_mod()
+    base = next(s for s in cap.SCENES if s.name == 'quiz_chain_strip_shrugs')
+
+    def setup(g):
+        base.setup(g)
+        if low_hp:
+            g.combat_target.hp = 1
+            g.player.hp = 1
+    sc = cap.Scene('d8_strip', 'Quiz', 'test', setup, 'game', 'quiz')
+    with cap.harness():
+        surf, _state = cap.render_scene(sc, (1280, 720), measure_contrast=True)
+    blits, infos, _panels = surf.top_layer()
+    seen = {}
+    for (rect, text), info in zip(blits, infos):
+        if text.startswith('Shrugs Off') or text.endswith(' HP'):
+            seen[text] = info['contrast']
+    assert any(t.startswith('Shrugs Off (Quarter)') for t in seen), seen
+    for text, c in seen.items():
+        assert c is not None and c >= 4.5, (text, c)
