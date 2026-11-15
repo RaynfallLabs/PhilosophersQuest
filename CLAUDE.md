@@ -79,6 +79,9 @@ src/
   stray_kids.py       - The Stray Kids easter egg (floors 8-12): the zombie band's dance, the stage, the stars
   game_stray_kids.py  - StrayKidsMixin: the idol, the Zombie Stage trip, the beat, the photo's show
   emberpup_encounter.py - The abandoned Emberpup (floors 3-8): three feeds, the Bloomleaf Cloak won from Old Nickel; he keeps it
+  mooble_encounter.py - The Mooble (floors 31-45): his side cave, the Starnut Tart, three dance-offs, "I choose you"; his gifts as a pet
+  game_mooble_dance.py - MoobleDanceMixin: the dance screen (practice, the dance-off, his danced special), the beat, real-time keys
+  rhythm.py           - Any dance scored, pure: the beat timeline (with or without a call), Perfect / Good / Miss, pass mark, score bands
   setne_tomb.py       - Setne's Tomb and the Book of Thoth (floors 45-65)
 
   # Combat, items, magic
@@ -113,7 +116,7 @@ src/
   boons.py            - Gate-boss gifts (pick one of three)
   status_effects.py   - Buffs/debuffs (paralysis, poison, berserk, etc.)
   food_system.py      - Harvest and cook (the two quiz flows), eating, potions
-  kitchen.py          - The kitchen: kin ingredients, the recipe book, what a dish gives (cooking_rules.json), the cook menu's rows
+  kitchen.py          - The kitchen: kin ingredients, the recipe book, what a dish gives (cooking_rules.json), the cook menu's rows; cook to carry (a recipe's `makes`)
   cook_menu.py        - The cook menu's words (why it opened where, chips, what is missing) and its list window (pure)
   container_system.py - Chests, sacks, lockable containers (lockpicking)
   economy.py          - The gold economy: what a floor earns and what things cost
@@ -188,6 +191,7 @@ data/
   gear_rules.json   - Armour and ring rules: thresholds, donning turns, load tiers, the light / heavy trade
   traders.json      - The named traders: stock, services, stall counters, the smiths' inlays and linings
   stray_kids.json, abandoned_emberpup.json - Two of the run's set pieces (the Stray Kids stage; the Emberpup and Old Nickel)
+  mooble.json       - The Mooble: his floors, lines, the dance (windows, pass mark, phrases and tempi) and his pet species
   (data/ holds only runtime JSON; the old generator/migration scripts were moved out)
 
 assets/

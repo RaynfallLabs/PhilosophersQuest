@@ -1828,6 +1828,7 @@ WITHHELD_IDS = frozenset({
     'philosophers_shard', 'tablet_of_second_death',
     'complete_tablet_of_second_death', 'silverlight_pendant',
     'oathkeeper_sword', 'lionheart_shield', 'master_lockpick',
+    'starnut_tart',                    # the Mooble's tart (mooble_encounter.py)
 })
 
 

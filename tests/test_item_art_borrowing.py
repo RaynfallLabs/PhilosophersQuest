@@ -37,7 +37,12 @@ SKIP_FILES = {'accessory_appearances', 'recipes', 'ingredient', 'harvest_map'}
 # Pictures shared on purpose: the borrowed picture shows the same thing.
 # {item id: picture it shows}. Keep this list short and explain each entry.
 DELIBERATE_SHARED = {
-    # none: every wand, scroll, spellbook, ring and amulet now ships its own picture (2026-10-17)
+    # Every wand, scroll, spellbook, ring and amulet ships its own picture (2026-10-17).
+    # The Starnut Tart is a dish cooked to carry (kitchen.makes): it shows the
+    # picture of the dish it was cooked as, a tier-2 Special pie, until it has
+    # one of its own (RARE_PETS_PLAN_2026_11_14; the brief's "art from the dish
+    # picker or its own").
+    'starnut_tart': 'dish_pie_t2_special',
 }
 
 # Word pairs that must never meet: an item whose name or effect carries one side

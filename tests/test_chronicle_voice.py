@@ -43,6 +43,7 @@ DYNAMIC_SOURCES = {
     "data()['sword_chronicle']": 'data/black_knight.json',
     "d['greet_chronicle']": 'data/black_knight.json',
     "d['attack_chronicle']": 'data/abandoned_emberpup.json',
+    "d['met_chronicle']": 'data/mooble.json',
     "story['unnamed_chronicle']": 'pet_system naming_story / data/abandoned_emberpup.json',
     "story['named_chronicle'].format(name=name)": 'pet_system naming_story / emberpup json',
     "_MILESTONE_FLAVOR[new_level]": 'inline table',

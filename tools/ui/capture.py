@@ -3068,6 +3068,143 @@ def _(g):
     _pet_scene(g, 'fire', 60, nickname='Ember', bloomleaf=True)
 
 
+@scene('menu_pet_mooble', 'Pets',
+       'Shift+P with Pip the Mooble Troupe-Leader (RARE_PETS_PLAN section 2): his picture, '
+       'his mana gift, the Dance of the Dark and the lifted hindrance on his card.',
+       expect='pet_menu')
+def _(g):
+    _pet_scene(g, 'mooble', 60, nickname='Pip')
+
+
+def _mooble(g, fed=False):
+    """The Mooble in his side cave on this floor, set down by the game's own
+    spawner, the hero in the cave beside him; met, and given his tart when
+    ``fed``."""
+    import mooble_encounter as mo
+    g._mooble = {'floor': g.dungeon_level, 'spawned': False, 'outcome': None, 'seed': 7}
+    g._maybe_spawn_mooble(g.dungeon_level)
+    m = g._mooble_here()
+    cave = getattr(m, '_mooble_cave', None)
+    if cave:
+        g.player.x, g.player.y = cave['centre']
+    else:
+        m.x, m.y = _free_tiles_near(g, 1, 1)[0]
+    if fed:
+        m._mooble_met = True
+        m._mooble_tart = True
+        m.sprite_id = mo.sprite_of(m)
+    return m
+
+
+def _mooble_dance(g, mode, at_step, hits):
+    """His dance screen at the frozen clock, ``at_step`` steps into the
+    response (or into his call, with a negative number), the first ``hits``
+    response steps pressed on time."""
+    import rhythm
+    m = _mooble(g, fed=True)
+    m._mooble_dances = 1                       # the second visit: six steps at 95
+    g._start_mooble_encounter(m)
+    press(g, pygame.K_1 if mode == 'practice' else pygame.K_2)
+    press(g, pygame.K_SPACE)
+    md = g._mdance
+    tl = md['tl']
+    if at_step >= 0:
+        when = tl['response'][at_step][0] + 20
+    else:
+        when = tl['call'][-at_step - 1][0] + 20
+    md['t0'] = FROZEN_TICKS_MS - int(when)
+    md['presses'] = rhythm.on_time(tl['response'][:hits])
+    md['beat_played'] = int(when // tl['beat_ms'])
+    md['step_played'] = len(tl['call']) - 1
+
+
+@scene('mooble_story', 'Encounters',
+       'Bump the Mooble in his side cave (every run, floors 31-45): his story, and the tart he misses.',
+       expect='mooble')
+def _(g):
+    g._start_mooble_encounter(_mooble(g))
+
+
+@scene('mooble_options', 'Encounters',
+       'The Mooble off his ledge after his Starnut Tart: practise, dance-off, the tart, "I choose you".',
+       expect='mooble')
+def _(g):
+    g._start_mooble_encounter(_mooble(g, fed=True))
+
+
+@scene('mooble_practice', 'Encounters',
+       'His dance, Practise: the hero echoing his phrase, two steps judged, the third lighting up.',
+       expect='mooble_dance')
+def _(g):
+    _mooble_dance(g, 'practice', at_step=2, hits=2)
+
+
+@scene('mooble_dance_off', 'Encounters',
+       'His dance, the Dance-off: he dances his phrase (his call), the arrows lighting as they come.',
+       expect='mooble_dance')
+def _(g):
+    _mooble_dance(g, 'dance', at_step=-3, hits=0)
+
+
+@scene('mooble_too_soon', 'Encounters',
+       'The Mooble bumped soon after a dance-off: his line says the dance-off waits; practice is still on offer.',
+       expect='mooble')
+def _(g):
+    m = _mooble(g, fed=True)
+    m._mooble_dances = 1
+    g._mooble['last_turn'] = g.turn_count
+    g._start_mooble_encounter(m)
+
+
+def _mooble_special(g, at_step, hits):
+    """Pip the Mooble Dancer's Dance of the Dark from the pet menu (Shift+P,
+    S, Enter) at the frozen clock, ``at_step`` steps in, the first ``hits``
+    pressed on time (the scene's own monsters are the ones he holds)."""
+    import rhythm
+    from pet_system import Pet
+    pet = Pet('mooble', g.pets[0].x, g.pets[0].y, level=30)
+    pet.nickname = 'Pip'
+    g.pets[:] = [pet]
+    g.handle_event(key_event(pygame.K_p, 'P', pygame.KMOD_SHIFT))
+    press(g, pygame.K_s, 's')
+    press(g, pygame.K_RETURN)
+    md = g._mdance
+    tl = md['tl']
+    when = tl['response'][at_step][0] + 20
+    md['t0'] = FROZEN_TICKS_MS - int(when)
+    md['presses'] = rhythm.on_time(tl['response'][:hits])
+    md['beat_played'] = int(when // tl['beat_ms'])
+    return md
+
+
+@scene('mooble_special', 'Pets',
+       "Shift+P, S, Enter with the Mooble: the Dance of the Dark is danced, a count-in then his "
+       "phrase lit as it comes (no practice).", expect='mooble_dance')
+def _(g):
+    _mooble_special(g, at_step=3, hits=3)
+
+
+@scene('mooble_special_result', 'Pets',
+       'The Dance of the Dark danced: how well it went, and how far, how long and how many it held.',
+       expect='mooble_dance')
+def _(g):
+    md = _mooble_special(g, at_step=0, hits=0)
+    import rhythm
+    md['presses'] = rhythm.on_time(md['tl']['response'][:4])
+    g._mooble_dance_finish()
+
+
+@scene('mooble_dance_result', 'Encounters',
+       'A dance-off danced through: the result and the pass mark.',
+       expect='mooble_dance')
+def _(g):
+    _mooble_dance(g, 'dance', at_step=-1, hits=0)
+    md = g._mdance
+    import rhythm
+    md['presses'] = rhythm.on_time(md['tl']['response'][:5])
+    g._mooble_dance_finish()
+
+
 @scene('menu_pet_shep', 'Pets',
        'Shift+P with Shep the Legend (the longest card: his rescue and his growl), hatched '
        'from a Master Hearth Sphere.', expect='pet_menu')

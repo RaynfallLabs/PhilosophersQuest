@@ -316,6 +316,15 @@ def init() -> bool:
         'tick':         lambda: _make_notes([(1000, 0.035)], wave='square', volume=0.12),
         'time_up':      lambda: _make_sweep(520, 190, 0.32, volume=0.30, decay=0.22),
         'toggle':       lambda: _make_notes([(660, 0.05), (880, 0.08)], volume=0.20),
+        # The Mooble's dance (game_mooble_dance.py): a soft tick on the beat,
+        # a brighter one on each bar's first beat, and a bell for each step
+        # (our own notes: a G-major chord's steps, nothing borrowed).
+        'dance_beat':   lambda: _make_notes([(988, 0.03)], wave='triangle', volume=0.14),
+        'dance_bar':    lambda: _make_notes([((784, 1568), 0.05)], wave='triangle', volume=0.20),
+        'dance_step_left':  lambda: _make_notes([(392, 0.12)], wave='triangle', volume=0.24),
+        'dance_step_right': lambda: _make_notes([(494, 0.12)], wave='triangle', volume=0.24),
+        'dance_step_up':    lambda: _make_notes([(587, 0.12)], wave='triangle', volume=0.24),
+        'dance_step_down':  lambda: _make_notes([(294, 0.12)], wave='triangle', volume=0.24),
     }
     for _i, _hz in enumerate(_CHAIN_SCALE, start=1):
         defs[f'chain_{_i}'] = (lambda hz=_hz: _make_notes([(hz, 0.11)], wave='triangle', volume=0.26))

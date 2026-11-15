@@ -465,6 +465,8 @@ state; column 4 is the `_draw_<state>` method.
 | `STATE_CHARACTER_SHEET` | `@` | `_character_sheet_input` | `_draw_character_sheet` → `_draw_character_pack_sheet` |
 | `STATE_NPC_ENCOUNTER` | NPC trigger | `_npc_encounter_input` | `_draw_npc_encounter` (the figure's map art beside the scene and result pages, `lore_art.plate`; choices keep the full width) |
 | `STATE_COW_ENCOUNTER` | cow spawn | `_cow_encounter_input` | `_draw_cow_encounter` |
+| `STATE_MOOBLE` | bump the Mooble (`mooble_encounter.py`) | `_mooble_input` | `_draw_mooble_encounter` (on `MoobleMixin`) |
+| `STATE_MOOBLE_DANCE` | his Practise / Dance-off; his Dance of the Dark (Shift+P, S) | `_mooble_dance_key` (arrows, numpad; Space starts; Esc stops a practice only) | `_draw_mooble_dance` (on `MoobleDanceMixin`; ticked each frame by `Game.update`) |
 | `STATE_JUDGMENT` | L99 altar | `_judgment_input` | `_draw_judgment` |
 | `STATE_STUDY` | `;` | `_study_input` | `_draw_study_journal` |
 | `STATE_MYSTERY_APPROACH` | mystery altar | `_mystery_approach_input` | `_draw_mystery_approach` |
@@ -498,6 +500,7 @@ state; column 4 is the `_draw_<state>` method.
 | `Shift+M` | the lowest unmastered philosophy tier one question short (QA only) | `handle_event` |
 | `Shift+K` | the Stray Kids idol beside the hero; again: the photo in the pack (QA only) | `handle_event` |
 | `Shift+L` | Old Nickel (the Bloomleaf Cloak's wearer) set down near the hero; again, the cloak into the pack (QA only) | `handle_event` |
+| `Shift+D` | the Mooble in a cave beside this room, a Starnut and a Starnut Tart in the pack; again, another tart and no wait before the next dance (QA only; `mooble_encounter._qa_mooble`) | `handle_event` |
 | `Shift+T` | every coating and flask, the earplugs, the cold-iron charm, a mirror shield and a greatsword into the pack (QA only; `game_arsenal._qa_arsenal_sampler`) | `handle_event` |
 | `Shift+S` | Press or Guard: the next stance, one turn (`game_arsenal._cycle_stance`) | `handle_event` |
 | `Shift+C` | coat the weapon in your hand from the pack (`game_arsenal._open_coat_menu`) | `handle_event` |

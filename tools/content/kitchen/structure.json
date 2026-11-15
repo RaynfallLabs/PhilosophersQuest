@@ -4637,5 +4637,18 @@
   "kind": "multi",
   "anchor": "sunroot",
   "cross_depth": false
+ },
+ "dish_starnut_tart": {
+  "parts": [
+   "starnut",
+   "bread_ration",
+   "apple"
+  ],
+  "benefit": "carry",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "starnut",
+  "cross_depth": false,
+  "makes": "starnut_tart"
  }
 }
