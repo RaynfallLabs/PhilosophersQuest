@@ -6917,6 +6917,13 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         if corpse is None:
             self.add_message("There is no corpse here to harvest.", 'info')
             return
+        # A person of an encounter (a pilgrim, Gilt Varro, a trader) has no
+        # kin in the kitchen: nothing to harvest, and no question asked or
+        # corpse spent on it (it gave Acid Blob Bladder: bug bash 3.5.1 A).
+        from food_system import corpse_yield
+        if corpse_yield(corpse) is None:
+            self.add_message(f"There is nothing on the {corpse.name} you would cook.", 'info')
+            return
         # Every corpse yields its kin's ingredient (data/items/harvest_map.json:
         # every goblin gives Goblin Gristle); a boss with a trophy gives the
         # trophy. The corpse is used up before the question.

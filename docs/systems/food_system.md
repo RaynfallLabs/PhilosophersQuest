@@ -362,7 +362,10 @@ Tooth: STR...), at 1.5x.
 `food_system.harvest_corpse` asks ONE animal question at the corpse's `harvest_tier`, never
 harder than the band the monster lives in (`_monster_band_tier`). Right: the corpse yields its
 kin's ingredient (`kitchen.ingredient_for_monster`; a creature the map does not name borrows its
-nearest kin's, `_nearest_kin_ingredient`), plus one portion more for a family the hero has
+nearest kin's, `_nearest_kin_ingredient`, by the family and floor in monsters.json or, for a
+creature monsters.json does not know, on its corpse: Gilt Varro, a mortal, gives a mortal's
+provisions; a person of an encounter with no family yields nothing, said before the question by
+`Game._harvest` through `food_system.corpse_yield`), plus one portion more for a family the hero has
 learned to butcher (`family_edges.harvest_bonus`), never for a boss trophy (one of a kind: a
 second Fenrir's Tooth gave its power twice, bug bash 3.5.1). The part remembers the creature it came from
 (`source_monster`, read by Siegfried's Bath). Wrong: the corpse is ruined. A part too heavy to

@@ -317,6 +317,56 @@ def test_a7_persephone_salvages_a_ruined_tart_as_the_tart():
     assert not any(isinstance(i, type(tart)) and i.id == 'starnut_tart' for i in p.inventory)
 
 
+def test_a8_a_persons_corpse_is_not_acid_blob():
+    """A creature monsters.json does not know (a pilgrim of an encounter,
+    Gilt Varro, the dead hero's ghost) fell to the nearest-kin fallback with
+    no family, which took the first part in the book: the corpse of a
+    murdered pilgrim gave Acid Blob Bladder. Now a corpse with a family
+    gives its kin's part (Varro, a mortal, his provisions; the ghost,
+    ectoplasm), and one with none yields nothing, said before any question
+    is asked, the corpse left where it lies."""
+    from monster import Monster
+    import bococho_encounter as be
+    g = _game()
+    g.monsters = []
+    asked = []
+
+    def quiz(**kw):
+        asked.append(kw)
+        kw['callback'](types.SimpleNamespace(success=True, score=1))
+    g.quiz_engine.start_quiz = quiz
+    p = g.player
+    pilgrim = Monster({'id': 'npc_traveler', 'name': 'Weary Pilgrim', 'symbol': '@',
+                       'color': [1, 1, 1], 'hp': 1, 'thac0': 20, 'speed': 0, 'attacks': [],
+                       'ai_pattern': 'sessile', 'resistances': [], 'weaknesses': [],
+                       'min_level': 1, 'is_allied': True, 'harvest_tier': 0,
+                       'harvest_threshold': 99, 'ingredient_id': None}, p.x, p.y)
+    g.monsters.append(pilgrim)
+    pilgrim.alive, pilgrim.hp = False, 0
+    g._on_monster_killed(pilgrim)
+    pack_before = list(p.inventory)
+    _press(g, pygame.K_h, 'h')
+    assert not asked
+    assert p.inventory == pack_before
+    assert any(getattr(i, 'monster_id', '') == 'npc_traveler' for i in g.ground_items)
+    assert 'nothing on the' in str(g.msg_log.entries[-1][0])
+    # Gilt Varro is a mortal: what a mortal of his depth carries.
+    varro = be.make_creature('varro', p.x, p.y, 55)
+    g.ground_items = [i for i in g.ground_items if getattr(i, 'monster_id', '') != 'npc_traveler']
+    g.monsters.append(varro)
+    varro.alive, varro.hp = False, 0
+    g._on_monster_killed(varro)
+    _press(g, pygame.K_h, 'h')
+    assert len(asked) == 1
+    got = [i for i in p.inventory if i not in pack_before]
+    assert len(got) == 1 and got[0].id != 'acid_blob_prime'
+    assert kitchen.ingredients()[got[0].id]['family'] == 'mortals'
+    # A ghost of a past hero: ectoplasm, a ghost's part.
+    from food_system import corpse_ingredient
+    ghostly = corpse_ingredient('player_ghost', 'ghosts', 30)
+    assert kitchen.ingredients()[ghostly]['family'] == 'ghosts'
+
+
 def test_a6_surturs_dish_says_fire_resist_for_good_not_for_360_turns():
     dish = kitchen.recipe('trophy_surtur_recipe')
     p = _player(deepest=90)

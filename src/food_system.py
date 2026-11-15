@@ -48,19 +48,28 @@ def _monster_band_tier(monster_id: str) -> int:
     return max(1, min(5, floor // 20 + 1))
 
 
-def _nearest_kin_ingredient(monster_id: str) -> str | None:
+def _nearest_kin_ingredient(monster_id: str, family: str | None = None,
+                            floor: int | None = None) -> str | None:
     """The ingredient of the nearest creature of the same family and depth,
-    for a monster the harvest map does not name (a creature added later)."""
+    for a monster the harvest map does not name (a creature added later).
+    A creature monsters.json does not know (a person of an encounter, Gilt
+    Varro, the dead hero's ghost) is read by the ``family`` and ``floor`` its
+    corpse carries; with no family at all there is no kin and nothing to
+    harvest. Any prime would do before: a murdered pilgrim gave Acid Blob
+    Bladder (bug bash 3.5.1 A)."""
     import kitchen
     _monster_band_tier(monster_id)                     # fills the floor cache
     floors = _monster_floor_cache or {}
-    here = floors.get(monster_id, 1)
     try:
         with open(data_path('data', 'monsters.json'), encoding='utf-8') as f:
             all_defs = json.load(f)
     except (OSError, ValueError):
         all_defs = {}
-    family = (all_defs.get(monster_id) or {}).get('family')
+    known = all_defs.get(monster_id) or {}
+    family = known.get('family') or family
+    if not family:
+        return None
+    here = floors.get(monster_id) or int(floor or 0) or 1
     best = None
     for mid, ing_id in (kitchen.harvest_map().get('monsters') or {}).items():
         if (kitchen.ingredients().get(ing_id) or {}).get('tier_role') != 'prime':
@@ -72,20 +81,41 @@ def _nearest_kin_ingredient(monster_id: str) -> str | None:
     return best[1] if best else None
 
 
-def _harvest_outcome_for_tier(tier: int, monster_id: str) -> list[str]:
+def _harvest_outcome_for_tier(tier: int, monster_id: str, family: str | None = None,
+                              floor: int | None = None) -> list[str]:
     """What a corpse yields: exactly ONE ingredient, its kin's
     (data/items/harvest_map.json: every goblin gives Goblin Gristle; a
     named creature or a boss keeps its own; a boss with a trophy gives the
     trophy). The tier is used only for the harvest question; tier 0
-    (ruined) yields nothing."""
+    (ruined) yields nothing. ``family`` / ``floor``: what the corpse says of
+    a creature monsters.json does not know (_nearest_kin_ingredient)."""
     if tier <= 0:
         return []
-    import kitchen
-    ing_id = kitchen.ingredient_for_monster(monster_id) if monster_id else None
-    if ing_id is None and monster_id:
-        # A creature the map does not name still feeds the pot.
-        ing_id = _nearest_kin_ingredient(monster_id)
+    ing_id = corpse_ingredient(monster_id, family, floor)
     return [ing_id] if ing_id else []
+
+
+def corpse_ingredient(monster_id: str, family: str | None = None,
+                      floor: int | None = None) -> str | None:
+    """The ingredient a corpse of ``monster_id`` yields, or None when it
+    yields nothing (a person of an encounter with no kin)."""
+    if not monster_id:
+        return None
+    import kitchen
+    ing_id = kitchen.ingredient_for_monster(monster_id)
+    if ing_id is None:
+        # A creature the map does not name still feeds the pot.
+        ing_id = _nearest_kin_ingredient(monster_id, family, floor)
+    return ing_id
+
+
+def corpse_yield(corpse) -> str | None:
+    """What harvesting ``corpse`` would give (None: nothing), read from the
+    corpse itself before the question is asked."""
+    md = getattr(corpse, 'monster_def', None) or {}
+    return corpse_ingredient(getattr(corpse, 'monster_id', '') or '',
+                             getattr(corpse, 'family', None),
+                             int(md.get('peak_floor', 0) or 0) or None)
 
 
 # ------------------------------------------------------------------
@@ -428,7 +458,10 @@ def harvest_corpse(player, corpse, quiz_engine, on_complete, extra_seconds: int 
 
     def _callback(result):
         if getattr(result, 'success', False):
-            ingredient_ids = _harvest_outcome_for_tier(tier, monster_id)
+            _md = getattr(corpse, 'monster_def', None) or {}
+            ingredient_ids = _harvest_outcome_for_tier(
+                tier, monster_id, getattr(corpse, 'family', None),
+                int(_md.get('peak_floor', 0) or 0) or None)
             # Hunter's Harvest / Herbalist (monster family knowledge,
             # src/family_edges.py harvest_bonus): one more portion of the
             # main cut from a family the hero has learned to butcher.
