@@ -259,7 +259,10 @@ On top of the 1.5x main benefit, by tab:
 - **Stat:** the floor's lesson as a whole point, and +1 more past the lesson
   (`try_apply_cook_stat_gain(bypass=True)`), inside the stat's lifetime cap.
 - **Special:** the feast's resistance for good (its own power if a resistance, else one of its
-  ingredients').
+  ingredients', else the fallback order), never one its trophy gives and never one the hero holds
+  for good already (`kitchen.feast_resist_for`: Fafnir's Blood gives fire resistance, so Fafnir's
+  fire feast gives the next one). A timed power the hero already holds for good says so ("Fire
+  Resist: already yours for good") instead of lingering for a number of turns.
 
 Legendary feasts never have SP as their main benefit. A feast holding a boss trophy also gives
 the trophy's own power (§6).

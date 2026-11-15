@@ -261,3 +261,47 @@ def test_a5_a_trader_never_buys_a_withheld_piece():
     assert g._trader_offer(tart) == (0, 'Not for sale')
     offer, why = g._trader_offer(bread)
     assert why is None and offer > 0
+
+
+# ---------------------------------------------------------------------------
+# A6. A feast's lasting resistance was lost on a hero who already had it.
+# ---------------------------------------------------------------------------
+
+def test_a6_a_feast_gives_a_resistance_the_hero_lacks():
+    """Fafnir's Blood (the bird-speech chain of 3) gives fire resistance
+    for good, and Fafnir's own feast, the Dragonfire Cassoulet, then
+    gave nothing for good: "You already have Fire Resist for good." while
+    the menu promised "Fire Resist for good". The feast's lasting gift is
+    the next resistance of its own the hero lacks; a timed power the hero
+    holds for good says so rather than "lingers for 600 turns"."""
+    from food_system import apply_fafnirs_blood
+    feast = kitchen.recipe('feast_06')
+    assert kitchen.dish_outcome(feast)['permanent'] == ('resist', 'fire_resist')
+    p = _player(deepest=60)
+    apply_fafnirs_blood(p, 3)
+    assert p.status_effects['fire_resist'] == -1
+    want = kitchen.feast_resist_for(p, feast)
+    assert want and want != 'fire_resist'
+    label = kitchen.power_label(want)
+    assert f"{label} for good" in kitchen.dish_lasting(p, feast)
+    effects = kitchen.dish_effects(p, feast)
+    assert 'Fire Resist: already yours for good' in effects, effects
+    msgs = kitchen.apply_dish(p, feast)
+    assert p.status_effects[want] == -1
+    assert p.status_effects['fire_resist'] == -1
+    assert any(f"{label}, for good" in m for m in msgs), msgs
+    assert not any('lingers' in m for m in msgs), msgs
+    # A hero with no resistance for good still gets the feast's own.
+    p = _player(deepest=60)
+    assert "Fire Resist for good" in kitchen.dish_lasting(p, feast)
+    kitchen.apply_dish(p, feast)
+    assert p.status_effects['fire_resist'] == -1
+
+
+def test_a6_surturs_dish_says_fire_resist_for_good_not_for_360_turns():
+    dish = kitchen.recipe('trophy_surtur_recipe')
+    p = _player(deepest=90)
+    msgs = kitchen.apply_dish(p, dish)
+    assert p.status_effects['fire_resist'] == -1
+    assert not any('lingers' in m for m in msgs), msgs
+    assert any('fire resistance' in m.lower() for m in msgs), msgs

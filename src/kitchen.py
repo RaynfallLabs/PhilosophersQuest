@@ -369,17 +369,42 @@ _RESIST_FALLBACK = ('magic_resist', 'drain_resist', 'sleep_resist', 'shock_resis
                     'acid_resist', 'cold_resist', 'fire_resist', 'poison_resist')
 
 
-def _feast_resist(rec: dict) -> str:
-    """The resistance a special feast makes lasting: its own power if that is
-    a resistance, else the first resistance among its ingredients; never one
-    its trophy already gives for good."""
+def _feast_resists(rec: dict) -> list:
+    """The resistances a special feast may make lasting, best first: its own
+    power if that is a resistance, then its ingredients', then the fallback
+    order; never one its trophy already gives for good."""
     taken = {TROPHY_RESISTS[p] for p in trophy_powers(rec) if p in TROPHY_RESISTS}
     cands = [dish_power(rec)] + [(ingredients().get(part) or {}).get('temp_power')
-                                 for part in parts(rec)]
+                                 for part in parts(rec)] + list(_RESIST_FALLBACK)
+    order = []
     for c in cands:
-        if c in RESISTS and c not in taken:
+        if c in RESISTS and c not in taken and c not in order:
+            order.append(c)
+    return order
+
+
+def _feast_resist(rec: dict) -> str:
+    """The resistance a special feast makes lasting (for a hero who holds
+    none for good yet): the first of ``_feast_resists``."""
+    return _feast_resists(rec)[0]
+
+
+def held_for_good(player, status: str) -> bool:
+    """The hero has ``status`` for good (a -1 status: a trophy, a feast,
+    Fafnir's Blood, a trait)."""
+    return int((getattr(player, 'status_effects', None) or {}).get(status, 0) or 0) == -1
+
+
+def feast_resist_for(player, rec: dict):
+    """The resistance this special feast makes lasting for THIS hero: the
+    first of its own (``_feast_resists``) he does not hold for good already,
+    or None when he holds them all. Fafnir's Blood gives fire resistance for
+    good, and Fafnir's own fire feast then gave nothing: "You already have
+    Fire Resist for good" (bug bash 3.5.1 A)."""
+    for c in _feast_resists(rec):
+        if not held_for_good(player, c):
             return c
-    return next(r for r in _RESIST_FALLBACK if r not in taken)
+    return None
 
 
 def power_label(power: str) -> str:
@@ -468,7 +493,10 @@ def dish_effects(player, rec: dict) -> list:
     else:
         label = power_label(out['power'])
         bonus = f" (+{out['ward']})" if out['ward'] else ''
-        lines.append(f"{label}{bonus}, {quantity(out['turns'], 'turn')}")
+        if held_for_good(player, out['power']):
+            lines.append(f"{label}: already yours for good")
+        else:
+            lines.append(f"{label}{bonus}, {quantity(out['turns'], 'turn')}")
     room = max_hp_room(player)
     if tab == 'hp' or room > 0:
         gain = min(out['max_hp'], room)
@@ -476,7 +504,7 @@ def dish_effects(player, rec: dict) -> list:
             lines.append(f"+{gain} Max HP")
         elif tab == 'hp':
             lines.append(MAX_HP_FULL_FLOOR if floor_hp_room(player) <= 0 else MAX_HP_FULL_DEPTH)
-    lines.extend(_lasting_lines(player, out))
+    lines.extend(_lasting_lines(player, out, rec))
     if tab != 'sp':
         lines.append(f"+{sp_shown} SP")
     return lines
@@ -486,7 +514,7 @@ MAX_HP_FULL_FLOOR = "Max HP full this floor"
 MAX_HP_FULL_DEPTH = "Max HP: all cooking can give at this depth"
 
 
-def _lasting_lines(player, out: dict) -> list:
+def _lasting_lines(player, out: dict, rec=None) -> list:
     """The part of ``dish_effects`` that lasts for good: a feast's permanent
     gift, then each boss trophy's own power. A gift a lifetime cap would
     eat says so, as apply_dish will."""
@@ -510,7 +538,9 @@ def _lasting_lines(player, out: dict) -> list:
             lines.append(f"+{got} {out['stat']} for good" if got > 0
                          else f"No more {out['stat']} for good at this depth")
         elif kind == 'resist':
-            lines.append(f"{power_label(val)} for good")
+            res = feast_resist_for(player, rec) if rec is not None else val
+            lines.append(f"{power_label(res)} for good" if res
+                         else "Every resistance already yours for good")
     for pw in out['trophy_powers']:
         lines.append(TROPHY_POWER_LINES.get(pw, 'A lasting power'))
     return lines
@@ -559,7 +589,7 @@ def dish_lasting(player, rec: dict) -> list:
     permanent bonus, a boss trophy's power), in the same words: the cook
     menu shows them under their own heading, apart from what the dish does
     now."""
-    return _lasting_lines(player, dish_outcome(rec))
+    return _lasting_lines(player, dish_outcome(rec), rec)
 
 
 def _stat_line(player, out: dict) -> str:
@@ -795,16 +825,23 @@ def apply_dish(player, rec: dict) -> list:
                     f"hunger comes at half its pace.")
     elif tab == 'stat':
         msgs.extend(_teach(player, out['stat'], out['lessons']))
-    elif tab == 'special':
+    lingers = None
+    if tab == 'special':
         power = out['power']
         cap = int((rules()['special']['powers'].get(power) or {}).get('max_turns', 60))
-        _add_effect(player, power, out['turns'], cap)
-        if power.startswith('save_guard_'):
-            cat = power[len('save_guard_'):]
-            if getattr(player, '_save_guard', None) is None:
-                player._save_guard = {}
-            player._save_guard[cat] = max(int(player._save_guard.get(cat, 0) or 0), out['ward'])
-        msgs.append(f"{power_label(power)} lingers for {quantity(out['turns'], 'turn')}.")
+        if held_for_good(player, power):
+            # A power held for good already: the meal adds nothing to it
+            # (it said "lingers for 240 turns" over a lasting one).
+            msgs.append(f"You already have {power_label(power)} for good.")
+        else:
+            _add_effect(player, power, out['turns'], cap)
+            if power.startswith('save_guard_'):
+                cat = power[len('save_guard_'):]
+                if getattr(player, '_save_guard', None) is None:
+                    player._save_guard = {}
+                player._save_guard[cat] = max(int(player._save_guard.get(cat, 0) or 0), out['ward'])
+            lingers = f"{power_label(power)} lingers for {quantity(out['turns'], 'turn')}."
+            msgs.append(lingers)
     # A legendary feast's permanent bonus.
     if out['permanent']:
         msgs.extend(_apply_permanent(player, rec, out))
@@ -814,6 +851,10 @@ def apply_dish(player, rec: dict) -> list:
         line = _apply_permanent_power(player, pw, fake)
         if line:
             msgs.append(line.strip())
+    # The timed power made lasting by this very meal (Surtur's coal: Fire
+    # Resist for 360 turns, then for good): only the lasting line stands.
+    if lingers and held_for_good(player, out['power']):
+        msgs.remove(lingers)
     return msgs
 
 
@@ -877,8 +918,9 @@ def _apply_permanent(player, rec: dict, out: dict) -> list:
         return [f"A feast to remember: your {label} rises by {got}, for good."] if got > 0 else \
             [f"A feast to remember, but your {label} has learned all food can teach it at this depth."]
     if kind == 'resist':
-        if int((getattr(player, 'status_effects', None) or {}).get(val, 0) or 0) == -1:
-            return [f"You already have {power_label(val)} for good."]
+        val = feast_resist_for(player, rec)
+        if val is None:
+            return ["A feast to remember, but you already resist all it could give, for good."]
         player.add_effect(val, -1)
         return [f"A feast to remember: {power_label(val)}, for good."]
     return []
