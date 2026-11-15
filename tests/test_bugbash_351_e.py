@@ -649,3 +649,69 @@ def test_351_e04_a_loaded_save_does_not_greet_a_new_hero(make_game, monkeypatch)
     mine = war_bands.data()['bands'][here['id']]['line'] if here else None
     assert not any(s in bands and s != mine for s in log), log
     no_errors(h)
+
+
+# ---------------------------------------------------------------------------
+# Journey 4: the quiz's damage counter on a kind he knows to be weak
+# ---------------------------------------------------------------------------
+
+class StripReader:
+    """What the combat strip draws: every text fitted into a slot of it
+    (game_render._fit_line), frame by frame."""
+
+    def __init__(self, g):
+        self.texts = []
+        real = g._fit_line
+
+        def fit(text, *a, **k):
+            self.texts.append(str(text))
+            return real(text, *a, **k)
+        g._fit_line = fit
+
+    def frame(self, h):
+        self.texts = []
+        h.frame()
+        return list(self.texts)
+
+
+def test_journey_04_the_counter_is_the_blow(make_game):
+    """A mace in hand, a skeleton he has studied (weak to blunt): walking
+    into it, the quiz's strip says "Weakness (Double): Blunt" and, after
+    each right answer, a number; the wrong answer strikes, and the blow is
+    the number last shown. A goblin, nothing special: plain "Blunt"."""
+    import re
+    import items
+    g, h = make_game()
+    p = g.player
+    open_floor(g, p.x, p.y, 4)
+    mace = items.instantiate_weapon('mace', 'iron')
+    p.inventory.append(mace)
+    h.key('e')
+    pick(h, mace, g._get_equip_tab_items)
+    assert p.weapon is mace
+    p.studied_monster_ids.add('skeleton')
+    p.lore_known_monster_ids.add('skeleton')
+    strip = StripReader(g)
+    for kind, tag in (('skeleton', 'Weakness (Double): Blunt'), ('goblin', 'Blunt')):
+        m = place_monster(g, kind, 1)
+        m.hp = m.max_hp = 10 ** 6
+        g._refresh_fov()
+        h.said()
+        h.move(1, 0)
+        assert h.in_quiz(), g.state
+        shown = None
+        for chain in range(1, 5):
+            h.answer(True)
+            texts = strip.frame(h)
+            assert tag in texts, (kind, texts)
+            nums = [int(t.split()[0]) for t in texts if re.fullmatch(r'\d+ Damage', t)]
+            assert nums, texts
+            shown = nums[0]
+        h.answer(False)
+        said = h.said()
+        dealt = next(int(re.search(r'for (\d+) damage', s).group(1)) for s in said
+                     if s.startswith('Chain x4! You strike'))
+        assert dealt == shown, (kind, shown, dealt, said)
+        assert m.max_hp - m.hp == dealt
+        g.monsters = []
+    no_errors(h)
