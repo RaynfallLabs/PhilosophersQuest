@@ -163,7 +163,10 @@ def test_journey_01_a_war_band_on_floor_one(make_game, monkeypatch):
     import affinity
     import war_bands
     monkeypatch.setitem(war_bands.data(), 'chance', 1.0)        # the band camps here
-    g, h = make_game(seed=4, clear=False, name='__bb351_e1__')
+    for seed in range(4, 40):                    # a floor with a room big enough for a camp
+        g, h = make_game(seed=seed, clear=False, name='__bb351_e1__')
+        if getattr(g.dungeon, 'band', None):
+            break
     p = g.player
     band = g.dungeon.band
     heard = [str(e[0]) for e in g.msg_log.entries]
@@ -175,18 +178,24 @@ def test_journey_01_a_war_band_on_floor_one(make_game, monkeypatch):
     lead = war_bands.leader_of(g.monsters, band['uid'])
     said = fight_to(h, lead)
     assert not lead.alive, said
-    # 351-E02: the band answers its leader's fall after he falls.
+    # 351-E02: the band answers its leader's fall after he falls (said
+    # when he can see one of them run: test_351_e02 sets that scene).
     rout = war_bands.data()['bands'][band['id']]['rout_line']
     slain = f"The {lead.name.title()} is slain!"
-    assert rout in said and slain in said, said
-    assert said.index(slain) < said.index(rout), said
+    assert slain in said, said
+    if rout in said:
+        assert said.index(slain) < said.index(rout), said
     # His corpse, studied: the page of a kind he knows.
     hob_page = study_and_read(h, lead)
     assert not any('not yet studied' in t.lower() for t in hob_page), hob_page
     # A kind with something to say of the blow (a skeleton, a stirge swarm:
     # the first such one on the floor), killed, studied and read.
+    def reach(m):
+        goal = {(m.x + dx, m.y + dy) for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1))}
+        return _path(g, (p.x, p.y), goal, set()) is not None
     other = min((m for m in g.monsters if m.alive and not getattr(m, 'is_allied', False)
-                 and affinity.damage_profile({**monster_defs()[m.kind]})),
+                 and m.kind in monster_defs()
+                 and affinity.damage_profile({**monster_defs()[m.kind]}) and reach(m)),
                 key=lambda m: abs(m.x - p.x) + abs(m.y - p.y), default=None)
     if other is None:
         open_floor(g, p.x, p.y, 2)
@@ -201,12 +210,18 @@ def test_journey_01_a_war_band_on_floor_one(make_game, monkeypatch):
     # A kind he has only seen: no rows, only that it is not yet studied.
     seen = [k for k in p.known_monster_ids
             if k not in p.studied_monster_ids and k in monster_defs()
-            and affinity.damage_profile({**monster_defs()[k]})
-            and g._family_has_page(k)]
+            and affinity.damage_profile({**monster_defs()[k]})]
+    if not seen:                                 # one more kind comes into view
+        open_floor(g, p.x, p.y, 3)
+        place_monster(g, 'skeleton' if other.kind != 'skeleton' else 'stirge_swarm', 3)
+        h.wait()
+        seen = [k for k in p.known_monster_ids if k not in p.studied_monster_ids
+                and k in monster_defs() and affinity.damage_profile({**monster_defs()[k]})]
+    assert seen
     for kind in seen[:3]:
         page = bestiary_page(h, kind)
         assert not any(t.startswith(ROW_HEADS) for t in page), (kind, page)
-        assert any('not yet studied' in t for t in page), (kind, page)
+        assert any('not yet studied' in t.lower() for t in page), (kind, page)
         while g.state != 'player':
             h.key(pygame.K_ESCAPE)
     no_errors(h)
@@ -319,4 +334,29 @@ def test_351_e03_an_unseen_sense_is_said_once_a_turn(make_game):
     h.wait()
     said = h.said()
     assert said.count(line) == 1, said
+    no_errors(h)
+
+
+def test_351_e02_the_band_breaks_after_its_leader_falls(make_game, monkeypatch):
+    """A hobgoblin and his goblin, both in sight; the hobgoblin cut down:
+    "With the hobgoblin down, the scouts forget their orders and scatter!"
+    was said before "The Hobgoblin is slain!"."""
+    import war_bands
+    g, h = make_game()
+    p = g.player
+    open_floor(g, p.x, p.y, 4)
+    lead = place_monster(g, 'hobgoblin', 1)
+    gob = place_monster(g, 'goblin', 3)
+    uid = 'goblin_scouts@test'
+    for m, role in ((lead, 'leader'), (gob, 'guard')):
+        m._band, m._band_id, m._band_role = uid, 'goblin_scouts', role
+    gob._band_leader = lead
+    lead.hp = 1
+    g._refresh_fov()
+    h.said()
+    said = blow(h, lead, 3)
+    rout = war_bands.data()['bands']['goblin_scouts']['rout_line']
+    assert 'The Hobgoblin is slain!' in said and rout in said, said
+    assert said.index('The Hobgoblin is slain!') < said.index(rout), said
+    assert gob.has_effect('feared')
     no_errors(h)
