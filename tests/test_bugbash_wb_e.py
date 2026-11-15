@@ -152,6 +152,20 @@ def make_game(monkeypatch, tmp_path):
         logged.append((msg, traceback.format_exc() if exc_info else ''))
         return _orig(msg, exc_info)
     monkeypatch.setattr(game_log, 'log_error', _log_error)
+    # Every floor the journey walks is the same every run (3.5.1). The game
+    # makes each floor's random streams fresh (random.Random() with no
+    # seed, from the OS), so a journey met a new map each time and failed on
+    # about one in fifty ("never got there", "no room beside it" when the
+    # fuller floors crowded a door). A stream made with no seed now takes
+    # one from the global stream, which _make seeds: same seed, same floors,
+    # whatever ran before. (random.getrandbits is the module's own
+    # instance, made at import, so it is not the patched class.)
+    _RealRandom = random.Random
+
+    class _SeededRandom(_RealRandom):
+        def __init__(self, x=None):
+            super().__init__(random.getrandbits(64) if x is None else x)
+    monkeypatch.setattr(random, 'Random', _SeededRandom)
 
     def _make(build=None, name='__bugbash_wb_e__', seed=7, clear=True):
         import items

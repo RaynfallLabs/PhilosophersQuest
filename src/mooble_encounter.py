@@ -160,6 +160,21 @@ def dance_band(result: dict) -> dict:
     return b
 
 
+def special_result_line(band: dict) -> str:
+    """What the Dance of the Dark's result card says it did (data
+    pet.special_dance ``result``): its band, its reach, how long they stare
+    ("1 turn", "3 turns": ``turn_words``) and how many it held. Pure."""
+    sd = special_spec()
+    held_words = sd.get('held_words') or ['{n}', '{n}', '{n}']
+    mh = int(band.get('max_held', 99))
+    held = (held_words[0] if mh <= 1 else held_words[2] if mh >= 99 else held_words[1]).format(n=mh)
+    turns = int(band.get('turns', 0) or 0)
+    one, many = sd.get('turn_words') or ('{n} turn', '{n} turns')
+    return sd.get('result', '').format(label=band.get('label', ''), radius=band.get('radius'),
+                                       turns=(one if turns == 1 else many).format(n=turns),
+                                       held=held)
+
+
 def too_soon_line(m) -> str:
     lines = data()['too_soon']
     return lines[max(0, min(dances(m), len(lines) - 1))]

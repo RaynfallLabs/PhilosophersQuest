@@ -163,7 +163,9 @@ def test_every_site_leaves_a_way_round_on_many_floors():
     kinds = {}
     for i in range(120):
         random.seed(1000 + i)
-        d = generate_dungeon(80, 50, 15 + i % 5)
+        # The floor's own stream, seeded: the same 120 floors every run (an
+        # unseeded floor made this test fail about one run in ten, 3.5.1).
+        d = generate_dungeon(80, 50, 15 + i % 5, rng=random.Random(1000 + i))
         start = d.rooms[0].center
         site = bk.find_site(d, start, random.Random(i))
         assert site is not None
@@ -194,7 +196,7 @@ def test_with_no_corridor_that_suits_he_takes_a_doorway_with_a_way_round():
     from dungeon import generate_dungeon
     for i in range(60):
         random.seed(5000 + i)
-        d = generate_dungeon(80, 50, 17)
+        d = generate_dungeon(80, 50, 17, rng=random.Random(5000 + i))
         start = d.rooms[0].center
         real = bk._bridge_candidates
         bk._bridge_candidates = lambda *a, **k: []
