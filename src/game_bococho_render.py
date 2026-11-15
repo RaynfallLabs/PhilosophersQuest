@@ -144,10 +144,14 @@ class BocochoRenderMixin:
         lines = list(info['lines'])
         status = info.get('status') or ''
         opts = list(info['options'])
+        # Each choice as tall as its words need: at a small window a label
+        # wraps, and a fixed row let its second line run out of the box.
+        opt_hs = [self._ui_action_row_need(text_w, key, display_text(label), row_h)
+                  for key, label in opts]
         head_h = S(42)
         foot_h = S(8) + key_hints_height() + S(28)
         body_h = (lines_h(lines) + (S(6) + lines_h([status]) if status else 0)
-                  + (S(8) + len(opts) * (row_h + S(5)) if opts else 0))
+                  + (S(8) + sum(h + S(5) for h in opt_hs) if opts else 0))
         ph = min(layout.WINDOW_H - S(24), 2 * b + head_h + S(14) + body_h + S(8) + foot_h)
         ph = max(ph, layout.WINDOW_H - layout.GAME_H + S(8))   # never shorter than the log
         self._race_panel_h = ph
@@ -179,10 +183,10 @@ class BocochoRenderMixin:
                                    pygame.Rect(body.x, y, body.w, body.bottom - y), line_gap=3)
         if opts:
             y += S(8)
-            for key, label in opts:
-                self._ui_action_row(pygame.Rect(body.x, y, body.w, row_h), key,
+            for (key, label), h in zip(opts, opt_hs):
+                self._ui_action_row(pygame.Rect(body.x, y, body.w, h), key,
                                     display_text(label), color=FP.PARCHMENT_LIGHT)
-                y += row_h + S(5)
+                y += h + S(5)
         self._ui_footer(panel, info['footer'])
 
     def _draw_race_runner_tags(self, panel_top: int):
@@ -195,6 +199,8 @@ class BocochoRenderMixin:
         font = get_font('body', 16, bold=True)
         names = {'hero': (bc.data()['race'].get('tag_hero', 'Her'), FP.GOLD_BRIGHT),
                  'rival': (bc.data()['race'].get('rival_name', 'Brassbeak'), FP.CYAN_ACCENT)}
+        area = pygame.Rect(layout.MAP_X, 0, layout.MAP_W, max(1, panel_top))
+        drawn = []
         for who, (label, colour) in names.items():
             m = self._race_runner(who) if hasattr(self, '_race_runner') else None
             if m is None:
@@ -203,13 +209,30 @@ class BocochoRenderMixin:
             cx, cy = sx + T // 2, sy + T // 2
             if cy + T >= panel_top:
                 continue
-            pygame.draw.circle(self.screen, colour, (cx, cy), max(4, int(T * 0.9)), max(1, S(2)))
+            ring = max(4, int(T * 0.9))
+            pygame.draw.circle(self.screen, colour, (cx, cy), ring, max(1, S(2)))
             surf = font.render(label, True, colour)
-            box = pygame.Rect(0, 0, surf.get_width() + S(8), surf.get_height() + S(2))
-            box.midbottom = (cx, cy - int(T * 0.9) - S(2))
-            box.clamp_ip(pygame.Rect(layout.MAP_X, 0, layout.MAP_W, max(1, panel_top)))
-            if box.bottom >= panel_top:
+            # Over the bird, or under it when the other's tag is there: on a
+            # small window the whole oval is small and the two birds' names
+            # were drawn one over the other (bug bash 3.5.1 D).
+            box = None
+            for side in ('above', 'below'):
+                b = pygame.Rect(0, 0, surf.get_width() + S(8), surf.get_height() + S(2))
+                if side == 'above':
+                    b.midbottom = (cx, cy - ring - S(2))
+                else:
+                    b.midtop = (cx, cy + ring + S(2))
+                b.clamp_ip(area)
+                if b.bottom >= panel_top:
+                    continue
+                if box is None:
+                    box = b
+                if not any(b.colliderect(o) for o in drawn):
+                    box = b
+                    break
+            if box is None:
                 continue
+            drawn.append(box)
             pygame.draw.rect(self.screen, FP.MIDNIGHT, box, border_radius=S(3))
             self.screen.blit(surf, (box.x + S(4), box.y + S(1)))
 

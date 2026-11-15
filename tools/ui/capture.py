@@ -1363,6 +1363,66 @@ def _(g):
     press(g, pygame.K_RETURN)
 
 
+def _bestiary_page(g, kind, pgdn=1):
+    """B, Bestiary, Enter on a studied ``kind``, PgDn ``pgdn`` times."""
+    g.player.known_monster_ids.add(kind)
+    g.player.studied_monster_ids.add(kind)
+    press(g, pygame.K_b)
+    press(g, pygame.K_RETURN)
+    g.encyclopedia_selection = next(i for i, e in enumerate(g.encyclopedia_entries)
+                                    if e.get('_id') == kind)
+    press(g, pygame.K_RETURN)
+    for _ in range(pgdn):
+        press(g, pygame.K_PAGEDOWN)
+
+
+@scene('menu_bestiary_banes', 'Menus',
+       'B, Bestiary, Enter on a studied skeleton, PgDn: Weak To (Double Damage), the Bane '
+       'Materials (eight metals), Resists (Half Damage), Both At Once (the 3.5.1 audit).',
+       expect='encyclopedia')
+def _(g):
+    _bestiary_page(g, 'skeleton')
+
+
+@scene('menu_bestiary_ward', 'Menus',
+       'B, Bestiary, Enter on Abaddon studied, PgDn twice: the Ward and Regenerates rows.',
+       expect='encyclopedia')
+def _(g):
+    _bestiary_page(g, 'abaddon_destroyer', 2)
+
+
+@scene('lore_corpse_studied', 'Lore',
+       'The body of a stirge swarm the hero killed, studied: Shrugs Off (Quarter Damage): '
+       'Slash, Pierce among its rows (read from its kind: the body carries only a few).',
+       expect='lore')
+def _(g):
+    from monster import Monster
+    m = Monster({**_monster_defs()['stirge_swarm'], 'id': 'stirge_swarm'},
+                g.player.x, g.player.y)
+    corpse = g._make_corpse(m)
+    g.player.studied_monster_ids.add('stirge_swarm')
+    g.player.known_monster_ids.add('stirge_swarm')
+    corpse.id_level = 5
+    g.player.inventory.append(corpse)
+    g._lore_subject = corpse
+    g.state = _S().STATE_LORE
+
+
+@scene('quiz_chain_strip_shrugs', 'Quiz',
+       'Attack a studied stirge swarm with a sword, one right answer: the fight strip says '
+       '"Shrugs Off (Quarter): Pierce / Slash".', expect='quiz')
+def _(g):
+    from monster import Monster
+    old = g._capture_monster
+    m = Monster({**_monster_defs()['stirge_swarm'], 'id': 'stirge_swarm'}, old.x, old.y)
+    g.monsters = [x for x in g.monsters if x is not old] + [m]
+    g._capture_monster = m
+    g.player.studied_monster_ids.add('stirge_swarm')
+    g.player.known_monster_ids.add('stirge_swarm')
+    g._start_combat(m)
+    play_quiz(g, 'c')
+
+
 @scene('popup_family_tier', 'Popups',
        'A corpse study that reaches tier 3 of a family: the LORE OF ... popup over the lore page.',
        expect='story_popup')
@@ -3464,6 +3524,20 @@ def _(g):
     g._refresh_fov()
     wand = copy.copy(next(w for w in load_items('wand') if getattr(w, 'effect', '') == 'probing'))
     g._wand_override_target = troll
+    g._apply_wand_effect(wand)
+    g._wand_override_target = None
+
+
+@scene('play_probing_skeleton', 'Play',
+       'Z, the Wand of Probing on a skeleton: its rows one a line in the message log (Weak To, '
+       'the eight Bane Materials, Resists, Both At Once, Immune To).', expect='player')
+def _(g):
+    from items import load_items
+    g.monsters[:] = []
+    skel = _add_monster(g, ('skeleton',))
+    g._refresh_fov()
+    wand = copy.copy(next(w for w in load_items('wand') if getattr(w, 'effect', '') == 'probing'))
+    g._wand_override_target = skel
     g._apply_wand_effect(wand)
     g._wand_override_target = None
 

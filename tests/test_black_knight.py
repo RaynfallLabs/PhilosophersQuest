@@ -55,18 +55,22 @@ def _knights(g):
 def _beside(g, k):
     """Stand the hero on a tile next to him (a bridge tile when there is one)
     and return the step that walks into him."""
+    # Nothing else joins in. The others go first: on 3.5.1's fuller floors
+    # the floor's own monsters sometimes stood on both ends of his bridge,
+    # and a tile they held was skipped though they were about to go
+    # (bug bash 3.5.1 D: "list index out of range" in a full run).
+    for m in list(g.monsters):
+        if m is not k:
+            g.monsters.remove(m)
     bt = getattr(g.dungeon, 'bridge_tiles', {}) or {}
     opts = []
     for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)):
         x, y = k.x - dx, k.y - dy
-        if g.dungeon.is_walkable(x, y) and not any((m.x, m.y) == (x, y) for m in g.monsters if m is not k):
+        if g.dungeon.is_walkable(x, y):
             opts.append(((x, y) in bt, x, y, dx, dy))
     opts.sort(reverse=True)
     _, x, y, dx, dy = opts[0]
     g.player.x, g.player.y = x, y
-    for m in list(g.monsters):            # nothing else joins in
-        if m is not k:
-            g.monsters.remove(m)
     g.pets = []
     g._refresh_fov()
     return dx, dy

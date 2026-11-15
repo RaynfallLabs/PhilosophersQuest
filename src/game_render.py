@@ -81,8 +81,9 @@ def _cap(raw) -> str:
     return proper_name(str(raw).replace('_', ' '))
 
 
-# Bestiary rows told in the warning colour: what hurts it (affinity.bestiary_rows).
-_BESTIARY_WARM = ('weak', 'banes', 'easily')
+# Bestiary rows told in the warning colour: what hurts it (affinity.bestiary_rows),
+# "Both At Once" (the weakness and the bane together) among them.
+_BESTIARY_WARM = ('weak', 'banes', 'both', 'easily')
 
 
 def monster_trait_lines(mdef: dict, known: bool = True) -> list:
@@ -3995,7 +3996,13 @@ class RenderMixin:
                                  (bar.x, bar.y, max(3, int(bar.w * hp_ratio)), bar.h),
                                  border_radius=4)
             pygame.draw.rect(self.screen, FP.BURGUNDY, bar, 1, border_radius=4)
-        put(f"{monster.hp}/{monster.max_hp} HP", t['hp_text'], hp_color,
+        # Words in the danger colour take its light form: FP.DANGER_TEXT
+        # (blood red) is 2.8:1 on the strip, too dark to read (bug bash 3.5.1
+        # D: the UI gate on "Shrugs Off (Quarter): Pierce / Slash"). The bars
+        # keep the deep red.
+        def _words(col):
+            return FP.DANGER_TEXT_LIGHT if col == FP.DANGER_TEXT else col
+        put(f"{monster.hp}/{monster.max_hp} HP", t['hp_text'], _words(hp_color),
             align='right')
 
         def hp_bar(rect, ratio, color):
@@ -4022,7 +4029,7 @@ class RenderMixin:
                      FP.WARNING_TEXT if p_ratio > 0.25 else FP.DANGER_TEXT)
             put("You", t['you_label'], KT.TEXT_DIM, sizes=(20, 17, 16))
             hp_bar(t['you_bar'], p_ratio, p_col)
-            put(f"{p_hp}/{p_max} HP", t['you_text'], p_col, align='right')
+            put(f"{p_hp}/{p_max} HP", t['you_text'], _words(p_col), align='right')
 
         # Status effects: all of them when they fit; otherwise as many as
         # fit plus a "+N" count, never a clipped half-word.
@@ -4076,7 +4083,7 @@ class RenderMixin:
             dm_text, dm_col = f"Resisted ({_aff._size_word(dm)}): {type_str}", FP.DANGER_TEXT
         else:
             dm_text, dm_col = type_str, FP.FADED_TEXT
-        put(dm_text, s['sub2'], dm_col)
+        put(dm_text, s['sub2'], _words(dm_col))
 
     # ------------------------------------------------------------------
     # Action menu visual system
@@ -8928,6 +8935,29 @@ class RenderMixin:
         self._ui_wrap_text(label, label_font, color, text_rect,
                            line_gap=0, max_lines=2)
 
+    def _ui_action_row_need(self, w: int, key, label: str, base_h: int) -> int:
+        """How tall an ``_ui_action_row`` of width ``w`` must be to hold its
+        label (two lines at most), and never less than ``base_h``. In the
+        compact layout (a window under 1280x720) the row shrinks with the UI
+        scale but its words cannot go under 16 px, so a label that wraps to a
+        second line ran out through the row's bottom edge (the race panel's
+        "Sprint: half again as far, then a winded leg" at 1024x600; bug bash
+        3.5.1 D). The same reckoning as the drawing."""
+        key = str(key)
+        if kit_on():
+            key_font = get_font('body', 16, bold=True)
+            label_font = get_font('body', 16, bold=True)
+            key_w = max(S(40), min(w // 3, key_font.size(key)[0] + S(18)))
+            text_w = w - S(9) - key_w - S(22)
+            n = len(self._wrap_text(label, label_font, text_w)[:2] or [''])
+            return max(base_h, n * (label_font.get_height() + S(2)) + 2 * S(6))
+        key_font = get_font('small', 14, bold=True)
+        label_font = get_font('small', 15, bold=True)
+        key_w = max(S(42), min(w // 3, key_font.size(key)[0] + S(20)))
+        text_w = w - S(8) - key_w - S(22)
+        n = len(self._wrap_text(label, label_font, text_w)[:2] or [''])
+        return max(base_h, n * label_font.get_height() + 2 * S(8))
+
     def _ui_message_card(self, title, body_lines, *, options=None,
                          footer='', border_color=FP.GOLD,
                          title_color=None, body_color=FP.BODY_TEXT,
@@ -9502,7 +9532,19 @@ class RenderMixin:
         return lines or [("No revealed mechanics recorded.", FP.FADED_TEXT, self.font_sm)]
 
     def _lore_corpse_lines(self, corpse, id_level):
-        mdef = getattr(corpse, 'monster_def', None) or {}
+        # The body carries only a few of its kind's numbers (Game._make_corpse:
+        # health, THAC0, blows, weaknesses and resistances; a graveyard's
+        # laid-out skeleton, food_system.make_corpse, hardly any; an old save's
+        # body what was copied then). Its kind's own definition fills the rest,
+        # and is what the page says it is made of: the Bestiary page's own
+        # reading (bug bash 3.5.1 D: a studied stirge swarm's body never said it
+        # shrugs off a sword, the very thing the page was rebuilt to tell; a
+        # graveyard skeleton's said "HP: ?" and nothing of its weaknesses).
+        import affinity as _aff_kind
+        body = dict(getattr(corpse, 'monster_def', None) or {})
+        kind_def = _aff_kind._monster_defs().get(str(getattr(corpse, 'monster_id', '') or '')) or {}
+        mdef = {**kind_def, **body}
+        made_of = {**body, **kind_def} if kind_def else body
         identity = [
             (getattr(corpse, 'monster_name', 'Unknown creature'), FP.GOLD_BRIGHT, get_font('heading', 20)),
         ]
@@ -9554,7 +9596,7 @@ class RenderMixin:
             # What it is made of, with how much each changes a blow: the ONE
             # reading the blow itself follows (affinity.bestiary_rows).
             import affinity as _aff_pl
-            for _k, _t in _aff_pl.bestiary_rows(mdef):
+            for _k, _t in _aff_pl.bestiary_rows(made_of):
                 mechanics.append((_t, FP.WARNING_TEXT if _k in _BESTIARY_WARM else FP.CYAN_ACCENT,
                                   self.font_sm))
 
@@ -9589,7 +9631,7 @@ class RenderMixin:
             except Exception:
                 pass
 
-        lore = getattr(corpse, 'lore', '') if id_level >= 4 else (
+        lore = (getattr(corpse, 'lore', '') or kind_def.get('lore', '')) if id_level >= 4 else (
             "Its history is hidden until you identify the corpse."
         )
         return identity, mechanics, lore or "No lore recorded."

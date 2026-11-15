@@ -57,13 +57,14 @@ def probe_lines(m) -> list:
     """What the Wand of Probing reads of `m`: its health, then the
     Bestiary's own rows of what it is made of (affinity.bestiary_rows: what
     it is weak to, the metals it cannot bear, what it resists and shrugs off
-    and by how much, its scales, ward or healing, what its nature refuses
-    and falls to easily)."""
+    and falls to easily), one line each as the page lists them. (Run
+    together, a skeleton's rows made one message of ten lines that the log
+    showed from the middle of a word: bug bash 3.5.1 D.)"""
     import affinity
     p = data()['probe']
     out = [_fill(m, p['hp'], hp=getattr(m, 'hp', 0), max_hp=getattr(m, 'max_hp', 0))]
-    bits = [t if t.endswith('.') else t + '.' for _k, t in affinity.bestiary_rows(m)]
-    out.append(' '.join(bits) if bits else _fill(m, p['nothing']))
+    rows = [t if t.endswith('.') else t + '.' for _k, t in affinity.bestiary_rows(m)]
+    out += rows or [_fill(m, p['nothing'])]
     return out
 
 

@@ -539,7 +539,9 @@ def test_probing_shows_resistances_and_status(game):
 
 def test_probing_lines_cover_shrugs_off_and_a_plain_creature():
     sw = enemy_lore.probe_lines(_m('scarab_swarm'))
-    assert 'Shrugs Off (Quarter Damage): Slash, Pierce' in sw[1] and 'Resists (Half Damage): Blunt' in sw[1]
+    # One line a row, as the Bestiary page lists them (bug bash 3.5.1 D).
+    assert 'Shrugs Off (Quarter Damage): Slash, Pierce.' in sw[1:]
+    assert 'Resists (Half Damage): Blunt.' in sw[1:]
     from monster import fill
     gob = _m('goblin')
     assert enemy_lore.probe_lines(gob)[1] == fill(gob, enemy_lore.data()['probe']['nothing'])
