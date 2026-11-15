@@ -373,3 +373,22 @@ def test_the_eat_menu_draws_with_the_widows_jar(no_seeker):
     g._open_eat_menu()
     assert g.state == STATE_EAT_MENU
     g.render()
+
+
+def test_the_cook_menu_says_a_feast_heals_a_hero_with_the_fatted_calf_fully():
+    """The Fatted Calf makes every legendary feast heal the hero fully; the
+    cook menu's "what it does now" never said so."""
+    import kitchen
+    from player import Player
+    p = Player()
+    feast, plain = kitchen.recipe('feast_01'), kitchen.recipe('cook_goblin')
+    assert kitchen.is_legendary(feast) and not kitchen.is_legendary(plain)
+    assert 'Heals you fully' not in kitchen.dish_effects(p, feast)
+    p.quirk_progress['fatted_calf_active'] = True
+    assert 'Heals you fully' in kitchen.dish_effects(p, feast)
+    assert 'Heals you fully' not in kitchen.dish_effects(p, plain)
+    # ... and it does (food_system._apply_recipe_outcome).
+    from food_system import _apply_recipe_outcome
+    p.hp = 1
+    _apply_recipe_outcome(p, feast)
+    assert p.hp == p.max_hp
