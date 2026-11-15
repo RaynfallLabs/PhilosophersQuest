@@ -71,8 +71,9 @@ The old generators (`tools/gen_recipes*.py`, `tools/gen_ingredients_v265.py`,
 
 ## 3. Ingredients
 
-**316 ingredients:** 294 monster parts, 14 boss trophies, 8 foraged finds (cave mushroom, swamp
-moss, river salt, crystal shard, holy water, altar incense, deep-iron shaving, abyssal kelp).
+**318 ingredients:** 294 monster parts, 14 boss trophies, 10 foraged finds (cave mushroom, swamp
+moss, river salt, crystal shard, holy water, altar incense, deep-iron shaving, abyssal kelp, and
+the quest pets' Starnut and Sunroot, which also grow as ordinary forage from floors 25 and 40).
 
 ### 3.1 Names and pictures
 
@@ -114,7 +115,7 @@ What a part is rich in, from its lore: `hp` (hearty: a troll, a bear), `sp` (fil
 glue, an ogre's bangers), `mp` (arcane: a wraith's ectoplasm, a lich's bone), `stat` with its
 stat (`stat_grant`: a cobra sharpens DEX), or `special` with a timed power (`temp_power`: a
 shade's gloom-jelly gives Dark Vision, a basilisk's tail a Body Ward). Counts: 47
-hp, 54 sp, 43 mp, 99 stat (STR 26, DEX 16, INT 15, WIS 15, CON 14, PER 14 with the forage), 72
+hp, 55 sp, 44 mp, 100 stat (STR 26, DEX 16, INT 15, WIS 15, CON 14, PER 14 with the forage), 72
 special. Every nature has parts in every depth band; casters find arcane parts from floor 1 to
 floor 97.
 
@@ -128,7 +129,7 @@ leave no corpse; the deadites and Old Nickel share the zombie's and the goblin's
 
 ## 4. The recipe book (`recipes.json`)
 
-**686 dishes:** 316 single dishes (one per ingredient: the everyday choice) and 370
+**693 dishes:** 318 single dishes (one per ingredient: the everyday choice) and 375
 multi-ingredient dishes of 2 to 5 different ingredients. Every ingredient is in exactly one single
 dish and at least two multi-dishes. 36 multi-dishes are legendary feasts; 126 are cross-depth. No
 dish is named just like an ingredient (the build checks).
@@ -172,8 +173,8 @@ food or forage. The build fails on any dish that breaks these rules
    part (a saved part, a ration, cheese) with a deep one.
 
 Before this (K1's book): 8 of 36 feasts and 109 of 257 multi-dishes were cookable in half of
-runs. Now: all 36 feasts once the trophy is won (19 counting the trophy's own odds) and 224 of
-370 multi-dishes. The eight that a simulated run never cooks hold a part the simulator never
+runs. Now: all 36 feasts once the trophy is won (19 counting the trophy's own odds) and 229 of
+375 multi-dishes. The eight that a simulated run never cooks hold a part the simulator never
 meets: the cow level's two (secret), the mimic (it waits in chests) and Charybdis (summoned by
 her scroll); each pairs only with common partners.
 
@@ -181,11 +182,11 @@ Dishes per tab and depth band (the tier of the deepest ingredient):
 
 | Tab | 1-20 | 21-40 | 41-60 | 61-80 | 81-100 |
 |-----|-----:|------:|------:|------:|-------:|
-| HP | 44 | 15 | 9 | 3 | 14 |
-| SP | 81 | 8 | 4 | 11 | 5 |
-| MP | 48 | 8 | 11 | 4 | 13 |
+| HP | 44 | 15 | 10 | 3 | 14 |
+| SP | 81 | 10 | 5 | 11 | 5 |
+| MP | 48 | 9 | 12 | 4 | 13 |
 | Stat | 143 | 36 | 25 | 17 | 21 |
-| Special | 79 | 40 | 19 | 8 | 20 |
+| Special | 79 | 41 | 19 | 8 | 20 |
 
 ### 4.2 Pictures (`tools/content/kitchen/dish_art.py`)
 
