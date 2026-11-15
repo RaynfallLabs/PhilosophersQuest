@@ -1,0 +1,509 @@
+[
+ {
+  "id": "first_labour",
+  "family": "bosses_lore_ways",
+  "rank": 1,
+  "body": "badge_scene",
+  "what": "the trophy of the first labour of Hercules, seen close in warm evening light on a rocky Greek hillside: the whole golden pelt of the Nemean Lion lies draped over a big flat rock, its great maned head at the top of the rock facing the viewer with closed eyes, its very dark brown mane nearly black, its short fur pale tawny straw-gold with a dull metallic sheen as if the hide were hammered metal; its two front paws hang down the front of the rock. Leaning against the rock beside it stands a huge rough wooden club of knotted olive wood. Behind, a dark cave mouth in the hill and a gold evening sky. The pelt is bright and warm; the cave behind it is dark.",
+  "colours": "Pale tawny straw-gold lion fur with a dull metallic sheen; a very dark brown mane, nearly black; a pale grey rock; a rough brown knotted olive-wood club; a black cave mouth; a gold evening sky.",
+  "must_show": [
+   "a golden lion pelt with its maned head, draped over a rock",
+   "a huge rough wooden club leaning beside it",
+   "no weapon of steel"
+  ],
+  "must_not_show": [
+   "person",
+   "Hercules",
+   "hand",
+   "blood",
+   "wound",
+   "sword",
+   "spear",
+   "living lion snarling",
+   "writing"
+  ]
+ },
+ {
+  "id": "bronze_heel",
+  "family": "bosses_lore_ways",
+  "rank": 2,
+  "body": "badge_scene",
+  "what": "a giant's bronze heel, seen close and low on a cliff top above a bright blue sea: one colossal foot and ankle of dark weathered brown bronze with bright golden-bronze worn edges and rows of big rivets, planted on grey rock, as big as a cart. One straight wooden arrow with white feathers is stuck in the back of the ankle, and from round the arrow a thin bright stream of glowing orange-gold molten metal, like the ichor in a bronze vein, runs down the heel and pools glowing on the rock. Behind, a bright blue sea and sky. The glowing ichor is the brightest thing in the picture.",
+  "colours": "Dark weathered brown bronze with bright golden-bronze edges and rivets; one wooden arrow with white feathers; a thin stream of glowing orange-gold molten metal with a white-hot core; grey rock; a bright blue sea and sky.",
+  "must_show": [
+   "a giant bronze foot and ankle",
+   "an arrow stuck in the ankle",
+   "a thin stream of glowing molten gold running from it"
+  ],
+  "must_not_show": [
+   "person",
+   "archer",
+   "whole giant",
+   "face",
+   "blood",
+   "flesh",
+   "skin",
+   "writing"
+  ]
+ },
+ {
+  "id": "polished_shield",
+  "family": "bosses_lore_ways",
+  "rank": 3,
+  "body": "badge_scene",
+  "what": "a round shield of mirror-bright polished bronze, seen close, standing upright and tilted a little in a dark ruined Greek temple, filling most of the picture; its face is as smooth and bright as a mirror, and in it, small and clear, is the reflection of a gorgon's face: cold ash-grey skin, two huge round glaring eyes filled with solid yellow light, a wide snarling mouth with two white tusks, and thick dark emerald-green snakes for hair. The gorgon herself is not in the picture: only her reflection, in the shield. Torchlight catches the shield's bright rim; the temple behind is dark.",
+  "colours": "Mirror-bright polished gold-bronze shield with a bright rim; a reflected grey gorgon face with glowing yellow eyes and green snake hair; a dark grey ruined temple; warm torchlight.",
+  "must_show": [
+   "a round mirror-bright bronze shield",
+   "a gorgon's face with snake hair seen only as a reflection in it"
+  ],
+  "must_not_show": [
+   "person",
+   "hand",
+   "arm",
+   "the gorgon herself outside the shield",
+   "severed head",
+   "blood",
+   "writing",
+   "emblem on the shield"
+  ]
+ },
+ {
+  "id": "deaf_to_riddles",
+  "family": "bosses_lore_ways",
+  "rank": 4,
+  "body": "badge_scene",
+  "what": "two small soft balls of golden beeswax and one broken piece of honeycomb, seen close on a pale sandstone step, in bright warm sunset light; behind them, out of focus at the top of the steps, a great stone gateway, and lying before it the dim shape of a winged lioness with a woman's crowned head, the Sphinx, her white wings raised. The wax and the honeycomb are bright, sharp and gold in the front; the Sphinx behind is shadowed and small.",
+  "colours": "Bright golden-yellow beeswax and honeycomb; a pale sandstone step; a dark stone gate; a shadowed pale gold lioness with white wings and a small gold crown; a gold and orange sunset.",
+  "must_show": [
+   "two balls of golden beeswax and a piece of honeycomb in front",
+   "the Sphinx small and dim behind them"
+  ],
+  "must_not_show": [
+   "person",
+   "ear",
+   "hand",
+   "candle",
+   "flame",
+   "bees",
+   "writing",
+   "pyramid"
+  ]
+ },
+ {
+  "id": "quest_bonnacon",
+  "family": "bosses_named",
+  "rank": 1,
+  "body": "badge_scene",
+  "what": "the bonnacon of the medieval bestiaries, seen from the side, galloping left across a sunny green meadow: a heavy wild bull, a real animal on four legs, with a horse's long shaggy black mane down its neck, dark chestnut-brown hide, rolling white-rimmed eyes, and two thick pale ivory horns that each curl down and round beside its cheek in one full tight circle, so they can gore nobody. Its tail is lifted high, and from under its tail one short thick puff of orange and yellow fire bursts out behind it, no longer than its head, scorching a black streak in the grass. A bright blue sky. The bull is dark against the bright meadow.",
+  "colours": "Dark chestnut-brown hide; a long shaggy black mane; pale ivory curled horns; a grey-black muzzle; a short burst of orange and yellow fire; bright green grass with one scorched black streak; a bright blue sky.",
+  "must_show": [
+   "a maned bull with horns curled in tight circles",
+   "a short burst of fire from behind it",
+   "galloping"
+  ],
+  "must_not_show": [
+   "person",
+   "rider",
+   "horns pointing forward",
+   "dragon",
+   "dung pile",
+   "blood",
+   "writing"
+  ]
+ },
+ {
+  "id": "quest_calydonian_boar",
+  "family": "bosses_named",
+  "rank": 2,
+  "body": "badge_scene",
+  "what": "the Calydonian Boar, seen close from the front, head and shoulders, charging out of a trampled vineyard: a monstrous wild boar with a massive wedge-shaped head, small furious red eyes, a dark grey snout and two enormous curved ivory tusks sweeping up from its lower jaw, each as long as its head; a tall crest of thick stiff black bristles stands up along its neck and hump like spikes, and three broken pale wooden spear shafts stand stuck in the thick hide of its hump. Behind it, broken vines and a bright morning sky over a green valley. The boar is dark against the bright sky.",
+  "colours": "Coarse black-brown bristled hide with dark grey scars; a black bristle crest; small red eyes; huge ivory tusks; a dark grey snout; pale broken spear shafts; green broken vines; a bright morning sky.",
+  "must_show": [
+   "a huge boar with great curved tusks",
+   "a crest of spiky black bristles",
+   "broken spear shafts in its hump"
+  ],
+  "must_not_show": [
+   "person",
+   "hunter",
+   "blood",
+   "wound",
+   "pig farm",
+   "cute",
+   "writing"
+  ]
+ },
+ {
+  "id": "gorgon_sisters",
+  "family": "bosses_named",
+  "rank": 3,
+  "body": "badge_scene",
+  "what": "the two immortal gorgon sisters, Stheno and Euryale, flying side by side out of a dark sea storm toward the viewer, seen from the waist up: two tall monstrous winged women-shaped monsters with cold ash-grey skin, the grey of weathered stone, faces like the gorgon masks of old Greek shields with huge round glaring eyes of solid yellow light and wide mouths with white tusks, thick living black snakes with pale yellow bellies for hair, bright polished bronze hands with long claws, and great wings of dull dark old-gold feathers spread wide behind them; the one on the left in a dark charcoal-black peplos with a bronze scale corselet, the one on the right in a dark chestnut-brown peplos, howling. Behind them a stormy dark grey-blue sky with one bright flash of lightning. Their glowing eyes and bronze hands are the brightest things.",
+  "colours": "Cold ash-grey skin; glowing solid yellow eyes; white tusks; glossy black snakes with pale yellow bellies; bright polished bronze hands and claws; dull dark old-gold wings; a charcoal-black peplos and a chestnut-brown peplos; a stormy grey-blue sky; one white flash of lightning.",
+  "must_show": [
+   "two winged gorgons side by side",
+   "snakes for hair and glowing yellow eyes",
+   "bronze clawed hands"
+  ],
+  "must_not_show": [
+   "beautiful women",
+   "bare chest",
+   "green skin",
+   "severed head",
+   "blood",
+   "third figure",
+   "writing"
+  ]
+ },
+ {
+  "id": "quest_iron_patriarch",
+  "family": "bosses_named",
+  "rank": 4,
+  "body": "badge_scene",
+  "what": "the Iron Patriarch, an ancient tyrant king sealed in his coronation armour, seen close from the chest up on a dusty stone throne: a great flat-topped iron helm that covers the whole head, its front a blank iron face plate with one narrow black cross-shaped eye slit, and a heavy dark iron crown with tall square tarnished-gold points forged onto the top of it; huge round shoulder plates of thick dark gunmetal-grey iron, pitted, with worn pale steel edges, brown rust streaks and broad tarnished gold bands; a moth-eaten dark royal-purple mantle with a dull grey fur collar over his shoulders. A cold shaft of pale light falls on him from above; the throne room behind him is dark and full of cobwebs.",
+  "colours": "Dark gunmetal-grey iron with pale steel edges, brown rust streaks and tarnished gold bands; a dark iron crown with tarnished gold points; a faded dark royal-purple mantle with a dull grey fur collar; a cold pale shaft of light; a dark throne room with grey cobwebs.",
+  "must_show": [
+   "a fully closed iron great helm with a crown forged on top",
+   "huge iron shoulder plates",
+   "a faded purple mantle"
+  ],
+  "must_not_show": [
+   "face",
+   "skin",
+   "eyes",
+   "barrel",
+   "blood",
+   "writing",
+   "cross on the chest"
+  ]
+ },
+ {
+  "id": "quest_whispering_crone",
+  "family": "bosses_named",
+  "rank": 5,
+  "body": "badge_scene",
+  "what": "the Whispering Crone, seen close from the chest up in a misty night graveyard: a gaunt undead fortune-teller, a monstrous corpse of an old woman with cold chalk-grey dead skin, a colour no living person has, sunken blank white eyes with no pupils, long thin straight white hair, and a heavy dark charcoal-black shawl over her head and shoulders edged with a row of big tarnished silver coins. One long bony grey finger is laid upright across her thin grey lips, hushing. In her other open palm, held up in front of her, burns one small flame of pale cold violet light that lights her face from below. Behind her, leaning grey gravestones in blue mist. The violet flame is the brightest thing.",
+  "colours": "Cold chalk-grey dead skin; blank white eyes; long white hair; a dark charcoal-black shawl edged with tarnished silver coins; a pale cold violet flame with a white core; grey gravestones; blue night mist.",
+  "must_show": [
+   "a gaunt grey corpse-woman in a coin-edged black shawl",
+   "a finger across her lips",
+   "a small violet flame in her palm"
+  ],
+  "must_not_show": [
+   "kind grandmother",
+   "living pink skin",
+   "pupils",
+   "blood",
+   "gore",
+   "cross",
+   "writing on the gravestones",
+   "candle"
+  ],
+  "allow": [
+   "coin"
+  ]
+ },
+ {
+  "id": "quest_blood_archon",
+  "family": "bosses_named",
+  "rank": 6,
+  "body": "badge_scene",
+  "what": "the Blood Archon, an ancient fiend who keeps a ledger of debts, seen close from the chest up in a dark vaulted counting-hall: a tall gaunt figure with bloodless skin as white as candle wax with cold grey shadows, a long narrow bald head, sunken cheeks, a thin closed mouth, pointed ears and two deep-set eyes of solid dark red light; a crown of seven tall thick black iron spikes grows straight up out of his bald skull, fanned like the rays of a crown. He wears stiff robes of dark oxblood red brocade with a very wide flat jewelled gold collar. He holds one big thick closed book bound in pale grey hide with black iron corners and clasps against his chest. A single cold light from above; the hall behind is black.",
+  "colours": "Candle-wax white skin with grey shadows; glowing dark red eyes; black iron spikes; dark oxblood red robes; a bright jewelled gold collar; a pale grey hide-bound book with black iron clasps; a black hall.",
+  "must_show": [
+   "a bald bloodless fiend with a crown of black iron spikes",
+   "glowing red eyes",
+   "a big closed book with iron clasps held to his chest"
+  ],
+  "must_not_show": [
+   "horns",
+   "wings",
+   "open book",
+   "writing",
+   "blood",
+   "red skin",
+   "sword"
+  ]
+ },
+ {
+  "id": "silver_edge",
+  "family": "arsenal",
+  "rank": 1,
+  "body": "badge_scene",
+  "what": "a sword blade glittering with silver, seen close, standing upright point-up out of a bed of pale moonlit heather on a hilltop at night: the steel blade is coated along both edges with bright glittering silver dust that shines white-silver in the light of a huge full moon behind it, and a few silver motes drift off the blade into the air. Far off on the next hill, small and black against the moon-bright sky, the silhouette of a wolf howling. The bright silver blade and the full moon are the brightest things; the night sky is deep blue.",
+  "colours": "A bright steel blade glittering with white-silver dust; a plain dark leather grip and iron crossguard; a huge pale gold-white full moon; a deep blue night sky; dark purple heather; a small black wolf silhouette.",
+  "must_show": [
+   "a sword blade glittering with silver dust",
+   "a full moon behind it",
+   "a small howling wolf silhouette far off"
+  ],
+  "must_not_show": [
+   "person",
+   "hand",
+   "werewolf close up",
+   "blood",
+   "grave",
+   "cross",
+   "writing"
+  ]
+ },
+ {
+  "id": "holy_water",
+  "family": "arsenal",
+  "rank": 2,
+  "body": "badge_scene",
+  "what": "a small round glass flask of holy water in mid-air, seen close, just bursting in a dark stone crypt: the clear glass flask with a cork is breaking apart, and the water inside it splashes out in a bright spray of glowing pale blue-white droplets that shine like little stars, lighting the dark crypt arch behind it. The glowing water is the brightest thing in the picture; the crypt is dark grey-blue.",
+  "colours": "Clear pale glass with bright white glints; a brown cork; glowing pale blue-white water droplets with white cores; a dark grey-blue stone crypt arch.",
+  "must_show": [
+   "a glass flask bursting in mid-air",
+   "a spray of glowing blue-white water droplets",
+   "a dark crypt behind"
+  ],
+  "must_not_show": [
+   "person",
+   "hand",
+   "vampire",
+   "skull",
+   "coffin",
+   "cross",
+   "blood",
+   "writing"
+  ]
+ },
+ {
+  "id": "old_remedies",
+  "family": "arsenal",
+  "rank": 3,
+  "body": "badge_scene",
+  "what": "the old remedies, laid out together on a rough wooden shelf in warm lamplight, seen close: standing upright at the back, a round shield of mirror-bright polished bronze; in front of it, a small open clay pot of golden beeswax with two soft balls of wax beside it; and lying beside the pot, one old black horseshoe of cold iron with a few iron nails. The shield is the tallest thing and catches the light; the shelf and the wall behind are warm dark brown.",
+  "colours": "A mirror-bright polished gold-bronze shield; a brown clay pot; bright golden-yellow beeswax; a dark blackened iron horseshoe and nails; a warm brown wooden shelf; warm lamplight; a dark brown wall.",
+  "must_show": [
+   "a mirror-bright round shield standing at the back",
+   "a pot and balls of golden beeswax",
+   "an iron horseshoe"
+  ],
+  "must_not_show": [
+   "person",
+   "hand",
+   "lamp in the picture",
+   "flame",
+   "reflection of a face",
+   "writing"
+  ]
+ },
+ {
+  "id": "feast_first",
+  "family": "kitchen",
+  "rank": 1,
+  "body": "badge_scene",
+  "what": "a hero's feast in a firelit hall, seen close down a long heavy wooden table: in the middle, on a great pewter platter, one huge golden-brown roast with a crackling crust, steaming, with roasted apples round it; beside it a round loaf of bread, a wheel of yellow cheese and two gold goblets. Warm firelight from a big hearth behind falls on the food; the hall is dark wood with a red banner with no marks on it. The roast is the brightest thing.",
+  "colours": "A golden-brown roast with a dark crackling crust; pale steam; red-gold roasted apples; a dull silver pewter platter; a brown loaf; a yellow cheese wheel; gold goblets; warm orange firelight; dark wood; a plain red banner.",
+  "must_show": [
+   "one great steaming roast on a platter",
+   "a long wooden feasting table",
+   "firelight"
+  ],
+  "must_not_show": [
+   "person",
+   "hand",
+   "skull",
+   "blood",
+   "writing",
+   "emblem on the banner"
+  ]
+ },
+ {
+  "id": "feast_12",
+  "family": "kitchen",
+  "rank": 2,
+  "body": "badge_scene",
+  "what": "a great hall's endless feasting table, seen from one end so that it runs away into the distance: a very long heavy wooden table loaded from end to end with roasts, pies, cauldrons of stew, towers of bread, fruit and gold goblets, many dishes in a long row, under a high timber roof hung with plain red and gold banners, lit by a row of hearths and warm golden light. The nearest dish, a huge roast on a gold platter, is large and bright in front.",
+  "colours": "Warm golden light; many golden-brown roasts and pies; dark iron cauldrons with steam; brown bread; red and green fruit; gold goblets and platters; dark brown wood; plain red and gold banners.",
+  "must_show": [
+   "a very long table running into the distance",
+   "loaded with many different dishes",
+   "a great hall with banners"
+  ],
+  "must_not_show": [
+   "person",
+   "hand",
+   "skull",
+   "blood",
+   "writing",
+   "emblem on the banners"
+  ]
+ },
+ {
+  "id": "five_courses",
+  "family": "kitchen",
+  "rank": 3,
+  "body": "badge_scene",
+  "what": "five small round dishes set in a curve on a round wooden board, seen close and from a little above in warm light: a deep red stew in a walnut bowl, a golden amber pie in a clay dish, a deep blue glowing broth in an iron pot, a bright green herb salad in a silver dish, and a violet jelly shining in a gold cup. Each dish is a different strong colour; the board and the table behind are warm brown.",
+  "colours": "A deep red stew; a golden amber pie; a deep blue glowing broth; a bright green herb salad; a shining violet jelly; walnut, clay, black iron, silver and gold dishes; a warm brown wooden board.",
+  "must_show": [
+   "five small dishes in a curve",
+   "each a different strong colour: red, amber, blue, green and violet"
+  ],
+  "must_not_show": [
+   "person",
+   "hand",
+   "cutlery in a hand",
+   "writing",
+   "numbers"
+  ]
+ },
+ {
+  "id": "stone_soup",
+  "family": "kitchen",
+  "rank": 4,
+  "body": "badge_scene",
+  "what": "a round black iron cauldron of soup over a small campfire, seen close and from a little above: the soup is golden and steaming, and in it lie carrots, onions, a turnip, green leeks and, in the very middle, one smooth round grey river stone, plainly a stone. Round the cauldron on the ground lie a few more vegetables and a wooden ladle. Warm firelight below; the night behind is dark.",
+  "colours": "A black iron cauldron; golden steaming soup; orange carrots, white onions, a purple-white turnip, green leeks; one smooth grey stone; a wooden ladle; orange firelight; a dark night.",
+  "must_show": [
+   "a cauldron of vegetable soup",
+   "one round grey stone in the middle of the soup"
+  ],
+  "must_not_show": [
+   "person",
+   "hand",
+   "skull",
+   "bones",
+   "meat",
+   "writing"
+  ]
+ },
+ {
+  "id": "worth_the_wait",
+  "family": "kitchen",
+  "rank": 5,
+  "body": "badge_scene",
+  "what": "a covered dish and an hourglass on a rough wooden table in warm light, seen close: a domed copper dish cover is lifted a little off its plate and bright golden steam pours out from under it; beside it stands a tall hourglass in a dark wooden frame, all of its pale sand run down into the bottom bulb. A dusty old cobweb hangs from the hourglass frame. The golden steam is the brightest thing; the wall behind is dark.",
+  "colours": "A bright copper dome with warm highlights; glowing golden steam; a pewter plate; an hourglass of clear glass with pale sand, in a dark wooden frame; a pale grey cobweb; a warm brown table; a dark wall.",
+  "must_show": [
+   "a covered dish with golden steam escaping",
+   "an hourglass with all its sand run out",
+   "a cobweb"
+  ],
+  "must_not_show": [
+   "person",
+   "hand",
+   "skull",
+   "clock face",
+   "writing",
+   "numbers"
+  ]
+ },
+ {
+  "id": "made_to_order",
+  "family": "kitchen",
+  "rank": 6,
+  "body": "badge_scene",
+  "what": "a smith's anvil in a forge, seen close: on the anvil lies a newly made sword, its steel blade bright and gleaming, still glowing faintly orange at its tip, with a smith's hammer and tongs beside it on the anvil; behind, the forge's coals glow orange and a few sparks fly. The bright new blade is the brightest thing; the forge walls are dark.",
+  "colours": "A dark iron anvil; a bright gleaming steel blade with an orange-hot tip; a dark leather grip; a hammer with a wooden handle; iron tongs; glowing orange coals; gold sparks; dark stone walls.",
+  "must_show": [
+   "a new sword lying on an anvil",
+   "a hammer beside it",
+   "a glowing forge behind"
+  ],
+  "must_not_show": [
+   "person",
+   "hand",
+   "smith",
+   "blood",
+   "writing",
+   "emblem"
+  ]
+ },
+ {
+  "id": "leaves_against_rain_bg",
+  "family": "stories",
+  "rank": 1,
+  "body": "badge_scene",
+  "what": "a rainy night by a lonely road, seen close and low: slanting streaks of rain fall across a dark blue-grey sky, a dark line of trees far off, and a few broad wet green leaves blowing in the wind near the bottom; in the lower middle of the picture a soft warm round glow of gold light, as if from a small fire, falls on the wet ground. The rest of the picture is cool, dark and rainy. Nothing stands in the glow.",
+  "colours": "A dark blue-grey rainy sky; pale slanting rain; a dark tree line; a few broad wet green leaves; a soft warm gold glow on dark wet ground.",
+  "must_show": [
+   "a rainy night",
+   "an empty warm patch of gold light in the lower middle"
+  ],
+  "must_not_show": [
+   "creature",
+   "lizard",
+   "animal",
+   "person",
+   "rock in the middle",
+   "umbrella",
+   "fire",
+   "writing"
+  ]
+ },
+ {
+  "id": "stage_fright",
+  "family": "stories",
+  "rank": 2,
+  "body": "badge_scene",
+  "what": "an empty concert stage at night, seen from the front: a single microphone on its stand in the middle of the stage, bright purple and gold spotlight beams crossing above it through thick haze, and from the cracks of the black stage floor a pale green ghostly mist rising and curling round the foot of the microphone stand. Scattered over the stage floor, glittering gold and silver confetti. The spotlights and the microphone are bright; the rest is dark.",
+  "colours": "A black stage floor; a silver microphone on a black stand; bright purple and gold spotlight beams; pale grey haze; pale glowing green mist; glittering gold and silver confetti.",
+  "must_show": [
+   "an empty stage with one microphone",
+   "crossing purple and gold spotlights",
+   "green ghostly mist rising from the floor"
+  ],
+  "must_not_show": [
+   "person",
+   "band",
+   "zombie",
+   "hand",
+   "skull",
+   "crowd",
+   "writing",
+   "logo"
+  ]
+ },
+ {
+  "id": "encore",
+  "family": "stories",
+  "rank": 3,
+  "body": "badge_scene",
+  "what": "a glowing photograph crumbling into glitter in mid-air above a dark stage, seen close: a small square photo card, its face blank and shining with warm white light, is breaking apart at its edges into a swirl of gold and pink glitter that streams upward like a burst of fireworks; two crossing spotlight beams of gold and pink shine from behind. The glowing card and the glitter are the brightest things; the stage behind is dark.",
+  "colours": "A blank glowing white-gold photo card; swirling gold and pink glitter; gold and pink spotlight beams; a dark purple-black stage behind.",
+  "must_show": [
+   "a glowing blank photo card crumbling into glitter",
+   "spotlights behind"
+  ],
+  "must_not_show": [
+   "person",
+   "face",
+   "faces in the photo",
+   "hand",
+   "writing",
+   "signature",
+   "logo",
+   "letters"
+  ],
+  "allow": [
+   "photo"
+  ]
+ },
+ {
+  "id": "rip_van_winkle",
+  "family": "stories",
+  "rank": 4,
+  "body": "badge_scene",
+  "what": "Rip Van Winkle asleep under a great gnarled tree high in the mountains at dawn, seen close: an old man in a shabby old brown coat and a battered three-cornered hat sits fast asleep against the tree trunk, his eyes closed, his very long white beard flowing down over his chest and into his lap; leaning against the tree beside him is an old long rusty musket covered in cobwebs, with a small bird's nest on it. Behind, misty blue mountains and a pale gold dawn sky. His white beard is the brightest thing.",
+  "colours": "A shabby brown coat; a battered black three-cornered hat; a very long white beard; a rusty brown musket with grey cobwebs; a small brown nest; a dark gnarled tree; misty blue mountains; a pale gold dawn.",
+  "must_show": [
+   "an old man asleep against a tree with a very long white beard",
+   "an old rusty musket covered in cobwebs beside him",
+   "mountains at dawn"
+  ],
+  "must_not_show": [
+   "second person",
+   "blood",
+   "bottle",
+   "dead",
+   "skeleton",
+   "writing"
+  ]
+ }
+]

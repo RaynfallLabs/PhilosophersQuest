@@ -87,6 +87,8 @@ A counter's `scope` is `life` (the profile, the default) or `run` (`RunTally`, s
 
 **Ids are forever.** Codes are made from them. `tests/data/achievement_ids_shipped.txt` fails if one disappears.
 
+**Added 2026-11-14 (23):** the lore ways (The First Labour, The Bronze Heel, In the Polished Shield, Deaf to Riddles), the named foes with no badge yet (the Bonnacon, the Calydonian Boar, the Undying Sisters, the Iron Patriarch, the Whispering Crone, the Blood Archon), the arsenal (A Silver Edge, Holy Water, Old Remedies), the kitchen and the smiths (the `feasts` ladder A Feast for Heroes and The Long Table, Five Courses, Stone Soup, Worth the Wait, Made to Order), Leaves Against the Rain (the Emberpup's cloak), the Stray Kids (Stage Fright, Encore!) and one more fourth-wall secret, Rip Van Winkle. A profile from before has none of them, and nothing in it changes: the new ladders read counters it never had, so `settle` gives nothing (`tests/test_achievements_quirks_2026_11.py`).
+
 ## The event spine
 
 The game emits events with one line at the place each happens: `self._seeker_event('kill', monster=..., ...)`. Every name is in `achievements.KNOWN_EVENTS`, and `tests/test_seeker_wiring.py` checks that each is emitted somewhere in `src/`.
@@ -100,6 +102,20 @@ Some engine modules have no game reference, so they tell a listener, and `Seeker
 | `pet_system.ON_GROWTH` | `'pet_level'` and `'pet_evolved'` (the form counted from 1) |
 | `topic_cards.ON_READ` | `'topic_read'` |
 | `QuizEngine.on_card` | `'card_opened'` |
+| `counters.ON_COUNTER` | `'counter'` (technique, monster, family): a named counter at work. `counters.line` tells it, and so do the Aegis's and Perseus' Shield's own gaze branches in `monster.py` |
+
+**Fields added 2026-11-14** (the winning build and the new kitchen):
+
+| Event | Field | Set by |
+|---|---|---|
+| `kill` | `coat` | the coating's substance on the blow that killed (`coatings.after_blow` marks the creature `_killed_coated`) |
+| `kill` | `flask` | the thrown flask's id (`game_arsenal._throw_flask` marks `_killed_by_flask`) |
+| `cooked` | `tab`, `legendary`, `parts`, `carried` | `main._cook_facts`, read before the ingredients leave the pack. `carried` is the deepest floor reached now less the oldest `harvest_floor` among the dish's parts (`Game._harvest` stamps each part; a stack keeps the oldest) |
+| `smith` | `service` | a smith's service done (`game_traders._trader_service_on`), or `order_collected` |
+| `stray_kids` | `outcome` | `cleared` (the band's last falls) or `show` (the photo read) |
+| `save_older` | `version` | a save written by an older version of the game is loaded (`game_seeker.older_version`; the save keeps `_game_version` from 3.5 on, and one with none is older) |
+
+A thrown weapon's kill and a thrown flask's kill are kills from afar (`ranged`). Before 2026-11-14 they counted as neither melee nor ranged.
 
 **What counts (D4):**
 - Every run except the Dad/god build (`_joke`) and the QA build (`_qa_tools`).
@@ -128,3 +144,4 @@ Some engine modules have no game reference, so they tell a listener, and `Seeker
 | `test_dad_tools.py` | checker, ledger, codebook, key file, release step |
 | `test_seeker_wiring.py` | the spine, plus real game paths: kills, damage, quiz answers, deeds, pets, XYZZY, run end, a copied-back save, an edited profile, the save round trip, the reward scrolls |
 | `test_seeker_ui.py` | the screens |
+| `test_achievements_quirks_2026_11.py` | the audit (every creature, deed, flask, technique, outcome and pet line a trigger names is real and sent), the 2026-11-14 achievements through real game paths, an old profile, and the new quirks |

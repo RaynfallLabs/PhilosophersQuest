@@ -60,8 +60,13 @@ def next_stance(stance: str) -> str:
 
 
 def damage_mult(player) -> float:
-    """What the stance does to a weapon blow or shot (Press 1.3, Guard 0.7)."""
-    return float(_def(of(player)).get('damage', 1.0) or 1.0)
+    """What the stance does to a weapon blow or shot (Press 1.3, Guard 0.7).
+    Fabius the Delayer (a trait) halves what Guard costs: 0.85."""
+    s = of(player)
+    m = float(_def(s).get('damage', 1.0) or 1.0)
+    if s == GUARD and m < 1.0 and (getattr(player, 'quirk_progress', None) or {}).get('fabius_active'):
+        m = 1.0 - (1.0 - m) / 2.0
+    return m
 
 
 def stance_ac(player) -> int:
@@ -138,7 +143,10 @@ def parry_ac(player) -> int:
     two-hander cannot take one, but a test or an old save can try)."""
     if getattr(player, 'shield', None) is not None:
         return 0
-    return weapon_parry(getattr(player, 'weapon', None))
+    p = weapon_parry(getattr(player, 'weapon', None))
+    if p > 0 and (getattr(player, 'quirk_progress', None) or {}).get('wallace_active'):
+        p += 1                              # the Wallace Sword (a trait)
+    return p
 
 
 def card_lines(weapon) -> list:

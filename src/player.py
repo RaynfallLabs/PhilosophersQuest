@@ -1773,9 +1773,12 @@ class Player:
 
     def load_step_every(self) -> int:
         """Every how many steps one costs an extra turn under this load
-        (0: never)."""
+        (0: never). Marius' Mule (a trait) keeps the stride when Burdened."""
+        tier = self.load_tier()
+        if tier == 'burdened' and (getattr(self, 'quirk_progress', None) or {}).get('marius_active'):
+            return 0
         return {'burdened': self.BURDENED_STEP_EVERY,
-                'overloaded': self.OVERLOADED_STEP_EVERY}.get(self.load_tier(), 0)
+                'overloaded': self.OVERLOADED_STEP_EVERY}.get(tier, 0)
 
     def burden_step(self) -> bool:
         """Count one step taken. True when this step costs an extra turn:
@@ -1884,6 +1887,13 @@ class Player:
                                             getattr(item, '_bought_for', None)) if p is not None]
                 if _paid:
                     existing._bought_for = min(_paid)
+                # A harvested part's stamp (Game._harvest): the stack keeps
+                # the oldest, so a part saved since the first floors still
+                # counts as carried that far (the Seeker's Worth the Wait).
+                _hf = [int(h) for h in (getattr(existing, 'harvest_floor', None),
+                                        getattr(item, 'harvest_floor', None)) if h]
+                if _hf:
+                    existing.harvest_floor = min(_hf)
                 return True
         self.inventory.append(item)
         # Keep inventory sorted alphabetically by the name the player SEES
@@ -1932,7 +1942,7 @@ class Player:
 
     # --- Stat bonuses ---
 
-    # Stat points from traits (quirks). There are 117 traits and most give a
+    # Stat points from traits (quirks). There are over a hundred traits; most give a
     # point or two with no limit: the one source of power that grows with
     # hours played rather than with depth (decision D6). They are paid from
     # an allowance that grows as the player descends (4 at the top, 16 at the

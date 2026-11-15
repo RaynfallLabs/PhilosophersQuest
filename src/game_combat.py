@@ -476,7 +476,9 @@ class CombatMixin:
                 f"You hurl the {display} at {_who}! ({actual} damage)", 'success'
             )
             if monster.is_dead():
-                self._on_monster_killed(monster)
+                # A thrown weapon kills from afar: the Seeker's Steady Aim and
+                # the Valkyrie count it (it used to count as neither).
+                self._on_monster_killed(monster, ranged=True)
             land_x, land_y = monster.x, monster.y
         else:
             self.add_message(
@@ -1288,7 +1290,9 @@ class CombatMixin:
         self._seeker_event('kill', monster=monster.kind, ranged=bool(ranged),
                            unarmed=bool(unarmed), boss=bool(getattr(monster, 'is_boss', False)),
                            legendary='legendary' in (getattr(monster, 'tags', None) or ()),
-                           family=getattr(monster, 'family', None))
+                           family=getattr(monster, 'family', None),
+                           coat=monster.__dict__.get('_killed_coated'),
+                           flask=monster.__dict__.get('_killed_by_flask'))
         if getattr(monster, 'is_boss', False):
             import boons as _boons
             if _boons.solved_quest(self.player, monster.kind):
@@ -1305,6 +1309,7 @@ class CombatMixin:
                 unarmed=unarmed,
                 hp_pct_before=hp_pct_before,
                 is_feared=self.player.has_effect('feared'),
+                flask=bool(monster.__dict__.get('_killed_by_flask')),
             )
         # Boss narrative popup
         story_key = self._BOSS_STORY_KEYS.get(monster.kind)

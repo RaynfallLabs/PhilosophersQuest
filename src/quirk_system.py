@@ -1,5 +1,5 @@
 """
-quirk_system.py -- 117 Bofuri-style traits earned through counterintuitive play.
+quirk_system.py -- 126 Bofuri-style traits earned through counterintuitive play.
 Progress stored in player.quirk_progress (dict).
 Unlocked quirks in player.unlocked_quirks (set).
 
@@ -130,6 +130,10 @@ class QuirkSystem:
         # Special: athena uses player.known_monster_ids directly
         if qid == 'athena':
             val = len(getattr(self._pl, 'known_monster_ids', set()))
+            return min(1.0, val / threshold)
+        # Proteus counts the kinds Known by Hand (known_by_hand.py)
+        if qid == 'proteus':
+            val = len(getattr(self._pl, 'known_by_hand', None) or ())
             return min(1.0, val / threshold)
         # Dict-based quirks (thor, hephaestus, jormungandr, kali) — use max value
         if key in ('thor_weapon_combats', 'hephaestus_counts', 'jormungandr_counts', 'kali_kills'):
@@ -420,6 +424,30 @@ class QuirkSystem:
                 self._award('atalanta', "Winged Feet",
                             lambda pl: pl.apply_stat_bonus('DEX', 2))
 
+        # Down, not up, and to a floor never stood on before (a step back up
+        # and down again is not a new floor).
+        going_down = from_level is not None and new_level > from_level
+        if going_down and new_level < 900:
+            # Marius' Mule: down the stairs with a Burdened pack (or worse).
+            try:
+                laden = bool(self._pl.is_burdened())
+            except Exception:
+                laden = False
+            if laden:
+                # each floor once: up and down one staircase is not a march
+                self._set_add('marius_burdened_floors', int(new_level))
+                if (self._set_len('marius_burdened_floors') >= 10
+                        and not self.is_unlocked('marius_mule')):
+                    self._award('marius_mule', "Marius' Mule",
+                                lambda pl: pl.quirk_progress.update({'marius_active': True}))
+            # The Fatted Calf: a boss trophy carried down to new floors.
+            if _carries_trophy(self._pl):
+                self._set_add('fatted_calf_floors', int(new_level))
+                if (self._set_len('fatted_calf_floors') >= 12
+                        and not self.is_unlocked('fatted_calf')):
+                    self._award('fatted_calf', "The Fatted Calf",
+                                lambda pl: pl.quirk_progress.update({'fatted_calf_active': True}))
+
         # Reset eye-of-storm damage flag on every floor change
         self._sp('eye_storm_damage_this_floor', False)
         # Reset guardian session hits on floor change
@@ -639,8 +667,33 @@ class QuirkSystem:
         # answers across the whole run). See 2026-09-24 retarget comment there.
 
     def on_kill(self, monster_kind: str, chain_score: int, ranged: bool,
-                unarmed: bool, hp_pct_before: float, is_feared: bool):
-        """Called whenever player kills a monster."""
+                unarmed: bool, hp_pct_before: float, is_feared: bool,
+                flask: bool = False):
+        """Called whenever player kills a monster. ``flask``: a thrown flask
+        killed it (game_arsenal._throw_flask)."""
+        # Callinicus' Fire: kills by thrown flasks.
+        if flask:
+            self._inc('callinicus_flask_kills')
+            if (self._p('callinicus_flask_kills') >= 20
+                    and not self.is_unlocked('callinicus')):
+                self._award('callinicus', "Callinicus' Fire",
+                            lambda pl: pl.quirk_progress.update({'callinicus_active': True}))
+        # Fabius and Wallace count the hero's own blows: an attack's chain.
+        if chain_score and chain_score >= 1:
+            import stance as _stance
+            if _stance.of(self._pl) == _stance.GUARD:
+                self._inc('fabius_guard_kills')
+                if (self._p('fabius_guard_kills') >= 40
+                        and not self.is_unlocked('fabius')):
+                    self._award('fabius', "Fabius the Delayer",
+                                lambda pl: pl.quirk_progress.update({'fabius_active': True}))
+            if (getattr(self._pl, 'shield', None) is None
+                    and _stance.weapon_parry(getattr(self._pl, 'weapon', None)) > 0):
+                self._inc('wallace_two_hand_kills')
+                if (self._p('wallace_two_hand_kills') >= 100
+                        and not self.is_unlocked('wallace')):
+                    self._award('wallace', "The Wallace Sword",
+                                lambda pl: pl.quirk_progress.update({'wallace_active': True}))
         # Hercules: slay 12 DISTINCT named foes (bosses, mini-bosses, seal
         # demons) -- twelve labours.
         if monster_kind in _named_foe_kinds():
@@ -872,8 +925,23 @@ class QuirkSystem:
                             lambda pl: pl.add_effect('poison_resist', -1))
 
     def on_food_eaten(self, quality: int, source_monster: str, bonus_type: str,
-                      ingredient_id: str):
-        """Called when cooked food is eaten."""
+                      ingredient_id: str, parts=()):
+        """Called when cooked food is eaten. ``parts``: the dish's different
+        ingredients (kitchen.parts), when the caller knows them."""
+        # The Widow's Jar: a dish of two or more parts with plain food in it
+        # (a ration, bread, cheese) or a foraged find, cooked right.
+        if quality > 0 and len(parts or ()) >= 2:
+            try:
+                import kitchen as _kitchen
+                plain = any(_kitchen.part_kind(p) in ('food', 'forage') for p in parts)
+            except Exception:
+                plain = False
+            if plain:
+                self._inc('widows_jar_dishes')
+                if (self._p('widows_jar_dishes') >= 10
+                        and not self.is_unlocked('widows_jar')):
+                    self._award('widows_jar', "The Widow's Jar",
+                                lambda pl: pl.quirk_progress.update({'widows_jar_active': True}))
         # Tantalus (#16): 15 quality-0 ruined meals
         if quality == 0:
             self._inc('ruined_meals')
@@ -888,8 +956,10 @@ class QuirkSystem:
                 self._award('persephone', "Persephone's Descent",
                             lambda pl: pl.quirk_progress.update({'persephone_active': True}))
 
-        # Circe (#39): cook from each distinct bonus_type category
-        if bonus_type:
+        # Circe (#39): cook from each distinct bonus_type category: the
+        # kitchen's five tabs and a feast ('permanent'). A ruined dish is no
+        # kind of gift (it used to count as one, as 'ruined').
+        if bonus_type and bonus_type not in ('ruined', 'none'):
             self._set_add('circe_bonus_types', bonus_type)
             if self._set_len('circe_bonus_types') >= 5 and not self.is_unlocked('circe'):
                 self._award('circe', "Circe's Cauldron",
@@ -950,6 +1020,11 @@ class QuirkSystem:
 
     def on_item_equipped(self, item_id: str, item_type: str, slot: str):
         """Called when any item is equipped (weapon, armor, shield, accessory)."""
+        # Proteus: many kinds of gear Known by Hand (known_by_hand.py).
+        if (len(getattr(self._pl, 'known_by_hand', None) or ()) >= 25
+                and not self.is_unlocked('proteus')):
+            self._award('proteus', "Proteus' Many Shapes",
+                        lambda pl: pl.quirk_progress.update({'proteus_active': True}))
         # Penelope (#21): 100 total armor equip/unequip actions
         if item_type in ('armor', 'shield'):
             self._inc('penelope_count')
@@ -1263,6 +1338,24 @@ class QuirkSystem:
         if self._p('de_medici_picks') >= 20 and not self.is_unlocked('de_medici'):
             self._award('de_medici', "De Medici's Treasury", self._timer_bonus('economics', 4))
 
+    def on_coat_applied(self, coat_id: str):
+        """A coating worked into the weapon in hand (game_arsenal)."""
+        # Medea's Ointment: five different coatings.
+        if coat_id:
+            self._set_add('medea_coats', str(coat_id))
+            if self._set_len('medea_coats') >= 5 and not self.is_unlocked('medea'):
+                self._award('medea', "Medea's Ointment",
+                            lambda pl: pl.quirk_progress.update({'medea_active': True}))
+
+    def on_weapon_swap(self, foe_in_view: bool):
+        """The weapon at the hero's back drawn (S, game_dressing._swap_weapons)."""
+        # Janus: drawn with a foe in sight.
+        if foe_in_view:
+            self._inc('janus_swaps')
+            if self._p('janus_swaps') >= 40 and not self.is_unlocked('janus'):
+                self._award('janus', "The Two Faces of Janus",
+                            lambda pl: pl.quirk_progress.update({'janus_active': True}))
+
     def on_combat_started(self):
         """Called when player initiates or is involved in combat."""
         self._sp('orpheus_combat_this_turn', True)
@@ -1296,6 +1389,28 @@ _SUBJECT_MASTERIES = (
 )
 
 _named_foes_cache = None
+
+
+def new_kind_threshold(player, threshold) -> int:
+    """Right answers to put on a kind for the first time: the piece's own,
+    one fewer (never under one) for a hero with Proteus' Many Shapes. Read
+    by the equip quizzes (main) and the lore card's Equip line."""
+    try:
+        n = int(threshold or 0)
+    except (TypeError, ValueError):
+        return threshold
+    if n > 1 and (getattr(player, 'quirk_progress', None) or {}).get('proteus_active'):
+        n -= 1
+    return n
+
+
+def _carries_trophy(player) -> bool:
+    """Is a boss trophy (an ingredient whose tier_role is 'trophy') in the
+    pack? The Fatted Calf counts the floors it is carried down to."""
+    for it in getattr(player, 'inventory', None) or ():
+        if getattr(it, 'tier_role', '') == 'trophy':
+            return True
+    return False
 
 
 def _named_foe_kinds() -> frozenset:
@@ -1478,6 +1593,16 @@ _QUIRK_PROGRESS = {
     'pythagoras':    ('_special', -1, False),             # chains 3, 4, 5 in a row
     'achilles':      ('achilles_barefoot_kills', 150, False),
     'daedalus':      ('daedalus_streak', 12, False),
+    # --- added 2026-11-14 (the winning build's arsenal, load and kitchen) ---
+    'callinicus':    ('callinicus_flask_kills', 20, False),
+    'medea':         ('medea_coats', 5, True),
+    'fabius':        ('fabius_guard_kills', 40, False),
+    'wallace':       ('wallace_two_hand_kills', 100, False),
+    'janus':         ('janus_swaps', 40, False),
+    'marius_mule':   ('marius_burdened_floors', 10, True),
+    'fatted_calf':   ('fatted_calf_floors', 12, True),
+    'widows_jar':    ('widows_jar_dishes', 10, False),
+    'proteus':       ('known_by_hand', 25, True),       # reads player.known_by_hand
 }
 
 # Canonical display order and names for all quirks
@@ -1540,6 +1665,12 @@ _QUIRK_NAMES = {
     'adam_smith': "The Invisible Hand", 'johnson': "Johnson's Dictionary",
     'hercules': "The Twelve Labours", 'pythagoras': "Pythagoras' Harmony",
     'achilles': "Achilles' Heel", 'daedalus': "Daedalus' Craft",
+    # --- added 2026-11-14 ---
+    'callinicus': "Callinicus' Fire", 'medea': "Medea's Ointment",
+    'fabius': "Fabius the Delayer", 'wallace': "The Wallace Sword",
+    'janus': "The Two Faces of Janus", 'marius_mule': "Marius' Mule",
+    'fatted_calf': "The Fatted Calf", 'widows_jar': "The Widow's Jar",
+    'proteus': "Proteus' Many Shapes",
 }
 
 # Canonical display order
@@ -1662,6 +1793,16 @@ _QUIRK_TRIGGER = {
     'pythagoras':    "You ended three attacks in a row on chains of exactly 3, 4 and 5.",
     'achilles':      "You killed 150 enemies with nothing worn on your feet.",
     'daedalus':      "You opened 12 locks in a row without failing one.",
+    # --- added 2026-11-14 ---
+    'callinicus':    "You killed 20 creatures with thrown flasks.",
+    'medea':         "You coated your weapon with 5 different coatings.",
+    'fabius':        "You struck down 40 foes while holding the Guard stance.",
+    'wallace':       "You struck down 100 foes with a two-handed weapon and no shield.",
+    'janus':         "You drew the weapon at your back 40 times with a foe in sight.",
+    'marius_mule':   "You went down the stairs to 10 different floors while Burdened.",
+    'fatted_calf':   "You carried a boss trophy down to 12 new floors.",
+    'widows_jar':    "You cooked 10 dishes with a ration or a foraged find in them.",
+    'proteus':       "You put on 25 different kinds of gear in one run.",
 }
 
 # Flavor quote shown on unlock -- captures the spirit of the achievement
@@ -1781,6 +1922,16 @@ _QUIRK_FLAVOR = {
     'pythagoras':    "There is geometry in the humming of the strings. -- Pythagoras",
     'achilles':      "She held him by the heel, and the river never touched it.",
     'daedalus':      "There is no lock I did not build first in my head. -- Daedalus",
+    # --- added 2026-11-14 ---
+    'callinicus':    "It burned on the water, and water only spread it. -- of Greek fire",
+    'medea':         "Anoint yourself, and for one day no fire and no bronze will harm you. -- Medea to Jason",
+    'fabius':        "One man, by delaying, restored the state to us. -- Ennius, of Fabius",
+    'wallace':       "A sword as tall as a man, and two hands on the hilt. -- of the Wallace Sword",
+    'janus':         "One face looks back, one looks ahead, and every doorway is his. -- of Janus",
+    'marius_mule':   "Every legionary carried his own kit, and the army marched the faster for it.",
+    'fatted_calf':   "Bring the fatted calf and kill it, and let us eat and celebrate. -- Luke 15:23",
+    'widows_jar':    "The jar of flour was not used up, and the jug of oil did not run dry. -- 1 Kings 17:16",
+    'proteus':       "Lion, serpent, leopard, water, tree: hold on, and he will answer you. -- after the Odyssey",
 }
 
 # Map quirk IDs to short effect descriptions shown on unlock
@@ -1900,6 +2051,16 @@ _QUIRK_EFFECTS = {
     'pythagoras':    "INT +1.",
     'achilles':      "DEX +1",
     'daedalus':      "DEX +1",
+    # --- added 2026-11-14 ---
+    'callinicus':    "Your thrown flasks' burning and pitting last twice as long.",
+    'medea':         "Coatings last half again as many blows.",
+    'fabius':        "Guard costs you only half its usual damage.",
+    'wallace':       "A two-hander held with no shield parries 1 better.",
+    'janus':         "Drawing the weapon at your back costs no turn.",
+    'marius_mule':   "Burdened no longer costs you extra steps.",
+    'fatted_calf':   "Every legendary feast you cook also heals you fully.",
+    'widows_jar':    "Rations and other plain food fill you half again as much.",
+    'proteus':       "A kind of gear you have never worn needs one right answer fewer.",
 }
 
 

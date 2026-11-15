@@ -31,6 +31,9 @@ COMPOSITES = {
     'from_home':    ('a10', 'monsters/sherlock_the_stout.png', None, 2, (64, 70)),
     'always_comes': ('a10', 'monsters/shep.png',            None, 2, (60, 66)),
     'i_choose_you': ('a10', 'monsters/emberpup.png',        None, 2, (64, 68)),
+    # the pup on his rock under the cloak of leaves, cropped below his own rain cloud
+    'leaves_against_rain': ('a14', 'monsters/npc_abandoned_emberpup_sheltered.png',
+                            (4, 14, 62, 64), 2, (64, 72)),
 }
 
 

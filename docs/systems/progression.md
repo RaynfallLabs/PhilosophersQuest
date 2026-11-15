@@ -8,7 +8,7 @@
 ## Purpose
 Progression is everything that makes a run richer after turn 1 that isn't an item on the ground or a floor transition. It covers three parallel layers that stack on top of the player's base build:
 
-1. **Quirks** — ~100 named Bofuri-style traits unlocked by playing in a specific way (not by XP). Each is a one-shot threshold on a quirk-progress counter maintained by the `QuirkSystem` dispatcher. Rewards are either a permanent stat/effect bump or an `[ACTIVE POWER]` on the V-menu.
+1. **Quirks** — 126 named Bofuri-style traits unlocked by playing in a specific way (not by XP). Each is a one-shot threshold on a quirk-progress counter maintained by the `QuirkSystem` dispatcher. Rewards are either a permanent stat/effect bump or an `[ACTIVE POWER]` on the V-menu.
 2. **Hero specials** — one or more AI-escalator-chain active abilities (plus optional cooldown) attached to a specific secret build. Dispatched through `hero_specials._DISPATCH` by effect id.
 3. **Hero passives** — set-of-strings on `player.hero_passives`; checked at hook sites in `combat.py`, `player.py`, `monster.py`, `game_menus.py`. One or more per build; several builds carry only passives.
 
@@ -228,6 +228,24 @@ If the result list is empty the menu prints the (slightly stale) "Earn quirks to
 
 ~100 quirks are enumerated below, grouped by how they're earned. Thresholds are from `_QUIRK_PROGRESS`; triggers from `_QUIRK_TRIGGER`; rewards from `_QUIRK_EFFECTS`.
 
+### Added 2026-11-14: the arsenal, the load and the kitchen
+
+Nine traits for the winning build's new systems, each a strange but real way to use one. Every reward is a flag on `quirk_progress` read where the system works; none multiplies by the floor.
+
+| id | Name | Earned by | Reward (read in) |
+|---|---|---|---|
+| `callinicus` | Callinicus' Fire | 20 kills by thrown flasks (`on_kill(flask=True)`) | `callinicus_active`: a thrown flask's burning or pitting lasts twice as long (`coatings.throw_at(turns_mult=2)`) |
+| `medea` | Medea's Ointment | 5 different coatings worked into the weapon (`on_coat_applied`) | `medea_active`: a coating lasts half again as many blows (`coatings.apply`) |
+| `fabius` | Fabius the Delayer | 40 kills by the hero's own attack in Guard | `fabius_active`: Guard costs half its damage, 0.85 for 0.7 (`stance.damage_mult`) |
+| `wallace` | The Wallace Sword | 100 kills by the hero's own attack with a two-hander that parries and no shield | `wallace_active`: parry +1 (`stance.parry_ac`) |
+| `janus` | The Two Faces of Janus | 40 draws of the weapon At Your Back (S) with a foe in sight (`on_weapon_swap`) | `janus_active`: the swap costs no turn (`game_dressing._swap_weapons`) |
+| `marius_mule` | Marius' Mule | down the stairs to 10 different floors while Burdened or worse | `marius_active`: Burdened costs no extra steps (Overloaded still does; the dodge and DEX loss stay) (`Player.load_step_every`) |
+| `fatted_calf` | The Fatted Calf | a boss trophy carried down to 12 new floors | `fatted_calf_active`: a legendary feast heals fully (`food_system._apply_recipe_outcome`) |
+| `widows_jar` | The Widow's Jar | 10 dishes of two or more parts with a ration or a foraged find in them, cooked right (`on_food_eaten(parts=...)`) | `widows_jar_active`: plain food eaten as it is gives half again its SP (`food_system.eat_food`) |
+| `proteus` | Proteus' Many Shapes | 25 kinds Known by Hand in one run | `proteus_active`: a kind never worn needs one right answer fewer, never under one (`main._new_kind_threshold`) |
+
+**Circe (2026-11-14):** a ruined dish is no longer one of Circe's five kinds (it counted as `'ruined'`, so four kinds and a burnt pot earned her). The kinds are the kitchen's five tabs and `'permanent'` (a feast or a trophy dish).
+
 ### Combat-counter quirks
 
 Awarded on `on_kill` / `on_take_damage` / `on_status_applied` / `on_status_reflected`.
@@ -268,7 +286,7 @@ Awarded on `on_harvest` / `on_food_eaten` / `on_potion_drunk` / `on_scroll_read`
 | `asclepius`   | Asclepius' Serpent         | Harvest 15 distinct poisonous species                | WIS +1 (timer_bonus animal 4)      |
 | `tantalus`    | Tantalus' Resolve          | Eat 15 quality-0 ruined meals                        | STR +1                             |
 | `persephone`  | Persephone's Descent       | Quality-5 meals from 5 distinct ingredient sources   | Ruined meals still yield half SP/HP |
-| `circe`       | Circe's Cauldron           | Cook from 5 distinct `bonus_type` categories         | CON +1 (timer_bonus cooking 4)     |
+| `circe`       | Circe's Cauldron           | Cook 5 distinct kinds of dish (`kitchen.bonus_category`: the five tabs and `permanent`; a ruined dish is none) | CON +1 (timer_bonus cooking 4)     |
 | `scheherazade`| Scheherazade's Tongue      | Read 12 distinct unidentified scrolls                | INT +1 (timer_bonus grammar 5)     |
 | `shakespeare` | The Bard's Tongue          | Read 50 scrolls total                                | INT +1 (timer_bonus grammar 5)     |
 | `merlin`      | Merlin's Apprenticeship    | Zap 10 distinct unidentified wands                   | INT +1 (timer_bonus science 4)     |

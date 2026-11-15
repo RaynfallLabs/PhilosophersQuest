@@ -1340,12 +1340,14 @@ class Monster:
             # Perseus' Shield (family knowledge): watched in a shield, the
             # gaze of this family cannot take the hero at all.
             elif _edge_gaze_immune(player, self):
+                _counters.fired(_counters.GAZE, self)
                 gaze_msg = (f"You watch {the_name(self, lower=True)} in the bright metal "
                             f"of your shield, and the gaze slides off.")
                 if _at_range:
                     return 0, gaze_msg
             # Check mirror shield (Aegis): reflects gaze back
             elif getattr(player.shield, 'id', '') in ('aegis_of_athena', 'greater_aegis_of_athena'):
+                _counters.fired(_counters.GAZE, self)
                 player._reflected_back = True      # read by game_combat for Perseus's trait
                 # She loses this turn and the next, and does NOT also attack.
                 # (It used to set 1 turn, which the next status tick removed
@@ -1525,9 +1527,13 @@ class Monster:
             if player.has_effect('petrify_immune'):
                 return 0, f"{the_name(self)}'s gaze finds nothing in you to turn to stone."
             if _edge_gaze_immune(player, self):
+                import counters as _counters
+                _counters.fired(_counters.GAZE, self)
                 return 0, (f"You watch {the_name(self, lower=True)} in the bright metal of "
                            f"your shield, and the gaze slides off.")
             if getattr(player.shield, 'id', '') in ('aegis_of_athena', 'greater_aegis_of_athena'):
+                import counters as _counters
+                _counters.fired(_counters.GAZE, self)
                 return 0, (f"{the_name(self)} catches {pronouns(self)[2]} own eyes in the bronze "
                            f"and flinches away.")
         # A named counter turns any gaze aside, whatever it carries: no

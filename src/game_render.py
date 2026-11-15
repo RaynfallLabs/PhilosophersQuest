@@ -9092,8 +9092,10 @@ class RenderMixin:
         quiz's threshold, or Known by Hand once the kind has been worn, and
         the turns a slow piece takes to put on."""
         mark = self._known_by_hand_mark(item)
+        from quirk_system import new_kind_threshold
         line = (f"Equip: {mark}, no quiz" if mark
-                else _threshold_line("Equip", getattr(item, 'equip_threshold', '?')))
+                else _threshold_line("Equip", new_kind_threshold(
+                    self.player, getattr(item, 'equip_threshold', '?'))))
         n = self._don_turns(item) if hasattr(self, '_don_turns') else 1
         if n > 1:
             line += f"   Takes {n} turns to put on"

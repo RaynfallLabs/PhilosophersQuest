@@ -333,6 +333,9 @@ def save_game(game) -> bool:
             # Quiz deck state — preserves shuffle position so questions don't repeat on reload
             'quiz_deck_state': game.quiz_engine.get_deck_state(),
             '_run_id': run_id_of(game),
+            # The version that wrote it (a save carried into a newer version
+            # is the Seeker's Rip Van Winkle: game_seeker.older_version).
+            '_game_version': _game_version(),
         }
         header = json.dumps({'name': game.player_name, 'run': run_id_of(game),
                              'turn': int(game.turn_count)}, ensure_ascii=True)
@@ -381,6 +384,14 @@ def save_game(game) -> bool:
         except Exception:
             pass
         return False
+
+
+def _game_version() -> str:
+    try:
+        from layout import VERSION
+        return str(VERSION)
+    except Exception:
+        return ''
 
 
 def run_id_of(game) -> str:
