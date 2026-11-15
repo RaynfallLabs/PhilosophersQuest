@@ -112,6 +112,30 @@ def test_opening_the_practice_card_and_backing_out_is_not_practising():
 
 
 # ---------------------------------------------------------------------------
+# The Bococho's camp
+# ---------------------------------------------------------------------------
+
+def test_the_racing_camp_is_never_rolled_onto_a_gate_bosss_floor():
+    """B-05. The camp's floor was any of 51-65, so about one run in fifteen
+    set Gilt Varro's tether posts, his birds and the betting board down in
+    Fafnir's hand-built hoard chamber on floor 60 (the Mooble's floor has
+    always left gate boss floors out)."""
+    import random
+    import bococho_encounter as bc
+    from boss_levels import BOSS_LEVELS
+    d = bc.data()
+    floors = {bc.roll_floor(random.Random(i)) for i in range(3000)}
+    want = set(range(int(d['first_floor']), int(d['last_floor']) + 1)) - set(BOSS_LEVELS)
+    assert floors == want and 60 not in floors
+    assert set(bc.candidate_floors()) == want
+    # A new game's roll still leaves the shared random stream alone.
+    random.seed(99)
+    state = random.getstate()
+    st = bc.new_run_state()
+    assert random.getstate() == state and st['floor'] in want
+
+
+# ---------------------------------------------------------------------------
 # The race
 # ---------------------------------------------------------------------------
 

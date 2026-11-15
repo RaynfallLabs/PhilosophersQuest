@@ -597,7 +597,7 @@ A quick lookup of every floor whose number triggers a scripted spawn. These are 
 | 100   | **Boss: Abaddon the Destroyer**. Philosopher's Stone placed here (no STAIRS_DOWN).          |
 | 999   | **Secret: Moo Moo Farm**. Cow King + 40-50 Hell Bovines. Access path via Wrinkled Cow Rune. |
 | 997   | **Secret: the Zombie Stage**. The eight zombie Stray Kids. Access: touch the Stray Kids idol (one floor of 8-12, every run). |
-| 996   | **Side: the Underway Run**. The Bococho's race against Gilt Varro's Brassbeak. Access: challenge Varro at the racing camp (one floor of 51-65, every run) once the young Bococho trusts the hero. |
+| 996   | **Side: the Underway Run**. The Bococho's race against Gilt Varro's Brassbeak. Access: challenge Varro at the racing camp (one floor of 51-65 but never Fafnir's 60, every run) once the young Bococho trusts the hero. |
 
 The `_LEATHER_SCRAP_LEVELS = [5, 13, 21, 28, 35, 42, 50, 58, 66, 73]` list is the complete scrap set — the Vidar secret requires all ten.
 
