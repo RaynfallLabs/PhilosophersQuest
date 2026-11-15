@@ -298,6 +298,25 @@ def test_a6_a_feast_gives_a_resistance_the_hero_lacks():
     assert p.status_effects['fire_resist'] == -1
 
 
+def test_a7_persephone_salvages_a_ruined_tart_as_the_tart():
+    """Persephone's Descent: a ruined dish gives half its SP and healing.
+    A ruined Starnut Tart gave half of numbers no tart has (86 SP and a
+    tenth of the health bar), more than a perfect tart eaten (70 SP, 6 HP).
+    It gives half of what the tart gives eaten now."""
+    from food_system import _apply_recipe_outcome
+    from items import make_item_by_id
+    tart_dish = kitchen.recipe('dish_starnut_tart')
+    tart = make_item_by_id('food', 'starnut_tart')
+    p = _player(deepest=30)
+    p.quirk_progress['persephone_active'] = True
+    p.sp, p.hp = 0, 1
+    msgs = _apply_recipe_outcome(p, tart_dish, ruined=True)
+    assert msgs[0].startswith('You ruin the preparation')
+    assert p.sp == tart.sp_restore // 2
+    assert p.hp == 1 + tart.hp_restore // 2
+    assert not any(isinstance(i, type(tart)) and i.id == 'starnut_tart' for i in p.inventory)
+
+
 def test_a6_surturs_dish_says_fire_resist_for_good_not_for_360_turns():
     dish = kitchen.recipe('trophy_surtur_recipe')
     p = _player(deepest=90)

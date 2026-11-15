@@ -933,9 +933,18 @@ def salvage_dish(player, rec: dict) -> list:
     share = float(rules().get('salvage', {}).get('share', 0.5))
     name = rec.get('name', 'the dish')
     msgs = [f"You ruin the preparation of {name}, but Persephone's grace saves the seed."]
-    sp = int(out['sp'] * share)
-    heal = int(heal_amount(player, out) * share)
-    mp = int(mp_amount(player, out) * share)
+    if makes(rec):
+        # A dish cooked to carry is the food it makes: a share of what that
+        # gives eaten. It gave a share of a dish's numbers it never had, so a
+        # ruined Starnut Tart fed more (86 SP) than a perfect one (70).
+        food = carried_food(rec)
+        sp = int(int(food.get('sp_restore', 0) or 0) * share)
+        heal = int(int(food.get('hp_restore', 0) or 0) * share)
+        mp = 0
+    else:
+        sp = int(out['sp'] * share)
+        heal = int(heal_amount(player, out) * share)
+        mp = int(mp_amount(player, out) * share)
     bits = []
     if sp > 0:
         player.restore_sp(sp)
