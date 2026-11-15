@@ -430,12 +430,19 @@ def harvest_corpse(player, corpse, quiz_engine, on_complete, extra_seconds: int 
             # Hunter's Harvest / Herbalist (monster family knowledge,
             # src/family_edges.py harvest_bonus): one more portion of the
             # main cut from a family the hero has learned to butcher.
+            # A boss's trophy is one of a kind (one heart, one tooth): never
+            # a second portion. Two of Fenrir's Tooth gave its +3 STR twice,
+            # past every cap (bug bash 3.5.1 A).
             _extra_note = ''
             try:
                 import family_edges
                 _more, _ab = family_edges.harvest_bonus(player, monster_id)
             except ImportError:
                 _more, _ab = 0, None
+            if ingredient_ids:
+                import kitchen as _kitchen
+                if _kitchen.part_kind(ingredient_ids[0]) == 'trophy':
+                    _more = 0
             if _more and ingredient_ids:
                 ingredient_ids = list(ingredient_ids) + [ingredient_ids[0]] * int(_more)
                 _extra_note = ' ' + family_edges.line_for((_ab or {}).get('trigger_msg', '') or '')

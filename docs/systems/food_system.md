@@ -356,7 +356,8 @@ Tooth: STR...), at 1.5x.
 harder than the band the monster lives in (`_monster_band_tier`). Right: the corpse yields its
 kin's ingredient (`kitchen.ingredient_for_monster`; a creature the map does not name borrows its
 nearest kin's, `_nearest_kin_ingredient`), plus one portion more for a family the hero has
-learned to butcher (`family_edges.harvest_bonus`). The part remembers the creature it came from
+learned to butcher (`family_edges.harvest_bonus`), never for a boss trophy (one of a kind: a
+second Fenrir's Tooth gave its power twice, bug bash 3.5.1). The part remembers the creature it came from
 (`source_monster`, read by Siegfried's Bath). Wrong: the corpse is ruined. A part too heavy to
 carry stays on the floor. `quirk_system.on_harvest` fires either way (Mithridates).
 
