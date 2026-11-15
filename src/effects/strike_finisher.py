@@ -19,6 +19,12 @@ Tiers (picked in ``trigger`` from the context the combat code passes):
 
 A kill swaps the damage line for "<Target> Slain"; it does not add time.
 
+The same flourish carries a banner of its own: a ``main_line`` (and a
+``top_line``, a ``color`` and a ``tier``) in the context are shown as given.
+The Stray Kids' "B-B-B-BOSS BATTLE! DANCE OFF!" is one, registered as
+'dance_off_banner' with its own time on screen and bigger type
+(``main_pt``, ``top_pt`` in data/ui/effects_config.json).
+
 Reduced-motion mode (env var ``PQ_REDUCED_MOTION=1``): static text for
 ``static_ms``, no rings, streak or drift.
 """
@@ -46,6 +52,8 @@ class StrikeFinisher:
                 pass
         self.durations_ms = durations
         self.big_chain = int(cfg.get('big_chain') or 10)
+        self.main_pt = int(cfg.get('main_pt') or 0)     # 0: the tier's size
+        self.top_pt = int(cfg.get('top_pt') or 0)
         rm = cfg.get('reduced_motion') or {}
         self.rm_static_ms = int(rm.get('static_ms') or 300)
 
@@ -89,7 +97,14 @@ class StrikeFinisher:
         target = str(context.get('target_name') or '')
 
         self.tier = self.tier_for(chain, rank_name)
-        if self.tier == 'miss':
+        if context.get('main_line'):
+            # A banner of its own, shown as given (the dance-off's).
+            self.tier = str(context.get('tier') or 'big')
+            self._top_line = str(context.get('top_line') or '')
+            self._main_line = str(context['main_line'])
+            color = context.get('color')
+            self._color = tuple(color) if color else FP.GOLD_BRIGHT
+        elif self.tier == 'miss':
             self._top_line, self._main_line = '', 'Miss'
             self._color = FP.FADED_TEXT
         else:
@@ -182,15 +197,30 @@ class StrikeFinisher:
         ease = 1.0 - (1.0 - p) ** 3          # fast out, slow settle
 
         motion = not reduced
+        main_font = get_font('heading', self.main_pt or (22 if self.tier == 'miss' else 36))
+        top_font = get_font('heading', self.top_pt or 22)
+        # A banner in bigger type (main_pt) keeps its rings and streak clear
+        # of its words, and sits on a dark band so it reads over any floor.
+        ring0, ring1, half, under = S(36), S(24), S(190), S(38)
+        if self.main_pt:
+            text_w = max(main_font.size(self._main_line)[0],
+                         top_font.size(self._top_line)[0] if self._top_line else 0)
+            ring0 = ring1 = text_w // 2 + S(24)
+            half = max(half, text_w // 2 + S(20))
+            under = main_font.get_height() // 2 + S(10)
+            band_h = main_font.get_height() + (top_font.get_height() + S(8) if self._top_line else 0)
+            band = pygame.Rect(0, 0, min(area.w, text_w + S(48)), band_h + S(20))
+            band.center = (cx, cy - (top_font.get_height() // 2 if self._top_line else 0))
+            pygame.draw.rect(layer, (*FP.INK[:3], int(alpha * 0.6)), band, border_radius=S(10))
         if motion and self.tier in ('ranked', 'big'):
             # Expanding ring(s) in the rank colour.
             # Sizes follow the UI scale like the banner font does: fixed
             # pixels left the ring cutting through the text at 4K.
-            self._ring(layer, cx, cy, S(36) + int(S(150) * ease), color, alpha)
+            self._ring(layer, cx, cy, ring0 + int(S(150) * ease), color, alpha)
             if self.tier == 'big':
                 p2 = max(0.0, (p - 0.18) / 0.82)
                 ease2 = 1.0 - (1.0 - p2) ** 3
-                self._ring(layer, cx, cy, S(24) + int(S(210) * ease2), color,
+                self._ring(layer, cx, cy, ring1 + int(S(210) * ease2), color,
                            int(alpha * 0.7))
                 # Brief rank-coloured glow hugging the map edge.
                 glow_a = int(110 * fade * (1.0 - p))
@@ -204,8 +234,7 @@ class StrikeFinisher:
             # first 40% -- an underline flourish, so it never cuts through
             # the letters.
             sweep = min(1.0, p / 0.4)
-            half = S(190)
-            x0, y0 = cx - half, cy + S(38)
+            x0, y0 = cx - half, cy + under
             x1 = x0 + int(half * 2 * sweep)
             y1 = y0 - int(S(12) * sweep)
             pygame.draw.line(layer, (*color, int(alpha * 0.85)),
@@ -214,11 +243,9 @@ class StrikeFinisher:
                              (x0, y0), (x1, y1), max(1, S(1)))
 
         drift = int(-S(14) * ease) if motion else 0
-        main_font = get_font('heading', 22 if self.tier == 'miss' else 36)
         self._text(layer, self._main_line, main_font, color, cx,
                    cy + drift, alpha, area.w - 24)
         if self._top_line:
-            top_font = get_font('heading', 22)
             self._text(layer, self._top_line, top_font, color, cx,
                        cy + drift - main_font.get_height() // 2
                        - top_font.get_height() // 2 - 4,

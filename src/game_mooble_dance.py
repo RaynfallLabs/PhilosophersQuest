@@ -1,7 +1,11 @@
-"""The Mooble's dance screen (STATE_MOOBLE_DANCE): the one action in the game
-that is not a quiz (RARE_PETS_PLAN_2026_11_14 section 2; Brandon: "kids
-have to win the rhythm game... offer to let the player practice the dance
-before a dance off").
+"""The dance screen (STATE_MOOBLE_DANCE): the one kind of action in the game
+that is not a quiz. The Mooble's dance came first (RARE_PETS_PLAN_2026_11_14
+section 2; Brandon: "kids have to win the rhythm game... offer to let the
+player practice the dance before a dance off"), so the screen and its method
+names are his; the Stray Kids' dance-off (game_stray_kids.py; Brandon,
+2026-11-14: "the same rhythm game style as the mooble dance off") is danced on
+the same screen, with its own words, pictures and rules carried by the dance
+it opens (``owner``).
 
 The screen only draws and reads keys; every judgement is rhythm.py's. Time is
 real elapsed time from pygame's clock (``_mooble_now``), never turns or
@@ -11,14 +15,19 @@ frame neither steals a beat nor moves a step.
 
 A dance, after Space starts it:
   * a count-in of four beats ("Five, Six, Seven, Eight"),
-  * his CALL: two bars in which he dances the phrase (his pose for each
-    step, its arrow lit, a chime),
-  * the RESPONSE: the same two bars for the hero to echo it on the arrow
-    keys; each arrow lights as its beat comes (it reads with the sound off),
-    and each step is judged Perfect, Good or Miss as it passes.
-His bobble pulses on every beat, and a tone from sound_system marks it (a
-brighter one on each bar's first beat). The soundtrack is held while a
-dance plays (music.hold / release), so the beat is clear.
+  * his CALL: the bars in which he dances the phrase (his pose for each
+    step, or his picture stepping that way when he has no poses; its arrow
+    lit, a chime),
+  * the RESPONSE: the same bars for the hero to echo it on the arrow keys;
+    each arrow lights as its beat comes (it reads with the sound off), and
+    each step is judged Perfect, Good or Miss as it passes. A dance danced
+    from memory (``memory``: the Stray Kids' Simon Says) hides the call's
+    arrows once the response begins, and shows only where each of the
+    hero's steps falls until it is judged.
+The beat pulses on every beat (his bobble; a stage light for the band), and a
+tone from sound_system marks it (a brighter one on each bar's first beat).
+The soundtrack is held while a dance plays (music.hold / release), so the beat
+is clear.
 
 PRACTICE is free and has no stakes: Esc stops it any time, Enter dances it
 again (as often as wanted), D goes on to the dance-off. The DANCE-OFF must be
@@ -35,8 +44,11 @@ its arrows light. Its cooldown is spent when it starts; how well it went
 No monster acts while it is danced: it is his turn, like a quiz.
 
 What the screen shows is carried by the dance itself (``_mdance``: its
-timeline, windows, pass mark, words and pictures), so the screen and
-rhythm.py serve any dance laid out the same way.
+timeline, windows, pass mark, words, pictures, and the extra lines, footers
+and roster another owner gives it), so the screen and rhythm.py serve any
+dance laid out the same way. The Stray Kids' keys and results are their own
+(StrayKidsMixin._sk_dance_key, _sk_dance_finished); the beat, the judging,
+the clock and the drawing are this screen's.
 """
 from __future__ import annotations
 
@@ -56,6 +68,13 @@ def _keys():
         pygame.K_LEFT: 'left', pygame.K_RIGHT: 'right', pygame.K_UP: 'up', pygame.K_DOWN: 'down',
         pygame.K_KP4: 'left', pygame.K_KP6: 'right', pygame.K_KP8: 'up', pygame.K_KP2: 'down',
     }
+
+
+_STEP = {'left': (-1, 0), 'right': (1, 0), 'up': (0, -1), 'down': (0, 1)}
+
+# The beat light beside the picture: his red bobble on its wire, unless the
+# dance gives its own (``beat_light``).
+_BOBBLE = {'colour': (230, 50, 50), 'glow': (255, 90, 80), 'shine': (255, 200, 190), 'wire': True}
 
 
 def _play(name: str):
@@ -102,22 +121,34 @@ class MoobleDanceMixin:
         self.state = STATE_MOOBLE_DANCE
 
     def _mooble_dance_spec(self, mode: str, tl: dict, bpm, *, title: str, info: str) -> dict:
-        """Everything the screen needs for one dance: its timeline, the
-        judging windows and pass mark (data/mooble.json ``dance``), its
-        words and his pictures."""
+        """The Mooble's dance: its judging windows and pass mark
+        (data/mooble.json ``dance``), his words and his pictures."""
         d = mo.data()
-        dd = d['dance']
-        return {
-            'mode': mode, 'tl': tl, 'bpm': int(bpm), 'title': title, 'info': info,
-            'good_ms': float(dd['good_ms']), 'perfect_ms': float(dd['perfect_ms']),
-            'stray_is_miss': bool(dd.get('stray_is_miss', True)),
-            'pass_share': float(dd['pass_share']), 'max_misses': int(dd['max_misses']),
-            'words': d['screen'],
-            'poses': {'idle': d['sprite_down'], **{k: f'mooble_dance_{k}' for k in rhythm.DIRS}},
+        poses = {'idle': mo.art(d['sprite_down']),
+                 **{k: mo.art(f'mooble_dance_{k}') for k in rhythm.DIRS}}
+        return self._dance_spec(mode, tl, bpm, title=title, info=info, rules=d['dance'],
+                                words=d['screen'], poses=poses)
+
+    def _dance_spec(self, mode: str, tl: dict, bpm, *, title: str, info: str, rules: dict,
+                    words: dict, poses: dict, owner: str = 'mooble', **extra) -> dict:
+        """Everything the screen needs for one dance: its timeline, the
+        judging windows and pass mark (``rules``: good_ms, perfect_ms,
+        pass_share, max_misses, stray_is_miss, memory), its words and its
+        pictures (``poses``: 'idle' and a pose a direction, each a resolved
+        picture id), and whatever more its ``owner`` gives it."""
+        md = {
+            'owner': owner, 'mode': mode, 'tl': tl, 'bpm': int(bpm), 'title': title, 'info': info,
+            'good_ms': float(rules['good_ms']), 'perfect_ms': float(rules['perfect_ms']),
+            'stray_is_miss': bool(rules.get('stray_is_miss', True)),
+            'pass_share': float(rules['pass_share']), 'max_misses': int(rules['max_misses']),
+            'memory': bool(rules.get('memory', False)),
+            'words': words, 'poses': dict(poses),
             't0': None, 'phase': 'ready',
             'presses': [], 'beat_played': -1, 'step_played': -1,
             'decided': 0, 'flash': None, 'result': None, 'won': False,
         }
+        md.update(extra)
+        return md
 
     def _mooble_special_dance(self, pet, special: dict):
         """The Dance of the Dark, danced: the count-in starts at once (no
@@ -231,6 +262,9 @@ class MoobleDanceMixin:
         md['won'] = rhythm.passed(res, md['pass_share'], md['max_misses'])
         md['phase'] = 'result'
         self._mooble_music(False)
+        if md.get('owner') == 'stray_kids':
+            self._sk_dance_finished(md)       # game_stray_kids: the round's outcome
+            return
         if md['mode'] == 'special':
             # As strong as it was danced (mooble_encounter.dance_band).
             band = mo.dance_band(res)
@@ -242,11 +276,30 @@ class MoobleDanceMixin:
 
     # ---- keys -----------------------------------------------------------------
 
+    def _dance_arrow_key(self, key: int) -> bool:
+        """An arrow key while a dance plays: stamped with the time it was
+        read and judged (every dance's). True if it was an arrow."""
+        md = self._mdance
+        d = _keys().get(key)
+        if d is None:
+            return False
+        t = self._mooble_now() - md['t0']
+        tl = md['tl']
+        attach = self._mooble_windows()['attach_ms']
+        if tl['response_start'] - attach <= t <= self._mooble_end_ms():
+            md['presses'].append((t, d))
+            _play('dance_step_' + d)
+            self._mooble_flash(t)
+        return True
+
     def _mooble_dance_key(self, key: int):
         import pygame
         md = getattr(self, '_mdance', None)
         if not md:
             self.state = STATE_MOOBLE
+            return
+        if md.get('owner') == 'stray_kids':
+            self._sk_dance_key(key)           # game_stray_kids: the dance-off's keys
             return
         if md['phase'] == 'ready':
             if key in (pygame.K_RETURN, pygame.K_KP_ENTER, pygame.K_SPACE):
@@ -255,16 +308,9 @@ class MoobleDanceMixin:
                 self._mooble_dance_back()
             return
         if md['phase'] == 'play':
-            d = _keys().get(key)
-            if d is not None:
-                t = self._mooble_now() - md['t0']
-                tl = md['tl']
-                attach = self._mooble_windows()['attach_ms']
-                if tl['response_start'] - attach <= t <= self._mooble_end_ms():
-                    md['presses'].append((t, d))
-                    _play('dance_step_' + d)
-                    self._mooble_flash(t)
-            elif key == pygame.K_ESCAPE and md['mode'] == 'practice':
+            if self._dance_arrow_key(key):
+                return
+            if key == pygame.K_ESCAPE and md['mode'] == 'practice':
                 self._mooble_dance_back()
             return
         # result
@@ -296,8 +342,9 @@ class MoobleDanceMixin:
     # ---- drawing ------------------------------------------------------------
 
     def _draw_mooble_dance(self):
-        """The dance: his picture and bobble on the left, the beat's two rows
-        of steps on the right (his, then yours), the words above them."""
+        """The dance: the dancer's picture and the beat light on the left
+        (with the dance's own lines and roster under it), the rows of steps
+        on the right (his, then yours), the words above them."""
         import pygame
         import layout
         import lore_art
@@ -315,6 +362,12 @@ class MoobleDanceMixin:
         t = (self._mooble_now() - md['t0']) if md['phase'] == 'play' else None
         special = md['mode'] == 'special'
         sd = mo.special_spec() if special else {}
+        memory = bool(md.get('memory'))
+        # From memory, the call's arrows go dark once the hero's turn comes
+        # (and in a dance-off they are not shown before it starts).
+        calls_dark = memory and (
+            (t is not None and t >= tl['response_start'])
+            or (md['phase'] == 'ready' and md['mode'] != 'practice'))
 
         draw_overlay(self.screen, 200)
         bw = min(S(940), layout.WINDOW_W - S(48))
@@ -335,49 +388,93 @@ class MoobleDanceMixin:
                             accent=border, frame=(panel, border))
             body = pygame.Rect(panel.x + S(28), panel.y + S(64), panel.w - S(56), panel.h - S(130))
 
-        # -- his picture, his pose for the step, and the bobble on the beat --
+        # -- the picture, his pose for the step, and the beat light ----------
         poses = md['poses']
         pose = poses['idle']
+        nudge = (0, 0)
         if t is not None:
             # His call, or (his special, with no call) the steps he dances
-            # with you: his pose for each, as it comes.
+            # with you: his pose for each, as it comes; a dancer with no pose
+            # for it steps his picture that way.
             for st, dirn in (tl['call'] or tl['response']):
                 if st <= t < st + 0.75 * bm:
-                    pose = poses.get(dirn, pose)
+                    if dirn in poses:
+                        pose = poses[dirn]
+                    elif md.get('nudge'):
+                        nudge = _STEP.get(dirn, (0, 0))
         pic_px = S(160)
-        pic = lore_art.plate('monster', mo.art(pose), pic_px)
+        pic = lore_art.plate('monster', pose, pic_px)
         left_w = pic_px + S(24)
         bob_y = body.y + S(26)
         cx = body.x + left_w // 2
         pulse = 0.0
         if t is not None and t >= 0 and t < tl['beats'] * bm:
             pulse = max(0.0, 1.0 - (t % bm) / bm)
+        beat = {**_BOBBLE, **(md.get('beat_light') or {})}
         rad = int(S(10) + S(10) * pulse)
         glow = pygame.Surface((S(64), S(64)), pygame.SRCALPHA)
-        pygame.draw.circle(glow, (255, 90, 80, int(60 + 150 * pulse)), (S(32), S(32)), min(S(31), rad + S(8)))
+        pygame.draw.circle(glow, (*tuple(beat['glow'])[:3], int(60 + 150 * pulse)), (S(32), S(32)),
+                           min(S(31), rad + S(8)))
         self.screen.blit(glow, (cx - S(32), bob_y - S(32)))
-        pygame.draw.line(self.screen, FP.PARCHMENT_DARK, (cx, bob_y + rad), (cx, bob_y + S(34)), max(1, S(2)))
-        pygame.draw.circle(self.screen, (230, 50, 50), (cx, bob_y), rad)
-        pygame.draw.circle(self.screen, (255, 200, 190), (cx - rad // 3, bob_y - rad // 3), max(2, rad // 3))
+        if beat.get('wire'):
+            pygame.draw.line(self.screen, FP.PARCHMENT_DARK, (cx, bob_y + rad), (cx, bob_y + S(34)),
+                             max(1, S(2)))
+        pygame.draw.circle(self.screen, tuple(beat['colour'])[:3], (cx, bob_y), rad)
+        pygame.draw.circle(self.screen, tuple(beat['shine'])[:3], (cx - rad // 3, bob_y - rad // 3),
+                           max(2, rad // 3))
         well = pygame.Rect(body.x, bob_y + S(36), pic_px + S(8), pic_px + S(8))
         pygame.draw.rect(self.screen, FP.MIDNIGHT, well)
         if pic is not None:
-            self.screen.blit(pic, (well.x + S(4) + (pic_px - pic.get_width()) // 2,
-                                   well.y + S(4) + (pic_px - pic.get_height()) // 2))
+            clip = self.screen.get_clip()
+            self.screen.set_clip(well.inflate(-2, -2).clip(clip))   # a stepping picture stays in its well
+            self.screen.blit(pic, (well.x + S(4) + (pic_px - pic.get_width()) // 2 + nudge[0] * S(10),
+                                   well.y + S(4) + (pic_px - pic.get_height()) // 2 + nudge[1] * S(10)))
+            self.screen.set_clip(clip)
         pygame.draw.rect(self.screen, border, well, 1)
         small = get_font('body', 16)
-        info = md['info']
-        self._ui_wrap_text(info, small, FP.FADED_TEXT,
-                           pygame.Rect(body.x, well.bottom + S(8), left_w + S(40), S(60)), line_gap=2)
+        info_lines = md.get('info_lines') or [md['info']]
+        iy = well.bottom + S(8)
+        for ln in info_lines:
+            iy = self._ui_wrap_text(display_text(ln), small, FP.FADED_TEXT,
+                                    pygame.Rect(body.x, iy, left_w + S(40), S(60)), line_gap=2) + S(2)
+        # The dance's roster (the band: who has fallen, who leads now).
+        roster = md.get('roster') or ()
+        if roster:
+            face = S(34)
+            per_row = max(1, (left_w + S(8)) // (face + S(6)))
+            rows_n = -(-len(roster) // per_row)
+            # At the foot of the column, clear of the lines above it.
+            ry = max(iy + S(12), body.bottom - rows_n * (face + S(6)))
+            for i, (art_id, gone, lead) in enumerate(roster):
+                fx = body.x + (i % per_row) * (face + S(6))
+                fy = ry + (i // per_row) * (face + S(6))
+                if fy + face > body.bottom:
+                    break
+                cell = pygame.Rect(fx, fy, face, face)
+                pygame.draw.rect(self.screen, FP.MIDNIGHT, cell)
+                img = lore_art.plate('monster', art_id, face - S(4))
+                if img is not None:
+                    if gone:
+                        img = img.copy()
+                        img.set_alpha(60)
+                    self.screen.blit(img, (cell.x + (face - img.get_width()) // 2,
+                                           cell.y + (face - img.get_height()) // 2))
+                pygame.draw.rect(self.screen, FP.GOLD_BRIGHT if lead else FP.INK_LIGHT, cell,
+                                 max(1, S(2)) if lead else 1)
 
         # -- the words above the rows --------------------------------------
         col = pygame.Rect(body.x + left_w + S(40), body.y, body.right - body.x - left_w - S(40), body.h)
         big = get_font('heading', 26)
         font = get_font('body', 17)
+        hfont_small = False
         if md['phase'] == 'ready':
-            head = sc['how']
+            head = md.get('ready_head') or sc['how']
+        elif md['phase'] == 'result' and md.get('result_head'):
+            head = md['result_head']
+            hfont_small = True
         elif md['phase'] == 'result' and special:
             head = (md.get('band') or {}).get('line', '').replace('{pet}', md['pet'].name)
+            hfont_small = True
         elif md['phase'] == 'result':
             head = (sc['dance_pass'] if md['won'] else sc['dance_fail']) if md['mode'] == 'dance' else \
                 (sc['practice_pass'] if md['won'] else sc['practice_fail'])
@@ -389,17 +486,13 @@ class MoobleDanceMixin:
                 head = sc['watch']
             else:
                 head = sc['your_turn']
-        if special and md['phase'] == 'result':
-            hfont_small = True
-        else:
-            hfont_small = False
         y = col.y
         hfont = font if (md['phase'] == 'ready' or hfont_small) else big
         y = self._ui_wrap_text(display_text(head), hfont, FP.GOLD_BRIGHT if hfont is big else FP.PARCHMENT_LIGHT,
                                pygame.Rect(col.x, y, col.w, S(90)), line_gap=4)
         y = max(y, col.y + S(56)) + S(10)
 
-        # -- the two rows of eight beats -----------------------------------
+        # -- the two rows of beats -----------------------------------------
         res = self._mooble_judge(t if t is not None else None) if md['phase'] != 'ready' else None
         if md['phase'] == 'result':
             res = md['result']
@@ -454,7 +547,16 @@ class MoobleDanceMixin:
                         colour = FP.DANGER_TEXT_LIGHT
                 if light >= 0.99 and grade in (None, rhythm.PENDING):
                     pygame.draw.rect(self.screen, _mix(FP.MIDNIGHT, FP.GOLD, 0.35), cr.inflate(-2, -2))
-                _arrow(self.screen, cr, dirn, colour)
+                # From memory: where a step falls, not which way, until it is
+                # judged (and the call's, once the hero's turn has come).
+                hidden = memory and md['phase'] != 'result' and (
+                    (which == 'call' and calls_dark)
+                    or (which == 'response' and grade in (None, rhythm.PENDING)
+                        and not (md['phase'] == 'ready' and md['mode'] == 'practice')))
+                if hidden:
+                    _dot(self.screen, cr, colour)
+                else:
+                    _arrow(self.screen, cr, dirn, colour)
                 if grade and grade != rhythm.PENDING:
                     word = sc['grades'].get(grade, grade)
                     surf = grade_font.render(word, True, colour)
@@ -474,11 +576,13 @@ class MoobleDanceMixin:
         steps = len(tl['response'])
         need = rhythm.hits_needed(steps, md['pass_share'])
         lines = []
-        if md['phase'] == 'result' and res is not None:
+        extra = list(md.get('result_lines') or ()) if md['phase'] == 'result' else []
+        if md['phase'] == 'result' and res is not None and not md.get('hide_result_line'):
             one, many = sc.get('miss_words') or ('{n} miss', '{n} misses')
             misses = (one if res['misses'] == 1 else many).format(n=res['misses'])
             lines.append(sc['result_line'].format(hits=res['hits'], steps=res['total'],
                                                   perfects=res['perfects'], misses=misses))
+        lines += extra
         if special:
             band = md.get('band')
             if md['phase'] == 'result' and band:
@@ -489,7 +593,7 @@ class MoobleDanceMixin:
                                                          turns=band.get('turns'), held=held))
             else:
                 lines.append(sd.get('how', ''))
-        else:
+        elif not extra:
             lines.append(sc['pass_mark'].format(need=need, steps=steps, misses=md['max_misses']))
         if md['mode'] == 'practice':
             lines.append(sc['practice_note'])
@@ -499,7 +603,10 @@ class MoobleDanceMixin:
             y = self._ui_wrap_text(display_text(ln), font, FP.PARCHMENT_LIGHT,
                                    pygame.Rect(col.x, y, col.w, col.bottom - y), line_gap=3) + S(6)
 
-        if md['phase'] == 'ready':
+        foot = (md.get('footers') or {}).get(md['phase'])
+        if foot:
+            pass                              # the dance's own (the Stray Kids')
+        elif md['phase'] == 'ready':
             foot = ("Space: start   |   Esc: back")
         elif special:
             foot = sd.get('footer_special' if md['phase'] == 'play' else 'footer_special_done', 'Enter: continue')
@@ -513,6 +620,13 @@ class MoobleDanceMixin:
 def _mix(a, b, k: float):
     k = max(0.0, min(1.0, float(k)))
     return tuple(int(a[i] + (b[i] - a[i]) * k) for i in range(3))
+
+
+def _dot(surface, rect, colour):
+    """Where a step falls, but not which way (a dance from memory)."""
+    import pygame
+    r = max(3, int(min(rect.w, rect.h) * 0.14))
+    pygame.draw.circle(surface, colour, rect.center, r)
 
 
 def _arrow(surface, rect, direction: str, colour):

@@ -3317,6 +3317,86 @@ def _(g):
     g._mooble_dance_finish()
 
 
+def _sk_dance(g, fallen=0, mode='dance'):
+    """The Stray Kids' dance-off on the Zombie Stage: the hero at the edge of
+    the stage, the announcement made, the first ``fallen`` of the band
+    already danced down, and the dance screen open on the round now
+    (``mode`` 'practice': the dance-off's card; 'dance': the round's card)."""
+    import stray_kids
+    g._enter_stray_kids_stage()
+    g.pets[:] = []
+    g.player.x, g.player.y = stray_kids.stage_edge(g.dungeon)
+    g._refresh_fov()
+    for m in stray_kids.the_band(g.monsters)[:fallen]:
+        g._sk_fall(m)
+    g._stray_kids_state()['challenge'] = 'made'
+    g._sk_open_dance(mode)
+    return g._mdance
+
+
+def _sk_round_at(g, md, at_step, hits):
+    """Space on the round's card, then the frozen clock ``at_step`` steps
+    into the hero's turn (or into the leader's call, with a negative
+    number), the first ``hits`` of his steps pressed on time."""
+    import rhythm
+    press(g, pygame.K_SPACE)
+    tl = md['tl']
+    when = (tl['response'][at_step][0] if at_step >= 0 else tl['call'][-at_step - 1][0]) + 20
+    md['t0'] = FROZEN_TICKS_MS - int(when)
+    md['presses'] = rhythm.on_time(tl['response'][:hits])
+    md['beat_played'] = int(when // tl['beat_ms'])
+    md['step_played'] = len(tl['call']) - 1
+
+
+@scene('sk_dance_announce', 'Play',
+       'The hero sets foot on the Zombie Stage: the band strikes a pose and the kill banner\'s look '
+       'fills the map: "B-B-B-BOSS BATTLE! DANCE OFF!".', expect='player')
+def _(g):
+    import stray_kids
+    g._enter_stray_kids_stage()
+    g.pets[:] = []
+    g.player.x, g.player.y = stray_kids.stage_edge(g.dungeon)
+    g._refresh_fov()
+    g._advance_turn()
+    banner = g.effects_runtime.handlers['dance_off_banner']
+    banner._elapsed_ms = banner._total_ms * 0.4        # (held: the banner at its full)
+
+
+@scene('sk_dance_card', 'Encounters',
+       "The Stray Kids' dance-off card, once the banner is over: Simon Says, practise as often "
+       'as you like, or the dance-off.', expect='mooble_dance')
+def _(g):
+    _sk_dance(g, mode='practice')
+
+
+@scene('sk_dance_round', 'Encounters',
+       'A dance-off round in progress: Changbin leads round 3 (two of the band danced down), the '
+       "hero's turn from memory, two steps judged.", expect='mooble_dance')
+def _(g):
+    md = _sk_dance(g, fallen=2)
+    _sk_round_at(g, md, at_step=2, hits=2)
+
+
+@scene('sk_dance_roast', 'Encounters',
+       'A dance-off round lost: the leader\'s roast, his song stuck in the hero\'s head, a strike gone.',
+       expect='mooble_dance')
+def _(g):
+    md = _sk_dance(g, fallen=1)
+    _sk_round_at(g, md, at_step=0, hits=1)
+    g._mooble_dance_finish()
+
+
+@scene('sk_dance_won', 'Encounters',
+       'The last round won: I.N crumbles into glitter, the last of the band.',
+       expect='mooble_dance')
+def _(g):
+    import rhythm
+    md = _sk_dance(g, fallen=7)
+    _sk_round_at(g, md, at_step=0, hits=0)
+    md['presses'] = rhythm.on_time(md['tl']['response'])
+    g._mooble_dance_finish()
+
+
 @scene('menu_pet_shep', 'Pets',
        'Shift+P with Shep the Legend (the longest card: his rescue and his growl), hatched '
        'from a Master Hearth Sphere.', expect='pet_menu')

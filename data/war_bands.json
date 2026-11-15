@@ -460,42 +460,6 @@
       "known_line": "Devils march on this floor under a captain. {roster}. They obey him out of fear; without him, they turn on each other.",
       "rout_line": "Their captain falls, and the devils turn on one another!",
       "break_line": "The devils snarl at one another as their captain reels."
-    },
-    "stray_kids": {
-      "name": "a zombie boy band",
-      "family": "restless_dead",
-      "floors": [
-        8,
-        12
-      ],
-      "leader": [
-        "sk_zombie_bang_chan"
-      ],
-      "guard": [
-        "sk_zombie_lee_know",
-        "sk_zombie_changbin",
-        "sk_zombie_hyunjin",
-        "sk_zombie_han",
-        "sk_zombie_felix",
-        "sk_zombie_seungmin",
-        "sk_zombie_i_n"
-      ],
-      "counts": {
-        "guard": [
-          7,
-          7
-        ]
-      },
-      "morale": "quarrel",
-      "camp": {
-        "stand": [],
-        "floor": []
-      },
-      "_note": "Never set down by place_band (its kinds have no spawn weight): it dances only on the Zombie Stage (src/stray_kids.py), where its members are tagged by hand. Bang Chan leads; without him they lose the count and stumble into one another.",
-      "line": "A heavy bass beat thumps through the floor, and eight voices count in.",
-      "known_line": "The whole band is here: {roster}. Their leader keeps the count; without him they will fall out of step and into each other.",
-      "rout_line": "Zombie Bang Chan falls, and the count falls with him! The band loses the beat and stumbles into one another.",
-      "break_line": "The band misses a beat as their leader reels."
     }
   },
   "_observe": "What Observe (O) says of a band member (2026-11-12). A follower: 'member'. The leader: 'leader', a thing anyone can see; a hero who knows the leader's kind (family_lore.knowledge KNOWN) hears 'leader_known' and what happens when it falls ('morale', by the band's morale). The arrival 'known_line', which carries the counter, is likewise said only at KNOWN; 'line' never names the band's kind.",

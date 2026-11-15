@@ -1,22 +1,30 @@
 """The Stray Kids easter egg, the whole way through, as a player would
-(round 3, Brandon: "a minor easter egg, just make sure it all works").
+(round 3, Brandon: "a minor easter egg, just make sure it all works"; the
+dance-off, 2026-11-14: "B-B-B-BOSS BATTLE! DANCE OFF!").
 
 One run on a real headless Game, every step a key through the game's own
-handler (the driver of tests/test_bugbash_wb_e.py):
+handler (the driver of tests/test_bugbash_wb_e.py), the dance on a fake clock
+with each arrow pressed at its time:
 
 1. the idol stands on its floor (8 to 12), set down by the game;
 2. it calls the hero over; walking into it twice takes him to the Zombie
    Stage;
-3. the band dances in formation and roasts him;
-4. he fights the band to the last, and the last leaves the photo;
-5. he takes the stage door back: the idol is spent, and stays spent;
-6. he reads the photo: an ordinary monster stops to watch, a named foe and
+3. he walks out of the wings onto the stage: the band strikes a pose and
+   "B-B-B-BOSS BATTLE! DANCE OFF!" fills the map; once the banner is over
+   the dance-off's card opens;
+4. he practises twice, free;
+5. the dance-off: he loses the first round on purpose (the roast, the
+   earworm, a strike), then wins all eight rounds on time, one member
+   falling to each; the last leaves the photo;
+6. he picks it up and takes the stage door back: the idol is spent, and
+   stays spent;
+7. he reads the photo: an ordinary monster stops to watch, a named foe and
    a swarm that cannot be stunned do not, each with its own line;
-7. he saves and loads mid-show, and the show goes on and bows out;
-8. a second show (the QA photo), and he leaves the floor mid-show: it ends
+8. he saves and loads mid-show, and the show goes on and bows out;
+9. a second show (the QA photo), and he leaves the floor mid-show: it ends
    with its bow there, and coming back finds no show.
 
-The feel of it is Brandon's play-test.
+The feel of it (the tempo, the memory, the strikes) is Brandon's play-test.
 """
 import os
 import sys
@@ -28,7 +36,9 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import pygame  # noqa: E402
 
 from test_bugbash_wb_e import (  # noqa: E402,F401  (make_game is a fixture)
-    blow, make_game, no_errors, open_floor, path_step, pick, place_monster, reload, warp)
+    make_game, no_errors, open_floor, path_step, pick, place_monster, reload, warp)
+
+_ARROWS = {'left': pygame.K_LEFT, 'right': pygame.K_RIGHT, 'up': pygame.K_UP, 'down': pygame.K_DOWN}
 
 
 def _star_count(g):
@@ -44,6 +54,87 @@ def _read_photo(h):
     pick(h, photo, g._get_scroll_tab_items)
     h.quiz(3)
     return h.said()
+
+
+def fake_clock(g, start=60_000):
+    """The dance screen's clock, set by hand (``_mooble_clock_fn``)."""
+    now = [start]
+    g._mooble_clock_fn = lambda: now[0]
+    return now
+
+
+def dance_round(h, now, presses='on_time'):
+    """Space, then a whole phrase as the game loop runs it: a frame on every
+    beat and each arrow a real key event at its time on the clock (every
+    step on time, a list of (t, dir) from the start, or none). The screen
+    is drawn at the start and the end."""
+    import rhythm
+    g = h.g
+    h.key(pygame.K_SPACE)
+    md = g._mdance
+    assert md['phase'] == 'play'
+    t0, tl = md['t0'], md['tl']
+    keys = rhythm.on_time(tl['response']) if presses == 'on_time' else list(presses)
+    events = sorted([(t, 'key', d) for t, d in keys]
+                    + [(k * tl['beat_ms'], 'tick', None) for k in range(1, tl['beats'] + 2)])
+    for t, kind, d in events:
+        now[0] = t0 + int(round(t))
+        if kind == 'tick':
+            g.update(1 / 30)
+        elif md['phase'] == 'play':
+            g.handle_event(pygame.event.Event(pygame.KEYDOWN, key=_ARROWS[d], unicode='',
+                                              mod=0, scancode=0))
+    now[0] = t0 + int(g._mooble_end_ms()) + 5
+    h.frame()
+    assert md['phase'] == 'result'
+    return md
+
+
+def to_the_stage(h):
+    """From the wings, walk onto the stage (real steps) until the band sees
+    him; then the frames of play until the dance-off's card opens. Returns
+    every line said on the way."""
+    import stray_kids
+    from game_states import STATE_MOOBLE_DANCE
+    g = h.g
+    ex, ey = stray_kids.stage_edge(g.dungeon)
+    heard = []
+    for _ in range(60):
+        if g._stray_kids_state().get('challenge'):
+            break
+        # (to a tile beside the one past the edge: the edge itself, first)
+        if not path_step(h, ex + 1, ey):
+            h.move(1, 0)
+        heard += h.said()
+    assert g._stray_kids_state()['challenge'] == 'pending'
+    assert g.effects_runtime.handlers['dance_off_banner'].active
+    for _ in range(300):
+        h.frame()
+        if g.state == STATE_MOOBLE_DANCE:
+            break
+    heard += h.said()
+    assert g.state == STATE_MOOBLE_DANCE and g._mdance['owner'] == 'stray_kids'
+    return heard
+
+
+def win_the_dance_off(h, now, lose_first=0):
+    """D from the card, then every round: ``lose_first`` rounds lost (no
+    keys), the rest danced on time, Enter after each. The lines said."""
+    import stray_kids
+    g = h.g
+    heard = []
+    h.key(pygame.K_d)
+    for _ in range(lose_first):
+        md = dance_round(h, now, presses=[])
+        assert not md['won']
+        h.key(pygame.K_RETURN)
+        heard += h.said()
+    while stray_kids.the_band(g.monsters):
+        md = dance_round(h, now)
+        assert md['won'], md['result']
+        h.key(pygame.K_RETURN)
+        heard += h.said()
+    return heard
 
 
 def _walk_beside(h, x, y):
@@ -131,11 +222,11 @@ def test_the_stray_kids_from_the_idol_to_the_last_bow(make_game):  # noqa: F811 
     import decor
     import stray_kids
     from boss_levels import STRAY_KIDS_STAGE
+    from game_states import STATE_MOOBLE_DANCE, STATE_PLAYER
     g, h = make_game(build='titivillus', name='Titivillus')
     st = g._stray_kids_state()
     floor = st['floor']
     assert 8 <= floor <= 12                           # every run, on one floor of 8-12
-    h.shift('I')                                      # (the QA build's sturdy hero)
     import random
     g._sk_rng = random.Random(3)                      # (where the idol stands: one place)
     warp(h, floor)
@@ -159,75 +250,52 @@ def test_the_stray_kids_from_the_idol_to_the_last_bow(make_game):  # noqa: F811 
     h.move(*step)
     assert g.dungeon_level == STRAY_KIDS_STAGE
     said = h.said()
-    # (each line is looked for, not its place: a blow or a spell wearing off
-    # in the same turn is said in among them, about one run in fifty)
+    # (each line is looked for, not its place: a spell wearing off in the
+    # same turn is said in among them)
     assert 'The stage door is the way out (> on it).' in said
     assert any('Five, six, seven, EIGHT' in t for t in said)
-    # 3. The dance: they see him, close in formation, and roast him.
-    band = stray_kids.the_band(g.monsters)
-    assert len(band) == 8
-    heard = []
-    for _ in range(80):
+    assert len(stray_kids.the_band(g.monsters)) == 8
+    assert not g._stray_kids_state().get('challenge')           # not on the stage yet
+    # 3. Onto the stage: the pose, the announcement, then the card.
+    heard = to_the_stage(h)
+    do = stray_kids.dance_off()
+    assert stray_kids.data()['stage']['pose'] in heard
+    assert do['announce']['log'] in heard
+    md = g._mdance
+    assert md['mode'] == 'practice' and md['phase'] == 'ready'
+    assert md['poses']['idle'] == 'sk_zombie_bang_chan'
+    # 4. Practise twice: free, no turn, nothing lost.
+    now = fake_clock(g)
+    turn, hp = g.turn_count, p.hp
+    for _ in range(2):
+        md = dance_round(h, now)
+        assert md['won'] and md['mode'] == 'practice' and md['phase'] == 'result'
+        h.key(pygame.K_ESCAPE)                        # Not Yet
+        assert g.state == STATE_PLAYER
         lead = stray_kids.the_band(g.monsters)[0]
-        if stray_kids.dance_of(g.dungeon).get('aware') or not path_step(h, lead.x, lead.y):
-            h.wait()                                  # (out of the wings, onto the stage)
-        heard += h.said()
-        if stray_kids.dance_of(g.dungeon).get('aware') and any(': "' in t for t in heard):
-            break
-    dance = stray_kids.dance_of(g.dungeon)
-    assert dance['aware'] and stray_kids.data()['stage']['seen'] in heard
-    assert any(t.startswith('Zombie ') and ': "' in t for t in heard), heard[-10:]
-    # In formation: within a few beats (nearly) every member stands at, or
-    # a step from, his place in the shape (they walk to a new one each
-    # time it changes).
-    hall = g.dungeon.rooms[1]
-    cx, cy = hall.x + 3, hall.y + hall.height // 2
-    for _ in range(60):                               # into the hall, where the shape has room
-        if p.x >= hall.x + 2:
-            break
-        p.hp = p.max_hp
-        if not path_step(h, cx, cy):
-            h.wait()
-        heard += h.said()
-    best = 0
-    for _ in range(16):
-        band = stray_kids.the_band(g.monsters)
-        near = sum(1 for m in band
-                   if max(abs(m.x - stray_kids.place_of(dance, m._sk_slot)[0]),
-                          abs(m.y - stray_kids.place_of(dance, m._sk_slot)[1])) <= 1)
-        best = max(best, near)
-        if best >= 6:
-            break
-        p.hp = p.max_hp
-        h.wait()
-        heard += h.said()
-    # (in the narrow way from the wings the shape has no room, and the band
-    # bunches as one: still a group round its anchor)
-    ax, ay = dance['anchor']
-    assert all(max(abs(m.x - ax), abs(m.y - ay)) <= 6 for m in band), (dance['anchor'], band)
-    assert best >= 4, [(m.name, (m.x, m.y), stray_kids.place_of(dance, m._sk_slot)) for m in band]
-    # 4. The fight, to the last of them, and the photo. (Their health is
-    # cut to a blow each: the scene; every blow is still the hero's keys.)
-    for m in stray_kids.the_band(g.monsters):
-        m.hp = 1
-    for _ in range(600):
-        band = stray_kids.the_band(g.monsters)
-        if not band:
-            break
-        while g.state not in ('player',) and not h.in_quiz():
-            h.key(pygame.K_RETURN)
-        p.hp = p.max_hp                                # (the stage is not the test here)
-        tgt = min(band, key=lambda m: abs(m.x - p.x) + abs(m.y - p.y))
-        if abs(tgt.x - p.x) + abs(tgt.y - p.y) == 1:
-            heard += blow(h, tgt, 3)
-        elif not path_step(h, tgt.x, tgt.y):
-            h.wait()
-        heard += h.said()
-    assert not stray_kids.the_band(g.monsters)
+        _walk_beside(h, lead.x, lead.y)               # and walk back into the band
+        dx, dy = lead.x - g.player.x, lead.y - g.player.y
+        h.move(dx, dy)
+        assert g.state == STATE_MOOBLE_DANCE and g._mdance['mode'] == 'practice'
+        assert lead.alive and lead.hp == lead.max_hp  # walking into him is never a blow
+    assert len(stray_kids.the_band(g.monsters)) == 8
+    turn_after_practice = g.turn_count
+    assert p.hp == hp
+    # 5. The dance-off: the first round lost on purpose, then all eight won.
+    p.hp = p.max_hp
+    heard = win_the_dance_off(h, now, lose_first=1)
     said = ' '.join(heard)
-    assert 'crumbles into glitter and grave-dust. Nothing is left of him.' in said
+    assert 'Zombie Bang Chan: "' in said                          # his roast
+    assert "Zombie Bang Chan's Four A.M. Demo Song gets stuck in your head." in said
+    assert not p.is_dead() and p.hp >= 1
+    assert not stray_kids.the_band(g.monsters)
+    assert g.state == STATE_PLAYER and g.turn_count > turn_after_practice >= turn
+    for m in stray_kids.members():
+        assert f"Zombie {stray_kids.member_name(m)} crumbles into glitter and grave-dust." in said, m
+    assert 'is slain' not in said
     assert 'An Autographed Stray Kids Photo lies where the band last stood.' in said
-    assert '""' not in said and ' its ' not in ' '.join(t for t in heard if t.startswith('Zombie '))
+    assert do['won_log'] in said
+    assert '""' not in said
     photo = next(i for i in g.ground_items if getattr(i, 'id', '') == stray_kids.photo_id())
     for _ in range(100):
         if (p.x, p.y) == (photo.x, photo.y):
@@ -239,7 +307,7 @@ def test_the_stray_kids_from_the_idol_to_the_last_bow(make_game):  # noqa: F811 
             g._refresh_fov()
     h.key('g')
     assert any(getattr(i, 'id', '') == stray_kids.photo_id() for i in p.inventory)
-    # 5. The stage door, back to the idol's floor; the idol is spent.
+    # 6. The stage door, back to the idol's floor; the idol is spent.
     from dungeon import STAIRS_DOWN
     d = g.dungeon
     door = next((x, y) for y in range(d.height) for x in range(d.width) if d.tiles[y][x] == STAIRS_DOWN)
@@ -260,7 +328,9 @@ def test_the_stray_kids_from_the_idol_to_the_last_bow(make_game):  # noqa: F811 
     h.move(*step)                                     # and again: still spent, no trip
     assert stray_kids.data()['idol']['spent_bump'] in h.said()
     assert g.dungeon_level == floor
-    # 6. The photo: a goblin stops to watch; a named foe and a swarm do not.
+    # 7. The photo: a goblin stops to watch; a named foe and a swarm do not.
+    for e in list(p.status_effects):                  # (the earworm has worn off by now)
+        p.status_effects.pop(e, None)
     open_floor(g, p.x, p.y, 3)
     g.monsters = [m for m in g.monsters if getattr(m, 'is_allied', False)]
     gob = place_monster(g, 'goblin', *_spot(g))
@@ -279,7 +349,7 @@ def test_the_stray_kids_from_the_idol_to_the_last_bow(make_game):  # noqa: F811 
     assert 'The Scarab Swarm pays the show no mind.' in said, said
     assert not boss.has_effect('stunned') and not swarm.has_effect('stunned')
     assert not any('Lamia stops to watch' in t or 'Swarm stops to watch' in t for t in said)
-    # 7. Save and load mid-show: the show goes on, and bows out.
+    # 8. Save and load mid-show: the show goes on, and bows out.
     for m in (boss, swarm):
         m.alive = False                                 # (they would fight him; not the test)
     g.monsters = [m for m in g.monsters if m.alive]
@@ -293,7 +363,7 @@ def test_the_stray_kids_from_the_idol_to_the_last_bow(make_game):  # noqa: F811 
     said = h.said()
     assert _star_count(g) == 0
     assert stray_kids.data()['stars']['bow'] in said
-    # 8. A second show (the QA photo), and he leaves the floor mid-show.
+    # 9. A second show (the QA photo), and he leaves the floor mid-show.
     h.shift('K')
     assert any(getattr(i, 'id', '') == stray_kids.photo_id() for i in g.player.inventory)
     h.said()
@@ -307,4 +377,54 @@ def test_the_stray_kids_from_the_idol_to_the_last_bow(make_game):  # noqa: F811 
     g = h.g
     assert g.dungeon_level == floor and _star_count(g) == 0     # no show runs on
     assert not any(getattr(m, '_sk_watching', False) for m in g.monsters)
+    no_errors(h)
+
+
+def test_a_lost_dance_off_then_challenge_again_and_win(make_game):  # noqa: F811  (the fixture)
+    """Three strikes and the band laughs him off the stage: the members
+    still standing back in their places, the fallen still fallen, the hero
+    at the edge of the stage, shaken (the earworm) but never killed, even at
+    one hit point. He practises again, walks into the band, and wins."""
+    import stray_kids
+    from game_states import STATE_PLAYER, STATE_MOOBLE_DANCE
+    g, h = make_game(build='titivillus', name='Titivillus')
+    warp(h, 9)
+    g = h.g
+    g.monsters = [m for m in g.monsters if getattr(m, 'is_allied', False)]
+    g.pets = []
+    g._enter_stray_kids_stage()
+    h.said()
+    to_the_stage(h)
+    now = fake_clock(g)
+    h.key(pygame.K_d)
+    md = dance_round(h, now)                          # Bang Chan falls
+    assert md['won']
+    h.key(pygame.K_RETURN)
+    g.player.hp = 1
+    for _ in range(3):
+        md = dance_round(h, now, presses=[])
+        assert not md['won'] and g.player.hp == 1 and not g.player.is_dead()
+        h.key(pygame.K_RETURN)
+    said = ' '.join(h.said())
+    assert g.state == STATE_PLAYER
+    assert stray_kids.dance_off()['laugh'] in said
+    band = stray_kids.the_band(g.monsters)
+    assert len(band) == 7 and band[0].member == 'lee_know'
+    assert all((m.x, m.y) == stray_kids.place_of(g.dungeon, m._sk_slot) for m in band)
+    assert (g.player.x, g.player.y) == stray_kids.stage_edge(g.dungeon)
+    assert g.player.status_effects                    # shaken: his song is still in his head
+    # Challenge again: walk into the band, practise once, then win. (Once
+    # the song in his head has worn off: a confused hero walks astray.)
+    g.player.status_effects.clear()
+    g.player.hp = g.player.max_hp
+    lead = band[0]
+    _walk_beside(h, lead.x, lead.y)
+    h.move(lead.x - g.player.x, lead.y - g.player.y)
+    assert g.state == STATE_MOOBLE_DANCE and g._mdance['mode'] == 'practice'
+    assert stray_kids.data()['stage']['challenge_again'] in h.said()
+    md = dance_round(h, now)
+    assert md['won'] and len(md['tl']['response']) == 5      # Lee Know's round: five steps
+    win_the_dance_off(h, now)
+    assert not stray_kids.the_band(g.monsters) and g.state == STATE_PLAYER
+    assert any(getattr(i, 'id', '') == stray_kids.photo_id() for i in g.ground_items)
     no_errors(h)

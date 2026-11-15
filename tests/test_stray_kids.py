@@ -2,13 +2,16 @@
 
 Every run a gold shrine to the band stands on one floor of 8-12. Walk into it
 twice and the hero is on the Zombie Stage, a side floor like the Cow Level,
-where the eight members dance as zombies in formation; they crumble to
-nothing, the last leaves a signed photo, and the photo calls the band up
-alive for a short show that stops the room.
+where the eight members wait as zombies. The fight is a dance-off (Brandon,
+2026-11-14): "B-B-B-BOSS BATTLE! DANCE OFF!", practice as often as wanted,
+then eight rounds of Simon Says on the Mooble's dance screen, a member
+leading each. They crumble to nothing, the last leaves a signed photo, and
+the photo calls the band up alive for a short show that stops the room.
 
-Data tests for every new JSON entry, pure tests for the dance, and behaviour
-tests on a real headless Game: the stage is a randomized floor-8-to-12 event,
-so these are the proof besides Brandon's own play.
+Data tests for every new JSON entry, pure tests for the Simon Says rules and
+the earworm, and behaviour tests on a real headless Game: the stage is a
+randomized floor-8-to-12 event, so these are the proof besides Brandon's own
+play. The feel of the dance-off is his play-test.
 """
 import json
 import os
@@ -21,7 +24,9 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, 'src'))
 
 import pygame  # noqa: E402
+import pytest  # noqa: E402
 
+import rhythm  # noqa: E402
 import stray_kids as sk  # noqa: E402
 from boss_levels import STRAY_KIDS_STAGE, COW_LEVEL, is_side_floor  # noqa: E402
 
@@ -43,6 +48,7 @@ def _json(*parts):
 
 MONS = _json('data', 'monsters.json')
 MEMBERS = sk.members()
+DO = sk.dance_off()
 
 
 def _game(name='__test_stray_kids__', seed=11):
@@ -97,19 +103,41 @@ def _band(g):
 # Data
 # ---------------------------------------------------------------------------
 
-def test_the_data_names_eight_members_and_every_shape_has_eight_places():
+def test_the_data_names_eight_members_each_with_his_place_and_lines():
     d = sk.data()
     assert MEMBERS == ['bang_chan', 'lee_know', 'changbin', 'hyunjin', 'han',
                        'felix', 'seungmin', 'i_n']
     assert set(d['names']) == set(MEMBERS)
-    for name in d['dance']['shape_order']:
-        assert len(d['dance']['shapes'][name]) == 8, name
-        assert d['dance']['shape_lines'][name]
-        assert len({tuple(o) for o in d['dance']['shapes'][name]}) == 8, name
+    form = d['stage']['formation']
+    assert len(form) == 8 and len({tuple(o) for o in form}) == 8
     for m in MEMBERS:
         assert d['observe'][m] and d['shouts'][m], m
+        lead = DO['leaders'][m]
+        assert lead['open'] and lead['roast'], m
     assert d['chance_per_run'] == 1.0 and (d['first_floor'], d['last_floor']) == (8, 12)
     assert len(d['stars']['ring']) == 16
+    # The old combat dance is gone from the data.
+    assert 'dance' not in d and 'band_id' not in d
+
+
+def test_the_dance_off_numbers_are_written_in_the_data():
+    """Simon Says: 4 steps, one more a round, to 11 in the eighth; a little
+    faster each round; three strikes; the Mooble's judging windows."""
+    assert (DO['first_steps'], DO['steps_per_round'], DO['strikes']) == (4, 1, 3)
+    assert (DO['bpm_first'], DO['bpm_per_round']) == (84, 4)
+    assert len(DO['choreography']) >= DO['first_steps'] + (sk.rounds() - 1) * DO['steps_per_round']
+    assert set(DO['choreography']) <= set(rhythm.DIRS)
+    assert DO['memory'] is True
+    assert 0 < DO['pass_share'] <= 1 and DO['max_misses'] >= 1
+    ann = DO['announce']
+    assert ann['log'] == 'B-B-B-BOSS BATTLE! DANCE OFF!'
+    assert ann['top'] == 'B-B-B-BOSS BATTLE!' and ann['main'] == 'DANCE OFF!'
+    ew = DO['earworm']
+    assert ew['max_damage'] >= 1 and ew['effect'] in ew['effects']
+    # Every member's song carries a hindrance the earworm can name.
+    for m in MEMBERS:
+        atk = sk.earworm_attack(m)
+        assert atk.get('quip') and atk.get('effect') in ew['effects'], (m, atk)
 
 
 def test_every_member_is_a_low_danger_band_member_that_never_spawns_on_his_own():
@@ -138,26 +166,19 @@ def test_every_member_is_a_low_danger_band_member_that_never_spawns_on_his_own()
         assert not any(k.startswith('sk_zombie_') for k in pool), level
 
 
-def test_the_band_is_never_rolled_as_a_runs_mini_boss():
+def test_the_band_is_never_rolled_as_a_runs_mini_boss_and_is_no_war_band():
+    """They do not fight, so they are no war-band any more (its entry went
+    with the old combat dance)."""
+    import war_bands
     from level_manager import LevelManager
     for seed in range(15):
         random.seed(seed)
         planned = LevelManager()._roll_planned_mini_bosses()
         assert not any(str(v).startswith('sk_') for v in planned.values())
-
-
-def test_the_war_band_entry_is_led_by_bang_chan_and_never_set_down_by_chance():
-    import war_bands
-    from dungeon import _floor_pool
-    b = war_bands.data()['bands']['stray_kids']
-    assert b['leader'] == ['sk_zombie_bang_chan']
-    assert sorted(b['guard']) == sorted(sk.zombie_kind(m) for m in MEMBERS[1:])
-    assert b['morale'] == 'quarrel'
-    for level in range(8, 13):
-        pool = _floor_pool(level)
-        for seed in range(30):
-            got = war_bands.pick_band(level, pool, random.Random(seed))
-            assert not got or got[0] != 'stray_kids'
+    assert 'stray_kids' not in war_bands.data()['bands']
+    for b in war_bands.data()['bands'].values():
+        for role in ('leader', 'guard'):
+            assert not any(str(k).startswith('sk_') for k in b.get(role) or ())
 
 
 def test_the_idol_and_speaker_fixtures_and_their_art():
@@ -200,18 +221,17 @@ def test_the_data_ships_with_the_game():
 
 
 def test_no_line_is_longer_than_a_shout():
-    """Made-up lines only (no real lyrics), short enough to read in play."""
+    """Made-up lines only (no real lyrics), short enough to read in play,
+    and none trails off in an ellipsis on screen."""
     d = sk.data()
     lines = list(d['shouts']['band']) + list(d['shouts']['songs']) + list(d['stars']['lines'])
     for m in MEMBERS:
         lines += d['shouts'][m]
+        lines += DO['leaders'][m]['open'] + DO['leaders'][m]['roast']
     for line in lines:
         assert 0 < len(line) <= 90, line
+        assert not line.rstrip().endswith('...'), line
 
-
-# ---------------------------------------------------------------------------
-# The roll and the side floor
-# ---------------------------------------------------------------------------
 
 def test_the_band_riffs_on_their_songs_by_title():
     """Riffs on the songs' titles and concepts (never their words): each
@@ -224,9 +244,44 @@ def test_the_band_riffs_on_their_songs_by_title():
         assert re.match(r'^"[^"]+"', line), line
     titles = {re.match(r'^"([^"]+)"', line).group(1) for line in songs}
     assert {'Case 143', 'Christmas EveL', "God's Menu", 'Thunderous', 'Maniac'} <= titles
-    share = d['dance']
+    share = d['shouting']
     assert 0 < share['member_line_share'] + share['song_line_share'] < 1
 
+
+def test_the_help_page_tells_of_both_dances():
+    page = _json('data', 'ui', 'how_quizzes_work.json')
+    sec = next(s for s in page['sections'] if 'Dances' in s['heading'])
+    text = ' '.join(sec['paragraphs'])
+    assert 'old mines' in text and 'Simon Says' in text and 'practise' in text
+    assert 'three strikes' in text
+
+
+def test_the_announcement_banner_is_the_kill_banners_look():
+    """'B-B-B-BOSS BATTLE! DANCE OFF!' is the strike finisher's banner (the
+    "<Target> Slain" a kill shows), registered with a time and type of its
+    own, and the fanfare is in sound_system."""
+    from effects_runtime import build_default_runtime
+    from effects.strike_finisher import StrikeFinisher
+    import sound_system
+    rt = build_default_runtime()
+    h = rt.handlers['dance_off_banner']
+    assert isinstance(h, StrikeFinisher) and h.durations_ms['big'] >= 2000 and h.main_pt > 36
+    rt.fire('dance_off_banner', {'main_line': 'DANCE OFF!', 'top_line': 'B-B-B-BOSS BATTLE!',
+                                 'color': (255, 96, 200), 'tier': 'big'})
+    assert h.active and h._main_line == 'DANCE OFF!' and h._top_line == 'B-B-B-BOSS BATTLE!'
+    assert h.tier == 'big'
+    # The ordinary finisher is unchanged.
+    fin = rt.handlers['strike_finisher']
+    rt.fire('strike_finisher', {'chain': 3, 'damage': 7, 'killed': True, 'rank_name': 'Solid',
+                                'target_name': 'Goblin'})
+    assert fin._main_line == 'Goblin Slain'
+    import inspect
+    assert "'dance_off'" in inspect.getsource(sound_system.init)
+
+
+# ---------------------------------------------------------------------------
+# The roll and the side floor
+# ---------------------------------------------------------------------------
 
 def test_every_run_has_the_idol_on_a_floor_from_8_to_12():
     for seed in range(40):
@@ -234,6 +289,7 @@ def test_every_run_has_the_idol_on_a_floor_from_8_to_12():
         st = sk.new_run_state()
         assert 8 <= st['floor'] <= 12
         assert not st['spawned'] and not st['touched'] and not st['photo_dropped']
+        assert st['challenge'] is None and st['dancing'] is None
 
 
 def test_the_roll_leaves_the_shared_random_stream_alone():
@@ -252,7 +308,7 @@ def test_the_stage_is_a_side_floor_with_a_name():
     assert floor_label(COW_LEVEL) == 'Moo Moo Farm' and floor_label(9) == 'Floor 9'
 
 
-def test_the_stage_has_wings_a_door_out_and_the_band_in_its_hall():
+def test_the_stage_has_wings_a_door_out_and_the_band_posed_in_its_hall():
     from dungeon import STAIRS_DOWN, STAIRS_UP
     d, mons, items = sk.build_stage()
     assert items == [] and len(mons) == 8
@@ -261,255 +317,85 @@ def test_the_stage_has_wings_a_door_out_and_the_band_in_its_hall():
     downs = [(x, y) for y in range(d.height) for x in range(d.width) if d.tiles[y][x] == STAIRS_DOWN]
     assert len(downs) == 1 and wings.x <= downs[0][0] < wings.x + wings.width
     assert not any(d.tiles[y][x] == STAIRS_UP for y in range(d.height) for x in range(d.width))
-    for m in mons:
+    for slot, m in enumerate(mons):
         assert hall.x <= m.x < hall.x + hall.width and d.is_walkable(m.x, m.y)
+        assert (m.x, m.y) == sk.place_of(d, slot)
+        assert m.is_allied and not getattr(m, '_band', None)
     assert len({(m.x, m.y) for m in mons}) == 8
-    lead = [m for m in mons if m._band_role == 'leader']
-    assert len(lead) == 1 and lead[0].kind == 'sk_zombie_bang_chan'
-    assert all(m._band_leader is lead[0] for m in mons if m is not lead[0])
-    assert sk.dance_of(d)['aware'] is False
+    # Bang Chan at the point of the V, nearest the wings.
+    assert min(mons, key=lambda m: m.x).member == 'bang_chan'
+    assert not d.__dict__.get('sk_dance')
     fixtures = set(d.fixtures.values())
     assert {'sk_speaker', 'brazier_lit', 'carpet'} <= fixtures
+    ex, ey = sk.stage_edge(d)
+    assert sk.on_stage(d, ex, ey) and not sk.on_stage(d, ex - 1, ey) and d.is_walkable(ex, ey)
 
 
 # ---------------------------------------------------------------------------
-# The dance (pure)
+# The dance-off (pure)
 # ---------------------------------------------------------------------------
 
-def test_a_shape_turns_to_face_the_hero():
-    front = (0, 1)
-    assert sk.turn(front, (0, 1)) == (0, 1)
-    assert sk.turn(front, (0, -1)) == (0, -1)
-    assert sk.turn(front, (1, 0)) == (1, 0)
-    assert sk.turn(front, (-1, 0)) == (-1, 0)
-    assert sk.facing(10, 10, 3, 11) == (-1, 0)
-    assert sk.facing(10, 10, 11, 20) == (0, 1)
+def test_simon_says_each_round_is_the_last_and_one_step_more():
+    phrases = [sk.round_phrase(i) for i in range(sk.rounds())]
+    assert [len(p) for p in phrases] == [4, 5, 6, 7, 8, 9, 10, 11]
+    for a, b in zip(phrases, phrases[1:]):
+        assert b[:len(a)] == a and len(b) == len(a) + 1
+    assert [s[0] for s in phrases[-1]] == list(range(11))          # one step a beat
+    assert [s[1] for s in phrases[-1]] == DO['choreography'][:11]
+    assert [sk.round_bpm(i) for i in range(sk.rounds())] == [84, 88, 92, 96, 100, 104, 108, 112]
+    # Whole bars, with at least a beat of rest between the call and the turn.
+    for i in range(sk.rounds()):
+        n = sk.round_steps(i)
+        pb = sk.phrase_beats(n)
+        assert pb % 4 == 0 and pb >= n + 1, (i, n, pb)
+        tl = sk.round_timeline(i)
+        assert len(tl['call']) == len(tl['response']) == n
+        assert tl['response_start'] - tl['call'][-1][0] >= tl['beat_ms'] * 2 - 1
+        assert tl['beat_ms'] == pytest.approx(60000 / sk.round_bpm(i))
 
 
-def _hall_dungeon():
-    from dungeon import Dungeon, Room, WALL, FLOOR
-    w, h = 40, 20
-    tiles = [[WALL] * w for _ in range(h)]
-    for y in range(1, h - 1):
-        for x in range(1, w - 1):
-            tiles[y][x] = FLOOR
-    return Dungeon(tiles, [Room(0, 0, w, h)], w, h, STRAY_KIDS_STAGE)
+def test_the_rounds_and_the_strikes():
+    assert sk.after_round(True, 3, 7) == ('next', 3)
+    assert sk.after_round(True, 1, 0) == ('won', 1)
+    assert sk.after_round(False, 3, 7) == ('retry', 2)
+    assert sk.after_round(False, 2, 7) == ('retry', 1)
+    assert sk.after_round(False, 1, 7) == ('lost', 0)
+    # A whole dance-off: lose the second round twice, win the rest.
+    standing, strikes, plays = 8, sk.strikes(), [True, False, False] + [True] * 7
+    for won in plays:
+        if won:
+            standing -= 1
+        outcome, strikes = sk.after_round(won, strikes, standing)
+    assert (outcome, strikes, standing) == ('won', 1, 0)
 
 
-class _Hero:
-    def __init__(self, x, y):
-        self.x, self.y = x, y
-        self.status_effects = {}
-
-    def has_effect(self, e):
-        return False
-
-
-def _dancing_band(d, home=(30, 10)):
-    d.sk_dance = sk.new_dance(home)
-    band = []
-    for slot, m in enumerate(MEMBERS):
-        x, y = sk.place_of(d.sk_dance, slot)
-        z = sk.make_zombie(m, x, y, slot)
-        sk._join_band(z, band[0] if band else None)
-        band.append(z)
-    return band
+def test_the_earworm_never_kills():
+    for m in MEMBERS:
+        for hp in (1, 2, 3, 5, 40):
+            for seed in range(30):
+                ew = sk.earworm(m, hp, random.Random(seed))
+                assert 0 <= ew['damage'] <= DO['earworm']['max_damage']
+                assert ew['damage'] < hp or ew['damage'] == 0
+                assert ew['effect'] and ew['turns'] >= 1 and ew['song'] and ew['quip']
+    assert all(sk.earworm(m, 1, random.Random(1))['damage'] == 0 for m in MEMBERS)
+    # His own song: Han's speed rap confuses; Bang Chan's demo puts you to sleep.
+    assert sk.earworm('han', 30, random.Random(1))['song'] == 'Speed-Rap Song'
+    assert sk.earworm('bang_chan', 30, random.Random(1))['effect'] == 'sleeping'
 
 
-def test_the_band_rehearses_in_place_until_one_of_them_sees_the_hero():
-    d = _hall_dungeon()
-    band = _dancing_band(d)
-    hero = _Hero(3, 10)
-    home = list(d.sk_dance['anchor'])
-    for _ in range(6):
-        sk.advance(d, band, (hero.x, hero.y), lambda m: False)
-        for m in band:
-            assert m.take_turn(hero, d, band) is False
-    assert d.sk_dance['anchor'] == home and not d.sk_dance['aware']
-    ev = sk.advance(d, band, (hero.x, hero.y), lambda m: True)
-    assert ('seen',) in ev and d.sk_dance['aware']
-
-
-def test_the_shape_changes_every_four_beats_and_the_anchor_stops_short():
-    d = _hall_dungeon()
-    band = _dancing_band(d)
-    hero = (5, 10)
-    shapes = []
-    for _ in range(40):
-        for ev in sk.advance(d, band, hero, lambda m: True):
-            if ev[0] == 'shape':
-                shapes.append(ev[1])
-    assert shapes[:5] == ['two_rows', 'diamond', 'column', 'line', 'v']
-    ax, ay = d.sk_dance['anchor']
-    assert max(abs(ax - hero[0]), abs(ay - hero[1])) == sk.data()['dance']['keep_off']
-
-
-def test_the_band_closes_in_formation_and_strikes_only_on_the_downbeat():
-    d = _hall_dungeon()
-    band = _dancing_band(d)
-    hero = _Hero(8, 10)
-    for b in band:
-        b.status_effects = {}
-    strikes = {True: 0, False: 0}
-    for _ in range(40):
-        sk.advance(d, band, (hero.x, hero.y), lambda m: True)
-        on_beat = sk.strike_beat(d.sk_dance)
-        for m in band:
-            if m.member == 'lee_know':
-                continue                    # his cat (tested on its own)
-            if m.take_turn(hero, d, band):
-                strikes[on_beat] += 1
-    assert strikes[True] > 0 and strikes[False] == 0
-    near = [m for m in band if max(abs(m.x - hero.x), abs(m.y - hero.y)) <= 3]
-    assert len(near) >= 4
-    assert len({(m.x, m.y) for m in band}) == 8      # never two on one tile
-
-
-def test_a_member_out_of_the_dance_acts_like_any_monster():
-    d = _hall_dungeon()
-    band = _dancing_band(d)
-    z = band[3]
-    called = []
-    import monster as monster_mod
-    orig = monster_mod.Monster.take_turn
-
-    def spy(self, *a, **k):
-        called.append(self)
-        return False
-    monster_mod.Monster.take_turn = spy
-    try:
-        z.status_effects['confused'] = 5
-        z.take_turn(_Hero(3, 10), d, band)
-        z.status_effects = {'sleeping': 5}
-        z.take_turn(_Hero(3, 10), d, band)
-    finally:
-        monster_mod.Monster.take_turn = orig
-    assert called == [z, z]
-
-
-def test_lee_know_would_rather_pet_his_cat(monkeypatch):
-    d = _hall_dungeon()
-    band = _dancing_band(d)
-    lk = next(m for m in band if m.member == 'lee_know')
-    d.sk_dance['aware'] = True
-    d.sk_dance['beat'] = 2
-    hero = _Hero(lk.x - 1, lk.y)
-    monkeypatch.setitem(sk.data()['distracted']['lee_know'], 'chance', 1.0)
-    assert lk.take_turn(hero, d, band) is False
-    assert lk._sk_events and 'cat' in lk._sk_events[0]
-    monkeypatch.setitem(sk.data()['distracted']['lee_know'], 'chance', 0.0)
-    assert lk.take_turn(hero, d, band) is True
-
-
-def test_seungmin_pitches_from_across_the_stage():
-    d = _hall_dungeon()
-    band = _dancing_band(d)
-    s = next(m for m in band if m.member == 'seungmin')
-    d.sk_dance['aware'] = True
-    d.sk_dance['beat'] = 2
-    hero = _Hero(s.x - 4, s.y)
-    others = [s]
-    assert s.take_turn(hero, d, others) is True
-    felix = next(m for m in band if m.member == 'felix')
-    assert felix.take_turn(_Hero(felix.x - 4, felix.y), d, [felix]) is False
-
-
-def test_a_blow_that_lands_brings_its_quip():
+def test_a_member_is_a_performer_who_takes_no_harm_and_never_strikes():
     from player import Player
     z = sk.make_zombie('felix', 5, 5, 5)
+    hp = z.hp
+    assert z.is_allied and z.take_damage(10 ** 6) == 0 and z.hp == hp
+    z.add_effect('stunned', 5)
+    z.hold('confused', 5)
+    assert not z.status_effects
     p = Player()
     p.x, p.y = 6, 5
-    atk = z.attacks[0]
-    random.seed(1)
-    for _ in range(50):
-        dmg, msg = z._resolve_blow(atk, p)
-        if dmg > 0:
-            assert msg.endswith(atk['quip'])
-            break
-    else:
-        raise AssertionError('never landed')
-
-
-def test_observe_says_his_own_line_and_the_beat():
-    z = sk.make_zombie('lee_know', 5, 5, 1)
-    assert sk.data()['observe']['lee_know'] in z.observe_line
-    assert sk.data()['dance']['beat_tell'] in z.observe_line
-
-
-def test_a_star_is_a_harmless_unharmed_ally_who_dances_round_the_hero():
-    d = _hall_dungeon()
-    s = sk.StarDancer('felix', 10, 10, slot=5)
-    assert s.is_allied and sk.is_star(s) and s.name == 'Felix' and s.kind == 'sk_star_felix'
-    assert s.take_damage(10 ** 6) == 0
-    s.add_effect('stunned', 5)
-    assert not s.status_effects
-    hero = _Hero(12, 10)
-    for _ in range(10):
-        assert s.take_turn(hero, d, [s]) is False
-    assert max(abs(s.x - hero.x), abs(s.y - hero.y)) <= 2
-
-
-def test_watchers_are_the_ordinary_monsters_near_the_show():
-    from monster import Monster
-    d = _hall_dungeon()
-    star = sk.StarDancer('han', 10, 10, slot=4)
-
-    def mon(kind, x, y):
-        return Monster({**MONS[kind], 'id': kind}, x, y)
-    near = mon('goblin', 13, 10)
-    far = mon('goblin', 30, 10)
-    boss = mon('lamia', 12, 11)
-    golem = mon('clay_golem', 11, 12)
-    blind = mon('goblin', 9, 9)
-    blind.status_effects['blinded'] = 3
-    swarm = mon('scarab_swarm', 11, 9)                  # cannot be stunned (round 3)
-    assert swarm.resists_control('stunned')
-    got = sk.watchers([star, near, far, boss, golem, blind, swarm], [star], d)
-    assert got == [near]
-    assert set(sk.near_show([star, near, far, boss, golem, blind, swarm], [star], d)) == {
-        near, boss, golem, swarm}
-
-
-def test_the_watch_line_is_said_only_of_what_the_show_held():
-    """Round 3: the watch line played for a stun-immune creature, and the
-    hold was added again every turn of the show (12 turns stunned by a
-    6-turn show)."""
-    from monster import Monster
-    g = _game('__test_sk_watch__')
-    _open_floor(g)
-    gob = Monster({**MONS['goblin'], 'id': 'goblin'}, 13, 10)
-    swarm = Monster({**MONS['scarab_swarm'], 'id': 'scarab_swarm'}, 12, 12)
-    boss = Monster({**MONS['lamia'], 'id': 'lamia'}, 10, 14)
-    for m in (gob, swarm, boss):
-        m._aware = True
-    g.monsters.extend([gob, swarm, boss])
-    g._refresh_fov()
-    _read_photo(g)
-    log = _log(g)
-    assert 'The Goblin stops to watch the show.' in log
-    assert 'Scarab Swarm stops to watch' not in log and not swarm.has_effect('stunned')
-    assert 'The Scarab Swarm pays the show no mind.' in log
-    assert 'Lamia has seen better shows, and does not stop.' in log
-    watch = int(sk.data()['stars']['watch_turns'])
-    for _ in range(3):
-        gob.x, gob.y = 13, 10
-        g._advance_turn()
-        assert gob.status_effects.get('stunned', 0) <= watch
-    assert log.count('pays the show no mind') == 1
-
-
-def test_leaving_the_floor_ends_the_show_with_its_bow():
-    g = _game('__test_sk_leave__')
-    _open_floor(g)
-    _read_photo(g)
-    assert [m for m in g.monsters if sk.is_star(m)]
-    here = g.dungeon_level
-    g.msg_log.clear()
-    g._change_level(here + 1, enter_from_top=True)
-    assert sk.data()['stars']['bow'] in _log(g)
-    assert not [m for m in g.monsters if sk.is_star(m)]
-    g._change_level(here, enter_from_top=False)
-    assert not [m for m in g.monsters if sk.is_star(m)]       # a revisit finds no show
+    assert z.take_turn(p, None, [z]) is False and (z.x, z.y) == (5, 5)
+    assert sk.data()['observe']['felix'] in z.observe_line
+    assert DO['observe_tell'] in z.observe_line
 
 
 # ---------------------------------------------------------------------------
@@ -568,6 +454,7 @@ def test_one_bump_says_what_it_is_the_second_touches_it():
     wings = g.dungeon.rooms[0]
     assert wings.x <= g.player.x < wings.x + wings.width
     assert len(_band(g)) == 8
+    assert st['challenge'] is None                             # not on the stage yet
 
 
 def test_the_idol_calls_the_hero_over_once_when_he_first_sees_it():
@@ -652,38 +539,7 @@ def test_they_crumble_to_nothing_and_the_last_leaves_the_photo():
     assert 'glitter and grave-dust' in text
 
 
-def test_when_bang_chan_falls_the_rest_lose_the_count():
-    g = _game('__test_sk_leader__')
-    _on_stage(g)
-    lead = next(m for m in _band(g) if m.member == 'bang_chan')
-    _kill(g, lead)
-    rest = _band(g)
-    assert len(rest) == 7
-    assert all(m.quarrelsome and m.has_effect('confused') for m in rest)
-
-
-def test_the_dance_runs_on_the_real_stage_and_the_band_shouts():
-    g = _game('__test_sk_dance__')
-    _on_stage(g)
-    hall = g.dungeon.rooms[1]
-    g.player.x, g.player.y = hall.x + 3, 25
-    g._refresh_fov()
-    g._sk_rng = random.Random(3)
-    for _ in range(30):
-        g._advance_turn()
-        if g.player.is_dead():
-            break
-    dance = sk.dance_of(g.dungeon)
-    assert dance['aware'] and dance['beat'] >= 30
-    text = _log(g)
-    assert sk.data()['stage']['seen'] in text
-    assert any(f'Zombie {sk.member_name(m)}' in text for m in MEMBERS)
-    # told as one band, once, not eight first-sight tells
-    assert text.count(sk.data()['stage']['tell']) == 1
-    assert 'hurt it most' not in text
-
-
-def test_the_stage_is_lit_so_the_whole_dance_can_be_seen():
+def test_the_stage_is_lit_so_the_whole_band_can_be_seen():
     g = _game('__test_sk_lit__')
     _on_stage(g)
     hall = g.dungeon.rooms[1]
@@ -708,7 +564,363 @@ def test_observe_on_a_member_says_his_line():
     g.target_cursor_x, g.target_cursor_y = z.x, z.y
     g._confirm_observe()
     text = _log(g)
-    assert sk.data()['observe']['felix'] in text
+    assert sk.data()['observe']['felix'] in text and DO['observe_tell'] in text
+
+
+# ---------------------------------------------------------------------------
+# The dance-off on a real Game (the fake clock, the screen's own keys)
+# ---------------------------------------------------------------------------
+
+_ARROWS = {'left': pygame.K_LEFT, 'right': pygame.K_RIGHT, 'up': pygame.K_UP, 'down': pygame.K_DOWN}
+
+
+def _clock(g, start=80_000):
+    now = [start]
+    g._mooble_clock_fn = lambda: now[0]
+    return now
+
+
+def _dance(g, now, presses='on_time'):
+    """Space, then the whole round on the fake clock: every beat's tick and
+    the keys at their times (on time, or a list of (t, dir) from the start)."""
+    from game_states import STATE_MOOBLE_DANCE
+    assert g.state == STATE_MOOBLE_DANCE and g._mdance['phase'] == 'ready'
+    g._mooble_dance_key(pygame.K_SPACE)
+    md = g._mdance
+    t0, tl = md['t0'], md['tl']
+    keys = rhythm.on_time(tl['response']) if presses == 'on_time' else list(presses)
+    events = sorted([(t, 'key', d) for t, d in keys]
+                    + [(k * tl['beat_ms'], 'tick', None) for k in range(tl['beats'] + 2)])
+    for t, kind, d in events:
+        now[0] = t0 + int(round(t))
+        if kind == 'tick':
+            g._mooble_dance_tick()
+        elif md['phase'] == 'play':
+            g._mooble_dance_key(_ARROWS[d])
+    now[0] = t0 + int(g._mooble_end_ms()) + 5
+    g._mooble_dance_tick()
+    assert md['phase'] == 'result'
+    return md
+
+
+def _to_the_card(g):
+    """On the stage: the hero steps onto it, the band sees him, and the
+    dance-off's card opens once the banner is over."""
+    from game_states import STATE_MOOBLE_DANCE
+    g.player.x, g.player.y = sk.stage_edge(g.dungeon)
+    g._refresh_fov()
+    g._advance_turn()
+    assert g._stray_kids['challenge'] == 'pending'
+    for _ in range(400):
+        g.update(1 / 30)
+        if g.state == STATE_MOOBLE_DANCE:
+            break
+    assert g.state == STATE_MOOBLE_DANCE and g._mdance['mode'] == 'practice'
+    assert g._mdance['phase'] == 'ready' and g._stray_kids['challenge'] == 'made'
+    return g._mdance
+
+
+def test_setting_foot_on_the_stage_brings_the_announcement_then_the_card():
+    g = _game('__test_sk_announce__')
+    _on_stage(g)
+    g.msg_log.clear()
+    g.player.x, g.player.y = sk.stage_edge(g.dungeon)
+    g._refresh_fov()
+    g._advance_turn()
+    text = _log(g)
+    st = sk.data()['stage']
+    for line in (st['seen'], st['pose'], DO['announce']['log'], st['tell']):
+        assert line in text, line
+    banner = g.effects_runtime.handlers['dance_off_banner']
+    assert banner.active and banner._main_line == 'DANCE OFF!'
+    g._advance_turn()
+    assert text.count(DO['announce']['log']) == _log(g).count(DO['announce']['log']) == 1
+    # The card waits for the banner, then opens on its own.
+    g.update(1 / 30)
+    from game_states import STATE_PLAYER
+    assert g.state == STATE_PLAYER
+    _ = _to_the_card.__doc__
+    from game_states import STATE_MOOBLE_DANCE
+    for _ in range(400):
+        g.update(1 / 30)
+        if g.state == STATE_MOOBLE_DANCE:
+            break
+    md = g._mdance
+    assert md['owner'] == 'stray_kids' and md['mode'] == 'practice' and md['poses']['idle'] == 'sk_zombie_bang_chan'
+    assert md['memory'] and len(md['tl']['response']) == 4 and md['bpm'] == 84
+
+
+def test_practise_as_often_as_wanted_and_walk_away():
+    import music
+    g = _game('__test_sk_practise__')
+    _on_stage(g)
+    _to_the_card(g)
+    now = _clock(g)
+    hp, turn = g.player.hp, g.turn_count
+    for _ in range(3):
+        md = _dance(g, now)
+        assert md['won'] and md['mode'] == 'practice'
+        g._mooble_dance_key(pygame.K_RETURN)               # again
+        md = g._mdance
+        assert md['phase'] == 'play'
+        g._mooble_dance_key(pygame.K_ESCAPE)               # stop: back to the card
+        assert g._mdance['phase'] == 'ready' and g._mdance['mode'] == 'practice'
+    md = _dance(g, now, presses=[])
+    assert not md['won']                                   # a flop costs nothing
+    assert g.player.hp == hp and g.turn_count == turn and not g.player.status_effects.get('confused')
+    assert len(_band(g)) == 8 and not music._held
+    g._mooble_dance_key(pygame.K_ESCAPE)                   # Not Yet
+    from game_states import STATE_PLAYER
+    assert g.state == STATE_PLAYER and g._stray_kids['dancing'] is None
+
+
+def test_esc_on_the_card_through_the_key_handler_goes_back_to_play():
+    """Esc through Game.handle_event: the card closes to play, and the same
+    key press never goes on to open the exit prompt (the race's merge
+    dropped the return after the dance screen's Esc)."""
+    from game_states import STATE_PLAYER
+    g = _game('__test_sk_esc__')
+    _on_stage(g)
+    _to_the_card(g)
+    g.handle_event(pygame.event.Event(pygame.KEYDOWN, key=pygame.K_ESCAPE, unicode='', mod=0, scancode=0))
+    assert g.state == STATE_PLAYER
+
+
+def test_a_round_won_makes_its_leader_fall_and_the_next_leads():
+    g = _game('__test_sk_round__')
+    _on_stage(g)
+    _to_the_card(g)
+    now = _clock(g)
+    g.msg_log.clear()
+    g._mooble_dance_key(pygame.K_d)
+    md = g._mdance
+    assert md['mode'] == 'dance' and md['sk_member'] == 'bang_chan' and md['sk_strikes'] == 3
+    assert md['title'] == 'THE DANCE-OFF: ROUND 1 OF 8'
+    assert md['ready_head'].startswith('Zombie Bang Chan')
+    md = _dance(g, now)
+    assert md['won'] and md['sk_outcome'] == 'next'
+    lead = [m for m in g.monsters if getattr(m, 'member', '') == 'bang_chan']
+    assert not lead or not lead[0].alive
+    assert [m.member for m in _band(g)][0] == 'lee_know' and len(_band(g)) == 7
+    text = _log(g)
+    assert 'Zombie Bang Chan crumbles into glitter and grave-dust.' in text
+    assert 'is slain' not in text
+    import chronicle
+    assert chronicle.logged(g, 'boss:sk_zombie_bang_chan')
+    g._mooble_dance_key(pygame.K_RETURN)
+    md = g._mdance
+    assert md['sk_member'] == 'lee_know' and len(md['tl']['response']) == 5 and md['bpm'] == 88
+    assert md['sk_strikes'] == 3 and md['title'] == 'THE DANCE-OFF: ROUND 2 OF 8'
+    g._mooble_dance_key(pygame.K_ESCAPE)                   # danced through now: no way out
+    assert g._mdance is md and md['phase'] == 'ready'
+
+
+def test_a_round_lost_brings_the_earworm_and_three_strikes_lose_the_dance_off():
+    import music
+    g = _game('__test_sk_lost__')
+    _on_stage(g)
+    _to_the_card(g)
+    now = _clock(g)
+    g._mooble_dance_key(pygame.K_d)
+    md = _dance(g, now)                                     # Bang Chan falls
+    g._mooble_dance_key(pygame.K_RETURN)
+    g.player.hp = 1                                         # the earworm must never kill
+    g.msg_log.clear()
+    for strike in (2, 1, 0):
+        md = _dance(g, now, presses=[])
+        assert not md['won'] and md['sk_strikes'] == strike
+        assert md['sk_outcome'] == ('retry' if strike else 'lost')
+        assert md['result_head'].startswith('Zombie Lee Know')
+        assert any('gets stuck in your head' in ln for ln in md['result_lines'])
+        assert g.player.hp == 1 and not g.player.is_dead()
+        g._mooble_dance_key(pygame.K_RETURN)
+    text = _log(g)
+    assert "Zombie Lee Know's Dance-Teacher Correction gets stuck in your head." in text
+    assert g.player.has_effect('confused')
+    from game_states import STATE_PLAYER
+    assert g.state == STATE_PLAYER and not music._held
+    assert DO['laugh'] in _log(g)
+    # The members still standing are back in their places; the fallen stay fallen.
+    assert len(_band(g)) == 7
+    for m in _band(g):
+        assert (m.x, m.y) == sk.place_of(g.dungeon, m._sk_slot)
+    assert (g.player.x, g.player.y) == sk.stage_edge(g.dungeon)
+    import chronicle
+    assert chronicle.logged(g, 'stray_kids:lost')
+    assert g._stray_kids['lost'] == 1 and g._stray_kids['dancing'] is None
+
+
+def test_challenge_again_after_a_loss_and_win_it_all():
+    g = _game('__test_sk_rematch__')
+    _on_stage(g)
+    _to_the_card(g)
+    now = _clock(g)
+    g._mooble_dance_key(pygame.K_d)
+    for _ in range(3):
+        _dance(g, now, presses=[])
+        g._mooble_dance_key(pygame.K_RETURN)
+    from game_states import STATE_PLAYER, STATE_MOOBLE_DANCE
+    assert g.state == STATE_PLAYER and len(_band(g)) == 8
+    # Walk into Bang Chan: the card again, with the rematch line. (Once
+    # the song in his head has worn off: a confused hero walks astray.)
+    g.player.status_effects.clear()
+    lead = _band(g)[0]
+    g.player.x, g.player.y = lead.x - 1, lead.y
+    g._refresh_fov()
+    g.msg_log.clear()
+    g._do_move(1, 0)
+    assert g.state == STATE_MOOBLE_DANCE and g._mdance['mode'] == 'practice'
+    assert sk.data()['stage']['challenge_again'] in _log(g)
+    assert lead.alive and lead.hp == lead.max_hp            # walking into him is no blow
+    g._mooble_dance_key(pygame.K_d)
+    for r in range(8):
+        md = _dance(g, now)
+        assert md['won'] and md['sk_round'] == r
+        g._mooble_dance_key(pygame.K_RETURN)
+    assert g.state == STATE_PLAYER and not _band(g)
+    assert any(getattr(i, 'id', '') == sk.photo_id() for i in g.ground_items)
+    st = g._stray_kids
+    assert st['photo_dropped'] and st['outcome'] == 'cleared' and st['dancing'] is None
+    text = _log(g)
+    assert DO['won_log'] in text and sk.data()['last_falls'] in text
+    import chronicle
+    assert chronicle.logged(g, 'stray_kids:cleared')
+    assert all(chronicle.logged(g, f'boss:{k}') for k in sk.zombie_kinds())
+
+
+def test_the_dance_off_raises_the_kill_events_as_the_fight_did():
+    """Achievements hang on these: every member's fall is a kill (as it was
+    when they were fought), with the same monster kinds and family, and the
+    last one's fall drops the photo and writes the cleared Journal line."""
+    import achievements
+    g = _game('__test_sk_events__')
+    seen = []
+    g._seeker_event = lambda event, **f: seen.append((event, f)) or []
+    _on_stage(g)
+    _to_the_card(g)
+    now = _clock(g)
+    g._mooble_dance_key(pygame.K_d)
+    for _ in range(8):
+        _dance(g, now)
+        g._mooble_dance_key(pygame.K_RETURN)
+    kills = [f for e, f in seen if e == 'kill']
+    assert [f['monster'] for f in kills] == sk.zombie_kinds()
+    assert all(f['family'] == 'restless_dead' for f in kills)
+    assert {e for e, _f in seen} <= set(achievements.KNOWN_EVENTS)
+    st = g._stray_kids
+    assert st['photo_dropped'] and st['outcome'] == 'cleared'
+    import chronicle
+    assert chronicle.logged(g, 'stray_kids:cleared')
+
+
+def test_no_blow_or_spell_touches_the_band():
+    g = _game('__test_sk_no_harm__')
+    _on_stage(g)
+    z = _band(g)[2]
+    hp = z.hp
+    g._cast_spell_effect({'effect': 'polymorph_spell', 'id': 'polymorph_spell', 'name': 'Polymorph',
+                          'power': '', 'tier': 3}, target=z)
+    assert sk.is_zombie(z) and z.alive and z.hp == hp
+    assert z.take_damage(500, 'fire') == 0 and z.alive
+
+
+# ---------------------------------------------------------------------------
+# Watching the show
+# ---------------------------------------------------------------------------
+
+def _hall_dungeon():
+    from dungeon import Dungeon, Room, WALL, FLOOR
+    w, h = 40, 20
+    tiles = [[WALL] * w for _ in range(h)]
+    for y in range(1, h - 1):
+        for x in range(1, w - 1):
+            tiles[y][x] = FLOOR
+    return Dungeon(tiles, [Room(0, 0, w, h)], w, h, STRAY_KIDS_STAGE)
+
+
+class _Hero:
+    def __init__(self, x, y):
+        self.x, self.y = x, y
+        self.status_effects = {}
+
+    def has_effect(self, e):
+        return False
+
+
+def test_a_star_is_a_harmless_unharmed_ally_who_dances_round_the_hero():
+    d = _hall_dungeon()
+    s = sk.StarDancer('felix', 10, 10, slot=5)
+    assert s.is_allied and sk.is_star(s) and s.name == 'Felix' and s.kind == 'sk_star_felix'
+    assert s.take_damage(10 ** 6) == 0
+    s.add_effect('stunned', 5)
+    assert not s.status_effects
+    hero = _Hero(12, 10)
+    for _ in range(10):
+        assert s.take_turn(hero, d, [s]) is False
+    assert max(abs(s.x - hero.x), abs(s.y - hero.y)) <= 2
+
+
+def test_watchers_are_the_ordinary_monsters_near_the_show():
+    from monster import Monster
+    d = _hall_dungeon()
+    star = sk.StarDancer('han', 10, 10, slot=4)
+
+    def mon(kind, x, y):
+        return Monster({**MONS[kind], 'id': kind}, x, y)
+    near = mon('goblin', 13, 10)
+    far = mon('goblin', 30, 10)
+    boss = mon('lamia', 12, 11)
+    golem = mon('clay_golem', 11, 12)
+    blind = mon('goblin', 9, 9)
+    blind.status_effects['blinded'] = 3
+    swarm = mon('scarab_swarm', 11, 9)                  # cannot be stunned (round 3)
+    assert swarm.resists_control('stunned')
+    got = sk.watchers([star, near, far, boss, golem, blind, swarm], [star], d)
+    assert got == [near]
+    assert set(sk.near_show([star, near, far, boss, golem, blind, swarm], [star], d)) == {
+        near, boss, golem, swarm}
+
+
+def test_the_watch_line_is_said_only_of_what_the_show_held():
+    """Round 3: the watch line played for a stun-immune creature, and the
+    hold was added again every turn of the show (12 turns stunned by a
+    6-turn show)."""
+    from monster import Monster
+    g = _game('__test_sk_watch__')
+    _open_floor(g)
+    gob = Monster({**MONS['goblin'], 'id': 'goblin'}, 13, 10)
+    swarm = Monster({**MONS['scarab_swarm'], 'id': 'scarab_swarm'}, 12, 12)
+    boss = Monster({**MONS['lamia'], 'id': 'lamia'}, 10, 14)
+    for m in (gob, swarm, boss):
+        m._aware = True
+    g.monsters.extend([gob, swarm, boss])
+    g._refresh_fov()
+    _read_photo(g)
+    log = _log(g)
+    assert 'The Goblin stops to watch the show.' in log
+    assert 'Scarab Swarm stops to watch' not in log and not swarm.has_effect('stunned')
+    assert 'The Scarab Swarm pays the show no mind.' in log
+    assert 'Lamia has seen better shows, and does not stop.' in log
+    watch = int(sk.data()['stars']['watch_turns'])
+    for _ in range(3):
+        gob.x, gob.y = 13, 10
+        g._advance_turn()
+        assert gob.status_effects.get('stunned', 0) <= watch
+    assert log.count('pays the show no mind') == 1
+
+
+def test_leaving_the_floor_ends_the_show_with_its_bow():
+    g = _game('__test_sk_leave__')
+    _open_floor(g)
+    _read_photo(g)
+    assert [m for m in g.monsters if sk.is_star(m)]
+    here = g.dungeon_level
+    g.msg_log.clear()
+    g._change_level(here + 1, enter_from_top=True)
+    assert sk.data()['stars']['bow'] in _log(g)
+    assert not [m for m in g.monsters if sk.is_star(m)]
+    g._change_level(here, enter_from_top=False)
+    assert not [m for m in g.monsters if sk.is_star(m)]       # a revisit finds no show
 
 
 def _read_photo(g):
@@ -828,21 +1040,75 @@ def _roundtrip(g, name, tmp_path, monkeypatch):
     return g2
 
 
-def test_save_and_load_on_the_stage_mid_dance(tmp_path, monkeypatch):
+def test_a_save_mid_dance_off_restarts_the_round_on_load(tmp_path, monkeypatch):
+    from game_states import STATE_MOOBLE_DANCE
     name = '__test_sk_save__'
     g = _game(name)
     _on_stage(g, 10)
-    for _ in range(3):
-        g._advance_turn()
-    beat = sk.dance_of(g.dungeon)['beat']
+    _to_the_card(g)
+    now = _clock(g)
+    g._mooble_dance_key(pygame.K_d)
+    _dance(g, now)                                           # Bang Chan falls
+    g._mooble_dance_key(pygame.K_RETURN)
+    _dance(g, now, presses=[])                               # a strike
+    g._mooble_dance_key(pygame.K_RETURN)
+    g._mooble_dance_key(pygame.K_SPACE)                      # Lee Know's round, under way
+    now[0] += 4000
+    g._mooble_dance_tick()
+    assert g._mdance['phase'] == 'play'
     g2 = _roundtrip(g, name, tmp_path, monkeypatch)
     assert g2.dungeon_level == STRAY_KIDS_STAGE
     assert g2._stray_kids['touched'] and g2._stray_kids['return_floor'] == 10
+    assert g2._stray_kids['dancing'] == {'mode': 'dance', 'strikes': 2, 'first': False}
     band = _band(g2)
-    assert len(band) == 8 and all(isinstance(m, sk.ZombieMember) for m in band)
-    assert sk.dance_of(g2.dungeon)['beat'] == beat
+    assert len(band) == 7 and all(isinstance(m, sk.ZombieMember) and m.is_allied for m in band)
+    g2.update(1 / 30)
+    assert g2.state == STATE_MOOBLE_DANCE
+    md = g2._mdance
+    assert md['phase'] == 'ready' and md['mode'] == 'dance' and md['sk_member'] == 'lee_know'
+    assert md['sk_strikes'] == 2 and not md['sk_first']
+    now2 = _clock(g2)
+    md = _dance(g2, now2)
+    assert md['won'] and md['sk_outcome'] == 'next'
+    g2._mooble_dance_key(pygame.K_RETURN)
+    g2._mdance = None
+    g2._stray_kids['dancing'] = None
     g2._leave_side_floor()
     assert g2.dungeon_level == 10
+
+
+def test_a_save_on_the_stage_from_before_the_dance_off_settles_the_band(tmp_path, monkeypatch):
+    """An old save has the band fighting: hostile, hurt, held, quarrelling
+    as a war-band in formation, the old dance on the floor. It loads with
+    every member still standing back in his place as a performer, the
+    fallen still fallen, and the announcement still to come."""
+    name = '__test_sk_old_stage__'
+    g = _game(name)
+    _on_stage(g, 9)
+    band = _band(g)
+    _kill(g, band[0])
+    for m in band[1:]:
+        m.is_allied = False
+        m.hp = max(1, m.max_hp // 3)
+        m.__dict__['status_effects'] = {'confused': 4}
+        m._band, m._band_role, m._band_leader = 'stray_kids@stage', 'guard', band[0]
+        m.quarrelsome = True
+        m.x, m.y = m.x - 6, m.y
+    g.dungeon.sk_dance = {'anchor': [40, 25], 'beat': 17, 'shape': 2, 'aware': True, 'facing': [-1, 0]}
+    for k in ('challenge', 'dancing'):
+        g._stray_kids.pop(k, None)
+    g2 = _roundtrip(g, name, tmp_path, monkeypatch)
+    band2 = _band(g2)
+    assert len(band2) == 7 and 'sk_dance' not in g2.dungeon.__dict__
+    for m in band2:
+        assert m.is_allied and m.hp == m.max_hp and not m.status_effects
+        assert not getattr(m, '_band', None) and not m.quarrelsome
+        assert (m.x, m.y) == sk.place_of(g2.dungeon, m._sk_slot)
+    assert g2._stray_kids.get('challenge') is None
+    g2.player.x, g2.player.y = sk.stage_edge(g2.dungeon)
+    g2._refresh_fov()
+    g2._advance_turn()
+    assert g2._stray_kids['challenge'] == 'pending'
 
 
 def test_a_save_from_before_the_egg_has_no_idol(tmp_path, monkeypatch):
@@ -868,6 +1134,16 @@ def test_qa_shift_k_sets_the_idol_down_then_hands_over_the_photo():
     n = len(g.player.inventory)
     g._qa_stray_kids()
     assert len(g.player.inventory) == n
+
+
+def test_qa_shift_k_on_the_stage_opens_the_dance_off_at_once():
+    from game_states import STATE_MOOBLE_DANCE
+    g = _game('__test_sk_qa_stage__')
+    _on_stage(g)
+    g.player.qa_tools = True
+    g._qa_stray_kids()
+    assert g.state == STATE_MOOBLE_DANCE and g._mdance['owner'] == 'stray_kids'
+    assert g._mdance['mode'] == 'practice'
 
 
 def test_dying_on_the_stage_leaves_no_bones(monkeypatch):

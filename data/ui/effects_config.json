@@ -63,6 +63,18 @@
         "static_ms": 300
       }
     },
+    "dance_off_banner": {
+      "handler": "strike_finisher",
+      "scope": "one_shot",
+      "_doc": "The kill banner's look for the Stray Kids' announcement, 'B-B-B-BOSS BATTLE! DANCE OFF!' (game_stray_kids._stray_kids_announce): longer on screen and bigger type, so it is read; the dance-off opens once it is over.",
+      "durations_ms": {"big": 2400},
+      "main_pt": 52,
+      "top_pt": 30,
+      "reduced_motion": {
+        "disable": ["rings", "streak", "drift"],
+        "static_ms": 1600
+      }
+    },
     "identify_success_orb": {
       "handler": "identify_orb",
       "scope": "one_shot",

@@ -65,6 +65,7 @@ DYNAMIC_SOURCES = {
     "sk['stage']['leave_chronicle']": 'data/stray_kids.json',
     "sk['stage']['cleared_chronicle']": 'data/stray_kids.json',
     "sk['stars']['chronicle']": 'data/stray_kids.json',
+    "do['lost_chronicle']": 'data/stray_kids.json dance_off (a lost dance-off)',
     "d['strike_chronicle']": 'data/bococho.json',
     "d['varro']['kill_chronicle']": 'data/bococho.json',
     "cfg['won_chronicle']": 'data/bococho.json race',

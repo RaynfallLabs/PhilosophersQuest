@@ -74,6 +74,25 @@ def test_hold_and_release_for_a_rhythm_game(settings):
     assert music._held is False
 
 
+def test_hold_and_release_let_the_sound_effects_finish_first(settings, monkeypatch):
+    """A sound effect that ended while the music was paused or resumed hung
+    the game for good (the mixer's audio thread and the game each waited on
+    the other's lock: a frozen dance-off). Hold and release now wait until no
+    effect is playing."""
+    pygame.mixer.init()
+    music._playing = True
+    busy = [True, True, False]
+    order = []
+    monkeypatch.setattr(pygame.mixer, 'get_busy', lambda: busy.pop(0) if busy else False)
+    monkeypatch.setattr(pygame.mixer.music, 'pause', lambda: order.append(('pause', len(busy))))
+    monkeypatch.setattr(pygame.mixer.music, 'unpause', lambda: order.append(('unpause', len(busy))))
+    music.hold()
+    assert order == [('pause', 0)]                    # only once nothing was playing
+    busy[:] = [True, False]
+    music.release()
+    assert order[-1] == ('unpause', 0)
+
+
 def test_f5_in_the_game_says_so(settings):
     pygame.init()
     from main import Game

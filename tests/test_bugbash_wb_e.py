@@ -471,6 +471,7 @@ def test_wb_e05_a_song_title_in_a_shout_is_not_a_second_quote():
 
     class _G:
         _stray_kids_say = StrayKidsMixin._stray_kids_say
+        _stray_kids_line = staticmethod(StrayKidsMixin._stray_kids_line)
 
         def __init__(self):
             self.lines = []
@@ -1252,8 +1253,9 @@ def test_journey_09_a_caster(make_game):
 
 
 def test_journey_10_the_stray_kids_stage(make_game):
-    """QA Shift+K: the idol touched, the band fought to the last, the photo
-    taken, read in a fight on the way back."""
+    """QA Shift+K: the idol touched, the band beaten to the last in the
+    dance-off (2026-11-14: it replaced the fight), the photo taken, read in
+    a fight on the way back."""
     import items
     import stray_kids
     g, h = make_game(build='titivillus', name='Titivillus')
@@ -1276,19 +1278,11 @@ def test_journey_10_the_stray_kids_stage(make_game):
     h.move((ix > p.x) - (ix < p.x), (iy > p.y) - (iy < p.y))
     assert g._on_stray_kids_stage()
     assert h.said()[-1] == 'The stage door is the way out (> on it).'
-    heard = []
-    for _ in range(800):
-        band = stray_kids.the_band(g.monsters)
-        if not band:
-            break
-        while g.state not in ('player',) and not h.in_quiz():
-            h.key(pygame.K_RETURN)
-        tgt = min(band, key=lambda m: abs(m.x - p.x) + abs(m.y - p.y))
-        if abs(tgt.x - p.x) + abs(tgt.y - p.y) == 1:
-            heard += blow(h, tgt, 3)
-        elif not path_step(h, tgt.x, tgt.y):
-            h.wait()
-        heard += h.said()
+    # The dance-off, every round on time (the driver of the Stray Kids'
+    # own journey: tests/test_stray_kids_journey.py).
+    from test_stray_kids_journey import fake_clock, to_the_stage, win_the_dance_off
+    heard = to_the_stage(h)
+    heard += win_the_dance_off(h, fake_clock(g))
     assert not stray_kids.the_band(g.monsters)
     said = ' '.join(heard)
     assert '""' not in said                               # WB-E05
