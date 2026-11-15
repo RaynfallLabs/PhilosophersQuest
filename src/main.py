@@ -1220,6 +1220,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # Monsters saved before the lore pass take their kind's weaknesses,
         # resistances, shrugs_off and status lists (affinity.py).
         self._migrate_monster_affinities(state)
+        # A save on the Zombie Stage from before the dance-off had the band
+        # fighting: they go back to their places as performers.
+        self._stray_kids_after_load()
         self.renderer.set_view_origin(layout.MAP_X, 0)
         self.renderer.set_dungeon(self.dungeon.width, self.dungeon.height, layout.MAP_W, layout.GAME_H)
         self._refresh_fov()
@@ -3549,6 +3552,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             # A Stray Kid in a show: step round him (the show never boxes you in)
             if getattr(target, 'is_sk_star', False):
                 self._stray_kids_star_step_past(target)
+                return
+            # A zombie Stray Kid on his stage: the dance-off, never a fight
+            if getattr(target, 'is_sk_zombie', False):
+                self._stray_kids_bump(target)
                 return
             # The abandoned Emberpup on its rock: its own screen
             if getattr(target, '_is_abandoned_emberpup', False):
@@ -8516,12 +8523,17 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # story) open one at a time once play is calm (game_popups.PopupMixin).
         self._seeker_tick()
         self._popup_tick(dt)
-        # The Mooble's dance runs on real time: its beat, every frame.
+        # The dance screen runs on real time: its beat, every frame (the
+        # Mooble's dances and the Stray Kids' dance-off alike).
         if self.state == STATE_MOOBLE_DANCE:
             self._mooble_dance_tick()
         elif (self.state == STATE_PLAYER
               and (self.__dict__.get('_mooble') or {}).get('dancing')):
             self._mooble_after_load()         # saved mid-dance: the phrase again
+        # The Stray Kids' dance-off: opened once the announcement's banner is
+        # over, or again after a load, at the start of its round.
+        if self.state == STATE_PLAYER:
+            self._stray_kids_frame()
         # A resize in this frame or the one before: the quiz clock advances
         # one nominal frame at most (RESIZE_GRACE_FRAMES; on_resize arms it).
         quiz_dt = min(dt, self.MAX_QUIZ_DT)

@@ -325,6 +325,11 @@ def init() -> bool:
         'dance_step_right': lambda: _make_notes([(494, 0.12)], wave='triangle', volume=0.24),
         'dance_step_up':    lambda: _make_notes([(587, 0.12)], wave='triangle', volume=0.24),
         'dance_step_down':  lambda: _make_notes([(294, 0.12)], wave='triangle', volume=0.24),
+        # The Stray Kids' "B-B-B-BOSS BATTLE! DANCE OFF!": a stutter, then
+        # the chord (game_stray_kids._stray_kids_announce).
+        'dance_off':    lambda: _make_notes([(392, 0.07), (0, 0.03), (392, 0.07), (0, 0.03), (392, 0.07),
+                                             (0, 0.05), (523, 0.12), ((523, 659, 784, 1047), 0.60)],
+                                            wave='square', volume=0.22),
     }
     for _i, _hz in enumerate(_CHAIN_SCALE, start=1):
         defs[f'chain_{_i}'] = (lambda hz=_hz: _make_notes([(hz, 0.11)], wave='triangle', volume=0.26))

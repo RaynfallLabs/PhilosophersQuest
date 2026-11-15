@@ -1,11 +1,10 @@
 {
-  "_doc": "The Stray Kids easter egg (src/stray_kids.py, src/game_stray_kids.py). On one floor from first_floor to last_floor (every run: chance_per_run 1.0) a gold shrine to the K-pop band Stray Kids stands in a room (fixture sk_idol, data/fixtures.json). It calls the hero over the first time he sees it (idol.call); Observe shows a shrine plainly Stray Kids (SKZ, STAY, eight little dancers) without naming them; walking into it hums (idol.first_bump), and walking into it again touches it, and the hero is taken to the Zombie Stage (boss_levels.STRAY_KIDS_STAGE), a side floor like the Cow Level: never depth, never the Road. There the eight members dance as zombies (data/monsters.json sk_zombie_*), a war-band led by Bang Chan (data/war_bands.json stray_kids). They move as one formation: the dance's anchor closes on the hero and its shape changes every beats_per_shape beats, and a member strikes only on the downbeat (every strike_every beats). They leave no corpse, and the last to fall leaves the Autographed Stray Kids Photo (data/items/scroll.json). Read (one grammar question), the photo is spent and the band, alive, dances round the hero for stars.dance_turns turns: no blows on either side, and every monster near them stops to watch (stunned), except named foes, the mindless and what cannot be stunned (they are told unmoved: stars.unmoved_named, stars.unmoved). The show ends when its turns run out or the hero leaves the floor, with the bow either way. NO REAL LYRICS ANYWHERE, reworded or not: every line here is made up. shouts.songs riff on the songs' titles and concepts (Case 143's 1-4-3 pager code and police-call video, Christmas EveL's naughty-list pun and Santa's workshop, God's Menu's chefs, Thunderous's singer-and-nagger pun and goblin dance, Maniac's Frankenstein stitches, Chk Chk Boom's video turning Deadpool down), never on their words. Facts checked on Grokipedia, then Wikipedia (2026-11-13).",
+  "_doc": "The Stray Kids easter egg (src/stray_kids.py, src/game_stray_kids.py). On one floor from first_floor to last_floor (every run: chance_per_run 1.0) a gold shrine to the K-pop band Stray Kids stands in a room (fixture sk_idol, data/fixtures.json). It calls the hero over the first time he sees it (idol.call); Observe shows a shrine plainly Stray Kids (SKZ, STAY, eight little dancers) without naming them; walking into it hums (idol.first_bump), and walking into it again touches it, and the hero is taken to the Zombie Stage (boss_levels.STRAY_KIDS_STAGE), a side floor like the Cow Level: never depth, never the Road. There the eight members (data/monsters.json sk_zombie_*) stand posed in a V at the far end of the stage hall (stage.formation). They are performers, not foes: no blow or spell touches them, and they never strike. The first time the hero sets foot on the stage the band strikes a pose and the announcement fires (dance_off.announce: the big banner, as a kill's): B-B-B-BOSS BATTLE! DANCE OFF! The dance-off is the fight (dance_off): practice first, free and as often as wanted, then eight rounds of Simon Says on the Mooble's dance screen (src/game_mooble_dance.py, src/rhythm.py), a member leading each, Bang Chan first. A round won and its leader crumbles into glitter; the last to fall leaves the Autographed Stray Kids Photo (data/items/scroll.json). Read (one grammar question), the photo is spent and the band, alive, dances round the hero for stars.dance_turns turns: no blows on either side, and every monster near them stops to watch (stunned), except named foes, the mindless and what cannot be stunned (they are told unmoved: stars.unmoved_named, stars.unmoved). The show ends when its turns run out or the hero leaves the floor, with the bow either way. NO REAL LYRICS ANYWHERE, reworded or not: every line here is made up. shouts.songs riff on the songs' titles and concepts (Case 143's 1-4-3 pager code and police-call video, Christmas EveL's naughty-list pun and Santa's workshop, God's Menu's chefs, Thunderous's singer-and-nagger pun and goblin dance, Maniac's Frankenstein stitches, Chk Chk Boom's video turning Deadpool down), never on their words. Facts checked on Grokipedia, then Wikipedia (2026-11-13).",
   "chance_per_run": 1.0,
   "first_floor": 8,
   "last_floor": 12,
   "idol_fixture": "sk_idol",
   "photo_id": "autographed_stray_kids_photo",
-  "band_id": "stray_kids",
   "members": [
     "bang_chan",
     "lee_know",
@@ -51,205 +50,46 @@
     "leave_cleared": "You slip out through the stage door. Behind you, the lights go down. The show is over.",
     "leave_unfinished": "You slip out through the stage door. Behind you, the music cuts off mid-chorus, and the door will not open again.",
     "leave_chronicle": "I walked out on a zombie concert halfway through. I regret nothing.",
-    "cleared_chronicle": "I sat through an entire zombie Stray Kids concert, and fought it, and won. I am going to hear that bass line in my sleep.",
-    "tell": "Their songs get stuck in your head: they can confuse you, and a few can put you to sleep, stun or blind you for a moment. Keep your distance from the singers, or end it fast. Holy power, fire and slashing blades hurt them most; points and arrows do less."
-  },
-  "dance": {
-    "beats_per_shape": 4,
-    "strike_every": 2,
-    "keep_off": 2,
-    "notice_range": 30,
-    "shape_order": [
-      "v",
-      "two_rows",
-      "diamond",
-      "column",
-      "line"
-    ],
-    "shapes": {
-      "v": [
-        [
-          0,
-          1
-        ],
-        [
-          -1,
-          0
-        ],
-        [
-          1,
-          0
-        ],
-        [
-          -2,
-          -1
-        ],
-        [
-          2,
-          -1
-        ],
-        [
-          -3,
-          -2
-        ],
-        [
-          3,
-          -2
-        ],
-        [
-          0,
-          -1
-        ]
+    "cleared_chronicle": "I sat through an entire zombie Stray Kids concert, danced against all eight of them, and won. I am going to hear that bass line in my sleep.",
+    "tell": "This is a dance-off, not a fight: no blade or spell will touch them. Each round, one of them dances a phrase; copy it on the arrow keys, in time with the beat.",
+    "pose": "The band snaps into a pose, Bang Chan at its point, and points at you as one.",
+    "challenge_again": "The band strikes its pose again and beckons you up. \"Rematch? Rematch! Five, six, seven, EIGHT!\"",
+    "_formation_doc": "Where the eight stand on the stage: a V pointing at the wings, Bang Chan at its point (one place per member, in the members' order, as [dx, dy] from home_from_east tiles in from the hall's east wall on the middle row). A lost dance-off sets the members still standing back in their places (stray_kids.settle_band); so does loading a save from before the dance-off.",
+    "home_from_east": 6,
+    "formation": [
+      [
+        -1,
+        0
       ],
-      "two_rows": [
-        [
-          0,
-          0
-        ],
-        [
-          -1,
-          0
-        ],
-        [
-          1,
-          0
-        ],
-        [
-          2,
-          0
-        ],
-        [
-          -2,
-          -1
-        ],
-        [
-          -1,
-          -1
-        ],
-        [
-          1,
-          -1
-        ],
-        [
-          0,
-          -1
-        ]
+      [
+        0,
+        -1
       ],
-      "diamond": [
-        [
-          0,
-          2
-        ],
-        [
-          -1,
-          1
-        ],
-        [
-          1,
-          1
-        ],
-        [
-          -2,
-          0
-        ],
-        [
-          2,
-          0
-        ],
-        [
-          -1,
-          -1
-        ],
-        [
-          1,
-          -1
-        ],
-        [
-          0,
-          0
-        ]
+      [
+        0,
+        1
       ],
-      "column": [
-        [
-          0,
-          2
-        ],
-        [
-          0,
-          1
-        ],
-        [
-          0,
-          0
-        ],
-        [
-          0,
-          -1
-        ],
-        [
-          0,
-          -2
-        ],
-        [
-          0,
-          -3
-        ],
-        [
-          0,
-          -4
-        ],
-        [
-          0,
-          -5
-        ]
+      [
+        1,
+        -2
       ],
-      "line": [
-        [
-          0,
-          0
-        ],
-        [
-          -1,
-          0
-        ],
-        [
-          1,
-          0
-        ],
-        [
-          -2,
-          0
-        ],
-        [
-          2,
-          0
-        ],
-        [
-          -3,
-          0
-        ],
-        [
-          3,
-          0
-        ],
-        [
-          -4,
-          0
-        ]
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        -3
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        1,
+        0
       ]
-    },
-    "shape_lines": {
-      "v": "The band snaps into a V, Bang Chan at its point.",
-      "two_rows": "The band splits into two neat rows.",
-      "diamond": "The band spins into a diamond round I.N.",
-      "column": "The band falls into a single file, one behind another, every head bobbing.",
-      "line": "The band spreads out in one long line across the stage."
-    },
-    "shape_line_chance": 0.5,
-    "beat_tell": "They move to the beat, and strike only on the downbeat.",
-    "line_chance": 0.3,
-    "member_line_share": 0.4,
-    "song_line_share": 0.35
+    ]
   },
   "shouts": {
     "band": [
@@ -267,7 +107,7 @@
       "Has everyone eaten? Brains count.",
       "Okay, okay, one more take. From the top!",
       "I'll sleep when I'm dead. ...Huh.",
-      "You're doing amazing! Keep fighting! Not us, though!",
+      "You're doing amazing! Keep dancing! Not as well as us, though!",
       "\"Thunderous\"! Stop nagging me to go to bed!"
     ],
     "lee_know": [
@@ -304,7 +144,7 @@
       "\"ReawakeR\"! I sang it for Solo Leveling. Now I'm doing it."
     ],
     "seungmin": [
-      "Strike three. You're out. Of hit points.",
+      "Strike three. You're out. Of the dance-off.",
       "That outfit? Bold choice.",
       "I could do this all day. I HAVE done this all day. We've been dead a while.",
       "\"Case 143\"? Case closed. Your outfit is the crime."
@@ -342,7 +182,8 @@
         "Zombie Lee Know turns his back on you to check that the cat is comfortable.",
         "Zombie Lee Know holds the cat up to admire it. It ignores him. He looks delighted."
       ]
-    }
+    },
+    "_doc": "Lee Know and his cat: when he is the one to shout (shouting), with this chance he pets the cat instead, and the line says so. You are less important than the cat."
   },
   "observe": {
     "bang_chan": "The rings under his eyes are older than the zombie thing. He keeps glancing back to check that the other seven are all right.",
@@ -458,5 +299,208 @@
       120
     ],
     "observe": "He is in the middle of a show and having the time of his life. He will be gone in a few turns."
+  },
+  "shouting": {
+    "_doc": "While the hero walks the stage, a member in sight now and then shouts (line_chance a turn, once the band has seen him): his own line (member_line_share), a riff on one of their songs (song_line_share), or a band line. Lee Know may pet his cat instead (distracted). The stars of a show shout with the same line_chance.",
+    "line_chance": 0.3,
+    "member_line_share": 0.4,
+    "song_line_share": 0.35
+  },
+  "dance_off": {
+    "_doc": "The band's dance-off (Brandon, 2026-11-14: \"B-B-B-BOSS BATTLE! DANCE OFF!\"; \"a Simon Says style rhythm game copy with the arrow keys for several rounds\"; \"an option to practice as many times as you want before you try it\"). The Mooble's dance screen and scoring (src/game_mooble_dance.py, src/rhythm.py), with these numbers. Eight rounds, one for each member, in the members' order (Bang Chan first): round r (0 first) is the first first_steps + r * steps_per_round steps of the choreography, one step a beat, at bpm_first + r * bpm_per_round beats a minute (4 steps at 84 up to 11 at 112). Simon Says: each round is the whole of the last, and one step more. A round lays out as the Mooble's dances do: a count-in of lead_beats, the leader's CALL over the phrase's beats (whole bars of bar_beats, with at least rest_beats of rest after the last step), then the hero's RESPONSE over the same beats. memory: once the hero's turn comes the band's arrows go dark, and his own row shows only where each step falls (copy it from memory); every arrow shows once judged. A round is won with pass_share of its steps in time and no more than max_misses misses (a stray key counts as one), judged Perfect within perfect_ms and Good within good_ms. Won: the leader crumbles into glitter and the next member leads. Lost: the earworm hits (his song: its quip, its hindrance, a little damage that never takes the last hit point) and the round starts again, with one strike gone. Out of strikes (strikes a dance-off), the dance-off is lost: the band laughs, the members still standing go back to their places (the fallen stay fallen), and the hero is set down at the edge of the stage. Practise (free, no stakes, as often as wanted, Esc any time) is offered before every dance-off; walk into any member to challenge them again. No automatic slowing: tune these after Brandon's play-test.",
+    "announce": {
+      "top": "B-B-B-BOSS BATTLE!",
+      "main": "DANCE OFF!",
+      "log": "B-B-B-BOSS BATTLE! DANCE OFF!",
+      "colour": [
+        255,
+        96,
+        200
+      ]
+    },
+    "choreography": [
+      "left",
+      "right",
+      "left",
+      "right",
+      "up",
+      "down",
+      "up",
+      "left",
+      "right",
+      "down",
+      "up"
+    ],
+    "_choreography_doc": "Their dance, one step a beat, written out so it can be learned run after run, like a real routine: side, side, side, side; bounce, bounce, bounce; side, side; bounce, bounce. Round r dances the first first_steps + r * steps_per_round of it.",
+    "first_steps": 4,
+    "steps_per_round": 1,
+    "bpm_first": 84,
+    "bpm_per_round": 4,
+    "lead_beats": 4,
+    "bar_beats": 4,
+    "rest_beats": 1,
+    "good_ms": 150,
+    "perfect_ms": 50,
+    "pass_share": 0.75,
+    "max_misses": 2,
+    "stray_is_miss": true,
+    "memory": true,
+    "strikes": 3,
+    "earworm": {
+      "_doc": "A lost round: the leader's song gets stuck in the hero's head. His song is his attack with a hindrance (a voice first; data/monsters.json), its quip said after hit; the hindrance is his song's own effect for its effect_duration (effect and turns when it has none), and the damage is its dice, never more than max_damage and never the hero's last hit point.",
+      "max_damage": 3,
+      "effect": "confused",
+      "turns": 3,
+      "hit": "{name}'s {song} gets stuck in your head. {quip}",
+      "effects": {
+        "confused": "Your head spins",
+        "sleeping": "You nod off where you stand",
+        "stunned": "You freeze",
+        "blinded": "The lights dazzle you",
+        "weakened": "Your knees go weak"
+      },
+      "effect_line": "{what} for {turns}.",
+      "hurt_line": "It hurts to think ({damage} HP).",
+      "turn_words": [
+        "{n} turn",
+        "{n} turns"
+      ]
+    },
+    "leaders": {
+      "bang_chan": {
+        "open": [
+          "Okay, okay! Everyone ready? Five, six, seven, EIGHT!",
+          "I wrote this one at four in the morning. You're going to love it."
+        ],
+        "roast": [
+          "Okay, okay, one more take. From the top!",
+          "Not bad! Not good, either. Again!"
+        ]
+      },
+      "lee_know": {
+        "open": [
+          "Watch my feet. Not the cat. My FEET.",
+          "I taught this to backup dancers. Try to keep up."
+        ],
+        "roast": [
+          "Again. That was sloppy. Again.",
+          "My cats dance better than you."
+        ]
+      },
+      "changbin": {
+        "open": [
+          "Prepare to be TERRIFIED. By my footwork.",
+          "This is the dark part of the dance. Very dark. Very scary."
+        ],
+        "roast": [
+          "That was so bad it made me do a cute face.",
+          "Arm day is easier than this. For me, not for you."
+        ]
+      },
+      "hyunjin": {
+        "open": [
+          "*flips his hair and counts you in*",
+          "Dance it like a painting. A dramatic one."
+        ],
+        "roast": [
+          "*flips his hair, slowly, so you notice*",
+          "You missed a step. I noticed. I always notice."
+        ]
+      },
+      "han": {
+        "open": [
+          "Quokka mode: ON! Try to keep up!",
+          "I'll go slow. Slow for me. Very fast for you."
+        ],
+        "roast": [
+          "You lost the beat! I lose my breath, but never the beat!",
+          "*mumbles through a mouthful of snacks: \"Mmf-mmf-MMF!\"*"
+        ]
+      },
+      "felix": {
+        "open": [
+          "*says, in a voice like an earthquake: \"dance.\"*",
+          "I baked brownies for the winner! They're a little bit undead."
+        ],
+        "roast": [
+          "Aww. That was a lovely try. A lovely, wrong try.",
+          "HI-YAH! That was one kick for every step you missed."
+        ]
+      },
+      "seungmin": {
+        "open": [
+          "Let's see if your feet are as bold as your outfit.",
+          "I pitch, I sing, I judge. Mostly I judge."
+        ],
+        "roast": [
+          "That outfit? Bold choice. Those steps? Bolder.",
+          "Swing and a miss. Several misses, actually."
+        ]
+      },
+      "i_n": {
+        "open": [
+          "I'm leading this one! Me! The youngest! Watch me!",
+          "Hyung said I could lead. Hyung? HYUNG?"
+        ],
+        "roast": [
+          "Even I got that one, and they never let me do ANYTHING.",
+          "*warbles an old trot ballad at you, very sadly*"
+        ]
+      }
+    },
+    "observe_tell": "He is waiting for a dance-off. Walk into any of the band to take them on.",
+    "laugh": "Three strikes! The band doubles over laughing, and bits of them fall off. They shuffle back to their places, still giggling, and you stagger to the edge of the stage.",
+    "lost_log": "The band laughs you off the stage. Walk into any of them for a rematch.",
+    "won_log": "The band is no more. You won the dance-off!",
+    "lost_chronicle": "Lost a dance-off to a zombie boy band. They laughed until bits of them fell off. I will be back.",
+    "screen": {
+      "title_practice": "PRACTISE WITH THE BAND",
+      "title_dance": "THE DANCE-OFF: ROUND {round} OF {rounds}",
+      "how": "Simon says! The leader dances a phrase, then it is your turn: copy it from memory on the arrow keys, in time with the beat. Every round adds one step, and the beat gets a little faster.",
+      "pass_mark": "To win a round: {need} of {steps} steps in time, and no more than {misses} misses.",
+      "practice_note": "Just practice: nothing is lost, and you can stop any time.",
+      "count_in": [
+        "5",
+        "6",
+        "7",
+        "8!"
+      ],
+      "watch": "Watch {leader}!",
+      "your_turn": "Your turn! From memory!",
+      "his_row": "{leader}'s Steps",
+      "your_row": "Your Steps",
+      "grades": {
+        "perfect": "Perfect",
+        "good": "Good",
+        "miss": "Miss"
+      },
+      "result_line": "{hits} of {steps} steps in time ({perfects} perfect), {misses}.",
+      "miss_words": [
+        "{n} miss",
+        "{n} misses"
+      ],
+      "practice_pass": "You kept up! In the dance-off, that would win the round.",
+      "practice_fail": "Not quite. In the dance-off, that would cost a strike.",
+      "dance_pass": "You kept up!",
+      "dance_fail": "Out of step!",
+      "info_round": "Round {round} of {rounds}",
+      "info_leader": "{leader} leads",
+      "info_tempo": "{steps} steps, {bpm} beats a minute",
+      "info_strikes": "Strikes left: {n} of {of}",
+      "falls": "{name} crumbles into glitter! The next member steps up.",
+      "falls_last": "{name} crumbles into glitter! The last of the band is gone.",
+      "strike_line": "A strike! {n} left. The round starts again.",
+      "out_line": "That was your last strike.",
+      "footer_ready_practice": "Space: Practise   |   D: Dance-Off!   |   Esc: Not Yet",
+      "footer_ready_first": "Space: Dance!   |   Esc: Not Yet",
+      "footer_ready_dance": "Space: Dance!",
+      "footer_practice": "Arrow keys: dance   |   Esc: stop practising",
+      "footer_dance": "Arrow keys: dance it through, the round has begun",
+      "footer_practice_done": "Enter: Practise Again   |   D: Dance-Off!   |   Esc: Not Yet",
+      "footer_next": "Enter: Next Round",
+      "footer_retry": "Enter: Dance the Round Again",
+      "footer_won": "Enter: Take a Bow",
+      "footer_lost": "Enter: Off the Stage"
+    }
   }
 }

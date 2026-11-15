@@ -20,9 +20,9 @@ turns or frames:
 
 Nothing here knows about the Mooble: a phrase is any list of steps, and a
 dance may have a CALL to echo (the Mooble's visits) or none (a count-in, then
-the steps lit as they come: his special). Another dance-off (several rounds
-of Simon-says) can lay out each round with ``timeline`` and judge it with
-``judge``.
+the steps lit as they come: his special). The Stray Kids' dance-off (eight
+rounds of Simon Says, stray_kids.round_timeline) lays out each round with
+``timeline`` and judges it with ``judge``.
 
 How a key is matched to a step: keys are taken in the order pressed. A key
 belongs to the nearest step not yet decided whose time is within

@@ -164,7 +164,9 @@ state = {
     'escorts':                list,         # escort_system.Escort (never in 'pets')
     '_setne':                 dict,         # Setne's Tomb: floor, placed, sealed, room
     '_stray_kids':            dict,         # the Stray Kids idol and stage: floor, spawned,
-                                            # touched, return_floor, outcome, photo_dropped
+                                            # touched, return_floor, outcome, photo_dropped,
+                                            # challenge, dancing (the dance-off screen open:
+                                            # mode, strikes left), lost (dance-offs lost)
 
     # NPC / flavor encounter tracking (the views the spawners read;
     # filled by the Road)
