@@ -81,8 +81,9 @@ def _cap(raw) -> str:
     return proper_name(str(raw).replace('_', ' '))
 
 
-# Bestiary rows told in the warning colour: what hurts it (affinity.bestiary_rows).
-_BESTIARY_WARM = ('weak', 'banes', 'easily')
+# Bestiary rows told in the warning colour: what hurts it (affinity.bestiary_rows),
+# "Both At Once" (the weakness and the bane together) among them.
+_BESTIARY_WARM = ('weak', 'banes', 'both', 'easily')
 
 
 def monster_trait_lines(mdef: dict, known: bool = True) -> list:
@@ -9493,7 +9494,19 @@ class RenderMixin:
         return lines or [("No revealed mechanics recorded.", FP.FADED_TEXT, self.font_sm)]
 
     def _lore_corpse_lines(self, corpse, id_level):
-        mdef = getattr(corpse, 'monster_def', None) or {}
+        # The body carries only a few of its kind's numbers (Game._make_corpse:
+        # health, THAC0, blows, weaknesses and resistances; a graveyard's
+        # laid-out skeleton, food_system.make_corpse, hardly any; an old save's
+        # body what was copied then). Its kind's own definition fills the rest,
+        # and is what the page says it is made of: the Bestiary page's own
+        # reading (bug bash 3.5.1 D: a studied stirge swarm's body never said it
+        # shrugs off a sword, the very thing the page was rebuilt to tell; a
+        # graveyard skeleton's said "HP: ?" and nothing of its weaknesses).
+        import affinity as _aff_kind
+        body = dict(getattr(corpse, 'monster_def', None) or {})
+        kind_def = _aff_kind._monster_defs().get(str(getattr(corpse, 'monster_id', '') or '')) or {}
+        mdef = {**kind_def, **body}
+        made_of = {**body, **kind_def} if kind_def else body
         identity = [
             (getattr(corpse, 'monster_name', 'Unknown creature'), FP.GOLD_BRIGHT, get_font('heading', 20)),
         ]
@@ -9545,7 +9558,7 @@ class RenderMixin:
             # What it is made of, with how much each changes a blow: the ONE
             # reading the blow itself follows (affinity.bestiary_rows).
             import affinity as _aff_pl
-            for _k, _t in _aff_pl.bestiary_rows(mdef):
+            for _k, _t in _aff_pl.bestiary_rows(made_of):
                 mechanics.append((_t, FP.WARNING_TEXT if _k in _BESTIARY_WARM else FP.CYAN_ACCENT,
                                   self.font_sm))
 
@@ -9580,7 +9593,7 @@ class RenderMixin:
             except Exception:
                 pass
 
-        lore = getattr(corpse, 'lore', '') if id_level >= 4 else (
+        lore = (getattr(corpse, 'lore', '') or kind_def.get('lore', '')) if id_level >= 4 else (
             "Its history is hidden until you identify the corpse."
         )
         return identity, mechanics, lore or "No lore recorded."
