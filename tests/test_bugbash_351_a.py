@@ -229,3 +229,35 @@ def test_a4_trophy_words_say_what_the_power_does():
     _apply_permanent_power(p, 'fire_immunity', {})
     after = p.take_damage(100, 'fire')
     assert 0 < after < before
+
+
+# ---------------------------------------------------------------------------
+# A5. A trader bought the Mooble's tart (and the Scroll of Death's Bane).
+# ---------------------------------------------------------------------------
+
+def test_a5_a_trader_never_buys_a_withheld_piece():
+    """The docs and items.WITHHELD_IDS say the Starnut Tart is never
+    stolen, given as payment or sold; a trader who buys food bought it.
+    The Scroll of Death's Bane, which the secret ending reads, sold too:
+    the Game's list named it "death_bane", not its id. The real sell
+    screen's offer says "Not for sale" now."""
+    import traders
+    from items import make_death_bane_scroll, make_item_by_id
+    g = _game()
+    tart = make_item_by_id('food', 'starnut_tart')
+    scroll = make_death_bane_scroll(0, 0)
+    bread = make_item_by_id('food', 'bread_ration')
+    for it in (tart, scroll):
+        assert traders.is_quest_piece(it, g._QUEST_PIECE_IDS), it.id
+        assert traders.refusal({'buys': 'all'}, it, known=True, cursed_known=False,
+                               quest_ids=g._QUEST_PIECE_IDS) == 'Not for sale'
+    # Food that is only food still sells.
+    assert traders.refusal({'buys': ['food']}, bread, known=True, cursed_known=False,
+                           quest_ids=g._QUEST_PIECE_IDS) is None
+    # Through the trader's own offer, as the Sell screen asks it.
+    g._shop_merchant = types.SimpleNamespace(
+        buys=['food', 'scroll'], buys_cursed=False, markup=1.0, purse=10_000,
+        person='Old Mags', pronouns=lambda: ('she', 'her', 'her'))
+    assert g._trader_offer(tart) == (0, 'Not for sale')
+    offer, why = g._trader_offer(bread)
+    assert why is None and offer > 0
