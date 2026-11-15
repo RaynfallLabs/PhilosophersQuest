@@ -71,6 +71,21 @@ def test_floor_ones_atmosphere_is_said_at_the_start_and_only_once():
     assert _texts(g).count(atmo[0]) == 1
 
 
+# ------------------------------------------------------- the hint pool
+
+def test_no_hint_says_a_cleared_floor_refills_at_once():
+    """'Clear a floor and it does not stay cleared. Something always wanders
+    in to see what the noise was.' was true while a newcomer came every 22
+    turns and went to the last fight from anywhere; since 3.5.1 nothing comes
+    for the floor's grace, and a newcomer goes to a fight only within
+    earshot."""
+    import json
+    with open(os.path.join(ROOT, 'data', 'hints.json'), encoding='utf-8') as f:
+        text = json.dumps(json.load(f)).lower()
+    assert 'does not stay cleared' not in text
+    assert 'always wanders in' not in text
+
+
 # ------------------------------------------- the run's people and the camp
 
 def _camp_game():

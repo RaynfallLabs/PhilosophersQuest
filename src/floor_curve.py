@@ -169,9 +169,11 @@ def dice_for_average(avg: float, sides: int = 6) -> str:
 # ---------------------------------------------------------------------------
 
 # Wandering monsters stop arriving while this many are already hunting the
-# player, or while the floor holds wander_alive_cap(level) alive in all: about
-# what a floor starts with, so a lingering hero's floor fills back up but
-# does not flood.
+# player, or while the floor holds wander_alive_cap(level) alive in all, so a
+# lingering hero's floor fills back up but does not flood. (Since 3.5.1 most
+# floors start above the cap, a median of 13-16 against 10-12 on floors 2-12
+# and 28-30 against 23-25 deep, so the trickle refills only a floor the hero
+# has thinned out; the maze floors start below it.)
 WANDER_HUNTING_CAP = 3
 
 
