@@ -378,6 +378,7 @@ def generate_dungeon(width: int = 80, height: int = 50, level: int = 1,
     # -- 11. Atmosphere messages ----------------------------------------------
     _build_atmosphere(dungeon)
 
+    _open_the_way_down(dungeon)
     return dungeon
 
 
@@ -426,6 +427,7 @@ def _generate_maze_dungeon(width: int, height: int, level: int,
     _assign_dark_rooms(dungeon, level, rng)
     _build_atmosphere(dungeon)
 
+    _open_the_way_down(dungeon)
     return dungeon
 
 
@@ -571,6 +573,57 @@ def _find_stair_tiles(tiles, width, height):
             elif t == STAIRS_DOWN:
                 down = (x, y)
     return up, down
+
+
+def _open_the_way_down(dungeon) -> int:
+    """The way from the up stair to the down stair never hangs on a secret
+    door: where it does, the secret doors on the way become plain doors.
+    Returns how many were opened.
+
+    The stair checks (_bfs_reaches) count a secret door as passable, since
+    bumping one opens it. So a water pool or a lava river that cut the plain
+    route was kept whenever a shortcut's secret door still joined the halves,
+    and about one floor in 12,000 (floors 15-19, measured 3.5.1) left the
+    hero no way down but to search the walls (found by the Black Knight's
+    test, which asks that the down stair be reached on foot). A secret door
+    is for a shortcut or a hidden chamber, never the only way on."""
+    from collections import deque
+    w, h = dungeon.width, dungeon.height
+    up, down = _find_stair_tiles(dungeon.tiles, w, h)
+    if up is None or down is None:
+        return 0
+    plain = (FLOOR, STAIRS_UP, STAIRS_DOWN, DOOR, ALTAR, FOUNTAIN, GRAVE, THRONE, ICE)
+    blocks = getattr(dungeon, 'fixture_blocks', None) or ()
+
+    def walk(ok):
+        prev = {up: None}
+        q = deque([up])
+        while q:
+            x, y = q.popleft()
+            if (x, y) == down:
+                return prev
+            for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+                n = (x + dx, y + dy)
+                if (n in prev or not (0 <= n[0] < w and 0 <= n[1] < h)
+                        or dungeon.tiles[n[1]][n[0]] not in ok or n in blocks):
+                    continue
+                prev[n] = (x, y)
+                q.append(n)
+        return None
+
+    if walk(plain) is not None:
+        return 0
+    prev = walk(plain + (SECRET_DOOR,))
+    if prev is None:
+        return 0                          # cut off outright: the terrain passes see to that
+    opened = 0
+    t = down
+    while t is not None:
+        if dungeon.tiles[t[1]][t[0]] == SECRET_DOOR:
+            dungeon.tiles[t[1]][t[0]] = DOOR
+            opened += 1
+        t = prev[t]
+    return opened
 
 
 def _bfs_reaches(tiles, width, height, start, goal) -> bool:
