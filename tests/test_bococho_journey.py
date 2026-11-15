@@ -235,7 +235,14 @@ def test_the_bococho_from_the_camp_to_the_saddle(make_game):  # noqa: F811
     assert g.player.riding and pet.ridden
     h.said()
     g.dungeon.dark_rooms = set()
-    place_monster(g, 'goblin', -3, 0)
+    # Three tiles off on open ground, on whichever side has room: about one
+    # camp in ten stands within a few tiles of the map's west edge, and a
+    # goblin set three tiles west of the hero there stood in the edge wall,
+    # never seen, so the rider was never set down (seen in a full run, where
+    # the camp's place follows the run's own seed).
+    side = -3 if g.player.x > 4 else 3
+    open_floor(g, g.player.x, g.player.y, 3)
+    place_monster(g, 'goblin', side, 0)
     g._refresh_fov()
     h.wait()
     assert not g.player.riding and not pet.ridden, h.peek()
