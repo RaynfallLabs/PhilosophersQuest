@@ -7123,9 +7123,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 self._chronicle_first_compound = True
                 self._chron('milestone', f"Cooked my first proper recipe: {recipe['name']}. The dungeon smelled like a kitchen for once.",
                             once='first_compound')
-            # Track discovered recipes
+            # Track discovered recipes: those cooked, not ruined (the list's
+            # own word, "successfully cooked", and the Seeker's count;
+            # bug bash 3.5.1 A).
             rname = recipe.get('name', '')
-            if rname and rname not in self._cooked_recipes:
+            if rname and not _ruined and rname not in self._cooked_recipes:
                 self._cooked_recipes.append(rname)
             if not _ruined:
                 self._seeker_event('cooked', recipe=recipe.get('id') or rname, **_facts)
