@@ -88,7 +88,7 @@ def test_the_song_its_power_and_its_art_ship():
     assert quirk_system._ACTIVE_POWER_DEFS['math_is_cool']['cooldown'] == 5000
     assert quirk_system._QUIRK_PROGRESS['math_is_cool'] == ('math_streak', 100, False)
     import quirk_text
-    assert 'So Then I Was Like...' in quirk_text.quirk_description('math_is_cool')
+    assert 'Doubles your math chain' in quirk_text.quirk_description('math_is_cool')
     assert quirk_text.quirk_hint('math_is_cool')
 
 
@@ -122,29 +122,68 @@ def test_a_wrong_answer_breaks_the_run_the_clock_does_not():
 
 # ---------------------------------------------------------------- using it
 
-def test_the_power_plays_the_song_and_doubles_the_chain(quiet_music):
+def _attack_chain(g, right):
+    """A real attack quiz on a goblin: ``right`` answers right, then the
+    chain on the quiz's own counter."""
     import combat
+    qe = g.quiz_engine
+    combat.player_attack(g.player, _goblin(), qe, lambda *a, **k: None)
+    seen = []
+    for _ in range(right):
+        qe.answer(str(qe.current_question['answer']))
+        seen.append(qe.chain)
+        qe.result_timer = 0
+        qe.update(0.01)                       # on to the next question
+    return seen
+
+
+def test_the_power_plays_the_song_and_doubles_the_chain_on_the_quiz(quiet_music):
     g = _game()
     for _ in range(100):
         _answer(g, True)
-    p, gob = g.player, _goblin()
-    plain = combat.effective_chain(p, gob, None, 5, consume=False)
+    p = g.player
+    assert _attack_chain(g, 3) == [1, 2, 3]
     assert g._activate_power('math_is_cool') is False                # a turn passes
     assert p.power_cooldowns['math_is_cool'] == 5000
     st = songs.active(p)
     assert st and st['id'] == SONG and st['left'] == pytest.approx(175)
     said = ' '.join(str(e[0]) for e in g.msg_log.entries[-3:])
-    assert 'Math is NOT cool' in said and 'two links' in said
+    assert 'Math is NOT cool' in said and 'counts double' in said
     assert songs.effect_label(p) == 'Math is Cool 2:55'
-    assert combat.effective_chain(p, gob, None, 5, consume=False) == plain + 5
-    assert combat.effective_chain(p, gob, None, 0, consume=False) == 0   # a miss is a miss
+    # The counter on the quiz goes up by two, where it is seen.
+    assert _attack_chain(g, 3) == [2, 4, 6]
     g._song_frame(0.0)
     assert quiet_music[0][0] == 'play' and quiet_music[0][1].endswith('math_is_cool.ogg')
     for _ in range(400):
         g._song_frame(0.5)
     assert songs.active(p) is None
     assert any('help me with my homework' in str(e[0]) for e in g.msg_log.entries[-4:])
-    assert combat.effective_chain(p, gob, None, 5, consume=False) == plain
+    assert _attack_chain(g, 3) == [1, 2, 3]
+
+
+def test_the_text_is_short_and_keeps_the_song_a_surprise():
+    import quirk_system
+    import quirk_text
+    texts = [quirk_text.quirk_description('math_is_cool'), quirk_text.quirk_hint('math_is_cool'),
+             quirk_system._QUIRK_EFFECTS['math_is_cool'], quirk_system._QUIRK_TRIGGER['math_is_cool'],
+             quirk_system._ACTIVE_POWER_DEFS['math_is_cool']['desc']]
+    for t in texts:
+        assert 'song' not in t.lower() and 'So Then' not in t, t
+    assert len(quirk_text.quirk_description('math_is_cool')) <= 100
+
+
+def test_a_cap_is_never_passed_by_a_step_of_two():
+    from quiz_engine import QuizEngine
+    qe = QuizEngine()
+    qe.start_quiz(mode='chain', subject='math', tier=1, callback=lambda *a: None,
+                  max_chain=5, chain_step=lambda: 2)
+    for _ in range(3):
+        if qe.current_question is None:
+            break
+        qe.answer(str(qe.current_question['answer']))
+        qe.result_timer = 0
+        qe.update(0.01)
+    assert qe.chain == 5
 
 
 def test_the_cooldown_counts_down_turn_by_turn(quiet_music):
@@ -209,6 +248,42 @@ def test_the_power_tells_the_seeker(monkeypatch):
     for _ in range(100):
         _answer(g, True)
     assert ('trait', {'trait': 'math_is_cool'}) in seen
+
+
+def test_the_qa_build_previews_the_achievement():
+    """The QA build records nothing, so its test runs saw no achievement:
+    one an event earns opens as a preview, once, with no code."""
+    from welcome_screen import SECRET_BUILDS
+    from main import Game
+    random.seed(7)
+    items.bind_unique_registry(set())
+    g = Game(_screen(), player_name='Titivillus', secret_build=SECRET_BUILDS['titivillus'])
+    g.player.qa_tools = True
+    assert g._seeker is None
+    g._qa_math_is_cool()
+    _answer(g, True)
+    pops = [e for e in g._popup_queue if e.get('kind') == 'achievement']
+    assert pops, 'no achievement popup on the QA build'
+    card = pops[-1]['data']['achievements'][0]
+    assert card['id'] == 'so_then_i_was_like' and card['code'] == 'QA PREVIEW'
+    n = len(pops)
+    g._seeker_event('trait', trait='math_is_cool')
+    assert len([e for e in g._popup_queue if e.get('kind') == 'achievement']) == n   # once
+
+
+def test_the_qa_mooble_key_sets_the_hero_beside_him():
+    from welcome_screen import SECRET_BUILDS
+    from main import Game
+    random.seed(11)
+    items.bind_unique_registry(set())
+    g = Game(_screen(), player_name='Titivillus', secret_build=SECRET_BUILDS['titivillus'])
+    g.player.qa_tools = True
+    g._qa_mooble()
+    m = g._mooble_here()
+    if m is None:
+        pytest.skip('no room for the Mooble on this floor')
+    assert max(abs(g.player.x - m.x), abs(g.player.y - m.y)) <= 2
+    assert (m.x, m.y) in g.visible
 
 
 def test_the_qa_build_can_reach_it_in_one_answer():

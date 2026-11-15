@@ -774,11 +774,12 @@ class MoobleMixin:
             if m is None:
                 self.add_message("[QA] No room for the Mooble here.", 'info')
                 return
-            where = "in his cave" if getattr(m, '_mooble_cave', None) else "in a room"
-            self.add_message(f"[QA] The Mooble is {where} on this floor ({m.x}, {m.y}). "
-                             "A Starnut and a Starnut Tart are in your pack. Shift+D again: "
-                             "another tart, and no wait before the next dance.", 'info')
+            self._qa_beside_mooble(m)
+            self.add_message("[QA] You are beside the Mooble. A Starnut and a Starnut Tart are "
+                             "in your pack. Shift+D again: another tart, and no wait before "
+                             "the next dance.", 'info')
         else:
+            self._qa_beside_mooble(m)
             st['last_turn'] = None
             st['away'] = False
             st.pop('choose_failed', None)
@@ -787,6 +788,24 @@ class MoobleMixin:
             it = make(self.player.x, self.player.y)
             if it is not None and not self.player.add_to_inventory(it):
                 self.player.inventory.append(it)
+
+    def _qa_beside_mooble(self, m) -> bool:
+        """QA: the hero set down on the open tile nearest the Mooble (in his
+        cave), so a test run need not go looking for him."""
+        taken = {(o.x, o.y) for o in self.monsters if getattr(o, 'alive', True)}
+        best = None
+        for r in range(1, 6):
+            ring = [(m.x + dx, m.y + dy) for dx in range(-r, r + 1) for dy in range(-r, r + 1)
+                    if max(abs(dx), abs(dy)) == r]
+            free = [t for t in ring if self.dungeon.is_walkable(*t) and t not in taken]
+            if free:
+                best = min(free, key=lambda t: (abs(t[0] - m.x) + abs(t[1] - m.y), t))
+                break
+        if best is None:
+            return False
+        self.player.x, self.player.y = best
+        self._refresh_fov()
+        return True
 
     # ---- drawing ------------------------------------------------------------
 

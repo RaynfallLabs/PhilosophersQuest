@@ -1500,7 +1500,7 @@ _ACTIVE_POWER_DEFS: dict[str, dict] = {
     'astral_form':        {'uses': 2,  'cooldown': 0,  'label': 'Astral Form',            'desc': 'Levitate + Invisible + Phase for 8 turns.'},
     # Brandon's song (songs.py; its cooldown is read from data/songs.json).
     'math_is_cool':       {'uses': 0,  'cooldown': 5000, 'label': 'Math is Cool',
-                           'desc': 'Every right answer in a fight counts twice while the song plays.'},
+                           'desc': 'Doubles your math chain for a while.'},
 }
 
 
@@ -2120,7 +2120,7 @@ _QUIRK_EFFECTS = {
     'proteus':       "A kind of gear you have never worn needs one right answer fewer.",
     'terpsichore':   "DEX +2",
     'tortoise':      "CON +2",
-    'math_is_cool':  "Power, ready every 5000 turns: every right answer in a fight counts twice while the song plays.",
+    'math_is_cool':  "Power, ready every 5000 turns: doubles your math chain for a while.",
 }
 
 

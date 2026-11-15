@@ -798,8 +798,12 @@ def test_a_flood_of_news_fits_in_one_popup():
     """The QA key can raise every family at once: the popup shows three
     pieces of news and points to the Families pages for the rest."""
     from game_states import STATE_STORY_POPUP
+    import achievements
     g = _game()
     g.player.qa_tools = True
+    # (The QA build previews the achievements the news earns, 3.5.2: this
+    # test reads the news popup, so those are taken as already seen.)
+    g._qa_previewed = {a['id'] for a in achievements.load().entries}
     for _ in range(3):
         g._qa_family_tier()
     g._popup_tick(1.0)                          # it opens once play is calm

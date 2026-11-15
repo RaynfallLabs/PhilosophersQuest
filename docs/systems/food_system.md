@@ -309,7 +309,8 @@ its power is the song's (`songs.begin`, from `apply_dish`): the soundtrack steps
 plays once, and for exactly as long as it plays, in real seconds, every blow and spell on the hero
 does `damage_taken` of its damage (`Player.take_damage`; hunger is not a blow). Then the
 soundtrack comes back and the power ends. Its menu lines are `kitchen.song_lines` ("Half damage
-taken, 2:44 (while the song plays)"), its chip "Half Damage" (`kitchen.song_share`), and the
+taken, for a while": the song is never named, it is the surprise), its chip "Half Damage"
+(`kitchen.song_share`), and the
 sidebar and character sheet show "Everything's Right 2:10" while it plays
 (`songs.effect_label`).
 

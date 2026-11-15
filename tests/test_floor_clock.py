@@ -156,7 +156,12 @@ def test_a_fresh_floor_one_brings_in_no_newcomer_for_a_long_explore():
                           if g.dungeon.is_walkable(x, y)}
     g.visible = set()
     grace = wanderers.grace(g.dungeon)
-    assert grace >= floor_curve.WANDER_GRACE_FLAT + 2 * 100
+    # The grace is the floor's own walk: twice its explore, and the flat.
+    # (Game() draws its floor from os.urandom, so this floor is never the
+    # same twice: a small one has a tour under 100 tiles, and the old
+    # `grace >= 300` failed now and then.)
+    tour = wanderers.explore_tour(g.dungeon)
+    assert tour > 0 and grace == floor_curve.wander_grace(tour) > floor_curve.WANDER_GRACE_FLAT
     for _ in range(grace - 1):
         g.turn_count += 1
         g._maybe_wander_spawn()

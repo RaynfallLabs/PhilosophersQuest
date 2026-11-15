@@ -283,7 +283,7 @@ QUIRK_DESC = {
     'proteus':       "A kind of gear you have never worn needs one right answer fewer to put on (never fewer than one). You have taken so many shapes that a new one comes easily.",
     'terpsichore':   f"Dexterity +2. {_DEX} You danced with the last of the Moobles straight off, with no practice, and your feet have kept the beat.",
     'tortoise':      f"Constitution +2. {_CON} You won a race without once asking for more than a steady pace, and the tortoise's long wind is yours.",
-    'math_is_cool':  "Power, ready every 5000 turns (V). Plays \"So Then I Was Like...\" by A Man Before a King, and while the song plays every right answer in a fight counts as two links: a chain of 6 strikes as a chain of 12. Math is drama, math is life: passion and proof.",
+    'math_is_cool':  "Power, ready every 5000 turns (V). Doubles your math chain for a while. Math is cool.",
 }
 
 

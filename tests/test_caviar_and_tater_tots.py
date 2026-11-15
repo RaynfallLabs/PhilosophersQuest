@@ -131,7 +131,9 @@ def test_the_dish_is_on_the_special_tab_once_both_are_held():
     assert row['ready']
     import cook_menu
     assert cook_menu.main_effect(row) == 'Half Damage'
-    assert any('2:44' in line and 'while the song plays' in line for line in row['effects'])
+    assert 'Half damage taken, for a while' in row['effects']
+    # The song is the surprise when it is eaten: the menu never names it.
+    assert not any('song' in line.lower() for line in row['effects'])
 
 
 def test_cooked_right_it_starts_the_song():

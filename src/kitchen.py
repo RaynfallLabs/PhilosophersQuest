@@ -260,12 +260,10 @@ def song_share(rec: dict) -> str:
 
 
 def song_lines(rec: dict) -> list:
-    """The menu lines of a dish that plays a song: what the song's power does
-    and for how long ("Half damage taken, 2:44 (while the song plays)")."""
-    import songs
-    sid = song_of(rec)
-    return [f"{song_share(rec)} damage taken, {songs.clock_text(songs.length(sid))} "
-            f"(while the song plays)"]
+    """The menu lines of a dish that plays a song: what its power does ("Half
+    damage taken, for a while"). The song is never named: it is the surprise
+    when the dish is eaten (Brandon, 2026-11-15)."""
+    return [f"{song_share(rec)} damage taken, for a while"]
 
 
 def carried_food(rec: dict) -> dict:

@@ -267,7 +267,7 @@ class QuizEngine:
                    extra_seconds: int = 0, base_seconds: int | None = None,
                    total_qs: int | None = None, timed: bool | None = None,
                    celebrate_on_max: bool = False, play_all: bool = False,
-                   on_each=None):
+                   on_each=None, chain_step=None):
         """
         Start a quiz session.
           threshold     -- for threshold modes: number of correct answers needed.
@@ -293,6 +293,11 @@ class QuizEngine:
                           Divine Intercession (`game_divine.py::_confirm_divine_intercession`)
                           and the Unicorn boon (`game_encounters.py::_start_unicorn_quiz`).
                           See CHAIN_EFFECTS_PLAN Phase 0 (2026-10-03).
+          chain_step    -- chain modes: a callable giving the links one right
+                          answer adds, read at each answer (default 1). A
+                          fight's maths chain counts two while Math is Cool's
+                          song plays (songs.chain_mult), and the counter on the
+                          quiz shows it.
           play_all      -- threshold modes only: a wrong answer does not end the
                           quiz. Every round up to ``total_qs`` is played
                           (it still ends the moment the threshold is met),
@@ -368,6 +373,7 @@ class QuizEngine:
         self.required = threshold
         self.total_qs = total_qs if total_qs is not None else math.ceil(threshold * 1.5)
         self.max_chain = max_chain
+        self._chain_step = chain_step
         self.callback = callback
         self.play_all = bool(play_all)
         self._on_each = on_each
@@ -489,7 +495,9 @@ class QuizEngine:
 
         if is_correct:
             self.correct_count += 1
-            self.chain += 1
+            self.chain += self.chain_step()
+            if self.max_chain and self.chain > self.max_chain:
+                self.chain = self.max_chain      # a step of two never passes a cap
             self._record_correct_for_mastery()   # retire this question; master the tier if cleared
         # Chain combat v2: a wrong answer NO LONGER zeros the chain. The strike
         # lands at whatever chain was achieved before the miss. Chain 0 (miss on
@@ -877,6 +885,16 @@ class QuizEngine:
         if size > 0 and done >= size and key not in self._mastered:
             self._mastered.add(key)
             self.just_mastered = key
+
+    def chain_step(self) -> int:
+        """The links the next right answer adds (start_quiz's chain_step)."""
+        fn = getattr(self, '_chain_step', None)
+        if fn is None:
+            return 1
+        try:
+            return max(1, int(fn() if callable(fn) else fn))
+        except Exception:
+            return 1
 
     def _auto_pass_mastered_round(self):
         """A mastered (subject, tier) auto-succeeds its round with no question
