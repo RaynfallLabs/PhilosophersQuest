@@ -133,6 +133,33 @@ def test_a_special_one_turn_from_ready_says_1_turn():
     assert '(7 turns).' in ' '.join(TM._texts(g, 2))
 
 
+def test_a_grown_bococho_with_no_special_keeps_her_rider_in_the_saddle():
+    """B-08. She joins as a Bococho (stage 1) and has no special until she
+    is a Champion. In her saddle, S on her card set the rider down "to let
+    her run", then said she had no specials (and "Evolve it": she is she)."""
+    from pet_system import Pet
+    from game_states import STATE_PLAYER
+    g = TM._game('__test_351b_no_special__')
+    p = g.player
+    pet = Pet('bococho', p.x, p.y, level=25)
+    assert pet.stage == 1 and pet.available_specials() == []
+    g.pets = [pet]
+    p.riding, pet.ridden = True, True
+    g.state = STATE_PLAYER
+    g._pet_open_specials(pet)
+    assert p.riding and pet.ridden
+    said = ' '.join(TM._texts(g, 3))
+    assert 'to let her run' not in said
+    assert 'has no specials yet. Evolve her to unlock them.' in said, said
+    # A Champion's Charge still sets him down first, as before.
+    champ = Pet('bococho', p.x, p.y, level=55)
+    g.pets = [champ]
+    pet.ridden = False
+    champ.ridden = True
+    g._pet_open_specials(champ)
+    assert not p.riding and not champ.ridden
+
+
 # ---------------------------------------------------------------------------
 # The Bococho's camp
 # ---------------------------------------------------------------------------
@@ -151,7 +178,6 @@ def test_the_racing_camp_is_never_rolled_onto_a_gate_bosss_floor():
     assert floors == want and 60 not in floors
     assert set(bc.candidate_floors()) == want
     # A new game's roll still leaves the shared random stream alone.
-    random.seed(99)
     state = random.getstate()
     st = bc.new_run_state()
     assert random.getstate() == state and st['floor'] in want
