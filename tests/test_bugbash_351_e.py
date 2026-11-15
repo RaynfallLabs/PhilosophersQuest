@@ -1066,3 +1066,25 @@ def test_351_e08_a_healing_draught_says_what_it_healed(make_game):
     h.key('a')
     assert 'You eat the Bread Ration. (4 SP restored)' in h.said()
     no_errors(h)
+
+
+def test_351_e09_a_dish_eaten_unhurt_heals_nothing_it_claims(make_game):
+    """A Rat Rump Kebab cooked (C) by a hero at full health and mana: "You
+    eat it: +12 SP, +9 HP." told of HP he could not gain."""
+    import items
+    import kitchen
+    g, h = make_game()
+    p = g.player
+    meat = items.make_item_by_id('ingredient', 'giant_rat_prime')
+    assert meat is not None
+    p.inventory.append(meat)
+    p.hp, p.mp = p.max_hp, p.max_mp
+    p.sp = p.max_sp // 2
+    h.key('c')
+    cook_menu_pick(h, lambda r: r['ready'] and 'giant_rat_prime' in kitchen.parts(r['recipe']))
+    h.quiz(1)
+    said = h.said()
+    eat = next(s for s in said if s.startswith('You eat it:'))
+    assert 'HP' not in eat.replace('max HP', '') and 'MP' not in eat, eat
+    assert p.hp == p.max_hp
+    no_errors(h)
