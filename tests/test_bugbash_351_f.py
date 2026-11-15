@@ -333,3 +333,43 @@ def test_a_two_handers_card_counts_the_wallace_swords_parry(no_seeker):
     g.player.shield = None
     g.player.weapon = gs
     assert stance.parry_ac(g.player) == base + 1             # the card and the AC agree
+
+
+def test_the_kit_counts_medeas_blows_too(no_seeker):
+    from items import make_item_by_id
+    g = _game()
+    dust = make_item_by_id('flask', 'silver_dust')
+    assert 'x12' in g._kit_consumable_effect(dust)
+    g.player.quirk_progress['medea_active'] = True
+    assert 'x18' in g._kit_consumable_effect(dust)
+
+
+def test_food_lines_count_the_widows_jar(no_seeker):
+    """The Widow's Jar fills a hero half again from plain food; the Kit, the
+    Eat menu and the lore card still said the plain SP."""
+    from food_system import eat_food
+    from items import make_item_by_id
+    g = _game()
+    bread = make_item_by_id('food', 'bread_ration')
+    base = int(bread.sp_restore)
+    assert f'+{base} SP' in g._kit_consumable_effect(bread)
+    assert g._food_restores_text(bread).startswith(f'Restores {base}')
+    g.player.quirk_progress['widows_jar_active'] = True
+    more = base + base // 2
+    assert f'+{more} SP' in g._kit_consumable_effect(bread)
+    assert g._food_restores_text(bread).startswith(f'Restores {more}')
+    g.player.sp = 0
+    lines = eat_food(g.player, bread)
+    assert f'({more} SP restored)' in lines[0]                 # what it said is what it gave
+
+
+def test_the_eat_menu_draws_with_the_widows_jar(no_seeker):
+    from game_states import STATE_EAT_MENU
+    from items import make_item_by_id
+    g = _game()
+    g.player.quirk_progress['widows_jar_active'] = True
+    bread = make_item_by_id('food', 'bread_ration')
+    g.player.inventory.append(bread)
+    g._open_eat_menu()
+    assert g.state == STATE_EAT_MENU
+    g.render()
