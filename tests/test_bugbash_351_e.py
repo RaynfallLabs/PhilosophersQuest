@@ -1028,3 +1028,41 @@ def test_351_e07_a_prayer_says_only_what_it_gave(make_game):
     assert 'Strength floods back into your limbs. (+7 SP)' in said, said
     assert 'Warmth washes over your wounds. (+5 HP)' in said, said
     no_errors(h)
+
+
+def test_351_e08_a_healing_draught_says_what_it_healed(make_game):
+    """The starting Potion of Healing drunk (Q) at full health: "Warmth
+    floods through you. (+18 HP)". Then one drunk five HP down: (+5 HP)."""
+    import copy
+    from items import Potion
+    g, h = make_game()
+    p = g.player
+    potion = next(i for i in p.inventory if isinstance(i, Potion))
+    spare = copy.deepcopy(potion)
+    assert p.hp == p.max_hp
+    h.key('q')
+    assert g.state == 'quaff_menu'
+    h.key(getattr(pygame, f'K_{chr(97 + g.quaff_menu_items.index(potion))}'))
+    said = h.said()
+    assert not any('HP)' in s for s in said), said
+    assert 'Warmth floods through you, but you had no wounds to close.' in said, said
+    p.inventory.append(spare)
+    p.hp = p.max_hp - 5
+    h.key('q')
+    h.key(getattr(pygame, f'K_{chr(97 + g.quaff_menu_items.index(spare))}'))
+    said = h.said()
+    assert 'Warmth floods through you. (+5 HP)' in said, said
+    # The Bread Ration eaten (U) by a hero who is not hungry: no "SP
+    # restored" of nothing; then four SP down, four.
+    import items
+    p.sp = p.max_sp
+    h.key('u')
+    h.key('a')
+    said = h.said()
+    assert 'You eat the Bread Ration.' in said, said
+    p.inventory.append(items.make_item_by_id('food', 'bread_ration'))
+    p.sp = p.max_sp - 4
+    h.key('u')
+    h.key('a')
+    assert 'You eat the Bread Ration. (4 SP restored)' in h.said()
+    no_errors(h)
