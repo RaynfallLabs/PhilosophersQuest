@@ -90,9 +90,20 @@ def _band_room(dungeon, rng, monsters=()):
     def holds_protected(r):
         return any(_protected(m) and r.x <= m.x < r.x + r.width and r.y <= m.y < r.y + r.height
                    for m in monsters or ())
+
+    # Never the down stair's room either (bug bash 3.5.1 C): a hero who
+    # comes up from below would arrive in the camp, and every hero would
+    # have to pass it to go on.
+    from dungeon import STAIRS_DOWN
+
+    def holds_down_stair(r):
+        return any(dungeon.tiles[y][x] == STAIRS_DOWN
+                   for y in range(max(0, r.y), min(dungeon.height, r.y + r.height))
+                   for x in range(max(0, r.x), min(dungeon.width, r.x + r.width)))
     rooms = [r for r in dungeon.rooms
              if r is not first and tuple(r.center) not in special
-             and (r.width - 2) * (r.height - 2) >= 30 and not holds_protected(r)]
+             and (r.width - 2) * (r.height - 2) >= 30 and not holds_protected(r)
+             and not holds_down_stair(r)]
     if not rooms:
         return None
     rooms.sort(key=lambda r: -(r.width * r.height))

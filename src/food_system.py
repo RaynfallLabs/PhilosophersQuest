@@ -622,16 +622,24 @@ def _apply_bonus(player, recipe) -> list[str]:
 # Eating
 # ------------------------------------------------------------------
 
+def food_sp(player, food_item) -> int:
+    """The SP a Food item gives this hero eaten as it is: its own, and half
+    again with the Widow's Jar (a trait). Eating and the menus that say
+    "+45 SP" both read it."""
+    sp = int(getattr(food_item, 'sp_restore', 0) or 0)
+    if (getattr(player, 'quirk_progress', None) or {}).get('widows_jar_active'):
+        sp = sp + sp // 2           # The Widow's Jar (a trait): plain food goes further
+    return sp
+
+
 def eat_food(player, food_item) -> list[str]:
     """
     Directly consume a Food item. Returns list of messages.
     Restores SP and optionally HP; may apply a bonus.
     """
     messages = []
-    sp = food_item.sp_restore
+    sp = food_sp(player, food_item)
     hp = food_item.hp_restore
-    if (getattr(player, 'quirk_progress', None) or {}).get('widows_jar_active'):
-        sp = sp + sp // 2           # The Widow's Jar (a trait): plain food goes further
 
     # What it really gave, as the MP draughts say (bug bash 3.5.1 E: "(60
     # SP restored)" to a hero who was not hungry, "+6 HP" to one unhurt).

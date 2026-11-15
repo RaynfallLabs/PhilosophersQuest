@@ -6267,7 +6267,8 @@ class RenderMixin:
         if _cs or _ts:
             bits = []
             if _cs:
-                bits.append(f"coat: {_coat_k.word(str(_cs['substance']))} x{_cs.get('blows', 12)}")
+                _blows = _coat_k.coat_blows(getattr(self, 'player', None), _cs)   # Medea's
+                bits.append(f"coat: {_coat_k.word(str(_cs['substance']))} x{_blows}")
             if _ts:
                 bits.append(f"throw: {_ts.get('damage', 0)} {_ts.get('damage_type', '')}")
             return ', '.join(bits)
@@ -6293,7 +6294,7 @@ class RenderMixin:
             return kitchen.nature_line(getattr(c, 'id', ''))
         # Food
         if hasattr(c, 'sp_restore'):
-            bits = [f"+{c.sp_restore} SP"]
+            bits = [f"+{self._food_sp(c)} SP"]
             if getattr(c, 'hp_restore', 0):
                 bits.append(f"+{c.hp_restore} HP")
             bt = getattr(c, 'bonus_type', 'none')
@@ -7566,7 +7567,7 @@ class RenderMixin:
         entries = []
         for i, item in enumerate(tab_items):
             if isinstance(item, Food):
-                parts = [f"+{item.sp_restore} SP"]
+                parts = [f"+{self._food_sp(item)} SP"]
                 if item.hp_restore:
                     parts.append(f"+{item.hp_restore} HP")
                 # A ration a dish calls for is worth saving: say so.
@@ -9233,13 +9234,20 @@ class RenderMixin:
         lines.append((f"Source: {source}", FP.FADED_TEXT, self.font_sm))
         return lines
 
-    @staticmethod
-    def _food_restores_text(item) -> str:
+    def _food_sp(self, item) -> int:
+        """The SP a food gives this hero eaten as it is (food_system.food_sp:
+        the Widow's Jar's half again). Anything else: its own number."""
+        if isinstance(item, Food):
+            from food_system import food_sp
+            return food_sp(getattr(self, 'player', None), item)
+        return int(getattr(item, 'sp_restore', 0) or 0)
+
+    def _food_restores_text(self, item) -> str:
         """ "Restores 45 SP" / "Restores 45 SP and 3 HP": only what it does
         restore, each number bound to its unit by a no-break space so a wrap
         never strands "HP" on a line of its own (it read "45 SP, 0 / HP")."""
         parts = [f"{int(v)} {unit}" for v, unit in
-                 ((getattr(item, 'sp_restore', 0) or 0, 'SP'),
+                 ((self._food_sp(item), 'SP'),
                   (getattr(item, 'hp_restore', 0) or 0, 'HP')) if v]
         return "Restores " + " and ".join(parts) if parts else "Restores nothing"
 
@@ -9276,11 +9284,12 @@ class RenderMixin:
         import counters as _counters
         import stance as _stance
         out = []
+        hero = getattr(self, 'player', None)
         if isinstance(item, Weapon):
             out += _coatings.weapon_card_lines(item)
-            out += _stance.card_lines(item)
+            out += _stance.card_lines(item, hero)        # the Wallace Sword's parry
         out += _counters.card_lines(item)
-        out += _coatings.card_lines(item)
+        out += _coatings.card_lines(item, hero)          # Medea's, Callinicus' numbers
         return out
 
     def _lore_item_mechanic_lines(self, item, id_level):
@@ -10458,7 +10467,8 @@ class RenderMixin:
             # visibly highlighted.
             self._ui_wrap_text("Press Enter to open the highlighted category.",
                                self.font_sm, FP.FADED_TEXT, article_body)
-            self._ui_footer(panel, "Up/Down: category   Enter or a-n: open   ESC: close")
+            self._ui_footer(panel, "Up/Down: category   Enter or a-n: open   "
+                                   "Tab: families   ESC: close")
             return
 
         sel = max(0, min(getattr(self, 'encyclopedia_selection', 0),

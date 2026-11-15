@@ -164,6 +164,12 @@ class DressingMixin:
         if isinstance(item, Accessory):
             self._say_accessory_on(item, name)
             self._note_worn_curse(item)
+            # The traits hear of a ring or an amulet put on too: Proteus'
+            # Many Shapes counts the kinds Known by Hand, and a ring that was
+            # the 25th kind earned nothing until the next armour or weapon.
+            _qs_acc = getattr(self, 'quirk_system', None)
+            if _qs_acc:
+                _qs_acc.on_item_equipped(item.id, 'accessory', getattr(item, 'slot', 'accessory'))
             return True
         # Armour or a shield. Its curse, if any, is now known and named once.
         # Only body armour and a shield move AC (bug bash 3.3.2): a helm or

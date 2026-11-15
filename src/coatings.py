@@ -209,6 +209,23 @@ def _uncoated(weapon):
     return _Bare(weapon) if weapon is not None else None
 
 
+def coat_blows(player, spec) -> int:
+    """How many blows a coating of ``spec`` lasts for this hero: its own,
+    and half again with Medea's Ointment (a trait). The coat and its card
+    both read it."""
+    blows = int((spec or {}).get('blows', 12) or 12)
+    if (getattr(player, 'quirk_progress', None) or {}).get('medea_active'):
+        blows = blows + blows // 2          # Medea's Ointment: half again as many
+    return blows
+
+
+def throw_turns_mult(player) -> int:
+    """How many times its written turns a thrown flask's burning or pitting
+    lasts for this hero: twice with Callinicus' Fire (a trait), else once.
+    The throw and the flask's card both read it."""
+    return 2 if (getattr(player, 'quirk_progress', None) or {}).get('callinicus_active') else 1
+
+
 def apply(player, item) -> str:
     """Work the coating ``item`` into the weapon in the hero's hand and
     return the line that says so. The caller has checked ``refusal`` and
@@ -220,9 +237,7 @@ def apply(player, item) -> str:
     c = cfg()
     old = coating_of(weapon)
     sub = str(spec['substance'])
-    blows = int(spec.get('blows', 12) or 12)
-    if (getattr(player, 'quirk_progress', None) or {}).get('medea_active'):
-        blows = blows + blows // 2          # Medea's Ointment: half again as many
+    blows = coat_blows(player, spec)
     weapon.coating = {
         'id': str(getattr(item, 'id', '') or ''),
         'name': _name(item),
@@ -370,14 +385,16 @@ def _effect_words(eff: str) -> str:
 # Cards and the HUD
 # ---------------------------------------------------------------------------
 
-def card_lines(item) -> list:
-    """What a coating or flask does, for its Kit and lore card."""
+def card_lines(item, player=None) -> list:
+    """What a coating or flask does, for its Kit and lore card. With
+    ``player``, the numbers are his (Medea's Ointment's longer coatings,
+    Callinicus' Fire's longer burning: the card said the plain number)."""
     out = []
     c = cfg()
     spec = coat_spec(item)
     if spec:
         out.append(str(c.get('card_coat', '')).format(word=word(spec['substance']),
-                                                      blows=spec.get('blows', 12)))
+                                                      blows=coat_blows(player, spec)))
         r = spec.get('rider')
         if isinstance(r, dict):
             key = 'card_rider_sure' if float(r.get('chance', 1.0)) >= 1.0 else 'card_rider'
@@ -392,8 +409,9 @@ def card_lines(item) -> list:
                                                            dtype=t.get('damage_type', '')))
         st = t.get('status')
         if isinstance(st, dict):
+            turns = int(st.get('turns', 3) or 3) * throw_turns_mult(player)
             out.append(str(c.get('card_throw_status', '')).format(
-                effect=_effect_words(str(st.get('effect', ''))), turns=st.get('turns', 3)))
+                effect=_effect_words(str(st.get('effect', ''))), turns=turns))
     return [s for s in out if s]
 
 
