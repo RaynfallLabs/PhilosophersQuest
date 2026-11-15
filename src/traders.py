@@ -547,9 +547,15 @@ SELLABLE_ARTIFACTS = frozenset({'soul_sphere', 'greater_soul_sphere', 'master_sp
 
 def is_quest_piece(item, quest_ids=()) -> bool:
     """A thing the story needs: never sold."""
-    from items import scripted_only_ids
+    from items import WITHHELD_IDS, scripted_only_ids
     iid = getattr(item, 'id', None)
     if iid in set(quest_ids or ()):
+        return True
+    # The pieces nobody may take from the hero (a thief, an NPC's price)
+    # are not for a trader either: the Mooble's Starnut Tart and the Scroll
+    # of Death's Bane sold like any food or scroll (bug bash 3.5.1 A; the
+    # Game's list named the scroll 'death_bane', not its id).
+    if iid in WITHHELD_IDS:
         return True
     if getattr(item, 'plot_locked', False) or getattr(item, 'not_pickable', False):
         return True

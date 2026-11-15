@@ -48,19 +48,28 @@ def _monster_band_tier(monster_id: str) -> int:
     return max(1, min(5, floor // 20 + 1))
 
 
-def _nearest_kin_ingredient(monster_id: str) -> str | None:
+def _nearest_kin_ingredient(monster_id: str, family: str | None = None,
+                            floor: int | None = None) -> str | None:
     """The ingredient of the nearest creature of the same family and depth,
-    for a monster the harvest map does not name (a creature added later)."""
+    for a monster the harvest map does not name (a creature added later).
+    A creature monsters.json does not know (a person of an encounter, Gilt
+    Varro, the dead hero's ghost) is read by the ``family`` and ``floor`` its
+    corpse carries; with no family at all there is no kin and nothing to
+    harvest. Any prime would do before: a murdered pilgrim gave Acid Blob
+    Bladder (bug bash 3.5.1 A)."""
     import kitchen
     _monster_band_tier(monster_id)                     # fills the floor cache
     floors = _monster_floor_cache or {}
-    here = floors.get(monster_id, 1)
     try:
         with open(data_path('data', 'monsters.json'), encoding='utf-8') as f:
             all_defs = json.load(f)
     except (OSError, ValueError):
         all_defs = {}
-    family = (all_defs.get(monster_id) or {}).get('family')
+    known = all_defs.get(monster_id) or {}
+    family = known.get('family') or family
+    if not family:
+        return None
+    here = floors.get(monster_id) or int(floor or 0) or 1
     best = None
     for mid, ing_id in (kitchen.harvest_map().get('monsters') or {}).items():
         if (kitchen.ingredients().get(ing_id) or {}).get('tier_role') != 'prime':
@@ -72,20 +81,41 @@ def _nearest_kin_ingredient(monster_id: str) -> str | None:
     return best[1] if best else None
 
 
-def _harvest_outcome_for_tier(tier: int, monster_id: str) -> list[str]:
+def _harvest_outcome_for_tier(tier: int, monster_id: str, family: str | None = None,
+                              floor: int | None = None) -> list[str]:
     """What a corpse yields: exactly ONE ingredient, its kin's
     (data/items/harvest_map.json: every goblin gives Goblin Gristle; a
     named creature or a boss keeps its own; a boss with a trophy gives the
     trophy). The tier is used only for the harvest question; tier 0
-    (ruined) yields nothing."""
+    (ruined) yields nothing. ``family`` / ``floor``: what the corpse says of
+    a creature monsters.json does not know (_nearest_kin_ingredient)."""
     if tier <= 0:
         return []
-    import kitchen
-    ing_id = kitchen.ingredient_for_monster(monster_id) if monster_id else None
-    if ing_id is None and monster_id:
-        # A creature the map does not name still feeds the pot.
-        ing_id = _nearest_kin_ingredient(monster_id)
+    ing_id = corpse_ingredient(monster_id, family, floor)
     return [ing_id] if ing_id else []
+
+
+def corpse_ingredient(monster_id: str, family: str | None = None,
+                      floor: int | None = None) -> str | None:
+    """The ingredient a corpse of ``monster_id`` yields, or None when it
+    yields nothing (a person of an encounter with no kin)."""
+    if not monster_id:
+        return None
+    import kitchen
+    ing_id = kitchen.ingredient_for_monster(monster_id)
+    if ing_id is None:
+        # A creature the map does not name still feeds the pot.
+        ing_id = _nearest_kin_ingredient(monster_id, family, floor)
+    return ing_id
+
+
+def corpse_yield(corpse) -> str | None:
+    """What harvesting ``corpse`` would give (None: nothing), read from the
+    corpse itself before the question is asked."""
+    md = getattr(corpse, 'monster_def', None) or {}
+    return corpse_ingredient(getattr(corpse, 'monster_id', '') or '',
+                             getattr(corpse, 'family', None),
+                             int(md.get('peak_floor', 0) or 0) or None)
 
 
 # ------------------------------------------------------------------
@@ -289,15 +319,17 @@ def _apply_permanent_power(player, power_id: str, recipe: dict) -> str:
             log_error('food_system._apply_permanent_power: recovered from an error')
         return "Permanent petrification immunity. " + (desc or "")
     elif power_id == 'chromatic_resist_all':
-        # A dragon's hide, not five full immunities: each chromatic
-        # element hurts 3 less per hit (flat reduction, the same
-        # mechanism chain-equip resistances use).
+        # A dragon's hide, not five full immunities: three levels of each
+        # chromatic element's resistance (the mechanism chain-equip
+        # resistances use: Player.CHAIN_RESIST_STEP, 8% a level, so about
+        # a fifth less a hit). It said "each hurt 3 less", the flat rule
+        # the chain resistances had before they became a share.
         res = getattr(player, 'damage_resistances', None)
         if res is not None:
             for elt in ('fire', 'cold', 'lightning', 'poison', 'acid'):
                 res[elt] = int(res.get(elt, 0)) + 3
         return ("Dragon-scale hardiness: fire, cold, lightning, poison and "
-                "acid each hurt 3 less. " + (desc or ""))
+                "acid each hurt you about a fifth less. " + (desc or ""))
     elif power_id == 'one_time_death_save':
         player._asmodeus_pact = True  # consumed by player.is_dead() check
         return "The Pact is signed. The next death will not claim you. " + (desc or "")
@@ -426,16 +458,26 @@ def harvest_corpse(player, corpse, quiz_engine, on_complete, extra_seconds: int 
 
     def _callback(result):
         if getattr(result, 'success', False):
-            ingredient_ids = _harvest_outcome_for_tier(tier, monster_id)
+            _md = getattr(corpse, 'monster_def', None) or {}
+            ingredient_ids = _harvest_outcome_for_tier(
+                tier, monster_id, getattr(corpse, 'family', None),
+                int(_md.get('peak_floor', 0) or 0) or None)
             # Hunter's Harvest / Herbalist (monster family knowledge,
             # src/family_edges.py harvest_bonus): one more portion of the
             # main cut from a family the hero has learned to butcher.
+            # A boss's trophy is one of a kind (one heart, one tooth): never
+            # a second portion. Two of Fenrir's Tooth gave its +3 STR twice,
+            # past every cap (bug bash 3.5.1 A).
             _extra_note = ''
             try:
                 import family_edges
                 _more, _ab = family_edges.harvest_bonus(player, monster_id)
             except ImportError:
                 _more, _ab = 0, None
+            if ingredient_ids:
+                import kitchen as _kitchen
+                if _kitchen.part_kind(ingredient_ids[0]) == 'trophy':
+                    _more = 0
             if _more and ingredient_ids:
                 ingredient_ids = list(ingredient_ids) + [ingredient_ids[0]] * int(_more)
                 _extra_note = ' ' + family_edges.line_for((_ab or {}).get('trigger_msg', '') or '')

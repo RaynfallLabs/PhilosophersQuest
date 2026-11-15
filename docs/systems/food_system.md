@@ -71,8 +71,9 @@ The old generators (`tools/gen_recipes*.py`, `tools/gen_ingredients_v265.py`,
 
 ## 3. Ingredients
 
-**316 ingredients:** 294 monster parts, 14 boss trophies, 8 foraged finds (cave mushroom, swamp
-moss, river salt, crystal shard, holy water, altar incense, deep-iron shaving, abyssal kelp).
+**318 ingredients:** 294 monster parts, 14 boss trophies, 10 foraged finds (cave mushroom, swamp
+moss, river salt, crystal shard, holy water, altar incense, deep-iron shaving, abyssal kelp, and
+the quest pets' Starnut and Sunroot, which also grow as ordinary forage from floors 25 and 40).
 
 ### 3.1 Names and pictures
 
@@ -114,7 +115,7 @@ What a part is rich in, from its lore: `hp` (hearty: a troll, a bear), `sp` (fil
 glue, an ogre's bangers), `mp` (arcane: a wraith's ectoplasm, a lich's bone), `stat` with its
 stat (`stat_grant`: a cobra sharpens DEX), or `special` with a timed power (`temp_power`: a
 shade's gloom-jelly gives Dark Vision, a basilisk's tail a Body Ward). Counts: 47
-hp, 54 sp, 43 mp, 99 stat (STR 26, DEX 16, INT 15, WIS 15, CON 14, PER 14 with the forage), 72
+hp, 55 sp, 44 mp, 100 stat (STR 26, DEX 16, INT 15, WIS 15, CON 14, PER 14 with the forage), 72
 special. Every nature has parts in every depth band; casters find arcane parts from floor 1 to
 floor 97.
 
@@ -128,7 +129,7 @@ leave no corpse; the deadites and Old Nickel share the zombie's and the goblin's
 
 ## 4. The recipe book (`recipes.json`)
 
-**686 dishes:** 316 single dishes (one per ingredient: the everyday choice) and 370
+**693 dishes:** 318 single dishes (one per ingredient: the everyday choice) and 375
 multi-ingredient dishes of 2 to 5 different ingredients. Every ingredient is in exactly one single
 dish and at least two multi-dishes. 36 multi-dishes are legendary feasts; 126 are cross-depth. No
 dish is named just like an ingredient (the build checks).
@@ -172,8 +173,8 @@ food or forage. The build fails on any dish that breaks these rules
    part (a saved part, a ration, cheese) with a deep one.
 
 Before this (K1's book): 8 of 36 feasts and 109 of 257 multi-dishes were cookable in half of
-runs. Now: all 36 feasts once the trophy is won (19 counting the trophy's own odds) and 224 of
-370 multi-dishes. The eight that a simulated run never cooks hold a part the simulator never
+runs. Now: all 36 feasts once the trophy is won (19 counting the trophy's own odds) and 229 of
+375 multi-dishes. The eight that a simulated run never cooks hold a part the simulator never
 meets: the cow level's two (secret), the mimic (it waits in chests) and Charybdis (summoned by
 her scroll); each pairs only with common partners.
 
@@ -181,11 +182,11 @@ Dishes per tab and depth band (the tier of the deepest ingredient):
 
 | Tab | 1-20 | 21-40 | 41-60 | 61-80 | 81-100 |
 |-----|-----:|------:|------:|------:|-------:|
-| HP | 44 | 15 | 9 | 3 | 14 |
-| SP | 81 | 8 | 4 | 11 | 5 |
-| MP | 48 | 8 | 11 | 4 | 13 |
+| HP | 44 | 15 | 10 | 3 | 14 |
+| SP | 81 | 10 | 5 | 11 | 5 |
+| MP | 48 | 9 | 12 | 4 | 13 |
 | Stat | 143 | 36 | 25 | 17 | 21 |
-| Special | 79 | 40 | 19 | 8 | 20 |
+| Special | 79 | 41 | 19 | 8 | 20 |
 
 ### 4.2 Pictures (`tools/content/kitchen/dish_art.py`)
 
@@ -259,7 +260,10 @@ On top of the 1.5x main benefit, by tab:
 - **Stat:** the floor's lesson as a whole point, and +1 more past the lesson
   (`try_apply_cook_stat_gain(bypass=True)`), inside the stat's lifetime cap.
 - **Special:** the feast's resistance for good (its own power if a resistance, else one of its
-  ingredients').
+  ingredients', else the fallback order), never one its trophy gives and never one the hero holds
+  for good already (`kitchen.feast_resist_for`: Fafnir's Blood gives fire resistance, so Fafnir's
+  fire feast gives the next one). A timed power the hero already holds for good says so ("Fire
+  Resist: already yours for good") instead of lingering for a number of turns.
 
 Legendary feasts never have SP as their main benefit. A feast holding a boss trophy also gives
 the trophy's own power (§6).
@@ -268,8 +272,11 @@ the trophy's own power (§6).
 
 Plain lines for THIS hero now, main benefit first: "+45 HP", "+3 Max HP", "+12 MP", "Teaches DEX
 (a full point)", "Dark Vision, 300 turns", "+4 Max MP for good", "+60 SP". A cap that would eat
-the benefit says so: "Max HP full this floor", "DEX lesson used this floor", "DEX has learned all
-food can teach here", "Max MP: all feasts can give at this depth".
+the benefit says so: "Max HP full this floor", "Max HP: all cooking can give at this depth" (the
+lifetime cap, `kitchen.max_hp_room` reads both), "DEX lesson used this floor", "DEX has learned all
+food can teach here", "Max MP: all feasts can give at this depth". A feast's For Good lines are held
+to the same lifetime caps ("+3 Max HP for good" when 3 is what is left; "No more STR for good at
+this depth"), so the menu never promises more than the meal gives.
 
 ### 5.5 Cook to carry (`makes`, 2026-11-14)
 
@@ -307,10 +314,10 @@ trophy's own dish and by either of the two feasts that hold it:
 | `plus_2_con_petrify_immune` | Hrungnir | +2 CON, Stoneproof. |
 | `plus_2_wis_auto_reveal_secret_doors` | the Whispering Crone | +2 WIS, hidden doors near you show. |
 | `plus_2_str_confuse_immune` | Asterion | +2 STR, Clear-Headed. |
-| `fire_immunity` | Surtur | Fire Resist for good. |
-| `cold_immunity` | Ymir's Last Spawn | Cold Resist for good. |
+| `fire_immunity` | Surtur | Fire Resist for good (half damage, never set alight; not immunity, despite the id). |
+| `cold_immunity` | Ymir's Last Spawn | Cold Resist for good (half damage, never frozen). |
 | `petrify_immunity` | Medusa | Stoneproof. |
-| `chromatic_resist_all` | Tiamat | Fire, cold, lightning, poison and acid each hurt 3 less. |
+| `chromatic_resist_all` | Tiamat | Three levels of fire, cold, lightning, poison and acid resistance (`damage_resistances`, 8% a level: about a fifth less). |
 | `one_time_death_save` | Asmodeus | The next death does not take you. |
 | `revive_once_at_half_hp` | the Green Knight | Once, rise at half HP. |
 | `max_hp_per_floor_descent` | Fafnir | +2 max HP each new floor. |
@@ -355,8 +362,12 @@ Tooth: STR...), at 1.5x.
 `food_system.harvest_corpse` asks ONE animal question at the corpse's `harvest_tier`, never
 harder than the band the monster lives in (`_monster_band_tier`). Right: the corpse yields its
 kin's ingredient (`kitchen.ingredient_for_monster`; a creature the map does not name borrows its
-nearest kin's, `_nearest_kin_ingredient`), plus one portion more for a family the hero has
-learned to butcher (`family_edges.harvest_bonus`). The part remembers the creature it came from
+nearest kin's, `_nearest_kin_ingredient`, by the family and floor in monsters.json or, for a
+creature monsters.json does not know, on its corpse: Gilt Varro, a mortal, gives a mortal's
+provisions; a person of an encounter with no family yields nothing, said before the question by
+`Game._harvest` through `food_system.corpse_yield`), plus one portion more for a family the hero has
+learned to butcher (`family_edges.harvest_bonus`), never for a boss trophy (one of a kind: a
+second Fenrir's Tooth gave its power twice, bug bash 3.5.1). The part remembers the creature it came from
 (`source_monster`, read by Siegfried's Bath). Wrong: the corpse is ruined. A part too heavy to
 carry stays on the floor. `quirk_system.on_harvest` fires either way (Mithridates).
 
