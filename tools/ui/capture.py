@@ -471,7 +471,16 @@ def harness(trace: bool = True):
     saved_display = _disp.get_size() if _disp is not None else None
     saved_env = {k: os.environ.get(k) for k in ('PQ_NO_BONES',)}
     os.environ['PQ_NO_BONES'] = '1'
-    saved_font_cache = dict(fantasy_ui._font_cache)
+    # Every font cache fantasy_ui keeps: the logical one, the fixed-pixel one,
+    # and the by-pixel one a UI-scale change refills the logical one from.
+    # All three are emptied for the capture and put back after: a font made
+    # earlier in the process (a test that resized the window) is a plain
+    # Font, not a TracingFont, so at that scale every text blit went
+    # unrecorded (CI's single-process run, 3.5.0: the Journal at 1093x614
+    # recorded no text at all).
+    _FONT_CACHES = ('_font_cache', '_font_px', '_fonts_by_px')
+    saved_font_caches = {n: dict(getattr(fantasy_ui, n)) for n in _FONT_CACHES
+                         if hasattr(fantasy_ui, n)}
     try:
         patch(paths, 'save_dir', lambda: str(saves))
         patch(save_system, 'save_dir', lambda: str(saves))
@@ -506,7 +515,8 @@ def harness(trace: bool = True):
                     GLYPH_ICONS.append(getattr(item, 'id', '?'))
                 return _real(self_, item, x, y)
             patch(game_render.RenderMixin, '_draw_menu_icon', icon_spy)
-        fantasy_ui._font_cache.clear()
+        for n in saved_font_caches:
+            getattr(fantasy_ui, n).clear()
         # As main() does right after creating the window: load the UI art
         # kit (assets/ui/) once, up front. The caller's kit and window size
         # are put back on exit, so a test that runs after the harness draws
@@ -524,8 +534,9 @@ def harness(trace: bool = True):
                 pass
         for obj, attr, old in reversed(restore):
             setattr(obj, attr, old)
-        fantasy_ui._font_cache.clear()
-        fantasy_ui._font_cache.update(saved_font_cache)
+        for n, saved in saved_font_caches.items():
+            getattr(fantasy_ui, n).clear()
+            getattr(fantasy_ui, n).update(saved)
         for k, v in saved_env.items():
             if v is None:
                 os.environ.pop(k, None)
