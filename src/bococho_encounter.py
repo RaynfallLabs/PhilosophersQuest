@@ -205,6 +205,8 @@ def creature_defn(which: str, level: int) -> dict:
             'speed': int(v['speed']), 'attacks': [dict(a) for a in v['attacks']],
             'ai_pattern': 'sessile', 'resistances': [], 'weaknesses': [],
             'family': v.get('family', 'mortals'), 'min_level': level, 'peak_floor': level,
+            # A man's name, said with no article ("The Gilt Varro is slain!").
+            'proper_noun': True,
             'is_allied': True, 'lore': v.get('lore', ''),
             'kill_chronicle': v.get('kill_chronicle', ''),
             'harvest_tier': 0, 'harvest_threshold': 99, 'ingredient_id': None,
@@ -387,6 +389,8 @@ class BocochoMixin:
                 want = sprite(m.kind)
                 if getattr(m, 'sprite_id', None) != want:
                     m.sprite_id = want
+            if role(m) == 'varro' and not getattr(m, 'proper_noun', False):
+                m.proper_noun = True        # a 3.5.0 save's Varro: "the Gilt Varro"
 
     def _bococho_here(self, which: str):
         return next((m for m in self.monsters or () if role(m) == which and m.alive), None)

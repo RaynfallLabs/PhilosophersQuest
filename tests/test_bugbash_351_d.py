@@ -155,3 +155,26 @@ def test_d2_the_simulators_spell_types_are_the_games(game, monkeypatch, effect):
     game._apply_spell_effect(dict(spell), target)
     assert seen, effect
     assert set(seen) == {attack_spells[effect] or 'physical'}, (effect, seen)
+
+
+# ---------------------------------------------------------------------------
+# D3. Gilt Varro is a man's name
+# ---------------------------------------------------------------------------
+
+def test_d3_gilt_varro_is_said_with_no_article(game):
+    """"The Gilt Varro is slain!", "The Gilt Varro: 1094/1094 HP." (the Wand
+    of Probing): a man's name took the article. A 3.5.0 save's Varro is
+    mended on the camp's floor."""
+    import bococho_encounter as bc
+    import enemy_lore
+    from monster import the_name
+    varro = bc.make_creature('varro', 2, 2, 55)
+    assert the_name(varro) == 'Gilt Varro'
+    assert enemy_lore.probe_lines(varro)[0].startswith('Gilt Varro: ')
+    old = bc.make_creature('varro', 2, 2, 55)
+    old.proper_noun = False                       # as a 3.5.0 save holds him
+    assert the_name(old) == 'The Gilt Varro'
+    game.monsters = [old]
+    game._bococho_state()['floor'] = game.dungeon_level
+    game._bococho_tick()
+    assert the_name(old) == 'Gilt Varro'
