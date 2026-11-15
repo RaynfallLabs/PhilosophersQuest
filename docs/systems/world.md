@@ -144,6 +144,8 @@ There is no dedicated statue pass — "stone statues" in the audit refers to the
 ### 3.7 Reachability check (v2.18)
 `_bfs_reaches(tiles, w, h, start, goal)` runs 4-neighbor BFS where the passable set is `(FLOOR, STAIRS_UP, STAIRS_DOWN, DOOR, SECRET_DOOR, ALTAR, FOUNTAIN, GRAVE, THRONE, ICE)`. Doors and secret doors count as reachable because the player bumps through them. `WATER` and `LAVA` are the two tile types that block without an item (water-walking / fire-resist). The post-terrain check guarantees the floor stays completable.
 
+A secret door is for a shortcut or a hidden chamber, never the only way on. `_open_the_way(dungeon, goal)` turns the secret doors on the shortest way from the up stair to `goal` into plain doors when nothing plainer reaches it: `generate_dungeon` calls it for the down stair (`_open_the_way_down`, 3.5.1), and `_create_gleipnir_room` for every ingredient but the Woman's Beard, whose own secret door is the challenge (3.5.2: a lava ring's stepping stone led through a door into a passage only a shortcut joined to the floor, and hid the Root of a Mountain on about one floor 68 in 2,900).
+
 ### 3.9 Domains and fixtures (Dungeon Alive, 2026-11-12)
 Brandon cut the dungeon into **five domains**, one per gate boss (`data/domains.json`, `src/decor.py`):
 
