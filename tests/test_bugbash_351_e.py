@@ -96,6 +96,7 @@ def fight_to(h, target, chain=3, limit=1500):
             h.key(pygame.K_RETURN)               # a popup or a Keep-going? ask
             said += h.said()
             continue
+        keep_fed(h)
         near = foes_beside(g)
         if near:
             said += blow(h, target if target in near else near[0], chain)
@@ -115,9 +116,10 @@ def go_to(h, x, y, limit=400):
         if g.state != 'player':
             h.key(pygame.K_RETURN)
             continue
+        keep_fed(h)
         if not step_to(h, x, y, adjacent=False):
             h.wait()
-    raise AssertionError(f'never reached {(x, y)} from {(g.player.x, g.player.y)}')
+    raise AssertionError((f'never reached {(x, y)} from {(g.player.x, g.player.y)}', h.peek()[-6:]))
 
 
 def wield_the_sword(h):
@@ -359,4 +361,154 @@ def test_351_e02_the_band_breaks_after_its_leader_falls(make_game, monkeypatch):
     assert 'The Hobgoblin is slain!' in said and rout in said, said
     assert said.index('The Hobgoblin is slain!') < said.index(rout), said
     assert gob.has_effect('feared')
+    no_errors(h)
+
+
+# ---------------------------------------------------------------------------
+# Journey 2: the floor's clock (src/wanderers.py)
+# ---------------------------------------------------------------------------
+
+def _stair(g, tile):
+    d = g.dungeon
+    return next((x, y) for y in range(d.height) for x in range(d.width) if d.tiles[y][x] == tile)
+
+
+def _newcomers(g, before):
+    return [m for m in g.monsters if m not in before and m.alive
+            and not getattr(m, 'is_allied', False)]
+
+
+def explore(h):
+    """Every room of the floor seen, nearest first (where a full explore
+    stands: wanderers._room_stop), then the down stair."""
+    import wanderers
+    from dungeon import STAIRS_DOWN
+    g = h.g
+    ok = wanderers._walk_map(g.dungeon)
+    todo = [s for s in (wanderers._room_stop(r, ok) for r in g.dungeon.rooms) if s]
+    while todo:
+        p = g.player
+        dist = wanderers._distances(ok, (p.x, p.y))
+        reach = [t for t in todo if t in dist]
+        if not reach:
+            break
+        nxt = min(reach, key=dist.__getitem__)
+        todo.remove(nxt)
+        go_to(h, *nxt)
+    go_to(h, *_stair(g, STAIRS_DOWN))
+
+
+def keep_fed(h):
+    """Hungry: U and the first thing to eat (a ration from home when the
+    pack has none: the walking and waiting are the test, not the larder)."""
+    import items
+    from items import Food
+    g = h.g
+    p = g.player
+    if p.sp > 20 or g.state != 'player':
+        return
+    if not any(isinstance(i, Food) for i in p.inventory):
+        p.inventory.append(items.make_item_by_id('food', 'bread_ration'))
+    h.key('u')
+    assert g.state == 'eat_menu', g.state
+    h.key('a')
+
+
+def linger(h, until, limit=3000):
+    """Wait a turn at a time until ``until()`` holds, eating when hungry;
+    the turns waited."""
+    for n in range(limit):
+        if until():
+            return n
+        keep_fed(h)
+        h.wait()
+    import wanderers
+    raise AssertionError(('waited in vain', h.g.state, h.g.turn_count, h.g.dungeon_level,
+                          wanderers.clock(h.g.dungeon), wanderers.grace(h.g.dungeon),
+                          len(h.g.monsters), h.peek()[-8:]))
+
+
+class Ears:
+    """Every line the game says, however long the journey (the log keeps
+    its last 500, so Hero.said's place in it is lost on a long wait)."""
+
+    def __init__(self, g):
+        self.heard = []
+        real = g.msg_log.add
+
+        def add(text, msg_type='info'):
+            self.heard.append(str(text))
+            return real(text, msg_type)
+        g.msg_log.add = add
+
+    def take(self):
+        out, self.heard = self.heard, []
+        return out
+
+
+def test_journey_02_the_floors_clock(make_game):
+    """Floor 1 explored room by room and left by the down stair with no
+    newcomer; floor 2 explored and lingered on: one warning near the end of
+    the grace, then the stirring line said with the first newcomer that
+    really comes; up to floor 1 for a long while (a trader's) and back down:
+    floor 2 has settled, a full tour of quiet before the next."""
+    import floor_curve
+    import wanderers
+    from dungeon import STAIRS_UP
+    g, h = make_game(seed=11)
+    ears = Ears(g)
+    p = g.player
+    p.hp = p.max_hp = 400
+    lines = wanderers._lines()
+    warn, stirs = set(lines['warning']), set(lines['stirs'])
+    start = g.turn_count
+    explore(h)
+    said = ears.take()
+    walked = g.turn_count - start
+    assert walked < wanderers.grace(g.dungeon), (walked, wanderers.grace(g.dungeon))
+    assert not _newcomers(g, []), [m.kind for m in g.monsters]
+    assert not (set(said) & (warn | stirs)), said
+    h.key(pygame.K_PERIOD, '>')
+    assert g.dungeon_level == 2
+    g.monsters = []                                  # watch only the newcomers
+    floor2 = g.dungeon
+    grace = wanderers.grace(floor2)
+    clock = wanderers.clock(floor2)
+    explore(h)                                       # floor 2 seen, then he stays
+    assert not (set(ears.heard) & (warn | stirs))
+    # Linger: the warning, once, near the end of the grace.
+    linger(h, lambda: clock['warned'])
+    said = ears.take()
+    assert sum(1 for s in said if s in warn) == 1, said
+    assert clock['here'] == int(grace * floor_curve.WANDER_WARN_SHARE)
+    assert not _newcomers(g, []) and not (set(said) & stirs)
+    # Then the first newcomer, and the stirring line with him.
+    linger(h, lambda: _newcomers(g, []))
+    said = ears.take()
+    assert clock['here'] >= grace
+    assert sum(1 for s in said if s in stirs) == 1, said
+    assert said[-1] in stirs or any(s in stirs for s in said[-3:]), said
+    assert not (set(said) & warn), said
+    g.monsters = []                                  # he deals with it
+    # Up to floor 1 for a long while, and back down.
+    go_to(h, *_stair(g, STAIRS_UP))
+    h.key(pygame.K_COMMA, '<')
+    assert g.dungeon_level == 1
+    back_at = g.turn_count + 600
+    g.monsters = []
+    linger(h, lambda: g.turn_count >= back_at)
+    h.key(pygame.K_PERIOD, '>')
+    assert g.dungeon_level == 2 and g.dungeon is floor2
+    g.monsters = []
+    ears.take()
+    back = g.turn_count
+    linger(h, lambda: _newcomers(g, []))
+    quiet = g.turn_count - back
+    # (The turn he came down on is one of them.)
+    assert quiet >= max(100, wanderers.explore_tour(g.dungeon)) - 1, quiet
+    said = ears.take()
+    # The floor stirs again: he was warned again on the way, then told.
+    assert sum(1 for s in said if s in warn) == 1, said
+    assert sum(1 for s in said if s in stirs) == 1, said
+    assert [s for s in said if s in warn | stirs][0] in warn, said
     no_errors(h)
