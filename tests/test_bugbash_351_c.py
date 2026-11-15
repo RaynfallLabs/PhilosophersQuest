@@ -71,6 +71,32 @@ def test_floor_ones_atmosphere_is_said_at_the_start_and_only_once():
     assert _texts(g).count(atmo[0]) == 1
 
 
+# ------------------------------------------------- a bow is a missile
+
+def test_every_bow_dart_and_shot_is_a_missile_the_bracers_guard():
+    """The footpads' bandit archer shoots his Hunting Bow from across the
+    room (monster.py fires it at range), but it was tagged a blow: the
+    bracers, which guard missiles, never guarded it, and Bracers of
+    Parrying parried an arrow. Seven attacks in all."""
+    import json
+    import re
+    import guards
+    with open(os.path.join(ROOT, 'data', 'monsters.json'), encoding='utf-8') as f:
+        mons = json.load(f)
+    missile = re.compile(r'bow\b|crossbow|dart|\bshoot|arrow')
+    wrong = [(k, a['name'], a.get('delivery')) for k, v in mons.items()
+             for a in v.get('attacks') or []
+             if missile.search(a.get('name', '').lower()) and a.get('delivery') != 'ranged']
+    assert not wrong, wrong
+    assert guards.classify({'name': 'Hunting Bow', 'type': 'pierce'}) == 'ranged'
+    assert guards.classify({'name': 'Barbed Dart', 'type': 'pierce'}) == 'ranged'
+    # A crossbow's quarrel and an elbow are what they always were.
+    assert guards.classify({'name': 'Crossbow Bolt'}) == 'ranged'
+    assert guards.classify({'name': 'Rusty Knife'}) == 'blow'
+    arch = mons['bandit_archer']['attacks'][0]
+    assert guards.matches(guards.family('arms'), arch)[0], 'the bracers guard an arrow'
+
+
 # ------------------------------------------------------- the hint pool
 
 def test_no_hint_says_a_cleared_floor_refills_at_once():

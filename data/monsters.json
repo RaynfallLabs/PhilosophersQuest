@@ -1468,7 +1468,7 @@
         "effect": "poisoned",
         "effect_chance": 0.25,
         "effect_duration": 4,
-        "delivery": "blow"
+        "delivery": "ranged"
       }
     ],
     "resistances": [],
@@ -12378,7 +12378,7 @@
         "effect": null,
         "effect_chance": 0.0,
         "effect_duration": 0,
-        "delivery": "blow"
+        "delivery": "ranged"
       }
     ],
     "resistances": [
@@ -22076,7 +22076,7 @@
         "effect": "sleeping",
         "effect_chance": 0.35,
         "effect_duration": 8,
-        "delivery": "blow"
+        "delivery": "ranged"
       }
     ],
     "resistances": [
@@ -30941,7 +30941,7 @@
         "name": "Shortbow",
         "damage": "1d6+1",
         "type": "pierce",
-        "delivery": "blow"
+        "delivery": "ranged"
       },
       {
         "name": "Hatchet",
@@ -31808,7 +31808,7 @@
         "effect": "bleeding",
         "effect_chance": 0.45,
         "effect_duration": 4,
-        "delivery": "blow"
+        "delivery": "ranged"
       },
       {
         "name": "Snare-Knife",
@@ -31986,7 +31986,7 @@
         "name": "Yew Longbow",
         "damage": "1d6+2",
         "type": "pierce",
-        "delivery": "blow"
+        "delivery": "ranged"
       },
       {
         "name": "Scavenger Bite",
@@ -32241,7 +32241,7 @@
         "name": "Hunting Bow",
         "damage": "1d6+1",
         "type": "pierce",
-        "delivery": "blow"
+        "delivery": "ranged"
       },
       {
         "name": "Skinning Knife",
