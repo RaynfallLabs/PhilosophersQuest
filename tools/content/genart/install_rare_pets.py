@@ -41,7 +41,11 @@ PICKS = {
     'npc_mooble': 1, 'mooble': 2, 'mooble_dancer': 1, 'mooble_troupe_leader': 1,
     # the Bococho (floors 51-65)
     'npc_bococho_young': 3,             # installed retinted from <run>/final (BUILT)
-    'bococho_chick': 2, 'bococho': 2, 'bococho_champion': 3,
+    # bococho: c4 is the 2026-11-14 redraw (Brandon: the grown bird had three feet), a standing
+    # pose with exactly two legs, seed 98700 candidate 2, copied into <run>/bococho as c4
+    'bococho_chick': 2, 'bococho': 4, 'bococho_champion': 3,
+    # bococho_saddled c4's hand-set stirrup was lifted four pixels on 2026-11-14 (the brief's
+    # touch list; edit.py --cut-only): below the belly, between the legs, it read as a foot
     'bococho_saddled': 4,
     'npc_varro_bococho': 4, 'gilt_varro': 4,
     # forage finds and the camp
