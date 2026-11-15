@@ -163,10 +163,11 @@ class RoadMixin:
 
     def _secret_floors(self) -> list:
         """The floors a system scene owns (the Emberpup, the Black Knight,
-        Setne's Tomb): no medium or high Road slot and no callback lands
-        there, so a floor never holds two big scenes (CON-04, INT-12)."""
+        Setne's Tomb, the Mooble): no medium or high Road slot and no
+        callback lands there, so a floor never holds two big scenes (CON-04,
+        INT-12)."""
         out = []
-        for attr in ('_emberpup', '_black_knight', '_setne'):
+        for attr in ('_emberpup', '_black_knight', '_setne', '_mooble'):
             f = (getattr(self, attr, None) or {}).get('floor')
             if f:
                 out.append(int(f))

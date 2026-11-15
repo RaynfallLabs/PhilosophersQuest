@@ -108,6 +108,7 @@ the doc wins (and the row is a bug — please update it).
 | "What do the traders do for a build (stock for what is below, reforge, silvering, lining, trade-in, special orders)?" | [economy.md](economy.md) 4, 6 and "Stock that knows what's below"; `domain_counters.py`, `smithing.py`, `game_traders.py`, `data/traders.json` `counters` / `inlays` / `linings` |
 | "How does an altar move a stat point?" | [karma_prayer.md](karma_prayer.md) 5.6 (Rededicate a Gift); `rededication.py`, `game_divine.py` |
 | "Who is Old Nickel and why does the Emberpup want his cloak?" | [pets.md](pets.md) "The abandoned Emberpup"; `emberpup_encounter.py` (`BloomleafMixin`), `data/abandoned_emberpup.json`, `data/items/armor.json` `bloomleaf_cloak`, `data/monsters.json` `old_nickel` |
+| "Who is the Mooble, and how does his dance work?" | [pets.md](pets.md) "The Mooble"; `mooble_encounter.py`, `game_mooble_dance.py`, `rhythm.py` (pure scoring), `data/mooble.json`; his tart is cooked to carry ([food_system.md](food_system.md) 5.5) |
 | "What statuses exist and how do resists apply?" | [status_effects.md](status_effects.md); `EFFECT_INFO`, `_RESIST_BLOCKS`, `apply_debuff_with_save` |
 | "How do I add a save bonus from an accessory?" | [save_bonus.md](save_bonus.md); `_gear_save_bonus` + `Player.save_bonus_for` |
 | "How do pets gain levels?" | [pets.md](pets.md); `Pet.gain_xp`; a pet's starting level comes from its sphere (`pet_system.hatch_level`) |

@@ -106,7 +106,12 @@ FOOD = {
 # Rare food turns up in few dishes (it is rarely found).
 FOOD_RARITY = {'philosopher_tea': 0.15, 'deep_fungi': 0.3, 'void_ration': 0.3, 'elvish_bread': 0.6}
 FORBIDDEN_FOOD = ('magic_dungeon_carrot', 'tantalus_plum', 'peach_of_immortality', 'ambrosia',
-                  'golden_apple', 'hearty_stew')
+                  'golden_apple', 'hearty_stew', 'starnut_tart')
+# A dish may be COOKED TO CARRY: its structure row names ``makes``, a food id
+# in data/items/food.json, and cooking it puts that food in the pack instead
+# of eating it (kitchen.apply_dish). The Starnut Tart is the first, the
+# Mooble's favourite (RARE_PETS_PLAN_2026_11_14; its benefit is 'carry', so
+# it sits on the Special tab). A carried dish is never itself an ingredient.
 
 BANNED_WORDS = ('Prime Cut', 'Choice Cut', 'Pristine', 'Pure', 'Concentrated', 'Engorged', 'Glittering')
 
@@ -572,6 +577,8 @@ def build():
         rec = {'name': name, 'ingredients': d['parts'], 'benefit': d['benefit'], 'flavor': flavor}
         if d['legendary']:
             rec['legendary'] = True
+        if d.get('makes'):
+            rec['makes'] = d['makes']
         rec['art'] = dish_art.recipe_art(did, rec, tier_of(d['parts']), have_art)
         if d['cross_depth']:
             rec['cross_depth'] = True
@@ -658,6 +665,15 @@ def check(ings, recipes):
                 problems.append(f'{rid}: banned word {w!r} in {r["name"]}')
         if not os.path.exists(os.path.join(ART_DIR, r['art'] + '.png')):
             problems.append(f'{rid}: no art {r["art"]}')
+        if r.get('makes'):
+            # Cooked to carry: the food it makes exists, is never an
+            # ingredient, and the dish is an ordinary one (not a feast).
+            if r['makes'] not in food:
+                problems.append(f'{rid}: makes unknown food {r["makes"]}')
+            if r['makes'] not in FORBIDDEN_FOOD:
+                problems.append(f'{rid}: the food it makes ({r["makes"]}) must be in FORBIDDEN_FOOD')
+            if r.get('legendary') or r.get('trophy'):
+                problems.append(f'{rid}: a feast or trophy dish is eaten, never carried')
     for iid, r in ings.items():
         if len(singles.get(iid, [])) != 1:
             problems.append(f'{iid}: {len(singles.get(iid, []))} single dishes')

@@ -1,0 +1,210 @@
+{
+  "_about": "The Mooble (src/mooble_encounter.py, src/game_mooble_dance.py, src/rhythm.py; RARE_PETS_PLAN_2026_11_14 section 2). Every run, on one floor from first_floor to last_floor (never a gate boss's floor, nor a planned mini-boss's while another floor is left), in a quiet side cave off the main floor, the last of the Moobles dances alone on a ledge: a small cream-furred sprite with little bat wings and a red bobble on a wire antenna that glows when he dances. He is 'he' throughout, and he ends what he says with '...pom' (an homage, never a copy: no Square Enix name, word or tune). Meet him and he hints at the miners' Starnut Tart (kitchen recipe tart_recipe, made to carry); give him one and he comes down. Then three dances with gap_turns between (leaving his floor counts as waiting), each a rhythm game: PRACTICE first, free and as often as wanted, then the DANCE-OFF, which must be won (dance.pass_share of the steps hit, no more than dance.max_misses misses). A lost dance-off ends the visit. After the third win 'I choose you' asks the quiz below, and he joins as the support companion (the 'pet' block).",
+  "chance_per_run": 1.0,
+  "first_floor": 31,
+  "last_floor": 45,
+  "_floor_note": "Brandon's floors (2026-11-14). A gate boss's floor (boss_levels.BOSS_LEVELS) is never his; a planned mini-boss's floor only when no other is left.",
+  "name": "Mooble",
+  "symbol": "m",
+  "color": [240, 225, 200],
+  "sprite_ledge": "npc_mooble",
+  "sprite_down": "mooble",
+  "art_standin": "will_o_wisp",
+  "_art_standin_note": "Until his own pictures are installed (assets/tiles/monsters/<id>.png), an id of his with no file shows this creature's picture, never a letter (mooble_encounter.art). Each of his ids shows its own picture the moment the file is there.",
+  "starnut_id": "starnut",
+  "starnuts_in_cave": 1,
+  "_starnuts_note": "Starnuts grow in the cracks of his cave: so many are set down there when he is, so a kid who meets him can always bake the tart.",
+  "tart_item": "starnut_tart",
+  "tart_recipe": "dish_starnut_tart",
+  "gap_turns": 30,
+  "_gap_turns_note": "Turns between one dance-off (won or lost, or a fumbled 'I choose you') and the next try. Leaving his floor counts as waiting. Sooner, and he is still dancing the last one through (too_soon).",
+  "dances_needed": 3,
+  "quiz": {"subject": "animal", "tier": 2, "threshold": 2},
+  "pet_species": "mooble",
+  "pet_level": 20,
+  "_pet_level_note": "LORE, NOT FLOOR: he is no hatchling. He has danced every night for years, alone, and joins at level 20 whatever the floor; Mooble Dancer at 25 and Troupe-Leader at 55 (the pet thresholds).",
+  "dance": {
+    "lead_beats": 4,
+    "phrase_beats": 8,
+    "good_ms": 150,
+    "perfect_ms": 50,
+    "pass_share": 0.75,
+    "max_misses": 2,
+    "stray_is_miss": true,
+    "_doc": "The rhythm game (src/rhythm.py). A count-in of lead_beats, then his phrase over phrase_beats (two bars), then the same beats for the hero to echo it on the arrow keys. A key within good_ms of a step's beat is Good, within perfect_ms Perfect; anything else, or no key, is a Miss, and a key that belongs to no step counts as a miss too. Win: pass_share of the steps hit and no more than max_misses misses. No automatic slowing: tune these after Brandon's play-test.",
+    "visits": [
+      {"bpm": 80, "steps": [[0, "left"], [2, "right"], [4, "left"], [6, "right"]]},
+      {"bpm": 95, "steps": [[0, "up"], [1, "down"], [2, "left"], [4, "right"], [5, "left"], [6, "up"]]},
+      {"bpm": 110, "steps": [[0, "left"], [1, "right"], [2, "left"], [3, "right"], [4, "up"], [5, "down"], [6, "up"], [7, "down"]]}
+    ]
+  },
+  "title": "A LONELY DANCER",
+  "story": [
+    "In a quiet side cave the old miners' lamps hang cold on their hooks. The only light is a small red glow on a ledge high up the wall: the bobble on the antenna of a little cream-furred creature with bat wings. He is dancing all alone, a hop, a hop and a spin, and the bobble glows brighter with every step. Then he sees you, and freezes.",
+    "\"Nobody comes down here any more...pom,\" he says. \"The miners danced with us every night, to keep the dark back. Then they went away, and the others went quiet one by one. I still dance. But a dance needs a partner...pom.\"",
+    "His stomach growls. \"The miners used to bring us Starnut Tarts: a starnut, a bread ration and a sweet apple, baked golden. Oh, I do miss a Starnut Tart...pom.\" He looks at you, then at the dark, and stays on his ledge."
+  ],
+  "waiting_ledge": "The Mooble watches you from his ledge, high up the cave wall. His bobble glows faintly. He looks hungry, and a little hopeful.",
+  "waiting": [
+    "The Mooble sits at the foot of his ledge, licking the last tart crumbs off his paws. He keeps glancing at the empty floor of the cave, where the miners used to dance.",
+    "The Mooble bounces on his toes when you come in. His bobble is a little brighter than it was.",
+    "The Mooble is already humming a tune when you come in, and his wings twitch in time with it.",
+    "The Mooble hovers in front of you, his bobble glowing like a lantern. He keeps looking at you, then at the way out of his cave, then at you again."
+  ],
+  "options": {
+    "practice": "Practise the dance with him",
+    "dance": "Dance-off!",
+    "tart": "Give him a Starnut Tart",
+    "choose": "\"I choose you!\"",
+    "leave": "Leave him be"
+  },
+  "on_ledge": "He shakes his head from his ledge. \"I can't dance on an empty stomach...pom. Not without a Starnut Tart.\"",
+  "no_tart": "You search your pack, but you have no Starnut Tart. He sniffs hopefully all the same. \"A starnut, a bread ration and a sweet apple, baked golden...pom,\" he reminds you.",
+  "tart_given": "You hold out the Starnut Tart. The Mooble's ears go straight up. He glides down from his ledge on his little wings, takes the tart in both paws and eats it in four enormous bites. Then he licks every crumb off his paws, and his bobble glows warm and bright. \"Just like the miners made...pom!\" He hops onto the empty floor of the cave and holds out a paw. He wants to dance.",
+  "already_ate": "He has eaten his tart, and he is ready to dance. \"Tarts are for after...pom!\"",
+  "dance_won": [
+    "You finish together. He bobs, unsure, and looks down at his own feet as if they belonged to somebody else. Then he does the last step again, by himself, and smiles. \"We danced...pom,\" he whispers.",
+    "You finish on the beat, together. His bobble glows, bright as a miner's lamp, and for a moment the whole cave is lit. \"I had forgotten...pom,\" he says. \"I had forgotten how that feels.\"",
+    "He spins and laughs, and you spin with him, and the old cave rings with it. When you stop, his bobble is blazing and every corner of the cave is full of light. He looks at you for a long moment. \"Can I come with you...pom? I don't want to dance alone any more.\""
+  ],
+  "all_danced": "\"We've danced all three...pom!\" he says, hovering hopefully in front of you. \"Was there something you wanted to ask me?\"",
+  "dance_lost":"The Mooble's bobble dims. \"Not yet...pom,\" he says, kindly. \"Come back when your feet have rested, and we'll try again.\"",
+  "too_soon": [
+    "The Mooble is still dancing the last one through on his own, slowly, step by step. \"Not a dance-off yet...pom,\" he says. \"But we can practise.\"",
+    "The Mooble is still dancing the last one through, and waves you off with a wing. \"Not yet...pom. Practise with me if you like.\"",
+    "The Mooble is still dancing the last one through, humming as he goes. \"Soon...pom! We can practise while we wait.\""
+  ],
+  "_too_soon_note": "One line per dance won so far (0, 1, 2): bumped before gap_turns have passed since the last dance-off (or a fumbled ask), he says so; the dance-off (and the ask) wait, and nothing counts, but practice is always on offer (Brandon, 2026-11-14: 'an option to practice as many times as you want before you try it').",
+  "refused_ledge": "You hold out your hand and say it. The Mooble only shrinks back on his ledge. \"I don't even know you...pom,\" he says, and his stomach growls.",
+  "refused_dances": [
+    "\"A friend is somebody you've danced with...pom,\" he says. \"And we haven't danced at all.\"",
+    "\"One dance is a start...pom,\" he says. \"Two more, and then ask me again.\"",
+    "\"One more dance...pom,\" he says, his bobble flickering. \"Just one more.\""
+  ],
+  "quiz_title": "\"I CHOOSE YOU!\"  --  ANIMAL",
+  "pass": "\"Pom!\" The Mooble shoots up into the air, turns a somersault and lands on your shoulder. Then he hops down and takes his place at your side, one step behind, the way a dance partner waits for the music. Behind you, the old cave seems a little less dark.",
+  "fail": "You try, but the words come out in a jumble, and the Mooble tilts his head. \"I don't think you meant that...pom,\" he says. \"Come back and ask me properly.\"",
+  "ignore": "You leave the Mooble in his cave. Behind you, the little red glow starts to bob again, all alone.",
+  "name_title": "HE CHOSE YOU TOO",
+  "name_prompt": "Will you give your Mooble a name?",
+  "named_message": "{name} the Mooble will never dance alone again.",
+  "unnamed_message": "Your Mooble will never dance alone again.",
+  "named_chronicle": "Found the last of the Moobles dancing alone in an old mine. I brought him a Starnut Tart and danced with him three times. I named him {name}. He comes with me now, and he hums when we walk.",
+  "unnamed_chronicle": "Found the last of the Moobles dancing alone in an old mine. I brought him a Starnut Tart and danced with him three times. He comes with me now, and he hums when we walk.",
+  "met_chronicle": "Found a little winged creature dancing alone on a ledge in an old mine. He says a dance needs a partner, and he misses the miners' Starnut Tarts.",
+  "log": {
+    "learned_tart": "You will remember the miners' Starnut Tart: a starnut, a bread ration and an apple, baked to carry.",
+    "gave_tart": "The Mooble eats your Starnut Tart.",
+    "won": "You dance with the Mooble: {hits} of {steps} steps in time.",
+    "lost": "The Mooble's bobble dims. ({hits} of {steps} steps in time)",
+    "joined": "The Mooble comes along with you.",
+    "shied": "The Mooble tilts his head at you.",
+    "cave": "Somewhere on this floor, a little red light is bobbing in the dark."
+  },
+  "screen": {
+    "title_practice": "PRACTISE WITH THE MOOBLE",
+    "title_dance": "DANCE-OFF WITH THE MOOBLE",
+    "how": "Watch his steps, then echo them on the arrow keys, in time with the beat. The arrows light up as each step comes.",
+    "pass_mark": "To win: {need} of {steps} steps in time, and no more than {misses} misses.",
+    "practice_note": "Just practice: nothing is lost, and you can stop any time.",
+    "count_in": ["5", "6", "7", "8!"],
+    "watch": "Watch his steps!",
+    "your_turn": "Your turn!",
+    "his_row": "His Steps",
+    "your_row": "Your Steps",
+    "grades": {"perfect": "Perfect", "good": "Good", "miss": "Miss"},
+    "result_line": "{hits} of {steps} steps in time ({perfects} perfect), {misses}.",
+    "miss_words": ["{n} miss", "{n} misses"],
+    "practice_pass": "You kept up with him! In the dance-off, that would win.",
+    "practice_fail": "Not quite in step yet. In the dance-off, that would lose.",
+    "dance_pass": "You kept up with him!",
+    "dance_fail": "Not quite in step.",
+    "footer_practice": "Arrow keys: dance   |   Esc: stop practising",
+    "footer_dance": "Arrow keys: dance it through, the dance-off has begun",
+    "footer_practice_done": "Enter: practise again   |   D: the dance-off   |   Esc: back",
+    "footer_dance_done": "Enter: continue"
+  },
+  "pet": {
+    "_doc": "The Mooble as a companion: pet_system loads 'species' into _SPECIES['mooble'] (a quest pet: never from a Soul Sphere). A support companion: small health and weak bites (health_mult, bite_mult on the pet growth table), he keeps near you rather than charging foes (support), lends you mana while near (mana_gift: amount every 'every' turns, by stage, within radius tiles), and dances the Dance of the Dark (the 'lines' below; the Stray Kids' watch rule). At the Troupe-Leader stage the dance also lifts one hindrance from you.",
+    "species": {
+      "element": "light",
+      "damage_type": "piercing",
+      "color": [240, 225, 200],
+      "pronoun": "he",
+      "quest_pet": true,
+      "support": true,
+      "health_mult": 0.6,
+      "bite_mult": 0.5,
+      "sprite_standin": "will_o_wisp",
+      "stages": [
+        {"name": "Mooble", "symbol": "m", "sprite": "mooble",
+         "msg": "A small cream-furred sprite with little bat wings flutters to your side, his red bobble glowing."},
+        {"name": "Mooble Dancer", "symbol": "M", "sprite": "mooble_dancer",
+         "msg": "{old} spins so fast his wings blur, and his bobble blazes like a lamp. He has become a Mooble Dancer!"},
+        {"name": "Mooble Troupe-Leader", "symbol": "M", "sprite": "mooble_troupe_leader",
+         "msg": "{old} dances a step nobody ever taught him, and the dark itself seems to sway along. He has become a Mooble Troupe-Leader!"}
+      ],
+      "mana_gift": {
+        "name": "Bobble Glow",
+        "every": [5, 4, 3],
+        "amount": 1,
+        "radius": 3,
+        "line": "{pet}'s bobble hums, and a little mana flows into you."
+      },
+      "specials": [
+        {
+          "id": "dance_of_the_dark", "name": "Dance of the Dark", "unlock_stage": 0,
+          "targeting": "self", "effect": "dance_of_the_dark", "range": 0,
+          "aoe_radius": 4, "status": "stunned", "status_duration": 3,
+          "lift_debuff_stage": 2,
+          "rhythm": true,
+          "cooldown": 300,
+          "desc": "A dance: a count-in, then his phrase on the arrow keys. The better you dance, the more foes near him stand staring, the longer and the farther (never a named foe, the mindless, the blind, or what cannot be stunned). Danced well, a Troupe-Leader's also lifts one hindrance from you."
+        }
+      ]
+    },
+    "special_dance": {
+      "_doc": "Dance of the Dark is danced (Brandon, 2026-11-14: 'that should trigger a dance rhythm game as well, where your success determines how powerful it is (no practice, just a count in)'). Using it opens the dance screen: a count-in of lead_beats ('5, 6, 7, 8!'), then his phrase for this stage, danced as its arrows light (no call to watch, no practice). The cooldown is spent when it starts. Monsters do not act during it: it is his turn, like a quiz. The score is rhythm.score (the steps hit over the steps due, a Perfect worth perfect_worth, a stray key costing stray_cost) and the band is the highest whose min_score it reaches: how far it reaches (radius), how long they stare (turns), how many are held at most (max_held, the nearest first), and whether a Troupe-Leader's dance lifts a hindrance (lift). Even a flop does a little.",
+      "lead_beats": 4,
+      "phrase_beats": 8,
+      "perfect_worth": 1.25,
+      "stray_cost": 0.5,
+      "phrases": [
+        {"bpm": 90, "steps": [[0, "left"], [2, "right"], [4, "up"], [6, "down"]]},
+        {"bpm": 100, "steps": [[0, "up"], [1, "up"], [2, "left"], [4, "right"], [5, "down"], [6, "left"]]},
+        {"bpm": 110, "steps": [[0, "left"], [1, "right"], [2, "up"], [3, "down"], [4, "left"], [5, "right"], [6, "up"], [7, "up"]]}
+      ],
+      "bands": [
+        {"name": "flop", "label": "A Flop", "min_score": 0.0, "radius": 2, "turns": 1, "max_held": 1, "lift": false,
+         "line": "{pet}'s bobble only flickers. The dance falls apart, and barely a foe looks up."},
+        {"name": "shaky", "label": "Shaky", "min_score": 0.3, "radius": 3, "turns": 2, "max_held": 2, "lift": false,
+         "line": "{pet} wobbles through the Dance of the Dark, and a few eyes turn to the glow."},
+        {"name": "good", "label": "Good", "min_score": 0.6, "radius": 4, "turns": 3, "max_held": 4, "lift": true,
+         "line": "{pet}'s bobble flares like a lantern, and the Dance of the Dark pulls every eye near him."},
+        {"name": "great", "label": "Great", "min_score": 0.9, "radius": 5, "turns": 3, "max_held": 6, "lift": true,
+         "line": "You and {pet} dance it together, step for step, and the dark itself seems to sway."},
+        {"name": "dazzling", "label": "Dazzling", "min_score": 1.15, "radius": 6, "turns": 4, "max_held": 99, "lift": true,
+         "line": "Every step lands. {pet}'s bobble blazes like a little sun, and the whole room stands staring."}
+      ],
+      "title": "DANCE OF THE DARK",
+      "how": "Dance his steps on the arrow keys as they light up.",
+      "result": "The dance was {label}: foes within {radius} tiles stand staring for {turns} turns, {held}.",
+      "held_words": ["only the nearest one", "the nearest {n} at most", "every one near him"],
+      "footer_special": "Arrow keys: dance it through, his dance is on",
+      "footer_special_done": "Enter: continue"
+    },
+    "lines": {
+      "dance": "{pet}'s bobble flares like a lantern, and he dances the Dance of the Dark: a hop, a spin and a sway that pulls every eye in the room.",
+      "held": "{The} stands staring at the glowing bobble.",
+      "unmoved_named": "{The} has seen finer dances, and is not fooled.",
+      "unmoved_mindless": "{The} has no mind for a dance, and comes on.",
+      "unmoved": "{The} does not even stop.",
+      "blind": "{The} cannot see the dance at all.",
+      "nobody": "{pet} dances the Dance of the Dark, but nothing is near enough to watch.",
+      "lift": "The glow of the dance washes over you, and you are no longer {effect}."
+    },
+    "card_gift": "Bobble Glow: while he is within {radius} tiles of you, he lends you {amount} MP every {every} turns.",
+    "card_dance": "Dance of the Dark: dance it with him; the better you dance, the more foes near him stand staring, and the longer (never named foes, the mindless, the blind, or what cannot be stunned).",
+    "card_lift": "As a Troupe-Leader, his dance, danced well, also lifts one hindrance from you."
+  }
+}

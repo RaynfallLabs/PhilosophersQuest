@@ -68,6 +68,7 @@ from game_states import (
     STATE_STUDY,
     STATE_DROP_QTY_INPUT,
 )
+from game_states import STATE_MOOBLE_DANCE
 from welcome_screen import WelcomeScreen
 from study_mode import StudyMode
 import layout
@@ -77,6 +78,8 @@ from game_menus import MenuMixin
 from game_input import InputMixin
 from game_encounters import EncountersMixin
 from emberpup_encounter import EmberpupMixin, BloomleafMixin, new_run_state as _emberpup_new_run
+from mooble_encounter import MoobleMixin, new_run_state as _mooble_new_run
+from game_mooble_dance import MoobleDanceMixin
 from black_knight import BlackKnightMixin, new_run_state as _black_knight_new_run
 from game_stray_kids import StrayKidsMixin
 from stray_kids import new_run_state as _stray_kids_new_run, old_save_state as _stray_kids_old_save
@@ -261,7 +264,8 @@ DEEP_SLEEP = 10 ** 6           # a zoo, graveyard or barracks sleeper: until wok
 class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMixin, EncountersMixin,
            EmberpupMixin, BloomleafMixin, BlackKnightMixin, StrayKidsMixin, ItemActionsMixin, RoadMixin, EscortMixin,
            SetneMixin, TraderMixin, PurseMixin, FamilyMixin, SeekerMixin, PopupMixin,
-           HazardsMixin, LoreFixturesMixin, DressingMixin, ArsenalMixin):
+           HazardsMixin, LoreFixturesMixin, DressingMixin, ArsenalMixin,
+           MoobleMixin, MoobleDanceMixin):
     # FANTASY: Grimoire font set -- larger for readability. Read through the
     # UI scale on every use (SCALE_PLAN.md): a window resize can never leave
     # a font of the old size behind.
@@ -423,6 +427,13 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self._emberpup_npc = None             # the creature whose screen is open
         self._emberpup_phase: str = 'story'
         self._naming_story = None             # a non-sphere pet's words for the naming popup
+        # The Mooble (every run, one floor of 31-45, in a side cave; his
+        # dance is a rhythm game): {'floor', 'spawned', 'outcome', 'seed', ...}
+        # (mooble_encounter.py). Off the shared random stream, like the pup.
+        self._mooble: dict = _mooble_new_run(
+            exclude=getattr(self.level_mgr, '_planned_mini_bosses', None) or ())
+        self._mooble_npc = None               # the Mooble whose screen is open
+        self._mdance = None                   # his dance screen while it is open (game_mooble_dance.py)
         # The Black Knight (every run, one floor of 15-19), on
         # his bridge: {'floor', 'spawned', 'outcome', 'sword_dropped'}. Rolled
         # off the shared random stream, like the Emberpup.
@@ -1134,6 +1145,17 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             'floor': None, 'spawned': False, 'outcome': None}
         self._emberpup_npc = None
         self._naming_story = None
+        # The Mooble: a save from before him rolls him a floor still ahead of
+        # the hero (none when all of his floors are behind).
+        _mo = state.get('_mooble')
+        if isinstance(_mo, dict):
+            self._mooble = dict(_mo)
+        else:
+            self._mooble = _mooble_new_run(
+                exclude=getattr(self.level_mgr, '_planned_mini_bosses', None) or (),
+                above=int(getattr(self.player, 'deepest_floor_reached', 1) or 1))
+        self._mooble_npc = None
+        self._mdance = None
         # The Black Knight: a save from before him keeps a run without him.
         _bk = state.get('_black_knight')
         self._black_knight = dict(_bk) if isinstance(_bk, dict) else {
@@ -1843,6 +1865,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         _from_level = self.dungeon_level          # (the staircase taken, for Cerberus)
         # Leaving the Emberpup's floor after feeding him is waiting.
         self._emberpup_left(_from_level, new_level)
+        # Leaving the Mooble's floor after a dance-off is waiting too.
+        self._mooble_left(_from_level, new_level)
         # Notify quirk system before level change (fast-exit check)
         # New depth: a floor deeper than any reached. A side floor (the Cow
         # Level, 999; the Zombie Stage, 997) is a side trip, not depth:
@@ -2020,6 +2044,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self._maybe_spawn_cow(new_level)
             self._maybe_spawn_emberpup(new_level)
             self._maybe_spawn_cloak_wearer(new_level)   # after the pup: never in his room
+            self._maybe_spawn_mooble(new_level)
             self._maybe_spawn_black_knight(new_level)
             self._maybe_spawn_stray_kids_idol(new_level)
             self._maybe_spawn_setne_tomb(new_level)
@@ -3499,6 +3524,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             if getattr(target, '_is_abandoned_emberpup', False):
                 self._start_emberpup_encounter(target)
                 return
+            # The Mooble in his cave: his own screen
+            if getattr(target, '_is_mooble', False):
+                self._start_mooble_encounter(target)
+                return
             # Unicorn encounter: multi-step interaction
             if getattr(target, '_is_unicorn', False):
                 self._handle_unicorn_bump(target)
@@ -4521,6 +4550,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             or getattr(thing, '_npc_encounter_tag', None) or getattr(thing, '_flavor_encounter_tag', None)
             or getattr(thing, '_is_unicorn', False)
             or getattr(thing, '_is_abandoned_emberpup', False)
+            or getattr(thing, '_is_mooble', False)
             or getattr(thing, 'is_escort', False)
             or getattr(thing, 'plot_locked', False)
             or getattr(thing, 'id', None) in Game._QUEST_PIECE_IDS
@@ -6997,8 +7027,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             # Persephone, Circe all hang off on_food_eaten). Quality = outcome
             # tier on success, 0 when ruined. bonus_type derived from the
             # v2.6.4 outcome shape (Circe wants 5 distinct categories).
+            # A dish cooked to carry is not eaten here (kitchen.makes): it
+            # counts when the food it made is eaten.
             _qs_cook = getattr(self, 'quirk_system', None)
-            if _qs_cook:
+            if _qs_cook and not (_kitchen.makes(recipe) and not _ruined):
                 _quality = 0 if _ruined else _outcome_tier
                 _bonus_type = _outcome_bonus_category(recipe) if not _ruined else 'ruined'
                 _qs_cook.on_food_eaten(
@@ -8444,6 +8476,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # story) open one at a time once play is calm (game_popups.PopupMixin).
         self._seeker_tick()
         self._popup_tick(dt)
+        # The Mooble's dance runs on real time: its beat, every frame.
+        if self.state == STATE_MOOBLE_DANCE:
+            self._mooble_dance_tick()
+        elif (self.state == STATE_PLAYER
+              and (self.__dict__.get('_mooble') or {}).get('dancing')):
+            self._mooble_after_load()         # saved mid-dance: the phrase again
         # A resize in this frame or the one before: the quiz clock advances
         # one nominal frame at most (RESIZE_GRACE_FRAMES; on_resize arms it).
         quiz_dt = min(dt, self.MAX_QUIZ_DT)

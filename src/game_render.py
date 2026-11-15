@@ -41,6 +41,7 @@ from game_helpers import (
 from naming import proper_name
 from quiz_engine import QuizMode, QuizState
 from spells import LEARNABLE_SPELLS
+from game_states import STATE_MOOBLE, STATE_MOOBLE_DANCE
 from game_states import (
     STATE_PLAYER, STATE_QUIZ, STATE_QUIZ_CONTEXT, STATE_EQUIP_MENU, STATE_KIT, STATE_DISCOVERIES,
     STATE_WAND_MENU, STATE_SCROLL_MENU, STATE_IDENTIFY_MENU, STATE_COOK_MENU,
@@ -2451,6 +2452,10 @@ class RenderMixin:
             self._draw_cow_encounter()
         elif self.state == STATE_EMBERPUP:
             self._draw_emberpup_encounter()
+        elif self.state == STATE_MOOBLE:
+            self._draw_mooble_encounter()          # mooble_encounter.MoobleMixin
+        elif self.state == STATE_MOOBLE_DANCE:
+            self._draw_mooble_dance()              # game_mooble_dance.MoobleDanceMixin
         elif self.state == STATE_JUDGMENT:
             self._draw_judgment()
 
@@ -7794,6 +7799,7 @@ class RenderMixin:
             details = [
                 *self._pet_cloak_lines(pet),
                 *self._pet_rescue_lines(pet),
+                *self._pet_gift_lines(pet),        # the Mooble's (mooble_encounter)
             ]
             # What can be done with it, under the companions list (the card
             # beside it is its picture and who it is: Shep's whole card did

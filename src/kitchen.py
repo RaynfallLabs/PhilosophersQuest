@@ -17,6 +17,14 @@ power), which is its menu tab. Its tier is the band of its deepest
 ingredient. What it gives comes from the rules file by tier, by tab, by its
 worth (what its ingredients add, times the size bonus) and, for a legendary
 feast, the legendary multiplier and a permanent bonus.
+
+COOK TO CARRY (2026-11-14, the Mooble's Starnut Tart): a dish may name
+``makes``, a food id in data/items/food.json. Cooking it right puts that food
+in the pack instead of eating it (``apply_dish``); its benefit is 'carry', so
+it sits on the Special tab, and its menu lines say it is made to carry and
+what it gives when eaten. A dish the hero has LEARNED of (``player.
+dishes_learned``: the Mooble tells of his tart) shows under Building Toward
+even before any part of it is held.
 """
 import json
 from collections import Counter
@@ -222,7 +230,20 @@ def dish_stat(rec: dict):
 
 
 def dish_power(rec: dict):
+    if makes(rec):
+        return None                       # a dish to carry has no timed power
     return rec.get('benefit') if dish_tab(rec) == 'special' else None
+
+
+def makes(rec: dict):
+    """The food a dish is cooked to carry (its ``makes``), or None."""
+    return (rec or {}).get('makes') or None
+
+
+def carried_food(rec: dict) -> dict:
+    """The food.json entry a carry dish makes ({} for any other dish)."""
+    fid = makes(rec)
+    return dict(foods().get(fid) or {}) if fid else {}
 
 
 def band_of(floor: int) -> int:
@@ -314,6 +335,8 @@ def dish_outcome(rec: dict) -> dict:
         out['stat'] = dish_stat(rec)
         full = float(r['stat'].get('full_point_worth', 2.5))
         out['lessons'] = 2 if (grand or dish_worth(rec) >= full) else 1
+    elif makes(rec):
+        out['power'] = None               # cooked to carry: what it gives is the food it makes
     else:
         power = dish_power(rec)
         spec = r['special']
@@ -407,6 +430,8 @@ def dish_effects(player, rec: dict) -> list:
     benefit first: "+45 HP", "+2 Max HP", "+12 MP", "Teaches DEX (a full
     point)", "Dark Vision, 300 turns". A cap that would eat the benefit says
     so ("Max HP full this floor", "DEX lesson used this floor")."""
+    if makes(rec):
+        return carry_lines(rec)
     out = dish_outcome(rec)
     tab = out['tab']
     lines = []
@@ -458,6 +483,23 @@ def _lasting_lines(player, out: dict) -> list:
             lines.append(f"{power_label(val)} for good")
     for pw in out['trophy_powers']:
         lines.append(TROPHY_POWER_LINES.get(pw, 'A lasting power'))
+    return lines
+
+
+def carry_lines(rec: dict) -> list:
+    """The menu lines of a dish cooked to carry: that it goes in the pack,
+    and what the food it makes gives when it is eaten."""
+    from naming import proper_name
+    f = carried_food(rec)
+    name = proper_name(f.get('name') or rec.get('name') or 'it')
+    lines = [f"Made to carry: one {name} into your pack"]
+    eat = []
+    if int(f.get('sp_restore', 0) or 0) > 0:
+        eat.append(f"+{int(f['sp_restore'])} SP")
+    if int(f.get('hp_restore', 0) or 0) > 0:
+        eat.append(f"+{int(f['hp_restore'])} HP")
+    if eat:
+        lines.append("If eaten: " + ", ".join(eat))
     return lines
 
 
@@ -550,7 +592,9 @@ def menu_rows(player, inventory, tab: str) -> list:
     2. ``building``: dishes the hero holds at least one HARVESTED part of
        (a monster part or a trophy; a ration or a foraged find alone does
        not count, or bread would put a hundred dishes here) but not all,
-       the closest first ("2 of 4", with what is missing named);
+       the closest first ("2 of 4", with what is missing named), and any
+       dish the hero has learned of (``player.dishes_learned``: the
+       Mooble's Starnut Tart), held parts or none;
     3. ``legendary``: legendary feasts and boss-trophy dishes, ready ones
        first, then the closest; shown once the hero holds any harvested
        part of them. Kept apart, and marked, so the big payoff stands out.
@@ -559,6 +603,7 @@ def menu_rows(player, inventory, tab: str) -> list:
     level) never shows until the hero holds that part.
     """
     counts = held_counts(inventory)
+    learned = set(getattr(player, 'dishes_learned', None) or ())
     rows = []
     for rec in book():
         if dish_tab(rec) != tab:
@@ -566,7 +611,7 @@ def menu_rows(player, inventory, tab: str) -> list:
         ps = parts(rec)
         if any(is_secret_part(p) and counts.get(p, 0) <= 0 for p in ps):
             continue
-        if not can_cook(rec, counts) and not any(
+        if not can_cook(rec, counts) and rec['id'] not in learned and not any(
                 is_harvested(p) and counts.get(p, 0) > 0 for p in ps):
             continue
         rows.append(_row(player, rec, counts))
@@ -653,6 +698,8 @@ def apply_dish(player, rec: dict) -> list:
     """A dish cooked right: everything it gives, applied to the hero.
     Returns the message lines (the first names the dish)."""
     from food_system import _apply_permanent_power
+    if makes(rec):
+        return make_to_carry(player, rec)
     out = dish_outcome(rec)
     name = rec.get('name', 'the dish')
     msgs = [f"You prepare {name}."]
@@ -713,6 +760,25 @@ def apply_dish(player, rec: dict) -> list:
         if line:
             msgs.append(line.strip())
     return msgs
+
+
+def make_to_carry(player, rec: dict) -> list:
+    """A dish cooked to carry, cooked right: the food it makes goes in the
+    pack, uneaten (it weighs less than what went into it, so it always
+    fits). Returns the message lines (the first names the dish)."""
+    from items import make_item_by_id
+    from naming import proper_name
+    name = rec.get('name', 'the dish')
+    item = make_item_by_id('food', makes(rec))
+    if item is None:
+        return [f"You prepare {name}, but nothing comes of it."]
+    item.count = 1
+    item.identified = True
+    adder = getattr(player, 'add_to_inventory', None)
+    if adder is None or not adder(item):
+        player.inventory.append(item)
+    return [f"You prepare {name}.",
+            f"You wrap the {proper_name(item.name)} to carry. It is in your pack."]
 
 
 def _teach(player, stat: str, lessons: int) -> list:
@@ -793,6 +859,8 @@ def bonus_category(rec: dict) -> str:
     unlock it): 'permanent' for a feast or trophy, else its tab."""
     if is_legendary(rec) or trophy_powers(rec):
         return 'permanent'
+    if makes(rec):
+        return 'carry'
     return dish_tab(rec)
 
 

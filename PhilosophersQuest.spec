@@ -54,6 +54,7 @@ added_files = [
     ('data/flavor_encounters.json', 'data'),
     ('data/npc_encounters.json',    'data'),
     ('data/abandoned_emberpup.json', 'data'),
+    ('data/mooble.json',            'data'),   # the Mooble, his dance and the pet (mooble_encounter.py)
     ('data/black_knight.json',      'data'),
     ('data/stray_kids.json',        'data'),   # the Stray Kids easter egg (stray_kids.py)
     ('data/karma_rules.json',       'data'),

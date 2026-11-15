@@ -190,7 +190,8 @@ def test_economics_question_format():
 def test_food_count():
     from items import load_items
     foods = load_items('food')
-    assert len(foods) == 17, f"Expected 17 food items, got {len(foods)}"
+    # 18 since 2026-11-14: the Starnut Tart, cooked to carry for the Mooble.
+    assert len(foods) == 18, f"Expected 18 food items, got {len(foods)}"
 
 
 def test_new_deep_food_items():

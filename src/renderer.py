@@ -50,6 +50,10 @@ _UNIQUE_SPRITE_FALLBACK = {
     'lions_thorn':      'toxic_thorn',
     'cuthberts_gospel': 'book_of_thoth',
     'duck_of_doom':  'adamantine_great_helm',
+    # The Mooble's Starnut Tart is a food cooked to carry: it shows the
+    # picture of the dish it is (dish_art: a pie, tier 2, Special) until it
+    # has one of its own (assets/tiles/items/starnut_tart.png wins).
+    'starnut_tart':  'dish_pie_t2_special',
 }
 # (hand_of_glory, ruby_rod, amulet_of_hippolyta and ring_of_solomons_authority
 # borrowed pictures here until bug bash 4, call 17 gave each its own.)

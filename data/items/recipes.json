@@ -7315,5 +7315,17 @@
   "benefit": "hp",
   "flavor": "Dragon heart-scale simmered soft with sunroot and healing herbs. It mends from the inside.",
   "art": "dish_stew_t3_hp"
+ },
+ "dish_starnut_tart": {
+  "name": "Starnut Tart",
+  "ingredients": [
+   "starnut",
+   "bread_ration",
+   "apple"
+  ],
+  "benefit": "carry",
+  "flavor": "The old miners' tart: starnuts and a sweet apple baked golden in a crust of ration bread, wrapped to carry down the shafts.",
+  "makes": "starnut_tart",
+  "art": "dish_pie_t2_special"
  }
 }

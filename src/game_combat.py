@@ -3896,6 +3896,11 @@ class CombatMixin:
         they resolve instantly here, no cursor.
         """
         from game_states import STATE_TARGET, STATE_PLAYER
+        if special.get('rhythm') and special.get('effect') == 'dance_of_the_dark':
+            # The Mooble's Dance of the Dark is danced: the rhythm screen
+            # opens, and how well it goes sets its power (game_mooble_dance).
+            self._mooble_special_dance(pet, special)
+            return
         if special.get('targeting') in ('self', 'visible_all', 'hero_adjacent'):
             # No-target specials: resolve immediately at pet's tile and
             # spend the turn.
@@ -3989,6 +3994,10 @@ class CombatMixin:
                     f"{pet.name}'s mind opens — every creature on the "
                     f"floor floods into your awareness ({quantity(dur, 'turn')}).",
                     'success')
+            elif effect == 'dance_of_the_dark':
+                # The Mooble's dance: foes near him stand staring
+                # (mooble_encounter.MoobleMixin).
+                self._mooble_dance_of_the_dark(pet, special)
             return
 
         # ── Sometimes Goose: hit every alive monster in FOV ──
@@ -4356,6 +4365,9 @@ class CombatMixin:
                 _prb = getattr(_head, 'pet_regen_bonus', 0)
             pet.tick_regen(bonus=_prb)
             pet.tick_cooldown()
+            # A support companion's mana while near (the Mooble's Bobble Glow).
+            if hasattr(pet, 'mana_gift'):
+                self._mooble_gift_said(pet, pet.mana_gift(self.player))
 
             # Temporary pet duration ticks
             if getattr(pet, 'is_dad', False) and pet.alive:
