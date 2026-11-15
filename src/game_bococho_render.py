@@ -132,7 +132,9 @@ class BocochoRenderMixin:
         row_h = S(48)
         kit = bool(panel_band('panel', pygame.Rect(0, 0, S(860), S(300))))
         b = S(16) if kit else 0
-        pw = min(layout.MAP_W - S(16), S(1040))
+        # As wide as the map, from rail to rail: it lies over the message log,
+        # which must not show past its edges at any window size.
+        pw = layout.MAP_W
         text_w = pw - 2 * (b + S(22))
 
         def lines_h(lines):
@@ -147,9 +149,10 @@ class BocochoRenderMixin:
         body_h = (lines_h(lines) + (S(6) + lines_h([status]) if status else 0)
                   + (S(8) + len(opts) * (row_h + S(5)) if opts else 0))
         ph = min(layout.WINDOW_H - S(24), 2 * b + head_h + S(14) + body_h + S(8) + foot_h)
+        ph = max(ph, layout.WINDOW_H - layout.GAME_H + S(8))   # never shorter than the log
         self._race_panel_h = ph
-        px = layout.MAP_X + (layout.MAP_W - pw) // 2
-        py = layout.WINDOW_H - ph - S(8)
+        px = layout.MAP_X
+        py = layout.WINDOW_H - ph
         self._draw_race_runner_tags(py)
         panel = pygame.Rect(px, py, pw, ph)
         fantasy_ui.draw_dark_panel(self.screen, panel, border_color=border)

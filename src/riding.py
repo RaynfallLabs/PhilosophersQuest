@@ -149,5 +149,5 @@ def saddled_sprite(stage: int) -> str:
 
 def seat(sprite_id: str) -> tuple:
     """Where the rider's hips go in a saddled picture's 64 px frame."""
-    s = (data().get('seat') or {}).get(sprite_id) or (32, 22)
+    s = (data().get("seat") or {}).get(sprite_id) or (33, 23)
     return int(s[0]), int(s[1])
