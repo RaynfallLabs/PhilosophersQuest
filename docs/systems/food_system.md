@@ -310,10 +310,10 @@ trophy's own dish and by either of the two feasts that hold it:
 | `plus_2_con_petrify_immune` | Hrungnir | +2 CON, Stoneproof. |
 | `plus_2_wis_auto_reveal_secret_doors` | the Whispering Crone | +2 WIS, hidden doors near you show. |
 | `plus_2_str_confuse_immune` | Asterion | +2 STR, Clear-Headed. |
-| `fire_immunity` | Surtur | Fire Resist for good. |
-| `cold_immunity` | Ymir's Last Spawn | Cold Resist for good. |
+| `fire_immunity` | Surtur | Fire Resist for good (half damage, never set alight; not immunity, despite the id). |
+| `cold_immunity` | Ymir's Last Spawn | Cold Resist for good (half damage, never frozen). |
 | `petrify_immunity` | Medusa | Stoneproof. |
-| `chromatic_resist_all` | Tiamat | Fire, cold, lightning, poison and acid each hurt 3 less. |
+| `chromatic_resist_all` | Tiamat | Three levels of fire, cold, lightning, poison and acid resistance (`damage_resistances`, 8% a level: about a fifth less). |
 | `one_time_death_save` | Asmodeus | The next death does not take you. |
 | `revive_once_at_half_hp` | the Green Knight | Once, rise at half HP. |
 | `max_hp_per_floor_descent` | Fafnir | +2 max HP each new floor. |

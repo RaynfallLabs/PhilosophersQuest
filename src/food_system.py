@@ -289,15 +289,17 @@ def _apply_permanent_power(player, power_id: str, recipe: dict) -> str:
             log_error('food_system._apply_permanent_power: recovered from an error')
         return "Permanent petrification immunity. " + (desc or "")
     elif power_id == 'chromatic_resist_all':
-        # A dragon's hide, not five full immunities: each chromatic
-        # element hurts 3 less per hit (flat reduction, the same
-        # mechanism chain-equip resistances use).
+        # A dragon's hide, not five full immunities: three levels of each
+        # chromatic element's resistance (the mechanism chain-equip
+        # resistances use: Player.CHAIN_RESIST_STEP, 8% a level, so about
+        # a fifth less a hit). It said "each hurt 3 less", the flat rule
+        # the chain resistances had before they became a share.
         res = getattr(player, 'damage_resistances', None)
         if res is not None:
             for elt in ('fire', 'cold', 'lightning', 'poison', 'acid'):
                 res[elt] = int(res.get(elt, 0)) + 3
         return ("Dragon-scale hardiness: fire, cold, lightning, poison and "
-                "acid each hurt 3 less. " + (desc or ""))
+                "acid each hurt you about a fifth less. " + (desc or ""))
     elif power_id == 'one_time_death_save':
         player._asmodeus_pact = True  # consumed by player.is_dead() check
         return "The Pact is signed. The next death will not claim you. " + (desc or "")

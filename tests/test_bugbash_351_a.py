@@ -190,3 +190,42 @@ def test_a3_a_stat_feasts_point_for_good_reads_the_stats_cap():
     before = p.STR
     kitchen.apply_dish(p, feast)
     assert p.STR == before + 2
+
+
+# ---------------------------------------------------------------------------
+# A4. Four boss trophies said they did more than they do.
+# ---------------------------------------------------------------------------
+
+def test_a4_trophy_words_say_what_the_power_does():
+    """Surtur's coal said "ZERO fire damage from any source" and Ymir's
+    marrow "ZERO cold damage": both give the resistance, which halves (it
+    stopped being an immunity in 2026-10). Nidhoggr's scale said "immunity
+    to poison" (poison cannot take hold, and does half). Tiamat's tear
+    said 25% in the Kit and "each hurt 3 less" when eaten: it is three
+    levels of the chain resistance, about a fifth less a hit."""
+    from food_system import _apply_permanent_power
+    ings = kitchen.ingredients()
+    for tid in ('surtur_trophy', 'ymir_last_spawn_trophy', 'nidhoggr_fragment_trophy',
+                'tiamat_trophy'):
+        text = ings[tid]['description']
+        assert 'ZERO' not in text and 'immunity' not in text and '25%' not in text, (tid, text)
+    assert 'half damage' in ings['surtur_trophy']['description']
+    assert 'half damage' in ings['ymir_last_spawn_trophy']['description']
+    assert 'a fifth less' in ings['tiamat_trophy']['description']
+    # Tiamat: about a fifth less, as said.
+    p = _player(deepest=90)
+    p.max_hp = p.hp = 10_000
+    before = p.take_damage(100, 'fire')
+    p.hp = p.max_hp
+    line = _apply_permanent_power(p, 'chromatic_resist_all', {})
+    after = p.take_damage(100, 'fire')
+    assert 'a fifth less' in line and '3 less' not in line
+    assert 0.74 <= after / before <= 0.82, (before, after)
+    # Surtur: half, not none.
+    p = _player(deepest=90)
+    p.max_hp = p.hp = 10_000
+    before = p.take_damage(100, 'fire')
+    p.hp = p.max_hp
+    _apply_permanent_power(p, 'fire_immunity', {})
+    after = p.take_damage(100, 'fire')
+    assert 0 < after < before
