@@ -715,3 +715,142 @@ def test_journey_04_the_counter_is_the_blow(make_game):
         assert m.max_hp - m.hp == dealt
         g.monsters = []
     no_errors(h)
+
+
+# ---------------------------------------------------------------------------
+# Journey 5: armour, the load tiers, the kits, the weapon at his back
+# ---------------------------------------------------------------------------
+
+def test_journey_05_plate_a_full_pack_and_two_kits(make_game):
+    """Steel plate on (four geography answers): Heavy. Ringmail and a
+    mace picked up: Burdened, and every second step gives the dungeon an
+    extra turn. Kit One saved in plate (Shift+E, S); the ringmail
+    dropped, leather on, Kit Two saved; Kit One put back on. The mace at
+    his back dropped and picked up: back at his back."""
+    import items
+    import known_by_hand as kbh
+    g, h = make_game()
+    p = g.player
+    open_floor(g, p.x, p.y, 6)
+    sword = wield_the_sword(h)
+    h.said()
+    plate = drop_here_(g, items.instantiate_armor('plate', 'chain_steel'))
+    h.key('g')
+    assert plate in p.inventory
+    h.key('e')
+    pick(h, plate, g._get_equip_tab_items)
+    assert h.in_quiz() and 'GEOGRAPHY' in g.quiz_title
+    h.quiz(4)
+    while g.state == 'ask':
+        h.key('y')
+    for _ in range(12):                                 # the plate's turns
+        if body_(g) is plate:
+            break
+        h.wait()
+    assert body_(g) is plate, h.said()
+    said = h.said()
+    tier = p.load_tier()
+    if tier == 'heavy':
+        assert any(s.startswith('Your load is Heavy.') for s in said), said
+    # Ringmail and a mace: Burdened.
+    spare = drop_here_(g, items.instantiate_armor('ringmail', 'chain_steel'))
+    mace = drop_here_(g, items.instantiate_weapon('mace', 'iron'))
+    for _ in range(4):
+        if spare in p.inventory and mace in p.inventory:
+            break
+        h.key('g')
+    said = h.said()
+    assert spare in p.inventory or p.load_tier() in ('burdened', 'overloaded'), said
+    assert p.load_tier() in ('burdened', 'overloaded'), (p.get_current_weight(), p.get_carry_limit())
+    assert any(s.startswith(('You are Burdened.', 'You are Overloaded.')) for s in said), said
+    # Burdened steps: every second one costs the dungeon a turn more.
+    if p.load_tier() == 'burdened':
+        t0 = g.turn_count
+        for dx in (1, -1, 1, -1):
+            h.move(dx, 0)
+        assert g.turn_count - t0 == 4 + 4 // p.BURDENED_STEP_EVERY, g.turn_count - t0
+    # The mace At Your Back (Kit, R).
+    if mace in p.inventory:
+        h.key('k')
+        kit_select_(h, mace)
+        h.key('r')
+        h.key(pygame.K_ESCAPE)
+        assert p.readied_weapon is mace
+    h.said()
+    # Kit One: plate, sword, mace at his back.
+    h.shift('E')
+    assert g.state == 'loadouts'
+    h.key(pygame.K_RETURN)
+    h.key('s')
+    said = h.said()
+    assert any(s.startswith('Kit One saved') for s in said), said
+    h.key(pygame.K_ESCAPE)
+    # The ringmail dropped: no longer Burdened.
+    h.key('d')
+    pick(h, spare, g._get_drop_tab_items)
+    said = h.said()
+    assert spare in g.ground_items and p.load_tier() in ('', 'heavy'), said
+    assert any(s.startswith(('You are no longer Burdened', 'You are no longer Overloaded'))
+               for s in said), said
+    # Leather on (plate off first), and Kit Two saved.
+    jerkin = items.instantiate_armor('leather', 'leather')
+    kbh.learn(p, jerkin)
+    p.inventory.append(jerkin)
+    h.key('e')
+    pick(h, jerkin, g._get_equip_tab_items)
+    for _ in range(16):
+        if body_(g) is jerkin:
+            break
+        if g.state == 'ask':
+            h.key('y')
+        else:
+            h.wait()
+    assert body_(g) is jerkin, h.said()
+    h.said()
+    h.shift('E')
+    h.key(pygame.K_DOWN)
+    h.key(pygame.K_RETURN)
+    h.key('s')
+    assert any(s.startswith('Kit Two saved') for s in h.said())
+    h.key(pygame.K_ESCAPE)
+    # Back into Kit One: the plate goes on again, known by hand.
+    h.shift('E')
+    h.key('1')
+    h.key(pygame.K_RETURN)
+    assert g.state == 'ask', (g.state, h.said())
+    h.key('y')
+    for _ in range(20):
+        if body_(g) is plate:
+            break
+        if g.state == 'ask':
+            h.key('y')
+        else:
+            h.wait()
+    said = h.said()
+    assert body_(g) is plate and p.weapon is sword, said
+    assert p.readied_weapon is mace, said
+    # The mace at his back dropped and picked up again: back in its place.
+    h.key('d')
+    pick(h, mace, g._get_drop_tab_items)
+    assert mace in g.ground_items and p.readied_weapon is None
+    h.said()
+    h.key('g')
+    said = h.said()
+    assert mace in p.inventory and p.readied_weapon is mace, said
+    no_errors(h)
+
+
+def drop_here_(g, item):
+    item.x, item.y = g.player.x, g.player.y
+    g.ground_items.append(item)
+    return item
+
+
+def body_(g):
+    from items import ARMOR_SLOTS
+    return g.player.armor_slots[ARMOR_SLOTS.index('body')]
+
+
+def kit_select_(h, item):
+    from test_bugbash_wb_e import kit_select
+    kit_select(h, item)
