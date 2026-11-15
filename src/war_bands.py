@@ -181,10 +181,15 @@ def place_band(dungeon, monsters: list, level: int, rng=None) -> list:
 def roster_text(band: dict) -> str:
     d = data()
     names = d.get('role_names', {})
+    ones = d.get('role_names_one', {})
     parts = [names.get('leader', 'a leader')]
     for role in ROLES:
         n = int((band.get('counts') or {}).get(role, 0))
-        if n:
+        if n == 1 and ones.get(role):
+            # One of a role is singular: "one archer" ("one archers" was
+            # said of every gang of footpads, which has one).
+            parts.append(ones[role])
+        elif n:
             word = {1: 'one', 2: 'two', 3: 'three', 4: 'four', 5: 'five'}.get(n, str(n))
             parts.append(names.get(role, '{n}').replace('{n}', word))
     if len(parts) == 1:
