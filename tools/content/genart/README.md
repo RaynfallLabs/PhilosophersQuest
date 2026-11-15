@@ -1171,3 +1171,34 @@ What went wrong, and the wording that fixed it:
 - **A flat bronze disc standing in a bowl reads as an egg** at 64 px; carry the motif on the rim.
 - **A sauce pool under the food carries a colour cue well** (blue MP, violet Special); a few blue
   flecks in a stew read only as a small patch.
+
+## Rare pets: the Mooble and the Bococho (2026-11-14)
+
+Homages, not copies (`briefs/rare_pets.json`, `rare_pets_art.py`, `install_rare_pets.py`; work
+files in `_genart/rare_pets/`, verdicts in its `review.json`, sheet `RARE_PETS_ART_SHEET.png`).
+
+- **"Painted as a real living animal" with "round, plump" drew bat-winged pigs** with pink skin,
+  nipples and rat tails. "A small fey creature from an old tale, painted seriously", fur "so thick
+  that no skin shows anywhere", "a flat, round, furry face ... no snout and no muzzle" and "no
+  tail" drew a fluffy cream creature (a Persian cat's face) that reads as the homage.
+- **A round red bobble on a curled antenna is drawn as a cherry** with its stem and leaf. "The
+  bobble hangs from its tip in the air just in front of its brow, not touching its head", "no stem
+  and no leaf", with "cherry, fruit, leaf, stem" denied, gave a bead on a curl.
+- **A front-on figure never leans.** Six draws of "a big lean to the left/right" stood up straight
+  with arms out. One painting with arms flung wide, tipped 16 degrees each way about its feet
+  before the cut (`rare_pets_art.py` TILT), gave both leans as plainly one creature.
+- **Poses of one creature shown in turn must be cut at one scale.** The cut fills the tile with each
+  pose's outline, so spread wings shrink the body. Cut each in a window sized by the body (the
+  area of its main fur colour); a squat hides fur, so its window needs widening (SQUASH).
+- **Golden plumage drifts with the key:** olive on magenta, orange on green with "golden-yellow" or
+  "buttercup". "Bright lemon-yellow, the clear yellow of a lemon rind" on green gave yellow.
+- **"A slightly hooked beak" draws an eagle;** "a long, strong, straight beak, deep at its base,
+  only its very tip curving down a little" drew the riding bird.
+- **A saddle, harness or racing tack on a bird draws a horse** (or a four-legged horse-bird): 12 of
+  12 saddled draws, and most harnessed ones. Draw the bird running with no saddle, then add the
+  saddle with a klein reference edit of the picked painting (`bococho_saddled`'s `edit`). Even then
+  a white crest plus a saddle turned the head into a horse's with a mane in 5 of 8 edits.
+- **"Dull, faded" plumage comes out a different colour (tan)**, a different-looking bird. A hue turn
+  on the cut sprite (`rare_pets_art.py` RETINT) brought it back to a dull yellow.
+- **"A flat leather tab" on a riding crop is drawn as a fork, a hammer or a fly swatter** once the
+  crop is raised; held out low to the side it stayed a crop.
