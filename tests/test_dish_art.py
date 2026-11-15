@@ -26,7 +26,8 @@ import kitchen  # noqa: E402
 
 ART = os.path.join(ROOT, 'assets', 'tiles', 'items')
 BOOK = kitchen.book()
-ORDINARY = [r for r in BOOK if not r.get('legendary') and not r.get('trophy')]
+# A dish that plays a song shows the song's own art (dish_art.recipe_art).
+ORDINARY = [r for r in BOOK if not r.get('legendary') and not r.get('trophy') and not r.get('song')]
 
 
 def _png_size(path):

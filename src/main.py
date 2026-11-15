@@ -104,6 +104,7 @@ from bococho_encounter import (BocochoMixin, new_run_state as _bococho_new_run,
 from game_race import RaceMixin
 from game_riding import RidingMixin
 from game_bococho_render import BocochoRenderMixin
+from game_songs import SongsMixin
 from spells import LEARNABLE_SPELLS
 
 
@@ -271,7 +272,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
            SetneMixin, TraderMixin, PurseMixin, FamilyMixin, SeekerMixin, PopupMixin,
            HazardsMixin, LoreFixturesMixin, DressingMixin, ArsenalMixin,
            MoobleMixin, MoobleDanceMixin,
-           BocochoMixin, RaceMixin, RidingMixin, BocochoRenderMixin):
+           BocochoMixin, RaceMixin, RidingMixin, BocochoRenderMixin, SongsMixin):
     # FANTASY: Grimoire font set -- larger for readability. Read through the
     # UI scale on every use (SCALE_PLAN.md): a window resize can never leave
     # a font of the old size behind.
@@ -2926,6 +2927,19 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             spell = LEARNABLE_SPELLS.get(spell_id)
             if spell:
                 self.player.known_spells[spell_id] = spell['mp_cost']
+
+        # -- Starting food (Robyn's caviar and tater tots) --------------------
+        for fid in b.get('_start_food', []) or ():
+            try:
+                from items import make_item_by_id
+                f = make_item_by_id('food', fid)
+                if f is not None:
+                    f.count = 1
+                    _mark_starting_item_known(f)
+                    self.player.known_item_ids.add(f.id)
+                    self.player.add_to_inventory(f)
+            except Exception:
+                pass
 
         # -- Extra starting potions ------------------------------------------
         start_potions = b.get('_start_potions', [])
@@ -8590,6 +8604,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # story) open one at a time once play is calm (game_popups.PopupMixin).
         self._seeker_tick()
         self._popup_tick(dt)
+        # A dish's song (songs.py): its real-time clock and its audio.
+        self._song_frame(dt)
         # The dance screen runs on real time: its beat, every frame (the
         # Mooble's dances and the Stray Kids' dance-off alike).
         if self.state == STATE_MOOBLE_DANCE:
@@ -9886,6 +9902,11 @@ def main():
         # The last run is over (or there was none): a crash from here on must
         # not emergency-save it back to life.
         _crash_game_ref = None
+        # A dish's song cut short by the run's end: the soundtrack again.
+        try:
+            _music.end_song()
+        except Exception:
+            pass
         # ---------- welcome / study screen ----------
         welcome = WelcomeScreen(screen, VERSION, notice=_load_notice)
         _load_notice = None

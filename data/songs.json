@@ -1,0 +1,23 @@
+{
+  "_doc": "Songs a dish can play (src/songs.py). Brandon writes songs as A Man Before a King; a song here is one of his, and its words are from his lyrics. Cooking the dish that names a song (its recipe's 'song') stops the soundtrack and plays the song once; its power lasts exactly as long as the song plays, timed in real seconds (seconds), then the soundtrack comes back. 'damage_taken' multiplies every blow and spell on the hero while it plays (Player.take_damage; starvation is not a blow). 'label' is the effect's name on the sidebar and the character sheet. 'lines': 'start' after the dish is eaten, 'end' when the song is over.",
+  "songs": {
+    "caviar_and_tater_tots": {
+      "title": "Caviar and Tater Tots",
+      "artist": "A Man Before a King",
+      "track": ["assets", "music", "caviar_and_tater_tots.ogg"],
+      "seconds": 164,
+      "label": "Everything's Right",
+      "damage_taken": 0.5,
+      "lines": {
+        "start": [
+          "Caviar and tater tots: high and low on different plates, sitting at the same table tonight.",
+          "While the song plays, every blow and spell on you does half damage."
+        ],
+        "end": [
+          "The song ends. Nobody saw this coming, but somehow everything's right.",
+          "Blows land at their full weight again."
+        ]
+      }
+    }
+  }
+}

@@ -176,7 +176,9 @@ src/
   naming.py           - Display-name capitalisation (proper_name)
   effects_runtime.py  - Pluggable visual-effects controller (effects/ holds the handlers)
   sound_system.py     - Procedural sound effects
-  music.py            - The soundtrack (Brandon's PQ Main Theme): looped from the title on, F5 on / off, remembered
+  music.py            - The soundtrack (Brandon's PQ Main Theme): looped from the title on, F5 on / off, remembered; a dish's song takes the stream while it plays
+  songs.py            - Songs a dish plays (Brandon's own, as A Man Before a King): Caviar and Tater Tots, half damage while it plays, on real seconds
+  game_songs.py       - SongsMixin: the song's clock every frame, its audio, F5 mid-song, the soundtrack back after
 
   # Persistence and plumbing
   save_system.py      - Per-name pickle saves
@@ -201,6 +203,7 @@ data/
   stray_kids.json, abandoned_emberpup.json - Two of the run's set pieces (the Stray Kids stage; the Emberpup and Old Nickel)
   mooble.json       - The Mooble: his floors, lines, the dance (windows, pass mark, phrases and tempi) and his pet species
   bococho.json      - The Bococho: the camp, Varro, the race's numbers and words, the pet, her saddlebags, riding
+  songs.json        - Songs a dish plays: the track, its length, its power, its lines (from Brandon's lyrics)
   (data/ holds only runtime JSON; the old generator/migration scripts were moved out)
 
 assets/

@@ -4650,5 +4650,17 @@
   "anchor": "starnut",
   "cross_depth": false,
   "makes": "starnut_tart"
+ },
+ "dish_caviar_and_tater_tots": {
+  "parts": [
+   "caviar",
+   "tater_tots"
+  ],
+  "benefit": "song",
+  "legendary": false,
+  "kind": "multi",
+  "anchor": "caviar",
+  "cross_depth": false,
+  "song": "caviar_and_tater_tots"
  }
 }

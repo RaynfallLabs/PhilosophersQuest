@@ -99,8 +99,8 @@ class PartRules:
         out = []
         for did, d in dishes.items():
             parts = list(dict.fromkeys(d.get('ingredients') or d.get('parts')))
-            if len(parts) < 2:
-                continue
+            if len(parts) < 2 or d.get('song'):
+                continue        # a song's dish is two rare foods by design (songs.py)
             for p in parts:
                 if not self.known(p):
                     out.append(f'{did}: {p} has no frequency in part_freq.json (regenerate it)')

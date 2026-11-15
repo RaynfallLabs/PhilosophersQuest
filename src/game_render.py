@@ -1226,6 +1226,9 @@ class RenderMixin:
         _cstate = carry_state(p)[2]
         if _cstate:          # the load first: it is why the steps are slow
             active.append((_cstate, carry_color(_cstate)))
+        import songs as _songs
+        if _songs.effect_label(p):   # a dish's song, its time left (songs.py)
+            active.append((_songs.effect_label(p), FP.GOLD_BRIGHT))
         for eid, dur in getattr(p, 'status_effects', {}).items():
             if dur == 0:
                 continue
@@ -1582,6 +1585,9 @@ class RenderMixin:
         _cwt, _clim, _cstate = carry_state(p)
         if _cstate:          # the load, first: it is why the steps are slow
             chips.append((_cstate, carry_color(_cstate)))
+        import songs as _songs
+        if _songs.effect_label(p):   # a dish's song, its time left (songs.py)
+            chips.append((_songs.effect_label(p), FP.GOLD_BRIGHT))
         for eid, dur in getattr(p, 'status_effects', {}).items():
             if dur == 0:
                 continue

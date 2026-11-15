@@ -58,6 +58,7 @@ added_files = [
     ('data/black_knight.json',      'data'),
     ('data/stray_kids.json',        'data'),   # the Stray Kids easter egg (stray_kids.py)
     ('data/bococho.json',           'data'),   # the Bococho, the race, riding (bococho_encounter.py)
+    ('data/songs.json',             'data'),   # songs a dish plays (songs.py)
     ('data/karma_rules.json',       'data'),
     ('data/setne_tomb.json',        'data'),
     ('data/gate_lines.json',        'data'),

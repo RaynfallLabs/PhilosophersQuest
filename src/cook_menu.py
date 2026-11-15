@@ -92,6 +92,8 @@ def main_effect(row: dict) -> str:
         return f"Teaches {stat}"
     if kitchen.makes(rec):
         return "To Carry"                 # cooked to carry (the Starnut Tart)
+    if kitchen.song_of(rec):
+        return f"{kitchen.song_share(rec)} Damage"   # its song's power (songs.py)
     if tab == 'special':
         out = kitchen.dish_outcome(rec)
         label = kitchen.power_label(out['power'])

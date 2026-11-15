@@ -1506,6 +1506,8 @@ class Food(Item):
         self.bonus_effect: str = defn.get('bonus_effect', '')
         self.bonus_amount: int = int(defn.get('bonus_amount', 0))
         self.floor_spawn_weight: dict = defn.get('floor_spawn_weight', defn.get('floorSpawnWeight', {}))
+        # A line of its own when it is eaten (caviar, tater tots: songs.py).
+        self.eat_line: str = defn.get('eat_line', '') or ''
         # Food is recognizable by appearance -- identified by default
         self.identified: bool       = True
         self.unidentified_name: str = defn.get('unidentified_name', self.name)

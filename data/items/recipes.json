@@ -7327,5 +7327,16 @@
   "flavor": "The old miners' tart: starnuts and a sweet apple baked golden in a crust of ration bread, wrapped to carry down the shafts.",
   "makes": "starnut_tart",
   "art": "dish_pie_t2_special"
+ },
+ "dish_caviar_and_tater_tots": {
+  "name": "Caviar and Tater Tots",
+  "ingredients": [
+   "caviar",
+   "tater_tots"
+  ],
+  "benefit": "song",
+  "flavor": "High and low on different plates, sitting at the same table tonight.",
+  "song": "caviar_and_tater_tots",
+  "art": "song_caviar_and_tater_tots"
  }
 }

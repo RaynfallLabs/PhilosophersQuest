@@ -115,6 +115,8 @@ class Player:
 
         # Status effects: effect_id -> turns_remaining (or -1 for permanent)
         self.status_effects: dict[str, int] = {}
+        # A dish's song playing (songs.py): {'id', 'left' seconds, 'muted'}.
+        self.song_playing: dict | None = None
         # Fractional damage resistances: damage_type -> multiplier (0.0=immune,1.0=normal)
         self.resistances: dict[str, float] = {}
         # Flat damage resistances from chain-equip tier_bonuses + similar.
@@ -318,6 +320,14 @@ class Player:
                     amount = max(1, int(round(amount * _circ)))
             except Exception:
                 pass
+        # A dish's song (songs.py: Caviar and Tater Tots): while it plays,
+        # every blow and spell lands at a share of its weight. Hunger is not
+        # a blow.
+        if amount > 1 and damage_type != 'starvation':
+            import songs as _songs
+            _mult = _songs.damage_mult(self)
+            if _mult < 1.0:
+                amount = max(1, int(round(amount * _mult)))
         # Toughness: a hardy body shrugs off part of every blow.
         if amount > 1 and damage_type != 'starvation':
             amount = max(1, int(round(amount * (1.0 - self.toughness()))))

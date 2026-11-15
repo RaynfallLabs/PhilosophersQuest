@@ -107,6 +107,10 @@ FOOD = {
 FOOD_RARITY = {'philosopher_tea': 0.15, 'deep_fungi': 0.3, 'void_ration': 0.3, 'elvish_bread': 0.6}
 FORBIDDEN_FOOD = ('magic_dungeon_carrot', 'tantalus_plum', 'peach_of_immortality', 'ambrosia',
                   'golden_apple', 'hearty_stew', 'starnut_tart')
+# Food that goes into ONE dish only, the one that plays its song (songs.py,
+# 3.5.2): caviar and tater tots make Caviar and Tater Tots and nothing else.
+# Its structure row names ``song``; its picture is the song's (dish_art).
+SONG_FOOD = ('caviar', 'tater_tots')
 # A dish may be COOKED TO CARRY: its structure row names ``makes``, a food id
 # in data/items/food.json, and cooking it puts that food in the pack instead
 # of eating it (kitchen.apply_dish). The Starnut Tart is the first, the
@@ -579,6 +583,8 @@ def build():
             rec['legendary'] = True
         if d.get('makes'):
             rec['makes'] = d['makes']
+        if d.get('song'):
+            rec['song'] = d['song']
         rec['art'] = dish_art.recipe_art(did, rec, tier_of(d['parts']), have_art)
         if d['cross_depth']:
             rec['cross_depth'] = True
@@ -649,6 +655,10 @@ def check(ings, recipes):
     for rid, r in recipes.items():
         parts = list(dict.fromkeys(r['ingredients']))
         for p in parts:
+            if p in SONG_FOOD:
+                if not r.get('song'):
+                    problems.append(f'{rid}: {p} goes only into the dish of its song')
+                continue
             if p not in ings and p not in FOOD:
                 problems.append(f'{rid}: unknown ingredient {p}')
             if p in FORBIDDEN_FOOD:
@@ -725,6 +735,8 @@ def report(ings, recipes):
     from collections import Counter
 
     def floor(p):
+        if p in SONG_FOOD:
+            return 1                      # caviar and tater tots: found from floor 1
         return ings[p]['floor'] if p in ings else FOOD[p][1]
     tab_band = Counter()
     for r in recipes.values():

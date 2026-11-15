@@ -421,5 +421,51 @@
   "floor_spawn_weight": {
    "1-100": 0
   }
+ },
+ "caviar": {
+  "name": "caviar",
+  "symbol": "%",
+  "color": [
+   70,
+   70,
+   95
+  ],
+  "weight": 0.3,
+  "min_level": 1,
+  "sp_restore": 25,
+  "hp_restore": 4,
+  "bonus_type": "none",
+  "bonus_amount": 0,
+  "floor_spawn_weight": {
+   "1-30": 8,
+   "31-60": 4,
+   "61-100": 2
+  },
+  "unidentified_name": "caviar",
+  "eat_line": "Salty little pearls. Unexpected, but so right.",
+  "lore": "A little jar of black caviar on crushed ice, found where nobody thinks to look, like a note tucked in the margins of an old and dusty book. Fancy food has no business this far down. On its own it is a rich, salty mouthful. Set beside something humble, it might be more."
+ },
+ "tater_tots": {
+  "name": "tater tots",
+  "symbol": "%",
+  "color": [
+   230,
+   170,
+   60
+  ],
+  "weight": 0.5,
+  "min_level": 1,
+  "sp_restore": 45,
+  "hp_restore": 0,
+  "bonus_type": "none",
+  "bonus_amount": 0,
+  "floor_spawn_weight": {
+   "1-30": 8,
+   "31-60": 4,
+   "61-100": 2
+  },
+  "unidentified_name": "tater tots",
+  "eat_line": "No fancy words, no complicated plans. Just tater tots, and they are good.",
+  "lore": "A wire basket of golden tater tots, somehow still crisp. Never one for fancy words or complicated plans, a tater tot is exactly what it looks like. On its own it fills a gap. Set beside something grand, who knows?"
  }
 }

@@ -630,6 +630,11 @@ class Sidebar:
         if getattr(player, 'riding', False):
             # In the Bococho's saddle (game_riding.py).
             rows.append(("Riding", FP.GOLD_BRIGHT, None))
+        import songs as _songs
+        _song = _songs.effect_label(player)
+        if _song:
+            # A dish's song and its power, with the song's time left (songs.py).
+            rows.append((_song, FP.GOLD_BRIGHT, None))
         for eid, val in player.status_effects.items():
             if val == 0:
                 continue

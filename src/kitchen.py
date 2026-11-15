@@ -25,6 +25,12 @@ it sits on the Special tab, and its menu lines say it is made to carry and
 what it gives when eaten. A dish the hero has LEARNED of (``player.
 dishes_learned``: the Mooble tells of his tart) shows under Building Toward
 even before any part of it is held.
+
+A DISH THAT PLAYS A SONG (3.5.2, songs.py): a dish may name ``song``, an id
+in data/songs.json (its benefit is 'song', so it sits on the Special tab).
+Eaten, it gives what every dish gives, and its power is the song's: it lasts
+exactly as long as the song plays, in real seconds. Caviar and Tater Tots is
+the first, Brandon's own song as A Man Before a King.
 """
 import json
 from collections import Counter
@@ -230,14 +236,36 @@ def dish_stat(rec: dict):
 
 
 def dish_power(rec: dict):
-    if makes(rec):
-        return None                       # a dish to carry has no timed power
+    if makes(rec) or song_of(rec):
+        return None                       # a dish to carry, or a song's, has no timed power
     return rec.get('benefit') if dish_tab(rec) == 'special' else None
 
 
 def makes(rec: dict):
     """The food a dish is cooked to carry (its ``makes``), or None."""
     return (rec or {}).get('makes') or None
+
+
+def song_of(rec: dict):
+    """The song a dish plays when it is eaten (its ``song``: songs.py), or None."""
+    return (rec or {}).get('song') or None
+
+
+def song_share(rec: dict) -> str:
+    """How much of a blow lands while the dish's song plays: "Half"."""
+    import songs
+    s = songs.song(song_of(rec)) or {}
+    mult = float(s.get('damage_taken', 1.0) or 1.0)
+    return {0.5: 'Half', 0.25: 'Quarter'}.get(mult) or f"{round(mult * 100)}%"
+
+
+def song_lines(rec: dict) -> list:
+    """The menu lines of a dish that plays a song: what the song's power does
+    and for how long ("Half damage taken, 2:44 (while the song plays)")."""
+    import songs
+    sid = song_of(rec)
+    return [f"{song_share(rec)} damage taken, {songs.clock_text(songs.length(sid))} "
+            f"(while the song plays)"]
 
 
 def carried_food(rec: dict) -> dict:
@@ -320,6 +348,7 @@ def dish_outcome(rec: dict) -> dict:
         'mp_share': 0.0, 'mp_least': 0, 'sustained': 0,
         'stat': None, 'lessons': 0, 'power': None, 'turns': 0, 'ward': 0,
         'permanent': None, 'trophy_powers': trophy_powers(rec),
+        'song': song_of(rec),
     }
     if tab == 'hp':
         out['heal_share'] = min(1.0, _tierv(r['hp']['heal_share'], t) * main)
@@ -337,6 +366,8 @@ def dish_outcome(rec: dict) -> dict:
         out['lessons'] = 2 if (grand or dish_worth(rec) >= full) else 1
     elif makes(rec):
         out['power'] = None               # cooked to carry: what it gives is the food it makes
+    elif song_of(rec):
+        out['power'] = None               # its power is the song's (songs.py), timed by the song
     else:
         power = dish_power(rec)
         spec = r['special']
@@ -490,6 +521,8 @@ def dish_effects(player, rec: dict) -> list:
         lines.append(f"+{mp_amount(player, out)} MP")
     elif tab == 'stat':
         lines.append(_stat_line(player, out))
+    elif out.get('song'):
+        lines.extend(song_lines(rec))
     else:
         label = power_label(out['power'])
         bonus = f" (+{out['ward']})" if out['ward'] else ''
@@ -836,7 +869,10 @@ def apply_dish(player, rec: dict) -> list:
     elif tab == 'stat':
         msgs.extend(_teach(player, out['stat'], out['lessons']))
     lingers = None
-    if tab == 'special':
+    if tab == 'special' and out.get('song'):
+        import songs
+        msgs.extend(songs.begin(player, out['song']))
+    elif tab == 'special':
         power = out['power']
         cap = int((rules()['special']['powers'].get(power) or {}).get('max_turns', 60))
         if held_for_good(player, power):

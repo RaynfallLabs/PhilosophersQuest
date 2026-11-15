@@ -3714,6 +3714,30 @@
    "spoiler_words": [
     "plugh"
    ]
+  },
+  {
+   "id": "caviar_and_tater_tots",
+   "name": "Caviar and Tater Tots",
+   "category": "secrets",
+   "rarity": "rare",
+   "hint": "A Man Before a King once sang of a supper nobody saw coming.",
+   "unlocked_text": "High and low on different plates, sitting at the same table tonight. Nobody saw this coming, but somehow everything's right.",
+   "code_word": "TATERTOTS",
+   "art": "caviar_and_tater_tots",
+   "trigger": {
+    "event": "cooked",
+    "where": {
+     "recipe": "dish_caviar_and_tater_tots"
+    }
+   },
+   "spoiler_words": [
+    "caviar",
+    "tater",
+    "cook",
+    "dish",
+    "recipe",
+    "eat"
+   ]
   }
  ]
 }

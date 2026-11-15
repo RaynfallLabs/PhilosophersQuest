@@ -157,7 +157,11 @@ class InputMixin:
             return True
         if key == pygame.K_F5:
             import music as _music
-            _mon = _music.toggle()
+            # Mid-song (a dish's: game_songs), F5 mutes the song or brings
+            # it back; its power keeps its time either way.
+            _mon = self._song_f5()
+            if _mon is None:
+                _mon = _music.toggle()
             self.add_message(f"Music: {'On' if _mon else 'Off'}. (F5 switches it.)", 'info')
             return True
         if key == pygame.K_F10:

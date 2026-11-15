@@ -206,6 +206,10 @@ def recipe_art(rid: str, rec: dict, tier: int, have=None) -> str:
     """The picture of any recipe in the book."""
     if rec.get('trophy'):
         return f'recipe_{rid}'
+    if rec.get('song'):
+        # A dish that plays a song (songs.py) shows the song's own art: the
+        # plate from its album cover (genart/caviar_album_art.py).
+        return f"song_{rec['song']}"
     if rec.get('legendary'):
         if rid not in FEASTS:
             raise KeyError(f'legendary feast {rid} has no picture of its own in dish_art.FEASTS')

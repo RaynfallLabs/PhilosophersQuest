@@ -491,8 +491,9 @@ HERO_JOURNAL: dict[str, str] = {
         "Fluffs the Magnificent. Like Fianna but with a real spellbook. "
         "The dungeon should bow. (It will not.)",
     "robyn":
-        "Robyn. Quiet feet, quick mind, quicker tongue. Sleep arrows for the rude "
-        "and Rand's Heart against the worst day. We come back. We always come back.",
+        "Robyn. Quiet feet, quick mind, quicker tongue. Sleep arrows for the rude, "
+        "Rand's Heart against the worst day, and caviar and tater tots for the table. "
+        "We come back. We always come back.",
     "dad":
         "Dad has arrived. Everything will be fine.",
     "titivillus":
