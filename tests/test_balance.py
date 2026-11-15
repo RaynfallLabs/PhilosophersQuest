@@ -191,7 +191,8 @@ def test_food_count():
     from items import load_items
     foods = load_items('food')
     # 18 since 2026-11-14: the Starnut Tart, cooked to carry for the Mooble.
-    assert len(foods) == 18, f"Expected 18 food items, got {len(foods)}"
+    # 18, and caviar and tater tots (3.5.2: songs.py).
+    assert len(foods) == 20, f"Expected 20 food items, got {len(foods)}"
 
 
 def test_new_deep_food_items():

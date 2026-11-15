@@ -653,6 +653,10 @@ def eat_food(player, food_item) -> list[str]:
         _hp_got = player.restore_hp(hp)
         if _hp_got > 0:
             messages.append(f"The food soothes your wounds. (+{_hp_got} HP)")
+    # Its own line, if it has one (an older pickle has none).
+    _line = getattr(food_item, 'eat_line', '') or ''
+    if _line:
+        messages.append(_line)
 
     bonus_recipe = {
         'bonus_type':   food_item.bonus_type,

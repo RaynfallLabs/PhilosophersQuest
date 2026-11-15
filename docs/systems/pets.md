@@ -228,7 +228,7 @@ traps        = dungeon.traps
 def tick_regen(self, bonus: int = 0):   # 1+bonus HP every 3 turns
 ```
 
-Called every pet turn by `game_combat`. `FenrirPet` overrides for 3+bonus HP every turn (very fast). Sketched + Dad pets also decrement their `turns_remaining` counters here.
+Called every pet turn by `game_combat`. `FenrirPet` overrides for 3+bonus HP every turn (very fast). Sketched pets also decrement their `turns_remaining` counters here; Dad does only when he has no song (one pickled before 3.5.2).
 
 ### 3.7 Dead flag + damage
 
@@ -335,7 +335,7 @@ Spawned by `game_combat.py` when the Unusual Soul Sphere is thrown (`_throw_unus
 - Symbol `'@'`, color `(255, 220, 100)`.
 - Specials disabled; no leveling.
 
-The Unusual Soul Sphere first makes the same rare roll as an ordinary sphere (`roll_rare_sphere_pet`: Shep 1%, each cat 5%, each only while not yet met); a companion it hatches is a newborn (level 1). Only when that misses does Dad come, for 5 turns. On a boss floor it is not used up.
+The Unusual Soul Sphere first makes the same rare roll as an ordinary sphere (`roll_rare_sphere_pet`: Shep 1%, each cat 5%, each only while not yet met); a companion it hatches is a newborn (level 1). Only when that misses does Dad come, with his song: "The Greatest Trainer of All Time" (Brandon's, as A Man Before a King; the song Dad and his special attacks come from) plays in place of the soundtrack, and Dad stays exactly as long as it plays, in real seconds (3.5.2: `DadPet.song_id`; `game_songs._song_over` sees him off when it ends, with its closing line "Dad smiles at you and fades away. He believes in you!"; a song no longer playing takes him at his next turn). On a boss floor it is not used up, and with another song playing (one song at a time: `songs.py`) it stays in the pack. QA: Shift+U on the Titivillus build puts one in the pack.
 
 ### 4.6 UnicornPet — unicorn-encounter chain
 
@@ -469,7 +469,7 @@ Pet turns run inside `game_combat.py`'s turn loop, after the player action resol
 
 1. **`tick_cooldown()`** — decrement every active special cooldown by 1; evict entries that hit zero.
 2. **`tick_regen(bonus)`** — HP regen pass (varies by subclass).
-3. **`tick_duration()`** — temporary pets only (Sketch, Dad). If it returns True, the pet dissolves.
+3. **`tick_duration()`** — temporary pets only (Sketch, and Dad with no song). If it returns True, the pet dissolves. Dad with his song: the song decides.
 4. **`gain_xp_passive()`** — may return messages for level-ups.
 5. **`take_turn(player, dungeon, monsters, pets, ground_items)`** — AI action.
 6. **Resolve action** — `('attack', target)` → melee damage with quiz-accuracy scaling; `('unicorn_actions', msgs)` → iterate healing/cleanse/trap messages; `None` → no action.
@@ -596,7 +596,7 @@ Stackable foods are decremented one unit per feed (`food.count -= 1`); non-stack
 - **Sidebar / info panel**: shows name (nickname + species or species alone), level, HP/max_HP, XP progress bar toward next level, and command label.
 - **Specials menu**: `pet.available_specials()` filtered by `unlock_stage <= stage`; cooldowns pulled from `_special_cooldowns`.
 
-Dead pets are not rendered. Sketch/Dad pets with `turns_remaining <= 0` set `alive = False` and get pruned.
+Dead pets are not rendered. Sketch pets (and a Dad with no song) with `turns_remaining <= 0` set `alive = False` and get pruned; Dad with his song goes when it ends.
 
 ---
 
@@ -648,7 +648,7 @@ Brandon: "add two more rare pets... through little quests like emberpup and unic
 - **The companion** (`pet.species`): **small health and weak bites** (`health_mult` 0.6, `bite_mult` 0.5 on the growth table); **a support line** (`support`: on `return` he keeps within two tiles of the hero and bites only what comes beside him); **Bobble Glow** (`mana_gift`, `Pet.mana_gift`, each pet turn): +1 MP every 5 / 4 / 3 turns by stage while within 3 tiles and the hero's mana is not full, said once a floor; **Dance of the Dark** (his special from stage 0, cooldown 300; `effect: dance_of_the_dark`, `rhythm: true`) is **danced** (Brandon, 2026-11-14: "that should trigger a dance rhythm game as well, where your success determines how powerful it is (no practice, just a count in)"): using it (Shift+P, S) opens the dance screen at once (`_mooble_special_dance`): a count-in ("5, 6, 7, 8!"), then his phrase for his stage (4 steps at 90, 6 at 100, 8 at 110; `pet.special_dance.phrases`) with no call, danced as its arrows light. The cooldown is spent when it starts; no monster acts while it is danced (it is his turn, like a quiz); Enter afterwards passes the turn. The score (`rhythm.score`: steps hit over steps due, a Perfect worth 1.25, a stray key -0.5) picks a band (`mooble_encounter.dance_band`, `pet.special_dance.bands`): **A Flop** (2 tiles, 1 turn, the nearest one: the bobble only flickers), **Shaky** (3, 2, two), **Good** (4, 3, four), **Great** (5, 3, six), **Dazzling** (6, 4, every one; it takes Perfects). Every foe within the band's reach with a clear view of him that can be stunned stands staring for its turns, the nearest first, up to its count (`_mooble_dance_of_the_dark`, through `Monster.hold`), with the Stray Kids' watch rule: never a named foe, the mindless, the blind or what cannot be stunned, and each of those in sight is told why (`why_unmoved`). The band's line says how well it went. A **Mooble Troupe-Leader**'s dance, danced Good or better (the band's `lift`), also lifts one hindrance from the hero (a hold first, then the longest left). His card says all three (`_pet_gift_lines`).
 - **Saves.** `game._mooble` (`floor`, `spawned`, `outcome`, `seed`, `last_turn`, `away`, `choose_failed`, `dancing`); his own state on the creature (`_mooble_met`, `_mooble_tart`, `_mooble_dances`, `_mooble_cave`). A save while his dance is on screen opens it again on load, at the start of its phrase (`dancing`, `_mooble_after_load` from `Game.update`); a dance-off left open is still to be danced. A save from before him rolls him a floor still ahead of the hero, or none when 31-45 are all behind.
 - **Art.** P3's ids: `npc_mooble` (on his ledge), `mooble`, `mooble_dancer`, `mooble_troupe_leader`, `mooble_dance_left/right/up/down`; until each file is installed, `art_standin` (`will_o_wisp`) shows in its place, never a letter.
-- **QA (Titivillus, Shift+D).** Sets him down in a cave beside this room (his floor this run becomes this floor) with a Starnut and a Starnut Tart in the pack; again with him here: another tart, and no wait before the next dance.
+- **QA (Titivillus, Shift+D).** Sets him down in a cave beside this room (his floor this run becomes this floor) and the hero beside him (`_qa_beside_mooble`), with a Starnut and a Starnut Tart in the pack; again with him here: another tart, and no wait before the next dance.
 - **Hint.** One story-led Recall Lore line (tier 3), never the steps.
 
 `rhythm.py` knows nothing of the Mooble (a phrase, a timeline with or without a call, `judge`, `passed`, `score`, `band`), and the dance screen reads everything it shows from the dance it was given (`_mooble_dance_spec`), so another dance-off can reuse both.

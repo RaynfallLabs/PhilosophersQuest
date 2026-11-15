@@ -101,8 +101,8 @@ def test_rule_1_a_feast_is_gated_by_its_trophy_and_effort_not_luck():
 
 def test_rule_2_an_ordinary_dish_holds_at_most_one_uncommon_part():
     for rid, r in _multis().items():
-        if r.get('legendary'):
-            continue
+        if r.get('legendary') or r.get('song'):
+            continue        # a song's dish is two rare foods by design (songs.py)
         rare = [p for p in _parts(r) if not _common(p)]
         assert len(rare) <= 1, (rid, r['name'], rare)
 

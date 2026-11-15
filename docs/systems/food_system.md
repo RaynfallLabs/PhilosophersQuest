@@ -300,6 +300,37 @@ tells of his tart the first time he is met) shows under Building Toward even bef
 it is held (`menu_rows`). `build_kitchen.py` carries `makes` from `structure.json` and checks
 that the food exists, is forbidden as an ingredient, and that no feast is carried.
 
+### 5.6 A dish that plays a song (`song`, 3.5.2)
+
+A dish may name a **song** (`song`, an id in `data/songs.json`; benefit `song`, so the Special
+tab, `dish_power` none). Brandon writes songs as **A Man Before a King**; a song here is one of
+his, and its words come from his lyrics. Eaten, the dish gives what every dish gives (§5.1), and
+its power is the song's (`songs.begin`, from `apply_dish`): the soundtrack steps aside, the song
+plays once, and for exactly as long as it plays, in real seconds, every blow and spell on the hero
+does `damage_taken` of its damage (`Player.take_damage`; hunger is not a blow). Then the
+soundtrack comes back and the power ends. Its menu lines are `kitchen.song_lines` ("Half damage
+taken, for a while": the song is never named, it is the surprise), its chip "Half Damage"
+(`kitchen.song_share`), and the
+sidebar and character sheet show "Everything's Right 2:10" while it plays
+(`songs.effect_label`).
+
+The first is **Caviar and Tater Tots** (`dish_caviar_and_tater_tots`: caviar and tater tots,
+the song's own art cut from its album cover). Both foods are rare plain finds (about one food
+find in fifty each, every band), good to eat as they are with a line of their own (`eat_line`);
+caviar sells dear and tater tots for next to nothing (`data/item_worth.json`). They go into no
+other dish (`build_kitchen.SONG_FOOD`), and the dish shows on the menu only once both are held
+(a ration alone builds toward nothing). Robyn starts with one of each (`_start_food`). Cooking it
+earns the secret achievement Caviar and Tater Tots.
+
+How the song runs (`game_songs.SongsMixin._song_frame`, every frame; `music.play_song` /
+`end_song`): its clock is on the hero (`player.song_playing`: id, seconds left, muted), so a save
+made mid-song plays on from where it was. One song plays at a time: the dish is not cooked while
+another song plays (the power Math is Cool plays one too: `docs/systems/progression.md`). It plays
+even with the music off; F5 mid-song mutes it
+or brings it back (and sets the music to match), and its power keeps its time either way. A
+dance's beat (`music.hold`) pauses the song and its clock. A fall ends it; so does the run's end
+(the title screen hands the stream back to the soundtrack).
+
 ---
 
 ## 6. Boss trophies
@@ -449,6 +480,9 @@ book: `test_cooking_overhaul.py`, `test_ingredient_rename.py`, `test_harvest_coo
 `test_audit_2026_10.py`, `test_armour_meals_gates_2026_11_12.py`, `test_yardsticks.py`.
 `tests/test_mooble.py`: cook to carry (the tart in the pack uneaten, ruined is wasted, the menu
 lines and chip, the learned dish under Building Toward, its art, withheld).
+`tests/test_caviar_and_tater_tots.py`: the two rare foods and their lines and prices, the dish on
+the Special tab once both are held, half damage while the song plays and not after, the real-time
+clock, F5, a dance's hold, a save mid-song, a fall, Robyn's start, the achievement.
 `tests/test_dish_art.py`: every picture exists at 64 px, feasts own theirs, a shared picture is
 one tier and one tab, names say their kind, any renamed dish finds a true vessel and colour.
 
@@ -465,4 +499,5 @@ one tier and one tab, names say their kind, any renamed dish finds a true vessel
 | K1 | 2026-11-14 | **The kitchen rebuild.** Kin share ingredients (316: 294 parts, 14 trophies, 8 forage) with vivid names that keep their pictures; `harvest_map.json` with aliases; a 573-dish book where every ingredient is in one single and two+ multi-dishes, rations included, a third cross-depth, 36 legendary feasts; five kinds of meal (HP / SP / MP / Stat / Special) from one rules file, MP restore new, worth and size bonus, legendary permanents inside the lifetime caps; the pure menu functions; old saves migrate. `prime_cuts.json`, `cook_outcomes.json`, `cut_stat` and `outcome_id` retired.
 | K1b | 2026-11-14 | **A book a run can cook** (§4.1). From the simulator's part frequencies (`part_freq.json`): 22 feasts swap their rare parts for common or banked early ones (names and themes kept), 90 multi-dishes keep one uncommon part, 113 new dishes give every rare part two dishes with common partners (686 dishes, 370 multi). The build checks the rules and that no dish shares an ingredient's name (Cave Bear Steak's dish is now Hibernation Bear Steak). | |
 | P1 | 2026-11-14 | **Cook to carry** (§5.5): a recipe's `makes` puts a food in the pack; the Starnut Tart (Starnut, bread, apple; Special tab) for the Mooble; learned dishes show under Building Toward. 687 dishes. |
+| S1 | 2026-11-15 | **A dish that plays a song** (§5.6): Caviar and Tater Tots, Brandon's song as A Man Before a King; caviar and tater tots, rare plain foods; half damage while the song plays; Robyn starts with both; a secret achievement. 694 dishes. |
 | KA | 2026-11-14 | **Dish pictures.** 134 kind pictures (20 kinds; vessel = tier, one colour cue = main benefit; stew and roast at every tier and tab) picked by `dish_art.py` from the name, and 36 feasts drawn one by one; the old cluster picker and `art_clusters.json` retired. |

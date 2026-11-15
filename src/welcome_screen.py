@@ -231,6 +231,8 @@ SECRET_BUILDS: dict[str, dict] = {
         "_start_ammo": "iron_arrow",
         "_start_book": "spellbook_sleep",
         "_start_accessory": "rands_heart",
+        # Caviar and tater tots (songs.py): cooked together, they play her song.
+        "_start_food": ["caviar", "tater_tots"],
         "_greeting": "Robyn descends -- sharp-eyed, soft-footed, and sharper-tongued than most.",
     },
     # -- Special ---------------------------------------------------------------

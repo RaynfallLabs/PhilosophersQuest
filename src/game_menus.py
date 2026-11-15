@@ -138,6 +138,12 @@ class MenuMixin:
         if key not in (pygame.K_RETURN, pygame.K_KP_ENTER) or not rows:
             return
         row = rows[max(0, min(int(getattr(self, '_cook_sel', 0) or 0), len(rows) - 1))]
+        if kitchen.song_of(row['recipe']) and row['ready']:
+            # One song at a time (songs.py): the dish keeps till this one ends.
+            import songs
+            if songs.active(self.player) is not None:
+                self.add_message(songs.wait_line(self.player), 'warning')
+                return
         if row['ready'] and kitchen.can_cook(row['recipe'],
                                              kitchen.held_counts(self.player.inventory)):
             self.state = STATE_PLAYER
@@ -1449,6 +1455,13 @@ class MenuMixin:
 
         pdef = _ACTIVE_POWER_DEFS.get(pid, {})
         label = pdef.get('label', pid)
+        # A power that plays a song (songs.py: Math is Cool) waits while
+        # another song plays, and its cooldown is not spent.
+        import songs as _songs
+        _song_id = _songs.song_for_power(pid)
+        if _song_id and _songs.active(pl) is not None:
+            self.add_message(_songs.wait_line(pl), 'warning')
+            return True                       # nothing done: no turn passes
         # Consume uses or set cooldown
         if pdef.get('uses', 0) > 0:
             pl.power_uses[pid] = max(0, pl.power_uses.get(pid, 1) - 1)
@@ -1456,7 +1469,11 @@ class MenuMixin:
             pl.power_cooldowns[pid] = pdef['cooldown']
 
         # --- Effect dispatch ---
-        if pid == 'iron_ration':
+        if _song_id:
+            for line in _songs.begin(pl, _song_id):
+                self.add_message(line, 'success')
+
+        elif pid == 'iron_ration':
             # (It was the same +100 SP as Metabolic, three times as far to walk.)
             pl.restore_sp(pl.max_sp)
             self.add_message(f"{label}: you could march for a week. (Stamina full)", 'success')

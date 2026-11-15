@@ -400,7 +400,7 @@ See [quests_mysteries](quests_mysteries.md) for the twelve mystery payouts and `
 
 ## Active powers (quirk-granted V-menu entries)
 
-26 quirks grant an entry on the V-menu via `_award_power` + `_ACTIVE_POWER_DEFS`. Shape:
+27 quirks grant an entry on the V-menu via `_award_power` + `_ACTIVE_POWER_DEFS`. Shape:
 
 ```python
 _ACTIVE_POWER_DEFS[id] = {
@@ -443,10 +443,28 @@ _ACTIVE_POWER_DEFS[id] = {
 | `reality_anchor`     | 5 turns confused+hallucinating simultaneously             | x2           | Clear all debuffs                   |
 | `runic_armor`        | 10 turns with fire+cold+shock resists all active          | x2           | Fire + Cold + Shock defenses 10t    |
 | `astral_form`        | 100 turns invisible                                       | x2           | Levitate + Invisible + Phase 8t     |
+| `math_is_cool`       | 100 math right in a row in one run (3.5.2)                | CD 5,000t    | Plays "So Then I Was Like...": chain x2 while it plays |
 
 Dispatch for the V-menu "quirk power" branch lives in `game_menus.py::_activate_power`. Each pid routes to a block of `pl.add_effect(...)` calls plus a flavor `add_message`.
 
 The cooldown decrementer is `QuirkSystem.tick_powers()` → called once per `advance_turn`.
+
+**Math is Cool (3.5.2).** Brandon's song "So Then I Was Like..." (as A Man Before a King). The
+run's math streak (`quirk_progress['math_streak']`) counts math answers right in a row; a wrong
+answer breaks it, the clock running out does not (that is how every fight's chain ends), and
+other subjects neither count nor break it. At 100 (`data/songs.json` `power.streak`)
+`_award_power` gives the power, ready at once, and its `trait` event earns the secret achievement
+So Then I Was Like... the first time. Used from the V menu, it plays the song once in place of
+the soundtrack (`songs.begin`; `game_songs.SongsMixin` runs it, as the dish's song): while it
+plays every right answer in a fight counts as two links, counted on the quiz's own chain counter
+as it is answered (2, 4, 6...: `songs.chain_mult` is the attack quiz's `chain_step`, read at each
+answer, never past a weapon's chain cap; gear head starts are added once, a miss is still a
+miss), and the sidebar shows "Math is Cool 2:40". Cooldown 5,000 turns (`power.cooldown`). Its
+text is short and never names the song: the song is the surprise when it is used (Brandon,
+2026-11-15). One song at a time: the power
+is not used, and its cooldown not spent, while another song plays, and the Caviar and Tater
+Tots dish waits too (`songs.wait_line`). See `docs/systems/food_system.md` §5.6 for how a song
+runs (F5, a dance's hold, saves).
 
 ## Hero specials — the 19 active abilities + `_DISPATCH`
 
@@ -574,7 +592,7 @@ Shared mechanic: all three are **cooldown-only** (not use-limited), the dispatch
 
 ### Legendary flags (secret-of-secrets)
 - `dad` — all stats 20, `punch_in_the_face` weapon, `_immortal: True`, Journal "Dad has arrived. Everything will be fine." Confirmed from the welcome screen's "Did you mean Dad?" easter egg when the player types "god" (`welcome_screen.py:463-465`).
-- `titivillus` — the Scribe of Errors QA build. `_qa_tools: True` grants Shift+I (immortal toggle) and Shift+W (floor warp), and Shift+A (Dungeon Alive at a glance: the floor's domain, clan, war-band, hazards and lore fixtures listed with the whole map shown; pressed again on a floor with no band, it sets one down), Shift+K (the Stray Kids idol beside the hero; pressed again, the Autographed Stray Kids Photo in the pack; on the Zombie Stage with the band standing, the dance-off at once), and Shift+L (Old Nickel, who wears the Bloomleaf Cloak, set down a few steps off, with this run's floors for him and the Emberpup; pressed again, the cloak straight into the pack: `emberpup_encounter.BloomleafMixin`), Shift+D (the Mooble in a cave beside the hero's room, with a Starnut and a Starnut Tart in the pack; pressed again, another tart and no wait before the next dance: `mooble_encounter._qa_mooble`), Shift+G (Gilt Varro's racing camp set up in the hero's room, with two Sunroots; pressed again, her trust and two more; once more, she joins at once, the race skipped, to try riding: `bococho_encounter._qa_bococho`), Shift+T (the arsenal: two of every coating and flask, the beeswax earplugs, the cold-iron charm, a mirror shield and a greatsword, into the pack: `game_arsenal._qa_arsenal_sampler`), and Shift+V (Manifest: the Dreamspun Sketchbook into the pack, every kind it can draw up to `min_level` max(10, floor + 5) studied, and the power ready, to try the Manifest menu at once: `game_manifest._qa_manifest`; [pets](pets.md) §4.4). **Gated behind `PQ_QA_MODE=1` env var or `--qa` CLI flag as of v2.18.0** (`welcome_screen.py:471-476`); before the gate the name alone unlocked the dev tools, which SYSTEMS_AUDIT §7 P1 flagged. With neither flag set, the typed name is treated as a plain run — no stats, no kit, no QA tools.
+- `titivillus` — the Scribe of Errors QA build. It records nothing for the Seeker (D4), so an achievement one event earns opens as a **preview** there (`game_seeker._qa_achievement_preview`: once a run, code "QA PREVIEW", nothing written). `_qa_tools: True` grants Shift+I (immortal toggle) and Shift+W (floor warp), and Shift+A (Dungeon Alive at a glance: the floor's domain, clan, war-band, hazards and lore fixtures listed with the whole map shown; pressed again on a floor with no band, it sets one down), Shift+K (the Stray Kids idol beside the hero; pressed again, the Autographed Stray Kids Photo in the pack; on the Zombie Stage with the band standing, the dance-off at once), and Shift+L (Old Nickel, who wears the Bloomleaf Cloak, set down a few steps off, with this run's floors for him and the Emberpup; pressed again, the cloak straight into the pack: `emberpup_encounter.BloomleafMixin`), Shift+D (the Mooble in a cave beside the hero's room and the hero set down beside him, with a Starnut and a Starnut Tart in the pack; pressed again, the hero beside him again, another tart and no wait before the next dance: `mooble_encounter._qa_mooble`), Shift+G (Gilt Varro's racing camp set up in the hero's room, with two Sunroots; pressed again, her trust and two more; once more, she joins at once, the race skipped, to try riding: `bococho_encounter._qa_bococho`), Shift+U (an Unusual Soul Sphere in the pack, to throw for Dad and his song: `game_songs._qa_unusual_sphere`), Shift+N (the run's math streak one right answer short of Math is Cool; once it is earned, its cooldown ready again: `game_songs._qa_math_is_cool`), and Shift+T (the arsenal: two of every coating and flask, the beeswax earplugs, the cold-iron charm, a mirror shield and a greatsword, into the pack: `game_arsenal._qa_arsenal_sampler`), and Shift+V (Manifest: the Dreamspun Sketchbook into the pack, every kind it can draw up to `min_level` max(10, floor + 5) studied, and the power ready, to try the Manifest menu at once: `game_manifest._qa_manifest`; [pets](pets.md) §4.4). **Gated behind `PQ_QA_MODE=1` env var or `--qa` CLI flag as of v2.18.0** (`welcome_screen.py:471-476`); before the gate the name alone unlocked the dev tools, which SYSTEMS_AUDIT §7 P1 flagged. With neither flag set, the typed name is treated as a plain run — no stats, no kit, no QA tools.
 
 ### Metadata flags on build dicts (quick reference)
 

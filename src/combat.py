@@ -1060,6 +1060,8 @@ def effective_chain(player, monster, weapon, score: int, consume: bool = True,
     saves, so a saved wrong answer is a light hit (chain 1) and no more.
     Only those saves turn a 0 into a 1."""
     chain = score
+    # (Math is Cool doubles the chain in the quiz itself, where it is seen:
+    # start_quiz's chain_step in player_attack. The score is already it.)
 
     # Cow King's Horns (or any armor with chain_bonus): free chain head start
     # Only on an attack that lands: added to a chain of 0 it turned every
@@ -2596,7 +2598,18 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None,
         timer_modifier=player.get_quiz_timer_modifier(),
         extra_seconds=getattr(player, 'get_quiz_extra_seconds', lambda s: 0)('math') + _edge_secs,
         base_seconds=player.get_quiz_timer('math'),
+        # Math is Cool (songs.py): while its song plays every right answer
+        # is two links, counted on the quiz as it is answered.
+        chain_step=lambda: _song_chain_step(player),
     )
+
+
+def _song_chain_step(player) -> int:
+    try:
+        import songs
+        return songs.chain_mult(player)
+    except ImportError:
+        return 1
 
 
 def apply_knockback(player, monster, dungeon, monsters=None, occupied=None):

@@ -3714,6 +3714,54 @@
    "spoiler_words": [
     "plugh"
    ]
+  },
+  {
+   "id": "caviar_and_tater_tots",
+   "name": "Caviar and Tater Tots",
+   "category": "secrets",
+   "rarity": "rare",
+   "hint": "A Man Before a King once sang of a supper nobody saw coming.",
+   "unlocked_text": "High and low on different plates, sitting at the same table tonight. Nobody saw this coming, but somehow everything's right.",
+   "code_word": "TATERTOTS",
+   "art": "caviar_and_tater_tots",
+   "trigger": {
+    "event": "cooked",
+    "where": {
+     "recipe": "dish_caviar_and_tater_tots"
+    }
+   },
+   "spoiler_words": [
+    "caviar",
+    "tater",
+    "cook",
+    "dish",
+    "recipe",
+    "eat"
+   ]
+  },
+  {
+   "id": "so_then_i_was_like",
+   "name": "So Then I Was Like...",
+   "category": "secrets",
+   "rarity": "epic",
+   "hint": "A Man Before a King told his daughter math was cool. She did not believe him.",
+   "unlocked_text": "Newton and Leibniz, Galois writing till dawn, Wiles in his attic. Math isn't numbers, it's blood, sweat and tears. Math is cool.",
+   "code_word": "MATHISCOOL",
+   "art": "so_then_i_was_like",
+   "trigger": {
+    "event": "trait",
+    "where": {
+     "trait": "math_is_cool"
+    }
+   },
+   "spoiler_words": [
+    "hundred",
+    "row",
+    "streak",
+    "power",
+    "chain",
+    "answer"
+   ]
   }
  ]
 }

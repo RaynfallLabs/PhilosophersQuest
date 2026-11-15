@@ -125,7 +125,9 @@ Some engine modules have no game reference, so they tell a listener, and `Seeker
 A thrown weapon's kill and a thrown flask's kill are kills from afar (`ranged`). Before 2026-11-14 they counted as neither melee nor ranged.
 
 **What counts (D4):**
-- Every run except the Dad/god build (`_joke`) and the QA build (`_qa_tools`).
+- Every run except the Dad/god build (`_joke`) and the QA build (`_qa_tools`). On the QA build an
+  achievement one event earns opens as a preview, once a run, with the code "QA PREVIEW" and
+  nothing written (`game_seeker._qa_achievement_preview`, 3.5.2), so a test run can see it.
 - Nothing is recorded with no Seeker chosen.
 - Study Mode emits only `'study_answer'`.
 

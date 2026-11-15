@@ -1,5 +1,5 @@
 """
-quirk_system.py -- 128 Bofuri-style traits earned through counterintuitive play.
+quirk_system.py -- 129 Bofuri-style traits earned through counterintuitive play.
 Progress stored in player.quirk_progress (dict).
 Unlocked quirks in player.unlocked_quirks (set).
 
@@ -511,6 +511,17 @@ class QuirkSystem:
                        while_hallucinating: bool, while_feared: bool,
                        wrong_this_session: int, score_this_session: int):
         """Called after every individual quiz answer."""
+        # Math is Cool (3.5.2, songs.py): a hundred maths answers right in a
+        # row. A wrong answer breaks the run; the clock running out is how
+        # every fight's chain ends, so it does not.
+        if subject == 'math':
+            if correct:
+                self._inc('math_streak')
+                need = int(_math_is_cool().get('streak', 100) or 100)
+                if self._p('math_streak') >= need and not self.is_unlocked('math_is_cool'):
+                    self._award_power('math_is_cool', "Math is Cool", lambda pl: None)
+            elif getattr(getattr(self.game, 'quiz_engine', None), 'last_answer', None) != '':
+                self._sp('math_streak', 0)
         # Time Dilation (#86 power): 50 consecutive correct answers
         if correct:
             self._inc('consecutive_correct')
@@ -1487,7 +1498,23 @@ _ACTIVE_POWER_DEFS: dict[str, dict] = {
     'reality_anchor':     {'uses': 2,  'cooldown': 0,  'label': 'Reality Anchor',         'desc': 'Clear all debuffs instantly.'},
     'runic_armor':        {'uses': 2,  'cooldown': 0,  'label': 'Runic Armor',            'desc': 'Fire Shield + Cold Shield + Shock Resist 10t.'},
     'astral_form':        {'uses': 2,  'cooldown': 0,  'label': 'Astral Form',            'desc': 'Levitate + Invisible + Phase for 8 turns.'},
+    # Brandon's song (songs.py; its cooldown is read from data/songs.json).
+    'math_is_cool':       {'uses': 0,  'cooldown': 5000, 'label': 'Math is Cool',
+                           'desc': 'Doubles your math chain for a while.'},
 }
+
+
+def _math_is_cool() -> dict:
+    """Math is Cool's numbers (data/songs.json): its streak and cooldown."""
+    try:
+        import songs
+        return songs.power_of('math_is_cool')
+    except Exception:
+        return {}
+
+
+_ACTIVE_POWER_DEFS['math_is_cool']['cooldown'] = int(
+    _math_is_cool().get('cooldown', 5000) or 5000)
 
 
 # What the player did to earn this trait
@@ -1624,6 +1651,7 @@ _QUIRK_PROGRESS = {
     'proteus':       ('known_by_hand', 25, True),       # reads player.known_by_hand
     'terpsichore':   ('terpsichore_cold_wins', 3, False),
     'tortoise':      ('tortoise_paced_wins', 1, False),
+    'math_is_cool':  ('math_streak', int(_math_is_cool().get('streak', 100) or 100), False),   # data/songs.json
 }
 
 # Canonical display order and names for all quirks
@@ -1693,6 +1721,7 @@ _QUIRK_NAMES = {
     'fatted_calf': "The Fatted Calf", 'widows_jar': "The Widow's Jar",
     'proteus': "Proteus' Many Shapes", 'terpsichore': "Terpsichore's Step",
     'tortoise': "The Tortoise's Pace",
+    'math_is_cool': "Math is Cool",
 }
 
 # Canonical display order
@@ -1827,6 +1856,7 @@ _QUIRK_TRIGGER = {
     'proteus':       "You put on 25 different kinds of gear in one run.",
     'terpsichore':   "You won 3 dance-offs with the Mooble without practising first.",
     'tortoise':      "You won the Underway Run 1 time without a single Sprint.",
+    'math_is_cool':  "You answered 100 math questions right in a row.",
 }
 
 # Flavor quote shown on unlock -- captures the spirit of the achievement
@@ -1958,6 +1988,7 @@ _QUIRK_FLAVOR = {
     'proteus':       "Lion, serpent, leopard, water, tree: hold on, and he will answer you. -- after the Odyssey",
     'terpsichore':   "She taught the chorus to dance, and the dance needs no rehearsal. -- of Terpsichore",
     'tortoise':      "Slow and steady wins the race. -- Aesop",
+    'math_is_cool':  "Math isn't numbers, it's blood, sweat and tears. -- A Man Before a King",
 }
 
 # Map quirk IDs to short effect descriptions shown on unlock
@@ -2089,6 +2120,7 @@ _QUIRK_EFFECTS = {
     'proteus':       "A kind of gear you have never worn needs one right answer fewer.",
     'terpsichore':   "DEX +2",
     'tortoise':      "CON +2",
+    'math_is_cool':  "Power, ready every 5000 turns: doubles your math chain for a while.",
 }
 
 

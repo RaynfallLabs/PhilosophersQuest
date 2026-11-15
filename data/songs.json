@@ -1,0 +1,74 @@
+{
+  "_doc": "Songs the hero can play (src/songs.py). Brandon writes songs as A Man Before a King; a song here is one of his, and its words are from his lyrics. Cooking the dish that names a song (its recipe's 'song'), or using the power that plays one, stops the soundtrack and plays the song once; its power lasts exactly as long as the song plays, timed in real seconds (seconds), then the soundtrack comes back. 'damage_taken' multiplies every blow and spell on the hero while it plays (Player.take_damage; starvation is not a blow); 'chain_mult' multiplies the right answers of a fight's maths chain (combat.effective_chain). 'power': the power that plays a song, its unlock ('streak': maths answers right in a row in one run; a wrong answer breaks it, the clock running out does not) and its 'cooldown' in turns (quirk_system). 'companion': who comes with the song and stays exactly as long as it plays ('dad': the Unusual Soul Sphere's Dad, game_combat._throw_unusual_sphere). 'label' is the effect's name on the sidebar and the character sheet. 'lines': 'start' when the song starts (the dish eaten, the power used), 'end' when it is over.",
+  "songs": {
+    "caviar_and_tater_tots": {
+      "title": "Caviar and Tater Tots",
+      "artist": "A Man Before a King",
+      "track": [
+        "assets",
+        "music",
+        "caviar_and_tater_tots.ogg"
+      ],
+      "seconds": 164,
+      "label": "Everything's Right",
+      "damage_taken": 0.5,
+      "lines": {
+        "start": [
+          "Caviar and tater tots: high and low on different plates, sitting at the same table tonight.",
+          "While the song plays, every blow and spell on you does half damage."
+        ],
+        "end": [
+          "The song ends. Nobody saw this coming, but somehow everything's right.",
+          "Blows land at their full weight again."
+        ]
+      }
+    },
+    "math_is_cool": {
+      "title": "So Then I Was Like...",
+      "artist": "A Man Before a King",
+      "track": [
+        "assets",
+        "music",
+        "math_is_cool.ogg"
+      ],
+      "seconds": 175,
+      "label": "Math is Cool",
+      "chain_mult": 2,
+      "power": {
+        "id": "math_is_cool",
+        "streak": 100,
+        "cooldown": 5000
+      },
+      "lines": {
+        "start": [
+          "\"Math is cool.\" \"Dad. Math is NOT cool.\" And I was like... yeah... so then I was like...",
+          "Every right answer counts double while it plays."
+        ],
+        "end": [
+          "The song ends. \"Okay... but can you help me with my homework now?\"",
+          "Your right answers count as one link again."
+        ]
+      }
+    },
+    "greatest_trainer": {
+      "title": "The Greatest Trainer of All Time",
+      "artist": "A Man Before a King",
+      "track": [
+        "assets",
+        "music",
+        "greatest_trainer.ogg"
+      ],
+      "seconds": 213,
+      "label": "Dad's Here",
+      "companion": "dad",
+      "lines": {
+        "start": [
+          "Dad is here! Everything will be fine now!"
+        ],
+        "end": [
+          "Dad smiles at you and fades away. He believes in you!"
+        ]
+      }
+    }
+  }
+}

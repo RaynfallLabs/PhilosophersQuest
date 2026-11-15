@@ -127,10 +127,50 @@ class SeekerMixin:
         """Tell the Seeker something happened. Returns the ids just won."""
         s = getattr(self, '_seeker', None)
         if s is None:
+            self._qa_achievement_preview(event, fields)
             return []
         won = s.emit(event, **fields)
         self._seeker_take(won)
         return won
+
+    def _qa_achievement_preview(self, event: str, fields: dict):
+        """The Titivillus QA build records nothing (D4), so a test run never
+        saw an achievement. There, an achievement one event earns (no
+        counters) opens its popup as a preview, once a run, marked as such
+        and with no code: nothing is written to any profile."""
+        if not getattr(getattr(self, 'player', None), 'qa_tools', False):
+            return
+        try:
+            book = achievements.load()
+        except Exception:
+            return
+        shown = self.__dict__.setdefault('_qa_previewed', set())
+        entries = []
+        for a in book.entries:
+            t = a.get('trigger') or {}
+            if (a['id'] in shown or t.get('event') != event
+                    or not achievements._matches(t.get('where'), fields)):
+                continue
+            shown.add(a['id'])
+            entries.append({'id': a['id'], 'name': a['name'], 'text': a['unlocked_text'],
+                            'code': 'QA PREVIEW', 'rarity': a['rarity'], 'art': a['art']})
+        if not entries:
+            return
+        for e in entries:
+            self.add_message(f"[QA] ACHIEVEMENT (preview, not recorded): {e['name']}", 'loot')
+        try:
+            import seeker_screen
+            seeker_screen.prebuild_card(entries)
+        except Exception:
+            pass
+        from fantasy_ui import FP
+        self._queue_popup({
+            'title': 'ACHIEVEMENT UNLOCKED' if len(entries) == 1 else 'ACHIEVEMENTS UNLOCKED',
+            'accent': FP.ACHIEVEMENT,
+            'lines': ['QA preview: the QA build records nothing.'],
+            'code': None,
+            'achievements': entries,
+        }, 'achievement')
 
     def _seeker_take(self, won):
         """Log each new achievement and queue its popup."""
