@@ -93,6 +93,10 @@ class MoobleDanceMixin:
         spec = mo.visit_spec(m)
         tl = rhythm.timeline(spec['steps'], spec['bpm'], int(dd['lead_beats']), int(dd['phrase_beats']))
         mode = 'dance' if mode == 'dance' else 'practice'
+        if mode == 'practice':
+            # Practised before this visit's dance-off (the Seeker's dance_off
+            # event and Terpsichore's Step read it; cleared by the dance-off).
+            self._mooble_state()['practised'] = True
         visit = min(mo.dances(m) + 1, len(dd['visits']))
         self._mdance = self._mooble_dance_spec(
             mode, tl, spec['bpm'],

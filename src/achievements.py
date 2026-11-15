@@ -109,6 +109,9 @@ KNOWN_EVENTS: dict[str, frozenset] = {name: frozenset(fields) for name, fields i
     'flux':             (),
     'ghost_met':        ('own',),
     'unicorn_joined':   (),
+    # a dance-off with the Mooble danced to its end (mooble_encounter):
+    # practised = the practice round was danced since the last dance-off
+    'dance_off':        ('won', 'misses', 'perfects', 'total', 'practised', 'dance'),
     'burglar':          (),
     'stray_kids':       ('outcome',),
     # the title screen and the fourth wall

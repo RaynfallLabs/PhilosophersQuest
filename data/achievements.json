@@ -2744,6 +2744,45 @@
    ]
   },
   {
+   "id": "dance_partner",
+   "name": "Dance Partner",
+   "category": "companions",
+   "rarity": "epic",
+   "hint": "In the old games, a small winged creature with a bobbing red pompom never turned down a dance.",
+   "unlocked_text": "The last dancer of the old mines danced the dark back with you, and asked to come along.",
+   "code_word": "POM",
+   "art": "dance_partner",
+   "spoiler_words": [
+    "tart",
+    "starnut",
+    "practi",
+    "three"
+   ],
+   "trigger": {
+    "event": "deed",
+    "where": {
+     "id": "saved.mooble"
+    }
+   }
+  },
+  {
+   "id": "not_a_step_missed",
+   "name": "Not a Step Missed",
+   "category": "companions",
+   "rarity": "epic",
+   "hint": "Every step, on every beat.",
+   "unlocked_text": "A dance-off danced without a single missed step. Even the bobble kept time.",
+   "code_word": "BOBBLE",
+   "art": "not_a_step_missed",
+   "trigger": {
+    "event": "dance_off",
+    "where": {
+     "won": true,
+     "misses": 0
+    }
+   }
+  },
+  {
    "id": "gentle_hands",
    "name": "Gentle Hands",
    "category": "companions",

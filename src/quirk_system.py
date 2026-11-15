@@ -1,5 +1,5 @@
 """
-quirk_system.py -- 126 Bofuri-style traits earned through counterintuitive play.
+quirk_system.py -- 127 Bofuri-style traits earned through counterintuitive play.
 Progress stored in player.quirk_progress (dict).
 Unlocked quirks in player.unlocked_quirks (set).
 
@@ -1356,6 +1356,16 @@ class QuirkSystem:
                 self._award('janus', "The Two Faces of Janus",
                             lambda pl: pl.quirk_progress.update({'janus_active': True}))
 
+    def on_dance_off(self, won: bool, practised: bool):
+        """A dance-off with the Mooble danced to its end (mooble_encounter)."""
+        # Terpsichore's Step: dance-offs won with no practice round first.
+        if won and not practised:
+            self._inc('terpsichore_cold_wins')
+            if (self._p('terpsichore_cold_wins') >= 3
+                    and not self.is_unlocked('terpsichore')):
+                self._award('terpsichore', "Terpsichore's Step",
+                            lambda pl: pl.apply_stat_bonus('DEX', 2))
+
     def on_combat_started(self):
         """Called when player initiates or is involved in combat."""
         self._sp('orpheus_combat_this_turn', True)
@@ -1603,6 +1613,7 @@ _QUIRK_PROGRESS = {
     'fatted_calf':   ('fatted_calf_floors', 12, True),
     'widows_jar':    ('widows_jar_dishes', 10, False),
     'proteus':       ('known_by_hand', 25, True),       # reads player.known_by_hand
+    'terpsichore':   ('terpsichore_cold_wins', 3, False),
 }
 
 # Canonical display order and names for all quirks
@@ -1670,7 +1681,7 @@ _QUIRK_NAMES = {
     'fabius': "Fabius the Delayer", 'wallace': "The Wallace Sword",
     'janus': "The Two Faces of Janus", 'marius_mule': "Marius' Mule",
     'fatted_calf': "The Fatted Calf", 'widows_jar': "The Widow's Jar",
-    'proteus': "Proteus' Many Shapes",
+    'proteus': "Proteus' Many Shapes", 'terpsichore': "Terpsichore's Step",
 }
 
 # Canonical display order
@@ -1803,6 +1814,7 @@ _QUIRK_TRIGGER = {
     'fatted_calf':   "You carried a boss trophy down to 12 new floors.",
     'widows_jar':    "You cooked 10 dishes with a ration or a foraged find in them.",
     'proteus':       "You put on 25 different kinds of gear in one run.",
+    'terpsichore':   "You won 3 dance-offs with the Mooble without practising first.",
 }
 
 # Flavor quote shown on unlock -- captures the spirit of the achievement
@@ -1932,6 +1944,7 @@ _QUIRK_FLAVOR = {
     'fatted_calf':   "Bring the fatted calf and kill it, and let us eat and celebrate. -- Luke 15:23",
     'widows_jar':    "The jar of flour was not used up, and the jug of oil did not run dry. -- 1 Kings 17:16",
     'proteus':       "Lion, serpent, leopard, water, tree: hold on, and he will answer you. -- after the Odyssey",
+    'terpsichore':   "She taught the chorus to dance, and the dance needs no rehearsal. -- of Terpsichore",
 }
 
 # Map quirk IDs to short effect descriptions shown on unlock
@@ -2061,6 +2074,7 @@ _QUIRK_EFFECTS = {
     'fatted_calf':   "Every legendary feast you cook also heals you fully.",
     'widows_jar':    "Rations and other plain food fill you half again as much.",
     'proteus':       "A kind of gear you have never worn needs one right answer fewer.",
+    'terpsichore':   "DEX +2",
 }
 
 

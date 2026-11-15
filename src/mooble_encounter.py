@@ -508,6 +508,16 @@ class MoobleMixin:
         self._mooble_acted = True
         self.state = STATE_MOOBLE
         fill = {'hits': result.get('hits', 0), 'steps': result.get('total', 0)}
+        # The Seeker (Not a Step Missed) and the quirks (Terpsichore's Step):
+        # the dance-off as danced, and whether it was practised first.
+        practised = bool(st.pop('practised', False))
+        self._seeker_event('dance_off', won=bool(won), misses=int(result.get('misses', 0) or 0),
+                           perfects=int(result.get('perfects', 0) or 0),
+                           total=int(result.get('total', 0) or 0), practised=practised,
+                           dance=(dances(m) + 1) if m is not None else 0)
+        _qs = getattr(self, 'quirk_system', None)
+        if _qs is not None:
+            _qs.on_dance_off(bool(won), practised)
         if m is None:
             self.state = STATE_PLAYER
             return

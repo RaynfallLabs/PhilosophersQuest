@@ -733,3 +733,50 @@ def test_new_quirks_award_the_seekers_trait_ladder(seeker):
     for c in 'bcde':
         g.quirk_system.on_coat_applied(c)
     assert 'medea' in g._seeker.profile.members('traits')
+
+
+# ---------------------------------------------------------------- the Mooble
+
+def test_a_cold_clean_dance_off_and_terpsichore(seeker):
+    """Through the dance screen's own keys (test_mooble's helpers): a
+    dance-off won on time with no practice first is Not a Step Missed and
+    one step to Terpsichore's Step; one practised first is not."""
+    import test_mooble as TM
+    g = TM._game(name='Dancing Hero')
+    m = TM._fed(g)
+    now = TM._clock(g)
+    TM._win_dance_off(g, now)
+    assert _unlocked(g, 'not_a_step_missed')
+    assert g.player.quirk_progress.get('terpsichore_cold_wins') == 1
+    TM._key(g, pygame.K_RETURN)
+    TM._wait(g)
+    g._start_mooble_encounter(m)
+    TM._key(g, pygame.K_1)                            # practice first this time
+    TM._dance_through(g, now)
+    g._mooble_dance_key(pygame.K_d)
+    TM._dance_through(g, now)
+    g._mooble_dance_key(pygame.K_RETURN)
+    assert TM.mo.dances(m) == 2
+    assert g.player.quirk_progress.get('terpsichore_cold_wins') == 1
+
+
+def test_terpsichore_after_three_cold_wins():
+    q, pl = _qs()
+    dex = pl.DEX
+    q.on_dance_off(True, False)
+    q.on_dance_off(False, False)
+    q.on_dance_off(True, True)
+    q.on_dance_off(True, False)
+    assert not q.is_unlocked('terpsichore')
+    q.on_dance_off(True, False)
+    assert q.is_unlocked('terpsichore') and pl.DEX >= dex
+
+
+def test_the_mooble_joining_is_dance_partner(seeker):
+    import test_mooble as TM
+    g = TM._game(name='Partner Hero')
+    g.pets = []
+    TM._three_dances(g)
+    TM._key(g, pygame.K_4)
+    g.quiz_engine._end(success=True)
+    assert _unlocked(g, 'dance_partner')

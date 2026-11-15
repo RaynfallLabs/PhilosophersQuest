@@ -151,6 +151,7 @@ QUIRK_HINT = {
     'fatted_calf':   "The father kept the best calf back for the day of the great feast. Bring your trophy a long way.",
     'widows_jar':    "Elijah's widow baked her last flour and oil into bread, and her jar never emptied. Cook with plain fare.",
     'proteus':       "The Old Man of the Sea changed shape again and again. Try on a great many kinds of armour and rings.",
+    'terpsichore':   "The Muse of dance never needed to rehearse. Step out onto the floor cold, and win.",
 }
 
 
@@ -278,6 +279,7 @@ QUIRK_DESC = {
     'fatted_calf':   "Every legendary feast you cook also heals you fully. You know what it is to wait for a feast, and you sit down to one with everything you have.",
     'widows_jar':    "Rations, bread, cheese and every other plain food you eat as it is fill you half again as much. Like the widow's jar, your plain store goes further than it should.",
     'proteus':       "A kind of gear you have never worn needs one right answer fewer to put on (never fewer than one). You have taken so many shapes that a new one comes easily.",
+    'terpsichore':   f"Dexterity +2. {_DEX} You danced with the last of the Moobles straight off, with no practice, and your feet have kept the beat.",
 }
 
 

@@ -8,7 +8,7 @@
 ## Purpose
 Progression is everything that makes a run richer after turn 1 that isn't an item on the ground or a floor transition. It covers three parallel layers that stack on top of the player's base build:
 
-1. **Quirks** — 126 named Bofuri-style traits unlocked by playing in a specific way (not by XP). Each is a one-shot threshold on a quirk-progress counter maintained by the `QuirkSystem` dispatcher. Rewards are either a permanent stat/effect bump or an `[ACTIVE POWER]` on the V-menu.
+1. **Quirks** — 127 named Bofuri-style traits unlocked by playing in a specific way (not by XP). Each is a one-shot threshold on a quirk-progress counter maintained by the `QuirkSystem` dispatcher. Rewards are either a permanent stat/effect bump or an `[ACTIVE POWER]` on the V-menu.
 2. **Hero specials** — one or more AI-escalator-chain active abilities (plus optional cooldown) attached to a specific secret build. Dispatched through `hero_specials._DISPATCH` by effect id.
 3. **Hero passives** — set-of-strings on `player.hero_passives`; checked at hook sites in `combat.py`, `player.py`, `monster.py`, `game_menus.py`. One or more per build; several builds carry only passives.
 
