@@ -149,9 +149,13 @@ def parry_ac(player) -> int:
     return p
 
 
-def card_lines(weapon) -> list:
-    """'Parry +2: ...' for a two-hander's card."""
+def card_lines(weapon, player=None) -> list:
+    """'Parry +2: ...' for a two-hander's card. With ``player``, his parry
+    (the Wallace Sword, a trait, parries 1 better: the card said the plain
+    number)."""
     p = weapon_parry(weapon)
     if not p:
         return []
+    if (getattr(player, 'quirk_progress', None) or {}).get('wallace_active'):
+        p += 1
     return [str(parry_rules().get('card', 'Parry +{ac}.')).format(ac=p)]

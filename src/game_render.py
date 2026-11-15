@@ -9271,11 +9271,12 @@ class RenderMixin:
         import counters as _counters
         import stance as _stance
         out = []
+        hero = getattr(self, 'player', None)
         if isinstance(item, Weapon):
             out += _coatings.weapon_card_lines(item)
-            out += _stance.card_lines(item)
+            out += _stance.card_lines(item, hero)        # the Wallace Sword's parry
         out += _counters.card_lines(item)
-        out += _coatings.card_lines(item)
+        out += _coatings.card_lines(item, hero)          # Medea's, Callinicus' numbers
         return out
 
     def _lore_item_mechanic_lines(self, item, id_level):

@@ -289,3 +289,47 @@ def test_the_burdened_line_still_counts_the_steps_without_the_trait(no_seeker):
     g._note_burden()
     line = _last_lines(g, 1)[0]
     assert 'every second step costs an extra turn' in line
+
+
+# ---------------------------------------------------------------------------
+# 6. The cards said the plain numbers to a hero whose trait changes them
+# ---------------------------------------------------------------------------
+
+def test_a_coatings_card_counts_medeas_blows(no_seeker):
+    """Medea's Ointment makes a coating last half again; the Kit card still
+    said 12 blows, then the weapon read 18 once coated."""
+    import coatings
+    from items import make_item_by_id, instantiate_weapon
+    g = _game()
+    dust = make_item_by_id('flask', 'silver_dust')
+    plain = ' '.join(g._arsenal_card_lines(dust))
+    assert 'for 12 blows' in plain
+    g.player.quirk_progress['medea_active'] = True
+    card = ' '.join(g._arsenal_card_lines(dust))
+    assert 'for 18 blows' in card
+    g.player.weapon = instantiate_weapon('mace', 'iron')
+    coatings.apply(g.player, dust)
+    assert g.player.weapon.coating['blows'] == 18          # the card and the coat agree
+
+
+def test_a_flasks_card_counts_callinicus_turns(no_seeker):
+    from items import make_item_by_id
+    g = _game()
+    oil = make_item_by_id('flask', 'flask_of_fire_oil')
+    assert 'set alight for 3 turns' in ' '.join(g._arsenal_card_lines(oil))
+    g.player.quirk_progress['callinicus_active'] = True
+    assert 'set alight for 6 turns' in ' '.join(g._arsenal_card_lines(oil))
+
+
+def test_a_two_handers_card_counts_the_wallace_swords_parry(no_seeker):
+    import stance
+    from items import instantiate_weapon
+    g = _game()
+    gs = instantiate_weapon('greatsword', 'steel')
+    base = stance.weapon_parry(gs)
+    assert f'Parry +{base}' in ' '.join(g._arsenal_card_lines(gs))
+    g.player.quirk_progress['wallace_active'] = True
+    assert f'Parry +{base + 1}' in ' '.join(g._arsenal_card_lines(gs))
+    g.player.shield = None
+    g.player.weapon = gs
+    assert stance.parry_ac(g.player) == base + 1             # the card and the AC agree
