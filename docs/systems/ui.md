@@ -498,6 +498,7 @@ state; column 4 is the `_draw_<state>` method.
 | `Shift+I` | immortal toggle (QA only, `qa_tools` build) | `handle_event` |
 | `Shift+W` | floor warp (QA only, `qa_tools` build) | `handle_event` |
 | `Shift+M` | the lowest unmastered philosophy tier one question short (QA only) | `handle_event` |
+| `Shift+N` | the math streak one right answer short of Math is Cool; once earned, its cooldown ready again (QA only; `game_songs._qa_math_is_cool`) | `handle_event` |
 | `Shift+K` | the Stray Kids idol beside the hero; again: the photo in the pack; on the Zombie Stage with the band standing: the dance-off at once (QA only) | `handle_event` |
 | `Shift+L` | Old Nickel (the Bloomleaf Cloak's wearer) set down near the hero; again, the cloak into the pack (QA only) | `handle_event` |
 | `Shift+D` | the Mooble in a cave beside this room, a Starnut and a Starnut Tart in the pack; again, another tart and no wait before the next dance (QA only; `mooble_encounter._qa_mooble`) | `handle_event` |

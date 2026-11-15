@@ -52,6 +52,22 @@ class SongsMixin:
             for line in closing:
                 self.add_message(line, 'info')
 
+    def _qa_math_is_cool(self) -> None:
+        """Titivillus QA build (Shift+N): the run's math streak one right
+        answer short of Math is Cool, so a fight's next right sum earns it;
+        once it is earned, its cooldown ready again."""
+        qs = getattr(self, 'quirk_system', None)
+        if qs is None:
+            return
+        if qs.is_unlocked('math_is_cool'):
+            self.player.power_cooldowns['math_is_cool'] = 0
+            self.add_message("[QA] Math is Cool is ready again (V).", 'info')
+            return
+        need = int(songs.power_of('math_is_cool').get('streak', 100) or 100)
+        qs._sp('math_streak', need - 1)
+        self.add_message(f"[QA] Math streak {need - 1}: the next right math answer earns "
+                         f"Math is Cool.", 'info')
+
     def _song_f5(self) -> bool | None:
         """F5 while a song plays: mute it or bring it back, and set the music
         to match (the soundtrack follows when the song is over). Returns the

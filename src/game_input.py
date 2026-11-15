@@ -465,6 +465,12 @@ class InputMixin:
                 # tart and no wait before the next dance (mooble_encounter).
                 self._qa_mooble()
                 return True
+            if uni == 'N' and getattr(self.player, 'qa_tools', False):
+                # Titivillus QA build: the math streak one right answer short
+                # of Math is Cool; once earned, its cooldown ready again
+                # (game_songs.py).
+                self._qa_math_is_cool()
+                return True
             if uni == 'K' and getattr(self.player, 'qa_tools', False):
                 # Titivillus QA build: the Stray Kids idol beside the hero;
                 # pressed again, the photo in the pack (game_stray_kids.py).

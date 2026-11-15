@@ -209,3 +209,14 @@ def test_the_power_tells_the_seeker(monkeypatch):
     for _ in range(100):
         _answer(g, True)
     assert ('trait', {'trait': 'math_is_cool'}) in seen
+
+
+def test_the_qa_build_can_reach_it_in_one_answer():
+    g = _game()
+    g._qa_math_is_cool()
+    assert not g.quirk_system.is_unlocked('math_is_cool')
+    _answer(g, True)
+    assert g.quirk_system.is_unlocked('math_is_cool')
+    g.player.power_cooldowns['math_is_cool'] = 4000
+    g._qa_math_is_cool()
+    assert g.player.power_cooldowns['math_is_cool'] == 0
