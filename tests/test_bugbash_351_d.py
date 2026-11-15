@@ -345,3 +345,24 @@ def test_d8_the_fight_strips_danger_words_reach_their_contrast(low_hp):
     assert any(t.startswith('Shrugs Off (Quarter)') for t in seen), seen
     for text, c in seen.items():
         assert c is not None and c >= 4.5, (text, c)
+
+
+# ---------------------------------------------------------------------------
+# D9. (Test helper) The Black Knight tests reach him through a crowd
+# ---------------------------------------------------------------------------
+
+def test_d9_the_knight_tests_reach_him_with_both_bridge_ends_held():
+    """test_black_knight._beside skipped a tile another monster held, then
+    sent every other monster away: on 3.5.1's fuller floors both ends of the
+    bridge were sometimes held, and a full run failed with "list index out of
+    range". The others go first now."""
+    import test_black_knight as tbk
+    g = tbk._game('__test_bugbash_351_d_knight__')
+    k = tbk._on_his_floor(g)
+    for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+        x, y = k.x + dx, k.y + dy
+        if g.dungeon.is_walkable(x, y):
+            g.monsters.append(_m('goblin', x, y))
+    dx, dy = tbk._beside(g, k)
+    assert (g.player.x + dx, g.player.y + dy) == (k.x, k.y)
+    assert g.monsters == [k]
