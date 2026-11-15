@@ -497,6 +497,11 @@ def dish_effects(player, rec: dict) -> list:
             lines.append(f"{label}: already yours for good")
         else:
             lines.append(f"{label}{bonus}, {quantity(out['turns'], 'turn')}")
+    if is_legendary(rec) and (getattr(player, 'quirk_progress', None) or {}).get('fatted_calf_active'):
+        # The Fatted Calf (a trait): a feast heals the hero fully
+        # (food_system._apply_recipe_outcome). The menu said only its own
+        # heal, if any.
+        lines.append("Heals you fully")
     room = max_hp_room(player)
     if tab == 'hp' or room > 0:
         gain = min(out['max_hp'], room)

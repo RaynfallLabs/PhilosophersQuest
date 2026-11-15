@@ -5409,12 +5409,21 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     "Your load is Heavy. You dodge half as well and your steps "
                     "carry further until you lighten it.", 'warning')
             elif now == 'burdened':
-                n = self.player.BURDENED_STEP_EVERY
-                nth = {2: 'second', 3: 'third', 4: 'fourth', 5: 'fifth'}.get(n, f"{n}th")
-                self.add_message(
-                    f"You are Burdened. You cannot dodge, your Dexterity guards "
-                    f"you half as well, and every {nth} step costs an extra turn "
-                    f"until you lighten your load.", 'warning')
+                # The step's cost as it is for this hero (Marius' Mule keeps
+                # his stride: the line said "every second step costs an
+                # extra turn" to a hero whose steps cost nothing more).
+                n = self.player.load_step_every()
+                if n > 0:
+                    nth = {2: 'second', 3: 'third', 4: 'fourth', 5: 'fifth'}.get(n, f"{n}th")
+                    self.add_message(
+                        f"You are Burdened. You cannot dodge, your Dexterity guards "
+                        f"you half as well, and every {nth} step costs an extra turn "
+                        f"until you lighten your load.", 'warning')
+                else:
+                    self.add_message(
+                        "You are Burdened. You cannot dodge and your Dexterity guards "
+                        "you half as well until you lighten your load, but you keep "
+                        "your stride.", 'warning')
             else:
                 self.add_message(
                     "You are Overloaded. You cannot dodge, your Dexterity no "
@@ -9853,8 +9862,9 @@ def main():
 
     # One-shot notice shown on the next welcome screen (e.g. after a failed load).
     _load_notice = None
-    # Achievements won as a run ended (a fall, the Stone home): the death and
-    # victory screens are no place for them, so the title shows their cards.
+    # Achievements won as a run ended whose popup never opened (a fall: the
+    # death screen is no place for them), so the title shows their cards. An
+    # ending's own popup opens the queued ones after it (the Stone home).
     _carry_cards: list = []
 
     # The soundtrack (music.py): from the title screen on, looped; F5 switches it.
@@ -9999,8 +10009,15 @@ def main():
         except Exception:
             pass
 
-        # Achievements won as the run ended wait for the title screen.
-        _carry_cards = list(getattr(game, '_seeker_pending', None) or [])
+        # Achievements won as the run ended wait for the title screen. By
+        # now each frame has moved them into the popup queue, which opens
+        # nothing over the death screen: read them from there too
+        # (_seeker_unshown). Reading only _seeker_pending found it empty, so
+        # what a fall earned never showed its card.
+        try:
+            _carry_cards = list(game._seeker_unshown())
+        except Exception:
+            _carry_cards = list(getattr(game, '_seeker_pending', None) or [])
         # If game ended by death or victory, loop back to welcome screen
         # (unless the window itself was closed: then the game quits)
         if game.state in (STATE_DEAD, STATE_VICTORY) and not getattr(game, '_window_closed', False):

@@ -133,8 +133,7 @@ class ArsenalMixin:
             return
         self._ring_veil_slips()                  # a thrown flask is a strike
         _ = the_name(monster, lower=True)        # before the burst springs a lurker
-        _qp = getattr(self.player, 'quirk_progress', None) or {}
-        _turns = 2 if _qp.get('callinicus_active') else 1      # Callinicus' Fire
+        _turns = coatings.throw_turns_mult(self.player)       # Callinicus' Fire
         for text, kind in coatings.throw_at(item, monster, turns_mult=_turns):
             self.add_message(text, kind)
         if monster.is_dead():

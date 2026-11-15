@@ -494,11 +494,19 @@ class Book:
             return None
         t = a['trigger']
         parts = t.get('all') if isinstance(t.get('all'), list) else None
-        if parts and all(('stat' in p or 'run' in p) for p in parts):
+        if parts and all(('stat' in p or 'run' in p or 'event' in p) for p in parts) \
+                and any(('stat' in p or 'run' in p) for p in parts):
             # Every subject of Polymath, every line of Four Elements: the bar
-            # fills with each part's share, not the first part's alone.
+            # fills with each part's share, not the first part's alone. A part
+            # that is an event (the Polished Shield: the gaze turned, THEN
+            # Medusa killed) is one step still to take: it happens and wins
+            # at once, so it is never done while the badge is locked. (The
+            # bar read "1 of 1" on a locked badge before.)
             have = need = 0
             for p in parts:
+                if 'event' in p:
+                    need += 1
+                    continue
                 n = p['at_least']
                 have += min(self.value(p.get('stat', p.get('run')), profile, run), n)
                 need += n

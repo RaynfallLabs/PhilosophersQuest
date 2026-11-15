@@ -112,6 +112,8 @@ class MoobleDanceMixin:
         spec = mo.visit_spec(m)
         tl = rhythm.timeline(spec['steps'], spec['bpm'], int(dd['lead_beats']), int(dd['phrase_beats']))
         mode = 'dance' if mode == 'dance' else 'practice'
+        # (Practised is noted when a practice round is danced, not when its
+        # screen opens: _mooble_dance_start.)
         visit = min(mo.dances(m) + 1, len(dd['visits']))
         self._mdance = self._mooble_dance_spec(
             mode, tl, spec['bpm'],

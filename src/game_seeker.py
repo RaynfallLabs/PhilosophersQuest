@@ -184,6 +184,23 @@ class SeekerMixin:
             'achievements': entries,
         }, 'achievement')
 
+    def _seeker_unshown(self) -> list:
+        """The achievements won this run whose popup never opened: still
+        pending, or waiting in the popup queue (PopupMixin opens nothing
+        over the death screen, so what a fall earns waits there). main()
+        hands them to the title screen, which shows their cards. A popup
+        that did open (the Stone home: the ending's popup, then the queue)
+        is not here."""
+        out = [str(a) for a in (self.__dict__.get('_seeker_pending') or ())]
+        for e in self.__dict__.get('_popup_queue') or ():
+            if not isinstance(e, dict) or e.get('kind') != 'achievement':
+                continue
+            for a in (e.get('data') or {}).get('achievements') or ():
+                aid = str((a or {}).get('id') or '')
+                if aid and aid not in out:
+                    out.append(aid)
+        return out
+
     def _seeker_code(self, aid: str) -> str | None:
         """The Seeker's code for an achievement already won, else None."""
         s = getattr(self, '_seeker', None)

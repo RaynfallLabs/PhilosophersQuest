@@ -131,6 +131,8 @@ A thrown weapon's kill and a thrown flask's kill are kills from afar (`ranged`).
 
 **Popups (D7):** an unlock is logged at once (with its code) and queued. `_seeker_tick` (top of `update`) shows up to three per popup when the state is plain play: never during a quiz, a menu or another popup.
 
+**Won as the run ended:** no popup opens over the death screen, so what a fall earns (The First Fall, Forgot to Eat...) waits in the queue. When the run is over, `main()` reads `_seeker_unshown()` (still pending, or queued and never opened) and the title screen shows their unlock cards. Leaving the Stone home opens the queue after the ending's own popup instead.
+
 ## Badge art
 
 `assets/achievements/<art>.png`, 128 x 128.
