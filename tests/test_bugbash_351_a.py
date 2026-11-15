@@ -6,9 +6,7 @@ keys drive a headless Game where the path has keys; the rest drives
 src/kitchen.py and src/food_system.py on a real Player. Whether the menu
 reads well to a kid is Brandon's play-test: Claude cannot drive Pygame.
 """
-import copy
 import os
-import pickle
 import sys
 import types
 
