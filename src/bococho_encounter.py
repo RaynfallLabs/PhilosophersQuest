@@ -201,8 +201,6 @@ def creature_defn(which: str, level: int) -> dict:
         v = d['varro']
         return {
             'id': v['id'], 'name': v['name'], 'symbol': v['symbol'], 'pronoun': v['pronoun'],
-            # A man's name: "Gilt Varro is slain!", never "The Gilt Varro".
-            'proper_noun': bool(v.get('proper_noun', False)),
             'color': list(v['color']), 'hp': v['hp'], 'thac0': int(v['thac0']),
             'speed': int(v['speed']), 'attacks': [dict(a) for a in v['attacks']],
             'ai_pattern': 'sessile', 'resistances': [], 'weaknesses': [],
