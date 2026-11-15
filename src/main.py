@@ -9812,8 +9812,9 @@ def main():
 
     # One-shot notice shown on the next welcome screen (e.g. after a failed load).
     _load_notice = None
-    # Achievements won as a run ended (a fall, the Stone home): the death and
-    # victory screens are no place for them, so the title shows their cards.
+    # Achievements won as a run ended whose popup never opened (a fall: the
+    # death screen is no place for them), so the title shows their cards. An
+    # ending's own popup opens the queued ones after it (the Stone home).
     _carry_cards: list = []
 
     # The soundtrack (music.py): from the title screen on, looped; F5 switches it.
