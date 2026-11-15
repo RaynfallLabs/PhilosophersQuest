@@ -135,6 +135,20 @@ def test_the_racing_camp_is_never_rolled_onto_a_gate_bosss_floor():
     assert random.getstate() == state and st['floor'] in want
 
 
+def test_the_bococho_is_a_bird_with_feet_not_hooves():
+    """B-06. The help page's riding section said "Her hooves are loud": the
+    Bococho is a running bird."""
+    import json
+    with open(os.path.join(ROOT, 'data', 'ui', 'gear_and_load.json'), encoding='utf-8') as f:
+        page = json.load(f)
+    sec = next(s for s in page['sections'] if 'Bococho' in s['heading'])
+    text = ' '.join(sec['paragraphs']).lower()
+    assert 'hoof' not in text and 'hooves' not in text
+    assert 'things hear you coming' in text
+    with open(os.path.join(ROOT, 'data', 'bococho.json'), encoding='utf-8') as f:
+        assert 'hoove' not in f.read().lower()
+
+
 # ---------------------------------------------------------------------------
 # The race
 # ---------------------------------------------------------------------------

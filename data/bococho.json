@@ -279,7 +279,7 @@
     "step_noise": 3,
     "_step_noise_note": "Tiles added to the hero's footsteps (senses.step_radius) while he rides: a galloping bird is loud.",
     "sleeper_step_factor": 2.0,
-    "_sleeper_note": "How much readier the deep sleepers of a zoo, graveyard or barracks are to stir at her hooves (sleepers.factor 'step').",
+    "_sleeper_note": "How much readier the deep sleepers of a zoo, graveyard or barracks are to stir at her running feet (sleepers.factor 'step').",
     "saddled": {"1": "bococho_saddled", "2": "bococho_champion_saddled"},
     "seat": {"bococho_saddled": [33, 23], "bococho_champion_saddled": [33, 23]},
     "_seat_note": "Where the rider's hips sit in each saddled picture's 64 px frame (x, y): the art run's own measure (tools/content/genart/install_rare_pets.py SEAT, a hero at about 0.6 scale with his hips there).",
