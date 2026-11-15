@@ -268,8 +268,11 @@ the trophy's own power (§6).
 
 Plain lines for THIS hero now, main benefit first: "+45 HP", "+3 Max HP", "+12 MP", "Teaches DEX
 (a full point)", "Dark Vision, 300 turns", "+4 Max MP for good", "+60 SP". A cap that would eat
-the benefit says so: "Max HP full this floor", "DEX lesson used this floor", "DEX has learned all
-food can teach here", "Max MP: all feasts can give at this depth".
+the benefit says so: "Max HP full this floor", "Max HP: all cooking can give at this depth" (the
+lifetime cap, `kitchen.max_hp_room` reads both), "DEX lesson used this floor", "DEX has learned all
+food can teach here", "Max MP: all feasts can give at this depth". A feast's For Good lines are held
+to the same lifetime caps ("+3 Max HP for good" when 3 is what is left; "No more STR for good at
+this depth"), so the menu never promises more than the meal gives.
 
 ### 5.5 Cook to carry (`makes`, 2026-11-14)
 
