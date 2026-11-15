@@ -587,10 +587,26 @@ def _open_the_way_down(dungeon) -> int:
     hero no way down but to search the walls (found by the Black Knight's
     test, which asks that the down stair be reached on foot). A secret door
     is for a shortcut or a hidden chamber, never the only way on."""
+    return _open_the_way(dungeon)
+
+
+def _open_the_way(dungeon, goal=None) -> int:
+    """The way from the up stair to `goal` (the down stair when not given)
+    never hangs on a secret door: where it does, the secret doors on the
+    shortest way there become plain doors. Returns how many were opened.
+
+    _open_the_way_down is this for the stair. A quest piece the run needs
+    is held to it too: the Root of a Mountain's lava ring kept its one
+    stepping stone on a side that led through a door into a passage joined
+    to the floor only by a shortcut's secret door, and the ring's checks
+    (_reach_from_stairs) count a secret door as passable, so about one floor
+    68 in 2,900 (measured 3.5.2) left the Root, and Gleipnir, to whoever
+    searched the right wall."""
     from collections import deque
     w, h = dungeon.width, dungeon.height
     up, down = _find_stair_tiles(dungeon.tiles, w, h)
-    if up is None or down is None:
+    goal = down if goal is None else tuple(goal)
+    if up is None or goal is None:
         return 0
     plain = (FLOOR, STAIRS_UP, STAIRS_DOWN, DOOR, ALTAR, FOUNTAIN, GRAVE, THRONE, ICE)
     blocks = getattr(dungeon, 'fixture_blocks', None) or ()
@@ -600,7 +616,7 @@ def _open_the_way_down(dungeon) -> int:
         q = deque([up])
         while q:
             x, y = q.popleft()
-            if (x, y) == down:
+            if (x, y) == goal:
                 return prev
             for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)):
                 n = (x + dx, y + dy)
@@ -617,7 +633,7 @@ def _open_the_way_down(dungeon) -> int:
     if prev is None:
         return 0                          # cut off outright: the terrain passes see to that
     opened = 0
-    t = down
+    t = goal
     while t is not None:
         if dungeon.tiles[t[1]][t[0]] == SECRET_DOOR:
             dungeon.tiles[t[1]][t[0]] = DOOR
@@ -3062,6 +3078,11 @@ def _create_gleipnir_room(dungeon, rooms, ground_items, rng, level,
 
     # Default placement at room center (used for all except womans_beard secret door)
     if comp_id != 'womans_beard':
+        # Never behind a secret door: the reach checks above let one join
+        # the ingredient to the stair (a ring's stepping stone that led onto
+        # a passage only a shortcut reached), and it hid the Root on one
+        # floor 68 in 2,900.
+        _open_the_way(dungeon, (cx, cy))
         component.x, component.y = cx, cy
         ground_items.append(component)
         return

@@ -43,10 +43,33 @@ def _reach(d, start, opened=()):
     return seen
 
 
-def _floor(level):
-    d = generate_dungeon(80, 50, level)
-    items = spawn_items(d.rooms, level, d)
-    return d, items
+def _floor(level, seed=None):
+    """A floor and its loot. Unseeded, a new floor every call (the game
+    draws each from os.urandom). With `seed`, the same floor every time in
+    any test order: generate_dungeon and spawn_items each make their own
+    random.Random(), so random.seed alone fixed nothing, and the loot rolls
+    (and so the rooms the quest pieces land in) follow the run's uniques."""
+    if seed is None:
+        d = generate_dungeon(80, 50, level)
+        return d, spawn_items(d.rooms, level, d)
+    import random
+    from unittest import mock
+    import items as items_mod
+    real = random.Random
+
+    class _SeededRandom(real):
+        def __init__(self, x=None):
+            super().__init__(random.getrandbits(64) if x is None else x)
+
+    held = items_mod._UNIQUES_SEEN
+    random.seed(seed)
+    items_mod.bind_unique_registry(set())
+    try:
+        with mock.patch.object(random, 'Random', _SeededRandom):
+            d = generate_dungeon(80, 50, level)
+            return d, spawn_items(d.rooms, level, d)
+    finally:
+        items_mod.bind_unique_registry(held)
 
 
 # ----------------------------------------------------------- sealed shrines
@@ -126,12 +149,10 @@ def _settled_floor(level, seed):
     """A floor as the player meets it: generated, then run through the
     game's own _bring_within_reach (which moves anything the run needs off
     a stranded island) with the player on the up stair."""
-    import random
     import types
     from dungeon import STAIRS_UP
     from main import Game
-    random.seed(seed)
-    d, items = _floor(level)
+    d, items = _floor(level, seed)
     sx, sy = next((x, y) for y in range(d.height) for x in range(d.width)
                   if d.tiles[y][x] == STAIRS_UP)
     g = types.SimpleNamespace(dungeon=d, ground_items=items, monsters=[],
@@ -152,15 +173,41 @@ def _settled_floor(level, seed):
 # settles it (_bring_within_reach), with fixed seeds. The generator now
 # keeps a gap that leads out (WR3), and _bring_within_reach floods four
 # ways too (WR2).
+#
+# 3.5.2: the seeds were not fixed after all (random.seed does not reach the
+# generator's own random.Random()), so each run walked 42 new floors, and one
+# floor 68 in about 2,900 failed: the stepping stone led through a door into
+# a passage that only a shortcut's secret door joined to the floor. Every
+# reach check counted the secret door as open, so nothing moved the Root.
+# The floors are seeded now (_floor), and seed 3300 is that floor 68.
 @pytest.mark.parametrize('level,comp', [(68, 'mountain_root'), (71, 'fish_breath')])
 def test_ringed_gleipnir_ingredient_can_be_reached_on_foot(level, comp):
     """Root of a Mountain sat in a full ring of lava and Breath of a Fish in
     a full ring of water. The player can enter neither, so Gleipnir could not
     be made in about 19 runs out of 20."""
-    for seed in (1385, 1466) + tuple(range(1, 41)):
+    for seed in (1385, 1466, 3300) + tuple(range(1, 41)):
         d, items, start = _settled_floor(level, seed)
         it = next(i for i in items if getattr(i, 'id', '') == comp)
         assert (it.x, it.y) in _reach(d, start), (level, seed)
+
+
+def test_the_root_of_a_mountain_never_hangs_on_a_secret_door():
+    """Straight from the generator, before the game settles anything: on
+    seed 3300 the ring's one stepping stone faces a door, and the corridor
+    past it met the floor only at a secret door. The secret doors on the way
+    to an ingredient become plain doors (dungeon._open_the_way), as they do
+    on the way down."""
+    from dungeon import STAIRS_UP, DOOR
+    d, items = _floor(68, 3300)
+    root = next(i for i in items if getattr(i, 'id', '') == 'mountain_root')
+    up = next((x, y) for y in range(d.height) for x in range(d.width)
+              if d.tiles[y][x] == STAIRS_UP)
+    assert (root.x, root.y) in _reach(d, up)
+    # The ring is still there, stepping stone and all.
+    ring = [(root.x + dx, root.y + dy) for dx in (-1, 0, 1) for dy in (-1, 0, 1)
+            if (dx, dy) != (0, 0)]
+    assert sum(d.tiles[y][x] == LAVA for x, y in ring) >= 5
+    assert d.tiles[42][40] == DOOR          # the secret door that hid it
 
 
 # ---------------------------------------------------------------- the pit

@@ -52,6 +52,26 @@ def test_a_secret_door_that_is_the_only_way_on_becomes_a_door():
     assert D._open_the_way_down(d) == 0            # nothing more to open
 
 
+def test_the_way_to_a_quest_piece_never_hangs_on_a_secret_door():
+    """_open_the_way to any tile, not just the stair (3.5.2: the Root of a
+    Mountain sat past a door whose passage only a secret door reached)."""
+    w, h = 12, 7
+    tiles = [[D.WALL] * w for _ in range(h)]
+    for x in range(1, 11):
+        tiles[2][x] = D.FLOOR
+    tiles[2][1] = D.STAIRS_UP
+    tiles[2][10] = D.STAIRS_DOWN
+    tiles[3][8] = D.SECRET_DOOR                    # the passage's only link
+    tiles[4][8] = D.FLOOR
+    tiles[5][8] = D.FLOOR                          # where the Root lies
+    tiles[1][3] = D.SECRET_DOOR                    # a shortcut to nowhere stays hidden
+    d = D.Dungeon(tiles, [], w, h, 68)
+    assert D._open_the_way_down(d) == 0            # the stair was never hidden
+    assert D._open_the_way(d, (8, 5)) == 1
+    assert d.tiles[3][8] == D.DOOR and d.tiles[1][3] == D.SECRET_DOOR
+    assert D._open_the_way(d, (8, 5)) == 0
+
+
 def test_the_floor_that_hid_its_way_down():
     d = D.generate_dungeon(80, 50, 19, rng=random.Random(195455276841151))
     assert _on_foot(d)
