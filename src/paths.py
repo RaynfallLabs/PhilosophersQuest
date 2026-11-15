@@ -30,7 +30,8 @@ def a_or_an(name: str) -> str:
     A name that brings its own article (an unknown piece's appearance, "A
     Rough Amber Pelt") gets the one it needs: "a Rough Amber Pelt", never
     "an A Rough Amber Pelt" (bug bash 3.5.1 E). A counted name ("5 Gold
-    Coins") or one led by "The" takes none."""
+    Coins"), one led by "The", and a plural thing ("Rough Cloth Gloves",
+    "Boots of Hermes", never "a Rough Cloth Gloves") take none."""
     if not name:
         return name
     first = name.lstrip('{').lstrip()  # skip BUC tags like {blessed}
@@ -41,8 +42,27 @@ def a_or_an(name: str) -> str:
         if low.startswith(art):
             name = first = first[len(art):].lstrip()
             break
+    if _plural_thing(first):
+        return name
     article = 'an' if first[0:1].lower() in 'aeiou' else 'a'
     return f"{article} {name}"
+
+
+# A head noun that ends in -s and is one thing (the Aegis, a haggis, the
+# Caduceus, a labrys, the Ouroboros, a pithos; a Cyclops, an akinakes).
+_ONE_THING_ENDS = ('ss', 'us', 'is', 'os', 'ys', 'as')
+_ONE_THING_WORDS = frozenset({'cyclops', 'akinakes'})
+
+
+def _plural_thing(name: str) -> bool:
+    """Is the thing named plural ("Rough Cloth Gloves", "Boots of Hermes",
+    "Lamb Skewers")? Read from its head noun: the last word before any
+    " of ", a stack's " x4" left off."""
+    import re
+    head = re.sub(r'\s+x\d+$', '', str(name)).split(' of ')[0].split()
+    word = head[-1].lower() if head else ''
+    return (word.endswith('s') and not word.endswith(_ONE_THING_ENDS)
+            and word not in _ONE_THING_WORDS)
 
 
 # Tests point this at a temp dir (tests/conftest.py) so a pytest run never

@@ -314,6 +314,14 @@ def test_351_e01_the_article_rule():
     assert a_or_an('5 Gold Coins') == '5 Gold Coins'
     assert a_or_an('The Book of Thoth') == 'The Book of Thoth'
     assert a_or_an('Amulet') == 'an Amulet'
+    # A plural thing takes none: "It drops a Rough Cloth Gloves!", "an
+    # Untanned Bracers" (the soak, floors 1-5).
+    assert a_or_an('Rough Cloth Gloves') == 'Rough Cloth Gloves'
+    assert a_or_an('Untanned Bracers') == 'Untanned Bracers'
+    assert a_or_an('Boots of Hermes') == 'Boots of Hermes'
+    assert a_or_an('A Pair of Heavy Iron Boots') == 'a Pair of Heavy Iron Boots'
+    for one in ('Aegis', 'Haggis', 'Caduceus', 'Cyclops', 'Rod of Asclepius', 'Glass Orb'):
+        assert a_or_an(one).startswith(('a ', 'an ')), one
 
 
 def test_351_e03_an_unseen_sense_is_said_once_a_turn(make_game):
