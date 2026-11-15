@@ -178,3 +178,28 @@ def test_d3_gilt_varro_is_said_with_no_article(game):
     game._bococho_state()['floor'] = game.dungeon_level
     game._bococho_tick()
     assert the_name(old) == 'Gilt Varro'
+
+
+# ---------------------------------------------------------------------------
+# D4. The Wand of Probing reads one row a line
+# ---------------------------------------------------------------------------
+
+def test_d4_the_probe_reads_each_row_on_its_own_line(game):
+    """3.5.1 ran every row of a creature together into one message: a
+    skeleton's was ten lines in the log, and the log showed it from the
+    middle of a word ("Damage): Elven Silver, Ghost Iron..."), the health and
+    the weaknesses scrolled away. Each row is its own line now, as on the
+    Bestiary page."""
+    import copy
+    from items import load_items
+    skel = _m('skeleton', game.player.x + 1, game.player.y)
+    game.monsters = [skel]
+    wand = copy.copy(next(w for w in load_items('wand') if getattr(w, 'effect', '') == 'probing'))
+    game._wand_override_target = skel
+    game._apply_wand_effect(wand)
+    game._wand_override_target = None
+    rows = [t if t.endswith('.') else t + '.' for _k, t in affinity.bestiary_rows(skel)]
+    assert len(rows) >= 4
+    for text in rows:
+        assert text in game._log, (text, game._log)
+    assert game._log[0] == f"The Skeleton: {skel.hp}/{skel.max_hp} HP."
