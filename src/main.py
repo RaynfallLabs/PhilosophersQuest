@@ -3999,14 +3999,14 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
 
         if len(here) == 1:
             item = here[0]
-            dname = self._display_name(item)
-            article = 'an' if dname[0].lower() in 'aeiou' else 'a'
-            self.add_message(f"You see {article} {dname} lying here.", 'info')
+            # "You see an A Rough Amber Pelt lying here.", "You see a 5 Gold
+            # Coins lying here." (bug bash 3.5.1 E): a_or_an mends both.
+            self.add_message(f"You see {self._a_or_an(self._display_name(item))} lying here.", 'info')
             self._show_item_comparison(item)
         elif len(here) == 2:
             self.add_message(
-                f"You see {self._display_name(here[0])} and "
-                f"{self._display_name(here[1])} lying here.", 'info'
+                f"You see {self._a_or_an(self._display_name(here[0]))} and "
+                f"{self._a_or_an(self._display_name(here[1]))} lying here.", 'info'
             )
             for h in here:
                 self._show_item_comparison(h)

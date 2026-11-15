@@ -25,10 +25,22 @@ def data_path(*parts: str) -> str:
 
 
 def a_or_an(name: str) -> str:
-    """Return 'a Name' or 'an Name' based on the first letter. Handles proper nouns."""
+    """Return 'a Name' or 'an Name' based on the first letter.
+
+    A name that brings its own article (an unknown piece's appearance, "A
+    Rough Amber Pelt") gets the one it needs: "a Rough Amber Pelt", never
+    "an A Rough Amber Pelt" (bug bash 3.5.1 E). A counted name ("5 Gold
+    Coins") or one led by "The" takes none."""
     if not name:
         return name
     first = name.lstrip('{').lstrip()  # skip BUC tags like {blessed}
+    low = first.lower()
+    if low.startswith('the ') or first[:1].isdigit():
+        return name
+    for art in ('a ', 'an '):
+        if low.startswith(art):
+            name = first = first[len(art):].lstrip()
+            break
     article = 'an' if first[0:1].lower() in 'aeiou' else 'a'
     return f"{article} {name}"
 
