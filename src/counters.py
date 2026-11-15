@@ -31,6 +31,23 @@ from __future__ import annotations
 
 GAZE, VOICE, FEY = 'gaze', 'voice', 'fey_glamour'
 
+# Told each time a counter does its work (a gaze turned, a voice unheard, a
+# glamour broken): fn(technique id, the creature). The Game binds it for the
+# run (game_seeker.SeekerMixin._seeker_init) so the Seeker hears of it: the
+# Polished Shield, Deaf to Riddles, Old Remedies. None: nobody listens.
+ON_COUNTER = None
+
+
+def fired(tid: str, source) -> None:
+    """A counter just did its work against ``source``."""
+    fn = ON_COUNTER
+    if fn is None:
+        return
+    try:
+        fn(str(tid), source)
+    except Exception:
+        pass
+
 
 def rules() -> dict:
     import coatings
@@ -159,8 +176,9 @@ def blocks_rider(player, source, atk: dict, effect_id: str):
 
 
 def line(player, piece, tid: str, source) -> str:
-    """What the log says when a counter fires."""
+    """What the log says when a counter fires (and the listener told)."""
     from monster import the_name
+    fired(tid, source)
     try:
         from hud_context import item_bare_name
         iname = item_bare_name(player, piece)

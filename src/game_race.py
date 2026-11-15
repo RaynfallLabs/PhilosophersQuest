@@ -311,6 +311,14 @@ class RaceMixin:
                 lines.append(cfg['lost_by'].format(gap=gap_words))
                 lines.append(cfg['lost'])
                 self._chron('milestone', cfg['lost_chronicle'], once='bococho:race_lost')
+            # The Seeker (First Past the Post, Slow and Steady) and the
+            # quirks (The Tortoise's Pace): the race as run.
+            sprints = sum(1 for h in r.get('history') or () if h.get('mode') == 'sprint')
+            self._seeker_event('race', won=bool(res['won']), sprints=int(sprints),
+                               photo=bool(res['photo']))
+            _qs = getattr(self, 'quirk_system', None)
+            if _qs is not None:
+                _qs.on_race(bool(res['won']), int(sprints))
             self._race_phase = 'finish'
         else:
             st = R.standing(r)

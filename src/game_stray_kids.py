@@ -638,6 +638,7 @@ class StrayKidsMixin:
         st['photo_dropped'] = True
         st['outcome'] = 'cleared'
         self.add_message(sk['last_falls'], 'success')
+        self._seeker_event('stray_kids', outcome='cleared')     # the Seeker's Stage Fright
         if self._stray_kids_drop_photo(monster.x, monster.y):
             self.add_message(sk['photo_drop'], 'loot')
         self._chron('boss', sk['stage']['cleared_chronicle'], once='stray_kids:cleared')
@@ -687,6 +688,7 @@ class StrayKidsMixin:
         self._stray_kids_hold_the_room(stars)
         sk = stray_kids.data()
         self._chron('discovery', sk['stars']['chronicle'], once='stray_kids:show')
+        self._seeker_event('stray_kids', outcome='show')        # the Seeker's Encore!
 
     def _stray_kids_free_tile(self, x: int, y: int, taken: set):
         """(x, y) if a dancer can stand there, else the nearest such tile

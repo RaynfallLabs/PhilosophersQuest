@@ -220,11 +220,14 @@ def apply(player, item) -> str:
     c = cfg()
     old = coating_of(weapon)
     sub = str(spec['substance'])
+    blows = int(spec.get('blows', 12) or 12)
+    if (getattr(player, 'quirk_progress', None) or {}).get('medea_active'):
+        blows = blows + blows // 2          # Medea's Ointment: half again as many
     weapon.coating = {
         'id': str(getattr(item, 'id', '') or ''),
         'name': _name(item),
         'substance': sub,
-        'blows': int(spec.get('blows', 12) or 12),
+        'blows': blows,
         'rider': dict(spec['rider']) if isinstance(spec.get('rider'), dict) else None,
     }
     wname = _weapon_name(player, weapon)
@@ -252,6 +255,13 @@ def after_blow(player, monster, weapon, actual: int) -> list:
     out = []
     sub = str(c.get('substance', ''))
     alive = bool(getattr(monster, 'alive', True))
+    if not alive:
+        # The coated blow that killed it: the Seeker's kill event names the
+        # substance (A Silver Edge: a shapeshifter killed with silver dust).
+        try:
+            monster.__dict__['_killed_coated'] = sub
+        except Exception:
+            pass
     if alive and actual > 0 and sub in ('fire', 'acid'):
         # A burning blade does to a troll what a torch does: it cannot close
         # the wound, and a beast that fears fire runs (Monster._after_typed_hit).
@@ -317,10 +327,12 @@ def thrown_damage(item, monster) -> tuple:
     return dmg, dtype
 
 
-def throw_at(item, monster) -> list:
+def throw_at(item, monster, turns_mult: int = 1) -> list:
     """Burst a thrown flask over ``monster``: the typed damage, then its
     status where the creature does not resist the type. Returns the lines
-    ([(text, kind)]). The caller has taken the flask from the pack."""
+    ([(text, kind)]). The caller has taken the flask from the pack.
+    ``turns_mult``: the status lasts that many times its written turns (2
+    for a hero with Callinicus' Fire: Greek fire would not go out)."""
     from monster import the_name
     t = throw_cfg()
     name = _name(item)
@@ -342,7 +354,7 @@ def throw_at(item, monster) -> list:
         eff = str(st.get('effect', ''))
         hold = getattr(monster, 'hold', None)
         if eff and callable(hold):
-            hold(eff, int(st.get('turns', 3) or 3))
+            hold(eff, int(st.get('turns', 3) or 3) * max(1, int(turns_mult or 1)))
             if monster.has_effect(eff):
                 out.append((str(t.get('status_line', '')).format(
                     The=the_name(monster), effect=_effect_words(eff)), 'success'))

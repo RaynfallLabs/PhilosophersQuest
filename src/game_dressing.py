@@ -663,7 +663,18 @@ class DressingMixin:
                              f"the {self._bare_name(back)}.", 'success')
         else:
             self.add_message(f"You draw the {self._bare_name(back)} from your back.", 'success')
-        self._advance_turn()
+        # The Two Faces of Janus: drawn with a foe in sight, counted; once
+        # earned, the swap costs no turn (the swap that earns it still does).
+        _free = bool((getattr(p, 'quirk_progress', None) or {}).get('janus_active'))
+        _qs = getattr(self, 'quirk_system', None)
+        if _qs is not None:
+            try:
+                _foe = bool(self._busy_seen())
+            except Exception:
+                _foe = False
+            _qs.on_weapon_swap(_foe)
+        if not _free:
+            self._advance_turn()
         return True
 
     # ------------------------------------------------------------------

@@ -151,6 +151,44 @@ def _outcome_bonus_category(recipe: dict) -> str:
     return kitchen.bonus_category(recipe)
 
 
+def _cook_facts(player, recipe: dict) -> dict:
+    """What the Seeker's kitchen achievements read off a dish about to be
+    cooked (taken BEFORE its ingredients leave the pack): its menu tab,
+    whether it is a legendary feast, how many different ingredients it has,
+    and how many floors deeper the hero has gone since the longest-carried
+    of them was harvested (Ingredient.harvest_floor, stamped by
+    Game._harvest; rations and found food carry no stamp)."""
+    import kitchen
+    from items import Ingredient
+    if not recipe:
+        return {'tab': None, 'legendary': False, 'parts': 0, 'carried': 0}
+    parts = kitchen.parts(recipe)
+    deepest = int(getattr(player, 'deepest_floor_reached', 1) or 1)
+    carried = 0
+    for pid in parts:
+        for it in getattr(player, 'inventory', None) or ():
+            if isinstance(it, Ingredient) and kitchen.resolve(getattr(it, 'id', '')) == pid:
+                hf = getattr(it, 'harvest_floor', None)
+                if hf:
+                    carried = max(carried, deepest - int(hf))
+                break
+    return {'tab': kitchen.dish_tab(recipe), 'legendary': kitchen.is_legendary(recipe),
+            'parts': len(parts), 'carried': max(0, carried)}
+
+
+def _new_kind_threshold(player, threshold) -> int:
+    """Right answers to put on a kind for the first time (quirk_system.
+    new_kind_threshold: one fewer with Proteus' Many Shapes)."""
+    from quirk_system import new_kind_threshold
+    return new_kind_threshold(player, threshold)
+
+
+def _kitchen_parts(recipe) -> list:
+    """A dish's different ingredients (kitchen.parts), for the cooking quirks."""
+    import kitchen
+    return kitchen.parts(recipe) if recipe else []
+
+
 STARVE_SHARE = 0.02
 ARC_SHARE = 0.05          # a stray arc of lightning: this share of a creature's health
 from floor_curve import (WANDER_HUNTING_CAP, natural_regen, rest_room,    # noqa: E402
@@ -1199,6 +1237,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self._note_burden()
         # This run's achievement counters, then the Seeker (game_seeker.py).
         self._seeker_run = state.get('_seeker_run')
+        # The version of the game that wrote this save ('' for one from
+        # before 3.5, which kept none): an older one is the Seeker's Rip
+        # Van Winkle (game_seeker.SeekerMixin._seeker_init).
+        self._saved_version = str(state.get('_game_version') or '')
         self._seeker_init(new_run=False)
         self._show_load_summary_popup()
 
@@ -1847,6 +1889,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self._mooble_left(_from_level, new_level)
         # Off any floor, a rider comes down from the saddle (she follows), and
         # leaving the racing camp's floor is waiting (game_riding, bococho).
+        # Down the stairs in the saddle first: the Seeker's Riding Into the Deep.
+        if (via == 'stairs' and getattr(self.player, 'riding', False)
+                and _from_level < new_level < 900):
+            self._seeker_event('rode_down', floor=int(new_level))
         self._riding_level_change(via)
         self._bococho_left(_from_level, new_level)
         # Notify quirk system before level change (fast-exit check)
@@ -6904,6 +6950,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     monster_applies_poisoned=_applies_poison,
                 )
             for ingredient in ingredients_list:
+                # Where it was harvested (the deepest floor reached so far):
+                # a part saved for a dish many floors down is counted by the
+                # Seeker's Worth the Wait (_cook_facts). A stack keeps its
+                # oldest stamp (Player.add_to_inventory).
+                ingredient.harvest_floor = int(getattr(self.player, 'deepest_floor_reached', 1) or 1)
                 if not self.player.add_to_inventory(ingredient):
                     self.ground_items.append(ingredient)
                     ingredient.x, ingredient.y = px, py
@@ -6945,6 +6996,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # The dish's tier (the band of its deepest ingredient) is its
         # "quality" for the cooking quirks.
         _outcome_tier = _recipe_quiz_tier(_recipe_for_quirk)
+        # (the ingredient has just left the pack: its own stamp is read)
+        _facts = _cook_facts(self.player, _recipe_for_quirk)
+        _hf = getattr(ingredient, 'harvest_floor', None)
+        if _hf:
+            _facts['carried'] = max(0, int(getattr(self.player, 'deepest_floor_reached', 1) or 1)
+                                    - int(_hf))
 
         def on_complete(messages: list[str]):
             self.state = STATE_PLAYER
@@ -6953,7 +7010,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 self.add_message(msg, 'warning' if (i == 0 and _ruined) else 'success')
             if not _ruined:
                 self._seeker_event('cooked', recipe=_recipe_for_quirk.get('id')
-                                   or _recipe_for_quirk.get('name') or ingredient.id)
+                                   or _recipe_for_quirk.get('name') or ingredient.id, **_facts)
             # Notify quirk system. v2.6.4: quality = outcome tier on success,
             # 0 when ruined. Derive bonus_type from the outcome fields so
             # Circe (5 distinct bonus categories) can actually unlock.
@@ -6966,6 +7023,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     source_monster=getattr(ingredient, 'source_monster', ''),
                     bonus_type=_bonus_type,
                     ingredient_id=ingredient.id,
+                    parts=tuple(_kitchen_parts(_recipe_for_quirk)),
                 )
             self._advance_turn()
 
@@ -6990,6 +7048,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # Anchor ingredient = the first listed. source_monster comes from the
         # actual Ingredient in the pack (the creature it was harvested from).
         _anchor_id = _ing_ids[0] if _ing_ids else ''
+        _facts = _cook_facts(self.player, recipe)
         _source_monster = ''
         for _it in self.player.inventory:
             if isinstance(_it, Ingredient) and _kitchen.resolve(_it.id) == _anchor_id:
@@ -7010,7 +7069,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             if rname and rname not in self._cooked_recipes:
                 self._cooked_recipes.append(rname)
             if not _ruined:
-                self._seeker_event('cooked', recipe=recipe.get('id') or rname)
+                self._seeker_event('cooked', recipe=recipe.get('id') or rname, **_facts)
             # Notify quirk system (previously unreachable path: Tantalus,
             # Persephone, Circe all hang off on_food_eaten). Quality = outcome
             # tier on success, 0 when ruined. bonus_type derived from the
@@ -7026,6 +7085,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     source_monster=_source_monster,
                     bonus_type=_bonus_type,
                     ingredient_id=_anchor_id,
+                    parts=tuple(_kitchen.parts(recipe)),
                 )
             self._advance_turn()
 
@@ -7795,6 +7855,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         item_name = self._bare_name(item)
         self.quiz_title = f"EQUIPPING {item_name.upper()}  --  GEOGRAPHY"
         self.state = STATE_QUIZ
+        _need = _new_kind_threshold(self.player, item.equip_threshold)
 
         def on_complete(result):
             self.state = STATE_PLAYER
@@ -7814,7 +7875,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             subject='geography',
             tier=getattr(item, 'quiz_tier', 1),
             callback=on_complete,
-            threshold=item.equip_threshold,
+            threshold=_need,
             wisdom=self.player.WIS,
             timer_modifier=self.player.get_quiz_timer_modifier(),
             extra_seconds=self.player.get_quiz_extra_seconds('geography'),
@@ -7866,6 +7927,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         item_name = self._bare_name(item)
         self.quiz_title = f"EQUIPPING {item_name.upper()}  --  HISTORY"
         self.state = STATE_QUIZ
+        _need = _new_kind_threshold(self.player, item.equip_threshold)
 
         def on_complete(result):
             self.state = STATE_PLAYER
@@ -7883,7 +7945,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             subject='history',
             tier=item.quiz_tier,
             callback=on_complete,
-            threshold=item.equip_threshold,
+            threshold=_need,
             wisdom=self.player.WIS,
             timer_modifier=self.player.get_quiz_timer_modifier(),
             extra_seconds=self.player.get_quiz_extra_seconds('history'),

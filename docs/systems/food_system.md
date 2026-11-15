@@ -376,7 +376,7 @@ letters "ruin", since a dish may be named for a Ruinous Djinn). Untimed.
 
 ### 9.1 Quirks
 
-`on_food_eaten(quality, source_monster, bonus_type, ingredient_id)` after every cook:
+`on_food_eaten(quality, source_monster, bonus_type, ingredient_id, parts)` after every cook:
 
 - **Tantalus** — 15 ruined dishes: +1 STR.
 - **Persephone** — dishes of tier 4+ from 5 different first ingredients: from then on a ruined
@@ -384,9 +384,19 @@ letters "ruin", since a dish may be named for a Ruinous Djinn). Untimed.
   else.
 - **Circe** — five different kinds of dish (`_outcome_bonus_category` = `kitchen.bonus_category`:
   `permanent` for a feast or trophy dish, else the tab `hp` / `sp` / `mp` / `stat` / `special`;
-  a ruined dish counts as `ruined`): +4 seconds on the cooking clock.
+  a ruined dish is no kind at all since 2026-11-14): +4 seconds on the cooking clock.
 - **Siegfried** — eats parts of creatures with five different attack effects (the part's
   `source_monster`).
+- **The Widow's Jar** (2026-11-14) — ten dishes of two or more parts, cooked right, with a ration
+  or a foraged find among them (`parts`, `kitchen.part_kind` `food` or `forage`): from then on
+  plain food eaten as it is gives half again its SP (`eat_food`).
+- **The Fatted Calf** (2026-11-14) — a boss trophy carried down to twelve new floors
+  (`QuirkSystem.on_stair_use`): from then on a legendary feast also heals fully
+  (`_apply_recipe_outcome`).
+
+**The harvest stamp (2026-11-14).** `Game._harvest` stamps every part with `harvest_floor`, the
+deepest floor reached when it was harvested; a stack keeps the oldest (`Player.add_to_inventory`).
+`main._cook_facts` reads it for the Seeker's Worth the Wait (a part carried thirty floors down).
 
 ---
 

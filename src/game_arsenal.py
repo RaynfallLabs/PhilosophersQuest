@@ -104,6 +104,9 @@ class ArsenalMixin:
             if not self.player.remove_from_inventory(item):
                 return False
             self.add_message(coatings.apply(self.player, item), 'success')
+            _qs = getattr(self, 'quirk_system', None)
+            if _qs is not None:
+                _qs.on_coat_applied(str(getattr(item, 'id', '') or ''))   # Medea's Ointment
             self._advance_turn()
             return True
         if counters.is_applied(item):
@@ -130,10 +133,15 @@ class ArsenalMixin:
             return
         self._ring_veil_slips()                  # a thrown flask is a strike
         _ = the_name(monster, lower=True)        # before the burst springs a lurker
-        for text, kind in coatings.throw_at(item, monster):
+        _qp = getattr(self.player, 'quirk_progress', None) or {}
+        _turns = 2 if _qp.get('callinicus_active') else 1      # Callinicus' Fire
+        for text, kind in coatings.throw_at(item, monster, turns_mult=_turns):
             self.add_message(text, kind)
         if monster.is_dead():
-            self._on_monster_killed(monster)
+            # What killed it, for the Seeker (Holy Water) and the quirks
+            # (Callinicus' Fire counts the kills of thrown flasks).
+            monster.__dict__['_killed_by_flask'] = str(getattr(item, 'id', '') or 'flask')
+            self._on_monster_killed(monster, ranged=True)
 
     # ------------------------------------------------------------------
     # QA

@@ -333,6 +333,49 @@
     "line": "fire",
     "stage": 3
    }
+  },
+  "feasts": {
+   "on": "cooked",
+   "where": {
+    "legendary": true
+   },
+   "collect": "recipe"
+  },
+  "tabs_run": {
+   "on": "cooked",
+   "collect": "tab",
+   "scope": "run"
+  },
+  "counters_used": {
+   "on": "counter",
+   "collect": "technique"
+  },
+  "medusa_mirrored": {
+   "on": "counter",
+   "where": {
+    "technique": "gaze",
+    "monster": "medusa_gorgon"
+   },
+   "scope": "run"
+  },
+  "sphinx_unheard": {
+   "on": "counter",
+   "where": {
+    "technique": "voice",
+    "monster": "the_sphinx"
+   },
+   "scope": "run"
+  },
+  "gorgon_sisters_run": {
+   "on": "kill",
+   "where": {
+    "monster": [
+     "stheno_gorgon",
+     "euryale_gorgon"
+    ]
+   },
+   "collect": "monster",
+   "scope": "run"
   }
  },
  "achievements": [
@@ -969,6 +1012,54 @@
    }
   },
   {
+   "id": "silver_edge",
+   "name": "A Silver Edge",
+   "category": "warrior",
+   "rarity": "rare",
+   "hint": "In the old wolf-man films, only one metal ever worked.",
+   "unlocked_text": "A shapeshifter cut down with silver worked into your blade.",
+   "code_word": "SILVER",
+   "art": "silver_edge",
+   "trigger": {
+    "event": "kill",
+    "where": {
+     "family": "shapeshifters",
+     "coat": "silver"
+    }
+   },
+   "spoiler_words": [
+    "coat",
+    "dust",
+    "werewolf",
+    "shapeshift"
+   ]
+  },
+  {
+   "id": "holy_water",
+   "name": "Holy Water",
+   "category": "warrior",
+   "rarity": "rare",
+   "hint": "Every vampire hunter in the old stories carried a little blessed water.",
+   "unlocked_text": "One of the unholy, finished by a flask of holy water.",
+   "code_word": "BLESSED",
+   "art": "holy_water",
+   "trigger": {
+    "event": "kill",
+    "where": {
+     "flask": [
+      "flask_of_holy_water",
+      "water_of_siloam",
+      "water_of_life"
+     ]
+    }
+   },
+   "spoiler_words": [
+    "flask",
+    "throw",
+    "undead"
+   ]
+  },
+  {
    "id": "floor_10",
    "name": "Below the Cellar",
    "category": "depths",
@@ -1535,6 +1626,208 @@
    }
   },
   {
+   "id": "first_labour",
+   "name": "The First Labour",
+   "category": "bosses",
+   "rarity": "epic",
+   "hint": "In the first of his twelve labours, the hero found that his arrows only bounced off.",
+   "unlocked_text": "The Nemean Lion, beaten with your bare hands, as Hercules beat it.",
+   "code_word": "LABOUR",
+   "art": "first_labour",
+   "trigger": {
+    "event": "kill",
+    "where": {
+     "monster": "nemean_lion",
+     "unarmed": true
+    }
+   },
+   "spoiler_words": [
+    "bare",
+    "hands",
+    "unarmed",
+    "fist",
+    "strangle",
+    "wrestl",
+    "weapon"
+   ]
+  },
+  {
+   "id": "bronze_heel",
+   "name": "The Bronze Heel",
+   "category": "bosses",
+   "rarity": "rare",
+   "hint": "In one telling, an archer's arrow found the one vein of the bronze giant.",
+   "unlocked_text": "Talos, brought down from a distance. The ichor ran out of his heel.",
+   "code_word": "ICHOR",
+   "art": "bronze_heel",
+   "trigger": {
+    "event": "kill",
+    "where": {
+     "monster": "talos",
+     "ranged": true
+    }
+   },
+   "spoiler_words": [
+    "ranged",
+    "bow",
+    "throw",
+    "shoot"
+   ]
+  },
+  {
+   "id": "polished_shield",
+   "name": "In the Polished Shield",
+   "category": "bosses",
+   "rarity": "epic",
+   "hint": "One hero beat her without ever once meeting her eyes.",
+   "unlocked_text": "Medusa is defeated, and you saw her only in the bright face of your shield.",
+   "code_word": "PERSEUS",
+   "art": "polished_shield",
+   "trigger": {
+    "all": [
+     {
+      "run": "medusa_mirrored",
+      "at_least": 1
+     },
+     {
+      "event": "kill",
+      "where": {
+       "monster": "medusa_gorgon"
+      }
+     }
+    ]
+   },
+   "spoiler_words": [
+    "shield",
+    "mirror",
+    "reflect",
+    "gaze"
+   ]
+  },
+  {
+   "id": "deaf_to_riddles",
+   "name": "Deaf to Riddles",
+   "category": "bosses",
+   "rarity": "rare",
+   "hint": "Odysseus's sailors stopped their ears against a voice that drew men to their ruin.",
+   "unlocked_text": "The Sphinx is defeated. She whispered her riddle, and you never heard a word of it.",
+   "code_word": "DEAF",
+   "art": "deaf_to_riddles",
+   "trigger": {
+    "all": [
+     {
+      "run": "sphinx_unheard",
+      "at_least": 1
+     },
+     {
+      "event": "kill",
+      "where": {
+       "monster": "the_sphinx"
+      }
+     }
+    ]
+   },
+   "spoiler_words": [
+    "wax",
+    "earplug",
+    "plug"
+   ]
+  },
+  {
+   "id": "quest_bonnacon",
+   "name": "The Bonnacon",
+   "category": "bosses",
+   "rarity": "rare",
+   "hint": "Defeat the bull of the old bestiaries whose only weapon is what it leaves behind.",
+   "unlocked_text": "The Bonnacon is defeated. Mind where you step.",
+   "code_word": "PAEONIA",
+   "art": "quest_bonnacon",
+   "trigger": {
+    "event": "kill",
+    "where": {
+     "monster": "bonnacon"
+    }
+   }
+  },
+  {
+   "id": "quest_calydonian_boar",
+   "name": "The Calydonian Boar",
+   "category": "bosses",
+   "rarity": "rare",
+   "hint": "Defeat the boar a forgotten goddess sent to ravage a kingdom.",
+   "unlocked_text": "The Calydonian Boar is defeated. Calydon's vines can grow again.",
+   "code_word": "CALYDON",
+   "art": "quest_calydonian_boar",
+   "trigger": {
+    "event": "kill",
+    "where": {
+     "monster": "calydonian_boar"
+    }
+   }
+  },
+  {
+   "id": "gorgon_sisters",
+   "name": "The Undying Sisters",
+   "category": "bosses",
+   "rarity": "epic",
+   "hint": "Medusa had two sisters, and the myths swore that neither of them could die.",
+   "unlocked_text": "Stheno and Euryale, both defeated in one journey. The myths were wrong about one thing.",
+   "code_word": "SISTERS",
+   "art": "gorgon_sisters",
+   "trigger": {
+    "run": "gorgon_sisters_run",
+    "at_least": 2
+   }
+  },
+  {
+   "id": "quest_iron_patriarch",
+   "name": "The Iron Patriarch",
+   "category": "bosses",
+   "rarity": "epic",
+   "hint": "Defeat the old king who outlived every one of his heirs.",
+   "unlocked_text": "The Iron Patriarch is defeated. His audience is over.",
+   "code_word": "PATRIARCH",
+   "art": "quest_iron_patriarch",
+   "trigger": {
+    "event": "kill",
+    "where": {
+     "monster": "iron_patriarch"
+    }
+   }
+  },
+  {
+   "id": "quest_whispering_crone",
+   "name": "The Whispering Crone",
+   "category": "bosses",
+   "rarity": "epic",
+   "hint": "Defeat the fortune-teller who was buried for telling the truth too plainly.",
+   "unlocked_text": "The Whispering Crone is defeated. The graves are quiet again.",
+   "code_word": "WHISPER",
+   "art": "quest_whispering_crone",
+   "trigger": {
+    "event": "kill",
+    "where": {
+     "monster": "whispering_crone"
+    }
+   }
+  },
+  {
+   "id": "quest_blood_archon",
+   "name": "The Blood Archon",
+   "category": "bosses",
+   "rarity": "epic",
+   "hint": "Defeat the fiend who keeps his ledger in blood.",
+   "unlocked_text": "The Blood Archon is defeated. Every debt in his ledger is cancelled.",
+   "code_word": "LEDGER",
+   "art": "quest_blood_archon",
+   "trigger": {
+    "event": "kill",
+    "where": {
+     "monster": "blood_archon"
+    }
+   }
+  },
+  {
    "id": "stone_home",
    "name": "The Stone Comes Home",
    "category": "endings",
@@ -1798,6 +2091,20 @@
    }
   },
   {
+   "id": "old_remedies",
+   "name": "Old Remedies",
+   "category": "lore",
+   "rarity": "epic",
+   "hint": "A polished shield, a little beeswax, a scrap of cold iron: the old stories knew what to bring.",
+   "unlocked_text": "A gaze turned, a voice unheard and a glamour broken: every old remedy, used.",
+   "code_word": "REMEDIES",
+   "art": "old_remedies",
+   "trigger": {
+    "stat": "counters_used",
+    "at_least": 3
+   }
+  },
+  {
    "id": "bestiary_50",
    "name": "Bestiary",
    "category": "lore",
@@ -1963,6 +2270,110 @@
    "trigger": {
     "stat": "recipes",
     "at_least": 50
+   }
+  },
+  {
+   "id": "feast_first",
+   "name": "A Feast for Heroes",
+   "category": "craft",
+   "rarity": "rare",
+   "ladder": "feasts",
+   "tier": 1,
+   "hint": "In the old sagas, a great deed ended at a long table.",
+   "unlocked_text": "A legendary feast, cooked and eaten. The hall goes quiet as you sit down.",
+   "code_word": "FEAST",
+   "art": "feast_first",
+   "trigger": {
+    "stat": "feasts",
+    "at_least": 1
+   }
+  },
+  {
+   "id": "feast_12",
+   "name": "The Long Table",
+   "category": "craft",
+   "rarity": "epic",
+   "ladder": "feasts",
+   "tier": 2,
+   "hint": "Twelve different legendary feasts, each cooked at least once.",
+   "unlocked_text": "Twelve legendary feasts. Valhalla's cooks would ask for your recipes.",
+   "code_word": "TABLE",
+   "art": "feast_12",
+   "trigger": {
+    "stat": "feasts",
+    "at_least": 12
+   }
+  },
+  {
+   "id": "five_courses",
+   "name": "Five Courses",
+   "category": "craft",
+   "rarity": "common",
+   "hint": "Something hearty, something filling, something arcane, something that teaches and something strange, in one journey.",
+   "unlocked_text": "A dish from every part of the kitchen in one journey. A balanced diet, dungeon style.",
+   "code_word": "COURSES",
+   "art": "five_courses",
+   "trigger": {
+    "run": "tabs_run",
+    "at_least": 5
+   }
+  },
+  {
+   "id": "stone_soup",
+   "name": "Stone Soup",
+   "category": "craft",
+   "rarity": "common",
+   "hint": "In the old folk tale, a soup began with a stone and ended with everyone's share.",
+   "unlocked_text": "A dish of five ingredients. Nobody even had to bring a stone.",
+   "code_word": "STONESOUP",
+   "art": "stone_soup",
+   "trigger": {
+    "event": "cooked",
+    "where": {
+     "parts": {
+      "at_least": 5
+     }
+    }
+   }
+  },
+  {
+   "id": "worth_the_wait",
+   "name": "Worth the Wait",
+   "category": "craft",
+   "rarity": "rare",
+   "hint": "Some things are best saved for later. Much later.",
+   "unlocked_text": "A dish made with a part you carried thirty floors down. It was worth the wait.",
+   "code_word": "PATIENCE",
+   "art": "worth_the_wait",
+   "trigger": {
+    "event": "cooked",
+    "where": {
+     "carried": {
+      "at_least": 30
+     }
+    }
+   },
+   "spoiler_words": [
+    "floor",
+    "carried",
+    "harvest",
+    "thirty"
+   ]
+  },
+  {
+   "id": "made_to_order",
+   "name": "Made to Order",
+   "category": "craft",
+   "rarity": "common",
+   "hint": "Tell a smith what you need, and come back for it.",
+   "unlocked_text": "A smith's special order, made to your measure and collected.",
+   "code_word": "ORDER",
+   "art": "made_to_order",
+   "trigger": {
+    "event": "smith",
+    "where": {
+     "service": "order_collected"
+    }
    }
   },
   {
@@ -2308,6 +2719,149 @@
     "where": {
      "id": "saved.emberpup"
     }
+   }
+  },
+  {
+   "id": "leaves_against_rain",
+   "name": "Leaves Against the Rain",
+   "category": "companions",
+   "rarity": "rare",
+   "hint": "In the old cartoon, a boy ran through a storm to keep the rain off a small fire.",
+   "unlocked_text": "You laid a cloak of leaves over a small fire in the rain, and gave up a good cloak to do it.",
+   "code_word": "LEAVES",
+   "art": "leaves_against_rain",
+   "trigger": {
+    "event": "deed",
+    "where": {
+     "id": "aid.emberpup_sheltered"
+    }
+   },
+   "spoiler_words": [
+    "cloak",
+    "emberpup",
+    "pup",
+    "nickel"
+   ]
+  },
+  {
+   "id": "dance_partner",
+   "name": "Dance Partner",
+   "category": "companions",
+   "rarity": "epic",
+   "hint": "In the old games, a small winged creature with a bobbing red pompom never turned down a dance.",
+   "unlocked_text": "The last dancer of the old mines danced the dark back with you, and asked to come along.",
+   "code_word": "POM",
+   "art": "dance_partner",
+   "spoiler_words": [
+    "tart",
+    "starnut",
+    "practi",
+    "three"
+   ],
+   "trigger": {
+    "event": "deed",
+    "where": {
+     "id": "saved.mooble"
+    }
+   }
+  },
+  {
+   "id": "not_a_step_missed",
+   "name": "Not a Step Missed",
+   "category": "companions",
+   "rarity": "epic",
+   "hint": "Every step, on every beat.",
+   "unlocked_text": "A dance-off danced without a single missed step. Even the bobble kept time.",
+   "code_word": "BOBBLE",
+   "art": "not_a_step_missed",
+   "trigger": {
+    "event": "dance_off",
+    "where": {
+     "won": true,
+     "misses": 0
+    }
+   }
+  },
+  {
+   "id": "first_past_post",
+   "name": "First Past the Post",
+   "category": "companions",
+   "rarity": "epic",
+   "hint": "In the old games, a golden bird could outrun anything on the track.",
+   "unlocked_text": "You beat Gilt Varro's best bird on the Underway Run, and he stormed off without his winnings.",
+   "code_word": "VARRO",
+   "art": "first_past_post",
+   "spoiler_words": [
+    "sunroot",
+    "maths",
+    "sum"
+   ],
+   "trigger": {
+    "event": "race",
+    "where": {
+     "won": true
+    }
+   }
+  },
+  {
+   "id": "free_of_the_tether",
+   "name": "Free of the Tether",
+   "category": "companions",
+   "rarity": "epic",
+   "hint": "In the old games, the golden birds would follow anyone who brought them the right greens.",
+   "unlocked_text": "The young Bococho chose you. No rope, no fee, no Varro: just the two of you.",
+   "code_word": "TETHER",
+   "art": "free_of_the_tether",
+   "spoiler_words": [
+    "sunroot",
+    "race",
+    "quiz"
+   ],
+   "trigger": {
+    "event": "deed",
+    "where": {
+     "id": "saved.bococho"
+    }
+   }
+  },
+  {
+   "id": "slow_steady",
+   "name": "Slow and Steady",
+   "category": "companions",
+   "rarity": "rare",
+   "hint": "The tortoise never hurried, and still he won.",
+   "unlocked_text": "You won the Underway Run without a single sprint.",
+   "code_word": "TORTOISE",
+   "art": "slow_steady",
+   "spoiler_words": [
+    "sprint",
+    "pace",
+    "leg"
+   ],
+   "trigger": {
+    "event": "race",
+    "where": {
+     "won": true,
+     "sprints": 0
+    }
+   }
+  },
+  {
+   "id": "riding_deep",
+   "name": "Riding Into the Deep",
+   "category": "companions",
+   "rarity": "rare",
+   "hint": "A good bird carries her rider anywhere, even down.",
+   "unlocked_text": "Down the stairs in the saddle. The Bococho did not even slow down.",
+   "code_word": "SADDLE",
+   "art": "riding_deep",
+   "spoiler_words": [
+    "stair",
+    "mount",
+    "saddle"
+   ],
+   "trigger": {
+    "event": "rode_down"
    }
   },
   {
@@ -3020,6 +3574,54 @@
    ]
   },
   {
+   "id": "stage_fright",
+   "name": "Stage Fright",
+   "category": "secrets",
+   "rarity": "epic",
+   "hint": "Some bands are worth staying for.",
+   "unlocked_text": "You out-danced a whole band of the undead, round by round, and won.",
+   "code_word": "STAGE",
+   "art": "stage_fright",
+   "trigger": {
+    "event": "stray_kids",
+    "where": {
+     "outcome": "cleared"
+    }
+   },
+   "spoiler_words": [
+    "concert",
+    "dance",
+    "idol",
+    "simon",
+    "stage",
+    "stray",
+    "zombie"
+   ]
+  },
+  {
+   "id": "encore",
+   "name": "Encore!",
+   "category": "secrets",
+   "rarity": "epic",
+   "hint": "A true fan always asks for one more song.",
+   "unlocked_text": "You read eight names aloud, and the band came back to play one more song.",
+   "code_word": "ENCORE",
+   "art": "encore",
+   "trigger": {
+    "event": "stray_kids",
+    "where": {
+     "outcome": "show"
+    }
+   },
+   "spoiler_words": [
+    "photo",
+    "read",
+    "signature",
+    "scroll",
+    "idol"
+   ]
+  },
+  {
    "id": "behind_curtain",
    "name": "Behind the Curtain",
    "category": "secrets",
@@ -3047,6 +3649,26 @@
      "ended": true
     }
    }
+  },
+  {
+   "id": "rip_van_winkle",
+   "name": "Rip Van Winkle",
+   "category": "secrets",
+   "rarity": "rare",
+   "hint": "He slept for twenty years under the mountain and woke to a world that had moved on.",
+   "unlocked_text": "Your hero went to sleep in one age of the world and woke up in the next, as if nothing had happened.",
+   "code_word": "WINKLE",
+   "art": "rip_van_winkle",
+   "trigger": {
+    "event": "save_older"
+   },
+   "spoiler_words": [
+    "save",
+    "version",
+    "update",
+    "load",
+    "install"
+   ]
   },
   {
    "id": "thirty_lives",

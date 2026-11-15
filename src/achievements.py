@@ -42,7 +42,10 @@ KNOWN_EVENTS: dict[str, frozenset] = {name: frozenset(fields) for name, fields i
     'subject_cleared':  ('subject', 'tier'),
     'philosophy_tier':  ('tier',),
     # fighting
-    'kill':             ('monster', 'ranged', 'unarmed', 'boss', 'legendary', 'family'),
+    # coat: the substance of the coating on the killing blow (coatings.after_blow);
+    # flask: the id of the thrown flask that killed (game_arsenal._throw_flask)
+    'kill':             ('monster', 'ranged', 'unarmed', 'boss', 'legendary', 'family',
+                         'coat', 'flask'),
     'damage':           ('amount', 'dealt', 'by'),
     'attack_chain':     ('chain',),
     'seals_broken':     ('count',),
@@ -54,7 +57,12 @@ KNOWN_EVENTS: dict[str, frozenset] = {name: frozenset(fields) for name, fields i
     'hellmouth':        (),
     # craft and survival
     'harvest':          ('monster',),
-    'cooked':           ('recipe',),
+    # tab: the dish's menu tab (hp, sp, mp, stat, special); parts: how many
+    # different ingredients; carried: the most floors one of them was carried
+    # down since it was harvested (Ingredient.harvest_floor)
+    'cooked':           ('recipe', 'tab', 'legendary', 'parts', 'carried'),
+    'smith':            ('service',),
+    'counter':          ('technique', 'monster', 'family'),
     'lockpick':         (),
     'identify':         ('item',),
     'scroll_read':      ('scroll',),
@@ -101,7 +109,15 @@ KNOWN_EVENTS: dict[str, frozenset] = {name: frozenset(fields) for name, fields i
     'flux':             (),
     'ghost_met':        ('own',),
     'unicorn_joined':   (),
+    # a dance-off with the Mooble danced to its end (mooble_encounter):
+    # practised = the practice round was danced since the last dance-off
+    'dance_off':        ('won', 'misses', 'perfects', 'total', 'practised', 'dance'),
+    # the Underway Run finished (game_race): won, how many legs were sprinted
+    'race':             ('won', 'sprints', 'photo'),
+    # down a staircase in the Bococho's saddle (main._change_level)
+    'rode_down':        ('floor',),
     'burglar':          (),
+    'stray_kids':       ('outcome',),
     # the title screen and the fourth wall
     'title_god':        (),
     'seeker_named':     ('name',),
@@ -109,6 +125,7 @@ KNOWN_EVENTS: dict[str, frozenset] = {name: frozenset(fields) for name, fields i
     'plugh':            (),
     'profile_edited':   (),
     'save_restored':    ('ended',),
+    'save_older':       ('version',),
 }.items()}
 
 RARITIES = ('common', 'rare', 'epic', 'legendary')

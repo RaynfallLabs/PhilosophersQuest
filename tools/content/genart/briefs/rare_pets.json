@@ -595,7 +595,7 @@
   "colours": "bright lemon-yellow plumage, the clear yellow of a lemon rind, all over its head, neck, body, wings and tail, a little deeper golden-yellow on its back and wingtips, pale cream-gold on its throat and breast; a pale horn-yellow beak with a dark grey tip; dark slate-grey scaled legs and toes; bright dark amber eyes.",
   "wears": "It is a bird and wears nothing.",
   "holds": "It is a bird and holds nothing.",
-  "pose": "Seen from the side, facing left, on its two legs: it struts forward proudly in a long stride, one of its two legs reaching forward with its foot planted and the other leg pushing off behind with its foot planted, its chest puffed out, its neck high and its head up, its crest raised, its beak a little open in a call. Both feet are on the ground. Exactly two legs.",
+  "pose": "Seen from the side, facing left, standing tall and proud on its two legs: one leg straight under the middle of its body and the other leg one short step ahead of it, the two legs making a narrow upside-down V under its belly, with exactly two feet on the ground, one big three-toed foot at the bottom of each leg and nothing else beneath its body; its chest puffed out, its neck high and its head up, its crest raised, its beak a little open in a call. Exactly two legs and two feet.",
   "must_show": [
    "a tall lemon-yellow flightless riding bird, painted as a real beast",
    "a crest of long feathers sweeping back from the crown",
@@ -645,7 +645,12 @@
    "orange plumage",
    "red-orange",
    "hawk",
-   "pheasant"
+   "pheasant",
+   "three feet",
+   "third foot",
+   "three legs",
+   "tripod",
+   "extra foot"
   ],
   "despill": true
  },
@@ -929,87 +934,87 @@
    "touch": [
     [
      34,
-     45,
+     41,
      "#2b1a10"
     ],
     [
      34,
-     46,
+     42,
      "#d4d8dc"
     ],
     [
      35,
-     46,
+     42,
      "#d4d8dc"
     ],
     [
      33,
-     47,
+     43,
      "#d4d8dc"
     ],
     [
      36,
-     47,
+     43,
      "#d4d8dc"
     ],
     [
      33,
-     48,
+     44,
      "#9aa0a6"
     ],
     [
      34,
-     48,
+     44,
      "#9aa0a6"
     ],
     [
      35,
-     48,
+     44,
      "#9aa0a6"
     ],
     [
      36,
-     48,
+     44,
      "#9aa0a6"
     ],
     [
      32,
-     47,
+     43,
      "#141018"
     ],
     [
      37,
-     47,
+     43,
      "#141018"
     ],
     [
      32,
-     48,
+     44,
      "#141018"
     ],
     [
      37,
-     48,
+     44,
      "#141018"
     ],
     [
      33,
-     49,
+     45,
      "#141018"
     ],
     [
      34,
-     49,
+     45,
      "#141018"
     ],
     [
      35,
-     49,
+     45,
      "#141018"
     ],
     [
      36,
-     49,
+     45,
      "#141018"
     ]
    ]

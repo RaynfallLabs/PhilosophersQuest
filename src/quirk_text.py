@@ -141,6 +141,18 @@ QUIRK_HINT = {
     'pythagoras':    "Three, four, five: the oldest harmony there is. Let your strikes climb the same steps.",
     'achilles':      "His mother held him by the heel, and it was never covered. Fight as he was made.",
     'daedalus':      "The craftsman never met a lock he could not open, and never fumbled one.",
+    # --- added 2026-11-14 ---
+    'callinicus':    "The Byzantines threw their fire in pots, and the sea itself could not put it out.",
+    'medea':         "The sorceress knew an ointment for every danger. Try every salve there is on your blade.",
+    'fabius':        "Rome's patient general won by never fighting on the enemy's terms. Win from behind your guard.",
+    'wallace':       "The Scottish hero swung a sword as tall as a man, with no shield to hide behind.",
+    'janus':         "The god of doorways looks both ways at once. Change weapons while the enemy watches.",
+    'marius_mule':   "Rome's legionaries carried their own packs down every road. Go deeper heavily laden.",
+    'fatted_calf':   "The father kept the best calf back for the day of the great feast. Bring your trophy a long way.",
+    'widows_jar':    "Elijah's widow baked her last flour and oil into bread, and her jar never emptied. Cook with plain fare.",
+    'proteus':       "The Old Man of the Sea changed shape again and again. Try on a great many kinds of armour and rings.",
+    'terpsichore':   "The Muse of dance never needed to rehearse. Step out onto the floor cold, and win.",
+    'tortoise':      "The hare ran in bursts and slept by the road. The tortoise never once hurried.",
 }
 
 
@@ -258,6 +270,18 @@ QUIRK_DESC = {
     'pythagoras':    f"Intelligence +1. {_INT} Three, four, five: your strikes climbed the oldest harmony there is.",
     'achilles':      f"Dexterity +1. {_DEX} You fought as he was made, with nothing on the heel, and learned to keep it out of reach.",
     'daedalus':      f"Dexterity +1. {_DEX} No lock has beaten you in a long while, and your fingers know it.",
+    # --- added 2026-11-14 ---
+    'callinicus':    "The burning and the pitting your thrown flasks set on a creature last twice as long. Greek fire would not go out, and neither will yours.",
+    'medea':         "A coating you work into your weapon lasts half again as many blows. You know how to rub an ointment into the metal so that it stays.",
+    'fabius':        "Holding Guard costs you only half its usual damage, with all of its armour. You have learned to win slowly, and it no longer feels slow.",
+    'wallace':       "A two-handed weapon held with no shield parries one point better (one more point of armour). Two hands on the hilt have become second nature.",
+    'janus':         "Drawing the weapon at your back (S) costs no turn: the swap is done before the enemy sees it. You look both ways at once now.",
+    'marius_mule':   "Burdened no longer costs you extra steps: you keep your stride under a heavy pack. You still lose your dodge, and Overloaded still slows you. You march like one of Marius' mules.",
+    'fatted_calf':   "Every legendary feast you cook also heals you fully. You know what it is to wait for a feast, and you sit down to one with everything you have.",
+    'widows_jar':    "Rations, bread, cheese and every other plain food you eat as it is fill you half again as much. Like the widow's jar, your plain store goes further than it should.",
+    'proteus':       "A kind of gear you have never worn needs one right answer fewer to put on (never fewer than one). You have taken so many shapes that a new one comes easily.",
+    'terpsichore':   f"Dexterity +2. {_DEX} You danced with the last of the Moobles straight off, with no practice, and your feet have kept the beat.",
+    'tortoise':      f"Constitution +2. {_CON} You won a race without once asking for more than a steady pace, and the tortoise's long wind is yours.",
 }
 
 

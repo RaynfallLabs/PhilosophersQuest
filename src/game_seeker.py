@@ -24,6 +24,24 @@ from game_states import STATE_PLAYER, STATE_STORY_POPUP
 _PER_POPUP = 3          # unlocks shown on one popup page
 
 
+def _version_tuple(v: str) -> tuple:
+    out = []
+    for part in str(v or '').split('.'):
+        digits = ''.join(ch for ch in part if ch.isdigit())
+        out.append(int(digits) if digits else 0)
+    return tuple(out) or (0,)
+
+
+def older_version(saved: str, current: str | None = None) -> bool:
+    """Was a save written by an older version of the game than this one? A
+    save with no version ('') is from before 3.5, which kept none."""
+    if current is None:
+        from layout import VERSION as current
+    if not saved:
+        return True
+    return _version_tuple(saved) < _version_tuple(current)
+
+
 class SeekerMixin:
 
     def _seeker_init(self, *, new_run: bool):
@@ -35,6 +53,7 @@ class SeekerMixin:
         run = achievements.RunTally(getattr(self, '_seeker_run', None))
         self._seeker_run = run.data            # saved with the run (save_system)
         self._seeker = None
+        import counters
         import deeds
         import monster
         import pet_system
@@ -43,6 +62,7 @@ class SeekerMixin:
         monster.DAMAGE_OBSERVER = None
         pet_system.ON_GROWTH = None
         topic_cards.ON_READ = None
+        counters.ON_COUNTER = None
         if self._seeker_off:
             return
         self._seeker = seeker_session.open_active(run=run, hero=getattr(self, 'player_name', ''))
@@ -55,15 +75,25 @@ class SeekerMixin:
         pet_system.ON_GROWTH = self._seeker_pet_growth
         topic_cards.ON_READ = (lambda subject, topic: self._seeker_event(
             'topic_read', subject=subject, topic=f'{subject}:{topic}'))
+        # A named counter at work (counters.py): the technique and the creature.
+        counters.ON_COUNTER = (lambda tid, src: self._seeker_event(
+            'counter', technique=tid, monster=getattr(src, 'kind', None),
+            family=getattr(src, 'family', None)))
         prof = self._seeker.profile
         from save_system import run_id_of
         if new_run:
             # The heroes this Seeker has been (for meeting one's own ghost).
             prof.include('heroes', seeker_codes.normalise_name(self.player_name))
             self._seeker_event('run_start', hero=self.player_name, build=self._seeker_build_key())
-        elif run_id_of(self) in prof.members('ended_runs'):
-            # A save of a run that already ended, copied back by hand.
-            self._seeker_event('save_restored', ended=True)
+        else:
+            if run_id_of(self) in prof.members('ended_runs'):
+                # A save of a run that already ended, copied back by hand.
+                self._seeker_event('save_restored', ended=True)
+            saved = getattr(self, '_saved_version', None)
+            if saved is not None and older_version(saved):
+                # A journey begun in an older version of the game, carried on
+                # in this one (Rip Van Winkle).
+                self._seeker_event('save_older', version=saved or 'unknown')
         self._seeker_take(self._seeker.settle())
 
     def _seeker_damage(self, mon, amount: int, dealt: int):

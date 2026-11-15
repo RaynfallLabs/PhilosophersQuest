@@ -1,0 +1,129 @@
+[
+ {
+  "id": "dance_partner_bg",
+  "family": "pets_bg",
+  "rank": 1,
+  "body": "badge_scene",
+  "what": "an old abandoned mine cave deep underground, seen close and low: rough dark brown rock walls, a few old wooden pit props, a rusty mine-cart rail running off into the dark, and a hanging miner's lantern long gone out. In the lower middle of the picture the cave floor is lit by a soft warm round glow of red-gold light, as if from a small bobbing lamp, with a few tiny gold sparkles in the air above it. The rest of the cave is dark brown and cool blue shadow. Nothing stands in the glow.",
+  "colours": "Dark brown rock; grey-brown wooden pit props; a rusty brown rail; a dark iron lantern; a soft warm red-gold glow on the floor with tiny gold sparkles; cool blue shadows.",
+  "must_show": [
+   "an old mine cave",
+   "an empty warm red-gold glow in the lower middle"
+  ],
+  "must_not_show": [
+   "creature",
+   "person",
+   "miner",
+   "animal",
+   "fire",
+   "writing"
+  ]
+ },
+ {
+  "id": "not_a_step_missed_bg",
+  "family": "pets_bg",
+  "rank": 2,
+  "body": "badge_scene",
+  "what": "a round patch of smooth cave floor in an old mine, seen close from a little above, lit from above by one bright warm shaft of gold light like a stage spotlight; little gold and red sparkles float in the beam, and round the edge of the lit circle the cave is dark brown and blue. The lit circle in the middle is empty and bright.",
+  "colours": "A bright warm gold shaft of light; a pale gold lit circle of smooth floor; tiny gold and red sparkles; dark brown rock; cool blue shadow.",
+  "must_show": [
+   "a bright spotlit empty circle of floor in a dark cave",
+   "sparkles in the beam"
+  ],
+  "must_not_show": [
+   "creature",
+   "person",
+   "footprints",
+   "arrows",
+   "writing",
+   "letters"
+  ]
+ },
+ {
+  "id": "first_past_post_bg",
+  "family": "pets_bg",
+  "rank": 3,
+  "body": "badge_scene",
+  "what": "a racetrack in a great underground cavern, seen close and low from the middle of the track: packed sandy track running toward the viewer between rough wooden rail fences, a finish banner of plain red and gold cloth hung across the track on two tall posts high above, torches burning on the posts, and the dark cavern roof far above. The track in the lower middle is empty, warm and bright in the torchlight; the cavern behind is dark.",
+  "colours": "Warm sandy tan track; weathered grey-brown wooden fences and posts; a plain red and gold cloth banner; orange torch flames; a dark brown-black cavern roof.",
+  "must_show": [
+   "a sandy race track between wooden fences",
+   "a plain red and gold finish banner across it"
+  ],
+  "must_not_show": [
+   "creature",
+   "bird",
+   "horse",
+   "person",
+   "crowd",
+   "writing",
+   "letters",
+   "numbers",
+   "checkered flag"
+  ]
+ },
+ {
+  "id": "free_of_the_tether_bg",
+  "family": "pets_bg",
+  "rank": 4,
+  "body": "badge_scene",
+  "what": "a racing camp in a great underground cavern, seen close and low: on the right a thick weathered wooden tether post with a frayed, snapped rope hanging loose from its iron ring, the broken end lying on the sandy ground; behind, torches on posts and the dark cavern far away. In the lower middle of the picture the sandy ground is empty and lit warm and bright by the torches. The rest is dark.",
+  "colours": "A weathered grey-brown wooden post; a dark iron ring; a frayed pale tan rope; warm sandy ground; orange torch flames; a dark brown-black cavern.",
+  "must_show": [
+   "a tether post with a snapped rope hanging from it",
+   "an empty lit patch of sandy ground"
+  ],
+  "must_not_show": [
+   "creature",
+   "bird",
+   "horse",
+   "person",
+   "writing",
+   "noose"
+  ]
+ },
+ {
+  "id": "slow_steady",
+  "family": "pets",
+  "rank": 4,
+  "body": "badge_scene",
+  "what": "a tortoise crossing the finish line of a sandy race track in a great underground cavern, seen close and low from the side: a real old tortoise with a high domed brown shell and wrinkled grey-green legs, walking calmly with its head held out, its front foot just over a line of white chalk across the track; behind it a plain red and gold finish banner hangs high on two posts with torches. Far behind on the track, small and out of focus, a long-eared hare lies asleep. The tortoise is warm and bright in the torchlight; the cavern is dark.",
+  "colours": "A domed dark brown and amber tortoise shell; wrinkled grey-green skin; a white chalk line; warm sandy track; a plain red and gold banner; orange torch flames; a small grey-brown hare far off; a dark cavern.",
+  "must_show": [
+   "a tortoise crossing a chalk finish line",
+   "a finish banner above",
+   "a small sleeping hare far behind"
+  ],
+  "must_not_show": [
+   "person",
+   "turtle in water",
+   "cartoon",
+   "smiling face",
+   "writing",
+   "letters",
+   "numbers",
+   "checkered flag"
+  ]
+ },
+ {
+  "id": "riding_deep_bg",
+  "family": "pets_bg",
+  "rank": 5,
+  "body": "badge_scene",
+  "what": "a wide rough stone staircase spiralling down into the deep dark underground, seen close from its top step: worn grey stone steps curving away downward into blue-black darkness, a few torches on the walls lighting them in warm pools of orange light, and far below a faint glow. The top step in the lower middle of the picture is empty and lit warm by the nearest torch.",
+  "colours": "Worn grey stone steps; warm orange torchlight; deep blue-black darkness below; a faint pale glow far down; dark brown rock walls.",
+  "must_show": [
+   "a stone staircase going down into darkness",
+   "torches on the walls",
+   "an empty lit top step"
+  ],
+  "must_not_show": [
+   "creature",
+   "person",
+   "bird",
+   "horse",
+   "skull",
+   "writing"
+  ]
+ }
+]

@@ -202,7 +202,14 @@ def _apply_recipe_outcome(player, recipe: dict, ruined: bool = False) -> list[st
         if getattr(player, 'quirk_progress', {}).get('persephone_active'):
             return kitchen.salvage_dish(player, recipe)
         return [f"{RUINED_PREFIX}. The {meal_name} is wasted."]
-    return kitchen.apply_dish(player, recipe)
+    msgs = kitchen.apply_dish(player, recipe)
+    # The Fatted Calf (a trait): a legendary feast heals the hero fully.
+    if (kitchen.is_legendary(recipe)
+            and (getattr(player, 'quirk_progress', None) or {}).get('fatted_calf_active')
+            and player.hp < player.max_hp):
+        player.restore_hp(player.max_hp - player.hp)
+        msgs = list(msgs) + ["You rise from the feast whole: every wound has closed."]
+    return msgs
 
 
 # A cooked meal heals at least this share of the health bar: about 10% for a
@@ -581,6 +588,8 @@ def eat_food(player, food_item) -> list[str]:
     messages = []
     sp = food_item.sp_restore
     hp = food_item.hp_restore
+    if (getattr(player, 'quirk_progress', None) or {}).get('widows_jar_active'):
+        sp = sp + sp // 2           # The Widow's Jar (a trait): plain food goes further
 
     player.restore_sp(sp)
     messages.append(f"You eat the {food_item.name}. ({sp} SP restored)")

@@ -779,6 +779,7 @@ class TraderMixin:
         done = self._render_service(sid, target, who=m.person)
         if not done:
             return
+        self._seeker_event('smith', service=sid)
         paid = self._pay_gold(price, change_purse=int(m.purse), who=m.person, quiet=True)
         if paid:
             m.purse = max(0, int(m.purse) - int(paid.get('change_given', 0) or 0))
@@ -867,6 +868,7 @@ class TraderMixin:
                 self.ground_items.append(it)
                 self.add_message(f"It is too heavy to carry with everything else, so {m.person} "
                                  f"sets it down at your feet.", 'warning')
+            self._seeker_event('smith', service='order_collected')   # Made to Order
 
     def _render_service(self, sid: str, target, who: str = 'The smith') -> bool:
         """Do the service (shared with encounter vendors: a 'service' reward).
