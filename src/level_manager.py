@@ -114,17 +114,18 @@ class LevelManager:
             items = self._once_per_run(items)
             return dungeon, monsters, items
 
-        from dungeon import generate_dungeon, spawn_items, populate_floor
+        from dungeon import generate_dungeon, spawn_items, populate_floor, FLOOR_DENSITY_BASE
 
         dungeon = generate_dungeon(80, 50, level_num)
 
         # Monster spread scales with depth (2026-05-19 density rebuild;
-        # 2026-06-06 per-room pass). `density` grows from 0.50 at L1 to 0.95 at
-        # L75+ and is the PER-ROOM probability of a baseline monster --
-        # populate_floor rolls every room, so the population spreads across the
-        # whole floor instead of lumping in one corner. Packs and den/zoo extras
-        # cluster intentionally on top.
-        density = min(0.50 + level_num / 130, 0.95)
+        # 2026-06-06 per-room pass). `density` is the PER-ROOM probability of
+        # a baseline monster -- populate_floor rolls every room, so the
+        # population spreads across the whole floor instead of lumping in one
+        # corner. Packs, bands and den/zoo extras cluster intentionally on top.
+        # 3.5.1: it starts at 0.62 (was 0.50). A floor's own monsters carry the
+        # fight now; newcomers come only to a hero who lingers (src/wanderers.py).
+        density = min(FLOOR_DENSITY_BASE + level_num / 130, 0.95)
         monsters = populate_floor(dungeon.rooms, level_num, dungeon, occupancy=density)
 
         items = spawn_items(dungeon.rooms, level_num, dungeon)

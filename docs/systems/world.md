@@ -294,10 +294,10 @@ After `generate_dungeon` returns a `Dungeon`, `LevelManager.generate(level_num)`
 
 ### 4.1 Baseline monsters
 ```python
-density = min(0.50 + level_num / 130, 0.95)
+density = min(FLOOR_DENSITY_BASE + level_num / 130, 0.95)   # dungeon.FLOOR_DENSITY_BASE = 0.62
 monsters = populate_floor(dungeon.rooms, level_num, dungeon, occupancy=density)
 ```
-`populate_floor` rolls EVERY non-start room independently for a baseline monster. Density scales 0.50 at L1 → 0.95 at L75+. The per-room-roll pattern (vs. a global N-count scatter) is deliberate — it fixes the "all monsters in one corner" lumping bug by spreading the baseline across the floor, and packs / dens / zoos then cluster intentionally on top.
+`populate_floor` rolls EVERY non-start room independently for a baseline monster. Density scales 0.62 at L1 → 0.95 at L43+ (0.50 at L1 before 3.5.1, when newcomers still came in a constant stream; now a floor's own monsters carry the fight and newcomers come only to a hero who lingers: `src/wanderers.py`, docs/systems/monsters.md "Wanderers"). The per-room-roll pattern (vs. a global N-count scatter) is deliberate — it fixes the "all monsters in one corner" lumping bug by spreading the baseline across the floor, and packs / dens / zoos then cluster intentionally on top.
 
 ### 4.2 Items
 `spawn_items(dungeon.rooms, level_num, dungeon)` places gear, magic items, ammo, food, potions, Soul Spheres, mystery altars, merchants, and special-room contents. Each loot room rolls a piece of gear at `ROOM_GEAR_CHANCE` (25%; it was 33%) and a magic item at 25%, where rings and amulets take 13 of the 20 pool slots the other classes get (`CLASS_POOL_SLOTS`; only in a mixed pool, so a trader's ring shelf keeps its spread). See BALANCE_REVIEW_LOOT_AND_FOOD_2026_10_26 for the measurement. The Soul Sphere spawn is ONE roll a floor across the six spheres, each at its own chance for the floor band (`floor_spawn_chance` in `data/items/artifact.json`; a Soul Sphere about 8% on floors 1-33, Greater Soul Spheres from 34, Master Spheres from 67, each Hearth Sphere a tenth of its tier; `pet_system.sphere_for_floor`). The band decides which sphere turns up; what hatches from it never depends on the floor (see [pets.md](pets.md) §4, §12).

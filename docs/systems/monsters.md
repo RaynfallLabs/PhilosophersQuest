@@ -316,7 +316,7 @@ Brandon: "NONE automatically know where you are unless it's thematically and lor
   - the Hand of Glory keeps everyone asleep;
   - zoo, graveyard and barracks deep sleepers keep `sleepers.py`'s odds, and only a fight within 3 tiles may break their sleep (20%).
 
-**`_aware` keeps its old meaning:** the monster has noticed the hero once. That's what ambushers, mimics, naming, the Fenrir rage and the Abaddon swarms read. A monster made aware by the game itself (a summons, an announced foe, an old save's hunter) gets one lead to where the hero is now. A wanderer arrives knowing nothing. It goes to see a loud noise from the last 40 turns only if that sound reaches the tile it came in on, along open ground (`senses.sound_map`, the noise's own reach: a fight 5 tiles, an alarm 12). Otherwise it roams. (Before 3.5.1 every newcomer was sent to the last fight from anywhere on the floor.) The wanderer cap counts `_tracking` hunters.
+**`_aware` keeps its old meaning:** the monster has noticed the hero once. That's what ambushers, mimics, naming, the Fenrir rage and the Abaddon swarms read. A monster made aware by the game itself (a summons, an announced foe, an old save's hunter) gets one lead to where the hero is now. A wanderer arrives knowing nothing. It goes to see a loud noise from the last 40 turns only if that sound reaches the tile it came in on, along open ground (`senses.sound_map`, the noise's own reach: a fight 5 tiles, an alarm 12). Otherwise it roams. (Before 3.5.1 every newcomer was sent to the last fight from anywhere on the floor.) The wanderer cap counts `_tracking` hunters. When newcomers come at all is the floor's clock (Wanderers, below).
 
 **Other changes in the same slice:**
 - G6: `hit_and_run`, `dancer`, `fenrir_rage` and `abaddon` call `_spots_player` (they used to hunt from anywhere).
@@ -335,7 +335,7 @@ Tests: `tests/test_senses.py`.
 
 ## War-bands (Dungeon Alive slice 5, 2026-11-12)
 
-Brandon: monsters must "pose a real challenge and players need to pay attention to lore, weaknesses, abilities". A war-band (`data/war_bands.json`, `src/war_bands.py`) makes camp in one big room on 40% of the floors in its range, from floor 3, never more than one band a floor. It replaces that room's ordinary roll. `LevelManager.generate` calls `war_bands.place_band` after the hidden chambers.
+Brandon: monsters must "pose a real challenge and players need to pay attention to lore, weaknesses, abilities". A war-band (`data/war_bands.json`, `src/war_bands.py`) makes camp in one big room on 55% of the floors in its range, from floor 1, never more than one band a floor. Floors 1-6 also hold the two small bands, a goblin scouting party (a hobgoblin and his goblins) and a gang of footpads (3.5.1: a floor's own encounters carry the fight; see Wanderers). It replaces that room's ordinary roll. `LevelManager.generate` calls `war_bands.place_band` after the hidden chambers.
 
 **Bands:**
 
@@ -396,6 +396,24 @@ How much is said follows `family_lore.knowledge` (Brandon, 2026-11-12: the notes
 Tests: `tests/test_monster_notes.py`, and the Observe cases in `tests/test_observe_bestiary.py`.
 
 **Patrols (C5).** A wandering monster now arrives beside a stair the hero can't see, as if coming down or up it, instead of out of nowhere. It goes to a fight or alarm it can hear from there, or roams.
+
+## Wanderers: the floor's clock (3.5.1)
+
+Brandon, play-testing floor 1: "I just don't think we need a constant stream of monsters... I'd rather have a larger population at first, with complex encounters set up, then a trickle if you hang around TOO LONG, but give the player some time to explore... walking back and forth becomes a massive chore."
+
+Until 3.5.1 a newcomer came every 22 turns from the hero's first turn on a floor, whenever it held fewer than about what it started with (`wander_alive_cap`). Every kill was replaced within 22 turns, and newcomers were half of all floor-1 fights (51%, measured on 24 maps, crossing and back).
+
+`src/wanderers.py` keeps a clock on each floor (`dungeon._wander_clock`) of the turns the hero has spent there. `main._maybe_wander_spawn` ticks it once a world turn; `main._place_wanderer` brings a newcomer in when it is due, if the caps allow.
+
+- **Time to explore.** Nothing new comes for the floor's grace, `floor_curve.wander_grace(tour)` = `WANDER_GRACE_FLAT` (100) + `WANDER_GRACE_PER_TILE` (2) × the floor's explore tour. The tour (`wanderers.explore_tour`, kept on the floor) is the walk of a full explore: from the up stair, the nearest room not yet seen each time, every room, then the down stair. Its median is 224 tiles on floor 1, 330 on floor 5 and about 500 from floor 12, so the grace is about 550 turns on floor 1 and 1,100 deep. A thorough explore walks about 1.5 tours; the rest is time to fight and catch your breath.
+- **The floor stirs.** At `WANDER_WARN_SHARE` (85%) of the grace, one `warning` line says he has been here a long while. When the grace runs out, a `stirs` line says things are coming (`data/senses.json` `wanderers`).
+- **A trickle.** The first newcomer comes as the grace runs out. The gap to the next starts at `WANDER_TRICKLE_START` (60 turns) and shortens to `wander_interval(level)` (22 turns to floor 50, 40 at floor 100) over `WANDER_TRICKLE_RAMP` (600) turns (`floor_curve.wander_gap`). So a hero camped on a floor long after he has seen it all meets the old pressure again. Resting is never safe forever.
+- **Coming back.** Time spent off a floor settles it by as much, down to one full tour of quiet (at least 100 turns) before the trickle starts over, and the lines may be said again. A gap of 3 turns or less is haste or a stair hop and settles nothing.
+- **The floor's own.** The fighting is done by what a floor is made with. The per-room roll's base is 0.62 (was 0.50), `MIN_FLOOR_MONSTERS` is 8 (was 6), and war-bands camp on 55% of floors from floor 1. Floor 1 starts with about 13 monsters (was 10), and 70% of floor-1 maps hold a set piece, a band or a den (was 18%).
+
+The simulator ticks the same clock (`Run.pass_time`, `snap.tour`).
+
+Tests: `tests/test_floor_clock.py`, `tests/test_wanderers_hear_or_roam.py`.
 
 Tests: `tests/test_war_bands.py`.
 
@@ -474,9 +492,9 @@ Both procedural placement callers go through `_spawn_one_in_room(room, eligible,
 
 **Two top-level population paths:**
 - `spawn_monsters(rooms, level, dungeon, min_count, max_count)` — fixed total count, each in a random room; skips room 0. Used for targeted clusters (zoo, graveyard, barracks, den extras, hidden-chamber lairs, wandering spawns). Intentionally LUMPS.
-- `populate_floor(rooms, level, dungeon, occupancy)` — rolls EVERY room independently with per-room probability `occupancy` (0.50 shallow → 0.95 deep). This is the baseline for a floor; packs/dens/zoos cluster intentionally on top. Guarantees at least one monster on any non-empty floor.
+- `populate_floor(rooms, level, dungeon, occupancy)` — rolls EVERY room independently with per-room probability `occupancy` (0.62 shallow → 0.95 deep). This is the baseline for a floor; packs/dens/zoos cluster intentionally on top. Guarantees at least one monster on any non-empty floor.
 
-The baseline occupancy comes from `LevelManager.generate` as `density = min(0.50 + level_num / 130, 0.95)`.
+The baseline occupancy comes from `LevelManager.generate` as `density = min(FLOOR_DENSITY_BASE + level_num / 130, 0.95)`, with `dungeon.FLOOR_DENSITY_BASE` = 0.62 (0.50 before 3.5.1).
 
 **Known convention trap** (audit P5 / level_manager docstring): `spawn_monsters` skips `rooms[0]`. Both `_spawn_monster_den_extras` and `_populate_hidden_chambers` exploit this by passing `[dummy, target_room]` so the target becomes "room 1" and gets populated. If `spawn_monsters` ever drops the skip-first convention, BOTH call sites must change together.
 

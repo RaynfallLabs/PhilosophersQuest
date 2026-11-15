@@ -136,8 +136,8 @@ long enough: knowledge unlocks the technique, performance lands it.
   | shapeshifters | Werebeasts and Shapeshifters | 9 | 5.3 | 2, 3, 4, 5, 6 |
   | celestials | Celestials | 7 | 4.9 | 2, 3, 4, 5, 6 |
 
-  (Wandering monsters add more kinds than generation alone, so a diligent hunter climbs
-  faster than these counts suggest.)
+  (Newcomers add a few more kinds, but since 3.5.1 they come only to a hero who lingers on
+  a floor, so these counts are close to what a hunter meets.)
 - Secret builds: `_start_family_lore` in `SECRET_BUILDS` gives tier 1 or 2 only, never a
   technique, and nothing says so (Geralt, Aristotle, Ash Ketchum, Merlin, Theseus,
   Odysseus, Ash Williams, Hildegard, Leonardo, Lovelace, Tesla, Sherlock; Socrates none).

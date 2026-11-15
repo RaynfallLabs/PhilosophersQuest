@@ -48,8 +48,7 @@ def _corridor(g, length=60):
     g.monsters = []
     g.pets = []
     g.visible = {(2, ROW), (3, ROW)}
-    from floor_curve import wander_interval
-    g.turn_count = wander_interval(g.dungeon_level) * 40
+    g.turn_count = 1000
 
 
 def _spawn_one(g, explored):
@@ -61,7 +60,7 @@ def _spawn_one(g, explored):
     real = D.spawn_monsters
     D.spawn_monsters = lambda *a, **k: [Monster({**MONS['giant_rat'], 'id': 'giant_rat'}, 0, 0)]
     try:
-        g._maybe_wander_spawn()
+        g._place_wanderer()
     finally:
         D.spawn_monsters = real
     assert len(g.monsters) == 1, 'no newcomer spawned'

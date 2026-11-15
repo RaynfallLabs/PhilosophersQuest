@@ -192,7 +192,7 @@ def _kitchen_parts(recipe) -> list:
 STARVE_SHARE = 0.02
 ARC_SHARE = 0.05          # a stray arc of lightning: this share of a creature's health
 from floor_curve import (WANDER_HUNTING_CAP, natural_regen, rest_room,    # noqa: E402
-                         wander_alive_cap, wander_interval)
+                         wander_alive_cap)
 
 
 def _stored_floors(lm):
@@ -5446,19 +5446,28 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self._advance_turn()
 
     def _maybe_wander_spawn(self):  # caps: WANDER_HUNTING_CAP / wander_alive_cap
-        """Periodically spawn a wandering monster to keep pressure on the player."""
-        import random as _rng
+        """The floor's clock, one world turn (src/wanderers.py): time to
+        explore first, then a trickle of newcomers that quickens the longer
+        the hero stays. The floor's own monsters were set down when it was
+        made."""
         # Nothing wanders onto a side floor: its number (999, 997) drew from
         # the floor-100 pool. Only the farm's herd, above the alive cap, kept
         # deep wanderers off it until the bovines were thinned out.
         from boss_levels import is_side_floor
         if is_side_floor(self.dungeon_level):
             return
-        # Every 22 turns to floor 50, then rarer: 40 turns at floor 100
-        # (floor_curve.wander_interval).
-        interval = wander_interval(self.dungeon_level)
-        if self.turn_count % interval != 0:
-            return
+        import wanderers
+        say, due = wanderers.advance(self.dungeon, self.dungeon_level, self.turn_count)
+        if say:
+            text = wanderers.line(say)
+            if text:
+                self.add_message(text, 'warning')
+        if due:
+            self._place_wanderer()
+
+    def _place_wanderer(self):
+        """One newcomer comes onto the floor, if the caps allow."""
+        import random as _rng
         # Cap by how many are already HUNTING the player, not by how many
         # are alive. The old cap (4 + level // 6 alive) was below every
         # floor's starting population, so nothing ever wandered in until the
