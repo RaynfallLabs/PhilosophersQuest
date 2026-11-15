@@ -346,6 +346,9 @@ def test_wb_c07_old_nickel_never_takes_a_room_with_a_road_encounter():
         # (The floor's own Road people, whose floors the Road's seed decides,
         # are taken off: these are placed by hand.)
         g.monsters = [m for m in g.monsters if not ep.is_wearer(m) and not ep._is_road_person(m)]
+        # Nor a war-band's camp (bug bash 3.5.1): the one room left free
+        # here could be the camp, which he never takes either.
+        g.dungeon.band = None
         rooms = g.dungeon.rooms
         here = ep._room_of(rooms, g.player.x, g.player.y)
         free = [r for r in rooms[1:] if r is not here]

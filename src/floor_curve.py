@@ -216,7 +216,8 @@ def wander_interval(level: int) -> int:
 # 24 maps). Now nothing new comes for a grace measured from the floor's own
 # map: the walk of a full explore (every room, nearest first, then the down
 # stair: wanderers.explore_tour; median 224 tiles on floor 1, 330 on floor 5,
-# about 500 from floor 12) times WANDER_GRACE_PER_TILE, plus
+# about 500 from floor 12; on a maze its passages too, 1,200-2,000) times
+# WANDER_GRACE_PER_TILE, plus
 # WANDER_GRACE_FLAT. A thorough explore walks about one and a half times the
 # tour (doors, corners, the loot); the rest is time to fight and get your
 # breath back. The clock counts only turns spent on that floor.

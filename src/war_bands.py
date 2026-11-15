@@ -199,7 +199,8 @@ def outside_camp(dungeon, rooms) -> list:
     camp = camp_tiles(dungeon)
     if not camp:
         return list(rooms)
-    return [r for r in rooms if (r.x, r.y) not in camp] or list(rooms)
+    return [r for r in rooms
+            if (getattr(r, 'x', None), getattr(r, 'y', None)) not in camp] or list(rooms)
 
 
 def roster_text(band: dict) -> str:
