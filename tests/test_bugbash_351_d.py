@@ -1,4 +1,4 @@
-"""Bug bash 3.5.1, hunter D: tonight's fixes reviewed, their seams, the screens.
+﻿"""Bug bash 3.5.1, hunter D: tonight's fixes reviewed, their seams, the screens.
 
 Each test pins one bug found in review (D1, D2... in the hunter's report).
 """
@@ -203,3 +203,101 @@ def test_d4_the_probe_reads_each_row_on_its_own_line(game):
     for text in rows:
         assert text in game._log, (text, game._log)
     assert game._log[0] == f"The Skeleton: {skel.hp}/{skel.max_hp} HP."
+
+
+# ---------------------------------------------------------------------------
+# D5. The race panel's choices hold their words at a small window
+# D6. The two birds' names are never drawn one over the other
+# ---------------------------------------------------------------------------
+
+class _BlitLog(pygame.Surface):
+    """A screen that remembers where each surface was blitted."""
+
+    def __init__(self, size):
+        super().__init__(size)
+        self.blits = []
+
+    def blit(self, source, dest, *a, **k):
+        r = super().blit(source, dest, *a, **k)
+        self.blits.append((source, pygame.Rect(r)))
+        return r
+
+
+def _small_window(game, size):
+    import layout
+    layout.update(*size)
+    game.on_resize(*size)
+    game._resize_grace = 0
+    game.screen = _BlitLog(size)
+
+
+@pytest.fixture
+def kit_loaded():
+    """The UI art kit (assets/ui/) loaded, as in the game; the kit before
+    is put back afterwards."""
+    import ui_theme
+    saved = ui_theme.save_state()
+    ui_theme.load()
+    try:
+        yield
+    finally:
+        ui_theme.restore_state(saved)
+
+
+@pytest.mark.parametrize('size', [(1024, 600), (960, 540), (1093, 614), (1280, 720)])
+def test_d5_the_race_choices_hold_their_words(game, kit_loaded, monkeypatch, size):
+    """In the compact layout (a window under 1280x720) a row shrinks with
+    the UI scale but its words never go under 16 px: "Sprint: half again as
+    far, then a winded leg" wrapped, and its second line ran out through the
+    row's bottom edge (1024x600, 960x540). Each row is as tall as its words."""
+    from ui_scale import px as S
+    from fantasy_ui import get_font
+    import fantasy_ui
+    _small_window(game, size)
+    game._race_phase = 'choose'
+    monkeypatch.setattr(game, '_race', lambda: {'leg': 2, 'legs': 5})
+    monkeypatch.setattr(game, '_draw_race_runner_tags', lambda top: None)
+    rows = []
+    real_row = game._ui_action_row
+
+    def spy(rect, key, label, **k):
+        rows.append((pygame.Rect(rect), str(key), label))
+        return real_row(rect, key, label, **k)
+    monkeypatch.setattr(game, '_ui_action_row', spy)
+    game._draw_race_screen()
+    assert len(rows) >= 2
+    assert fantasy_ui.kit_on()
+    font = get_font('body', 16, bold=True)        # _ui_action_row's, with the kit
+    for rect, key, label in rows:
+        key_w = max(S(40), min(rect.w // 3, font.size(key)[0] + S(18)))
+        n = len(game._wrap_text(label, font, rect.w - S(9) - key_w - S(22))[:2])
+        need = n * (font.get_height() + S(2)) + 2 * S(6)
+        assert need <= rect.h, (size, label, n, need, rect.h)
+
+
+def test_d6_the_birds_names_do_not_overlap(game, monkeypatch):
+    """On a small window the whole oval is small, and the two birds' name
+    tags, each set over its bird, were drawn one over the other when the
+    birds ran side by side."""
+    from types import SimpleNamespace
+    from fantasy_ui import get_font
+    import bococho_encounter as bc
+    _small_window(game, (960, 540))
+    r = game.renderer
+    T = r.map_tile_size
+    hero_bird = SimpleNamespace(x=game.player.x, y=game.player.y)
+    rival = SimpleNamespace(x=game.player.x + 1, y=game.player.y)
+    monkeypatch.setattr(game, '_race_runner', lambda who: hero_bird if who == 'hero' else rival)
+    import layout
+    px, py = hero_bird.x, hero_bird.y
+    monkeypatch.setattr(r, 'world_to_screen', lambda wx, wy: (layout.MAP_X + 150 + (wx - px) * T,
+                                                              120 + (wy - py) * T))
+    sx, sy = r.world_to_screen(hero_bird.x, hero_bird.y)
+    game.screen.blits.clear()
+    game._draw_race_runner_tags(sy + 6 * T)
+    font = get_font('body', 16, bold=True)
+    widths = {font.size(bc.data()['race'].get('tag_hero', 'Her'))[0],
+              font.size(bc.data()['race'].get('rival_name', 'Brassbeak'))[0]}
+    tags = [rect for surf, rect in game.screen.blits if surf.get_width() in widths]
+    assert len(tags) == 2, tags
+    assert not tags[0].colliderect(tags[1]), tags

@@ -8928,6 +8928,29 @@ class RenderMixin:
         self._ui_wrap_text(label, label_font, color, text_rect,
                            line_gap=0, max_lines=2)
 
+    def _ui_action_row_need(self, w: int, key, label: str, base_h: int) -> int:
+        """How tall an ``_ui_action_row`` of width ``w`` must be to hold its
+        label (two lines at most), and never less than ``base_h``. In the
+        compact layout (a window under 1280x720) the row shrinks with the UI
+        scale but its words cannot go under 16 px, so a label that wraps to a
+        second line ran out through the row's bottom edge (the race panel's
+        "Sprint: half again as far, then a winded leg" at 1024x600; bug bash
+        3.5.1 D). The same reckoning as the drawing."""
+        key = str(key)
+        if kit_on():
+            key_font = get_font('body', 16, bold=True)
+            label_font = get_font('body', 16, bold=True)
+            key_w = max(S(40), min(w // 3, key_font.size(key)[0] + S(18)))
+            text_w = w - S(9) - key_w - S(22)
+            n = len(self._wrap_text(label, label_font, text_w)[:2] or [''])
+            return max(base_h, n * (label_font.get_height() + S(2)) + 2 * S(6))
+        key_font = get_font('small', 14, bold=True)
+        label_font = get_font('small', 15, bold=True)
+        key_w = max(S(42), min(w // 3, key_font.size(key)[0] + S(20)))
+        text_w = w - S(8) - key_w - S(22)
+        n = len(self._wrap_text(label, label_font, text_w)[:2] or [''])
+        return max(base_h, n * label_font.get_height() + 2 * S(8))
+
     def _ui_message_card(self, title, body_lines, *, options=None,
                          footer='', border_color=FP.GOLD,
                          title_color=None, body_color=FP.BODY_TEXT,
