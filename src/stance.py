@@ -75,16 +75,25 @@ def stance_ac(player) -> int:
 
 
 def change(player) -> str:
-    """Step the hero to the next stance; the line that says so."""
+    """Step the hero to the next stance; the line that says so. Its
+    numbers are the hero's own: Fabius the Delayer's Guard costs half
+    (the line said "-30% damage" to a hero who lost only 15%)."""
     new = next_stance(of(player))
     player.stance = new
-    return str(_def(new).get('line', f"Stance: {name(new)}."))
+    line = str(_def(new).get('line', f"Stance: {name(new)}."))
+    own, plain = detail(new, player), detail(new)
+    if own != plain and line.endswith(f"({plain})"):
+        line = line[:-len(f"({plain})")] + f"({own})"
+    return line
 
 
-def detail(stance: str) -> str:
-    """'+30% damage, 2 AC worse' for a stance's chip and card."""
+def detail(stance: str, player=None) -> str:
+    """'+30% damage, 2 AC worse' for a stance's chip and card. With
+    ``player`` (holding that stance), his damage (stance.damage_mult)."""
     d = _def(stance)
     dmg = float(d.get('damage', 1.0) or 1.0)
+    if player is not None and of(player) == stance:
+        dmg = damage_mult(player)
     ac = int(d.get('ac', 0) or 0)
     bits = []
     if abs(dmg - 1.0) > 1e-9:

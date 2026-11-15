@@ -392,3 +392,28 @@ def test_the_cook_menu_says_a_feast_heals_a_hero_with_the_fatted_calf_fully():
     p.hp = 1
     _apply_recipe_outcome(p, feast)
     assert p.hp == p.max_hp
+
+
+def _shift(g, letter):
+    g.handle_event(pygame.event.Event(pygame.KEYDOWN, key=getattr(pygame, f'K_{letter.lower()}'),
+                                      unicode=letter.upper(), mod=pygame.KMOD_SHIFT, scancode=0))
+    g.update(0.05)
+
+
+def test_the_guard_line_tells_fabius_what_guard_really_costs(no_seeker):
+    """Fabius the Delayer halves what Guard costs (-15%), but Shift+S into
+    Guard still said "(-30% damage, 2 AC better)"."""
+    import stance
+    g = _game()
+    g.player.quirk_progress['fabius_active'] = True
+    _shift(g, 'S')                                   # Press
+    _shift(g, 'S')                                   # Guard
+    assert stance.of(g.player) == stance.GUARD
+    line = next(str(e[0]) for e in reversed(g.msg_log.entries) if 'damage' in str(e[0]))
+    assert '(-15% damage, 2 AC better)' in line
+    assert stance.damage_mult(g.player) == pytest.approx(0.85)
+    g2 = _game()
+    _shift(g2, 'S')
+    _shift(g2, 'S')
+    line = next(str(e[0]) for e in reversed(g2.msg_log.entries) if 'damage' in str(e[0]))
+    assert '(-30% damage, 2 AC better)' in line
