@@ -112,10 +112,8 @@ class MoobleDanceMixin:
         spec = mo.visit_spec(m)
         tl = rhythm.timeline(spec['steps'], spec['bpm'], int(dd['lead_beats']), int(dd['phrase_beats']))
         mode = 'dance' if mode == 'dance' else 'practice'
-        if mode == 'practice':
-            # Practised before this visit's dance-off (the Seeker's dance_off
-            # event and Terpsichore's Step read it; cleared by the dance-off).
-            self._mooble_state()['practised'] = True
+        # (Practised is noted when a practice round is danced, not when its
+        # screen opens: _mooble_dance_start.)
         visit = min(mo.dances(m) + 1, len(dd['visits']))
         self._mdance = self._mooble_dance_spec(
             mode, tl, spec['bpm'],
@@ -173,6 +171,12 @@ class MoobleDanceMixin:
 
     def _mooble_dance_start(self):
         md = self._mdance
+        if md.get('owner', 'mooble') == 'mooble' and md.get('mode') == 'practice':
+            # A practice round danced before this visit's dance-off (the
+            # Seeker's dance_off event and Terpsichore's Step read it; the
+            # dance-off clears it). Opening the practice screen and leaving
+            # it before the count-in is not practising.
+            self._mooble_state()['practised'] = True
         md.update({'t0': self._mooble_now(), 'phase': 'play', 'presses': [], 'beat_played': -1,
                    'step_played': -1, 'decided': 0, 'flash': None, 'result': None, 'won': False})
         self._mooble_music(True)

@@ -9949,8 +9949,15 @@ def main():
         except Exception:
             pass
 
-        # Achievements won as the run ended wait for the title screen.
-        _carry_cards = list(getattr(game, '_seeker_pending', None) or [])
+        # Achievements won as the run ended wait for the title screen. By
+        # now each frame has moved them into the popup queue, which opens
+        # nothing over the death screen: read them from there too
+        # (_seeker_unshown). Reading only _seeker_pending found it empty, so
+        # what a fall earned never showed its card.
+        try:
+            _carry_cards = list(game._seeker_unshown())
+        except Exception:
+            _carry_cards = list(getattr(game, '_seeker_pending', None) or [])
         # If game ended by death or victory, loop back to welcome screen
         # (unless the window itself was closed: then the game quits)
         if game.state in (STATE_DEAD, STATE_VICTORY) and not getattr(game, '_window_closed', False):
