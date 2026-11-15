@@ -53,7 +53,8 @@ class TraderMixin:
                 seed = _road.roll_seed()
             import road as _road
             secrets = [(getattr(self, '_emberpup', None) or {}).get('floor'),
-                       (getattr(self, '_black_knight', None) or {}).get('floor')]
+                       (getattr(self, '_black_knight', None) or {}).get('floor'),
+                       (getattr(self, '_bococho', None) or {}).get('floor')]
             st = traders.roll_plan(seed, secret_floors=secrets,
                                    busy_floors=_road.busy_floors(road or {}))
             self._traders = st

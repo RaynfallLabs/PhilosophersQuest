@@ -64,6 +64,10 @@ DYNAMIC_SOURCES = {
     "sk['stage']['leave_chronicle']": 'data/stray_kids.json',
     "sk['stage']['cleared_chronicle']": 'data/stray_kids.json',
     "sk['stars']['chronicle']": 'data/stray_kids.json',
+    "d['strike_chronicle']": 'data/bococho.json',
+    "d['varro']['kill_chronicle']": 'data/bococho.json',
+    "cfg['won_chronicle']": 'data/bococho.json race',
+    "cfg['lost_chronicle']": 'data/bococho.json race',
 }
 
 # Bare variable names are only waved through in the functions known to fill

@@ -96,6 +96,11 @@ from game_lore_fixtures import LoreFixturesMixin
 from game_dressing import DressingMixin
 from game_arsenal import ArsenalMixin
 from escort_system import EscortMixin
+from bococho_encounter import (BocochoMixin, new_run_state as _bococho_new_run,
+                               old_save_state as _bococho_old_save)
+from game_race import RaceMixin
+from game_riding import RidingMixin
+from game_bococho_render import BocochoRenderMixin
 from spells import LEARNABLE_SPELLS
 
 
@@ -223,7 +228,8 @@ DEEP_SLEEP = 10 ** 6           # a zoo, graveyard or barracks sleeper: until wok
 class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMixin, EncountersMixin,
            EmberpupMixin, BloomleafMixin, BlackKnightMixin, StrayKidsMixin, ItemActionsMixin, RoadMixin, EscortMixin,
            SetneMixin, TraderMixin, PurseMixin, FamilyMixin, SeekerMixin, PopupMixin,
-           HazardsMixin, LoreFixturesMixin, DressingMixin, ArsenalMixin):
+           HazardsMixin, LoreFixturesMixin, DressingMixin, ArsenalMixin,
+           BocochoMixin, RaceMixin, RidingMixin, BocochoRenderMixin):
     # FANTASY: Grimoire font set -- larger for readability. Read through the
     # UI scale on every use (SCALE_PLAN.md): a window resize can never leave
     # a font of the old size behind.
@@ -392,6 +398,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # Setne's Tomb (one floor of 45-65, every run): {'floor', 'spawned',
         # 'sealed', 'room'}. The Book of Thoth's only source (setne_tomb.py).
         self._setne: dict = _setne_new_run()
+        # The Bococho's racing camp (every run, one floor of 51-65) and the
+        # race on the Underway Run (bococho_encounter.py, game_race.py).
+        self._bococho: dict = _bococho_new_run()
+        self._bc_npc = None                   # the creature whose screen is open
         # Dungeon Alive (2026-11-12): run state for the domains and what
         # comes after them. 'domains_seen': the domains already announced.
         self._dungeon_alive: dict = {'domains_seen': []}
@@ -431,6 +441,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # its subject forgives the first wrong answer (enchantments.py).
         self.quiz_engine.craft_hook = self._craft_forgives
         self.quiz_engine.daimonion_hook = self._daimonion_stops
+        # Any quiz starting sets a rider down first (game_riding.py).
+        self.quiz_engine.start_hook = self._riding_quiz_starts
         self.quirk_system = QuirkSystem(self)
         self._slow_skip         = False    # toggled each turn when slowed
         # Key-held movement (arrow key auto-repeat)
@@ -1103,6 +1115,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         _st = state.get('_setne')
         self._setne = dict(_st) if isinstance(_st, dict) else {
             'floor': None, 'spawned': False, 'sealed': False, 'room': None}
+        # The Bococho: a save from before her keeps a run without her.
+        _bcs = state.get('_bococho')
+        self._bococho = dict(_bcs) if isinstance(_bcs, dict) else _bococho_old_save()
+        self._bc_npc = None
         # Dungeon Alive: a save from before it has seen no domain yet, so the
         # one the hero stands in is announced on his next new floor.
         _da = state.get('_dungeon_alive')
@@ -1149,6 +1165,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # worked out afresh (Heavy, Burdened and Overloaded since 2026-11-14).
         self.player._burdened = False
         self.player._load_tier = ''
+        self._sync_saddlebags()        # her saddlebags, before the load is read (game_riding)
         self._note_burden()
         # This run's achievement counters, then the Seeker (game_seeker.py).
         self._seeker_run = state.get('_seeker_run')
@@ -1796,6 +1813,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         _from_level = self.dungeon_level          # (the staircase taken, for Cerberus)
         # Leaving the Emberpup's floor after feeding him is waiting.
         self._emberpup_left(_from_level, new_level)
+        # Off any floor, a rider comes down from the saddle (she follows), and
+        # leaving the racing camp's floor is waiting (game_riding, bococho).
+        self._riding_level_change(via)
+        self._bococho_left(_from_level, new_level)
         # Notify quirk system before level change (fast-exit check)
         # New depth: a floor deeper than any reached. A side floor (the Cow
         # Level, 999; the Zombie Stage, 997) is a side trip, not depth:
@@ -1972,6 +1993,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self._maybe_spawn_unicorn(new_level)
             self._maybe_spawn_cow(new_level)
             self._maybe_spawn_emberpup(new_level)
+            self._maybe_spawn_bococho(new_level)
             self._maybe_spawn_cloak_wearer(new_level)   # after the pup: never in his room
             self._maybe_spawn_black_knight(new_level)
             self._maybe_spawn_stray_kids_idol(new_level)
@@ -1983,6 +2005,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self._maybe_spawn_npc(new_level)
             # A save from before Old Nickel meets him on the pup's floor.
             self._maybe_spawn_cloak_wearer(new_level)
+            # (and a camp that found no room on the first visit is set up now)
+            self._maybe_spawn_bococho(new_level)
 
         # Reset per-floor artifact states
         self._first_hit_used = False    # Babr-e Bayan
@@ -2986,6 +3010,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         )
         # The Zombie Stage is lit: its hall is seen to the far wall.
         self._stray_kids_light_the_stage(_sight)
+        # The Underway Run is lit by its lanterns (game_race.py).
+        self._underway_light(_sight)
         self._sync_unseen()
         # Chain-equip passive: four_faces_360_fov (Crown of Brahma T4).
         # Add all tiles within radius PER*1.5 (ignoring wall occlusion) to FOV.
@@ -3452,6 +3478,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             if getattr(target, '_is_abandoned_emberpup', False):
                 self._start_emberpup_encounter(target)
                 return
+            # The racing camp: the young Bococho, Gilt Varro, the birds
+            # (bococho_encounter.py; Varro once struck is a foe)
+            if self._bococho_bump(target):
+                return
             # Unicorn encounter: multi-step interaction
             if getattr(target, '_is_unicorn', False):
                 self._handle_unicorn_bump(target)
@@ -3639,6 +3669,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 elif not _has_boulder:
                     self.player.quirk_progress['sisyphus_boulder_active'] = False
             self._refresh_fov()
+            # In the Bococho's saddle the step runs on a second tile (game_riding.py).
+            self._riding_second_step(dx, dy, first_tile_ice=self.dungeon.tiles[ny][nx] == ICE)
             self._tick_sp()
             if self.state != STATE_DEAD:
                 self._notify_stairs(self.player.x, self.player.y)
@@ -4474,6 +4506,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             or getattr(thing, '_npc_encounter_tag', None) or getattr(thing, '_flavor_encounter_tag', None)
             or getattr(thing, '_is_unicorn', False)
             or getattr(thing, '_is_abandoned_emberpup', False)
+            or getattr(thing, '_bococho_role', None)
             or getattr(thing, 'is_escort', False)
             or getattr(thing, 'plot_locked', False)
             or getattr(thing, 'id', None) in Game._QUEST_PIECE_IDS
@@ -5244,9 +5277,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self._say_springs()                # lurkers the pets' and escorts' blows gave away
         self._death_proximity_warning()
         self._tick_hp_regen()
+        self._riding_tick()                # the saddlebags; a blow, a foe, a status sets a rider down
         self._note_burden()
         self._black_knight_tick(end=True)  # his shouts; the next action may take a limb
         self._stray_kids_tick()            # the Stray Kids: the dance, the shouts, a show
+        self._bococho_tick()               # the racing camp's pictures
         self._family_drain()               # wards and techniques the monsters' turns set off
         # Hits the world's turn dealt (Boots of Thor, Shep's rescue, a pet's
         # or a trap's typed blow): said now, not after the hero's next action.
@@ -5435,6 +5470,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             return
         # Trap fires -- remove it from the floor
         del self.dungeon.traps[(x, y)]
+        self._riding_set_down('trap')      # a rider is thrown (game_riding.py)
         trap_type = trap['type']
         _snd.play('trap')
         self.add_message(trap['message'], 'danger')
@@ -8399,6 +8435,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         if self.state == STATE_PLAYER and not self.player.is_dead() \
                 and self._hostile_figure_here() is not None:
             self._hostile_encounter_arrives()
+        # A save made mid-race loads at the leg not yet run (game_race.py).
+        if self.state == STATE_PLAYER and self._bococho_state().get('race'):
+            self._race_resume()
         # An action taken from the Kit / character sheet whose flow just
         # ended (quiz, quantity prompt, lore page): back to that screen.
         if getattr(self, '_item_screen_return', None):

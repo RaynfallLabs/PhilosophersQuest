@@ -80,6 +80,11 @@ src/
   game_stray_kids.py  - StrayKidsMixin: the idol, the Zombie Stage trip, the beat, the photo's show
   emberpup_encounter.py - The abandoned Emberpup (floors 3-8): three feeds, the Bloomleaf Cloak won from Old Nickel; he keeps it
   setne_tomb.py       - Setne's Tomb and the Book of Thoth (floors 45-65)
+  bococho_encounter.py - The Bococho's racing camp (floors 51-65): two Sunroots, Gilt Varro's bet, "I choose you"
+  underway_run.py     - The Underway Run (side floor 996): the oval track, its two lanes, the paddock
+  race.py             - The race's scoring, pure: legs as maths chains, Sprint or Pace, wind, the caltrops
+  game_race.py        - RaceMixin: the trip to the Underway Run and back, the race screen, the birds on the oval
+  game_bococho_render.py - BocochoRenderMixin: the camp's screen, the race panel, the hero in her saddle
 
   # Combat, items, magic
   combat.py           - Combat resolution
@@ -124,6 +129,8 @@ src/
   treasure.py         - Coin weight (1 gp = 0.1 oz) and treasure: gems, jewellery, art; values, payment plans
   game_purse.py       - PurseMixin: receiving gold (weight-limited), paying with coin then treasure, gold piles
   pet_system.py       - Soul Sphere pets: AI, bonding, levels
+  riding.py           - Riding the Bococho, the rules: getting on, the two-tile step, what sets the rider down
+  game_riding.py      - RidingMixin: mount and dismount, the mounted step, set-downs, her saddlebags
   escort_system.py    - Escorts: people the hero walks somewhere
 
   # Quiz
@@ -187,6 +194,7 @@ data/
   gear_rules.json   - Armour and ring rules: thresholds, donning turns, load tiers, the light / heavy trade
   traders.json      - The named traders: stock, services, stall counters, the smiths' inlays and linings
   stray_kids.json, abandoned_emberpup.json - Two of the run's set pieces (the Stray Kids stage; the Emberpup and Old Nickel)
+  bococho.json      - The Bococho: the camp, Varro, the race's numbers and words, the pet, her saddlebags, riding
   (data/ holds only runtime JSON; the old generator/migration scripts were moved out)
 
 assets/

@@ -1,0 +1,321 @@
+{
+  "_about": "The Bococho (src/bococho_encounter.py, src/game_race.py, src/race.py, src/underway_run.py, src/riding.py, src/game_riding.py; RARE_PETS_PLAN_2026_11_14 section 3). Every run, on one floor of 51-65, a racing camp in a cavern: Gilt Varro (he), a loud, greedy race-runner, keeps his birds on short tethers and races them for bets. One young Bococho (she), faster than any of them, will not run for him, and he means to sell her to the knacker. Feed her Sunroot on two visits with time between; then challenge Varro (a fee in gold), and race his best bird, Brassbeak, on the Underway Run (a side floor, 996). Win, and she is free: 'I choose you!' asks the animal quiz, as for the Emberpup. Lose, and try again after a while, at the fee again. The Bococho is a homage, never a copy: her call is her own ('whirrup'), never the original's. Every individual is he or she.",
+  "chance_per_run": 1.0,
+  "first_floor": 51,
+  "last_floor": 65,
+  "feed_gap_turns": 25,
+  "_feed_gap_turns_note": "Turns she needs between two Sunroots (and between a lost race and the next challenge, and after a failed 'I choose you!'). Leaving the camp's floor counts as waiting.",
+  "feeds_needed": 2,
+  "food_id": "sunroot",
+  "_food_id_note": "The one food she takes: Sunroot, a forage find from floor 40 (data/items/ingredient.json). Any other food she sniffs at and turns from ('not_sunroot').",
+  "race_fee_share": 0.25,
+  "_race_fee_share_note": "Varro's fee, as a share of one floor's income on the camp's floor (economy.share): a little under a quarter of a floor's gold, paid to him, every challenge.",
+  "quiz": {"subject": "animal", "tier": 3, "threshold": 2},
+  "_quiz_note": "'I choose you!' after the race is won: the animal quiz, as for the Emberpup (whose is tier 2, two right; she is met deeper).",
+  "camp": {
+    "posts": 3,
+    "_posts_note": "Tether posts set against the camp room's wall: Varro's two birds at the first two, the young Bococho at the third.",
+    "post_fixture": "race_tether_post",
+    "board_fixture": "race_betting_board",
+    "min_room_tiles": 20
+  },
+  "sprites": {
+    "young": "npc_bococho_young",
+    "varro": "gilt_varro",
+    "varro_bird": "npc_varro_bococho",
+    "_fallback_doc": "Until the art run's pictures are installed (tools/content/genart/install_rare_pets.py), a creature whose picture is missing borrows one that is there (never a letter): bococho_encounter.sprite.",
+    "fallback": {
+      "npc_bococho_young": "roc_chick",
+      "gilt_varro": "npc_merchant",
+      "npc_varro_bococho": "roc_chick",
+      "bococho_chick": "roc_chick",
+      "bococho": "roc_chick",
+      "bococho_champion": "roc_chick",
+      "bococho_saddled": "roc_chick",
+      "bococho_champion_saddled": "roc_chick"
+    }
+  },
+  "young": {
+    "name": "Young Bococho",
+    "pronoun": "she",
+    "color": [235, 190, 60],
+    "symbol": "b"
+  },
+  "varro_bird": {
+    "name": "Varro's Racing Bird",
+    "pronoun": "he",
+    "color": [200, 150, 60],
+    "symbol": "b",
+    "bump": "The tethered bird shies to the end of his rope, as far from you as it will let him. His ribs show under the feathers, and there are old crop marks on his flank."
+  },
+  "varro": {
+    "id": "gilt_varro",
+    "name": "Gilt Varro",
+    "pronoun": "he",
+    "family": "mortals",
+    "color": [220, 180, 60],
+    "symbol": "@",
+    "hp": "150d10+300",
+    "thac0": 6,
+    "ac": 4,
+    "speed": 10,
+    "attacks": [
+      {"name": "Riding Crop", "damage": "2d6+16", "type": "slash", "delivery": "blow", "effect": "bleeding", "effect_chance": 0.3, "effect_duration": 4},
+      {"name": "Hobnailed Boot", "damage": "1d8+12", "type": "blunt", "delivery": "blow"}
+    ],
+    "_stats_note": "A race-runner, not a warrior, but a big man of the deep Underway: about a fighting mortal of his depth (the veteran knight, the cult hierophant). He fights only when struck (his screen's third choice).",
+    "lore": "Gilt Varro runs races in the deep Underway, where the great running birds live wild, and nobody there has ever seen him lose a bet he set up himself. He buys birds cheap, keeps them on short ropes, feeds them little and works them hard, and the gold he wins goes into his coat. He is loud, greedy and mean, and he has never once fought anything that could fight back.",
+    "kill_chronicle": "Killed Gilt Varro, the race-runner who starved his birds. The young one tore her rope and bolted when the fighting started. When he fell, his birds ran too."
+  },
+  "title_young": "A YOUNG BOCOCHO",
+  "title_varro": "GILT VARRO, RACE-RUNNER",
+  "story": [
+    "A great cavern opens off the passage, lit by smoky lanterns that hang from tether posts. Racing birds stand at the posts: tall golden runners with crests and strong legs, each tied short by one leg. Their ribs show under the feathers. A chalk board on an easel lists the odds for the day's races in a loud, crooked hand.",
+    "Apart from the others, at a post of her own, stands a young Bococho. She is smaller than the rest and thinner, and the rope on her leg is frayed where she has fought it. When you come near she flattens her crest, backs to the end of her tether and stamps, ready to bolt. Somebody has handled her roughly, and she has not forgotten it.",
+    "A loud man in a gold-trimmed coat watches you from beside the board, a riding crop in his fist. \"That one won't run,\" he calls. \"Fastest legs in the Underway, and she won't run one step for me. The knacker takes her at the end of the week.\""
+  ],
+  "waiting": [
+    "The young Bococho backs to the end of her tether as you come near, crest flat, ready to bolt. Someone has handled her roughly, and she has not forgotten it.",
+    "The young Bococho watches you from her post. She still backs away, but not to the end of the rope this time, and her eyes are on your pack, where the Sunroot was.",
+    "The young Bococho lifts her crest when she sees you and steps up to meet you, as far as the rope allows. She lets you stroke her crest. She trusts you, and she would run for you."
+  ],
+  "waiting_won": "Free of her rope, the young Bococho does not run away. She stands beside you, head low, and every so often she nudges your hand, as if she is asking you something.",
+  "options_young": {
+    "feed": "Give her a Sunroot",
+    "ignore": "Leave her be",
+    "choose": "\"I choose you!\""
+  },
+  "no_food": "You hold out your hand, but there is nothing in it she wants. She sniffs the air for something sweet and finds nothing. The great running birds of the Underway will cross a cavern for one thing: a Sunroot.",
+  "not_sunroot": "You hold out your {food}. She sniffs it, turns her head away and stamps. The great running birds of the Underway will cross a cavern for one thing: a Sunroot.",
+  "fed": [
+    "You hold the Sunroot out at arm's length. She stretches her neck as far as the tether lets her, snatches it and backs off to crunch it at the end of the rope, watching you the whole time. She is still wary, but she ate from your hand.",
+    "This time she does not back away. She takes the Sunroot gently, crunches it right in front of you, and when it is gone she lowers her head and lets you stroke her crest. Her feathers are warm. She gives a soft, rolling whirrup, the first sound you have heard from her."
+  ],
+  "fed_again": "She crunches the Sunroot happily and nudges your shoulder for more. She trusts you already.",
+  "_too_soon_note": "Back before feed_gap_turns: one line per feed so far (data, like the Emberpup's), and nothing counts.",
+  "too_soon": [
+    "The young Bococho is still crunching the last root, and flicks her crest at you.",
+    "The young Bococho is still crunching the last root. She flicks her crest at you, but she does not back away now."
+  ],
+  "refused": "You hold out your hand and say it. She shies to the end of her rope and stamps. She does not trust you. Not yet.",
+  "refused_trust": "She looks at your hand and then at your face, and backs away a step. She is warming to you, but she needs a little more time to be sure.",
+  "refused_tethered": "She presses her head into your hands, and then she looks past you at Varro and his crop. While she is his, she cannot go anywhere. Beat his best bird, and she is free to choose.",
+  "refused_soon": "She is still unsure after the last time, and pecks at the dirt instead of looking at you. Give her a little while.",
+  "ignore": "You leave the young Bococho at her post. She watches you go.",
+  "quiz_title": "\"I CHOOSE YOU!\"  --  ANIMAL",
+  "pass": "She lifts her head and looks at you for a long moment. Then she steps up beside you, folds her long legs and kneels, the way a riding bird kneels for a rider she trusts, and gives a bright, proud whirrup that rings round the cavern. The frayed end of her old rope is still knotted on her leg. You untie it. She is nobody's but her own now, and she has chosen you.",
+  "fail": "You say it, but the words come out wrong, and she sidesteps away from you, unsure. She has had a hard week. Give her a little while, and ask again.",
+  "name_title": "SHE CHOSE YOU TOO",
+  "name_prompt": "Will you give your Bococho a name?",
+  "named_message": "{name} the Bococho runs for you now, and for nobody else.",
+  "unnamed_message": "Your Bococho runs for you now, and for nobody else.",
+  "named_chronicle": "Beat Gilt Varro's best bird on the Underway Run, and the young Bococho he meant for the knacker chose me. I named her {name}. She is the fastest thing in the Underway, and she runs for nobody but me.",
+  "unnamed_chronicle": "Beat Gilt Varro's best bird on the Underway Run, and the young Bococho he meant for the knacker chose me. She is the fastest thing in the Underway, and she runs for nobody but me.",
+  "varro_story": [
+    "\"Gilt Varro, race-runner, at your service,\" says the man in the gold coat, though he does not bow. His hat has a plume as long as your arm, and betting slips stick out of his belt like feathers. \"Every bird in this camp is mine, and every one of them runs when I say. Except her.\" He jabs the crop at the young Bococho.",
+    "\"Unless,\" he says, and his grin gets wider, \"you think you can make her run. Put up a fee, and race her against my best bird on the Underway Run. Beat Brassbeak, and the scrawny thing is yours. Lose, and I keep the fee.\" He laughs, as if nobody has ever beaten Brassbeak."
+  ],
+  "varro_waiting": {
+    "untrusted": "Varro leans on the betting board, picking his teeth. \"Race? With her? She won't run for you any more than for me. Get her eating out of your hand first, if you can.\"",
+    "trusted": "Varro looks from you to the young Bococho, who has her head on your shoulder, and his grin goes thin. \"Well, well. Fancy that. Still, liking you and beating Brassbeak are two different things.\" The fee is {fee} gold.",
+    "lost": "Varro counts your gold again, slowly, so that you can see. \"Back for more? Same fee as before, {fee} gold. Brassbeak could use the exercise.\""
+  },
+  "options_varro": {
+    "challenge": "Challenge him to a race ({fee} gold)",
+    "leave": "Walk away",
+    "strike": "Strike him"
+  },
+  "challenge_untrusted": "\"She won't run for you,\" Varro says, and laughs. \"Come back when she'll eat out of your hand.\"",
+  "challenge_soon": "\"Brassbeak's still blowing from the last one,\" Varro says, without looking up from his slips. \"Come back later, if you want to lose again.\"",
+  "challenge_poor": "Varro looks at your purse and laughs. \"That wouldn't buy Brassbeak's breakfast. The fee is {fee} gold.\"",
+  "challenge_accepted": "Varro takes your {fee} gold, bites one coin and tucks it away. \"Done. To the Underway Run, then.\" He unties Brassbeak, a big bird in a harness of gold and purple, and leads the way down a long tunnel. The young Bococho follows at your heel without being led.",
+  "leave_varro": "You leave Varro to his slips. He is already chalking new odds on the board.",
+  "strike": "You raise your weapon. Varro's grin falls off his face. \"You'd strike a man over a BIRD?\" he shrieks, and he comes at you with the crop.",
+  "strike_bolts": "The young Bococho screams and rears against her rope. The frayed rope snaps, and she is gone into the dark of the tunnels in three long strides. She has seen enough men with sticks. She will not trust a hero who fights in front of her.",
+  "strike_chronicle": "I struck Gilt Varro in his own camp, and the young Bococho tore her rope and bolted into the dark. She will not trust a hero who fights in front of her. There will be no race now.",
+  "varro_dies_birds": "With Varro gone, his birds pull at their ropes until the old knots give. One by one they slip free and run off into the dark, light-footed, and not one of them looks back.",
+  "won_back": [
+    "Varro throws his hat in the dirt and stamps on it. \"Cheat! Witch! That bird was MINE!\" Nobody is listening. He storms off down the tunnel, still shouting, and leaves his birds behind.",
+    "You cut the tethers one by one. His string of runners stand blinking for a moment, and then they trot off into the dark, and not one of them looks back.",
+    "The young Bococho does not run. She stays beside you, blowing and proud, and nudges your hand."
+  ],
+  "lost_back": "Back at the camp, Varro tosses your fee in his hand and grins. \"Better luck next time, friend. Or not.\" The young Bococho hangs her head. You can try again in a while, if you have the fee.",
+  "log": {
+    "fed": "The young Bococho eats your Sunroot.",
+    "challenged": "You pay Gilt Varro {fee} gold to race Brassbeak.",
+    "bolted": "The young Bococho bolts into the dark.",
+    "joined": "The young Bococho chooses you.",
+    "shied": "The young Bococho sidesteps away, unsure.",
+    "varro_left": "Gilt Varro storms off, and his birds run free."
+  },
+  "race": {
+    "_doc": "src/race.py. Five legs; each is one maths chain at the hero's own maths tier (the weapon in his hand, as in combat), capped at max_chain. A leg's lengths = base_per_leg + chain x stride[tier] (a harder sum is worth more ground: the stride follows the time a sum of that tier takes, so no weapon is a handicap or a trick). Sprint: x sprint_mult, costs sprint_cost wind (with less, only part of the boost: a tired sprint), and the NEXT leg runs winded (x winded_mult). Pace: wind back by pace_recover. The home straight (the last leg) gets up to final_kick more from the wind left. Leg cheat_leg: the inside lane is salted with caltrops (x caltrops_mult); the outside is clean but longer (x outside_mult). Brassbeak runs varro_pace by leg, give or take varro_luck from the race's own seed. Tuned 2026-11-14 by a simulator of kids (answer times from tools/balance/difficulty_sim.py ANSWER_SECONDS): a mastery-level kid (92% right, fast, 20 s clock) who paces well (pace to the home straight, then sprint, and takes the outside lane on leg 3) wins 81-90% of races at tiers 2-4; the same kid sprinting every leg and keeping the inside wins 3-5%; a good kid (88%, a little slower) who paces well wins about 40-46% (two tries, about); a sloppy kid (75%, slow) loses nearly every time.",
+    "legs": 5,
+    "max_chain": 10,
+    "base_per_leg": 6.0,
+    "stride": {"1": 0.75, "2": 1.05, "3": 1.8, "4": 2.4, "5": 2.4},
+    "sprint_mult": 1.5,
+    "winded_mult": 0.6,
+    "wind_start": 100,
+    "wind_max": 100,
+    "sprint_cost": 50,
+    "pace_recover": 25,
+    "final_kick": 0.3,
+    "cheat_leg": 3,
+    "caltrops_mult": 0.35,
+    "outside_mult": 0.85,
+    "varro_pace": [12, 12, 13, 12, 14],
+    "varro_luck": 3.0,
+    "level_margin": 1.0,
+    "big_margin": 8.0,
+    "photo_margin": 1.5,
+    "lap_lengths": 64,
+    "short_of_line": 3,
+    "rival_name": "Brassbeak",
+    "tag_hero": "Your Bococho",
+    "quiz_title": "LEG {leg} OF {legs}  --  MATH",
+    "title": "THE UNDERWAY RUN",
+    "arrival": [
+      "The Underway Run is a great oval scraped in the floor of a cavern, its sand raked smooth and a wooden rail along both edges. Lanterns hang from the roof on long chains. A banner on two poles marks the finish.",
+      "Varro leads Brassbeak to the line. The young Bococho walks up beside the big bird and stands there, small and thin and stubborn. You take your place at the rail by the finish."
+    ],
+    "door_line": "The gate back to the camp is the way out (> on it). Leaving before the finish gives Varro the race.",
+    "how": "Every sum you get right, she hears from the rail and lengthens her stride. A Sprint goes half again as far, but she runs the next leg winded. A Pace keeps her wind for the home straight.",
+    "taunts": [
+      "\"Look at her legs! Sticks! She'll fold before the first bend,\" Varro jeers from the far rail.",
+      "\"Brassbeak's only warming up,\" Varro calls. \"He likes to give them hope first.\"",
+      "\"Hug the inside rail on the back straight, friend,\" Varro calls, far too kindly. \"It's the short way round.\" There is a grey dust of iron on his gloves, and a little leather bag is missing from his belt.",
+      "\"Still on your feet? Brassbeak, stop playing with her!\" Varro shouts.",
+      "\"Home straight! Brassbeak never loses a home straight!\" Varro is up on the rail, waving his hat."
+    ],
+    "choose": "Leg {leg} of {legs}",
+    "modes": {
+      "sprint": "Sprint: half again as far, then a winded leg",
+      "pace": "Pace: steady, and she gets her wind back"
+    },
+    "lane_line": {
+      "inside": "Lane: Inside, the short way round",
+      "outside": "Lane: Outside, a little longer"
+    },
+    "lane_key": "change lane",
+    "wind": "Her wind: {wind}%.",
+    "winded_now": "She is still blowing from the sprint: this leg runs short.",
+    "events": {
+      "winded": "She is blowing hard from the sprint, and her stride is short.",
+      "sprint": "You call her on, and she sprints, head low, legs a blur.",
+      "tired_sprint": "She tries to sprint again, but there is not much left in her legs.",
+      "pace": "She settles into a long, steady stride.",
+      "kick": "Her wind holds, and she has plenty left for the home straight.",
+      "caltrops": "Iron caltrops in the sand on the inside! She hops and stumbles through them and loses ground.",
+      "outside": "You swing her wide, and she runs clean past a scatter of iron caltrops on the inside rail. Varro swears."
+    },
+    "chain": "{chain} right in a row: she runs {run} lengths. Brassbeak runs {rival_run}.",
+    "standing": {
+      "lead_big": "She is flying! {gap} clear of Brassbeak.",
+      "lead": "She leads Brassbeak by {gap}.",
+      "level": "Neck and neck! There is nothing between them.",
+      "behind": "Brassbeak leads by {gap}.",
+      "behind_big": "Brassbeak is {gap} clear, and Varro is waving his hat."
+    },
+    "positions": "Your Bococho: {hero} lengths run. Brassbeak: {rival}.",
+    "photo": "They cross the line side by side! Nobody can call it, so the old judge crouches by the finish banner and squints along the line, and at last he points.",
+    "won_by": "Your Bococho wins by {gap}!",
+    "won_beak": "Your Bococho wins by a beak!",
+    "lost_by": "Brassbeak wins by {gap}.",
+    "won": "She crosses the line ahead. The young Bococho comes back to you at a trot, blowing and proud, and Varro's face has gone the colour of his coat lining.",
+    "lost": "Varro whoops and throws his hat in the air. The young Bococho comes back to you with her head down, but she comes back to you.",
+    "forfeit": "You step away from the rail. Varro grins and calls the race for Brassbeak, and pockets your fee.",
+    "forfeit_ask": "Leave the race? Varro keeps your fee, and Brassbeak wins.",
+    "won_chronicle": "Raced Gilt Varro's best bird, Brassbeak, on the Underway Run, and the young Bococho beat him. Varro's face was worth the fee.",
+    "lost_chronicle": "Raced Gilt Varro's bird on the Underway Run and lost. Varro took my fee and laughed. Next time.",
+    "back": "Enter: back to the camp",
+    "lengths_one": "a length",
+    "lengths_many": "{n} lengths"
+  },
+  "pet": {
+    "species_key": "bococho",
+    "start_level": 25,
+    "_start_level_note": "She is a young runner who has just beaten the best bird in the Underway, grown enough to race and to carry a rider: she starts as a Bococho (stage 1, level 25: LORE NOT FLOOR, her own story, never the floor). The Chick is her line's first stage; no sphere hatches one.",
+    "saddlebags_lb": 20,
+    "_saddlebags_note": "While she is out with the hero (alive, on his floor, not in her sphere), her saddlebags carry this much: Player.get_carry_limit adds it, so the Heavy, Burdened and Overloaded lines all move up with it (Player.saddlebag_lb, kept by Game._sync_saddlebags).",
+    "species": {
+      "element": "earth",
+      "damage_type": "crushing",
+      "color": [235, 190, 60],
+      "pronoun": "she",
+      "quest_only": true,
+      "bite_mult": 1.25,
+      "_bite_mult_note": "Strong kicks: a quarter harder than the growth table's bite at her level (data/pet_growth.json is everyone's).",
+      "stages": [
+        {"name": "Bococho Chick", "symbol": "b", "msg": "A leggy golden chick tumbles out, all fluff and feet!"},
+        {"name": "Bococho", "symbol": "B", "msg": "{old} stretches her long legs and grows into a Bococho!"},
+        {"name": "Bococho Champion", "symbol": "B", "msg": "{old} raises a crest like a crown: she has become a Bococho Champion!"}
+      ],
+      "specials": [
+        {
+          "id": "bococho_charge", "name": "Charge", "unlock_stage": 2,
+          "damage_mult": 2.0, "damage_type": "crushing",
+          "targeting": "single", "range": 6, "leap": true, "knockback": 1,
+          "status": "stunned", "status_chance": 0.5, "status_duration": 2,
+          "cooldown": 300,
+          "flavor_message": "{pet} lowers her head and charges, a golden streak down the line, and kicks with both feet at the end of it!",
+          "miss_message": "{pet} charges down the line, finds nothing at the end of it, and trots back, crest high, very pleased with herself.",
+          "desc": "Range 6, a dash in a straight line; a two-footed kick, 2x damage, knocks it back a tile; 50% stun (2 turns)."
+        }
+      ]
+    },
+    "card": [
+      "Saddlebags: she carries {lb} lb of your load while she is out with you.",
+      "Mount: with no foe in sight and her beside you, ride her (M here, or Shift+R): two tiles a step."
+    ],
+    "card_small": "Too small to ride yet."
+  },
+  "riding": {
+    "_doc": "src/riding.py, src/game_riding.py. Mounted, each step covers two tiles: the second only if the first was clear and the second is walkable, and both tiles trigger traps and hazards. One move is one turn for the monsters (no free turns). She is under the hero: not drawn apart, and she does not act. Set down at once, with a line, by a hostile coming into view, a blow, a trap or hazard, any quiz starting, the stairs (she follows), a status that unseats, being Overloaded, or her being stored or hurt.",
+    "min_stage": 1,
+    "_min_stage_note": "The chick is too small to carry a rider; she joins as a grown Bococho (pet.start_level).",
+    "unseat_statuses": ["paralyzed", "sleeping", "stunned", "confused"],
+    "step_noise": 3,
+    "_step_noise_note": "Tiles added to the hero's footsteps (senses.step_radius) while he rides: a galloping bird is loud.",
+    "sleeper_step_factor": 2.0,
+    "_sleeper_note": "How much readier the deep sleepers of a zoo, graveyard or barracks are to stir at her hooves (sleepers.factor 'step').",
+    "saddled": {"1": "bococho_saddled", "2": "bococho_champion_saddled"},
+    "seat": {"bococho_saddled": [32, 22], "bococho_champion_saddled": [32, 20]},
+    "_seat_note": "Where the rider's hips sit in each saddled picture's 64 px frame (x, y). The art run reports the real offsets (tools/content/genart/install_rare_pets.py SEAT); these stand until then.",
+    "rider_scale": 0.6,
+    "rider_hip_share": 0.55,
+    "mount": "You swing up into {pet}'s saddle. She shifts under you, crest up, ready to run.",
+    "dismount": "You slide down from {pet}'s saddle.",
+    "set_down": {
+      "foe": "{pet} shies at the sight of {foe}, and you slide down from the saddle to meet it on your own feet.",
+      "blow": "The blow knocks you out of {pet}'s saddle!",
+      "trap": "{pet} rears as the trap goes off, and you tumble out of the saddle!",
+      "hazard": "{pet} stumbles, and you are thrown from the saddle!",
+      "quiz": "You slide down from {pet}'s saddle to do it on your own feet.",
+      "stairs": "You slide down from {pet}'s saddle at the stair. She follows you.",
+      "status": "You slump out of {pet}'s saddle!",
+      "overloaded": "{pet} staggers under your load, and you climb down before she falls.",
+      "stored": "You slide down from {pet}'s saddle first.",
+      "hurt": "{pet} is hurt, and you climb down to spare her.",
+      "special": "You slide down from {pet}'s saddle to let her run.",
+      "gone": "You are on your own feet again."
+    },
+    "refuse": {
+      "none": "You have no Bococho to ride.",
+      "small": "{pet} is too small to carry you yet.",
+      "far": "You must stand beside {pet} to climb into her saddle.",
+      "foe": "Not with {foe} in sight. Deal with it first.",
+      "overloaded": "You are carrying too much for {pet} to carry you as well.",
+      "status": "You cannot climb into a saddle like this.",
+      "pit": "Climb out of the pit first.",
+      "side_floor": "Not here."
+    }
+  },
+  "hint_note": "The Recall Lore hint lives in data/hints.json (story-led, never the steps).",
+  "qa": {
+    "placed": "[QA] Gilt Varro's camp is set up in this room, and two Sunroots are in your pack. Camp floor this run: {floor}.",
+    "again": "[QA] She trusts you now (two Sunroots counted), and two more are in your pack. Shift+G again: she joins you at once, the race skipped, to try riding.",
+    "joined": "[QA] The young Bococho joins you, the race skipped. Shift+R beside her to ride.",
+    "no_room": "[QA] No room here for the camp."
+  }
+}

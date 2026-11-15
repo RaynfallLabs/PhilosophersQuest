@@ -654,6 +654,9 @@ class CombatMixin:
         several companions out: all of them go. Returns how many went."""
         from pet_system import is_companion
         went = 0
+        if any(getattr(p, 'ridden', False) for p in self.pets if is_companion(p)) \
+                and hasattr(self, '_riding_set_down'):
+            self._riding_set_down('stored')      # off her saddle first (game_riding.py)
         for pet in [p for p in self.pets if is_companion(p)]:
             sphere = self._bound_sphere_for(pet)
             if sphere is None:
@@ -1327,6 +1330,8 @@ class CombatMixin:
         # Old Nickel dead: his deed, and the Bloomleaf Cloak where he fell
         # if no drop set it down (emberpup_encounter.BloomleafMixin).
         self._cloak_wearer_slain(monster)
+        if hasattr(self, '_bococho_monster_died'):
+            self._bococho_monster_died(monster)  # Gilt Varro: his birds run (bococho_encounter.py)
         # Mini-bosses and legends: their death is an event in the run's story.
         # (Only the five gate bosses were ever recorded.)
         if (getattr(monster, 'is_mini_boss', False) and not story_key
@@ -4304,7 +4309,8 @@ class CombatMixin:
 
             # Pet AI turn
             # (escorts are bodies too: a pet never steps onto one, PET-05)
-            result = (None if pet is rescuer else
+            # (the Bococho under her rider takes no turn of her own: game_riding.py)
+            result = (None if pet is rescuer or getattr(pet, 'ridden', False) else
                       pet.take_turn(self.player, self.dungeon, self.monsters,
                                     list(self.pets) + self._escorts_here(), self.ground_items))
             if result:

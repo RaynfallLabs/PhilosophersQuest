@@ -791,6 +791,38 @@
         44
       ],
       "look": "Two big black concert speakers, one stacked on the other. The bass coming out of them goes straight through your ribs."
+    },
+    "race_tether_post": {
+      "name": "a tether post",
+      "layer": "stand",
+      "blocks": true,
+      "color": [
+        120,
+        90,
+        55
+      ],
+      "look": "A stout wooden post driven into the cavern floor, its top worn smooth by ropes. Short tethers hang from an iron ring, frayed where birds have fought them."
+    },
+    "race_betting_board": {
+      "name": "a betting board",
+      "layer": "stand",
+      "blocks": true,
+      "color": [
+        60,
+        70,
+        60
+      ],
+      "look": "A chalk board on an easel, the day's odds scrawled on it in a loud, crooked hand. Brassbeak is at the top, at the shortest odds, underlined three times."
+    },
+    "race_finish_banner": {
+      "name": "a finish banner",
+      "layer": "stand",
+      "color": [
+        200,
+        60,
+        60
+      ],
+      "look": "A long red banner strung between two poles over the finish line. FINISH is painted on it in big gold letters, and the paint is flaking."
     }
   }
 }

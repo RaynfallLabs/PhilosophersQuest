@@ -2066,6 +2066,11 @@ class MenuMixin:
             self._pet_action_command_cycle(pet)
         elif key == pygame.K_s:
             self._pet_open_specials(pet)
+        elif key == pygame.K_m:
+            # The Bococho: into her saddle, or down (game_riding.py).
+            import riding
+            if riding.is_bococho(pet):
+                self._toggle_ride(pet)
 
     # ----- Pet sub-menus: Feed ---------------------------------------------
 
@@ -2228,11 +2233,15 @@ class MenuMixin:
                 f"limit of {self.player.get_carry_limit()}.",
                 'warning')
             return
-        # Remove the pet from the active list
+        # Remove the pet from the active list (a rider first climbs down)
+        if getattr(pet, 'ridden', False) and hasattr(self, '_riding_set_down'):
+            self._riding_set_down('stored')
         try:
             self.pets.remove(pet)
         except ValueError:
             pass
+        if hasattr(self, '_sync_saddlebags'):
+            self._sync_saddlebags()
         self.add_message(
             f"{pet.name} dissolves into the sphere — it hums with a familiar warmth.",
             'success')
@@ -2262,6 +2271,8 @@ class MenuMixin:
     # ----- Pet sub-menus: Specials -----------------------------------------
 
     def _pet_open_specials(self, pet):
+        if getattr(pet, 'ridden', False) and hasattr(self, '_riding_set_down'):
+            self._riding_set_down('special')     # she runs on her own (game_riding.py)
         avail = pet.available_specials()
         if not avail:
             self.add_message(

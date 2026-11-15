@@ -869,6 +869,12 @@ def test_every_pet_stage_a_sphere_or_secret_can_give_has_art():
         for st in sp['stages']:
             mid = st['name'].lower().replace(' ', '_')
             if not os.path.exists(os.path.join(MON_DIR, mid + '.png')):
+                # A quest companion's stand-in until its art run is installed
+                # (data/bococho.json sprites.fallback): a picture that is
+                # there, never a letter (Pet.sprite_id).
+                fb = (sp.get('sprite_fallback') or {}).get(mid)
+                if fb and os.path.exists(os.path.join(MON_DIR, fb + '.png')):
+                    continue
                 missing.append((key, mid))
     assert not missing, missing
 

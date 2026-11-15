@@ -23,6 +23,9 @@ class HazardsMixin:
     def _hazard_hit_hero(self, h: dict) -> None:
         from dice import roll as _dice_roll
         from floor_curve import hazard as _hazard
+        _thrown = getattr(self, '_riding_set_down', None)
+        if _thrown is not None:
+            _thrown('hazard')               # a rider is thrown (game_riding.py)
         dmg_str = h.get('damage')
         if dmg_str:
             raw = _hazard(_dice_roll(dmg_str), self.player.max_hp)

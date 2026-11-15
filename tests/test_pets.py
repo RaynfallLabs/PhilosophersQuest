@@ -239,6 +239,15 @@ def test_every_species_has_two_specials():
     for key, sp in pet_system._SPECIES.items():
         if key == 'duck_of_doom':
             continue  # see test_duck_of_doom_species_has_three_specials
+        if sp.get('quest_only'):
+            # A quest's companion (the Bococho) has the special its plan
+            # gives it (RARE_PETS_PLAN 3: Charge, the champion's): at least
+            # one, with every field a special needs.
+            assert sp.get('specials'), f"{key} has no special"
+            for s in sp['specials']:
+                for required in ('id', 'name', 'damage_mult', 'targeting', 'cooldown', 'desc'):
+                    assert required in s, f"{key}.{s.get('id')} missing {required}"
+            continue
         assert 'specials' in sp, f"{key} missing specials list"
         specials = sp['specials']
         assert len(specials) == 2, f"{key} should define 2 specials; got {len(specials)}"
