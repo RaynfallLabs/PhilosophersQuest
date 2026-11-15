@@ -172,6 +172,7 @@ src/
   naming.py           - Display-name capitalisation (proper_name)
   effects_runtime.py  - Pluggable visual-effects controller (effects/ holds the handlers)
   sound_system.py     - Procedural sound effects
+  music.py            - The soundtrack (Brandon's PQ Main Theme): looped from the title on, F5 on / off, remembered
 
   # Persistence and plumbing
   save_system.py      - Per-name pickle saves

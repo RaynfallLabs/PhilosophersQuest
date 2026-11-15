@@ -154,6 +154,11 @@ class InputMixin:
             if surf is not None:
                 self.on_resize(*surf.get_size())
             return True
+        if key == pygame.K_F5:
+            import music as _music
+            _mon = _music.toggle()
+            self.add_message(f"Music: {'On' if _mon else 'Off'}. (F5 switches it.)", 'info')
+            return True
         if key == pygame.K_F10:
             _on = _snd.toggle()
             if _on:

@@ -86,6 +86,7 @@ added_files = [
     ('assets/fonts',                'assets/fonts'),
     ('assets/tiles',                'assets/tiles'),
     ('assets/achievements',         'assets/achievements'),   # badge art (seeker_screen.py)
+    ('assets/music',                'assets/music'),          # the soundtrack (music.py)
     # UI art kit (optional painted panels/frames; see assets/ui/README.md).
     # Loaded by src/ui_theme.py at startup; missing art = procedural UI.
     ('assets/ui',                   'assets/ui'),
@@ -121,7 +122,7 @@ a = Analysis(
         'crash_handler', 'highscore_system', 'save_system',
         'boss_levels', 'pet_system', 'mystery_system',
         'npc_encounters', 'quirk_system', 'container_system',
-        'fantasy_ui', 'sound_system', 'level_manager',
+        'fantasy_ui', 'sound_system', 'music', 'level_manager',
         'status_effects', 'paths', 'game_log',
         # The dungeon supports the build (winning build 3.5): imported inside
         # traders, game_traders and game_divine functions.
