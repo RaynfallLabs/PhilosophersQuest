@@ -832,9 +832,26 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.add_message("Find the Philosopher's Stone and escape!", 'info')
         # Journal: entering the dungeon
         self._chron('milestone', "Descended into the dungeon. The air smells like dust and old stone. The Stone is somewhere below. I need to find it and get back out.")
+        # Floor 1's war-band and atmosphere (its den's snoring, a vault's
+        # coins) are said at the start, as every later floor's are on
+        # arrival. Only _change_level said them, so floor 1's were first
+        # heard on coming back up to it, long after (3.5.1: floor 1 holds a
+        # band on more than half its maps).
+        self._announce_band()
+        self._say_atmosphere()
         # A secret build's head start in monster lore (Geralt's medallion)
         # speaks on the first floor too, like every later arrival.
         self._family_arrival(first_visit=True)
+
+    def _say_atmosphere(self):
+        """The floor's atmosphere lines (dungeon.atmosphere_messages): the
+        first time only (G4: they used to repeat on every visit, so a
+        stair-bounce said the same three lines again)."""
+        if self.dungeon.__dict__.get('_atmosphere_said'):
+            return
+        self.dungeon._atmosphere_said = True
+        for atmo_msg in getattr(self.dungeon, 'atmosphere_messages', []):
+            self.add_message(atmo_msg, 'info')
 
     def _bones_ghost_notice(self, dungeon):
         """A dead hero's ghost haunts this floor (bones.py): say so, once.
@@ -2625,15 +2642,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # The first floor of each domain says where the hero has come
         # (data/domains.json; src/decor.py).
         self._announce_domain(new_level)
-        # A war-band on the floor is heard, or named (src/war_bands.py).
+        # A war-band on the floor is heard, or named (src/war_bands.py), and
+        # the floor's atmosphere (its den's snoring, a vault's coins).
         self._announce_band()
-        # Display atmospheric messages for this level: the first time only
-        # (G4: they used to repeat on every visit, so a stair-bounce said
-        # the same three lines again).
-        if not self.dungeon.__dict__.get('_atmosphere_said'):
-            self.dungeon._atmosphere_said = True
-            for atmo_msg in getattr(self.dungeon, 'atmosphere_messages', []):
-                self.add_message(atmo_msg, 'info')
+        self._say_atmosphere()
         # Ariadne's Thread shows the way through the Labyrinth: the walk from
         # the stair to Asterion's hall is laid out on the map.
         if new_level == 20 and not getattr(self.dungeon, '_thread_shown', False):
