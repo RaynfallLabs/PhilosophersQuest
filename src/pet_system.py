@@ -446,6 +446,46 @@ _SPECIES = {
     },
 }
 
+def _load_quest_species(key: str, path: str) -> None:
+    """A quest companion's species, kept with the rest of his words in his
+    own data file (its 'pet' block, 'species'). A quest pet ('quest_pet')
+    is won by his own story and never hatches from a sphere
+    (random_species). The Mooble: data/mooble.json (mooble_encounter.py)."""
+    import json
+    try:
+        with open(path, encoding='utf-8') as f:
+            sp = (json.load(f).get('pet') or {}).get('species')
+    except (OSError, ValueError):
+        return
+    if isinstance(sp, dict):
+        sp = dict(sp)
+        sp['color'] = tuple(sp.get('color') or (200, 200, 200))
+        _SPECIES[key] = sp
+
+
+def _load_quest_species_all() -> None:
+    from paths import data_path
+    _load_quest_species('mooble', data_path('data', 'mooble.json'))
+
+
+_load_quest_species_all()
+
+_ART_SEEN: dict = {}
+
+
+def art_or_standin(sid: str, standin=None) -> str:
+    """``sid`` when its picture (assets/tiles/monsters/<sid>.png) is there,
+    else ``standin``, a picture shown until the art is installed (never a
+    letter on the map), else ``sid``."""
+    if not sid or not standin:
+        return sid
+    if sid not in _ART_SEEN:
+        import os
+        from paths import data_path
+        _ART_SEEN[sid] = os.path.exists(data_path('assets', 'tiles', 'monsters', f'{sid}.png'))
+    return sid if _ART_SEEN[sid] else standin
+
+
 # The family cats: rare hatches from an ordinary sphere (see roll_soul_sphere_species).
 FAMILY_CATS = ('sherlock', 'irene')
 FAMILY_CAT_CHANCE = 0.05          # EACH cat, per hatch (10% for a cat while neither is met)
@@ -631,12 +671,16 @@ class Pet:
     # --- Stats ---------------------------------------------------------------
 
     def _calc_max_hp(self) -> int:
-        """Full health at the pet's level, from data/pet_growth.json."""
-        return growth('health', self.level)
+        """Full health at the pet's level, from data/pet_growth.json (a small
+        support line, the Mooble, has a share of it: 'health_mult')."""
+        mult = float((getattr(self, 'species', None) or {}).get('health_mult', 1.0) or 1.0)
+        return max(1, int(round(growth('health', self.level) * mult)))
 
     def _calc_damage(self) -> int:
-        """Bite at the pet's level, from data/pet_growth.json."""
-        return growth('bite', self.level)
+        """Bite at the pet's level, from data/pet_growth.json ('bite_mult'
+        for a line with weak bites, the Mooble)."""
+        mult = float((getattr(self, 'species', None) or {}).get('bite_mult', 1.0) or 1.0)
+        return max(1, int(round(growth('bite', self.level) * mult)))
 
     def __setstate__(self, state):
         """Saves from before 2026-10-06 hold old-scale HP and damage (20 to
@@ -721,6 +765,15 @@ class Pet:
         own = self.__dict__.get('sprite_id')
         if own:
             return own
+        # A line whose stages name their own pictures (the Mooble's
+        # 'mooble_troupe_leader', not the stage name's "troupe-leader"),
+        # with a stand-in until that art is installed.
+        try:
+            _stage = self.species['stages'][self.stage]
+        except (AttributeError, KeyError, IndexError, TypeError):
+            _stage = None
+        if isinstance(_stage, dict) and _stage.get('sprite'):
+            return art_or_standin(_stage['sprite'], self.species.get('sprite_standin'))
         try:
             stage_name = self.species_name
         except (AttributeError, KeyError, IndexError, TypeError):
@@ -972,6 +1025,14 @@ class Pet:
 
         cmd = getattr(self, 'command', 'return')
 
+        # A support companion (the Mooble) keeps at the hero's side on
+        # 'return' rather than charging: he bites only what comes beside
+        # him, and stays near enough to lend his gifts (mana_gift).
+        if cmd == 'return' and (getattr(self, 'species', None) or {}).get('support'):
+            if max(abs(self.x - player.x), abs(self.y - player.y)) > 2:
+                self._move_toward(player.x, player.y, dungeon, monsters, pets, player, ground_items)
+            return None
+
         # Stay: don't move from current tile. Only attack adjacent (handled above).
         if cmd == 'stay':
             return None
@@ -990,6 +1051,42 @@ class Pet:
         if pdist > 2:
             self._move_toward(player.x, player.y, dungeon, monsters, pets, player, ground_items)
         return None
+
+    def mana_gift(self, player) -> int:
+        """A support companion's gift of mana (the Mooble's Bobble Glow,
+        species 'mana_gift'): ``amount`` MP every ``every`` turns (a number,
+        or one a stage) while he is within ``radius`` tiles of the hero and
+        the hero's mana is not full. Call once a pet turn; returns the MP
+        given (0 on most turns). Real turns, never the floor."""
+        gift = (getattr(self, 'species', None) or {}).get('mana_gift')
+        if not gift or not self.alive:
+            return 0
+        every = gift.get('every', 5)
+        if isinstance(every, (list, tuple)):
+            every = every[max(0, min(len(every) - 1, self.stage))]
+        self._mana_timer = int(self.__dict__.get('_mana_timer', 0) or 0) + 1
+        if self._mana_timer < int(every):
+            return 0
+        if max(abs(self.x - player.x), abs(self.y - player.y)) > int(gift.get('radius', 3)):
+            return 0
+        mp = int(getattr(player, 'mp', 0) or 0)
+        top = int(getattr(player, 'max_mp', 0) or 0)
+        if mp >= top:
+            return 0
+        self._mana_timer = 0
+        give = min(int(gift.get('amount', 1)), top - mp)
+        player.mp = mp + give
+        return give
+
+    def mana_gift_every(self) -> int:
+        """Turns between the mana gift's drops at this stage (0: none)."""
+        gift = (getattr(self, 'species', None) or {}).get('mana_gift')
+        if not gift:
+            return 0
+        every = gift.get('every', 5)
+        if isinstance(every, (list, tuple)):
+            every = every[max(0, min(len(every) - 1, self.stage))]
+        return int(every)
 
     _ROUTE_LIMIT = 2500          # tiles a route search may look at
 
@@ -1505,14 +1602,15 @@ def random_species() -> str:
     Summon Guardian / Gate outcome. It only spawns via `_duck_of_doom_transform`.
     """
     pool = [k for k in _SPECIES.keys()
-            if k != 'duck_of_doom' and not has_own_name(_SPECIES[k])]
+            if k != 'duck_of_doom' and not has_own_name(_SPECIES[k])
+            and not _SPECIES[k].get('quest_pet')]
     return random.choice(pool)
 
 
 def is_companion(pet) -> bool:
     """The hero's one bonded companion (Brandon, 2026-11-06: one at a time).
     A pet from any Soul Sphere (the family cats and Shep too), the Emberpup,
-    Waddlekind, or the Summon Guardian and Gate spells. Not the helpers that
+    the Mooble, Waddlekind, or the Summon Guardian and Gate spells. Not the helpers that
     come and go beside it: Dad, a sketch, an ally sprung from a kill, Fenrir,
     the Army of Darkness, and not the unicorn, who heals and never fights."""
     if type(pet) is not Pet or not getattr(pet, 'alive', False):

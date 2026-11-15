@@ -867,8 +867,14 @@ def test_every_pet_stage_a_sphere_or_secret_can_give_has_art():
     missing = []
     for key, sp in list(ps._SPECIES.items()) + [('fenrir', ps._FENRIR_SPECIES)]:
         for st in sp['stages']:
-            mid = st['name'].lower().replace(' ', '_')
+            mid = st.get('sprite') or st['name'].lower().replace(' ', '_')
             if not os.path.exists(os.path.join(MON_DIR, mid + '.png')):
+                # A quest pet whose art is still being drawn shows its
+                # stand-in (pet_system.art_or_standin), never a letter: the
+                # Mooble until his pictures are installed (RARE_PETS_PLAN).
+                standin = sp.get('sprite_standin')
+                if standin and os.path.exists(os.path.join(MON_DIR, standin + '.png')):
+                    continue
                 missing.append((key, mid))
     assert not missing, missing
 

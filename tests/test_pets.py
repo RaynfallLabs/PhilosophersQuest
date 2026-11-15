@@ -239,6 +239,12 @@ def test_every_species_has_two_specials():
     for key, sp in pet_system._SPECIES.items():
         if key == 'duck_of_doom':
             continue  # see test_duck_of_doom_species_has_three_specials
+        if sp.get('quest_pet'):
+            # A quest pet has his own story's specials (the Mooble: one, the
+            # Dance of the Dark, from stage 0, grown at stage 2): checked in
+            # tests/test_mooble.py.
+            assert sp.get('specials'), f"{key} has no special"
+            continue
         assert 'specials' in sp, f"{key} missing specials list"
         specials = sp['specials']
         assert len(specials) == 2, f"{key} should define 2 specials; got {len(specials)}"

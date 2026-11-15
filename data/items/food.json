@@ -393,5 +393,33 @@
   "floor_spawn_weight": {
    "1-100": 0
   }
+ },
+ "starnut_tart": {
+  "name": "Starnut Tart",
+  "symbol": "%",
+  "color": [
+   215,
+   165,
+   80
+  ],
+  "weight": 0.3,
+  "min_level": 25,
+  "sp_restore": 70,
+  "hp_restore": 6,
+  "bonus_type": "none",
+  "bonus_amount": 0,
+  "bonus_stat": null,
+  "bonus_effect": null,
+  "value": 60,
+  "identified": true,
+  "unidentified_name": "Starnut Tart",
+  "made_to_carry": true,
+  "lore": "A miner's tart: crushed starnuts and a sweet apple baked into a crust of ration bread, golden on top and still faintly fizzy. The old miners baked them to carry down the shafts, and shared them with the little cave folk who danced with them at night. It keeps for weeks in a pack, and it is a pleasant thing to eat.",
+  "floorSpawnWeight": {
+   "1-100": 0
+  },
+  "floor_spawn_weight": {
+   "1-100": 0
+  }
  }
 }

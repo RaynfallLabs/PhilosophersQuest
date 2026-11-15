@@ -90,6 +90,8 @@ def main_effect(row: dict) -> str:
         if 'full point' in first or 'completes' in first:
             return f"{stat} +1"
         return f"Teaches {stat}"
+    if kitchen.makes(rec):
+        return "To Carry"                 # cooked to carry (the Starnut Tart)
     if tab == 'special':
         out = kitchen.dish_outcome(rec)
         label = kitchen.power_label(out['power'])

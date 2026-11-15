@@ -271,6 +271,28 @@ Plain lines for THIS hero now, main benefit first: "+45 HP", "+3 Max HP", "+12 M
 the benefit says so: "Max HP full this floor", "DEX lesson used this floor", "DEX has learned all
 food can teach here", "Max MP: all feasts can give at this depth".
 
+### 5.5 Cook to carry (`makes`, 2026-11-14)
+
+A dish may be **cooked to carry**: its recipe names `makes`, a food id in `data/items/food.json`,
+and cooking it right puts that food in the pack, wrapped, instead of eating it
+(`kitchen.make_to_carry`, from `apply_dish`). Nothing is eaten, so the hero's SP, HP and the
+cooking quirks are untouched (`Game._cook_compound` tells the quirks only when the food itself
+is eaten). A ruined one is wasted like any dish. The food weighs less than what went into it, so
+it always fits. Its benefit is `carry` (`dish_tab`: Special; `dish_power`: none), its menu lines
+are `kitchen.carry_lines` ("Made to carry: one Starnut Tart into your pack", "If eaten: +70 SP,
++6 HP") and its chip says "To Carry" (`cook_menu.main_effect`).
+
+The first is the **Starnut Tart** (`dish_starnut_tart`: Starnut, bread ration and apple), the
+Mooble's favourite (`mooble_encounter.py`, `docs/systems/pets.md`). The food `starnut_tart` never
+spawns (`floor_spawn_weight` 0), is never an ingredient (`build_kitchen.FORBIDDEN_FOOD`), is
+never stolen, given as payment or sold (`items.WITHHELD_IDS`), and shows the dish's picture
+(`renderer._UNIQUE_SPRITE_FALLBACK`: `dish_pie_t2_special`) until it has one of its own.
+
+A dish the hero has **learned of** (`player.dishes_learned`, a set of recipe ids: the Mooble
+tells of his tart the first time he is met) shows under Building Toward even before any part of
+it is held (`menu_rows`). `build_kitchen.py` carries `makes` from `structure.json` and checks
+that the food exists, is forbidden as an ingredient, and that no feast is carried.
+
 ---
 
 ## 6. Boss trophies
@@ -310,7 +332,8 @@ Tooth: STR...), at 1.5x.
   1. **ready** — cookable now, the most giving first (`dish_value`);
   2. **building** — the hero holds at least one HARVESTED part of it (a monster part or trophy;
      a ration or a foraged find alone does not count, or bread would list a hundred dishes) but
-     not all; the closest first, then fewest missing, then value;
+     not all, or the hero has learned of it (`player.dishes_learned`, §5.5); the closest first,
+     then fewest missing, then value;
   3. **legendary** — the feasts and trophy dishes, their own group so the big payoff stands out:
      ready ones first, then the closest; shown once any harvested part is held.
   A dish needing a secret part never shows until that part is held.
@@ -403,6 +426,8 @@ book: `test_cooking_overhaul.py`, `test_ingredient_rename.py`, `test_harvest_coo
 `test_stats_and_boons.py`, `test_final_gaps_audit.py`, `test_bugbash4_player_text.py`,
 `test_bug_bash_3.py`, `test_balance_review_2026_10_26.py`, `test_balance_pass_2026_10.py`,
 `test_audit_2026_10.py`, `test_armour_meals_gates_2026_11_12.py`, `test_yardsticks.py`.
+`tests/test_mooble.py`: cook to carry (the tart in the pack uneaten, ruined is wasted, the menu
+lines and chip, the learned dish under Building Toward, its art, withheld).
 `tests/test_dish_art.py`: every picture exists at 64 px, feasts own theirs, a shared picture is
 one tier and one tab, names say their kind, any renamed dish finds a true vessel and colour.
 
@@ -418,4 +443,5 @@ one tier and one tab, names say their kind, any renamed dish finds a true vessel
 | — | 2026-11-12 | Meals heal 6% + written/80 of the bar. |
 | K1 | 2026-11-14 | **The kitchen rebuild.** Kin share ingredients (316: 294 parts, 14 trophies, 8 forage) with vivid names that keep their pictures; `harvest_map.json` with aliases; a 573-dish book where every ingredient is in one single and two+ multi-dishes, rations included, a third cross-depth, 36 legendary feasts; five kinds of meal (HP / SP / MP / Stat / Special) from one rules file, MP restore new, worth and size bonus, legendary permanents inside the lifetime caps; the pure menu functions; old saves migrate. `prime_cuts.json`, `cook_outcomes.json`, `cut_stat` and `outcome_id` retired.
 | K1b | 2026-11-14 | **A book a run can cook** (§4.1). From the simulator's part frequencies (`part_freq.json`): 22 feasts swap their rare parts for common or banked early ones (names and themes kept), 90 multi-dishes keep one uncommon part, 113 new dishes give every rare part two dishes with common partners (686 dishes, 370 multi). The build checks the rules and that no dish shares an ingredient's name (Cave Bear Steak's dish is now Hibernation Bear Steak). | |
+| P1 | 2026-11-14 | **Cook to carry** (§5.5): a recipe's `makes` puts a food in the pack; the Starnut Tart (Starnut, bread, apple; Special tab) for the Mooble; learned dishes show under Building Toward. 687 dishes. |
 | KA | 2026-11-14 | **Dish pictures.** 134 kind pictures (20 kinds; vessel = tier, one colour cue = main benefit; stew and roast at every tier and tab) picked by `dish_art.py` from the name, and 36 feasts drawn one by one; the old cluster picker and `art_clusters.json` retired. |

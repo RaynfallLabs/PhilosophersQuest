@@ -318,6 +318,9 @@ def save_game(game) -> bool:
             '_unicorn_target_level': getattr(game, '_unicorn_target_level', None),
             # The abandoned Emberpup: its floor, placed yet, how it ended.
             '_emberpup': getattr(game, '_emberpup', None),
+            # The Mooble: his floor, placed yet, how it ended, the wait
+            # between dances, and his dance screen if it was open.
+            '_mooble': getattr(game, '_mooble', None),
             # The Black Knight: his floor, placed yet, the draw, his sword.
             '_black_knight': getattr(game, '_black_knight', None),
             # The Stray Kids: the idol's floor, touched yet, the way back, the photo.

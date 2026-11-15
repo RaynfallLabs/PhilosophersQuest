@@ -27,6 +27,7 @@ import pygame
 import sound_system as _snd
 from dungeon import ALTAR, FOUNTAIN, GRAVE, THRONE
 from quiz_engine import QuizState
+from game_states import STATE_MOOBLE, STATE_MOOBLE_DANCE
 from game_states import (
     STATE_PLAYER, STATE_QUIZ, STATE_QUIZ_CONTEXT, STATE_EQUIP_MENU, STATE_KIT, STATE_DISCOVERIES,
     STATE_WAND_MENU, STATE_SCROLL_MENU, STATE_IDENTIFY_MENU, STATE_COOK_MENU,
@@ -204,6 +205,14 @@ class InputMixin:
             if self.state == STATE_EMBERPUP:
                 # Its own screen decides: back from the food list, or leave.
                 self._emberpup_input(key)
+                return True
+            if self.state == STATE_MOOBLE:
+                # His screen decides: leave him be, or close a line.
+                self._mooble_input(key)
+                return True
+            if self.state == STATE_MOOBLE_DANCE:
+                # Practice stops; a dance-off is danced through.
+                self._mooble_dance_key(key)
                 return True
             if self.state == STATE_QUIZ_CONTEXT:
                 # Close the context modal (back to the quiz); the dedicated
@@ -423,6 +432,12 @@ class InputMixin:
                 # and a trader with gems and the draught, to test coin weight.
                 self._qa_treasure_sampler()
                 return True
+            if uni == 'D' and getattr(self.player, 'qa_tools', False):
+                # Titivillus QA build: the Mooble in a cave beside this room,
+                # a Starnut and a Starnut Tart in the pack; again, another
+                # tart and no wait before the next dance (mooble_encounter).
+                self._qa_mooble()
+                return True
             if uni == 'K' and getattr(self.player, 'qa_tools', False):
                 # Titivillus QA build: the Stray Kids idol beside the hero;
                 # pressed again, the photo in the pack (game_stray_kids.py).
@@ -499,6 +514,10 @@ class InputMixin:
             self._cow_encounter_input(key)
         elif self.state == STATE_EMBERPUP:
             self._emberpup_input(key)
+        elif self.state == STATE_MOOBLE:
+            self._mooble_input(key)
+        elif self.state == STATE_MOOBLE_DANCE:
+            self._mooble_dance_key(key)
         elif self.state == STATE_CHARACTER_SHEET:
             self._character_sheet_input(key)
         elif self.state == STATE_DROP_MENU:
