@@ -889,6 +889,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         """Restore all game state from a previously saved dict (pickle)."""
         import affinity as _affinity
         _affinity.drain()                      # nothing noted before the load is said after it
+        # Nor anything the shell said while it built its throwaway floor 1
+        # (_restore_saved_game): a hero loaded on floor 30 read "Welcome,
+        # ...! Find the Philosopher's Stone and escape!", that floor's domain
+        # line and a war-band "somewhere on this floor" that was never his
+        # (bug bash 3.5.1 E). The log is not saved; it starts clean.
+        self.msg_log.clear()
         self.player        = state['player']
         self.player._combat_game_ref = self     # dropped on save (Player.__getstate__)
         # One-cosmetic-per-item: re-attach the appearance-stamp hook (dropped on

@@ -512,3 +512,140 @@ def test_journey_02_the_floors_clock(make_game):
     assert sum(1 for s in said if s in stirs) == 1, said
     assert [s for s in said if s in warn | stirs][0] in warn, said
     no_errors(h)
+
+
+# ---------------------------------------------------------------------------
+# Journey 3: harvest, cook, eat, cook to carry, save and load, sell
+# ---------------------------------------------------------------------------
+
+def cook_menu_pick(h, pred):
+    """C is open: Right through the tabs to the first row ``pred`` accepts,
+    Down to it, Enter."""
+    import kitchen
+    g = h.g
+    assert g.state == 'cook_menu', g.state
+    for _ in range(len(kitchen.MENU_TABS) + 1):
+        rows = g._cook_tab_rows()
+        if any(pred(r) for r in rows):
+            break
+        h.key(pygame.K_RIGHT)
+    rows = g._cook_tab_rows()
+    want = next(i for i, r in enumerate(rows) if pred(r))
+    while g._cook_sel < want:
+        h.key(pygame.K_DOWN)
+    h.key(pygame.K_RETURN)
+    return rows[want]
+
+
+def harvest_here(h):
+    """H on the corpse underfoot, the animal question answered right: the
+    ingredient it gave."""
+    import items
+    g = h.g
+    before = list(g.player.inventory)
+    h.key('h')
+    assert h.in_quiz() and 'ANIMAL' in g.quiz_title, g.state
+    h.quiz(1)
+    got = [i for i in g.player.inventory if i not in before]
+    if not got:          # a stack: the count went up instead
+        got = [i for i in g.player.inventory if isinstance(i, items.Ingredient)]
+    return got[0] if got else None
+
+
+def test_journey_03_from_the_corpse_to_the_counter(make_game):
+    """Two giant rats killed and harvested (H, one animal question each);
+    C, a ready dish of the rat cooked and eaten; a Starnut Tart cooked to
+    carry; saved and loaded; the second rat's meat sold to an apothecary,
+    and the tart, which the Mooble is owed, not for sale."""
+    import items
+    import kitchen
+    import random as _r
+    from mystery_system import build_trader
+    from test_bugbash_wb_e import shop_tab, shop_pick
+    g, h = make_game()
+    p = g.player
+    open_floor(g, p.x, p.y, 4)
+    wield_the_sword(h)
+    meat = None
+    for dx in (2, -2):
+        rat = place_monster(g, 'giant_rat', dx)
+        g._refresh_fov()
+        said = fight_to(h, rat)
+        assert not rat.alive, said
+        corpse = next(i for i in g.ground_items if isinstance(i, items.Corpse))
+        go_to(h, corpse.x, corpse.y)
+        h.said()
+        meat = harvest_here(h) or meat
+        assert corpse not in g.ground_items
+    assert meat is not None and int(getattr(meat, 'count', 1) or 1) == 2, h.said()
+    # C: a dish of the rat is ready.
+    p.sp = p.max_sp // 3                                   # a long walk behind him
+    h.key('c')
+    assert g.state == 'cook_menu'
+    sp_before = p.sp
+    row = cook_menu_pick(h, lambda r: r['ready'] and kitchen.resolve(meat.id) in kitchen.parts(r['recipe']))
+    assert h.in_quiz() and 'COOKING' in g.quiz_title
+    h.quiz(1)
+    said = h.said()
+    assert g.state == 'player', g.state
+    assert p.sp > sp_before, (said, row['recipe']['name'])
+    assert row['recipe']['name'] in g._cooked_recipes
+    assert meat in p.inventory and int(meat.count) == 1, said
+    # Cook to carry: a Starnut Tart (a starnut, bread and an apple).
+    for fid in ('bread_ration', 'apple'):
+        p.inventory.append(items.make_item_by_id('food', fid))
+    p.inventory.append(items.make_item_by_id('ingredient', 'starnut'))
+    h.key('c')
+    row = cook_menu_pick(h, lambda r: r['ready'] and kitchen.makes(r['recipe']))
+    h.quiz(1)
+    said = h.said()
+    assert 'You wrap the Starnut Tart to carry. It is in your pack.' in said, said
+    # Saved and loaded: the tart and the meat are still in the pack.
+    g = reload(h)
+    p = g.player
+    tart = next(i for i in p.inventory if getattr(i, 'id', '') == 'starnut_tart')
+    meat = next(i for i in p.inventory if isinstance(i, items.Ingredient))
+    assert g._display_name(tart) == 'Starnut Tart'
+    # Sold: an apothecary beside him, Y, the Sell tab, the meat.
+    open_floor(g, p.x, p.y, 3)
+    trader = build_trader('apothecary', 1, _r.Random(3))
+    trader.x, trader.y = p.x + 1, p.y
+    g.ground_items.append(trader)
+    gold = g.player_gold
+    h.key('y')
+    assert g.state == 'shop', g.state
+    h.said()
+    shop_tab(h, 1)
+    price, why = g._trader_offer(meat)
+    assert why is None and price > 0, why
+    assert g._trader_offer(tart) == (0, 'Not for sale')
+    shop_pick(h, lambda r: r is meat)
+    said = h.said()
+    assert meat not in p.inventory, said
+    assert g.player_gold == gold + price, (gold, price, g.player_gold, said)
+    no_errors(h)
+
+
+def _trader_kinds():
+    import traders
+    return list(traders.data().get('traders', {}).keys()) if hasattr(traders, 'data') else []
+
+
+def test_351_e04_a_loaded_save_does_not_greet_a_new_hero(make_game, monkeypatch):
+    """Saved on floor 3, loaded: the log read "Welcome, ...! Find the
+    Philosopher's Stone and escape!", the domain line of floor 1 and any
+    war-band of the throwaway floor 1 the load builds and drops."""
+    import war_bands
+    from test_bugbash_wb_e import warp
+    monkeypatch.setitem(war_bands.data(), 'chance', 1.0)    # the shell's floor 1 has a band
+    g, h = make_game(build='titivillus', name='Titivillus')
+    warp(h, 3)
+    g = reload(h)
+    log = [str(e[0]) for e in g.msg_log.entries]
+    assert not any(s.startswith('Welcome, ') for s in log), log
+    assert "Find the Philosopher's Stone and escape!" not in log, log
+    bands = {b['line'] for b in war_bands.data()['bands'].values()}
+    here = getattr(g.dungeon, 'band', None)
+    mine = war_bands.data()['bands'][here['id']]['line'] if here else None
+    assert not any(s in bands and s != mine for s in log), log
+    no_errors(h)
