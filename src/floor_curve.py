@@ -169,9 +169,11 @@ def dice_for_average(avg: float, sides: int = 6) -> str:
 # ---------------------------------------------------------------------------
 
 # Wandering monsters stop arriving while this many are already hunting the
-# player, or while the floor holds wander_alive_cap(level) alive in all: about
-# what a floor starts with, so a lingering hero's floor fills back up but
-# does not flood.
+# player, or while the floor holds wander_alive_cap(level) alive in all, so a
+# lingering hero's floor fills back up but does not flood. (Since 3.5.1 most
+# floors start above the cap, a median of 13-16 against 10-12 on floors 2-12
+# and 28-30 against 23-25 deep, so the trickle refills only a floor the hero
+# has thinned out; the maze floors start below it.)
 WANDER_HUNTING_CAP = 3
 
 
@@ -214,7 +216,8 @@ def wander_interval(level: int) -> int:
 # 24 maps). Now nothing new comes for a grace measured from the floor's own
 # map: the walk of a full explore (every room, nearest first, then the down
 # stair: wanderers.explore_tour; median 224 tiles on floor 1, 330 on floor 5,
-# about 500 from floor 12) times WANDER_GRACE_PER_TILE, plus
+# about 500 from floor 12; on a maze its passages too, 1,200-2,000) times
+# WANDER_GRACE_PER_TILE, plus
 # WANDER_GRACE_FLAT. A thorough explore walks about one and a half times the
 # tour (doors, corners, the loot); the rest is time to fight and get your
 # breath back. The clock counts only turns spent on that floor.

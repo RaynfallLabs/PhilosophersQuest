@@ -309,10 +309,15 @@ class MoobleMixin:
         from dungeon import FLOOR, _carve_sealed_shrine
         d = self.dungeon
         rooms = list(d.rooms[1:]) if len(d.rooms) > 1 else list(d.rooms)
+        # Never off a war-band's camp (war_bands.camp_tiles): three dance-offs
+        # meant three fights through the band.
+        import war_bands
+        rooms = war_bands.outside_camp(d, rooms)
+        camp = war_bands.camp_tiles(d)
         rng = random.Random(int(self._mooble_state().get('seed') or 0) ^ SEED_XOR)
         rng.shuffle(rooms)
         for r in rooms[:12]:
-            carved = _carve_sealed_shrine(d, r.center)
+            carved = _carve_sealed_shrine(d, r.center, avoid=camp)
             if not carved:
                 continue
             (wx, wy), (sx, sy) = carved
@@ -331,8 +336,11 @@ class MoobleMixin:
     def _mooble_room_spot(self):
         """No rock to carve a cave in: a quiet room's inner tile instead."""
         from geom import all_occupied_tiles
-        occupied = all_occupied_tiles(self.monsters) | self._occupants()
+        import war_bands
+        occupied = (all_occupied_tiles(self.monsters) | self._occupants()
+                    | war_bands.camp_tiles(self.dungeon))
         rooms = self.dungeon.rooms[1:] if len(self.dungeon.rooms) > 1 else self.dungeon.rooms
+        rooms = war_bands.outside_camp(self.dungeon, rooms)
         rng = random.Random(int(self._mooble_state().get('seed') or 0))
         for room in rng.sample(list(rooms), min(len(rooms), 6)):
             tiles = [t for t in room.inner_tiles()

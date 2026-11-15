@@ -384,6 +384,10 @@ class EncountersMixin:
                                           for tx, ty in r.inner_tiles())]
         rooms = [r for r in rooms if r not in _homes] or rooms
         occupied |= {t for r in _homes for t in r.inner_tiles()}
+        # Never in a war-band's camp (war_bands.camp_tiles).
+        import war_bands as _wb
+        rooms = _wb.outside_camp(self.dungeon, rooms)
+        occupied |= _wb.camp_tiles(self.dungeon)
         import random as _rng
 
         def _make(x, y):
@@ -510,6 +514,10 @@ class EncountersMixin:
         occupied = all_occupied_tiles(self.monsters)
         occupied |= self._occupants()
         rooms = self.dungeon.rooms[1:] if len(self.dungeon.rooms) > 1 else self.dungeon.rooms
+        # Never in a war-band's camp: earning her trust takes waiting.
+        import war_bands as _wb
+        rooms = _wb.outside_camp(self.dungeon, rooms)
+        occupied |= _wb.camp_tiles(self.dungeon)
         import random as _rng
         for room in _rng.sample(rooms, min(len(rooms), 5)):
             tiles = list(room.inner_tiles())

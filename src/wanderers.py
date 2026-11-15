@@ -82,10 +82,61 @@ def _distances(ok: set, start) -> dict:
     return dist
 
 
+# A floor whose rooms hold less than this share of its walkable ground is a
+# maze of passages (the maze floors 10, 30, 50, 70 and 90 hold about 5% in
+# their few clearings, the Labyrinth on 20 13%; every room-and-corridor floor
+# and the other gate floors 73% or more). Its explore walks the passages too.
+MAZE_ROOM_SHARE = 0.5
+# The passages of a maze are reached block by block: one stop in each square
+# of this many tiles that holds passage.
+MAZE_BLOCK = 10
+
+
+def _room_stop(room, ok):
+    """Where a full explore stands to see a room: its centre, or the
+    walkable tile nearest it when a fountain, a statue or water stands
+    there (such a room was left out of the tour)."""
+    c = tuple(room.center)
+    if c in ok:
+        return c
+    inner = [(x, y) for y in range(room.y, room.y + room.height)
+             for x in range(room.x, room.x + room.width) if (x, y) in ok]
+    if not inner:
+        return None
+    return min(inner, key=lambda t: (max(abs(t[0] - c[0]), abs(t[1] - c[1])), t))
+
+
+def _passage_stops(dungeon, ok, rooms) -> list:
+    """A maze's passages, one stop in each MAZE_BLOCK square that holds
+    passage (walkable ground outside every room), or nothing on a floor of
+    rooms and corridors (MAZE_ROOM_SHARE)."""
+    in_room = set()
+    for r in rooms:
+        for y in range(r.y, r.y + r.height):
+            for x in range(r.x, r.x + r.width):
+                if (x, y) in ok:
+                    in_room.add((x, y))
+    if not ok or len(in_room) >= MAZE_ROOM_SHARE * len(ok):
+        return []
+    blocks: dict = {}
+    for t in ok:
+        if t not in in_room:
+            blocks.setdefault((t[0] // MAZE_BLOCK, t[1] // MAZE_BLOCK), []).append(t)
+    half = MAZE_BLOCK // 2
+    out = []
+    for (bx, by), tiles in sorted(blocks.items()):
+        c = (bx * MAZE_BLOCK + half, by * MAZE_BLOCK + half)
+        out.append(min(tiles, key=lambda t: (abs(t[0] - c[0]) + abs(t[1] - c[1]), t)))
+    return out
+
+
 def explore_tour(dungeon) -> int:
     """Tiles walked in a full explore of this floor: from the up stair, the
     nearest room not yet seen each time, every room, then the down stair.
-    Worked out once and kept on the floor."""
+    On a maze (MAZE_ROOM_SHARE) the walk reaches every stretch of its
+    passages as well: its few clearings alone gave a maze floor a tour of
+    20 tiles, and two minutes' grace in a maze of 1,900. Worked out once and
+    kept on the floor."""
     have = dungeon.__dict__.get('_explore_tour')
     if have is not None:
         return int(have)
@@ -100,7 +151,8 @@ def explore_tour(dungeon) -> int:
             elif t == STAIRS_DOWN and down is None:
                 down = (x, y)
     rooms = list(getattr(dungeon, 'rooms', None) or ())
-    todo = [tuple(r.center) for r in rooms if tuple(r.center) in ok]
+    todo = [s for s in (_room_stop(r, ok) for r in rooms) if s is not None]
+    todo += [s for s in _passage_stops(dungeon, ok, rooms) if s not in todo]
     cur = up or (todo[0] if todo else None)
     total = 0
     if cur is not None:

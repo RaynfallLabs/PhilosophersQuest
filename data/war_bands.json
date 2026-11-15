@@ -569,5 +569,12 @@
     "shooter": "{n} archers",
     "caster": "{n} casters",
     "healer": "{n} healers"
+  },
+  "_role_names_one": "A role with one member is named in the singular: 'one archer', never 'one archers' (war_bands.roster_text).",
+  "role_names_one": {
+    "guard": "one fighter",
+    "shooter": "one archer",
+    "caster": "one caster",
+    "healer": "one healer"
   }
 }

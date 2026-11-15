@@ -332,6 +332,21 @@ class LevelManager:
                     return esc
         return None
 
+    def _carry_mini_boss(self, mid: str, level_num: int):
+        """A planned mini-boss that could not be set down on ``level_num``
+        is planned instead on the next floor not yet made, within five,
+        that holds no gate boss, seal demon or other planned mini-boss.
+        Returns that floor, or None (then he is lost, as before)."""
+        taken = (set(_BOSS_LEVELS) | set(self._SEAL_DEMON_LEVELS)
+                 | set(self._planned_mini_bosses) | set(self._saved))
+        for target in range(level_num + 1, min(level_num + 6, 100)):
+            if target not in taken:
+                if self._planned_mini_bosses.get(level_num) == mid:
+                    del self._planned_mini_bosses[level_num]
+                self._planned_mini_bosses[target] = mid
+                return target
+        return None
+
     def _try_spawn_mini_boss(self, dungeon, monsters: list, level_num: int):
         """Place this floor's planned mini-boss (if any). Pre-rolled at run start."""
         import random as _rng
@@ -399,6 +414,10 @@ class LevelManager:
             if spots:
                 spawn_pos = _rng.choice(spots)
         if spawn_pos is None:
+            # Nowhere he fits: a big body on a maze floor whose clearings the
+            # floor's own monsters fill (Surtur on 90 was lost for the run in
+            # about one run in fourteen). He comes a floor or two later.
+            self._carry_mini_boss(mid, level_num)
             return
 
         try:

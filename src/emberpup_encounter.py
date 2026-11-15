@@ -255,6 +255,11 @@ class EmberpupMixin:
         taken = [_room_of(self.dungeon.rooms, m.x, m.y)
                  for m in self.monsters if is_wearer(m)]
         rooms = [r for r in rooms if r not in taken] or rooms
+        # Nor in a war-band's camp (war_bands.camp_tiles): three visits to
+        # feed him meant three fights through the band.
+        import war_bands
+        rooms = war_bands.outside_camp(self.dungeon, rooms)
+        occupied |= war_bands.camp_tiles(self.dungeon)
         spot = None
         for room in random.sample(rooms, min(len(rooms), 5)):
             tiles = list(room.inner_tiles())
@@ -738,13 +743,16 @@ class BloomleafMixin:
         stall_rooms |= {id(r) for m in self.monsters
                         if getattr(m, 'alive', True) and _is_road_person(m)
                         for r in [_room_of(rooms, m.x, m.y)] if r is not None}
+        # Nor a war-band's camp (war_bands.camp_tiles): his room is his own.
+        import war_bands
+        camp = war_bands.camp_tiles(self.dungeon)
         picks = [r for r in rooms if id(r) not in pup_rooms and id(r) not in stall_rooms
-                 and r is not here and r is not start]
+                 and r is not here and r is not start and (r.x, r.y) not in camp]
         if not picks:
             picks = [r for r in rooms if id(r) not in pup_rooms and r is not here]
         rng.shuffle(picks)
         picks.sort(key=lambda r: -(max(0, r.width - 2) * max(0, r.height - 2) >= 9))
-        occupied = all_occupied_tiles(self.monsters) | self._occupants()
+        occupied = all_occupied_tiles(self.monsters) | self._occupants() | camp
         spot, home = None, None
         for room in picks:
             tiles = [t for t in room.inner_tiles()
