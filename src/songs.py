@@ -1,14 +1,21 @@
-"""Songs a dish can play: Brandon's own, as A Man Before a King (3.5.2).
+"""Songs the hero can play: Brandon's own, as A Man Before a King (3.5.2).
 
-Cooking a dish whose recipe names a ``song`` (data/items/recipes.json) plays
-that song once, in place of the soundtrack. Its power lasts exactly as long
-as the song does, timed in real seconds, not turns: while it plays, every
-blow and spell on the hero does ``damage_taken`` of its damage. Then the
-soundtrack comes back and the power is gone.
+A song plays once, in place of the soundtrack, and its power lasts exactly
+as long as the song does, timed in real seconds, not turns. Then the
+soundtrack comes back and the power is gone. Two play now:
 
-The first is "Caviar and Tater Tots": caviar and tater tots are rare plain
-foods, good to eat as they are, and cooked together they make the dish that
-plays it. Robyn starts with one of each.
+* "Caviar and Tater Tots", from a dish: caviar and tater tots are rare
+  plain foods, good to eat as they are, and cooked together (a recipe's
+  ``song``) they make the dish that plays it. While it plays every blow and
+  spell on the hero does ``damage_taken`` of its damage. Robyn starts with
+  one of each.
+* "So Then I Was Like...", from a power: a hundred maths answers right in a
+  row in one run earns the power Math is Cool (quirk_system), ready every
+  ``cooldown`` turns. While it plays every right answer in a fight counts as
+  ``chain_mult`` links (combat.effective_chain).
+
+One song plays at a time: a power is not used while another song plays
+(game_menus), and the dish is not cooked then (the cook menu).
 
 The song's state lives on the hero (``player.song_playing``: which song,
 seconds left, muted by F5 or not), so a save made mid-song carries on where
@@ -83,6 +90,13 @@ def begin(player, sid: str) -> list:
     return lines(sid, 'start')
 
 
+def wait_line(player) -> str:
+    """Said when a second song would start over one still playing."""
+    st = active(player)
+    title = (song(st['id']) or {}).get('title', 'The song') if st else 'The song'
+    return f'"{title}" is still playing. One song at a time: wait for it to end.'
+
+
 def elapsed(player) -> float:
     """Seconds of the song already played (where the audio picks up)."""
     st = active(player)
@@ -110,6 +124,29 @@ def end(player) -> list:
     if not isinstance(st, dict):
         return []
     return lines(st.get('id'), 'end')
+
+
+def chain_mult(player) -> int:
+    """How many links each right answer of a fight's maths chain counts for
+    while a song plays (1 with none)."""
+    st = active(player)
+    if st is None:
+        return 1
+    return max(1, int((song(st['id']) or {}).get('chain_mult', 1) or 1))
+
+
+def power_of(sid: str) -> dict:
+    """The power that plays a song: {'id', 'streak', 'cooldown'} ({} for a
+    dish's song)."""
+    return dict((song(sid) or {}).get('power') or {})
+
+
+def song_for_power(pid: str) -> str | None:
+    """The song a power plays, or None."""
+    for sid, s in (data().get('songs') or {}).items():
+        if (s.get('power') or {}).get('id') == pid:
+            return sid
+    return None
 
 
 def damage_mult(player) -> float:

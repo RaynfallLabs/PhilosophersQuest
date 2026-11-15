@@ -1060,6 +1060,14 @@ def effective_chain(player, monster, weapon, score: int, consume: bool = True,
     saves, so a saved wrong answer is a light hit (chain 1) and no more.
     Only those saves turn a 0 into a 1."""
     chain = score
+    # Math is Cool (songs.py): while its song plays, every right answer is
+    # two links. Only the answers; the head starts below are added once.
+    if score >= 1:
+        try:
+            import songs as _songs
+            chain = score * _songs.chain_mult(player)
+        except ImportError:
+            pass
 
     # Cow King's Horns (or any armor with chain_bonus): free chain head start
     # Only on an attack that lands: added to a chain of 0 it turned every

@@ -323,7 +323,9 @@ earns the secret achievement Caviar and Tater Tots.
 
 How the song runs (`game_songs.SongsMixin._song_frame`, every frame; `music.play_song` /
 `end_song`): its clock is on the hero (`player.song_playing`: id, seconds left, muted), so a save
-made mid-song plays on from where it was. It plays even with the music off; F5 mid-song mutes it
+made mid-song plays on from where it was. One song plays at a time: the dish is not cooked while
+another song plays (the power Math is Cool plays one too: `docs/systems/progression.md`). It plays
+even with the music off; F5 mid-song mutes it
 or brings it back (and sets the music to match), and its power keeps its time either way. A
 dance's beat (`music.hold`) pauses the song and its clock. A fall ends it; so does the run's end
 (the title screen hands the stream back to the soundtrack).

@@ -400,7 +400,7 @@ See [quests_mysteries](quests_mysteries.md) for the twelve mystery payouts and `
 
 ## Active powers (quirk-granted V-menu entries)
 
-26 quirks grant an entry on the V-menu via `_award_power` + `_ACTIVE_POWER_DEFS`. Shape:
+27 quirks grant an entry on the V-menu via `_award_power` + `_ACTIVE_POWER_DEFS`. Shape:
 
 ```python
 _ACTIVE_POWER_DEFS[id] = {
@@ -443,10 +443,25 @@ _ACTIVE_POWER_DEFS[id] = {
 | `reality_anchor`     | 5 turns confused+hallucinating simultaneously             | x2           | Clear all debuffs                   |
 | `runic_armor`        | 10 turns with fire+cold+shock resists all active          | x2           | Fire + Cold + Shock defenses 10t    |
 | `astral_form`        | 100 turns invisible                                       | x2           | Levitate + Invisible + Phase 8t     |
+| `math_is_cool`       | 100 math right in a row in one run (3.5.2)                | CD 5,000t    | Plays "So Then I Was Like...": chain x2 while it plays |
 
 Dispatch for the V-menu "quirk power" branch lives in `game_menus.py::_activate_power`. Each pid routes to a block of `pl.add_effect(...)` calls plus a flavor `add_message`.
 
 The cooldown decrementer is `QuirkSystem.tick_powers()` → called once per `advance_turn`.
+
+**Math is Cool (3.5.2).** Brandon's song "So Then I Was Like..." (as A Man Before a King). The
+run's math streak (`quirk_progress['math_streak']`) counts math answers right in a row; a wrong
+answer breaks it, the clock running out does not (that is how every fight's chain ends), and
+other subjects neither count nor break it. At 100 (`data/songs.json` `power.streak`)
+`_award_power` gives the power, ready at once, and its `trait` event earns the secret achievement
+So Then I Was Like... the first time. Used from the V menu, it plays the song once in place of
+the soundtrack (`songs.begin`; `game_songs.SongsMixin` runs it, as the dish's song): while it
+plays every right answer in a fight counts as two links (`songs.chain_mult` in
+`combat.effective_chain`; head starts are added once, a miss is still a miss), and the sidebar
+shows "Math is Cool 2:40". Cooldown 5,000 turns (`power.cooldown`). One song at a time: the power
+is not used, and its cooldown not spent, while another song plays, and the Caviar and Tater
+Tots dish waits too (`songs.wait_line`). See `docs/systems/food_system.md` §5.6 for how a song
+runs (F5, a dance's hold, saves).
 
 ## Hero specials — the 19 active abilities + `_DISPATCH`
 

@@ -3738,6 +3738,30 @@
     "recipe",
     "eat"
    ]
+  },
+  {
+   "id": "so_then_i_was_like",
+   "name": "So Then I Was Like...",
+   "category": "secrets",
+   "rarity": "epic",
+   "hint": "A Man Before a King told his daughter math was cool. She did not believe him.",
+   "unlocked_text": "Newton and Leibniz, Galois writing till dawn, Wiles in his attic. Math isn't numbers, it's blood, sweat and tears. Math is cool.",
+   "code_word": "MATHISCOOL",
+   "art": "so_then_i_was_like",
+   "trigger": {
+    "event": "trait",
+    "where": {
+     "trait": "math_is_cool"
+    }
+   },
+   "spoiler_words": [
+    "hundred",
+    "row",
+    "streak",
+    "power",
+    "chain",
+    "answer"
+   ]
   }
  ]
 }
