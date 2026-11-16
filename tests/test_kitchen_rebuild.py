@@ -322,14 +322,21 @@ def test_a_feast_never_gives_the_resistance_its_trophy_already_gives():
     assert p.status_effects['fire_resist'] == -1 and p.status_effects[res] == -1
 
 
-def test_a_legendary_stat_point_respects_the_lifetime_cap():
+def test_a_legendary_stat_point_respects_its_tiers_cap():
     feast = kitchen.recipe('feast_29')        # First Seal Wrath Feast (STR)
+    tier = kitchen.dish_tier(feast)
     p = _player(deepest=1)
-    cap = p.cooking_stat_softcap('STR')
+    cap = p.cooking_stat_softcap('STR', tier)
     p.cooking_stat_gained['STR'] = cap
     before = p.STR
     kitchen.apply_dish(p, feast)
     assert p.STR == before                    # at the cap: neither lesson nor feast
+    # One point of room: the lesson takes it, the feast's own point nothing.
+    q = _player(deepest=1)
+    q.cooking_stat_gained['STR'] = cap - 1
+    s0 = q.STR
+    kitchen.apply_dish(q, feast)
+    assert q.STR == s0 + 1 and q.cooking_stat_gained['STR'] == cap
 
 
 def test_a_rich_stat_dish_teaches_a_whole_point_once_a_floor():
@@ -349,15 +356,54 @@ def test_a_rich_stat_dish_teaches_a_whole_point_once_a_floor():
     assert getattr(p, stat) == before + 2
 
 
-def test_a_single_stat_dish_is_half_a_point():
+def test_a_single_stat_dish_is_a_whole_point():
+    """One dish = one point (Brandon, 2026-11-16), a single as much as a
+    rich dish: what a dish's depth decides is how far it can teach."""
     single = kitchen.recipe('cook_cobra')
     p = _player(deepest=20)
     before = p.DEX
     kitchen.apply_dish(p, single)
-    assert p.DEX == before and p.cook_stat_meals['DEX'] == 1
+    assert p.DEX == before + 1
     p.reset_floor_cook_caps()
     kitchen.apply_dish(p, single)
-    assert p.DEX == before + 1
+    assert p.DEX == before + 2
+
+
+def test_a_shallow_stat_dish_stops_at_its_tiers_cap_and_says_why():
+    """A tier-1 dish teaches a stat up to +8 and no further, however deep
+    the hero is; a deeper dish of the same stat teaches on."""
+    shallow = next(r for r in kitchen.book() if kitchen.dish_stat(r) == 'STR'
+                   and kitchen.dish_tier(r) == 1 and not r.get('legendary') and not kitchen.trophy_powers(r))
+    deeper = next(r for r in kitchen.book() if kitchen.dish_stat(r) == 'STR'
+                  and kitchen.dish_tier(r) == 2 and not r.get('legendary') and not kitchen.trophy_powers(r))
+    p = _player(deepest=45)
+    p.cooking_stat_gained['STR'] = 8
+    s0 = p.STR
+    out = kitchen.dish_outcome(shallow)
+    assert kitchen._stat_line(p, out) == 'STR has learned all a dish this simple can teach'
+    assert kitchen.dish_effects(p, shallow)[1] == \
+        'Tier 1 dishes teach STR up to +8 (now +8): deeper creatures teach more'
+    msgs = kitchen.apply_dish(p, shallow)
+    assert p.STR == s0
+    assert 'Your Strength has learned all a dish this simple can teach. Deeper creatures teach more.' in msgs
+    assert not kitchen._would_teach(p, shallow) and kitchen._would_teach(p, deeper)
+    kitchen.apply_dish(p, deeper)
+    assert p.STR == s0 + 1
+
+
+def test_the_altar_counts_against_a_dishs_tier_cap():
+    """The altar's rededication counts against the same cap as a dish:
+    points an altar moved into a stat leave a shallow dish less room."""
+    import rededication as R
+    p = _player(deepest=45)                   # the altar goes by the deepest band (tier 3)
+    p.stats_at_start = {s: getattr(p, s) for s in R.STATS}
+    p.apply_stat_bonus('DEX', 2)
+    p.cooking_stat_gained['DEX'] = 2
+    p.cooking_stat_gained['STR'] = 7
+    assert R.take_room(p, 'STR') == 18 - 7
+    R.move(p, 'DEX', 'STR', 1)
+    assert p.cut_stat_block('STR', 1) == 'tier'          # 7 cooked + 1 from the altar = 8
+    assert R.take_room(p, 'STR') == 18 - 8
 
 
 def test_a_special_dish_lasts_past_the_usual_sixty_turns():

@@ -635,54 +635,65 @@ class Player:
         floor = max(1, min(100, int(getattr(self, 'deepest_floor_reached', 1) or 1)))
         return max(self.COOKING_SOFTCAP_MIN, self.COOKING_SOFTCAP_PER_FLOOR * floor)
 
-    # Most a single stat can ever gain from food: 3, plus 1 for every four
-    # floors of depth (5 at floor 8, 8 at 20, 13 at 40, 28 at 100). A run
-    # feeds about fifty points in all (see feed_cut_stat), so that is room for
-    # one real speciality and a second interest, not six maxed stats. It was
-    # 2 + depth/5, which held a cook who fed one stat to a point every five
-    # floors after floor 4 while random rings lent more
-    # (BALANCE_REVIEW_LOOT_AND_FOOD_2026_10_26, F3). Worn rings of one stat
-    # no longer add up (sync_worn_stats), so the build is the cook's choice.
-    COOK_STAT_CAP_BASE = 3
-    COOK_STAT_CAP_FLOORS = 4
-    # Proper meals of a stat's cut it takes to raise that stat by one. Only
-    # the first such meal on a floor counts, so a point takes two floors.
-    # (One point a floor was measured: a hundred points by the end, and a
-    # prepared character that could not lose.)
-    COOK_MEALS_PER_STAT_POINT = 2
+    # You are what you eat (Brandon, 2026-11-16: "Cooking is basically our
+    # experience and leveling system"). A stat dish cooked right teaches its
+    # stat one whole point, the floor's one stat lesson (PER_FLOOR_STAT_CAP).
+    # It was two lessons a point, which he found hard to follow.
+    #
+    # How high a dish can raise a stat is set by the dish's TIER (the band of
+    # its deepest ingredient, kitchen.dish_tier): data/cooking_rules.json
+    # 'stat' cap_by_tier, half for Wisdom. A simple dish of shallow creatures
+    # teaches only so far; deeper creatures teach more ("putting caps on how
+    # high a given dish can raise a stat makes deep and complex cooking way
+    # more important... stops early spamming"). The table keeps the old
+    # depth rule's value at the bottom of each band (3 + floor / 4: 8 at
+    # floor 20, 13, 18, 23, 28 at floor 100), so its ceiling is the same.
+    # An altar's rededication and a rare food's own gift, which are not
+    # dishes, go by the band of the deepest floor reached.
 
-    def feed_cut_stat(self, stat: str, lessons: int = 1) -> tuple[int, int]:
-        """A stat dish cooked right: the floor's one lesson in `stat`.
-        Returns (points gained, meals now banked toward the next point);
-        (0, -1) if it taught nothing (this floor's lesson is used, or the
-        stat is at its cap). A rich dish (kitchen: worth 2.5 or more, or a
-        legendary feast) is `lessons` 2: a whole point at once, still the
-        floor's one lesson and still under the cap."""
-        if stat not in self.cooking_stat_gained:
-            return 0, -1
-        if int(getattr(self, '_cook_stat_gain_this_floor', 0)) >= self.PER_FLOOR_STAT_CAP:
-            return 0, -1
-        if self.food_taught(stat) >= self.cooking_stat_softcap(stat):
-            return 0, -1
+    def stat_cap_for_tier(self, stat: str | None, tier: int) -> int:
+        """The most food and altars together may raise ``stat`` with a dish
+        of ``tier`` (1-5): cooking_rules.json 'stat' cap_by_tier, or
+        wis_cap_by_tier for Wisdom (half: the dungeon already teaches a point
+        every three floors, and every point of it is a second on the clock)."""
+        import kitchen
+        rules = kitchen.rules().get('stat', {}) or {}
+        key = 'wis_cap_by_tier' if stat == 'WIS' else 'cap_by_tier'
+        table = rules.get(key) or ([4, 6, 9, 11, 14] if stat == 'WIS' else [8, 13, 18, 23, 28])
+        t = max(1, min(len(table), int(tier or 1)))
+        return int(table[t - 1])
+
+    def depth_tier(self) -> int:
+        """The band (1-5) of the deepest floor reached: the tier an altar's
+        rededication and a rare food's own gift teach by."""
+        import kitchen
+        floor = max(1, min(100, int(getattr(self, 'deepest_floor_reached', 1) or 1)))
+        return kitchen.band_of(floor)
+
+    def feed_cut_stat(self, stat: str, tier: int = 1) -> int:
+        """A stat dish of ``tier`` cooked right: the floor's one lesson in
+        ``stat``, one whole point. Returns the points gained (1, or 0 when
+        it taught nothing: this floor's lesson is used, or ``stat`` has
+        learned all a dish of this tier can teach, cut_stat_block)."""
+        if self.cut_stat_block(stat, tier) is not None:
+            return 0
         self._cook_stat_gain_this_floor = int(
             getattr(self, '_cook_stat_gain_this_floor', 0)) + 1
-        if not isinstance(getattr(self, 'cook_stat_meals', None), dict):
-            self.cook_stat_meals = {}
-        banked = int(self.cook_stat_meals.get(stat, 0)) + max(1, int(lessons))
-        points, banked = divmod(banked, self.COOK_MEALS_PER_STAT_POINT)
-        self.cook_stat_meals[stat] = banked
-        if points <= 0:
-            return 0, banked
-        return self.apply_cooking_stat_bonus(stat, points), banked
+        return self.apply_cooking_stat_bonus(stat, 1, tier=tier)
 
-    def cut_stat_block(self, stat: str) -> str | None:
-        """Why a proper meal of `stat` would teach nothing now: 'floor' (this
-        floor's lesson is used), 'cap' (the stat has learned all food can
-        teach at this depth), or None (it would teach)."""
+    def cut_stat_block(self, stat: str, tier: int | None = None) -> str | None:
+        """Why a stat dish of ``tier`` (None: the depth's band) would teach
+        nothing now: 'cap' (the stat has learned all food can ever teach
+        it), 'tier' (all a dish of this tier can teach: a deeper one can
+        teach more), 'floor' (this floor's lesson is used), or None (it
+        would teach)."""
         if stat not in self.cooking_stat_gained:
             return 'cap'
-        if self.food_taught(stat) >= self.cooking_stat_softcap(stat):
+        taught = self.food_taught(stat)
+        if taught >= self.stat_cap_for_tier(stat, 5):
             return 'cap'
+        if taught >= self.cooking_stat_softcap(stat, tier):
+            return 'tier'
         if int(getattr(self, '_cook_stat_gain_this_floor', 0)) >= self.PER_FLOOR_STAT_CAP:
             return 'floor'
         return None
@@ -696,13 +707,14 @@ class Player:
         import rededication
         return rededication.taught(self, stat)
 
-    def cooking_stat_softcap(self, stat: str | None = None) -> int:
-        """Per-stat lifetime cap on cooking gains at the deepest floor reached.
-        Wisdom's is half: the dungeon already teaches a point every three
-        floors, and every point of it is a second on the clock."""
-        floor = max(1, min(100, int(getattr(self, 'deepest_floor_reached', 1) or 1)))
-        cap = self.COOK_STAT_CAP_BASE + floor // self.COOK_STAT_CAP_FLOORS
-        return max(1, cap // 2) if stat == 'WIS' else cap
+    def cooking_stat_softcap(self, stat: str | None = None, tier: int | None = None) -> int:
+        """How far food and altars may raise ``stat``: the cap of a dish of
+        ``tier``, or (``tier`` None) of the band of the deepest floor
+        reached, for an altar's rededication and a rare food's own gift.
+        Wisdom's is half."""
+        if tier is None:
+            tier = self.depth_tier()
+        return self.stat_cap_for_tier(stat, tier)
 
     # ----- Harvest+Cook redesign 2026-05-31 -----
     # Hard per-floor caps for cooking stat + HP gains. Both reset on
@@ -711,14 +723,15 @@ class Player:
     PER_FLOOR_STAT_CAP = 1     # +1 stat total across all stats per floor
     PER_FLOOR_HP_CAP   = 5     # +5 max HP per floor
 
-    def try_apply_cook_stat_gain(self, stat: str, amount: int, bypass: bool = False) -> int:
+    def try_apply_cook_stat_gain(self, stat: str, amount: int, bypass: bool = False,
+                                 tier: int | None = None) -> int:
         """Apply a cooking stat gain under the per-floor cap. Returns the
         amount that actually landed (may be 0 if cap is already used).
 
-        Trophy recipes pass bypass=True to skip the floor cap; lifetime
-        per-stat softcap still applies. The per-floor counter reserves up
-        front based on the clamped request, so a lifetime-softcap shrink
-        doesn't refund the slot.
+        Trophy recipes pass bypass=True to skip the floor cap; the cap of a
+        dish of ``tier`` still applies (cooking_stat_softcap). The per-floor
+        counter reserves up front based on the clamped request, so a cap
+        shrinking the gain doesn't refund the slot.
         """
         if amount <= 0 or stat not in self.cooking_stat_gained:
             return 0
@@ -730,7 +743,7 @@ class Player:
             amount = min(amount, remaining)
             self._cook_stat_gain_this_floor = int(
                 getattr(self, '_cook_stat_gain_this_floor', 0)) + amount
-        applied = self.apply_cooking_stat_bonus(stat, amount)
+        applied = self.apply_cooking_stat_bonus(stat, amount, tier=tier)
         return applied
 
     def try_apply_cook_hp_gain(self, amount: int, bypass: bool = False) -> int:
@@ -770,17 +783,17 @@ class Player:
         self._cook_hp_gain_this_floor = 0
         self._con_drained_this_floor = 0      # monster.DRAIN_CON_PER_FLOOR
 
-    def apply_cooking_stat_bonus(self, stat: str, amount: int) -> int:
-        """Apply a cooked-food stat bonus with diminishing returns + per-stat
-        floor-derived softcap. Returns the actual amount applied (may be 0).
+    def apply_cooking_stat_bonus(self, stat: str, amount: int, tier: int | None = None) -> int:
+        """Apply a food stat bonus under the stat's cap for a dish of
+        ``tier`` (None: the depth's band, for a rare food's own gift).
+        Returns the actual amount applied (may be 0).
 
-        Below softcap: full bonus. Approaching softcap: scaled by remaining
-        headroom. At/above softcap: 0 (hard cap, unlike HP which floors at 1
-        — stats are too impactful to allow infinite drift).
+        Below the cap: the full bonus, up to the room left. At or above it:
+        0 (a hard cap: stats are too impactful to allow infinite drift).
         """
         if stat not in self.cooking_stat_gained or amount <= 0:
             return 0
-        softcap = self.cooking_stat_softcap(stat)
+        softcap = self.cooking_stat_softcap(stat, tier)
         gained = self.food_taught(stat)          # an altar's points count too
         if gained >= softcap:
             return 0

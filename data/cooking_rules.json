@@ -39,8 +39,9 @@
     "least": [4, 6, 8, 10, 12]
   },
   "stat": {
-    "_doc": "The Stat tab: the floor's one stat lesson (Player.feed_cut_stat; two lessons make a point). A dish worth full_point_worth or more teaches the whole point at once: two lessons, still the floor's one lesson, still under the lifetime cap.",
-    "full_point_worth": 2.5
+    "_doc": "The Stat tab: a stat dish cooked right teaches its stat one whole point, the floor's one stat lesson (Player.feed_cut_stat). How far a dish can raise a stat is set by its TIER (Brandon, 2026-11-16: caps by dish tier 'stop early spamming' and make 'deep and complex cooking way more important'): food and the altar's rededication together may not take a stat past cap_by_tier[tier - 1] points above where it began, or wis_cap_by_tier for Wisdom (half: the dungeon teaches it a point every three floors, and every point is a second on the clock). The table is the old depth rule (3 + floor / 4) at the bottom of each band, so tier 5 keeps its ceiling of 28 (Wisdom 14). An altar's rededication and a rare food's own gift go by the band of the deepest floor reached.",
+    "cap_by_tier": [8, 13, 18, 23, 28],
+    "wis_cap_by_tier": [4, 6, 9, 11, 14]
   },
   "special": {
     "_doc": "The Special tab: a timed power for turns (times worth), at most the power's max_turns. A ward (save_guard_*) is stronger with worth: +1, +2 from ward_worth[1], +3 from ward_worth[2].",
@@ -72,7 +73,7 @@
     }
   },
   "legendary": {
-    "_doc": "A legendary feast (five ingredients, deep, often a boss trophy) gives its main benefit times mult, and a permanent bonus by its tab: hp max_hp past the floor's cap; mp max_mp; stat stat_points past the floor's lesson; special its resistance for good. None passes a lifetime cap: max HP from cooking (Player.cooking_softcap), each stat's food cap (Player.cooking_stat_softcap), and max MP from feasts (max_mp_cap_per_floor of the deepest floor reached, at least max_mp_cap_min). A trophy's dish gives its trophy's own permanent power, and so does a feast that holds the trophy.",
+    "_doc": "A legendary feast (five ingredients, deep, often a boss trophy) gives its main benefit times mult, and a permanent bonus by its tab: hp max_hp past the floor's cap; mp max_mp; stat stat_points past the floor's lesson; special its resistance for good. None passes a lifetime cap: max HP from cooking (Player.cooking_softcap), the stat's cap for the feast's tier (Player.cooking_stat_softcap, stat.cap_by_tier), and max MP from feasts (max_mp_cap_per_floor of the deepest floor reached, at least max_mp_cap_min). A trophy's dish gives its trophy's own permanent power, and so does a feast that holds the trophy.",
     "mult": 1.5,
     "max_hp": [4, 4, 4, 6, 8],
     "max_mp": [2, 2, 2, 3, 4],

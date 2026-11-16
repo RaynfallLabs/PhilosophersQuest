@@ -566,8 +566,9 @@ def _apply_bonus(player, recipe) -> list[str]:
     golden apple, ambrosia. A rare food is its own gift, outside the one
     cooking lesson a floor (it took that lesson, so tea after a meal did
     nothing, and ambrosia's "all stats" raised one stat). Each stat still
-    stops at what food can teach it at this depth (cooking_stat_softcap,
-    shared with cooking): BALANCE_REVIEW_LOOT_AND_FOOD_2026_10_26, F1."""
+    stops at what food can teach it at this depth: the cap of a dish of the
+    band of the deepest floor reached (cooking_stat_softcap with no tier,
+    the cap a stat dish of that band has): BALANCE_REVIEW_LOOT_AND_FOOD_2026_10_26, F1."""
     bonus_type   = recipe.get('bonus_type', 'none')
     bonus_amount = int(recipe.get('bonus_amount', 0))
     messages     = []

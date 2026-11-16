@@ -37,7 +37,7 @@ mode, a T1-T5 stack of parts), the potency formulas, the Single tab.
 | `src/main.py` | `Game._harvest`, `Game._cook_compound` (the quirk callback), `Game._cook_item` (unreached safety net), `_outcome_bonus_category` (Circe), `_migrate_legacy_ingredients` (old saves), the encyclopedia's Recipes page. |
 | `src/game_menus.py` / `src/game_render.py` | The cook menu (`_open_cook_menu`, `_cook_menu_input`, `_draw_cook_menu`): a tab per main benefit, each with Ready to Cook, Building Toward and Legendary Feasts, the chosen dish's picture large (`ui.md` §13). The corpse dossier's "Harvest: X" line. |
 | `src/cook_menu.py` | Pure: the cook menu's words (why it opened where, a row's chip and second line, what to do about a missing part, the empty tab's line) and the list window. |
-| `src/player.py` | The caps: `feed_cut_stat(stat, lessons)` (the floor's stat lesson), `cut_stat_block`, `try_apply_cook_hp_gain`, `try_apply_cook_stat_gain`, `cooking_softcap`, `cooking_stat_softcap`, `food_taught`, `reset_floor_cook_caps`; `cooking_mp_gained` (max MP from feasts, read with `getattr`). |
+| `src/player.py` | The caps: `feed_cut_stat(stat, tier)` (the floor's stat lesson, a whole point), `cut_stat_block(stat, tier)`, `stat_cap_for_tier`, `depth_tier`, `try_apply_cook_hp_gain`, `try_apply_cook_stat_gain`, `cooking_softcap`, `cooking_stat_softcap`, `food_taught`, `reset_floor_cook_caps`; `cooking_mp_gained` (max MP from feasts, read with `getattr`). |
 | `src/status_effects.py` | `apply_effect(..., cap=)`: a meal's power may run past the usual 60 turns, up to its `max_turns`. |
 | `data/items/ingredient.json` | Every ingredient (§3). Built. |
 | `data/items/harvest_map.json` | Monster -> ingredient; retired ids -> kept ids (§3.2). Built. |
@@ -243,7 +243,7 @@ These keep a single dish of a tier near the old tier bands, so the simulator's b
 | **HP** | Heals 18 / 22 / 26 / 30 / 34% of max HP (at most all of it), and +1 / 1 / 2 / 2 / 3 max HP on top of the 2 (inside the floor's cap). | Hurt, or building a tank. |
 | **SP** | 100 / 125 / 150 / 175 / 200 SP in place of the usual, and Sustained (hunger at half pace) for the same number of turns, at most 800. | Long floors, saving rations. |
 | **MP** | Restores 25 / 27 / 30 / 32 / 35% of max MP, or 4 / 6 / 8 / 10 / 12 MP if that is more (max MP is small while INT is low). | Casters, before a boss. |
-| **Stat** | The floor's stat lesson (`feed_cut_stat`): two lessons make a point. A dish of worth 2.5 or more teaches the whole point at once (two lessons), still the floor's one lesson, still under the lifetime cap (which counts the altar's points: `food_taught`). | The build. |
+| **Stat** | The floor's stat lesson (`feed_cut_stat`): one whole point. How far a dish can raise its stat is set by its tier (`cooking_rules.json` 'stat' `cap_by_tier` 8 / 13 / 18 / 23 / 28 points over the start, Wisdom `wis_cap_by_tier` 4 / 6 / 9 / 11 / 14), and the altar's points count against it (`food_taught`). | The build. |
 | **Special** | A timed power for 100 / 130 / 160 / 200 / 240 turns, at most the power's `max_turns` (Dark Vision 800, resistances 600, Haste 40, Shielded 60...). A ward (`save_guard_*`) is +1, +2 from worth 2, +3 from worth 3.5. | The fight ahead. |
 
 A meal's power runs past the usual 60-turn status cap (`apply_effect(..., cap=max_turns)`): the
@@ -257,8 +257,8 @@ On top of the 1.5x main benefit, by tab:
   (`cooking_softcap`, 4 a floor of depth).
 - **MP:** +2 / 2 / 2 / 3 / 4 max MP, inside the lifetime feast cap: a quarter of the deepest
   floor reached, at least 4 (`kitchen.feast_mp_cap`; `Player.cooking_mp_gained`).
-- **Stat:** the floor's lesson as a whole point, and +1 more past the lesson
-  (`try_apply_cook_stat_gain(bypass=True)`), inside the stat's lifetime cap.
+- **Stat:** the floor's lesson (a whole point), and +1 more past the lesson
+  (`try_apply_cook_stat_gain(bypass=True, tier=...)`), inside the cap of the feast's tier.
 - **Special:** the feast's resistance for good (its own power if a resistance, else one of its
   ingredients', else the fallback order), never one its trophy gives and never one the hero holds
   for good already (`kitchen.feast_resist_for`: Fafnir's Blood gives fire resistance, so Fafnir's
@@ -271,12 +271,15 @@ the trophy's own power (§6).
 ### 5.4 What the menu says (`kitchen.dish_effects`)
 
 Plain lines for THIS hero now, main benefit first: "+45 HP", "+3 Max HP", "+12 MP", "Teaches DEX
-(a full point)", "Dark Vision, 300 turns", "+4 Max MP for good", "+60 SP". A cap that would eat
-the benefit says so: "Max HP full this floor", "Max HP: all cooking can give at this depth" (the
-lifetime cap, `kitchen.max_hp_room` reads both), "DEX lesson used this floor", "DEX has learned all
-food can teach here", "Max MP: all feasts can give at this depth". A feast's For Good lines are held
-to the same lifetime caps ("+3 Max HP for good" when 3 is what is left; "No more STR for good at
-this depth"), so the menu never promises more than the meal gives.
++1" with "Tier 1 dishes teach DEX up to +8 (now +3)" under it, "Dark Vision, 300 turns", "+4 Max MP
+for good", "+60 SP". A cap that would eat the benefit says so: "Max HP full this floor", "Max HP:
+all cooking can give at this depth" (the lifetime cap, `kitchen.max_hp_room` reads both), "DEX
+lesson used this floor", "DEX has learned all a dish this simple can teach" (its tier's cap, with
+": deeper creatures teach more" on the limit line), "DEX has learned all food can teach" (the tier-5
+cap), "Max MP: all feasts can give at this depth". A feast's For Good lines are held to the same
+caps ("+3 Max HP for good" when 3 is what is left; "No more STR for good from a dish this deep"),
+so the menu never promises more than the meal gives. Cooked, a stat dish at its tier's cap says
+"Your Dexterity has learned all a dish this simple can teach. Deeper creatures teach more."
 
 ### 5.5 Cook to carry (`makes`, 2026-11-14)
 
@@ -446,7 +449,7 @@ deepest floor reached when it was harvested; a stack keeps the oldest (`Player.a
 
 - **Rations** (`eat_food`, `data/items/food.json`): their SP and HP, and a rare food's own stat
   gift (philosopher's tea, the golden apple, ambrosia: outside the floor's lesson, under the
-  lifetime cap).
+  cap of a dish of the deepest band reached, as an altar's rededication is).
 - **Raw** (`eat_raw`): `raw_sp` (10 for every monster part) or the `tier_role` map; monster parts
   are `edible_safe` (never poison); a foraged find can poison (30%) without poison resistance.
 
@@ -500,4 +503,5 @@ one tier and one tab, names say their kind, any renamed dish finds a true vessel
 | K1b | 2026-11-14 | **A book a run can cook** (§4.1). From the simulator's part frequencies (`part_freq.json`): 22 feasts swap their rare parts for common or banked early ones (names and themes kept), 90 multi-dishes keep one uncommon part, 113 new dishes give every rare part two dishes with common partners (686 dishes, 370 multi). The build checks the rules and that no dish shares an ingredient's name (Cave Bear Steak's dish is now Hibernation Bear Steak). | |
 | P1 | 2026-11-14 | **Cook to carry** (§5.5): a recipe's `makes` puts a food in the pack; the Starnut Tart (Starnut, bread, apple; Special tab) for the Mooble; learned dishes show under Building Toward. 687 dishes. |
 | S1 | 2026-11-15 | **A dish that plays a song** (§5.6): Caviar and Tater Tots, Brandon's song as A Man Before a King; caviar and tater tots, rare plain foods; half damage while the song plays; Robyn starts with both; a secret achievement. 694 dishes. |
+| SD | 2026-11-16 | **You are what you eat** (Brandon's rulings 1 and 2): one stat dish teaches one whole point, still one lesson a floor (two lessons a point, `COOK_MEALS_PER_STAT_POINT`, the banked meals `cook_stat_meals` and `full_point_worth` retired; an old save's half-point banked is dropped). A dish's tier caps how far it can raise a stat (`cap_by_tier`), replacing the cap that grew with the deepest floor (3 + floor / 4); the altar and rare foods go by the deepest band. |
 | KA | 2026-11-14 | **Dish pictures.** 134 kind pictures (20 kinds; vessel = tier, one colour cue = main benefit; stew and roast at every tier and tab) picked by `dish_art.py` from the name, and 36 feasts drawn one by one; the old cluster picker and `art_clusters.json` retired. |

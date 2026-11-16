@@ -11,8 +11,11 @@ the theology escalator chain (max 5):
     hero's own value: what worn rings, a heroism draught or Gawain's morning
     lend is not his to give);
   * **a stat is never raised past what food could teach it** at this depth
-    (Player.cooking_stat_softcap): points an altar gives count against the
-    same cap as points a meal gives. Wisdom's cap is half the others' (every
+    (Player.cooking_stat_softcap with no tier: the cap of a stat dish of the
+    band of the deepest floor reached, data/cooking_rules.json 'stat'):
+    points an altar gives count against the same cap as points a meal
+    gives, so a stat an altar has raised has that much less room for a
+    dish of any tier. Wisdom's cap is half the others' (every
     point of it is a second on the combat clock), so Wisdom keeps its half
     rate here too: an altar can never put more Wisdom on a hero than the
     kitchen could. Points moved are kept in ``Player.rededicated`` (net, by
@@ -113,8 +116,9 @@ def taught(player, stat: str) -> int:
 
 
 def take_room(player, stat: str) -> int:
-    """Points ``stat`` can take: up to food's cap at this depth (half for
-    Wisdom), less what food and altars have given it already."""
+    """Points ``stat`` can take: up to food's cap at this depth (the cap of
+    a stat dish of the deepest band reached; half for Wisdom), less what
+    food and altars have given it already."""
     try:
         cap = int(player.cooking_stat_softcap(stat))
     except Exception:

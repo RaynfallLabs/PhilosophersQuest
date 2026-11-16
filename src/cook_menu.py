@@ -28,7 +28,7 @@ TAB_BLURBS = {
     'hp': "HP dishes heal you now and add to your maximum HP.",
     'sp': "SP dishes fill the belly far past a ration, and slow your hunger for a long while.",
     'mp': "MP dishes give back mana: a caster's meal before a hard fight.",
-    'stat': "Stat dishes teach a stat: this floor's lesson, or a whole point from a rich dish.",
+    'stat': "Stat dishes teach a stat one point, one lesson a floor. Deeper creatures teach a stat further.",
     'special': "Special dishes lend a power for a while: night sight, a resistance, a ward.",
 }
 
@@ -77,9 +77,9 @@ def urgent(why: str) -> bool:
 
 def main_effect(row: dict) -> str:
     """The short main thing a dish does, for its chip: "+45 HP", "+150 SP",
-    "+12 MP", "DEX +1" (a whole point, or the meal that completes one),
-    "Teaches DEX" (half a point), "No DEX Lesson" (used or capped), a
-    timed power's name ("Dark Vision", "Body Ward +3")."""
+    "+12 MP", "DEX +1" (a stat dish's whole point), "No DEX Lesson" (this
+    floor's lesson used, or the stat has learned all a dish of this tier can
+    teach), a timed power's name ("Dark Vision", "Body Ward +3")."""
     rec = row['recipe']
     tab = kitchen.dish_tab(rec)
     first = (row.get('effects') or [''])[0]
@@ -87,9 +87,7 @@ def main_effect(row: dict) -> str:
         stat = kitchen.dish_stat(rec) or ''
         if not first.startswith('Teaches'):
             return f"No {stat} Lesson"
-        if 'full point' in first or 'completes' in first:
-            return f"{stat} +1"
-        return f"Teaches {stat}"
+        return f"{stat} +1"
     if kitchen.makes(rec):
         return "To Carry"                 # cooked to carry (the Starnut Tart)
     if kitchen.song_of(rec):
