@@ -472,6 +472,78 @@ def test_a_two_hander_and_the_shield(game):
     assert p.weapon is great and p.shield is None and shield in p.inventory
 
 
+def _sword_and_shield(game):
+    """A hero with a shortsword and a buckler on, a greatsword at his back."""
+    p = game.player
+    sword, great = _weapon(), _weapon('greatsword', 'iron')
+    _carry(game, sword)
+    game._equip_item(sword)
+    shield = items.instantiate_shield('buckler', 'oak')
+    kbh.learn(p, shield)
+    _carry(game, shield)
+    game._equip_item(shield)
+    _carry(game, great)
+    game._ready_weapon(great)
+    assert p.weapon is sword and p.shield is shield and p.readied_weapon is great
+    return sword, shield, great
+
+
+def test_the_shield_goes_back_on_when_the_one_hander_is_drawn(game):
+    """Brandon's play-test (2026-11-16): swapping to the two-hander and back
+    left the shield in the pack. Now it goes back on the arm, at its donning
+    time (a turn) on top of the swap's."""
+    p = game.player
+    sword, shield, great = _sword_and_shield(game)
+    t0 = game.turn_count
+    assert game._swap_weapons()
+    assert game.turn_count - t0 == 1
+    assert p.weapon is great and p.shield is None and shield in p.inventory
+    assert any('goes back on your arm' in t for t in _said(game, 6))
+    t0 = game.turn_count
+    assert game._swap_weapons()
+    assert p.weapon is sword and p.readied_weapon is great
+    assert p.shield is shield and shield not in p.inventory
+    assert game.turn_count - t0 == 2                 # the swap, then the buckler
+    assert any('reach for your' in t and '(2 turns)' in t for t in _said(game, 6))
+    # Round and round: it keeps working.
+    assert game._swap_weapons() and p.shield is None
+    assert game._swap_weapons() and p.shield is shield
+
+
+def test_the_kit_equip_puts_the_shield_back_too(game):
+    p = game.player
+    sword, shield, great = _sword_and_shield(game)
+    game._equip_item(great)                          # from the Kit, not S
+    assert p.weapon is great and p.shield is None
+    assert any('goes back on your arm' in t for t in _said(game, 6))
+    game._equip_item(sword)
+    assert p.weapon is sword and p.shield is shield
+
+
+def test_a_shield_dropped_or_replaced_is_not_brought_back(game):
+    p = game.player
+    sword, shield, great = _sword_and_shield(game)
+    assert game._swap_weapons()
+    game._do_drop_item(shield)
+    assert game._swap_weapons()
+    assert p.weapon is sword and p.shield is None
+    assert p.__dict__.get('_shield_slung') is None
+    # Another shield on while the two-hander is at the back: that one stays.
+    other = items.instantiate_shield('buckler', 'oak')
+    kbh.learn(p, other)
+    _carry(game, other)
+    game._equip_item(other)
+    assert p.shield is other
+    assert game._swap_weapons() and p.shield is None   # the greatsword sets it aside
+    assert game._swap_weapons() and p.shield is other
+
+
+def test_a_shield_from_an_old_save_has_nothing_to_bring_back(game):
+    p = game.player
+    p.__dict__.pop('_shield_slung', None)            # pickled before 2026-11-16
+    assert game._slung_shield() is None
+
+
 def test_the_readied_weapon_is_carried_and_not_drawn_once_dropped(game):
     import loadouts
     p = game.player
@@ -532,6 +604,41 @@ def test_a_saved_kit_goes_back_on_at_the_sum_of_its_turns(game):
     assert game.turn_count - t0 == 6
     assert _body(game) is plate and p.weapon is sword
     assert game._kit_plan(0)['already']
+
+
+def test_the_loadouts_screen_says_what_each_piece_takes(game):
+    """Brandon's play-test (2026-11-16): make it clear how long a change
+    takes, piece by piece: each piece that changes shows its turns (the
+    piece in its way coming off counted in), the rest show On Now."""
+    p = game.player
+    plate = items.instantiate_armor('plate', 'chain_steel')
+    sword = _weapon()
+    kbh.learn(p, plate)
+    _carry(game, plate)
+    game._equip_item(plate)
+    _carry(game, sword)
+    game._equip_item(sword)
+    game._kit_save(0)
+    leather = items.instantiate_armor('leather', 'leather')
+    kbh.learn(p, leather)
+    _carry(game, leather)
+    game._equip_item(leather)
+    rows = game._kit_rows(0)
+    assert ('Body', game._bare_name(plate), '6 turns') in rows    # leather off 1, plate on 5
+    assert ('Weapon', game._bare_name(sword), 'On now') in rows
+    plan = game._kit_plan(0)
+    assert game._kit_change_text(plan) == '1 piece changes: 6 turns in all.'
+    game._kit_confirm(0)
+    assert game.state == STATE_ASK
+    lines = game._ask_data['lines']
+    assert lines[0] == 'Changes: Body 6 turns.'
+    assert game._ask_data['options'][0][2] == 'Takes 6 turns in all.'
+    # Dropped: the screen says so in the piece's own row.
+    game.state = STATE_PLAYER
+    game._equip_item(_carry(game, _weapon('mace', 'iron')))     # the sword to the pack
+    assert ('Weapon', game._bare_name(sword), '1 turn') in game._kit_rows(0)
+    game._do_drop_item(sword)
+    assert ('Weapon', game._bare_name(sword), 'Not carried') in game._kit_rows(0)
 
 
 def test_a_kit_skips_what_is_missing_and_refuses_what_is_unknown(game):

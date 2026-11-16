@@ -11,7 +11,9 @@
     hostile coming into view or a blow landing stops it and asks "Keep
     dressing?". Until a piece is fully on, its slot is empty.
   * The weapon At Your Back (Player.readied_weapon): readied from the Kit
-    (R), swapped into the hand with S in one turn.
+    (R), swapped into the hand with S in one turn. A two-hander sends the
+    shield to the pack (remembered: Player._shield_slung); a one-hander
+    taken up again, by S or the Kit, puts it back on at its donning time.
   * Loadouts: three saved kits (Shift+E). Putting one on takes the sum of
     its pieces' turns; a piece not in the pack is skipped, a piece not
     known by hand is refused (it must be put on once first).
@@ -315,13 +317,47 @@ class DressingMixin:
             return False
         p.remove_from_inventory(item)
         if shield_before is not None and p.shield is None:
-            self.add_message(f"Your {self._bare_name(shield_before)} goes to your pack: "
-                             f"the {self._bare_name(item)} takes both hands.", 'info')
+            self._say_shield_slung(shield_before, item)
         _qs_eq = getattr(self, 'quirk_system', None)
         if _qs_eq:
             _qs_eq.on_item_equipped(item.id, 'weapon', 'weapon')
         self._note_worn_curse(item)
         return True
+
+    # ------------------------------------------------------------------
+    # The shield a two-hander set aside (Brandon's play-test, 2026-11-16:
+    # "If I swap between my one handed weapon and 2 handed, it doesn't
+    # automatically swap BACK my shield")
+    # ------------------------------------------------------------------
+
+    def _say_shield_slung(self, shield, weapon) -> None:
+        self.add_message(f"Your {self._bare_name(shield)} goes to your pack: the "
+                         f"{self._bare_name(weapon)} takes both hands. Take up a "
+                         f"one-handed weapon and it goes back on your arm.", 'info')
+
+    def _slung_shield(self):
+        """The shield a two-hander sent to the pack (Player._shield_slung),
+        when the weapon in the hand now leaves an arm free for it: not worn,
+        still in the pack, its kind known by hand. The memory is let go when
+        it can never come back (another shield is on, it left the pack)."""
+        p = self.player
+        sh = p.__dict__.get('_shield_slung')
+        if sh is None:
+            return None
+        if p.shield is not None or not any(i is sh for i in p.inventory) \
+                or (kbh.asks_quiz(sh) and not kbh.knows(p, sh)):
+            p.__dict__['_shield_slung'] = None
+            return None
+        if not p.can_equip_shield():
+            return None                 # a two-hander is still in the hand
+        return sh
+
+    def _shield_back_on(self, sh) -> None:
+        """The remembered shield goes back on the arm, taking its donning
+        time like any piece (a turn for every shield today)."""
+        p = self.player
+        p.__dict__['_shield_slung'] = None
+        self._dress_begin_on(sh, tier=kbh.best_tier(p, sh))
 
     # ------------------------------------------------------------------
     # Putting a piece on / taking it off, with the time it takes
@@ -633,7 +669,9 @@ class DressingMixin:
     def _swap_weapons(self) -> bool:
         """S: the weapon in your hand and the one at your back change places,
         in one turn. A cursed blade in the hand will not let go; a two-hander
-        cannot come out past a shield that will not come off. True when the
+        cannot come out past a shield that will not come off. A two-hander
+        sends the shield to the pack, and drawing a one-hander again puts it
+        back on the arm (its donning time, a turn, on top). True when the
         swap happened."""
         p = self.player
         back = p.readied_weapon
@@ -663,15 +701,24 @@ class DressingMixin:
         if not self._wield_now(back):
             self.add_message(f"You cannot take up the {self._bare_name(back)}.", 'warning')
             return False
-        if hand is not None and any(i is hand for i in p.inventory):
-            p.readied_weapon = hand
-            self.add_message(f"You sling the {self._bare_name(hand)} at your back and draw "
-                             f"the {self._bare_name(back)}.", 'success')
-        else:
-            self.add_message(f"You draw the {self._bare_name(back)} from your back.", 'success')
         # The Two Faces of Janus: drawn with a foe in sight, counted; once
         # earned, the swap costs no turn (the swap that earns it still does).
         _free = bool((getattr(p, 'quirk_progress', None) or {}).get('janus_active'))
+        # A one-hander drawn: the shield the two-hander set aside goes back
+        # on the arm, at its own donning time on top of the swap's turn.
+        sh = None if getattr(back, 'two_handed', False) else self._slung_shield()
+        tail = ''
+        if sh is not None:
+            turns = (0 if _free else 1) + self._don_turns(sh)
+            tail = (f" and reach for your {self._bare_name(sh)} "
+                    f"({quantity(turns, 'turn')})")
+        if hand is not None and any(i is hand for i in p.inventory):
+            p.readied_weapon = hand
+            self.add_message(f"You sling the {self._bare_name(hand)} at your back and draw "
+                             f"the {self._bare_name(back)}{tail}.", 'success')
+        else:
+            self.add_message(f"You draw the {self._bare_name(back)} from your back{tail}.",
+                             'success')
         _qs = getattr(self, 'quirk_system', None)
         if _qs is not None:
             try:
@@ -681,6 +728,8 @@ class DressingMixin:
             _qs.on_weapon_swap(_foe)
         if not _free:
             self._advance_turn()
+        if sh is not None and not self.player.is_dead():
+            self._shield_back_on(sh)
         return True
 
     # ------------------------------------------------------------------
@@ -829,6 +878,10 @@ class DressingMixin:
         inv = {id(i) for i in p.inventory}
         missing, refused = [], []
         offs, wields, readies, ons = [], [], [], []
+        # What each piece of the kit costs (id -> turns): its own turns on,
+        # with the piece in its way coming off counted in (the Loadouts
+        # screen shows it per piece: Brandon's play-test 2026-11-16).
+        cost = {}
 
         def carried(it):
             return id(it) in inv
@@ -852,6 +905,7 @@ class DressingMixin:
                 refused.append((w, "your shield will not come off for a two-hander"))
             else:
                 wields.append(Step('wield', w, 1))
+                cost[id(w)] = 1
                 new_hand = w
         r = pieces.get('readied')
         if r is not None and r is not p.readied_weapon:
@@ -859,6 +913,7 @@ class DressingMixin:
                 pass                          # it is going in the hand
             elif carried(r) or (r is p.weapon and new_hand is not p.weapon):
                 readies.append(Step('ready', r, 0))
+                cost[id(r)] = 0
             elif r is p.weapon:
                 refused.append((r, "it is in your hand"))
             else:
@@ -880,13 +935,16 @@ class DressingMixin:
                 continue
             if not known_ok(want):
                 continue
+            off_turns = 0
             if cur is not None:
                 if _immovable(cur):
                     refused.append((want, f"your {self._bare_name(cur)} will not come off"))
                     continue
-                offs.append(Step('off', cur, self._doff_turns(cur), slot=slot))
+                off_turns = self._doff_turns(cur)
+                offs.append(Step('off', cur, off_turns, slot=slot))
             ons.append(Step('on', want, self._don_turns(want),
                             tier=kbh.best_tier(p, want)))
+            cost[id(want)] = off_turns + self._don_turns(want)
 
         # Rings: the kit's rings on, worn rings not in the kit off to make room.
         kit_rings = [v for k, v in sorted(pieces.items()) if k.startswith('ring_')]
@@ -905,22 +963,71 @@ class DressingMixin:
         spare = [x for x in worn_rings
                  if not any(x is k for k in kit_rings) and not _immovable(x)]
         for ring in to_put:
+            off_turns = 0
             if free <= 0 and spare:
                 old = spare.pop(0)
                 slot = f'accessory_{next(i for i, x in enumerate(p.accessory_slots) if x is old)}'
-                offs.append(Step('off', old, self._doff_turns(old), slot=slot))
+                off_turns = self._doff_turns(old)
+                offs.append(Step('off', old, off_turns, slot=slot))
                 free += 1
             if free <= 0:
                 refused.append((ring, "no free ring finger"))
                 continue
             free -= 1
             ons.append(Step('on', ring, self._don_turns(ring), tier=kbh.best_tier(p, ring)))
+            cost[id(ring)] = off_turns + self._don_turns(ring)
 
         steps = offs + wields + readies + ons
         return {'steps': steps, 'turns': sum(s.turns for s in steps),
-                'missing': missing, 'refused': refused,
+                'missing': missing, 'refused': refused, 'cost': cost,
                 'empty': not pieces,
                 'already': bool(pieces) and not steps and not missing and not refused}
+
+    def _kit_rows(self, idx: int, plan: dict | None = None) -> list:
+        """(label, name, what changing into the kit does to the piece) for
+        each piece of kit ``idx``, in slot order. The third is 'On now',
+        'At your back', '3 turns' (the piece in its way coming off counted
+        in), 'No time' (slung at the back), 'Not carried' or 'Stays off'."""
+        plan = plan if plan is not None else self._kit_plan(idx)
+        p = self.player
+        pieces = self._kits()[idx].get('pieces') or {}
+        cost = plan.get('cost') or {}
+        missing = {id(i) for i in plan['missing']}
+        refused = {id(i) for i, _why in plan['refused']}
+        worn_rings = [x for x in p.accessory_slots if x is not None]
+        out = []
+        for s in KIT_SLOTS:
+            if s not in pieces:
+                continue
+            it = pieces[s]
+            name = self._bare_name(it)
+            if id(it) in missing or not sets.carried_or_worn(p, it):
+                out.append((KIT_SLOT_LABELS[s], name, 'Not carried'))
+                continue
+            if id(it) in refused:
+                out.append((KIT_SLOT_LABELS[s], name, 'Stays off'))
+                continue
+            if id(it) in cost:
+                n = int(cost[id(it)])
+                out.append((KIT_SLOT_LABELS[s], name, quantity(n, 'turn') if n else 'No time'))
+                continue
+            if s == 'readied':
+                out.append((KIT_SLOT_LABELS[s], name, 'At your back'))
+            elif s.startswith('ring_') and not any(it is x for x in worn_rings):
+                out.append((KIT_SLOT_LABELS[s], name, 'Stays off'))
+            else:
+                out.append((KIT_SLOT_LABELS[s], name, 'On now'))
+        return out
+
+    def _kit_change_text(self, plan: dict) -> str:
+        """One line for what changing into a kit takes: "3 pieces change:
+        7 turns in all." ('' when nothing changes)."""
+        n = len(plan.get('cost') or {})
+        if not plan['steps'] or not n:
+            return ''
+        t = plan['turns']
+        return (f"{quantity(n, 'piece')} change{'s' if n == 1 else ''}: "
+                f"{quantity(t, 'turn')} in all.")
 
     def _kit_wear(self, idx: int) -> None:
         """Put kit ``idx`` on now (after the confirmation)."""
@@ -1016,19 +1123,26 @@ class DressingMixin:
             return
         turns = plan['turns']
         lines = []
+        # What changes, piece by piece, and what it all takes.
+        changing = [(lab, c) for lab, _nm, c in self._kit_rows(idx, plan)
+                    if c.endswith(('turn', 'turns'))]
+        if changing:
+            shown = ', '.join(f"{lab} {c}" for lab, c in changing[:4])
+            more = f", and {len(changing) - 4} more" if len(changing) > 4 else ''
+            lines.append(f"Changes: {shown}{more}.")
         if plan['missing']:
             lines.append("Not with you, so skipped: " + ', '.join(
                 self._bare_name(i) for i in plan['missing'][:3])
                 + (' ...' if len(plan['missing']) > 3 else '') + '.')
         for it, why in plan['refused'][:2]:
             lines.append(f"Stays off: {self._bare_name(it)} ({why}).")
-        if not lines:
+        if not plan['missing'] and not plan['refused']:
             lines.append("Every piece is in your pack and known by hand: no quizzes.")
 
         def _wear(i=idx):
             self._kit_wear(i)
         self._ask(f"Change Into {kit['name']}?", lines,
                   [('Y', f"Put On {kit['name']}",
-                    f"Takes {turns} turn{'s' if turns != 1 else ''}.", _wear),
+                    f"Takes {quantity(turns, 'turn')} in all.", _wear),
                    ('N', 'Not Now', 'Back to the game.', lambda: None)],
                   on_cancel=None)

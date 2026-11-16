@@ -122,7 +122,15 @@ readied from the Kit or the @ sheet (R); S on the map swaps it with the one
 in the hand in one turn. It stays in the pack (its weight counts), a
 cursed blade in the hand will not let go, and a two-hander will not come
 out past a shield that will not come off (an ordinary shield goes to the
-pack, as for any two-handed equip).
+pack, as for any two-handed equip). **The shield comes back** (Brandon's
+play-test, 2026-11-16: "it doesn't automatically swap BACK my shield"): the
+shield a two-hander sent to the pack is remembered (`Player._shield_slung`,
+set in `Player._apply_equip`), and a one-hander taken up again, by S or the
+Kit's Equip, puts it back on the arm at its donning time, a turn on top of
+the swap ("You sling the Greatsword at your back and draw the Shortsword
+and reach for your Buckler (2 turns)."; `DressingMixin._slung_shield`,
+`_shield_back_on`). It is let go when another shield goes on or it leaves
+the pack; a loadout's own shield slot decides for a kit.
 
 **Remembered pieces** (`src/loadouts.py`, round 3, 2026-11-14; Brandon:
 "persist sets under the quickswapping function if a weapon is dropped or
@@ -149,8 +157,13 @@ survives a save; an old save has none.
 **Loadouts** (`src/loadouts.py`, Shift+E). Three saved kits (Kit One, Kit
 Two, Kit Three; N renames): the wielded and readied weapons, shield, the
 eight armour slots, amulet, belt and rings, saved as the very objects (S
-saves what is worn). Putting one on takes the sum of its pieces' turns,
-shown before confirming; a piece not with the hero (dropped, thrown,
+saves what is worn). Putting one on takes the sum of the turns of the
+pieces that change, the piece in each one's way coming off counted in.
+The Loadouts screen shows it per piece beside each (`DressingMixin._kit_rows`:
+"6 turns", "On now", "Not carried", "Stays off"), with the total under them
+("2 pieces change: 7 turns in all.") and on the list ("7 turns to
+change"), and the confirmation names each change ("Changes: Body 6 turns,
+Shield 1 turn."; Brandon's play-test, 2026-11-16). A piece not with the hero (dropped, thrown,
 stolen: see Remembered pieces) is skipped with a line and costs nothing,
 a piece not known by hand is refused ("put it on once first"), and a slot
 that was empty when the kit was saved is left alone.

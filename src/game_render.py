@@ -5579,7 +5579,9 @@ class RenderMixin:
         if _don:
             lines.append((_don, FP.BODY_TEXT, self.font_sm))
         if src == 'back':
-            lines.append(("At your back: S swaps it into your hand in one turn.",
+            lines.append(("At your back: S swaps it into your hand in one turn"
+                          + (" (your shield goes to your pack)." if getattr(item, 'two_handed', False)
+                             else "."),
                           FP.BODY_TEXT, self.font_sm))
         # A smith's work on it (smithing.py): seen done, so shown either way.
         import smithing as _smithing
@@ -6836,41 +6838,53 @@ class RenderMixin:
             else:
                 t = plan['turns']
                 sub = (f"{n} piece{'s' if n != 1 else ''}: "
-                       f"{t} turn{'s' if t != 1 else ''} to put on")
+                       f"{t} turn{'s' if t != 1 else ''} to change")
                 if off:
                     sub += f", {off} stay{'s' if off == 1 else ''} off"
             sf, stext = self._fit_line(sub, tw, (17, 16, 15))
             self.screen.blit(sf.render(stext, True, readable(FP.BODY_TEXT, bg)),
                              (rect.x + S(12), rect.y + S(12) + name_f.get_height() + lead))
             y += row_h + S(8)
-        note = ("A kit holds the very pieces you saved. Putting it on takes each "
-                "piece's turns; a piece must be in your pack, and known by hand.")
+        note = ("A kit holds the very pieces you saved. Changing into it takes the "
+                "turns of each piece that changes (taking off what is in its way "
+                "counted in); a piece must be in your pack, and known by hand.")
         self._ui_wrap_text(note, line_f, readable(FP.FADED_TEXT, KT.RAISED),
                            pygame.Rect(lbody.x + S(4), y + S(6), lbody.w - S(8),
                                        max(0, lbody.bottom - y - S(6))))
-        # The chosen kit's pieces, two columns when they need it.
-        rows = self._kit_lines(sel)
+        # The chosen kit's pieces, two columns when they need it; beside
+        # each, what changing into the kit does to it ("3 turns", "On now").
         plan = self._kit_plan(sel)
+        rows = self._kit_rows(sel, plan)
         y = rbody.y
         if not rows:
             self._ui_wrap_text("Nothing saved here yet. Put on what you want, open this "
                                "screen and press S.", line_f,
                                readable(FP.FADED_TEXT, KT.RAISED), rbody)
         else:
-            lab_w = max(line_f.size(lab)[0] for lab, _n in rows) + S(14)
-            cols = 2 if len(rows) * (line_f.get_height() + S(6)) > rbody.h - S(90) else 1
+            lab_w = max(line_f.size(lab)[0] for lab, _n, _c in rows) + S(14)
+            cost_w = max(line_f.size(c)[0] for _l, _n, c in rows) + S(12)
+            cols = 2 if len(rows) * (line_f.get_height() + S(6)) > rbody.h - S(110) else 1
             col_w = (rbody.w - S(12) * (cols - 1)) // cols
             per = (len(rows) + cols - 1) // cols
-            for idx, (lab, nm) in enumerate(rows):
+            for idx, (lab, nm, cst) in enumerate(rows):
                 c, r = divmod(idx, per)
                 x = rbody.x + c * (col_w + S(12))
                 yy = y + r * (line_f.get_height() + S(6))
                 self.screen.blit(line_f.render(lab, True, readable(FP.FADED_TEXT, KT.RAISED)),
                                  (x, yy))
-                nf, ntext = self._fit_line(nm, col_w - lab_w, (17, 16, 15))
+                nf, ntext = self._fit_line(nm, max(S(40), col_w - lab_w - cost_w), (17, 16, 15))
                 self.screen.blit(nf.render(ntext, True, readable(FP.BODY_TEXT, KT.RAISED)),
                                  (x + lab_w, yy))
+                col = (FP.WARNING_TEXT if cst in ('Not carried', 'Stays off')
+                       else FP.FADED_TEXT if cst in ('On now', 'At your back', 'No time')
+                       else FP.GOLD_PALE)
+                cs = line_f.render(cst, True, readable(col, KT.RAISED))
+                self.screen.blit(cs, (x + col_w - cs.get_width() - S(4), yy))
             y += per * (line_f.get_height() + S(6)) + S(10)
+            total = self._kit_change_text(plan)
+            if total and y < rbody.bottom:
+                y = self._ui_wrap_text(total, line_f, readable(FP.GOLD_PALE, KT.RAISED),
+                                       pygame.Rect(rbody.x, y, rbody.w, rbody.bottom - y)) + S(4)
             notes = []
             if plan['missing']:
                 notes.append(("Not with you, so skipped: " + ', '.join(

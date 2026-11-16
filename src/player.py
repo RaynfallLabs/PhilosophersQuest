@@ -63,6 +63,10 @@ class Player:
         # remembered, and picked up again it is at his back once more. Sold
         # or destroyed it is let go (loadouts.py, Brandon 2026-11-14).
         self._readied_weapon = None
+        # The shield a two-hander sent to the pack (_apply_equip): drawing a
+        # one-handed weapon again puts it back on the arm (game_dressing,
+        # Brandon's play-test 2026-11-16). None when there is none to return.
+        self._shield_slung = None
         # Press or Guard (stance.py): 'neutral', 'press' or 'guard'. And the
         # earplugs (counters.py): True while the wax is in his ears.
         self.stance: str = 'neutral'
@@ -973,6 +977,7 @@ class Player:
         # saved kits (2026-11-13): what is worn counts as known (the hero
         # has put it on), nothing is readied, the three kits are empty.
         self.__dict__.setdefault('_readied_weapon', None)
+        self.__dict__.setdefault('_shield_slung', None)       # 2026-11-16
         self.__dict__.setdefault('by_hand_tiers', {})
         # Saves from before the arsenal's tools (slice 5, 2026-11-13): no
         # stance taken, no wax in his ears.
@@ -2514,6 +2519,9 @@ class Player:
                     old_shield, self.shield = self.shield, None
                     self.shed_worn_grants(old_shield)
                     self.inventory.append(old_shield)
+                    # Remembered: a one-hander drawn again puts it back on
+                    # (game_dressing._shield_back_on).
+                    self.__dict__['_shield_slung'] = old_shield
                 self.weapon = item
                 new_status = getattr(item, 'on_equip_status', '')
                 if new_status:

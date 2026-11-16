@@ -1922,6 +1922,30 @@ def _(g):
     press(g, pygame.K_2, '2')
 
 
+@scene('menu_loadouts_change', 'Menus',
+       'Shift+E, 2: a kit of plate, a mace and a kite shield over what is worn now: '
+       'each piece that changes shows its turns, and the total under them.',
+       expect='loadouts')
+def _(g):
+    from items import instantiate_armor, instantiate_weapon, instantiate_shield
+    import known_by_hand as kbh
+    p = g.player
+    g._kit_save(0)
+    plate = instantiate_armor('plate', 'chain_steel')
+    mace = instantiate_weapon('mace', 'steel')
+    kite = instantiate_shield('kite_shield', 'steel')
+    for it in (plate, mace, kite):
+        if it is not None:
+            kbh.learn(p, it)
+            p.inventory.append(it)
+    kits = g._kits()
+    kits[1]['name'] = 'Iron for Bones'
+    kits[1]['pieces'] = dict(kits[0]['pieces'], **{
+        k: v for k, v in (('body', plate), ('weapon', mace), ('shield', kite)) if v is not None})
+    g.handle_event(key_event(pygame.K_e, 'E', pygame.KMOD_SHIFT))
+    press(g, pygame.K_2, '2')
+
+
 @scene('menu_loadouts_missing', 'Menus',
        'Shift+E, 2: a kit whose body armour was sold since it was saved (not in the pack).',
        expect='loadouts')

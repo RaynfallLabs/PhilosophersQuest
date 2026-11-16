@@ -708,7 +708,8 @@ def test_journey_02_swaps_and_kits(make_game):
     h.key('1')
     h.key(pygame.K_RETURN)
     assert g.state == 'ask' and g._ask_data['title'] == 'Change Into Iron?'
-    assert g._ask_data['lines'] == ['Every piece is in your pack and known by hand: no quizzes.']
+    assert g._ask_data['lines'] == ['Changes: Weapon 1 turn, Body 1 turn.',
+                                    'Every piece is in your pack and known by hand: no quizzes.']
     h.key('y')
     said = h.said()
     assert said[0] == 'You start changing into Iron (2 turns).' and said[-1] == 'You are dressed in Iron.'

@@ -7861,15 +7861,25 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     self.add_message(msg, 'warning')
                     return
             dname = self._bare_name(item)        # "the A Dark Curved Blade" otherwise
+            shield_before = self.player.shield
             self.player._apply_equip(item)
             self.player.remove_from_inventory(item)
             suffix = " (two-handed)" if getattr(item, 'two_handed', False) else ""
-            self.add_message(f"You equip the {dname}{suffix}.", 'success')
+            # A one-hander taken up: the shield a two-hander set aside goes
+            # back on the arm, at its donning time (game_dressing).
+            sh = None if (_is_ranged or getattr(item, 'two_handed', False)) \
+                else self._slung_shield()
+            reach = (f" and reach for your {self._bare_name(sh)}" if sh is not None else '')
+            self.add_message(f"You equip the {dname}{suffix}{reach}.", 'success')
+            if shield_before is not None and self.player.shield is None:
+                self._say_shield_slung(shield_before, item)
             self._note_worn_curse(item)
             _qs_eq = getattr(self, 'quirk_system', None)
             if _qs_eq:
                 _qs_eq.on_item_equipped(item.id, 'weapon', 'weapon')
             self._advance_turn()
+            if sh is not None and not self.player.is_dead():
+                self._shield_back_on(sh)
         elif isinstance(item, Shield):
             if not self.player.can_equip_shield():
                 self.add_message(
