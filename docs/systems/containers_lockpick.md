@@ -270,7 +270,7 @@ Example:
 | `gold_share` | `[lo, hi]`: the chest's gold as a share of one floor's income (`economy.floor_income`). Replaced `gold_range` (a written 5-800 the 2026-10-05 pricing pass never scaled, so a chest paid 2-10% of a floor). |
 | `loot_table` | Category → weight dict. Categories map to item pools (`_COMMON_CATEGORIES`, `src/container_system.py:211`): `potion`, `scroll`, `wand`, `spellbook`, `accessory`, `ammo`, `ingredient`, `artifact`, `magic` (= wand+scroll+spellbook), `gear` (= weapon+armor+shield), or the explicit `weapon_common` / `armor_common` / `shield_common`. The pseudo-category `gold_bonus` adds extra gold instead of pulling an item. |
 | `rare_chance_chain3` | Baseline chance that the chest contains a unique. The success handler multiplies this by `FULL_RARE_MULT = 2.0` (`src/container_system.py:42`) to match the pre-v2.6.6 chain-5 "Master Thief" tier. |
-| `spawn_weight_by_band` | Per 15-floor band weights for `dungeon.pick_container`. |
+| `spawn_weight_by_band` | Per 15-floor band weights for `dungeon.pick_container`. Each kind is found within a tier of its own `tier` (tier census 2026-11-17, tests/test_item_tiers_2026_11_17.py): the wooden chest and the apothecary's box (a village healer's, camphor and willow-bark) near the top; the iron lockbox, the jewel box and the merchant's strongbox in the upper halls; the scholar's satchel and the war chest in the middle; the ornate, gilded and crypt chests (grave goods deepen with the dead, and carry the deep potions) below; the reliquary and the dragon hoard deepest. |
 | `pre_identified` (optional) | `merchant_strongbox` sets `true`; all loot comes out fully identified. |
 
 ### Loot generation (`_generate_loot_from_template`, `src/container_system.py:395`)

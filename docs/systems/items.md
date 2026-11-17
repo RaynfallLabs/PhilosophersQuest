@@ -496,6 +496,17 @@ and by chest templates for level bands.
 chance per floor by band, rolled once a floor across the six in
 `dungeon.spawn_items` (`pet_system.sphere_for_floor`).
 
+When an item has both, the bell wins: `dungeon.floor_spawn_weight(item,
+floor)` is the one rule (the bell when `peak_floor` and `peak_weight` are
+set, else the bands, never below `min_level`), shared by the floor's pools
+and the tier census (`tools/balance/tier_census.py`), which reads an item's
+tier from the mean floor of that weight. Every item system holds 10-35% of
+its kinds in each of the five tiers (tests/test_tier_distribution.py; the
+2026-11-17 pass placed the potions, flasks, ammo, food, rings, amulets,
+chests and artifacts by lore). `story_floor` (an artifact a quest places,
+e.g. the Bronze Bull on floor 12) is read by the census only: where the
+story puts a piece that is never rolled.
+
 Both coexist on the base `Item`:
 
 ```python
