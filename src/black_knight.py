@@ -632,19 +632,27 @@ class BlackKnightMixin:
         if k not in self.monsters or (k.x, k.y) not in self.visible:
             return
         from fantasy_ui import get_font
+        from text_layout import wrap_lines
         font = get_font('body', 16, bold=True)
         sx, sy = self.renderer.world_to_screen(k.x, k.y)
         T = self.renderer.map_tile_size
-        surf = font.render(sp['text'], True, (255, 236, 170))
         pad = 4
-        w, h = surf.get_width() + pad * 2, surf.get_height() + pad * 2
+        clip = self.screen.get_clip() or self.screen.get_rect()
+        # A line longer than the map is wide wraps (Old Nickel's lines are
+        # longer than the Black Knight's): it never runs off the map.
+        lines = wrap_lines(sp['text'], max(40, clip.width - pad * 2 - 4), font) or [sp['text']]
+        surfs = [font.render(t, True, (255, 236, 170)) for t in lines]
+        w = max(s.get_width() for s in surfs) + pad * 2
+        h = sum(s.get_height() for s in surfs) + pad * 2
         x = sx + T // 2 - w // 2
         y = sy - h - 2
-        clip = self.screen.get_clip() or self.screen.get_rect()
         x = max(clip.left + 2, min(x, clip.right - w - 2))
         y = max(clip.top + 2, y)
         box = pygame.Surface((w, h), pygame.SRCALPHA)
         box.fill((12, 10, 16, 215))
         self.screen.blit(box, (x, y))
         pygame.draw.rect(self.screen, (150, 120, 60), (x, y, w, h), 1)
-        self.screen.blit(surf, (x + pad, y + pad))
+        ty = y + pad
+        for s in surfs:
+            self.screen.blit(s, (x + pad, ty))
+            ty += s.get_height()
