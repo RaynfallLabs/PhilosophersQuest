@@ -1,0 +1,478 @@
+[
+ {
+  "id": "silver_dust",
+  "family": "coatings",
+  "rank": 1,
+  "body": "item",
+  "scale": "small",
+  "key": "magenta",
+  "what": "a small soft drawstring pouch of worn brown leather lying on its side with its mouth open, and spilling out of it in front a little heap of fine glittering silver powder, bright as moonlight, the dust a hunter rubs onto a blade against the dead.",
+  "colours": "Worn warm brown leather with a dark tie cord; bright cool silver-white powder with tiny white glints.",
+  "pose": "Lying by itself, seen from a little above, the open mouth of the pouch toward the viewer.",
+  "must_show": [
+   "one small leather pouch with an open mouth",
+   "a small heap of glittering silver powder spilling out",
+   "the powder clearly metallic silver"
+  ],
+  "must_not_show": [
+   "coins",
+   "salt cellar",
+   "sugar",
+   "snow",
+   "flour sack",
+   "second pouch",
+   "hand",
+   "arm",
+   "person",
+   "table",
+   "shelf",
+   "label with writing",
+   "second object",
+   "glow outside the object"
+  ]
+ },
+ {
+  "id": "frost_salts",
+  "family": "coatings",
+  "rank": 2,
+  "body": "item",
+  "scale": "small",
+  "key": "magenta",
+  "what": "a small squat jar of thick grey stoneware with no lid, heaped above its rim with sharp pale icy-blue crystals of salt, white rime frost creeping down the outside of the jar from the crystals.",
+  "colours": "Grey stoneware jar; pale icy blue and white crystals; white frost on the jar.",
+  "pose": "Standing upright, seen from the front and a little from above.",
+  "must_show": [
+   "one squat stoneware jar",
+   "heaped pale blue crystals",
+   "white frost on the outside of the jar"
+  ],
+  "must_not_show": [
+   "lid",
+   "snowman",
+   "snowflake symbol",
+   "liquid",
+   "glass bottle",
+   "hand",
+   "arm",
+   "person",
+   "table",
+   "shelf",
+   "label with writing",
+   "second object"
+  ]
+ },
+ {
+  "id": "viper_venom",
+  "family": "coatings",
+  "rank": 3,
+  "body": "item",
+  "scale": "small",
+  "key": "magenta",
+  "what": "a small narrow vial of dark smoky glass stoppered with a black wax seal, half full of thick oily venom of a sickly yellow-green, with a single curved white snake fang hanging from a thin cord tied around its neck.",
+  "colours": "Dark smoky brown-grey glass; sickly yellow-green venom; black wax; one ivory-white fang on a thin dark cord.",
+  "pose": "Standing upright, seen from the front and a little from above.",
+  "must_show": [
+   "one narrow dark glass vial",
+   "yellow-green venom inside",
+   "one white snake fang on a cord at its neck"
+  ],
+  "must_not_show": [
+   "snake",
+   "skull",
+   "crossbones",
+   "label with writing",
+   "bright green glow",
+   "hand",
+   "arm",
+   "person",
+   "table",
+   "second object"
+  ]
+ },
+ {
+  "id": "flask_of_holy_water",
+  "family": "flasks",
+  "rank": 1,
+  "body": "item",
+  "scale": "small",
+  "key": "magenta",
+  "what": "a round-bellied clear glass flask with a short neck, full of clear holy water with a faint soft white light inside it, closed with a stopper of bright silver, a small plain silver cross hanging from a fine silver chain around the neck.",
+  "colours": "Clear glass with white glints; clear water with a faint white inner light; bright silver stopper, chain and cross.",
+  "pose": "Standing upright, seen from the front and a little from above.",
+  "must_show": [
+   "one round clear glass flask",
+   "clear water inside",
+   "silver stopper",
+   "small silver cross on a chain at the neck"
+  ],
+  "must_not_show": [
+   "painted cross on the glass",
+   "coloured liquid",
+   "cork",
+   "label with writing",
+   "hand",
+   "arm",
+   "person",
+   "table",
+   "second object",
+   "glow outside the flask"
+  ]
+ },
+ {
+  "id": "water_of_siloam",
+  "family": "flasks",
+  "rank": 2,
+  "body": "item",
+  "scale": "small",
+  "key": "magenta",
+  "what": "a small ancient earthenware water flask of the Holy Land, round and flat like a pilgrim's canteen with two little loop handles at its shoulders, glazed a soft worn turquoise, its mouth sealed with pale beeswax, drawn from the healing Pool of Siloam.",
+  "colours": "Soft worn turquoise glaze over pale clay showing at the chipped rim; pale cream wax seal; a few darker turquoise streaks.",
+  "pose": "Standing upright, seen from the front and a little from above.",
+  "must_show": [
+   "one flat round earthenware pilgrim flask",
+   "two small loop handles",
+   "turquoise glaze",
+   "wax seal at the mouth"
+  ],
+  "must_not_show": [
+   "glass",
+   "cross",
+   "label with writing",
+   "water pouring",
+   "hand",
+   "arm",
+   "person",
+   "table",
+   "second object"
+  ]
+ },
+ {
+  "id": "water_of_life",
+  "family": "flasks",
+  "rank": 3,
+  "body": "item",
+  "scale": "small",
+  "key": "green",
+  "what": "a legendary crystal flask shaped like a teardrop, wrapped in fine golden filigree like vines, full of water that shines a warm golden-white from within, the water of life of the old tales that heals any wound, stoppered with a little golden bud.",
+  "colours": "Clear crystal; warm golden-white glowing water; bright gold filigree and stopper.",
+  "pose": "Standing upright, seen from the front and a little from above.",
+  "must_show": [
+   "one teardrop crystal flask",
+   "gold filigree wrapped around it",
+   "golden-white glowing water inside",
+   "small gold stopper"
+  ],
+  "must_not_show": [
+   "green",
+   "red liquid",
+   "label with writing",
+   "rays of light around it",
+   "hand",
+   "arm",
+   "person",
+   "table",
+   "second object"
+  ]
+ },
+ {
+  "id": "flask_of_fire_oil",
+  "family": "flasks",
+  "rank": 4,
+  "body": "item",
+  "scale": "small",
+  "key": "blue",
+  "what": "a squat round flask of rough reddish-brown clay, dark oily stains running down its sides, its narrow neck stuffed with a twisted rag wick whose tip burns with a small bright flame, ready to be lit and thrown.",
+  "colours": "Rough reddish-brown clay; dark amber oil stains; dirty cream rag; a small orange and yellow flame.",
+  "pose": "Standing upright, seen from the front and a little from above.",
+  "must_show": [
+   "one squat clay flask",
+   "a rag wick in its neck",
+   "a small flame at the tip of the rag",
+   "oil stains on the clay"
+  ],
+  "must_not_show": [
+   "glass bottle",
+   "big fire",
+   "explosion",
+   "lamp",
+   "candle",
+   "label with writing",
+   "hand",
+   "arm",
+   "person",
+   "table",
+   "second object"
+  ]
+ },
+ {
+  "id": "greek_fire",
+  "family": "flasks",
+  "rank": 5,
+  "body": "item",
+  "scale": "small",
+  "key": "blue",
+  "what": "a Byzantine fire-pot: a heavy round clay grenade the size of a fist with a short narrow neck sealed with black pitch, its dark brown glaze scored with rows of little incised lines and dots, a thin wisp of grey smoke curling from the pitch, the secret fire of Constantinople that water cannot put out.",
+  "colours": "Dark brown and umber glaze; black pitch seal; pale lines and dots scored into the glaze; a thin grey smoke wisp.",
+  "pose": "Standing upright, seen from the front and a little from above.",
+  "must_show": [
+   "one round clay grenade with a short neck",
+   "black pitch seal",
+   "incised pattern of lines and dots",
+   "thin wisp of smoke"
+  ],
+  "must_not_show": [
+   "flame",
+   "fuse",
+   "modern grenade",
+   "bomb with a lit fuse",
+   "glass",
+   "label with writing",
+   "hand",
+   "arm",
+   "person",
+   "table",
+   "second object"
+  ]
+ },
+ {
+  "id": "medeas_fire",
+  "family": "flasks",
+  "rank": 6,
+  "body": "item",
+  "scale": "small",
+  "key": "green",
+  "what": "a sorceress's flask of black glass, slender and tall, with a thin golden serpent coiling around it from base to neck, filled with a liquid that glows a deep smouldering crimson like embers, the unquenchable fire Medea sent in a wedding gift.",
+  "colours": "Glossy black glass; deep crimson and ember-orange glow inside; bright gold serpent and stopper.",
+  "pose": "Standing upright, seen from the front and a little from above.",
+  "must_show": [
+   "one slender black glass flask",
+   "gold serpent coiled around it",
+   "crimson ember glow inside"
+  ],
+  "must_not_show": [
+   "green",
+   "open flame on top",
+   "skull",
+   "label with writing",
+   "hand",
+   "arm",
+   "person",
+   "table",
+   "second object"
+  ]
+ },
+ {
+  "id": "flask_of_acid",
+  "family": "flasks",
+  "rank": 7,
+  "body": "item",
+  "scale": "small",
+  "key": "blue",
+  "what": "a thick-walled flask of greenish glass with a ground-glass stopper, full of bright yellow-green acid with small bubbles rising in it, one drip of acid running down the outside from the stopper, the glass near the neck faintly etched and clouded by the acid.",
+  "colours": "Thick greenish glass; bright yellow-green acid; clouded etched glass at the neck.",
+  "pose": "Standing upright, seen from the front and a little from above.",
+  "must_show": [
+   "one thick greenish glass flask",
+   "yellow-green bubbling liquid",
+   "glass stopper",
+   "a drip of acid down the glass"
+  ],
+  "must_not_show": [
+   "smoke",
+   "vapour",
+   "pink",
+   "skull",
+   "crossbones",
+   "label with writing",
+   "cork",
+   "hand",
+   "arm",
+   "person",
+   "table",
+   "second object",
+   "glow outside the flask"
+  ]
+ },
+ {
+  "id": "aqua_regia",
+  "family": "flasks",
+  "rank": 8,
+  "body": "item",
+  "scale": "small",
+  "key": "blue",
+  "what": "a tall narrow alchemist's bottle of clear glass with a long neck, holding a fuming orange-yellow liquid, the royal water that dissolves even gold: its gold stopper is pitted and half eaten away, and thin orange fumes curl up from it.",
+  "colours": "Clear glass; fuming orange-yellow liquid; a pitted dull gold stopper; thin pale orange fumes.",
+  "pose": "Standing upright, seen from the front and a little from above.",
+  "must_show": [
+   "one tall narrow long-necked glass bottle",
+   "orange-yellow liquid",
+   "a gold stopper visibly pitted and eaten",
+   "thin orange fumes"
+  ],
+  "must_not_show": [
+   "crown",
+   "label with writing",
+   "cork",
+   "hand",
+   "arm",
+   "person",
+   "table",
+   "second object"
+  ]
+ },
+ {
+  "id": "alkahest",
+  "family": "flasks",
+  "rank": 9,
+  "body": "item",
+  "scale": "small",
+  "key": "magenta",
+  "what": "a small faceted phial of perfectly clear rock crystal, like a cut gem, holding a colourless liquid with a faint pearly shimmer, the universal solvent the alchemists sought, capped with a tiny silver cap engraved with an alchemical circle.",
+  "colours": "Perfectly clear faceted crystal with white glints; colourless liquid with a pale pearly shimmer; bright silver cap.",
+  "pose": "Standing upright, seen from the front and a little from above.",
+  "must_show": [
+   "one small faceted crystal phial",
+   "clear shimmering liquid",
+   "small engraved silver cap"
+  ],
+  "must_not_show": [
+   "coloured liquid",
+   "rainbow",
+   "label with writing",
+   "cork",
+   "hand",
+   "arm",
+   "person",
+   "table",
+   "second object",
+   "glow outside the phial"
+  ]
+ },
+ {
+  "id": "beeswax_earplugs",
+  "family": "counters",
+  "rank": 1,
+  "body": "item",
+  "scale": "small",
+  "key": "blue",
+  "what": "two small soft rounded lumps of golden beeswax, each the size of a fingertip and pressed a little flat on one side, lying side by side on a small crumpled scrap of plain undyed linen cloth with soft frayed edges; sailors' wax for stopping the ears against a deadly song.",
+  "colours": "Warm golden-yellow beeswax with honey-brown shading; soft cream-grey crumpled linen.",
+  "pose": "Lying by themselves, seen from a little above.",
+  "must_show": [
+   "exactly two rounded wax lumps",
+   "golden beeswax colour",
+   "a small crumpled scrap of linen cloth under them"
+  ],
+  "must_not_show": [
+   "statue",
+   "figure",
+   "face",
+   "card",
+   "paper",
+   "frame",
+   "bee",
+   "honeycomb",
+   "candle",
+   "ear",
+   "cheese",
+   "coins",
+   "eggs",
+   "hand",
+   "arm",
+   "person",
+   "table",
+   "label with writing"
+  ]
+ },
+ {
+  "id": "cold_iron_charm",
+  "family": "counters",
+  "rank": 2,
+  "body": "item",
+  "scale": "small",
+  "key": "magenta",
+  "what": "a folk charm against the fair folk: an old hand-forged iron nail, dark and rough with hammer marks, bent round into a ring with its ends crossed, hanging from a short loop of worn brown leather cord.",
+  "colours": "Dark rough grey-black cold iron with dull highlights; worn brown leather cord.",
+  "pose": "Hanging from a short loop of cord that is part of it, seen from the front.",
+  "must_show": [
+   "one iron nail bent into a ring with crossed ends",
+   "rough hammered dark iron",
+   "short loop of leather cord"
+  ],
+  "must_not_show": [
+   "gold",
+   "silver",
+   "gem",
+   "horseshoe",
+   "chain",
+   "rust colour",
+   "hand",
+   "arm",
+   "person",
+   "neck",
+   "table",
+   "second object"
+  ]
+ },
+ {
+  "id": "iron_mirror_shield",
+  "family": "counters",
+  "rank": 3,
+  "body": "item",
+  "scale": "large",
+  "key": "green",
+  "what": "a round iron shield polished all over its front to a bright silver sheen like still water, showing only soft streaks of pale light and a dim grey glow, held in a plain dark iron rim set with a ring of round rivets; the polished shield Perseus carried against the gorgon.",
+  "colours": "Bright pale silver-grey polished metal with soft white and pale blue streaks of light; dark grey iron rim and rivets.",
+  "pose": "Seen straight on, upright, its polished front to the viewer.",
+  "must_show": [
+   "one round shield",
+   "a bright polished silver front with streaks of light",
+   "dark iron rim with rivets"
+  ],
+  "must_not_show": [
+   "portrait",
+   "eyes",
+   "head",
+   "reflection of a person",
+   "medusa",
+   "snake",
+   "emblem",
+   "boss spike",
+   "gold",
+   "hand",
+   "arm",
+   "table",
+   "second object"
+  ]
+ },
+ {
+  "id": "bloomleaf_cloak",
+  "family": "counters",
+  "rank": 4,
+  "body": "item",
+  "scale": "large",
+  "key": "magenta",
+  "what": "a short hooded cloak made entirely of broad living green leaves, waxy and cupped, overlapping like scales and stitched together at their stems with twists of dry grass, a few beads of rainwater sitting on the leaves; the leaf edges along the hem are ragged where they were torn from a young plant-creature's back.",
+  "colours": "Fresh deep and leaf greens with waxy pale highlights and darker veins; straw-coloured grass stitching; clear white beads of water.",
+  "pose": "Seen from the front, upright as if hung in the air, EMPTY: nobody inside, a dark hollow opening at the hood.",
+  "must_show": [
+   "one cloak made of overlapping broad green leaves",
+   "a hood",
+   "grass stitching at the stems",
+   "beads of water on the leaves",
+   "ragged torn leaf edges at the hem"
+  ],
+  "must_not_show": [
+   "cloth cloak with a leaf pattern",
+   "person inside",
+   "face",
+   "flowers",
+   "autumn colours",
+   "vines with thorns",
+   "hand",
+   "arm",
+   "table",
+   "second object"
+  ]
+ }
+]
