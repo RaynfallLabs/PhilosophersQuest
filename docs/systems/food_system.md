@@ -361,6 +361,11 @@ trophy's own dish and by either of the two feasts that hold it:
 A trophy's dish has a main benefit too (Fafnir's Heart: HP; Níðhöggr's Scale: MP; Fenrir's
 Tooth: STR...), at 1.5x.
 
+A raw trophy is never lost without a word (bug bash 3.5.1 Q2, 2026-11-16): eating it raw (Z),
+feeding it to a pet or selling it to a trader first asks a yes / no (`MenuMixin._ask_before_trophy_goes`,
+the shared `_ask` prompt; `kitchen.is_raw_trophy`, `kitchen.trophy_warning_lines`): one of a kind,
+and what its dish gives. Enter or Esc keeps it; Y goes ahead. The cow and the Emberpup never take one.
+
 ---
 
 ## 7. The cook menu functions (`src/kitchen.py`, pure)
@@ -379,10 +384,13 @@ Tooth: STR...), at 1.5x.
      ready ones first, then the closest; shown once any harvested part is held.
   A dish needing a secret part never shows until that part is held.
 - `opening_tab(player, inventory)`: among tabs with a dish ready — HP under half: hp; SP under
-  30%: sp; MP under 40% with spells known: mp; else stat while the floor's lesson is open and a
+  30%: sp, else hp; MP under 40% with spells known: mp; else stat while the floor's lesson is open and a
   stat dish would teach; else the tab with the most dishes ready (with none ready, the most rows).
-  `opening_choice` gives the same tab and why (`OPEN_REASONS`: 'hurt', 'hungry', 'mana',
-  'lesson', 'most_ready', 'most_rows', 'nothing'), so the menu can say it.
+  A hungry hero (SP under 30%) always opens where food is, never on Stat or MP (bug bash 3.5.1
+  Q4, 2026-11-16): with no SP or HP dish ready, the SP tab (the HP tab if only it has rows), and
+  the line says so ('hungry_missing': "no SP or HP dish is ready: each says what it needs").
+  `opening_choice` gives the same tab and why (`OPEN_REASONS`: 'hurt', 'hungry',
+  'hungry_missing', 'mana', 'lesson', 'most_ready', 'most_rows', 'nothing'), so the menu can say it.
 - `dish_lasting(player, recipe)`: the lines of `dish_effects` that last for good (a feast's
   permanent bonus, a boss trophy's power), shown under their own heading.
 - `held_counts(inventory)` counts stacks, rations and old ids; `ready_dishes(inventory)` (every
@@ -402,7 +410,9 @@ Tooth: STR...), at 1.5x.
 
 `Game._harvest` (`H`) takes the corpse under the hero off the floor before the question, then
 `food_system.harvest_corpse` asks ONE animal question at the corpse's `harvest_tier`, never
-harder than the band the monster lives in (`_monster_band_tier`). Right: the corpse yields its
+harder than the band the monster lives in (`_monster_band_tier`, the game's one band rule
+`items._floor_band_tier`: floors 1-20 tier 1 ... 81-100 tier 5, so a gate boss of floor 20 is
+tier 1; every kind in monsters.json carries a `harvest_tier` of 1-5). Right: the corpse yields its
 kin's ingredient (`kitchen.ingredient_for_monster`; a creature the map does not name borrows its
 nearest kin's, `_nearest_kin_ingredient`, by the family and floor in monsters.json or, for a
 creature monsters.json does not know, on its corpse: Gilt Varro, a mortal, gives a mortal's

@@ -45,7 +45,11 @@ def _monster_band_tier(monster_id: str) -> int:
     floor = _monster_floor_cache.get(monster_id)
     if floor is None or floor > 100:
         return 5
-    return max(1, min(5, floor // 20 + 1))
+    # The game's one band rule (items._floor_band_tier: floors 1-20 are tier
+    # 1, 21-40 tier 2...). `floor // 20 + 1` put floors 20/40/60/80, every
+    # gate boss among them, one tier too hard (bug bash 3.5.1 Q1).
+    from items import _floor_band_tier
+    return _floor_band_tier(floor) or 1
 
 
 def _nearest_kin_ingredient(monster_id: str, family: str | None = None,

@@ -24,7 +24,7 @@ def _texts(g):
 # ------------------------------------------------------- the known roster
 
 def test_one_of_a_role_is_named_in_the_singular():
-    """Every gang of footpads has one archer, and a hero who knew the
+    """A gang of footpads with its archer, and a hero who knew the
     captain's kind heard "A leader, two fighters and one archers"."""
     text = war_bands.roster_text({'counts': {'guard': 2, 'shooter': 1, 'caster': 1, 'healer': 0}})
     assert text == 'A leader, two fighters, one archer and one caster'

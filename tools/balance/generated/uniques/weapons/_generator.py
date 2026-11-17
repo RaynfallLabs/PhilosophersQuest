@@ -788,7 +788,7 @@ WEAPONS: list[dict] = [
                               "bleed_chance": 0.15, "crit_multiplier": 2.2,
                               "stealth_bonus": True},
            lore="Robin of Loxley, the outlaw of Sherwood Forest, could split an arrow at two hundred paces. It favors those who strike from the shadows — enemies that cannot see you cannot hear its string."),
-    unique("achilles_spear", "Achilles's Spear", "spear", "spear", 2, ["pierce"],
+    unique("achilles_spear", "Achilles's Spear", "spear", "spear", 1, ["pierce"],   # one hand: spear and the shield of Hephaestus (Iliad 22)
            weight_lb=4.0, min_level=20, unique_mult=1.6, max_chain=7, peak_chain_mult=6.0,
            spawn_method="rare_drop", max_enchant=3,
            special_properties={"reach": 2, "bleed_chance": 0.15,

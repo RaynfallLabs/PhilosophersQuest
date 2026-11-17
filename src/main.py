@@ -2730,7 +2730,25 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self.player.inventory.append(shard)
             self.player.known_item_ids.add('philosophers_shard')
 
-        # -- Weapon: default dagger OR build override ----------------------
+        # -- Weapon: in his hand from the first turn ------------------------
+        # (UI-1, Brandon 2026-11-16: the plain hero's first fight was
+        # barehanded unless he knew to wield.) A bow or other ammo weapon
+        # goes to the ranged slot, where the game fires it from; a melee
+        # weapon to the hand. A second melee weapon (Musashi's shortsword)
+        # finds the hand full: it goes to the pack, At Your Back, so S draws
+        # it. A starting weapon is his own kit, so no quiz either way.
+        def _wield_starting_weapon(w):
+            p = self.player
+            ranged = getattr(w, 'requires_ammo', None) is not None
+            if ranged and getattr(p, 'ranged_weapon', None) is None:
+                p._apply_equip(w)
+            elif not ranged and p.weapon is None:
+                p._apply_equip(w)
+            else:
+                p.inventory.append(w)
+                if not ranged and p.readied_weapon is None:
+                    p.readied_weapon = w
+
         # _start_weapon is either a unique's str id ("excalibur") or a
         # (template_id, material_id) tuple for template-instantiated commons.
         no_dagger     = b.get('_no_dagger', False)
@@ -2751,15 +2769,17 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                         w.bound_to_wielder = True
                         self.player._apply_equip(w)
                     else:
-                        self.player.inventory.append(w)
+                        _wield_starting_weapon(w)
             elif not no_dagger:
+                # The plain hero's iron shortsword, in his hand.
                 sword = instantiate_weapon('shortsword', 'iron')
                 if sword:
                     _mark_starting_item_known(sword)
                     self.player.known_item_ids.add(sword.id)
-                    self.player.inventory.append(sword)
+                    _wield_starting_weapon(sword)
         except Exception:
-            pass
+            from game_log import log_error
+            log_error('main._give_starting_kit: recovered from an error (weapon)')
 
         # -- Ammo (rangers) ------------------------------------------------
         start_ammo = b.get('_start_ammo', None)
@@ -2774,7 +2794,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             except Exception:
                 pass
 
-        # -- Secondary melee weapon (rangers with bows) ----------------------
+        # -- Secondary melee weapon (rangers with bows, Musashi's two) -------
+        # A ranger's bow is in its slot, so his shortsword is in his hand;
+        # Musashi's hand already holds the longsword, so his shortsword is
+        # At Your Back (_wield_starting_weapon above).
         start_melee = b.get('_start_melee', None)
         if start_melee:
             try:
@@ -2792,9 +2815,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                         melee_w.bound_to_wielder = True     # a scroll of remove curse does not unbolt it
                         self.player.weapon = melee_w
                     else:
-                        self.player.inventory.append(melee_w)
+                        _wield_starting_weapon(melee_w)
             except Exception:
-                pass
+                from game_log import log_error
+                log_error('main._give_starting_kit: recovered from an error (melee)')
 
         # -- Wand (mages/wizards) ------------------------------------------
         start_wand = b.get('_start_wand', None)
@@ -5018,7 +5042,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             elif self.player.has_effect('doomed'):
                 self.add_message("The doom curse takes its toll. You fall.", 'danger')
             else:
-                self.add_message("You have died! Press ESC to quit.", 'danger')
+                self.add_message("You have died! Press Esc to return to the title.", 'danger')
 
         if self.state == STATE_DEAD:
             return
@@ -6347,7 +6371,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 self.defeat_reason = 'starved'
                 self._on_game_over()
                 self.state = STATE_DEAD
-                self.add_message("You have starved to death! Press ESC to quit.", 'danger')
+                self.add_message("You have starved to death! Press Esc to return to the title.", 'danger')
 
     # ------------------------------------------------------------------
     # Passive HP regeneration
@@ -7946,7 +7970,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         """Put on armour or a shield: the geography threshold quiz the first
         time the hero wears its kind, then no quiz (Known by Hand,
         known_by_hand.py), and the time it takes to put on
-        (game_dressing._dress_begin_on).
+        (game_dressing._dress_begin_on). A failed quiz loses that time:
+        the turns pass, and the piece stays in the pack
+        (game_dressing._equip_failed).
 
         Legendary uniques with `equip_chain_mode` route to chain-equip instead.
         """
@@ -7971,10 +7997,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 _kbh.learn(self.player, item)
                 self._dress_begin_on(item)
                 return
-            self.add_message(
-                f"You struggle with the {item_name} and give up.", 'warning'
-            )
-            self._advance_turn()
+            # A failure costs the piece's donning time in lost turns
+            # (game_dressing._equip_failed): plate, five.
+            self._equip_failed(item, f"You struggle with the {item_name}")
 
         self.quiz_engine.start_quiz(
             mode='threshold',
@@ -8041,10 +8066,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 _kbh.learn(self.player, item)
                 self._dress_begin_on(item)
                 return
-            self.add_message(
-                f"You fumble with the {item_name} and give up.", 'warning'
-            )
-            self._advance_turn()
+            # Its donning time, lost (game_dressing._equip_failed).
+            self._equip_failed(item, f"You fumble with the {item_name}")
 
         self.quiz_engine.start_quiz(
             mode='threshold',
@@ -8070,7 +8093,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         it: put back on, it goes on at that tier with no quiz, and the hero
         may take the quiz again to climb (``retake``; the best is kept, so a
         worse chain costs nothing). The first time, a failure leaves it in
-        the pack. ``item_type`` is kept for callers; the slot is read from
+        the pack and costs its donning time in lost turns
+        (game_dressing._equip_failed). ``item_type`` is kept for callers; the slot is read from
         the item.
         """
         from chain_equip import get_chain_subject, get_chain_mode
@@ -8121,10 +8145,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 _kbh.learn(self.player, item, tier)
                 self._dress_begin_on(item, tier=tier)
                 return
-            self.add_message(
-                f"The {item_name} does not recognize you. Try again.", 'warning'
-            )
-            self._advance_turn()
+            # Its donning time, lost (game_dressing._equip_failed).
+            self._equip_failed(item, f"The {item_name} does not recognize you. "
+                                     f"You struggle with it")
 
         # Engine accepts 'escalator_chain' and 'chain'. JSON uses these names
         # directly; the lenient fallback exists for legacy data only.

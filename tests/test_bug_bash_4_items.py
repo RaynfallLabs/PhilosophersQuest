@@ -447,7 +447,9 @@ def test_i14_a_blessed_potions_saved_dose_survives_being_over_the_limit():
 def test_i16_u_on_a_pack_item_does_nothing():
     g = _game()
     p = g.player
-    sw = next(i for i in p.inventory if items.Weapon is not None and isinstance(i, items.Weapon))
+    # The starting sword is in his hand (2026-11-16): a second one in the pack.
+    sw = items.instantiate_weapon('dagger', 'iron')
+    p.inventory.append(sw)
     _known(sw)
     sw.buc = 'uncursed'
     was = p.weapon

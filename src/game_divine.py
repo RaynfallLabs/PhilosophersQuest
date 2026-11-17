@@ -1609,13 +1609,20 @@ class DivineMixin:
                         for it in chosen:
                             it.buc = 'blessed'
                             it.buc_known = True
+                        # "In your pack" only of what is in the pack: the
+                        # sword in his hand is not (a hero starts holding
+                        # his weapon since 2026-11-16).
+                        _worn = {id(w) for w in _iter_equipped(p)}
+                        _where = ('' if any(id(it) in _worn for it in chosen)
+                                  else ' in your pack')
                         if len(chosen) == 1:
                             msgs.append(
-                                (f"A holy light suffuses the {first_name} in your pack.",
+                                (f"A holy light suffuses the {first_name}{_where}.",
                                  'success'))
                         else:
                             msgs.append(
-                                (f"A holy light suffuses {quantity(len(chosen), 'item')} in your pack.",
+                                (f"A holy light suffuses {quantity(len(chosen), 'item')}"
+                                 f"{_where or ' you carry'}.",
                                  'success'))
                     else:
                         # (True whether all is blessed already or the pack

@@ -64,6 +64,13 @@ def pick_band(level: int, pool: dict, rng):
         lo, hi = (b.get('counts') or {}).get(role, [0, 0])
         n = rng.randint(int(lo), int(hi)) if kinds else 0
         roster[role] = [rng.choice(kinds) for _ in range(n)]
+    # A small band has at most so many followers in all, whatever each role
+    # rolled (the top floors' bands, sized for a new hero: 2026-11-16).
+    most = b.get('most_followers')
+    if most is not None:
+        while sum(len(roster[r]) for r in ROLES) > int(most):
+            role = rng.choice([r for r in ROLES if roster[r]])
+            roster[role].pop(rng.randrange(len(roster[role])))
     return bid, roster
 
 

@@ -1,5 +1,5 @@
 {
-  "_doc": "War-bands (Dungeon Alive slice 5, C1; src/war_bands.py): groups that act like a unit, with roles from their lore. A band makes camp in one room of a floor (it replaces that room's ordinary roll), from 'floors' [first, last]. The top floors (1-6) hold the small ones: a goblin scouting party, a gang of footpads (3.5.1: a floor's own encounters, set up when it is made, carry the fight; newcomers come only to a hero who lingers, src/wanderers.py). 'chance' is the share of floors in range that hold a band (at most one band a floor). Roles: 'leader' (one; while he lives his followers do not lose their nerve, and when one of the band spots the hero the whole band is roused), 'guard' (keep beside the leader), 'shooter' (keeps its distance), 'caster', 'healer' (mends the band). Each role lists kinds; only kinds the floor's own spawn pool allows are used, so a band is never out of its depth (LORE, NOT FLOOR). 'counts' [min, max] per role. 'morale' is what the band does when its leader falls: 'rout' (they flee), 'crumble' (the dead he raised fall where they stand), 'quarrel' (they turn on one another). 'camp' lists the fixtures of its camp. 'line' is said on arrival; 'known_line' instead when the hero knows the leader's family (studied, or its family tier): it names the band's make-up, {roster}. 'rout_line' is said when the leader falls, 'break_line' when a great blow on the leader breaks their nerve.",
+  "_doc": "War-bands (Dungeon Alive slice 5, C1; src/war_bands.py): groups that act like a unit, with roles from their lore. A band makes camp in one room of a floor (it replaces that room's ordinary roll), from 'floors' [first, last]. The top floors (1-6) hold only the small ones, sized for a new hero (2026-11-16: a level-1 hero of 30 HP is not swarmed; the bigger bands begin on floor 7): a goblin scouting party of a hobgoblin and at most two followers, a gang of footpads of a captain and one more ('most_followers' caps a band's followers in all, whatever each role rolled) (3.5.1: a floor's own encounters, set up when it is made, carry the fight; newcomers come only to a hero who lingers, src/wanderers.py). 'chance' is the share of floors in range that hold a band (at most one band a floor). Roles: 'leader' (one; while he lives his followers do not lose their nerve, and when one of the band spots the hero the whole band is roused), 'guard' (keep beside the leader), 'shooter' (keeps its distance), 'caster', 'healer' (mends the band). Each role lists kinds; only kinds the floor's own spawn pool allows are used, so a band is never out of its depth (LORE, NOT FLOOR). 'counts' [min, max] per role. 'morale' is what the band does when its leader falls: 'rout' (they flee), 'crumble' (the dead he raised fall where they stand), 'quarrel' (they turn on one another). 'camp' lists the fixtures of its camp. 'line' is said on arrival; 'known_line' instead when the hero knows the leader's family (studied, or its family tier): it names the band's make-up, {roster}. 'rout_line' is said when the leader falls, 'break_line' when a great blow on the leader breaks their nerve.",
   "chance": 0.55,
   "first_floor": 1,
   "nerve_chain": 6,
@@ -8,8 +8,9 @@
     "goblin_raiders": {
       "name": "a goblin war-band",
       "family": "goblinkin",
+      "_floors_note": "From floor 7 since 2026-11-16 (it was 3): floors 1-6 hold only the small bands, sized for a new hero. On floor 3 this band put about 9.5 HP a turn on a hero of 30-40 HP.",
       "floors": [
-        3,
+        7,
         55
       ],
       "leader": [
@@ -100,10 +101,12 @@
       "caster": [
         "goblin_shaman"
       ],
+      "_counts_note": "Smaller since 2026-11-16 (Brandon: floor-1 war-bands SHRINK; bug bash 3.5.1 Q12): a hobgoblin and at most two followers, goblins, perhaps a shaman (a sniper from floor 3). All on a level-1 hero (30 HP, AC 10): about 3 HP a turn on floor 1, at most 3.4 (it was 2-3 goblins and a shaman, about 4, up to 5).",
+      "most_followers": 2,
       "counts": {
         "guard": [
-          2,
-          3
+          1,
+          2
         ],
         "shooter": [
           0,
@@ -132,8 +135,9 @@
     "gnoll_pack": {
       "name": "a gnoll pack",
       "family": "goblinkin",
+      "_floors_note": "From floor 7 since 2026-11-16 (it was 6): floors 1-6 hold only the small bands.",
       "floors": [
-        6,
+        7,
         40
       ],
       "leader": [
@@ -176,8 +180,9 @@
     "bandit_crew": {
       "name": "a bandit crew",
       "family": "mortals",
+      "_floors_note": "From floor 7 since 2026-11-16 (it was 3): floors 1-6 hold only the small bands. On floor 3 this crew put about 10 HP a turn on a hero of 30-40 HP.",
       "floors": [
-        3,
+        7,
         45
       ],
       "leader": [
@@ -238,13 +243,15 @@
       "shooter": [
         "bandit_archer"
       ],
+      "_counts_note": "Smaller since 2026-11-16 (Brandon: floor-1 war-bands SHRINK; bug bash 3.5.1 Q12): a couple of footpads, the captain and one more, a footpad or (one gang in four) an archer. All on a level-1 hero (30 HP, AC 10): about 3.4 HP a turn, at most 4 (it was 1-2 footpads and always the archer, about 6.5: dead in about 5 turns).",
+      "most_followers": 1,
       "counts": {
         "guard": [
           1,
-          2
+          1
         ],
         "shooter": [
-          1,
+          0,
           1
         ]
       },

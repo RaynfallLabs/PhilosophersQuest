@@ -56,6 +56,9 @@ def reason_line(tab: str, why: str, player) -> str:
         what = f"you are hurt, {nums(getattr(p, 'hp', 0), getattr(p, 'max_hp', 0), 'HP')}"
     elif why == 'hungry':
         what = f"you are hungry, {nums(getattr(p, 'sp', 0), getattr(p, 'max_sp', 0), 'SP')}"
+    elif why == 'hungry_missing':
+        what = (f"you are hungry, {nums(getattr(p, 'sp', 0), getattr(p, 'max_sp', 0), 'SP')}, "
+                f"and no SP or HP dish is ready: each says what it needs")
     elif why == 'mana':
         what = f"your mana is low, {nums(getattr(p, 'mp', 0), getattr(p, 'max_mp', 0), 'MP')}"
     elif why == 'lesson':
@@ -72,7 +75,7 @@ def reason_line(tab: str, why: str, player) -> str:
 def urgent(why: str) -> bool:
     """A reason that is about the hero's state right now (hurt, hungry, low
     on mana), drawn in the warning colour."""
-    return why in ('hurt', 'hungry', 'mana')
+    return why in ('hurt', 'hungry', 'hungry_missing', 'mana')
 
 
 def main_effect(row: dict) -> str:

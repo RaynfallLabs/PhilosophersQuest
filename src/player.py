@@ -72,10 +72,12 @@ class Player:
         self.stance: str = 'neutral'
         self.ears_stopped: bool = False
         # Known by Hand (known_by_hand.py): the kinds of gear the hero has
-        # put on this run (item ids), which go on again with no quiz, and
-        # the best chain reached on each chain-equip legend.
+        # put on this run (item ids), which go on again with no quiz, the
+        # best chain reached on each chain-equip legend, and the highest tier
+        # of each ring and amulet kind put on (a higher one asks its own).
         self.known_by_hand: set[str] = set()
         self.by_hand_tiers: dict[str, int] = {}
+        self.by_hand_ring_tiers: dict[str, int] = {}
         # Three saved kits (loadouts.py): name and pieces by slot.
         from loadouts import default_kits
         self.loadouts: list = default_kits()
@@ -1002,11 +1004,23 @@ class Player:
         self.__dict__.setdefault('ears_stopped', False)
         if 'known_by_hand' not in state:
             self.known_by_hand = set()
+            self.by_hand_ring_tiers = {}
             try:
                 import known_by_hand as _kbh
                 _kbh.seed_from_worn(self)
             except Exception:
                 pass
+        elif 'by_hand_ring_tiers' not in state:
+            # Saves from before ring kinds were known by tier (2026-11-16):
+            # what is worn counts at its own tier, a ring kind known but not
+            # worn at its first tier.
+            self.by_hand_ring_tiers = {}
+            try:
+                import known_by_hand as _kbh
+                _kbh.migrate_ring_tiers(self)
+            except Exception:
+                from game_log import log_error
+                log_error('Player.__setstate__: ring tiers not migrated')
         from loadouts import valid as _kits_valid, default_kits as _default_kits
         if not _kits_valid(self.__dict__.get('loadouts')):
             self.loadouts = _default_kits()

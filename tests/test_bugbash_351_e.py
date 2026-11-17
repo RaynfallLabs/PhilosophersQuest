@@ -124,8 +124,12 @@ def go_to(h, x, y, limit=400):
 
 
 def wield_the_sword(h):
+    """The starting sword in the hand: since 2026-11-16 the hero starts
+    holding it (UI-1); one in the pack is wielded with E, as before."""
     import items
     g = h.g
+    if isinstance(g.player.weapon, items.Weapon):
+        return g.player.weapon
     sword = next(i for i in g.player.inventory if isinstance(i, items.Weapon))
     h.key('e')
     pick(h, sword, g._get_equip_tab_items)
@@ -902,8 +906,9 @@ def a_seeker(tmp_path, monkeypatch):
 
 
 def test_journey_06_a_short_story(make_game, a_seeker):
-    """A new hero punches a giant rat to death (his sword still in the
-    pack), then falls to a goblin on floor 1: the death screen, the score in
+    """A new hero puts his sword away and punches a giant rat to death (he
+    starts holding it since 2026-11-16; it used to start in the pack), then
+    falls to a goblin on floor 1: the death screen, the score in
     the table, Esc to the title, a new hero of the same name on floor 1,
     and the Seeker Profile (F4) with Bare Knuckles and A Very Short Story
     won."""
@@ -914,6 +919,9 @@ def test_journey_06_a_short_story(make_game, a_seeker):
     g, h = make_game(name='Wat')
     p = g.player
     open_floor(g, p.x, p.y, 4)
+    from test_bugbash_wb_e import unequip
+    assert p.weapon is not None                 # his sword, in his hand
+    unequip(h, p.weapon)
     assert p.weapon is None
     rat = place_monster(g, 'giant_rat', 2)
     g._refresh_fov()
