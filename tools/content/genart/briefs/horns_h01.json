@@ -1,0 +1,618 @@
+[
+ {
+  "id": "little_john",
+  "family": "horn_merry_men",
+  "rank": 1,
+  "key": "magenta",
+  "what": "Little John of Robin Hood's band: a huge, broad yeoman seven feet tall with a short brown beard and a cheerful face. He has the realistic anatomy and proportions of an adult man: a small head, long limbs, about eight heads tall.",
+  "colours": "Lincoln green tunic, brown leather jerkin and belt, brown hose, brown boots, a pale oak staff.",
+  "wears": "He wears a green tunic belted with brown leather, brown hose and boots, and a green hood thrown back.",
+  "holds": "In both hands he grips exactly one long plain oak quarterstaff, taller than he is, held across his body ready to strike.",
+  "pose": "He swings the quarterstaff high in both hands, weight on his front foot, grinning.",
+  "must_show": [
+   "very big man, much taller and broader than the others",
+   "one long plain wooden staff",
+   "Lincoln green clothes"
+  ],
+  "must_not_show": [
+   "sword",
+   "bow",
+   "club",
+   "armour",
+   "shield",
+   "axe",
+   "oversized head",
+   "cartoon",
+   "ground shadow",
+   "patch of ground",
+   "second figure",
+   "text",
+   "modern clothes"
+  ]
+ },
+ {
+  "id": "will_scarlet",
+  "family": "horn_merry_men",
+  "rank": 2,
+  "key": "magenta",
+  "what": "Will Scarlet of Robin Hood's band: a lean, quick young swordsman with dark hair and a sharp, laughing face. He has the realistic anatomy and proportions of an adult man: a small head, long limbs, about eight heads tall.",
+  "colours": "a bright scarlet tunic and hood, brown leather belt, green hose, brown boots, a steel sword.",
+  "wears": "He wears a scarlet tunic and a scarlet hood, a brown belt, green hose and boots.",
+  "holds": "In his right hand he holds exactly one straight steel sword, point forward; his left hand is open, held back for balance.",
+  "pose": "He lunges forward on two legs with the sword thrust out.",
+  "must_show": [
+   "scarlet clothes",
+   "one straight sword"
+  ],
+  "must_not_show": [
+   "bow",
+   "armour",
+   "shield",
+   "staff",
+   "oversized head",
+   "cartoon",
+   "ground shadow",
+   "patch of ground",
+   "second figure",
+   "text",
+   "modern clothes"
+  ]
+ },
+ {
+  "id": "friar_tuck",
+  "family": "horn_merry_men",
+  "rank": 3,
+  "key": "magenta",
+  "what": "Friar Tuck: a stout, round-bellied, cheerful friar with a tonsured head (a shaved crown ringed with brown hair) and a red face. He has the realistic anatomy and proportions of an adult man: a small head, long limbs, about eight heads tall.",
+  "colours": "a russet-brown friar's habit, a white rope belt, a steel sword, a small round steel buckler.",
+  "wears": "He wears a long russet-brown habit with the hood down, tied at the waist with a white rope.",
+  "holds": "In his right hand he holds exactly one short steel sword; on his left fist a small round steel buckler.",
+  "pose": "He stands square on two legs, sword raised, buckler out, laughing.",
+  "must_show": [
+   "tonsure",
+   "brown friar's habit with rope belt",
+   "sword and small round buckler"
+  ],
+  "must_not_show": [
+   "mace",
+   "staff",
+   "armour",
+   "bow",
+   "black robe",
+   "oversized head",
+   "cartoon",
+   "ground shadow",
+   "patch of ground",
+   "second figure",
+   "text",
+   "modern clothes"
+  ]
+ },
+ {
+  "id": "much_the_millers_son",
+  "family": "horn_merry_men",
+  "rank": 4,
+  "key": "magenta",
+  "what": "Much the Miller's Son of Robin Hood's band: a short, sturdy young yeoman with tousled fair hair, a little flour still on his sleeves. He has the realistic anatomy and proportions of an adult man: a small head, long limbs, about eight heads tall.",
+  "colours": "a Lincoln green tunic, brown hose and belt, brown boots, a steel short sword.",
+  "wears": "He wears a green tunic and a brown belt, brown hose and boots.",
+  "holds": "In his right hand he holds exactly one short steel sword; his left hand is a fist.",
+  "pose": "He crouches forward on two legs, sword ready.",
+  "must_show": [
+   "young, short, sturdy",
+   "green tunic",
+   "one short sword"
+  ],
+  "must_not_show": [
+   "bow",
+   "armour",
+   "beard",
+   "old man",
+   "oversized head",
+   "cartoon",
+   "ground shadow",
+   "patch of ground",
+   "second figure",
+   "text",
+   "modern clothes"
+  ]
+ },
+ {
+  "id": "alan_a_dale",
+  "family": "horn_merry_men",
+  "rank": 5,
+  "key": "magenta",
+  "what": "Alan-a-Dale, the minstrel of Robin Hood's band: a slim young man with curly hair and a feathered cap. He has the realistic anatomy and proportions of an adult man: a small head, long limbs, about eight heads tall.",
+  "colours": "a green and red minstrel's tunic, a red cap with a white feather, brown boots, a small wooden harp, a longbow.",
+  "wears": "He wears a parti-coloured tunic, green on one side and red on the other, and a red cap with a feather.",
+  "holds": "A small wooden harp hangs at his back; in his left hand he holds exactly one longbow and with his right he draws an arrow to his cheek.",
+  "pose": "He stands on two legs, drawing the bow.",
+  "must_show": [
+   "minstrel's parti-coloured tunic",
+   "small harp on his back",
+   "longbow"
+  ],
+  "must_not_show": [
+   "armour",
+   "sword",
+   "lute held in hands",
+   "oversized head",
+   "cartoon",
+   "ground shadow",
+   "patch of ground",
+   "second figure",
+   "text",
+   "modern clothes"
+  ]
+ },
+ {
+  "id": "yeoman_archer",
+  "family": "horn_merry_men",
+  "rank": 6,
+  "key": "magenta",
+  "what": "a yeoman archer of Robin Hood's band: a weathered, plain countryman with a short beard. He has the realistic anatomy and proportions of an adult man: a small head, long limbs, about eight heads tall.",
+  "colours": "a Lincoln green hood and tunic, brown belt and quiver, brown hose and boots, a yew longbow.",
+  "wears": "He wears a green hood up over his head, a green tunic and a brown quiver of arrows at his hip.",
+  "holds": "In his left hand he holds exactly one tall yew longbow, as tall as he is; with his right he draws the string back to his ear.",
+  "pose": "He stands side-on on two legs at full draw.",
+  "must_show": [
+   "green hood",
+   "tall longbow at full draw"
+  ],
+  "must_not_show": [
+   "armour",
+   "sword",
+   "crossbow",
+   "red clothes",
+   "oversized head",
+   "cartoon",
+   "ground shadow",
+   "patch of ground",
+   "second figure",
+   "text",
+   "modern clothes"
+  ]
+ },
+ {
+  "id": "npc_robin_hood",
+  "family": "horn_merry_men",
+  "rank": 0,
+  "key": "magenta",
+  "what": "Robin Hood: a lean, handsome outlaw with a trimmed brown beard and a bold grin. He has the realistic anatomy and proportions of an adult man: a small head, long limbs, about eight heads tall.",
+  "colours": "a Lincoln green hood with a red feather, green tunic, brown leather belt with a hunting horn, brown boots, a yew longbow.",
+  "wears": "He wears a green hooded tunic, a brown belt with a small horn hanging from it, brown hose and boots.",
+  "holds": "In his left hand he holds exactly one yew longbow, unstrung arrow at rest; his right hand rests on his hip.",
+  "pose": "He stands at ease on two legs, head cocked, grinning.",
+  "must_show": [
+   "green hood with a red feather",
+   "longbow",
+   "small horn at his belt"
+  ],
+  "must_not_show": [
+   "armour",
+   "sword drawn",
+   "crossbow",
+   "oversized head",
+   "cartoon",
+   "ground shadow",
+   "patch of ground",
+   "second figure",
+   "text",
+   "modern clothes"
+  ]
+ },
+ {
+  "id": "king_arthur",
+  "family": "horn_round_table",
+  "rank": 1,
+  "key": "magenta",
+  "what": "King Arthur: a tall, grave king in his prime with a short dark beard streaked with grey. He has the realistic anatomy and proportions of an adult man: a small head, long limbs, about eight heads tall.",
+  "colours": "polished steel plate, a red surcoat with three gold crowns, a gold crown, a red cloak, a steel sword with a gold hilt.",
+  "wears": "He wears steel plate under a red surcoat with three small gold crowns on it, a red cloak, and a plain gold crown on his helmetless head.",
+  "holds": "In his right hand he holds exactly one straight longsword, Excalibur, raised; his left holds a red shield with three gold crowns.",
+  "pose": "He strides forward on two legs, sword raised to strike.",
+  "must_show": [
+   "gold crown",
+   "red surcoat with three gold crowns",
+   "one straight sword"
+  ],
+  "must_not_show": [
+   "helmet",
+   "two swords",
+   "staff",
+   "oversized head",
+   "cartoon",
+   "ground shadow",
+   "patch of ground",
+   "second figure",
+   "text",
+   "modern clothes"
+  ]
+ },
+ {
+  "id": "sir_lancelot",
+  "family": "horn_round_table",
+  "rank": 2,
+  "key": "magenta",
+  "what": "Sir Lancelot du Lac: a strong, handsome knight with dark hair. He has the realistic anatomy and proportions of an adult man: a small head, long limbs, about eight heads tall.",
+  "colours": "bright steel plate, a white surcoat with three red diagonal bands, a white shield with three red diagonal bands, a steel sword.",
+  "wears": "He wears bright steel plate and a white surcoat with three red diagonal stripes.",
+  "holds": "In his right hand exactly one longsword; on his left arm a white shield with three red diagonal stripes.",
+  "pose": "He lunges forward on two legs.",
+  "must_show": [
+   "white with three red diagonal bands on shield and surcoat"
+  ],
+  "must_not_show": [
+   "crown",
+   "helmet with plume",
+   "green",
+   "oversized head",
+   "cartoon",
+   "ground shadow",
+   "patch of ground",
+   "second figure",
+   "text",
+   "modern clothes"
+  ]
+ },
+ {
+  "id": "sir_gawain",
+  "family": "horn_round_table",
+  "rank": 3,
+  "key": "magenta",
+  "what": "Sir Gawain: a broad, fair-haired knight with a short beard. He has the realistic anatomy and proportions of an adult man: a small head, long limbs, about eight heads tall.",
+  "colours": "steel plate, a red surcoat and a red shield with a gold five-pointed star (a pentangle), a steel sword.",
+  "wears": "He wears steel plate under a red surcoat with a gold pentangle on the chest.",
+  "holds": "In his right hand exactly one longsword; on his left arm a red shield with a large gold pentangle.",
+  "pose": "He strikes downward on two legs.",
+  "must_show": [
+   "gold pentangle on red shield"
+  ],
+  "must_not_show": [
+   "crown",
+   "green armour",
+   "axe",
+   "oversized head",
+   "cartoon",
+   "ground shadow",
+   "patch of ground",
+   "second figure",
+   "text",
+   "modern clothes"
+  ]
+ },
+ {
+  "id": "sir_percival",
+  "family": "horn_round_table",
+  "rank": 4,
+  "key": "magenta",
+  "what": "Sir Percival: a very young knight, hardly more than a boy, with an open, eager face. He has the realistic anatomy and proportions of an adult man: a small head, long limbs, about eight heads tall.",
+  "colours": "red steel armour (the Red Knight's armour), a red shield, a steel-tipped lance.",
+  "wears": "He wears plate armour painted all red, with no helmet.",
+  "holds": "In both hands exactly one long lance held low, point forward; a red shield on his back.",
+  "pose": "He charges forward on foot on two legs, lance levelled.",
+  "must_show": [
+   "all-red armour",
+   "young face",
+   "lance"
+  ],
+  "must_not_show": [
+   "beard",
+   "crown",
+   "sword",
+   "oversized head",
+   "cartoon",
+   "ground shadow",
+   "patch of ground",
+   "second figure",
+   "text",
+   "modern clothes"
+  ]
+ },
+ {
+  "id": "sir_bedivere",
+  "family": "horn_round_table",
+  "rank": 5,
+  "key": "magenta",
+  "what": "Sir Bedivere: a lean, grey-haired veteran knight, loyal and grim. He has the realistic anatomy and proportions of an adult man: a small head, long limbs, about eight heads tall.",
+  "colours": "steel plate, a purple surcoat, a purple shield with a silver stripe, a steel sword.",
+  "wears": "He wears steel plate under a purple surcoat.",
+  "holds": "In his right hand exactly one longsword; a purple shield on his left arm.",
+  "pose": "He stands guard on two legs.",
+  "must_show": [
+   "purple surcoat and shield"
+  ],
+  "must_not_show": [
+   "crown",
+   "red surcoat",
+   "oversized head",
+   "cartoon",
+   "ground shadow",
+   "patch of ground",
+   "second figure",
+   "text",
+   "modern clothes"
+  ]
+ },
+ {
+  "id": "sir_kay",
+  "family": "horn_round_table",
+  "rank": 6,
+  "key": "magenta",
+  "what": "Sir Kay, Arthur's steward: a tall, lanky knight with a sharp nose and a sour, clever face. He has the realistic anatomy and proportions of an adult man: a small head, long limbs, about eight heads tall.",
+  "colours": "steel plate, a tawny orange surcoat and shield, a steel sword, a ring of keys at his belt.",
+  "wears": "He wears steel plate under a tawny surcoat, a ring of keys at his belt.",
+  "holds": "In his right hand exactly one longsword; an orange shield on his left arm.",
+  "pose": "He advances on two legs.",
+  "must_show": [
+   "tawny orange surcoat",
+   "keys at the belt"
+  ],
+  "must_not_show": [
+   "crown",
+   "red surcoat",
+   "oversized head",
+   "cartoon",
+   "ground shadow",
+   "patch of ground",
+   "second figure",
+   "text",
+   "modern clothes"
+  ]
+ },
+ {
+  "id": "npc_sleeping_king",
+  "family": "horn_round_table",
+  "rank": 0,
+  "key": "magenta",
+  "what": "King Arthur asleep on a stone throne: a grave bearded king slumped forward in sleep, eyes closed. He has the realistic anatomy and proportions of an adult man: a small head, long limbs, about eight heads tall.",
+  "colours": "steel plate, a white cloak, a gold crown, grey stone throne.",
+  "wears": "He wears steel plate, a white cloak and a gold crown.",
+  "holds": "His hands rest folded on his knees; his sword lies across his lap in its scabbard.",
+  "pose": "He sits slumped on the throne, head bowed, asleep.",
+  "must_show": [
+   "eyes closed, asleep",
+   "gold crown",
+   "seated"
+  ],
+  "must_not_show": [
+   "standing",
+   "open eyes",
+   "weapon raised",
+   "oversized head",
+   "cartoon",
+   "ground shadow",
+   "patch of ground",
+   "second figure",
+   "text",
+   "modern clothes"
+  ]
+ },
+ {
+  "id": "einherjar",
+  "family": "horn_valhalla",
+  "rank": 1,
+  "key": "magenta",
+  "what": "one of the einherjar, Odin's chosen dead from Valhalla: a battle-scarred Norse warrior, alive and strong, with a braided blond beard, glowing faintly gold as if lit from within. He has the realistic anatomy and proportions of an adult man: a small head, long limbs, about eight heads tall.",
+  "colours": "a steel spangenhelm, a mail shirt, a red and gold round shield, a bearded axe; a faint warm gold light on him.",
+  "wears": "He wears a round steel helmet with a nose guard, a mail shirt to the knees and fur at the shoulders.",
+  "holds": "In his right hand exactly one bearded war axe raised; on his left arm a round wooden shield painted red and gold.",
+  "pose": "He charges forward on two legs, axe high, roaring.",
+  "must_show": [
+   "Norse warrior",
+   "round shield",
+   "axe",
+   "faint gold glow"
+  ],
+  "must_not_show": [
+   "horned helmet",
+   "ghost",
+   "blue",
+   "transparent",
+   "skeleton",
+   "oversized head",
+   "cartoon",
+   "ground shadow",
+   "patch of ground",
+   "second figure",
+   "text",
+   "modern clothes"
+  ]
+ },
+ {
+  "id": "charlemagne",
+  "family": "horn_charlemagne",
+  "rank": 1,
+  "key": "magenta",
+  "what": "Charlemagne, emperor of the Franks: a tall, old, mighty king with a long flowing white beard. He has the realistic anatomy and proportions of an adult man: a small head, long limbs, about eight heads tall.",
+  "colours": "steel mail and plate, a royal blue cloak with gold fleurs, a gold crown, a sword with a gold hilt.",
+  "wears": "He wears mail and plate under a royal blue cloak, and a gold crown.",
+  "holds": "In his right hand exactly one straight sword, Joyeuse, raised; his left hand on his cloak.",
+  "pose": "He strides forward on two legs, sword raised.",
+  "must_show": [
+   "long white beard",
+   "gold crown",
+   "blue cloak"
+  ],
+  "must_not_show": [
+   "helmet",
+   "young face",
+   "red cloak",
+   "oversized head",
+   "cartoon",
+   "ground shadow",
+   "patch of ground",
+   "second figure",
+   "text",
+   "modern clothes"
+  ]
+ },
+ {
+  "id": "duke_naimes",
+  "family": "horn_charlemagne",
+  "rank": 2,
+  "key": "magenta",
+  "what": "Duke Naimes, Charlemagne's wise old counsellor: a lean, white-haired knight with a short white beard and shrewd eyes. He has the realistic anatomy and proportions of an adult man: a small head, long limbs, about eight heads tall.",
+  "colours": "steel mail, a green surcoat and shield, a steel sword.",
+  "wears": "He wears a mail coat under a green surcoat.",
+  "holds": "In his right hand exactly one sword; a green shield on his left arm.",
+  "pose": "He stands guard on two legs.",
+  "must_show": [
+   "white hair and beard",
+   "green surcoat"
+  ],
+  "must_not_show": [
+   "crown",
+   "blue cloak",
+   "oversized head",
+   "cartoon",
+   "ground shadow",
+   "patch of ground",
+   "second figure",
+   "text",
+   "modern clothes"
+  ]
+ },
+ {
+  "id": "ogier_the_dane",
+  "family": "horn_charlemagne",
+  "rank": 3,
+  "key": "magenta",
+  "what": "Ogier the Dane: a huge, fierce northern knight with a red beard. He has the realistic anatomy and proportions of an adult man: a small head, long limbs, about eight heads tall.",
+  "colours": "dark iron mail, a red surcoat and shield with a white cross, a steel sword.",
+  "wears": "He wears dark iron mail under a red surcoat with a white cross.",
+  "holds": "In his right hand exactly one broad sword; a red shield with a white cross on his left arm.",
+  "pose": "He swings the sword on two legs.",
+  "must_show": [
+   "red shield with white cross",
+   "red beard"
+  ],
+  "must_not_show": [
+   "crown",
+   "horned helmet",
+   "oversized head",
+   "cartoon",
+   "ground shadow",
+   "patch of ground",
+   "second figure",
+   "text",
+   "modern clothes"
+  ]
+ },
+ {
+  "id": "frankish_knight",
+  "family": "horn_charlemagne",
+  "rank": 4,
+  "key": "magenta",
+  "what": "a Frankish knight of Charlemagne's host: a hardened soldier with a short beard. He has the realistic anatomy and proportions of an adult man: a small head, long limbs, about eight heads tall.",
+  "colours": "a conical steel helmet with nose guard, a mail coat, a long blue kite shield with a gold band, a lance.",
+  "wears": "He wears a conical helmet with a nose guard and a mail coat to the knees.",
+  "holds": "In his right hand exactly one lance held low; a long blue kite-shaped shield with a gold band on his left arm.",
+  "pose": "He advances on two legs, lance forward.",
+  "must_show": [
+   "conical helmet",
+   "mail",
+   "kite shield"
+  ],
+  "must_not_show": [
+   "crown",
+   "plate armour",
+   "oversized head",
+   "cartoon",
+   "ground shadow",
+   "patch of ground",
+   "second figure",
+   "text",
+   "modern clothes"
+  ]
+ },
+ {
+  "id": "npc_heimdall",
+  "family": "horn_valhalla",
+  "rank": 0,
+  "key": "magenta",
+  "what": "Heimdall, the watchman of the gods: a tall, calm man in white with long pale hair, a smile that shows gold teeth. He has the realistic anatomy and proportions of an adult man: a small head, long limbs, about eight heads tall.",
+  "colours": "a long white robe and white cloak, a gold belt, a huge curved horn banded with gold.",
+  "wears": "He wears a long white robe, a white cloak and a gold belt.",
+  "holds": "In both hands exactly one great curved horn, as long as his arm, banded with gold, held across his body.",
+  "pose": "He stands on two legs, looking out, the horn held ready.",
+  "must_show": [
+   "white robe",
+   "great gold-banded horn",
+   "gold teeth"
+  ],
+  "must_not_show": [
+   "helmet",
+   "sword",
+   "orb",
+   "oversized head",
+   "cartoon",
+   "ground shadow",
+   "patch of ground",
+   "second figure",
+   "text",
+   "modern clothes"
+  ]
+ },
+ {
+  "id": "robin_hoods_horn",
+  "family": "horn_items",
+  "rank": 1,
+  "body": "item",
+  "scale": "small",
+  "key": "magenta",
+  "what": "a small brown cow-horn hunting horn with a brass mouthpiece and a brass ring at the bell, hung on a Lincoln green baldric strap.",
+  "colours": "warm brown horn darkening to the tip, dull brass fittings, a green strap.",
+  "pose": "Seen from the side, the horn curving gently, the green strap looping above it.",
+  "must_show": [
+   "brown horn",
+   "green strap"
+  ],
+  "must_not_show": [
+   "ivory",
+   "gold",
+   "hand",
+   "person"
+  ]
+ },
+ {
+  "id": "arthurs_bugle",
+  "family": "horn_items",
+  "rank": 2,
+  "body": "item",
+  "scale": "small",
+  "key": "magenta",
+  "what": "an old pale bugle-horn of polished ox horn with silver bands at the mouthpiece and the bell, hung on a worn leather baldric.",
+  "colours": "pale cream horn, tarnished silver bands, brown leather strap.",
+  "pose": "Seen from the side, the bell to the right.",
+  "must_show": [
+   "pale horn",
+   "silver bands"
+  ],
+  "must_not_show": [
+   "gold",
+   "brass trumpet",
+   "hand"
+  ]
+ },
+ {
+  "id": "gjallarhorn",
+  "family": "horn_items",
+  "rank": 3,
+  "body": "item",
+  "scale": "medium",
+  "key": "magenta",
+  "what": "Gjallarhorn: a huge curved horn of a dark aurochs, banded with broad gold rings carved with knotwork.",
+  "colours": "dark brown-black horn, bright gold bands.",
+  "pose": "Seen from the side, the great curve sweeping up to a wide bell.",
+  "must_show": [
+   "huge dark horn",
+   "gold bands"
+  ],
+  "must_not_show": [
+   "ivory",
+   "hand",
+   "drinking horn with liquid"
+  ]
+ }
+]
