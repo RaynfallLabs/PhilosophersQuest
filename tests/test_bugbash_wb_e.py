@@ -244,6 +244,22 @@ def pick(h, item, getter):
     h.key(getattr(pygame, f'K_{chr(97 + idx)}'))
 
 
+def the_sword_in_hand(h, part=''):
+    """The hero's starting sword, in his hand: since 2026-11-16 he starts
+    holding it (UI-1). One still in the pack is wielded through the E menu,
+    as a player would."""
+    import items
+    g = h.g
+    p = g.player
+    if isinstance(p.weapon, items.Weapon) and part in (p.weapon.name or ''):
+        return p.weapon
+    sword = next(i for i in p.inventory if isinstance(i, items.Weapon) and part in i.name)
+    h.key('e')
+    pick(h, sword, g._get_equip_tab_items)
+    assert p.weapon is sword
+    return sword
+
+
 def unequip(h, item):
     """E, Right to the Unequip tab, the worn item's letter."""
     g = h.g
@@ -658,9 +674,7 @@ def test_journey_02_swaps_and_kits(make_game):
     g, h = make_game()
     p = g.player
     open_floor(g, p.x, p.y, 4)
-    sword = next(i for i in p.inventory if isinstance(i, items.Weapon))
-    h.key('e')
-    pick(h, sword, g._get_equip_tab_items)
+    sword = the_sword_in_hand(h)
     mace = items.instantiate_weapon('mace', 'iron')
     p.inventory.append(mace)
     h.key('s')
@@ -730,9 +744,7 @@ def test_journey_03_the_arsenal(make_game):
     h.shift('T')
     assert h.said()[-1].startswith('[QA] The arsenal:')
     h.shift('I')
-    sword = next(i for i in p.inventory if isinstance(i, items.Weapon) and 'ongsword' in i.name)
-    h.key('e')
-    pick(h, sword, g._get_equip_tab_items)
+    sword = the_sword_in_hand(h, 'ongsword')
     h.said()
     h.shift('C')
     assert g.state == 'quaff_menu'
@@ -796,9 +808,7 @@ def test_journey_04_knowing_a_monster(make_game):
     p = g.player
     p.hp = p.max_hp = 400
     open_floor(g, p.x, p.y, 5)
-    sword = next(i for i in p.inventory if isinstance(i, items.Weapon))
-    h.key('e')
-    pick(h, sword, g._get_equip_tab_items)
+    sword = the_sword_in_hand(h)
     sk = place_monster(g, 'skeleton', 1)
     g._refresh_fov()
     h.said()
@@ -919,9 +929,7 @@ def test_journey_05_the_smith(make_game):
     open_floor(g, p.x, p.y, 6)
     g.player_gold = 6000
     h.shift('I')
-    sword = next(i for i in p.inventory if isinstance(i, items.Weapon) and 'ongsword' in i.name)
-    h.key('e')
-    pick(h, sword, g._get_equip_tab_items)
+    sword = the_sword_in_hand(h, 'ongsword')
     cloak = items.instantiate_armor('cloak', 'linen')
     p.inventory.append(cloak)
     h.key('e')
@@ -1040,9 +1048,7 @@ def test_journey_07_the_emberpup(make_game):
     p = g.player
     open_floor(g, p.x, p.y, 6)
     h.shift('I')
-    sword = next(i for i in p.inventory if isinstance(i, items.Weapon) and 'ongsword' in i.name)
-    h.key('e')
-    pick(h, sword, g._get_equip_tab_items)
+    sword = the_sword_in_hand(h, 'ongsword')
     h.said()
     h.shift('L')
     nickel = next(m for m in g.monsters if E.is_wearer(m))
@@ -1279,9 +1285,7 @@ def test_journey_10_the_stray_kids_stage(make_game):
     g = h.g
     p = g.player
     g.monsters = [m for m in g.monsters if getattr(m, 'is_allied', False)]
-    sword = next(i for i in p.inventory if isinstance(i, items.Weapon) and 'ongsword' in i.name)
-    h.key('e')
-    pick(h, sword, g._get_equip_tab_items)
+    sword = the_sword_in_hand(h, 'ongsword')
     h.shift('K')
     ix, iy = g._stray_kids_state()['pos']
     if ix != p.x and iy != p.y:

@@ -485,10 +485,10 @@ HERO_JOURNAL: dict[str, str] = {
         "Cain the Hunter. My twin's bow is oak; mine is yew, and I say it sings. "
         "I carry the same Stuffie because some traditions are worth keeping.",
     "fianna":
-        "Fianna the Wizard, age thirteen. I have a wand, a sketchbook, and a "
-        "questionable plan. Magic missiles are the basis of a girl's education.",
+        "Fianna the Wizard, age thirteen. I have a wand, a spellbook, a sketchbook "
+        "and a questionable plan. Magic missiles are the basis of a girl's education.",
     "fluffs":
-        "Fluffs the Magnificent. Like Fianna but with a real spellbook. "
+        "Fluffs the Magnificent. Like Fianna, only a little sharper. "
         "The dungeon should bow. (It will not.)",
     "robyn":
         "Robyn. Quiet feet, quick mind, quicker tongue. Sleep arrows for the rude, "

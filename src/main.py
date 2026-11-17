@@ -2725,7 +2725,25 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self.player.inventory.append(shard)
             self.player.known_item_ids.add('philosophers_shard')
 
-        # -- Weapon: default dagger OR build override ----------------------
+        # -- Weapon: in his hand from the first turn ------------------------
+        # (UI-1, Brandon 2026-11-16: the plain hero's first fight was
+        # barehanded unless he knew to wield.) A bow or other ammo weapon
+        # goes to the ranged slot, where the game fires it from; a melee
+        # weapon to the hand. A second melee weapon (Musashi's shortsword)
+        # finds the hand full: it goes to the pack, At Your Back, so S draws
+        # it. A starting weapon is his own kit, so no quiz either way.
+        def _wield_starting_weapon(w):
+            p = self.player
+            ranged = getattr(w, 'requires_ammo', None) is not None
+            if ranged and getattr(p, 'ranged_weapon', None) is None:
+                p._apply_equip(w)
+            elif not ranged and p.weapon is None:
+                p._apply_equip(w)
+            else:
+                p.inventory.append(w)
+                if not ranged and p.readied_weapon is None:
+                    p.readied_weapon = w
+
         # _start_weapon is either a unique's str id ("excalibur") or a
         # (template_id, material_id) tuple for template-instantiated commons.
         no_dagger     = b.get('_no_dagger', False)
@@ -2746,15 +2764,17 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                         w.bound_to_wielder = True
                         self.player._apply_equip(w)
                     else:
-                        self.player.inventory.append(w)
+                        _wield_starting_weapon(w)
             elif not no_dagger:
+                # The plain hero's iron shortsword, in his hand.
                 sword = instantiate_weapon('shortsword', 'iron')
                 if sword:
                     _mark_starting_item_known(sword)
                     self.player.known_item_ids.add(sword.id)
-                    self.player.inventory.append(sword)
+                    _wield_starting_weapon(sword)
         except Exception:
-            pass
+            from game_log import log_error
+            log_error('main._give_starting_kit: recovered from an error (weapon)')
 
         # -- Ammo (rangers) ------------------------------------------------
         start_ammo = b.get('_start_ammo', None)
@@ -2769,7 +2789,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             except Exception:
                 pass
 
-        # -- Secondary melee weapon (rangers with bows) ----------------------
+        # -- Secondary melee weapon (rangers with bows, Musashi's two) -------
+        # A ranger's bow is in its slot, so his shortsword is in his hand;
+        # Musashi's hand already holds the longsword, so his shortsword is
+        # At Your Back (_wield_starting_weapon above).
         start_melee = b.get('_start_melee', None)
         if start_melee:
             try:
@@ -2787,9 +2810,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                         melee_w.bound_to_wielder = True     # a scroll of remove curse does not unbolt it
                         self.player.weapon = melee_w
                     else:
-                        self.player.inventory.append(melee_w)
+                        _wield_starting_weapon(melee_w)
             except Exception:
-                pass
+                from game_log import log_error
+                log_error('main._give_starting_kit: recovered from an error (melee)')
 
         # -- Wand (mages/wizards) ------------------------------------------
         start_wand = b.get('_start_wand', None)

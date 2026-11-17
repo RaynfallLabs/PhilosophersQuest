@@ -3953,7 +3953,8 @@
   "achilles_spear": {
     "name": "Achilles's Spear",
     "class": "spear",
-    "variant": "2h",
+    "variant": "1h",
+    "_hands_note": "One hand, by the Iliad: Achilles fights with the Pelian ash in his right hand and the shield Hephaestus made on his arm (Iliad 19 and 22). It was two-handed, so his own starting shield never went on with it (2026-11-16).",
     "tier": 3,
     "material": "bronze",
     "mathTier": 3,
@@ -3976,7 +3977,7 @@
       50
     ],
     "weight": 4.0,
-    "twoHanded": true,
+    "twoHanded": false,
     "reach": 2,
     "stunChance": 0.0,
     "bleedChance": 0.25,

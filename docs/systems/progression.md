@@ -599,8 +599,8 @@ Shared mechanic: all three are **cooldown-only** (not use-limited), the dispatch
 | Flag                       | Effect                                                                             |
 |----------------------------|------------------------------------------------------------------------------------|
 | `_sprite`                  | Env sprite name (`assets/tiles/env/<name>.png`)                                    |
-| `_start_weapon`            | id string OR `(type, material)` tuple                                              |
-| `_start_melee`             | Secondary melee weapon (dual-wielding setups like Musashi, Ash)                    |
+| `_start_weapon`            | id string OR `(type, material)` tuple; in the hand from the first turn (a bow in the ranged slot) |
+| `_start_melee`             | Second weapon: in the hand when the first is a bow (Corwin, Cain), else At Your Back in the pack (Musashi's shortsword); Ash's chainsaw is locked on |
 | `_start_shield`            | id or tuple                                                                        |
 | `_start_armor` / `_equip_armor` | Starting armor + auto-equip                                                   |
 | `_start_wand` / `_start_book` | Starting arcane kit                                                             |
@@ -612,7 +612,7 @@ Shared mechanic: all three are **cooldown-only** (not use-limited), the dispatch
 | `_start_soul_spheres`      | Count of starting Soul Spheres (Ash Ketchum: 4; plain Soul Spheres, newborns)      |
 | `_start_spheres`           | List of sphere ids to start with (Titivillus, the QA hero: one of each of the six) |
 | `_start_unusual_sphere`    | Grant one wildcard Soul Sphere                                                     |
-| `_no_dagger`               | Skip the default `iron_dagger` kit grant                                           |
+| `_no_dagger`               | Skip the plain hero's iron shortsword                                              |
 | `_lock_melee`              | Melee slot welded (Ash's chainsaw cannot be unequipped)                            |
 | `_immortal`                | Can't die (Dad only — HP snaps back on would-be-death)                             |
 | `_qa_tools`                | Shift+I / Shift+W dev tools; gated behind env var in v2.18                         |
@@ -621,7 +621,7 @@ Shared mechanic: all three are **cooldown-only** (not use-limited), the dispatch
 
 ### Starting kit resolution (`main.py::_give_starting_kit`)
 
-The kit builder reads the metadata fields in a fixed order: `_no_dagger` suppresses the default kit, then `_start_weapon` / `_start_melee` / `_start_shield` / `_start_armor` / `_start_wand` / `_start_book` / `_start_accessory` / `_start_extra_acc` / `_start_ammo` resolve by id or by `(type, material)` lookup against the item registry. `_start_spells` adds entries to `player.known_spells`. `_start_potions` push ready-to-drink potions. `_start_family_lore` calls `family_lore.grant_head_start` (told at once, so nothing announces it). `_start_soul_spheres` + `_start_unusual_sphere` call into the Soul Sphere spawn path.
+The kit builder reads the metadata fields in a fixed order: `_no_dagger` suppresses the default kit, then `_start_weapon` / `_start_melee` / `_start_shield` / `_start_armor` / `_start_wand` / `_start_book` / `_start_accessory` / `_start_extra_acc` / `_start_ammo` resolve by id or by `(type, material)` lookup against the item registry. A starting weapon is wielded, not packed (UI-1, 2026-11-16): a bow or other ammo weapon goes to the ranged slot, a melee weapon to the hand, and a second melee weapon that finds the hand full goes to the pack At Your Back (`readied_weapon`), so S draws it; the plain hero holds his iron shortsword. `_start_spells` adds entries to `player.known_spells`. `_start_potions` push ready-to-drink potions. `_start_family_lore` calls `family_lore.grant_head_start` (told at once, so nothing announces it). `_start_soul_spheres` + `_start_unusual_sphere` call into the Soul Sphere spawn path.
 
 After the kit is placed, the hero wiring (`main.py:2013-2033`) looks up `(get_specials_for_build, get_passives_for_build, get_journal_for_build)` on the lowercased typed name and populates `player.hero_specials` / `hero_passives` / logs the journal line.
 

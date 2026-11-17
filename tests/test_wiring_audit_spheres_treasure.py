@@ -119,6 +119,7 @@ def test_a_prayers_blessing_names_an_item_as_the_hero_knows_it():
     potion.id_level = 0
     p.known_item_ids.discard(potion.id)
     p.inventory = [potion]
+    p.weapon = None                               # nothing worn: only the potion
     shown = g._bare_name(potion)
     assert potion.name not in shown               # the hero does not know it
     g.karma = 0
@@ -137,6 +138,7 @@ def test_a_prayers_blessing_is_never_spent_on_treasure_or_a_sphere():
     sphere = items.make_item_by_id('artifact', 'master_hearth_sphere')
     p.known_item_ids.discard(sphere.id)
     p.inventory = [ruby, sphere]
+    p.weapon = None                               # nothing worn: only these
     g.karma = 0
     g.msg_log.entries.clear()
     g._resolve_simple_prayer(4, at_altar=False)

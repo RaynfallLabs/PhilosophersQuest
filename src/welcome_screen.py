@@ -30,7 +30,10 @@ NAME_MAX = 48
 # Stat keys (STR/CON/DEX/INT/WIS/PER) override player defaults.
 # _-prefixed keys are build metadata (ignored by the stat loop):
 #   _sprite       -> env sprite name (assets/tiles/env/{_sprite}.png)
-#   _start_weapon    -> weapon item ID replacing the default iron_dagger
+#   _start_weapon    -> weapon item ID replacing the plain hero's iron shortsword;
+#                       in his hand from the first turn (a bow in the ranged slot)
+#   _start_melee     -> a second weapon: in the hand when the first is a bow,
+#                       else in the pack At Your Back (Musashi's shortsword)
 #   _start_wand      -> wand item ID given at start
 #   _start_book      -> spellbook item ID given at start
 #   _start_accessory -> accessory item ID given at start
@@ -38,7 +41,7 @@ NAME_MAX = 48
 #   _start_armor     -> armor item ID given at start
 #   _start_soul_spheres -> int: number of plain Soul Spheres given at start
 #   _start_spheres   -> list of sphere item IDs given at start (QA: all six)
-#   _no_dagger      -> True: skip the default iron_dagger
+#   _no_dagger      -> True: skip the plain hero's iron shortsword
 #   _immortal        -> True: player cannot die
 #   _greeting        -> custom welcome message line (None = default)
 #   _start_family_lore -> {family id: tier} head start in monster family
@@ -194,6 +197,10 @@ SECRET_BUILDS: dict[str, dict] = {
         "_no_dagger": True,
         "_start_weapon": ("quarterstaff", "oak"),
         "_start_wand": "wand_of_force_dart",
+        # Magic Dart, as Fluffs has (Brandon 2026-11-16): her journal says
+        # magic missiles are the basis of a girl's education. Fluffs stays a
+        # little better by her stats (INT 15, WIS 12).
+        "_start_book": "spellbook_magic_dart",
         "_start_extra_acc": ["dreamspun_sketchbook"],
         "_start_unusual_sphere": True,
         "_greeting": "Fianna the Wizard weaves a sigil in the air and descends.",
