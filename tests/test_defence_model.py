@@ -62,13 +62,16 @@ def _weight(lb):
 def test_the_rules_are_in_the_data():
     r = _rules()
     d = r['defence']
-    for key in ('dodge_per_dex', 'dodge_cap', 'speed_per_dex', 'speed_cap', 'armour_drag',
-                'str_payback', 'con_carry', 'min_speed_share'):
+    for key in ('dodge_per_dex', 'dodge_cap', 'speed_per_dex', 'speed_cap', 'speed_share',
+                'armour_drag', 'str_payback', 'con_carry', 'min_speed_share'):
         assert key in d, key
     # Brandon's design: about 1% a point, capped near 35-40%; about +1% a
     # point, capped near +20%; heavy armour costs speed, Strength pays it.
     assert 0.008 <= d['dodge_per_dex'] <= 0.02 and 0.30 <= d['dodge_cap'] <= 0.40
     assert 0.008 <= d['speed_per_dex'] <= 0.02 and 0.15 <= d['speed_cap'] <= 0.25
+    # Dexterity's quickness by weight class, as its dodge: a STR-fit hero in
+    # plate is at 10, light armour and Dexterity go above it.
+    assert d['speed_share']['light'] == 1.0 and d['speed_share']['heavy'] == 0.0
     drag = d['armour_drag']
     assert set(drag) == {'light', 'medium', 'heavy'}
     assert drag['light'] == 0.0 < drag['medium'] < drag['heavy']
@@ -123,6 +126,15 @@ def test_dexterity_makes_him_quicker_and_is_capped():
     assert s20 == pytest.approx(10 * (1 + 10 * r['speed_per_dex']))
     assert defence.speed_rating(defence.speed_share(200, 10, 'light')) == pytest.approx(
         10 * (1 + r['speed_cap']))
+
+
+def test_a_strength_fit_hero_in_plate_is_at_ten_whatever_his_dexterity():
+    fit = defence.fit_strength('heavy')
+    for dex in (10, 20, 30, 50):
+        assert defence.speed_rating(defence.speed_share(dex, fit, 'heavy')) == 10.0
+        assert defence.speed_rating(defence.speed_share(dex, fit, 'light')) >= 10.0
+    assert (defence.speed_share(30, 10, 'light') > defence.speed_share(30, 30, 'medium')
+            > defence.speed_share(30, 30, 'heavy') == 1.0)
 
 
 def test_strength_pays_the_armours_drag_back():
@@ -308,11 +320,12 @@ def test_constitution_raises_the_limit_and_strength_more():
 def test_the_card_says_the_speed_cost():
     plate = items.instantiate_armor('plate', 'chain_steel')
     assert gear.weight_line(plate).startswith(
-        f"Heavy metal: slower below Strength {defence.fit_strength('heavy')}, no dodge")
+        f"Heavy metal: no dodge or quickness, slower below Strength {defence.fit_strength('heavy')}")
     mail = items.instantiate_armor('chain_shirt', 'chain_steel')
-    assert f"slower below Strength {defence.fit_strength('medium')}, half dodge" in gear.weight_line(mail)
+    assert (f"half dodge and quickness, slower below Strength {defence.fit_strength('medium')}"
+            in gear.weight_line(mail))
     leather = items.instantiate_armor('leather', 'leather')
-    assert gear.weight_line(leather) == "Light: full speed, full dodge; scorches."
+    assert gear.weight_line(leather) == "Light: full dodge and quickness; scorches."
 
 
 def test_no_old_defence_terms_left_in_the_code():

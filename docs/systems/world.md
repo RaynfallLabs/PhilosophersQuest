@@ -195,7 +195,7 @@ Each domain is dangerous in its own way (`data/hazards.json`, `src/hazards.py`, 
 
 | Domain | Hazards |
 |---|---|
-| Temple | `crumbling_floor` (50%, 90% with a heavy pack, i.e. Burdened, over three quarters of the limit: a pit, then rubble); `strangler_vine` (held 2-4 turns, with a save) |
+| Temple | `crumbling_floor` (50%, 90% with a heavy pack, i.e. a Heavy load or worse, over 70% of the limit since the four tiers of 2026-11-16; Burdened at three quarters before: a pit, then rubble); `strangler_vine` (held 2-4 turns, with a save) |
 | Deep | `fire_vent` (fires every 6 turns and glows the turn before; a room's patch breathes together) |
 | Rime | `thin_ice` (30%, 75% with a heavy pack: cold damage and slowed, then gone); `icicle_shadow` (30%, falls on the levitating too) |
 | Abyss | `brimstone` (burning); `soul_sigil` (drains 2d6 MP) |
@@ -336,7 +336,7 @@ What changes the odds:
 - **DEX:** each point over 10 lowers the chance 3%, down to half at most.
 - **A Cat's Footfall** (Fenrir's boon) and any ring with `passive_silent_walk`: footsteps never wake anyone; taking gold still can.
 - **The Hand of Glory:** nothing wakes anyone.
-- **A Heavy load** (over half the limit; `Player.is_heavy`): the chance doubles.
+- **A Heavy load** (over 70% of the limit since 2026-11-16, half before; `Player.is_heavy`): the chance doubles.
 - **Heavy or metal body armour:** a quarter more for every tile its clank
   adds to the footsteps (`gear.sleeper_factor`: plate x1.75).
 - **Aggravated:** the whole room wakes.

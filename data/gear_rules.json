@@ -76,11 +76,12 @@
   },
 
   "defence": {
-    "_doc": "The defence model (Brandon 2026-11-16; src/defence.py; tuned by tools/balance/difficulty_sim.py). AC comes from armour, the shield and magic only. dodge_per_dex / dodge_cap: Dexterity's chance to slip a blow, a point over 10, and its most (then the body armour's dodge_share and the load's dodge). speed_per_dex / speed_cap: the share of speed Dexterity adds, a point over 10 (10 is ordinary, a monster's scale: Player.get_speed, Game._advance_turn). armour_drag: the share of speed a body armour's weight class costs; str_payback: the share of it Strength wins back a point over 10 (never more than the drag: a hero strong enough for his plate is at 10, defence.fit_strength). con_carry: pounds of carry limit a point of Constitution over 10 adds to Strength's (Player.get_carry_limit). min_speed_share: the least share of 10 armour and load leave.",
+    "_doc": "The defence model (Brandon 2026-11-16; src/defence.py; tuned by tools/balance/difficulty_sim.py). AC comes from armour, the shield and magic only. dodge_per_dex / dodge_cap: Dexterity's chance to slip a blow, a point over 10, and its most (then the body armour's dodge_share and the load's dodge). speed_per_dex / speed_cap: the share of speed Dexterity adds, a point over 10 (10 is ordinary, a monster's scale: Player.get_speed, Game._advance_turn); speed_share: how much of that quickness the body armour's weight class leaves, as dodge_share does the dodge (a STR-fit hero in plate is at 10, light armour and Dexterity go above it). armour_drag: the share of speed a body armour's weight class costs; str_payback: the share of it Strength wins back a point over 10 (never more than the drag: a hero strong enough for his plate is at 10, defence.fit_strength). con_carry: pounds of carry limit a point of Constitution over 10 adds to Strength's (Player.get_carry_limit). min_speed_share: the least share of 10 armour and load leave.",
     "dodge_per_dex": 0.01,
     "dodge_cap": 0.35,
     "speed_per_dex": 0.01,
     "speed_cap": 0.20,
+    "speed_share": {"light": 1.0, "medium": 0.5, "heavy": 0.0},
     "armour_drag": {"light": 0.0, "medium": 0.06, "heavy": 0.12},
     "str_payback": 0.02,
     "con_carry": 3,

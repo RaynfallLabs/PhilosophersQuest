@@ -354,6 +354,8 @@ class Sidebar:
         'INT': 'stat_int', 'WIS': 'stat_wis', 'PER': 'stat_per',
         'AC': 'stat_ac', 'Gold': 'stat_gold', 'Sight': 'stat_sight',
         'Clock': 'stat_clock', 'Wt': 'stat_weight', 'Spells': 'stat_spells',
+        # Dexterity's two gifts (the defence model, 2026-11-16) wear its icon.
+        'Dodge': 'stat_dex', 'Speed': 'stat_dex',
     }
 
     # Derived stats whose icon stands for the word (coin, hourglass). The

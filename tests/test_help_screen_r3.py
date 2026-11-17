@@ -273,6 +273,8 @@ def test_the_gear_page_numbers_are_the_datas():
     import defence
     assert 'Dexterity adds nothing to it' in text
     assert 'medium armour half and heavy armour none' in rows['Dodge']
+    assert 'medium armour half and heavy armour none' in rows['Speed']
+    assert rules['defence']['speed_share'] == {'light': 1.0, 'medium': 0.5, 'heavy': 0.0}
     assert rules['armour_weight']['dodge_share'] == {'light': 1.0, 'medium': 0.5, 'heavy': 0.0}
     assert (f"Strength {defence.fit_strength('medium')} wears medium armour at full speed and "
             f"Strength {defence.fit_strength('heavy')} heavy armour") in rows['Heavy armour']

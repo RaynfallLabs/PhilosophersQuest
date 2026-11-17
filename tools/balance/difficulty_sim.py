@@ -348,6 +348,8 @@ KNOB_DEFAULTS = {
     'dodge_cap':      -1.0,   # the most dodge DEX gives
     'speed_per_dex':  -1.0,   # share of speed a point of DEX over 10
     'speed_cap':      -1.0,   # the most speed DEX gives
+    'medium_quick':   -1.0,   # share of DEX's speed medium body armour leaves
+    'heavy_quick':    -1.0,   # ... heavy body armour
     'medium_drag':    -1.0,   # share of speed medium body armour costs
     'heavy_drag':     -1.0,   # ... heavy body armour
     'str_payback':    -1.0,   # share of the drag a point of STR over 10 pays back
@@ -359,7 +361,8 @@ KNOB_DEFAULTS = {
     'burdened_speed': -1.0,   # share of speed a Burdened load costs
 }
 
-DEFENCE_KNOBS = ('dodge_per_dex', 'dodge_cap', 'speed_per_dex', 'speed_cap', 'medium_drag',
+DEFENCE_KNOBS = ('dodge_per_dex', 'dodge_cap', 'speed_per_dex', 'speed_cap', 'medium_quick',
+                 'heavy_quick', 'medium_drag',
                  'heavy_drag', 'str_payback', 'con_carry', 'light_dodge', 'heavy_dodge',
                  'heavy_speed', 'burdened_dodge', 'burdened_speed')
 
@@ -376,6 +379,8 @@ def apply_defence_knobs(knobs: dict) -> None:
         v = float(v)
         if k in ('medium_drag', 'heavy_drag'):
             d.setdefault('armour_drag', {})[k.split('_')[0]] = v
+        elif k in ('medium_quick', 'heavy_quick'):
+            d.setdefault('speed_share', {})[k.split('_')[0]] = v
         elif k == 'con_carry':
             d['con_carry'] = int(round(v))
         elif k in ('light_dodge', 'heavy_dodge', 'heavy_speed', 'burdened_dodge', 'burdened_speed'):

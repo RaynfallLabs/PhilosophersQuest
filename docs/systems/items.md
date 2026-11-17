@@ -527,9 +527,11 @@ category's `is_unique: true` entries; the per-chest draw rolls one
 `Player.inventory: list[Item]`. The limit is
 `CARRY_BASE (20) + STR * CARRY_PER_STR (8)` = 100 at STR 10, 164 at
 STR 18, 220 at STR 25 (re-derived 2026-10-16, `_genart/ui/WEIGHT_PLAN.md`,
-measured with `tools/balance/carry_sim.py`). Carrying is intentional: item
-weights are deliberately realistic (full plate 65 lb, tower shield 30,
-maul 8) and STR is the lever (`Player.get_carry_limit`).
+measured with `tools/balance/carry_sim.py`), plus `con_carry` pounds for
+each point of Constitution over 10 (the defence model, 2026-11-16:
+`data/gear_rules.json` `defence`, `defence.carry_limit`). Carrying is
+intentional: item weights are deliberately realistic (full plate 65 lb,
+tower shield 30, maul 8) and STR is the lever (`Player.get_carry_limit`).
 
 - **Everything counts:** `get_current_weight()` = `get_worn_weight()`
   (weapons, shield, armour, rings, amulet, belt) + `get_pack_weight()`
@@ -546,23 +548,31 @@ maul 8) and STR is the lever (`Player.get_carry_limit`).
   will not fit is set down at his feet (or, from a person paying him, made
   up in gems): `game_purse._gain_gold`. `D` lists **Drop Gold** first. The
   sidebar, the Kit and the character sheet show the purse with its weight.
-- **Heavy** above `HEAVY_SHARE` (50%) of the limit: half the dodge,
-  footsteps a tile further. **Burdened** above `BURDENED_SHARE` (75%): no
-  dodge, half Dexterity's AC (`load_dex_ac_share`; a clumsy hero's minus
-  counts in full), footsteps two tiles further, and every
-  `BURDENED_STEP_EVERY`-th (2nd) step costs an extra turn
-  (`Game._burden_extra_turn`). **Overloaded** past the limit itself: no
-  dodge, no Dexterity AC, and every step costs an extra turn. The numbers
-  are `data/gear_rules.json` `load` (Brandon 2026-11-14: "heavy at 50%,
-  burdened at 75%, overloaded at 100%"). From 2026-11-13 the tiers were
-  Burdened (50%) and Stressed (75%); before that there was one line,
-  Burdened at 75%, where every fourth step cost an extra turn. Attacks,
-  spells and the quiz clock are untouched.
-  Messages "Your load is Heavy. ...", "You are Burdened. ...", "You are
-  Overloaded. ...", "You are no longer Overloaded, but you are still
-  Burdened.", "Your load is no longer Heavy." (`Game._note_burden`, every
-  turn and on load). Sidebar, character sheet and menus read
-  `ui.carry_state`.
+- **The four tiers** (Brandon 2026-11-16: "Light load at half, minor
+  dodge penalty, Heavy at 70%, larger dodge penalty and speed penalty, and
+  Burdened at 90% (larger penalties)"; `data/gear_rules.json` `load`,
+  `src/defence.py`, `Player.load_tier`): **Light** above `LIGHT_SHARE`
+  (50%) of the limit: a little less dodge (`load.light.dodge`), footsteps a
+  tile further. **Heavy** above `HEAVY_SHARE` (70%): half the dodge, and
+  slower (`load.heavy.speed` off the speed share, `Player.get_speed`).
+  **Burdened** above `BURDENED_SHARE` (90%): no dodge, much slower.
+  **Overloaded** past the limit itself: no dodge, half speed. The load
+  costs SPEED, which is how often the world acts against the hero
+  (`defence.world_turns` in `Game._advance_turn`: under 10 the world takes
+  two turns on some actions), in a fight as on the road; a step is always
+  one action. Marius' Mule keeps his stride under Light, Heavy and
+  Burdened (`Player.keeps_stride`). The quiz clock and the AC are
+  untouched. Until 2026-11-16 the tiers were Heavy (50%: half the dodge)
+  and Burdened (75%: no dodge, half Dexterity's AC, every second step
+  costing an extra turn, `Game._burden_extra_turn`, gone); from
+  2026-11-13 Burdened (50%) and Stressed (75%); before that one line,
+  Burdened at 75%, where every fourth step cost an extra turn.
+  Messages "Your load is Light. ...", "Your load is Heavy. ...", "You are
+  Burdened. ...", "You are Overloaded. ...", "You are no longer
+  Overloaded, but you are still Burdened.", "Your load is no longer
+  Heavy, but it is still Light.", "Your load is no longer Light."
+  (`Game._note_burden`, every turn and on load). Sidebar, character sheet
+  and menus read `ui.carry_state`.
 - **Refused past the limit:** `add_to_inventory` refuses an item that
   would go over (`can_carry`); the message is
   `Player.too_heavy_message()` ("Too heavy: that would put you over your
@@ -574,7 +584,7 @@ maul 8) and STR is the lever (`Player.get_carry_limit`).
 - **A Bococho's saddlebags** (2026-11-14, [pets](pets.md) "The Bococho"):
   while the hero's Bococho is out with him (alive, on his floor, not in her
   sphere), `Player.saddlebag_lb` holds her carry (`data/bococho.json`
-  `pet.saddlebags_lb`, 20 lb) and `get_carry_limit` adds it. Heavy,
+  `pet.saddlebags_lb`, 20 lb) and `get_carry_limit` adds it. Light, Heavy,
   Burdened and Overloaded are shares of that limit, so every line moves up
   with it: a load Burdened on foot can be only Heavy with her bags. The
   game keeps the number (`Game._sync_saddlebags`, src/game_riding.py) every

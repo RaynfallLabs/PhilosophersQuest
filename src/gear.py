@@ -684,29 +684,46 @@ def wear_words(item) -> list:
     return out
 
 
+def _share_word(share: float) -> str:
+    return 'full' if share >= 1.0 else ('no' if share <= 0.0 else 'half')
+
+
+def nimble_words(item) -> str:
+    """What the body armour leaves of Dexterity's dodge and quickness, for
+    its card: 'full dodge and quickness', 'half dodge and quickness', 'no
+    dodge or quickness' (the defence model: gear_rules.json
+    `armour_weight.dodge_share` and `defence.speed_share`)."""
+    import defence
+    cls = piece_weight_class(item)
+    d = _share_word(class_dodge_share(item))
+    q = _share_word(defence.class_speed_share(cls))
+    if d == q:
+        return f"{d} dodge {'or' if d == 'no' else 'and'} quickness"
+    return f"{d} dodge, {q} quickness"
+
+
 def speed_words(item) -> str:
-    """What the body armour costs in speed, for its card: 'full speed' in
-    light armour, else 'slower below Strength 16' (the Strength that pays
+    """What the body armour's weight costs in speed, for its card: '' when
+    it costs none, else 'slower below Strength 16' (the Strength that pays
     its drag back: defence.fit_strength). '' for anything but body armour."""
     if not is_body(item):
         return ''
     import defence
-    cls = piece_weight_class(item)
-    fit = defence.fit_strength(cls)
-    return 'full speed' if fit <= 10 else f"slower below Strength {fit}"
+    fit = defence.fit_strength(piece_weight_class(item))
+    return '' if fit <= 10 else f"slower below Strength {fit}"
 
 
 def weight_line(item) -> str:
-    """The body armour's weight-class line for its card: "Heavy metal:
-    slower below Strength 16, no dodge, footsteps +3, spells cost x2 MP;
-    rusts." '' for anything but body armour."""
+    """The body armour's weight-class line for its card: "Heavy metal: no
+    dodge or quickness, slower below Strength 16, footsteps +3, spells cost
+    x2 MP; rusts." '' for anything but body armour."""
     if not is_body(item):
         return ''
     cls = piece_weight_class(item)
     metal = is_metal(item)
-    bits = [speed_words(item)]
-    share = class_dodge_share(item)
-    bits.append('full dodge' if share >= 1.0 else ('no dodge' if share <= 0.0 else 'half dodge'))
+    bits = [nimble_words(item)]
+    if speed_words(item):
+        bits.append(speed_words(item))
     steps = piece_footsteps(item)
     if steps:
         bits.append(f"footsteps +{steps}")

@@ -301,7 +301,7 @@ conditions in `data/traders.json`. No karma: it is the market, not God.
 |---|---|
 | `tools/balance/gold_sim.py` | The measured gold curve, floor by floor and source by source (wraps `difficulty_sim`); since 2026-10-18 also the treasure a floor pays (`t_value`, `t_weight`, by kind) and `wealth` (coin + treasure). |
 | `tools/balance/purse_model.py` | The purse under hoarder / sensible / whale spending, with the real trader plan, stock, services and selling. It ignores weight: read it as "what was found", and weight_model.py as "what could be carried". |
-| `tools/balance/weight_model.py` | What a careful hero CAN CARRY at each depth: coin under the Burdened line (75% of the limit; called Stressed from 2026-11-13 to 11-14, when the tiers became Heavy, Burdened and Overloaded: armour.md section 1c), gems and jewellery, art; the coin left behind; how often the dearest ware on a trader's table was within reach of coin plus treasure. |
+| `tools/balance/weight_model.py` | What a careful hero CAN CARRY at each depth: coin under the Heavy line (70% of the limit, where the load starts to slow him, since the four tiers of 2026-11-16; the Burdened line at 75% before, called Stressed from 2026-11-13 to 11-14: armour.md section 1c), gems and jewellery, art; the coin left behind; how often the dearest ware on a trader's table was within reach of coin plus treasure. |
 | `tools/balance/gold_by_lore.py` | Writes every creature's purse into `data/monsters.json` (`--report` to preview), and its treasure chance and kinds. Re-run after adding monsters. |
 | `py -m tools.encounters.validate --all --budget` | Checks `share` / `service` gold costs, `purse_pct`, `service` rewards, and the karma budget. |
 
@@ -321,8 +321,8 @@ Rules in `src/treasure.py` (pure) and `src/game_purse.py` (the Game side).
   `Player.purse_coins`, so the purse counts in `get_current_weight` with
   the load tiers and the limit exactly as for any item. 16,000 gold is
   a full pack at STR 10; a fresh hero has room for about 13,900 coins,
-  about 5,900 before his load is Heavy (half the limit) and 9,900 before he
-  is Burdened (three quarters).
+  about 5,900 before his load is Light (half the limit), 9,100 before it is
+  Heavy (70%) and 12,300 before he is Burdened (90%).
 - **Receiving gold** (`_gain_gold`): he keeps what he can carry. Found gold
   (a grave, a throne, a cache) that will not fit is set down at his feet as
   his own pile, booked once in Gold Earned. A PERSON paying him (a trader
@@ -538,7 +538,8 @@ Encyclopedia page is under Wonders ([items](items.md) §potions).
 
 `weight_model.py` (120 runs; a careful hero, STR 10 rising to 18, a 40-60
 lb kit, never over three quarters of the limit: Burdened, as it was when
-this was measured), medians:
+this was measured; the tool keeps under the Heavy line, 70%, since the four
+load tiers of 2026-11-16), medians:
 
 | Floor | Room for wealth | Coin carried | Gems and jewellery | Wealth (floors of income) | Coin left behind (all run) | Dearest ware within reach |
 |---|---|---|---|---|---|---|

@@ -9,6 +9,7 @@ loot roll.
 **Code:** `src/gear.py` (levels, tiers, thresholds, AC, the loot split, and
 its last section, What armour does beyond AC: forms, elements, wards, the
 weight class),
+`src/defence.py` (the defence model: AC, dodge, speed, the load tiers),
 `src/guards.py` (what the minor slots guard), `src/enchantments.py` (the
 minor-slot enchantments), `src/rings.py` (ring and amulet kinds),
 `src/gear_saves.py` (old saves), `src/items.py` (`instantiate_armor`,
@@ -257,48 +258,103 @@ after the shield, the stance and Achilles' hide. It is the one place: a
 lining (a trader's, on a cloak or shirt) joins `piece_profile`.
 
 **Light vs heavy** (by the BODY armour's weight class; no body armour is
-light; `data/gear_rules.json` `armour_weight`):
+light; `data/gear_rules.json` `armour_weight`, and `defence` for the speed):
 
 | | Light | Medium | Heavy |
 |---|---|---|---|
-| Dexterity to AC (`gear.dex_ac_cap`) | up to 6 | up to 3 | 0 |
 | Dodge (Dexterity's and worn gear's) | full | half | none |
+| Dexterity's quickness (`defence.class_speed_share`) | full | half | none |
+| Speed it costs (`defence.armour_drag`) | none | 6% | 12% |
+| Full speed from (`defence.fit_strength`) | any Strength | Strength 13 | Strength 16 |
 | Footsteps (`senses.step_radius`) | +0 | +1 | +2, metal +1 more |
 | A spell's mana in METAL | x1 | x1.5 | x2 |
 
-A clumsy hero's Dexterity minus always counts. Mithril, orichalcum and
-godweave cast freely; mithril and godweave make no clank. Each footstep
-tile makes a deep sleeper a quarter readier to stir (`sleepers.factor`).
-`Player.spell_mp_cost` (rings, then armour) is what `_invoke_spell`
-charges and the spell menu shows.
+Mithril, orichalcum and godweave cast freely; mithril and godweave make no
+clank. Each footstep tile makes a deep sleeper a quarter readier to stir
+(`sleepers.factor`). `Player.spell_mp_cost` (rings, then armour) is what
+`_invoke_spell` charges and the spell menu shows.
 
-**Weight that bites** (`data/gear_rules.json` `load`, `Player.load_tier`):
-over half the limit the load is **Heavy** (half the dodge, footsteps +1);
-over three quarters the hero is **Burdened** (no dodge, half Dexterity's AC,
-footsteps +2, every second step costs the dungeon a turn); past the limit
-nothing more can be picked up, and a hero who is there anyway (lost
-Strength, an old save, the Boulder) is **Overloaded** (no dodge, no
-Dexterity AC, every step costs a turn). Brandon, 2026-11-14: "heavy at 50%,
-burdened at 75%, overloaded at 100%"; the limit stays a wall.
-The sidebar, the @ sheet and the log say which (`ui.carry_state`).
+**The defence model** (Brandon's approved design, 2026-11-16; `src/defence.py`,
+`data/gear_rules.json` `defence`; tuned with `tools/balance/difficulty_sim.py`
+and `monte_carlo.py`, set `defence`, against the plate kid, the Dexterity kid
+and the Secret Builds the kids play):
+
+- **AC** comes from armour, the shield and magic only (`Player.get_ac`).
+  Dexterity gives none. Until 2026-11-16 it gave up to 6 points in light
+  armour, 3 in medium and 0 in heavy (`dex_ac_cap`), and a Dexterity hero
+  in studded leather (3 + 6) out-armoured full plate (8) deep down; a
+  clumsy hero's minus went with it.
+- **Dodge** (`Player.dodge_chance`): `dodge_per_dex` a point of Dexterity
+  over 10, at most `dodge_cap` (1% and 35%), then the
+  body armour's share (all, half, none) and the load's (`load.<tier>.dodge`).
+  Only a blow from beside the hero can be slipped (`Monster._slipped`).
+- **Speed** (`Player.get_speed`): 10 is ordinary, the scale of a monster's
+  `speed`. Dexterity adds `speed_per_dex` a point over 10, at most
+  `speed_cap` (1% and 20%), and the body armour leaves
+  all of that quickness, half or none (`speed_share`, as the dodge: a
+  nimble hero in plate is no quicker for his Dexterity); medium and heavy
+  body armour cost `armour_drag`, and Strength pays it back,
+  `str_payback` a point over 10 (`defence.fit_strength`: a hero strong
+  enough for his plate is at 10, whatever his Dexterity);
+  the load costs `load.<tier>.speed`. Speed boots multiply it and haste
+  doubles it. Every monster's damage was sized for a hero at speed 10: only
+  armour too heavy for the hero's Strength and a load he chose to carry
+  take him under it, and Dexterity and light armour may take him over.
+- **How speed acts** (`defence.world_turns`, `Game._advance_turn`): each
+  action moves the world's clock on by 10/speed of a turn and the world
+  takes a turn for each whole turn passed: at 11 the monsters miss one
+  action in eleven, at 9 they take two turns one action in nine. The
+  Slowed status still costs the hero his own turn (`_do_move`).
+- **Shown plainly**: the sidebar's DERIVED grid (AC, Dodge, Speed) and the
+  character sheet (AC, Dodge, Speed, always), and each body armour's card
+  ("Heavy metal: no dodge or quickness, slower below Strength 16,
+  ...").
+
+**Weight that bites** (`data/gear_rules.json` `load`, `Player.load_tier`,
+`defence.load_tier`; Brandon, 2026-11-16: "Light load at half, minor dodge
+penalty, Heavy at 70%, larger dodge penalty and speed penalty, and Burdened
+at 90% (larger penalties)"): everything worn or packed counts, except
+cooking ingredients, which weigh nothing (Brandon, 2026-11-16: food,
+rations and cooked dishes keep their weight). The limit is Strength's
+(`20 + 8 x STR`) plus 3 lb a point of Constitution over 10
+(`con_carry`).
+
+| Load | Over | Dodge left | Speed lost | Footsteps |
+|---|---|---|---|---|
+| Light | half the limit | three quarters | none | +1 |
+| Heavy | 70% | half | 10% | +2 |
+| Burdened | 90% | none | 25% | +3 |
+| Overloaded | the limit itself | none | half | +3 |
+
+Past the limit nothing more can be picked up; a hero who is there anyway
+(lost Strength, an old save, the Boulder) is Overloaded. The speed replaces
+the old rule that every second Burdened step cost the dungeon an extra turn
+(and every Overloaded step one); Marius' Mule keeps his stride under Light,
+Heavy and Burdened (`Player.keeps_stride`). The quiz clocks and the AC are
+untouched. A Heavy load or worse is the "heavy pack" a sleeper hears and
+thin ice will not hold (`Player.is_heavy`). The sidebar, the @ sheet and the
+log say which (`ui.carry_state`, `Game._note_burden`). (Until 2026-11-16:
+Heavy over half, half the dodge; Burdened over three quarters, no dodge,
+half Dexterity's AC, every second step a turn. Brandon, 2026-11-14: "heavy
+at 50%, burdened at 75%, overloaded at 100%".)
 
 **The card** says it in one honest line (`gear.protection_line`: "Turns an
 edge: slash x0.75; parts under a point: pierce x1.15; conducts lightning
 x1.25; cold iron: fey glamour slides off") and the weight class in another
-(`gear.weight_line`: "Heavy metal: no Dexterity to AC, no dodge, footsteps
-+3, spells cost x2 MP; rusts."), on the Kit, the @ sheet and the lore page.
+(`gear.weight_line`: "Heavy metal: no dodge or quickness, slower below
+Strength 16, footsteps +3, spells cost x2 MP; rusts."), on the Kit,
+the @ sheet and the lore page.
 
 **Measured** (`tools/balance/armour_incoming.py`): against the game's own
 attack mix, the par body armour takes 1% off typed damage on floor 1, 4%
-on floors 10-20, 3-5% on 30-80, 9% on 100. THAC0 was not re-baked: a DEX
-hero in heavy armour loses up to 3 AC and his dodge, so the balance slice
-re-bakes it for both paths.
+on floors 10-20, 3-5% on 30-80, 9% on 100. The monsters' to-hit was baked
+to the AC of armour and shield alone (section 2), which is what AC is now.
 
 ## 2. AC: body armour and shield only
 
-`Player.get_ac()` = 10 - (body base + plus) - (shield base + plus) - DEX
-(at most 6 in light armour or none, 3 in medium, 0 in heavy: section 1c) -
-BUC of those two - effects (invisible, shielded, procs).
+`Player.get_ac()` = 10 - (body base + plus) - (shield base + plus) -
+BUC of those two - effects (invisible, shielded, stance, parry, procs).
+Dexterity gives no AC since the defence model of 2026-11-16 (section 1c).
 `Player.core_ac()` is the body and shield part; `gear.ac_value(item)` one
 piece's. **No helm, gloves, boots, cloak, shirt, ring or amulet gives AC.**
 
@@ -513,4 +569,6 @@ survivor and keeps working as the object it was.
 `test_swapping_without_the_chore.py` (Known by Hand, donning, At Your
 Back, Loadouts, saves), `test_armour_choice.py` (forms, elements, wards,
 light vs heavy, noise, casting, the load, cards, old saves, the data gates),
-`test_carry_weight.py`.
+`test_carry_weight.py`, `test_defence_model.py` (the defence model: AC, dodge,
+speed, the armour's drag and Strength's payback, the load tiers, the
+scheduler, the simulator's guards).

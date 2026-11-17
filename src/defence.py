@@ -13,13 +13,17 @@ get_speed and load_tier are the readers, and the simulator plays them
   of what is left (load.<tier>.dodge).
 * Speed: how often the hero acts against the world, on the scale of a
   monster's `speed` (10 is ordinary). Dexterity adds `speed_per_dex` a point
-  over 10, at most `speed_cap`. Medium and heavy body armour drag it
-  (`armour_drag`), and Strength pays the drag back, `str_payback` a point
-  over 10: a hero strong enough for his plate is at 10, a weak one in it is
-  slower. The load drags too (load.<tier>.speed). Speed boots and haste
-  multiply what this gives (Player.get_speed). Every monster's damage was
-  sized for a hero at speed 10: only armour too heavy for the hero's
-  Strength and a load he chose to carry take him under it.
+  over 10, at most `speed_cap`, and the body armour's weight class leaves
+  all of that quickness, half or none (`speed_share`, as the dodge: a
+  nimble hero in plate is no quicker for it). Medium and heavy body armour
+  drag the speed (`armour_drag`), and Strength pays the drag back,
+  `str_payback` a point over 10: a hero strong enough for his plate is at
+  10, a weak one in it is slower. The load drags too (load.<tier>.speed).
+  Speed boots and haste multiply what this gives (Player.get_speed). Every
+  monster's damage was sized for a hero at speed 10: only armour too heavy
+  for the hero's Strength and a load he chose to carry take him under it,
+  and only Dexterity in light (or half of it in medium) armour, boots and
+  haste take him over.
 * The load: shares of the carry limit (Strength's, plus a little from
   Constitution over 10, `con_carry` a point). Light over half (a little
   less dodge), Heavy over 70% (half the dodge and slower), Burdened over 90%
@@ -42,6 +46,7 @@ WEIGHT_CLASSES = ('light', 'medium', 'heavy')
 _DEFAULTS = {
     'dodge_per_dex': 0.01, 'dodge_cap': 0.35,
     'speed_per_dex': 0.01, 'speed_cap': 0.20,
+    'speed_share': {'light': 1.0, 'medium': 0.5, 'heavy': 0.0},
     'armour_drag': {'light': 0.0, 'medium': 0.06, 'heavy': 0.12},
     'str_payback': 0.02,
     'con_carry': 3,
@@ -129,9 +134,23 @@ def dex_dodge(dex, r: dict | None = None) -> float:
 # ------------------------------------------------------------------- speed
 
 def dex_speed(dex, r: dict | None = None) -> float:
-    """The share of speed Dexterity adds (0.1 = a tenth quicker)."""
+    """The share of speed Dexterity adds before the armour (0.1 = a tenth
+    quicker)."""
     r = r or rules()
     return min(float(r['speed_cap']), _over(dex) * float(r['speed_per_dex']))
+
+
+def class_speed_share(weight_class: str, r: dict | None = None) -> float:
+    """How much of Dexterity's quickness this body armour leaves: all in
+    light armour, half in medium, none in heavy (`speed_share`)."""
+    r = r or rules()
+    return float((r.get('speed_share') or {}).get(str(weight_class or 'light'), 1.0))
+
+
+def armour_speed(dex, weight_class: str, r: dict | None = None) -> float:
+    """Dexterity's quickness as this body armour leaves it."""
+    r = r or rules()
+    return dex_speed(dex, r) * class_speed_share(weight_class, r)
 
 
 def armour_drag(weight_class: str, strength, r: dict | None = None) -> float:
@@ -161,11 +180,12 @@ def load_speed_drag(tier: str, lr: dict | None = None) -> float:
 def speed_share(dex, strength, weight_class: str, tier: str = '', *,
                 ignore_load: bool = False, r: dict | None = None,
                 lr: dict | None = None) -> float:
-    """1 + Dexterity's share - the armour's unpaid drag - the load's, never
-    under `min_speed_share`. `ignore_load`: Marius' Mule, whose stride the
-    load does not shorten (Overloaded still does)."""
+    """1 + Dexterity's share (what the armour leaves of it) - the armour's
+    unpaid drag - the load's, never under `min_speed_share`. `ignore_load`:
+    Marius' Mule, whose stride the load does not shorten (Overloaded still
+    does)."""
     r = r or rules()
-    s = 1.0 + dex_speed(dex, r) - armour_drag(weight_class, strength, r)
+    s = 1.0 + armour_speed(dex, weight_class, r) - armour_drag(weight_class, strength, r)
     if not (ignore_load and tier in ('light', 'heavy', 'burdened')):
         s -= load_speed_drag(tier, lr)
     return max(float(r['min_speed_share']), s)

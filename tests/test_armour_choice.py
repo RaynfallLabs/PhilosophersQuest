@@ -280,10 +280,10 @@ def test_the_card_says_it_in_one_honest_line():
     import defence
     fit = defence.fit_strength('heavy')
     assert gear.weight_line(mail) == (
-        f"Heavy metal: slower below Strength {fit}, no dodge, footsteps +3, spells cost x2 MP; "
-        f"rusts.")
+        f"Heavy metal: no dodge or quickness, slower below Strength {fit}, footsteps +3, "
+        f"spells cost x2 MP; rusts.")
     leather = items.instantiate_armor('leather', 'leather')
-    assert gear.weight_line(leather) == "Light: full speed, full dodge; scorches."
+    assert gear.weight_line(leather) == "Light: full dodge and quickness; scorches."
     mithril = items.instantiate_armor('chain_shirt', 'mithril')
     assert 'spells at full cost' in gear.weight_line(mithril)
     assert 'never rusts' in gear.weight_line(mithril)

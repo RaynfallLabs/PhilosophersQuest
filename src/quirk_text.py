@@ -21,8 +21,8 @@ entry in both tables and that no hint quotes its own threshold.
 _STR = ("Strength raises how much you can carry, and a strong hero wears heavy armor "
         "at full speed.")
 _CON = "Constitution is 3 health a point, blunts every blow and lets you carry a little more."
-_DEX = ("Dexterity makes you quicker in any armor and lets you slip blows: fully "
-        "in light armor, half as well in medium, not at all in heavy.")
+_DEX = ("Dexterity makes you quicker and lets you slip blows: fully in light "
+        "armor, half as much in medium, not at all in heavy.")
 _INT = "Intelligence raises your maximum MP."
 _WIS = "Every point of Wisdom is a second on the combat clock."
 _PER = "Perception widens how far you can see."

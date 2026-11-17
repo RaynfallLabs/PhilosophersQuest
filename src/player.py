@@ -1537,8 +1537,9 @@ class Player:
 
         The defence model (Brandon 2026-11-16; src/defence.py,
         data/gear_rules.json `defence`): Dexterity over 10 makes him
-        quicker, medium and heavy body armour slower unless his Strength
-        pays the armour back, and a Heavy, Burdened or Overloaded load
+        quicker (all of it in light armour, half in medium, none in heavy),
+        medium and heavy body armour slower unless his Strength pays the
+        armour back, and a Heavy, Burdened or Overloaded load
         slower still (Marius' Mule keeps his stride under all but
         Overloaded). Speed boots add their share (enchantments.quickness)
         and haste doubles it. Wisdom sets the quiz clock, never this."""
@@ -1566,8 +1567,9 @@ class Player:
         tier = self.load_tier()
         load = 0.0 if (self.keeps_stride() and tier in ('light', 'heavy', 'burdened')) \
             else defence.load_speed_drag(tier)
-        return {'dex': defence.dex_speed(self.DEX),
-                'armour': defence.armour_drag(gear.body_class(self), self.STR),
+        cls = gear.body_class(self)
+        return {'dex': defence.armour_speed(self.DEX, cls),
+                'armour': defence.armour_drag(cls, self.STR),
                 'load': load}
 
     def get_int_quiz_bonus(self) -> int:

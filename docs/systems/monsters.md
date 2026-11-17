@@ -278,7 +278,7 @@ Brandon: "NONE automatically know where you are unless it's thematically and lor
 **How a monster notices him:**
 - **Sight:** a line of sight within `perception_range` (+4 for `keen_sight`). Walls, closed doors and tall fixtures (statues, stalagmites) block it; water and low furniture don't. An invisible hero is unseen except by `truesight` (celestials).
 - **Sound:** the game emits noises through `Game._make_noise(kind)`:
-  - footsteps each turn the hero moves (`step_radius`: 3 at DEX 10, quieter with DEX, +1 under a Heavy load and +2 when Burdened or Overloaded, +1 in medium body armour and +2 in heavy, +1 more in metal unless it is quiet (`gear.footstep_tiles`), silent with Cat's Footfall or silent walking);
+  - footsteps each turn the hero moves (`step_radius`: 3 at DEX 10, quieter with DEX, +1 under a Light load, +2 under a Heavy one and +3 when Burdened or Overloaded (data/senses.json noise, the four tiers of 2026-11-16), +1 in medium body armour and +2 in heavy, +1 more in metal unless it is quiet (`gear.footstep_tiles`), silent with Cat's Footfall or silent walking);
   - `melee` 5, `shot` 4, `spell` 5, `door` 4, `coin` 3, `struck` 5 (a monster's blow on him);
   - an alarm rouses within 12; the squeaky board rouses within 20 (it called the whole floor until Brandon's play-test of 2026-11-12, when a floor-1 fight with every waking creature in 8 tiles coming to look was "a SHIT TON of monsters all descended on me at once").
 

@@ -401,11 +401,15 @@ written by `tools/content/armour_profiles_2026_11.py`.
 - **Named body armour** (`data/items/armor.json`): `metal` (bool, by its
   lore); optional `quiet`, `casting_free`, `wards`. Its own
   `damage_resistances` is its whole profile.
-- **`data/gear_rules.json`**: `armour_weight` (`dex_ac_cap`, `dodge_share`,
+- **`data/gear_rules.json`**: `armour_weight` (`dodge_share`,
   `footsteps`, `metal_footsteps`, `sleeper_share_per_tile`, `casting_mult`
-  by weight class), `load` (`heavy` / `burdened` / `overloaded`: `share`,
-  `dodge`, `dex_ac`, `step_every`), `wards` (`families`, `tags`, `effects`,
-  `card`, `line`).
+  by weight class), `defence` (the defence model, 2026-11-16, read by
+  `src/defence.py`: `dodge_per_dex`, `dodge_cap`, `speed_per_dex`,
+  `speed_cap`, `armour_drag` by weight class, `str_payback`, `con_carry`,
+  `min_speed_share`), `load` (`light` / `heavy` / `burdened` /
+  `overloaded`: `share`, `dodge`, `speed`), `wards` (`families`, `tags`,
+  `effects`, `card`, `line`). (`dex_ac_cap` and the load's `dex_ac` and
+  `step_every` went with Dexterity's AC and the step rule, 2026-11-16.)
 
 ### 4.2 `equip_threshold` + `equip_chain_mode`
 

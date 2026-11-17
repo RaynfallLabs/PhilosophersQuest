@@ -262,6 +262,27 @@ When a combat quiz ends, a short banner plays over the map so a chain has a visi
 
 A kill swaps the damage line for `"<Target> Slain"`; it does not add time. The effect is purely visual and non-blocking (play continues underneath), is centred on the map view, and paints onto a map-sized layer so it can never spill onto the sidebar or the message log. Re-firing restarts it, so two quick attacks never stack banners. Reduced motion (`PQ_REDUCED_MOTION=1`) shows static text for 300 ms with no rings, streak, or drift. See [`docs/design/effects_runtime.md`](../design/effects_runtime.md) §12.
 
+## The hero's defence: AC, dodge and speed (the defence model, 2026-11-16)
+
+Brandon's approved design; the sums are `src/defence.py`, the numbers
+`data/gear_rules.json` `defence` and `load`, the whole account
+[armour.md](armour.md) section 1c.
+
+- **A monster's blow** (`Monster.attack`) rolls its THAC0 against
+  `Player.get_ac()`: body armour, shield and magic only, no Dexterity.
+  A blow that lands from beside the hero can then be **slipped**
+  (`Monster._slipped`, `Player.dodge_chance`): Dexterity's dodge, by the
+  body armour's weight class (all, half, none) and the load.
+- **Speed** (`Player.get_speed`, 10 ordinary) is how often the world acts
+  against the hero: `Game._advance_turn` takes the world's turns by
+  `defence.world_turns` (10/speed of a turn an action). Dexterity makes
+  him quicker in light armour (half in medium, none in heavy); medium and
+  heavy armour slow a hero too weak for them, and a Heavy or Burdened load
+  slows anyone. Over 10 the monsters sometimes wait; under 10 they
+  sometimes take two turns. The quiz clock (Wisdom) is never speed.
+- The simulator plays the same rules (`tools/balance/difficulty_sim.py`,
+  `fight`: the world's turns by `defence.world_turns`).
+
 ## Hit resolution — order of operations
 
 Melee swings resolve entirely inside `player_attack._callback`. Monster-to-player hits resolve inside `monster.attack(player)`. Both paths funnel per-hit damage through:
