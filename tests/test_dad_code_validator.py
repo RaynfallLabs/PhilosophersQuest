@@ -568,3 +568,40 @@ def test_a_short_code_does_not_pull_the_lever(app):
     _key(app, pygame.K_BACKSPACE)
     assert app.entry.code == 'DOOM-A'
     app.draw()
+
+
+# -- code words of any length (Brandon, 2026-11-17: "it only accepts 4 letters to start but some
+#    codes are HUNDRED-1234-5678"; the empty slot showed four ghost boxes spelling WORD) -----------
+
+def test_every_code_word_types_whole_with_or_without_dashes():
+    import validator_core as vc
+    words = vc.code_words()
+    assert min(map(len, words)) <= 3 and max(map(len, words)) >= 12       # MOO ... HUNDREDTRIPS
+    rng = random.Random(3)
+    for w in sorted(words):
+        chars = ''.join(rng.choice(sc.ALPHABET) for _ in range(8))
+        for sep in ('-', ''):
+            raw = ''
+            for ch in w + sep + chars[:4] + sep + chars[4:]:
+                raw, _why = vc.type_key(raw, ch, words)
+            raw = vc.complete_reading(raw, words) or raw      # what Enter does with a dashless code
+            e = vc.parse_entry(raw, words)
+            assert e.complete and e.code == f'{w}-{chars[:4]}-{chars[4:]}', (w, sep, raw, e.code)
+
+
+def test_a_shorter_word_is_read_when_only_it_makes_a_whole_code():
+    import validator_core as vc
+    words = vc.code_words()
+    assert {'TABLE', 'TABLET'} <= words                                   # TABLE with a code starting T
+    assert vc.complete_reading('TABLET1G3JGM1', words) == 'TABLE-T1G3JGM1'
+    assert vc.complete_reading('TABLE-T1G3JGM1', words) is None           # a dash says where the word ends
+    assert vc.complete_reading('HUND', words) is None
+
+
+def test_the_empty_word_says_any_length():
+    src = (ROOT / 'tools' / 'dad' / 'code_validator.py').read_text(encoding='utf-8')
+    assert '"ANY LENGTH"' in src and 'Word (any length)' in src
+    assert "'WORD'[i]" not in src                                         # no four ghost boxes
+    import validator_core as vc
+    title, lines = vc.result_lines({'status': 'fake', 'seeker': 'Fianna', 'why': 'short', 'code': 'HUN'})
+    assert any('any length' in ln for ln in lines)

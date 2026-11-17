@@ -213,6 +213,23 @@ def parse_entry(raw, words) -> Entry:
                  more_word=known and not in_chars and _extends(word, words))
 
 
+def complete_reading(raw, words) -> str | None:
+    """Keys typed with no dash that read as a whole code only with a
+    shorter code word: TABLE with a code starting T reads, letter by letter,
+    as the longer word TABLET and seven characters. Returns the keys as that
+    whole code (WORD-XXXXXXXX), or None when there is no such reading."""
+    s = clean_raw(raw)
+    if '-' in s or s.startswith(DEV):
+        return None
+    for w in sorted(words, key=len, reverse=True):
+        rest = s[len(w):]
+        if s.startswith(w) and len(rest) == CHARS:
+            chars = ''.join(_TYPO.get(c, c) for c in rest)
+            if all(c in seeker_codes.ALPHABET for c in chars):
+                return f'{w}-{chars}'
+    return None
+
+
 def type_key(raw: str, ch: str, words) -> tuple[str, str]:
     """(the keys typed, a line to show) after Dad types ``ch``. A key that
     would change nothing on the slot (a ninth code character, a U, a dash
@@ -322,7 +339,8 @@ def result_lines(v: dict) -> tuple[str, list[str]]:
         word = v.get('code', '').split('-')[0]
         lines.append(f"No achievement's code starts with {word}: check the word first.")
     elif why == 'short':
-        lines.append("A code is a word, then eight letters and numbers: WORD-XXXX-XXXX.")
+        lines.append("A code is its word, any length (DOOM, QUACK, HUNDRED...), then eight "
+                     "letters and numbers: WORD-XXXX-XXXX.")
     else:
         lines.append("The word is right, so check the eight letters and numbers after it.")
     return "That Code Doesn't Match", lines

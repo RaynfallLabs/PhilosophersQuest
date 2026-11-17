@@ -573,7 +573,13 @@ class App:
         """Enter or the lever: check the code (and record a new one) now, then spin onto the answer."""
         e = self.entry
         if not e.dev and not e.complete:
-            self.line = ("Type the whole code first: a word, then eight letters and numbers."
+            whole = core.complete_reading(self.raw, self.words)   # TABLE + T..., typed with no dash
+            if whole:
+                self.raw = whole
+                self._typed('')
+                e = self.entry
+        if not e.dev and not e.complete:
+            self.line = ("Type the whole code first: its word (any length), then eight letters and numbers."
                          if not e.empty else "Type the code the kid shows you, then press Enter.")
             self.shake_t = self.t
             self.fx.play('refuse')
@@ -1288,10 +1294,14 @@ class App:
         f_lab = ui.get_font('body', 16, bold=True)
         self._text("Type the Code", f_lab, KT.TEXT_HEAD, r.centerx, r.y + S(8), centre=True)
         # The word's boxes: one per letter, one more for the next while it is
-        # being typed, and four ghost boxes reading WORD before anything is.
+        # being typed. Before anything is typed, ONE wide box reading "any
+        # length": code words run from 3 letters (MOO) to 12 (HUNDREDTRIPS),
+        # and four ghost boxes spelling WORD read as "four letters" (Brandon,
+        # 2026-11-17).
+        empty_word = not e.word
         word_boxes = len(e.word) + (1 if typing and not e.in_chars and len(e.word) < core.WORD_MAX else 0)
-        if not e.word:
-            word_boxes = 4
+        if empty_word:
+            word_boxes = 6
         n = word_boxes + core.CHARS
         dash_w = S(26)
         dev_w = S(70) if e.dev else 0
@@ -1321,6 +1331,15 @@ class App:
                 pygame.draw.line(self.screen, FP.GOLD, (x + S(6), y + bh // 2), (x + dash_w - S(6), y + bh // 2),
                                  max(3, S(4)))
                 x += dash_w
+            if empty_word and i < word_boxes:
+                if i == 0:
+                    wide = pygame.Rect(x, y, word_boxes * (bw + gap) - gap, bh)
+                    self._slot_box(wide, '', KT.TEXT_QUIZ, typing, caret_on, font, '', 0)
+                    gf = ui.get_font('mono', max(16, size - 8), bold=True)
+                    gs = gf.render("ANY LENGTH", True, KT.DIS_TEXT)
+                    self.screen.blit(gs, (wide.centerx - gs.get_width() // 2, wide.centery - gs.get_height() // 2))
+                x += bw + gap
+                continue
             box = pygame.Rect(x, y, bw, bh)
             if i < word_boxes:
                 ch = e.word[i] if i < len(e.word) else ''
@@ -1331,7 +1350,7 @@ class App:
                 ch = e.chars[j] if j < len(e.chars) else ''
                 active = typing and e.in_chars and j == len(e.chars)
                 col = KT.TEXT_QUIZ
-            ghost = '' if ch or i >= word_boxes or e.word else 'WORD'[i] if i < 4 else ''
+            ghost = ''
             self._slot_box(box, ch, col, active, caret_on, font, ghost,
                            -int(S(6) * pop) if i == last else 0)
             x += bw + gap
@@ -1339,7 +1358,8 @@ class App:
         fl = ui.get_font('body', 16)
         first = r.centerx - total // 2 + dev_w
         word_w = word_boxes * (bw + gap) - gap
-        self._text("Word", fl, KT.TEXT_DIM, first + word_w // 2, y + bh + S(4), centre=True)
+        self._text("Word (any length)" if empty_word else "Word", fl, KT.TEXT_DIM,
+                   first + word_w // 2, y + bh + S(4), centre=True)
         code_x = first + word_w + dash_w
         self._text("Eight Letters and Numbers", fl, KT.TEXT_DIM,
                    code_x + (8 * (bw + gap) + dash_w) // 2, y + bh + S(4), centre=True)
