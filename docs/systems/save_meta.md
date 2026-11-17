@@ -589,6 +589,13 @@ tier of that kind put on}). A save without it (`Player.__setstate__`,
 a ring kind in `known_by_hand` but not worn at the kind's first tier.
 `tests/test_decided_items_2026_11_16.py` loads one without it.
 
+**2026-11-17** (Butchered Before, [food_system](food_system.md) §8): one new
+Player field, `butchered_kinds` (the monster ids the hero has harvested right
+this run; `src/butchered.py`). A save without it loads with an empty set
+(`Player.__setstate__`), so each kind asks its question once more.
+`tests/test_butchered_before.py` round-trips it through `save_system` and
+loads one without it.
+
 ### 6.4 Adding a new migration
 
 If you remove or rename a Player attribute in a future version:

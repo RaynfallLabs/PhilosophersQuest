@@ -530,6 +530,21 @@ second Fenrir's Tooth gave its power twice, bug bash 3.5.1). The part remembers 
 (`source_monster`, read by Siegfried's Bath). Wrong: the corpse is ruined. A part too heavy to
 carry stays on the floor. `quirk_system.on_harvest` fires either way (Mithridates).
 
+**Butchered Before** (`src/butchered.py`, Brandon 2026-11-17: "once you have IDENTIFIED AND
+SUCCESSFULLY HARVESTED a specific monster ONCE, you can automatically harvest any others"). A right
+answer that gains a part remembers the corpse's monster id in `Player.butchered_kinds` (saved; an old
+save has none), identified or not; a wrong answer remembers nothing. A later harvest of the SAME
+kind skips the question when the kind is also identified at that moment, its full Bestiary page open
+(`family_lore.has_page`: studied, its page opened by the Book of Thoth, Omnisight or a gate boss's
+quest, or its family at tier 1 or more), so a success recorded before the kind was identified counts
+from the moment it is. The free harvest is the right answer's harvest (`food_system._harvest_yield`:
+the same part, the family's extra portion, the corpse used up, the turn spent), said by one line first
+("You know how to butcher a Giant Rat. No question needed."). It starts no quiz, so it sends no
+`quiz_answer` (no answer counter, streak or answer quirk moves); the Seeker's `harvest` event carries
+`free=True` and still counts toward `harvests`. The corpse dossier and the kind's Bestiary page say
+"Butchered before: no question". A different kind, kin or not, asks its own question. The simulator
+models it (`difficulty_sim._harvest_all`, with the families knob on).
+
 Untimed: animal questions are never on the clock. Corpses weigh what the body weighs
 (`items.corpse_weight`, `data/monster_sizes.json`: 2 lb tiny to 400 lb huge).
 

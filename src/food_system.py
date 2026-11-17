@@ -21,6 +21,8 @@ _COMBAT_STATS = ['STR', 'CON']
 # or the full dish; wrong = ruined, and the corpse or the ingredients are
 # consumed either way. No chain, no partial credit, no stun on failure. See
 # [[feedback-flow-over-gradient]] and [[feedback-resource-loss-is-the-penalty]].
+# A kind identified and harvested right once is harvested again with no
+# question (Butchered Before, src/butchered.py).
 #
 # The kitchen (src/kitchen.py, rebuilt 2026-11-14) knows the book: what a
 # corpse yields (data/items/harvest_map.json: close kin share one
@@ -544,7 +546,70 @@ def load_ingredient_for(ingredient_id: str):
 # Harvest
 # ------------------------------------------------------------------
 
-def harvest_corpse(player, corpse, quiz_engine, on_complete, extra_seconds: int = 0):
+def harvest_quiz_tier(corpse) -> int:
+    """The animal question's tier for ``corpse``: its harvest_tier (1-5),
+    never harder than the band the monster now lives in."""
+    monster_id = getattr(corpse, 'monster_id', '')
+    ht = int(getattr(corpse, 'harvest_tier', 1) or 0)
+    tier = max(1, min(5, ht)) if ht > 0 else 1
+    # Never harder than the band the monster now lives in. Monsters were
+    # re-seated by HP several times and their harvest tiers were not: 156
+    # creatures of floors 1 to 19 asked tier 3, 4 or 5 animal questions.
+    return min(tier, _monster_band_tier(monster_id))
+
+
+def harvest_is_free(player, corpse) -> bool:
+    """Butchered Before (src/butchered.py): a kind the hero has identified
+    and harvested right once is harvested again with no question."""
+    import butchered
+    return butchered.is_free(player, corpse)
+
+
+def _harvest_yield(player, corpse, tier: int) -> tuple:
+    """A right answer's harvest of ``corpse``: ``(ingredients, message)``,
+    the parts made fresh and the line that names them."""
+    monster_id = getattr(corpse, 'monster_id', '')
+    _md = getattr(corpse, 'monster_def', None) or {}
+    ingredient_ids = _harvest_outcome_for_tier(
+        tier, monster_id, getattr(corpse, 'family', None),
+        int(_md.get('peak_floor', 0) or 0) or None)
+    # Hunter's Harvest / Herbalist (monster family knowledge,
+    # src/family_edges.py harvest_bonus): one more portion of the
+    # main cut from a family the hero has learned to butcher.
+    # A boss's trophy is one of a kind (one heart, one tooth): never
+    # a second portion. Two of Fenrir's Tooth gave its +3 STR twice,
+    # past every cap (bug bash 3.5.1 A).
+    _extra_note = ''
+    try:
+        import family_edges
+        _more, _ab = family_edges.harvest_bonus(player, monster_id)
+    except ImportError:
+        _more, _ab = 0, None
+    if ingredient_ids:
+        import kitchen as _kitchen
+        if _kitchen.part_kind(ingredient_ids[0]) == 'trophy':
+            _more = 0
+    if _more and ingredient_ids:
+        ingredient_ids = list(ingredient_ids) + [ingredient_ids[0]] * int(_more)
+        _extra_note = ' ' + family_edges.line_for((_ab or {}).get('trigger_msg', '') or '')
+    ingredients = [ing for ing_id in ingredient_ids
+                   if (ing := load_ingredient_for(ing_id)) is not None]
+    # The part remembers the creature it came from (close kin share
+    # one ingredient; Siegfried's Bath reads the creature eaten).
+    for ing in ingredients:
+        if monster_id:
+            ing.source_monster = monster_id
+    counts: dict[str, int] = {}
+    for ing in ingredients:
+        counts[ing.name] = counts.get(ing.name, 0) + 1
+    parts = [f"{c}x {n}" if c > 1 else n for n, c in counts.items()]
+    msg = (f"You harvest the {corpse.name}: "
+           f"{', '.join(parts)}." if parts
+           else f"You harvest the {corpse.name}, but it yields nothing usable.")
+    return ingredients, (msg + _extra_note).rstrip()
+
+
+def harvest_corpse(player, corpse, quiz_engine, on_complete, extra_seconds: int = 0) -> bool:
     """Animal one-question harvest, tier scaled to the corpse's harvest_tier.
 
     ONE animal question at the corpse's harvest_tier (1-5). Right = the
@@ -554,56 +619,30 @@ def harvest_corpse(player, corpse, quiz_engine, on_complete, extra_seconds: int 
     IS the cost. See [[feedback-flow-over-gradient]] +
     [[feedback-resource-loss-is-the-penalty]].
 
-    on_complete(ingredients_list, message: str) is called when the quiz ends.
+    Butchered Before (src/butchered.py, Brandon 2026-11-17): a right answer
+    that gains a part remembers the kind; a kind remembered AND identified
+    (its full Bestiary page open) skips the question and yields at once,
+    exactly as a right answer does. Returns True when it did (no quiz
+    started), False when the question was asked.
+
+    on_complete(ingredients_list, message: str) is called when the quiz ends
+    (at once for a free harvest).
     """
-    monster_id = getattr(corpse, 'monster_id', '')
-    ht = int(getattr(corpse, 'harvest_tier', 1) or 0)
-    tier = max(1, min(5, ht)) if ht > 0 else 1
-    # Never harder than the band the monster now lives in. Monsters were
-    # re-seated by HP several times and their harvest tiers were not: 156
-    # creatures of floors 1 to 19 asked tier 3, 4 or 5 animal questions.
-    tier = min(tier, _monster_band_tier(monster_id))
+    import butchered
+    tier = harvest_quiz_tier(corpse)
+    if butchered.is_free(player, corpse):
+        ingredients, msg = _harvest_yield(player, corpse, tier)
+        on_complete(ingredients, msg)
+        return True
 
     def _callback(result):
         if getattr(result, 'success', False):
-            _md = getattr(corpse, 'monster_def', None) or {}
-            ingredient_ids = _harvest_outcome_for_tier(
-                tier, monster_id, getattr(corpse, 'family', None),
-                int(_md.get('peak_floor', 0) or 0) or None)
-            # Hunter's Harvest / Herbalist (monster family knowledge,
-            # src/family_edges.py harvest_bonus): one more portion of the
-            # main cut from a family the hero has learned to butcher.
-            # A boss's trophy is one of a kind (one heart, one tooth): never
-            # a second portion. Two of Fenrir's Tooth gave its +3 STR twice,
-            # past every cap (bug bash 3.5.1 A).
-            _extra_note = ''
-            try:
-                import family_edges
-                _more, _ab = family_edges.harvest_bonus(player, monster_id)
-            except ImportError:
-                _more, _ab = 0, None
-            if ingredient_ids:
-                import kitchen as _kitchen
-                if _kitchen.part_kind(ingredient_ids[0]) == 'trophy':
-                    _more = 0
-            if _more and ingredient_ids:
-                ingredient_ids = list(ingredient_ids) + [ingredient_ids[0]] * int(_more)
-                _extra_note = ' ' + family_edges.line_for((_ab or {}).get('trigger_msg', '') or '')
-            ingredients = [ing for ing_id in ingredient_ids
-                           if (ing := load_ingredient_for(ing_id)) is not None]
-            # The part remembers the creature it came from (close kin share
-            # one ingredient; Siegfried's Bath reads the creature eaten).
-            for ing in ingredients:
-                if monster_id:
-                    ing.source_monster = monster_id
-            counts: dict[str, int] = {}
-            for ing in ingredients:
-                counts[ing.name] = counts.get(ing.name, 0) + 1
-            parts = [f"{c}x {n}" if c > 1 else n for n, c in counts.items()]
-            msg = (f"You harvest the {corpse.name}: "
-                   f"{', '.join(parts)}." if parts
-                   else f"You harvest the {corpse.name}, but it yields nothing usable.")
-            on_complete(ingredients, (msg + _extra_note).rstrip())
+            ingredients, msg = _harvest_yield(player, corpse, tier)
+            if ingredients:
+                # Remembered whether the kind is identified or not: it counts
+                # from the moment it is (butchered.is_free).
+                butchered.learn(player, corpse)
+            on_complete(ingredients, msg)
         else:
             on_complete([], f"You botch the harvest. The {corpse.name} is ruined.")
 
@@ -620,6 +659,7 @@ def harvest_corpse(player, corpse, quiz_engine, on_complete, extra_seconds: int 
         extra_seconds=_player_extra + extra_seconds,
         base_seconds=player.get_quiz_timer('animal'),
     )
+    return False
 
 
 # ------------------------------------------------------------------
@@ -1226,8 +1266,8 @@ def make_corpse(monster_id: str, x: int, y: int):
 
     The corpse carries no ingredient of its own: the harvest looks up what
     its kin yields (data/items/harvest_map.json) by monster_id at harvest
-    time, with one animal question at the corpse's harvest_tier (see
-    harvest_corpse).
+    time, with one animal question at the corpse's harvest_tier, or none
+    for a kind Butchered Before (see harvest_corpse).
     """
     from items import Corpse
     monsters_path = data_path('data', 'monsters.json')

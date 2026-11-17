@@ -169,6 +169,9 @@ TAUGHT = {
     # find has a dish of its own.
     "a person's body is searched": r'what a fallen man carried',
     'a rare find cooks into its own dish': r'more in a pot than in a pocket',
+    # Brandon, 2026-11-17: a kind identified and harvested once is harvested
+    # again with no question (Zhuangzi's Cook Ding, who understood the ox).
+    'a kind known and butchered once asks no question': r'cook ding',
 }
 
 

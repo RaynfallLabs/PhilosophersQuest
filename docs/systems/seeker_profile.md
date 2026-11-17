@@ -130,6 +130,7 @@ Some engine modules have no game reference, so they tell a listener, and `Seeker
 | `dance_off` | `won`, `misses`, `perfects`, `total`, `practised`, `dance` | a dance-off with the Mooble danced to its end (`mooble_encounter._mooble_dance_done`); `practised` is set by a practice round since the last dance-off (`game_mooble_dance._mooble_open_dance`) |
 | `race` | `won`, `sprints`, `photo` | the Underway Run finished (`game_race._race_leg_done`) |
 | `rode_down` | `floor` | down a staircase in the Bococho's saddle (`main._change_level`, before the rider is set down at the stair) |
+| `harvest` | `free` | 2026-11-17: True when the kind was Butchered Before (`butchered.py`) and no question was asked. A free harvest still counts toward `harvests` (Nothing Wasted: a harvest, not an answer); it starts no quiz, so it sends no `quiz_answer` and counts toward no answer counter |
 
 **The Stray Kids (Stage Fright, Encore!)** fire on `stray_kids` with `outcome` `cleared` (`game_stray_kids._stray_kids_member_died`, when the last of the band falls and the photo drops) and `show` (`_stray_kids_summon`, the photo read). A rework of the band's fight must keep sending `cleared` at the moment the band is beaten.
 

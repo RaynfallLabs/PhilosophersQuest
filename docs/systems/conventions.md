@@ -106,7 +106,9 @@ Current one-question binary actions (each v3+):
 - **Cook v2** — `food_system.py`; 1 cooking Q at the recipe's outcome
   tier; wrong = ruined meal (ingredient destroyed).
 - **Harvest v4** — `food_system.py`; 1 animal Q at `corpse.harvest_tier`;
-  wrong = corpse destroyed.
+  wrong = corpse destroyed. A kind identified and harvested right once
+  is harvested again with no question (Butchered Before, `butchered.py`,
+  2026-11-17).
 - **Lockpick v3** — `main.py`; 1 economics Q at chest tier; wrong =
   trap from `chest_traps.json` (NOT a quiz penalty — the trap IS the
   consequence of a failed pick, matched to chest tier not floor tier,
@@ -132,6 +134,8 @@ that the **game flows** — not tier-scaled loot.
   deleted.
 - Harvest v4: one animal Q at `corpse.harvest_tier`. Right = its kin's
   ingredient OR a boss trophy (`harvest_map.json`). Wrong = corpse gone.
+  Butchered Before (`butchered.py`): a kind identified (its full Bestiary
+  page open) and harvested right once asks no question again.
 - Cook: one cooking Q at the dish's tier (its deepest ingredient's band, one more for four parts or more).
   Right = the dish applied (`kitchen.apply_dish`: SP, a heal, max HP and
   its main benefit; a permanent bonus for feasts and trophies). Wrong = ruined

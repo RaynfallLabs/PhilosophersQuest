@@ -7071,8 +7071,17 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # +5s harvest timer bonus if monster has been lore-identified
         _lore_known = getattr(self.player, 'lore_known_monster_ids', set())
         _lore_bonus = 5 if getattr(corpse, 'monster_id', '') in _lore_known else 0
-        self.quiz_title = f"HARVESTING {corpse.name.upper()}  --  ANIMAL"
-        self.state = STATE_QUIZ
+        # Butchered Before (src/butchered.py): a kind identified and
+        # harvested right once is harvested now with no question, and the
+        # turn passes as for a right answer.
+        from food_system import harvest_is_free
+        import butchered as _butchered
+        free = harvest_is_free(self.player, corpse)
+        if free:
+            self.add_message(_butchered.fires_line(corpse), 'info')
+        else:
+            self.quiz_title = f"HARVESTING {corpse.name.upper()}  --  ANIMAL"
+            self.state = STATE_QUIZ
 
         def on_complete(ingredients_list, message: str):
             """New 2026-05-31 callback: receives a LIST of fresh Ingredient
@@ -7082,7 +7091,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             success = bool(ingredients_list)
             self.add_message(message, 'loot' if success else 'warning')
             if success:
-                self._seeker_event('harvest', monster=getattr(corpse, 'monster_id', None))
+                # A free harvest is still a harvest (the Seeker's harvest
+                # count), but no question was answered: no quiz_answer event.
+                self._seeker_event('harvest', monster=getattr(corpse, 'monster_id', None),
+                                   free=free)
             _qs_harv = getattr(self, 'quirk_system', None)
             if _qs_harv:
                 _mon_def = getattr(corpse, 'monster_def', {}) or {}
