@@ -1374,6 +1374,18 @@ class Ingredient(Item):
         self.edible_safe: bool      = bool(defn.get('edible_safe', False))
         self.raw_sp                 = defn.get('raw_sp', None)
 
+    # Ingredients weigh nothing (Brandon, 2026-11-16): carrying a kitchen
+    # never pushes the hero toward a heavier load. A data descriptor, so it
+    # wins over the weight an old save pickled into the instance, and
+    # Item.__init__'s assignment is ignored.
+    @property
+    def weight(self) -> float:
+        return 0.0
+
+    @weight.setter
+    def weight(self, value) -> None:
+        pass
+
 
 _MONSTER_SIZES: dict | None = None
 
