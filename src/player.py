@@ -215,8 +215,8 @@ class Player:
         self.power_uses: dict = {}         # power_id -> uses remaining this run
 
         # Cooking HP balance: diminishing returns tracking
-        self.cooking_hp_gained: int = 0    # total max HP gained from cooking (for softcap)
-        self.deepest_floor_reached: int = 1  # drives floor-aware cooking softcap (synced from level_mgr)
+        self.cooking_hp_gained: int = 0    # total max HP gained from cooking (a tally; no cap since 2026-11-16)
+        self.deepest_floor_reached: int = 1  # drives the depth-aware caps (synced from level_mgr)
         # Cooking STAT balance: per-stat lifetime gain from cooking, drives the
         # cooking-stat softcap (mirrors cooking_hp_gained). Without this, an
         # aggressive cook would balloon stats by +200+ over a run.
@@ -593,10 +593,12 @@ class Player:
 
         No automatic max HP growth on level change -- max HP grows through
         cooking (see :meth:`try_apply_cook_hp_gain` +
-        :meth:`increase_max_hp`), gated by the per-floor cook cap and the
-        floor-derived cap in :meth:`cooking_softcap`. There is
-        no longer any quality-tier gate (the retired Q3+ gradient is gone);
-        every successful cook can contribute HP until the softcap is hit.
+        :meth:`increase_max_hp`), gated by the per-floor cook cap alone
+        (Brandon, 2026-11-16: "there should be a per floor limit to hp
+        gained, but not a max across several floors... that encourages
+        cooking"). There is no quality-tier gate (the retired Q3+ gradient
+        is gone); every successful cook adds max HP until the floor's share
+        is cooked.
 
         Stair-rest heal scales with max HP; reduced on ascent (Death
         pursuit). Capped to prevent trivialising damage at very high max HP.
@@ -620,26 +622,17 @@ class Player:
         mp_restore = max(2, self.INT // 5)
         self.restore_mp(mp_restore)
 
-    # Cooking is the leveling track (CURVE.md principle 9 and section 5): the
-    # most max HP cooking can ever have given is 4 per floor reached, never
-    # less than 20. That is 80 by floor 20, 200 by floor 50, 400 by floor 100.
-    #
-    # The table that stood here had drifted to ZERO through floor 20 and 139
-    # at floor 100, and no ordinary meal raised max HP at all, so a careful
-    # player still had about 35 HP on floor 39 and 50 on floor 59 while
-    # single attacks there did 20 to 30. Deaths were one-roll bursts, not
-    # decisions.
-    COOKING_SOFTCAP_PER_FLOOR = 4
-    COOKING_SOFTCAP_MIN = 20
+    # Cooking is the leveling track (CURVE.md principle 9 and section 5). Max
+    # HP from meals is held only by the per-floor cap (PER_FLOOR_HP_CAP):
+    # Brandon, 2026-11-16, "there should be a per floor limit to hp gained,
+    # but not a max across several floors... that encourages cooking". Until
+    # then a lifetime cap (cooking_softcap: 4 a floor reached, never less
+    # than 20) also stopped it, and the sidebar said "Meals: go deeper for
+    # HP" once it was met; it is gone, and an old save's tally
+    # (cooking_hp_gained) stops nothing.
     # What any properly cooked meal adds to max HP when its recipe gives no
-    # bonus of its own (still under the per-floor cap and the lifetime cap).
+    # bonus of its own (still under the per-floor cap).
     COOK_BASE_MAX_HP = 2
-
-    def cooking_softcap(self) -> int:
-        """Lifetime cap on max HP gained from cooking: a function of the
-        deepest floor reached, so descending is what unlocks more."""
-        floor = max(1, min(100, int(getattr(self, 'deepest_floor_reached', 1) or 1)))
-        return max(self.COOKING_SOFTCAP_MIN, self.COOKING_SOFTCAP_PER_FLOOR * floor)
 
     # You are what you eat (Brandon, 2026-11-16: "Cooking is basically our
     # experience and leveling system"). A stat dish cooked right teaches its
@@ -756,14 +749,9 @@ class Player:
         """Apply a cooking max-HP gain under the per-floor cap. Returns the
         amount that actually landed.
 
-        Trophy recipes pass bypass=True to skip the floor cap; lifetime
-        diminishing softcap still applies inside increase_max_hp.
-
-        Per-floor counter increments by the CLAMPED AMOUNT (what the
-        player asked for, post per-floor cap), not the diminished
-        `gained`. Rationale: the player consumed their cap slot. The
-        lifetime softcap shrinking the actual delivery is a separate
-        progression mechanic — don't let it refund the floor cap.
+        A legendary feast's lasting max HP passes bypass=True and skips the
+        floor cap. There is no cap across floors (Brandon, 2026-11-16).
+        The per-floor counter increments by the clamped amount.
         """
         if amount <= 0:
             return 0
@@ -773,8 +761,6 @@ class Player:
             if remaining <= 0:
                 return 0
             amount = min(amount, remaining)
-            # Reserve the cap slot up front — the slot is spent whether or
-            # not the lifetime softcap shrinks the delivery.
             self._cook_hp_gain_this_floor = int(
                 getattr(self, '_cook_hp_gain_this_floor', 0)) + amount
         before = self.max_hp
@@ -817,17 +803,17 @@ class Player:
     def increase_max_hp(self, amount: int, from_cooking: bool = False):
         """Permanently increase max HP. Also heals the amount.
 
-        If from_cooking=True the gain is held to the lifetime cooking cap
-        (`cooking_softcap`, 4 per floor reached). It is a real cap: the old
-        rule shrank the gain toward the cap but never below 1, so the cap
-        never stopped anything (measured 304 max HP against a designed 189).
+        If from_cooking=True the gain is tallied in ``cooking_hp_gained``.
+        Until 2026-11-16 it was also held to a lifetime cooking cap (4 a
+        floor reached); Brandon removed it ("a per floor limit to hp gained,
+        but not a max across several floors"), so the floor's cap, in
+        try_apply_cook_hp_gain, is the only one.
         """
         if from_cooking:
-            headroom = self.cooking_softcap() - int(self.cooking_hp_gained)
-            amount = max(0, min(int(amount), headroom))
+            amount = max(0, int(amount))
             if amount <= 0:
                 return
-            self.cooking_hp_gained += amount
+            self.cooking_hp_gained = int(getattr(self, 'cooking_hp_gained', 0) or 0) + amount
         self.max_hp += amount
         self.hp = min(self.hp + amount, self.max_hp)
 

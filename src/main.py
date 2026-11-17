@@ -930,7 +930,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             }
         if not hasattr(self.player, 'deepest_floor_reached'):
             # Old save: best estimate is the level_mgr's max_level_reached, falling
-            # back to current dungeon_level so existing cooking remains within softcap.
+            # back to current dungeon_level (it drives the depth caps: feasts' max
+            # MP, a rare food's stat gift).
             _max_lvl = getattr(state.get('level_mgr'), 'max_level_reached', None)
             self.player.deepest_floor_reached = _max_lvl or state.get('dungeon_level', 1)
         if not hasattr(self.player, 'chronicle_seen_materials'):

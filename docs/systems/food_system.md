@@ -44,7 +44,7 @@ mode, a T1-T5 stack of parts), the potency formulas, the Single tab.
 | `src/main.py` | `Game._harvest`, `Game._cook_compound` (the quirk callback), `Game._cook_item` (unreached safety net), `_outcome_bonus_category` (Circe), `_migrate_legacy_ingredients` (old saves), the encyclopedia's Recipes page. |
 | `src/game_menus.py` / `src/game_render.py` | The cook menu (`_open_cook_menu`, `_cook_menu_input`, `_draw_cook_menu`): a tab per main benefit, each with Ready to Cook, Building Toward and Legendary Feasts, the chosen dish's picture large (`ui.md` §13). The corpse dossier's "Harvest: X" line. |
 | `src/cook_menu.py` | Pure: the cook menu's words (why it opened where, a row's chip and second line, what to do about a missing part, the empty tab's line) and the list window. |
-| `src/player.py` | The caps: `feed_cut_stat(stat, tier)` (the floor's stat lesson, a whole point), `cut_stat_block(stat, tier)`, `stat_cap_for_tier`, `depth_tier`, `try_apply_cook_hp_gain`, `try_apply_cook_stat_gain`, `cooking_softcap`, `cooking_stat_softcap`, `food_taught`, `reset_floor_cook_caps`; `cooking_mp_gained` (max MP from feasts, read with `getattr`). |
+| `src/player.py` | The caps: `feed_cut_stat(stat, tier)` (the floor's stat lesson, a whole point), `cut_stat_block(stat, tier)`, `stat_cap_for_tier`, `depth_tier`, `try_apply_cook_hp_gain` (max HP: the floor's cap only), `try_apply_cook_stat_gain`, `cooking_stat_softcap`, `food_taught`, `reset_floor_cook_caps`; `cooking_mp_gained` (max MP from feasts, read with `getattr`). |
 | `src/status_effects.py` | `apply_effect(..., cap=)`: a meal's power may run past the usual 60 turns, up to its `max_turns`. |
 | `data/items/ingredient.json` | Every ingredient (§3). Built. |
 | `data/items/harvest_map.json` | Monster -> ingredient; retired ids -> kept ids (§3.2); `people`, the kinds searched, never harvested, and `people_parts`, what an old save's part of a person becomes (§3.5). Built. |
@@ -317,7 +317,12 @@ wrong. A legendary feast or a trophy's dish multiplies its main benefit by 1.5 o
 - **SP:** 60 / 80 / 105 / 125 / 150 by tier, times worth (shown capped at the bar).
 - **A heal:** `food_system.meal_mend_share` of 3 / 6 / 9 / 14 / 20 written (6% + written/80 of
   max HP: about 10% at tier 1, a third at tier 5).
-- **Max HP:** +2 toward the floor's cap (5 a floor; `try_apply_cook_hp_gain`).
+- **Max HP:** +2 toward the floor's cap (5 a floor; `try_apply_cook_hp_gain`). That is the only
+  cap on max HP from meals: none across floors (Brandon, 2026-11-16: "there should be a per floor
+  limit to hp gained, but not a max across several floors... that encourages cooking"). Until then
+  a lifetime cap (`Player.cooking_softcap`: 4 a floor reached, at least 20) also held it, and the
+  sidebar said "Meals: go deeper for HP" once it was met; an old save's tally
+  (`cooking_hp_gained`) is kept and stops nothing.
 
 These keep a single dish of a tier near the old tier bands, so the simulator's baseline holds.
 
@@ -338,8 +343,7 @@ old book wrote 100-300 turns and every one was cut to 60 while the message said 
 
 On top of the 1.5x main benefit, by tab:
 
-- **HP:** +4 / 4 / 4 / 6 / 8 max HP, past the floor's cap but inside the lifetime cooking cap
-  (`cooking_softcap`, 4 a floor of depth).
+- **HP:** +4 / 4 / 4 / 6 / 8 max HP, past the floor's cap (there is none across floors).
 - **MP:** +2 / 2 / 2 / 3 / 4 max MP, inside the lifetime feast cap: a quarter of the deepest
   floor reached, at least 4 (`kitchen.feast_mp_cap`; `Player.cooking_mp_gained`).
 - **Stat:** the floor's lesson (a whole point), and +1 more past the lesson
@@ -357,13 +361,13 @@ the trophy's own power (§6).
 
 Plain lines for THIS hero now, main benefit first: "+45 HP", "+3 Max HP", "+12 MP", "Teaches DEX
 +1" with "Tier 1 dishes teach DEX up to +8 (now +3)" under it, "Dark Vision, 300 turns", "+4 Max MP
-for good", "+60 SP". A cap that would eat the benefit says so: "Max HP full this floor", "Max HP:
-all cooking can give at this depth" (the lifetime cap, `kitchen.max_hp_room` reads both), "DEX
-lesson used this floor", "DEX has learned all a dish this simple can teach" (its tier's cap, with
+for good", "+60 SP". A cap that would eat the benefit says so: "Max HP full this floor"
+(`kitchen.max_hp_room`, the floor's cap), "DEX lesson used this floor", "DEX has learned all a dish this simple can teach" (its tier's cap, with
 ": deeper creatures teach more" on the limit line), "DEX has learned all food can teach" (the tier-5
 cap), "Max MP: all feasts can give at this depth". A feast's For Good lines are held to the same
-caps ("+3 Max HP for good" when 3 is what is left; "No more STR for good from a dish this deep"),
-so the menu never promises more than the meal gives. Cooked, a stat dish at its tier's cap says
+caps ("+2 Max MP for good" when 2 is what is left; "No more STR for good from a dish this deep";
+its max HP has no cap: "+8 Max HP for good"), so the menu never promises more than the meal
+gives. Cooked, a stat dish at its tier's cap says
 "Your Dexterity has learned all a dish this simple can teach. Deeper creatures teach more."
 
 ### 5.5 Cook to carry (`makes`, 2026-11-14)
@@ -635,5 +639,6 @@ old saves; every special food in a decent dish of its tier, shown when held, use
 | S1 | 2026-11-15 | **A dish that plays a song** (§5.6): Caviar and Tater Tots, Brandon's song as A Man Before a King; caviar and tater tots, rare plain foods; half damage while the song plays; Robyn starts with both; a secret achievement. 694 dishes. |
 | SD | 2026-11-16 | **You are what you eat** (Brandon's rulings 1 and 2): one stat dish teaches one whole point, still one lesson a floor (two lessons a point, `COOK_MEALS_PER_STAT_POINT`, the banked meals `cook_stat_meals` and `full_point_worth` retired; an old save's half-point banked is dropped). A dish's tier caps how far it can raise a stat (`cap_by_tier`), replacing the cap that grew with the deepest floor (3 + floor / 4); the altar and rare foods go by the deepest band. |
 | HU | 2026-11-16 | **Hunting for a dish** (§7): H in the cook menu; what a hunted dish still needs shows gold under In Sight. |
+| HC | 2026-11-16 | **No cap across floors on max HP from meals** (Brandon: "there should be a per floor limit to hp gained, but not a max across several floors... that encourages cooking"). The lifetime cap (`Player.cooking_softcap`: 4 a floor reached, at least 20; `kitchen.lifetime_hp_room`; "Max HP: all cooking can give at this depth"; the sidebar's "Meals: go deeper for HP") is gone; the floor's cap (+5 a floor) stays, and a feast's lasting max HP always lands. |
 | PS | 2026-11-16 | **Brandon's three rulings.** People are searched, never harvested (§3.5, §8.1): 58 kinds in `people.txt`, twelve parts and their single dishes gone, 52 dishes re-sourced, old saves' parts become food. Every stat at every tier (§4.3): 15 stat dishes. Every special food in a dish of its own (§4.4): 6 dishes. Ingredients weigh nothing (a carried dish that does not fit is set down). 703 dishes, 306 ingredients. `part_rules.rare_foods` reads `floorSpawnWeight` too (the mythic fruits were counted common). |
 | KA | 2026-11-14 | **Dish pictures.** 134 kind pictures (20 kinds; vessel = tier, one colour cue = main benefit; stew and roast at every tier and tab) picked by `dish_art.py` from the name, and 36 feasts drawn one by one; the old cluster picker and `art_clusters.json` retired. |

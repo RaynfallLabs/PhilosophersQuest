@@ -17,7 +17,7 @@ REAL (the game's own code and data are called):
                       player goes through Monster.attack(player) (THAC0 vs
                       AC, min hit chance, multi-attack, gaze, rage, on-hit
                       effects and saving throws) and Monster.tick_effects().
-  * the player        player.Player: max HP, cooking softcap, get_ac(),
+  * the player        player.Player: max HP, the cooking caps, get_ac(),
                       take_damage(), status effects, saving throws, the quiz
                       timer. Gear goes on through Player._apply_equip().
   * the player's hit  combat.player_attack(): weapon base x chain^exponent,

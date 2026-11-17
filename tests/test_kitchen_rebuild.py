@@ -320,14 +320,17 @@ def test_a_legendary_max_mp_respects_the_lifetime_cap():
     assert p.cooking_mp_gained == cap         # no more past the cap
 
 
-def test_a_legendary_max_hp_passes_the_floor_cap_but_not_the_lifetime_one():
+def test_a_legendary_max_hp_passes_the_floor_cap_and_has_no_cap_across_floors():
+    """Brandon, 2026-11-16: a per-floor limit to max HP, not a max across
+    several floors. The feast's lasting max HP lands in full, however much
+    cooking has given before (the old lifetime cap held it to 3 here)."""
     feast = kitchen.recipe('feast_05')        # Sigurd's Hearth Roast (hp)
     p = _player(deepest=1)
     p._cook_hp_gain_this_floor = p.PER_FLOOR_HP_CAP
-    p.cooking_hp_gained = p.cooking_softcap() - 3
+    p.cooking_hp_gained = 17                  # three short of the old cap of 20
     before = p.max_hp
     kitchen.apply_dish(p, feast)
-    assert p.max_hp - before == 3             # held to the lifetime cap
+    assert p.max_hp - before == kitchen.dish_outcome(feast)['permanent'][1]
 
 
 def test_a_feast_never_gives_the_resistance_its_trophy_already_gives():

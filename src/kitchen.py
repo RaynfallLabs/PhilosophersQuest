@@ -549,22 +549,14 @@ def floor_hp_room(player) -> int:
     return max(0, cap - int(getattr(player, '_cook_hp_gain_this_floor', 0) or 0))
 
 
-def lifetime_hp_room(player) -> int:
-    """Max HP cooking can still ever add at this depth (the lifetime cap,
-    Player.cooking_softcap, 4 a floor reached). A player without the cap
-    (a harness) has room without end."""
-    soft = getattr(player, 'cooking_softcap', None)
-    if not callable(soft):
-        return 10 ** 6
-    return max(0, int(soft()) - int(getattr(player, 'cooking_hp_gained', 0) or 0))
-
-
 def max_hp_room(player) -> int:
-    """Max HP an ordinary meal can still add now: the floor's cap and the
-    lifetime cap, whichever is nearer. The menu read the floor's cap alone
-    and promised "+5 Max HP" to a hero whose depth's cap was full, who got
-    nothing (bug bash 3.5.1 A)."""
-    return min(floor_hp_room(player), lifetime_hp_room(player))
+    """Max HP an ordinary meal can still add now: what is left of the
+    floor's cap. There is no cap across floors (Brandon, 2026-11-16: "there
+    should be a per floor limit to hp gained, but not a max across several
+    floors... that encourages cooking"); the lifetime cap of 4 a floor
+    reached, and the menu's "Max HP: all cooking can give at this depth",
+    are gone."""
+    return floor_hp_room(player)
 
 
 def feast_mp_cap(player) -> int:
@@ -624,7 +616,7 @@ def dish_effects(player, rec: dict) -> list:
         if gain > 0:
             lines.append(f"+{gain} Max HP")
         elif tab == 'hp':
-            lines.append(MAX_HP_FULL_FLOOR if floor_hp_room(player) <= 0 else MAX_HP_FULL_DEPTH)
+            lines.append(MAX_HP_FULL_FLOOR)
     lines.extend(_lasting_lines(player, out, rec))
     if tab != 'sp':
         lines.append(f"+{sp_shown} SP")
@@ -632,24 +624,19 @@ def dish_effects(player, rec: dict) -> list:
 
 
 MAX_HP_FULL_FLOOR = "Max HP full this floor"
-MAX_HP_FULL_DEPTH = "Max HP: all cooking can give at this depth"
 
 
 def _lasting_lines(player, out: dict, rec=None) -> list:
     """The part of ``dish_effects`` that lasts for good: a feast's permanent
     gift, then each boss trophy's own power. A gift a lifetime cap would
-    eat says so, as apply_dish will."""
+    eat (max MP, a stat) says so, as apply_dish will; a feast's max HP has
+    no cap (it passes the floor's, and there is none across floors)."""
     lines = []
     perm = out['permanent']
     if perm:
         kind, val = perm
         if kind == 'max_hp':
-            # The meal's own max HP lands first, then the feast's, both
-            # inside the lifetime cap (_apply_permanent).
-            first = min(int(out['max_hp']), max_hp_room(player))
-            room_hp = min(int(val), max(0, lifetime_hp_room(player) - first))
-            lines.append(f"+{room_hp} Max HP for good" if room_hp > 0
-                         else "No more Max HP for good at this depth")
+            lines.append(f"+{int(val)} Max HP for good")
         elif kind == 'max_mp':
             room_mp = min(val, feast_mp_room(player))
             lines.append(f"+{room_mp} Max MP for good" if room_mp > 0
@@ -1033,7 +1020,6 @@ def apply_dish(player, rec: dict) -> list:
     if bits:
         msgs.append("You eat it: " + ", ".join(bits) + ".")
     # Max HP toward the floor's cap.
-    floor_open = floor_hp_room(player) > 0
     if hasattr(player, 'try_apply_cook_hp_gain'):
         applied = player.try_apply_cook_hp_gain(out['max_hp'])
     else:
@@ -1043,10 +1029,7 @@ def apply_dish(player, rec: dict) -> list:
         msgs.append(f"{'The meal fortifies you' if tab == 'hp' else 'Good food builds you up'}. "
                     f"(+{applied} max HP)")
     elif tab == 'hp':
-        msgs.append("You feel sated, but your body is already full of nourishment this floor."
-                    if not floor_open else
-                    "You feel sated, but your body has taken all cooking can give at this "
-                    "depth. Go deeper to grow more.")
+        msgs.append("You feel sated, but your body is already full of nourishment this floor.")
     # The main benefit.
     if tab == 'sp' and out['sustained'] > 0:
         _add_effect(player, 'sustained', out['sustained'], int(rules()['sp'].get('sustained_cap', 800)))
@@ -1147,10 +1130,13 @@ def _teach(player, stat: str, tier: int) -> list:
 def _apply_permanent(player, rec: dict, out: dict) -> list:
     kind, val = out['permanent']
     if kind == 'max_hp':
-        got = player.try_apply_cook_hp_gain(int(val), bypass=True) \
-            if hasattr(player, 'try_apply_cook_hp_gain') else 0
-        return [f"A feast to remember: +{got} max HP for good."] if got > 0 else \
-            ["A feast to remember, but your body has taken all cooking can give at this depth."]
+        # Past the floor's cap, and no cap across floors (Brandon, 2026-11-16).
+        if hasattr(player, 'try_apply_cook_hp_gain'):
+            got = player.try_apply_cook_hp_gain(int(val), bypass=True)
+        else:
+            got = int(val)
+            player.increase_max_hp(got, from_cooking=True)
+        return [f"A feast to remember: +{got} max HP for good."] if got > 0 else []
     if kind == 'max_mp':
         got = min(int(val), feast_mp_room(player))
         if got <= 0:

@@ -276,7 +276,8 @@ width), then `Floor N   Turn N` in faded text.
 transitions `SP_GREEN > SP_AMBER > SP_RED` at 50% / 25% ratios.
 Under the bars, the Meals line (`hud_context.cooking_hp_line`): this floor's
 cooked max HP against `Player.PER_FLOOR_HP_CAP` ("Meals: +2/5 Max HP"), gold
-while open, green when full, "go deeper for HP" at the lifetime softcap.
+while open, green when full. (The "go deeper for HP" state at a lifetime cap is gone: there is
+no cap across floors since 2026-11-16.)
 Max HP grows only by cooking, and nothing on screen said so (2026-10-23).
 
 **ATTRIBUTES** (`_attributes`): STR / CON / DEX / INT / WIS / PER in a
