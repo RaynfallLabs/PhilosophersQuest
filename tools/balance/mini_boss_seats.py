@@ -97,7 +97,7 @@ SEATS: dict[str, tuple[int, str]] = {
                            "caves, a man, not a monster, the least of their legends (kept "
                            "at 42; on floor 32 his stun-locking hammer killed careful kids "
                            "in the Monte Carlo)."),
-    "stheno_gorgon": (42, "Medusa's immortal sisters: when Perseus fled with her head they rose and "
+    "stheno_gorgon": (43, "Medusa's immortal sisters: when Perseus fled with her head they rose and "
                           "chased him. They come for her killer the floors after hers (they were "
                           "floor 67)."),
     "the_sphinx": (44, "The riddler on the road to Thebes, whom the city could not beat for "
