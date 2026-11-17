@@ -3,8 +3,8 @@ IDENTIFIED AND SUCCESSFULLY HARVESTED a specific monster ONCE, you can
 automatically harvest any others".
 
 A right answer that gains a part remembers the kind (Player.butchered_kinds,
-saved); a later harvest of the same kind, once the kind is identified (its
-full Bestiary page open: family_lore.has_page), asks no question and yields
+saved); a later harvest of the same kind, once the hero has studied the kind
+himself (family_lore.studied: "Only if studied"), asks no question and yields
 what a right answer yields. Unidentified, a different kind, or after a wrong
 answer, the question is asked.
 
@@ -130,10 +130,14 @@ def test_a_success_counts_from_the_moment_the_kind_is_identified():
     assert free is True and q.started == 0 and out['ings']
 
 
-def test_a_page_opened_by_the_book_of_thoth_counts_as_identified():
+def test_a_page_opened_by_the_book_of_thoth_is_not_studied():
+    """Brandon, 2026-11-17: "Only if studied". A page opened another way
+    (the Book of Thoth, Omnisight, the family's tier) is not a study."""
     p = _player()
     p.lore_known_monster_ids = {'giant_rat'}
     _harvest(p, _corpse(), Quiz())
+    assert not butchered.is_free(p, _corpse())
+    _identify(p, 'giant_rat')
     assert butchered.is_free(p, _corpse())
 
 

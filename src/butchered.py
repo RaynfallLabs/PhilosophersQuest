@@ -12,12 +12,12 @@ Known by Hand's pattern (known_by_hand.py), at the butcher's table:
     (Player.butchered_kinds, saved; an old save starts with none), whether
     the kind is identified yet or not. A wrong answer remembers nothing.
   * The free harvest needs both at the moment of the harvest: the kind
-    butchered before AND identified, its full Bestiary page open
-    (family_lore.has_page, the game's one rule for an identified kind:
-    studied by a corpse study or the Wand of Probing, its page opened by the
-    Book of Thoth, a Scroll of Omnisight or a gate boss's quest, or its
-    family known at tier 1 or more). A success recorded before the kind was
-    identified counts from the moment it is.
+    butchered before AND studied by the hero himself, by a corpse study or
+    the Wand of Probing (family_lore.studied; Brandon, 2026-11-17: "Only if
+    studied"). A page opened another way (the Book of Thoth, a Scroll of
+    Omnisight, a gate boss's quest, the family's tier) does not count. A
+    success recorded before the kind was studied counts from the moment it
+    is.
   * A free harvest is the right answer's harvest (food_system.harvest_corpse):
     the same part at the same tier, the family's extra portion, the corpse
     used up and the turn spent. No quiz is started, so no answer is counted
@@ -61,15 +61,16 @@ def butchered(player, obj) -> bool:
 
 
 def identified(player, obj) -> bool:
-    """Is this kind identified: its full Bestiary page open
-    (family_lore.has_page)?"""
+    """Has the hero studied this kind himself (a corpse study or the Wand
+    of Probing: family_lore.studied)? Only that counts (Brandon,
+    2026-11-17: "Only if studied"), not a page opened another way."""
     key = kind_key(obj)
     if player is None or not key:
         return False
     import family_lore
     try:
-        return bool(family_lore.has_page(player, key))
-    except (OSError, ValueError):
+        return key in family_lore.studied(player)
+    except (OSError, ValueError, TypeError):
         return False
 
 
