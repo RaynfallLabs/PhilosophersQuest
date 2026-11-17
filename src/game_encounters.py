@@ -375,10 +375,10 @@ class EncountersMixin:
         occupied = all_occupied_tiles(self.monsters)
         occupied |= self._occupants()
         rooms = self.dungeon.rooms[1:] if len(self.dungeon.rooms) > 1 else self.dungeon.rooms
-        # Never in Old Nickel's own room (emberpup_encounter: a wary
-        # creature's home): talking to the NPC would mean cornering him, and
-        # so the fight (bug bash WB-C07). A revisit's triggered NPC came
-        # after him.
+        # Never in Old Nickel's own room (emberpup_encounter: his hoard, a
+        # wary creature's home): talking to the NPC would mean cornering
+        # him, and so the fight (bug bash WB-C07). A revisit's triggered NPC
+        # came after him.
         import emberpup_encounter as _ep
         _homes = [r for r in rooms if any(_ep.in_wary_home(self.monsters, tx, ty)
                                           for tx, ty in r.inner_tiles())]

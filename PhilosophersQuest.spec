@@ -57,6 +57,7 @@ added_files = [
     ('data/abandoned_emberpup.json', 'data'),
     ('data/mooble.json',            'data'),   # the Mooble, his dance and the pet (mooble_encounter.py)
     ('data/black_knight.json',      'data'),
+    ('data/old_nickel.json',        'data'),   # Old Nickel's lines (old_nickel.py)
     ('data/stray_kids.json',        'data'),   # the Stray Kids easter egg (stray_kids.py)
     ('data/bococho.json',           'data'),   # the Bococho, the race, riding (bococho_encounter.py)
     ('data/songs.json',             'data'),   # songs a dish plays (songs.py)

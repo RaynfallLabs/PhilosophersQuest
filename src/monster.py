@@ -728,21 +728,25 @@ class Monster:
         self.quarrelsome: bool = bool(defn.get('quarrelsome', False))
         self.quarrels_when_struck_by_thrown: int = int(
             defn.get('quarrels_when_struck_by_thrown', 0) or 0)
-        # Wary (data 'wary': Old Nickel, who wears the Bloomleaf Cloak): he
-        # does not start the fight. He watches the hero, keeps his distance
-        # inside his own room (`_wary_home`, set where he is placed), warns
-        # once, and fights only when provoked: the hero comes beside him,
-        # corners him, or strikes first (_wary_turn). Keys: 'radius' (the
-        # warning), 'keep' (how close before he backs off), 'warn', and
-        # 'provoked' {'struck', 'cornered', 'close'}: the lines, said by the
-        # game (`_wary_line`).
-        self.wary = defn.get('wary') or None
+        # The stalking coward (ai_pattern 'stalker_coward', data 'stalker':
+        # Old Nickel, who wears the Bloomleaf Cloak; _stalker_turn). He
+        # strikes only a hero beside him he cannot back away from; he backs
+        # off from a hero who comes at him and follows one who walks away,
+        # a few tiles off; and he darts in on a hero who rests or lies
+        # helpless. `_wary_home` is his own room (his hoard: set where he is
+        # placed), `_hoard` the tile he keeps there; `_provoked` that he has
+        # been in a fight (he struck the hero, or was struck); `_stalk_event`
+        # what his turn did, for the game's lines (game: _old_nickel_turn).
+        self.stalker = defn.get('stalker') or None
         # 'it', 'he' or 'she' (data/monsters.json; see pronoun() above).
         self.pronoun: str = str(defn.get('pronoun') or kind_pronoun(self.kind))
         self._provoked: bool = False
-        self._wary_warned: bool = False
         self._wary_home = None
-        self._wary_line: str = ''
+        self._hoard = None
+        self._stalk_lost: int = 0
+        self._stalk_seen_at = None
+        self._stalk_event: str = ''
+        self._stalk_prey: str = ''
         # What the eye sees of him at first sight, whatever the hero knows of
         # the kind ("It wears a cloak of broad green leaves..."): a sight, not
         # lore (Game._maybe_tell, Observe).
@@ -798,8 +802,12 @@ class Monster:
         'splits': None, '_pending_splits': 0, '_incoming_forms': None,
         'weighs_heart': False, 'fearless': False,
         'quarrelsome': False, 'quarrels_when_struck_by_thrown': 0,
+        # ('wary', '_wary_warned', '_wary_line': the old wary engine's, on a
+        # Nickel saved before he became a stalker; the game makes him one.)
         'wary': None, '_provoked': False, '_wary_warned': False, '_wary_home': None,
         '_wary_line': '', 'sight_sign': '',
+        'stalker': None, '_hoard': None, '_stalk_lost': 0, '_stalk_seen_at': None,
+        '_stalk_event': '', '_stalk_prey': '',
         # Footprint default — every saved Monster from before the
         # multi-tile feature gets (1, 1) automatically. Live Monster
         # instances set this in __init__; pickled instances inherit it
@@ -2119,9 +2127,9 @@ class Monster:
             # Rooted, so it cannot wander off; charmed, it still holds its blow.
             return False
 
-        # --- Wary (data 'wary'): he will not start the fight ---------------
-        if self.wary and not self._provoked:
-            return self._wary_turn(player, dungeon, all_monsters, extra_occupied)
+        # --- The stalking coward (data 'stalker': Old Nickel) ---------------
+        if self.ai_pattern == 'stalker_coward':
+            return self._stalker_turn(player, dungeon, all_monsters, extra_occupied)
 
         # --- A thief with a haul runs (src/theft.py); cornered, it fights ---
         if self.__dict__.get('stolen_gold') or self.__dict__.get('stolen_items'):
@@ -2554,58 +2562,142 @@ class Monster:
                 self.x, self.y = nx, ny
                 return
 
-    # --- Wary: the one who will not start the fight ---------------------------
+    # --- The stalking coward (ai_pattern 'stalker_coward') ---------------------
 
-    def _wary_turn(self, player, dungeon, all_monsters, extra_occupied) -> bool:
-        """A wary creature's turn while unprovoked (see ``wary`` in __init__).
-        True only when he has just been provoked with the hero beside him:
-        the caller then strikes."""
-        w = self.wary or {}
-        if self.__dict__.get('_struck'):
-            return self._provoke('struck', player, dungeon)
-        if self._adjacent_to(player):
-            return self._provoke('close', player, dungeon)
-        dist = max(abs(self.x - player.x), abs(self.y - player.y))
+    def _stalker_turn(self, player, dungeon, all_monsters, extra_occupied) -> bool:
+        """The stalking coward's turn (data 'stalker': Old Nickel; Brandon,
+        2026-11-17). True when he strikes the hero this turn.
+
+        1. He strikes only a hero beside him, and only when he cannot back
+           away from him (a wall or a corner at his back).
+        3. A hero at rest (the wait key this turn: senses.TURN.rested) or held
+           by one of his 'prey_on' statuses (asleep, paralysed, confused,
+           stunned) he darts in on at 'dash_steps' steps a turn, and strikes
+           him the turn he reaches him. He knows of him by his eyes, or by
+           ear within 'hears_prey' tiles: a sleeper's breath carries.
+        4. A hero walking away he follows, 'keep' to keep + 'slack' tiles off.
+        5. A hero coming at him he backs away from, toward his hoard.
+        Out of sight 'lose_after' turns, he goes back to his hoard.
+
+        `_stalk_event` says what the turn did, for the game's lines: 'dash',
+        'prey' (the blow on a hero at rest), 'cornered', 'backs', 'follows',
+        'home' or ''."""
+        s = self.stalker or {}
+        keep = int(s.get('keep', 3))
+        slack = int(s.get('slack', 1))
+        lose_after = int(s.get('lose_after', 12))
         import senses as _senses
+        self._stalk_event = ''
+        if self.__dict__.get('_struck'):
+            self._provoked = True                # he has been in a fight
         # He watches with his eyes, as every creature does (senses.sees: an
         # invisible hero, or one in the Boots of Elvenkind past half his
-        # reach, is not seen; nor one a worn legend hides). A bare line of
-        # sight saw through all of it (bug bash WB-C05).
-        if _senses._hidden(self, player, dungeon) or not _senses.sees(self, player, dungeon):
-            return False                     # he stays by his iron and watches the dark
-        self._aware = True
-        if not self._wary_warned and dist <= int(w.get('radius', 5)):
-            self._wary_warned = True
-            self._wary_line = str(w.get('warn', '') or '')
-        if dist <= int(w.get('keep', 3)):
-            if not self._wary_step_away(player, dungeon, all_monsters, extra_occupied) and dist <= 2:
-                return self._provoke('cornered', player, dungeon)
+        # reach, is not seen; nor one a worn legend hides; bug bash WB-C05).
+        hidden = _senses._hidden(self, player, dungeon)
+        seen = not hidden and _senses.sees(self, player, dungeon)
+        here = (player.x, player.y)
+        dist = max(abs(self.x - player.x), abs(self.y - player.y))
+        if seen:
+            self._aware = True
+            self._tracking = True
+            self._stalk_lost = 0
+            self._stalk_seen_at = here
+        else:
+            self._stalk_lost = int(self.__dict__.get('_stalk_lost', 0) or 0) + 1
+
+        # 3. A hero at rest or helpless: he darts in and strikes.
+        prey = '' if hidden else self._prey_of(player, s)
+        if prey and (seen or dist <= int(s.get('hears_prey', 6))):
+            self._stalk_prey = prey
+            self._tracking = True
+            if not self._adjacent_to(player):
+                self._stalk_event = 'dash'
+                for _ in range(max(1, int(s.get('dash_steps', 2)))):
+                    if not _senses.step_toward(self, dungeon, here, all_monsters,
+                                               extra_occupied, player):
+                        break
+                    if self._adjacent_to(player):
+                        break
+            if self._adjacent_to(player):
+                self._provoked = True
+                self._stalk_event = 'prey'
+                return True
+            return False
+        self._stalk_prey = ''
+
+        # 1 and 5. Beside him: he backs off if he can; cornered, he strikes.
+        if self._adjacent_to(player):
+            if self._stalker_step_away(player, dungeon, all_monsters, extra_occupied):
+                self._stalk_event = 'backs'
+                return False
+            self._provoked = True
+            self._tracking = True
+            self._stalk_event = 'cornered'
+            return True
+
+        if not seen:
+            last = self.__dict__.get('_stalk_seen_at')
+            if last is None or self._stalk_lost > lose_after:
+                # Lost him for good (or never saw him): back to his hoard.
+                self._tracking = False
+                if self._stalker_go_home(player, dungeon, all_monsters, extra_occupied):
+                    self._stalk_event = 'home'
+                return False
+            # Lost him a moment ago: to where he saw him last, no nearer than
+            # he keeps.
+            if max(abs(self.x - last[0]), abs(self.y - last[1])) > keep:
+                if _senses.step_toward(self, dungeon, last, all_monsters, extra_occupied, player):
+                    self._stalk_event = 'follows'
+            return False
+
+        # 5. Too close: he backs away (cornered, he holds and waits).
+        if dist < keep:
+            if self._stalker_step_away(player, dungeon, all_monsters, extra_occupied):
+                self._stalk_event = 'backs'
+            return False
+        # 4. Too far: he follows.
+        if dist > keep + slack:
+            if _senses.step_toward(self, dungeon, here, all_monsters, extra_occupied, player):
+                self._stalk_event = 'follows'
         return False
 
-    def _provoke(self, why: str, player, dungeon) -> bool:
-        """Provoked ('struck', 'cornered' or 'close'): from now on he fights
-        like any foe of his kind. True when the hero is beside him."""
-        self._provoked = True
+    @staticmethod
+    def _prey_of(player, spec) -> str:
+        """The state that makes the hero his prey this turn, or ''. 'resting'
+        is the wait key this turn (senses.TURN.rested); the others are the
+        hero's statuses."""
         import senses as _senses
-        _senses.rouse(self, player.x, player.y)
-        self._tracking = True
-        lines = (self.wary or {}).get('provoked') or {}
-        line = lines.get(why, '') if isinstance(lines, dict) else str(lines)
-        if line:
-            self._wary_line = str(line)
-        return self._adjacent_to(player)
+        for state in (spec or {}).get('prey_on') or ():
+            if state == 'resting':
+                if getattr(_senses.TURN, 'rested', False):
+                    return 'resting'
+            elif player.has_effect(state):
+                return str(state)
+        return ''
 
-    def _wary_step_away(self, player, dungeon, all_monsters, extra_occupied) -> bool:
-        """One step that takes him farther from the hero, never out of his
-        own room (`_wary_home`, (x0, y0, x1, y1) inclusive). False when no
-        such step exists: he is cornered."""
+    def _hoard_tile(self):
+        """The tile he keeps by his hoard: where he was set down, else the
+        middle of his room, else None."""
+        h = self.__dict__.get('_hoard')
+        if h:
+            return tuple(h)
+        home = self.__dict__.get('_wary_home')
+        if home:
+            return ((home[0] + home[2]) // 2, (home[1] + home[3]) // 2)
+        return None
+
+    def _stalker_step_away(self, player, dungeon, all_monsters, extra_occupied) -> bool:
+        """One step that takes him farther from the hero, the one nearest his
+        hoard of those (a coward backs off toward his iron). A shut door is
+        opened on the way. False when there is none: he is cornered."""
         from geom import all_occupied_tiles
+        from dungeon import DOOR
         occupied = all_occupied_tiles(all_monsters, exclude=self)
         if extra_occupied:
             occupied |= extra_occupied
-        home = self.__dict__.get('_wary_home')
         now = max(abs(self.x - player.x), abs(self.y - player.y))
-        best, best_d = None, now
+        hoard = self._hoard_tile()
+        best, best_key = None, None
         for ddx in (-1, 0, 1):
             for ddy in (-1, 0, 1):
                 if not ddx and not ddy:
@@ -2613,17 +2705,34 @@ class Monster:
                 nx, ny = self.x + ddx, self.y + ddy
                 if (nx, ny) in occupied or (nx, ny) == (player.x, player.y):
                     continue
-                if home and not (home[0] <= nx <= home[2] and home[1] <= ny <= home[3]):
-                    continue
-                if not self._can_move_to(dungeon, nx, ny):
-                    continue
                 d = max(abs(nx - player.x), abs(ny - player.y))
-                if d > best_d:
-                    best, best_d = (nx, ny), d
+                if d <= now:
+                    continue
+                door = dungeon.in_bounds(nx, ny) and dungeon.tiles[ny][nx] == DOOR
+                if not door and not self._can_move_to(dungeon, nx, ny):
+                    continue
+                to_hoard = max(abs(nx - hoard[0]), abs(ny - hoard[1])) if hoard else 0
+                key = (to_hoard, -d)
+                if best_key is None or key < best_key:
+                    best, best_key = (nx, ny), key
         if best is None:
             return False
+        nx, ny = best
+        if dungeon.tiles[ny][nx] == DOOR:
+            dungeon.open_door(nx, ny)
+            if not self._can_move_to(dungeon, nx, ny):
+                dungeon.tiles[ny][nx] = DOOR
+                return False
         self.x, self.y = best
         return True
+
+    def _stalker_go_home(self, player, dungeon, all_monsters, extra_occupied) -> bool:
+        """A step back toward his hoard. True if he moved."""
+        hoard = self._hoard_tile()
+        if hoard is None or (self.x, self.y) == hoard:
+            return False
+        import senses as _senses
+        return _senses.step_toward(self, dungeon, hoard, all_monsters, extra_occupied, player)
 
     def _flee_from(self, player, dungeon, all_monsters, extra_occupied):
         """Move away from player (feared)."""

@@ -46,7 +46,7 @@ _DATA: dict | None = None
 _FAR_AIS = ('ranged', 'dragon', 'healer', 'summoner', 'sessile')
 _FLAGS = ('gaze_paralyze', 'splits', 'revive_once_on_death', 'drain_heals_self',
           'regeneration', 'summon_kind', 'pull_chance', 'sp_drain', 'can_charge',
-          'can_phase_blink')
+          'can_phase_blink', 'stalker')
 
 
 def data() -> dict:

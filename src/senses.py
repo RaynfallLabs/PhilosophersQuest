@@ -62,15 +62,29 @@ class Turn:
     moved = True          # the hero changed tile this turn
     guilty = False        # the hero carries a wrong on his conscience
     floor = 0
+    rested = False        # the hero's action this turn was a rest (the wait key)
 
 
 TURN = Turn()
 
 
-def begin_turn(*, moved: bool, guilty: bool, floor: int) -> None:
+def begin_turn(*, moved: bool, guilty: bool, floor: int, rested: bool = False) -> None:
     TURN.moved = bool(moved)
     TURN.guilty = bool(guilty)
     TURN.floor = int(floor or 0)
+    TURN.rested = bool(rested)
+
+
+def note_rest(player, turn: int) -> None:
+    """The hero rests (the wait key: a wait, a meditation) on game turn
+    ``turn``, the one about to pass. A stalker who preys on rest reads it
+    (Monster._stalker_turn: Old Nickel darts in on a resting hero)."""
+    player.__dict__['_rest_turn'] = int(turn)
+
+
+def rested_on(player, turn: int) -> bool:
+    """Was the hero's action on game turn ``turn`` a rest?"""
+    return player.__dict__.get('_rest_turn') == int(turn)
 
 
 # ---------------------------------------------------------------------------
@@ -716,7 +730,7 @@ def _pick_roam_spot(m, dungeon):
 # ---------------------------------------------------------------------------
 
 _KEEP_OWN_WAYS = ('sessile', 'ambush', 'mimic', 'hit_and_run', 'dancer', 'dragon',
-                  'fenrir_rage', 'abaddon', 'seek_locust', 'grid_bug')
+                  'fenrir_rage', 'abaddon', 'seek_locust', 'grid_bug', 'stalker_coward')
 
 
 def _pick_job(family: str, rng) -> str:
@@ -810,6 +824,8 @@ def status_line(m) -> str:
         return _fill(m, lines['asleep'])
     if m.__dict__.get('_scavenge') and not m.__dict__.get('_tracking'):
         return _fill(m, lines.get('feeding', lines['unaware']))
+    if getattr(m, 'ai_pattern', '') == 'stalker_coward' and m.__dict__.get('_tracking'):
+        return _fill(m, lines.get('stalking', lines['hunting']))
     if m.__dict__.get('_tracking'):
         return _fill(m, lines['hunting'])
     if m.__dict__.get('_goal') is not None:

@@ -38759,7 +38759,7 @@
     ],
     "hp": "33d8",
     "speed": 10,
-    "ai_pattern": "aggressive",
+    "ai_pattern": "stalker_coward",
     "thac0": 16,
     "peak_floor": 3,
     "spread": 4,
@@ -38773,13 +38773,21 @@
         "effect": "bleeding",
         "effect_chance": 0.3,
         "effect_duration": 4,
-        "delivery": "blow"
+        "delivery": "blow",
+        "bonus_vs": {
+          "sleeping": 1.5,
+          "paralyzed": 1.5
+        }
       },
       {
         "name": "Vicious Kick",
         "damage": "1d2",
         "type": "blunt",
-        "delivery": "blow"
+        "delivery": "blow",
+        "bonus_vs": {
+          "sleeping": 1.5,
+          "paralyzed": 1.5
+        }
       }
     ],
     "resistances": [],
@@ -38804,20 +38812,25 @@
     },
     "frequency": 0,
     "quest_only": true,
-    "lore": "German miners had two names for the spite of the deep shafts. Ore that poisoned the smelter and gave no silver was the kobold's work, and its metal is still called cobalt. Ore that looked like copper and gave none was Kupfernickel, Old Nick's copper, and its metal is still called nickel. Old Nickel is a kobold of the upper shafts and a miser of iron: picks, nails, spearheads, a dead knight's mail, all stolen and all counted every night. He cannot bear to see them rust, so he tore the leaves off a young Bloomsaur's back while it cried, and wears them as a cloak against the drip. He kicks rats for fun. He will not fight anything that can fight back, unless it comes too close to him or his iron.",
-    "sight_sign": "{The} wears a cloak of broad green leaves, beaded with water and torn ragged at the edges, and clutches a spear that was never his. He grins at you with small, greedy eyes and keeps his distance.",
-    "wary": {
-      "radius": 5,
+    "lore": "German miners had two names for the spite of the deep shafts. Ore that poisoned the smelter and gave no silver was the kobold's work, and its metal is still called cobalt. Ore that looked like copper and gave none was Kupfernickel, Old Nick's copper, and its metal is still called nickel. Old Nickel is a kobold of the upper shafts, and he has killed more sleeping miners than the damp has. He will not fight anything that can fight back. He follows, and watches, and tells you to rest. When a miner lay down near his hoard, he crept up in the dark with a pick, and every nail, buckle and spearhead in his pile was stolen off someone who never woke. He counts the dead the way he counts his iron, every night. He tore the leaves off a young Bloomsaur's back while it cried, to keep the drip off his iron, and he kicks rats for fun.",
+    "sight_sign": "{The} wears a cloak of broad green leaves, beaded with water and torn ragged at the edges, and clutches a spear that was never his. He watches you with small, greedy eyes, always just out of reach.",
+    "stalker": {
       "keep": 3,
-      "warn": "{The} bares his teeth and pulls his leaf cloak tight. \"Mine,\" he hisses. \"All of it. Go away, big one.\"",
-      "provoked": {
-        "struck": "{The} shrieks \"Thief! THIEF!\" and comes at you with his stolen spear.",
-        "cornered": "Cornered, {the} hisses and jabs at you with his stolen spear.",
-        "close": "\"Too close!\" {The} lashes out with his stolen spear."
-      }
+      "slack": 1,
+      "dash_steps": 2,
+      "prey_on": [
+        "resting",
+        "sleeping",
+        "paralyzed",
+        "confused",
+        "stunned"
+      ],
+      "hears_prey": 6,
+      "lose_after": 12,
+      "_doc": "ai_pattern stalker_coward (Monster._stalker_turn; Brandon 2026-11-17). He strikes only a hero beside him, and then only when he cannot back off. A hero who comes at him, he backs away from, toward his hoard, keeping 'keep' to keep + 'slack' tiles off; one who walks away, he follows at that distance. A hero in a 'prey_on' state (resting: the wait key this turn, senses.TURN.rested; or under that status) that he sees, has seen in the last 'lose_after' turns, or is within 'hears_prey' tiles of, he darts in on at 'dash_steps' steps a turn and strikes. Out of sight 'lose_after' turns, he goes back to his hoard. His lines: data/old_nickel.json."
     },
-    "kill_chronicle": "Killed Old Nickel, the kobold who hoarded stolen iron. He screamed thief at me to the end. His cloak of leaves was torn off a young Bloomsaur's back, so I took it back off his. I am not sorry.",
-    "_design_note": "Winning-build plan 2026-11-13 section 3.8 (Brandon: greedy and mean, so no one feels bad killing him; secondary to the Emberpup's story). Placed every run on one floor from 1 to the Emberpup's (src/emberpup_encounter.py, BloomleafMixin), never in the pup's room; never in a random pool (peak_weight 0, quest_only, no spawn_chance). He does not start the fight (Monster.wary, monster.py _wary_turn): he watches, keeps his distance inside his own room, warns once, and fights when the hero comes beside him, corners him, or strikes first. He drops the Bloomleaf Cloak, identified, and only that (item_chance 0). He has no cut of his own: a harvest borrows the nearest humanoid's of his depth (food_system._nearest_prime).",
+    "kill_chronicle": "Killed Old Nickel, the kobold who hoarded iron. Every nail and buckle in his pile came off a miner he crept up on in the dark. He wore leaves torn off a crying Bloomsaur. I took them back.",
+    "_design_note": "Winning-build plan 2026-11-13 section 3.8 (Brandon: greedy and mean, so no one feels bad killing him; secondary to the Emberpup's story), made a murderer of sleepers on 2026-11-17 (Brandon: 'he will murder people in their sleep for their things'). Placed every run on one floor from 1 to the Emberpup's (src/emberpup_encounter.py, BloomleafMixin), never in the pup's room; never in a random pool (peak_weight 0, quest_only, no spawn_chance). He does not start a fair fight (ai_pattern stalker_coward, see 'stalker'): he stalks the hero at three tiles, backs off from him, talks (data/old_nickel.json), and darts in at double speed on a hero who rests, sleeps or is paralysed, confused or stunned; his blows land half as hard again on a sleeper or a paralysed hero (bonus_vs). He drops the Bloomleaf Cloak, identified, and only that (item_chance 0). He has no cut of his own: a harvest borrows the nearest humanoid's of his depth (food_system._nearest_prime).",
     "thac0_lore": 16,
     "shrugs_off": [],
     "status_immune": [],

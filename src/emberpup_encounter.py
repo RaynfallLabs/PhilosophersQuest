@@ -597,7 +597,8 @@ class EmberpupMixin:
 # leaves torn off a young Bloomsaur's back, which nothing rusts under while it
 # is worn (special_properties.rustproof_wearer, read by Player.is_rustproof).
 # It is not lying about. Old Nickel wears it: a greedy, spiteful kobold of the
-# upper shafts who hoards stolen iron (data/monsters.json ``old_nickel``).
+# upper shafts who hoards stolen iron and murders sleepers for it
+# (data/monsters.json ``old_nickel``; Brandon 2026-11-17).
 #
 #   * His floor is drawn once a run, with the run's own seeded generator (the
 #     Emberpup's), from floor 1 to the Emberpup's floor, away from a planned
@@ -605,10 +606,18 @@ class EmberpupMixin:
 #     'cloak_floor', so it is saved with the pup's).
 #   * He is set down when that floor is first reached, in a room of his own:
 #     never the pup's room, never the room the hero stands in. That room is
-#     his home (Monster._wary_home): he does not leave it.
-#   * He does not start the fight (Monster.wary, monster.py): he watches, warns
-#     once, keeps his distance, and fights when the hero comes beside him,
-#     corners him or strikes first. Then he is a real fight for his floor.
+#     his hoard (Monster._wary_home, the tile Monster._hoard): he goes back
+#     to it when he has lost the hero, and is found there again when the hero
+#     comes back to the floor (``_old_nickel_home_again``).
+#   * He is a stalking coward (ai_pattern stalker_coward, Monster._stalker_turn):
+#     he follows the hero a few tiles off, backs away from him toward his
+#     hoard, strikes only when he is cornered with the hero beside him, and
+#     darts in at double speed on a hero who rests, sleeps or is paralysed,
+#     confused or stunned. Cornered, he is a real fight for his floor.
+#   * He talks (old_nickel.py, data/old_nickel.json): the first sight of the
+#     hero, a line as the hero comes at him or round him, then the lines that
+#     egg him on to rest; as he darts in, as he strikes, cornered, struck,
+#     hurt, and dying (``_old_nickel_turn``, ``_old_nickel_blow``).
 #   * He drops the cloak, identified (treasure.unique_drop_id, and
 #     special_properties.arrives_known in Game._spawn_unique_item); if a kill
 #     path gave nothing (a banishment takes his goods with him), the cloak is
@@ -715,7 +724,11 @@ class BloomleafMixin:
 
     def _maybe_spawn_cloak_wearer(self, level: int):
         """Set Old Nickel down on his floor, once a run, in a room that is
-        neither the pup's nor the hero's."""
+        neither the pup's nor the hero's. Come back to his floor, the hero
+        finds him back by his hoard."""
+        for _m in self.monsters or ():
+            if is_wearer(_m) and getattr(_m, 'alive', False):
+                self._old_nickel_home_again(_m)
         st = self._emberpup_state()
         if self._cloak_floor() != level or st.get('cloak_spawned'):
             return
@@ -767,6 +780,7 @@ class BloomleafMixin:
             return
         m = Monster(wearer_defn(), *spot)
         m._wary_home = home
+        m._hoard = spot
         self.monsters.append(m)
         st['cloak_spawned'] = True
 
@@ -775,6 +789,14 @@ class BloomleafMixin:
         kill path set it down (a banished foe takes his goods with him)."""
         if not is_wearer(monster):
             return
+        # His last words, where the hero can see him fall (a banished
+        # Nickel is simply gone).
+        if (not monster.__dict__.get('_banished')
+                and (monster.x, monster.y) in (getattr(self, 'visible', None) or ())):
+            import old_nickel
+            line = old_nickel.pick_once(monster, 'death', self._old_nickel_rng())
+            if line:
+                self.add_message(f'{monster.name}: "{line}"', 'combat')
         import deeds
         deeds.note(self, 'slew.old_nickel', source='engine:bloomleaf', unique=True)
         st = self._emberpup_state()
@@ -801,6 +823,149 @@ class BloomleafMixin:
         if any(is_emberpup(m) and sheltered(m) for m in self.monsters):
             return True
         return self._emberpup_state().get('outcome') == 'adopted'
+
+    # ---- Old Nickel's ways and words (old_nickel.py) -------------------------
+
+    def _old_nickel_rng(self) -> random.Random:
+        """His own stream: his lines never shift the game's dice."""
+        r = self.__dict__.get('_old_nickel_rng_')
+        if r is None:
+            r = self._old_nickel_rng_ = random.Random()
+        return r
+
+    def _old_nickel_refresh(self):
+        """A Nickel saved before he was a stalker (the old wary kobold who
+        kept to his room) becomes one: his AI, his blows and his words from
+        data/monsters.json."""
+        for m in self.monsters or ():
+            if (is_wearer(m) and getattr(m, 'alive', False)
+                    and getattr(m, 'ai_pattern', '') != 'stalker_coward'
+                    and not getattr(m, 'is_allied', False)):
+                d = wearer_defn()
+                m.ai_pattern = 'stalker_coward'
+                m.stalker = d.get('stalker')
+                m.attacks = [dict(a) for a in d.get('attacks') or m.attacks]
+                for key in ('lore', 'sight_sign', 'kill_chronicle'):
+                    setattr(m, key, d.get(key, getattr(m, key, '')))
+                for old in ('wary', '_wary_warned', '_wary_line'):
+                    m.__dict__.pop(old, None)
+                if m.__dict__.get('_hoard') is None:
+                    m._hoard = m._hoard_tile() or (m.x, m.y)
+
+    def _old_nickel_home_again(self, m):
+        """The hero has come back to his floor: Nickel went back to his
+        hoard while he was away, and has forgotten where he last saw him."""
+        hoard = m._hoard_tile()
+        m._stalk_seen_at = None
+        m._stalk_lost = 10 ** 6
+        m._tracking = False
+        m._stalk_event = ''
+        m._stalk_prey = ''
+        import old_nickel
+        old_nickel.voice(m).pop('hero_at', None)
+        if hoard is None or (m.x, m.y) == hoard:
+            return
+        from geom import all_occupied_tiles
+        taken = set(all_occupied_tiles(self.monsters, exclude=m)) | self._occupants()
+        spots = [hoard]
+        home = m.__dict__.get('_wary_home')
+        if home:
+            spots += sorted(((x, y) for x in range(home[0], home[2] + 1)
+                             for y in range(home[1], home[3] + 1)),
+                            key=lambda t: max(abs(t[0] - hoard[0]), abs(t[1] - hoard[1])))
+        for t in spots:
+            if (t not in taken and self.dungeon.is_walkable(*t)
+                    and max(abs(t[0] - self.player.x), abs(t[1] - self.player.y)) > 1):
+                m.x, m.y = t
+                m._path = None
+                return
+
+    def _old_nickel_say(self, m, text: str, kind: str = 'warning'):
+        """One of his lines: in the log after his name, and floating over him
+        (the speech bubble the Black Knight and the Stray Kids speak in)."""
+        if not text:
+            return
+        from monster import the_name
+        import old_nickel
+        self.add_message(f'{the_name(m)}: "{text}"', kind)
+        try:
+            import pygame
+            now = pygame.time.get_ticks()
+        except Exception:
+            now = 0
+        from black_knight import SPEECH_MS
+        self._bk_speech = {'text': text, 'knight': m, 'until': now + SPEECH_MS,
+                           'turn': getattr(self, 'turn_count', 0)}
+        old_nickel.mark(m, getattr(self, 'turn_count', 0))
+
+    def _old_nickel_turn(self, m, pos_before, did_attack: bool = False):
+        """After his turn: at most one line, for what the hero did and what
+        his own turn did (Monster._stalk_event). Rule 2: the hero coming at
+        him or round him in his sight brings a line, at most one in
+        ``line_gap`` turns: the pool without repeats, then the lines that
+        egg him on to rest."""
+        import old_nickel
+        if not getattr(m, 'alive', False):
+            return
+        v = old_nickel.voice(m)
+        rng = self._old_nickel_rng()
+        p = self.player
+        hero = (p.x, p.y)
+        prev_hero = v.get('hero_at')
+        v['hero_at'] = hero
+        ev = str(m.__dict__.get('_stalk_event', '') or '')
+        last_ev, v['last_event'] = v.get('last_event', ''), ev
+        if ev not in ('dash', 'prey'):
+            v['dash_told'] = False
+        seen = self._sees_monster(m)
+        if not seen:
+            # Unseen, he is never named: only the patter of his feet as he
+            # darts in, once a dash.
+            if ev == 'dash' and not v.get('dash_told'):
+                v['dash_told'] = True
+                self.add_message(old_nickel.dash_line(m._stalk_prey, False, rng), 'danger')
+            return
+        turn = getattr(self, 'turn_count', 0)
+        if not v.get('sight'):
+            v['sight'] = True
+            self._old_nickel_say(m, old_nickel.pick_once(m, 'sight', rng))
+            self._chron('person', old_nickel.seen_chronicle(), person='old_nickel',
+                        once='old_nickel:seen')
+            return
+        if ev == 'dash':
+            if not v.get('dash_told'):
+                v['dash_told'] = True
+                self._old_nickel_say(m, old_nickel.dash_line(m._stalk_prey, True, rng, m), 'danger')
+            return
+        if ev == 'prey':
+            return                     # his blow's own line follows (_old_nickel_blow)
+        if ev == 'cornered':
+            if last_ev != 'cornered':
+                self._old_nickel_say(m, old_nickel.pick_once(m, 'cornered', rng), 'danger')
+            return
+        if m.__dict__.get('_struck') and not v.get('struck'):
+            v['struck'] = True
+            self._old_nickel_say(m, old_nickel.pick_once(m, 'struck', rng), 'danger')
+            return
+        line = old_nickel.hurt_line(m, rng)
+        if line:
+            self._old_nickel_say(m, line)
+            return
+        if (old_nickel.came_on(prev_hero, hero, pos_before or (m.x, m.y))
+                and not m._adjacent_to(p) and old_nickel.taunt_due(m, turn)):
+            self._old_nickel_say(m, old_nickel.taunt(m, rng, old_nickel.carries_iron(p)))
+
+    def _old_nickel_blow(self, m, dmg: int):
+        """After one of his blows: on a hero at rest or helpless always a
+        line, in a fight now and then."""
+        import old_nickel
+        if not dmg and getattr(m, '_last_attack_type', None) is None:
+            return                     # a miss
+        prey = m._stalk_prey if m.__dict__.get('_stalk_event') == 'prey' else ''
+        line = old_nickel.strike_line(m, getattr(self, 'turn_count', 0),
+                                      self._old_nickel_rng(), prey)
+        if line and self._sees_monster(m):
+            self._old_nickel_say(m, line, 'danger')
 
     # ---- QA (Titivillus, Shift+L) -----------------------------------------
 
@@ -832,6 +997,7 @@ class BloomleafMixin:
             return
         m = Monster(wearer_defn(), *spot)
         m._wary_home = None
+        m._hoard = spot
         room = _room_of(self.dungeon.rooms, *spot)
         if room is not None:
             m._wary_home = home_of(room)

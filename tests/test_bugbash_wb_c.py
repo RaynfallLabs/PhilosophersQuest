@@ -273,16 +273,17 @@ def test_wb_c05_old_nickel_does_not_see_an_invisible_hero():
     """Monster._wary_turn tested a bare line of sight, so Old Nickel saw an
     invisible hero (and one in the Boots of Elvenkind at twice their reach):
     he warned him and backed away. Every other creature notices through
-    senses.sees (Dungeon Alive ruling: no omniscient monsters)."""
+    senses.sees (Dungeon Alive ruling: no omniscient monsters). The stalker
+    he became (Monster._stalker_turn, 2026-11-17) watches the same way."""
     g, nick = _nickel()
     at = (nick.x, nick.y)
     g.player.add_effect('invisible', 50)
     nick.take_turn(g.player, g.dungeon, g.monsters)
-    assert not nick._wary_warned and not nick._provoked and (nick.x, nick.y) == at
-    # Seen, he warns and keeps his distance as before.
+    assert not nick._aware and not nick._provoked and (nick.x, nick.y) == at
+    # Seen, he knows him and keeps his distance.
     g.player.status_effects.pop('invisible', None)
     nick.take_turn(g.player, g.dungeon, g.monsters)
-    assert nick._wary_warned and not nick._provoked
+    assert nick._aware and nick._tracking and not nick._provoked
 
 
 # ===========================================================================
@@ -393,16 +394,22 @@ def test_wb_c08_a_warning_given_in_the_dark_is_given_again():
     """He warns once ("Mine. All of it. Go away, big one."), the line that
     tells the hero he is not hostile. He sees farther than the hero does in a
     dark room, so the warning was often given while the hero could not see
-    him: the line was dropped and the warning spent for good."""
+    him: the line was dropped and the warning spent for good. His first-sight
+    line (data/old_nickel.json 'sight', 2026-11-17) waits the same way."""
+    import old_nickel
     g, nick = _nickel()
+
+    def sight(log):
+        return [t for t in log if t.startswith('Old Nickel: "')
+                and t[len('Old Nickel: "'):-1] in old_nickel.lines('sight')]
     g._sees_monster = lambda m: False             # a dark room: he is not seen
     for _ in range(3):
         g._advance_turn()
-    assert not any('pulls his leaf cloak tight' in t for t in _texts(g, 40))
+    assert not sight(_texts(g, 40))
     g._sees_monster = lambda m: True              # now he is
     for _ in range(4):
         g._advance_turn()
-    assert sum('pulls his leaf cloak tight' in t for t in _texts(g, 40)) == 1
+    assert len(sight(_texts(g, 40))) == 1
     assert not nick._provoked
 
 

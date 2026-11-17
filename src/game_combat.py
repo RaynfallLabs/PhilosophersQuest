@@ -2742,8 +2742,11 @@ class CombatMixin:
             r = _senses.step_radius(self.player)
             if r:
                 _senses.emit(self.dungeon, pos[0], pos[1], 'step', r)
+        # A rest (the wait key) this turn: a stalker darts in on it
+        # (Monster._stalker_turn, Old Nickel).
         _senses.begin_turn(moved=moved, guilty=self._senses_guilty(),
-                           floor=self.dungeon_level)
+                           floor=self.dungeon_level,
+                           rested=_senses.rested_on(self.player, self.turn_count))
         woken = _senses.resolve_noises(self.dungeon, self.monsters, self.player)
         seen = [m for m in woken if self._sees_monster(m)]
         if len(seen) == 1:
@@ -3313,6 +3316,8 @@ class CombatMixin:
         _floor_at_start = self.dungeon_level
         # What the monsters can hear this turn (src/senses.py).
         self._senses_begin_turn()
+        # An Old Nickel saved before he was a stalker becomes one.
+        self._old_nickel_refresh()
         # Asterion's cracks fade (slice 6).
         self._tick_wall_cracks()
         # The fire vents breathe (game_hazards.py).
@@ -3427,17 +3432,10 @@ class CombatMixin:
                 if (m.kind == 'fafnir_dragon' and not m._adjacent_to(self.player)):
                     self._scorch_line(m.x, m.y, self.player.x, self.player.y)
             self._say_sense_lines(m)
-            # A wary creature's warning, or the line as he turns to fight
-            # (Monster.wary: Old Nickel).
-            _wary_line = m.__dict__.pop('_wary_line', '')
-            if _wary_line and self._sees_monster(m):
-                import senses as _senses_w
-                self.add_message(_senses_w._fill(m, _wary_line), 'danger' if m._provoked else 'warning')
-            elif _wary_line and not m._provoked:
-                # Unseen (he sees farther than the hero in a dark room), the
-                # warning is not spent: he gives it when he can be seen (bug
-                # bash WB-C08).
-                m._wary_warned = False
+            # Old Nickel's lines for what the hero did and what his own turn
+            # did (old_nickel.py, data/old_nickel.json).
+            if getattr(m, 'ai_pattern', '') == 'stalker_coward':
+                self._old_nickel_turn(m, _pos_before, did_attack)
             # Asterion walking through a wall leaves it cracked and dusty for
             # a few turns: where he went can be read (slice 6).
             if (getattr(m, 'can_phase_walls', False) and m.alive
@@ -3564,6 +3562,8 @@ class CombatMixin:
                     msg += (" It came from the "
                             f"{self._compass_word(m.x - self.player.x, m.y - self.player.y)}.")
                 self.add_message(msg, 'danger')
+                if getattr(m, 'ai_pattern', '') == 'stalker_coward':
+                    self._old_nickel_blow(m, dmg)        # his line after his blow
                 if self.player.hp <= 0:
                     self._green_girdle_spares(m)
                 # A thief's blow landed: it takes the gold or the item now
@@ -4435,8 +4435,10 @@ class CombatMixin:
                     or getattr(m, '_npc_encounter_tag', None)
                     or getattr(m, '_flavor_encounter_tag', None)
                     or getattr(m, '_is_unicorn', False)
-                    # a wary one (Old Nickel) strikes no one until provoked
-                    or (getattr(m, 'wary', None) and not getattr(m, '_provoked', False))
+                    # the stalking coward (Old Nickel) strikes no pet until
+                    # he has been in a fight
+                    or (getattr(m, 'ai_pattern', '') == 'stalker_coward'
+                        and not getattr(m, '_provoked', False))
                     or any(m.has_effect(e) for e in ('sleeping', 'paralyzed', 'stunned', 'frozen',
                                                      'feared', 'charmed'))):
                 continue

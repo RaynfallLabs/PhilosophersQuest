@@ -5,7 +5,7 @@
   "order": ["gaze_paralyze", "paralyzed", "confused", "sleeping", "frozen", "teleportitis", "feared", "blinded",
             "silenced", "stunned", "immobilized", "splits", "revive_once_on_death", "drain_heals_self",
             "weakened", "rust", "diseased", "poisoned", "regeneration", "summon_kind", "pull_chance", "sp_drain",
-            "can_charge", "can_phase_blink", "bleeding", "burning", "slowed", "hallucinating"],
+            "can_charge", "can_phase_blink", "stalker", "bleeding", "burning", "slowed", "hallucinating"],
   "kin_lead": "{He} is one of {kin}.",
   "far_counter": "{He} can reach you from across a room, but only where {he} can see you: keep stone between you until you can close in.",
   "status_words": {"feared": "frightened", "charmed": "charmed", "confused": "confused",
@@ -133,6 +133,11 @@
       "sign": "{The} is never quite where you last looked.",
       "does": "{He} steps from place to place without crossing between.",
       "counter": "Distance will not save you: stand and fight."
+    },
+    "stalker": {
+      "sign": "{The} keeps just out of reach and never takes {his} eyes off you.",
+      "does": "{He} waits for you to rest. Rest, sleep or lose your wits near {him}, and {he} is on you in a moment.",
+      "counter": "Never rest where {he} can find you. Back {him} into a corner, or rest on another floor."
     },
     "bleeding": {
       "sign": "{The} looks made for tearing.",

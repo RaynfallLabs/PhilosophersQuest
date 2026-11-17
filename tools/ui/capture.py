@@ -3749,20 +3749,22 @@ def _(g):
 
 @scene('play_old_nickel', 'Play',
        'Old Nickel, the kobold in the Bloomleaf Cloak, a few steps off in the same room: '
-       'his first-sight sign and his one warning (close zoom).', expect='player')
+       'his first-sight sign and his first line, floating over him (close zoom).', expect='player')
 def _(g):
     import emberpup_encounter as ep
+    import old_nickel
     from monster import Monster
     g.monsters[:] = []
     spot = (_free_tiles_near(g, 3, 4) or _free_tiles_near(g, 2, 2))[0]
     m = Monster(ep.wearer_defn(), *spot)
     room = ep._room_of(g.dungeon.rooms, *spot)
     m._wary_home = ep.home_of(room) if room is not None else None
+    m._hoard = spot
     g.monsters.append(m)
     g.zoom_mode = 'close'
     g._refresh_fov()
     for _ in range(3):                      # (a hasted hero's turn is half a round)
-        if m._wary_warned:
+        if old_nickel.voice(m).get('sight'):
             break
         g._advance_turn()
 

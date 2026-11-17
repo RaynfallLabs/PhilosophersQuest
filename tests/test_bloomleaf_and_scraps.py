@@ -238,7 +238,10 @@ def test_old_nickel_is_a_greedy_quest_only_kobold_who_drops_the_cloak():
     lore = m['lore'].lower()
     for w in ('stolen', 'tore', 'kicks', 'cobalt', 'nickel'):
         assert w in lore, w
-    assert m['wary']['warn'] and set(m['wary']['provoked']) == {'struck', 'cornered', 'close'}
+    # A stalking coward since 2026-11-17 (tests/test_old_nickel.py), his
+    # lines in data/old_nickel.json.
+    assert m['ai_pattern'] == 'stalker_coward' and m['stalker']['keep'] == 3
+    assert 'wary' not in m
     assert _data('monster_sizes.json')['sizes']['old_nickel'] == 'small'
     assert os.path.exists(os.path.join(ROOT, 'assets', 'tiles', 'monsters', 'old_nickel.png'))
 
@@ -356,7 +359,13 @@ def _put_hero(g, nick, dist):
     return True
 
 
-def test_he_watches_warns_once_and_keeps_his_distance_without_attacking():
+def _sight_lines(log):
+    import old_nickel
+    return [t for t in log if t.startswith('Old Nickel: "')
+            and t[len('Old Nickel: "'):-1] in old_nickel.lines('sight')]
+
+
+def test_he_watches_speaks_once_and_keeps_his_distance_without_attacking():
     g, nick = _nickel_room()
     assert _put_hero(g, nick, 4)
     g._sees_monster = lambda m: True              # (a dark room hides him; the lines are the point)
@@ -367,33 +376,44 @@ def test_he_watches_warns_once_and_keeps_his_distance_without_attacking():
         assert home[0] <= nick.x <= home[2] and home[1] <= nick.y <= home[3]
     assert g.player.hp == hp and not nick._provoked
     log = _texts(g, 30)
-    assert sum('pulls his leaf cloak tight' in t for t in log) == 1
+    assert len(_sight_lines(log)) == 1
     assert any('cloak of broad green leaves' in t for t in log)         # the sign, at first sight
 
 
-def test_he_fights_when_the_hero_comes_beside_him():
+def test_beside_the_hero_he_backs_off_and_strikes_only_cornered():
+    """Brandon, 2026-11-17: he strikes only a hero beside him, and only once
+    he cannot back away (tests/test_old_nickel.py has every rule)."""
     import monster
     g, nick = _nickel_room()
     assert _put_hero(g, nick, 1)
-    assert nick.take_turn(g.player, g.dungeon, g.monsters) is True
-    assert nick._provoked and 'Too close' in nick._wary_line
-    assert nick.ai_pattern == 'aggressive' and monster.the_name(nick) == 'Old Nickel'
+    assert nick.take_turn(g.player, g.dungeon, g.monsters) is False
+    assert not nick._provoked and nick._stalk_event == 'backs'
+    assert nick.ai_pattern == 'stalker_coward' and monster.the_name(nick) == 'Old Nickel'
 
 
-def test_he_fights_when_struck_first_from_afar():
+def test_struck_from_afar_he_does_not_close_in():
     g, nick = _nickel_room()
     assert _put_hero(g, nick, 4)
+    at = (nick.x, nick.y)
     nick.take_damage(3)
-    assert nick.take_turn(g.player, g.dungeon, g.monsters) is False     # not beside him yet
-    assert nick._provoked and 'Thief' in nick._wary_line
+    assert nick.take_turn(g.player, g.dungeon, g.monsters) is False     # not beside him
+    assert nick._provoked and (nick.x, nick.y) == at
 
 
 def test_cornered_he_turns_on_the_hero():
+    from dungeon import FLOOR, WALL
     g, nick = _nickel_room()
-    assert _put_hero(g, nick, 2)
-    nick._wary_home = (nick.x, nick.y, nick.x, nick.y)                   # nowhere left to back off
-    nick.take_turn(g.player, g.dungeon, g.monsters)
-    assert nick._provoked and nick._wary_line.startswith('Cornered')
+    x0, y0, _x1, _y1 = nick._wary_home
+    nick.x, nick.y = x0, y0                                             # a corner of his room
+    for dx in (-1, 0, 1):                                               # (no door at his back)
+        for dy in (-1, 0, 1):
+            t = (x0 + dx, y0 + dy)
+            g.dungeon.tiles[t[1]][t[0]] = WALL if (dx < 0 or dy < 0) else FLOOR
+    g.dungeon.fixture_blocks = frozenset()
+    g.player.x, g.player.y = x0 + 1, y0 + 1
+    g._refresh_fov()
+    assert nick.take_turn(g.player, g.dungeon, g.monsters) is True
+    assert nick._provoked and nick._stalk_event == 'cornered'
 
 
 def test_he_swipes_at_no_pet_until_provoked():

@@ -101,7 +101,7 @@ A single key in `data/monsters.json`. The id is the JSON key; the id is also wri
 
 | field | type | notes |
 |---|---|---|
-| `ai_pattern` | str | One of 15 values — see §"AI dispatch" below. Default `aggressive`. |
+| `ai_pattern` | str | One of 16 values — see §"AI dispatch" below. Default `aggressive`. |
 | `perception_range` | int | default 8 | How far a monster SEES (Chebyshev), along a real line of sight (`senses.clear_view`). It no longer notices through walls. `passive_silent_walk` (Hand of Glory, Boots of Elvenkind) halves it against the wearer and silences footsteps. See "Senses" below. |
 | `alert_radius` | int | default 5 | Chebyshev radius for `alert_nearby` (same-kind allies wake up when I'm adjacent to the player). |
 | `alert_all_tag` | bool | default False | Warlord/horn-blower mode — alert any monster sharing at least one tag, not just same-kind. |
@@ -137,7 +137,7 @@ A single key in `data/monsters.json`. The id is the JSON key; the id is also wri
 | `pack_size` | [min, max] | default none | Fixes a lore pack's number, leader included (the three Furies, Keres three to five). Overrides the depth-scaled pack roll in `dungeon._spawn_one_in_room`. |
 | `proper_noun` | bool | default False | The name is a person's name, so `the_name` never adds "the". |
 | `sight_sign` | str | default "" | What the eye sees of it, said the first time the hero sees the kind whatever he knows of it (`Game._maybe_tell`) and by Observe: a sight, not lore. `{The}` / `{the}` name it. Old Nickel's leaf cloak. |
-| `wary` | dict | default none | It does not start the fight (`Monster._wary_turn`, winning-build plan 3.8): it watches (`senses.sees`, so an invisible hero goes unseen), keeps `keep` tiles off inside its own room (`_wary_home`), warns once inside `radius` (`warn`), and fights from the moment the hero comes beside it, corners it or strikes it first (`provoked`: `struck` / `cornered` / `close` lines). It swipes at no pet until provoked. Old Nickel, who wears the Bloomleaf Cloak (`src/emberpup_encounter.py` (BloomleafMixin)); his room never holds the pup, a stall or one of the Road's people (an anchor, a story NPC, the unicorn, an escort), and no encounter NPC is set down in it. |
+| `stalker` | dict | default none | The stalking coward's numbers (`ai_pattern: stalker_coward`, `Monster._stalker_turn`; Brandon 2026-11-17). He watches with his eyes (`senses.sees`, so an invisible hero goes unseen). He strikes only a hero beside him, and only when he cannot back away (a wall or a corner); a hero coming at him he backs away from, toward his hoard (`_hoard`, in his own room `_wary_home`); a hero walking away he follows `keep` to `keep` + `slack` tiles off. A hero in a `prey_on` state (`resting`: the wait key this turn, `senses.TURN.rested` from `senses.note_rest`; or `sleeping`, `paralyzed`, `confused`, `stunned`) that he sees or is within `hears_prey` tiles of, he darts in on at `dash_steps` steps a turn and strikes; when it ends he backs off again. Out of sight `lose_after` turns he goes home to his hoard, and he is back there when the hero returns to the floor. He swipes at no pet until he has been in a fight (`_provoked`). `_stalk_event` (dash / prey / cornered / backs / follows / home) is what his turn did, for his lines. Old Nickel, who wears the Bloomleaf Cloak (`src/emberpup_encounter.py` (BloomleafMixin)); his lines are `data/old_nickel.json` (`src/old_nickel.py`); his room never holds the pup, a stall or one of the Road's people (an anchor, a story NPC, the unicorn, an escort), and no encounter NPC is set down in it. (It replaced `wary`, the kobold who kept to his room: a Nickel saved with it becomes a stalker, `_old_nickel_refresh`.) |
 | `quarrelsome` | bool | default False | While confused it strikes a neighbour of its own kind instead of stumbling (the Sown Men). |
 | `quarrels_when_struck_by_thrown` | int | default 0 | Turns of confusion a thrown object inflicts on it (Cadmus's stone); pairs with `quarrelsome`. |
 | `splits` | dict | default none | `{"by": "weak_blow" \| [damage forms], "share", "into", "max"}`: struck the wrong way it divides or lets out another creature. See `splitting.py`. |
@@ -326,7 +326,8 @@ Brandon: "NONE automatically know where you are unless it's thematically and lor
 - G8: an alerted or aggravated `sessile` monster stays rooted.
 - G5: an archer that's adjacent steps back half the time to a tile 2 away that still has the shot (`_step_back`).
 - Dagger backstab now counts any target that isn't tracking the hero.
-- Observe (`;`) adds the state line (`status_lines`). How a creature hunts (`senses_line`) is shown once its kind is known.
+- Observe (`;`) adds the state line (`status_lines`; a stalker on the hero's trail: "He is following you, just out of reach."). How a creature hunts (`senses_line`) is shown once its kind is known.
+- What the hero did this turn reaches the monsters through `senses.TURN` (`begin_turn`, from `CombatMixin._senses_begin_turn`): `moved`, `guilty`, and `rested` (2026-11-17), true when his action was a rest, the wait key (`senses.note_rest` in `_player_input`, read back by `senses.rested_on`). The stalking coward darts in on it (`stalker`, above). A hero asleep or paralysed is read from his statuses. (Searching a body with H is another still turn not yet counted as a rest: the harvest flow was being reworked at the time.)
 
 **Scavengers (C3).** `data/senses.json` lists them under `scavengers`: ghouls, ghasts, the otyugh, charnel hounds and their kin, and any vermin or ooze. When one is idle (not hunting, not searching, awake) and smells a corpse within 8 tiles, `CombatMixin._scavenge_prep` gives it that place (`_scavenge`), and it walks there whatever its post. It eats for 3 turns, so a harvest is a race; it heals a quarter of its health and the corpse is gone. The hero sees "X is feeding on the corpse.", and Observe says "It is busy with a corpse."
 
@@ -418,7 +419,7 @@ Tests: `tests/test_floor_clock.py`, `tests/test_wanderers_hear_or_roam.py`.
 
 Tests: `tests/test_war_bands.py`.
 
-## AI dispatch (15 patterns)
+## AI dispatch (16 patterns)
 
 `take_turn` dispatches on `self.ai_pattern` after the common pre-flight (immobilised, slowed, enrage swap, pack-dependent re-evaluation, flee-when-hurt flag). Dispatch is `if/elif` on string match — the matching chain is in `monster.py` lines ~826-867. **Count by pattern** across 527 monsters (counted 2026-05; there are 574 now):
 
@@ -438,8 +439,9 @@ Tests: `tests/test_war_bands.py`.
 | `abaddon` | 1 | `_abaddon_turn` | Abaddon only. Aggressive movement + `_wants_locust_spawn` flag every `locust_interval` turns. Game loop reads the flag and spawns `locust_count` `abyssal_locust`s. |
 | `seek_locust` | 1 | `_seek_locust_turn` | `heavenly_angel` only. Walks toward the nearest `abyssal_locust`; adjacent → sets `_annihilate_target` for the game loop. Never targets the player. |
 | `grid_bug` | 1 | overrides `_move_candidates` to cardinals only | Can only step N/S/E/W, no diagonals. NetHack-grid-bug fossil. |
+| `stalker_coward` | 1 | `_stalker_turn` (data `stalker`) | Old Nickel. Never closes in to fight: follows at a few tiles, backs off when approached, strikes only cornered beside the hero; darts in at double speed on a resting, sleeping, paralysed, confused or stunned hero. |
 
-**Total:** 15 dispatch branches, all verified against the audit — "all 15 `ai_pattern` values map to real dispatch branches."
+**Total:** 16 dispatch branches (`stalker_coward` added 2026-11-17), all verified against the audit — "all 15 `ai_pattern` values map to real dispatch branches."
 
 ### Attack-time flow (abridged)
 

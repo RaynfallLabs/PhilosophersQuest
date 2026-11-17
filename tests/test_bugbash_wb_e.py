@@ -1065,10 +1065,11 @@ def test_journey_07_the_emberpup(make_game):
     p.inventory.append(_oak)
     h.shift('L')
     nickel = next(m for m in g.monsters if E.is_wearer(m))
-    h.wait(2)
+    h.wait(2)                       # a rest: he darts in on it (2026-11-17)
     said = ' '.join(h.said())
     assert 'Old Nickel wears a cloak of broad green leaves' in said
-    assert '"Mine," he hisses.' in said
+    import old_nickel
+    assert any(f'Old Nickel: "{t}"' in said for t in old_nickel.lines('sight'))
     for _ in range(80):
         if not nickel.alive:
             break

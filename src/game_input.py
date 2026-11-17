@@ -726,6 +726,11 @@ class InputMixin:
             self.player._chain_no_move_counter = (
                 getattr(self.player, '_chain_no_move_counter', 0) + 1)
             self._rest_gawain()     # Ring of Gawain T5: a rest is his morning
+            # A rest, for the monsters that prey on one (senses.note_rest: Old
+            # Nickel darts in on a resting hero). This turn is the one about
+            # to pass.
+            import senses as _senses_rest
+            _senses_rest.note_rest(self.player, self.turn_count + 1)
             # Waiting makes you hungry like walking does. It cost nothing,
             # so any wound could be slept off for free between fights.
             self._tick_sp()
