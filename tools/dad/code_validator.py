@@ -1616,7 +1616,7 @@ class App:
             a = v['achievement']
             self._text(ui.fit_text(a['name'], fn, text_w), fn, KT.TEXT_HEAD, x, y)
             y += fn.get_height() + S(2)
-            rr = f"{core.RARITY_NAMES.get(a['rarity'], '')}  ·  {core.FRAME_NAMES.get(a['rarity'], '')} Frame"
+            rr = f"{core.RARITY_NAMES.get(a['rarity'], '')}  ·  {core.FRAME_NAMES.get(a['rarity'], '')}"
             self._text(rr, ui.get_font('body', 16, bold=True),
                        ui.readable(self.rarity_colour(a['rarity']), FP.MIDNIGHT), x, y)
             y += S(24)
@@ -1678,7 +1678,7 @@ class App:
                           (cx - ft.size(line)[0] // 2, y), glow_color=col, glow_r=3)
         y += ft.get_height() + S(6)
         rf = ui.get_font('heading', 22)
-        rline = (f"{core.RARITY_NAMES.get(a['rarity'], '')}  ·  {core.FRAME_NAMES.get(a['rarity'], '')} Frame  ·  "
+        rline = (f"{core.RARITY_NAMES.get(a['rarity'], '')}  ·  {core.FRAME_NAMES.get(a['rarity'], '')}  ·  "
                  f"{v.get('category', '')}")
         self._text(rline, rf, ui.readable(col, KT.VOID), cx, y, centre=True)
         y += rf.get_height() + S(8)

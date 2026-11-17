@@ -413,7 +413,7 @@ def test_a_badge_page_mirrors_the_seeker_gallery():
         page = core.detail_lines(got[aid])
         assert (BY_ID[aid]['name'], 'name') in page and ('???', 'hint') in page
         assert BY_ID[aid]['unlocked_text'] not in [t for t, _k in page]
-    assert page[1] == ('Legendary  ·  Violet Frame', 'rarity') and page[2] == ('Secrets', 'category')
+    assert page[1] == ('Legendary  ·  Violet', 'rarity') and page[2] == ('Secrets', 'category')
 
 
 def test_the_earned_list_is_newest_first_from_every_machine():

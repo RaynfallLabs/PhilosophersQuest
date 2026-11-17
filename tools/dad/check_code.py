@@ -86,7 +86,7 @@ def check(seeker: str, code: str, *, kid: str | None = None, record_it: bool = T
         return f'NOT A REAL CODE for {seeker}.'
     a = v['achievement']
     what = (f'REAL CODE: {seeker}, "{a["name"]}" ({v["category"]}, '
-            f'{a["rarity"]}, {RARITY.get(a["rarity"], "")} frame).')
+            f'{a["rarity"]}, {RARITY.get(a["rarity"], "")}).')
     if v['status'] == 'already':
         if other:
             return what + f' Already redeemed for {v["row"].get("seeker") or kid} on {v["row"]["date"]}.'

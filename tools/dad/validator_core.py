@@ -618,7 +618,7 @@ def detail_lines(e: dict) -> list[tuple[str, str]]:
     it was claimed; then its unlocked text once claimed, or its hint until
     then (a deep secret's hint is "???", as in the game)."""
     out = [(e['name'], 'name'),
-           (f"{RARITY_NAMES.get(e['rarity'], '')}  ·  {FRAME_NAMES.get(e['rarity'], '')} Frame", 'rarity'),
+           (f"{RARITY_NAMES.get(e['rarity'], '')}  ·  {FRAME_NAMES.get(e['rarity'], '')}", 'rarity'),
            (e.get('category_name', ''), 'category')]
     if e['claimed']:
         out.append((f"Claimed on {nice_date(e['date'])}", 'claimed'))
