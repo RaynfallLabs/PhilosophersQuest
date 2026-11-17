@@ -239,9 +239,16 @@ def test_a_meal_that_teaches_nothing_says_why():
     msgs = food_system._apply_recipe_outcome(p, recipe)
     assert any('already learned from a meal on this floor' in m for m in msgs)
     p.reset_floor_cook_caps()
-    p.cooking_stat_gained['STR'] = p.cooking_stat_softcap('STR')
+    # At its tier's cap (2026-11-16: a dish's tier caps how far it teaches).
+    tier = kitchen.dish_tier(recipe)
+    p.cooking_stat_gained['STR'] = p.cooking_stat_softcap('STR', tier)
     msgs = food_system._apply_recipe_outcome(p, recipe)
-    assert any('learned all food can teach' in m for m in msgs)
+    assert any('all a dish this simple can teach. Deeper creatures teach more' in m for m in msgs), msgs
+    # At the most food can ever teach.
+    p.reset_floor_cook_caps()
+    p.cooking_stat_gained['STR'] = p.stat_cap_for_tier('STR', 5)
+    msgs = food_system._apply_recipe_outcome(p, recipe)
+    assert any('learned all food can teach' in m for m in msgs), msgs
 
 
 def test_the_sidebar_says_whether_the_floors_lesson_is_open():
@@ -250,15 +257,15 @@ def test_the_sidebar_says_whether_the_floors_lesson_is_open():
     p.deepest_floor_reached = 5
     p.reset_floor_cook_caps()
     assert cooking_lesson_line(p) == ("Lesson: open", 'open')
-    p.feed_cut_stat('DEX')
-    text, state = cooking_lesson_line(p)
-    assert (text, state) == ("Lesson: used  DEX 1/2", 'full')
-    # A narrow sidebar drops the banked meals rather than cut the line.
+    assert p.feed_cut_stat('DEX') == 1               # a whole point (2026-11-16)
+    assert cooking_lesson_line(p) == ("Lesson: used", 'full')
     assert cooking_lesson_line(p, fits=lambda t: len(t) <= 14) == ("Lesson: used", 'full')
 
 
-@pytest.mark.parametrize('floor,cap', [(1, 3), (8, 5), (20, 8), (100, 28)])
-def test_food_cap_for_one_stat(floor, cap):
+@pytest.mark.parametrize('floor,cap', [(1, 8), (8, 8), (20, 8), (21, 13), (60, 18), (100, 28)])
+def test_food_cap_for_one_stat_at_a_depth(floor, cap):
+    """With no dish (an altar, a rare food's own gift): the cap of a dish
+    of the deepest band reached (data/cooking_rules.json stat.cap_by_tier)."""
     p = Player()
     p.deepest_floor_reached = floor
     assert p.cooking_stat_softcap('STR') == cap

@@ -159,19 +159,20 @@ def test_a2_a_feasts_max_hp_for_good_is_what_the_feast_gives():
 def test_a3_a_stat_feasts_point_for_good_reads_the_stats_cap():
     feast = kitchen.recipe('feast_29')                   # First Seal Wrath Feast (STR)
     assert kitchen.dish_outcome(feast)['permanent'] == ('stat', 1)
-    # At the cap: nothing, and the menu says so.
+    # At the cap of the feast's tier: nothing, and the menu says so.
+    tier = kitchen.dish_tier(feast)
     p = _player(deepest=1)
-    p.cooking_stat_gained['STR'] = p.cooking_stat_softcap('STR')
+    p.cooking_stat_gained['STR'] = p.cooking_stat_softcap('STR', tier)
     lasting = kitchen.dish_lasting(p, feast)
-    assert lasting == ['No more STR for good at this depth'], lasting
+    assert lasting == ['No more STR for good from a dish this deep'], lasting
     before = p.STR
     kitchen.apply_dish(p, feast)
     assert p.STR == before
     # One point of room: the lesson (a full point) takes it, the feast's
     # lasting point has none left.
     p = _player(deepest=1)
-    p.cooking_stat_gained['STR'] = p.cooking_stat_softcap('STR') - 1
-    assert kitchen.dish_lasting(p, feast) == ['No more STR for good at this depth']
+    p.cooking_stat_gained['STR'] = p.cooking_stat_softcap('STR', tier) - 1
+    assert kitchen.dish_lasting(p, feast) == ['No more STR for good from a dish this deep']
     before = p.STR
     kitchen.apply_dish(p, feast)
     assert p.STR == before + 1

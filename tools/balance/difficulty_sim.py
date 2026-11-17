@@ -62,6 +62,36 @@ RE-SYNCED 2026-11-12 (from v3.3.4 on it reported 0% survival for every profile):
     Last Judgment's sword is the knob sword=1; the floor-100 altars burn
     Abaddon's ward only.
 
+RE-SYNCED 2026-11-16 (Brandon: "check my previous runs, how many turns did I
+spend on each floor? I bet it's more than you expected"; "The simulator
+needs to look at the base game and core systems, not every fringe"):
+  * pace: a floor takes a kid's real turns, floor_curve.kid_pace of its own
+    explore tour (about 700 on floor 1, 1,150 from floor 12; from Brandon's
+    saves), times the profile's `pace` and a floor-to-floor spread
+    (PACE_SIGMA). The hero used to leave every floor at about 310 turns,
+    inside its time to explore, so he never met a newcomer and was rarely
+    hungry. Hunger is the game's (floor_curve.HUNGER_EVERY, Sustained and a
+    Ring of Sustenance included), and timed statuses run out with the turns
+    walked as well as fought (Run._age_statuses: a dish's 240-turn power
+    lasted 240 turns of FIGHTING, which is floors).
+  * weight: the game's carry rules (Player.get_current_weight, the load
+    tiers in data/gear_rules.json, coin at treasure.COINS_PER_LB). A
+    careful kid keeps his load under the profile's line (Burdened; Heavy for
+    the Dexterity build, whose dodge it halves), leaves the food past two
+    bellies' worth and whatever else will not fit (Run._fit_pack), takes the
+    coin that fits, and changes coin past KEEP_COIN_LB into gems at a stall
+    (weight_model.py's careful policy). It carried about 100 lb of food and
+    55 lb of potions by floor 73, with no limit and no coin weight.
+  * the altar: rededication goes through the game's own rules
+    (rededication.points_to_move / move): never below the stat's start,
+    never past its food cap, booked in the ledger the kitchen reads. It
+    drained stats down to 10.
+  * area spells: a fireball, a meteor, an ice storm, the storm of vengeance
+    and a cone of cold hit every creature of the fight in sight (the ones
+    still waiting their turn at the doorway too), a lightning bolt those in
+    its line, chain lightning up to three more (AREA_SPELLS). The default
+    fights one monster at a time, so an area spell hit only that one.
+
 NOT MODELLED (MON-13): the real floors can hold the late-game monsters, but
 the sim fights each one as a plain stat block, so their mechanics are missing:
   * theft             thieves never cut the purse or run off with an item;
@@ -140,6 +170,8 @@ import domain_counters as domain_counters_mod    # noqa: E402
 import smithing as smithing_mod                  # noqa: E402
 import rededication as rededication_mod          # noqa: E402
 import coatings as coatings_mod                  # noqa: E402
+import rings as rings_mod                        # noqa: E402
+import treasure as treasure_mod                  # noqa: E402
 from items import Flask                          # noqa: E402
 from spells import LEARNABLE_SPELLS as SPELLS                        # noqa: E402
 from status_effects import DEBUFFS               # noqa: E402
@@ -390,7 +422,28 @@ MAX_FIGHT_TURNS = 400          # safety valve; a fight this long is a stalemate
 # A wandering spawn reaches the player this often. Measured in the game on 24
 # floor-1 maps, crossing and back (2026-11-14): 0.51-0.55 (it was assumed 0.6).
 WANDER_FINDS_PLAYER = 0.5
-SP_PER_MOVE = 0.5              # main._tick_sp: 1 SP per 2 moves
+# Hunger: floor_curve.HUNGER_EVERY turns of walking or waiting a point of SP
+# (main._tick_sp), read when time passes (Run._sp_need). At SP 0 each drain
+# tick takes this share of max HP (copy of main.STARVE_SHARE: main opens a
+# window, so it is not imported; tests/test_sim_core_only.py checks it).
+STARVE_SHARE = 0.02
+# ---- Pace (2026-11-16) ----------------------------------------------------------
+# A floor's walking and idling: floor_curve.kid_pace(tour) x the profile's pace
+# x lognormal(0, PACE_SIGMA): a kid is slower on some floors than others
+# (Brandon's own: 950 turns on one floor 1, 540 on another run's).
+PACE_SIGMA = 0.20
+WALK_CHUNK = 60                # turns of a walk between looks at the belly and the clock
+# ---- Weight (2026-11-16): the game's carry rules --------------------------------
+# A careful kid keeps his load under this share of the limit (Player.load_tier):
+# 'burdened' (three quarters: weight_model.py's careful rule) unless the
+# profile says 'heavy' (half: a Dexterity build keeps his whole dodge).
+PACK_LINE = 'burdened'
+FOOD_KEEP_BELLIES = 2.0        # food carried at most: SP worth this many full bellies
+KEEP_COIN_LB = 12.0            # coin kept at a stall; the rest changed to gems there
+# The share of a floor's pay that comes as treasure (gems and jewellery, which
+# weigh next to nothing) rather than coin: about a tenth near the top, about
+# half deep down (treasure.py, measured with gold_sim.py / weight_model.py).
+TREASURE_SHARE = (0.10, 0.50)
 
 # ---- Fleeing ------------------------------------------------------------------
 # There are no attacks of opportunity and same-speed monsters never catch a
@@ -431,7 +484,7 @@ PROFILES = {
     # prayer and spells sensibly, rests a little, has done the boss quests.
     'prepared': dict(
         loot_fraction=0.85,      # share of a floor's loot actually found
-        explore_turns=300,       # walking turns per floor (engine notes: 200-400)
+        pace=1.0,                # x floor_curve.kid_pace: a kid's turns on a floor
         engage_fraction=0.85,    # share of a floor's monster groups fought
         opens_chests=True,
         equips_armor=True, equips_accessories=True, avoids_cursed=True,
@@ -448,7 +501,7 @@ PROFILES = {
     # Good at the sums, casual about the rest: cooks one meal a floor, wears
     # most of what drops, prays, rests a little, skips the boss quests.
     'casual': dict(
-        loot_fraction=0.65, engage_fraction=0.75, explore_turns=220,
+        loot_fraction=0.65, engage_fraction=0.75, pace=0.75,     # dives
         opens_chests=True,
         equips_armor=True, equips_accessories=True, avoids_cursed=False,
         armor_equip_chance=0.7,
@@ -458,7 +511,7 @@ PROFILES = {
         rest_turns=150, quests=False,
     ),
     'unprepared': dict(
-        loot_fraction=0.45, engage_fraction=0.60, explore_turns=160,
+        loot_fraction=0.45, engage_fraction=0.60, pace=0.55,
         opens_chests=False,
         equips_armor=True, equips_accessories=False, avoids_cursed=False,
         armor_equip_chance=0.35,  # only this share of armor finds get worn
@@ -471,7 +524,7 @@ PROFILES = {
     # Prepared, and rests as long as it takes (holding '.' is free: waiting
     # costs no SP and regen still ticks, game_input.py:373-395).
     'patient': dict(
-        loot_fraction=0.95, engage_fraction=0.95, explore_turns=350,
+        loot_fraction=0.95, engage_fraction=0.95, pace=1.15,
         opens_chests=True,
         equips_armor=True, equips_accessories=True, avoids_cursed=True,
         cooks_per_floor=4, eats_for_hp=True,
@@ -515,7 +568,20 @@ BIG_FIGHT = 4.0                # x one attack: worth a spell
 ATTACK_SPELLS = {'fire_bolt': 'fire', 'lightning_bolt': 'lightning', 'acid_arrow': 'acid',
                  'frost_touch': 'cold', 'meteor': 'fire', 'cone_of_cold': 'cold',
                  'drain_life_spell': 'drain', 'smite': None, 'disintegrate_spell': None,
-                 'magic_missile': None}
+                 'magic_missile': None, 'mass_fire': 'fire', 'mass_ice': 'cold',
+                 'meteor_swarm': 'fire', 'storm_of_vengeance': 'lightning',
+                 'chain_lightning_jump': 'lightning'}
+# What an area spell catches besides its target (game_magic._cast_spell_effect):
+# ('all', share) every other creature of the fight in sight (the room's group,
+# those waiting at the doorway too), each with this chance; ('arcs', n, fall)
+# up to n more, each arc `fall` times the last. Fireball, ice storm, meteor,
+# the meteor swarm (its meteors share one cast's damage) and the storm of
+# vengeance strike everything in sight; the cone of cold everything within
+# five tiles (most of a room); a lightning bolt only what stands in its line.
+AREA_SPELLS = {'mass_fire': ('all', 1.0), 'mass_ice': ('all', 1.0), 'meteor': ('all', 1.0),
+               'meteor_swarm': ('all', 1.0), 'storm_of_vengeance': ('all', 1.0),
+               'cone_of_cold': ('all', 0.85), 'lightning_bolt': ('all', 0.35),
+               'chain_lightning_jump': ('arcs', 3, 0.75)}
 MISSILE_COUNT = {1: 1, 2: 3, 3: 5, 4: 7, 5: 9}
 # Gate bosses whose quest step teaches the hero who they are (slice 3).
 QUEST_TAUGHT = frozenset(('asterion_minotaur', 'medusa_gorgon', 'fafnir_dragon',
@@ -537,7 +603,7 @@ PROFILES['mastery'] = dict(PROFILES['stacked'], saver=True, knobs=dict(
     traders=1, altars=1))
 # The same, as a Dexterity build: the meals, gifts and altars to DEX and CON,
 # so light armour's DEX to AC and its dodge (slice 4) are what keep him alive.
-PROFILES['mastery_dex'] = dict(PROFILES['mastery'], stat_focus=('DEX', 'CON'))
+PROFILES['mastery_dex'] = dict(PROFILES['mastery'], stat_focus=('DEX', 'CON'), pack_line='heavy')
 # ... and as a caster (slice 7, magic as a style): meals and gifts to INT and
 # CON, light or mithril body armour (the metal tax), attack spells by element.
 PROFILES['mastery_mage'] = dict(PROFILES['mastery'], stat_focus=('INT', 'CON'), caster=True,
@@ -953,6 +1019,9 @@ class Run:
         self.quiz = QuizModel(accuracy, speed, policy, knobs)
         self.p = SimPlayer(knobs)
         self.p.x, self.p.y = 5, 5
+        # What each stat was when the run began (main.py): an altar never
+        # takes one below it (rededication.give_room).
+        self.p.stats_at_start = {s: int(getattr(self.p, s)) for s in COOK_STATS}
         self.potions = []          # healing Potion items carried
         self.food = []             # Food items carried
         self.pantry = []           # kitchen parts carried (Ingredient items)
@@ -981,7 +1050,8 @@ class Run:
         self.arsenal = []
         self._felt = {}
         # traders=1: the purse and the run's trader plan
-        self.gold = 0.0
+        self.gold = 0.0            # coin carried (it weighs: Player.purse_coins)
+        self.gems = 0.0            # value carried as gems (weightless; pays at buy_rate)
         self._trader_plan = None
         self.scraps = []           # Fenrir's leather scraps carried (5 lb each)
         self.attack_spells = {}    # spell_id -> (mp_cost, power, tier, element, effect)
@@ -1267,12 +1337,21 @@ class Run:
                 self._mult(self.p.weapon, target)
 
     # ---------------------------------------------------- traders and altars
+    def wealth(self) -> float:
+        """What he can pay with: coin, and gems at the traders' buy rate."""
+        return self.gold + self.gems * treasure_mod.buy_rate()
+
     def _pay(self, cost: float, reserve: float, kind: str = 'goods') -> bool:
-        """Pay `cost` if `reserve` is left after it. `kind` ('goods' or
-        'service') is this visit's trade-in tally (tradein knob)."""
-        if self.gold - cost < reserve:
+        """Pay `cost` if `reserve` is left after it: coin first, then gems
+        at the buy rate (Game._pay_gold). `kind` ('goods' or 'service') is
+        this visit's trade-in tally (tradein knob)."""
+        if self.wealth() - cost < reserve:
             return False
-        self.gold -= cost
+        coin = min(self.gold, cost)
+        self.gold -= coin
+        if cost > coin:
+            self.gems = max(0.0, self.gems - (cost - coin) / treasure_mod.buy_rate())
+        self._mirror_purse()
         self.fs['spent'] = self.fs.get('spent', 0) + cost
         v = getattr(self, '_visit', None)
         if v is not None:
@@ -1311,7 +1390,7 @@ class Run:
             plain_sum += min(got, plain)
             extra_sum += max(0.0, got - plain)
         self._to_sell = []
-        self.gold += plain_sum + extra_sum
+        self._take_coin(plain_sum + extra_sum)
         self.fs['sold'] = self.fs.get('sold', 0) + plain_sum + extra_sum
         self.fs['trade_in'] = self.fs.get('trade_in', 0) + extra_sum
 
@@ -1331,7 +1410,11 @@ class Run:
         if not self.knobs.get('traders'):
             return
         inc = economy_mod.floor_income(floor)
-        self.gold += inc * self.prof['loot_fraction'] * float(self.kv('gold'))
+        pay = inc * self.prof['loot_fraction'] * float(self.kv('gold'))
+        lo, hi = TREASURE_SHARE
+        t_share = lo + (hi - lo) * (max(1, min(100, floor)) - 1) / 99.0
+        self.gems += pay * t_share                # gems and jewellery: carried whatever the load
+        self._take_coin(pay * (1.0 - t_share))
         if self._trader_plan is None:
             self._trader_plan = traders_mod.roll_plan(random.randrange(1 << 30))
         kind = (self._trader_plan.get('floors') or {}).get(floor)
@@ -1348,6 +1431,7 @@ class Run:
         finally:
             self._sell_outgrown(floor, defn)
             self._visit = None
+            self._coin_to_gems()
 
     def _shop_at(self, floor, inc, defn, svc, share, reserve) -> None:
         """What he buys and pays for at this floor's stall (shop)."""
@@ -1416,25 +1500,28 @@ class Run:
             return
         focus = self.prof.get('stat_focus') or ('CON',)
         p = self.p
+        if not any(rededication_mod.take_room(p, s) > 0 for s in focus) or \
+                not rededication_mod.can_give(p):
+            return
         cost = economy_mod.altar_offering(floor)
         if self.knobs.get('traders'):
             if not self._pay(cost, 0):
                 return
-        chain = self.quiz.escalator_chain(5)
-        pts = rededication_mod.points_for_chain(chain)
-        if pts <= 0:
-            return
+        # The game's own rules (rededication.py): a gift is never given back
+        # below where it began, nor taken past what food could teach it at
+        # this depth, and the move is booked where the kitchen reads it. The
+        # simulator once drained stats down to 10 and kept no ledger.
         give = [s for s in ('PER', 'INT', 'WIS', 'DEX', 'STR', 'CON') if s not in focus]
-        for _ in range(pts):
-            src = max(give, key=lambda s: getattr(p, s) - 10)
-            if getattr(p, src) <= 10:
-                break
-            setattr(p, src, getattr(p, src) - 1)
-            tgt = focus[0]
-            setattr(p, tgt, getattr(p, tgt) + 1)
-            if tgt == 'CON':
-                p.max_hp += 3
-            self.fs['rededicated'] = self.fs.get('rededicated', 0) + 1
+        give = [s for s in give if rededication_mod.give_room(p, s) > 0]
+        take = next((s for s in focus if rededication_mod.take_room(p, s) > 0), None)
+        if not give or take is None:
+            return                              # nothing he would move: he keeps his coin
+        src = max(give, key=lambda s: rededication_mod.give_room(p, s))
+        chain = self.quiz.escalator_chain(5)
+        n = rededication_mod.points_to_move(p, src, take, chain)
+        if n > 0:
+            rededication_mod.move(p, src, take, n)
+            self.fs['rededicated'] = self.fs.get('rededicated', 0) + n
 
     # ------------------------------------------------------------------- gear
     def _sync_pack(self) -> None:
@@ -1447,6 +1534,7 @@ class Run:
         what he has outgrown: with tradein >= 1 the gear let go of here waits
         for the next stall (_sell_outgrown)."""
         p = self.p
+        self._fit_pack()
         new = (list(self.arsenal) + list(self.scraps)
                + list(self.potions) + list(self.food) + list(self.flasks)
                + list(self.pantry))
@@ -1463,6 +1551,142 @@ class Run:
                     seen.add(id(it))
             del pile[:-8]                        # what one trip can carry, roughly
         p.inventory = new
+
+    # ------------------------------------------------------------ the load
+    def _pack_line(self) -> float:
+        """The weight a careful kid keeps his load under: the Burdened line
+        (three quarters of the limit), or the Heavy line (half) for a profile
+        that keeps its whole dodge (Player.load_tier, data/gear_rules.json)."""
+        p = self.p
+        if self.prof.get('pack_line', PACK_LINE) == 'heavy':
+            return p.heavy_threshold()
+        return p.burden_threshold()
+
+    def _mirror_purse(self) -> None:
+        """The coin he carries weighs (Player.purse_coins, a tenth of an
+        ounce a piece), as the game mirrors Game.player_gold."""
+        self.p.purse_coins = max(0, int(self.gold))
+
+    def _take_coin(self, amount: float) -> None:
+        """Gold found or paid to him: he picks up what fits under his line
+        (Game._gain_gold spills the rest at his feet; he walks on)."""
+        if amount <= 0:
+            return
+        p = self.p
+        self._mirror_purse()
+        room = treasure_mod.coins_in(self._pack_line() - p.get_current_weight())
+        take = min(float(amount), float(room))
+        self.gold += take
+        if amount > take:
+            self.fs['coin_left'] = self.fs.get('coin_left', 0) + amount - take
+        self._mirror_purse()
+
+    def _coin_to_gems(self) -> None:
+        """At a stall: coin past KEEP_COIN_LB is changed into gems, which
+        weigh next to nothing (the traders' exchange: value x sell_markup;
+        weight_model.py's careful policy)."""
+        keep = KEEP_COIN_LB * treasure_mod.COINS_PER_LB
+        if self.gold > keep:
+            spare = self.gold - keep
+            self.gold = keep
+            self.gems += spare / treasure_mod.sell_markup()
+            self._mirror_purse()
+
+    @staticmethod
+    def _wt(it) -> float:
+        try:
+            return float(getattr(it, 'weight', 0) or 0) * int(getattr(it, 'count', 1) or 1)
+        except (TypeError, ValueError):
+            return 0.0
+
+    def _fit_pack(self) -> None:
+        """What a careful kid carries: never more food than FOOD_KEEP_BELLIES
+        full bellies' worth (the poorest, by SP a pound, stays behind), and
+        a load under his line (_pack_line): food goes first, then the
+        pantry's least promising parts, then coin, flasks, the weakest
+        potions, then the arsenal's weakest. What he wears and Fenrir's
+        scraps are never left (the scraps are Vidar's sandal: Brandon,
+        2026-11-16). Counts what is left behind (fs['left_lb'])."""
+        p = self.p
+        fs = self.fs if self.fs is not None else {}
+        cap_sp = FOOD_KEEP_BELLIES * max(1, int(getattr(p, 'max_sp', 200) or 200))
+        if self.food and sum(int(getattr(f, 'sp_restore', 0) or 0) for f in self.food) > cap_sp:
+            self.food.sort(key=lambda f: -(float(getattr(f, 'sp_restore', 0) or 0)
+                                           / max(0.1, self._wt(f))))
+            kept, total = [], 0
+            for f in self.food:
+                sp = int(getattr(f, 'sp_restore', 0) or 0)
+                if total + sp <= cap_sp or not kept:
+                    kept.append(f)
+                    total += sp
+                else:
+                    fs['left_lb'] = fs.get('left_lb', 0.0) + self._wt(f)
+            self.food = kept
+        self._mirror_purse()
+        worn = sum(self._wt(it) for it in p.worn_items())
+        carried = (sum(self._wt(x) for x in self.arsenal) + sum(self._wt(x) for x in self.scraps)
+                   + sum(self._wt(x) for x in self.potions) + sum(self._wt(x) for x in self.food)
+                   + sum(self._wt(x) for x in self.flasks) + sum(self._wt(x) for x in self.pantry))
+        total_lb = worn + carried + p.purse_weight()
+        # The profile's line (Heavy for the Dexterity build) is for what he
+        # can spare: food past a belly, coin, spare weapons, flasks. What he
+        # needs (the pantry, the potions, a belly of food) he carries up to
+        # the Burdened line like any careful kid: a Dexterity kid who dropped
+        # his healing potions to keep his dodge would be a strange kid (the
+        # first run of 2026-11-16 did, and its DEX build won 48%).
+        over = total_lb - self._pack_line()
+        if over <= 0:
+            return
+        spare_line = self._pack_line()
+        need_line = p.burden_threshold()
+
+        def shed(lst, key):
+            nonlocal over
+            lst.sort(key=key)
+            while over > 0 and lst:
+                it = lst.pop(0)
+                w = self._wt(it)
+                over -= w
+                fs['left_lb'] = fs.get('left_lb', 0.0) + w
+        def food_value(f):
+            return float(getattr(f, 'sp_restore', 0) or 0) / max(0.1, self._wt(f))
+        # 1. food past one belly's worth (the poorest a pound first)
+        self.food.sort(key=food_value, reverse=True)
+        belly, total, extra = max(1, int(getattr(p, 'max_sp', 200) or 200)), 0, []
+        for f in list(self.food):
+            total += int(getattr(f, 'sp_restore', 0) or 0)
+            if total > belly:
+                extra.append(f)
+        keep_food = [f for f in self.food if f not in extra]
+        shed(extra, food_value)
+        self.food = keep_food + extra
+        # 2. coin (what is left lies where he stood)
+        if over > 0 and self.gold > 0:
+            coins = min(self.gold, float(treasure_mod.coins_in(over) + 1))
+            self.gold -= coins
+            over -= coins / treasure_mod.COINS_PER_LB
+            fs['coin_left'] = fs.get('coin_left', 0) + coins
+            self._mirror_purse()
+        # 3. the arsenal's weakest weapons, 4. flasks
+        if over > 0:
+            shed(self.arsenal, self._weapon_score)
+        if over > 0:
+            shed(self.flasks, lambda it: 0)
+        # What he needs only past the Burdened line.
+        over -= max(0.0, need_line - spare_line)
+        # 5. the pantry's least promising parts (never a part held for a feast)
+        if over > 0 and self.pantry:
+            held = kitchen_mod.held_counts(self._kitchen_inv())
+            hold = self._feast_hold()
+            spare = [it for it in self.pantry if not hold.get(kitchen_mod.resolve(getattr(it, 'id', '')))]
+            keep = [it for it in self.pantry if it not in spare]
+            shed(spare, lambda it: self._promise(kitchen_mod.resolve(getattr(it, 'id', '')), held))
+            self.pantry = keep + spare
+        # 6. the weakest potions, 7. the last of the food
+        if over > 0:
+            shed(self.potions, self._potion_value)
+        if over > 0:
+            shed(self.food, food_value)
 
     def _body_value(self, piece) -> float:
         """A body armour as it works on THIS hero (slice 4): the AC it leaves
@@ -1482,11 +1706,36 @@ class Run:
             p.armor_slots[idx] = cur
         return v
 
-    def cast_attack(self, target) -> bool:
-        """magic: an attack spell instead of a swing, when it does more on
-        THIS kind than the weapon would: its element's real step when the hero
+    def _spell_mult(self, m, el) -> float:
+        """An element's step on m as the hero judges it: the real one if he
+        knows the kind, what an earlier cast felt like, else nothing."""
+        if el is None:
+            return 1.0
+        kind = getattr(m, 'kind', '')
+        if self._knows(kind):
+            return combat._damage_multiplier([el], m)
+        return self._felt.get((kind, ('spell', el)), 1.0)
+
+    def _area_catch(self, fx, target, others):
+        """[(monster, share of the cast's damage, chance it is caught)] for
+        the creatures besides the target an area spell reaches
+        (AREA_SPELLS); [] for a single-target spell."""
+        shape = AREA_SPELLS.get(fx)
+        if not shape or not others:
+            return []
+        if shape[0] == 'arcs':
+            n, fall = int(shape[1]), float(shape[2])
+            return [(m, fall ** (i + 1), 1.0) for i, m in enumerate(others[:n])]
+        return [(m, 1.0, float(shape[1])) for m in others]
+
+    def cast_attack(self, target, others=()) -> bool:
+        """magic: an attack spell instead of a swing, when it does more than
+        the weapon would: on THIS kind its element's real step when the hero
         knows the kind, what an earlier cast felt like, else nothing either
-        way. One science question (a fizzle still spends the mana)."""
+        way; an area spell counts what it does to the rest of the fight
+        (`others`: the creatures in sight, AREA_SPELLS), each held to the
+        health it has. One science question (a fizzle still spends the
+        mana)."""
         p = self.p
         if not self.attack_spells or p.has_effect('silenced'):
             return False
@@ -1494,7 +1743,7 @@ class Run:
         if self.spells and p.hp < 0.7 * p.max_hp:
             reserve = min(c for c, _, _ in self.spells.values())
         kind = getattr(target, 'kind', '')
-        known = self._knows(kind)
+        others = [m for m in others if m is not target and m.alive]
         best = None
         for _sid, (cost, power, tier, el, fx) in self.attack_spells.items():
             c = p.spell_mp_cost(cost)
@@ -1504,18 +1753,15 @@ class Run:
                     * game_magic_mod.int_damage_factor(p.INT))
             if fx == 'magic_missile':
                 base *= MISSILE_COUNT.get(tier, 1)
-            if el is None:
-                m = 1.0
-            elif known:
-                m = combat._damage_multiplier([el], target)
-            else:
-                m = self._felt.get((kind, ('spell', el)), 1.0)
-            v = base * m * self.quiz.untimed_acc(tier)
+            v = base * self._spell_mult(target, el)
+            for m, share, chance in self._area_catch(fx, target, others):
+                v += chance * min(float(m.hp), base * share * self._spell_mult(m, el))
+            v *= self.quiz.untimed_acc(tier)
             if best is None or v > best[0]:
-                best = (v, c, tier, el, base)
+                best = (v, c, tier, el, base, fx)
         if best is None:
             return False
-        v, c, tier, el, base = best
+        v, c, tier, el, base, fx = best
         weapon_v = self._value_vs(p.weapon, target) if p.weapon is not None else 1.0
         if v < 1.1 * weapon_v:
             return False
@@ -1525,6 +1771,13 @@ class Run:
             target.take_damage(int(round(base)), el or 'physical')
             if el:
                 self._felt[(kind, ('spell', el))] = combat._damage_multiplier([el], target)
+            caught = 0
+            for m, share, chance in self._area_catch(fx, target, others):
+                if random.random() < chance:
+                    m.take_damage(max(1, int(round(base * share))), el or 'physical')
+                    caught += 1
+            if caught:
+                self.fs['area_hits'] = self.fs.get('area_hits', 0) + caught
         return True
 
     def _equip(self, item):
@@ -1554,14 +1807,17 @@ class Run:
                 for _ in range(n):
                     self.potions.append(item)
                     self.fs['heal_supply'] += self._potion_value(item)
+                self._sync_pack()                # what will not fit stays behind
             return
         if isinstance(item, Flask):
             self.flasks.append(item)            # slice 5: coatings and thrown flasks
+            self._sync_pack()
             return
         if isinstance(item, Food):
             self.food.append(item)
             if prof['eats_for_hp']:
                 self.fs['heal_supply'] += item.hp_restore * self.kv('heal')
+            self._sync_pack()
             return
         if isinstance(item, Spellbook) and prof.get('magic'):
             sp = SPELLS.get(item.spell_id) or {}
@@ -1981,20 +2237,31 @@ class Run:
                 self._mooble_mp -= whole
                 p.mp = min(p.max_mp, p.mp + whole)
         if moving or resting:                            # game_input: wait ticks SP
-            need = n * SP_PER_MOVE
+            need = self._sp_need(n)
             if moving and qp == 'bococho':
                 need *= RIDE_WALK_SHARE                  # riding between fights
-            while p.sp - need < p.max_sp * 0.25 and self.food:
-                f = max(self.food, key=lambda x: x.sp_restore)
-                self.food.remove(f)
-                p.restore_sp(f.sp_restore)
-                self._healed('food', p.heal(f.hp_restore))
+            while p.sp - need < p.max_sp * 0.25:
+                if self.food:
+                    f = max(self.food, key=lambda x: x.sp_restore)
+                    self.food.remove(f)
+                    p.restore_sp(f.sp_restore)
+                    self._healed('food', p.heal(f.hp_restore))
+                    continue
+                if not self._eat_when_hungry(need):
+                    break
             p.sp -= need
             if p.sp < 0:
-                # starvation: 1 HP per drain tick at SP 0 (main.py:4261)
+                # starvation: STARVE_SHARE of max HP a drain tick at SP 0
+                # (main._tick_sp; it said 1 HP a tick here)
                 self.last_hit_by = 'starvation'
-                p.take_damage(int(-p.sp), 'starvation')
+                ticks = int(round(-p.sp))
+                dmg = ticks * floor_curve_mod.of_health(STARVE_SHARE, 1, p.max_hp)
+                before = p.hp
+                p.take_damage(dmg, 'starvation')
+                self.fs['starve'] = self.fs.get('starve', 0) + max(0, before - p.hp)
+                self.fs['starved'] = self.fs.get('starved', 0) + 1
                 p.sp = 0
+        self._age_statuses(n)
         # wandering spawns (main._maybe_wander_spawn): the floor's clock
         # (src/wanderers.py), ticked for every turn since the last time,
         # fights included. Capped by monsters HUNTING the player (a wanderer
@@ -2019,8 +2286,55 @@ class Run:
             self.floor_alive += 1
             if random.random() < WANDER_FINDS_PLAYER:
                 found.append(m)
+                self.fs['newcomers'] = self.fs.get('newcomers', 0) + 1
         self.turn = end
         return found
+
+    def _walk(self, n: int) -> list:
+        """n turns of walking and looking about, a stretch at a time
+        (WALK_CHUNK): he eats when he gets hungry along the way, not all at
+        once before a long walk. Returns the newcomers that found him."""
+        found = []
+        while n > 0:
+            step = min(n, WALK_CHUNK)
+            found += self.pass_time(step, moving=True)
+            n -= step
+            if self.p.hp <= 0:
+                break
+        return found
+
+    def _sp_need(self, n: int) -> float:
+        """SP that n turns of walking or waiting cost (main._tick_sp): one
+        point every floor_curve.HUNGER_EVERY turns, twice as long while
+        Sustained, longer with a Ring of Sustenance (rings.hunger_interval)."""
+        p = self.p
+        every = float(rings_mod.hunger_interval(p, floor_curve_mod.HUNGER_EVERY))
+        sus = int(p.status_effects.get('sustained', 0) or 0)
+        covered = n if sus < 0 else min(n, max(0, sus))
+        slow = float(rings_mod.hunger_interval(p, 2 * floor_curve_mod.HUNGER_EVERY))
+        return (n - covered) / max(1.0, every) + covered / max(1.0, slow)
+
+    def _age_statuses(self, n: int) -> None:
+        """n turns pass outside a fight: every timed status runs down by n
+        (a dish's power, Sustained, a prayer's shield, Guide My Hand), and
+        what runs out ends through the game's own tick (its expiry hooks).
+        Debuffs were ticked for real above; regeneration is mended above."""
+        if n <= 0:
+            return
+        p = self.p
+        due = False
+        for e, v in list(p.status_effects.items()):
+            if e == 'regenerating' or e in DEBUFFS or not isinstance(v, int) or v <= 0:
+                continue
+            if v - n <= 0:
+                p.status_effects[e] = 1
+                due = True
+            else:
+                p.status_effects[e] = v - n
+        if due:
+            p._incoming_scale = self.kv('mon_dmg')
+            p.tick_effects()
+            p._incoming_scale = 1.0
 
     def _wanderer(self):
         pool = self._drop_pool.get(('wander', self.floor))
@@ -2309,6 +2623,41 @@ class Run:
             return False
         rec = max(ready, key=lambda r: kitchen_mod.dish_value(self.p, r))
         return self._cook_dish(rec)
+
+    def _eat_when_hungry(self, need: float = 0.0) -> bool:
+        """Hungry with no ration left (2026-11-16: at a kid's real pace the
+        simulated hero starved holding a pantry of parts): harvest what is to
+        hand, then cook the best SP dish ready (the cook menu opens on SP
+        when he is hungry: kitchen.opening_choice), else any dish ready (the
+        feast parts he saves only when the walk ahead (`need`) would starve
+        him), else pray (a prayer heard fills the belly a little:
+        game_divine). True if he got SP or has more to try."""
+        p, prof = self.p, self.prof
+        sp0 = p.sp
+        starving = p.sp - need < 0.10 * p.max_sp
+        cooks = float(prof.get('cooks_per_floor', 0) or 0) > 0
+        if cooks:
+            self._harvest_all()
+            if starving or getattr(self, 'dishes_left', DISHES_PER_FLOOR) > 0:
+                ready = self._ready('sp') or self._ready()
+                if ready:
+                    rec = max(ready, key=lambda r: (kitchen_mod.dish_outcome(r)['sp'],
+                                                    kitchen_mod.dish_value(p, r)))
+                    self._cook_dish(rec)
+                    self.fs['hunger_cooks'] = self.fs.get('hunger_cooks', 0) + 1
+                    return True
+        if prof['prays'] and p.prayer_cooldown <= 0:
+            self.pray()
+            if p.sp > sp0:
+                return True
+        if cooks and starving:
+            ready = self._ready(spend_held=True)
+            if ready:
+                rec = max(ready, key=lambda r: kitchen_mod.dish_outcome(r)['sp'])
+                self._cook_dish(rec)
+                self.fs['hunger_cooks'] = self.fs.get('hunger_cooks', 0) + 1
+                return True
+        return False
 
     def _promise(self, part: str, held) -> float:
         """How much a part is worth keeping: the best share complete of the
@@ -2642,6 +2991,7 @@ class Run:
 
         while True:
             active = [m for m in active if m.alive]
+            queue = [m for m in queue if m.alive]       # an area spell can kill those waiting
             while len(active) < k and queue:
                 enter(queue.pop(0), opening=(turn == 0))
             if p.hp <= 0 and self._player_dead():
@@ -2734,7 +3084,8 @@ class Run:
                         action = 'closing'
                     elif prof.get('magic') and self.cast_control(target):
                         action = 'cast'
-                    elif prof.get('magic') and self.cast_attack(target):
+                    elif prof.get('magic') and self.cast_attack(
+                            target, [m for m in active + queue if m.alive]):
                         action = 'cast'
                     elif self._tactical_pick(target, free=False):
                         action = 'swap'
@@ -3115,7 +3466,12 @@ class Run:
         loot_at = {}
         for it in loot:
             loot_at.setdefault(random.randrange(n_steps), []).append(it)
-        step_turns = self.prof['explore_turns'] // n_steps
+        # A kid's real pace on this map (floor_curve.kid_pace of its explore
+        # tour), the profile's share of it, and a floor-to-floor spread.
+        walk = (floor_curve_mod.kid_pace(int(getattr(snap, 'tour', 0) or 0))
+                * float(self.prof.get('pace', 1.0)) * random.lognormvariate(0.0, PACE_SIGMA))
+        step_turns = int(walk) // n_steps
+        turn0 = self.turn
 
         pending = []
         for i, g in enumerate(groups):
@@ -3123,7 +3479,7 @@ class Run:
             must = any(getattr(m, 'is_seal_demon', False) or getattr(m, 'is_boss', False)
                        for m in g)
             # walk to the next room
-            pending += self.pass_time(step_turns, moving=True) if fights else []
+            pending += self._walk(step_turns) if fights else []
             for it in loot_at.get(i, []):
                 if it == 'fountain':
                     uses = 1
@@ -3184,6 +3540,13 @@ class Run:
                 if self.knobs['mastery'] and self.quiz.retired[t] >= math_tier_sizes()[t]:
                     self.quiz.mastered.add(t)
 
+        fs['turns'] = fs.get('turns', 0) + (self.turn - turn0)
+        fs['sp_end'] = fs.get('sp_end', 0.0) + p.sp / max(1, p.max_sp)
+        tier_now = p.load_tier()
+        if tier_now:
+            fs['load_' + tier_now] = fs.get('load_' + tier_now, 0) + 1
+        fs['carried_lb'] = fs.get('carried_lb', 0.0) + p.get_current_weight()
+        fs['wealth'] = fs.get('wealth', 0.0) + self.wealth()
         fs['hp_lost'] += (p._dmg_taken - dmg0) / max(1, hp_start_max)
         fs['questions'] += self.quiz.n_questions - q0[0]
         fs['attacks'] += self.quiz.n_attacks - q0[1]

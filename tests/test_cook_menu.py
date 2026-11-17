@@ -311,12 +311,13 @@ def test_chip_says_what_a_ready_dish_does_or_how_close_one_is():
     for rid, want in (('cook_cave_bear', '+'), ('cook_fire_beetle', 'Dark Vision')):
         row = dict(kitchen._row(p, kitchen.recipe(rid), counts), ready=True)
         assert cook_menu.chip_text(row).startswith(want), rid
-    half = dict(kitchen._row(p, kitchen.recipe('cook_cobra'), counts), ready=True)
-    assert cook_menu.chip_text(half) == 'Teaches DEX'
-    full = dict(half, effects=['Teaches DEX (a full point)'])
+    # One stat dish = one whole point (2026-11-16).
+    full = dict(kitchen._row(p, kitchen.recipe('cook_cobra'), counts), ready=True)
     assert cook_menu.chip_text(full) == 'DEX +1'
-    used = dict(half, effects=['DEX lesson used this floor'])
+    used = dict(full, effects=['DEX lesson used this floor'])
     assert cook_menu.chip_text(used) == 'No DEX Lesson'
+    capped = dict(full, effects=['DEX has learned all a dish this simple can teach'])
+    assert cook_menu.chip_text(capped) == 'No DEX Lesson'
 
 
 def test_part_words_say_what_to_do_about_a_missing_part():

@@ -161,11 +161,14 @@ def regen_share(player) -> float:
 
 def hunger_interval(player, base: int) -> int:
     """Moves per point of stamina with a Ring of Sustenance on (hunger
-    comes on its share more slowly); `base` without one."""
+    comes on its share more slowly); `base` without one. The ring works on
+    the plain pace (floor_curve.HUNGER_EVERY); Sustained, already slower,
+    keeps its own when that is slower still."""
     cut = best(player, 'sustenance')[1]
     if cut <= 0:
         return base
-    return max(base, int(round(2 / max(0.05, 1.0 - cut))))
+    from floor_curve import HUNGER_EVERY
+    return max(base, int(round(HUNGER_EVERY / max(0.05, 1.0 - cut))))
 
 
 def spell_cost(player, cost: int) -> int:

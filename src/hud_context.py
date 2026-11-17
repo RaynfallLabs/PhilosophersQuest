@@ -16,6 +16,10 @@ from game_helpers import fix_name_case
 RED = (255, 70, 80)
 NEUTRAL = (226, 218, 190)
 GREEN = (70, 255, 118)
+# A creature or part the hero is hunting for (the cook menu's H,
+# kitchen.hunted_parts): gold under In Sight, in place of its depth colour
+# (fantasy_ui.FP.GOLD_BRIGHT).
+HUNT = (255, 215, 60)
 
 
 @dataclass(frozen=True)
@@ -24,6 +28,7 @@ class ContextRow:
     meta: str
     color: tuple[int, int, int]
     distance: int
+    hunted: bool = False
 
 
 @dataclass(frozen=True)
@@ -126,21 +131,16 @@ def cooking_hp_line(player) -> tuple[str, str]:
 
 def cooking_lesson_line(player, fits=None) -> tuple[str, str]:
     """The sidebar's "Lesson" line, under "Meals": whether this floor's one
-    stat lesson from a cooked meal is still open (Player.feed_cut_stat), and
-    any stat with a meal already banked toward its next point. Without it a
-    meal that taught nothing looked like food stats not working
-    (BALANCE_REVIEW_LOOT_AND_FOOD_2026_10_26, F2). Returns (text, state):
-    'open' or 'full'. ``fits(text) -> bool`` (the sidebar's width test)
-    drops the banked meals rather than cut the line short."""
+    stat lesson from a cooked meal (a whole point: Player.feed_cut_stat) is
+    still open. Without it a meal that taught nothing looked like food stats
+    not working (BALANCE_REVIEW_LOOT_AND_FOOD_2026_10_26, F2). Returns
+    (text, state): 'open' or 'full'. ``fits`` (the sidebar's width test) is
+    kept for the caller: the line is short enough for any sidebar. (Until
+    2026-11-16 two lessons made a point, and the line also showed the
+    meals banked toward the next one: "Lesson: used  DEX 1/2".)"""
     used = int(getattr(player, '_cook_stat_gain_this_floor', 0) or 0) >= \
         int(getattr(player, 'PER_FLOOR_STAT_CAP', 1) or 1)
-    need = int(getattr(player, 'COOK_MEALS_PER_STAT_POINT', 2) or 2)
-    banked = getattr(player, 'cook_stat_meals', None) or {}
-    pending = [f"{s} {n}/{need}" for s, n in sorted(banked.items()) if int(n or 0) > 0]
     text = "Lesson: used" if used else "Lesson: open"
-    full = f"{text}  {' '.join(pending)}" if pending else text
-    if fits is None or fits(full):
-        text = full
     return text, ('full' if used else 'open')
 
 
@@ -223,6 +223,15 @@ def visible_context_rows(player, monsters: Iterable, ground_items: Iterable,
                          ) -> tuple[list[ContextRow], list[ContextRow]]:
     monster_rows: list[ContextRow] = []
     item_rows: list[ContextRow] = []
+    # What the hunted dishes still need (kitchen.hunted_parts): a creature
+    # whose harvest gives one, and a part lying in view, are drawn gold.
+    parts: set = set()
+    if getattr(player, 'hunted_dishes', None):
+        try:
+            import kitchen
+            parts = kitchen.hunted_parts(player)
+        except Exception:
+            parts = set()
 
     for monster in monsters:
         if not getattr(monster, "alive", False):
@@ -234,11 +243,13 @@ def visible_context_rows(player, monsters: Iterable, ground_items: Iterable,
         dist = _distance(player, monster)
         peak = int(getattr(monster, "peak_floor", 0) or getattr(monster, "min_level", 0) or 0)
         spread = int(getattr(monster, "spread", 10) or 10)
+        hunt = bool(parts) and kitchen.monster_hunted(monster, parts)
         monster_rows.append(ContextRow(
             fix_name_case(str(getattr(monster, "name", getattr(monster, "kind", "monster")))),
             _distance_label(dist),
-            spawn_fit_color(dungeon_level, peak, spread, kind="monster"),
+            HUNT if hunt else spawn_fit_color(dungeon_level, peak, spread, kind="monster"),
             dist,
+            hunt,
         ))
 
     for item in ground_items:
@@ -247,11 +258,13 @@ def visible_context_rows(player, monsters: Iterable, ground_items: Iterable,
         dist = _distance(player, item)
         peak = int(getattr(item, "peak_floor", 0) or getattr(item, "min_level", 0) or 0)
         spread = int(getattr(item, "spread", 10) or 10)
+        hunt = bool(parts) and kitchen.item_hunted(item, parts)
         item_rows.append(ContextRow(
             hud_item_name(player, item, include_count=True),
             _distance_label(dist),
-            spawn_fit_color(dungeon_level, peak, spread, kind="item"),
+            HUNT if hunt else spawn_fit_color(dungeon_level, peak, spread, kind="item"),
             dist,
+            hunt,
         ))
 
     monster_rows.sort(key=lambda row: (row.distance, row.label))

@@ -344,7 +344,7 @@ def dish_outcome(rec: dict) -> dict:
         'heal_share': 0.0,
         'max_hp': int(every.get('max_hp', 2)),
         'mp_share': 0.0, 'mp_least': 0, 'sustained': 0,
-        'stat': None, 'lessons': 0, 'power': None, 'turns': 0, 'ward': 0,
+        'stat': None, 'power': None, 'turns': 0, 'ward': 0,
         'permanent': None, 'trophy_powers': trophy_powers(rec),
         'song': song_of(rec),
     }
@@ -359,9 +359,7 @@ def dish_outcome(rec: dict) -> dict:
         out['mp_share'] = min(1.0, _tierv(r['mp']['share'], t) * main)
         out['mp_least'] = int(round(_tierv(r['mp']['least'], t) * main))
     elif tab == 'stat':
-        out['stat'] = dish_stat(rec)
-        full = float(r['stat'].get('full_point_worth', 2.5))
-        out['lessons'] = 2 if (grand or dish_worth(rec) >= full) else 1
+        out['stat'] = dish_stat(rec)      # one whole point, up to its tier's cap
     elif makes(rec):
         out['power'] = None               # cooked to carry: what it gives is the food it makes
     elif song_of(rec):
@@ -519,6 +517,9 @@ def dish_effects(player, rec: dict) -> list:
         lines.append(f"+{mp_amount(player, out)} MP")
     elif tab == 'stat':
         lines.append(_stat_line(player, out))
+        cap_line = _stat_cap_line(player, out)
+        if cap_line:
+            lines.append(cap_line)
     elif out.get('song'):
         lines.extend(song_lines(rec))
     else:
@@ -572,7 +573,7 @@ def _lasting_lines(player, out: dict, rec=None) -> list:
         elif kind == 'stat':
             got = _feast_stat_points(player, out, int(val))
             lines.append(f"+{got} {out['stat']} for good" if got > 0
-                         else f"No more {out['stat']} for good at this depth")
+                         else f"No more {out['stat']} for good from a dish this deep")
         elif kind == 'resist':
             res = feast_resist_for(player, rec) if rec is not None else val
             lines.append(f"{power_label(res)} for good" if res
@@ -582,24 +583,28 @@ def _lasting_lines(player, out: dict, rec=None) -> list:
     return lines
 
 
+def _stat_block(player, out: dict):
+    """cut_stat_block for this stat dish's stat at its tier ('cap', 'tier',
+    'floor' or None), or None for a player without the caps (a harness)."""
+    if not hasattr(player, 'cut_stat_block'):
+        return None
+    return player.cut_stat_block(out['stat'], out['tier'])
+
+
 def _feast_stat_points(player, out: dict, val: int) -> int:
     """The stat points a legendary stat feast's lasting gift will give this
-    hero: ``val``, held to what food may still teach the stat at this depth
-    after the meal's own lesson has taught (Player.cooking_stat_softcap,
-    which counts the altar's points: food_taught). The menu said "+1 STR
-    for good" to a hero at the cap, who got nothing (bug bash 3.5.1 A)."""
+    hero: ``val``, held to what a dish of the feast's tier may still teach
+    the stat after the meal's own lesson has taught its point
+    (Player.cooking_stat_softcap, which counts the altar's points:
+    food_taught). The menu said "+1 STR for good" to a hero at the cap, who
+    got nothing (bug bash 3.5.1 A)."""
     stat = out['stat']
     if not hasattr(player, 'cooking_stat_softcap') or not hasattr(player, 'food_taught'):
         return val
     if stat not in (getattr(player, 'cooking_stat_gained', None) or {}):
         return 0
-    room = max(0, int(player.cooking_stat_softcap(stat)) - int(player.food_taught(stat)))
-    lesson = 0
-    block = player.cut_stat_block(stat) if hasattr(player, 'cut_stat_block') else None
-    if block is None:
-        per = int(getattr(player, 'COOK_MEALS_PER_STAT_POINT', 2) or 2)
-        banked = int((getattr(player, 'cook_stat_meals', None) or {}).get(stat, 0) or 0)
-        lesson = min(room, (banked + max(1, int(out['lessons']))) // per)
+    room = max(0, int(player.cooking_stat_softcap(stat, out['tier'])) - int(player.food_taught(stat)))
+    lesson = 1 if _stat_block(player, out) is None else 0
     return max(0, min(int(val), room - lesson))
 
 
@@ -629,19 +634,36 @@ def dish_lasting(player, rec: dict) -> list:
 
 
 def _stat_line(player, out: dict) -> str:
+    """A stat dish's first menu line: "Teaches DEX +1", or why it would
+    teach nothing now (the floor's lesson used, its tier's cap, or all food
+    can teach)."""
     stat = out['stat']
-    block = player.cut_stat_block(stat) if hasattr(player, 'cut_stat_block') else None
+    block = _stat_block(player, out)
     if block == 'cap':
-        return f"{stat} has learned all food can teach here"
+        return f"{stat} has learned all food can teach"
+    if block == 'tier':
+        return f"{stat} has learned all a dish this simple can teach"
     if block == 'floor':
         return f"{stat} lesson used this floor"
-    if out['lessons'] >= 2:
-        return f"Teaches {stat} (a full point)"
-    banked = int((getattr(player, 'cook_stat_meals', None) or {}).get(stat, 0) or 0)
-    per = int(getattr(player, 'COOK_MEALS_PER_STAT_POINT', 2))
-    if banked + 1 >= per:
-        return f"Teaches {stat} (completes a point)"
-    return f"Teaches {stat} (half a point)"
+    return f"Teaches {stat} +1"
+
+
+def _stat_cap_line(player, out: dict) -> str:
+    """How far a dish of this tier can raise its stat, and how far food has
+    taken it, so a player can plan his build by what he eats: "Tier 1
+    dishes teach DEX up to +8 (now +3)". At its tier's cap, that deeper
+    creatures teach more. Empty for a player without the caps."""
+    if not hasattr(player, 'cooking_stat_softcap') or not hasattr(player, 'food_taught'):
+        return ''
+    stat, tier = out['stat'], out['tier']
+    if stat not in (getattr(player, 'cooking_stat_gained', None) or {}):
+        return ''
+    cap = int(player.cooking_stat_softcap(stat, tier))
+    now = int(player.food_taught(stat))
+    line = f"Tier {tier} dishes teach {stat} up to +{cap} (now +{now})"
+    if _stat_block(player, out) == 'tier':
+        line += ": deeper creatures teach more"
+    return line
 
 
 def dish_value(player, rec: dict) -> float:
@@ -681,6 +703,71 @@ def ready_dishes(inventory) -> list:
     return out
 
 
+# ----------------------------------------------------------------------
+# Hunting (Brandon, 2026-11-16: "for recipes in progress, you should be
+# able to toggle it to 'hunt' for the ingredients, meaning a monster or
+# ingredient you need is gold text in the right panel ... no limit to how
+# many you can hunt at once")
+# ----------------------------------------------------------------------
+
+def hunted(player) -> set:
+    """The ids of the dishes the hero is hunting for (Player.hunted_dishes,
+    kept in the save; an old save has none). As many as he likes."""
+    d = getattr(player, '__dict__', None)
+    if d is None:
+        return set()
+    s = d.setdefault('hunted_dishes', set())
+    if not isinstance(s, set):
+        s = d['hunted_dishes'] = set(s or ())
+    return s
+
+
+def is_hunted(player, rid: str) -> bool:
+    return rid in hunted(player)
+
+
+def toggle_hunt(player, rid: str) -> bool:
+    """H in the cook menu: hunt this dish, or stop. Returns whether it is
+    hunted now."""
+    s = hunted(player)
+    if rid in s:
+        s.discard(rid)
+        return False
+    s.add(rid)
+    return True
+
+
+def hunted_parts(player, inventory=None) -> set:
+    """The parts the hero is hunting: what every hunted dish still lacks
+    (a part held in the number a dish needs is no longer hunted)."""
+    hs = hunted(player)
+    if not hs:
+        return set()
+    counts = held_counts(getattr(player, 'inventory', None) if inventory is None else inventory)
+    out = set()
+    for rid in hs:
+        rec = recipe(rid)
+        if rec is None:
+            continue
+        for p, n in needs(rec).items():
+            if counts.get(p, 0) < n:
+                out.add(p)
+    return out
+
+
+def monster_hunted(monster, parts) -> bool:
+    """A creature whose harvest gives one of ``parts`` (hunted_parts)."""
+    if not parts:
+        return False
+    iid = ingredient_for_monster(getattr(monster, 'kind', '') or getattr(monster, 'id', ''))
+    return bool(iid) and resolve(iid) in parts
+
+
+def item_hunted(item, parts) -> bool:
+    """A thing on the ground that is one of ``parts`` (hunted_parts)."""
+    return bool(parts) and resolve(getattr(item, 'id', '') or '') in parts
+
+
 def _row(player, rec: dict, counts: Counter) -> dict:
     need = needs(rec)
     have, missing = [], []
@@ -699,6 +786,7 @@ def _row(player, rec: dict, counts: Counter) -> dict:
         'have_count': len(have), 'need_count': len(need),
         'progress': f"{len(have)} of {len(need)}",
         'value': dish_value(player, rec), 'effects': dish_effects(player, rec),
+        'hunted': (not ready) and is_hunted(player, rec['id']),
     }
 
 
@@ -749,8 +837,9 @@ def _would_teach(player, rec: dict) -> bool:
     stat = dish_stat(rec)
     if not stat:
         return False
-    block = player.cut_stat_block(stat) if hasattr(player, 'cut_stat_block') else None
-    return block is None
+    if not hasattr(player, 'cut_stat_block'):
+        return True
+    return player.cut_stat_block(stat, dish_tier(rec)) is None
 
 
 def opening_tab(player, inventory) -> str:
@@ -815,6 +904,7 @@ def apply_dish(player, rec: dict) -> list:
     """A dish cooked right: everything it gives, applied to the hero.
     Returns the message lines (the first names the dish)."""
     from food_system import _apply_permanent_power
+    hunted(player).discard(rec.get('id'))      # cooked: the hunt for it is over
     if makes(rec):
         return make_to_carry(player, rec)
     out = dish_outcome(rec)
@@ -865,7 +955,7 @@ def apply_dish(player, rec: dict) -> list:
         msgs.append(f"You are Sustained for {quantity(out['sustained'], 'turn')}: "
                     f"hunger comes at half its pace.")
     elif tab == 'stat':
-        msgs.extend(_teach(player, out['stat'], out['lessons']))
+        msgs.extend(_teach(player, out['stat'], out['tier']))
     lingers = None
     if tab == 'special' and out.get('song'):
         import songs
@@ -921,19 +1011,20 @@ def make_to_carry(player, rec: dict) -> list:
             f"You wrap the {proper_name(item.name)} to carry. It is in your pack."]
 
 
-def _teach(player, stat: str, lessons: int) -> list:
+def _teach(player, stat: str, tier: int) -> list:
+    """The floor's stat lesson from a stat dish of ``tier``: one whole
+    point, or why it taught nothing."""
     label = STAT_NAMES.get(stat, stat)
     if not hasattr(player, 'feed_cut_stat'):
         return []
-    block = player.cut_stat_block(stat) if hasattr(player, 'cut_stat_block') else None
-    gained, banked = player.feed_cut_stat(stat, lessons=lessons)
+    block = player.cut_stat_block(stat, tier) if hasattr(player, 'cut_stat_block') else None
+    gained = int(player.feed_cut_stat(stat, tier) or 0)
     if gained > 0:
         return [f"Your {label} increases by {gained}!"]
-    if banked > 0:
-        return [f"You feel it doing you good. ({label}: {banked} of "
-                f"{player.COOK_MEALS_PER_STAT_POINT} meals toward +1)"]
+    if block == 'tier':
+        return [f"Your {label} has learned all a dish this simple can teach. Deeper creatures teach more."]
     if block == 'cap':
-        return [f"Your {label} has learned all food can teach it at this depth. Go deeper to learn more."]
+        return [f"Your {label} has learned all food can teach it."]
     if block == 'floor':
         return ["You have already learned from a meal on this floor. The next lesson waits on a new floor."]
     return []
@@ -956,11 +1047,11 @@ def _apply_permanent(player, rec: dict, out: dict) -> list:
         return [f"A feast to remember: +{got} max MP for good."]
     if kind == 'stat':
         stat = out['stat']
-        got = player.try_apply_cook_stat_gain(stat, int(val), bypass=True) \
+        got = player.try_apply_cook_stat_gain(stat, int(val), bypass=True, tier=out['tier']) \
             if hasattr(player, 'try_apply_cook_stat_gain') else 0
         label = STAT_NAMES.get(stat, stat)
         return [f"A feast to remember: your {label} rises by {got}, for good."] if got > 0 else \
-            [f"A feast to remember, but your {label} has learned all food can teach it at this depth."]
+            [f"A feast to remember, but your {label} has learned all a dish this deep can teach it."]
     if kind == 'resist':
         val = feast_resist_for(player, rec)
         if val is None:

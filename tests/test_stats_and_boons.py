@@ -66,15 +66,20 @@ def test_dexterity_dodges_and_a_held_body_cannot():
     assert p.dodge_chance() == 0.0
 
 
-def test_the_cooking_cap_for_one_stat_grows_with_depth():
+def test_a_stat_dishs_tier_caps_how_far_it_teaches():
+    """Brandon, 2026-11-16: "putting caps on how high a given dish can raise
+    a stat makes deep and complex cooking way more important... stops early
+    spamming". The cap is the dish's tier, not the depth reached: the old
+    depth rule's value at the bottom of each band (3 + floor / 4), so the
+    deepest dishes keep its ceiling of 28, and Wisdom keeps half."""
     p = Player()
-    caps = []
-    for floor in (1, 8, 20, 40, 100):
-        p.deepest_floor_reached = floor
-        caps.append(p.cooking_stat_softcap())
-    # 3 + depth/4 (BALANCE_REVIEW_LOOT_AND_FOOD_2026_10_26 F3; was 2 + depth/5)
-    assert caps == [3, 5, 8, 13, 28]
-    assert p.cooking_stat_softcap('WIS') == 14            # Wisdom keeps half
+    assert [p.cooking_stat_softcap('STR', t) for t in range(1, 6)] == [8, 13, 18, 23, 28]
+    assert [p.cooking_stat_softcap('WIS', t) for t in range(1, 6)] == [4, 6, 9, 11, 14]
+    for t in range(1, 6):
+        assert p.cooking_stat_softcap('WIS', t) == p.cooking_stat_softcap('STR', t) // 2
+    p.deepest_floor_reached = 100                    # depth does not lift a dish's cap
+    assert p.cooking_stat_softcap('STR', 1) == 8
+    assert p.cooking_stat_softcap('STR') == 28       # no dish: the depth's band (altars)
 
 
 # -------------------------------------------------- you are what you eat
@@ -92,39 +97,48 @@ def test_every_stat_has_parts_that_teach_it():
     assert len(stats) == 6 and min(stats.values()) >= 10, stats
 
 
-def test_two_floors_of_a_stat_dish_make_one_point():
+def test_one_stat_dish_teaches_one_point_one_a_floor():
+    """Brandon, 2026-11-16: one dish = one point, still one a floor (two
+    lessons made a point, which he found hard to follow)."""
     import kitchen
     p = Player()
     p.deepest_floor_reached = 12
     recipe = kitchen.recipe('cook_cobra')         # Cobra Tail Steak with Lime: DEX
     before = p.DEX
     msgs = food_system._apply_recipe_outcome(p, recipe, ruined=False)
-    assert p.DEX == before and any('1 of 2 meals' in m for m in msgs)
-    food_system._apply_recipe_outcome(p, recipe, ruined=False)
-    assert p.DEX == before and p.cook_stat_meals['DEX'] == 1     # one lesson a floor
+    assert p.DEX == before + 1 and any('Dexterity increases by 1' in m for m in msgs)
+    msgs = food_system._apply_recipe_outcome(p, recipe, ruined=False)
+    assert p.DEX == before + 1                                   # one lesson a floor
+    assert any('already learned from a meal on this floor' in m for m in msgs)
     p.reset_floor_cook_caps()
     food_system._apply_recipe_outcome(p, recipe, ruined=True)
-    assert p.DEX == before                                      # a ruined meal teaches nothing
-    msgs = food_system._apply_recipe_outcome(p, recipe, ruined=False)
-    assert p.DEX == before + 1 and any('increases' in m for m in msgs)
-    assert p.cooking_stat_gained['DEX'] == 1 and p.cook_stat_meals['DEX'] == 0
+    assert p.DEX == before + 1                                   # a ruined meal teaches nothing
+    food_system._apply_recipe_outcome(p, recipe, ruined=False)
+    assert p.DEX == before + 2 and p.cooking_stat_gained['DEX'] == 2
 
 
-def test_a_whole_run_of_cooking_is_about_fifty_points_and_one_speciality():
-    p = Player()
+def test_a_whole_run_of_cooking_needs_deep_dishes_for_a_speciality():
+    """A point a floor for a hundred floors: a hero who eats only shallow
+    dishes stops at their cap, one who eats deeper as he goes reaches the
+    top (28), and one point a floor spread over three stats is about a
+    hundred points in all."""
+    import kitchen
+    shallow, deep = Player(), Player()
     for floor in range(1, 101):
-        p.deepest_floor_reached = floor
-        p.reset_floor_cook_caps()
-        p.feed_cut_stat('STR')
-        p.feed_cut_stat('STR')
-    assert 27 <= p.cooking_stat_gained['STR'] <= p.cooking_stat_softcap() == 28
+        for p in (shallow, deep):
+            p.deepest_floor_reached = floor
+            p.reset_floor_cook_caps()
+        shallow.feed_cut_stat('STR', 1)
+        deep.feed_cut_stat('STR', kitchen.band_of(floor))
+    assert shallow.cooking_stat_gained['STR'] == 8
+    assert deep.cooking_stat_gained['STR'] == 28 == deep.stat_cap_for_tier('STR', 5)
     q = Player()
     total = 0
     for floor in range(1, 101):
         q.deepest_floor_reached = floor
         q.reset_floor_cook_caps()
-        total += q.feed_cut_stat(('STR', 'CON', 'DEX')[floor % 3])[0]
-    assert 45 <= total <= 50
+        total += q.feed_cut_stat(('STR', 'CON', 'DEX')[floor % 3], kitchen.band_of(floor))
+    assert 80 <= total <= 84            # each stat at its band's cap, floor by floor
 
 
 def test_dexterity_gives_armor_by_the_body_armours_weight_class():
@@ -299,7 +313,11 @@ def test_the_recipes_menu_path_teaches_the_dishs_stat():
     p.deepest_floor_reached = 10
     dish = kitchen.recipe('cook_wolf_pack_leader')   # Pack Leader Steak: STR
     got = []
+    s0 = p.STR
     food_system.cook_compound_recipe(p, dish, p.inventory, Quiz(), got.extend)
-    assert p.cook_stat_meals.get('STR') == 1
-    assert any('Strength: 1 of 2 meals' in m for m in got), got
-    assert kitchen.dish_effects(Player(), dish)[0] == 'Teaches STR (half a point)'
+    assert p.STR == s0 + 1 and p.cooking_stat_gained['STR'] == 1
+    assert any('Strength increases by 1' in m for m in got), got
+    eff = kitchen.dish_effects(Player(), dish)
+    tier = kitchen.dish_tier(dish)
+    assert eff[0] == 'Teaches STR +1'
+    assert eff[1] == f"Tier {tier} dishes teach STR up to +{Player().cooking_stat_softcap('STR', tier)} (now +0)"

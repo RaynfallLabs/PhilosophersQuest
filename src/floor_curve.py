@@ -221,8 +221,53 @@ def wander_interval(level: int) -> int:
 # WANDER_GRACE_FLAT. A thorough explore walks about one and a half times the
 # tour (doors, corners, the loot); the rest is time to fight and get your
 # breath back. The clock counts only turns spent on that floor.
-WANDER_GRACE_FLAT = 100
+#
+# Sized to a kid's real pace (Brandon, 2026-11-16: "check my previous runs,
+# how many turns did I spend on each floor? I bet it's more than you
+# expected"; his ruling: size the time to explore and the food to a kid at
+# his pace). His saves: about 950 turns on floor 1 and 700 on floor 2
+# (3.5.2), about 540 a floor on floors 1-3 and 820 on floor 4 (October).
+# The grace had been 100 + 2 a tile, about 500 turns on floor 1's median
+# map, so at his pace he met newcomers on most floors. A kid's pace is
+# kid_pace below; the grace is now 550 + 2 a tile, about a third more than
+# that pace on every map (940 turns on floor 1's median map, 1,550 from
+# floor 12, 3,750 on a maze), so a kid at his pace explores in peace and a
+# kid who lingers past it meets the trickle.
+WANDER_GRACE_FLAT = 550
 WANDER_GRACE_PER_TILE = 2.0
+# A kid's pace on a floor, from the same saves: KID_PACE_PER_TILE x its
+# explore tour (a thorough walk, doors and corners) plus KID_PACE_FLAT
+# turns for everything else (fights, getting his breath back, cooking,
+# reading, searching): about 700 turns on floor 1's median map, 800-900 on
+# floors 2-4, 1,000 by floor 5, 1,150 from floor 12. Nothing in the game
+# reads it: the grace above is sized from it, and the difficulty simulator
+# (tools/balance/difficulty_sim.py) plays at it.
+KID_PACE_FLAT = 400
+KID_PACE_PER_TILE = 1.5
+
+
+def kid_pace(tour: int) -> int:
+    """Turns a kid at Brandon's pace spends on a floor whose explore tour is
+    ``tour`` tiles (wanderers.explore_tour)."""
+    return int(round(KID_PACE_FLAT + KID_PACE_PER_TILE * max(0, int(tour))))
+
+
+# Hunger: one point of stamina (SP) every HUNGER_EVERY steps or waits
+# (Game._tick_sp; Sustained doubles it, a Ring of Sustenance lengthens it by
+# its share). The simulator reads the same number.
+#
+# Food sized to a kid's pace (2026-11-16). The SP economy (every ration and
+# dish, docs/systems/conventions.md section 9) was tuned for floors of about
+# 400 turns at a point every 2 steps: about 200 SP of hunger a floor. A kid
+# takes 700-1,150 turns (kid_pace), so a new hero with nothing to eat
+# starved at about turn 420, half-way through his first floor, and in the
+# simulator at his pace a careful cook (three meals a floor) starved on the
+# maze floors and died by floor 40 in ten runs of ten. A point every 4
+# steps puts the hunger back at about 175-290 SP a floor: a new hero's belly
+# lasts 840 turns, the floor's rations and a meal or two keep it full, and
+# a hero who lingers or will not eat still goes hungry (starvation stays:
+# feedback, SP is a soft boundary by supply, never by removing the damage).
+HUNGER_EVERY = 4
 # The floor stirs (a line, once) at this share of the grace.
 WANDER_WARN_SHARE = 0.85
 # After the grace, a trickle: the first newcomer comes WANDER_TRICKLE_START

@@ -68,10 +68,10 @@ def test_wb_c01_cooking_counts_what_an_altar_gave():
     R.move(p, 'DEX', 'STR', n)
     for _ in range(40):                           # forty floors' worth of Strength meals
         p._cook_stat_gain_this_floor = 0
-        p.feed_cut_stat('STR')
+        p.feed_cut_stat('STR', 1)                 # dishes of the altar's band (tier 1)
     assert R.taught(p, 'STR') == cap
     assert p.STR == 10 + cap
-    assert p.cut_stat_block('STR') == 'cap'       # the meal card says so too
+    assert p.cut_stat_block('STR', 1) == 'tier'   # the meal card says so too
     assert p.apply_cooking_stat_bonus('STR', 2) == 0      # a rare food's own bonus as well
     # A point given back never frees the kitchen's room (its own ledger).
     assert R.taught(p, 'DEX') == 3

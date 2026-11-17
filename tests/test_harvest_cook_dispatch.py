@@ -151,14 +151,14 @@ def test_success_grants_stat():
     from food_system import _apply_recipe_outcome
     p = Player()
     str0 = p.STR
-    # A single stat dish is the floor's lesson: banked toward its stat; two
-    # of them, on two floors, make the point (Player.feed_cut_stat).
+    # A stat dish is the floor's lesson: one whole point (Player.feed_cut_stat,
+    # 2026-11-16; two lessons made a point before).
     _apply_recipe_outcome(p, _dish(STR_DISH))
-    assert p.STR == str0 and p.cook_stat_meals['STR'] == 1
+    assert p.STR == str0 + 1 and p.cooking_stat_gained['STR'] == 1
     assert p._cook_stat_gain_this_floor > 0
     p.reset_floor_cook_caps()
     _apply_recipe_outcome(p, _dish(STR_DISH))
-    assert p.STR == str0 + 1
+    assert p.STR == str0 + 2
 
 
 def test_success_applies_temp_power():
@@ -183,10 +183,10 @@ def test_per_floor_caps_block_double_cook_stat():
     from food_system import _apply_recipe_outcome
     p = Player()
     _apply_recipe_outcome(p, _dish(STR_DISH))
-    banked = dict(p.cook_stat_meals)
+    taught = dict(p.cooking_stat_gained)
     _apply_recipe_outcome(p, _dish(STR_DISH))
-    # one lesson a floor: the second dish banks nothing
-    assert p.cook_stat_meals == banked
+    # one lesson a floor: the second dish teaches nothing
+    assert p.cooking_stat_gained == taught
 
 
 def test_trophy_bypass():

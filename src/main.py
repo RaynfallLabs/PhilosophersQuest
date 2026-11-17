@@ -6301,11 +6301,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     # ------------------------------------------------------------------
 
     def _tick_sp(self):
-        # Base SP drain: 1 per 2 moves (0.5/move effective). The sustained
-        # status halves it (1 per 4 moves); a Ring of Sustenance slows it by
-        # its tier, a third to three quarters (rings.py).
+        # Base SP drain: 1 per floor_curve.HUNGER_EVERY moves. The sustained
+        # status halves it (twice as many moves a point); a Ring of
+        # Sustenance slows it by its tier, a third to three quarters (rings.py).
+        from floor_curve import HUNGER_EVERY as _hunger_every
         self._sp_drain_tick = getattr(self, '_sp_drain_tick', 0) + 1
-        drain_interval = 4 if self.player.has_effect('sustained') else 2
+        drain_interval = _hunger_every * (2 if self.player.has_effect('sustained') else 1)
         import rings as _rings
         drain_interval = _rings.hunger_interval(self.player, drain_interval)
         # Sickly (a fever caught at a plague village's bar): twice as fast.

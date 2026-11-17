@@ -28,7 +28,7 @@ TAB_BLURBS = {
     'hp': "HP dishes heal you now and add to your maximum HP.",
     'sp': "SP dishes fill the belly far past a ration, and slow your hunger for a long while.",
     'mp': "MP dishes give back mana: a caster's meal before a hard fight.",
-    'stat': "Stat dishes teach a stat: this floor's lesson, or a whole point from a rich dish.",
+    'stat': "Stat dishes teach a stat one point, one lesson a floor. Deeper creatures teach a stat further.",
     'special': "Special dishes lend a power for a while: night sight, a resistance, a ward.",
 }
 
@@ -77,9 +77,9 @@ def urgent(why: str) -> bool:
 
 def main_effect(row: dict) -> str:
     """The short main thing a dish does, for its chip: "+45 HP", "+150 SP",
-    "+12 MP", "DEX +1" (a whole point, or the meal that completes one),
-    "Teaches DEX" (half a point), "No DEX Lesson" (used or capped), a
-    timed power's name ("Dark Vision", "Body Ward +3")."""
+    "+12 MP", "DEX +1" (a stat dish's whole point), "No DEX Lesson" (this
+    floor's lesson used, or the stat has learned all a dish of this tier can
+    teach), a timed power's name ("Dark Vision", "Body Ward +3")."""
     rec = row['recipe']
     tab = kitchen.dish_tab(rec)
     first = (row.get('effects') or [''])[0]
@@ -87,9 +87,7 @@ def main_effect(row: dict) -> str:
         stat = kitchen.dish_stat(rec) or ''
         if not first.startswith('Teaches'):
             return f"No {stat} Lesson"
-        if 'full point' in first or 'completes' in first:
-            return f"{stat} +1"
-        return f"Teaches {stat}"
+        return f"{stat} +1"
     if kitchen.makes(rec):
         return "To Carry"                 # cooked to carry (the Starnut Tart)
     if kitchen.song_of(rec):
@@ -144,10 +142,40 @@ def fit_list(lead: str, names: list, fits) -> str:
 
 def row_line(row: dict, counts, fits=lambda _t: True) -> str:
     """A row's second line: a ready dish's ingredients and what the pack
-    holds of each; else "Needs: " and what is missing."""
+    holds of each; else "Needs: " and what is missing, or "Hunting: " for a
+    dish the hero is hunting for (H)."""
     if row['ready']:
         return fit_list('', uses_parts(row, counts), fits)
-    return fit_list('Needs: ', missing_parts(row), fits)
+    return fit_list('Hunting: ' if row.get('hunted') else 'Needs: ', missing_parts(row), fits)
+
+
+# The footer's keys: for a dish ready to cook, and for one still missing
+# parts (H hunts it: what it needs shows gold under In Sight).
+HINT_READY = "Left/Right: Change Tab   Up/Down: Move   Enter: Cook   ESC: Close"
+HINT_HUNT = "Left/Right: Change Tab   Up/Down: Move   H: Hunt   ESC: Close"
+HINT_STOP = "Left/Right: Change Tab   Up/Down: Move   H: Stop Hunting   ESC: Close"
+
+
+def footer_hint(row) -> str:
+    """The cook menu's footer for the chosen row (None: no row)."""
+    if row is None or row['ready']:
+        return HINT_READY
+    return HINT_STOP if row.get('hunted') else HINT_HUNT
+
+
+def hunt_line(row: dict, on: bool) -> str:
+    """What H says as it starts or stops a hunt."""
+    if on:
+        return (f"You are hunting for {row['name']}: what it still needs shows gold "
+                f"under In Sight.")
+    return f"You stop hunting for {row['name']}."
+
+
+def hunt_action(row: dict) -> str:
+    """The detail pane's line for H on a dish still missing parts."""
+    if row.get('hunted'):
+        return "Stop hunting it. While you hunt, what it still needs shows gold under In Sight."
+    return "Hunt it: what it still needs shows gold under In Sight, creature or part."
 
 
 def part_source(part_id: str) -> str:
