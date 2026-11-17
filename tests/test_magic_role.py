@@ -75,7 +75,8 @@ def test_a_touch_keeps_only_a_small_edge_over_the_bolt():
     "touch spells have a higher risk/reward")."""
     summary = magic_audit.tier_summary()
     touches = [r for r in _spells() if r['role'] == 'touch']
-    assert {r['name'] for r in touches} == {'frost_touch', 'drain_life', 'soul_drain'}
+    assert {r['name'] for r in touches} == {'frost_touch', 'drain_life', 'soul_drain',
+                                         'life_tap', 'vampiric_touch', 'enervation'}
     for r in touches:
         bolt = summary[r['tier']]['bolt']
         assert r['plain'] >= bolt[1], (r['name'], bolt)

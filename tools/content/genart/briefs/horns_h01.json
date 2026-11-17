@@ -532,13 +532,14 @@
   "rank": 0,
   "key": "magenta",
   "what": "Heimdall, the watchman of the Norse gods: a tall, calm man of about forty with a fair, pale, shining face and long white-blond hair, smiling so that his gold teeth show.",
-  "colours": "a long white robe and white cloak, a gold belt, a huge curved horn banded with gold.",
+  "colours": "a long white robe and white cloak, a gold belt, a huge dark horn bent in a deep half circle and banded with gold.",
   "wears": "He wears a long white robe, a white cloak and a gold belt.",
-  "holds": "In both hands he holds exactly one great war horn across his body: a single long dark horn curved like a crescent, narrow mouthpiece at one end and a wide open bell at the other, bound with three gold bands.",
-  "pose": "He stands on two legs, looking out, the horn held ready.",
+  "holds": "In both hands, low in front of him at the height of his hips, he holds exactly one great war horn level across the front of his white robe: a single dark horn bent round in a deep half circle whose curve hangs down over the robe to his knees, its narrow gold mouthpiece end in his right hand at his right hip and its wide open bell in his left hand at his left hip, bound with three gold bands. The dark horn shows plainly against the white robe. Nothing else is in his hands.",
+  "pose": "He stands on two legs, calm and watchful, seen from the front, looking out past the viewer, the horn held low across his body in both hands.",
   "must_show": [
    "white robe",
-   "one long dark horn with gold bands, mouthpiece and open bell",
+   "one dark horn bent round in a deep half circle, held low across the front of the robe",
+   "narrow mouthpiece at one end, wide open bell at the other, gold bands",
    "fair face, white-blond hair"
   ],
   "must_not_show": [
@@ -556,7 +557,15 @@
    "horns on a head",
    "skull",
    "dark skin",
-   "bow"
+   "bow",
+   "straight horn",
+   "trumpet",
+   "staff",
+   "pole",
+   "spear",
+   "club",
+   "sickle",
+   "moon"
   ]
  },
  {
@@ -653,11 +662,12 @@
   "body": "item",
   "scale": "medium",
   "key": "magenta",
-  "what": "Gjallarhorn, the god Heimdall's great war horn: one single huge horn cut from an aurochs, a natural horn with no metal valves and no coils, in one long bold curve like a crescent moon. At its left end it is narrow and cut off flat, finished with a short gold mouthpiece ring; from there it widens all along the curve to a broad round open bell at its right end, whose inside is dark. Neither end is pointed. The horn is dark brown-black, polished, and bound by three broad bands of bright yellow gold carved with Norse knotwork, evenly spaced along it, the last round the bell's rim.",
+  "what": "Gjallarhorn, the war horn of the watchman of the Norse gods: one single great natural horn with no metal valves and no coils, bent round in a deep half circle: from its narrow end at the upper left it sweeps down through the bottom of the picture and curves up again to its wide end at the upper right, so the two ends rise at the same height and the curve between them is as deep as the horn is wide. It widens steadily all the way round: the upper left end is narrow and cut off flat, finished with a short gold mouthpiece ring, and the upper right end is a broad round open bell whose dark inside faces up and to the right. Neither end is pointed. The horn is dark brown-black, polished, and bound by three broad bands of bright yellow gold carved with knotwork, evenly spaced round the curve, the last round the bell's rim.",
   "colours": "dark brown-black polished horn with warm brown highlights, three broad bands of bright yellow gold with knotwork, a gold mouthpiece; the bell's inside black.",
-  "pose": "Lying on its side in one bold arc like a smile, the narrow mouthpiece at the left and the wide open bell at the right, both ends at the same height, the whole horn inside the picture.",
+  "pose": "Lying on its side with its deep curve hanging downward, the narrow gold mouthpiece at the upper left, the lowest part of the curve at the bottom middle and the wide open bell at the upper right, the whole horn inside the picture.",
   "must_show": [
-   "one long curved dark horn, narrow mouthpiece to wide open bell",
+   "one dark horn bent round in a deep half circle, both ends raised",
+   "narrow mouthpiece at one end, wide open bell at the other",
    "three broad gold bands"
   ],
   "must_not_show": [
@@ -688,7 +698,19 @@
    "white horn",
    "pair of horns",
    "horns on a head",
-   "strap"
+   "strap",
+   "straight horn",
+   "gently curved horn",
+   "cornucopia",
+   "fruit",
+   "flowers",
+   "moon",
+   "sickle",
+   "letter",
+   "rainbow",
+   "tusk",
+   "ring",
+   "closed circle"
   ]
  }
 ]

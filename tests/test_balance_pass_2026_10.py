@@ -115,18 +115,26 @@ def test_every_material_has_one_tier_and_its_items_inherit_it():
 
 # ------------------------------------------------------------------ hit points
 
-def test_cooking_cap_is_four_per_floor_and_is_a_real_cap():
+def test_cooking_max_hp_has_a_floor_cap_and_no_cap_across_floors():
+    """Brandon, 2026-11-16: "there should be a per floor limit to hp gained,
+    but not a max across several floors... that encourages cooking". The
+    floor's cap (PER_FLOOR_HP_CAP) holds each floor; the lifetime cap of 4 a
+    floor reached (cooking_softcap, 40 at floor 10) is gone."""
     from player import Player
     p = Player()
-    for floor, cap in ((1, 20), (5, 20), (20, 80), (50, 200), (100, 400)):
-        p.deepest_floor_reached = floor
-        assert p.cooking_softcap() == cap
-    p.deepest_floor_reached = 10                 # cap 40
+    assert not hasattr(p, 'cooking_softcap')
+    p.deepest_floor_reached = 10
     base = p.max_hp
-    for _ in range(100):
-        p.increase_max_hp(3, from_cooking=True)
-    assert p.max_hp == base + 40                 # it used to creep on at +1 for ever
-    assert p.cooking_hp_gained == 40
+    for _floor in range(20):                     # twenty floors of meals
+        for _ in range(10):
+            p.try_apply_cook_hp_gain(3)
+        p.reset_floor_cook_caps()
+    assert p.max_hp == base + 20 * p.PER_FLOOR_HP_CAP     # 100, past the old 40
+    assert p.cooking_hp_gained == 20 * p.PER_FLOOR_HP_CAP
+    # Inside one floor the cap is real: no creeping on past it.
+    p.try_apply_cook_hp_gain(3)
+    p.try_apply_cook_hp_gain(3)
+    assert p.try_apply_cook_hp_gain(3) == 0
 
 
 def test_every_proper_meal_builds_max_hp_under_the_floor_cap():

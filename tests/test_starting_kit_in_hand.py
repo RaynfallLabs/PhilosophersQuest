@@ -110,9 +110,10 @@ def test_achilles_spear_takes_one_hand_by_the_iliad():
     p = g.player
     assert p.weapon is not None and p.weapon.id == 'achilles_spear'
     assert p.can_equip_shield()                 # his kit works together
-    sh = next(i for i in p.inventory if type(i).__name__ == 'Shield')
-    p._apply_equip(sh)
-    assert p.shield is sh and p.weapon.id == 'achilles_spear'
+    # ...and it starts on his arm (Brandon 2026-11-16: a figure who fought
+    # with a shield in the lore starts with it on, not in the pack).
+    assert p.shield is not None and p.weapon.id == 'achilles_spear'
+    assert not any(type(i).__name__ == 'Shield' for i in p.inventory)
 
 
 def test_fianna_starts_with_magic_dart_and_fluffs_is_still_a_little_better():

@@ -130,7 +130,7 @@ QUIRK_HINT = {
     'sage_counsel':  "The past rewards those who study it.",
     'ouroboros':     "The serpent that eats its own tail has no end. Neither does the list of answers.",
     'diogenes':      "He threw away his cup when he saw a child drink from cupped hands. Set down what you lean on, and go deeper without it.",
-    'duck_of_doom':  "You should know better than to pick up a duck in a dungeon. If you do, be patient with it.",
+    'duck_of_doom':  "You should know better than to pick up a duck in a dungeon.",
     # --- added 2026-10-04 ---
     'eratosthenes':  "He measured the whole earth with a stick and a shadow. Know the lands well.",
     'aesop':         "The fabulist knew every beast's nature. Learn the animals, one answer at a time.",

@@ -930,7 +930,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             }
         if not hasattr(self.player, 'deepest_floor_reached'):
             # Old save: best estimate is the level_mgr's max_level_reached, falling
-            # back to current dungeon_level so existing cooking remains within softcap.
+            # back to current dungeon_level (it drives the depth caps: feasts' max
+            # MP, a rare food's stat gift).
             _max_lvl = getattr(state.get('level_mgr'), 'max_level_reached', None)
             self.player.deepest_floor_reached = _max_lvl or state.get('dungeon_level', 1)
         if not hasattr(self.player, 'chronicle_seen_materials'):
@@ -1851,9 +1852,15 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         ``aliases``), its name and fields come from today's data, and in the
         pack (and any sack) two stacks that are one ingredient now are
         joined. An id the kitchen does not know at all is still dropped.
+
+        People are not harvested (Brandon, 2026-11-16): a part a person once
+        gave (Bandit Trail Ham, Knight's Marching Ham, Elf-Light Acorn) is the
+        ordinary food it was in his pack now (harvest_map.json
+        ``people_parts``: dried meat, elvish bread), the same count, where
+        it lay.
         """
         import kitchen
-        from items import Ingredient
+        from items import Ingredient, make_item_by_id
 
         valid_ids = set(kitchen.ingredients().keys())
 
@@ -1865,6 +1872,15 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 item = items_list[i]
                 if not isinstance(item, Ingredient):
                     continue
+                food_id = kitchen.person_part_food(getattr(item, 'id', ''))
+                if food_id:
+                    food = make_item_by_id('food', food_id)
+                    if food is not None:
+                        food.count = max(1, int(getattr(item, 'count', 1) or 1))
+                        food.identified = True
+                        food.x, food.y = getattr(item, 'x', 0), getattr(item, 'y', 0)
+                        items_list[i] = food
+                        continue
                 if kitchen.resolve(item.id) not in valid_ids:
                     # Deleted ingredient (assorted/family/legacy) — drop it.
                     items_list.pop(i)
@@ -2849,8 +2865,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             except Exception:
                 pass
 
-        # -- Shield (warriors) ---------------------------------------------
-        # str id = unique shield, tuple = (template_id, material_id)
+        # -- Shield: on the arm from the first turn -------------------------
+        # str id = unique shield, tuple = (template_id, material_id). Only a
+        # figure who fought with a shield in his lore has one (Brandon,
+        # 2026-11-16: "Geralt no, Leonidas yes"), and it is on his arm, as
+        # his weapon is in his hand (his own kit: no quiz). Only a hand
+        # already full with a two-hander leaves it in the pack.
         start_shield = b.get('_start_shield', None)
         if start_shield:
             try:
@@ -2863,9 +2883,13 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 if sh:
                     _mark_starting_item_known(sh)
                     self.player.known_item_ids.add(sh.id)
-                    self.player.inventory.append(sh)
+                    if self.player.shield is None and self.player.can_equip_shield():
+                        self.player._apply_equip(sh)
+                    if self.player.shield is not sh:
+                        self.player.inventory.append(sh)
             except Exception:
-                pass
+                from game_log import log_error
+                log_error('main._give_starting_kit: recovered from an error (shield)')
 
         # -- Accessory (rings/amulets) ------------------------------------
         start_acc = b.get('_start_accessory', None)
@@ -7025,10 +7049,16 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         if corpse is None:
             self.add_message("There is no corpse here to harvest.", 'info')
             return
-        # A person of an encounter (a pilgrim, Gilt Varro, a trader) has no
-        # kin in the kitchen: nothing to harvest, and no question asked or
+        # A person (a brigand, a knight, a cultist, an elf, Gilt Varro) is
+        # never harvested (Brandon, 2026-11-16: "that's weird, we're not
+        # cannibals"): H searches the body for what he carried instead.
+        from food_system import corpse_yield, corpse_is_person
+        if corpse_is_person(corpse):
+            self._search_corpse(corpse)
+            return
+        # A being of an encounter with no family (a pilgrim, a trader) has
+        # no kin in the kitchen: nothing to harvest, and no question asked or
         # corpse spent on it (it gave Acid Blob Bladder: bug bash 3.5.1 A).
-        from food_system import corpse_yield
         if corpse_yield(corpse) is None:
             self.add_message(f"There is nothing on the {corpse.name} you would cook.", 'info')
             return
@@ -7082,6 +7112,26 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         harvest_corpse(self.player, corpse, self.quiz_engine, on_complete,
                        extra_seconds=_lore_bonus)
 
+    def _search_corpse(self, corpse):
+        """H on a person's body: take what he carried, like picking it up
+        (food_system.search_corpse: a couple of ordinary finds of the floor's
+        band). No question; the body is used up and the turn passes. What
+        does not fit stays on the floor."""
+        from food_system import search_corpse
+        px, py = self.player.x, self.player.y
+        if corpse in self.ground_items:
+            self.ground_items.remove(corpse)
+        items, message = search_corpse(self.player, corpse, int(getattr(self, 'dungeon_level', 1) or 1))
+        self.add_message(message, 'loot' if items else 'info')
+        for item in items:
+            if not self.player.add_to_inventory(item):
+                item.x, item.y = px, py
+                self.ground_items.append(item)
+                self.add_message(
+                    f"Too heavy: the {self._display_name(item)} stays on the floor "
+                    f"(your limit is {self.player.get_carry_limit()}).", 'warning')
+        self._advance_turn()
+
     # ------------------------------------------------------------------
     # Cook menu
     # ------------------------------------------------------------------
@@ -7108,8 +7158,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.quiz_title = f"COOKING {ingredient.name.upper()}  --  COOKING"
         self.state = STATE_QUIZ
 
-        # The dish's tier (the band of its deepest ingredient) is its
-        # "quality" for the cooking quirks.
+        # The dish's tier (kitchen.dish_tier: its deepest ingredient's band,
+        # a tier more for a big dish) is its "quality" for the cooking quirks.
         _outcome_tier = _recipe_quiz_tier(_recipe_for_quirk)
         # (the ingredient has just left the pack: its own stamp is read)
         _facts = _cook_facts(self.player, _recipe_for_quirk)
@@ -7175,6 +7225,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             _ruined = bool(messages) and str(messages[0]).startswith(RUINED_PREFIX)
             for i, msg in enumerate(messages):
                 self.add_message(msg, 'warning' if (i == 0 and _ruined) else 'success')
+            # A dish cooked to carry that the pack could not take (parts weigh
+            # nothing, so it can outweigh them: kitchen.make_to_carry) is set
+            # down at the hero's feet.
+            for _food in _kitchen.take_set_down(self.player):
+                _food.x, _food.y = self.player.x, self.player.y
+                self.ground_items.append(_food)
             if not getattr(self, '_chronicle_first_compound', False):
                 self._chronicle_first_compound = True
                 self._chron('milestone', f"Cooked my first proper recipe: {recipe['name']}. The dungeon smelled like a kitchen for once.",

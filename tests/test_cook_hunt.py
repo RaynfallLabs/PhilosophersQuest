@@ -29,7 +29,7 @@ import kitchen  # noqa: E402
 pygame.init()
 
 EVERY_TAB = [('death_dog_prime', 1), ('giant_lizard_prime', 1), ('cave_bear_prime', 1),
-             ('giant_beetle_prime', 1), ('green_slime_prime', 1), ('battle_mage_prime', 1),
+             ('giant_beetle_prime', 1), ('green_slime_prime', 1), ('imp_prime', 1),
              ('crystal_ooze_prime', 1), ('homunculus_prime', 1), ('bone_witch_prime', 1),
              ('goblin_prime', 2), ('cobra_prime', 1), ('fire_beetle_prime', 1),
              ('bread_ration', 2)]

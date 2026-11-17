@@ -12,7 +12,7 @@
     ["Wear armour or a shield", "Geography"],
     ["Put on a ring, amulet or other accessory", "History"],
     ["Blow a horn of legend", "History"],
-    ["Harvest a corpse", "Animals"],
+    ["Harvest a creature's corpse", "Animals"],
     ["Cook", "Cooking"],
     ["Cast a spell or zap a wand", "Science"],
     ["Identify an item", "Philosophy"],
@@ -39,7 +39,8 @@
   {
    "heading": "Only fights are timed",
    "paragraphs": [
-    "The combat clock is the only clock in the game. Every other quiz waits for you, so take the time to read it. Wisdom lengthens the combat clock, and the sidebar's Clock shows how long your next fight will give you."
+    "The combat clock is the only clock in the game. Every other quiz waits for you, so take the time to read it. Wisdom lengthens the combat clock, and the sidebar's Clock shows how long your next fight will give you.",
+    "The sidebar's Streak counts the questions you have answered right in a row, and Math the math questions alone. A wrong answer ends a streak; running out of time does not."
    ]
   },
   {
@@ -95,12 +96,14 @@
   {
    "heading": "Cooking is how you grow",
    "paragraphs": [
-    "Your maximum HP grows only from meals you cook yourself: up to 5 more on each floor. The Meals line under your HP bar shows how much of this floor's growth you have cooked. Going deeper raises the most that cooking can ever give.",
+    "Your maximum HP grows only from meals you cook yourself: up to 5 more on each floor. The Meals line under your HP bar shows how much of this floor's growth you have cooked. Every new floor gives that much room again, with no limit across floors.",
     "Every dish has one main use: HP, SP, MP, a stat, or a special power. The cook menu (C) has a tab for each, Left and Right move between them, and it opens on the one you need most: HP when you are hurt, SP when you are hungry, MP when your mana runs low. Each tab shows what you can cook now and what each dish does for you, then the dishes you are building toward, greyed, with the parts still missing, so you know what to hunt. The legendary feasts are marked in gold.",
     "On a dish you are building toward, H hunts for it, and H again stops. While you hunt, what it still needs shows gold under In Sight: a creature whose harvest gives it, or the part itself lying in view, until you hold it. Hunt as many dishes as you like; a dish you cook leaves the hunt.",
+    "People are never harvested. The body of a bandit, a knight, a cultist or an elf is searched instead: H takes a little ordinary food from what the person carried, with no question.",
     "A dish of several parts gives more than the same parts cooked one at a time, and nothing spoils, so a part saved near the top of the dungeon can go into a feast near the bottom. The Kit (K) says what each part you carry is rich in.",
+    "A rare find of the dungeon has a dish of its own, which the cook menu shows once you hold it. Cooked, it is gone for good.",
     "A few dishes are cooked to carry: the meal goes into your pack, wrapped, to eat later or to give to someone who has been missing it.",
-    "You are what you eat. A stat dish teaches its stat one whole point. The first one you cook on each new floor is that floor's lesson, and the Lesson line under Meals shows whether it is still open. How far a dish can raise a stat depends on its tier, the depth of its deepest part: a simple dish of shallow creatures teaches a stat only so far (up to +8), and deeper creatures teach more (up to +28 from the deepest). Wisdom learns half as far. The cook menu shows each stat dish's limit.",
+    "You are what you eat. A stat dish teaches its stat one whole point. The first one you cook on each new floor is that floor's lesson, and the Lesson line under Meals shows whether it is still open. How far a dish can raise a stat depends on its tier, the depth of its deepest part: a simple dish of shallow creatures teaches a stat only so far (up to +8), and deeper creatures teach more (up to +28 from the deepest). A dish of four ingredients or more is one tier richer. Wisdom learns half as far. The cook menu shows each stat dish's limit.",
     "Rings and amulets of the same stat do not add up: only the strongest one counts. Wear different ones, or cook the stat you want."
    ]
   }

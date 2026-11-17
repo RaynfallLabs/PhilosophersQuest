@@ -1,0 +1,109 @@
+# People: the kinds whose body is SEARCHED, never harvested (Brandon,
+# 2026-11-16: "Humans are not harvested. That's weird, we're not cannibals").
+# H on a person's body takes a couple of ordinary finds from what the person
+# carried (data/cooking_rules.json "search"; food_system.search_corpse): no
+# question, the body used up, like picking something up.
+#
+# Who is a person is decided by lore: humans and the human-like folk (elves,
+# dwarves, halflings, gnomes, named people). Goblinoids, orcs, gnolls,
+# kobolds, lizardfolk, giants, ogres and the undead stay as they were. The
+# build writes this list to data/items/harvest_map.json "people"; a kind on it
+# is in no kin group and yields no ingredient. A creature monsters.json does
+# not know (Gilt Varro of the racing camp) is a person when its body says it
+# is one of the mortals (kitchen.is_person).
+#
+# The calls on the kinds at the edge (each is in the report to Brandon):
+#   * werewolf, werewolf_alpha, elder_werewolf, werebear, wererat, weretiger:
+#     a beast-curse on a man, but Ovid's Lycaon stayed a wolf, and down here
+#     they die as beasts. Harvested.
+#   * yuan_ti_pureblood: serpent folk who only pass for human. Harvested.
+#   * green_hag, sea_hag, annis_hag, night_hag: fey spirits of ponds and
+#     nightmares (Jenny Greenteeth, the mare). Harvested.
+#   * baba_yaga: the iron-toothed witch-spirit of the Russian tales; what she
+#     gives is a spark from her oven, not flesh. Harvested.
+#   * green_knight: an enchanted giant of the fey; his trophy is his holly
+#     bough. Harvested.
+#   * erlking: Goethe's elf-king is a death spirit in the mist; his part is
+#     a mist-acorn. Harvested.
+#   * leprechaun, leprechaun_hostile, spriggan, redcap, boggart, changeling,
+#     puca, satyr_warrior, satyr_trickster, pixie_swarm, wild_hunt_captain:
+#     fairies and spirits, not folk; their parts are glows and sparks.
+#     Harvested.
+#   * old_nickel: a kobold (the miners' spite of the deep shafts). Harvested.
+#   * tengu_warrior, sobek_warrior, kusarikku, deep_one_priest, lamia, medusa
+#     and the gorgons, harpy: beast-folk of myth. Harvested.
+#   * wendigo, neferkaptah_risen, death_mage and the undead necromancers:
+#     undead. Harvested (Brandon's rule for the undead).
+#   * necromancer_apprentice: a living man who has only begun the art.
+#     A person.
+#   * einherjar: Odin's chosen dead, whole again in Valhalla, who ride out of
+#     Gjallarhorn's call. A person (his ghost, einherjar_ghost, stays a ghost).
+#   * sown_warrior: Cadmus's men grown from the dragon's teeth. A person.
+#   * mind_flayer_thrall: a scholar or a soldier once, his mind taken. A person.
+#   * dark_elf, drow_*, light_elf_hostile, huldufolk_raider: elves and the
+#     hidden folk. People. nibelung_hoardwarden: a dwarf. A person.
+
+# The mortal foes (the mortals family)
+brigand
+bandit_captain
+bandit_archer
+bandit_thug
+bandit_thief
+bandit_kingpin
+morrow
+dark_cultist
+cult_initiate
+cult_priest
+cult_zealot
+cult_hierophant
+locust_cultist
+locust_herald
+necromancer_apprentice
+battle_mage
+mercenary_veteran
+veteran_knight
+palace_guard
+villager_mob
+black_knight
+sown_warrior
+iron_patriarch
+mind_flayer_thrall
+snake_charmer
+viper_priestess
+harrow_witch
+plague_witch
+endor_medium
+mage_slayer_assassin
+shadow_assassin
+shadow_archer
+autolycus_heir
+veiled_inquisitor
+
+# The horns' allies (horns.py): Robin Hood's men, Arthur's knights, the
+# einherjar, Charlemagne's host
+little_john
+will_scarlet
+friar_tuck
+much_the_millers_son
+alan_a_dale
+yeoman_archer
+king_arthur
+sir_lancelot
+sir_gawain
+sir_percival
+sir_bedivere
+sir_kay
+einherjar
+charlemagne
+duke_naimes
+ogier_the_dane
+frankish_knight
+
+# Elves, the hidden folk and the dwarves
+dark_elf
+drow_warrior
+drow_mage
+drow_priestess
+light_elf_hostile
+huldufolk_raider
+nibelung_hoardwarden

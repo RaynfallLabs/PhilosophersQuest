@@ -461,8 +461,8 @@ HERO_JOURNAL: dict[str, str] = {
         "right word at the right moment, and a horse with a hollow belly.",
     "merlin ambrosius":
         "Merlin Ambrosius — half-incubus, fully magician. I trained Arthur "
-        "before he was a king. The stars listen when I call them. The dungeon "
-        "should worry.",
+        "before he was a king. The stars listen when I call them, and my staff "
+        "holds a chip of the stones I once moved. The dungeon should worry.",
     "geralt of rivia":
         "Geralt of Rivia, witcher of the Wolf School. Mutated, augmented, "
         "preternaturally calm. Toss a coin to me; I'll do the rest.",

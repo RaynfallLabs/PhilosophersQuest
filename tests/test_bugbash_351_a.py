@@ -88,68 +88,69 @@ def test_a1_hunters_harvest_never_doubles_a_boss_trophy():
 
 
 # ---------------------------------------------------------------------------
-# A2. The cook menu promised max HP the lifetime cap would not give.
+# A2. The cook menu promised max HP the meal would not give. (It read the
+# floor's cap and not the lifetime one; since 2026-11-16 there is no lifetime
+# cap, Brandon: "a per floor limit to hp gained, but not a max across several
+# floors", so the floor's cap is all the menu and the meal read.)
 # ---------------------------------------------------------------------------
 
 def _max_hp_lines(lines):
     return [ln for ln in lines if 'Max HP' in ln]
 
 
-def test_a2_menu_max_hp_reads_the_lifetime_cap_too():
-    """Max HP from cooking stops at 4 a floor reached (cooking_softcap),
-    and the floor's cap (5) is more than that: a hero who cooks every floor
-    sits at the lifetime cap from about floor 4 on. The menu read only the
-    floor's cap and said "+5 Max HP" to a hero who then got nothing, and the
-    meal blamed the floor. It says what the meal will really give now."""
-    p = _player(deepest=5)
-    p.cooking_hp_gained = p.cooking_softcap()            # the depth's cap is full
+def test_a2_menu_max_hp_reads_the_floors_cap_and_nothing_across_floors():
+    """What the menu says is what the meal gives: the room left on this
+    floor. A hero who has cooked a great deal of max HP over many floors (an
+    old save's tally far past the old cap of 4 a floor) still grows."""
     dish = kitchen.recipe('cook_troll')                  # an HP dish
+    p = _player(deepest=5)
+    p.cooking_hp_gained = 500                            # far past the old lifetime cap of 20
     lines = kitchen.dish_effects(p, dish)
-    assert _max_hp_lines(lines) == ['Max HP: all cooking can give at this depth'], lines
+    gain = min(kitchen.dish_outcome(dish)['max_hp'], p.PER_FLOOR_HP_CAP)
+    assert _max_hp_lines(lines) == [f'+{gain} Max HP'], lines
     before = p.max_hp
     msgs = kitchen.apply_dish(p, dish)
-    assert p.max_hp == before
-    assert any('at this depth' in m for m in msgs), msgs
-    assert not any('this floor' in m for m in msgs), msgs
-    # Two points of room left: the menu says +2, the meal gives 2.
+    assert p.max_hp - before == gain
+    assert not any('at this depth' in m for m in msgs), msgs
+    # Two points of the floor's room left: the menu says +2, the meal gives 2.
     p = _player(deepest=5)
-    p.cooking_hp_gained = p.cooking_softcap() - 2
+    p._cook_hp_gain_this_floor = p.PER_FLOOR_HP_CAP - 2
     lines = kitchen.dish_effects(p, dish)
     assert '+2 Max HP' in lines, lines
     before = p.max_hp
     kitchen.apply_dish(p, dish)
     assert p.max_hp - before == 2
-    # The floor's cap still reads as the floor's.
+    # The floor's cap still reads as the floor's, and the meal says so.
     p = _player(deepest=30)
     p._cook_hp_gain_this_floor = p.PER_FLOOR_HP_CAP
     assert 'Max HP full this floor' in kitchen.dish_effects(p, dish)
+    msgs = kitchen.apply_dish(p, dish)
+    assert any('this floor' in m for m in msgs), msgs
+    assert not hasattr(kitchen, 'MAX_HP_FULL_DEPTH') and not hasattr(kitchen, 'lifetime_hp_room')
 
 
 def test_a2_a_feasts_max_hp_for_good_is_what_the_feast_gives():
-    """Sigurd's Hearth Roast said "+8 Max HP for good" with one point of
-    the lifetime cap left, and gave 1."""
+    """Sigurd's Hearth Roast says "+N Max HP for good" and gives N: past the
+    floor's cap, with no cap across floors whatever the hero has cooked."""
     feast = kitchen.recipe('feast_05')
-    for left in (0, 1, 3, 30):
+    val = kitchen.dish_outcome(feast)['permanent'][1]
+    for tally in (0, 240, 2000):
         p = _player(deepest=60)
-        p.cooking_hp_gained = p.cooking_softcap() - left
+        p.cooking_hp_gained = tally
         p._cook_hp_gain_this_floor = p.PER_FLOOR_HP_CAP     # the floor's share already cooked
         lasting = kitchen.dish_lasting(p, feast)
         assert all(line in kitchen.dish_effects(p, feast) for line in lasting)
+        assert f"+{val} Max HP for good" in lasting, lasting
         before = p.max_hp
         kitchen.apply_dish(p, feast)
-        got = p.max_hp - before
-        assert got == min(left, 8)
-        want = f"+{got} Max HP for good" if got else "No more Max HP for good at this depth"
-        assert want in lasting, (left, lasting)
-    # The meal's own max HP lands first, inside the same lifetime cap.
+        assert p.max_hp - before == val
+    # The meal's own max HP lands inside the floor's room, the feast's on top.
     p = _player(deepest=60)
-    p.cooking_hp_gained = p.cooking_softcap() - 6
-    first = min(kitchen.dish_outcome(feast)['max_hp'], p.PER_FLOOR_HP_CAP, 6)
+    first = min(kitchen.dish_outcome(feast)['max_hp'], p.PER_FLOOR_HP_CAP)
     assert f"+{first} Max HP" in kitchen.dish_effects(p, feast)
-    assert kitchen.dish_lasting(p, feast)[0] == f"+{6 - first} Max HP for good"
     before = p.max_hp
     kitchen.apply_dish(p, feast)
-    assert p.max_hp - before == 6
+    assert p.max_hp - before == first + val
 
 
 # ---------------------------------------------------------------------------
@@ -321,9 +322,11 @@ def test_a8_a_persons_corpse_is_not_acid_blob():
     Gilt Varro, the dead hero's ghost) fell to the nearest-kin fallback with
     no family, which took the first part in the book: the corpse of a
     murdered pilgrim gave Acid Blob Bladder. Now a corpse with a family
-    gives its kin's part (Varro, a mortal, his provisions; the ghost,
-    ectoplasm), and one with none yields nothing, said before any question
-    is asked, the corpse left where it lies."""
+    gives its kin's part (the ghost, ectoplasm), and one with none yields
+    nothing, said before any question is asked, the corpse left where it
+    lies. Gilt Varro, a mortal, is a person: never harvested (Brandon,
+    2026-11-16), his body searched with no question for the ordinary food
+    he carried."""
     from monster import Monster
     import bococho_encounter as be
     g = _game()
@@ -349,17 +352,27 @@ def test_a8_a_persons_corpse_is_not_acid_blob():
     assert p.inventory == pack_before
     assert any(getattr(i, 'monster_id', '') == 'npc_traveler' for i in g.ground_items)
     assert 'nothing on the' in str(g.msg_log.entries[-1][0])
-    # Gilt Varro is a mortal: what a mortal of his depth carries.
+    # Gilt Varro is a mortal, a person: searched, no question, what he
+    # carried (ordinary food, never a part of him), and his body used up.
     varro = be.make_creature('varro', p.x, p.y, 55)
     g.ground_items = [i for i in g.ground_items if getattr(i, 'monster_id', '') != 'npc_traveler']
     g.monsters.append(varro)
     varro.alive, varro.hp = False, 0
     g._on_monster_killed(varro)
+    held_before = kitchen.held_counts(p.inventory)
     _press(g, pygame.K_h, 'h')
-    assert len(asked) == 1
-    got = [i for i in p.inventory if i not in pack_before]
-    assert len(got) == 1 and got[0].id != 'acid_blob_prime'
-    assert kitchen.ingredients()[got[0].id]['family'] == 'mortals'
+    assert not asked
+    # (A find may join a stack the pack already holds: count, not objects.)
+    after = kitchen.held_counts(p.inventory)
+    got = {k: after[k] - held_before.get(k, 0) for k in after if after[k] > held_before.get(k, 0)}
+    assert 1 <= sum(got.values()) <= 2, got
+    for fid in got:
+        assert fid != 'acid_blob_prime'
+        assert not kitchen.is_harvested(fid), fid
+        assert fid in kitchen.foods() or kitchen.part_kind(fid) == 'forage', fid
+    assert not any(getattr(i, 'monster_id', '') == getattr(varro, 'kind', '') for i in g.ground_items)
+    assert 'You search the' in str(g.msg_log.entries[-1][0]) or any(
+        'You search the' in str(e[0]) for e in g.msg_log.entries[-3:])
     # A ghost of a past hero: ectoplasm, a ghost's part.
     from food_system import corpse_ingredient
     ghostly = corpse_ingredient('player_ghost', 'ghosts', 30)

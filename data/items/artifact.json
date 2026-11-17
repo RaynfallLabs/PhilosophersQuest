@@ -1204,7 +1204,7 @@
     "id_level": 0,
     "is_unique": true,
     "unidentified_name": "a great ivory horn bound in gold",
-    "lore": "Roland's horn, carved from one elephant's tusk and bound in gold. At Roncevaux his friend Oliver begged him three times to blow it and call Charlemagne back to save the rear guard, and three times Roland was too proud. When at last he blew it, he blew so hard that his temples burst. Charlemagne heard it thirty leagues off. Ganelon told him it was nothing; Duke Naimes told him no man blows like that unless he is fighting. The host turned back, too late for the rear guard, and avenged it. There is a crack along the mouthpiece. It still sounds. He asked for it to be blown at the last gate, so the rear guard is remembered.",
+    "lore": "Roland's horn, carved from one elephant's tusk and bound in gold. At Roncevaux, with the Saracens coming over the hills in their thousands, his friend Oliver begged him three times to blow it while Charlemagne was still near enough to turn back. Three times Roland was too proud. He blew it only when the rear guard was dying, so hard that his temples burst, and Charlemagne heard it thirty leagues off and came back at the gallop to find them all dead. Help called from far away comes late: blow it before the fight, then give ground and hold on until it comes. There is a crack along the mouthpiece. Roland asked for it to be blown at the last gate, so the rear guard is remembered.",
     "special_properties": {
       "identified": true,
       "plot_role": "roland_promise",
@@ -1216,7 +1216,7 @@
     },
     "_meta": {
       "plot_locked": true,
-      "sources": "The Song of Roland (Oxford manuscript), laisses 83-85 and 133-135: Oliver's three pleas, the horn heard thirty leagues off, Ganelon's 'it is nothing', Naimes' 'he is in battle', the host turning back. The power is in data/horns.json."
+      "sources": "The Song of Roland (Oxford manuscript), laisses 83-85 and 133-135: Oliver's three pleas, the horn heard thirty leagues off, Ganelon's 'it is nothing', Naimes' 'he is in battle', the host turning back. The power is in data/horns.json; the lore retold 2026-11-16 so it teaches the legend's lesson (Grokipedia, Song of Roland; Wikipedia, The Song of Roland)."
     }
   },
   "robin_hoods_horn": {

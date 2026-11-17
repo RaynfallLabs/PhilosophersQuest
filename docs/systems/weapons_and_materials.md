@@ -449,11 +449,13 @@ Every unique has at least one distinctive mechanic. The audit of 2026-05-30 coun
 | **Vulcan's Brand** | `effects: {status: burning, effect_chance: 0.3, effect_duration: 5}`, `material: volcanic_iron` | **v2.18.0 fix:** material id corrected from `"volcanic iron"` (space) to `"volcanic_iron"` so effective_against tags (ice/frost) apply. On-hit burn status via Weapon.effects (wire-up 2026-05-30). |
 | **Kladenets (Samosek)** | `_note: "design_intent: counterAttackChance=0.25 ..."` | **v2.18.0 fix:** removed inert `counterAttackChance: 0.25` field. Added `_note` recording the Slavic "Sword That Fights Itself" counter-attack design, flagged for a future passive-defense hook. |
 | **Punch in the Face** | `base_damage: 35`, `material: dad` | Dad-tier joke. Not part of the balance curve. Material lookup silently returns 1.0× — the base_damage carries the gag. |
+| **Staff of Emrys** (2026-11-16) | `spell_tier_ease: 1`, `on_equip_status: magic_resist`, two-handed, base 8 at maths tier 1, `min_level: 9999` | Merlin's own staff, his starting weapon. Art over strength (he moved the Giants' Dance by art where no army could): a spell cast with it in hand asks its science question a tier easier, never below 1, and still lands at its own tier's power (`MagicMixin._staff_spell_ease`, `_start_spell_quiz`). His ward (no enchantment held him but the one he taught Nimue): Magic Resist while it is in hand. A walking staff, not a war staff: its blows fade with depth, its art does not. Never random loot; any hero but Merlin can earn it at Merlin's stone (floors 10-16, [quests_mysteries](quests_mysteries.md) §2.13). The card says "Spells you cast with it in hand ask an easier science question" and "In hand: Magic Resist". |
 
 ### Full proc field list
 
 See `src/items.py::Weapon.__init__` lines 379–627 for the schema. Field count by category:
 
+- **Casting** (1): `spell_tier_ease` (Staff of Emrys).
 - **On-equip status / aura** (6): `on_equip_status`, `wielder_fire_immunity`, `wielder_status_immunity`, `equipped_light_aura`, `equipped_monster_aggro_radius`, `equipped_sound_radius_modifier`, `equipped_ally_aura_buff_str`.
 - **Chain modifiers** (7): `cannot_miss`, `cannot_miss_before_hurt`, `one_shot_chain_save_per_floor`, `chain_bonus_on_low_hp_window`, `skip_chain_warmup_vs_tag`, `chain_no_reset_on_tag`, `chain_modulated_reach`.
 - **At-max / per-chain-rung procs** (10): `multi_arrow_at_chain_5`, `boss_doom_dot_at_chain_5`, `chain_lightning_at_chain_n`, `damage_double_vs_resistant_at_max`, `reveal_tag_on_chain_5_kill`, `return_to_hand_ward`, `chain_tier_status_table`, `every_hit_secondary_target`, `combat_start_aoe_confuse_chance`, `surrounded_proc_bonus`.

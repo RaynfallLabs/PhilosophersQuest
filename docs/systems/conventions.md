@@ -132,7 +132,7 @@ that the **game flows** — not tier-scaled loot.
   deleted.
 - Harvest v4: one animal Q at `corpse.harvest_tier`. Right = its kin's
   ingredient OR a boss trophy (`harvest_map.json`). Wrong = corpse gone.
-- Cook: one cooking Q at the dish's tier (its deepest ingredient's band).
+- Cook: one cooking Q at the dish's tier (its deepest ingredient's band, one more for four parts or more).
   Right = the dish applied (`kitchen.apply_dish`: SP, a heal, max HP and
   its main benefit; a permanent bonus for feasts and trophies). Wrong = ruined
   meal.

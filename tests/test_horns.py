@@ -87,7 +87,7 @@ def test_the_horns_data_is_whole():
         table = h['allies_by_chain']
         assert len(table) == 6 and table[0] == 0 and table == sorted(table) and table[1] >= 2
         assert len(h['roster']) >= table[-1]
-        assert h['turns'] >= 20
+        assert h['turns'] == 10                    # Brandon 2026-11-16: down from 25 and 30
         for key in ('raise', 'fail', 'arrive', 'leave', 'chronicle', 'chronicle_fail'):
             assert h['lines'].get(key), (hid, key)
         assert 'Once a run.' in h['desc'] and len(h['desc']) <= 100     # whole at the smallest window
@@ -117,19 +117,42 @@ def _band_damage(hid):
 
 def test_the_allies_are_sized_from_their_tier_and_help_one_hard_fight():
     """LORE, NOT FLOOR: their numbers are written, and they rise with their
-    horn's tier. A full band's stay (about three turns in five at blows) is
-    about a dozen ordinary monsters of its tier: one hard fight, not a floor."""
+    horn's tier. Every stay is ten turns (Brandon, 2026-11-16: the old 25
+    and 30 "may be too strong"), so a full band (about three turns in five at
+    blows) deals about four or five ordinary monsters of its tier: a
+    war-band's followers or a third of a mini-boss, still worth the call, and
+    never a floor. (It was about a dozen at the old stays; the allies' own
+    numbers did not change.)"""
     from floor_curve import target_hp
     floors = {'robin_hoods_horn': 15, 'arthurs_bugle': 50, 'gjallarhorn': 75, 'olifant': 90}
     per_turn = [_band_damage(h) for h in HORNS]
     assert per_turn == sorted(per_turn)
     for hid in HORNS:
+        assert horns.turns(hid) == 10, hid
         stay = _band_damage(hid) * horns.turns(hid) * 0.6
-        dozen = stay / target_hp(floors[hid])
-        assert 8 <= dozen <= 18, (hid, round(dozen, 1))
+        worth = stay / target_hp(floors[hid])
+        assert 3.5 <= worth <= 6, (hid, round(worth, 1))
     # And mortals of tier one matter less the deeper they are called: the
     # same band against floor 90's monsters is a fraction of one.
-    assert _band_damage('robin_hoods_horn') * 25 * 0.6 < target_hp(90)
+    assert _band_damage('robin_hoods_horn') * horns.turns('robin_hoods_horn') * 0.6 < target_hp(90)
+
+
+def test_the_olifant_tells_rolands_legend_so_the_lesson_is_plain():
+    """Brandon, 2026-11-16: the kid must see he blows it early and falls
+    back, and the lore must tell the legend (Roland too proud at Roncevaux,
+    Charlemagne coming from far off, too late). Told in words, never as a
+    count of turns: on the item, the power and the moment of sounding."""
+    lore = ART['olifant']['lore']
+    for words in ('Roncevaux', 'Oliver', 'too proud', 'thirty leagues', 'comes late',
+                  'blow it before the fight', 'give ground'):
+        assert words in lore, words
+    h = horns.horn('olifant')
+    assert 'blow it early, then fall back' in h['desc']
+    assert 'Give ground, and hold on until it comes' in h['lines']['far']
+    import re
+    for text in (lore, h['desc'], h['lines']['far']):
+        assert not re.search(r'\d', text), text           # the lesson, not the mechanic
+    assert horns.delay('olifant') == 12                    # the delay itself stays
 
 
 def test_the_three_paths_are_placed_once_a_run_on_their_floors():
@@ -526,9 +549,14 @@ def test_the_einherjar_never_kill_fenrir_nor_any_gate_guardian():
     _sound(g, 'gjallarhorn', 5)
     band = _called(g)
     assert len(band) == 8 and all(a.available_specials() == [] for a in band)   # no binding
-    a = band[0]
-    free = [(a.x + dx, a.y + dy) for dx in (-1, 0, 1) for dy in (-1, 0, 1) if dx or dy]
-    free = [t for t in free if g.dungeon.is_walkable(*t) and t not in g._occupants()]
+    def _free_around(m):
+        ts = [(m.x + dx, m.y + dy) for dx in (-1, 0, 1) for dy in (-1, 0, 1) if dx or dy]
+        return [t for t in ts if g.dungeon.is_walkable(*t) and t not in g._occupants()]
+    # A band of eight can crowd a corridor and box its first man in (seeds 12
+    # and 36 left him fewer than two free tiles): the wolf and the rat stand
+    # beside whichever of them has room.
+    _a, free = max(((m, _free_around(m)) for m in band), key=lambda p: len(p[1]))
+    assert len(free) >= 2, free
     wolf = Monster(dict(MONS['fenrir_wolf'], id='fenrir_wolf'), *free[0])
     wolf.hp = 1                                            # one blow would end him
     kin = Monster(dict(MONS['giant_rat'], id='giant_rat'), *free[1])
@@ -550,7 +578,9 @@ def test_the_item_card_says_what_the_horn_does_and_whether_it_is_spent():
     it = _give(g, 'olifant')
     words = [t for t, _c, _f in g._lore_item_mechanic_lines(it, 5)]
     assert 'Horn of legend' in words and 'Power (V): Blow the Olifant' in words
-    assert 'Ready, once a run' in words and 'They come 12 turns after the call' in words
+    assert 'Ready, once a run' in words
+    assert 'They come late, from far off: blow it before the fight' in words
+    assert not any('12' in w for w in words)              # the lesson, not a count
     assert "They never strike a gate's guardian" in words
     _sound(g, 'olifant', 2)
     assert 'On the road to you' in [t for t, _c, _f in g._lore_item_mechanic_lines(it, 5)]
@@ -620,3 +650,79 @@ def test_the_qa_key_sets_each_path_beside_the_hero_then_every_horn_ready():
     assert all(_has(g, h) for h in HORNS) and horns.sounded(g.player) == set()
     g._open_power_menu()
     assert {horns.power_id(h) for h in HORNS} <= {p[0] for p in g._power_menu_list}
+
+
+# ---------------------------------------------------------------- the Seeker
+
+@pytest.fixture
+def seeker(tmp_path):
+    import seeker_codes
+    import seeker_profile
+    saved = seeker_codes._KEYS_OVERRIDE, seeker_profile._DIR_OVERRIDE
+    seeker_codes._KEYS_OVERRIDE = {'label': 'pq1', 'keys': {'pq1': bytes(range(32))}}
+    seeker_profile._DIR_OVERRIDE = str(tmp_path / 'seekers')
+    seeker_profile.set_active('Robyn')
+    yield 'Robyn'
+    seeker_codes._KEYS_OVERRIDE, seeker_profile._DIR_OVERRIDE = saved
+
+
+def _won(g, aid):
+    return g._seeker is not None and g._seeker.profile.is_unlocked(aid)
+
+
+def test_each_path_won_the_myths_way_is_its_achievement(seeker):
+    """Brandon, 2026-11-16: the achievements point at the three paths. Each
+    fires on its path's own deed, through the real encounter."""
+    g = _game(name='__test_horns_badges__')
+    assert g._seeker is not None
+    _open(g, _meet(g, 15, 'flv_robin_hood_bridge'))
+    _pick(g, 'Cut a staff and meet him on the bridge', quiz=PASS)
+    _continue(g)
+    assert _won(g, 'neither_would_give_way')
+    _open(g, _meet(g, 50, 'flv_sleepers_under_the_hill'))
+    for label in ('Draw the sword', 'Cut the garter with it'):
+        _pick(g, label)
+        _continue(g)
+    assert not _won(g, 'not_yet_the_hour')               # two of the three is not the waking
+    _pick(g, 'Blow the bugle', quiz=PASS)
+    _continue(g)
+    assert _won(g, 'not_yet_the_hour')
+    _open(g, _meet(g, 74, 'flv_heimdalls_watch'))
+    _pick(g, 'Keep the watch with him', quiz=PASS)
+    _continue(g)
+    assert _won(g, 'one_who_listens')
+
+
+def test_a_path_lost_or_left_is_no_achievement(seeker):
+    g = _game(name='__test_horns_no_badges__')
+    _open(g, _meet(g, 15, 'flv_robin_hood_bridge'))
+    _pick(g, 'Cut a staff and meet him on the bridge', quiz=FAIL)
+    _continue(g)
+    _open(g, _meet(g, 50, 'flv_sleepers_under_the_hill'))
+    for label in ('Draw the sword', 'Cut the garter with it'):
+        _pick(g, label)
+        _continue(g)
+    _pick(g, 'Sheathe the sword')
+    _continue(g)
+    _open(g, _meet(g, 74, 'flv_heimdalls_watch'))
+    _pick(g, 'Leave him to his watch')
+    _continue(g)
+    for aid in ('neither_would_give_way', 'not_yet_the_hour', 'one_who_listens'):
+        assert not _won(g, aid), aid
+
+
+def test_the_path_achievements_point_at_the_source_not_the_mechanic():
+    """Very light hints that name the ballad, the legend or the Eddas, never
+    the quiz, the horn or the hero's part; each lists its spoiler words."""
+    data = _load('data', 'achievements.json')
+    by = {a['id']: a for a in data['achievements']}
+    sources = {'neither_would_give_way': 'ballad', 'not_yet_the_hour': 'Roman Wall',
+               'one_who_listens': 'Eddas'}
+    for aid, source in sources.items():
+        a = by[aid]
+        assert a['category'] == 'secrets' and source in a['hint'], aid
+        assert len(a['hint']) <= 120, aid
+        low = a['hint'].lower()
+        assert a['spoiler_words'] and not any(w in low for w in a['spoiler_words']), aid
+        for word in ('quiz', 'math', 'history', 'chain', 'horn', 'win', 'beat'):
+            assert not __import__('re').search(rf'\b{word}\b', low), (aid, word)

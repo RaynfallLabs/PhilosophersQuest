@@ -155,7 +155,32 @@ TAUGHT = {
     'oaths': r'promise',
     'the Emberpup': r'fire lizard',
     'Old Nickel': r'old nickel',
+    # The horns of legend's paths (Brandon, 2026-11-16), each at its depth's
+    # tier and pointing at its source: the ballad, the legend, the Eddas,
+    # the Song of Roland.
+    "Robin Hood's bridge": r'quarterstaff on a narrow bridge',
+    'the sleepers under the hill': r'never blew the bugle-horn',
+    "Heimdall's watch": r'hears the grass grow',
+    "the Olifant's lesson": r'call for help early',
+    # Merlin's stone (the path to the Staff of Emrys, floors 10-16): Malory's
+    # stone a hundred men could not lift, and Geoffrey's art over strength.
+    "Merlin's stone": r'art, not by strength',
+    # Brandon, 2026-11-16: people are searched, never harvested; a special
+    # find has a dish of its own.
+    "a person's body is searched": r'what a fallen man carried',
+    'a rare find cooks into its own dish': r'more in a pot than in a pocket',
 }
+
+
+def test_each_horn_path_hint_sits_at_its_depths_tier():
+    """Tier = depth / 20: the bridge (floors 12-18) at 1, the sleepers
+    (45-55) at 3, Heimdall (70-78) at 4, Roland (86-92) at 5."""
+    for tier, pat in (('1', TAUGHT["Robin Hood's bridge"]),
+                      ('1', TAUGHT["Merlin's stone"]),
+                      ('3', TAUGHT['the sleepers under the hill']),
+                      ('4', TAUGHT["Heimdall's watch"]),
+                      ('5', TAUGHT["the Olifant's lesson"])):
+        assert any(re.search(pat, h, re.I) for h in POOL[tier]), (tier, pat)
 
 
 @pytest.mark.parametrize('system', sorted(TAUGHT))

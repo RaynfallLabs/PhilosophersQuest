@@ -17,7 +17,7 @@ REAL (the game's own code and data are called):
                       player goes through Monster.attack(player) (THAC0 vs
                       AC, min hit chance, multi-attack, gaze, rage, on-hit
                       effects and saving throws) and Monster.tick_effects().
-  * the player        player.Player: max HP, cooking softcap, get_ac(),
+  * the player        player.Player: max HP, the cooking caps, get_ac(),
                       take_damage(), status effects, saving throws, the quiz
                       timer. Gear goes on through Player._apply_equip().
   * the player's hit  combat.player_attack(): weapon base x chain^exponent,
@@ -213,11 +213,13 @@ def install_caches() -> None:
     """The simulator's process-wide patches: the item cache above, and
     bones.load_bones() stubbed out (it creates a folder in the save dir and
     can DELETE a bones file, level_manager.py:110-115; the simulator must
-    never do that). Installed by run_cell and the command line (and the
-    tools that play Runs themselves), never at import: a test process that
-    imported this module for one check handed every later test in it the
-    same shared item objects, and the ring-appearance tests failed when one
-    stamped a look on a cached ring (2026-11-16, under xdist)."""
+    never do that). Installed by run_cell, the command line and the tools
+    that play the simulator's pieces themselves, never at import. A test
+    process that imported this module for one check handed every later test
+    in it the same shared item objects: the capture harness stacked onto
+    them, so the iron arrows doubled scene after scene and the UI gates read
+    "Carrying 555328316629214848 / 100" (the serial run before 3.5.3,
+    2026-11-16; the ring-appearance tests failed the same way under xdist)."""
     global _CACHES_ON
     if _CACHES_ON:
         return
@@ -226,7 +228,6 @@ def install_caches() -> None:
         if getattr(_mod, 'load_items', None) is _real_load_items:
             setattr(_mod, 'load_items', _cached_load_items)
     _CACHES_ON = True
-
 
 _POOL_CACHE = {}
 
@@ -2674,6 +2675,17 @@ class Run:
         saver = bool(self.prof.get('saver')) and float(self.prof.get('cooks_per_floor', 0) or 0) > 0
         while self.corpses and (self.cooks_left > 0 or (saver and self.hunt_left > 0)):
             kind = self.corpses.pop(0)
+            if kind and kitchen_mod.is_person(kind):
+                # A person is searched, never harvested (Brandon, 2026-11-16:
+                # main.Game._search_corpse): no question, a couple of
+                # ordinary finds of the floor's band, the body used up.
+                self.corpses_used += 1
+                for fid in food_system_mod.search_finds(kind, self.floor):
+                    item = food_system_mod.make_find(fid)
+                    if item is not None:
+                        (self.food if fid in kitchen_mod.foods() else self.pantry).append(item)
+                self.fs['searches'] = self.fs.get('searches', 0) + 1
+                continue
             if self.cooks_left <= 0:
                 # past the floor's ordinary harvests: a saver still takes the
                 # part a dish he is building needs (the menu's building rows)
@@ -4076,6 +4088,7 @@ def summary_line(res: dict) -> str:
 # =============================================================================
 
 def main(argv=None):
+    install_caches()
     ap = argparse.ArgumentParser(
         description="Monte Carlo difficulty simulator for Philosopher's Quest.")
     ap.add_argument('--floors', default='1-100',

@@ -7285,5 +7285,76 @@
     "identified": false,
     "id_level": 0,
     "chain_exponent": 1.15
+  },
+  "staff_of_emrys": {
+    "name": "Staff of Emrys",
+    "class": "staff",
+    "variant": "2h",
+    "tier": 1,
+    "material": "wood",
+    "mathTier": 1,
+    "baseDamage": 8,
+    "chainMultipliers": [
+      0.5,
+      0.85,
+      1.0,
+      1.45,
+      2.0
+    ],
+    "maxChainLength": 5,
+    "damageTypes": [
+      "blunt"
+    ],
+    "symbol": "/",
+    "color": [
+      120,
+      88,
+      56
+    ],
+    "weight": 4.0,
+    "twoHanded": true,
+    "reach": 1,
+    "stunChance": 0.0,
+    "bleedChance": 0.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 0,
+      "81-100": 0
+    },
+    "containerLootTier": "legendary",
+    "value": 900,
+    "min_level": 9999,
+    "identified": false,
+    "unidentified_name": "a knotted hawthorn staff with a grey stone in its crook",
+    "lore": "Merlin's own staff, cut from a hawthorn, its head grown round into a crook that grips a chip of grey stone. As a boy he stood before King Vortigern, whose tower kept falling down, and told him why: under it lay a pool, and in the pool slept a red dragon and a white one, who woke and fought. When no army could shift the Giants' Dance, the great ring of stones in Ireland, Merlin moved every stone by his art and stood them up again on Salisbury Plain, where they still stand as Stonehenge; the chip in the crook is from one of them. No enchantment could hold him but his own, and he taught that one to Nimue.",
+    "quiz_tier": 1,
+    "damage_types": [
+      "blunt"
+    ],
+    "template_basis": "quarterstaff",
+    "spread": 0,
+    "peak_floor": 0,
+    "chain_multipliers": [
+      0.5,
+      0.85,
+      1.0,
+      1.45,
+      2.0
+    ],
+    "peak_weight": 0.0,
+    "base_damage": 8,
+    "max_chain_length": 5,
+    "is_unique": true,
+    "max_enchant": 3,
+    "weapon_class_chain": "normal",
+    "can_be_cursed": false,
+    "on_equip_status": "magic_resist",
+    "spell_tier_ease": 1,
+    "design_notes": "Merlin's staff (Brandon, 2026-11-16). What it IS, from Geoffrey of Monmouth and the Vulgate: the prophet of Vortigern's dragons, who moved the Giants' Dance by his art where strength failed, and whom no enchantment held but the one he taught Nimue. What belongs to it: art over strength (spell_tier_ease 1: a spell cast with it in hand asks its science question a tier easier, at its own power) and his ward (on_equip_status magic_resist, in hand). A walking staff, not a war staff: base 8 at maths tier 1 (its own, fixed), so its blows fade with depth and its art does not. Never random loot (min_level 9999, no spawn weight); every power works in any hand, so a path could give it to another hero later (none yet).",
+    "id_level": 0,
+    "chain_exponent": 1.15
   }
 }

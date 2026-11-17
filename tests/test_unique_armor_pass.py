@@ -402,6 +402,7 @@ def test_gifts_given_once_a_floor_cannot_be_farmed():
 
 def test_every_named_piece_has_something_to_say_on_its_card():
     plain = {'lionheart_shield', 'sandals_of_perseus'}        # no rule, by their own lore
+    plain.add('duck_of_doom')           # does nothing and says nothing: a secret (2026-11-16)
     said = ('special', 'tier_bonuses', 'dodge_bonus', 'toughness_bonus', 'quiz_timer_bonus',
             'chain_bonus', 'spell_reflect', 'fire_reflect')
     for cat in ('armor', 'shield'):

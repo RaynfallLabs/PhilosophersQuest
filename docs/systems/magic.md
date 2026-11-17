@@ -134,8 +134,8 @@ be struck. Every targeted spell now carries `reach` (`spells.SPELL_REACH`,
 
 | Reach | Spells | Power |
 |---|---|---|
-| touch, 1 (`REACH_TOUCH`) | Frost Touch, Drain Life, Soul Drain | a small edge over their tier's bolt (2d4, 4d6+1, 7d8+1: 1.12, 1.08, 1.03 of a weapon chain since magic became a style, §4); `tests/test_magic_role.py` holds a touch to 1.15 / 1.45 |
-| short, 3 (`REACH_SHORT`) | Aard, Igni, Yrden, Axii; Spark, Acid Dart, Smite | the signs raised: Aard and Igni 1d4+2 (0.38 -> 0.68 of an attack in 3.3.2; 1.0 since 2026-11-13), Yrden 14 turns, Axii 16 (`duration` on the spell) |
+| touch, 1 (`REACH_TOUCH`) | Frost Touch, Life Tap, Drain Life, Vampiric Touch, Soul Drain, Enervation | a small edge over their tier's bolt (2d4, 4d6+1, 7d8+1: 1.12, 1.08, 1.03 of a weapon chain since magic became a style, §4); `tests/test_magic_role.py` holds a touch to 1.15 / 1.45 |
+| short, 3 (`REACH_SHORT`) | Aard, Igni, Yrden, Axii; Spark, Acid Splash, Acid Dart, Sacred Flame, Smite | the signs raised: Aard and Igni 1d4+2 (0.38 -> 0.68 of an attack in 3.3.2; 1.0 since 2026-11-13), Yrden 14 turns, Axii 16 (`duration` on the spell) |
 | sight (`None`) | every bolt, missile, arrow and beam; the aimed status spells | unchanged: as far as the hero sees, in a clear line |
 
 Enforced where the aim is taken, never in the effect handlers (a scroll or
@@ -229,12 +229,14 @@ and the build's bar in steel plate (x2).
 |---|---|---|---|---|---|
 | 1 | Frost Touch 1.12 / 1.20 | Spark, Igni, Aard 1.00 / 1.08 | - | 6 / 8 / 4 | 10 / 14 MP |
 | 2 | Drain Life 1.08 / 1.30 | Lightning Bolt 1.00 / 1.22 | Scream 0.36 / 0.43 | 3 / 5 / 2 | 10 / 22 MP |
-| 3 | Smite 1.00 / 1.29 | Smite 1.00 / 1.29 | Fireball 0.83 / 1.07 | 2 / 3 / 1 | 10 / 27 MP |
-| 4 | Soul Drain 1.03 / 1.40 | (Force Storm 0.44 / 0.60) | Meteor 0.89 / 1.20 | 1 / 2 / 1 | 10 / 33 MP |
-| 5 | Disintegrate 1.00 / 1.40 | Disintegrate 1.00 / 1.40 | Cone of Cold 0.80 / 1.12 | 0 / 2 / 1 | 10 / 45 MP |
+| 3 | Vampiric Touch 1.05 / 1.40 | Smite 1.00 / 1.33 | Fireball 0.83 / 1.11 | 2 / 4 / 2 | 10 / 30 MP |
+| 4 | Soul Drain 1.03 / 1.44 | Flame Strike 1.00 / 1.40 | Meteor 0.89 / 1.24 | 1 / 3 / 1 | 10 / 36 MP |
+| 5 | Enervation 1.02 / 1.43 | Disintegrate 1.00 / 1.40 | Cone of Cold 0.80 / 1.12 | 0 / 2 / 1 | 10 / 47 MP |
 
-Tier 4 has no ordinary bolt: its single target is Soul Drain (a touch) and
-its fire is Meteor (area); Force Storm keeps the force family's quiet place.
+Tier 4's bolt is Flame Strike (added with the attack families' missing tiers,
+2026-11-16); Force Storm keeps the force family's quiet place.
+Every attack family (fire, cold, lightning, force, acid, drain, holy) now has
+a spell in each of the five tiers (`tests/test_attack_spell_tiers.py`).
 Annihilation is not judged by its dice: it ends anything under 35% of its
 health and takes a third from the rest (bosses a capped quarter).
 
@@ -431,12 +433,12 @@ the effect does something structurally different.
 | Family    | Element    | Spells                                                      |
 |-----------|------------|-------------------------------------------------------------|
 | fire      | fire       | Fire Spark, Fire Bolt, Fireball, Meteor, Cataclysm          |
-| cold      | cold       | Frost Touch, Cold Bolt, Ice Storm, Cone of Cold             |
-| lightning | lightning  | Spark, Lightning Bolt, Chain Lightning, Storm of Vengeance  |
-| acid      | acid       | Acid Dart, Acid Arrow, Dissolution                          |
+| cold      | cold       | Frost Touch, Cold Bolt, Breath of Boreas, Ice Storm, Cone of Cold |
+| lightning | lightning  | Spark, Lightning Bolt, Call Lightning, Chain Lightning, Storm of Vengeance |
+| acid      | acid       | Acid Splash, Acid Dart, Acid Arrow, Corrosion, Dissolution  |
 | force     | pure force | Magic Dart, Magic Missile, Force Barrage, Force Storm, Annihilation |
-| holy      | holy       | Smite (bypasses all resists), Turn Undead, Sunburst         |
-| life-drain| drain      | Drain Life, Soul Drain (and the wands of life and soul drain; the undead resist it, so give less) |
+| holy      | holy       | Sacred Flame, Holy Bolt, Smite, Flame Strike, Judgment (all bypass every resist); Turn Undead, Sunburst |
+| life-drain| drain      | Life Tap, Drain Life, Vampiric Touch, Soul Drain, Enervation, all touch (and the wands of life and soul drain; the undead resist it, so give less) |
 | shadow    | mixed      | (via Witcher sign variants + necromancy spells)             |
 
 All damage routes through `_spell_damage(base_dmg, chain)` → full

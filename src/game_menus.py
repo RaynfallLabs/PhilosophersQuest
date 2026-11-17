@@ -180,11 +180,12 @@ class MenuMixin:
     # ------------------------------------------------------------------
 
     def _open_eat_menu(self):
-        """Collect Food items and Ingredients for eating."""
-        self.eat_menu_items = [
-            i for i in self.player.inventory
-            if isinstance(i, (Food, Ingredient))
-        ]
+        """Collect Food items and Ingredients for eating: the dungeon's food
+        first, then the raw ingredients (Brandon, 2026-11-16)."""
+        inv = self.player.inventory
+        self.eat_menu_items = ([i for i in inv if isinstance(i, Food)]
+                               + [i for i in inv if isinstance(i, Ingredient)
+                                  and not isinstance(i, Food)])
         if not self.eat_menu_items:
             self.add_message("You have nothing to eat.", 'info')
             return

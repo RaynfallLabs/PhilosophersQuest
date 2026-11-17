@@ -286,10 +286,10 @@ allies). Code: `src/horns.py` (pure, plus `CalledAlly`), `src/game_horns.py`
 
 | Horn | Path (floors) | How it is earned | Who answers (chain 1 / 3 / 5) | Stay |
 |---|---|---|---|---|
-| Robin Hood's Horn | `flv_robin_hood_bridge` (12-18) | Robin Hood meets the hero on a plank bridge; neither gives way. Fight him with staves (MATH, two of three, tier 1): win and he goes into the stream, laughs, blows his horn for his men and gives it to you, as Little John won his place. Lose, or give way, and there is no horn. | Little John and Will Scarlet / + a Yeoman Archer, Friar Tuck / + Much the Miller's Son, a second archer, Alan-a-Dale (7) | 25 turns |
-| Arthur's Bugle | `flv_sleepers_under_the_hill` (45-55) | The Sewingshields hall: a king and his knights asleep, a sword, a garter and a bugle on the table. Draw the sword (they wake), cut the garter (they sit up), blow the bugle (HISTORY, one, tier 3): Arthur gives it back for the hour of greatest need. Sheathe the sword and he says the rhyme ("Who drew the sword, the garter cut, / But never blew the bugle-horn") and the hall closes. | King Arthur and Sir Bedivere / + Sir Kay, Sir Gawain / + Sir Percival, Sir Lancelot (6) | 30 turns |
-| Gjallarhorn | `flv_heimdalls_watch` (70-78) | Heimdall at the foot of the bridge of colour, who hears the grass grow and cannot leave his post with the wolf loose below. Keep the watch with him (HISTORY, two of three, tier 4) and he gives the horn to one who listens. | three / five / eight Einherjar | 30 turns |
-| The Olifant | Roland's chain, unchanged (`flv_rolands_horn`, 86-92; the oath at `flv_rolands_horn_gate`) | As before. The summon is a power while the horn is carried; blowing it at the Black Gate still keeps the oath. | Charlemagne and Duke Naimes / + Ogier the Dane, two Frankish Knights / + three more Franks (8) | 30 turns, **12 turns after the call** |
+| Robin Hood's Horn | `flv_robin_hood_bridge` (12-18) | Robin Hood meets the hero on a plank bridge; neither gives way. Fight him with staves (MATH, two of three, tier 1): win and he goes into the stream, laughs, blows his horn for his men and gives it to you, as Little John won his place. Lose, or give way, and there is no horn. | Little John and Will Scarlet / + a Yeoman Archer, Friar Tuck / + Much the Miller's Son, a second archer, Alan-a-Dale (7) | 10 turns |
+| Arthur's Bugle | `flv_sleepers_under_the_hill` (45-55) | The Sewingshields hall: a king and his knights asleep, a sword, a garter and a bugle on the table. Draw the sword (they wake), cut the garter (they sit up), blow the bugle (HISTORY, one, tier 3): Arthur gives it back for the hour of greatest need. Sheathe the sword and he says the rhyme ("Who drew the sword, the garter cut, / But never blew the bugle-horn") and the hall closes. | King Arthur and Sir Bedivere / + Sir Kay, Sir Gawain / + Sir Percival, Sir Lancelot (6) | 10 turns |
+| Gjallarhorn | `flv_heimdalls_watch` (70-78) | Heimdall at the foot of the bridge of colour, who hears the grass grow and cannot leave his post with the wolf loose below. Keep the watch with him (HISTORY, two of three, tier 4) and he gives the horn to one who listens. | three / five / eight Einherjar | 10 turns |
+| The Olifant | Roland's chain, unchanged (`flv_rolands_horn`, 86-92; the oath at `flv_rolands_horn_gate`) | As before. The summon is a power while the horn is carried; blowing it at the Black Gate still keeps the oath. | Charlemagne and Duke Naimes / + Ogier the Dane, two Frankish Knights / + three more Franks (8) | 10 turns, **12 turns after the call** |
 
 - **Placement.** The three new paths are `callback_only` and placed once a run by
   `data/karma_rules.json: run_start_schedule` (like The Gate), on a free floor of their
@@ -306,7 +306,13 @@ allies). Code: `src/horns.py` (pure, plus `CalledAlly`), `src/game_horns.py`
 - **The Olifant's delay** (`delay_turns` 12): the call sets `player.horn_host_due`; each
   world turn `_horn_tick` counts it down (a line halfway) and the host arrives beside
   the hero wherever he is. Oliver's wisdom: blow it before the fight, not when you are
-  dying.
+  dying. Brandon, 2026-11-16: the delay stays, and the legend teaches it, so a kid
+  sees he must blow it early and fall back. The item's lore tells Roncevaux (Oliver's
+  three pleas, Roland too proud, Charlemagne thirty leagues off and too late: "Help
+  called from far away comes late"), the V menu says "blow it early, then fall back",
+  the call's line ends "Give ground, and hold on until it comes", and the card says
+  "They come late, from far off: blow it before the fight". None of them gives the
+  count; the HUD's "Coming (N)" does, once the call is made.
 - **The allies** are monster kinds (`is_allied`, `quest_only`, `frequency` 0,
   `min_level` 0, `horn`: never found, never spawned, not in the tier census) with their
   own numbers from their lore at the horn's tier. On the map each is a
@@ -318,10 +324,20 @@ allies). Code: `src/horns.py` (pure, plus `CalledAlly`), `src/game_horns.py`
   Fenrir and no horn takes a gate. It stays its turns (ticked in `_do_pet_turns`) and
   leaves with its horn's line; leaving the floor sends every one home
   (`_horn_allies_left_behind`).
-- **Sizing** (`data/horns.json` `_meta.numbers`): a full band's stay is about a dozen
-  ordinary monsters of its tier (one hard fight: a war-band, a mini-boss, a seal demon),
-  and each ally lives through about eight blows of a mini-boss of that tier. Robin
-  Hood's men are tier-one mortals and matter less the deeper they are called.
+- **Sizing** (`data/horns.json` `_meta.numbers`): every stay is **ten turns** (Brandon,
+  2026-11-16: the old 25 and 30 "may be too strong"). A full band's stay is about four
+  or five ordinary monsters of its tier (it was about a dozen at the old stays): help
+  through one hard fight (a war-band's followers, a third of a mini-boss or a seal
+  demon), and each ally lives through about eight blows of a mini-boss of that tier.
+  The allies' own numbers did not change. Robin Hood's men are tier-one mortals and
+  matter less the deeper they are called.
+- **Recall Lore and the Seeker.** Each path has a hint in `data/hints.json` at its depth's
+  tier (Robin Hood's bridge at 1, the sleepers at 3, Heimdall at 4, the Olifant's lesson
+  at 5), and an achievement in `data/achievements.json` (category `secrets`, fired by
+  the path's own deed): Neither Would Give Way (`told.robin_in_the_stream`), Not Yet the
+  Hour (`told.arthur_woken`) and One Who Listens (`told.heimdall_watch`). The hints point
+  at the ballad, the legend and the Eddas, never at the quiz; the badges are painted
+  scenes (`tools/content/genart/briefs/achievements_a16.json`).
 - **Never loot.** Each horn has a `plot_role` and no spawn weight (`items.scripted_only_ids`),
   is unique and in `Game._QUEST_PIECE_IDS`: no chest, floor roll or shop; traders refuse
   it, thieves skip it. Equipped gear only goes to bones, so no horn crosses runs.
@@ -331,10 +347,46 @@ allies). Code: `src/horns.py` (pure, plus `CalledAlly`), `src/game_horns.py`
 - **Art.** Painted by the sprite pipeline only (Brandon, 2026-11-16: no art drawn in
   code): briefs `tools/content/genart/briefs/horns_h01.json`, run into `_genart/horns_h01`,
   picks installed by `tools/content/genart/install_horns.py` (and recorded in the install
-  manifests).
+  manifests). Gjallarhorn and Heimdall were redrawn on 2026-11-16 bent like a crescent
+  (rounds `_genart/horns_h01_r3` and `_r5`; before and after in
+  `GJALLARHORN_REDRAW_2026_11_16.png`).
 - **QA** (Titivillus build): Shift+H sets each path's person beside the hero in turn
-  (Robin Hood, the sleepers, Heimdall, Roland), then puts every horn in the pack with
-  each ready to blow (`HornsMixin._qa_horns`).
+  (Robin Hood, the sleepers, Heimdall, Roland, then Merlin's stone, §2.13), then puts
+  every horn in the pack with each ready to blow (`HornsMixin._qa_horns`).
+
+### 2.13 Merlin's stone: the path to the Staff of Emrys (2026-11-16)
+
+Merlin starts with his own staff (`staff_of_emrys`, data/items/weapon.json; see
+[weapons_and_materials.md](weapons_and_materials.md)). Brandon, the same day: yes, other
+heroes can earn it on a path. One path, one staff, once a run.
+
+- **The legend.** Malory, *Le Morte d'Arthur* IV.1 and IV.5: Nimue shut Merlin under a
+  great stone with the craft he had taught her, and Sir Bagdemagus, hearing him groan,
+  tried to lift a stone "an hundred men" could not, and Merlin bade him leave his labour:
+  only she who put him there could let him out. The hawthorn is the French romance's (in
+  the *Livre d'Artus* he sleeps under one); Geoffrey of Monmouth (*Historia* VIII.12) has
+  him move the Giants' Dance by art and engines where strength failed.
+- **The encounter** (`flv_merlins_stone`, `callback_only`, sprite `npc_merlins_stone`):
+  a great stone in the passage, a hawthorn flowering out of the rock beside it, his staff
+  caught in its branches, and his voice under the stone. *Try to lift the stone* does
+  nothing ("Leave your labour; it is all in vain") and leads back; *"Who are you?"* tells
+  his story; *Answer the voice's questions* is a SCIENCE threshold (two of three, tier 1:
+  science is the game's subject of magic, and his art was knowledge, not muscle): pass and
+  he gives the staff out of the thorn (`told.merlin_staff`), fail and it stays; *Leave him
+  under his stone* walks on. Every exit writes `met.merlin` and a Journal line.
+- **Placement.** `karma_rules.json: run_start_schedule`, floors **10-16**: the staff is
+  maths tier 1, so its path is in tier one's floors (depth-true), on its own floor beside
+  Robin Hood's 12-18. Not earlier: on floors 6-11 it took the last free floor in the
+  narrow windows of the first oaths' callbacks (Wat's seventh lamp, met on floor 4 and
+  due by floor 9, was lost in 4 runs of 60; none on 10-16,
+  `tests/test_bug_bash_5_encounters.py`). `not_for_builds: ["merlin ambrosius"]` (read by `game_road._schedule_run_start`):
+  the path is never placed for Merlin himself, who has the staff in his hand and cannot
+  meet himself under the stone. The answer option also `requires items_none:
+  ["staff_of_emrys"]`, so no hero is ever handed a second copy.
+- **Hint and achievement.** A tier-1 Recall Lore hint (Malory's stone and Geoffrey's "art,
+  not by strength") and the `secrets` achievement Not by Strength (`told.merlin_staff`),
+  whose hint names Malory and not the quiz. Its badge and the stone's sprite are painted
+  (`briefs/achievements_a16.json`, `briefs/merlin_staff_s01.json`).
 
 ---
 

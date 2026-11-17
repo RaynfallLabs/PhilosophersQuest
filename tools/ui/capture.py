@@ -1642,7 +1642,7 @@ for _name, _key, _uni, _state, _desc, _iskey in (
 # One part of each nature and a ration or two: every tab has dishes ready and
 # dishes to build toward (Stat opens: the floor's lesson is open).
 COOK_EVERY_TAB = [('death_dog_prime', 1), ('giant_lizard_prime', 1), ('cave_bear_prime', 1),
-                  ('giant_beetle_prime', 1), ('green_slime_prime', 1), ('battle_mage_prime', 1),
+                  ('giant_beetle_prime', 1), ('green_slime_prime', 1), ('imp_prime', 1),
                   ('crystal_ooze_prime', 1), ('homunculus_prime', 1), ('bone_witch_prime', 1),
                   ('goblin_prime', 2), ('cobra_prime', 1), ('fire_beetle_prime', 1),
                   ('bread_ration', 2)]
@@ -1754,7 +1754,7 @@ def _(g):
         'giant_rat_prime', 'harpy_prime', 'bullywug_prime', 'dretch_prime', 'giant_frog_prime',
         'hollow_one_prime', 'gelatinous_cube_prime', 'boggart_prime', 'bugbear_prime',
         'carrion_crawler_prime', 'darkmantle_prime', 'gas_spore_prime', 'giant_centipede_prime',
-        'gibbering_mouther_prime', 'hecate_hound_prime', 'hobgoblin_prime', 'bandit_captain_prime',
+        'gibbering_mouther_prime', 'hecate_hound_prime', 'hobgoblin_prime', 'orc_warrior_prime',
         'hard_cheese', 'wild_mushroom', 'dried_meat')]
     _cook_open(g, many, 'sp')
     press(g, pygame.K_END)

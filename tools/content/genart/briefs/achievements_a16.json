@@ -1,0 +1,112 @@
+[
+ {
+  "id": "neither_would_give_way",
+  "family": "secrets_horn_paths",
+  "rank": 1,
+  "body": "badge_scene",
+  "what": "a narrow old plank footbridge in a dark cave, seen close from the front at the level of its planks, running toward the viewer over a black rushing stream with white foam. In the middle of the bridge, lying crossed on the planks in a bold X, are two long plain wooden quarterstaffs of pale oak, and beside them on the planks lies one small brown hunting horn on a leaf-green cloth strap. Warm lantern light from the left falls bright on the staffs, the horn and the planks; the cave behind is dark.",
+  "colours": "Weathered grey-brown oak planks; two pale tan oak quarterstaffs; a small polished brown horn with a dull brass rim on a leaf-green strap; black water with white foam; warm gold lantern light; a dark brown cave.",
+  "must_show": [
+   "a narrow plank footbridge over dark water",
+   "two plain wooden staffs crossed on the planks",
+   "a small brown horn on a green strap beside them"
+  ],
+  "must_not_show": [
+   "person",
+   "hand",
+   "bow",
+   "arrows",
+   "sword",
+   "blood",
+   "writing",
+   "letters",
+   "animal",
+   "trumpet"
+  ]
+ },
+ {
+  "id": "not_yet_the_hour",
+  "family": "secrets_horn_paths",
+  "rank": 2,
+  "body": "badge_scene",
+  "what": "a vaulted stone hall under a hill, seen close across an old oak table: on the table, in the middle and brightly lit, lies one ivory-white bugle-horn, a natural horn made from one smooth curved cone of pale ivory horn, narrow at one end and widening gently to a round open mouth no wider than a fist, with no flared metal bell, bound by two thin silver bands and hung on a dark leather baldric; it lies across an old sword in a worn brown scabbard, and beside them lies one cut silk garter of faded blue. Behind the table a low fire of gold flames burns up out of a crack in the bare stone floor with no wood in it, and far behind in the shadow stands the dim shape of an empty stone throne. The horn and the table are warm and bright; the hall behind is dark.",
+  "colours": "An ivory-white horn with a dark brown leather baldric; an old sword hilt and a worn brown scabbard; a faded blue silk garter; dark brown oak; gold flames; grey stone vaults in deep shadow.",
+  "must_show": [
+   "a curved ivory-white horn lying across a sheathed sword on a table",
+   "a cut blue garter beside them",
+   "a fire burning up out of a stone floor behind"
+  ],
+  "must_not_show": [
+   "person",
+   "king",
+   "knight",
+   "face",
+   "hand",
+   "skull",
+   "crown",
+   "blood",
+   "writing",
+   "letters",
+   "trumpet",
+   "drinking cup",
+   "flared bell",
+   "brass",
+   "funnel",
+   "gramophone",
+   "fireplace"
+  ]
+ },
+ {
+  "id": "one_who_listens",
+  "family": "secrets_horn_paths",
+  "rank": 3,
+  "body": "badge_scene",
+  "what": "the foot of a bridge of trembling rainbow-coloured light that rises out of the dark on the right and climbs away out of the top of the picture. On a block of pale stone at its foot sits a tall watchman seen from behind, in a long white robe and white cloak, his long white-blond hair down his back, looking up the bridge; across his knees, its ends showing on both sides of him, lies one great dark horn bent in a deep curve and banded with gold. The bright bridge lights him; the dark round him is deep blue-black.",
+  "colours": "A bridge of soft rainbow light, red, gold, green and violet bands; a white robe and white cloak; white-blond hair; a dark brown-black horn with bright gold bands; pale grey stone; a deep blue-black dark.",
+  "must_show": [
+   "a bridge of rainbow light climbing into the dark",
+   "a man in white seen from behind at its foot",
+   "a great curved dark horn with gold bands across his knees"
+  ],
+  "must_not_show": [
+   "face",
+   "helmet",
+   "sword",
+   "wolf",
+   "second figure",
+   "wings",
+   "writing",
+   "letters",
+   "trumpet",
+   "moon"
+  ],
+  "note": "Picked round 1, candidate 1. The horn across his knees was not drawn in any of three rounds (round 2: held at his side, round 3: slung on his back); the watchman at the foot of the bridge carries the badge."
+ },
+ {
+  "id": "not_by_strength",
+  "family": "secrets_merlin",
+  "rank": 1,
+  "body": "badge_scene",
+  "what": "a great rough grey boulder in a dark cave, seen close and low, sitting heavy on the cave floor; growing out of the rock beside it is a small hawthorn white with flowers, and caught upright in its branches stands a knotted wooden staff with a pale grey stone in the loop at its top. A thin line of warm gold light glows out from under the boulder's lower edge, as if someone down there had a candle. The white flowers, the staff and the boulder's face are lit pale and warm; the cave behind is dark.",
+  "colours": "Pale grey boulder with dark cracks and green moss; a hawthorn of dark brown branches, green leaves and white flowers; a dark brown knotted staff; a thin warm gold glow under the stone; a dark brown-black cave.",
+  "must_show": [
+   "a great grey boulder",
+   "a flowering hawthorn beside it holding a staff",
+   "a thin line of warm light under the boulder's edge"
+  ],
+  "must_not_show": [
+   "person",
+   "face",
+   "hand",
+   "skull",
+   "writing",
+   "letters",
+   "door",
+   "gravestone",
+   "cross",
+   "candle",
+   "fire"
+  ],
+  "note": "Picked candidate 1: the stone, the hawthorn and the light under it carry the badge; the staff in the branches was not drawn."
+ }
+]

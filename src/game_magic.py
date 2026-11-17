@@ -1584,6 +1584,16 @@ class MagicMixin:
         self.player.mp -= mp_cost
         self._start_spell_quiz(spell, spell_id, target=None)
 
+    def _staff_spell_ease(self) -> int:
+        """How many tiers easier the weapon in the hero's hand makes a spell's
+        science question (``spell_tier_ease``: the Staff of Emrys). 0 for any
+        other weapon, none, or one pickled before the field."""
+        w = getattr(getattr(self, 'player', None), 'weapon', None)
+        try:
+            return max(0, int(getattr(w, 'spell_tier_ease', 0) or 0))
+        except (TypeError, ValueError):
+            return 0
+
     def _start_spell_quiz(self, spell, spell_id, target):
         """v2.12.0 spellcast: ONE science threshold=1 quiz at the spell's tier.
         MP was already deducted in _invoke_spell (before this call) so it is
@@ -1637,6 +1647,10 @@ class MagicMixin:
             _effective_tier = max(1, _effective_tier - get_spellbook_chain_bonus(self.player))
         except ImportError:
             pass
+        # A staff that eases the art (the Staff of Emrys: Merlin moved the
+        # Giants' Dance by art where strength failed): the question is that
+        # much easier; the spell's power is still its own tier's.
+        _effective_tier = max(1, _effective_tier - self._staff_spell_ease())
 
         self.quiz_engine.start_quiz(
             mode='threshold',
@@ -1727,7 +1741,9 @@ class MagicMixin:
                     if not m.alive:
                         self._on_monster_killed(m)
             self.add_message(
-                f"Ice Storm! {quantity(hit, 'monster')} {'takes' if hit == 1 else 'take'} {scaled} cold dmg",
+                # Breath of Boreas shares this handler: each is named as itself.
+                f"{spell.get('name', 'Ice Storm')}! {quantity(hit, 'monster')} "
+                f"{'takes' if hit == 1 else 'take'} {scaled} cold dmg",
                 'success')
             return
 
@@ -2447,7 +2463,9 @@ class MagicMixin:
                 dot_dur = (self._inflict(target, 'poisoned', max(2, int(5 * chain_scale)))[0]
                            if target.alive else 0)
                 self.add_message(
-                    f"An acid arrow strikes {the_name(target, lower=True)} for {actual} damage!"
+                    # Every acid spell shares this handler: each is named as itself.
+                    f"{spell.get('name', 'Acid Arrow')} strikes {the_name(target, lower=True)} "
+                    f"for {actual} damage!"
                     + (f" Acid burns for {quantity(dot_dur, 'turn')}!" if dot_dur
                        else (f" {pronouns(target)[0].capitalize()} resists the acid burn!"
                              if target.alive else ""))

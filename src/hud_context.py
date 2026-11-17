@@ -116,16 +116,11 @@ def cooking_hp_line(player) -> tuple[str, str]:
     hero has cooked (Player.try_apply_cook_hp_gain). Max HP grows only by
     cooking, and nothing on screen said so (NEXT_STEPS_REVIEW item 6).
     Returns (text, state): 'open' while a meal can still add max HP on this
-    floor, 'full' once the floor's share is cooked, 'capped' when the
-    lifetime cap for the depth reached is met (going deeper raises it)."""
+    floor, 'full' once the floor's share is cooked. There is no cap across
+    floors (Brandon, 2026-11-16), so the old 'capped' state ("Meals: go
+    deeper for HP", at a lifetime cap of 4 a floor reached) is gone."""
     cap = int(getattr(player, 'PER_FLOOR_HP_CAP', 5) or 5)
     got = int(getattr(player, '_cook_hp_gain_this_floor', 0) or 0)
-    try:
-        lifetime_full = int(getattr(player, 'cooking_hp_gained', 0)) >= int(player.cooking_softcap())
-    except (AttributeError, TypeError, ValueError):
-        lifetime_full = False
-    if lifetime_full and got < cap:
-        return "Meals: go deeper for HP", 'capped'
     return f"Meals: +{min(got, cap)}/{cap} Max HP", ('full' if got >= cap else 'open')
 
 
@@ -142,6 +137,27 @@ def cooking_lesson_line(player, fits=None) -> tuple[str, str]:
         int(getattr(player, 'PER_FLOOR_STAT_CAP', 1) or 1)
     text = "Lesson: used" if used else "Lesson: open"
     return text, ('full' if used else 'open')
+
+
+STREAK_HOT = 10      # from this many in a row the Streak line glows
+
+
+def streak_line(player) -> tuple[str, str]:
+    """The sidebar's "Streak" line, under "Lesson": questions answered right
+    in a row in every subject, and maths questions right in a row (Brandon,
+    2026-11-16: "makes kids want to keep it going"). Both counts already live
+    in player.quirk_progress, kept by quirk_system.on_quiz_answer for Time
+    Dilation and Math is Cool: a wrong answer breaks a streak, the clock
+    running out does not, and both carry over a save. Returns (text, state):
+    'none' with both at 0, 'hot' from STREAK_HOT in a row, else 'open'."""
+    prog = getattr(player, 'quirk_progress', None) or {}
+    try:
+        run = int(prog.get('consecutive_correct', 0) or 0)
+        maths = int(prog.get('math_streak', 0) or 0)
+    except (TypeError, ValueError, AttributeError):
+        run = maths = 0
+    state = 'hot' if max(run, maths) >= STREAK_HOT else ('open' if run or maths else 'none')
+    return f"Streak: {run}   Math: {maths}", state
 
 
 def load_number(weight: float, limit: float, share=(0.5, 0.7, 0.9)) -> str:

@@ -64,7 +64,7 @@ LEARNABLE_SPELLS: dict[str, dict] = {
     },
 
     # ==================================================================
-    # COLD FAMILY -- 4 tiers
+    # COLD FAMILY -- 5 tiers
     # ==================================================================
     'frost_touch_spell': {
         'name': 'Frost Touch', 'effect': 'frost_touch', 'power': '2d4',
@@ -77,6 +77,12 @@ LEARNABLE_SPELLS: dict[str, dict] = {
         'mp_cost': 6, 'tier': 2, 'quiz_tier': 2, 'needs_target': True,
         'spell_family': 'cold',
         'desc': 'A shard of ice hurled at speed -- 3d6 cold damage, slows on hit.',
+    },
+    'breath_of_boreas_spell': {
+        'name': 'Breath of Boreas', 'effect': 'mass_ice', 'power': '4d6',
+        'mp_cost': 10, 'tier': 3, 'quiz_tier': 3, 'needs_target': False,
+        'spell_family': 'cold',
+        'desc': 'The north wind howls through the room -- 4d6 cold damage to every visible foe.',
     },
     'ice_storm_spell': {
         'name': 'Ice Storm', 'effect': 'mass_ice', 'power': '6d6',
@@ -92,7 +98,7 @@ LEARNABLE_SPELLS: dict[str, dict] = {
     },
 
     # ==================================================================
-    # LIGHTNING FAMILY -- 4 tiers
+    # LIGHTNING FAMILY -- 5 tiers
     # ==================================================================
     'spark_spell': {
         'name': 'Spark', 'effect': 'lightning_bolt', 'power': '1d8',
@@ -105,6 +111,12 @@ LEARNABLE_SPELLS: dict[str, dict] = {
         'mp_cost': 7, 'tier': 2, 'quiz_tier': 2, 'needs_target': True,
         'spell_family': 'lightning',
         'desc': 'A line of white lightning -- 4d6 damage to everything struck.',
+    },
+    'call_lightning_spell': {
+        'name': 'Call Lightning', 'effect': 'lightning_bolt', 'power': '5d6',
+        'mp_cost': 10, 'tier': 3, 'quiz_tier': 3, 'needs_target': True,
+        'spell_family': 'lightning',
+        'desc': 'Lightning called down along a line -- 5d6 damage to everything struck, and a stun.',
     },
     'chain_lightning_spell': {
         'name': 'Chain Lightning', 'effect': 'chain_lightning_jump', 'power': '6d6',
@@ -154,8 +166,14 @@ LEARNABLE_SPELLS: dict[str, dict] = {
     },
 
     # ==================================================================
-    # ACID FAMILY -- 3 tiers
+    # ACID FAMILY -- 5 tiers
     # ==================================================================
+    'acid_splash_spell': {
+        'name': 'Acid Splash', 'effect': 'acid_arrow', 'power': '1d6',
+        'mp_cost': 3, 'tier': 1, 'quiz_tier': 1, 'needs_target': True,
+        'spell_family': 'acid',
+        'desc': 'A flick of stinging acid -- 1d6 acid damage plus a short burn.',
+    },
     'acid_dart_spell': {
         'name': 'Acid Dart', 'effect': 'acid_arrow', 'power': '2d4',
         'mp_cost': 5, 'tier': 2, 'quiz_tier': 2, 'needs_target': True,
@@ -167,6 +185,12 @@ LEARNABLE_SPELLS: dict[str, dict] = {
         'mp_cost': 10, 'tier': 3, 'quiz_tier': 3, 'needs_target': True,
         'spell_family': 'acid',
         'desc': 'An arrow of biting acid -- 4d6 damage plus a lasting poison DoT.',
+    },
+    'corrosion_spell': {
+        'name': 'Corrosion', 'effect': 'acid_arrow', 'power': '6d8',
+        'mp_cost': 15, 'tier': 4, 'quiz_tier': 4, 'needs_target': True,
+        'spell_family': 'acid',
+        'desc': 'A gout of acid that eats into hide and steel -- 6d8 acid damage plus a long burn.',
     },
     'dissolution_spell': {
         'name': 'Dissolution', 'effect': 'acid_arrow', 'power': '9d8',
@@ -500,19 +524,37 @@ LEARNABLE_SPELLS: dict[str, dict] = {
     },
 
     # ==================================================================
-    # DRAIN LIFE FAMILY -- 2 tiers
+    # DRAIN LIFE FAMILY -- 5 tiers
     # ==================================================================
+    'life_tap_spell': {
+        'name': 'Life Tap', 'effect': 'drain_life_spell', 'power': '1d6+1',
+        'mp_cost': 3, 'tier': 1, 'quiz_tier': 1, 'needs_target': True,
+        'spell_family': 'drain_life',
+        'desc': 'Touch a foe beside you and sip 1d6+1 life -- it is hurt, you heal the same.',
+    },
     'drain_life_spell': {
         'name': 'Drain Life', 'effect': 'drain_life_spell', 'power': '4d6+1',
         'mp_cost': 6, 'tier': 2, 'quiz_tier': 2, 'needs_target': True,
         'spell_family': 'drain_life',
         'desc': 'Lay hands on a foe beside you and steal 4d6+1 life -- it is hurt, you heal the same.',
     },
+    'vampiric_touch_spell': {
+        'name': 'Vampiric Touch', 'effect': 'drain_life_spell', 'power': '6d6+1',
+        'mp_cost': 10, 'tier': 3, 'quiz_tier': 3, 'needs_target': True,
+        'spell_family': 'drain_life',
+        'desc': 'Grip a foe beside you and draw 6d6+1 life out of it into yourself.',
+    },
     'soul_drain_spell': {
         'name': 'Soul Drain', 'effect': 'drain_life_spell', 'power': '7d8+1',
         'mp_cost': 15, 'tier': 4, 'quiz_tier': 4, 'needs_target': True,
         'spell_family': 'drain_life',
         'desc': 'Hold a creature beside you and rip 7d8+1 life from it into your own body.',
+    },
+    'enervation_spell': {
+        'name': 'Enervation', 'effect': 'drain_life_spell', 'power': '10d8+1',
+        'mp_cost': 22, 'tier': 5, 'quiz_tier': 5, 'needs_target': True,
+        'spell_family': 'drain_life',
+        'desc': 'Seize a foe beside you and drain 10d8+1 life from it into your own body.',
     },
 
     # ==================================================================
@@ -554,11 +596,35 @@ LEARNABLE_SPELLS: dict[str, dict] = {
         'spell_family': 'teleport_away',
         'desc': 'Teleport the nearest visible monster away -- or yourself if none.',
     },
+    'sacred_flame_spell': {
+        'name': 'Sacred Flame', 'effect': 'smite', 'power': '1d8',
+        'mp_cost': 3, 'tier': 1, 'quiz_tier': 1, 'needs_target': True,
+        'spell_family': 'smite',
+        'desc': 'A small holy flame -- 1d8 damage that bypasses all resistances.',
+    },
+    'holy_bolt_spell': {
+        'name': 'Holy Bolt', 'effect': 'smite', 'power': '4d6',
+        'mp_cost': 6, 'tier': 2, 'quiz_tier': 2, 'needs_target': True,
+        'spell_family': 'smite',
+        'desc': 'A bolt of holy force -- 4d6 damage that bypasses all resistances.',
+    },
     'smite_spell': {
         'name': 'Smite', 'effect': 'smite', 'power': '6d6',
         'mp_cost': 10, 'tier': 3, 'quiz_tier': 3, 'needs_target': True,
         'spell_family': 'smite',
         'desc': 'Holy fire -- 6d6 damage that bypasses all resistances.',
+    },
+    'flame_strike_spell': {
+        'name': 'Flame Strike', 'effect': 'smite', 'power': '7d8',
+        'mp_cost': 15, 'tier': 4, 'quiz_tier': 4, 'needs_target': True,
+        'spell_family': 'smite',
+        'desc': 'Fire falls from above -- 7d8 holy damage that bypasses all resistances.',
+    },
+    'judgment_spell': {
+        'name': 'Judgment', 'effect': 'smite', 'power': '9d8',
+        'mp_cost': 22, 'tier': 5, 'quiz_tier': 5, 'needs_target': True,
+        'spell_family': 'smite',
+        'desc': "Heaven's own sentence -- 9d8 holy damage that bypasses all resistances.",
     },
     'dispel_magic_spell': {
         'name': 'Dispel Magic', 'effect': 'dispel_magic', 'power': '',
@@ -703,13 +769,18 @@ SPELL_REACH: dict[str, int] = {
     'frost_touch_spell': REACH_TOUCH,
     'drain_life_spell':  REACH_TOUCH,
     'soul_drain_spell':  REACH_TOUCH,
+    'life_tap_spell':    REACH_TOUCH,
+    'vampiric_touch_spell': REACH_TOUCH,
+    'enervation_spell':  REACH_TOUCH,
     'sign_aard':         REACH_SHORT,
     'sign_igni':         REACH_SHORT,
     'sign_yrden':        REACH_SHORT,
     'sign_axii':         REACH_SHORT,
     'spark_spell':       REACH_SHORT,
     'acid_dart_spell':   REACH_SHORT,
+    'acid_splash_spell': REACH_SHORT,
     'smite_spell':       REACH_SHORT,
+    'sacred_flame_spell': REACH_SHORT,
 }
 
 for _sid, _spell in LEARNABLE_SPELLS.items():

@@ -222,7 +222,9 @@ def test_fairness_gate_every_lock_has_a_key_above_it(mons, prof):
             mat = json.load(f)
         materials[mat.get('id') or os.path.splitext(os.path.basename(path))[0]] = mat
     el_floor = _element_floor()
-    assert el_floor == {'fire': 1, 'cold': 1, 'lightning': 1, 'acid': 15}
+    # Acid Splash (tier 1, 2026-11-16) put acid in reach from floor 1, as
+    # fire, cold and lightning already were.
+    assert el_floor == {'fire': 1, 'cold': 1, 'lightning': 1, 'acid': 1}
     locked = []
     for kind, m in mons.items():
         hard = set(m['resistances']) | set(m['shrugs_off'])

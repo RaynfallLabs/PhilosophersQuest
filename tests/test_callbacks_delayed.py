@@ -42,6 +42,14 @@ def _game(seed=21):
     # out of these tests' way.)
     g._emberpup['floor'] = None
     g._black_knight['floor'] = None
+    # The story paths placed at run start by the road seed (the horn paths
+    # and Merlin's stone, floors 6-78, karma_rules.json run_start_schedule)
+    # are moved out of the way too: a callback's floor is its own, so a path
+    # the seed put on floor 10 put the limping lion off this test's floor.
+    # The Gate stays (one test reads it).
+    g._deeds['pending'] = [p for p in g._deeds['pending']
+                           if p.get('source') != 'engine:run_start'
+                           or (p.get('spec') or {}).get('encounter') == 'flv_the_gate']
     return g
 
 

@@ -208,6 +208,38 @@ def test_the_duck_does_nothing_for_you():
     assert getattr(duck, 'cursed', False) or getattr(duck, 'buc', '') == 'cursed'
 
 
+def test_the_duck_guards_nothing_and_its_card_keeps_the_secret():
+    """Brandon 2026-11-16: "duck of doom is STILL showing it guards gazes and
+    voices, as well as having Iron Will. And it says be patient with it...
+    these are supposed to be secrets." A head piece guards the mind by its
+    slot; the duck guards nothing, and nothing on it hints at the hatching."""
+    import guards
+    import items
+    import quirk_text
+    duck = items.make_item_by_id('armor', 'duck_of_doom')
+    assert duck.guards_nothing
+    assert guards.guard_text(duck) == '' and guards.piece_strength(duck) == (0.0, 0.0)
+    assert not getattr(duck, 'special', '') and not getattr(duck, 'ench_line', None)
+    for text in (duck.lore, quirk_text.quirk_hint('duck_of_doom')):
+        assert 'patient' not in text.lower() and 'hatch' not in text.lower()
+
+
+def test_an_old_saves_duck_loses_iron_will_and_the_patience_line():
+    """The copy in Brandon's save (Rand, 2026-11-16) kept its old Iron Will
+    line and "Be patient with it" after its enchantment was cleared: a load
+    now takes both from today's data."""
+    import gear_saves
+    import guards
+    import items
+    duck = items.make_item_by_id('armor', 'duck_of_doom')
+    duck.__dict__.update(ench_line='Iron Will I: Takes 42% off the damage of gazes...',
+                         special='It will not come off. Be patient with it.')
+    duck.__dict__.pop('guards_nothing', None)            # pickled before the flag
+    assert gear_saves.refresh_named(duck)
+    assert not duck.__dict__.get('ench_line') and not duck.special
+    assert guards.guard_text(duck) == ''
+
+
 # ---------------------------------------------------------------------------
 # Mechanical sanity (statistical: spawn floor distribution)
 # ---------------------------------------------------------------------------

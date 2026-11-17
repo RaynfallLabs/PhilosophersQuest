@@ -553,6 +553,10 @@ class Weapon(Item):
         self.growing_power: bool        = bool(defn.get('growing_power', defn.get('growingPower', False)))
         self.kills_to_grow: int         = int(defn.get('kills_to_grow', defn.get('killsToGrow', 10)))
         self.on_equip_status: str       = defn.get('on_equip_status', defn.get('onEquipStatus', ''))
+        # Staff of Emrys: art over strength. Spells cast with it in hand ask
+        # their science question this many tiers easier (never below 1);
+        # the spell keeps its own power (game_magic._start_spell_quiz).
+        self.spell_tier_ease: int       = int(defn.get('spell_tier_ease', 0) or 0)
         self.can_dig: bool              = bool(defn.get('can_dig', False))
         self.ignore_resistances: bool   = bool(defn.get('ignore_resistances', False))
         self.abaddon_bonus_damage: str  = defn.get('abaddon_bonus_damage', '')
@@ -878,6 +882,9 @@ class Armor(Item):
         # The template it is built on (gear.template_of: how long it takes
         # to put on; full plate is its own).
         self.template_basis: str = str(defn.get('template_basis') or '')
+        # A piece that guards nothing whatever its slot (guards.py): the Duck
+        # of Doom is a duck on your head, not a helm.
+        self.guards_nothing: bool = bool(defn.get('guards_nothing', False))
         self.equip_threshold     = int(defn.get('equip_threshold', 2))
         self.quiz_tier: int      = int(defn.get('quiz_tier', 1))
         # A named piece's own resistances (its JSON wins); a common piece's
@@ -1373,6 +1380,18 @@ class Ingredient(Item):
         # so the change is harmless to old saves / unflagged ingredients.
         self.edible_safe: bool      = bool(defn.get('edible_safe', False))
         self.raw_sp                 = defn.get('raw_sp', None)
+
+    # Ingredients weigh nothing (Brandon, 2026-11-16): carrying a kitchen
+    # never pushes the hero toward a heavier load. A data descriptor, so it
+    # wins over the weight an old save pickled into the instance, and
+    # Item.__init__'s assignment is ignored.
+    @property
+    def weight(self) -> float:
+        return 0.0
+
+    @weight.setter
+    def weight(self, value) -> None:
+        pass
 
 
 _MONSTER_SIZES: dict | None = None

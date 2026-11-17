@@ -408,26 +408,6 @@
     "edible_safe": true,
     "raw_sp": 10
   },
-  "bandit_captain_prime": {
-    "name": "Bandit Trail Ham",
-    "symbol": "~",
-    "color": [
-      160,
-      120,
-      60
-    ],
-    "weight": 0.25,
-    "min_level": 3,
-    "tier_role": "prime",
-    "nature": "sp",
-    "part": "cut",
-    "description": "A smoked ham from a bandit's pack, the kind brigands and thieves carry on long nights on the road.",
-    "identified": true,
-    "source_monster": "bandit_captain",
-    "family": "mortals",
-    "edible_safe": true,
-    "raw_sp": 10
-  },
   "banshee_prime": {
     "name": "Banshee Keening Shank",
     "symbol": "~",
@@ -488,26 +468,6 @@
     "source_monster": "bat",
     "family": "vermin",
     "stat_grant": "PER",
-    "edible_safe": true,
-    "raw_sp": 10
-  },
-  "battle_mage_prime": {
-    "name": "Battle Mage's Salt Ham",
-    "symbol": "~",
-    "color": [
-      80,
-      160,
-      220
-    ],
-    "weight": 0.25,
-    "min_level": 2,
-    "tier_role": "prime",
-    "nature": "mp",
-    "part": "cut",
-    "description": "A blue-salted ham from a battle mage's pack, cured with a preserving spell that never quite wore off.",
-    "identified": true,
-    "source_monster": "battle_mage",
-    "family": "mortals",
     "edible_safe": true,
     "raw_sp": 10
   },
@@ -1229,26 +1189,6 @@
     "edible_safe": true,
     "raw_sp": 10
   },
-  "cult_initiate_prime": {
-    "name": "Cultist Blood Sausage",
-    "symbol": "~",
-    "color": [
-      120,
-      80,
-      160
-    ],
-    "weight": 0.25,
-    "min_level": 12,
-    "tier_role": "prime",
-    "nature": "mp",
-    "part": "cut",
-    "description": "A ring of blood sausage, the fasting ration of the dark cults. They bless it with things better left unsaid.",
-    "identified": true,
-    "source_monster": "cult_initiate",
-    "family": "mortals",
-    "edible_safe": true,
-    "raw_sp": 10
-  },
   "cyclops_prime": {
     "name": "Cyclops Mutton Links",
     "symbol": "~",
@@ -1266,27 +1206,6 @@
     "identified": true,
     "source_monster": "cyclops",
     "family": "giants",
-    "edible_safe": true,
-    "raw_sp": 10
-  },
-  "dark_elf_prime": {
-    "name": "Drow Spider-Sausage",
-    "symbol": "~",
-    "color": [
-      120,
-      60,
-      180
-    ],
-    "weight": 0.25,
-    "min_level": 4,
-    "tier_role": "prime",
-    "nature": "stat",
-    "part": "cut",
-    "description": "A purple ring sausage of cave-spider meat, carried by the dark elves and the Nibelung dwarves under the earth. Spicy and sharp.",
-    "identified": true,
-    "source_monster": "dark_elf",
-    "family": "fair_folk",
-    "stat_grant": "PER",
     "edible_safe": true,
     "raw_sp": 10
   },
@@ -1380,11 +1299,11 @@
       140
     ],
     "weight": 0.25,
-    "min_level": 11,
+    "min_level": 14,
     "tier_role": "prime",
     "nature": "stat",
     "part": "bone",
-    "description": "A purple knucklebone from the necromancers, from the first apprentice to the crypt summoner. They study death very closely.",
+    "description": "A purple knucklebone from the necromancers who outlived their own deaths, from the pale master to the crypt summoner. They study death very closely.",
     "identified": true,
     "source_monster": "death_mage",
     "family": "vampires_liches",
@@ -2564,27 +2483,6 @@
     "edible_safe": true,
     "raw_sp": 10
   },
-  "harrow_witch_prime": {
-    "name": "Witch's Hedge Sausage",
-    "symbol": "~",
-    "color": [
-      90,
-      40,
-      110
-    ],
-    "weight": 0.25,
-    "min_level": 19,
-    "tier_role": "prime",
-    "nature": "stat",
-    "part": "cut",
-    "description": "A ring sausage from a hedge witch's larder, stuffed with herbs from the crossroads.",
-    "identified": true,
-    "source_monster": "harrow_witch",
-    "family": "mortals",
-    "stat_grant": "WIS",
-    "edible_safe": true,
-    "raw_sp": 10
-  },
   "hecate_hound_prime": {
     "name": "Hecate's Hound Steak",
     "symbol": "~",
@@ -2914,27 +2812,6 @@
     "edible_safe": true,
     "raw_sp": 10
   },
-  "iron_patriarch_prime": {
-    "name": "Iron Patriarch's Feast Links",
-    "symbol": "~",
-    "color": [
-      180,
-      150,
-      70
-    ],
-    "weight": 0.25,
-    "min_level": 42,
-    "tier_role": "prime",
-    "nature": "stat",
-    "part": "cut",
-    "description": "Sausages from the Iron Patriarch's table, the iron-fisted lord who never missed a meal or a war.",
-    "identified": true,
-    "source_monster": "iron_patriarch",
-    "family": "mortals",
-    "stat_grant": "CON",
-    "edible_safe": true,
-    "raw_sp": 10
-  },
   "iron_sentinel_prime": {
     "name": "Sentinel Watch-Cube",
     "symbol": "~",
@@ -3181,27 +3058,6 @@
     "edible_safe": true,
     "raw_sp": 10
   },
-  "light_elf_hostile_prime": {
-    "name": "Elf-Light Acorn",
-    "symbol": "~",
-    "color": [
-      200,
-      240,
-      160
-    ],
-    "weight": 0.25,
-    "min_level": 2,
-    "tier_role": "prime",
-    "nature": "stat",
-    "part": "mote",
-    "description": "An acorn cup holding the green light of the elves and the hidden folk. Calm, old and wise.",
-    "identified": true,
-    "source_monster": "light_elf_hostile",
-    "family": "fair_folk",
-    "stat_grant": "WIS",
-    "edible_safe": true,
-    "raw_sp": 10
-  },
   "lindworm_prime": {
     "name": "Lindworm Coil-Scale",
     "symbol": "~",
@@ -3301,26 +3157,6 @@
     "source_monster": "lurking_horror",
     "family": "aberrations",
     "temp_power": "warning",
-    "edible_safe": true,
-    "raw_sp": 10
-  },
-  "mage_slayer_assassin_prime": {
-    "name": "Assassin's Shadow Ham",
-    "symbol": "~",
-    "color": [
-      80,
-      70,
-      90
-    ],
-    "weight": 0.25,
-    "min_level": 60,
-    "tier_role": "prime",
-    "nature": "sp",
-    "part": "cut",
-    "description": "A purple ham from an assassin's pack, cured in the dark. Assassins wait a long time between meals.",
-    "identified": true,
-    "source_monster": "mage_slayer_assassin",
-    "family": "mortals",
     "edible_safe": true,
     "raw_sp": 10
   },
@@ -3445,27 +3281,6 @@
     "identified": true,
     "source_monster": "mind_flayer",
     "family": "aberrations",
-    "stat_grant": "INT",
-    "edible_safe": true,
-    "raw_sp": 10
-  },
-  "mind_flayer_thrall_prime": {
-    "name": "Thrall's Pickled Ham",
-    "symbol": "~",
-    "color": [
-      100,
-      60,
-      160
-    ],
-    "weight": 0.25,
-    "min_level": 10,
-    "tier_role": "prime",
-    "nature": "stat",
-    "part": "cut",
-    "description": "A purple pickled ham from the pack of a mind flayer's thrall, cured in brine that smells of thought.",
-    "identified": true,
-    "source_monster": "mind_flayer_thrall",
-    "family": "mortals",
     "stat_grant": "INT",
     "edible_safe": true,
     "raw_sp": 10
@@ -4785,26 +4600,6 @@
     "edible_safe": true,
     "raw_sp": 10
   },
-  "snake_charmer_prime": {
-    "name": "Snake Charmer's Spiced Ham",
-    "symbol": "~",
-    "color": [
-      180,
-      140,
-      60
-    ],
-    "weight": 0.25,
-    "min_level": 14,
-    "tier_role": "prime",
-    "nature": "sp",
-    "part": "cut",
-    "description": "A spiced ham from a snake charmer's pack, rubbed with market herbs. Charmers travel far and eat well.",
-    "identified": true,
-    "source_monster": "snake_charmer",
-    "family": "mortals",
-    "edible_safe": true,
-    "raw_sp": 10
-  },
   "sobek_warrior_prime": {
     "name": "Sobek Crocodile Sausage",
     "symbol": "~",
@@ -5337,47 +5132,6 @@
     "identified": true,
     "source_monster": "vampire",
     "family": "vampires_liches",
-    "edible_safe": true,
-    "raw_sp": 10
-  },
-  "veiled_inquisitor_prime": {
-    "name": "Inquisitor's Fasting Ham",
-    "symbol": "~",
-    "color": [
-      180,
-      30,
-      50
-    ],
-    "weight": 0.25,
-    "min_level": 62,
-    "tier_role": "prime",
-    "nature": "stat",
-    "part": "cut",
-    "description": "A plain ham from a veiled inquisitor's pack, eaten only after long fasts and longer questions.",
-    "identified": true,
-    "source_monster": "veiled_inquisitor",
-    "family": "mortals",
-    "stat_grant": "WIS",
-    "edible_safe": true,
-    "raw_sp": 10
-  },
-  "veteran_knight_prime": {
-    "name": "Knight's Marching Ham",
-    "symbol": "~",
-    "color": [
-      180,
-      180,
-      200
-    ],
-    "weight": 0.25,
-    "min_level": 6,
-    "tier_role": "prime",
-    "nature": "sp",
-    "part": "cut",
-    "description": "A blue-salted marching ham from the packs of knights, mercenaries and guards. It got them through long campaigns.",
-    "identified": true,
-    "source_monster": "veteran_knight",
-    "family": "mortals",
     "edible_safe": true,
     "raw_sp": 10
   },

@@ -34,10 +34,13 @@ def load_freq(path: str = FREQ_PATH) -> dict:
 
 
 def rare_foods(food_json: dict, limit: float) -> set:
-    """Foods whose best spawn weight on any floor is under `limit`."""
+    """Foods whose best spawn weight on any floor is under `limit`. A food
+    may write its weights as floor_spawn_weight or floorSpawnWeight (the
+    mythic fruits do; items.Item reads both): both are read here too, or a
+    golden apple counted as common as bread."""
     out = set()
     for fid, rec in food_json.items():
-        weights = (rec.get('floor_spawn_weight') or {}).values()
+        weights = (rec.get('floor_spawn_weight') or rec.get('floorSpawnWeight') or {}).values()
         if weights and max(weights) < limit:
             out.add(fid)
     return out
