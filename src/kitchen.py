@@ -703,6 +703,71 @@ def ready_dishes(inventory) -> list:
     return out
 
 
+# ----------------------------------------------------------------------
+# Hunting (Brandon, 2026-11-16: "for recipes in progress, you should be
+# able to toggle it to 'hunt' for the ingredients, meaning a monster or
+# ingredient you need is gold text in the right panel ... no limit to how
+# many you can hunt at once")
+# ----------------------------------------------------------------------
+
+def hunted(player) -> set:
+    """The ids of the dishes the hero is hunting for (Player.hunted_dishes,
+    kept in the save; an old save has none). As many as he likes."""
+    d = getattr(player, '__dict__', None)
+    if d is None:
+        return set()
+    s = d.setdefault('hunted_dishes', set())
+    if not isinstance(s, set):
+        s = d['hunted_dishes'] = set(s or ())
+    return s
+
+
+def is_hunted(player, rid: str) -> bool:
+    return rid in hunted(player)
+
+
+def toggle_hunt(player, rid: str) -> bool:
+    """H in the cook menu: hunt this dish, or stop. Returns whether it is
+    hunted now."""
+    s = hunted(player)
+    if rid in s:
+        s.discard(rid)
+        return False
+    s.add(rid)
+    return True
+
+
+def hunted_parts(player, inventory=None) -> set:
+    """The parts the hero is hunting: what every hunted dish still lacks
+    (a part held in the number a dish needs is no longer hunted)."""
+    hs = hunted(player)
+    if not hs:
+        return set()
+    counts = held_counts(getattr(player, 'inventory', None) if inventory is None else inventory)
+    out = set()
+    for rid in hs:
+        rec = recipe(rid)
+        if rec is None:
+            continue
+        for p, n in needs(rec).items():
+            if counts.get(p, 0) < n:
+                out.add(p)
+    return out
+
+
+def monster_hunted(monster, parts) -> bool:
+    """A creature whose harvest gives one of ``parts`` (hunted_parts)."""
+    if not parts:
+        return False
+    iid = ingredient_for_monster(getattr(monster, 'kind', '') or getattr(monster, 'id', ''))
+    return bool(iid) and resolve(iid) in parts
+
+
+def item_hunted(item, parts) -> bool:
+    """A thing on the ground that is one of ``parts`` (hunted_parts)."""
+    return bool(parts) and resolve(getattr(item, 'id', '') or '') in parts
+
+
 def _row(player, rec: dict, counts: Counter) -> dict:
     need = needs(rec)
     have, missing = [], []
@@ -721,6 +786,7 @@ def _row(player, rec: dict, counts: Counter) -> dict:
         'have_count': len(have), 'need_count': len(need),
         'progress': f"{len(have)} of {len(need)}",
         'value': dish_value(player, rec), 'effects': dish_effects(player, rec),
+        'hunted': (not ready) and is_hunted(player, rec['id']),
     }
 
 
@@ -838,6 +904,7 @@ def apply_dish(player, rec: dict) -> list:
     """A dish cooked right: everything it gives, applied to the hero.
     Returns the message lines (the first names the dish)."""
     from food_system import _apply_permanent_power
+    hunted(player).discard(rec.get('id'))      # cooked: the hunt for it is over
     if makes(rec):
         return make_to_carry(player, rec)
     out = dish_outcome(rec)

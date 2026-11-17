@@ -328,7 +328,9 @@ Rows built by `hud_context.visible_context_rows`. Each row shows a
 name + distance (`"here"` or `"Nt"`) with color graded by
 `spawn_fit_color(dungeon_level, peak_floor, spread, kind=...)` — red
 means out-of-depth-dangerous (monster) or stale (item), green means
-good fit. Max 6 enemies, 6 items.
+good fit. Max 6 enemies, 6 items. A creature whose harvest gives a part
+a hunted dish still needs, and such a part lying in view, are gold
+instead (`hud_context.HUNT`, the cook menu's H: docs/systems/food_system.md §7).
 
 Clipping guard: `if ay + 21 > bottom: break` — rows after the panel
 bottom are dropped silently. (Audit note SYSTEMS_AUDIT §8 P5 flagged

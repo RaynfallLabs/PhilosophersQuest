@@ -1230,6 +1230,21 @@ def _(g):
     pass
 
 
+@scene('play_hunting_in_sight', 'Play', 'A dish hunted from the cook menu (H) that needs '
+       "goblin gristle, a goblin in view: the goblin's row under In Sight is gold.",
+       expect='player')
+def _(g):
+    import kitchen
+    from monster import Monster
+    old = g._capture_monster
+    m = Monster({**_monster_defs()['goblin'], 'id': 'goblin'}, old.x, old.y)
+    m._aware = True
+    g.monsters = [x for x in g.monsters if x is not old] + [m]
+    g._capture_monster = m
+    kitchen.hunted(g.player).add('dish_221')    # needs goblin gristle, and more
+    g.visible.add((m.x, m.y))
+
+
 @scene('play_zoom_medium', 'Play', 'In a game, Tab once: medium zoom.', expect='player')
 def _(g):
     press(g, pygame.K_TAB)
@@ -1702,6 +1717,14 @@ def _(g):
        'chosen in Legendary Feasts.', expect='cook_menu')
 def _(g):
     _cook_open(g, COOK_LEGENDARY, 'stat', 'trophy_asterion_minotaur_recipe')
+
+
+@scene('menu_cook_hunting', 'Menus', 'C, the SP tab, Down to a dish being built toward, H: '
+       'it is hunted ("Hunting:" in gold, its missing parts gold, "H: Stop Hunting").',
+       expect='cook_menu')
+def _(g):
+    _cook_open(g, COOK_EVERY_TAB, 'sp', 'dish_221')
+    press(g, pygame.K_h, 'h')
 
 
 @scene('menu_cook_hurt', 'Menus', 'C while hurt (a quarter of max HP): it opens on HP and '

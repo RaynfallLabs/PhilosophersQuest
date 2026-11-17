@@ -221,6 +221,10 @@ class Player:
         self.cooking_stat_gained: dict[str, int] = {
             'STR': 0, 'CON': 0, 'DEX': 0, 'INT': 0, 'WIS': 0, 'PER': 0,
         }
+        # The dishes he is hunting for (the cook menu's H, kitchen.hunted):
+        # what they still need shows gold under In Sight. No limit. An old
+        # save has none (kitchen.hunted sets it).
+        self.hunted_dishes: set = set()
         # ----- Harvest+Cook redesign 2026-05-31: per-floor cap -----
         # Rec 2: +1 stat / +5 HP per floor across ALL stats. Trophy recipes
         # bypass this cap (the boss reward feels distinct). Reset by

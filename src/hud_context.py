@@ -16,6 +16,10 @@ from game_helpers import fix_name_case
 RED = (255, 70, 80)
 NEUTRAL = (226, 218, 190)
 GREEN = (70, 255, 118)
+# A creature or part the hero is hunting for (the cook menu's H,
+# kitchen.hunted_parts): gold under In Sight, in place of its depth colour
+# (fantasy_ui.FP.GOLD_BRIGHT).
+HUNT = (255, 215, 60)
 
 
 @dataclass(frozen=True)
@@ -24,6 +28,7 @@ class ContextRow:
     meta: str
     color: tuple[int, int, int]
     distance: int
+    hunted: bool = False
 
 
 @dataclass(frozen=True)
@@ -218,6 +223,15 @@ def visible_context_rows(player, monsters: Iterable, ground_items: Iterable,
                          ) -> tuple[list[ContextRow], list[ContextRow]]:
     monster_rows: list[ContextRow] = []
     item_rows: list[ContextRow] = []
+    # What the hunted dishes still need (kitchen.hunted_parts): a creature
+    # whose harvest gives one, and a part lying in view, are drawn gold.
+    parts: set = set()
+    if getattr(player, 'hunted_dishes', None):
+        try:
+            import kitchen
+            parts = kitchen.hunted_parts(player)
+        except Exception:
+            parts = set()
 
     for monster in monsters:
         if not getattr(monster, "alive", False):
@@ -229,11 +243,13 @@ def visible_context_rows(player, monsters: Iterable, ground_items: Iterable,
         dist = _distance(player, monster)
         peak = int(getattr(monster, "peak_floor", 0) or getattr(monster, "min_level", 0) or 0)
         spread = int(getattr(monster, "spread", 10) or 10)
+        hunt = bool(parts) and kitchen.monster_hunted(monster, parts)
         monster_rows.append(ContextRow(
             fix_name_case(str(getattr(monster, "name", getattr(monster, "kind", "monster")))),
             _distance_label(dist),
-            spawn_fit_color(dungeon_level, peak, spread, kind="monster"),
+            HUNT if hunt else spawn_fit_color(dungeon_level, peak, spread, kind="monster"),
             dist,
+            hunt,
         ))
 
     for item in ground_items:
@@ -242,11 +258,13 @@ def visible_context_rows(player, monsters: Iterable, ground_items: Iterable,
         dist = _distance(player, item)
         peak = int(getattr(item, "peak_floor", 0) or getattr(item, "min_level", 0) or 0)
         spread = int(getattr(item, "spread", 10) or 10)
+        hunt = bool(parts) and kitchen.item_hunted(item, parts)
         item_rows.append(ContextRow(
             hud_item_name(player, item, include_count=True),
             _distance_label(dist),
-            spawn_fit_color(dungeon_level, peak, spread, kind="item"),
+            HUNT if hunt else spawn_fit_color(dungeon_level, peak, spread, kind="item"),
             dist,
+            hunt,
         ))
 
     monster_rows.sort(key=lambda row: (row.distance, row.label))

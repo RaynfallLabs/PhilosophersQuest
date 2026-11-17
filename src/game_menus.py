@@ -135,6 +135,10 @@ class MenuMixin:
             self._cook_sel = self._move_menu_cursor(getattr(self, '_cook_sel', 0), key, len(rows))
             self._cook_notice = None
             return
+        if key == pygame.K_h and rows:
+            self._cook_toggle_hunt(rows[max(0, min(int(getattr(self, '_cook_sel', 0) or 0),
+                                                   len(rows) - 1))])
+            return
         if key not in (pygame.K_RETURN, pygame.K_KP_ENTER) or not rows:
             return
         row = rows[max(0, min(int(getattr(self, '_cook_sel', 0) or 0), len(rows) - 1))]
@@ -151,6 +155,25 @@ class MenuMixin:
             return
         self._cook_notice = row['id']
         self.add_message(cook_menu.not_ready_line(row), 'info')
+
+    def _cook_toggle_hunt(self, row: dict):
+        """H on a dish still missing parts (Building Toward, a feast in
+        progress): hunt it, or stop (kitchen.toggle_hunt; no limit). While
+        it is hunted, what it still needs shows gold under In Sight: a
+        creature whose harvest gives it, a part lying in view."""
+        import kitchen
+        import cook_menu
+        if row['ready']:
+            self.add_message(f"{row['name']} is ready to cook: there is nothing to hunt.", 'info')
+            return
+        on = kitchen.toggle_hunt(self.player, row['id'])
+        for tab_rows in (getattr(self, '_cook_rows', None) or {}).values():
+            for r in tab_rows:
+                if r['id'] == row['id']:
+                    r['hunted'] = on
+        self._cook_layout_cache = {}            # the row's words changed
+        self._cook_notice = None
+        self.add_message(cook_menu.hunt_line(row, on), 'info')
 
     # ------------------------------------------------------------------
     # Eat menu  (z key)

@@ -369,7 +369,7 @@ Tooth: STR...), at 1.5x.
   "Special". `dish_tab(recipe)` gives a dish's tab.
 - `menu_rows(player, inventory, tab)` returns rows (dicts: `id`, `recipe`, `name`, `group`,
   `ready`, `legendary`, `trophy`, `tier`, `have` / `missing` lists of `{id, name, have, need}`,
-  `progress` "2 of 4", `value`, `effects`) in three groups:
+  `progress` "2 of 4", `value`, `effects`, `hunted`) in three groups:
   1. **ready** — cookable now, the most giving first (`dish_value`);
   2. **building** — the hero holds at least one HARVESTED part of it (a monster part or trophy;
      a ration or a foraged find alone does not count, or bread would list a hundred dishes) but
@@ -387,6 +387,14 @@ Tooth: STR...), at 1.5x.
   permanent bonus, a boss trophy's power), shown under their own heading.
 - `held_counts(inventory)` counts stacks, rations and old ids; `ready_dishes(inventory)` (every
   dish the pack can cook) is what `food_system.get_available_compound_recipes` returns.
+- **Hunting** (Brandon, 2026-11-16): H in the cook menu on a dish still missing parts (Building
+  Toward, a feast in progress) hunts it, H again stops; no limit (`toggle_hunt`, `hunted`: the ids
+  in `Player.hunted_dishes`, kept in the save; an old save has none). The row reads "Hunting:" in
+  gold, its missing parts are gold in the detail pane, and the footer says "H: Hunt" or "H: Stop
+  Hunting". `hunted_parts(player)` is what the hunted dishes still lack; under In Sight
+  (`hud_context.visible_context_rows`) a creature whose harvest gives one (`monster_hunted`) and a
+  part lying in view (`item_hunted`) are drawn gold (`hud_context.HUNT`). A part held in the
+  number the dish needs is no longer gold; a dish cooked right leaves the hunt (`apply_dish`).
 
 ---
 
@@ -504,4 +512,5 @@ one tier and one tab, names say their kind, any renamed dish finds a true vessel
 | P1 | 2026-11-14 | **Cook to carry** (§5.5): a recipe's `makes` puts a food in the pack; the Starnut Tart (Starnut, bread, apple; Special tab) for the Mooble; learned dishes show under Building Toward. 687 dishes. |
 | S1 | 2026-11-15 | **A dish that plays a song** (§5.6): Caviar and Tater Tots, Brandon's song as A Man Before a King; caviar and tater tots, rare plain foods; half damage while the song plays; Robyn starts with both; a secret achievement. 694 dishes. |
 | SD | 2026-11-16 | **You are what you eat** (Brandon's rulings 1 and 2): one stat dish teaches one whole point, still one lesson a floor (two lessons a point, `COOK_MEALS_PER_STAT_POINT`, the banked meals `cook_stat_meals` and `full_point_worth` retired; an old save's half-point banked is dropped). A dish's tier caps how far it can raise a stat (`cap_by_tier`), replacing the cap that grew with the deepest floor (3 + floor / 4); the altar and rare foods go by the deepest band. |
+| HU | 2026-11-16 | **Hunting for a dish** (§7): H in the cook menu; what a hunted dish still needs shows gold under In Sight. |
 | KA | 2026-11-14 | **Dish pictures.** 134 kind pictures (20 kinds; vessel = tier, one colour cue = main benefit; stew and roast at every tier and tab) picked by `dish_art.py` from the name, and 36 feasts drawn one by one; the old cluster picker and `art_clusters.json` retired. |

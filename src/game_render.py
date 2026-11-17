@@ -7082,7 +7082,8 @@ class RenderMixin:
     _COOK_TAB_COLORS = {'hp': (255, 146, 130), 'sp': (140, 216, 124),
                         'mp': (130, 175, 255), 'stat': (234, 196, 100),
                         'special': (200, 170, 255)}
-    _COOK_HINT = "Left/Right: Change Tab   Up/Down: Move   Enter: Cook   ESC: Close"
+    # The footer: cook_menu.footer_hint (Enter: Cook for a ready dish, H: Hunt
+    # or H: Stop Hunting for one still missing parts).
 
     def _cook_ink(self, color):
         """A text colour readable on the cook menu's panes (KT.RAISED)."""
@@ -7173,8 +7174,10 @@ class RenderMixin:
                                 list_rect.bottom - lb.y - S(4))
         detail_body = pygame.Rect(db.x + S(2), db.y, db.w - S(4), db.h)
 
+        chosen = None
         if rows:
             sel = self._menu_clamp_selection('_cook_sel', len(rows))
+            chosen = rows[sel]
             note = cm.nothing_ready_note(tab, ready_n)
             self._cook_draw_list(list_body, rows, sel, tab, note, border)
             self._cook_draw_detail(detail_body, rows[sel])
@@ -7190,7 +7193,7 @@ class RenderMixin:
                 ("The Kit (K) says what each ingredient you carry is good for.",
                  FP.FADED_TEXT, get_font('body', 18)),
             ], detail_body)
-        self._ui_footer(panel, self._COOK_HINT)
+        self._ui_footer(panel, cm.footer_hint(chosen))
 
     def _cook_list_layout(self, rows, tab, note, width, height):
         """How the list is drawn in ``width`` x ``height``: the names'
@@ -7349,7 +7352,10 @@ class RenderMixin:
         else:
             ncol = FP.GOLD_PALE if ready else FP.FADED_TEXT
         ncol = self._ui_row_text(ncol, selected)
-        dcol = self._ui_row_text(KT.TEXT_DIM if ready else FP.AMBER_ACCENT, selected)
+        # A dish being hunted (H): its "Hunting:" line in gold.
+        hunting = row.get('hunted') and not ready
+        dcol = self._ui_row_text(KT.TEXT_DIM if ready else
+                                 (FP.GOLD_BRIGHT if hunting else FP.AMBER_ACCENT), selected)
         df = get_font('body', 16)
         ty = rect.y + S(8)
         for ln in names:
@@ -7397,22 +7403,24 @@ class RenderMixin:
             out.append((pid, lines, right, ok, max(isz, len(lines) * lh) + S(3)))
         return out
 
-    def _cook_draw_parts(self, parts, x, y, width, font, bottom) -> int:
+    def _cook_draw_parts(self, parts, x, y, width, font, bottom, hunting=False) -> int:
         """Each ingredient with its own picture, what to do about it, and
-        how many the pack holds (green) or still lacks (amber)."""
+        how many the pack holds (green) or still lacks (amber; gold while
+        the dish is hunted, as under In Sight)."""
         isz = S(24)
         lh = font.get_height() + S(2)
+        lack = FP.GOLD_BRIGHT if hunting else FP.WARNING_TEXT
         for pid, lines, right, ok, h in parts:
             if y + h - S(3) > bottom:
                 break
             spr = self._cook_part_icon(pid, isz)
             if spr is not None:
                 self.screen.blit(spr, (x, y + (h - S(3) - isz) // 2))
-            col = self._cook_ink(FP.BODY_TEXT if ok else FP.WARNING_TEXT)
+            col = self._cook_ink(FP.BODY_TEXT if ok else lack)
             ty = y + (h - S(3) - len(lines) * lh) // 2
             for k, ln in enumerate(lines):
                 self.screen.blit(font.render(ln, True, col), (x + isz + S(8), ty + k * lh))
-            rs = font.render(right, True, self._cook_ink(FP.SUCCESS_TEXT if ok else FP.WARNING_TEXT))
+            rs = font.render(right, True, self._cook_ink(FP.SUCCESS_TEXT if ok else lack))
             self.screen.blit(rs, (x + width - rs.get_width(), ty))
             y += h
         return y
@@ -7430,7 +7438,7 @@ class RenderMixin:
         import kitchen
         import cook_menu as cm
         notice = getattr(self, '_cook_notice', None) == row['id']
-        key = ('detail', row['id'], rect.w, rect.h, notice)
+        key = ('detail', row['id'], rect.w, rect.h, notice, bool(row.get('hunted')))
         cache = getattr(self, '_cook_layout_cache', None)
         if cache is None:
             cache = self._cook_layout_cache = {}
@@ -7484,7 +7492,8 @@ class RenderMixin:
             parts = self._cook_parts_layout(row, rect.w, f)
             parts_head = [("Ingredients", self._cook_ink(FP.GOLD_BRIGHT), fb)]
             action = ([('__key__', 'Enter', "Cook it: one cooking question. Get it wrong "
-                                            "and the ingredients are lost.")] if ready else [])
+                                            "and the ingredients are lost.")] if ready
+                      else [('__key__', 'H', cm.hunt_action(row))])
             top_h = max(ph, bh(beside, bw))
             total = (bh(head, rect.w) + top_h + gap + bh(good_below, rect.w)
                      + bh(parts_head, rect.w) + sum(p[4] for p in parts)
@@ -7492,7 +7501,8 @@ class RenderMixin:
             plan = {'font': f, 'head': head, 'plate': plate, 'bw': bw, 'beside': beside,
                     'top_h': top_h, 'good_below': good_below, 'parts_head': parts_head,
                     'parts': parts, 'action': action, 'flav_below': flav_below,
-                    'frame': KT.GOLD_HI if legendary else None}
+                    'frame': KT.GOLD_HI if legendary else None,
+                    'hunting': bool(row.get('hunted')) and not ready}
             if total <= rect.h or (plate is None and size == 16 and not with_flav):
                 break
         cache[key] = plan
@@ -7531,7 +7541,8 @@ class RenderMixin:
         y += plan['top_h'] + gap
         y = block(plan['good_below'], y)
         y = block(plan['parts_head'], y)
-        y = self._cook_draw_parts(plan['parts'], rect.x, y, rect.w, f, rect.bottom)
+        y = self._cook_draw_parts(plan['parts'], rect.x, y, rect.w, f, rect.bottom,
+                                  hunting=plan.get('hunting', False))
         y = block(plan['action'], y)
         block(plan['flav_below'], y)
         self._menu_more_cue = None
