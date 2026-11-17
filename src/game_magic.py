@@ -1727,7 +1727,9 @@ class MagicMixin:
                     if not m.alive:
                         self._on_monster_killed(m)
             self.add_message(
-                f"Ice Storm! {quantity(hit, 'monster')} {'takes' if hit == 1 else 'take'} {scaled} cold dmg",
+                # Breath of Boreas shares this handler: each is named as itself.
+                f"{spell.get('name', 'Ice Storm')}! {quantity(hit, 'monster')} "
+                f"{'takes' if hit == 1 else 'take'} {scaled} cold dmg",
                 'success')
             return
 
@@ -2447,7 +2449,9 @@ class MagicMixin:
                 dot_dur = (self._inflict(target, 'poisoned', max(2, int(5 * chain_scale)))[0]
                            if target.alive else 0)
                 self.add_message(
-                    f"An acid arrow strikes {the_name(target, lower=True)} for {actual} damage!"
+                    # Every acid spell shares this handler: each is named as itself.
+                    f"{spell.get('name', 'Acid Arrow')} strikes {the_name(target, lower=True)} "
+                    f"for {actual} damage!"
                     + (f" Acid burns for {quantity(dot_dur, 'turn')}!" if dot_dur
                        else (f" {pronouns(target)[0].capitalize()} resists the acid burn!"
                              if target.alive else ""))
