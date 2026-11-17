@@ -182,6 +182,7 @@ import prayers as prayers_mod                    # noqa: E402
 import status_effects as status_effects_mod      # noqa: E402
 import family_edges as family_edges_mod          # noqa: E402
 import family_lore as family_lore_mod            # noqa: E402
+import butchered as butchered_mod                # noqa: E402
 import economy as economy_mod                    # noqa: E402
 import traders as traders_mod                    # noqa: E402
 import domain_counters as domain_counters_mod    # noqa: E402
@@ -2694,7 +2695,10 @@ class Run:
     def _harvest_all(self):
         """Harvest the corpses to hand while the floor's harvests last: one
         animal question each at the floor's band; a right answer gives the
-        creature's kin part (the real harvest map)."""
+        creature's kin part (the real harvest map). Butchered Before
+        (src/butchered.py): a kind harvested right before and identified
+        (its page open: studied, with the families knob on) asks no
+        question. A corpse the simulator did not name (None) always asks."""
         # A profile that does not cook (cooks_per_floor 0: m_no_cooking) never
         # harvests either: the hunt is part of cooking.
         saver = bool(self.prof.get('saver')) and float(self.prof.get('cooks_per_floor', 0) or 0) > 0
@@ -2724,7 +2728,8 @@ class Run:
             else:
                 self.cooks_left -= 1
             self.corpses_used += 1
-            if not self.quiz.one_question(band_tier(self.floor)):
+            free = bool(kind) and butchered_mod.is_free(self.p, kind)
+            if not free and not self.quiz.one_question(band_tier(self.floor)):
                 continue
             iid = kitchen_mod.ingredient_for_monster(kind) if kind else None
             if not iid:
@@ -2732,7 +2737,11 @@ class Run:
             item = weightless_part(food_system_mod.load_ingredient_for(iid) if iid else None)
             if item is not None:
                 self.pantry.append(item)
+                if kind:
+                    butchered_mod.learn(self.p, kind)
                 self.fs['harvests'] = self.fs.get('harvests', 0) + 1
+                if free:
+                    self.fs['free_harvests'] = self.fs.get('free_harvests', 0) + 1
 
     def _forage(self) -> None:
         """The floor's foraged finds (dungeon.py: 1 to 3 a floor of the

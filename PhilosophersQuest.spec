@@ -134,6 +134,8 @@ a = Analysis(
         'domain_counters', 'smithing', 'rededication',
         # The kitchen (2026-11-14): imported inside the cook menu's methods.
         'kitchen', 'cook_menu',
+        # Butchered Before (2026-11-17): imported inside the harvest.
+        'butchered',
         # The Seeker profile. _dad_key is written by the release build from
         # the PQ_DAD_KEY secret (tools/release/write_dad_key.py); it is never
         # in the repo, and is imported only inside seeker_codes.

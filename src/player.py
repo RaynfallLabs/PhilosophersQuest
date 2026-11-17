@@ -88,6 +88,10 @@ class Player:
         self.known_by_hand: set[str] = set()
         self.by_hand_tiers: dict[str, int] = {}
         self.by_hand_ring_tiers: dict[str, int] = {}
+        # Butchered Before (butchered.py): the monster kinds the hero has
+        # harvested right this run. A kind here that is also identified is
+        # harvested again with no question.
+        self.butchered_kinds: set[str] = set()
         # Three saved kits (loadouts.py): name and pieces by slot.
         from loadouts import default_kits
         self.loadouts: list = default_kits()
@@ -1035,6 +1039,10 @@ class Player:
             except Exception:
                 from game_log import log_error
                 log_error('Player.__setstate__: ring tiers not migrated')
+        # Saves from before Butchered Before (2026-11-17): no kind harvested
+        # yet, so the next harvest of each kind asks its question.
+        if not isinstance(self.__dict__.get('butchered_kinds'), set):
+            self.butchered_kinds = set(self.__dict__.get('butchered_kinds') or ())
         from loadouts import valid as _kits_valid, default_kits as _default_kits
         if not _kits_valid(self.__dict__.get('loadouts')):
             self.loadouts = _default_kits()

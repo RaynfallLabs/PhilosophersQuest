@@ -119,6 +119,7 @@ the doc wins (and the row is a bug — please update it).
 | "What is Duck of Doom?" | [pets.md](pets.md); 10,000-turn transform in `main._duck_of_doom_transform` |
 | "How does cooking work?" | [food_system.md](food_system.md); 1 Q binary at the dish's tier, numbers from `cooking_rules.json` (`kitchen.dish_outcome`) |
 | "What is harvest v4?" | [food_system.md](food_system.md); 1 Q, `harvest_map.json` keyed by `monster.kind` |
+| "Why did a harvest ask no question?" | [food_system.md](food_system.md) 8 (Butchered Before); `butchered.py`: a kind identified (its full Bestiary page open) and harvested right once, `Player.butchered_kinds` |
 | "How does the lockpick trap fire?" | [containers_lockpick.md](containers_lockpick.md); `chest_traps.json` keyed by chest tier |
 | "Where is the save file written?" | [save_meta.md](save_meta.md); `paths.save_dir()` dev vs frozen split |
 | "Why isn't my old save loading?" | [save_meta.md](save_meta.md); `player.__setstate__` migration list |
@@ -185,14 +186,16 @@ Fixes from these audits ship in the version bump that mentions them in
   doesn't consume the item.)
 - **No masteries of the old kind.** All three mastery systems (class,
   family, identify) were removed on 2026-08-06; see `player.__setstate__`
-  in [save_meta.md](save_meta.md) for the migration list. Two later rules
+  in [save_meta.md](save_meta.md) for the migration list. Three later rules
   keep what the hero has learnt this run, and are allowed because each is
   one plain rule with no ladder of growing numbers: philosophy tier
   mastery (`src/philosophy_mastery.py`: every question of a tier answered
-  right names that tier's items) and **Known by Hand**
+  right names that tier's items), **Known by Hand**
   (`src/known_by_hand.py`, 2026-11-13: a kind of gear put on once goes on
-  again with no quiz). Any other "mastery" vocabulary in UI, log or JSON
-  is a stale string: fix it.
+  again with no quiz) and **Butchered Before** (`src/butchered.py`,
+  2026-11-17: a kind identified and harvested right once is harvested
+  again with no question). Any other "mastery" vocabulary in UI, log or
+  JSON is a stale string: fix it.
 - When a game system is renamed, redesigned, or removed, **grep the OLD
   terms across all of `src/` in the same commit as the mechanical
   change.** Pytest won't catch text-only rot. See

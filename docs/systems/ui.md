@@ -1071,7 +1071,11 @@ title-cased through `_cap()` / `.title()` (v2.23.0).
 **Corpse dossier:** the `Harvest with H -- right animal answer yields
 the cut; wrong ruins the corpse.` instruction line under the
 `Harvest` / `Trophy` row was dropped in v2.23.0. The ingredient and the
-known recipe uses still render.
+known recipe uses still render. A kind Butchered Before (`butchered.py`:
+identified and harvested right once) adds "Butchered before: no question"
+(green) under the Harvest row, or under the "Unstudied" line when the body
+is unstudied but its kind is known by its family; the kind's Bestiary page
+says it under its Family line.
 
 **Mechanic lines** (`_lore_item_mechanic_lines`, L5781):
 - Hidden entirely at `id_level < 3`: `"Mechanics unrevealed"`

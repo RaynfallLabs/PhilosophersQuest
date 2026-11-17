@@ -801,9 +801,10 @@ monster dies. Carries `monster_id`, `monster_name`, `harvest_tier`,
 `harvest_threshold`, `ingredient_id`, `monster_def`, and an `id_tier`
 derived at construction time (see [identify_v3](identify_v3.md) §5).
 
-Harvest = **animal threshold**, 1 question at `corpse.harvest_tier`;
-success produces an `Ingredient` of `corpse.ingredient_id` or picks one
-from the monster's `prime_cuts` table. See [food_system](food_system.md).
+Harvest = **animal threshold**, 1 question at `corpse.harvest_tier`
+(none for a kind Butchered Before: identified and harvested right once,
+`butchered.py`); success produces its kin's ingredient
+(`data/items/harvest_map.json`). See [food_system](food_system.md) 8.
 
 ### Potion (`data/items/potion.json`, class `Potion` at `src/items.py:1131`)
 

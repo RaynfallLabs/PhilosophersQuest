@@ -9944,6 +9944,12 @@ class RenderMixin:
         else:
             mechanics.append(("Unstudied. Study this corpse (I) to reveal its stats, weaknesses and history.",
                               FP.FADED_TEXT, self.font_sm))
+            # A kind known by its family, harvested right before: H still
+            # asks no question (butchered.py), though the body is unstudied.
+            import butchered as _butchered
+            _free = _butchered.card_line(self.player, corpse)
+            if _free:
+                mechanics.append((_free, FP.SUCCESS_TEXT, self.font_sm))
 
         if id_level >= 3:
             # What it is made of, with how much each changes a blow: the ONE
@@ -9980,6 +9986,11 @@ class RenderMixin:
                 elif ing:
                     label = "Trophy" if getattr(ing, 'tier_role', '') == 'trophy' else "Harvest"
                     mechanics.append((f"{label}: {ing.name}", FP.GOLD_PALE, self.font_sm))
+                    # Butchered Before (butchered.py): H asks no question.
+                    import butchered as _butchered
+                    _free = _butchered.card_line(self.player, corpse)
+                    if _free:
+                        mechanics.append((_free, FP.SUCCESS_TEXT, self.font_sm))
                     recipes = get_recipes_for_ingredient(ingredient_id)
                     if recipes:
                         mechanics.append(("Known recipe uses", FP.GOLD_BRIGHT, self.font_sm))
@@ -10572,6 +10583,11 @@ class RenderMixin:
             return lines + self._bestiary_short_lines(entry)
         if category == 'bestiary':
             lines += self._bestiary_family_line(entry)
+            # Butchered Before (butchered.py): its corpses ask no question.
+            import butchered as _butchered
+            _free = _butchered.card_line(self.player, entry.get('_id', ''))
+            if _free:
+                lines.append((_free, FP.SUCCESS_TEXT, self.font_sm))
             lines += [
                 (f"HP: {entry.get('hp', entry.get('max_hp', '?'))}   THAC0: {entry.get('thac0', '?')}   Speed: {entry.get('speed', 1)}",
                  FP.BODY_TEXT, self.font_sm),

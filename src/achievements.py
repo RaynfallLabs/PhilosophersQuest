@@ -56,7 +56,8 @@ KNOWN_EVENTS: dict[str, frozenset] = {name: frozenset(fields) for name, fields i
     'trap':             ('kind',),
     'hellmouth':        (),
     # craft and survival
-    'harvest':          ('monster',),
+    # free: no question asked, a kind Butchered Before (src/butchered.py)
+    'harvest':          ('monster', 'free'),
     # tab: the dish's menu tab (hp, sp, mp, stat, special); parts: how many
     # different ingredients; carried: the most floors one of them was carried
     # down since it was harvested (Ingredient.harvest_floor)
