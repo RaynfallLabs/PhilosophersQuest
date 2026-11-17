@@ -5634,16 +5634,6 @@
   "flavor": "Bite and squeeze; strength from both.",
   "art": "dish_stew_t1_stat"
  },
- "dish_203": {
-  "name": "Crusher's Steak",
-  "ingredients": [
-   "rock_python_prime",
-   "wolf_pack_leader_prime"
-  ],
-  "benefit": "STR",
-  "flavor": "Dense, red and strong.",
-  "art": "dish_steak_t1_stat"
- },
  "dish_204": {
   "name": "Lion-Hearted Stew",
   "ingredients": [
@@ -7204,10 +7194,10 @@
   "ingredients": [
    "nemean_lion_prime",
    "minotaur_prime",
-   "bread_ration"
+   "rock_python_prime"
   ],
   "benefit": "STR",
-  "flavor": "No blade could cut the Nemean lion, so Heracles strangled it with his bare arms. Eat its leg with a bull-man ham and see what yours can do.",
+  "flavor": "No blade could cut the Nemean lion, so Heracles strangled it with his bare arms. Eat its leg with a bull-man ham and a python's coil, and see what yours can do.",
   "art": "dish_roast_t1_stat"
  },
  "dish_347": {

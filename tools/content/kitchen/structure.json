@@ -2978,17 +2978,6 @@
   "anchor": "wolf_pack_leader_prime",
   "cross_depth": false
  },
- "dish_203": {
-  "parts": [
-   "rock_python_prime",
-   "wolf_pack_leader_prime"
-  ],
-  "benefit": "STR",
-  "legendary": false,
-  "kind": "multi",
-  "anchor": "rock_python_prime",
-  "cross_depth": false
- },
  "dish_204": {
   "parts": [
    "manticore_prime",
@@ -4655,7 +4644,7 @@
   "parts": [
    "nemean_lion_prime",
    "minotaur_prime",
-   "bread_ration"
+   "rock_python_prime"
   ],
   "benefit": "STR",
   "legendary": false,
