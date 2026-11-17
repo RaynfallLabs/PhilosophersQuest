@@ -167,6 +167,7 @@ def start_rows(base, per) -> list:
 # ---------------------------------------------------------------------------
 def depth_rows(trials, floors, profiles) -> dict:
     import difficulty_sim as ds
+    ds.install_caches()
     out = {}
     marks = set(floors)
     for prof in profiles:

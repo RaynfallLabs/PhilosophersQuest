@@ -176,15 +176,12 @@ from items import Flask                          # noqa: E402
 from spells import LEARNABLE_SPELLS as SPELLS                        # noqa: E402
 from status_effects import DEBUFFS               # noqa: E402
 
-# bones.load_bones() creates a folder in the save dir and can DELETE a bones
-# file (level_manager.py:110-115). The simulator must never do that.
-level_manager_mod.LevelManager._maybe_spawn_bones = staticmethod(lambda *a, **k: None)
-
 # items.load_items() re-reads and re-parses its JSON file on every call, and
 # chest / drop loot calls it several times per roll. Cache the parsed lists
 # for this process (the simulator copies anything it goes on to equip).
 _ITEM_CACHE = {}
 _real_load_items = items_mod.load_items
+_CACHES_ON = False
 
 
 def _cached_load_items(item_class):
@@ -194,9 +191,25 @@ def _cached_load_items(item_class):
     return lst
 
 
-for _mod in (items_mod, container_system, dungeon_mod, level_manager_mod):
-    if getattr(_mod, 'load_items', None) is _real_load_items:
-        setattr(_mod, 'load_items', _cached_load_items)
+def install_caches() -> None:
+    """The simulator's process-wide patches: the item cache above, and
+    bones.load_bones() stubbed out (it creates a folder in the save dir and
+    can DELETE a bones file, level_manager.py:110-115; the simulator must
+    never do that). Installed by run_cell, the command line and the tools
+    that play the simulator's pieces themselves, never at import. A test
+    process that imported this module for one check handed every later test
+    in it the same shared item objects: the capture harness stacked onto
+    them, so the iron arrows doubled scene after scene and the UI gates read
+    "Carrying 555328316629214848 / 100" (the serial run before 3.5.3,
+    2026-11-16; the ring-appearance tests failed the same way under xdist)."""
+    global _CACHES_ON
+    if _CACHES_ON:
+        return
+    level_manager_mod.LevelManager._maybe_spawn_bones = staticmethod(lambda *a, **k: None)
+    for _mod in (items_mod, container_system, dungeon_mod, level_manager_mod):
+        if getattr(_mod, 'load_items', None) is _real_load_items:
+            setattr(_mod, 'load_items', _cached_load_items)
+    _CACHES_ON = True
 
 _POOL_CACHE = {}
 
@@ -3685,6 +3698,7 @@ def run_cell(profile='prepared', accuracy=0.85, trials=100, floors=(1, 100),
         KID_MODEL = True
     knobs = parse_knobs(knobs) if not isinstance(knobs, dict) or \
         set(knobs) != set(KNOB_DEFAULTS) else knobs
+    install_caches()
     random.seed(seed)
     cache = FloorCache(variants)
     lo, hi = floors
@@ -3857,6 +3871,7 @@ def summary_line(res: dict) -> str:
 # =============================================================================
 
 def main(argv=None):
+    install_caches()
     ap = argparse.ArgumentParser(
         description="Monte Carlo difficulty simulator for Philosopher's Quest.")
     ap.add_argument('--floors', default='1-100',

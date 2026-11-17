@@ -67,7 +67,8 @@ import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
-import difficulty_sim  # noqa: E402,F401  (imported for its side effects: sys.path, item cache, bones stub)
+import difficulty_sim  # noqa: E402  (sys.path; the item cache and bones stub just below)
+difficulty_sim.install_caches()
 
 import container_system       # noqa: E402
 import items as items_mod     # noqa: E402
