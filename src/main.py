@@ -5035,7 +5035,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             elif self.player.has_effect('doomed'):
                 self.add_message("The doom curse takes its toll. You fall.", 'danger')
             else:
-                self.add_message("You have died! Press ESC to quit.", 'danger')
+                self.add_message("You have died! Press Esc to return to the title.", 'danger')
 
         if self.state == STATE_DEAD:
             return
@@ -6361,7 +6361,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 self.defeat_reason = 'starved'
                 self._on_game_over()
                 self.state = STATE_DEAD
-                self.add_message("You have starved to death! Press ESC to quit.", 'danger')
+                self.add_message("You have starved to death! Press Esc to return to the title.", 'danger')
 
     # ------------------------------------------------------------------
     # Passive HP regeneration

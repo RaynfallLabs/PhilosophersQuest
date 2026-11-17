@@ -150,7 +150,9 @@ haggles (Buy tab), Esc closes (or backs out of choosing a target).
   escalator chain, 10% a link, at most 50% off, once per ware, remembered on
   the ware). What was paid is remembered on the thing bought (`_bought_for`;
   a potion that joins a stack marks the stack).
-- **Sell** (D5): the pack (worn things are never listed). The offer is
+- **Sell** (D5): the pack (worn things are never listed). A raw boss trophy
+  asks first (one of a kind; selling loses its feast): Enter or Esc keeps it,
+  Y sells. The offer is
   `economy.sell_offer`: 20% of his own price, 25% when the copy is identified
   to the last detail; a thing whose type is unknown is priced as its
   unidentified class; capped by what is left in his purse

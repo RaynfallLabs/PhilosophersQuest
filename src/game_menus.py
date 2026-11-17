@@ -198,8 +198,35 @@ class MenuMixin:
             idx = self._AZ_KEYS.get(key)
         if idx is None or idx >= len(tab_items):
             return
-        self.state = STATE_PLAYER
         item = tab_items[idx]
+        self.state = STATE_PLAYER
+        # A boss's trophy eaten raw loses its feast: ask first (UI-4).
+        if self._ask_before_trophy_goes(
+                item, "Eat the {} Raw?", "Eat It Raw", "A raw bite now; its dish is lost.",
+                lambda _i=item: self._eat_now(_i),
+                lambda: setattr(self, 'state', STATE_EAT_MENU)):
+            return
+        self._eat_now(item)
+
+    def _ask_before_trophy_goes(self, item, title: str, yes_name: str, yes_text: str,
+                                on_yes, on_no) -> bool:
+        """A raw boss trophy is about to be eaten, fed to a pet or sold, and
+        its feast lost (bug bash 3.5.1 Q2, Brandon 2026-11-16): ask first,
+        Keep It on Enter. ``title`` has a {} for the trophy's name. True when
+        the prompt opened (the caller stops)."""
+        import kitchen
+        if not kitchen.is_raw_trophy(item):
+            return False
+        name = self._bare_name(item)
+        self._ask(title.replace('{}', name, 1), kitchen.trophy_warning_lines(item),
+                  [('N', "Keep It", "Cook it later, for its feast.", on_no),
+                   ('Y', yes_name, yes_text, on_yes)],
+                  on_cancel=on_no, esc='keep it')
+        return True
+
+    def _eat_now(self, item):
+        """Eat ``item`` from the pack (the Z menu's choice), one turn."""
+        self.state = STATE_PLAYER
         self.player.remove_from_inventory(item)
         if isinstance(item, Food):
             messages = eat_food(self.player, item)
@@ -2105,8 +2132,17 @@ class MenuMixin:
         if idx is None or idx >= len(items):
             return
         food = items[idx]
-        self._apply_pet_feed(pet, food)
-        self.state = STATE_PET_MENU
+
+        def _feed(_p=pet, _f=food):
+            self._apply_pet_feed(_p, _f)
+            self.state = STATE_PET_MENU
+        # A boss's trophy fed to a pet loses its feast: ask first (UI-4).
+        if self._ask_before_trophy_goes(
+                food, "Feed the {} to " + str(pet.name) + "?", f"Feed It to {pet.name}",
+                "Your pet eats it; its dish is lost.",
+                _feed, lambda: setattr(self, 'state', STATE_PET_FEED)):
+            return
+        _feed()
 
     def _apply_pet_feed(self, pet, food):
         """Consume one unit of `food` from inventory; restore some pet HP +

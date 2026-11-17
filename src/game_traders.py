@@ -526,13 +526,26 @@ class TraderMixin:
 
     # ---------------------------------------------------------------- sell
 
-    def _trader_sell(self, item):
+    def _trader_sell(self, item, confirmed: bool = False):
         m = self._shop_merchant
         offer, why = self._trader_offer(item)
         if why:
             key = 'purse_empty' if why.endswith("purse is empty") else 'refuse'
             self.add_message(f'{m.person}: "{m.line(key, "No.")}" ({why}.)', 'warning')
             return
+        # A boss's trophy sold is its feast lost (Fenrir's Tooth went for 60
+        # gold with no word): ask first, and come back to the shop (UI-4).
+        if not confirmed:
+            def _back():
+                self.state = STATE_SHOP
+
+            def _sell(_i=item):
+                self.state = STATE_SHOP
+                self._trader_sell(_i, confirmed=True)
+            if self._ask_before_trophy_goes(
+                    item, "Sell the {} to " + str(m.person) + "?", "Sell It",
+                    f"{offer:,} gold; its dish is lost.", _sell, _back):
+                return
         # The trade-in: half his price on a visit when the hero pays him (for
         # wares or work), up to what was paid; sold before that, the
         # difference is owed and paid when the hero pays (_trader_top_up).

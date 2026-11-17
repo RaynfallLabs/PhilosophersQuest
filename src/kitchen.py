@@ -185,6 +185,30 @@ def is_harvested(part_id: str) -> bool:
     return part_kind(part_id) in ('monster', 'trophy')
 
 
+def is_raw_trophy(item) -> bool:
+    """A boss's trophy still raw in the pack (an ingredient whose tier_role
+    is 'trophy'): one of a kind, and its feast is lost if it is eaten raw,
+    fed to a pet or sold."""
+    if item is None:
+        return False
+    if getattr(item, 'tier_role', '') == 'trophy':
+        return True
+    iid = str(getattr(item, 'id', '') or '')
+    return bool(iid) and getattr(item, 'item_class', '') == 'ingredient' \
+        and part_kind(resolve(iid)) == 'trophy'
+
+
+def trophy_warning_lines(item) -> list:
+    """What the ask-first prompt says before a raw trophy goes (bug bash
+    3.5.1 Q2): there is only one, and what its dish would give."""
+    ing = ingredients().get(resolve(str(getattr(item, 'id', '') or ''))) or {}
+    power = ing.get('trophy_permanent_power') or getattr(item, 'trophy_permanent_power', '')
+    what = TROPHY_POWER_LINES.get(power or '')
+    return ["A boss's trophy, one of a kind: once it is gone, it is gone.",
+            f"Cooked, its dish gives: {what}." if what
+            else "Cooked, it makes a dish no other part can."]
+
+
 NATURE_WORDS = {'hp': 'Hearty: HP dishes', 'sp': 'Filling: SP dishes',
                 'mp': 'Arcane: MP dishes'}
 
@@ -755,7 +779,8 @@ def _would_teach(player, rec: dict) -> bool:
 
 def opening_tab(player, inventory) -> str:
     """The tab for the hero's most urgent need, among tabs with a dish ready:
-    hurt (under half HP): HP; hungry (SP under 30%): SP; low on mana (under
+    hurt (under half HP): HP; hungry (SP under 30%): SP, else HP, and with
+    neither ready still where food is (never Stat or MP); low on mana (under
     40%) with spells known: MP; else Stat while the floor's lesson is open
     and a stat dish would teach; else the tab with the most dishes ready
     (with none ready, the tab with the most rows)."""
@@ -763,15 +788,17 @@ def opening_tab(player, inventory) -> str:
 
 
 # Why the cook menu opened on its tab: ``opening_choice``'s second value.
-OPEN_REASONS = ('hurt', 'hungry', 'mana', 'lesson', 'most_ready', 'most_rows', 'nothing')
+OPEN_REASONS = ('hurt', 'hungry', 'hungry_missing', 'mana', 'lesson', 'most_ready',
+                'most_rows', 'nothing')
 
 
 def opening_choice(player, inventory) -> tuple:
     """``(tab, why)``: the tab ``opening_tab`` opens on, and why, so the menu
-    can say it ("You are hurt"): 'hurt', 'hungry', 'mana', 'lesson',
-    'most_ready' (the tab with the most dishes ready), 'most_rows' (nothing
-    ready anywhere: the tab with the most dishes being built toward) or
-    'nothing' (no rows in any tab)."""
+    can say it ("You are hurt"): 'hurt', 'hungry', 'hungry_missing' (hungry,
+    and no SP or HP dish is ready: the tab shows what each still needs),
+    'mana', 'lesson', 'most_ready' (the tab with the most dishes ready),
+    'most_rows' (nothing ready anywhere: the tab with the most dishes being
+    built toward) or 'nothing' (no rows in any tab)."""
     counts = held_counts(inventory)
     ready = {t: [] for t in MENU_TABS}
     for rec in book():
@@ -783,8 +810,18 @@ def opening_choice(player, inventory) -> tuple:
         return 1.0 if mx <= 0 else float(cur or 0) / mx
     if ready['hp'] and frac(getattr(player, 'hp', 0), getattr(player, 'max_hp', 0)) < 0.5:
         return 'hp', 'hurt'
-    if ready['sp'] and frac(getattr(player, 'sp', 0), getattr(player, 'max_sp', 0)) < 0.3:
-        return 'sp', 'hungry'
+    if frac(getattr(player, 'sp', 0), getattr(player, 'max_sp', 0)) < 0.3:
+        # A starving hero's menu opens where food is, never on a Stat or MP
+        # dish (bug bash 3.5.1 Q4, Brandon 2026-11-16): the SP tab, or the HP
+        # tab if a hearty dish is ready, or the one that is closest, saying
+        # what is missing.
+        if ready['sp']:
+            return 'sp', 'hungry'
+        if ready['hp']:
+            return 'hp', 'hungry'
+        rows = {t: menu_rows(player, inventory, t) for t in MENU_TABS}
+        if any(rows.values()):
+            return ('hp' if rows['hp'] and not rows['sp'] else 'sp'), 'hungry_missing'
     if (ready['mp'] and getattr(player, 'known_spells', None)
             and frac(getattr(player, 'mp', 0), getattr(player, 'max_mp', 0)) < 0.4):
         return 'mp', 'mana'

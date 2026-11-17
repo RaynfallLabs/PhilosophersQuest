@@ -8419,7 +8419,7 @@ class RenderMixin:
             pairs = [("S", "Your Story")]
             if review_text:
                 pairs.append(("R", "Review the missed questions"))
-            pairs.append(("Esc", "Close"))
+            pairs.append(("Esc", "Back to the Title"))
             draw_key_hints(self.screen, keys, pairs)
 
         grade_s = grade_font.render(grade, True, grade_col)

@@ -3347,7 +3347,7 @@ class CombatMixin:
                     self._killed_by = 'death'         # the Seeker's The Scythe
                     self._on_game_over()
                     self.state = STATE_DEAD
-                    self.add_message("You have died! Press ESC to quit.", 'danger')
+                    self.add_message("You have died! Press Esc to return to the title.", 'danger')
                     return
 
         # (While time is stopped, ordinary monsters stand still: see the
@@ -3851,7 +3851,7 @@ class CombatMixin:
                     self._killed_by = getattr(m, 'kind', None)   # what struck the last blow
                     self._on_game_over()
                     self.state = STATE_DEAD
-                    self.add_message("You have died! Press ESC to quit.", 'danger')
+                    self.add_message("You have died! Press Esc to return to the title.", 'danger')
                     return
 
     # ------------------------------------------------------------------
