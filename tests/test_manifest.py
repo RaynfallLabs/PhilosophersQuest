@@ -143,14 +143,16 @@ def test_rows_are_the_studied_kinds_and_those_in_view_by_level_highest_first():
     rows = manifest.make_rows(studied, in_view=['wraith', 'black_knight'])
     kinds = [r['kind'] for r in rows]
     assert set(kinds) == {'goblin', 'skeleton', 'cerberus', 'wraith'}
-    assert kinds[0] == 'cerberus'                         # level 28 above the level 1s
+    assert kinds[0] == 'cerberus'                         # level 77 above the rest
     levels = [r['level'] for r in rows]
     assert levels == sorted(levels, reverse=True)
     ones = [r['name'] for r in rows if r['level'] == 1]
     assert ones == sorted(ones, key=str.lower)            # then by name
     wraith = next(r for r in rows if r['kind'] == 'wraith')
     assert wraith['in_view'] and not wraith['studied']
-    assert manifest.row_line(wraith) == "Level 1, Drain, In View"
+    # (the wraith walks from floor 12 since the monster pass of 2026-11-17)
+    assert manifest.row_line(wraith) == f"Level {manifest.defs()['wraith']['min_level']}, Drain, In View"
+    assert manifest.defs()['wraith']['min_level'] == 12
     gob = next(r for r in rows if r['kind'] == 'goblin')
     assert gob['name'] == 'Goblin' and gob['type'] == 'pierce'
     assert manifest.row_line(gob) == "Level 1, Pierce"

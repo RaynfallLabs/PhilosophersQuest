@@ -206,6 +206,11 @@ FINAL = {
     'lyssa_madness': ('celestials', 'demons', "The spirit of mad rage the gods send, who protests the order and obeys."),
     'sown_warrior': ('mortals', 'legend', "Armed men who came up from the dragon's teeth Cadmus sowed."),
     'mind_flayer_thrall': ('mortals', 'aberrations', "A scholar or soldier whose mind a flayer emptied."),
+    # --- the monster pass of 2026-11-17's deep kinds ---------------------------
+    'oni': ('goblinkin', 'demons', "Hell's horned jailers who came up and raided in bands, as on Mount Oe: a raiding people."),
+    'kyubi_kitsune': ('shapeshifters', 'great_beasts', "The thousand-year fox that took the shape of Tamamo-no-Mae."),
+    'geryon': ('legend', 'demons', "Dante's image of fraud, one beast of one story, the answer to an old tale."),
+    'viy': ('gorgons', 'demons', "Gogol's chief of the gnomes, whose look kills: a gazer above all."),
 }
 
 

@@ -29,7 +29,9 @@
       "bone_golem": "A necromancer built it from the bones of the dead and bound it with death-magic.",
       "gnoll_fang_of_yeenoghu": "Marked by the demon lord Yeenoghu: his taint runs in its blood.",
       "gnoll_alpha_of_yeenoghu": "It ate the demon-tainted flesh of the alpha before it.",
-      "mere_wife": "The Beowulf poet names Grendel's kin the race of Cain, whom the Creator outlawed and condemned."
+      "mere_wife": "The Beowulf poet names Grendel's kin the race of Cain, whom the Creator outlawed and condemned.",
+      "kallikantzaros": "The kallikantzaroi flee the blessing of the waters at Epiphany: holy water drives them back under the earth.",
+      "image_of_the_beast": "Made to be worshipped in the Beast's place (Revelation 13): an idol, and a cursed thing."
     }
   },
   "tag_rules": {
@@ -1068,6 +1070,88 @@
       "source": "Enuma Elish, tablet IV.",
       "form": {
         "pierce": "weak"
+      }
+    },
+    "hraesvelg_eagle": {
+      "lore": "The Corpse-Swallower's wings make the cold winds of the world: the frost is its own, and fire is its enemy.",
+      "source": "Vafthrudnismal 37; Snorri, Gylfaginning 18 (Hraesvelgr at heaven's end).",
+      "elements": {
+        "resist": [
+          "cold"
+        ],
+        "weak": [
+          "fire"
+        ]
+      }
+    },
+    "rime_thurs": {
+      "lore": "Ymir's line grew out of the rime; the fire of Muspell melted the ice they came from.",
+      "source": "Snorri, Gylfaginning 5 (Ymir from the rime of Elivagar where it met Muspell's heat).",
+      "elements": {
+        "resist": [
+          "cold"
+        ],
+        "weak": [
+          "fire"
+        ]
+      },
+      "form": {
+        "blunt": "resist"
+      }
+    },
+    "kallikantzaros": {
+      "lore": "The Christmas goblins fear fire, so the hearth burns all twelve nights, and the blessing of the waters at Epiphany sends them back below.",
+      "source": "Greek and Balkan folklore of the kallikantzaroi (the Yule log kept burning; the Epiphany blessing).",
+      "elements": {
+        "weak": [
+          "fire",
+          "holy"
+        ]
+      }
+    },
+    "mushmahhu": {
+      "lore": "Tiamat filled her monsters with venom for blood: poison is its own blood and cannot hurt it.",
+      "source": "Enuma Elish, tablet I (the eleven monsters, 'venom for blood').",
+      "elements": {
+        "resist": [
+          "poison"
+        ],
+        "weak": [
+          "cold"
+        ]
+      },
+      "status_immune": [
+        "poisoned"
+      ]
+    },
+    "kyubi_kitsune": {
+      "lore": "The fox's own fire does not burn her; a mirror held up by the court diviner showed what she was.",
+      "source": "The legend of Tamamo-no-Mae (Otogizoshi; the Noh play Sessho-seki).",
+      "elements": {
+        "resist": [
+          "fire"
+        ]
+      }
+    },
+    "viy": {
+      "lore": "An earth-caked chief of the gnomes with an iron face: blades scrape off him, and his gaze is the danger, not his hide.",
+      "source": "Gogol, Viy (1835), with his own note on the folk figure.",
+      "form": {
+        "slash": "resist"
+      }
+    },
+    "image_of_the_beast": {
+      "lore": "A made idol of gold: blades skate off cast metal, and a hammer breaks it.",
+      "source": "Revelation 13:14-15 (the image given breath to speak).",
+      "form": {
+        "blunt": "weak",
+        "slash": "resist",
+        "pierce": "resist"
+      },
+      "elements": {
+        "weak": [
+          "holy"
+        ]
       }
     }
   }

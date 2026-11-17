@@ -17,7 +17,7 @@ Shipped and heavily reworked through v2.18.0 (commit `409e15d`, 2026-09-27). The
 - `src/geom.py` — footprint helpers (`is_adjacent`, `occupied_tiles`, `all_occupied_tiles`, `monster_at_tile`) that handle multi-tile bosses correctly; the Monster class routes through these rather than comparing `(m.x, m.y)` directly.
 
 ## Data
-- `data/monsters.json` — 574 monster definitions keyed by id. 28,712 lines (every monster is a top-level key with `name`, `symbol`, `color`, `hp`, `attacks`, `ai_pattern`, …).
+- `data/monsters.json` — 609 monster definitions keyed by id (2026-11-17) (every monster is a top-level key with `name`, `symbol`, `color`, `hp`, `attacks`, `ai_pattern`, …).
 
 ## Related
 - [combat](combat.md) — damage pipeline (THAC0, resistance multiplier, dragon_scales, status DCs), chain mode, chain-passives.
@@ -160,7 +160,7 @@ A single key in `data/monsters.json`. The id is the JSON key; the id is also wri
 
 | field | type | notes |
 |---|---|---|
-| `summon_kind` | str or [str] | Monster id(s) to summon. Empty = no summoner. 12 monsters carry a value: `ancient_lich`, `skeleton_mage`, `skeleton_necromancer`, `skeleton_lich`, `banshee_lich`, `cult_hierophant`, `imp_lord`, `snake_charmer`, `whispering_crone`, `crypt_summoner`, `tiamat`, `asmodeus`. |
+| `summon_kind` | str or [str] | Monster id(s) to summon. Empty = no summoner. Monsters that carry a value include `ancient_lich`, `skeleton_mage`, `skeleton_necromancer`, `skeleton_lich`, `banshee_lich`, `lich_sovereign` (its court of dead knights, 2026-11-17), `cult_hierophant`, `imp_lord`, `snake_charmer`, `whispering_crone`, `crypt_summoner`, `endor_medium`, `ushabti_overseer`, `tiamat`, `asmodeus`. |
 | `summon_cooldown` | int | default 5 | Turns between summons. |
 | `summon_max` | int | default 4 | Hard cap on summoned minions this encounter. |
 | `locust_interval` | int | default 0 | Abaddon-specific: turns between locust-swarm bursts. |
@@ -497,6 +497,14 @@ Both procedural placement callers go through `_spawn_one_in_room(room, eligible,
 
 The baseline occupancy comes from `LevelManager.generate` as `density = min(FLOOR_DENSITY_BASE + level_num / 130, 0.95)`, with `dungeon.FLOOR_DENSITY_BASE` = 0.62 (0.50 before 3.5.1).
 
+### Where each kind lives: the monster pass (2026-11-17)
+
+Brandon's rulings 11 ("monsters re-placed deeper + deep kinds: yes", until every tier holds 10-35% of the ordinary kinds) and 12 ("every family in every tier: yes") are baked into the data by `tools/balance/monster_pass_2026_11_17.py`, one table of moves, each with its reason from lore, and nine new deep kinds (`tools/content/monster_pass_new_kinds_2026_11_17.py`). The depth a creature's power belongs to follows the domains (`data/domains.json`): floors 21-40 Medusa's temple (the Greek monsters, the serpent folk, the mid-level killers of D&D standing about CR 4-9), 41-60 the Scorched Deep under Fafnir (fire and earth, the dark elves, and Egypt's dead around Setne's Tomb, floors 45-65), 61-80 Fenrir's rime halls (the Norse powers of Ragnarok: the einherjar, the valkyries, the draugr, Fenrir's whelp, the World Serpent's and Nidhoggr's broods), 81-100 the abyss under Abaddon (Tiamat's eleven monsters, the Titans of Tartarus, Revelation's riders and the princes of Hell). Some kinds that stay on floors 1-20 were re-seated inside them so floors 7-20 keep a full and fair population of their own.
+
+A moved kind keeps its attacks' names, types, riders and deliveries; the pass writes its health at its new floor's median (`floor_curve.target_hp`, so `respawn_by_hp.py` keeps it there), its blows as hard against its new neighbours as against its old ones (the median blow of the kinds near that floor, within 0.85-1.2x), its THAC0 the same distance from its new neighbours' median, its spawn weight no higher than theirs, and its harvest and treasure tiers raised to the new band. The weapon materials were then re-baked to the new monster curve (`tools/balance/weapon_curve.py --write`). `tests/test_tier_distribution.py` holds both rulings.
+
+The nine new kinds: Corpse-Swallower (`hraesvelg_eagle`, birds, floor 72), Rime-Thurs (giants, 70), Kallikantzaros (goblinkin, 68, a pack of three or four), Oni (goblinkin, 84, a band of two or three), Mushmahhu (serpents, 88), Nine-Tailed Fox (`kyubi_kitsune`, shapeshifters, 86), Geryon (legend, 89), Viy (gorgons, 90), Image of the Beast (constructs, 91).
+
 **Known convention trap** (audit P5 / level_manager docstring): `spawn_monsters` skips `rooms[0]`. Both `_spawn_monster_den_extras` and `_populate_hidden_chambers` exploit this by passing `[dummy, target_room]` so the target becomes "room 1" and gets populated. If `spawn_monsters` ever drops the skip-first convention, BOTH call sites must change together.
 
 ## Mini-boss planning (`LevelManager._roll_planned_mini_bosses`)
@@ -640,6 +648,7 @@ The design cap is 1-5 and `_spawn_treasure_item` scales as `effective_floor = ti
 - 2026-05-19 — Density rebuild + bell-curve spawn pool. `_build_spawn_pool` replaces the old min/max-level clamp.
 - 2026-06-06 — Per-room population pass. `populate_floor` added; `spawn_monsters` kept for intentional clustering.
 - Pre-v2.18 — Pre-rolled mini-boss planning via `_roll_planned_mini_bosses`.
+- 2026-11-17 — The monster pass (rulings 11 and 12): 133 kinds moved out of floors 1-20 by their lore, 68 re-seated inside them, 28 moved across tiers in the deep, nine new deep kinds; every family has a kind in every tier and the ordinary kinds are 35 / 30 / 14 / 11 / 10% by tier (were 60 / 16 / 9 / 7 / 7). See "Where each kind lives" above.
 - 2026-09-27 (v2.18.0, commit `409e15d`) — Full systems audit + fix wave:
   - `is_boss` JSON wire fixed. 10 mini-bosses recover boss-immunity.
   - 4 orphan legendaries given `spawn_chance = 1.0`.

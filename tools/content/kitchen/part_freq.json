@@ -1,7 +1,7 @@
 {
  "_doc": "How often each harvestable kitchen part turns up in a run, measured by the simulator (tools/balance/difficulty_sim.py, the mastery kid, every kill harvested). share_of_runs: the share of runs it turns up in; mean_count: how many a run yields; median_first_floor: the floor it is first found on. Regenerate with `py tools/content/kitchen/part_freq.py` (see its docstring) whenever spawns, the harvest map or the kin groups change. build_kitchen.py checks the recipe book against it through part_rules.py: rules.common_share makes a part common; a feast may also hold an early part (first found by rules.early_floor) seen in rules.early_share of runs; a food whose best spawn weight is under rules.rare_food_weight is rare.",
- "runs": 15,
- "seed": null,
+ "runs": 45,
+ "seed": 1,
  "rules": {
   "common_share": 0.9,
   "early_floor": 20,
@@ -10,309 +10,299 @@
  },
  "parts": {
   "abaddon_destroyer_trophy": {
-   "share_of_runs": 1.0,
-   "mean_count": 1.0,
+   "share_of_runs": 0.956,
+   "mean_count": 0.96,
    "median_first_floor": 100
   },
   "aboleth_lesser_prime": {
-   "share_of_runs": 0.933,
-   "mean_count": 2.4,
-   "median_first_floor": 21
+   "share_of_runs": 0.8,
+   "mean_count": 1.76,
+   "median_first_floor": 37
   },
   "abyssal_behemoth_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 16.0,
-   "median_first_floor": 68
+   "mean_count": 10.44,
+   "median_first_floor": 71
   },
   "abyssal_dragon_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 11.47,
-   "median_first_floor": 88
+   "mean_count": 6.96,
+   "median_first_floor": 90
   },
   "abyssal_hound_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 52.4,
-   "median_first_floor": 45
+   "mean_count": 36.91,
+   "median_first_floor": 46
   },
   "abyssal_mimic_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 7.87,
-   "median_first_floor": 85
+   "mean_count": 5.18,
+   "median_first_floor": 86
   },
   "acid_blob_prime": {
-   "share_of_runs": 1.0,
-   "mean_count": 7.13,
+   "share_of_runs": 0.978,
+   "mean_count": 3.78,
    "median_first_floor": 7
   },
   "adult_blue_dragon_prime": {
-   "share_of_runs": 0.933,
-   "mean_count": 2.6,
-   "median_first_floor": 34
+   "share_of_runs": 0.622,
+   "mean_count": 1.02,
+   "median_first_floor": 36
   },
   "ammit_spawn_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 4.47,
-   "median_first_floor": 82
+   "mean_count": 6.11,
+   "median_first_floor": 52
   },
   "anansi_prime": {
-   "share_of_runs": 0.467,
-   "mean_count": 0.47,
+   "share_of_runs": 0.111,
+   "mean_count": 0.11,
    "median_first_floor": 92
   },
   "anubis_guardian_prime": {
-   "share_of_runs": 0.467,
-   "mean_count": 0.8,
-   "median_first_floor": 12
+   "share_of_runs": 0.933,
+   "mean_count": 3.04,
+   "median_first_floor": 47
   },
   "apocalypse_herald_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 73.47,
+   "mean_count": 53.6,
    "median_first_floor": 81
   },
   "arachne_prime": {
-   "share_of_runs": 0.467,
-   "mean_count": 0.47,
+   "share_of_runs": 0.733,
+   "mean_count": 0.73,
    "median_first_floor": 9
   },
   "arcane_golem_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 9.93,
-   "median_first_floor": 47
+   "mean_count": 4.53,
+   "median_first_floor": 48
   },
   "arch_demon_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 59.87,
+   "mean_count": 48.2,
    "median_first_floor": 36
   },
   "asmodeus_trophy": {
-   "share_of_runs": 0.333,
-   "mean_count": 0.33,
+   "share_of_runs": 0.356,
+   "mean_count": 0.36,
    "median_first_floor": 94
   },
   "assassin_vine_prime": {
-   "share_of_runs": 1.0,
-   "mean_count": 12.2,
-   "median_first_floor": 2
+   "share_of_runs": 0.978,
+   "mean_count": 4.69,
+   "median_first_floor": 7
   },
   "asterion_minotaur_prime": {
-   "share_of_runs": 0.4,
-   "mean_count": 0.4,
+   "share_of_runs": 0.067,
+   "mean_count": 0.07,
    "median_first_floor": 27
   },
   "asterion_minotaur_trophy": {
-   "share_of_runs": 1.0,
-   "mean_count": 1.0,
+   "share_of_runs": 0.978,
+   "mean_count": 0.98,
    "median_first_floor": 20
   },
   "astral_horror_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 8.87,
-   "median_first_floor": 69
+   "mean_count": 4.36,
+   "median_first_floor": 71
   },
   "ba_spirit_prime": {
-   "share_of_runs": 0.733,
-   "mean_count": 1.4,
-   "median_first_floor": 7
+   "share_of_runs": 0.844,
+   "mean_count": 1.89,
+   "median_first_floor": 8
   },
   "baba_yaga_prime": {
-   "share_of_runs": 0.4,
-   "mean_count": 0.4,
+   "share_of_runs": 0.244,
+   "mean_count": 0.24,
    "median_first_floor": 59
   },
   "balor_lesser_prime": {
-   "share_of_runs": 1.0,
-   "mean_count": 3.33,
-   "median_first_floor": 38
-  },
-  "bandit_captain_prime": {
-   "share_of_runs": 1.0,
-   "mean_count": 18.07,
-   "median_first_floor": 3
+   "share_of_runs": 0.867,
+   "mean_count": 2.16,
+   "median_first_floor": 41
   },
   "banshee_prime": {
-   "share_of_runs": 0.533,
-   "mean_count": 0.67,
-   "median_first_floor": 14
+   "share_of_runs": 0.822,
+   "mean_count": 1.84,
+   "median_first_floor": 17
   },
   "basilisk_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 12.47,
-   "median_first_floor": 8
+   "mean_count": 6.89,
+   "median_first_floor": 25
   },
   "bat_prime": {
-   "share_of_runs": 0.733,
-   "mean_count": 5.8,
-   "median_first_floor": 2
-  },
-  "battle_mage_prime": {
-   "share_of_runs": 0.6,
-   "mean_count": 1.47,
-   "median_first_floor": 3
+   "share_of_runs": 0.756,
+   "mean_count": 4.71,
+   "median_first_floor": 4
   },
   "behir_lesser_prime": {
-   "share_of_runs": 1.0,
-   "mean_count": 13.67,
+   "share_of_runs": 0.978,
+   "mean_count": 4.67,
    "median_first_floor": 22
   },
   "beholder_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 6.13,
-   "median_first_floor": 13
+   "mean_count": 5.11,
+   "median_first_floor": 11
   },
   "black_pudding_prime": {
-   "share_of_runs": 0.667,
-   "mean_count": 1.4,
-   "median_first_floor": 14
+   "share_of_runs": 0.844,
+   "mean_count": 1.71,
+   "median_first_floor": 23
   },
   "blink_dog_prime": {
-   "share_of_runs": 0.533,
-   "mean_count": 0.73,
-   "median_first_floor": 3
+   "share_of_runs": 0.667,
+   "mean_count": 0.98,
+   "median_first_floor": 6
   },
   "blood_archon_trophy": {
-   "share_of_runs": 0.2,
-   "mean_count": 0.2,
+   "share_of_runs": 0.067,
+   "mean_count": 0.07,
    "median_first_floor": 82
   },
   "boggart_prime": {
-   "share_of_runs": 0.467,
-   "mean_count": 0.73,
-   "median_first_floor": 2
+   "share_of_runs": 0.222,
+   "mean_count": 0.33,
+   "median_first_floor": 3
   },
   "bone_colossus_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 16.2,
-   "median_first_floor": 29
+   "mean_count": 9.69,
+   "median_first_floor": 30
   },
   "bone_devil_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 14.33,
-   "median_first_floor": 4
+   "mean_count": 9.18,
+   "median_first_floor": 11
   },
   "bone_golem_prime": {
-   "share_of_runs": 0.667,
-   "mean_count": 1.73,
-   "median_first_floor": 33
+   "share_of_runs": 0.556,
+   "mean_count": 0.67,
+   "median_first_floor": 35
   },
   "bone_witch_prime": {
-   "share_of_runs": 0.333,
-   "mean_count": 0.33,
-   "median_first_floor": 6
-  },
-  "bugbear_prime": {
-   "share_of_runs": 0.867,
-   "mean_count": 2.27,
-   "median_first_floor": 5
-  },
-  "bullywug_prime": {
-   "share_of_runs": 0.333,
-   "mean_count": 0.87,
+   "share_of_runs": 0.289,
+   "mean_count": 0.31,
    "median_first_floor": 3
   },
+  "bugbear_prime": {
+   "share_of_runs": 0.956,
+   "mean_count": 3.78,
+   "median_first_floor": 9
+  },
+  "bullywug_prime": {
+   "share_of_runs": 0.489,
+   "mean_count": 1.98,
+   "median_first_floor": 2
+  },
   "burning_skeleton_prime": {
-   "share_of_runs": 0.4,
-   "mean_count": 0.73,
-   "median_first_floor": 1
+   "share_of_runs": 0.467,
+   "mean_count": 0.67,
+   "median_first_floor": 5
   },
   "cacus_prime": {
-   "share_of_runs": 0.067,
-   "mean_count": 0.07,
+   "share_of_runs": 0.089,
+   "mean_count": 0.09,
    "median_first_floor": 39
   },
   "camazotz_prime": {
-   "share_of_runs": 0.067,
-   "mean_count": 0.07,
+   "share_of_runs": 0.2,
+   "mean_count": 0.2,
    "median_first_floor": 34
   },
   "carbuncle_prime": {
-   "share_of_runs": 0.533,
-   "mean_count": 0.53,
-   "median_first_floor": 7
+   "share_of_runs": 0.222,
+   "mean_count": 0.33,
+   "median_first_floor": 4
   },
   "carrion_crawler_prime": {
-   "share_of_runs": 0.667,
-   "mean_count": 0.8,
-   "median_first_floor": 5
+   "share_of_runs": 0.578,
+   "mean_count": 0.87,
+   "median_first_floor": 12
   },
   "cath_palug_prime": {
-   "share_of_runs": 0.667,
-   "mean_count": 1.2,
-   "median_first_floor": 17
+   "share_of_runs": 0.711,
+   "mean_count": 1.27,
+   "median_first_floor": 31
   },
   "catoblepas_prime": {
-   "share_of_runs": 1.0,
-   "mean_count": 3.53,
-   "median_first_floor": 16
+   "share_of_runs": 0.933,
+   "mean_count": 2.91,
+   "median_first_floor": 43
   },
   "cave_bear_prime": {
    "share_of_runs": 0.933,
-   "mean_count": 1.93,
+   "mean_count": 3.24,
    "median_first_floor": 11
   },
   "cerberus_prime": {
    "share_of_runs": 0.8,
-   "mean_count": 1.47,
-   "median_first_floor": 31
+   "mean_count": 1.49,
+   "median_first_floor": 81
   },
   "changeling_prime": {
-   "share_of_runs": 0.467,
-   "mean_count": 0.47,
-   "median_first_floor": 4
+   "share_of_runs": 0.267,
+   "mean_count": 0.31,
+   "median_first_floor": 2
   },
   "chaos_troll_prime": {
-   "share_of_runs": 0.867,
-   "mean_count": 1.73,
-   "median_first_floor": 42
+   "share_of_runs": 0.733,
+   "mean_count": 1.36,
+   "median_first_floor": 41
   },
   "charybdis_prime": {
-   "share_of_runs": 0.0,
-   "mean_count": 0.0,
-   "median_first_floor": null
+   "share_of_runs": 0.133,
+   "mean_count": 0.13,
+   "median_first_floor": 78
   },
   "charybdis_spawn_prime": {
-   "share_of_runs": 0.4,
-   "mean_count": 0.47,
-   "median_first_floor": 13
+   "share_of_runs": 0.978,
+   "mean_count": 3.42,
+   "median_first_floor": 70
   },
   "chimera_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 5.8,
-   "median_first_floor": 18
+   "mean_count": 4.93,
+   "median_first_floor": 38
   },
   "clay_golem_prime": {
-   "share_of_runs": 0.733,
-   "mean_count": 1.4,
-   "median_first_floor": 11
+   "share_of_runs": 0.844,
+   "mean_count": 2.07,
+   "median_first_floor": 35
   },
   "clockwork_horror_prime": {
-   "share_of_runs": 0.533,
-   "mean_count": 0.87,
-   "median_first_floor": 9
+   "share_of_runs": 0.8,
+   "mean_count": 1.96,
+   "median_first_floor": 33
   },
   "cloud_giant_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 8.0,
-   "median_first_floor": 43
+   "mean_count": 5.24,
+   "median_first_floor": 44
   },
   "cobra_prime": {
-   "share_of_runs": 0.333,
-   "mean_count": 0.53,
+   "share_of_runs": 0.378,
+   "mean_count": 0.47,
    "median_first_floor": 2
   },
   "cockatrice_prime": {
-   "share_of_runs": 0.6,
-   "mean_count": 0.67,
-   "median_first_floor": 4
+   "share_of_runs": 0.911,
+   "mean_count": 2.11,
+   "median_first_floor": 11
   },
   "corrupted_angel_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 12.93,
-   "median_first_floor": 67
+   "mean_count": 7.27,
+   "median_first_floor": 68
   },
   "corrupted_treant_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 7.6,
-   "median_first_floor": 46
+   "mean_count": 3.87,
+   "median_first_floor": 63
   },
   "cow_king_prime": {
    "share_of_runs": 0.0,
@@ -320,119 +310,109 @@
    "median_first_floor": null
   },
   "crypt_thing_prime": {
-   "share_of_runs": 0.467,
-   "mean_count": 0.47,
-   "median_first_floor": 3
+   "share_of_runs": 0.289,
+   "mean_count": 0.31,
+   "median_first_floor": 8
   },
   "crystal_ooze_prime": {
    "share_of_runs": 0.333,
-   "mean_count": 0.4,
-   "median_first_floor": 3
-  },
-  "cult_initiate_prime": {
-   "share_of_runs": 1.0,
-   "mean_count": 22.93,
-   "median_first_floor": 10
+   "mean_count": 0.49,
+   "median_first_floor": 6
   },
   "cyclops_prime": {
-   "share_of_runs": 0.733,
-   "mean_count": 1.47,
-   "median_first_floor": 13
-  },
-  "dark_elf_prime": {
-   "share_of_runs": 1.0,
-   "mean_count": 7.4,
-   "median_first_floor": 7
+   "share_of_runs": 0.911,
+   "mean_count": 2.62,
+   "median_first_floor": 28
   },
   "darkmantle_prime": {
-   "share_of_runs": 0.6,
-   "mean_count": 0.6,
+   "share_of_runs": 0.4,
+   "mean_count": 0.51,
    "median_first_floor": 5
   },
   "death_dog_prime": {
-   "share_of_runs": 0.333,
-   "mean_count": 0.67,
-   "median_first_floor": 3
+   "share_of_runs": 0.533,
+   "mean_count": 0.78,
+   "median_first_floor": 6
   },
   "death_knight_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 71.13,
-   "median_first_floor": 16
+   "mean_count": 50.96,
+   "median_first_floor": 28
   },
   "death_lord_prime": {
-   "share_of_runs": 0.933,
-   "mean_count": 2.93,
-   "median_first_floor": 77
+   "share_of_runs": 0.756,
+   "mean_count": 1.36,
+   "median_first_floor": 88
   },
   "death_mage_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 18.6,
-   "median_first_floor": 12
+   "mean_count": 15.89,
+   "median_first_floor": 14
   },
   "deep_one_priest_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 8.53,
-   "median_first_floor": 45
+   "mean_count": 5.0,
+   "median_first_floor": 47
   },
   "demon_knight_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 44.67,
-   "median_first_floor": 32
+   "mean_count": 32.07,
+   "median_first_floor": 36
   },
   "demonic_trickster_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 28.73,
-   "median_first_floor": 43
+   "mean_count": 21.38,
+   "median_first_floor": 42
   },
   "dire_lion_prime": {
-   "share_of_runs": 0.467,
-   "mean_count": 0.67,
-   "median_first_floor": 11
+   "share_of_runs": 0.933,
+   "mean_count": 3.11,
+   "median_first_floor": 46
   },
   "displacer_beast_prime": {
-   "share_of_runs": 0.467,
-   "mean_count": 0.8,
-   "median_first_floor": 12
+   "share_of_runs": 0.667,
+   "mean_count": 1.02,
+   "median_first_floor": 24
   },
   "dracolich_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 23.93,
-   "median_first_floor": 31
+   "mean_count": 15.24,
+   "median_first_floor": 41
   },
   "drake_fire_prime": {
-   "share_of_runs": 0.867,
-   "mean_count": 1.8,
-   "median_first_floor": 10
+   "share_of_runs": 0.978,
+   "mean_count": 3.93,
+   "median_first_floor": 13
   },
   "draugr_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 7.2,
-   "median_first_floor": 78
+   "mean_count": 10.38,
+   "median_first_floor": 62
   },
   "dretch_prime": {
-   "share_of_runs": 0.933,
-   "mean_count": 3.73,
-   "median_first_floor": 3
+   "share_of_runs": 0.844,
+   "mean_count": 3.84,
+   "median_first_floor": 2
   },
   "dryad_guardian_prime": {
-   "share_of_runs": 0.733,
-   "mean_count": 1.33,
-   "median_first_floor": 6
+   "share_of_runs": 0.822,
+   "mean_count": 2.07,
+   "median_first_floor": 35
   },
   "dullahan_spawn_prime": {
-   "share_of_runs": 0.667,
-   "mean_count": 1.13,
-   "median_first_floor": 13
+   "share_of_runs": 0.8,
+   "mean_count": 1.58,
+   "median_first_floor": 29
   },
   "each_uisce_prime": {
-   "share_of_runs": 0.667,
-   "mean_count": 1.13,
-   "median_first_floor": 12
+   "share_of_runs": 0.889,
+   "mean_count": 1.91,
+   "median_first_floor": 26
   },
   "earth_elemental_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 11.67,
-   "median_first_floor": 29
+   "mean_count": 11.47,
+   "median_first_floor": 35
   },
   "echidna_prime": {
    "share_of_runs": 0.2,
@@ -440,23 +420,23 @@
    "median_first_floor": 24
   },
   "entropy_elemental_prime": {
-   "share_of_runs": 1.0,
-   "mean_count": 6.27,
-   "median_first_floor": 77
+   "share_of_runs": 0.933,
+   "mean_count": 3.76,
+   "median_first_floor": 78
   },
   "erinyes_lesser_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 48.53,
-   "median_first_floor": 14
+   "mean_count": 37.0,
+   "median_first_floor": 33
   },
   "erlking_prime": {
-   "share_of_runs": 0.133,
-   "mean_count": 0.13,
+   "share_of_runs": 0.156,
+   "mean_count": 0.16,
    "median_first_floor": 29
   },
   "ethereal_filcher_prime": {
-   "share_of_runs": 0.267,
-   "mean_count": 0.27,
+   "share_of_runs": 0.333,
+   "mean_count": 0.4,
    "median_first_floor": 7
   },
   "fafnir_dragon_trophy": {
@@ -465,9 +445,9 @@
    "median_first_floor": 60
   },
   "fenrir_pup_prime": {
-   "share_of_runs": 0.533,
-   "mean_count": 0.6,
-   "median_first_floor": 7
+   "share_of_runs": 1.0,
+   "mean_count": 7.24,
+   "median_first_floor": 66
   },
   "fenrir_wolf_trophy": {
    "share_of_runs": 1.0,
@@ -475,209 +455,204 @@
    "median_first_floor": 80
   },
   "fetch_prime": {
-   "share_of_runs": 0.533,
-   "mean_count": 0.67,
+   "share_of_runs": 0.467,
+   "mean_count": 0.6,
    "median_first_floor": 4
   },
   "fionn_hound_prime": {
-   "share_of_runs": 0.733,
-   "mean_count": 1.6,
-   "median_first_floor": 10
+   "share_of_runs": 0.911,
+   "mean_count": 3.2,
+   "median_first_floor": 23
   },
   "fire_beetle_prime": {
-   "share_of_runs": 0.667,
-   "mean_count": 0.73,
+   "share_of_runs": 0.356,
+   "mean_count": 0.47,
    "median_first_floor": 4
   },
   "fire_elemental_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 25.33,
-   "median_first_floor": 32
+   "mean_count": 16.89,
+   "median_first_floor": 34
   },
   "fire_giant_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 19.93,
-   "median_first_floor": 41
+   "mean_count": 11.67,
+   "median_first_floor": 42
   },
   "flesh_colossus_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 8.53,
-   "median_first_floor": 76
+   "mean_count": 3.96,
+   "median_first_floor": 77
   },
   "flesh_golem_prime": {
-   "share_of_runs": 0.933,
-   "mean_count": 2.93,
-   "median_first_floor": 15
+   "share_of_runs": 0.733,
+   "mean_count": 1.36,
+   "median_first_floor": 26
   },
   "fomorian_prime": {
-   "share_of_runs": 0.533,
-   "mean_count": 0.67,
-   "median_first_floor": 12
+   "share_of_runs": 0.867,
+   "mean_count": 2.16,
+   "median_first_floor": 33
   },
   "frost_crawler_prime": {
-   "share_of_runs": 1.0,
-   "mean_count": 5.07,
-   "median_first_floor": 23
+   "share_of_runs": 0.956,
+   "mean_count": 3.71,
+   "median_first_floor": 62
   },
   "frost_giant_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 48.13,
-   "median_first_floor": 35
+   "mean_count": 35.53,
+   "median_first_floor": 36
   },
   "frost_skeleton_prime": {
-   "share_of_runs": 0.467,
-   "mean_count": 0.8,
+   "share_of_runs": 0.511,
+   "mean_count": 0.64,
    "median_first_floor": 2
   },
   "gas_spore_prime": {
-   "share_of_runs": 0.4,
-   "mean_count": 0.67,
+   "share_of_runs": 0.311,
+   "mean_count": 0.33,
    "median_first_floor": 3
   },
   "gelatinous_cube_prime": {
-   "share_of_runs": 1.0,
-   "mean_count": 4.6,
-   "median_first_floor": 35
+   "share_of_runs": 0.978,
+   "mean_count": 3.47,
+   "median_first_floor": 44
   },
   "ghoul_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 3.67,
+   "mean_count": 5.51,
    "median_first_floor": 11
   },
   "giant_beetle_prime": {
-   "share_of_runs": 0.733,
-   "mean_count": 1.87,
-   "median_first_floor": 7
+   "share_of_runs": 0.956,
+   "mean_count": 3.6,
+   "median_first_floor": 43
   },
   "giant_centipede_prime": {
-   "share_of_runs": 0.533,
-   "mean_count": 0.73,
-   "median_first_floor": 4
+   "share_of_runs": 0.356,
+   "mean_count": 0.44,
+   "median_first_floor": 6
   },
   "giant_frog_prime": {
-   "share_of_runs": 0.6,
-   "mean_count": 1.0,
+   "share_of_runs": 0.4,
+   "mean_count": 0.56,
    "median_first_floor": 4
   },
   "giant_lizard_prime": {
-   "share_of_runs": 0.733,
-   "mean_count": 2.07,
-   "median_first_floor": 6
-  },
-  "giant_mantis_prime": {
-   "share_of_runs": 0.133,
-   "mean_count": 0.13,
+   "share_of_runs": 0.978,
+   "mean_count": 3.49,
    "median_first_floor": 7
   },
+  "giant_mantis_prime": {
+   "share_of_runs": 0.333,
+   "mean_count": 0.42,
+   "median_first_floor": 4
+  },
   "giant_rat_prime": {
-   "share_of_runs": 1.0,
-   "mean_count": 6.93,
-   "median_first_floor": 1
+   "share_of_runs": 0.844,
+   "mean_count": 6.4,
+   "median_first_floor": 3
   },
   "giant_scorpion_prime": {
-   "share_of_runs": 1.0,
-   "mean_count": 8.07,
-   "median_first_floor": 6
+   "share_of_runs": 0.956,
+   "mean_count": 5.64,
+   "median_first_floor": 21
   },
   "giant_spider_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 11.2,
-   "median_first_floor": 2
+   "mean_count": 13.51,
+   "median_first_floor": 3
   },
   "giant_wasp_prime": {
-   "share_of_runs": 0.733,
-   "mean_count": 1.27,
-   "median_first_floor": 4
+   "share_of_runs": 0.844,
+   "mean_count": 1.87,
+   "median_first_floor": 7
   },
   "gibbering_mouther_prime": {
-   "share_of_runs": 0.667,
-   "mean_count": 1.27,
-   "median_first_floor": 8
+   "share_of_runs": 0.956,
+   "mean_count": 2.04,
+   "median_first_floor": 11
   },
   "gilded_mimic_prime": {
-   "share_of_runs": 1.0,
-   "mean_count": 5.53,
-   "median_first_floor": 54
+   "share_of_runs": 0.978,
+   "mean_count": 3.4,
+   "median_first_floor": 55
   },
   "glabrezu_prime": {
-   "share_of_runs": 1.0,
-   "mean_count": 5.0,
-   "median_first_floor": 30
+   "share_of_runs": 0.956,
+   "mean_count": 4.07,
+   "median_first_floor": 33
   },
   "gnoll_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 17.07,
+   "mean_count": 12.84,
    "median_first_floor": 6
   },
   "goblin_king_prime": {
-   "share_of_runs": 0.733,
-   "mean_count": 1.13,
-   "median_first_floor": 5
+   "share_of_runs": 0.644,
+   "mean_count": 0.98,
+   "median_first_floor": 8
   },
   "goblin_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 20.2,
-   "median_first_floor": 4
+   "mean_count": 25.29,
+   "median_first_floor": 3
   },
   "gorgon_warrior_prime": {
-   "share_of_runs": 0.6,
-   "mean_count": 0.8,
-   "median_first_floor": 10
+   "share_of_runs": 0.644,
+   "mean_count": 1.04,
+   "median_first_floor": 30
   },
   "grave_guardian_prime": {
-   "share_of_runs": 0.733,
-   "mean_count": 0.93,
-   "median_first_floor": 6
+   "share_of_runs": 0.978,
+   "mean_count": 3.07,
+   "median_first_floor": 10
   },
   "gravehound_prime": {
-   "share_of_runs": 0.533,
-   "mean_count": 0.87,
-   "median_first_floor": 4
+   "share_of_runs": 0.622,
+   "mean_count": 1.0,
+   "median_first_floor": 3
   },
   "green_knight_trophy": {
-   "share_of_runs": 0.2,
-   "mean_count": 0.2,
+   "share_of_runs": 0.044,
+   "mean_count": 0.04,
    "median_first_floor": 74
   },
   "green_slime_prime": {
-   "share_of_runs": 0.6,
-   "mean_count": 0.93,
+   "share_of_runs": 0.4,
+   "mean_count": 0.47,
    "median_first_floor": 3
   },
   "grell_prime": {
-   "share_of_runs": 0.867,
-   "mean_count": 1.93,
-   "median_first_floor": 10
+   "share_of_runs": 1.0,
+   "mean_count": 3.24,
+   "median_first_floor": 14
   },
   "grick_prime": {
-   "share_of_runs": 0.533,
-   "mean_count": 1.0,
-   "median_first_floor": 4
+   "share_of_runs": 0.733,
+   "mean_count": 1.67,
+   "median_first_floor": 9
   },
   "grid_bug_prime": {
-   "share_of_runs": 0.533,
-   "mean_count": 1.07,
-   "median_first_floor": 5
+   "share_of_runs": 0.511,
+   "mean_count": 0.58,
+   "median_first_floor": 4
   },
   "griffin_prime": {
-   "share_of_runs": 0.333,
-   "mean_count": 0.47,
-   "median_first_floor": 11
+   "share_of_runs": 0.467,
+   "mean_count": 0.69,
+   "median_first_floor": 32
   },
   "harpy_prime": {
-   "share_of_runs": 1.0,
-   "mean_count": 12.53,
-   "median_first_floor": 25
-  },
-  "harrow_witch_prime": {
-   "share_of_runs": 1.0,
-   "mean_count": 19.33,
-   "median_first_floor": 18
+   "share_of_runs": 0.978,
+   "mean_count": 6.38,
+   "median_first_floor": 11
   },
   "hecate_hound_prime": {
-   "share_of_runs": 0.733,
-   "mean_count": 1.33,
-   "median_first_floor": 5
+   "share_of_runs": 0.956,
+   "mean_count": 2.49,
+   "median_first_floor": 28
   },
   "hell_bovine_prime": {
    "share_of_runs": 0.0,
@@ -685,194 +660,179 @@
    "median_first_floor": null
   },
   "hezrou_prime": {
-   "share_of_runs": 0.867,
-   "mean_count": 2.47,
-   "median_first_floor": 14
+   "share_of_runs": 0.933,
+   "mean_count": 2.44,
+   "median_first_floor": 27
   },
   "hill_giant_prime": {
-   "share_of_runs": 0.867,
-   "mean_count": 1.53,
-   "median_first_floor": 12
+   "share_of_runs": 0.889,
+   "mean_count": 2.44,
+   "median_first_floor": 26
   },
   "hobgoblin_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 13.4,
-   "median_first_floor": 4
-  },
-  "hollow_one_prime": {
-   "share_of_runs": 0.667,
-   "mean_count": 1.07,
+   "mean_count": 14.49,
    "median_first_floor": 2
   },
+  "hollow_one_prime": {
+   "share_of_runs": 0.756,
+   "mean_count": 1.33,
+   "median_first_floor": 4
+  },
   "homunculus_prime": {
-   "share_of_runs": 0.667,
-   "mean_count": 0.73,
-   "median_first_floor": 5
+   "share_of_runs": 0.311,
+   "mean_count": 0.33,
+   "median_first_floor": 4
   },
   "hook_horror_prime": {
-   "share_of_runs": 0.867,
-   "mean_count": 2.0,
-   "median_first_floor": 13
+   "share_of_runs": 0.756,
+   "mean_count": 1.07,
+   "median_first_floor": 24
   },
   "hrungnirs_ghost_trophy": {
-   "share_of_runs": 0.533,
-   "mean_count": 0.67,
+   "share_of_runs": 0.422,
+   "mean_count": 0.42,
    "median_first_floor": 82
   },
   "huecuva_prime": {
-   "share_of_runs": 0.333,
-   "mean_count": 0.47,
-   "median_first_floor": 8
+   "share_of_runs": 0.622,
+   "mean_count": 1.04,
+   "median_first_floor": 9
   },
   "hugin_raven_prime": {
-   "share_of_runs": 0.533,
-   "mean_count": 0.53,
-   "median_first_floor": 7
+   "share_of_runs": 0.444,
+   "mean_count": 0.58,
+   "median_first_floor": 3
   },
   "hydra_prime": {
-   "share_of_runs": 1.0,
-   "mean_count": 7.47,
-   "median_first_floor": 26
+   "share_of_runs": 0.933,
+   "mean_count": 3.31,
+   "median_first_floor": 57
   },
   "ice_elemental_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 8.53,
-   "median_first_floor": 65
+   "mean_count": 6.53,
+   "median_first_floor": 15
   },
   "ice_troll_prime": {
-   "share_of_runs": 0.867,
-   "mean_count": 4.2,
-   "median_first_floor": 18
+   "share_of_runs": 1.0,
+   "mean_count": 11.56,
+   "median_first_floor": 61
   },
   "imp_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 15.07,
+   "mean_count": 5.8,
    "median_first_floor": 6
   },
   "incubus_prime": {
-   "share_of_runs": 0.8,
-   "mean_count": 1.8,
-   "median_first_floor": 7
+   "share_of_runs": 1.0,
+   "mean_count": 5.16,
+   "median_first_floor": 26
   },
   "iron_golem_prime": {
-   "share_of_runs": 1.0,
-   "mean_count": 2.87,
-   "median_first_floor": 59
-  },
-  "iron_patriarch_prime": {
-   "share_of_runs": 0.067,
-   "mean_count": 0.07,
-   "median_first_floor": 42
+   "share_of_runs": 0.756,
+   "mean_count": 1.47,
+   "median_first_floor": 58
   },
   "iron_sentinel_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 16.87,
-   "median_first_floor": 36
+   "mean_count": 9.31,
+   "median_first_floor": 38
   },
   "jiangshi_prime": {
-   "share_of_runs": 0.133,
-   "mean_count": 0.13,
-   "median_first_floor": 11
+   "share_of_runs": 0.156,
+   "mean_count": 0.18,
+   "median_first_floor": 4
   },
   "jormungandr_juvenile_prime": {
-   "share_of_runs": 0.333,
-   "mean_count": 0.33,
+   "share_of_runs": 0.178,
+   "mean_count": 0.18,
    "median_first_floor": 66
   },
   "jormungandr_spawn_prime": {
-   "share_of_runs": 0.333,
-   "mean_count": 0.47,
-   "median_first_floor": 6
+   "share_of_runs": 0.978,
+   "mean_count": 3.27,
+   "median_first_floor": 70
   },
   "kobold_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 17.0,
-   "median_first_floor": 4
+   "mean_count": 17.24,
+   "median_first_floor": 3
   },
   "kuo_toa_prime": {
-   "share_of_runs": 0.533,
-   "mean_count": 1.13,
-   "median_first_floor": 5
+   "share_of_runs": 0.889,
+   "mean_count": 1.91,
+   "median_first_floor": 6
   },
   "kusarikku_prime": {
-   "share_of_runs": 0.8,
-   "mean_count": 1.27,
-   "median_first_floor": 12
+   "share_of_runs": 0.867,
+   "mean_count": 2.16,
+   "median_first_floor": 88
   },
   "lahamu_prime": {
-   "share_of_runs": 0.6,
-   "mean_count": 0.73,
-   "median_first_floor": 12
+   "share_of_runs": 0.978,
+   "mean_count": 2.42,
+   "median_first_floor": 91
   },
   "lamia_prime": {
-   "share_of_runs": 0.467,
-   "mean_count": 0.47,
+   "share_of_runs": 0.422,
+   "mean_count": 0.42,
    "median_first_floor": 15
   },
   "leprechaun_prime": {
    "share_of_runs": 0.6,
-   "mean_count": 1.07,
-   "median_first_floor": 4
+   "mean_count": 0.89,
+   "median_first_floor": 6
   },
   "lesser_death_prime": {
-   "share_of_runs": 0.467,
-   "mean_count": 0.6,
-   "median_first_floor": 14
+   "share_of_runs": 0.756,
+   "mean_count": 1.38,
+   "median_first_floor": 31
   },
   "lich_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 53.93,
-   "median_first_floor": 11
-  },
-  "light_elf_hostile_prime": {
-   "share_of_runs": 1.0,
-   "mean_count": 5.0,
-   "median_first_floor": 12
+   "mean_count": 35.67,
+   "median_first_floor": 14
   },
   "lindworm_prime": {
-   "share_of_runs": 0.8,
-   "mean_count": 1.6,
-   "median_first_floor": 13
+   "share_of_runs": 0.844,
+   "mean_count": 1.96,
+   "median_first_floor": 17
   },
   "lizardfolk_prime": {
-   "share_of_runs": 0.8,
-   "mean_count": 1.27,
-   "median_first_floor": 5
+   "share_of_runs": 0.911,
+   "mean_count": 2.18,
+   "median_first_floor": 7
   },
   "locust_swarmlord_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 19.8,
-   "median_first_floor": 69
+   "mean_count": 11.38,
+   "median_first_floor": 71
   },
   "lurker_above_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 4.53,
-   "median_first_floor": 10
+   "mean_count": 5.09,
+   "median_first_floor": 24
   },
   "lurking_horror_prime": {
-   "share_of_runs": 1.0,
-   "mean_count": 5.87,
+   "share_of_runs": 0.978,
+   "mean_count": 3.42,
    "median_first_floor": 41
-  },
-  "mage_slayer_assassin_prime": {
-   "share_of_runs": 1.0,
-   "mean_count": 58.67,
-   "median_first_floor": 33
   },
   "magma_elemental_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 15.67,
-   "median_first_floor": 55
+   "mean_count": 12.84,
+   "median_first_floor": 42
   },
   "manticore_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 6.33,
-   "median_first_floor": 36
+   "mean_count": 5.4,
+   "median_first_floor": 32
   },
   "marilith_spawn_prime": {
-   "share_of_runs": 1.0,
-   "mean_count": 4.53,
-   "median_first_floor": 29
+   "share_of_runs": 0.956,
+   "mean_count": 2.36,
+   "median_first_floor": 31
   },
   "medusa_gorgon_trophy": {
    "share_of_runs": 1.0,
@@ -881,8 +841,8 @@
   },
   "medusa_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 11.2,
-   "median_first_floor": 29
+   "mean_count": 5.31,
+   "median_first_floor": 31
   },
   "mimic_prime": {
    "share_of_runs": 0.0,
@@ -890,264 +850,259 @@
    "median_first_floor": null
   },
   "mind_flayer_prime": {
-   "share_of_runs": 1.0,
-   "mean_count": 6.4,
-   "median_first_floor": 28
-  },
-  "mind_flayer_thrall_prime": {
-   "share_of_runs": 0.467,
-   "mean_count": 0.8,
-   "median_first_floor": 14
+   "share_of_runs": 0.978,
+   "mean_count": 5.11,
+   "median_first_floor": 13
   },
   "minotaur_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 7.2,
-   "median_first_floor": 15
+   "mean_count": 4.42,
+   "median_first_floor": 16
   },
   "mohrg_prime": {
-   "share_of_runs": 0.8,
-   "mean_count": 1.27,
-   "median_first_floor": 11
+   "share_of_runs": 0.889,
+   "mean_count": 2.22,
+   "median_first_floor": 34
   },
   "moss_sentinel_prime": {
-   "share_of_runs": 1.0,
-   "mean_count": 8.33,
+   "share_of_runs": 0.978,
+   "mean_count": 3.36,
    "median_first_floor": 24
   },
   "mud_crawler_prime": {
-   "share_of_runs": 0.733,
-   "mean_count": 1.07,
-   "median_first_floor": 5
+   "share_of_runs": 0.689,
+   "mean_count": 0.93,
+   "median_first_floor": 8
   },
   "mummy_prime": {
-   "share_of_runs": 0.733,
-   "mean_count": 1.4,
-   "median_first_floor": 12
+   "share_of_runs": 0.978,
+   "mean_count": 3.38,
+   "median_first_floor": 49
   },
   "myconid_worker_prime": {
-   "share_of_runs": 0.8,
-   "mean_count": 2.13,
-   "median_first_floor": 5
+   "share_of_runs": 0.911,
+   "mean_count": 2.67,
+   "median_first_floor": 12
   },
   "naga_guardian_prime": {
-   "share_of_runs": 0.667,
-   "mean_count": 1.0,
-   "median_first_floor": 14
+   "share_of_runs": 0.978,
+   "mean_count": 3.44,
+   "median_first_floor": 24
   },
   "nalfeshnee_lesser_prime": {
-   "share_of_runs": 0.933,
-   "mean_count": 3.0,
-   "median_first_floor": 27
+   "share_of_runs": 0.756,
+   "mean_count": 1.29,
+   "median_first_floor": 29
   },
   "nemean_lion_prime": {
-   "share_of_runs": 1.0,
-   "mean_count": 5.73,
-   "median_first_floor": 76
+   "share_of_runs": 0.978,
+   "mean_count": 3.89,
+   "median_first_floor": 77
   },
   "nidhogg_brood_prime": {
-   "share_of_runs": 0.933,
-   "mean_count": 2.13,
-   "median_first_floor": 21
+   "share_of_runs": 1.0,
+   "mean_count": 4.33,
+   "median_first_floor": 66
   },
   "nidhoggr_fragment_trophy": {
-   "share_of_runs": 0.067,
-   "mean_count": 0.07,
+   "share_of_runs": 0.178,
+   "mean_count": 0.18,
    "median_first_floor": 95
   },
   "night_hag_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 7.73,
-   "median_first_floor": 11
+   "mean_count": 9.07,
+   "median_first_floor": 21
   },
   "nightwing_prime": {
-   "share_of_runs": 0.933,
-   "mean_count": 2.0,
-   "median_first_floor": 39
+   "share_of_runs": 0.867,
+   "mean_count": 1.56,
+   "median_first_floor": 54
   },
   "nosferatu_prime": {
-   "share_of_runs": 0.6,
-   "mean_count": 1.2,
-   "median_first_floor": 6
+   "share_of_runs": 0.8,
+   "mean_count": 1.62,
+   "median_first_floor": 14
   },
   "nothic_prime": {
-   "share_of_runs": 0.467,
-   "mean_count": 0.67,
-   "median_first_floor": 7
+   "share_of_runs": 0.622,
+   "mean_count": 1.13,
+   "median_first_floor": 12
   },
   "nue_prime": {
-   "share_of_runs": 0.6,
-   "mean_count": 1.0,
-   "median_first_floor": 13
+   "share_of_runs": 0.8,
+   "mean_count": 1.73,
+   "median_first_floor": 30
   },
   "ochre_jelly_prime": {
-   "share_of_runs": 0.667,
-   "mean_count": 1.07,
-   "median_first_floor": 6
+   "share_of_runs": 1.0,
+   "mean_count": 3.56,
+   "median_first_floor": 11
   },
   "ogre_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 8.73,
-   "median_first_floor": 11
+   "mean_count": 16.8,
+   "median_first_floor": 14
   },
   "orc_warrior_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 73.8,
-   "median_first_floor": 3
+   "mean_count": 54.62,
+   "median_first_floor": 4
   },
   "ossuary_horror_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 6.6,
+   "mean_count": 3.6,
    "median_first_floor": 27
   },
   "otyugh_prime": {
-   "share_of_runs": 0.667,
-   "mean_count": 1.27,
-   "median_first_floor": 10
+   "share_of_runs": 0.8,
+   "mean_count": 1.6,
+   "median_first_floor": 29
   },
   "owlbear_prime": {
-   "share_of_runs": 1.0,
-   "mean_count": 4.07,
-   "median_first_floor": 14
-  },
-  "pazuzu_spawn_prime": {
-   "share_of_runs": 0.467,
-   "mean_count": 0.47,
-   "median_first_floor": 6
-  },
-  "pegasus_prime": {
-   "share_of_runs": 1.0,
-   "mean_count": 2.87,
+   "share_of_runs": 0.978,
+   "mean_count": 4.16,
    "median_first_floor": 13
   },
+  "pazuzu_spawn_prime": {
+   "share_of_runs": 1.0,
+   "mean_count": 10.71,
+   "median_first_floor": 77
+  },
+  "pegasus_prime": {
+   "share_of_runs": 0.956,
+   "mean_count": 3.31,
+   "median_first_floor": 16
+  },
   "peryton_prime": {
-   "share_of_runs": 0.267,
-   "mean_count": 0.33,
-   "median_first_floor": 6
+   "share_of_runs": 0.867,
+   "mean_count": 2.11,
+   "median_first_floor": 28
   },
   "phase_spider_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 10.27,
-   "median_first_floor": 6
+   "mean_count": 8.36,
+   "median_first_floor": 7
   },
   "piercer_prime": {
    "share_of_runs": 0.667,
-   "mean_count": 0.73,
-   "median_first_floor": 6
+   "mean_count": 0.98,
+   "median_first_floor": 9
   },
   "pit_fiend_spawn_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 37.33,
-   "median_first_floor": 49
+   "mean_count": 26.96,
+   "median_first_floor": 51
   },
   "pixie_swarm_prime": {
-   "share_of_runs": 0.333,
-   "mean_count": 0.47,
-   "median_first_floor": 5
+   "share_of_runs": 0.267,
+   "mean_count": 0.38,
+   "median_first_floor": 2
   },
   "plague_ooze_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 8.2,
-   "median_first_floor": 58
+   "mean_count": 4.82,
+   "median_first_floor": 61
   },
   "poltergeist_prime": {
-   "share_of_runs": 0.8,
-   "mean_count": 2.4,
-   "median_first_floor": 2
-  },
-  "puca_prime": {
-   "share_of_runs": 0.333,
-   "mean_count": 0.4,
+   "share_of_runs": 0.733,
+   "mean_count": 1.64,
    "median_first_floor": 3
   },
+  "puca_prime": {
+   "share_of_runs": 0.911,
+   "mean_count": 2.78,
+   "median_first_floor": 81
+  },
   "ra_serpent_prime": {
-   "share_of_runs": 0.4,
-   "mean_count": 0.47,
-   "median_first_floor": 10
+   "share_of_runs": 1.0,
+   "mean_count": 10.16,
+   "median_first_floor": 48
   },
   "rangda_prime": {
-   "share_of_runs": 0.267,
-   "mean_count": 0.27,
+   "share_of_runs": 0.489,
+   "mean_count": 0.49,
    "median_first_floor": 50
   },
   "ravanas_arm_prime": {
-   "share_of_runs": 0.333,
-   "mean_count": 0.33,
+   "share_of_runs": 0.067,
+   "mean_count": 0.07,
    "median_first_floor": 79
   },
   "redcap_prime": {
-   "share_of_runs": 0.4,
-   "mean_count": 0.53,
-   "median_first_floor": 4
+   "share_of_runs": 0.978,
+   "mean_count": 3.56,
+   "median_first_floor": 21
   },
   "revenant_prime": {
-   "share_of_runs": 0.333,
-   "mean_count": 0.47,
-   "median_first_floor": 5
+   "share_of_runs": 0.622,
+   "mean_count": 1.02,
+   "median_first_floor": 30
   },
   "roc_chick_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 3.07,
-   "median_first_floor": 6
+   "mean_count": 7.82,
+   "median_first_floor": 11
   },
   "rock_python_prime": {
-   "share_of_runs": 0.733,
-   "mean_count": 1.13,
-   "median_first_floor": 3
+   "share_of_runs": 0.778,
+   "mean_count": 1.29,
+   "median_first_floor": 11
   },
   "roper_prime": {
-   "share_of_runs": 0.933,
-   "mean_count": 2.0,
-   "median_first_floor": 17
+   "share_of_runs": 0.778,
+   "mean_count": 1.24,
+   "median_first_floor": 26
   },
   "rot_grub_swarm_prime": {
-   "share_of_runs": 0.333,
-   "mean_count": 0.8,
-   "median_first_floor": 3
+   "share_of_runs": 0.467,
+   "mean_count": 1.62,
+   "median_first_floor": 4
   },
   "ruinous_djinn_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 8.47,
-   "median_first_floor": 31
+   "mean_count": 6.49,
+   "median_first_floor": 52
   },
   "rust_monster_prime": {
-   "share_of_runs": 0.267,
-   "mean_count": 0.27,
-   "median_first_floor": 7
+   "share_of_runs": 0.333,
+   "mean_count": 0.38,
+   "median_first_floor": 6
   },
   "sable_serpent_prime": {
-   "share_of_runs": 1.0,
-   "mean_count": 7.93,
-   "median_first_floor": 18
+   "share_of_runs": 0.978,
+   "mean_count": 3.29,
+   "median_first_floor": 19
   },
   "satyr_warrior_prime": {
-   "share_of_runs": 0.667,
-   "mean_count": 1.47,
-   "median_first_floor": 3
+   "share_of_runs": 0.978,
+   "mean_count": 3.44,
+   "median_first_floor": 7
   },
   "scarab_swarm_prime": {
-   "share_of_runs": 0.733,
-   "mean_count": 1.93,
-   "median_first_floor": 3
+   "share_of_runs": 1.0,
+   "mean_count": 10.44,
+   "median_first_floor": 44
   },
   "scylla_prime": {
-   "share_of_runs": 0.8,
-   "mean_count": 1.4,
-   "median_first_floor": 24
+   "share_of_runs": 0.756,
+   "mean_count": 1.51,
+   "median_first_floor": 74
   },
   "sea_dragon_spawn_prime": {
-   "share_of_runs": 1.0,
-   "mean_count": 3.4,
+   "share_of_runs": 0.711,
+   "mean_count": 1.07,
    "median_first_floor": 23
   },
   "sea_serpent_norse_prime": {
-   "share_of_runs": 0.467,
-   "mean_count": 0.47,
-   "median_first_floor": 12
+   "share_of_runs": 0.822,
+   "mean_count": 2.49,
+   "median_first_floor": 64
   },
   "sea_snake_prime": {
-   "share_of_runs": 0.6,
-   "mean_count": 1.53,
-   "median_first_floor": 2
+   "share_of_runs": 0.689,
+   "mean_count": 1.16,
+   "median_first_floor": 5
   },
   "seal_demon_death_prime": {
    "share_of_runs": 1.0,
@@ -1185,269 +1140,254 @@
    "median_first_floor": 83
   },
   "sets_jackal_prime": {
-   "share_of_runs": 0.333,
-   "mean_count": 0.33,
+   "share_of_runs": 0.133,
+   "mean_count": 0.13,
    "median_first_floor": 69
   },
   "shade_prime": {
-   "share_of_runs": 0.933,
-   "mean_count": 2.33,
-   "median_first_floor": 3
+   "share_of_runs": 0.822,
+   "mean_count": 1.91,
+   "median_first_floor": 11
   },
   "shadow_demon_prime": {
-   "share_of_runs": 0.4,
-   "mean_count": 0.47,
-   "median_first_floor": 4
+   "share_of_runs": 0.844,
+   "mean_count": 1.69,
+   "median_first_floor": 24
   },
   "shadow_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 14.33,
-   "median_first_floor": 14
+   "mean_count": 8.73,
+   "median_first_floor": 18
   },
   "shambling_mound_prime": {
-   "share_of_runs": 0.533,
-   "mean_count": 0.73,
-   "median_first_floor": 14
+   "share_of_runs": 0.933,
+   "mean_count": 3.0,
+   "median_first_floor": 27
   },
   "shield_guardian_prime": {
-   "share_of_runs": 1.0,
-   "mean_count": 3.4,
-   "median_first_floor": 11
+   "share_of_runs": 0.956,
+   "mean_count": 2.78,
+   "median_first_floor": 12
   },
   "skeleton_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 102.8,
-   "median_first_floor": 2
+   "mean_count": 70.78,
+   "median_first_floor": 4
   },
   "sluagh_prime": {
-   "share_of_runs": 0.733,
-   "mean_count": 0.93,
-   "median_first_floor": 11
-  },
-  "snake_charmer_prime": {
-   "share_of_runs": 1.0,
-   "mean_count": 8.8,
-   "median_first_floor": 15
+   "share_of_runs": 0.867,
+   "mean_count": 1.87,
+   "median_first_floor": 27
   },
   "sobek_warrior_prime": {
-   "share_of_runs": 0.8,
-   "mean_count": 1.2,
-   "median_first_floor": 11
+   "share_of_runs": 1.0,
+   "mean_count": 5.51,
+   "median_first_floor": 45
   },
   "soul_eater_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 29.07,
-   "median_first_floor": 75
+   "mean_count": 23.91,
+   "median_first_floor": 49
   },
   "specter_prime": {
-   "share_of_runs": 0.933,
-   "mean_count": 2.0,
-   "median_first_floor": 37
+   "share_of_runs": 0.956,
+   "mean_count": 3.44,
+   "median_first_floor": 16
   },
   "spectral_dragon_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 15.0,
+   "mean_count": 8.8,
    "median_first_floor": 49
   },
   "sphinx_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 7.8,
-   "median_first_floor": 15
+   "mean_count": 8.36,
+   "median_first_floor": 42
   },
   "spriggan_prime": {
-   "share_of_runs": 0.533,
-   "mean_count": 0.6,
-   "median_first_floor": 5
+   "share_of_runs": 0.867,
+   "mean_count": 2.69,
+   "median_first_floor": 27
   },
   "star_spawn_prime": {
-   "share_of_runs": 1.0,
-   "mean_count": 6.4,
-   "median_first_floor": 22
+   "share_of_runs": 0.978,
+   "mean_count": 3.4,
+   "median_first_floor": 24
   },
   "stirge_swarm_prime": {
-   "share_of_runs": 0.467,
-   "mean_count": 0.73,
-   "median_first_floor": 4
+   "share_of_runs": 0.4,
+   "mean_count": 1.69,
+   "median_first_floor": 5
   },
   "stone_giant_prime": {
-   "share_of_runs": 1.0,
-   "mean_count": 5.0,
+   "share_of_runs": 0.978,
+   "mean_count": 2.82,
    "median_first_floor": 35
   },
   "stone_golem_prime": {
-   "share_of_runs": 1.0,
-   "mean_count": 8.73,
-   "median_first_floor": 15
+   "share_of_runs": 0.956,
+   "mean_count": 3.82,
+   "median_first_floor": 35
   },
   "storm_elemental_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 15.47,
-   "median_first_floor": 30
+   "mean_count": 8.96,
+   "median_first_floor": 31
   },
   "storm_giant_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 31.0,
-   "median_first_floor": 51
+   "mean_count": 15.33,
+   "median_first_floor": 55
   },
   "strigoi_prime": {
-   "share_of_runs": 0.733,
-   "mean_count": 1.07,
-   "median_first_floor": 14
+   "share_of_runs": 0.933,
+   "mean_count": 2.44,
+   "median_first_floor": 24
   },
   "stymphalian_bird_prime": {
-   "share_of_runs": 0.4,
-   "mean_count": 0.47,
-   "median_first_floor": 2
+   "share_of_runs": 0.889,
+   "mean_count": 1.78,
+   "median_first_floor": 35
   },
   "surtur_trophy": {
-   "share_of_runs": 0.467,
-   "mean_count": 0.53,
+   "share_of_runs": 0.378,
+   "mean_count": 0.42,
    "median_first_floor": 90
   },
   "talos_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 7.73,
-   "median_first_floor": 66
+   "mean_count": 5.71,
+   "median_first_floor": 68
   },
   "tengu_warrior_prime": {
-   "share_of_runs": 0.467,
-   "mean_count": 0.6,
-   "median_first_floor": 4
+   "share_of_runs": 0.644,
+   "mean_count": 1.13,
+   "median_first_floor": 23
   },
   "the_sphinx_prime": {
-   "share_of_runs": 0.267,
-   "mean_count": 0.27,
+   "share_of_runs": 0.244,
+   "mean_count": 0.24,
    "median_first_floor": 44
   },
   "thoth_construct_prime": {
    "share_of_runs": 1.0,
    "mean_count": 6.47,
-   "median_first_floor": 73
+   "median_first_floor": 53
   },
   "thunderbird_lesser_prime": {
-   "share_of_runs": 0.933,
-   "mean_count": 2.33,
-   "median_first_floor": 13
+   "share_of_runs": 1.0,
+   "mean_count": 4.64,
+   "median_first_floor": 34
   },
   "tiamat_trophy": {
-   "share_of_runs": 0.467,
-   "mean_count": 0.47,
+   "share_of_runs": 0.644,
+   "mean_count": 0.64,
    "median_first_floor": 86
   },
   "titan_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 29.67,
-   "median_first_floor": 24
+   "mean_count": 8.2,
+   "median_first_floor": 76
   },
   "troglodyte_prime": {
-   "share_of_runs": 0.867,
-   "mean_count": 3.33,
-   "median_first_floor": 5
+   "share_of_runs": 0.978,
+   "mean_count": 6.64,
+   "median_first_floor": 8
   },
   "troll_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 49.07,
-   "median_first_floor": 11
+   "mean_count": 28.56,
+   "median_first_floor": 14
   },
   "ugallu_demon_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 67.4,
-   "median_first_floor": 71
+   "mean_count": 59.71,
+   "median_first_floor": 73
   },
   "unicorn_corrupted_prime": {
-   "share_of_runs": 0.6,
-   "mean_count": 1.13,
-   "median_first_floor": 18
+   "share_of_runs": 0.956,
+   "mean_count": 3.2,
+   "median_first_floor": 44
   },
   "valkyrie_shade_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 3.47,
-   "median_first_floor": 9
+   "mean_count": 15.18,
+   "median_first_floor": 59
   },
   "vampire_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 38.07,
-   "median_first_floor": 28
-  },
-  "veiled_inquisitor_prime": {
-   "share_of_runs": 1.0,
-   "mean_count": 9.4,
-   "median_first_floor": 59
-  },
-  "veteran_knight_prime": {
-   "share_of_runs": 1.0,
-   "mean_count": 36.93,
-   "median_first_floor": 5
+   "mean_count": 26.36,
+   "median_first_floor": 13
   },
   "violet_fungus_prime": {
-   "share_of_runs": 1.0,
-   "mean_count": 10.27,
-   "median_first_floor": 26
+   "share_of_runs": 0.933,
+   "mean_count": 3.78,
+   "median_first_floor": 7
   },
   "void_crawler_prime": {
-   "share_of_runs": 0.933,
-   "mean_count": 4.07,
-   "median_first_floor": 29
+   "share_of_runs": 0.867,
+   "mean_count": 2.02,
+   "median_first_floor": 34
   },
   "void_elemental_prime": {
-   "share_of_runs": 0.733,
-   "mean_count": 1.33,
-   "median_first_floor": 27
+   "share_of_runs": 0.511,
+   "mean_count": 0.71,
+   "median_first_floor": 30
   },
   "void_leviathan_prime": {
-   "share_of_runs": 1.0,
-   "mean_count": 3.33,
-   "median_first_floor": 47
+   "share_of_runs": 0.778,
+   "mean_count": 1.56,
+   "median_first_floor": 48
   },
   "void_seraph_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 36.87,
+   "mean_count": 21.69,
    "median_first_floor": 81
   },
   "void_wyrm_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 12.87,
-   "median_first_floor": 77
+   "mean_count": 7.98,
+   "median_first_floor": 78
   },
   "vrock_prime": {
-   "share_of_runs": 1.0,
-   "mean_count": 3.0,
-   "median_first_floor": 15
+   "share_of_runs": 0.844,
+   "mean_count": 1.69,
+   "median_first_floor": 25
   },
   "vrykolakas_prime": {
-   "share_of_runs": 0.6,
-   "mean_count": 0.87,
-   "median_first_floor": 11
+   "share_of_runs": 0.911,
+   "mean_count": 1.82,
+   "median_first_floor": 24
   },
   "water_elemental_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 11.07,
-   "median_first_floor": 32
+   "mean_count": 5.71,
+   "median_first_floor": 35
   },
   "wendigo_prime": {
-   "share_of_runs": 0.2,
-   "mean_count": 0.2,
+   "share_of_runs": 0.111,
+   "mean_count": 0.11,
    "median_first_floor": 84
   },
   "werebear_prime": {
-   "share_of_runs": 0.8,
-   "mean_count": 1.67,
-   "median_first_floor": 12
+   "share_of_runs": 0.956,
+   "mean_count": 2.42,
+   "median_first_floor": 44
   },
   "wererat_prime": {
-   "share_of_runs": 0.867,
-   "mean_count": 2.13,
-   "median_first_floor": 3
+   "share_of_runs": 0.889,
+   "mean_count": 1.64,
+   "median_first_floor": 10
   },
   "weretiger_prime": {
-   "share_of_runs": 0.6,
-   "mean_count": 0.8,
-   "median_first_floor": 11
+   "share_of_runs": 0.689,
+   "mean_count": 1.16,
+   "median_first_floor": 27
   },
   "werewolf_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 6.8,
-   "median_first_floor": 15
+   "mean_count": 8.47,
+   "median_first_floor": 16
   },
   "whispering_crone_trophy": {
    "share_of_runs": 0.133,
@@ -1456,98 +1396,98 @@
   },
   "wight_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 13.53,
-   "median_first_floor": 13
+   "mean_count": 15.18,
+   "median_first_floor": 11
   },
   "wild_hunt_captain_prime": {
-   "share_of_runs": 0.267,
-   "mean_count": 0.27,
+   "share_of_runs": 0.333,
+   "mean_count": 0.33,
    "median_first_floor": 90
   },
   "will_o_wisp_prime": {
-   "share_of_runs": 0.6,
-   "mean_count": 0.87,
-   "median_first_floor": 3
+   "share_of_runs": 0.911,
+   "mean_count": 2.69,
+   "median_first_floor": 9
   },
   "winter_wolf_prime": {
-   "share_of_runs": 0.6,
-   "mean_count": 1.27,
-   "median_first_floor": 12
+   "share_of_runs": 1.0,
+   "mean_count": 10.73,
+   "median_first_floor": 61
   },
   "wolf_pack_leader_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 17.0,
-   "median_first_floor": 8
+   "mean_count": 16.22,
+   "median_first_floor": 13
   },
   "wood_golem_prime": {
-   "share_of_runs": 0.333,
-   "mean_count": 0.47,
-   "median_first_floor": 3
+   "share_of_runs": 0.356,
+   "mean_count": 0.49,
+   "median_first_floor": 5
   },
   "world_serpent_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 7.4,
-   "median_first_floor": 70
+   "mean_count": 7.16,
+   "median_first_floor": 72
   },
   "wormwood_blight_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 10.87,
-   "median_first_floor": 81
+   "mean_count": 5.62,
+   "median_first_floor": 83
   },
   "wraith_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 9.53,
-   "median_first_floor": 12
+   "mean_count": 11.24,
+   "median_first_floor": 13
   },
   "wyrm_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 14.73,
-   "median_first_floor": 41
+   "mean_count": 7.71,
+   "median_first_floor": 43
   },
   "wyvern_prime": {
-   "share_of_runs": 0.933,
-   "mean_count": 4.13,
-   "median_first_floor": 13
+   "share_of_runs": 1.0,
+   "mean_count": 5.62,
+   "median_first_floor": 32
   },
   "xorn_prime": {
-   "share_of_runs": 0.933,
-   "mean_count": 1.53,
-   "median_first_floor": 14
+   "share_of_runs": 0.978,
+   "mean_count": 3.31,
+   "median_first_floor": 15
   },
   "yellow_mold_prime": {
    "share_of_runs": 0.6,
-   "mean_count": 1.13,
+   "mean_count": 1.02,
    "median_first_floor": 2
   },
   "ymir_last_spawn_trophy": {
-   "share_of_runs": 0.333,
-   "mean_count": 0.4,
-   "median_first_floor": 86
+   "share_of_runs": 0.378,
+   "mean_count": 0.44,
+   "median_first_floor": 88
   },
   "young_black_dragon_prime": {
-   "share_of_runs": 0.333,
-   "mean_count": 0.67,
-   "median_first_floor": 13
+   "share_of_runs": 0.911,
+   "mean_count": 2.58,
+   "median_first_floor": 35
   },
   "young_dragon_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 36.8,
-   "median_first_floor": 41
+   "mean_count": 23.22,
+   "median_first_floor": 43
   },
   "young_red_dragon_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 7.8,
-   "median_first_floor": 25
+   "mean_count": 4.62,
+   "median_first_floor": 26
   },
   "yuan_ti_pureblood_prime": {
-   "share_of_runs": 0.2,
-   "mean_count": 0.27,
-   "median_first_floor": 1
+   "share_of_runs": 1.0,
+   "mean_count": 13.0,
+   "median_first_floor": 34
   },
   "zombie_prime": {
    "share_of_runs": 1.0,
-   "mean_count": 72.67,
-   "median_first_floor": 3
+   "mean_count": 48.0,
+   "median_first_floor": 4
   }
  }
 }

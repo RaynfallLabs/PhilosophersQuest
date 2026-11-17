@@ -30,29 +30,26 @@ import pytest  # noqa: E402
 import tier_census  # noqa: E402
 
 KNOWN_GAPS = {
-    'Monsters (ordinary kinds)': 'lopsided',
     'Bosses': 'lopsided',
-    'Monster family: aberrations': 'gap',
-    'Monster family: birds': 'gap',
-    'Monster family: celestials': 'gap',
-    'Monster family: constructs': 'gap',
+    # The monster pass of 2026-11-17 (rulings 11 and 12) gave every family a
+    # kind in every tier: what is left is lopsided, never a gap
+    # (test_every_monster_family_has_a_kind_in_every_tier).
+    'Monster family: aberrations': 'lopsided',
+    'Monster family: birds': 'lopsided',
+    'Monster family: constructs': 'lopsided',
     'Monster family: demons': 'lopsided',
-    'Monster family: elementals': 'lopsided',
-    'Monster family: fair_folk': 'gap',
-    'Monster family: ghosts': 'gap',
+    'Monster family: fair_folk': 'lopsided',
+    'Monster family: ghosts': 'lopsided',
     'Monster family: giants': 'lopsided',
-    'Monster family: goblinkin': 'gap',
-    'Monster family: gorgons': 'gap',
-    'Monster family: great_beasts': 'gap',
+    'Monster family: goblinkin': 'lopsided',
+    'Monster family: great_beasts': 'lopsided',
     'Monster family: legend': 'lopsided',
     'Monster family: mortals': 'lopsided',
-    'Monster family: oozes': 'gap',
-    'Monster family: plants': 'gap',
+    'Monster family: oozes': 'lopsided',
+    'Monster family: plants': 'lopsided',
     'Monster family: restless_dead': 'lopsided',
-    'Monster family: serpents': 'gap',
-    'Monster family: shapeshifters': 'gap',
-    'Monster family: vampires_liches': 'lopsided',
-    'Monster family: vermin': 'gap',
+    'Monster family: serpents': 'lopsided',
+    'Monster family: vermin': 'lopsided',
     'Weapons (uniques)': 'lopsided',
     'Armour (uniques)': 'lopsided',
     'Rings': 'lopsided',
@@ -65,11 +62,8 @@ KNOWN_GAPS = {
     'Artifacts': 'gap',
     'Containers': 'gap',
     'Ingredients': 'lopsided',
-    'Dishes: HP': 'lopsided',
     'Dishes: SP': 'lopsided',
     'Dishes: MP': 'lopsided',
-    'Dishes: Stat': 'lopsided',
-    'Dishes: Special': 'lopsided',
     'Dishes: Stat CON': 'lopsided',
     'Dishes: Stat DEX': 'lopsided',
     'Dishes: Stat INT': 'lopsided',
@@ -111,6 +105,35 @@ def test_a_fixed_gap_comes_off_the_list(rows):
     gone = [c for c in KNOWN_GAPS if c not in rows]
     assert not fixed, f"Now spread across the tiers: take these off KNOWN_GAPS: {fixed}"
     assert not gone, f"No longer in the census (renamed?): {gone}"
+
+
+_WORSE = {'ok': 0, 'lopsided': 1, 'gap': 2, 'empty': 3}
+
+
+def test_a_known_gap_never_gets_worse(rows):
+    """The ratchet also holds a listed category to its listed verdict: one
+    filled from 'gap' to 'lopsided' (the monster families, 2026-11-17)
+    may not slip back to an empty tier."""
+    worse = {c: (rows[c]['verdict'], v) for c, v in KNOWN_GAPS.items()
+             if c in rows and _WORSE[rows[c]['verdict']] > _WORSE[v]}
+    assert not worse, f"Worse than KNOWN_GAPS says (verdict now, listed): {worse}"
+
+
+def test_every_monster_family_has_a_kind_in_every_tier(rows):
+    """Ruling 12 (Brandon, 2026-11-16: "every family in every tier: yes"): each
+    of the monster families has an ordinary kind peaking in each 20-floor
+    tier, so the family's lore and its techniques matter at every depth."""
+    fams = {c: r['counts'] for c, r in rows.items() if c.startswith('Monster family: ')}
+    assert len(fams) >= 22, sorted(fams)
+    empty = {c: counts for c, counts in fams.items() if min(counts) == 0}
+    assert not empty, f"A family with no kind in some tier (T1..T5 counts): {empty}"
+
+
+def test_ordinary_monsters_are_spread_across_the_tiers(rows):
+    """Ruling 11 (2026-11-16): the lore-mighty kinds moved deeper and deep
+    kinds added until every tier holds 10-35% of the ordinary kinds."""
+    r = rows['Monsters (ordinary kinds)']
+    assert r['verdict'] == 'ok', r['counts']
 
 
 def test_no_more_items_with_a_quiz_tier_far_from_where_they_are_found(rows):

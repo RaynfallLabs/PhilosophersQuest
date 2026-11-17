@@ -231,7 +231,8 @@ def is_heavy(m) -> bool:
 _FLOATING_FAMILIES = ('ghosts', 'birds')
 _FLOATING_KINDS = ('bat', 'camazotz', 'will_o_wisp', 'will_o_wisp_lesser', 'floating_eye',
                    'beholder', 'elder_beholder', 'beholder_spawn', 'stirge_swarm', 'giant_wasp',
-                   'pixie_swarm', 'imp', 'quasit', 'air_elemental', 'storm_elemental')
+                   'pixie_swarm', 'imp', 'quasit', 'air_elemental', 'storm_elemental',
+                   'geryon')     # Dante's Geryon swims down through the air of Hell
 
 
 def floats(m) -> bool:

@@ -57,8 +57,11 @@ def test_story_monster_strength_follows_the_lore():
     assert hp['azarael'] > hp['locust_cultist'] > hp['locust_herald']
     # A palace guard is trained; a villager with a pitchfork is not.
     assert hp['palace_guard'] > hp['villager_mob']
-    # The risen prince leads mummies and is far beyond one.
-    assert hp['neferkaptah_risen'] > 20 * _avg_hp(m['mummy']['hp'])
+    # The risen prince leads mummies and is far beyond one. (The mummies
+    # walk the Egyptian deep around Setne's Tomb since the monster pass of
+    # 2026-11-17, floor 51; the prince of floor 68 outlasts about three.)
+    assert hp['neferkaptah_risen'] > 2.5 * _avg_hp(m['mummy']['hp'])
+    assert m['neferkaptah_risen']['peak_floor'] > m['mummy']['peak_floor']
     for k in ('neferkaptah_risen', 'azarael', 'morrow'):
         assert m[k].get('proper_noun')
 

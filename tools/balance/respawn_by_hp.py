@@ -172,6 +172,10 @@ SWARM_SEAT_MULT: dict[str, float] = {
     "galla_demon": 3.0,        # the galla come in gangs of four to six
     "girtablilu": 1.5,         # the scorpion-man and his wife
     "totentanz_dancer": 2.4,   # a ring of three or four dancers
+    # The monster pass of 2026-11-17 (tools/balance/monster_pass_2026_11_17.py):
+    "kallikantzaros": 2.5,     # the Christmas goblins come up three or four at a time
+    "oni": 2.0,                # an oni band of two or three, as on Mount Oe
+    "scarab_swarm": 2.0,       # tomb scarabs, a pack of swarms, floors 41-50
 }
 
 # A monster whose hardest attack is more than SPIKE_MULT times the floor's

@@ -859,6 +859,13 @@ def _banded(data: dict) -> dict:
     return mini_boss_bands.roster(data)
 
 
+def _moved() -> dict:
+    """The kinds tools/balance/monster_pass_2026_11_17.py re-placed."""
+    sys.path.insert(0, str(ROOT / 'tools' / 'balance'))
+    import monster_pass_2026_11_17
+    return monster_pass_2026_11_17.MOVES
+
+
 def apply(data: dict) -> list[str]:
     log = []
     from assign_monster_families import family_for
@@ -902,6 +909,21 @@ def apply(data: dict) -> list[str]:
         # the one already written wins.
         if isinstance(cur, dict) and cur.get('pronoun'):
             want['pronoun'] = cur['pronoun']
+        # Its depth, and the numbers baked for it there, are decided by
+        # tools/balance/monster_pass_2026_11_17.py (rulings 11 and 12,
+        # 2026-11-17: the Mara moved to Fenrir's rime halls): the ones
+        # already written win.
+        if isinstance(cur, dict) and mid in _moved():
+            for k in ('hp', 'peak_floor', 'spread', 'min_level', 'peak_weight', 'thac0',
+                      'thac0_lore', 'harvest_tier', 'regeneration'):
+                if k in cur:
+                    want[k] = cur[k]
+            if isinstance(want.get('treasure'), dict) and 'item_tier' in (cur.get('treasure') or {}):
+                want['treasure'] = dict(want['treasure'], item_tier=cur['treasure']['item_tier'])
+            dmg = {a.get('name'): a.get('damage') for a in (cur.get('attacks') or [])
+                   if isinstance(a, dict)}
+            want['attacks'] = [dict(a, damage=dmg.get(a.get('name'), a.get('damage')))
+                               for a in want.get('attacks') or []]
         # Its health and the weight of its blows, for a named foe, are decided
         # by tools/balance/mini_boss_bands.py (mini-boss tuning, 2026-11-14):
         # the ones already written win.

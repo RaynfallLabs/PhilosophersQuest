@@ -409,7 +409,8 @@
         "cloud_giant",
         "frost_giant_jarl",
         "fire_giant_king",
-        "storm_giant"
+        "storm_giant",
+        "rime_thurs"
       ],
       "guard": [
         "death_dog",
@@ -417,7 +418,8 @@
         "wolf_pack_leader",
         "winter_wolf",
         "fionn_hound",
-        "dire_wolf_alpha"
+        "dire_wolf_alpha",
+        "fenrir_pup"
       ],
       "counts": {
         "guard": [
@@ -444,9 +446,10 @@
     "fae_hunt": {
       "name": "a hunt of the Fair Folk",
       "family": "fair_folk",
+      "_floors_note": "From floor 18 since the monster pass of 2026-11-17 (it was 4): its leaders (the drow priestess, the Dullahan, the night hag) now live on floors 21-40, and Snorri's light elves in the rime halls, so the hunt rides the temple and, led by the hidden folk, the first of the rime.",
       "floors": [
-        4,
-        60
+        18,
+        70
       ],
       "leader": [
         "drow_priestess",
