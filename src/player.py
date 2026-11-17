@@ -1560,8 +1560,9 @@ class Player:
         return bool((getattr(self, 'quirk_progress', None) or {}).get('marius_active'))
 
     def speed_parts(self) -> dict:
-        """What makes up the speed, for the character sheet: Dexterity's
-        share, the armour's unpaid drag, the load's (each a share of 10)."""
+        """What makes up the speed (for tools and tests): Dexterity's share
+        as the armour leaves it, the armour's unpaid drag, the load's (each
+        a share of 10)."""
         import defence
         import gear
         tier = self.load_tier()
