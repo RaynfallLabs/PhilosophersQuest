@@ -24,9 +24,10 @@ from __future__ import annotations
 import horns
 from game_states import STATE_PLAYER, STATE_QUIZ
 
-# The Titivillus QA build's Shift+H: each path's encounter, in turn.
+# The Titivillus QA build's Shift+H: each path's encounter, in turn (the four
+# horns', then Merlin's stone, the path to the Staff of Emrys).
 QA_PATHS = ('flv_robin_hood_bridge', 'flv_sleepers_under_the_hill', 'flv_heimdalls_watch',
-            'flv_rolands_horn')
+            'flv_rolands_horn', 'flv_merlins_stone')
 
 
 class HornsMixin:
@@ -175,10 +176,10 @@ class HornsMixin:
     # ------------------------------------------------------------------
 
     def _qa_horns(self) -> None:
-        """Titivillus QA build (Shift+H): the next horn path's encounter set
-        down beside the hero (Robin Hood's bridge, the sleepers under the
-        hill, Heimdall's watch, Roland in his pass), met or not; after the
-        fourth, every horn in the pack and each ready to blow again."""
+        """Titivillus QA build (Shift+H): the next path's encounter set down
+        beside the hero (Robin Hood's bridge, the sleepers under the hill,
+        Heimdall's watch, Roland in his pass, Merlin's stone), met or not;
+        after the last, every horn in the pack and each ready to blow again."""
         pl = self.player
         if not getattr(pl, 'qa_tools', False):
             return
@@ -187,7 +188,7 @@ class HornsMixin:
         if step < len(QA_PATHS):
             tag = QA_PATHS[step]
             if self._qa_encounter_beside(tag):
-                self.add_message(f"[QA] Horn path {step + 1} of {len(QA_PATHS)}: "
+                self.add_message(f"[QA] Path {step + 1} of {len(QA_PATHS)}: "
                                  f"{tag} beside you. Shift+H again for the next.", 'info')
             else:
                 self.add_message(f"[QA] No room to set {tag} down here.", 'warning')

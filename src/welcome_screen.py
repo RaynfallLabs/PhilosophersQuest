@@ -37,7 +37,9 @@ NAME_MAX = 48
 #   _start_wand      -> wand item ID given at start
 #   _start_book      -> spellbook item ID given at start
 #   _start_accessory -> accessory item ID given at start
-#   _start_shield    -> shield item ID given at start
+#   _start_shield    -> shield item ID, on the arm from the first turn; only a
+#                       figure who fought with a shield in his lore has one
+#                       (Brandon 2026-11-16: "Geralt no, Leonidas yes")
 #   _start_armor     -> armor item ID given at start
 #   _start_soul_spheres -> int: number of plain Soul Spheres given at start
 #   _start_spheres   -> list of sphere item IDs given at start (QA: all six)
@@ -106,6 +108,8 @@ SECRET_BUILDS: dict[str, dict] = {
         "_sprite": "player_achilles",
         "_no_dagger": True,
         "_start_weapon": "achilles_spear",
+        # Iliad 18-22: the spear of Pelian ash in his hand, the shield
+        # Hephaestus made on his arm.
         "_start_shield": ("light_wooden", "oak"),
         "_greeting": "Achilles charges in. His heel tingles ominously.",
     },
@@ -113,6 +117,7 @@ SECRET_BUILDS: dict[str, dict] = {
         "STR": 17, "CON": 18, "DEX": 12, "INT": 9, "WIS": 10, "PER": 8,
         "_sprite": "player_leonidas",
         "_start_weapon": "leonidas_dory",
+        # The hoplite's aspis: "come back with this, or on it" (Plutarch).
         "_start_shield": "shield_of_the_spartans",
         "_greeting": "Leonidas has 299 fewer soldiers than he would like.",
     },
@@ -120,14 +125,19 @@ SECRET_BUILDS: dict[str, dict] = {
         "STR": 16, "DEX": 14, "CON": 14, "INT": 14, "WIS": 10, "PER": 12,
         "_sprite": "player_alexander",
         "_start_weapon": ("longsword", "iron"),
+        # Arrian 1.11 and 6.10: at Troy he took a sacred shield from Athena's
+        # temple; it was carried before him, and among the Malli Peucestas
+        # held it over him when he fell. A bronze aspis.
+        "_start_shield": ("heavy_wooden", "bronze"),
         "_start_accessory": "tablet_of_hammurabi",
         "_greeting": "Alexander the Great descends. He intends to conquer this too.",
     },
     "theseus of athens": {
         "STR": 14, "DEX": 14, "CON": 14, "INT": 12, "WIS": 12, "PER": 12,
         "_sprite": "player_theseus",
+        # His father's sword from under the rock; no shield in his myths
+        # (the club of Periphetes, bare hands for the Minotaur).
         "_start_weapon": ("shortsword", "iron"),
-        "_start_shield": ("light_wooden", "oak"),
         "_start_accessory": "lyre_of_orpheus",
         "_greeting": "Theseus enters the dungeon. He has done this before.",
         "_start_family_lore": {"legend": 1},   # unlabelled: he walked the Labyrinth
@@ -157,6 +167,9 @@ SECRET_BUILDS: dict[str, dict] = {
         "INT": 20, "WIS": 14, "PER": 12, "STR": 5, "CON": 7, "DEX": 8,
         "_sprite": "player_merlin",
         "_no_dagger": True,
+        # His own staff (data/items/weapon.json): a mage's staff, its power
+        # in his casting and his ward, not his blows.
+        "_start_weapon": "staff_of_emrys",
         "_start_wand": "wand_of_force_dart",
         "_start_book": "spellbook_magic_dart",
         "_start_spells": ["heal_spell", "magic_shield_spell"],
@@ -307,16 +320,18 @@ SECRET_BUILDS: dict[str, dict] = {
         "STR": 16, "CON": 17, "DEX": 12, "INT": 9, "WIS": 11, "PER": 12,
         "_sprite": "player_boudicca",
         "_no_dagger": True,
+        # Cassius Dio has her grasp a spear in a chariot, no shield; none
+        # of the sources gives her one.
         "_start_weapon": ("longsword", "iron"),
-        "_start_shield": ("light_wooden", "oak"),
         "_greeting": "Boudicca enters at the head of a host that exists only in her fury.",
     },
     "saint joan of arc maid of orleans": {
         "STR": 13, "CON": 13, "DEX": 12, "INT": 10, "WIS": 16, "PER": 14,
         "_sprite": "player_joan",
         "_no_dagger": True,
+        # Her banner in her other hand, not a shield: she carried it in the
+        # charge so as to kill no one, and wore white plate.
         "_start_weapon": ("longsword", "iron"),
-        "_start_shield": ("kite_shield", "iron"),
         "_start_accessory": "lyre_of_orpheus",
         "_greeting": "Joan listens to the Voices. They say: 'Go forward, child.'",
     },
@@ -361,8 +376,9 @@ SECRET_BUILDS: dict[str, dict] = {
     "titivillus": {
         "STR": 12, "CON": 12, "DEX": 12, "INT": 12, "WIS": 12, "PER": 12,
         "_sprite": "player_dad",
+        # The demon who gathers the scribes' slips carries a quill, not a
+        # shield (Shift+T puts a mirror shield in the pack to test with).
         "_start_weapon": ("longsword", "iron"),
-        "_start_shield": ("light_wooden", "oak"),
         "_start_wand": "wand_of_candle_light",
         "_start_book": "spellbook_magic_dart",
         "_start_ammo": "iron_arrow",

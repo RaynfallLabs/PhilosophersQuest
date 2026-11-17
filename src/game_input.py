@@ -498,10 +498,10 @@ class InputMixin:
                 self._qa_stray_kids()
                 return True
             if uni == 'H' and getattr(self.player, 'qa_tools', False):
-                # Titivillus QA build: the next horn path beside the hero
-                # (Robin Hood's bridge, the sleepers under the hill, Heimdall,
-                # Roland); after the fourth, every horn in the pack, ready
-                # (lowercase h harvests; game_horns._qa_horns).
+                # Titivillus QA build: the next path beside the hero (Robin
+                # Hood's bridge, the sleepers under the hill, Heimdall,
+                # Roland, Merlin's stone); after the last, every horn in the
+                # pack, ready (lowercase h harvests; game_horns._qa_horns).
                 self._qa_horns()
                 return True
             if uni == 'V' and getattr(self.player, 'qa_tools', False):

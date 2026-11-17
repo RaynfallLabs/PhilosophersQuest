@@ -4389,6 +4389,8 @@ class RenderMixin:
                 info = class_mechanic_info(mech)
                 if info:
                     out.append(f"{info[0]}: {info[1]}" if len(info) > 1 and info[1] else str(info[0]))
+            if int(getattr(item, 'spell_tier_ease', 0) or 0) > 0:
+                out.append("Spells you cast with it in hand ask an easier science question.")
             if self._kit_visible_level(item) >= 4:
                 for attr, word in (('stun_chance', 'stun'), ('bleed_chance', 'make it bleed'),
                                    ('poison_chance', 'poison'), ('burn_chance', 'set it alight'),
@@ -4440,7 +4442,9 @@ class RenderMixin:
             info = _EI.get(status)
             name = info[0] if info else _cap(str(status).replace('_', ' '))
             what = f": {info[2]}" if info and len(info) > 2 and info[2] else ''
-            out.append(f"While worn: {name}{what}")
+            # A weapon lends it in the hand (the Staff of Emrys' ward,
+            # Stormbringer's rage), worn gear while it is worn.
+            out.append(f"{'In hand' if isinstance(item, Weapon) else 'While worn'}: {name}{what}")
         return [str(t) for t in out if str(t).strip()]
 
     def _worn_rival(self, item):
@@ -9555,6 +9559,17 @@ class RenderMixin:
             special = self._kit_weapon_special(item, id_level)
             if special and special != '-':
                 lines.append((f"Special: {special}", FP.CYAN_ACCENT, self.font_sm))
+            # What it does in the hand beyond its blows (the Staff of Emrys).
+            if int(getattr(item, 'spell_tier_ease', 0) or 0) > 0:
+                lines.append(("Spells you cast with it in hand ask an easier science question",
+                              FP.CYAN_ACCENT, self.font_sm))
+            _st = getattr(item, 'on_equip_status', '') or ''
+            if _st:
+                from status_effects import EFFECT_INFO as _EI_w
+                _inf = _EI_w.get(_st)
+                _nm = _inf[0] if _inf else _cap(str(_st).replace('_', ' '))
+                _wh = f": {_inf[2]}" if _inf and len(_inf) > 2 and _inf[2] else ''
+                lines.append((f"In hand: {_nm}{_wh}", FP.CYAN_ACCENT, self.font_sm))
             if getattr(item, 'requires_ammo', ''):
                 lines.append((f"Requires ammo: {_cap(item.requires_ammo)}", FP.WARNING_TEXT, self.font_sm))
 
@@ -9760,8 +9775,11 @@ class RenderMixin:
                 (_state, FP.SUCCESS_TEXT if _state.startswith('Ready') else FP.FADED_TEXT,
                  self.font_sm),
             ]
+            # The Olifant's lesson is Roland's, told by its lore (Brandon,
+            # 2026-11-16: the kid must see he blows it early and falls
+            # back), not a count of turns; the HUD counts down after the call.
             if _horns.delay(_hid):
-                lines.append((f"They come {_horns.delay(_hid)} turns after the call",
+                lines.append(("They come late, from far off: blow it before the fight",
                               FP.BODY_TEXT, self.font_sm))
 
         return lines or [("No revealed mechanics recorded.", FP.FADED_TEXT, self.font_sm)]

@@ -7,7 +7,7 @@
       "gjallarhorn": "Snorri Sturluson, Gylfaginning 27 (Heimdall: the white god, gold teeth, dwells at Himinbjorg by Bifrost, watchman of the gods against the mountain giants, needs less sleep than a bird, sees a hundred leagues by night as by day, hears grass grow and wool on sheep; Gjallarhorn is heard in all worlds) and 51 (at Ragnarok he blows it and wakes all the gods; he and Loki kill each other; the wolf swallows Odin; his son tears the wolf apart); Voluspa 46 ('loud blows Heimdall, the horn is aloft'); Grimnismal and Gylfaginning 38-41 (the einherjar: the chosen dead of Valhalla, who fight every day and rise whole at evening, 540 doors and 800 through each at Ragnarok). Checked on Grokipedia (Gjallarhorn; Heimdall; Einherjar; Vidarr), then Wikipedia (Heimdall), 2026-11-16.",
       "olifant": "The Song of Roland (Oxford manuscript), laisses 83-85 (Oliver asks Roland three times to sound the olifant) and 133-135 (Roland sounds it; the sound carries thirty leagues; Ganelon tells Charlemagne it is nothing; Duke Naimes says Roland is in battle; the host turns back) and the pursuit and Baligant battle after (Naimes, Ogier the Dane, Geoffrey of Anjou; Charlemagne's sword Joyeuse). Checked on Wikipedia (The Song of Roland) and translations found by search (shmoop, longlongtimeago, Fordham Medieval Sourcebook), 2026-11-16; Grokipedia has no page under that title."
     },
-    "numbers": "Sized for one call that turns one hard fight at the horn's tier (a war-band, a mini-boss, a seal demon), never a gate: the whole band, at blows about three turns in five, deals about twelve ordinary monsters' health of its tier over its stay (floor_curve.HP_ANCHORS at floors 15, 50, 75 and 90), and each ally lives through about eight blows of a mini-boss of that tier. The numbers are written in monsters.json; nothing scales them by the floor (LORE, NOT FLOOR), so Robin Hood's men, mortals at tier one, matter less the deeper they are called."
+    "numbers": "Sized for one call that helps through one hard fight at the horn's tier (a war-band, a mini-boss, a seal demon), never a gate. Every stay is ten turns (Brandon, 2026-11-16: the 25 and 30 turns 'may be too strong... maybe 10 turns'): the whole band, at blows about three turns in five, deals about four or five ordinary monsters' health of its tier over its stay (floor_curve.HP_ANCHORS at floors 15, 50, 75 and 90; it was about twelve at the old stays), a war-band's followers or a third of a mini-boss, and each ally lives through about eight blows of a mini-boss of that tier. The allies' own numbers did not change with the stay. The numbers are written in monsters.json; nothing scales them by the floor (LORE, NOT FLOOR), so Robin Hood's men, mortals at tier one, matter less the deeper they are called."
   },
   "horns": {
     "robin_hoods_horn": {
@@ -20,7 +20,7 @@
       "title": "ROBIN HOOD'S HORN",
       "allies_by_chain": [0, 2, 3, 4, 5, 7],
       "roster": ["little_john", "will_scarlet", "yeoman_archer", "friar_tuck", "much_the_millers_son", "yeoman_archer", "alan_a_dale"],
-      "turns": 25,
+      "turns": 10,
       "delay_turns": 0,
       "lines": {
         "raise": "You set Robin Hood's horn to your lips and blow.",
@@ -41,7 +41,7 @@
       "title": "ARTHUR'S BUGLE",
       "allies_by_chain": [0, 2, 3, 4, 5, 6],
       "roster": ["king_arthur", "sir_bedivere", "sir_kay", "sir_gawain", "sir_percival", "sir_lancelot"],
-      "turns": 30,
+      "turns": 10,
       "delay_turns": 0,
       "lines": {
         "raise": "You set Arthur's bugle to your lips and blow.",
@@ -62,7 +62,7 @@
       "title": "GJALLARHORN",
       "allies_by_chain": [0, 3, 4, 5, 6, 8],
       "roster": ["einherjar", "einherjar", "einherjar", "einherjar", "einherjar", "einherjar", "einherjar", "einherjar"],
-      "turns": 30,
+      "turns": 10,
       "delay_turns": 0,
       "lines": {
         "raise": "You lift Gjallarhorn and blow.",
@@ -77,18 +77,18 @@
       "name": "The Olifant",
       "power": "horn_olifant",
       "label": "Blow the Olifant",
-      "desc": "Charlemagne's host rides back from thirty leagues off: blow it before the fight. Once a run.",
+      "desc": "Charlemagne's host rides from far off and comes late: blow it early, then fall back. Once a run.",
       "tier": 5,
       "quiz": {"subject": "history", "mode": "escalator_chain", "tier": 5, "max_chain": 5},
       "title": "THE OLIFANT",
       "allies_by_chain": [0, 2, 3, 5, 6, 8],
       "roster": ["charlemagne", "duke_naimes", "ogier_the_dane", "frankish_knight", "frankish_knight", "frankish_knight", "frankish_knight", "frankish_knight"],
-      "turns": 30,
+      "turns": 10,
       "delay_turns": 12,
       "lines": {
         "raise": "You set the Olifant to your lips and blow, as Roland did, until your temples ache.",
         "fail": "The crack in the mouthpiece takes the note, and it dies in the pass. Nobody far off hears it.",
-        "far": "Thirty leagues off, an emperor hears it. A traitor tells him it is nothing; his oldest duke tells him no man blows like that unless he is fighting. The host turns back.",
+        "far": "Thirty leagues off, an emperor hears it. A traitor tells him it is nothing; his oldest duke tells him no man blows like that unless he is fighting. The host turns back, but it is a long road. Give ground, and hold on until it comes.",
         "on_road": "Hooves behind you, a great many of them, and coming hard.",
         "arrive": "Charlemagne's host comes up out of the dark at the gallop, too late for Roland and not too late for you: {who}.",
         "leave": "{name} turns his horse for France.",

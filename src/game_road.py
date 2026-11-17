@@ -134,14 +134,20 @@ class RoadMixin:
         """Callbacks placed when the run begins, whatever the hero does
         (``karma_rules.json: run_start_schedule``): The Gate on one floor in
         94-98, which reads the people met on the way down. An entry whose
-        encounter is not in the data yet is skipped silently."""
+        encounter is not in the data yet is skipped silently, and so is one
+        whose ``not_for_builds`` names this run's hero (Merlin's stone, the
+        path to the Staff of Emrys, is never placed for Merlin: the staff is
+        already in his hand)."""
         import deeds
         import karma
         import road
         reg = self._deeds_reg()
         st = self._road_state()
+        build = (self.player_name or '').strip().lower() if getattr(self, 'secret_build', None) else ''
         for spec in karma.rules().get('run_start_schedule') or ():
             if not isinstance(spec, dict) or not spec.get('encounter'):
+                continue
+            if build and build in (spec.get('not_for_builds') or ()):
                 continue
             tag = spec['encounter']
             _src, enc = _encounter_by_tag(tag)

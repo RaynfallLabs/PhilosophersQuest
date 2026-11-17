@@ -2846,8 +2846,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             except Exception:
                 pass
 
-        # -- Shield (warriors) ---------------------------------------------
-        # str id = unique shield, tuple = (template_id, material_id)
+        # -- Shield: on the arm from the first turn -------------------------
+        # str id = unique shield, tuple = (template_id, material_id). Only a
+        # figure who fought with a shield in his lore has one (Brandon,
+        # 2026-11-16: "Geralt no, Leonidas yes"), and it is on his arm, as
+        # his weapon is in his hand (his own kit: no quiz). Only a hand
+        # already full with a two-hander leaves it in the pack.
         start_shield = b.get('_start_shield', None)
         if start_shield:
             try:
@@ -2860,9 +2864,13 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 if sh:
                     _mark_starting_item_known(sh)
                     self.player.known_item_ids.add(sh.id)
-                    self.player.inventory.append(sh)
+                    if self.player.shield is None and self.player.can_equip_shield():
+                        self.player._apply_equip(sh)
+                    if self.player.shield is not sh:
+                        self.player.inventory.append(sh)
             except Exception:
-                pass
+                from game_log import log_error
+                log_error('main._give_starting_kit: recovered from an error (shield)')
 
         # -- Accessory (rings/amulets) ------------------------------------
         start_acc = b.get('_start_accessory', None)

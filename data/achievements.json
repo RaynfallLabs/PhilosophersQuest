@@ -3762,6 +3762,107 @@
     "chain",
     "answer"
    ]
+  },
+  {
+   "id": "neither_would_give_way",
+   "name": "Neither Would Give Way",
+   "category": "secrets",
+   "rarity": "rare",
+   "hint": "In the old ballad, two strangers with quarterstaffs met in the middle of a narrow bridge.",
+   "unlocked_text": "You knocked Robin Hood off the bridge into the stream, as Little John once did, and he gave you his horn.",
+   "code_word": "SHERWOOD",
+   "art": "neither_would_give_way",
+   "trigger": {
+    "event": "deed",
+    "where": {
+     "id": "told.robin_in_the_stream"
+    }
+   },
+   "spoiler_words": [
+    "robin",
+    "hood",
+    "horn",
+    "stream",
+    "brook",
+    "water",
+    "splash",
+    "sum"
+   ]
+  },
+  {
+   "id": "not_yet_the_hour",
+   "name": "Not Yet the Hour",
+   "category": "secrets",
+   "rarity": "epic",
+   "hint": "By the Roman Wall they tell of a farmer who followed his ball of thread under the hill, and found a king asleep.",
+   "unlocked_text": "You drew the sword, cut the garter and blew the bugle-horn, and the king under the hill woke for you.",
+   "code_word": "BUGLEHORN",
+   "art": "not_yet_the_hour",
+   "trigger": {
+    "event": "deed",
+    "where": {
+     "id": "told.arthur_woken"
+    }
+   },
+   "spoiler_words": [
+    "sword",
+    "garter",
+    "bugle",
+    "blow",
+    "blew",
+    "arthur",
+    "wake",
+    "woke"
+   ]
+  },
+  {
+   "id": "one_who_listens",
+   "name": "One Who Listens",
+   "category": "secrets",
+   "rarity": "epic",
+   "hint": "In the Eddas, the watchman of the gods needs less sleep than a bird and can hear the grass grow.",
+   "unlocked_text": "You sat the watch with Heimdall at the foot of the bridge, and heard what he heard. He put Gjallarhorn in your hands.",
+   "code_word": "BIFROST",
+   "art": "one_who_listens",
+   "trigger": {
+    "event": "deed",
+    "where": {
+     "id": "told.heimdall_watch"
+    }
+   },
+   "spoiler_words": [
+    "heimdall",
+    "gjallarhorn",
+    "horn",
+    "bifrost",
+    "einherjar",
+    "valhalla"
+   ]
+  },
+  {
+   "id": "not_by_strength",
+   "name": "Not by Strength",
+   "category": "secrets",
+   "rarity": "rare",
+   "hint": "In Malory, a knight heard a great enchanter groaning under a stone that a hundred men could not lift.",
+   "unlocked_text": "You answered Merlin's questions at the great stone, and he gave you his staff out of the hawthorn.",
+   "code_word": "EMRYS",
+   "art": "not_by_strength",
+   "trigger": {
+    "event": "deed",
+    "where": {
+     "id": "told.merlin_staff"
+    }
+   },
+   "spoiler_words": [
+    "merlin",
+    "staff",
+    "hawthorn",
+    "nimue",
+    "science",
+    "answer",
+    "question"
+   ]
   }
  ]
 }
