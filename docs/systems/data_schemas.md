@@ -1081,7 +1081,9 @@ stance.py, counters.py.
 
 `counters` (any item, or a shield template): technique ids from
 `data/arsenal.json counters.techniques`. `spawn_bell` (body armour and shield
-templates): `[peak, spread, first floor, height?]`. `data/traders.json`: a
+templates): `[peak, spread, first floor, height?]`; `deep_bell` (a light or
+medium body template, 2026-11-17): a second bell of the same shape, added to
+the first, for its return on the deep floors in deep materials. `data/traders.json`: a
 trader's `counter_classes` (classes he sets out only as a stall counter);
 a `counters.guard` need may name `delivery` (+ `riders`), or `families` /
 `tags` with `effects`, and its own `min_share`; a class offer may name `ids`;

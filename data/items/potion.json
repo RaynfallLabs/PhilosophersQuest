@@ -15,10 +15,10 @@
     "duration": 0,
     "floorSpawnWeight": {
       "1-20": 130,
-      "21-40": 90,
-      "41-60": 60,
-      "61-80": 45,
-      "81-100": 35
+      "21-40": 29,
+      "41-60": 9,
+      "61-80": 4,
+      "81-100": 2
     },
     "lore": "Jeremiah asked whether there was no balm in Gilead, and the traders of that hill country grew rich selling the resin behind the question. This is the dungeon's cheaper cousin: cave moss steeped in blessed spring water, fizzing while fresh. One swallow closes cuts and takes the ache out of bruises. Old delvers count their vials before they count their coins.",
     "peak_weight": 0.5
@@ -38,11 +38,11 @@
     "power": "4d8+10",
     "duration": 0,
     "floorSpawnWeight": {
-      "1-20": 50,
-      "21-40": 110,
-      "41-60": 105,
-      "61-80": 95,
-      "81-100": 85
+      "1-20": 25,
+      "21-40": 100,
+      "41-60": 110,
+      "61-80": 100,
+      "81-100": 30
     },
     "lore": "The Samaritan on the Jericho road poured oil and wine into a beaten stranger's wounds, and this crimson syrup is brewed in that spirit with considerably more ambition. It reaches past the skin to knit cracked ribs and settle bruised organs. It tastes of iron and overripe cherries. Apothecaries who make it have red fingers for life.",
     "peak_weight": 0.5
@@ -64,8 +64,8 @@
     "floorSpawnWeight": {
       "1-20": 0,
       "21-40": 0,
-      "41-60": 15,
-      "61-80": 35,
+      "41-60": 5,
+      "61-80": 19,
       "81-100": 55
     },
     "lore": "Athena gave Asclepius two vials of the Gorgon's blood. The blood from the left side killed; the blood from the right raised the dead, and Zeus answered that trespass with a thunderbolt. The amber flask holds something close to the right-hand vial. Every wound closes at once, and for a breath the drinker remembers what it was to be whole.",
@@ -87,10 +87,10 @@
     "duration": 0,
     "floorSpawnWeight": {
       "1-20": 100,
-      "21-40": 80,
-      "41-60": 60,
-      "61-80": 40,
-      "81-100": 30
+      "21-40": 22,
+      "41-60": 7,
+      "61-80": 3,
+      "81-100": 2
     },
     "lore": "Elijah lay down under a broom tree ready to die. An angel woke him twice to eat a cake baked on coals, and on the strength of that food he walked forty days to Horeb. The green goo is the poor man's version, rendered from beetle fat and ginger root. It smells appalling and puts the legs back under a starving delver.",
     "peak_weight": 0.5
@@ -111,10 +111,10 @@
     "duration": 0,
     "floorSpawnWeight": {
       "1-20": 80,
-      "21-40": 70,
-      "41-60": 60,
-      "61-80": 50,
-      "81-100": 40
+      "21-40": 18,
+      "41-60": 6,
+      "61-80": 2,
+      "81-100": 1
     },
     "lore": "Mithridates of Pontus feared poisoners so much that he swallowed a little of every venom he could find, daily, until none could kill him. Physicians sold versions of his recipe for nearly two thousand years under the name theriac. The pink fizz is its honest descendant: it hunts venom through the blood and leaves only an aftertaste of rose water.",
     "peak_weight": 0.5
@@ -135,10 +135,10 @@
     "duration": 0,
     "floorSpawnWeight": {
       "1-20": 60,
-      "21-40": 60,
-      "41-60": 60,
-      "61-80": 50,
-      "81-100": 40
+      "21-40": 13,
+      "41-60": 4,
+      "61-80": 2,
+      "81-100": 1
     },
     "lore": "Naaman the Syrian came to Elisha a leper and was told to wash seven times in the Jordan. He sulked that the rivers of Damascus were cleaner, washed anyway, and came up with skin like a child's. This oily green draught asks even less faith. It burns out fever and the wasting sickness that eats a delver's strength.",
     "peak_weight": 0.5
@@ -159,9 +159,9 @@
     "duration": 0,
     "floorSpawnWeight": {
       "1-20": 0,
-      "21-40": 15,
-      "41-60": 30,
-      "61-80": 40,
+      "21-40": 1,
+      "41-60": 3,
+      "61-80": 10,
       "81-100": 45
     },
     "lore": "The Hippocratic Oath opens by swearing to Apollo, Asclepius, Hygieia, and Panacea, the daughter whose name means 'all-healing'. Alchemists chased her through every furnace in Christendom. The silver vial is as near as anyone came. It scours out poison, plague, blindness, dread, and curse together, and leaves the drinker clean as a rinsed cup.",
@@ -183,11 +183,11 @@
     "duration": 40,
     "floorSpawnWeight": {
       "1-10": 0,
-      "11-20": 12,
-      "21-40": 30,
-      "41-60": 50,
+      "11-20": 4,
+      "21-40": 7,
+      "41-60": 21,
       "61-80": 60,
-      "81-100": 55
+      "81-100": 21
     },
     "lore": "Hippomenes could not outrun Atalanta, so he rolled three golden apples across her path and won the race while she stooped for them. This frothing orange flask is the fairer method. The drinker moves, and the rest of the world wades through honey behind. The froth never settles, even in a still hand.",
     "peak_weight": 0.5
@@ -208,11 +208,11 @@
     "duration": 60,
     "floorSpawnWeight": {
       "1-10": 0,
-      "11-20": 12,
-      "21-40": 25,
-      "41-60": 45,
+      "11-20": 3,
+      "21-40": 7,
+      "41-60": 19,
       "61-80": 55,
-      "81-100": 50
+      "81-100": 19
     },
     "lore": "Plato tells of a Lydian shepherd who found a ring that hid him from sight, and used it to murder his king and take the throne. Plato's question still stands: who stays honest when no one can see? The liquid is clear as air and the flask looks empty. Whoever drains it fades from view, and blows aimed at the drinker go wide.",
     "peak_weight": 0.5
@@ -233,10 +233,10 @@
     "duration": 80,
     "floorSpawnWeight": {
       "1-20": 0,
-      "21-40": 20,
-      "41-60": 40,
+      "21-40": 7,
+      "41-60": 19,
       "61-80": 55,
-      "81-100": 50
+      "81-100": 19
     },
     "lore": "Each time Heracles struck a head from the Hydra, two grew from the stump, until Iolaus seared the necks with a torch. This dark brew is distilled from creatures of that stubborn kind, trolls and deep worms that regrow what they lose. While it lasts, the drinker's wounds close slowly and steadily, like ice melting in reverse.",
     "peak_weight": 0.5
@@ -257,11 +257,11 @@
     "duration": 50,
     "floorSpawnWeight": {
       "1-10": 0,
-      "11-20": 12,
-      "21-40": 20,
-      "41-60": 40,
+      "11-20": 3,
+      "21-40": 6,
+      "41-60": 18,
       "61-80": 50,
-      "81-100": 45
+      "81-100": 18
     },
     "lore": "Homer's heroes had their great hours, when a god breathed strength into one man and the battle line bent around him. Diomedes wounded two gods in his. This golden draught, thick as honey, lends such an hour to anyone: arms that could bend iron and a heart to match. The hour ends. Homer is clear on that too.",
     "peak_weight": 0.5
@@ -282,10 +282,10 @@
     "duration": 0,
     "floorSpawnWeight": {
       "1-20": 0,
-      "21-40": 6,
-      "41-60": 12,
+      "21-40": 2,
+      "41-60": 5,
       "61-80": 14,
-      "81-100": 12
+      "81-100": 5
     },
     "lore": "Odin wanted a drink from Mimir's well, where wisdom lies, and Mimir's price was an eye. Odin paid it. The crystalline vial is a kinder bargain. It pours spent magic back into an emptied mind all at once, a far deeper draught than common mana, and asks for nothing but the vial.",
     "peak_weight": 0.5
@@ -306,11 +306,11 @@
     "duration": 70,
     "floorSpawnWeight": {
       "1-10": 0,
-      "11-20": 15,
-      "21-40": 30,
+      "11-20": 6,
+      "21-40": 20,
       "41-60": 50,
-      "61-80": 45,
-      "81-100": 35
+      "61-80": 20,
+      "81-100": 6
     },
     "lore": "The apocryphal Acts of Peter tell how Simon Magus rose into the air above Rome to prove his power, how Peter prayed, and how Simon came down rather faster than he went up. The violet mist lifts a drinker a hand's breadth off the floor, clear of pits and snares, and sets the drinker down gently when it fades.",
     "peak_weight": 0.5
@@ -330,11 +330,11 @@
     "power": "",
     "duration": 0,
     "floorSpawnWeight": {
-      "1-20": 30,
-      "21-40": 50,
+      "1-20": 6,
+      "21-40": 20,
       "41-60": 50,
-      "61-80": 45,
-      "81-100": 40
+      "61-80": 20,
+      "81-100": 6
     },
     "lore": "The Philistines shaved Samson, blinded him, and set him to grind grain in Gaza. They forgot that hair grows. This bronze draught works the same quiet restoration: strength that sickness or sorcery drained away returns to the limbs in full. It does nothing for those who have lost nothing, which veterans count as a blessing.",
     "peak_weight": 0.5
@@ -356,8 +356,8 @@
     "floorSpawnWeight": {
       "1-20": 0,
       "21-40": 0,
-      "41-60": 5,
-      "61-80": 8,
+      "41-60": 1,
+      "61-80": 2,
       "81-100": 10
     },
     "lore": "Jacob dreamed of a ladder set on the earth with its top in heaven, and angels going up and down it. The stars turning in this blue potion belong to that kind of traffic. The drinker is lifted bodily to the floor above, nearer daylight. Whether that counts as progress depends on which way the quest lies.",
@@ -379,11 +379,11 @@
     "duration": 80,
     "floorSpawnWeight": {
       "1-10": 0,
-      "11-20": 10,
-      "21-40": 25,
-      "41-60": 45,
-      "61-80": 55,
-      "81-100": 50
+      "11-20": 7,
+      "21-40": 22,
+      "41-60": 55,
+      "61-80": 22,
+      "81-100": 7
     },
     "lore": "Nebuchadnezzar heated his furnace seven times hotter and threw in Shadrach, Meshach, and Abednego. They walked out without the smell of smoke on their clothes. No alchemist claims that miracle, but this frost-white potion imitates it for a while: flame washes over the drinker and does only half its work. Dwarven smiths sip it before reaching into the forge.",
     "peak_weight": 0.5
@@ -404,11 +404,11 @@
     "duration": 80,
     "floorSpawnWeight": {
       "1-10": 0,
-      "11-20": 10,
-      "21-40": 25,
-      "41-60": 45,
+      "11-20": 3,
+      "21-40": 7,
+      "41-60": 19,
       "61-80": 55,
-      "81-100": 50
+      "81-100": 19
     },
     "lore": "The Norse placed Muspelheim, the realm of fire, at the southern edge of the first emptiness, and said its sparks became the sun and stars. Something of that spark glows in the ember-orange vial. The drinker carries a hearth under the ribs, and frost that would blacken fingers settles on them like dew. Frost giants take it personally.",
     "peak_weight": 0.5
@@ -429,11 +429,11 @@
     "duration": 80,
     "floorSpawnWeight": {
       "1-10": 0,
-      "11-20": 10,
-      "21-40": 25,
-      "41-60": 45,
-      "61-80": 55,
-      "81-100": 50
+      "11-20": 7,
+      "21-40": 22,
+      "41-60": 55,
+      "61-80": 22,
+      "81-100": 7
     },
     "lore": "Salmoneus of Elis dragged bronze kettles behind his chariot and flung torches to play at being Zeus. Zeus replied with the real thing. The copper draught is for those who would rather survive lightning than imitate it. Brewed with eel skin, it lets a thunderbolt pass through the body into the ground, leaving only the taste of coins.",
     "peak_weight": 0.5
@@ -453,11 +453,11 @@
     "power": "",
     "duration": 30,
     "floorSpawnWeight": {
-      "1-20": 24,
+      "1-20": 8,
       "21-40": 24,
-      "41-60": 24,
-      "61-80": 22,
-      "81-100": 20
+      "41-60": 8,
+      "61-80": 3,
+      "81-100": 1
     },
     "lore": "At Babel the builders shared one language and one plan, a tower with its top in the heavens. Then no man could understand his neighbor, and the work stopped. This murky draught does the same to a single skull. Left and right trade places, feet go where they please, and plain questions arrive scrambled. Dishonest peddlers label it as tonic.",
     "peak_weight": 0.5
@@ -477,11 +477,11 @@
     "power": "",
     "duration": 25,
     "floorSpawnWeight": {
-      "1-20": 22,
+      "1-20": 8,
       "21-40": 22,
-      "41-60": 22,
-      "61-80": 20,
-      "81-100": 18
+      "41-60": 8,
+      "61-80": 3,
+      "81-100": 1
     },
     "lore": "Saul rode for Damascus breathing threats, and a light from heaven left him three days blind, led by the hand like a child. The smoke coiled in this black vial does a smaller and less instructive job. The drinker's sight shrinks to arm's length until it clears. In a dungeon already dark, it is the last thing anyone needs to swallow.",
     "peak_weight": 0.5
@@ -501,11 +501,11 @@
     "power": "1d4",
     "duration": 0,
     "floorSpawnWeight": {
-      "1-20": 22,
+      "1-20": 8,
       "21-40": 22,
-      "41-60": 22,
-      "61-80": 20,
-      "81-100": 18
+      "41-60": 8,
+      "61-80": 3,
+      "81-100": 1
     },
     "lore": "Locusta of Gaul poisoned so skillfully that Nero kept her in his service and, the historians say, sent her pupils. Whoever bottled this purple ooze studied in that tradition. It is spider venom thickened to cling on the way down, and it burns in the blood for a long while. The sliminess is the only warning it offers.",
     "peak_weight": 0.5
@@ -526,11 +526,11 @@
     "duration": 8,
     "floorSpawnWeight": {
       "1-10": 0,
-      "11-20": 18,
-      "21-40": 18,
+      "11-20": 2,
+      "21-40": 7,
       "41-60": 18,
-      "61-80": 16,
-      "81-100": 14
+      "61-80": 7,
+      "81-100": 2
     },
     "lore": "Plato records how the hemlock took Socrates: the jailer pinched his feet, then his shins, and he felt nothing as the cold climbed toward his heart. This ashen draught, ground from a cave mushroom called the Stillness Cap, stops short of the heart. The mind stays wide awake inside a body that will not answer. It passes quickly. It does not feel quick.",
     "peak_weight": 0.5
@@ -551,11 +551,11 @@
     "duration": 30,
     "floorSpawnWeight": {
       "1-10": 0,
-      "11-20": 15,
-      "21-40": 24,
+      "11-20": 3,
+      "21-40": 10,
       "41-60": 24,
-      "61-80": 22,
-      "81-100": 18
+      "61-80": 10,
+      "81-100": 3
     },
     "lore": "Medieval villagers who ate bread from blighted rye saw visions and felt their limbs burn. They called it Saint Anthony's Fire and walked to his monks for a cure. The rainbow flecks in this flask work on the same principle without the bread. Walls breathe, shadows grow teeth, and no creature looks like itself until the colors drain away.",
     "peak_weight": 0.5
@@ -576,10 +576,10 @@
     "duration": 15,
     "floorSpawnWeight": {
       "1-20": 20,
-      "21-40": 20,
-      "41-60": 18,
-      "61-80": 16,
-      "81-100": 14
+      "21-40": 4,
+      "41-60": 1,
+      "61-80": 1,
+      "81-100": 0
     },
     "lore": "Ovid put the cave of Sleep where no rooster crows, with poppies at its mouth and the river Lethe whispering over pebbles. Hypnos once put Zeus himself under, as a favor to Hera. The flask is warm in the hand, like a cup held at bedtime. That comfort is the trap. Monsters do not wait for a sleeper to finish dreaming.",
     "peak_weight": 0.5
@@ -599,11 +599,11 @@
     "power": "",
     "duration": 25,
     "floorSpawnWeight": {
-      "1-20": 20,
+      "1-20": 7,
       "21-40": 20,
-      "41-60": 20,
-      "61-80": 18,
-      "81-100": 16
+      "41-60": 7,
+      "61-80": 2,
+      "81-100": 1
     },
     "lore": "Delilah lulled Samson to sleep on her knees and called a man to shave the seven locks of his head. He woke, went out to fight as before, and did not know his strength had left him. This grey ooze works faster and smells far worse. Blows land soft and the sword arm hangs heavy until it wears off.",
     "peak_weight": 0.5
@@ -623,11 +623,11 @@
     "power": "",
     "duration": 35,
     "floorSpawnWeight": {
-      "1-20": 20,
-      "21-40": 24,
-      "41-60": 22,
-      "61-80": 20,
-      "81-100": 16
+      "1-20": 3,
+      "21-40": 10,
+      "41-60": 24,
+      "61-80": 10,
+      "81-100": 3
     },
     "lore": "Zeno of Elea argued that swift Achilles could never catch a tortoise with a head start, since he must first reach where it had been. Nobody believed him. This violet potion makes the argument persuasive. It pours like cold tar, and whoever drinks it moves the same way, a half step behind every enemy in the room.",
     "peak_weight": 0.5
@@ -647,11 +647,11 @@
     "power": "",
     "duration": 0,
     "floorSpawnWeight": {
-      "1-20": 30,
+      "1-20": 10,
       "21-40": 30,
-      "41-60": 28,
-      "61-80": 22,
-      "81-100": 18
+      "41-60": 10,
+      "61-80": 4,
+      "81-100": 2
     },
     "lore": "After Philip baptized the Ethiopian on the Gaza road, the Spirit of the Lord caught him away, and he found himself at Azotus. The magenta flask offers the journey without the guidance. The drinker vanishes and arrives somewhere else on the same floor, wherever the dungeon chooses. It has rescued the cornered and stranded the careless in equal measure.",
     "peak_weight": 0.5
@@ -672,10 +672,10 @@
     "duration": 0,
     "floorSpawnWeight": {
       "1-20": 0,
-      "21-40": 8,
-      "41-60": 12,
+      "21-40": 2,
+      "41-60": 5,
       "61-80": 15,
-      "81-100": 15
+      "81-100": 5
     },
     "lore": "The giant Antaeus drew his strength from the earth, his mother, and no wrestler could throw him. Heracles lifted him clear of the ground and held him there until the strength ran out. This storm-grey vial holds a man off the ground from the inside. What it takes from the arms does not return on its own.",
     "peak_weight": 0.5
@@ -696,10 +696,10 @@
     "duration": 0,
     "floorSpawnWeight": {
       "1-20": 0,
-      "21-40": 8,
-      "41-60": 12,
+      "21-40": 2,
+      "41-60": 5,
       "61-80": 14,
-      "81-100": 14
+      "81-100": 5
     },
     "lore": "Eos asked Zeus to make her beloved Tithonus immortal and forgot to ask for youth. He withered year by year until only a thin voice was left, and some say he ended as a cicada. The brackish olive draught gives a taste of that bargain. The drinker lives, and is lastingly less hardy for it.",
     "peak_weight": 0.5
@@ -720,10 +720,10 @@
     "duration": 0,
     "floorSpawnWeight": {
       "1-20": 0,
-      "21-40": 8,
-      "41-60": 12,
+      "21-40": 2,
+      "41-60": 5,
       "61-80": 14,
-      "81-100": 14
+      "81-100": 5
     },
     "lore": "Solomon asked God for an understanding heart and received wisdom beyond any king. In old age he let it slip, and built shrines to the idols of his foreign wives. The bottle is a patchwork of stone, clay, and something like cured hide, plainly made by someone whose judgment had already gone. Its contents take the same toll, and keep it.",
     "peak_weight": 0.5
@@ -744,10 +744,10 @@
     "duration": 0,
     "floorSpawnWeight": {
       "1-20": 0,
-      "21-40": 8,
-      "41-60": 12,
+      "21-40": 2,
+      "41-60": 5,
       "61-80": 14,
-      "81-100": 14
+      "81-100": 5
     },
     "lore": "Odysseus sent three men to scout the land of the Lotus-Eaters. They tasted the fruit, forgot home, and had to be dragged back to the ships weeping and tied under the benches. This mottled bottle holds a harsher vintage. It dulls the reasoning mind for good, and the drinker is rarely sharp enough afterward to count the loss.",
     "peak_weight": 0.5
@@ -768,10 +768,10 @@
     "duration": 15,
     "floorSpawnWeight": {
       "1-20": 0,
-      "21-40": 24,
+      "21-40": 10,
       "41-60": 24,
-      "61-80": 22,
-      "81-100": 18
+      "61-80": 10,
+      "81-100": 3
     },
     "lore": "The Iliad opens with plague. Apollo came down from Olympus like nightfall and shot his arrows into the Greek camp for nine days, mules and dogs first, then men. A sulfur-yellow vial does the work of one arrow. The fever it carries saps strength and hardiness by the hour, and the stench through the stopper is the only honest label.",
     "peak_weight": 0.5
@@ -792,11 +792,11 @@
     "duration": 35,
     "floorSpawnWeight": {
       "1-10": 0,
-      "11-20": 20,
-      "21-40": 20,
+      "11-20": 2,
+      "21-40": 8,
       "41-60": 20,
-      "61-80": 18,
-      "81-100": 16
+      "61-80": 8,
+      "81-100": 2
     },
     "lore": "A hagfish seized by a shark pours out enough slime in a heartbeat to choke the attacker's gills, then ties itself in a knot to wipe clean. The turquoise liquid borrows the trick and leaves out the knot. Hilts, straps, and latches squirt from the drinker's fingers at the worst moments. Dignity goes with them.",
     "peak_weight": 0.5
@@ -817,11 +817,11 @@
     "duration": 20,
     "floorSpawnWeight": {
       "1-10": 0,
-      "11-20": 15,
+      "11-20": 8,
       "21-40": 22,
-      "41-60": 20,
-      "61-80": 18,
-      "81-100": 14
+      "41-60": 8,
+      "61-80": 3,
+      "81-100": 1
     },
     "lore": "The Greeks said the god Pan could raise a shout that sent whole armies running, and they named the feeling after him: panic. The Athenians built him a shrine for his help against the Persians at Marathon. This wine-dark phial bottles that shout. The drinker's feet will not go toward an enemy until the terror runs out.",
     "peak_weight": 0.5
@@ -841,11 +841,11 @@
     "power": "2d8+6",
     "duration": 0,
     "floorSpawnWeight": {
-      "1-20": 15,
-      "21-40": 22,
-      "41-60": 26,
-      "61-80": 24,
-      "81-100": 20
+      "1-20": 9,
+      "21-40": 26,
+      "41-60": 9,
+      "61-80": 3,
+      "81-100": 2
     },
     "lore": "The dwarves Fjalar and Galar brewed the mead of poetry from honey and the blood of wise Kvasir, and Odin stole it in three swallows. Whoever tasted it could make verses. The azure vial is a humbler brew of glowing cave fungus, but the kinship shows: it refills a mage's spent reserves and puts spells back on the tongue.",
     "peak_weight": 0.5
@@ -863,10 +863,11 @@
     "unidentified_name": "pale golden elixir",
     "lore": "The Rigveda gives an entire book, one hundred fourteen hymns, to Soma: a plant pressed between stones, strained through wool, mixed with milk, and offered to Indra before he fought the dragon Vritra. Scholars still argue over which plant it was. The hymns say only what it did. One draught of this honeyed gold restores a broken body completely.",
     "floorSpawnWeight": {
-      "1-24": 0,
-      "25-50": 3,
-      "51-80": 5,
-      "81-100": 3
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 1,
+      "81-100": 5
     },
     "containerLootTier": "rare",
     "symbol": "!",
@@ -890,9 +891,11 @@
     "unidentified_name": "still colorless water",
     "lore": "Virgil shows Aeneas a crowd of souls on the banks of Lethe, drinking forgetfulness before they return to the world above. Plato's Er watched the dead do the same and noted that the unwise drank too much. A mouthful of this still water washes every affliction from body and mind: poison, fever, terror, curse. What is forgotten cannot linger.",
     "floorSpawnWeight": {
-      "1-29": 0,
-      "30-55": 4,
-      "56-100": 3
+      "1-20": 0,
+      "21-40": 2,
+      "41-60": 4,
+      "61-80": 2,
+      "81-100": 0
     },
     "containerLootTier": "rare",
     "symbol": "!",
@@ -916,9 +919,11 @@
     "unidentified_name": "thorn-sprigged green bottle",
     "lore": "Gilgamesh dove to the sea floor with stones tied to his feet and brought up a thorny plant he named The Old Man Becomes Young. While he bathed on the road home, a serpent ate it and shed its skin. A sprig steeps in this green bottle. It cannot return lost years, but it carries the drinker back one floor toward the daylight.",
     "floorSpawnWeight": {
-      "1-44": 0,
-      "45-70": 2,
-      "71-100": 3
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 1,
+      "81-100": 3
     },
     "containerLootTier": "legendary",
     "symbol": "!",
@@ -993,10 +998,10 @@
     "duration": 150,
     "floorSpawnWeight": {
       "1-20": 0,
-      "21-40": 15,
-      "41-60": 30,
-      "61-80": 40,
-      "81-100": 45
+      "21-40": 5,
+      "41-60": 16,
+      "61-80": 45,
+      "81-100": 16
     },
     "lore": "The king of Aram sent an army by night to take the prophet Elisha at Dothan, and in the morning his servant saw the city ringed with horses and chariots and cried out. Elisha prayed that the young man's eyes be opened, and he looked again and saw the hills full of horses and chariots of fire. This potion opens the eyes a little way in the same direction: for a while the drinker sees what walks unseen.",
     "peak_weight": 0.5

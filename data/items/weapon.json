@@ -3839,15 +3839,15 @@
     "ignoreShield": false,
     "requiresAmmo": null,
     "floorSpawnWeight": {
-      "1-20": 0,
-      "21-40": 2,
+      "1-20": 4,
+      "21-40": 0,
       "41-60": 0,
       "61-80": 0,
       "81-100": 0
     },
     "containerLootTier": "rare",
     "value": 2000,
-    "min_level": 12,
+    "min_level": 8,
     "unidentified_name": "a jeweled blade with a frayed horsehair knotted at the pommel",
     "lore": "Cicero tells the story. Damocles, a flatterer at the court of Dionysius of Syracuse, kept saying how happy a tyrant must be, so Dionysius sat him on a golden couch at a banquet. Then Damocles looked up. A sword hung over his neck by a single horsehair, and he begged to go home. The blade cuts magnificently, but its luck is on a thread, and every miss frays it.",
     "quiz_tier": 2,
@@ -3856,8 +3856,8 @@
       "pierce"
     ],
     "template_basis": "longsword",
-    "spread": 8,
-    "peak_floor": 22,
+    "spread": 7,
+    "peak_floor": 15,
     "chain_multipliers": [
       0.5,
       0.85,
@@ -6682,8 +6682,8 @@
     "damage_types": [
       "blunt"
     ],
-    "min_level": 23,
-    "peak_floor": 26,
+    "min_level": 9,
+    "peak_floor": 16,
     "spread": 6,
     "peak_weight": 0.4,
     "max_enchant": 3,
@@ -6714,8 +6714,8 @@
     "requiresAmmo": null,
     "chain_exponent": 1.15,
     "floorSpawnWeight": {
-      "1-20": 0,
-      "21-40": 2,
+      "1-20": 4,
+      "21-40": 0,
       "41-60": 0,
       "61-80": 0,
       "81-100": 0

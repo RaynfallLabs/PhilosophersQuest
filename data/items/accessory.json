@@ -488,21 +488,25 @@
       50
     ],
     "weight": 0.2,
-    "min_level": 65,
+    "min_level": 74,
     "slot": "ring",
     "equip_threshold": 6,
     "quiz_tier": 5,
     "effects": {},
     "unidentified_name": "a heavy gold ring with a tiny rune",
     "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 0,
       "81-100": 2
     },
     "identified": false,
     "lore": "Loki took this ring from the dwarf Andvari to pay the blood-price for Otr, and Andvari swore it would be the death of everyone who owned it. Fafnir killed his father Hreidmar for it. Sigurd killed Fafnir and was murdered in his own bed. Gunnar and Hogni sank the hoard in the Rhine and died in Atli's hall without saying where.",
     "peak_weight": 0.2,
     "is_unique": true,
-    "spread": 25,
-    "peak_floor": 70,
+    "spread": 12,
+    "peak_floor": 90,
     "gold_multiplier": 2.0,
     "can_be_cursed": true
   },
@@ -804,7 +808,7 @@
       200
     ],
     "weight": 0.2,
-    "min_level": 65,
+    "min_level": 74,
     "slot": "amulet",
     "equip_threshold": 7,
     "quiz_tier": 5,
@@ -843,6 +847,10 @@
     },
     "unidentified_name": "a golden necklace of impossible craftsmanship",
     "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 0,
       "81-100": 2
     },
     "identified": false,
@@ -850,8 +858,8 @@
     "cursed": true,
     "peak_weight": 0.2,
     "is_unique": true,
-    "spread": 25,
-    "peak_floor": 70
+    "spread": 12,
+    "peak_floor": 88
   },
   "menat_of_hathor": {
     "name": "Menat of Hathor",
@@ -945,7 +953,7 @@
       80
     ],
     "weight": 0.2,
-    "min_level": 60,
+    "min_level": 74,
     "slot": "amulet",
     "equip_threshold": 7,
     "quiz_tier": 5,
@@ -985,15 +993,18 @@
     },
     "unidentified_name": "a knotted red jasper amulet like a tied sash",
     "floorSpawnWeight": {
-      "61-80": 1,
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 0,
       "81-100": 2
     },
     "identified": false,
     "lore": "The tyet looks like an ankh with its arms folded down, or like the knot in a tied sash. Egyptian embalmers cut it from red jasper and laid it at the throat of the dead, and the Book of the Dead gives the spell to speak over it, calling on the blood and the power of Isis. She had already brought one husband back.",
     "peak_weight": 0.2,
     "is_unique": true,
-    "spread": 24,
-    "peak_floor": 65
+    "spread": 12,
+    "peak_floor": 86
   },
   "idunn_apple_charm": {
     "name": "Idunn's Apple",
@@ -1120,7 +1131,7 @@
       80
     ],
     "weight": 0.3,
-    "min_level": 65,
+    "min_level": 74,
     "slot": "amulet",
     "equip_threshold": 7,
     "quiz_tier": 5,
@@ -1132,15 +1143,18 @@
     },
     "unidentified_name": "a broad chest ornament of lapis and gold",
     "floorSpawnWeight": {
-      "61-80": 1,
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 0,
       "81-100": 2
     },
     "identified": false,
     "lore": "Amun's name means the Hidden One. His image lived in the dark at the back of the temple of Karnak, and when the priests carried it out on its gilded boat, it stayed behind a veil. Pharaohs put questions to it. The boat on the bearers' shoulders dipped forward for yes and drew back for no.",
     "peak_weight": 0.2,
     "is_unique": true,
-    "spread": 25,
-    "peak_floor": 70
+    "spread": 12,
+    "peak_floor": 88
   },
   "ankh_of_ra": {
     "name": "Ankh of Ra",
@@ -1380,7 +1394,7 @@
       180
     ],
     "weight": 0.1,
-    "min_level": 65,
+    "min_level": 74,
     "slot": "ring",
     "equip_threshold": 6,
     "quiz_tier": 5,
@@ -1416,14 +1430,18 @@
     },
     "unidentified_name": "a delicate runner's anklet of pale silver",
     "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 0,
       "81-100": 2
     },
     "identified": false,
     "lore": "Atalanta could outrun any man alive. Her father offered her hand to whoever could beat her in a race. The losers were killed. Hippomenes won by dropping three golden apples from Aphrodite; she stopped to pick them up. She did not stop because she wanted the apples. She stopped because losing was the most interesting thing that had happened to her yet.",
     "peak_weight": 0.2,
     "is_unique": true,
-    "spread": 25,
-    "peak_floor": 70
+    "spread": 12,
+    "peak_floor": 86
   },
   "crown_of_croesus": {
     "name": "Diadem of Croesus",
@@ -1523,7 +1541,7 @@
       200
     ],
     "weight": 0.1,
-    "min_level": 65,
+    "min_level": 74,
     "slot": "ring",
     "equip_threshold": 6,
     "quiz_tier": 5,
@@ -1535,14 +1553,18 @@
     },
     "unidentified_name": "a red-gold ring with a small tower engraved on it",
     "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 0,
       "81-100": 2
     },
     "identified": false,
     "lore": "The Lady of the Lake raised Lancelot and did not tell him his name. He learned it when he took the castle of Dolorous Gard and lifted a slab in its graveyard: his own name was cut beneath, as the man who would one day lie there. He renamed the place Joyous Gard. The tower on this ring is that castle, and he is buried in it.",
     "peak_weight": 0.2,
     "is_unique": true,
-    "spread": 25,
-    "peak_floor": 70
+    "spread": 12,
+    "peak_floor": 86
   },
   "seal_of_agrippa": {
     "name": "Seal of Agrippa",
@@ -1584,7 +1606,7 @@
       255
     ],
     "weight": 0.1,
-    "min_level": 65,
+    "min_level": 74,
     "slot": "ring",
     "equip_threshold": 6,
     "quiz_tier": 5,
@@ -1594,14 +1616,18 @@
     },
     "unidentified_name": "a ring of strange alloy that seems to look back at you",
     "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 0,
       "81-100": 2
     },
     "identified": false,
     "lore": "Socrates said a voice had come to him since childhood. It never told him what to do; it only stopped him when he was about to do wrong, and he trusted it over every argument. An old catalogue lists this ring among the goods of Plato's Academy. The entry breaks off in the middle of a sentence, and the last page is missing.",
     "peak_weight": 0.2,
     "is_unique": true,
-    "spread": 25,
-    "peak_floor": 70,
+    "spread": 12,
+    "peak_floor": 90,
     "daimonion": 3,
     "special": "A voice stops you when you are about to answer wrong: three times a floor, a wrong choice is struck out and you choose again."
   },
@@ -1675,9 +1701,9 @@
       255
     ],
     "weight": 0.1,
-    "min_level": 20,
+    "min_level": 8,
     "slot": "ring",
-    "quiz_tier": 3,
+    "quiz_tier": 2,
     "equip_threshold": 5,
     "effects": {
       "stat": "INT",
@@ -1690,13 +1716,15 @@
     "lore": "All over Europe, farmers who turned up a polished stone axe in the furrow took it for a thunderbolt gone cold. They called such things thunderstones and kept them under the eaves, on the reasoning that lightning does not strike the same place twice. A chip of one is set in this ring. It sharpens the wits as well.",
     "floorSpawnWeight": {
       "1-20": 5,
-      "21-40": 3,
-      "41-100": 1
+      "21-40": 1,
+      "41-60": 0,
+      "61-80": 0,
+      "81-100": 0
     },
     "peak_weight": 0.4,
     "is_unique": true,
-    "spread": 12,
-    "peak_floor": 25
+    "spread": 7,
+    "peak_floor": 15
   },
   "amulet_of_the_titan": {
     "name": "Amulet of the Titan",
@@ -1740,9 +1768,9 @@
       200
     ],
     "weight": 0.1,
-    "min_level": 18,
+    "min_level": 6,
     "slot": "ring",
-    "quiz_tier": 3,
+    "quiz_tier": 2,
     "equip_threshold": 5,
     "effects": {
       "stat": "CON",
@@ -1755,13 +1783,15 @@
     "lore": "Herodotus tells of Scyllias of Scione, the best diver of his age, who salvaged treasure for the Persians from their wrecked ships and then deserted to the Greeks. People said he swam the whole way underwater, some ten miles. Herodotus thought he probably took a boat. The ring Scyllias wore still glows faintly blue, and its wearer does not feel the cold.",
     "floorSpawnWeight": {
       "1-20": 5,
-      "21-40": 3,
-      "41-100": 1
+      "21-40": 1,
+      "41-60": 0,
+      "61-80": 0,
+      "81-100": 0
     },
     "peak_weight": 0.4,
     "is_unique": true,
-    "spread": 11,
-    "peak_floor": 23
+    "spread": 7,
+    "peak_floor": 14
   },
   "amulet_of_insight": {
     "name": "Amulet of Insight",
@@ -1772,9 +1802,9 @@
       140
     ],
     "weight": 0.2,
-    "min_level": 20,
+    "min_level": 4,
     "slot": "amulet",
-    "quiz_tier": 3,
+    "quiz_tier": 2,
     "equip_threshold": 6,
     "effects": {
       "stat": "WIS",
@@ -1789,13 +1819,15 @@
     "lore": "Two sayings were carved at the entrance to Apollo's temple at Delphi, where every pilgrim had to pass them: 'Know thyself' and 'Nothing in excess.' The priests sold small copies to those who could not remember two things at once. This is one. A mind that wears it is harder to frighten, flatter or confuse.",
     "floorSpawnWeight": {
       "1-20": 5,
-      "21-40": 3,
-      "41-100": 1
+      "21-40": 1,
+      "41-60": 0,
+      "61-80": 0,
+      "81-100": 0
     },
     "peak_weight": 0.4,
     "is_unique": true,
-    "spread": 12,
-    "peak_floor": 25
+    "spread": 7,
+    "peak_floor": 13
   },
   "ring_of_the_assassin": {
     "name": "Ring of the Assassin",
@@ -2728,7 +2760,7 @@
       220
     ],
     "weight": 0.1,
-    "min_level": 60,
+    "min_level": 74,
     "slot": "ring",
     "equip_threshold": 6,
     "quiz_tier": 5,
@@ -2741,14 +2773,16 @@
     "unidentified_name": "a bronze ring engraved with a six-pointed star",
     "lore": "The Testament of Solomon tells how a demon was tormenting a boy who worked on the Temple. Solomon prayed, and the Archangel Michael brought him a ring with a seal cut in its stone. The boy threw it at the demon's chest and led him back bound. With that ring Solomon set the demons to hauling stone. Lesser things still stop when its wearer speaks.",
     "floorSpawnWeight": {
-      "51-70": 1,
-      "71-90": 2,
-      "91-100": 1
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 0,
+      "81-100": 2
     },
     "peak_weight": 0.2,
     "is_unique": true,
-    "spread": 24,
-    "peak_floor": 65,
+    "spread": 12,
+    "peak_floor": 88,
     "identified": false,
     "id_level": 0
   },
@@ -2928,7 +2962,7 @@
       120
     ],
     "weight": 0.1,
-    "min_level": 60,
+    "min_level": 74,
     "slot": "ring",
     "equip_threshold": 6,
     "quiz_tier": 5,
@@ -2971,15 +3005,18 @@
     },
     "unidentified_name": "a signet ring with a six-pointed star",
     "floorSpawnWeight": {
-      "61-80": 1,
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 0,
       "81-100": 2
     },
     "identified": false,
     "lore": "The ring that let Solomon command demons and djinn, given to him from heaven. With it he enslaved Asmodeus, the king of demons, and forced him to assist in the Temple's construction. When a demon stole the ring, Solomon was reduced to begging for food until he recovered it. The ring's power depended entirely on who wore it.",
     "peak_weight": 0.2,
     "is_unique": true,
-    "spread": 24,
-    "peak_floor": 65
+    "spread": 12,
+    "peak_floor": 88
   },
   "amulet_of_hippolyta": {
     "name": "Girdle of Hippolyta",

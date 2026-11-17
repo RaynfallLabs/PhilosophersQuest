@@ -16,10 +16,10 @@
     "count_max": 30,
     "floor_spawn_weight": {
       "1-20": 100,
-      "21-40": 60,
-      "41-60": 20,
-      "61-80": 5,
-      "81-100": 2
+      "21-40": 30,
+      "41-60": 6,
+      "61-80": 2,
+      "81-100": 1
     },
     "value": 1,
     "unidentified_name": "arrows",
@@ -43,9 +43,9 @@
     "floor_spawn_weight": {
       "1-20": 10,
       "21-40": 100,
-      "41-60": 60,
-      "61-80": 20,
-      "81-100": 5
+      "41-60": 30,
+      "61-80": 6,
+      "81-100": 2
     },
     "value": 3,
     "unidentified_name": "arrows",
@@ -70,8 +70,8 @@
       "1-20": 0,
       "21-40": 10,
       "41-60": 100,
-      "61-80": 60,
-      "81-100": 20
+      "61-80": 30,
+      "81-100": 6
     },
     "value": 8,
     "unidentified_name": "arrows",
@@ -146,10 +146,10 @@
     "count_max": 25,
     "floor_spawn_weight": {
       "1-20": 100,
-      "21-40": 60,
-      "41-60": 20,
-      "61-80": 5,
-      "81-100": 2
+      "21-40": 30,
+      "41-60": 6,
+      "61-80": 2,
+      "81-100": 1
     },
     "value": 1,
     "unidentified_name": "bolts",
@@ -173,9 +173,9 @@
     "floor_spawn_weight": {
       "1-20": 10,
       "21-40": 100,
-      "41-60": 60,
-      "61-80": 20,
-      "81-100": 5
+      "41-60": 30,
+      "61-80": 6,
+      "81-100": 2
     },
     "value": 3,
     "unidentified_name": "bolts",
@@ -200,8 +200,8 @@
       "1-20": 0,
       "21-40": 10,
       "41-60": 100,
-      "61-80": 60,
-      "81-100": 20
+      "61-80": 30,
+      "81-100": 6
     },
     "value": 8,
     "unidentified_name": "bolts",
@@ -294,14 +294,14 @@
     "count_min": 4,
     "count_max": 6,
     "value": 5000,
-    "min_level": 30,
+    "min_level": 70,
     "identified": false,
     "unidentified_name": "silver arrows fletched with white feathers",
     "lore": "As a small girl Artemis went to the Cyclopes on the island of Lipara and asked them for a bow and arrows. She never missed. Homer says that when a woman died suddenly and without pain, the Greeks called her slain by the gentle shafts of Artemis.",
     "floorSpawnWeight": {
-      "1-29": 0,
-      "30-60": 2,
-      "61-100": 1
+      "1-69": 0,
+      "70-80": 1,
+      "81-100": 2
     },
     "containerLootTier": "legendary",
     "symbol": "(",
@@ -320,14 +320,14 @@
     "count_min": 2,
     "count_max": 3,
     "value": 7000,
-    "min_level": 55,
+    "min_level": 70,
     "identified": false,
     "unidentified_name": "crackling bolts of compressed energy",
     "lore": "The Cyclopes Brontes, Steropes and Arges forged the thunderbolt for Zeus in thanks for their freedom. With it he overthrew the Titans and set the order of Olympus. Later poets put the forge under Mount Etna. There are never many of these, and each one shakes the earth.",
     "floorSpawnWeight": {
-      "1-54": 0,
-      "55-80": 2,
-      "81-100": 1
+      "1-69": 0,
+      "70-80": 1,
+      "81-100": 2
     },
     "containerLootTier": "legendary",
     "symbol": "(",

@@ -1,6 +1,7 @@
 {
   "philosophers_stone": {
     "name": "Philosopher's Stone",
+    "story_floor": 100,
     "symbol": "*",
     "color": [
       255,
@@ -29,6 +30,7 @@
   },
   "bronze_bull": {
     "name": "Bronze Bull Idol",
+    "story_floor": 12,
     "symbol": "!",
     "color": [
       180,
@@ -55,6 +57,7 @@
   },
   "eye_of_graeae": {
     "name": "Eye of the Graeae",
+    "story_floor": 29,
     "symbol": "o",
     "color": [
       200,
@@ -81,6 +84,7 @@
   },
   "cats_footstep": {
     "name": "Sound of a Cat's Footstep",
+    "story_floor": 62,
     "symbol": "~",
     "color": [
       180,
@@ -108,6 +112,7 @@
   },
   "womans_beard": {
     "name": "Roots of a Woman's Beard",
+    "story_floor": 65,
     "symbol": "~",
     "color": [
       200,
@@ -135,6 +140,7 @@
   },
   "mountain_root": {
     "name": "Root of a Mountain",
+    "story_floor": 68,
     "symbol": "~",
     "color": [
       140,
@@ -162,6 +168,7 @@
   },
   "fish_breath": {
     "name": "Breath of a Fish",
+    "story_floor": 71,
     "symbol": "~",
     "color": [
       140,
@@ -189,6 +196,7 @@
   },
   "bird_spittle": {
     "name": "Spittle of a Bird",
+    "story_floor": 74,
     "symbol": "~",
     "color": [
       220,
@@ -216,6 +224,7 @@
   },
   "bear_sinew": {
     "name": "Sinew of a Bear's Sensitivity",
+    "story_floor": 77,
     "symbol": "~",
     "color": [
       180,
@@ -243,6 +252,7 @@
   },
   "gleipnir": {
     "name": "Gleipnir",
+    "story_floor": 78,
     "symbol": "&",
     "color": [
       220,
@@ -270,6 +280,7 @@
   },
   "leather_scrap": {
     "name": "leather scrap",
+    "story_floor": 39,
     "symbol": ",",
     "color": [
       120,
@@ -488,6 +499,7 @@
   },
   "scales_of_michael": {
     "name": "Scales of Michael",
+    "story_floor": 99,
     "symbol": "=",
     "color": [
       255,
@@ -578,11 +590,11 @@
       200
     ],
     "weight": 3.0,
-    "min_level": 45,
+    "min_level": 38,
     "identified": false,
     "stair_reveal": true,
     "lore": "A wooden image of armed Athena, small enough to carry under one arm. The Trojans said it fell from heaven at the feet of their founder Ilus, and a prophecy held that Troy could not fall while it stayed inside the walls. So Odysseus and Diomedes crept in by night and stole it, and only then was the Horse worth building. The goddess of sound strategy still favors whoever carries her likeness: the way down shows itself to the bearer through stone and darkness alike.",
-    "spread": 19,
+    "spread": 10,
     "peak_weight": 0.3,
     "special_properties": {
       "identified": false,
@@ -593,7 +605,7 @@
       ],
       "spawn_method": "random_lore_quest_mid_dungeon"
     },
-    "peak_floor": 50,
+    "peak_floor": 48,
     "is_unique": true,
     "unidentified_name": "ancient wooden idol",
     "id_level": 0
@@ -629,6 +641,7 @@
   },
   "vidars_sandal": {
     "name": "Vidar's Sandal",
+    "story_floor": 79,
     "category": "armor",
     "is_unique": true,
     "slot": "feet",
@@ -1010,7 +1023,7 @@
     "sphere": {"tier": 2, "hatch_level": 25, "family": false},
     "can_be_cursed": false,
     "buc_known": true,
-    "floor_spawn_chance": {"34-66": 0.04, "67-100": 0.02},
+    "floor_spawn_chance": {"34-66": 0.04, "67-100": 0.015},
     "lore": "A globe of smoky glass caged in bright silver, its soul-light burning like a small blue star. The spirit asleep in this one has already grown into its first true form: thrown, it wakes ready to fight, with its first special skill already learned. Most often it is a creature of the elements; once in a long while it is someone you know from home."
   },
   "master_sphere": {
@@ -1030,7 +1043,7 @@
     "sphere": {"tier": 3, "hatch_level": 55, "family": false},
     "can_be_cursed": false,
     "buc_known": true,
-    "floor_spawn_chance": {"67-100": 0.02},
+    "floor_spawn_chance": {"67-100": 0.025},
     "lore": "Crystal caged in four silver hoops under a little crown, so full of soul-light that it is hard to look at. The spirit inside is fully grown, in its final form, with every skill its kind can learn. The masters of the old binding art made only a handful of these, and most of them are still down here somewhere."
   },
   "hearth_sphere": {
@@ -1070,7 +1083,7 @@
     "sphere": {"tier": 2, "hatch_level": 25, "family": true},
     "can_be_cursed": false,
     "buc_known": true,
-    "floor_spawn_chance": {"34-66": 0.004, "67-100": 0.002},
+    "floor_spawn_chance": {"34-66": 0.004, "67-100": 0.0015},
     "lore": "Smoky glass caged in silver trimmed with gold, and the warm light inside burns steady and bright, like a lamp left in the window for someone coming home late. One of the family's own companions sleeps here, already grown into its first true form. If every one of them is already at your side, a grown creature of the elements answers instead."
   },
   "master_hearth_sphere": {
@@ -1090,7 +1103,7 @@
     "sphere": {"tier": 3, "hatch_level": 55, "family": true},
     "can_be_cursed": false,
     "buc_known": true,
-    "floor_spawn_chance": {"67-100": 0.002},
+    "floor_spawn_chance": {"67-100": 0.0025},
     "lore": "Crystal in four gold-trimmed silver hoops under a little golden crown, blazing with warm light. One of the family's own companions waits inside at the height of its strength, in its final form, and it has come a very long way to stand beside you. If every one of them is already there, a creature of the elements in its final form answers instead."
   },
   "unusual_soul_sphere": {

@@ -90,7 +90,7 @@
       "fire":   {"probe": {"element": "fire"}, "take": "fire", "offers": [{"class": "wand", "effects": ["fire_bolt"]}, {"class": "spellbook", "spells": ["fire_spark_spell", "fire_bolt_spell", "fireball_spell", "cataclysm_spell"]}, {"class": "flask", "ids": ["flask_of_fire_oil", "greek_fire", "medeas_fire"]}]},
       "cold":   {"probe": {"element": "cold"}, "take": "frost", "offers": [{"class": "wand", "effects": ["cold_bolt"]}, {"class": "spellbook", "spells": ["frost_touch_spell", "cold_bolt_spell", "ice_storm_spell", "cone_of_cold_spell"]}, {"class": "flask", "ids": ["frost_salts"]}]},
       "acid":   {"probe": {"element": "acid"}, "take": "acid", "offers": [{"class": "flask", "ids": ["flask_of_acid", "aqua_regia", "alkahest"]}]},
-      "poison": {"probe": {"element": "poison"}, "take": "venom", "offers": [{"class": "flask", "ids": ["viper_venom"]}]},
+      "poison": {"probe": {"element": "poison"}, "take": "venom", "offers": [{"class": "flask", "ids": ["viper_venom", "hydras_blood"]}]},
       "lightning": {"probe": {"element": "lightning"}, "take": "lightning", "offers": [{"class": "wand", "effects": ["lightning_bolt"]}, {"class": "spellbook", "spells": ["spark_spell", "lightning_bolt_spell", "chain_lightning_spell"]}]},
       "pierce": {"probe": {"forms": ["pierce"]}, "take": "a point", "offers": [{"gear": "weapon", "form": "pierce"}]},
       "slash":  {"probe": {"forms": ["slash"]}, "take": "an edge", "offers": [{"gear": "weapon", "form": "slash"}]}

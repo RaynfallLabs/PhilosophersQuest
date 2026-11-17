@@ -103,14 +103,8 @@ def weight_class_weight(cls: str, floor: int) -> float:
     return math.exp(-((f - peak) ** 2) / (2 * spread ** 2))
 
 
-def template_weight(template: dict, floor: int) -> float:
-    """How likely this template is on `floor`. Body armour and shields carry
-    their own bell (`spawn_bell`: [peak, spread, first floor, height?]), so each one
-    arrives in its turn down the whole run, padded to full plate, buckler to
-    tower; every other template goes by its weight class's bell."""
-    bell = (template or {}).get('spawn_bell')
-    if not bell:
-        return weight_class_weight(weight_class(template), floor)
+def _bell(bell, floor: int) -> float:
+    """[peak, spread, first floor, height?] at `floor` (0 before its first)."""
     # An optional fourth number is the template's height beside the others
     # (the mirror shield, a named counter, is rarer than a kite shield).
     peak, spread, first = bell[:3]
@@ -119,6 +113,28 @@ def template_weight(template: dict, floor: int) -> float:
     if f < first:
         return 0.0
     return height * math.exp(-((f - peak) ** 2) / (2 * spread ** 2))
+
+
+def template_weight(template: dict, floor: int) -> float:
+    """How likely this template is on `floor`. Body armour and shields carry
+    their own bell (`spawn_bell`: [peak, spread, first floor, height?]), so each one
+    arrives in its turn down the whole run, padded to full plate, buckler to
+    tower; every other template goes by its weight class's bell.
+
+    A light or medium body template may carry a second bell, `deep_bell`
+    (Brandon's defence-model decision 20, 2026-11-17): the cut comes back on
+    the deep floors in the deep materials it takes (a dragonhide jerkin, a
+    spider-silk or elven-silk coat, a mithril hauberk, dragonscale mail), so a
+    Dexterity hero is not left in floor-20 hide. It keeps its template's AC:
+    light armour's lower AC is the trade for the dodge and the speed."""
+    bell = (template or {}).get('spawn_bell')
+    if not bell:
+        return weight_class_weight(weight_class(template), floor)
+    w = _bell(bell, floor)
+    deep = (template or {}).get('deep_bell')
+    if deep:
+        w += _bell(deep, floor)
+    return w
 
 
 def pick_template(options, floor: int, rng):

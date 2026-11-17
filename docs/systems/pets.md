@@ -535,11 +535,11 @@ THE SPHERE DECIDES WHAT IS INSIDE, NEVER THE FLOOR. What each holds is data (`da
 | Sphere | id | Hatches | Floor chance by band (1-33 / 34-66 / 67-100) | Traders |
 |---|---|---|---|---|
 | Soul Sphere | `soul_sphere` | a newborn, level 1, stage 0 | 8% / 3% / 1% | Grindle, Mags |
-| Greater Soul Sphere | `greater_soul_sphere` | at its first evolution, level 25, stage 1 | 0 / 4% / 2% | Grindle, Mags |
-| Master Sphere | `master_sphere` | at its final evolution, level 55, stage 2 | 0 / 0 / 2% | Vesper (61+) |
+| Greater Soul Sphere | `greater_soul_sphere` | at its first evolution, level 25, stage 1 | 0 / 4% / 1.5% | Grindle, Mags |
+| Master Sphere | `master_sphere` | at its final evolution, level 55, stage 2 | 0 / 0 / 2.5% | Vesper (61+) |
 | Hearth Sphere | `hearth_sphere` | always one of the family, level 1 | 0.8% / 0.3% / 0.1% | none |
-| Greater Hearth Sphere | `greater_hearth_sphere` | always one of the family, level 25 | 0 / 0.4% / 0.2% | Vesper (61+) |
-| Master Hearth Sphere | `master_hearth_sphere` | always one of the family, level 55 | 0 / 0 / 0.2% | Vesper (67+) |
+| Greater Hearth Sphere | `greater_hearth_sphere` | always one of the family, level 25 | 0 / 0.4% / 0.15% | Vesper (61+) |
+| Master Hearth Sphere | `master_hearth_sphere` | always one of the family, level 55 | 0 / 0 / 0.25% | Vesper (67+) |
 
 - **Floor roll** (`dungeon.spawn_items` → `pet_system.sphere_for_floor`): ONE draw from the floor's stream against the six chances in turn, so at most one sphere a floor. When the room it rolls is already full (a small maze cell), it goes to the next room with a free floor tile, never lost. (A hidden treasure chamber no longer re-runs the loot pass, so it holds no sphere: its cache is coin, treasure, potions and scrolls.) Spheres carry no `peak_weight` / `floorSpawnWeight`, so they stay out of every random pool (chests, gifts, rewards) and thieves never take one.
 - **Traders** (`data/traders.json`, `id` entries with `floors`): a sphere he has rolled is always on the shelf. Prices: `data/item_worth.json` `share_by_id` (Soul 2.0, Greater 3.5, Master 5.0, Hearth 3.0, Greater Hearth 5.0, Master Hearth 7.0 floors' share), so the price follows the tier. A trader buys an unbound sphere back like anything else; a bound one is never sold or given as payment (`items.withheld`).

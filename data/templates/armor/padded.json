@@ -11,6 +11,13 @@
     8,
     1
   ],
+  "deep_bell": [
+    78,
+    14,
+    45,
+    0.2
+  ],
+  "_deep_note": "Returns deep (deep_bell) as a coat of spider silk (floor 43 on) or elven silk (66 on). Brandon's defence-model decision 20 (2026-11-17): a Dexterity hero finds light and medium armour all the way down; it keeps the template's lower AC (the trade for the dodge and the speed).",
   "base_weight_lb": 8.0,
   "_design_note": "F1-5 starter; chained with leather material gives +1 AC contribution.",
   "compatible_material_classes": [

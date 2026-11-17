@@ -50,17 +50,6 @@ KNOWN_GAPS = {
     'Monster family: restless_dead': 'lopsided',
     'Monster family: serpents': 'lopsided',
     'Monster family: vermin': 'lopsided',
-    'Weapons (uniques)': 'lopsided',
-    'Armour (uniques)': 'lopsided',
-    'Rings': 'lopsided',
-    'Amulets': 'lopsided',
-    'Belts and other accessories': 'gap',
-    'Potions': 'gap',
-    'Flasks (coatings, thrown)': 'gap',
-    'Ammo': 'gap',
-    'Plain food': 'gap',
-    'Artifacts': 'gap',
-    'Containers': 'gap',
     'Ingredients': 'lopsided',
     'Dishes: SP': 'lopsided',
     'Dishes: MP': 'lopsided',
@@ -73,12 +62,13 @@ KNOWN_GAPS = {
 }
 
 KNOWN_MISMATCH = {
-    'Armour (uniques)': 2,
-    'Shields (uniques)': 1,
-    'Rings': 12,
-    'Amulets': 7,
+    # The five cursed rings and three cursed amulets spawn evenly at every
+    # depth with a tier-1 quiz (the census counts a ring or amulet KIND by
+    # the level it is found at, so the kinds are not here); the beeswax
+    # earplugs ask a tier-1 quiz wherever they turn up.
+    'Rings': 5,
+    'Amulets': 3,
     'Belts and other accessories': 1,
-    'Ammo': 1,
 }
 
 
