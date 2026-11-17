@@ -1627,9 +1627,18 @@ class Run:
         carried = (sum(self._wt(x) for x in self.arsenal) + sum(self._wt(x) for x in self.scraps)
                    + sum(self._wt(x) for x in self.potions) + sum(self._wt(x) for x in self.food)
                    + sum(self._wt(x) for x in self.flasks) + sum(self._wt(x) for x in self.pantry))
-        over = worn + carried + p.purse_weight() - self._pack_line()
+        total_lb = worn + carried + p.purse_weight()
+        # The profile's line (Heavy for the Dexterity build) is for what he
+        # can spare: food past a belly, coin, spare weapons, flasks. What he
+        # needs (the pantry, the potions, a belly of food) he carries up to
+        # the Burdened line like any careful kid: a Dexterity kid who dropped
+        # his healing potions to keep his dodge would be a strange kid (the
+        # first run of 2026-11-16 did, and its DEX build won 48%).
+        over = total_lb - self._pack_line()
         if over <= 0:
             return
+        spare_line = self._pack_line()
+        need_line = p.burden_threshold()
 
         def shed(lst, key):
             nonlocal over
@@ -1663,6 +1672,8 @@ class Run:
             shed(self.arsenal, self._weapon_score)
         if over > 0:
             shed(self.flasks, lambda it: 0)
+        # What he needs only past the Burdened line.
+        over -= max(0.0, need_line - spare_line)
         # 5. the pantry's least promising parts (never a part held for a feast)
         if over > 0 and self.pantry:
             held = kitchen_mod.held_counts(self._kitchen_inv())

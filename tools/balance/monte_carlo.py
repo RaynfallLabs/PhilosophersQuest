@@ -19,8 +19,9 @@ Cells (feedback: the win targets, Brandon 2026-11-13 and 2026-11-16):
 Usage:
     py tools/balance/monte_carlo.py <out_dir> <runs> [set ...]
     py tools/balance/monte_carlo_report.py <out_dir>
-Sets: targets, ablate, all (default all). MC_WORKERS (default 12) sets the
-pool. Writes <profile>_<tag>_<speed>.pkl into out_dir.
+Sets: targets, ablate, all (default all), or one profile as profile[@speed]
+(mastery@1.5). MC_WORKERS (default 12) sets the pool. Writes
+<profile>_<tag>_<speed>.pkl into out_dir.
 """
 import os
 import pickle
@@ -87,11 +88,22 @@ def _low_priority():
             pass
 
 
+def _set(name):
+    """A named set, or one cell: a profile name, as profile[@speed]."""
+    if name in SETS:
+        return SETS[name]
+    prof, _, speed = name.partition('@')
+    if prof not in ds.PROFILES:
+        raise SystemExit(f"unknown set or profile {name!r}: sets {', '.join(SETS)}")
+    tag = 'abl' if prof.startswith('m_no_') else ('m' if prof.startswith('mastery') else 'base')
+    return [(prof, '', tag, float(speed or 1.0))]
+
+
 def cells(sets, trials):
     out = []
     i = 0
     for s in sets:
-        for prof, knob, tag, speed in SETS[s]:
+        for prof, knob, tag, speed in _set(s):
             for c in range(0, trials, CHUNK):
                 out.append(dict(profile=prof, accuracy=ACCURACY, trials=min(CHUNK, trials - c),
                                 floors=(1, 100), knobs=ds.parse_knobs(knob), speed=speed,
