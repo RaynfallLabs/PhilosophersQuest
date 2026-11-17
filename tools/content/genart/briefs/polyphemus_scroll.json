@@ -1,0 +1,47 @@
+[
+ {
+  "id": "scroll_of_polyphemus",
+  "family": "boss_poly",
+  "rank": 1,
+  "body": "item",
+  "scale": "small",
+  "key": "magenta",
+  "what": "a magic scroll, drawn thick and bold. It is one fat roll of cream parchment, as thick as a man's wrist; the roll itself is wrapped in a sleeve of thick curly white sheep's fleece. It is tied with a twist of green olive branch with a few narrow olive leaves. The last part of the sheet is unrolled from the roll and lies open and flat as one broad panel, as wide as the roll is long. In the middle of the open panel is one single very large sign that fills most of the panel: one big single eye, a flat almond shape outlined in solid black with a round deep blue iris and a black pupil. The sign is the only thing on the sheet; the rest of the sheet is bare.",
+  "colours": "Cream parchment; thick white fleece; a green olive twist; a black-outlined eye with a deep blue iris.",
+  "pose": "The roll lies on a diagonal, its lower end at the bottom left corner and its upper end at the top right corner; the open panel of the sheet spreads out flat from the roll toward the lower right, facing the viewer; the whole scroll is inside the picture.",
+  "must_show": [
+   "one big single eye sign",
+   "white fleece round the roll",
+   "green olive twist",
+   "one fat roll on the diagonal with an open panel",
+   "no writing"
+  ],
+  "must_not_show": [
+   "hand",
+   "arm",
+   "person",
+   "table",
+   "writing",
+   "letters",
+   "lines of text",
+   "runes",
+   "words",
+   "second scroll",
+   "quill",
+   "inkpot",
+   "candle",
+   "book",
+   "flat sheet with no roll",
+   "sparkles",
+   "glow around it",
+   "magic rays",
+   "thin spindly roll",
+   "face",
+   "two eyes",
+   "giant",
+   "sheep",
+   "eyebrow",
+   "nose"
+  ]
+ }
+]

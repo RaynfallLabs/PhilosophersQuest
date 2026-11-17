@@ -229,7 +229,7 @@ def test_reward_scrolls_and_the_victory_show_the_seekers_own_code(seeker):
     ids = {a['id'] for a in json.loads((SRC.parent / 'data' / 'achievements.json')
                                        .read_text(encoding='utf-8'))['achievements']}
     rewards = {k: v for k, v in data.items() if isinstance(v, dict) and v.get('effect') == 'boss_reward'}
-    assert len(rewards) == 26
+    assert len(rewards) == 27        # 27th: Polyphemus's (2026-11-17)
     for k, v in rewards.items():
         assert v.get('achievement') in ids and 'power' not in v, k
     g = _game()

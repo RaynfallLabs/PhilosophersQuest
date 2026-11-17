@@ -1,0 +1,34 @@
+[
+ {
+  "id": "dad_code_validator_icon",
+  "family": "dad_tools",
+  "rank": 1,
+  "body": "item",
+  "scale": "large",
+  "key": "blue",
+  "what": "one small golden slot machine cabinet, chunky and bold like a toy: a rounded gold cabinet trimmed with red, a glowing arched marquee of little round bulbs across its top, and a window in the front showing three reels side by side, each reel showing one bright golden star; a red ball-topped lever sticks out from its right side; a small tray at the bottom spills a few shining gold coins.",
+  "colours": "Bright polished gold cabinet with red trim; warm white bulbs; three golden stars on cream reels; a red lever; gold coins.",
+  "pose": "Seen from the front and a little to the left, standing upright, the whole machine inside the picture.",
+  "must_show": [
+   "one gold slot machine",
+   "three reels each with a gold star",
+   "red lever on the right",
+   "bulbs across the top"
+  ],
+  "must_not_show": [
+   "writing",
+   "letters",
+   "numbers",
+   "words",
+   "hand",
+   "arm",
+   "person",
+   "table",
+   "second machine",
+   "casino floor",
+   "cherries",
+   "sevens",
+   "dollar sign"
+  ]
+ }
+]

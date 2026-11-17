@@ -306,18 +306,25 @@ def test_food_and_forage_add_less_worth_than_a_monster_part():
     assert kitchen.dish_worth(r) == pytest.approx(1 + 1 + 0.5 + 0.5)
 
 
-def test_a_legendary_max_mp_respects_the_lifetime_cap():
+def test_a_legendary_max_mp_has_a_floor_cap_and_no_cap_across_floors():
+    """Brandon, 2026-11-17: max MP from feasts works like max HP, a cap on
+    each floor and none across floors (the old lifetime cap by the deepest
+    floor reached is gone)."""
     feast = kitchen.recipe('feast_16')        # Crone's Midnight Cauldron (mp)
     assert kitchen.dish_outcome(feast)['permanent'][0] == 'max_mp'
     p = _player(deepest=4)
     cap = kitchen.feast_mp_cap(p)
-    p.cooking_mp_gained = cap - 1
+    assert cap == 4
+    p._feast_mp_gain_this_floor = cap - 1
     before = p.max_mp
     kitchen.apply_dish(p, feast)
-    assert p.max_mp - before == 1
-    assert p.cooking_mp_gained == cap
+    assert p.max_mp - before == 1               # the floor's room, no more
     kitchen.apply_dish(p, feast)
-    assert p.cooking_mp_gained == cap         # no more past the cap
+    assert p.max_mp - before == 1               # full for this floor
+    p.cooking_mp_gained = 500                   # a lifetime total no longer stops it
+    p.reset_floor_cook_caps()                   # a new floor
+    kitchen.apply_dish(p, feast)
+    assert p.max_mp - before > 1
 
 
 def test_a_legendary_max_hp_passes_the_floor_cap_and_has_no_cap_across_floors():

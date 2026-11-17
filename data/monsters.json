@@ -35148,7 +35148,6 @@
       "item_chance": 1.0,
       "item_tier": 5,
       "unique_drop_id": "ruby_rod",
-      "boss_scroll_id": "scroll_of_nine_hells",
       "purse": "kept"
     },
     "lore": "The Book of Tobit names Asmodeus as the demon who killed seven husbands of Sarah, each on his wedding night. On the advice of the angel Raphael, young Tobias burned the heart and liver of a fish, and the smoke drove the demon to the far reaches of Egypt, where Raphael bound him. Later tradition made him a prince of Hell who rules by contract instead of fury. Every soul he owns signed its own surrender, and the ruby rod in his hand seals each bargain. He has not forgiven the fish.",
@@ -41017,7 +41016,8 @@
       "item_chance": 1.0,
       "item_tier": 3,
       "purse": "kept",
-      "unique_drop_id": "club_of_polyphemus"
+      "unique_drop_id": "club_of_polyphemus",
+      "boss_scroll_id": "scroll_of_polyphemus"
     },
     "lore": "Polyphemus, a son of Poseidon, kept his flocks in a cave on the island of the Cyclopes and rolled a stone across its mouth that twenty-two wagons could not have moved. He shut Odysseus and his men inside and ate them two at a time. Odysseus gave him strong wine, told him his name was Nobody, and while he slept drove a stake into his one eye, a stake cut from the giant's own club of green olive wood, as long as the mast of a ship. Blind, he flung a hilltop after the ship. He has his sight back, and he has not forgotten a single face.",
     "frequency": 0,

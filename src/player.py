@@ -800,6 +800,7 @@ class Player:
         the next floor of cooking starts fresh."""
         self._cook_stat_gain_this_floor = 0
         self._cook_hp_gain_this_floor = 0
+        self._feast_mp_gain_this_floor = 0    # kitchen.feast_mp_room
         self._con_drained_this_floor = 0      # monster.DRAIN_CON_PER_FLOOR
 
     def apply_cooking_stat_bonus(self, stat: str, amount: int, tier: int | None = None) -> int:

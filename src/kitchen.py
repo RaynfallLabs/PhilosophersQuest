@@ -596,15 +596,16 @@ def max_hp_room(player) -> int:
 
 
 def feast_mp_cap(player) -> int:
-    """Lifetime cap on max MP from feasts, by the deepest floor reached."""
-    leg = rules().get('legendary', {})
-    floor = max(1, min(100, int(getattr(player, 'deepest_floor_reached', 1) or 1)))
-    return max(int(leg.get('max_mp_cap_min', 4)),
-               int(floor * float(leg.get('max_mp_cap_per_floor', 0.25))))
+    """Max MP feasts can add on one floor (cooking_rules legendary
+    max_mp_floor_cap). Like max HP from meals, it has no cap across floors
+    (Brandon, 2026-11-17: MP "same as HP"); the old lifetime cap by the
+    deepest floor reached (a quarter of a point a floor, at least 4) is gone."""
+    return int(rules().get('legendary', {}).get('max_mp_floor_cap', 4))
 
 
 def feast_mp_room(player) -> int:
-    return max(0, feast_mp_cap(player) - int(getattr(player, 'cooking_mp_gained', 0) or 0))
+    """Max MP a feast can still add on this floor."""
+    return max(0, feast_mp_cap(player) - int(getattr(player, '_feast_mp_gain_this_floor', 0) or 0))
 
 
 def dish_effects(player, rec: dict) -> list:
@@ -676,7 +677,7 @@ def _lasting_lines(player, out: dict, rec=None) -> list:
         elif kind == 'max_mp':
             room_mp = min(val, feast_mp_room(player))
             lines.append(f"+{room_mp} Max MP for good" if room_mp > 0
-                         else "Max MP: all feasts can give at this depth")
+                         else "Max MP: all a feast can give on this floor")
         elif kind == 'stat':
             got = _feast_stat_points(player, out, int(val))
             lines.append(f"+{got} {out['stat']} for good" if got > 0
@@ -1176,10 +1177,11 @@ def _apply_permanent(player, rec: dict, out: dict) -> list:
     if kind == 'max_mp':
         got = min(int(val), feast_mp_room(player))
         if got <= 0:
-            return ["A feast to remember, but your mana has taken all feasts can give at this depth."]
+            return ["A feast to remember, but your mana has taken all a feast can give on this floor."]
         player.max_mp = int(getattr(player, 'max_mp', 0) or 0) + got
         player.mp = int(getattr(player, 'mp', 0) or 0) + got
         player.cooking_mp_gained = int(getattr(player, 'cooking_mp_gained', 0) or 0) + got
+        player._feast_mp_gain_this_floor = int(getattr(player, '_feast_mp_gain_this_floor', 0) or 0) + got
         return [f"A feast to remember: +{got} max MP for good."]
     if kind == 'stat':
         stat = out['stat']
