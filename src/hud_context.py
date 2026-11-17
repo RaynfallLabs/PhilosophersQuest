@@ -144,6 +144,27 @@ def cooking_lesson_line(player, fits=None) -> tuple[str, str]:
     return text, ('full' if used else 'open')
 
 
+STREAK_HOT = 10      # from this many in a row the Streak line glows
+
+
+def streak_line(player) -> tuple[str, str]:
+    """The sidebar's "Streak" line, under "Lesson": questions answered right
+    in a row in every subject, and maths questions right in a row (Brandon,
+    2026-11-16: "makes kids want to keep it going"). Both counts already live
+    in player.quirk_progress, kept by quirk_system.on_quiz_answer for Time
+    Dilation and Math is Cool: a wrong answer breaks a streak, the clock
+    running out does not, and both carry over a save. Returns (text, state):
+    'none' with both at 0, 'hot' from STREAK_HOT in a row, else 'open'."""
+    prog = getattr(player, 'quirk_progress', None) or {}
+    try:
+        run = int(prog.get('consecutive_correct', 0) or 0)
+        maths = int(prog.get('math_streak', 0) or 0)
+    except (TypeError, ValueError, AttributeError):
+        run = maths = 0
+    state = 'hot' if max(run, maths) >= STREAK_HOT else ('open' if run or maths else 'none')
+    return f"Streak: {run}   Math: {maths}", state
+
+
 def load_number(weight: float, limit: float, share=(0.5, 0.75)) -> str:
     """The carried weight as the readout shows it ("43" in "Carrying 43 /
     100"), never disagreeing with the state beside it. A whole number
