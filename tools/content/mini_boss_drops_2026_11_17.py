@@ -27,12 +27,11 @@ What changed, by band (old tier -> new):
      the resistances that stacked on it); NEW the Hide of the Calydonian Boar,
      the Eyes of Lamia.
   2  the Mantle of the Erlking 3 -> 2; the Obsidian Talisman 3 -> 2;
-     Echidna's Fang 2 (re-based at floor 37); NEW the Club of Polyphemus, the
-     Patriarch's Gavel.
+     Echidna's Fang 2 (re-based at floor 37); NEW the Club of Polyphemus.
   3  the Sphinx's Crown 2 -> 3 (Wisdom +3) and Anubis's Scales 2 -> 3
      (Constitution +3), an amulet's +tier; Baba Yaga's Iron Mortar 4 -> 3;
-     Vulcan's Brand 3 (re-based at floor 47); NEW the Brazen Hands of Stheno,
-     Rangda's Keris.
+     Vulcan's Brand 3 (re-based at floor 47); NEW the Patriarch's Gavel, the
+     Brazen Hands of Stheno, Rangda's Keris.
   4  Serpent Scale Mail, the Green Girdle, the Vambraces of the First Winter,
      Wendigo's Fang, the Hunt Captain's Sword 5 -> 4; the Sailor's Amulet
      2 -> 4; NEW the Crone's Burial Veil.
@@ -160,7 +159,7 @@ NEW = {
          "wine. The rest of the club is still a club. It is heavy enough that a blow from it "
          "leaves the one it lands on reeling."),
         stun_chance=0.25, stunChance=0.25, knockback=True, value=420, weapon_class='blunt')),
-    'patriarchs_gavel': ('weapon', 2, _weapon(
+    'patriarchs_gavel': ('weapon', 3, _weapon(
         "The Patriarch's Gavel", 'warhammer', 'warhammer', False, _NORMAL, 'normal', ['blunt'],
         (60, 55, 60), 6.0, 'a black iron hammer with a head like a judge\'s gavel',
         ("The Iron Patriarch outlived every son, grandson and usurper of his line and sat on in "

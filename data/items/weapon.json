@@ -7437,8 +7437,8 @@
     "twoHanded": false,
     "two_handed": false,
     "template_basis": "warhammer",
-    "baseDamage": 61,
-    "base_damage": 61,
+    "baseDamage": 118,
+    "base_damage": 118,
     "chainMultipliers": [
       0.5,
       0.85,
@@ -7463,7 +7463,7 @@
       "blunt"
     ],
     "min_level": 9999,
-    "peak_floor": 32,
+    "peak_floor": 42,
     "spread": 0,
     "peak_weight": 0.0,
     "max_enchant": 3,
@@ -7490,9 +7490,9 @@
     "stun_chance": 0.25,
     "stunChance": 0.25,
     "value": 760,
-    "tier": 2,
-    "quiz_tier": 2,
-    "mathTier": 2
+    "tier": 3,
+    "quiz_tier": 3,
+    "mathTier": 3
   },
   "rangdas_keris": {
     "name": "Rangda's Keris",

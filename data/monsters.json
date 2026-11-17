@@ -33535,22 +33535,22 @@
       70
     ],
     "ai_pattern": "aggressive",
-    "hp": "836d10+1403",
+    "hp": "1513d10+2541",
     "speed": 10,
-    "thac0": 5,
+    "thac0": 2,
     "attacks": [
       {
         "name": "Warhammer",
-        "damage": "3d6+8",
+        "damage": "4d6+9",
         "type": "blunt",
         "effect": "stunned",
         "effect_chance": 0.2,
-        "effect_duration": 1,
+        "effect_duration": 2,
         "delivery": "blow"
       },
       {
         "name": "Gauntlet Sweep",
-        "damage": "2d6+8",
+        "damage": "2d6+11",
         "type": "blunt",
         "delivery": "trample"
       }
@@ -33569,20 +33569,20 @@
     ],
     "family": "mortals",
     "pronoun": "he",
-    "min_level": 30,
-    "peak_floor": 32,
+    "min_level": 40,
+    "peak_floor": 42,
     "spread": 8,
     "peak_weight": 0.0,
     "frequency": 1,
     "spawn_chance": 0.3,
-    "harvest_tier": 3,
+    "harvest_tier": 4,
     "treasure": {
       "gold": [
         120,
         240
       ],
       "item_chance": 0.9,
-      "item_tier": 3,
+      "item_tier": 4,
       "purse": "kept",
       "unique_drop_id": "patriarchs_gavel"
     },

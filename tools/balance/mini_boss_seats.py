@@ -85,9 +85,6 @@ SEATS: dict[str, tuple[int, str]] = {
                        "floors 26-30 (new)."),
     "erlking": (29, "Goethe's elf-king of the night mist: a death spirit who takes a child, not a "
                     "host."),
-    "iron_patriarch": (32, "A mortal tyrant who outlived his heirs in his coronation plate: a "
-                           "man, not a monster, the least of the temple floors' legends (he "
-                           "was floor 42)."),
     "camazotz": (34, "The death bat of Xibalba's House of Bats: a god's creature in a temple of "
                      "the dead."),
     "echidna": (37, "The mother of monsters, Hesiod's kin of the Gorgons, in the deepest part "
@@ -95,6 +92,11 @@ SEATS: dict[str, tuple[int, str]] = {
                     "and after her (the Sphinx 44). She was floor 24."),
     # --- floors 41-60: Fafnir's scorched caves. Witches, tricksters and the
     # sons and beasts of gods.
+    "iron_patriarch": (42, "A tyrant king sealed in his crypt in his coronation plate, "
+                           "still expecting an audience: a barrow-king of the dragon's "
+                           "caves, a man, not a monster, the least of their legends (kept "
+                           "at 42; on floor 32 his stun-locking hammer killed careful kids "
+                           "in the Monte Carlo)."),
     "stheno_gorgon": (42, "Medusa's immortal sisters: when Perseus fled with her head they rose and "
                           "chased him. They come for her killer the floors after hers (they were "
                           "floor 67)."),
@@ -237,11 +239,6 @@ NEW: dict[str, dict] = {
 # to resist it with: {id: {attack name: {field: value}}}, with the reason.
 # Measured with the Monte Carlo (kid model, 100 runs a cell, 2026-11-17).
 TECHNIQUES: dict[str, dict] = {
-    # His hearing "is short, and it ends with the hammer": two blows a turn,
-    # and a two-turn stun meant four more while the hero stood dazed. On his
-    # new floor 32 that killed a careful kid (the Corwin build) twice in 100
-    # runs; a stun of one turn keeps the hammer's threat.
-    "iron_patriarch": {"Warhammer": {"effect_duration": 1}},
     # Odysseus' men were seized and eaten, not clubbed senseless: the club's
     # stun lands less often (it killed a careful kid once in 100 runs at 25%).
     "polyphemus": {"Olive-Trunk Club": {"effect_chance": 0.15}},
