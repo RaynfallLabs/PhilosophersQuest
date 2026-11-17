@@ -158,10 +158,12 @@ def test_a_known_blessing_is_passed_over():
     assert altar.rite(1, [known, plain], []) == [('bless', plain)]
 
 
-def test_the_duck_of_doom_keeps_its_curse():
+def test_the_duck_of_doom_curse_lifts_like_any_other():
+    """Brandon 2026-11-16: "You can only remove it by uncursing it" (it was
+    the one curse no altar lifted)."""
     duck = _gear('armor', 'cursed')
     duck.id = 'duck_of_doom'
-    assert altar.curse_order([duck], []) == []
+    assert altar.curse_order([duck], []) == [duck]
 
 
 # ------------------------------------------------------------ the real game

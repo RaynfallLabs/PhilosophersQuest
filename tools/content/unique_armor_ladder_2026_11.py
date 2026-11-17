@@ -58,7 +58,7 @@ PICKS = {
     'helm_of_leonidas': ('iron_will', 'The Spartans dressed their hair before a fight they meant to die in and held Thermopylae to the last man; no helm in the game is more plainly the will that fear cannot move.'),
     'helm_of_aragorn': ('alertness', 'The man who claimed it spent most of his life as Strider, a ranger of the North keeping unseen watch on the borders for what was coming; Alertness warns of what is coming. Tier V; Alertness rolls from tier II.'),
     'crown_of_brahma': ('the_eagle', 'Brahma grew a face for each quarter of the sky so that nothing he made could pass out of his sight, and its wearer is not easily approached from behind; the Eagle (Perception, the sight radius) is that all-seeing reach, beside its four-faces tier.'),
-    'duck_of_doom': ('iron_will', "A gag piece; nothing in the head stable matches it, so the slot's guard by default. Its one instruction, be patient with it, is the only will it teaches."),
+    'duck_of_doom': (None, "A gag piece that does nothing for you (Brandon 2026-11-16: 'It's supposed to SUCK to have it on your head. No benefits, just a duck taking up your head slot'): no enchantment."),
     'gauntlets_of_mars': ('life_grip', 'The lore deliberately makes this the Roman Mars, a god of fields and boundaries before he was a god of war, whose gauntlets are happiest holding a line; holding ground against the hands that grab and pin is Life-Grip.'),
     'cestus_of_polydeuces': ('striking', "The cestus is the boxer's weighted hand-wrap, and Polydeuces dropped the never-beaten Amycus with one blow above the ear; Striking adds to the damage of your blows."),
     'gloves_of_wayland': ('the_locksmith', "Wayland was the master smith held prisoner on an island who worked his own way out; a smith's patient hands that free their owner are the Locksmith's."),
@@ -156,8 +156,13 @@ def ladder(e: dict, category: str, k: str) -> dict:
     if slot in gear.MINOR_SLOTS:
         e['ac_bonus'] = 0
         e['enchant_bonus'] = 0
-        e['ench_id'] = PICKS[k][0]
-        e['ench_level'] = level
+        if PICKS[k][0] is None:
+            # No enchantment at all (the Duck of Doom).
+            e.pop('ench_id', None)
+            e.pop('ench_level', None)
+        else:
+            e['ench_id'] = PICKS[k][0]
+            e['ench_level'] = level
         for rung, tb in (e.get('tier_bonuses') or {}).items():
             if isinstance(tb, dict):
                 tb.pop('ac_bonus', None)

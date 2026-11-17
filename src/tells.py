@@ -25,10 +25,12 @@ tell (Game._maybe_tell); Observe (O) says them all. Every tell comes from
 what the creature really does: an attack effect in data/monsters.json, or
 one of its flags. Pure module.
 
-At KNOWN the hero is also told what the creature is made of (`lore_lines`,
-winning-build plan 2026-11-13 section 3.1): what hurts it most, what it
-resists and shrugs off, and what its nature refuses or falls to easily. He
-is told that on first sight and by Observe, tell or no tell.
+At KNOWN the hero is also told what the creature is made of, in ONE line
+that names it (`lore_line`, winning-build plan 2026-11-13 section 3.1;
+Brandon 2026-11-16: one plain line, no "(double damage)"): what it is weak
+to, what it resists and shrugs off, and what its nature refuses or falls to
+easily. He is told that on first sight and by Observe, tell or no tell,
+and never of a creature still hidden (the game names it "something").
 """
 from __future__ import annotations
 
@@ -157,90 +159,74 @@ def _and(words) -> str:
     return words[0] if len(words) == 1 else ', '.join(words[:-1]) + ' and ' + words[-1]
 
 
-def _profile(m) -> dict:
-    """{kind: (size word, [words])} from affinity.damage_profile, the one
-    reading the blow follows: only what the hero can land, each type where
-    the blow puts it, with how much it changes a blow."""
-    import affinity
-    out = {}
-    for kind, _label, types in affinity.damage_profile(m):
-        step = {affinity.WEAK: affinity.weak_step(), 'banes': affinity.weak_step(),
-                affinity.RESISTED: affinity.resisted_step(),
-                affinity.SHRUGS_OFF: affinity.shrugs_step()}[kind]
-        words = list(dict.fromkeys(affinity.word_for(t) for t in types if t))
-        out[kind] = (affinity._size_word(step).lower(), words)
-    return out
-
-
 def _or(words) -> str:
     return words[0] if len(words) == 1 else ', '.join(words[:-1]) + ' or ' + words[-1]
 
 
-def weak_line(m) -> str:
-    """"Fire and holy power hurt it most (double damage). So does a weapon
-    of silver.": its weaknesses and the materials it cannot bear, for a kind
-    the hero knows. Empty when it has neither."""
-    d = data()
-    prof = _profile(m)
-    out = []
-    if 'weak' in prof:
-        size, words = prof['weak']
-        out.append(d['weak_one' if len(words) == 1 else 'weak_many']
-                   .replace('{words}', _and(words)).replace('{size}', size))
-    if 'banes' in prof:
-        size, words = prof['banes']
-        key = 'bane_tail' if out else 'bane_only'
-        out.append(d[key].replace('{words}', _or(words)).replace('{size}', size))
-    return _fill(m, ' '.join(out)) if out else ''
+# The words of the one lore line (lore_line): the damage types as the
+# weapon cards, the fight panel and the Bestiary name them (Slash, Pierce,
+# Blunt, Holy...), so a hero can match a weapon to a weakness at a glance.
+_LORE_WORDS = {'drain': 'drain'}
 
 
-def hard_line(m) -> str:
-    """"A cutting blow and a point do little to it (half damage); fire
-    hardly touches it (quarter damage).": what it resists and what it shrugs
-    off, for a kind the hero knows. Empty when it has neither."""
+def lore_line(m) -> str:
+    """ONE plain line of what a known kind is made of, naming it (Brandon
+    2026-11-16: "why a whole nother message? this is clutter... all the
+    'double' and 'half' damage is unnecessary"): "The skeleton: weak to
+    crushing blows, holy power and silver weapons; resists cutting blows;
+    can't be poisoned or put to sleep." The words are the Bestiary's (Weak
+    To, Resists, Shrugs Off), and data/hints.json says what they mean. ''
+    when there is nothing to say."""
+    import affinity
     d = data()
-    prof = _profile(m)
     parts = []
-    for kind, one, many in (('resisted', 'resist_one', 'resist_many'),
-                            ('shrugs_off', 'shrugs_one', 'shrugs_many')):
-        if kind in prof:
-            size, words = prof[kind]
-            parts.append(d[one if len(words) == 1 else many]
-                         .replace('{words}', _and(words)).replace('{size}', size))
+    weak, banes, res, shrugs = [], [], [], []
+
+    def plain(types):
+        # The blows first, then the elements, in one order everywhere.
+        order = {t: i for i, t in enumerate(('slash', 'pierce', 'blunt'))}
+        ts = sorted(types, key=lambda t: (order.get(t, 9), types.index(t)))
+        return list(dict.fromkeys(_LORE_WORDS.get(t, str(t).replace('_', ' ')) for t in ts))
+    for kind, _label, types in affinity.damage_profile(m):
+        if kind == affinity.WEAK:
+            weak = plain(types)
+        elif kind == 'banes':
+            banes = list(dict.fromkeys(affinity.word_for(t) for t in types))
+        elif kind == affinity.RESISTED:
+            res = plain(types)
+        elif kind == affinity.SHRUGS_OFF:
+            shrugs = plain(types)
+    if weak or banes:
+        # The metals it cannot bear: one or two by name, never the whole list
+        # (the Bestiary's Hurt Most By row has them all).
+        if len(banes) > 2:
+            lead = 'silver' if 'silver' in banes else banes[0]
+            banes_word = f"{lead} weapons (or metals like it)"
+        else:
+            banes_word = f"{_or(banes)} weapons" if banes else ''
+        parts.append('weak to ' + _and(weak + ([banes_word] if banes_word else [])))
+    if res:
+        parts.append('resists ' + _and(list(dict.fromkeys(res))))
+    if shrugs:
+        parts.append('shrugs off ' + _and(list(dict.fromkeys(shrugs))))
+    sw = d.get('status_words') or {}
+    immune = [sw.get(e, str(e).replace('_', ' ')) for e in (getattr(m, 'status_immune', None) or ())]
+    if immune:
+        parts.append("can't be " + _words(immune))
+    status_weak = list(getattr(m, 'status_weak', None) or ())
+    easily = [sw.get(e, str(e).replace('_', ' ')) for e in status_weak if e != 'fear_of_fire']
+    if easily:
+        parts.append('easily ' + _words(easily))
+    if 'fear_of_fire' in status_weak:
+        parts.append('flees from fire')
     if not parts:
         return ''
-    return _fill(m, '; '.join(parts) + '.')
-
-
-def status_lore_line(m) -> str:
-    """"It cannot be put to sleep, poisoned or charmed. Fire puts it to
-    flight.": what its nature refuses and what it falls to easily, for a
-    kind the hero knows. Empty when it has neither."""
-    d = data()
-    words = d.get('status_words') or {}
-    out = []
-    immune = [words.get(e, str(e).replace('_', ' ')) for e in (getattr(m, 'status_immune', None) or ())]
-    if immune:
-        out.append(d['immune'].replace('{effects}', _words(immune)))
-    weak = list(getattr(m, 'status_weak', None) or ())
-    easily = [words.get(e, str(e).replace('_', ' ')) for e in weak if e != 'fear_of_fire']
-    if easily:
-        out.append(d['easily'].replace('{effects}', _words(easily)))
-    if 'fear_of_fire' in weak:
-        out.append(d['fire_flight'])
-    return _fill(m, ' '.join(out)) if out else ''
-
-
-def known_lead(m) -> str:
-    """"You know what the skeleton is made of.": said before its lore lines
-    on first sight of a known kind that has no tell, so the "it" (or "he",
-    "she") in them has a creature to stand for."""
-    return _fill(m, data().get('known_lead', 'You know what {the} is made of.'))
+    return _fill(m, '{The}: ' + '; '.join(parts) + '.')
 
 
 def lore_lines(m) -> list:
-    """What a hero who knows the kind is told it is made of: its weakness
-    line, its resistance line and its status line, each only when it has
-    something to say (section 3.1: "Studied: its weaknesses, resistances
-    and the counter")."""
-    return [t for t in (weak_line(m), hard_line(m), status_lore_line(m)) if t]
+    """What a hero who knows the kind is told it is made of: one line
+    (lore_line), or none (section 3.1: "Studied: its weaknesses,
+    resistances and the counter")."""
+    t = lore_line(m)
+    return [t] if t else []

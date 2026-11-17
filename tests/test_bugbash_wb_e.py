@@ -396,8 +396,9 @@ def test_wb_e02_a_known_kind_with_no_tell_is_named_before_its_lore(make_game):
     h.wait()
     said = h.said()
     lore = tells.lore_lines(sk)
-    i = said.index(lore[0])
-    assert 'Skeleton' in said[i - 1], said
+    # One line that names it itself (2026-11-16: no "You know what the
+    # Skeleton is made of." before it).
+    assert len(lore) == 1 and lore[0] in said and lore[0].startswith('The Skeleton: '), said
     no_errors(h)
 
 
@@ -698,7 +699,7 @@ def test_journey_02_swaps_and_kits(make_game):
         h.key(getattr(pygame, f'K_{ch.lower()}'), uni=ch)
     h.key(pygame.K_RETURN)
     assert g._kits()[0]['name'] == 'Iron'
-    assert g._kit_lines(0) == [('Weapon', 'Iron Shortsword'), ('At Your Back', 'Plain Mace'),
+    assert g._kit_lines(0) == [('Weapon', 'Iron Shortsword'), ('Readied', 'Plain Mace'),
                                ('Body', 'Worn Leather Jerkin')]
     h.key(pygame.K_ESCAPE)
     unequip(h, jerkin)
@@ -830,7 +831,7 @@ def test_journey_04_knowing_a_monster(make_game):
     g._refresh_fov()
     h.wait()
     said = h.said()
-    assert said[1:] == ['You know what the Skeleton is made of.'] + tells.lore_lines(sk2)
+    assert said[1:] == tells.lore_lines(sk2) and said[1].startswith('The Skeleton: ')
     sk2.x, sk2.y = p.x + 1, p.y
     named = blow(h, sk2, 2)
     assert any(('a point' in s.lower() or 'a cutting blow' in s.lower()) for s in named), named
@@ -897,7 +898,7 @@ def test_journey_04c_the_wand_of_probing_teaches_the_kind(make_game):
         h.quiz(1)
         said = h.said()
         assert any(f'The Zombie: {zombie.hp}/{zombie.max_hp} HP.' == s for s in said), said
-        assert any(s.startswith('Weak To (Double Damage): ') for s in said), said
+        assert any(s.startswith('Weak To: ') for s in said), said
         assert ('You learn the ways of the Zombie.' in said) == (probe == 1), said
         assert family_lore.knowledge(p, 'zombie') == family_lore.KNOWN
         assert family_lore.score(p, 'restless_dead') == score + 1

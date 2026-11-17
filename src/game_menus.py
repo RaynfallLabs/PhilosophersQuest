@@ -830,6 +830,20 @@ class MenuMixin:
                 self._item_action_run(self._KIT_ACTION_KEYS[key], item,
                                       self._kit_return_ctx())
             return
+        # Shift+Up / Shift+Down scroll the Selected Comparison pane (the
+        # mouse wheel too: game_input); anything that moves the selection
+        # starts the new item's card at its top.
+        try:
+            _shift = bool(pygame.key.get_mods() & pygame.KMOD_SHIFT)
+        except pygame.error:
+            _shift = False
+        if _shift and key in (pygame.K_UP, pygame.K_DOWN):
+            step = -3 if key == pygame.K_UP else 3
+            self._kit_detail_scroll = max(0, int(getattr(self, '_kit_detail_scroll', 0) or 0) + step)
+            return
+        if key in (pygame.K_LEFT, pygame.K_RIGHT, pygame.K_UP, pygame.K_DOWN, pygame.K_PAGEUP,
+                   pygame.K_PAGEDOWN, pygame.K_HOME, pygame.K_END):
+            self._kit_detail_scroll = 0
         n_tabs = len(self._KIT_TABS)
         if key == pygame.K_LEFT:
             self._kit_tab = (self._kit_tab - 1) % n_tabs
